@@ -20,7 +20,7 @@
 ##### [声明转换规则语言](solution-guides/Claims-Transformation-Rules-Language.md)
 #### [附录 A：动态访问控制术语表](solution-guides/appendix-A--Dynamic-Access-Control-Glossary.md)
 #### [附录 B：设置测试环境](solution-guides/appendix-B--Setting-Up-the-Test-Environment.md)
-
+### [为自定义端口上的基于证书密钥的续订配置证书注册 Web 服务](solution-guides/certificate-enrollment-certificate-key-based-renewal.md)
 
 ## [Active Directory 域服务](ad-ds/active-directory-Domain-Services.md)
 
