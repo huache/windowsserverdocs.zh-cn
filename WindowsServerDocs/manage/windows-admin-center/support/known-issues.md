@@ -8,25 +8,18 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: a579d0274ff4b53a72c17760a6d53ef796625d3a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 23943c9567f371f7598c7dcda6db434760cabeab
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356910"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567087"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知问题
 
-> 适用于：Windows Admin Center、Windows Admin Center 预览版
+> 适用于： Windows 管理中心、Windows 管理中心预览
 
-如果遇到此页中未列出的问题，请[告诉我们](http://aka.ms/WACfeedback)。
-
-## <a name="lenovo-xclarity-integrator"></a>联想 XClarity 集成器
-
-以前泄漏的 XClarity 集成器扩展和 Windows 管理中心版本1904的不兼容性问题现已通过 Windows 管理中心版本1904.1 进行解析。 我们强烈建议你将更新为最新的受支持版本的 Windows 管理中心。
-
-- 联想 XClarity 集成器扩展版本1.1 与 Windows 管理中心1904.1 完全兼容。 强烈建议您更新到最新版本的 Windows 管理中心和联想扩展。
-- 出于任何原因，如果你需要继续使用 Windows 管理中心1809.5，你可以使用 XClarity 集成器1.0.4，在 windows 管理中心1809.5 不再受支持的情况下，将在 windows 管理中心我们的[支持策略](../support/index.md)。
+如果遇到此页中未列出的问题，请[告诉我们](https://aka.ms/WACfeedback)。
 
 ## <a name="installer"></a>安装程序
 
@@ -34,20 +27,9 @@ ms.locfileid: "71356910"
 
 - 不支持使用低于1024的端口。 在服务模式下，你可以选择配置端口80以重定向到指定的端口。
 
-- 如果 Windows 更新服务（wuauserv）已停止并处于禁用状态，则安装程序将失败。 [19100629]
+## <a name="general"></a>“常规”
 
-### <a name="upgrade"></a>升级
-
-- 从以前的版本升级服务模式下的 Windows 管理中心时，如果在安静模式下使用 msiexec，则可能会遇到 Windows 管理中心端口的入站防火墙规则被删除的问题。
-  - 若要重新创建规则，请从已提升权限的 PowerShell 控制台中执行\<以下命令，并将端口 > 替换为 Windows 管理中心配置的端口（默认值为443）。
-
-    ```powershell
-    New-NetFirewallRule -DisplayName "SmeInboundOpenException" -Description "Windows Admin Center inbound port exception" -LocalPort <port> -RemoteAddress Any -Protocol TCP
-    ```
-
-## <a name="general"></a>常规
-
-- 如果你已在**windows Server 2016**上将 windows 管理中心作为网关安装，则该服务可能会崩溃，并在包含```Faulting application name: sme.exe```和```Faulting module name: WsmSvc.dll```的事件日志中出现错误。 这是由 Windows Server 2019 中已修复的 bug 引起的。 Windows Server 2016 的修补程序包含在 2 2019 月的累积更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
+- 如果你已在**Windows Server 2016**上将 windows 管理中心作为网关安装，则该服务可能会因包含 ```Faulting application name: sme.exe``` 和 ```Faulting module name: WsmSvc.dll```的事件日志中的错误而崩溃。 这是由 Windows Server 2019 中已修复的 bug 引起的。 Windows Server 2016 的修补程序包含在 2 2019 月的累积更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
 - 如果已将 Windows 管理中心作为网关安装，且连接列表似乎已损坏，请执行以下步骤：
 
@@ -58,15 +40,7 @@ ms.locfileid: "71356910"
   2. 删除 **C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft** 下面的 **Server Management Experience** 文件夹
   3. 重新安装 Windows Admin Center
 
-- 如果将该工具保持打开状态且空闲一段时间，则可能会出现以下**错误：运行空间状态对于此操作**错误无效。 如果出现这种情况，请刷新浏览器。 如果遇到这种情况，请[向我们发送反馈](http://aka.ms/WACfeedback)。
-
-- 刷新 URL 较长的页面时，你可能会遇到 **500 错误**。 [12443710]
-
-- 在某些工具中，浏览器的拼写检查器可能会将某些字段值标记为拼写错误。 [12425477]
-
-- 在某些工具中，命令按钮可能无法在单击后立即反映状态更改，并且工具 UI 可能不会自动反映对某些属性所做的更改。 你可以单击**刷新**以从目标服务器中检索最新状态。 [11445790]
-
-- 对连接列表进行标记筛选-如果使用多选复选框选择连接，然后按标记筛选连接列表，原始选择将继续，因此，你选择的任何操作都将应用于之前选择的所有计算机。 [18099259]
+- 如果长期让工具保持打开和空闲状态，则可能会出现一些**错误：运行空间状态对此操作无效**错误。 如果出现这种情况，请刷新浏览器。 如果遇到这种情况，请[向我们发送反馈](https://aka.ms/WACfeedback)。
 
 - Windows 管理中心模块中运行的 OSS 版本号与第三方软件通知中列出的版本之间可能存在细微的差异。
 
@@ -79,13 +53,7 @@ ms.locfileid: "71356910"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- 在某些情况下，使用 Microsoft Edge 通过 Internet 访问 Windows Admin Center 网关时，可能会遇到加载时间较长的问题。 在 Windows Admin Center 网关使用自签名证书的 Azure 虚拟机上可能会出现这种情况。 [13819912]
-
-- 使用 Azure Active Directory 作为标识提供者并且使用自签名证书或其他不受信任的证书配置 Windows Admin Center 时，无法在 Microsoft Edge 中完成 AAD 身份验证。  [15968377]
-
-- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试添加来解决此问题 https://login.microsoftonline.com ， https://login.live.com ，为你网关的 URL 是受信任的站点并允许客户端浏览器上的弹出窗口阻止程序设置的站点。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
-
-- 如果已在桌面模式下安装 Windows 管理中心，Microsoft Edge 中的 "浏览器" 选项卡不会显示 favicon。 [17665801]
+- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试解决此问题，方法是将网关 https://login.microsoftonline.com 、 https://login.live.com 和 URL 添加为客户端浏览器上的 "受信任的站点" 和 "弹出窗口阻止程序" 设置的 "允许的站点"。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -93,13 +61,13 @@ ms.locfileid: "71356910"
 
 - Chrome 可能会弹出多个凭据提示，尤其是在**工作组**（非域）环境中添加连接体验期间。
 
-- 如果已将 Windows 管理中心部署为服务，则需要为要运行的任何 Azure 集成功能启用网关 URL 中的弹出窗口。 这些服务包括 Azure 网络适配器、Azure 更新管理和 Azure Site Recovery。
+- 如果已将 Windows 管理中心部署为服务，则需要为要运行的任何 Azure 集成功能启用网关 URL 中的弹出窗口。
 
 ### <a name="mozilla-firefox"></a>Mozilla Firefox
 
 未用 Mozilla Firefox 对 Windows Admin Center 进行测试，但大多数功能应该会正常工作。
 
-- Windows 10 安装：Mozilla Firefox 具有自己的证书存储区，因此必须将该```Windows Admin Center Client```证书导入到 Firefox，才能在 windows 10 上使用 windows 管理中心。
+- Windows 10 安装： Mozilla Firefox 具有自己的证书存储区，因此必须将 ```Windows Admin Center Client``` 证书导入到 Firefox，才能在 Windows 10 上使用 Windows 管理中心。
 
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>使用代理服务时的 WebSocket 兼容性
 
@@ -124,25 +92,17 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 ## <a name="server-manager-solution"></a>服务器管理器解决方案
 
-### <a name="server-settings"></a>服务器设置
-
-- 如果修改设置，则尝试在不保存的情况下导航离开，此页会警告你未保存的更改，但会继续离开。 最终可能会处于所选的 "设置" 选项卡与页面的内容不匹配的状态。 [19905798] [19905787]
-
 ### <a name="certificates"></a>证书
 
 - 无法将 .PFX 加密证书导入到当前用户存储。 [11818622]
 
-### <a name="devices"></a>设备
-
-- 使用键盘在表中导航时，所选内容可能跳到表组的顶部。 [16646059]
-
-### <a name="events"></a>Events
+### <a name="events"></a>事件
 
 - [使用代理服务时的 WebSocket 兼容性](#websocket-compatibility-when-using-a-proxy-service)会影响事件。
 
-- 导出大日志文件时，你可能会遇到一个引用“数据包大小”的错误。 [16630279]
+- 导出大日志文件时，你可能会遇到一个引用“数据包大小”的错误。
 
-  - 若要解决此问题，请在网关计算机上的权限提升的命令提示符中使用以下命令：```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - 若要解决此问题，请在网关计算机上的提升的命令提示符中使用以下命令： ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
 ### <a name="files"></a>文件
 
@@ -164,11 +124,13 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 ### <a name="remote-desktop"></a>远程桌面
 
+- 将 Windows 管理中心部署为服务时，在将 Windows 管理中心服务更新到新版本后，可能无法加载远程桌面工具。 若要解决此问题，请清除浏览器缓存。   [23824194]
+
 - 在管理 Windows Server 2012 时，"远程桌面" 工具可能无法连接。 [20258278]
 
-- 使用远程桌面连接到未加入域的计算机时，你必须以格式输入你的```MACHINENAME\USERNAME```帐户。
+- 使用远程桌面连接到未加入域的计算机时，必须以 ```MACHINENAME\USERNAME``` 格式输入帐户。
 
-- 某些配置可以通过组策略阻止 Windows 管理中心的远程桌面客户端。 如果遇到这种情况， ```Allow users to connect remotely by using Remote Desktop Services```请在```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- 某些配置可以通过组策略阻止 Windows 管理中心的远程桌面客户端。 如果遇到这种情况，请在 ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections``` 下启用 ```Allow users to connect remotely by using Remote Desktop Services```
 
 - 远程桌面受[websocket 兼容性影响。](#websocket-compatibility-when-using-a-proxy-service)
 
@@ -182,8 +144,6 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
   - Windows 键
   - PrtScn
 
-- 远程应用–从远程桌面设置启用远程应用工具之后，在管理具有桌面体验的服务器时，该工具可能不会显示在工具列表中。 [18906904]
-
 ### <a name="roles-and-features"></a>角色和功能
 
 - 选择安装源不可用的角色或功能时，将跳过它们。 [12946914]
@@ -194,19 +154,17 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 ### <a name="storage"></a>存储
 
-- 提取配额信息可能在没有错误通知的情况下失败（浏览器的控制台中仍有错误） [18962274]
+- 下层：DVD/CD/软盘驱动器在下层未显示为卷。
 
-- 下级：DVD/CD/软盘驱动器不会显示为下层的卷。
+- 下层：卷和磁盘中的某些属性在下层不可用，因此它们在详细信息面板中显示为未知或空白。
 
-- 下级：卷和磁盘中的某些属性不会在 "详细信息" 面板中显示为 "未知" 或 "空白"。
-
-- 下级：创建新卷时，ReFS 仅支持 Windows 2012 和 2012 R2 计算机上的 64 k 分配单元大小。 如果在下层目标上使用较小的分配单元大小创建了 ReFS 卷，则文件系统格式化将失败。 新卷将无法使用。 解决方法是删除卷并使用 64K 分配单元大小。
+- 下层：创建新卷时，ReFS 在 Windows 2012 和 2012 R2 计算机上仅支持 64K 的分配单元大小。 如果在下层目标上使用较小的分配单元大小创建了 ReFS 卷，则文件系统格式化将失败。 新卷将无法使用。 解决方法是删除卷并使用 64K 分配单元大小。
 
 ### <a name="updates"></a>更新
 
 - 安装更新后，可能会缓存安装状态并需要浏览器进行刷新。
 
-- 你可能会遇到以下错误：尝试设置 Azure 更新管理时出现 "密钥集不存在"。 在这种情况下，请在托管节点上尝试以下更正步骤-
+- 尝试设置 Azure 更新管理时，可能会遇到以下错误： "键集不存在"。 在这种情况下，请在托管节点上尝试以下更正步骤-
     1. 停止 "加密服务" 服务。
     2. 更改文件夹选项以显示隐藏文件（如果需要）。
     3. 已到达 "%allusersprofile%\Microsoft\Crypto\RSA\S-1-5-18" 文件夹并删除其所有内容。
@@ -223,13 +181,13 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 ### <a name="virtual-switches"></a>虚拟交换机
 
-- 交换机嵌入组合（SET）：将 Nic 添加到团队时，它们必须位于同一子网中。
+- 交换机嵌入式组合 (SET)：将 NIC 添加到组时，它们必须位于同一子网上。
 
 ## <a name="computer-management-solution"></a>计算机管理解决方案
 
 计算机管理解决方案包含服务器管理器解决方案中的一部分工具，因此存在相同的已知问题，以及以下计算机管理解决方案特定问题：
 
-- 如果使用的是 Microsoft 帐户（[MSA](https://account.microsoft.com/account/)），或者使用 AZURE ACTIVE DIRECTORY （AAD）登录到 Windows 10 计算机，则必须指定 "管理身份" 凭据来管理本地计算机 [16568455]
+- 如果你使用的是 Microsoft 帐户（[MSA](https://account.microsoft.com/account/)），或者使用 AZURE ACTIVE DIRECTORY （AAD）登录到 Windows 10 计算机，则必须使用 "管理身份" 为本地管理员帐户提供凭据 [16568455]
 
 - 尝试管理 localhost 时，将提示你提升网关进程。 如果单击“用户帐户控制”弹出框中的**否**，Windows Admin Center 将无法再次显示它。 在这种情况下，通过右键单击系统托盘中的 Windows Admin Center 图标并选择“退出”以退出网关进程，然后从“开始”菜单重新启动 Windows Admin Center。
 
@@ -252,3 +210,20 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 ## <a name="hyper-converged-cluster-manager-solution"></a>超聚合群集管理器解决方案
 
 - 诸如**驱动器 - 更新固件**、**服务器 - 删除**和**卷 - 打开**之类的某些命令被禁用并且当前不受支持。
+
+## <a name="azure-services"></a>Azure 服务
+
+### <a name="azure-file-sync-permissions"></a>Azure 文件同步权限
+
+Azure 文件同步需要 Azure 中的权限，但 Windows 管理中心未在版本1910之前提供。 如果使用早于 Windows 管理中心版本1910的版本向 Azure 注册了 Windows 管理中心网关，则需要更新 Azure Active Directory 应用程序，以获取在最新版本的中使用 Azure 文件同步的正确权限Windows 管理中心。 其他权限允许 Azure 文件同步按本文中所述执行存储帐户访问的自动配置：[确保 Azure 文件同步有权访问存储帐户](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
+
+若要更新 Azure Active Directory 应用，可以执行以下两项操作之一
+1. 请在**azure** > **注销** > "**设置**"，然后再次向 azure 注册 Windows 管理中心，确保你选择创建新的 Azure Active Directory 应用程序。 
+2. 中转到 Azure Active Directory 应用程序，并手动添加向 Windows 管理中心注册的现有 Azure Active Directory 应用所需的权限。 为此，请**在 azure 中**中转到**azure** > 视图 > **设置**。 从 Azure 中的 "**应用注册**" 边栏选项卡中转到 " **API 权限**"，选择 "**添加权限**"。 向下滚动以选择**Azure Active Directory 关系图**，选择 "**委托的权限**"，展开 "**目录**"，然后选择 " **AccessAsUser**"。 单击 "**添加权限**"，将更新保存到应用中。
+
+### <a name="options-for-setting-up-azure-management-services"></a>用于设置 Azure 管理服务的选项
+
+Azure 管理服务（包括 Azure Monitor、Azure 更新管理和 Azure 安全中心）为本地服务器使用同一代理： Microsoft Monitoring Agent。 Azure 更新管理包含一组受支持的受支持区域，需要将 Log Analytics 工作区链接到 Azure 自动化帐户。 由于此限制，如果想要在 Windows 管理中心中设置多个服务，则必须首先设置 Azure 更新管理，然后设置 Azure 安全中心或 Azure Monitor。 如果已配置任何使用 Microsoft Monitoring Agent 的 Azure 管理服务，然后尝试使用 Windows 管理中心设置 Azure 更新管理，Windows 管理中心将仅允许你配置 Azure 更新管理如果现有链接到 Microsoft Monitoring Agent 的资源支持 Azure 更新管理。 如果不是这种情况，则有两个选择：
+
+1. 请通过 "控制面板" > Microsoft Monitoring Agent[断开服务器与现有 Azure 管理解决方案](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)（例如 Azure Monitor 或 Azure 安全中心）的连接。 然后在 Windows 管理中心中设置 Azure 更新管理。 之后，你可以返回到通过 Windows 管理中心设置其他 Azure 管理解决方案，而不会出现问题。
+2. 可以[手动设置 azure 更新管理所需的 azure 资源](https://docs.microsoft.com/azure/automation/automation-update-management)，然后[手动更新 Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) （位于 Windows 管理中心之外）以添加与更新管理解决方案相对应的新工作区要使用。
