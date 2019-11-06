@@ -27,6 +27,7 @@
 ## 将
 ### [开始行动](use/get-started.md)
 ### [管理服务器](use/manage-servers.md)
+### [部署超融合基础设施](use/deploy-hyperconverged-infrastructure.md)
 ### [管理超融合基础设施](use/manage-hyper-converged.md)
 ### [管理故障转移群集](use/manage-failover-clusters.md)
 ### [管理 Hyper-V 虚拟机](use/manage-virtual-machines.md)
