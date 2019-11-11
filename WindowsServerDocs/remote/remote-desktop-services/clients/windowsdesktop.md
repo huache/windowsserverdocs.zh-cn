@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/24/2019
+ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 961d636fb59b33d0c562ec25d13174abbe766606
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aff7e6e1f37cad66530679ade024c089a4ba034e
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404078"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567167"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows 桌面客户端入门
 
@@ -33,9 +33,11 @@ ms.locfileid: "71404078"
 
 ## <a name="install-the-client"></a>安装客户端
 
-当前可以下载适用于 Windows 64 位版的客户端。 当客户端可用于 Windows 的更多版本时，我们将更新此列表。
+选择与你的 Windows 版本相匹配的客户端：
 
-- [Windows 64 位版客户端](https://go.microsoft.com/fwlink/?linkid=2068602)
+- [Windows 64 位](https://go.microsoft.com/fwlink/?linkid=2068602)
+- [Windows 32 位预览版](https://go.microsoft.com/fwlink/?linkid=2098960)
+- [Windows ARM64 预览版](https://go.microsoft.com/fwlink/?linkid=2098961)
 
 你可以为当前用户安装客户端（这不需要管理员权限），或者你的管理员可以安装和配置客户端，以便设备上的所有用户都可以访问该客户端。
 

@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/24/2019
+ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4325bd7b33c16d972cac980e17c10bacbfeffd8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a8e66398bc61a69250b84101a3cb66f2c8f3548
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387586"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567070"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -31,7 +31,25 @@ ms.locfileid: "71387586"
 |用户组 |版本  |
 |-----------|---------|
 |Public     |1.2.247  |
-|预览体验成员    |1.2.247  |
+|预览体验成员    |1.2.428  |
+
+## <a name="updates-for-version-12428"></a>针对版本 1.2.428 的更新
+
+*发布日期：2019/10/31*
+
+- 客户端的 32 位和 ARM64 版的预览版现已提供！
+- 客户端现在会保存你对连接栏所做的任何更改（例如，其位置、大小和固定状态），并跨会话应用这些更改。
+- 更新的网关信息和连接状态对话框。
+- 解决了已导致在 Azure Active Directory 令牌过期后尝试连接时两个凭据同时提示的问题。
+- 现在，在 Windows 7 中，如果用户已保存凭据而服务器不接受该凭据时，系统会正确提示用户输入凭据。
+- 重新连接时，Azure Active Directory 提示现在会显示在连接窗口的前面。
+- 固定到任务栏的项现在会在源刷新过程中更新。
+- 已改进在使用触控时连接中心上进行的滚动。
+- 从“分辨率”下拉菜单中删除了空行。
+- 在 Windows 凭据管理器中删除了不必要的条目。
+- 现在，在退出全屏时，桌面会话的大小会正确调整。
+- 现在，当进入睡眠模式后恢复会话时，“RemoteApp 断开连接”对话框会显示在前台。
+- 解决了辅助功能问题，如键盘导航。
 
 ## <a name="updates-for-version-12247"></a>针对版本 1.2.247 的更新
 

@@ -10,14 +10,14 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 175c4dbd23bac1822365ce80f05d69509d27321c
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 54352f47a31826b91b5696eb90104ca166a4299d
+ms.sourcegitcommit: 18f6b104e73e0397009283d55bee7984ac7ef0d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935021"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73632655"
 ---
-## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>有关在带有桌面体验的 Windows Server 2016 中禁用系统服务的指南
+# <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>有关在带有桌面体验的 Windows Server 2016 中禁用系统服务的指南
 
 适用于：Windows Server 2016
 
@@ -47,7 +47,7 @@ Microsoft 建议客户在带有桌面体验的 Windows Server 2016 中禁用以�
 
 （还可以通过查看附加的 Microsoft Excel 电子表格，来访问有关本文中详述的所有服务的信息：[有关在带有桌面体验的 Windows Server 2016 中禁用系统服务的指南](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx)）
 
-<br />
+
 
 ### <a name="disabling-services-not-installed-by-default"></a>禁用非默认安装的服务
 
@@ -57,10 +57,10 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 -  禁用非默认 Windows 服务（例如 W3SVC）的基线或基准会给某些审核员带来这样一种错觉：该技术（例如 IIS）在本质上就是不安全的，永远不可使用它。
 -  如果永远不安装该功能（和服务），只会不必要地增大基线测试和验证的工作量。
 
-<br />
+
 对于本文档中列出的所有系统服务，下面两份表格提供了列的说明，以及有关在带有桌面体验的 Windows Server 2016 中启用和禁用系统服务的 Microsoft 建议： 
 
-<br />
+
 
 ### <a name="explanation-of-columns"></a>列的说明
 
@@ -68,12 +68,12 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |---|---|
 |**服务说明**|   服务的说明，摘自 sc.exe 说明。|
 |**名称** |服务的键（内部）名称|
-|**安装** |始终安装：服务位于 Server Core 和带有桌面体验的 Server 上  <br /> 仅用于桌面体验：服务位于带有桌面体验的 Windows Server 2016 上，但不位于 Server Core 上 |
+|**安装** |始终安装：服务位于 Server Core 和带有桌面体验的 Server 上。 仅用于桌面体验：服务位于带有桌面体验的 Windows Server 2016 上，但不位于 Server Core 上 |
 |**StartType**  |Windows Server 2016 上的服务启动类型|
 |**建议** |有关妥善管理的典型企业部署中的、其服务器不是用作最终用户桌面替代版本的 Windows Server 2016 上禁用此服务的 Microsoft 建议。|
 |**备注** |附加说明|
 
-<br />
+
 
 ### <a name="explanation-of-microsoft-recommendations"></a>Microsoft 建议说明
 
@@ -84,11 +84,11 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |**已禁用**|  此服务默认已禁用；无需使用策略强制禁用|
 |**应该禁用** |在妥善管理的企业系统中永远不应该启用此服务。|
 
-<br />
+
 
 下表提供了有关在带有桌面体验的 Windows Server 2016 中禁用系统服务的 Microsoft 指导：
 
-<br />
+
 
 ##  <a name="activex-installer-axinstsv"></a>ActiveX 安装程序 (AxInstSV)
 
@@ -102,7 +102,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   如果不需要相关的功能，则可以禁用 |
 
 
-<br />
+
 
 ## <a name="alljoyn-router-service"></a>AllJoyn 路由器服务   
 
@@ -116,7 +116,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |       |
 | | |
 
-<br />
+
 
 ## <a name="app-readiness"></a>应用就绪状态
 
@@ -130,7 +130,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 **备注**    |   
 | | |
 
-<br />
+
 
 ##  <a name="application-identity"></a>应用程序标识
 
@@ -144,7 +144,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 **备注**    |   
 |||     
 
-<br />
+
 
 ##  <a name="application-information"></a>应用程序信息 
 
@@ -158,7 +158,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   支持 UAC 相同桌面提升
 |||     
 
-<br />
+
 
 ##  <a name="application-layer-gateway-service"></a>应用程序层网关服务       
 
@@ -172,7 +172,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||     
 
-<br />
+
 
 ##  <a name="application-management"></a>应用程序管理      
 
@@ -186,7 +186,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="appx-deployment-service-appxsvc"></a>AppX 部署服务 (AppXSVC)       
 
@@ -200,7 +200,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="auto-time-zone-updater"></a>自动时区更新程序           
 
@@ -214,7 +214,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="background-intelligent-transfer-service"></a>后台智能传送服务          
 
@@ -228,7 +228,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 
 ## <a name="background-tasks-infrastructure-service"></a>后台任务基础结构服务      
@@ -243,7 +243,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="base-filtering-engine"></a>基本筛选引擎            
 
@@ -257,7 +257,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="bluetooth-support-service"></a>蓝牙支持服务            
 
@@ -271,7 +271,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   如果不使用，则可以禁用。 另一种禁用机制： https://technet.microsoft.com/library/dd252791.aspx
 |||         
 
-<br />          
+
 
 
 ## <a name="cdpusersvc"></a>CDPUserSvc           
@@ -286,7 +286,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   用户服务模板
 |||         
 
-<br />          
+
 
 
 ##  <a name="certificate-propagation"></a>证书传播     
@@ -301,7 +301,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="client-license-service-clipsvc"></a>客户端许可证服务 (ClipSVC)        
 
@@ -315,7 +315,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="cng-key-isolation"></a>CNG 密钥隔离
 
@@ -329,7 +329,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="com-event-system"></a>COM+ 事件系统       
 
@@ -343,7 +343,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="com-system-application"></a>COM+ 系统应用程序     
 
@@ -357,7 +357,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="computer-browser"></a>计算机浏览器        
 
@@ -371,7 +371,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="connected-devices-platform-service"></a>互联设备平台服务       
 
@@ -385,7 +385,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="connected-user-experiences-and-telemetry"></a>已连接的用户体验和遥测     
 
@@ -399,7 +399,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="contact-data"></a>联系人数据        
 
@@ -413,7 +413,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   用户服务模板
 |||         
 
-<br />          
+
 
 ## <a name="coremessaging"></a>CoreMessaging            
 
@@ -427,7 +427,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="credential-manager"></a>凭据管理器           
 
@@ -441,7 +441,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="cryptographic-services"></a>加密服务           
 
@@ -455,7 +455,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="data-sharing-service"></a>数据共享服务         
 
@@ -469,7 +469,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="datacollectionpublishingservice"></a>DataCollectionPublishingService          
 
@@ -483,7 +483,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="dcom-server-process-launcher"></a>DCOM 服务器进程启动器         
 
@@ -497,7 +497,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />
+
 
 ##  <a name="device-association-service"></a>设备关联服务      
 
@@ -511,7 +511,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />
+
 
 ##  <a name="device-install-service"></a>设备安装服务
 
@@ -525,7 +525,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |
 |||
 
-<br />          
+
 
 ##  <a name="device-management-enrollment-service"></a>设备管理注册服务        
 
@@ -539,7 +539,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="device-setup-manager"></a>设备安装管理器         
 
@@ -553,7 +553,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="devquery-background-discovery-broker"></a>DevQuery 后台发现代理         
 
@@ -567,7 +567,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="dhcp-client"></a>DHCP 客户端          
 
@@ -581,7 +581,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="diagnostic-policy-service"></a>诊断策略服务            
 
@@ -595,7 +595,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="diagnostic-service-host"></a>诊断服务主机     
 
@@ -609,7 +609,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="diagnostic-system-host"></a>诊断系统主机           
 
@@ -623,7 +623,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="distributed-link-tracking-client"></a>分布式链接跟踪客户端            
 
@@ -637,7 +637,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="distributed-transaction-coordinator"></a>分布式事务处理协调器     
 
@@ -651,7 +651,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />  
+
 
 ##  <a name="dmwappushsvc"></a>dmwappushsvc        
 
@@ -665,7 +665,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   Intune、MDM 和类似管理技术以及统一写入筛选器的客户端设备上所需的服务。 Windows Server 不需要此服务。
 |||         
 
-<br />      
+
 
 ##  <a name="dns-client"></a>DNS 客户端的运行情况      
 
@@ -679,7 +679,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="downloaded-maps-manager"></a>已下载的地图管理器     
 
@@ -693,7 +693,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   禁用该服务会中断依赖于它的应用；如果应用不依赖于它，则可将其禁用
 |||         
 
-<br />          
+
 
 ## <a name="embedded-mode"></a>嵌入模式            
 
@@ -707,7 +707,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="encrypting-file-system-efs"></a>加密文件系统 (EFS)
 
@@ -721,7 +721,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**   |
 |||                 
 
-<br />  
+
 
 ## <a name="enterprise-app-management-service"></a>企业应用管理服务            
 
@@ -735,7 +735,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="extensible-authentication-protocol"></a>可扩展身份验证协议           
 
@@ -749,7 +749,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="function-discovery-provider-host"></a>功能发现提供程序主机服务         
 
@@ -763,7 +763,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="function-discovery-resource-publication"></a>功能发现资源发布服务      
 
@@ -777,7 +777,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="geolocation-service"></a>地理定位服务          
 
@@ -791,7 +791,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   禁用该服务会中断依赖于它的应用；如果应用不依赖于它，则可将其禁用
 |||         
 
-<br />          
+
 
 ##  <a name="group-policy-client"></a>组策略客户端     
 
@@ -805,7 +805,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 
 ## <a name="human-interface-device-service"></a>人机接口设备服务           
@@ -820,7 +820,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="hv-host-service"></a>HV 主机服务     
 
@@ -834,7 +834,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   来宾 VM 的性能增强器。 目前只在显式填充的 VM 上使用，但会在应用程序防护中使用
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-data-exchange-service"></a>Hyper-V 数据交换服务        
 
@@ -848,7 +848,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   请参阅 HvHost
 |||         
 
-<br />      
+
 
 ## <a name="hyper-v-guest-service-interface"></a>Hyper-V 来宾服务接口          
 
@@ -862,7 +862,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   请参阅 HvHost
 |||         
 
-<br />  
+
 
 ## <a name="hyper-v-guest-shutdown-service"></a>Hyper-V 来宾关闭服务           
 
@@ -876,7 +876,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   请参阅 HvHost
 |||         
 
-<br />
+
 
 ## <a name="hyper-v-heartbeat-service"></a>Hyper-V 检测信号服务
 | | |
@@ -889,7 +889,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   请参阅 HvHost
 |||
 
-<br />          
+
 
 ## <a name="hyper-v-powershell-direct-service"></a>Hyper-V PowerShell Direct 服务            
 
@@ -903,7 +903,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   请参阅 HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-remote-desktop-virtualization-service"></a>Hyper-V 远程桌面虚拟化服务            
 
@@ -917,7 +917,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   请参阅 HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-time-synchronization-service"></a>Hyper-V 时间同步服务         
 
@@ -931,7 +931,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   请参阅 HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-volume-shadow-copy-requestor"></a>Hyper-V 卷影复制请求程序         
 
@@ -945,7 +945,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   请参阅 HvHost
 |||         
 
-<br />          
+
 
 ## <a name="ike-and-authip-ipsec-keying-modules"></a>IKE 和 AuthIP IPsec 密钥模块          
 
@@ -959,7 +959,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |    
 |||         
 
-<br />          
+
 
 ## <a name="interactive-services-detection"></a>交互服务检测           
 
@@ -973,7 +973,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />  
+
 
 ## <a name="internet-connection-sharing-ics"></a>Internet 连接共享(ICS)            
 
@@ -987,7 +987,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   客户端需要将 ICS 用作 WiFi 热点；ICS 还会在 Miracast 投影的两端使用。 可能无法使用 GPO 设置“禁止在 DNS 域网络上使用 Internet 连接共享”来阻止 ICS
 |||         
 
-<br />          
+
 
 ## <a name="ip-helper"></a>IP 帮助程序            
 
@@ -1001,7 +1001,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 
 ##  <a name="ipsec-policy-agent"></a>IPsec 策略代理      
@@ -1016,7 +1016,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />
+
 
 ##  <a name="kdc-proxy-server-service-kps"></a>KDC 代理服务器服务 (KPS)      
 
@@ -1030,7 +1030,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="ktmrm-for-distributed-transaction-coordinator"></a>适用于分布式事务处理协调器的 KtmRm            
 
@@ -1044,7 +1044,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />
+
 
 ##  <a name="link-layer-topology-discovery-mapper"></a>链路层拓扑发现映射器        
 
@@ -1058,7 +1058,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   如果不依赖于网络映射，则可以禁用
 |||         
 
-<br />
+
 
 ## <a name="local-session-manager"></a>本地会话管理器                    
 
@@ -1072,7 +1072,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||                 
 
-<br />                  
+
 
 ## <a name="microsoft-r-diagnostics-hub-standard-collector"></a>Microsoft (R) 诊断中心标准收集器         
 
@@ -1086,7 +1086,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />
+
 
 ## <a name="microsoft-account-sign-in-assistant"></a>Microsoft 帐户登录助手
 | | |
@@ -1099,7 +1099,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   Microsoft 帐户在 Windows Server 上为 N/A
 |||
 
-<br />          
+
 
 ##  <a name="microsoft-app-v-client"></a>Microsoft App-V 客户端      
 
@@ -1113,7 +1113,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-iscsi-initiator-service"></a>Microsoft iSCSI 发起程序服务            
 
@@ -1127,7 +1127,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   我们的诊断数据表明，此服务会在客户端和服务器上使用。 禁用此服务并无好处。
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-passport"></a>Microsoft Passport           
 
@@ -1141,7 +1141,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   PIN/Hello 登录需要此服务，在 Windows Server 上不受支持
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-passport-container"></a>Microsoft Passport 容器         
 
@@ -1155,7 +1155,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-software-shadow-copy-provider"></a>Microsoft 软件卷影复制提供程序          
 
@@ -1169,7 +1169,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-storage-spaces-smp"></a>Microsoft 存储空间 SMP         
 
@@ -1183,7 +1183,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   如果没有此服务，存储管理 API 将会失败。 示例："Get-WmiObject -class MSFT_Disk -Namespace Root\Microsoft\Windows\Storage"。
 |||         
 
-<br />          
+
 
 ## <a name="nettcp-port-sharing-service"></a>Net.Tcp 端口共享服务         
 
@@ -1197,7 +1197,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="netlogon"></a>Netlogon         
 
@@ -1211,7 +1211,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-connection-broker"></a>网络连接代理            
 
@@ -1225,7 +1225,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-connections"></a>网络连接         
 
@@ -1239,7 +1239,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-connectivity-assistant"></a>网络连接助手      
 
@@ -1253,7 +1253,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />  
+
 
 ##  <a name="network-list-service"></a>网络列表服务        
 
@@ -1267,7 +1267,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-location-awareness"></a>网络位置感知           
 
@@ -1281,7 +1281,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-setup-service"></a>网络安装服务       
 
@@ -1295,7 +1295,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-store-interface-service"></a>网络存储接口服务      
 
@@ -1309,7 +1309,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="offline-files"></a>脱机文件            
 
@@ -1323,7 +1323,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="optimize-drives"></a>优化驱动器          
 
@@ -1337,7 +1337,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />
+
 
 ## <a name="performance-counter-dll-host"></a>性能计数器 DLL 宿主         
 
@@ -1351,7 +1351,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="performance-logs--alerts"></a>性能日志和警报            
 
@@ -1365,7 +1365,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="phone-service"></a>电话服务       
 
@@ -1379,7 +1379,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   由新式 VoIP 应用使用
 |||         
 
-<br />          
+
 
 ##      <a name="plug-and-play"></a>即插即用       
 
@@ -1393,7 +1393,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="portable-device-enumerator-service"></a>便携设备枚举器服务           
 
@@ -1407,7 +1407,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="power"></a>电源            
 
@@ -1421,7 +1421,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="print-spooler"></a>打印后台处理程序            
 
@@ -1435,7 +1435,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   在域控制器上，安装 DC 角色会将一个线程添加到负责执行打印修剪（从 Active Directory 中删除过时的打印队列对象）的后台处理程序服务。  如果后台处理程序服务未在每个站点中的至少一个 DC 上运行，则 AD 无法删除不再存在的旧队列。 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/ )
 |||         
 
-<br />          
+
 
 ##  <a name="printer-extensions-and-notifications"></a>打印机扩展和通知        
 
@@ -1449,7 +1449,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="problem-reports-and-solutions-control-panel-support"></a>问题报告和解决方法控件面板支持     
 
@@ -1463,7 +1463,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="program-compatibility-assistant-service"></a>程序兼容性助手服务     
 
@@ -1477,7 +1477,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="quality-windows-audio-video-experience"></a>高质量 Windows 音频视频体验      
 
@@ -1491,7 +1491,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   客户端 QoS 服务
 |||         
 
-<br />          
+
 
 ##      <a name="radio-management-service"></a>无线电管理服务        
 
@@ -1505,7 +1505,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-access-auto-connection-manager"></a>远程访问自动连接管理器            
 
@@ -1519,7 +1519,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-access-connection-manager"></a>远程访问连接管理器         
 
@@ -1533,7 +1533,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-desktop-configuration"></a>远程桌面配置         
 
@@ -1547,7 +1547,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-desktop-services"></a>远程桌面服务          
 
@@ -1561,7 +1561,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="remote-desktop-services-usermode-port-redirector"></a>远程桌面服务用户模式端口重定向程序        
 
@@ -1575,7 +1575,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   支持连接的服务器端上的重定向。
 |||         
 
-<br />          
+
 
 ## <a name="remote-procedure-call-rpc"></a>远程过程调用 (RPC)          
 
@@ -1589,7 +1589,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="remote-procedure-call-rpc-locator"></a>远程过程调用 (RPC) 定位器             
 
@@ -1603,7 +1603,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |       |
 |||             
 
-<br />              
+
 
 ## <a name="remote-registry"></a>远程注册表          
 
@@ -1617,7 +1617,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="resultant-set-of-policy-provider"></a>策略提供程序的结果集            
 
@@ -1631,7 +1631,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="routing-and-remote-access"></a>路由和远程访问            
 
@@ -1645,7 +1645,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   已禁用
 |||         
 
-<br />          
+
 
 ## <a name="rpc-endpoint-mapper"></a>RPC 终结点映射程序          
 
@@ -1659,7 +1659,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="secondary-logon"></a>辅助登录     
 
@@ -1673,7 +1673,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="secure-socket-tunneling-protocol-service"></a>安全套接字隧道协议服务            
 
@@ -1687,7 +1687,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   禁用此服务会中断 RRAS   |
 |||             
 
-<br />              
+
 
 ## <a name="security-accounts-manager"></a>安全帐户管理器            
 
@@ -1701,7 +1701,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="sensor-data-service"></a>传感器数据服务  
 
@@ -1715,7 +1715,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />  
+
 
 ## <a name="sensor-monitoring-service"></a>传感器监视服务            
 
@@ -1729,21 +1729,17 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />
-
 ## <a name="sensor-service"></a>传感器服务
 
 | | |
 |---|---|
-|   **服务说明** |   用于管理不同传感器功能的传感器服务。 管理传感器的简单设备方向 (SDO) 和历史记录。 加载报告设备方向更改的 SDO 传感器。  如果此服务已停止或禁用，则不会加载 SDO 传感器，因此自动旋转不会发生。 此外还会停止从传感器收集历史记录。
+|   **服务说明** |   用于管理不同传感器的功能的传感器服务。 管理传感器的简单设备方向 (SDO) 和历史记录。 加载报告设备方向更改的 SDO 传感器。  如果此服务已停止或禁用，则不会加载 SDO 传感器，因此自动旋转不会发生。 此外还会停止从传感器收集历史记录。
 |   **服务名称**    |   SensorService
 |   **安装**    |   仅用于桌面体验
 |   **StartType**   |   Manual
 |   **建议**  |   可以禁用
 |   **备注**    |
 |||
-  
-<br />          
 
 ## <a name="server"></a>Server           
 
@@ -1757,7 +1753,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   远程管理、IPC$ 和 SMB 文件共享需要此服务
 |||         
 
-<br />          
+
 
 ## <a name="shell-hardware-detection"></a>Shell 硬件检测             
 
@@ -1771,7 +1767,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="smart-card"></a>智能卡           
 
@@ -1785,7 +1781,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="smart-card-device-enumeration-service"></a>智能卡设备枚举服务                    
 
@@ -1799,7 +1795,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   基本上仅供 WinRT 应用使用    |
 |||             
 
-<br />              
+
 
 ## <a name="smart-card-removal-policy"></a>智能卡移除策略        
 
@@ -1813,7 +1809,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="snmp-trap"></a>SNMP 陷阱            
 
@@ -1827,7 +1823,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="software-protection"></a>软件保护             
 
@@ -1841,7 +1837,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="special-administration-console-helper"></a>特殊管理控制台帮助程序        
 
@@ -1855,7 +1851,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="spot-verifier"></a>错误校验程序            
 
@@ -1869,7 +1865,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="ssdp-discovery"></a>SSDP 发现           
 
@@ -1883,7 +1879,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="state-repository-service"></a>状态存储库服务         
 
@@ -1897,7 +1893,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="still-image-acquisition-events"></a>静止图像采集事件
 
@@ -1911,7 +1907,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />  
+
 
 ## <a name="storage-service"></a>存储服务          
 
@@ -1925,7 +1921,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="storage-tiers-management"></a>存储层管理        
 
@@ -1939,7 +1935,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="superfetch"></a>Superfetch          
 
@@ -1953,7 +1949,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="sync-host"></a>同步主机            
 
@@ -1967,7 +1963,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   用户服务模板
 |||         
 
-<br />          
+
 
 ## <a name="system-event-notification-service"></a>系统事件通知服务            
 
@@ -1981,7 +1977,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="system-events-broker"></a>系统事件代理             
 
@@ -1995,7 +1991,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   虽然此服务的说明暗示着它仅适用于 WinRT 应用，但任务计划程序、代理基础结构服务和其他内部组件也需要此服务。
 |||         
 
-<br />          
+
 
 ## <a name="task-scheduler"></a>任务计划程序           
 
@@ -2009,7 +2005,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="tcpip-netbios-helper"></a>TCP/IP NetBIOS 帮助程序            
 
@@ -2023,7 +2019,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="telephony"></a>Telephony           
 
@@ -2037,7 +2033,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   禁用此服务会中断 RRAS
 |||         
 
-<br />          
+
 
 ## <a name="themes"></a>主题           
 
@@ -2051,7 +2047,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   禁用此服务时，无法设置辅助功能主题
 |||         
 
-<br />  
+
 
 ## <a name="tile-data-model-server"></a>图块数据模型服务器           
 
@@ -2065,7 +2061,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   如果此服务已禁用，“开始”菜单将会损坏
 |||         
 
-<br />          
+
 
 ##  <a name="time-broker"></a>计时代理     
 
@@ -2079,7 +2075,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   虽然此服务的说明暗示着它仅适用于 WinRT 应用，但任务计划程序、代理基础结构服务和其他内部组件也需要此服务。
 |||         
 
-<br />          
+
 
 ## <a name="touch-keyboard-and-handwriting-panel-service"></a>触摸键盘和手写面板服务         
 
@@ -2093,7 +2089,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="update-orchestrator-service-for-windows-update"></a>Windows 更新的更新业务流程协调程序服务           
 
@@ -2107,7 +2103,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   v1607 中缺少服务说明；Windows 更新（包括 WSUS）依赖此服务。
 |||         
 
-<br />          
+
 
 ## <a name="upnp-device-host"></a>UPnP 设备主机         
 
@@ -2121,7 +2117,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="user-access-logging-service"></a>用户访问日志记录服务          
 
@@ -2135,7 +2131,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="user-data-access"></a>用户数据访问        
 
@@ -2149,7 +2145,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   用户服务模板
 |||         
 
-<br />          
+
 
 ## <a name="user-data-storage"></a>用户数据存储            
 
@@ -2163,7 +2159,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   用户服务模板
 |||         
 
-<br />          
+
 
 ## <a name="user-experience-virtualization-service"></a>用户体验虚拟化服务           
 
@@ -2177,7 +2173,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="user-manager"></a>用户管理器        
 
@@ -2191,7 +2187,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="user-profile-service"></a>用户配置文件服务         
 
@@ -2205,7 +2201,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="virtual-disk"></a>虚拟磁盘             
 
@@ -2219,7 +2215,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="volume-shadow-copy"></a>卷影复制           
 
@@ -2233,7 +2229,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="walletservice"></a>WalletService           
 
@@ -2247,7 +2243,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-audio"></a>Windows 音频            
 
@@ -2261,7 +2257,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-audio-endpoint-builder"></a>Windows 音频终结点生成器           
 
@@ -2275,7 +2271,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-biometric-service"></a>Windows 生物识别服务            
 
@@ -2289,7 +2285,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-camera-frame-server"></a>Windows 相机帧服务器         
 
@@ -2303,7 +2299,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-connection-manager"></a>Windows 连接管理器           
 
@@ -2317,7 +2313,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-defender-network-inspection-service"></a>Windows Defender 网络检查服务          
 
@@ -2331,7 +2327,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-defender-service"></a>Windows Defender 服务         
 
@@ -2345,7 +2341,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-driver-foundation---user-mode-driver-framework"></a>Windows Driver Foundation - 用户模式驱动程序框架           
 
@@ -2359,7 +2355,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-encryption-provider-host-service"></a>Windows 加密提供程序主机服务     
 
@@ -2373,7 +2369,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-error-reporting-service"></a>Windows 错误报告服务          
 
@@ -2387,7 +2383,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   收集并发送 MS 和第三方 ISV/IHV 使用的崩溃/挂起数据。 该数据用于诊断崩溃造成的 bug，其中可能包括安全 bug。 企业错误报告也需要此服务
 |||         
 
-<br />          
+
 
 ## <a name="windows-event-collector"></a>Windows 事件收集器          
 
@@ -2401,7 +2397,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   收集 ETW 事件（包括安全事件）以方便管理和诊断。  有大量的功能和第三方工具依赖此服务，其中包括安全审核工具
 |||         
 
-<br />          
+
 
 ## <a name="windows-event-log"></a>Windows 事件日志            
 
@@ -2415,7 +2411,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-firewall"></a>Windows 防火墙         
 
@@ -2429,7 +2425,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-font-cache-service"></a>Windows 字体缓存服务      
 
@@ -2443,7 +2439,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-image-acquisition-wia"></a>Windows 图像采集 (WIA)          
 
@@ -2457,7 +2453,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-insider-service"></a>Windows Insider 服务     
 
@@ -2471,7 +2467,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   Windows Server 不支持外部测试，因此，此服务在 Windows Server 不会运行。 也可以通过 GP 禁用功能。
 |||         
 
-<br />          
+
 
 ##  <a name="windows-installer"></a>Windows Installer       
 
@@ -2485,7 +2481,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-license-manager-service"></a>Windows 许可证管理器服务          
 
@@ -2499,7 +2495,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-management-instrumentation"></a>Windows Management Instrumentation       
 
@@ -2513,7 +2509,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-mobile-hotspot-service"></a>Windows 移动热点服务          
 
@@ -2527,7 +2523,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-modules-installer"></a>Windows 模块安装程序        
 
@@ -2541,7 +2537,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-push-notifications-system-service"></a>Windows 推送通知系统服务            
 
@@ -2555,7 +2551,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   动态磁贴和其他功能需要此服务
 |||         
 
-<br />      
+
 
 ## <a name="windows-push-notifications-user-service"></a>Windows 推送通知用户服务          
 
@@ -2569,7 +2565,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   用户服务模板
 |||         
 
-<br />
+
 
 ## <a name="windows-remote-management-ws-management"></a>Windows 远程管理 (WS-Management)
 | | |
@@ -2582,7 +2578,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   远程管理需要此服务
 |||
 
-<br />          
+
 
 ##  <a name="windows-search"></a>Windows 搜索      
 
@@ -2596,7 +2592,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-time"></a>Windows 时间        
 
@@ -2610,7 +2606,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-update"></a>Windows 更新           
 
@@ -2624,7 +2620,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="winhttp-web-proxy-auto-discovery-service"></a>WinHTTP Web 代理自动发现服务         
 
@@ -2638,7 +2634,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   使用网络堆栈的任何组件都可能在功能上依赖于此服务。 许多组织依赖于此服务来配置其内部网络的 HTTP 代理路由。  如果没有此服务，从内部向 Internet 发起的 HTTP 连接都会失败。
 |||         
 
-<br />          
+
 
 ## <a name="wired-autoconfig"></a>有线自动配置         
 
@@ -2652,7 +2648,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="wmi-performance-adapter"></a>WMI 性能适配器          
 
@@ -2666,7 +2662,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="workstation"></a>工作站          
 
@@ -2680,7 +2676,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />
+
 
 ## <a name="xbox-live-auth-manager"></a>Xbox Live 身份验证管理器           
 
@@ -2694,7 +2690,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   
 |||         
 
-<br />          
+
 
 ## <a name="xbox-live-game-save"></a>Xbox Live 游戏保存          
 
@@ -2708,6 +2704,6 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |   此服务用于同步支持 Xbox Live“保存”的游戏的保存数据。  如果此服务已停止，则不会向/从 Xbox Live 上传/下载游戏保存数据。
 |||         
 
-<br /> 
-<br /> 
+
+
 

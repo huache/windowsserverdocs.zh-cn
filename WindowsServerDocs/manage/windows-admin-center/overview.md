@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2019
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: e235c8013afa573712feaec75bbd1ca195c0e307
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c914a472869f9887c83733d6aab614b5676d17d7
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356998"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567123"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -25,9 +25,9 @@ ms.locfileid: "71356998"
 
 >[!VIDEO https://www.youtube.com/embed/PcQj6ZklmK0]
 
-![Windows Admin Center 信息图](media/WAC1809Poster_thumb.PNG)
+![Windows Admin Center 信息图](media/WAC1910Poster_thumb.PNG)
 
-[下载 PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1809Poster.pdf)
+[下载 PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
 
 ## <a name="quick-start"></a>快速入门
 
@@ -86,6 +86,7 @@ ms.locfileid: "71356998"
             <ul>
             <li><a href="use/get-started.md">启动和添加连接</a>
             <li><a href="use/manage-servers.md">管理服务器</a>
+            <li><a href="use/deploy-hyperconverged-infrastructure.md">部署超融合基础设施</a>
             <li><a href="use/manage-hyper-converged.md">管理超融合基础设施</a>
             <li><a href="use/manage-failover-clusters.md">管理故障转移群集</a>
             <li><a href="use/manage-virtual-machines.md">管理虚拟机</a>
@@ -129,11 +130,12 @@ ms.locfileid: "71356998"
 
 了解我们发布的最新功能：
 
+- 版本 [1910](https://aka.ms/wac1910) 是最新的正式版，它引入了多项全新 Azure 混合服务，并将以前在预览版中提供的功能添加到了正式版频道。
 - 版本 [1909](https://aka.ms/wac1909) 引入了 Azure VM 特定的连接类型，并统一了传统故障转移群集和 HCI 群集的连接类型。
 - 版本 [1908](https://aka.ms/wac1908) 添加了视觉对象更新、Packetmon、FlowLog 审核、群集的 Azure Monitor 载入以及对基于 HTTPS 的 WinRM（端口 5986）的支持。
 - 版本 [1907](https://aka.ms/wac1907) 添加了 Azure 成本估算链接，并改进了虚拟机的导入/导出和标记功能。
 - 版本 [1906](https://aka.ms/wac1906) 添加了导入/导出 VM、切换 Azure 帐户、从 Azure 添加连接、连接设置试验、性能改进和性能分析工具。
-- 版本 1904.1 是最新正式版 - 用于提高网关插件稳定性的维护更新。
+- 版本 1904.1 是用于提高网关插件稳定性的维护更新。
 - 版本 [1904](https://aka.ms/wac1904) 是引入了 Azure 混合服务工具的正式版，它将以前在预览版中提供的功能添加到了正式版频道。
 - 版本 [1903](https://aka.ms/wac1903) 添加了从 Azure Monitor 发送电子邮件通知、从 Active Directory 添加服务器或电脑连接的功能，以及用于管理 Active Directory、DHCP 和 DNS 的新工具。
 - 版本 [1902](https://aka.ms/wac1902) 在软件定义的网络 (SDN) 管理中添加了共享连接列表和改进，包括用于管理 ACL、网关连接和逻辑网络的新 SDN 工具。
