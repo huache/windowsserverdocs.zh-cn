@@ -19,7 +19,7 @@ ms.locfileid: "71364745"
 ---
 # <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>应将副本服务器配置为标识有权发送复制流量的特定主服务器
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -39,11 +39,11 @@ ms.locfileid: "71364745"
 *所有主服务器的复制存储在一个位置，这可能会导致隐私或安全问题。*  
   
 ## <a name="resolution"></a>分辨率  
-@no__t 0Use Hyper-v 管理器，为特定的主服务器创建新的授权条目，并为每个服务器指定不同的存储位置。对于每个授权条目，可以使用通配符将主服务器分组到集。 *  
+*使用 Hyper-v 管理器为特定的主服务器创建新的授权条目，并为每个服务器指定不同的存储位置。您可以使用通配符将主服务器组合到每个授权条目的集合中。*  
   
 #### <a name="create-authorization-entries-using-hyper-v-manager"></a>使用 Hyper-v 管理器创建授权条目  
   
-1.  打开 Hyper-V 管理器。 （从服务器管理器中，单击 "**工具**"  >  "**hyper-v 管理器**"。）  
+1.  打开 Hyper-V 管理器。 （从服务器管理器中，单击 "**工具**" > **hyper-v 管理器**"。）  
   
 2.  在主机列表中，右键单击所需的主机，然后单击 " **Hyper-v 设置**"。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "71364745"
   
     -   指定一个专用位置以仅存储该服务器的文件。  
   
-7.  单击 **“确定”** 。  
+7.  单击**确定**。  
   
 8.  为每个主服务器重复上述步骤。  
   
@@ -83,7 +83,7 @@ ms.locfileid: "71364745"
 New-VMReplicationAuthorizationEntry server01.domain01.contoso.com D:\ReplicaVMStorage DEFAULT  
 ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [新-New-vmreplicationauthorizationentry](https://technet.microsoft.com/library/hh848606.aspx)  
   
 

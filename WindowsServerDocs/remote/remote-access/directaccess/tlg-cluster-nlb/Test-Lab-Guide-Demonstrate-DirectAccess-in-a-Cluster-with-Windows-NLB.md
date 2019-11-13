@@ -19,11 +19,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71388427"
 ---
-# <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>测试实验指南：使用 Windows NLB 在群集中演示 DirectAccess
+# <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>测试实验室指南：在采用 Windows NLB 的群集中演示 DirectAccess
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-远程访问是 Windows Server 2016 中的一种服务器角色，Windows Server 2012 R2 和 microsoft Server 2012 操作系统，使远程用户可以使用 DirectAccess 或 RRAS VPN 安全访问内部网络资源。 本指南包含扩展 @no__t 实验室指南的分步说明：演示具有混合 IPv4 和 IPv6 @ no__t 的 DirectAccess 单服务器安装程序，以演示 DirectAccess 网络负载平衡和群集配置。  
+远程访问是 Windows Server 2016 中的一种服务器角色，Windows Server 2012 R2 和 microsoft Server 2012 操作系统，使远程用户可以使用 DirectAccess 或 RRAS VPN 安全访问内部网络资源。 本指南包含扩展 [测试实验室指南：演示混合使用 IPv4 和 IPv6 的 DirectAccess 单个服务器安装](https://go.microsoft.com/fwlink/p/?LinkId=237004) 的分步指导，以演示 DirectAccess 网络负载平衡和群集配置。  
   
 ## <a name="about-this-guide"></a>关于本指南  
 本指南包含使用六个服务器和两个客户端计算机配置和演示远程访问的指导。 使用 NLB 完成的远程访问测试实验室模拟内网、Internet 和家庭网络，并演示远程访问在不同 Internet 连接方案中的功能。  
@@ -34,7 +34,7 @@ ms.locfileid: "71388427"
 ## <a name="KnownIssues"></a>已知问题  
 下面是配置群集方案时的已知问题：  
   
--   使用单个网络适配器在仅使用 IPv4 的部署中配置 DirectAccess，并在网络适配器上自动配置默认的 DNS64（包含“:3333::”的 IPv6 地址）后，尝试通过远程访问管理控制台启用负载平衡会导致出现要求用户提供 IPv6 DIP 的提示。 如果提供的是 IPv6 DIP，则单击“提交”后配置将失败，并出现以下错误：参数不正确。  
+-   使用单个网络适配器在仅使用 IPv4 的部署中配置 DirectAccess，并在网络适配器上自动配置默认的 DNS64（包含“:3333::”的 IPv6 地址）后，尝试通过远程访问管理控制台启用负载平衡会导致出现要求用户提供 IPv6 DIP 的提示。 如果提供 IPv6 DIP，则单击“提交” 后配置将失败，并出现以下错误：参数不正确。  
   
     解决此问题：  
   

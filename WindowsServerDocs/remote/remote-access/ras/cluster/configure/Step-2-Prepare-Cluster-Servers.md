@@ -85,7 +85,7 @@ ms.locfileid: "71367406"
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [步骤 3：配置负载平衡群集 @ no__t-0  
+-   [步骤3：配置负载平衡的群集](Step-3-Configure-a-Load-Balanced-Cluster.md)  
   
 
 

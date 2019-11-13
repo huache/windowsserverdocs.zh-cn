@@ -17,17 +17,17 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71361690"
 ---
-# <a name="step-3-approve-and-deploy-updates-in-wsus"></a>步骤 3:在 WSUS 中批准和部署更新
+# <a name="step-3-approve-and-deploy-updates-in-wsus"></a>步骤 3：在 WSUS 中批准和部署更新
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在计算机组中的计算机每隔 24 个小时就自动联系 WSUS 服务器以获取更新。 你可使用 WSUS 报告功能来确定是否将那些更新部署到测试计算机中。 当测试顺利完成时，你可为组织中的相关计算机组批准更新。 以下清单描述了使用 WSUS 管理控制台批准和部署更新的步骤。
 
 |任务|描述|
 |----|--------|
-|[3.1。批准和部署 WSUS 更新 @ no__t-0|使用 WSUS 管理控制台批准和部署 WSUS 更新。|
-|[3.2。配置自动批准规则 @ no__t-0|配置 WSUS 以自动为所选组审批更新的安装以及如何审批对现有更新的修订。|
-|[3.3。查看已安装的更新与 WSUS 报表 @ no__t-0|使用 WSUS 报告功能，查看安装的更新、收到那些更新的计算机及其他详细信息。|
+|[3.1. 批准和部署 WSUS 更新](3-approve-and-deploy-updates-in-wsus.md#BKM_3.1.)|使用 WSUS 管理控制台批准和部署 WSUS 更新。|
+|[3.2. 配置自动批准规则](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|配置 WSUS 以自动为所选组审批更新的安装以及如何审批对现有更新的修订。|
+|[3.3. 查看与 WSUS 报表一起安装的更新](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|使用 WSUS 报告功能，查看安装的更新、收到那些更新的计算机及其他详细信息。|
 
 ## <a name="BKM_3.1."></a>3.1。 批准和部署 WSUS 更新
 使用以下过程批准和部署更新。
@@ -69,7 +69,7 @@ ms.locfileid: "71361690"
 
 5.  在 "**步骤2：编辑属性**" 中，单击列出的每个选项，然后为每个选项选择适当的选项。
 
-6.  在 **Step 3：指定一个名称 @ no__t，键入规则的名称，然后单击 **"确定"** 。
+6.  在 "**步骤3：指定名称**" 中，键入规则的名称，然后单击 **"确定"** 。
 
 7.  单击“确定” 以关闭“自动审批”对话框。
 

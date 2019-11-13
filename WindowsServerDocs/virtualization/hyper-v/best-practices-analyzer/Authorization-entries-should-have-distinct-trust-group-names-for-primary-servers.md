@@ -19,7 +19,7 @@ ms.locfileid: "71366536"
 ---
 # <a name="authorization-entries-should-have-distinct-trust-group-names-for-primary-servers-with-virtual-machines-that-are-not-part-of-the-same-trust-group"></a>对于包含不属于同一信任组的虚拟机的主服务器，授权条目应具有不同的信任组名称
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,10 +36,10 @@ ms.locfileid: "71366536"
 *服务器将从与虚拟机相同的复制标记相关联的授权列表中的任何服务器接受对副本虚拟机的复制请求。*  
   
 ## <a name="impact"></a>**对**  
-对于从属于不同授权条目的主服务器进行复制的虚拟机，@no__t 0There 可能是隐私和安全问题。这会影响以下授权条目： \<list of authorization > *  
+*从属于不同授权条目的主服务器接收复制的虚拟机可能存在隐私和安全问题。这会影响以下授权条目： \<授权条目列表 >*  
   
 ## <a name="resolution"></a>**解决方法**  
-*Use 不属于同一安全组的虚拟机的主服务器的授权条目中的不同标记。修改 Hyper-v 设置以配置复制标记。*  
+*使用不属于同一安全组的虚拟机的主服务器的授权条目中的不同标记。修改 Hyper-v 设置以配置复制标记。*  
   
 
 

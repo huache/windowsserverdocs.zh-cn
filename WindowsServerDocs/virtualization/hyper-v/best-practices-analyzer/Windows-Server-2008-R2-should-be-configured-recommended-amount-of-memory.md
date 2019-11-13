@@ -19,7 +19,7 @@ ms.locfileid: "71393174"
 ---
 # <a name="windows-server-2008-r2-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2008 R2 应配置为建议的内存量
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳实践和扫描的详细信息，请参阅 [最佳实践分析程序](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
@@ -38,9 +38,9 @@ ms.locfileid: "71393174"
   
 ## <a name="impact"></a>影响  
   
-@no__t 0The 来宾操作系统和应用程序可能无法正常运行。可能没有足够的内存可同时运行多个应用程序。这会影响以下虚拟机： *  
+*来宾操作系统和应用程序可能无法正常运行。可能没有足够的内存可同时运行多个应用程序。这会影响以下虚拟机：*  
   
-@no__t-虚拟机名称的 0list >  
+虚拟机名称 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
   
@@ -70,7 +70,7 @@ ms.locfileid: "71393174"
 Set-VMMemory <MyVM> -StartupBytes 2GB  
 ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

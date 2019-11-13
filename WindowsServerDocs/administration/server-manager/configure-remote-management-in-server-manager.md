@@ -22,7 +22,7 @@ ms.locfileid: "71383208"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>在服务器管理器中配置远程管理
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 Windows Server 中，你可以使用服务器管理器在远程服务器上执行管理任务。 默认情况下，在运行 Windows Server 2016 的服务器上启用远程管理。 若要使用服务器管理器远程管理服务器，请将服务器添加到服务器管理器服务器池。
 
@@ -32,9 +32,9 @@ ms.locfileid: "71383208"
 
 |操作系统|所需软件|可管理性|
 |----------|-----------|---------|
-| Windows Server 2012 R2 或 Windows Server 2012 |-   [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=45497)<br />@no__t 0[Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)。 Windows Management Framework 5.0 下载包更新 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 上的 Windows Management Instrumentation （WMI）提供程序。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的服务器的可管理性状态为 "**无法访问**"。<br />-在运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器上不再需要与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)关联的性能更新。||
-| Windows Server 2008 R2 |-   [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)<br />@no__t 0[Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)。 Windows Management Framework 4.0 下载包更新 Windows Management Instrumentation （WMI）提供程序（在 Windows Server 2008 R2 上）。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 R2 的服务器的可管理性状态为 "**无法访问**"。<br />-与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相关的性能更新允许服务器管理器从 Windows Server 2008 R2 收集性能数据。||
-| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />@no__t 0[Windows Management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) ： Windows management framework 3.0 下载包更新 windows Server 2008 上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）提供程序。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 的服务器的可管理性状态为 "**无法访问"-验证早期版本是否运行 Windows Management Framework 3.0**。<br />-与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相关的性能更新允许服务器管理器从 Windows Server 2008 收集性能数据。||
+| Windows Server 2012 R2 或 Windows Server 2012 |-   [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)。 Windows Management Framework 5.0 下载包更新 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 上的 Windows Management Instrumentation （WMI）提供程序。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的服务器的可管理性状态为 "**无法访问**"。<br />-在运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器上不再需要与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)关联的性能更新。||
+| Windows Server 2008 R2 |-   [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)。 Windows Management Framework 4.0 下载包更新 Windows Management Instrumentation （WMI）提供程序（在 Windows Server 2008 R2 上）。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 R2 的服务器的可管理性状态为 "**无法访问**"。<br />-与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相关的性能更新允许服务器管理器从 Windows Server 2008 R2 收集性能数据。||
+| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   windows [Management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) ： Windows management framework 3.0 下载包更新 windows Server 2008 上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）提供程序。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 的服务器的可管理性状态为 "**无法访问"-验证早期版本是否运行 Windows Management Framework 3.0**。<br />-与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相关的性能更新允许服务器管理器从 Windows Server 2008 收集性能数据。||
 
 有关如何添加工作组中要管理的服务器或从运行服务器管理器的工作组计算机管理远程服务器的详细信息，请参阅[将服务器添加到服务器管理器](add-servers-to-server-manager.md)。
 
@@ -43,7 +43,7 @@ ms.locfileid: "71383208"
 
 即使已启用远程管理，内置管理员帐户之外的本地管理员帐户也可能不具有远程管理服务器的权限。 必须将远程用户帐户控制（UAC） **LocalAccountTokenFilterPolicy**注册表设置配置为允许除内置管理员帐户之外的管理员组的本地帐户远程管理服务器。
 
-在 Windows Server 2016 中，服务器管理器依赖于 Windows 远程管理（WinRM）和分布式组件对象模型（DCOM）进行远程通信。 "**配置远程管理**" 对话框所控制的设置只会影响使用 WinRM 进行远程通信的服务器管理器和 Windows PowerShell 部分。 它们不会影响使用 DCOM 进行远程通信的服务器管理器部分。 例如，服务器管理器使用 WinRM 与运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的远程服务器进行通信，但使用 DCOM 与运行 Windows Server 2008 和 Windows Server 2008 R2 的服务器进行通信，但尚未应用[Windows Management framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)或[windows management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)更新。 Microsoft 管理控制台（mmc）和其他旧管理工具使用 DCOM。 有关如何更改这些设置的详细信息，请参阅本主题中的[对通过 DCOM 的 mmc 或其他工具远程管理进行配置](#to-configure-mmc-or-other-tool-remote-management-over-dcom)。
+在 Windows Server 2016 中，服务器管理器依赖于 Windows 远程管理（WinRM）和分布式组件对象模型（DCOM）进行远程通信。 "**配置远程管理**" 对话框所控制的设置只会影响使用 WinRM 进行远程通信的服务器管理器和 Windows PowerShell 部分。 它们不会影响使用 DCOM 进行远程通信的服务器管理器部分。 例如，服务器管理器使用 WinRM 与运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的远程服务器进行通信，但使用 DCOM 与运行 Windows Server 2008 和 Windows Server 2008 R2 的服务器进行通信，但未应用[Windows Management framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)或[windows management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)更新。 Microsoft 管理控制台（mmc）和其他旧管理工具使用 DCOM。 有关如何更改这些设置的详细信息，请参阅本主题中的[对通过 DCOM 的 mmc 或其他工具远程管理进行配置](#to-configure-mmc-or-other-tool-remote-management-over-dcom)。
 
 > [!NOTE]
 > 本部分中的过程只能在运行 Windows Server 的计算机上完成。 无法在运行 Windows 10 的计算机上启用或禁用远程管理，因为不能使用服务器管理器管理客户端操作系统。
@@ -159,14 +159,14 @@ ms.locfileid: "71383208"
 
 ### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>在无人参与安装期间使用应答文件禁用远程管理的步骤
 
-1.  使用 Windows 系统映像管理器（Windows SIM）为 Windows Server 2016 安装创建无人参与安装答案文件。 有关如何创建应答文件和使用 Windows SIM 的详细信息，请参阅[什么是 Windows 系统映像管理器？](https://technet.microsoft.com/library/cc766347.aspx)和 @no__t 1Step）：适用于 IT 专业人员的基本 Windows 部署 @ no__t-0。
+1.  使用 Windows 系统映像管理器（Windows SIM）为 Windows Server 2016 安装创建无人参与安装答案文件。 有关如何创建应答文件和使用 Windows SIM 的详细信息，请参阅 [什么是 Windows 系统映像管理器？](https://technet.microsoft.com/library/cc766347.aspx) 和 [循序渐进：适用于 IT 专业人士的 Windows 基本部署](https://technet.microsoft.com/library/dd349348.aspx)。
 
 2.  在答案文件中，找到 " **Microsoft-Windows-Web-Services-for-Management-Core\EnableServerremoteManagement**" 设置。
 
 3.  若要在要将答案文件应用到的所有服务器上默认禁用服务器管理器远程管理，请将**enableserverremotemanagement**设置为**False**。
 
     > [!NOTE]
-    > 此设置将禁止远程管理作为操作系统设置过程的一部分。 配置此设置不会阻止管理员在操作系统设置完成后启用服务器上服务器管理器远程管理。 管理员可以通过使用[windows 界面配置服务器管理器远程管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)中的步骤来再次启用服务器管理器远程管理，或使用[windows PowerShell 在此中启用服务器管理器远程](#to-enable-server-manager-remote-management-by-using-windows-powershell)管理标题.
+    > 此设置将禁止远程管理作为操作系统设置过程的一部分。 配置此设置不会阻止管理员在操作系统设置完成后启用服务器上服务器管理器远程管理。 管理员可以通过使用[windows 界面配置服务器管理器远程管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)或使用 windows PowerShell 在本主题中[启用服务器管理器远程](#to-enable-server-manager-remote-management-by-using-windows-powershell)管理，使用中的步骤来再次启用服务器管理器远程管理。
     > 
     > 如果默认情况下禁用远程管理作为无人参与安装的一部分，并且安装完成后不在该服务器上启用远程管理，则无法使用服务器管理器完全管理此应答文件应用到的服务器。 在将服务器管理器控制台添加到服务器管理器服务器后，运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （并且默认禁用了远程管理）的服务器将在控制台中生成可管理性状态错误。池子.
 
@@ -187,9 +187,10 @@ ms.locfileid: "71383208"
 
 有关如何配置 WinRM 侦听器设置的详细信息，请在命令提示符下键入**WinRM help config**，然后按 enter。
 
-## <a name="see-also"></a>请参阅
-[将服务器添加到服务器管理器](add-servers-to-server-manager.md)@no__t[Windows PowerShell： Windows Server 技术中心上的 about_remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx)
- 有关[用户帐户控制的说明](https://support.microsoft.com/kb/951016)
+## <a name="see-also"></a>另请参阅
+[将服务器添加到服务器管理器](add-servers-to-server-manager.md)
+[Windows PowerShell： Windows Server 技术中心上的 About_remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx)
+[用户帐户控制的说明](https://support.microsoft.com/kb/951016)
 
 
 

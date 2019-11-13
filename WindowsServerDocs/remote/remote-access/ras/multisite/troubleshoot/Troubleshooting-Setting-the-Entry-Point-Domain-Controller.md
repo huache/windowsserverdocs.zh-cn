@@ -31,11 +31,11 @@ ms.locfileid: "71367047"
 若要解决此错误，请参阅保存服务器 GPO 设置。  
   
 ## <a name="remote-access-is-not-configured"></a>未配置远程访问  
-**接收到错误**。 < Server_name > 上未配置远程访问。 请指定属于多站点部署的服务器的名称。  
+**接收到错误**。 未在 < server_name > 上配置远程访问。 请指定属于多站点部署的服务器的名称。  
   
 或  
   
-服务器 < server_name > 上未配置远程访问。 请指定启用了 DirectAccess 的计算机。  
+未在服务器上配置远程访问 < server_name >。 请指定启用了 DirectAccess 的计算机。  
   
 **原因**  
   
@@ -71,7 +71,7 @@ Cmdlet `Set-DaEntryPointDC` 缺少所需的全部参数。
   
 **原因**  
   
-没有为 @no__t cmdlet 指定*EntryPointName*或*ExistingDC*参数，或同时指定了这两个参数。  
+没有为 `Set-DaEntryPointDC` cmdlet 指定*EntryPointName*或*ExistingDC*参数，或同时指定了这两个参数。  
   
 **解决方案**  
   
@@ -116,7 +116,7 @@ Cmdlet `Set-DaEntryPointDC` 缺少所需的全部参数。
   
 -   **问题3**  
   
-    **接收到错误**。 对于% 2！ s！，无法访问域控制器 < domain_controller >。  
+    **接收到错误**。 %2！ s！无法访问域控制器 < domain_controller >。  
   
     **原因**  
   
@@ -124,11 +124,11 @@ Cmdlet `Set-DaEntryPointDC` 缺少所需的全部参数。
   
     **解决方案**  
   
-    按照 [2.4 中所述的过程 "更改管理服务器 Gpo 的域控制器"。配置 Gpo @ no__t。  
+    按照2.4 中所述的步骤 "更改管理服务器 Gpo 的域控制器" [。配置 Gpo](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。  
   
 -   **问题4**  
   
-    **接收到错误**。 无法访问域 < domain_name > 中的主域控制器。  
+    **接收到错误**。 无法访问域 < domain_name > 的主域控制器。  
   
     **原因**  
   
@@ -136,10 +136,10 @@ Cmdlet `Set-DaEntryPointDC` 缺少所需的全部参数。
   
     **解决方案**  
   
-    按照 [2.4 中所述的 "传输 PDC 仿真器角色" 过程进行操作。配置 Gpo @ no__t。  
+    按照2.4 中所述的过程 "传输 PDC 模拟器角色" [。配置 Gpo](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。  
   
 ## <a name="read-only-domain-controller"></a>只读域控制器  
-**接收到错误**。 < Domain_controller > 的域控制器是只读的。 请指定一个非只读域控制器。  
+**接收到错误**。 域控制器 < domain_controller > 为只读。 请指定一个非只读域控制器。  
   
 **原因**  
   
@@ -153,7 +153,7 @@ Cmdlet `Set-DaEntryPointDC` 缺少所需的全部参数。
   
 -   **问题1**  
   
-    **接收到错误**。 无法从域控制器 < replacement_domain_controller > 检索域 > < 控制器上的 GPO < GPO_name >，因为它们不在同一域中。  
+    **接收到错误**。 域控制器上的 GPO < GPO_name > 不 < previous_domain_controller > < replacement_domain_controller >，因为它们不在同一域中。  
   
     **原因**  
   
@@ -165,7 +165,7 @@ Cmdlet `Set-DaEntryPointDC` 缺少所需的全部参数。
   
 -   **问题2**  
   
-    **接收到错误**。 无法从域控制器 < replacement_domain_controller > 检索域控制器 < previous_domain_controller > 上的 GPO < GPO_name >。 请在域复制完成后再重试一次。  
+    **接收到错误**。 域 < 控制器上的 GPO < GPO_name > 无法从域控制器 previous_domain_controller > < 检索 replacement_domain_controller >。 请在域复制完成后再重试一次。  
   
     **原因**  
   
@@ -188,7 +188,7 @@ Cmdlet `Set-DaEntryPointDC` 缺少所需的全部参数。
     GPO 存在于域控制器上，但无法读取。 确保你拥有所需权限，然后重试一次。  
   
 ## <a name="entry-point-not-part-of-multisite-deployment"></a>入口点不是多站点部署的一部分  
-**接收到错误**。 Entry_point_name > < 入口点不是多站点部署的一部分。 请指定其他值。  
+**接收到错误**。 入口点 < entry_point_name > 不是多站点部署的一部分。 请指定其他值。  
   
 **原因**  
   
@@ -202,7 +202,7 @@ Cmdlet `Set-DaEntryPointDC` 缺少所需的全部参数。
   
 -   **问题1**  
   
-    **接收到错误**。 服务器 < server_name > 入口点 < entry_point_name > 无法访问。  
+    **接收到错误**。 不能访问 < 入口点 server_name > < entry_point_name > 的服务器。  
   
     **原因**  
   
@@ -214,7 +214,7 @@ Cmdlet `Set-DaEntryPointDC` 缺少所需的全部参数。
   
 -   **问题2**  
   
-    **接收到错误**。 在入口点 < entry_point_name > 中，无法将设置保存到服务器 < server_name > 上的注册表中。  
+    **接收到错误**。 无法将设置保存到服务器 < 上的注册表中 server_name > 入口点 < entry_point_name >。  
   
     **原因**  
   
@@ -237,7 +237,7 @@ Cmdlet `Set-DaEntryPointDC` 缺少所需的全部参数。
     使用远程访问管理控制台的 **“仪表板”** 中的 **“配置状态”** ，可以查看所更新的任何服务器。 这不会引发任何功能性问题；然而，你可以在任何未更新的服务器上运行 `gpupdate /force`，以立即更新配置状态。  
   
 ## <a name="problem-resolving-fqdn"></a>解析 FQDN 时出现问题  
-**接收到错误**。 服务器 < server_name > 入口点 < entry_point_name > 无法访问。  
+**接收到错误**。 不能访问 < 入口点 server_name > < entry_point_name > 的服务器。  
   
 **原因**  
   

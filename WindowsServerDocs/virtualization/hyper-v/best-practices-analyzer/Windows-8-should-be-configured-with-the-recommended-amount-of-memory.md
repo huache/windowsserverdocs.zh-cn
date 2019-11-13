@@ -19,7 +19,7 @@ ms.locfileid: "71364501"
 ---
 # <a name="windows-8-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 8 应配置为建议的内存量
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
   
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,7 +36,7 @@ ms.locfileid: "71364501"
 *运行 Windows 8 的虚拟机配置为小于建议的 RAM 量，即 1 GB。*  
   
 ## <a name="impact"></a>**对**  
-@no__t 0The 来宾操作系统和应用程序可能无法正常运行。可能没有足够的内存可同时运行多个应用程序。这会影响以下虚拟机： *  
+*来宾操作系统和应用程序可能无法正常运行。可能没有足够的内存可同时运行多个应用程序。这会影响以下虚拟机：*  
 ```  
 <list of virtual machines>  
 ```  
@@ -67,7 +67,7 @@ ms.locfileid: "71364501"
 Set-VMMemory <MyVM> -StartupBytes 1GB  
 ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

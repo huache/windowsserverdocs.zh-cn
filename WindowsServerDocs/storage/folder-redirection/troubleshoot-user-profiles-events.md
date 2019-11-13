@@ -17,11 +17,11 @@ ms.locfileid: "71394379"
 ---
 # <a name="troubleshoot-user-profiles-with-events"></a>对包含事件的用户配置文件进行故障排除
 
->适用于：Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 和 Windows Server （半年频道）。
+>适用于： Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 和 Windows Server （半年频道）。
 
 本主题讨论如何使用事件和跟踪日志排查加载和卸载用户配置文件的问题。 以下部分介绍如何使用记录用户配置文件信息的三个事件日志。
 
-## <a name="step-1-checking-events-in-the-application-log"></a>第 1 步：检查应用程序日志中的事件
+## <a name="step-1-checking-events-in-the-application-log"></a>步骤1：检查应用程序日志中的事件
 
 排查加载和卸载用户配置文件（包括漫游用户配置文件）问题的第一步是使用事件查看器来检查用户配置文件服务在应用程序日志中记录的任何警告和错误事件。
 
@@ -38,7 +38,7 @@ ms.locfileid: "71394379"
 >[!NOTE]
 >你可以放心地忽略用户配置文件服务事件 1530 "Windows 检测到你的注册表文件仍在由其他应用程序或服务使用"。
 
-## <a name="step-2-view-the-operational-log-for-the-user-profile-service"></a>步骤 2：查看用户配置文件服务的操作日志
+## <a name="step-2-view-the-operational-log-for-the-user-profile-service"></a>步骤2：查看用户配置文件服务的操作日志
 
 如果无法使用单独的应用程序日志来解决问题，请使用以下过程在操作日志中查看用户配置文件服务事件。 此日志显示服务的一些内部工作原理，并可帮助确定在配置文件加载或卸载过程中出现问题的位置。
 
@@ -49,7 +49,7 @@ ms.locfileid: "71394379"
 1. 在事件查看器控制台树中，依次导航到 "**应用程序和服务日志**"、" **Microsoft**"、" **Windows**"、"**用户配置文件服务**"，然后 "**操作**"。
 2. 检查在应用程序日志中记下的错误或警告事件前后发生的事件。
 
-## <a name="step-3-enable-and-view-analytic-and-debug-logs"></a>步骤 3:启用和查看分析日志和调试日志
+## <a name="step-3-enable-and-view-analytic-and-debug-logs"></a>步骤3：启用并查看分析日志和调试日志
 
 如果需要比操作日志提供的详细信息，可以在受影响的计算机上启用分析日志和调试日志。 此级别的日志记录更详细，应禁用，除非尝试解决问题。
 
@@ -58,10 +58,10 @@ ms.locfileid: "71394379"
 1. 在事件查看器的 "**操作**" 窗格中，选择 "**视图**"，然后选择 "**显示分析和调试日志**"。
 2. 依次导航到 "**应用程序和服务日志**"、" **Microsoft**"、" **Windows**"、"**用户配置文件服务**" 和 "**诊断**"。
 3. 选择 "**启用日志**"，然后选择 **"是"** 。 这将启用诊断日志，这将启动日志记录。
-4. 如果需要更详细的信息，请参阅 [Step 4：创建和解码跟踪 @ no__t-0 获取有关如何创建跟踪日志的详细信息。
+4. 如果需要更详细的信息，请参阅[步骤4：创建和解码跟踪](#step-4-creating-and-decoding-a-trace)，了解有关如何创建跟踪日志的详细信息。
 5. 解决问题后，请导航到**诊断**日志，选择 "**禁用日志**"，选择 "**查看**"，然后清除 "**显示分析和调试日志**" 复选框以隐藏分析和调试日志记录。
 
-## <a name="step-4-creating-and-decoding-a-trace"></a>步骤 4：创建和解码跟踪
+## <a name="step-4-creating-and-decoding-a-trace"></a>步骤4：创建和解码跟踪
 
 如果无法使用事件解决该问题，可以在重现该问题时创建跟踪日志（ETL 文件），然后使用 Microsoft 符号服务器中的公共符号对其进行解码。 跟踪日志提供有关用户配置文件服务正在进行的操作的非常具体的信息，并且可以帮助确定发生故障的位置。
 
@@ -70,7 +70,7 @@ ms.locfileid: "71394379"
 下面介绍如何为用户配置文件服务创建和解码跟踪：
 
 1. 使用属于本地管理员组成员的帐户登录到用户遇到问题的计算机。
-2. 在提升的命令提示符下，输入以下命令，其中 *\<Path @ no__t-2*是之前创建的本地文件夹的路径，例如，C： \\logs：
+2. 在提升的命令提示符下，输入以下命令，其中 *\<路径\>* 是你之前创建的本地文件夹的路径，例如，C：\\日志：
         
     ```PowerShell
     logman create trace -n RUP -o <Path>\RUP.etl -ets
@@ -84,7 +84,7 @@ ms.locfileid: "71394379"
     ```PowerShell
     logman stop -n RUP -ets
     ```
-7. 键入以下命令，将 ETL 文件导出到当前目录中的可读文件（可能是主文件夹或% WINDIR% \\System32 文件夹）：
+7. 键入以下命令，将 ETL 文件导出到当前目录中的可读文件（可能是主文件夹或% WINDIR%\\System32 文件夹）：
     
     ```PowerShell
     Tracerpt <path>\RUP.etl

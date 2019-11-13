@@ -18,7 +18,7 @@ ms.locfileid: "71408595"
 ---
 # <a name="audit-policy-recommendations"></a>审核策略建议
 
->适用于：Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 10，Windows 8.1，Windows 7
+>适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Windows 8.1、Windows 7
 
 本部分介绍了 Windows 默认审核策略设置、基线建议的审核策略设置，以及 Microsoft 提供的更积极的建议，适用于工作站和服务器产品。  
 
@@ -257,7 +257,7 @@ ms.locfileid: "71408595"
 
 Aberrant 失败的登录次数可能表明存在密码猜测攻击。 为了使企业能够为发生异常大量失败的登录提供警报，在出现恶意安全事件之前，他们必须首先了解其环境中的失败登录的正常级别。  
 
-有关监视泄露迹象时应包括的事件的完整列表，请参阅 [Appendix L：监视 @ no__t 的事件。  
+有关监视泄露迹象时应包括的事件的完整列表，请参阅[附录 L：要监视的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)。  
 
 ## <a name="active-directory-objects-and-attributes-to-monitor"></a>要监视的 Active Directory 对象和属性  
 下面是你应该监视的帐户、组和属性，以帮助检测对 Active Directory 域服务安装的破坏尝试。  
@@ -270,11 +270,11 @@ Aberrant 失败的登录次数可能表明存在密码猜测攻击。 为了使�
 
 -   AD DS 中的特权和 VIP 帐户。 监视更改，尤其是对 "帐户" 选项卡上的属性的更改（例如，cn、name、sAMAccountName、userPrincipalName 或 userAccountControl）。 除了监视帐户之外，还可以将帐户的修改权限限制为尽可能少的一组管理用户。  
 
-请参阅 [Appendix L：监视 @ no__t 的事件-0 表示要监视的建议事件的列表、其重要级别和事件消息摘要。  
+有关要监视的建议事件的列表、其重要程度和事件消息摘要，请参阅[附录 L：要监视的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)。  
 
 -   按服务器的工作负荷分类对服务器进行分组，这使你能够快速确定应该最密切监视的服务器和最得到配置的服务器  
 
--   更改以下 AD DS 组的属性和成员身份：Enterprise Admins （EA）、Domain Admins （DA）、Administrators （BA）和 Schema Admins （SA）  
+-   更改以下 AD DS 组的属性和成员身份：企业管理员（EA）、域管理员（DA）、管理员（BA）和架构管理员（SA）  
 
 -   禁用的特权帐户（如 Active Directory 和成员系统中的内置管理员帐户），用于启用帐户  
 
@@ -298,12 +298,12 @@ Aberrant 失败的登录次数可能表明存在密码猜测攻击。 为了使�
 ## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>安全事件 ID 建议重要性的常规列表  
 所有事件 ID 建议均伴随着严重级别，如下所示：  
 
-**严重**具有高严重性级别的事件 Id 应始终和立即发出警报并进行调查。  
+**高：** 具有高严重性级别的事件 Id 应始终和立即发出警报并进行调查。  
 
-**Medium**具有中等重要性级别的事件 ID 可能表示恶意活动，但它必须附带一些其他异常情况（例如，在特定时间段内发生的异常数字、意外的出现次数或计算机上出现的错误通常不会记录该事件。） 在一段时间内，也可以将 r 作为一个指标收集，并进行比较。  
+**中：** 具有中等重要性级别的事件 ID 可能表明存在恶意活动，但它必须附带一些其他异常情况（例如，在特定时间段内发生的异常数字、意外的出现次数或通常不应记录事件的计算机上出现的情况）。） 在一段时间内，也可以将 r 作为一个指标收集，并进行比较。  
 
-**低级**具有低关键性事件的事件 ID 不应 garner 关注或导致警报，除非与中型或高严重性事件相关。  
+**低：** 具有低关键性事件的事件 ID 不应 garner 关注或导致警报，除非与中型或高严重性事件相关。  
 
 这些建议旨在为管理员提供基线指南。 在生产环境中实现之前，应仔细检查所有建议。  
 
-请参阅 [Appendix L：监视 @ no__t 的事件-0 表示要监视的建议事件的列表、其重要级别和事件消息摘要。  
+请参阅[附录 L：要监视的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)列表，查看要监视的建议事件的列表、关键程度级别和事件消息摘要。  

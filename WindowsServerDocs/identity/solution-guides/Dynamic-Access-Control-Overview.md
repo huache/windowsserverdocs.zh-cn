@@ -92,7 +92,7 @@ Windows Server 2012 和 Windows 8 之前的 Windows 操作系统不支持动态�
 ### <a name="support-in-active-directory-to-store-user-and-device-claims-resource-properties-and-central-access-policy-objects"></a>支持在 Active Directory 中存储用户和设备声明、资源属性和中心访问策略对象。  
   
 ### <a name="support-for-using-group-policy-to-deploy-central-access-policy-objects"></a>支持使用组策略部署中心访问策略对象。  
-以下组策略设置使你能够将中心访问策略对象部署到组织中的文件服务器：**Computer Configuration\Policies\ Windows 设置 \ 安全设置 Settings\File System\Central 访问策略**。  
+下面的组策略设置允许你向组织的文件服务器部署中心访问策略对象：**计算机配置\策略\Windows 设置\安全设置\文件系统\中心访问策略**。  
   
 ### <a name="support-for-claims-based-file-authorization-and-auditing-for-file-systems-by-using-group-policy-and-global-object-access-auditing"></a>支持通过使用组策略和全局对象访问审核对文件系统进行基于声明的文件授权和审核  
 你必须通过使用计划权限，允许阶段性的中心访问策略审核，审核对中心访问策略的有效访问。 在组策略对象 (GPO) 的“**安全设置**”中的“**高级审核策略配置**”下，为计算机配置这一设置。 在 GPO 中配置安全设置之后，可将 GPO 部署到网络中的计算机上。  
@@ -128,7 +128,7 @@ Windows Server 2012 和 Windows 8 之前的 Windows 操作系统不支持动态�
 运行 Windows Server 2012 或 Windows Server 2012 R2 的文件服务器必须具有一个组策略设置，该设置指定是否需要为不携带声明的用户令牌获取用户声明。 这一设置默认设为“**自动**”，这会导致当存在包含该文件服务器的用户和/或设备声明的中心策略时，“组策略”设置被“**开启**”。 如果文件服务器包含了包括用户声明的自定义 ACL，则必须将这个“组策略”设置为“**开启**”，这样服务器就知道代表访问服务器时不提供声明的用户请求声明。  
   
 ## <a name="additional-resource"></a>其他资源  
-有关基于此技术实施解决方案的信息，请参阅 @no__t 0Dynamic Access Control：方案概述 @ no__t。  
+有关基于此技术实现解决方案的信息，请参阅[动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)。  
   
 
 

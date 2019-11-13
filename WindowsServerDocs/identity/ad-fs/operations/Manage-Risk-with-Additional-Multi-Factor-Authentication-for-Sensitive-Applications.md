@@ -23,7 +23,7 @@ ms.locfileid: "71407527"
 
 -   [为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
--   [操作实例指南：利用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+-   [演练指南：利用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 
 -   [为 AD FS 配置其他身份验证方法](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
@@ -37,7 +37,7 @@ ms.locfileid: "71407527"
     > [!NOTE]
     > 在 Windows Server 2012 R2 的 AD FS 中，可以基于网络位置、设备标识和用户标识或组成员身份来启用 MFA。
 
-    有关配置和验证此方案的详细分步操作实例说明，请参阅 [Walkthrough Guide：利用适用于敏感应用程序](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)的附加多重身份验证管理风险。
+    有关配置和验证此方案的详细分步操作实例说明，请参阅[操作实例指南：使用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)。
 
 ## <a name="BKMK_1"></a>关键概念-AD FS 中的身份验证机制
 
@@ -51,7 +51,7 @@ Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS�
     -   针对无缝第二重身份验证启用设备身份验证。 这会将用户的标识绑定到用于访问资源的已注册设备，因此，在访问受保护的资源之前，可以提供更安全的复合身份验证。
 
         > [!NOTE]
-        > 有关设备对象、设备注册服务、Workplace Join 和设备作为无缝第二重身份验证和 SSO 的详细信息，请参阅[从任何设备加入工作区以实现 sso 和跨公司无缝第二重身份验证应用程序](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
+        > 有关设备对象、设备注册服务、Workplace Join 和设备作为无缝第二重身份验证和 SSO 的详细信息，请参阅[从任何设备加入工作区以实现 SSO 和跨公司应用程序的无缝第二重身份验证](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
     -   根据用户的标识、网络位置或用于访问受保护资源的设备，为所有 extranet 访问或有条件地设置 MFA 要求。
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS�
 
 -   MFA 的设置和方法
 
--   是否启用设备身份验证。 有关详细信息，请参阅[加入工作区以从任一设备实现 SSO 和无缝第二因素身份验证跨公司应用程序](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
+-   是否启用设备身份验证。 有关详细信息，请参阅 [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
 按信赖方信任身份验证策略专门应用到访问该信赖方信任（应用程序或服务）的企图。 可将以下设置配置为按信赖方信任身份验证策略的一部分：
 
@@ -94,7 +94,7 @@ Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS�
 还可以针对无缝第二重身份验证启用设备身份验证。 这会将用户的标识绑定到用于访问资源的已注册设备，因此，在访问受保护的资源之前，可以提供更安全的复合身份验证。
 
 > [!NOTE]
-> 有关设备对象、设备注册服务、Workplace Join 和设备作为无缝第二重身份验证和 SSO 的详细信息，请参阅[从任何设备加入工作区以实现 sso 和跨公司无缝第二重身份验证应用程序](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
+> 有关设备对象、设备注册服务、Workplace Join 和设备作为无缝第二重身份验证和 SSO 的详细信息，请参阅[从任何设备加入工作区以实现 SSO 和跨公司应用程序的无缝第二重身份验证](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
 如果为 Intranet 资源指定 Windows 身份验证方法（默认选项），身份验证请求将在支持 Windows 身份验证的浏览器上无缝运行此方法。
 
@@ -123,32 +123,33 @@ Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS�
 
 更具体地说，在此方案中，你将会针对名为 **claimapp** 的基于声明的测试应用程序启用一个身份验证策略，方案中的 AD 用户 **Robert Hatley** 需要运行 MFA，因为他属于 AD 组 **Finance**。
 
-@No__t-0Walkthrough Guide 中提供了设置和验证此方案的分步说明：利用适用于敏感应用程序](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)的附加多重身份验证管理风险。 若要完成本演练中的步骤，你必须设置一个实验室环境，并按照[为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中的步骤进行操作。
+[演练指南：使用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)中提供了设置和验证此方案的分步说明。 若要完成本演练中的步骤，你必须设置一个实验室环境，并按照[为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中的步骤进行操作。
 
 在 AD FS 中启用 MFA 的其他方案包括：
 
--   如果访问请求来自 Extranet，则启用 MFA。 您可以修改 [Walkthrough Guide 的 "设置 MFA 策略" 部分中显示的代码：针对敏感应用程序的附加多重身份验证管理风险 @ no__t-0，并提供以下内容：
+-   如果访问请求来自 Extranet，则启用 MFA。 您可以修改 "[演练指南：通过针对敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)" 部分的 "设置 MFA 策略" 部分中显示的代码，如下所示：
 
     ```
     'c:[type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn" );'
     ```
 
--   如果访问请求来自未加入工作区的设备，则启用 MFA。  您可以修改 [Walkthrough Guide 的 "设置 MFA 策略" 部分中显示的代码：针对敏感应用程序的附加多重身份验证管理风险 @ no__t-0，并提供以下内容：
+-   如果访问请求来自未加入工作区的设备，则启用 MFA。  您可以修改 "[演练指南：通过针对敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)" 部分的 "设置 MFA 策略" 部分中显示的代码，如下所示：
 
     ```
     'NOT EXISTS([type=="https://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid"]) => issue (type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn");'
 
     ```
 
--   如果访问请求来自某个用户，并且此用户的某个设备已加入工作区但尚未注册到此用户，则启用 MFA。 您可以修改 [Walkthrough Guide 的 "设置 MFA 策略" 部分中显示的代码：针对敏感应用程序的附加多重身份验证管理风险 @ no__t-0，并提供以下内容：
+-   如果访问请求来自某个用户，并且此用户的某个设备已加入工作区但尚未注册到此用户，则启用 MFA。 您可以修改 "[演练指南：通过针对敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)" 部分的 "设置 MFA 策略" 部分中显示的代码，如下所示：
 
     ```
     'c:[type=="https://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser", value == "false"] => issue (type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn");'
 
     ```
 
-## <a name="see-also"></a>请参阅
-[操作实例指南：利用适用于敏感应用程序的附加多重身份验证管理风险 @ no__t-0 @ no__t 为[Windows Server 2012 R2 中 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+## <a name="see-also"></a>另请参阅
+[演练指南：利用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+[在 Windows Server 2012 R2 中设置 AD FS 的实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

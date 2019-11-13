@@ -25,9 +25,9 @@ ms.locfileid: "71388596"
 
 本主题介绍了部署运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （带有基本功能）的单个 DirectAccess 服务器所需的规划步骤：  
   
-1.  [步骤 1：规划基本 DirectAccess 基础结构 @ no__t-计划网络和服务器拓扑、防火墙设置、证书要求、DNS 和 Active Directory。  
+1.  [步骤1：规划基本 DirectAccess 基础结构](da-basic-plan-s1-infrastructure.md)-规划网络和服务器拓扑、防火墙设置、证书要求、DNS 和 Active Directory。  
   
-2.  [步骤 2：规划基本 DirectAccess 部署 @ no__t-计划客户端和服务器部署。  
+2.  [步骤2：规划基本 DirectAccess 部署](da-basic-plan-s2-deployment.md)-规划客户端和服务器部署。  
   
 ## <a name="next-step"></a>下一步  
 完成这些规划步骤后，你可以开始进行服务器部署。 有关说明，请参阅[安装和配置基本 DirectAccess](Install-and-Configure-Basic-DirectAccess.md)。  

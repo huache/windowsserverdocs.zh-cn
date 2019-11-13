@@ -31,7 +31,7 @@ ms.locfileid: "71403772"
 此安全组设计为管理企业内凭据公开的策略的一部分。 此组的成员将自动具有应用于其帐户的非可配置保护。 在默认情况下，受保护的用户组中的成员身份意味着受到限制并主动保护。 修改这些帐户保护的唯一方法是从安全组中删除该帐户。
 
 > [!WARNING]
-> 服务和计算机的帐户不应是受保护用户组的成员。 由于主机上的密码或证书始终可用，此组仍将提供不完整的保护。 身份验证将失败，并出现错误 \"the 用户名或密码不正确，因为添加到受保护用户组的任何服务或计算机的用户名或密码不正确。
+> 服务和计算机的帐户不应是受保护用户组的成员。 由于主机上的密码或证书始终可用，此组仍将提供不完整的保护。 身份验证将失败，并出现错误，\"添加到受保护用户组的任何服务或计算机的用户名或密码不正确\"。
 
 在运行 Windows Server 2012 R2 的设备和主机计算机上，此域相关的全局组将触发不可配置的保护，并且在具有运行 Windows Server 2012 R2 的主域控制器的域中的用户 Windows 8.1 或更高版本。 当用户登录到具有这些保护的计算机时，这会大大减少凭据的默认内存占用量。
 
@@ -63,10 +63,10 @@ ms.locfileid: "71403772"
 
 下表指定受保护的用户组的属性。
 
-|特性|ReplTest1|
+|属性|值|
 |-------|-----|
 |已知 SID/RID|S-1-5-21-<domain>-525|
-|type|域全局|
+|在任务栏的搜索框中键入|域全局|
 |默认容器|CN=Users，DC=<domain>，DC=|
 |默认成员|无|
 |默认成员|无|
@@ -90,7 +90,7 @@ ms.locfileid: "71403772"
 -   从 Windows 8.1 和 Windows Server 2012 R2 开始，即使启用了 Windows Digest，Windows 摘要式也不会缓存用户的纯文本凭据。
 
 > [!Note]
-> 安装[Microsoft 安全公告 2871997](https://technet.microsoft.com/library/security/2871997)后，Windows 摘要将继续缓存凭据，直到配置了注册表项。 请参阅 [Microsoft 安全公告：更新以改进凭据保护和管理：2014年5月13日 @ no__t，说明。
+> 安装[Microsoft 安全公告 2871997](https://technet.microsoft.com/library/security/2871997)后，Windows 摘要将继续缓存凭据，直到配置了注册表项。 有关说明，请参阅[Microsoft 安全公告：更新以改进凭据保护和管理：5月13日，2014](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) 。
 
 -   NTLM 不会缓存用户的纯文本凭据或 NT 单向功能（NTOWF）。
 

@@ -20,10 +20,10 @@ ms.locfileid: "71388014"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>步骤 7.2： 使用 Azure AD 创建用于 VPN 身份验证的条件性访问根证书
 
->适用于：Windows Server (半年频道), Windows Server 2016, Windows Server 2012 R2, Windows 10
+>适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**以前**步骤 7.1：配置 EAP-TLS 以忽略证书吊销列表 (CRL) 检查](vpn-config-eap-tls-to-ignore-crl-checking.md)
-- [**一个**步骤 7.3：配置条件访问策略](vpn-config-conditional-access-policy.md)
+- [**上一个：** 步骤7.1。配置 EAP-TLS 以忽略证书吊销列表（CRL）检查](vpn-config-eap-tls-to-ignore-crl-checking.md)
+- [**下一步：** 步骤7.3。配置条件访问策略](vpn-config-conditional-access-policy.md)
 
 在此步骤中，将使用 Azure AD 配置用于 VPN 身份验证的条件性访问根证书，该证书会自动在租户中创建一个名为 "VPN 服务器" 的云应用。 若要配置 VPN 连接的条件性访问，需要：
 
@@ -53,4 +53,4 @@ ms.locfileid: "71388014"
 
 ## <a name="next-steps"></a>后续步骤
 
-[步骤 7.3.配置条件访问策略 @ no__t-0：在此步骤中，你将为 VPN 连接配置条件访问策略。
+[步骤7.3。配置条件访问策略](vpn-config-conditional-access-policy.md)：在此步骤中，你将配置 VPN 连接的条件性访问策略。

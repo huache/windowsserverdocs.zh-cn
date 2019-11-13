@@ -19,14 +19,14 @@ ms.locfileid: "71393043"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>Windows 虚拟机监控程序必须运行
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
   
 |属性|详细信息|  
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
 |**Severity**|警告|  
-|**类别**|先决条件|  
+|**类别**|必备条件|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  
   
@@ -40,9 +40,9 @@ ms.locfileid: "71393043"
   
 ## <a name="resolution"></a>分辨率  
   
-@no__t 0Check Windows Server 目录，以查看此服务器是否有资格运行 Hyper-v。接下来，请确保已为硬件辅助虚拟化和硬件强制的数据执行保护启用了 BIOS。然后，检查 Hyper-v 虚拟机监控程序事件日志。 *  
+*检查 Windows Server 目录，以查看是否有资格运行 Hyper-v 的服务器。接下来，请确保已为硬件辅助虚拟化和硬件强制的数据执行保护启用了 BIOS。然后，查看 Hyper-v-虚拟机监控程序事件日志。*  
   
-若要检查目录，请参阅[Windows Server 目录](https://go.microsoft.com/fwlink/?LinkId=111228)（ https://go.microsoft.com/fwlink/?LinkId=111228) 。  
+若要查看目录，请参阅[Windows Server 目录](https://go.microsoft.com/fwlink/?LinkId=111228)（ https://go.microsoft.com/fwlink/?LinkId=111228)。  
   
 > [!CAUTION]  
 > 更改计算机的系统 BIOS 中的某些参数可能会导致计算机停止加载操作系统，或使硬件设备（如硬盘驱动器）不可用。 请始终查阅计算机的用户手册，以确定配置系统 BIOS 的正确方法。 此外，跟踪你修改的参数及其原始值始终是一个好主意，以便以后可以根据需要还原它们。 如果在系统 BIOS 中更改参数后遇到问题，请尝试加载默认设置（通常在 BIOS 配置实用工具中提供选项），或与计算机制造商联系以获得帮助。  
@@ -76,9 +76,9 @@ ms.locfileid: "71393043"
   
 #### <a name="to-check-the-event-logs"></a>检查事件日志  
   
-1.  打开事件查看器。 依次单击 "**开始**"、"**管理工具**"，然后单击 "**事件查看器**"。  
+1.  打开“事件查看器”。 依次单击 "**开始**"、"**管理工具**"，然后单击 "**事件查看器**"。  
   
-2.  打开 Hyper-v 虚拟机监控程序事件日志。 在导航窗格中，展开 "**应用程序和服务日志**"  >> **Microsoft** >> **Windows** >> **hyper-v 虚拟机监控程序**，然后单击 "**操作**"。  
+2.  打开 Hyper-v 虚拟机监控程序事件日志。 在导航窗格中，展开 "**应用程序和服务日志** >> **Microsoft** >> **Windows** >> " **hyper-v-虚拟机监控程序**"，然后单击"**操作**"。  
   
 3.  如果 Windows 虚拟机监控程序正在运行，则无需执行其他操作。 如果 Windows 虚拟机监控程序未运行，请执行以下操作：  
   
@@ -86,9 +86,9 @@ ms.locfileid: "71393043"
   
 5.  使用筛选器查找 Hyper-v 虚拟机监控程序事件：   
     1. 在 "**操作**" 窗格中，单击 "**筛选当前日志**"。 对于**事件源**，请指定 "Hyper-v-虚拟机监控程序"。   
-    2. 查找报告问题的事件。 例如，事件 ID 41 表明 BIOS 配置存在问题："Hyper-v 启动失败;在 BIOS 中，.VMX 不存在或未启用。 "  
+    2. 查找报告问题的事件。 例如，事件 ID 41 表明 BIOS 配置存在问题： "Hyper-v 启动失败;在 BIOS 中，.VMX 不存在或未启用。 "  
   
-### <a name="see-also"></a>请参阅  
+### <a name="see-also"></a>另请参阅  
 有关使用 Windows 10 上的 Hyper-v 的详细信息，包括如何检查您的计算机是否可以运行 Hyper-v 的详细信息，请参阅[windows 10 Hyper-v 系统要求](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility)。 
 
 

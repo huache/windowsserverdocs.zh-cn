@@ -23,7 +23,7 @@ ms.locfileid: "71369589"
 本主题提供有关 Windows Server 2012 R2 和 Windows Server 2012 中的 Active Directory 域服务的背景信息，并说明了从 Windows Server 2008 或 Windows Server 2008 R2 升级域控制器的过程。  
   
 ## <a name="BKMK_UpgradeWorkflow"></a>域控制器升级步骤  
-升级域的推荐方法是根据需要提升运行较新版本 Windows Server 的域控制器并降级较旧的域控制器。 该方法优于升级现有域控制器的操作系统。 此列表涵盖在提升运行较新版本的 Windows Server 的域控制器之前要遵循的一般步骤:  
+升级域的推荐方法是根据需要提升运行较新版本 Windows Server 的域控制器并降级较旧的域控制器。 该方法优于升级现有域控制器的操作系统。 此列表涵盖在提升运行较新版本的 Windows Server 的域控制器之前要遵循的一般步骤：  
   
 1. 验证目标服务器是否满足 [系统要求](https://technet.microsoft.com/library/dn303418.aspx)。  
 2. 验证是否[应用程序兼容性](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat)。  
@@ -31,7 +31,7 @@ ms.locfileid: "71369589"
 4. 从计划运行安装的计算机上检查与目标服务器的连接性。  
 5. 检查所需操作主机角色的可用性：  
 
-   - 若要在现有域和林中安装运行 Windows Server 2012 的第一个 DC，运行安装的计算机需要连接到架构主机才能运行 adprep/forestprep 和基础结构主机以便运行 adprep/域.  
+   - 若要在现有域和林中安装运行 Windows Server 2012 的第一个 DC，运行安装的计算机需要连接到架构主机，才能运行 adprep/forestprep 和基础结构主机以便运行 adprep/domainprep。  
    - 若要在已扩展林架构的域中安装第一个 DC，则只需连接至结构主机即可。  
    - 若要在现有林中安装或删除域，则需要连接至域命名主机。  
    - 任何域控制器安装也要求连接至 RID 主机。  
@@ -125,9 +125,9 @@ Windows 8 和 Windows Server 2012 引入了一种名为 [自动维护](https://m
 |||  
 |-|-|  
 |**方案**|**建议的配置**|  
-|**WSUS 托管**<br /><br />-每周安装一次更新<br />-在晚上11点重新启动星期五|将计算机设置为自动安装，在所需时间之前阻止自动重新启动<br /><br />策略：配置自动更新（已启用）<br /><br />配置自动更新：4-自动下载并计划安装<br /><br />策略：不自动重启已登录的用户（已禁用）<br /><br />**WSUS 截止时间**：设置为周五晚上 11 点|  
+|**WSUS 托管**<br /><br />-每周安装一次更新<br />-在晚上11点重新启动星期五|将计算机设置为自动安装，在所需时间之前阻止自动重新启动<br /><br />策略：配置自动更新（已启用）<br /><br />配置自动更新： 4-自动下载并计划安装<br /><br />**策略**：不自动重启已登录的用户（已禁用）<br /><br />**WSUS 截止时间**：设置为周五晚上 11 点|  
 |**WSUS 托管**<br /><br />-在不同小时/天交错安装|为应该一起更新的计算机的不同组设置目标组<br /><br />为之前的方案使用上述步骤<br /><br />为不同的目标组设置不同的截止时间|  
-|**非 WSUS 管理-不支持截止时间**<br /><br />-在不同时间交错安装|策略：配置自动更新（已启用）<br /><br />配置自动更新：4-自动下载并计划安装<br /><br />**注册表项：** 启用在 Microsoft 知识库文章[2835627](https://support.microsoft.com/kb/2835627)中讨论的注册表项<br /><br />**政策**自动维护随机延迟（已启用）<br /><br />为 6 小时随机延迟将“常规维护随机延迟”设置为 PT6H 以提供以下行为：<br /><br />-将在配置的维护时间和随机延迟安装更新<br /><br />-重新启动每台计算机将在3天后发生<br /><br />此外，为每个计算机组设置不同的维护时间|  
+|**非 WSUS 管理-不支持截止时间**<br /><br />-在不同时间交错安装|策略：配置自动更新（已启用）<br /><br />配置自动更新： 4-自动下载并计划安装<br /><br />**注册表项：** 启用在 Microsoft 知识库文章 [2835627](https://support.microsoft.com/kb/2835627)<br /><br />**策略：** 自动维护随机延迟（已启用）<br /><br />为 6 小时随机延迟将“常规维护随机延迟”设置为 PT6H 以提供以下行为：<br /><br />-将在配置的维护时间和随机延迟安装更新<br /><br />-重新启动每台计算机将在3天后发生<br /><br />此外，为每个计算机组设置不同的维护时间|  
 
 有关 Windows 工程团队已实现这些更改的原因的详细信息，请参阅 [在 Windows Update 的自动更新中尽量减少重新启动](http://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)。  
 
@@ -157,11 +157,11 @@ AD DS 安装向导中的先决条件检查可以在开始安装之前识别潜�
 
 |||||  
 |-|-|-|-|  
-|加密类型或策略|Windows Server 2008 默认设置|Windows Server 2012 和 Windows Server 2008 R2 默认设置|注释|  
-|AllowNT4Crypto|Disabled|Disabled|第三方服务器消息块 (SMB) 客户端可能与域控制器上的安全默认设置不兼容。 在所有情况下，可以通过放宽这些设置来允许交互操作，但这终将是以牺牲安全性为代价。 有关详细信息，请参阅 Microsoft 知识库中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) （ https://go.microsoft.com/fwlink/?LinkId=164558) 。|  
-|DES|Enabled|Disabled|Microsoft 知识库中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) （ https://go.microsoft.com/fwlink/?LinkId=177717)|  
-|集成身份验证的 CBT/扩展保护|不可用|Enabled|请参阅 microsoft 知识库中的[Microsoft 安全公告（937811）](https://go.microsoft.com/fwlink/?LinkId=164559) （ https://go.microsoft.com/fwlink/?LinkId=164559) 和[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （ https://go.microsoft.com/fwlink/?LinkId=178251) ）。<br /><br />按照要求，查看并安装[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394)中的修补程序（ https://go.microsoft.com/fwlink/?LinkId=186394) ，请参阅 Microsoft 知识库。|  
-|LMv2|Enabled|Disabled|Microsoft 知识库中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （ https://go.microsoft.com/fwlink/?LinkId=178251)|  
+|加密类型或策略|Windows Server 2008 默认设置|Windows Server 2012 和 Windows Server 2008 R2 默认设置|备注|  
+|AllowNT4Crypto|Disabled|Disabled|第三方服务器消息块 (SMB) 客户端可能与域控制器上的安全默认设置不兼容。 在所有情况下，可以通过放宽这些设置来允许交互操作，但这终将是以牺牲安全性为代价。 有关详细信息，请参阅 Microsoft 知识库中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) （ https://go.microsoft.com/fwlink/?LinkId=164558)。|  
+|DES|已启用|Disabled|Microsoft 知识库中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) （ https://go.microsoft.com/fwlink/?LinkId=177717)|  
+|集成身份验证的 CBT/扩展保护|N/A|已启用|请参阅 microsoft 知识库中的[Microsoft 安全公告（937811）](https://go.microsoft.com/fwlink/?LinkId=164559) （ https://go.microsoft.com/fwlink/?LinkId=164559) 和[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （ https://go.microsoft.com/fwlink/?LinkId=178251)。<br /><br />查看并安装[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394)中的修补程序（根据需要在 Microsoft 知识库中 https://go.microsoft.com/fwlink/?LinkId=186394)。|  
+|LMv2|已启用|Disabled|Microsoft 知识库中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （ https://go.microsoft.com/fwlink/?LinkId=178251)|  
 
 ## <a name="BKMK_SysReqs"></a>操作系统要求
 
@@ -196,7 +196,7 @@ AD DS 安装向导中的先决条件检查可以在开始安装之前识别潜�
 
 具有运行 Windows Server 2012 或更高版本的域控制器的域成员计算机支持下列 Windows 客户端和 Windows Server 操作系统：  
   
-- 客户端操作系统：Windows 8.1、Windows 8、Windows 7、Windows Vista
+- 客户端操作系统： Windows 8.1、Windows 8、Windows 7、Windows Vista
    - 运行 Windows 8.1 或 Windows 8 的计算机还可以加入具有运行早期版本 Windows Server（包括 Windows Server 2003 或更高版本）的域控制器的域。 但在此情况下，某些 Windows 8 功能需要其他配置或者可能不可用。 有关这些功能的详细信息和在下层域中管理 Windows 8 客户端的其他建议，请参阅 [在 Windows Server 2003 域中运行 Windows 8 成员计算机](https://social.technet.microsoft.com/wiki/contents/articles/17361.running-windows-8-member-computers-in-windows-server-2003-domains.aspx)。  
 - 服务器操作系统：Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2、Windows Server 2003  
 
@@ -229,7 +229,7 @@ Windows Server 2012 需要 Windows Server 2003 林功能级别。 也就是说�
 4. 安装运行 Windows Server 2012 的域控制器。  
 5. 删除运行 Windows Server 早期版本的域控制器。  
 
-新的 Windows Server 2012 域功能级别启用一个新功能： **kdc 支持声明、复合身份验证和 Kerberos**保护 KDC 管理模板策略具有两个设置（**始终提供声明**和**失败未保护 authentication 请求**），需要 Windows Server 2012 域功能级别。  
+新的 Windows Server 2012 域功能级别启用一个新功能： **kdc 支持声明、复合身份验证和 Kerberos**保护 kdc 管理模板策略具有两个设置（"**始终提供声明**" 和 "**未保护身份验证请求失败**"），需要 Windows Server 2012 域功能级别。  
   
 Windows Server 2012 林功能级别不提供任何新功能，但可确保在林中创建的任何新域都将在 Windows Server 2012 域功能级别上自动运行。 Windows Server 2012 域功能级别不提供 KDC 支持声明、复合身份验证和 Kerberos 保护之外的其他新功能。 但它会确保域中的任何域控制器都运行 Windows Server 2012。 有关不同功能级别提供的其他功能的详细信息，请参阅 [了解 Active Directory 域服务 (AD DS) 功能级别](../active-directory-functional-levels.md)。  
   
@@ -279,9 +279,9 @@ Windows Server 2012 中的一些新功能影响操作主机角色：
 
 下表包含了常见的集成 Active Directory 的 Microsoft 应用程序。 下表列出了可安装应用程序的 Windows Server 版本以及引入 Windows Server 2012 DC 是否会影响应用程序的兼容性。  
 
-|产品|说明|  
+|产品|注释|  
 |-----------|---------|  
-|[Microsoft Configuration Manager 2007](http://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|带有 SP2 的 Configuration Manager 2007（包括 Configuration Manager 2007 R2 和 Configuration Manager 2007 R3）：<br /><br />-Windows 8 专业版<br />-Windows 8 企业版<br />-Windows Server 2012 标准版<br />-Windows Server 2012 Datacenter**注意：** 尽管这些应用程序作为客户端可以得到完全支持，但是，目前尚不支持使用 Configuration Manager 2007 操作系统部署功能将这些应用程序部署为操作系统。 此外，任何 Windows Server 2012 的 SKU 上都不支持站点服务器或站点系统。|  
+|[Microsoft Configuration Manager 2007](http://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|带有 SP2 的 Configuration Manager 2007（包括 Configuration Manager 2007 R2 和 Configuration Manager 2007 R3）：<br /><br />-Windows 8 专业版<br />-Windows 8 企业版<br />-Windows Server 2012 标准版<br />-Windows Server 2012 Datacenter**注意：** 尽管这些功能将完全作为客户端提供支持，但并不打算添加对使用 Configuration Manager 2007 操作系统部署功能将其部署为操作系统的支持。 此外，任何 Windows Server 2012 的 SKU 上都不支持站点服务器或站点系统。|  
 |[Microsoft SharePoint 2007](https://support.microsoft.com/kb/2728964)|不支持在 Windows Server 2012 上安装 Microsoft Office SharePoint Server 2007。|  
 |[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|在 Windows Server 2012 服务器上安装和操作 SharePoint 2010 时， <br />要求提供 SharePoint 2010 Service Pack 2<br /><br />在 Windows Server 2012 服务器上安装和操作 SharePoint 2010 Foundation 时，要求提供 SharePoint 2010 Foundation Service Pack 2<br /><br />无法在 Windows Server 2012 上安装 SharePoint Server 2010（没有 Service Pack）<br /><br />SharePoint Server 2010 必备安装程序（Prerequisiteinstaller.exe）失败，并出现错误 "此程序存在兼容性问题"。 单击 "运行程序而不获取帮助" 将显示错误 "验证是否可以&#124;在 Windows server 2012 上安装 sharepoint server 2010 （不带 service pack）。"|  
 |[Microsoft SharePoint 2013](https://technet.microsoft.com/library/cc262485(v=office.15).aspx)|针对服务器场中数据库服务器的最低要求：<br /><br />Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter 的 64 位版本，或者 Windows Server 2012 Standard 或 Datacenter 的 64 位版本<br /><br />针对带有内置数据库的单个服务器的最低要求：<br /><br />Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter 的 64 位版本，或者 Windows Server 2012 Standard 或 Datacenter 的 64 位版本<br /><br />针对服务器场中前端 Web 服务器和应用程序服务器的最低要求：<br /><br />Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter 的 64 位版本，或者 Windows Server 2012 Standard 或 Datacenter 的 64 位版本。|  
@@ -292,9 +292,9 @@ Windows Server 2012 中的一些新功能影响操作主机角色：
 |[System Center 2012 Forefront Endpoint Protection](http://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|FEP 2010 更新汇总 1 将更新客户端支持矩阵以包括下列操作系统：<br /><br />-Windows 8 专业版<br />-Windows 8 企业版<br />-Windows Server 2012 标准版<br />-Windows Server 2012 Datacenter|  
 |Forefront Threat Management Gateway (TMG)|只支持 TMG 在 Windows Server 2008 和 Windows Server 2008 R2 上运行。 有关详细信息，请参阅 [Forefront TMG 系统要求](https://technet.microsoft.com/library/dd896981.aspx)。|  
 |Windows Server 更新服务|此版本的 WSUS 已经支持基于 Windows 8 的计算机或支持基于 Windows Server 2012 的计算机作为客户端。|  
-|Windows Server Update Services 3.0|更新的知识库文章 [2734608](https://support.microsoft.com/kb/2734608) 允许运行 Windows Server Update Services (WSUS) 3.0 SP2 的服务器为运行 Windows 8 或 Windows Server 2012 的计算机提供更新：**注意：** 具有独立 WSUS 3.0 SP2 环境的客户或具有包含 WSUS 3.0 SP2 的 System Center Configuration Manager 2007 Service Pack 2 环境的客户应当了解 [2734608](https://support.microsoft.com/kb/2734608)，以便正确地将基于 Windows 8 的计算机或基于 Windows Server 2012 的计算机作为客户端进行管理。|  
+|Windows Server Update Services 3.0|更新知识库文章[2734608](https://support.microsoft.com/kb/2734608)允许运行 WINDOWS SERVER UPDATE SERVICES （WSUS） 3.0 SP2 的服务器为运行 Windows 8 或 Windows Server 2012 的计算机提供更新：**注意：** 具有独立 wsus 3.0 SP2 环境的客户或 System Center Configuration Manager 2007 Service PACK 2 环境（WSUS 3.0 SP2）需要[2734608](https://support.microsoft.com/kb/2734608)来正确地将基于 Windows 8 的计算机或基于 windows Server 2012 的计算机作为客户端进行管理。|  
 |[Exchange 2013](https://technet.microsoft.com/library/bb691354.aspx)|下列服务器角色支持 Windows Server 2012 Standard 和 Datacenter：架构主机、全局编录服务器、域控制器、邮箱和客户端访问服务器角色<br /><br />林功能级别：Windows Server 2003 或更高版本<br /><br />源：Exchange 2013 系统要求|  
-|Exchange 2010|[来源：Exchange 2010 Service Pack 3 @ no__t-0<br /><br />可以在 Windows Server 2012 成员服务器上安装带有 Service Pack 3 的 Exchange 2010。<br /><br />对于 Windows Server 2008 R2，[Exchange 2010 系统要求](https://technet.microsoft.com/library/aa996719(EXCHG.141).aspx) 列出了最新支持的架构主机、全局编录服务器和域控制器。<br /><br />林功能级别：Windows Server 2003 或更高版本|  
+|Exchange 2010|[源： Exchange 2010 Service Pack 3](https://blogs.technet.com/b/exchange/archive/2012/09/25/announcing-exchange-2010-service-pack-3.aspx)<br /><br />可以在 Windows Server 2012 成员服务器上安装带有 Service Pack 3 的 Exchange 2010。<br /><br />对于 Windows Server 2008 R2，[Exchange 2010 系统要求](https://technet.microsoft.com/library/aa996719(EXCHG.141).aspx) 列出了最新支持的架构主机、全局编录服务器和域控制器。<br /><br />林功能级别：Windows Server 2003 或更高版本|  
 |SQL Server 2012|源：KB [2681562](https://support.microsoft.com/kb/2681562)<br /><br />Windows Server 2012 上支持 SQL Server 2012 RTM。|  
 |SQL Server 2008 R2|源：KB [2681562](https://support.microsoft.com/kb/2681562)<br /><br />要求在 Windows Server 2012 上安装带有 Service Pack 1 的 SQL Server 2008 R2 或更高版本。|  
 |SQL Server 2008|源：KB [2681562](https://support.microsoft.com/kb/2681562)<br /><br />要求在 Windows Server 2012 上安装带有 Service Pack 3 的 SQL Server 2008 或更高版本。|  
@@ -336,12 +336,12 @@ Windows Server 2012 中的一些新功能影响操作主机角色：
 |[2742927](https://support.microsoft.com/kb/2742927)：“索引超出范围”New-AdDcCloneConfig 错误|虚拟 DC 克隆|在克隆虚拟 DC 期间，当运行 New-ADDCCloneConfigFile cmdlet 后会收到此错误，这可能是因为没有从提升的命令提示符中运行该 cmdlet，或者是因为你的访问令牌不包含管理员组。|  
 |[2742959](https://support.microsoft.com/kb/2742959)：域控制器克隆失败，出现错误 8437：“为这个复制操作指定了一个无效的参数”|虚拟 DC 克隆|克隆失败，因为指定了无效的克隆名称或重复的 NetBIOS 名称。|  
 |[2742970](https://support.microsoft.com/kb/2742970)：DC 克隆失败，没有 DSRM、重复的源和克隆计算机|虚拟 DC 克隆|克隆后的虚拟 DC 使用重复名称作为源 DC，以目录服务修复模式 (DSRM) 启动，这是因为没有在正确的位置创建 DCCloneConfig.xml 文件，或者因为源 DC 在克隆前已经重新启动。|  
-|[2743278](https://support.microsoft.com/kb/2743278)：域控制器克隆错误0x80041005|虚拟 DC 克隆|克隆后的 DC 以 DSRM 模式启动，因为仅指定了一个 WINS 服务器。 如果指定了任意的 WINS 服务器，则必须同时指定首选的和备用的 WINS 服务器。|  
+|[2743278](https://support.microsoft.com/kb/2743278)：域控制器克隆错误 0x80041005|虚拟 DC 克隆|克隆后的 DC 以 DSRM 模式启动，因为仅指定了一个 WINS 服务器。 如果指定了任意的 WINS 服务器，则必须同时指定首选的和备用的 WINS 服务器。|  
 |[2745013](https://support.microsoft.com/kb/2745013)：如果在 Windows Server 2012 中运行 New-AdDcCloneConfigFile，则会出现“该服务器不可操作”的错误消息|虚拟 DC 克隆|在运行 New-ADDCCloneConfigFile cmdlet 后会收到此错误，这是因为服务器无法联系全局编录服务器。|  
 |[2747974](https://support.microsoft.com/kb/2747974)：域控制器克隆事件 2224 提供了不正确的指导|虚拟 DC 克隆|事件 ID 2224 错误地指出在克隆之前必须删除托管服务帐户。 必须删除独立的 MSA，然而组 MSA 并不阻止克隆。|  
 |[2748266](https://support.microsoft.com/kb/2748266)：在升级到 Windows 8 后，无法解锁 BitLocker 加密的驱动器|BitLocker|当你尝试解锁从 Windows 7 升级的计算机上的驱动器时，会收到 "找不到应用程序" 错误。|  
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [Windows Server 2012 评估资源](https://technet.microsoft.com/evalcenter/hh708766.aspx)  
 [Windows Server 2012 评估指南](https://download.microsoft.com/download/5/B/2/5B254183-FA53-4317-B577-7561058CEF42/WS%202012%20Evaluation%20Guide.pdf)  

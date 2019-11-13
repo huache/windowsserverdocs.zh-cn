@@ -19,7 +19,7 @@ ms.locfileid: "71393490"
 ---
 # <a name="storage-controllers-should-be-enabled-in-virtual-machines-to-provide-access-to-attached-storage"></a>应在虚拟机中启用存储控制器以提供对附加存储的访问权限
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳实践和扫描的详细信息，请参阅 [最佳实践分析程序](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
@@ -38,13 +38,13 @@ ms.locfileid: "71393490"
   
 ## <a name="impact"></a>影响  
   
-@no__t 0Virtual 的计算机无法使用连接到已禁用存储控制器的存储。这会影响以下虚拟机： *  
+*虚拟机不能使用连接到已禁用存储控制器的存储。这会影响以下虚拟机：*  
   
-@no__t-虚拟机名称的 0list >  
+虚拟机名称 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
   
-@no__t 在来宾操作系统中设备管理器启用所有存储控制器的0Use。如果不需要存储控制器，请使用 Hyper-v 管理器从虚拟机中删除它。 *  
+*使用来宾操作系统中的设备管理器来启用所有存储控制器。如果不需要存储控制器，请使用 Hyper-v 管理器将其从虚拟机中删除。*  
   
 有关如何使用设备管理器的说明，请参阅来宾操作系统中的帮助。 有关如何删除存储控制器的说明，请参阅以下过程。  
   

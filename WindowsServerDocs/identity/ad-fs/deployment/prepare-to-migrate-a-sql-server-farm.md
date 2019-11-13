@@ -20,13 +20,13 @@ ms.locfileid: "71408218"
   
  若要导出 AD FS 配置数据，请执行以下任务：  
   
--   [步骤 1：导出服务设置 @ no__t-0  
+-   [步骤1：导出服务设置](#step-1-export-service-settings)  
   
--   [步骤 2：备份自定义属性存储 @ no__t-0  
+-   [步骤2：备份自定义属性存储](#step-2-back-up-custom-attribute-stores)  
   
--   [步骤 3：备份网页自定义项 @ no__t-0  
+-   [步骤3：备份网页自定义项](#step-3-back-up-webpage-customizations)  
   
-## <a name="step-1-export-service-settings"></a>第 1 步：导出服务设置  
+## <a name="step-1-export-service-settings"></a>步骤 1：导出服务设置  
  若要导出服务设置，请执行以下过程：  
   
 ### <a name="to-export-service-settings"></a>导出服务设置  
@@ -63,8 +63,8 @@ ms.locfileid: "71408218"
  若要备份任何网页自定义项，请从映射到 IIS 中的虚拟路径 **“/adfs/ls”** 的目录复制 AD FS 网页和 **web.config** 文件。 默认情况下，它位于 **%systemdrive%\inetpub\adfs\ls** 目录中。  
   
 ## <a name="next-steps"></a>后续步骤
- [准备将 AD FS 2.0 联合服务器迁移](prepare-to-migrate-ad-fs-fed-server.md)   
+ [准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-ad-fs-fed-server.md)   
  [准备迁移 AD FS 2.0 联合服务器代理](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [将 AD FS 2.0 联合服务器迁移](migrate-the-ad-fs-fed-server.md)   
+ [迁移 AD FS 2.0 联合服务器](migrate-the-ad-fs-fed-server.md)   
  [迁移 AD FS 2.0 联合服务器代理](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)

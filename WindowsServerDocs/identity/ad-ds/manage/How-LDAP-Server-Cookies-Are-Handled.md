@@ -48,15 +48,15 @@ Windows Server 将 Cookie 返回给客户端，并有时在服务器上存储与
 ## <a name="how-the-cookie-pool-is-managed"></a>如何管理 Cookie 池  
 显然，LDAP 服务器同时为多个客户端提供服务，同时多个客户端也可以启动需要使用服务器 Cookie 缓存的查询。因此，该处的 Windows Server 实现是跟踪 Cookie 池使用情况，并将限制付诸实施，使 Cookie 池不会占用过多资源。 管理员可以使用 LDAP 策略中的以下设置设置限制。 默认值和说明如下：  
   
-**MinResultSets：4 @ no__t-0  
+**MinResultSets: 4**  
   
 如果服务器 Cookie 缓存中的条目数小于 MinResultSets，LDAP 服务器将不会查看下文讨论的最大池大小。  
   
-**MaxResultSetSize：262144字节 @ no__t-0  
+**MaxResultSetSize：262,144 字节**  
   
 服务器上的总 Cookie 缓存大小不得超过 MaxResultSetSize 的最大值（以字节为单位）。 如果超过了，将从最旧的 Cookie 开始删除，直到该池小于 MaxResultSetSize 个字节或池中的 Cookie 数小于 MinResultSets 值。 这意味着使用默认设置，如果仅存储了 3 条 Cookie，LDAP 服务器会认为 450KB 的池是正常的。  
   
-**MaxResultSetsPerConn：10 @ no__t-0  
+**MaxResultSetsPerConn：10**  
   
 LDAP 服务器不允许针对池中的每个 LDAP 连接有超过 MaxResultSetsPerConn 条 Cookie。  
   

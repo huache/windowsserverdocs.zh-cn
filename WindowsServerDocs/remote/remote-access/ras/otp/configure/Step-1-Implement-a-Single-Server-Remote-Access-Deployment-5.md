@@ -30,7 +30,7 @@ ms.locfileid: "71404402"
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [步骤 2：配置 RADIUS 服务器 @ no__t-0  
+-   [步骤2：配置 RADIUS 服务器](Step-2-Configure-the-RADIUS-Server.md)  
   
 
 

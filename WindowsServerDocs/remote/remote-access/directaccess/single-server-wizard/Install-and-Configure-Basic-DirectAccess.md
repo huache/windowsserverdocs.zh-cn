@@ -25,11 +25,11 @@ ms.locfileid: "71404892"
 
 本概述介绍了部署运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012with 基本设置的单个 DirectAccess 服务器所需的配置步骤。  
   
--   [步骤 1：配置基本 DirectAccess 基础结构 @ no__t。 此步骤包括配置网络和服务器设置、DNS 设置和 Active Directory 设置。  
+-   [步骤1：配置基本 DirectAccess 基础结构](da-basic-configure-s1-infrastructure.md)。 此步骤包括配置网络和服务器设置、DNS 设置和 Active Directory 设置。  
   
--   [步骤 2：配置基本 DirectAccess 服务器 @ no__t。 此步骤包括配置 DirectAccess 客户端计算机和服务器设置。  
+-   [步骤2：配置基本 DirectAccess 服务器](da-basic-configure-s2-server.md)。 此步骤包括配置 DirectAccess 客户端计算机和服务器设置。  
   
--   [步骤 3：验证部署 @ no__t。 此步骤包括用于验证部署的步骤。  
+-   [步骤3：验证部署](da-basic-configure-s3-verify.md)。 此步骤包括用于验证部署的步骤。  
   
 在开始你的部署之前，请验证[规划基础 DirectAccess 部署](Plan-a-Basic-DirectAccess-Deployment.md)中所述的规划步骤。  
   

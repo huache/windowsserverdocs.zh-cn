@@ -16,7 +16,7 @@ ms.locfileid: "71386540"
 ---
 # <a name="managing-the-host-guardian-service"></a>管理主机保护者服务
 
-> 适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 主机保护者服务（HGS）是受保护的构造解决方案的成为。
 它负责确保将构造中的 Hyper-v 主机称为宿主或企业，并运行受信任的软件，并管理用于启动受防护 Vm 的密钥。
@@ -50,8 +50,8 @@ HGS 附带2个预配置的 JEA 角色：
 - 仅允许用户审核现有策略的**HGS 审阅者**。 它们不能对 HGS 配置进行任何更改。
 
 若要使用 JEA，首先需要创建一个新的标准用户，并使其成为 HGS 管理员或 HGS 审阅者组的成员。
-如果使用 @no__t 为 HGS 设置新林，则这些组将分别命名为 "*servicename*Administrators" 和 "*servicename*审校"，其中*servicename*是 HGS 群集的网络名称。
-如果已将 HGS 加入到现有域中，则应引用在 `Initialize-HgsServer` 中指定的组名称。
+如果使用 `Install-HgsServer` 为 HGS 设置新林，则这些组将分别命名为 "*servicename*Administrators" 和 "*servicename*审校"，其中*servicename*是 HGS 群集的网络名称。
+如果已将 HGS 加入现有域，则应该引用 `Initialize-HgsServer`中指定的组名。
 
 **为 HGS 管理员和审阅者角色创建标准用户**
 
@@ -76,7 +76,7 @@ Add-ADGroupMember -Identity $reviewerGroup -Members 'hgsreviewer01'
 Enter-PSSession -ComputerName <hgsnode> -Credential '<hgsdomain>\hgsreviewer01' -ConfigurationName 'microsoft.windows.hgs'
 ```
 
-然后，你可以检查会话中允许的哪些命令与 @no__t 0，并运行任何允许的命令来审核配置。
+然后，你可以使用 `Get-Command` 检查会话中允许的命令，然后运行任何允许的命令来审核配置。
 在下面的示例中，我们将检查在 HGS 上启用的策略。
 
 ```powershell
@@ -201,7 +201,7 @@ Export-HgsServerState -Path C:\temp\HGSBackup.xml
 
 **备份证书**
 
-@No__t-0 命令将在运行命令时备份添加到 HGS 的任何基于 PFX 的证书。
+在运行命令时，`Export-HgsServerState` 命令将备份添加到 HGS 的任何基于 PFX 的证书。
 如果使用指纹将证书添加到 HGS （对于不可导出和硬件支持的证书，则需要手动备份证书的私钥）。
 若要确定哪些证书已注册到 HGS 并需要手动备份，请在任何工作的 HGS 服务器节点上运行以下 PowerShell 命令。
 
@@ -220,7 +220,7 @@ Get-HgsKeyProtectionCertificate | Where-Object { $_.CertificateData.GetType().Na
 备份的 HGS 服务器状态不包括你的 HGS 群集的名称、Active Directory 中的任何信息或用于保护与 HGS Api 的通信的任何 SSL 证书。
 这些设置对于一致性很重要，但在发生灾难后，使 HGS 群集恢复联机状态并不重要。
 
-若要捕获 HGS 服务的名称，请运行 `Get-HgsServer` 并记下证明和密钥保护 Url 中的平面名称。
+若要捕获 HGS 服务的名称，请运行 `Get-HgsServer`，并记下证明和密钥保护 Url 中的平面名称。
 例如，如果证明 URL 为 "<http://hgs.contoso.com/Attestation>"，则 "hgs" 为 HGS 服务名称。
 
 应像管理任何其他 Active Directory 域一样管理 HGS 使用的 Active Directory 域。
@@ -260,9 +260,9 @@ Get-WebBinding -Protocol https | Select-Object certificateHash
 Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 ```
 
-如果只想导入受管理的受信任证明策略或受 TPM 信任的证明策略，则可以通过将 @no__t 0 或 @no__t 标志指定为[HgsServerState](https://technet.microsoft.com/library/mt652168.aspx)来实现此目的。
+如果你只想导入管理受信任的证明策略或受 TPM 信任的证明策略，则可以通过指定 `-ImportActiveDirectoryModeState` 或 `-ImportTpmModeState` 标志到[HgsServerState](https://technet.microsoft.com/library/mt652168.aspx)来执行此操作。
 
-确保已安装最新的 Windows Server 2016 累积更新，然后再运行 `Import-HgsServerState`。
+在运行 `Import-HgsServerState`之前，请确保已安装 Windows Server 2016 的最新累积更新。
 否则，可能会导致导入错误。
 
 > [!NOTE]
@@ -280,7 +280,7 @@ Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 你将需要在添加到已还原的 HGS 群集的每个附加节点上重复此步骤。
 
 #### <a name="review-imported-attestation-policies"></a>查看导入的证明策略
-从备份导入设置后，建议你仔细检查所有使用 `Get-HgsAttestationPolicy` 导入的策略，以确保只有你信任的用于运行受防护的 Vm 的主机才能成功证明。
+从备份导入设置后，建议使用 `Get-HgsAttestationPolicy` 仔细检查所有导入的策略，以确保只有信任的信任才能运行受防护的 Vm 才能成功证明。
 如果找到不再符合安全状况的任何策略，则可以[禁用或删除它们](#review-attestation-policies)。
 
 #### <a name="run-diagnostics-to-check-system-state"></a>运行诊断以检查系统状态
@@ -355,8 +355,8 @@ Hgs_BitLockerEnabled           | 需要在 Hyper-v 主机上启用 BitLocker。 
 Hgs_IommuEnabled               | 要求主机使用 IOMMU 设备来防止直接内存访问攻击。 禁用此策略并使用未启用 IOMMU 的主机可能会公开租户 VM 机密，以直接进行内存攻击。
 Hgs_NoHibernation              | 需要在 Hyper-v 主机上禁用休眠。 禁用此策略可能允许主机将受防护的 VM 内存保存到未加密的休眠文件。
 Hgs_NoDumps                    | 需要在 Hyper-v 主机上禁用内存转储。 如果禁用此策略，则建议你配置转储加密以防止将受防护的 VM 内存保存到未加密的故障转储文件。
-Hgs_DumpEncryption             | 如果在 Hyper-v 主机上启用了内存转储，则需要使用 HGS 信任的加密密钥对其进行加密。 如果主机上未启用转储，则不会应用此策略。 如果同时禁用了此策略和*Hgs @ no__t-1NoDumps* ，则可将受防护的 VM 内存保存到未加密的转储文件。
-Hgs_DumpEncryptionKey          | 否定策略：确保配置为允许内存转储的主机使用的是管理员定义的转储文件加密密钥。 禁用了*Hgs @ no__t-1DumpEncryption*时，不会应用此策略。
+Hgs_DumpEncryption             | 如果在 Hyper-v 主机上启用了内存转储，则需要使用 HGS 信任的加密密钥对其进行加密。 如果主机上未启用转储，则不会应用此策略。 如果同时禁用了此策略和*Hgs\_NoDumps* ，则可将受防护的 VM 内存保存到未加密的转储文件。
+Hgs_DumpEncryptionKey          | 否定策略：确保配置为允许内存转储的主机使用的是管理员定义的转储文件加密密钥。 禁用*Hgs\_DumpEncryption*时，不会应用此策略。
 
 ### <a name="authorizing-new-guarded-hosts"></a>授权新的受保护主机
 若要授权新主机成为受保护的主机（例如证明成功），HGS 必须信任该主机，并（配置为使用受 TPM 信任的证明）在该主机上运行的软件。
@@ -394,7 +394,7 @@ Add-HgsAttestationHostGroup -Name "Contoso Guarded Hosts" -Identifier "S-1-5-21-
 部署指南中提供了有关如何在主机域和 HGS 之间设置信任关系的说明。
 
 #### <a name="tpm-trusted-attestation"></a>受 TPM 信任的证明
-如果在 TPM 模式下配置了 HGS，主机必须通过 "Hgs_" 前缀的所有锁定策略和 "enabled" 策略，以及至少一个 TPM 基线、TPM 标识符和代码完整性策略。
+如果在 TPM 模式下配置了 HGS，主机必须通过 "Hgs_" 前缀的所有锁定策略和 "已启用" 策略，以及至少一个 TPM 基线、TPM 标识符和代码完整性策略。
 每次添加新主机时，都需要向 HGS 注册新的 TPM 标识符。
 只要该主机运行相同的软件（并且应用了相同的代码完整性策略）和 TPM 基线作为环境中的另一台主机，就不需要添加新的 CI 策略或基线。
 
@@ -468,9 +468,9 @@ Add-HgsAttestationCiPolicy -Name 'WS2016-Hardware01' -Path 'C:\temp\ws2016-hardw
 
 **添加内存转储加密密钥**
 
-当禁用了*hgs @ no__t-1NoDumps*策略并启用了*hgs @ no__t-3DumpEncryption*策略后，受保护的主机将能够具有要启用的内存转储（包括故障转储），前提是这些转储已加密。 受保护的主机只有在禁用了内存转储或使用 HGS 知道的密钥对其进行加密的情况才会通过证明。 默认情况下，不在 HGS 上配置转储加密密钥。
+禁用*hgs\_NoDumps*策略并启用*hgs\_DumpEncryption*策略后，受保护的主机可以拥有要启用的内存转储（包括故障转储），前提是这些转储已加密。 受保护的主机只有在禁用了内存转储或使用 HGS 知道的密钥对其进行加密的情况才会通过证明。 默认情况下，不在 HGS 上配置转储加密密钥。
 
-若要将转储加密密钥添加到 HGS，请使用 @no__t cmdlet 向 HGS 提供转储加密密钥的哈希。
+若要将转储加密密钥添加到 HGS，请使用 `Add-HgsAttestationDumpPolicy` cmdlet 向 HGS 提供转储加密密钥的哈希。
 如果在配置了转储加密的 Hyper-v 主机上捕获 TPM 基线，则哈希将包含在 tcglog 中，并可提供给 `Add-HgsAttestationDumpPolicy` cmdlet。
 
 ```powershell
@@ -490,14 +490,14 @@ Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey02' -PublicKeyHash '<paste 
 
 #### <a name="check-if-the-system-passed-attestation"></a>检查系统是否通过了证明
 向 HGS 注册必要的信息后，应检查主机是否通过证明。
-在新添加的 Hyper-v 主机上，运行 `Set-HgsClientConfiguration` 并为你的 HGS 群集提供正确的 Url。
+在新添加的 Hyper-v 主机上，运行 `Set-HgsClientConfiguration`，并为 HGS 群集提供正确的 Url。
 可以通过在任何 HGS 节点上运行 `Get-HgsServer` 来获取这些 Url。
 
 ```powershell
 Set-HgsClientConfiguration -KeyProtectionServerUrl 'http://hgs.bastion.local/KeyProtection' -AttestationServerUrl 'http://hgs.bastion.local/Attestation'
 ```
 
-如果生成的状态不是 "IsHostGuarded：True "需要对配置进行故障排除。
+如果生成的状态不是 "IsHostGuarded： True"，则需要对配置进行故障排除。
 在证明失败的主机上，运行以下命令以获取有关可能有助于解决失败的证明的问题的详细报告。
 
 ```powershell
@@ -564,7 +564,7 @@ Get-HgsTrace -RunDiagnostics -Target $targets -Diagnostic GuardedFabricTpmMode
 Set-HgsServer -TrustTpm
 ```
 
-如果遇到问题，需要切换回 Active Directory 模式，则可以通过运行 @no__t 来执行此操作。
+如果遇到问题，需要切换回 Active Directory 模式，则可以通过运行 `Set-HgsServer -TrustActiveDirectory`来执行此操作。
 
 确认所有内容均按预期工作后，应从 HGS 中删除所有受信任的 Active Directory 主机组，并删除 HGS 与 fabric 域之间的信任。
 如果你保留 Active Directory 信任，则会有用户重新启用信任并将 HGS 切换为 Active Directory 模式的风险，这可能会允许不受信任的代码在受保护的主机上以未选中状态运行。
@@ -586,7 +586,7 @@ Set-HgsServer -TrustTpm
 
 根据所使用的证书类型，添加新密钥的过程会有所不同。
 
-**选项 1：添加存储在 HSM @ no__t 中的证书
+**选项1：添加存储在 HSM 中的证书**
 
 建议使用硬件安全模块（HSM）中创建的证书来保护 HGS 密钥。
 Hsm 确保密钥的使用与数据中心内对安全敏感设备的物理访问相关联。
@@ -607,7 +607,7 @@ Hsm 确保密钥的使用与数据中心内对安全敏感设备的物理访问�
     Add-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint "99887766554433221100FFEEDDCCBBAA"
     ```
 
-**选项 2：添加不可导出的软件证书 @ no__t-0
+**选项2：添加不可导出的软件证书**
 
 如果你的公司或公共证书颁发机构颁发的软件支持的证书具有不可导出的私钥，则需要使用证书的指纹将证书添加到 HGS。
 1. 根据证书颁发机构的说明在计算机上安装证书。
@@ -622,7 +622,7 @@ Hsm 确保密钥的使用与数据中心内对安全敏感设备的物理访问�
 > 你将需要手动安装私钥，并授予对每个 HGS 节点上的 gMSA 帐户的读取访问权限。
 > HGS 无法自动复制其指纹注册的*任何*证书的私钥。
 
-**Option 3：添加存储在 PFX 文件中的证书 @ no__t
+**选项3：添加存储在 PFX 文件中的证书**
 
 如果你有一个软件支持的证书，其中包含可使用 PFX 文件格式存储并使用密码保护的可导出私钥，则 HGS 可以自动管理你的证书。
 使用 PFX 文件添加的证书会自动复制到 HGS 群集的每个节点，并且 HGS 保护对私钥的访问。
@@ -714,7 +714,7 @@ HGS 上的过期加密或签名证书不表示受防护的 Vm 的保护不受保
 
 所有 Vm 都已更新为授权新的监护人密钥后，你可以禁用并删除旧密钥。
 
-13. 从 @no__t 获取旧证书的指纹
+13. 从 `Get-HgsKeyProtectionCertificate -IsPrimary $false` 获取旧证书的指纹
 
 14. 通过运行以下命令来禁用每个证书：  
 

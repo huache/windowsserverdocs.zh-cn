@@ -19,7 +19,7 @@ ms.locfileid: "71365217"
 ---
 # <a name="avoid-using-checkpoints-on-a-virtual-machine-that-runs-a-server-workload-in-a-production-environment"></a>避免在生产环境中运行服务器工作负荷的虚拟机上使用检查点
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 
   
@@ -43,13 +43,13 @@ ms.locfileid: "71365217"
   
 ## <a name="impact"></a>影响  
   
-@no__t 0Available 的空间可能在存储检查点文件的物理磁盘上运行。如果发生这种情况，则不能在物理存储上执行其他磁盘操作。依赖于物理存储的任何虚拟机都可能会受到影响。 *  
+*可用空间可能会在存储检查点文件的物理磁盘上运行。如果发生这种情况，则不能在物理存储上执行其他磁盘操作。依赖于物理存储的任何虚拟机都可能会受到影响。*  
   
 如果物理磁盘空间不足，则在该磁盘上存储的检查点或虚拟硬盘的任何正在运行的虚拟机可能会自动暂停。 Hyper-v 管理器将这些虚拟机的状态显示为 "暂停-关键"。  
   
 ## <a name="resolution"></a>分辨率  
   
-@no__t 0If 虚拟机在生产环境中运行服务器工作负荷，使虚拟机脱机，并使用 Hyper-v 管理器应用或删除检查点。若要删除检查点，你必须关闭虚拟机才能完成此过程。 *  
+*如果虚拟机在生产环境中运行服务器工作负荷，则使虚拟机脱机，并使用 Hyper-v 管理器应用或删除检查点。若要删除检查点，你必须关闭虚拟机以完成该过程。*  
   
 > [!NOTE]  
 > 现在，可以使用生产检查点作为标准检查点的替代方案。 有关详细信息，请参阅[在标准或生产检查点之间选择](../manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)。  

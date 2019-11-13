@@ -51,7 +51,7 @@ ms.locfileid: "71359198"
   
     2.  使用 Scwcmd 命令行工具注册相应的角色扩展文件。 请参阅下表获取有关在你的计算机配置的角色中使用此工具的详细信息。  
   
-    3.  通过检查 SCWRegister_log 文件（该文件位于 WindowssecurityMsscwLogs 目录中）来验证该命令是否已成功完成。  
+    3.  检查命令是否已成功完成，方法是检查位于 WindowssecurityMsscwLogs 目录中的 SCWRegister_log .xml 文件。  
   
     你必须在你希望对其应用 AD FS（基于 SCW 安全策略）的每个联合服务器或联合服务器代理计算机上执行所有这些步骤。  
   
@@ -62,7 +62,7 @@ ms.locfileid: "71359198"
     |独立联合服务器|Windows 内部数据库|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
     |加入场的联合服务器|Windows 内部数据库|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
     |加入场的联合服务器|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
-    |联合服务器代理|不可用|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
+    |联合服务器代理|N/A|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
     有关可以用于 AD FS 的数据库的详细信息，请参阅 [AD FS 配置数据库的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
@@ -88,7 +88,7 @@ ms.locfileid: "71359198"
     |参数值|安全级别|保护设置|  
     |-------------------|------------------|----------------------|  
     |要求|服务器完全强化。|强制执行并且始终要求扩展保护。|  
-    |Allow|服务器部分强化。|在所涉及的系统已修补为支持扩展保护的情况下，强制执行扩展保护。|  
+    |允许|服务器部分强化。|在所涉及的系统已修补为支持扩展保护的情况下，强制执行扩展保护。|  
     |无|服务器易受攻击。|不强制执行扩展保护。|  
   
 -   **如果使用日志记录和跟踪，请确保任何敏感信息的隐私。**  
@@ -117,11 +117,11 @@ ms.locfileid: "71359198"
 以下安全最佳实践特定于使用 Microsoft SQL Server®或 Windows 内部数据库（WID）（当这些数据库技术用于管理 AD FS 设计和部署中的数据时）。  
   
 > [!NOTE]  
-> 这些建议旨在扩展但不能替代 SQL Server 产品安全指南。 有关规划安全 SQL Server 安装的详细信息，请参阅安全[SQL 安装的安全注意事项](https://go.microsoft.com/fwlink/?LinkID=139831)（@no__t 为-1）。  
+> 这些建议旨在扩展但不能替代 SQL Server 产品安全指南。 有关规划安全 SQL Server 安装的详细信息，请参阅安全[SQL 安装的安全注意事项](https://go.microsoft.com/fwlink/?LinkID=139831)（ https://go.microsoft.com/fwlink/?LinkID=139831)。  
   
 -   **始终在物理上安全的网络环境中的防火墙后面部署 SQL Server。**  
   
-    SQL Server 安装应永远不直接公开到 Internet 上。 只有数据中心内的计算机才能访问支持 AD FS 的 SQL server 安装。 有关详细信息，请参阅[安全最佳实践清单](https://go.microsoft.com/fwlink/?LinkID=189229)（@no__t。  
+    SQL Server 安装应永远不直接公开到 Internet 上。 只有数据中心内的计算机才能访问支持 AD FS 的 SQL server 安装。 有关详细信息，请参阅[安全最佳实践清单](https://go.microsoft.com/fwlink/?LinkID=189229)（ https://go.microsoft.com/fwlink/?LinkID=189229)。  
   
 -   **请在服务帐户下运行 SQL Server，而不是使用内置的默认系统服务帐户。**  
   
@@ -129,11 +129,11 @@ ms.locfileid: "71359198"
   
 -   **最小化 SQL Server 的外围应用。**  
   
-    只启用那些必需的 SQL Server 终结点。 默认情况下，SQL Server 提供了一个不能删除的内置 TCP 终结点。 对于 AD FS，你应该为 Kerberos 身份验证启用此 TCP 终结点。 若要查看当前的 TCP 终结点，以查看其他用户定义的 TCP 端口是否已添加到 SQL 安装，可以在 Transact-SQL (T-SQL) 会话中使用“SELECT * FROM sys.tcp_endpoints”查询语句。 有关 SQL Server 终结点配置的详细信息，请参阅以下内容的 [How：将数据库引擎配置为侦听多个 TCP 端口 @ no__t （ https://go.microsoft.com/fwlink/?LinkID=189231) 。  
+    只启用那些必需的 SQL Server 终结点。 默认情况下，SQL Server 提供了一个不能删除的内置 TCP 终结点。 对于 AD FS，你应该为 Kerberos 身份验证启用此 TCP 终结点。 若要查看当前的 TCP 终结点，以查看其他用户定义的 TCP 端口是否已添加到 SQL 安装，可以在 Transact-SQL (T-SQL) 会话中使用“SELECT * FROM sys.tcp_endpoints”查询语句。 有关 SQL Server 终结点配置的详细信息，请参阅[如何：将数据库引擎配置为侦听多个 TCP 端口](https://go.microsoft.com/fwlink/?LinkID=189231)（ https://go.microsoft.com/fwlink/?LinkID=189231)。  
   
 -   **避免使用基于 SQL 的身份验证。**  
   
-    若要避免通过网络以明文形式传输密码或将密码存储在配置设置中，请仅对你的 SQL Server 安装使用 Windows 身份验证。 SQL Server 身份验证是一种传统的身份验证模式。 当你使用 SQL Server 身份验证时，不建议存储结构化查询语言 (SQL) 登录凭据（SQL 用户名和密码）。 有关详细信息，请参阅[身份验证模式](https://go.microsoft.com/fwlink/?LinkID=189232)（@no__t。  
+    若要避免通过网络以明文形式传输密码或将密码存储在配置设置中，请仅对你的 SQL Server 安装使用 Windows 身份验证。 SQL Server 身份验证是一种传统的身份验证模式。 当你使用 SQL Server 身份验证时，不建议存储结构化查询语言 (SQL) 登录凭据（SQL 用户名和密码）。 有关详细信息，请参阅[身份验证模式](https://go.microsoft.com/fwlink/?LinkID=189232)（ https://go.microsoft.com/fwlink/?LinkID=189232)。  
   
 -   **仔细评估对 SQL 安装中的其他通道安全性的需要。**  
   
@@ -149,5 +149,5 @@ ms.locfileid: "71359198"
   
     若要提供更好的服务和数据隔离，可以创建所有属性存储查找命令的存储过程。 你可以创建数据库角色，然后向其授予运行存储过程的权限。 将 AD FS Windows 服务的服务标识分配到此数据库角色。 AD FS Windows 服务应无法运行任何其他 SQL 语句，而不能运行用于属性查找的相应存储过程。 以这种方式锁定对 SQL Server 数据库的访问会降低特权提升攻击的风险。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [Windows Server 2012 中的 AD FS 设计指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

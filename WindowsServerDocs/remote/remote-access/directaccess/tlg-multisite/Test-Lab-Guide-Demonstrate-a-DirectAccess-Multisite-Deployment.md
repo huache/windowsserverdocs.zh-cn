@@ -19,11 +19,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71388220"
 ---
-# <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>测试实验指南：演示 DirectAccess 多站点部署
+# <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>测试实验室指南：演示 DirectAccess 多站点部署
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-远程访问是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 操作系统中的一种服务器角色，使远程用户可以使用 DirectAccess 或 RRAS VPN 安全访问内部网络资源。 本指南包含扩展 @no__t 实验室指南的分步说明：使用混合的 IPv4 和 IPv6 @ no__t 演示 DirectAccess 单服务器安装，以演示多站点方案中的远程访问。  
+远程访问是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 操作系统中的一种服务器角色，使远程用户可以使用 DirectAccess 或 RRAS VPN 安全访问内部网络资源。 本指南包含扩展[测试实验室指南的分步说明：演示混合使用 IPv4 和 IPv6 的 DirectAccess 单服务器设置](https://go.microsoft.com/fwlink/p/?LinkId=237004)，以演示多站点方案中的远程访问。  
   
 通过在多站点方案中部署远程访问，你可以在地理位置不同的位置配置远程访问服务器。 之前，远程用户需要始终通过特定 DirectAccess 服务器连接到企业网络。 对于 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 以及 windows 10 或 windows 8，您可以为部署中的每个地理位置配置入口点。 每个入口点可以是单个远程访问服务器，也可以是远程访问服务器的群集。 远程用户可以选择连接到任何组织的远程访问入口点。 例如，如果一个远程用户通常连接到位于亚洲的远程访问入口点，但随后又进入了欧洲，则客户端计算机会自动连接到最近的远程访问入口点。  
   

@@ -19,7 +19,7 @@ ms.locfileid: "71393623"
 ---
 # <a name="ensure-that-the-virtual-function-driver-operates-correctly-when-a-virtual-machine-is-configured-to-use-sr-iov"></a>在将虚拟机配置为使用 SR-IOV 时，请确保虚拟函数驱动程序正常运行
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -38,10 +38,10 @@ ms.locfileid: "71393623"
 ## <a name="impact"></a>影响  
 *网络性能在以下虚拟机上不是最佳的：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
-@no__t 0In 来宾操作系统，请执行以下操作：验证是否安装了相应的驱动程序并启用了所有网络设备，并检查事件日志中是否有错误或警告。 *  
+*在来宾操作系统中，执行以下操作：验证是否安装了相应的驱动程序并启用了所有网络设备，并检查事件日志中是否存在错误或警告。*  
   
 
 

@@ -19,7 +19,7 @@ ms.locfileid: "71393643"
 ---
 # <a name="ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-dynamically-expanding-virtual-hard-disks"></a>当虚拟机使用动态扩展虚拟硬盘时，请确保有足够的物理磁盘空间可用
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,12 +36,12 @@ ms.locfileid: "71393643"
 *一个或多个虚拟机正在使用动态扩展的虚拟硬盘。*  
   
 ## <a name="impact"></a>影响  
-@no__t 0Dynamically 扩展虚拟硬盘需要主机卷上的可用空间，以便在写入虚拟硬盘时可以分配空间。如果可用空间已用完，则任何依赖于物理存储的虚拟机都可能会受到影响。这会影响以下虚拟机： *  
+*动态扩展虚拟硬盘需要主机卷上的可用空间，以便在写入虚拟硬盘时可以分配空间。如果可用空间已用完，则任何依赖于物理存储的虚拟机都可能会受到影响。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
-@no__t 0Monitor 可用磁盘空间，以确保有足够的空间可用于扩展。请考虑关闭虚拟机，并使用 Hyper-v 管理器中的编辑磁盘向导将此虚拟机的每个动态扩展的虚拟硬盘转换为固定大小的虚拟硬盘。 *  
+*监视可用磁盘空间，以确保有足够的空间可用于扩展。请考虑关闭虚拟机，并使用 Hyper-v 管理器中的编辑磁盘向导将此虚拟机的每个动态扩展的虚拟硬盘转换为固定大小的虚拟硬盘。*  
   
 
 

@@ -18,7 +18,7 @@ ms.locfileid: "71369174"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>确定如何恢复林
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 恢复整个 Active Directory 林涉及到在林中的每个域控制器（DC）上将其还原为备份或重新安装 Active Directory 域服务（AD DS）。 恢复林会将林中的每个域还原到上次受信任的备份时的状态。 因此，还原操作将导致至少丢失以下 Active Directory 数据：
 
@@ -51,7 +51,7 @@ ms.locfileid: "71369174"
 
 如果出现故障的时间未知，请进一步进行调查，确定保存林的最后一个安全状态的备份。 这种方法不太理想。 因此，我们强烈建议您每日保存有关 AD DS 的运行状况状态的详细日志，以便在林范围内发生故障时，可以确定故障的大致时间。 还应保留备份的本地副本以实现更快的恢复。
 
-如果启用了 Active Directory 回收站，则备份生存期等于**deletedObjectLifetime**值或**tombstoneLifetime**值（以较小者为准）。 有关详细信息，请参阅[Active Directory 回收站循序渐进指南](https://go.microsoft.com/fwlink/?LinkId=178657)（@no__t 为-1。
+如果启用了 Active Directory 回收站，则备份生存期等于**deletedObjectLifetime**值或**tombstoneLifetime**值（以较小者为准）。 有关详细信息，请参阅[Active Directory 回收站循序渐进指南](https://go.microsoft.com/fwlink/?LinkId=178657)（ https://go.microsoft.com/fwlink/?LinkId=178657)。
 
 作为替代方法，你还可以使用 Active Directory 数据库装载工具（Dsamain.exe）和轻型目录访问协议（LDAP）工具（如 Ldp.exe 或 Active Directory 用户和计算机）来识别哪个备份具有最新的安全状态树林. Windows Server 2008 和更高版本的 Windows Server 操作系统中包含的 Active Directory 数据库装载工具公开作为 LDAP 服务器存储在备份或快照中的 Active Directory 数据。 然后，可以使用 LDAP 工具来浏览数据。 此方法的优点是不需要重新启动目录服务还原模式（DSRM）中的任何 DC 来检查 AD DS 备份的内容。
 
@@ -76,13 +76,13 @@ ms.locfileid: "71369174"
 - 在发生故障之前作为域名系统（DNS）服务器的 DC。 这节省了重新安装 DNS 所需的时间。
 - 如果还使用 Windows 部署服务，请选择未配置为使用 BitLocker 网络解锁的 DC。 在这种情况下，不支持将 BitLocker 网络解锁用于在林恢复期间从备份还原的第一个 DC。
 
-   BitLocker 网络解锁，因为在已部署 Windows 部署服务（WDS *）的 dc*上*不能*使用 BitLocker 网络解锁，因为这样做会导致第一个 DC 需要 Active Directory 和 WDS 才能工作，以便解锁. 但在还原第一个 DC 之前，Active Directory 尚不能用于 WDS，因此无法解锁。
+   BitLocker 网络解锁，因为在已部署 Windows 部署服务（WDS *）的 dc*上*无法*使用 BitLocker 网络解锁，因为这样做会导致第一个 DC 需要 Active Directory 和 WDS 才能进行解锁的情况。 但在还原第一个 DC 之前，Active Directory 尚不能用于 WDS，因此无法解锁。
 
    若要确定是否已将 DC 配置为使用 BitLocker 网络解锁，请检查以下注册表项中是否标识了网络解锁证书：
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-维护处理或还原包含 Active Directory 的备份文件时的安全过程。 林恢复的紧急性会无意中导致忽视的安全最佳做法。 有关详细信息，请参阅 [Best 实践指南中标题为 "建立域控制器备份和还原策略" 的部分，用于保护 Active Directory 安装和日常操作：第 II 部分 @ no__t。
+维护处理或还原包含 Active Directory 的备份文件时的安全过程。 林恢复的紧急性会无意中导致忽视的安全最佳做法。 有关详细信息，请参阅[关于保护 Active Directory 安装和日常操作的最佳实践指南](https://technet.microsoft.com/library/bb727066.aspx)中标题为 "建立域控制器备份和还原策略" 的部分：第 II 部分。
 
 ## <a name="identify-the-current-forest-structure-and-dc-functions"></a>标识当前林结构和 DC 函数
 
@@ -102,7 +102,7 @@ ms.locfileid: "71369174"
 
 对于林中的每个域，标识包含该域的 Active Directory 数据库的受信任备份的单个可写 DC。 选择用于还原 DC 的备份时，请务必小心。 如果失败的日期和原因大约是已知的，则一般建议使用在该日期之前数天内进行的备份。
   
-在此示例中，有四个备份候选项：DC_1、DC_2、DC_4 和 DC_5。 在这些备份候选项中，只还原一个。 建议 DC 的原因如下：  
+在此示例中，有四个备份候选项： DC_1、DC_2、DC_4 和 DC_5。 在这些备份候选项中，只还原一个。 由于以下原因 DC_5 建议的 DC：  
 
 - 它满足使用它作为虚拟化 DC 克隆的源的要求，也就是说，它在支持 VM 生成 id 的虚拟机监控程序上运行 Windows Server 2012 作为虚拟 DC，并运行允许克隆的软件（或者，如果无法克隆，则可以将其删除d）。 还原后，PDC 模拟器角色将被强制转移到该服务器，并且可以添加到域的可克隆域控制器组。  
 - 它运行完整安装的 Windows Server 2012。 运行服务器核心安装的 DC 不太方便作为恢复目标。  

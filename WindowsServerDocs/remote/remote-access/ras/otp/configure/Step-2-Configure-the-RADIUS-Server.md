@@ -27,8 +27,8 @@ ms.locfileid: "71367018"
   
 |任务|描述|  
 |----|--------|  
-|[2.1。配置 RADIUS 软件分发令牌 @ no__t-0|在 RADIUS 服务器上配置软件分发令牌。|  
-|[2.2。配置 RADIUS 安全信息 @ no__t-0|在 RADIUS 服务器上配置要使用的端口和共享机密。|  
+|[2.1. 配置 RADIUS 软件分发令牌](#BKMK_1.1)|在 RADIUS 服务器上配置软件分发令牌。|  
+|[2.2. 配置 RADIUS 安全信息](#BKMK_1.2)|在 RADIUS 服务器上配置要使用的端口和共享机密。|  
 |[2.3 添加用于 OTP 探测的用户帐户](#BKMK_Probe)|在 RADIUS 服务器上，为 OTP 探测创建新的用户帐户。|  
 |[2.4 与 Active Directory 同步](#BKMK_Active)|在 RADIUS 服务器上，创建与 Active Directory 帐户同步的用户帐户。|  
 |[2.5 配置 RADIUS 身份验证代理](#BKMK_AuthAgent)|将远程访问服务器配置为 RADIUS 身份验证代理。|  

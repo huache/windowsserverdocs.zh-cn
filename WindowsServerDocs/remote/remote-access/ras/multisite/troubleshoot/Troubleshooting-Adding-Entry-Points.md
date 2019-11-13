@@ -37,13 +37,13 @@ ms.locfileid: "71404468"
 运行该命令并确保为 *RemoteAccessServer* 参数指定要添加作为入口点的服务器的名称。  
   
 ## <a name="remote-access-is-not-configured"></a>未配置远程访问  
-**接收到错误**。 < Server_name > 上未配置远程访问。 请指定属于多站点部署的服务器的名称。  
+**接收到错误**。 未在 < server_name > 上配置远程访问。 请指定属于多站点部署的服务器的名称。  
   
 **原因**  
   
 参数 *ComputerName* 指定的计算机或运行该命令的计算机上未配置远程访问。  
   
-向多站点部署添加新的入口点时，必须指定两个参数：*ComputerName*和*RemoteAccessServer*。 参数 *ComputerName* 是多站点部署中的一台服务器的名称，参数 *RemoteAccessServer* 是你要添加为新入口点的服务器的名称。 如果你运行的计算机是多站点部署中的一部分，则不需要 ComputerName 参数。  
+当向多站点部署添加新的入口点时，你必须指定两个参数：*ComputerName* 和 *RemoteAccessServer*。 参数 *ComputerName* 是多站点部署中的一台服务器的名称，参数 *RemoteAccessServer* 是你要添加为新入口点的服务器的名称。 如果你运行的计算机是多站点部署中的一部分，则不需要 ComputerName 参数。  
   
 **解决方案**  
   
@@ -102,7 +102,7 @@ ConnectTo 地址与网络位置服务器地址相同。
 ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机通过 IP-HTTPS 实现连接。 网络位置服务器地址应当可以通过企业网络解析，但不可以通过 Internet 解析。 确保网络位置服务器地址不同于 ConnectTo 地址。 选择其他地址并重试。  
   
 ## <a name="directaccess-or-vpn-already-installed"></a>DirectAccess 或 VPN 已安装  
-**接收到错误**。 在服务器 < server_name > 上检测到 VPN 安装。 请指定其他未安装远程访问的服务器或删除该服务器的 VPN 配置。  
+**接收到错误**。 在服务器上检测到 VPN 安装 < server_name >。 请指定其他未安装远程访问的服务器或删除该服务器的 VPN 配置。  
   
 或  
   
@@ -147,7 +147,7 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
   
     **解决方案**  
   
-    如果整个内部网络配置为包含 IPv6 和 IPv4 地址，可考虑转换为 IPv6+IPv4 部署，以利用 IPv6 技术。 请参阅 [Step 3 中的 "从纯 IPv4 转换为 IPv6 + IPv4 公司网络"：计划多站点部署 @ no__t。  
+    如果整个内部网络配置为包含 IPv6 和 IPv4 地址，可考虑转换为 IPv6+IPv4 部署，以利用 IPv6 技术。 请参阅[步骤3：规划多站点部署](assetId:///19d49dbf-1786-47bb-ab97-f0458c53d91d)中的 "从纯 IPv4 过渡到 IPv6 + IPv4 公司网络"。  
   
 -   **问题2**  
   
@@ -214,7 +214,7 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
     服务器 GPO 应当位于远程访问服务器所属的域中。 针对服务器 GPO 采用服务器的域名并重试一次。  
   
 ## <a name="split-brain-dns"></a>拆分式 DNS  
-**收到警告**。 DNS 后缀 < DNS_suffix > 的 NRPT 条目包含客户端计算机连接到远程访问服务器时所使用的公共名称。 在 NRPT 中将名称 < connect_to_address > 添加为免除。  
+**收到警告**。 DNS 后缀的 NRPT 条目 < DNS_suffix > 包含客户端计算机连接到远程访问服务器时所使用的公共名称。 将名称 < connect_to_address > 作为 NRPT 中的免除项添加。  
   
 **原因**  
   

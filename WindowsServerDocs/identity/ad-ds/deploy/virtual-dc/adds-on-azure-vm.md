@@ -19,7 +19,7 @@ ms.locfileid: "71390646"
 
 AD DS 可以在 Azure 虚拟机（VM）上运行，其方式与在许多本地实例中运行的方式相同。 本文逐步介绍如何使用 Azure 门户和 Azure CLI 在两个新的域控制器上部署新的 AD DS 林： Azure 可用性集中的两个新域控制器。 许多客户在创建实验室或准备在 Azure 中部署域控制器时，会发现此指导很有用。
 
-## <a name="components"></a>组件
+## <a name="components"></a>组件数
 
 * 要将所有内容放在其中的资源组。
 * 允许 RDP 访问 Vm 的[Azure 虚拟网络](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview.md)、子网、网络安全组和规则。
@@ -40,23 +40,23 @@ AD DS 可以在 Azure 虚拟机（VM）上运行，其方式与在许多本地�
 
 Azure CLI 用于通过命令行或脚本创建和管理 Azure 资源。 本教程详细介绍了如何使用 Azure CLI 部署运行 Windows Server 2019 的虚拟机。 部署完成后，我们将连接到服务器并安装 AD DS。
 
-如果没有 Azure 订阅, 请在开始前[创建一个免费帐户](https://azure.microsoft.com/free)。
+如果没有 Azure 订阅，请在开始前[创建一个免费帐户](https://azure.microsoft.com/free)。
 
 ### <a name="using-azure-cli"></a>使用 Azure CLI
 
 下面的脚本自动构建两个 Windows Server 2019 Vm 的过程，用于为 Azure 中的新 Active Directory 林生成域控制器。 管理员可以修改下面的变量，以满足其需求，然后将其作为一个操作完成。 此脚本将创建所需的资源组、包含远程桌面、虚拟网络和子网和可用性组的流量规则的网络安全组。 然后，每个 Vm 都是使用 20 GB 的数据磁盘生成的，并禁用缓存，以便将 AD DS 安装到。
 
-下面的脚本可以直接从 Azure 门户运行。 如果选择在本地安装并使用 CLI，此快速入门教程要求运行 Azure CLI 2.0.4 版或更高版本。 运行`az --version`以查找版本。 如果需要安装或升级, 请参阅[安装 Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)。
+下面的脚本可以直接从 Azure 门户运行。 如果选择在本地安装并使用 CLI，此快速入门教程要求运行 Azure CLI 2.0.4 版或更高版本。 运行 `az --version` 以查找版本。 如果需要安装或升级，请参阅[安装 Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)。
 
 | 变量名称 | 用途 |
 | :---: | :--- |
-| adminUsername | 要作为本地管理员在每个 VM 上配置的用户名。 |
-| adminPassword | 要在每个 VM 上配置为本地管理员密码的明文密码。 |
-| resourceGroupName | 用于资源组的名称。 不应复制现有名称。 |
-| Location | 要部署到的 Azure 位置名称。 使用 @no__t 为当前订阅列出受支持的区域。 |
+| AdminUsername | 要作为本地管理员在每个 VM 上配置的用户名。 |
+| AdminPassword | 要在每个 VM 上配置为本地管理员密码的明文密码。 |
+| ResourceGroupName | 用于资源组的名称。 不应复制现有名称。 |
+| 位置 | 要部署到的 Azure 位置名称。 使用 `az account list-locations`列出当前订阅支持的区域。 |
 | VNetName | 分配给 Azure 虚拟网络的名称不应重复现有名称。 |
 | VNetAddress | 用于 Azure 网络的 IP 作用域。 不应复制现有范围。 |
-| subnetName | 分配 IP 子网的名称。 不应复制现有名称。 |
+| SubnetName | 分配 IP 子网的名称。 不应复制现有名称。 |
 | SubnetAddress | 域控制器的子网地址。 应为 VNet 内的子网。 |
 | AvailabilitySet | 域控制器虚拟机将加入的可用性集的名称。 |
 | VMSize | 部署的位置中可用的标准 Azure VM 大小。 |
@@ -159,7 +159,8 @@ az vm create \
 
 升级 Azure 中的新域控制器后，需要将其设置为虚拟网络的主 DNS 服务器和辅助 DNS 服务器，并且任何本地 DNS 服务器都将降级到第三级和更高版本。 有关更改 DNS 服务器的详细信息[，请参阅创建、更改或删除虚拟网络一](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers)文。
 
-有关将本地网络扩展到 Azure 的信息，请参阅在站点到站点 VPN 连接 [Creating 一文中找到的信息。
+有关将本地网络扩展到 Azure 的信息，可参阅[创建站点到站点 VPN 连接](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
+)一文。
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>配置 Vm 并安装 Active Directory 域服务
 

@@ -19,7 +19,7 @@ ms.locfileid: "71364799"
 ---
 # <a name="more-than-one-network-adapter-should-be-available"></a>应该提供多个网络适配器
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳实践和扫描的详细信息，请参阅 [最佳实践分析程序](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "71364799"
   
 ## <a name="resolution"></a>分辨率  
   
-@no__t 将更多网络适配器0Add 到此计算机。若要保留一个网络适配器以供管理操作系统独占使用，请不要将它配置为用于外部虚拟网络。 *  
+*将更多网络适配器添加到此计算机。若要保留一个网络适配器以供管理操作系统独占使用，请不要将它配置为用于外部虚拟网络。*  
   
 有关将网络适配器添加到计算机的信息，请参阅计算机或网络适配器的文档。 然后，将其仅用于管理操作系统，不要将其连接到虚拟交换机。   
   

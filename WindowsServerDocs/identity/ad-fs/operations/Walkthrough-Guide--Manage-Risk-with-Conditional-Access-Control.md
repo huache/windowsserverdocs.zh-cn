@@ -26,13 +26,13 @@ ms.locfileid: "71407467"
 
 本操作实例包括以下部分：
 
--   [步骤 1：设置实验室环境 @ no__t-0
+-   [步骤1：设置实验室环境](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [步骤 2：验证默认 AD FS 访问控制机制 @ no__t-0
+-   [步骤2：验证默认 AD FS 访问控制机制](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
 
--   [步骤 3：基于用户数据配置条件访问控制策略 @ no__t-0
+-   [步骤3：基于用户数据配置条件访问控制策略](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_3)
 
--   [步骤 4：验证条件访问控制机制 @ no__t-0
+-   [步骤4：验证条件访问控制机制](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_4)
 
 ## <a name="BKMK_1"></a>步骤1：设置实验室环境
 若要完成本操作实例，需要一个包括以下组件的环境：
@@ -116,7 +116,7 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 ## <a name="BKMK_4"></a>步骤4：验证条件访问控制机制
 在此步骤中，你将验证前一步骤中设置的条件访问控制策略。 可以使用以下过程来验证 **Robert Hatley** AD 用户是否因属于 **Finance** 组而可以访问你的示例应用程序，以及不属于 **Finance** 组的 AD 用户是否无法访问示例应用程序。
 
-1.  在客户端计算机上，打开一个浏览器窗口，然后导航到示例应用程序： **https://webserv1.contoso.com/claimapp**
+1.  在客户端计算机上，打开浏览器窗口，然后导航到示例应用程序： **https://webserv1.contoso.com/claimapp**
 
     此操作会自动将请求重定向到联合服务器，并且系统会提示你使用用户名和密码登录。
 
@@ -126,11 +126,11 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 
 3.  键入不属于 **Finance** 组的另一 AD 用户的凭据。 （有关如何在 AD 中创建用户帐户的详细信息，请参阅[https://technet.microsoft.com/library/cc7833232.aspx](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx)。
 
-    此时，由于你在上一步中设置的访问控制策略，将为不属于**财务**组的 AD 用户显示 "拒绝访问" 消息。 默认消息文本为 **You 无权访问此站点。单击此处注销并再次登录，或与管理员联系以获取权限。** 但是，此文本完全可自定义。 有关如何自定义登录体验的详细信息，请参阅 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)。
+    此时，由于你在上一步中设置的访问控制策略，将为不属于**财务**组的 AD 用户显示 "拒绝访问" 消息。 默认消息文本为**您无权访问此站点。单击此处注销并再次登录，或与管理员联系以获取权限。** 但是，此文本完全可自定义。 有关如何自定义登录体验的详细信息，请参阅 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [使用条件性访问控制管理风险](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
-[设置 Windows Server 2012 R2 中 AD FS 的实验室环境](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+[在 Windows Server 2012 R2 中设置 AD FS 的实验室环境](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

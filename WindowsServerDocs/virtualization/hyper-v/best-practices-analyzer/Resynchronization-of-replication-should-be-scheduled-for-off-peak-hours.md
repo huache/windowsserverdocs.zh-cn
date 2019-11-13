@@ -19,7 +19,7 @@ ms.locfileid: "71393508"
 ---
 # <a name="resynchronization-of-replication-should-be-scheduled-for-off-peak-hours"></a>应将复制的重新同步安排在非高峰时段
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,9 +36,9 @@ ms.locfileid: "71393508"
 *不会将主虚拟机的复制重新同步安排在非高峰时段。*  
   
 ## <a name="impact"></a>影响  
-@no__t 长时间虚拟机处于需要重新同步的状态，复制日志文件的增长时间越长，主虚拟机上发生的未复制更改就越多。这会影响以下虚拟机： *  
+*虚拟机处于需要重新同步的状态的时间越长，复制日志文件增长的时间越长，主虚拟机上发生的复制更改越多。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
 *使用 Hyper-v 管理器修改虚拟机的复制设置，以便在非高峰时段自动执行重新同步。*  

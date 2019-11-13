@@ -21,7 +21,7 @@ ms.locfileid: "71361453"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS 和目录站点
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 目录站点是您可以从中导入修补程序和硬件驱动程序的 Microsoft 位置。
 
@@ -40,7 +40,7 @@ ms.locfileid: "71361453"
 
 下次 WSUS 服务器同步时，将下载从 Microsoft 更新目录站点导入的已批准更新。 在从 Microsoft 更新目录站点导入时，它们不会下载。
 
-请注意，你必须通过 WSUS 控制台访问 Microsoft 更新目录站点，以确保以与 WSUS 兼容的格式导入更新。 如果手动访问 Microsoft 更新目录网站，则下载的任何更新都不会导入到 WSUS 服务器中，而是作为单个 * 下载。MSU 文件。 WSUS 当前不具有用于在 @no__t 中导入文件的支持机制。MSU 格式。
+请注意，你必须通过 WSUS 控制台访问 Microsoft 更新目录站点，以确保以与 WSUS 兼容的格式导入更新。 如果手动访问 Microsoft 更新目录网站，则下载的任何更新都不会导入到 WSUS 服务器中，而是作为单个 * 下载。MSU 文件。 WSUS 目前不具有用于在 \*中导入文件的支持机制。MSU 格式。
 
 如果运行服务器清理向导，则可能会从 WSUS 服务器中删除从设置为 "未批准" 或 "已拒绝" Microsoft 更新目录导入的更新。 如果删除了这些项，则可以从 Microsoft 更新目录重新导入它们。
 
@@ -64,7 +64,7 @@ WSUS 管理员可能会考虑将访问权限限制为从 Microsoft 更新目录�
 
     -   选择 " **Windows 身份验证**"，然后在右侧的 "**操作**" 窗格中单击 "**启用**"。
 
-2.  为需要修补程序的计算机创建 WSUS 目标组，并将其添加到组中。 有关计算机和组的详细信息，请参阅本指南中的[管理 Wsus 客户端计算机和 wsus 计算机组](managing-wsus-client-computers-and-wsus-computer-groups.md)和 [3.3 部分。配置 WSUS 计算机组 @ no__t-0，步骤3：在 WSUS 部署指南中配置 WSUS。
+2.  为需要修补程序的计算机创建 WSUS 目标组，并将其添加到组中。 有关计算机和组的详细信息，请参阅本指南中的[管理 Wsus 客户端计算机和 wsus 计算机组](managing-wsus-client-computers-and-wsus-computer-groups.md)和[3.3 部分。](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups)在 wsus 部署指南中配置步骤3：配置 wsus 的 wsus 计算机组。
 
 3.  下载修补程序的文件。
 

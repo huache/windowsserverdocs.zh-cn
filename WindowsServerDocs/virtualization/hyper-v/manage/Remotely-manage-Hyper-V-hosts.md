@@ -20,7 +20,7 @@ ms.locfileid: "71392687"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>通过 Hyper-v 管理器远程管理 Hyper-v 主机
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows 10 Windows 8。1
+>适用于： Windows Server 2016、Windows Server 2012 R2、Windows 10 Windows 8。1
 
 本文列出了 Hyper-v 主机和 Hyper-v 管理器版本的支持组合，并介绍了如何连接到远程和本地 Hyper-v 主机，以便你可以对其进行管理。 
 
@@ -51,7 +51,7 @@ Hyper-v 管理器允许你管理少量的 Hyper-v 主机（远程和本地）。
 
 ## <a name="manage-hyper-v-on-a-local-computer"></a>在本地计算机上管理 Hyper-v
 
-在添加计算机（包括本地计算机）之前，hyper-v 管理器不会列出任何托管 Hyper-v 的计算机。 为此，请执行以下操作:
+在添加计算机（包括本地计算机）之前，hyper-v 管理器不会列出任何托管 Hyper-v 的计算机。 要实现此目的，请执行以下操作：
 
 1. 在左窗格中，右键单击 " **Hyper-v 管理器**"。
 2. 单击 "**连接到服务器**"。
@@ -67,7 +67,7 @@ Hyper-v 管理器允许你管理少量的 Hyper-v 主机（远程和本地）。
 
 若要管理远程 Hyper-v 主机，请在本地计算机和远程主机上启用远程管理。
 
-在 Windows Server 上，打开服务器管理器 @no__t**本地服务器**\>**远程管理**，然后单击 "**允许远程连接到此计算机**"。 
+在 Windows Server 上，打开服务器管理器 \>**本地服务器**\>**远程管理**"，然后单击"**允许远程连接到此计算机**"。 
 
 或者，在任一操作系统中，以管理员身份打开 Windows PowerShell 并运行： 
 
@@ -79,13 +79,13 @@ Enable-PSRemoting
 
 对于 Windows 8.1 和更早版本，仅当主机位于同一个域中，并且本地用户帐户也在远程主机上时，远程管理才起作用。
 
-若要将远程 Hyper-v 主机添加到 Hyper-v 管理器，请选择 "**选择计算机**" 对话框中的 "**另一台计算机**"，然后键入远程主机的主机名、NetBIOS 名称或完全限定的域名 \(FQDN @ no__t-3。
+若要将远程 Hyper-v 主机添加到 Hyper-v 管理器，请选择 "**选择计算机**" 对话框中的 "**另一台计算机**"，然后键入远程主机的主机名、NetBIOS 名称或完全限定的域名 \(FQDN\)。
 
 Windows Server 2016 和 Windows 10 中的 hyper-v 管理器提供了比以前版本更多的远程连接类型，如以下部分中所述。  
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-as-a-different-user"></a>以其他用户身份连接到 Windows 2016 或 Windows 10 远程主机
 
-这允许你在本地计算机上未作为 hyper-v 管理员组或 Hyper-v 主机上的 Administrators 组的成员的用户运行时连接到 Hyper-v 主机上的用户。 为此，请执行以下操作:
+这允许你在本地计算机上未作为 hyper-v 管理员组或 Hyper-v 主机上的 Administrators 组的成员的用户运行时连接到 Hyper-v 主机上的用户。 要实现此目的，请执行以下操作：
 
 1. 在左窗格中，右键单击 " **Hyper-v 管理器**"。
 1. 单击 "**连接到服务器**"。
@@ -97,7 +97,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理器提供了比以前版
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-using-ip-address"></a>使用 IP 地址连接到 Windows 2016 或 Windows 10 远程主机
 
-为此，请执行以下操作:
+要实现此目的，请执行以下操作：
 
 1. 在左窗格中，右键单击 " **Hyper-v 管理器**"。
 1. 单击 "**连接到服务器**"。
@@ -108,7 +108,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理器提供了比以前版
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-outside-your-domain-or-with-no-domain"></a>连接到域之外的 Windows 2016 或 Windows 10 远程主机，或不使用域
 
-为此，请执行以下操作:
+要实现此目的，请执行以下操作：
 
 1. 在要管理的 Hyper-v 主机上，以管理员身份打开 Windows PowerShell 会话。
 
@@ -129,7 +129,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理器提供了比以前版
 接下来，配置将用于管理 Hyper-v 主机的计算机。
 
 1. 以管理员身份打开 Windows PowerShell 会话。
-1. 运行以下命令:
+1. 运行以下命令：
 
      ```
      Set-Item WSMan:\localhost\Client\TrustedHosts -Value "fqdn-of-hyper-v-host"
@@ -138,7 +138,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理器提供了比以前版
      Enable-WSManCredSSP -Role client -DelegateComputer "fqdn-of-hyper-v-host"
      ```
 1. 你可能还需要配置以下组策略： 
-    * **计算机配置**\>**管理模板**@no__t**系统**\>**凭据委派**\>**允许向仅 NTLM 服务器身份验证委派全新凭据**
+    * **计算机配置**\>**管理模板**\>**系统**\>**凭据委派**\>**允许向仅 NTLM 服务器身份验证委派全新凭据**
     * 单击 "**启用**" 并添加*wsman/fqdn-hyper-v 主机*。
 1. 打开**Hyper-v 管理器**。
 1. 在左窗格中，右键单击 " **Hyper-v 管理器**"。
@@ -153,7 +153,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理器提供了比以前版
 
 若要使用 UI 工具，请选择一个适用于将运行 Hyper-v 管理器的计算机上的操作系统的工具：
 
-在 Windows Server 上，打开服务器管理器 @no__t**管理**\>**添加角色和功能**。 转到 "**功能**" 页，然后展开 "**远程服务器管理工具**" @no__t 2 个**角色管理工具**\> 个**hyper-v 管理工具**。 
+在 Windows Server 上，打开服务器管理器 \>**管理**\> "**添加角色和功能**"。 转到 "**功能**" 页，然后展开 "**远程服务器管理工具**" \>**角色管理工具**"\> **hyper-v 管理工具**"。 
 
 在 Windows 上，Hyper-v 管理器在[包含 hyper-v 的任何 Windows 操作系统](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility)上都可用。
 
@@ -169,7 +169,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理器提供了比以前版
 add-windowsfeature rsat-hyper-v-tools
 ```
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
  
 [安装 Hyper-V](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md) 
 

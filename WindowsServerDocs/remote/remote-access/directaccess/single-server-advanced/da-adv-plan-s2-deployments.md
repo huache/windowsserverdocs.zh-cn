@@ -138,7 +138,7 @@ DirectAccess 需要三种类型的基础结构服务器：
 ## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 规划 DirectAccess 和第三方 VPN 客户端  
 某些第三方 VPN 客户端不会在网络连接文件夹中创建连接。 这可能会导致 DirectAccess 认为：在建立 VPN 连接且存在到 Intranet 的连接时，它并不具有 Intranet 连接。 当第三方 VPN 客户端通过将其接口定义为网络设备接口规范 (NDIS) 端点类型来对其接口进行注册时，将发生这种情况。 你可以通过在 DirectAccess 客户端上将以下注册表值设置为 1，使这些类型的 VPN 客户端共存：  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces （REG_DWORD）**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces （REG_DWORD）**  
   
 某些第三方 VPN 客户端使用拆分隧道配置，这将允许 VPN 客户端计算机直接访问 Internet，而无需将通信通过 VPN 连接发送到 Intranet。  
   
@@ -146,11 +146,11 @@ DirectAccess 需要三种类型的基础结构服务器：
   
 如果 VPN 连接将其默认网关列为空或全为零 (0.0.0.0)，则说明你的 VPN 客户端采用这种方式配置。 默认情况下，DirectAccess 客户端不会识别拆分隧道配置。 若要配置 DirectAccess 客户端以检测这些类型的 VPN 客户端配置并与之共存，请将以下注册表值设置为 1：  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection （REG_DWORD）**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection （REG_DWORD）**  
   
 ## <a name="previous-step"></a>上一步  
   
--   [步骤 1：规划 DirectAccess 基础结构 @ no__t-0  
+-   [步骤1：规划 DirectAccess 基础结构](da-adv-plan-s1-infrastructure.md)  
   
 
 

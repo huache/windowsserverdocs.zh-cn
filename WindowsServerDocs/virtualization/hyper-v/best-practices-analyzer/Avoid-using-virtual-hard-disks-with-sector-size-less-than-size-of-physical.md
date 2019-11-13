@@ -19,7 +19,7 @@ ms.locfileid: "71366415"
 ---
 # <a name="avoid-using-virtual-hard-disks-with-a-sector-size-less-than-the-sector-size-of-the-physical-storage-that-stores-the-virtual-hard-disk-file"></a>避免使用其扇区大小小于存储虚拟硬盘文件的物理存储扇区大小的虚拟硬盘
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,9 +36,9 @@ ms.locfileid: "71366415"
 *一个或多个虚拟硬盘的物理扇区大小小于虚拟硬盘文件所在存储区的物理扇区大小。*  
   
 ## <a name="impact"></a>**对**  
-在使用虚拟硬盘的虚拟机或应用程序上可能会出现 @no__t 0Performance 问题。这会影响以下虚拟机： *  
+*使用虚拟硬盘的虚拟机或应用程序可能会出现性能问题。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
 *执行下列操作之一：*  

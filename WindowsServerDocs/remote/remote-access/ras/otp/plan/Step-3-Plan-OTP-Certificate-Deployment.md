@@ -75,7 +75,7 @@ ms.locfileid: "71366949"
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [步骤 4：为远程访问服务器计划 OTP @ no__t-0  
+-   [步骤4：为远程访问服务器规划 OTP](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   
 
 

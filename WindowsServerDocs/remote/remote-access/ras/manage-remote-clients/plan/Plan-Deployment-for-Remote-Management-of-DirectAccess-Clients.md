@@ -25,9 +25,9 @@ ms.locfileid: "71404585"
 
 以下主题提供了用于部署运行的、可用于远程管理 DirectAccess 客户端的单个远程访问服务器的规划步骤。  
   
-[步骤 1：规划远程访问基础结构 @ no__t-0：本主题将帮助你规划网络拓扑和服务器设置、防火墙要求、证书要求、域名系统要求、DirectAccess 网络位置服务器和管理服务器的配置，Active Directory要求和组策略对象创建。  
+[步骤1：规划远程访问基础结构](Step-1-Plan-the-Remote-Access-Infrastructure.md)：本主题帮助你规划网络拓扑和服务器设置、防火墙要求、证书要求、域名系统要求、DirectAccess 网络位置服务器和管理服务器的配置、Active Directory 要求以及组策略对象创建。  
   
-[步骤 2：规划远程访问部署 @ no__t-0：规划客户端和服务器部署策略以及基础结构服务器配置。  
+[步骤2：规划远程访问部署](Step-2-Plan-the-Remote-Access-Deployment.md)：规划客户端和服务器部署策略以及基础结构服务器的配置。  
 
   
 

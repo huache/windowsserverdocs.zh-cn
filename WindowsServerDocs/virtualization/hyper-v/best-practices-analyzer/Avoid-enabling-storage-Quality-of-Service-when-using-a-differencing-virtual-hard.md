@@ -19,7 +19,7 @@ ms.locfileid: "71366437"
 ---
 # <a name="avoid-enabling-storage-quality-of-service-when-using-a-differencing-virtual-hard-disk-when-the-parent-and-child-virtual-hard-disks-are-on-different-volumes"></a>当父虚拟硬盘和子虚拟硬盘位于不同的卷上时，请避免启用存储服务质量
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,9 +36,9 @@ ms.locfileid: "71366437"
 *不同卷上具有父虚拟硬盘和子虚拟硬盘的差异虚拟硬盘已启用存储服务质量。*  
   
 ## <a name="impact"></a>**对**  
-@no__t 0This 配置可能会导致差异虚拟硬盘的意外存储质量服务行为以及父和子卷上的其他虚拟硬盘。这会影响以下虚拟硬盘： *  
+*此配置可能会导致差异虚拟硬盘的意外的存储服务质量行为，以及父和子卷上的其他虚拟硬盘。这会影响以下虚拟硬盘：*  
   
-@no__t 虚拟硬盘 >  
+\<虚拟硬盘的列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
 *在被引用的虚拟硬盘上禁用存储服务质量，或执行存储迁移，将父级和子虚拟硬盘移到相同的卷。*  

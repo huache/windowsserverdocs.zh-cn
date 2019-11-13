@@ -19,7 +19,7 @@ ms.locfileid: "71393587"
 ---
 # <a name="integration-services-must-be-installed-before-primary-or-replica-virtual-machines-can-use-an-alternate-ip-address-after-a-failover"></a>必须先安装 Integration services，然后才能在主虚拟机或副本虚拟机在故障转移后使用备用 IP 地址
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,9 +36,9 @@ ms.locfileid: "71393587"
 *参与复制的虚拟机可以配置为在故障转移时使用特定的 IP 地址，但前提是在虚拟机的来宾操作系统中安装了 integration services。*  
   
 ## <a name="impact"></a>影响  
-@no__t 0In 发生故障转移（计划内、计划外或测试）后，副本虚拟机将使用与主虚拟机相同的 IP 地址联机。此配置可能会导致连接问题。这会影响以下虚拟机： *  
+*如果发生故障转移（计划内、计划外或测试），副本虚拟机将使用与主虚拟机相同的 IP 地址联机。此配置可能会导致连接问题。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
 *使用虚拟机连接在虚拟机中安装 integration services。*  

@@ -27,14 +27,14 @@ ms.locfileid: "71408975"
 - 如果你已有现有的 DNS 基础结构，则必须将 Active Directory 命名空间集成到该环境中。 有关详细信息，请参阅[将 AD DS 集成到现有的 DNS 基础结构](../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)。  
 - 如果尚未准备好 DNS 基础结构，则必须设计和部署新的 DNS 基础结构来支持 AD DS。 有关详细信息，请参阅[部署域名系统（DNS）](https://go.microsoft.com/fwlink/?LinkId=93656)。  
   
-如果你的组织具有现有的 DNS 基础结构，则必须确保了解你的 DNS 基础结构将如何与 Active Directory 命名空间进行交互。 要使工作表可以帮助你记录现有 DNS 基础结构的设计，请从[Windows Server 2003 部署工具包的作业助手](https://go.microsoft.com/fwlink/?LinkID=102558)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，并打开 "DNS 清单" （DSSLOGI_8）。  
+如果你的组织具有现有的 DNS 基础结构，则必须确保了解你的 DNS 基础结构将如何与 Active Directory 命名空间进行交互。 要使工作表可以帮助你记录现有 DNS 基础结构的设计，请从[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "DNS 清单" （DSSLOGI_8 .doc）。  
   
 > [!NOTE]  
-> 除了 IP 版本4（IPv4）地址以外，Windows Server 还支持 IP 版本6（IPv6）地址。 要使工作表在记录当前 DNS 结构的递归名称解析方法时帮助你列出 IPv6 地址，请参阅 [Appendix A：DNS 清点 @ no__t。
+> 除了 IP 版本4（IPv4）地址以外，Windows Server 还支持 IP 版本6（IPv6）地址。 要使工作表在记录当前 DNS 结构的递归名称解析方法时帮助你列出 IPv6 地址，请参阅[附录 a： DNS 清单](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)。
   
 在设计 DNS 基础结构以支持 AD DS 之前，请阅读有关 DNS 层次结构、DNS 名称解析过程以及 DNS 如何支持 AD DS 的信息。 有关 DNS 层次结构和名称解析过程的详细信息，请参阅 DNS 技术参考（[https://go.microsoft.com/fwlink/?LinkID=48145](https://go.microsoft.com/fwlink/?LinkID=48145)）。 有关 DNS 如何支持 AD DS 的详细信息，请参阅 Active Directory 技术参考的 DNS 支持（[https://go.microsoft.com/fwlink/?LinkID=48147](https://go.microsoft.com/fwlink/?LinkID=48147)）。  
   
-## <a name="in-this-section"></a>本节内容  
+## <a name="in-this-section"></a>本部分内容  
 
 - [查看 DNS 概念](../../ad-ds/plan/Reviewing-DNS-Concepts.md)  
 - [DNS 和 AD DS](../../ad-ds/plan/DNS-and-AD-DS.md)  

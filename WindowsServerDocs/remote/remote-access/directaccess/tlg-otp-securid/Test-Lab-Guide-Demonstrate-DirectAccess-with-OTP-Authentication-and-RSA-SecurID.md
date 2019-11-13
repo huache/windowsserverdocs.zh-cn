@@ -19,11 +19,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71404669"
 ---
-# <a name="test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid"></a>测试实验指南：利用 OTP 身份验证和 RSA SecurID 演示 DirectAccess
+# <a name="test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid"></a>测试实验室指南：演示带有 OTP 身份验证和 RSA SecurID 的 DirectAccess
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-远程访问是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 操作系统中的一种服务器角色，使远程用户能够使用 DirectAccess 或虚拟专用网络（Vpn）和路由安全地访问内部网络资源和远程访问服务（RRAS）。 本指南包含扩展 @no__t 实验室指南的分步说明：使用混合的 IPv4 和 IPv6 @ no__t 演示 DirectAccess 单服务器安装程序，以演示远程访问一次性密码（OTP）配置。  
+远程访问是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 操作系统中的一种服务器角色，使远程用户能够使用 DirectAccess 或虚拟专用网络（Vpn）和路由安全地访问内部网络资源和远程访问服务（RRAS）。 本指南包含扩展[测试实验室指南：演示使用混合 IPv4 和 IPv6 的 DirectAccess 单服务器安装程序](https://go.microsoft.com/fwlink/p/?LinkId=237004)以演示远程访问一次性密码（OTP）配置的分步说明。  
   
 > [!WARNING]  
 > 本测试实验室指南的设计包括基础结构服务器，如运行 Windows Server 2012 R2 或 Windows Server 2012 的域控制器和证书颁发机构（CA）。 本指南中未介绍如何使用此测试实验室指南来配置运行其他操作系统的基础结构服务器，以及配置其他操作系统的说明。  

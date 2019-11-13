@@ -19,7 +19,7 @@ ms.locfileid: "71391119"
 ---
 # <a name="identity-and-access-in-windows-server-2016"></a>Windows Server 2016 中的标识和访问
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 >[!TIP]
 > 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)了解具体信息。
@@ -36,7 +36,7 @@ Windows Server 2016 中所有适用于 AD FS 的新功能的概述。
 ## <a name="privileged-access-management-for-active-directory-domain-services-40ad-ds41httpstechnetmicrosoftcomlibrarydn903243aspx"></a>[Active Directory 域服务&#40;的 Privileged Access Management AD DS&#41;](https://technet.microsoft.com/library/dn903243.aspx)
 Active Directory 域服务 (AD DS) 的特权访问管理 (PAM) 是一款基于 Microsoft Identity Manager (MIM) 以及 Windows Server 2012 R2 和 Windows Server 2016 的解决方案。
 
-## <a name="windows-10-for-the-enterprise-ways-to-use-devices-for-workhttpsazuremicrosoftcomdocumentationarticlesactive-directory-azureadjoin-windows10-devices-overviewrnd1"></a>适用于企业的 [Windows 10：使用设备进行工作的方法 @ no__t-0
+## <a name="windows-10-for-the-enterprise-ways-to-use-devices-for-workhttpsazuremicrosoftcomdocumentationarticlesactive-directory-azureadjoin-windows10-devices-overviewrnd1"></a>[适用于企业的 Windows 10：使用设备进行工作的方式](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)
 Windows 10 提供了利用 Azure Active Directory 的功能。 Windows 10 设备可以连接到 Azure AD，并且用户可以使用 Azure AD 帐户登录到 Windows，或添加其 Azure ID 以访问业务应用和资源。
 
 ## <a name="active-directory-domain-servicesidentityad-dsactive-directory-domain-servicesmd"></a>[Active Directory 域服务](../identity/ad-ds/Active-Directory-Domain-Services.md)

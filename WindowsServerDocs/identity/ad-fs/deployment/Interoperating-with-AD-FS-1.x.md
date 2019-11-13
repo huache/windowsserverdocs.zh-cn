@@ -18,15 +18,15 @@ ms.locfileid: "71359512"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>与 AD FS 1.x 进行互操作
 
-对于 Windows Server®2012和 AD FS 1 中 Active Directory 联合身份验证服务 \(AD FS @ no__t 之间的互操作性。*x*完成以下一项或多项任务，具体取决于你的组织的需求：  
+有关 Windows Server®2012和 AD FS 1 中 Active Directory 联合身份验证服务 \(AD FS\) 之间的互操作性。*x*完成以下一项或多项任务，具体取决于你的组织的需求：  
   
 -   规划 Windows Server 2012 和早期版本的 AD FS 中 AD FS 之间的互操作性，并详细了解名称 ID 声明类型。 有关详细信息，请参阅[规划与 AD FS 1.x 的互操作性](https://technet.microsoft.com/library/ff678040.aspx)。  
   
--   如果要从可由 AD FS 1 使用的 Windows Server 2012 中的 AD FS 联合身份验证服务发送声明。*x*联合身份验证服务，请参阅 @no__t 1Checklist：配置 AD FS 以将声明发送到 AD FS 1.x 联合身份验证服务 @ no__t。  
+-   如果要从可由 AD FS 1 使用的 Windows Server 2012 中的 AD FS 联合身份验证服务发送声明。*x*联合身份验证服务，请参阅[清单：配置 AD FS 将声明发送到 AD FS 1.x 联合身份验证服务](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Federation-Service.md)。  
   
--   如果要从 Windows Server 2012 中的 AD FS 联合身份验证服务发送声明，则该应用程序可由运行 AD FS 1 的 Web 服务器所承载的应用程序使用。*x*声明 @ no__t-1aware Web 代理，请参阅 [Checklist：配置 AD FS 以将声明发送到 AD FS 1.x 声明感知 Web 代理 @ no__t-0。  
+-   如果要从 Windows Server 2012 中的 AD FS 联合身份验证服务发送声明，则该应用程序可由运行 AD FS 1 的 Web 服务器所承载的应用程序使用。*x*声明\-感知 web 代理，请参阅[清单：配置 AD FS 将声明发送到 AD FS 1.X 声明感知 Web 代理](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md)。  
   
--   如果将从 AD FS 1 发送声明。*x*联合身份验证服务 AD FS Windows Server 2012 中的联合身份验证服务，请参阅 [Checklist：将 AD FS 配置为使用 AD FS 1.x @ no__t 中的声明。  
+-   如果将从 AD FS 1 发送声明。*x*联合身份验证服务要由 Windows Server 2012 中的 AD FS 联合身份验证服务使用，请参阅[清单：将 AD FS 配置为使用 AD FS 1.X 中的声明](Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md)。  
   
 ## <a name="differences-between-federation-service-settings"></a>联合身份验证服务设置之间的差异  
 尽管大部分 AD FS 1。*x*联合身份验证服务设置的工作方式类似于 Windows Server 2012 设置中的 AD FS 联合身份验证服务，某些设置名称已更改。 下表列出了 AD FS 1 的设置名称。*x*联合身份验证服务和它们在 Windows Server 2012 中的 AD FS 联合身份验证服务的等效名称。  
@@ -37,11 +37,11 @@ ms.locfileid: "71359512"
 |资源伙伴|信赖方信任 
 |应用程序|信赖方信任  
 |应用程序属性|信赖方信任属性  
-|应用程序 URL|信赖方标识符和 WS @ no__t-0Federation 被动终结点 URL  
+|应用程序 URL|信赖方标识符和\-WS-FEDERATION 被动终结点 URL  
 |联合身份验证服务 URI|联合身份验证服务标识符  
-|联合身份验证服务终结点 URL|WS @ no__t-0Federation 被动终结点 URL  
+|联合身份验证服务终结点 URL|WS\-联合身份验证被动终结点 URL  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [AD FS 和 AD FS 1.x 互操作性](https://go.microsoft.com/fwlink/?LinkId=200776)  
   
 

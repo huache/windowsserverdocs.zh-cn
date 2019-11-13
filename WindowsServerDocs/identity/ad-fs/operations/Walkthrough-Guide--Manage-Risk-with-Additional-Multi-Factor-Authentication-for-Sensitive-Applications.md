@@ -28,13 +28,13 @@ ms.locfileid: "71357795"
 
 本操作实例包括以下部分：
 
--   [步骤 1：设置实验室环境 @ no__t-0
+-   [步骤1：设置实验室环境](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [步骤 2：验证默认 AD FS 身份验证机制 @ no__t-0
+-   [步骤2：验证默认 AD FS 身份验证机制](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)
 
--   [步骤 3：在联合服务器上配置 MFA @ no__t-0
+-   [步骤3：在联合服务器上配置 MFA](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_3)
 
--   [步骤 4：验证 MFA 机制 @ no__t-0
+-   [步骤4：验证 MFA 机制](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_4)
 
 ## <a name="BKMK_1"></a>步骤1：设置实验室环境
 若要完成本操作实例，需要一个包括以下组件的环境：
@@ -137,7 +137,7 @@ ms.locfileid: "71357795"
 
     3.  **目录**-与多重身份验证提供程序关联的 Windows Azure Active Directory 租户。 这是一个可选字段，因为在保护本地应用程序时，提供程序不一定要链接到 Windows Azure Active Directory。
 
-7.  单击“创建”后，系统将创建多重身份验证提供程序，并且您应当会看到一条指示以下内容的消息：已成功创建多重身份验证提供程序。  单击“确定”。
+7.  单击“创建”后，将会创建该多重身份验证提供程序，并且会显示这样一条消息：已成功创建多重身份验证提供程序。  单击“确定”。
 
 接下来，必须下载 Windows Azure Multi-Factor Authentication 服务器。 若要执行此操作，你可以通过 Windows Azure 门户启动 Windows Azure Multi-Factor Authentication 门户。
 
@@ -205,7 +205,7 @@ ms.locfileid: "71357795"
 
 ##### <a name="to-configure-the-mfa-policy-based-on-users-group-membership-data-for-claimapp--via-the-ad-fs-management-console"></a>通过 AD FS 管理控制台基于用户的组成员身份数据配置 MFA 策略
 
-1.  在联合服务器上的 AD FS 管理控制台中，导航到 "**每个信赖方信任**节点 @no__t 的**身份验证策略**"，然后选择代表示例应用程序的信赖方信任（**claimapp**）。
+1.  在联合服务器上的 AD FS 管理控制台中，导航到 "**每个信赖方信任**节点\\**身份验证策略**"，然后选择代表示例应用程序的信赖方信任（**claimapp**）。
 
 2.  在“操作”页面中直接选择或者通过右键单击“claimapp”的方式选择“编辑自定义的多重身份验证”。
 
@@ -243,13 +243,13 @@ ms.locfileid: "71357795"
 
     此时，由于所配置的 MFA 策略的原因，系统将提示用户运行附加身份验证。 默认消息文本为“出于安全原因，我们需要其他信息来验证你的帐户。” 但是，此文本完全可自定义。 有关如何自定义登录体验的详细信息，请参阅 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)。
 
-    如果已将证书身份验证配置为附加身份验证方法，则默认消息文本 **Select 要用于身份验证的证书。如果取消操作，请关闭浏览器并重试。**
+    如果已将证书身份验证配置为附加身份验证方法，默认消息文本将是“选择要用于身份验证的证书。如果取消操作，请关闭浏览器并重试。”
 
     如果已将 Windows Azure 多重身份验证配置为附加身份验证方法，则默认消息文本将是“将呼叫您的电话以完成您的身份验证。” 有关使用 Windows Azure Multi-Factor Authentication 登录及使用不同选项完成首选验证方法的详细信息，请参阅 [Windows Azure Multi-Factor Authentication 概述](https://technet.microsoft.com/library/dn249479.aspx)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [利用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-[设置 Windows Server 2012 R2 中 AD FS 的实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+[在 Windows Server 2012 R2 中设置 AD FS 的实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

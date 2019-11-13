@@ -30,7 +30,7 @@ ms.locfileid: "71404489"
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [步骤 2：配置多站点基础结构 @ no__t  
+-   [步骤2：配置多站点基础结构](Step-2-Configure-the-Multisite-Infrastructure.md)  
 
 
 

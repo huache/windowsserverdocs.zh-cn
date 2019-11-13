@@ -19,7 +19,7 @@ ms.locfileid: "71366448"
 ---
 # <a name="avoid-pausing-a-virtual-machine"></a>避免暂停虚拟机
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。
   
@@ -44,7 +44,7 @@ ms.locfileid: "71366448"
   
 ## <a name="resolution"></a>分辨率  
   
-@no__t 0If，这是有意的，无需执行其他操作。否则，请考虑恢复这些虚拟机或将其关闭。 *  
+*如果这是有意的，则无需执行其他操作。否则，请考虑恢复这些虚拟机或将其关闭。*  
   
 #### <a name="use-hyper-v-manager-to-resume-the-virtual-machine"></a>使用 Hyper-v 管理器恢复虚拟机  
   

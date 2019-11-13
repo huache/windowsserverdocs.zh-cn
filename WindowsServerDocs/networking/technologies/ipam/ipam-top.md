@@ -31,4 +31,4 @@ IP 地址管理（IPAM）是一套集成工具，支持端到端规划、部署�
 > -   [IPAM 中的新增功能](../../technologies/ipam/What-s-New-in-IPAM.md)  
 > -   [管理 IPAM](../../technologies/ipam/Manage-IPAM.md)  
 > -   [Windows PowerShell 中的 IP 地址管理（IPAM）服务器 Cmdlet](https://technet.microsoft.com/library/jj553807.aspx)  
-> -   视频：[Windows Server 2016：IPAM @ no__t 中的 DNS 管理  
+> -   视频： [Windows Server 2016： IPAM 中的 DNS 管理](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  

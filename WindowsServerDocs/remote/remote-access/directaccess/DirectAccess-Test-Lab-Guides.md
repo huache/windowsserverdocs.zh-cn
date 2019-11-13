@@ -25,8 +25,8 @@ ms.locfileid: "71394553"
 
 下面是指向 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中 DirectAccess 的测试实验室指南的链接。
 
-- [测试实验室指南：使用 Windows NLB @ no__t 在群集中演示 DirectAccess
+- [测试实验室指南：使用 Windows NLB 在群集中演示 DirectAccess](tlg-cluster-nlb/Test-Lab-Guide-Demonstrate-DirectAccess-in-a-Cluster-with-Windows-NLB.md)
 
-- [测试实验室指南：演示 DirectAccess 多站点部署 @ no__t-0
+- [测试实验室指南：演示 DirectAccess 多站点部署](tlg-multisite/Test-Lab-Guide-Demonstrate-a-DirectAccess-Multisite-Deployment.md)
 
-- [测试实验室指南：演示具有 OTP 身份验证和 RSA SecurID @ no__t 的 DirectAccess
+- [测试实验室指南：利用 OTP 身份验证和 RSA SecurID 演示 DirectAccess](tlg-otp-securid/Test-Lab-Guide-Demonstrate-DirectAccess-with-OTP-Authentication-and-RSA-SecurID.md)

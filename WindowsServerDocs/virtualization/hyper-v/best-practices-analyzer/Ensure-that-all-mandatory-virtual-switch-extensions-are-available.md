@@ -19,7 +19,7 @@ ms.locfileid: "71364820"
 ---
 # <a name="ensure-that-all-mandatory-virtual-switch-extensions-are-available"></a>确保所有必需的虚拟交换机扩展可用
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -38,10 +38,10 @@ ms.locfileid: "71364820"
 ## <a name="impact"></a>影响  
 *在以下虚拟机上的一个或多个虚拟网络适配器上阻止网络流量：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
-@no__t 0First，请确保已在主机上安装了强制扩展，并在必要时安装扩展。然后，如果禁用了强制扩展，则使用虚拟交换机管理器或 Windows PowerShell cmdlet VMSwitchExtension 启用扩展。 *  
+*首先，请确保已在主机上安装了强制扩展，并在必要时安装扩展。然后，如果强制扩展被禁用，请使用虚拟交换机管理器或 Windows PowerShell cmdlet VMSwitchExtension 来启用该扩展。*  
   
 
 

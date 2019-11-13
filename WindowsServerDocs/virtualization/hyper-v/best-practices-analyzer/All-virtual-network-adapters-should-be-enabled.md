@@ -19,7 +19,7 @@ ms.locfileid: "71366589"
 ---
 # <a name="all-virtual-network-adapters-should-be-enabled"></a>应启用所有虚拟网络适配器
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 
   
@@ -44,7 +44,7 @@ ms.locfileid: "71366589"
   
 ## <a name="resolution"></a>分辨率  
   
-@no__t 0Use 网络 & Internet 设置来启用虚拟网络适配器。或者，使用虚拟交换机管理器重新配置外部虚拟交换机，使其不与管理操作系统共享。 *  
+*使用网络 & Internet 设置来启用虚拟网络适配器。或者，使用虚拟交换机管理器重新配置外部虚拟交换机，使其不与管理操作系统共享。*  
   
 
 

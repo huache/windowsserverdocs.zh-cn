@@ -40,7 +40,7 @@ ms.locfileid: "71404399"
   
 -   部署 RADIUS 服务器时，需要为 RADIUS 流量配置共享机密和端口号。 记下这些详细信息;当你配置远程访问服务器时，它们是必需的。  
   
-你可以在 [Test 实验室指南中查看使用 RSA SecurID 服务器设置 OTP 身份验证的示例测试实验室指南：演示具有 OTP 身份验证和 RSA SecurID @ no__t 的 DirectAccess。  
+你可以在[测试实验室指南：使用 otp 身份验证和 RSA Securid 演示 DirectAccess](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/tlg-otp-securid/test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid)中查看使用 RSA securid 服务器设置 OTP 身份验证的示例测试实验室指南。  
   
   
   

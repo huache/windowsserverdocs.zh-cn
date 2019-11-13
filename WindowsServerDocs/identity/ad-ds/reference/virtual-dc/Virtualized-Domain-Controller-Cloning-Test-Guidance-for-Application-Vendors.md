@@ -52,7 +52,7 @@ ms.locfileid: "71360126"
   
 -   已从域控制器中删除  
   
-用户首次运行 Get-addccloningexcludedapplicationlist cmdlet 时，将返回域控制器上运行的服务和应用程序的列表，但这些服务和应用程序不在支持克隆的服务和应用程序的默认列表中。 默认情况下，你的服务或应用程序将不会列出。 若要将你的服务或应用程序添加到可以安全克隆的应用程序和服务的列表，用户可以再次运行 Get-addccloningexcludedapplicationlist cmdlet 与-GenerateXML 选项，以便将其添加到 Customdccloneallowlist.xml 文件中。 有关详细信息，请参阅 [Step 2：运行 Get-addccloningexcludedapplicationlist cmdlet @ no__t-0。  
+用户首次运行 Get-addccloningexcludedapplicationlist cmdlet 时，将返回域控制器上运行的服务和应用程序的列表，但这些服务和应用程序不在支持克隆的服务和应用程序的默认列表中。 默认情况下，你的服务或应用程序将不会列出。 若要将你的服务或应用程序添加到可以安全克隆的应用程序和服务的列表，用户可以再次运行 Get-addccloningexcludedapplicationlist cmdlet 与-GenerateXML 选项，以便将其添加到 Customdccloneallowlist.xml 文件中。 有关详细信息，请参阅[步骤2：运行 get-addccloningexcludedapplicationlist cmdlet](https://technet.microsoft.com/library/hh831734.aspx#bkmk6_run_get_addccloningexcludedapplicationlist_cmdlet)。  
   
 ### <a name="distributed-system-interactions"></a>分布式系统交互  
 通常，隔离于本地计算机的服务在参与克隆时通过或失败。 分布式服务必须考虑到一小段时间内网络上主计算机的两个实例。 这可能是一个服务实例，它尝试从已注册为该标识的新供应商的伙伴系统请求信息。 或服务的两个实例可以同时将信息推送到 AD DS 数据库中，结果不同。 例如，当具有 Windows 测试技术（WTT）服务的两台计算机位于域控制器的网络上时，不确定哪台计算机将与进行通信。  
@@ -72,7 +72,7 @@ ms.locfileid: "71360126"
 ### <a name="cloning-failure"></a>克隆失败  
 服务供应商应该测试这种情况，因为当克隆失败时，计算机将启动到目录服务修复模式（DSRM），这种形式的安全模式。 此时，计算机尚未完成克隆。 某些状态可能已更改，某些状态可能会保留在原始域控制器中。 测试此方案，以了解它对应用程序的影响。  
   
-若要导致克隆失败，请尝试克隆域控制器，而不授予其克隆权限。 在这种情况下，计算机将只更改 IP 地址，并且仍从原始域控制器获得其大部分状态。 有关授予域控制器权限进行克隆的详细信息，请参阅 [Step 1：授予源虚拟化域控制器克隆 @ no__t 的权限。  
+若要导致克隆失败，请尝试克隆域控制器，而不授予其克隆权限。 在这种情况下，计算机将只更改 IP 地址，并且仍从原始域控制器获得其大部分状态。 有关授予域控制器权限的详细信息，请参阅[步骤1：授予源虚拟化域控制器克隆权限](https://technet.microsoft.com/library/hh831734.aspx#bkmk4_grant_source)。  
   
 ### <a name="pdc-emulator-cloning"></a>PDC 仿真器克隆  
 服务和应用程序供应商应该测试这种情况，因为在克隆 PDC 模拟器时，还需要重新启动。 此外，大多数克隆操作都是在临时标识下执行，以允许新克隆在克隆过程中与 PDC 仿真器交互。  

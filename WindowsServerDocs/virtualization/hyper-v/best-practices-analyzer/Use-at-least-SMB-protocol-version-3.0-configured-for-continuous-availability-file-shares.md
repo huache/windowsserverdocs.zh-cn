@@ -19,7 +19,7 @@ ms.locfileid: "71393337"
 ---
 # <a name="use-at-least-smb-protocol-version-30-configured-for-continuous-availability-on-file-shares-that-store-files-for-virtual-machines"></a>至少使用 SMB 协议版本3.0，配置为用于存储虚拟机文件的文件共享上的连续可用性
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,9 +36,9 @@ ms.locfileid: "71393337"
 *虚拟机文件或虚拟硬盘文件存储在未配置为 SMB 协议版本3.0 的连续可用性功能的网络文件共享上。*  
   
 ## <a name="impact"></a>**对**  
-@no__t 0Microsoft 不推荐此配置，因为这可能会影响使用服务器的虚拟机的可用性。这会影响以下虚拟机： *  
+*Microsoft 不建议使用此配置，因为这可能会影响使用服务器的虚拟机的可用性。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
 执行下列操作之一：  

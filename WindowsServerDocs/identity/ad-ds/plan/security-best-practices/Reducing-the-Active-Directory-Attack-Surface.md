@@ -22,19 +22,19 @@ ms.locfileid: "71367655"
 
 本部分重点介绍用于降低 Active Directory 安装的受攻击面的技术控制。 部分包含以下信息：  
   
--   [实施最小特权管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)重点介绍如何确定使用高特权帐户进行日常管理所带来的风险，以及如何提供实施建议以降低存在特权帐户。  
+-   [实施最小特权管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)重点介绍如何确定使用高特权帐户进行日常管理的风险，以及提供实施建议以降低特权帐户存在的风险。  
   
 -   [实现安全的管理主机](../../../ad-ds/plan/security-best-practices/Implementing-Secure-Administrative-Hosts.md)介绍了部署专用的安全管理系统的原则，以及一些用于安全管理主机部署的示例方法。  
   
--   [保护域控制器免受攻击](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)讨论了策略和设置，尽管与安全管理主机的实施建议类似，但包含一些特定于域控制器的建议来帮助确保域控制器和用于管理它们的系统具有良好的安全性。  
+-   [保护域控制器免受攻击](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)讨论了一些策略和设置，这些策略和设置与实现安全管理主机的建议类似，其中包含一些特定于域控制器的建议，以帮助确保域控制器和用于管理它们的系统具有良好的安全性。  
   
 ## <a name="privileged-accounts-and-groups-in-active-directory"></a>Active Directory 中的特权帐户和组  
-本部分提供有关 Active Directory 中的特权帐户和组的背景信息，用于说明 Active Directory 中特权帐户和组之间的共性和差异。 了解这些区别后，无论你是在实现[最小权限管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)的原义还是为你的组织自定义这些建议，你都可以使用保护每个组所需的工具，帐户。  
+本部分提供有关 Active Directory 中的特权帐户和组的背景信息，用于说明 Active Directory 中特权帐户和组之间的共性和差异。 了解这些区别后，无论你是在实现[最小权限管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)的原义还是为你的组织自定义这些建议，你都可以使用适当的工具来确保每个组和帐户的安全。  
   
 ### <a name="built-in-privileged-accounts-and-groups"></a>内置特权帐户和组  
 Active Directory 有助于委派管理，并在分配权限和权限时支持最低权限原则。 默认情况下，在域中具有帐户的 "常规" 用户可以读取目录中的大部分内容，但只能更改目录中非常有限的一组数据。 需要额外权限的用户可以被授予目录中内置的各种 "特权" 组的成员身份，以便他们可以执行与其角色相关的特定任务，但无法执行与职责无关的任务。 组织还可以创建专为特定作业责任定制的组，并向其授予了精细的权限和权限，使 IT 人员能够执行日常管理功能，而无需授予超出对于这些函数是必需的。  
   
-在 Active Directory 中，三个内置组是目录中的最高特权组：Enterprise Admins、Domain Admins 和 Administrator。 以下部分介绍了每个组的默认配置和功能：  
+在 Active Directory 中，三个内置组是目录中的最高特权组： Enterprise Admins、Domain Admins 和 Administrator。 以下部分介绍了每个组的默认配置和功能：  
   
 #### <a name="highest-privilege-groups-in-active-directory"></a>Active Directory 中的最高特权组  
   
@@ -103,9 +103,9 @@ Active Directory 中的大多数对象都属于域的 BA 组。 但是，默认�
 在早于 Windows Server 2008 的 Windows 版本中，对象的所有者可以更改对象的权限，包括授予自身最初没有的权限。 因此，域的 AdminSDHolder 对象上的默认权限会阻止作为 BA 或 EA 组成员的用户更改域的 AdminSDHolder 对象的权限。 但是，域的 Administrators 组的成员可以获得对象的所有权，并向自己授予额外的权限，这意味着此保护是基本的，只是保护对象以防用户意外修改。不是域中 DA 组的成员。 此外，BA 和 EA （如果适用）组有权更改本地域（EA 的根域）中的 AdminSDHolder 对象的属性。  
   
 > [!NOTE]  
-> DSHeuristics 的 AdminSDHolder 对象上的属性允许对被视为受保护组的组进行有限的自定义（删除），并受 AdminSDHolder 和 SDProp 的影响。 如果实现此自定义项，则应认真考虑此自定义，不过，在 AdminSDHolder 中修改 dSHeuristics 的情况会很有用。 有关修改 AdminSDHolder 对象上的 dSHeuristics 属性的详细信息，请参阅 Microsoft 支持部门文章[817433](https://support.microsoft.com/?id=817433)和[973840](https://support.microsoft.com/kb/973840)，以及 [Appendix C：Active Directory @ no__t 中的受保护帐户和组。  
+> DSHeuristics 的 AdminSDHolder 对象上的属性允许对被视为受保护组的组进行有限的自定义（删除），并受 AdminSDHolder 和 SDProp 的影响。 如果实现此自定义项，则应认真考虑此自定义，不过，在 AdminSDHolder 中修改 dSHeuristics 的情况会很有用。 有关修改 AdminSDHolder 对象上的 dSHeuristics 属性的详细信息，请参阅 Microsoft 支持部门文章[817433](https://support.microsoft.com/?id=817433)和[973840](https://support.microsoft.com/kb/973840)，以及[附录 C： Active Directory 中的受保护帐户和组](Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  
   
-尽管此处介绍了 Active Directory 中的最特权组，但还有一些已被授予提升权限级别的其他组。 有关 Active Directory 中的所有默认和内置组以及分配给每个组的用户权限的详细信息，请参阅 @no__t 0Appendix B：Active Directory @ no__t 中的特权帐户和组。  
+尽管此处介绍了 Active Directory 中的最特权组，但还有一些已被授予提升权限级别的其他组。 有关 Active Directory 中的所有默认和内置组以及分配给每个组的用户权限的详细信息，请参阅[附录 B： Active Directory 中的特权帐户和组](../../../ad-ds/plan/security-best-practices/Appendix-B--Privileged-Accounts-and-Groups-in-Active-Directory.md)。  
   
 
 

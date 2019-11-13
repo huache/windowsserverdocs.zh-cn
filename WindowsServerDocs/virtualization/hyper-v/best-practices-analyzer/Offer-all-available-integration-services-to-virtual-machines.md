@@ -19,7 +19,7 @@ ms.locfileid: "71393599"
 ---
 # <a name="offer-all-available-integration-services-to-virtual-machines"></a>向虚拟机提供所有可用的集成服务
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳实践和扫描的详细信息，请参阅 [最佳实践分析程序](https://go.microsoft.com/fwlink/?LinkId=122786)。
   
@@ -40,11 +40,11 @@ ms.locfileid: "71393599"
   
 *某些功能将不可用于以下虚拟机：*  
   
-@no__t-虚拟机名称的 0list >  
+虚拟机名称 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
   
-@no__t 0If，这是有意的，无需执行其他操作。否则，请考虑在这些虚拟机的设置中提供所有 integration services。 *  
+*如果这是有意的，则无需执行其他操作。否则，请考虑在这些虚拟机的设置中提供所有 integration services。*  
   
 可以通过虚拟机设置来管理某些集成服务的可用性。   
   

@@ -36,7 +36,7 @@ ms.locfileid: "71403416"
 
 有关 Windows Server 2003 中引入的约束委派的详细信息，请参阅 [Kerberos 协议转换和约束委派](https://technet.microsoft.com/library/cc739587(v=ws.10))。
 
-Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括专门针对约束委派的扩展。  Service for User to Proxy (S4U2Proxy) 允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。 这些扩展允许在可位于另一个域中的后端服务帐户上配置约束委派。 有关这些扩展的详细信息，请参阅 [ @ no__t-1MS @ no__t-2：Kerberos 协议扩展：MSDN Library 中的用户服务和约束委派协议规范 @ no__t-0。
+Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括专门针对约束委派的扩展。  Service for User to Proxy (S4U2Proxy) 允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。 这些扩展允许在可位于另一个域中的后端服务帐户上配置约束委派。 有关这些扩展的详细信息，请参阅 MSDN Library 中的[\[MS-SFU\]： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)。
 
 **实用应用程序**
 
@@ -58,9 +58,9 @@ Kerberos 约束委派可以在前端服务与资源服务不在同一域中时�
 
 基础协议中的更改允许跨域约束委派。 Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括用户到代理（S4U2Proxy）协议的服务扩展。 这组 Kerberos 协议扩展允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。
 
-有关这些扩展的实现信息，请参阅 [ @ no__t-1MS-SFU @ no__t-2：Kerberos 协议扩展：MSDN 中的用户服务和约束委派协议规范 @ no__t-0。
+有关这些扩展的实现信息，请参阅 MSDN 中的[\[MS-SFU\]： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)。
 
-有关使用与 Service for User (S4U) 扩展相比提早的票证授予票证 (TGT) 的 Kerberos 委派的基础消息队列的详细信息，请参阅 [1.3.3 协议概述](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx)部分（“[MS-SFU]：Kerberos 协议扩展：用户服务和约束委派协议规范”）。
+有关使用与 Service for User (S4U) 扩展相比提早的票证授予票证 (TGT) 的 Kerberos 委派的基础消息队列的详细信息，请参阅 [1.3.3 协议概述](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) 部分（“[MS-SFU]：Kerberos 协议扩展：用户服务和约束委派协议规范”）。
 
 **基于资源的约束委派的安全含义**
 
@@ -81,9 +81,9 @@ Kerberos 约束委派可以在前端服务与资源服务不在同一域中时�
 
 -   若要检索主体列表，请使用**get-adcomputer**、 **uninstall-adserviceaccount**和**new-aduser** cmdlet 以及**Properties PrincipalsAllowedToDelegateToAccount**参数。
 
--   若要配置资源服务，请使用**新的-get-adcomputer**、 **uninstall-adserviceaccount**、 **new-aduser**、 **get-adcomputer**、 **uninstall-adserviceaccount**和**new-aduser** cmdlet，其中包含**PrincipalsAllowedToDelegateToAccount**参数。
+-   若要配置资源服务，请使用**get-adcomputer**、 **uninstall-adserviceaccount**、 **new-aduser**、 **get-adcomputer**、uninstall-adserviceaccount**和**new-aduser **cmdlet，其中**包含**PrincipalsAllowedToDelegateToAccount**参数。
 
 ## <a name="BKMK_SOFT"></a>软件要求
 基于资源的约束委派只能在运行 Windows Server 2012 R2 和 Windows Server 2012 的域控制器上配置，但可以在混合模式林中应用。
 
-必须将以下修补程序应用于在运行 windows Server 之前的操作系统的前端域和后端域之间的引用路径上的用户帐户域中运行 Windows Server 2012 的所有域控制器：基于资源的约束委派 KDC_ERR_POLICY 在具有基于 Windows Server 2008 R2 的域控制器的环境中失败（ https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro) 。
+必须将以下修补程序应用到所有运行 windows server 2012 的域控制器，这些域控制器在运行早于 Windows Server 的操作系统的前端域和后端域之间的引用路径上：基于资源的约束委派 KDC_ERR_POLICY 包含基于 Windows Server 2008 R2 的域控制器的环境中的失败（ https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro)。

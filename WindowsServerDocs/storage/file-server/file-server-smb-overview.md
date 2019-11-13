@@ -17,7 +17,7 @@ ms.locfileid: "71402082"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>使用 Windows Server 中的 SMB 3 协议的文件共享概述
 
->适用于：Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>适用于： Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
 本主题介绍 Windows Server®2012、Windows Server 2012 R2 和 Windows Server 2016 中的 SMB 3.0 功能，这是功能的实用用途，与以前的版本相比，此版本中最重要的新功能或更新功能以及硬件要求.
 
@@ -49,7 +49,7 @@ Windows Server 2012 和 Windows Server 2016 中的 SMB 包括新的 SMB 3.0 协�
 <tr class="header">
 <th><p>特性/功能</p></th>
 <th><p>新功能或更新功能</p></th>
-<th><p>总结</p></th>
+<th><p>摘要</p></th>
 </tr>
 </thead>
 <tbody>
@@ -133,4 +133,4 @@ SMB 直接具有以下要求：
 * [部署基于 SMB 的 Hyper-v](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
 * [部署 SMB 多通道](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
 * [为服务器应用程序部署快速且高效的文件服务器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB：疑难解答指南 @ no__t-0
+* [SMB：故障排除指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)

@@ -27,11 +27,11 @@ ms.locfileid: "71388761"
 
 规划阶段包括以下步骤：  
   
--   [步骤 1：规划 DirectAccess 基础结构 @ no__t-0  
+-   [步骤1：规划 DirectAccess 基础结构](step-1-plan-da-inf-davpn.md)  
   
     在此阶段，你将描述在开始远程访问部署之前设置网络基础结构所需的规划。 它包括规划网络和服务器拓扑、证书、域名系统 (DNS)、Active Directory 和组策略对象 (GPO) 配置以及 DirectAccess 网络位置服务器。  
   
--   [步骤 2：规划 DirectAccess 部署 @ no__t-0  
+-   [步骤2：规划 DirectAccess 部署](step-2-plan-da-davpn.md)  
   
     在此阶段，你将描述准备远程访问部署所需的规划步骤。 它包括规划远程访问客户端计算机、服务器和客户端身份验证要求以及基础结构服务器。  
   

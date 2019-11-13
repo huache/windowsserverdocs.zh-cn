@@ -21,17 +21,17 @@ ms.locfileid: "71359325"
   
 若要导出 AD FS 配置数据，请执行以下任务：  
   
--   [步骤 1：导出服务设置 @ no__t-0  
+-   [步骤1：导出服务设置](#step-1-export-service-settings)  
   
--   [步骤 2：导出声明提供方信任 @ no__t-0  
+-   [步骤2：导出声明提供方信任](#step-2-export-claims-provider-trusts)  
   
--   [步骤 3：导出信赖方信任 @ no__t-0  
+-   [步骤3：导出信赖方信任](#step-3-export-relying-party-trusts)  
   
--   [步骤 4：备份自定义属性存储 @ no__t-0  
+-   [步骤4：备份自定义属性存储](#step-4-back-up-custom-attribute-stores)  
   
--   [步骤 5：备份网页自定义项 @ no__t-0  
+-   [步骤5：备份网页自定义项](#step-5-back-up-webpage-customizations)  
   
-## <a name="step-1-export-service-settings"></a>第 1 步：导出服务设置  
+## <a name="step-1-export-service-settings"></a>步骤 1：导出服务设置  
  若要导出服务设置，请执行以下过程：  
   
 ### <a name="to-export-service-settings"></a>导出服务设置  
@@ -87,29 +87,29 @@ ms.locfileid: "71359325"
   
 为此，请打开 Windows PowerShell 并运行以下命令，将 AD FS cmdlet 添加到你的 Windows PowerShell 会话： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然后运行以下命令将任何自定义声明说明导出到文件：`Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`。  
   
-##  <a name="step-2-export-claims-provider-trusts"></a>步骤 2：导出声明提供方信任  
+##  <a name="step-2-export-claims-provider-trusts"></a>步骤2：导出声明提供方信任  
  若要导出声明提供方信任，请执行以下过程：  
   
 ### <a name="to-export-claims-provider-trusts"></a>导出声明提供程序信任  
   
 1.  你可以使用 Windows PowerShell 导出所有声明提供方信任。 打开 Windows PowerShell 并运行以下命令，将 AD FS cmdlet 添加到你的 Windows PowerShell 会话： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然后运行以下命令以导出所有声明提供方信任： `PSH:>Get-ADFSClaimsProviderTrust | Out-File “.\cptrusts.txt”`。  
   
-## <a name="step-3-export-relying-party-trusts"></a>步骤 3:导出信赖方信任  
+## <a name="step-3-export-relying-party-trusts"></a>步骤3：导出信赖方信任  
  若要导出信赖方信任，请执行以下过程：  
   
 ### <a name="to-export-relying-party-trusts"></a>导出信赖方信任  
   
 1.  若要导出所有信赖方信任，请打开 Windows PowerShell 并运行以下命令，将 AD FS cmdlet 添加到你的 Windows PowerShell 会话： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然后运行以下命令以导出所有信赖方信任：`PSH:>Get-ADFSRelyingPartyTrust | Out-File “.\rptrusts.txt”`。  
   
-## <a name="step-4-back-up-custom-attribute-stores"></a>步骤 4：备份自定义属性存储  
+## <a name="step-4-back-up-custom-attribute-stores"></a>步骤4：备份自定义属性存储  
  通过使用 Windows PowerShell，你可以由 AD FS 找到有关使用中的自定义属性存储的信息。 打开 Windows PowerShell 并运行以下命令，将 AD FS cmdlet 添加到你的 Windows PowerShell 会话： `PSH:>add-pssnapin “Microsoft.adfs.powershell”`。 然后运行以下命令以查找有关自定义属性存储的信息： `PSH:>Get-ADFSAttributeStore`。 升级或迁移自定义特性存储的步骤将有所不同。  
   
 ## <a name="step-5-back-up-webpage-customizations"></a>步骤 5：备份网页自定义项  
  若要备份任何网页自定义项，请从映射到 IIS 中的虚拟路径 **“/adfs/ls”** 的目录复制 AD FS 网页和 **web.config** 文件。 默认情况下，它位于 **%systemdrive%\inetpub\adfs\ls** 目录中。  
 
 ## <a name="next-steps"></a>后续步骤
- [准备将 AD FS 2.0 联合服务器迁移](prepare-to-migrate-ad-fs-fed-server.md)   
+ [准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-ad-fs-fed-server.md)   
  [准备迁移 AD FS 2.0 联合服务器代理](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [将 AD FS 2.0 联合服务器迁移](migrate-the-ad-fs-fed-server.md)   
+ [迁移 AD FS 2.0 联合服务器](migrate-the-ad-fs-fed-server.md)   
  [迁移 AD FS 2.0 联合服务器代理](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)

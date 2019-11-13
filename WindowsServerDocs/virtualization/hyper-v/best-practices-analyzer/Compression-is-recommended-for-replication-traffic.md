@@ -19,7 +19,7 @@ ms.locfileid: "71365096"
 ---
 # <a name="compression-is-recommended-for-replication-traffic"></a>建议对复制通信使用压缩
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,12 +36,12 @@ ms.locfileid: "71365096"
 *通过网络从主服务器发送到副本服务器的复制流量未压缩。*  
   
 ## <a name="impact"></a>影响  
-@no__t 0Replication 流量将使用比所需的更多的带宽。这会影响以下虚拟机： *  
+*复制流量将使用比所需的更多的带宽。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
-@no__t 0Configure Hyper-v 副本来压缩 hyper-v 管理器中虚拟机设置中通过网络传输的数据。你还可以使用 Hyper-v 之外的工具来执行压缩。 *  
+*配置 Hyper-v 副本以压缩 hyper-v 管理器中虚拟机的设置中通过网络传输的数据。你还可以使用 Hyper-v 之外的工具来执行压缩。*  
   
 
 

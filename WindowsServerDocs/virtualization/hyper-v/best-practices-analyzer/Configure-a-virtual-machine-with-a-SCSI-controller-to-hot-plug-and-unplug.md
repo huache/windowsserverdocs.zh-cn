@@ -19,7 +19,7 @@ ms.locfileid: "71365073"
 ---
 # <a name="configure-a-virtual-machine-with-a-scsi-controller-to-be-able-to-hot-plug-and-hot-unplug-storage"></a>配置具有 SCSI 控制器的虚拟机，使其能够热插拔存储
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 
   
@@ -42,13 +42,13 @@ ms.locfileid: "71365073"
   
 *对于下列虚拟机，你将无法热插拔或热拔下存储：*  
   
-@no__t-虚拟机名称的 0list >  
+虚拟机名称 \<列表 >  
   
 使用热插拔存储的功能，可更轻松地管理虚拟机的存储需求，而无需停机。 必须先关闭没有 SCSI 控制器的虚拟机，然后才能添加或删除存储。  
   
 ## <a name="resolution"></a>分辨率  
   
-@no__t 0If 无需热插拔此虚拟机的插头或热插拔存储，无需执行任何操作。否则，请关闭虚拟机，并向配置中添加 SCSI 控制器。 *  
+*如果不需要热插拔此虚拟机的存储，则无需执行任何操作。否则，请关闭虚拟机，并向配置中添加 SCSI 控制器。*  
   
 若要使用 SCSI 控制器来热插拔存储，来宾操作系统必须运行当前版本的 integration services。  
   

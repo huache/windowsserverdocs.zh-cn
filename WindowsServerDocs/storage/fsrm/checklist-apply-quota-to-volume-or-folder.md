@@ -17,11 +17,11 @@ ms.locfileid: "71394329"
 ---
 # <a name="checklist-apply-a-quota-to-a-volume-or-folder"></a>清单：将配额应用于卷或文件夹
 
-> 适用于：Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server （半年频道）
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server （半年频道）
 
 1. 要通过电子邮件发送阈值通知或存储报告，请配置电子邮件设置。 [配置电子邮件通知](configure-email-notifications.md)
 
-2. 评估有关卷或文件夹的存储要求。 你可以使用**存储报告管理**节点的报告来提供数据。 （例如，按需运行 "按所有者提供的文件" 报表来识别使用大量磁盘空间的用户。）[按需生成报告](generate-reports-on-demand.md)
+2. 评估有关卷或文件夹的存储要求。 你可以使用**存储报告管理**节点的报告来提供数据。 （例如，根据需要运行“按文件组分类的文件”报告，确定占用大量磁盘空间的用户。）[根据需要生成报告](generate-reports-on-demand.md)
 
 3. 查看可用的预配置配额模板。 （在 "**配额管理**" 中，单击 "**配额模板**" 节点。）[编辑配额模板属性](edit-quota-template-properties.md) 
 <br />-或者- <br /> 创建新的配额模板，在你的组织中强制执行存储策略。 [创建配额模板](create-quota-template.md)
@@ -32,7 +32,7 @@ ms.locfileid: "71394329"
 6. 安排一项包含配额使用报告的报告任务，以定期监测配额使用情况。 [计划一组报告](schedule-set-of-reports.md)
 
 > [!Note]
-> 如果要在卷或文件夹中显示文件，请参阅 [Checklist：将文件屏蔽应用于卷或文件夹 @ no__t-0。
+> 若要屏蔽卷或文件夹上的文件，请参阅[清单：将文件屏蔽应用于卷或文件夹](checklist-apply-file-screen-to-volume-or-folder.md)。
 
 
 

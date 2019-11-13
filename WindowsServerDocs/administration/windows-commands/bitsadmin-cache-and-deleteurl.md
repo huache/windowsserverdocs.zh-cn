@@ -32,7 +32,7 @@ ms.locfileid: "71382065"
 bitsadmin /DeleteURL url
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -40,7 +40,7 @@ bitsadmin /DeleteURL url
 
 ## <a name="BKMK_examples"></a>示例
 
-下面的示例将删除 @no__t 的所有缓存项
+下面的示例将删除的所有缓存条目 https://www.microsoft.com/en/us/default.aspx
 ```
 C:\>bitsadmin /DeleteURL https://www.microsoft.com/en/us/default.aspx 
 ```

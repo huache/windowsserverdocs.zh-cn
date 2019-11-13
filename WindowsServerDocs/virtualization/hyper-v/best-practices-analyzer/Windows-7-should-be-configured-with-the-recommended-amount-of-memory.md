@@ -19,7 +19,7 @@ ms.locfileid: "71364519"
 ---
 # <a name="windows-7-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 7 应配置为建议的内存量
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳实践和扫描的详细信息，请参阅 [最佳实践分析程序](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71364519"
   
 ## <a name="impact"></a>影响  
   
-@no__t 0The 来宾操作系统和应用程序可能无法正常运行。可能没有足够的内存可同时运行多个应用程序。这会影响以下虚拟机： *  
+*来宾操作系统和应用程序可能无法正常运行。可能没有足够的内存可同时运行多个应用程序。这会影响以下虚拟机：*  
 ```  
 <list of virtual machine names>  
 ```  
@@ -70,7 +70,7 @@ ms.locfileid: "71364519"
 Set-VMMemory <MyVM> -StartupBytes 1GB  
 ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

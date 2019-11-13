@@ -31,11 +31,11 @@ ms.locfileid: "71406103"
 
 在本主题中，我们将向你演示如何将 ACL 添加到网络接口。 还介绍了如何使用 Windows PowerShell 和网络控制器 REST API 从网络接口中删除 ACL。
 
-- 示例：[将 ACL 添加到网络接口 @ no__t-0
-- 示例：[使用 Windows Powershell 和网络控制器从网络接口中删除 ACL REST API @ no__t-0
+- [示例：向网络接口添加 ACL](#example-add-an-acl-to-a-network-interface)
+- [示例：使用 Windows Powershell 和网络控制器从网络接口中删除 ACL REST API](#example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api)
 
 
-## <a name="example-add-an-acl-to-a-network-interface"></a>例如：向网络接口添加 ACL
+## <a name="example-add-an-acl-to-a-network-interface"></a>示例：向网络接口添加 ACL
 在此示例中，我们将演示如何将 ACL 添加到虚拟网络。 
 
 >[!TIP]
@@ -65,7 +65,7 @@ ms.locfileid: "71406103"
    new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
    ```
  
-## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>例如：使用 Windows Powershell 和网络控制器从网络接口中删除 ACL REST API
+## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>示例：使用 Windows Powershell 和网络控制器从网络接口中删除 ACL REST API
 在此示例中，我们将向你展示如何删除 ACL。 删除 ACL 会将默认的规则集应用于网络接口。 默认规则集允许所有出站流量，但会阻止所有入站流量。
 
 >[!NOTE]

@@ -20,7 +20,7 @@ ms.locfileid: "71367702"
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*Law Number 7：最安全的网络是一种管理良好的网络。*[安全管理的 @no__t 0 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律7：最安全的网络是一种管理良好的网络。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
   
 在遇到灾难性危害事件的组织中，评估通常会揭示组织对其 IT 基础结构的实际状态具有有限的可见性，这可能会与 "已记录" 的情况明显不同自治区. 这些差异会引入漏洞，这些漏洞会使环境遭受损害，这通常会降低发现风险，直到攻击者有效地 "拥有" 环境。  
   
@@ -46,19 +46,19 @@ ms.locfileid: "71367702"
 ## <a name="initial-breach-targets"></a>初始违规目标  
 没有人有意构建一个公开组织的 IT 基础结构。 第一次构造 Active Directory 林时，它通常是处于纯洁的，并且是最新的。 随着年经历和新的操作系统和应用程序的获取，它们将添加到林中。 由于 Active Directory 提供的可管理性优势被识别，更多内容会添加到目录，更多人员将其计算机或应用程序与 AD DS 集成，并且升级域以支持最Windows 操作系统的当前版本。 但随着时间的推移，这种情况也是如此，即使在添加新基础结构的情况下，也可能不会对基础结构的其他部分进行维护，并且系统和应用程序也能正常运行，因此不会收到需要注意的是，组织开始忘记他们未消除其传统基础结构。 根据我们在评估已遭破坏的基础结构、较早、更大、更复杂的环境中看到的内容，更有可能会有许多经常被利用的漏洞的实例。  
   
-不管攻击者的动机如何，大多数信息安全漏洞都是从一个或两个系统一次泄露的。 这些初始事件或网络入口点通常会利用可能已修复但未解决的漏洞。 [2012 数据违规调查报表（DBIR）](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)是 Verizon 风险团队与许多国家安全机构和其他公司合作而产生的年度研究，指出 96% 的攻击是 "不太难" 的，这就是 "97% 的行为通过简单或中间的控件能够避免。" 这些发现可能是以下经常被利用的漏洞的直接结果。  
+不管攻击者的动机如何，大多数信息安全漏洞都是从一个或两个系统一次泄露的。 这些初始事件或网络入口点通常会利用可能已修复但未解决的漏洞。 [2012 数据违规调查报表（DBIR）](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)是 Verizon 风险团队在与许多国家安全机构和其他公司合作时产生的年度研究，指出96% 的攻击是 "不难太难" 的，这是因为通过简单或中间控制能够避免了97% 的违规行为。 " 这些发现可能是以下经常被利用的漏洞的直接结果。  
   
 ### <a name="gaps-in-antivirus-and-antimalware-deployments"></a>防病毒和反恶意软件部署中的缺口  
-@no__t 0Law Number 8：过时的恶意软件扫描器只是根本就比根本没有扫描仪好了。 *@no__t[10 个安全永恒定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*法律号码：过期的恶意软件扫描器只是根本不会有任何扫描仪。* - [十个不可变定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
   
 分析组织的防病毒和反恶意软件部署通常会显示一个环境，其中大多数工作站都配置了启用和最新的防病毒软件和反恶意软件。 通常情况下，工作站经常连接到公司环境或员工设备，其中的防病毒软件和反恶意软件可能难于部署、配置和更新。  
   
-然而，在许多受影响的环境中，服务器人口往往不太受保护。 如[2012 数据违规调查](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)中所报告，所有数据泄露的 94% 涉及到服务器，这表示上一年的增长 18%，并69了恶意软件的攻击百分比。 在服务器人口中，发现防病毒和反恶意软件安装的配置不正确，已过时、配置不正确，甚至已禁用。 在某些情况下，由管理人员禁用防病毒和反恶意软件，但在其他情况下，攻击者会在攻击服务器后通过其他漏洞禁用该软件。 当防病毒软件和反恶意软件禁用后，攻击者会在服务器上植物恶意软件，并专注于跨服务器总体传播安全漏洞。  
+然而，在许多受影响的环境中，服务器人口往往不太受保护。 如[2012 数据违规调查](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)中所报告，所有数据泄露的94% 涉及到服务器，这表示上一年的增长18%，并69了恶意软件的攻击百分比。 在服务器人口中，发现防病毒和反恶意软件安装的配置不正确，已过时、配置不正确，甚至已禁用。 在某些情况下，由管理人员禁用防病毒和反恶意软件，但在其他情况下，攻击者会在攻击服务器后通过其他漏洞禁用该软件。 当防病毒软件和反恶意软件禁用后，攻击者会在服务器上植物恶意软件，并专注于跨服务器总体传播安全漏洞。  
   
 重要的是，不仅要确保系统受到当前的全面恶意软件防护的保护，还需要监视系统以禁用或删除防病毒和反恶意软件，并在手动禁用。 尽管没有防病毒软件和反恶意软件可保证所有感染的防护和检测，但正确配置并部署的防病毒和反恶意软件实现可以降低感染的可能性。  
   
 ### <a name="incomplete-patching"></a>修补未完成  
-@no__t 0Law 第三号：如果你没有跟上安全修补程序，你的网络将不会有太长的时间。 *[安全管理的 @no__t 0 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律3：如果你不能跟上安全修补程序，你的网络将不会太长。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
   
 Microsoft 在每月的第二个星期二发布安全公告，尽管在很少的情况下，安全更新在每月安全更新（这些更新也称为 "带外" 更新）之间发布对客户系统的紧急风险。 小型企业是否会将其 Windows 计算机配置为使用 Windows 更新来管理系统和应用程序修补程序或大型组织使用管理软件（如 System Center Configuration Manager （SCCM））根据详细信息部署修补程序，分层计划，许多客户以相对及时的方式修补其 Windows 基础结构。  
   
@@ -81,14 +81,14 @@ IT 消费化带来了额外的挑战，那就是使用员工拥有的设备来�
 若要消除旧系统和应用程序，你应该首先关注对其进行标识和分类，然后确定是要升级还是替换应用程序或主机。 尽管很难找到不支持或升级路径的高度专用应用程序的替代项，但你可以利用称为 "创造性销毁" 的概念，将旧版应用程序替换为新的应用程序提供必需功能的。 在本文档后面的 "规划折衷" 部分更深入地介绍了如何[进行折衷](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)。  
   
 ### <a name="misconfiguration"></a>错误  
-*Law 号为4：在从不受保护的计算机上安装安全修补程序并不是一开始。*[安全管理的 @no__t 0 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律4：在从不受保护的计算机上安装安全修补程序并不能以开头。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
   
 即使在通常会保持最新和修补系统的环境中，我们通常还能识别操作系统、计算机上运行的应用程序和 Active Directory 的间隔或配置错误。 某些配置错误只公开本地计算机以进行破坏，但在计算机被 "拥有" 后，攻击者通常会专注于进一步传播其他系统中的漏洞，并最终 Active Directory。 下面是一些常见领域，其中标识了引入风险的配置。  
   
 #### <a name="in-active-directory"></a>在 Active Directory  
 在 Active Directory 中，攻击者最常使用的帐户是那些是最高特权组的成员的帐户，例如 "域管理员" （DA）、"企业管理员" （EA）的成员或 Active文件夹. 应将这些组的成员身份降为尽可能少的帐户数，以便限制这些组的攻击面。 甚至可以消除这些特权组中的 "永久" 成员身份;也就是说，你可以实施一些设置，仅当需要其域和全林性的权限时，才能暂时填充这些组。 使用高特权帐户时，它们只能用于指定的安全系统，例如域控制器或安全管理主机。 为了[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)，提供了有助于实现所有这些配置的详细信息。  
   
-在 Active Directory 中评估最高特权组的成员身份时，我们通常会发现所有这三个特权组中的成员身份过多。 在某些情况下，组织在 DA 组中有几十个甚至上百个帐户。 在其他情况下，组织会直接将帐户放到内置的管理员组中，同时认为该组比 DAs 组 "权限更小"。 不是。 尽管 EA 权限很少且暂时需要，但我们经常在目录林根级域中找到 EA 组的一部分永久成员。 即使这是一个有效的冗余配置，在所有三个组中查找 IT 用户的日常管理帐户也是很常见的。 如[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述，某个帐户是否是其中一个组或所有这些组的永久成员，该帐户可用于进行破坏，甚至销毁其管理的 AD DS 环境和系统和帐户. 为了[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)，在 Active Directory 中提供安全配置和使用特权帐户的建议。  
+在 Active Directory 中评估最高特权组的成员身份时，我们通常会发现所有这三个特权组中的成员身份过多。 在某些情况下，组织在 DA 组中有几十个甚至上百个帐户。 在其他情况下，组织会直接将帐户放到内置的管理员组中，同时认为该组比 DAs 组 "权限更小"。 不是。 尽管 EA 权限很少且暂时需要，但我们经常在目录林根级域中找到 EA 组的一部分永久成员。 即使这是一个有效的冗余配置，在所有三个组中查找 IT 用户的日常管理帐户也是很常见的。 如[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述，某个帐户是否是其中一个组或所有这些组的永久成员，该帐户可用于进行破坏，甚至还会销毁它所管理的 AD DS 环境以及系统和帐户。 为了[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)，在 Active Directory 中提供安全配置和使用特权帐户的建议。  
   
 #### <a name="on-domain-controllers"></a>在域控制器上  
 评估域控制器时，发现它们的配置和管理与成员服务器不同。 域控制器有时会运行在成员服务器上安装的相同应用程序和实用程序，而不是因为它们是在域控制器上需要的，而是因为应用程序是标准生成的一部分。 这些应用程序可以在域控制器上提供最少的功能，但通过要求使用打开端口、创建高特权服务帐户的配置设置，或向除了身份验证和组策略应用程序以外，不应连接到域控制器。 在某些情况下，攻击者使用了已在域控制器上安装的工具，不仅可以访问域控制器，而且不能修改或损坏 AD DS 数据库。  
@@ -99,14 +99,14 @@ IT 消费化带来了额外的挑战，那就是使用员工拥有的设备来�
 域控制器应视为关键的基础结构组件，与文件、打印和应用程序服务器相比，安全的得到和配置更为严格。 域控制器不应运行域控制器正常运行所不需要的任何软件，也不能防止域控制器遭受攻击。 不应允许域控制器访问 Internet，而应组策略对象（Gpo）配置和强制安全设置。 安全安装、配置和管理域控制器的详细建议在[保护域控制器免遭攻击](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)中提供。  
   
 #### <a name="within-the-operating-system"></a>在操作系统中  
-*Law 号为2：如果攻击者可能会改变您的计算机上的操作系统，则不是您的计算机。*@no__t[10 个安全永恒定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*定律2：如果攻击者不能更改计算机上的操作系统，则不是您的计算机。* - [十个不可变定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
   
 尽管某些组织为不同类型的服务器创建基准配置，并允许在安装操作系统后对其进行有限的自定义，但对受攻击环境的分析常常会发现部署在中的大量服务器临时方式，并独立进行手动配置。 执行同一功能的两个服务器之间的配置可能完全不同，这两个服务器的配置不安全。 相反，服务器配置基线可能会不断地强制执行，但也可以一致地进行配置;也就是说，服务器的配置方式是在给定类型的所有服务器上创建相同的漏洞。 错误配置包括禁用安全功能、向帐户授予过多权限和权限（特别是服务帐户）、在系统中使用相同的本地凭据以及允许安装未经授权的应用程序和实用程序创建自己的漏洞。  
   
 ##### <a name="disabling-security-features"></a>禁用安全功能  
-组织有时会禁用具有高级安全性的 Windows 防火墙（WFAS），这种想法很难配置，或者需要大量的工作配置。 但是，从 Windows Server 2008 开始，在服务器上安装任何角色或功能时，默认情况下将使用该角色或功能所需的最少特权来配置该角色或功能，并且会自动将 Windows 防火墙配置为支持角色或功能。 通过禁用 WFAS （而不是在其位置使用其他基于主机的防火墙），组织会增加整个 Windows 环境的受攻击面。 外围防火墙提供某些防护来防范直接从 Internet 定向到环境的攻击，但不能防范利用其他攻击媒介（如[驱动器下载](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx)攻击）或攻击源自 intranet 上的其他受攻击的系统。  
+组织有时会禁用具有高级安全性的 Windows 防火墙（WFAS），这种想法很难配置，或者需要大量的工作配置。 但是，从 Windows Server 2008 开始，在服务器上安装任何角色或功能时，默认情况下将使用该角色或功能所需的最少特权来配置该角色或功能，并且会自动将 Windows 防火墙配置为支持角色或功能。 通过禁用 WFAS （而不是在其位置使用其他基于主机的防火墙），组织会增加整个 Windows 环境的受攻击面。 外围防火墙提供某些防护来防范直接以 Internet 为目标的攻击，但不能防范利用其他攻击媒介（如[驱动器下载](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx)攻击）的攻击，也不提供源自 intranet 上其他受入侵系统的攻击。  
   
-用户帐户控制（UAC）设置有时在服务器上处于禁用状态，因为管理人员发现干扰提示。 尽管[Microsoft 支持部门文章 2526083](https://support.microsoft.com/kb/2526083)介绍了在 Windows Server 上可能禁用 uac 的情况，除非你运行的是服务器核心安装（其中 uac 在设计上被禁用），否则，你不应小心地在服务器上禁用 uac考虑和研究。  
+用户帐户控制（UAC）设置有时在服务器上处于禁用状态，因为管理人员发现干扰提示。 尽管[Microsoft 支持部门文章 2526083](https://support.microsoft.com/kb/2526083)介绍了在 Windows Server 上可能禁用 uac 的情况，除非你运行的是服务器核心安装（其中 uac 在设计上被禁用）  
   
 在其他情况下，服务器设置配置为不太安全的值，因为组织将过时的服务器配置设置应用于新的操作系统，例如将 Windows Server 2003 基准应用到运行 Windows Server 2012 的计算机、Windows服务器 2008 R2 或 Windows Server 2008，不更改基线来反映操作系统中的更改。 部署新的操作系统时，请查看安全更改和配置设置，以确保所实现的设置适用且适用于新的操作系统，而不是将旧的服务器基准应用到新的操作系统。  
   
@@ -125,10 +125,10 @@ IT 消费化带来了额外的挑战，那就是使用员工拥有的设备来�
 只要另一台计算机的本地帐户的用户名和密码（或密码哈希）与要提供的帐户凭据具有相同的用户名和密码（或密码哈希），登录尝试便会成功，并且攻击者会获得对目标计算机的特权访问权限。 在当前版本的 Windows 中，默认情况下[禁用](https://technet.microsoft.com/library/cc753450.aspx)内置 Administrator 帐户，但在旧版操作系统中，默认情况下会启用该帐户。  
   
 > [!NOTE]  
-> 某些组织特意配置了本地管理员帐户，以便在系统锁定所有其他特权帐户时，能够提供 "故障安全"。 但是，即使本地管理员帐户处于禁用状态，并且没有其他可用的帐户可以启用该帐户或使用管理员权限登录系统，系统也可以启动到安全模式和内置本地管理员可以重新启用帐户，如[Microsoft 支持部门文章 814777](https://support.microsoft.com/kb/814777)中所述。 此外，如果系统仍成功应用 Gpo，则可以将 GPO 修改为（临时）重新启用管理员帐户，或者将受限制的组配置为将基于域的帐户添加到本地管理员组。 可以执行修复，并再次禁用管理员帐户。 为了有效地防止使用内置本地管理员帐户凭据的横向泄露，必须为本地管理员帐户配置唯一的用户名和密码。 若要通过 GPO 为本地管理员帐户部署唯一密码，请参阅 technet 上的[通过 gpo 管理内置管理员帐户的密码](https://technet.microsoft.com/mt227395.aspx)。  
+> 某些组织特意配置了本地管理员帐户，以便在系统锁定所有其他特权帐户时，能够提供 "故障安全"。 但是，即使本地管理员帐户处于禁用状态，并且没有其他可用的帐户可以启用该帐户或使用管理员权限登录系统，系统仍可以启动到安全模式，并且可以重新启用内置本地管理员帐户，如[Microsoft 支持部门文章 814777](https://support.microsoft.com/kb/814777)中所述。 此外，如果系统仍成功应用 Gpo，则可以将 GPO 修改为（临时）重新启用管理员帐户，或者将受限制的组配置为将基于域的帐户添加到本地管理员组。 可以执行修复，并再次禁用管理员帐户。 为了有效地防止使用内置本地管理员帐户凭据的横向泄露，必须为本地管理员帐户配置唯一的用户名和密码。 若要通过 GPO 为本地管理员帐户部署唯一密码，请参阅 technet 上的[通过 gpo 管理内置管理员帐户的密码](https://technet.microsoft.com/mt227395.aspx)。  
   
 ##### <a name="permitting-installation-of-unauthorized-applications"></a>允许安装未授权的应用程序  
-*Law Number One：如果攻击者可能会劝诱您在您的计算机上运行他的程序，则它并不是您的计算机。*@no__t[10 个安全永恒定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*定律1：如果攻击者可能会劝诱您在您的计算机上运行他的程序，这并不是您的计算机。* - [十个不可变定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
   
 无论组织是否在服务器之间部署一致的基线设置，都不应允许安装不属于服务器定义的角色的应用程序。 通过允许安装的软件不是服务器的指定功能的一部分，服务器可能会无意中或恶意安装软件，从而增加服务器的攻击面、引入应用程序漏洞或导致系统不稳定。  
   

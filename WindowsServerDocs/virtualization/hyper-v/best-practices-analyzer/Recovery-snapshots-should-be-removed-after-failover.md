@@ -19,7 +19,7 @@ ms.locfileid: "71393526"
 ---
 # <a name="recovery-snapshots-should-be-removed-after-failover"></a>故障转移后，应删除恢复快照
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,9 +36,9 @@ ms.locfileid: "71393526"
 *故障转移虚拟机有一个或多个恢复快照。*  
   
 ## <a name="impact"></a>**对**  
-@no__t 0Available 的空间可能在存储快照文件的物理磁盘上运行。如果发生这种情况，则不能在物理存储上执行其他磁盘操作。依赖于物理存储的任何虚拟机都可能会受到影响。这会影响以下虚拟机： *  
+*可用空间可能会在存储快照文件的物理磁盘上运行。如果发生这种情况，则不能在物理存储上执行其他磁盘操作。依赖于物理存储的任何虚拟机都可能会受到影响。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
 *对于每个故障转移的虚拟机，请使用 Windows PowerShell 中的 Start-vmfailover cmdlet 来删除恢复快照并指示故障转移完成。*  

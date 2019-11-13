@@ -45,7 +45,7 @@ ms.locfileid: "71355816"
 >这些网络模式不适用于将 windows 容器终结点连接到 Azure 公有云中的租户虚拟网络。
 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 -  使用网络控制器部署的 SDN 基础结构。
 -  租户虚拟网络已创建。
 -  已启用 Windows 容器功能、已安装 Docker 和 Hyper-v 功能的已部署的租户虚拟机。 需要 Hyper-v 功能才能安装 l2bridge 和 l2tunnel 网络的多个二进制文件。
@@ -61,12 +61,15 @@ ms.locfileid: "71355816"
 
 ## <a name="workflow"></a>工作流
 
-[1.通过网络控制器（Hyper-v 主机） ](#1-add-multiple-ip-configurations) @ no__t-1 @ no__t-22 将多个 IP 配置添加到现有 VM NIC 资源。启用主机上的网络代理，为容器终结点（Hyper-v 主机）分配 CA IP 地址 ](#2-enable-the-network-proxy) @ no__t @ no__t-23。安装私有云插件以将 CA IP 地址分配到容器终结点（容器主机 VM） ](#3-install-the-private-cloud-plug-in) @ no__t @ no__t-24。使用 docker （容器主机 VM）创建*l2bridge*或*l2tunnel*网络 ](#4-create-an-l2bridge-container-network)
+[1. 通过网络控制器（Hyper-v 主机）
+2 将多个 IP 配置添加到现有 VM NIC 资源](#1-add-multiple-ip-configurations) [。在主机上启用网络代理，为容器终结点（Hyper-v 主机）分配 CA IP 地址](#2-enable-the-network-proxy)
+[3。安装私有云插件以将 CA IP 地址分配到容器终结点（容器主机 VM）](#3-install-the-private-cloud-plug-in)
+[4。使用 docker 创建*l2bridge*或*L2tunnel*网络（容器主机 VM）](#4-create-an-l2bridge-container-network)
 
 >[!NOTE]
 >通过 System Center Virtual Machine Manager 创建的 VM NIC 资源不支持多个 IP 配置。 建议使用网络控制器 PowerShell 在带外创建 VM NIC 资源。
 
-### <a name="1-add-multiple-ip-configurations"></a>1.添加多个 IP 配置
+### <a name="1-add-multiple-ip-configurations"></a>1. 添加多个 IP 配置
 在此步骤中，我们假设租户虚拟机的 VM NIC 有一个 ip 地址为192.168.1.9 的 IP 配置，并附加到 192.168.1.0/24 IP 子网中的 VNet 资源 ID "VNet1" 和 "Subnet1" 的 VM 子网资源。 我们为 192.168.1.101-192.168.1.110 中的容器添加了10个 IP 地址。
 
 ```powershell
@@ -117,7 +120,7 @@ foreach ($i in 1..10)
 New-NetworkControllerNetworkInterface -ResourceId $vmnic.ResourceId -Properties $vmnic.Properties -ConnectionUri $uri
 ```
 
-### <a name="2-enable-the-network-proxy"></a>2.启用网络代理
+### <a name="2-enable-the-network-proxy"></a>2. 启用网络代理
 在此步骤中，将使网络代理为容器主机虚拟机分配多个 IP 地址。 
 
 若要启用网络代理，请在托管容器主机（租户）虚拟机的**Hyper-v 主机**上运行[ConfigureMCNP](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1)脚本。
@@ -126,7 +129,7 @@ New-NetworkControllerNetworkInterface -ResourceId $vmnic.ResourceId -Properties 
 PS C:\> ConfigureMCNP.ps1
 ```
 
-### <a name="3-install-the-private-cloud-plug-in"></a>3.安装私有云插件
+### <a name="3-install-the-private-cloud-plug-in"></a>3. 安装私有云插件
 在此步骤中，你将安装一个插件，以允许 HNS 与 Hyper-v 主机上的网络代理通信。
 
 若要安装该插件，请在**容器主机（租户）虚拟机**中运行[InstallPrivateCloudPlugin](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1)脚本。
@@ -136,8 +139,8 @@ PS C:\> ConfigureMCNP.ps1
 PS C:\> InstallPrivateCloudPlugin.ps1
 ```
 
-### <a name="4-create-an-l2bridge-container-network"></a>4.创建*l2bridge*容器网络
-在此步骤中，将使用**容器主机（租户）虚拟机**上的 `docker network create` 命令创建 l2bridge 网络。 
+### <a name="4-create-an-l2bridge-container-network"></a>4. 创建*l2bridge*容器网络
+在此步骤中，将使用**容器主机（租户）虚拟机**上的 `docker network create` 命令来创建 l2bridge 网络。 
 
 ```powershell
 # Create the container network

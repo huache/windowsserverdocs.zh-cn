@@ -19,7 +19,7 @@ ms.locfileid: "71366417"
 ---
 # <a name="configure-scsi-controllers-only-when-supported-by-the-guest-operating-system"></a>仅在来宾操作系统支持时配置 SCSI 控制器
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 
   
@@ -38,13 +38,13 @@ ms.locfileid: "71366417"
   
 ## <a name="impact"></a>影响  
   
-@no__t 0Virtual 的计算机无法使用附加到 SCSI 控制器的存储。这会影响以下虚拟机： *  
+*虚拟机不能使用附加到 SCSI 控制器的存储。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
   
-在虚拟机上 @no__t 0Shut，并使用 Hyper-v 管理器从虚拟机中删除 SCSI 控制器。然后，重新启动虚拟机。 *  
+*关闭虚拟机，并使用 Hyper-v 管理器从虚拟机中删除 SCSI 控制器。然后，重新启动虚拟机。*  
   
 
 

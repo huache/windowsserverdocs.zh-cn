@@ -18,7 +18,7 @@ ms.locfileid: "71408406"
 ---
 # <a name="deploying-federation-server-proxies"></a>部署联合服务器代理
 
-若要在 Active Directory 联合身份验证服务 @no__t 中部署联合服务器代理，请完成 [Checklist 中的每个任务：设置联合服务器代理 @ no__t。  
+若要在 Active Directory 联合身份验证服务 \(AD FS\)中部署联合服务器代理，请完成清单中的每个任务[：设置联合服务器代理](Checklist--Setting-Up-a-Federation-Server-Proxy.md)。  
   
 > [!NOTE]  
 > 使用此清单时，建议您先阅读[Windows server 2012 的 "AD FS 设计指南](https://technet.microsoft.com/library/dd807036.aspx)" 中的联合服务器代理规划指南的参考，然后再开始配置服务器的步骤。 按照清单，可以更好地了解联合服务器代理的设计和部署过程。  

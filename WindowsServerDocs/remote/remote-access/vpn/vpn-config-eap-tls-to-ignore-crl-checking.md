@@ -24,10 +24,10 @@ ms.locfileid: "71388074"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>步骤 7.1： 配置 EAP-TLS 以忽略证书吊销列表 (CRL) 检查
 
->适用于：Windows Server (半年频道), Windows Server 2016, Windows Server 2012 R2, Windows 10
+>适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**以前**步骤 7：可有可无使用 Azure AD 的 VPN 连接的条件性访问](ad-ca-vpn-connectivity-windows10.md)
-- [**一个**步骤 7.2：使用 Azure AD 创建 VPN 身份验证的根证书](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+- [**上一个：** 步骤7。可有可无使用 Azure AD 的 VPN 连接的条件性访问](ad-ca-vpn-connectivity-windows10.md)
+- [**下一步：** 步骤7.2。创建用于 VPN 身份验证的根证书 Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
 >[!IMPORTANT]
 >未能实现此注册表更改将导致使用 cloud 证书和 PEAP 的 IKEv2 连接失败，但使用从本地 CA 颁发的客户端身份验证证书的 IKEv2 连接将继续工作。
@@ -45,7 +45,7 @@ ms.locfileid: "71388074"
 
 1. 在 NPS 服务器上打开**regedit.exe。**
 
-2. 导航到**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\13**。
+2. 导航到**HKEY_LOCAL_MACHINE \system\currentcontrolset\services\rasman\ppp\eap\13**"。
 
 3. 选择 "编辑" " **> 新建**" 并选择 " **DWORD （32位）" 值**并输入 " **IgnoreNoRevocationCheck**"。
 
@@ -64,4 +64,4 @@ ms.locfileid: "71388074"
 
 ## <a name="next-steps"></a>后续步骤
 
-[步骤 7.2.Azure AD @ no__t 创建用于 VPN 身份验证的根证书：在此步骤中，将使用 Azure AD 配置用于 VPN 身份验证的条件性访问根证书，该证书将在租户中自动创建 VPN 服务器云应用。
+[步骤7.2。使用 Azure AD 创建用于 VPN 身份验证的根证书](vpn-create-root-cert-for-vpn-auth-azure-ad.md)：在此步骤中，你将使用 Azure AD 配置用于 vpn 身份验证的条件性访问根证书，该证书将在租户中自动创建 Vpn 服务器云应用。

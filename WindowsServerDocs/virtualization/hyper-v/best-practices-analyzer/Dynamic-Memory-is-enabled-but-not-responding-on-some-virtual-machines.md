@@ -19,7 +19,7 @@ ms.locfileid: "71393679"
 ---
 # <a name="dynamic-memory-is-enabled-but-not-responding-on-some-virtual-machines"></a>动态内存已启用，但在某些虚拟机上未响应
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,12 +36,12 @@ ms.locfileid: "71393679"
 *一个或多个虚拟机遇到来宾操作系统中动态内存所需的驱动程序问题。*  
   
 ## <a name="impact"></a>影响  
-以下虚拟机中的 @no__t 0The 来宾操作系统可能无法运行或可能运行 unreliably，因为 Hyper-v 无法动态调整内存以响应内存需求的更改。这会影响以下虚拟机： *  
+*以下虚拟机中的来宾操作系统可能无法运行或可能运行 unreliably，因为 Hyper-v 无法动态调整内存以响应内存需求的更改。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
-如果虚拟机正在启动，则 @no__t 0This 是预期的行为。如果虚拟机未启动，请确保 integration services 升级到最新版本，并且来宾操作系统支持动态内存。 *  
+*如果虚拟机正在启动，则这是预期的行为。如果虚拟机未启动，请确保将 integration services 升级到最新版本，并且来宾操作系统支持动态内存。*  
   
 从 Windows Server 2016，integration services 通过 Windows 更新提供。 确保将虚拟机配置为接收更新，以获取最新版本的 integration services。  
   

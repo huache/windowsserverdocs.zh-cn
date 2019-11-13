@@ -32,7 +32,7 @@ ms.locfileid: "71408985"
   
 带宽是指可以在给定时间内跨信道传输的数据量。 可用带宽是指可供 AD DS 实际使用的带宽量。 你可以从网络组获取可用的带宽信息，或者可以使用协议分析器（如网络监视器）分析每个链接上的流量。 有关安装网络监视器的信息，请参阅[监视网络流量](https://go.microsoft.com/fwlink/?LinkId=107058)的文章。  
   
-记录每个位置以及链接到该位置的其他位置。 此外，记录通信链接类型及其可用带宽。 要使工作表可以帮助你列出通信链接和可用带宽，请参阅[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，并打开 "地理位置和通信链接 "（DSSTOPO_1）。  
+记录每个位置以及链接到该位置的其他位置。 此外，记录通信链接类型及其可用带宽。 要使工作表可以帮助你列出通信链接和可用带宽，请参阅[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "地理位置和通信链接" （DSSTOPO_1 .doc）。  
   
 ## <a name="listing-ip-subnets-within-each-location"></a>列出每个位置中的 IP 子网
 
@@ -40,13 +40,13 @@ ms.locfileid: "71408985"
   
 AD DS 通过将工作站的 IP 地址与每个站点相关联的子网进行比较，将工作站与站点相关联。 向域中添加域控制器时，AD DS 还会检查其 IP 地址，并将其放置在最合适的站点中。  
   
-要使工作表可以帮助你列出每个位置中的 IP 子网，请参阅[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，并打开 "位置和子网" （DSSTOPO_2）。  
+要使工作表帮助你列出每个位置中的 IP 子网，请参阅[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "位置和子网" （DSSTOPO_2）。  
   
 > [!NOTE]  
-> 除了 IP 版本4（IPv4）地址以外，Windows Server 还支持 IP 版本6（IPv6）子网前缀。 要使工作表可以帮助你列出 IPv6 子网前缀，请参阅 [Appendix A：位置和子网前缀 @ no__t。  
+> 除了 IP 版本4（IPv4）地址以外，Windows Server 还支持 IP 版本6（IPv6）子网前缀。 要使工作表可以帮助你列出 IPv6 子网前缀，请参阅[附录 a：位置和子网前缀](../../ad-ds/plan/Appendix-A--Locations-and-Subnet-Prefixes.md)。  
 
 ## <a name="listing-domains-and-number-of-users-for-each-location"></a>列出每个位置的域和用户数
 
 位置中所代表的每个地区性域的用户数量是确定区域域控制器和全局编录服务器的位置的因素之一，这是站点拓扑设计过程中的下一步。 例如，计划将区域域控制器放置在包含超过100个区域域用户的位置，以便他们仍可在 WAN 链接失败时登录到域。  
   
-记录位置、在每个位置显示的域，以及每个位置中表示的每个域的用户数量。 要使工作表可以帮助你列出每个位置中所表示的域和用户数，请参阅[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services。并打开 "每个位置中的域和用户" （DSSTOPO_3）。  
+记录位置、在每个位置显示的域，以及每个位置中表示的每个域的用户数量。 要使工作表可以帮助你列出每个位置中所表示的域和用户数，请参阅[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "每个位置中的域和用户" （DSSTOPO_3）。  

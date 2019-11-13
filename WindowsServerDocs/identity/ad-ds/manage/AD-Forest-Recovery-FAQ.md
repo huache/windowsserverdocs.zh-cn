@@ -18,13 +18,13 @@ ms.locfileid: "71369114"
 ---
 # <a name="ad-forest-recovery---faq"></a>AD 林恢复 - 常见问题解答
 
->适用于：Windows Server 2016，Windows Server 2012 和 2012 R2，Windows Server 2008 和 2008 R2，Windows Server 2003
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2，Windows Server 2008 和 2008 R2，Windows Server 2003
 
 本文档包含有关林恢复的常见问题（Faq）：  
 
 ## <a name="general-recovery"></a>常规恢复
 
-**:可以执行哪些操作来加速恢复？**
+**问：我可以执行哪些操作来加快恢复速度？**
 
 尽管恢复速度不是本指南的主要目标，但你可以通过以下方式实现较短的恢复时间：  
   
@@ -46,18 +46,18 @@ ms.locfileid: "71369114"
 - 重新生成 Dc 时，复制数据以进行基于网络的升级需要花费时间。  
    - 可以通过执行以下步骤来缩短还原 Dc 所需的时间：  
 - 缩短检索备份介质的时间：  
-   - 使用 Active Directory 数据库装载工具（Dsamain.exe）来确定要用于还原操作的最佳备份。 有关使用 Active Directory 数据库装载工具的详细信息，请参阅[Active Directory 数据库装载工具循序渐进指南](https://go.microsoft.com/fwlink/?LinkId=132577)（ https://go.microsoft.com/fwlink/?LinkId=132577) 。  
+   - 使用 Active Directory 数据库装载工具（Dsamain.exe）来确定要用于还原操作的最佳备份。 有关使用 Active Directory 数据库装载工具的详细信息，请参阅[Active Directory 数据库装载工具循序渐进指南](https://go.microsoft.com/fwlink/?LinkId=132577)（ https://go.microsoft.com/fwlink/?LinkId=132577)。  
    - 用一种方便、安全的位置，以一种方便、安全的位置将媒体标记为备份介质，并将其存储在方便的位置。  
-   - 使用带有存储区域网络（SAN）的卷影复制服务维护不同时间点的备份。 有关详细信息，请参阅[Windows Server 2003 Active Directory 快速恢复卷影复制服务和虚拟磁盘服务](https://go.microsoft.com/fwlink/?LinkId=70781)（ https://go.microsoft.com/fwlink/?LinkId=70781) 。  
+   - 使用带有存储区域网络（SAN）的卷影复制服务维护不同时间点的备份。 有关详细信息，请参阅[Windows Server 2003 Active Directory 快速恢复卷影复制服务和虚拟磁盘服务](https://go.microsoft.com/fwlink/?LinkId=70781)（ https://go.microsoft.com/fwlink/?LinkId=70781)）。  
 - 强制从 Dc 删除 AD DS，而不是重新安装操作系统。 如果在林范围内发生故障的原因已确定为完全位于 AD DS 范围内，则无需在 Dc 上重新安装操作系统。  
-   - 有关强制从运行 Windows Server 2008 或更高版本的 DC 中删除 AD DS 的详细信息，请参阅[强制删除 Windows server 2008 域控制器](https://go.microsoft.com/fwlink/?LinkId=132627)（@no__t 为1。 有关强制从运行 Windows Server 2003 的 DC 中删除 AD DS 的详细信息，请参阅 Microsoft 知识库中的[文章 332199](https://go.microsoft.com/fwlink/?LinkId=70780) （ https://go.microsoft.com/fwlink/?LinkId=70780) 。  
+   - 有关强制从运行 Windows Server 2008 或更高版本的 DC 中删除 AD DS 的详细信息，请参阅[强制删除 Windows server 2008 域控制器](https://go.microsoft.com/fwlink/?LinkId=132627)（ https://go.microsoft.com/fwlink/?LinkId=132627)。 有关强制从运行 Windows Server 2003 的 DC 中删除 AD DS 的详细信息，请参阅 Microsoft 知识库中的[文章 332199](https://go.microsoft.com/fwlink/?LinkId=70780) （ https://go.microsoft.com/fwlink/?LinkId=70780)。  
 - 使用更快的磁带设备或磁盘备份来减少还原操作所需的时间。  
   
 还可以使用 "从介质安装" （IFM）功能，在每个域中重新生成 Dc，从而帮助加速 AD DS 安装。 IFM 减少了在每个域中重建 Dc 时产生的复制延迟。  
   
 具有更严格的服务级别协议（SLA）的企业可能会考虑改变林恢复过程，以加快恢复速度。  
   
-**:能否自动执行林恢复过程？**
+**问：我能否自动执行林恢复过程？**
 
 由于林恢复过程的复杂而关键，当前没有它的端到端自动化。 林恢复过程比处理自动化的技术问题更是一种后勤和组织的挑战。 因此，管理该环境的人员应创建一个特定于该环境的林恢复计划，然后自动执行可自动成功完成的部分。  
   

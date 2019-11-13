@@ -15,21 +15,21 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71402775"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤5，设置客户端
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤 5，设置客户端
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
 本主题介绍使用 Active Directory 联合身份验证服务 (AD FS) 和 Web 应用程序代理部署工作文件夹的第五个步骤。 你可以在这些主题中查找这一过程的其他步骤：  
   
--   使用 AD FS 和 Web 应用程序代理 @no__t 0Deploy 工作文件夹：叙述](deploy-work-folders-adfs-overview.md)  
+-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：概述](deploy-work-folders-adfs-overview.md)  
   
--   使用 AD FS 和 Web 应用程序代理 @no__t 0Deploy 工作文件夹：步骤1，设置 AD FS @ no__t-0  
+-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤1、设置 AD FS](deploy-work-folders-adfs-step1.md)  
   
--   使用 AD FS 和 Web 应用程序代理 @no__t 0Deploy 工作文件夹：步骤 2 AD FS 配置后工作 @ no__t-0  
+-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤2、AD FS 配置后工作](deploy-work-folders-adfs-step2.md)  
   
--   使用 AD FS 和 Web 应用程序代理 @no__t 0Deploy 工作文件夹：步骤3，设置工作文件夹 @ no__t-0  
+-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤3、设置工作文件夹](deploy-work-folders-adfs-step3.md)  
   
--   使用 AD FS 和 Web 应用程序代理 @no__t 0Deploy 工作文件夹：步骤4，设置 Web 应用程序代理 @ no__t-0  
+-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤4、设置 Web 应用程序代理](deploy-work-folders-adfs-step4.md)  
   
 使用以下步骤设置加入域和未加入域的 Windows 客户端。 你可以使用这些客户端测试客户端之间的工作文件夹是否正确同步。  
   
@@ -50,11 +50,11 @@ ms.locfileid: "71402775"
   
 4.  在**可用的管理单元**列表中，单击**证书**，然后单击**添加**。 启动证书管理\-单元向导。  
   
-5.  选择“计算机帐户”，然后单击“下一步”。  
+5.  选择**计算机帐户**，然后单击**下一步**。  
   
 6.  选择**本地计算机：（运行此控制台的计算机）** ，然后单击**完成**。  
   
-7.  单击 **“确定”** 。  
+7.  单击**确定**。  
   
 8.  展开文件夹“控制台根节点\证书\(本地计算机)\个人\证书”。  
   
@@ -79,13 +79,13 @@ ms.locfileid: "71402775"
   
 2. 单击**设置工作文件夹**。  
   
-3. 在 "**输入工作电子邮件地址**" 页上，输入用户的电子邮件地址（例如 user@contoso.com）或工作文件夹 URL （在测试示例中，https： \//workfolders），然后单击 "**下一步**"。  
+3. 在 "**输入工作电子邮件地址**" 页上，输入用户的电子邮件地址（例如 user@contoso.com）或工作文件夹 URL （在测试示例中，https：\//workfolders.contoso.com），然后单击 "**下一步**"。  
   
 4. 如果用户连接到公司网络，则由 Windows 集成身份验证执行身份验证。 如果用户未连接到公司网络，则由 ADFS (OAuth) 执行身份验证，它将提示用户输入凭据。 输入你的凭据，然后单击**确定**。  
   
-5. 进行身份验证后，**介绍工作文件夹**页面将显示，你可以在其中选择更改工作文件夹目录的位置。 单击“下一步”。  
+5. 进行身份验证后，**介绍工作文件夹**页面将显示，你可以在其中选择更改工作文件夹目录的位置。 单击**下一步**。  
   
-6. **安全策略**页列出了你为工作文件夹设置的安全策略。 单击“下一步”。  
+6. **安全策略**页列出了你为工作文件夹设置的安全策略。 单击**下一步**。  
   
 7. 将显示一条消息，指出工作文件夹已开始与你的电脑同步。 单击 **“关闭”** 。  
   
@@ -124,7 +124,7 @@ ms.locfileid: "71402775"
   
 以上就是通过 Windows Server UI 部署工作文件夹、AD FS 和 Web 应用程序代理的过程。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [工作文件夹概述](Work-Folders-Overview.md)  
   
 

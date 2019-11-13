@@ -25,15 +25,15 @@ ms.locfileid: "71388638"
 
 本概述列出了部署使用 IPv4 和 IPv6 运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的单个 DirectAccess 服务器所需的配置步骤。  
   
--   [步骤 1：配置高级 DirectAccess 基础结构 @ no__t。  
+-   [步骤1：配置高级 DirectAccess 基础结构](da-adv-configure-s1-infrastructure.md)。  
   
     在这一阶段，你将配置网络和服务器设置、证书要求、域名系统 (DNS) 设置、网络位置服务器部署、DirectAccess 管理服务器、Active Directory 设置和组策略对象 (GPO)。  
   
--   [步骤 2：配置高级 DirectAccess 服务器 @ no__t。  
+-   [步骤2：配置高级 DirectAccess 服务器](da-adv-configure-s2-servers.md)。  
   
     在这一阶段，你将配置 DirectAccess 客户端计算机、服务器设置、基础结构服务器和应用程序服务器。  
   
--   [步骤 3：验证高级 DirectAccess 部署 @ no__t。  
+-   [步骤3：验证高级 DirectAccess 部署](da-adv-configure-s3-verify.md)。  
   
     此步骤描述了用于验证部署的步骤。  
   

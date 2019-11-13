@@ -23,7 +23,7 @@ ms.locfileid: "71404891"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-第一步是完成 [Test 实验室指南中的所有步骤：演示具有混合 IPv4 和 IPv6 @ no__t 的 DirectAccess 单一服务器设置。 如果已完成本测试实验室指南中的步骤并保存了测试实验室的快照或磁盘映像，则可以还原快照或映像并开始下一步。  
+第一步是完成[测试实验室指南：演示带有混合 IPv4 和 IPv6 的 DirectAccess 单服务器设置](https://go.microsoft.com/fwlink/p/?LinkId=237004)中的所有步骤。 如果已完成本测试实验室指南中的步骤并保存了测试实验室的快照或磁盘映像，则可以还原快照或映像并开始下一步。  
   
 
 

@@ -38,7 +38,7 @@ AD FS 中的访问控制是使用颁发授权声明规则实施的，这些规�
 
 有关这些规则选项和逻辑的详细信息，请参阅 [When to Use an Authorization Claim Rule](https://technet.microsoft.com/library/ee913560.aspx)。
 
-在 Windows Server 2012 R2 的 AD FS 中，使用多种因素（包括用户、设备、位置和身份验证数据）增强了访问控制。 这是通过提高授权声明规则所用的声明类型的多样性来实现的。  换句话说，在 Windows Server 2012 R2 的 AD FS 中，可以基于用户标识或组成员身份、网络位置、设备（它是否已加入工作区）强制实施条件性访问控制。有关详细信息，请参阅[从任何设备加入工作区以实现 SSO跨公司应用程序的无缝第二重身份验证](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)和身份验证状态（是否执行多重身份验证（MFA））。
+在 Windows Server 2012 R2 的 AD FS 中，使用多种因素（包括用户、设备、位置和身份验证数据）增强了访问控制。 这是通过提高授权声明规则所用的声明类型的多样性来实现的。  换句话说，在 Windows Server 2012 R2 的 AD FS 中，你可以基于用户标识或组成员身份、网络位置、设备（它是否已加入工作区）强制实施条件性访问控制。有关详细信息，请参阅[从任何设备加入工作区以实现 SSO 和无缝第二重身份验证](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)，以及身份验证状态（是否执行多重身份验证（MFA））。
 
 Windows Server 2012 R2 的 AD FS 中的条件访问控制具有以下优势：
 
@@ -50,7 +50,7 @@ Windows Server 2012 R2 的 AD FS 中的条件访问控制具有以下优势：
 
 -   针对高级条件访问控制方案提供丰富的声明语言和 Windows PowerShell 支持
 
--   自定义（按信赖方应用程序） "拒绝访问" 消息。 有关详细信息，请参阅 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)。 由于能够自定义这些消息，你可以解释为何用户被拒绝访问，并尽可能协助进行自助式补救，例如，提示用户将其设备加入工作区。 有关详细信息，请参阅[跨公司应用程序从任一设备加入工作区以实现 SSO 和无缝第二重身份验证](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
+-   自定义（按信赖方应用程序） "拒绝访问" 消息。 有关详细信息，请参阅 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)。 由于能够自定义这些消息，你可以解释为何用户被拒绝访问，并尽可能协助进行自助式补救，例如，提示用户将其设备加入工作区。 有关详细信息，请参阅 [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
 下表包括 Windows Server 2012 R2 中 AD FS 可用来实现条件访问控制的所有声明类型。
 
@@ -62,9 +62,9 @@ Windows Server 2012 R2 的 AD FS 中的条件访问控制具有以下优势：
 |UPN|用户的用户主体名称 (UPN)。|
 |公用名|用户的公用名。|
 |AD FS 1.x 电子邮件地址|与 AD FS 1.1 或 AD FS 1.0 互操作时使用的用户电子邮件地址。|
-|Group|用户所属的组。|
+|组|用户所属的组。|
 |AD FS 1.x UPN|与 AD FS 1.1 或 AD FS 1.0 互操作时使用的用户 UPN。|
-|Role|用户具有的角色。|
+|角色|用户具有的角色。|
 |姓氏|用户的姓氏。|
 |PPID|用户的专用标识符。|
 |名称 ID|用户的 SAML 名称标识符。|
@@ -106,7 +106,7 @@ Windows Server 2012 R2 的 AD FS 中的条件访问控制具有以下优势：
 |使用者备用名称|证书的备用名称之一。|
 |序列号|证书的序列号。|
 |签名算法|用于创建证书签名的算法。|
-|使用者|证书中的使用者。|
+|主题|证书中的使用者。|
 |使用者密钥标识符|证书的使用者密钥标识符。|
 |使用者名称|证书中的使用者可分辨名称。|
 |V2 模板名称|颁发或续订证书时使用的版本 2 证书模板的名称。 这是一个特定于 Microsoft 的值。|
@@ -123,9 +123,9 @@ Windows Server 2012 R2 的 AD FS 中的条件访问控制具有以下优势：
 你可以使用提供的设置，通过实施条件访问控制以多种方法来管理风险。
 
 ### <a name="common-scenarios"></a>常见方案
-例如，假设有一个简单的方案，该方案基于用户的特定应用程序的组成员身份数据（信赖方信任）实施条件访问控制。 换句话说，你可以在联合服务器上设置一个颁发授权规则，以允许属于 AD 域中特定组的用户访问受 AD FS 保护的特定应用程序。  @No__t-0Walkthrough Guide 中介绍了实现此方案的详细分步说明（使用 UI 和 Windows PowerShell）：使用条件性访问控制 @ no__t 来管理风险。 若要完成本演练中的步骤，你必须设置一个实验室环境，并按照[为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中的步骤进行操作。
+例如，假设有一个简单的方案，该方案基于用户的特定应用程序的组成员身份数据（信赖方信任）实施条件访问控制。 换句话说，你可以在联合服务器上设置一个颁发授权规则，以允许属于 AD 域中特定组的用户访问受 AD FS 保护的特定应用程序。  [Walkthrough Guide: Manage Risk with Conditional Access Control](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)中介绍了有关实施此方案的详细分步说明（使用 UI 和 Windows PowerShell）。 若要完成本演练中的步骤，你必须设置一个实验室环境，并按照[为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中的步骤进行操作。
 
-### <a name="advanced-scenarios"></a>高级的方案
+### <a name="advanced-scenarios"></a>高级方案
 在 Windows Server 2012 R2 的 AD FS 中实施条件访问控制的其他示例包括：
 
 -   仅当此用户的标识已使用 MFA 进行验证时，才允许访问受 AD FS 保护的应用程序
@@ -174,8 +174,9 @@ Windows Server 2012 R2 的 AD FS 中的条件访问控制具有以下优势：
 
     ```
 
-## <a name="see-also"></a>请参阅
-[操作实例指南：使用条件访问控制管理风险 @ no__t-0 @ no__t 为[Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+## <a name="see-also"></a>另请参阅
+[操作实例指南：使用条件访问控制管理风险](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+[在 Windows Server 2012 R2 中设置 AD FS 的实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

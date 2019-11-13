@@ -19,7 +19,7 @@ ms.locfileid: "71366687"
 ---
 # <a name="a-virtual-san-should-be-associated-with-a-physical-host-bus-adapter"></a>虚拟 SAN 应与物理主机总线适配器相关联
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -37,10 +37,10 @@ ms.locfileid: "71366687"
 *虚拟存储区域网络（SAN）已配置，但未关联到主机总线适配器（HBA）。*  
   
 ## <a name="impact"></a>**对**  
-如果使用连接到配置错误的虚拟 SAN 的虚拟光纤通道适配器配置了虚拟机，则 @no__t 0A 虚拟机将无法启动。这会影响以下虚拟 San： *  
+*使用连接到配置错误的虚拟 SAN 的虚拟光纤通道适配器配置虚拟机时，该虚拟机将无法启动。这会影响以下虚拟 San：*  
   
   
-虚拟 San > 的 0list @no__t  
+虚拟 San \<列表 >  
   
   
 ## <a name="resolution"></a>**解决方法**  

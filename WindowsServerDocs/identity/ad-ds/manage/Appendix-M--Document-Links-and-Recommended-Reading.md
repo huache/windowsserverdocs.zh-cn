@@ -16,12 +16,12 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71368945"
 ---
-# <a name="appendix-m-document-links-and-recommended-reading"></a>附录 M：文档链接和建议阅读
+# <a name="appendix-m-document-links-and-recommended-reading"></a>附录 M：文档链接和建议的读物
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
-## <a name="appendix-m-document-links-and-recommended-reading"></a>附录 M：文档链接和建议阅读  
+## <a name="appendix-m-document-links-and-recommended-reading"></a>附录 M：文档链接和建议的读物  
   
 ### <a name="document-links"></a>文档链接  
 下表包含指向外部文档及其 Url 的链接的列表，以便此文档的硬拷贝读者可以访问此信息。 这些链接按照它们在文档中的显示顺序列出。  
@@ -40,7 +40,7 @@ ms.locfileid: "71368945"
 |[Microsoft 支持部门文章814777](https://support.microsoft.com/kb/814777)|[https://support.microsoft.com/kb/814777](https://support.microsoft.com/kb/814777)|  
 |[打开 Web 应用程序安全性项目（OWASP）](https://www.owasp.org/index.php/Main_Page)|[https://www.owasp.org/index.php/Main_Page](https://www.owasp.org/index.php/Main_Page)|  
 |[Microsoft 安全开发生命周期](https://www.microsoft.com/security/sdl/default.aspx)|[https://www.microsoft.com/security/sdl/default.aspx](https://www.microsoft.com/security/sdl/default.aspx)|  
-|[缓解哈希传递（PtH）攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|[https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating 传递哈希（PtH）攻击和其他凭据被盗 Techniques_English](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|  
+|[缓解哈希传递（PtH）攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|[https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating 传递哈希（PtH）攻击和其他凭据被盗 Techniques_English .pdf](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|  
 |[已确定攻击者和目标攻击](https://www.microsoft.com/download/details.aspx?id=34793)|[https://www.microsoft.com/download/details.aspx?id=34793](https://www.microsoft.com/download/details.aspx?id=34793)|  
 |[通过 GPO 管理内置管理员帐户密码的解决方案](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789)|[https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789)|  
 |[Microsoft 支持部门文章817433](https://support.microsoft.com/?id=817433)|[https://support.microsoft.com/?id=817433](https://support.microsoft.com/?id=817433)|  
@@ -90,7 +90,7 @@ ms.locfileid: "71368945"
 |[Retina CS 管理](http://www.wideeyesecurity.com/products.asp)|[http://www.wideeyesecurity.com/products.asp](http://www.wideeyesecurity.com/products.asp)|  
 |[Lumension](http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA)|[http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA](http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA)|  
 |[Lumension 漏洞管理](http://www.lumension.com/Solutions/Vulnerability-Management.aspx)|[http://www.lumension.com/Solutions/Vulnerability-Management.aspx](http://www.lumension.com/Solutions/Vulnerability-Management.aspx)|  
-|@no__t 0Threats 和对策指南：用户权限 @ no__t-0|[https://technet.microsoft.com/library/hh125917(v=ws.10).aspx](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|  
+|[威胁和对策指南：用户权限](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|[https://technet.microsoft.com/library/hh125917(v=ws.10).aspx](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|  
 |[威胁和漏洞缓解](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)|[https://technet.microsoft.com/library/cc755181(v=ws.10).aspx](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)|  
 |[用户权限](https://technet.microsoft.com/library/dd349804(v=WS.10).aspx)|[https://technet.microsoft.com/library/dd349804(v=WS.10).aspx](https://technet.microsoft.com/library/dd349804(v=WS.10).aspx)|  
 |[作为受信任的调用方访问凭据管理器](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2)|  
@@ -166,7 +166,7 @@ ms.locfileid: "71368945"
 |为 Windows Server 2003[委派 Active Directory 管理的最佳做法](https://www.microsoft.com/download/details.aspx?id=21678)|[https://www.microsoft.com/en-us/download/details.aspx?id=21678](https://www.microsoft.com/download/details.aspx?id=21678)|  
 |[Microsoft 支持部门生命周期](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
 |[Active Directory 技术规范](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|[https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|  
-|@no__t 0Error 消息：当已委派控制的非管理员用户尝试将计算机加入基于 Windows Server 2003 或 Windows Server 2008 的域控制器时："拒绝访问" ](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
+|[已委派控制的非管理员用户尝试将计算机加入基于 Windows Server 2003 或基于 Windows Server 2008 的域控制器时出现错误消息： "访问被拒绝"](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
 |[Windows Server 2008 R2 中 AD DS 的身份验证机制保证循序渐进指南](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
 |[严格 KDC 验证](https://www.microsoft.com/download/details.aspx?id=6382)|[https://www.microsoft.com/download/details.aspx?id=6382](https://www.microsoft.com/download/details.aspx?id=6382)|  
   
@@ -189,7 +189,7 @@ ms.locfileid: "71368945"
 |为 Windows Server 2003[委派 Active Directory 管理的最佳做法](https://www.microsoft.com/download/details.aspx?id=21678)|  
 |[Microsoft 支持部门生命周期](https://support.microsoft.com/lifecycle/)|  
 |[Active Directory 技术规范](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)-dSHeuristics 信息|  
-|@no__t 0Error 消息：当已委派控制的非管理员用户尝试将计算机加入基于 Windows Server 2003 或 Windows Server 2008 的域控制器时："拒绝访问" ](https://support.microsoft.com/kb/932455)|  
+|[已委派控制的非管理员用户尝试将计算机加入基于 Windows Server 2003 或基于 Windows Server 2008 的域控制器时出现错误消息： "访问被拒绝"](https://support.microsoft.com/kb/932455)|  
 |[保护 Active Directory 安装的最佳实践指南。](https://go.microsoft.com/fwlink/?LinkId=140862)|  
 |[Hyper-v 安全指南](https://www.microsoft.com/download/details.aspx?id=16650)|  
 |[Windows Server 2008 R2 循序渐进指南中 AD DS 的身份验证机制保证](https://technet.microsoft.com/library/dd378897(WS.10).aspx)。|  

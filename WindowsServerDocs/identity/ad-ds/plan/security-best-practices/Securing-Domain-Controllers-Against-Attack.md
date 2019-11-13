@@ -20,7 +20,7 @@ ms.locfileid: "71367619"
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-@no__t 0Law 第三号：如果攻击者对您的计算机具有不受限制的物理访问权限，则不是您的计算机。 *@no__t[10 个安全永恒定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*定律三：如果攻击者对您的计算机具有不受限制的物理访问，就不是您的计算机了。* - [十个不可变定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
   
 域控制器提供了 AD DS 数据库的物理存储，还提供了允许企业有效管理其服务器、工作站、用户和应用程序的服务和数据。 如果恶意用户获取了对域控制器的特权访问，则该用户可以修改、损坏或销毁 AD DS 数据库，并通过扩展 Active Directory 管理的所有系统和帐户。  
   
@@ -36,7 +36,7 @@ ms.locfileid: "71367619"
   
 #### <a name="physical-domain-controllers"></a>物理域控制器
 
-在数据中心，物理域控制器应安装在独立于常规服务器总体的专用安全机架或 cages 中。 如果可能，应将域控制器配置为受信任的平台模块（TPM）芯片，并通过 BitLocker 驱动器加密保护域控制器服务器中的所有卷。 BitLocker 通常会在一位数字的百分比中增加性能开销，但即使从服务器中删除了磁盘，也会防止目录泄露。 BitLocker 还可以帮助系统防范攻击，如 rootkit，因为修改启动文件将导致服务器启动到恢复模式，以便可以加载原始二进制文件。 如果将域控制器配置为使用软件 RAID、串行连接 SCSI、SAN/NAS 存储或动态卷，则无法实现 BitLocker，因此，在使用本地连接的存储（有或没有硬件 RAID）时，应在域控制器中使用可以.  
+在数据中心，物理域控制器应安装在独立于常规服务器总体的专用安全机架或 cages 中。 如果可能，应将域控制器配置为受信任的平台模块（TPM）芯片，并通过 BitLocker 驱动器加密保护域控制器服务器中的所有卷。 BitLocker 通常会在一位数字的百分比中增加性能开销，但即使从服务器中删除了磁盘，也会防止目录泄露。 BitLocker 还可以帮助系统防范攻击，如 rootkit，因为修改启动文件将导致服务器启动到恢复模式，以便可以加载原始二进制文件。 如果将域控制器配置为使用软件 RAID、串行连接 SCSI、SAN/NAS 存储或动态卷，则无法实现 BitLocker，因此应尽可能在域控制器中使用本地附加的存储（带有或不带硬件 RAID）。  
   
 #### <a name="virtual-domain-controllers"></a>虚拟域控制器 
 
@@ -70,7 +70,7 @@ ms.locfileid: "71367619"
   
 ### <a name="microsoft-security-compliance-toolkit"></a>Microsoft 安全合规性工具包
 
-[Microsoft 安全符合性工具包](https://www.microsoft.com/download/details.aspx?id=55319)域控制器设置可以与 "安全配置向导" 设置结合使用，以便为部署在Active Directory 中的域控制器 OU。  
+[Microsoft 安全符合性工具包](https://www.microsoft.com/download/details.aspx?id=55319)域控制器设置可以与 "安全配置向导" 设置结合，为域控制器生成全面的配置基线，这些基线是在 Active Directory 中的域控制器 OU 上部署的 gpo 部署和强制执行的。  
   
 ### <a name="rdp-restrictions"></a>RDP 限制
 
@@ -84,7 +84,7 @@ ms.locfileid: "71367619"
 
 作为 Active Directory 安全评估的一部分执行的一项检查是在域控制器上使用和配置 Internet Explorer。 Internet Explorer （或任何其他 web 浏览器）不应在域控制器上使用，但对数千个域控制器的分析已揭示了很多情况下，特权用户使用 Internet Explorer 浏览组织的 intranet 或互联.  
   
-如前面所述，该[途径](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md)的 "配置错误" 一节中所述，使用高特权帐户从 Windows 基础结构中最强大的计算机中浏览 Internet （或受感染的 intranet）。默认情况下，允许本地登录域控制器的帐户会给组织的安全带来特别的风险。 无论是通过下载还是下载恶意软件感染的 "实用程序" 通过驱动器，攻击者都可以获得完全破坏或销毁 Active Directory 环境所需的所有内容。  
+如前面所述，"错误日志" 中[的 "](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md)配置错误" 一节中所述，使用高特权帐户（默认情况下，允许本地登录到域控制器的唯一帐户）从 Windows 基础结构中最强大的计算机中浏览 Internet （或受感染的 intranet）会给组织的安全带来特别的风险。 无论是通过下载还是下载恶意软件感染的 "实用程序" 通过驱动器，攻击者都可以获得完全破坏或销毁 Active Directory 环境所需的所有内容。  
   
 尽管 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 和当前版本的 Internet Explorer 提供了许多针对恶意下载的保护，但在大多数情况下，使用域控制器和特权帐户来浏览 Internet，域控制器运行的是 Windows Server 2003，或者是特意禁用了更高版本的操作系统和浏览器提供的保护。  
   
@@ -92,7 +92,7 @@ ms.locfileid: "71367619"
   
 ### <a name="perimeter-firewall-restrictions"></a>外围防火墙限制
 
-应将外围防火墙配置为阻止来自域控制器的出站连接到 Internet。 尽管域控制器可能需要在站点边界之间进行通信，但可以根据[如何为域和信任关系配置防火墙](https://support.microsoft.com/kb/179442)中提供的指导原则，将外围防火墙配置为允许站点间通信。Microsoft 支持部门网站。  
+应将外围防火墙配置为阻止来自域控制器的出站连接到 Internet。 尽管域控制器可能需要在站点边界之间进行通信，但可以按照如何在 Microsoft 支持部门网站上为[域和信任配置防火墙](https://support.microsoft.com/kb/179442)中提供的指导原则，将外围防火墙配置为允许站点间通信。  
   
 ### <a name="dc-firewall-configurations"></a>DC 防火墙配置  
 

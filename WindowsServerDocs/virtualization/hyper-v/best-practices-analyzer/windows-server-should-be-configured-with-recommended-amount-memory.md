@@ -19,7 +19,7 @@ ms.locfileid: "71393019"
 ---
 # <a name="windows-server-2016-should-be-configured-with-the-recommended-amount-of-memory"></a>应使用建议的内存量配置 Windows Server 2016
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,9 +36,9 @@ ms.locfileid: "71393019"
 *运行 Windows Server 2016 的虚拟机配置为小于建议的 RAM 量，即 1 GB。*  
   
 ## <a name="impact"></a>**对**  
-@no__t 0The 来宾操作系统和应用程序可能无法正常运行。可能没有足够的内存可同时运行多个应用程序。这会影响以下虚拟机： *  
+*来宾操作系统和应用程序可能无法正常运行。可能没有足够的内存可同时运行多个应用程序。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list > 
+虚拟机 \<列表 > 
   
 ## <a name="resolution"></a>**解决方法**  
 *使用 Hyper-v 管理器将分配给此虚拟机的内存至少增加 1 GB。*  
@@ -61,13 +61,13 @@ ms.locfileid: "71393019"
   
 2.  右键单击 " **Windows PowerShell** "，然后单击 "**以管理员身份运行**"。  
   
-3.  将 <MyVM> 替换为虚拟机的名称后，运行此命令：  
+3.  将 <MyVM> 替换为虚拟机的名称后，运行以下命令：  
   
 ```  
 Set-VMMemory <MyVM> -StartupBytes 1GB  
 ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

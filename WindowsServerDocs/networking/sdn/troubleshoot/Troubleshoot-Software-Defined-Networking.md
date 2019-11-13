@@ -32,8 +32,8 @@ ms.locfileid: "71405823"
 
 本部分包含以下主题。
 
-- [排查 Windows Server 软件定义网络堆栈问题](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
-- 博客文章 @no__t 0SDN 故障排除：UDP 通信故障和更改网络控制器证书 @ no__t-0
+- [Windows Server 软件定义的网络堆栈疑难解答](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
+- 博客文章[SDN 故障排除： UDP 通信故障和更改网络控制器证书](https://techcommunity.microsoft.com/t5/Networking-Blog/SDN-Troubleshooting-UDP-Communication-failures-and-changing-the/ba-p/339694)
 - 博客文章[软件定义的网络（SDN）中的证书问题疑难解答](https://techcommunity.microsoft.com/t5/Networking-Blog/Troubleshooting-certificate-issues-in-Software-Defined/ba-p/339671)
 - 博客文章[如何为 Windows Server 2016 中的 BGP 对等互连查找 SDN 网关本地地址](https://techcommunity.microsoft.com/t5/Networking-Blog/How-to-find-the-SDN-gateway-local-address-for-BGP-peering-in/ba-p/339663)
 - 博客文章[在 Virtual Machine Manager 中配置 SDN RAS 网关 VPN 带宽设置疑难解答](https://techcommunity.microsoft.com/t5/Networking-Blog/Troubleshoot-Configuring-SDN-RAS-Gateway-VPN-Bandwidth-Settings/ba-p/339661)

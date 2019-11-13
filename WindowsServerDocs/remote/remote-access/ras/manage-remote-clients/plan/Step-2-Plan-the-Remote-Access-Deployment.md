@@ -26,7 +26,7 @@ ms.locfileid: "71404575"
 规划要用于设置单个远程访问服务器以远程管理 DirectAccess 客户端的基础结构后，就可以计划远程访问设置向导将使用的设置。  
   
 > [!NOTE]  
-> 在继续执行这些任务之前，请参阅 @no__t 0Step 1：规划远程访问基础结构 @ no__t。  
+> 在继续执行这些任务之前，请参阅[步骤1：规划远程访问基础结构](Step-1-Plan-the-Remote-Access-Infrastructure.md)。  
   
 |任务|描述|  
 |----|--------|  
@@ -55,7 +55,7 @@ ms.locfileid: "71404575"
   
     -   **连接性验证**  
   
-        将创建默认 Web 探测，客户端可将其用于验证到内部网络的连接性。 默认名称为`https://directaccess-WebProbeHost.<domain_name>`。 应在 DNS 中手动注册该名称。 可以通过 HTTP 或 PING 创建使用其他 web 地址的其他连接性验证程序。 对于每个连接性验证程序，都必须存在 DNS 条目。  
+        将创建默认 Web 探测，客户端可将其用于验证到内部网络的连接性。 默认名称是 `https://directaccess-WebProbeHost.<domain_name>`。 应在 DNS 中手动注册该名称。 可以通过 HTTP 或 PING 创建使用其他 web 地址的其他连接性验证程序。 对于每个连接性验证程序，都必须存在 DNS 条目。  
   
     -   **技术支持电子邮件地址**  
   
@@ -96,7 +96,7 @@ ms.locfileid: "71404575"
   
     您可以选择以下方法之一，对远程访问服务器的 DirectAccess 客户端进行身份验证：  
   
-    -   **用户身份验证**：你可以使用户使用 Active Directory 凭据或双重身份验证进行身份验证。  
+    -   **用户身份验证**：可让用户使用 Active Directory 凭据或双因素身份验证进行身份验证。  
   
     -   **计算机身份验证**：你可以将计算机身份验证配置为使用证书。 也可以将远程访问服务器用作 Kerberos 身份验证的代理，而无需证书。 
   
@@ -118,9 +118,9 @@ ms.locfileid: "71404575"
   
 -   **管理服务器** 
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
--   [步骤 1：规划远程访问基础结构](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
+-   [步骤1：规划远程访问基础结构](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
   
 
 

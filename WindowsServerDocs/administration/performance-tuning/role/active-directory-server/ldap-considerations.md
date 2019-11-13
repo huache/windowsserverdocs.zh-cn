@@ -39,7 +39,7 @@ ms.locfileid: "71370280"
 
 ### <a name="scenarios-that-benefit-in-adding-indices"></a>添加索引的好处方案
 
--   请求数据的客户端负载会生成大量 CPU 使用率，并且不能更改或优化客户端查询行为。 按重大负载，请考虑在服务器性能顾问或内置 Active Directory 数据收集器集的最高10个罪犯列表中显示自身，并且使用超过 1% 的 CPU。
+-   请求数据的客户端负载会生成大量 CPU 使用率，并且不能更改或优化客户端查询行为。 按重大负载，请考虑在服务器性能顾问或内置 Active Directory 数据收集器集的最高10个罪犯列表中显示自身，并且使用超过1% 的 CPU。
 
 -   由于未索引的属性，客户端负载正在服务器上生成大量磁盘 i/o，无法更改或优化客户端查询行为。
 
@@ -47,12 +47,12 @@ ms.locfileid: "71370280"
 
 - 具有较长持续时间的大量查询导致 ATQ LDAP 线程消耗和耗尽。 监视以下性能计数器：
 
-    - **NTDS @ no__t-1Request 延迟**–这取决于请求处理所需的时间。 Active Directory 在120秒后超时请求数（默认值），则大多数运行速度应快得多，并且长时间运行的查询应隐藏在总数字中。 查找此基线中的更改，而不是绝对阈值。
+    - **NTDS\\请求延迟**–这取决于请求处理所需的时间。 Active Directory 在120秒后超时请求数（默认值），则大多数运行速度应快得多，并且长时间运行的查询应隐藏在总数字中。 查找此基线中的更改，而不是绝对阈值。
 
         > [!NOTE]
         > 此处较高的值还可以指示对其他域和 CRL 检查的 "代理" 请求中的延迟。
 
-    - **NTDS @ no__t-1Estimated Queue Delay** –理想情况下，理想情况下应接近0以获得最佳性能，因为这意味着请求不会花费时间等待维护。
+    - **NTDS\\估计队列延迟**–此情况最好接近0，以获得最佳性能，因为这意味着请求不会花费时间等待维护。
 
 可以使用以下一种或多种方法来检测这些方案：
 
@@ -60,31 +60,31 @@ ms.locfileid: "71370280"
 
 -   [跟踪代价高昂且低效的搜索](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   在性能监视器中 Active Directory 诊断数据收集器集（@no__t-SPA 的0Son：AD 数据收集器集在 Win2008 中以及 @ no__t 之外
+-   在性能监视器中 Active Directory 诊断数据收集器集（[SPA 的儿子： Win2008 和更高版本中的 AD 数据收集器集](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)）
 
 -   [Microsoft Server 性能顾问](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor 包
 
--   使用 "（objectClass = \*）" 以外的任何筛选器进行搜索，该筛选器使用祖先索引。
+-   使用 "（objectClass =\*）" 以外的任何筛选器进行搜索，该筛选器使用祖先索引。
 
 ### <a name="other-index-considerations"></a>其他索引注意事项
 
 -   请确保在优化查询已用完选项后，创建索引是解决问题的正确解决方案。 正确调整硬件大小非常重要。 仅当正确的修复是为属性编制索引，而不是尝试模糊处理硬件问题时，才应添加索引。
 
--   索引将增加数据库的大小，最小值为索引的属性的总大小。 因此，可以通过在属性中获取数据的平均大小并乘以将填充属性的对象数来计算数据库增长的估计值。 通常，这是数据库大小增加 1% 的情况。 有关详细信息，请参阅[数据存储的工作方式](https://technet.microsoft.com/library/cc772829.aspx)。
+-   索引将增加数据库的大小，最小值为索引的属性的总大小。 因此，可以通过在属性中获取数据的平均大小并乘以将填充属性的对象数来计算数据库增长的估计值。 通常，这是数据库大小增加1% 的情况。 有关详细信息，请参阅[数据存储的工作方式](https://technet.microsoft.com/library/cc772829.aspx)。
 
 -   如果搜索行为主要在组织单位级别完成，则考虑为容器化搜索编制索引。
 
--   元组索引比普通索引大，但估计大小要困难得多。 使用常规索引大小估算作为增长的地面，最大值为 20%。 有关详细信息，请参阅[数据存储的工作方式](https://technet.microsoft.com/library/cc772829.aspx)。
+-   元组索引比普通索引大，但估计大小要困难得多。 使用常规索引大小估算作为增长的地面，最大值为20%。 有关详细信息，请参阅[数据存储的工作方式](https://technet.microsoft.com/library/cc772829.aspx)。
 
 -   如果搜索行为主要在组织单位级别完成，则考虑为容器化搜索编制索引。
 
 -   需要元组索引以支持词中搜索字符串和最终搜索字符串。 初始搜索字符串不需要元组索引。
 
-    -   初始搜索字符串–（samAccountName = MYPC @ no__t-0）
+    -   初始搜索字符串–（samAccountName = MYPC\*）
 
-    -   词中搜索字符串-（samAccountName = \*MYPC @ no__t）
+    -   词中搜索字符串-（samAccountName =\*MYPC\*）
 
-    -   最终搜索字符串–（samAccountName = \*MYPC $）
+    -   最终搜索字符串–（samAccountName =\*MYPC $）
 
 -   创建索引时，将在生成索引时生成磁盘 i/o。 这是在优先级较低的后台线程上完成的，传入的请求优先于索引生成。 如果已正确执行环境的容量规划，则这应该是透明的。 然而，编写繁重的方案或域控制器存储上的负载未知的环境可能会降低客户端体验，并应在工作时间结束。
 
@@ -98,7 +98,7 @@ ms.locfileid: "71370280"
 
 -   [索引属性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [性能优化 Active Directory 服务器](index.md)
 - [硬件注意事项](hardware-considerations.md)

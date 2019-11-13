@@ -19,7 +19,7 @@ ms.locfileid: "71365198"
 ---
 # <a name="certificate-based-authentication-is-configured-but-the-specified-certificate-is-not-installed-on-the-replica-server-or-failover-cluster-nodes"></a>配置了基于证书的身份验证，但未在副本服务器或故障转移群集节点上安装指定的证书
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 
   
@@ -40,9 +40,9 @@ ms.locfileid: "71365198"
   
 ## <a name="impact"></a>影响  
   
-@no__t 0In 群集故障转移或移动到另一个节点时，如果新节点还没有安装适当的证书，Hyper-v 复制将暂停。这会影响以下节点： *  
+*发生群集故障转移或移动到其他节点时，如果新节点还没有安装适当的证书，Hyper-v 复制将暂停。这会影响以下节点：*  
   
-节点 \<list >  
+\<节点列表 >  
   
 ## <a name="resolution"></a>分辨率  
   

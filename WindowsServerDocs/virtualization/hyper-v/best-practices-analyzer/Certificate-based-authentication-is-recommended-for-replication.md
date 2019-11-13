@@ -19,7 +19,7 @@ ms.locfileid: "71365176"
 ---
 # <a name="certificate-based-authentication-is-recommended-for-replication"></a>建议复制基于证书的身份验证
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,12 +36,12 @@ ms.locfileid: "71365176"
 *为 Kerberos 身份验证配置了一个或多个为复制选择的虚拟机。*  
   
 ## <a name="impact"></a>**对**  
-从主服务器到复制服务器的0The 复制网络流量未加密。 @no__t这会影响以下虚拟机： *  
+*从主服务器到复制服务器的复制网络流量未加密。这会影响以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
-*If 另一种方法用于执行加密，则可以忽略此项。否则，请修改虚拟机设置以选择基于证书的身份验证。*  
+*如果使用另一种方法执行加密，则可以忽略此情况。否则，请修改虚拟机设置以选择基于证书的身份验证。*  
   
 
 

@@ -19,7 +19,7 @@ ms.locfileid: "71365269"
 ---
 # <a name="avoid-configuring-virtual-machines-to-allow-unfiltered-scsi-commands"></a>避免将虚拟机配置为允许未筛选的 SCSI 命令
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 
   
@@ -40,13 +40,13 @@ ms.locfileid: "71365269"
   
 ## <a name="impact"></a>影响  
   
-@no__t 0Bypassing SCSI 命令筛选会带来安全风险。仅当需要兼容来宾操作系统中运行的存储应用程序时，才应启用此配置。以下虚拟机配置为允许未筛选的 SCSI 命令： *  
+*绕过 SCSI 命令筛选会带来安全风险。仅当需要兼容来宾操作系统中运行的存储应用程序时，才应启用此配置。以下虚拟机配置为允许未筛选的 SCSI 命令：*  
   
-@no__t-虚拟机名称的 0list >  
+虚拟机名称 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
   
-@no__t 0Contact 存储供应商确定是否需要此配置。此外，如果管理操作系统或其他来宾操作系统被泄露或出现异常行为，请重新配置虚拟机以阻止命令。 *  
+*请与存储供应商联系以确定是否需要此配置。此外，如果管理操作系统或其他来宾操作系统被泄露或出现异常行为，请重新配置虚拟机以阻止这些命令。*  
   
 
 

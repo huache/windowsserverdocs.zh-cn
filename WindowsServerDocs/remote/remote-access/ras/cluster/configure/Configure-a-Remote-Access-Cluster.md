@@ -26,13 +26,13 @@ ms.locfileid: "71404631"
 
  Windows Server 2016 和 Windows Server 2012 将 Always On VPN 和路由和远程访问服务（RRAS） VPN 合并到单个远程访问角色中。 本概述介绍了在负载平衡的群集中部署单个 Windows Server 2016 或 Windows Server 2012 远程访问服务器所需的配置步骤。
   
--  第 1 步：[使用高级选项部署 ALWAYSON VPN 服务器](../../../vpn/always-on-vpn/deploy/always-on-vpn-adv-options.md)。
+-  步骤1：[使用高级选项部署 ALWAYSON VPN 服务器](../../../vpn/always-on-vpn/deploy/always-on-vpn-adv-options.md)。
   
--   [步骤 2：准备群集服务器 @ no__t。  
+-   [步骤2：准备群集服务器](Step-2-Prepare-Cluster-Servers.md)。  
   
--   [步骤 3：配置负载平衡群集 @ no__t。  
+-   [步骤3：配置负载平衡群集](Step-3-Configure-a-Load-Balanced-Cluster.md)。  
   
--   [步骤 4：验证群集 @ no__t。  
+-   [步骤4：验证群集](Step-4-Verify-the-Cluster.md)。  
   
 
 

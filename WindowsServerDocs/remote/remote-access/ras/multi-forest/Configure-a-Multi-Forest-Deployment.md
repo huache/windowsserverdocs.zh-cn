@@ -73,7 +73,7 @@ ms.locfileid: "71404534"
   
 -   帐户林—拓扑中的所有其他林。  
   
-此程序需要 PowerShell 脚本 PKISync.ps1。 请参阅 [AD CS：用于跨林证书注册的 Pkisync.ps1 脚本 @ no__t-0。  
+此程序需要 PowerShell 脚本 PKISync.ps1。 请参阅 [AD CS：用于跨林证书注册的 PKISync.ps1 脚本](https://technet.microsoft.com/library/ff961506.aspx)。  
   
 > [!NOTE]  
 > 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
@@ -100,7 +100,7 @@ ms.locfileid: "71404534"
     certutil -config <Computer-Name>\<Root-CA-Name> -ca.cert <root-ca-cert-filename.cer>  
     ```  
   
-    （如果你在根 CA 上运行该命令，则可以忽略连接信息-config < 计算机名 > @no__t 0 < 根 CA 名称 >）  
+    （如果你在根 CA 上运行该命令，则可以忽略连接信息-config < 计算机名称 >\\< 根 CA 名称 >）  
   
     1.  通过从提升的命令提示符运行以下命令，在帐户林 CA 上从上一步导入根 CA 证书：  
   
@@ -108,7 +108,7 @@ ms.locfileid: "71404534"
         certutil -dspublish -f <root-ca-cert-filename.cer> RootCA  
         ```  
   
-    2.  授予资源林证书模板对 @no__t 的读取/写入权限-0Account 林 @ no__t; no__t-2 < 管理员帐户 @ no__t。  
+    2.  授予资源林证书模板对 \<帐户林的读/写权限\>\\< 管理员帐户的\>。  
   
     3.  通过从提升的命令提示符运行以下命令来提取所有资源林企业 CA 证书：  
   
@@ -116,7 +116,7 @@ ms.locfileid: "71404534"
         certutil -config <Computer-Name>\<Enterprise-CA-Name> -ca.cert <enterprise-ca-cert-filename.cer>  
         ```  
   
-        （如果你在根 CA 上运行该命令，则可以忽略连接信息-config < 计算机名 > @no__t 0 < 根 CA 名称 >）  
+        （如果你在根 CA 上运行该命令，则可以忽略连接信息-config < 计算机名称 >\\< 根 CA 名称 >）  
   
     4.  通过从提升的命令提示符运行以下命令，在帐户林 CA 上从上一步导入企业 CA 证书：  
   
@@ -179,7 +179,7 @@ DNS 后缀搜索列表允许客户端不使用 FQDN，而使用短标签名。 �
   
 3.  在 **“DNS”** 页的表格中，输入 Forest 2 中的企业网络所包含的任何其他名称后缀。 在 **“DNS 服务器地址”** 中，手动输入 DNS 服务器地址，或单击 **“检测”** 。 如果不输入地址，新条目将作为 NRPT 例外应用。 然后，单击“下一步”。  
   
-4.  可选：在“DNS 后缀搜索列表”页面上，通过在“新建后缀”框中输入后缀来添加任何 DNS 后缀，然后单击“添加”。 然后，单击“下一步”。  
+4.  可选：在“DNS 后缀搜索列表” 页面上，通过在“新建后缀” 框中输入后缀来添加任何 DNS 后缀，然后单击“添加”。 然后，单击“下一步”。  
   
 5.  在 **“管理”** 页面上，单击 **“完成”** 。  
   
