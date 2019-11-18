@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/31/2019
+ms.date: 11/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a8e66398bc61a69250b84101a3cb66f2c8f3548
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: db9c2b64e018b41b053974b5459bd320098a6d2d
+ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567070"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74019592"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -30,14 +30,14 @@ ms.locfileid: "73567070"
 
 |用户组 |版本  |
 |-----------|---------|
-|Public     |1.2.247  |
-|预览体验成员    |1.2.428  |
+|Public     |1.2.431  |
+|预览体验成员    |1.2.431  |
 
-## <a name="updates-for-version-12428"></a>针对版本 1.2.428 的更新
+## <a name="updates-for-version-12431"></a>针对版本 1.2.431 的更新
 
-*发布日期：2019/10/31*
+*发布日期：2019/11/12*
 
-- 客户端的 32 位和 ARM64 版的预览版现已提供！
+- 客户端的 32 位版和 ARM64 版现已提供！
 - 客户端现在会保存你对连接栏所做的任何更改（例如，其位置、大小和固定状态），并跨会话应用这些更改。
 - 更新的网关信息和连接状态对话框。
 - 解决了已导致在 Azure Active Directory 令牌过期后尝试连接时两个凭据同时提示的问题。

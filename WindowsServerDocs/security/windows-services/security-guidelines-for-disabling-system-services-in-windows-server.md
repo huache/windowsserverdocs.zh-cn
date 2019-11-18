@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 54352f47a31826b91b5696eb90104ca166a4299d
-ms.sourcegitcommit: 18f6b104e73e0397009283d55bee7984ac7ef0d1
+ms.openlocfilehash: 1711eb94b622775feaf02f6bada596fe03b08ea9
+ms.sourcegitcommit: b8e120fc574450e9eee13e7315424137a43e6a6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73632655"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74044810"
 ---
 # <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>有关在带有桌面体验的 Windows Server 2016 中禁用系统服务的指南
 
@@ -68,7 +68,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |---|---|
 |**服务说明**|   服务的说明，摘自 sc.exe 说明。|
 |**名称** |服务的键（内部）名称|
-|**安装** |始终安装：服务位于 Server Core 和带有桌面体验的 Server 上。 仅用于桌面体验：服务位于带有桌面体验的 Windows Server 2016 上，但不位于 Server Core 上 |
+|**安装** | 始终安装  ：服务安装在 Windows Server 2016 Core 和带有桌面体验的 Windows Server 2016 上。 仅用于桌面体验  ：服务位于带有桌面体验的 Windows Server 2016 上，但不安装在 Server Core 上。 |
 |**StartType**  |Windows Server 2016 上的服务启动类型|
 |**建议** |有关妥善管理的典型企业部署中的、其服务器不是用作最终用户桌面替代版本的 Windows Server 2016 上禁用此服务的 Microsoft 建议。|
 |**备注** |附加说明|

@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a093f873ee925a2763ba5243f868204bd077f3
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: 1ce821c2e793792032e2f91aa806b1bd8d8a76f6
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000654"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73956074"
 ---
 # <a name="whats-new-in-windows-server"></a>Windows Server 中的新增功能
 
@@ -28,9 +28,9 @@ ms.locfileid: "70000654"
 
 半年频道版本：
 
-- [Windows Server 版本 1903 中的新增功能](../get-started-19/whats-new-in-windows-server-1903.md)
+- [Windows Server 版本 1903 和 1909 中的新增功能](../get-started-19/whats-new-in-windows-server-1903-1909.md)
 - [Windows Server 版本 1809 中的新增功能](whats-new-in-windows-server-1809.md)
-- [Windows Server 版本 1803 中的新增功能](whats-new-in-windows-server-1803.md)
+- [Windows Server 版本 1803 中的新增功能](whats-new-in-windows-server-1803.md)（从 2019 年 11 月 12 日开始不再受支持）
 - [Windows Server 版本 1709 中的新增功能](whats-new-in-windows-server-1709.md)（从 2019 年 4 月 9 日开始不再接受支持）
 
 Windows Server 半年频道版本以更快的步调提供新的操作系统功能。 新版本每隔六个月推出，接受 18 个月的支持。 请查看 [Windows Server 版本信息](windows-server-release-info.md)和[生命周期支持页](https://support.microsoft.com/lifecycle)来了解支持日期，并始终尽量使用最新版本。
