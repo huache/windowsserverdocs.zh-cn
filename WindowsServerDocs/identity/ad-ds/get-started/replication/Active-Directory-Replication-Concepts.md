@@ -52,7 +52,7 @@ ms.locfileid: "72591071"
 ## <a name="BKMK_2"></a>KCC  
 KCC 是在所有域控制器上运行的内置进程，并为 Active Directory 林生成复制拓扑。 KCC 根据复制是在站点（站点内）中还是在站点（站点间）中进行，来创建单独的复制拓扑。 KCC 还动态调整拓扑，以适应新域控制器的添加、删除现有域控制器、在站点之间移动域控制器、更改成本和计划以及域控制器。暂时不可用或处于错误状态。  
   
-在站点中，可写域控制器之间的连接始终按双向环形进行排列，并且具有更多的快捷连接以减少大型站点中的延迟。 另一方面，站点间拓扑是跨越树的分层，这意味着每个目录分区的任意两个站点之间存在一个站点间连接，通常不包含快捷方式连接。 有关跨越树和 Active Directory 复制拓扑的详细信息，请参阅 Active Directory 复制拓扑技术参考（[ https://go.microsoft.com/fwlink/?LinkID=93578](https://go.microsoft.com/fwlink/?LinkID=93578)）。  
+在站点中，可写域控制器之间的连接始终按双向环形进行排列，并且具有更多的快捷连接以减少大型站点中的延迟。 另一方面，站点间拓扑是跨越树的分层，这意味着每个目录分区的任意两个站点之间存在一个站点间连接，通常不包含快捷方式连接。 有关跨越树和 Active Directory 复制拓扑的详细信息，请参阅 Active Directory 复制拓扑技术参考（[https://go.microsoft.com/fwlink/?LinkID=93578](https://go.microsoft.com/fwlink/?LinkID=93578)）。  
   
 在每个域控制器上，KCC 通过创建定义来自其他域控制器的连接的单向入站连接对象来创建复制路由。 对于同一站点中的域控制器，KCC 会自动创建连接对象，而无需管理干预。 如果有多个站点，则需要在站点之间配置站点链接，每个站点中的单个 KCC 也会自动在站点之间创建连接。  
   
@@ -64,16 +64,16 @@ KCC 是在所有域控制器上运行的内置进程，并为 Active Directory �
   
 但是，在以前版本的 Windows Server 操作系统上，中心辐射型拓扑突出显示的一项管理挑战是，在集线器中添加新桥头域控制器后，没有自动机制来重新分发分支域控制器与中心域控制器之间的复制连接，以利用新的中心域控制器。  
   
-对于 Windows Server 2003 域控制器，可以通过使用 Windows Server 2003 分支机构部署指南（[ https://go.microsoft.com/fwlink/?LinkID=28523](https://go.microsoft.com/fwlink/?LinkID=28523)）中的工具（如 Adlb）重新均衡工作负荷。  
+对于 Windows Server 2003 域控制器，可以通过使用 Windows Server 2003 分支机构部署指南（[https://go.microsoft.com/fwlink/?LinkID=28523](https://go.microsoft.com/fwlink/?LinkID=28523)）中的工具（如 Adlb）重新均衡工作负荷。  
   
 对于 Windows Server 2008 Rodc，KCC 的正常运行会提供一些重新平衡，从而无需使用其他工具（如 Adlb）。 默认情况下，新功能处于启用状态。 可以通过在 RODC 上添加以下注册表项来禁用它：  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Parameters**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\NTDS\Parameters**  
   
 **"允许随机 BH Loadbalancing"**  
 **1 = 已启用（默认值），0 = 已禁用**  
   
-有关这些 KCC 如何改进的详细信息，请参阅为分支机构规划和部署 Active Directory 域服务（[ https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)）。  
+有关这些 KCC 如何改进的详细信息，请参阅为分支机构规划和部署 Active Directory 域服务（[https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)）。  
   
 ## <a name="BKMK_3"></a>故障转移功能  
 站点确保复制是围绕网络故障和脱机域控制器进行路由的。 KCC 按指定的时间间隔运行，以调整 AD DS 中发生的更改（例如，添加新域控制器和创建新站点）的复制拓扑。 KCC 检查现有连接的复制状态，以确定是否有任何连接不起作用。 如果某个连接由于域控制器故障而不工作，则 KCC 会自动建立与其他复制伙伴（如果有）的临时连接，以确保进行复制。 如果站点中的所有域控制器都不可用，则 KCC 会自动在不同站点的域控制器之间创建复制连接。  
