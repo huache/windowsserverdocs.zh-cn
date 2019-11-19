@@ -17,11 +17,11 @@ ms.locfileid: "71357056"
 ---
 # <a name="migrate-from-windows-admin-center-sdk-01-to-10"></a>从 Windows 管理中心 SDK 0.1 迁移到1。0
 
->适用于： Windows 管理中心预览
+>适用于：Windows Admin Center 预览版
 
 本指南将帮助你从 Windows 管理中心 SDK 版本0.1 升级到1.0。  
 
-## <a name="1-learn-about-new-controls-with-the-dev-guide-extension"></a>1. 了解具有开发人员指南扩展的新控件
+## <a name="1-learn-about-new-controls-with-the-dev-guide-extension"></a>1.了解开发人员指南扩展的新控件
 
 Windows 管理中心版本1902及更高版本包含**开发人员指南**扩展，可用于查找控件示例（包括新提供的控件）和方案，以帮助你生成自己的扩展。  开发指南取代了 SDK 早期版本中的**开发人员工具**扩展。
 
@@ -45,17 +45,17 @@ Windows 管理中心版本1902及更高版本包含**开发人员指南**扩展�
 * 选择**开发指南**解决方案 
     * 如果看不到列出的解决方案，请确保已启用开发指南（请参阅上面的部分）并重新加载 Windows 管理中心。
 * 通过选择其中一个选项卡浏览开发指南的内容
-    * **登陆：** 包含*管理 As*和*通知*方案的代码示例
-    * **控件：** 包含 SDK 中每个可用控件的示例
-    * **管道：** 包含可用转换器和格式化程序函数的示例
-    * **样式：** 包含 SDK 中可用的 CSS 样式的示例
-    * **MsftSme：** 包含高级方案的示例和指南 
+    * **登录**包含*管理 As*和*通知*方案的代码示例
+    * **控件**包含 SDK 中每个可用控件的示例
+    * **布线**包含可用转换器和格式化程序函数的示例
+    * **字体**包含 SDK 中可用的 CSS 样式的示例
+    * **MsftSme:** 包含高级方案的示例和指南 
 
 ### <a name="browse-the-source-code-of-dev-guide-on-github"></a>浏览 GitHub 上开发人员指南的源代码
 
 可以浏览 GitHub 上的开发指南[源代码](https://github.com/Microsoft/windows-admin-center-sdk/)，查找示例 HTML、CSS 和 TypeScript 代码示例。
 
-## <a name="2-prepare-your-development-environment-for-the-latest-sdk"></a>2. 准备适用于最新 SDK 的开发环境
+## <a name="2-prepare-your-development-environment-for-the-latest-sdk"></a>2.准备适用于最新 SDK 的开发环境
 
 安装或更新 node.js 版本[10.15.1 LTS 或更高](https://nodejs.org/en/)版本。
 
@@ -78,9 +78,9 @@ npm install typescript@3.1.6 -g
 npm install tslint@5.11.0 -g
 ```
 
-## <a name="3-create-a-new-project-with-the-latest-sdk"></a>3. 使用最新的 SDK 创建新项目
+## <a name="3-create-a-new-project-with-the-latest-sdk"></a>3.使用最新的 SDK 创建新项目
 
-使用 Windows 管理中心 CLI 创建面向 ```next``` 版本的新项目（SDK 1.0）：
+使用 Windows 管理中心 CLI 创建面向 ```next``` 版本（SDK 1.0）的新项目：
 
 [//]: # "wac 创建--公司 "Contoso Inc."--工具 "管理 Foo 工作"--实验版本"
 
@@ -88,25 +88,25 @@ npm install tslint@5.11.0 -g
 wac create --company "Contoso Inc" --tool "Manage Foo Works" --version next
 ```
 
-接下来，将目录更改为刚创建的文件夹，然后通过运行 ```npm install ```安装所需的本地依赖项。
+接下来，将目录更改为刚创建的文件夹，然后通过运行 @no__t 安装所需的本地依赖项。
 
-## <a name="4-modify-an-existing-project-to-use-the-latest-sdk"></a>4. 修改现有项目以使用最新的 SDK
+## <a name="4-modify-an-existing-project-to-use-the-latest-sdk"></a>4.修改现有项目以使用最新的 SDK
 
-重要提示：在继续操作之前，请备份项目。
+重要：在继续操作之前，对项目进行备份。
 
-修改 ```package.json``` 中的以下行以面向 ```next``` 版本（SDK 1.0）：
+修改 ```package.json``` 中的以下行以面向 @no__t 版本（SDK 1.0）：
 
-[//]: # ""@microsoft/windows-admin-center-sdk"： "试验""
+[//]: # ""@no__t"： "试验""
 
 ``` json
 "@microsoft/windows-admin-center-sdk": "next",
 ```
 
-然后，运行 ```npm install``` 以更新整个项目中的引用。
+然后，运行 ```npm install``` 以便更新整个项目中的引用。
 
-## <a name="5-use-the-sdk-cli-to-fix-common-migration-issues"></a>5. 使用 SDK CLI 修复常见的迁移问题
+## <a name="5-use-the-sdk-cli-to-fix-common-migration-issues"></a>5.使用 SDK CLI 修复常见的迁移问题
 
-重要提示：在继续操作之前，请备份项目。
+重要：在继续操作之前，对项目进行备份。
 
 从项目的根文件夹中，对项目运行以下 CLI 命令，以自动修复常见的迁移问题：
 
@@ -128,7 +128,7 @@ wac updateSeven --update
     - ```src\tsconfig.lib.json```
     - ```src\tsconfig.spec.json```
 
-## <a name="6-use-the-sdk-cli-to-understand-common-migration-issues"></a>6. 使用 SDK CLI 了解常见的迁移问题
+## <a name="6-use-the-sdk-cli-to-understand-common-migration-issues"></a>6.使用 SDK CLI 了解常见的迁移问题
 
 从项目的根文件夹中，运行以下 CLI 命令审核项目，查找需要手动解决的常见迁移问题：
 
@@ -274,7 +274,7 @@ wac updateSeven --audit
 | 。警告 | 弃用 |
 | 。空白 | 弃用 |
 
-## <a name="7-understand-and-resolve-issues-with-observable-objects"></a>7. 了解并解决可观察对象的问题
+## <a name="7-understand-and-resolve-issues-with-observable-objects"></a>7.了解和解决可观察对象的问题
 
 ### <a name="update--rxjs-function-use-for-observable-objects"></a>更新 ```rxjs``` 函数用于可观察对象
 
@@ -287,11 +287,11 @@ wac updateSeven --audit
 * 更新 ```flatMap()``` 到 ```mergeMap()```
 
 
-### <a name="resolve-runtime-issues-with-map-and-filter-functions-on-observable-objects"></a>解决可观察对象上 ```.map()``` 和 ```.filter()``` 函数的运行时问题
+### <a name="resolve-runtime-issues-with-map-and-filter-functions-on-observable-objects"></a>解决可观察对象上 @no__t 0 和 @no__t 1 函数的运行时问题
 
-如果编译器无法正确标识 ```observable``` 对象的类型，则可能会将 ```array``` 对象中的 ```.map()``` 和 ```.filter()``` 函数映射到你的对象，从而导致运行时错误。  请确保函数返回指定了显式数据类型的 ```observable``` 对象，以避免此问题。
+如果编译器无法正确确定 @no__t 0 对象的类型，则可以改为将 ```array``` 对象中的 ```.map()``` 和 ```.filter()``` 函数映射到你的对象，从而导致运行时错误。  请确保函数返回指定了显式数据类型的 @no__t 0 对象，以避免此问题。
 
-```any``` 和无返回类型都可能导致此问题，请查找采用以下模式的代码：
+@no__t 0 和不返回类型都可能导致此问题，请查找具有以下模式的代码：
 
 ``` ts
 public getMyObservable(): any { //any return type can cause issues
@@ -303,14 +303,14 @@ public getMyObservable() { //no return type can cause issues
 }
 ```
 
-## <a name="8-resolve-other-common-issues"></a>8. 解决其他常见问题
+## <a name="8-resolve-other-common-issues"></a>8.解决其他常见问题
 
 这些方法可帮助解决其他常见问题：
 
-* 运行 ```ng lint --fix``` 以解决常见不起毛的问题
+* 运行 ```ng lint --fix``` 以修复常见不起毛的问题
 * 重复运行 ```gulp build``` 以增量修复 ```gulp build``` 可以自动解决的问题
 
-## <a name="9-build-and-serve-your-project"></a>9. 生成并处理你的项目
+## <a name="9-build-and-serve-your-project"></a>9.构建项目并为其提供服务
 
 运行以下命令以生成项目并为其提供最新版本（SDK 1.0）：
 
@@ -319,7 +319,7 @@ gulp build
 gulp serve --port 4201
 ```
 
-## <a name="10-turn-on-dark-theme-in-windows-admin-center"></a>10. 在 Windows 管理中心中打开深色主题
+## <a name="10-turn-on-dark-theme-in-windows-admin-center"></a>10.在 Windows 管理中心中打开深色主题
 
 若要在 Windows 管理中心版本1902及更高版本中打开深色主题，请执行以下步骤：
 
