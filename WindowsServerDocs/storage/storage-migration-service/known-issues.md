@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5889ae43c4b572ae75c8df10d0c47fc21337d558
-ms.sourcegitcommit: 9e123d475f3755218793a130dda88455eac9d4ab
+ms.openlocfilehash: e20913b1245ce7e453b87e9b88a7a418a5c71de2
+ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73413258"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166179"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -44,21 +44,11 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 
 若要解决此问题，请使用或升级到 Windows Server 2019 build 1809 或更高版本。
 
-## <a name="storage-migration-service-doesnt-let-you-choose-static-ip-on-cutover"></a>存储迁移服务不允许在切换时选择静态 IP
-
-在 Windows 管理中心使用0.57 版本的存储迁移服务扩展时，如果出现切换阶段，则无法为地址选择静态 IP。 系统会强制使用 DHCP。
-
-若要解决此问题，请在 Windows 管理中心的 " > **设置**" 下查看一个警报，指出已更新版本存储迁移服务**0.57.2 可供**安装。 可能需要重新启动 Windows 管理中心的浏览器选项卡。
-
 ## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>存储迁移服务转换验证失败，出现错误 "对目标计算机上的令牌筛选器策略的访问被拒绝"
 
 运行切换验证时，收到错误 "失败：目标计算机上的令牌筛选器策略访问被拒绝"。 即使您为源计算机和目标计算机提供了正确的本地管理员凭据，也会出现这种情况。
 
-此问题是由 Windows Server 2019 中的代码缺陷导致的。 当你使用目标计算机作为存储迁移服务 Orchestrator 时，将出现此问题。
-
-若要解决此问题，请在不是预期迁移目标的 Windows Server 2019 计算机上安装存储迁移服务，然后使用 Windows 管理中心连接到该服务器并执行迁移。
-
-我们已在更高版本的 Windows Server 中解决了此情况。 请通过[Microsoft 支持部门](https://support.microsoft.com)打开支持案例，以请求创建此修补程序的向后移植。
+此问题已在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新中解决。 
 
 ## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-or-windows-server-2019-essentials-edition"></a>Windows Server 2019 评估版或 Windows Server 2019 Essentials edition 中不包含存储迁移服务
 
@@ -105,16 +95,6 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 
 我们打算在更高版本的 Windows Server 2019 中更改此行为。  
 
-## <a name="cutover-fails-when-migrating-between-networks"></a>在网络之间迁移时转换失败
-
-如果迁移到的目标计算机在不同于源的网络（如 Azure IaaS 实例）上运行，则当源使用静态 IP 地址时，转换将无法完成。 
-
-此行为是设计使然，防止从通过 IP 地址进行连接的用户、应用程序和脚本迁移后出现连接问题。 当 IP 地址从旧的源计算机移到新的目标目标时，它不会与新的网络子网信息（或许是 DNS 和 WINS）匹配。
-
-若要解决此问题，请执行到同一网络中的计算机的迁移。 然后，将该计算机移到新网络并重新分配其 IP 信息。 例如，如果迁移到 Azure IaaS，请先迁移到本地 VM，然后使用 Azure Migrate 将 VM 转移到 Azure。  
-
-我们已在 Windows 管理中心的更高版本中解决了此问题。 我们现在允许你指定不改变目标服务器的网络设置的迁移。 发布时，将在此处列出更新的扩展。 
-
 ## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>目标代理和凭据管理权限的验证警告
 
 验证传输作业时，将看到以下警告：
@@ -153,7 +133,7 @@ Stack 跟踪：在 StorageMigration （String fileName、DesiredAccess desiredAc
 
 目标文件：
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher D:AI （A;;FA;;;BA）（A;; 0x1301bf;;;DU）（A;; 0x1200a9;;;DD）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU）**S:PAINO_ACCESS_CONTROL**
+  icacls d:\test\thatcher.png/save out .txt/t thatcher D:AI （A;;FA;;;BA）（A;; 0x1301bf;;;DU）（A;; 0x1200a9;;;DD）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU）**S： PAINO_ACCESS_CONTROL**
 
 DFSR 调试日志：
 
@@ -163,17 +143,7 @@ DFSR 调试日志：
 
   Clone ACL hash：**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** LastWriteTime： 20190308 18：09： 44.876 FileSizeLow： 1131654 FileSizeHigh：0属性：32 
 
-此问题是由存储迁移服务使用的库中的代码缺陷来设置安全审核 Acl （SACL）引起的。 当 SACL 为空时，将无意中设置非 null SACL，这是用于正确标识哈希不匹配的领先 DFSR。 
-
-若要解决此问题，请继续为[dfsr 预播种和 DFSR 数据库克隆操作](../dfs-replication/preseed-dfsr-with-robocopy.md)（而不是存储迁移服务）使用 Robocopy。 我们正在调查此问题，并想要在更高版本的 Windows Server 中解决此问题，可能还有一个向后移植 Windows 更新。 
-
-## <a name="error-404-when-downloading-csv-logs"></a>下载 CSV 日志时出现错误404
-
-尝试在传输操作结束时下载传输或错误日志时，会收到错误：
-
-  $jobname：传输日志： ajax 错误404
-
-如果未在 orchestrator 服务器上启用 "文件和打印机共享（SMB）" 防火墙规则，则会出现此错误。 Windows 管理中心文件下载需要连接的计算机上的端口 TCP/445 （SMB）。  
+此问题由[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新修复
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>从 Windows Server 2008 R2 传输时，出现错误 "无法传输任何终结点上的存储"
 
@@ -213,7 +183,7 @@ DFSR 调试日志：
 
 ## <a name="error-0x80005000-when-running-inventory"></a>运行清单时出现错误0x80005000
 
-安装[KB4512534](https://support.microsoft.com/en-us/help/4512534/windows-10-update-kb4512534)并尝试运行清单后，清单失败并出现错误：
+安装[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)并尝试运行清单后，清单失败并出现错误：
 
   HRESULT 中的异常：0x80005000
   
@@ -287,7 +257,7 @@ DFSR 调试日志：
    
 2.  启动存储迁移服务服务，该服务将创建一个新数据库。
 
-## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>错误 "CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 无法应对网络名称资源"，Windows Server 2008 R2 群集切换失败
+## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>错误 "针对网络名称资源 CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 失败"，Windows Server 2008 R2 群集切换失败
 
 当尝试对 Windows Server 2008 R2 群集源运行 cut 时，该剪切卡会停滞在 "重命名源计算机 ..." 阶段你会收到以下错误：
 
@@ -306,6 +276,43 @@ DFSR 调试日志：
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
 此问题是由较早版本的 Windows Server 中缺少的 API 导致的。 目前没有办法迁移 Windows Server 2008 和 Windows Server 2003 群集。 在 Windows Server 2008 R2 群集上，你可以执行清单和传输，而不是在 Windows Server R2 群集上进行，然后手动执行转换，方法是手动更改群集的源文件服务器资源网络名称和 IP 地址，然后更改目标群集网络名称和 IP与原始源相匹配的地址。 
+
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-comnputer"></a>在源 comnputer 上的 "38% 映射网络接口" 上切换挂起 
+
+当尝试在源计算机上运行 cut 时，将源计算机设置为在一个或多个网络接口上使用新的静态（而非 DHCP） IP 地址时，剪切的会停滞在源 comnputer 上的 "38% 映射网络接口"。你会在 SMS 事件日志中收到以下错误：
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          11/13/2019 3:47:06 PM
+    Event ID:      20494
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      orc2019-rtm.corp.contoso.com
+    Description:
+    Couldn't set the IP address on the network adapter.
+
+    Computer: fs12.corp.contoso.com
+    Adapter: microsoft hyper-v network adapter
+    IP address: 10.0.0.99
+    Network mask: 16
+    Error: 40970
+    Error Message: Unknown error (0xa00a)
+
+    Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
+
+Examinining 源计算机显示原始 IP 地址无法更改。 
+
+如果在 Windows 管理中心的 "配置切换" 屏幕上选择了 "使用 DHCP"，则不会出现此问题，只在指定新的静态 IP 地址、子网和网关时才会出现此问题。 
+
+此问题是由[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新中的回归导致的。 目前有两种解决方法可解决此问题：
+
+  - 在切换之前：请选择 "使用 DHCP"，并确保 DHCP 作用域涵盖子网，而不是在切换时设置新的静态 IP 地址。 SMS 会将源计算机配置为在源计算机接口上使用 DHCP，并使其正常运行。 
+  
+  - 如果 "剪切过" 已经停滞：在确保 DHCP 作用域涵盖子网之后，登录到源计算机并在其网络接口上启用 DHCP。 当源计算机获得 DHCP 提供的 IP 地址时，SMS 将在正常情况下继续进行剪切。
+  
+在这两种解决方法中，在剪切完成后，可以根据需要在旧源计算机上设置静态 IP 地址，就像使用 DHCP 进行调整和停止一样。   
 
 ## <a name="see-also"></a>另请参阅
 

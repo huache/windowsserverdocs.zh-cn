@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a52676ffc89c9fc5ce0eba4f44407e76520fef0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0a2bbeeb459fd364db728579dc20015a2474fd25
+ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407432"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74163089"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常见问题（FAQ）
 
@@ -71,6 +71,8 @@ AD FS 支持多林配置，并依赖底层 AD DS 信任网络对多个受信任�
 - 如果林信任这样的一种方式（例如，包含合作伙伴标识的 DMZ 林），我们建议在 corp 林中部署 ADFS，并将外围网络林视为通过 LDAP 连接的另一个本地声明提供程序信任。 在这种情况下，Windows 集成身份验证不适用于 DMZ 林用户，并且需要执行密码身份验证，因为这是唯一受支持的 LDAP 机制。 如果无法采用此选项，则需要在 DMZ 林中设置另一个 ADFS，并将其添加为 corp 林中 ADFS 中的声明提供方信任。 用户需要进行主领域发现，但 Windows 集成身份验证和密码身份验证都将起作用。 请对 DMZ 林中的 ADFS 中的颁发规则进行适当的更改，corp 林中的 ADFS 会无法从 DMZ 林获取有关用户的额外用户信息。
 - 当域级别信任受支持并且可以工作时，我们强烈建议你迁移到林级别信任模型。 此外，还需要确保名称的 UPN 路由和 NETBIOS 名称解析需要正确地工作。
 
+>[!NOTE]  
+>如果选择性 authentication 与双向信任配置一起使用，请确保向调用方用户授予针对目标服务帐户的 "允许身份验证" 权限。 
 
 
 ## <a name="design"></a>设计
@@ -103,17 +105,17 @@ Apple 已发布一组称为 "应用传输安全（ATS）" 的要求，这些要�
 
 ## <a name="developer"></a>开发人员
 
-### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>为用户根据 AD 进行身份验证时，为用户生成 id_token 时，如何在 id_token 中生成 "sub" 声明？
+### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>使用 ADFS 为用户进行身份验证时，为用户生成 id_token 时，如何在 id_token 中生成 "sub" 声明？
 "Sub" 声明的值是客户端 ID 和定位声明值的哈希。
 
 ### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>用户通过 WS 馈送/SAML-P 上的远程声明提供方信任登录时，刷新令牌/访问令牌的生存期是什么？
 刷新令牌的生存期将是 ADFS 从远程声明提供方信任获取的令牌的生存期。 访问令牌的生存期将是为其颁发访问令牌的信赖方的令牌生存期。
 
 ### <a name="i-need-to-return-profile-and-email-scopes-as-well-in-addition-to-the-openid-scope-can-i-obtain-additional-information-using-scopes-how-to-do-it-in-ad-fs"></a>除了 OpenId 范围外，我还需要返回配置文件和电子邮件作用域。 是否可以使用作用域获取其他信息？ 如何在 AD FS 中执行此操作？
-你可以使用自定义的 id_token 在 id_token 中添加相关信息。 有关详细信息，请参阅文章[自定义要在 id_token 中发出的声明](../development/Custom-Id-Tokens-in-AD-FS.md)。
+您可以使用自定义的 id_token 在 id_token 本身中添加相关信息。 有关详细信息，请参阅文章[自定义要在 id_token 中发出的声明](../development/Custom-Id-Tokens-in-AD-FS.md)。
 
 ### <a name="how-to-issue-json-blobs-inside-jwt-tokens"></a>如何在 JWT 令牌中颁发 json blob？
-AD FS 2016 中添加了<http://www.w3.org/2001/XMLSchema#json>此的特殊 ValueType （""）和转义符（\x22）。 请参阅下面的示例，了解颁发规则以及访问令牌的最终输出。
+AD FS 2016 中添加了此的特殊 ValueType （"<http://www.w3.org/2001/XMLSchema#json>"）和转义符（\x22）。 请参阅下面的示例，了解颁发规则以及访问令牌的最终输出。
 
 示例颁发规则：
 
@@ -131,10 +133,10 @@ AD FS 2016 中添加了<http://www.w3.org/2001/XMLSchema#json>此的特殊 Value
 服务器2019中的 AD FS 支持 OAuth 授权代码授予流的代码交换（PKCE）的证明密钥
 
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>AD FS 支持哪些允许的范围？
-- aza-如果对[代理客户端使用 OAuth 2.0 协议扩展](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)，并且 scope 参数包含作用域 "aza"，则服务器将发出新的主刷新令牌并在响应的 refresh_token 字段中设置该令牌，并将 refresh_token_ 设置为如果强制执行，则为新的主刷新令牌的生存期的 expires_in 字段。
+- aza-如果对[代理客户端使用 OAuth 2.0 协议扩展](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)，并且 scope 参数包含作用域 "aza"，则服务器将发出新的主刷新令牌并在响应的 refresh_token 字段中设置该令牌，并将 refresh_token_expires_in 字段设置为新主刷新令牌的生存期（如果强制执行）。
 - openid-允许应用程序请求使用 OpenID Connect 授权协议。
 - logon_cert-logon_cert 范围允许应用程序请求登录证书，这些证书可用于以交互方式登录经过身份验证的用户。 AD FS 服务器忽略响应中的 access_token 参数，而是提供 base64 编码的 CMS 证书链或 CMC 完整 PKI 响应。 [此处](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供了更多详细信息。 
-- user_impersonation-必须使用 user_impersonation 范围，才能成功地从 AD FS 请求代表访问令牌。 有关如何使用此作用域的详细信息，请参阅使用[OAuth 作为 AD FS 2016 的代表构建多层应用程序（OBO）](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)。
+- user_impersonation-user_impersonation 作用域是成功从 AD FS 请求代表访问令牌的必要条件。 有关如何使用此作用域的详细信息，请参阅使用[OAuth 作为 AD FS 2016 的代表构建多层应用程序（OBO）](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)。
 - vpn_cert-vpn_cert 范围允许应用程序请求 VPN 证书，这些证书可用于通过 EAP-TLS 身份验证建立 VPN 连接。 这不再受支持。
 - 电子邮件-允许应用程序请求已登录用户的电子邮件声明。 这不再受支持。 
 - 配置文件-允许应用程序请求登录用户的配置文件相关声明。 这不再受支持。 
@@ -185,11 +187,11 @@ AD FS SSL 证书与 AD FS 管理 "管理单元中找到的 AD FS 服务通信证
 
 **已注册设备**
 
-- PRT 和 SSO cookie：最多90天，由 PSSOLifeTimeMins 管辖。 （提供的设备至少每14天使用一次，由 DeviceUsageWindow 控制）
+- PRT 和 SSO cookie：最多90天，由 PSSOLifeTimeMins 管理。 （提供的设备至少每14天使用一次，由 DeviceUsageWindow 控制）
 
 - 刷新令牌：根据上述内容计算，提供一致的行为
 
-- access_token:默认情况下为1小时，基于信赖方
+- access_token：默认情况下，基于信赖方的1小时
 
 - id_token：与访问令牌相同
 
@@ -200,7 +202,7 @@ AD FS SSL 证书与 AD FS 管理 "管理单元中找到的 AD FS 服务通信证
 
 - 刷新令牌：默认为8小时。 启用 KMSI 24 小时
 
-- access_token:默认情况下为1小时，基于信赖方
+- access_token：默认情况下，基于信赖方的1小时
 
 - id_token：与访问令牌相同
 
@@ -217,8 +219,8 @@ Web 身份验证流量的所有 AD FS 终结点都是通过 HTTPS 以独占方�
 ### <a name="x-ms-forwarded-client-ip-does-not-contain-the-ip-of-the-client-but-contains-ip-of-the-firewall-in-front-of-the-proxy-where-can-i-get-the-right-ip-of-the-client"></a>X 毫秒-转发的客户端-ip 不包含客户端的 IP，而是在代理前面包含防火墙的 IP。 在哪里可以获得正确的客户端 IP？
 不建议在 WAP 之前进行 SSL 终止。 如果 SSL 终止在 WAP 前面完成，则将在 WAP 之前包含网络设备的 IP，即，X 毫秒转发的客户端 ip 将包含该网络设备的 IP。 下面是 AD FS 支持的各种 IP 相关声明的简要说明：
  - x-ms-客户端-ip：连接到 STS 的设备的网络 IP。  对于 extranet 请求，此项始终包含 WAP 的 IP。
- - x 毫秒-转发的客户端-ip：多值声明，其中包含 Exchange Online 转发给 ADFS 的任何值以及连接到 WAP 的设备的 IP 地址。
- - Userip:对于 extranet 请求，此声明将包含 x 毫秒转发的客户端 ip 的值。  对于 intranet 请求，此声明将包含与 x-ms-客户端 ip 相同的值。
+ - x ms-转发的客户端-ip：多值声明，其中包含 Exchange Online 转发给 ADFS 的任何值以及连接到 WAP 的设备的 IP 地址。
+ - Userip：对于 extranet 请求，此声明将包含 x 毫秒转发的客户端 ip 的值。  对于 intranet 请求，此声明将包含与 x-ms-客户端 ip 相同的值。
 
  此外，在 AD FS 2016 （具有最新修补程序）和更高版本中，还支持捕获 x 转发的标头。 任何未在第3层转发的负载均衡器或网络设备（保留 IP）应将传入客户端 IP 添加到行业标准的 x 转发的标头。 
 
@@ -230,7 +232,7 @@ AD FS 的用户用户终结点始终按 OpenID 标准中指定的方式返回主
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>为什么向企业密钥管理员组添加 AD FS 服务帐户失败时，会出现警告？
 仅当域中存在具有 FSMO PDC 角色的 Windows 2016 域控制器时，才创建此组。 若要解决此错误，您可以手动创建组，并按照以下步骤在将服务帐户添加为组的成员后提供所需的权限。
-1.  打开“Active Directory 用户和计算机”。
+1.  打开 **Active Directory 用户和计算机**。
 2.  在导航窗格中**右键单击**你的域名，然后**单击**"属性"。
 3.  **单击**安全性（如果缺少 "安全" 选项卡，请从 "视图" 菜单中打开 "高级功能"）。
 4.  **单击**高. **单击**把. **单击**选择主体。
@@ -299,7 +301,7 @@ AD FS 不支持 HEAD 请求。  应用程序不应使用 HEAD 请求来处理 AD
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>当 Web 应用程序代理（WAP）服务器位于 Azure Web 应用程序防火墙（WAF）后时是否支持 ADFS？
 ADFS 和 Web 应用程序服务器支持不在终结点上执行 SSL 终止的任何防火墙。 此外，ADFS/WAP 服务器使用内置机制来防止常见的 web 攻击，如跨站点脚本、ADFS 代理，并满足由[ADFSPIP 协议](https://msdn.microsoft.com/library/dn392811.aspx)定义的所有要求。
 
-### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>我看到的是 "事件441：找到具有错误令牌绑定密钥的令牌。 如何解决此问题？
+### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>我看到一个 "事件441：找到了具有错误令牌绑定密钥的令牌"。 如何解决此问题？
 在 AD FS 2016 中，令牌绑定会自动启用，并导致代理和联合身份验证方案出现多个已知问题，这会导致此错误。 若要解决此问题，请运行以下 Powershell 命令，并删除令牌绑定支持。
 
 `Set-AdfsProperties -IgnoreTokenBinding $true`

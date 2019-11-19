@@ -4,23 +4,24 @@ description: ''
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
-ms.date: 11/1/2019
+ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: a5fea6681376abf6ea9ada67e31b10369256ea81
-ms.sourcegitcommit: 9e123d475f3755218793a130dda88455eac9d4ab
+ms.openlocfilehash: 3d3d08d6abe9daa571dd7365815c1fc61f926501
+ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73413454"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74163101"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>为自定义端口上的基于证书密钥的续订配置证书注册 Web 服务
 
-<!-- <Author(s): Jitesh Thakur, Meera Mohideen, Ankit Tyagi.-->  
+> 作者： Jitesh Thakur、Meera Mohideen、包含 Windows 组的技术顾问。
+Ankit Tyagi 支持工程师和 Windows 组
 
 ## <a name="summary"></a>摘要
 
-本文提供了在443以外的自定义端口上实现证书注册 Web 服务（或证书注册策略（CEP）/证书注册服务（CES））的分步说明，以便进行基于证书密钥的续订。使用 CEP 和 CES 的自动续订功能。
+本文提供了在443以外的自定义端口上实现证书注册策略 Web 服务（CEP）和证书注册 Web 服务（CES）的分步说明，以便基于证书密钥的续订利用自动CEP 和 CES 的续订功能。
 
 本文还介绍了 CEP 和 CES 如何工作，并提供了安装指南。
 
@@ -134,7 +135,7 @@ Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso
 成功安装后，你希望在 Internet Information Services （IIS）管理器控制台中看到以下显示。
 ![IIS 管理器](media/certificate-enrollment-certificate-key-based-renewal-4.png) 
 
-在 "**默认**网站" 下，选择 " **KeyBasedRenewal_ADPolicyProvider_CEP_Certificate**"，然后打开 "**应用程序设置**"。 请注意**ID**和**URI**。
+在 "**默认**网站" 下，选择 " **ADPolicyProvider_CEP_UsernamePassword**"，然后打开 "**应用程序设置**"。 请注意**ID**和**URI**。
 
 您可以为管理添加**友好名称**。
 
@@ -173,10 +174,10 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 成功安装后，你希望在 IIS 管理器控制台中看到以下显示。
 ![IIS 管理器](media/certificate-enrollment-certificate-key-based-renewal-5.png) 
 
-选择 "**默认**网站" 下的**KeyBasedRenewal_ADPolicyProvider_CEP_Certificate** ，然后打开 "**应用程序设置**"。 记下**ID**和**URI**。 您可以为管理添加**友好名称**。
+选择 "**默认**网站" 下的**KeyBasedRenewal_ADPolicyProvider_CEP_Certificate** ，并打开**应用程序设置**。 记下**ID**和**URI**。 您可以为管理添加**友好名称**。
 
 > [!Note]
-> 如果该实例安装在新服务器上，并且 ID 不同，并且大 ID 不同，请确保该 ID 与 CEPCES01 实例中使用的 ID 相同。 可以直接复制并粘贴值。
+> 如果实例安装在新服务器上，请仔细检查该 ID，确保该 ID 与在 CEPCES01 实例中生成的 ID 相同。 如果值不相同，则可以直接复制并粘贴值。
 
 #### <a name="complete-certificate-enrollment-web-services-configuration"></a>完成证书注册 Web 服务配置
 
@@ -185,6 +186,9 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 ##### <a name="step-1-create-a-computer-account-of-the-workgroup-computer-in-active-directory"></a>步骤1：在 Active Directory 中创建工作组计算机的计算机帐户
 
 此帐户将用于基于密钥的续订和证书模板上的 "发布到 Active Directory" 选项进行身份验证。
+
+> [!Note]
+> 无需加入客户端计算机。 在 KBR for dsmapper service 中进行基于证书的身份验证时，此帐户将进入图片。
 
 ![新建对象](media/certificate-enrollment-certificate-key-based-renewal-6.png) 
  
@@ -198,7 +202,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 ```
 
 > [!Note]
-> 在此命令中，<cepcessvc> 是服务帐户，< CA1 > 是证书颁发机构。
+> 在此命令中，\<cepcessvc\> 是服务帐户，< CA1 > 是证书颁发机构。
 
 > [!Important]
 > 我们未在此配置中启用 CA 上的 RENEWALONBEHALOF 标志，因为我们使用约束委派为我们执行同一作业。 这样，我们便可以避免向 CA 的安全性添加服务帐户的权限。
@@ -212,19 +216,21 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 3. 将默认端口设置从443更改为自定义端口。 示例屏幕快照显示了49999的端口设置。
    ![更改端口](media/certificate-enrollment-certificate-key-based-renewal-7.png) 
 
-##### <a name="step-4-edit-the-ca-enrollment-services-object"></a>步骤4：编辑 CA 注册服务对象
+##### <a name="step-4-edit-the-ca-enrollment-services-object-on-active-directory"></a>步骤4：在 Active Directory 上编辑 CA 注册服务对象
 
 1. 在域控制器上，打开 "adsiedit"。
 
-2. 连接到配置分区，并导航到 CA 注册服务对象：
+2. [连接到配置分区](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/ff730188(v=ws.10))，并导航到 CA 注册服务对象：
    
    CN = ENTCA，CN = 注册服务，CN = Public Key Services，CN = Services，CN = Configuration，DC = contoso，DC = com
 
-3. 编辑对象，并通过将自定义端口与在应用程序设置中找到的 CEP 和 CES 服务器 Uri 结合使用来更改 Mspki-site-name 属性。 例如：
+3. 右键单击并编辑 CA 对象。 通过将自定义端口与在应用程序设置中找到的 CEP 和 CES 服务器 Uri 结合使用来更改**mspki-site-name**属性。 例如：
 
-   140 https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
-   181 https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
-
+   ```
+   140https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
+   181https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
+   ```
+   
    ![ADSI 编辑器](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
 
 #### <a name="configure-the-client-computer"></a>配置客户端计算机
@@ -269,9 +275,9 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 ## <a name="testing-the-setup"></a>测试安装程序
 
-若要确保自动续订正常工作，请使用同一密钥验证手动续订是否正常工作。 不应提示输入用户名和密码。  此外，当你注册时，系统将提示你选择一个证书。 这是预期情况。
+若要确保自动续订正在运行，请通过使用 mmc 续订具有相同密钥的证书来验证手动续订是否正常工作。 此外，在续订时，还应提示您选择证书。 你可以选择前面注册的证书。 应为提示。
 
-打开计算机的 "个人" 证书存储区，然后添加 "存档的证书" 视图。 为此，请使用以下方法之一。
+打开计算机的 "个人" 证书存储区，然后添加 "存档的证书" 视图。 为此，请将 "本地计算机帐户" 管理单元添加到 mmc.exe，单击 "**证书（本地计算机）"，单击 "证书（本地计算机）** " **，单击右侧**或 mmc 顶部的 "**操作" 选项卡**，单击 "**查看选项**"，选择 "**存档的证书**"，然后单击 **"确定"** 。
 
 ### <a name="method-1"></a>方法1 
 
@@ -285,11 +291,11 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 ### <a name="method-2"></a>Method 2
 
-如果证书有效期过期，则将时间设置以8的倍数进行。
+将客户端计算机上的时间和日期提前到证书模板的续订时间。
 
-例如，示例证书在每月18日的4:00 颁发，在第20天的第8天4:00 过期，且具有2天的有效性设置和8小时续订设置。 自动注册引擎会在重新启动时按大约8小时的间隔触发。
+例如，证书模板具有2天的有效性设置和配置的8小时续订设置。 在凌晨4:00 颁发了示例证书。 每月18日过期，截止时间为凌晨4:00。 20号。 自动注册引擎会在重新启动时触发，每隔8小时触发一次（大约）。
 
-因此，如果您将时间前进到 8:10 P.M.。 在19上，运行**Certutil-脉冲**（触发 AE 引擎）可为您注册证书。
+因此，如果您将时间前进到 8:10 P.M.。 在19年，由于我们的续订窗口在模板上设置为8小时，因此运行 Certutil-脉冲（触发 AE 引擎）可为您注册证书。
 
 ![命令](media/certificate-enrollment-certificate-key-based-renewal-15.png)
  
