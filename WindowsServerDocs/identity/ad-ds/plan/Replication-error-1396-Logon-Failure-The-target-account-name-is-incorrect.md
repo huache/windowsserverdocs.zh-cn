@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: a8af10fd54f557e4f4a2127dbd1cc178d53d93a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 11/19/2019
 ms.locfileid: "71402489"
 ---
 # <a name="replication-error-1396-logon-failure-the-target-account-name-is-incorrect"></a>复制错误 1396 - 登录失败：目标帐户名称不正确
@@ -21,23 +21,29 @@ ms.locfileid: "71402489"
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-<developerConceptualDocument xmlns="https://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="https://www.w3.org/1999/xlink" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://ddue.schemas.microsoft.com/authoring/2003/5 http://clixdevr3.blob.core.windows.net/ddueschema/developer.xsd"> <introduction> @ no__t-2 @ no__t<para>本文介绍了症状、原因以及如何解决 Active Directory 复制失败，并出现 Win32 错误1396：&quot;Logon 失败：目标帐户名不正确。 &quot; </para>
-    <list class="bullet"> <listItem> @ no__t-2 @ no__t<para>
-          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Symptoms">症状</link>
- @ no__t-2</para>
-      </listItem> <listItem> @ no__t-2 @ no__t<para>
-          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Causes">导致</link>
- @ no__t-2</para>
-      </listItem> <listItem> @ no__t-2 @ no__t<para>
-          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Resolutions">分辨率</link>
- @ no__t-2</para>
+<developerConceptualDocument xmlns="https://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="https://www.w3.org/1999/xlink" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://ddue.schemas.microsoft.com/authoring/2003/5 http://clixdevr3.blob.core.windows.net/ddueschema/developer.xsd"> <introduction>
+    <para>This article describes the symptoms, cause and how to resolve Active Directory replication failing with Win32 error 1396: &quot;Logon failure: The target account name is incorrect.&quot; </para>
+    <list class="bullet"> <listItem>
+        <para>
+          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Symptoms">Symptoms</link>
+        </para>
+      </listItem> <listItem>
+        <para>
+          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Causes">Causes</link>
+        </para>
+      </listItem> <listItem>
+        <para>
+          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Resolutions">Resolutions</link>
+        </para>
       </listItem>
     </list>
   </introduction>
   <section address="BKMK_Symptoms">
-    <title>Symptoms @ no__t-1 @ no__t-2 @ no__t-3<para />
+    <title>Symptoms</title>
+    <content>
+      <para />
       <list class="ordered">
-<listItem><para>DCDIAG 报告 Active Directory 复制测试失败，出现错误1396：登录失败：目标帐户名不正确。 &quot;</para><code>Testing server: &lt;Site name&gt;&lt;DC Name&gt;
+<listItem><para>DCDIAG reports that the Active Directory Replications test has failed with error 1396: Logon failure: The target account name is incorrect.&quot;</para><code>Testing server: &lt;Site name&gt;&lt;DC Name&gt;
 Starting test: Replications
 [Replications Check,&lt;DC Name&gt;] A recent replication attempt failed:
 From &lt;source DC&gt; to &lt;destination DC&gt;
@@ -46,7 +52,7 @@ Naming Context: CN=&lt;DN path of naming context&gt;
 Logon Failure: The target account name is incorrect.</codeFeaturedElement>
 The failure occurred at &lt;date&gt; &lt;time&gt;.
 The last success occurred at &lt;date&gt; &lt;time&gt;.
-XX failures have occurred since the last success</code></listItem><listItem><para>REPADMIN.EXE 报告上次复制尝试失败，状态为1396。</para><para>通常引用1396状态的 REPADMIN 命令包括但不限于：</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><tbody><tr><TD><list class="bullet"><listItem><para>REPADMIN/ADD</para></listItem><listItem><para>REPADMIN/REPLSUM</para></listItem><listItem><para>REPADMIN/REHOST</para></listItem><listItem><para>REPADMIN/SHOWVECTOR/LATENCY</para></listItem></list></TD><TD><list class="bullet"><listItem><para>REPADMIN/SHOWREPS</para></listItem><listItem><para>REPADMIN/SHOWREPL</para></listItem><listItem><para>REPADMIN/SYNCALL</para></listItem></list></TD></tr></tbody></table><para>示例输出 &quot;REPADMIN/SHOWREPS @ no__t 描述从 CONTOSO 到 CONTOSO-DC1 的入站复制失败，并出现 &quot;Logon 失败：目标帐户名不正确。 @no__t 错误如下所示：</para><code>Default-First-Site-NameCONTOSO-DC1
+XX failures have occurred since the last success</code></listItem><listItem><para>REPADMIN.EXE reports that the last replication attempt has failed with status 1396.</para><para>REPADMIN commands that commonly cite the 1396 status include but are not limited to:</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><tbody><tr><TD><list class="bullet"><listItem><para>REPADMIN /ADD</para></listItem><listItem><para>REPADMIN /REPLSUM</para></listItem><listItem><para>REPADMIN /REHOST</para></listItem><listItem><para>REPADMIN /SHOWVECTOR /LATENCY</para></listItem></list></TD><TD><list class="bullet"><listItem><para>REPADMIN /SHOWREPS</para></listItem><listItem><para>REPADMIN /SHOWREPL</para></listItem><listItem><para>REPADMIN /SYNCALL</para></listItem></list></TD></tr></tbody></table><para>Sample output from &quot;REPADMIN /SHOWREPS&quot; depicting inbound replication from CONTOSO-DC2 to CONTOSO-DC1 failing with the &quot;Logon Failure: The target account name is incorrect.&quot; error is shown below::</para><code>Default-First-Site-NameCONTOSO-DC1
 DSA Options: IS_GC 
 Site Options: (none)
 DSA object GUID: b6dc8589-7e00-4a5d-b688-045aef63ec01
@@ -59,67 +65,76 @@ Last attempt @ &lt;date&gt; &lt;time&gt; failed, <codeFeaturedElement>result 139
 Logon Failure: The target account name is incorrect.</codeFeaturedElement>
 &lt;#&gt; consecutive failure(s).
 Last success @ &lt;date&gt; &lt;time&gt;.
-</code></listItem><listItem><para>Active Directory 站点和服务中的 "<ui>立即复制</ui>" 命令将返回 &quot;Logon 故障：目标帐户名不正确。 &quot;</para><para>右键单击源 DC 中的连接对象，然后选择 "<ui>复制</ui>" 将失败，并出现 @no__t 1Logon 故障：目标帐户名不正确。 &quot;屏幕错误消息如下所示：</para><para>对话框标题文本：</para><para>立即复制</para><para>对话框消息文本： </para><para>尝试将命名上下文 @no__t 从域控制器 &lt;source DC @ no__t 到域控制器 &lt;destination DC @ no__t-5 同步命名上下文时出现以下错误：登录失败：目标帐户名不正确。 此操作不会继续。 </para></listItem><listItem><para>ActiveDirectory_DomainService 状态的 NTDS KCC、NTDS General 或 Microsoft-Windows-1396 事件记录在事件查看器的目录服务日志中。</para><para>Active Directory 通常引用1396状态的事件包括但不限于：</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><thead><tr><TD><para>事件 ID</para></TD><TD><para>事件来源</para></TD><TD><para>事件字符串</para></TD></tr></thead><tbody><tr><TD><para>1125</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>Active Directory 域服务安装向导（Dcpromo）无法与下列域控制器建立连接。</para></TD></tr><tr><TD><para>1645</para><para>此事件列出由三个部分构成的 SPN。</para></TD><TD><para>NTDS 复制</para></TD><TD><para>Active Directory 没有执行到另一域控制器的身份验证远程过程调用 (RPC)，因为目标域控制器要求的服务主体名称 (SPN) 没有在主持解析 SPN 的密钥分发中心 (KDC) 域控制器上注册。</para></TD></tr><tr><TD><para>1655</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>Active Directory 域服务尝试与以下全局编录通信，尝试未成功。</para></TD></tr><tr><TD><para>2847</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>知识一致性检查器找到本地只读目录服务的复制连接，并尝试在以下目录服务实例上远程更新该连接。 操作失败。 它将重试。</para></TD></tr><tr><TD><para>1925</para></TD><TD><para>NTDS KCC</para></TD><TD><para>尝试为以下可写目录分区建立复制链接失败。</para></TD></tr><tr><TD><para>1926</para></TD><TD><para>NTDS KCC</para></TD><TD><para>尝试使用以下参数与只读目录分区建立复制链接失败。</para></TD></tr><tr><TD><para>5781</para></TD><TD><para>NETLOGON</para></TD><TD><para> 服务器无法在 DNS 中注册其名称。</para></TD></tr></tbody></table></listItem><listItem><para>DCPROMO 出现错误，出现屏幕错误</para><para>对话框标题文本：</para><para>Active Directory 安装失败</para><para>对话框消息文本：</para><para>操作失败，原因是：在服务器 ReplicationSourceDC.contoso.com 上，目录服务无法为 CN = NTDS Settings，CN = ServerBeingPromoted，CN = Servers，CN = Site，CN = Sites，CN = Configuration，DC = contoso，DC = com 创建服务器对象。 </para><para>请确保提供的网络凭据具有足够的权限来添加副本。 </para><para>
-&quot;Logon 失败：目标帐户名不正确。 &quot;</para><para>在这种情况下，将在要升级的服务器上记录事件 ID 1645、1168和1125。</para></listItem><listItem><para>使用<embeddedLabel>net use</embeddedLabel>映射驱动器：</para><code>C:&gt;net use z: &lt;server_name&gt;c$
+</code></listItem><listItem><para>The <ui>Replicate now</ui> command in Active Directory Sites and Services returns &quot;Logon Failure: The target account name is incorrect.&quot;</para><para>Right-clicking on the connection object from a source DC and choosing <ui>Replicate now</ui> fails with &quot;Logon Failure: The target account name is incorrect.&quot; The on-screen error message is shown below:</para><para>Dialog title text:</para><para>Replicate Now</para><para>Dialog message text: </para><para>The following error occurred during the attempt to synchronize naming context &lt;partition DNS path&gt; from domain controller &lt;source DC&gt; to domain controller &lt;destination DC&gt;: Logon Failure: The target account name is incorrect. This operation will not continue. </para></listItem><listItem><para>NTDS KCC, NTDS General or Microsoft-Windows-ActiveDirectory_DomainService events with the 1396 status are logged in the Directory Services log in Event Viewer.</para><para>Active Directory events that commonly cite the 1396 status include but are not limited to:</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><thead><tr><TD><para>事件 ID</para></TD><TD><para>事件来源</para></TD><TD><para>Event String</para></TD></tr></thead><tbody><tr><TD><para>1125</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>The Active Directory Domain Services Installation Wizard (Dcpromo) was unable to establish connection with the following domain controller.</para></TD></tr><tr><TD><para>1645</para><para>This event lists the three-part SPN.</para></TD><TD><para>NTDS Replication</para></TD><TD><para>Active Directory 没有执行到另一域控制器的身份验证远程过程调用 (RPC)，因为目标域控制器要求的服务主体名称 (SPN) 没有在主持解析 SPN 的密钥分发中心 (KDC) 域控制器上注册。</para></TD></tr><tr><TD><para>1655</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>Active Directory Domain Services attempted to communicate with the following global catalog and the attempts were unsuccessful.</para></TD></tr><tr><TD><para>2847</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>The Knowledge Consistency Checker located a replication connection for the local read-only directory service and attempted to update it remotely on the following directory service instance. The operation failed. It will be retried.</para></TD></tr><tr><TD><para>1925</para></TD><TD><para>NTDS KCC</para></TD><TD><para>The attempt to establish a replication link for the following writable directory partition failed.</para></TD></tr><tr><TD><para>1926</para></TD><TD><para>NTDS KCC</para></TD><TD><para>The attempt to establish a replication link to a read-only directory partition with the following parameters failed.</para></TD></tr><tr><TD><para>5781</para></TD><TD><para>NETLOGON</para></TD><TD><para> The server cannot register its name in DNS.</para></TD></tr></tbody></table></listItem><listItem><para>DCPROMO fails with an onscreen error</para><para>Dialog Title Text:</para><para>Active Directory Installation Failed</para><para>Dialog Message text:</para><para>The operation failed because: The Directory Service failed to create the server object for CN=NTDS Settings,CN=ServerBeingPromoted,CN=Servers,CN=Site,CN=Sites,CN=Configuration,DC=contoso,DC=com on server ReplicationSourceDC.contoso.com. </para><para>Please ensure the network credentials provided have sufficient access to add a replica. </para><para>
+&quot;Logon Failure: The target account name is incorrect. [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](&quot;)</para><para>In this case, Event ID 1645, 1168, and 1125 are logged on the server that is being promoted.</para></listItem><listItem><para>Map a drive using <embeddedLabel>net use</embeddedLabel>:</para><code>C:&gt;net use z: &lt;server_name&gt;c$
 System error 1396 has occurred.
-Logon Failure: The target account name is incorrect.</code><para>在这种情况下，服务器还可以将事件 ID 333 记录在系统事件日志中，并为应用程序（如 SQL Server）使用大量虚拟内存。</para></listItem><listItem><para>DC 时间不正确。</para></listItem><listItem><para>还原 RODC 的 krbtgt 帐户之后，KDC 将不会在 RODC 上启动，该帐户已被删除。 例如，还原后，出现错误1396。 </para><para>
-事件 ID 1645 记录在 RODC 上。 </para><para>
-Dcdiag 还报告错误，指出它无法更新 RODC krbtgt 帐户。 </para></listItem>
+Logon Failure: The target account name is incorrect.</code><para>In this case, the server can also logging Event ID 333 in the system event log and use a high amount of virtual memory for an application such as SQL Server.</para></listItem><listItem><para>The DC time is incorrect.</para></listItem><listItem><para>The KDC will not start on an RODC after a restore of the krbtgt account for the RODC, which had been deleted. For example, after a restore, error 1396 appears. </para><para>
+Event ID 1645 is logged on the RODC. </para><para>
+Dcdiag also reports an error that it cannot update the RODC krbtgt account. </para></listItem>
 </list>
     </content>
   </section>
   <section address="BKMK_Causes">
-    <title>Causes @ no__t-1 @ no__t-2 @ no__t-3<para />
+    <title>Causes</title>
+    <content>
+      <para />
       <list class="ordered">
         <listItem>
-          <para>由 KDC 代表客户端尝试使用 Kerberos 进行身份验证的全局编录上不存在 SPN。</para>
-          <para>在 Active Directory 复制的上下文中，Kerberos 客户端是目标 DC，执行 SPN 查找的 KDC 可能是目标 DC 本身，但也可能是远程 DC。</para>
+          <para>The SPN does not exist on the global catalog searched by the KDC on behalf of the client attempting to authenticate using Kerberos.</para>
+          <para>In the context of Active Directory replication, the Kerberos client is the destination DC, the KDC performing the SPN lookup is likely the destination DC itself but could be a remote DC.</para>
         </listItem>
         <listItem>
-          <para>应包含正在查找的服务主体名称的用户或服务帐户不存在于由 KDC 代表尝试复制的目标 DC 搜索的全局目录中。</para>
-          <para>在 Active Directory 复制的上下文中，DC 代表执行入站复制的目标 DC 在 DC 上搜索的全局目录中不存在源 DC 计算机帐户。</para>
+          <para>The user or service account that should contain the service principal name being looked up does not exist on the global catalog searched by the KDC on behalf of destination DC attempting to replicate.</para>
+          <para>In the context of Active Directory replication, the source DC computer account does not exist on the global catalog searched by the DC on behalf of the destination DC performing inbound replication.</para>
         </listItem>
         <listItem>
-          <para>目标 DC 对于源 Dc 域缺少 LSA 机密。</para>
+          <para>The destination DC lacks an LSA secret for the source DCs domain.</para>
         </listItem>
         <listItem>
-          <para>正在查找的 SPN 与源 DC 的计算机帐户不同。</para>
+          <para>The SPN being looked up exists on a different computer account than the source DC.</para>
         </listItem>
       </list>
     </content>
   </section>
   <section address="BKMK_Resolutions">
-    <title>Resolutions @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5<para>在目标 DC 上检查 NTDS 复制事件1645的目录服务事件日志，并注意以下事项：</para>
-          <para>目标 DC 的名称</para>
-          <para>正在查找的 SPN （E3514235-4B06-11D1-AB04-00C04FC2DCD2/&lt;object guid 用于源 Dc NTDS 设置对象 @ no__t-1 @ no__t-2 @ no__t-3target 域 @ no__t-4amp; g t;。&amp;amp; lt; tld @ no__t-6amp; gt; @ &lt;target domain @ no__t-8. &lt;tld @ no__t-10</para>
-          <para>目标 DC 使用的 KDC</para>
+    <title>Resolutions</title>
+    <content>
+      <list class="ordered">
+        <listItem>
+          <para>Check the Directory Service event log on the destination DC for NTDS Replication event 1645 and note the following:</para>
+          <para>The name of the destination DC</para>
+          <para>The SPN being looked up (E3514235-4B06-11D1-AB04-00C04FC2DCD2/&lt;object guid for source DCs NTDS Settings object&gt;/&lt;target domain&amp;amp;gt;.&amp;amp;lt;tld&amp;amp;gt;@&lt;target domain&gt;.&lt;tld&gt;</para>
+          <para>The KDC being used by the destination DC</para>
         </listItem>
         <listItem>
-          <para>在步骤1中确定的 KDC 控制台中，键入： </para>
+          <para>From the console of the KDC identified in step 1, type: </para>
           <code>nltest /dsgetdc &lt;forest root DNS domain name &gt; /gc</code>
-          <para>紧跟在目标 DC 上出现1396错误的复制尝试之后立即运行 NLTEST 定位符测试。 </para>
-          <para>这应该确定 KDC 正在对其执行 SPN 查找的 GC。 </para>
-          <para>还可以在 ActiveDirectory_DomainService 事件1655中捕获 KDC 正在搜索的 GC。</para>
+          <para>Run the NLTEST locator test immediately following a replication attempt that fails with the 1396 error on the destination DC. </para>
+          <para>This should identify that GC that the KDC is performing SPN lookups against. </para>
+          <para>The GC being searched by the KDC may also be captured in Microsoft-Windows-ActiveDirectory_DomainService event 1655.</para>
         </listItem>
         <listItem>
-          <para>在步骤2中发现的全局编录上搜索在步骤1中发现的 SPN。</para>
+          <para>Search for the SPN discovered in step 1 on the global catalog discovered in step 2.</para>
           <code>C:&gt;repadmin /showattr Server_Name DC=corp,DC=contoso,dc=com &lt;GC used by KDC&gt; &lt;DN path of forest root domain&gt; /filter:&quot;(serviceprincipalname=&lt;SPN cited in the NTDS Replication event 1645&gt;)&quot; /gc /subtree /atts:cn,serviceprincipalname</code>
           <para>或者</para>
           <code>C:&gt;dsquery * forestroot -scope subtree -filter &quot;(serviceprincipalname=E3514235-4B06-11D1-AB04-00C04FC2DCD2/65cead9f-4949-46a3-a49a-f1fbfe13d2b3*)&quot; -attr * -s Server_Name.europe.corp.contoso.com</code>
-          <para>验证 SPN 的宿主对象是否存在。</para>
-          <para>验证主机对象的 DN 路径，其中包括对象是否已损坏或驻留在丢失和找到的容器中。</para>
-          <para>验证是否仅在源 Dc 计算机帐户上注册了源 Dc Active Directory 复制 SPN。</para>
-          <para>如果缺少复制 SPN，则确定源 DC 是否已向其自身注册了 SPN，以及由于简单复制延迟或复制失败导致 KDC 所使用的 GC 上缺少 SPN。</para>
+          <para>Verify that the host object for the SPN exists.</para>
+          <para>Verify the DN path for the host object including whether the object is CNF / conflict mangled or resides in the lost and found container.</para>
+          <para>Verify that the source DCs Active Directory Replication SPN is registered only on the source DCs computer account.</para>
+          <para>If the replication SPN is missing, determine if the source DC has registered its SPN with itself, and whether the SPN is missing on the GC used by the KDC due to simple replication latency or a replication failure.</para>
         </listItem>
         <listItem>
-          <para>检查安全通道运行状况和信任运行状况。</para>
+          <para>Check the secure channel health and trust health.</para>
         </listItem>
       </list>
     </content>
   </section>
-  <relatedTopics> @ no__t-1 @ no__t-2Troubleshooting Active Directory 操作失败并出现错误1396：登录失败：目标帐户名不正确。 @no__t 0
+  <relatedTopics>
+    <externalLink>
+      <linkText>Troubleshooting Active Directory operations that fail with error 1396: Logon Failure: The target account name is incorrect.</linkText>
       <linkUri><a href="https://support.microsoft.com/kb/2183411/en-gb" data-raw-source="https://support.microsoft.com/kb/2183411/en-gb">https://support.microsoft.com/kb/2183411/en-gb</a></linkUri>
     </externalLink>
-  </relatedTopics> @ no__t-6
+  </relatedTopics>
+</developerConceptualDocument>
 
 
