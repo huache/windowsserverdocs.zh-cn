@@ -45,12 +45,12 @@ command </parameter>
 |context|显示所有全局开关的当前值。|
 |[quit \| exit]|退出 WMIC 命令行界面。|
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|</parameter>|@no__t 0Concise 说明，以谓词开头。 >|
-|</param2>|@no__t 0Another 简明说明，以动词开头。 >|
+|</parameter>|\<简要说明，则以动词开头。 >|
+|</param2>|\<另一简要说明，则以动词开头。 >|
 
 
 ## <a name="BKMK_examples"></a>示例

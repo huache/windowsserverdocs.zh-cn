@@ -41,7 +41,7 @@ ms.locfileid: "71388406"
   
 -   **NAT1**-使用 Internet 连接共享配置为网络地址转换器（NAT）设备的客户端计算机。  
   
--   **CLIENT1 和 CLIENT2**-在内部网络、模拟 Internet 和家庭网络之间移动时，配置为 directaccess 客户端的两个客户端计算机将用于测试 directaccess 连接。 **CLIENT2**是 Windows 7 @ no__t-1 客户端。  
+-   **CLIENT1 和 CLIENT2**-在内部网络、模拟 Internet 和家庭网络之间移动时，配置为 directaccess 客户端的两个客户端计算机将用于测试 directaccess 连接。 **CLIENT2**是 Windows 7&reg; 的客户端。  
   
 测试实验室由四个子网组成，其中模拟以下内容：  
   

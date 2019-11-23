@@ -36,11 +36,11 @@ ms.locfileid: "71392330"
 type [<Drive>:][<Path>]<FileName>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|[@no__t >：][@no__t >] \<FileName >|指定要查看的一个或哪些文件的位置和名称。 用空格分隔多个文件名。|
+|[\<驱动器 >：][\<路径 >]\<文件名 >|指定要查看的一个或哪些文件的位置和名称。 用空格分隔多个文件名。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注

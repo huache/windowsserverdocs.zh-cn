@@ -22,13 +22,13 @@ ms.locfileid: "71378436"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 通过在指定域中的每个域控制器上执行以下测试来检查域控制器的配置：  
   
--   验证分布式文件系统 @no__t 0DFS @ no__t 命名空间服务是否正在运行，并且其启动类型是否已设置为 "自动"。  
+-   验证分布式文件系统 \(DFS\) 命名空间服务是否正在运行，并且其启动类型是否已设置为 "自动"。  
   
--   检查是否支持 NETLOGON 和 SYSvol 的 site @ no__t-0costed 引用。  
+-   检查站点是否支持 NETLOGON 和 SYSvol\-开销的引用。  
   
 -   验证站点关联的一致性（按主机名和 IP 地址）。  
   
@@ -40,14 +40,14 @@ ms.locfileid: "71378436"
 dfsdiag /TestDCs [/Domain:<Domain name>]  
 ```  
   
-### <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>参数  
   
 |参数|描述|  
 |-------|--------|  
-|\/Domain： <Domain name>|要检查的域。|  
+|\/域：<Domain name>|要检查的域。|  
   
 ## <a name="remarks"></a>备注  
-@no__t 0Domain 是一个可选参数。 默认值为本地主机联接到的本地域。  
+\/域是可选参数。 默认值为本地主机联接到的本地域。  
   
 ## <a name="BKMK_Examples"></a>示例  
 若要验证 Contoso.com 域中的域控制器的配置，请键入：  

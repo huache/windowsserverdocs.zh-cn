@@ -19,7 +19,7 @@ ms.locfileid: "71393426"
 ---
 # <a name="the-team-interface-bound-to-a-virtual-switch-should-be-in-default-mode"></a>绑定到虚拟交换机的团队接口应处于默认模式
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -36,7 +36,7 @@ ms.locfileid: "71393426"
 *某些虚拟交换机绑定到团队界面，但团队界面不会将所有 Vlan 上的流量传递给虚拟交换机。*  
   
 ## <a name="impact"></a>**对**  
-*以下虚拟交换机无法访问所有 Vlan： \n @ no__t-1*  
+*以下虚拟交换机无法访问所有 Vlan： \n{0}*  
   
 ## <a name="resolution"></a>**解决方法**  
 *使用服务器管理器或 Windows PowerShell cmdlet NetLbfoTeamNic 将团队界面重置为默认模式。*  

@@ -32,14 +32,14 @@ ms.locfileid: "71382177"
 bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge}
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
 |default|指示命令行工具将遵循与 BitLocker 安装向导相同的过程。|
 |分配|使用磁盘上的未分配空间创建系统分区。|
-|@no__t > 收缩|减少创建活动系统分区所需的驱动器数量。 若要使用此命令，指定的驱动器必须至少有 5% 的可用空间。|
-|\<DriveLetter > merge|使用指定为活动系统分区的驱动器。 操作系统驱动器不能是合并目标。|
+|\<驱动器号 > 收缩|减少创建活动系统分区所需的驱动器数量。 若要使用此命令，指定的驱动器必须至少有5% 的可用空间。|
+|\<驱动器号 > 合并|使用指定为活动系统分区的驱动器。 操作系统驱动器不能是合并目标。|
 
 ## <a name="BKMK_Examples"></a>示例
 

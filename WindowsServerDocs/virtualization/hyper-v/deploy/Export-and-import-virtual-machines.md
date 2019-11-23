@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71392975"
 ---
->适用于：Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>适用于： Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 # <a name="export-and-import-virtual-machines"></a>导出和导入虚拟机
 
@@ -38,7 +38,7 @@ ms.locfileid: "71392975"
 
 ### <a name="using-powershell"></a>使用 PowerShell
 
-在替换 \<vm name @ no__t 和 \<path @ no__t 后，以管理员身份打开会话并运行如下所示的命令：
+在替换 \<vm 名称\> 和 \<\>路径后，以管理员身份打开会话并运行如下所示的命令：
 
 ```powershell
 Export-VM -Name \<vm name\> -Path \<path\>
@@ -58,7 +58,7 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 1. 从 Hyper-v 管理器的 "**操作**" 菜单中，单击 "**导入虚拟机**"。
 
-2. 单击“下一步”。
+2. 单击**下一步**。
 
 3. 选择包含导出文件的文件夹，然后单击 "**下一步**"。
 

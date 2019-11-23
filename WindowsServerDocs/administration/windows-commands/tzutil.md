@@ -22,20 +22,20 @@ ms.locfileid: "71392305"
 ---
 # <a name="tzutil"></a>tzutil
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 显示 Windows 时区实用程序。 
 ## <a name="syntax"></a>语法
 ```
 tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 ```
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
 |/?|在命令提示符下显示帮助。|
 |/g|显示当前时区 ID。|
 |/s \<timeZoneID > [_dstoff]|使用指定的时区 ID 设置当前时区。 **_Dstoff**后缀为时区禁用夏令时调整（如果适用）。|
-|/l|列出所有有效的时区 Id 和显示名称。 输出将为：<br /><br />-    @ no__t-1display name ><br />-    @ no__t-1time zone ID >|
+|/l|列出所有有效的时区 Id 和显示名称。 输出将为：<br /><br />-   \<显示名称 ><br />\<时区 ID -   >|
 
 ## <a name="remarks"></a>备注
 退出代码为**0**指示已成功完成命令。

@@ -55,7 +55,7 @@ ksetup
 
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -68,7 +68,7 @@ ksetup
 |[Ksetup:server](ksetup-server.md)|允许您指定要应用更改的 Windows 计算机的名称。|
 |[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|设置计算机的域帐户（或主机主体）的密码。|
 |[Ksetup:removerealm](ksetup-removerealm.md)|从注册表中删除指定领域的所有信息。|
-|[Ksetup:domain](ksetup-domain.md)|允许你指定域（@no__t 如果尚未使用 **/domain**设置 0DomainName >）。|
+|[Ksetup:domain](ksetup-domain.md)|允许你指定域（如果尚未使用 **/domain**设置 \<DomainName >）。|
 |[Ksetup:changepassword](ksetup-changepassword.md)|允许你使用 Kpasswd 更改已登录用户的密码。|
 |[Ksetup:listrealmflags](ksetup-listrealmflags.md)|列出**ksetup**可检测的可用领域标志。|
 |[Ksetup:setrealmflags](ksetup-setrealmflags.md)|设置特定领域的领域标志。|
@@ -87,7 +87,7 @@ ksetup
 
 **Ksetup**用于更改用于定位 Kerberos 领域的计算机设置。 在基于非 Microsoft Kerberos 的实现中，此信息通常保存在 Krb5.conf 文件中。 在 Windows Server 操作系统中，它保存在注册表中。 您可以使用此工具来修改这些设置。 工作站使用这些设置来查找 Kerberos 领域，并由域控制器用于查找跨领域信任关系的 Kerberos 领域。
 
-如果计算机运行的是 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2，并且不是 Windows 的成员，则**Ksetup**将初始化 Kerberos 安全支持提供程序（SSP）用于查找 kerberos 领域的 KDC 的注册表项域名. 完成配置后，运行 Windows 操作系统的客户端计算机的用户可以登录到 Kerberos 领域中的帐户。
+如果计算机运行的是 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2，并且不是 Windows 域的成员，则**Ksetup**将初始化 Kerberos 安全支持提供程序（SSP）用于为 kerberos 领域定位 KDC 的注册表项。 完成配置后，运行 Windows 操作系统的客户端计算机的用户可以登录到 Kerberos 领域中的帐户。
 
 Kerberos 版本5协议是运行 Windows XP Professional、Windows Vista 和 Windows 7 的计算机上网络身份验证的默认值。 Kerberos SSP 会在注册表中搜索用户领域的域名，然后通过查询 DNS 服务器将该名称解析为 IP 地址。 Kerberos 协议可以使用 DNS 来仅使用领域名称查找 Kdc，但必须对其进行特殊配置。
 

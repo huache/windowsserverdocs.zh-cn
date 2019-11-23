@@ -18,9 +18,9 @@ ms.locfileid: "71388028"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中配置 VPN 设备隧道
 
->适用于：Windows 10 版本1709
+>适用于： Windows 10 版本1709
 
-Always On VPN 使你能够为设备或计算机创建专用 VPN 配置文件。 Always On VPN 连接包括两种类型的隧道: 
+Always On VPN 使你能够为设备或计算机创建专用 VPN 配置文件。 Always On VPN 连接包括两种类型的隧道： 
 
 - _设备隧道_在用户登录到设备之前连接到指定的 VPN 服务器。 预登录连接方案和设备管理目的使用设备隧道。
 
@@ -100,7 +100,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 可以使用 Windows PowerShell 脚本并使用 Windows Management Instrumentation （WMI）桥来配置设备隧道。 必须在**本地系统**帐户的上下文中配置 Always On VPN 设备隧道。 若要实现此目的，需要使用[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)，这是[Sysinternals](https://docs.microsoft.com/sysinternals/)套件中包含的其中一个[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) 。
 
-有关如何部署每个设备 `(.\Device)` 与每个用户 `(.\User)` 配置文件的指南，请参阅将[PowerShell 脚本使用 WMI Bridge 提供程序](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
+有关如何部署每个设备的 `(.\Device)` 与每个用户 `(.\User)` 配置文件的指南，请参阅将[PowerShell 脚本使用 WMI Bridge 提供程序](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
 
 运行以下 Windows PowerShell 命令，以验证是否已成功部署设备配置文件：
 
@@ -108,7 +108,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
   Get-VpnConnection -AllUserConnection
   ```
 
-输出显示在设备上部署的 device @ no__t-0wide VPN 配置文件的列表。
+输出显示设备上部署的设备\-范围内的 VPN 配置文件的列表。
 
 ### <a name="example-windows-powershell-script"></a>Windows PowerShell 脚本示例
 
@@ -186,5 +186,5 @@ Write-Host "$Message"
 - [配置基于 IKEv2 的远程访问](https://technet.microsoft.com/library/ff687731.aspx)
 
 >[!IMPORTANT]
->将设备隧道与 Microsoft RAS 网关结合使用时，需要将 RRAS 服务器配置为支持 IKEv2 计算机证书身份验证，方法是启用 "**允许计算机证书身份验证进行 ikev2**身份验证" 方法，如所述[此处](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)。 启用此设置后，强烈建议**将 VpnAuthProtocol** PowerShell Cmdlet 与**RootCertificateNameToAccept**可选参数一起使用，以确保仅允许使用 RRAS IKEv2 连接链接到显式定义的内部/专用根证书颁发机构的 VPN 客户端证书。 另外，应修改 RRAS 服务器上**受信任的根证书颁发机构**存储，以确保它不包含[本文](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)中所述的公共证书颁发机构。 其他 VPN 网关可能还需要考虑类似的方法。
+>将设备隧道与 Microsoft RAS 网关结合使用时，你需要将 RRAS 服务器配置为支持 IKEv2 计算机证书身份验证，方法是为 IKEv2 身份验证方法启用 "**允许计算机证书身份验证**"，如[此处](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)所述。 启用此设置后，强烈建议**将 VpnAuthProtocol** PowerShell Cmdlet 与**RootCertificateNameToAccept**可选参数一起使用，以确保 RRAS IKEv2 连接仅适用于链接到显式定义的内部/专用根证书颁发机构的 VPN 客户端证书。 另外，应修改 RRAS 服务器上**受信任的根证书颁发机构**存储，以确保它不包含[本文](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)中所述的公共证书颁发机构。 其他 VPN 网关可能还需要考虑类似的方法。
 

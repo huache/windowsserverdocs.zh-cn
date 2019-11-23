@@ -18,7 +18,7 @@ ms.locfileid: "71369624"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>域控制器部署疑难解答
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 本主题介绍有关疑难解答域控制器配置和部署的详细方法。  
 
@@ -30,13 +30,13 @@ ms.locfileid: "71369624"
 
 内置日志是用于解决域控制器升级和降级问题的最重要的工具。 默认情况下，所有这些日志将处于启用状态并配置为最大详细级别。  
 
-|阶段|日志|  
+|阶段|Log|  
 |---------|-------|  
 |服务器管理器或 ADDSDeployment Windows PowerShell 操作|- %systemroot%\debug\dcpromoui.log<br /><br />-%systemroot%\debug\dcpromoui * .log|  
 |域控制器的安装/升级|-%systemroot%\debug\dcpromo.log<br /><br />-%systemroot%\debug\dcpromo * .log<br /><br />-Event viewer\Windows 日志<br /><br />-Event viewer\Windows 日志<br /><br />-事件 viewer\Applications 和服务 logs\Directory 服务<br /><br />-事件 viewer\Applications 和服务 logs\File 复制服务<br /><br />-事件 viewer\Applications 和服务 logs\DFS 复制|  
-|林或域升级|-%systemroot%\debug\adprep @ no__t-0 @ no__t-1\adprep.log<br /><br />-%systemroot%\debug\adprep @ no__t-0 @ no__t-1\csv.log<br /><br />-%systemroot%\debug\adprep @ no__t-0 @ no__t-1\dspecup.log<br /><br />-%systemroot%\debug\adprep @ no__t-0 @ no__t-1\ldif.log *|  
+|林或域升级|-%systemroot%\debug\adprep\\<datetime>\adprep.log<br /><br />-%systemroot%\debug\adprep\\<datetime>\csv.log<br /><br />-%systemroot%\debug\adprep\\<datetime>\dspecup.log<br /><br />-%systemroot%\debug\adprep\\<datetime>\ldif.log *|  
 |服务器管理器 ADDSDeployment Windows PowerShell 部署引擎|-事件 viewer\Applications 和服务 logs\Microsoft\Windows\DirectoryServices-Deployment\Operational|  
-|Windows 服务|-%systemroot%\Logs\CBS @ no__t-0 @ no__t-1<br /><br />- %systemroot%\servicing\sessions\sessions.xml<br /><br />- %systemroot%\winsxs\poqexec.log<br /><br />- %systemroot%\winsxs\pending.xml|  
+|Windows 服务|-%systemroot%\Logs\CBS\\*<br /><br />- %systemroot%\servicing\sessions\sessions.xml<br /><br />- %systemroot%\winsxs\poqexec.log<br /><br />- %systemroot%\winsxs\pending.xml|  
 
 ### <a name="tools-and-commands-for-troubleshooting-domain-controller-configuration"></a>用于对域控制器配置进行故障排除的工具和命令
 
@@ -114,7 +114,7 @@ ms.locfileid: "71369624"
 
 ### <a name="promotion-and-demotion-success-codes"></a>升级和降级成功代码
 
-|错误代码|说明|注释|  
+|错误代码|说明|注意|  
 |--------------|---------------|--------|  
 |1|退出，成功|你仍然必须重新启动，这仅指出已删除自动重新启动标志。|  
 |2|退出，成功，需要重新启动||  
@@ -168,7 +168,7 @@ ms.locfileid: "71369624"
 |     49     |                                               指定的域不存在                                                |                                                                                                                       验证你键入的域名                                                                                                                        |
 |     50     | 在降级期间，检测到最后一个域控制器（即使它并不是最后一个），或者指定了最后一个域控制器（但是它并不是最后一个） |        不要指定**域中的最后一个域控制器** ( **-lastdomaincontrollerindomain**)，除非它真的是最后一个。 如果这确实是最后一个域控制器，且存在虚拟域控制器元数据，请使用 **-ignorelastdcindomainmismatch**进行替代        |
 |     51     |                                          此域控制器上存在应用分区                                          |                                                                                              指定到**删除应用程序分区** ( **-removeapplicationpartitions**)                                                                                               |
-|     52     |            缺少必要的命令行参数（即，必须在命令行上指定应答文件）             |                                                                                              使用 dcpromo/unattend 时，0Only 已被弃用。 @no__t请参阅旧文档 @ no__t-0                                                                                              |
+|     52     |            缺少必要的命令行参数（即，必须在命令行上指定应答文件）             |                                                                                              *仅在已弃用的 dcpromo/unattend 中查看。查看旧版文档*                                                                                              |
 |     53     |                               升级/降级失败，必须重新启动计算机才能清理                                |                                                                                                                    检查展开的错误和日志                                                                                                                     |
 |     54     |                                                  升级/降级失败                                                   |                                                                                                                    检查展开的错误和日志                                                                                                                     |
 |     55     |                                         升级/降级已由用户取消                                          |                                                                                                                    检查展开的错误和日志                                                                                                                     |
@@ -177,14 +177,14 @@ ms.locfileid: "71369624"
 |     59     |                        在降级期间，此域控制器是它的一个区域的最后一个 DNS 服务器                         |                                                                                    指定这是**域中的最后一个 DNS 服务器**或使用 **-ignorelastdnsserverfordomain**                                                                                     |
 |     60     |         域中必须存在运行 Windows Server 2008 或更高版本的域控制器，才能升级 RODC          |                                                                                             升级至少一个 Windows Server 2008 或更高版本的模型可写域控制器                                                                                             |
 |     61     |        无法在尚未托管 DNS 的现有域中安装带有 DNS 的 Active Directory 域服务         |                                                                                                                      *无法获取此错误*                                                                                                                      |
-|     62     |                                         应答文件没有 [DCInstall] 部分                                          |                                                                                             使用 dcpromo/unattend 时，0Only 已被弃用。 @no__t请参阅旧版文档。 @no__t                                                                                              |
+|     62     |                                         应答文件没有 [DCInstall] 部分                                          |                                                                                             *仅在已弃用的 dcpromo/unattend 中查看。请参阅早期文档。*                                                                                              |
 |     63     |                                       林功能级别低于 windows server 2003                                       |                                                            将林功能级别至少提高到 Windows Server 2003 本机。 Windows 2000 和 Windows NT 4.0 不再是受支持的操作系统                                                             |
 |     64     |                                      由于组件二进制检测失败，所以升级失败                                      |                                                                                                                           安装 AD DS 角色                                                                                                                           |
 |     65     |                                    由于组件二进制安装失败，所以升级失败                                     |                                                                                                                           安装 AD DS 角色                                                                                                                           |
 |     66     |                                      由于操作系统检测失败，所以升级失败                                      |                                  检查展开的错误和日志；服务器未能返回其操作系统版本。 可能需要重新安装计算机，因为其总体运行状况十分可疑                                   |
-|     68     |                                                  复制伙伴无效                                                  |                                                                             使用 repadmin 或**get-adreplication @ no__t-1**\* Windows PowerShell 验证伙伴域控制器的运行状况                                                                              |
+|     68     |                                                  复制伙伴无效                                                  |                                                                             使用 repadmin 或**get-adreplication\\** \* Windows PowerShell 验证伙伴域控制器的运行状况                                                                              |
 |     69     |                                    所需的端口正在由某些其他应用程序使用                                     |                                                                                    使用 **netstat.exe -anob** 查找错误地分配到保留的 AD DS 端口的进程                                                                                     |
-|     70     |                                          目录林根级域控制器必须是 GC                                          |                                                                                              使用 dcpromo/unattend 时，0Only 已被弃用。 @no__t请参阅旧文档 @ no__t-0                                                                                              |
+|     70     |                                          目录林根级域控制器必须是 GC                                          |                                                                                              *仅在已弃用的 dcpromo/unattend 中查看。查看旧版文档*                                                                                              |
 |     71     |                                                 DNS 服务器已安装                                                  |                                                                                          如果已安装 DNS 服务，不要指定安装 DNS ( **-installDNS**)                                                                                           |
 |     72     |                                  计算机在非管理员模式下运行远程桌面服务                                   |        无法升级此域控制器，因为它还是针对两个以上管理员用户配置的 RDS 服务器。 在仔细清查其使用情况之前不要删除 RDS - 如果它正在被应用程序或最终用户使用，删除它将导致中断         |
 |     73     |                                        指定的林功能级别无效。                                         |                                                                                                                  指定有效的林功能级别                                                                                                                   |
@@ -210,9 +210,9 @@ ms.locfileid: "71369624"
 |     93     |                                域控制器服务不为非强制降级运行                                |                                                                                                                          启动 AD DS 服务                                                                                                                           |
 |     94     |                           本地管理员密码不符合要求：空白或不需要                           |                                                                                         提供非空白密码并确保本地密码策略需要密码                                                                                         |
 |     95     |              在存在动态 RODC 的域中，无法降级最后一个 Windows Server 2008 或更高版本的域控制器              |                                                                             在将降级所有 Windows Server 2008 或更高版本的可写域控制器之前，必须先降级所有 RODC                                                                             |
-|     96     |                                                 无法卸载 DS 二进制文件                                                  |                                                                                              使用 dcpromo/unattend 时，0Only 已被弃用。 @no__t请参阅旧文档 @ no__t-0                                                                                              |
+|     96     |                                                 无法卸载 DS 二进制文件                                                  |                                                                                              *仅在已弃用的 dcpromo/unattend 中查看。查看旧版文档*                                                                                              |
 |     97     |                      林功能级别版本高于子域操作系统的版本                       |                                                                                           提供版本等于或高于林功能级别的子域功能                                                                                            |
-|     98     |                                        正在进行组件二进制安装/卸载。                                        |                                                                                              使用 dcpromo/unattend 时，0Only 已被弃用。 @no__t请参阅旧文档 @ no__t-0                                                                                              |
+|     98     |                                        正在进行组件二进制安装/卸载。                                        |                                                                                              *仅在已弃用的 dcpromo/unattend 中查看。查看旧版文档*                                                                                              |
 |     99     |                              林功能级别过低（错误仅限 Windows Server 2012）                              |                                                            将林功能级别至少提高到 Windows Server 2003 本机。 Windows 2000 和 Windows NT 4.0 不再是受支持的操作系统                                                             |
 |    100     |                              域功能级别过低（错误仅限 Windows Server 2012）                              |                                                            将域功能级别至少提高到 Windows Server 2003 本机。 Windows 2000 和 Windows NT 4.0 不再是受支持的操作系统                                                             |
 
@@ -223,7 +223,7 @@ ms.locfileid: "71369624"
 |问题|降级域控制器会使 DNS 在无区域的情况下运行|  
 |---------|-----------------------------------------------------------------|  
 |症状|服务器仍然响应 DNS 请求，但是没有区域信息|  
-|解析和注释|删除 AD DS 角色时，还会删除 DNS 服务器角色或将 DNS 服务器服务设置为禁用。 记得将 DNS 客户端指向它本身之外的另一个服务器。 如果使用 Windows PowerShell，在降级服务器后运行以下内容：<br /><br />代码-uninstall dns<br /><br />或<br /><br />代码集-服务 dns-starttype 已禁用<br />停止服务 dns|  
+|解析和注释|删除 AD DS 角色时，还会删除 DNS 服务器角色或将 DNS 服务器服务设置为禁用。 记得将 DNS 客户端指向它本身之外的另一个服务器。 如果使用 Windows PowerShell，在降级服务器后运行以下内容：<br /><br />代码-uninstall dns<br /><br />或者<br /><br />代码集-服务 dns-starttype 已禁用<br />停止服务 dns|  
 
 |问题|在将 Windows Server 2012 升级到现有单标签域中时，不会配置 updatetopleveldomain=1 或 allowsinglelabeldnsdomain=1|  
 |---------|----------------------------------------------------------------------------------------------------------------------------------------------------|  
@@ -257,7 +257,7 @@ ms.locfileid: "71369624"
 
 |问题|使用 Dism.exe 删除 DirectoryServices-DomainController 角色将导致无法启动服务器|  
 |---------|---------------------------------------------------------------------------------------------------|  
-|症状|如果在正常降级域控制器前使用 Dism.exe 删除 AD DS 角色，则服务器不再正常启动并显示错误：<br /><br />代码-状态：0x000000000<br />信息：发生了意外错误。|  
+|症状|如果在正常降级域控制器前使用 Dism.exe 删除 AD DS 角色，则服务器不再正常启动并显示错误：<br /><br />代码-状态：0x000000000<br />信息：出现了意外错误。|  
 |解析和注释|使用 *Shift+F8* 启动到目录服务修复模式。 添加回 AD DS 角色，然后强制降级域控制器。 此外，从备份还原系统状态。 不要将为 AD DS 角色删除使用 Dism.exe；该实用工具不了解域控制器。|  
 
 |问题|在将林模式设置为 Win2012 时，无法安装新林|  
@@ -286,8 +286,8 @@ ms.locfileid: "71369624"
 |||  
 |-|-|  
 |问题|无法将 RODC 升级到预创建的计算机帐户中|  
-|症状|使用 ADDSDeployment Windows PowerShell 升级新的带有分步计算机帐户的 RODC 时，返回错误：<br /><br />无法使用指定的命名参数解析代码参数集。    <br />InvalidArgument：ParameterBindingException<br />    + FullyQualifiedErrorId：AmbiguousParameterSet，Microsoft.directoryservices. Install。|  
-|解析和注释|不要提供已在预创建的 RODC 帐户上定义的参数。 这些问题包括：<br /><br />代码--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns|  
+|症状|使用 ADDSDeployment Windows PowerShell 升级新的带有分步计算机帐户的 RODC 时，返回错误：<br /><br />无法使用指定的命名参数解析代码参数集。    <br />InvalidArgument： ParameterBindingException<br />    + FullyQualifiedErrorId： AmbiguousParameterSet，Microsoft.directoryservices. Install。|  
+|解析和注释|不要提供已在预创建的 RODC 帐户上定义的参数。 这些地方包括：<br /><br />代码--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns|  
 
 |||  
 |-|-|  
@@ -316,7 +316,7 @@ ms.locfileid: "71369624"
 |||  
 |-|-|  
 |问题|Windows PowerShell -whatif 参数会返回不正确的 DNS 服务器信息|  
-|症状|使用隐式或显式 **-installdns:$true** 配置域控制器时，如果使用 **-whatif** 参数，得到的输出显示如下：<br /><br />代码-"DNS 服务器：不|  
+|症状|使用隐式或显式 **-installdns:$true** 配置域控制器时，如果使用 **-whatif** 参数，得到的输出显示如下：<br /><br />代码-"DNS 服务器：否"|  
 |解析和注释|忽略。 将正确安装并配置 DNS。|  
 
 |||  
@@ -329,7 +329,7 @@ ms.locfileid: "71369624"
 |-|-|  
 |问题|“域控制器选项”页上不提供“下一步”按钮|  
 |症状|即使已设置密码，服务器管理器中**域控制器选项**页上的**下一步**按钮仍不可用。 **站点名称**菜单中未列出站点。|  
-|解析和注释|你有多个 AD DS 站点且至少一个缺少子网；将来的这个域控制器属于这些子网之一。 必须从“站点名称”下拉菜单手动选择子网。 还应该检查使用 DSSITE.MSC 的所有 AD 站点或使用以下 Windows PowerShell 命令查找所有缺少子网的站点：<br /><br />New-adreplicationsite-filter @no__t- &#124; -object {！ $ _. 子网-eq "\*"} &#124;格式-表名|  
+|解析和注释|你有多个 AD DS 站点且至少一个缺少子网；将来的这个域控制器属于这些子网之一。 必须从“站点名称”下拉菜单手动选择子网。 还应该检查使用 DSSITE.MSC 的所有 AD 站点或使用以下 Windows PowerShell 命令查找所有缺少子网的站点：<br /><br />New-adreplicationsite-filter \*-property 子网&#124; ，其中-对象 {！ $ _. 子网-eq "\*"} &#124;格式-表名|  
 
 |||  
 |-|-|  
@@ -357,10 +357,10 @@ ms.locfileid: "71369624"
 
 |问题|Dcpromo /unattend 允许不受支持的功能级别|  
 |-|-|  
-|症状|如果使用带有以下示例应答文件的 dcpromo /unattend 升级域控制器：<br /><br />编写<br /><br />DCInstall<br />NewDomain = 林<br /><br />ReplicaOrNewDomain = 域<br /><br />NewDomainDNSName = corp .com<br /><br />SafeModeAdminPassword = Safepassword@6<br /><br />DomainNetbiosName = corp<br /><br />DNSOnNetwork = Yes<br /><br />AutoConfigDNS = Yes<br /><br />RebootOnSuccess = NoAndNoPromptEither<br /><br />RebootOnCompletion = 否<br /><br />*DomainLevel = 0*<br /><br />*ForestLevel = 0*<br /><br />升级失败并在 dcpromoui.log 中显示以下错误：<br /><br />Dcpromoui.log EA 4.5 B8 0089 13：31： 50.783 Enter CArgumentsSpec：： ValidateArgument DomainLevel<br /><br />dcpromoui.log EA 4.5 B8 008A 13：31： 50.783 DomainLevel 的值为0<br /><br />dcpromoui.log EA 4.5 B8 008B 13：31： 50.783 Exit code 为77<br /><br />dcpromoui.log EA 4.5 B8 008C 13：31：50.783 指定的参数无效。<br /><br />dcpromoui.log EA 4.5 B8 008D 13：31：50.783 关闭日志<br /><br />dcpromoui.log EA 4.5 B8 0032 13：31： 50.830 Exit code 为77<br /><br />级别 0 是 Windows 2000，它在 Windows Server 2012 中不受支持。|  
+|症状|如果使用带有以下示例应答文件的 dcpromo /unattend 升级域控制器：<br /><br />编写<br /><br />DCInstall<br />NewDomain = 林<br /><br />ReplicaOrNewDomain = 域<br /><br />NewDomainDNSName = corp .com<br /><br />SafeModeAdminPassword =Safepassword@6<br /><br />DomainNetbiosName = corp<br /><br />DNSOnNetwork = Yes<br /><br />AutoConfigDNS = Yes<br /><br />RebootOnSuccess = NoAndNoPromptEither<br /><br />RebootOnCompletion = 否<br /><br />*DomainLevel = 0*<br /><br />*ForestLevel = 0*<br /><br />升级失败并在 dcpromoui.log 中显示以下错误：<br /><br />Dcpromoui.log EA 4.5 B8 0089 13：31： 50.783 Enter CArgumentsSpec：： ValidateArgument DomainLevel<br /><br />dcpromoui.log EA 4.5 B8 008A 13：31： 50.783 DomainLevel 的值为0<br /><br />dcpromoui.log EA 4.5 B8 008B 13：31： 50.783 Exit code 为77<br /><br />dcpromoui.log EA 4.5 B8 008C 13：31：50.783 指定的参数无效。<br /><br />dcpromoui.log EA 4.5 B8 008D 13：31：50.783 关闭日志<br /><br />dcpromoui.log EA 4.5 B8 0032 13：31： 50.830 Exit code 为77<br /><br />级别 0 是 Windows 2000，它在 Windows Server 2012 中不受支持。|  
 |解析和注释|不要使用已弃用的 dcpromo /unattend，并了解它会让你指定稍后将失败的无效设置。 此行为符合预期并且是设计使然。|  
 
 |问题|正在创建 NTDS 设置对象的升级 "挂起"，从未完成|  
 |-|-|  
 |症状|如果升级副本 DC 或 RODC，升级将达到 "创建 NTDS 设置对象" 的执行，并且永远不会继续或完成。 日志也停止更新。|  
-|解析和注释|这是一个已知问题，原因在于向内置域管理员帐户提供带有匹配密码的内置本地管理员帐户的凭据。 这会导致核心安装引擎中的故障，此引擎不发生错误但会无限期等待（准循环）。 这是意料之中的，但行为不理想。<br /><br />若要修复服务器：<br /><br />1.重新启动它。<br /><br />1.在 AD 中，删除该服务器的成员计算机帐户（该帐户还不是 DC 帐户）<br /><br />1.在该服务器上，使其强制脱离该域<br /><br />1.在该服务器上，删除 AD DS 角色。<br /><br />1.重新启动<br /><br />1.重新添加 AD DS 角色并重新尝试升级，确保始终向 DC 升级提供 ***域\管理员***格式的凭据，而不只是内置本地管理员帐户|  
+|解析和注释|这是一个已知问题，原因在于向内置域管理员帐户提供带有匹配密码的内置本地管理员帐户的凭据。 这会导致核心安装引擎中的故障，此引擎不发生错误但会无限期等待（准循环）。 这是意料之中的，但行为不理想。<br /><br />若要修复服务器：<br /><br />1. 重新启动它。<br /><br />1. 在 AD 中，删除该服务器的成员计算机帐户（该帐户还不是 DC 帐户）<br /><br />1. 在该服务器上，强制从域中脱离<br /><br />1. 在该服务器上，删除 AD DS 角色。<br /><br />1. 重新启动<br /><br />1. 重新添加 AD DS 角色并重新尝试升级，确保你始终向 DC 提升提供***domain\admin***格式的凭据，而不是仅提供内置本地管理员帐户|  

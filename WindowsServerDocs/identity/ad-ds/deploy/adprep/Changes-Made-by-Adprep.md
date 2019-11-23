@@ -30,9 +30,9 @@ ms.locfileid: "71369435"
   
 -   [架构更新](../../../ad-ds/deploy/Schema-Updates.md)  
   
-## <a name="see-also"></a>请参阅  
-@no__t 0Windows Server 2008 R2：用于支持 AD DS @ no__t 的 Adprep.log 更改的附录  
-[Windows Server 2008：用于支持 AD DS @ no__t 的 Adprep.log 更改的附录  
+## <a name="see-also"></a>另请参阅  
+[Windows Server 2008 R2：对 Adprep.log 的更改以支持 AD DS 的附录](https://technet.microsoft.com/library/dd378876.aspx)  
+[Windows Server 2008：对 Adprep.log 的更改以支持 AD DS 的附录](https://technet.microsoft.com/library/cc770703.aspx)  
   
 
 

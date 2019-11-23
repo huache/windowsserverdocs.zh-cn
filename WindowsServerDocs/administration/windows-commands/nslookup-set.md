@@ -22,14 +22,14 @@ ms.locfileid: "71372728"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更改影响查找功能的配置设置。
 ## <a name="syntax"></a>语法
 ```
 set <KeyWord>[=<Value>]
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |    参数    |                                                                                                                    描述                                                                                                                    |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,5 +40,5 @@ set <KeyWord>[=<Value>]
 ## <a name="remarks"></a>备注
 使用 "**全部设置**" 查看当前设置的列表。
 ## <a name="additional-references"></a>其他参考
-[命令行语法 Key](command-line-syntax-key.md)
+[命令行语法键](command-line-syntax-key.md)
 [nslookup 全部设置](nslookup-set-all.md)

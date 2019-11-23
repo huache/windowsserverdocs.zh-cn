@@ -20,7 +20,7 @@ ms.locfileid: "71389862"
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**作者**：Justin Turner，具有 Windows 组的高级支持升级工程师  
+**作者**： Justin Turner，具有 Windows 组的高级支持升级工程师  
   
 > [!NOTE]  
 > 本内容由 Microsoft 客户支持工程师编写，适用于正在查找比 TechNet 主题通常提供的内容更深入的有关 Windows Server 2012 R2 中的功能和解决方案的技术说明的有经验管理员和系统架构师。 但是，它未经过相同的编辑审批，因此某些语言可能看起来不如通常在 TechNet 上找到的内容那么精练。  
@@ -29,7 +29,7 @@ ms.locfileid: "71389862"
 尽管自 Windows 8 以来，对受 TPM 保护的密钥的支持已存在，但没有任何机制可以通过加密方式证明证书申请者私钥实际上由受信任的平台模块（TPM）保护。 此更新使 CA 能够执行该证明并在颁发的证书中反映该证明。  
   
 > [!NOTE]  
-> 本文假定读者熟悉证书模板概念（有关参考，请参阅[证书模板](https://technet.microsoft.com/library/cc730705.aspx)）。 它还假设读者熟悉如何配置企业 Ca，使其基于证书模板颁发证书（有关参考，请参阅 [Checklist：配置 Ca 以颁发和管理证书 @ no__t-0）。  
+> 本文假定读者熟悉证书模板概念（有关参考，请参阅[证书模板](https://technet.microsoft.com/library/cc730705.aspx)）。 它还假设读者熟悉如何配置企业 Ca，使其基于证书模板颁发证书（有关参考，请参阅[核对清单：配置 ca 以颁发和管理证书](https://technet.microsoft.com/library/cc771533.aspx)）。  
   
 ### <a name="terminology"></a>术语  
   
@@ -41,7 +41,7 @@ ms.locfileid: "71389862"
 |EKCert|EK 证书。 TPM 制造商为 EKPub 颁发的证书。 并非所有 Tpm 都具有 EKCert。|  
 |TPM|受信任的平台模块。 TPM 旨在提供基于硬件的安全性相关的功能。 TPM 芯片是安全加密处理器，旨在执行加密操作。 该芯片包含多个物理安全机制以使其防篡改，并且恶意软件无法篡改 TPM 的安全功能。|  
   
-### <a name="background"></a>后台  
+### <a name="background"></a>背景  
 从 Windows 8 开始，可使用受信任的平台模块（TPM）来保护证书的私钥。 Microsoft 平台加密提供程序密钥存储提供程序（KSP）启用此功能。 实现涉及两个问题：  
 
 -   不能保证密钥实际上受 TPM 保护（用户可以使用本地管理员凭据将软件 KSP 作为 TPM KSP 进行欺骗）。
@@ -52,9 +52,9 @@ ms.locfileid: "71389862"
 TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的 RSA 密钥受 CA 信任的 "a" 或 "the" TPM 保护的证书的能力。 本主题后面的 "[部署概述](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentOverview)" 部分中详细讨论了 TPM 信任模型。  
   
 ### <a name="why-is-tpm-key-attestation-important"></a>为什么 TPM 密钥证明很重要？  
-具有证明密钥的用户证书提供了更高的安全性保障, 并通过非作为后盾、反攻击和 TPM 提供的密钥的隔离进行了备份。  
+具有证明密钥的用户证书提供了更高的安全性保障，并通过非作为后盾、反攻击和 TPM 提供的密钥的隔离进行了备份。  
   
-使用 TPM 密钥证明，现在可以使用新的管理模式：管理员可以定义一组设备，用户可以使用这些设备来访问公司资源（例如 VPN 或无线访问点），**并确保不**能使用其他设备来访问它们。 这一新的访问控制范例非常**强大**，因为它与*硬件绑定*用户标识（比基于软件的凭据更强）相关联。
+使用 TPM 密钥证明，现在可以使用新的管理范例：管理员可以定义一组设备，用户可以使用这些设备访问公司资源（例如 VPN 或无线接入点），**并确保没有**其他设备可用于访问这些资源。 这一新的访问控制范例非常**强大**，因为它与*硬件绑定*用户标识（比基于软件的凭据更强）相关联。
   
 ### <a name="how-does-tpm-key-attestation-work"></a>TPM 密钥证明如何工作？  
 通常，TPM 密钥证明基于以下支柱：  
@@ -84,7 +84,7 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
     请注意，可以选择 TPM 信任模型的组合。 在这种情况下，CA 将接受任何证明方法，并且颁发策略 Oid 将反映所有成功的证明方法。  
   
-2.  **配置证书模板：** 本主题中的[部署详细信息](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails)部分介绍了配置证书模板。 本文不介绍如何将此证书模板分配给企业 CA，或者如何向一组用户提供注册访问权限。 有关详细信息，请参阅 [Checklist：配置 Ca 以颁发和管理证书 @ no__t。  
+2.  **配置证书模板：** 本主题中的[部署详细信息](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails)部分介绍了配置证书模板。 本文不介绍如何将此证书模板分配给企业 CA，或者如何向一组用户提供注册访问权限。 有关详细信息，请参阅[清单：配置 ca 以颁发和管理证书](https://technet.microsoft.com/library/cc771533.aspx)。  
   
 3.  **为 TPM 信任模型配置 CA**  
   
@@ -132,11 +132,11 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
     ![TPM 密钥证明](media/TPM-Key-Attestation/GTR_ADDS_KeyModes.gif)  
   
-    -   **内容**表示不得使用密钥证明  
+    -   **无：** 表示不得使用密钥证明  
   
     -   **如果客户端支持，则需要：** 允许设备上不支持 TPM 密钥证明的用户继续注册该证书。 可以执行证明的用户将与特殊的颁发策略 OID 区分开来。 某些设备可能无法执行证明，因为旧的 TPM 不支持密钥证明，或者设备根本没有 TPM。
   
-    -   **必填：** 客户端*必须*执行 TPM 密钥证明，否则证书请求将会失败。  
+    -   **必需：** 客户端*必须*执行 TPM 密钥证明，否则证书请求将会失败。  
   
     然后选择 TPM 信任模型。 再次提供三个选项：  
   
@@ -154,9 +154,9 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
     |OID|密钥证明类型|描述|保证级别|  
     |-------|------------------------|---------------|-------------------|  
-    |1.3.6.1.4.1.311.21.30|EK|"EK 已验证"： 对于管理员托管的 EK 列表|高|  
-    |1.3.6.1.4.1.311.21.31|认可证书|"EK 证书已验证"：当验证 EK 证书链时|中等|  
-    |1.3.6.1.4.1.311.21.32|用户凭据|"在使用时，EK 可信"：对于用户-证明 EK|低|  
+    |1.3.6.1.4.1.311.21.30|EK|"已验证 EK"：适用于管理员托管的 EK 列表|高|  
+    |1.3.6.1.4.1.311.21.31|认可证书|"EK 证书已验证"：当对 EK 证书链进行验证时|中等|  
+    |1.3.6.1.4.1.311.21.32|用户凭据|"在使用后的 EK 可信"：用于用户-证明 EK|低|  
   
     如果已选择 "**包括颁发策略**" （默认配置），则将在已颁发的证书中插入 oid。  
   
@@ -199,11 +199,11 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
         EndorsementKeyListDirectories in certutil 命令是如下表中所述的注册表设置。  
   
-        |值名称|类型|Data|  
+        |值名称|在任务栏的搜索框中键入|数据|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|< 允许列表的本地路径或 UNC 路径 ><br /><br />例如：<br /><br />*\\ \ blueCA com\ekpub*<br /><br />*\\ \ bluecluster1 com\ekpub*<br /><br />D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|< 允许列表的本地路径或 UNC 路径 ><br /><br />示例：<br /><br />*\\\blueCA.contoso.com\ekpub*<br /><br />*\\\bluecluster1.contoso.com\ekpub*<br /><br />D:\ekpub|  
   
-        HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration @ no__t-0 @ no__t-1  
+        HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\\<CA Sanitized Name>  
   
         *EndorsementKeyListDirectories*将包含 UNC 或本地文件系统路径的列表，每个路径都指向 CA 对其具有读取访问权限的文件夹。 每个文件夹可包含零个或多个允许列表项，其中每个项都是一个文件，其名称是可信 EKpub 的 SHA-1 哈希，没有文件扩展名。 
         创建或编辑此注册表项配置需要重新启动 CA，就像现有的 CA 注册表配置设置一样。 但是，对配置设置的编辑会立即生效，并且不需要重新启动 CA。  
@@ -225,17 +225,17 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
 1.  兼容性设置配置不正确。 请确保将其配置如下：  
   
-    1.  **证书颁发机构**：**Windows Server 2012 R2**  
+    1.  **证书颁发机构**： **Windows Server 2012 R2**  
   
-    2.  **证书接收者**：**Windows 8.1/Windows Server 2012 R2**  
+    2.  **证书接收方**： **Windows 8.1/Windows Server 2012 R2**  
   
 2.  加密设置配置不正确。 请确保将其配置如下：  
   
     1.  **提供程序类别**：**密钥存储提供程序**  
   
-    2.  **算法名称**：**RSA**  
+    2.  **算法名称**： **RSA**  
   
-    3.  **提供程序**:**Microsoft 平台加密提供程序**  
+    3.  **提供程序**： **Microsoft 平台加密提供程序**  
   
 3.  请求处理设置配置不正确。 请确保将其配置如下：  
   
@@ -275,6 +275,6 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
         PS C:>new-object System.Security.Cryptography.X509Certificates.X509Certificate2 "c:\diagnose\myEKcert.cer" | Confirm-CAEndorsementKeyInfo  
         ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [受信任的平台模块技术概述](https://technet.microsoft.com/library/jj131725.aspx)  
-@no__t 0External 资源：受信任的平台模块 @ no__t-0  
+[外部资源：受信任的平台模块](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)  

@@ -22,7 +22,7 @@ ms.locfileid: "71379911"
 ---
 # <a name="bootcfg-query"></a>bootcfg query
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 查询并显示 Boot.ini 中的 [启动加载程序] 和 [操作系统] 部分条目。
 
@@ -30,12 +30,12 @@ ms.locfileid: "71379911"
 ```
 bootcfg /query [/s <computer> [/u <Domain>\<User> /p <Password>]]
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |        术语         |                                                                                             定义                                                                                              |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>    |                                         指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                          |
-| /u <Domain> @ no__t-1 @ no__t-2 | 使用由 <User>or <Domain> @ no__t-2 @ no__t 指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
+| /u <Domain>\\<User> | 使用 <User>或 <Domain>\\<User>指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
 |    /p <Password>    |                                                        指定在 **/u**参数中指定的用户帐户的密码。                                                        |
 |         /?          |                                                                                在命令提示符下显示帮助。                                                                                 |
 

@@ -22,7 +22,7 @@ ms.locfileid: "71374459"
 ---
 # <a name="logman-import--export"></a>logman 导入 |先导
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 从 XML 文件导入数据收集器集，或将数据收集器集导出到 XML 文件。  
 
@@ -31,7 +31,7 @@ ms.locfileid: "71374459"
 logman import <[-n] <name>> <-xml <name>> [options]  
 logman export <[-n] <name>> <-xml <name>> [options]  
 ```  
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>参数  
 
 |        参数        |                                                                        描述                                                                        |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,11 +41,11 @@ logman export <[-n] <name>> <-xml <name>> [options]
 |       [-n] <name>       |                                                                目标对象的名称。                                                                 |
 |       -xml <name>       |                                                         要导入或导出的 XML 文件的名称。                                                         |
 |          -ets           |                                       直接将命令发送到事件跟踪会话，无需保存或计划。                                        |
-| -[-] u < user [password] > | 要以其身份运行的用户。 输入密码 @no__t 0 会生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
+| -[-] u < user [password] > | 要以其身份运行的用户。 输入密码 \* 会生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
 |           -y            |                                                      在不提示的情况下回答 "是"。                                                       |
 
 ## <a name="BKMK_examples"></a>示例  
-以下命令将 XML 文件 c:\windows\perf_log.xml 从计算机 server_1 导入为名为 perf_log 的数据收集器集。  
+以下命令将 perf_log 计算机中的 XML 文件 c:\windows\ 作为名为 perf_log 的数据收集器集导入 server_1。  
 ```  
 logman import perf_log -s server_1 -xml "c:\windows\perf_log.xml"  
 ```  

@@ -53,7 +53,7 @@ DirectAccess 至少需要为所有 Windows 10 和 Windows 8 客户端计算机�
   
 2.  在 **“远程访问服务器设置”** 向导的 **“身份验证”** 窗格中，选中 **“用户计算机证书”** 复选框，然后选择在你的部署中颁发证书的根或中间证书颁发机构。  
   
-若要使用 Windows PowerShell 启用计算机证书身份验证，请使用 @no__t cmdlet 并指定*IPsecRootCertificate*参数。  
+若要使用 Windows PowerShell 启用计算机证书身份验证，请使用 `Set-DAServer` cmdlet 并指定*IPsecRootCertificate*参数。  
   
 ## <a name="ip-https-certificates"></a>IP-HTTPS 证书  
 **接收到错误**。 DirectAccess 服务器使用自签名的 ip-https 证书。 请将 IP-HTTPS 配置为使用已知 CA 的签名证书。  
@@ -118,7 +118,7 @@ IP-HTTPS 证书是自签名证书。 在多站点部署中你不能使用自签�
 DirectAccess 至少需要为所有 Windows 8 客户端计算机提供一个安全组，并为每个入口点提供适用于 Windows 7 客户端计算机的安全组。 每个客户端计算机只能属于一个安全组。 因此，你应该确保 Windows 8 客户端的安全组仅包含运行 Windows 8 的计算机，并且每个 Windows 7 客户端计算机属于相关入口点的单个专用安全组，并且没有 Windows 8 客户端属于 Windows 7 安全组。  
   
 ## <a name="active-directory-site"></a>Active Directory 站点  
-**接收到错误**。 服务器 < server_name > 未与 Active Directory 站点关联。  
+**接收到错误**。 服务器 < server_name > 与 Active Directory 站点无关。  
   
 **原因**  
   

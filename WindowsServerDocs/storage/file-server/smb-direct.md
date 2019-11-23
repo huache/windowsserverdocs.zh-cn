@@ -17,11 +17,11 @@ ms.locfileid: "71394457"
 ---
 # <a name="smb-direct"></a>SMB 直通
 
->适用于：Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>适用于： Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2016 包含一项名为 SMB Direct 的功能，该功能支持使用具有远程直接内存访问（RDMA）功能的网络适配器。 使用 RDMA 的网络适配器能够全速运行， 延迟时间非常低，CPU 使用量非常少。 对于 Hyper-V 或 Microsoft SQL Server 等工作负载，这让远程文件服务器如同本地存储一样。 SMB 直通包括：
 
-- 提高了吞吐量：利用高速网络的完整吞吐量，其中网络适配器以线速度协调大量数据的传输。
+- 提高吞吐量：利用高速网络的整个吞吐量，由网络适配器协调以线速度传输的大量数据。
 - 低延迟时间：提供极其快速的网络请求响应功能，因此使远程文件存储如同直接连接的模块存储功能一样易于操作。
 - 低 CPU 使用率：在网络上传输数据时，占用较少 CPU 周期，从而为服务器应用程序保留更多空闲能量。
 
@@ -124,5 +124,5 @@ RDMA 需要在客户端和服务器上同时启用后，方可再次使用。
 ## <a name="more-information"></a>详细信息
 
 - [服务器消息块概述](file-server-smb-overview.md)
-- @no__t 0Increasing 服务器、存储和网络可用性：方案概述](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [提高服务器、存储和网络可用性：方案概述](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
 - [部署基于 SMB 的 Hyper-v](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

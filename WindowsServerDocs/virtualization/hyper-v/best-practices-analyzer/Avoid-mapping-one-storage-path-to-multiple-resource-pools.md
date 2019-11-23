@@ -19,7 +19,7 @@ ms.locfileid: "71365264"
 ---
 # <a name="avoid-mapping-one-storage-path-to-multiple-resource-pools"></a>避免将一个存储路径映射到多个资源池
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71365264"
 ## <a name="impact"></a>**对**  
 *对于指定的存储池类型，以下父池和子池共享同一存储路径：*  
   
-池 > 的 0list @no__t  
+\<池列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
 *使用 Windows PowerShell 重新配置存储资源池，使多个池不会使用相同的存储路径。*  

@@ -40,7 +40,7 @@ ms.locfileid: "71367257"
   
 4.  你将看到连接到远程访问服务器的用户的列表以及有关这些用户的详细统计信息。 单击该列表中与客户端对应的第一行。 选择行时，"远程用户" 活动将显示在预览窗格中。  
   
-@no__t 0Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -50,11 +50,11 @@ PS> Get-RemoteAccessConnectionStatistics
   
 可以通过使用下表中的字段，根据选择的条件筛选用户统计信息。  
   
-|字段名称|ReplTest1|  
+|字段名称|值|  
 |-------|-----|  
-|Username|远程用户的用户名或别名。 通配符可用于选择一组用户，例如 contoso @ no__t * 或 \* \ 管理员。|  
+|Username|远程用户的用户名或别名。 通配符可用于选择一组用户，例如 contoso\\* 或 \*\administrator。|  
 |主机名|远程用户的计算机帐户名称。 也可以指定 IPv4 或 IPv6 地址。|  
-|类型|DirectAccess 或 VPN。 如果选择了 DirectAccess，则会列出使用 DirectAccess 连接的所有远程用户。 如果选择了 VPN，则会列出使用 VPN 连接的所有远程用户。|  
+|在任务栏的搜索框中键入|DirectAccess 或 VPN。 如果选择了 DirectAccess，则会列出使用 DirectAccess 连接的所有远程用户。 如果选择了 VPN，则会列出使用 VPN 连接的所有远程用户。|  
 |ISP 地址|远程用户的 IPv4 或 IPv6 地址。|  
 |IPv4 地址|将远程用户连接到企业网络的隧道的内部 IPv4 地址。|  
 |IPv6 地址|将远程用户连接到企业网络的隧道的内部 IPv6 地址。|  

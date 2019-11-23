@@ -20,11 +20,11 @@ ms.locfileid: "71392895"
 ---
 # <a name="use-local-resources-on-hyper-v-virtual-machine-with-vmconnect"></a>Use local resources on Hyper-V virtual machine with VMConnect
 
->适用于：Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2
+>适用于： Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2
 
 虚拟机连接（VMConnect）允许你在虚拟机中使用计算机的本地资源，如可移动的 USB 闪存驱动器或打印机。 增强会话模式还允许调整 VMConnect 窗口的大小。 本文介绍如何配置主机，并向虚拟机授予对本地资源的访问权限。
 
-增强会话模式和类型剪贴板文本仅适用于运行最近的 Windows 操作系统的虚拟机。 @no__t[使用本地资源的0See 要求](#requirements-for-using-local-resources)，请见下。 \) 
+增强会话模式和类型剪贴板文本仅适用于运行最近的 Windows 操作系统的虚拟机。 \(参阅下面[的使用本地资源的要求](#requirements-for-using-local-resources)。\) 
 
 有关运行 Ubuntu 的虚拟机，请参阅[在 HYPER-V VM 中更改 Ubuntu 屏幕分辨率](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/)。 
   
@@ -111,7 +111,7 @@ ms.locfileid: "71392895"
   
 -   显示器配置  
   
--   Audio
+-   音频
   
 -   打印机  
   
@@ -138,7 +138,7 @@ ms.locfileid: "71392895"
   
 -   在不使用 RDP 的情况下测试需要 USB 和声音重定向的开发人员应用程序并进行疑难解答。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [连接到虚拟机](https://technet.microsoft.com/library/cc742407.aspx)  
 [是否应在 Hyper-v 中创建第1代或第2代虚拟机？](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)
 

@@ -22,14 +22,14 @@ ms.locfileid: "71372856"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 设置重试次数。
 ## <a name="syntax"></a>语法
 ```
 set retry=<Number>
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |    参数    |                                      描述                                       |
 |-----------------|----------------------------------------------------------------------------------------|

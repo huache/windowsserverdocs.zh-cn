@@ -94,7 +94,7 @@ ms.locfileid: "71390511"
   
 10. 如果由于空白 DCCloneConfig.xml 网络设置将使用自动 IP 寻址，则来宾在将网络适配器上启用 DHCP，以获得 IP 地址租用、网络路由和名称解析信息。  
   
-11. 来宾定位并联系运行 PDC 模拟器 FSMO 角色的域控制器。 这将使用 DNS 和 DCLocator 协议。 它将建立 RPC 连接并调用方法 IDL_DRSAddCloneDC 以克隆域控制器计算机对象。  
+11. 来宾定位并联系运行 PDC 模拟器 FSMO 角色的域控制器。 这将使用 DNS 和 DCLocator 协议。 它将建立 RPC 连接并调用方法 IDL_DRSAddCloneDC 克隆域控制器计算机对象。  
   
     1.  如果来宾的源计算机对象保留“允许 DC 创建其自身的克隆”的域标头扩展权限，则克隆将继续。  
   
@@ -112,7 +112,7 @@ ms.locfileid: "71390511"
   
 15. 来宾强制与另一个域控制器进行 NT5DS (Windows NTP) 时间同步（在默认 Windows 时间服务层次结构中，这意味着使用 PDCE）。 来宾与 PDCE 取得联系。 刷新所有现有 Kerberos 票证。  
   
-16. 来宾将 DFSR 或 NTFRS 服务配置为自动运行。 来宾将删除所有现有的 DFSR 和 NTFRS 数据库文件（默认值： c:\windows\ntfrs 和 c:\system volume information\dfsr @ no__t-0 *< database_GUID >* ），以便在下次服务时强制执行 SYSVOL 的非权威同步首先. 来宾将不会删除 SYSVOL 的文件内容，以便在稍后同步启动时预植入 SYSVOL。  
+16. 来宾将 DFSR 或 NTFRS 服务配置为自动运行。 来宾将删除所有现有的 DFSR 和 NTFRS 数据库文件（默认值： c:\windows\ntfrs 和 c:\system volume information\dfsr\\ *< database_GUID >* ），以便在下一次启动服务时强制执行 SYSVOL 的非权威同步。 来宾将不会删除 SYSVOL 的文件内容，以便在稍后同步启动时预植入 SYSVOL。  
   
 17. 已重命名来宾。 来宾上的 DS 角色服务器服务开始进行 AD DS 配置（升级），将现有的 NTDS.DIT 数据库文件用作源，而不是同普通升级一样使用 c:\windows\system32 中包含的模板数据库作为源。  
   
@@ -192,7 +192,7 @@ AD DS 依赖于虚拟机监控程序平台以显示名为 **VM 生成 ID** 的�
   
 -   如果使用 FRS，则来宾将停止 NTFRS 服务并设置 D2 BURFLAGS 注册表值。 然后，它将启动 NTFRS 服务（该服务非权威地复制入站），并尽可能重新使用现有未改变的 SYSVOL 数据。  
   
--   如果使用 DFSR，来宾将停止 DFSR 服务并删除 DFSR 数据库文件（默认位置：%systemroot%\system volume information\dfsr @ no__t-0 *<database GUID>* ）。 然后，它将启动 DFSR 服务（该服务非权威地复制入站），并尽可能重新使用现有未改变的 SYSVOL 数据。  
+-   如果使用 DFSR，来宾将停止 DFSR 服务并删除 DFSR 数据库文件（默认位置：%systemroot%\system volume information\dfsr\\ *<database GUID>* ）。 然后，它将启动 DFSR 服务（该服务非权威地复制入站），并尽可能重新使用现有未改变的 SYSVOL 数据。  
   
 > [!NOTE]  
 > -   如果虚拟机监控程序未提供用于比较的 VM 生成 ID，则虚拟机监控程序将无法支持虚拟化安全措施，而且来宾将如同运行 Windows Server 2008 R2 或更早版本的虚拟化域控制器一样运行。 如果存在使用 USN 开始复制的尝试（这些 USN 未超过伙伴 DC 见到的最后一个最高 USN），则来宾将实现 USN 回滚隔离保护。 有关 USN 回滚隔离保护的详细信息，请参阅 [USN 和 USN 回滚](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx)  

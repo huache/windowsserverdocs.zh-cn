@@ -22,14 +22,14 @@ ms.locfileid: "71377162"
 ---
 # <a name="finger"></a>finger
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 显示有关运行 finger 服务或后台程序的指定远程计算机（通常是运行 UNIX 的计算机）上的用户或用户的信息。 远程计算机指定用户信息显示的格式和输出。 使用不带参数的**指针**会显示帮助。 
 ## <a name="syntax"></a>语法
 ```
 finger [-l] [<User>] [@<Host>] [...]
 ```
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 | 参数 |                                                                            描述                                                                            |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,7 +39,7 @@ finger [-l] [<User>] [@<Host>] [...]
 |    /?     |                                                               在命令提示符下显示帮助。                                                                |
 
 ## <a name="remarks"></a>备注
-可以指定多个 @no__t 0 个参数。
+可以指定多个 User@Host 参数。
 必须使用连字符（-）而不是斜线（/）作为**finger**参数的前缀。
 仅当 Internet 协议（TCP/IP）协议安装为网络连接中的网络适配器属性中的组件时，此命令才可用。
 Windows Server 2003 不提供 finger 服务。

@@ -22,7 +22,7 @@ ms.locfileid: "71372068"
 ---
 # <a name="prnmngr"></a>prnmngr
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 除了设置和显示默认打印机外，还可以添加、删除和列出打印机或打印机连接。
 
@@ -33,7 +33,7 @@ cscript Prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <ServerName>]
 [-w <Password>]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |           参数           |                                                                                                                                                                                        描述                                                                                                                                                                                        |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -47,12 +47,12 @@ cscript Prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <ServerName>]
 |        -s <ServerName>        |                                                                                                                  指定承载要管理的打印机的远程计算机的名称。 如果未指定计算机，则使用本地计算机。                                                                                                                  |
 |       -p \<printerName >       |                                                                                                                                                                指定要管理的打印机的名称。                                                                                                                                                                 |
 |     -m \<DrivermodelName >     |                                                                                                          指定要安装的驱动程序（按名称）。 驱动程序通常是以支持的打印机型号命名的。 有关详细信息，请参阅打印机文档。                                                                                                           |
-|        -r \<PortName >         |                                                                         指定打印机的连接端口。 如果这是并行端口或串行端口，请使用端口的 ID （例如，LPT1：或 COM1：）。 如果这是 TCP/IP 端口，请使用添加端口时指定的端口名称。                                                                          |
-| -u \<UserName >-w \<Password > | 指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。 |
+|        -r \<Portvalue >         |                                                                         指定打印机的连接端口。 如果这是并行端口或串行端口，请使用端口的 ID （例如，LPT1：或 COM1：）。 如果这是 TCP/IP 端口，请使用添加端口时指定的端口名称。                                                                          |
+| -u \<用户名 >-w \<密码 > | 指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。 |
 |              /?               |                                                                                                                                                                           在命令提示符下显示帮助。                                                                                                                                                                            |
 
 ## <a name="remarks"></a>备注
--   **Prndrvr**命令是位于%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t 目录中的 Visual Basic 脚本。 若要使用此命令，请在命令提示符下键入**cscript** ，后跟**prnmngr**文件的完整路径，或将目录更改为相应的文件夹。 例如：
+-   **Prndrvr**命令是位于%windir%\system32\ printing_Admin_Scripts\\<language> 目录中的 Visual Basic 脚本。 若要使用此命令，请在命令提示符下键入**cscript** ，后跟**prnmngr**文件的完整路径，或将目录更改为相应的文件夹。 例如：
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr
     ```
@@ -69,5 +69,5 @@ cscript prnmngr -d -s HRServer -p colorprinter_2
 ```
 
 #### <a name="additional-references"></a>其他参考
-[命令行语法关键字](command-line-syntax-key.md)
+[命令行语法键](command-line-syntax-key.md)
 [打印命令参考](print-command-reference.md)

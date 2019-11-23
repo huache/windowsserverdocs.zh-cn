@@ -25,14 +25,14 @@ ms.locfileid: "71385287"
 
 如果尚未这样做，请创建用于 Windows 管理中心的[工具扩展](../develop-tool.md)。 完成此操作后，请记下创建扩展时使用的值：
 
-| ReplTest1 | 说明 | 示例 |
+| 值 | 说明 | 示例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | 公司名称（包含空格） | ```Contoso``` |
 | ```{!Tool Name}``` | 工具名称（包含空格） | ```InstallOnNode``` |
 
 在工具扩展文件夹内创建一个 ```Node``` 文件夹（```{!Tool Name}\Node```）。 使用此 API 时，此文件夹中的任何内容都将复制到托管节点。 添加用例所需的任何文件。 
 
-另外，创建 ```{!Tool Name}\Node\installNode.ps1``` 脚本。 将所有文件从 ```{!Tool Name}\Node``` 文件夹复制到托管节点后，将在托管节点上运行此脚本。 为用例添加任何其他逻辑。 @No__t-0 文件的示例：
+同时创建 ```{!Tool Name}\Node\installNode.ps1``` 脚本。 将所有文件从 ```{!Tool Name}\Node``` 文件夹复制到托管节点后，将在托管节点上运行此脚本。 为用例添加任何其他逻辑。 ```{!Tool Name}\Node\installNode.ps1``` 文件的示例：
 
 ``` ps1
 # Add logic for installing payload on managed node
@@ -105,7 +105,7 @@ this.post('contoso.install-on-node', '1.0.0',
       );
 ```
 
-还要更新 ```\src\app\default.component.html``` 到：
+还要将 ```\src\app\default.component.html``` 更新为：
 ``` html
 <button (click)="installOnNode()">Click to install</button>
 <sme-loading-wheel *ngIf="loading" size="large"></sme-loading-wheel>
@@ -138,7 +138,7 @@ export class DefaultModule { }
 
 如果你之前未创建扩展包，请按照[发布扩展](../publish-extensions.md)指南进行操作。 
 > [!IMPORTANT]
-> 在此扩展的 nuspec 文件中，```<id>``` 值与项目的 @no__t 中的名称匹配，```<version>``` 匹配添加到 @no__t 3 的内容，这一点非常重要。 另外，在 @no__t 下添加一个条目： 
+> 在此扩展的 nuspec 文件中，```<id>``` 值与项目 ```manifest.json``` 中的名称匹配，并且 ```<version>``` 与 ```\src\app\default.component.ts```中添加的内容匹配，这一点非常重要。 此外，在 ```<files>```下添加一个条目： 
 > 
 > ```<file src="Node\**\*.*" target="Node" />```。
 
@@ -165,4 +165,4 @@ export class DefaultModule { }
 </package>
 ```
 
-创建此包后，请向该源添加一个路径。 在 Windows 管理中心中转到 "设置" > 扩展 > 源 "，并将路径添加到包所在的位置。 完成安装扩展后，应该可以单击 ```install``` 按钮，将调用 API。  
+创建此包后，请向该源添加一个路径。 在 Windows 管理中心中转到 "设置" > 扩展 > 源 "，并将路径添加到包所在的位置。 完成安装扩展后，应该可以单击 "```install```" 按钮，将调用 API。  

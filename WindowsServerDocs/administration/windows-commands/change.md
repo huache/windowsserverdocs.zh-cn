@@ -22,7 +22,7 @@ ms.locfileid: "71379555"
 ---
 # <a name="change"></a>change
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更改登录、COM 端口映射和安装模式远程桌面会话主机（rd 会话主机）服务器设置。
 > [!NOTE]
@@ -33,7 +33,7 @@ ms.locfileid: "71379555"
 > change port
 > change user
 > ```
-> ## <a name="parameters"></a>Parameters
+> ## <a name="parameters"></a>参数
 > 
 > |            参数            |                                                   描述                                                   |
 > |---------------------------------|-----------------------------------------------------------------------------------------------------------------|
@@ -43,4 +43,4 @@ ms.locfileid: "71379555"
 > 
 > #### <a name="additional-references"></a>其他参考
 > [命令行语法解答](command-line-syntax-key.md)
-> [远程桌面服务&#40;终端服务和&#41;命令参考](remote-desktop-services-terminal-services-command-reference.md)
+> [远程桌面服务 & #40;终端服务和 #41;命令参考](remote-desktop-services-terminal-services-command-reference.md)

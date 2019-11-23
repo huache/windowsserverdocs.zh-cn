@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369215"
 ---
-# <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附录 I：为 Active Directory 中的受保护帐户和组创建管理帐户
+# <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附录 I：为 Active Directory 中受保护的帐户和组创建管理帐户
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -42,7 +42,7 @@ ms.locfileid: "71369215"
 在生产环境中实施这些过程之前，应全面测试所有这些过程并根据环境需要对其进行修改。 还应验证所有设置是否按预期方式工作（本附录中提供了一些测试过程），并且你应该测试灾难恢复方案，在此方案中，管理帐户不能用于填充受保护的组以进行恢复之. 有关备份和还原 Active Directory 的详细信息，请参阅[AD DS 备份和恢复循序渐进指南](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)。  
   
 > [!NOTE]  
-> 通过实施此附录中所述的步骤，你将创建可管理每个域中所有受保护组的成员身份的帐户，而不仅是最高特权 Active Directory 组（如 EAs、DAs 和 BAs）。 有关 Active Directory 中的受保护组的详细信息，请参阅 @no__t 0Appendix C：Active Directory @ no__t 中的受保护帐户和组。  
+> 通过实施此附录中所述的步骤，你将创建可管理每个域中所有受保护组的成员身份的帐户，而不仅是最高特权 Active Directory 组（如 EAs、DAs 和 BAs）。 有关 Active Directory 中的受保护组的详细信息，请参阅[附录 C： Active Directory 中的受保护帐户和组](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  
   
 ### <a name="step-by-step-instructions-for-creating-management-accounts-for-protected-groups"></a>为受保护组创建管理帐户的分步说明  
   
@@ -60,7 +60,7 @@ ms.locfileid: "71369215"
   
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_116.png)  
   
-3.  右键单击刚创建的组，单击“属性”，然后单击“对象”选项卡。在组的 "**对象属性**" 对话框中，选择 "**防止对象被意外删除**"，这不仅会阻止以其他方式授权的用户删除组，而且还会将其移动到另一个 OU （除非首先返回该属性）状态.  
+3.  右键单击刚创建的组，单击 "**属性**"，然后单击 "**对象**" 选项卡。在组的 "**对象属性**" 对话框中，选择 "**防止对象被意外删除**"，这不仅会阻止以其他方式授权的用户删除组，而且还会将其移动到另一个 OU （除非首先取消选择该属性）。  
   
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_117.png)  
   
@@ -71,7 +71,7 @@ ms.locfileid: "71369215"
   
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_118.png)  
   
-5.  如果尚未执行此操作，请在 " **Active Directory 用户和计算机**" 控制台中，单击 "**查看**"，然后选择 "**高级功能**"。 右键单击刚创建的组，单击 "**属性**"，然后单击 "**安全**" 选项卡。在“安全” 选项卡中，单击“高级”。  
+5.  如果尚未执行此操作，请在 " **Active Directory 用户和计算机**" 控制台中，单击 "**查看**"，然后选择 "**高级功能**"。 右键单击刚创建的组，单击 "**属性**"，然后单击 "**安全**" 选项卡。在 "**安全**" 选项卡上，单击 "**高级**"。  
   
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_119.png)  
   
@@ -135,12 +135,12 @@ ms.locfileid: "71369215"
 
 8. 单击 "**帐户**" 选项卡。  
 
-9. 在 "**帐户选项**" 字段中，选择 "**敏感帐户，不能被委派**" 标志，选择 "**此帐户支持 kerberos aes 128 位加密**" 和/或 "**此帐户支持 kerberos aes 256 加密**标志"。然后单击 **"确定"** 。  
+9. 在 "**帐户选项**" 字段中，选择 "**敏感帐户，不能被委派**" 标志，选择 "**此帐户支持 kerberos aes 128 位加密**" 和/或 "**此帐户支持 kerberos aes 256 加密**标志"，然后单击 **"确定"** 。  
 
    ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_124.png)  
 
    > [!NOTE]  
-   > 由于此帐户与其他帐户类似，因此，帐户只应在安全的管理主机上使用。 对于环境中的所有安全管理主机，应考虑实现组策略设置 @no__t 0Network 安全性：将 Kerberos @ no__t 允许的加密类型配置为允许安全主机仅允许最安全的加密类型。  
+   > 由于此帐户与其他帐户类似，因此，帐户只应在安全的管理主机上使用。 对于环境中的所有安全管理主机，应考虑实施组策略设置 "**网络安全：配置 Kerberos 允许的加密类型**"，只允许安全主机实现最安全的加密类型。  
    >
    > 尽管为主机实现更安全的加密类型不能减少凭据被盗攻击，但安全主机的适当使用和配置也是如此。 为仅由特权帐户使用的主机设置更强的加密类型只是减少了计算机的整体攻击面。  
    >
@@ -186,7 +186,7 @@ ms.locfileid: "71369215"
 
 19. 在 "**选择用户、联系人、计算机**" 对话框中，键入 "**拒绝的 RODC 密码复制组**"，然后单击 "**检查名称**"。 在对象选取器中为组的名称加下划线后，单击 **"确定"** ，然后验证该帐户是否为以下屏幕截图中显示的两个组的成员。 不要将该帐户添加到任何受保护的组。  
 
-20. 单击 **“确定”** 。  
+20. 单击**确定**。  
 
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
 
@@ -233,7 +233,7 @@ ms.locfileid: "71369215"
   
 您可以改为创建一个组，以向其委派填充和 unpopulate 受保护组的权限，但需要保护该组和您在其中放置的帐户。 由于目录中应该有很少的帐户被授予管理受保护组成员身份的能力，因此创建单个帐户可能是最简单的方法。  
   
-不管你如何选择创建一个将管理帐户放置到其中的组，都应确保按前面所述保护每个帐户。 还应考虑实现 GPO 限制 @no__t，类似于 0Appendix D：Active Directory @ no__t 中保护内置管理员帐户。  
+不管你如何选择创建一个将管理帐户放置到其中的组，都应确保按前面所述保护每个帐户。 还应考虑实现 GPO 限制，这与在[Active Directory 中保护内置管理员帐户的附录 D：保护内置管理员帐户的步骤](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)类似。  
   
 ##### <a name="auditing-management-accounts"></a>审核管理帐户
 
@@ -247,7 +247,7 @@ SIEM 解决方案从涉及的安全源（例如，事件日志、应用程序数
 
 在此过程中，你将配置对域的 AdminSDHolder 对象的权限，以允许新创建的管理帐户修改域中受保护组的成员身份。 不能通过图形用户界面（GUI）执行此过程。  
   
-如 0Appendix C @no__t 中所述：Active Directory @ no__t 中受保护的帐户和组-在 SDProp 任务运行时，将在域的 AdminSDHolder 对象上将 ACL "复制" 到受保护的对象。 受保护的组和帐户不会从 AdminSDHolder 对象继承其权限;它们的权限显式设置为匹配 AdminSDHolder 对象上的权限。 因此，修改 AdminSDHolder 对象上的权限时，必须对其进行修改，使其适用于目标为受保护对象的类型。  
+如[附录 C：受保护的帐户和 Active Directory 中的组中](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)所述，在 SDProp 任务运行时，域的 AdminSDHolder 对象上的 ACL 将被有效地 "复制" 到受保护的对象。 受保护的组和帐户不会从 AdminSDHolder 对象继承其权限;它们的权限显式设置为匹配 AdminSDHolder 对象上的权限。 因此，修改 AdminSDHolder 对象上的权限时，必须对其进行修改，使其适用于目标为受保护对象的类型。  
   
 在这种情况下，你将授予新创建的管理帐户，使其能够读取和写入组对象上的成员属性。 但是，AdminSDHolder 对象不是组对象，并且不会在图形 ACL 编辑器中公开组属性。 出于此原因，你将通过 Dsacls 命令行实用工具实现权限更改。 若要授予（禁用）管理帐户修改受保护组成员身份的权限，请执行以下步骤：  
   
@@ -286,7 +286,7 @@ SIEM 解决方案从涉及的安全源（例如，事件日志、应用程序数
   
    有关使用**Dsacls**的详细信息，请在命令提示符处键入 Dsacls，不使用任何参数。  
   
-   如果已为域创建了多个管理帐户，则应为每个帐户运行 Dsacls 命令。 在 AdminSDHolder 对象上完成 ACL 配置后，应强制 SDProp 运行，或等待其计划的运行完成。 有关强制 SDProp 运行的信息，请参阅 [Appendix C：Active Directory @ no__t 中的受保护帐户和组。  
+   如果已为域创建了多个管理帐户，则应为每个帐户运行 Dsacls 命令。 在 AdminSDHolder 对象上完成 ACL 配置后，应强制 SDProp 运行，或等待其计划的运行完成。 有关强制 SDProp 运行的信息，请参阅[附录 C： Active Directory 中的受保护帐户和组](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)中的 "手动运行 SDProp"。  
   
    运行 SDProp 时，你可以验证你对 AdminSDHolder 对象所做的更改是否已应用于域中的受保护组。 由于前面所述的原因，你无法通过查看 AdminSDHolder 对象上的 ACL 来验证这一点，但你可以通过查看受保护组的 Acl 来验证是否已应用这些权限。  
   
@@ -317,7 +317,7 @@ SIEM 解决方案从涉及的安全源（例如，事件日志、应用程序数
   
 ##### <a name="test-the-group-that-will-enable-and-disable-management-accounts"></a>测试将启用和禁用管理帐户的组
   
-1.  若要测试启用管理帐户并重置其密码，请使用作为在 [Appendix I 中创建的组的成员的帐户登录到安全管理工作站：为 Active Directory @ no__t 中的受保护帐户和组创建管理帐户。  
+1.  若要测试如何启用管理帐户并重置其密码，请使用 "[附录 I：在 Active Directory 中创建受保护帐户和组的管理帐户](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)" 中创建的组的成员帐户登录到安全管理工作站。  
   
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_142.gif)  
   

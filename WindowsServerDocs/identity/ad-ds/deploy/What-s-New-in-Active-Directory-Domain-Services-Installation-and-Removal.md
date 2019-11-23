@@ -43,7 +43,7 @@ AD DS 安装包括以下功能：
 > [!WARNING]  
 > 从 Windows Server 2012 开始，旧 Active Directory 域服务安装向导（dcpromo.exe）已弃用。  
 
-在[安装 Active Directory 域服务&#40;级别 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)中，UI 过程显示如何启动添加角色向导以安装 AD DS 服务器角色二进制文件，然后运行 Active Directory 域服务配置向导完成域控制器安装。 Windows PowerShell 示例显示如何使用 AD DS 部署 cmdlet 完成这两个步骤。  
+在[安装 Active Directory 域服务&#40;级别 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)中，UI 过程显示如何启动添加角色向导以安装 AD DS 服务器角色二进制文件，然后运行 Active Directory 域服务配置向导来完成域控制器安装。 Windows PowerShell 示例显示如何使用 AD DS 部署 cmdlet 完成这两个步骤。  
   
 ## <a name="BKMK_NewAdprep"></a>Adprep.log 集成
 
@@ -124,7 +124,7 @@ AD DS 安装向导将在安装开始前，检查是否满足以下先决条件�
 
 ## <a name="BKMK_SystemReqs"></a>系统要求
 
-Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化。 有关详细信息，请参阅[Windows Server 2008 R2 SP1 系统要求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) ）。  
+Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化。 有关详细信息，请参阅[Windows Server 2008 R2 SP1 系统要求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)。  
 
 部分功能可能具有附加要求。 例如，虚拟域控制器克隆功能需要 PDC 仿真器运行 Windows Server 2012 和运行 Windows Server 2012 且安装了 Hyper-v 角色的计算机。  
 
@@ -168,7 +168,7 @@ Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化
 
    这种情况下返回的错误消息如下：  
 
-   无法连接到复制源域控制器 *源域控制器名称*。 （例外：Logonfailure：用户名未知或密码错误）  
+   无法连接到复制源域控制器 *源域控制器名称*。 （异常：Logonfailure：用户名未知或密码错误）  
 
    如果让目标服务器加入域，然后使用智能卡执行安装，安装成功。  
   
@@ -176,7 +176,7 @@ Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化
 
    在这种情况下，需要独立于不支持本机 64 位进程的 cmdlet 运行 ADDSDeployment cmdlet。  
 
-- Windows Server 2012 中有一个名为 "复原文件系统" 的新文件系统。 请勿将 Active Directory 数据库、日志文件或 SYSVOL 存储到使用恢复文件系统 (ReFS) 格式化的数据卷上。 有关 ReFS 的详细信息，请参阅 Windows 的下一代文件系统 [Building：ReFS @ no__t-0。  
+- Windows Server 2012 中有一个名为 "复原文件系统" 的新文件系统。 请勿将 Active Directory 数据库、日志文件或 SYSVOL 存储到使用恢复文件系统 (ReFS) 格式化的数据卷上。 有关 ReFS 的详细信息，请参阅 [构建 Windows 的下一代文件系统：ReFS](http://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)。  
 - 在服务器管理器中，在服务器核心安装上运行 AD DS 或其他服务器角色并且已升级到 Windows Server 2012 的服务器，该服务器角色可以显示为红色状态，即使按预期方式收集事件和状态也是如此。 运行预发行版本 Windows Server 2012 的服务器核心安装的服务器也会受到影响。  
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>如果错误阻止关键复制，Active Directory 域服务安装将挂起。

@@ -22,7 +22,7 @@ ms.locfileid: "71363898"
 ---
 # <a name="unlodctr"></a>unlodctr
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 从系统注册表中删除服务或设备驱动程序的性能计数器名称和说明文本。   
 
@@ -30,10 +30,10 @@ ms.locfileid: "71363898"
 ```  
 Unlodctr <DriverName>   
 ```  
-### <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>参数  
 |参数|描述|  
 |-------|--------|  
-|\<DriverName >|从 Windows Server 2003 注册表删除驱动程序或服务 @no__t 的性能计数器名称设置和说明文本。|  
+|\<DriverName >|从 Windows Server 2003 注册表删除驱动程序或服务 <DriverName> 的性能计数器名称设置和说明文本。|  
 |/?|在命令提示符下显示帮助。|  
 
 ## <a name="remarks"></a>备注  

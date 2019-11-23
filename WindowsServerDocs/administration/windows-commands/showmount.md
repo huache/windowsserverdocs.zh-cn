@@ -22,7 +22,7 @@ ms.locfileid: "71383911"
 ---
 # <a name="showmount"></a>showmount
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 可以使用**showmount**显示已装载的目录。  
   
@@ -32,13 +32,13 @@ showmount {-e|-a|-d} <Server>
 ```
 
 ## <a name="description"></a>描述  
-**Showmount**命令 @ no__t-1line 实用工具显示*服务器*指定的计算机上的 NFS 服务器导出的已装载文件系统的相关信息。 如果未提供*服务器*， **showmount**将显示运行**showmount**命令的计算机的相关信息。  
+**Showmount**命令\-line 实用工具显示*服务器*指定的计算机上的 NFS 服务器导出的已装载文件系统的相关信息。 如果未提供*服务器*， **showmount**将显示运行**showmount**命令的计算机的相关信息。  
   
 您必须提供以下选项之一：  
   
 - **\-e** -显示服务器上导出的所有文件系统。  
-- **\-a** -显示所有网络文件系统 \(NFS @ no__t 客户端和服务器上每个已安装的目录。  
+- **\-** -显示所有网络文件系统 \(NFS\) 客户端和服务器上安装的每个目录。  
 - **\-d** -显示 NFS 客户端当前装载的服务器上的所有目录。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [网络文件系统命令参考服务](services-for-network-file-system-command-reference.md)  

@@ -32,12 +32,12 @@ ms.locfileid: "71370952"
 set metadata [<Drive>:][<Path>]<MetaData.cab>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|[@no__t >：][<Path>]|指定元数据文件的创建位置。|
-|\<MetaData >|指定用于存储卷影创建元数据的 cab 文件的名称。|
+|[\<驱动器 >：][<Path>]|指定元数据文件的创建位置。|
+|\<元数据 .cab >|指定用于存储卷影创建元数据的 cab 文件的名称。|
 
 #### <a name="additional-references"></a>其他参考
 

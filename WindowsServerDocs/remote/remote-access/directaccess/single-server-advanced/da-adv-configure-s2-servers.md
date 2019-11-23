@@ -56,7 +56,7 @@ ms.locfileid: "71388632"
   
 6.  在“安装进度”页上，确认安装是否已成功，然后单击“关闭”。  
   
-@no__t 0Installation 进度成功](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![安装进度成功](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -103,7 +103,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 6.  如有必要，选中“使用强制隧道”复选框，以通过远程访问服务器对所有客户端通信进行路由（路由到内部网络和 Internet）。  
   
-7.  单击“下一步”。  
+7.  单击**下一步**。  
   
 8.  在“网络连接助手”页上：  
   
@@ -163,7 +163,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 3.  在“DNS”页上的表中，输入将应用为名称解析策略表 (NRPT) 免除的任何其他名称后缀。 选择本地名称解析选项，然后单击“下一步”。  
   
-4.  在“DNS 后缀搜索列表”页上，远程访问服务器会自动检测部署中任何的域后缀。 使用“添加”和“删除”按钮从要使用的域后缀列表中添加和删除域后缀。 若要添加新的域后缀，请在“新后缀”中输入该后缀，然后单击“添加”。 单击“下一步”。  
+4.  在“DNS 后缀搜索列表”页上，远程访问服务器会自动检测部署中任何的域后缀。 使用“添加”和“删除”按钮从要使用的域后缀列表中添加和删除域后缀。 若要添加新的域后缀，请在“新后缀”中输入该后缀，然后单击“添加”。 单击**下一步**。  
   
 5.  在“管理”页上，添加任何未自动检测到的管理服务器，然后单击“下一步”。 远程访问将自动添加域控制器和 System Center Configuration Manager 服务器。  
   
@@ -186,29 +186,29 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 3.  若要将访问权限仅限制在应用程序服务器安全组中的服务器，请选中“只允许访问安全组中包含的服务器”复选框。  
   
-4.  若要在不加密的情况下使用身份验证，请选择 "不加密流量 @no__t 0Do"。仅使用 "仅身份验证 @ no__t" 复选框。  
+4.  若要在不加密的情况下使用身份验证，请选择 "**不加密流量"。"仅使用身份验证**" 复选框。  
   
 5.  单击 **“完成”** 。  
   
 ## <a name="BKMK_GPO"></a>2.7。 配置摘要和备用 GPO  
 远程访问配置完成后，将显示“远程访问审阅”。 你可以审阅之前选择的所有设置，包括：  
   
-1.   “GPO 设置”：将列出 DirectAccess 服务器 GPO 名称和客户端 GPO 名称。 此外，你可以单击“GPO 设置”标题旁边的“更改”链接以修改 GPO 设置。  
+1.  **GPO 设置**：列出 DirectAccess 服务器 GPO 名称和客户端 GPO 名称。 此外，你可以单击“GPO 设置”标题旁边的“更改”链接以修改 GPO 设置。  
   
-2.   “远程客户端”：将显示 DirectAccess 客户端配置，包括安全组、强制隧道状态、连接性验证程序和 DirectAccess 连接名称。  
+2.  **远程客户端**：显示 DirectAccess 客户端配置，包括安全组、强制隧道状态、连接性验证程序和 DirectAccess 连接名称。  
   
-3.   “远程访问服务器”：将显示 DirectAccess 配置，包括公用名称/地址、网络适配器配置、证书信息和 OTP 信息（若已配置）。  
+3.  **远程访问服务器**：显示 DirectAccess 配置，包括公用名称/地址、网络适配器配置、证书信息和 OTP 信息（如果已配置）。  
   
-4.   “基础结构服务器”：此列表包括网络位置服务器 URL、DirectAccess 客户端使用的 DNS 后缀和管理服务器信息。  
+4.  **基础结构服务器**：此列表包括网络位置服务器 URL、DirectAccess 客户端使用的 DNS 后缀和管理服务器信息。  
   
-5.   “应用程序服务器”：除了显示特定应用程序服务器的端到端身份验证的状态以外，还将显示 DirectAccess 远程管理状态。  
+5.  **应用程序服务器**：除了显示特定应用程序服务器的端到端身份验证的状态以外，还会显示 DirectAccess 远程管理状态。  
   
 ## <a name="BKMK_PS"></a>2.8。 如何使用 Windows PowerShell 配置远程访问服务器  
-@no__t 0Windows PowerShell](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
+![Windows PowerShell](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
-若要通过使用以下参数，仅在带有根 **corp.contoso.com** 的域中在远程访问的边缘拓扑中为 DirectAccess 执行完全安装：服务器 GPO：**DirectAccess Server Settings**，客户端 GPO：DirectAccess Client Settings，内部网络适配器：**Corpnet**，外部网络适配器：**Internet**、ConnectTto address： **edge1.contoso.com**和网络位置服务器： **nls.corp.contoso.com**：  
+仅在具有根**corp.contoso.com**并使用以下参数的域中，以远程访问的边缘拓扑为 directaccess 执行完全安装：服务器 GPO： **directaccess 服务器设置**、客户端 GPO： directaccess 客户端设置、内部网络适配器：**公司**网络、外部网络适配器： **Internet**、ConnectTto 地址： **edge1.contoso.com**和网络位置服务器： **nls.corp.contoso.com**：  
   
 ```  
 Install-RemoteAccess -Force -PassThru -ServerGpoName 'corp.contoso.com\DirectAccess Server Settings' -ClientGpoName 'corp.contoso.com\DirectAccess Client Settings' -DAInstallType 'FullInstall' -InternetInterface 'Internet' -InternalInterface 'Corpnet' -ConnectToAddress 'edge1.contoso.com' -NlsUrl 'https://nls.corp.contoso.com/'  
@@ -243,11 +243,11 @@ Set-DAClientExperienceConfiguration -FriendlyName 'Contoso DirectAccess Connecti
   
 ## <a name="BKMK_Links"></a>上一步  
   
--   [步骤 1：配置高级 DirectAccess 基础结构](da-adv-configure-s1-infrastructure.md)  
+-   [步骤1：配置高级 DirectAccess 基础结构](da-adv-configure-s1-infrastructure.md)  
   
 ## <a name="next-step"></a>下一步  
   
--   [步骤 3：验证部署](Step-3-Verify-the-Deployment.md)  
+-   [步骤3：验证部署](Step-3-Verify-the-Deployment.md)  
   
 
 

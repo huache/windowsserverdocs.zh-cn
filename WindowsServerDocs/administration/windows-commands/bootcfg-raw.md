@@ -22,7 +22,7 @@ ms.locfileid: "71379899"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 将指定为字符串的操作系统加载选项添加到 Boot.ini 文件的 **[操作系统]** 部分中的操作系统项。
 
@@ -30,14 +30,14 @@ ms.locfileid: "71379899"
 ```
 bootcfg /raw [/s <computer> [/u <Domain>\<User> /p <Password>]] <OSLoadOptionsString> [/id <OSEntryLineNum>] [/a]
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |         术语          |                                                                                                            定义                                                                                                             |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /s <computer>     |                                                        指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                                         |
-| /u <Domain> \\ @ no__t-2  |               使用 <User> 或 <Domain> @ no__t-2 @ no__t）指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。                |
+| /u <Domain> \\<User>  |               使用 <User> 或 <Domain>\\<User>指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。                |
 |     /p <Password>     |                                                                       指定在 **/u**参数中指定的用户帐户的密码。                                                                       |
-| <OSLoadOptionsString> | 指定要添加到操作系统项的操作系统加载选项。 这些加载选项将替换与操作系统条目关联的任何现有加载选项。 无 @no__t 验证完成-0。 |
+| <OSLoadOptionsString> | 指定要添加到操作系统项的操作系统加载选项。 这些加载选项将替换与操作系统条目关联的任何现有加载选项。 未完成 <OSLoadOptions> 验证。 |
 | /id <OSEntryLineNum>  |                       指定要更新的 Boot.ini 文件的 [操作系统] 部分中的操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。                       |
 |          /a           |                                                       指定要添加的操作系统选项应追加到任何现有的操作系统选项。                                                        |
 |          /?           |                                                                                               在命令提示符下显示帮助。                                                                                                |

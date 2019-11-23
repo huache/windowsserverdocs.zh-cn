@@ -23,12 +23,12 @@ ms.locfileid: "71396448"
 
 安装 NPS 后，可以管理 NPSs：
 
-- 在本地，通过使用 NPS Microsoft 管理控制台 \(MMC @ no__t 管理单元、管理工具中的静态 NPS 控制台、Windows PowerShell 命令或用于 NPS 的网络 Shell \(Netsh @ no__t-3 命令。
+- 在本地，通过使用 NPS Microsoft 管理控制台 \(MMC\) 管理单元，在 "管理工具"、"Windows PowerShell 命令" 或 "网络 Shell" 中使用 "静态 NPS" 控制台 \(用于 NPS 的 Netsh\) 命令。
 - 通过使用 NPS MMC 管理单元、用于 NPS 的 Netsh 命令、用于 NPS 的 Windows PowerShell 命令或远程桌面连接。
 - 从远程工作站使用远程桌面连接与其他工具（例如 NPS MMC 或 Windows PowerShell）结合使用。
 
 >[!NOTE]
->在 Windows Server 2016 中，可以使用 NPS 控制台来管理本地 NPS。 若要同时管理远程和本地 NPSs，必须使用 NPS MMC snap @ no__t-0in。
+>在 Windows Server 2016 中，可以使用 NPS 控制台来管理本地 NPS。 若要同时管理远程和本地 NPSs，必须使用中的 NPS MMC snap\-。
 
 以下各节提供有关如何管理本地和远程 NPSs 的说明。
 
@@ -44,32 +44,32 @@ ms.locfileid: "71396448"
 
 1. 在服务器管理器中，单击 "**工具**"，然后单击 "**网络策略服务器**"。 此时将打开 NPS 控制台。
 
-2. 在 NPS 控制台中，单击 "NPS \(Local @ no__t-1"。 在详细信息窗格中，选择 "**标准配置**" 或 "**高级配置**"，然后根据你的选择执行以下操作之一：
+2. 在 NPS 控制台中，单击 "NPS \(本地\)"。 在详细信息窗格中，选择 "**标准配置**" 或 "**高级配置**"，然后根据你的选择执行以下操作之一：
     - 如果选择 "**标准配置**"，请从列表中选择一个方案，然后按照说明启动配置向导。
     - 如果选择 "**高级配置**"，请单击箭头展开 "**高级配置选项**"，然后根据所需的 NPS 功能（radius 服务器、radius 代理）查看和配置可用选项。
 
-## <a name="manage-multiple-npss-by-using-the-nps-mmc-snap-in"></a>使用 NPS MMC Snap @ no__t-0in 管理多个 NPSs
+## <a name="manage-multiple-npss-by-using-the-nps-mmc-snap-in"></a>使用 NPS MMC Snap\-在中管理多个 NPSs
 
-可以使用此过程通过使用 NPS MMC snap @ no__t-0in 来管理本地 NPS 和多个远程 NPSs。
+您可以使用此过程来管理本地 NPS 和多个远程 NPSs，方法是使用中的 NPS MMC snap\-。
 
 在执行以下过程之前，必须在本地计算机和远程计算机上安装 NPS。
 
-根据网络条件和使用 NPS MMC snap @ no__t-0in 管理的 NPSs 数，MMC snap @ no__t-1in 的响应可能会很慢。 此外，通过使用 NPS snap @ no__t-0in 在远程管理会话过程中通过网络发送 NPS 配置流量。 确保你的网络在物理上是安全的，并且恶意用户无权访问此网络流量。
+根据网络条件和使用\-中的 NPS MMC 管理单元管理的 NPSs 数量，中的 MMC snap\-的响应可能会很慢。 此外，通过使用中的 NPS snap\-在远程管理会话过程中通过网络发送 NPS 配置流量。 确保你的网络在物理上是安全的，并且恶意用户无权访问此网络流量。
 
 **管理凭据** 
 
 若要完成此过程，您必须是 Administrators 组的成员。
 
-### <a name="to-manage-multiple-npss-by-using-the-nps-snap-in"></a>使用 NPS snap @ no__t-0in 管理多个 NPSs
+### <a name="to-manage-multiple-npss-by-using-the-nps-snap-in"></a>使用中的 NPS snap\-管理多个 NPSs
 
 1. 若要打开 MMC，请以管理员身份运行 Windows PowerShell。 在 Windows PowerShell 中，键入**mmc**，然后按 enter。 将打开 Microsoft 管理控制台。
-2. 在 MMC 的 "**文件**" 菜单上，单击 "**添加/删除 Snap @ no__t-2in**"。 此时将打开 "**添加/删除 Snap @ no__t-1ins** " 对话框。
-3. 在 "**添加或删除 snap @ no__t-1ins**" 的 "**可用" snap @ no__t-3ins**中，向下滚动列表，单击 "**网络策略服务器**"，然后单击 "**添加**"。 此时将打开 "**选择计算机**" 对话框。
-4. 在 "**选择计算机**" 中，验证是否选择了 **"运行此控制台的本地计算机 \(the 计算机**"，然后单击 **"确定"** 。 将本地 NPS 的 snap @ no__t-0in 添加到**选定的 snap @ no__t-2ins**中的列表。
-5. 在 "**添加或删除 snap @ no__t-1ins**" 的 "**可用" snap @ no__t-3ins**中，确保仍选中 "**网络策略服务器**"，然后单击 "**添加**"。 此时将打开 "**选择计算机**" 对话框。
-6. 在 "**选择计算机**" 中，单击 "**另一台计算机**"，然后键入要使用 NPS snap @ no__t-4IN 管理的远程 NPS 的 IP 地址或完全限定的域名 @no__t 2FQDN @ no__t）。 还可以单击 "**浏览**" 细读要添加的计算机的目录。 单击 **“确定”** 。
-7. 重复步骤5和步骤6，将更多 NPSs 添加到 NPS snap @ no__t-0in。 添加要管理的所有 NPSs 后，单击 **"确定"** 。
-8. 若要保存 NPS 管理单元以供以后使用，请单击 "**文件**"，然后单击 "**保存**"。 在 "**另存为**" 对话框中，浏览到要在其中保存该文件的硬盘位置，键入 Microsoft 管理控制台的名称 \( @ no__t-2 文件，然后单击 "**保存**"。 
+2. 在 MMC 的 "**文件**" 菜单上，单击 "**添加/删除管理单元\-** 。 此时将打开 "**添加或删除管理单元\-** " 对话框。
+3. 在 "**添加或删除管理单元\-** " 中，在 "**可用\-" 管理单元**中，向下滚动列表，单击 "**网络策略服务器**"，然后单击 "**添加**"。 此时将打开 "**选择计算机**" 对话框。
+4. 在 "**选择计算机**" 中，验证是否选择了 "**本地计算机 \(运行此控制台的计算机"\)** ，然后单击 **"确定"** 。 本地 NPS 的 "snap\-" 添加到**所选 "管理单元\-** " 中的列表。
+5. 在 "**添加或删除管理单元\-** 中，在"**可用的管理单元\-** "中，确保仍选中"**网络策略服务器**"，然后单击"**添加**"。 此时将打开 "**选择计算机**" 对话框。
+6. 在 "**选择计算机**" 中，单击 "**另一台计算机**"，然后键入要使用中的 NPS snap\-管理的远程 NPS \(FQDN\) 的 IP 地址或完全限定的域名。 还可以单击 "**浏览**" 细读要添加的计算机的目录。 单击**确定**。
+7. 重复步骤5和步骤6，将更多 NPSs 添加到中的 NPS snap\-。 添加要管理的所有 NPSs 后，单击 **"确定"** 。
+8. 若要保存 NPS 管理单元以供以后使用，请单击 "**文件**"，然后单击 "**保存**"。 在 "**另存为**" 对话框中，浏览到要保存文件的硬盘位置，为 Microsoft 管理控制台键入一个名称 \(\) 文件，然后单击 "**保存**"。 
 
 ## <a name="manage-an-nps-by-using-remote-desktop-connection"></a>使用远程桌面连接管理 NPS
 
@@ -80,7 +80,7 @@ ms.locfileid: "71396448"
 可以使用远程桌面连接通过以下两种方法之一来管理多个 NPSs。
 
 1. 分别创建与每个 NPSs 的远程桌面连接。
-2. 使用远程桌面连接到一个 NPS，然后使用该服务器上的 NPS MMC 来管理其他远程服务器。 有关详细信息，请参阅上一节**使用 NPS Mmc Snap @ no__t-1In 管理多个 NPSs**。
+2. 使用远程桌面连接到一个 NPS，然后使用该服务器上的 NPS MMC 来管理其他远程服务器。 有关详细信息，请参阅上一节**使用 NPS mmc 管理单元\-管理多个 NPSs**。
 
 **管理凭据** 
 
@@ -96,7 +96,7 @@ ms.locfileid: "71396448"
     2. 若要为计算机上的所有网络连接启用远程桌面连接，请单击 **"确定"** 。
 3. 在 "**系统属性**" 中的 "**远程桌面**" 中，决定是启用 "**仅允许从运行远程桌面的计算机连接" 网络级别身份验证**，然后进行选择。
 4. 单击**选择用户**。 "**远程桌面用户**" 对话框将打开。
-5. 在 "**远程桌面用户**" 中，若要向用户授予远程连接到 NPS 的权限，请单击 "**添加**"，然后键入用户帐户的用户名。 单击 **“确定”** 。
+5. 在 "**远程桌面用户**" 中，若要向用户授予远程连接到 NPS 的权限，请单击 "**添加**"，然后键入用户帐户的用户名。 单击**确定**。
 6. 对于要向其授予对 NPS 的远程访问权限的每个用户，请重复步骤5。 添加完用户后，请单击 **"确定**" 关闭 "**远程桌面用户**" 对话框，然后再次单击 **"确定"** 关闭 "**系统属性**" 对话框。
 7. 若要使用前面的步骤连接到已配置的远程 NPS，请单击 "**开始**"，向下滚动按字母顺序排列的列表，然后单击 " **Windows 附件**"，然后单击 "**远程桌面连接**"。 此时将打开 "**远程桌面连接**" 对话框。
 8. 在 "**远程桌面连接**" 对话框的 "**计算机**" 中，键入 NPS 名称或 IP 地址。 如果需要，请单击 "**选项**"，配置其他连接选项，然后单击 "**保存**" 以保存连接以重复使用。
@@ -121,10 +121,10 @@ ms.locfileid: "71396448"
 1. 打开 "命令提示符" 或 "Windows PowerShell"。
 2. 键入**netsh**，然后按 enter。
 3. 键入**nps**，然后按 enter。
-4. 若要查看可用命令的列表，请键入问号 \(？ \)，然后按 ENTER。
+4. 若要查看可用命令的列表，请键入问号 \(？\)，然后按 ENTER。
 
 
-有关 Netsh NPS 命令的详细信息，请参阅[Windows Server 2008 中的网络策略服务器的 Netsh 命令](https://technet.microsoft.com/library/cc754428(v=ws.10).aspx)，或从 TechNet 库下载完整的[netsh 技术参考](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc?redir=0)。 此下载是适用于 Windows Server 2008 和 Windows Server 2008 R2 的完整网络 Shell 技术参考。 格式为 Windows 帮助 \( * .chm @ no__t-1 在 zip 文件中。 这些命令仍然存在于 Windows Server 2016 和 Windows 10 中，因此你可以在这些环境中使用 netsh，但建议使用 Windows PowerShell。
+有关 Netsh NPS 命令的详细信息，请参阅[Windows Server 2008 中的网络策略服务器的 Netsh 命令](https://technet.microsoft.com/library/cc754428(v=ws.10).aspx)，或从 TechNet 库下载完整的[netsh 技术参考](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc?redir=0)。 此下载是适用于 Windows Server 2008 和 Windows Server 2008 R2 的完整网络 Shell 技术参考。 格式为 Windows Help \(* .chm\) 在 zip 文件中。 这些命令仍然存在于 Windows Server 2016 和 Windows 10 中，因此你可以在这些环境中使用 netsh，但建议使用 Windows PowerShell。
 
 ## <a name="use-windows-powershell-to-manage-npss"></a>使用 Windows PowerShell 管理 NPSs
 

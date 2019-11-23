@@ -19,7 +19,7 @@ ms.locfileid: "71366265"
 ---
 # <a name="configure-virtual-machines-to-use-sr-iov-only-when-supported-by-the-guest-operating-system"></a>将虚拟机配置为仅在来宾操作系统支持时使用 SR-IOV
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71366265"
 ## <a name="impact"></a>影响  
 *SR-IOV 虚拟函数将不会分配到以下虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
 *在运行不支持 SR-IOV 的来宾操作系统的所有虚拟机上禁用 SR-IOV。*  

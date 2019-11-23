@@ -19,7 +19,7 @@ ms.locfileid: "71393170"
 ---
 # <a name="windows-server-2008-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>应至少为 Windows Server 2008 配置最小内存量
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳实践和扫描的详细信息，请参阅 [最佳实践分析程序](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71393170"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|Error|  
+|**Severity**|错误|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  
@@ -40,7 +40,7 @@ ms.locfileid: "71393170"
   
 *以下虚拟机上的来宾操作系统可能无法运行或可能运行 unreliably：*  
   
-@no__t-虚拟机名称的 0list >
+虚拟机名称 \<列表 >
   
 ## <a name="resolution"></a>分辨率  
   
@@ -70,7 +70,7 @@ ms.locfileid: "71393170"
 Set-VMMemory <MyVM> -StartupBytes 512MB  
 ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

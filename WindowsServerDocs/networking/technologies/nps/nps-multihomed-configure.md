@@ -23,9 +23,9 @@ ms.locfileid: "71396070"
 
 在运行网络策略服务器（NPS）的服务器中使用多个网络适配器时，可以配置以下内容：
 
-- 不发送和接收远程身份验证拨入用户服务 \(RADIUS @ no__t 通信的网络适配器。
-- 在每个网络适配器基础上，NPS 是否监视 Internet 协议版本4上的 RADIUS 流量 \(IPv4 @ no__t、IPv6，或同时使用 IPv4 和 IPv6。
-- UDP 端口号，在其上发送和接收基于每个协议的 RADIUS 流量 @no__t 0IPv4 或 IPv6 @ no__t，每个网络适配器。
+- 不发送和接收远程身份验证拨入用户服务 \(RADIUS\) 流量的网络适配器。
+- 在每个网络适配器基础上，NPS 是否监视 Internet 协议版本4上的 RADIUS 流量 \(IPv4\)、IPv6 或同时使用 IPv4 和 IPv6。
+- UDP 端口号，在每个协议上发送和接收 RADIUS 流量 \(IPv4 或 IPv6\)，每个网络适配器。
 
 默认情况下，对于所有已安装的网络适配器，NPS 都侦听端口1812、1813、1645和1646上的 RADIUS 流量。 由于 NPS 自动将所有网络适配器用于 RADIUS 流量，因此当你想要阻止 NPS 使用特定网络适配器时，只需指定你希望 NPS 用于 RADIUS 流量的网络适配器。
 
@@ -42,8 +42,8 @@ ms.locfileid: "71396070"
 
 若要将 NPS 配置为在网络适配器上侦听和发送 RADIUS 流量，请在 NPS 控制台中的网络策略服务器的 "属性" 对话框中使用以下语法：
 
-- IPv4 流量语法：IPAddress： UDPport，其中，IPAddress 是在要发送 RADIUS 流量的网络适配器上配置的 IPv4 地址，UDPport 是要用于 RADIUS 身份验证或记帐流量的 RADIUS 端口号。
-- IPv6 流量语法： [IPv6Address]：UDPport，其中，IPv6Address 是要在其上发送 RADIUS 流量的网络适配器上配置的 IPv6 地址，UDPport 是要用于 RADIUS 身份验证的 RADIUS 端口号，或记帐流量。
+- IPv4 流量语法： IPAddress： UDPport，其中，IPAddress 是在要发送 RADIUS 流量的网络适配器上配置的 IPv4 地址，UDPport 是要用于 RADIUS 身份验证或记帐的 RADIUS 端口号交易.
+- IPv6 流量语法： [IPv6Address]： UDPport，其中需要 IPv6Address 两侧的括号，IPv6Address 是在要发送 RADIUS 流量的网络适配器上配置的 IPv6 地址，UDPport 是所需的 RADIUS 端口号用于 RADIUS 身份验证或记帐通信。
 
 以下字符可用作配置 IP 地址和 UDP 端口信息的分隔符：
 

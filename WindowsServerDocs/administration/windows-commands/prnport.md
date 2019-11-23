@@ -22,7 +22,7 @@ ms.locfileid: "71372551"
 ---
 # <a name="prnport"></a>prnport
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 除了显示和更改端口配置之外，还可以创建、删除和列出标准 TCP/IP 打印机端口。
 
@@ -34,7 +34,7 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 [-i <SNMPIndex>] [-y <CommunityName>] -2{e | -d}
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |          参数           |                                                                                                                                                                                                                                                                                                     描述                                                                                                                                                                                                                                                                                                      |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,10 +43,10 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 |              -l              |                                                                                                                                                                                                                                                             列出计算机上指定了 **-s**参数的所有标准 tcp/ip 打印机端口。                                                                                                                                                                                                                                                             |
 |              -g              |                                                                                                                                                                                                                                                                            显示标准 TCP/IP 打印机端口的配置。                                                                                                                                                                                                                                                                             |
 |              -t              |                                                                                                                                                                                                                                                                           配置标准 TCP/IP 打印机端口的端口设置。                                                                                                                                                                                                                                                                           |
-|        -r \<PortName >        |                                                                                                                                                                                                                                                                                指定打印机连接到的端口。                                                                                                                                                                                                                                                                                 |
+|        -r \<Portvalue >        |                                                                                                                                                                                                                                                                                指定打印机连接到的端口。                                                                                                                                                                                                                                                                                 |
 |       -s \<ServerName >       |                                                                                                                                                                                                                               指定承载要管理的打印机的远程计算机的名称。 如果未指定计算机，则使用本地计算机。                                                                                                                                                                                                                                |
-| -u \<UserName >-w <Password> |                                                                                                              指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。                                                                                                               |
-|     -o {原始&#124; lpr}      |                                                                                                                                                                                                              指定端口使用的协议：TCP raw 或 TCP lpr。 如果使用 TCP raw，则可以选择使用 **-n**参数指定端口号。 默认端口号为9100。                                                                                                                                                                                                              |
+| -u \<用户名 >-w <Password> |                                                                                                              指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。                                                                                                               |
+|     -o {原始&#124; lpr}      |                                                                                                                                                                                                              指定端口使用的协议： TCP raw 或 TCP lpr。 如果使用 TCP raw，则可以选择使用 **-n**参数指定端口号。 默认端口号为9100。                                                                                                                                                                                                              |
 |      -h \<Hostaddress >       |                                                                                                                                                                                                                                                                   指定要为其配置端口的打印机（按 IP 地址）。                                                                                                                                                                                                                                                                    |
 |       -q \<QueueName >        |                                                                                                                                                                                                                                                                                     指定 TCP 原始端口的队列名称。                                                                                                                                                                                                                                                                                     |
 |       -n \<PortNumber >       |                                                                                                                                                                                                                                                                    指定 TCP 原始端口的端口号。 默认端口号为9100。                                                                                                                                                                                                                                                                    |
@@ -57,7 +57,7 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 |              /?              |                                                                                                                                                                                                                                                                                         在命令提示符下显示帮助。                                                                                                                                                                                                                                                                                         |
 
 ## <a name="remarks"></a>备注
--   **Prnport**命令是位于%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t 目录中的 Visual Basic 脚本。 若要使用此命令，请在命令提示符下键入**cscript** ，后跟 prnport 文件的完整路径，或将目录更改为相应的文件夹。 例如：
+-   **Prnport**命令是位于%windir%\system32\ printing_Admin_Scripts\\<language> 目录中的 Visual Basic 脚本。 若要使用此命令，请在命令提示符下键入**cscript** ，后跟 prnport 文件的完整路径，或将目录更改为相应的文件夹。 例如：
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport
     ```
@@ -65,19 +65,19 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 -   TCP 原始协议比 lpr 协议在 Windows 上是更高的性能协议。
 
 ## <a name="BKMK_examples"></a>示例
-若要显示服务器 \\ \ Server1 上的所有标准 TCP/IP 打印端口，请键入：
+若要在服务器 \\\Server1 上显示所有标准 TCP/IP 打印端口，请键入：
 ```
 cscript prnport -l -s Server1
 ```
-若要删除连接到10.2.3.4 上的网络打印机的 @no__t 服务器上的标准 TCP/IP 打印端口，请键入：
+若要删除连接到10.2.3.4 上的网络打印机 \\服务器上的标准 TCP/IP 打印端口，请键入：
 ```
 cscript prnport -d -s Server1 -r IP_10.2.3.4
 ```
-若要在10.2.3.4 上添加连接到网络打印机并在端口9100上使用 TCP 原始协议的 @no__t 服务器上的标准 TCP/IP 打印端口，请键入：
+若要在服务器上添加一个标准 TCP/IP 打印端口 \\\Server1 连接到10.2.3.4 上的网络打印机并在端口9100上使用 TCP 原始协议，请键入：
 ```
 cscript prnport -a -s Server1 -r IP_10.2.3.4 -h 10.2.3.4 -o raw -n 9100
 ```
-若要启用 SNMP，请在 \\ \ Server1 的服务器共享的网络打印机上指定 "public" 团体名称并将 SNMP 索引设置为1，键入：
+若要启用 SNMP，请指定 "public" 团体名称，并在服务器 \\\Server1 共享的10.2.3.4 上的网络打印机上将 SNMP 索引设置为1，键入：
 ```
 cscript prnport -t -s Server1 -r IP_10.2.3.4 -me -y public -i 1 -n 9100
 ```
@@ -87,5 +87,5 @@ cscript prnport -a -r IP_10.2.3.4 -h 10.2.3.4
 ```
 
 #### <a name="additional-references"></a>其他参考
-[命令行语法关键字](command-line-syntax-key.md)
+[命令行语法键](command-line-syntax-key.md)
 [打印命令参考](print-command-reference.md)

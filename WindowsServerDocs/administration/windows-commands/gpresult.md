@@ -22,7 +22,7 @@ ms.locfileid: "71375665"
 ---
 # <a name="gpresult"></a>gpresult
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 显示远程用户和计算机的策略的结果集（RSoP）信息。
 若要通过防火墙将 RSoP 报表用于远程目标计算机，您必须具有在端口上启用入站网络流量的防火墙规则。
@@ -33,16 +33,16 @@ ms.locfileid: "71375665"
 gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\]<TARGETUSER>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <FILENAME> [/f] | /?}
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 > [!NOTE]
 > 除了使用 **/？** 时，您必须包含一个输出选项，即 **/r**、 **/v**、 **/z**、 **/x**或 **/h**。
 
 |                参数                 |                                                                                                     描述                                                                                                      |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              /s \<system @ no__t-1               |                                                  指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认值为本地计算机。                                                   |
-|             /u \<USERNAME @ no__t-1              |                                使用指定用户的凭据运行该命令。 默认用户是登录到发出命令的计算机的用户。                                 |
-|            /p [\<PASSWOrd @ no__t]             |            指定在 **/u**参数中提供的用户帐户的密码。 如果省略 **/p** ，则**gpresult**会提示输入密码。 **/p**不能与 **/x**或 **/h**一起使用。            |
+|              /s \<系统\>               |                                                  指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认值为本地计算机。                                                   |
+|             /u \<用户名\>              |                                使用指定用户的凭据运行该命令。 默认用户是登录到发出命令的计算机的用户。                                 |
+|            /p [\<密码\>]             |            指定在 **/u**参数中提供的用户帐户的密码。 如果省略 **/p** ，则**gpresult**会提示输入密码。 **/p**不能与 **/x**或 **/h**一起使用。            |
 | /user [\<TARGETDOMAIN\>\\]\<TARGETUSER\> |                                                                            指定要显示其 RSoP 数据的远程用户。                                                                             |
 |      /scope {用户&#124;计算机}       |                                显示用户或计算机的 RSoP 数据。 如果省略 **/scope** ，则**gpresult**显示用户和计算机的 RSoP 数据。                                 |
 |        [/x &#124; /h] <FILENAME>         | 以 XML （ **/x**）或 HTML （ **/h**）格式将报表保存在位置，并使用*FILENAME*参数指定的文件名保存。 不能与 **/u**、 **/p**、 **/r**、 **/v**或 **/z**一起使用。 |
@@ -58,19 +58,19 @@ gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\
 - 由于 **/v**和 **/z**产生了大量信息，因此将输出重定向到文本文件（例如， **gpresult/z > policy .txt**）很有用。
 - **Gpresult**命令在 windows server 2012、windows Server 2008 R2、windows Server 2008、windows 8、windows 7 和 windows Vista 中可用。
   ## <a name="examples"></a>示例
-  以下示例检索计算机**srvmain**的远程用户**targetusername**的 rsop 数据，并仅显示有关用户的 rsop 数据。 命令将以用户**maindom\hiropln**的凭据运行，并输入<strong>p@ssW23</strong>作为该用户的密码。
+  以下示例检索计算机**srvmain**的远程用户**targetusername**的 rsop 数据，并仅显示有关用户的 rsop 数据。 命令以用户**maindom\hiropln**的凭据运行， <strong>p@ssW23</strong>并输入作为该用户的密码。
 
   ```
   gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /scope user /r
   ```
   
-下面的示例将计算机**srvmain**的远程用户**targetusername**的所有可用组策略信息保存到名为的**文件中。** 不会包含有关计算机的任何数据。 命令将以用户**maindom\hiropln**的凭据运行，并输入<strong>p@ssW23</strong>作为该用户的密码。
+下面的示例将计算机**srvmain**的远程用户**targetusername**的所有可用组策略信息保存到名为的**文件中。** 不会包含有关计算机的任何数据。 命令以用户**maindom\hiropln**的凭据运行， <strong>p@ssW23</strong>并输入作为该用户的密码。
 
   ```
   gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /z > policy.txt
   ```
   
-以下示例显示了计算机**srvmain**和登录用户的 RSoP 数据。 同时包含用户和计算机的相关数据。 命令将以用户**maindom\hiropln**的凭据运行，并输入<strong>p@ssW23</strong>作为该用户的密码。
+以下示例显示了计算机**srvmain**和登录用户的 RSoP 数据。 同时包含用户和计算机的相关数据。 命令以用户**maindom\hiropln**的凭据运行， <strong>p@ssW23</strong>并输入作为该用户的密码。
 
   ```
   gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /r

@@ -20,7 +20,7 @@ ms.locfileid: "71364255"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>在 Hyper-v 中创建虚拟机
 
->适用于：Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>适用于： Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 了解如何使用 Hyper-v 管理器和 Windows PowerShell 创建虚拟机，以及在 Hyper-v 管理器中创建虚拟机时使用的选项。  
 
@@ -46,7 +46,7 @@ ms.locfileid: "71364255"
 
 2. 右键单击 " **Windows PowerShell** " 并选择 "以**管理员身份运行**"。  
 
-3. 使用[获取-VMSwitch](https://technet.microsoft.com/library/hh848499.aspx)获取虚拟机要使用的虚拟交换机的名称。  例如，  
+3. 使用[获取-VMSwitch](https://technet.microsoft.com/library/hh848499.aspx)获取虚拟机要使用的虚拟交换机的名称。  例如，应用于对象的  
 
    ```  
    Get-VMSwitch  * | Format-Table Name  
@@ -78,7 +78,7 @@ ms.locfileid: "71364255"
 
        这将创建一个名为 Win10VM 的第2代虚拟机，内存为4GB。 它从当前目录中的 VMs\Win10.vhdx 文件夹启动，并使用名为 ExternalSwitch 的虚拟交换机。 虚拟机配置文件存储在 VMData 文件夹中。  
 
-   - **新虚拟硬盘**-若要使用新的虚拟硬盘创建虚拟机，请将上述示例中的 **-VHDPath**参数替换为 **-NewVHDPath** ，并添加 **-NewVHDSizeBytes**参数。 例如，  
+   - **新虚拟硬盘**-若要使用新的虚拟硬盘创建虚拟机，请将上述示例中的 **-VHDPath**参数替换为 **-NewVHDPath** ，并添加 **-NewVHDSizeBytes**参数。 例如，应用于对象的  
 
      ```  
      New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -NewVHDPath .\VMs\Win10.vhdx -Path .\VMData -NewVHDSizeBytes 20GB -Generation 2 -Switch ExternalSwitch  
@@ -109,15 +109,15 @@ ms.locfileid: "71364255"
 
 |Page|Windows Server 2016 和 Windows 10 的默认值|其他选项|  
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|  
-|**指定名称和位置**|名称：新虚拟机。<br /><br />位置:**C:\ProgramData\Microsoft\Windows\Hyper-V @ no__t-1**。|你还可以输入自己的名称，并为虚拟机选择另一个位置。<br /><br />这是将存储虚拟机配置文件的位置。|  
+|**指定名称和位置**|名称：新虚拟机。<br /><br />Location： **C:\ProgramData\Microsoft\Windows\Hyper-V\\** 。|你还可以输入自己的名称，并为虚拟机选择另一个位置。<br /><br />这是将存储虚拟机配置文件的位置。|  
 |**指定生成**|第 1 代|你还可以选择创建第2代虚拟机。 有关详细信息，请参阅是否[应在 hyper-v 中创建第1代或第2代虚拟机？。](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)|  
-|**分配内存**|启动内存：1024 MB<br /><br />动态内存：**未选择**|可以将启动内存从32MB 设置为5902MB。<br /><br />你还可以选择使用动态内存。 有关详细信息，请参阅[hyper-v 动态内存概述](https://technet.microsoft.com/library/hh831766.aspx)。|  
+|**分配内存**|启动内存： 1024 MB<br /><br />动态内存：**未选择**|可以将启动内存从32MB 设置为5902MB。<br /><br />你还可以选择使用动态内存。 有关详细信息，请参阅[hyper-v 动态内存概述](https://technet.microsoft.com/library/hh831766.aspx)。|  
 |**配置网络**|未连接|你可以从现有虚拟交换机列表中选择虚拟机要使用的网络连接。 请参阅[创建用于 hyper-v 虚拟机的虚拟交换机](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md)。|  
-|**连接虚拟硬盘**|创建虚拟硬盘<br /><br />名称： <*vmname*> .vhdx<br /><br />**位置**：**C:\Users\Public\Documents\Hyper-V\Virtual 硬盘 @ no__t-1**<br /><br />**大小**：127GB|你还可以选择使用现有的虚拟硬盘，或者等待并在以后附加虚拟硬盘。|  
+|**连接虚拟硬盘**|创建虚拟硬盘<br /><br />名称： <*vmname*> .vhdx<br /><br />**位置**： **C:\Users\Public\Documents\Hyper-V\Virtual 硬盘\\**<br /><br />**大小**：127GB|你还可以选择使用现有的虚拟硬盘，或者等待并在以后附加虚拟硬盘。|  
 |**安装选项**|稍后安装操作系统|这些选项将更改虚拟机的启动顺序，以便可以从 .iso 文件、可启动软盘或网络安装服务（如 Windows 部署服务（WDS））安装。|  
-|**摘要**|显示您选择的选项，以便您可以验证它们是否正确。<br /><br />-Name<br />-生成<br />-内存<br />-网络<br />-硬盘<br />-操作系统|**更改暂存文件夹路径**可以从页面复制摘要，并将其粘贴到电子邮件或其他地方，以帮助跟踪虚拟机。|  
+|**摘要**|显示您选择的选项，以便您可以验证它们是否正确。<br /><br />-Name<br />-生成<br />-内存<br />-网络<br />-硬盘<br />-操作系统|**提示：** 可以从页面复制摘要，并将其粘贴到电子邮件或其他地方，以帮助跟踪虚拟机。|  
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 
 - [新 VM](https://technet.microsoft.com/library/hh848537.aspx)  
 

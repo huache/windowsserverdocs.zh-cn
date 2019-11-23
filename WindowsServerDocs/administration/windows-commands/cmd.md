@@ -30,7 +30,7 @@ ms.locfileid: "71379327"
 cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}] [/v:{on|off}] [<String>]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -41,19 +41,19 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |/d|禁止执行自动运行命令。|
 |/a|将内部命令输出的格式设置为管道或文件美国国家标准学会（ANSI）。|
 |/u|将内部命令输出的格式设置为作为 Unicode 的管道或文件。|
-|/t： {\<B @ no__t-1 @ no__t-2F @ no__t-3 @ no__t @ no__t-5F @ no__t-6}|设置背景（*B*）和前景（*F*）颜色。|
+|/t： {\<B\>\<F\>\|\<F\>}|设置背景（*B*）和前景（*F*）颜色。|
 |/e：开启|启用命令扩展。|
 |/e： off|禁用命令扩展。|
 |/f：开启|启用文件和目录名称完成。|
 |/f： off|禁用文件和目录名称完成。|
 |/v：开启|启用延迟环境变量扩展。|
 |/v：关|禁用延迟的环境变量扩展。|
-|\<String >|指定要执行的命令。|
+|\<字符串 >|指定要执行的命令。|
 |/?|在命令提示符下显示帮助。|
 
-下表列出了可用作 \<B @ no__t 和 \<F @ no__t 的值的有效十六进制数字
+下表列出了可用作 \<B\> 和 \<F 的值的有效十六进制数字\>
 
-|ReplTest1|颜色|
+|值|颜色|
 |-----|-----|
 |0|黑色|
 |1|蓝色|
@@ -76,7 +76,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 -   使用多个命令
 
-    若要将多个命令用于 @no__t 0String >，请使用命令分隔符分隔它们， **&&** 并将其括在引号中。 例如：
+    若要将多个命令用于 \<字符串 >，请使用命令分隔符分隔它们 **&&** 并将它们括在引号中。 例如：
 
     ```
     "<Command>&&<Command>&&<Command>"
@@ -96,9 +96,9 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
     如果未指定 **/d** in *String*，cmd.exe 将查找以下注册表子项：
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\AutoRun\REG_SZ**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\AutoRun\ REG_SZ**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\AutoRun\REG_EXPAND_SZ**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\AutoRun\ REG_EXPAND_SZ**
 
     如果存在一个或两个注册表子项，它们将在所有其他变量之前执行。
 
@@ -109,11 +109,11 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
     默认情况下，在 Windows XP 中启用命令扩展。 您可以使用 **/e： off**为特定进程禁用它们。 您可以通过设置以下**REG_DWORD**值为计算机或用户会话上的所有**cmd**命令行选项启用或禁用扩展：
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\EnableExtensions\REG_DWORD**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\EnableExtensions\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\EnableExtensions\REG_DWORD**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\EnableExtensions\ REG_DWORD**
 
-    通过使用 Regedit.exe，将**REG_DWORD**值设置为**0 × 1** （已启用）或**0 × 0** （禁用）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
+    使用 Regedit.exe 将**REG_DWORD**值设置为**0 × 1** （已启用）或**0 × 0** （禁用）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
 
 > [!CAUTION]
 > 不正确地编辑注册表可能会对系统造成严重损坏。 在更改注册表之前，应备份计算机上任何有价值的数据。
@@ -143,17 +143,17 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
     如果启用延迟环境变量扩展，则可以使用感叹号字符来替换运行时环境变量的值。
 -   启用文件和目录名称完成
 
-    默认情况下，不启用文件和目录名称完成。 您可以使用 **/f：** {**on**|**off**} 启用或禁用**cmd**命令特定进程的文件名完成。 您可以通过设置以下**REG_DWORD**值为计算机上的**cmd**命令的所有进程启用或禁用文件和目录名完成，或为用户登录会话启用或禁用它们：
+    默认情况下，不启用文件和目录名称完成。 您可以使用 **/f：** {**on**|**off**} 为**cmd**命令的特定进程启用或禁用文件名称完成。 您可以通过设置以下**REG_DWORD**值为计算机上的**cmd**命令或用户登录会话启用或禁用文件和目录名称完成：
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\CompletionChar\REG_DWORD**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\CompletionChar\ REG_DWORD**
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\PathCompletionChar\REG_DWORD**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\PathCompletionChar\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\CompletionChar\REG_DWORD**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\CompletionChar\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\PathCompletionChar\REG_DWORD**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\PathCompletionChar\ REG_DWORD**
 
-    若要设置**REG_DWORD**值，请运行 regedit.exe 并将控制字符的十六进制值用于特定函数（例如， **0 × 9**为 TAB， **0 × 08**表示退格符）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
+    若要设置**REG_DWORD**值，请运行 regedit.exe，并对特定函数使用控制字符的十六进制值（例如， **0 × 9**为 TAB， **0 × 08**表示退格符）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
 
 > [!CAUTION]
 > 不正确地编辑注册表可能会对系统造成严重损坏。 在更改注册表之前，应备份计算机上任何有价值的数据。

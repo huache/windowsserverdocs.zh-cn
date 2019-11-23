@@ -33,28 +33,28 @@ icacls <FileName> [/grant[:r] <Sid>:<Perm>[...]] [/deny <Sid>:<Perm>[...]] [/rem
 icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c] [/l] [/q]]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
 |\<文件名 >|指定要为其显示 Dacl 的文件。|
-|\<Directory >|指定要为其显示 Dacl 的目录。|
+|\<目录 >|指定要为其显示 Dacl 的目录。|
 |/t|对当前目录及其子目录中的所有指定文件执行操作。|
 |/c|即使存在任何文件错误，也会继续操作。 仍会显示错误消息。|
 |/l|对符号链接与目标执行操作。|
 |/q|禁止显示成功消息。|
 |[/save \<ACLfile > [/t] [/c] [/l] [/q]]|将所有匹配文件的 Dacl 存储到*ACLfile*中，以便以后用于 **/restore**。|
-|[/setowner \<Username > [/t] [/c] [/l] [/q]]|将所有匹配文件的所有者更改为指定用户。|
+|[/setowner \<用户名 > [/t] [/c] [/l] [/q]]|将所有匹配文件的所有者更改为指定用户。|
 |[/findSID \<Sid > [/t] [/c] [/l] [/q]]|查找所有匹配文件，其中包含显式提及指定安全标识符（SID）的 DACL。|
 |[/verify [/t] [/c] [/l] [/q]]|查找其 Acl 不规范或长度与 ACE （访问控制项）计数不一致的所有文件。|
 |[/reset [/t] [/c] [/l] [/q]]|将 Acl 替换为所有匹配文件的默认继承 Acl。|
-|[/grant [： r] \<Sid >： <Perm> [...]]|授予指定的用户访问权限。 权限替换之前授予的显式权限。</br>如果没有 **： r**，则权限将添加到之前授予的任何显式权限。|
-|[/deny \<Sid >： <Perm> [...]]|显式拒绝指定的用户访问权限。 将为所述权限添加显式拒绝 ACE，并删除任何显式授权中的相同权限。|
-|[/remove [： g @ no__t-0： d]] \<Sid > [...]]/t/c/l/q|从 DACL 中移除指定 SID 的所有匹配项。</br>**： g**删除授予指定 SID 的所有权限。</br>**:d**删除对指定 SID 的所有拒绝的权限。|
-|[/setintegritylevel [（CI）（OI）] \<Level >： <Policy> [...]]|将完整性 ACE 显式添加到所有匹配的文件。 *级别*指定为：</br>-   **L**[o]</br>-   **M**[edium]</br>-   **H**[igh]</br>完整性 ACE 的继承选项可能在级别之前，只适用于目录。|
+|[/grant [： r] \<Sid >：<Perm>[...]]|授予指定的用户访问权限。 权限替换之前授予的显式权限。</br>如果没有 **： r**，则权限将添加到之前授予的任何显式权限。|
+|[/deny \<Sid >：<Perm>[...]]|显式拒绝指定的用户访问权限。 将为所述权限添加显式拒绝 ACE，并删除任何显式授权中的相同权限。|
+|[/remove [： g\|:d]] \<Sid > [...]]/t/c/l/q|从 DACL 中移除指定 SID 的所有匹配项。</br>**： g**删除授予指定 SID 的所有权限。</br>**:d**删除对指定 SID 的所有拒绝的权限。|
+|[/setintegritylevel [（CI）（OI）]\<Level >：<Policy>[...]]|将完整性 ACE 显式添加到所有匹配的文件。 *级别*指定为：</br>-   **L**[o]</br>-   **M**[edium]</br>-   **H**[igh]</br>完整性 ACE 的继承选项可能在级别之前，只适用于目录。|
 |[/substitute \<SidOld > <SidNew> [...]]|使用新的 SID （*SidNew*）替换现有 Sid （*SidOld*）。 需要*Directory*参数。|
 |/restore \<ACLfile > [/c] [/l] [/q]|将*ACLfile*中存储的 dacl 应用于指定目录中的文件。 需要*Directory*参数。|
-|/inheritancelevel： [e @ no__t-0d @ no__t-1r]|设置继承级别： <br>  **e** -启用 enheritance <br>**d** -禁用继承并复制 ace <br>**r** -删除所有继承的 ace
+|/inheritancelevel： [e\|d\|r]|设置继承级别： <br>  **e** -启用 enheritance <br>**d** -禁用继承并复制 ace <br>**r** -删除所有继承的 ace
 
 ## <a name="remarks"></a>备注
 

@@ -34,11 +34,11 @@ ms.locfileid: "71384696"
 reg load KeyName FileName
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|\<KeyName >|指定要加载的子项的完整路径。 对于指定远程计算机，请包含计算机名称（格式为 \\ @ no__t-1ComputerName @ no__t-2 作为*KeyName*的一部分。 省略 \\ @ no__t-1ComputerName \ 将使操作默认为本地计算机。 *KeyName*必须包含有效的根密钥。 本地计算机的有效根密钥如下：HKLM、HKCU、HKCR、HKU 开头和 HKCC。 如果指定了远程计算机，则有效的根密钥为：HKLM 和 HKU 开头。|
+|\<KeyName >|指定要加载的子项的完整路径。 若要指定远程计算机，请包含计算机名称（格式 \\\\ComputerName\) 作为*KeyName*的一部分。 省略 \\\\ComputerName \ 会使操作默认为本地计算机。 *KeyName*必须包含有效的根密钥。 本地计算机的有效根密钥为： HKLM、HKCU、HKCR、HKU 开头和 HKCC。 如果指定了远程计算机，则有效的根密钥为： HKLM 和 HKU 开头。|
 |\<文件名 >|指定要加载的文件的名称和路径。 必须事先使用**reg save**操作和扩展名 hiv 来创建此文件。|
 |/?|在命令提示符下显示**reg load**帮助。|
 
@@ -46,7 +46,7 @@ reg load KeyName FileName
 
 下表列出了**reg load**操作的返回值。
 
-|ReplTest1|Description|
+|值|描述|
 |-----|-----------|
 |0|成功|
 |1|失败|

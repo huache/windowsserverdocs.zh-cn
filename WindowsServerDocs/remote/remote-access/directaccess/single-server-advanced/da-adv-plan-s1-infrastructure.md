@@ -66,7 +66,7 @@ ms.locfileid: "71388664"
   
     ||外部网络适配器|内部网络适配器|路由要求|  
     |-|--------------|--------------|------------|  
-    |IPv4 Internet 和 IPv4 Intranet|配置带有相应子网掩码的两个静态连续公用 IPv4 地址（仅 Teredo 要求)。<br/><br/>此外，配置 Internet 防火墙或本地 Internet 服务提供商 (ISP) 路由器的默认网关 IPv4 地址。 **注意：** DirectAccess 服务器需要两个连续的公用 IPv4 地址，以便它可用作 Teredo 服务器，而且 NAT 设备后面的基于 Windows 的客户端可以使用 DirectAccess 服务器检测该 NAT 设备的类型。|配置以下内容：<br/><br/>-具有相应子网掩码的 IPv4 intranet 地址。<br/>-Intranet 命名空间的特定于连接的 DNS 后缀。 还应在内部接口上配置 DNS 服务器。 **警告：** 不要在任何 Intranet 接口上配置默认网关。|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv4 地址空间。<br/>-使用**route add-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。|  
+    |IPv4 Internet 和 IPv4 Intranet|配置带有相应子网掩码的两个静态连续公用 IPv4 地址（仅 Teredo 要求)。<br/><br/>此外，配置 Internet 防火墙或本地 Internet 服务提供商 (ISP) 路由器的默认网关 IPv4 地址。 **注意：** DirectAccess 服务器需要两个连续的公用 IPv4 地址，以便它可用作 Teredo 服务器，基于 Windows 的客户端可以使用 DirectAccess 服务器检测其后面的 NAT 设备的类型。|配置以下内容：<br/><br/>-具有相应子网掩码的 IPv4 intranet 地址。<br/>-Intranet 命名空间的特定于连接的 DNS 后缀。 还应在内部接口上配置 DNS 服务器。 **警告：** 不要在任何 intranet 接口上配置默认网关。|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv4 地址空间。<br/>-使用**route add-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。|  
     |IPv6 Internet 和 IPv6 Intranet|配置以下内容：<br/><br/>-使用你的 ISP 提供的地址配置。<br/>-使用**Route Print**命令，以确保默认 ipv6 路由存在并指向 IPv6 路由表中的 ISP 路由器。<br/>-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。<br/>    如果两个结果都为“是”，则默认路由不需要任何其他配置。 用于 ISP 路由器的更高级首选项可确保 DirectAccess 服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br/><br/>因为 DirectAccess 服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，这些数据包筛选器可阻止连接到 DirectAccess 服务器面向 Internet 的接口的 IPv6 地址。|配置以下内容：<br/><br/>-如果不使用默认首选等级，则可以使用以下命令**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled**来配置 intranet 接口。<br/>    这一命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以使用以下命令获取 Intranet 接口的接口索引：**netsh interface ipv6 show interface**。|如果你拥有 IPv6 Intranet，若要配置 DirectAccess 服务器以访问所有的 IPv6 位置，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv6 地址空间。<br/>-使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为 DirectAccess 服务器的 ipv6 路由表中的静态路由。|  
     |IPv4 Internet 和 IPv6 Intranet|在 IPv4 Internet 上，DirectAccess 服务器通过 Microsoft 6to4 适配器将 IPv6 路由通信转发到 6to4 中继。 可以使用以下命令，为 Microsoft 6to4 适配器的 IPv4 地址配置 DirectAccess 服务器：`netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`。|||  
   
@@ -84,7 +84,7 @@ ms.locfileid: "71388664"
 > - 无需在你的网络上使用 IPv6，即可支持由 DirectAccess 客户端计算机发起且到你组织网络上的 IPv4 资源的连接。 为此，将使用 NAT64/DNS64。  
 > - 如果你不管理远程 DirectAccess 客户端，则无需部署 IPv6。  
 > - DirectAccess 部署不支持站内自动隧道寻址协议 (ISATAP)。  
-> - 使用 IPv6 时，你可以使用以下 Windows PowerShell 命令启用 DNS64 的 IPv6 主机 (AAAA) 资源记录查询： **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**。  
+> - 使用 IPv6 时，你可以使用以下 Windows PowerShell 命令启用 DNS64 的 IPv6 主机 (AAAA) 资源记录查询：**Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**。  
   
 ### <a name="113-plan-for-force-tunneling"></a>1.1.3 规划强制隧道
 
@@ -336,7 +336,7 @@ DirectAccess 服务器充当 IP-HTTPS 侦听器，而且必须在服务器上手
   
     -   根域或 DirectAccess 服务器的域名对应的 DNS 后缀规则，以及与 DNS64 地址相对应的 IPv6 地址。 在仅支持 IPv6 的企业网络中，将在 DirectAccess 服务器上配置 Intranet DNS 服务器。 例如，如果 DirectAccess 服务器是 corp.contoso.com 域的成员，则会为 corp.contoso.com DNS 后缀创建一条规则。  
   
-    -   用于网络位置服务器的 FQDN 的免除规则。 例如，如果网络位置服务器 URL <https://nls.corp.contoso.com>，则会为 FQDN nls.corp.contoso.com 创建例外规则。  
+    -   用于网络位置服务器的 FQDN 的免除规则。 例如，如果 <https://nls.corp.contoso.com>网络位置服务器 URL，则会为 FQDN nls.corp.contoso.com 创建例外规则。  
   
 -   **Ip-https 服务器**  
   
@@ -396,7 +396,7 @@ DirectAccess 服务器充当 IP-HTTPS 侦听器，而且必须在服务器上手
   
 **单标签名称**  
   
-单个标签名称（例如 <https://paycheck>）有时用于 intranet 服务器。 如果请求单标签名称并配置了 DNS 后缀搜索列表，则列表中的 DNS 后缀将追加到单标签名称。 例如，当计算机上的用户在 web 浏览器中是 corp.contoso.com 域类型的成员 <https://paycheck> 时，作为名称构造的 FQDN 为 paycheck.corp.contoso.com。 默认情况下，附加的后缀基于客户端计算机的主 DNS 后缀。  
+单个标签名称（例如 <https://paycheck>）有时用于 intranet 服务器。 如果请求单标签名称并配置了 DNS 后缀搜索列表，则列表中的 DNS 后缀将追加到单标签名称。 例如，当计算机上的用户是 corp.contoso.com 域类型的成员时 <https://paycheck> 在 web 浏览器中时，作为名称构造的 FQDN 为 paycheck.corp.contoso.com。 默认情况下，附加的后缀基于客户端计算机的主 DNS 后缀。  
   
 > [!NOTE]  
 > 在不互连的命名空间方案中（其中一个或多个域计算机具有的 DNS 后缀与计算机所属的 Active Directory 域不匹配），应确保将搜索列表自定义为包括所有必需的后缀。 默认情况下，远程访问向导会将 Active Directory DNS 名称配置为客户端上的主 DNS 后缀。 请确保添加客户端用于名称解析的 DNS 后缀。  
@@ -419,7 +419,7 @@ DirectAccess 服务器充当 IP-HTTPS 侦听器，而且必须在服务器上手
   
 **DirectAccess 客户端的本地名称解析行为**  
   
-如果无法使用 DNS 解析名称，则为了解析本地子网上的名称，Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 8 和 Windows 7 中的 DNS 客户端服务可结合使用本地名称解析以及链路本地多播名称 Resolution （LLMNR）和 TCP/IP 上的 NetBIOS 协议。  
+如果无法使用 DNS 解析名称，则为了解析本地子网上的名称，Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 8 和 Windows 7 中的 DNS 客户端服务可以使用本地名称解析以及链路本地多播名称解析（LLMNR）和 TCP/IP 上的 NetBIOS 协议。  
   
 当计算机位于专用网络（如单个子网家庭网络）上时，对等连接通常需要使用本地名称解析。 如果 DNS 客户端服务对 Intranet 服务器名称执行本地名称解析，并且计算机连接到 Internet 上的共享子网，恶意用户则可以捕获 LLMNR 和 TCP/IP 上的 NetBIOS 消息来确定 Intranet 服务器名称。 在基础结构服务器安装向导的 DNS 页上，你可以根据从 Intranet DNS 服务器接收到的响应类型配置本地名称解析行为。 你可使用以下选项：  
   
@@ -585,7 +585,7 @@ DirectAccess 允许你在使用证书进行 IPsec 计算机身份验证，以及
 > [!NOTE]  
 > 将 DirectAccess 配置为使用特定的 GPO 后，无法将它配置为使用不同的 GPO。  
   
-无论你使用自动或手动配置的 GPO，如果你的客户端将使用 3G 网络，你需要添加用于慢速链接检测的策略。 @No__t 的路径-0Policy：配置组策略慢速链接检测 @ no__t 为：“计算机配置”/“策略”/“管理模板”/“系统”/“组策略”。  
+无论你使用自动或手动配置的 GPO，如果你的客户端将使用 3G 网络，你需要添加用于慢速链接检测的策略。 “策略: 配置组策略慢速链接检测”的路径是：“计算机配置/策略/管理模板/系统/组策略”。  
   
 > [!CAUTION]  
 > 运行 DirectAccess cmdlet 之前，请使用以下过程备份所有远程访问 GPO：[备份和还原远程访问配置](https://go.microsoft.com/fwlink/?LinkID=257928)。  
@@ -685,7 +685,7 @@ DirectAccess 允许你在使用证书进行 IPsec 计算机身份验证，以及
   
 ## <a name="next-steps"></a>后续步骤  
   
--   [步骤 2：规划 DirectAccess 部署 @ no__t-0  
+-   [步骤2：规划 DirectAccess 部署](da-adv-plan-s2-deployments.md)  
   
 
 

@@ -17,7 +17,7 @@ ms.locfileid: "71401998"
 ---
 # <a name="checklist---apply-a-file-screen-to-a-volume-or-folder"></a>清单 - 将文件屏蔽应用于卷或文件夹
 
-> 适用于：Windows Server 2019，Windows Server 2016，Windows Server （半年频道），Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server （半年频道），Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
 
 如要将文件屏蔽应用于卷或文件夹，请使用以下列表：
 1. 若要按照[配置电子邮件通知](configure-email-notifications.md) 中的说明，通过电子邮件发送文件屏蔽通知或存储报告，则需配置电子邮件设置。
@@ -25,7 +25,7 @@ ms.locfileid: "71401998"
 2. 若要生成文件屏蔽审核报告，请启用审核数据库中的文件屏蔽事件记录功能。
 [配置文件屏蔽审核](configure-file-screen-audit.md)
 
-3. 评估作为屏蔽规则候选项的已存储文件类型。 你可以使用**存储报告管理**节点的报告来提供数据。 （例如，按需运行按文件组的文件报告报表或大型文件报表来识别占用大量磁盘空间的文件。）[按需生成报告](generate-reports-on-demand.md) 
+3. 评估作为屏蔽规则候选项的已存储文件类型。 你可以使用**存储报告管理**节点的报告来提供数据。 （例如，根据需要运行“按文件组分类的文件”报告或“大文件”报告来确定占用大量磁盘空间的文件。）[根据需要生成报告](generate-reports-on-demand.md) 
 
 4. 查看预配置的文件组，或创建新文件组，从而在你的组织中强制执行特定屏蔽策略。 [定义用于屏蔽的文件组](define-file-groups-for-screening.md)  
 
@@ -44,4 +44,4 @@ ms.locfileid: "71401998"
 
 
 > [!NOTE]
-> 若要限制卷或文件夹中的存储，请参阅 [Checklist：将配额应用于卷或文件夹](checklist-apply-file-screen-to-volume-or-folder.md)
+> 若要限制卷或文件夹的存储空间，请参阅[清单：将配额应用于卷或文件夹](checklist-apply-file-screen-to-volume-or-folder.md)

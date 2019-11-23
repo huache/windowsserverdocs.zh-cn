@@ -59,7 +59,7 @@ RAID 是一种用于标准化和分类容错磁盘系统的方法。 RAID 级别
 -   [login](#BKMK_20)
 -   [注销](#BKMK_21)
 -   [维护](#BKMK_22)
--   [name](#BKMK_23)
+-   [名称](#BKMK_23)
 -   [断开](#BKMK_24)
 -   [联机](#BKMK_25)
 -   [recover](#BKMK_26)
@@ -86,7 +86,7 @@ add plex lun=n [noerr]
 add tpgroup tportal=n [noerr]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **plex lun**=*n*
 
@@ -115,7 +115,7 @@ associate ports [add] <n-m>[,<n-m>[,…]]
 associate targets [add] <n>[,<n> [,…]]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **控制器**
 
@@ -169,7 +169,7 @@ Controller port associations changed.
 automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **set**
 
@@ -217,7 +217,7 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 break plex=<plex_number> [noerr]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **丛**
 
@@ -251,7 +251,7 @@ chap target set secret=[<secret>] [initiator=<initiatorname>]
 chap target remember secret=[<secret>] initiator=<initiatorname>
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **发起方集**
 
@@ -319,7 +319,7 @@ create tpgroup [noerr]
 
 使用当前有效的*automagic*提示创建 LUN。 有关详细信息，请参阅**automagic**子命令。
 
-**规格**=
+**大小**=
 
 指定 LUN 总大小（mb）。 如果未指定**size =** 参数，则创建的 LUN 将是所有指定驱动器允许的最大大小。
 
@@ -333,7 +333,7 @@ create tpgroup [noerr]
 -   **Tb** 。
 -   **Pb 级**。
 
-**着**=
+**驱动器**=
 
 指定用于创建 LUN 的驱动器的*drive_number* 。 如果未指定**size =** 参数，则创建的 LUN 是所有指定驱动器允许的最大大小。 如果指定**size =** 参数，则提供程序将从指定的驱动器列表中选择驱动器以创建 LUN。 如果可能，提供程序将尝试按指定顺序使用驱动器。
 
@@ -353,7 +353,7 @@ create tpgroup [noerr]
 
 在当前选定的子系统上创建新的 iSCSI 目标。
 
-**name**
+**名称**
 
 提供目标的友好名称。
 
@@ -386,7 +386,7 @@ delete target [noerr]
 delete tpgroup [noerr]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **lun**
 
@@ -418,7 +418,7 @@ delete tpgroup [noerr]
 Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup} [verbose]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **hbaport**
 
@@ -545,7 +545,7 @@ exit
 extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noerr]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **大小 =**
 
@@ -561,7 +561,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 **驱动器 =**
 
-指定在创建 LUN 时要使用的驱动器的 @no__t 0drive_number >。 如果未指定**size =** 参数，则创建的 LUN 是所有指定驱动器允许的最大大小。 提供程序按尽可能指定的顺序使用驱动器。
+指定在创建 LUN 时要使用的驱动器的 \<drive_number >。 如果未指定**size =** 参数，则创建的 LUN 是所有指定驱动器允许的最大大小。 提供程序按尽可能指定的顺序使用驱动器。
 
 **noerr**
 
@@ -569,7 +569,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 #### <a name="remarks"></a>备注
 
-必须指定*大小*或\<驱动器 > 参数。 它们也可以一起使用。
+必须指定*大小*或 \<驱动器 > 参数。 它们也可以一起使用。
 
 ### <a name="BKMK_12"></a>flushcache
 
@@ -638,29 +638,29 @@ lbpolicy set lun type=<type> [paths=<path>-{primary | <weight>}[,<path>-{primary
 lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[,…]]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **type**
 
 指定负载平衡策略。 如果未指定类型，则必须指定**path**参数。 类型可以是以下类型之一：
 
-**故障转移**：将一个主路径与其他路径一起使用，作为备份路径。
+**故障转移**：使用包含其他路径的主路径作为备份路径。
 
 **ROUNDROBIN**：以循环方式使用所有路径，这将按顺序尝试每个路径。
 
 **SUBSETROUNDROBIN**：以循环方式使用所有主路径;仅当所有主路径都出现故障时，才使用备份路径。
 
-**DYNLQD**：使用最少活动请求数的路径。
+**DYNLQD**：使用包含最少活动请求数的路径。
 
-**加权**：使用最小权重的路径（必须为每个路径分配一个权重）。
+**加权**：使用最小权重的路径（必须为每个路径分配权重）。
 
-**LEASTBLOCKS**：使用最少块的路径。
+**LEASTBLOCKS**：使用包含最少块的路径。
 
 **VENDORSPECIFIC**：使用特定于供应商的策略。
 
 **路径**
 
-指定路径是**主**路径还是具有特定\<权重 >。 未指定的任何路径将隐式设置为备份。 列出的任何路径都必须是当前选定的 LUN 路径之一。
+指定路径是**主**路径还是具有特定的 \<权重 >。 未指定的任何路径将隐式设置为备份。 列出的任何路径都必须是当前选定的 LUN 路径之一。
 
 ### <a name="BKMK_19"></a>成员列表
 
@@ -672,7 +672,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 List {hbaports | iadapters | iportals | providers | subsystems | controllers | ports | drives | LUNs | tportals | targets | tpgroups}
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **hbaports**
 
@@ -732,7 +732,7 @@ List {hbaports | iadapters | iportals | providers | subsystems | controllers | p
 login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none | oneway | mutual}] [iportal=<iportal>] [tportal=<tportal>] [<flag> [<flag> […]]]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **type**
 
@@ -760,7 +760,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 由三个字母缩写词标识：
 
-**IP**：需要 IPsec
+**Ip**：需要 IPsec
 
 **EMP**：启用多路径
 
@@ -778,7 +778,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 logout target iadapter= <iadapter>
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **iadapter**
 
@@ -794,7 +794,7 @@ logout target iadapter= <iadapter>
 maintenance <object operation> [count=<iteration>]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 \<对象 >
 
@@ -880,7 +880,7 @@ recover <lun>
 reenumerate {subsystems | drives}
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **子系统**
 
@@ -944,7 +944,7 @@ replace drive=<drive_number>
 
 **驱动器 =**
 
-指定要替换的驱动器的 @no__t 0drive_number >。
+指定要替换的驱动器的 \<drive_number >。
 
 #### <a name="remarks"></a>备注
 
@@ -960,7 +960,7 @@ replace drive=<drive_number>
 Reset {controller | port}
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **控制器**
 
@@ -980,11 +980,11 @@ Reset {controller | port}
 Select {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup } [<n>]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **object**
 
-指定要选择的对象的类型。 对象 > 类型可以是提供程序、子系统、控制器、驱动器或 LUN。 \<
+指定要选择的对象的类型。 > 类型的 \<对象可以是**提供程序**、**子系统**、**控制器**、**驱动器**或**LUN**。
 
 **hbaport** [\<n >]
 
@@ -1036,7 +1036,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 [\<n >]
 
-指定 > \<要选择的对象编号。 如果指定<object number>的无效，则会清除指定类型的对象的任何现有选择。 如果未<object number>指定，则显示当前的对象。
+指定 > 选择 \<对象号。 如果指定的 <object number> 无效，则会清除指定类型的对象的任何现有选择。 如果未指定 <object number>，则显示当前的对象。
 
 ### <a name="BKMK_34"></a>setflag
 
@@ -1048,7 +1048,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 setflag drive hotspare={true | false}
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **true**
 
@@ -1072,7 +1072,7 @@ setflag drive hotspare={true | false}
 shrink lun size=<n> [noerr]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **大小 =**
 
@@ -1092,7 +1092,7 @@ shrink lun size=<n> [noerr]
 standby hbaport
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **hbaport**
 
@@ -1108,7 +1108,7 @@ standby hbaport
 unmask LUN {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [;…]] | [add] initiator=<initiator>[;<initiator>[;…]]} [uninstall]
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
 **一切**
 
@@ -1159,7 +1159,7 @@ diskraid /s <script.txt>
 |4|某个 DiskRAID 使用的服务返回了故障。|
 |5|出现命令语法错误。 由于对象选择不正确或与该命令一起使用，该脚本失败。|
 
-## <a name="example-interactively-view-status-of-subsystem"></a>例如：以交互方式查看子系统的状态
+## <a name="example-interactively-view-status-of-subsystem"></a>示例：以交互方式查看子系统的状态
 
 若要查看计算机上子系统0的状态，请在命令行中键入以下命令：
 ```
@@ -1175,7 +1175,7 @@ On computer: COMPUTER_NAME
 ```
 select subsystem 0
 ```
-按 Enter。 将显示类似于以下内容的输出:
+按 Enter。 将显示类似于以下内容的输出：
 ```
 Subsystem 0 is now the selected subsystem.
 

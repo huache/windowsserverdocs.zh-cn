@@ -63,7 +63,7 @@ ms.locfileid: "71391108"
   
 通过打开 Active Directory 管理中心 (**Dsac.exe**)，你可以执行只读域控制器的计算机帐户的分步操作。 单击导航窗格中的域名。 双击管理列表中的“域控制器” 。 单击任务窗格中的“预创建只读域控制器帐户”。  
   
-有关 Active Directory 管理中心的详细信息，请参阅[使用 Active Directory 管理中心&#40;级别 200&#41;进行高级 AD DS 管理](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md)和查看 [Active 目录管理中心：入门 @ no__t-0。  
+有关 Active Directory 管理中心的详细信息，请参阅[使用 Active Directory 管理中心&#40;级别 200&#41;进行高级 AD DS 管理](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md)和查看[Active Directory 管理中心：入门](https://technet.microsoft.com/library/dd560651(WS.10).aspx)。  
   
 如果你有创建只读域控制器的经验，你将发现安装向导的图形界面与在使用 Windows Server 2008 中较早版本 Active Directory 用户和计算机管理单元时看到的相同，并且使用相同的代码，这包括采用由过时的 dcpromo 使用的无人参与文件格式导出配置。  
   
@@ -173,7 +173,7 @@ Add-addsreadonlydomaincontrolleraccount
 -delegatedadministratoraccountname <string>  
 ```  
   
-### <a name="summary"></a>总结  
+### <a name="summary"></a>摘要  
 ![安装 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1Summary.png)  
   
 “摘要” 对话框使你可以确认你的设置。 这是在向导创建分步帐户前停止安装的最后机会。 当你准备好创建分步 RODC 计算机帐户时，单击“下一步”。  单击“导出设置” 以使用过时的 dcpromo 无人参与文件格式保存应答文件。  
@@ -229,7 +229,7 @@ Install-AddsDomainController
 ### <a name="domain-controller-options"></a>域控制器选项  
 ![安装 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2DCOptions.png)  
   
-“域控制器选项”页面显示用于新域控制器的域控制器选项。 当此页面加载时，Active Directory 域服务配置向导向现有域控制器发送 LDAP 查询以检查未占用的帐户。 如果查询查找与当前计算机共享同一名称的未占用域控制器计算机帐户，则向导会在页面顶部显示一条信息性消息，其中显示了 "@no__t 0A 预创建的 RODC 帐户，该帐户与目录中存在目标服务器。选择是使用此现有 RODC 帐户还是重新安装此域控制器 @ no__t-0。 向导使用“使用现有 RODC 帐户”作为默认配置。  
+“域控制器选项”页面显示用于新域控制器的域控制器选项。 当此页面加载时，Active Directory 域服务配置向导向现有域控制器发送 LDAP 查询以检查未占用的帐户。 如果查询查找与当前计算机共享同一名称的未占用域控制器计算机帐户，则向导会在页面顶部显示一条信息性消息，其中显示了**目录中存在与目标服务器名称匹配的预创建 RODC 帐户。选择是使用此现有 RODC 帐户还是重新安装此域控制器**。 " 向导使用“使用现有 RODC 帐户”作为默认配置。  
   
 > [!IMPORTANT]  
 > 当域控制器遇到物理问题且无法恢复运行时，你可以使用“重新安装此域控制器” 选项。 在配置替换域控制器时，通过在 Active Directory 中保留域控制器计算机帐户和对象元数据，这可以节省时间。 使用 *相同名称*安装新计算机并将其升级为域中的域控制器。 如果已从 Active Directory 中删除域控制器对象的元数据（元数据清理），则 "**重新安装此域控制器**" 选项不可用。  

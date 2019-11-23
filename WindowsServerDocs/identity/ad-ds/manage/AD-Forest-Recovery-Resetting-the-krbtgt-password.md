@@ -18,14 +18,14 @@ ms.locfileid: "71390300"
 ---
 # <a name="ad-forest-recovery---resetting-the-krbtgt-password"></a>AD 林恢复-正在重置 krbtgt 密码
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 使用以下过程为域重置 krbtgt 密码。 以下过程适用于可写 Dc，但不适用于只读域控制器（Rodc）。
   
 > [!IMPORTANT]
-> 如果计划在林恢复期间联机恢复 Rodc，请不要删除 Rodc 的 krbtgt 帐户。 RODC 的 krbtgt 帐户以 krbtgt_*number*格式列出。
+> 如果计划在林恢复期间联机恢复 Rodc，请不要删除 Rodc 的 krbtgt 帐户。 RODC 的 krbtgt 帐户以格式 krbtgt_*号*列出。
 >
-> 如果在 DC 上使用自定义密码筛选器（如 passfilt），则当你尝试重置 krbtgt 密码时，可能会收到错误。 有关详细信息，包括解决方法，请参阅 Microsoft 知识库[文章 2549833](https://support.microsoft.com/kb/2549833) （ https://support.microsoft.com/kb/2549833) 。
+> 如果在 DC 上使用自定义密码筛选器（如 passfilt），则当你尝试重置 krbtgt 密码时，可能会收到错误。 有关详细信息，包括解决方法，请参阅 Microsoft 知识库[文章 2549833](https://support.microsoft.com/kb/2549833) （ https://support.microsoft.com/kb/2549833)。
   
 ## <a name="to-reset-the-krbtgt-password"></a>重置 krbtgt 密码  
   
@@ -33,7 +33,7 @@ ms.locfileid: "71390300"
 2. 单击“查看”，然后单击“高级功能”。
 3. 在控制台树中，双击域容器，然后单击 "**用户**"。
 4. 在详细信息窗格中，右键单击**krbtgt**用户帐户，然后单击 "**重置密码**"。
-   ![Reset Password @ no__t-1
+   ![重置密码](media/AD-Forest-Recovery-Resetting-the-krbtgt-password/resetpass1.png)
 5. 在 "**新密码**" 中，键入新密码，在 "**确认密码**" 中再次键入密码，然后单击 **"确定"** 。 指定的密码不是很重要，因为系统将自动独立于指定的密码生成强密码。
   
 > [!NOTE]

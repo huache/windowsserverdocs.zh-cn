@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71376656"
 ---
 # <a name="fsutil-wim"></a>Fsutil wim
->适用于：Windows Server （半年频道），Windows Server 2016，Windows 10
+>适用于: Windows Server (半年频道)、Windows Server 2016、Windows 10
 
 提供用于发现和管理支持 Windows 映像（WIM）的文件的函数。
 
@@ -30,16 +30,16 @@ fsutil wim [queryfile] <filename>
 fsutil wim [removewim] <drive name> <data source>
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 |参数|描述|
 |-------------|---------------|
 |enumfiles|枚举支持 WIM 的文件。|
-|\<drive name >|指定驱动器名称。|
-|@no__t 源 >|指定数据源。|
+|\<驱动器名称 >|指定驱动器名称。|
+|\<数据源 >|指定数据源。|
 |enumwims|枚举后备 WIM 文件。|
 |queryfile|查询文件是否由 WIM 支持，如果是，则显示有关 WIM 文件的详细信息。|
-|\<filename >|指定文件名。|
+|\<文件名 >|指定文件名。|
 |removewim|从备份文件中删除 WIM。|
 
 

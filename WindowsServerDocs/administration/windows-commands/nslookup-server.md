@@ -22,14 +22,14 @@ ms.locfileid: "71373065"
 ---
 # <a name="nslookup-server"></a>nslookup server
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 将默认服务器更改为指定的域名系统（DNS）域。
 ## <a name="syntax"></a>语法
 ```
 server <DNSDomain>
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |    参数    |                          描述                           |
 |-----------------|----------------------------------------------------------------|
@@ -39,5 +39,5 @@ server <DNSDomain>
 ## <a name="remarks"></a>备注
 - **服务器**命令使用当前的默认服务器来查找有关指定 DNS 域的信息。 这与使用初始服务器的**lserver**命令不同。
   ## <a name="additional-references"></a>其他参考
-  [命令行语法 Key](command-line-syntax-key.md)
+  [命令行语法键](command-line-syntax-key.md)
   [nslookup lserver](nslookup-lserver.md)

@@ -119,9 +119,9 @@ ms.locfileid: "71388572"
   
 4.  在“新主机”对话框的“名称(如果为空则使用父域名)”框中，输入 Web 探测的 DNS 名称（默认 Web 探测的名称为 directaccess-webprobehost）。 在“IP 地址”框中，输入 Web 探测的 IPv4 地址，然后单击“添加主机”。 为 directaccess corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在“DNS”对话框中，单击“确定”。  
   
-5.  单击 **“完成”** 。  
+5.  单击**完成**。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
 
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -134,7 +134,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 -   Ip-https**服务器**-DirectAccess 客户端必须能够从 Internet 解析远程访问服务器的 DNS 名称。  
   
--   **CRL 吊销检查**-directaccess 使用证书吊销检查来检查 directaccess 客户端与远程访问服务器之间的 ip-https 连接，以及 directaccess 客户端和网络之间基于 HTTPS 的连接的证书吊销检查位置服务器。 在这两种情况下，DirectAccess 客户端都必须能够解析和访问 CRL 分发点位置。  
+-   **CRL 吊销检查**-directaccess 使用证书吊销检查来检查 directaccess 客户端与远程访问服务器之间的 ip-https 连接，以及 directaccess 客户端和网络位置服务器之间基于 HTTPS 的连接。 在这两种情况下，DirectAccess 客户端都必须能够解析和访问 CRL 分发点位置。  
   
 ## <a name="ConfigAD"></a>配置 Active Directory  
 必须将远程访问服务器和所有 DirectAccess 客户端计算机都加入 Active Directory 域。 DirectAccess 客户端计算机必须是以下域类型之一的成员：  
@@ -149,7 +149,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 1.  在服务器管理器中，单击 **“本地服务器”** 。 在详细信息窗格中，单击“计算机名”旁边的链接。  
   
-2.  在“系统属性” 对话框中，单击“计算机名” 选项卡。在“计算机名” 选项卡上，单击“更改”。  
+2.  在 "**系统属性**" 对话框中，单击 "**计算机名**" 选项卡。在 "**计算机名称**" 选项卡上，单击 "**更改**"。  
   
 3.  如果在将服务器加入域时还要更改计算机名，请在“计算机名”中键入计算机的名称。 在“隶属于”下面单击“域”，键入服务器要加入到的域的名称（例如 corp.contoso.com），然后单击“确定”。  
   
@@ -183,7 +183,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 9. 在“系统属性”对话框中单击“关闭”。 出现提示时单击“立即重新启动”。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -227,7 +227,7 @@ Restart-Computer
   
 6.  在“选择用户、联系人、计算机或服务帐户”对话框中，选择你希望为 DirectAccess 启用的客户端计算机，然后单击“确定”。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -238,7 +238,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>下一步  
   
--   [步骤 2：配置基础 DirectAccess 服务器](da-basic-configure-s2-server.md)  
+-   [步骤2：配置基本 DirectAccess 服务器](da-basic-configure-s2-server.md)  
   
 
 

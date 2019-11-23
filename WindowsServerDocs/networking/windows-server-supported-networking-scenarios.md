@@ -18,11 +18,11 @@ ms.locfileid: "71395695"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Windows Server 支持的网络方案
 
->适用于：Windows Server \(Semi-年收入为 no__t-1，Windows Server 2016
+>适用于： Windows Server \(半年频道\)、Windows Server 2016
 
 本主题提供有关支持的和不支持的方案的信息，在此版本的 Windows Server 2016 中可以或不能执行此方案。  
 >[!IMPORTANT]
->对于所有生产方案，请使用原始设备制造商提供的最新签名的硬件驱动程序，\(OEM @ no__t 或独立硬件供应商 \(IHV @ no__t。
+>对于所有生产方案，请使用原始设备制造商提供的最新签名硬件驱动程序 \(OEM\) 或独立硬件供应商 \(IHV\)。
   
 ## <a name="bkmk_supp"></a>支持的网络方案
 
@@ -38,7 +38,7 @@ ms.locfileid: "71395695"
   
 -   [NIC 组合方案](#bkmk_nicteam)
 
-- [切换嵌入组合 \(SET @ no__t-2 方案](#bkmk_set)
+- [切换嵌入组合 \(设置\) 方案](#bkmk_set)
   
 ### <a name="bkmk_sdn"></a>软件定义的网络（SDN）方案
  
@@ -86,7 +86,7 @@ NFV 方案使你能够：
   
 ### <a name="bkmk_netp"></a>网络平台方案
 
-对于本部分中的方案，Windows Server 网络团队支持使用任何 Windows Server 2016 认证驱动程序。 请与网络接口卡 \(NIC @ no__t 制造商联系，以确保具有最新的驱动程序更新。
+对于本部分中的方案，Windows Server 网络团队支持使用任何 Windows Server 2016 认证驱动程序。 请咨询网络接口卡 \(NIC\) 制造商联系，以确保具有最新的驱动程序更新。
   
 利用网络平台方案，你可以：  
   
@@ -169,7 +169,7 @@ NIC 组合方案使你能够：
 
 有关详细信息，请参阅[NIC 组合](technologies/nic-teaming/NIC-Teaming.md)。 
 
-### <a name="bkmk_set"></a>切换嵌入组合 \(SET @ no__t-2 方案
+### <a name="bkmk_set"></a>切换嵌入组合 \(设置\) 方案
 
 SET 是一种备用 NIC 组合解决方案，可用于在 Windows Server 2016 中包含 Hyper-v 的环境和软件定义的网络（SDN）堆栈。 将一些 NIC 组合功能集成到 Hyper-v 虚拟交换机。 
 

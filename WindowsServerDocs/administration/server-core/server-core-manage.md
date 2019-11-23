@@ -16,7 +16,7 @@ ms.locfileid: "71383405"
 ---
 # <a name="manage-a-server-core-server"></a>管理服务器核心服务器
  
-> 适用于：Windows Server 2019、Windows Server 2016 和 Windows Server （半年频道）
+> 适用于： Windows Server 2019、Windows Server 2016 和 Windows Server （半年频道）
 
 可以通过以下方式管理服务器核心服务器：
 - 使用[Windows 管理中心](../../manage/windows-admin-center/overview.md)
@@ -30,7 +30,7 @@ ms.locfileid: "71383405"
 
 使用服务器核心时，需要牢记一些重要限制和提示：
 
-- 如果你关闭所有命令提示符窗口并想要打开一个新的命令提示符窗口，则可以从任务管理器中执行此操作。 按**CTRL @ no__t-1ALT @ no__t-2DELETE**，单击 "**启动任务管理器**"，单击 "**更多详细信息" > 文件 > "运行**"，然后键入**cmd.exe**。 （键入 " **powershell** " 以打开 powershell 命令窗口。）或者，你可以注销，然后重新登录。
+- 如果你关闭所有命令提示符窗口并想要打开一个新的命令提示符窗口，则可以从任务管理器中执行此操作。 按**CTRL\+ALT\+DELETE**，依次单击 "**启动任务管理器**"、"**更多详细信息" > 文件 > "运行**"，然后键入**cmd.exe**。 （键入 " **powershell** " 以打开 powershell 命令窗口。）或者，你可以注销，然后重新登录。
 - 任何试图启动 Windows 资源管理器的命令或工具都将无法工作。 例如，运行**start。** 在命令提示符下不起作用。
 - 服务器核心不支持 HTML 呈现或 HTML 帮助。
 - 服务器核心在安静模式下支持 Windows Installer，以便可以从 Windows Installer 文件安装工具和实用工具。 在服务器核心上安装 Windows Installer 包时，请使用 **/qb**选项显示基本用户界面。
@@ -92,7 +92,7 @@ Enable-NetFirewallRule -DisplayGroup "<rulegroup>"
 | MMC 管理单元                            | 规则组                                            |
 | ---------------------------------------- | ------------------------------------------------------- |
 | 事件查看器                           | 远程事件日志管理                           |
-| Services                               | 远程服务管理                             |
+| 服务                               | 远程服务管理                             |
 | 共享文件夹                         | 文件和打印机共享                              |
 | 任务计划程序                         | 性能日志和警报、文件和打印机共享 |
 | 磁盘管理                        | 远程卷管理                              |
@@ -149,4 +149,4 @@ sc query type= driver
 sc delete <service_name>
 ```
 
-其中， *service_name*是在运行**sc query type = driver**时获得的服务的名称。
+其中*service_name*是在运行**sc query type = driver**时获得的服务的名称。

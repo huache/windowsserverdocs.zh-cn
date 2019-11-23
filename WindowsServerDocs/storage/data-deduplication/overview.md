@@ -17,7 +17,7 @@ ms.locfileid: "71386297"
 ---
 # <a name="data-deduplication-overview"></a>数据重复删除概述
 
-> 适用于：Windows Server 2019、Windows Server 2016、Windows Server （半年频道）、 
+> 适用于： Windows Server 2019、Windows Server 2016、Windows Server （半年频道）、 
 
 ## <a name="what-is-dedup"></a>什么是重复数据删除？
 
@@ -36,7 +36,7 @@ ms.locfileid: "71386297"
 
 通过重复数据删除可以节省的空间取决于卷上的数据集或工作负荷。 重复率很高的数据集的优化率最高可达 95%，存储使用率最高降低 20 倍。 下表主要显示了各种内容类型的典型的重复数据删除节省情况：
 
-| 应用场景       | 内容                                        | 典型的空间节省率 |
+| 方案       | 内容                                        | 典型的空间节省率 |
 |----------------|------------------------------------------------|-----------------------|
 | 用户文档 | Office 文档、照片、音乐、视频等  | 30-50%                |
 | 部署共享 | 软件二进制文件、cab 文件、符号等 | 70-80%                |
@@ -48,7 +48,8 @@ ms.locfileid: "71386297"
     <tbody>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-clustered-gpfs.png" alt="Illustration of file servers" /></td>
-            <td style="vertical-align:top">@no__t 0General 用途文件服务器 @ no__t-1<br />
+            <td style="vertical-align:top">
+                <b>常规用途文件服务器</b><br />
 常规用途文件服务器是常规使用的文件服务器，可能包含以下任意共享类型： <ul>
                     <li>团队共享</li>
                     <li>用户主页文件夹</li>
@@ -60,26 +61,28 @@ ms.locfileid: "71386297"
         </tr>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-vdi.png" alt="Illustration of VDI servers" /></td>
-            <td style="vertical-align:top">@no__t 0Virtualized 桌面基础结构（VDI）部署 @ no__t-1<br />
+            <td style="vertical-align:top">
+                <b>虚拟桌面基础结构（VDI）部署</b><br />
 VDI 服务器（如<a href="https://technet.microsoft.com/library/cc725560.aspx">远程桌面服务</a>为组织提供了一种向用户设置桌面的轻型选项。 对于一个组织而言，有很多原因要依赖于此类技术： <ul>
-                    <li><b>应用程序部署</b>：可以在整个企业中快速部署应用程序。 如果你具有的应用程序经常更新、很少使用或难以管理，这项技术特别有用。</li>
-                    <li><b>应用程序合并</b>：从一组集中管理的虚拟机中安装和运行应用程序时，无需在客户端计算机上更新应用程序。 还可以减少访问应用程序所需的网络带宽量。</li>
-                    <li><b>远程访问</b>：用户可以从家庭计算机、展台、低功耗硬件和 Windows 以外的操作系统访问企业应用程序。</li>
-                    <li><b>分支机构访问</b>：VDI 部署可为需要访问中心数据存储的分支机构工作人员提供更好的应用程序性能。 数据密集型应用程序有时没有针对低速连接进行优化的客户端/服务器协议。</li>
+                    <li><b>应用程序部署</b>：可以在企业中快速部署应用程序。 如果你具有的应用程序经常更新、很少使用或难以管理，这项技术特别有用。</li>
+                    <li><b>应用程序整合</b>：从一组集中管理的虚拟机安装并运行应用程序时，无需在客户端计算机上更新应用程序。 还可以减少访问应用程序所需的网络带宽量。</li>
+                    <li><b>远程访问</b>：用户可以从家庭计算机等设备、展台、低功率硬件以及非 Windows 操作系统访问企业应用程序。</li>
+                    <li><b>分支机构访问</b>：VDI 部署可以为需要访问集中式数据存储的分支机构工作人员提供更好的应用程序性能。 数据密集型应用程序有时没有针对低速连接进行优化的客户端/服务器协议。</li>
                 </ul>
 VDI 部署非常适合进行重复数据删除，因为驱动用户远程桌面的虚拟硬盘基本相同。 此外，重复数据删除还可帮助用户应对所谓的 <em>VDI 启动风暴</em>，即当多个用户在早上同时登录到各自的桌面时存储性能下降。
             </td>
         </tr>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-backup.png" alt="Illustration of backup applications" /></td>
-            <td style="vertical-align:top">@no__t 0Backup 目标，如虚拟化备份应用程序 @ no__t-1<br />
+            <td style="vertical-align:top">
+                <b>备份目标，如虚拟化备份应用程序</b><br />
 备份应用程序（如 <a href="https://technet.microsoft.com/library/hh758173.aspx">Microsoft Data Protection Manager (DPM)</a>）极其适合进行重复数据删除，因为备份快照存在大量重复。
             </td>
         </tr>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-other.png" alt="Illustration of other workloads" /></td>
             <td style="vertical-align:top">
-                <b>Other 工作负荷 @ no__t-1<br />
+                <b>其他工作负荷</b><br />
                 <a href="install-enable.md#enable-dedup-candidate-workloads" data-raw-source="[Other workloads may also be excellent candidates for Data Deduplication](install-enable.md#enable-dedup-candidate-workloads)">其他工作负荷也可能极其适合进行重复数据删除</a>。
             </td>
         </tr>

@@ -17,7 +17,7 @@ ms.locfileid: "71402056"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>文件夹重定向、脱机文件和漫游用户配置文件概述
 
->适用于：Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2
+>适用于： Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2
 
 本主题讨论文件夹重定向、脱机文件（客户端缓存或 CSC）以及漫游用户配置文件（有时称为 RUP）技术，包括新增功能和查找其他信息的位置。
 
@@ -25,8 +25,8 @@ ms.locfileid: "71402056"
 
 结合使用“文件夹重定向”和“脱机文件”可将本地文件夹（例如“文档文件夹”）重定向到网络位置，同时在本地缓存内容，可提高速度和可用性。 使用“漫游用户配置文件”，将用户配置文件重定向到网络位置。 所用的这些功能可视为 Intellimirror。
 
-- **文件夹重定向** 使用户和管理员能够手动或通过使用组策略将已知文件夹的路径重定向到新位置。 新位置可以是本地计算机上的文件夹，也可以是文件共享上的目录。 用户可与重定向的文件夹中的文件交互，犹如它依然存在于本地驱动器上。 例如，你可将文档文件夹（通常存储在本地驱动器上）重定向到网络位置。 这样，网络中任何计算机的用户就都可以使用该文件夹中的文件。
-- **脱机文件使用户**可以使用网络文件，即使到服务器的网络连接不可用或速度慢也是如此。  联机工作时，文件访问性能取决于网络和服务器的速度。 当脱机工作时，可按本地访问速度从脱机文件文件夹中检索文件。 在以下情况下，计算机切换到“脱机”模式：
+- **文件夹重定向** 允许用户和管理员手动或通过使用组策略将已知文件夹的路径重定向到新位置。 新位置可以是本地计算机上的文件夹，也可以是文件共享上的目录。 用户可与重定向的文件夹中的文件交互，犹如它依然存在于本地驱动器上。 例如，你可将文档文件夹（通常存储在本地驱动器上）重定向到网络位置。 这样，网络中任何计算机的用户就都可以使用该文件夹中的文件。
+- **脱机文件** 使用户可使用网络文件，即使到服务器的网络连接不可用或速度慢也是如此。 联机工作时，文件访问性能取决于网络和服务器的速度。 当脱机工作时，可按本地访问速度从脱机文件文件夹中检索文件。 在以下情况下，计算机切换到“脱机”模式：
   - "**始终脱机**" 模式已启用
   - 服务器不可用
   - 网络连接比可配置的阈值更加缓慢。
@@ -69,7 +69,7 @@ ms.locfileid: "71402056"
 
 对于 "始终脱机" 模式，当配置 "**配置慢速链接模式**组策略" 设置，并且 "**延迟**阈值" 参数设置为1毫秒时，计算机永远不会转换到联机模式。 默认情况下，每隔 120 分钟在后台对更改进行一次同步，但使用 **Configure Background Sync** 组策略设置可配置同步。
 
-有关详细信息，请参阅[启用“始终脱机”模式，加快文件访问速度](enable-always-offline.md)。
+有关详细信息，请参阅 [Enable the Always Offline Mode to Provide Faster Access to Files](enable-always-offline.md)。
 
 ## <a name="cost-aware-synchronization"></a>感知成本的同步
 
@@ -107,7 +107,7 @@ ms.locfileid: "71402056"
 
 为仅将私人用户数据下载到主计算机中，当用户登录计算机时，文件夹重定向和漫游用户配置文件技术可执行以下逻辑检查：
 
-1. Windows 操作系统检查新的组策略设置（仅**在主计算机上下载漫游配置文件**并在**主计算机上重定向文件夹**）以确定 Active 中的**计算机**上的属性Directory 域服务（AD DS）应影响漫游用户的配置文件或应用文件夹重定向的决定。
+1. Windows 操作系统会检查新的组策略设置（仅**在主计算机上下载漫游配置文件**并在**主计算机上重定向文件夹**），以确定 Active Directory 域服务（AD DS）中的 "**计算机**上" 属性是否会影响漫游用户配置文件或应用文件夹重定向的决定。
 2. 如果策略设置启用主计算机支持，则 Windows 验证 AD DS 架构是否支持 **ms-DS-Primary-Computer** 属性。 如果支持，则 Windows 按照如下方式确定是否将用户登录的计算机指定为用户的主计算机：
     1. 如果计算机是用户的主计算机之一，则 Windows 将应用漫游用户配置文件和文件夹重定向设置。
     2. 如果计算机不是用户的主计算机之一，则 Windows 将加载用户的缓存本地配置文件（如果存在）或创建新的本地配置文件。 Windows 还根据之前应用的组策略设置（保留在本地“文件夹重定向”配置中）指定的删除操作删除任何现有的重定向文件夹。
@@ -129,10 +129,10 @@ ms.locfileid: "71402056"
 
 有关其他相关信息，请参阅以下资源。
 
-| 内容类型 | 参考资料 |
+| 内容类型 | 引用 |
 | --- | --- |
-| 产品评估 | [支持具有可靠文件服务和存储的信息工作者](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[脱机文件中的新增功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)（Windows 7 和 Windows Server 2008 R2）<br>[适用于 Windows Vista 的脱机文件中的新增功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>对[Windows Vista 中脱机文件的更改](<https://technet.microsoft.com/library/2007.11.offline.aspx>)（TechNet 杂志） |
+| 产品评估 | [支持具有可靠文件服务和存储的信息工作者](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[脱机文件中的新增功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)（Windows 7 和 windows Server 2008 R2）<br>[适用于 Windows Vista 的脱机文件中的新增功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>对[Windows Vista 中脱机文件的更改](<https://technet.microsoft.com/library/2007.11.offline.aspx>)（TechNet 杂志） |
 | 部署 | [部署文件夹重定向、脱机文件和漫游用户配置文件](deploy-folder-redirection.md)<br>[实现最终用户数据集中解决方案：文件夹重定向和脱机文件技术验证和部署](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫游用户数据部署指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[为 Windows 7 计算机配置新增脱机文件功能循序渐进指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用文件夹重定向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[实现文件夹重定向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)（Windows Server 2003） |
-| 工具和设置 | [MSDN 上的脱机文件](https://msdn.microsoft.com/library/cc296092.aspx)<br>[组策略引用脱机文件](https://msdn.microsoft.com/library/ms878937.aspx)（Windows 2000） |
+| 工具和设置 | [MSDN 上的脱机文件](https://msdn.microsoft.com/library/cc296092.aspx)<br>[脱机文件组策略参考](https://msdn.microsoft.com/library/ms878937.aspx)（Windows 2000） |
 | 社区资源 | [文件服务和存储论坛](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[您好，脚本专家！如何在 Windows 中使用脱机文件功能？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[您好，脚本专家！如何启用和禁用脱机文件？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
 | 相关技术|[Windows Server 中的标识和访问](../../identity/identity-and-access.md)<br>[Windows Server 中的存储](../storage.md)<br>[远程访问和服务器管理](../../remote/index.md) |

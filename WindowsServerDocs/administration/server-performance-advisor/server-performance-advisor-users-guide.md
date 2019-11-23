@@ -18,7 +18,7 @@ ms.locfileid: "71383090"
 ---
 # <a name="server-performance-advisor-users-guide"></a>Server Performance Advisor 用户指南
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 10，Windows 8
+>适用于： Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 10，Windows 8
 
 Microsoft Server Performance Advisor （SPA）的此用户指南提供了有关如何使用 SPA 来识别各种服务器角色中部署的系统的性能瓶颈的指导原则。
 
@@ -126,7 +126,7 @@ SPA 控制台可在以下操作系统上运行：
 
 * Windows 8
 
-* Windows 7
+* Windows 7
 
 * Windows Server 2012 R2
 
@@ -196,7 +196,7 @@ SPA 控制台使用同一帐户来读取日志并将它们导入到数据库中�
 
 * 在控制台和每个目标服务器上启用 "网络发现"。
 
-* 如果目标服务器未加入域，请启用以下注册表设置：**HKLM @ no__t-1SOFTWARE @ no__t-2Microsoft @ no__t-3Windows @ no__t-4Currentversion @ no__t-5Policies @ no__t-6system @ no__t-7LocalAccountTokenFilterPolicy**。
+* 如果目标服务器未加入域，请启用以下注册表设置： **HKLM\\SOFTWARE\\Microsoft\\Windows\\Currentversion\\system\\LocalAccountTokenFilterPolicy\\策略**。
 
 **注意**默认情况下，SPA 将诊断日志写入到 SpaConsole 所在的文件夹。 如果 SPA 安装在 Program Files 文件夹下，只在以管理员身份运行 SpaConsole 时，SPA 才能写入日志。
 
@@ -222,13 +222,13 @@ SPA 控制台使用同一帐户来读取日志并将它们导入到数据库中�
 
     * 向目标服务器列表中添加服务器
 
-3.  单击“下一步”。 "**创建项目数据库**" 页要求您提供要在其中创建数据库的 Microsoft SQL Server 实例的名称。 例如，如果它与控制台位于同一台计算机上，则可以使用**localhost @ no__t-1 @ no__t-2YOUR SQL server name @ no__t**。
+3.  单击**下一步**。 "**创建项目数据库**" 页要求您提供要在其中创建数据库的 Microsoft SQL Server 实例的名称。 例如，如果与控制台位于同一台计算机上，则可以使用**localhost\\&lt;SQL server 名称&gt;** 。
 
-    **注意**SQL Server 2008 R2 Express 安装的默认实例名称为 SQLExpress。 对于安装在本地计算机上 SQL Server 2008 R2 Express 的实例，数据库通常默认为**localhost @ no__t-1SQLExpress**。 但是，在 SQL Server 安装过程中，它可能已更改，因此需要确保使用正确的 SQL Server 实例名称。
+    **注意**SQL Server 2008 R2 Express 安装的默认实例名称为 SQLExpress。 对于安装在本地计算机上 SQL Server 2008 R2 Express 的实例，数据库通常默认为**localhost\\SQLExpress**。 但是，在 SQL Server 安装过程中，它可能已更改，因此需要确保使用正确的 SQL Server 实例名称。
 
      
 
-4.  提供数据库名称。 仅允许使用字母、数字和下划线（\_）作为数据库名称的有效字符。 SPA 数据库名称的合理建议是**spa**。 如果输入的名称无效，则会显示红色错误图标。 关联的工具提示提供验证失败的原因。
+4.  提供数据库名称。 只允许字母、数字和下划线（\_）作为数据库名称的有效字符。 SPA 数据库名称的合理建议是**spa**。 如果输入的名称无效，则会显示红色错误图标。 关联的工具提示提供验证失败的原因。
 
     **注意**务必记住数据库名称和服务器实例名称，因为这些是项目的唯一标识符。 如果要切换到此数据库，则需要提供此信息。
 
@@ -238,7 +238,7 @@ SPA 控制台使用同一帐户来读取日志并将它们导入到数据库中�
 
 6.  在 "**创建项目数据库**" 页上，单击 "**下一步**"。 第一次使用时，向导将创建一个数据库，并在数据库中生成所有与 SPA 相关的数据库架构、函数和存储过程。 此步骤可能需要几秒钟的时间，具体取决于硬件和网络速度。
 
-    **注意**如果此步骤失败，将显示一条错误消息。 一些常见问题如下：控制台无法连接到 SQL Server 实例、权限不足，无法创建数据库，或者数据库名称已经存在。
+    **注意**如果此步骤失败，将显示一条错误消息。 其中一些常见问题包括：控制台无法连接到 SQL Server 实例、权限不足，无法创建数据库，或者数据库名称已经存在。
 
      
 
@@ -254,7 +254,7 @@ SPA 控制台使用同一帐户来读取日志并将它们导入到数据库中�
 
      
 
-9.  在 "**添加服务器**" 页上，对于要添加到目标服务器列表中的每个服务器，需要填写以下两个必需字段：**服务器**和**文件共享位置**的名称。
+9.  在 "**添加服务器**" 页上，对于要添加到目标服务器列表中的每个服务器，需要填写以下两个必需字段：**服务器名称**和**文件共享位置**。
 
     **注意**还有一个**注释**字段，该字段主要用于分类或查找服务器。 在具有多个服务器的情况下，您可以导入逗号分隔值（.csv）文件，其中包含服务器名称、结果文件夹和可选的注释字段。 "**注释**" 字段用于描述服务器，术语可用于筛选用于数据收集的服务器。 如果通过 .csv 文件初始化服务器，则文件中的分析错误不会加载服务器。
 
@@ -302,7 +302,7 @@ SPA 控制台使用同一帐户来读取日志并将它们导入到数据库中�
 ## <a href="" id="bkmk-viewingreports"></a>查看报表
 
 
-SPA 中有三种类型的性能分析报告：单个报表、并排报表、趋势图和历史关系图。
+在 SPA 中，有三种类型的性能分析报表：单一报表、并排报表、趋势图和历史关系图。
 
 运行性能分析后，将为在目标计算机上运行的每个 advisor 包生成一个报表。 在主窗口的 "服务器" 列表中，您可以展开 "**分析结果**" 以查看在特定服务器上运行的所有 advisor 包。 您可以单击报表名称以查看单个报表。
 
@@ -368,11 +368,11 @@ Advisor 包名称旁有三个图标，用于显示服务器上的最新分析运
 
 * **列表值**这有时是键/值对，但列表值可以包含多个字段。 例如，可以在具有多个列和多个行的表中显示 CPU 的属性。 每一行代表一个 CPU，每个列表示 CPU 的一个属性。
 
-* **统计信息**可以被视为一种特殊类型的单个值。 它只能包含数值数据。 在数据收集期间，许多数值数据点会波动，而不是保持不变。 例如，每次 PLA 收集性能计数器时，CPU 使用率都会发生变化。 仅显示单个值无法准确反映性能情况。 对于此类动态数值数据点，而不是仅显示一个值、平均值、最小值、最小值和 90%。 90% 值表示位于给定收集间隔内该计数器的所有事件的 90% 的活动位置或更高。
+* **统计信息**可以被视为一种特殊类型的单个值。 它只能包含数值数据。 在数据收集期间，许多数值数据点会波动，而不是保持不变。 例如，每次 PLA 收集性能计数器时，CPU 使用率都会发生变化。 仅显示单个值无法准确反映性能情况。 对于此类动态数值数据点，而不是仅显示一个值、平均值、最小值、最小值和90%。 90% 值表示位于给定收集间隔内该计数器的所有事件的90% 的活动位置或更高。
 
-* **顶部列表**通常包含特定资源的排名靠前的使用者或遇到某些事件的顶级实体。 例如，**在平均 cpu 使用率方面，前10个进程**包括在数据收集过程中 CPU 使用率最高的前十个进程。 由于 CPU 使用率也是动态数值数据点，因此列表中还包含其他统计信息（例如最大值、最小值和 90%），以便为用户提供更完整的 CPU 消耗。
+* **顶部列表**通常包含特定资源的排名靠前的使用者或遇到某些事件的顶级实体。 例如，**在平均 cpu 使用率方面，前10个进程**包括在数据收集过程中 CPU 使用率最高的前十个进程。 由于 CPU 使用率也是动态数值数据点，因此列表中还包含其他统计信息（例如最大值、最小值和90%），以便为用户提供更完整的 CPU 消耗。
 
-如前面部分所述，SPA 依赖于 PLA 收集 ETW 跟踪、WMI 查询、性能计数器、注册表项和配置文件以生成报表。 了解报表中每个数据点后面的数据源很重要。 SPA 通过工具提示提供此类信息。 您可以将鼠标悬停在键列或行上，以查看数据源工具提示。 例如， **wmi： Win32 @ no__t-1DisDrive： Caption**表示数据源来自 wmi 查询，wmi 类名称为 Win32 @ No__t-2DiskDrive，属性为**Caption**。
+如前面部分所述，SPA 依赖于 PLA 收集 ETW 跟踪、WMI 查询、性能计数器、注册表项和配置文件以生成报表。 了解报表中每个数据点后面的数据源很重要。 SPA 通过工具提示提供此类信息。 您可以将鼠标悬停在键列或行上，以查看数据源工具提示。 例如， **wmi： Win32\_DisDrive： Caption**表示数据源来自 wmi 查询，wmi 类名称是 Win32\_DiskDrive，属性为**Caption**。
 
 ### <a href="" id="side-by-side-report-"></a>并排报表
 
@@ -464,7 +464,7 @@ Microsoft 或非 Microsoft 开发人员可以发布新的顾问包。 Advisor �
 
 **预配新的顾问包**
 
-1.  将 advisor 包的所有内容复制到 *% SpaRoot%* \\APs 目录下。
+1.  将 advisor 包的所有内容复制到 *% SpaRoot%* \\ap 目录下。
 
 2.  在主窗口中，单击 "**配置**"，然后单击 "**配置 Advisor 包**"。 此时将打开 "**配置顾问包**" 对话框。
 
@@ -586,11 +586,11 @@ SPA 控制台支持通过 UI 进行定期数据收集。 如果该功能不足�
 
 下表介绍了 SPA Windows PowerShell cmdlet：
 
-| Cmdlet 名称 | Parameters | 描述 |
+| Cmdlet 名称 | 参数 | 描述 |
 | ------ | ------- | ------ |
 | SpaAnalysis | **-ServerName**目标服务器的名称。<br>**-AdvisorPackName**要在服务器上排队的 advisor 包的完整名称。 当计划同时运行多个包时，应将参数的值设置为 AP1name，AP2name。<br>**-Duration**数据收集的持续时间。<br>**-Credential**在目标服务器上运行数据收集的帐户的用户凭据。<br>**-SqlInstanceName**SQL Server 实例的名称。<br>**-SqlDatabaseName**SPA 项目数据库的名称。 | 在指定的服务器上启动 SPA 数据收集会话。 |
 | 停止-SpaAnalysis | **-SqlInstanceName**SQL Server 实例的名称。<br>**-SqlDatabaseName**SPA 项目数据库的名称。<br>**-ServerName**目标服务器的名称。 | 尝试停止正在运行的 SPA 会话。 如果会话已完成，它将返回，而不执行任何操作。 |
-| SpaServer | **-SqlInstanceName**SQL Server 实例的名称。<br>**-SqlDatabaseName**SPA 项目数据库的名称。 | 获取数据库中的服务器列表。 它将返回对象的列表，其中包括以下属性："名称"、"状态"、"文件共享" 和 "注释"。 |
+| SpaServer | **-SqlInstanceName**SQL Server 实例的名称。<br>**-SqlDatabaseName**SPA 项目数据库的名称。 | 获取数据库中的服务器列表。 它将返回对象的列表，其中包括以下属性：名称、状态、文件共享和注释。 |
 | SpaAdvisorPacks | **-SqlInstanceName**SQL Server 实例的名称<br>**-SqlDatabaseName**SPA 项目数据库的名称 | 获取数据库中的 advisor 包列表。 它将返回对象的列表，其中包括以下属性：名称、DisplayName、作者和版本。 |
 
 Windows PowerShell 提供通过加密文件传递凭据以实现自动化方案的功能。 有关使用加密文件将凭据传递到 cmdlet 的详细信息，请参阅[创建接受凭据的 Windows PowerShell 脚本](https://technet.microsoft.com/magazine/ff714574.aspx)。
@@ -717,7 +717,7 @@ SPA 将失败信息存储在 SPA 文件下的 SPA 文件夹中。 详细的错�
 
 ### <a name="sql-server-express-log-size-and-disk-capacity"></a>SQL Server Express 日志大小和磁盘容量
 
-如果使用 SQL Server Express，则用户数据库限制为 10 GB，但相应的日志文件可能超过 70 GB。 出于此原因，我们建议 SQL Server Express 100 GB 或更多的可用磁盘空间。 此磁盘空间应足以存储约20000到30000个报表。 此日志文件命名为 SPADB\_log.ldf，位于 **% Program Files% \\Microsoft SQL Server @ no__t-3MSSQL10 @ no__t-4MSSQL @ no__t-5DatA**。
+如果使用 SQL Server Express，则用户数据库限制为 10 GB，但相应的日志文件可能超过 70 GB。 出于此原因，我们建议 SQL Server Express 100 GB 或更多的可用磁盘空间。 此磁盘空间应足以存储约20000到30000个报表。 此日志文件命名为 SPADB\_log .ldf，位于 **% Program Files%\\Microsoft SQL Server\\mssql10.mssqlserver。SQLEXPRESS\\MSSQL\\数据**。
 
 ### <a name="failure-to-connect-to-target-server"></a>未能连接到目标服务器
 
@@ -729,7 +729,7 @@ SPA 将失败信息存储在 SPA 文件下的 SPA 文件夹中。 详细的错�
 
 * 确保 & 警报服务正在运行的**性能日志**
 
-* 安全设置 @no__t 0Network 访问权限：不允许存储网络身份验证的密码和凭据 @ no__t 已禁用。 必须禁用安全设置，因为 SPA 需要使用用户凭据在目标服务器上创建数据收集组。
+* "安全设置" "**网络访问：不允许存储用于网络身份验证的密码和凭据**"。 必须禁用安全设置，因为 SPA 需要使用用户凭据在目标服务器上创建数据收集组。
 
 ### <a href="" id="running-spa-against-the-console-"></a>针对控制台运行 SPA
 
@@ -753,7 +753,7 @@ SPA 保护由 SPA 成功生成的每个报表的完整性。 同时，SPA 不能
 
 某些权限问题还可能会导致跳过注册表或 WMI 查询。 但是，这种情况比 ETW 事件丢失少很多。 因此，数据收集器集的结果有时不包含请求的所有值。 你需要确保所有 advisor 包的 T-sql 脚本均对此情况进行处理。 如果数据收集结果中不存在该数据，则会将其标记为报表中的数据。
 
-由于 ETW 事件损失对于 PLA 很常见，因此基于 ETW 跟踪生成的数据点可能与基于生成的数据点（例如性能计数器）不一致。 例如，可以看到 IIS 的总 CPU 使用率为 80% （来自性能计数器），并且顶级 Url 只使用全部 CPU 时间的 10% （这是来自 ETW 跟踪的数据点）。 通常，可以通过数据点的工具提示查看一个数据点的数据源。 你应注意此类数据丢失的影响。
+由于 ETW 事件损失对于 PLA 很常见，因此基于 ETW 跟踪生成的数据点可能与基于生成的数据点（例如性能计数器）不一致。 例如，可以看到 IIS 的总 CPU 使用率为80% （来自性能计数器），并且顶级 Url 只使用全部 CPU 时间的10% （这是来自 ETW 跟踪的数据点）。 通常，可以通过数据点的工具提示查看一个数据点的数据源。 你应注意此类数据丢失的影响。
 
 若要避免此类事件丢失，应关闭目标服务器的结果文件夹。
 

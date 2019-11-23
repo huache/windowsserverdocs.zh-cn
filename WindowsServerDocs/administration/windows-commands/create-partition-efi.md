@@ -22,9 +22,9 @@ ms.locfileid: "71379006"
 ---
 # <a name="create-partition-efi"></a>创建分区 efi
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在 Itanium @ no__t-0based 计算机上，在 GUID 分区表 \(gpt @ no__t-4 磁盘上创建 \(EFI @ no__t 系统分区的可扩展固件接口。  
+在基于 Itanium\-的计算机上，将在 GUID 分区表 \(gpt\) 磁盘上创建一个可扩展的固件接口 \(EFI\) 系统分区。  
   
   
   
@@ -34,12 +34,12 @@ ms.locfileid: "71379006"
 create partition efi [size=<n>] [offset=<n>] [noerr]  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>参数  
   
 |  参数  |                                                                                             描述                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  size @ no__t-0 @ no__t-1  |                         分区的大小（mb） @no__t-配置包括 @ no__t-1。 如果没有给定大小，则分区会一直继续，直至当前区域中没有可用空间为止。                         |
-| offset @ no__t-0 @ no__t-1 |             在其中创建分区的偏移量（kb） \(KB @ no__t-1。 如果未给出偏移量，则会将该分区置于足够大的第一个磁盘范围中以容纳该分区。              |
+|  大小\=<n>  |                         分区大小以 mb \(MB\)为单位。 如果没有给定大小，则分区会一直继续，直至当前区域中没有可用空间为止。                         |
+| 偏移量\=<n> |             在其中创建分区 \(KB\)的偏移量（kb）。 如果未给出偏移量，则会将该分区置于足够大的第一个磁盘范围中以容纳该分区。              |
 |    noerr    | 仅用于脚本编写。 遇到错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
   
 ## <a name="remarks"></a>备注  

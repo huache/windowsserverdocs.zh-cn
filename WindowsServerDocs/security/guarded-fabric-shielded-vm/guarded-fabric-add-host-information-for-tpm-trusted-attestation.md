@@ -15,7 +15,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71386817"
 ---
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 ### <a name="add-host-information-for-tpm-trusted-attestation"></a>为受 TPM 信任的证明添加主机信息
 
@@ -39,9 +39,9 @@ ms.locfileid: "71386817"
     > 可以通过在记事本（如记事本）中打开 XML 文件来检查是否缺少 EKCert，并检查错误消息，指出找不到任何 EKCert。
     > 如果是这种情况，并且你相信计算机上的 TPM 是可信的，则可以使用 `-Force` 标志覆盖此安全检查，并将主机标识符添加到 HGS。
 
-2. 获取构造管理员为主机创建的代码完整性策略，采用二进制格式（@no__t 旁1/-0）。 将其复制到 HGS 服务器。 然后运行以下命令。
+2. 获取构造管理员为主机创建的代码完整性策略，采用二进制格式（\*p7b）。 将其复制到 HGS 服务器。 然后运行以下命令。
 
-    对于 `<PolicyName>`，请指定 CI 策略的名称，该名称描述应用于的主机类型。 最佳做法是在您的计算机的品牌/型号以及在其上运行的任何特殊软件配置后将其命名为。<br>对于 `<Path>`，指定代码完整性策略的路径和文件名。
+    对于 "`<PolicyName>`"，请指定 CI 策略的名称，该名称描述应用于的主机类型。 最佳做法是在您的计算机的品牌/型号以及在其上运行的任何特殊软件配置后将其命名为。<br>对于 "`<Path>`"，请指定代码完整性策略的路径和文件名。
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'

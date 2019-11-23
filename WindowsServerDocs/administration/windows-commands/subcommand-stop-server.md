@@ -22,17 +22,17 @@ ms.locfileid: "71383740"
 ---
 # <a name="subcommand-stop-server"></a>子命令：停止-服务器
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 停止 Windows 部署服务服务器上的所有服务。
 ## <a name="syntax"></a>语法
 ```
 wdsutil [Options] /Stop-Server [/Server:<Server name>]
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
-|[/Server： @no__t]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server： <Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
 ## <a name="BKMK_examples"></a>示例
 若要停止服务，请键入下列内容之一：
 ```
@@ -41,7 +41,10 @@ wdsutil /verbose /Stop-Server /Server:MyWDSServer
 ```
 #### <a name="additional-references"></a>其他参考
 [命令行语法键](command-line-syntax-key.md)
-[使用 disable-](using-the-disable-server-command.md)server 命令 
- 使用 "[启用-服务器"](using-the-enable-server-command.md)命令 
- 使用 "服务器[" 命令 @no__t](using-the-get-server-command.md)-7 使用 "[初始化-服务器"](using-the-initialize-server-command.md)命令 
-[子命令： set-Server](subcommand-set-server.md)1[子命令： Start-Server](subcommand-start-server.md)3：取消[初始化-服务器选项](the-uninitialize-server-option.md)
+[使用](using-the-disable-server-command.md)
+使用[enable](using-the-enable-server-command.md) -server 命令
+使用 "服务器[" 命令的](using-the-get-server-command.md)命令行语法，
+使用 "[初始化-](using-the-initialize-server-command.md)服务器" 命令
+子命令： [Set-](subcommand-set-server.md) server
+[子命令：启动-服务器](subcommand-start-server.md)
+["取消初始化-服务器" 选项](the-uninitialize-server-option.md)

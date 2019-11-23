@@ -19,7 +19,7 @@ ms.locfileid: "71393645"
 ---
 # <a name="enable-all-virtual-network-adapters-configured-for-a-virtual-machine"></a>启用为虚拟机配置的所有虚拟网络适配器
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳实践和扫描的详细信息，请参阅 [最佳实践分析程序](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
@@ -40,11 +40,11 @@ ms.locfileid: "71393645"
   
 *以下虚拟机可能不具有网络连接：*  
   
-@no__t-虚拟机名称的 0list >  
+虚拟机名称 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
   
-*Use 设备管理器在来宾操作系统中启用所有虚拟网络适配器。如果适配器不是必需的，请使用 Hyper-v 管理器从虚拟机中删除它。*  
+*使用来宾操作系统中的设备管理器来启用所有虚拟网络适配器。如果适配器不是必需的，请使用 Hyper-v 管理器将其从虚拟机中删除。*  
   
 
 

@@ -60,7 +60,7 @@ ms.locfileid: "71367204"
   
 8.  关闭 Active Directory 站点和服务。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -161,7 +161,7 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 4.  在 "**组作用域**" 下，单击 "**通用**"，在 "**组类型**" 下，单击 "**安全**"，然后单击 **"**  
   
-5.  若要将计算机添加到新的安全组，请双击安全组，然后在 " **< Group_Name" > 属性**"对话框中，单击"**成员**"选项卡。  
+5.  若要将计算机添加到新安全组，请双击安全组，然后在 " **< Group_Name > 属性**" 对话框中，单击 "**成员**" 选项卡。  
   
 6.  在“成员” 选项卡上，单击“添加”。  
   
@@ -169,7 +169,7 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 8.  重复此过程以根据需要为每个入口点创建一个安全组。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -289,7 +289,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssoc3.png)  
   
-3.  若要为 "入口点 1" 服务器 GPO 中的 "入口点 2" 服务器 GPO 同步域控制器关联，请运行命令将 "DC2" 替换为 "DC3"，并指定其服务器 GPO 未同步的远程访问服务器，在本例中为 "DA1"，对于*ComputerName*参数。  
+3.  若要为 "入口点 1" 服务器 GPO 中的 "入口点 2" 服务器 GPO 同步域控制器关联，请运行命令将 "DC2" 替换为 "DC3"，并为*ComputerName*参数指定其服务器 GPO 不同步的远程访问服务器，在本例中为 "DA1"。  
   
     ```  
     Set-DAEntryPointDC "ExistingDC 'DC2' "NewDC 'DC3' "ComputerName 'DA1' "ErrorAction Continue  
@@ -300,7 +300,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="ConfigDistOptimization"></a>配置分发的优化  
-进行配置更改时，仅在服务器 Gpo 传播到远程访问服务器后应用更改。 为了减少配置分发时间，远程访问会自动选择可写域控制器，这是在创建服务器 GPO 时最接近远程访问服务器的超链接 "<https://technet.microsoft.com/library/cc978016.aspx>"。  
+进行配置更改时，仅在服务器 Gpo 传播到远程访问服务器后应用更改。 为了减少配置分发时间，远程访问会自动选择一个可写域控制器，该控制器在创建其服务器 GPO 时最接近远程访问服务器的 "<https://technet.microsoft.com/library/cc978016.aspx>" 超链接。  
   
 在某些情况下，可能需要手动修改管理服务器 GPO 的域控制器，以便优化配置分发时间：  
   
@@ -334,6 +334,6 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [步骤 3：配置多站点部署 @ no__t-0  
--   [步骤 1：实现单一服务器远程访问部署 @ no__t-0  
+-   [步骤3：配置多站点部署](Step-3-Configure-the-Multisite-Deployment.md)  
+-   [步骤1：实现单一服务器远程访问部署](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  
 

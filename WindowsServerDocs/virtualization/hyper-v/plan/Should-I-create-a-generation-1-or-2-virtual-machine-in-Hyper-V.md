@@ -20,7 +20,7 @@ ms.locfileid: "71364076"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>是否应在 Hyper-v 中创建第1代或第2代虚拟机？
 
->适用于：Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>适用于： Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 > [!NOTE]
 > 如果你计划将 Windows 虚拟机（VM）从本地上传到 Microsoft Azure，则使用 VHD 文件格式的第1代和第2代 Vm，并支持固定大小的磁盘。 请参阅[azure 上的第2代 vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) ，了解有关 Azure 支持的第2代功能的详细信息。 有关上传 Windows VHD 或 VHDX 的详细信息，请参阅[准备要上传到 Azure 的 WINDOWS vhd 或 vhdx](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
@@ -68,7 +68,7 @@ ms.locfileid: "71364076"
 |Windows 10|&#10004;|&#10004;|  
 |Windows 8.1|&#10004;|&#10004;|  
 |Windows 8|&#10004;|&#10004;|  
-|Windows 7|&#10004;| &#10006;|
+|Windows 7|&#10004;| &#10006;|
 
 下表显示了可用作第1代和第2代虚拟机的来宾操作系统的 Windows 32 位版本。
 
@@ -77,11 +77,11 @@ ms.locfileid: "71364076"
 |Windows 10|&#10004;| &#10006;|  
 |Windows 8.1|&#10004;| &#10006;|  
 |Windows 8|&#10004;| &#10006;|  
-|Windows 7|&#10004;| &#10006;|  
+|Windows 7|&#10004;| &#10006;|  
 
 ### <a name="centos-and-red-hat-enterprise-linux-guest-operating-system-support"></a>CentOS 和 Red Hat Enterprise Linux 来宾操作系统支持
 
-下表显示了哪些版本的 Red Hat Enterprise Linux 可以用作第1代和第2代虚拟机的来宾操作系统 \(RHEL @ no__t 和 CentOS。
+下表显示了哪些版本的 Red Hat Enterprise Linux \(RHEL\) 和 CentOS 可以用作第1代和第2代虚拟机的来宾操作系统。
 
 |操作系统版本|第 1 代|第 2 代|  
 |-----------------------------|----------------|----------------|  
@@ -189,16 +189,16 @@ ms.locfileid: "71364076"
 |IDE CD-ROM|虚拟 SCSI CD-ROM|每个 SCSI 控制器最多支持 64 个 SCSI DVD 设备。|  
 |传统 BIOS|UEFI 固件|安全启动|  
 |旧版网络适配器|合成网络适配器|使用 IPv4 和 IPv6 的网络启动|  
-|软盘控制器和 DMA 控制器|不支持软盘控制器|不可用|  
+|软盘控制器和 DMA 控制器|不支持软盘控制器|N/A|  
 |适用于 COM 端口的通用异步收发器 (UART)|用于调试的可选 UART|更快且更可靠|  
 |i8042 键盘控制器|基于软件的输入|使用较少的资源，因为没有任何模拟。 还减少来自来宾操作系统的攻击面。|  
 |PS/2 键盘|基于软件的键盘|使用较少的资源，因为没有任何模拟。 还减少来自来宾操作系统的攻击面。|  
 |PS/2 鼠标|基于软件的鼠标|使用较少的资源，因为没有任何模拟。 还减少来自来宾操作系统的攻击面。|  
 |S3 视频|基于软件的视频|使用较少的资源，因为没有任何模拟。 还减少来自来宾操作系统的攻击面。|  
-|PCI 总线|不再需要|不可用|  
-|可编程中断控制器 (PIC)|不再需要|不可用|  
-|可编程间隔计时器 (PIT)|不再需要|不可用|  
-|超级 I/O 设备|不再需要|不可用|  
+|PCI 总线|不再需要|N/A|  
+|可编程中断控制器 (PIC)|不再需要|N/A|  
+|可编程间隔计时器 (PIT)|不再需要|N/A|  
+|超级 I/O 设备|不再需要|N/A|  
 
 ## <a name="more-about-generation-2-virtual-machines"></a>有关第2代虚拟机的详细信息
 
@@ -251,7 +251,7 @@ Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
 > [!NOTE]  
 > Hyper-v 管理器中虚拟机的设置中未列出已配置的 COM 端口。
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 
 - [Hyper-v 上的 Linux 和 FreeBSD 虚拟机](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 - [在具有 VMConnect 的 Hyper-v 虚拟机上使用本地资源](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)

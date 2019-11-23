@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71376788"
 ---
 # <a name="fsutil-usn"></a>Fsutil usn
->适用于：Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+>适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 管理更新序列号（USN）更改日志。
 
@@ -33,31 +33,31 @@ fsutil usn [readdata] <FileName>
 fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |-------------|---------------|
 |createjournal|创建 USN 更改日志。|
-|m = \<MaxSize >|指定 NTFS 为变更日志分配的最大大小（以字节为单位）。|
-|a = \<AllocationDelta >|指定添加到末尾并从变更日志的开头删除的内存分配的大小（以字节为单位）。|
+|m =\<MaxSize >|指定 NTFS 为变更日志分配的最大大小（以字节为单位）。|
+|a =\<AllocationDelta >|指定添加到末尾并从变更日志的开头删除的内存分配的大小（以字节为单位）。|
 |\<VolumePath >|指定驱动器号（后跟冒号）。|
 |deletejournal|删除或禁用活动的 USN 更改日志。 **警告：** 删除变更日志会影响文件复制服务（FRS）和索引服务，因为这需要这些服务来执行卷的完整（和耗时）扫描。 这反过来会影响 FRS SYSVOL 复制，并在重新扫描卷时 DFS 链接备用项之间进行复制。|
 |/d|禁用活动的 USN 更改日志，并在禁用更改日志时返回输入/输出（i/o）控件。|
 |/n|禁用活动的 USN 更改日志，并在禁用更改日志后返回 i/o 控制。|
 |enablerangetracking|为卷启用 USN 写入范围跟踪。|
-|c = @no__t 大小 >|指定要在卷上跟踪的区块大小。|
-|s = \<file >|指定范围跟踪的文件大小阈值。|
+|c =\<块区大小 >|指定要在卷上跟踪的区块大小。|
+|s =\<文件大小-阈值 >|指定范围跟踪的文件大小阈值。|
 |enumdata|枚举并列出两个指定边界之间的变更日志项。|
 |\<FileRef >|指定要开始枚举的卷上的文件中的序号位置。|
 |\<LowUSN >|指定用于筛选返回的记录的 USN 值范围的下限。 仅返回最新的更改日志 USN 介于*LowUSN*和*HighUSN*成员值之间的记录。|
 |\<HighUSN >|指定用于筛选返回的文件的 USN 值范围上限。|
 |queryjournal|查询卷的 USN 数据以收集有关当前更改日志、记录和其容量的信息。|
 |readdata|读取文件的 USN 数据。|
-|\<文件名 >|指定文件的完整路径，包括文件名和扩展名（例如）：C:\documents\filename.txt|
+|\<文件名 >|指定文件的完整路径，包括文件名和扩展名（例如： C:\documents\filename.txt）|
 |readjournal|读取 USN 日志中的 USN 记录。|
-|minver = \<number >|要返回的 USN_RECORD 的最低主版本。 默认值为2。|
-|maxver = \<number >|要返回的 USN_RECORD 的最大主版本。 默认值 = 4。|
-|startusn = \<USN number >|要开始从读取 USN 日志的 USN。 默认值为0。|
+|minver =\<号 >|要返回的 USN_RECORD 的最低主要版本。 默认值为2。|
+|maxver =\<号 >|要返回的 USN_RECORD 的最大主版本。 默认值 = 4。|
+|startusn =\<USN 号 >|要开始从读取 USN 日志的 USN。 默认值为0。|
 
 
 ## <a name="remarks"></a>备注

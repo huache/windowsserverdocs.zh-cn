@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71376940"
 ---
 # <a name="fsutil-fsinfo"></a>Fsutil fsinfo
->适用于：Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+>适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 列出所有驱动器、查询驱动器类型、查询卷信息、查询特定于 NTFS 的卷信息或查询文件系统统计信息。
 
@@ -33,7 +33,7 @@ fsutil fsinfo [statistics] <VolumePath>
 fsutil fsinfo [volumeinfo] <RootPath>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |-------------|---------------|
@@ -154,7 +154,7 @@ LogFileWriteBytes :    180936704
 ```
 
 #### <a name="additional-references"></a>其他参考
-[命令行语法关键字](Command-Line-Syntax-Key.md)
+[命令行语法键](Command-Line-Syntax-Key.md)
 [Fsutil](Fsutil.md)
 
 

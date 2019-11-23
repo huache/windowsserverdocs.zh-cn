@@ -24,7 +24,7 @@ ms.locfileid: "71392262"
 
 
 
-unexposes 使用**公开**命令公开的卷影副本。 公开的卷影副本可通过其影子 ID、驱动器号、共享或装入点来指定。
+Unexposes 使用**公开**命令公开的卷影副本。 公开的卷影副本可通过其影子 ID、驱动器号、共享或装入点来指定。
 
 有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
 
@@ -34,14 +34,14 @@ unexposes 使用**公开**命令公开的卷影副本。 公开的卷影副本�
 unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
 |\<ShadowID >|Unexposes 指定的阴影 ID 指定的卷影副本。|
-|\<Drive： >|Unexposes 与指定驱动器号（例如，drive P）关联的卷影副本。|
-|\<Share >|Unexposes 与指定共享关联的卷影副本（例如 \\ @ no__t-1*MachineName*\)。|
-|\<MountPoint >|Unexposes 与指定装入点关联的卷影副本（例如，C:\shadowcopy @ no__t-0。|
+|\<驱动器： >|Unexposes 与指定驱动器号（例如，drive P）关联的卷影副本。|
+|\<共享 >|Unexposes 与指定共享关联的卷影副本（例如 \\\\*MachineName*\)。|
+|\<装入点 >|Unexposes 与指定装入点（例如，C:\shadowcopy\)关联的卷影副本。|
 
 ## <a name="remarks"></a>备注
 

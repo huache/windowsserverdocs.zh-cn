@@ -22,9 +22,9 @@ ms.locfileid: "71384193"
 ---
 # <a name="select-vdisk"></a>选择 vdisk
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-选择指定的虚拟硬盘 \(VHD @ no__t，并将焦点移到该磁盘。  
+选择指定的虚拟硬盘 \(VHD\) 并将焦点转移到该虚拟硬盘。  
   
 > [!NOTE]  
 > 此命令仅适用于 Windows 7 和 Windows Server 2008 R2。  
@@ -35,11 +35,11 @@ ms.locfileid: "71384193"
 select vdisk file=<full path> [noerr]  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>参数  
   
 |参数|描述|  
 |-------|--------|  
-|file @ no__t-0 @ no__t-1|指定现有 VHD 文件的完整路径和文件名。|  
+|文件\=<full path>|指定现有 VHD 文件的完整路径和文件名。|  
 |noerr|仅用于脚本编写。 遇到错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。|  
   
 ## <a name="BKMK_examples"></a>示例  

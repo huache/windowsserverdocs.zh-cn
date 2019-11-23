@@ -22,7 +22,7 @@ ms.locfileid: "71363289"
 ---
 # <a name="using-the-get-allnamespaces-command"></a>使用 AllNamespaces 命令
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 显示有关服务器上的所有命名空间的信息。
 ## <a name="syntax"></a>语法
@@ -34,12 +34,12 @@ Windows Server 2008 R2：
 ```
 wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/details:Clients] [/ExcludedeletePending]
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |         参数         |                                                                               Windows Server 2008                                                                               | Windows Server 2008 R2 |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-|  [/Server： @no__t]  | 指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。 |                        |
-| [/ContentProvider： @no__t] |                                                        仅显示指定内容提供程序的命名空间。                                                         |                        |
+|  [/Server： <Server name>]  | 指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。 |                        |
+| [/ContentProvider：<name>] |                                                        仅显示指定内容提供程序的命名空间。                                                         |                        |
 |      [/Show：个客户端]      |                            仅支持 Windows Server 2008。 显示有关连接到命名空间的客户端计算机的信息。                             |                        |
 |    [/details：客户端]     |                           仅支持 Windows Server 2008 R2。 显示有关连接到命名空间的客户端计算机的信息。                           |                        |
 |  [/ExcludedeletePending]  |                                                              从列表中排除任何已停用的传输。                                                              |                        |
@@ -59,7 +59,7 @@ wdsutil /Get-AllNamespaces
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:"MyContentProv" /details:Clients /ExcludedeletePending
   ```
   #### <a name="additional-references"></a>其他参考
-  [命令行语法关键字](command-line-syntax-key.md)
-  [使用新的命名空间命令](using-the-new-namespace-command.md)
-  [使用删除命名空间](using-the-remove-namespace-command.md)命令 
-   子命令[：起始-命名](subcommand-start-namespace.md)空间
+  [命令行语法键](command-line-syntax-key.md)
+  使用[
+  的](using-the-remove-namespace-command.md)[新命名空间命令](using-the-new-namespace-command.md)
+  [子命令：启动-命名](subcommand-start-namespace.md)空间
