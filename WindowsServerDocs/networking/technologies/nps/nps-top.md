@@ -18,7 +18,7 @@ ms.locfileid: "71396014"
 ---
 # <a name="network-policy-server-nps"></a>网络策略服务器 (NPS)
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2019
+>适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2019
 
 你可以使用本主题来概述 Windows Server 2016 和 Windows Server 2019 中的网络策略服务器。 在 Windows Server 2016 和服务器2019中安装网络策略和访问服务（NPAS）功能时，将安装 NPS。
 
@@ -45,7 +45,7 @@ NPS 允许使用以下功能集中配置和管理网络访问身份验证、授�
 - **RADIUS 记帐**。 你可以配置 NPS，以将事件记录到本地日志文件或 Microsoft SQL Server 的本地或远程实例。 有关详细信息，请参阅[NPS 日志记录](#nps-logging)。
 
 > [!IMPORTANT]
-> 网络访问保护 \(NAP @ no__t，健康注册机构 \(HRA @ no__t-3，主机凭据授权协议 \(HCAP @ no__t-5 在 Windows Server 2012 R2 中已弃用，在 Windows Server 2016 中不可用。 如果使用早于 Windows Server 2016 的操作系统进行 NAP 部署，则不能将 NAP 部署迁移到 Windows Server 2016。
+> 网络访问保护 \(NAP\)、健康注册机构 \(HRA\)和主机凭据授权协议 \(在 Windows Server 2012 R2 中已弃用，并且在 Windows Server 2016 中不可用。\) 如果使用早于 Windows Server 2016 的操作系统进行 NAP 部署，则不能将 NAP 部署迁移到 Windows Server 2016。
 
 可以将 NPS 配置为具有这些功能的任意组合。 例如，你可以将一个 NPS 配置为用于 VPN 连接的 RADIUS 服务器，并将另一个 NPS 配置为 RADIUS 代理，以便将某些连接请求转发到远程 RADIUS 服务器组的成员，以便在另一个域中进行身份验证和授权。
 
@@ -68,19 +68,19 @@ NPS 提供不同的功能，具体取决于你安装的 Windows Server 的版本
 
 ### <a name="radius-server"></a>RADIUS 服务器
 
-NPS 是在 Rfc 2865 和2866中由 Internet 工程任务组 \(IETF @ no__t-1 指定的 RADIUS 标准的 Microsoft 实现。 作为 RADIUS 服务器，NPS 对许多类型的网络访问执行集中式连接身份验证、授权和记帐，包括无线、身份验证交换机、拨号和虚拟专用网络 \(VPN @ no__t-1 远程访问和路由器到路由器的连接。
+NPS 是 Internet 工程任务组在 Rfc 2865 和2866中 \(IETF\) 指定的 RADIUS 标准的 Microsoft 实现。 作为 RADIUS 服务器，NPS 对许多类型的网络访问执行集中式连接身份验证、授权和记帐，包括无线、身份验证交换机、拨号和虚拟专用网络 \(VPN\) 远程访问和路由器到路由器连接。
 
 > [!NOTE]
 > 有关将 NPS 部署为 RADIUS 服务器的信息，请参阅[部署网络策略服务器](nps-deploy.md)。
 
 NPS 允许使用一组异类无线、交换机、远程访问或 VPN 设备。 可以将 NPS 用于远程访问服务，该服务在 Windows Server 2016 中提供。
 
-NPS 使用 Active Directory 域服务 \(AD DS @ no__t 域或本地安全帐户管理器（SAM）用户帐户数据库对用户凭据进行身份验证，以便进行连接尝试。 当运行 NPS 的服务器是 AD DS 域的成员时，NPS 将目录服务用作其用户帐户数据库，并且是单一登录解决方案的一部分。 相同的凭据集用于网络访问控制 @no__t 0authenticating，并授权访问网络 @ no__t，并登录到 AD DS 域。
+NPS 使用 Active Directory 域服务 \(AD DS\) 域或本地安全帐户管理器（SAM）用户帐户数据库对用户凭据进行身份验证，以便进行连接尝试。 当运行 NPS 的服务器是 AD DS 域的成员时，NPS 将目录服务用作其用户帐户数据库，并且是单一登录解决方案的一部分。 同一组凭据用于网络访问控制 \(进行身份验证和授权对网络的访问\) 并登录到 AD DS 域。
 
 > [!NOTE]
 > NPS 使用用户帐户的拨入属性和网络策略对连接进行授权。
 
-Internet 服务提供商 \(ISPs @ no__t-1 和维护网络访问的组织从单一管理点管理所有类型的网络访问都面临着挑战，无论使用何种类型的网络访问设备。 RADIUS 标准在同类环境和异类环境中都支持此功能。 RADIUS 是一种客户端-服务器协议，该协议使网络访问设备（用作 RADIUS 客户端）能够将身份验证和记帐请求提交到 RADIUS 服务器。
+Internet 服务提供商 \(Isp\) 和维护网络访问的组织在管理各种类型的网络访问时，无论使用何种类型的网络访问设备，都面临着更大的挑战。 RADIUS 标准在同类环境和异类环境中都支持此功能。 RADIUS 是一种客户端-服务器协议，该协议使网络访问设备（用作 RADIUS 客户端）能够将身份验证和记帐请求提交到 RADIUS 服务器。
 
 RADIUS 服务器可以访问用户帐户信息，并可以检查网络访问身份验证凭据。 如果对用户凭据进行了身份验证并且连接尝试获得授权，则 RADIUS 服务器会根据指定的条件授权用户访问，然后将网络访问连接记录到一个记帐日志中。 使用 RADIUS 允许在中心位置（而不是在每个访问服务器上）收集和维护网络访问用户身份验证、授权和记帐数据。
 
@@ -99,7 +99,7 @@ RADIUS 服务器可以访问用户帐户信息，并可以检查网络访问身�
 
 ### <a name="radius-proxy"></a>RADIUS 代理
 
-作为 RADIUS 代理，NPS 将身份验证和记帐消息转发到 NPS 和其他 RADIUS 服务器。 可以将 NPS 用作 RADIUS 代理，以便在 RADIUS 客户端 @no__t 0also 之间路由 RADIUS 消息（称为网络访问服务器 @ no__t），以及用于执行连接尝试的用户身份验证、授权和记帐的 RADIUS 服务器。 
+作为 RADIUS 代理，NPS 将身份验证和记帐消息转发到 NPS 和其他 RADIUS 服务器。 你可以将 NPS 用作 RADIUS 代理，以提供 radius 客户端之间的 RADIUS 消息路由 \(也称为网络访问服务器\) 和为连接尝试执行用户身份验证、授权和记帐的 RADIUS 服务器。 
 
 当用作 RADIUS 代理时，NPS 是 RADIUS 访问和记帐消息流过的中心交换点或路由点。 NPS 在记帐日志中记录有关转发的消息的信息。
 
@@ -139,7 +139,7 @@ RADIUS 服务器可以访问用户帐户信息，并可以检查网络访问身�
 
 **使用远程记帐服务器作为 RADIUS 服务器的 NPS**。 在此示例中，未将本地 NPS 配置为执行记帐，并修改了默认连接请求策略，以便将 RADIUS 记帐消息转发到远程 RADIUS 服务器组中的 NPS 或其他 RADIUS 服务器。 尽管转发记帐消息，但不会转发身份验证和授权消息，并且本地 NPS 将为本地域和所有受信任域执行这些功能。
 
-**具有远程 RADIUS 到 Windows 用户映射的 NPS**。 在此示例中，通过将身份验证请求转发到远程 RADIUS 服务器，并使用本地 Windows 用户帐户进行授权，NPS 既充当 RADIUS 服务器，又充当每个单独连接请求的 RADIUS 代理。 此配置是通过将 "远程 RADIUS 到 Windows 用户映射" 属性配置为连接请求策略的条件来实现的。 @no__t 0In 添加，必须在 RADIUS 服务器上以本地方式创建一个用户帐户，该服务器与远程用户帐户具有相同的名称，远程 RADIUS 服务器针对该帐户执行身份验证。 \)
+**具有远程 RADIUS 到 Windows 用户映射的 NPS**。 在此示例中，通过将身份验证请求转发到远程 RADIUS 服务器，并使用本地 Windows 用户帐户进行授权，NPS 既充当 RADIUS 服务器，又充当每个单独连接请求的 RADIUS 代理。 此配置是通过将 "远程 RADIUS 到 Windows 用户映射" 属性配置为连接请求策略的条件来实现的。 \(此外，必须在 RADIUS 服务器上以本地方式创建一个用户帐户，该服务器与远程用户帐户具有相同的名称，远程 RADIUS 服务器使用该帐户进行身份验证。\)
 
 ## <a name="configuration"></a>配置
 

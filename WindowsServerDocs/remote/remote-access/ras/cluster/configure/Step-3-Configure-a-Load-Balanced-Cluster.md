@@ -51,7 +51,7 @@ ms.locfileid: "71404632"
   
 3.  在控制台的中间窗格中，在 "**步骤 2 DirectAccess 服务器**" 区域中，单击 "**编辑**"。  
   
-4.  单击 "**前缀配置**"。 在 "**前缀配置**" 页上，在 "**分配给 DirectAccess 客户端计算机的 ipv6 前缀**" 中，输入子网长度为59（例如， **2001： db8：1：1000：：/59**）用于 directaccess 客户端计算机的 ipv6 前缀。 如果 VPN 还启用了 IPv6，则将显示 IPv6 前缀，并且子网长度需要更改为59。 单击“下一步”。  
+4.  单击 "**前缀配置**"。 在 "**前缀配置**" 页上，在 "**分配给 DirectAccess 客户端计算机的 ipv6 前缀**" 中，输入子网长度为59（例如， **2001： db8：1：1000：：/59**）用于 directaccess 客户端计算机的 ipv6 前缀。 如果 VPN 还启用了 IPv6，则将显示 IPv6 前缀，并且子网长度需要更改为59。 单击**下一步**。  
   
 5.  在控制台的中间窗格中，单击 "**完成**"。  
   
@@ -100,7 +100,7 @@ ms.locfileid: "71404632"
     > [!NOTE]  
     > 如果正在使用外部负载均衡，请记下虚拟 Ip，并将其提供给外部负载平衡器。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -247,7 +247,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 12. 在 "**添加和删除服务器**" 对话框中，单击 "**关闭**"。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -277,7 +277,7 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 7.  在 "**添加和删除服务器**" 对话框中，单击 "**关闭**"。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -298,7 +298,7 @@ Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 4.  在 "**禁用负载平衡**" 对话框中，单击 "**关闭**"。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -317,7 +317,7 @@ set-RemoteAccessLoadBalancer -disable
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [步骤 4：正在验证群集 @ no__t-0  
+-   [步骤4：验证群集](Step-4-Verify-the-Cluster.md)  
   
 
 

@@ -23,7 +23,7 @@ ms.locfileid: "71404571"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-**注意：** Windows Server 2012 将 DirectAccess 与路由及远程访问服务 (RRAS) 合并到了单个远程访问角色中。  
+**注意：** Windows Server 2012 将 DirectAccess 和路由和远程访问服务 (RRAS) 合并到了单个远程访问角色中。  
   
 你可以使用以下过程来确定远程访问服务器操作问题、其根本原因和解决问题所需的解决方法。  
   
@@ -91,7 +91,7 @@ IP Helper 服务（IPHlpSvc）托管 IPv6 转换技术（如 IP-HTTPS、6to4 或
   
 2.  在**服务**列表中，向下滚动并右键单击 " **IP 帮助**程序"，然后单击 "**启动**"。  
   
-@no__t 0Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   

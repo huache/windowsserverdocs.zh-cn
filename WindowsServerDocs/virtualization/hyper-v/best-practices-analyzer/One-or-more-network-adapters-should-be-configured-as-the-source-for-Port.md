@@ -19,7 +19,7 @@ ms.locfileid: "71393573"
 ---
 # <a name="one-or-more-network-adapters-should-be-configured-as-the-source-for-port-mirroring"></a>应将一个或多个网络适配器配置为端口镜像的源
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71393573"
 ## <a name="impact"></a>**对**  
 *端口镜像不适用于以下虚拟交换机和虚拟机：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
 *使用 Windows PowerShell 或 Hyper-v 管理器完成或更正端口镜像配置。*  

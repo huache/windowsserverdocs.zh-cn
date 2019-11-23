@@ -18,12 +18,12 @@ ms.locfileid: "71408046"
 ---
 # <a name="name-resolution-requirements-for-federation-servers"></a>联合服务器的名称解析要求
 
-当企业网络上的客户端计算机尝试访问 Active Directory 联合身份验证服务 @no__t 保护的应用程序或 Web 服务时，必须先向联合服务器进行身份验证。 进行身份验证的一种方法是让企业网络客户端通过 Windows 集成身份验证访问本地联合服务器。  
+当企业网络上的客户端计算机尝试访问受 Active Directory 联合身份验证服务 \(AD FS\)保护的应用程序或 Web 服务时，必须先向联合服务器进行身份验证。 进行身份验证的一种方法是让企业网络客户端通过 Windows 集成身份验证访问本地联合服务器。  
   
 ## <a name="configure-corporate-dns"></a>配置企业 DNS  
-若要在本地联合服务器上通过 Windows 集成身份验证成功进行名称解析，则必须为新的主机配置帐户伙伴的企业网络中的域名系统 \(DNS @ no__t-1 \(A @ no__t一种资源记录，它将联合服务器的完全限定域名 \(FQDN @ no__t-5 主机名解析为联合服务器群集的 IP 地址。  
+若要在本地联合服务器上通过 Windows 集成身份验证成功进行名称解析，则必须为新主机配置帐户伙伴的企业网络中的域名系统 \(DNS\)，\(\) 资源记录，该记录将解析完全限定的域名 \(FQDN\) 将联合服务器的主机名解析为联合服务器群集的 IP 地址。  
   
-在下图中，可以看到如何在给定方案中完成此任务。 在此方案中，Microsoft 网络负载平衡 \(NLB @ no__t）为现有联合服务器场提供单个群集的 FQDN 名称和单个群集 IP 地址。  
+在下图中，可以看到如何在给定方案中完成此任务。 在此方案中，Microsoft 网络负载平衡 \(NLB\) 为现有联合服务器场提供单个群集的 FQDN 名称和单个群集 IP 地址。  
   
 ![名称要求](media/adfs2_deploy_single_fs.gif)  
   
@@ -34,5 +34,5 @@ ms.locfileid: "71408046"
 有关如何在外围网络中配置联合服务器代理的信息，请参阅[联合服务器代理的名称解析要求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)。  
   
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [Windows Server 2012 中的 AD FS 设计指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

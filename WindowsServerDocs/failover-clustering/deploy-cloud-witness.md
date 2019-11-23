@@ -18,7 +18,7 @@ ms.locfileid: "71369879"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>部署故障转移群集的云见证
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 Cloud 见证是一种故障转移群集仲裁见证，使用 Microsoft Azure 在群集仲裁上提供投票。 本主题概述了云见证功能、它支持的方案，以及有关如何为故障转移群集配置云见证的说明。
 
@@ -27,7 +27,7 @@ Cloud 见证是一种故障转移群集仲裁见证，使用 Microsoft Azure 在
 图1说明了 Windows Server 2016 中的多站点延伸故障转移群集仲裁配置。 在此示例配置（图1）中，有2个数据中心（称为站点）中有2个节点。 请注意，群集有可能跨越2个以上的数据中心。 此外，每个数据中心还可以有2个以上的节点。 此设置中的典型群集仲裁配置（自动故障转移 SLA）为每个节点提供投票。 向仲裁见证提供一项额外的投票，以允许群集继续运行，即使其中一个数据中心遇到电源中断也是如此。 数学计算非常简单-有5个投票，并且需要3个投票才能使群集保持运行。  
 
 ![第三个站点中有2个节点的文件共享见证](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "文件共享见证")  
-**图 1：使用文件共享见证作为仲裁见证服务器 @ no__t-0  
+**图1：使用文件共享见证作为仲裁见证**  
 
 如果某个数据中心发生断电，为其他数据中心的群集提供平等的机会来使其保持运行状态，则建议在两个数据中心以外的位置托管仲裁见证。 这通常意味着需要第三个单独的数据中心（站点）来承载一个文件服务器，该文件服务器将作为仲裁见证（文件共享见证）使用的文件共享。  
 
@@ -42,12 +42,12 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
 4. $Cost 存储帐户（每个 blob 文件写入非常小的数据，仅当群集节点的状态发生更改时才更新 blob 文件）。  
 5. 内置的云见证资源类型。  
 
-@no__t 0Diagram 将云见证作为仲裁见证服务器的多站点拉伸群集（no__t）  
-**图 2:使用云见证作为仲裁见证服务器的多站点延伸群集 @ no__t-0  
+![关系图，说明将云见证作为仲裁见证的多站点拉伸群集](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_2.png)  
+**图2：将云见证作为仲裁见证的多站点延伸群集**  
 
 如图2所示，没有需要的第三个单独的站点。 与任何其他仲裁见证一样，云见证会获得投票，并且可以参与仲裁计算。  
 
-## <a name="CloudWitnessSupportedScenarios"></a>云见证：单个见证服务器的支持方案
+## <a name="CloudWitnessSupportedScenarios"></a>云见证：单一见证服务器支持的方案
 如果你有一个故障转移群集部署（其中所有节点都可以访问 internet），则建议你将云见证配置为仲裁见证资源。  
 
 支持使用云见证作为仲裁见证的某些方案如下：  
@@ -83,7 +83,7 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
         
     2. 对于 "**帐户类型**"，选择 "**常规用途**"。
     <br>不能将 Blob 存储帐户用于云见证。
-    3. 对于 "**性能**", 请选择 "**标准**"。
+    3. 对于 "**性能**"，请选择 "**标准**"。
     <br>不能将 Azure 高级存储用于云见证。
     2. 对于**复制**，请选择 "**本地冗余存储（LRS）** "。
     <br>故障转移群集使用 blob 文件作为仲裁点，这在读取数据时需要一些一致性保证。 因此，你必须为**复制**类型选择 "**本地冗余存储**"。
@@ -96,8 +96,8 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
 
 在 Azure 门户中，导航到存储帐户，单击 "**所有设置**"，然后单击 "**访问密钥**" 查看、复制和重新生成帐户访问密钥。 "访问密钥" 边栏选项卡还包含使用主密钥和辅助密钥预配置的连接字符串，你可以复制这些字符串，以便在应用程序中使用（请参阅图4）。
 
-![Snapshot Microsoft Azure @ no__t 中的 "管理访问密钥" 对话框  
-**图4：存储访问密钥 @ no__t-0
+Microsoft Azure 中的 "管理访问密钥" 对话框 ![快照](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_4.png)  
+**图4：存储访问密钥**
 
 ### <a name="view-and-copy-endpoint-url-links"></a>查看和复制终结点 URL 链接  
 创建存储帐户时，将使用以下格式生成以下 Url： `https://<Storage Account Name>.<Storage Type>.<Endpoint>`  
@@ -110,8 +110,8 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
 #### <a name="to-view-and-copy-endpoint-url-links"></a>查看和复制终结点 URL 链接
 在 Azure 门户中，导航到存储帐户，单击 "**所有设置**"，然后单击 "**属性**" 以查看和复制终结点 url （参见图5）。  
 
-@no__t 云见证终结点链接 @ no__t-1 的0Snapshot  
-**图5：Cloud 见证终结点 URL 链接 @ no__t-0
+![云见证终结点链接的快照](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_5.png)  
+**图5：云见证终结点 URL 链接**
 
 有关创建和管理 Azure 存储帐户的详细信息，请参阅[关于 Azure 存储帐户](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)
 
@@ -120,18 +120,18 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
 
 ### <a name="to-configure-cloud-witness-as-a-quorum-witness"></a>将云见证配置为仲裁见证
 1. 启动故障转移群集管理器。
-2. 右键单击群集->**更多操作** -> **配置群集仲裁设置**（见图6）。 这会启动 "配置群集仲裁向导"。  
-    ![Snapshot 故障转移群集管理器 UI @ no__t 中的配置群集仲裁设置 **Figure 6。群集仲裁设置 @ no__t-0
+2. 右键单击群集 >**更多操作** -> **配置群集仲裁设置**（见图6）。 这会启动 "配置群集仲裁向导"。  
+    故障转移群集管理器 UI 中的配置群集仲裁设置的菜单路径 ![快照](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_7.png)**图6。群集仲裁设置**
 
 3. 在 "**选择仲裁配置**" 页上，选择 **"选择仲裁见证"** （参见图7）。  
 
-    群集仲裁向导中的 "选择 quotrum 见证" 单选按钮的 @no__t 0Snapshot @ no__t-1  
-    **Figure 7。选择仲裁配置 @ no__t-0
+    群集仲裁向导中的 "选择 quotrum 见证" 单选按钮 ![快照](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_8.png)  
+    **图7：选择仲裁配置**
 
 4. 在 "**选择仲裁见证**" 页上，选择 "**配置云见证**" （参见图8）。  
 
-    用于选择云见证 @ no__t 的适当单选按钮 @no__t 0Snapshot）  
-    **Figure 8。选择仲裁见证 @ no__t-0  
+    ![相应的单选按钮的快照以选择云见证](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_9.png)  
+    **图8：选择仲裁见证**  
 
 5. 在 "**配置云见证**" 页上，输入以下信息：  
    1. （必选参数）Azure 存储帐户名称。  
@@ -140,13 +140,13 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
        2. 旋转主访问密钥时，请使用辅助访问密钥（请参阅图5）  
    3. （可选参数）如果要使用不同的 Azure 服务终结点（例如，中国中的 Microsoft Azure 服务），请更新终结点服务器名称。  
 
-      群集仲裁向导中的 "云见证配置" 窗格的 @no__t 0Snapshot @ no__t-1  
-      **Figure 9：配置云见证 @ no__t-0
+      群集仲裁向导中的 "云见证配置" 窗格 ![快照](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
+      **图9：配置云见证**
 
 6. 成功配置云见证后，可以在故障转移群集管理器管理单元中查看新创建的见证服务器资源（请参阅图10）。
 
-    Cloud 见证 @ no__t 的 @no__t 0Successful 配置  
-    **Figure 10：成功配置云见证 @ no__t-0
+    成功配置云见证](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_11.png) ![  
+    **图10：成功配置云见证**
 
 ### <a name="configuring-cloud-witness-using-powershell"></a>使用 PowerShell 配置云见证  
 现有的 Set-clusterquorum PowerShell 命令具有与云见证相对应的新附加参数。  
@@ -172,5 +172,5 @@ Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <St
 ### <a name="proxy-considerations-with-cloud-witness"></a>云见证的代理注意事项  
 Cloud 见证使用 HTTPS （默认端口443）来与 Azure blob 服务建立通信。 确保可通过网络代理访问 HTTPS 端口。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 - [Windows Server 中故障转移群集的新增功能](whats-new-in-failover-clustering.md)

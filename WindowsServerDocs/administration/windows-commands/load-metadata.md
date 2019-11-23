@@ -34,11 +34,11 @@ ms.locfileid: "71374620"
 load metadata [<Drive>:][<Path>]<MetaData.cab>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|[@no__t >：][<Path>]|指定元数据文件的位置。|
+|[\<驱动器 >：][<Path>]|指定元数据文件的位置。|
 |MetaData .cab|指定要加载的元数据 .cab 文件。|
 
 ## <a name="remarks"></a>备注

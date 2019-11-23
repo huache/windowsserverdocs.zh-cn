@@ -22,7 +22,7 @@ ms.locfileid: "71372105"
 ---
 # <a name="prnjobs"></a>prnjobs
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 暂停、恢复、取消和列出打印作业。
 
@@ -32,7 +32,7 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 [-p <printerName>] [-j <JobID>] [-u <UserName>] [-w <Password>]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |          参数           |                                                                                                                                                                                        描述                                                                                                                                                                                        |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,11 +43,11 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 |       -s \<ServerName >       |                                                                                                                  指定承载要管理的打印机的远程计算机的名称。 如果未指定计算机，则使用本地计算机。                                                                                                                  |
 |      -p \<printerName >       |                                                                                                                                                           指定要管理的打印机的名称。 必需。                                                                                                                                                            |
 |         -j \<JobID >          |                                                                                                                                                                指定要取消的打印作业（按 ID 号）。                                                                                                                                                                 |
-| -u \<UserName >-w <Password> | 指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。 |
+| -u \<用户名 >-w <Password> | 指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。 |
 |              /?              |                                                                                                                                                                           在命令提示符下显示帮助。                                                                                                                                                                            |
 
 ## <a name="remarks"></a>备注
--   **Prnjobs**命令是位于%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t 目录中的 Visual Basic 脚本。 若要使用此命令，请在命令提示符下键入**cscript** ，后跟 prnjobs 文件的完整路径，或将目录更改为相应的文件夹。 例如：
+-   **Prnjobs**命令是位于%windir%\system32\ printing_Admin_Scripts\\<language> 目录中的 Visual Basic 脚本。 若要使用此命令，请在命令提示符下键入**cscript** ，后跟 prnjobs 文件的完整路径，或将目录更改为相应的文件夹。 例如：
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnjobs.vbs
     ```

@@ -34,7 +34,7 @@ ms.locfileid: "71370248"
 
 ## <a name="optimization-considerations-for-trusts"></a>信任的优化注意事项
 
-在林内的方案中，将根据以下域层次结构处理信任：总计子域-&gt; 子域-@no__t 目录林根域 &gt; 子域-@no__t 总计-子域。 这意味着，林根和每个父项的安全通道可能会因为对信任层次结构中的 Dc 传输的身份验证请求进行聚合而过载。 当身份验证还必须传输高度潜在的链接来影响上述流时，这也可能会导致大型地理分散的 Active Directory 延迟。 在林间和下级信任方案中可能会发生重载。 以下建议适用于所有方案：
+在林内的方案中，将根据以下域层次结构来处理信任：总计子域-&gt; 子域-&gt; 林根域-&gt; 子域-&gt; 总计-子域。 这意味着，林根和每个父项的安全通道可能会因为对信任层次结构中的 Dc 传输的身份验证请求进行聚合而过载。 当身份验证还必须传输高度潜在的链接来影响上述流时，这也可能会导致大型地理分散的 Active Directory 延迟。 在林间和下级信任方案中可能会发生重载。 以下建议适用于所有方案：
 
 -   正确调整 MaxConcurrentAPI 以支持安全通道上的负载。 有关详细信息，请参阅[如何使用 MaxConcurrentApi 设置对 NTLM 身份验证执行性能优化](https://support.microsoft.com/kb/2688798/EN-US)。
 
@@ -76,7 +76,7 @@ ms.locfileid: "71370248"
 
 -   禁用跨所有可用信任传递具有 NULL 域的身份验证请求。 [如果对 Active Directory 域控制器具有许多外部信任，则 Lsass.exe 进程可能会停止响应](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 - [性能优化 Active Directory 服务器](index.md)
 - [硬件注意事项](hardware-considerations.md)
 - [LDAP 注意事项](ldap-considerations.md)

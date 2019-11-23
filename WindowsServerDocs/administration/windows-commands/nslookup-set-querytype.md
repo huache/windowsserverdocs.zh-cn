@@ -22,17 +22,17 @@ ms.locfileid: "71372901"
 ---
 # <a name="nslookup-set-querytype"></a>nslookup set querytype
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更改查询的资源记录类型。
 ## <a name="syntax"></a>语法
 ```
 set querytype=<ResourceRecordtype>
 ```
-## <a name="parameters"></a>Parameters
-<ResourceRecordtype>指定 DNS 资源记录类型。 默认资源记录类型是。下表列出了此命令的有效值。
+## <a name="parameters"></a>参数
+<ResourceRecordtype> 指定 DNS 资源记录类型。 默认资源记录类型是。下表列出了此命令的有效值。
 
-| ReplTest1 |                                                   描述                                                   |
+| 值 |                                                   描述                                                   |
 |-------|-----------------------------------------------------------------------------------------------------------------|
 |   A   |                                      指定计算机&#39;的 IP 地址                                      |
 |  随时  |                                     指定计算机&#39;的 IP 地址。                                      |
@@ -58,5 +58,5 @@ set querytype=<ResourceRecordtype>
 - <strong>Set type</strong>命令执行与<strong>set querytype</strong>命令相同的功能。
 - 有关资源记录类型的详细信息，请参阅请求注释（Rfc）1035。
   ## <a name="additional-references"></a>其他参考
-  <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">命令行语法关键字</a>
+  <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">命令行语法键</a>
   <a href="nslookup-set-type.md" data-raw-source="[nslookup set type](nslookup-set-type.md)">nslookup 集类型</a>

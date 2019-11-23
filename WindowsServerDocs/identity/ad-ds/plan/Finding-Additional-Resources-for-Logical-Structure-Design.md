@@ -24,7 +24,7 @@ ms.locfileid: "71402575"
   
 - 有关设计站点拓扑的详细信息，请参阅[设计适用于 Windows Server 2008 的站点拓扑 AD DS](Designing-the-Site-Topology.md)。  
 
-- 对于帮助你记录建议的林、域、域名系统（DNS）基础结构和组织单位（OU）设计的工作表，请从作业助手下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_ServicesWindows Server 2003 部署工具包（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）。  
+- 要使工作表可以帮助你记录建议的林、域、域名系统（DNS）基础结构和组织单位（OU）设计，请从 Windows Server 2003 部署工具包的作业帮助（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services。  
   
 - 有关委派的身份验证和约束委派的详细信息，请参阅委派身份验证（[https://go.microsoft.com/fwlink/?LinkID=106614](https://go.microsoft.com/fwlink/?LinkID=106614)）。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "71402575"
   
 - 有关将 Active Directory 域升级到 Windows Server 2008 的详细信息，请参阅[将 Active Directory 域升级到 Windows server 2008 和 Windows server 2008 R2 AD DS 域](https://technet.microsoft.com/library/cc731188.aspx)。  
   
-- 若要详细了解如何在林内和林之间重新构建 AD DS 域，请参阅 Active Directory 迁移工具版本3.1 迁移指南（[https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)）。  
+- 若要详细了解如何在林内部和林之间重新构建 AD DS 域，请参阅 Active Directory 迁移工具版本3.1 迁移指南（[https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)）。  
   
 - 有关部署目录林根级域的详细信息，请参阅[部署 Windows Server 2008 林根级域](https://technet.microsoft.com/library/cc731174.aspx)。  
   
@@ -44,15 +44,15 @@ ms.locfileid: "71402575"
   
 - 有关创建非连续命名空间的详细信息，请参阅创建非连续命名空间（[https://go.microsoft.com/fwlink/?LinkID=106638](https://go.microsoft.com/fwlink/?LinkID=106638)）。  
   
-- 有关设置服务主体名称（Spn）的详细信息，请参阅由于 Spn 设置不当而导致服务登录失败（[https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304)）。  
+- 有关设置服务主体名称（Spn）的详细信息，请参阅由于 Spn 设置不当（[https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304)）导致服务登录失败。  
   
 - 若要详细了解如何委派权限以修改从属管理员的 Spn，请参阅委派权限以修改 Spn （[https://go.microsoft.com/fwlink/?LinkID=106639](https://go.microsoft.com/fwlink/?LinkID=106639)）。  
   
 - 有关域控制器证书要求的详细信息，请参阅 Microsoft 知识库中的文章321051（[https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307)）。  
   
-- 有关轻型目录访问协议（LDAP） over 安全套接字层（SSL）（LDAPS）身份验证和 Windows Server 2003 的相关更新的详细信息，请参阅 Microsoft 知识库中的文章932834（[https://go.microsoft.com/fwlink/?LinkId=102308](https://go.microsoft.com/fwlink/?LinkId=102308)）。  
+- 有关安全套接字层（SSL）（LDAPS）身份验证的轻型目录访问协议（LDAP）和 Windows Server 2003 的相关更新的详细信息，请参阅 Microsoft 知识库中的文章932834（[https://go.microsoft.com/fwlink/?LinkId=102308](https://go.microsoft.com/fwlink/?LinkId=102308)）。  
   
-- 有关组策略基础结构的详细信息，请参阅设计组策略基础结构（[@no__t](https://go.microsoft.com/fwlink/?LinkID=106655)）。  
+- 有关组策略基础结构的详细信息，请参阅设计组策略基础结构（[https://go.microsoft.com/fwlink/?LinkID=106655](https://go.microsoft.com/fwlink/?LinkID=106655)）。  
   
 - 有关只读域控制器（Rodc）的详细信息，请参阅 AD DS：只读域控制器（[https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616)）。  
   

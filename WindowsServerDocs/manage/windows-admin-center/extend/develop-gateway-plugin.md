@@ -37,10 +37,10 @@ Windows 管理中心网关插件启用从工具或解决方案的 UI 到目标�
 
 ## <a name="create-a-gateway-plugin-c-library"></a>创建网关插件（C#库）
 
-若要创建自定义网关插件，请C#从 @no__t 命名空间创建一个实现 ```IPlugIn``` 接口的新类。  
+若要创建自定义网关插件，请C#从 ```Microsoft.ManagementExperience.FeatureInterfaces``` 命名空间创建一个实现 ```IPlugIn``` 接口的新类。  
 
 > [!NOTE]
-> 在早期版本的 SDK 中可用的 @no__t 0 接口现在已标记为过时。  所有网关插件开发应使用 IPlugIn （或（可选） HttpPlugIn 抽象类）。
+> SDK 早期版本中提供的 ```IFeature``` 接口现在已标记为过时。  所有网关插件开发应使用 IPlugIn （或（可选） HttpPlugIn 抽象类）。
 
 ### <a name="download-sample-from-github"></a>从 GitHub 下载示例
 
@@ -54,22 +54,22 @@ Windows 管理中心网关插件启用从工具或解决方案的 UI 到目标�
 
 通过将自定义网关插件的 DLL 加载到 Windows 管理中心网关进程来对其进行测试。
 
-Windows 管理中心在当前计算机的应用程序数据文件夹中查找 ```plugins``` 文件夹中的所有插件（使用 System.environment.specialfolder 枚举的 CommonApplicationData 值）。 在 Windows 10 上，此位置 ```C:\ProgramData\Server Management Experience```。  如果 ```plugins``` 文件夹尚不存在，你可以自行创建该文件夹。
+Windows 管理中心在当前计算机的应用程序数据文件夹中查找 ```plugins``` 文件夹中的所有插件（使用 System.environment.specialfolder 枚举的 CommonApplicationData 值）。 在 Windows 10 上 ```C:\ProgramData\Server Management Experience```此位置。  如果 ```plugins``` 文件夹尚不存在，则可以自行创建该文件夹。
 
 > [!NOTE]
 > 可以通过更新 "StaticsFolder" 配置值来覆盖调试版本中的插件位置。 如果正在本地调试，则此设置位于桌面解决方案的 app.config 中。 
 
 在插件文件夹内（在此示例中，```C:\ProgramData\Server Management Experience\plugins```）
 
-* 创建一个新文件夹，其名称与自定义网关插件 DLL 中 @no__t 的 ```Feature``` 属性值相同（在我们的示例项目中，```Name``` 为 "Sample Uno"）
+* 使用与自定义网关插件 DLL 中 ```Feature``` 的 ```Name``` 属性值相同的名称创建新文件夹（在我们的示例项目中，```Name``` 为 "Sample Uno"）
 * 将自定义网关插件 DLL 文件复制到此新文件夹
 * 重新启动 Windows 管理中心进程
 
-Windows 管理员进程重新启动后，你将能够通过发出 GET、PUT、PATCH、DELETE 或 POST 到 ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```，在自定义网关插件 DLL 中执行 Api
+Windows 管理员进程重新启动后，您将能够通过发出 GET、PUT、PATCH、DELETE 或 POST ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}``` 来在自定义网关插件 DLL 中执行这些 Api。
 
-### <a name="optional-attach-to-plugin-for-debugging"></a>可选：附加到用于调试的插件
+### <a name="optional-attach-to-plugin-for-debugging"></a>可选：附加到插件进行调试
 
-在 Visual Studio 2017 的 "调试" 菜单中，选择 "附加到进程"。 在下一个窗口中，滚动到 "可用进程" 列表并选择 "SMEDesktop"，然后单击 "附加"。 调试器启动后，可以在功能代码中放置一个断点，然后演练上述 URL 格式。 对于我们的示例项目（功能名称："Sample Uno"） URL 是： "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
+在 Visual Studio 2017 的 "调试" 菜单中，选择 "附加到进程"。 在下一个窗口中，滚动到 "可用进程" 列表并选择 "SMEDesktop"，然后单击 "附加"。 调试器启动后，可以在功能代码中放置一个断点，然后演练上述 URL 格式。 对于我们的示例项目（功能名称： "Sample Uno"），该 URL 为： "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
 
 ## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>使用 Windows 管理中心 CLI 创建工具扩展 ##
 
@@ -79,7 +79,7 @@ Windows 管理员进程重新启动后，你将能够通过发出 GET、PUT、PA
 wac create --company "{!Company Name}" --tool "{!Tool Name}"
 ```
 
-| ReplTest1 | 说明 | 示例 |
+| 值 | 说明 | 示例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | 公司名称（包含空格） | ```Contoso Inc``` |
 | ```{!Tool Name}``` | 工具名称（包含空格） | ```Manage Foo Works``` |

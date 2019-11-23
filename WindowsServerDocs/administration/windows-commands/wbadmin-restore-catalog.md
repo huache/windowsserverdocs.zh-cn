@@ -39,7 +39,7 @@ wbadmin restore catalog
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -57,7 +57,7 @@ wbadmin restore catalog
 ```
 wbadmin restore catalog -backupTarget:d
 ```
-若要从共享文件夹中存储的备份还原目录 \\ @ no__t-1servername\share of server01，请键入：
+若要从共享文件夹中存储的备份还原目录 \\\\servername\share of server01 "，请键入：
 ```
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```

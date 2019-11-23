@@ -23,7 +23,7 @@ ms.locfileid: "71367250"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-**注意：** Windows Server 2012 将 DirectAccess 与路由及远程访问服务 (RRAS) 合并到了单个远程访问角色中。  
+**注意：** Windows Server 2012 将 DirectAccess 和路由和远程访问服务 (RRAS) 合并到了单个远程访问角色中。  
   
 远程访问服务器上的管理控制台可用于为访问服务器的远程客户端生成使用情况报告。 若要为远程客户端生成使用情况报告，请首先在远程访问服务器上启用记帐。 生成报告后，可以使用远程访问服务器上的管理控制台中提供的监视仪表板来查看服务器上的负载统计信息。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "71367250"
 >   
 > 远程访问记帐基于**会话**的概念。 与**连接**相比，**会话**是由远程客户端 IP 地址和用户名的组合唯一标识的。 例如，如果从名为 Client1 的远程客户端形成计算机隧道，则将创建一个会话并将其存储在记帐数据库中。 当某个名为 User1 的用户在经过一段时间后从该客户端进行连接（但计算机隧道仍处于活动状态）时，该会话将记录为一个单独的会话。 会话的区别在于在计算机隧道和用户隧道之间保留差异。  
   
-@no__t 0Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   

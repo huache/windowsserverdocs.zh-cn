@@ -29,7 +29,7 @@ ms.locfileid: "71407201"
 
 ### <a name="to-use-a-ping-test"></a>使用 PING 测试
 1.  打开命令提示符
-2. 输入 PING <name of adfs server> a。 例如：PING sts.contoso.com
+2. 输入 PING <name of adfs server>。 示例： PING sts.contoso.com
 3. 你应看到来自服务器的答复
 
 ![Ping](media/ad-fs-tshoot-dns/dns1.png)
@@ -39,8 +39,8 @@ ms.locfileid: "71407201"
 
 ### <a name="to-use-a-nslookup"></a>使用 NSLookup
 1.  打开命令提示符
-2. 输入 PING <name of adfs server> a。 示例： nslookup sts.contoso.com
-3. 应会看到服务器 @no__t 的 dns 信息-0NSLookup @ no__t-1
+2. 输入 PING <name of adfs server>。 示例： nslookup sts.contoso.com
+3. 你应看到服务器 ![NSLookup 的 dns 信息](media/ad-fs-tshoot-dns/dns2.png)
 
 ## <a name="tracert"></a>Tracert
 通过将 Internet 控制消息协议（ICMP）回送请求或 ICMPv6 消息发送到目标，以递增递增的生存时间（TTL）字段值，确定目标的路径。   有关详细信息，请参阅[Tracert](https://technet.microsoft.com/library/ff961507.aspx)。
@@ -48,8 +48,8 @@ ms.locfileid: "71407201"
 
 ### <a name="to-use-tracert"></a>使用 Tracert
 1.  打开命令提示符
-2. 输入 tracert <name of adfs server> a。 示例： tracert sts.contoso.com
-3. 应该会看到用于访问服务器的目标路径 ![Tracert @ no__t-1
+2. 输入 tracert <name of adfs server>。 示例： tracert sts.contoso.com
+3. 应该会看到用于访问服务器 ![Tracert 的目标路径](media/ad-fs-tshoot-dns/dns3.png)
 
 ## <a name="next-steps"></a>后续步骤
 

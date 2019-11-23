@@ -18,9 +18,9 @@ ms.locfileid: "71408341"
 ---
 # <a name="join-a-computer-to-a-domain"></a>将计算机加入域
 
-要使 Active Directory 联合身份验证服务 \(AD FS @ no__t 为正常工作，必须将充当联合服务器的每台计算机加入域。 联合服务器代理可以加入到域中，但这不是必需的。  
+要使 Active Directory 联合身份验证服务 \(AD FS\) 运行，必须将充当联合服务器的每台计算机加入域。 联合服务器代理可以加入到域中，但这不是必需的。  
   
-如果 Web 服务器仅托管声明 @ no__t-0aware 应用程序，则无需将 Web 服务器加入域。  
+如果 Web 服务器仅承载声明\-感知应用程序，则无需将 Web 服务器加入域。  
   
 本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
   

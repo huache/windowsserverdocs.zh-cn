@@ -35,6 +35,7 @@ XClarity 集成器扩展中包含的解决方案扩展允许同时连接到联�
 
 故障转移群集和超聚合群集的工具扩展提供了一个仪表板，显示总体群集硬件运行状况状态、状态警报、固件一致性状态和报告、功率消耗和温度，以及风扇和电源运行状态。
 
-![Lenovo Extension @ no__t-1 @ no__t-2Lenovo Extension @ no__t-3
+![联想扩展](../../media/extend-case-study-lenovo/lenovo-4.png)
+![联想扩展](../../media/extend-case-study-lenovo/lenovo-5.png)
 
 在[联想网站](https://support.lenovo.com/us/en/solutions/ht507549)上了解有关 Windows 管理中心的联想 XClarity 集成器产品/服务的详细信息。

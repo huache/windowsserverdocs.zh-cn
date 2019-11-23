@@ -16,7 +16,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369676"
 ---
 # <a name="health-service-reports"></a>运行状况服务报表
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-reports"></a>什么是报表  
 
@@ -48,7 +48,7 @@ Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 
 ### <a name="connect"></a>连接
 
-若要查询运行状况服务，需要建立与群集的**CimSession** 。 为此，你将需要一些仅适用于完整 .NET 的功能，这意味着你无法直接从 web 或移动应用程序中执行此操作。 这些代码示例将使用 C @ no__t，这是此数据访问层最简单的选择。
+若要查询运行状况服务，需要建立与群集的**CimSession** 。 为此，你将需要一些仅适用于完整 .NET 的功能，这意味着你无法直接从 web 或移动应用程序中执行此操作。 这些代码示例将使用 C\#，这是此数据访问层最简单的选择。
 
 ``` 
 ...
@@ -80,7 +80,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 建立**CimSession**后，可以在群集上查询 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
 
-你需要获取多个相关对象的实例，然后才能获取错误或度量值。 首先， **MSFT @ no__t-1StorageSubSystem**表示群集上存储空间直通。 使用它，你可以获取群集中的每个**msft @ no__t-1StorageNode** ，以及每个**msft @ no__t-3Volume**，这些数据卷。 最后，还需要**MSFT @ no__t-1StorageHealth**，运行状况服务本身。
+你需要获取多个相关对象的实例，然后才能获取错误或度量值。 首先， **MSFT\_StorageSubSystem** ，它代表群集上的存储空间直通。 使用它，可以获取群集中的每个**msft\_StorageNode** ，每个**msft\_卷**，数据卷。 最后，还需要**MSFT\_StorageHealth**，运行状况服务本身。
 
 ```
 CimInstance Cluster;
@@ -209,14 +209,14 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 度量值的每个示例都是一个 "报表"，其中包含与各个度量值相对应的多个 "记录"。
 
-对于完整的架构，请在*storagewmi*中检查**msft @ no__t-1StorageHealthReport**和**msft @ no__t-3HealthRecord**类。
+对于完整的架构，请在*storagewmi*中检查**msft\_StorageHealthReport**和**msft\_HealthRecord**类。
 
 每个指标仅有三个属性，每个表。
 
 | **Property** | **示例**       |
 | -------------|-------------------|
 | 名称         | IOLatencyAverage  |
-| ReplTest1        | 0.00021           |
+| 值        | 0.00021           |
 | 计算        | 3                 |
 
 单位 = {0，1，2，3，4}，其中 0 = "字节"，1 = "BytesPerSecond"，2 = "CountPerSecond"，3 = "秒"，或 4 = "百分比"。
@@ -282,6 +282,6 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Windows Server 2016 中的运行状况服务](health-service-overview.md)

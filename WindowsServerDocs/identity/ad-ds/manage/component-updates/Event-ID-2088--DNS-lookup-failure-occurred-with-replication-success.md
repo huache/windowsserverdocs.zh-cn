@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71368910"
 ---
-# <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件 ID 2088：出现 DNS 查找失败，复制成功
+# <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件 ID 2088：DNS 查找失败但复制成功
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -46,17 +46,17 @@ ms.locfileid: "71368910"
 
 应该立即解决此 DNS 配置错误，使此域控制器可以使用 DNS 解析源域控制器的 IP 地址。 
 
-备用服务器名称：DC1 DNS 主机名失败：4a8717eb-8e58-456c-995a-c92e4add7e8e. _msdcs 
+备用服务器名称： DC1 失败的 DNS 主机名： 4a8717eb-8e58-456c-995a-c92e4add7e8e _msdcs。 
 
-注意：默认情况下，在任何给定的12小时期限内，最多只显示10个 DNS 故障，即使发生了10个以上的失败。  若要记录所有单独的故障事件，请将以下诊断注册表值设置为1： 
+注意：默认情况下，在任何给定的12小时时间段内只显示最多10个 DNS 故障，即使出现了10个以上的失败。  若要记录所有单独的故障事件，请将以下诊断注册表值设置为1： 
 
-注册表路径：HKLM\System\CurrentControlSet\Services\NTDS\Diagnostics\22 DS RPC 客户端 
+注册表路径： HKLM\System\CurrentControlSet\Services\NTDS\Diagnostics\22 DS RPC 客户端 
 
 用户操作： 
 
 1) 如果源域控制器不再运行，或者已使用其他计算机名称或 NTDSDSA 对象 GUID 重新安装了其操作系统，请使用 MSKB 一文中所述的步骤删除源域控制器的元数据216498。 
 
-2) 通过键入 "net view \\ @ no__t-1source DC name @ no__t-2" 或 "ping &lt;source DC name @ no__t-4"，确认源域控制器正在运行 Active Directory 并且可在网络上访问。 
+2) 确认源域控制器正在运行 Active Directory 并且可在网络上访问，方法是键入 "net view \\&lt;源 DC 名称&gt;" 或 "ping &lt;源 DC 名称&gt;"。 
 
 3) 验证源域控制器是否正在对 DNS 服务使用有效的 DNS 服务器，以及是否使用 DNS 增强版的 DCDIAG 正确注册了源域控制器的主机记录和 CNAME 记录。EXE 可用 <https://www.microsoft.com/dns> 
 
@@ -68,13 +68,17 @@ dcdiag/test： dns
 
 5) 有关 DNS 错误故障的进一步分析，请参阅 KB 824449： <https://support.microsoft.com/?kbid=824449> 
 
-其他数据错误值：11004请求的名称有效，但找不到请求的类型的数据 @ no__t-0 </introduction>
+其他数据错误值：11004请求的名称有效，但找不到请求的类型的数据</code> </introduction>
   <section>
-    <title>Diagnosis @ no__t-1 @ no__t-2 @ no__t-3<para>在 dns 中使用别名（CNAME）资源记录解决源域控制器名称失败的原因可能是 dns 的配置错误或 DNS 数据传播延迟。</para>
+    <title>诊断</title>
+    <content>
+      <para>在 dns 中使用别名（CNAME）资源记录解决源域控制器名称失败的原因可能是 dns 的配置错误或 DNS 数据传播延迟。</para>
     </content>
   </section>
   <section>
-    <title>Resolution @ no__t-1 @ no__t-2 @ no__t-3<para>按照 &quot; @ no__t-1Event ID 2087 中所述继续进行 DNS 测试：DNS 查找失败导致复制失败，@ no__t-0。 &quot;</para>
+    <title>解决方法</title>
+    <content>
+      <para>按照 &quot;<link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">事件 ID 2087： dns 查找失败导致复制失败</link>中所述继续进行 DNS 测试。&quot;</para>
     </content>
   </section>
   <relatedTopics />

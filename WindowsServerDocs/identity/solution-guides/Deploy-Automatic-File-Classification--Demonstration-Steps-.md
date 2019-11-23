@@ -28,13 +28,13 @@ ms.locfileid: "71357586"
   
 **本文档中**  
   
--   [步骤 1：创建资源属性定义 @ no__t-0  
+-   [步骤1：创建资源属性定义](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
--   [步骤 2：创建字符串内容分类规则 @ no__t-0  
+-   [步骤2：创建字符串内容分类规则](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step2)  
   
--   [步骤 3：创建正则表达式内容分类规则 @ no__t-0  
+-   [步骤3：创建正则表达式内容分类规则](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
   
--   [步骤 4：验证文件是否已分类 @ no__t-0  
+-   [步骤4：验证是否已对文件进行分类](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
 > 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
@@ -56,7 +56,7 @@ ms.locfileid: "71357586"
   
 5.  右键单击“个人身份信息”，然后单击“启用”。  
   
-@no__t 0solution 指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -65,7 +65,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=Impact_MS,CN=Resource Prop
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'  
 ```  
   
-## <a name="BKMK_Step2"></a>步骤2：创建字符串内容的分类规则  
+## <a name="BKMK_Step2"></a>步骤2：创建字符串内容分类规则  
 字符串内容的分类规则将扫描某个文件以查找特定字符串。 如果找到该字符串，则可以配置资源属性的值。 在此示例中，我们将扫描网络共享文件夹上的每个文件，并查找字符串 "Contoso 机密"。 如果找到该字符串，则将关联的文件都归类为具有高业务影响。  
   
 [使用 Windows PowerShell 执行此步骤](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
@@ -89,7 +89,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
 8.  在“作用域” 选项卡上，单击“添加”，然后选择应该包括在该规则中的文件夹，如 D:\Finance Documents。  
   
     > [!NOTE]  
-    > 还可以选择用于作用域的动态命名空间。 有关分类规则的动态命名空间的详细信息，请参阅[Windows Server 2012 中的文件服务器资源管理器的新增功能 \[redirected @ no__t-2](assetId:///d53c603e-6217-4b98-8508-e8e492d16083)。  
+    > 还可以选择用于作用域的动态命名空间。 有关分类规则的动态命名空间的详细信息，请参阅[Windows Server 2012 中的文件服务器资源管理器的新增功能 \[重定向\]](assetId:///d53c603e-6217-4b98-8508-e8e492d16083)。  
   
 9. 在“分类”选项卡上，进行以下配置：  
   
@@ -107,7 +107,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 13. 在“评估类型”选项卡上，选中“重新评估现有属性值”复选框，再单击“覆盖现有值”，然后单击“确定”。  
   
-@no__t 0solution 指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -118,7 +118,7 @@ Set-FsrmClassification -Continuous -schedule $AutomaticClassificationScheduledTa
 New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -PropertyValue "3000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("StringEx=Min=1;Expr=Contoso Confidential") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step3"></a>步骤3：创建正则表达式内容的分类规则  
+## <a name="BKMK_Step3"></a>步骤3：创建正则表达式内容分类规则  
 正则表达式分类规则将扫描某个文件以查找与正则表达式匹配的模式。 若找到与该正则表达式匹配的字符串，则可以配置资源属性的值。 在此示例中，我们将扫描网络共享文件夹上的每个文件，并查找与身份证号的模式 (XXX XX XXXX) 匹配的字符串。 如果找到该模式，则将关联的文件归类为具有个人身份信息。  
   
 [使用 Windows PowerShell 执行此步骤](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
@@ -149,13 +149,13 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
 9. 在“表达式类型” 列中，选择“正则表达式”。  
   
-10. 在 "**表达式**" 列中，键入 **^ （？！000）（[0-7] \d @ no__t-2 | 7 （[0-7] \d | 7 [012]））（[-]？）(?!00） \d\d\3 （？！0000） \d @ no__t-3 $**  
+10. 在 "**表达式**" 列中，键入 **^ （？！000）（[0-7] \d{2}| 7 （[0-7] \d | 7 [012]））（[-]？）(?!00） \d\d\3 （？！0000） \d{4}$**  
   
 11. 在“最少出现次数”列中，键入 **10**，然后单击“确定”。  
   
 12. 在“评估类型”选项卡上，选中“重新评估现有属性值”复选框，再单击“覆盖现有值”，然后单击“确定”。  
   
-@no__t 0solution 指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -176,7 +176,7 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
     3.  关闭“自动分类”报告。  
   
-    4.  通过使用以下命令借助 Windows PowerShell 可执行此操作：**Start-fsrmclassification "" RunDuration 0-Confirm： $false**  
+    4.  为此，可以使用 Windows PowerShell，使用以下命令： **start-fsrmclassification "" RunDuration 0-Confirm： $false**  
   
 2.  导航至分类规则中已指定的文件夹，如 D:\Finance Documents。  
   
@@ -186,7 +186,7 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [方案：使用分类深入了解数据](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
+-   [方案：使用分类深入了解你的数据](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   
 -   [规划自动文件分类](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/jj574209(v%3dws.11))  
 

@@ -22,7 +22,7 @@ ms.locfileid: "71405861"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Windows Server 2016 中的 hyper-v 网络虚拟化技术详细信息
 
->适用于：Windows Server 2016
+>适用于： Windows Server 2016
 
 服务器虚拟化能让多个服务器实例在同一台物理主机上同步运行，但各个服务器实例都是相互独立的。 每台虚拟机的运作本质上就像是只有这一台服务器在该物理计算机上运行。  
 
@@ -30,12 +30,12 @@ ms.locfileid: "71405861"
 
 ![服务器虚拟化与网络虚拟化](../../../media/hyper-v-network-virtualization-technical-details-in-windows-server/VNetF1.gif)  
 
-图 1：服务器虚拟化与网络虚拟化  
+图 1：服务器虚拟化与网络虚拟化对比  
 
 ## <a name="hyper-v-network-virtualization-concepts"></a>Hyper-V 网络虚拟化概念  
 在 Hyper-v 网络虚拟化（HNV）中，客户或租户定义为部署在企业或数据中心的一组 IP 子网的 "所有者"。 客户可以是一个公司或企业，其中包含多个部门或业务单位的专用数据中心，该数据中心需要网络隔离或由服务提供商托管的公共数据中心中的租户。 每个客户都可以在数据中心有一个或多个[虚拟网络](#VirtualNetworks)，并且每个虚拟网络由一个或多个[虚拟子网](#VirtualSubnets)组成。  
 
-Windows Server 2016 中提供了两个 HNV 实现：HNVv1 和 HNVv2。  
+Windows Server 2016 中提供了两种 HNV 实现： HNVv1 和 HNVv2。  
 
 -   **HNVv1**  
 
@@ -176,7 +176,7 @@ Windows Server 2012 R2 的 PA 共享方案为每个主机每个 VSID 一个 PA�
 
 ![多租户部署示例](../../../media/hyper-v-network-virtualization-technical-details-in-windows-server/VNetF5.png)  
 
-图 8：多租户部署示例  
+图8：多租户部署案例  
 
 思考图 8 中的示例。 在转到托管提供商的共享 IaaS 服务之前：  
 
@@ -190,9 +190,9 @@ Windows Server 2012 R2 的 PA 共享方案为每个主机每个 VSID 一个 PA�
 
 网络控制器为两家公司都分配了以下虚拟子网 ID （VSID），如下所示。  每个 Hyper-v 主机上的主机代理从网络控制器接收分配的 PA IP 地址，并在非默认网络隔离舱中创建两个 PA 主机 Vnic。 将向其中分配 PA IP 地址的每个主机 Vnic 分配一个网络接口，如下所示：  
 
--   Contoso 公司的虚拟机 VSID 和 PAs：**VSID**为5001， **SQL pa**为192.168.1.10， **Web pa**为192.168.2.20  
+-   Contoso 公司的虚拟机 VSID 和 PAs： **VSID**为5001， **SQL pa**为192.168.1.10， **Web pa**为192.168.2.20  
 
--   Fabrikam 公司的虚拟机 VSID 和 PAs：**VSID**为6001， **SQL pa**为192.168.1.10， **Web pa**为192.168.2.20  
+-   Fabrikam 公司的虚拟机 VSID 和 PAs： **VSID**为6001， **SQL pa**为192.168.1.10， **Web pa**为192.168.2.20  
 
 网络控制器将所有网络策略（包括 CA-PA 映射）联结到 SDN 主机代理，该代理将在持久存储区（OVSDB 数据库表中）维护策略。  
 
@@ -250,7 +250,7 @@ VSwitch 和 VFP 转发扩展的对象层次结构如下所示：
 
     -   全局转发规则  
 
-    -   Port  
+    -   端口  
 
         -   用于头发的出口转发层  
 
@@ -262,7 +262,7 @@ VSwitch 和 VFP 转发扩展的对象层次结构如下所示：
 
             -   Flow 表  
 
-            -   Group  
+            -   组  
 
             -   规则  
 
@@ -288,16 +288,16 @@ HNV 策略由主机代理进行编程。 每个虚拟机网络适配器都配置
 
 图 9：HNV 体系结构  
 
-## <a name="summary"></a>总结  
+## <a name="summary"></a>摘要  
 基于云的数据中心能带来许多好处，如改善可扩展性和资源使用情况。 为了实现这些潜在的好处，需要能基本解决动态环境中多租户可扩展性问题的技术。 HNV 旨在通过分离物理网络拓扑的虚拟网络拓拟来解决这些问题，并提高数据中心的运营效率。 基于现有标准，HNV 在当前的数据中心运行，并使用现有的 VXLAN 基础结构进行操作。 使用 HNV 的客户现在可以将其数据中心整合到私有云中，或者将其数据中心无缝扩展到使用混合云的托管服务器提供商环境。  
 
 ## <a name="BKMK_LINKS"></a>另请参阅  
 若要了解有关 HNVv2 的详细信息，请参阅以下链接：  
 
 
-|       内容类型       |                                                                                                                                              参考资料                                                                                                                                              |
+|       内容类型       |                                                                                                                                              引用                                                                                                                                              |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **社区资源**  |                                                                -   [私有云体系结构博客](https://blogs.technet.com/b/privatecloud)<br />-提出问题： [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)                                                                |
-|         **RFC**          |                                                                   @no__t[NVGRE 草案 RFC](https://www.ietf.org/id/draft-sridharan-virtualization-nvgre-07.txt)<br />@NO__T[VXLAN-RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                    |
+|         **RFC**          |                                                                   -   [NVGRE 草案 RFC](https://www.ietf.org/id/draft-sridharan-virtualization-nvgre-07.txt)<br />-   [VXLAN-RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                    |
 | **相关技术** | -有关 Windows Server 2012 R2 中的 Hyper-v 网络虚拟化技术详细信息，请参阅[Hyper-v 网络虚拟化技术详细信息](https://technet.microsoft.com/library/jj134174.aspx)<br />-   [网络控制器](../../../sdn/technologies/network-controller/Network-Controller.md) |
 

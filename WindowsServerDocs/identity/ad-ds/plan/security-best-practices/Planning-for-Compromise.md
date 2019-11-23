@@ -20,7 +20,7 @@ ms.locfileid: "71360142"
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*Law Number One：无人相信，它们可能会发生任何错误，直到发生错误。*[安全管理的 @no__t 0 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律一：无人相信可能发生的任何错误，直到发生这种情况。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
   
 在许多组织中，灾难恢复计划侧重于从导致计算服务丢失的区域灾难或故障中恢复。 但是，在使用受到攻击的客户时，我们经常会发现，在灾难恢复计划中，从有意的折衷中恢复是不存在的。 当损害导致知识产权被盗，或利用逻辑边界（如销毁所有 Active Directory 域或所有服务器）而不是物理边界（如销毁数据中心）。 尽管组织可能具有定义初始活动的事件响应计划，但在发现安全漏洞时，这些计划通常会忽略影响整个计算基础结构的折衷的步骤。  
   
@@ -32,10 +32,10 @@ ms.locfileid: "71360142"
   
 若要创建有效防御，同时向依赖于你的基础结构和应用程序的用户和企业提供服务，你可能需要考虑 novel 的方法，以防止、检测和包含你的环境中的危害，然后从中恢复损害。 本文档中的方法和建议可能无法帮助你修复已泄露的 Active Directory 安装，但可以帮助你保护下一项。  
   
-@No__t-0Windows Server 2012 中提供了有关恢复 Active Directory 林的建议：规划 Active Directory 林恢复 @ no__t-0。 您可能能够防止您的新环境受到完全损害，但即使您不能，您也可以使用这些工具来恢复和重新获得对您的环境的控制。  
+Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：规划 Active Directory 林恢复](https://www.microsoft.com/download/details.aspx?id=16506)。 您可能能够防止您的新环境受到完全损害，但即使您不能，您也可以使用这些工具来恢复和重新获得对您的环境的控制。  
   
 ## <a name="rethinking-the-approach"></a>反思方法  
-@no__t 0Law Number 8：防御网络的难点与复杂性是直接成比例的。 *[安全管理的 @no__t 0 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律数八：防御网络的难点与复杂性是直接成比例的。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
   
 通常情况下，如果攻击者获取了对计算机的系统、管理员、根或等效访问权限（无论操作系统如何），就不能再将该计算机视为可信计算机，无论对主板. Active Directory 没有任何区别。 如果攻击者已在 Active Directory 中获取了对域控制器或具有高特权的帐户的特权访问权限，除非您记录了攻击者所做的每项修改或已知良好的备份，否则永远不能将目录还原到完全可信状态。  
   
@@ -53,7 +53,7 @@ ms.locfileid: "71360142"
   
 -   92% 的事件已被第三方发现，  
   
--   尽管简单或中间控件能够避免了 97% 的违规。  
+-   尽管简单或中间控件能够避免了97% 的违规。  
   
 对前面所述的程度的破坏实际上是无法修复的，而且在 Active Directory 受到损害或破坏的情况下，对每个受损系统进行 "平展和重建" 的标准建议并不可行，甚至可能是不可能的。 即使还原到已知的良好状态，也不会消除允许在第一次泄漏环境时出现的漏洞。  
   
@@ -63,7 +63,7 @@ ms.locfileid: "71360142"
   
 请不要关注和尝试修复 "已损坏" 的所有内容，而是考虑一种方法，根据在业务和基础结构中最重要的内容来确定优先级。 不要尝试修正使用过时、配置错误的系统和应用程序填充的环境，请考虑创建一个新的小型安全环境，您可以将这些用户、系统和最重要的信息安全移植到您的节假日.  
   
-在本部分中，我们将介绍一种方法，通过该方法，你可以创建一个可用作核心业务基础结构的 "生命船" 或 "安全单元" 的处于纯洁 AD DS 林。 处于纯洁林只是新安装的 Active Directory 林中，通常是大小和范围有限的，它是使用当前操作系统、应用程序和使用[降低 Active Directory 攻击中所述的原则构建的。图面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)。  
+在本部分中，我们将介绍一种方法，通过该方法，你可以创建一个可用作核心业务基础结构的 "生命船" 或 "安全单元" 的处于纯洁 AD DS 林。 处于纯洁林只是新安装的 Active Directory 林中，通常是大小和范围有限的，它是使用当前操作系统、应用程序以及[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述的原则构建的。  
   
 通过在新构建的林中实施推荐的配置设置，你可以创建一个 AD DS 安装，该安装是从一开始就使用安全的设置和做法构建的，你可以减少支持旧系统和应用程序. 虽然 AD DS 处于纯洁安装的设计和实现的详细说明不在本文档的讨论范围内，但你应该遵循一些常规原则和指导原则，以创建一个 "安全单元"，并将最重要的标号. 这些准则如下所示：  
   
@@ -81,7 +81,7 @@ ms.locfileid: "71360142"
   
 ### <a name="identifying-principles-for-segregating-and-securing-critical-assets"></a>确定用于隔离和保护关键资产的原则  
 
-你创建的处于纯洁环境的特性可能会有很大的差异。 例如，你可以选择创建一个处于纯洁林，以便仅将 VIP 用户和敏感数据迁移到只有这些用户可以访问的数据。 你可以创建处于纯洁林，其中你不仅可以迁移 VIP 用户，还可以将其作为管理林来实现，实现[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述的原则来创建安全管理帐户和可用于从处于纯洁林中管理旧版林的主机。 你可以实现一个 "专门构建的" 林，其中驻留了 VIP 帐户、特权帐户和需要其他安全性的系统，如运行 Active Directory 证书服务（AD CS）的服务器，并将它们隔离不太安全森林. 最后，您可以实现一个处于纯洁林，使其成为所有新用户、系统、应用程序和数据的事实上的位置，从而使您能够通过 attrition 最终解除旧林的授权。  
+你创建的处于纯洁环境的特性可能会有很大的差异。 例如，你可以选择创建一个处于纯洁林，以便仅将 VIP 用户和敏感数据迁移到只有这些用户可以访问的数据。 你可以创建处于纯洁林，其中你不仅可以迁移 VIP 用户，还可以将其作为管理林来实现，实现[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述的原则，以创建可用于从处于纯洁林中管理旧版林的安全管理帐户和主机。 你可以实现一个 "专门构建的" 林，其中驻留了 VIP 帐户、特权帐户和需要其他安全性的系统，如运行 Active Directory 证书服务（AD CS）的服务器，并将它们隔离不太安全森林. 最后，您可以实现一个处于纯洁林，使其成为所有新用户、系统、应用程序和数据的事实上的位置，从而使您能够通过 attrition 最终解除旧林的授权。  
   
 无论你的处于纯洁林中是否包含少量的用户和系统，或是为了进行更严格的迁移而形成基础，你都应在规划中遵循以下原则：  
   
@@ -144,7 +144,7 @@ ms.locfileid: "71360142"
   
 例如，你可以定义一个策略，要求执行官和其他 Vip 使用安全工作站来访问敏感数据和系统，从而使他们能够使用其他设备来访问不太敏感的数据。 这是用户要记住的一个简单原则，但你可以实现一些后端控制，以帮助强制实施此方法。  
 
-如果用户使用智能卡登录到安全系统，则可以使用[身份验证机制保证](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)来允许用户访问敏感数据，并可使用 IPsec 和用户权限限制来控制可从中进行访问的系统连接到敏感数据存储库。 您可以使用[Microsoft 数据分类工具包](https://www.microsoft.com/download/details.aspx?id=27123)构建强大的文件分类基础结构，还可以实现[动态访问控制](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)，以根据访问尝试的特征限制对数据的访问，转换技术控制中的业务规则。  
+如果用户使用智能卡登录到安全系统，则可以使用[身份验证机制保证](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)来允许用户访问敏感数据，并且可以使用 IPsec 和用户权限限制来控制可从中连接到敏感数据存储库的系统。 您可以使用[Microsoft 数据分类工具包](https://www.microsoft.com/download/details.aspx?id=27123)构建强大的文件分类基础结构，还可以实现[动态访问控制](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)，以根据访问尝试的特征限制对数据的访问，将业务规则转换为技术控制。  
   
 从用户的角度来看，从安全系统访问敏感数据 "简单"，然后尝试从不安全系统中执行此操作 "不是"。 但是，从监视和管理你的环境的角度来看，你将帮助你在用户访问敏感数据和系统的方式中创建可识别模式，使你能够更轻松地检测异常的访问尝试。  
   

@@ -22,7 +22,7 @@ ms.locfileid: "71380764"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
-为作业设置访问控制列表（ACL）传播标志。 标志指示你希望在要下载的文件中维护所有者和 ACL 信息。 例如，若要通过文件维护所有者和组，请将 **Flags** to @no__t。
+为作业设置访问控制列表（ACL）传播标志。 标志指示你希望在要下载的文件中维护所有者和 ACL 信息。 例如，若要通过文件维护所有者和组，请将 **Flags** 设置为 `OG`。
 
 ## <a name="syntax"></a>语法
 
@@ -30,12 +30,12 @@ ms.locfileid: "71380764"
 bitsadmin /SetAclFlags <Job> <Flags>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
 |作业|该作业的显示名称或 GUID|
-|Flags|指定以下一个或多个标志值：</br>I/O将所有者信息复制到文件。</br>G用文件复制组信息。</br>2-D复制 DACL 信息和文件。</br>-S：复制具有文件的 SACL 信息。|
+|Flags|指定以下一个或多个标志值：</br>-O：将所有者信息复制到文件。</br>-G：用文件复制组信息。</br>-D：将 DACL 信息复制到文件。</br>-S：复制具有文件的 SACL 信息。|
 
 ## <a name="remarks"></a>备注
 

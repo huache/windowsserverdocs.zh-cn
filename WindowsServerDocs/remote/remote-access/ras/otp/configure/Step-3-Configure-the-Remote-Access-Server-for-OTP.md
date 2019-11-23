@@ -63,9 +63,9 @@ ms.locfileid: "71404337"
     > [!NOTE]  
     > 在远程访问服务器上启用 OTP 后，如果通过取消选择**使用 otp**来禁用 otp，则会在服务器上卸载 ISAPI 和 CGI 扩展。  
   
-4.  如果需要 Windows 7 支持，请选中 "**使 windows 7 客户端计算机能够通过 DirectAccess 进行连接**" 复选框。 注意:如 "规划" 一节中所述，Windows 7 客户端必须安装了 DCA 2.0 以支持具有 OTP 的 DirectAccess。  
+4.  如果需要 Windows 7 支持，请选中 "**使 windows 7 客户端计算机能够通过 DirectAccess 进行连接**" 复选框。 注意：如 "规划" 一节中所述，Windows 7 客户端必须安装了 DCA 2.0 以支持具有 OTP 的 DirectAccess。  
   
-5.  单击“下一步”。  
+5.  单击**下一步**。  
   
 6.  在 " **OTP RADIUS 服务器**" 部分中，双击 "空白**服务器名称**" 字段。  
   
@@ -74,14 +74,14 @@ ms.locfileid: "71404337"
     > [!NOTE]  
     > 如果 RADIUS 服务器所在的域不同于远程访问服务器，则 "**服务器名称**" 字段必须指定 RADIUS 服务器的 FQDN。  
   
-8.  在 " **OTP Ca 服务器**" 部分中，选择要用于注册 OTP 客户端身份验证证书的 CA 服务器，然后单击 "**添加**"。 单击“下一步”。  
+8.  在 " **OTP Ca 服务器**" 部分中，选择要用于注册 OTP 客户端身份验证证书的 CA 服务器，然后单击 "**添加**"。 单击**下一步**。  
   
 9. 在 " **OTP 证书模板**" 部分中，单击 "**浏览**" 选择用于注册用于 OTP 身份验证的证书的证书模板。  
   
     > [!NOTE]  
     > 企业 CA 颁发的 OTP 证书的证书模板必须配置为不包含 "在颁发的证书中不包含吊销信息" 选项。 如果在创建证书模板期间选择了此选项，则 OTP 客户端计算机将无法正常登录。  
   
-    单击 "**浏览**" 选择用于注册远程访问服务器用于签署 OTP 证书注册请求的证书的证书模板。 单击 **“确定”** 。 单击“下一步”。  
+    单击 "**浏览**" 选择用于注册远程访问服务器用于签署 OTP 证书注册请求的证书的证书模板。 单击**确定**。 单击**下一步**。  
   
 10. 如果需要使用 OTP 的豁免特定用户，请在 " **Otp 免除**" 部分中选择 "**不要求指定安全组中的用户使用双因素身份验证进行身份验证**"。 单击 "**安全组**"，然后选择为 OTP 例外创建的安全组。  
   
@@ -105,7 +105,7 @@ ms.locfileid: "71404337"
   
 使用 PowerShell 命令配置 OTP 远程访问：  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   

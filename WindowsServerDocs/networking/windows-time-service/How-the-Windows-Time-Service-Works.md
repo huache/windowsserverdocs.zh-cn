@@ -18,7 +18,7 @@ ms.locfileid: "71405144"
 ---
 # <a name="how-the-windows-time-service-works"></a>Windows 时间服务的工作原理
 
->适用于：Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 10 或更高版本
+>适用于： Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 或更高版本
 
 **本部分内容**  
   
@@ -171,7 +171,7 @@ Windows 时间服务旨在同步网络上计算机的时钟。 网络时间同�
 基于域层次结构的同步使用 AD DS 域层次结构来查找同步时间所用的可靠来源。 根据域层次结构，Windows 时间服务确定每个时间服务器的准确性。 在 Windows Server 2003 林中，持有主域控制器（PDC）仿真器操作主机角色的计算机（位于目录林根级域中）保留最佳时间源的位置，除非已配置其他可靠时间源。 下图说明了域层次结构中的计算机之间的时间同步路径。  
   
 **AD DS 层次结构中的时间同步**  
-@no__t 0Windows Time @ no__t-1
+![Windows 时间](../media/Windows-Time-Service/How-the-Windows-Time-Service-Works/trnt_ntw_adhc.gif)
   
 #### <a name="reliable-time-source-configuration"></a>可靠时间源配置  
 被配置为可靠时间源的计算机被标识为时间服务的根。 时间服务的根目录是域的权威服务器，通常配置为从外部 NTP 服务器或硬件设备检索时间。 可以将时间服务器配置为可靠时间源，以优化跨域层次结构传输时间的方式。 如果将域控制器配置为可靠时间源，Net Logon 服务会在登录到网络时将该域控制器公布为可靠时间源。 当其他域控制器查找要与之同步的时间源时，他们首先选择可靠的源（如果有）。  
@@ -203,7 +203,7 @@ Windows 时间服务旨在同步网络上计算机的时钟。 网络时间同�
   
 **域控制器时间源查询**  
   
-|查询编号|域控制器|Location|时间源的可靠性|  
+|查询编号|域控制器|位置|时间源的可靠性|  
 |----------------|---------------------|------------|------------------------------|  
 |1|父域控制器|站点内|首选可靠的时间源，但如果全部可用，则它可以与非可靠时间源同步。|  
 |2|本地域控制器|站点内|仅与可靠时间源同步。|  
@@ -259,10 +259,10 @@ Windows 时间服务在网络上进行通信，以确定可靠的时间源，获
   
 |服务名称|UDP|TCP|  
 |----------------|-------|-------|  
-|NTP|123|不可用|  
-|SNTP|123|不可用|  
+|NTP|123|N/A|  
+|SNTP|123|N/A|  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [Windows 时间服务技术参考](windows-time-service-tech-ref.md)
 [Windows 时间服务工具和设置](Windows-Time-Service-Tools-and-Settings.md)
 [Microsoft 知识库文章 902229](https://go.microsoft.com/fwlink/?LinkId=186066)

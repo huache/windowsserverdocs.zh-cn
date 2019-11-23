@@ -24,7 +24,7 @@ ms.locfileid: "71380812"
 
 取消当前用户拥有的传输队列中的所有作业。
 
-**BITSAdmin 1.5 及更早版本**： 如果你具有管理员权限，请 **重置** cancels 队列中的所有作业。 不支持/AllUsers 选项。
+**BITSAdmin 1.5 及更早版本**：如果你具有管理员权限，则 **重置** 会取消队列中的所有作业。 不支持/AllUsers 选项。
 
 ## <a name="syntax"></a>语法
 
@@ -32,7 +32,7 @@ ms.locfileid: "71380812"
 bitsadmin /Reset [/AllUsers]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|

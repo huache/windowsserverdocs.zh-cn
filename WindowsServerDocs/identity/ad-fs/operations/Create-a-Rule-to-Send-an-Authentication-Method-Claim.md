@@ -19,13 +19,13 @@ ms.locfileid: "71358158"
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>创建规则以发送身份验证方法声明
 
 
-你可以使用 "**以声明方式发送组成员身份**" 规则模板或 "**转换传入声明**" 规则模板来发送身份验证方法声明。 依赖方可以使用身份验证方法声明来确定用户用于验证和获取 Active Directory 联合身份验证服务 \(AD FS @ no__t 中的声明的登录机制。 你还可以使用 Windows Server 2012 R2 中 @no__t Active Directory 联合身份验证服务的身份验证机制保证功能作为输入，以生成身份验证方法声明，以确定信赖方要确定的情况下基于智能卡登录的访问级别。 例如，开发人员可为信赖方应用程序的联合用户分配不同级别的访问权限。 访问级别取决于用户是否使用其用户名和密码凭据进行登录，而不是使用其智能卡。  
+你可以使用 "**以声明方式发送组成员身份**" 规则模板或 "**转换传入声明**" 规则模板来发送身份验证方法声明。 依赖方可以使用身份验证方法声明来确定登录机制，用户使用该机制进行身份验证并获取 Active Directory 联合身份验证服务 \(AD FS\)中的声明。 你还可以使用 Active Directory 联合身份验证服务的身份验证机制保证功能，将 Windows Server 2012 R2 中 \(AD FS\) 作为输入，以生成身份验证方法声明，以便信赖方希望确定基于智能卡登录的访问级别。 例如，开发人员可为信赖方应用程序的联合用户分配不同级别的访问权限。 访问级别取决于用户是否使用其用户名和密码凭据进行登录，而不是使用其智能卡。  
 
 根据组织的要求，请使用以下过程之一：  
 
--   使用**发送组成员身份作为声明**规则模板来创建此规则 \- 当你希望在此模板中指定的组最终确定要颁发的身份验证方法声明时，可以使用此规则模板。  
+-   如果希望在此模板中指定的组最终确定要颁发的身份验证方法声明，请使用 "**以声明方式发送组成员身份**" 规则模板来创建此规则 \- 你可以使用此规则模板。  
 
--   使用 "**转换传入声明**" 规则模板来创建此规则 \- 如果要将现有的身份验证方法更改为适用于无法识别的产品的新身份验证方法，则可以使用此规则模板。标准 AD FS 身份验证方法声明。  
+-   使用 "**转换传入声明**" 规则模板来创建此规则 \- 如果要将现有的身份验证方法更改为与无法识别标准 AD FS 身份验证方法声明的产品一起使用的新身份验证方法，则可以使用此规则模板。  
 
 
 
@@ -36,7 +36,7 @@ ms.locfileid: "71358158"
 2.  在控制台树中的 " **AD FS**下，单击"**信赖方信任**"。 
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
 
-3.  右键\-单击所选的信任，然后单击 "**编辑声明颁发策略**"。
+3.  右键\-单击选定的信任，然后单击 "**编辑声明颁发策略**"。
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
 
 4.  在 "**编辑声明颁发策略**" 对话框中的 "**颁发转换规则**" 下，单击 "**添加规则**" 以启动规则向导。 
@@ -51,14 +51,14 @@ ms.locfileid: "71358158"
 
 8.  在 "**传出声明类型**" 中，选择列表中的 "**身份验证方法**"。  
 
-9. 在 "**传出声明值**" 中，键入下表中的默认统一资源标识符 \(URI @ no__t-2 值，具体取决于你的首选身份验证方法，请单击 "**完成**"，然后单击 **"确定"** 以保存该规则。  
+9. 在 "**传出声明值**" 中，键入下表中 \(URI 的默认统一资源标识符之一\) 值，具体取决于你的首选身份验证方法，请单击 "**完成**"，然后单击 **"确定"** 保存规则。  
 
 |                            实际身份验证方法                             |                                对应 URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        用户名和密码身份验证                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Windows 身份验证                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 传输层安全 \(TLS @ no__t-1 使用 x.509 证书的相互身份验证 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  X.509 @ no__t-不使用 TLS 的0based 身份验证                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 传输层安全 \(TLS\) 使用 x.509 证书的相互身份验证 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  不使用 TLS 的基于 x.509\-的身份验证                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![创建规则](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
@@ -69,7 +69,7 @@ ms.locfileid: "71358158"
 2.  在控制台树中的 " **AD FS**下，单击"**声明提供方信任**"。 
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
 
-3.  右键\-单击所选的信任，然后单击 "**编辑声明规则**"。
+3.  右键\-单击选定的信任，然后单击 "**编辑声明规则**"。
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
 
 4.  在 "**编辑声明规则**" 对话框中的 "**接受转换规则**" 下，单击 "**添加规则**" 以启动规则向导。
@@ -84,14 +84,14 @@ ms.locfileid: "71358158"
 
 8.  在 "**传出声明类型**" 中，选择列表中的 "**身份验证方法**"。  
 
-9. 在 "**传出声明值**" 中，键入下表中的默认统一资源标识符 \(URI @ no__t-2 值，具体取决于你的首选身份验证方法，请单击 "**完成**"，然后单击 **"确定"** 以保存该规则。  
+9. 在 "**传出声明值**" 中，键入下表中 \(URI 的默认统一资源标识符之一\) 值，具体取决于你的首选身份验证方法，请单击 "**完成**"，然后单击 **"确定"** 保存规则。  
 
 |                            实际身份验证方法                             |                                对应 URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        用户名和密码身份验证                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Windows 身份验证                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 传输层安全 \(TLS @ no__t-1 使用 x.509 证书的相互身份验证 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  X.509 @ no__t-不使用 TLS 的0based 身份验证                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 传输层安全 \(TLS\) 使用 x.509 证书的相互身份验证 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  不使用 TLS 的基于 x.509\-的身份验证                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![创建规则](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
@@ -103,7 +103,7 @@ ms.locfileid: "71358158"
 2.  在控制台树中的 " **AD FS**下，单击"**信赖方信任**"。 
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
 
-3.  右键\-单击所选的信任，然后单击 "**编辑声明颁发策略**"。
+3.  右键\-单击选定的信任，然后单击 "**编辑声明颁发策略**"。
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
 
 4.  在 "**编辑声明颁发策略**" 对话框中的 "**颁发转换规则**" 下，单击 "**添加规则**" 以启动规则向导。 
@@ -129,7 +129,7 @@ ms.locfileid: "71358158"
 |         用户名和密码身份验证          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Windows 身份验证                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | 使用 x.509 证书的 TLS 相互身份验证 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   X.509 @ no__t-不使用 TLS 的0based 身份验证    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   不使用 TLS 的基于 x.509\-的身份验证    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![创建规则](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
@@ -143,7 +143,7 @@ ms.locfileid: "71358158"
 2.  在控制台树中的 " **AD FS**下，单击"**声明提供方信任**"。 
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
 
-3.  右键\-单击所选的信任，然后单击 "**编辑声明规则**"。
+3.  右键\-单击选定的信任，然后单击 "**编辑声明规则**"。
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
 
 4.  在 "**编辑声明规则**" 对话框中的 "**接受转换规则**" 下，单击 "**添加规则**" 以启动规则向导。
@@ -169,7 +169,7 @@ ms.locfileid: "71358158"
 |         用户名和密码身份验证          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Windows 身份验证                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | 使用 x.509 证书的 TLS 相互身份验证 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   X.509 @ no__t-不使用 TLS 的0based 身份验证    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   不使用 TLS 的基于 x.509\-的身份验证    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![创建规则](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
@@ -199,12 +199,12 @@ ms.locfileid: "71358158"
 
 1.  在服务器管理器中，单击 "**工具**"，然后选择 " **AD FS 管理**"。  
 
-2.  在控制台树中的 " **AD FS\\信任关系**" 下，单击 "**声明提供方信任**或**信赖方信任**"，然后在要创建此规则的列表中单击特定信任。  
+2.  在控制台树中的 " **AD FS\\信任关系**" 下，单击 "**声明提供方**信任或**信赖方信任**"，然后在要创建此规则的列表中单击特定信任。  
 
-3.  右键\-单击所选的信任，然后单击 "**编辑声明规则**"。
+3.  右键\-单击选定的信任，然后单击 "**编辑声明规则**"。
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
 
-4.  在 "**编辑声明规则**" 对话框中，根据所编辑的信任和要在其中创建此规则的规则集，选择下列选项卡之一，然后单击 "**添加规则**" 以启动与该规则集关联的规则向导:  
+4.  在 "**编辑声明规则**" 对话框中，根据所编辑的信任和要在其中创建此规则的规则集，选择下列选项卡之一，然后单击 "**添加规则**" 以启动与该规则集关联的规则向导：  
 
     -   **接受转换规则**  
 
@@ -224,14 +224,14 @@ ms.locfileid: "71358158"
 
 8.  在 "**传出声明类型**" 中，选择列表中的 "**身份验证方法**"。  
 
-9. 在 "**传出声明值**" 中，键入下表中的默认统一资源标识符 \(URI @ no__t-2 值，具体取决于你的首选身份验证方法，请单击 "**完成**"，然后单击 **"确定"** 以保存该规则。  
+9. 在 "**传出声明值**" 中，键入下表中 \(URI 的默认统一资源标识符之一\) 值，具体取决于你的首选身份验证方法，请单击 "**完成**"，然后单击 **"确定"** 保存规则。  
 
 |                            实际身份验证方法                             |                                对应 URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        用户名和密码身份验证                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Windows 身份验证                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| 传输层安全 \(TLS @ no__t-1 使用 x.509 证书的相互身份验证 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  X.509 @ no__t-不使用 TLS 的0based 身份验证                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| 传输层安全 \(TLS\) 使用 x.509 证书的相互身份验证 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  不使用 TLS 的基于 x.509\-的身份验证                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![创建规则](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth1.PNG)
 
@@ -244,12 +244,12 @@ ms.locfileid: "71358158"
 
 1.  在服务器管理器中，单击 "**工具**"，然后单击 " **AD FS 管理**"。  
 
-2.  在控制台树中的 " **AD FS\\信任关系**" 下，单击 "**声明提供方信任**或**信赖方信任**"，然后在要创建此规则的列表中单击特定信任。  
+2.  在控制台树中的 " **AD FS\\信任关系**" 下，单击 "**声明提供方**信任或**信赖方信任**"，然后在要创建此规则的列表中单击特定信任。  
 
-3.  右键\-单击所选的信任，然后单击 "**编辑声明规则**"。  
+3.  右键\-单击选定的信任，然后单击 "**编辑声明规则**"。  
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
 
-4.  在 "**编辑声明规则**" 对话框中，选择下列选项卡，其中一个选项卡依赖于你正在编辑的信任，以及你要在哪个规则集中创建此规则，然后单击 "**添加规则**" 以启动与该规则集关联的规则向导:  
+4.  在 "**编辑声明规则**" 对话框中，选择下列选项卡，其中一个选项卡依赖于你正在编辑的信任和你要在哪个规则集中创建此规则，然后单击 "**添加规则**" 以启动与该规则集关联的规则向导：  
 
     -   **接受转换规则**  
 
@@ -280,7 +280,7 @@ ms.locfileid: "71358158"
 |         用户名和密码身份验证          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Windows 身份验证                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | 使用 x.509 证书的 TLS 相互身份验证 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   X.509 @ no__t-不使用 TLS 的0based 身份验证    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   不使用 TLS 的基于 x.509\-的身份验证    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![创建规则](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth3.PNG)
 

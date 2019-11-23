@@ -22,7 +22,7 @@ ms.locfileid: "71371911"
 ---
 # <a name="query-process"></a>查询进程
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 显示有关在远程桌面会话主机（rd 会话主机）服务器上运行的进程的信息。
 您可以使用此命令来找出特定用户正在运行的程序，以及哪些用户在运行特定程序。
@@ -33,7 +33,7 @@ ms.locfileid: "71371911"
 > ```
 > query process [* | <ProcessID> | <UserName> | <SessionName> | /id:<nn> | <ProgramName>] [/server:<ServerName>]
 > ```
-> ## <a name="parameters"></a>Parameters
+> ## <a name="parameters"></a>参数
 > 
 > |      参数       |                                                                 描述                                                                  |
 > |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,14 +41,14 @@ ms.locfileid: "71371911"
 > |     <ProcessID>      |                                   指定标识要查询的进程的数字 ID。                                   |
 > |      <UserName>      |                                       指定要列出其进程的用户的名称。                                       |
 > |    <SessionName>     |                                     指定要列出其进程的会话的名称。                                      |
-> |       /id： <nn>       |                                      指定要列出其进程的会话的 ID。                                       |
+> |       /id：<nn>       |                                      指定要列出其进程的会话的 ID。                                       |
 > |    <ProgramName>     |                     指定要查询其进程的程序的名称。 .Exe 扩展名是必需的。                     |
 > | /server:<ServerName> | 指定要列出其进程的 rd 会话主机服务器。 如果未指定，则使用你当前登录到的服务器。 |
 > |          /?          |                                                     在命令提示符下显示帮助。                                                     |
 > 
 > ## <a name="remarks"></a>备注
 > - 管理员对所有**查询处理**函数具有完全访问权限。
-> - 如果未指定 < 用户名 >、<*会话* *名称*>、 **/id：** <*nn*>、<*ProgramName*> 或 **@no__t 7*** 参数，则**查询进程**将只显示属于当前用户。
+> - 如果未指定 < 用户名 >、<*会话* *名称*>、 **/id：** <*nn*>、<*ProgramName*> 或 **\\** * 参数，则**query process**只显示属于当前用户的进程。
 > - 如果指定了会话，则它必须标识活动会话。
 > - **查询过程**返回以下信息：
 >   -   拥有此进程的用户
@@ -67,6 +67,6 @@ ms.locfileid: "71371911"
 >   query process /ID:2
 >   ```
 >   #### <a name="additional-references"></a>其他参考
->   [命令行语法关键字](command-line-syntax-key.md)
+>   [命令行语法键](command-line-syntax-key.md)
 >   [query](query.md)
 >   [远程桌面服务&#40;终端服务&#41;命令参考](remote-desktop-services-terminal-services-command-reference.md)

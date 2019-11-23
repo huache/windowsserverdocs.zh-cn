@@ -19,7 +19,7 @@ ms.locfileid: "71402816"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署存储空间直通
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 本主题提供部署[存储空间直通](storage-spaces-direct-overview.md)的分步说明。
 
@@ -45,13 +45,13 @@ ms.locfileid: "71402816"
 
 - **VLAN ID。** 请注意要用于服务器上的管理 OS 网络适配器的 VLAN ID （如果有）。 应该能够从网络管理员处获取此信息。
 
-## <a name="step-1-deploy-windows-server"></a>第 1 步：部署 Windows Server
+## <a name="step-1-deploy-windows-server"></a>步骤 1：部署 Windows Server
 
-### <a name="step-11-install-the-operating-system"></a>步骤1.1：安装操作系统。
+### <a name="step-11-install-the-operating-system"></a>步骤1.1：安装操作系统
 
 第一步是在将位于群集中的每个服务器上安装 Windows Server。 存储空间直通需要 Windows Server 2016 Datacenter Edition。 你可以使用服务器核心安装选项或具有桌面体验的服务器。
 
-当你使用安装向导安装 Windows Server 时，你可以在*Windows server* （引用 server Core）和*windows Server （具有桌面体验的服务器）* 之间进行选择，这等同于*完全*安装选项在 Windows Server 2012 R2 中可用。 如果不选择，则会获得服务器核心安装选项。 有关详细信息，请参阅[Windows Server 2016 安装选项](../../get-started/Windows-Server-2016.md)。
+当你使用安装向导安装 Windows Server 时，你可以在*Windows server* （引用 server Core）和*windows Server （具有桌面体验的服务器）* 之间进行选择，这相当于 windows server 2012 R2 中提供的*完全*安装选项。 如果不选择，则会获得服务器核心安装选项。 有关详细信息，请参阅[Windows Server 2016 安装选项](../../get-started/Windows-Server-2016.md)。
 
 ### <a name="step-12-connect-to-the-servers"></a>步骤1.2：连接到服务器
 
@@ -96,7 +96,7 @@ ms.locfileid: "71402816"
 
 若要管理存储空间直通，需要将服务器加入域，并使用每台服务器上管理员组中的 Active Directory 域服务域帐户。
 
-在管理系统中，使用管理员权限打开 PowerShell 控制台。 使用 @no__t 来连接到每台服务器并运行以下 cmdlet，同时替换自己的计算机名、域名和域凭据：
+在管理系统中，使用管理员权限打开 PowerShell 控制台。 使用 `Enter-PSSession` 连接到每台服务器并运行以下 cmdlet，并替换自己的计算机名、域名和域凭据：
 
 ```PowerShell  
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
@@ -150,12 +150,12 @@ Invoke-Command ($ServerList) {
 Windows Server 2016 引入了 Hyper-v 虚拟交换机中的交换机嵌入组合（SET）。 这样，在使用 RDMA 时，可以将相同的物理 NIC 端口用于所有网络流量，从而减少所需的物理 NIC 端口的数量。 建议存储空间直通使用交换机嵌入组合。
 
 交换或 switchless 节点互连
-- 进必须正确配置网络交换机以处理带宽和网络类型。 如果使用的 RDMA 实现了 RoCE 协议，则网络设备和交换机配置更为重要。
-- Switchless:节点可以使用直接连接互连，避免使用交换机。 每个节点都必须与群集中的每个其他节点具有直接连接。
+- 交换：必须正确配置网络交换机以处理带宽和网络类型。 如果使用的 RDMA 实现了 RoCE 协议，则网络设备和交换机配置更为重要。
+- Switchless：可以使用直接连接互连节点，避免使用交换机。 每个节点都必须与群集中的每个其他节点具有直接连接。
 
 有关为存储空间直通设置网络的说明，请参阅[Windows Server 2016 汇聚 NIC 和来宾 RDMA 部署指南](https://github.com/Microsoft/SDN/blob/master/Diagnostics/S2D%20WS2016_ConvergedNIC_Configuration.docx)。
 
-## <a name="step-3-configure-storage-spaces-direct"></a>步骤 3:配置存储空间直通
+## <a name="step-3-configure-storage-spaces-direct"></a>步骤 3：配置存储空间直通
 
 以下步骤将在一个与配置的服务器版本相同的管理系统上完成。 以下步骤不应使用 PowerShell 会话远程运行，而是使用管理权限在管理系统上的本地 PowerShell 会话中运行。
 
@@ -204,7 +204,7 @@ Count Name                          PSComputerName
 
 ### <a name="step-32-validate-the-cluster"></a>步骤3.2：验证群集
 
-在此步骤中，你将运行群集验证工具，以确保正确配置服务器节点，以便使用存储空间直通创建群集。 如果在创建群集之前运行群集验证（`Test-Cluster`），则它会运行测试，验证配置是否显示为适用于成功充当故障转移群集。 下面的示例使用 @no__t 参数，然后指定特定类别的测试。 这样可以确保验证中包含存储空间直通特定的测试。
+在此步骤中，你将运行群集验证工具，以确保正确配置服务器节点，以便使用存储空间直通创建群集。 在创建群集之前运行群集验证（`Test-Cluster`）时，它会运行测试，以验证配置是否显示为适用于成功作为故障转移群集的功能。 下面的示例使用 `-Include` 参数，然后指定特定类别的测试。 这样可以确保验证中包含存储空间直通特定的测试。
 
 使用以下 PowerShell 命令验证一组用作存储空间直通群集的服务器。
 
@@ -216,7 +216,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 在此步骤中，你将创建一个群集，其中包含你在前面步骤中使用以下 PowerShell cmdlet 验证群集创建的节点。
 
-创建群集时，你将收到一条警告： "创建群集角色时出现问题，可能会阻止其启动。 有关详细信息，请查看以下报告文件。” 可以放心地忽略此警告。 出现此警告是因为群集仲裁上没有可用的磁盘。 建议在创建群集后配置文件共享见证或云见证。
+创建群集时，你将收到一条警告： "创建群集角色时出现问题，可能会阻止其启动。 有关详细信息，请查看以下报告文件。” 可以放心地忽略此警告， 出现此警告是因为群集仲裁上没有可用的磁盘。 建议在创建群集后配置文件共享见证或云见证。
 
 > [!Note]
 > 如果服务器正在使用静态 IP 地址，通过添加以下参数和指定 IP 地址来修改以下命令以反映静态 IP 地址：–StaticAddress &lt;X.X.X.X&gt;。
@@ -227,7 +227,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 创建群集后，复制群集名称的 DNS 条目可能要花点时间。 时间取决于环境和 DNS 复制配置。 如果解析群集未成功，在大多数情况下，可以使用节点的计算机名称来完成，它是可用于取代群集名称的群集的活动成员。
 
-### <a name="step-34-configure-a-cluster-witness"></a>步骤3.4：配置分类见证
+### <a name="step-34-configure-a-cluster-witness"></a>步骤3.4：配置群集见证
 
 建议为群集配置见证服务器，使具有三个或更多服务器的群集可以承受两台服务器发生故障或处于脱机状态。 双服务器部署需要分类见证，否则服务器脱机会导致另一个服务器无法使用。 通过这些系统，可以使用文件共享作为见证或使用云见证。 
 
@@ -236,15 +236,15 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 - [配置和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)
 - [为故障转移群集部署云见证](../../failover-clustering/deploy-cloud-witness.md)
 
-### <a name="step-35-enable-storage-spaces-direct"></a>步骤3.5：启用存储空间直通
+### <a name="step-35-enable-storage-spaces-direct"></a>步骤 3.5：启用存储空间直通
 
 创建群集后，请使用 `Enable-ClusterStorageSpacesDirect` PowerShell cmdlet，该 cmdlet 会将存储系统置于存储空间直通模式，并自动执行以下操作：
 
--   **创建池：** 创建名为 "S2D on Cluster1" 的单个大型池。
+-   **创建池：** 创建具有“S2D on Cluster1”之类的名称的单个大型池。
 
--   **配置存储空间直通缓存：** 如果有多个媒体（驱动器）类型可用于存储空间直通使用，它将启用最快的缓存设备（在大多数情况下读取和写入）
+-   **配置存储空间直通缓存：** 如果存在多个媒体（驱动器）类型可供存储空间直通使用，作为缓存设备可实现最快速度（在大多数情况下读取和写入）
 
--   **底层**创建两个层作为默认层。 其中一个称为“容量”，另一个称为“性能”。 cmdlet 通过组合设备类型和复原能力来分析设备并配置每个层。
+-   **层：** 创建两个层作为默认层。 其中一个称为“容量”，另一个称为“性能”。 cmdlet 通过组合设备类型和复原能力来分析设备并配置每个层。
 
 通过管理系统，在以管理员权限打开的 PowerShell 命令窗口中，启动以下命令。 群集名称是在前面的步骤中创建的群集的名称。 如果在其中一个节点上本地运行此命令，-CimSession 参数则不是必需的。
 
@@ -256,7 +256,7 @@ Enable-ClusterStorageSpacesDirect –CimSession <ClusterName>
 
 此命令完成（可能需要几分钟时间）之后，系统将准备好要创建卷。
 
-### <a name="step-36-create-volumes"></a>步骤3.6：创建卷
+### <a name="step-36-create-volumes"></a>步骤 3.6：创建卷
 
 建议使用 `New-Volume` cmdlet，因为它提供最快、最直接的体验。 此单个 cmdlet 会自动创建虚拟磁盘，对其进行分区和格式化，使用匹配的名称创建卷，并将其添加到群集共享卷 － 这些全都在一个简单的步骤中完成。
 
@@ -268,7 +268,7 @@ Enable-ClusterStorageSpacesDirect –CimSession <ClusterName>
 
 启用 CSV 缓存可减少可用于在超聚合群集上运行 Vm 的内存量，因此，你必须使用 Vhd 可用的内存来平衡存储性能。
 
-若要设置 CSV 缓存的大小，请使用对存储群集具有管理员权限的帐户打开管理系统上的 PowerShell 会话，然后使用此脚本根据需要更改 `$ClusterName` 和 `$CSVCacheSize` 变量（此示例将设置为2每台服务器 GB CSV 缓存）：
+若要设置 CSV 缓存的大小，请使用对存储群集具有管理员权限的帐户在管理系统上打开一个 PowerShell 会话，然后根据需要使用此脚本更改 `$ClusterName` 和 `$CSVCacheSize` 变量（此示例为每个服务器设置 2 GB CSV 缓存）：
 
 ```PowerShell
 $ClusterName = "StorageSpacesDirect1"
@@ -283,15 +283,15 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 有关详细信息，请参阅[使用 CSV 内存中读取缓存](csv-cache.md)。
 
-### <a name="step-38-deploy-virtual-machines-for-hyper-converged-deployments"></a>步骤3.8：部署用于超聚合部署的虚拟机
+### <a name="step-38-deploy-virtual-machines-for-hyper-converged-deployments"></a>步骤3.8：为超聚合部署部署虚拟机
 
 如果要部署超聚合群集，最后一步是在存储空间直通群集上预配虚拟机。
 
-虚拟机的文件应存储在系统 CSV 命名空间（例如： c： \\ClusterStorage @ no__t-1Volume1）上，就像故障转移群集上的群集 Vm 一样。
+虚拟机的文件应存储在系统 CSV 命名空间（例如： c：\\ClusterStorage\\Volume1）上，就像故障转移群集上的群集 Vm 一样。
 
 你可以使用内置工具或其他工具来管理存储和虚拟机，如 System Center Virtual Machine Manager。
 
-## <a name="step-4-deploy-scale-out-file-server-for-converged-solutions"></a>步骤 4：部署聚合解决方案的横向扩展文件服务器
+## <a name="step-4-deploy-scale-out-file-server-for-converged-solutions"></a>步骤4：部署聚合解决方案的横向扩展文件服务器
 
 如果要部署聚合解决方案，下一步就是创建横向扩展文件服务器实例，并设置一些文件共享。 如果要部署超聚合群集，则已完成，不需要此部分。
 
@@ -316,14 +316,14 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
   
 #### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>使用 Windows PowerShell 创建横向扩展文件服务器角色
 
- 在连接到文件服务器群集的 Windows PowerShell 会话中，输入以下命令以创建横向扩展文件服务器角色，将*FSCLUSTER*更改为与群集名称相匹配，并将*SOFS*更改为与你要为横向扩展文件服务器角色：
+ 在连接到文件服务器群集的 Windows PowerShell 会话中，输入以下命令以创建横向扩展文件服务器角色，将*FSCLUSTER*更改为与群集名称相匹配，并使用*SOFS*来匹配要为横向扩展文件服务器角色指定的名称：
 
 ```PowerShell
 Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 ```
 
 > [!NOTE]
->  创建群集角色后，可能会出现一些网络传播延迟，这可能会导致在几分钟内创建文件共享或可能更长时间。 如果 SOFS 角色立即失败且不会启动，则可能是因为群集的计算机对象没有创建 SOFS 角色的计算机帐户的权限。 有关此操作的帮助，请参阅此博客文章：[横向扩展文件服务器角色无法启动，事件 Id 为1205、1069和 1194](http://www.aidanfinn.com/?p=14142)。
+>  创建群集角色后，可能会出现一些网络传播延迟，这可能会导致在几分钟内创建文件共享或可能更长时间。 如果 SOFS 角色立即失败且不会启动，则可能是因为群集的计算机对象没有创建 SOFS 角色的计算机帐户的权限。 有关此操作的帮助，请参阅此博客文章：[横向扩展文件服务器 Role 无法启动，事件 Id 为1205、1069和 1194](http://www.aidanfinn.com/?p=14142)。
 
 ### <a name="step-42-create-file-shares"></a>步骤4.2：创建文件共享
 
@@ -386,7 +386,7 @@ CD $ScriptFolder
 
 部署群集文件服务器后，我们建议在引入任何实际工作负荷之前，使用综合工作负荷测试解决方案的性能。 这样，你就可以在添加工作负荷复杂性之前，确认解决方案是否正在正常运行，并解决所有延迟问题。 有关详细信息，请参阅[使用综合工作负荷测试存储空间性能](https://technet.microsoft.com/library/dn894707.aspx)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [Windows Server 2016 中的存储空间直通](storage-spaces-direct-overview.md)
 -   [了解存储空间直通中的缓存](understand-the-cache.md)

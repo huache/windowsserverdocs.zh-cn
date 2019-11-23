@@ -45,7 +45,7 @@ ms.locfileid: "71393942"
 
     对于存储 QoS，在存储服务器上需要故障转移群集，但是计算群集无需处于故障转移群集中。 所有服务器（用于存储和计算的服务器）都必须运行 Windows Server 2016。  
 
-    如果没有为评估目的部署横向扩展文件服务器群集，有关使用现有服务器或虚拟机生成一个群集的分步说明，请参阅 @no__t 0Windows Server 2012 R2 Storage：存储空间、SMB 横向扩展和共享 VHDX （物理） ](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx) 的分步指导。  
+    如果尚未部署用于评估的横向扩展文件服务器群集，有关使用现有服务器或虚拟机进行构建的分步说明，请参阅 [Windows Server 2012 R2 存储：使用存储空间、SMB 横向扩展和共享 VHDX（物理）的分步说明](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx)。  
 
 -   **使用群集共享卷的 hyper-v。** 此方案需要以下两项：  
 
@@ -60,7 +60,7 @@ ms.locfileid: "71393942"
 
 ![横向扩展文件服务器和存储 QoS](media/overview-Clustering_SOFSStorageQoS.png)  
 
-**图 1：在软件定义的存储解决方案中使用存储 QoS 横向扩展文件服务器 @ no__t-0  
+**图1：在横向扩展文件服务器中的软件定义的存储解决方案中使用存储 QoS**  
 
 当 Hyper-V 服务器启动虚拟机时，它们由策略管理器监视。 策略管理器会传达存储 QoS 策略和 Hyper-V 服务器的任何限制或保留，以对虚拟机的性能进行适当的控制。  
 
@@ -74,7 +74,7 @@ ms.locfileid: "71393942"
 |流|由 Hyper-V 服务器打开到 VHD 或 VHDX 文件的每个文件句柄均可视为一个“流”。 如果一个虚拟机连接了两个虚拟硬盘，则该虚拟机的每个文件的文件服务器群集均有一个流。 如果 VHDX 与多个虚拟机共享，则它的每个虚拟机均有一个流。|  
 |InitiatorName|针对每个流的横向扩展文件服务器报告的虚拟机的名称。|  
 |InitiatorID|与虚拟机 ID 匹配的标识符。  这可始终用于对单个流虚拟机进行唯一标识，即使该虚拟机具有相同的 InitiatorName。|  
-|策略|存储 QoS 策略存储在群集数据库中，具有以下属性：PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy 和 PolicyType。|  
+|策略|存储 QoS 策略存储在群集数据库中，并具有以下属性：PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy 和 PolicyType。|  
 |PolicyId|策略的唯一标识符。  默认生成，但可根据需要指定。|  
 |MinimumIOPS|将由策略提供的最小规范化 IOPS。  也称为“保留”。|  
 |MaximumIOPS|将由策略限制的最大规范化 IOPS。  也称为“限制”。|  
@@ -95,7 +95,7 @@ ms.locfileid: "71393942"
 
 ![存储 QoS 资源将在群集核心资源中显示](media/overview-Clustering_StorageQoSFCM.png)  
 
-**图 2:存储 QoS 资源显示为故障转移群集管理器 @ no__t 中的群集核心资源-0  
+**图2：存储 QoS 资源显示为故障转移群集管理器中的群集核心资源**  
 
 使用以下 PowerShell cmdlet 查看存储 QoS 资源的状态。  
 
@@ -115,14 +115,14 @@ Windows Server 2016 中的 Hyper-V 角色具有对存储 QoS 的内置支持并�
 
 **RSAT-Clustering** 可选功能包括适用于故障转移群集的远程管理的 Windows PowerShell 模块，包括存储 QoS。  
 
--   Windows PowerShell：Add-windowsfeature RSAT 群集  
+-   Windows PowerShell：Add-WindowsFeature RSAT-Clustering  
 
 **RSAT-Hyper-V-Tools** 可选功能包括适用于 Hyper-V 的远程管理的 Windows PowerShell 模块。  
 
--   Windows PowerShell：Add-windowsfeature RSAT-Hyper-v-工具  
+-   Windows PowerShell：Add-WindowsFeature RSAT-Hyper-V-Tools  
 
 #### <a name="deploy-virtual-machines-to-run-workloads-for-testing"></a>部署运行工作负荷的虚拟机以用于测试  
-你将需要存储在具有相关工作负荷的横向扩展文件服务器上的一些虚拟机。  有关如何模拟负载和执行一些压力测试的一些技巧，请参阅以下页面获取推荐的工具（DiskSpd）和示例用法：[DiskSpd、PowerShell 和存储性能：测量本地磁盘和 SMB 文件共享的 IOPs、吞吐量和延迟。](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)  
+你将需要存储在具有相关工作负荷的横向扩展文件服务器上的一些虚拟机。  有关模拟负载并执行某些压力测试的一些技巧，请参阅以下页面以获取推荐的工具 (DiskSpd) 和某些示例使用情况：[DiskSpd、PowerShell 和存储性能：为本地磁盘和 SMB 文件共享测量 IOPs、吞吐量和延迟](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)  
 
 本指南中所示的示例方案包括五个虚拟机。 BuildVM1、BuildVM2、BuildVM3 和 BuildVM4 运行从低到中等存储需求的桌面工作负荷。 TestVm1 运行具有高存储需求的联机事务处理基准。  
 
@@ -300,7 +300,7 @@ MinimumIops    : 781
 如果你为不同的虚拟机创建多个类似的策略，且虚拟机具有相同的存储需求，则它们将收到类似的 IOPs 共享。  如果其中一个 VM 需要的多，而另一个 VM 需要的少，则 IOPs 将按照此需求。  
 
 ### <a name="types-of-storage-qos-policies"></a>存储 QoS 策略的类型  
-有两种类型的策略：聚合（以前称为 SingleInstance）和专用（以前称为多实例）。 聚合策略为 VHD/VHDX 文件及其应用的虚拟机的组合集应用最小和最大值。 实际上，它们共享一组特定的 IOPS 和带宽。 专用策略为每个 VHD/VHDx 单独应用最小和最大值。 这样将易于创建向多个 VHD/VHDx 文件应用类似限制的单个策略。  
+有两种策略类型：聚合（以前称为 SingleInstance）和专用（以前称为 MultiInstance）。 聚合策略为 VHD/VHDX 文件及其应用的虚拟机的组合集应用最小和最大值。 实际上，它们共享一组特定的 IOPS 和带宽。 专用策略为每个 VHD/VHDx 单独应用最小和最大值。 这样将易于创建向多个 VHD/VHDx 文件应用类似限制的单个策略。  
 
 例如，如果你创建最小值为 300 IOPs、最大值为 500 IOPs 的聚合策略。 如果你将此策略应用到 5 个不同的 VHD/VHDx 文件，即表示你确定保证组合的 5 个 VHD/VHDx 文件至少为 300 IOPs（如果有此需求，且存储系统可以提供此性能）但不超出 500 IOPs。 如果 VHD/VHDx 对 IOPs 具有类似的高需求且存储系统能够满足，则每个 VHD/VHDx 将获得大约 100 IOPs。  
 
@@ -386,7 +386,7 @@ IsDeleted                     : False
 ```  
 
 ### <a name="query-for-storage-qos-policies"></a>查询存储 QoS 策略  
-@no__t 在横向扩展文件服务器上列出所有已配置的策略及其状态。  
+`Get-StorageQosPolicy` 在横向扩展文件服务器上列出所有已配置的策略及其状态。  
 
 ```PowerShell
 PS C:\> Get-StorageQosPolicy  
@@ -840,7 +840,7 @@ Windows Server 2016 中新增了两个存储 QoS 功能：
 
     需要考虑的一点是，由于规范化计算中的更改，当你更改 IOPS 规范化时，同一 IO 模式/吞吐量在存储 QoS 输出中将显示不同的 IOPS 数。  如果你在存储群集中比较 IOPS，你可能也想要验证每个 IOPS 正在使用什么样的规范化值，因为这将影响报告的规范化 IOPS。    
 
-#### <a name="example-1-creating-a-new-policy-and-viewing-the-maximum-bandwidth-on-the-storage-cluster"></a>示例 1：创建新策略并查看存储群集上的最大带宽  
+#### <a name="example-1-creating-a-new-policy-and-viewing-the-maximum-bandwidth-on-the-storage-cluster"></a>示例 1：在存储群集上创建新策略并查看最大带宽  
 在 PowerShell 中，你可以指定数字表示的单位。  在以下示例中，10 MB 用作最大带宽值。  存储 QoS 将对其转换并另存为字节/秒，因此，10 MB 被转换为 10485760 字节/秒。  
 
 ```PowerShell
@@ -885,7 +885,7 @@ IOPSNormalizationSize
 32768  
 ```    
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Windows Server 2016 中的存储副本](../storage-replica/storage-replica-overview.md)  
 - [Windows Server 2016 中的存储空间直通](../storage-spaces/storage-spaces-direct-overview.md)  

@@ -23,7 +23,7 @@ ms.locfileid: "71380566"
 
 将当前命令提示符的主要令牌（或任意本地用户帐户的令牌，如果指定）设置为 BITS 传输作业的 [帮助令牌](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)。
 
-**BITS 3.0 及更早版本**： 不受支持。
+**BITS 3.0 及更早版本**：不支持。
 
 ## <a name="syntax"></a>语法
 
@@ -31,12 +31,12 @@ ms.locfileid: "71380566"
 bitsadmin /SetHelperToken <Job> [\<username@domain\> \<password\>]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
 |作业|作业的显示名称或 GUID。|
-|\< @ no__t-1 @ no__t-2 \<password @ no__t-4|可选 @ no__t-0The 要使用其令牌的本地用户帐户的凭据。|
+|\<username@domain\> \<密码\>|可选&mdash;要使用其令牌的本地用户帐户的凭据。|
 
 #### <a name="additional-references"></a>其他参考
 

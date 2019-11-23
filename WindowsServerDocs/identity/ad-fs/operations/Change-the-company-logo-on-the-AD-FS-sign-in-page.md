@@ -19,7 +19,7 @@ ms.locfileid: "71358305"
 # <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>在 AD FS 登录页上更改公司徽标
 
 #### <a name="change-company-logo"></a>更改公司徽标  
-若要更改在 sign @ no__t-0in 页上显示的公司徽标，请使用以下 PowerShell Windows PowerShell cmdlet 和语法。  
+若要更改在 "签署\-" 页中显示的公司徽标，请使用以下 PowerShell Windows PowerShell cmdlet 和语法。  
 
 ![更改徽标](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

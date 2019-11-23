@@ -18,7 +18,7 @@ ms.locfileid: "71402937"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>存储空间直通的硬件要求
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 本主题介绍存储空间直通的最低硬件要求。
 
@@ -29,11 +29,11 @@ ms.locfileid: "71402937"
 
 ## <a name="base-requirements"></a>基本要求
 
-系统、组件、设备和驱动程序必须是按照[Windows Server 目录](https://www.windowsservercatalog.com)**认证的 windows server 2016** 。 此外，建议服务器、驱动器、主机总线适配器和网络适配器具有**软件定义数据中心（sddc）标准**和/或**软件定义数据中心（Sddc）高级版**额外资格（AQs），如图所示在线订购. 具有 SDDC AQs 的组件超过1000个。
+系统、组件、设备和驱动程序必须是按照[Windows Server 目录](https://www.windowsservercatalog.com)**认证的 windows server 2016** 。 此外，建议服务器、驱动器、主机总线适配器和网络适配器具有**软件定义数据中心（sddc）标准**和/或**软件定义数据中心（Sddc）高级版**额外资格（AQs），如下图所示。 具有 SDDC AQs 的组件超过1000个。
 
 ![显示 SDDC AQs 的 Windows Server 目录的屏幕截图](media/hardware-requirements/sddc-aqs.png)
 
-完全配置的群集（服务器、网络和存储）必须在故障转移群集管理器中的每个向导或在 PowerShell 中通过 @no__t [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)传递所有[群集验证测试](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)。
+完全配置的群集（服务器、网络和存储）必须在故障转移群集管理器中的每个向导或在 PowerShell 中通过 `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)传递所有[群集验证测试](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)。
 
 此外，还需要满足以下要求：
 
@@ -56,7 +56,7 @@ ms.locfileid: "71402937"
 
 - Windows Server 支持的任何启动设备，[现在包括 SATADOM](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)
 - RAID 1 镜像**不**是必需的，但支持启动
-- 建议：最小 200 GB
+- 建议： 200 GB 的最小大小
 
 ## <a name="networking"></a>网络
 
@@ -72,8 +72,8 @@ ms.locfileid: "71402937"
 - 25 Gbps NIC 或更快
 
 交换或 switchless 节点互连
-- 进必须正确配置网络交换机以处理带宽和网络类型。  如果使用的 RDMA 实现了 RoCE 协议，则网络设备和交换机配置更为重要。 
-- Switchless:节点可以使用直接连接互连，避免使用交换机。  每个节点都必须与群集中的每个其他节点具有直接连接。
+- 交换：必须正确配置网络交换机以处理带宽和网络类型。  如果使用的 RDMA 实现了 RoCE 协议，则网络设备和交换机配置更为重要。 
+- Switchless：可以使用直接连接互连节点，避免使用交换机。  每个节点都必须与群集中的每个其他节点具有直接连接。
 
 
 ## <a name="drives"></a>驱动器

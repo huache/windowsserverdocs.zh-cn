@@ -26,10 +26,10 @@ ms.locfileid: "71406035"
 
 仅允许连接到虚拟网络的虚拟机使用网络控制器分配的 IP 地址来在网络上进行通信。  需要浮动 IP 地址的群集技术（如 Microsoft 故障转移群集）需要执行一些额外的步骤才能正常工作。
 
-使浮动 IP 可访问的方法是使用软件负载平衡器 \(SLB @ no__t-1 虚拟 IP \(VIP @ no__t。  软件负载平衡器必须在该 IP 上的端口上配置运行状况探测，以便 SLB 将流量定向到当前具有该 IP 的计算机。
+使浮动 IP 可访问的方法是使用软件负载平衡器 \(SLB\) 虚拟 IP \(VIP\)。  软件负载平衡器必须在该 IP 上的端口上配置运行状况探测，以便 SLB 将流量定向到当前具有该 IP 的计算机。
 
 
-## <a name="example-load-balancer-configuration"></a>例如：负载均衡器配置
+## <a name="example-load-balancer-configuration"></a>示例：负载均衡器配置
 
 此示例假设你已创建了将成为群集节点的 Vm，并将它们附加到虚拟网络。  有关指南，请参阅[创建 VM 并连接到租户虚拟网络或 VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)。  
 
@@ -50,7 +50,7 @@ ms.locfileid: "71406035"
    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
    ```
 
-3. 创建前 @ no__t-0end IP 地址。
+3. 创建前台\-端 IP 地址。
 
    ```PowerShell
    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
@@ -63,7 +63,7 @@ ms.locfileid: "71406035"
    $FrontEnd.properties.privateIPAllocationMethod = "Static"
    ```
 
-4. 创建一个后端 @ no__t-0end 池以包含群集节点。
+4. 创建一个后\-结束池以包含群集节点。
 
    ```PowerShell
    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
@@ -132,7 +132,7 @@ ms.locfileid: "71406035"
 
 9. 可有可无如果使用 Microsoft 故障转移群集，请继续下一个示例。 
 
-## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>示例 2：配置 Microsoft 故障转移群集
+## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>示例2：配置 Microsoft 故障转移群集
 
 你可以使用以下步骤来配置故障转移群集。
 

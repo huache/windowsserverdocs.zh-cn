@@ -66,7 +66,7 @@ ms.locfileid: "71404508"
 11.  在“安装进度”对话框中，验证安装是否成功，然后单击“关闭”。  
   
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
 
   
 步骤 1-3 必须手动执行，不能使用此 Windows PowerShell cmdlet 完成。  
@@ -81,7 +81,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-grant-administrator-permissions"></a>授予管理员权限  
   
-1.  在远程访问服务器的其他入口点上：在 "**开始**" 屏幕上，键入 "**计算机管理**"，然后按 enter。  
+1.  在远程访问服务器上，在 "**开始**" 屏幕上，键入 "**计算机管理**"，然后按 enter。  
   
 2.  在左窗格中，单击 "**本地用户和组**"。  
   
@@ -180,7 +180,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 ### <a name="NLS"></a>创建网络位置服务器 DNS 记录  
   
-1.  在 DNS 服务器上：在 "**开始**" 屏幕上，键入 " **dnsmgmt.msc**"，然后按 enter。  
+1.  在 DNS 服务器上：在 "**开始**" 屏幕上，键入**dnsmgmt.msc**，然后按 enter。  
   
 2.  在**DNS 管理器**控制台的左窗格中，打开内部网络的 "正向查找" 区域。 右键单击相关区域，然后单击 "**新建主机（A 或 AAAA）** "。  
   
@@ -190,18 +190,18 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 5.  为部署中的每个远程访问服务器重复步骤3和4。  
   
-6.  单击 **“完成”** 。  
+6.  单击**完成**。  
   
 7.  在将服务器添加为部署中的其他入口点之前重复此过程。  
   
 ## <a name="BKMK_Client"></a>3.5。 为多站点部署配置 DirectAccess 客户端  
-DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的安全组的成员。 启用多站点之前，这些安全组可能包含 Windows 8 客户端和 Windows 7 客户端（如果选择适当的 "下层" 模式）。 启用了 multisite 后，在单服务器模式下的现有客户端安全组将仅转换为适用于 Windows 8 的安全组。 启用多站点后，必须将 DirectAccess Windows 7 客户端计算机移动到相应的专用 Windows 7 客户端安全组（与特定入口点相关联），否则它们将不能通过 DirectAccess 进行连接。 必须首先从现在为 Windows 8 安全组的现有安全组中删除 Windows 7 客户端。 注意：Windows 7 和 Windows 8 客户端安全组的成员的 windows 7 客户端计算机将失去远程连接，并且没有安装 SP1 的 Windows 7 客户端也将失去企业连接性。 因此，必须从 Windows 8 安全组中删除所有 Windows 7 客户端计算机。  
+DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的安全组的成员。 启用多站点之前，这些安全组可能包含 Windows 8 客户端和 Windows 7 客户端（如果选择适当的 "下层" 模式）。 启用了 multisite 后，在单服务器模式下的现有客户端安全组将仅转换为适用于 Windows 8 的安全组。 启用多站点后，必须将 DirectAccess Windows 7 客户端计算机移动到相应的专用 Windows 7 客户端安全组（与特定入口点相关联），否则它们将不能通过 DirectAccess 进行连接。 必须首先从现在为 Windows 8 安全组的现有安全组中删除 Windows 7 客户端。 警告：作为 Windows 7 和 Windows 8 客户端安全组的成员的 Windows 7 客户端计算机将失去远程连接，并且没有安装 SP1 的 Windows 7 客户端也将失去企业连接。 因此，必须从 Windows 8 安全组中删除所有 Windows 7 客户端计算机。  
   
 #### <a name="remove--windows-7--clients-from-windows-8-security-groups"></a>从 Windows 8 安全组中删除 Windows 7 客户端  
   
 1.  在主域控制器上，单击 "**开始**"，然后单击 " **Active Directory 用户和计算机**"。  
   
-2.  若要从安全组中删除计算机，请双击安全组，然后在 " **< Group_Name" > 属性**"对话框中，单击"**成员**"选项卡。  
+2.  若要从安全组中删除计算机，请双击安全组，并在 " **< Group_Name > 属性**" 对话框中，单击 "**成员**" 选项卡。  
   
 3.  选择 Windows 7 客户端计算机，然后单击 "**删除**"。  
   
@@ -231,7 +231,7 @@ DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的
   
 5.  在 "**入口点选择**" 页上，执行下列操作之一：  
   
-    -   单击 "**自动分配入口点"，并允许客户端手动选择**自动将客户端计算机路由到最合适的入口点，同时还允许客户端计算机手动选择入口点。 手动入口点选择仅适用于 Windows 8 计算机。 单击“下一步”。  
+    -   单击 "**自动分配入口点"，并允许客户端手动选择**自动将客户端计算机路由到最合适的入口点，同时还允许客户端计算机手动选择入口点。 手动入口点选择仅适用于 Windows 8 计算机。 单击**下一步**。  
   
     -   单击 "**自动分配入口点**"，自动将客户端计算机路由到最适合的入口点，然后单击 "**下一步**"。  
   
@@ -242,7 +242,7 @@ DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的
         > [!NOTE]  
         > 选择此选项时，客户端计算机会自动连接到其最近的入口点。  
   
-    -   如果要在所有入口点之间对流量进行负载均衡，请单击 **"是，使用全局负载均衡**"。 在 **"键入要由所有入口点使用的全局负载平衡 fqdn**" 中，输入全局负载平衡 fqdn，然后在 "键入包含第一个远程访问服务器的**此入口点的全局负载平衡 IP 地址**" 中输入全局负载为此入口点平衡 IP 地址，然后单击 "**下一步**"。  
+    -   如果要在所有入口点之间对流量进行负载均衡，请单击 **"是，使用全局负载均衡**"。 在 **"键入要由所有入口点使用的全局负载平衡 fqdn**" 中，输入全局负载平衡 fqdn，然后在 "键入包含第一个远程访问服务器的**此入口点的全局负载平衡 ip 地址**" 中，输入此入口点的全局负载平衡 ip 地址，然后单击 "**下一步**"。  
   
 7.  在 "**客户端支持**" 页上，执行下列操作之一：  
   
@@ -250,7 +250,7 @@ DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的
   
     -   若要允许运行 Windows 7 的客户端计算机访问此入口点，请单击 "**允许运行 windows 7 的客户端计算机访问此入口点**"，然后单击 "**添加**"。 在 "**选择组**" 对话框中，选择包含 Windows 7 客户端计算机的安全组，单击 **"确定**"，然后单击 "**下一步**"。  
   
-8.  在 "**客户端 GPO 设置**" 页上，接受此入口点的适用于 Windows 7 客户端计算机的默认 gpo，键入要自动创建远程访问的 gpo 的名称，或者单击 "**浏览**" 找到 Windows 7 客户端计算机的 gpo。然后单击 "**下一步**"。  
+8.  在 "**客户端 GPO 设置**" 页上，接受此入口点的适用于 Windows 7 客户端计算机的默认 gpo，键入要自动创建远程访问的 gpo 的名称，或者单击 "**浏览**" 找到 Windows 7 客户端计算机的 gpo，然后单击 "**下一步**"。  
   
     > [!NOTE]  
     > -   仅当你将入口点配置为允许 Windows 7 客户端计算机访问入口点时，才会显示 "**客户端 GPO 设置**" 页。  
@@ -260,7 +260,7 @@ DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的
   
 10. 在 "**启用多站点部署**" 对话框中，单击 "**关闭**"，然后在 "启用多站点部署向导" 上，单击 "**关闭**"。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -270,7 +270,7 @@ DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的
 Enable-DAMultiSite -Name 'Contoso' -EntryPointName 'Edge1-US' -ManualEntryPointSelectionAllowed 'Enabled'  
 ```  
   
-若要允许 Windows 7 客户端计算机通过安全组 DA_Clients_US 访问第一个入口点并使用 GPO DA_W7_Clients_GPO_US，请访问。  
+若要允许 Windows 7 客户端计算机通过安全组访问第一个入口点 DA_Clients_US 并使用 GPO DA_W7_Clients_GPO_US。  
   
 ```  
 Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_US') -DownlevelGpoName @('corp.contoso.com\DA_W7_Clients_GPO_US)  
@@ -302,7 +302,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 5.  在 "**网络拓扑**" 页上，单击与要添加的远程访问服务器的网络拓扑相对应的拓扑，然后单击 "**下一步**"。  
   
-6.  在 "**网络名称或 Ip 地址**" 页上，在 **"键入客户端用于连接到远程访问服务器的公用名称或 ip 地址**" 中输入客户端用于连接到远程访问服务器的公用名称或 ip 地址。 公共名称对应于 IP-HTTPS 证书的使用者名称。 在实现了边缘网络拓扑的情况下，IP 地址是远程访问服务器的外部适配器的 IP 地址。 单击“下一步”。  
+6.  在 "**网络名称或 Ip 地址**" 页上，在 **"键入客户端用于连接到远程访问服务器的公用名称或 ip 地址**" 中输入客户端用于连接到远程访问服务器的公用名称或 ip 地址。 公共名称对应于 IP-HTTPS 证书的使用者名称。 在实现了边缘网络拓扑的情况下，IP 地址是远程访问服务器的外部适配器的 IP 地址。 单击**下一步**。  
   
 7.  在 "**网络适配器**" 页上，执行以下操作之一：  
   
@@ -310,7 +310,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
     -   如果要使用一个网络适配器部署拓扑，请在 "**网络适配器**" 中选择连接到内部网络的适配器。  
   
-8.  在 "**网络适配器**" 页上的 "**选择用于对 ip-https 连接进行身份验证的证书**" 页上，单击 "**浏览**" 查找并选择 ip-https 证书。 单击“下一步”。  
+8.  在 "**网络适配器**" 页上的 "**选择用于对 ip-https 连接进行身份验证的证书**" 页上，单击 "**浏览**" 查找并选择 ip-https 证书。 单击**下一步**。  
   
 9. 如果在企业网络中配置了 IPv6，则在 "**前缀配置**" 页上的 "**分配给客户端计算机的 ipv6 前缀**" 中，输入一个 Ip-https 前缀以将 Ipv6 地址分配到 DirectAccess 客户端计算机，然后单击 "**下一步**"。  
   
@@ -320,7 +320,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
     -   若要允许运行 Windows 7 的客户端计算机访问此入口点，请单击 "**允许运行 windows 7 的客户端计算机访问此入口点**"，然后单击 "**添加**"。 在 "**选择组**" 对话框中，选择包含将连接到此入口点的 Windows 7 客户端计算机的安全组，单击 **"确定**"，然后单击 "**下一步**"。  
   
-11. 在 "**客户端 GPO 设置**" 页上，接受此入口点的适用于 Windows 7 客户端计算机的默认 gpo，键入你希望远程访问自动创建的 gpo 的名称，或单击 "**浏览**" 查找适用于 Windows 7 客户端计算机的 gpo，然后单击 "**下一步**"。  
+11. 在 "**客户端 GPO 设置**" 页上，接受此入口点的适用于 Windows 7 客户端计算机的默认 gpo，键入要自动创建远程访问的 gpo 的名称，或者单击 "**浏览**" 找到 Windows 7 客户端计算机的 gpo，然后单击 "**下一步**"。  
   
     > [!NOTE]  
     > -   仅当你将入口点配置为允许 Windows 7 客户端计算机访问入口点时，才会显示 "**客户端 GPO 设置**" 页。  
@@ -338,21 +338,21 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
 15. 在 "**添加入口点**" 对话框中，单击 "**关闭**"，然后在 "添加入口点" 向导中，单击 "**关闭**"。  
   
     > [!NOTE]  
-    > 如果添加的入口点与现有入口点或客户端计算机在不同的林中，则必须在 "**任务**" 窗格中单击 "**刷新管理服务器**" 才能发现域控制器和 System Center新林中的 Configuration Manager。  
+    > 如果添加的入口点与现有入口点或客户端计算机在不同的林中，则必须在 "**任务**" 窗格中单击 "**刷新管理服务器**"，才能发现新林中的域控制器和 System Center Configuration Manager。  
   
 16. 对于要添加到多站点部署的每个入口点，从步骤2中重复执行此过程。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
-若要将 corp2 域中的计算机 edge2 添加为名为 Edge2-欧洲的第二个入口点。 入口点配置是：客户端 IPv6 前缀 "2001： db8：2：2000：/64"、"连接到地址" （edge2 计算机上的 ip-https 证书） "edge2.contoso.com"、名为 "DirectAccess 服务器设置-Edge2-欧洲" 的服务器 GPO 以及内部和分别名为 Internet 和 Corpnet2 的外部接口：  
+若要将 corp2 域中的计算机 edge2 添加为名为 Edge2-欧洲的第二个入口点。 入口点配置是：客户端 IPv6 前缀 "2001： db8：2：2000：/64"、"连接到地址" （edge2 计算机上的 ip-https 证书） "edge2.contoso.com"、名为 "DirectAccess 服务器设置-Edge2-欧洲" 的服务器 GPO，以及分别为 Internet 和 Corpnet2 的内部和外部接口：  
   
 ```  
 Add-DAEntryPoint -RemoteAccessServer 'edge2.corp2.corp.contoso.com' -Name 'Edge2-Europe' -ClientIPv6Prefix '2001:db8:2:2000::/64' -ConnectToAddress 'Europe.contoso.com' -ServerGpoName 'corp2.corp.contoso.com\DirectAccess Server Settings - Edge2-Europe' -InternetInterface 'Internet' -InternalInterface 'Corpnet2'  
 ```  
   
-若要允许 Windows 7 客户端计算机通过安全组 DA_Clients_Europe 访问第二个入口点，并使用 GPO DA_W7_Clients_GPO_Europe。  
+若要允许 Windows 7 客户端计算机通过安全组访问第二个入口点 DA_Clients_Europe 并使用 GPO DA_W7_Clients_GPO_Europe。  
   
 ```  
 Add-DAClient -EntrypointName 'Edge2-Europe' -DownlevelGpoName @('corp.contoso.com\ DA_W7_Clients_GPO_Europe') -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_Europe')  
@@ -360,4 +360,4 @@ Add-DAClient -EntrypointName 'Edge2-Europe' -DownlevelGpoName @('corp.contoso.co
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [步骤 2：配置多站点基础结构 @ no__t
+-   [步骤2：配置多站点基础结构](Step-2-Configure-the-Multisite-Infrastructure.md)

@@ -16,11 +16,11 @@ ms.locfileid: "71402870"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>存储空间直通的嵌套复原
 
-> 适用于：Windows Server 2019
+> 适用于： Windows Server 2019
 
-嵌套复原是 Windows Server 2019 中[存储空间直通](storage-spaces-direct-overview.md)的一项新功能，它使两个服务器的群集能够同时承受多个硬件故障，而不会丢失存储可用性，因此用户、应用程序和虚拟机继续运行而不中断。 本主题介绍了它的工作原理，提供了入门的分步说明，并回答了常见问题。
+嵌套复原是 Windows Server 2019 中[存储空间直通](storage-spaces-direct-overview.md)的一项新功能，它使两个服务器的群集能够同时承受多个硬件故障，而不会丢失存储可用性，因此用户、应用和虚拟机将继续运行而不中断。 本主题介绍了它的工作原理，提供了入门的分步说明，并回答了常见问题。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 ### <a name="green-checkmark-iconmedianested-resiliencysupportedpng-consider-nested-resiliency-if"></a>![绿色复选标记图标。](media/nested-resiliency/supported.png) 如果有以下情况，请考虑嵌套复原：
 
@@ -42,7 +42,7 @@ ms.locfileid: "71402870"
 
 ## <a name="how-it-works"></a>工作原理
 
-### <a name="inspiration-raid-51"></a>启发RAID 5 + 1
+### <a name="inspiration-raid-51"></a>灵感： RAID 5 + 1
 
 RAID 5 + 1 是一种已建立的分布式存储复原形式，它提供了有助于了解嵌套复原能力的帮助背景。 在 RAID 5 + 1 中，在每个服务器内，本地复原是由 RAID-5 提供的，也可以是*单个奇偶校验*，以防止丢失任何单个驱动器。 然后，在两个服务器之间通过 RAID-1 或*双向镜像*提供进一步的复原能力，以防止出现任一服务器丢失。
 
@@ -62,7 +62,7 @@ Windows Server 2019 中的存储空间直通提供了在软件中实现的两个
 
 ### <a name="capacity-efficiency"></a>容量效率
 
-容量效率是可用空间与[卷占用](plan-volumes.md#choosing-the-size-of-volumes)量的比值。 它描述了复原的容量开销，取决于所选的复原选项。 简单的示例是，存储无复原功能的数据的容量高达 100% （1 TB 的数据占用 1 TB 的物理存储容量），而双向镜像的效率为 50% （1 TB 的数据占用 2 TB 的物理存储容量）。
+容量效率是可用空间与[卷占用](plan-volumes.md#choosing-the-size-of-volumes)量的比值。 它描述了复原的容量开销，取决于所选的复原选项。 简单的示例是，存储无复原功能的数据的容量高达100% （1 TB 的数据占用 1 TB 的物理存储容量），而双向镜像的效率为50% （1 TB 的数据占用 2 TB 的物理存储容量）。
 
 - **嵌套的双向镜像**写入所有内容的四个副本，也就是说，若要存储 1 tb 的数据，则需要 4 tb 的物理存储容量。 尽管简单易用，但嵌套式双向镜像的容量效率（25%）是存储空间直通中的任何复原选项的最低级别。
 
@@ -76,9 +76,9 @@ Windows Server 2019 中的存储空间直通提供了在软件中实现的两个
   | 7 +                         | 40.0%      | 37.5%      | 35.3%      |
 
   > [!NOTE]
-  > **如果您感到好奇，以下是完整的数学计算的示例。** 假设两个服务器中的每个服务器都有六个容量驱动器，我们想要创建 1 100 GB 卷，其中包含 10 GB 镜像和 90 GB 的奇偶校验。 服务器本地双向镜像的效率为 50.0%，这意味着，每个服务器上存储的数据量为 10 GB （共 10 GB）。 镜像到这两个服务器，其总占用量为 40 GB。 在这种情况下，服务器本地单一奇偶校验为 5/6 = 83.3%，这意味着 90 GB 的奇偶校验数据将在每台服务器上存储 108 GB。 镜像到这两个服务器，其总占用量为 216 GB。 总体需求量为 [（10 GB/50.0%） + （90 GB/83.3%] × 2 = 256 GB，39.1 用于提高总体容量效率。
+  > **如果您感到好奇，以下是完整的数学计算的示例。** 假设两个服务器中的每个服务器都有六个容量驱动器，我们想要创建 1 100 GB 卷，其中包含 10 GB 镜像和 90 GB 的奇偶校验。 服务器本地双向镜像的效率为50.0%，这意味着，每个服务器上存储的数据量为 10 GB （共 10 GB）。 镜像到这两个服务器，其总占用量为 40 GB。 在这种情况下，服务器本地单一奇偶校验为 5/6 = 83.3%，这意味着 90 GB 的奇偶校验数据将在每台服务器上存储 108 GB。 镜像到这两个服务器，其总占用量为 216 GB。 总体需求量为 [（10 GB/50.0%） + （90 GB/83.3%] × 2 = 256 GB，39.1 用于提高总体容量效率。
 
-请注意，经典双向镜像的容量效率（约 50%）和嵌套的镜像加速奇偶校验（最多 40%）不是很大不同。 根据你的需求，更小的容量效率可能会显著提高存储可用性。 你可以选择每卷弹性，以便在同一群集内混合使用嵌套的复原卷和经典双向镜像卷。
+请注意，经典双向镜像的容量效率（约50%）和嵌套的镜像加速奇偶校验（最多40%）不是很大不同。 根据你的需求，更小的容量效率可能会显著提高存储可用性。 你可以选择每卷弹性，以便在同一群集内混合使用嵌套的复原卷和经典双向镜像卷。
 
 ![最佳](media/nested-resiliency/tradeoff.png)
 
@@ -86,9 +86,9 @@ Windows Server 2019 中的存储空间直通提供了在软件中实现的两个
 
 可以在 PowerShell 中使用熟悉的存储 cmdlet 来创建具有嵌套复原能力的卷。
 
-### <a name="step-1-create-storage-tier-templates"></a>第 1 步：创建存储层模板
+### <a name="step-1-create-storage-tier-templates"></a>步骤1：创建存储层模板
 
-首先，使用 @no__t cmdlet 创建新的存储层模板。 只需执行此操作一次，然后创建的每个新卷都可以引用这些模板。 指定容量驱动器的 @no__t 0，还可以选择选择 @no__t 1。 请勿修改其他参数。
+首先，使用 `New-StorageTier` cmdlet 创建新的存储层模板。 只需执行此操作一次，然后创建的每个新卷都可以引用这些模板。 指定容量驱动器的 `-MediaType`，还可以指定所选 `-FriendlyName`。 请勿修改其他参数。
 
 如果容量驱动器是硬盘驱动器（HDD），请以管理员身份启动 PowerShell 并运行：
 
@@ -103,15 +103,15 @@ New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -Resili
 如果容量驱动器是固态硬盘（SSD），请将 `-MediaType` 改为 `SSD`。 请勿修改其他参数。
 
 > [!TIP]
-> 验证通过 `Get-StorageTier` 成功创建的层。
+> 验证是否已成功创建 `Get-StorageTier`的层。
 
-### <a name="step-2-create-volumes"></a>步骤 2：创建卷
+### <a name="step-2-create-volumes"></a>步骤2：创建卷
 
-然后，使用 @no__t cmdlet 创建新卷。
+然后，使用 `New-Volume` cmdlet 创建新卷。
 
 #### <a name="nested-two-way-mirror"></a>嵌套双向镜像
 
-若要使用嵌套的双向镜像，请引用 @no__t 的层模板并指定大小。 例如：
+若要使用嵌套的双向镜像，请参考 `NestedMirror` 层模板并指定大小。 例如：
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
@@ -119,13 +119,13 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFrie
 
 #### <a name="nested-mirror-accelerated-parity"></a>嵌套镜像加速奇偶校验
 
-若要使用嵌套的镜像加速奇偶校验，请同时引用 @no__t 0 和 @no__t 层模板，并指定两个大小，每个大小对应于卷的每个部分（第一个镜像，奇偶校验秒）。 例如，若要创建 20% 嵌套双向镜像和 80% 嵌套的奇偶校验的 1 500 GB 卷，请运行：
+若要使用嵌套的镜像加速奇偶校验，请同时引用 "`NestedMirror`" 和 "`NestedParity`" 层模板并指定两个大小，每个大小对应于卷的每个部分（"首先镜像，奇偶校验"）。 例如，若要创建20% 嵌套双向镜像和80% 嵌套的奇偶校验的 1 500 GB 卷，请运行：
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFriendlyNames NestedMirror, NestedParity -StorageTierSizes 100GB, 400GB
 ```
 
-### <a name="step-3-continue-in-windows-admin-center"></a>步骤 3:在 Windows 管理中心中继续
+### <a name="step-3-continue-in-windows-admin-center"></a>步骤3：在 Windows 管理中心中继续
 
 使用嵌套复原的卷在[Windows 管理中心](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)中显示，并带有清晰的标签，如以下屏幕截图所示。 一旦创建，就可以使用 Windows 管理中心来管理和监视它们，就像存储空间直通中的其他任何卷一样。
 
@@ -133,7 +133,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 ### <a name="optional-extend-to-cache-drives"></a>可选：扩展到缓存驱动器
 
-利用其默认设置，嵌套复原可防止同时丢失多个容量驱动器，或者同时保护一台服务器和一个容量驱动器。 若要将此保护扩展到[缓存驱动器](understand-the-cache.md)，请注意以下事项：因为缓存驱动器通常为*多个*容量驱动器提供读*写*缓存，所以，确保在其他服务器已关闭，只是不缓存写入，但会影响性能。
+利用其默认设置，嵌套复原可防止同时丢失多个容量驱动器，或者同时保护一台服务器和一个容量驱动器。 若要将此保护扩展到[缓存驱动器](understand-the-cache.md)，请注意以下事项：因为缓存驱动器通常为*多个*容量驱动器提供读*写*缓存，所以，确保在其他服务器关闭时可以容忍缓存驱动器丢失的唯一方法是简单地不缓存写入，而会影响性能。
 
 若要解决这种情况，存储空间直通提供了在两个服务器群集中的一个服务器关闭时自动禁用写入缓存的选项，然后在服务器备份后重新启用写入缓存。 若要在不影响性能的情况下允许日常重启，则在服务器停机30分钟之前，不会禁用写入缓存。 禁用写入缓存后，写入缓存的内容将写入容量设备。 完成此操作后，服务器可以容忍联机服务器中出现故障的缓存设备，但如果缓存设备出现故障，缓存中的读取可能会延迟或失败。
 
@@ -159,7 +159,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="can-i-use-nested-resiliency-with-multiple-types-of-capacity-drives"></a>是否可以对多种类型的容量驱动器使用嵌套复原？
 
-是的，只需在上面的[步骤 1](#step-1-create-storage-tier-templates)中指定每个层的 @no__t 0。 例如，在同一个群集中，NVMe、SSD 和 HDD 提供缓存，而后两个提供容量：将 `NestedMirror` 层设置为 `-MediaType SSD`，将 @no__t 2 层设置为 `-MediaType HDD`。 在这种情况下，请注意，奇偶校验容量效率取决于 HDD 驱动器的数量，每台服务器至少需要4个驱动器。
+是的，只需在上面的[步骤 1](#step-1-create-storage-tier-templates)中指定每个层的 `-MediaType`。 例如，在同一个群集中，NVMe、SSD 和 HDD 都提供缓存，而后两个提供容量：将 `NestedMirror` 层设置为 `-MediaType SSD`，将 `NestedParity` 层设置为 "`-MediaType HDD`"。 在这种情况下，请注意，奇偶校验容量效率取决于 HDD 驱动器的数量，每台服务器至少需要4个驱动器。
 
 ### <a name="can-i-use-nested-resiliency-with-3-or-more-servers"></a>是否可以对3个或更多的服务器使用嵌套复原？
 
@@ -171,11 +171,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>嵌套复原是否会改变驱动器更换的工作方式？
 
-否。
+不相同。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>嵌套复原是否会改变服务器节点替换的工作方式？
 
-否。 若要替换服务器节点及其驱动器，请遵循以下顺序：
+不相同。 若要替换服务器节点及其驱动器，请遵循以下顺序：
 
 1. 停用传出服务器中的驱动器
 2. 将新服务器及其驱动器添加到群集
@@ -184,7 +184,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 有关详细信息，请参阅[删除服务器](remove-servers.md)主题。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
 - [了解存储空间直通中的容错](storage-spaces-fault-tolerance.md)

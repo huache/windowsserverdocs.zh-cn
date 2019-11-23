@@ -80,9 +80,9 @@ QoS 策略的名称必须是唯一的。 如何将策略应用到服务器和最
 
 2. 或者，使用 "**指定 Dscp 值**" 启用 dscp 标记，然后配置一个介于0到63之间的 dscp 值。
 
-3. 或者，使用 **“指定节流率”** 启用流量节流功能并配置节流率。 中止速率值必须大于1，并且\(可以指定每秒\)千字节/秒或兆字节/秒\(MBps\)的单位。
+3. 或者，使用 **“指定节流率”** 启用流量节流功能并配置节流率。 中止速率值必须大于1，你可以指定每秒千字节单位 \(KBps\) 或每秒 mb \(MBps\)。
 
-4. 单击“下一步”。
+4. 单击**下一步**。
 
 ### <a name="wizard-page-2---application-name"></a>向导第2页-应用程序名称
 
@@ -99,11 +99,11 @@ QoS 策略的名称必须是唯一的。 如何将策略应用到服务器和最
 >[!NOTE]
 >应用程序路径不能包含解析为符号链接的路径。
 
-URL 必须符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式`http[s]://<hostname\>:<port\>/<url-path>`为。 可以`‘*'`为`<port>` `<hostname>` 和/或`<port>`使用通配符，例如，通配符不能表示或的子字符串。`https://training.\*/, https://\*.\*` `<hostname>`
+URL 必须符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式为 `http[s]://<hostname\>:<port\>/<url-path>`。 您可以使用通配符、`‘*'`、`<hostname>` 和/或 `<port>`，例如 `https://training.\*/, https://\*.\*`，但通配符不能表示 `<hostname>` 或 `<port>`的子字符串。
 
-换句话说， `https://my\*site/`和`https://\*training\*/`均无效。 
+换句话说，`https://my\*site/` 和 `https://\*training\*/` 均无效。 
 
-还可以选中 "**包括子目录和文件**" 以对 URL 后面的所有子目录和文件执行匹配。 例如，如果选中此选项并且 URL 为`https://training`，则 QoS 策略会将` https://training/video`请求视为良好匹配。
+还可以选中 "**包括子目录和文件**" 以对 URL 后面的所有子目录和文件执行匹配。 例如，如果选中此选项并 `https://training`URL，则 QoS 策略会将请求视为` https://training/video` 良好匹配。
 
 #### <a name="to-configure-the-application-name-page-of-the-qos-policy-wizard"></a>配置 QoS 策略向导的 "应用程序名称" 页
 
@@ -111,7 +111,7 @@ URL 必须符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式`http[s]
 
 2. 如果选择了 **“仅带有该可执行名称的应用程序”** ，则需指定一个以 .exe 文件名扩展名结尾的可执行名称。
 
-3. 单击“下一步”。
+3. 单击**下一步**。
 
 ### <a name="wizard-page-3---ip-addresses"></a>向导第3页-IP 地址
 
@@ -123,13 +123,13 @@ URL 必须符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式`http[s]
 
 如果你选择 **“仅用于以下源 IP 地址”** 或 **“仅用于以下目标 IP 地址”** ，则必须键入以下地址：
 
-- IPv4 地址，例如`192.168.1.1`
+- IPv4 地址，如 `192.168.1.1`
 
-- 使用网络前缀长度表示法的 IPv4 地址前缀，如`192.168.1.0/24`
+- 使用网络前缀长度表示法的 IPv4 地址前缀，如 `192.168.1.0/24`
 
-- IPv6 地址，如`3ffe:ffff::1`
+- IPv6 地址，如 `3ffe:ffff::1`
 
-- IPv6 地址前缀，如`3ffe:ffff::/48`
+- IPv6 地址前缀，如 `3ffe:ffff::/48`
 
 如果同时**为以下源 ip 地址**和**目标 ip 地址**选择两者，则地址或地址前缀必须是基于 IPv4 或 IPv6 的。
 
@@ -147,7 +147,7 @@ URL 必须符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式`http[s]
 
 4. 如果你只选择了**以下 IP 目标地址**，请指定与为源地址指定的地址或前缀的类型相对应的 IPv4 或 IPv6 地址或前缀。
 
-5.  单击“下一步”。  
+5.  单击**下一步**。  
 
 ### <a name="wizard-page-4---protocols-and-ports"></a>向导页 4-协议和端口
 
@@ -240,7 +240,7 @@ QoS 策略的 DSCP 值、中止速率和策略条件在组策略对象编辑器�
   
 2.  右键单击 " **Qos 策略**"，然后单击 "**高级 QoS 设置**"。
 
-     下图显示了两个高级 QoS 设置选项卡：**入站 TCP 流量**和**DSCP 标记重写**。
+     下图显示了两个高级 QoS 设置选项卡：**入站 TCP 流量**和**DSCP 标记替代**。
   
 > [!NOTE]
 >  高级 QoS 设置是计算机级组策略设置。
@@ -270,7 +270,7 @@ QoS 策略的 DSCP 值、中止速率和策略条件在组策略对象编辑器�
 
 3.  将 GPO 链接到 OU。
 
-#### <a name="advanced-qos-settings-dscp-marking-override"></a>高级 QoS 设置：DSCP 标记替代
+#### <a name="advanced-qos-settings-dscp-marking-override"></a>高级 QoS 设置： DSCP 标记替代
 
 DSCP 标记替代可限制应用程序指定的功能（或 "标记"） DSCP 值（在 QoS 策略中指定的值除外）。 通过指定允许应用程序设置 DSCP 值，应用程序可以设置非零的 DSCP 值。 
 
@@ -280,7 +280,7 @@ DSCP 标记替代可限制应用程序指定的功能（或 "标记"） DSCP 值
 
 ##### <a name="wireless-multimedia-and-dscp-values"></a>无线多媒体和 DSCP 值
 
-[Wi-fi 联盟](https://go.microsoft.com/fwlink/?LinkId=160769)已为无线多媒体 \(WMM @ no__t-2 建立了一个证书，该证书定义了四个访问类别 \(WMM_AC @ no__t-4 用于确定在 Wi @ No__t-5Fi 无线网络上传输的网络流量的优先级。 访问类别包括\(从最高到最低的优先级\)：语音、视频、最佳操作和背景; 分别缩写为 VO、VI、as 和 BK。 WMM 规范定义哪些 DSCP 值与四个访问类别中的每一个相对应：
+[Wi-fi 联盟](https://go.microsoft.com/fwlink/?LinkId=160769)已建立了无线多媒体 \(WMM\) 的认证，它定义了四个访问类别 \(WMM_AC\)，用于确定在 Wi-fi\-Fi 无线网络上传输的网络流量的优先级。 访问类别包括从最高到最低的优先级\)\(：语音、视频、尽力操作和背景;分别缩写为 VO、VI、and 和 BK。 WMM 规范定义哪些 DSCP 值与四个访问类别中的每一个相对应：
   
 |DSCP 值|WMM 访问类别|
 |----------|-------------------|
@@ -289,7 +289,7 @@ DSCP 标记替代可限制应用程序指定的功能（或 "标记"） DSCP 值
 |24-31、0-7|最大努力（是）|
 |8-23|背景（BK）|
 
-你可以创建使用这些 DSCP 值的 QoS 策略，以确保具有适用于 wmm\-无线适配器的 wi-fi 认证™的便携式计算机在与适用于 wmm\-接入点的 wi-fi 认证关联时接收优先级处理。
+你可以创建使用这些 DSCP 值的 QoS 策略，以确保具有适用于 WMM 无线适配器的 Wi-fi\-wlan 认证™的便携式计算机在与用于 WMM 接入点的 Wi-fi\-Fi 关联时接收优先级处理。
   
 ### <a name="BKMK_precedencerules"></a>QoS 策略优先规则
 
@@ -297,7 +297,7 @@ DSCP 标记替代可限制应用程序指定的功能（或 "标记"） DSCP 值
 
 通常，具有最匹配条件的 QoS 策略会入选。 应用多个 QoS 策略时，规则分为三个类别：用户级别与计算机级别;应用程序与网络五元组;并在网络五元组。
 
-*网络五元组*是指源 ip 地址、目标 ip 地址、源端口、目标端口和协议\(TCP/UDP。\)  
+通过*网络五元组*，我们表示源 ip 地址、目标 ip 地址、源端口、目标端口和协议 \(TCP/UDP\)。  
 
  **用户级 QoS 策略优先于计算机级 QoS 策略**
 
@@ -312,13 +312,13 @@ DSCP 标记替代可限制应用程序指定的功能（或 "标记"） DSCP 值
 
 或者，通过指定非重叠条件，可以将多个 QoS 策略应用于相同的流量。 在应用程序和网络五元组的条件之间，指定应用程序的策略会被视为更为具体，并应用。 
 
-例如，policy_A 仅指定应用程序名称（app.config），而 policy_B 指定目标 IP 地址 192.168.1.0/24。 如果这些 QoS 策略冲突 \(app 会将流量发送到 192.168.4.0/24 @ no__t 范围内的 IP 地址，policy_A 会被应用。
+例如，policy_A 仅指定应用程序名称（app.config），并且 policy_B 指定目标 IP 地址 192.168.1.0/24。 如果这些 QoS 策略冲突 \(setup.exe 会将流量发送到 192.168.4.0/24\)范围内的 IP 地址，policy_A 会被应用。
 
  **更多的更高优先级在网络五元组**
 
 对于网络五元组中的策略冲突，具有最匹配条件的策略优先。 例如，假设 policy_C 指定源 IP 地址 "any"、目标 IP 地址10.0.0.1、源端口 "any"、目标端口 "any" 和协议 "TCP"。 
 
-接下来，假设 policy_D 指定源 IP 地址 "any"、目标 IP 地址10.0.0.1、源端口 "any"、目标端口80和协议 "TCP"。 然后，policy_C 和 policy_D 都与目标10.0.0.1：80的连接匹配。 由于 QoS 策略应用具有最特定匹配条件的策略，因此在此示例中，policy_D 优先。  
+接下来，假定 policy_D 指定源 IP 地址 "any"、目标 IP 地址10.0.0.1、源端口 "any"、目标端口80和协议 "TCP"。 然后 policy_C 和 policy_D 与目标10.0.0.1：80之间的连接。 由于 QoS 策略应用具有最特定匹配条件的策略，因此在本示例中，policy_D 优先。  
   
 但是，QoS 策略可能具有相同的条件数。 例如，多个策略可能每个仅指定网络五元组的一个（但不是相同）部分。 在网络五元组中，按以下顺序从高到低的顺序：
 

@@ -32,13 +32,13 @@ ms.locfileid: "71362920"
 WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server name>] /FilterType:<Filter Type>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|/DriverGroup： \<Group Name >|指定驱动程序组的名称。|
-|[/Server： @no__t 名称 >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。|
-|[/FilterType： \<FilterType >]|指定要从组中删除的筛选器的类型。 \<FilterType > 可以是以下项之一：</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Manufacturer**</br>**Uuid**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
+|/DriverGroup：\<组名称 >|指定驱动程序组的名称。|
+|[/Server：\<Server name >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。|
+|[/FilterType：\<FilterType >]|指定要从组中删除的筛选器的类型。 \<FilterType > 可以是以下项之一：</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Manufacturer**</br>**Uuid**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
 
 ## <a name="BKMK_examples"></a>示例
 

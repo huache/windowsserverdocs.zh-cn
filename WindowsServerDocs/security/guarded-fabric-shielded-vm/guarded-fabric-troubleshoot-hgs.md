@@ -17,7 +17,7 @@ ms.locfileid: "71940814"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>主机保护者服务疑难解答
 
-> 适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 本主题介绍在受保护的构造中部署或操作主机保护者服务（HGS）服务器时遇到的常见问题的解决方法。
 如果你不确定问题的性质，请首先尝试在 HGS 服务器和 Hyper-v 主机上运行[受保护的构造诊断](guarded-fabric-troubleshoot-diagnostics.md)，以缩小可能的原因。
@@ -143,7 +143,7 @@ Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName
 AttestationSignerCertRenewalTask
 ```
 
-或者，你可以通过打开**任务计划程序**（taskschd.msc），导航到**任务计划程序库 > Microsoft > Windows > HGSServer**并运行名为**的任务，手动运行计划任务AttestationSignerCertRenewalTask**。
+或者，你可以通过打开**任务计划程序**（taskschd.msc），导航到**任务计划程序库 > Microsoft > Windows > HGSServer**并运行名为**AttestationSignerCertRenewalTask**的任务，手动运行计划的任务。
 
 ## <a name="switching-attestation-modes"></a>切换证明模式
 
@@ -161,7 +161,7 @@ AttestationSignerCertRenewalTask
 
 ## <a name="memory-dump-encryption-policies"></a>内存转储加密策略
 
-如果你正在尝试配置内存转储加密策略，但未看到默认的 HGS 转储策略（Hgs @ no__t-0NoDumps、Hgs @ no__t-1DumpEncryption 和 Hgs @ no__t-2DumpEncryptionKey）或转储策略 cmdlet （HgsAttestationDumpPolicy），则它是可能没有安装最新的累积更新。
+如果你正在尝试配置内存转储加密策略，但未看到默认的 HGS 转储策略（Hgs\_NoDumps、Hgs\_DumpEncryption 和 Hgs\_DumpEncryptionKey）或转储策略 cmdlet （HgsAttestationDumpPolicy），则很可能你没有安装最新的累积更新。
 若要解决此问题，请将[你的 HGS 服务器更新](guarded-fabric-manage-hgs.md#patching-hgs)到最新的累积 Windows 更新并[激活新的证明策略](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation)。
 激活新的证明策略之前，请确保将 Hyper-v 主机更新为相同的累积更新，因为在激活 HGS 策略后，未安装新的转储加密功能的主机可能会失败证明。
 
@@ -179,5 +179,5 @@ EKpub 可以唯一地标识该特定 TPM，它是 HGS 用于授予主机运行�
 如果怀疑您的 TPM 是这种情况，请向 OEM 确认 Tpm 不应具有 EKcert，并使用 `-Force` 标志手动向 HGS 注册该主机。
 如果 TPM 应具有 EKcert，但在平台标识符文件中找不到，请确保在主机上运行[PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier)时使用的是管理员（提升） PowerShell 控制台。
 
-如果收到 EKcert 不受信任的错误，请确保在每个 HGS 服务器上[安装了受信任的 tpm 根证书包](guarded-fabric-install-trusted-tpm-root-certificates.md)，并确保 TPM 供应商的根证书位于本地计算机的**TrustedTPM @ no__ 中。2RootCA**存储区。 还需要在本地计算机上的**TrustedTPM @ no__t-1IntermediateCA**存储中安装任何适用的中间证书。
-安装根证书和中间证书后，应该能够成功运行 @no__t。
+如果收到 EKcert 不受信任的错误，请确保已在每个 HGS 服务器上[安装受信任的 tpm 根证书包](guarded-fabric-install-trusted-tpm-root-certificates.md)，并确保 TPM 供应商的根证书位于本地计算机的**TrustedTPM\_rootca.cer**存储区中。 还需要在本地计算机上的**TrustedTPM\_IntermediateCA**存储中安装任何适用的中间证书。
+安装根证书和中间证书后，应该能够成功运行 `Add-HgsAttestationTpmHost`。

@@ -57,13 +57,13 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     批处理程序中可以有多个**setlocal**或**endlocal**命令（即嵌套的命令）。
 -   在批处理文件中测试命令扩展
 
-    **Setlocal**命令设置 ERRORLEVEL 变量。 如果传递 {**enableextensions** | **disableextensions** **} 或**{**enabledelayedexpansion**@no__t，则 ERRORLEVEL 变量设置为**0** （零）。 否则，将其设置为**1**。 可以在批处理脚本中使用此信息来确定扩展是否可用，如以下示例中所示：  
+    **Setlocal**命令设置 ERRORLEVEL 变量。 如果传递 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **disabledelayedexpansion**}，则 ERRORLEVEL 变量将设置为**0** （零）。 否则，将其设置为**1**。 可以在批处理脚本中使用此信息来确定扩展是否可用，如以下示例中所示：  
     ```
     setlocal enableextensions
     verify other 2>nul
     if errorlevel 1 echo Unable to enable extensions
     ```  
-    由于**cmd**在禁用命令扩展时未设置 ERRORLEVEL 变量，因此当你将 ERRORLEVEL 变量与无效参数一起使用时， **verify**命令会将其初始化为非零值。 此外，如果将**setlocal**命令与参数 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **DISABLEDELAYEDEXPANSION**} 一起使用，则不会设置 ERRORLEVEL 变量为**1**，命令扩展不可用。
+    由于**cmd**在禁用命令扩展时未设置 ERRORLEVEL 变量，因此当你将 ERRORLEVEL 变量与无效参数一起使用时， **verify**命令会将其初始化为非零值。 此外，如果将**setlocal**命令与参数 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **DISABLEDELAYEDEXPANSION**} 一起使用，并且它未将 ERRORLEVEL 变量设置为**1**，则命令扩展不可用。
 
 ## <a name="BKMK_examples"></a>示例
 

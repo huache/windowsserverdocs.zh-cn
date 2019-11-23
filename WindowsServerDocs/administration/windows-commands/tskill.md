@@ -22,7 +22,7 @@ ms.locfileid: "71392334"
 ---
 # <a name="tskill"></a>tskill
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 结束在远程桌面会话主机（rd 会话主机）服务器上的会话中运行的进程。
 有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
@@ -35,14 +35,14 @@ ms.locfileid: "71392334"
 tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /a] [/v]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |-------|--------|
 |\<ProcessID >|指定要结束的进程的 ID。|
 |\<ProcessName >|指定要结束的进程的名称。 此参数可以包含通配符。|
-|/server： \<ServerName >|指定包含要结束的进程的终端服务器。 如果未指定 **/server** ，则使用当前 RD 会话主机服务器。|
-|/id： \<SessionID >|结束在指定的会话中运行的进程。|
+|/server：\<ServerName >|指定包含要结束的进程的终端服务器。 如果未指定 **/server** ，则使用当前 RD 会话主机服务器。|
+|/id：\<SessionID >|结束在指定的会话中运行的进程。|
 |/a|结束所有会话中正在运行的进程。|
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
@@ -63,4 +63,4 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
   ```
   #### <a name="additional-references"></a>其他参考
   [命令行语法解答](command-line-syntax-key.md)
-  [远程桌面服务&#40;终端服务和&#41;命令参考](remote-desktop-services-terminal-services-command-reference.md)
+  [远程桌面服务 & #40;终端服务和 #41;命令参考](remote-desktop-services-terminal-services-command-reference.md)

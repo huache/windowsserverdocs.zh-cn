@@ -22,7 +22,7 @@ ms.locfileid: "71383216"
 ---
 # <a name="create-and-manage-server-groups"></a>创建和管理服务器组
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本主题介绍如何在 Windows Server 中的服务器管理器中创建自定义的用户定义服务器组。
 
@@ -71,7 +71,7 @@ ms.locfileid: "71383216"
 
 3.  对组作完更改时，单击“确定”。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [将服务器添加到服务器管理器](add-servers-to-server-manager.md)
 [服务器管理器](server-manager.md)
 

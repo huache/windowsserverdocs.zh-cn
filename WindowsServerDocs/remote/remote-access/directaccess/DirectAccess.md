@@ -43,7 +43,7 @@ ms.locfileid: "71394510"
 通过 DirectAccess，远程用户可以连接到组织网络资源，而无需进行传统的虚拟专用网络（VPN）连接。 通过 DirectAccess 连接，远程客户端计算机始终连接到你的组织-无需远程用户启动和停止连接，这在 VPN 连接中是必需的。 此外，你的 IT 管理员可以在运行和 Internet 连接时管理 DirectAccess 客户端计算机。
 
 >[!IMPORTANT]
->请勿尝试在 Microsoft Azure 的虚拟机上部署远程访问 \(VM @ no__t-1。 不支持在 Microsoft Azure 中使用远程访问。 不能在 Azure VM 中使用远程访问在 Windows Server 2016 或更早版本的 Windows Server 中部署 VPN、DirectAccess 或任何其他远程访问功能。 有关详细信息，请参阅[Microsoft Azure 虚拟机的 Microsoft 服务器软件支持](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)。
+>请勿尝试在 Microsoft Azure 的虚拟机 \(VM\) 上部署远程访问。 不支持在 Microsoft Azure 中使用远程访问。 不能在 Azure VM 中使用远程访问在 Windows Server 2016 或更早版本的 Windows Server 中部署 VPN、DirectAccess 或任何其他远程访问功能。 有关详细信息，请参阅[Microsoft Azure 虚拟机的 Microsoft 服务器软件支持](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)。
   
 DirectAccess 仅为加入域的客户端提供支持，其中包括对 DirectAccess 的操作系统支持。  
   

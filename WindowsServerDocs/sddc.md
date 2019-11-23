@@ -21,7 +21,7 @@ ms.locfileid: "71403899"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Windows Server 软件定义数据中心
 
->适用于：Windows Server 2019、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server 2016
 
 ![](media/sddc/heading.png)
 
@@ -47,7 +47,7 @@ Microsoft 合作伙伴提供一系列解决方案，这些解决方案通过 Azu
 
 ![](media/sddc/learn.png) **[了解有关 Azure Stack HCI 解决方案的详细信息](https://azure.microsoft.com/overview/azure-stack/hci)**
 
-![](media/sddc/learn.png) **[了解 WSSD 解决方案的详细信息](https://www.microsoft.com/en-us/cloud-platform/software-defined-datacenter)**
+![](media/sddc/learn.png) **[详细了解 WSSD 解决方案](https://www.microsoft.com/en-us/cloud-platform/software-defined-datacenter)**
 
 ## <a name="windows-server-virtualized-technologies"></a>Windows Server 虚拟化技术 ##
 
@@ -82,7 +82,7 @@ Hyper-V 是基于虚拟机监控程序的虚拟化技术，适用于 Windows。 
 ![](media/sddc/spacer1.png)![](media/sddc/cluster.png)
 
 - 共享 VHDX 可位于块存储或基于文件的 SMB 存储中的群集共享卷 (CSV) 上。
-- 避免共享 VHDX 支持 Hyper-v 副本和主机级备份。
+- 受保护：共享 VHDX 支持 Hyper-V 副本和主机级别的备份。
 
 ![](media/sddc/learn.png) **[了解有关具有共享 VHDX 的来宾群集的详细信息](https://technet.microsoft.com/library/dn281956(v=ws.11).aspx)**
 
@@ -155,11 +155,11 @@ SLB 允许多台服务器承载相同的工作负荷，具有较高的可用性�
 
 存储空间直通使用具有本地连接驱动器的行业标准服务器来提供高度可用、高度可扩展的软件定义存储，其成本仅占传统 SAN 或 NAS 阵列的一小部分。 其体系结构大大简化了采购和部署。
 
-@no__t 0Each 节点通过 Csv @ no__t 将本地附加驱动器汇集在群集存储空间直通级别，并由 Vm 访问
+![每个节点在群集级别上都有本地附加的驱动器，通过存储空间直通并由 Vm 通过 Csv 访问](media/sddc/spacer1.png)![](media/sddc/ssd.png)
 
 存储空间直通引入了新的软件存储总线，并利用 Windows Server 中当前已知的许多功能，如故障转移群集、群集共享卷 (CSV)、服务器消息块 (SMB) 3 以及存储空间。
 
-![](media/sddc/learn.png) **[了解有关存储空间直通的详细信息](storage/storage-spaces/storage-spaces-direct-overview.md)**
+![](media/sddc/learn.png) **[了解存储空间直通的详细信息](storage/storage-spaces/storage-spaces-direct-overview.md)**
 ### <a name="storage-quality-of-service"></a>存储服务质量 ###
 
 ![](media/sddc/storage-line.png)
@@ -190,7 +190,7 @@ SLB 允许多台服务器承载相同的工作负荷，具有较高的可用性�
 4. 从远程站点确认
 5. 确认应用程序写入
 
-t & t1：刷新到卷的数据，日志始终通过
+t & t1：数据刷新到该卷，始终写入日志
 
 ![](media/sddc/learn.png) **[了解有关存储副本的详细信息](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview)**
 
@@ -218,7 +218,7 @@ t & t1：刷新到卷的数据，日志始终通过
 - 受防护的 VM 通过 BitLocker 或其他方式进行加密，以便只有指定的所有者才能运行它们。
 - 运行中的 VM 可转换为受防护的 VM。
 
-![](media/sddc/learn.png) **[了解有关受防护 vm 的详细信息](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms)**
+![](media/sddc/learn.png) **[详细了解受防护的 vm](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms)**
 
 ### <a name="host-guardian-service"></a>主机保护者服务
 
@@ -243,7 +243,7 @@ t & t1：刷新到卷的数据，日志始终通过
 如上所示的硬件信任模式可提供最高级别的安全保证以及 TPM v2.0 硬件根信任，并符合密钥发放的代码完整性策略。
 
 
-![](media/sddc/learn.png) **[了解有关设备运行状况证明的详细信息](https://docs.microsoft.com/windows-server/security/device-health-attestation)**
+![](media/sddc/learn.png) **[了解设备运行状况证明的详细信息](https://docs.microsoft.com/windows-server/security/device-health-attestation)**
 
 ![](media/sddc/management.png)
 
@@ -272,12 +272,12 @@ Virtual Machine Manager 是 System Center 套件的一部分，用于配置、�
 
 ![](media/sddc/spacer1.png)![](media/sddc/vmm.png)
 
-- 版在 VMM 中将数据中心组件作为单一构造进行配置和管理。 
-- 虚拟化主机：VMM 可以添加、设置和管理 Hyper-v 和 VMware 虚拟化主机和群集。
-- 上网VMM 提供网络虚拟化，包括支持创建和管理虚拟网络和网络网关。 
-- 存储：VMM 可以发现、分类、预配、分配和分配本地和远程存储。
+- 数据中心：在 VMM 中将数据中心组件作为单一结构进行配置和管理。 
+- 虚拟化主机：VMM 可以添加、预配和管理 Hyper-V 和 VMware 虚拟化主机和群集。
+- 网络：VMM 可提供网络虚拟化，包括对创建和管理虚拟网络和网关的支持。 
+- 存储：VMM 可以发现、分类、预配、分配和指定本地和远程存储。
 
-![](media/sddc/learn.png) **[了解有关 SYSTEM Center VMM 的详细信息](https://docs.microsoft.com/system-center/vmm/)**
+![](media/sddc/learn.png) **[详细了解 SYSTEM Center VMM](https://docs.microsoft.com/system-center/vmm/)**
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 

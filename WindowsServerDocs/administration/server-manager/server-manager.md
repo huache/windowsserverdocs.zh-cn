@@ -22,7 +22,7 @@ ms.locfileid: "71383064"
 ---
 # <a name="server-manager"></a>服务器管理器
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 服务器管理器是 Windows Server 中的管理控制台，可帮助 IT 专业人员从其桌面预配和管理基于 Windows 的本地和远程服务器，而无需物理访问服务器或启用远程桌面协议（rdP）连接到每台服务器。 虽然 Windows Server 2008 R2 和 Windows Server 2008 中提供了服务器管理器，但服务器管理器已在 Windows Server 2012 中更新，以支持远程、多服务器管理，并帮助增加管理员可管理的服务器数量。
 
@@ -55,9 +55,9 @@ ms.locfileid: "71383064"
 
 |操作系统|所需软件|
 |----------|-----------|
-| Windows Server 2012 R2 或 Windows Server 2012 |-   [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=45497)<br />@no__t 0[Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)。 Windows Management Framework 5.0 下载包更新 Windows Server 2012 R2 和 Windows Server 2012 上的 Windows Management Instrumentation （WMI）提供程序。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器的可管理性状态为 "**无法访问**"。<br />-在运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器上不再需要与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)关联的性能更新。|
-| Windows Server 2008 R2 |-   [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)<br />@no__t 0[Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)。 Windows Management Framework 4.0 下载包更新 Windows Management Instrumentation （WMI）提供程序（在 Windows Server 2008 R2 上）。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 R2 的服务器的可管理性状态为 "**无法访问**"。<br />-与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相关的性能更新允许服务器管理器从 Windows Server 2008 R2 收集性能数据。|
-| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />@no__t 0[Windows Management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) ： Windows management framework 3.0 下载包更新 windows Server 2008 上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）提供程序。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 的服务器的可管理性状态为 "**无法访问"-验证早期版本是否运行 Windows Management Framework 3.0**。<br />-与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相关的性能更新允许服务器管理器从 Windows Server 2008 收集性能数据。|
+| Windows Server 2012 R2 或 Windows Server 2012 |-   [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)。 Windows Management Framework 5.0 下载包更新 Windows Server 2012 R2 和 Windows Server 2012 上的 Windows Management Instrumentation （WMI）提供程序。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器的可管理性状态为 "**无法访问**"。<br />-在运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器上不再需要与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)关联的性能更新。|
+| Windows Server 2008 R2 |-   [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)。 Windows Management Framework 4.0 下载包更新 Windows Management Instrumentation （WMI）提供程序（在 Windows Server 2008 R2 上）。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 R2 的服务器的可管理性状态为 "**无法访问**"。<br />-与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相关的性能更新允许服务器管理器从 Windows Server 2008 R2 收集性能数据。|
+| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   windows [Management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) ： Windows management framework 3.0 下载包更新 windows Server 2008 上的 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）提供程序。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 的服务器的可管理性状态为 "**无法访问"-验证早期版本是否运行 Windows Management Framework 3.0**。<br />-与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相关的性能更新允许服务器管理器从 Windows Server 2008 收集性能数据。|
 
 #### <a name="manage-remote-computers-from-a-client-computer"></a>从客户端计算机管理远程计算机
 Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=404281)包含服务器管理器控制台。 请注意，当远程服务器管理工具安装在客户端计算机上时，你无法使用服务器管理器来管理本地计算机;服务器管理器不能用于管理运行 Windows 客户端操作系统的计算机或设备。 只能使用服务器管理器来管理基于 Windows 的服务器。
@@ -74,7 +74,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 2.  在 "**开始**" 屏幕上，单击 "**服务器管理器**"。 安装远程服务器管理工具后，可使用“服务器管理器” 磁贴。
 
-3.  如果安装远程服务器管理工具之后，**管理工具**和**服务器管理器**磁贴都未显示在 "**开始**" 屏幕上，并且在 "**开始**" 屏幕上搜索服务器管理器不显示结果，验证是否启用了 "**显示管理工具**" 设置。 若要查看此设置，请将鼠标光标悬停在 "**开始**" 屏幕的右上角，然后单击 "**设置**"。 如果“显示管理工具”已关闭，请打开该设置，显示已作为远程服务器管理工具一部分安装的工具。
+3.  如果安装远程服务器管理工具后 "**开始**" 屏幕上不显示 "**管理工具**" 和 "**服务器管理器**" 磁贴，并且在 "**开始**" 屏幕上搜索服务器管理器未显示结果，请确认 "**显示管理工具**" 设置已打开。 若要查看此设置，请将鼠标光标悬停在 "**开始**" 屏幕的右上角，然后单击 "**设置**"。 如果“显示管理工具”已关闭，请打开该设置，显示已作为远程服务器管理工具一部分安装的工具。
 
 有关运行 Windows 10 远程服务器管理工具以管理远程服务器的详细信息，请参阅 TechNet Wiki 上的[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=221055)。
 
@@ -132,7 +132,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 ## <a name="tasks-that-you-can-perform-in-server-manager"></a>可在服务器管理器中执行的任务
 通过允许管理员使用单个工具执行下表中的任务，服务器管理器使服务器管理更高效。 在 Windows Server 2012 R2 和 Windows Server 2012 中，服务器的标准用户和管理员组的成员都可以在服务器管理器执行管理任务，但默认情况下，会阻止标准用户执行某些任务，如下表。
 
-管理员可以使用服务器管理器 cmdlet 模块中的两个 Windows PowerShell cmdlet [disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205470.aspx)和[disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205468.aspx)，进一步控制对某些其他数据。 **Disable-servermanagerstandarduserremoting** cmdlet 可向一个或多个标准、非管理员用户提供对事件、服务、性能计数器以及角色和功能清单数据的访问权限。
+管理员可以使用服务器管理器 cmdlet 模块[disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205470.aspx)和[disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205468.aspx)中的两个 Windows PowerShell cmdlet，进一步控制标准用户对某些其他数据的访问权限。 **Disable-servermanagerstandarduserremoting** cmdlet 可向一个或多个标准、非管理员用户提供对事件、服务、性能计数器以及角色和功能清单数据的访问权限。
 
 > [!IMPORTANT]
 > 服务器管理器无法用于管理较新版本的 Windows Server 操作系统。 服务器管理器在 Windows Server 2012 或 Windows 8 上运行的不能用于管理运行 Windows Server 2012 R2 的服务器。
@@ -170,7 +170,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 1.  在服务器管理器控制台中，在 "**管理**" 菜单上单击 "**服务器管理器属性**"。
 
-2.  在“服务器管理器属性” 对话框中，选中“在登录时不自动启动服务器管理器”的复选框。 单击 **“确定”** 。
+2.  在“服务器管理器属性” 对话框中，选中“在登录时不自动启动服务器管理器”的复选框。 单击**确定**。
 
 3.  或者，你可以通过启用组策略设置来阻止服务器管理器自动启动，**而不会在登录时自动启动服务器管理器**。 此策略设置在 "本地组策略编辑器" 控制台中的路径是 "计算机配置 \ 管理模板" 系统 "Manager"。
 
@@ -195,7 +195,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
--   %*appdata*% \ Local\Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+-   %*appdata*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 > [!NOTE]
 > -   你服务器池中服务器的“管理形式”（或替代）凭据不被存储在漫游配置文件中。 服务器管理器用户必须将凭据添加到想要管理的每台计算机上。
@@ -215,13 +215,13 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 3.  请执行以下操作之一。
 
-    -   在美国英语（zh-cn）生成，对**Serverlist**文件所做的更改会自动保存到配置文件中。 继续进行下一步。
+    -   在美国英语（en-us）版本中，对**Serverlist**文件所做的更改会自动保存到配置文件中。 继续进行下一步。
 
     -   在其他版本上，从运行服务器管理器的计算机将以下两个文件复制到作为用户漫游配置文件一部分的网络共享。
 
         -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
-        -   %*localappdata*% \ Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+        -   %*localappdata*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 4.  单击“确定” 保存你的更改，然后关闭“属性” 对话框。
 
@@ -231,7 +231,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
     -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
-    -   %*localappdata*% \ Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+    -   %*localappdata*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 
 

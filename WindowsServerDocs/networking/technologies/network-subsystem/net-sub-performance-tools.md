@@ -26,13 +26,13 @@ ms.locfileid: "71405518"
 
 ##  <a name="bkmk_tuning"></a>客户端到服务器流量工具
 
-客户端到服务器的流量 \(ctsTraffic @ no__t 工具提供创建和验证网络流量的能力。
+\(ctsTraffic\) 工具的客户端到服务器流量提供了创建和验证网络流量的能力。
 
 有关详细信息并下载该工具，请参阅[ctsTraffic （客户端到服务器的流量）](https://github.com/Microsoft/ctsTraffic)。
   
 ##  <a name="bkmk_size"></a>TCP/IP 窗口大小
 
-对于 1 GB 适配器，上表中显示的设置应能提供良好的吞吐量，因为 NTttcp 通过特定的逻辑处理器选项将默认的 TCP 窗口大小设置为 64 K，而对于连接 \(SO_RCVBUF @ no__t。 这为低延迟网络提供了良好的性能。  
+对于 1 GB 适配器，上表中显示的设置应能提供良好的吞吐量，因为 NTttcp 通过特定的逻辑处理器选项将默认的 TCP 窗口大小设置为 64 K，\(SO_RCVBUF 连接\)。 这为低延迟网络提供了良好的性能。  
 
 与此相反，对于高延迟网络或 10 GB 适配器，NTttcp 的默认 TCP 窗口大小值产生的性能低于最佳性能。 在这两种情况下，都必须调整 TCP 窗口大小，以允许更大的带宽延迟产品。  
 
@@ -40,7 +40,7 @@ ms.locfileid: "71405518"
 
 ##  <a name="bkmk_advisor"></a>Microsoft Server 性能顾问
 
-Microsoft Server Performance Advisor \(SPA @ no__t-1 可帮助 IT 管理员收集指标来识别、比较和诊断 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 中的潜在性能问题，或Windows Server 2008 部署。 
+Microsoft Server Performance Advisor \(SPA\) 可帮助 IT 管理员收集指标，用于识别、比较和诊断 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 部署中的潜在性能问题。 
 
 SPA 生成全面的诊断报告和图表，并提供建议来帮助你快速分析问题和制定纠正措施。  
   

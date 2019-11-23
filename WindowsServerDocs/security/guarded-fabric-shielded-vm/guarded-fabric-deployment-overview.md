@@ -69,19 +69,19 @@ _受保护的构造_是一种 Windows Server 2016 hyper-v 构造，能够保护�
 
 ![现有 Hyper-v 构造](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-existing-hyper-v.png)
 
-## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>第 1 步：部署运行 Windows Server 2016 的 Hyper-v 主机 
+## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>步骤1：部署运行 Windows Server 2016 的 Hyper-v 主机 
 
 Hyper-v 主机需要运行 Windows Server 2016 Datacenter edition 或更高版本。 如果要升级主机，可以从标准版[升级](https://technet.microsoft.com/windowsserver/dn527667.aspx)到数据中心版。
 
 ![升级 Hyper-v 主机](../../security/media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-one-upgrade-hyper-v.png)
 
-## <a name="step-2-deploy-the-host-guardian-service-hgs"></a>步骤 2：部署主机保护者服务（HGS）
+## <a name="step-2-deploy-the-host-guardian-service-hgs"></a>步骤2：部署主机保护者服务（HGS）
 
 然后安装 HGS 服务器角色并将其部署为三节点群集，例如下图所示的 relecloud.com 示例。 这需要三个 PowerShell cmdlet：
 
-- 若要添加 HGS 角色，请使用`Install-WindowsFeature` 
-- 若要安装 HGS，请使用`Install-HgsServer` 
-- 若要使用所选证明模式初始化 HGS，请使用`Initialize-HgsServer` 
+- 若要添加 HGS 角色，请使用 `Install-WindowsFeature` 
+- 若要安装 HGS，请使用 `Install-HgsServer` 
+- 若要使用所选证明模式初始化 HGS，请使用 `Initialize-HgsServer` 
 
 如果现有的 Hyper-v 服务器不满足 TPM 模式的先决条件（例如，它们没有 TPM 2.0），则可以使用基于管理员的证明（AD 模式）初始化 HGS，这需要与 fabric 域 Active Directory 信任。 
 
@@ -89,7 +89,7 @@ Hyper-v 主机需要运行 Windows Server 2016 Datacenter edition 或更高版�
 
 ![安装 HGS](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-two-deploy-hgs.png)
 
-## <a name="step-3-extract-identities-hardware-baselines-and-code-integrity-policies"></a>步骤 3:提取标识、硬件基线和代码完整性策略
+## <a name="step-3-extract-identities-hardware-baselines-and-code-integrity-policies"></a>步骤3：提取标识、硬件基线和代码完整性策略
 
 从 Hyper-v 主机提取标识的过程取决于所使用的证明模式。
 
@@ -105,20 +105,20 @@ Hyper-v 主机需要运行 Windows Server 2016 Datacenter edition 或更高版�
 
 对于 TPM 模式，需要执行以下三项操作： 
 
-1.  来自每个 Hyper-v 主机上的 TPM 2.0 的_公共认可密钥_（或_EKpub_）。 若要捕获 EKpub，请`Get-PlatformIdentifier`使用。 
-2.  _硬件基准_。 如果每个 Hyper-v 主机都是相同的，则需要使用单个基线。 如果不是这样，则需要为每个硬件类别都有一个。 基线采用可信计算组日志文件的形式，或 TCGlog。 TCGlog 包含主机在 UEFI 固件中通过内核进行的所有操作，最高可为主机完全启动的位置。 若要捕获硬件基准，请安装 Hyper-v 角色和主机保护者 Hyper-v 支持功能并使用`Get-HgsAttestationBaselinePolicy`。 
-3.  _代码完整性策略_。 如果每个 Hyper-v 主机都是相同的，则需要使用单个 CI 策略。 如果不是这样，则需要为每个硬件类别都有一个。 Windows Server 2016 和 Windows 10 都具有新形式的 CI 策略强制，称为 "_虚拟机监控程序-强制代码完整性" （要求 hvci）_ 。 要求 HVCI 提供强强制，并确保仅允许主机运行受信任的管理员允许其运行的二进制文件。 这些说明包装在添加到 HGS 的 CI 策略中。 在允许运行受防护的 Vm 之前，HGS 会测量每个主机的 CI 策略。 若要捕获 CI 策略，请`New-CIPolicy`使用。 然后，必须使用`ConvertFrom-CIPolicy`将策略转换为其二进制形式。
+1.  来自每个 Hyper-v 主机上的 TPM 2.0 的_公共认可密钥_（或_EKpub_）。 若要捕获 EKpub，请使用 `Get-PlatformIdentifier`。 
+2.  _硬件基准_。 如果每个 Hyper-v 主机都是相同的，则需要使用单个基线。 如果不是这样，则需要为每个硬件类别都有一个。 基线采用可信计算组日志文件的形式，或 TCGlog。 TCGlog 包含主机在 UEFI 固件中通过内核进行的所有操作，最高可为主机完全启动的位置。 若要捕获硬件基准，请安装 Hyper-v 角色和主机保护者 Hyper-v 支持功能并使用 `Get-HgsAttestationBaselinePolicy`。 
+3.  _代码完整性策略_。 如果每个 Hyper-v 主机都是相同的，则需要使用单个 CI 策略。 如果不是这样，则需要为每个硬件类别都有一个。 Windows Server 2016 和 Windows 10 都具有新形式的 CI 策略强制，称为 "_虚拟机监控程序-强制代码完整性" （要求 hvci）_ 。 要求 HVCI 提供强强制，并确保仅允许主机运行受信任的管理员允许其运行的二进制文件。 这些说明包装在添加到 HGS 的 CI 策略中。 在允许运行受防护的 Vm 之前，HGS 会测量每个主机的 CI 策略。 若要捕获 CI 策略，请使用 `New-CIPolicy`。 然后，必须使用 `ConvertFrom-CIPolicy`将策略转换为其二进制格式。
 
 ![提取标识、基线和 CI 策略](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 
 这就是，受保护的构造是根据运行它的基础结构生成的。  
 现在，你可以创建受防护的 VM 模板磁盘和防护数据文件，以便可以简单安全地预配受防护的 Vm。 
 
-## <a name="step-4-create-a-template-for-shielded-vms"></a>步骤 4：为受防护的 Vm 创建模板
+## <a name="step-4-create-a-template-for-shielded-vms"></a>步骤4：为受防护的 Vm 创建模板
 
 受防护的 VM 模板通过在已知的可信时间点创建磁盘签名来保护模板磁盘。 
 如果以后恶意软件感染了模板磁盘，则其签名将不同于受安全防护的 VM 预配过程检测到的原始模板。 
-受防护的模板磁盘是通过运行**受防护的模板磁盘创建向导**或`Protect-TemplateDisk`普通模板磁盘创建的。 
+受防护的模板磁盘是通过运行**受防护的模板磁盘创建向导**或 `Protect-TemplateDisk` 针对常规模板磁盘创建的。 
 
 每个包含于[Windows 10 的远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)中的**受防护的 VM 工具**功能。
 下载 RSAT 后，运行以下命令以安装**受防护的 VM 工具**功能：
@@ -137,7 +137,7 @@ Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
 
 在开始之前，请查看[模板磁盘要求](guarded-fabric-create-a-shielded-vm-template.md)。 
 
-## <a name="step-5-create-a-shielding-data-file"></a>步骤 5：创建防护数据文件 
+## <a name="step-5-create-a-shielding-data-file"></a>步骤5：创建防护数据文件 
 
 屏蔽数据文件（也称为 pdk 文件）捕获关于虚拟机的敏感信息，例如管理员密码。 
 
@@ -157,7 +157,7 @@ Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
 
 可以添加可选的管理组件，例如 VMM 或 Windows Azure Pack。 如果要在不安装这些组件的情况下创建 VM，请参阅分步[创建未受](https://blogs.technet.microsoft.com/datacentersecurity/2016/06/06/step-by-step-creating-shielded-vms-without-vmm/)保护的 vm。
 
-## <a name="step-6-create-a-shielded-vm"></a>步骤 6：创建受防护的 VM
+## <a name="step-6-create-a-shielded-vm"></a>步骤6：创建受防护的 VM
 
 创建受防护的虚拟机的方式与常规虚拟机不同。 在 Windows Azure Pack 中，体验比创建常规 VM 更为简单，因为你只需提供名称、防护数据文件（包含其他专用化信息）和 VM 网络。 
 

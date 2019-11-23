@@ -27,10 +27,10 @@ Active Directory 的 Windows PowerShell 包含管理复制、站点、域和林�
 > 
 > -    Windows Server 2012 域控制器
 > -    Windows Server 2012 安装了 AD DS 和 AD LDS 的远程服务器管理工具。
-> -   Windows @ no__t-0 8，其中安装了 AD DS 和 AD LDS 的远程服务器管理工具。
+> -   Windows&reg; 8 中安装了 AD DS 和 AD LDS 的远程服务器管理工具。
 
 ## <a name="installing-the-active-directory-module-for-windows-powershell"></a>安装 Windows PowerShell 的 Active Directory 模块
-如果在运行 Windows Server 2012 的服务器上安装了 AD DS 服务器角色，则默认情况下将安装适用于 Windows PowerShell 的 Active Directory 模块。 无需添加服务器角色之外的任何其他步骤。 你还可以通过安装远程服务器管理工具将 Active Directory 模块安装在运行 Windows Server 2012 的服务器上，并且可以通过下载并安装[来在运行 windows 8 的计算机上安装 Active Directory 模块远程服务器管理工具（RSAT）](https://www.microsoft.com/download/details.aspx?id=28972)。 有关安装步骤，请参阅 [说明](https://www.microsoft.com/download/details.aspx?id=28972)。
+如果在运行 Windows Server 2012 的服务器上安装了 AD DS 服务器角色，则默认情况下将安装适用于 Windows PowerShell 的 Active Directory 模块。 无需添加服务器角色之外的任何其他步骤。 你还可以通过安装远程服务器管理工具将 Active Directory 模块安装在运行 Windows Server 2012 的服务器上，并且可以通过下载并安装[远程服务器管理工具（RSAT）](https://www.microsoft.com/download/details.aspx?id=28972)在运行 windows 8 的计算机上安装 Active Directory 模块。 有关安装步骤，请参阅 [说明](https://www.microsoft.com/download/details.aspx?id=28972)。
 
 ## <a name="scenarios-for-testing-windows-powershell-for-active-directory-replication-and-topology-management-cmdlets"></a>用于测试 Active Directory 的 Windows PowerShell 复制和拓扑管理 cmdlet 的方案
 以下方案是为了帮助管理员熟悉新的管理 cmdlet 而设计：
@@ -43,7 +43,7 @@ Active Directory 的 Windows PowerShell 包含管理复制、站点、域和林�
 
 ## <a name="lab-requirements"></a>实验室要求
 
--   两个 Windows Server 2012 域控制器：**DC1** 和 **DC2**，是 contoso.com 域的一部分，并位于该域的 CORPORATE 站点中。
+-   两个 Windows Server 2012 域控制器： **DC1**和**DC2** ，属于 contoso.com 域并且位于该域中的公司站点。
 
 ## <a name="view-domain-controllers-and-their-sites"></a>查看域控制器及其站点
 在此步骤中，你将使用 Windows PowerShell 的 Active Directory 模块查看此域的现有域控制器和复制拓扑。
@@ -65,7 +65,7 @@ Active Directory 的 Windows PowerShell 包含管理复制、站点、域和林�
     > 
     > 例如：键入 `Get-ADRep` 并按 Tab 键多次，以跳过匹配的命令，直到你达到 `Get-ADReplicationSite`。 自动完成也适用于参数名称，例如 `Filter`。
 
-    若要将 `Get-ADReplicationSite` 命令的输出格式设置为表，并将显示范围限制为特定的字段，可以通过管道将输出传递给 @no__t 命令（或使用 "`ft`"）：
+    若要将 `Get-ADReplicationSite` 命令的输出格式设置为表，并将显示范围限制为特定的字段，可以通过管道将输出传递给 `Format-Table` 命令（或简称为 "`ft`"）：
 
     `Get-ADReplicationSite -Filter * | ft Name`
 
@@ -154,7 +154,7 @@ Active Directory 的 Windows PowerShell 包含管理复制、站点、域和林�
 
     排序允许你轻松对给予复制伙伴每个域控制器观察到的最后 USN 进行比较。 这是检查环境中是否正在进行复制的快速方法。 如果复制正常工作，所有域控制器中为给定复制伙伴报告的 UsnFilter 值必须非常相似。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [使用 Windows PowerShell &#40;Level 200 的高级 Active Directory 复制和拓扑管理&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
 
 

@@ -18,7 +18,7 @@ ms.locfileid: "71369359"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 林恢复-备份完整服务器  
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 建议使用完整服务器备份来准备林恢复，因为它可以还原到不同的硬件或不同的操作系统实例。  使用 Windows Server 备份可以对服务器执行完整备份。 
 
@@ -38,8 +38,8 @@ ms.locfileid: "71369359"
 3. 在 "**安装类型**" 屏幕上，保留默认的**基于角色或基于功能的安装**，然后单击 "**下一步**"。
 4. 在**服务器选择**屏幕上，单击 "**下一步**"。
 5. 在 "**服务器角色**" 屏幕上，单击 "**下一步**"。
-6. 在 "**功能**" 屏幕上，选择 " **Windows Server 备份**"，然后单击 "**下一步**" 
-    @ no__t-4Install Backup @ no__t-5
+6. 在 "**功能**" 屏幕上，选择**Windows Server 备份**然后单击 "**下一步**"
+   ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
 7. 单击“安装”。
 8. 安装完成后，单击 "**关闭**"。
 

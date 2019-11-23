@@ -28,7 +28,7 @@ ms.locfileid: "71405445"
 
 ## <a name="windows-firewall-on-the-local-nps"></a>本地 NPS 上的 Windows 防火墙
 
-默认情况下，NPS 通过使用用户数据报协议 \(UDP @ no__t-1 端口1812、1813、1645和1646来发送和接收 RADIUS 流量。 NPS 上的 Windows Defender 防火墙会自动配置为在安装 NPS 期间出现异常，以允许发送和接收此 RADIUS 流量。
+默认情况下，NPS 通过使用用户数据报协议 \(UDP\) 端口1812、1813、1645和1646来发送和接收 RADIUS 流量。 NPS 上的 Windows Defender 防火墙会自动配置为在安装 NPS 期间出现异常，以允许发送和接收此 RADIUS 流量。
 
 因此，如果您使用的是默认 UDP 端口，则不需要更改 Windows Defender 防火墙配置，以允许与 NPSs 之间的 RADIUS 通信。
 
@@ -50,7 +50,7 @@ ms.locfileid: "71405445"
 
 ## <a name="configuring-the-internet-firewall"></a>配置 Internet 防火墙
 
-连接到 Internet 的防火墙必须在其 Internet 接口上配置了输入和输出筛选器 @no__t 0and （可选）其网络外围接口 @ no__t，以允许在 NPS 和 RADIUS 之间转发 RADIUS 消息Internet 上的客户端或代理。 其他筛选器可用于允许将流量传递到外围网络上的 Web 服务器、VPN 服务器和其他类型的服务器。
+连接到 Internet 的防火墙必须配置有输入和输出筛选器的 Internet 接口 \(并且可以选择其网络外围接口\)，以允许在 NPS 和 RADIUS 客户端或 Internet 上的代理之间转发 RADIUS 消息。 其他筛选器可用于允许将流量传递到外围网络上的 Web 服务器、VPN 服务器和其他类型的服务器。
 
 可以在 Internet 接口和外围网络接口上配置单独的输入和输出数据包筛选器。
 
@@ -60,8 +60,8 @@ ms.locfileid: "71405445"
 
 - 外围网络接口的目标 IP 地址和 NPS 的 UDP 目标端口1812（0x714）。  此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 身份验证通信。 这是 NPS 使用的默认 UDP 端口，如 RFC 2865 中所定义。 如果使用其他端口，请将该端口号替换为1812。
 - 外围网络接口的目标 IP 地址和 NPS 的 UDP 目标端口1813（0x715）。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 记帐通信。 这是 NPS 使用的默认 UDP 端口，如 RFC 2866 中所定义。 如果使用其他端口，请将该端口号替换为1813。
-- @no__t-no__t 的外围网络接口的目标 IP 地址和 NPS 的 UDP 目标端口 1645 \(0x66D @ no__t。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 身份验证通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
-- @no__t-no__t 的外围网络接口的目标 IP 地址和 NPS 的 UDP 目标端口 1646 \(0x66E @ no__t。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 记帐通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
+- \(\) 的外围网络接口的目标 IP 地址和 UDP 目标端口 1645 \(0x66D\) NPS 的 IP 地址。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 身份验证通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
+- \(\) 的外围网络接口的目标 IP 地址和 UDP 目标端口 1646 \(0x66E\) NPS 的 IP 地址。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 记帐通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
 
 ### <a name="configure-output-filters-on-the-internet-interface"></a>在 Internet 接口上配置输出筛选器
 
@@ -69,8 +69,8 @@ ms.locfileid: "71405445"
 
 - 外围网络接口的源 IP 地址和 NPS 的 UDP 源端口1812（0x714）。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 身份验证流量。 这是 NPS 使用的默认 UDP 端口，如 RFC 2865 中所定义。 如果使用其他端口，请将该端口号替换为1812。
 - 外围网络接口的源 IP 地址和 NPS 的 UDP 源端口1813（0x715）。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 记帐通信。 这是 NPS 使用的默认 UDP 端口，如 RFC 2866 中所定义。 如果使用其他端口，请将该端口号替换为1813。
-- @no__t-no__t 的外围网络接口的源 IP 地址和 NPS 的 UDP 源端口 1645 \(0x66D @ no__t。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 身份验证流量。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
-- @no__t-no__t 的外围网络接口的源 IP 地址和 NPS 的 UDP 源端口 1646 \(0x66E @ no__t。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 记帐通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
+- \(可选\) 外围网络接口的源 IP 地址和 NPS 的 UDP 源端口 1645 \(0x66D\)。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 身份验证流量。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
+- \(可选\) 外围网络接口的源 IP 地址和 NPS 的 UDP 源端口 1646 \(0x66E\)。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 记帐通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
 
 ### <a name="configure-input-filters-on-the-perimeter-network-interface"></a>在外围网络接口上配置输入筛选器
 
@@ -78,8 +78,8 @@ ms.locfileid: "71405445"
 
 - 外围网络接口的源 IP 地址和 NPS 的 UDP 源端口1812（0x714）。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 身份验证流量。 这是 NPS 使用的默认 UDP 端口，如 RFC 2865 中所定义。 如果使用其他端口，请将该端口号替换为1812。
 - 外围网络接口的源 IP 地址和 NPS 的 UDP 源端口1813（0x715）。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 记帐通信。 这是 NPS 使用的默认 UDP 端口，如 RFC 2866 中所定义。 如果使用其他端口，请将该端口号替换为1813。
-- @no__t-no__t 的外围网络接口的源 IP 地址和 NPS 的 UDP 源端口 1645 \(0x66D @ no__t。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 身份验证流量。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
-- @no__t-no__t 的外围网络接口的源 IP 地址和 NPS 的 UDP 源端口 1646 \(0x66E @ no__t。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 记帐通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
+- \(可选\) 外围网络接口的源 IP 地址和 NPS 的 UDP 源端口 1645 \(0x66D\)。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 身份验证流量。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
+- \(可选\) 外围网络接口的源 IP 地址和 NPS 的 UDP 源端口 1646 \(0x66E\)。 此筛选器允许从 NPS 到基于 Internet 的 RADIUS 客户端的 RADIUS 记帐通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
 
 ### <a name="configure-output-filters-on-the-perimeter-network-interface"></a>在外围网络接口上配置输出筛选器
 
@@ -87,8 +87,8 @@ ms.locfileid: "71405445"
 
 - 外围网络接口的目标 IP 地址和 NPS 的 UDP 目标端口1812（0x714）。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 身份验证通信。 这是 NPS 使用的默认 UDP 端口，如 RFC 2865 中所定义。 如果使用其他端口，请将该端口号替换为1812。
 - 外围网络接口的目标 IP 地址和 NPS 的 UDP 目标端口1813（0x715）。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 记帐通信。 这是 NPS 使用的默认 UDP 端口，如 RFC 2866 中所定义。 如果使用其他端口，请将该端口号替换为1813。
-- @no__t-no__t 的外围网络接口的目标 IP 地址和 NPS 的 UDP 目标端口 1645 \(0x66D @ no__t。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 身份验证通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
-- @no__t-no__t 的外围网络接口的目标 IP 地址和 NPS 的 UDP 目标端口 1646 \(0x66E @ no__t。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 记帐通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
+- \(\) 的外围网络接口的目标 IP 地址和 UDP 目标端口 1645 \(0x66D\) NPS 的 IP 地址。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 身份验证通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
+- \(\) 的外围网络接口的目标 IP 地址和 UDP 目标端口 1646 \(0x66E\) NPS 的 IP 地址。 此筛选器允许从基于 Internet 的 RADIUS 客户端到 NPS 的 RADIUS 记帐通信。 这是较旧的 RADIUS 客户端使用的 UDP 端口。
 
 为了增加安全性，你可以使用每个 RADIUS 客户端的 IP 地址，该客户端通过防火墙发送数据包，为外围网络上的客户端与 NPS 的 IP 地址之间的流量定义筛选器。
 

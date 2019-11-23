@@ -33,11 +33,11 @@ ren [<Drive>:][<Path>]<FileName1> <FileName2>
 rename [<Drive>:][<Path>]<FileName1> <FileName2>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|[@no__t >：][@no__t >] \<FileName1 >|指定要重命名的文件或文件集的位置和名称。 *FileName1*可以包含通配符（ **&#42;** 和 **？** ）。|
+|[\<驱动器 >：][\<路径 >]\<FileName1 >|指定要重命名的文件或文件集的位置和名称。 *FileName1*可以包含通配符（ **&#42;** 和 **？** ）。|
 |\<FileName2 >|指定文件的新名称。 您可以使用通配符来指定多个文件的新名称。|
 |/?|在命令提示符下显示帮助。|
 

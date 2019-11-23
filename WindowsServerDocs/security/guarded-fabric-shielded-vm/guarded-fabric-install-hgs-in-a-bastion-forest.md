@@ -16,7 +16,7 @@ ms.locfileid: "71403598"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>在现有堡垒林中安装 HGS 
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 
 ## <a name="join-the-hgs-server-to-the-existing-domain"></a>将 HGS 服务器加入到现有域中
@@ -130,19 +130,19 @@ Set-Acl -Path $vcoPath -AclObject $acl
 
 **策略路径：** 计算机配置 \Windows 设置 \ 安全设置 \ 本地策略 \ 权限分配
 
-**策略名称：** 拒绝从网络访问这台计算机
+**策略名称：** 拒绝从网络访问此计算机
 
 **必需的值：** 确保该值不会阻止所有本地帐户的网络登录。 不过，你可以安全地阻止本地管理员帐户。
 
-**在于**故障转移群集依赖于名为 CLIUSR 的非管理员本地帐户来管理群集节点。 阻止此用户的网络登录将阻止群集正常运行。
+**原因：** 故障转移群集依赖于名为 CLIUSR 的非管理员本地帐户来管理群集节点。 阻止此用户的网络登录将阻止群集正常运行。
 
 ### <a name="kerberos-encryption"></a>Kerberos 加密
 
-**策略路径：** 计算机配置\Windows 设置\安全设置\本地策略\安全选项
+**策略路径：** 计算机配置 \Windows 设置 \ 安全设置 \ 本地策略选项
 
 **策略名称：** 网络安全：配置 Kerberos 允许的加密类型
 
-**操作**:如果配置了此策略，则必须使用[uninstall-adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)将 gMSA 帐户更新为仅在此策略中使用受支持的加密类型。 例如，如果你的策略仅允许 AES128 @ no__t-0HMAC @ no__t-1SHA1 and AES256 @ no__t-2HMAC @ no__t-3SHA1，则应运行 @no__t。
+**操作**：如果配置了此策略，则必须使用[uninstall-adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)将 gMSA 帐户更新为仅在此策略中使用受支持的加密类型。 例如，如果你的策略仅允许 AES128\_HMAC\_SHA1 和 AES256\_HMAC\_SHA1，则应该运行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`。
 
 
 

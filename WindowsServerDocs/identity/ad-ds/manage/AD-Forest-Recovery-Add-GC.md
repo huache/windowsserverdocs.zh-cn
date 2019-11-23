@@ -18,7 +18,7 @@ ms.locfileid: "71369338"
 ---
 # <a name="ad-forest-recovery---adding-the-gc"></a>AD 林恢复-添加 GC
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 使用以下过程将全局编录添加到 DC。  
   
@@ -29,7 +29,7 @@ ms.locfileid: "71369338"
 3. 展开 "**服务器**" 容器，然后展开要向其添加全局编录的 DC 的服务器对象。  
 4. 右键单击 " **NTDS 设置**"，然后单击 "**属性**"。  
 5. 选中 "**全局编录**" 复选框。  
-![Add GC @ no__t-1
+![添加 GC](media/AD-Forest-Recovery-Add-GC/addgc1.png)
 
 ## <a name="to-add-the-global-catalog-using-repadmin"></a>使用 Repadmin 添加全局编录  
 

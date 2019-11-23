@@ -33,7 +33,7 @@ ms.locfileid: "71408908"
   
 将从 Windows Server 2003 环境升级的资源域和帐户域合并为 Windows Server 2008 AD DS 部署的一部分可能需要林间或林内域重构。 在林之间重新构建 AD DS 域有助于降低组织在 AD DS 中的表示形式的复杂性，并有助于降低关联的管理成本。 重构林中 AD DS 域可降低复制流量，减少所需的用户和组管理的数量，并简化组的管理，从而帮助你降低组织的管理开销政策. 有关详细信息，请参阅 ADMT 3.1 迁移指南（[https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)）。  
   
-有关可用于在运行 Windows Server 2003 Active Directory 的组织中计划和部署 AD DS 的详细任务的列表，请参阅 [Checklist：在 Windows Server 2003 组织 @ no__t 中部署 AD DS。  
+有关可用于在运行 Windows Server 2003 Active Directory 的组织中计划和部署 AD DS 的详细任务的列表，请参阅[清单：在 Windows server 2003 组织中部署 AD DS](https://technet.microsoft.com/library/cc771407.aspx)。  
   
 
 

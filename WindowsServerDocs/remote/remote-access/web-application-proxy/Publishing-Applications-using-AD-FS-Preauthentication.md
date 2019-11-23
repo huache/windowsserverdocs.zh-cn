@@ -17,9 +17,9 @@ ms.locfileid: "71404264"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>使用 AD FS 预身份验证发布应用程序
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
-@no__t 0This 内容与 Web 应用程序代理的本地版本相关。若要启用对云中的本地应用程序的安全访问，请参阅[Azure AD 应用程序代理内容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。 **  
+**此内容与 Web 应用程序代理的本地版本相关。若要启用对云中的本地应用程序的安全访问，请参阅[Azure AD 应用程序代理内容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。**  
   
 本主题介绍如何使用 Active Directory 联合身份验证服务（AD FS）预身份验证通过 Web 应用程序代理发布应用程序。  
   
@@ -30,7 +30,7 @@ ms.locfileid: "71404264"
 > [!NOTE]  
 > 此身份验证流不适用于使用 Microsoft Store 应用的客户端。  
   
-1.  客户端设备尝试访问特定资源 URL 上的已发布 web 应用程序;例如 https://app1.contoso.com/ 。  
+1.  客户端设备尝试访问特定资源 URL 上的已发布 web 应用程序;例如 https://app1.contoso.com/。  
   
     资源 URL 是 Web 应用程序代理侦听传入 HTTPS 请求的公用地址。  
   
@@ -77,7 +77,7 @@ ms.locfileid: "71404264"
   
 在发布基于声明的应用程序以及从浏览器访问应用程序时，要执行的常规身份验证流如下：  
   
-1.  客户端尝试使用 web 浏览器访问基于声明的应用程序;例如， https://appserver.contoso.com/claimapp/ 。  
+1.  客户端尝试使用 web 浏览器访问基于声明的应用程序;例如， https://appserver.contoso.com/claimapp/。  
   
 2.  Web 浏览器将 HTTPS 请求发送到 Web 应用程序代理服务器，该服务器会将请求重定向到 AD FS 服务器。  
   
@@ -115,20 +115,20 @@ ms.locfileid: "71404264"
   
         此名称仅在远程访问管理控制台的已发布应用程序列表中使用。  
   
-    -   在“外部 URL”框中输入此应用程序的外部 URL，例如 https://sp.contoso.com/app1/ 。  
+    -   在“外部 URL”框中输入此应用程序的外部 URL，例如 https://sp.contoso.com/app1/。  
   
     -   在“外部证书”列表中，选择其使用者包含外部 URL 的证书 。  
   
-    -   在“后端服务器 URL”框中，输入后端服务器的 URL。 请注意，当你输入外部 URL 时，会自动输入此值，仅当后端服务器 URL 不同时才应更改该值;例如， https://sp/app1/ 。  
+    -   在“后端服务器 URL”框中，输入后端服务器的 URL。 请注意，当你输入外部 URL 时，会自动输入此值，仅当后端服务器 URL 不同时才应更改该值;例如， https://sp/app1/。  
   
         > [!NOTE]  
-        > Web 应用程序代理可以将主机名转换为 Url，但无法转换路径名。 因此，你可以输入不同的主机名，但必须输入相同的路径名。 例如，你可以输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://app-server/app1/ 的后端服务器 URL。 但是，不能输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/ 的后端服务器 URL。  
+        > Web 应用程序代理可以将主机名转换为 Url，但无法转换路径名。 因此，你可以输入不同的主机名，但必须输入相同的路径名。 例如，你可以输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://app-server/app1/的后端服务器 URL。 但是，不能输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/的后端服务器 URL。  
   
 7.  在“确认” 页面上复查设置，然后单击“发布”。 你可以复制 PowerShell 命令来设置其他发布的应用程序。  
   
 8.  在“结果”页面上，确保已成功发布该应用程序，然后单击“关闭”。  
   
-@no__t 的***<em>Windows PowerShell 等效命令</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -153,7 +153,7 @@ Web 应用程序代理可用于发布使用集成 Windows 身份验证的应用�
   
 对后端服务器使用集成 Windows 身份验证时，Web 应用程序代理和已发布应用程序之间的身份验证不是基于声明的，而是使用 Kerberos 约束委派对应用程序的最终用户进行身份验证。 下面描述了常规流：  
   
-1.  客户端尝试使用 web 浏览器访问非基于声明的应用程序;例如， https://appserver.contoso.com/nonclaimapp/ 。  
+1.  客户端尝试使用 web 浏览器访问非基于声明的应用程序;例如， https://appserver.contoso.com/nonclaimapp/。  
   
 2.  Web 浏览器将 HTTPS 请求发送到 Web 应用程序代理服务器，该服务器会将请求重定向到 AD FS 服务器。  
   
@@ -195,14 +195,14 @@ Web 应用程序代理可用于发布使用集成 Windows 身份验证的应用�
   
         此名称仅在远程访问管理控制台的已发布应用程序列表中使用。  
   
-    -   在“外部 URL”框中输入此应用程序的外部 URL，例如 https://owa.contoso.com/ 。  
+    -   在“外部 URL”框中输入此应用程序的外部 URL，例如 https://owa.contoso.com/。  
   
     -   在“外部证书”列表中，选择其使用者包含外部 URL 的证书 。  
   
-    -   在“后端服务器 URL”框中，输入后端服务器的 URL。 请注意，当你输入外部 URL 时，会自动输入此值，仅当后端服务器 URL 不同时才应更改该值;例如， https://owa/ 。  
+    -   在“后端服务器 URL”框中，输入后端服务器的 URL。 请注意，当你输入外部 URL 时，会自动输入此值，仅当后端服务器 URL 不同时才应更改该值;例如， https://owa/。  
   
         > [!NOTE]  
-        > Web 应用程序代理可以将主机名转换为 Url，但无法转换路径名。 因此，你可以输入不同的主机名，但必须输入相同的路径名。 例如，你可以输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://app-server/app1/ 的后端服务器 URL。 但是，不能输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/ 的后端服务器 URL。  
+        > Web 应用程序代理可以将主机名转换为 Url，但无法转换路径名。 因此，你可以输入不同的主机名，但必须输入相同的路径名。 例如，你可以输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://app-server/app1/的后端服务器 URL。 但是，不能输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/的后端服务器 URL。  
   
     -   在“后端服务器 SPN” 框中输入后端服务器的服务主体名称，例如 HTTP/owa.contoso.com。  
   
@@ -210,7 +210,7 @@ Web 应用程序代理可用于发布使用集成 Windows 身份验证的应用�
   
 8.  在“结果”页面上，确保已成功发布该应用程序，然后单击“关闭”。  
   
-@no__t 的***<em>Windows PowerShell 等效命令</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -226,7 +226,7 @@ Add-WebApplicationProxyApplication
 ```  
   
 ## <a name="BKMK_1.3"></a>发布使用 OFBA 的应用程序  
-Web 应用程序代理支持从访问后端服务器上的文档和数据的 Microsoft Office 客户端（如 Microsoft Word）进行访问。 这些应用程序与标准浏览器之间的唯一差别在于，重定向到 STS 不是通过常规 HTTP 重定向完成的，而是使用中指定的特殊 OFBA 标头： [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx)。 后端应用程序可以是声明或 IWA。   
+Web 应用程序代理支持从访问后端服务器上的文档和数据的 Microsoft Office 客户端（如 Microsoft Word）进行访问。 这些应用程序与标准浏览器之间的唯一差别在于，重定向到 STS 不是通过常规 HTTP 重定向完成的，而是使用在中指定的特殊 OFBA 标头： [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx)。 后端应用程序可以是声明或 IWA。   
 若要为使用 OFBA 的客户端发布应用程序，必须将该应用程序的信赖方信任添加到联合身份验证服务。 根据具体的应用程序，你可以使用基于声明的身份验证或集成 Windows 身份验证。 因此，必须根据应用程序添加相关的信赖方信任。  
   
 若要允许 Web 应用程序代理执行单一登录（SSO），并使用 Kerberos 约束委派执行凭据委派，必须将 Web 应用程序代理服务器加入域。 请参阅[计划 Active Directory](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD)。  
@@ -310,7 +310,7 @@ HTTP Basic 是许多协议使用的授权协议，可通过 Exchange 邮箱连�
   
 8.  在“结果”页面上，确保已成功发布该应用程序，然后单击“关闭”。  
   
-@no__t 的***<em>Windows PowerShell 等效命令</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -403,16 +403,16 @@ Add-WebApplicationProxyApplication
   
         此名称仅在远程访问管理控制台的已发布应用程序列表中使用。  
   
-    -   在“外部 URL”框中输入此应用程序的外部 URL，例如 https://server1.contoso.com/app1/ 。  
+    -   在“外部 URL”框中输入此应用程序的外部 URL，例如 https://server1.contoso.com/app1/。  
   
     -   在“外部证书”列表中，选择其使用者包含外部 URL 的证书 。  
   
         为了确保用户可以访问你的应用程序，即使他们忽视在 URL 中键入 HTTPS，也请选择 "**启用 HTTP 到 HTTPS 重定向**" 框。  
   
-    -   在“后端服务器 URL”框中，输入后端服务器的 URL。 请注意，当你输入外部 URL 时，会自动输入此值，仅当后端服务器 URL 不同时才应更改该值;例如， https://sp/app1/ 。  
+    -   在“后端服务器 URL”框中，输入后端服务器的 URL。 请注意，当你输入外部 URL 时，会自动输入此值，仅当后端服务器 URL 不同时才应更改该值;例如， https://sp/app1/。  
   
         > [!NOTE]  
-        > Web 应用程序代理可以将主机名转换为 Url，但无法转换路径名。 因此，你可以输入不同的主机名，但必须输入相同的路径名。 例如，你可以输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://app-server/app1/ 的后端服务器 URL。 但是，不能输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/ 的后端服务器 URL。  
+        > Web 应用程序代理可以将主机名转换为 Url，但无法转换路径名。 因此，你可以输入不同的主机名，但必须输入相同的路径名。 例如，你可以输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://app-server/app1/的后端服务器 URL。 但是，不能输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/的后端服务器 URL。  
   
 7.  在“确认” 页面上复查设置，然后单击“发布”。 你可以复制 PowerShell 命令来设置其他发布的应用程序。  
   

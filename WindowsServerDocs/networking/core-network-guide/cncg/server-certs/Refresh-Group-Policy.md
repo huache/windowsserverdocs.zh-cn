@@ -28,7 +28,7 @@ ms.locfileid: "71356185"
   
 ### <a name="to-refresh-group-policy-on-the-local-computer"></a>刷新本地计算机上的组策略  
   
-1.  在安装了 NPS 的计算机上，使用任务栏上的图标打开 Windows PowerShell @ no__t-0。  
+1.  在安装了 NPS 的计算机上，使用任务栏上的图标打开 Windows PowerShell&reg;。  
   
 2.  在 Windows PowerShell 提示符下，键入**gpupdate**，然后按 enter。  
   

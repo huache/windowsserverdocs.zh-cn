@@ -32,13 +32,13 @@ ms.locfileid: "71363590"
 WDSUTIL /Copy-DriverGroup [/Server:<Server name>] /DriverGroup:<Source Group Name> /GroupName:<New Group Name>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|[/Server： @no__t 名称 >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。|
-|/DriverGroup： \<Source 组名称 >|指定源驱动程序组的名称。|
-|/GroupName： \<New 组名称 >|指定新驱动程序组的名称。|
+|[/Server：\<Server name >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。|
+|/DriverGroup：\<源组名称 >|指定源驱动程序组的名称。|
+|/GroupName：\<新的组名 >|指定新驱动程序组的名称。|
 
 ## <a name="BKMK_examples"></a>示例
 

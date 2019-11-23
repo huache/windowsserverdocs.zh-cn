@@ -30,7 +30,7 @@ ms.locfileid: "71408634"
 对于林中每个域中的本地管理员帐户，应配置下列设置：  
 
 -   配置 Gpo 以限制域的管理员帐户在加入域的系统上的使用  
-    -   在你创建的一个或多个 Gpo 中，并链接到每个域中的工作站和成员服务器 Ou，将管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 本地策略 \ 用户" 权限中的以下用户权限分配**：  
+    -   在你创建的一个或多个 Gpo 并链接到每个域中的工作站和成员服务器 Ou，将管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
         -   拒绝从网络访问这台计算机  
 
@@ -46,13 +46,13 @@ ms.locfileid: "71408634"
 
 1.  在**服务器管理器**中，单击 "**工具**"，然后单击 "**组策略管理**"。  
 
-2.  在控制台树中，展开 "<Forest> \ 域 @ no__t"，然后**组策略对象**（其中，@no__t 为林的名称，<Domain> 是要设置组策略的域的名称）。  
+2.  在控制台树中，依次展开 "<Forest>\Domains"\\"<Domain>"、"**组策略对象**" （其中 <Forest> 是林的名称，<Domain> 是要设置组策略的域的名称）。  
 
 3.  在控制台树中，右键单击**组策略对象**"，然后单击"**新建**"。  
 
     ![保护本地管理帐户和组](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_101.png)  
 
-4.  在 "**新建 GPO** " 对话框中，键入 **<GPO Name>** ，然后单击 **"确定"** （其中 <GPO Name> 是此 GPO 的名称）。  
+4.  在 "**新建 GPO** " 对话框中，键入 " **<GPO Name>** "，然后单击 **"确定"** （其中 <GPO Name> 是此 GPO 的名称）。  
 
     ![保护本地管理帐户和组](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_102.png)  
 
@@ -83,7 +83,7 @@ ms.locfileid: "71408634"
 
         ![保护本地管理帐户和组](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_105.png)  
 
-    3.  单击 **“确定”** 。  
+    3.  单击**确定**。  
 
         > [!IMPORTANT]  
         > 当你将管理员帐户添加到这些设置时，你将指定你是通过标记帐户的方式配置本地管理员帐户还是域管理员帐户。 例如，若要将 AZURE-TAILSPINTOYS 域的管理员帐户添加到这些拒绝权限，请浏览到 AZURE-TAILSPINTOYS 域的管理员帐户，该帐户将显示为 TAILSPINTOYS\Administrator。 如果在组策略对象编辑器中的 "用户权限" 设置中键入**管理员**，则会限制应用 GPO 的每台计算机上的本地管理员帐户，如前文所述。  
@@ -96,7 +96,7 @@ ms.locfileid: "71408634"
 
         ![保护本地管理帐户和组](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_106.png)  
 
-    3.  单击 **“确定”** 。  
+    3.  单击**确定**。  
 
         > [!IMPORTANT]  
         > 当你将管理员帐户添加到这些设置时，你将指定你是通过标记帐户的方式配置本地管理员帐户还是域管理员帐户。 例如，若要将 AZURE-TAILSPINTOYS 域的管理员帐户添加到这些拒绝权限，请浏览到 AZURE-TAILSPINTOYS 域的管理员帐户，该帐户将显示为 TAILSPINTOYS\Administrator。 如果在组策略对象编辑器中的 "用户权限" 设置中键入**管理员**，则会限制应用 GPO 的每台计算机上的本地管理员帐户，如前文所述。  
@@ -109,7 +109,7 @@ ms.locfileid: "71408634"
 
         ![保护本地管理帐户和组](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_107.png)  
 
-    3.  单击 **“确定”** 。  
+    3.  单击**确定**。  
 
         > [!IMPORTANT]  
         > 当你将管理员帐户添加到这些设置时，你将指定你是通过标记帐户的方式配置本地管理员帐户还是域管理员帐户。 例如，若要将 AZURE-TAILSPINTOYS 域的管理员帐户添加到这些拒绝权限，请浏览到 AZURE-TAILSPINTOYS 域的管理员帐户，该帐户将显示为 TAILSPINTOYS\Administrator。 如果在组策略对象编辑器中的 "用户权限" 设置中键入**管理员**，则会限制应用 GPO 的每台计算机上的本地管理员帐户，如前文所述。  
@@ -118,7 +118,7 @@ ms.locfileid: "71408634"
 
 12. 在**组策略管理**中，通过执行以下操作将 GPO 链接到成员服务器和工作站 ou：  
 
-    1.  导航到 <Forest> 域 @ no__t @ no__t-2 （其中，<Forest> 是林的名称，<Domain> 是要在其中设置组策略的域的名称）。  
+    1.  导航到 <Forest>\Domains\\<Domain> （其中，<Forest> 是林的名称，<Domain> 是要在其中设置组策略的域的名称）。  
 
     2.  右键单击 GPO 将应用到的 OU，然后单击 "**链接现有 GPO**"。  
 
@@ -148,7 +148,7 @@ ms.locfileid: "71408634"
 
     ![保护本地管理帐户和组](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_110.png)  
 
-5.  在 "**命令提示符**" 窗口中，键入**net use \\ @ no__t-3 @ no__t-4\c $/user： <Server Name> \ 管理员**，其中 <Server Name> 是你尝试通过网络访问的成员服务器或工作站的名称。  
+5.  在 "**命令提示符**" 窗口中，键入**net use \\\\<Server Name>\c $/User：<Server Name>\Administrator**，其中 <Server Name> 是你尝试通过网络访问的成员服务器或工作站的名称。  
 
     > [!NOTE]  
     > 本地管理员凭据必须来自你尝试通过网络访问的同一系统。  
@@ -170,7 +170,7 @@ ms.locfileid: "71408634"
 
 4.  单击 "**文件**"，然后单击 "**另存为**"。  
 
-5.  在 "**文件名" 框中**，键入 **<Filename>** （其中，<Filename> 是新批处理文件的名称）。  
+5.  在 "**文件名" 框中**，键入 **<Filename>.bat** （其中，<Filename> 是新批处理文件的名称）。  
 
 ###### <a name="schedule-a-task"></a>计划任务  
 
@@ -183,7 +183,7 @@ ms.locfileid: "71408634"
 
 3.  单击 "**操作**"，然后单击 "**创建任务**"。  
 
-4.  在 "**创建任务**" 对话框中，键入 **<Task Name>** （其中 @no__t 为新任务的名称）。  
+4.  在 "**创建任务**" 对话框中，键入 **<Task Name>** （其中 <Task Name> 为新任务的名称）。  
 
 5.  单击 "**操作**" 选项卡，然后单击 "**新建**"。  
 
@@ -191,7 +191,7 @@ ms.locfileid: "71408634"
 
 7.  在 "**程序/脚本**" 字段中，单击 "**浏览**"，找到并选择 "**创建批处理文件**" 部分中创建的批处理文件，然后单击 "**打开**"。  
 
-8.  单击 **“确定”** 。  
+8.  单击**确定**。  
 
 9. 单击“常规”选项卡。  
 
@@ -201,7 +201,7 @@ ms.locfileid: "71408634"
 
 12. 选择 **"运行用户是否登录"，或者 "** 不**存储密码**"。 该任务将仅有权访问本地计算机资源。  
 
-13. 单击 **“确定”** 。  
+13. 单击**确定**。  
 
 14. 应显示一个对话框，请求用户帐户凭据以运行任务。  
 

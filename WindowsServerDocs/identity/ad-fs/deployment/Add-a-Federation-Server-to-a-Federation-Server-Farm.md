@@ -21,20 +21,20 @@ ms.locfileid: "71408529"
 
 安装联合身份验证服务角色服务并在计算机上配置所需的证书后，你就可以将计算机配置为联合服务器了。 可以使用以下过程将计算机加入新的联合服务器场中。  
   
-使用 AD FS 联合服务器配置向导将计算机加入到场。 当你使用此向导将计算机加入现有场时，计算机将配置 AD FS 配置数据库的 read @ no__t，并且它必须从主联合服务器接收更新。  
+使用 AD FS 联合服务器配置向导将计算机加入到场。 当你使用此向导将计算机加入现有场时，计算机将配置为具有只读\-仅 AD FS 配置数据库的副本，并且该计算机必须从主联合服务器接收更新。  
   
 > [!NOTE]  
-> 对于联合 Web one @ no__t-0Sign @ no__t-1On \(SSO @ no__t-3 设计，在帐户伙伴组织中必须至少有一台联合服务器，在资源伙伴组织中必须至少有一个联合服务器。 有关详细信息，请参阅 [Where to Place a Federation Server](https://technet.microsoft.com/library/dd807127.aspx)。  
+> 对于 \(SSO\) 设计上的联合 Web 单一\-Sign\-，在帐户伙伴组织和资源伙伴组织中必须至少有一个联合服务器。 有关详细信息，请参阅 [Where to Place a Federation Server](https://technet.microsoft.com/library/dd807127.aspx)。  
   
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  有关使用适当帐户和组成员身份的详细信息，请参阅[本地和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477) \(http\/：\/\/go.microsoft.com\/fwlink？LinkId\=83477\)。   
+本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  有关使用适当帐户和组成员身份的详细信息，请参阅[本地和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)\(http：\/\/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
   
 ### <a name="to-add-a-federation-server-to-a-federation-server-farm"></a>将联合服务器添加到联合服务器场  
   
 1.  可以通过两种方式启动 AD FS 联合服务器配置向导。 若要启动该向导，请执行下列操作之一：  
   
-    -   联合身份验证服务角色服务安装完成后，打开 AD FS 管理 snap @ no__t-0in，并单击 "**概述**" 页上或 "**操作**" 窗格中的 " **AD FS 联合服务器配置向导**" 链接。  
+    -   联合身份验证服务角色服务安装完成后，打开中的 AD FS 管理管理单元\-，并单击 "**概述**" 页上或 "**操作**" 窗格中的 " **AD FS 联合服务器配置向导**" 链接。  
   
-    -   安装向导完成后，请打开 Windows 资源管理器，导航到**C @no__t： 1Windows @ no__t-2ADFS**文件夹，并双击 @ no__t-3click **fsconfigwizard.exe**。  
+    -   安装向导完成后，请打开 Windows 资源管理器，导航到**C：\\Windows\\ADFS**文件夹，然后\-双击 " **fsconfigwizard.exe**"。  
   
 2.  在“欢迎”页上，验证选择了“将联合服务器添加到现有联合身份验证服务”，然后单击“下一步”。  
   
@@ -46,7 +46,7 @@ ms.locfileid: "71408529"
 4.  在“指定主联合服务器和服务帐户”页的“主联合服务器名称”下，键入场中主联合服务器的计算机名，然后单击“浏览”。 在“浏览”对话框中，找到由现有联合服务器场中的所有其他联合服务器用作服务帐户的域帐户，然后单击“确定”。 键入密码并确认，然后单击 "**下一步**"：  
   
     > [!NOTE]  
-    > 有关指定联合服务器场的服务帐户的详细信息，请参阅[手动配置联合服务器场的服务帐户](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md)。 联合服务器场中的每个联合服务器都必须为要操作的场指定相同的服务帐户。 例如，如果创建的服务帐户是 contoso @ no__t-0ADFS2SVC，则为联合服务器角色配置的每台计算机以及将参与同一个场的计算机必须在联合服务器的此步骤中指定 contoso @ no__t-1ADFS2SVC要使场正常工作的配置向导。  
+    > 有关指定联合服务器场的服务帐户的详细信息，请参阅[手动配置联合服务器场的服务帐户](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md)。 联合服务器场中的每个联合服务器都必须为要操作的场指定相同的服务帐户。 例如，如果创建的服务帐户是 contoso\\ADFS2SVC，则你为联合服务器角色配置的每台计算机以及将参与同一个场的每台计算机都必须在联合服务器配置向导中的此步骤中指定 contoso\\ADFS2SVC，以使场正常工作。  
   
 5.  在“已准备好应用设置”页上，查看详细信息。 如果设置正确，请单击 "**下一步**" 以开始配置具有这些设置的 AD FS。  
   

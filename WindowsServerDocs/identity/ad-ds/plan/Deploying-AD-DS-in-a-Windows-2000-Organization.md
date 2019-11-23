@@ -36,7 +36,7 @@ ms.locfileid: "71408914"
   
 将从 Windows 2000 环境就地升级的资源和帐户域合并为 Windows Server 2008 AD DS 部署的一部分可能需要林间或林内域重构。 在林之间重新构建 AD DS 域有助于降低组织的复杂性和相关的管理成本。 重新构建林中 AD DS 域可帮助你降低组织的管理开销，方法是减少复制流量，减少所需的用户和组管理量，并简化管理组策略。 有关详细信息，请参阅 ADMT 3.1 迁移指南（[https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)）。  
   
-有关可用于在当前运行 Windows 2000 Active Directory 的组织中计划和部署 AD DS 的详细任务的列表，请参阅 [Checklist：在 Windows 2000 组织 @ no__t 中部署 AD DS。  
+有关可用于在当前运行 Windows 2000 Active Directory 的组织中计划和部署 AD DS 的详细任务的列表，请参阅[清单：在 Windows 2000 组织中部署 AD DS](https://technet.microsoft.com/library/cc732737.aspx)。  
   
 
 

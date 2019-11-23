@@ -53,7 +53,7 @@ ms.locfileid: "71405352"
 
     a. 双击 " **NPS （本地）** "，双击 " **radius 客户端和服务器**"，单击 " **radius 客户端**"，然后在详细信息窗格中，双击要更改的 RADIUS 客户端。
 
-    b. 在 RADIUS 客户端**属性**中的**ADDRESS \(IP 或 DNS @ no__t**中，键入 NPS 代理的新 IP 地址。
+    b. 在 RADIUS 客户端**属性**中的 " **Address \(IP 或 DNS\)** 中，键入 NPS 代理的新 IP 地址。
 
 4. 如果已将 NPS 代理配置为使用 SQL Server 日志记录，请验证运行 SQL Server 和 NPS 代理的计算机之间的连接是否仍然正常工作。
 

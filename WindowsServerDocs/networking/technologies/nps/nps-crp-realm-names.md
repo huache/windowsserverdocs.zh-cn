@@ -24,9 +24,9 @@ ms.locfileid: "71405465"
 
 用户名 RADIUS 属性是一个字符串，通常包含用户帐户位置和用户帐户名称。 用户帐户位置也称为领域名称或领域名称，与域的概念（包括 DNS 域、Active Directory®域和 Windows NT 4.0 域）同义。 例如，如果用户帐户位于名为 example.com 的域的用户帐户数据库中，则 example.com 是领域名称。
 
-在另一个示例中，如果用户名 RADIUS 属性包含用户名 user1@example.com，user1 是用户帐户名，example.com 是领域名称。 可以在用户名中以前缀或后缀形式显示领域名称：
+在另一个示例中，如果用户名 "RADIUS" 属性包含 "用户名" user1@example.com，user1 是用户帐户名，example.com 是领域名称。 可以在用户名中以前缀或后缀形式显示领域名称：
 
-- **Example\user1**。 在此示例中，领域名称**示例**是前缀;它也是 Active Directory @ no__t-1 域服务 \(AD DS @ no__t 域的名称。
+- **Example\user1**。 在此示例中，领域名称**示例**是前缀;它也是 Active Directory&reg; 域服务 \(AD DS\) 域的名称。
 
 - <strong>user1@example.com</strong>： 在此示例中，领域名称**example.com**为后缀;它可以是 DNS 域名或 AD DS 域的名称。
 
@@ -58,9 +58,9 @@ ms.locfileid: "71405465"
 
 您可以为用户名属性配置属性操作规则，以更改以下各项：
 
-- 从用户名中删除领域名称 @no__t 0also 称为领域去除 @ no__t-1。 例如，用户名 user1@example.com 将更改为 user1。
+- 从用户名中删除领域名称 \(也称为领域剥离\)。 例如，用户名 user1@example.com 更改为 user1。
 
-- 更改领域名称，但不更改其语法。 例如，用户名 user1@example.com 将更改为 user1@wcoast.example.com。
+- 更改领域名称，但不更改其语法。 例如，用户名 user1@example.com 更改为 user1@wcoast.example.com。
 
 - 更改领域名称的语法。 例如，用户名 example\user1 更改为 user1@example.com。
 

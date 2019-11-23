@@ -34,11 +34,11 @@ ms.locfileid: "71371276"
 sc [<ServerName>] delete [<ServiceName>]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|\<ServerName >|指定服务所在的远程服务器的名称。 名称必须使用通用命名约定（UNC）格式（例如 \\ @ no__t-1myserver）。 若要在本地运行 SC.EXE，请省略此参数。|
+|\<ServerName >|指定服务所在的远程服务器的名称。 名称必须使用通用命名约定（UNC）格式（例如 \\\\myserver）。 若要在本地运行 SC.EXE，请省略此参数。|
 |\<ServiceName >|指定**getkeyname**操作返回的服务名称。|
 |?|在命令提示符下显示帮助。|
 

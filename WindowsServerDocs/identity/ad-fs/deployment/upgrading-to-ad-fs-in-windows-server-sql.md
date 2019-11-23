@@ -54,12 +54,12 @@ Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。
 1.  使用服务器管理器在 Windows Server 2016 上安装 Active Directory 联合身份验证服务角色  
 
 2.  使用 AD FS 配置向导将新的 Windows Server 2016 服务器加入现有 AD FS 场。  在**欢迎**屏幕上，单击 "**下一步**"。
- ![Join farm @ no__t-1  
+ ![联接场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)  
 3.  在 "**连接到 Active Directory 域服务**" 屏幕上，p) 具有执行联合身份验证服务配置权限的**管理员帐户**，然后单击 "**下一步**"。
 4.  在 "**指定场**" 屏幕上，输入 SQL server 和实例的名称，然后单击 "**下一步**"。
-![Join farm @ no__t-1
+![联接场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
 5.  在 "**指定 SSL 证书**" 屏幕上，指定证书，然后单击 "**下一步**"。
-![Join farm @ no__t-1
+![联接场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png)
 6.  在 "**指定服务帐户**" 屏幕上，指定服务帐户，然后单击 "**下一步**"。
 7.  在 "**查看选项**" 屏幕上，查看选项，然后单击 "**下一步**"。
 8.  在 "**先决条件检查**" 屏幕上，确保所有先决条件检查已通过，然后单击 "**配置**"。
@@ -72,11 +72,11 @@ Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。
 >使用 SQL 作为数据库时，无需使用 AdfsSyncProperties-Role 设置主 AD FS 服务器。  这是因为在此配置中所有节点均被视为主要节点。
 
 1.  在 Windows Server 2012 R2 上 AD FS Server 上服务器管理器使用 "**管理**" 下的 "**删除角色和功能**"。
-![Remove server @ no__t-1
+![删除服务器](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png)
 2.  在“开始之前”屏幕上，单击“下一步”。
 3.  在**服务器选择**屏幕上，单击 "**下一步**"。
 4.  在 "**服务器角色**" 屏幕上，删除**Active Directory 联合身份验证服务**旁边的复选标记，然后单击 "**下一步**"。
-![Remove server @ no__t-1
+![删除服务器](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove2.png)
 5.  在**功能**屏幕上，单击 "**下一步**"。
 6.  在**确认**屏幕上，单击 "**删除**"。
 7.  完成此过程后，请重新启动服务器。
@@ -89,11 +89,11 @@ Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。
 
 1. 现在，在 Windows Server 2016 服务器上打开 PowerShell 并运行以下内容： **$cred = Get-Credential**并按 enter。
 2. 输入对 SQL Server 拥有管理员权限的凭据。
-3. 现在，在 PowerShell 中输入以下内容：**AdfsFarmBehaviorLevelRaise-Credential $cred**
-2. 出现提示时，键入**Y**。这将开始提升级别。  完成此过程后，您已成功地引发了 FBL。  
-@no__t 0Finish Update @ no__t-1
+3. 现在，在 PowerShell 中输入以下内容： **AdfsFarmBehaviorLevelRaise-Credential $cred**
+2. 出现提示时，键入**Y**。 这将开始提升级别。  完成此过程后，您已成功地引发了 FBL。  
+![完成更新](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish1.png)
 3. 现在，如果你前往 AD FS 管理，你将看到已添加的新节点，用于 Windows Server 2016 中的 AD FS  
-4. 同样，可以使用 PowerShell cmdlt：AdfsFarmInformation 显示当前 FBL。  
+4. 同样，可以使用 PowerShell cmdlt： AdfsFarmInformation 显示当前 FBL。  
 ![完成更新](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish2.png)
 
 #### <a name="upgrade-the-configuration-version-of-existing-wap-servers"></a>升级现有 WAP 服务器的配置版本

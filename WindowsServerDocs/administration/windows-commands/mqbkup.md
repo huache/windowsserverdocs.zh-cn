@@ -22,7 +22,7 @@ ms.locfileid: "71373508"
 ---
 # <a name="mqbkup"></a>mqbkup
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 将 MSMQ 消息文件和注册表设置备份到存储设备，并还原以前存储的消息和设置。   
 备份和还原操作都将停止本地 MSMQ 服务。 如果已预先启动 MSMQ 服务，则实用工具将在备份或还原操作结束时尝试重新启动 MSMQ 服务。 如果服务在运行此实用工具之前已停止，则不会尝试重新启动该服务。  
@@ -31,12 +31,12 @@ ms.locfileid: "71373508"
 ```  
 mqbkup {/b | /r} <folder path_to_storage_device>  
 ```  
-### <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>参数  
 |参数|描述|  
 |-------|--------|  
 |/b|指定备份操作|  
 |/r|指定还原操作|  
-|< 文件夹 path_to_storage @ no__t-0device >|指定 MSMQ 消息文件和注册表设置的存储路径|  
+|\_设备 path_to_storage < 文件夹 >|指定 MSMQ 消息文件和注册表设置的存储路径|  
 |/?|在命令提示符下显示帮助。|  
 ## <a name="BKMK_Examples"></a>示例  
 若要备份所有 MSMQ 消息文件和注册表设置，并将它们存储在 C：驱动器上的*Msmqbkup*文件夹中。  

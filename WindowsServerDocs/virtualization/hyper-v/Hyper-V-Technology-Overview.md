@@ -20,7 +20,7 @@ ms.locfileid: "71366782"
 ---
 # <a name="hyper-v-technology-overview"></a>Hyper-v 技术概述
 
->适用于：Windows Server 2016，Microsoft Hyper-V Server 2016，Windows Server 2019，Microsoft Hyper-V 服务器2019
+>适用于： Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 Hyper-v 是 Microsoft 的硬件虚拟化产品。 它允许您创建和运行计算机的软件版本（称为*虚拟机*）。 每个虚拟机的行为类似于一台运行操作系统和程序的完整计算机。 当你需要计算资源时，虚拟机为你带来了更大的灵活性，有助于节省时间和资金，并且比只是在物理硬件上运行一个操作系统更有效。
 
@@ -68,7 +68,7 @@ Hyper-v 提供了许多功能。 这是一种概述，按功能的提供或帮�
 
 Hyper-v 在 Windows Server 和 Windows 中提供，作为 Windows Server x64 版本可用的服务器角色。 有关服务器说明，请参阅[在 Windows server 上安装 hyper-v 角色](get-started/Install-the-Hyper-V-role-on-Windows-Server.md)。 在 Windows 上，它在某些64位版本的 Windows 中作为[功能](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index)提供。 它还以可下载的独立服务器产品（ [Microsoft Hyper-V 服务器](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019)）提供。
 
-## <a name="supported-operating-systems"></a>受支持的操作系统
+## <a name="supported-operating-systems"></a>支持的操作系统
 
 许多操作系统将在虚拟机上运行。 通常，使用 x86 体系结构的操作系统将在 Hyper-v 虚拟机上运行。 但并不是所有可以运行的操作系统都进行了测试和支持。 有关支持的功能的列表，请参阅：
 
@@ -90,7 +90,7 @@ Hyper-v 也提供管理和连接工具。 可以将它们安装在安装了 Hype
 
 - Hyper-V 管理器
 - [Windows PowerShell 的 hyper-v 模块](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [虚拟机连接](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect)@no__t-名为 VMConnect @ no__t-2 的1sometimes
+- [虚拟机连接](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect)\(有时称为 VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>相关技术

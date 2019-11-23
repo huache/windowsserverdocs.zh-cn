@@ -34,14 +34,14 @@ ms.locfileid: "71377279"
 expose <ShadowID> {<Drive:> | <Share> | <MountPoint>}
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
 |ShadowID|指定要公开的卷影副本的卷影副本 ID。|
-|\<Drive： >|以驱动器号（例如，P：）公开指定的卷影副本。|
-|\<Share >|公开共享中的指定卷影副本（例如 \\ @ no__t *，@no__t-* 3。|
-|\<MountPoint >|向装入点公开指定的卷影副本（例如，C:\shadowcopy @ no__t-0。|
+|\<驱动器： >|以驱动器号（例如，P：）公开指定的卷影副本。|
+|\<共享 >|公开共享中的指定卷影副本（例如 \\\\*MachineName*\)。|
+|\<装入点 >|向装入点公开指定的卷影副本（例如，C:\shadowcopy\)。|
 
 ## <a name="remarks"></a>备注
 

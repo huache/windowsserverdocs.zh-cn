@@ -18,7 +18,7 @@ ms.locfileid: "71409097"
 ---
 # <a name="ad-forest-recovery---removing-the-global-catalog"></a>AD 林恢复-删除全局编录  
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
  使用以下过程从 DC 中删除全局编录。 
   
@@ -31,7 +31,7 @@ ms.locfileid: "71409097"
 3. 展开 "**服务器**" 容器，然后展开要从中删除全局编录的 DC 的*服务器*对象。 
 4. 右键单击 " **NTDS 设置**"，然后单击 "**属性**"。 
 5. 清除 "**全局编录**" 复选框。 
-   ![Remove GC @ no__t-1
+   ![删除 GC](media/AD-Forest-Recovery-Remove-GC/removegc1.png)
 6. 单击 **“应用”** 。
   
 ## <a name="to-remove-the-global-catalog-using-repadmin"></a>使用 Repadmin 删除全局编录  

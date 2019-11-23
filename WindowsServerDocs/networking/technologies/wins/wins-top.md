@@ -21,7 +21,7 @@ ms.locfileid: "71405250"
 
 Windows Internet 名称服务 (WINS) 是传统的计算机名称注册和解析访问服务，该服务将计算机 NetBIOS 名称映射到 IP 地址。
 
-如果你尚未在网络上部署 WINS，请不要部署 WINS，而应部署域名系统 \(DNS @ no__t-1。 DNS 还提供计算机名称注册和解析服务，并在 WINS 上包含许多其他权益，如与 Active Directory 域服务的集成。
+如果你的网络上还没有部署 WINS，请不要部署 WINS，而是部署域名系统 \(DNS\)。 DNS 还提供计算机名称注册和解析服务，并在 WINS 上包含许多其他权益，如与 Active Directory 域服务的集成。
 
 有关详细信息，请参阅[域名系统（DNS）](https://docs.microsoft.com/windows-server/networking/dns/dns-top)
 

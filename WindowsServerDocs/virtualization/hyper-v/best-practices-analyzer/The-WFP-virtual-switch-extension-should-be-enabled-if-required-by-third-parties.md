@@ -19,7 +19,7 @@ ms.locfileid: "71364624"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>如果第三方扩展需要，应启用 WFP 虚拟交换机扩展
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71364624"
 ## <a name="impact"></a>**对**  
 *某些第三方虚拟交换机扩展可能无法在下列虚拟交换机上正常运行：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
 *使用 Windows PowerShell cmdlet VMSwitchExtension 启用 Windows 筛选平台（如果第三方扩展需要）。*  
@@ -55,7 +55,7 @@ ms.locfileid: "71364624"
 Enable-VMSwitchExtension -VMSwitchName External -Name "Microsoft Windows Filtering Platform"  
 ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [VMSwitchExtension](https://technet.microsoft.com/library/hh848541.aspx)  
   
 

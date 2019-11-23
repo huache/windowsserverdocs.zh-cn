@@ -34,8 +34,8 @@ ms.locfileid: "71385547"
 AD FS 2019 中提供了以下附加安全改进：
 - **使用智能卡登录的远程 PSH** -客户现在可以通过 PSH 使用智能卡远程连接到 ADFS，并使用它来管理所有 PSH 函数（包括多节点 PSH cmdlet）。
 - **HTTP 标头自定义**-客户现在可以自定义 ADFS 响应期间发出的 HTTP 标头。 这包括以下标头
-     - HSTS这表明，ADFS 终结点仅可用于兼容浏览器的 HTTPS 终结点，以便强制执行
-     - x 框架-选项：允许 ADFS 管理员允许特定的信赖方嵌入 ADFS 交互式登录页的 Iframe。 应该谨慎使用这一点，只需在 HTTPS 主机上使用。 
+     - HSTS：这表明，ADFS 终结点仅可用于兼容浏览器的 HTTPS 终结点，以便强制执行
+     - x 帧选项：允许 ADFS 管理员允许特定的信赖方嵌入 ADFS 交互式登录页的 Iframe。 应该谨慎使用这一点，只需在 HTTPS 主机上使用。 
      - 将来的标头：还可以配置其他将来的标头。 
 
 有关详细信息，请参阅[自定义 HTTP security response 标头与 AD FS 2019](../../ad-fs/operations/customize-http-security-headers-ad-fs.md) 
@@ -52,7 +52,7 @@ AD FS 2019 中提供了以下附加安全改进：
 AD FS 2019 中进行了以下登录 SSO 改进：
 
 - [使用居中主题对 UX 进行分页](../operations/AD-FS-paginated-sign-in.md)-现在已移动到分页的 ux 流，它允许 adfs 进行验证并提供更流畅的登录体验。 ADFS 现在使用居中的 UI （而不是屏幕的右侧）。 你可能需要更新的徽标和背景图像以使其符合此体验。 这还会反映 Azure AD 中提供的功能。
-- **Bug 修复：执行 PRT auth @ no__t 时，Win10 设备的持久性 SSO 状态。这解决了在使用 Windows 10 设备的 PRT authentication 时，未保留 MFA 状态的问题。 问题的结果是，最终用户经常收到第二因素凭据（MFA）的提示。 通过客户端 TLS 和通过 PRT 机制成功执行设备身份验证时，该修补程序还会使体验保持一致。 
+- **Bug 修复：执行 PRT auth 时，Win10 设备的持久性 SSO 状态**  这解决了使用适用于 Windows 10 设备的 PRT authentication 时未保存 MFA 状态的问题。 问题的结果是，最终用户经常收到第二因素凭据（MFA）的提示。 通过客户端 TLS 和通过 PRT 机制成功执行设备身份验证时，该修补程序还会使体验保持一致。 
 
 
 ### <a name="suppport-for-building-modern-line-of-business-apps"></a>用于构建现代业务线应用的支持
@@ -60,9 +60,9 @@ AD FS 2019 中添加了以下对生成新式 LOB 应用的支持：
 
  - **Oauth 设备流/配置文件**-AD FS 现在支持 oauth 设备流配置文件，以便在不具有用于支持丰富登录体验的 UI 外围设备的设备上执行登录。 这允许用户在不同的设备上完成登录体验。 此功能是在 Azure Stack 中 Azure CLI 体验所必需的，并且可以在其他情况下使用。 
  - **删除 "Resource" 参数**-AD FS 现在已不再需要指定资源参数，该参数与当前 Oauth 规范的行为相同。 除请求权限外，客户端现在可以将信赖方信任标识符作为作用域参数提供。 
- - **AD FS 响应中的 CORS 标头**-客户现在可以构建单页面应用程序，以允许客户端 JS 库通过在 AD FS 上通过查询 OIDC 发现文档中的签名密钥来验证 id_token 的签名。 
+ - **AD FS 响应中的 CORS 标头**-客户现在可以构建单页面应用程序，以允许客户端 JS 库通过从 AD FS 上的 OIDC 发现文档中查询签名密钥来验证 id_token 的签名。 
  - **PKCE 支持**-AD FS 添加 PKCE 支持，以在 OAuth 内提供安全的身份验证代码流。 这会为此流额外添加一个安全层，以防止代码被劫持并从其他客户端重播。 
- - **Bug 修复：发送 x5t 和儿童理赔 @ no__t-0-这是一个次要 bug 修复。 AD FS 现在还发送 "儿童" 声明，以表示用于验证签名的密钥 id 提示。 以前 AD FS 仅将其作为 "x5t" 声明发送。
+ - **Bug 修复：发送 x5t 和儿童索赔**-这是一个次要 Bug 修复。 AD FS 现在还发送 "儿童" 声明，以表示用于验证签名的密钥 id 提示。 以前 AD FS 仅将其作为 "x5t" 声明发送。
 
 ### <a name="supportability-improvements"></a>可支持性改进
 以下可支持性改进不属于 AD FS 2019：
@@ -76,14 +76,14 @@ AD FS 2019 中现在包含以下部署更新：
 
 ### <a name="saml-updates"></a>SAML 更新
 以下 SAML 更新位于 AD FS 2019：
-- **Bug 修复：修复聚合联合 @ no__t 中的错误-围绕聚合联合身份验证支持（例如 InCommon），有很多 bug 修复。 解决方法如下： 
-  - 改善了聚合联合元数据文档中大 # 实体的缩放。以前，这会失败并出现 "ADMIN0017" 错误。 
+- **Bug 修复：修复聚合联合中的 bug** -围绕联合身份验证支持（例如 InCommon）提供了很多 bug 修复程序。 解决方法如下： 
+  - 提高了聚合联合元数据文档中大 # 实体的缩放比例。以前，这会失败并出现 "ADMIN0017" 错误。 
   - 使用 "ScopeGroupID" 参数通过 AdfsRelyingPartyTrustsGroup PSH cmdlet 进行查询。 
   - 处理有关重复 entityID 的错误条件
 
 
 ### <a name="azure-ad-style-resource-specification-in-scope-parameter"></a>作用域参数中的 Azure AD 样式资源规范 
-之前，AD FS 要求所需的资源和作用域位于任何身份验证请求中的单独参数中。 例如，典型的 oauth 请求如下所示：7 **https：&#47;&#47;fs.contoso.com/adfs/oauth2/authorize？ </br>response_type = code & client_id = claimsxrayclient & 资源 = urn： microsoft： </br>adfs： claimsxray & scope = oauth & redirect_uri = https：&#47; &#47;adfshelp.microsoft.com/</br> ClaimsXray/TokenResponse & prompt = login**
+之前，AD FS 要求所需的资源和作用域位于任何身份验证请求中的单独参数中。 例如，典型的 oauth 请求如下所示： 7 **https：&#47;&#47;fs.contoso.com/adfs/oauth2/authorize？</br>response_type = code & client_id = claimsxrayclient & resource = urn： microsoft：</br>adfs： claimsxray & scope = oauth & redirect_uri =&#47;&#47;https： adfshelp.microsoft.com/</br> claimsxray/TokenResponse & prompt = login**
  
 通过服务器2019上的 AD FS，现在可以传递嵌入在 scope 参数中的资源值。 这与可以对 Azure AD 进行身份验证的方式一致。 
 
@@ -106,9 +106,9 @@ B. 授权终结点的响应方式通常为，但记录为 "t （code_verifier）
 
 C. 然后，客户端像往常一样在访问令牌请求中发送授权代码，但包含在（A）生成的 "code_verifier" 机密。 
 
-2-D. AD FS 转换 "code_verifier"，并将其与（B）中的 "t （code_verifier）" 进行比较。  如果访问不相等，则拒绝访问。 
+2-d. AD FS 转换 "code_verifier"，并将其与（B）中的 "t （code_verifier）" 进行比较。  如果访问不相等，则拒绝访问。 
 
-#### <a name="faq"></a>常见问题 
+#### <a name="faq"></a>常见问题解答 
 **：.** 能否传递资源值作为范围值的一部分，如如何对 Azure AD 进行请求呢？ 
 </br>**的.** 通过服务器2019上的 AD FS，现在可以传递嵌入在 scope 参数中的资源值。 作用域参数现在可以组织为以空格分隔的列表，其中每个条目都作为资源/作用域的结构。 例如  
 **< 创建一个有效的示例请求 >**

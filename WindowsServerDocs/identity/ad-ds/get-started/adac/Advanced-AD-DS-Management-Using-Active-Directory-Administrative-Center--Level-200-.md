@@ -98,7 +98,7 @@ Active Directory 回收站可保留在林中删除的所有对象。 它将根�
   
 **已删除对象**容器向你显示该域分区中的所有可还原对象。 早于 **msDS-deletedObjectLifetime** 的已删除对象称为已回收对象。 Active Directory 管理中心不会显示已回收对象，并且你无法使用 Active Directory 管理中心还原这些对象。  
   
-有关回收站的体系结构和处理规则的更深入说明，请参阅 [The AD 回收站：了解、实现、最佳实践和疑难解答 @ no__t-0。  
+有关回收站的体系结构和处理规则的更深入说明，请参阅 [AD 回收站：了解、实现、最佳做法和故障排除](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)。  
   
 Active Directory 管理中心人为地将从容器返回的默认对象数量限制为 20,000 个对象。 通过依次单击“管理”菜单和“管理列表选项”，可以将此上限增加到 100,000 个对象。  
   
@@ -122,9 +122,9 @@ Active Directory 管理中心将提供强大的条件和筛选选项，你应该
 - 名称  
 - 删除时间  
 - 最后一个已知的父对象  
-- 类型  
+- 在任务栏的搜索框中键入  
 - 描述  
-- City  
+- 城市  
 - 国家/地区  
 - 部门  
 - 员工 ID  
@@ -202,7 +202,7 @@ Active Directory 管理中心将提供强大的条件和筛选选项，你应该
   
 如果“销售” OU 包含了它自己的子 OU，则你需要先还原子 OU，然后再还原其子项，依此类推。  
   
-若要通过指定已删除的父容器来还原所有嵌套的已删除对象，请参阅 @no__t 0Appendix B：还原多个已删除的 Active Directory 对象（示例脚本） ](https://technet.microsoft.com/library/dd379504(WS.10).aspx)。  
+若要通过指定已删除的父容器来还原所有嵌套的已删除对象，请参阅 [附录 B：还原多个已删除的 Active Directory 对象（示例脚本）](https://technet.microsoft.com/library/dd379504(WS.10).aspx)。  
   
 用于还原已删除对象的 Active Directory Windows PowerShell cmdlet 为：  
 
@@ -447,7 +447,7 @@ Active Directory 管理中心现在包含内置日志记录，作为跟踪配置
 
 在没有可用 Active Directory Web 服务实例时显示的错误如下：  
   
-|Error|操作|
+|错误|操作|
 | --- | --- |  
 |“无法连接到任何域。 请在连接可用时刷新或重试”|在 Active Directory 管理中心应用程序启动时显示|
 |"在运行 Active Directory Web 服务（ADWS）的 *<NetBIOS domain name>* 域中找不到可用的服务器"|当尝试在 Active Directory 管理中心应用程序中选择域节点时显示|
@@ -470,7 +470,7 @@ Active Directory 管理中心现在包含内置日志记录，作为跟踪配置
    Netstat -anob > ports.txt  
    ```
 
-   检查 ports.txt 文件，并验证 ADWS 服务正在端口 9389 上进行侦听。 例如：  
+   检查 ports.txt 文件，并验证 ADWS 服务正在端口 9389 上进行侦听。 示例：  
 
    ```
    TCP    0.0.0.0:9389    0.0.0.0:0    LISTENING    1828  
@@ -484,6 +484,6 @@ Active Directory 管理中心现在包含内置日志记录，作为跟踪配置
   
 4. 在运行 Active Directory 管理中心的计算机上和 NLTEST 返回的域控制器上安装 NetMon 或其他网络捕获实用程序。 从两台计算机中收集同时进行的网络捕获 - 你在这些计算机中启动 Active Directory 管理中心并可以在停止捕获之前看到错误。 验证客户端能够在端口 TCP 9389 上与域控制器进行发送和接收操作。 如果数据包已发送但不能到达，或者可以到达并且域控制器可进行回复，但它们永远不会到达客户端，则可能是那个将数据包放在该端口的网络上的计算机之间存在防火墙。 此防火墙可能是软件或硬件，并且可能是第三方端点保护（防病毒）软件的一部分。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [AD 回收站、细粒度密码策略和 PowerShell 历史记录](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

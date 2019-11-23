@@ -32,7 +32,7 @@ ms.locfileid: "71374807"
 ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -43,7 +43,7 @@ ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 的计算机可以使用 Kerberos 服务器来管理身份验证，而不是使用运行 Windows Server 操作系统的域，这些系统参与Kerberos 领域。 此条目将建立领域的功能。 下表对每个进行了说明。
 
-|ReplTest1|领域标志|描述|
+|值|领域标志|描述|
 |-----|----------|-----------|
 |0xF|全部|设置所有领域标志。|
 |0x00|无|未设置领域标志，并且未启用任何其他功能。|
@@ -53,7 +53,7 @@ ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 |0x08|NcSupported|此领域支持名称规范化，这允许 DNS 和领域的命名标准。|
 |0x80|RC4|此领域支持 RC4 加密以启用跨领域信任，这允许使用 TLS。|
 
-领域标志存储在**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains @ no__t-1**<em>RealmName</em>下的注册表中。 默认情况下，注册表中不存在此项。 可以使用[Ksetup： addrealmflags](ksetup-addrealmflags.md)命令填充注册表。
+领域标志存储在注册表中**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains\\** <em>RealmName</em>下。 默认情况下，注册表中不存在此项。 可以使用[Ksetup： addrealmflags](ksetup-addrealmflags.md)命令填充注册表。
 
 可以通过查看**ksetup**的输出来查看哪些领域标志可用和设置。
 

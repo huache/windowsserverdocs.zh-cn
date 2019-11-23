@@ -17,7 +17,7 @@ ms.locfileid: "71940794"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>租户的受防护的 Vm-创建屏蔽数据来定义受防护的 VM
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 屏蔽数据文件（也称为预配数据文件或 PDK 文件）是加密文件，由租户或 VM 所有者创建，用于保护重要的 VM 配置信息，例如管理员密码、RDP 和其他标识相关的证书，域加入凭据等。 本主题提供有关如何创建防护数据文件的信息。 创建文件之前，必须从托管服务提供商处获取模板磁盘，或者根据[租户的受防护 vm 创建模板磁盘（可选）](guarded-fabric-tenant-creates-template-disk.md)创建模板磁盘。
 
@@ -100,7 +100,7 @@ ms.locfileid: "71940794"
     | @Prefix-2-1@        | 10.0.20.0/24         |
     | @NextHop-2-1@       | 10.0.20.1            |
 
-使用替换字符串时，务必确保在 VM 预配过程中填充字符串。 如果部署时未提供 @ProductKey @ 之类的字符串，则将无人参与文件中的 &lt;ProductKey @ no__t 节点保留为空白，则专用化过程将失败，并且你将无法连接到 VM。
+使用替换字符串时，务必确保在 VM 预配过程中填充字符串。 如果部署时未提供 @ProductKey@ 之类的字符串，则在无人参与文件中保留 &lt;ProductKey&gt; 节点，则特殊化过程将失败，并且你将无法连接到 VM。
 
 另请注意，仅当使用的是 VMM 静态 IP 地址池时，才使用与表末尾相关的网络相关的替换字符串。 托管服务提供商应能够告诉你是否需要这些替换字符串。 有关 VMM 模板中静态 IP 地址的详细信息，请参阅 VMM 文档中的以下内容：
 
@@ -161,13 +161,13 @@ ms.locfileid: "71940794"
 
 运行防护数据文件向导创建防护数据（PDK）文件。 在此，你将添加 RDP 证书、无人参与文件、卷签名目录、所有者保护者和在上一步骤中获取的下载的保护者元数据。
 
-1. 使用服务器管理器或以下 Windows PowerShell 命令，在计算机上安装**远程服务器管理工具 @no__t 功能管理工具 &gt; 受防护的 VM 工具**：
+1. 使用服务器管理器或以下 Windows PowerShell 命令在计算机上 **&gt; 防护的 VM 工具上安装远程服务器管理工具 &gt; 功能管理工具**：
 
     ```powershell
     Install-WindowsFeature RSAT-Shielded-VM-Tools
     ```
 
-2. 从 "开始" 菜单上的 "管理员工具" 部分中打开 "防护数据文件向导"，或通过运行以下可执行文件**C： \\Windows @ no__t-2System32\\ShieldingDataFileWizard.exe**。
+2. 从 "开始" 菜单上的 "管理员工具" 部分中打开 "防护数据文件向导"，或通过运行以下可执行文件**C：\\Windows\\System32\\ShieldingDataFileWizard**。
 
 3. 在第一页上，使用第二个文件选择框为防护数据文件选择位置和文件名。 通常，在拥有任何使用该防护数据创建的 Vm （例如，HR、IT、财务）及其正在运行的工作负荷角色（例如，文件服务器、web 服务器或任何其他无人参与文件配置的其他内容）的实体之后，会将屏蔽数据文件命名为。 将单选按钮设置为**屏蔽模板的防护数据**。
 
@@ -200,7 +200,7 @@ ms.locfileid: "71940794"
 
 6. 在 "**专用化值**" 页上，单击 "**浏览**" 以选择将用于专用化 vm 的 unattend.xml 文件。
 
-    使用底部的 "**添加**" 按钮可将任何其他文件添加到专用化过程中所需的 PDK。 例如，如果无人参与文件正在将 RDP 证书安装到 VM 上（如[使用 ShieldingDataAnswerFile 函数生成答案文件](guarded-fabric-sample-unattend-xml-file.md)中所述），则应添加 RDP 证书 PFX 文件和 RDPCertificateConfig在此处编写脚本。 请注意，在此处指定的任何文件将自动复制到创建的 VM 上的 C @no__t： 0temp @ no__t-1。 在按路径引用文件时，无人参与文件应将这些文件放在该文件夹中。
+    使用底部的 "**添加**" 按钮可将任何其他文件添加到专用化过程中所需的 PDK。 例如，如果无人参与文件正在将 RDP 证书安装到 VM 上（如[使用 ShieldingDataAnswerFile 函数生成答案文件](guarded-fabric-sample-unattend-xml-file.md)中所述），则应在此处添加 RDP 证书 PFX 文件和 RDPCertificateConfig 脚本。 请注意，此处指定的任何文件都将自动复制到创建的 VM 上的 C：\\temp\\。 在按路径引用文件时，无人参与文件应将这些文件放在该文件夹中。
 
 7. 在下一页上查看您的选择，然后单击 "**生成**"。
 
@@ -230,11 +230,11 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 ```
 
 > [!TIP]
-> 如果你使用的是自签名证书或已向 HGS 注册的证书已过期，你可能需要使用 HgsGuardian 命令的 @no__t 0 和/或 @no__t 标志来绕过安全检查。
+> 如果你使用的是自签名证书或已向 HGS 注册的证书已过期，你可能需要使用 HgsGuardian 命令的 `-AllowUntrustedRoot` 和/或 `-AllowExpired` 标志来跳过安全检查。
 
 还需要为要与此防护数据文件一起使用的每个模板磁盘[获取卷签名目录](#get-the-volume-signature-catalog-file)，并获取[防护数据答案文件](#create-an-answer-file)，以允许操作系统自动完成其专用化任务。
 最后，决定是要将 VM 完全屏蔽还是只是启用了 vTPM。
-对于完全受防护的 VM，请使用 `-Policy Shielded`; 对于允许基本控制台连接和 PowerShell Direct 的启用 vTPM 的 VM，请使用 `-Policy EncryptionSupported`。
+将 `-Policy Shielded` 用于完全受防护的 VM 或 `-Policy EncryptionSupported` 用于允许基本控制台连接和 PowerShell Direct 的启用 vTPM 的 VM。
 
 一切准备就绪后，运行以下命令以创建防护数据文件：
 
@@ -244,18 +244,18 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 ```
 
 > [!TIP]
-> 如果你使用的是需要包含在防护数据文件中的自定义 RDP 证书、SSH 密钥或其他文件，请使用 `-OtherFile` 参数将其包含在内。 可以提供逗号分隔的文件路径列表，如 `-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
+> 如果使用的是需要包含在防护数据文件中的自定义 RDP 证书、SSH 密钥或其他文件，请使用 `-OtherFile` 参数将其包含在内。 可以提供逗号分隔的文件路径列表，如 `-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
 
 在上述命令中，名为 "Owner" 的监护人（从 HgsGuardian 获取）将能够在未来更改 VM 的安全配置，而 "美国 Datacenter" 则可以运行 VM，但不会更改其设置。
 如果有多个监护人，请用逗号分隔监护人的名称，如 `'EAST-US Datacenter', 'EMEA Datacenter'`。
 卷 ID 限定符指定你是仅信任模板磁盘还是未来版本（GreaterThanOrEquals）的确切版本（等于）。
 磁盘名称和签名证书必须与部署时要考虑的版本比较完全匹配。
-你可以通过向 `-VolumeIDQualifier` 参数提供一个以逗号分隔的卷 ID 限定符列表来信任多个模板磁盘。
-最后，如果有其他文件需要随 VM 一起附带答案文件，请使用 @no__t 参数，并提供以逗号分隔的文件路径列表。
+可以通过向 `-VolumeIDQualifier` 参数提供以逗号分隔的卷 ID 限定符列表来信任多个模板磁盘。
+最后，如果有其他文件需要随 VM 一起附带答案文件，请使用 `-OtherFile` 参数，并提供以逗号分隔的文件路径列表。
 
 请参阅[ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)和[VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)的 cmdlet 文档，了解配置防护数据文件的其他方法。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [部署受防护的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受保护的结构和受防护的 VM](guarded-fabric-and-shielded-vms-top-node.md)

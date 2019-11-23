@@ -18,11 +18,11 @@ ms.locfileid: "71406124"
 ---
 # <a name="gateway-bandwidth-allocation"></a>网关带宽分配
 
->适用于：Windows Server
+>适用于： Windows Server
 
 在 Windows Server 2016 中，IPsec、GRE 和 L3 的单个隧道带宽是网关总容量的比率。 因此，客户可以根据需要从网关 VM 传出的标准 TCP 带宽提供网关容量。
 
-此外，网关上的最大 IPsec 隧道带宽仅限（3/20）客户提供 @no__t 0Gateway 的容量。 例如，如果将网关容量设置为 100 Mbps，则 IPsec 隧道容量将为 150 Mbps。 GRE 和 L3 隧道的等效比率分别为1/5 和1/2。
+此外，网关上的最大 IPsec 隧道带宽仅限（3/20）\*客户提供的网关容量。 例如，如果将网关容量设置为 100 Mbps，则 IPsec 隧道容量将为 150 Mbps。 GRE 和 L3 隧道的等效比率分别为1/5 和1/2。
 
 虽然这适用于大多数部署，但固定比率模型不适用于高吞吐量环境。 即使数据传输速率较高（比如，高于 40 Gbps），最大程度上，最大程度地增加了 SDN 网关隧道，因为存在内部因素。
 
@@ -60,15 +60,15 @@ ms.locfileid: "71406124"
 
 网关上的剩余可用容量 = 网关的总容量– IPsec 吞吐量比已分配的 IPsec 吞吐量（已用容量）
 
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-525 – 5 * 2 = 15 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25 – 5 * 2 = 15 Gbps
 
 可在网关上分配的其余 IPsec 吞吐量 
 
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t = 3 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5-2 = 3 Gbps
 
 可在网关分配的其余 GRE 吞吐量 = 网关/GRE 吞吐量比的剩余容量 
 
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-515 * 3/5 = 9 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 * 3/5 = 9 Gbps
 
 吞吐量比根据网关的总容量而定。 需要注意的一点是，应将总容量设置为可用于网关 VM 的 TCP 带宽。 如果在网关上托管多个 Vm，则必须相应地调整网关的总容量。
 
@@ -76,7 +76,7 @@ ms.locfileid: "71406124"
 
 ## <a name="windows-server-2016-behavior"></a>Windows Server 2016 行为
 
-Windows Server 2016 的网关容量计算算法保持不变。 在 Windows Server 2016 中，最大 IPsec 隧道带宽限制为（3/20）在网关上 @no__t 0gateway 容量。 GRE 和 L3 隧道的等效比率分别为1/5 和1/2。
+Windows Server 2016 的网关容量计算算法保持不变。 在 Windows Server 2016 中，最大 IPsec 隧道带宽限制为（3/20）\*网关上的网关容量。 GRE 和 L3 隧道的等效比率分别为1/5 和1/2。
 
 如果要从 Windows Server 2016 升级到 Windows Server 2019：
 

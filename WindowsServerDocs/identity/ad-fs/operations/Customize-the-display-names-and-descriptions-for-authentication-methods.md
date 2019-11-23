@@ -19,7 +19,7 @@ ms.locfileid: "71407561"
 # <a name="customize-the-display-names-and-descriptions-for-authentication-methods"></a>为身份验证方法自定义显示名称和说明 
 
 
-若要为身份验证方法自定义显示名称和说明，可以使用 `Set-AdfsAuthenticationProviderWebContent` PowerShell cmdlt。  若要使用此 cmdlt，你必须首先获取要自定义的身份验证方法的名称。  这可以使用 `Get-AdfsGlobalAuthenticationPolicy`来进行。  在下面的示例中，我们看到在 sign @ no__t-0in 页上显示以下内容：“Sign in using an X.509 certificate”。  我们要为我们的用户简化此操作。  
+若要为身份验证方法自定义显示名称和说明，可以使用 `Set-AdfsAuthenticationProviderWebContent` PowerShell cmdlt。  若要使用此 cmdlt，你必须首先获取要自定义的身份验证方法的名称。  这可以使用 `Get-AdfsGlobalAuthenticationPolicy`来进行。  在下面的示例中，我们看到，在页的 sign\-上，显示以下内容： "使用 x.509 证书登录"。  我们要为我们的用户简化此操作。  
   
 ![自定义 displayname](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update1.PNG)  
   

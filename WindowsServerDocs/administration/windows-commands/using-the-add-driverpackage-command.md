@@ -32,15 +32,15 @@ ms.locfileid: "71363749"
 WDSUTIL /Add-DriverPackage /InfFile:<Inf File path> [/Server:<Server name>] [/Architecture:{x86 | ia64 | x64}] [/DriverGroup:<Group Name>] [/Name:<Friendly Name>]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |          参数           |                                                              描述                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|   InfFile： \<Inf 文件路径 >   |                                           指定要添加的 .inf 文件的完整路径。                                            |
-|    /Server： @no__t 名称 >    | 指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。 |
+|   InfFile：\<Inf 文件路径 >   |                                           指定要添加的 .inf 文件的完整路径。                                            |
+|    /Server：\<Server name >    | 指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。 |
 |      /Architecture： {x86      |                                                                 ia64                                                                  |
-| [/DriverGroup： \<Group Name >] |                             指定应将包添加到的驱动程序组的名称。                              |
-|   [/Name： \<Friendly Name >]   |                                           指出驱动程序包的友好名称。                                            |
+| [/DriverGroup：\<组名称 >] |                             指定应将包添加到的驱动程序组的名称。                              |
+|   [/Name：\<友好名称 >]   |                                           指出驱动程序包的友好名称。                                            |
 
 ## <a name="BKMK_examples"></a>示例
 

@@ -38,9 +38,9 @@ ms.locfileid: "71407511"
    Export-AdfsWebTheme -Name custom -DirectoryPath C:\CustomWebTheme
    ```
 
-3. 找到位于输出文件夹中的 @no__t 0 文件。 通过使用前面的示例，路径将为 `C:\CustomWebTheme\Css\Style.css.`
+3. 找到位于输出文件夹中的 `Style.css` 文件。 通过使用前面的示例，路径将为 `C:\CustomWebTheme\Css\Style.css.`
   
-4. 使用编辑器（如记事本）打开 @no__t 0 文件。  
+4. 使用编辑器（如记事本）打开 `Style.css` 文件。  
   
 5. 找到 `#copyright` 部分，然后将其更改为以下内容：  
 

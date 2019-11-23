@@ -18,9 +18,9 @@ ms.locfileid: "71404235"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>使用 SharePoint、Exchange 和 RDG 发布应用程序
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
-@no__t 0This 内容与 Web 应用程序代理的本地版本相关。若要启用对云中的本地应用程序的安全访问，请参阅[Azure AD 应用程序代理内容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。 **  
+**此内容与 Web 应用程序代理的本地版本相关。若要启用对云中的本地应用程序的安全访问，请参阅[Azure AD 应用程序代理内容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。**  
 
 本主题介绍通过 Web 应用程序代理发布 SharePoint Server、Exchange Server 或远程桌面网关（RDP）所需执行的任务。  
 
@@ -44,9 +44,9 @@ ms.locfileid: "71404235"
 下表描述了可通过 Web 应用程序代理发布的 Exchange 服务，以及支持这些服务的预身份验证：  
 
 
-|    Exchange 服务    |                                                                            预身份验证                                                                            |                                                                                                                                       说明                                                                                                                                        |
+|    Exchange 服务    |                                                                            预身份验证                                                                            |                                                                                                                                       注释                                                                                                                                        |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    Outlook Web App     | -使用非基于声明的身份验证 AD FS<br />-传递<br />-AD FS 对本地 Exchange 2013 Service Pak 1 （SP1）使用基于声明的身份验证 |                                                                  有关详细信息，请参阅：[结合使用 AD FS 基于声明的身份验证与 Outlook Web App和 EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
+|    Outlook Web App     | -使用非基于声明的身份验证 AD FS<br />-传递<br />-AD FS 对本地 Exchange 2013 Service Pak 1 （SP1）使用基于声明的身份验证 |                                                                  有关详细信息，请参阅： [对 Outlook Web App 和 EAC 使用 AD FS 基于声明的身份验证](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Exchange 控制面板 |                                                                               直通                                                                               |                                                                                                                                                                                                                                                                                    |
 |    Outlook Anywhere    |                                                                               直通                                                                               | 必须为 Outlook Anywhere 发布三个 URL，以使其正常工作：<br /><br />-自动发现 URL。<br />-Exchange 服务器的外部主机名;即，配置为供客户端连接到的 URL。<br />-Exchange Server 的内部 FQDN。 |
 |  Exchange ActiveSync   |                                                     直通<br/> 使用 HTTP 基本授权协议的 AD FS                                                      |                                                                                                                                                                                                                                                                                    |
@@ -66,11 +66,11 @@ ms.locfileid: "71404235"
 
 1. 安装将有所不同，具体取决于 RD Web 访问（/rdweb）和 RD 网关（rpc）角色是位于同一服务器上还是不同服务器上。  
 
-2. 如果 RD Web 访问和 RD 网关角色托管在同一 RDG 服务器上，则只需在 Web 应用程序代理中发布根 FQDN，如， https://rdg.contoso.com/ 。  
+2. 如果 RD Web 访问和 RD 网关角色托管在同一 RDG 服务器上，则只需在 Web 应用程序代理中发布根 FQDN，如， https://rdg.contoso.com/。  
 
-   你还可以分别发布两个虚拟目录，例如 <https://rdg.contoso.com/rdweb/> 和 https://rdg.contoso.com/rpc/ 。  
+   你还可以单独发布两个虚拟目录，例如<https://rdg.contoso.com/rdweb/> 和 https://rdg.contoso.com/rpc/。  
 
-3. 如果 RD Web 访问和 RD 网关托管在单独的 RDG 服务器上，则必须单独发布两个虚拟目录。 你可以使用相同或不同的外部 FQDN （例如 https://rdweb.contoso.com/rdweb/ 和 https://gateway.contoso.com/rpc/ ）。  
+3. 如果 RD Web 访问和 RD 网关托管在单独的 RDG 服务器上，则必须单独发布两个虚拟目录。 您可以使用相同或不同的外部 FQDN （例如 https://rdweb.contoso.com/rdweb/ 和 https://gateway.contoso.com/rpc/）。  
 
 4. 如果外部和内部 FQDN 不同，则不应在 RDWeb 发布规则上禁用请求标头转换。 可以通过在 Web 应用程序代理服务器上运行以下 PowerShell 脚本来完成此操作，但默认情况下应启用此功能。
 
@@ -102,11 +102,11 @@ ms.locfileid: "71404235"
 
     3.  接受所有默认设置。  
 
-    4.  对于信赖方信任标识符，输入将用于 RDG 访问的外部 FQDN，例如 https://rdg.contoso.com/ 。  
+    4.  对于信赖方信任标识符，请输入将用于 RDG 访问的外部 FQDN，例如 https://rdg.contoso.com/。  
 
         这是你在 Web 应用程序代理中发布应用时将使用的信赖方信任。  
 
-4.  在 Web 应用程序代理中发布站点的根目录（例如 https://rdg.contoso.com/ ）。 将 "预身份验证" 设置为 "AD FS"，并使用前面创建的信赖方信任。 这会使/rdweb 和/rpc 使用相同的 Web 应用程序代理身份验证 cookie。  
+4.  发布 Web 应用程序代理中的站点（例如， https://rdg.contoso.com/）的根目录。 将 "预身份验证" 设置为 "AD FS"，并使用前面创建的信赖方信任。 这会使/rdweb 和/rpc 使用相同的 Web 应用程序代理身份验证 cookie。  
 
     可以将/rdweb 和/rpc 发布为单独的应用程序，甚至可以使用不同的已发布服务器。 你只需确保使用相同的信赖方信任进行发布，因为为信赖方信任颁发了 Web 应用程序代理令牌，因此，在使用相同的信赖方信任发布的应用程序之间有效。  
 
@@ -146,7 +146,7 @@ ms.locfileid: "71404235"
 
         1.  使用具有管理员权限的帐户登录到终端服务器。  
 
-        2.  请参阅**开始** >**管理工具** > **终端服务** > **TS RemoteApp Manager。**  
+        2.  请参阅**开始** > > **TS RemoteApp Manager** > **终端服务**的**管理工具**。  
 
         3.  在 TS RemoteApp Manager 的 "**概述**" 窗格中，单击 "RDP 设置" 旁边的 "**更改**"。  
 

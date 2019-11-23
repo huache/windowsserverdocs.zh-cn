@@ -21,7 +21,7 @@ ms.locfileid: "70865200"
 ---
 # <a name="preconfiguring-a-router"></a>预配置路由器
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 通常，安装新操作系统时需要使用支持 Internet 的路由器和防火墙将客户的内部网络连接到 Internet。 如果提供路由器作为预配置服务器的一项附加服务，可以执行其他步骤来预配置路由器以提供更好的用户体验。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "70865200"
 |---------------------------|-------------|  
 |DHCP|开|  
 |端口转发|应将以下端口转发到服务器的地址：<br /><br /> -80 （对于托管配置，只使用443）<br />-443|  
-|UPnP 支持|应启用 UPnP 支持，为客户提供最方便的路由器配置，并提供最佳的客户体验。<br /><br /> **警告：** 如果启用 UPnP 架构，可能会造成安全风险。|  
+|UPnP 支持|应启用 UPnP 支持，为客户提供最方便的路由器配置，并提供最佳的客户体验。<br /><br /> **警告：** 如果已启用，则 UPnP 体系结构可能会带来安全风险。|  
   
  除了基本的路由器预配置设置之外，还可完成以下任务以提供集成度更高的路由器管理用户体验：  
   
@@ -48,9 +48,9 @@ ms.locfileid: "70865200"
 > [!NOTE]
 >  有关配置无线连接的详细信息，请参阅 [Configure Support for a Wireless Network](Configure-Support-for-a-Wireless-Network.md)。  
   
-## <a name="see-also"></a>请参阅  
- [与 Windows Server Essentials ADK 入门](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+## <a name="see-also"></a>另请参阅  
+ [入门 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
  [其他自定义](Additional-Customizations.md)   
- [准备要部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)

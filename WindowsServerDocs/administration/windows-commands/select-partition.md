@@ -22,7 +22,7 @@ ms.locfileid: "71371071"
 ---
 # <a name="select-partition"></a>选择分区
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 选择指定分区并将焦点移到该分区。 此命令还可用于显示当前在所选磁盘中有焦点的分区。  
   
@@ -34,11 +34,11 @@ ms.locfileid: "71371071"
 select partition=<n>  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>参数  
   
 |   参数    |                                                                                    描述                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| partition @ no__t-0 @ no__t-1 | 要接收焦点的分区号。 通过使用 DiskPart 中的 "**列出分区**" 命令，你可以查看当前所选磁盘上的所有分区的编号。 |
+| 分区\=<n> | 要接收焦点的分区号。 通过使用 DiskPart 中的 "**列出分区**" 命令，你可以查看当前所选磁盘上的所有分区的编号。 |
   
 ## <a name="remarks"></a>备注  
   

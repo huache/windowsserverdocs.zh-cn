@@ -48,7 +48,7 @@ wbadmin start recovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -59,9 +59,9 @@ wbadmin start recovery
 |-计算机|指定要恢复其备份的计算机的名称。 当多台计算机备份到同一位置时，此参数非常有用。 当指定了 **-backupTarget**参数时，应使用此参数。|
 |-recoveryTarget|指定要还原到的位置。 如果此位置与以前备份的位置不同，此参数将很有用。 还可以将其用于卷、文件或应用程序的还原。 如果要还原卷，则可以指定备用卷的卷驱动器号。 如果要还原文件或应用程序，可以指定另一个恢复位置。|
 |-递归|仅在恢复文件时有效。 恢复文件夹中的文件以及从属于指定文件夹的所有文件。 默认情况下，仅恢复位于指定文件夹中的文件。|
-|-覆盖|仅在恢复文件时有效。 指定要恢复的文件已存在于同一位置时要执行的操作。</br>-   **skip**会导致 Windows Server 备份跳过现有文件并继续恢复下一个文件。</br>-   **CreateCopy**导致 Windows Server 备份创建现有文件的副本，以便不会修改现有文件。</br>-   **覆盖**导致 Windows Server 备份用备份中的文件覆盖现有文件。|
+|-覆盖|仅在恢复文件时有效。 指定要恢复的文件已存在于同一位置时要执行的操作。</br>-   **skip**会导致 Windows Server 备份跳过现有文件并继续恢复下一个文件。</br>-   **CreateCopy**将导致 Windows Server 备份创建现有文件的副本，以便不会修改现有文件。</br>-   **覆盖**导致 Windows Server 备份用备份中的文件覆盖现有文件。|
 |-notRestoreAcl|仅在恢复文件时有效。 指定不还原从备份恢复的文件的安全访问控制列表（Acl）。 默认情况下，将还原安全 Acl （默认值为 " **true"）** 。 如果使用此参数，则已还原文件的 Acl 将从文件要还原到的位置继承。|
-|-skipBadClusterCheck|仅在恢复卷时有效。 对于损坏的群集信息，跳过检查要恢复到的磁盘。 如果要恢复到备用服务器或硬件，则建议不要使用此参数。 你可以随时在这些磁盘上手动运行命令**chkdsk/b**来检查是否有坏群集，然后相应地更新文件系统信息。</br>重要提示：运行**chkdsk**之前，在恢复的系统上报告的坏簇可能不准确。|
+|-skipBadClusterCheck|仅在恢复卷时有效。 对于损坏的群集信息，跳过检查要恢复到的磁盘。 如果要恢复到备用服务器或硬件，则建议不要使用此参数。 你可以随时在这些磁盘上手动运行命令**chkdsk/b**来检查是否有坏群集，然后相应地更新文件系统信息。</br>重要提示：在运行**Chkdsk**之前，已在恢复的系统上报告的坏簇可能不准确。|
 |-noRollForward|仅在恢复应用程序时有效。 如果选择了备份的最新版本，则允许对应用程序进行以前的时点恢复。 对于不是最新版本的应用程序的其他版本，之前的时点恢复将作为默认值进行。|
 |-quiet|对用户运行无提示的子命令。|
 
@@ -87,12 +87,12 @@ wbadmin start recovery -version:03/31/2013-09:00 -itemType:App -items:Registry -
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:File -items:d:\folder -recursive
 ```
-若要从 9:00 2013 年3月31日开始恢复备份，请 \\ @ no__t-1？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} \, 类型：
+若要从 9:00 2013 年3月31日开始恢复备份 \\\\？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\, 类型：
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume 
 -items:\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 ```
-若要从 9:00 2013 年4月30日开始恢复备份，请从 server01 的共享文件夹 \\ @ no__t-1servername\share，键入：
+若要从 9:00 2013 年4月30日开始恢复备份，请从 server01 的共享文件夹 \\\\servername\share，键入：
 ```
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

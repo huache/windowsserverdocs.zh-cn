@@ -22,7 +22,7 @@ ms.locfileid: "71406278"
 按照以下步骤安装企业根证书颁发机构（CA），并部署服务器证书以便与 PEAP 和 EAP 一起使用。  
   
 > [!IMPORTANT]  
-> 安装 Active Directory 证书服务之前，必须为计算机命名，为计算机配置静态 IP 地址，并将计算机加入域。 安装 AD CS 后，不能更改计算机的计算机名或域成员身份，但可以根据需要更改 IP 地址。 有关如何完成这些任务的详细信息，请参阅 Windows Server @ no__t-0 2016 [Core 网络指南](../../Core-Network-Guide.md)。  
+> 安装 Active Directory 证书服务之前，必须为计算机命名，为计算机配置静态 IP 地址，并将计算机加入域。 安装 AD CS 后，不能更改计算机的计算机名或域成员身份，但可以根据需要更改 IP 地址。 有关如何完成这些任务的详细信息，请参阅 Windows Server&reg; 2016 [Core 网络指南](../../Core-Network-Guide.md)。  
 
   
 -   [安装 Web 服务器 WEB1](../../../core-network-guide/cncg/server-certs/Install-the-Web-Server-WEB1.md)  

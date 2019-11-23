@@ -22,14 +22,14 @@ ms.locfileid: "71372763"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更改等待查找请求回复的初始秒数。
 ## <a name="syntax"></a>语法
 ```
 set timeout=<Number>
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |    参数    |                                           描述                                            |
 |-----------------|--------------------------------------------------------------------------------------------------|
@@ -44,5 +44,5 @@ set timeout=<Number>
   set timeout=2
   ```
   ## <a name="additional-references"></a>其他参考
-  [命令行语法关键字](command-line-syntax-key.md)
+  [命令行语法键](command-line-syntax-key.md)
   [nslookup 设置重试](nslookup-set-retry.md)

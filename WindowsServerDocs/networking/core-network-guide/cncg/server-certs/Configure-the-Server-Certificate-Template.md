@@ -19,7 +19,7 @@ ms.locfileid: "71356760"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-可以使用此过程配置证书模板，该模板 Active Directory @ no__t-0 证书服务（AD CS）用作注册到网络上服务器的服务器证书的基础。  
+你可以使用此过程来配置证书模板，该模板 Active Directory&reg; 证书服务（AD CS）用作注册到网络上服务器的服务器证书的基础。  
   
 配置此模板时，可以通过 Active Directory 组来指定服务器，这些服务器应自动接收来自 AD CS 的服务器证书。   
   

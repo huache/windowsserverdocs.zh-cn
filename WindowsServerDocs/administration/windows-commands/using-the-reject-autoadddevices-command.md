@@ -22,17 +22,17 @@ ms.locfileid: "71363000"
 ---
 # <a name="using-the-reject-autoadddevices-command"></a>使用 AutoaddDevices 命令
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 拒绝等待管理审批的计算机。 启用自动添加策略后，在未知计算机（未预留的计算机）之前需要管理审批才能安装映像。 你可以使用 "服务器 s 属性" 页的 " **PXE 响应**" 选项卡启用此策略。
 ## <a name="syntax"></a>语法
 ```
 wdsutil [Options] /Reject-AutoaddDevices [/Server:<Server name>] /RequestId:<Request ID or ALL>
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
-|[/Server： @no__t]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server： <Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
 |/RequestId： < 请求 ID &#124;全部 >|指定分配给挂起计算机的请求 ID。 若要拒绝所有待定计算机，请指定**all**。|
 ## <a name="BKMK_examples"></a>示例
 若要拒绝一台计算机，请键入：
@@ -45,5 +45,6 @@ wdsutil /verbose /Reject-AutoaddDevices /Server:MyWDSServer /RequestId:ALL
 ```
 #### <a name="additional-references"></a>其他参考
 使用[AutoaddDevices 命令](using-the-approve-autoadddevices-command.md)的[命令行语法键](command-line-syntax-key.md)
- @no__t[-3 使用](using-the-delete-autoadddevices-command.md)[AutoaddDevices 命令](using-the-get-autoadddevices-command.md)
- 使用命令
+
+使用[AutoaddDevices 命令](using-the-get-autoadddevices-command.md)
+使用[AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)

@@ -18,7 +18,7 @@ ms.locfileid: "71407593"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>创建规则以发送 AD FS 1.x 兼容声明
 
-如果你使用的是 Active Directory 联合身份验证服务 @no__t 0AD FS @ no__t-1）发出声明，这些声明将由运行 AD FS 1.0 \(Windows Server 2003 R2 @ no__t-3 或 AD FS 1.1 \(Windows Server 2008 或 Windows 的联合服务器接收服务器 2008 R2 @ no__t，必须执行以下操作：  
+如果使用 Active Directory 联合身份验证服务 \(AD FS\) 发出由运行 AD FS 1.0 \(Windows Server 2003 R2\) 或 AD FS 1.1 \(Windows Server 2008 或 Windows Server 2008 R2\)的联合服务器接收的声明，则必须执行以下操作：  
   
 -   创建一个规则，该规则将使用 UPN、电子邮件或公用名格式发送名称 ID 声明类型。  
   
@@ -30,9 +30,9 @@ ms.locfileid: "71407593"
   
     -   公用名  
   
-    -   Group  
+    -   组  
   
-    -   任何其他声明类型，以 https://schemas.xmlsoap.org/claims/ 开头，如 https://schemas.xmlsoap.org/claims/EmployeeID  
+    -   以 https://schemas.xmlsoap.org/claims/开头的任何其他声明类型，如 https://schemas.xmlsoap.org/claims/EmployeeID  
   
 根据组织的需要，使用以下过程之一创建 AD FS 1。*x*兼容的 NameID 声明：  
   
@@ -50,7 +50,7 @@ ms.locfileid: "71407593"
 2.  在控制台树中的 " **AD FS**下，单击"**信赖方信任**"。 
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  右键\-单击所选的信任，然后单击 "**编辑声明颁发策略**"。
+3.  右键\-单击选定的信任，然后单击 "**编辑声明颁发策略**"。
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
   
 4.  在 "**编辑声明颁发策略**" 对话框中的 "**颁发转换规则**" 下，单击 "**添加规则**" 以启动规则向导。 
@@ -63,11 +63,11 @@ ms.locfileid: "71407593"
   
 7.  在 "**传入声明类型**" 中，选择列表中的 "**名称 ID** "。  
   
-8.  在 "**传入名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*@no__t 从列表中2compatible 声明格式：  
+8.  在 "**传入名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*\-列表中的兼容声明格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **电子邮件\-**  
   
     -   **公用名**  
   
@@ -92,7 +92,7 @@ ms.locfileid: "71407593"
 2.  在控制台树中的 " **AD FS**下，单击"**声明提供方信任**"。 
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  右键\-单击所选的信任，然后单击 "**编辑声明规则**"。
+3.  右键\-单击选定的信任，然后单击 "**编辑声明规则**"。
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
 4.  在 "**编辑声明规则**" 对话框中的 "**接受转换规则**" 下，单击 "**添加规则**" 以启动规则向导。
@@ -105,11 +105,11 @@ ms.locfileid: "71407593"
   
 7.  在 "**传入声明类型**" 中，选择列表中的 "**名称 ID** "。  
   
-8.  在 "**传入名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*@no__t 从列表中2compatible 声明格式：  
+8.  在 "**传入名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*\-列表中的兼容声明格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **电子邮件\-**  
   
     -   **公用名**  
   
@@ -134,7 +134,7 @@ ms.locfileid: "71407593"
 2.  在控制台树中的 " **AD FS**下，单击"**信赖方信任**"。 
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  右键\-单击所选的信任，然后单击 "**编辑声明颁发策略**"。
+3.  右键\-单击选定的信任，然后单击 "**编辑声明颁发策略**"。
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
   
 4.  在 "**编辑声明颁发策略**" 对话框中的 "**颁发转换规则**" 下，单击 "**添加规则**" 以启动规则向导。 
@@ -149,11 +149,11 @@ ms.locfileid: "71407593"
   
 8.  在 "**传出声明类型**" 中，选择列表中的 "**名称 ID** "。  
   
-9. 在 "**传出名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*@no__t 从列表中2compatible 声明格式：  
+9. 在 "**传出名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*\-列表中的兼容声明格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **电子邮件\-**  
   
     -   **公用名**  
   
@@ -163,7 +163,7 @@ ms.locfileid: "71407593"
   
     -   **将传入声明值替换为不同的传出声明值**  
   
-    -   **将传入的 e @ no__t-1mail 后缀声明替换为新的 e @ no__t-2mail 后缀**  
+    -   **将传入电子\-邮件后缀声明替换为新的 e\-邮件后缀**  
 ![创建规则](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)
 
 11. 单击 "**完成**"，然后单击 **"确定"** 保存规则。  
@@ -178,7 +178,7 @@ ms.locfileid: "71407593"
 2.  在控制台树中的 " **AD FS**下，单击"**声明提供方信任**"。 
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  右键\-单击所选的信任，然后单击 "**编辑声明规则**"。
+3.  右键\-单击选定的信任，然后单击 "**编辑声明规则**"。
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
 4.  在 "**编辑声明规则**" 对话框中的 "**接受转换规则**" 下，单击 "**添加规则**" 以启动规则向导。
@@ -193,11 +193,11 @@ ms.locfileid: "71407593"
   
 8.  在 "**传出声明类型**" 中，选择列表中的 "**名称 ID** "。  
   
-9. 在 "**传出名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*@no__t 从列表中2compatible 声明格式：  
+9. 在 "**传出名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*\-列表中的兼容声明格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **电子邮件\-**  
   
     -   **公用名**  
   
@@ -207,7 +207,7 @@ ms.locfileid: "71407593"
   
     -   **将传入声明值替换为不同的传出声明值**  
   
-    -   **将传入的 e @ no__t-1mail 后缀声明替换为新的 e @ no__t-2mail 后缀**  
+    -   **将传入电子\-邮件后缀声明替换为新的 e\-邮件后缀**  
 ![创建规则](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)    
 
 11. 单击 "**完成**"，然后单击 **"确定"** 保存规则。  
@@ -229,12 +229,12 @@ ms.locfileid: "71407593"
   
 1.  在服务器管理器中，单击 "**工具**"，然后单击 " **AD FS 管理**"。  
   
-2.  在控制台树中的 " **AD FS\\信任关系**" 下，单击 "**声明提供方信任**或**信赖方信任**"，然后在要创建此规则的列表中单击特定信任。  
+2.  在控制台树中的 " **AD FS\\信任关系**" 下，单击 "**声明提供方**信任或**信赖方信任**"，然后在要创建此规则的列表中单击特定信任。  
   
-3.  右键\-单击所选的信任，然后单击 "**编辑声明规则**"。  
+3.  右键\-单击选定的信任，然后单击 "**编辑声明规则**"。  
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
   
-4.  在 "**编辑声明规则**" 对话框中，根据所编辑的信任和要在其中创建此规则的规则集，选择下列选项卡之一，然后单击 "**添加规则**" 以启动与该规则集关联的规则向导:  
+4.  在 "**编辑声明规则**" 对话框中，根据所编辑的信任和要在其中创建此规则的规则集，选择下列选项卡之一，然后单击 "**添加规则**" 以启动与该规则集关联的规则向导：  
   
     -   **接受转换规则**  
   
@@ -252,11 +252,11 @@ ms.locfileid: "71407593"
   
 7.  在 "**传入声明类型**" 中，选择列表中的 "**名称 ID** "。  
   
-8.  在 "**传入名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*@no__t 从列表中2compatible 声明格式：  
+8.  在 "**传入名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*\-列表中的兼容声明格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **电子邮件\-**  
   
     -   **公用名**  
   
@@ -278,12 +278,12 @@ ms.locfileid: "71407593"
   
 1.  在服务器管理器中，单击 "**工具**"，然后单击 " **AD FS 管理**"。  
   
-2.  在控制台树中的 " **AD FS\\信任关系**" 下，单击 "**声明提供方信任**或**信赖方信任**"，然后在要创建此规则的列表中单击特定信任。  
+2.  在控制台树中的 " **AD FS\\信任关系**" 下，单击 "**声明提供方**信任或**信赖方信任**"，然后在要创建此规则的列表中单击特定信任。  
   
-3.  右键\-单击所选的信任，然后单击 "**编辑声明规则**"。  
+3.  右键\-单击选定的信任，然后单击 "**编辑声明规则**"。  
 ![创建规则](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
   
-4.  在 "**编辑声明规则**" 对话框中，选择下列选项卡，其中一个选项卡依赖于你正在编辑的信任，以及你要在哪个规则集中创建此规则，然后单击 "**添加规则**" 以启动与该规则集关联的规则向导:  
+4.  在 "**编辑声明规则**" 对话框中，选择下列选项卡，其中一个选项卡依赖于你正在编辑的信任和你要在哪个规则集中创建此规则，然后单击 "**添加规则**" 以启动与该规则集关联的规则向导：  
   
     -   **接受转换规则**  
   
@@ -303,11 +303,11 @@ ms.locfileid: "71407593"
   
 8.  在 "**传出声明类型**" 中，选择列表中的 "**名称 ID** "。  
   
-9. 在 "**传出名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*@no__t 从列表中2compatible 声明格式：  
+9. 在 "**传出名称 ID 格式**" 中，选择以下 AD FS 1 之一。*x*\-列表中的兼容声明格式：  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **电子邮件\-**  
   
     -   **公用名**  
   
@@ -317,7 +317,7 @@ ms.locfileid: "71407593"
   
     -   **将传入声明值替换为不同的传出声明值**  
   
-    -   **将传入的 e @ no__t-1mail 后缀声明替换为新的 e @ no__t-2mail 后缀**  
+    -   **将传入电子\-邮件后缀声明替换为新的 e\-邮件后缀**  
 ![创建规则](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs2.PNG)    
 
 11. 单击 "**完成**"，然后单击 **"确定"** 保存规则。  

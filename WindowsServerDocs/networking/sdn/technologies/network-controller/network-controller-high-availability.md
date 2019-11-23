@@ -19,16 +19,16 @@ ms.locfileid: "71405935"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-你可以使用本主题来了解有关软件定义的网络的网络控制器高可用性和可伸缩性配置，\(SDN @ no__t-1。
+你可以使用本主题来了解网络控制器的网络控制器高可用性和可伸缩性配置（适用于软件定义的网络 \(SDN\)）。
 
-当你在数据中心部署 SDN 时，可以使用网络控制器来集中部署、监视和管理多个网络元素，包括 RAS 网关、软件负载均衡器、用于租户通信的虚拟网络策略、数据中心防火墙策略、服务质量 \(QoS @ no__t-1 用于 SDN 策略、混合网络策略等。
+在数据中心部署 SDN 时，可以使用网络控制器来集中部署、监视和管理许多网络元素，包括 RAS 网关、软件负载均衡器、用于租户通信的虚拟网络策略、数据中心防火墙策略、服务质量 \(QoS\) 用于 SDN 策略、混合网络策略等。
 
 由于网络控制器是 SDN 管理的基础，因此网络控制器部署非常重要，它可提供高可用性，并使你能够轻松地根据数据中心需求增加或减少网络控制器节点。
 
 尽管可以将网络控制器部署为单一计算机群集，但为了实现高可用性和故障转移，你必须将网络控制器部署到最少三台计算机的多个计算机群集中。
 
 >[!NOTE]
->你可以在运行 Windows Server 2016 Datacenter edition \(VMs @ no__t-1 的服务器计算机或虚拟机上部署网络控制器。 如果在 Vm 上部署网络控制器，则 Vm 必须在同时运行 Datacenter edition 的 Hyper-v 主机上运行。 网络控制器在 Windows Server 2016 Standard edition 上不可用。
+>你可以在服务器计算机上或者在运行 Windows Server 2016 Datacenter edition \(Vm\) 上的虚拟机上部署网络控制器。 如果在 Vm 上部署网络控制器，则 Vm 必须在同时运行 Datacenter edition 的 Hyper-v 主机上运行。 网络控制器在 Windows Server 2016 Standard edition 上不可用。
 
 ## <a name="network-controller-as-a-service-fabric-application"></a>作为 Service Fabric 应用程序的网络控制器
 
@@ -45,7 +45,7 @@ ms.locfileid: "71405935"
 
 每个 Service Fabric 服务都有一个主副本和两个辅助副本。 主服务副本处理请求，而两个辅助服务副本在主副本处于禁用或不可用的情况下提供高可用性。
 
-下图描绘了包含五台计算机 Service Fabric 群集的网络控制器。 四个服务分布在五台计算机上：防火墙服务、网关服务、软件负载平衡 \(SLB @ no__t 服务，以及虚拟网络 \(Vnet @ no__t 服务。  四种服务中的每一项都包括一个主服务副本和两个辅助服务副本。
+下图描绘了包含五台计算机 Service Fabric 群集的网络控制器。 四个服务分布在五台计算机上：防火墙服务、网关服务、软件负载平衡 \(SLB\) 服务和虚拟网络 \(Vnet\) 服务。  四种服务中的每一项都包括一个主服务副本和两个辅助服务副本。
 
 ![网络控制器 Service Fabric 群集](../../../media/Network-Controller-HA/Network-Controller-HA.jpg)
 
@@ -62,11 +62,11 @@ ms.locfileid: "71405935"
 
 ### <a name="persistent-storage"></a>永久性存储
 
-网络控制器应用程序的配置和状态具有较大的存储要求。 应用程序还必须能够在计划内和计划外中断时使用。 为此，Service Fabric 提供了一个 \(KVS @ no__t-1 的键-值存储，它是一个复制的事务存储和持久存储。
+网络控制器应用程序的配置和状态具有较大的存储要求。 应用程序还必须能够在计划内和计划外中断时使用。 为此，Service Fabric 提供了一个 \(KVS\) 的键-值存储，该存储是一个复制的事务和持久存储区。
 
 ### <a name="modularity"></a>模块化
 
-网络控制器采用模块化体系结构进行设计，每个网络服务（例如虚拟网络服务和防火墙服务）都作为单个服务内置 @ no__t-0in。 
+网络控制器采用模块化体系结构进行设计，每个网络服务（例如虚拟网络服务和防火墙服务）都作为单个服务\-。 
 
 此应用程序体系结构具有以下优势。
 
@@ -80,7 +80,7 @@ Service Fabric 模块使用服务模型架构来最大程度地提高应用程�
 
 ## <a name="network-controller-deployment-options"></a>网络控制器部署选项
 
-若要使用 System Center Virtual Machine Manager \(VMM @ no__t 部署网络控制器，请参阅[在 VMM 构造中设置 SDN 网络控制器](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)。
+若要使用 System Center Virtual Machine Manager \(VMM\)部署网络控制器，请参阅[在 vmm 构造中设置 SDN 网络控制器](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)。
 
 若要使用脚本部署网络控制器，请参阅[使用脚本部署软件定义的网络基础结构](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)。
 

@@ -51,7 +51,7 @@ ms.locfileid: "71358147"
 若要验证架构级别，请执行以下操作：
 
 1.  可以使用 ADSIEdit 或 LDP 并连接到架构命名上下文。  
-2.  使用 ADSIEdit，右键单击 "CN = Schema，CN = Configuration，DC = <domain>，DC = <com>"，然后选择 "属性"。  Relpace 域和 com 部分，其中包含林信息。
+2.  使用 ADSIEdit，右键单击 "CN = Schema，CN = Configuration，DC =<domain>，DC =<com>，然后选择" 属性 "。  Relpace 域和 com 部分，其中包含林信息。
 3.  在 "属性编辑器" 下，找到 "objectVersion" 属性，它将告知你版本。  
 
 ![ADSI 编辑器](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
@@ -86,7 +86,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 ![设备注册](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
 
->注意:下方的命令需要 Active Directory 管理工具，因此如果联合服务器不是域控制器，应首先使用下面的步骤 1 安装这些工具。  否则，你可以跳过步骤 1。  
+>注意：以下命令需要 Active Directory 管理工具，因此，如果联合服务器也不是域控制器，请首先使用下面的步骤1安装工具。  否则，你可以跳过步骤 1。  
 
 1.  运行**添加角色和功能**向导，选择功能**远程服务器管理工具** -> **角色管理工具** -> **AD DS 和 AD LDS 工具** -> 同时选择 **Windows PowerShell 的 Active Directory 模块**和 **AD DS 工具**。
 
@@ -98,7 +98,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
    `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
 3. 在弹出窗口中，单击 "是"。
 
->注意:如果你的 AD FS 服务被配置为使用 GMSA 帐户，则以格式 "domain\accountname$" 输入帐户名称
+>注意：如果 AD FS 服务配置为使用 GMSA 帐户，请以 "domain\accountname $" 格式输入帐户名称
 
 ![设备注册](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)  
 
@@ -211,7 +211,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 若要启用已注册设备的自动 MDM 注册，以便可以在访问控制策略中使用 isCompliant 声明，请按照此处的步骤操作[。](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)  
 
 ## <a name="troubleshooting"></a>疑难解答  
-1.  如果在 `Initialize-ADDeviceRegistration` 时出现错误，投诉原因有关某个对象已存在于错误状态，例如 "已找到 drs 服务对象，但未提供所有必需的属性"，则可能已在以前执行过 Azure AD Connect powershell 命令，并且具有AD DS 中的部分配置。  请尝试手动删除 " **CN = Device Registration Configuration，cn = Services，cn = Configuration，DC = &lt;domain @ no__t-2** " 下的对象，然后重试。  
+1.  如果在 `Initialize-ADDeviceRegistration` 上出现错误，指出某个对象已存在于错误状态，例如 "未找到 drs 服务对象，但未提供所有必需的属性"，则可能之前已执行 Azure AD Connect powershell 命令，并且 AD DS 中具有部分配置。  尝试手动删除 " **CN = Device Registration Configuration，CN = Services，cn = Configuration，DC =&lt;域&gt;** 中的对象，然后重试。  
 2.  对于已加入域的 Windows 10 客户端  
     1. 若要验证设备身份验证是否正常工作，请以测试用户帐户的身份登录到加入域的客户端。 若要快速触发预配，请至少锁定并解锁桌面。   
     2. 在 AD DS 对象上检查 stk 密钥凭据链接的说明（同步仍需要运行两次？）  

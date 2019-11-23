@@ -21,9 +21,9 @@ ms.locfileid: "71380582"
 ---
 # <a name="bitsadmin-sethelpertokenflags"></a>bitsadmin sethelpertokenflags
 
-为 [帮助令牌](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)设置使用标志 @no__t 与 BITS 传输作业关联的1。
+为与 BITS 传输作业关联 的 [帮助程序令牌](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)设置使用标志。
 
-**BITS 3.0 及更早版本**： 不受支持。
+**BITS 3.0 及更早版本**：不支持。
 
 ## <a name="syntax"></a>语法
 
@@ -31,12 +31,12 @@ ms.locfileid: "71380582"
 bitsadmin /SetHelperTokenFlags <Job> <Flags>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
 |作业|作业的显示名称或 GUID。|
-|Flags|可能的值包括以下各项。 0x0001 @ no__t-0The 帮助程序令牌用于打开上传作业的本地文件，创建或重命名下载作业的临时文件，或创建或重命名上传答复作业的答复文件。 0x0002 @ no__t-0The 帮助程序令牌用于打开服务器消息块（SMB）上传或下载作业的远程文件，或响应隐式 NTLM 或 Kerberos 凭据的 HTTP 服务器或代理质询。 必须调用 @ no__t-0 @ no__t-1to 允许通过 HTTP 发送凭据。|
+|Flags|可能的值包括以下各项。 0x0001&mdash;帮助程序令牌用于打开上传作业的本地文件，创建或重命名下载作业的临时文件，或创建或重命名上传答复作业的答复文件。 0x0002&mdash;帮助程序令牌用于打开服务器消息块（SMB）上传或下载作业的远程文件，或响应隐式 NTLM 或 Kerberos 凭据的 HTTP 服务器或代理质询。 必须调用 `/SetCredentialsJob TargetScheme NULL NULL` ，以允许通过 HTTP 发送凭据。|
 
 #### <a name="additional-references"></a>其他参考
 

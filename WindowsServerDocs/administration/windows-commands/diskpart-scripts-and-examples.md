@@ -22,11 +22,11 @@ ms.locfileid: "71377851"
 ---
 # <a name="diskpart-scripts-and-examples"></a>Diskpart 脚本和示例
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-使用 Diskpart @no__t 运行自动执行磁盘 @ no__t 1related 任务的脚本，例如创建卷或将磁盘转换为动态磁盘。 如果使用无人参与安装程序或 Sysprep 工具（不支持创建启动卷以外的卷）部署 Windows，则编写这些任务的脚本非常有用。  
+使用 Diskpart `/s` 运行自动执行磁盘\-相关任务的脚本，例如创建卷或将磁盘转换为动态磁盘。 如果使用无人参与安装程序或 Sysprep 工具（不支持创建启动卷以外的卷）部署 Windows，则编写这些任务的脚本非常有用。  
   
--   若要创建一个 Diskpart 脚本，请创建一个包含要运行的 Diskpart 命令的文本文件，其中每行一个命令，而不是空行。 您可以启动一个 `rem` 的行，使该行成为注释。  
+-   若要创建一个 Diskpart 脚本，请创建一个包含要运行的 Diskpart 命令的文本文件，其中每行一个命令，而不是空行。 您可以使用 `rem` 启动一行，使该行成为注释。  
   
     例如，下面的脚本将擦除磁盘，然后为 Windows 恢复环境创建 300 MB 的分区：  
   
@@ -52,13 +52,13 @@ ms.locfileid: "71377851"
     ```  
   
 > [!IMPORTANT]  
-> 将**diskpart**命令用作脚本的一部分时，建议你将所有 DiskPart 操作一起作为一个 diskpart 脚本的一部分来完成。 您可以运行连续的 DiskPart 脚本，但必须在每个脚本之间至少使用15秒，才能完全关闭以前的执行，然后在后续脚本中再次运行**DiskPart**命令。 否则，后续脚本可能会失败。 可以通过将 `timeout /t 15` 命令添加到批处理文件中，并将其添加到 DiskPart 脚本，在连续的 DiskPart 脚本之间添加暂停。  
+> 将**diskpart**命令用作脚本的一部分时，建议你将所有 DiskPart 操作一起作为一个 diskpart 脚本的一部分来完成。 您可以运行连续的 DiskPart 脚本，但必须在每个脚本之间至少使用15秒，才能完全关闭以前的执行，然后在后续脚本中再次运行**DiskPart**命令。 否则，后续脚本可能会失败。 可以通过将 `timeout /t 15` 命令添加到批处理文件中，并将其添加到你的 DiskPart 脚本，在连续的 DiskPart 脚本之间添加暂停。  
   
-启动 DiskPart 时，DiskPart 版本和计算机名称将显示在命令提示符下。 默认情况下，如果在尝试执行脚本任务时，DiskPart 遇到错误，则 DiskPart 将停止处理脚本，并显示错误代码 @no__t 指定**noerr**参数 @ no__t-2。 但是，无论使用的是**noerr**参数，DiskPart 始终会在遇到语法错误时返回错误。 通过**noerr**参数，你可以执行一些有用的任务，例如，使用单个脚本删除所有磁盘上的所有分区，而不考虑磁盘的总数量。  
+启动 DiskPart 时，DiskPart 版本和计算机名称将显示在命令提示符下。 默认情况下，如果在尝试执行脚本任务时，DiskPart 遇到错误，则 DiskPart 将停止处理脚本并 \(显示错误代码，除非你已指定**noerr**参数\)。 但是，无论使用的是**noerr**参数，DiskPart 始终会在遇到语法错误时返回错误。 通过**noerr**参数，你可以执行一些有用的任务，例如，使用单个脚本删除所有磁盘上的所有分区，而不考虑磁盘的总数量。  
   
-## <a name="see-also"></a>请参阅  
-[示例：使用 Windows PE 和 DiskPart @ no__t-2 配置 UEFI @ no__t-0gpt @ no__t-1Based 硬盘驱动器分区  
-[示例：使用 Windows PE 和 DiskPart @ no__t 配置 BIOS @ no__t-0MBR @ no__t-1Based 硬盘分区  
+## <a name="see-also"></a>另请参阅  
+[示例：使用 Windows PE 和 DiskPart 配置 UEFI\/gpt 基于\-硬盘驱动器分区](https://technet.microsoft.com/library/hh825686.aspx)  
+[示例：使用 Windows PE 和 DiskPart 配置 BIOS\/基于 MBR\-硬盘分区](https://technet.microsoft.com/library/hh825677.aspx)  
 [Windows PowerShell 中的存储 Cmdlet](https://technet.microsoft.com/library/hh848705.aspx)  
   
 

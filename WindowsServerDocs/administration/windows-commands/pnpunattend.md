@@ -30,7 +30,7 @@ ms.locfileid: "71372268"
 PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -47,8 +47,8 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 2. 下载并提取设备的驱动程序包。 将包含操作系统版本 INF 文件的子文件夹的内容复制到所创建的视频文件夹中的所有子文件夹。 例如，将视频驱动程序文件复制到 C:\Drivers\Video。
 3. 将系统环境路径变量添加到步骤1中创建的文件夹。例如， **C:\Drivers\Video**。
 4. 创建以下注册表项，然后为创建的**DriverPaths**键将**值数据**设置为**1**。
-5. 对于 Windows®7导航注册表路径：**HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion @ no__t**，然后创建密钥：**UnattendSettings\PnPUnattend\DriverPaths @ no__t-1**
-6. 对于 Windows Vista，导航到注册表路径：**HK_LM\Software\Microsoft\Windows NT\CurrentVersion @ no__t**，然后创建密钥 = **\UnattendSettings\PnPUnattend\DriverPaths**。
+5. 对于 Windows®7导航注册表路径： **HKEY_LOCAL_Machine \Software\microsoft\windows NT\CurrentVersion\\** ，然后创建密钥： **UnattendSettings\PnPUnattend\DriverPaths\\**
+6. 对于 Windows Vista，导航到注册表路径： **HK_LM \Software\microsoft\windows NT\CurrentVersion\\** ，然后创建密钥 = **\UnattendSettings\PnPUnattend\DriverPaths**。
 
 ## <a name="examples"></a>示例
 

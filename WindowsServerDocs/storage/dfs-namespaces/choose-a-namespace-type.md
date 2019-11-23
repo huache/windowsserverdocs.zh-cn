@@ -17,9 +17,9 @@ ms.locfileid: "71402199"
 ---
 # <a name="choose-a-namespace-type"></a>选择命名空间类型
 
-> 适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
-创建命名空间时，必须选择以下两种命名空间类型之一：独立命名空间或基于域的命名空间。 此外，如果选择基于域的命名空间，则必须选择命名空间模式：Windows 2000 服务器模式或 Windows Server 2008 模式。
+创建命名空间时，必须选择以下两种命名空间类型之一：独立命名空间或基于域的命名空间。 此外，如果选择基于域的命名空间，则必须选择命名空间模式： Windows 2000 服务器模式或 Windows Server 2008 模式。
 
 ## <a name="choosing-a-namespace-type"></a>选择命名空间类型
 
@@ -59,7 +59,7 @@ ms.locfileid: "71402199"
 
 |特征|独立命名空间|基于域的命名空间（Windows 2000 Server 模式） |基于域的命名空间（Windows Server 2008 模式） | 
 |---|---|---|---|
-|命名空间的路径|\\ @ no__t-1*ServerName\RootName* |\\ @ no__t-1*NetBIOSDomainName\RootName* <br />\\ @ no__t-1*DNSDomainName\RootName*|\\ @ no__t-1*NetBIOSDomainName\RootName* <br /> \\ @ no__t-1*DNSDomainName\RootName*|
+|命名空间的路径|\\\ *ServerName\RootName* |\\\ *NetBIOSDomainName\RootName* <br />\\\ *DNSDomainName\RootName*|\\\ *NetBIOSDomainName\RootName* <br /> \\\ *DNSDomainName\RootName*|
 |命名空间信息存储位置|命名空间服务器上的注册表和内存缓存中|每个命名空间服务器上的 AD DS 和内存缓存中|每个命名空间服务器上的 AD DS 和内存缓存中|
 |命名空间大小建议|命名空间中可能有 5,000 多个包含目标的文件夹；建议的上限是 50,000 个包含目标的文件夹|在 AD DS 中，命名空间对象的大小应小于 5 兆字节 (MB)，才能保持与没有运行 Windows Server 2008 的域控制器的兼容性。 这表示，包含目标的文件夹数大约不超过 5,000 个。|命名空间中可能有 5,000 多个包含目标的文件夹；建议的上限是 50,000 个包含目标的文件夹 |
 |最小 AD DS 林功能级别|不需要 AD DS|Windows 2000|Windows Server 2003|
@@ -69,7 +69,7 @@ ms.locfileid: "71402199"
 |支持的方法，可确保命名空间的可用性|在故障转移群集上创建独立命名空间。|使用多个命名空间服务器托管命名空间。 （命名空间服务器必须位于同一个域中。）|使用多个命名空间服务器托管命名空间。 （命名空间服务器必须位于同一个域中。）|
 |支持使用 DFS 复制对文件夹目标进行复制|加入 AD DS 域时受支持|支持|支持|
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [部署 DFS 命名空间](deploying-dfs-namespaces.md)
 -   [将基于域的命名空间迁移到 Windows Server 2008 模式](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)

@@ -22,9 +22,9 @@ ms.locfileid: "71403202"
 ## <a id="running-dedup-jobs-manually"></a>手动运行重复数据删除作业
 
 你可以使用以下 PowerShell cmdlet 手动运行每个预定的重复数据删除作业：
-* [`Start-DedupJob`](https://technet.microsoft.com/library/hh848442.aspx):启动新的重复数据删除作业
-* [`Stop-DedupJob`](https://technet.microsoft.com/library/hh848439.aspx):停止正在进行的重复数据删除作业（或将其从队列中删除）
-* [`Get-DedupJob`](https://technet.microsoft.com/library/hh848452.aspx):显示所有活动和已排队的重复数据删除作业
+* [`Start-DedupJob`](https://technet.microsoft.com/library/hh848442.aspx)：启动新的重复数据删除作业
+* [`Stop-DedupJob`](https://technet.microsoft.com/library/hh848439.aspx)：停止正在进行的重复数据删除作业（或将其从队列中删除）
+* [`Get-DedupJob`](https://technet.microsoft.com/library/hh848452.aspx)：显示所有活动和已排队的重复数据删除作业
 
 [预定重复数据删除作业时可用的所有设置](advanced-settings.md#modifying-job-schedules-available-settings)也可在你手动启动作业时使用（排定特定的设置除外）。 例如，要手动启动具有高优先级、最大 CPU 使用率和最大内存使用量的[优化](understand.md#job-info-optimization)作业，请使用管理员特权执行以下 PowerShell 命令：
 
@@ -50,9 +50,9 @@ Start-DedupJob -Type Optimization -Volume <Your-Volume-Here> -Memory 100 -Cores 
 [优化作业](understand.md#job-info-optimization)失败的一个标志是呈下降趋势的优化比率，它可能指示优化作业跟不上更改或改动的速率。 可以通过使用 [`Get-DedupStatus`](https://technet.microsoft.com/library/hh848437.aspx) PowerShell cmdlet 来检查优化比率。
 
 > [!Important]
-> `Get-DedupStatus` 有两个与优化比率相关的字段： `OptimizedFilesSavingsRate` 和 `SavingsRate`。 这两个都是要跟踪的重要值，但每个都具有独特的含义。
+> `Get-DedupStatus` 有两个与优化速率相关的字段： `OptimizedFilesSavingsRate` 和 `SavingsRate`。 这两个都是要跟踪的重要值，但每个都具有独特的含义。
 > - `OptimizedFilesSavingsRate` 仅适用于 "策略内" 优化（`space used by optimized files after optimization / logical size of optimized files`）的文件。
-> - `SavingsRate` 适用于整个卷（@no__t 为-1）。
+> - `SavingsRate` 适用于整个卷（`space used by optimized files after optimization / total logical size of the optimization`）。
 
 ## <a id="disabling-dedup"></a>禁用重复数据删除
 若要关闭重复数据删除，请运行“[取消优化作业](understand.md#job-info-unoptimization)”。 要撤消卷优化，请运行以下命令：

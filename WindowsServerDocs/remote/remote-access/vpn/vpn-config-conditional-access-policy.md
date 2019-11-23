@@ -24,20 +24,20 @@ ms.locfileid: "71404344"
 ---
 # <a name="step-73-configure-the-conditional-access-policy"></a>步骤 7.3： 配置条件访问策略
 
->适用于：Windows Server (半年频道), Windows Server 2016, Windows Server 2012 R2, Windows 10
+>适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**以前**步骤 7.2：使用 Azure AD 创建 VPN 身份验证的根证书](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
-- [**一个**步骤 7.4：将条件性访问根证书部署到本地 AD @ no__t-0
+- [**上一个：** 步骤7.2。创建用于 VPN 身份验证的根证书 Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+- [**下一步：** 步骤7.4。将条件性访问根证书部署到本地 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 
 在此步骤中，你将为 VPN 连接配置条件访问策略。 在 "VPN 连接" 边栏选项卡中创建第一个根证书时，它会自动在租户中创建 "VPN 服务器" 云应用程序。
 
 创建一个条件性访问策略，该策略分配给 VPN 用户组，并将**云应用**范围限定为**vpn 服务器**：
 
-- **Users**：VPN 用户
-- **云应用**：VPN 服务器
-- **授予（访问控制）** ："需要多重身份验证"。 如果需要，可以使用其他控件。
+- **用户**： VPN 用户
+- **云应用**： VPN 服务器
+- **授予（访问控制）** ： "需要多重身份验证"。 如果需要，可以使用其他控件。
 
-**方法**此步骤介绍如何创建最基本的条件性访问策略。  如果需要，还可以使用其他条件和控件。
+**过程：** 此步骤介绍如何创建最基本的条件性访问策略。  如果需要，还可以使用其他条件和控件。
 
 
 1. 在 "**条件性访问**" 页顶部的工具栏中，选择 "**添加**"。
@@ -94,4 +94,4 @@ ms.locfileid: "71404344"
 
 
 ## <a name="next-steps"></a>后续步骤
-[步骤 7.4.将条件性访问根证书部署到本地 AD @ no__t-0：在此步骤中，将条件访问根证书部署为本地 AD 的 VPN 身份验证的受信任根证书。
+[步骤7.4。将条件性访问根证书部署到本地 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)：在此步骤中，你将条件访问根证书部署为用于 VPN 身份验证的受信任根证书到本地 ad。

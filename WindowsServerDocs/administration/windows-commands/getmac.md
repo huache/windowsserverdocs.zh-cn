@@ -22,19 +22,19 @@ ms.locfileid: "71375806"
 ---
 # <a name="getmac"></a>getmac
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 返回与每台计算机的所有网卡的每个地址相关联的媒体访问控制（MAC）地址和网络协议列表，不管是在本地还是在网络上。 
 ## <a name="syntax"></a>语法
 ```
 getmac[.exe][/s <computer> [/u <Domain\<User> [/p <Password>]]][/fo {TABLE | list | CSV}][/nh][/v]
 ```
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 |             参数              |                                                                                          描述                                                                                          |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           /s <computer>            |                                      指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                       |
-|        /u <Domain> @ no__t-1 @ no__t-2         | 使用用户或 Domain\user 指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
+|        /u <Domain>\\<User>         | 使用用户或 Domain\user 指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
 |           /p <Password>            |                                                     指定在 **/u**参数中指定的用户帐户的密码。                                                     |
 | /fo {表&#124;列表&#124; CSV} |                       指定用于查询输出的格式。 有效值为**TABLE**、 **list**和**CSV**。 输出的默认格式为**TABLE**。                        |
 |                /nh                 |                                             隐藏输出中的列标题。 当 **/fo**参数设置为**表**或**CSV**时有效。                                              |

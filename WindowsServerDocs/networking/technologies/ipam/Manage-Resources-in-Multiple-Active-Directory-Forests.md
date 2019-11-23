@@ -32,7 +32,7 @@ ms.locfileid: "71355229"
 ![配置服务器发现](../../media/Manage-Resources-in-Multiple-Active-Directory-Forests/ipam_serverdiscovery.jpg)  
 
 >[!NOTE]
->对于 Active Directory 跨林方案组策略 @ no__t-0based 预配，请确保在 IPAM 服务器上运行以下 Windows PowerShell cmdlet，而不是在信任域 Dc 上运行。 例如，如果你的 IPAM 服务器已加入到林 corp.contoso.com 并且信任林为 fabrikam.com，则可以在 IPAM 服务器上运行以下 Windows PowerShell cmdlet： corp.contoso.com for 组策略 @ no__t-0based 预配fabrikam.com 林。 若要运行此 cmdlet，你必须是 fabrikam.com 林中的 Domain Admins 组的成员。
+>对于 Active Directory 跨林方案组策略\-预配，请确保在 IPAM 服务器上运行以下 Windows PowerShell cmdlet，而不是在信任域 Dc 上运行。 例如，如果你的 IPAM 服务器已加入到林 corp.contoso.com 并且信任林为 fabrikam.com，则可以在 corp.contoso.com 中的 IPAM 服务器上运行以下 Windows PowerShell cmdlet，以在 fabrikam.com 林上进行基于组策略\-的预配。 若要运行此 cmdlet，你必须是 fabrikam.com 林中的 Domain Admins 组的成员。
 
     
     Invoke-IpamGpoProvisioning -Domain fabrikam.COM -GpoPrefixName IPAMSERVER -IpamServerFqdn IPAM.CORP.CONTOSO.COM

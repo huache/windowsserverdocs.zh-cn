@@ -67,7 +67,7 @@ Import-Module hnvdiagnostics
 ### <a name="hyper-v-host-diagnostics"></a>Hyper-v 主机诊断  
 这些 cmdlet 记录在 TechNet 上的[Hyper-v 网络虚拟化（HNV）诊断 Cmdlet 主题](https://docs.microsoft.com/powershell/module/hnvdiagnostics/)中。 它们有助于识别租户虚拟机（东部/西部）之间的数据路径中的问题，以及通过 SLB VIP （北部/南）的入口流量。 
 
-_调试-VirtualMachineQueueOperation_、 _CustomerRoute_、 _PACAMapping_、 _ProviderAddress_、 _VMNetworkAdapterPortId_ _、VMSwitchExternalPortId、、和_ _。EncapOverheadSettings_是可从任何 hyper-v 主机运行的所有本地测试。 其他 cmdlet 通过网络控制器调用数据路径测试，因此需要访问网络控制器，如以上 descried 所示。
+_调试-VirtualMachineQueueOperation_、 _CustomerRoute_、 _PACAMapping_、 _ProviderAddress_、 _VMNetworkAdapterPortId_ _、VMSwitchExternalPortId_和_EncapOverheadSettings_都是可从任何 hyper-v 主机上运行的本地测试（& a）。 其他 cmdlet 通过网络控制器调用数据路径测试，因此需要访问网络控制器，如以上 descried 所示。
 
 ### <a name="github"></a>GitHub
 [Microsoft/SDN GitHub](https://github.com/microsoft/sdn)存储库包含多个基于这些内置 cmdlet 构建的示例脚本和工作流。 特别是，可以在[诊断](https://github.com/Microsoft/sdn/diagnostics)文件夹中找到诊断脚本。 请通过提交拉取请求来帮助我们参与这些脚本。
@@ -121,7 +121,7 @@ Message:          Host is not Connected.
 下表显示了根据观察到的配置状态要采取的错误代码、消息和跟进操作的列表。
 
 
-| **编写**| **Message**| **Action**|  
+| **编写**| **Message**| **操作**|  
 |--------|-----------|----------|  
 | Unknown| 未知错误| |  
 | HostUnreachable                       | 主机无法访问 | 检查网络控制器与主机之间的管理网络连接 |  
@@ -168,7 +168,7 @@ netstat -anp tcp |findstr 6640
   TCP    10.127.132.153:50023   10.127.132.211:6640    ESTABLISHED
 ```
 #### <a name="check-host-agent-services"></a>检查主机代理服务
-网络控制器与 Hyper-v 主机上的两个主机代理服务通信：SLB 主机代理和 NC 主机代理。 其中一项或两项服务可能未运行。 检查其状态，如果未运行，则重新启动。
+网络控制器与 Hyper-v 主机上的两个主机代理服务通信： SLB 主机代理和 NC 主机代理。 其中一项或两项服务可能未运行。 检查其状态，如果未运行，则重新启动。
 
 ```none
 Get-Service SlbHostAgent
@@ -237,7 +237,7 @@ Properties       : Microsoft.Windows.NetworkController.ServerProperties
 *修正*如果使用 SDNExpress 脚本或手动部署，请在注册表中更新 HostId 密钥，使其与服务器资源的实例 Id 匹配。 如果使用 VMM，请在 Hyper-v 主机（物理服务器）上重新启动网络控制器主机代理，删除 VMM 中的 Hyper-v 服务器并删除主机 Id 注册表项。 然后，通过 VMM 重新添加服务器。
 
 
-检查 hyper-v 主机（NC 主机代理服务）和网络控制器节点之间的（SouthBound）通信的 Hyper-v 主机（主机名将是证书的使用者名称）所使用的 x.509 证书的指纹是否相同。 同时检查网络控制器的 REST 证书是否具有*CN = <FQDN or IP>* 的使用者名称。
+检查 hyper-v 主机（NC 主机代理服务）和网络控制器节点之间的（SouthBound）通信的 Hyper-v 主机（主机名将是证书的使用者名称）所使用的 x.509 证书的指纹是否相同。 同时检查网络控制器的 REST 证书是否具有*CN =<FQDN or IP>* 的使用者名称。
 
 ```  
 # On Hyper-V Host
@@ -290,7 +290,7 @@ Collecting Diagnostics data from NC Nodes
 ```
 
 >[!NOTE]
->默认输出位置将是 < working_directory > \NCDiagnostics\ 目录。 可以使用 @no__t 的参数更改默认的输出目录。 
+>默认输出位置将是 < working_directory > 的 \NCDiagnostics\ 目录。 可以使用 `-OutputDirectory` 参数更改默认的输出目录。 
 
 可在此目录中的_slbstateResults_文件中找到 SLB 配置状态信息。
 
@@ -608,10 +608,10 @@ PA 路由信息：
 
 # <a name="look-at-ip-configuration-and-virtual-subnets-which-are-referencing-this-acl"></a>查看正在引用此 ACL 的 IP 配置和虚拟子网
 
-1. 宿主在托管两个有问题的租户虚拟机的 Hyper-v 主机上运行 ``Get-ProviderAddress``，然后从 Hyper-v 主机运行 @no__t 或 ``ping -c <compartment>`` 来验证 HNV 提供程序逻辑网络上的连接
+1. 宿主在托管两个有问题的租户虚拟机的 Hyper-v 主机上运行 ``Get-ProviderAddress``，然后从 Hyper-v 主机运行 ``Test-LogicalNetworkConnection`` 或 ``ping -c <compartment>``，以验证 HNV 提供程序逻辑网络上的连接
 2.  宿主请确保 hyper-v 主机和 Hyper-v 主机之间的任何第2层交换设备上的 MTU 设置正确。 在所有有问题的 Hyper-v 主机上运行 ``Test-EncapOverheadValue``。 还要检查两者之间的所有第2层交换机是否设置为至少1674字节，以最大限度地降低160字节的系统开销。  
-3.  宿主如果 PA IP 地址不存在并且/或 CA 连接中断，请检查以确保已收到网络策略。 运行 ``Get-PACAMapping``，查看是否已正确确定创建覆盖虚拟网络所需的封装规则和 CA-PA 映射。  
-4.  宿主检查网络控制器主机代理是否已连接到网络控制器。 运行 ``netstat -anp tcp |findstr 6640`` 以查看   
+3.  宿主如果 PA IP 地址不存在并且/或 CA 连接中断，请检查以确保已收到网络策略。 运行 ``Get-PACAMapping``，查看创建覆盖虚拟网络所需的封装规则和 CA-PA 映射是否已正确建立。  
+4.  宿主检查网络控制器主机代理是否已连接到网络控制器。 运行 ``netstat -anp tcp |findstr 6640``，查看   
 5.  宿主检查 HKLM/中的主机 ID 是否与托管租户虚拟机的服务器资源的实例 ID 匹配。  
 6. 宿主检查端口配置文件 ID 是否与租户虚拟机的 VM 网络接口的实例 ID 匹配。  
 
@@ -637,11 +637,11 @@ PA 路由信息：
 
 #### <a name="change-logging-settings"></a>更改日志记录设置
 
-你可以随时使用 @no__t cmdlet 更改日志记录设置。 可以更改以下设置：
+你可以随时使用 ``Set-NetworkControllerDiagnostic`` cmdlet 更改日志记录设置。 可以更改以下设置：
 
-- **集中式日志位置**。  您可以更改用于存储所有日志的位置，并 ``DiagnosticLogLocation`` 参数。  
-- **用于访问日志位置的凭据**。  你可以使用 @no__t 参数将凭据更改为访问日志位置。  
-- **转到本地日志记录**。  如果已提供存储日志的集中位置，则可以使用 ``UseLocalLogLocation`` 参数移回本地网络控制器节点上的日志记录（由于磁盘空间需求较大，不建议这样做）。  
+- **集中式日志位置**。  可以通过 ``DiagnosticLogLocation`` 参数更改用于存储所有日志的位置。  
+- **用于访问日志位置的凭据**。  您可以使用 ``LogLocationCredential`` 参数更改凭据以访问日志位置。  
+- **转到本地日志记录**。  如果已提供存储日志的集中位置，则可以使用 ``UseLocalLogLocation`` 参数向后移动到网络控制器节点上的本地日志记录（由于磁盘空间需求较大，不建议这样做）。  
 - **日志记录范围**。  默认情况下，将收集所有日志。 你可以更改范围以仅收集网络控制器群集日志。  
 - **日志记录级别**。  默认日志记录级别为 "信息"。 可以将其更改为 "错误"、"警告" 或 "详细"。  
 - **日志老化时间**。  日志以循环方式存储。 默认情况下，你将有3天的日志记录数据，无论你使用的是本地日志记录还是集中式日志记录。 可以通过**LogTimeLimitInDays**参数更改此时间限制。  
@@ -668,12 +668,12 @@ PA 路由信息：
 
 #### <a name="slbm-fabric-errors-hosting-service-provider-actions"></a>SLBM 构造错误（托管服务提供程序操作）
 
-1.  检查软件负载平衡器管理器（SLBM）是否正常运行，以及业务流程层是否可以互相通信：SLBM > SLB Mux 和 SLBM > SLB 主机代理。 从具有对网络控制器 REST 终结点的访问权限的任何节点中运行[DumpSlbRestState](https://github.com/Microsoft/SDN/blob/master/Diagnostics/DumpSlbRestState.ps1) 。  
+1.  检查软件负载平衡器管理器（SLBM）是否正常运行，以及业务流程层是否可以互相通信： SLBM > SLB Mux 和 SLBM > SLB 主机代理。 从具有对网络控制器 REST 终结点的访问权限的任何节点中运行[DumpSlbRestState](https://github.com/Microsoft/SDN/blob/master/Diagnostics/DumpSlbRestState.ps1) 。  
 2.  在其中一个网络控制器节点 Vm （最好是主网络控制器节点-NetworkControllerReplica）上验证*SDNSLBMPerfCounters* in PerfMon：
     1.  负载均衡器（LB）引擎是否已连接到 SLBM？ （*SLBM LBEngine 配置*> 0）  
     2.  SLBM 是否至少知道自己的终结点？ （*VIP 端点总数*> = 2）  
     3.  Hyper-v （DIP）主机是否连接到 SLBM？ （*连接的 HP 客户端*= = num server）   
-    4.  SLBM 是否连接到 Mux？ （*Mux 连接* == *MUX 在 @no__t SLBM 上正常运行*-3*mux 报告正常状态*= # SLB mux vm）。  
+    4.  SLBM 是否连接到 Mux？ （*Mux 连接* == *在 SLBM == Mux 上的 mux 正常*状态 = # SLB mux vm）。  
 3.  确保配置的 BGP 路由器已成功与 SLB MUX 对等互连  
     1.  如果将 RRAS 用于远程访问（即 BGP 虚拟机）：  
         1.  Bgp 应显示已连接  
@@ -682,7 +682,7 @@ PA 路由信息：
         1.  例如： # show bgp instance  
 4.  在 SLB Mux VM 上验证 PerfMon 中的*SlbMuxPerfCounters*和*SLBMUX*计数器
 5.  检查软件负载平衡器管理器资源中的配置状态和 VIP 范围  
-    1.  NetworkControllerLoadBalancerConfiguration-ConnectionUri < https：//<FQDN or IP> |convertto-html 8 （在 IP 池中检查 VIP 范围并确保 SLBM 自 VIP （*LoadBalanacerManagerIPAddress*）和任何面向租户的 vip 在这些范围内）  
+    1.  NetworkControllerLoadBalancerConfiguration-ConnectionUri < https：//<FQDN or IP>|convertto-html 8 （在 IP 池中检查 VIP 范围并确保 SLBM 自 VIP （*LoadBalanacerManagerIPAddress*）和任何面向租户的 vip 在这些范围内）  
         1. NetworkControllerIpPool-NetworkId "< 公用/专用 VIP 逻辑网络资源 ID >"-SubnetId "< 公共/专用 VIP 逻辑子网资源 ID >"-ResourceId "<IP Pool Resource Id>"-ConnectionUri $uri | convertto-html-第深度8 
     2.  NetworkControllerConfigurationState-  
 
@@ -706,8 +706,8 @@ PA 路由信息：
     1.  验证在 SLBM 中注册的 DIP 终结点是否托管与 LoadBalancer 后端地址池 IP 配置相对应的租户虚拟机  
 3.  宿主如果未发现或未连接 DIP 终结点：   
     1.  检查*NetworkControllerConfigurationState*  
-        1.  使用 @no__t 验证 NC 和 SLB 主机代理是否已成功连接到网络控制器事件协调器  
-    2.  检查*nchostagent* service regkey 中的*主机*id （附录中的引用*HostNotConnected*错误代码）是否与相应的服务器资源的实例 Id 匹配（``Get-NCServer |convertto-json -depth 8``）  
+        1.  使用 ``netstat -anp tcp |findstr 6640)`` 验证 NC 和 SLB 主机代理是否已成功连接到网络控制器事件协调器  
+    2.  检查*nchostagent* service regkey 中的*主机*id （附录中的引用*HostNotConnected*错误代码）是否与相应的服务器资源的实例 Id （``Get-NCServer |convertto-json -depth 8``）匹配  
     3.  检查虚拟机端口的端口配置文件 id 与相应的虚拟机 NIC 资源的实例 Id 匹配   
 4.  [宿主提供程序]收集日志   
 

@@ -22,7 +22,7 @@ ms.locfileid: "71403212"
 本文档介绍如何修改高级[重复数据删除](overview.md)设置。 对于[建议的工作负荷](install-enable.md#enable-dedup-candidate-workloads)，需具有足够的默认设置。 修改这些设置的主要原因是提升其他类型的工作负荷的重复数据删除性能。
 
 ## <a id="modifying-job-schedules"></a>修改重复数据删除作业计划
-[默认重复数据删除作业计划](understand.md#job-info)设计为可以在建议的工作负荷中很好地工作并尽可能不产生干扰（不包括为[**备份**使用类型](understand.md#usage-type-backup)启用的*优先级优化*作业）。 当工作负荷具有较大资源需求时，则可能确保作业仅在空闲时间运行，或者减少或增加允许重复数据删除作业使用的系统资源量。
+[默认重复数据删除作业计划](understand.md#job-info)设计为可以在建议的工作负荷中很好地工作并尽可能不产生干扰（不包括为备份[使用类型**启用的**优先级优化](understand.md#usage-type-backup)作业）。 当工作负荷具有较大资源需求时，则可能确保作业仅在空闲时间运行，或者减少或增加允许重复数据删除作业使用的系统资源量。
 
 ### <a id="modifying-job-schedules-change-schedule"></a>更改重复数据删除计划
 重复数据删除作业通过 Windows 任务计划程序进行计划，且可以在路径 Microsoft\Windows\Deduplication 下查看并编辑。 重复数据删除包括可轻松执行计划的几个 cmdlet。
@@ -51,7 +51,7 @@ ms.locfileid: "71403212"
     ```
 
     >[!NOTE]  
-    > 为 `-Start` 提供的 `System.Datetime` 的*日期*部分不相关（只要它处于过去），但*时间*部分指定作业应该启动的时间。
+    > 为 *提供的* 的`System.Datetime`日期`-Start`部分不相关（只要它处于过去），但*时间*部分指定作业应该启动的时间。
 4. 使用高优先级以及系统上所有可用的 CPU 和内存创建在星期六早上 7:00 开始运行的每周垃圾回收作业。
     ```PowerShell
     New-DedupSchedule -Name "WeeklyGarbageCollection" -Type GarbageCollection -DurationHours 23 -Memory 100 -Cores 100 -Priority High -Days @(6) -Start (Get-Date "2016-08-13 07:00:00")
@@ -76,7 +76,7 @@ ms.locfileid: "71403212"
     </thead>
     <tbody>
         <tr>
-            <td>type</td>
+            <td>在任务栏的搜索框中键入</td>
             <td>应计划的作业类型</td>
             <td>
                 <ul>
@@ -126,7 +126,7 @@ ms.locfileid: "71403212"
             <td>阻止作业在非空闲时间工作负荷&#39;</td>
         </tr>
         <tr>
-            <td>Enabled</td>
+            <td>已启用</td>
             <td>作业是否将运行</td>
             <td>True/false</td>
             <td>在不删除作业的情况下将其禁用</td>
@@ -162,10 +162,10 @@ ms.locfileid: "71403212"
             <td>你想要手动还原位于坏的磁盘区域的文件。</td>
         </tr>
         <tr>
-            <td>Start</td>
+            <td>开始时间</td>
             <td>指定作业应开始的时间</td>
             <td><code>System.DateTime</code></td>
-            <td>提供给<em>开始</em>@no__t 的&#39;<em>日期</em>部分不相关（只要它在过去），但时间部分指定作业应该启动的<em>时间</em>。</td>
+            <td>提供给<em>开始</em><code>System.Datetime</code> 的&#39;<em>日期</em>部分不相关（只要它在过去），但时间部分指定作业应该启动的<em>时间</em>。</td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -208,7 +208,7 @@ ms.locfileid: "71403212"
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>区块在复制到区块存储的热点区域前被引用的次数。 作用点部分的值是所谓的称为 &quot;hot @ no__t; 通常，引用的块将使用多个访问路径来改善访问时间。</td>
+            <td>区块在复制到区块存储的热点区域前被引用的次数。 热点部分的值是所谓的 &quot;热&quot; 块区的值，经常会使用多个访问路径来改善访问时间。</td>
             <td>正整数</td>
             <td>修改此数量的主要原因是为具有高重复的卷增加节约率。 通常，建议设置默认值（100），&#39;不应修改此值。</td>
         </tr>
@@ -318,7 +318,7 @@ ms.locfileid: "71403212"
 </table>
 
 ## <a id="faq"></a>常见问题
-<a id="faq-use-responsibly"></a>**I 更改了重复数据删除设置，现在作业速度缓慢或未完成，或者工作负荷性能降低。为什么?**  
+<a id="faq-use-responsibly"></a>**我更改了重复数据删除设置，现在作业速度缓慢或未完成，或者工作负荷性能降低。为什么?**  
 这些设置为你提供了控制重复数据删除如何运行的许多权限。 负责任地使用它们，并[监视性能](run.md#monitoring-dedup)。
 
 <a id="faq-running-dedup-jobs-manually"></a>**我现在想要运行一个重复数据删除作业，但是我不想创建新的计划-我能执行此操作吗？**  

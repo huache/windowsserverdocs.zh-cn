@@ -22,7 +22,7 @@ ms.locfileid: "71384470"
 ---
 # <a name="rpcinfo"></a>rpcinfo
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 列出远程计算机上的程序。 **Rpcinfo**命令行实用工具向 RPC 服务器发出远程过程调用（RPC），并报告它找到的内容。 
 
@@ -31,13 +31,13 @@ ms.locfileid: "71384470"
 rpcinfo [/p [<Node>]] [/b <Program version>] [/t <Node Program> [<version>]] [/u <Node Program> [<version>]]
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
-|/p [\<Node >]|列出注册到指定主机上的端口映射器的所有程序。 如果未指定节点（计算机）名称，程序将查询本地主机上的端口映射器。|
-|/b @no__t 版本 > 0Program|请求所有网络节点的响应，这些网络节点具有注册到端口映射器的指定程序和版本。 必须同时指定程序名称或编号和版本号。|
-|/t \<Node Program > [\<version >]|使用 TCP 传输协议调用指定的程序。 必须同时指定节点（计算机）名称和程序名称。 如果未指定版本，程序将调用所有版本。|
-|/u \<Node Program > [\<version >]|使用 UDP 传输协议调用指定的程序。 必须同时指定节点（计算机）名称和程序名称。 如果未指定版本，程序将调用所有版本。|
+|/p [\<节点 >]|列出注册到指定主机上的端口映射器的所有程序。 如果未指定节点（计算机）名称，程序将查询本地主机上的端口映射器。|
+|/b \<程序版本 >|请求所有网络节点的响应，这些网络节点具有注册到端口映射器的指定程序和版本。 必须同时指定程序名称或编号和版本号。|
+|/t \<Node Program > [\<版本 >]|使用 TCP 传输协议调用指定的程序。 必须同时指定节点（计算机）名称和程序名称。 如果未指定版本，程序将调用所有版本。|
+|/u \<Node Program > [\<版本 >]|使用 UDP 传输协议调用指定的程序。 必须同时指定节点（计算机）名称和程序名称。 如果未指定版本，程序将调用所有版本。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="BKMK_Examples"></a>示例

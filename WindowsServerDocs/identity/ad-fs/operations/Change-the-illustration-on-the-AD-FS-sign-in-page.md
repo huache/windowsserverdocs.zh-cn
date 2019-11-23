@@ -21,7 +21,7 @@ ms.locfileid: "71358288"
 ## <a name="change-the-illustration"></a>更改图例  
 
 
-若要更改图例，请在 "no__t-0in" 页上显示的左侧图形，使用以下 Windows PowerShell cmdlet 和语法。  
+若要更改图例，请在页面左侧的 "符号\-显示的图形中，使用以下 Windows PowerShell cmdlet 和语法。  
 
 ![更改图示](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

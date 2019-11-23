@@ -22,11 +22,11 @@ ms.locfileid: "71380104"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
-> **适用**于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 10
+> **适用于**： windows Server （半年频道），windows server 2016，windows Server 2012 R2，windows server 2012，windows 10
 
-bitsadmin 是一个命令行工具，可用于创建下载或上载作业并监视其进度。 Bitsadmin 工具使用开关来确定要执行的工作。  可以调用 `bitsadmin /?` 或 `bitsadmin /HELP` 获取开关列表。
+bitsadmin 是一个命令行工具，可用于创建下载或上载作业并监视其进度。 Bitsadmin 工具使用开关来确定要执行的工作。  可以调用 `bitsadmin /?` 或 `bitsadmin /HELP` 以获取开关列表。
 
-大多数交换机都需要设置为作业的显示名称或 GUID 的 \<Job @ no__t 参数。 请注意，作业的显示名称可能不唯一。 **/Create**和 **/list**开关返回作业的 GUID。
+大多数交换机都需要设置为作业的显示名称或 GUID 的 \<作业\> 参数。 请注意，作业的显示名称可能不唯一。 **/Create**和 **/list**开关返回作业的 GUID。
 
 默认情况下，你可以访问你自己的作业的信息。 若要访问其他用户的作业信息，你必须拥有管理员权限。 如果作业是在提升的状态下创建的，则必须从提升的窗口中运行 bitsadmin;否则，你将拥有该作业的只读访问权限。
 

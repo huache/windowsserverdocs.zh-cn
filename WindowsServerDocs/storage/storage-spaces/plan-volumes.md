@@ -18,11 +18,11 @@ ms.locfileid: "71366889"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>规划存储空间直通中的卷
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 本主题提供关于如何规划存储空间直通中的卷以满足工作负载的性能和容量需求（包括选择其文件系统、复原类型和大小）的指南。
 
-## <a name="review-what-are-volumes"></a>审校什么是卷
+## <a name="review-what-are-volumes"></a>回顾：什么是卷
 
 卷是放置工作负荷所需的文件的位置，例如 Hyper-v 虚拟机的 VHD 或 VHDX 文件。 卷将合并存储池中的驱动器，以引入存储空间直通的容错、可扩展性和性能优势。
 
@@ -31,7 +31,7 @@ ms.locfileid: "71366889"
 
 ![什么是卷](media/plan-volumes/what-are-volumes.png)
 
-群集中的所有服务器可以同时访问所有卷。 创建后，它们将显示在所有服务器上的**C:\ClusterStorage @ no__t-1**中。
+群集中的所有服务器可以同时访问所有卷。 创建后，它们将显示在所有服务器上的**C:\ClusterStorage\\** 中。
 
 ![csv 文件夹屏幕截图](media/plan-volumes/csv-folder-screenshot.png)
 
@@ -69,7 +69,7 @@ ms.locfileid: "71366889"
 
 ![双向镜像](media/plan-volumes/two-way-mirror.png)
 
-嵌套复原（仅在 Windows Server 2019 上可用）提供具有双向镜像的服务器之间的数据复原能力，然后在具有双向镜像的服务器和镜像加速的奇偶校验中增加复原能力。 即使在一台服务器重新启动或不可用时，嵌套也能提供数据复原能力。 其存储效率为 25%，具有嵌套的双向镜像，大约 35-40%，适用于嵌套的镜像加速奇偶校验。 嵌套复原可以安全地允许两个硬件故障（两个驱动器或服务器以及剩余服务器上的驱动器）。 由于此功能增加了数据复原能力，因此，如果您运行的是 Windows Server 2019，则建议在两服务器群集的生产部署上使用嵌套复原功能。 有关详细信息，请参阅[嵌套复原](nested-resiliency.md)。
+嵌套复原（仅在 Windows Server 2019 上可用）提供具有双向镜像的服务器之间的数据复原能力，然后在具有双向镜像的服务器和镜像加速的奇偶校验中增加复原能力。 即使在一台服务器重新启动或不可用时，嵌套也能提供数据复原能力。 其存储效率为25%，具有嵌套的双向镜像，大约35-40%，适用于嵌套的镜像加速奇偶校验。 嵌套复原可以安全地允许两个硬件故障（两个驱动器或服务器以及剩余服务器上的驱动器）。 由于此功能增加了数据复原能力，因此，如果您运行的是 Windows Server 2019，则建议在两服务器群集的生产部署上使用嵌套复原功能。 有关详细信息，请参阅[嵌套复原](nested-resiliency.md)。
 
 ![嵌套镜像加速奇偶校验](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
@@ -91,9 +91,9 @@ ms.locfileid: "71366889"
 
 | 复原类型 | 容量效率 | 速度 | 工作负载 |
 | ------------------- | ----------------------  | --------- | ------------- |
-| **制作**         | ![存储效率显示 33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>三向镜像：33% <br>双向镜像：50%     |![性能显示 100%](media/plan-volumes/three-way-mirror-perf.png)<br> 最高性能  | 虚拟化工作负荷<br> 数据库<br>其他高性能工作负荷 |
-| **镜像加速奇偶校验** |![存储效率大约 50%](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> 取决于镜像和奇偶校验的比例 | ![性能显示大约 20%](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>比镜像慢得多，但最多可达两倍于双重奇偶校验<br> 最适用于大型顺序写入和读取 | 存档和备份<br> 虚拟桌面基础结构     |
-| **双重奇偶校验**               | ![存储效率大约 80%](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4台服务器：50% <br>16台服务器：最高 80% | ![性能显示大约 10%](media/plan-volumes/dual-parity-perf.png)<br>写入时 CPU 使用率 & 最高 i/o 延迟<br> 最适用于大型顺序写入和读取 | 存档和备份<br> 虚拟桌面基础结构  |
+| **制作**         | ![存储效率显示33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>三向镜像：33% <br>双向镜像：50%     |![性能显示100%](media/plan-volumes/three-way-mirror-perf.png)<br> 最高性能  | 虚拟化工作负荷<br> 数据库<br>其他高性能工作负荷 |
+| **镜像加速奇偶校验** |![存储效率大约50%](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> 取决于镜像和奇偶校验的比例 | ![性能显示大约20%](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>比镜像慢得多，但最多可达两倍于双重奇偶校验<br> 最适用于大型顺序写入和读取 | 存档和备份<br> 虚拟桌面基础结构     |
+| **双重奇偶校验**               | ![存储效率大约80%](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4台服务器：50% <br>16台服务器：最高80% | ![性能显示大约10%](media/plan-volumes/dual-parity-perf.png)<br>写入时 CPU 使用率 & 最高 i/o 延迟<br> 最适用于大型顺序写入和读取 | 存档和备份<br> 虚拟桌面基础结构  |
 
 #### <a name="when-performance-matters-most"></a>当性能最重要时
 
@@ -158,7 +158,7 @@ ms.locfileid: "71366889"
    >[!NOTE]
    > 在具有所有三种类型 (NVMe + SSD + HDD) 的驱动器的群集中，我们建议为每个服务器保留相当于一个 SSD 与一个 HDD 总和的容量，每种类型最多可保留 4 个驱动器的容量。
 
-## <a name="example-capacity-planning"></a>例如：容量规划
+## <a name="example-capacity-planning"></a>示例：容量规划
 
 假设有一个由四个服务器组成的群集。 每个服务器都安装了一些缓存驱动器以及十六个 2 TB 的容量驱动器。
 
@@ -195,11 +195,11 @@ ms.locfileid: "71366889"
 
 为简单起见，此示例从头到尾都使用十进制（基数为 10）单位，这意味着 1 TB = 1,000,000,000,000 字节。 但是，Windows 中的存储数量按二进制（基数为 2）单位显示。 例如，在 Windows 中，每个 2 TB 的驱动器都将显示为 1.82 TiB。 同样，128 TB 的存储池将显示为 116.41 TiB。 这是预期情况。
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>Usage
 
 请参阅[在存储空间直通中创建卷](create-volumes.md)。
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
 - [为存储空间直通选择驱动器](choosing-drives.md)

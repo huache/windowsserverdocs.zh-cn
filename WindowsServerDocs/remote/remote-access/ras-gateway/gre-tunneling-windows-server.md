@@ -19,7 +19,7 @@ ms.locfileid: "71404679"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-Windows Server 2016 为 RAS 网关提供 \(GRE @ no__t 隧道功能的通用路由封装的更新。  
+Windows Server 2016 提供了对 RAS 网关 \(GRE\) 隧道功能的通用路由封装的更新。  
   
 GRE 是一种轻型隧道协议，可以在 Internet 协议网间上的虚拟点对点链路内封装各种网络层协议。 Microsoft GRE 实现可以封装 IPv4 和 IPv6。  
   
@@ -27,11 +27,11 @@ GRE 是一种轻型隧道协议，可以在 Internet 协议网间上的虚拟点
   
 -   它们是轻型和 RFC 2890 兼容的，使其可与各种供应商设备互操作  
   
--   可以将边界网关协议 \(BGP @ no__t 用于动态路由  
+-   可以将边界网关协议 \(BGP\) 用于动态路由  
   
--   可以配置 GRE 多租户 RAS 网关，以便与软件定义的网络一起使用 \(SDN @ no__t-1
+-   可以配置 GRE 多租户 RAS 网关，以便与软件定义的网络 \(SDN 一起使用\)
   
--   你可以使用 System Center Virtual Machine Manager 来管理 GRE @ no__t-0based RAS 网关
+-   你可以使用 System Center Virtual Machine Manager 来管理基于 GRE\-的 RAS 网关
   
 -   在配置为 GRE RAS 网关的6核虚拟机上，最多可实现 2.0 Gbps 吞吐量
   
@@ -104,7 +104,7 @@ GRE 隧道功能旨在满足以下要求：
   
 ## <a name="configuration-and-deployment"></a>配置和部署
 
-GRE 隧道在 S2S 接口内作为附加协议公开。 它的实现方式类似于以下网络博客中所述的 IPSec S2S 隧道：[具有 Windows Server 2012 R2 的多租户站点到站点（S2S） VPN 网关](https://blogs.technet.com/b/networking/archive/2013/09/29/multi-tenant-site-to-site-s2s-vpn-gateway-with-windows-server-2012-r2.aspx)  
+GRE 隧道在 S2S 接口内作为附加协议公开。 它的实现方式类似于以下网络博客：[多租户站点到站点（S2S） VPN 网关和 Windows Server 2012 R2](https://blogs.technet.com/b/networking/archive/2013/09/29/multi-tenant-site-to-site-s2s-vpn-gateway-with-windows-server-2012-r2.aspx)中所述的 IPSec S2S 隧道  
   
 请参阅以下主题，了解部署网关的示例，包括 GRE 隧道网关：  
   
@@ -118,7 +118,7 @@ GRE 隧道在 S2S 接口内作为附加协议公开。 它的实现方式类似�
   
 -   [边界网关协议&#40;BGP&#41;](../bgp/Border-Gateway-Protocol-BGP.md)  
   
--   [New！Windows Server 2012 R2 RAS 多租户网关部署指南 @ no__t-0  
+-   [新增功能！Windows Server 2012 R2 RAS 多租户网关部署指南](https://blogs.technet.com/b/wsnetdoc/archive/2014/03/26/new-windows-server-2012-r2-RAS-multitenant-gateway-deployment-guide.aspx)  
   
 -   [通过 RAS 多租户网关部署边界网关协议（BGP）](https://blogs.technet.com/b/wsnetdoc/archive/2014/04/03/deploy-border-gateway-protocol-bgp-with-the-RAS-multitenant-gateway.aspx)  
   

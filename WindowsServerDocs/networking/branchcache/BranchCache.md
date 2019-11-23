@@ -45,7 +45,7 @@ ms.locfileid: "71406769"
 
 - 分支机构中的客户端计算机运行的是 Windows 10、Windows 8.1、Windows 8 或 Windows 7。
 
-本主题包含以下各节：
+本主题包含下列部分：
 
 -   [什么是 BranchCache？](#bkmk_what)
 
@@ -190,11 +190,11 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 
 |功能|计算机位置|安装此 BranchCache 元素|
 |-----------------|---------------------|------------------------------------|
-|内容服务器 @no__t 基于0BITS 的应用程序服务器 @ no__t-1|总部或云数据中心|BranchCache 功能|
-|内容服务器 \(Web server @ no__t-1|总部或云数据中心|BranchCache 功能|
-|内容服务器 @no__t-使用 SMB 协议 @ no__t-1 的0file 服务器|总部或云数据中心|文件服务服务器角色的网络文件 BranchCache 角色服务|
+|内容服务器 \(基于 BITS 的应用程序服务器\)|总部或云数据中心|BranchCache 功能|
+|内容服务器 \(Web 服务器\)|总部或云数据中心|BranchCache 功能|
+|内容服务器 \(使用 SMB 协议的文件服务器\)|总部或云数据中心|文件服务服务器角色的网络文件 BranchCache 角色服务|
 |托管缓存服务器|分支机构|启用托管缓存服务器模式的 BranchCache 功能|
-|启用 BranchCache 的客户端计算机|分支机构|无需安装;只需在客户端上启用 BranchCache 和 BranchCache 模式 \(distributed 或托管 @ no__t-1|
+|启用 BranchCache 的客户端计算机|分支机构|无需安装;只需在客户端上启用 BranchCache 和 BranchCache 模式 \(分布式或托管\)|
 
 若要安装角色服务或功能，打开“服务器管理器”，选择你希望为其启用 BranchCache 功能的计算机。 在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 这将打开“添加角色和功能”向导。 在你运行向导时，进行以下选择：
 
@@ -235,7 +235,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 -   Windows 7 专业版，仅支持 BITS
 
 > [!NOTE]
-> 默认情况下，BranchCache 在 Windows Server 2008 或 Windows Vista 操作系统中不可用。 但在这些操作系统中，如果下载并安装 Windows Management Framework 更新，BranchCache 功能仅适用于后台智能传输服务（BITS）协议。 有关详细信息和下载 Windows Management Framework，请参阅[Windows Management framework （Windows PowerShell 2.0、WinRM 2.0 和 BITS 4.0）](https://go.microsoft.com/fwlink/?LinkId=188677) https://go.microsoft.com/fwlink/?LinkId=188677 。
+> 默认情况下，BranchCache 在 Windows Server 2008 或 Windows Vista 操作系统中不可用。 但在这些操作系统中，如果下载并安装 Windows Management Framework 更新，BranchCache 功能仅适用于后台智能传输服务（BITS）协议。 有关详细信息以及要下载 Windows Management Framework，请参阅 https://go.microsoft.com/fwlink/?LinkId=188677上的[Windows Management framework （Windows PowerShell 2.0、WinRM 2.0 和 BITS 4.0）](https://go.microsoft.com/fwlink/?LinkId=188677) 。
   
 ### <a name="operating-systems-for-branchcache-content-server-functionality"></a>支持 BranchCache 内容服务器功能的操作系统
 
@@ -263,7 +263,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 
 - Windows Server 2008 R2 for Itanium-Based Systems
 
-- Windows Server 2008 R2 数据中心版
+- Windows Server 2008 R2 Datacenter
 
 - 带有 Hyper-v 的 Windows Server 2008 R2 Datacenter
 
@@ -322,19 +322,19 @@ BranchCache 使用对等端内容缓存协议和检索框架协议实现确保�
 
 内容信息和实际内容的流动划分为四个阶段：
 
-1.  @no__t 0BranchCache 的进程：请求内容 @ no__t-0
+1.  [BranchCache 进程：请求内容](#BKMK_8)
 
-2.  @no__t 0BranchCache 的进程：查找内容 @ no__t
+2.  [BranchCache 进程：查找内容](#BKMK_9)
 
-3.  @no__t 0BranchCache 的进程：检索内容 @ no__t
+3.  [BranchCache 进程：检索内容](#BKMK_10)
 
-4.  @no__t 0BranchCache 的进程：缓存内容 @ no__t
+4.  [BranchCache 进程：缓存内容](#BKMK_11)
 
 以下部分介绍这些阶段。
 
 ## <a name="BKMK_8"></a>BranchCache 进程：请求内容
 
-在第一个阶段，分支机构中的客户端计算机请求来自远程位置（例如总部）中内容服务器的内容（例如文件或网页）。 内容服务器会验证客户端计算机是否经授权可以接收请求内容。 如果客户端计算机已获得授权，并且内容服务器和客户端均为 BranchCache @ no__t-0enabled，则内容服务器将生成内容信息。
+在第一个阶段，分支机构中的客户端计算机请求来自远程位置（例如总部）中内容服务器的内容（例如文件或网页）。 内容服务器会验证客户端计算机是否经授权可以接收请求内容。 如果客户端计算机已获得授权，并且内容服务器和客户端都是 BranchCache\-启用，则内容服务器会生成内容信息。
 
 随后内容服务器使用用于实际内容的相同协议将内容信息发送至客户端计算机。 
 
@@ -376,7 +376,7 @@ WS-Discovery 过程是否成功取决于执行发现的客户端是否拥有内�
 
 客户端计算机在内容主机（可能是托管缓存服务器或分布式缓存模式客户端计算机）上找到所需内容后，客户端计算机会开始检索内容的过程。
 
-首先，客户端计算机会向内容主机发出有关其需要第一个块的请求。 请求会包含标识所需内容的分段 ID 和块范围。 因为只会返回一个块，块范围就只会包含单独一个块。 （目前不支持多个块的请求。）客户端还会将请求存储在其本地“未完成请求列表”中。  
+首先，客户端计算机会向内容主机发出有关其需要第一个块的请求。 请求会包含标识所需内容的分段 ID 和块范围。 因为只会返回一个块，块范围就只会包含单独一个块。 （目前不支持多个块的请求。）客户端还会将请求存储在其本地未处理请求列表中。  
 
 收到来自客户端的有效请求消息后，内容主机会检查内容主机的内容缓存中是否存在请求中指定的块。
 

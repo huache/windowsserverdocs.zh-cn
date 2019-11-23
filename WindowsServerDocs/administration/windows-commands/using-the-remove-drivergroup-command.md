@@ -32,12 +32,12 @@ ms.locfileid: "71362931"
 WDSUTIL /Remove-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|/DriverGroup： \<Group Name >|指定要删除的驱动程序组的名称。|
-|[/Server： @no__t 名称 >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。|
+|/DriverGroup：\<组名称 >|指定要删除的驱动程序组的名称。|
+|[/Server：\<Server name >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。|
 
 ## <a name="BKMK_examples"></a>示例
 

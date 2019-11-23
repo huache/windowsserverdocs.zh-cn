@@ -19,7 +19,7 @@ ms.locfileid: "71365400"
 ---
 # <a name="a-team-bound-to-a-virtual-switch-should-only-have-one-exposed-team-interface"></a>绑定到虚拟交换机的团队应只有一个公开的团队界面
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71365400"
 ## <a name="impact"></a>**对**  
 *以下虚拟交换机可能无权访问其他团队界面使用的 Vlan 和带宽：*  
   
-@no__t-虚拟交换机的 0list >  
+\<虚拟交换机列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
 *使用 Windows PowerShell cmdlet NetLbfoTeamNic 从团队中删除除默认团队界面之外的所有团队界面。*  

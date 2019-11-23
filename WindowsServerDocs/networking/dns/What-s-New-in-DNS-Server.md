@@ -34,16 +34,16 @@ ms.locfileid: "71406238"
   
 ## <a name="dns-policies"></a>DNS 策略
 
-可以将 DNS 策略用于基于地理位置的流量管理、基于一天中的时间的智能 DNS 响应、管理为 split @ no__t-0brain 部署配置的单个 DNS 服务器、对 DNS 查询应用筛选器等。 以下各项提供了有关这些功能的更多详细信息。
+你可以将 DNS 策略用于基于地理位置的流量管理、基于一天的时间的智能 DNS 响应、管理配置为拆分\-大脑部署的单个 DNS 服务器、对 DNS 查询应用筛选器等。 以下各项提供了有关这些功能的更多详细信息。
 
 -   **应用程序负载平衡。** 在不同位置部署了多个应用程序实例后，可以使用 DNS 策略来平衡不同应用程序实例之间的流量负载，从而动态分配应用程序的流量负载。
 
--   **基于 Geo @ no__t-1Location 的流量管理。** 你可以使用 DNS 策略来允许主 DNS 服务器和辅助 DNS 服务器根据客户端尝试连接到的客户端和资源的地理位置来响应 DNS 客户端查询，并为客户端提供最接近的 IP 地址资源. 
+-   **基于地理\-位置的流量管理。** 你可以使用 DNS 策略来允许主 DNS 服务器和辅助 DNS 服务器根据客户端尝试连接到的客户端和资源的地理位置来响应 DNS 客户端查询，并为客户端提供最接近的 IP 地址资源. 
 
--   **裂脑 DNS。** 使用 split @ no__t-0brain DNS 时，DNS 记录会拆分为同一 DNS 服务器上的不同区域作用域，并且 DNS 客户端将基于客户端是内部客户端还是外部客户端接收响应。 可以为 Active Directory 集成的区域或独立 DNS 服务器上的区域配置 split @ no__t-0brain DNS。
+-   **裂脑 DNS。** 使用 split\-大脑 DNS，会将 DNS 记录拆分为同一 DNS 服务器上的不同区域作用域，并且 DNS 客户端将基于客户端是内部客户端还是外部客户端接收响应。 可以为 Active Directory 集成的区域或独立 DNS 服务器上的区域配置拆分\-大脑 DNS。
 
 -   **滤除.** 你可以配置 DNS 策略来创建基于你提供的条件的查询筛选器。 DNS 策略中的查询筛选器允许你将 DNS 服务器配置为基于发送 DNS 查询的 DNS 查询和 DNS 客户端以自定义方式进行响应。 
--   **取证.** 你可以使用 DNS 策略将恶意 DNS 客户端重定向到非 @ no__t-0existent IP 地址，而不是将它们定向到他们尝试访问的计算机。
+-   **取证.** 你可以使用 DNS 策略将恶意 DNS 客户端重定向到不\-存在的 IP 地址，而不是将它们定向到他们尝试访问的计算机。
 
 -   **基于时间的重定向的时间。** 你可以使用 DNS 策略，通过基于一天中的时间将应用程序流量分布到应用程序的不同地理位置。 
   
@@ -75,7 +75,7 @@ ms.locfileid: "71406238"
   
 ## <a name="dane-support"></a>窗格会支持
 
-你可以使用窗格会支持 \(RFC 6394 和 6698 @ no__t-1，指定 DNS 客户端应将证书颁发给 dns 服务器中的域名称。 这可防止攻击者利用中间人攻击，使得用户能够破坏 DNS 缓存并将 DNS 名称指向其自己的 IP 地址。  
+你可以使用窗格会支持 \(RFC 6394 和 6698\) 为 DNS 客户端指定 dns 客户端应将证书颁发给 DNS 服务器中托管的域名的 CA。 这可防止攻击者利用中间人攻击，使得用户能够破坏 DNS 缓存并将 DNS 名称指向其自己的 IP 地址。  
   
 例如，假设你在 www.contoso.com 通过使用名为 CA1 的知名颁发机构颁发的证书来托管使用 SSL 的安全网站。 有人可能仍然能够从名为 CA2 的不同、不是众所周知的证书颁发机构获取 www.contoso.com 的证书。 然后，托管虚设 www.contoso.com 网站的实体可能会损坏客户端或服务器的 DNS 缓存，以将 www.contoto.com 指向其虚假站点。 最终用户将从 CA2 提供证书，并可直接确认并连接到虚假站点。 使用窗格会，客户端将向 DNS 服务器发出请求，以便 contoso.com 请求 TLSA 记录，并了解 www.contoso.com 的证书是由 CA1 颁发的。 如果使用其他 CA 颁发的证书，则会中止连接。  
   
@@ -150,7 +150,7 @@ Windows Server 2016 中引入了以下新的 Windows PowerShell cmdlet 和参数
 - [DnsServer 模块](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
 - [Set-dnsclient 模块](https://docs.microsoft.com/powershell/module/dnsclient/?view=win10-ps)
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 -   [DNS 客户端中的新增功能](What-s-New-in-DNS-Client.md)  
   

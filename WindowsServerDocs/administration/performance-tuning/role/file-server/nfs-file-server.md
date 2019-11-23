@@ -33,7 +33,7 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
 
 ### <a name="tuning-parameters-for-nfs-file-servers"></a>NFS 文件服务器的优化参数
 
-以下 REG @ no__t-0DWORD 注册表设置可能会影响 NFS 文件服务器的性能：
+下面的 REG\_DWORD 注册表设置可能会影响 NFS 文件服务器的性能：
 
 -   **OptimalReads**
 
@@ -41,7 +41,7 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\OptimalReads
     ```
 
-    默认值为 0。 此参数确定是否为 FILE @ no__t-0RANDOM @ no__t-1ACCESS 或 FILE @ no__t-2SEQUENTIAL @ no__t-3ONLY 打开文件，具体取决于工作负荷 i/o 特性。 将此值设置为1可强制打开文件 @ no__t-0RANDOM @ no__t-1ACCESS 的文件。 FILE @ no__t-0RANDOM @ no__t-1ACCESS 禁止文件系统和缓存管理器进行预提取。
+    默认值为 0。 此参数确定是打开文件\_随机\_ACCESS 还是仅为文件\_顺序\_，具体取决于工作负荷 i/o 特性。 将此值设置为1以强制打开文件\_随机\_访问。 文件\_随机\_访问会阻止文件系统和缓存管理器进行预提取。
 
     >[!NOTE]
     > 必须仔细评估此设置，因为它可能会对系统文件缓存增长造成潜在影响。
@@ -85,7 +85,7 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\FileHandleCacheSizeinMB
     ```
 
-    默认值为 4。 此参数指定文件句柄缓存条目使用的最大内存。 最小值为1，最大值为 1 @ no__t-01024 @ no__t-11024 @ no__t-21024 （1073741824）。
+    默认值为 4。 此参数指定文件句柄缓存条目使用的最大内存。 最小值为1，最大值为 1\*1024\*1024\*1024 （1073741824）。
 
 -   **LockFileHandleCacheInMemory**
 

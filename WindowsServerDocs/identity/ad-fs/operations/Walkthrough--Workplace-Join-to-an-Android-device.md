@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71407478"
 ---
-# <a name="walkthrough-workplace-join-to-an-android-device"></a>演练：Workplace Join 到 Android 设备
+# <a name="walkthrough-workplace-join-to-an-android-device"></a>演练： Workplace Join 到 Android 设备
 
 
 
@@ -29,7 +29,7 @@ ms.locfileid: "71407478"
 
 1.  需要在设备上安装 Azure Authenticator 的应用程序，以创建一个工作帐户，该帐户将设备加入到工作区加入。 以下 URL 提供了有关如何在 Android 设备上安装 Azure 验证器应用程序并添加工作帐户的说明。 工作帐户会使你的 Android 设备进入受信任的设备，并为设备上的应用程序提供单一登录（SSO）。 你可以使用受信任的设备访问 web 应用程序和现代业务线应用程序，如你的 IT 管理员的建议。 有关详细信息，请参阅[适用于 Android 的 Azure Authenticator](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [跨公司应用程序从任何设备加入工作区以实现 SSO 和无缝第二重身份验证](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 [使用 Azure Active Directory 设备注册服务设置本地条件性访问](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)
 

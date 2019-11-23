@@ -15,16 +15,16 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356019"
 ---
-# <a name="use-dns-policy-for-split-brain-dns-deployment"></a>将 DNS 策略用于 Split @ no__t-0Brain DNS 部署
+# <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用 DNS 策略拆分\-大脑 DNS 部署
 
 >适用于：Windows Server 2016
 
-你可以使用本主题来了解如何在 Windows Server @ no__t-0 2016 中为拆分的 DNS 部署配置 DNS 策略，其中有两个版本的单个区域，一个用于组织 intranet 上的内部用户，另一个用于外部用户，后者是通常是 Internet 上的用户。
+你可以使用本主题来了解如何在 Windows Server&reg; 2016 中为拆分的 DNS 部署配置 DNS 策略，其中有两个版本的单个区域-一种用于组织 intranet 上的内部用户，另一种是 Internet 上的用户。
 
 >[!NOTE]
->有关如何将 DNS 策略用于 split @ no__t-0brain DNS 部署与 Active Directory 集成 DNS 区域的信息，请参阅[在 Active Directory 中将 Dns 策略用于裂脑 dns](dns-sb-with-ad.md)。
+>有关如何使用 DNS 策略拆分\-使用 Active Directory 集成 DNS 区域的大脑 DNS 部署的信息，请参阅[在 Active Directory 中将 Dns 策略用于裂脑 dns](dns-sb-with-ad.md)。
 
-以前，此方案要求 DNS 管理员维护两个不同的 DNS 服务器，每个服务器为内部和外部用户提供服务。 如果区域中只有几条记录被拆分 @ no__t-0brained，或同时向同一个父域委派了区域的两个实例（内部和外部），这就成为了管理难题。 
+以前，此方案要求 DNS 管理员维护两个不同的 DNS 服务器，每个服务器为内部和外部用户提供服务。 如果区域中只拆分了几条记录\-brained，或者区域的两个实例（内部和外部）都委派到同一个父域，这就成为了管理难题。 
 
 用于拆分的另一种配置方案是选择性递归控制 DNS 名称解析。 在某些情况下，企业 DNS 服务器应该为内部用户在 Internet 上执行递归解析，同时，它们还必须充当外部用户的权威名称服务器，并阻止它们的递归。 
 
@@ -158,7 +158,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 如果为其接收了 Contoso DNS 服务器的查询（例如，对于 www.microsoft.com），则会针对 DNS 服务器上的策略评估名称解析请求。 
 
-由于这些查询不在任何区域，因此，不会对在0as 中定义的区域级别策略 @no__t-no__t 进行计算。 
+由于这些查询不在任何区域中，因此不会计算 \(如\) split 示例中定义的区域级别策略。 
 
 DNS 服务器评估递归策略，专用接口上收到的查询与**SplitBrainRecursionPolicy**匹配。 此策略指向启用了递归的递归作用域。
 
@@ -179,7 +179,7 @@ DNS 服务器评估递归策略，专用接口上收到的查询与**SplitBrainR
 
 递归作用域是一组设置的唯一实例，这些设置控制 DNS 服务器上的递归。 递归作用域包含转发器列表，并指定是否启用了递归。 DNS 服务器可以有多个递归作用域。 
 
-旧递归设置和转发器列表被称为默认递归作用域。 不能添加或删除默认递归作用域，由名称点 \( "标识\)。
+旧递归设置和转发器列表被称为默认递归作用域。 不能添加或删除默认递归作用域，它由名称 "\("\)标识。
 
 在此示例中，默认递归设置处于禁用状态，而内部客户端的新递归作用域是在启用了递归的位置创建的。
 

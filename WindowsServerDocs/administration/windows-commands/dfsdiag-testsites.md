@@ -22,9 +22,9 @@ ms.locfileid: "71378387"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag TestSites
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-通过验证充当命名空间服务器或文件夹 \(link @ no__t 的服务器是否在所有域控制器上都具有相同的站点关联来检查 active directory 域服务 @no__t 0AD DS @ no__t 站点的配置。  
+通过验证充当命名空间服务器或文件夹 \(链接\) 目标的服务器是否在所有域控制器上都具有相同的站点关联来检查 active directory 域服务 \(AD DS\) 站点的配置。  
   
   
   
@@ -34,13 +34,13 @@ ms.locfileid: "71378387"
 dfsdiag /TestSites </Machine:<server name>| /DFSpath:<namespace root or DFS folder> [/Recurse]> [/Full]  
 ```  
   
-### <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>参数  
   
 |参数|描述|  
 |-------|--------|  
-|\/Machine： <server name>|要在其上验证站点关联的服务器的名称。|  
-|\/DFSpath： <namespace root or DFS folder>|命名空间 root 或分布式文件系统 \(DFS @ no__t 文件夹 \(link @ no__t，其中包含要为其验证站点关联的目标。|  
-|\/Recurse|枚举并验证指定命名空间根目录下的所有文件夹目标的站点关联。|  
+|\/计算机：<server name>|要在其上验证站点关联的服务器的名称。|  
+|\/DFSpath：<namespace root or DFS folder>|命名空间 root 或分布式文件系统 \(DFS\) 文件夹 \(与要验证其站点关联的目标\) 链接。|  
+|\/递归|枚举并验证指定命名空间根目录下的所有文件夹目标的站点关联。|  
 |\/Full|验证 AD DS 和服务器的注册表中是否包含相同的站点关联信息。|  
   
 ## <a name="BKMK_Examples"></a>示例  

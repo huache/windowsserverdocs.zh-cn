@@ -51,12 +51,12 @@ ms.locfileid: "71403724"
 ### <a name="interoperability"></a>删除或弃用的功能
 对于 Windows Server 2012，Windows PowerShell cmdlet 默认为管理组托管服务帐户，而不是服务器托管服务帐户。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [组托管服务帐户概述](group-managed-service-accounts-overview.md)
 
 -   [Active Directory 域服务概述](active-directory-domain-services-overview.md)
 
--   @no__t 0Managed 服务帐户：了解、实现、最佳实践和疑难解答 @ no__t-0
+-   [托管服务帐户：了解、实现、最佳做法和故障排除](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

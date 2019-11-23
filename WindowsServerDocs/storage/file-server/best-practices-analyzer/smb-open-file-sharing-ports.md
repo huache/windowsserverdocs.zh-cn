@@ -1,5 +1,5 @@
 ---
-title: 中小企业应打开文件和打印机共享端口
+title: SMB：文件和打印机共享端口应打开
 TOCTitle: 'SMB: File and printer sharing ports should be open'
 ms.date: 07/02/2012
 ms.prod: windows-server
@@ -14,14 +14,14 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71385830"
 ---
-# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>中小企业应打开文件和打印机共享端口
+# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB：文件和打印机共享端口应打开
 
 
 更新日期：2011年2月2日
 
-适用于：Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，windows server 2012，Windows Server 2008 R2
+适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，windows server 2012，Windows Server 2008 R2
 
-@no__t 0This 主题旨在解决由最佳做法分析器扫描标识的特定问题。只应将本主题中的信息应用到运行文件服务最佳做法分析器的计算机，并遇到本主题中所述的问题。有关最佳做法和扫描的详细信息，请参阅 @ no__t-0[最佳做法分析器](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)。
+*本主题旨在解决最佳做法分析器扫描标识的特定问题。只应将本主题中的信息应用到运行文件服务最佳做法分析器的计算机，并遇到本主题中所述的问题。有关最佳做法和扫描的详细信息，请参阅*[最佳做法分析器](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)。
 
 
 <table>
@@ -40,7 +40,7 @@ ms.locfileid: "71385830"
 </tr>
 <tr class="odd">
 <td><p><strong>Severity</strong></p></td>
-<td><p>Error</p></td>
+<td><p>错误</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>类别</strong></p></td>

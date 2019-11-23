@@ -22,7 +22,7 @@ ms.locfileid: "71375360"
 ---
 # <a name="irftp"></a>irftp
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 通过红外链接发送文件。    
 ## <a name="syntax"></a>语法  
@@ -30,10 +30,10 @@ ms.locfileid: "71375360"
 irftp [<Drive>:\] [[<path>] <FileName>] [/h][/s]  
 ```  
 
-### <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>参数  
 |参数|描述|  
 |-------|--------|  
-|驱动器： @no__t 0Specifies 包含要通过红外链接发送的文件的驱动器。|  
+|驱动器：\|指定包含要通过红外链接发送的文件的驱动器。|  
 |通道名字|指定要通过红外链接发送的文件或文件集的位置和名称。 如果指定一组文件，则必须指定每个文件的完整路径。|  
 |/h|指定隐藏模式。 当使用隐藏模式时，将在不显示 "无线链接" 对话框的情况下发送文件。|  
 |/s|打开 "无线链接" 对话框，以便您可以选择要发送的文件或文件集，而无需使用命令行来指定驱动器、路径和文件名。|  

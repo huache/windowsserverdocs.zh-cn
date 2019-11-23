@@ -25,7 +25,7 @@ ms.locfileid: "71404520"
 
 本主题介绍在多林部署中配置远程访问所需的计划步骤。  
   
-## <a name="prerequisites"></a>先决条件  
+## <a name="prerequisites"></a>必备条件  
 在开始部署此方案之前，请查看此列表以了解重要要求：  
   
 -   需要双向信任。  
@@ -42,8 +42,8 @@ ms.locfileid: "71404520"
 你至少必须在新林中为该林的 DirectAccess 客户端计算机创建一个安全组。 这是因为一个安全组不能包含多个林的帐户。  
   
 > [!NOTE]  
-> -   DirectAccess 至少需要为每个林提供一个 Windows 10 @ no__t-0 或 Windows @ no__t-1 个客户端安全组。 但是，建议每个包含 Windows 10 或 Windows 8 客户端的域都有一个 Windows 10 或 Windows 8 客户端安全组。  
-> -   当启用了多站点时，DirectAccess 至少需要为 Windows 7 客户端计算机支持的每个 DirectAccess 入口点的每个林至少有一个 Windows 7 @ no__t-0 个客户端安全组。 但是，建议为每个包含 Windows 7 客户端的域的每个入口点使用单独的 Windows 7 客户端安全组。  
+> -   DirectAccess 至少需要为每个林提供一个 Windows 10&reg; 或 Windows&reg; 8 客户端安全组。 但是，建议每个包含 Windows 10 或 Windows 8 客户端的域都有一个 Windows 10 或 Windows 8 客户端安全组。  
+> -   当启用了多站点时，DirectAccess 至少需要为 Windows 7 客户端计算机支持的每个 DirectAccess 入口点的每个林至少有一个 Windows 7&reg; 的客户端安全组。 但是，建议为每个包含 Windows 7 客户端的域的每个入口点使用单独的 Windows 7 客户端安全组。  
 >   
 > 如果要在添加的域中的客户端计算机上应用 DirectAccess，则必须在这些域中创建客户端 GPO。 添加安全组会导致为新域写入新的客户端 GPO；因此，如果你将新域中的新安全组添加到 DirectAccess 客户端安全组列表中，客户端 GPO 会自动在新域上生成，并且新域的客户端计算机将通过该客户端 GPO 获取 DirectAccess 设置。  
 >   

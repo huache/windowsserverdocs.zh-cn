@@ -34,13 +34,13 @@ ms.locfileid: "71372150"
 Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|/d： \<PrinterName >|指定要打印作业的打印机。 若要打印到本地连接的打印机，请在计算机上指定连接打印机的端口。</br>-并行端口的有效值为 LPT1、LPT2 和 LPT3。</br>-串行端口的有效值为 COM1、COM2、COM3 和 COM4。</br>还可以通过使用其队列名称（\\ @ no__t-1*ServerName*\*PrinterName *）来指定网络打印机。 如果未指定打印机，则默认情况下会将打印作业发送到 LPT1。|
-|\<Drive >：|指定要打印的文件所在的逻辑或物理驱动器。 如果要打印的文件位于当前驱动器上，则不需要此参数。|
-|\<Path >|指定要打印的文件的位置。 如果要打印的文件位于当前目录中，则此参数不是必需的。|
+|/d：\<PrinterName >|指定要打印作业的打印机。 若要打印到本地连接的打印机，请在计算机上指定连接打印机的端口。</br>-并行端口的有效值为 LPT1、LPT2 和 LPT3。</br>-串行端口的有效值为 COM1、COM2、COM3 和 COM4。</br>还可以通过使用其队列名称（\\\\*ServerName*\*PrinterName *）来指定网络打印机。 如果未指定打印机，则默认情况下会将打印作业发送到 LPT1。|
+|\<驱动器 >：|指定要打印的文件所在的逻辑或物理驱动器。 如果要打印的文件位于当前驱动器上，则不需要此参数。|
+|\<路径 >|指定要打印的文件的位置。 如果要打印的文件位于当前目录中，则此参数不是必需的。|
 |\<FileName > [...]|必需。 指定要打印的文件。 可以在一个命令中包含多个文件。|
 |/?|在命令提示符下显示帮助。|
 
@@ -61,7 +61,7 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 ```
 print /d:lpt2 report.txt
 ```
-若要将 c:\Accounting 目录中的文件 Report .txt 发送到 \\ @ no__t-1CopyRoom 服务器上的 Printer1 打印队列，请键入：
+若要将 c:\Accounting 目录中的文件 Report .txt 发送到 \\\\CopyRoom 服务器上的 Printer1 打印队列，请键入：
 ```
 print /d:\\copyroom\printer1 c:\accounting\report.txt 
 ```

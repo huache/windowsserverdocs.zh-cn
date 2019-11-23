@@ -23,9 +23,9 @@ ms.locfileid: "71388316"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-CLIENT2 是一个 Windows 7 @ no__t 0 计算机，用于演示在 Windows Server 2016 服务器上运行的远程访问的向后兼容性。  
+CLIENT2 是一个 Windows 7&reg; 计算机，用于演示在 Windows Server 2016 服务器上运行的远程访问的向后兼容性。  
   
-1. 在 CLIENT2 上安装操作系统。 在 CLIENT2 上安装 Windows @ no__t 7 Enterprise 或 Windows @ no__t-1 7 旗舰版。  
+1. 在 CLIENT2 上安装操作系统。 在 CLIENT2 上安装 Windows&reg; 7 Enterprise 或 Windows&reg; 7 旗舰版。  
   
 2. 将 CLIENT2 加入 CORP 域。 将 CLIENT2 加入到 corp.contoso.com 域。  
   

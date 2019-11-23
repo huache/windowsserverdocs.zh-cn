@@ -33,27 +33,27 @@ ms.locfileid: "71356170"
     > [!NOTE]  
     > 如果你未将计算机命名为 CA1，并且你的域名与此示例中的名称不同，则你的 CA 名称不同。 CA 名称的格式为*domain*-*CAComputerName*-ca。  
   
-3.  单击 **“扩展”** 选项卡。确保将 "**选择扩展**" 设置为 " **CRL 分发点（CDP）** "，并在 "**指定用户可以从中获取证书吊销列表（CRL）的位置**" 中执行以下操作：  
+3.  单击 "**扩展**" 选项卡。确保 "**选择扩展**" 设置为**CRL 分发点（CDP）** ，并在 "**指定用户可以从中获取证书吊销列表（CRL）的位置**" 中执行以下操作：  
   
-    1.  选择 @no__t 的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
+    1.  选择 `file://\\<ServerDNSName>\CertEnroll\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
   
-    2.  选择 @no__t 的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
+    2.  选择 `http://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
   
-    3.  选择以路径 @no__t 开头的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
+    3.  选择以路径 `ldap:///CN=<CATruncatedName><CRLNameSuffix>,CN=<ServerShortName>`开头的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
   
 4.  在 "**指定用户可以从中获取证书吊销列表（CRL）的位置**" 中，单击 "**添加**"。 "**添加位置**" 对话框将打开。  
   
-5.  在 "**添加位置**" 的 "**位置**" 中，键入 `http://pki.corp.contoso.com/pki/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`，然后单击 **"确定"** 。 这会返回到 CA 属性对话框。  
+5.  在 "**添加位置**" 的 "**位置**" 中，键入 `http://pki.corp.contoso.com/pki/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`"，然后单击 **" 确定 "** 。 这会返回到 CA 属性对话框。  
   
 6.  在 "**扩展**" 选项卡上，选中以下复选框：  
   
-    -   @no__t Crl 中的0Include。客户端使用它来查找增量 CRL 位置 @ no__t-0  
+    -   **包括在 Crl 中。客户端使用它来查找增量 CRL 位置**  
   
     -   **包含在已颁发证书的 CDP 扩展中**  
   
 7.  在 "**指定用户可以从中获取证书吊销列表（CRL）的位置**" 中，单击 "**添加**"。 "**添加位置**" 对话框将打开。  
   
-8.  在 "**添加位置**" 的 "**位置**" 中，键入 `file://\\pki.corp.contoso.com\pki\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`，然后单击 **"确定"** 。 这会返回到 CA 属性对话框。  
+8.  在 "**添加位置**" 的 "**位置**" 中，键入 `file://\\pki.corp.contoso.com\pki\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`"，然后单击 **" 确定 "** 。 这会返回到 CA 属性对话框。  
   
 9. 在 "**扩展**" 选项卡上，选中以下复选框：  
   
@@ -63,15 +63,15 @@ ms.locfileid: "71356170"
   
 10. 将**选择扩展**更改为**颁发机构信息访问（AIA）** ，并在 "**指定用户可以从中获取证书吊销列表（CRL）的位置**" 中，执行以下操作：  
   
-    1.  选择以路径 @no__t 开头的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
+    1.  选择以路径 `ldap:///CN=<CATruncatedName>,CN=AIA,CN=Public Key Services`开头的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
   
-    2.  选择 @no__t 的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
+    2.  选择 `http://<ServerDNSName>/CertEnroll/<ServerDNSName>_<CaName><CertificateName>.crt`的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
   
-    3.  选择 @no__t 的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
+    3.  选择 `file://\\<ServerDNSName>\CertEnroll\<ServerDNSName><CaName><CertificateName>.crt`的条目，然后单击 "**删除**"。 在 "**确认删除**" 中单击 **"是"** 。  
   
 11. 在 "**指定用户可以从中获取此 CA 的证书的位置**" 中，单击 "**添加**"。 "**添加位置**" 对话框将打开。  
   
-12. 在 "**添加位置**" 的 "**位置**" 中，键入 `http://pki.corp.contoso.com/pki/<ServerDNSName>_<CaName><CertificateName>.crt`，然后单击 **"确定"** 。 这会返回到 CA 属性对话框。  
+12. 在 "**添加位置**" 的 "**位置**" 中，键入 `http://pki.corp.contoso.com/pki/<ServerDNSName>_<CaName><CertificateName>.crt`"，然后单击 **" 确定 "** 。 这会返回到 CA 属性对话框。  
   
 13. 在 "**扩展**" 选项卡上，选择 **"在已颁发证书的 AIA 中包含"** 。  
   

@@ -34,12 +34,12 @@ ms.locfileid: "71370888"
 start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/b {<Command> | <Program>} [<Parameters>]]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|"\<Title >"|指定要在命令提示符窗口标题栏中显示的标题。|
-|/d \<Path >|指定启动目录。|
+|"\<标题 >"|指定要在命令提示符窗口标题栏中显示的标题。|
+|/d \<路径 >|指定启动目录。|
 |i|将 Cmd.exe 启动环境传递到新的命令提示符窗口。 如果未指定 **/i** ，则使用当前环境。|
 |/min \|/max|指定最小化（ **/min**）或最大化（ **/max**）新的命令提示符窗口。|
 |/separate \|/shared|在单独的内存空间（ **/separate**）或共享内存空间（ **/shared**）中启动16位程序。 64位平台上不支持这些选项。|
@@ -47,8 +47,8 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/affinity \<HexAffinity >|将指定的处理器关联掩码（表示为十六进制数）应用于新应用程序。|
 |/wait|启动应用程序并等待其结束。|
 |/b|启动应用程序而不打开新的命令提示符窗口。 除非应用程序启用了 CTRL + C 处理，否则将忽略 CTRL + C 处理。 使用 CTRL + BREAK 中断应用程序。|
-|/b @no__t > \| \<Program >|指定要启动的命令或程序。|
-|\<Parameters >|指定要传递给命令或程序的参数。|
+|/b \<命令 > \| \<程序 >|指定要启动的命令或程序。|
+|\<参数 >|指定要传递给命令或程序的参数。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注

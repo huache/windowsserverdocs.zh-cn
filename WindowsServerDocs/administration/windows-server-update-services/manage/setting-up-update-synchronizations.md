@@ -22,7 +22,7 @@ ms.locfileid: "71361597"
 ---
 # <a name="setting-up-update-synchronizations"></a>设置更新同步
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在同步期间，WSUS 服务器将从更新源下载更新（更新元数据和文件）。 它还会下载新的产品分类和类别（如果有）。 当 WSUS 服务器首次同步时，它将下载你在配置同步选项时指定的所有更新。 第一次同步后，WSUS 服务器仅下载更新源中的更新，以及现有更新的元数据中的修订和更新过期。
 
@@ -38,7 +38,7 @@ WSUS 服务器根据你指定的产品或产品系列（例如，Windows 或 Win
 
 可以在 "**产品和分类**" 下的 "**选项**" 页上指定更新产品和分类。 产品在层次结构中列出，按产品系列分组。 如果选择 "Windows"，则会自动选择属于该产品层次结构的每个产品。 通过选中 "父项" 复选框，可以选择其下的所有项以及所有将来的版本。 选中子复选框不会选中父复选框。 "产品" 的默认设置为 "所有 Windows 产品"，分类的默认设置为 "关键" 和 "安全更新"。
 
-如果 WSUS 服务器在副本模式下运行，则将无法执行此任务。 有关副本模式的详细信息，请参阅[运行 WSUS 副本模式](running-wsus-replica-mode.md)和 [Step 1：准备 WSUS 部署 @ no__t-0。
+如果 WSUS 服务器在副本模式下运行，则将无法执行此任务。 有关副本模式的详细信息，请参阅[运行 Wsus 副本模式](running-wsus-replica-mode.md)和[步骤1：为 WSUS 部署做好准备](../plan/plan-your-wsus-deployment.md)。
 
 ##### <a name="to-specify-update-products-and-classifications-for-synchronization"></a>为同步指定更新产品和分类
 
@@ -59,7 +59,7 @@ WSUS 服务器根据你指定的产品或产品系列（例如，Windows 或 Win
 WSUS 服务器将根据你指定的语言下载更新。 你可以同步其可用的所有语言的更新，也可以指定一小部分语言。 如果你有 WSUS 服务器的层次结构，并且需要下载不同语言的更新，请确保已在上游服务器上指定了所有必需的语言。 在下游服务器上，可以指定在上游服务器上指定的语言子集。
 
 ### <a name="synchronizing-updates-from-the-microsoft-update-catalog"></a>正在从 Microsoft 更新目录同步更新
-有关从 Microsoft 更新目录站点同步更新的详细信息，请参阅：[WSUS 和目录站点](wsus-and-the-catalog-site.md)。
+有关从 Microsoft 更新目录站点同步更新的详细信息，请参阅： [WSUS 和目录站点](wsus-and-the-catalog-site.md)。
 
 ## <a name="configuring-proxy-server-settings"></a>配置代理服务器设置
 你可以将 WSUS 服务器配置为在与上游服务器或 Microsoft 更新同步期间使用代理服务器。 仅当 WSUS 服务器运行同步时，此设置才适用。 默认情况下，WSUS 服务器将尝试直接连接到上游服务器或 Microsoft 更新。
@@ -77,7 +77,7 @@ WSUS 服务器将根据你指定的语言下载更新。 你可以同步其可�
 
     -   如果要为连接到代理服务器的用户启用基本身份验证，请选中 "**允许基本身份验证（以明文形式发送密码）** " 复选框。
 
-3.  单击 **“确定”** 。
+3.  单击**确定**。
 
     > [!NOTE]
     > 由于 WSUS 会启动其所有网络流量，因此不需要在直接连接到 Microsoft update 的 WSUS 服务器上配置 Windows 防火墙。
@@ -87,9 +87,9 @@ WSUS 服务器将根据你指定的语言下载更新。 你可以同步其可�
 
 用于自定义 WSUS 服务器如何与更新源同步的选项包括：
 
--   可以指定用于同步的自定义端口。 有关配置端口的信息，请参阅 [Step 3：在 WSUS 部署指南中配置 WSUS @ no__t。
+-   可以指定用于同步的自定义端口。 有关配置端口的信息，请参阅 WSUS 部署指南中的[步骤3：配置 wsus](../deploy/2-configure-wsus.md) 。
 
--   可以使用安全套接字层（SSL）来保护 WSUS 服务器之间更新信息的同步。 有关使用 SSL 的详细信息，请参阅 "3.5" 部分。 安全套接字层协议 "为 @no__t 的安全 WSUS-0Step 3：在 WSUS 部署指南中配置 WSUS @ no__t。
+-   可以使用安全套接字层（SSL）来保护 WSUS 服务器之间更新信息的同步。 有关使用 SSL 的详细信息，请参阅 "3.5" 部分。 《 WSUS 部署指南》中的[步骤3：配置 wsus](../deploy/2-configure-wsus.md)的安全套接字层协议的安全 WSUS。
 
 ## <a name="synchronizing-manually-or-automatically"></a>手动或自动同步
 你可以手动同步 WSUS 服务器或指定它自动同步的时间。
@@ -110,7 +110,7 @@ WSUS 服务器将根据你指定的语言下载更新。 你可以同步其可�
 
 4.  对于 "**每天同步**次数"，请选择每天要执行的同步次数。 例如，如果想要从凌晨3:00 开始进行四次同步，则同步将在上午3:00、9:00 A.M.、下午 3:00 9:00 和下午进行。 每天。 （请注意，会将随机时间偏移量添加到计划的同步时间，以将服务器连接的空间排除在 Microsoft 更新。）
 
-5.  单击 **“确定”** 。
+5.  单击**确定**。
 
 #### <a name="to-synchronize-your-wsus-server-immediately"></a>立即同步 WSUS 服务器
 

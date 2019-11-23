@@ -43,7 +43,7 @@ ms.locfileid: "71359419"
 必须将联合身份验证服务使用的 SSL 证书及其私钥导出到 .pfx 文件。 有关详细信息，请参阅 [导出服务器身份验证证书的私钥部分](export-the-private-key-portion-of-a-server-authentication-certificate.md)。  
   
 > [!NOTE]
->  如果你计划在 Windows Server 2012 R2 中运行 AD FS 的过程中部署设备注册服务，则必须获取新的 SSL 证书。有关详细信息，请参阅[适用于 AD FS 注册 SSL 证书](enroll-an-ssl-certificate-for-ad-fs.md)并[使用 Device Registration Service 配置联合身份验证服务器](configure-a-federation-server-with-device-registration-service.md)。  
+>  如果你计划在 Windows Server 2012 R2 中运行 AD FS 的过程中部署设备注册服务，则必须获取新的 SSL 证书。有关详细信息，请参阅为[AD FS 注册 SSL 证书](enroll-an-ssl-certificate-for-ad-fs.md)和[使用设备注册服务配置联合服务器](configure-a-federation-server-with-device-registration-service.md)。  
   
 若要查看使用的令牌签名、令牌解密和服务通信证书，请运行以下 Windows PowerShell 命令，以便在文件中创建使用的所有证书的列表：  
   
@@ -103,14 +103,14 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
   
 ###  <a name="to-export-claims-provider-trusts-and-relying-party-trusts"></a>导出声明提供程序信任和信赖方信任  
   
-1.  若要导出 AD FS 声明提供方信任和信赖方信任，你必须以管理员身份（但不能以域管理员身份）登录联合服务器，并运行位于**media/server_support 中的以下 Windows PowerShell 脚本**Windows Server 2012 R2 安装 CD 的/adfs 文件夹： `export-federationconfiguration.ps1`。  
+1.  若要导出 AD FS 声明提供方信任和信赖方信任，你必须以管理员身份（但不能以域管理员身份）登录联合服务器，并运行 Windows Server 2012 R2 安装 CD 的**media/server_support/adfs**文件夹中的以下 Windows PowerShell 脚本： `export-federationconfiguration.ps1`。  
   
 > [!IMPORTANT]
 >  导出脚本使用以下参数：  
 > 
-> - Export-federationconfiguration.ps1-Path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t] [-Force] [-CertificatePassword < securestring @ no__t]  
->   -   Export-federationconfiguration.ps1-Path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < securestring @ no__t-3] [-RelyingPartyTrustIdentifier < string []>] [-ClaimsProviderTrustIdentifier < string [] >]  
->   -   Export-federationconfiguration.ps1-Path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < securestring @ no__t-3] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
+> - Export-federationconfiguration.ps1-Path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < securestring\>]  
+>   -   Export-federationconfiguration.ps1-Path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < securestring\>] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >]  
+>   -   Export-federationconfiguration.ps1-Path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < securestring\>] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** — cmdlet 只会导出字符串数组中已指定了标识符的信赖方信任。 默认设置为不导出任何信赖方信任。 如果 RelyingPartyTrustIdentifier、ClaimsProviderTrustIdentifier、RelyingPartyTrustName 和 ClaimsProviderTrustName 都未指定，则脚本将导出所有信赖方信任和声明提供程序信任。  
 > 
@@ -120,15 +120,15 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
 > 
 >   **-ClaimsProviderTrustName <string[]>** — cmdlet 只会导出字符串数组中已指定了名称的声明提供程序信任。 默认设置为不导出任何声明提供程序信任。  
 > 
->   **-Path < 字符串\>**  -包含导出文件的文件夹的路径。  
+>   **-Path < 字符串\>** -将包含导出文件的文件夹的路径。  
 > 
->   **-ComputerName < 字符串\>**  -指定 STS 服务器主机名。 默认值为本地计算机。 如果要将 Windows Server 2012 中的 AD FS 2.0 或 AD FS 迁移到 Windows Server 2012 R2 中的 AD FS，则为原有 AD FS 服务器的主机名。  
+>   **-ComputerName < string\>** -指定 STS 服务器主机名。 默认值为本地计算机。 如果要将 Windows Server 2012 中的 AD FS 2.0 或 AD FS 迁移到 Windows Server 2012 R2 中的 AD FS，则为原有 AD FS 服务器的主机名。  
 > 
->   **-Credential < PSCredential\>**  -指定有权执行此操作的用户帐户。 默认为当前用户。  
+>   **-Credential < PSCredential\>** -指定有权执行此操作的用户帐户。 默认为当前用户。  
 > 
 >   **-Force** – 指定不提示用户进行确认。  
 > 
->   **-CertificatePassword < SecureString\>**  -指定用于导出 AD FS 证书私钥的密码。 如果不指定此项，则需要导出带有私钥的 AD FS 证书时，脚本将提示用户提供密码。  
+>   **-CertificatePassword < SecureString\>** -指定用于导出 AD FS 证书私钥的密码。 如果不指定此项，则需要导出带有私钥的 AD FS 证书时，脚本将提示用户提供密码。  
 > 
 >   **Inputs**：无  
 > 
@@ -193,9 +193,9 @@ import-federationconfiguration.ps1
 > [!IMPORTANT]
 >  导入脚本使用以下参数：  
 > 
-> - Import-federationconfiguration.ps1-Path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < string @ no__t-3] [-CertificatePassword < securestring @ no__t-4]  
->   -   Import-federationconfiguration.ps1-Path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < string @ no__t-3] [-CertificatePassword < securestring @ no__t-4] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >  
->   -   Import-federationconfiguration.ps1-Path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < string @ no__t-3] [-CertificatePassword < securestring @ no__t-4] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
+> - Import-federationconfiguration.ps1-Path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-CertificatePassword < securestring\>]  
+>   -   Import-federationconfiguration.ps1-Path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-CertificatePassword < securestring\>] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >  
+>   -   Import-federationconfiguration.ps1-Path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-CertificatePassword < securestring\>] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** — cmdlet 只会导入字符串数组中已指定了标识符的信赖方信任。 默认设置为不导入任何信赖方信任。 如果 RelyingPartyTrustIdentifier、ClaimsProviderTrustIdentifier、RelyingPartyTrustName 和 ClaimsProviderTrustName 都未指定，则脚本将导入所有信赖方信任和声明提供程序信任。  
 > 
@@ -205,21 +205,21 @@ import-federationconfiguration.ps1
 > 
 >   **-ClaimsProviderTrustName <string[]>** — cmdlet 只会导入字符串数组中已指定了名称的声明提供程序信任。 默认设置为不导入任何声明提供程序信任。  
 > 
->   **-Path < 字符串\>**  -包含要导入的配置文件的文件夹的路径。  
+>   **-Path < 字符串\>** -包含要导入的配置文件的文件夹的路径。  
 > 
->   **-LogPath < 字符串\>**  -将包含导入日志文件的文件夹的路径。 将在此文件夹中创建名为“import.log”的日志文件。  
+>   **-LogPath < 字符串\>** -将包含导入日志文件的文件夹的路径。 将在此文件夹中创建名为“import.log”的日志文件。  
 > 
->   **-ComputerName < 字符串\>**  -指定 STS 服务器的主机名。 默认值为本地计算机。 如果要将 Windows Server 2012 中的 AD FS 2.0 或 AD FS 迁移到 Windows Server 2012 R2 中的 AD FS，应将此参数设置为原有 AD FS 服务器的主机名。  
+>   **-ComputerName < string\>** -指定 STS 服务器的主机名。 默认值为本地计算机。 如果要将 Windows Server 2012 中的 AD FS 2.0 或 AD FS 迁移到 Windows Server 2012 R2 中的 AD FS，应将此参数设置为原有 AD FS 服务器的主机名。  
 > 
 >   **-Credential < PSCredential\>** -指定有权执行此操作的用户帐户。 默认为当前用户。  
 > 
 >   **-Force** – 指定不提示用户进行确认。  
 > 
->   **-CertificatePassword < SecureString\>**  -指定用于导入 AD FS 证书私钥的密码。 如果不指定此项，则需要导入带有私钥的 AD FS 证书时，脚本将提示用户提供密码。  
+>   **-CertificatePassword < SecureString\>** -指定用于导入 AD FS 证书私钥的密码。 如果不指定此项，则需要导入带有私钥的 AD FS 证书时，脚本将提示用户提供密码。  
 > 
 >   **Inputs：** 字符串 - 此命令使用导入文件夹路径作为输入。 可以通过管道将 Export-FederationConfiguration 传递到此命令。  
 > 
->   **输出：** 无。  
+>   **Outputs：** 无。  
   
 在信赖方信任的 WSFedEndpoint 属性中使用任何尾随空格都可能会导致导入脚本出错。 对于这种情况，请在导入之前从文件中手动删除这些空格。 例如，下列条目会导致错误：  
   
@@ -245,7 +245,7 @@ import-federationconfiguration.ps1
   
 4. 配置所有自定义 AD FS 终结点设置。 在 AD FS 管理控制台中选择“终结点”。 根据你在准备 AD FS 迁移时导出到文件中的已启用 AD FS 终结点列表检查已启用的 AD FS 终结点。  
   
-    \-与  
+    \- 和-  
   
     配置所有自定义声明说明。 在 AD FS 管理控制台中选择“声明说明”。 针对你在准备 AD FS 迁移时导出到文件中的声明说明列表，检查 AD FS 声明说明的列表。 在 AD FS 中添加包含在文件中，但未包含在默认列表中的所有自定义声明说明。 请注意，管理控制台中的 Claim 标识符将映射到文件中的 ClaimType。  
   
@@ -257,11 +257,11 @@ import-federationconfiguration.ps1
   
        -   Windows Server 2012 R2 中的 AD FS 包含 **%systemroot%\ADFS\Microsoft.IdentityServer.Servicehost.exe.config**文件。 使用与**web.config 文件元素相同的语法**创建一个元素： `<useRelayStateForIdpInitiatedSignOn enabled="true" />`。 将此元素作为 **> identityserver**文件的 < 的一部分包含在**identityserver**文件的一部分中。  
   
-   -   如果 **< persistIdentityProviderInformation enabled = "true&#124;false" lifetimeInDays = "90" enablewhrPersistence = "true&#124;false"/\>** 已添加到 AD FS 2.0**中的 web.config**文件或 Windows Server 中的 AD FS2012场，你必须在 Windows Server 2012 R2 场中的 AD FS 中配置以下服务属性：  
+   -   如果 **< persistIdentityProviderInformation enabled = "true&#124;false" lifetimeInDays = "90" enablewhrPersistence = "true&#124;false"/\>** 已添加到 windows server 2012 场中 AD FS 2.0 或 AD FS 中的 Web.config 文件，则必须在 windows server 2012 R2 场**中的 AD FS**中配置以下服务属性：  
   
        1.  在 Windows Server 2012 R2 的 AD FS 中，运行以下 Windows PowerShell 命令： `Set-AdfsWebConfig –HRDCookieEnabled –HRDCookieLifetime`。  
   
-   -   如果 **< 单一登录 enabled = "true&#124;false"/\>** 已添加到 AD FS 2.0 中的 web.config 文件或 windows server 2012 场中的 AD FS **，则无**AD FS 需在 windows server 2012R2 场。 默认情况下，在 Windows Server 2012 R2 场内 AD FS 中启用了单一登录。  
+   -   如果 **< 单一登录 enabled = "true&#124;false"/\>** 已添加到 windows server 2012 场中 AD FS 2.0 或 AD FS 中的 web.config 文件，则无需在 windows server 2012 R2 场**中的 AD FS**中设置任何其他服务属性。 默认情况下，在 Windows Server 2012 R2 场内 AD FS 中启用了单一登录。  
   
    -   如果已将 localAuthenticationTypes 设置添加到 Windows Server 2012 场中 AD FS 2.0 或 AD FS 中的**web.config**文件，则必须在 windows Server 2012 R2 场中的 AD FS 上配置以下服务属性：  
   

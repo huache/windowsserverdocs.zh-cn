@@ -19,9 +19,9 @@ ms.locfileid: "71364939"
 ---
 # <a name="configure-the-server-with-a-sufficient-amount-of-dynamic-mac-addresses"></a>将服务器配置为具有足够数量的动态 MAC 地址
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
-@no__t 0This 主题旨在解决由最佳做法分析器扫描标识的特定问题。只应将本主题中的信息应用到运行 Hyper-v 最佳做法分析器的计算机上，并遇到本主题中所述的问题。有关最佳做法和扫描的详细信息，请参阅 @ no__t-0[最佳做法分析器](https://go.microsoft.com/fwlink/?LinkId=122786)。  
+*本主题旨在解决最佳做法分析器扫描标识的特定问题。只应将本主题中的信息应用到运行 Hyper-v 最佳做法分析器的计算机上，并遇到本主题中所述的问题。有关最佳做法和扫描的详细信息，请参阅*[最佳做法分析器](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
 |属性|详细信息|  
 |-|-|  

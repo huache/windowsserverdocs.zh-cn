@@ -19,17 +19,17 @@ ms.locfileid: "71396194"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-如果部署基于证书的身份验证方法，例如可扩展身份验证协议 @ no__t-0Transport Layer Security \(EAP @ no__t-2TLS @ no__t-3，受保护的可扩展身份验证协议 @ no__t-4Transport 层安全性 @no__5PEAP @ no__t-6TLS @ no__t-7 和 PEAP @ no__t-8Microsoft 质询握手身份验证协议版本 2 \(MS @ no__t-10CHAP v2 @ no__t-11，你必须将服务器证书注册到你的所有 NPSs。 服务器证书必须：
+如果部署基于证书的身份验证方法，例如可扩展身份验证协议\-传输层安全性 \(EAP\-TLS\)、受保护的可扩展身份验证协议\-传输层安全性 \(PEAP\-TLS\)和 PEAP\-Microsoft 质询握手身份验证协议版本 2 \(MS\-CHAP v2\)，则必须向所有 NPSs 注册服务器证书。 服务器证书必须：
 
 - 满足为[PEAP 和 EAP 要求配置证书模板](nps-manage-cert-requirements.md)中所述的最低服务器证书要求
 
-- 由客户端计算机信任的证书颁发机构 \(CA @ no__t-1 颁发。 在当前用户和本地计算机的 "受信任的根证书颁发机构" 证书存储中存在其证书时，信任 CA。
+- 由客户端计算机信任的证书颁发机构 \(CA\) 颁发。 在当前用户和本地计算机的 "受信任的根证书颁发机构" 证书存储中存在其证书时，信任 CA。
 
-以下说明有助于在受信任的根 CA 为第三方 CA （如 Verisign）的部署中管理 NPS 证书，或者通过使用 Active Directory 为公钥基础结构部署的 CA 提供 \(PKI @ no__t证书服务 \(AD CS @ no__t-3。
+以下说明有助于在受信任的根 CA 是第三方 CA （如 Verisign）的部署中管理 NPS 证书，也可以使用 Active Directory 证书服务 \(AD CS\)\(PKI\) 为公钥基础结构部署的 CA。
 
 ## <a name="change-the-cached-tls-handle-expiry"></a>更改缓存的 TLS 句柄过期
 
-在针对 EAP @ no__t-0TLS、PEAP @ no__t-1TLS 和 PEAP @ no__t-2MS @ no__t-3CHAP v2 的初始身份验证过程中，NPS 将缓存连接客户端的 TLS 连接属性的一部分。 客户端还会缓存 NPS 的部分 TLS 连接属性。
+在针对 EAP\-TLS、PEAP\-TLS 和 PEAP\-MS\-CHAP v2 的初始身份验证过程中，NPS 将缓存连接客户端的 TLS 连接属性的一部分。 客户端还会缓存 NPS 的部分 TLS 连接属性。
 
 这些 TLS 连接属性的每个单独集合称为 TLS 句柄。
 
@@ -50,7 +50,7 @@ ms.locfileid: "71396194"
 
 ## <a name="configure-the-tls-handle-expiry-time-on-client-computers"></a>在客户端计算机上配置 TLS 句柄过期时间
 
-您可以使用此过程来更改客户端计算机缓存 NPS 的 TLS 句柄的时间。 成功对 NPS 进行身份验证后，客户端计算机会将 NPS 的 TLS 连接属性缓存为 TLS 句柄。 TLS 句柄的默认持续时间为10小时 \(36000000 毫秒 @ no__t。 使用以下过程可以增加或减少 TLS 句柄到期时间。
+您可以使用此过程来更改客户端计算机缓存 NPS 的 TLS 句柄的时间。 成功对 NPS 进行身份验证后，客户端计算机会将 NPS 的 TLS 连接属性缓存为 TLS 句柄。 TLS 句柄的默认持续时间为10小时 \(36000000 毫秒\)。 使用以下过程可以增加或减少 TLS 句柄到期时间。
 
 **Administrators**中的成员身份或同等身份是完成此过程所需的最低要求。
 
@@ -61,7 +61,7 @@ ms.locfileid: "71396194"
 
 1. 在 NPS 上，打开注册表编辑器。
 
-2. 浏览到注册表项**HKEY @ no__t-1LOCAL @ no__t-2MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL**
+2. 浏览到注册表项**HKEY\_LOCAL\_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL**
 
 3. 在 "**编辑**" 菜单上，单击 "**新建**"，然后单击 "**项**"。
 
@@ -73,7 +73,7 @@ ms.locfileid: "71396194"
 
 ## <a name="configure-the-tls-handle-expiry-time-on-npss"></a>在 NPSs 上配置 TLS 句柄过期时间
 
-使用此过程来更改 NPSs 缓存客户端计算机的 TLS 句柄的时间长度。 成功对访问客户端进行身份验证后，将客户端计算机的 NPSs 缓存 TLS 连接属性作为 TLS 句柄。 TLS 句柄的默认持续时间为10小时 \(36000000 毫秒 @ no__t。 使用以下过程可以增加或减少 TLS 句柄到期时间。
+使用此过程来更改 NPSs 缓存客户端计算机的 TLS 句柄的时间长度。 成功对访问客户端进行身份验证后，将客户端计算机的 NPSs 缓存 TLS 连接属性作为 TLS 句柄。 TLS 句柄的默认持续时间为10小时 \(36000000 毫秒\)。 使用以下过程可以增加或减少 TLS 句柄到期时间。
 
 **Administrators**中的成员身份或同等身份是完成此过程所需的最低要求。
 
@@ -84,7 +84,7 @@ ms.locfileid: "71396194"
 
 1. 在 NPS 上，打开注册表编辑器。
 
-2. 浏览到注册表项**HKEY @ no__t-1LOCAL @ no__t-2MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL**
+2. 浏览到注册表项**HKEY\_LOCAL\_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL**
 
 3. 在 "**编辑**" 菜单上，单击 "**新建**"，然后单击 "**项**"。
 
@@ -106,7 +106,7 @@ ms.locfileid: "71396194"
 
 ### <a name="to-obtain-the-sha-1-hash-of-a-trusted-root-ca-certificate"></a>获取受信任的根 CA 证书的 SHA-1 哈希
 
-1. 在 "运行" 对话框或 Windows PowerShell 中，键入**mmc**，然后按 enter。 将打开 Microsoft 管理控制台 \(MMC @ no__t-1。 在 MMC 中，单击 "**文件**"，然后单击 "**添加/删除 Snap\in**"。 "**添加或删除管理单元**" 对话框将打开。
+1. 在 "运行" 对话框或 Windows PowerShell 中，键入**mmc**，然后按 enter。 此时将打开 Microsoft 管理控制台 \(MMC\)。 在 MMC 中，单击 "**文件**"，然后单击 "**添加/删除 Snap\in**"。 "**添加或删除管理单元**" 对话框将打开。
 
 2. 在 "**添加或删除管理单元**" 的 "**可用管理单元**" 中，双击 "**证书**"。 "证书管理单元" 向导将打开。 单击 "**计算机帐户**"，然后单击 "**下一步**"。
 
@@ -122,9 +122,9 @@ ms.locfileid: "71396194"
 
 8. 在字段列表中，滚动到 "指纹" 并选择 "**指纹**"。
 
-9. 在下面的窗格中，将显示作为证书的 SHA-1 哈希的十六进制字符串。 选择 SHA-1 哈希，然后按 "复制" 命令的 Windows 键盘快捷方式 \(CTRL @ no__t-1C @ no__t，将哈希复制到 Windows 剪贴板。
+9. 在下面的窗格中，将显示作为证书的 SHA-1 哈希的十六进制字符串。 选择 SHA-1 哈希，然后按 "复制" 命令的 Windows 键盘快捷方式 \(CTRL\+C\) 将哈希复制到 Windows 剪贴板。
 
-10. 打开要粘贴 SHA-1 哈希的位置，正确找到光标，然后按 "粘贴" 命令的 Windows 键盘快捷方式 \(CTRL @ no__t-1V @ no__t。 
+10. 打开要粘贴 SHA-1 哈希的位置，正确找到光标，然后按 "粘贴" 命令的 Windows 键盘快捷方式 \(CTRL\+V\)。 
 
 有关证书和 NPS 的详细信息，请参阅[为 PEAP 和 EAP 要求配置证书模板](nps-manage-cert-requirements.md)。
 

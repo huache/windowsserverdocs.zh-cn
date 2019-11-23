@@ -18,9 +18,9 @@ ms.locfileid: "71356073"
 ---
 # <a name="core-network-guidance-for-windows-server"></a>适用于 Windows Server 的核心网络指南
 
->适用于：Windows Server、Windows Server 2016
+>适用于： Windows Server、Windows Server 2016
 
-本主题概述了 Windows Server @ no__t 2016 的核心网络指南，其中包含以下各节。  
+本主题概述了 Windows Server&reg; 2016 的核心网络指南，其中包含以下各节。  
   
 -   [Windows Server 核心网络简介](#bkmk_intro)  
   
@@ -32,7 +32,7 @@ ms.locfileid: "71356073"
 
 Windows Server 核心网络提供了包括以下各项在内的多个优点。
 
-- 用于计算机和其他与传输控制协议/Internet 协议 (TCP/IP) 兼容设备之间进行网络连接的核心协议。 TCP/IP 是一套用于连接计算机和构建网络的标准协议。 TCP/IP 是随 Microsoft @ no__t 提供的网络协议软件，该软件可实现和支持 TCP/IP 协议套件。
+- 用于计算机和其他与传输控制协议/Internet 协议 (TCP/IP) 兼容设备之间进行网络连接的核心协议。 TCP/IP 是一套用于连接计算机和构建网络的标准协议。 TCP/IP 是与 Microsoft&reg; Windows&reg; 操作系统一起提供的网络协议软件，该软件可实现和支持 TCP/IP 协议套件。
 
 - 动态主机配置协议 (DHCP) 服务器自动 IP 寻址。 与从 DHCP 服务器为计算机和其他设备动态提供 IP 地址租约相比，在网络上的所有计算机上手动配置 IP 地址非常耗时且不太灵活。
 
@@ -48,7 +48,7 @@ Windows Server 核心网络提供了包括以下各项在内的多个优点。
 
 ## <a name="bkmk_core"></a>Windows Server 核心网络指南
 
-Windows Server 2016 Core 网络指南提供了有关如何在新林中规划和部署完全正常运行的网络和新的 Active Directory @ no__t-0 域所需的核心组件的说明。 使用此指南，可以部署使用以下 Windows 服务器组件配置的计算机：
+Windows Server 2016 Core 网络指南提供了有关如何在新林中规划和部署完全正常运行的网络和新的 Active Directory&reg; 域所需的核心组件的说明。 使用此指南，可以部署使用以下 Windows 服务器组件配置的计算机：
 
 - Active Directory 域服务 (AD DS) 服务器角色
 

@@ -17,7 +17,7 @@ ms.locfileid: "71393817"
 ---
 # <a name="storage-replica-overview"></a>存储副本概述
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+>适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 存储副本 (Storage Replica) 是一种 Windows Server 技术，它允许针对灾难恢复在服务器或群集之间进行卷的复制。 它还允许你创建跨越两个站点的拉伸故障转移群集，同时保持所有节点同步。
 
@@ -44,19 +44,19 @@ ms.locfileid: "71393817"
 
 ![显示使用存储副本将 New York 中的两个群集节点的存储复制为 New Jersey 中的两个节点的关系图](./media/Storage-Replica-Overview/Storage_SR_StretchCluster.png)  
 
-@NO__T 0FIGURE 1：使用存储副本的扩展群集中的存储复制 @ no__t-0  
+**图1：使用存储副本的 stretch 群集中的存储复制**  
 
 **群集到群集**允许两个独立群集之间的复制，其中一个群集与另一个群集进行同步复制或异步复制。 此方案可以利用存储空间直通、具有共享的 SAS 存储的存储空间以及连接了 SAN 和 iSCSI 的 LUN。 它通过 Windows 管理中心和 PowerShell 进行管理，并且需要手动干预以进行故障转移。 
 
 ![显示使用存储副本将 Los Angeles 中的群集的存储复制为 Las Vegas 中的不同的群集的关系图](./media/Storage-Replica-Overview/Storage_SR_ClustertoCluster.png)  
 
-**FIGURE 2：使用存储副本 @ no__t 进行群集到群集的存储复制  
+**图2：使用存储副本的群集到群集存储复制**  
 
 **服务器到服务器**允许使用具有共享的 SAS 存储的存储空间、连接了 SAN 和 iSCSI 的 LUN 以及本地驱动器，在两个独立服务器之间进行同步和异步复制。 它通过 Windows 管理中心和 PowerShell 进行管理，并且需要手动干预以进行故障转移。  
 
 ![显示使用构建 5 中的服务器复制构建 9 中的服务器的关系图](./media/Storage-Replica-Overview/Storage_SR_ServertoServer.png)  
 
-**FIGURE 3：使用存储副本的服务器到服务器存储复制 @ no__t-0  
+**图3：使用存储副本的服务器到服务器存储复制**  
 
 > [!NOTE]
 > 还可以在一台计算机上使用四个单独的卷配置服务器到自我复制。 但是，本指南不涉及这种情况。  
@@ -73,7 +73,7 @@ ms.locfileid: "71393817"
 
 * **安全**。 与许多供应商的产品不同，存储副本由行业领先的安全技术提供支持。 这包括数据包签名、AES-128-GCM 完整数据加密、对 Intel AES-NI 加密加速的支持和完整预身份验证中间人攻击防护。 存储副本利用 Kerberos AES256 进行节点之间所有的身份验证。  
 
-* **高性能初始同步**。存储副本支持种子初始同步，其中数据的一个子集已存在于较旧的副本、备份或随附驱动器上的目标中。 初始复制仅复制不同的块，这可能会缩短初始同步时间并防止数据占用有限的带宽。 存储副本阻止校验和计算，聚合意味着初始同步性能只受存储和网络速度限制。  
+* **高性能初始同步**。存储副本支持种子初始同步，其中，数据的一个子集已存在于较旧的副本、备份或随附驱动器上的目标中。 初始复制仅复制不同的块，这可能会缩短初始同步时间并防止数据占用有限的带宽。 存储副本阻止校验和计算，聚合意味着初始同步性能只受存储和网络速度限制。  
 
 * **一致性组**。 写入顺序保证 Microsoft SQL Server 的应用程序可以写入多个复制的卷，并了解数据在目标服务器上按顺序写入。  
 
@@ -87,7 +87,7 @@ ms.locfileid: "71393817"
 
 | 功能 | 详细信息 |
 | ----------- | ----------- |  
-| 类型 | 基于主机 |
+| 在任务栏的搜索框中键入 | 基于主机 |
 | 同步 | 是 |
 | 异步 | 是 |
 | 存储硬件不可知 | 是 |
@@ -96,7 +96,7 @@ ms.locfileid: "71393817"
 | 服务器到服务器复制 | 是 |
 | 群集到群集复制 | 是 |
 | “传输” | SMB3 |
-| 网络 | TCP/IP 或 RDMA |
+| Network | TCP/IP 或 RDMA |
 | 网络约束支持 | 是 |
 | RDMA* | iWARP、InfiniBand、RoCE v2 |
 | 复制网络端口防火墙要求 | 单个 IANA 端口（TCP 445 或 5445） |
@@ -140,7 +140,7 @@ ms.locfileid: "71393817"
 
 | 模式 | 图示 | 步骤 |
 | -------- | ----------- | --------- |
-| **同步**<br /><br />零数据丢失<br /><br />RPO | ![显示存储副本如何在同步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.应用程序写入数据<br />2.写入日志数据，并将数据复制到远程站点<br />3.在远程站点写入日志数据<br />4.从远程站点确认<br />5.确认应用程序写入<br /><br />t & t1：刷新到卷的数据，日志始终通过 |
+| **同步**<br /><br />零数据丢失<br /><br />RPO | ![显示存储副本如何在同步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.应用程序写入数据<br />2.写入日志数据，并将数据复制到远程站点<br />3.在远程站点写入日志数据<br />4.从远程站点确认<br />5.确认应用程序写入<br /><br />t & t1：数据刷新到该卷，始终写入日志 |
 
 ### <a name="asynchronous-replication"></a>异步复制
 
@@ -152,7 +152,7 @@ ms.locfileid: "71393817"
 
 | 模式 | 图示 | 步骤 |
 | -------- | ----------- | --------- |
-| **异步**<br /><br />几乎零数据丢失<br /><br />（取决于多种因素）<br /><br />RPO | ![显示存储副本如何在异步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.应用程序写入数据<br />2.写入日志数据<br />3.确认应用程序写入<br />4.数据复制到远程站点<br />5.日志数据在远程站点写入<br />6.从远程站点确认<br /><br />t & t1：刷新到卷的数据，日志始终通过 |
+| **异步**<br /><br />几乎零数据丢失<br /><br />（取决于多种因素）<br /><br />RPO | ![显示存储副本如何在异步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.应用程序写入数据<br />2.写入日志数据<br />3.确认应用程序写入<br />4.数据复制到远程站点<br />5.日志数据在远程站点写入<br />6.从远程站点确认<br /><br />t & t1：数据刷新到该卷，始终写入日志 |
 
 ### <a name="key-evaluation-points-and-behaviors"></a>关键评估点和行为  
 
@@ -160,7 +160,7 @@ ms.locfileid: "71393817"
 
 -   在 Windows Server 2016 中复制时目标卷不可访问。 在配置复制时，目标卷将卸除，这使得用户无法进行任何读取或写入。 其驱动器号可以显示在文件资源管理器等常见界面中，但是，应用程序无法访问卷本身。 块级别复制技术与卷中允许访问的目标已装载文件系统不兼容；当块在其下更改时，NTFS 和 ReFS 不支持用户将数据写入该卷中。 
 
-Windows Server 版本1709中的**测试故障转移**cmdlet debuted 也包含在 windows server 2019 中。 这现在支持暂时装载目标卷的读写快照，以便进行备份、测试等。有关详细信息，请参阅 https://aka.ms/srfaq 。
+Windows Server 版本1709中的**测试故障转移**cmdlet debuted 也包含在 windows server 2019 中。 这现在支持暂时装载目标卷的读写快照，以便进行备份、测试等。有关详细信息，请参阅 https://aka.ms/srfaq。
 
 -   异步复制的 Microsoft 实现与大多数不同。 异步复制的大多数行业实现依赖于基于快照的复制，其中周期性差异传输移动到另一个节点并进行合并。 存储副本异步复制的操作与同步复制相同，只是它不需要从目标进行序列化同步确认。 这意味着存储副本理论上具有较低的 RPO，因为它会持续进行复制。 但是，这也意味着它依赖于内部应用程序一致性保证，而不是使用快照来强制实现应用程序文件一致性。 存储副本保证所有复制模式中的故障一致性  
 
@@ -188,12 +188,12 @@ Windows Server 版本1709中的**测试故障转移**cmdlet debuted 也包含在
 
 有关 Windows Server 2019 中的存储副本中新功能的列表，请参阅[存储中的新增](../whats-new-in-storage.md#storage-replica2019)功能
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [使用共享存储拉伸群集复制](stretch-cluster-replication-using-shared-storage.md)  
 - [服务器到服务器存储复制](server-to-server-storage-replication.md)  
 - [群集到群集存储复制](cluster-to-cluster-storage-replication.md)  
 - [存储副本：已知问题](storage-replica-known-issues.md)  
-- [存储副本：常见问题解答](storage-replica-frequently-asked-questions.md)  
+- [存储副本：常见问题](storage-replica-frequently-asked-questions.md)  
 - [Windows Server 2016 中的存储空间直通](../storage-spaces/storage-spaces-direct-overview.md)
 - [Windows IT 专业人员支持](https://www.microsoft.com/itpro/windows/support)

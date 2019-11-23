@@ -22,7 +22,7 @@ ms.locfileid: "71403398"
 ---
 # <a name="schannel-security-support-provider-technical-reference"></a>Schannel 安全支持提供程序技术参考
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows 10
+>适用于: Windows Server (半年频道)、Windows Server 2016、Windows 10
 
 本参考适用于 IT 专业人员，其中包含与 Schannel 安全支持实现的传输层安全性（TLS）协议、安全套接字层（SSL）协议和数据报传输层安全性（DTLS）协议相关的信息。提供程序（SSP）。
 
@@ -31,7 +31,7 @@ ms.locfileid: "71403398"
 - [传输层安全协议](transport-layer-security-protocol.md)
 - [数据报传输层安全协议](datagram-transport-layer-security-protocol.md)
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [Windows 身份验证](../windows-authentication/windows-authentication-overview.md)
 [Kerberos 身份验证](../kerberos/kerberos-authentication-overview.md)
 

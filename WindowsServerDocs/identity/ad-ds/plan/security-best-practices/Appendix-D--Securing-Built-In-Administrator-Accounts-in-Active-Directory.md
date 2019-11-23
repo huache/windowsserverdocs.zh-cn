@@ -16,12 +16,12 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71367845"
 ---
-# <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>附录 D：保护 Active Directory 中的内置管理员帐户
+# <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>附录 D：保护 Active Directory 中的内置 Administrator 帐户的安全
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>附录 D：保护 Active Directory 中的内置管理员帐户  
+## <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>附录 D：保护 Active Directory 中的内置 Administrator 帐户的安全  
 在 Active Directory 的每个域中，将在创建域的过程中创建管理员帐户。 默认情况下，此帐户是域中的 "域管理员" 和 "管理员" 组的成员，并且如果域是目录林根级域，则该帐户也是 "企业管理员" 组的成员。
 
 只应为初始构建活动和灾难恢复方案保留域的管理员帐户的使用。 若要确保在不能使用其他帐户的情况下可以使用管理员帐户来影响修复，则不应在林中的任何域中更改管理员帐户的默认成员身份。 相反，你应该按照下一部分中所述，在林中的每个域中保护管理员帐户的安全，详细信息请参阅下面的分步说明。 
@@ -39,7 +39,7 @@ ms.locfileid: "71367845"
 
 -   配置 Gpo 以限制管理员帐户在已加入域的系统上的使用：  
 
-    -   在创建的一个或多个 Gpo，并链接到每个域中的工作站和成员服务器 Ou，将每个域的管理员帐户添加到 "**计算机配置 \windows 设置 \ 安全设置 \ 本地策略 \" 中的以下用户权限 \用户权限分配**：  
+    -   在你创建的一个或多个 Gpo 中，并链接到每个域中的工作站和成员服务器 Ou，将每个域的管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
         -   拒绝从网络访问这台计算机  
 
@@ -58,7 +58,7 @@ ms.locfileid: "71367845"
 ![保护内置管理员帐户](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_23.gif)  
 
 -   配置 Gpo 以限制域控制器上的管理员帐户  
-    -   在林中的每个域中，应修改默认域控制器 GPO 或链接到域控制器 OU 的策略，以将每个域的管理员帐户添加到 "计算机配置 \windows 设置" 中的以下用户权限 **\安全 \ 本地策略 \ 特权分配**：   
+    -   在林中的每个域中，应修改默认域控制器 GPO 或链接到域控制器 OU 的策略，以将每个域的管理员帐户添加到 "**计算机配置 \windows 设置 \ 安全设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：   
         -   拒绝从网络访问这台计算机  
 
         -   拒绝作为批处理作业登录  
@@ -105,13 +105,13 @@ ms.locfileid: "71367845"
 
 1.  在**服务器管理器**中，单击 "**工具**"，然后单击 "**组策略管理**"。  
 
-2.  在控制台树中，展开 "<Forest> \ 域 @ no__t"，然后**组策略对象**（其中，@no__t 为林的名称，<Domain> 是要在其中创建组策略的域的名称）。  
+2.  在控制台树中，依次展开 <Forest>\Domains "\\" <Domain>"、"**组策略对象**"（其中 <Forest> 是林的名称，<Domain> 是要在其中创建组策略的域的名称）。  
 
 3.  在控制台树中，右键单击**组策略对象**"，然后单击"**新建**"。  
 
     ![保护内置管理员帐户](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_27.gif)  
 
-4.  在 "**新建 GPO** " 对话框中，键入 <GPO Name>，然后单击 **"确定"** （其中，<GPO Name> 是此 GPO 的名称），如以下屏幕截图所示。  
+4.  在 "**新建 GPO** " 对话框中，键入 "<GPO Name>"，然后单击 **"确定"** （其中 <GPO Name> 是此 GPO 的名称），如以下屏幕截图所示。  
 
     ![保护内置管理员帐户](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_28.gif)  
 
@@ -127,7 +127,7 @@ ms.locfileid: "71367845"
 
     2.  单击 "**添加用户或组**"，然后单击 "**浏览**"。  
 
-    3.  键入**Administrator**，单击 "**检查名称**"，然后单击 **"确定"** 。 根据以下屏幕截图中所示，验证帐户是否显示为 <DomainName> \ 用户名格式。  
+    3.  键入**Administrator**，单击 "**检查名称**"，然后单击 **"确定"** 。 按照以下屏幕截图所示，验证帐户是否以 <DomainName>\Username 格式显示。  
 
         ![保护内置管理员帐户](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_30.gif)  
 
@@ -139,7 +139,7 @@ ms.locfileid: "71367845"
 
     2.  单击 "**添加用户或组**"，然后单击 "**浏览**"。  
 
-    3.  键入**Administrator**，单击 "**检查名称**"，然后单击 **"确定"** 。 根据以下屏幕截图中所示，验证帐户是否显示为 <DomainName> \ 用户名格式。  
+    3.  键入**Administrator**，单击 "**检查名称**"，然后单击 **"确定"** 。 按照以下屏幕截图所示，验证帐户是否以 <DomainName>\Username 格式显示。  
 
         ![保护内置管理员帐户](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_31.gif)  
 
@@ -151,7 +151,7 @@ ms.locfileid: "71367845"
 
     2.  单击 "**添加用户或组**"，然后单击 "**浏览**"。  
 
-    3.  键入**Administrator**，单击 "**检查名称**"，然后单击 **"确定"** 。 根据以下屏幕截图中所示，验证帐户是否显示为 <DomainName> \ 用户名格式。  
+    3.  键入**Administrator**，单击 "**检查名称**"，然后单击 **"确定"** 。 按照以下屏幕截图所示，验证帐户是否以 <DomainName>\Username 格式显示。  
 
         ![保护内置管理员帐户](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_32.gif)  
 
@@ -163,7 +163,7 @@ ms.locfileid: "71367845"
 
     2.  单击 "**添加用户或组**"，然后单击 "**浏览**"。  
 
-    3.  键入**Administrator**，单击 "**检查名称**"，然后单击 **"确定"** 。 根据以下屏幕截图中所示，验证帐户是否显示为 <DomainName> \ 用户名格式。  
+    3.  键入**Administrator**，单击 "**检查名称**"，然后单击 **"确定"** 。 按照以下屏幕截图所示，验证帐户是否以 <DomainName>\Username 格式显示。  
 
         ![保护内置管理员帐户](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_33.gif)  
 
@@ -173,7 +173,7 @@ ms.locfileid: "71367845"
 
 12. 在**组策略管理**中，通过执行以下操作将 GPO 链接到成员服务器和工作站 ou：  
 
-    1.  导航到 <Forest> 域 @ no__t @ no__t-2 （其中，<Forest> 是林的名称，<Domain> 是要在其中设置组策略的域的名称）。  
+    1.  导航到 <Forest>\Domains\\<Domain> （其中，<Forest> 是林的名称，<Domain> 是要在其中设置组策略的域的名称）。  
 
     2.  右键单击 GPO 将应用到的 OU，然后单击 "**链接现有 GPO**"。  
 
@@ -218,7 +218,7 @@ ms.locfileid: "71367845"
 
     ![保护内置管理员帐户](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_38.gif)  
 
-5.  在 "**命令提示符**" 窗口中，键入**net use \\ @ no__t @ No__t-4Server name @ no__t-5\c $** ，其中 \<Server name @ no__t-7 是你尝试通过网络访问的成员服务器或工作站的名称。  
+5.  在 "**命令提示符**" 窗口中，键入**net use \\\\\<Server name\>\c $** ，其中 \<Server name\> 是你尝试通过网络访问的成员服务器或工作站的名称。  
 
 6.  以下屏幕截图显示应显示的错误消息。  
 
@@ -238,7 +238,7 @@ ms.locfileid: "71367845"
 
 4.  单击 "**文件**"，然后单击 "**另存为**"。  
 
-5.  在 "**文件名**" 字段中，键入 **<Filename>** （其中 <Filename> 是新批处理文件的名称）。  
+5.  在 "**文件名**" 字段中，键入 **<Filename>.bat** （其中，<Filename> 是新批处理文件的名称）。  
 
 ###### <a name="schedule-a-task"></a>计划任务  
 
@@ -251,7 +251,7 @@ ms.locfileid: "71367845"
 
 3.  在**任务计划程序**上，单击 "**操作**"，然后单击 "**创建任务**"。  
 
-4.  在 "**创建任务**" 对话框中，键入 **<Task Name>** （其中 **<Task Name>** 是新任务的名称）。  
+4.  在 "**创建任务**" 对话框中，键入 **<Task Name>** （其中 **<Task Name>** 为新任务的名称）。  
 
 5.  单击 "**操作**" 选项卡，然后单击 "**新建**"。  
 
@@ -259,7 +259,7 @@ ms.locfileid: "71367845"
 
 7.  在 "**程序/脚本：** " 下，单击 "**浏览**"，找到并选择在 "创建批处理文件" 部分创建的批处理文件，然后单击 "**打开**"。  
 
-8.  单击 **“确定”** 。  
+8.  单击**确定**。  
 
 9. 单击“常规”选项卡。  
 
@@ -269,7 +269,7 @@ ms.locfileid: "71367845"
 
 12. 选择 **"运行用户是否登录"，或者 "** 不**存储密码**"。 该任务将仅有权访问本地计算机资源。  
 
-13. 单击 **“确定”** 。  
+13. 单击**确定**。  
 
 14. 应显示一个对话框，请求用户帐户凭据以运行任务。  
 

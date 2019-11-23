@@ -20,7 +20,7 @@ ms.locfileid: "71358463"
 
 
 ## <a name="to-add-a-help-desk-link"></a>添加帮助台链接  
-若要添加在 sign @ no__t-0in 页面上显示的帮助台链接，请使用以下 Windows PowerShell cmdlet 和语法。  
+若要添加在 "签名\-页面中显示的帮助台链接，请使用以下 Windows PowerShell cmdlet 和语法。  
 
 ![添加支持人员](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

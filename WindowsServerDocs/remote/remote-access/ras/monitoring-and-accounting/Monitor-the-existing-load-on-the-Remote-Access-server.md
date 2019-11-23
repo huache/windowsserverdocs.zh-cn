@@ -23,7 +23,7 @@ ms.locfileid: "71367217"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-**注意：** Windows Server 2012 将 DirectAccess 与路由及远程访问服务 (RRAS) 合并到了单个远程访问角色中。  
+**注意：** Windows Server 2012 将 DirectAccess 和路由和远程访问服务 (RRAS) 合并到了单个远程访问角色中。  
   
 术语 "**加载**" 指的是与远程访问服务器上的连接数相关的统计信息。 下面是在远程访问服务器上跟踪负载所需的步骤。  
   
@@ -58,7 +58,7 @@ ms.locfileid: "71367217"
   
 现在，**性能监视器**将以图形方式显示选定的服务器负载统计信息。  
   
-@no__t 0Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   

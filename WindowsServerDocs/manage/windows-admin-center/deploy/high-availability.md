@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 6ae7bd9ed7aee5835ac1f53b9e10879ad8824f52
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71406946"
@@ -22,7 +22,7 @@ ms.locfileid: "71406946"
 
 [了解其他 Windows 管理中心部署选项。](../plan/installation-options.md)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 - Windows Server 2016 或2019上2个或多个节点的故障转移群集。 [详细了解如何部署故障转移群集](../../../failover-clustering/failover-clustering-overview.md)。
 - 用于 Windows 管理中心的群集共享卷（CSV）存储可由群集中的所有节点访问的持久数据。 对于 CSV，10 GB 就足够了。
@@ -32,18 +32,18 @@ ms.locfileid: "71406946"
 ## <a name="install-windows-admin-center-on-a-failover-cluster"></a>在故障转移群集上安装 Windows 管理中心
 
 1. 将 ```Install-WindowsAdminCenterHA.ps1``` 脚本复制到群集中的节点。 下载 Windows 管理中心，或将其复制到相同的节点。
-2. 通过 RDP 连接到节点，并从该节点运行具有以下参数的 ```Install-WindowsAdminCenterHA.ps1``` 脚本：
+2. 通过 RDP 连接到节点，并通过以下参数从该节点运行 ```Install-WindowsAdminCenterHA.ps1``` 脚本：
     - `-clusterStorage`：用于存储 Windows 管理中心数据的群集共享卷的本地路径。
-    - `-clientAccessPoint`：选择将用于访问 Windows 管理中心的名称。 例如，如果使用参数 `-clientAccessPoint contosoWindowsAdminCenter` 运行该脚本，则将通过访问 `https://contosoWindowsAdminCenter.<domain>.com` 访问 Windows 管理中心服务
+    - `-clientAccessPoint`：选择将用于访问 Windows 管理中心的名称。 例如，如果使用参数 `-clientAccessPoint contosoWindowsAdminCenter`运行该脚本，则将通过访问来访问 Windows 管理中心服务 `https://contosoWindowsAdminCenter.<domain>.com`
     - `-staticAddress`：可选。 群集通用服务的一个或多个静态地址。 
-    - `-msiPath`：Windows 管理中心 .msi 文件的路径。
+    - `-msiPath`： Windows 管理中心的 .msi 文件的路径。
     - `-certPath`：可选。 证书的 .pfx 文件的路径。
-    - `-certPassword`：可选。 @No__t 中提供的证书的 SecureString 密码。
+    - `-certPassword`：可选。 `-certPath` 中提供的证书的 SecureString 密码。
     - `-generateSslCert`：可选。 如果你不希望提供签名证书，请包含此参数标志以生成自签名证书。 请注意，自签名证书将在60天后过期。
-    - `-portNumber`：可选。 如果未指定端口，则会在端口443（HTTPS）上部署网关服务。 若要使用其他端口，请在此参数中指定。 请注意，如果使用自定义端口（443除外），则将通过转到 https://\<clientAccessPoint @ no__t： \<port @ no__t，来访问 Windows 管理中心。
+    - `-portNumber`：可选。 如果未指定端口，则会在端口443（HTTPS）上部署网关服务。 若要使用其他端口，请在此参数中指定。 请注意，如果使用自定义端口（443除外），则将通过转到 https://\<clientAccessPoint\>：\<端口\>来访问 Windows 管理中心。
 
 > [!NOTE]
-> @No__t-0 脚本支持 ```-WhatIf ``` 和 ```-Verbose``` 参数
+> ```Install-WindowsAdminCenterHA.ps1``` 脚本支持 ```-WhatIf ``` 和 ```-Verbose``` 参数
 
 ### <a name="examples"></a>示例
 
@@ -66,7 +66,7 @@ $certPassword = Read-Host -AsSecureString
 
 ### <a name="update-to-a-new-version-of-windows-admin-center"></a>更新到新版本的 Windows 管理中心
 
-发布新版本的 Windows 管理中心后，只需使用 ```msiPath``` 参数即可再次运行 ```Install-WindowsAdminCenterHA.ps1``` 脚本：
+发布新版本的 Windows 管理中心时，只需使用 ```msiPath``` 参数再次运行 ```Install-WindowsAdminCenterHA.ps1``` 脚本：
 
 ```powershell
 .\Install-WindowsAdminCenterHA.ps1 -msiPath '.\WindowsAdminCenter.msi' -Verbose
@@ -90,7 +90,7 @@ $certPassword = Read-Host -AsSecureString
 
 ## <a name="uninstall"></a>卸载
 
-若要从故障转移群集中卸载 Windows 管理中心的 HA 部署，请将 ```-Uninstall``` 参数传递到 @no__t 脚本。
+若要从故障转移群集中卸载 Windows 管理中心的 HA 部署，请将 ```-Uninstall``` 参数传递到 ```Install-WindowsAdminCenterHA.ps1``` 脚本。
 
 ```powershell
 .\Install-WindowsAdminCenterHA.ps1 -Uninstall -Verbose

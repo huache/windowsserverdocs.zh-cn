@@ -17,9 +17,9 @@ ms.locfileid: "71387968"
 ---
 # <a name="web-application-proxy-in-windows-server-2016"></a>Windows Server 2016 中的 Web 应用程序代理
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
-@no__t 0This 内容与 Web 应用程序代理的本地版本相关。若要启用对云中的本地应用程序的安全访问，请参阅[Azure AD 应用程序代理内容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。 **  
+**此内容与 Web 应用程序代理的本地版本相关。若要启用对云中的本地应用程序的安全访问，请参阅[Azure AD 应用程序代理内容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。**  
   
 本部分中的内容介绍了 Windows Server 2016 的 Web 应用程序代理中的新增功能和更改功能。 此处列出的新功能和更改是在使用预览版时最有可能遇到的最大影响。  
   
@@ -55,7 +55,7 @@ ms.locfileid: "71387968"
   
 - 将客户端 IP 地址传播到后端应用程序  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 -   [Windows Server 2016 中的新增功能](https://technet.microsoft.com/library/dn765472.aspx)  
   

@@ -18,7 +18,7 @@ ms.locfileid: "71390247"
 ---
 # <a name="ad-forest-recovery---redeploy-remaining-dcs"></a>AD 林恢复-重新部署剩余 Dc
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 到目前为止的步骤适用于所有林：查找每个域的有效备份，单独恢复域，重新连接这些域，重置全局编录，并清除。 在下一步中，你将重新部署林。 执行此操作的方式将很大程度上取决于林设计、服务级别协议、站点结构、可用带宽以及其他许多因素。 你将需要根据此部分中的原则和建议设计自己的重新部署计划，这种方法最适合你的业务需求。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71390247"
   
 - DC 上用作克隆源的所有软件都必须能够克隆。 在启动克隆之前，应删除无法克隆的应用程序和服务。 如果无法做到这一点，则应选择备用的虚拟化 DC 作为源。  
 - 如果从要还原的第一个虚拟化 DC 克隆其他虚拟化的 dc，则需要在复制其 VHDX 文件时关闭源 DC。 然后，当克隆虚拟 Dc 首次启动时，它需要运行并联机。 如果关闭所需的停机时间对于第一个已恢复 DC 是不可接受的，则通过安装 AD DS 来部署其他虚拟化 DC，作为克隆的源。  
-- 对于克隆的虚拟化 DC 或要在其上安装 AD DS 的服务器的主机名没有限制。 你可以使用以前使用的新主机名或主机名。 有关 DNS 主机名语法的详细信息，请参阅[创建 Dns 计算机名称](https://technet.microsoft.com/library/cc785282.aspx)（[@no__t](https://go.microsoft.com/fwlink/?LinkId=74564)）。  
+- 对于克隆的虚拟化 DC 或要在其上安装 AD DS 的服务器的主机名没有限制。 你可以使用以前使用的新主机名或主机名。 有关 DNS 主机名语法的详细信息，请参阅[创建 Dns 计算机名称](https://technet.microsoft.com/library/cc785282.aspx)（[https://go.microsoft.com/fwlink/?LinkId=74564](https://go.microsoft.com/fwlink/?LinkId=74564)）。  
 - 将每台服务器配置为林中的第一个 DNS 服务器（在根域中还原的第一个 DC）作为其网络适配器的 TCP/IP 属性中的首选 DNS 服务器。 有关详细信息，请参阅[将 Tcp/ip 配置为使用 DNS](https://technet.microsoft.com/library/cc779282.aspx)。  
 - 如果将多个 Rodc 部署到一个中心位置，或通过删除并重新安装 AD DS 的传统方法重新部署域中的所有 Rodc，则可以通过删除并重新安装来重新部署该域中的所有 Rodc例如分支机构。  
    - 重新生成 Rodc 可确保它们不包含任何延迟对象，并可帮助防止在以后出现复制冲突。 从 RODC 中删除 AD DS 时，请*选择保留 DC 元数据的选项*。 使用此选项将保留 RODC 的 krbtgt 帐户，并保留委派的 RODC 管理员帐户和密码复制策略（PRP）的权限，并阻止你使用域管理员凭据删除和重新安装 AD DSRODC。 如果 DNS 服务器和全局编录角色最初安装在 RODC 上，则它还会保留这些角色。  

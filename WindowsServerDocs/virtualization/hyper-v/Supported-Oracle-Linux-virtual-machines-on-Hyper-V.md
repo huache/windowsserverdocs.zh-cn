@@ -20,7 +20,7 @@ ms.locfileid: "71365492"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Oracle Linux 虚拟机
 
->适用于：Windows Server 2019, Windows Server 2016, Hyper-v Server 2016, Windows Server 2012 R2, Hyper-v server 2012 R2, Windows Server 2012, Hyper-v Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7.1, Windows 7
+>适用于： Windows Server 2019，Windows Server 2016，Hyper-v Server 2016，Windows Server 2012 R2，Hyper-v server 2012 R2，Windows Server 2012，Hyper-v Server 2012，Windows Server 2008 R2，Windows 10，Windows 8.1，Windows 8，Windows 7.1，Windows 7
 
 以下功能分发映射指示每个版本中的功能。 表后面列出了每个分发的已知问题和解决方法。
 
@@ -30,7 +30,7 @@ ms.locfileid: "71365492"
 
 * [Unbreakable 企业内核系列](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_uek)
 
-* [说明](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_notes)
+* [注意](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_notes)
 
 ## <a name="table-legend"></a>表图例
 
@@ -40,7 +40,7 @@ ms.locfileid: "71365492"
 
 * （*空白*）-功能不可用
 
-* **UEK R @ no__t-1X QU @ no__t-2y** -Unbreakable Enterprise KERNEL （UEK），其中*x*是版本号， *y*是季度更新。
+* **UEK R\*x QU\*** Unbreakable Enterprise KERNEL （UEK），其中*x*是版本号， *y*是季度更新。
 
 ## <a name="BKMK_rhc"></a>Red Hat 兼容内核序列
 
@@ -66,7 +66,7 @@ ms.locfileid: "71365492"
 | 剪裁支持                                                                                                                                 | 2019、2016、2012 R2                | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 |                          |                           |                           |
 | SCSI WWN                                                                                                                                     | 2019、2016、2012 R2                | &#10004;           |                     | &#10004;                                                            | &#10004;                                                            |                          |                          |                          |                           |                           |
 | **[记忆](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
-| PAE 内核支持                                                                                                                           | 2019、2016、2012 R2、2012、2008 R2 | 不可用                | 不可用                 | &#10004;（仅限1.x）                                                 | &#10004;（仅限1.x）                                                 | 不可用                      | &#10004;                 | &#10004;                 | &#10004;                  | &#10004;                  |
+| PAE 内核支持                                                                                                                           | 2019、2016、2012 R2、2012、2008 R2 | N/A                | N/A                 | &#10004;（仅限1.x）                                                 | &#10004;（仅限1.x）                                                 | N/A                      | &#10004;                 | &#10004;                 | &#10004;                  | &#10004;                  |
 | MMIO 间隙的配置                                                                                                                    | 2019、2016、2012 R2                | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 | &#10004;                 | &#10004;                  | &#10004;                  |
 | 动态内存-热添加                                                                                                                     | 2019、2016、2012 R2、2012          | &#10004;备注8、9 | &#10004;备注8、9  | &#10004;备注7、8、9、10（备注6适用于 6.4-6.7）                      | &#10004;备注7、8、9、10（备注6适用于 6.4-6.7）                      | &#10004;备注6、7、8、9 | &#10004;备注6、7、8、9 | &#10004;备注6、7、8、9 | &#10004;备注6、7、8、9  |                           |
 | 动态内存-膨胀                                                                                                                  | 2019、2016、2012 R2、2012          | &#10004;备注8、9 | &#10004;备注8、9  | &#10004;备注7、9、10（备注6适用于 6.4-6.7）                         | &#10004;备注7、9、10（备注6适用于 6.4-6.7）                         | &#10004;备注6、8、9    | &#10004;备注6、8、9    | &#10004;备注6、8、9    | &#10004;备注6、8、9     | &#10004;备注6、8、9、10 |
@@ -109,7 +109,7 @@ Oracle Linux Unbreakable Enterprise 内核（UEK）仅限64位，并内置了 II
 | 剪裁支持                                                                                                                                 | 2019、2016、2012 R2                | &#10004;                  | &#10004;                  |                           |                           |                      |
 | SCSI WWN                                                                                                                                     | 2019、2016、2012 R2                |                           |                           |                           |                           |                      |
 | **[记忆](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                    |                           |                           |                           |                           |                      |
-| PAE 内核支持                                                                                                                           | 2019、2016、2012 R2、2012、2008 R2 | 不可用                       | 不可用                       | 不可用                       | 不可用                       | 不可用                  |
+| PAE 内核支持                                                                                                                           | 2019、2016、2012 R2、2012、2008 R2 | N/A                       | N/A                       | N/A                       | N/A                       | N/A                  |
 | MMIO 间隙的配置                                                                                                                    | 2019、2016、2012 R2                | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;             |
 | 动态内存-热添加                                                                                                                     | 2019、2016、2012 R2、2012          | &#10004;                  | &#10004;                  |                           |                           |                      |
 | 动态内存-膨胀                                                                                                                  | 2019、2016、2012 R2、2012          | &#10004;                  | &#10004;                  |                           |                           |                      |
@@ -155,7 +155,7 @@ Oracle Linux Unbreakable Enterprise 内核（UEK）仅限64位，并内置了 II
 
    * 启动内存和最小内存应等于或大于分发供应商建议的内存量。
 
-   * 通常会消耗系统中的全部可用内存的应用程序，仅消耗最多 80% 的可用 RAM。
+   * 通常会消耗系统中的全部可用内存的应用程序，仅消耗最多80% 的可用 RAM。
 
 9. 如果在 Windows Server 2016 或 Windows Server 2012 R2 操作系统上使用动态内存，请以128兆字节（MB）为单位指定 "**启动内存**"、"**最小内存**" 和 "**最大内存**" 参数。 如果不这样做，可能会导致热添加失败，并且在来宾操作系统中可能看不到任何内存增长。
 
@@ -176,7 +176,7 @@ Oracle Linux Unbreakable Enterprise 内核（UEK）仅限64位，并内置了 II
 14. 如果为虚拟机上的指定合成网络适配器配置了网络管理器，则静态 IP 注入可能不起作用。 要使静态 IP 注入正常运行，请确保已完全关闭网络管理器，或已通过 ifcfg-eth0-ethX 文件为特定网络适配器关闭网络管理器。
 
 
-请参阅
+另请参阅
 
 * [Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx)
 

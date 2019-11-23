@@ -38,7 +38,7 @@ ms.locfileid: "71406908"
 wac create --company "{!Company Name}" --tool "{!Tool Name}"
 ```
 
-| ReplTest1 | 说明 | 示例 |
+| 值 | 说明 | 示例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | 公司名称（包含空格） | ```Contoso Inc``` |
 | ```{!Tool Name}``` | 工具名称（包含空格） | ```Manage Foo Works``` |
@@ -71,23 +71,23 @@ npm install
 
 ## <a name="customize-your-extensions-icon"></a>自定义扩展的图标
 
-你可以在工具列表中自定义为你的扩展显示的图标。  为此，请在 @no__t 中修改扩展的所有 ```manifest.json``` 项：
+你可以在工具列表中自定义为你的扩展显示的图标。  为此，请修改扩展 ```manifest.json``` 中的所有 ```icon``` 条目：
 
 ``` json
 "icon": "{!icon-uri}",
 ```
 
-| ReplTest1 | 说明 | 示例 uri |
+| 值 | 说明 | 示例 uri |
 | ----- | ----------- | ------- |
 | ```{!icon-uri}``` | 图标资源的位置 | ```assets/foo-icon.svg``` |
 
-注意：目前，在开发模式下加载扩展时，不会显示自定义图标。  一种解决方法是删除 @no__t 的内容，如下所示：
+注意：目前，在开发模式下加载扩展时，不会显示自定义图标。  一种解决方法是删除 ```target``` 的内容，如下所示：
 
 ``` json
 "target": "",
 ```
 
-此配置仅适用于在开发模式下进行的端加载，因此，请务必保留 ```target``` 中包含的值，然后在发布扩展之前还原它。
+此配置仅适用于在开发模式下进行的端加载，因此保留 ```target``` 中包含的值并在发布扩展之前还原它很重要。
 
 ## <a name="build-and-side-load-your-extension"></a>生成和加载扩展
 

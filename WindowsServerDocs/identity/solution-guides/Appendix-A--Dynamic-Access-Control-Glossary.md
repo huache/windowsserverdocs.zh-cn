@@ -29,7 +29,7 @@ ms.locfileid: "71357616"
 |中心访问规则|一个包含条件和访问表达式的规则。|  
 |中心访问策略|在 Active Directory 中创作和承载的策略。|  
 |基于声明的访问控制|使用声明对资源做出访问控制决策的范例。|  
-|分类|确定资源的分类属性并将这些属性分配给与资源关联的元数据的过程。 另请参阅 REF AutomaticClassification \h \\ * MERGEFORMAT 自动分类、REF InheritedClassification \h \\ @ no__t MERGEFORMAT 继承的分类和 REF ManualClassification \h \\ @ no__t MERGEFORMAT Manual分类.|  
+|分类|确定资源的分类属性并将这些属性分配给与资源关联的元数据的过程。 另请参阅 REF AutomaticClassification \h \\* MERGEFORMAT 自动分类、REF InheritedClassification \h \\\* MERGEFORMAT 继承的分类和 REF ManualClassification \h \\\* MERGEFORMAT 手动分类。|  
 |设备声明|与系统关联的声明。  使用用户声明时，它包含在尝试访问资源的用户的令牌中。|  
 |随机访问控制列表（DACL）|一个访问控制列表，该列表标识允许或拒绝其访问安全资源的受信者。 它可以由资源所有者的判断来修改。|  
 |资源属性|描述文件并使用自动分类或手动分类分配给文件的属性（例如标签）。 示例包括：敏感度、项目和保持期。|  
@@ -44,10 +44,10 @@ ms.locfileid: "71357616"
 |安全描述符定义语言|一种规范，它将安全描述符中的信息描述为文本字符串。|  
 |过渡策略|尚未生效的中心访问策略。|  
 |系统访问控制列表（SACL）|一种访问控制列表，该列表指定特定信者在需要为其生成审核记录的访问尝试的类型。|  
-|用户声明|用户安全令牌中提供的用户的属性。 示例包括：部门、公司、项目和安全许可。  Windows Server 2012 之前的系统中的用户令牌中的信息（例如用户所属的安全组）也可以被视为用户声明。 某些用户声明通过 Active Directory 提供，其他则以动态方式进行计算，例如用户是否使用智能卡登录。|  
+|用户声明|用户安全令牌中提供的用户的属性。 示例包括：部门、公司、项目和安全净空。  Windows Server 2012 之前的系统中的用户令牌中的信息（例如用户所属的安全组）也可以被视为用户声明。 某些用户声明通过 Active Directory 提供，其他则以动态方式进行计算，例如用户是否使用智能卡登录。|  
 |用户令牌|一个数据对象，该对象标识用户以及与该用户相关联的用户声明和设备声明。 它用于授权用户访问资源。|  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

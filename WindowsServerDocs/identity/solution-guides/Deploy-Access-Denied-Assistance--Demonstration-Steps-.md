@@ -24,16 +24,16 @@ ms.locfileid: "71407178"
   
 **本文档中**  
   
--   [步骤 1：配置拒绝访问协助 @ no__t-0  
+-   [步骤1：配置 "拒绝访问" 协助](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_1)  
   
--   [步骤 2：配置电子邮件通知设置 @ no__t-0  
+-   [步骤2：配置电子邮件通知设置](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_2)  
   
--   [步骤 3：验证是否正确配置了 "拒绝访问" 协助 @ no__t-0  
+-   [步骤3：验证是否已正确配置 "拒绝访问" 协助](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
   
 > [!NOTE]  
 > 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
-## <a name="BKMK_1"></a>步骤1：配置“拒绝访问”协助  
+## <a name="BKMK_1"></a>步骤1：配置 "拒绝访问" 协助  
 你可以通过使用组策略在域中配置“拒绝访问”协助，或者可以通过使用文件服务器资源管理器控制台，在每个文件服务器上单独配置该协助。 还可以为文件服务器上的特定共享文件夹更改拒绝访问的消息。  
   
 可以通过使用组策略为域配置“拒绝访问”协助，如下所示：  
@@ -70,7 +70,7 @@ ms.locfileid: "71407178"
   
     3.  保留其余默认设置。  
   
-@no__t 0solution 指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -116,9 +116,9 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\W
   
 7.  如果希望查看呈现给用户的错误消息，请单击“预览” 。  
   
-8.  单击 **“确定”** 。  
+8.  单击**确定**。  
   
-@no__t 0solution 指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
   
@@ -142,7 +142,7 @@ Set-FSRMAdrSetting -Event "AccessDenied" -DisplayMessage "Type the text that the
   
 5.  单击 **“启用”** ，然后单击 **“确定”** 。  
   
-@no__t 0solution 指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。 
   
@@ -181,7 +181,7 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\SOFTWARE\Policies\Microsoft\W
   
 7.  单击“确定”，然后单击“关闭”。  
   
-@no__t 0solution 指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。 
   
@@ -208,9 +208,9 @@ Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Va
   
 5.  单击“发送测试电子邮件”以确保正确配置电子邮件通知。  
   
-6.  单击 **“确定”** 。  
+6.  单击**确定**。  
   
-@no__t 0solution 指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
   
@@ -218,7 +218,7 @@ Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Va
 set-FSRMSetting -SMTPServer "server1" -AdminEmailAddress "fileadmin@contoso.com" -FromEmailAddress "fileadmin@contoso.com"  
 ```  
   
-## <a name="BKMK_3"></a>步骤3：验证是否已正确配置“拒绝访问”协助  
+## <a name="BKMK_3"></a>步骤3：验证是否已正确配置 "拒绝访问" 协助  
 你可以通过让运行 Windows 8 的用户尝试访问他们无权访问的共享或文件来验证是否正确配置了 "拒绝访问" 协助。 当出现拒绝访问的消息时，用户应该可以看到“请求协助” 按钮。 单击“请求协助”按钮后，用户可以指定访问的原因，然后可以向文件夹所有者或文件服务器管理员发送一封电子邮件。 文件夹所有者或文件服务器管理员可以为你验证该电子邮件是否已送达以及是否包含相应的详细信息。  
   
 > [!IMPORTANT]  
@@ -226,7 +226,7 @@ set-FSRMSetting -SMTPServer "server1" -AdminEmailAddress "fileadmin@contoso.com"
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [方案：“拒绝访问”协助](Scenario--Access-Denied-Assistance.md)  
+-   [方案：拒绝访问协助](Scenario--Access-Denied-Assistance.md)  
   
 -   [规划 "拒绝访问" 协助](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
   

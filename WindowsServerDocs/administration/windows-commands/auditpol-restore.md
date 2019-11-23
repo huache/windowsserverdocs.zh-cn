@@ -1,6 +1,6 @@
 ---
 title: auditpol 还原
-description: 适用于**auditpol restore**的 Windows 命令主题-还原系统审核策略设置、所有用户的按用户审核策略设置，以及从语法上与逗号分隔值（CSV）文件格式一致的文件中的所有审核选项由/backup 选项使用。
+description: 适用于**auditpol restore**的 Windows 命令主题-还原系统审核策略设置、所有用户的按用户审核策略设置，以及从语法上与/backup 选项使用的逗号分隔值（CSV）文件格式一致的文件中的所有审核选项。
 ms.custom: na
 ms.prod: windows-server
 ms.reviewer: na
@@ -22,7 +22,7 @@ ms.locfileid: "71382412"
 ---
 # <a name="auditpol-restore"></a>auditpol 还原
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 为所有用户还原系统审核策略设置、每用户审核策略设置，以及从语法上与/backup 选项使用的逗号分隔值（CSV）文件格式一致的文件中的所有审核选项。
 
@@ -30,7 +30,7 @@ ms.locfileid: "71382412"
 ```
 auditpol /restore /file:<filename>
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
 |/file|指定应将审核策略还原到的文件。 该文件必须使用/backup 选项创建，或者必须在语法上与/backup 选项使用的 CSV 文件格式一致。|
@@ -43,5 +43,5 @@ auditpol /restore /file:<filename>
 auditpol /restore /file:c:\auditpolicy.csv
 ```
 #### <a name="additional-references"></a>其他参考
-[命令行语法关键字](command-line-syntax-key.md)
+[命令行语法键](command-line-syntax-key.md)
 [auditpol 备份](auditpol-backup.md)

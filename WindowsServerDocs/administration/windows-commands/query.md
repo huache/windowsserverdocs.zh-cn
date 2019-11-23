@@ -1,5 +1,5 @@
 ---
-title: query
+title: 查询
 description: '适用于 * * * * 的 Windows 命令主题 '
 ms.custom: na
 ms.prod: windows-server
@@ -20,9 +20,9 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71371836"
 ---
-# <a name="query"></a>query
+# <a name="query"></a>查询
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 显示有关进程、会话和远程桌面会话主机（RD 会话主机）服务器的信息。
 
@@ -37,7 +37,7 @@ query termserver
 query user
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
 |[查询进程](query-process.md)|显示有关在 rd 会话主机服务器上运行的进程的信息。|
@@ -47,4 +47,4 @@ query user
 
 #### <a name="additional-references"></a>其他参考
 [命令行语法解答](command-line-syntax-key.md)
-[远程桌面服务&#40;终端服务和&#41;命令参考](remote-desktop-services-terminal-services-command-reference.md)
+[远程桌面服务 & #40;终端服务和 #41;命令参考](remote-desktop-services-terminal-services-command-reference.md)

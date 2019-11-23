@@ -15,7 +15,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71405791"
 ---
-# <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>在 Windows Server 2016 或 Windows 10 中安装数据中心桥接 \(DCB @ no__t-1
+# <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>在 Windows Server 2016 或 Windows 10 中安装数据中心桥接 \(DCB\)
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
@@ -31,7 +31,7 @@ ms.locfileid: "71405791"
 
 - Windows Server（半年频道）
 - Windows Server 2016
-- Windows 10 @no__t 版本 @ no__t-1
+- Windows 10 \(所有版本\)
 
 以下操作系统包括 DCB 的早期版本，这些版本与在 Windows Server 2016 和 Windows 10 的 DCB 文档中使用的命令不兼容。
 
@@ -42,8 +42,8 @@ ms.locfileid: "71405791"
 
 下面是 DCB 的硬件要求列表。
 
-- DCB @ no__t-0capable 以太网网络适配器 @ no__t-1 @ no__t 必须安装在提供 Windows Server 2016 DCB 的计算机中。
-- 必须在网络上部署 DCB @ no__t-0capable 硬件交换机。
+- 必须在提供 Windows Server 2016 DCB 的计算机上安装 DCB\-支持的以太网网络适配器\(s\)。
+- 必须在网络上部署 DCB\-支持的硬件交换机。
 
 
 ## <a name="install-dcb-in-windows-server-2016"></a>在 Windows Server 2016 中安装 DCB
@@ -75,13 +75,13 @@ ms.locfileid: "71405791"
 1. 在 DC1 上的服务器管理器中，单击 "**管理**"，然后单击 "**添加角色和功能**"。 将打开“添加角色和功能向导”。
 2. 在“开始之前”中单击“下一步”。
 3. 在 **“选择安装类型”** 中，确保选中 **“基于角色或基于功能的安装”** ，然后单击 **“下一步”** 。
-4. 在 **“选择目标服务器”** 中，确保选中 **“从服务器池中选择一个服务器”** 。 在 **“服务器池”** 中，确保选中了本地计算机。 单击“下一步”。
+4. 在 **“选择目标服务器”** 中，确保选中 **“从服务器池中选择一个服务器”** 。 在 **“服务器池”** 中，确保选中了本地计算机。 单击**下一步**。
 5. 在“选择服务器角色”中，单击“下一步”。
 6. 在 "**功能**" 的 "**选择功能**" 中，单击 "**数据中心桥接**"。 此时将打开一个对话框，询问你是否要添加 DCB 必需的功能。 单击 "**添加功能**"。
 7. 在 "**选择功能**" 中，单击 "**下一步**"。 
 8. 7.In**确认安装选择**，请单击 "**安装**"。 安装**进度**页面显示安装过程中的状态。 显示 "安装已成功" 消息后，单击 "**关闭**"。
 
-### <a name="configure-the-kernel-debugger-to-allow-qos-optional"></a>将内核调试器配置为允许 QoS \(Optional @ no__t-1
+### <a name="configure-the-kernel-debugger-to-allow-qos-optional"></a>将内核调试器配置为允许 QoS \(可选\)
 
  默认情况下，内核调试器会阻止 NetQos。 无论你使用哪种方法来安装 DCB，如果在计算机上安装了一个内核调试器，则必须将调试器配置为允许通过运行以下命令来启用和配置 QoS。
 

@@ -22,7 +22,7 @@ ms.locfileid: "71383958"
 ---
 # <a name="shadow"></a>shadow
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 允许您远程控制远程桌面会话主机（rd 会话主机）服务器上其他用户的活动会话。
 有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
@@ -32,12 +32,12 @@ ms.locfileid: "71383958"
 shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
 |\<SessionName >|指定您要远程控制的会话的名称。|
 |\<SessionID >|指定您要远程控制的会话的 ID。 使用**query user**显示会话及其会话 id 的列表。|
-|/server： \<ServerName >|指定包含您要远程控制的会话的 rd 会话主机服务器。 默认情况下，使用当前 rd 会话 Host4 服务器。|
+|/server：\<ServerName >|指定包含您要远程控制的会话的 rd 会话主机服务器。 默认情况下，使用当前 rd 会话 Host4 服务器。|
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
 
@@ -48,7 +48,7 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 -   开始监视之前，服务器会警告用户会话将被远程控制，除非禁用此警告。 会话在等待来自用户的响应时可能会显示为 "已冻结"。 若要为用户和会话配置远程控制，请使用远程桌面服务配置工具或本地用户和组以及 active directory 用户和计算机的远程桌面服务扩展。
 -   您的会话必须能够支持在您远程控制的会话中使用的视频分辨率，否则该操作将失败。
 -   控制台会话既不能远程控制其他会话，也不能由其他会话远程控制。
--   若要结束远程控制（隐藏），请按 CTRL + \* （仅限数字键盘使用 \*）。
+-   若要结束远程控制（隐藏），请按 CTRL +\* （仅通过使用数字键盘上的 \*）。
 
 ## <a name="BKMK_examples"></a>示例
 -   若要隐藏会话93，请键入：
@@ -62,4 +62,4 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 
 #### <a name="additional-references"></a>其他参考
 [命令行语法解答](command-line-syntax-key.md)
-[远程桌面服务&#40;终端服务和&#41;命令参考](remote-desktop-services-terminal-services-command-reference.md)
+[远程桌面服务 & #40;终端服务和 #41;命令参考](remote-desktop-services-terminal-services-command-reference.md)

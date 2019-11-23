@@ -16,19 +16,19 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408645"
 ---
-# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附录 G：保护 Active Directory 中的管理员组
+# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附录 G：保护 Active Directory 中的 Administrators 组
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附录 G：保护 Active Directory 中的管理员组  
-与企业管理员（EA）和域管理员（DA）组一样，内置管理员（BA）组中的成员身份只应在生成或灾难恢复方案中需要。 只有域的内置管理员帐户例外，管理员组中不应有任何日常用户帐户，前提是该帐户已受保护，如 @no__t 0Appendix D：Active Directory @ no__t 中保护内置管理员帐户。  
+## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附录 G：保护 Active Directory 中的 Administrators 组  
+与企业管理员（EA）和域管理员（DA）组一样，内置管理员（BA）组中的成员身份只应在生成或灾难恢复方案中需要。 除了域的内置 Administrator 帐户（如果已按照[附录 D：保护内置管理员帐户中的说明 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述），管理员组中不应有任何日常用户帐户。  
 
 默认情况下，管理员默认情况下是其各自域中的大多数 AD DS 对象的所有者。 在生成或灾难恢复方案中，可能需要此组中的成员资格或取得对象所有权的权限。 此外，DAs 和 EAs 通过其在 Administrators 组中的默认成员身份来继承其权限。 不应修改 Active Directory 中特权组的默认组嵌套，并且应按照以下分步说明中所述保护每个域的管理员组。  
 
 对于林中每个域中的 Administrators 组：  
 
-1.  删除 Administrators 组中的所有成员，并在域的内置管理员帐户可能例外的情况下执行此操作，前提是该帐户已受保护，如 @no__t 0Appendix D：Active Directory @ no__t 中保护内置管理员帐户。  
+1.  删除 Administrators 组中的所有成员，并在域的内置管理员帐户可能例外的情况下进行保护，前提是该帐户已受到[以下附录 D：保护内置管理员帐户的 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述的保护。  
 
 2.  在链接到包含每个域中的成员服务器和工作站的 Ou 的 Gpo 中，应将 BA 组添加到 "**计算机配置 \windows" \ 安全 \ 本地策略 \ 用户权限分配**：  
 
@@ -66,13 +66,13 @@ ms.locfileid: "71408645"
 
 1.  在**服务器管理器**中，单击 "**工具**"，然后单击 "**组策略管理**"。  
 
-2.  在控制台树中，展开 "&lt;Forest @ no__t-1\Domains @ no__t-2 @ no__t-3Domain @ no__t，然后**组策略对象**（其中 &lt;Forest @ no__t-7 是林的名称，&lt;Domain @ no__t-9 是要用于的域的名称。设置组策略）。  
+2.  在控制台树中，依次展开 &lt;林中&gt;\Domains\\&lt;域&gt;，然后**组策略对象**（其中 &lt;林&gt; 是林的名称，&lt;域&gt; 是要设置组策略的域的名称）。  
 
 3.  在控制台树中，右键单击**组策略对象**"，然后单击"**新建**"。  
 
     ![安全管理组](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_80.gif)  
 
-4.  在 "**新建 GPO** " 对话框中，键入 <GPO Name>，然后单击 **"确定"** （其中*gpo 名称*是此 GPO 的名称）。  
+4.  在 "**新建 GPO** " 对话框中，键入 "<GPO Name>"，然后单击 **"确定"** （其中*gpo 名称*是此 GPO 的名称）。  
 
     ![安全管理组](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)  
 
@@ -122,7 +122,7 @@ ms.locfileid: "71408645"
 
 11. 在**组策略管理**中，通过执行以下操作将 GPO 链接到成员服务器和工作站 ou：  
 
-    1.  导航到 &lt;Forest @ no__t-1 > \Domains @ no__t-2 @ no__t-3Domain @ no__t-4 （其中 &lt;Forest @ no__t-6 是林的名称，&lt;Domain @ no__t-8 是要设置组策略的域的名称）。  
+    1.  导航到 &lt;林中&gt;> \Domains\\&lt;域&gt; （其中 &lt;林&gt; 是林的名称，&lt;域&gt; 是要设置组策略的域的名称）。  
 
     2.  右键单击 GPO 将应用到的 OU，然后单击 "**链接现有 GPO**"。  
 
@@ -150,13 +150,13 @@ ms.locfileid: "71408645"
 
 1.  在**服务器管理器**中，单击 "**工具**"，然后单击 "**组策略管理**"。  
 
-2.  在控制台树中，展开 "<Forest> \ 域 @ no__t"，然后**组策略对象**（其中，@no__t 为林的名称，<Domain> 是要设置组策略的域的名称）。  
+2.  在控制台树中，依次展开 "<Forest>\Domains"\\"<Domain>"、"**组策略对象**" （其中 <Forest> 是林的名称，<Domain> 是要设置组策略的域的名称）。  
 
 3.  在控制台树中，右键单击**组策略对象**"，然后单击"**新建**"。  
 
     ![安全管理组](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_89.gif)  
 
-4.  在 "**新建 GPO** " 对话框中，键入 <GPO Name>，然后单击 **"确定"** （其中 <GPO Name> 是此 GPO 的名称）。  
+4.  在 "**新建 GPO** " 对话框中，键入 "<GPO Name>"，然后单击 **"确定"** （其中 <GPO Name> 是此 GPO 的名称）。  
 
     ![安全管理组](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)  
 
@@ -206,7 +206,7 @@ ms.locfileid: "71408645"
 
 11. 在**组策略管理**中，通过执行以下操作将 GPO 链接到域控制器 OU：  
 
-    1.  导航到 <Forest> 域 @ no__t @ no__t-2 （其中，<Forest> 是林的名称，<Domain> 是要在其中设置组策略的域的名称）。  
+    1.  导航到 <Forest>\Domains\\<Domain> （其中，<Forest> 是林的名称，<Domain> 是要在其中设置组策略的域的名称）。  
 
     2.  右键单击 "域控制器" OU，然后单击 "**链接现有 GPO**"。  
 
@@ -231,7 +231,7 @@ ms.locfileid: "71408645"
 
     ![安全管理组](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)  
 
-5.  在 "**命令提示符**" 窗口中，键入**net use \\ @ no__t @ No__t-4Server name @ no__t-5\c $** ，其中 \<Server name @ no__t-7 是你尝试通过网络访问的成员服务器或工作站的名称。  
+5.  在 "**命令提示符**" 窗口中，键入**net use \\\\\<Server name\>\c $** ，其中 \<Server name\> 是你尝试通过网络访问的成员服务器或工作站的名称。  
 
 6.  以下屏幕截图显示应显示的错误消息。  
 
@@ -250,7 +250,7 @@ ms.locfileid: "71408645"
 
 4.  单击 "**文件**"，然后单击 "**另存为**"。  
 
-5.  在 "**文件名**" 字段中，键入 **<Filename>** （其中，<Filename> 是新批处理文件的名称）。  
+5.  在 "**文件名**" 字段中，键入 **<Filename>.bat** （其中，<Filename> 是新批处理文件的名称）。  
 
 ###### <a name="schedule-a-task"></a>计划任务  
 
@@ -263,7 +263,7 @@ ms.locfileid: "71408645"
 
 3.  单击 "**操作**"，然后单击 "**创建任务**"。  
 
-4.  在 "**创建任务**" 对话框中，键入 **<Task Name>** （其中 @no__t 为新任务的名称）。  
+4.  在 "**创建任务**" 对话框中，键入 **<Task Name>** （其中 <Task Name> 为新任务的名称）。  
 
 5.  单击 "**操作**" 选项卡，然后单击 "**新建**"。  
 
@@ -271,7 +271,7 @@ ms.locfileid: "71408645"
 
 7.  在 "**程序/脚本**" 字段中，单击 "**浏览**"，找到并选择 "**创建批处理文件**" 部分中创建的批处理文件，然后单击 "**打开**"。  
 
-8.  单击 **“确定”** 。  
+8.  单击**确定**。  
 
 9. 单击“常规”选项卡。  
 
@@ -281,7 +281,7 @@ ms.locfileid: "71408645"
 
 12. 选择 **"运行" （无论用户是否已记录 onor** ）而不**存储密码**。 该任务将仅有权访问本地计算机资源。  
 
-13. 单击 **“确定”** 。  
+13. 单击**确定**。  
 
 14. 应显示一个对话框，请求用户帐户凭据以运行任务。  
 

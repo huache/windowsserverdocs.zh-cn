@@ -39,7 +39,7 @@ ms.locfileid: "71408244"
 >  
 > 当你到达 "**指定联合身份验证服务名称**" 页面时，请确保选择你在[准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-a-wid-farm.md)的 "准备迁移 WID 场" 中记录的相同 SSL 证书。  
   
-5. 更新你在此服务器上的 AD FS 网页。 如果你在准备迁移时备份你的自定义 AD FS 网页，则需要使用你的备份数据来覆盖默认 AD FS 网页，这些网页在默认情况下作为 AD FS 的结果在**位于%systemdrive%\inetpub\adfs\ls**目录中创建Windows Server 2012 上的配置。  
+5. 更新你在此服务器上的 AD FS 网页。 如果你在准备迁移时备份你的自定义 AD FS 网页，则需要使用你的备份数据来覆盖默认的 AD FS 网页，这些网页在默认情况下作为 Windows Server 2012 上的 AD FS 配置的结果在**位于%systemdrive%\inetpub\adfs\ls**目录中创建。  
   
 6. 将刚刚升级到 Windows Server 2012 的服务器添加到负载均衡器。  
   
@@ -65,15 +65,15 @@ ms.locfileid: "71408244"
 >  
 > 当你到达 "**指定联合身份验证服务名称**" 页面时，请确保选择你在[准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-a-wid-farm.md)时所记录的相同 SSL 证书。  
   
-13. 更新在你的 WID 场中最后一台服务器上的 AD FS 网页。 如果你在准备迁移时备份你的自定义 AD FS 网页，则使用你的备份数据来覆盖默认情况下在**位于%systemdrive%\inetpub\adfs\ls**目录中作为 AD FS 的结果创建的默认 AD FS 网页Windows Server 2012 上的配置。  
+13. 更新在你的 WID 场中最后一台服务器上的 AD FS 网页。 如果你在准备迁移时备份你的自定义 AD FS 网页，则使用你的备份数据来覆盖默认的 AD FS 网页，这些网页在默认情况下作为 Windows Server 2012 上的 AD FS 配置的结果在**位于%systemdrive%\inetpub\adfs\ls**目录中创建。  
   
 14. 将你刚刚升级到 Windows Server 2012 的 WID 场中的最后一台服务器添加到负载均衡器。  
   
 15. 还原任何剩余 AD FS 自定义项，如自定义属性存储。  
   
 ## <a name="next-steps"></a>后续步骤
- [准备将 AD FS 2.0 联合服务器迁移](prepare-to-migrate-ad-fs-fed-server.md)   
+ [准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-ad-fs-fed-server.md)   
  [准备迁移 AD FS 2.0 联合服务器代理](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [将 AD FS 2.0 联合服务器迁移](migrate-the-ad-fs-fed-server.md)   
+ [迁移 AD FS 2.0 联合服务器](migrate-the-ad-fs-fed-server.md)   
  [迁移 AD FS 2.0 联合服务器代理](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)

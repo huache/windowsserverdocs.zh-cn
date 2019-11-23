@@ -33,7 +33,7 @@ ms.locfileid: "71356036"
 
 Contosogiftservices.com 网站托管在多个数据中心中，每个数据中心都有不同的 IP 地址。
 
-在北美（Contoso 礼券的主要市场）中，网站托管在三个数据中心：芝加哥，IL，达拉斯，TX 和西雅图，华盛顿州。
+在北美（Contoso 礼品服务的主要市场）中，网站托管在三个数据中心：芝加哥、IL、达拉斯、TX 和西雅图。
 
 西雅图 Web 服务器具有最佳的硬件配置，并可处理两倍于其他两个站点的负载。 Contoso 礼券需要按以下方式定向应用程序流量。
 
@@ -48,13 +48,13 @@ Contosogiftservices.com 网站托管在多个数据中心中，每个数据中�
 
 ### <a name="how-application-load-balancing-works"></a>应用程序负载平衡的工作方式
 
-使用此示例方案为使用 DNS 策略的 DNS 服务器配置了应用程序负载平衡后，DNS 服务器将在 50% 的时间使用西雅图 Web 服务器地址，25% 的时间为达拉斯 Web 服务器地址，25% 的时间为芝加哥 Web 服务器地址。
+使用此示例方案为使用 DNS 策略的 DNS 服务器配置了应用程序负载平衡后，DNS 服务器将在50% 的时间使用西雅图 Web 服务器地址，25% 的时间为达拉斯 Web 服务器地址，25% 的时间为芝加哥 Web 服务器地址。
 
 因此，对于每个 DNS 服务器收到的四个查询，它会响应两个针对西雅图的响应，一个用于达拉斯和芝加哥。
 
 使用 DNS 策略的负载平衡的一个可能问题是 DNS 客户端和解析程序/LDNS 缓存 DNS 记录，这可能会干扰负载平衡，因为客户端或解析程序不会向 DNS 服务器发送查询。
 
-你可以通过对应进行负载平衡的 DNS 记录使用 low Time @ no__t-0to @ no__t-1Live \(TTL @ no__t 值来缓解此行为的影响。
+您可以通过使用较短的时间\-\-应进行负载平衡的 DNS 记录的 \(TTL\) 值，来缓解此行为的影响。
 
 ### <a name="how-to-configure-application-load-balancing"></a>如何配置应用程序负载平衡
 
@@ -85,9 +85,9 @@ Contosogiftservices.com 网站托管在多个数据中心中，每个数据中�
 
 在**SeattleZoneScope**中，你可以添加具有位于西雅图 datacenter 中的 IP 地址192.0.0.1 的记录 www.contosogiftservices.com。
 
-在**ChicagoZoneScope**中，可以将同一记录添加到芝加哥数据中心包含 IP 地址182.0.0.1 的 contosogiftservices @ no__t-2 @no__t。
+在**ChicagoZoneScope**中，可以将同一记录添加到芝加哥数据中心的 IP 地址 182.0.0.1 \(www.contosogiftservices.com\)。
 
-同样，在**DallasZoneScope**中，可以使用 IP 地址162.0.0.1 在芝加哥 datacenter 中添加记录 @no__t contosogiftservices @ no__t。
+同样，在**DallasZoneScope**中，可以使用 IP 地址162.0.0.1 在芝加哥数据中心添加记录 \(www.contosogiftservices.com\)。
 
 你可以使用以下 Windows PowerShell 命令将记录添加到区域作用域。
     
@@ -102,12 +102,12 @@ Contosogiftservices.com 网站托管在多个数据中心中，每个数据中�
 
 #### <a name="bkmk_policies"></a>创建 DNS 策略
 
-创建分区（区域作用域）并添加记录后，必须创建在这些范围内分发传入查询的 DNS 策略，以便使用 Web IP 地址对 contosogiftservices.com 的 50% 的查询进行响应西雅图和达拉斯数据中心之间平均分布了西雅图数据中心的服务器。
+创建分区（区域作用域）并添加记录后，必须创建在这些范围内分发传入查询的 DNS 策略，以便使用 Web IP 地址对 contosogiftservices.com 的50% 的查询进行响应西雅图和达拉斯数据中心之间平均分布了西雅图数据中心的服务器。
 
 你可以使用以下 Windows PowerShell 命令创建在这三个数据中心之间平衡应用程序流量的 DNS 策略。
 
 >[!NOTE]
->在下面的示例命令中，expression – ZoneScope "SeattleZoneScope，2;ChicagoZoneScope，1;DallasZoneScope，1 "使用包含参数组合 @no__t 0ZoneScope @ no__t，\<weight @ no__t; 的数组配置 DNS 服务器。
+>在下面的示例命令中，expression – ZoneScope "SeattleZoneScope，2;ChicagoZoneScope，1;DallasZoneScope，1 "使用包含参数组合 \<ZoneScope\>\<权重\>的数组配置 DNS 服务器。
     
     Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
     

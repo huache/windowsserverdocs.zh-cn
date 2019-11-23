@@ -19,7 +19,7 @@ ms.locfileid: "71406432"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-你可以使用此过程在运行 Windows Server @ no__t-0 2016、Windows Server 2012 R2 或 Windows Server 2012 的计算机上安装 BranchCache 功能并启动 BranchCache 服务。  
+你可以使用此过程在运行 Windows Server&reg; 2016、Windows Server 2012 R2 或 Windows Server 2012 的计算机上安装 BranchCache 功能并启动 BranchCache 服务。  
   
 **Administrators**中的成员身份或同等身份是执行此过程所需的最低要求。  
   
@@ -34,7 +34,7 @@ ms.locfileid: "71406432"
   
 ### <a name="to-install-and-enable-the-branchcache-feature"></a>安装和启用 BranchCache 功能  
   
-1.  在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 "添加角色和功能向导" 将打开。 单击“下一步”。  
+1.  在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 "添加角色和功能向导" 将打开。 单击**下一步**。  
   
 2.  在 "**选择安装类型**" 中，确保选择了 "**基于角色或基于功能的安装**"，然后单击 "**下一步**"。  
   

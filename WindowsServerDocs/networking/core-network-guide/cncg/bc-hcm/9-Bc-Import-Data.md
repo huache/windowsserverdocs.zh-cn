@@ -15,15 +15,15 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356203"
 ---
-# <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>导入托管缓存服务器上的数据包 \(Optional @ no__t-1
+# <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>导入托管缓存服务器上的数据包 \(可选\)
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用此过程在托管缓存服务器上导入数据包和预加载内容。
 
 此过程是可选的，因为你不需要在托管缓存服务器上 prehash 和预加载内容。
 
-如果没有预先 no__t-0load 内容，则当客户端通过 WAN 连接下载数据时，会自动将数据添加到托管缓存。
+如果未预先\-加载内容，则当客户端通过 WAN 连接下载数据时，数据会自动添加到托管缓存。
 
 您必须是 Administrators 组的成员才能执行此过程。
 

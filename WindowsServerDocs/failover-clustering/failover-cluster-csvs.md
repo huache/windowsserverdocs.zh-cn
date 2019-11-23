@@ -17,19 +17,19 @@ ms.locfileid: "71369743"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>在故障转移群集中使用群集共享卷
 
->适用于：Windows Server 2019，Windows Server 2016，Windows Server 2012，Windows Server 2012 R2
+>适用于： Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2
 
-群集共享卷 (CSV) 允许故障转移群集中多个节点同时具有对已设置为 NTFS 卷的同一 LUN（磁盘）的读写访问权限。 （在 Windows Server 2012 R2 中，可以将该磁盘设置为 NTFS 或复原文件系统（ReFS）。）借助 CSV，群集角色可以从一个节点快速故障转移到另一个节点，而无需对驱动器所有权进行更改，或卸载和重新装载卷。 CSV 还帮助简化管理故障转移群集中潜在大量 LUN 的管理的操作。
+群集共享卷 (CSV) 允许故障转移群集中多个节点同时具有对已设置为 NTFS 卷的同一 LUN（磁盘）的读写访问权限。 （在 Windows Server 2012 R2 中，可以将该磁盘设置为 NTFS 或复原文件系统（ReFS）。）使用 CSV 时，群集角色可以快速地从一个节点故障转移到另一个节点，而无需更改驱动器所有权，或者卸载并重新装载卷。 CSV 还帮助简化管理故障转移群集中潜在大量 LUN 的管理的操作。
 
 CSV 提供了在 NTFS （或 Windows Server 2012 R2 中的 ReFS）上分层的通用群集文件系统。 CSV 应用程序包括：
 
 - 群集 Hyper-V 虚拟机的群集虚拟硬盘 (VHD) 文件
-- 用于存储横向扩展文件服务器群集角色的应用程序数据的横向扩展文件共享。 此角色的应用程序数据的示例包括 Hyper-V 虚拟机文件和 Microsoft SQL Server 数据。 （请注意横向扩展文件服务器不支持 ReFS。）有关横向扩展文件服务器的详细信息，请参阅[应用程序数据横向扩展文件服务器](sofs-overview.md)。
+- 用于存储横向扩展文件服务器群集角色的应用程序数据的横向扩展文件共享。 此角色的应用程序数据的示例包括 Hyper-V 虚拟机文件和 Microsoft SQL Server 数据。 （请注意，横向扩展文件服务器不支持 ReFS。）有关横向扩展文件服务器的详细信息，请参阅[应用程序数据横向扩展文件服务器](sofs-overview.md)。
 
 > [!NOTE]
 > Csv 不支持 SQL Server 2012 和早期版本 SQL Server 中 Microsoft SQL Server 群集工作负载。
 
-在 Windows Server 2012 中，CSV 功能得到显著增强。 例如，已删除 Active Directory 域服务上的依赖关系。 已添加了对 **chkdsk**中的功能改进、与防病毒和备份应用程序的互操作性以及与常规存储功能（如 BitLocker 加密卷和存储空间）集成的支持。 有关 Windows Server 2012 中引入的 CSV 功能的概述，请参阅[Windows server 2012 中故障转移群集的新增功能 \[redirected @ no__t-2](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
+在 Windows Server 2012 中，CSV 功能得到显著增强。 例如，已删除 Active Directory 域服务上的依赖关系。 已添加了对 **chkdsk**中的功能改进、与防病毒和备份应用程序的互操作性以及与常规存储功能（如 BitLocker 加密卷和存储空间）集成的支持。 有关 Windows Server 2012 中引入的 CSV 功能的概述，请参阅[Windows server 2012 中故障转移群集的新增功能 \[重定向\]](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
 
 Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权，通过服务器服务的可用性增加了复原能力，可以更灵活地分配给 CSV 缓存的物理内存量，更好地诊断能力和增强的互操作性，其中包括对 ReFS 和重复数据删除的支持。 有关详细信息，请参阅[故障转移群集中的新增功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
 
@@ -65,7 +65,7 @@ Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权，通�
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>有关 CSV 通信中的 I/O 同步和 I/O 重定向
 
-- **I/o 同步**：CSV 允许多个节点同时具有对同一共享存储的读写访问权限。 当某个节点在 CSV 卷上执行磁盘输入/输出 (I/O) 时，该节点将直接与存储进行通信（例如，通过存储区域网络 (SAN)）。 但是，单个节点（称为协调器节点）随时“拥有”与该 LUN 关联的物理磁盘资源。 CSV 卷的协调器节点作为“磁盘” 下的“所有者节点”显示在故障转移群集管理器中。 它还显示在[Add-clustersharedvolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell cmdlet 的输出中。
+- **I/o 同步**： CSV 允许多个节点同时具有对同一共享存储的读写访问权限。 当某个节点在 CSV 卷上执行磁盘输入/输出 (I/O) 时，该节点将直接与存储进行通信（例如，通过存储区域网络 (SAN)）。 但是，单个节点（称为协调器节点）随时“拥有”与该 LUN 关联的物理磁盘资源。 CSV 卷的协调器节点作为“磁盘” 下的“所有者节点”显示在故障转移群集管理器中。 它还显示在[Add-clustersharedvolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell cmdlet 的输出中。
 
   >[!NOTE]
   >在 Windows Server 2012 R2 中，CSV 所有权根据每个节点所拥有的 CSV 卷的数量均匀地分布在故障转移群集节点上。 此外，当存在以下条件时自动重新平衡所有权：CSV 故障转移、某个节点重新加入该群集、将新节点添加到该群集、重新启动群集节点，或者在关闭故障转移群集后启动该群集。
@@ -101,7 +101,7 @@ Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权，通�
   - 将磁盘添加为 CSV 后，采用 CSVFS 格式（适用于 CSV 文件系统）指定它。 这允许群集和其他软件将 CSV 存储从其他 NTFS 或 ReFS 存储中区分开。 通常情况下，CSVFS 支持与 NTFS 或 ReFS 相同的功能。 但是，某些功能不受支持。 例如，在 Windows Server 2012 R2 中，不能在 CSV 上启用压缩。 在 Windows Server 2012 中，不能在 CSV 上启用重复数据删除或压缩。
 - **群集中的资源类型**。 对于 CSV 卷，必须使用物理磁盘资源类型。 默认情况下，添加到群集存储的磁盘或存储空间将会采用此方式自动配置。
 - **选择群集存储中的 CSV 磁盘或其他磁盘**。 当选择群集虚拟机的一个或多个磁盘时，请考虑将如何使用每个磁盘。 如果将磁盘用于存储由 Hyper-V 创建的文件（如 VHD 文件或配置文件），则可以从 CSV 磁盘或群集存储中的其他可用磁盘中进行选择。 如果磁盘是直接附加到虚拟机的物理磁盘（也称为传递磁盘），则你不能选择 CSV 磁盘，并且必须从群集存储中其他可用磁盘中进行选择。
-- **用于标识磁盘的路径名称**。 使用路径名称标识 CSV 中的磁盘。 每个路径在节点的系统驱动器上显示为 **\\ClusterStorage**文件夹下带编号的卷。 当从群集中的任何节点进行查看时，此路径相同。 可以重命名这些卷（如果需要）。
+- **用于标识磁盘的路径名称**。 使用路径名称标识 CSV 中的磁盘。 每个路径在节点的系统驱动器上显示为 **\\ClusterStorage**文件夹下的编号卷。 当从群集中的任何节点进行查看时，此路径相同。 可以重命名这些卷（如果需要）。
 
 有关 CSV 的存储要求，请查看你的存储供应商提供的指南。 有关 CSV 的其他存储计划注意事项，请参阅本主题后面的[计划在故障转移群集中使用 CSV](#plan-to-use-csv-in-a-failover-cluster)。
 
@@ -193,7 +193,7 @@ Add-ClusterSharedVolume –Name "Cluster Disk 1"
 
 ## <a name="enable-the-csv-cache-for-read-intensive-workloads-optional"></a>为读密集型工作负载启用 CSV 缓存（可选）
 
-CSV 缓存通过将系统内存 (RAM) 分配为直写缓存，在只读无缓冲 I/O 操作的块级别上提供了缓存。 （无缓冲 I/O 操作不会通过缓存管理器缓存。）这可以提高应用程序（如 unbuffered）的性能，从而在访问 VHD 时执行无缓冲 I/O 操作。 CSV 缓存可以提高读取请求的性能，而无需缓存写入请求。 对于横向扩展文件服务器方案，启用 CSV 缓存也非常有用。
+CSV 缓存通过将系统内存 (RAM) 分配为直写缓存，在只读无缓冲 I/O 操作的块级别上提供了缓存。 （缓存管理器不会缓存未缓冲的 i/o 操作。）这可以提高应用程序的性能，例如 Hyper-v，这会在访问 VHD 时执行未缓冲的 i/o 操作。 CSV 缓存可以提高读取请求的性能，而无需缓存写入请求。 对于横向扩展文件服务器方案，启用 CSV 缓存也非常有用。
 
 >[!NOTE]
 >我们建议为所有群集 Hyper-V 和横向扩展文件服务器部署启用 CSV 缓存。
@@ -232,7 +232,7 @@ CSV 缓存通过将系统内存 (RAM) 分配为直写缓存，在只读无缓冲
     ```
 
 >[!NOTE]
-> * 在 Windows Server 2012 中，你只能将总物理 RAM 的 20% 分配给 CSV 缓存。 在 Windows Server 2012 R2 及更高版本中，最多可分配 80%。 由于横向扩展文件服务器通常不受内存的约束，因此可以通过使用 CSV 缓存的额外内存来完成较大的性能增益。
+> * 在 Windows Server 2012 中，你只能将总物理 RAM 的20% 分配给 CSV 缓存。 在 Windows Server 2012 R2 及更高版本中，最多可分配80%。 由于横向扩展文件服务器通常不受内存的约束，因此可以通过使用 CSV 缓存的额外内存来完成较大的性能增益。
 > * 若要避免资源争用，请在修改分配给 CSV 缓存的内存后，重新启动群集中的每个节点。 在 Windows Server 2012 R2 及更高版本中，不再需要重新启动。
 > * 在单个磁盘上启用或禁用CSV 缓存后，必须使物理磁盘资源脱机并将其重新联机，才能使设置生效。 （默认情况下，在 Windows Server 2012 R2 及更高版本中，CSV 缓存处于启用状态。） 
 > * 有关包括性能计数器相关信息的 CSV 缓存的详细信息，请参阅博客文章 [如何启用 CSV 缓存](https://blogs.msdn.microsoft.com/clustering/2013/07/19/how-to-enable-csv-cache/)。
@@ -246,7 +246,7 @@ CSV 缓存通过将系统内存 (RAM) 分配为直写缓存，在只读无缓冲
 - 可以从连接到 CSV 卷的任何节点运行 CSV 卷的卷级备份。
 - 备份应用程序可以使用软件快照或硬件快照。 备份可以使用应用程序一致和崩溃一致的卷影复制服务 (VSS) 快照，具体取决于备份应用程序能否支持它们。
 - 如果你正在备份具有多个运行的虚拟机的 CSV，通常应选择基于管理操作系统的备份方法。 如果你的备份应用程序支持它，则可以同时备份多个虚拟机。
-- CSV 支持运行 Windows Server 2012 R2 备份、Windows Server 2012 备份或 Windows Server 2008 R2 备份的备份请求者。 但是，Windows Server Backup 通常仅提供可能不适合具有较大群集的组织的基本备份解决方案。 Windows Server Backup 不支持 CSV 上应用程序一致的虚拟机备份。 它仅支持崩溃一致的卷级备份。 （如果还原崩溃一致的备份，虚拟机将处于它发生崩溃时（进行备份的准确时间）所处的状态。）CSV 卷上的虚拟机的备份将成功，但会记录错误事件，指示这不受支持。
+- CSV 支持运行 Windows Server 2012 R2 备份、Windows Server 2012 备份或 Windows Server 2008 R2 备份的备份请求者。 但是，Windows Server Backup 通常仅提供可能不适合具有较大群集的组织的基本备份解决方案。 Windows Server Backup 不支持 CSV 上应用程序一致的虚拟机备份。 它仅支持崩溃一致的卷级备份。 （如果还原崩溃一致的备份，则虚拟机将处于相同的状态，前提是虚拟机在执行备份的那一刻已经崩溃了。）CSV 卷上的虚拟机备份将会成功，但会记录一个错误事件，指出这不受支持。
 - 当备份故障转移群集时，你可能需要管理凭据。
 
 > [!IMPORTANT]

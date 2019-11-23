@@ -33,7 +33,7 @@ ms.locfileid: "71359386"
   
   本指南不包括迁移运行多个角色的服务器的相关说明。 如果你的服务器正在运行多个角色，则建议你根据其他角色迁移指南中提供的信息，设计一个特定于你的服务器环境的自定义迁移过程。 如需有关其他角色的迁移指南，请参阅 [Windows Server 迁移端口](https://go.microsoft.com/fwlink/?LinkId=247608)。  
   
-### <a name="supported-operating-systems"></a>受支持的操作系统  
+### <a name="supported-operating-systems"></a>支持的操作系统  
  目标服务器操作系统：  
   
  Windows Server 2012 R2 （服务器核心和完全安装选项）  

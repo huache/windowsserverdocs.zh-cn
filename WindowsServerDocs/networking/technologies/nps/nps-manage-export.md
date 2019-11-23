@@ -17,7 +17,7 @@ ms.locfileid: "71405435"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>导出 NPS 配置以便在其他服务器上导入
 
-适用于：Windows Server 2016
+适用于：Windows Server 2016
 
 可以从一个 NPS 导出整个 NPS 配置，包括 RADIUS 客户端和服务器、网络策略、连接请求策略、注册表和日志记录配置。 
 
@@ -46,7 +46,7 @@ ms.locfileid: "71405435"
 
 |参数|描述|
 |---------|-----------|
-|Path|指定要导出 NPS 配置的 XML 文件的名称和位置。|
+|路径|指定要导出 NPS 配置的 XML 文件的名称和位置。|
 
 **管理凭据**
 
@@ -76,7 +76,7 @@ ms.locfileid: "71405435"
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>使用 Netsh 导出和导入 NPS 配置
 
-可以使用 Network Shell \(Netsh @ no__t-1，通过使用**netsh nps 导出**命令导出 NPS 配置。
+可以使用 Network Shell \(Netsh\) 通过使用**Netsh NPS 导出**命令导出 NPS 配置。
 
 运行**netsh nps import**命令时，将自动刷新 nps，并提供更新的配置设置。 您无需在目标计算机上停止 NPS 即可运行**netsh NPS import**命令，但是，如果在配置导入期间 nps 控制台或 nps mmc 管理单元处于打开状态，则在您刷新视图之前，对服务器配置所做的更改将不可见。 
 
@@ -93,9 +93,9 @@ ms.locfileid: "71405435"
 
 2. 在**netsh**提示符下，键入**nps**，然后按 enter。 
 
-3. 在**netsh nps**提示符下，键入**export filename =** "*path\file.xml*" **exportPSK = YES**，其中*path*是要保存 nps 配置文件的文件夹位置， *file*是 xml 文件的名称。要保存。 按 Enter。 
+3. 在**netsh nps**提示符下，键入**export filename =** "*path\file.xml*" **exportPSK = YES**，其中*path*是要保存 nps 配置文件的文件夹位置， *file*是要保存的 xml 文件的名称。 按 Enter。 
 
-这会在 XML 文件中存储配置设置 @no__t 0including 注册表设置 @ no__t-1。 路径可以是相对路径或绝对路径，也可以是通用命名约定 \(UNC @ no__t 路径。 按下 Enter 后，将显示一条消息，指示导出到文件是否成功。
+这会在 XML 文件中存储配置设置 \(包括注册表设置\)。 路径可以是相对路径或绝对路径，也可以是 \(UNC\) 路径的通用命名约定。 按下 Enter 后，将显示一条消息，指示导出到文件是否成功。
 
 4. 将创建的文件复制到目标 NPS。
 

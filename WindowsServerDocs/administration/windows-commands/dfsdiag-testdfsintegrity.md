@@ -22,15 +22,15 @@ ms.locfileid: "71378426"
 ---
 # <a name="dfsdiag-testdfsintegrity"></a>dfsdiag TestDFSIntegrity
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-通过执行以下测试来检查分布式文件系统 \(DFS @ no__t 命名空间的完整性：  
+通过执行以下测试来检查分布式文件系统 \(DFS\) 命名空间的完整性：  
   
 -   检查 DFS 元数据是否已损坏或域控制器之间存在不一致。  
   
--   验证 access @ no__t-0based 枚举的配置，以确保 DFS 元数据和命名空间服务器共享之间的一致性。  
+-   验证基于 access\-的枚举的配置，以确保 DFS 元数据和命名空间服务器共享之间的一致性。  
   
--   检测与重叠文件夹目标 @no__t 的重叠 DFS 文件夹-0links @ no__t、重复文件夹和文件夹。  
+-   检测与重叠文件夹目标\)、重复文件夹和文件夹 \(链接的重叠 DFS 文件夹。  
   
   
   
@@ -40,12 +40,12 @@ ms.locfileid: "71378426"
 dfsdiag /TestDFSIntegrity /DFSRoot:<DFS root path> [/Recurse] [/Full]  
 ```  
   
-### <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>参数  
   
 |参数|描述|  
 |-------|--------|  
-|\/DFSRoot： <DFS root path>|要诊断的 DFS 命名空间。|  
-|\/Recurse|执行包括命名空间 interlinks 的测试。|  
+|\/DFSRoot：<DFS root path>|要诊断的 DFS 命名空间。|  
+|\/递归|执行包括命名空间 interlinks 的测试。|  
 |\/Full|验证共享和 NTFS Acl 的一致性以及所有文件夹目标上的客户端配置。 它还会验证是否已设置联机属性。|  
   
 ## <a name="BKMK_Examples"></a>示例  

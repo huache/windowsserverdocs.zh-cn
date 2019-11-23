@@ -30,9 +30,9 @@ ms.locfileid: "71402328"
 
 ### <a id="install-dedup-via-server-manager"></a>使用服务器管理器安装重复数据删除
 1. 从“添加角色和功能”向导，选择“**服务器角色**”，然后选择“**重复数据删除**”。  
-通过服务器管理器 @no__t 重复数据删除：从服务器角色中选择重复数据删除 @ no__t-1
+![通过服务器管理器安装重复数据删除：从服务器角色中选择重复数据删除](media/install-dedup-via-server-manager-1.png)
 2. 单击 **“下一步”** 直到 **“安装”** 按钮处于活跃状态，然后单击 **“安装”** 。  
-通过服务器管理器 @no__t 重复数据删除：单击 install @ no__t-1
+![通过服务器管理器安装重复数据删除：单击 "安装"](media/install-dedup-via-server-manager-2.png)
 
 ### <a id="install-dedup-via-powershell"></a>使用 PowerShell 安装重复数据删除
 要安装重复数据删除，请以管理员身份运行以下 PowerShell 命令：  
@@ -47,7 +47,7 @@ ms.locfileid: "71402328"
     ```  
     <br />
     <strong>--或--</strong>
-    @ NO__T-2<br />
+    <br />
     使用 PowerShell 远程处理远程连接到 Nano Server 实例并使用 DISM 安装重复数据删除：  
     
     ```PowerShell
@@ -95,7 +95,7 @@ ms.locfileid: "71402328"
     `Files excluded by policy: 20`  
     `Files excluded by error: 0`  
 
-2. @no__t 0What 是否将工作负荷的 i/o 模式设置为其数据集外观？我的工作负荷有哪些性能？ **  
+2. **工作负荷的 i/o 模式对于其数据集看起来像什么？我的工作负荷有哪些性能？**  
      重复数据删除会将优化文件作为定期作业，而不是在将文件写入磁盘时才进行优化。 因此，要检查的重要事项就是相对于已删除重复卷的工作负荷的预期读取模式。 因为重复数据删除会将文件内容移动到区块存储中，并尝试尽可能多地按文件整理区块存储，当应用于连续的文件范围时，读取操作性能最佳。  
 
     与顺序读取模式相比，类似于数据库的工作负荷的读取模式通常更具随机性，因为数据库通常不保证数据库布局都最适合所有可能运行的查询。 因为区块存储的分区可能遍布整个卷，在区块存储中访问数据范围进行数据库查询时可能会导致额外延迟。 高性能工作负荷对此额外延迟特别敏感，但是，其他类似于数据库的工作负荷可能就不太介意。
@@ -115,13 +115,13 @@ ms.locfileid: "71402328"
 
 #### <a id="enable-dedup-via-server-manager"></a>使用服务器管理器启用重复数据删除
 1. 选择“服务器管理器”中的“**文件和存储服务**”。  
-@no__t 0Click 文件和存储服务 @ no__t-1
-2. 从“**文件和存储服务**”中选择“**卷**”。  
-![Click 卷 @ no__t-1
+![单击 "文件和存储服务"](media/enable-dedup-via-server-manager-1.PNG)
+2. 从**文件和存储服务**中选择**卷**。  
+![单击卷](media/enable-dedup-via-server-manager-2.png)
 3. 右键单击所需的卷，并选择“**配置重复数据删除**”。  
-@no__t 0Click 配置重复数据删除 @ no__t-1
+![单击 "配置重复数据删除"](media/enable-dedup-via-server-manager-3.png)
 4. 从下拉框中选择所需的“**使用类型**”，然后选择“**确定**”。  
-@no__t-从下拉 @ no__t 中0Select 所需的使用类型
+![从下拉菜单中选择所需的 "使用类型"](media/enable-dedup-via-server-manager-4.png)
 5. 如果运行的是建议的工作负荷，则操作完成。 对于其他工作负荷，请查看“[其他注意事项](#enable-dedup-sometimes-considerations)”。
 
 > [!Note]  
@@ -136,7 +136,7 @@ ms.locfileid: "71402328"
 2. 如果运行的是建议的工作负荷，则操作完成。 对于其他工作负荷，请查看“[其他注意事项](#enable-dedup-sometimes-considerations)”。
 
 > [!Note]  
-> 通过向 CIM 会话追加 `-CimSession` 参数可远程运行重复数据删除 PowerShell cmdlet（包括 [`Enable-DedupVolume`](https://technet.microsoft.com/library/hh848441.aspx)）。 这特别适用于针对 Nano Server 实例远程运行重复数据删除 PowerShell cmdlet。 要创建新的 CIM 会话，请运行 [`New-CimSession`](https://technet.microsoft.com/library/jj590760.aspx)。
+> 通过向 CIM 会话追加 [ 参数可远程运行重复数据删除 PowerShell cmdlet（包括 `Enable-DedupVolume`](https://technet.microsoft.com/library/hh848441.aspx)`-CimSession`）。 这特别适用于针对 Nano Server 实例远程运行重复数据删除 PowerShell cmdlet。 要创建新的 CIM 会话，请运行 [`New-CimSession`](https://technet.microsoft.com/library/jj590760.aspx)。
 
 #### <a id="enable-dedup-sometimes-considerations"></a>其他注意事项
 > [!Important]  
@@ -147,7 +147,7 @@ ms.locfileid: "71402328"
 * 如果你的工作负荷没有高资源要求，或者更重要的是优化作业完成而不是为工作负荷请求提供服务，[可以调整内存、CPU 和重复数据删除作业优先级](advanced-settings.md#modifying-job-schedules)。
 
 ## <a id="faq"></a>常见问题（FAQ）
-@no__t 0 I 要在 X 工作负荷的数据集上运行重复数据删除。是否支持此功能？ **  
+**我想在 X 工作负荷的数据集上运行重复数据删除。此功能是否受支持？**  
 除了[已知不与重复数据删除互操作](interop.md)的工作负荷，针对任何工作负荷，我们完全支持重复数据删除的数据完整性。 Microsoft 还支持建议的工作负荷以实现更佳性能。 其他工作负荷的性能极大取决于它们正在你的服务器上执行哪些操作。 你必须确定重复数据删除对你的工作负荷具有哪些性能影响，并且确定这对于此工作负荷来说是否可以接受。
 
 **删除了重复数据的卷的卷大小要求是什么？**  

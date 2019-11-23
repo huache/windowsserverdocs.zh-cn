@@ -18,7 +18,7 @@ ms.locfileid: "71408016"
 ---
 # <a name="planning-federation-server-proxy-placement"></a>规划联合服务器代理的位置
 
-收集了用于设计 Active Directory 联合身份验证服务 \(AD FS @ no__t 基础结构，并在规划联合服务器和 Web 服务器策略之后，可以规划联合服务器的位置和位置的所有信息代理。 以下主题中的信息可帮助你确定何时以及在何处放置联合服务器代理，以及是为帐户伙伴角色还是资源伙伴角色配置它：  
+在您收集了用于设计您的 Active Directory 联合身份验证服务 \(AD FS\) 基础结构以及规划联合服务器和 Web 服务器策略之后，可以规划在新设计中放置联合服务器代理的时间和位置的所有信息。 以下主题中的信息可帮助你确定何时以及在何处放置联合服务器代理，以及是为帐户伙伴角色还是资源伙伴角色配置它：  
   
 -   [查看联合服务器在帐户伙伴中的角色](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71408016"
   
 有关如何在两个主要 AD FS 设计方案中放置联合服务器代理的示例，请参阅将[部署目标映射到 AD FS 设计](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)。  
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [Windows Server 2012 中的 AD FS 设计指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)
   
 

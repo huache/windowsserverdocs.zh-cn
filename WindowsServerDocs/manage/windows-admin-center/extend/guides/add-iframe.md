@@ -33,9 +33,9 @@ ms.locfileid: "71406891"
 
 现在，我们将为刚创建的新的空模块添加 iFrame。
 
-在 \src\app @ no__t-0 中，浏览到模块文件夹，然后打开具有以下命名约定的文件 ```{!module-name}.component.html```：
+在 \src\app 中\, 浏览到您的模块文件夹，然后打开具有以下命名约定的文件 ```{!module-name}.component.html```：
 
-| ReplTest1 | 说明 | 示例文件名 |
+| 值 | 说明 | 示例文件名 |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | 模块名称（小写，空格替换为短划线） | ```manage-foo-works-portal.component.html``` |
     

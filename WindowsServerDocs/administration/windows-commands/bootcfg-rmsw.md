@@ -22,7 +22,7 @@ ms.locfileid: "71379865"
 ---
 # <a name="bootcfg-rmsw"></a>bootcfg rmsw
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 删除指定操作系统项的操作系统加载选项。
 
@@ -30,17 +30,17 @@ ms.locfileid: "71379865"
 ```
 bootcfg /rmsw [/s <computer> [/u <Domain>\<User> [/p <Password>]]] [/mm] [/bv] [/so] [/ng] /id <OSEntryLineNum>
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |      参数       |                                                                                                      描述                                                                                                       |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>     |                                                   指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                                   |
-| /u <Domain> @ no__t-1 @ no__t-2  |          使用 <User> 或 <Domain> @ no__t-2 @ no__t）指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。          |
+| /u <Domain>\\<User>  |          使用 <User> 或 <Domain>\\<User>指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。          |
 |    /p <Password>     |                                                                 指定在 **/u**参数中指定的用户帐户的密码。                                                                  |
-|         /mm          |           从指定 @no__t 中删除/maxmem 选项及其关联的最大内存值。 /Maxmem 选项指定操作系统可使用的最大 RAM 量。            |
-|         /bv          |                     从指定的 @no__t 中删除/basevideo 选项。 /Basevideo 选项指示操作系统使用已安装视频驱动程序的标准 VGA 模式。                     |
-|         /so          |                         从指定的 @no__t 中删除/sos 选项。 /Sos 选项指示操作系统在加载时显示设备驱动程序名称。                          |
-|         /ng          |                         从指定的 @no__t 中删除/noguiboot 选项。 /Noguiboot 选项禁用出现在 CTRL + ALT + del logon 提示符之前的进度栏。                          |
+|         /mm          |           从指定的 <OSEntryLineNum>中移除/maxmem 选项及其关联的最大内存值。 /Maxmem 选项指定操作系统可使用的最大 RAM 量。            |
+|         /bv          |                     从指定的 <OSEntryLineNum>中移除/basevideo 选项。 /Basevideo 选项指示操作系统使用已安装视频驱动程序的标准 VGA 模式。                     |
+|         /so          |                         从指定的 <OSEntryLineNum>中删除/sos 选项。 /Sos 选项指示操作系统在加载时显示设备驱动程序名称。                          |
+|         /ng          |                         从指定的 <OSEntryLineNum>中移除/noguiboot 选项。 /Noguiboot 选项禁用出现在 CTRL + ALT + del logon 提示符之前的进度栏。                          |
 | /id <OSEntryLineNum> | 在从中删除 OS 加载选项的 Boot.ini 文件的 "[操作系统]" 部分中指定操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。 |
 |          /?          |                                                                                          在命令提示符下显示帮助。                                                                                          |
 

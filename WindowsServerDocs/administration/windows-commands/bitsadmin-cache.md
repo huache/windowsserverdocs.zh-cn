@@ -22,7 +22,7 @@ ms.locfileid: "71381860"
 ---
 # <a name="bitsadmin-cache"></a>bitsadmin 缓存
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="syntax"></a>语法
 
@@ -39,11 +39,11 @@ bitsadmin /Cache /GetExpirationtime
 bitsadmin /Cache /SetExpirationtime
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |-------|--------|
-|[bitsadmin cache 和 help](bitsadmin-cache-and-help.md)|显示 \/Cache 开关的命令 @ no__t-0line 用法。|
+|[bitsadmin cache 和 help](bitsadmin-cache-and-help.md)|显示 \/缓存开关\-行使用命令。|
 |[bitsadmin cache 和 clear](bitsadmin-cache-clear.md)|清除本地缓存。|
 |[bitsadmin cache 和 delete](bitsadmin-cache-and-delete.md)|删除缓存项。|
 |[bitsadmin cache 和 deleteurl](bitsadmin-cache-and-deleteurl.md)|删除给定 URL 的所有缓存条目。|

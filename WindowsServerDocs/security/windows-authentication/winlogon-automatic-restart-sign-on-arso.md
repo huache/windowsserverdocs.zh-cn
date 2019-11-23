@@ -24,7 +24,7 @@ ms.locfileid: "71402322"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-**作者**：Justin Turner，具有 Windows 组的高级支持升级工程师  
+**作者**： Justin Turner，具有 Windows 组的高级支持升级工程师  
   
 > [!NOTE]  
 > 本内容由 Microsoft 客户支持工程师编写，适用于正在查找比 TechNet 主题通常提供的内容更深入的有关 Windows Server 2012 R2 中的功能和解决方案的技术说明的有经验管理员和系统架构师。 但是，它未经过相同的编辑审批，因此某些语言可能看起来不如通常在 TechNet 上找到的内容那么精练。  
@@ -93,17 +93,17 @@ Windows 8 引入了锁定屏幕应用。  这些应用程序是在锁定用户�
   
 **注册表编辑器**  
   
-|值名称|type|Data|  
+|值名称|在任务栏的搜索框中键入|数据|  
 |-------|----|----|  
 |DisableAutomaticRestartSignOn|DWORD|0<br /><br />**示例：**<br /><br />0（已启用）<br /><br />1（禁用）|  
   
 **策略注册表位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System  
   
-**类型：** DWORD  
+**键入：** DWORD  
   
 **注册表名称：** DisableAutomaticRestartSignOn  
   
-值：0 或 1  
+值：0或1  
   
 0 = 启用  
   
@@ -143,7 +143,7 @@ Windows 8 引入了锁定屏幕应用。  这些应用程序是在锁定用户�
 登录时间和家长控制可以禁止创建新的用户会话。  如果在此时段内发生重启，则不允许用户登录。  还有其他策略导致锁定或注销作为符合性操作。  这对于很多子情况都可能会导致帐户锁定在平台时间和唤醒之间发生，尤其是在这段时间内通常会发生的情况。  
   
 ## <a name="additional-resources"></a>其他资源  
-**Table SEQ Table \\ @ no__t-2 阿拉伯3：ARSO 术语表 @ no__t-0  
+**表 SEQ 表 \\\* 阿拉伯语3： ARSO 术语表**  
   
 |术语|定义|  
 |----|-------|  

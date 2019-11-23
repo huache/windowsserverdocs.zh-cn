@@ -35,7 +35,7 @@ ms.locfileid: "71385226"
 
 ### <a name="create-pluginservicets"></a>创建插件。
 
-更改到上面创建的新工具模块的目录（```\src\app\{!Module-Name}```），并创建一个新文件 ```plugin.service.ts```。
+切换到上面创建的新工具模块的目录（```\src\app\{!Module-Name}```），并创建一个 ```plugin.service.ts```的新文件。
 
 将以下代码添加到刚创建的文件中：
 ``` ts
@@ -61,14 +61,14 @@ export class PluginService {
 }
 ```
 
-根据需要将对的引用更改为 ```Sample Uno``` 并将 @no__t 为-1。
+根据需要更改对功能名称 ```Sample Uno``` 和 ```Sample%20Uno```。
 
 [!WARNING]
 > 建议使用内置 ```this.appContextService.node``` 来调用在自定义网关插件中定义的任何 API。 这将确保在网关插件中需要凭据，以使其正确处理。
 
 ### <a name="modify-modulets"></a>修改 module
 
-打开前面创建的新模块的 @no__t 0 文件（即 ```{!Module-Name}.module.ts```）：
+打开前面创建的新模块的 ```module.ts``` 文件（即 ```{!Module-Name}.module.ts```）：
 
 添加以下 import 语句：
 
@@ -91,7 +91,7 @@ import { PluginService } from './plugin.service';
 
 ### <a name="modify-componentts"></a>修改组件。 ts
 
-打开前面创建的新模块的 @no__t 0 文件（即 ```{!Module-Name}.component.ts```）：
+打开前面创建的新模块的 ```component.ts``` 文件（即 ```{!Module-Name}.component.ts```）：
 
 添加以下 import 语句：
 
@@ -135,7 +135,7 @@ import { PluginService } from './plugin.service';
 
 ### <a name="modify-componenthtml"></a>修改组件 .html ###
 
-打开前面创建的新模块的 @no__t 0 文件（即 ```{!Module-Name}.component.html```）：
+打开前面创建的新模块的 ```component.html``` 文件（即 ```{!Module-Name}.component.html```）：
 
 将以下内容添加到 html 文件：
 ``` html

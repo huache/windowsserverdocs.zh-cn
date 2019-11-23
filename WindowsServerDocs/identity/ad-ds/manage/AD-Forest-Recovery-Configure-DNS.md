@@ -17,7 +17,7 @@ ms.locfileid: "71369249"
 ---
 # <a name="ad-forest-recovery---configuring-the-dns-server-service"></a>AD 林恢复-配置 DNS 服务器服务
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 如果未在从备份还原的 DC 上安装 DNS 服务器角色，则必须安装和配置 DNS 服务器。 
 
@@ -26,7 +26,7 @@ ms.locfileid: "71369249"
 完成还原后，为未作为 DNS 服务器运行的每个已还原 DC 完成此步骤。 
 
 > [!NOTE]
-> 如果从备份还原的 DC 正在运行 Windows Server 2008 R2，则必须将 DC 连接到隔离的网络，才能安装 DNS 服务器。 然后，将每个已还原的 DNS 服务器连接到相互共享的隔离网络。 运行 repadmin/replsum，以验证已还原的 DNS 服务器之间的复制是否正常工作。 验证复制后，你可以将还原的 Dc 连接到生产网络。如果已安装 DNS 服务器角色，你可以应用一个修补程序，使 DNS 服务器在服务器未连接到任何网络时能够启动。 应在自动生成过程中将修补程序补充到操作系统安装映像中。 有关修补程序的详细信息，请参阅 Microsoft 知识库中的[文章 975654](https://go.microsoft.com/fwlink/?LinkId=184691) （ https://go.microsoft.com/fwlink/?LinkId=184691) 。 
+> 如果从备份还原的 DC 正在运行 Windows Server 2008 R2，则必须将 DC 连接到隔离的网络，才能安装 DNS 服务器。 然后，将每个已还原的 DNS 服务器连接到相互共享的隔离网络。 运行 repadmin/replsum，以验证已还原的 DNS 服务器之间的复制是否正常工作。 验证复制后，你可以将还原的 Dc 连接到生产网络。如果已安装 DNS 服务器角色，你可以应用一个修补程序，使 DNS 服务器在服务器未连接到任何网络时能够启动。 应在自动生成过程中将修补程序补充到操作系统安装映像中。 有关修补程序的详细信息，请参阅 Microsoft 知识库中的[文章 975654](https://go.microsoft.com/fwlink/?LinkId=184691) （ https://go.microsoft.com/fwlink/?LinkId=184691)。 
 
 完成下面的安装和配置步骤。
 
@@ -39,13 +39,13 @@ ms.locfileid: "71369249"
 5. 如果系统提示，请在 "**服务器角色**" 屏幕**上，单击**"**添加功能**"，并单击 "**下一步**"。
 6. 在**功能**屏幕上，单击 "**下一步**"。
 7. 阅读 " **DNS 服务器**" 页上的信息，然后单击 "**下一步**"。
-   ![DNS Server @ no__t-1  
+   ![DNS 服务器](media/AD-Forest-Recovery-Configure-DNS/dns1.png)  
 8. 在 "**确认**" 页上，验证是否将安装 DNS 服务器角色，然后单击 "**安装**"。 
 
 ### <a name="to-configure-the-dns-server-service"></a>配置 DNS 服务器服务
 
 1. 打开服务器管理器，单击 "**工具**"，然后单击 " **DNS**"。
-   ![DNS Server @ no__t-1
+   ![DNS 服务器](media/AD-Forest-Recovery-Configure-DNS/dns2.png)
 2. 为在关键故障发生之前在 DNS 服务器上托管的相同 DNS 域名创建 DNS 区域。 有关详细信息，请参阅添加正向查找区域（[https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)）。
 3. 配置在发生严重故障之前存在的 DNS 数据。 例如：  
 

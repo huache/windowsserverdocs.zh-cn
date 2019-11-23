@@ -47,7 +47,7 @@ wbadmin start sysrecovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -57,7 +57,7 @@ wbadmin start sysrecovery
 |-restoreAllVolumes|恢复所选备份中的所有卷。 如果未指定此参数，则仅恢复关键卷（包含系统状态和操作系统组件的卷）。 当你需要在系统恢复过程中恢复非关键卷时，此参数非常有用。|
 |-recreateDisks|将磁盘配置恢复到创建备份时存在的状态。</br>警告：此参数删除托管操作系统组件的卷上的所有数据。 它还可能会删除数据卷中的数据。|
 |-excludeDisks|仅当使用 **-recreateDisks**参数指定，并且必须以逗号分隔的磁盘标识符列表的形式输入（如**wbadmin get**disk 的输出中所列）时，此参数才有效。 排除的磁盘未分区或未格式化。 此参数有助于保留在恢复操作过程中不需要修改的磁盘上的数据。|
-|-skipBadClusterCheck|跳过检查恢复磁盘是否有损坏的群集信息。 如果要还原到备用服务器或硬件，则建议不要使用此参数。 你可以随时在恢复磁盘上手动运行**chkdsk/b**来检查是否有坏群集，然后相应地更新文件系统信息。</br>警告：运行**chkdsk**之前，在恢复的系统上报告的坏簇可能不准确。|
+|-skipBadClusterCheck|跳过检查恢复磁盘是否有损坏的群集信息。 如果要还原到备用服务器或硬件，则建议不要使用此参数。 你可以随时在恢复磁盘上手动运行**chkdsk/b**来检查是否有坏群集，然后相应地更新文件系统信息。</br>警告：在运行**Chkdsk**之前，在恢复的系统上报告的坏簇可能不准确。|
 |-quiet|在不提示用户的情况运行命令。|
 
 ## <a name="BKMK_examples"></a>示例
@@ -66,7 +66,7 @@ wbadmin start sysrecovery
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-若要开始从备份中恢复运行的信息，请参阅位于 9:00 2013 年4月30日，位于共享文件夹 \\ @ no__t-1servername\shared：对于 server01，请键入：
+若要开始从备份中恢复在 9:00 2013 年4月30日运行的备份中的信息，请在共享文件夹中 \\\\servername\shared：对于 server01，键入：
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

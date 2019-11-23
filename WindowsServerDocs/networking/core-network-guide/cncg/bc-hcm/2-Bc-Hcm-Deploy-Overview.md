@@ -17,7 +17,7 @@ ms.locfileid: "71406381"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>BranchCache 托管缓存模式部署概述
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 你可以使用本指南在将计算机加入到域中的分支机构部署 BranchCache 托管缓存服务器。 您可以使用本主题获取 BranchCache 托管缓存模式部署过程的概述。
 
@@ -25,7 +25,7 @@ ms.locfileid: "71406381"
 
 ## <a name="bkmk_components"></a>托管缓存服务器部署基础结构
 
-在此部署中，托管缓存服务器使用 Active Directory 域服务 \(AD DS @ no__t 中的服务连接点进行部署，并且在 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中具有 BranchCache 选项。若要 prehash 基于 Web 和文件的内容服务器上的共享内容，请在托管缓存服务器上预加载内容。
+在此部署中，托管缓存服务器通过使用 Active Directory 域服务 \(AD DS\)中的服务连接点进行部署，并且在 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中具有 BranchCache 的选项，以 prehash Web 和基于文件的内容服务器上的共享内容，然后在托管缓存服务器上预加载内容。
 
 下图显示了部署 BranchCache 托管缓存服务器所需的基础结构。
 
@@ -40,11 +40,11 @@ ms.locfileid: "71406381"
 
 ### <a name="web1-in-the-cloud-data-center"></a>云数据中心的 WEB1
 
-WEB1 是 BranchCache @ no__t-0enabled 内容服务器。 如果选择 prehash 内容服务器数据以便可以在托管缓存服务器上预加载内容，则可以在 WEB1 上 prehash 共享内容，然后创建一个复制到 HCS1 的数据包。
+WEB1 是启用了内容服务器\-BranchCache。 如果选择 prehash 内容服务器数据以便可以在托管缓存服务器上预加载内容，则可以在 WEB1 上 prehash 共享内容，然后创建一个复制到 HCS1 的数据包。
 
 ### <a name="file1-in-the-cloud-data-center"></a>云中的数据中心
 
-FILE1 是 BranchCache @ no__t-0enabled 内容服务器。 如果选择 prehash 内容服务器数据以便可以在托管缓存服务器上预加载内容，则可以在 FILE1 上 prehash 共享内容，然后创建复制到 HCS1 的数据包。
+FILE1 是启用了内容服务器\-BranchCache。 如果选择 prehash 内容服务器数据以便可以在托管缓存服务器上预加载内容，则可以在 FILE1 上 prehash 共享内容，然后创建复制到 HCS1 的数据包。
   
 ### <a name="dc1-in-the-main-office"></a>总公司中的 DC1
 
@@ -68,12 +68,12 @@ DC1 是一个域控制器，您必须配置默认域策略，或其他更适合�
 
 1. 在 HCS1 上，使用 Windows PowerShell 命令将计算机配置为托管缓存服务器，并在 Active Directory 中注册服务连接点。
 
-2. @no__t HCS1 上的 no__t-1，如果 BranchCache 默认值与服务器和托管缓存的部署目标不匹配，请配置要为托管缓存分配的磁盘空间量。 同时，为托管缓存配置所需的磁盘位置。
+2. \(可选\) 在 HCS1 上，如果 BranchCache 默认值与服务器和托管缓存的部署目标不匹配，请配置要为托管缓存分配的磁盘空间量。 同时，为托管缓存配置所需的磁盘位置。
 
-3. \(Optional @ no__t-1 Prehash 内容服务器上的内容，创建数据包，并在托管缓存服务器上预加载内容。
+3. \(可选\) 在内容服务器上 Prehash 内容，创建数据包，并在托管缓存服务器上预加载内容。
 
     > [!NOTE]
-    > 托管缓存服务器上的执行哈希和预加载内容是可选的，但是，如果你选择 prehash 和预加载，则必须执行以下适用于你的部署的所有步骤。 @no__t 0For 示例中，如果你没有 Web 服务器，则无需执行与执行哈希和预加载 Web 服务器内容相关的任何步骤。 \)
+    > 托管缓存服务器上的执行哈希和预加载内容是可选的，但是，如果你选择 prehash 和预加载，则必须执行以下适用于你的部署的所有步骤。 \(例如，如果你没有 Web 服务器，则无需执行与执行哈希和预加载 Web 服务器内容相关的任何步骤。\)
 
     1. 在 WEB1 上，prehash Web 服务器内容并创建数据包。
 

@@ -26,7 +26,7 @@ ms.locfileid: "71385067"
 
 默认情况下，Linux 允许硬件加速和卸载。 如果在主机上的 NIC 的属性中启用了 vRSS 并且 Linux 来宾可以使用 vRSS，则将启用该功能。 在 Powershell 中，可以通过 `EnableNetAdapterRSS` 命令更改同一个参数。
 
-同样，可以在来宾**属性**使用的物理 NIC 上启用 VMMQ （虚拟交换机 RSS）功能， > **配置 ...** @no__t 3 "**高级**" 选项卡 > 将**虚拟交换机 RSS**设置为 "**启用**"，或使用以下命令在 Powershell 中启用 VMMQ：
+同样，可以在来宾**属性**使用的物理 NIC 上启用 VMMQ （虚拟交换机 rss）功能， > **配置 ...**  > **高级**"选项卡，> 将**虚拟交换机 RSS**设置为"**启用**"，或使用以下命令在 Powershell 中启用 VMMQ：
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True
@@ -57,7 +57,7 @@ net.ipv4.tcp_abort_on_overflow = 1
 
 与网络类似，Linux 来宾的存储性能从具有足够深度的多个队列中获益最大，使主机保持繁忙状态。 Microbenchmarking 存储性能可能适用于 fio 基准工具与 libaio 引擎。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [Hyper-V 术语](terminology.md)
 

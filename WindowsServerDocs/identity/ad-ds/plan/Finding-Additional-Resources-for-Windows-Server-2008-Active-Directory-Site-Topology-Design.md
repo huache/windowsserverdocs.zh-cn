@@ -22,13 +22,13 @@ ms.locfileid: "71408828"
 
 你可以在 Windows Server 2003 和 Windows Server 2008 技术中心网站上找到有关 Active Directory 域服务（AD DS）的以下文档：  
   
--   有关查找域控制器的过程的详细信息，请参阅 Active Directory 集合（[https://go.microsoft.com/fwlink/?LinkID=88626](https://go.microsoft.com/fwlink/?LinkID=88626)）。  
+-   有关查找域控制器的过程的详细信息，请参阅 Active Directory 收集（[https://go.microsoft.com/fwlink/?LinkID=88626](https://go.microsoft.com/fwlink/?LinkID=88626)）。  
   
 -   有关设计和部署打印服务器的详细信息，请参阅设计和部署打印服务器（[https://go.microsoft.com/fwlink/?LinkId=107041](https://go.microsoft.com/fwlink/?LinkId=107041)）。  
   
 -   有关跨越树和 Active Directory 复制拓扑的详细信息，请参阅 Active Directory 复制拓扑技术参考（[https://go.microsoft.com/fwlink/?LinkId=44137](https://go.microsoft.com/fwlink/?LinkId=44137)）。  
   
--   若要详细了解如何使用 Adlb 和管理具有100或更多分支站点的环境，请参阅为分支机构规划和部署 Active Directory 域服务（[@no__t](https://go.microsoft.com/fwlink/?LinkId=107114)）。  
+-   若要详细了解如何使用 Adlb 和管理具有100或更多分支站点的环境，请参阅为分支机构规划和部署 Active Directory 域服务（[https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)）。  
   
 -   有关安装网络监视器的信息，请参阅监视网络流量（[https://go.microsoft.com/fwlink/?LinkId=107058](https://go.microsoft.com/fwlink/?LinkId=107058)）。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71408828"
   
 -   有关部署目录林根级域的详细信息，请参阅[部署 Windows Server 2008 林根级域](https://technet.microsoft.com/library/cc731174.aspx)。  
   
--   有关保护域控制器的详细信息，请参阅保护 Windows Server Active Directory 安装的最佳实践指南（[https://go.microsoft.com/fwlink/?LinkId=28521](https://go.microsoft.com/fwlink/?LinkId=28521)）。  
+-   有关保护域控制器的详细信息，请参阅保护 Windows Server Active Directory 安装（[https://go.microsoft.com/fwlink/?LinkId=28521](https://go.microsoft.com/fwlink/?LinkId=28521)）的最佳实践指南。  
   
 -   有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](https://technet.microsoft.com/library/cc755118.aspx)。  
   

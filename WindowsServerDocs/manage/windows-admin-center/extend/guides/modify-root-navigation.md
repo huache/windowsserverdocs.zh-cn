@@ -27,7 +27,7 @@ ms.locfileid: "71385285"
 
 ### <a name="setting-path-as-a-rootnavigationbehavior"></a>将路径设置为 rootNavigationBehavior
 
-将 @no__t 值设置为 ```path```，然后删除 @no__t 属性，并将 ```path``` 属性保留为空字符串。 你已完成构建解决方案扩展所需的最小配置。 保存该文件，然后 > gulp gulp 服务，然后将该扩展加载到本地 Windows 管理中心扩展中。
+将 ```rootNavigationBehavior``` 的值设置为 ```path```，然后删除 ```requirements``` 属性，并将 ```path``` 属性保留为空字符串。 你已完成构建解决方案扩展所需的最小配置。 保存该文件，然后 > gulp gulp 服务，然后将该扩展加载到本地 Windows 管理中心扩展中。
 
 有效的清单 s 数组如下所示：
 ```
@@ -49,7 +49,7 @@ ms.locfileid: "71385285"
 
 ### <a name="setting-connections-as-a-rootnavigationbehavior"></a>将连接设置为 rootNavigationBehavior
 
-将 ```rootNavigationBehavior``` 属性设置为 ```connections``` 时，会告诉 Windows 管理中心 Shell，会有一个连接的节点（始终是某种类型的服务器）应连接到该节点，并验证连接状态。 通过此操作，验证连接需要执行两个步骤。 1） Windows 管理中心将尝试使用您的凭据登录到该节点（用于建立远程 PowerShell 会话）和2），它将执行您提供的 PowerShell 脚本来确定节点是否处于可连接状态。
+将 ```rootNavigationBehavior``` 属性设置为 "```connections```" 时，你会告诉 Windows 管理中心 Shell，将有一个连接的节点（始终是某种类型的服务器）应连接到该节点，并验证连接状态。 通过此操作，验证连接需要执行两个步骤。 1） Windows 管理中心将尝试使用您的凭据登录到该节点（用于建立远程 PowerShell 会话）和2），它将执行您提供的 PowerShell 脚本来确定节点是否处于可连接状态。
 
 具有连接的有效解决方案定义将如下所示：
 

@@ -22,7 +22,7 @@ ms.locfileid: "71374155"
 ---
 # <a name="makecab"></a>makecab
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 将现有文件打包到 cab （.cab）文件中。
 ## <a name="syntax"></a>语法
@@ -30,7 +30,7 @@ ms.locfileid: "71374155"
 makecab [/v[n]] [/d var=<value> ...] [/l <dir>] <source> [<destination>]
 makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 ```
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 |      参数       |                                                                        描述                                                                        |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,7 +39,7 @@ makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 | /f < directives_file > |                                                   具有**makecab**指令的文件（可以重复）。                                                   |
 |    /d var =<value>    |                                                          定义带有指定值的变量。                                                           |
 |       /l <dir>       |                                               目标位置（默认为当前目录）。                                               |
-|       /v [@no__t]        |                                                    设置调试详细级别（0 = 无,..., 3 = 完全）。                                                     |
+|       /v [<n>]        |                                                    设置调试详细级别（0 = 无,..., 3 = 完全）。                                                     |
 |          /?          |                                                           在命令提示符下显示帮助。                                                            |
 
 ## <a name="remarks"></a>备注

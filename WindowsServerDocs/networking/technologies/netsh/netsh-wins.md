@@ -15,25 +15,25 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71401920"
 ---
-# <a name="network-shell-netsh-example-batch-file"></a>网络 Shell \(Netsh @ no__t 示例批处理文件
+# <a name="network-shell-netsh-example-batch-file"></a>网络 Shell \(Netsh\) 示例批处理文件
 
-适用于：Windows Server 2016
+适用于：Windows Server 2016
 
 本主题介绍如何使用 Windows Server 2016 中的 Netsh 创建执行多个任务的批处理文件。 在此示例批处理文件中，使用了**netsh wins** context。
 
 ## <a name="example-batch-file-overview"></a>示例批处理文件概述
 
-可以在批处理文件和其他脚本中使用适用于 Windows Internet 名称服务的 Netsh 命令 \(WINS @ no__t 来自动执行任务。 以下批处理文件示例演示如何使用适用于 WINS 的 Netsh 命令来执行各种相关任务。
+你可以使用适用于 Windows Internet 名称服务的 Netsh 命令 \(批处理文件中的 WINS\) 和其他脚本来自动执行任务。 以下批处理文件示例演示如何使用适用于 WINS 的 Netsh 命令来执行各种相关任务。
 
-在此示例批处理文件中，WINS-A @ no__t-0A 是 IP 地址为192.168.125.30 的 wins 服务器，而 WINS @ no__t 是 IP 地址为192.168.0.189 的 WINS 服务器。
+在此示例批处理文件中，WINS\-是 IP 地址为192.168.125.30 的 WINS 服务器，而 WINS\-B 是 IP 地址为192.168.0.189 的 WINS 服务器。
 
 示例批处理文件完成以下任务。
 
-- 向 WINS-A @ no__t-2 添加具有 IP 地址192.168.0.205、我的 @ no__t-0RECORD \[04h @ no__t-2 的动态名称记录
-- 将 WINS @ no__t-0B 设置为 WINS @ no__t-1A 的推送/请求复制伙伴
-- 连接到 WINS @ no__t-0B，然后将 WINS @ no__t 设置为 WINS @ no__t-2B 的推送/请求复制伙伴
-- 启动从 WINS @ no__t-0A 到 WINS-A @ no__t-1B 的推送复制
-- 连接到 WINS @ no__t-0B，验证是否已成功复制新记录 @ no__t-1RECORD
+- 向 WINS 添加具有 IP 地址192.168.0.205、MY\_记录 \[04h\]）的动态名称记录\-
+- 将 WINS\-B 设置为 WINS\-的推送/请求复制伙伴
+- 连接到 WINS\-B，然后将 WINS\-设置为 WINS\-B 的推送/请求复制伙伴
+- 启动从 WINS\-A 到 WINS\-B 的推送复制
+- 连接到 WINS\-B 以验证是否已成功复制新记录（我的\_记录）
 
 ## <a name="netsh-example-batch-file"></a>Netsh 示例批处理文件
 
@@ -73,7 +73,7 @@ ms.locfileid: "71401920"
 
 以下部分列出了此示例过程中使用的**netsh wins**命令。
 
-- **服务器**。 将当前 WINS command @ no__t-0line 上下文切换到由其名称或 IP 地址指定的服务器。
+- **服务器**。 将当前 WINS 命令\-行上下文转移到由其名称或 IP 地址指定的服务器。
 - **添加名称**。 在 WINS 服务器上注册名称。
 - **添加合作伙伴**。 在 WINS 服务器上添加复制伙伴。
 - **init 推送**。 启动推送触发器并发送到 WINS 服务器。

@@ -18,7 +18,7 @@ ms.locfileid: "71390537"
 ---
 # <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>AD 林恢复-执行完整服务器恢复 
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 使用以下过程对 Windows Server 2016、2012 R2 或2012执行完整服务器恢复。 
 
@@ -37,23 +37,23 @@ ms.locfileid: "71390537"
   
 1. 开始 Windows 安装程序 "，指定语言、时间和货币格式以及键盘选项，然后单击"**下一步**"。 
 2. 单击**修复计算机**。
-   @no__t 0Server Restore @ no__t-1
+   ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore1.png)
 3. 单击**疑难解答**。</br>
-   @no__t 0Server Restore @ no__t-1
+   ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore2.png)
 4. 单击 "**系统映像恢复**"。</br>
-   @no__t 0Server Restore @ no__t-1
+   ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore3.png)
 5. 单击 " **Windows Server 2016**"。 
-   @no__t 0Server Restore @ no__t-1
+   ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore4.png)
 6. 如果要还原最近的本地备份，请单击 **"使用最新的可用系统映像（推荐）"** ，然后单击 "**下一步**"。
-   @no__t 0Server Restore @ no__t-1
+   ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore5.png)
 7. 现在，你可以选择执行以下操作：
    -  对磁盘进行格式化和重新分区
    -  安装驱动程序
    -  取消选择自动重启和检查磁盘错误的**高级**功能。 默认情况下，这些设置处于启用状态。
-   @no__t 0Server Restore @ no__t-1
-8. 单击“下一步”。
+   ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore6.png)
+8. 单击**下一步**。
 9. 单击 **“完成”** 。 系统将提示你是否确定要继续。 单击 **“是”** 。 
-   @no__t 0Server Restore @ no__t-1 
+   ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore11.png) 
 10. 完成后，执行 SYSVOL 的权威还原，如[AD 林恢复中所述-执行 DFSR 复制的 SYSVOL 的权威同步](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)。
 
 ## <a name="perform-a-full-server-restore-with-any-image-local-or-remote"></a>使用任何映像本地或远程执行完整服务器还原
@@ -64,18 +64,18 @@ ms.locfileid: "71390537"
 4. 如果要还原最近的本地备份，请单击 "**选择系统映像**"，然后单击 "**下一步**"。
 5. 现在，你可以选择要还原的备份的位置。 如果映像为本地映像，可以从列表中选择它。 
 6. 如果映像位于网络共享上，请选择 "**高级**"。 如果需要安装驱动程序，还可以选择 "**高级**"。
-   @no__t 0Server Restore @ no__t-1
+   ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore7.png)
 7. 如果要从网络还原，请在单击 "**高级**"，然后在**网络上搜索系统映像**。 系统可能会提示你还原网络连接。 选择 "确定"。 </br>
-   @no__t 0Server Restore @ no__t-1
-8. 键入备份共享位置的 UNC 路径（例如 \\ \ server1\backups），然后单击 **"确定"** 。 还可以键入目标服务器的 IP 地址，例如 \\ \ 192.168.1.3 \ 备份。 
-   @no__t 0Server Restore @ no__t-1
+   ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore8.png)
+8. 键入备份共享位置的 UNC 路径（例如 \\\server1\backups），然后单击 **"确定"** 。 还可以键入目标服务器的 IP 地址，例如 \\\192.168.1.3\backups。 
+   ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore9.png)
 9. 键入访问共享所需的凭据，然后单击 "确定"。 
 10. 现在，**选择要还原的系统映像的日期和时间**，然后单击 "**下一步**"。
 11. 现在，你可以选择执行以下操作：
     - 对磁盘进行格式化和重新分区
     - 安装驱动程序
     - 取消选择自动重启和检查磁盘错误的**高级**功能。 默认情况下，这些设置处于启用状态。
-12. 单击“下一步”。
+12. 单击**下一步**。
 13. 单击 **“完成”** 。 系统将提示你是否确定要继续。 单击 **“是”** 。  
 14. 完成后，执行 SYSVOL 的权威还原，如[AD 林恢复中所述-执行 DFSR 复制的 SYSVOL 的权威同步](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)。
 
@@ -126,7 +126,7 @@ ms.locfileid: "71390537"
    set address "Local Area Connection" static 192.168.1.2 255.0.0.0 192.168.1.1 1  
    ```  
 
-   键入 `quit` 返回到命令提示符。 键入 `ipconfig /all` 验证网络适配器是否具有 IP 地址，并尝试对托管备份共享的服务器的 IP 地址进行 ping 操作，以确认连接。 完成后，关闭命令提示符。 
+   键入 `quit` 以返回到命令提示符。 键入 `ipconfig /all` 验证网络适配器是否具有 IP 地址，并尝试对托管备份共享的服务器的 IP 地址进行 ping 操作，以确认连接。 完成后，关闭命令提示符。 
 
 6. 现在网络适配器正在运行，请选择上述步骤完成还原。
 

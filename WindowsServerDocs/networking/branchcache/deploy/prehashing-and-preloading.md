@@ -27,12 +27,12 @@ ms.locfileid: "71356389"
   
 1.  登录到包含要预加载的数据的文件或 Web 服务器，并标识要在一个或多个远程托管缓存服务器上加载的文件夹和文件。  
   
-2.  以管理员身份运行 Windows PowerShell。 对于每个文件夹和文件，根据内容服务器的类型运行 `Publish-BCFileContent` 命令或 @no__t，以触发哈希生成并向数据包添加数据。  
+2.  以管理员身份运行 Windows PowerShell。 对于每个文件夹和文件，根据内容服务器的类型运行 `Publish-BCFileContent` 命令或 `Publish-BCWebContent` 命令，以触发哈希生成并向数据包添加数据。  
   
-3.  将所有数据添加到数据包后，请使用 `Export-BCCachePackage` 命令将其导出，以生成数据包文件。  
+3.  将所有数据添加到数据包后，请使用 `Export-BCCachePackage` 命令导出数据，以生成数据包文件。  
   
 4.  使用所选的文件传输技术将数据包文件移动到远程托管缓存服务器。  FTP、SMB、HTTP、DVD 和便携式硬盘均为可行传输。  
   
-5.  使用 `Import-BCCachePackage` 命令将数据包文件导入远程托管缓存服务器。  
+5.  使用 `Import-BCCachePackage` 命令导入远程托管缓存服务器上的数据包文件。  
   
 

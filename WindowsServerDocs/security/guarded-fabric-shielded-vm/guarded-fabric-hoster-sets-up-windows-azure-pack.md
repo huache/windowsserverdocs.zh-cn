@@ -50,9 +50,9 @@ ms.locfileid: "71403659"
 
 2.  下载并安装[Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)。 如果计算机未连接到 Internet，请按照[脱机安装说明](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)进行操作。
 
-3.  打开 Web 平台安装程序并查找 @no__t 0Windows Azure 包："**产品**" 选项卡下的门户和 API Express @ no__t。单击 "**添加**"，然后在窗口底部**安装**。
+3.  打开 Web 平台安装程序，并在 "**产品**" 选项卡下找到**Windows Azure Pack：门户和 API Express** 。单击 "**添加**"，然后在窗口底部**安装**。
 
-4.  继续执行安装。 安装完成后，会在 web 浏览器中打开配置网站（*https://&lt;wapserver @ no__t-2： 30101/* ）。 在此网站上，提供有关 SQL server 的信息并完成 WAP 的配置。
+4.  继续执行安装。 安装完成后，会在 web 浏览器中打开配置网站（*https://&lt;wapserver&gt;： 30101/* ）。 在此网站上，提供有关 SQL server 的信息并完成 WAP 的配置。
 
 有关设置 Windows Azure Pack 的帮助，请参阅[安装 Windows Azure Pack 的快速部署](https://technet.microsoft.com/dn296439.aspx)。
 
@@ -63,7 +63,7 @@ ms.locfileid: "71403659"
 
 在使用 Windows Azure Pack 之前，你应该已为基础结构安装并配置了它。
 
-1.  导航到 https://上的 Windows Azure Pack 管理门户 *&lt;wapserver @ no__t-2： 30091*，然后使用管理员凭据登录。
+1.  在*https://&lt;wapserver&gt;： 30091*导航到 Windows Azure Pack 管理门户，然后使用你的管理员凭据进行登录。
 
 2.  在左窗格中，单击 " **VM 云**"。
 
@@ -77,7 +77,7 @@ ms.locfileid: "71403659"
 
 若要允许租户在 WAP 中创建 Vm，必须首先创建租户可以订阅的托管计划。 计划定义租户的允许 VM 云、模板、网络和计费实体。
 
-1. 在门户的下方窗格中，单击 " **+ 新建**&gt;"**计划**@no__t**创建计划**。
+1. 在门户的下方窗格中，单击 " **+ 新建**&gt;**计划**&gt;**创建计划**"。
 
 2. 在向导的第一步中，选择计划的名称。 这是租户在订阅时将看到的名称。
 
@@ -113,7 +113,7 @@ ms.locfileid: "71403659"
 
     此时，已配置 Windows Azure Pack，租户将能够订阅刚创建的计划，并部署受防护的 Vm。 有关租户需要完成的其他步骤，请参阅[租户的受防护的 vm-通过使用 Windows Azure Pack 部署受防护的 vm](guarded-fabric-shielded-vm-windows-azure-pack.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [受保护的主机和受防护的 Vm 的托管服务提供商配置步骤](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受保护的结构和受防护的 VM](guarded-fabric-and-shielded-vms-top-node.md)

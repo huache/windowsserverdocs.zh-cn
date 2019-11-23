@@ -40,14 +40,14 @@ DNS 服务器也位于本地数据中心。
 
 Contoso 礼券会执行站点分析，发现每个晚上晚上6点到晚上9点，西雅图 Web 服务器的流量会出现冲击。 在这些高峰时段，Web 服务器无法缩放以处理增加的流量，导致拒绝向客户发送服务。 
 
-为了确保 contosogiftservices.com 客户获得网站的响应体验，Contoso 礼品服务决定在这些时间段内，会租借 Microsoft Azure 上的虚拟机 \(VM @ no__t，以便托管其 Web 服务器的副本。  
+为了确保 contosogiftservices.com 客户从网站获得响应性体验，Contoso 礼品服务决定在这些时间段内 \(VM\) 上的虚拟机 Microsoft Azure，以便托管其 Web 服务器的副本。  
 
 Contoso 礼券从 Azure 获取 VM 的公共 IP 地址（192.68.31.44），并在每天下午5-10，开发自动化，以便每天在 Azure 上的 Azure 上部署 Web 服务器，从而允许一小时的紧急情况。
 
 > [!NOTE]
 > 有关 Azure Vm 的详细信息，请参阅[虚拟机文档](https://azure.microsoft.com/documentation/services/virtual-machines/) 
 
-DNS 服务器配置了区域作用域和 DNS 策略，以便每天 5-9 PM，将 30% 的查询发送到运行在 Azure 中的 Web 服务器的实例。
+DNS 服务器配置了区域作用域和 DNS 策略，以便每天 5-9 PM，将30% 的查询发送到运行在 Azure 中的 Web 服务器的实例。
 
 下图描述了此方案。
 
@@ -100,7 +100,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope
 
 在 AzureZoneScope 中，将在 Azure 公有云中添加记录 www.contosogiftservices.com 和 IP 地址192.68.31.44。 
 
-同样，在默认区域作用域 \(contosogiftservices @ no__t-1 中，将使用在西雅图本地数据中心内运行的 Web 服务器的 IP 地址 no__t 添加记录 \(www @ 192.68.30.2。
+同样，在默认区域作用域 \(contosogiftservices.com\)中，将使用在西雅图本地数据中心内运行的 Web 服务器的 IP 地址192.68.30.2 添加记录 \(www.contosogiftservices.com\)。
 
 在下面的第二个 cmdlet 中，不包括– ZoneScope 参数。 因此，会将记录添加到默认 ZoneScope。 
 
@@ -117,7 +117,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 ### <a name="create-the-dns-policies"></a>创建 DNS 策略 
 创建区域作用域后，可以创建在这些范围内分发传入查询的 DNS 策略，以便发生以下情况。
 
-1. 每日下午6：30，客户端在 Azure 数据中心收到 DNS 响应中 Web 服务器的 IP 地址，而 70% 的客户端接收西雅图本地 Web 服务器的 IP 地址。
+1. 每日下午6：30，客户端在 Azure 数据中心收到 DNS 响应中 Web 服务器的 IP 地址，而70% 的客户端接收西雅图本地 Web 服务器的 IP 地址。
 2. 在所有其他情况下，所有客户端都接收西雅图本地 Web 服务器的 IP 地址。
 
 当天的时间必须以 DNS 服务器的本地时间表示。

@@ -24,7 +24,7 @@ ms.locfileid: "71380276"
 
 如果 BITS 无法启动，请使用此开关修复不同版本的 BITS 的已知问题。
 
-**BITSAdmin 1.5 及更早版本：** 支持  Not。
+**BITSAdmin 1.5 及更早版本：**  不受支持。
 
 ## <a name="syntax"></a>语法
 
@@ -32,7 +32,7 @@ ms.locfileid: "71380276"
 bitsadmin /Util /RepairService [/Force]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|

@@ -50,7 +50,7 @@ LDAP 目录中存储的标识还支持 AD FS 支持的所有被动授权协议�
    > [!NOTE]
    > 建议为要连接到的每个 LDAP 服务器创建一个新的连接对象。 AD FS 可以连接到多个副本 LDAP 服务器，并在特定 LDAP 服务器关闭时自动进行故障转移。 对于这种情况，可以为每个副本 LDAP 服务器创建一个 AdfsLdapServerConnection，然后使用**AdfsLocalClaimsProviderTrust** cmdlet 的-**LdapServerConnection**参数添加连接对象的数组。
 
-   **注意：** 尝试使用 Get 凭据并键入 DN 和密码来绑定到 LDAP 实例可能会导致失败，因为特定输入格式需要用户界面，例如，域 \ 用户名或 user@domain.tld。 可以改为按如下所示使用 Convertto-html-SecureString cmdlet （下面的示例假定 uid = admin，ou = system 作为要用于绑定到 LDAP 实例的凭据的 DN）：
+   **注意：** 尝试使用 Get 凭据并在 DN 和密码中键入绑定到 LDAP 实例的密码可能会导致失败，因为特定输入格式需要用户界面，例如，域 \ 用户名或 user@domain.tld。 可以改为按如下所示使用 Convertto-html-SecureString cmdlet （下面的示例假定 uid = admin，ou = system 作为要用于绑定到 LDAP 实例的凭据的 DN）：
 
    ```
    $ldapuser = ConvertTo-SecureString -string "uid=admin,ou=system" -asplaintext -force
@@ -93,9 +93,9 @@ LDAP 目录中存储的标识还支持 AD FS 支持的所有被动授权协议�
    -OrganizationalAccountSuffix "vendors.contoso.com"
    ```
 
-   在上面的示例中，你将创建名为 "供应商" 的本地声明提供程序信任。 你正在指定 AD FS 连接到本地声明提供程序信任所代表的 LDAP 目录的连接信息，方法是将 @no__t 分配到 @no__t 参数。 请注意，在第一步中，已将连接字符串分配到 `$vendorDirectory`，以连接到特定的 LDAP 目录时使用。 最后，您指定 `$GivenName`、`$Surname` 和 `$CommonName` LDAP 属性（映射到 AD FS 声明）将用于条件访问控制，包括多重身份验证策略和颁发授权规则，以及用于通过 AD FS 颁发的安全令牌中的声明进行颁发。 若要将 Ws 信任之类的活动协议与 AD FS 一起使用，则必须指定 OrganizationalAccountSuffix 参数，该参数允许 AD FS 在为 active authorization 请求提供服务时区分本地声明提供程序信任。
+   在上面的示例中，你将创建名为 "供应商" 的本地声明提供程序信任。 您正在通过将 `$vendorDirectory` 分配到 `-LdapServerConnection` 参数，为 AD FS 指定连接到该本地声明提供程序信任表示的 LDAP 目录的连接信息。 请注意，在第一步中，已将 `$vendorDirectory` 连接字符串分配给特定 LDAP 目录时要使用的连接字符串。 最后，你将指定 `$GivenName`、`$Surname`和 `$CommonName` LDAP 属性（映射到 AD FS 声明）用于条件性访问控制，包括多重身份验证策略和颁发授权规则，以及通过 AD FS 颁发的安全令牌中的声明进行颁发。 若要将 Ws 信任之类的活动协议与 AD FS 一起使用，则必须指定 OrganizationalAccountSuffix 参数，该参数允许 AD FS 在为 active authorization 请求提供服务时区分本地声明提供程序信任。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)
 
 

@@ -243,7 +243,7 @@ DirectAccess 服务器以及所有要使用 IPsec 身份验证的 DirectAccess �
   
 ### <a name="NLS_DNS"></a>创建网络位置服务器  
   
-1.  在内部网络 DNS 服务器上：在 "**开始**" 屏幕上，键入 "**dnsmgmt.msc**"，然后按 enter。  
+1.  在 "内部网络 DNS 服务器：" 的 "**开始**" 屏幕上，键入**dnsmgmt.msc**，然后按 enter。  
   
 2.  在“DNS 管理器”控制台的左窗格中，展开域的前向查找区域。 右键单击该域，然后单击“新建主机(A 或 AAAA)”。  
   
@@ -263,7 +263,7 @@ DirectAccess 服务器以及所有要使用 IPsec 身份验证的 DirectAccess �
   
 5.  在“DNS”对话框中，单击“确定”，然后单击“完成”。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -335,7 +335,7 @@ DirectAccess 服务器和所有 DirectAccess 客户端计算机都必须加入 A
   
 10. 当系统提示你重新启动计算机时，请单击“立即重新启动”。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -424,11 +424,11 @@ Restart-Computer
   
     10. 在“扫描备份”页面上，单击“下一步”，然后单击“完成”。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
--   若要将域 "corp.contoso.com" 中的过渡客户端 GPO "DirectAccess 客户端设置-过渡" 备份到备份文件夹 "C:\Backups @ no__t-0：  
+-   若要将域 "corp.contoso.com" 中的过渡客户端 GPO "DirectAccess 客户端设置-过渡" 备份到备份文件夹 "C:\Backups\"：  
   
     ```  
     $backup = Backup-GPO "Name 'DirectAccess Client Settings - Staging' "Domain 'corp.contoso.com' "Path 'C:\Backups\'  
@@ -469,7 +469,7 @@ Restart-Computer
   
 6.  在“选择用户、联系人、计算机或服务帐户”对话框中，选择你希望为 DirectAccess 启用的客户端计算机，然后单击“确定”。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -547,7 +547,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
     -   使用基于 HTTP 的 URL 的 Web 服务器，例如： https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
   
-    -   通过通用命名约定（UNC）路径（例如 \\ \ com\crld\corp-APP1-CA.crl）访问的文件服务器。  
+    -   通过通用命名约定（UNC）路径（例如 \\\crl.corp.contoso.com\crld\corp-APP1-CA.crl）访问的文件服务器  
   
     如果仅可通过 IPv6 访问内部的 CRL 分发点，则必须配置高级安全 Windows 防火墙连接安全规则，以免除从 Intranet 的 IPv6 地址到 CRL 分发点的 IPv6 地址的 IPsec 保护。  
   
@@ -555,7 +555,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>下一步  
   
--   [步骤 2：配置高级 DirectAccess 服务器](da-adv-configure-s2-servers.md)  
+-   [步骤2：配置高级 DirectAccess 服务器](da-adv-configure-s2-servers.md)  
   
 
 

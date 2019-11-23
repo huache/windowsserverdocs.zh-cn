@@ -22,9 +22,9 @@ ms.locfileid: "71378687"
 ---
 # <a name="detach-vdisk"></a>分离 vdisk
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-停止所选的虚拟硬盘 \(VHD @ no__t，将其显示为主计算机上的本地硬盘驱动器。 分离 VHD 后，可以将其复制到其他位置。  
+停止所选虚拟硬盘 \(VHD\) 在主计算机上显示为本地硬盘驱动器。 分离 VHD 后，可以将其复制到其他位置。  
   
 > [!NOTE]  
 > 此命令仅适用于 Windows 7 和 Windows Server 2008 R2。  
@@ -35,7 +35,7 @@ ms.locfileid: "71378687"
 detach vdisk [noerr]  
 ```  
   
-### <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>参数  
   
 |参数|描述|  
 |-------|--------|  

@@ -21,7 +21,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71395335"
 ---
 # <a name="keep-files-private"></a>使文件保持私有
-本主题适用于你 @no__t 的内容（例如文档），你可以将*管理用户*\) 和*标准用户*不想与 MultiPoint 服务系统中的其他用户共享。  
+本主题适用于你 \(为*管理用户*\) 的内容，而*标准用户*不想与 MultiPoint 服务系统中的其他用户共享。  
 
 有关 MultiPoint Services 中的隐私详细信息，请参阅[隐私和安全注意事项](Privacy-and-Security-Considerations.md)。
   
@@ -32,6 +32,6 @@ ms.locfileid: "71395335"
 > [!WARNING]  
 > 当外部存储设备（例如 USB 闪存驱动器）连接到主机上的 USB 端口或不是工作站集线器的 USB 集线器上时，登录到 MultiPoint 服务系统的所有标准用户或管理用户都可以查看该文件夹。 如果你对外部存储设备上存储的内容有隐私或安全方面的担心，请只将其连接到 MultiPoint 服务系统上的工作站集线器。 有关如何使用 USB 存储设备的详细信息，请参阅[使用 USB 闪存驱动器保存和共享文件](Save-and-Share-Files-on-a-USB-Flash-Drive.md)主题。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [管理用户文件](Manage-User-Files.md)  
 [保存和共享 U 盘上的文件](Save-and-Share-Files-on-a-USB-Flash-Drive.md)

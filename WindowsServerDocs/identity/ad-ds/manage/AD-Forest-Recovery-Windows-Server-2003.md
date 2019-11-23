@@ -18,7 +18,7 @@ ms.locfileid: "71390057"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>AD 林恢复-Windows Server 2003 恢复
 
->适用于：Windows Server 2003
+>适用于： Windows Server 2003
 
 本主题包括运行 Windows Server 2003 的域控制器（Dc）的林恢复过程。 林恢复的一般过程与 Windows Server 2003 Dc 没有任何不同，但特定的过程可能因不同的工具而有所不同。 例如，Ntdsutil.exe 可以用来备份和还原运行 Windows Server 2003 Dc 的 Dc，而 Windows Server 备份或 Wbadmin 用于运行 Windows Server 2008 或更高版本的 Dc。  
   
@@ -77,7 +77,7 @@ ms.locfileid: "71390057"
    > [!NOTE]
    > 将还原的数据标记为备份中的主数据等效于在以下注册表子项下将**BurFlags**项设置为 D4：  
    >   
-   > **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NtFrs\Parameters\Cumulative Replica Sets @ no__t** *GUID*  
+   > **HKEY_LOCAL_MACHINE \System\currentcontrolset\services\ntfrs\parameters\cumulative 副本集\\** *GUID*  
 
 4. 还原操作完成后，重新启动计算机。  
   

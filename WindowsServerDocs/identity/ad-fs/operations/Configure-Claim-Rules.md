@@ -18,7 +18,7 @@ ms.locfileid: "71407679"
 ---
 # <a name="configure-claim-rules"></a>配置声明规则
 
-在声明 @ no__t-0based 标识模型中，将 Active Directory 联合身份验证服务 \(AD FS @ no__t-2 作为联合身份验证服务的功能是颁发包含一组声明的令牌。 声明规则管理有关 AD FS 问题的声明的决策。 声明规则和所有服务器配置数据均存储在 AD FS 配置数据库中。  
+在基于声明\-的标识模型中，Active Directory 联合身份验证服务 \(AD FS\) 为联合身份验证服务的功能是颁发包含一组声明的令牌。 声明规则管理有关 AD FS 问题的声明的决策。 声明规则和所有服务器配置数据均存储在 AD FS 配置数据库中。  
   
 AD FS 根据声明和其他上下文信息的形式向其提供的标识信息进行颁发决策。 从较高层次来看，AD FS 将一组声明作为输入，执行多个转换，然后返回一组不同的声明作为一个规则处理器。 
 
@@ -41,5 +41,5 @@ AD FS 根据声明和其他上下文信息的形式向其提供的标识信息�
   
 -   [创建规则以使用自定义规则发送声明](Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule.md)  
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 

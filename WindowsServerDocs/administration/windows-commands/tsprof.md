@@ -22,7 +22,7 @@ ms.locfileid: "71392315"
 ---
 # <a name="tsprof"></a>tsprof
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 将远程桌面服务用户配置信息从一个用户复制到另一个用户。
 远程桌面服务用户配置信息显示在 "本地用户和组" 和 "active directory 用户和计算机" 的远程桌面服务扩展中。
@@ -41,15 +41,15 @@ tsprof /copy {/domain:<DomainName> | /local} [/profile:<path>] <Src_usr> <Dest_u
 tsprof /q {/domain:<DomainName> | /local} <UserName>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
 |/update|更新域 <*DomainName*> 中 <*用户名*> 的配置文件路径信息，以 <*Profilepath*>。|
-|/domain： \<DomainName >|指定应用操作的域的名称。|
+|/domain：\<DomainName >|指定应用操作的域的名称。|
 |/local|仅将操作应用于本地用户帐户。|
-|/profile： \<path >|指定在 "本地用户和组" 和 "active directory 用户和计算机" 的远程桌面服务扩展中显示的配置文件路径。|
-|\<UserName >|指定要为其更新或查询服务器配置文件路径的用户的名称。|
-|/copy|将用户配置信息从 \<*SourceUser*> 复制到 \<*DestinationUser*> 并将 \<*DestinationUser*> 的配置文件路径信息更新到 \<*Profilepath*>。 @No__t *> 和*\<*DestinationUser*> 都必须是本地的，或者必须位于域 \<*DomainName*> 中。|
+|/profile：\<路径 >|指定在 "本地用户和组" 和 "active directory 用户和计算机" 的远程桌面服务扩展中显示的配置文件路径。|
+|\<用户名 >|指定要为其更新或查询服务器配置文件路径的用户的名称。|
+|/copy|将用户配置信息从 \<*SourceUser*> 复制到 \<*DestinationUser*>，并将 \<*DestinationUser*> 的配置文件路径信息更新为 \<*Profilepath*>。 *\<>* 和 \<*DestinationUser*> 都必须是本地的，或者必须位于域 \<*DomainName*> 中。|
 |\<Src_usr >|指定要从中复制用户配置信息的用户的名称。|
 |\<Dest_usr >|指定要向其复制用户配置信息的用户的名称。|
 |/q|显示要为其查询服务器配置文件路径的用户的当前配置文件路径。|
@@ -70,4 +70,4 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 
 #### <a name="additional-references"></a>其他参考
 [命令行语法解答](command-line-syntax-key.md)
-[远程桌面服务&#40;终端服务和&#41;命令参考](remote-desktop-services-terminal-services-command-reference.md)
+[远程桌面服务 & #40;终端服务和 #41;命令参考](remote-desktop-services-terminal-services-command-reference.md)

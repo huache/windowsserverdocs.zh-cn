@@ -53,14 +53,14 @@ KeySpec 值**1**或**AT_KEYEXCHANGE**可用于签名和加密。  值**2**或**A
 ### <a name="example"></a>示例
 Microsoft 增强的加密提供程序就是一个旧 CSP 的示例。 
 
-Microsoft RSA CSP 密钥 blob 格式包括一个算法标识符，分别是**CALG_RSA_KEYX**或**CALG_RSA_SIGN**，用于为<strong>AT_KEYEXCHANGE * * 或 * * AT_SIGNATURE</strong>密钥的请求提供服务。
+Microsoft RSA CSP 密钥 blob 格式包括一种算法标识符，分别**CALG_RSA_KEYX**或**CALG_RSA_SIGN**为<strong>AT_KEYEXCHANGE * * 或 * * AT_SIGNATURE</strong>密钥的请求提供服务。
 
 RSA 密钥算法标识符映射到 KeySpec 值，如下所示
 
 | 提供程序支持的算法| CAPI 调用的密钥规范值 |
 | --- | --- |
-|CALG_RSA_KEYX :可用于签名和解密的 RSA 密钥| AT_KEYEXCHANGE （或 KeySpec = 1）|
-CALG_RSA_SIGN :RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
+|CALG_RSA_KEYX：可用于签名和解密的 RSA 密钥| AT_KEYEXCHANGE （或 KeySpec = 1）|
+CALG_RSA_SIGN： RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
 
 ## <a name="keyspec-values-and-associated-meanings"></a>KeySpec 值和关联的含义
 以下是各种 KeySpec 值的含义：
@@ -78,11 +78,11 @@ CALG_RSA_SIGN :RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
 
 ![Keyspec 证书](media/AD-FS-and-KeySpec-Property/keyspec1.png)
 
-在 CERT_KEY_PROV_INFO_PROP_ID 下，查找以下两项内容：
+在 "CERT_KEY_PROV_INFO_PROP_ID" 下，查找以下两项内容：
 
 
 1. **ProviderType：** 这表示证书是使用旧的加密存储提供程序（CSP）还是基于较新的证书下一代（CNG） Api 的密钥存储提供程序。  任何非零值都表示旧提供程序。
-2. **KeySpec**下面是 AD FS 证书的有效 KeySpec 值：
+2. **KeySpec：** 下面是 AD FS 证书的有效 KeySpec 值：
 
    旧 CSP 提供程序（ProviderType 不等于0）：
 
@@ -108,7 +108,7 @@ CALG_RSA_SIGN :RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
 3. 针对每个 AD FS 和 WAP 服务器执行以下步骤
     1. 删除证书（从 AD FS/WAP 服务器）
     2. 使用下面的 cmdlet 语法打开提升的 PowerShell 命令提示符，并在每个 AD FS 和 WAP 服务器上导入 PFX 文件，并指定 AT_KEYEXCHANGE 值（适用于所有 AD FS 证书目的）：
-        1. C @no__t：0certutil – importpfx certfile AT_KEYEXCHANGE
+        1. C：\>certutil – importpfx certfile AT_KEYEXCHANGE
         2. 输入 PFX 密码
     3. 完成上述操作后，请执行以下操作
         1. 检查私钥权限

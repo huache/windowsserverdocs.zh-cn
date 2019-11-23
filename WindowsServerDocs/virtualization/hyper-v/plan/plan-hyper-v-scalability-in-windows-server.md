@@ -19,11 +19,11 @@ ms.locfileid: "71934954"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 和 Windows Server 2019 中的 Hyper-v 可伸缩性规划
 
-> 适用于：Windows Server 2016、Windows Server 2019
+> 适用于： Windows Server 2016、Windows Server 2019
   
 本文详细介绍了可在 Hyper-v 主机或其虚拟机（例如虚拟处理器或检查点）上添加和删除的组件的最大配置。 规划部署时，请考虑适用于每个虚拟机的最大配置，以及应用于 Hyper-v 主机的最大配置。 
 
-内存和逻辑处理器的最大数量是 Windows Server 2012 的最大增加，以响应支持计算机学习和数据分析等更新方案的请求。 Windows Server 博客最近发布了一个虚拟机的性能结果，其中包含 5.5 tb 的内存和128个运行 4 TB 内存中数据库的虚拟处理器。 性能大于物理服务器的 95%。 有关详细信息，请参阅[Windows Server 2016 hyper-v 大规模 VM 性能，用于内存中事务处理](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)。 其他数字类似于适用于 Windows Server 2012 的数字。 0Maximums for Windows Server 2012 R2 与 Windows Server 2012 相同。 \) @no__t 
+内存和逻辑处理器的最大数量是 Windows Server 2012 的最大增加，以响应支持计算机学习和数据分析等更新方案的请求。 Windows Server 博客最近发布了一个虚拟机的性能结果，其中包含 5.5 tb 的内存和128个运行 4 TB 内存中数据库的虚拟处理器。 性能大于物理服务器的95%。 有关详细信息，请参阅[Windows Server 2016 hyper-v 大规模 VM 性能，用于内存中事务处理](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)。 其他数字类似于适用于 Windows Server 2012 的数字。 Windows Server 2012 R2 \(最大为 Windows server 2012。\) 
   
 > [!NOTE]  
 > 有关 System Center Virtual Machine Manager (VMM) 的信息，请参阅 [Virtual Machine Manager](https://technet.microsoft.com/system-center-docs/vmm/vmm)。 VMM 是单独出售的用于管理虚拟化数据中心的 Microsoft 产品。  
@@ -31,7 +31,7 @@ ms.locfileid: "71934954"
 ## <a name="maximums-for-virtual-machines"></a>最大虚拟机  
 这些最大的应用于每个虚拟机。 并非所有组件都可用于两代虚拟机。 有关生成的比较，请参阅是否[应在 hyper-v 中创建第1代或第2代虚拟机？](should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md) 
   
-|组件|最多|说明|  
+|Component|最多|注释|  
 |-------------|-----------|---------|  
 |检查点|50|实际数量可能较少，这取决于可用的存储。 每个检查点都存储为使用物理存储的 .avhd 文件。|  
 |内存|对于第2代为 12 TB; <br>1 TB，适用于第1代|复查特定操作系统的要求，以确定最小数量和推荐的数量。|  
@@ -49,7 +49,7 @@ ms.locfileid: "71934954"
 ## <a name="maximums-for-hyper-v-hosts"></a>最大为 Hyper-v 主机  
 这些最大的适用于每个 Hyper-v 主机。  
   
-|组件|最多|说明|  
+|Component|最多|注释|  
 |-------------|-----------|---------|  
 |逻辑处理器|512|这两个必须在固件中启用：<br /><br />-硬件辅助虚拟化<br />-硬件强制实施的数据执行保护（DEP）<br /><br />主机操作系统（根分区）将只看到最多320逻辑处理器|  
 |内存|24 TB|无。|  
@@ -68,9 +68,9 @@ ms.locfileid: "71934954"
 
 若要了解故障转移群集的更新（包括虚拟机的新功能），请参阅[Windows Server 2016 中故障转移群集的新增](../../../failover-clustering/whats-new-in-failover-clustering.md)功能。
 
-|组件|最多|说明|  
+|Component|最多|注释|  
 |-------------|-----------|---------|  
-|每群集的节点|64|请考虑为故障转移及为维护任务（如应用更新）保留的节点数量。 我们建议你计划使用足够的资源为故障转移保留 1 个节点，即在另一个节点故障转移到该节点之前，该节点一直保持空闲。 （这有时被称为被动节点。）如果你希望保留更多节点，则可以增加此数量。 没有建议的保留节点与活动节点的比率或乘数;唯一的要求是，群集中的节点总数不能超过最大值64。|  
+|每群集的节点|64|请考虑为故障转移及为维护任务（如应用更新）保留的节点数量。 我们建议你计划使用足够的资源为故障转移保留 1 个节点，即在另一个节点故障转移到该节点之前，该节点一直保持空闲。 （这有时称为被动节点。）如果要保留其他节点，可以增加此数量。 没有建议的保留节点与活动节点的比率或乘数;唯一的要求是，群集中的节点总数不能超过最大值64。|  
 |每个群集中和每个节点上运行的虚拟机数|每个群集 8,000 个|多个因素可能会影响可在一个节点上同时运行的实际虚拟机数，例如：<br />-每个虚拟机正在使用的物理内存量。<br />-网络和存储带宽。<br />-磁盘主轴的数量，影响磁盘 i/o 性能。|  
   
 

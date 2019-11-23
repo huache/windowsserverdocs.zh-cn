@@ -22,7 +22,7 @@ ms.locfileid: "71408953"
 
 林所有者负责为其域创建组织单位（OU）设计。 创建 OU 设计涉及到设计 OU 结构、分配 OU 所有者角色以及创建帐户和资源 Ou。  
   
-最初，设计 OU 结构以启用管理委派。 OU 设计完成后，您可以为应用程序组策略的应用程序创建更多 OU 结构，并限制对象的可见性。 有关详细信息，请参阅设计组策略基础结构（[@no__t](https://go.microsoft.com/fwlink/?LinkId=106655)）。  
+最初，设计 OU 结构以启用管理委派。 OU 设计完成后，您可以为应用程序组策略的应用程序创建更多 OU 结构，并限制对象的可见性。 有关详细信息，请参阅设计组策略基础结构（[https://go.microsoft.com/fwlink/?LinkId=106655](https://go.microsoft.com/fwlink/?LinkId=106655)）。  
   
 ## <a name="ou-owner-role"></a>OU 所有者角色  
 林所有者为你为域设计的每个 OU 指定一个 OU 所有者。 OU 所有者是在 Active Directory 域服务（AD DS）中控制对象子树的数据管理器。 OU 所有者可以控制委派管理的方式，以及如何将策略应用到其 OU 中的对象。 他们还可以创建新的子树并委派这些子树内 Ou 的管理。  
@@ -41,9 +41,9 @@ Ou 提供管理自治和控制目录中对象的可见性的方法。 Ou 提供�
   
 务必记录 OU 设计。 列出你计划创建的 Ou 的名称。 对于每个 OU，记录 OU 类型、OU 所有者、父 OU （如果适用）以及该 OU 的来源。  
   
-对于用于帮助您记录 OU 设计的工作表，请从 Windows Server 2003 部署工具包的作业助手（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，并打开 "标识每个域的 ou"（DSSLOGI_9）。  
+若要使工作表可以帮助您记录 OU 设计，请从 Windows Server 2003 部署工具包的作业助手下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip （[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)），并打开 "标识每个域的 ou" （DSSLOGI_9）。  
   
-## <a name="in-this-section"></a>本节内容  
+## <a name="in-this-section"></a>本部分内容  
   
 -   [查看 OU 设计概念](../../ad-ds/plan/Reviewing-OU-Design-Concepts.md)  
   

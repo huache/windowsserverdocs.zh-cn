@@ -38,7 +38,7 @@ AD FS 2016 及更高版本为能够维护自己的机密的客户端（例如，
 
 1.  在 AD FS 管理 "中，右键单击" 应用程序组 "，然后选择"**添加应用程序组**"。  
 
-2.  在应用程序组向导上，为 **"** 输入**ADFSOAUTHCC** "，在 "**客户端-服务器应用程序**" 下选择用于**访问 Web API 模板的服务器应用程序**。  单击“下一步”。  
+2.  在应用程序组向导上，为 **"** 输入**ADFSOAUTHCC** "，在 "**客户端-服务器应用程序**" 下选择用于**访问 Web API 模板的服务器应用程序**。  单击**下一步**。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_2.PNG)  
 
@@ -46,13 +46,13 @@ AD FS 2016 及更高版本为能够维护自己的机密的客户端（例如，
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_3.PNG)  
 
-4.  对于 "**重定向 URI** - "，请输入以下内容： **https://localhost:44323** 。  单击**添加**。 单击“下一步”。  
+4.  为 "**重定向 URI：**  -  **https://localhost:44323** 输入以下内容。  单击**添加**。 单击**下一步**。  
 
-5.  在 "**配置应用程序凭据**" 屏幕上，选中 "**生成共享机密**并复制机密"。  稍后将在应用程序的 web.config 文件中将其用作**ida： ClientSecret**的值。  单击“下一步”。  
+5.  在 "**配置应用程序凭据**" 屏幕上，选中 "**生成共享机密**并复制机密"。  稍后将在应用程序的 web.config 文件中将其用作**ida： ClientSecret**的值。  单击**下一步**。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_4.PNG)   
 
-6. 在 "**配置 WEB API** " 屏幕上，输入以下**标识符作为标识符** - 。 **https://contoso.com/WebApp**  单击**添加**。 单击“下一步”。  稍后将在应用程序的 web.config 文件中将此值用于**ida： GraphResourceId** 。  
+6. 在 "**配置 WEB API** " 屏幕上，为**标识符** -  **https://contoso.com/WebApp** 输入以下项。  单击**添加**。 单击**下一步**。  稍后将在应用程序的 web.config 文件中将此值用于**ida： GraphResourceId** 。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_9.PNG)  
 
@@ -91,7 +91,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_13.PNG)  
 
-3.  现在，选择 "**查看** -> **服务器资源管理器**"。  打开后，在 "**数据连接**" 下，右键单击**DefaultConnection** ，然后选择 "**修改连接**"。  
+3.  现在，在顶部选择 "**查看** -> "**服务器资源管理器**"。  打开后，在 "**数据连接**" 下，右键单击**DefaultConnection** ，然后选择 "**修改连接**"。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_14.PNG)  
 
@@ -122,22 +122,22 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_19.PNG)  
 
-10. 在 Visual Studio 的顶部，选择 "**查看** -> **其他 Windows**@no__t"**包管理器控制台**"。  
+10. 在 Visual Studio 的顶部，选择 "**查看** -> **其他 Windows** -> **程序包管理器控制台**"。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_20.PNG)  
 
-11. 在底部的 "包管理器控制台" 中，输入： `Enable-Migrations` 并按 enter。  
+11. 在底部的 "包管理器控制台" 中，输入： `Enable-Migrations`，然后按 enter。  
 
     > [!NOTE]  
     > 如果收到一条错误消息，指出 "启用-迁移未被识别为 cmdlet"，请输入安装包 EntityFramework 以更新 EntityFramework。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_21.PNG)  
 
-12. 在底部的 "包管理器控制台" 中，输入： `Add-Migration <anynamehere>` 并按 enter。  
+12. 在底部的 "包管理器控制台" 中，输入： `Add-Migration <anynamehere>`，然后按 enter。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_22.PNG)  
 
-13. 在底部的 "包管理器控制台" 中，输入： `Update-Database` 并按 enter。  
+13. 在底部的 "包管理器控制台" 中，输入： `Update-Database`，然后按 enter。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_23.PNG)  
 
@@ -157,7 +157,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_24.PNG)  
 
-3.  打开 App_Start 下的 Startup.Auth.cs 文件并进行以下更改：  
+3.  打开 App_Start 下的 Startup.Auth.cs 文件，并进行以下更改：  
 
     -   注释掉以下行：  
 

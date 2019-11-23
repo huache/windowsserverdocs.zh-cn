@@ -20,13 +20,13 @@ ms.locfileid: "71385604"
 适用于 AD FS 2016 及更高版本
 
 
-|应用场景|使用示例的方案演练|OAuth 2.0 Flow/Grant|客户端类型|
+|方案|使用示例的方案演练|OAuth 2.0 Flow/Grant|客户端类型|
 |-----|-----|-----|-----|
-|单页应用</br> | &bull;[使用 ADAL 的示例](../development/Single-Page-Application-with-AD-FS.md)|[式](#implicit-grant-flow)|Public| 
-|登录用户的 Web 应用</br> | &bull;[使用 OWIN 的示例](../development/enabling-openid-connect-with-ad-fs.md)|[授权代码](#authorization-code-grant-flow)|公共、机密|  
-|本机应用调用 Web API</br>|&bull;[使用 MSAL 的示例](../development/msal/adfs-msal-native-app-web-api.md)</br>&bull;[使用 ADAL 的示例](../development/native-client-with-ad-fs.md)|[授权代码](#authorization-code-grant-flow)|Public|   
-|Web 应用调用 Web API</br>|&bull;[使用 MSAL 的示例](../development/msal/adfs-msal-web-app-web-api.md)</br>&bull;[使用 ADAL 的示例](../development/enabling-oauth-confidential-clients-with-ad-fs.md)|[授权代码](#authorization-code-grant-flow)|信息| 
-|Web API 代表（OBO）用户调用另一个 web API</br>|&bull;[使用 MSAL 的示例](../development/msal/adfs-msal-web-api-web-api.md)</br>&bull;[使用 ADAL 的示例](../development/ad-fs-on-behalf-of-authentication-in-windows-server.md)|[代表](#on-behalf-of-flow)|Web 应用充当机密| 
+|单页应用</br> | [使用 ADAL &bull; 示例](../development/Single-Page-Application-with-AD-FS.md)|[式](#implicit-grant-flow)|Public| 
+|登录用户的 Web 应用</br> | [使用 OWIN &bull; 示例](../development/enabling-openid-connect-with-ad-fs.md)|[授权代码](#authorization-code-grant-flow)|公共、机密|  
+|本机应用调用 Web API</br>|[使用 MSAL &bull; 示例](../development/msal/adfs-msal-native-app-web-api.md)</br>[使用 ADAL &bull; 示例](../development/native-client-with-ad-fs.md)|[授权代码](#authorization-code-grant-flow)|Public|   
+|Web 应用调用 Web API</br>|[使用 MSAL &bull; 示例](../development/msal/adfs-msal-web-app-web-api.md)</br>[使用 ADAL &bull; 示例](../development/enabling-oauth-confidential-clients-with-ad-fs.md)|[授权代码](#authorization-code-grant-flow)|信息| 
+|Web API 代表（OBO）用户调用另一个 web API</br>|[使用 MSAL &bull; 示例](../development/msal/adfs-msal-web-api-web-api.md)</br>[使用 ADAL &bull; 示例](../development/ad-fs-on-behalf-of-authentication-in-windows-server.md)|[代表](#on-behalf-of-flow)|Web 应用充当机密| 
 |后台应用程序调用 Web API||[客户端凭据](#client-credentials-grant-flow)|信息| 
 |Web 应用使用用户凭据调用 Web API||[资源所有者密码凭据](#resource-owner-password-credentials-grant-flow-not-recommended)|公共、机密| 
 |Browserless 应用调用 Web API||[设备代码](#device-code-flow)|公共、机密| 
@@ -63,22 +63,22 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |参数|必需/可选|描述| 
 |-----|-----|-----|
 |client_id|必需的|AD FS 分配给应用的应用程序（客户端） ID。| 
-|response_type|必需的|必须包括 `id_token` 用于 OpenID connect 登录。 它还可能包含 response_type @ no__t-0。 使用此处的令牌可让应用立即从授权终结点接收访问令牌，而无需向令牌终结点发出第二次请求。| 
-|redirect_uri|必需的|你的应用程序的 redirect_uri，你的应用程序可发送和接收身份验证响应。 它必须与你在 AD FS 中配置的其中一个 redirect_uris 完全匹配。| 
-|现时|必需的|由应用生成且包含在请求中的值，将在生成的 id_token 中包含为声明。 然后, 应用程序可以验证此值, 以减少令牌重放攻击。 该值通常是随机的唯一字符串，可用于标识请求的来源。 仅在请求 id_token 时是必需的。|
-|scope|可选|以空格分隔的范围列表。 对于 OpenID Connect，它必须包括范围 `openid`。|
-|资源|可选|Web API 的 url。</br>注意-如果使用 MSAL 客户端库，则不发送 resource 参数。 而是将资源 url 作为作用域参数的一部分发送：`scope = [resource url]//[scope values e.g., openid]`</br>如果未在此处传递资源，或者在范围中，ADFS 将使用默认资源 urn： microsoft：用户。 不能自定义用户信息资源策略，如 MFA、颁发或授权策略。| 
+|response_type|必需的|必须包含 OpenID Connect 登录   `id_token`。 它还可能包括 response_type `token`。 使用此处的令牌可让应用立即从授权终结点接收访问令牌，而无需向令牌终结点发出第二次请求。| 
+|redirect_uri|必需的|应用的 redirect_uri，你的应用可通过该应用发送和接收身份验证响应。 它必须与你在 AD FS 中配置的其中一个 redirect_uris 完全匹配。| 
+|现时|必需的|由应用生成且包含在请求中的值，这些值将作为声明包含在生成的 id_token 中。 然后，应用程序可以验证此值，以减少令牌重放攻击。 该值通常是随机的唯一字符串，可用于标识请求的来源。 仅在请求 id_token 时是必需的。|
+|scope|可选|以空格分隔的范围列表。 对于 OpenID Connect，它必须包含范围 `openid`。|
+|资源|可选|Web API 的 url。</br>注意-如果使用 MSAL 客户端库，则不发送 resource 参数。 而是将资源 url 作为作用域参数的一部分发送： `scope = [resource url]//[scope values e.g., openid]`</br>如果未在此处传递资源，或者在范围中，ADFS 将使用默认资源 urn： microsoft：用户。 不能自定义用户信息资源策略，如 MFA、颁发或授权策略。| 
 |response_mode|可选| 指定应该用于将生成的令牌发送回应用的方法。 默认为 `fragment`。| 
 |state|可选|请求中包含的值，也会在令牌响应中返回。 它可以是你想要的任何内容的字符串。 随机生成的唯一值通常用于防止跨站点请求伪造攻击。 状态还用于在身份验证请求出现之前，在应用程序中编码有关用户状态的信息，例如它们所在的页面或视图。| 
-|prompt|可选|指示所需的用户交互的类型。 此时唯一有效的值是 "登录" 和 "无"。</br>- `prompt=login` 将强制用户在该请求上输入其凭据，取消单一登录。 </br>- `prompt=none` 相反，它将确保用户不会看到任何交互式提示。 如果请求无法通过单一登录静默完成，AD FS 将返回 interaction_required 错误。| 
-|login_hint|可选|如果事先知道用户的用户名，可用于预先填充用户登录页的用户名/电子邮件地址字段。 通常，应用会在重新身份验证期间使用此参数，已使用中 `upn` `id_token`的 声明从以前的登录提取用户名。| 
+|prompt|可选|指示所需的用户交互的类型。 此时唯一有效的值是 "登录" 和 "无"。</br>- `prompt=login` 将强制用户在该请求上输入其凭据，取消单一登录。 </br>- `prompt=none` 相反，它会确保用户不会看到任何交互式提示。 如果请求无法通过单一登录静默完成，AD FS 将返回 interaction_required 错误。| 
+|login_hint|可选|如果事先知道用户的用户名，可用于预先填充用户登录页的用户名/电子邮件地址字段。 通常，应用会在重新身份验证期间使用此参数，已使用 `upn` 声明从 `id_token`中提取了用户名。| 
 |domain_hint|可选|如果包括，它将跳过用户在登录页面上经历的基于域的发现过程，从而使用户体验稍微更为简单。| 
 
 此时，系统会要求用户输入其凭据并完成身份验证。 用户进行身份验证后，AD FS 授权终结点将使用 response_mode 参数中指定的方法，将响应返回到指定的 redirect_uri。  
  
 ### <a name="successful-response"></a>成功的响应 
  
- `response_mode=fragment and response_type=id_token+token`使用 的成功响应如下所示  
+使用 `response_mode=fragment and response_type=id_token+token` 成功的响应如下所示：  
  
 ```
 // Line breaks for legibility only 
@@ -95,15 +95,15 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZEstZnl0aEV...
 
 |参数|描述| 
 |-----|-----|
-|access_token|如果 response_type 包括 @ no__t-0，则包括。|
-|token_type|如果 response_type 包括 @ no__t-0，则包括。 始终为持有者。| 
-|expires_in| 如果 response_type 包括 @ no__t-0，则包括。 表示令牌有效的秒数，用于缓存目的。| 
-|scope| 指示 access_token 将有效的作用域。|  
-|id_token|如果 response_type 包括 @ no__t-0，则包括。 已签名的 JSON Web 令牌（JWT）。 应用可以解码此令牌的段，以请求有关登录用户的信息。 应用可以缓存并显示值，但不应依赖于这些值来获取任何授权或安全边界。| 
-|state|如果请求中包含状态参数, 则响应中应显示相同的值。 应用应该验证请求和响应中的状态值是否相同。|
+|access_token|如果 response_type 包括 `token`，则包含此内容。|
+|token_type|如果 response_type 包括 `token`，则包含此内容。 始终为持有者。| 
+|expires_in| 如果 response_type 包括 `token`，则包含此内容。 表示令牌有效的秒数，用于缓存目的。| 
+|scope| 指示 access_token 有效的作用域。|  
+|id_token|如果 response_type 包括 `id_token`，则包含此内容。 已签名的 JSON Web 令牌（JWT）。 应用可以解码此令牌的段，以请求有关登录用户的信息。 应用可以缓存并显示值，但不应依赖于这些值来获取任何授权或安全边界。| 
+|state|如果请求中包含状态参数，则响应中应显示相同的值。 应用应该验证请求和响应中的状态值是否相同。|
 
 ### <a name="refresh-tokens"></a>刷新令牌 
-隐式授予不提供刷新令牌。  `id_tokens` 和 `access_tokens`将在短时间后过期，因此应用必须准备好定期刷新这些令牌。 若要刷新任一类型的令牌，可以使用 `prompt=none` 参数执行与上面相同的隐藏 iframe 请求，以控制标识平台的行为。 如果要接收`new id_token`，请确保使用 `response_type=id_token`。 
+隐式授予不提供刷新令牌。  `id_tokens` 和 `access_tokens` 会在短时间后过期，因此应用必须准备好定期刷新这些令牌。 若要刷新任一类型的令牌，可以使用 `prompt=none` 参数执行相同的隐藏 iframe 请求，以控制标识平台的行为。 如果要接收 `new id_token`，请务必使用 `response_type=id_token`。 
 
 ## <a name="authorization-code-grant-flow"></a>授权代码授予流 
  
@@ -136,18 +136,18 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |-----|-----|-----| 
 |client_id|必需的|AD FS 分配给应用的应用程序（客户端） ID。|  
 |response_type|必需的| 必须包括授权代码流的代码。| 
-|redirect_uri|必需的|应用`redirect_uri`的，可在其中通过应用发送和接收身份验证响应。 它必须与你在客户端 AD FS 中注册的其中一个 redirect_uris 完全匹配。|  
-|资源|可选|Web API 的 url。</br>注意-如果使用 MSAL 客户端库，则不发送 resource 参数。 而是将资源 url 作为作用域参数的一部分发送：`scope = [resource url]//[scope values e.g., openid]`</br>如果未在此处传递资源，或者在范围中，ADFS 将使用默认资源 urn： microsoft：用户。 不能自定义用户信息资源策略，如 MFA、颁发或授权策略。| 
+|redirect_uri|必需的|应用的 `redirect_uri`，你的应用可通过该应用发送和接收身份验证响应。 它必须与你在客户端的 AD FS 中注册的其中一个 redirect_uris 完全匹配。|  
+|资源|可选|Web API 的 url。</br>注意-如果使用 MSAL 客户端库，则不发送 resource 参数。 而是将资源 url 作为作用域参数的一部分发送： `scope = [resource url]//[scope values e.g., openid]`</br>如果未在此处传递资源，或者在范围中，ADFS 将使用默认资源 urn： microsoft：用户。 不能自定义用户信息资源策略，如 MFA、颁发或授权策略。| 
 |scope|可选|以空格分隔的范围列表。|
-|response_mode|可选|指定应该用于将生成的令牌发送回应用的方法。 可以是下列其中一项： </br>-query </br>-片段 </br>- form_post</br>`query` 提供代码作为重定向 URI 的查询字符串参数。 如果要请求代码，可以使用 query、片段或 form_post。  `form_post` @ no__t-1executes 将包含代码的 POST 发送到重定向 URI。|
+|response_mode|可选|指定应该用于将生成的令牌发送回应用的方法。 可以是下列其中一项： </br>-query </br>-片段 </br>-form_post</br>`query` 提供代码作为重定向 URI 的查询字符串参数。 如果要请求代码，可以使用查询、片段或 form_post。 `form_post` 执行包含代码的 POST 到重定向 URI。|
 |state|可选|请求中包含的值，也会在令牌响应中返回。 它可以是你想要的任何内容的字符串。 随机生成的唯一值通常用于防止跨站点请求伪造攻击。 值还可以在身份验证请求出现之前，在应用程序中编码有关用户状态的信息，例如它们所在的页面或视图。|
-|prompt|可选|指示所需的用户交互的类型。 此时唯一有效的值是 "登录" 和 "无"。</br>- `prompt=login` 将强制用户在该请求上输入其凭据，取消单一登录。 </br>- `prompt=none` 相反，它将确保用户不会看到任何交互式提示。 如果请求无法通过单一登录静默完成，AD FS 将返回 interaction_required 错误。|
-|login_hint|可选|如果事先知道用户的用户名，可用于预先填充用户登录页的用户名/电子邮件地址字段。 通常，应用会在重新身份验证期间使用此参数，已使用中 `upn` `id_token`的声明从以前的登录提取用户名。|
+|prompt|可选|指示所需的用户交互的类型。 此时唯一有效的值是 "登录" 和 "无"。</br>- `prompt=login` 将强制用户在该请求上输入其凭据，取消单一登录。 </br>- `prompt=none` 相反，它会确保用户不会看到任何交互式提示。 如果请求无法通过单一登录静默完成，AD FS 将返回 interaction_required 错误。|
+|login_hint|可选|如果事先知道用户的用户名，可用于预先填充用户登录页的用户名/电子邮件地址字段。 通常，应用会在重新身份验证期间使用此参数，已使用 `id_token`中的 `upn`声明从以前的登录提取用户名。|
 |domain_hint|可选|如果包括，它将跳过用户在登录页面上经历的基于域的发现过程，从而使用户体验稍微更为简单。|
-|code_challenge_method|可选|用于对 code_challenge 参数的 code_verifier 进行编码的方法。 可以是以下值之一： </br>-纯 </br>- S256 </br>如果排除了 @ no__t-0 @ no__t-1，则 code_challenge 将被假定为纯文本。 AD FS 支持普通的和 S256。 有关详细信息，请参阅 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。|
-|code_challenge|可选| 用于通过来自 native client 的代码交换（PKCE）的证明密钥来保护授权代码授予。  `code_challenge_method`如果 包含，则为必需。 有关详细信息，请参阅 [PKCE RFC](https://tools.ietf.org/html/rfc7636)|
+|code_challenge_method|可选|用于对 code_challenge 参数的 code_verifier 进行编码的方法。 可以是以下值之一： </br>-纯 </br>- S256 </br>如果排除了 `code_challenge` ，则假定 code_challenge 为纯文本。 AD FS 支持普通的和 S256。 有关详细信息，请参阅 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。|
+|code_challenge|可选| 用于通过来自 native client 的代码交换（PKCE）的证明密钥来保护授权代码授予。 如果包括 `code_challenge_method` ，则为必需。 有关详细信息，请参阅 [PKCE RFC](https://tools.ietf.org/html/rfc7636)|
 
-此时，系统会要求用户输入其凭据并完成身份验证。 用户进行身份验证后，AD FS 将使用 `redirect_uri` 参数 `response_mode`中指定的方法，将响应返回到指定的应用程序。  
+此时，系统会要求用户输入其凭据并完成身份验证。 用户进行身份验证后，AD FS 将使用 `response_mode` 参数中指定的方法，将响应返回到指定的 `redirect_uri`。  
  
 ### <a name="successful-response"></a>成功的响应 
  
@@ -162,12 +162,12 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 
 |参数|描述|
 |-----|-----|
-|code|`authorization_code`应用请求的。 应用可以使用授权代码请求目标资源的访问令牌。 Authorization_codes 的生存期较短，通常在约10分钟后过期。|
-|state|如果请求中包含参数,则响应中应显示相同的值。`state` 应用应该验证请求和响应中的状态值是否相同。|
+|code|应用请求的 `authorization_code`。 应用可以使用授权代码请求目标资源的访问令牌。 Authorization_codes 生存期较短，通常会在大约10分钟后过期。|
+|state|如果请求中包含 `state` 参数，则响应中应显示相同的值。 应用应该验证请求和响应中的状态值是否相同。|
 
 ### <a name="request-an-access-token"></a>请求访问令牌 
  
-现在，你已获取`authorization_code`并已获得用户的权限，你可以将的代码 `access_token` 兑换为所需资源。 通过向/token 终结点发送 POST 请求来实现此目的：  
+现在，你已获取 `authorization_code` 并已获得用户的权限，你可以将 `access_token`的代码兑换  到所需的资源。 通过向/token 终结点发送 POST 请求来实现此目的：  
  
 ```
 // Line breaks for legibility only 
@@ -186,15 +186,15 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |参数|必需/可选|描述|
 |-----|-----|-----| 
 |client_id|必需的|AD FS 分配给应用的应用程序（客户端） ID。| 
-|grant_type|必需的|必须是 `authorization_code` 授权代码流的。| 
-|code|必需的|在`authorization_code`流的第一个阶段中获取的。| 
-|redirect_uri|必需的|用于获取`redirect_uri`的`authorization_code`相同值。| 
-|client_secret|对于 web 应用是必需的|在 AD FS 中的应用注册期间创建的应用程序机密。 不应在本机应用中使用应用程序机密，因为 client_secrets 无法可靠地存储在设备上。 Web 应用和 web Api 是必需的，可将 client_secret 安全地存储在服务器端。 在发送客户端密码之前，必须对其进行 URL 编码。 这些应用还可以通过对 JWT 进行签名并将其添加为 client_assertion 参数来使用基于密钥的身份验证。| 
-|code_verifier|可选|用于获取 authorization_code 的相同 @no__t 0。 如果在授权代码授予请求中使用了 PKCE，则为必需项。 有关详细信息，请参阅 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。</br>Note –适用于2019及更高版本 AD FS| 
+|grant_type|必需的|必须是授权代码流的 `authorization_code` 。| 
+|code|必需的|在流的第一个阶段获取的 `authorization_code`。| 
+|redirect_uri|必需的|用于获取 `authorization_code`的相同 `redirect_uri` 值。| 
+|client_secret|对于 web 应用是必需的|在 AD FS 中的应用注册期间创建的应用程序机密。 不应在本机应用中使用应用程序机密，因为 client_secrets 无法可靠地存储在设备上。 Web 应用和 web Api 是必需的，它能够将 client_secret 安全地存储在服务器端。 在发送客户端密码之前，必须对其进行 URL 编码。 这些应用还可以通过对 JWT 进行签名并将其作为 client_assertion 参数添加来使用基于密钥的身份验证。| 
+|code_verifier|可选|用于获取 authorization_code 的相同 `code_verifier`。 如果在授权代码授予请求中使用了 PKCE，则为必需项。 有关详细信息，请参阅 [PKCE RFC](https://tools.ietf.org/html/rfc7636)。</br>Note –适用于2019及更高版本 AD FS| 
 
 ### <a name="successful-response"></a>成功的响应 
  
-成功的令牌响应如下所示: 
+成功的令牌响应如下所示： 
  
 ```
 { 
@@ -212,7 +212,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |-----|-----|
 |access_token|请求的访问令牌。 应用可以使用此令牌向受保护的资源（Web API）进行身份验证。| 
 |token_type|指示令牌类型值。 AD FS 支持的唯一类型是持有者。
-|expires_in|访问令牌有效的时间长度 (以秒为单位)。
+|expires_in|访问令牌有效的时间长度（以秒为单位）。
 |refresh_token|OAuth 2.0 刷新标记。 应用可以使用此令牌在当前访问令牌过期之后获取其他访问令牌。 Refresh_tokens 的生存期很长，可用于长时间保留对资源的访问权限。| 
 |refresh_token_expires_in|刷新令牌有效的时间长度（以秒为单位）。| 
 |id_token|JSON Web 令牌（JWT）。 应用可以解码此令牌的段，以请求有关登录用户的信息。 应用可以缓存并显示值，但不应依赖于这些值来获取任何授权或安全边界。|
@@ -227,11 +227,11 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZn
 
 ### <a name="refresh-the-access-token"></a>刷新访问令牌 
  
-Access_tokens 的生存期很短，必须在过期后刷新，才能继续访问资源。 为此，可以将另一个 POST 请求提交到 @ no__t-0 @ no__t-1endpoint，这一次提供 refresh_token 而不是代码。 对于客户端已经收到的访问令牌的所有权限，刷新令牌都有效。 
+Access_tokens 生存期较短，必须在过期后刷新，才能继续访问资源。 为此，可以将另一个 POST 请求提交到 `/token` 终结点，这一次提供 refresh_token 而不是代码。 对于客户端已经收到的访问令牌的所有权限，刷新令牌都有效。 
  
 刷新令牌没有指定的生存期。 通常，刷新令牌的生存期相对较长。 但是，在某些情况下，刷新令牌会过期、被吊销，或缺少足够的权限来执行所需的操作。 应用程序需要预期并正确处理令牌颁发终结点返回的错误。  
  
-尽管刷新令牌在用于获取新的访问令牌时不会被吊销，但你应丢弃旧的刷新令牌。 OAuth 2.0 规范指出："授权服务器可能会发出一个新的刷新令牌，在这种情况下，客户端必须放弃旧的刷新令牌并将其替换为新的刷新令牌。 在向客户端发出新的刷新令牌后，授权服务器可能会撤销旧的刷新令牌。 
+尽管刷新令牌在用于获取新的访问令牌时不会被吊销，但你应丢弃旧的刷新令牌。 OAuth 2.0 规范指出： "授权服务器可能会发出一个新的刷新令牌，在这种情况下，客户端必须放弃旧的刷新令牌并将其替换为新的刷新令牌。 在向客户端发出新的刷新令牌后，授权服务器可能会撤销旧的刷新令牌。 
  
 ```
 // Line breaks for legibility only 
@@ -250,14 +250,14 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |参数|必需/可选|描述| 
 |-----|-----|-----|
 |client_id|必需的|AD FS 分配给应用的应用程序（客户端） ID。| 
-|grant_type|必需的|必须是 `refresh_token` 授权代码流的此阶段的。| 
-|资源|可选|Web API 的 url。</br>注意-如果使用 MSAL 客户端库，则不发送 resource 参数。 而是将资源 url 作为作用域参数的一部分发送：`scope = [resource url]//[scope values e.g., openid]`</br>如果未在此处传递资源，或者在范围中，ADFS 将使用默认资源 urn： microsoft：用户。 不能自定义用户信息资源策略，如 MFA、颁发或授权策略。|
+|grant_type|必需的|必须是授权代码流的此阶段的 `refresh_token` 。| 
+|资源|可选|Web API 的 url。</br>注意-如果使用 MSAL 客户端库，则不发送 resource 参数。 而是将资源 url 作为作用域参数的一部分发送： `scope = [resource url]//[scope values e.g., openid]`</br>如果未在此处传递资源，或者在范围中，ADFS 将使用默认资源 urn： microsoft：用户。 不能自定义用户信息资源策略，如 MFA、颁发或授权策略。|
 |scope|可选|以空格分隔的范围列表。| 
 |refresh_token|必需的|在流的第二个阶段获取的 refresh_token。| 
-|client_secret|对于 web 应用是必需的| 在应用程序注册门户中为应用创建的应用程序机密。 它不应用于本机应用，因为 client_secrets 无法可靠地存储在设备上。 Web 应用和 web Api 是必需的，可将 client_secret 安全地存储在服务器端。 这些应用还可以通过对 JWT 进行签名并将其添加为 client_assertion 参数来使用基于密钥的身份验证。|
+|client_secret|对于 web 应用是必需的| 在应用程序注册门户中为应用创建的应用程序机密。 它不应用于本机应用，因为不能在设备上可靠地存储 client_secrets。 Web 应用和 web Api 是必需的，它能够将 client_secret 安全地存储在服务器端。 这些应用还可以通过对 JWT 进行签名并将其作为 client_assertion 参数添加来使用基于密钥的身份验证。|
 
 ### <a name="successful-response"></a>成功的响应 
-成功的令牌响应如下所示: 
+成功的令牌响应如下所示： 
  
 ```
 { 
@@ -273,7 +273,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |-----|-----|
 |access_token|请求的访问令牌。 应用可以使用此令牌向受保护资源（例如 web API）进行身份验证。| 
 |token_type|指示令牌类型值。 AD FS 支持的唯一类型是持有者|
-|expires_in|访问令牌有效的时间长度 (以秒为单位)。|
+|expires_in|访问令牌有效的时间长度（以秒为单位）。|
 |scope|Access_token 的有效范围。| 
 |refresh_token|OAuth 2.0 刷新标记。 应用可以使用此令牌在当前访问令牌过期之后获取其他访问令牌。 Refresh_tokens 的生存期很长，可用于长时间保留对资源的访问权限。| 
 |refresh_token_expires_in|刷新令牌有效的时间长度（以秒为单位）。| 
@@ -284,15 +284,15 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 OAuth 2.0 代理流（OBO）提供了一个应用程序，其中应用程序调用服务/web API，而后者又需要调用另一个服务/web API。 其思路是通过请求链传播委托用户标识和权限。 为了使中间层服务向下游服务发出经过身份验证的请求，需要代表用户保护 AD FS 的访问令牌。  
  
 ### <a name="protocol-diagram"></a>协议关系图 
-假设已使用上述 OAuth 2.0 授权代码授予流在应用程序上对用户进行了身份验证。 此时，应用程序有一个访问令牌，其中包含用户的声明，并同意访问中间层 web API （API A）。 请确保客户端请求令牌中的 user_impersonation 范围。 现在，API A 需要向下游 web API （API B）发出经过身份验证的请求。 
+假设已使用上述 OAuth 2.0 授权代码授予流在应用程序上对用户进行了身份验证。 此时，应用程序有一个访问令牌，其中包含用户的声明，并同意访问中间层 web API （API A）。 请确保客户端请求令牌中 user_impersonation 作用域。 现在，API A 需要向下游 web API （API B）发出经过身份验证的请求。 
 
 接下来的步骤构成了 OBO 流，并通过下图的帮助进行了说明。 
 
 ![代理流](media/adfs-scenarios-for-developers/obo.png)
 
   1. 客户端应用程序使用令牌 A 向 API A 发出请求。  
-  注意:在 AD FS 中配置 OBO flow 时，请`user_impersonation`确保选择范围并请求中`user_impersonation`的客户端执行请求范围。 
-  2. API A 向 AD FS 令牌颁发终结点进行身份验证，并请求令牌访问 API B。注意：在 AD FS 中配置此流时，请确保 API A 也注册为服务器应用程序，而 clientID 与 API A 中的资源 ID 具有相同的值。有关更多详细信息，请参阅此处的示例 Add link。  
+  注意：在 AD FS 中配置 OBO flow 时，请确保选择 "作用域 `user_impersonation` 并在请求中向客户端发出请求 `user_impersonation` 范围。 
+  2. API A 向 AD FS 令牌颁发终结点进行身份验证，并请求用于访问 API B 的令牌。注意： AD FS 在中配置此流时，请确保 API A 也注册为服务器应用程序，而 clientID 与 API A 中的资源 ID 具有相同的值。有关更多详细信息，请参阅此处的示例 Add link。  
   3. AD FS 令牌颁发终结点使用令牌 A 验证 API A 的凭据，并颁发 API B 的访问令牌（令牌 B）。 
   4. 令牌 B 设置在向 API B 发出的请求的授权标头中。 
   5. API B 返回受保护资源中的数据。 
@@ -302,9 +302,9 @@ OAuth 2.0 代理流（OBO）提供了一个应用程序，其中应用程序调�
 若要请求访问令牌，请使用以下参数向 AD FS 令牌终结点发出 HTTP POST。  
 
 
-### <a name="first-case-access-token-request-with-a-shared-secret"></a>第一种情况:使用共享机密的访问令牌请求 
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>第一种情况：使用共享机密的访问令牌请求 
  
-使用共享机密时, 服务到服务访问令牌请求包含以下参数: 
+使用共享机密时，服务到服务访问令牌请求包含以下参数： 
 
 
 |参数|必需/可选|描述|
@@ -319,7 +319,7 @@ OAuth 2.0 代理流（OBO）提供了一个应用程序，其中应用程序调�
 
 #### <a name="example"></a>示例 
  
-以下`HTTP POST`请求访问令牌和刷新令牌 
+以下 `HTTP POST` 请求访问令牌和刷新令牌 
  
 ```
 //line breaks for legibility only 
@@ -337,9 +337,9 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 &scope=openid    
 ```
 
-### <a name="second-case-access-token-request-with-a-certificate"></a>第二种情况:使用证书访问令牌请求 
+### <a name="second-case-access-token-request-with-a-certificate"></a>第二种情况：使用证书访问令牌请求 
  
-带有证书的服务到服务访问令牌请求包含以下参数: 
+带有证书的服务到服务访问令牌请求包含以下参数： 
 
 
 |参数|必需/可选|描述|
@@ -354,7 +354,7 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 |scope|可选|用空格分隔的令牌请求范围列表。|
 
 
-请注意，这些参数与通过共享机密请求几乎相同，只不过 client_secret 参数替换为以下两个参数： client_assertion_type 和 client_assertion。 
+请注意，这些参数与通过共享机密请求几乎相同，不同之处在于 client_secret 参数替换为两个参数： client_assertion_type 和 client_assertion。 
 
 #### <a name="example"></a>示例 
 以下 HTTP POST 请求使用证书的 Web API 的访问令牌。
@@ -387,7 +387,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 |expires_in|访问令牌有效的时间长度（以秒为单位）。| 
 |access_token|请求的访问令牌。 调用服务可以使用此令牌向接收方服务进行身份验证。| 
 |id_token|JSON Web 令牌（JWT）。 应用可以解码此令牌的段，以请求有关登录用户的信息。 应用可以缓存并显示值，但不应依赖于这些值来获取任何授权或安全边界。| 
-|refresh_token|请求的访问令牌的刷新令牌。 在当前访问令牌过期后, 调用服务可以使用此令牌请求另一个访问令牌。|
+|refresh_token|请求的访问令牌的刷新令牌。 在当前访问令牌过期后，调用服务可以使用此令牌请求另一个访问令牌。|
 |Refresh_token_expires_in|刷新令牌有效的时间长度（以秒为单位）。 
 
 ### <a name="success-response-example"></a>成功响应示例 
@@ -430,9 +430,9 @@ OAuth 2.0 客户端凭据授权流允许 web 服务（机密客户端）在调�
 
 ### <a name="request-a-token"></a>请求令牌 
  
-若要使用客户端凭据 grant 获取令牌，请将`POST`请求发送到/token AD FS 终结点：  
+若要使用客户端凭据 grant 获取令牌，请将 `POST` 请求发送到/token AD FS 终结点：  
  
-### <a name="first-case-access-token-request-with-a-shared-secret"></a>第一种情况:使用共享机密的访问令牌请求 
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>第一种情况：使用共享机密的访问令牌请求 
  
 ```
 POST /adfs/oauth2/token HTTP/1.1            
@@ -453,7 +453,7 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 |client_secret|必需的|在应用注册门户中为应用生成的客户端密码。 在发送客户端密码之前，必须对其进行 URL 编码。| 
 |grant_type|必需的|必须设置为 `client_credentials`。|
 
-### <a name="second-case-access-token-request-with-a-certificate"></a>第二种情况:使用证书访问令牌请求 
+### <a name="second-case-access-token-request-with-a-certificate"></a>第二种情况：使用证书访问令牌请求 
 
 ``` 
 POST /adfs/oauth2/token HTTP/1.1                
@@ -520,7 +520,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |client_id|必需的|客户端 ID| 
 |grant_type|必需的|必须设置为 password。| 
 |username|必需的|用户的电子邮件地址。| 
-|password|必需的|用户的密码。| 
+|密码|必需的|用户的密码。| 
 |scope|可选|以空格分隔的范围列表。|
 
 ### <a name="successful-authentication-response"></a>身份验证成功响应 
@@ -547,13 +547,13 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |access_token|为请求的作用域颁发。| 
 |id_token|JSON Web 令牌（JWT）。 应用可以解码此令牌的段，以请求有关登录用户的信息。 应用可以缓存并显示值，但不应依赖于这些值来获取任何授权或安全边界。| 
 |refresh_token_expires_in|包含的刷新令牌对有效的秒数。| 
-|refresh_token|如果原始作用域参数包含 offline_access，则发出。|
+|refresh_token|如果原始作用域参数 offline_access 包括在内，则发出。|
 
 你可以使用刷新令牌获取新的访问令牌，并使用上面的 "身份验证代码授予流" 一节中所述的相同流来刷新令牌。   
 
 ## <a name="device-code-flow"></a>设备代码流 
  
-设备代码授予允许用户登录到受输入约束的设备，例如智能电视、IoT 设备或打印机。 若要启用此流, 设备需要用户在另一台设备上的浏览器中访问某个网页, 以便登录。 用户登录后, 设备能够根据需要获取访问令牌和刷新令牌。 
+设备代码授予允许用户登录到受输入约束的设备，例如智能电视、IoT 设备或打印机。 若要启用此流，设备需要用户在另一台设备上的浏览器中访问某个网页，以便登录。 用户登录后，设备能够根据需要获取访问令牌和刷新令牌。 
  
 ### <a name="protocol-diagram"></a>协议关系图 
  
@@ -562,7 +562,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 ![设备代码流](media/adfs-scenarios-for-developers/device.png)
 
 ### <a name="device-authorization-request"></a>设备授权请求 
-客户端必须首先向身份验证服务器核实用于启动身份验证的设备和用户代码。 客户端从/devicecode 终结点收集此请求。 在此请求中, 客户端还应包括从用户获取所需的权限。 从发送此请求的那一刻起，用户只有15分钟的时间登录（expires_in 的常用值），因此，仅当用户指示他们已准备好登录时才发出此请求。 
+客户端必须首先向身份验证服务器核实用于启动身份验证的设备和用户代码。 客户端从/devicecode 终结点收集此请求。 在此请求中，客户端还应包括从用户获取所需的权限。 从发送此请求的那一刻起，用户只有15分钟的时间登录（expires_in 的常用值），因此，仅当用户指示他们已准备好登录时才发出此请求。 
 
 ```
 // Line breaks are for legibility only. 
@@ -581,21 +581,21 @@ scope=openid
 |scope|可选|以空格分隔的范围列表。|
 
 ### <a name="device-authorization-response"></a>设备授权响应 
-成功的响应是一个 JSON 对象, 其中包含允许用户登录所需的信息。 
+成功的响应是一个 JSON 对象，其中包含允许用户登录所需的信息。 
 
 
 |参数|描述|
 |-----|-----| 
 |device_code|用于验证客户端和授权服务器之间的会话的长字符串。 客户端使用此参数来请求授权服务器的访问令牌。| 
-|user_code|显示给用户的简短字符串, 用于标识辅助设备上的会话。| 
-|verification_uri|用户为了登录而应与 user_code 一起提供的 URI。| 
-|verification_uri_complete|用户为了登录而应与 user_code 一起提供的 URI。 这是通过 user_code 预填充的，因此用户无需输入 user_code| 
+|user_code|显示给用户的简短字符串，用于标识辅助设备上的会话。| 
+|verification_uri|用户为了登录而应与 user_code 进行的 URI。| 
+|verification_uri_complete|用户为了登录而应与 user_code 进行的 URI。 这是 user_code 预先填充的，因此用户无需输入 user_code| 
 |expires_in|Device_code 和 user_code 过期之前的秒数。| 
 |间隔|客户端在轮询请求之间应等待的秒数。| 
-|消息|用户可读的字符串, 其中包含有关用户的说明。 这可以通过在格式为 "有关 = xx-XX" 的请求中包括查询参数来进行本地化，并填写相应的语言区域性代码。  
+|消息|用户可读的字符串，其中包含有关用户的说明。 这可以通过在格式为 "有关 = xx-XX" 的请求中包括查询参数来进行本地化，并填写相应的语言区域性代码。  
 
 ### <a name="authenticating-the-user"></a>对用户进行身份验证 
-收到 user_code 和 verification_uri 之后，客户端会向用户显示这些用户，指示他们使用移动电话或 PC 浏览器登录。 此外，客户端可以使用 QR 码或类似的机制来显示 verfication_uri_complete，这将采取进入用户的 user_code 的步骤。 当用户在 verification_uri 上进行身份验证时，客户端应使用 device_code 轮询请求令牌的/token 终结点。 
+接收到 user_code 并 verification_uri 之后，客户端会向用户显示这些用户，指示他们使用移动电话或 PC 浏览器登录。 此外，客户端可以使用 QR 码或类似的机制来显示 verfication_uri_complete，这将采取进入用户 user_code 的步骤。 当用户在 verification_uri 进行身份验证时，客户端应使用 device_code 轮询请求令牌的/token 终结点。 
 
 ```
 POST https://adfs.contoso.com /adfs/oauth2/token 
@@ -609,22 +609,22 @@ device_code: GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8
 
 |参数|必需的|描述|
 |-----|-----|-----| 
-|grant_type|必需的|必须为 urn： ietf： params： oauth： grant-type： device_code| 
+|grant_type|必需的|必须为 urn： ietf： params： oauth： grant 类型： device_code| 
 |client_id|必需的|必须与初始请求中使用的 client_id 匹配。| 
-|code|必需的|设备授权请求中返回的 device_code。|
+|code|必需的|在设备授权请求中返回的 device_code。|
 
 ### <a name="successful-authentication-response"></a>身份验证成功响应 
-成功的令牌响应如下所示:  
+成功的令牌响应如下所示：  
 
 
 |参数|描述|
 |-----|-----| 
 |token_type|始终为 "持有者"。| 
-|scope|如果返回访问令牌, 则会列出访问令牌有效的范围。| 
+|scope|如果返回访问令牌，则会列出访问令牌有效的范围。| 
 |expires_in|在包含的访问令牌有效之前经过的秒数。| 
 |access_token|为请求的作用域颁发。| 
 |id_token|当原始作用域参数包含 openid 作用域时发出。| 
-|refresh_token|如果原始作用域参数包含 offline_access，则发出。| 
+|refresh_token|如果原始作用域参数 offline_access 包括在内，则发出。| 
 |refresh_token_expires_in|为提供的刷新令牌有效之前等待的秒数。| 
 
 

@@ -19,7 +19,7 @@ ms.locfileid: "71364930"
 ---
 # <a name="configure-virtual-machines-running-windows-vista-with-1-or-2-virtual-processors"></a>配置运行具有1个或2个虚拟处理器的 Windows Vista 的虚拟机
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -28,7 +28,7 @@ ms.locfileid: "71364930"
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
 |**Severity**|配置|  
-|**类别**|Error|  
+|**类别**|错误|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71364930"
   
 *Microsoft 不支持以下虚拟机的配置：*  
   
-@no__t-虚拟机名称的 0list >  
+虚拟机名称 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
   

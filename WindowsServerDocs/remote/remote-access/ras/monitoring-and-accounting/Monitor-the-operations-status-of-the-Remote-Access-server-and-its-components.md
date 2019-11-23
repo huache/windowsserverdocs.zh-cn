@@ -23,7 +23,7 @@ ms.locfileid: "71404543"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-**注意：** Windows Server 2012 将 DirectAccess 与路由及远程访问服务 (RRAS) 合并到了单个远程访问角色中。  
+**注意：** Windows Server 2012 将 DirectAccess 和路由和远程访问服务 (RRAS) 合并到了单个远程访问角色中。  
   
 远程访问服务器中的管理控制台可用于监视其操作状态。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71404543"
   
 4.  在右窗格中的 "**任务**" 下，单击 "**刷新**" 以重新加载操作状态。 操作状态每隔五分钟自动刷新一次，这是默认的刷新间隔。 若要更改默认刷新间隔，请单击 "**配置刷新间隔**"。  
   
-@no__t 0Windows PowerShell](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   

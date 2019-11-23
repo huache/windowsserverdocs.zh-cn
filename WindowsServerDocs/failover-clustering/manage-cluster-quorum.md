@@ -17,7 +17,7 @@ ms.locfileid: "71361023"
 ---
 # <a name="configure-and-manage-quorum"></a>配置和管理仲裁
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 本主题提供了在 Windows Server 故障转移群集中配置和管理仲裁的背景和步骤。
 
@@ -95,7 +95,7 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 
 ## <a name="general-recommendations-for-quorum-configuration"></a>仲裁配置的常规建议
 
-群集软件基于配置的节点数和共享存储的可用性自动为新群集配置仲裁。 通常这是最适合该群集的仲裁配置。 但是，在将群集投入生产之前，最好是在创建该群集后查看仲裁配置。 若要查看详细的群集仲裁配置，你可以使用验证配置向导或[测试群集](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)Windows PowerShell cmdlet 来运行 "**验证仲裁配置**" 测试。 在故障转移群集管理器中，基本仲裁配置显示在所选群集的摘要信息中，或者你可以查看有关运行[Set-clusterquorum](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell 时返回的仲裁资源的信息。cmdlet.
+群集软件基于配置的节点数和共享存储的可用性自动为新群集配置仲裁。 通常这是最适合该群集的仲裁配置。 但是，在将群集投入生产之前，最好是在创建该群集后查看仲裁配置。 若要查看详细的群集仲裁配置，你可以使用验证配置向导或[测试群集](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)Windows PowerShell cmdlet 来运行 "**验证仲裁配置**" 测试。 在故障转移群集管理器中，基本仲裁配置显示在所选群集的摘要信息中，或者你可以查看有关运行[Set-clusterquorum](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell cmdlet 时返回的仲裁资源的信息。
 
 你可以随时运行“验证仲裁配置”测试，以验证该仲裁配置是否最适合你的群集。 测试输出指示是否建议对仲裁配置进行更改以及最适合的设置。 如果建议进行更改，你可以使用配置群集仲裁向导来应用建议的设置。
 
@@ -157,7 +157,7 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 
 4. 选择“**下一步**”。 在出现的确认页面上确认你的选择，然后选择 "**下一步**"。
 
-运行向导并出现 "**摘要**" 页面后，如果要查看向导执行的任务的报告，请选择 "**查看报告**"。 最新的报告将保留在<em>systemroot</em> **\\Cluster @ no__t-3Reports**文件夹中，名称为**为 quorumconfiguration.mht**。
+运行向导并出现 "**摘要**" 页面后，如果要查看向导执行的任务的报告，请选择 "**查看报告**"。 最新的报告将保留在<em>systemroot</em> **\\群集\\Reports**文件夹中，名称为**为 quorumconfiguration.mht**。
 
 > [!NOTE]
 > 配置群集仲裁之后，我们建议你运行“验证仲裁配置” 测试以验证更新的仲裁设置。
@@ -178,7 +178,7 @@ Set-ClusterQuorum –Cluster CONTOSO-FC1 -NodeMajority
 Set-ClusterQuorum -NodeAndDiskMajority "Cluster Disk 2"
 ```
 
-以下示例将本地群集上的仲裁配置更改为具有见证配置的多数节点。 名为 *\\ @ no__t-2CONTOSO-FS @ no__t-3fsw*的文件共享资源配置为文件共享见证。
+以下示例将本地群集上的仲裁配置更改为具有见证配置的多数节点。 *\\CONTOSO-FS\\fsw*将名为\\的文件共享资源配置为文件共享见证。
 
 ```PowerShell
 Set-ClusterQuorum -NodeAndFileShareMajority "\\fileserver\fsw"
@@ -280,7 +280,7 @@ Net Start ClusSvc /PQ
 
 下表总结了有关此配置的注意事项和建议。
 
-| 项目  | 描述  |
+| 项  | 描述  |
 | ---------| ---------|
 | 每个站点的节点投票数     | 应该相等       |
 | 节点投票分配     |  因为所有节点都同等重要，所以不应删除节点投票       |
@@ -298,7 +298,7 @@ Net Start ClusSvc /PQ
 
 下表总结了有关此配置的注意事项和建议。
 
-| 项目   |描述  |
+| 项   |描述  |
 | ---------| ---------|
 | 每个站点的节点投票数     |  <ul><li> 不应从主站点 **SiteA** 的节点中删除节点投票</li><li>应从备份站点 **SiteB** 的节点中删除节点投票</li><li>如果长期中断发生在 **SiteA** 上，必须将投票分配给 **SiteB** 上的节点，以便在该站点上启用多数仲裁作为恢复的一部分</li>       |
 | 动态仲裁管理     |  应该启用       |

@@ -34,8 +34,8 @@ ms.locfileid: "71359361"
 
   
 ## <a name="next-steps"></a>后续步骤
- [准备将 AD FS 2.0 联合服务器迁移](prepare-to-migrate-ad-fs-fed-server.md)   
+ [准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-ad-fs-fed-server.md)   
  [准备迁移 AD FS 2.0 联合服务器代理](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [将 AD FS 2.0 联合服务器迁移](migrate-the-ad-fs-fed-server.md)   
+ [迁移 AD FS 2.0 联合服务器](migrate-the-ad-fs-fed-server.md)   
  [迁移 AD FS 2.0 联合服务器代理](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)

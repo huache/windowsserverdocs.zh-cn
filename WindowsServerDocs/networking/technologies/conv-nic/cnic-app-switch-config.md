@@ -28,13 +28,13 @@ ms.locfileid: "71355482"
 >[!IMPORTANT]
 >确保为配置了 SMB 的优先级设置 VLAN 和非丢弃策略。
 
-## <a name="arista-switch-dcs-7050s-64-eos-4137m"></a>Arista 开关 \(dcs @ no__t-17050s @ no__t-264，EOS @ no__t-34.13.7 M @ no__t-4
+## <a name="arista-switch-dcs-7050s-64-eos-4137m"></a>Arista 开关 \(dc\-7050s\-64，EOS\-4.13.7 M\)
 
-1.  en \(go 到管理模式，通常会询问密码 @ no__t-1
-2.  config \(to 进入配置模式 @ no__t-1
-3.  显示运行 \(shows 当前正在运行的配置 @ no__t-1
+1.  en \(中转到管理模式，通常要求输入密码\)
+2.  要进入配置模式的配置 \(\)
+3.  显示运行 \(显示当前正在运行的配置\)
 4.  查找 Nic 连接到的交换机端口。 在这些示例中，它们是 14/1、15/1、16/1、17/1。
-5.  int eth 14/1，15/1，16/1，17/1 @no__t 0enter 为这些端口 @ no__t-1 的配置模式
+5.  int eth 14/1，15/1，16/1，17/1 \(进入到这些端口的配置模式\)
 6.  dcbx 模式 ieee
 7.  优先级-流动控制模式
 8.  交换机间干线本机 vlan 225
@@ -42,19 +42,19 @@ ms.locfileid: "71355482"
 10. 交换机间模式干线
 11. 优先级-流控制优先级3不删除
 12. qos 信任 cos
-13. 显示运行 \(verify 在端口 @ no__t 上正确设置了配置
-14. wr \(to 使设置在交换机重新启动时保持不变 @ no__t-1
+13. 显示运行 \(验证是否在端口上正确设置了配置\)
+14. wr \(以使设置在交换机重启期间保持\)
 
 ### <a name="tips"></a>技巧
 1.  No #command # 对命令求反
-2.  如何添加新 VLAN： int VLAN 100 @no__t 0If 存储网络在 VLAN 100 @ no__t 上
+2.  如何添加新的 VLAN： int VLAN 100 \(如果存储网络在 VLAN 100 上\)
 3.  如何检查现有的 Vlan：显示 vlan
-4.  有关配置 Arista 开关的详细信息，请联机搜索以下内容：Arista EOS 手动
+4.  有关配置 Arista 开关的详细信息，请联机搜索： Arista EOS Manual
 5.  使用此命令验证 PFC 设置：显示优先级-流控制计数器详细信息
 
 --- 
 
-## <a name="dell-switch-s4810-ftos-99-00"></a>Dell 交换机 \(S4810、FTOS 9.9 \(0.0 @ no__t-2 @ no__t-3
+## <a name="dell-switch-s4810-ftos-99-00"></a>Dell 交换机 \(S4810，FTOS 9.9 \(0.0\)\)
 
     
     !
@@ -74,7 +74,7 @@ ms.locfileid: "71355482"
     
 --- 
 
-## <a name="cisco-switch-nexus-3132-version-602u61"></a>Cisco 交换机 \(Nexus 3132，版本 6.0 @ no__t-12 @ no__t-2U6 @ no__t-31 @ no__t-4 @ no__t-5
+## <a name="cisco-switch-nexus-3132-version-602u61"></a>Cisco 交换机 \(结点3132，版本 6.0\(2\)U6\(1\)\)
 
 ### <a name="global"></a>全局
     

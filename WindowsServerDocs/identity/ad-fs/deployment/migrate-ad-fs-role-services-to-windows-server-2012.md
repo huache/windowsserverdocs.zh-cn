@@ -34,7 +34,7 @@ ms.locfileid: "71408277"
   
   本指南不包括迁移运行多个角色的服务器的相关说明。 如果你的服务器正在运行多个角色，则建议你根据其他角色迁移指南中提供的信息，设计一个特定于你的服务器环境的自定义迁移过程。 如需有关其他角色的迁移指南，请参阅 [Windows Server 迁移端口](https://go.microsoft.com/fwlink/?LinkId=247608)。  
   
-## <a name="supported-operating-systems"></a>受支持的操作系统  
+## <a name="supported-operating-systems"></a>支持的操作系统  
  **目标服务器操作系统：**  
   
 
@@ -75,9 +75,9 @@ ms.locfileid: "71408277"
 |Windows Server 2008 或 Windows Server 2008 R2 上安装的 AD FS 2.0 联合服务器|支持在同一台服务器上迁移。 有关详细信息，请参阅：<br /><br /> [准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-ad-fs-fed-server.md)<br /><br /> [迁移 AD FS 2.0 联合服务器](migrate-the-ad-fs-fed-server.md)|  
 |Windows Server 2008 或 Windows Server 2008 R2 上安装的 AD FS 2.0 联合服务器代理|支持在同一台服务器上迁移。  有关详细信息，请参阅：<br /><br /> [准备迁移 AD FS 2.0 联合服务器代理](prepare-to-migrate-ad-fs-fed-proxy.md)<br /><br /> [迁移 AD FS 2.0 联合服务器代理](migrate-the-ad-fs-2-fed-server-proxy.md)|  
   
-## <a name="see-also"></a>请参阅  
- [准备将 AD FS 2.0 联合服务器迁移](prepare-to-migrate-ad-fs-fed-server.md)   
+## <a name="see-also"></a>另请参阅  
+ [准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-ad-fs-fed-server.md)   
  [准备迁移 AD FS 2.0 联合服务器代理](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [将 AD FS 2.0 联合服务器迁移](migrate-the-ad-fs-fed-server.md)   
+ [迁移 AD FS 2.0 联合服务器](migrate-the-ad-fs-fed-server.md)   
  [迁移 AD FS 2.0 联合服务器代理](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)

@@ -19,7 +19,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71355574"
 ---
-# <a name="software-load-balancing-slb-for-sdn"></a>用于 SDN 的软件负载平衡 \(SLB @ no__t-1
+# <a name="software-load-balancing-slb-for-sdn"></a>用于 SDN 的软件负载平衡 \(SLB\)
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
@@ -215,7 +215,7 @@ BGP 路由器对 SLB 执行以下操作。
 -   可以在 MUX 池中添加和删除 Mux，而不会影响 SLB 服务。 这会在以下情况下维护 SLB 可用性   
     正在修补单个 Mux。  
   
--   各个 MUX 实例的运行时间为 99%  
+-   各个 MUX 实例的运行时间为99%  
   
 -   运行状况监视数据可用于管理实体  
   

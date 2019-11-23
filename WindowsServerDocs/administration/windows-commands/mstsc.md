@@ -22,7 +22,7 @@ ms.locfileid: "71373353"
 ---
 # <a name="mstsc"></a>mstsc
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 创建与远程桌面会话主机（rd 会话主机）服务器或其他远程计算机的连接，编辑现有远程桌面连接（.rdp）配置文件，并迁移使用客户端连接管理器创建的旧连接文件到新的 .rdp 连接文件。
 有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
@@ -36,16 +36,16 @@ mstsc.exe /edit <Connection File>
 mstsc.exe /migrate
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |        参数        |                                                         描述                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   指定用于连接的 .rdp 文件的名称。                                    |
-|   /v： < Server [： @no__t]   |                指定远程计算机，还可以选择要连接到的端口号。                 |
+|   /v： < Server [：<Port>]   |                指定远程计算机，还可以选择要连接到的端口号。                 |
 |         /admin          |                                   将你连接到用于管理服务器的会话。                                   |
 |           /f            |                                    以全屏模式启动远程桌面连接。                                    |
-|       /w： <Width>        |                                      指定远程桌面窗口的宽度。                                      |
-|       /h： <Height>       |                                     指定远程桌面窗口的高度。                                      |
+|       /w：<Width>        |                                      指定远程桌面窗口的宽度。                                      |
+|       /h：<Height>       |                                     指定远程桌面窗口的高度。                                      |
 |         /public         |                  在公用模式下运行远程桌面。 在公用模式下，不会缓存密码和位图。                  |
 |          /span          | 使远程桌面的宽度和高度与本地虚拟桌面相匹配，如有必要，跨越多个监视器。 |
 | /edit <Connection File> |                                         打开指定的 .rdp 文件以进行编辑。                                          |

@@ -20,7 +20,7 @@ ms.locfileid: "71405714"
 
 你可以使用[get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps&viewFallbackFrom=winserverr2-ps) Cmdlet 通过 Windows PowerShell 管理 nic 和所有功能。  你还可以使用网络控制面板（ncpa）管理 Nic 和所有功能。 
 
-1. 在**Windows PowerShell**中，对两个不同品牌/型号的 nic 运行 @no__t 的 cmdlet。
+1. 在**Windows PowerShell**中，对两个不同品牌/型号的 nic 运行 `Get‑NetAdapterAdvancedProperties` cmdlet。
 
    ![NetAdapterAdvancedProperty m1](../../media/network-offload-and-optimization/Get-NetAdapterAdvancedProperty-m1.png)
 
@@ -38,7 +38,7 @@ ms.locfileid: "71405714"
 
     ![C1 属性](../../media/network-offload-and-optimization/c1-properties.png)
 
-   c. 单击 "**高级**" 选项卡以查看高级属性。<p>此列表中的项与 @no__t 的输出中的项相关联。
+   c. 单击 "**高级**" 选项卡以查看高级属性。<p>此列表中的项与 `Get-NetAdapterAdvancedProperties` 输出中的项相关联。
 
    ![Chelsio 网络适配器属性](../../media/network-offload-and-optimization/chelsio-network-adapter-properties.png)
 

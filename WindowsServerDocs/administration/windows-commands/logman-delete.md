@@ -22,7 +22,7 @@ ms.locfileid: "71374435"
 ---
 # <a name="logman-delete"></a>logman delete
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 删除现有的数据收集器。  
 
@@ -30,7 +30,7 @@ ms.locfileid: "71374435"
 ```  
 logman delete <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>参数  
 
 |        参数        |                                                                               描述                                                                               |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,7 +39,7 @@ logman delete <[-n] <name>> [options]
 |     -config <value>     |                                                         指定包含命令选项的设置文件。                                                         |
 |       [-n] <name>       |                                                                   目标数据收集器的名称。                                                                    |
 |          -ets           |                                              直接将命令发送到事件跟踪会话，无需保存或计划。                                               |
-| -[-] u < user [password] > | 指定要以其身份运行的用户。 输入密码 @no__t 0 会生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
+| -[-] u < user [password] > | 指定要以其身份运行的用户。 输入密码 \* 会生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
 
 ## <a name="BKMK_examples"></a>示例  
 以下命令删除数据收集器 perf_log。  

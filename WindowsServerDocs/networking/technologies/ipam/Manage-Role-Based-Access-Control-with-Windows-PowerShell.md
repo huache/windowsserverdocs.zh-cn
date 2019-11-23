@@ -30,7 +30,7 @@ ms.locfileid: "71355221"
   
 新的 Windows PowerShell IPAM 命令使你能够检索和更改 DNS 和 DHCP 对象的访问作用域。 下表说明了要用于每个 IPAM 对象的正确命令。  
   
-|IPAM 对象|Command|描述|  
+|IPAM 对象|命令|描述|  
 |---------------|-----------|---------------|  
 |DNS 服务器|IpamDnsServer|此 cmdlet 将返回 IPAM 中的 DNS 服务器对象|  
 |DNS 区域|IpamDnsZone|此 cmdlet 将返回 IPAM 中的 DNS 区域对象|  
@@ -40,7 +40,7 @@ ms.locfileid: "71355221"
 |DHCP 超级作用域|IpamDhcpSuperscope|此 cmdlet 将返回 IPAM 中的 DHCP 超级作用域对象|  
 |DHCP 作用域|IpamDhcpScope|此 cmdlet 将返回 IPAM 中的 DHCP 作用域对象|  
   
-在下面的命令输出示例中，@no__t cmdlet 检索**Dublin.contoso.com** DNS 区域。  
+在下面的命令输出示例中，`Get-IpamDnsZone` cmdlet 将检索**Dublin.contoso.com** DNS 区域。  
   
 ```  
 PS C:\Users\Administrator.CONTOSO> Get-IpamDnsZone -ZoneType Forward -ZoneName dublin.contoso.com  
@@ -54,7 +54,7 @@ ScavengeStaleRecords : False
 ```  
   
 ## <a name="setting-access-scopes-on-ipam-objects"></a>在 IPAM 对象上设置访问作用域  
-可以通过使用 `Set-IpamAccessScope` 命令设置对 IPAM 对象的访问作用域。 您可以使用此命令将访问作用域设置为对象的特定值，或者使对象继承父对象的访问作用域。 下面是可以通过此命令配置的对象。  
+您可以使用 `Set-IpamAccessScope` 命令设置对 IPAM 对象的访问作用域。 您可以使用此命令将访问作用域设置为对象的特定值，或者使对象继承父对象的访问作用域。 下面是可以通过此命令配置的对象。  
   
 -   DHCP 作用域  
   

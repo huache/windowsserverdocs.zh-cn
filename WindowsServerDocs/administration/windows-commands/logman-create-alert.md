@@ -22,7 +22,7 @@ ms.locfileid: "71374585"
 ---
 # <a name="logman-create-alert"></a>logman 创建警报
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 创建警报数据收集器。  
 
@@ -30,7 +30,7 @@ ms.locfileid: "71374585"
 ```  
 logman create alert <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>参数  
 
 |                 参数                  |                                                                               描述                                                                               |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -38,7 +38,7 @@ logman create alert <[-n] <name>> [options]
 |             -s <computer name>             |                                                          在指定的远程计算机上执行命令。                                                          |
 |              -config <value>               |                                                         指定包含命令选项的设置文件。                                                         |
 |                [-n] <name>                 |                                                                       目标对象的名称。                                                                        |
-|          -[-] u < user [password] >           | 指定要以其身份运行的用户。 输入密码 @no__t 0 会生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
+|          -[-] u < user [password] >           | 指定要以其身份运行的用户。 输入密码 \* 会生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
 | -m < [start] [stop] [[start] [stop] [...]]> |                                                更改为手动启动或停止，而不是计划的开始或结束时间。                                                 |
 |             -rf < [[hh：] mm：] ss >             |                                                        在指定的时间段内运行数据收集器。                                                         |
 |     -b < M/d/yyyy h:mm： ss [AM&#124;PM] >      |                                                              开始在指定时间收集数据。                                                               |
@@ -68,6 +68,6 @@ logman create alert <[-n] <name>> [options]
 logman create alert new_alert -th "\Processor(_Total)\% Processor time>50"  
 ```  
 > [!NOTE]
-> 定义的阈值基于计数器收集的值，因此在此示例中，50的值等于 50% 的处理器时间。  
+> 定义的阈值基于计数器收集的值，因此在此示例中，50的值等于50% 的处理器时间。  
 > #### <a name="additional-references"></a>其他参考  
 > [logman](logman.md)  

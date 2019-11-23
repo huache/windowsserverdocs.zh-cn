@@ -17,9 +17,9 @@ ms.locfileid: "71402140"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>使用继承的权限执行基于访问的枚举
 
-> 适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
-默认情况下，用于 DFS 文件夹的权限从命名空间服务器的本地文件系统继承。 权限继承自系统驱动器的根目录，并向 DOMAIN @ no__t-0Users 组授予读取权限。 因此，即使在启用基于访问的枚举后，命名空间中的所有文件夹仍对所有域用户可见。
+默认情况下，用于 DFS 文件夹的权限从命名空间服务器的本地文件系统继承。 权限继承自系统驱动器的根目录，并向该域授予 "读取" 权限\\"用户" 组。 因此，即使在启用基于访问的枚举后，命名空间中的所有文件夹仍对所有域用户可见。
 
 ## <a name="advantages-and-limitations-of-inherited-permissions"></a>继承的权限的优点和限制
 
@@ -58,6 +58,6 @@ ms.locfileid: "71402140"
 
 4.  若要更改 DFS 命名空间中的文件夹或命名空间根目录的继承的权限，请使用 Windows 资源管理器或 **ICacls** 命令。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [创建 DFS 命名空间](create-a-dfs-namespace.md)

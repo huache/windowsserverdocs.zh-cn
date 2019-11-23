@@ -22,7 +22,7 @@ ms.locfileid: "71369874"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 断开会话与远程桌面会话主机（rd 会话主机）服务器的连接。
 有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
@@ -35,13 +35,13 @@ ms.locfileid: "71369874"
 tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |-------|--------|
 |\<SessionId >|指定要断开连接的会话的 ID。|
 |\<SessionName >|指定要断开连接的会话的名称。|
-|/server： \<ServerName >|指定包含要断开连接的会话的终端服务器。 否则，使用当前的 rd 会话主机服务器。|
+|/server：\<ServerName >|指定包含要断开连接的会话的终端服务器。 否则，使用当前的 rd 会话主机服务器。|
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
 
@@ -67,4 +67,4 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   ```
   #### <a name="additional-references"></a>其他参考
   [命令行语法解答](command-line-syntax-key.md)
-  [远程桌面服务&#40;终端服务和&#41;命令参考](remote-desktop-services-terminal-services-command-reference.md)
+  [远程桌面服务 & #40;终端服务和 #41;命令参考](remote-desktop-services-terminal-services-command-reference.md)

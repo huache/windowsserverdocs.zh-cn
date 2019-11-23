@@ -26,7 +26,7 @@ ms.locfileid: "71408920"
   
 ![在新组织中部署](media/Deploying-AD-DS-in-a-New-Organization/daa38971-86f2-4033-9442-0cdff9ecc48f.gif)  
   
-有关可用于在新组织中计划和部署 AD DS 的详细任务的列表，请参阅 [Checklist：在新组织中部署 AD DS @ no__t。  
+有关可用于在新组织中计划和部署 AD DS 的详细任务的列表，请参阅[清单：在新组织中部署 AD DS](https://technet.microsoft.com/library/cc725897.aspx)。  
   
 
 

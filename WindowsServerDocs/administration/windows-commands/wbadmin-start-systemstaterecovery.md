@@ -59,7 +59,7 @@ wbadmin start systemstaterecovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -78,7 +78,7 @@ wbadmin start systemstaterecovery
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- 在 9:00 A.M. 从04/30/2013 执行备份的系统状态恢复。 这存储在共享资源上 \\ @ no__t-1servername\share for server01，请键入：  
+- 在 9:00 A.M. 从04/30/2013 执行备份的系统状态恢复。 存储在共享资源 \\\\servername\share for server01，请键入：  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```

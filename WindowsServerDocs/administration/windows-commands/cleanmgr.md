@@ -17,7 +17,7 @@ ms.locfileid: "71379383"
 ---
 # <a name="cleanmgr"></a>cleanmgr.exe
 
-> 适用于：Windows Server 2019，Windows Server 2016，Windows Server 2012，Windows Server 2008 R2，Windows Server （半年频道）
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012，Windows Server 2008 R2，Windows Server （半年频道）
 
 清除计算机硬盘上不必要的文件。 你可以使用命令行选项来指定 Cleanmgr.exe 清理临时文件、Internet 文件、下载的文件以及回收站文件。 然后，你可以使用 "计划任务" 工具计划在特定时间运行的任务。
 
@@ -29,14 +29,14 @@ ms.locfileid: "71379383"
 cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/VERYLOWDISK]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |      参数      |    描述     |
 | ------------------- | ------------------ |
-|  /d \<driveletter >          | 指定想要磁盘清理清理的驱动器。<br>**注意：** /D 选项不能与/sagerun： n 一起使用。 |
-| /sageset： n | 显示 "磁盘清理设置" 对话框，并创建用于存储所选设置的注册表项。 @No__t 值（存储在注册表中）允许您指定要运行的 "磁盘清理" 任务。 @No__t 值可以是从0到65535的任何整数值。 若要在使用/sageset 选项时具有所有可用选项，请指定安装 Windows 的驱动器。  |
+|  /d \<驱动器号 >          | 指定想要磁盘清理清理的驱动器。<br>**注意：** /D 选项不能与/sagerun： n 一起使用。 |
+| /sageset： n | 显示 "磁盘清理设置" 对话框，并创建用于存储所选设置的注册表项。 `n` 值（存储在注册表中）允许您指定要运行的 "磁盘清理" 任务。 `n` 值可以是从0到65535的任何整数值。 若要在使用/sageset 选项时具有所有可用选项，请指定安装 Windows 的驱动器。  |
 |  /sagerun： n  |  如果使用 \sageset 选项，则运行分配给 n 值的指定任务。 将枚举计算机上的所有驱动器，并针对每个驱动器运行所选配置文件。           |
-| /TUNEUP： n    | 对相同的 @no__t 运行/sageset 和/sagerun。 |
+| /TUNEUP： n    | 为同一个 `n` 运行/sageset 和/sagerun。 |
 | /LOWDISK     | 用默认设置运行。 |
 | /VERYLOWDISK | 用默认设置运行，不提示用户。 |
 | /?           | 显示帮助。 |
@@ -81,7 +81,7 @@ cleanmgr /sageset:1
 cleanmgr /sagerun:1
 ```
 
-若要同时运行 @no__t @no__t，请键入：
+若要同时运行 ```cleanmgr /sageset:1``` 和 ```cleanmgr /sagerun:1```，请键入：
 
 ```
 cleanmgr /tuneup:1

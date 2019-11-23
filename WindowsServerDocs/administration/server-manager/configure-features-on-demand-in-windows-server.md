@@ -22,11 +22,11 @@ ms.locfileid: "71383274"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 本主题描述了如何使用 Uninstall-WindowsFeature cmdlet 在“按需功能”配置中删除功能文件。
 
-"按需功能" 是 Windows 8 和 Windows Server 2012 中引入的一项功能，允许从操作系统删除角色和功能文件（有时称为功能*负载*），以节省磁盘空间，并从安装角色和功能远程位置或安装媒体，而不是来自本地计算机。 你可以从运行中的物理或虚拟计算机删除功能文件。 你也可以对 Windows 映像 (WIM) 文件或脱机虚拟硬盘 (VHD) 进行添加或删除功能文件，为“按需功能”配置创建一个可复制的副本。
+"按需功能" 是 Windows 8 和 Windows Server 2012 中引入的一项功能，允许从操作系统删除角色和功能文件（有时称为功能*负载*），以节省磁盘空间，并从远程位置或安装媒体而非本地计算机安装角色和功能。 你可以从运行中的物理或虚拟计算机删除功能文件。 你也可以对 Windows 映像 (WIM) 文件或脱机虚拟硬盘 (VHD) 进行添加或删除功能文件，为“按需功能”配置创建一个可复制的副本。
 
 在 "按需功能" 配置中，当功能文件在计算机上不可用时，如果安装需要这些功能文件，则可以将 Windows Server 2012 R2 或 Windows Server 2012 定向到从并行功能存储（共享文件夹）获取文件。，它包含功能文件，可用于网络上的计算机、从 Windows 更新或从安装媒体中获取。 默认情况下，当功能文件不在目标服务器上时，“按需功能”就会按照所示顺序执行下列任务，来搜索丢失的功能文件。
 
@@ -57,9 +57,9 @@ ms.locfileid: "71383274"
 
 #### <a name="to-create-a-feature-file-store"></a>创建功能文件存储区的步骤
 
-1.  在网络的服务器上创建一个共享文件夹。 例如， *\\ \ network\share\sxs*。
+1.  在网络的服务器上创建一个共享文件夹。 例如， *\\\network\share\sxs*。
 
-2.  验证是否给功能存储区分配了恰当的权限。 源路径或文件共享必须将 "**读取**" 权限授予 " **Everyone** " 组（出于安全原因，不建议这样做），或授予你计划在其上安装的服务器的计算机帐户（*DOMAIN*\\*SERverNAME*$）使用此功能存储区的功能;授予用户帐户访问权限是不够的。
+2.  验证是否给功能存储区分配了恰当的权限。 源路径或文件共享必须向**Everyone**组授予 "**读取**" 权限（出于安全原因，不建议这样做），或授予计划使用此功能存储区安装功能的服务器的计算机帐户（*域*\\*SERverNAME*$）;授予用户帐户访问权限是不够的。
 
     你可以通过在 Windows 桌面上进行以下任意一种操作，来访问文件共享和权限设置。
 
@@ -75,7 +75,7 @@ ms.locfileid: "71383274"
 ## <a name="BKMK_methods"></a>删除功能文件的方法
 在“按需功能”配置中，有两种方法可用来从 Windows Server 删除功能文件。
 
--   @No__t cmdlet 的 @no__t 参数可让你从运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器或脱机虚拟硬盘（VHD）删除功能文件。 @No__t 参数的有效值为角色、角色服务和功能的名称。
+-   `Uninstall-WindowsFeature` cmdlet 的 `remove` 参数使你可以从运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器或脱机虚拟硬盘（VHD）中删除功能文件。 `remove` 参数的有效值为角色、角色服务和功能的名称。
 
 -   部署映像服务和管理 (DISM) 命令让你创建自定义 WIM 文件，通过删除不需要的或是可从其他远程数据源获取的功能文件，来节省磁盘空间。 有关使用 DISM 准备自定义映像的详细信息，请参阅 [如何启用或禁用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx)。
 
@@ -104,7 +104,7 @@ ms.locfileid: "71383274"
     Uninstall-WindowsFeature -Name <feature_name> -computerName <computer_name> -remove
     ```
 
-    **示例：** “远程桌面授权”是“远程桌面服务”中安装的最后一个角色服务。 此命令卸载“远程桌面授权”，然后从指定的服务器 *contoso_1* 上删除整个“远程桌面服务”角色的功能文件。
+    **例如：** “远程桌面授权”是“远程桌面服务”中安装的最后一个角色服务。 此命令卸载“远程桌面授权”，然后从指定的服务器 *contoso_1* 上删除整个“远程桌面服务”角色的功能文件。
 
     ```
     Uninstall-WindowsFeature -Name rdS-Licensing -computerName contoso_1 -remove
@@ -121,9 +121,10 @@ ms.locfileid: "71383274"
     Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -VHD C:\WS2012VHDs\Contoso.vhd -computerName ContosoDC1
     ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [安装或卸载角色、角色服务或功能](install-or-uninstall-roles-role-services-or-features.md)
 [Windows Server 安装选项](https://technet.microsoft.com/library/hh831786.aspx)
-[如何启用或禁用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx)@no__t 5[部署映像服务和管理（DISM）概述](https://technet.microsoft.com/library/hh825236.aspx)
+[如何启用或禁用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx)
+[部署映像服务和管理（DISM）概述](https://technet.microsoft.com/library/hh825236.aspx)
 
 

@@ -137,7 +137,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 9. 在 "**验证许可证文件**" 页上，单击 "**下一步**"。  
   
-10. 在 "**用户 ID** " 字段中，键入 "**管理员**"，然后在 "**密码**" 和 "**确认密码**" 字段中键入强密码。 单击“下一步”。  
+10. 在 "**用户 ID** " 字段中，键入 "**管理员**"，然后在 "**密码**" 和 "**确认密码**" 字段中键入强密码。 单击**下一步**。  
   
 11. 在 "日志选择" 屏幕上，接受默认值，然后单击 "**下一步**"。  
   
@@ -187,7 +187,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
     7.  在 "**令牌文件选项**" 部分的 "**分发软件令牌**" 页上，清除 "**启用复制保护**" 复选框。 单击 "**无密码**" 和 "**下一步**"。  
   
-    8.  在 "**下载文件**" 部分的 "**分发软件令牌**" 页上，单击 "**立即下载**"。 单击“保存”。 浏览到 C:\RSA 安装，并单击 "**保存**并**关闭**"。  
+    8.  在 "**下载文件**" 部分的 "**分发软件令牌**" 页上，单击 "**立即下载**"。 单击 **“保存”** 。 浏览到 C:\RSA 安装，并单击 "**保存**并**关闭**"。  
   
     9. 最大程度地减少**RSA Security Console** ，以备日后使用。  
   
@@ -205,7 +205,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
     6.  在 "**配置 RADIUS 服务器**" 页**上，输入**用于管理员用户的密码和**主密码**的相同密码。 输入管理员用户 ID 和密码，然后单击 "**配置**"。  
   
-    7.  验证是否显示 **"已成功配置 RADIUS 服务器"** 消息。 单击 **“完成”** 。 关闭**RSA 操作控制台**。  
+    7.  验证是否显示 **"已成功配置 RADIUS 服务器"** 消息。 单击**完成**。 关闭**RSA 操作控制台**。  
   
     8.  切换回 **"RSA Security Console"** 。  
   
@@ -229,9 +229,9 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
     2.  在 "**主机名**" 字段中键入**EDGE1** ，并单击 "**解析 IP**"。  
   
-    3.  请注意，EDGE1 的 IP 地址现在显示在 " **Ip 地址**" 字段中。 单击“保存”。  
+    3.  请注意，EDGE1 的 IP 地址现在显示在 " **Ip 地址**" 字段中。 单击 **“保存”** 。  
   
-11. 为 EDGE1 服务器（AM_Config）生成配置文件。  
+11. 为 EDGE1 服务器（AM_Config .zip）生成配置文件。  
   
     1.  在 "**访问**" 选项卡上，突出显示 "**身份验证代理**" 并单击 "**生成配置文件**"。  
   
@@ -241,7 +241,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
     4.  单击 "**下载完成**" 对话框上的 "**关闭**"。  
   
-12. 为 EDGE1 服务器生成节点机密文件（EDGE1_NodeSecret）。  
+12. 为 EDGE1 服务器生成节点机密文件（EDGE1_NodeSecret .zip）。  
   
     1.  在 "**访问**" 选项卡上，突出显示 "**身份验证代理**" 并单击 "**管理现有**"。  
   
@@ -255,7 +255,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
     6.  在 "**文件下载**" 对话框中，单击 "**保存**"，浏览到 C:\RSA 安装，并单击 "**保存**"。 单击 "**下载完成**" 对话框上的 "**关闭**"。  
   
-    7.  从 RSA Authentication Manager media copy \auth_mgr\windows-x86_64\am\rsa-ace_nsload\win32-5.0-x86\agent_nsload.exe 到 C:\RSA 安装。  
+    7.  从 RSA Authentication Manager media copy \ auth_mgr \windows-x86_64 \am\rsa-ace_nsload \win32-5.0-x86\ agent_nsload .exe 到 C:\RSA 安装。  
   
 ## <a name="BKMK_DAProbeUser"></a>创建 DAProbeUser  
   
@@ -268,7 +268,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 #### <a name="install-securid-software-token"></a>安装 SecurID 软件令牌  
   
-1.  在 CLIENT1 计算机上创建文件夹 C:\RSA Files。 将 RSA 计算机上的 C:\RSA 安装中的 Software_Tokens 文件复制到 C:\RSA 文件。 将 User1_000031701832 文件提取到 CLIENT1 上的 C:\RSA 文件。  
+1.  在 CLIENT1 计算机上创建文件夹 C:\RSA Files。 将 Software_Tokens .zip 文件从 RSA 计算机上的 C:\RSA 安装复制到 C:\RSA 文件。 将 SDTID User1_000031701832 文件提取到 CLIENT1 上的 C:\RSA 文件中。  
   
 2.  访问 RSA SecurID 软件令牌媒体源，并在**SecurID SoftwareToken 客户端应用**文件夹中双击 "RSASECURIDTOKEN410" 以启动 RSA SecurID 安装。 如果显示 "**打开文件-安全警告**" 消息，则单击 "**运行**"。  
   
@@ -284,7 +284,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 8.  单击 "**从文件导入**"。  
   
-9. 单击 "**浏览**"，选择 C:\RSA Files\User1_000031701832.SDTID，然后单击 "**打开**"。  
+9. 单击 "**浏览**"，选择 "C:\RSA Files \ USER1_000031701832. SDTID"，然后单击 "**打开**"。  
   
 10. 单击“确定”两次 。  
   
@@ -295,7 +295,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 1. 在 EDGE1 上打开 Windows 资源管理器并创建文件夹 C:\RSA Files。 浏览到 RSA ACE 安装介质。  
   
-2. 将 agent_nsload、AM_Config 和 EDGE1_NodeSecret 文件从 RSA 媒体复制到 C:\RSA 文件。  
+2. 将文件 agent_nsload AM_Config .zip 和 EDGE1_NodeSecret 从 RSA 媒体复制到 C:\RSA 文件。  
   
 3. 将两个 zip 文件的内容提取到以下位置：  
   
@@ -303,11 +303,11 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
    2.  C：\Windows\SysWOW64  
   
-4. 将 agent_nsload 复制到 C:\Windows\SysWOW64 @ no__t。  
+4. 将 agent_nsload 复制到 C:\Windows\SysWOW64\\。  
   
 5. 打开提升的命令提示符并导航到 C:\windows\syswow64。  
   
-6. 键入**agent_nsload-f nodesecret-p <password>** ，其中 <password> 是在初始 RSA 配置过程中创建的强密码。 按 Enter。  
+6. 键入**agent_nsload .exe-f nodesecret-p <password>** 其中 <password> 是在初始 RSA 配置期间创建的强密码。 按 Enter。  
   
 7. 将 C:\Windows\SysWOW64\securid 复制到 C:\Windows\System32。  
   
@@ -324,7 +324,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 4.  在 " **DirectAccess 设置**" 窗口中的 "**步骤 2-远程访问服务器**" 下，单击 "**编辑**"。  
   
-5.  单击 "**下一步**" 三次，然后在 "**身份验证**" 部分中选择 "双重**身份验证**" 和 "**使用 OTP**"，并确保选中 "**使用计算机证书**"。 验证根 CA 是否设置为**CN = APP1-ca**。 单击“下一步”。  
+5.  单击 "**下一步**" 三次，然后在 "**身份验证**" 部分中选择 "双重**身份验证**" 和 "**使用 OTP**"，并确保选中 "**使用计算机证书**"。 验证根 CA 是否设置为**CN = APP1-ca**。 单击**下一步**。  
   
 6.  在 " **OTP RADIUS 服务器**" 部分中，双击 "空白**服务器名称**" 字段。  
   
@@ -333,9 +333,9 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
     > [!NOTE]  
     > 如果 RADIUS 服务器所在的域不同于远程访问服务器，则 "**服务器名称**" 字段必须指定 RADIUS 服务器的 FQDN。  
   
-8.  在 " **OTP CA 服务器**" 部分中，选择 "APP1.corp.contoso.com"，然后单击 "**添加**"。 单击“下一步”。  
+8.  在 " **OTP CA 服务器**" 部分中，选择 "APP1.corp.contoso.com"，然后单击 "**添加**"。 单击**下一步**。  
   
-9. 在 " **OTP 证书模板**" 页面上，单击 "**浏览**" 选择用于注册用于 OTP 身份验证的证书的证书模板，然后在 "**证书模板**" 对话框中选择 "DAOTPLogon"。 单击 **“确定”** 。 单击 "**浏览**" 选择用于注册远程访问服务器用于签署 OTP 证书注册请求的证书的证书模板，然后在 "**证书模板**" 对话框中选择 " **DAOTPRA**"。 单击“确定”。 单击“下一步”。  
+9. 在 " **OTP 证书模板**" 页上，单击 "**浏览**" 选择用于注册用于 OTP 身份验证的证书的证书模板，然后在 "**证书模板**" 对话框中选择 " **DAOTPLogon**"。 单击**确定**。 单击 "**浏览**" 选择用于注册远程访问服务器用于签署 OTP 证书注册请求的证书的证书模板，然后在 "**证书模板**" 对话框中选择 " **DAOTPRA**"。 单击“确定”。 单击**下一步**。  
   
 10. 在 "**远程访问服务器设置**" 页上，单击 "**完成**"，然后单击 " **DirectAccess 专家向导**" 上的 "**完成**"。  
   

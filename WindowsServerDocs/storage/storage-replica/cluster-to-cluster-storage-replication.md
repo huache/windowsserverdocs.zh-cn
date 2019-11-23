@@ -18,7 +18,7 @@ ms.locfileid: "71393788"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>群集到群集存储复制
 
-> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 存储副本可以在群集之间复制卷，包括使用存储空间直通复制群集。 管理和配置与服务器到服务器复制类似。  
 
@@ -39,9 +39,9 @@ ms.locfileid: "71393788"
 
 ![通过使用 Redmond 站点中的群集复制 Bellevue 站点中的群集显示示例环境的关系图](./media/Cluster-to-Cluster-Storage-Replication/SR_ClustertoCluster.png)  
 
-@NO__T 0FIGURE 1：群集到群集复制 @ no__t-0  
+**图1：群集到群集复制**  
 
-## <a name="prerequisites"></a>先决条件  
+## <a name="prerequisites"></a>必备条件  
 
 * Active Directory 域服务林（无需运行 Windows Server 2016）。  
 * 4-128 台运行 Windows Server 2019 或 Windows Server 2016，Datacenter Edition 的服务器（2-64 服务器的两个群集）。 如果你运行的是 Windows Server 2019，则可以改为使用标准版，如果你只是复制一个最大为 2 TB 的卷。  
@@ -55,7 +55,7 @@ ms.locfileid: "71393788"
 
 许多这些要求都可通过使用 `Test-SRTopology` cmdlet 来确定。 如果将存储副本或存储副本管理工具功能安装在至少一台服务器上，则会获取此工具的访问权限。 无需将存储副本配置为使用此工具，只需安装 cmdlet。 以下步骤中包含更多信息。  
 
-## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>第 1 步：设置操作系统、功能、角色、存储和网络
+## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>步骤 1：预配操作系统、功能、角色、存储和网络
 
 1.  使用 Windows Server **（桌面体验）** 的安装类型在所有四个服务器节点上安装 Windows server。 
 
@@ -109,7 +109,7 @@ ms.locfileid: "71393788"
     > -   日志卷的默认值必须至少为8GB，并且根据日志要求可能更大或更小。
     > -   使用带有 NVME 或 SSD 缓存的存储空间直通（存储空间直通）时，在存储空间直通群集之间配置存储副本复制时，延迟时间会比预期的延迟增加。 延迟的变化比在性能 + 容量配置中使用 NVME 和 SSD 时看到的要高得多，并且没有 HDD 层和容量层。
 
-    之所以出现此问题，是因为在比较速度较慢的媒体时，SR 日志机制内的体系结构限制与 NVME 的延迟极低。 使用存储空间直通存储空间直通缓存时，所有 SR 日志的 IO 以及应用程序的所有最新读/写 IO 都将出现在缓存中，而从不会出现在性能层或容量层上。 这意味着所有 SR 活动都在同一速度介质上进行-不建议使用此配置（有关日志建议，请参阅 https://aka.ms/srfaq ）。 
+    之所以出现此问题，是因为在比较速度较慢的媒体时，SR 日志机制内的体系结构限制与 NVME 的延迟极低。 使用存储空间直通存储空间直通缓存时，所有 SR 日志的 IO 以及应用程序的所有最新读/写 IO 都将出现在缓存中，而从不会出现在性能层或容量层上。 这意味着所有 SR 活动都在同一速度介质上进行-不支持此配置（请参阅 https://aka.ms/srfaq 日志建议）。 
 
     将存储空间直通与 Hdd 一起使用时，不能禁用或避免缓存。 一种解决方法是，如果仅使用 SSD 和 NVME，则可以仅配置性能层和容量层。 如果使用该配置，并且只通过将 SR 日志放在性能层上，只使用其服务在容量层上的数据卷，则可以避免上述高延迟问题。 同样，也可以通过混合速度更快、速度更慢的 Ssd，而不是 NVME。
 
@@ -119,7 +119,7 @@ ms.locfileid: "71393788"
 
 1. 确保每个群集只能看到该站点的存储机箱，且 SAS 连接已正确配置。  
 
-2. 使用 Windows PowerShell 或服务器管理器，按照[在独立服务器上部署存储空间](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的**步骤 1 至 3** 使用存储空间来配置存储。  
+2. 使用 Windows PowerShell 或服务器管理器，按照**在独立服务器上部署存储空间**中提供的[步骤 1 至 3](../storage-spaces/deploy-standalone-storage-spaces.md) 使用存储空间来配置存储。  
 
 -   **对于 iSCSI 目标存储：**  
 
@@ -140,7 +140,7 @@ ms.locfileid: "71393788"
 2. 确保 SR 日志卷将始终位于速度最快的闪存存储上，而数据卷位于速度较慢的高容量存储上。
 
 3. 启动 Windows PowerShell，并使用 `Test-SRTopology` cmdlet，以确定是否满足存储副本的所有要求。 可以在仅要求模式下使用 cmdlet 以用于快速测试，也可以在长时间运行的性能评估模式下使用。  
-   例如，  
+   例如，应用于对象的  
 
    ```PowerShell
    MD c:\temp
@@ -177,7 +177,7 @@ ms.locfileid: "71393788"
 
 5.  将 **Redmond** 站点中的一个磁盘添加到群集 CSV。 若要执行此操作，右键单击“**存储**”部分的“**磁盘**”节点中的一个源磁盘，然后单击“**添加到群集共享卷**”。  
 
-6.  使用[配置横向扩展文件服务器](https://technet.microsoft.com/library/hh831718.aspx)中的说明在两个群集上均创建群集横向扩展文件服务器  
+6.  使用 [配置横向扩展文件服务器](https://technet.microsoft.com/library/hh831718.aspx) 中的说明在两个群集上均创建群集横向扩展文件服务器  
 
 ### <a name="windows-powershell-method"></a>Windows PowerShell 方法  
 
@@ -207,9 +207,9 @@ ms.locfileid: "71393788"
     > [!WARNING]  
     > 有关仲裁配置的详细信息，请参阅[配置和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**见证服务器配置**部分。 有关 `Set-ClusterQuorum` cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。  
 
-4.  使用[配置横向扩展文件服务器](https://technet.microsoft.com/library/hh831718.aspx)中的说明在两个群集上均创建群集横向扩展文件服务器  
+4.  使用 [配置横向扩展文件服务器](https://technet.microsoft.com/library/hh831718.aspx) 中的说明在两个群集上均创建群集横向扩展文件服务器  
 
-## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>步骤 3:使用 Windows PowerShell 设置群集以进行群集复制  
+## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>步骤 3：使用 Windows PowerShell 设置群集到群集复制  
 现在使用 Windows PowerShell 设置群集到群集复制。 你可以直接在节点上或从包含 Windows Server 的远程管理计算机执行以下所有步骤远程服务器管理工具  
 
 1. 通过在第一个群集中的任何节点上运行**SRAccess** cmdlet，或以远程方式向第一个群集授予对其他群集的完全访问权限。  Windows Server 远程服务器管理工具
@@ -248,7 +248,7 @@ ms.locfileid: "71393788"
        ```PowerShell
        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20
        ```
-   2.  在目标服务器上，运行以下命令以查看显示合作关系创建的存储副本事件。 此事件会显示复制的字节数和所用的时间。 例如：  
+   2.  在目标服务器上，运行以下命令以查看显示合作关系创建的存储副本事件。 此事件会显示复制的字节数和所用的时间。 示例：  
         
        ```powershell
        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | Format-List
@@ -310,23 +310,23 @@ ms.locfileid: "71393788"
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of requests for last log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Flush Queue Length  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Current Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of Application Write Requests  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Number of requests per log write  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Number of requests per log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Write Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Write Latency  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Read Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Read Latency  
 
     -   \Storage Replica Statistics(*)\Target RPO  
 
     -   \Storage Replica Statistics(*)\Current RPO  
 
-    -   \Storage Replica Statistics(*)\Avg.Log Queue Length  
+    -   \Storage Replica Statistics(*)\Avg. Log Queue Length  
 
     -   \Storage Replica Statistics(*)\Current Log Queue Length  
 
@@ -334,11 +334,11 @@ ms.locfileid: "71393788"
 
     -   \Storage Replica Statistics(*)\Total Bytes Sent  
 
-    -   \Storage Replica Statistics(*)\Avg.Network Send Latency  
+    -   \Storage Replica Statistics(*)\Avg. Network Send Latency  
 
     -   \Storage Replica Statistics(*)\Replication State  
 
-    -   \Storage Replica Statistics(*)\Avg.Message Round Trip Latency  
+    -   \Storage Replica Statistics(*)\Avg. Message Round Trip Latency  
 
     -   \Storage Replica Statistics(*)\Last Recovery Elapsed Time  
 
@@ -387,11 +387,11 @@ ms.locfileid: "71393788"
     > [!NOTE]  
     > 存储副本用于卸除目标卷。 这是设计使然。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [存储副本概述](storage-replica-overview.md) 
 -   [使用共享存储拉伸群集复制](stretch-cluster-replication-using-shared-storage.md)  
 -   [服务器到服务器存储复制](server-to-server-storage-replication.md)  
 -   [存储副本：已知问题](storage-replica-known-issues.md)  
--   [存储副本：常见问题解答](storage-replica-frequently-asked-questions.md)  
+-   [存储副本：常见问题](storage-replica-frequently-asked-questions.md)  
 -   [Windows Server 2016 中的存储空间直通](../storage-spaces/storage-spaces-direct-overview.md)  

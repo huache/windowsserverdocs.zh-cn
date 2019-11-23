@@ -17,11 +17,11 @@ ms.locfileid: "71361069"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server 中的运行状况服务
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 运行状况服务是 Windows Server 2016 中的一项新功能，可改进运行存储空间直通的群集的日常监视和操作体验。
 
-## <a name="prerequisites"></a>先决条件  
+## <a name="prerequisites"></a>必备条件  
 
 默认情况下，存储空间直通启用运行状况服务。 设置或启动它时无需执行任何其他操作。 若要了解有关存储空间直通的详细信息，请参阅[Windows Server 2016 中的存储空间直通](../storage/storage-spaces/storage-spaces-direct-overview.md)。  
 
@@ -90,7 +90,7 @@ ms.locfileid: "71361069"
 
 运行状况服务提供了一种强制机制，用于将存储空间直通所使用的组件限制到管理员或解决方案供应商提供的支持的组件文档中。 这可用来防止你或其他人误用不受支持的硬件，可能会帮助保证或支持合同的合规性。 此功能当前仅限于物理磁盘设备，包括 Ssd、Hdd 和 NVMe 驱动器。 支持的组件文档可以限制模型、制造商（可选）和固件版本（可选）。
 
-### <a name="usage"></a>用法  
+### <a name="usage"></a>Usage  
 
 支持的组件文档使用了 XML 灵感的语法。 建议使用最喜欢的文本编辑器，如免费[Visual Studio Code](http://code.visualstudio.com/)或记事本，创建一个可以保存并重复使用的 XML 文档。
 
@@ -98,9 +98,9 @@ ms.locfileid: "71361069"
 
 该文档有两个独立的部分： `Disks` 和 `Cache`。
 
-如果提供了 @no__t 0 部分，则只允许列出列出的驱动器（如 `Disk`）来加入池。 将阻止所有未列出的驱动器加入池，从而有效地阻止它们在生产中的使用。 如果此部分为空，则允许任何驱动器加入池。
+如果提供了 `Disks` 部分，则只允许列出列出的驱动器（如 `Disk`）来加入池。 将阻止所有未列出的驱动器加入池，从而有效地阻止它们在生产中的使用。 如果此部分为空，则允许任何驱动器加入池。
 
-如果提供了 @no__t 0 部分，则仅将列出的驱动器（如 `CacheDisk`）用于缓存。 如果此部分为空，则存储空间直通会[根据媒体类型和总线类型](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)尝试进行猜测。 此处列出的驱动器还应列在 `Disks`。
+如果提供了 `Cache` 部分，则仅将列出的驱动器（如 `CacheDisk`）用于缓存。 如果此部分为空，则存储空间直通会[根据媒体类型和总线类型](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)尝试进行猜测。 此处列出的驱动器还应在 `Disks`中列出。
 
 >[!IMPORTANT]
 > 支持的组件文档不会将以追溯方式应用到已在使用中的驱动器。  
@@ -141,9 +141,9 @@ ms.locfileid: "71361069"
 
 ```
 
-若要列出多个驱动器，只需添加额外的 @no__t 0 或 @no__t 的标记即可。
+若要列出多个驱动器，只需添加其他 `<Disk>` 或 `<CacheDisk>` 标记。
 
-若要在部署存储空间直通时插入此 XML，请使用 @no__t 参数：
+若要在部署存储空间直通时插入此 XML，请使用 `-XML` 参数：
 
 ```PowerShell
 $MyXML = Get-Content <Filepath> | Out-String  
@@ -166,11 +166,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.S
 Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion  
 ```
 
-## <a name="settings"></a>设置
+## <a name="settings"></a>“设置”
 
 请参阅[运行状况服务设置](health-service-settings.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [运行状况服务报表](health-service-reports.md)
 - [运行状况服务故障](health-service-faults.md)

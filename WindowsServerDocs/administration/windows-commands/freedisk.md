@@ -22,7 +22,7 @@ ms.locfileid: "71377035"
 ---
 # <a name="freedisk"></a>freedisk
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在继续执行安装过程之前，检查是否有指定数量的可用磁盘空间。
 
@@ -30,14 +30,14 @@ ms.locfileid: "71377035"
 ```
 freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [<Value>]
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |       参数       |                                                                                         描述                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /s <computer>     | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
-| /u [<Domain> @ no__t] <User> |                                            用指定用户帐户的权限运行脚本。 默认值为 "系统权限"。                                            |
+| /u [<Domain>\\]<User> |                                            用指定用户帐户的权限运行脚本。 默认值为 "系统权限"。                                            |
 |    /p [<Password>]    |                                                           指定在 **/u**中指定的用户帐户的密码。                                                            |
-|      /d <Drive>       |                              指定要找出可用空间可用性的驱动器。 必须指定远程计算机 @no__t 0for。                               |
+|      /d <Drive>       |                              指定要找出可用空间可用性的驱动器。 您必须指定远程计算机的 <Drive>。                               |
 |        <Value>        |                                     检查特定的可用磁盘空间量。 可以指定 <Value>字节、KB、MB、GB、TB、PB、EB、ZB 或 YB。                                      |
 
 ## <a name="remarks"></a>备注

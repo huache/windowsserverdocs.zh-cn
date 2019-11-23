@@ -32,13 +32,13 @@ ms.locfileid: "71363468"
 WDSUTIL /Disconnect-Client /ClientId:<Client ID> [/Server:<Server name>] [/Force]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|/ClientId： \<Client ID >|指定要断开连接的客户端的 ID。 若要查看客户端的 ID，请键入**WDSUTIL/get-multicasttransmission/show：** client。|
-|[/Server： @no__t 名称 >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
-|/Force|完全停止安装，不使用回退方法。 请注意，Wdsmcast.exe 不支持任何回退机制。 如果未使用此选项，则默认行为如下所示：</br>-如果你使用的是 Windows 部署服务客户端，客户端将使用单播继续安装。</br>-如果使用的不是 Windows 部署服务客户端，则安装将失败。</br>重要提示：你应慎用此选项，因为安装将失败，并且计算机可能处于不可用状态。|
+|/ClientId：\<客户端 ID >|指定要断开连接的客户端的 ID。 若要查看客户端的 ID，请键入**WDSUTIL/get-multicasttransmission/show：** client。|
+|[/Server：\<Server name >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
+|/Force|完全停止安装，不使用回退方法。 请注意，Wdsmcast.exe 不支持任何回退机制。 如果未使用此选项，则默认行为如下所示：</br>-如果你使用的是 Windows 部署服务客户端，客户端将使用单播继续安装。</br>-如果使用的不是 Windows 部署服务客户端，则安装将失败。</br>重要提示：应慎用此选项，因为安装将失败，并且计算机可能处于不可用状态。|
 
 ## <a name="BKMK_examples"></a>示例
 

@@ -61,7 +61,7 @@ ms.locfileid: "71404556"
   
 8.  在“安装进度”对话框中，验证安装是否成功，然后单击“关闭”。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -142,7 +142,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
     -   Ip-https 证书。 这取决于您在向导的前一步骤中设置的部署的公用名称。 如果向导没有检测到正确的 ip-https 证书，请单击 "**浏览**" 手动选择正确的证书。  
   
-4.  单击“下一步”。  
+4.  单击**下一步**。  
   
 5.  在 "**前缀配置**" 页上（仅当在内部网络中检测到 ipv6 时才会显示此页），向导会自动检测内部网络上使用的 ipv6 设置。 如果你的部署需要其他前缀，请配置用于内部网络的 IPv6 前缀、要分配给 DirectAccess 客户端计算机的 IPv6 前缀，以及要分配给 VPN 客户端计算机的 IPv6 前缀。  
   
@@ -175,7 +175,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 3.  在 " **DNS** " 页上，在表中输入将应用为名称解析策略表（NRPT）例外的其他名称后缀。 选择本地名称解析选项，然后单击“下一步”。  
   
-4.  在 " **DNS 后缀搜索列表**" 页上，远程访问服务器会自动检测部署中的域后缀。 使用 "**添加**" 和 "**删除**" 按钮创建要使用的域后缀列表。 若要添加新的域后缀，请在“新后缀”中输入该后缀，然后单击“添加”。 单击“下一步”。  
+4.  在 " **DNS 后缀搜索列表**" 页上，远程访问服务器会自动检测部署中的域后缀。 使用 "**添加**" 和 "**删除**" 按钮创建要使用的域后缀列表。 若要添加新的域后缀，请在“新后缀”中输入该后缀，然后单击“添加”。 单击**下一步**。  
   
 5.  在 "**管理**" 页上，添加未自动检测到的管理服务器，然后单击 "**下一步**"。 远程访问将自动添加域控制器和 System Center Configuration Manager 服务器。  
   
@@ -205,7 +205,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [步骤 3：验证部署](Step-3-Verify-the-Deployment_2.md)  
+-   [步骤3：验证部署](Step-3-Verify-the-Deployment_2.md)  
   
   
 

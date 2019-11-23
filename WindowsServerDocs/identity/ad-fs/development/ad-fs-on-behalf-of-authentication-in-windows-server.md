@@ -85,8 +85,8 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 打开解决方案 WebAPI-OnBehalfOf-DotNet 后，你会发现解决方案中有两个项目
 
-* **ToDoListClient**：这将用作用户将与之交互的 OpenID 客户端
-* **ToDoListService**：这将是中间层 Web 服务器应用/服务，它将与经过身份验证的用户的另一后端 WebAPI 交互 OBO
+* **ToDoListClient**：这将充当用户将与之交互的 OpenID 客户端
+* **ToDoListService**：这是将与另一个后端 WebAPI OBO 身份验证用户交互的中间层 WEB 服务器应用/服务
 
 如您所见，我们将需要添加另一个项目，该项目将充当中间层 ToDoListService 将访问的资源。
 
@@ -102,7 +102,7 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 单击 "下一步"，将显示用于提供有关客户端应用程序的信息的页面。 为 AD FS 中的客户端应用程序指定适当的名称。 复制客户端标识符，并将其保存到稍后可访问的某个位置，因为 visual studio 中的应用程序配置需要这样做。
 
->注意:重定向 URI 可以是任意 URI，因为在本机客户端情况下它实际上不会使用它
+>注意：重定向 URI 可以是任意 URI，因为在本机客户端情况下它实际上不会使用它
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO11.PNG)
 
@@ -116,13 +116,13 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO1.PNG)
 
-单击 "下一步"，将显示 "配置应用程序权限" 页。 在此页上，选择 "允许的作用域" 作为 openid （默认情况下处于选中状态）和 user_impersonation。 必须使用范围 "user_impersonation" 才能成功地从 AD FS 请求代表访问令牌。
+单击 "下一步"，将显示 "配置应用程序权限" 页。 在此页上，选择 "允许的作用域" 作为 openid （默认情况下处于选中状态）并 user_impersonation。 若要成功地从 AD FS 请求的访问令牌，必须使用范围 "user_impersonation"。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO12.PNG)
 
 单击 "下一步" 将显示 "摘要" 页。 完成向导的其余部分并完成配置。
 
-若要启用代表身份验证，我们需要确保 AD FS 返回的访问令牌的范围 user_impersonation 为客户端。 修改 ToDoListServiceWebApi 的声明颁发，使其包含以下三个自定义规则：
+若要启用代表身份验证，我们需要确保 AD FS 将 user_impersonation 的访问令牌返回到客户端。 修改 ToDoListServiceWebApi 的声明颁发，使其包含以下三个自定义规则：
 
     @RuleName = "All claims"
     c:[]
@@ -162,7 +162,7 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 * 注释 ida：租户密钥条目
 * 对于 ida： RedirectURI 输入在 AD FS 中配置 MySampleGroup_ClientApplication 时提供的任意 URI。
-* 对于 ida： ClientID 密钥，请提供在配置 MySampleGroup_ClientApplication 时 AD FS 提供的客户端 ID 标识符。
+* 对于 ida： ClientID 密钥，请提供 AD FS 在配置 MySampleGroup_ClientApplication 时提供的客户端 ID 标识符。
 * 对于 ida： ToDoListResourceID 提供在 AD FS 中配置 ToDoListServiceWebApi 时提供的资源 ID。
 * 注释密钥 ida： AADInstance
 * 对于 ida： ToDoListBaseAddress 输入 ToDoListServiceWebApi 的资源 ID。 这将在调用 ToDoList WebAPI 时使用。
@@ -274,10 +274,10 @@ App.config 中的**appSettings**应如下所示：
 * 打开 web.config 文件
 * 修改以下项
 
-| Key                      | ReplTest1                                                                                                                                                                                                                   |
+| 密钥                      | 值                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ida：受众             | 在配置 ToDoListService WebAPI 时 AD FS ToDoListService 的 ID，例如 https://localhost:44321/                                                                                         |
-| ida： ClientID             | 在配置 ToDoListService WebAPI 时 AD FS ToDoListService 的 ID，例如 <https://localhost:44321/> </br>**Ida：受众和 ida： ClientID 彼此匹配非常重要** |
+| ida：受众             | 在配置 ToDoListService WebAPI 时 ToDoListService 的 ID，AD FS 如 https://localhost:44321/                                                                                         |
+| ida： ClientID             | 在配置 ToDoListService WebAPI 时 ToDoListService 的 ID，AD FS 如 <https://localhost:44321/> </br>**Ida：受众和 ida： ClientID 彼此匹配非常重要** |
 | ida： ClientSecret         | 这是在中配置 ToDoListService 客户端时 AD FS 生成的机密 AD FS                                                                                                                   |
 | ida： AdfsMetadataEndpoint | 这是 AD FS 元数据的 URL，例如 https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
 | ida： OBOWebAPIBase        | 这是将用于调用后端 API 的基址，例如 https://localhost:44300                                                                                                                     |
@@ -494,10 +494,10 @@ App.config 中的**appSettings**应如下所示：
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 你还可以在 Fiddler 上查看详细的跟踪。 启动 Fiddler 并启用 HTTPS 解密。 你可以看到，我们向/adfs/oautincludes 终结点发出两个请求。
-在第一次交互中，我们向令牌终结点显示访问代码，并获取 https://localhost:44321/ ![ AD FS OBO @ no__t-2 的访问令牌
+在第一次交互中，我们向令牌终结点显示访问代码，并获取 https://localhost:44321/ ![AD FS OBO 的访问令牌](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
-在第二个与令牌终结点交互的过程中，你可以看到，" **requested_token_use** " 设置为 " **on_behalf_of** "，并且我们正在使用为中间层 web 服务获取的访问令牌，即 https://localhost:44321/ 作为断言来获取代表令牌。
-![AD FS OBO @ NO__T-1
+在第二次与令牌终结点交互时，您可以看到，我们**requested_token_use**设置为**on_behalf_of** ，我们使用的是为中间层 web 服务获取的访问令牌，即 https://localhost:44321/ 为获取代表令牌的断言。
+![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
 ## <a name="next-steps"></a>后续步骤
 [AD FS 开发](../../ad-fs/AD-FS-Development.md)  

@@ -16,19 +16,19 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408714"
 ---
-# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附录 E：在 Active Directory 中保护 Enterprise Admins 组
+# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附录 E：保护 Active Directory 中的 Enterprise Admins 组
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附录 E：在 Active Directory 中保护 Enterprise Admins 组  
-位于目录林根级域中的 Enterprise Admins （EA）组在日常工作中不应包含任何用户，只要根域的管理员帐户有可能例外，只要该帐户受到 [Appendix D：Active Directory @ no__t 中保护内置管理员帐户。  
+## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附录 E：保护 Active Directory 中的 Enterprise Admins 组  
+位于目录林根级域中的 Enterprise Admins （EA）组在日常工作中不应包含任何用户，只要根域的管理员帐户有可能例外，只要[在 Active Directory 中的 "保护内置管理员帐户" 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述的内容受到保护。  
 
 默认情况下，企业管理员是林中每个域中 Administrators 组的成员。 不应从每个域的 Administrators 组中删除 EA 组，因为在林灾难恢复方案中，可能需要 EA 权限。 应该对林的 Enterprise Admins 组进行安全，详细信息请参阅下面的分步说明。  
 
 对于林中的 Enterprise Admins 组：  
 
-1.  在链接到包含每个域中成员服务器和工作站的 Ou 的 Gpo 中，Enterprise Admins 组应添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 本地策略 \ 用户权限" 中的以下用户权限分配**：  
+1.  在链接到包含每个域中的成员服务器和工作站的 Ou 的 Gpo 中，Enterprise Admins 组应添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
     -   拒绝从网络访问这台计算机  
 
@@ -46,7 +46,7 @@ ms.locfileid: "71408714"
 
 1.  在**服务器管理器**中，单击 "**工具**"，然后单击 " **Active Directory 用户和计算机**"。  
 
-2.  如果你不管理林的根域，请在控制台树中右键单击 <Domain>，然后单击 "**更改域**" （其中 <Domain> 是当前正在管理的域的名称）。  
+2.  如果你不管理林的根域，请在控制台树中右键单击 "<Domain>"，然后单击 "**更改域**" （其中 <Domain> 是当前正在管理的域的名称）。  
 
     ![保护企业管理组](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)  
 
@@ -68,7 +68,7 @@ ms.locfileid: "71408714"
 
 1.  在**服务器管理器**中，单击 "**工具**"，然后单击 "**组策略管理**"。  
 
-2.  在控制台树中，展开 "<Forest> \ 域 @ no__t"，然后**组策略对象**（其中，@no__t 为林的名称，<Domain> 是要设置组策略的域的名称）。  
+2.  在控制台树中，依次展开 "<Forest>\Domains"\\"<Domain>"、"**组策略对象**" （其中 <Forest> 是林的名称，<Domain> 是要设置组策略的域的名称）。  
 
     > [!NOTE]  
     > 在包含多个域的林中，应在需要保护 Enterprise Admins 组的每个域中创建类似的 GPO。  
@@ -77,7 +77,7 @@ ms.locfileid: "71408714"
 
     ![保护企业管理组](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_46.gif)  
 
-4.  在 "**新建 GPO** " 对话框中，键入 <GPO Name>，然后单击 **"确定"** （其中 <GPO Name> 是此 GPO 的名称）。  
+4.  在 "**新建 GPO** " 对话框中，键入 "<GPO Name>"，然后单击 **"确定"** （其中 <GPO Name> 是此 GPO 的名称）。  
 
     ![保护企业管理组](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)  
 
@@ -163,7 +163,7 @@ ms.locfileid: "71408714"
 
 13. 在**组策略管理**中，通过执行以下操作将 GPO 链接到成员服务器和工作站 ou：  
 
-    1.  导航到 <Forest> 域 @ no__t @ no__t-2 （其中，<Forest> 是林的名称，<Domain> 是要在其中设置组策略的域的名称）。  
+    1.  导航到 <Forest>\Domains\\<Domain> （其中，<Forest> 是林的名称，<Domain> 是要在其中设置组策略的域的名称）。  
 
     2.  右键单击 GPO 将应用到的 OU，然后单击 "**链接现有 GPO**"。  
 
@@ -197,7 +197,7 @@ ms.locfileid: "71408714"
 
     ![保护企业管理组](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)  
 
-5.  在 "**命令提示符**" 窗口中，键入**net use \\ @ no__t @ No__t-4Server name @ no__t-5\c $** ，其中 \<Server name @ no__t-7 是你尝试通过网络访问的成员服务器或工作站的名称。  
+5.  在 "**命令提示符**" 窗口中，键入**net use \\\\\<Server name\>\c $** ，其中 \<Server name\> 是你尝试通过网络访问的成员服务器或工作站的名称。  
 
 6.  以下屏幕截图显示应显示的错误消息。  
 
@@ -217,7 +217,7 @@ ms.locfileid: "71408714"
 
 4.  单击 "**文件**"，然后单击 "**另存为**"。  
 
-5.  在 "**文件名" 框**中，键入 **<Filename>** （其中，<Filename> 是新批处理文件的名称）。  
+5.  在 "**文件名" 框**中，键入 **<Filename>.bat** （其中，<Filename> 是新批处理文件的名称）。  
 
 ##### <a name="schedule-a-task"></a>计划任务  
 
@@ -230,7 +230,7 @@ ms.locfileid: "71408714"
 
 3.  单击 "**操作**"，然后单击 "**创建任务**"。  
 
-4.  在 "**创建任务**" 对话框中，键入 **<Task Name>** （其中 @no__t 为新任务的名称）。  
+4.  在 "**创建任务**" 对话框中，键入 **<Task Name>** （其中 <Task Name> 为新任务的名称）。  
 
 5.  单击 "**操作**" 选项卡，然后单击 "**新建**"。  
 
@@ -238,7 +238,7 @@ ms.locfileid: "71408714"
 
 7.  在 "**程序/脚本**" 下，单击 "**浏览**"，找到并选择 "**创建批处理文件**" 部分中创建的批处理文件，然后单击 "**打开**"。  
 
-8.  单击 **“确定”** 。  
+8.  单击**确定**。  
 
 9. 单击“常规”选项卡。  
 
@@ -248,7 +248,7 @@ ms.locfileid: "71408714"
 
 12. 选择 **"不管用户是否登录都要运行"** ，并选择 "不**存储密码**"。 该任务将仅有权访问本地计算机资源。  
 
-13. 单击 **“确定”** 。  
+13. 单击**确定**。  
 
 14. 应显示一个对话框，请求用户帐户凭据以运行任务。  
 

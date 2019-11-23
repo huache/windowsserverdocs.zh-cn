@@ -22,19 +22,19 @@ ms.locfileid: "71378358"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag TestReferral
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-通过执行以下测试来检查分布式文件系统 \(DFS @ no__t 的检索：  
+通过执行以下测试来检查分布式文件系统 \(DFS\) 引用：  
   
 -   使用不带参数的 DFSpath 参数时，此命令将验证引用列表是否包含所有受信任的域。  
   
--   指定域时，该命令将执行域控制器的运行状况检查 @no__t \/testdcs @ no__t，并测试本地主机的站点关联和域缓存。  
+-   指定域时，该命令将对域控制器 \(dfsdiag \/testdcs\) 执行运行状况检查，并测试本地主机的站点关联和域缓存。  
   
--   指定域并 \\SYSvol 或 \\NETLOGON 时，除了执行指定域时相同的运行状况检查以外，该命令还会检查是否存在与默认值（SYSvol 或 NETLOGON 引用）匹配的生存时间 @no__t900秒。  
+-   指定域并 \\SYSvol 或 \\NETLOGON 时，除了执行指定域时相同的健康检查，该命令还会检查 SYSvol 或 NETLOGON 引用的生存时间 \(TTL\) 是否与默认值900秒匹配。  
   
--   指定命名空间根时，除了执行指定域相同的健康检查外，该命令还会执行 DFS 配置检查 \(dfsdiag \/TestDFSConfig @ no__t 和命名空间完整性检查 \(dfsdiag @no__4TestDFSIntegrity @ no__t-5。  
+-   当指定命名空间根时，除了执行指定域相同的运行状况检查外，此命令还会执行 DFS 配置检查 \(dfsdiag \/TestDFSConfig\) 和命名空间完整性检查 \(dfsdiag \/TestDFSIntegrity\)。  
   
--   指定 DFS 文件夹 \(link @ no__t 时，除了执行指定命名空间根时相同的健康检查，该命令还将验证文件夹目标的站点配置 \(dfsdiag \/testsites @ no__t-4 并验证本地主机的站点关联。  
+-   当指定 \(link\)的 DFS 文件夹时，除了执行指定命名空间根时相同的健康检查，该命令还将验证文件夹目标的站点配置 \(dfsdiag \/testsites\) 并验证本地主机的站点关联。  
   
   
   
@@ -44,12 +44,12 @@ ms.locfileid: "71378358"
 dfsdiag /TestReferral /DFSpath:<DFS path for getting referrals> [/Full]  
 ```  
   
-### <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>参数  
   
 |参数|描述|  
 |-------|--------|  
-|\/DFSpath： <path for getting referrals>|此 DFS 路径可以是以下项之一：<br /><br />-    @ no__t-1blank @ no__t-2：测试受信任的域。<br />-    @ no__t-1 @ no__t-2Domain：域控制器的引用。<br />-    @ no__t-1 @ no__t-2Domain @ no__t-3SYSvol：SYSvol 引用。<br />-    @ no__t-1 @ no__t-2Domain @ no__t-3NETLOGON：NETLOGON 引用。<br />-    @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5：命名空间根路径引用。<br />-    @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7：DFS 文件夹 \(link @ no__t 引用。|  
-|\/Full|仅适用于域和根引用。 验证注册表和 active directory 域服务之间的站点关联信息的一致性 @no__t 0AD DS @ no__t-1。|  
+|\/DFSpath：<path for getting referrals>|此 DFS 路径可以是以下项之一：<br /><br />-   \(空白\)：测试受信任的域。<br />\\域 \\-   ：域控制器的引用。<br />-   \\\\域\\SYSvol： SYSvol 引用。<br />-   \\\\域\\NETLOGON： NETLOGON 引用。<br />-   \\\\<Domain or server>\\<Namespace Root>：命名空间根路径引用。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>： DFS 文件夹 \(链接\) 引用。|  
+|\/Full|仅适用于域和根引用。 验证注册表和 active directory 域服务之间的站点关联信息的一致性 \(AD DS\)。|  
   
 ## <a name="BKMK_Examples"></a>示例  
 若要待定，请键入：  

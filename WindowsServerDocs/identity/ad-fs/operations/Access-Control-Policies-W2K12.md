@@ -25,7 +25,7 @@ ms.locfileid: "71407755"
 
 2.  AD FS 基于转发给客户端 AD FS 作为 HTTP 标头的信息创建声明  
 
->**重要提示**:下面所述的策略将阻止 Windows 10 域加入和登录方案，这些方案需要访问以下附加终结点
+>**重要说明**：下面所述的策略将阻止 Windows 10 域加入和登录方案，这些方案需要访问以下附加终结点
 
 AD FS Windows 10 域加入和登录所需的终结点
 - [联合身份验证服务名称]/adfs/services/trust/2005/windowstransport
@@ -56,11 +56,11 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 ## <a name="client-access-policies-scenarios"></a>客户端访问策略方案  
 
-|**方案**|**说明**| 
+|**方案**|**描述**| 
 | --- | --- | 
-|方案 1：阻止对 Office 365 的所有外部访问|允许从公司内部网络上的所有客户端访问 Office 365，但会根据外部客户端的 IP 地址拒绝外部客户端发出的请求。|  
-|方案 2：阻止对 Office 365 的所有外部访问（Exchange ActiveSync 除外）|可以从内部公司网络上的所有客户端以及通过使用 Exchange ActiveSync 的任何外部客户端设备（如智能手机）访问 Office 365。 所有其他外部客户端（如使用 Outlook 的客户端）都将被阻止。|  
-|方案 3：阻止对 Office 365 的所有外部访问（基于浏览器的应用程序除外）|阻止对 Office 365 的外部访问，但不包括被动（基于浏览器）的应用程序（如 Outlook Web 访问或 SharePoint Online）。|  
+|方案1：阻止对 Office 365 的所有外部访问|允许从公司内部网络上的所有客户端访问 Office 365，但会根据外部客户端的 IP 地址拒绝外部客户端发出的请求。|  
+|方案2：阻止对 Office 365 的所有外部访问（Exchange ActiveSync 除外）|可以从内部公司网络上的所有客户端以及通过使用 Exchange ActiveSync 的任何外部客户端设备（如智能手机）访问 Office 365。 所有其他外部客户端（如使用 Outlook 的客户端）都将被阻止。|  
+|方案3：阻止对 Office 365 的所有外部访问（基于浏览器的应用程序除外）|阻止对 Office 365 的外部访问，但不包括被动（基于浏览器）的应用程序（如 Outlook Web 访问或 SharePoint Online）。|  
 |方案4：阻止对 Office 365 的所有外部访问（指定的 Active Directory 组除外）|此方案用于测试和验证客户端访问策略部署。 它仅阻止一个或多个 Active Directory 组的成员对 Office 365 的外部访问。 它还可以用于提供仅对组成员的外部访问权限。|  
 
 ## <a name="enabling-client-access-policy"></a>启用客户端访问策略  
@@ -181,7 +181,7 @@ AD FS Windows 10 域加入和登录所需的终结点
     ![颁发](media/Access-Control-Policies-W2K12/clientaccess3.png)  
 
 ###  <a name="scenario4"></a>方案4：阻止对 Office 365 的所有外部访问（指定的 Active Directory 组除外）  
- 以下示例启用了基于 IP 地址的内部客户端的访问。 它阻止从公司网络外部的客户端访问具有外部客户端 IP 地址的客户端，指定 Active Directory 组中的个人除外。使用以下步骤将正确的颁发授权规则添加到**使用声明规则向导 Microsoft Office 365 标识平台**信赖方信任：  
+ 以下示例启用了基于 IP 地址的内部客户端的访问。 它阻止从公司网络外部的客户端进行访问，这些客户端具有外部客户端 IP 地址（指定 Active Directory 组中的个人除外）。使用以下步骤，通过声明规则向导将正确的颁发授权规则添加到**Microsoft Office 365 标识平台**信赖方信任：  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-for-designated-active-directory-groups"></a>创建规则以阻止对 Office 365 的所有外部访问，指定 Active Directory 组除外  
 
@@ -240,7 +240,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 > - 企业网络上的客户端的 IP 地址将显示为组织的出站代理或网关的外部接口 IP 地址。  
 >   -   通过 VPN 或 Microsoft DirectAccess （DA）连接到公司网络的客户端可以显示为内部企业客户端，也可以作为外部客户端出现，具体取决于 VPN 或 DA 的配置。  
 
--   一个或多个 IP 地址：当 Exchange Online 无法确定正在连接的客户端的 IP 地址时，它将基于 x 转发的标头的值设置值，这是基于 HTTP 的请求中可包含的一个非标准标头，许多客户端和负载均衡器都支持该标头。以及市场上的代理。  
+-   一个或多个 IP 地址：当 Exchange Online 无法确定正在连接的客户端的 IP 地址时，它将基于 x 转发的标头的值设置值，该标头可以包含在基于 HTTP 的请求中，并且受多个客户端、负载均衡器以及市场上的代理。  
 
 > [!NOTE]
 > 1. 多个 IP 地址（表示通过请求的每个代理的客户端 IP 地址和地址）将用逗号分隔。  
@@ -255,17 +255,17 @@ AD FS Windows 10 域加入和登录所需的终结点
 
   首先，将匹配单个 IP 地址的基本模式如下： \b # # #\\. # # #\\. # # #\\. # # # \b  
 
-  扩展此项，我们可以将两个不同的 IP 地址与 OR 表达式匹配，如下所示\\： \b # #\\#. # #\\#. # # #&#124;.\\# # # \b \b # #\\#. # #\\#. # # #. # # # \b  
+  扩展此项，我们可以将两个不同的 IP 地址与 OR 表达式匹配，如下所示： \b # # #\\. # # #\\. # # #\\&#124;. # # # \b \b # # #\\. #\\# # \b\\  
 
-  因此，只匹配两个地址（如192.168.1.1 或10.0.0.1）的示例为： \b192\\. 168\\.1\\.1 \ b&#124;\b10\\.0 .0\\\\  
+  因此，仅匹配两个地址（如192.168.1.1 或10.0.0.1）的示例为： \b192\\. 168\\.1\\.1 \ b&#124;\b10\\.0\\\\  
 
-  这为你提供了可用于输入任意数量的地址的方法。 需要允许的地址范围，例如192.168.1.1 –192.168.1.25，匹配必须是字符： \b192 @ no__t-0.168 @ no__t-1.1 @ no__t-2。（[1-9]&#124;1 [0-9]&#124;2 [0-5]） \b  
+  这为你提供了可用于输入任意数量的地址的方法。 如果需要允许的地址范围，例如192.168.1.1 –192.168.1.25，则必须按字符： \b192\\. 168\\\\进行匹配。（[1-9]&#124;1 [0-9]&#124;2 [0-5]） \b  
 
   请注意以下事项：  
 
 - IP 地址被视为字符串而不是数字。  
 
-- 规则按如下方式分解： 168\\\\\b192 .1\\。  
+- 规则按如下方式分解： \b192\\. 168\\. 1\\。  
 
 - 这与任何以192.168.1 开头的值匹配。  
 
@@ -279,9 +279,9 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 - 请注意，括号必须正确定位，以便不会开始匹配 IP 地址的其他部分。  
 
-- 使用匹配的192块，我们可以为10块编写类似的表达式： \b10 @ no__t-0.0 @ no__t-1.0 @ no__t。（[1-9]&#124;1 [0-4]） \b  
+- 在与192块匹配的情况下，我们可以为10块编写类似的表达式： \b10\\.0\\\\。（[1-9]&#124;1 [0-4]） \b  
 
-- 将其放在一起，以下表达式应匹配 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14"： \b192 @ no__t-0.168 @ no__t-1.1 @ no__t-2 的所有地址。（[1-9]&#124;1 [0-9]&#124;2 [0-5]） \b&#124;\b10 @ no__t-6.0 @ no__t-7.0 @ no__t-8。（[1-9]&#124;1 [0-4]） \b  
+- 将其放在一起，以下表达式应匹配 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14"： \b192\\. 168\\\\的所有地址。（[1-9]&#124;1 [0-9]&#124;2 [0-5]） \b&#124;\b10\\.0\\\\。（[1-9]&#124;1 [0-4]） \b  
 
 ### <a name="testing-the-expression"></a>测试表达式  
  正则表达式表达式可能会变得相当复杂，因此强烈建议使用 regex 验证工具。 如果您在 internet 上搜索 "联机 regex 表达式生成器"，您将看到多个有效的联机实用程序，您可以使用这些实用程序来尝试使用示例数据。  
@@ -296,7 +296,7 @@ AD FS Windows 10 域加入和登录所需的终结点
  Windows Server 2012 R2 中的 AD FS 使用以下声明类型提供请求上下文信息：  
 
 ### <a name="x-ms-forwarded-client-ip"></a>X 毫秒-转发的客户端-IP  
- 声明类型：`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
+ 声明类型： `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
 
  此 AD FS 声明在认定上表示一个 "最佳尝试"，该地址为发出请求的用户（例如，Outlook 客户端）的 IP 地址。 此声明可包含多个 IP 地址，包括转发请求的每个代理的地址。  此声明从 HTTP 填充。 声明的值可以是下列值之一：  
 
@@ -318,7 +318,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 >  Exchange Online 目前只支持 IPV4 地址;它不支持 IPV6 地址。  
 
 ### <a name="x-ms-client-application"></a>X-客户端-应用程序  
- 声明类型：`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
+ 声明类型： `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
 
  此 AD FS 声明表示最终客户端使用的协议，该协议与所使用的应用程序松耦合。  此声明是从当前仅由 Exchange Online 设置的 HTTP 标头中填充的，它会在将身份验证请求传递到 AD FS 时填充标头。 根据应用程序的不同，此声明的值将是下列值之一：  
 
@@ -345,7 +345,7 @@ AD FS Windows 10 域加入和登录所需的终结点
     -   Microsoft。  
 
 ### <a name="x-ms-client-user-agent"></a>X-MS-客户端-用户代理  
- 声明类型：`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
+ 声明类型： `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
 
  此 AD FS 声明提供了一个字符串，表示客户端用于访问服务的设备类型。 当客户想要阻止某些设备（如智能手机）的访问时，可以使用此方法。  此声明的示例值包括（但不限于）以下值。  
 
@@ -368,23 +368,23 @@ AD FS Windows 10 域加入和登录所需的终结点
   此值也可能为空。  
 
 ### <a name="x-ms-proxy"></a>X-MS-Proxy  
- 声明类型：`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
+ 声明类型： `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
 
  此 AD FS 声明指示请求已通过 Web 应用程序代理。  此声明由 Web 应用程序代理填充，Web 应用程序代理在将身份验证请求传递到后端联合身份验证服务时填充标头。 然后 AD FS 将其转换为声明。  
 
  声明的值是传递请求的 Web 应用程序代理的 DNS 名称。  
 
 ### <a name="insidecorporatenetwork"></a>InsideCorporateNetwork  
- 声明类型：`http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
+ 声明类型： `http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
 
  类似于上述 x ms 代理声明类型，此声明类型指示请求是否已通过 web 应用程序代理。 与 x ms 代理不同，insidecorporatenetwork 是一个布尔值，它指示从企业网络内部直接向联合身份验证服务发出的请求。  
 
 ### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-终结点绝对路径（活动 vs 被动）  
- 声明类型：`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
+ 声明类型： `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
 
  此声明类型可用于确定源自 "active" （胖）客户端的请求与 "被动" （基于 web 浏览器）客户端。 这样，就会阻止来自基于浏览器的应用程序（例如 Outlook Web 访问、SharePoint Online 或 Office 365 门户）的外部请求，同时会阻止来自丰富客户端（如 Microsoft Outlook）的请求。  
 
  声明的值是接收请求的 AD FS 服务的名称。  
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
  [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)

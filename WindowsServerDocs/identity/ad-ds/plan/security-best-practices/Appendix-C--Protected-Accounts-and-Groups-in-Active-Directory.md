@@ -16,11 +16,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408721"
 ---
-# <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附录 C：Active Directory 中的受保护帐户和组
+# <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附录 C：Active Directory 中受保护的帐户和组
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附录 C：Active Directory 中的受保护帐户和组
+## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附录 C：Active Directory 中受保护的帐户和组
 
 在 Active Directory 中，会将一组高度特权的帐户和组视为受保护的帐户和组。 使用 Active Directory 中的大多数对象，委派的管理员（已被委派管理 Active Directory 对象的权限的用户）可以更改对象的权限，包括更改权限以允许自身更改成员身份例如，组。  
 
@@ -53,7 +53,7 @@ ms.locfileid: "71408721"
 
 #### <a name="adminsdholder"></a>AdminSDHolder
 
-AdminSDHolder 对象的目的是为域中的受保护帐户和组提供 "模板" 权限。 AdminSDHolder 在每个 Active Directory 域的系统容器中自动创建为对象。 其路径为：**CN = AdminSDHolder，CN = System，DC = < domain_component >，DC = < domain_component >？。**  
+AdminSDHolder 对象的目的是为域中的受保护帐户和组提供 "模板" 权限。 AdminSDHolder 在每个 Active Directory 域的系统容器中自动创建为对象。 其路径为： **CN = AdminSDHolder，cn = System，DC = < domain_component >，dc = < domain_component >？。**  
 
 与管理员组拥有的 Active Directory 域中的大多数对象不同，AdminSDHolder 由域管理员组拥有。 默认情况下，EAs 可以更改任何域的 AdminSDHolder 对象，这与域的 Domain Admins 和 Administrators 组相同。 此外，尽管 AdminSDHolder 的默认所有者是域的 Domain Admins 组，但 Administrators 或 Enterprise Admins 的成员可以获得对象的所有权。  
 
@@ -88,11 +88,11 @@ SDProp 是在域控制器上每60分钟运行一次（默认情况下），该�
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)  
 
-4. 验证是否已成功连接，如 **Dn 所示：（RootDSE）**  在以下屏幕截图中，单击 "**连接**"，然后单击 "**绑定**"。  
+4. 验证是否已成功连接，如以下屏幕截图中的**Dn：（RootDSE）** 所示，单击 "**连接**"，然后单击 "**绑定**"。  
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)  
 
-5. 在 "**绑定**" 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。 （如果以该用户身份登录，则可以选择 "**绑定为**当前已登录的用户"。）单击“确定”。  
+5. 在 "**绑定**" 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。 （如果以该用户身份登录，则可以选择 "**绑定为**当前已登录的用户"。）单击 **"确定"** 。  
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_12.png)  
 
@@ -107,7 +107,7 @@ SDProp 是在域控制器上每60分钟运行一次（默认情况下），该�
 8. 在 "填充的修改" 对话框中，单击 "运行"，然后验证对 AdminSDHolder 对象所做的更改是否已出现在该对象上。  
 
 > [!NOTE]  
-> 有关修改 AdminSDHolder 以允许指定的无特权帐户修改受保护组的成员身份的信息，请参阅 [Appendix I：为 Active Directory @ no__t 中的受保护帐户和组创建管理帐户。  
+> 有关修改 AdminSDHolder 以允许指定的无特权帐户修改受保护组的成员身份的信息，请参阅[附录 I：在 Active Directory 中创建受保护帐户和组的管理帐户](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)。  
 
 如果希望通过 LDIFDE 或脚本手动运行 SDProp，可以按如下所示创建修改项：  
 
@@ -127,11 +127,11 @@ SDProp 是在域控制器上每60分钟运行一次（默认情况下），该�
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)  
 
-4. 验证是否已成功连接，如 **Dn 所示：（RootDSE）**  在以下屏幕截图中，单击 "**连接**"，然后单击 "**绑定**"。  
+4. 验证是否已成功连接，如以下屏幕截图中的**Dn：（RootDSE）** 所示，单击 "**连接**"，然后单击 "**绑定**"。  
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)  
 
-5. 在 "**绑定**" 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。 （如果以该用户身份登录，则可以选择 "**绑定为当前已登录的用户**"。）单击“确定”。  
+5. 在 "**绑定**" 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。 （如果以该用户身份登录，则可以选择 "**绑定为当前已登录的用户**"。）单击 **"确定"** 。  
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_19.gif)  
 

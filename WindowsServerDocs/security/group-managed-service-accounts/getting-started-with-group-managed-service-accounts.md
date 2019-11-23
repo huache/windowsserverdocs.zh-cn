@@ -58,12 +58,12 @@ ms.locfileid: "71386895"
 
 |主体|范围|支持的服务|密码管理|
 |-------|-----|-----------|------------|
-|Windows 系统的计算机帐户|Domain|限于一个加入域的服务器|计算机管理|
-|没有 Windows 系统的计算机帐户|Domain|任何加入域的服务器|无|
+|Windows 系统的计算机帐户|域|限于一个加入域的服务器|计算机管理|
+|没有 Windows 系统的计算机帐户|域|任何加入域的服务器|无|
 |虚拟帐户|本地|限于一台服务器|计算机管理|
-|Windows 7 独立托管服务帐户|Domain|限于一个加入域的服务器|计算机管理|
-|用户帐户|Domain|任何加入域的服务器|无|
-|组托管服务帐户|Domain|任何已加入域的 Windows Server 2012 服务器|域控制器管理，以及主机检索|
+|Windows 7 独立托管服务帐户|域|限于一个加入域的服务器|计算机管理|
+|用户帐户|域|任何加入域的服务器|无|
+|组托管服务帐户|域|任何已加入域的 Windows Server 2012 服务器|域控制器管理，以及主机检索|
 
 Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟帐户无法在多个系统之间进行共享。 如果你为服务器场上的服务配置一个帐户以进行共享，则除了 Windows 系统以外，还必须选择一个用户帐户或计算机帐户。 无论哪种方式，这些帐户不具有单点控制密码管理功能。 这样做会带来麻烦，因为每个组织需要创建一个昂贵的解决方案，以便更新 Active Directory 中服务的密钥，然后将密钥分发给这些服务的所有实例。
 
@@ -153,7 +153,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
 2.  在 Windows PowerShell 命令提示符下键入以下命令，然后按 ENTER。 （Active Directory 模块将自动加载。）
 
-    **Uninstall-adserviceaccount [-Name] <string>-DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < P a l [] >]-SamAccountName@no__t < string [] >**
+    **Uninstall-adserviceaccount [-Name] <string>-DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < 可为 Null [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < P a l [] >]-SamAccountName <string>-ServicePrincipalNames < string [] >**
 
     |参数|字符串|示例|
     |-------|-----|------|
@@ -282,7 +282,7 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 ## <a name="BKMK_DecommMemberHosts"></a>从现有服务器场解除成员主机的授权
 必须至少具有“域管理员”中的成员身份或能够将成员从安全组对象删除才能完成这些过程。
 
-### <a name="step-1-remove-member-host-from-gmsa"></a>第 1 步：从 gMSA 删除成员主机
+### <a name="step-1-remove-member-host-from-gmsa"></a>步骤 1：从 gMSA 删除成员主机
 如果使用安全组来管理成员主机，请使用以下方法之一从 gMSA 的成员主机所属的安全组中删除已解除授权成员主机的计算机帐户。
 
 -   方法 1：Active Directory 用户和计算机

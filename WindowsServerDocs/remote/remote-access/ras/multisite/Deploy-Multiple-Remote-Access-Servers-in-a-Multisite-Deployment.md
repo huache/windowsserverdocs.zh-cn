@@ -38,7 +38,7 @@ ms.locfileid: "71404493"
   
 必须在每个入口点上手动启用对运行 Windows 7 的客户端的支持，并且不支持选择这些客户端的入口点。  
   
-## <a name="prerequisites"></a>先决条件  
+## <a name="prerequisites"></a>必备条件  
 在开始部署此方案之前，请查看此列表以了解重要要求：  
   
 -   必须先部署[具有高级设置的单个 DirectAccess 服务器，](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)然后才能部署多站点部署。  
@@ -49,7 +49,7 @@ ms.locfileid: "71404493"
   
 -   必须部署公钥基础结构。  
   
-    有关详细信息，请参阅：@no__t 0Test 实验室指南微型模块：Windows Server 2012 的基本 PKI。 ](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
+    有关详细信息，请参阅： [测试实验室指南微型模块：用于 Windows Server 2012 的基本 PKI。](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
   
 -   企业网络必须已启用 IPv6。 如果你使用的是 ISATAP，应该将其删除并使用本机 IPv6。  
   
@@ -139,7 +139,7 @@ ms.locfileid: "71404493"
   
     如果客户端已经升级，则将客户端计算机移动到 Windows 8 安全组。  
   
--   使用 Windows PowerShell cmdlet **set-daentrypointdc**修改域控制器设置时，如果指定的 ComputerName 参数是远程访问服务器，而不是添加到多站点部署中的最后一个入口点，则会出现警告将显示，指示在下一次策略刷新之前，不会更新指定的服务器。 在**远程访问管理控制台**的**仪表板**中，可以使用 "**配置状态**" 查看未更新的实际服务器。 但这不会导致任何功能问题，但是，你可以在未更新的服务器上运行**gpupdate/force** ，以立即更新配置状态。  
+-   使用 Windows PowerShell cmdlet **set-daentrypointdc**修改域控制器设置时，如果指定的 ComputerName 参数是远程访问服务器，而不是添加到多站点部署中的最后一个入口点，则将显示一条警告，指示在下一次策略刷新之前，不会更新指定的服务器。 在**远程访问管理控制台**的**仪表板**中，可以使用 "**配置状态**" 查看未更新的实际服务器。 但这不会导致任何功能问题，但是，你可以在未更新的服务器上运行**gpupdate/force** ，以立即更新配置状态。  
   
 -   当多站点部署在仅支持 IPv4 的公司网络中时，更改内部网络 IPv6 前缀还会更改 DNS64 地址，但不会更新允许 DNS 查询到 DNS64 服务的防火墙规则上的地址。 若要解决此问题，请在更改内部网络 IPv6 前缀后运行以下 Windows PowerShell 命令：  
   
@@ -159,7 +159,7 @@ ms.locfileid: "71404493"
   
 -   如果在存在现有 ISATAP 基础结构时部署了 DirectAccess，则在删除作为 ISATAP 主机的入口点时，将从 NRPT 中所有 DNS 后缀的 DNS 服务器地址中删除 DNS64 服务的 IPv6 地址。  
   
-    若要解决此问题，请在 "**基础结构服务器设置**向导" 的 " **dns** " 页上，使用正确的 dns 服务器地址删除已修改的 DNS 后缀并再次添加它们，方法是在 dns 服务器地址上单击 "**检测**"对话框。  
+    若要解决此问题，请在 "**基础结构服务器设置**向导" 的 " **dns** " 页上，通过单击 " **dns 服务器地址**" 对话框中的 "**检测**"，删除已修改的 dns 后缀并使用正确的 DNS 服务器地址再次添加它们。  
   
 
 

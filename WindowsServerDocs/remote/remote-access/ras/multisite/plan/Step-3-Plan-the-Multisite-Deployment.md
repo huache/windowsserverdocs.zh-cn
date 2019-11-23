@@ -79,7 +79,7 @@ ms.locfileid: "71404455"
 3.  对于 "CRL 分发点" 字段，请使用连接到 intranet 的 DirectAccess 客户端可访问的 CRL 分发点。  
   
 ### <a name="322dns-for-the-network-location-server"></a>网络位置服务器的 3.2.2 DNS  
-如果将网络位置服务器托管在远程访问服务器上，则必须为部署中的每个入口点添加网络位置服务器网站的 DNS 条目。 请注意以下事项：  
+如果将网络位置服务器托管在远程访问服务器上，则必须为部署中的每个入口点添加网络位置服务器网站的 DNS 条目。 注意以下事项：  
   
 -   多站点部署中第一个网络位置服务器证书的使用者名称将用作所有入口点的网络位置服务器 URL，因此使用者名称和网络位置服务器 URL 不能与部署中的第一台远程访问服务器。 它必须是专用于网络位置服务器的 FQDN。  
   
@@ -162,11 +162,11 @@ ms.locfileid: "71404455"
   
    3. Teredo 前缀（可选）。 仅当在外部适配器上使用两个连续的公用 IPv4 地址配置远程访问服务器时，此前缀才适用。 前缀基于地址对的第一个公用 IPv4 地址。 例如，如果外部地址为：  
   
-      1. www\.xxx.yyy.zzz  
+      1. www\.xxx. yyy  
   
-      2. www\.xxx.yyy.zzz + 1  
+      2. www\.xxx. zzz + 1  
   
-      然后，要配置的 Teredo 前缀为2001：0： WWXX： YYZZ：：/64，其中 WWXX： YYZZ 是 IPv4 地址 www\.xxx.yyy.zzz 的十六进制表示形式。  
+      然后，要配置的 Teredo 前缀为2001：0： WWXX： YYZZ：：/64，其中 WWXX： YYZZ 是 IPv4 address www\.的十六进制表示形式。  
   
       请注意，可以使用以下脚本来计算 Teredo 前缀：  
   
@@ -190,7 +190,7 @@ ms.locfileid: "71404455"
 ### <a name="active-directory-site-specific-ipv6-prefixes"></a>Active Directory 特定于站点的 IPv6 前缀  
 当运行 Windows 10 或 Windows 8 的客户端计算机连接到入口点时，客户端计算机会立即与入口点的 Active Directory 站点相关联，并且配置了与入口点关联的 IPv6 前缀。 首选项是为了让客户端计算机使用这些 IPv6 前缀连接到资源，因为在连接到入口点时，它们的优先级较高。  
   
-如果你的组织使用带有特定于站点的 IPv6 前缀的 Active Directory 拓扑（例如，内部资源 FQDN app.corp.com 同时在每个位置使用特定于站点的 IP 地址托管在北美和欧洲），则不会配置此项使用远程访问控制台时，默认情况下不会为每个入口点配置站点特定的 IPv6 前缀。 如果确实要启用此可选方案，则需要将每个入口点配置为连接到特定入口点的客户端计算机应首选的特定 IPv6 前缀。 按如下所示执行此操作:  
+如果你的组织使用带有特定于站点的 IPv6 前缀的 Active Directory 拓扑（例如，内部资源 FQDN app.corp.com 同时在每个位置使用特定于站点的 IP 地址托管在北美和欧洲），则不会配置此项使用远程访问控制台时，默认情况下不会为每个入口点配置站点特定的 IPv6 前缀。 如果确实要启用此可选方案，则需要将每个入口点配置为连接到特定入口点的客户端计算机应首选的特定 IPv6 前缀。 按如下所示执行此操作：  
   
 1.  对于 Windows 10 或 Windows 8 客户端计算机使用的每个 GPO，请运行 DAEntryPointTableItem PowerShell cmdlet  
   
@@ -247,7 +247,7 @@ ms.locfileid: "71404455"
     > [!NOTE]  
     > 在同时安装其他 DirectAccess 部署时，请确保没有两个入口点共享相同的客户端前缀。  
     >   
-    > 如果使用入门向导或 cmdlet @no__t 安装 DirectAccess，远程访问会自动将部署中第一个入口点的客户端前缀设置为 < IPv6 子网 @ no__t-1prefix >：1000：：/64。 如果需要，必须更改前缀。  
+    > 如果使用入门向导或 cmdlet `Install-RemoteAccess`安装 DirectAccess，远程访问会自动将部署中第一个入口点的客户端前缀设置为 < IPv6 子网的默认值\_前缀 >：1000：：/64。 如果需要，必须更改前缀。  
   
 2.  从第一个部署中删除所选的客户端安全组。  
   
@@ -270,7 +270,7 @@ ms.locfileid: "71404455"
   
     -   IP 地址：：：1  
   
-    -   键入：AAAA  
+    -   类型： AAAA  
   
   
   

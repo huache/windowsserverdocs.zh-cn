@@ -17,7 +17,7 @@ ms.locfileid: "71393727"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>在独立服务器上部署存储空间
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 本主题介绍如何在独立服务器上部署存储空间。 有关如何创建群集存储空间的信息，请参阅[在 Windows Server 2012 R2 上部署存储空间群集](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>)。
 
@@ -34,19 +34,19 @@ ms.locfileid: "71393727"
 
 ![存储空间工作流](media/deploy-standalone-storage-spaces/storage-spaces-workflow.png)
 
-**图 1：存储空间工作流 @ no__t-0
+**图1：存储空间工作流**
 
 >[!NOTE]
 >此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要在独立的基于 Windows Server 2012 的服务器上使用存储空间，请确保要使用的物理磁盘满足以下先决条件。
 
 > [!IMPORTANT]
 > 若要了解如何在故障转移群集上部署存储空间，请参阅[在 Windows Server 2012 R2 上部署存储空间群集](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>)。 故障转移群集部署具有不同的先决条件，如受支持的磁盘总线类型、受支持的复原类型和所需的最小磁盘数目。
 
-|区域|要求|说明|
+|领域|要求|注释|
 |---|---|---|
 |磁盘总线类型|-串行连接 SCSI （SAS）<br>-串行高级技术附件（SATA）<br>-iSCSI 和光纤通道控制器。 |你还可以使用 USB 驱动器。 但是，在服务器环境中使用 USB 驱动器并不是最佳做法。<br>只要 iSCSI 和光纤通道（FC）控制器上创建的虚拟磁盘是不可复原的（具有任意数量的列），就支持存储空间。<br>|
 |磁盘配置|-物理磁盘必须至少为 4 GB<br>-磁盘必须为空，并且未格式化。 不要创建卷。||
@@ -61,7 +61,7 @@ ms.locfileid: "71393727"
 |**制作**<br><br>-跨物理磁盘集存储两个或三个数据副本<br>-提高了可靠性，但降低了容量。 每次写入时出现重复。 镜像空间还在多个物理驱动器上条带化数据。<br>-比奇偶校验更大的数据吞吐量和较低的访问延迟<br>-使用脏区域跟踪（DRT）来跟踪池中的磁盘修改。 当系统从计划外的关机恢复并且空间重新联机时，DRT 使磁盘中的池彼此保持一致。|需要至少两个物理磁盘，以防止单个磁盘故障。<br><br>需要至少五个物理磁盘，以防止两个磁盘同时发生故障。|在大多数部署中使用。 例如，镜像空间适合一般用途的文件共享或虚拟硬盘 (VHD) 库。|
 |**性**<br><br>-跨物理磁盘条带化数据和奇偶校验信息<br>-与简单空间比较时，可提高可靠性，但在一定程度上减少容量<br>-通过日志记录增加复原能力。 这有助于防止在发生计划外关机时损坏数据。|要求至少三个物理磁盘，以防止单个磁盘故障。|用于具有高度序列化的工作负载，如存档或备份。|
 
-## <a name="step-1-create-a-storage-pool"></a>第 1 步：创建存储池
+## <a name="step-1-create-a-storage-pool"></a>步骤 1：创建存储池
 
 你必须首先将可用的物理磁盘分组到一个或多个存储池中。
 
@@ -215,7 +215,7 @@ New-VirtualDisk –StoragePoolFriendlyName StoragePool1 –FriendlyName VirtualD
 New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1 -ResiliencySettingName Mirror -NumberOfDataCopies 3 -Size 20GB -ProvisioningType Fixed
 ```
 
-## <a name="step-3-create-a-volume"></a>步骤 3:创建卷
+## <a name="step-3-create-a-volume"></a>步骤 3：创建卷
 
 接下来，你必须从虚拟磁盘创建卷。 可以分配一个可选的驱动器号或文件夹，然后使用文件系统格式化卷。
 

@@ -22,7 +22,7 @@ ms.locfileid: "71374360"
 ---
 # <a name="logman-update-cfg"></a>logman 更新 cfg
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更新现有配置数据收集器的属性。  
 
@@ -30,7 +30,7 @@ ms.locfileid: "71374360"
 ```  
 logman update cfg <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>参数  
 
 |                    参数                     |                                                                               描述                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,7 +39,7 @@ logman update cfg <[-n] <name>> [options]
 |                 -config <value>                  |                                                         指定包含命令选项的设置文件。                                                         |
 |                   [-n] <name>                    |                                                                       目标对象的名称。                                                                        |
 | -f < bin&#124;bincirc&#124;csv&#124;tsv&#124;sql > |                                                            指定数据收集器的日志格式。                                                             |
-|             -[-] u < user [password] >              | 指定要以其身份运行的用户。 输入密码 @no__t 0 会生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
+|             -[-] u < user [password] >              | 指定要以其身份运行的用户。 输入密码 \* 会生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
 |    -m < [start] [stop] [[start] [stop] [...]]>    |                                                更改为手动启动或停止，而不是计划的开始或结束时间。                                                 |
 |                -rf < [[hh：] mm：] ss >                |                                                        在指定的时间段内运行数据收集器。                                                         |
 |        -b < M/d/yyyy h:mm： ss [AM&#124;PM] >         |                                                              开始在指定时间收集数据。                                                               |
@@ -62,7 +62,7 @@ logman update cfg <[-n] <name>> [options]
 ## <a name="remarks"></a>备注  
 其中列出了 [-]，额外-会对选项求反。  
 ## <a name="BKMK_examples"></a>示例  
-以下命令将更新现有配置数据收集器 cfg_log，以收集注册表项 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion @ no__t。  
+以下命令将更新现有配置数据收集器 cfg_log，以收集 HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\Currentverion\\的注册表项。  
 ```  
 logman update cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\"  
 ```  

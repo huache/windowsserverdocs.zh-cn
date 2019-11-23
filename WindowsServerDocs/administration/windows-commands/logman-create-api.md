@@ -22,7 +22,7 @@ ms.locfileid: "71374599"
 ---
 # <a name="logman-create-api"></a>logman 创建 api
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 创建 API 跟踪数据收集器。  
 
@@ -30,7 +30,7 @@ ms.locfileid: "71374599"
 ```  
 logman create api <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>参数  
 
 |                    参数                     |                                                                               描述                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,7 +39,7 @@ logman create api <[-n] <name>> [options]
 |                 -config <value>                  |                                                         指定包含命令选项的设置文件。                                                         |
 |                   [-n] <name>                    |                                                                       目标对象的名称。                                                                        |
 | -f < bin&#124;bincirc&#124;csv&#124;tsv&#124;sql > |                                                            指定数据收集器的日志格式。                                                             |
-|             -[-] u < user [password] >              | 指定要以其身份运行的用户。 输入密码 @no__t 0 会生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
+|             -[-] u < user [password] >              | 指定要以其身份运行的用户。 输入密码 \* 会生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
 |    -m < [start] [stop] [[start] [stop] [...]]>    |                                                更改为手动启动或停止，而不是计划的开始或结束时间。                                                 |
 |                -rf < [[hh：] mm：] ss >                |                                                        在指定的时间段内运行数据收集器。                                                         |
 |        -b < M/d/yyyy h:mm： ss [AM&#124;PM] >         |                                                              开始在指定时间收集数据。                                                               |
@@ -64,15 +64,15 @@ logman create api <[-n] <name>> [options]
 ## <a name="remarks"></a>备注  
 其中列出了 [-]，额外-会对选项求反。  
 ## <a name="BKMK_examples"></a>示例  
-以下命令为可执行文件 c:\windows\notepad.exe 创建名为 trace_notepad 的 API 跟踪计数器，并将结果输出到文件 c:\notepad.etl。  
+以下命令为可执行文件 c:\windows\notepad.exe 创建一个名为 trace_notepad 的 API 跟踪计数器，并将结果输出到 c:\notepad.etl. 文件中。  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -o c:\notepad.etl  
 ```  
-下面的命令为可执行文件创建一个名为 trace_notepad 的 API 跟踪计数器，c:\windows\notepad.exe 收集模块生成的值 c:\windows\system32\advapi32.dll。  
+下面的命令为可执行文件 c:\windows\notepad.exe 创建一个名为 trace_notepad 的 API 跟踪计数器，该计数器收集由模块生成的值 c:\windows\system32\advapi32.dll。  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -mods c:\windows\system32\advapi32.dll  
 ```  
-以下命令为可执行文件创建一个名为 trace_notepad 的 API 跟踪计数器，c:\windows\notepad.exe 排除模块 kernel32.dll 生成的 API 调用 TlsGetValue。  
+下面的命令为可执行文件 c:\windows\notepad.exe 创建一个名为 trace_notepad 的 API 跟踪计数器，该计数器不包括由模块 kernel32.dll 生成的 API 调用 TlsGetValue。  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue  
 ```  

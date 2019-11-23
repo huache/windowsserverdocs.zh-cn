@@ -17,7 +17,7 @@ ms.locfileid: "71402970"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>使用共享存储拉伸群集复制
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+>适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 在此评估示例中，将在单个拉伸群集中配置这些计算机及其存储，其中两个节点共享一组存储，两个节点共享另一组存储，然后复制保持两组存储在群集中进行镜像，以允许立即故障转移。 这些节点及其存储应位于单独的物理站点（尽管这不是必需的）。 将 Hyper-V 和文件服务器群集创建为示例方案具有单独的步骤。  
 
@@ -36,9 +36,9 @@ ms.locfileid: "71402970"
 
 ![图示显示 Redmond 的两个节点，这两个节点复制了 Bellevue 站点中同一个群集的两个节点](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-@NO__T 0FIGURE 1：Stretch 群集中的存储复制 @ no__t-0  
+**图1： stretch 群集中的存储复制**  
 
-## <a name="prerequisites"></a>先决条件  
+## <a name="prerequisites"></a>必备条件  
 -   Active Directory 域服务林（无需运行 Windows Server 2016）。  
 -   2-64 运行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition 的服务器。 如果你运行的是 Windows Server 2019，则可以改为使用标准版，如果你只是复制一个最大为 2 TB 的卷。 
 -   两组共享存储，使用 SAS JBOD（例如与存储空间配合使用）、光纤通道 SAN、共享 VHDX 或 iSCSI 目标。 存储应包含 HDD 和 SSD 媒体的组合，且必须支持永久保留。 使每个存储集仅对两台服务器可用（非对称）。  
@@ -114,7 +114,7 @@ ms.locfileid: "71402970"
 
         1.  确保每组配对的服务器节点只能看到该站点的存储机箱（即非对称存储），且 SAS 连接已正确配置。  
 
-        2.  使用 Windows PowerShell 或服务器管理器，按照[在独立服务器上部署存储空间](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的**步骤 1 至 3** 使用存储空间来配置存储。  
+        2.  使用 Windows PowerShell 或服务器管理器，按照**在独立服务器上部署存储空间**中提供的[步骤 1 至 3](../storage-spaces/deploy-standalone-storage-spaces.md) 使用存储空间来配置存储。  
 
     -   **对于 iSCSI 存储：**  
 
@@ -189,7 +189,7 @@ ms.locfileid: "71402970"
            Test-SRTopology -SourceComputerName SR-SRV01 -SourceVolumeName D: -SourceLogVolumeName E: -DestinationComputerName SR-SRV03 -DestinationVolumeName D: -DestinationLogVolumeName E: -DurationInMinutes 30 -ResultPath c:\temp        
 
       > [!IMPORTANT]
-      > 在评估期间，当在指定源卷上使用无写入 IO 负载的测试服务器时，请考虑添加工作负载，否则 Test-SRTopology 将不会生成有用的报表。 你应该使用与生产类似的工作负载进行测试，以便看到真实的数值和建议的日志大小。 或者，只需在测试期间将一些文件复制到源卷或下载并运行 DISKSPD 以生成写入 IO。 例如，D: 卷的十分钟的较低写入 IO 工作负荷：   
+      > 在评估期间，当在指定源卷上使用无写入 IO 负载的测试服务器时，请考虑添加工作负载，否则 Test-SRTopology 将不会生成有用的报表。 你应该使用与生产类似的工作负载进行测试，以便看到真实的数值和建议的日志大小。 或者，只需在测试期间将一些文件复制到源卷或下载并运行 DISKSPD 以生成写入 IO。 例如，D: 卷的十分钟的较低写入 IO 工作负载：   
        `Diskspd.exe -c1g -d600 -W5 -C5 -b4k -t2 -o2 -r -w5 -i100 d:\test.dat`  
 
 10. 检查 **TestSrTopologyReport-&lt; date &gt;.html** 报表以确保满足存储副本要求，并记下初始同步时间预测和日志建议。  
@@ -220,7 +220,7 @@ ms.locfileid: "71402970"
 
 14. **（可选）** 配置群集网络和 Active Directory 以用于更快的 DNS 站点故障转移。 可以利用 Hyper-V 软件定义的网络、拉伸的 VLAN、网络抽象设备、降低的 DNS TTL 和其他常用技术。
 
-    有关详细信息，请查看 Microsoft Ignite 会话：延伸[故障转移群集和使用 Windows Server vNext 中的存储副本](http://channel9.msdn.com/Events/Ignite/2015/BRK3487)和在[站点之间启用更改通知-如何和为什么？](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)博客文章。  
+    有关详细信息，请查看 Microsoft Ignite 会话：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487)（在 Windows Server vNext 中拉伸故障转移群集和使用存储副本），以及 [Enable Change Notifications between Sites - How and Why?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)（在站点间启用更改通知 - 操作方法和原因）博客文章。  
 
 15. **（可选）** 配置 VM 复原，以使来宾无需在节点失败时暂停过久。 相反，他们在 10 秒内故障转移到新的复制源存储。  
 
@@ -287,7 +287,7 @@ ms.locfileid: "71402970"
 
 9. **（可选）** 配置群集网络和 Active Directory 以用于更快的 DNS 站点故障转移。 可以利用 Hyper-V 软件定义的网络、拉伸的 VLAN、网络抽象设备、降低的 DNS TTL 和其他常用技术。  
 
-   有关详细信息，请查看 Microsoft Ignite 会话：[使用 Windows Server vNext 中的存储副本拉伸故障转移群集](http://channel9.msdn.com/Events/Ignite/2015/BRK3487)和[启用更改通知，并在站点之间启用更改通知](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)。  
+   有关详细信息，请查看 Microsoft Ignite 会话：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487)（在 Windows Server vNext 中拉伸故障转移群集和使用存储副本），以及 [Enable Change Notifications between Sites - How and Why?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)（在站点间启用更改通知 - 操作方法和原因）。  
 
 10. **（可选）** 配置 VM 复原，以使来宾无需在节点失败时暂停时间过长。 相反，他们在 10 秒内故障转移到新的复制源存储。  
 
@@ -330,7 +330,7 @@ ms.locfileid: "71402970"
     >[!NOTE]
     > 在继续下一步骤前，必须在所有节点上都安装文件服务器角色。   |  
 
-7. 在“**角色**”下，单击“**配置角色**”。 查看“**开始之前**”，然后单击“**下一步**”。  
+7. 在**角色**下，单击**配置角色**。 查看“**开始之前**”，然后单击“**下一步**”。  
 
 8. 选择“**文件服务器**”，然后单击“**下一步**”。  
 
@@ -344,7 +344,7 @@ ms.locfileid: "71402970"
 
 13. 右键单击你的新文件服务器角色，然后单击“**添加文件共享**”。 继续执行向导以配置共享。  
 
-14. 可选：添加另一个使用此站点中的其他存储的文件服务器角色。  
+14. 可选：在该站点中添加使用其他存储的其他文件服务器角色。  
 
 15. 配置拉伸群集站点感知以便服务器 SR-SRV01 和 SR-SRV02 处于站点 Redmond 中，而 SR-SRV03 和 SR-SRV04 处于站点 Bellevue 中，且 Redmond 对源存储和 VM的节点所有权是首选项：  
 
@@ -459,7 +459,7 @@ ms.locfileid: "71402970"
 
 6.  如果目标卷不包含来自源服务器的数据的以前副本，则将“**覆盖卷**”值保留为“**覆盖目标卷**”。 如果目标的确包含类似数据，则从近期备份或以前的复制中，选择“**种子目标磁盘**”，然后单击“**下一步**”。  
 
-7.  若计划使用零 RPO 复制，则将“**复制模式**”值保留为“**同步复制**”。 如果计划在主站点节点上的更高延迟网络拉伸群集或需要更低的 IO 延迟，则将其更改为“**异步复制**”。  
+7.  若计划使用零 RPO 复制，则将**复制模式**值保留为**同步复制**。 如果计划在主站点节点上的更高延迟网络拉伸群集或需要更低的 IO 延迟，则将其更改为“**异步复制**”。  
 8.  如果并未计划稍后在复制组中使用写入顺序和额外的磁盘对，则将“**一致性组**”值保留为“**最高性能**”。 如果计划向此复制组添加更多磁盘且需要保证的写入顺序，请选择“**启用写入顺序**”，然后单击“**下一步**”。  
 
 9.  单击“**下一步**”以配置复制和拉伸群集结构。  
@@ -470,7 +470,7 @@ ms.locfileid: "71402970"
 
 11. 此时，已配置群集的两个部分之间的存储副本合作关系，但复制正在进行。 有多种方法可以通过图形工具查看复制状态。  
 
-    1.  使用“**复制角色**”列和“**复制**”选项卡。完成初始同步后，源和目标磁盘的复制状态将为“**连续复制**”。   
+    1.  使用**复制角色**列和**复制**选项卡。完成初始同步后，源和目标磁盘的复制状态将为**连续复制**。   
 
         ![屏幕显示故障转移群集管理器中磁盘的“复制”选项卡](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_ReplicationDetails2.png)  
 
@@ -478,7 +478,7 @@ ms.locfileid: "71402970"
 
         1.  在源服务器上，导航到**应用程序和服务 \ Microsoft \ Windows \ StorageReplica \ 管理员**并检查事件 5015、5002、5004、1237、5001 和 2200。  
 
-        2.  在目标服务器上，导航到**应用程序和服务 \ Microsoft \ Windows \ StorageReplica \ 操作**并等待事件 1215。 此事件会显示复制的字节数和所用的时间。 例如：  
+        2.  在目标服务器上，导航到**应用程序和服务 \ Microsoft \ Windows \ StorageReplica \ 操作**并等待事件 1215。 此事件会显示复制的字节数和所用的时间。 示例：  
 
             ```  
             Log Name:      Microsoft-Windows-StorageReplica/Operational  
@@ -578,7 +578,7 @@ ms.locfileid: "71402970"
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20  
         ```  
 
-    2.  在目标服务器上，运行以下命令以查看显示合作关系创建的存储副本事件。 此事件会显示复制的字节数和所用的时间。 例如：  
+    2.  在目标服务器上，运行以下命令以查看显示合作关系创建的存储副本事件。 此事件会显示复制的字节数和所用的时间。 示例：  
 
             Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | fl  
 
@@ -699,23 +699,23 @@ ms.locfileid: "71402970"
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of requests for last log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Flush Queue Length  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Current Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of Application Write Requests  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Number of requests per log write  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Number of requests per log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Write Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Write Latency  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Read Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Read Latency  
 
     -   \Storage Replica Statistics(*)\Target RPO  
 
     -   \Storage Replica Statistics(*)\Current RPO  
 
-    -   \Storage Replica Statistics(*)\Avg.Log Queue Length  
+    -   \Storage Replica Statistics(*)\Avg. Log Queue Length  
 
     -   \Storage Replica Statistics(*)\Current Log Queue Length  
 
@@ -723,11 +723,11 @@ ms.locfileid: "71402970"
 
     -   \Storage Replica Statistics(*)\Total Bytes Sent  
 
-    -   \Storage Replica Statistics(*)\Avg.Network Send Latency  
+    -   \Storage Replica Statistics(*)\Avg. Network Send Latency  
 
     -   \Storage Replica Statistics(*)\Replication State  
 
-    -   \Storage Replica Statistics(*)\Avg.Message Round Trip Latency  
+    -   \Storage Replica Statistics(*)\Avg. Message Round Trip Latency  
 
     -   \Storage Replica Statistics(*)\Last Recovery Elapsed Time  
 
@@ -797,8 +797,8 @@ ms.locfileid: "71402970"
 - [服务器到服务器存储复制](server-to-server-storage-replication.md)  
 - [群集到群集存储复制](cluster-to-cluster-storage-replication.md)  
 - [存储副本：已知问题](storage-replica-known-issues.md) 
-- [存储副本：常见问题解答](storage-replica-frequently-asked-questions.md)  
+- [存储副本：常见问题](storage-replica-frequently-asked-questions.md)  
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Windows Server 2016 中的存储空间直通](../storage-spaces/storage-spaces-direct-overview.md)

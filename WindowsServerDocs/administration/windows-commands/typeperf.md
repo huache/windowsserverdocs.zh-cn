@@ -37,34 +37,34 @@ typeperf -q [object] [options]
 typeperf -qx [object] [options]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
 |\<counter [counter [...]]>|指定要监视的性能计数器。|
 
 > [!NOTE]
-> **\<counter >** 是 *\\ @ no__t-4Computer\Object （实例） \Counter*格式的性能计数器的完整名称，例如 **\\ @ no__t-7Server1\Processor （0） @no__t 8 个用户时间**。
+> **\<counter >** 是 *\\\\Computer\Object （实例） \Counter*格式的性能计数器的完整名称，例如\\的**用户时间 \\\% Server1\Processor （0）** 。
 
 ## <a name="options"></a>选项
 
-|                   Option                   |                                                         描述                                                          |
+|                   选项                   |                                                         描述                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               显示区分上下文的帮助。                                               |
-| -f \<CSV @ no__t-1TSV @ no__t-2BIN @ no__t-3SQL > |                                    指定输出文件格式。 默认值为 CSV。                                     |
-|              -cf \<filename >               |              指定一个文件，其中包含要监视的性能计数器的列表，每行一个计数器。               |
+| -f \<CSV&verbar;TSV&verbar;BIN&verbar;SQL > |                                    指定输出文件格式。 默认值为 CSV。                                     |
+|              -cf \<文件名 >               |              指定一个文件，其中包含要监视的性能计数器的列表，每行一个计数器。               |
 |             -si < [[hh：] mm：] ss >             |                                  指定采样间隔。 默认值为1秒。                                   |
-|               -o \<filename >               |     指定输出文件或 SQL 数据库的路径。 默认值为 STDOUT （写入到 "命令" 窗口）。      |
-|                -q [对象]                 | 显示已安装的计数器（无实例）的列表。 若要列出一个对象的计数器，请包括对象名称。 \* @ NO__T-1 @ NO__T-2EXAMPLE |
+|               -o \<文件名 >               |     指定输出文件或 SQL 数据库的路径。 默认值为 STDOUT （写入到 "命令" 窗口）。      |
+|                -q [对象]                 | 显示已安装的计数器（无实例）的列表。 若要列出一个对象的计数器，请包括对象名称。 \*\*\*示例 |
 |                -qx [对象]                |        显示包含实例的已安装计数器列表。 若要列出一个对象的计数器，请包括对象名称。        |
-|               -sc \<samples >               |             指定要收集的样本数。 默认情况下，在按下 CTRL + C 之前，将收集数据。              |
-|            -config \<filename >             |                                    指定包含命令选项的设置文件。                                     |
+|               -sc \<示例 >               |             指定要收集的样本数。 默认情况下，在按下 CTRL + C 之前，将收集数据。              |
+|            -config \<文件名 >             |                                    指定包含命令选项的设置文件。                                     |
 |            -s \<computer_name >             |                   指定要监视的远程计算机是否在计数器路径中指定了计算机。                    |
 |                     -y                     |                                        在不提示的情况下回答 "是"。                                        |
 
 ## <a name="BKMK_EXAMPLES"></a>示例
 
-- 下面的示例将本地计算机的性能计数器的值 **\\ @ no__t-query-store-process-2processor （_total） \% Processor Time**写入命令窗口，默认示例间隔为1秒，直到按下 CTRL + C。  
+- 下面的示例将本地计算机性能计数器的值 **\\\\processor （_Total）\% 处理器时间**，以默认采样间隔1秒，直到按下 CTRL + C。  
   ```
   typeperf "\Processor(_Total)\% Processor Time"
   ```  

@@ -27,7 +27,7 @@ ms.locfileid: "71406169"
 > -   [DNS 客户端中的新增功能](What-s-New-in-DNS-Client.md)  
 > -   [DNS 服务器中的新增功能](What-s-New-in-DNS-Server.md)  
 > -   [DNS 策略方案指南](deploy/DNS-Policy-Scenario-Guide.md)  
-> -   视频：[Windows Server 2016：IPAM @ no__t 中的 DNS 管理  
+> -   视频： [Windows Server 2016： IPAM 中的 DNS 管理](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  
   
 在 Windows Server 2016 中，DNS 是可以使用服务器管理器或 Windows PowerShell 命令安装的服务器角色。 如果要安装新的 Active Directory 林和域，则 DNS 会自动安装 Active Directory 作为林和域的全局目录服务器。  
   

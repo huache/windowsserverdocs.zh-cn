@@ -53,7 +53,7 @@ ms.locfileid: "71404915"
   
 7.  在“安装进度”对话框中，验证安装是否成功，然后单击“关闭”。  
   
-@no__t 0Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 以下 Windows PowerShell cmdlet 或 cmdlet 安装远程访问角色： 
 
@@ -90,7 +90,7 @@ ms.locfileid: "71404915"
   
 3.  单击 **“仅部署 DirectAccess”** 。  
   
-4.  选择网络配置拓扑，并键入远程访问客户端将连接到的公用名称。 单击“下一步”。  
+4.  选择网络配置拓扑，并键入远程访问客户端将连接到的公用名称。 单击**下一步**。  
   
     > [!NOTE]  
     > 默认情况下，通过将 WMI 筛选器应用到客户端设置 GPO，开始向导将 DirectAccess 部署到域中所有便携式计算机和笔记本计算机。  
@@ -121,7 +121,7 @@ ms.locfileid: "71404915"
   
 ## <a name="BKMK_Links"></a>上一步  
   
--   [步骤 1：配置 DirectAccess 基础结构](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
+-   [步骤1：配置 DirectAccess 基础结构](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   
 ## <a name="next-step"></a>下一步  
   

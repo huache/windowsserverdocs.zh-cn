@@ -23,13 +23,13 @@ ms.locfileid: "71405835"
 本主题提供有关如何使用服务器管理器安装网络控制器服务器角色的说明。
 
 >[!IMPORTANT]
->不要将网络控制器服务器角色部署到物理主机上。 若要部署网络控制器，必须在安装在 Hyper-v 主机上的 Hyper-v 虚拟机 \(VM @ no__t-1 上安装网络控制器服务器角色。 在三个不同的 no__t 主机上的虚拟机上安装了网络控制器之后，必须通过使用 Windows PowerShell 将主机添加到网络控制器，为软件定义的网络启用超级 @ no__t-1V 主机 \(SDN @ no__t**NetworkControllerServer**命令。 这样做会使 SDN 软件负载均衡器正常工作。 有关详细信息，请参阅[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
+>不要将网络控制器服务器角色部署到物理主机上。 若要部署网络控制器，必须在安装在 Hyper-v 主机上 \(VM\) 上的 Hyper-v 虚拟机上安装网络控制器服务器角色。 在三个不同的\-Hyper-v 主机上的虚拟机上安装了网络控制器之后，必须通过使用 Windows PowerShell 命令**NetworkControllerServer**将主机添加到网络控制器，为软件定义的网络 \(SDN\) 启用\-hyper-v 主机。 这样做会使 SDN 软件负载均衡器正常工作。 有关详细信息，请参阅[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
   
 安装网络控制器之后，必须使用 Windows PowerShell 命令来配置其他网络控制器。 有关详细信息，请参阅[使用 Windows PowerShell 部署网络控制器](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)。  
   
 ### <a name="to-install-network-controller"></a>安装网络控制器  
   
-1.  在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 "添加角色和功能向导" 将打开。 单击“下一步”。  
+1.  在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 "添加角色和功能向导" 将打开。 单击**下一步**。  
   
 2.  在 "**选择安装类型**" 中，保留默认设置，然后单击 "**下一步**"。  
   
@@ -63,7 +63,7 @@ ms.locfileid: "71405835"
   
     ![服务器管理器](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/nc_013.jpg)  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [网络控制器](Network-Controller.md)  
   
 

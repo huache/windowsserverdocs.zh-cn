@@ -16,11 +16,11 @@ ms.locfileid: "71386547"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>安装受信任的 TPM 根证书
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 将 HGS 配置为使用 TPM 证明时，还需要将 HGS 配置为信任服务器中 Tpm 的供应商。
 这一额外的验证过程仅确保可信 Tpm 可以通过您的 HGS 证明。
-如果尝试注册 `Add-HgsAttestationTpmHost` 的不受信任的 TPM，你将收到一条错误消息，指示 TPM 供应商不受信任。
+如果尝试将不受信任的 TPM 注册到 `Add-HgsAttestationTpmHost`，将收到一条错误消息，指示 TPM 供应商不受信任。
 
 要信任你的 Tpm，需要在 HGS 上安装用于签署服务器 Tpm 中认可密钥的根和中间签名证书。
 如果在数据中心中使用多个 TPM 模型，则可能需要为每个模型安装不同的证书。
@@ -35,7 +35,7 @@ HGS 将在 "TrustedTPM_RootCA" 和 "TrustedTPM_IntermediateCA" 证书存储中�
 
 在**每个 HGS 服务器**上重复以下步骤：
 
-1.  从[@no__t](https://go.microsoft.com/fwlink/?linkid=2097925)下载最新的包。
+1.  从[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)下载最新的包。
 
 2.  验证 cab 文件的签名，以确保其真实性。 如果签名无效，请不要继续操作。
 

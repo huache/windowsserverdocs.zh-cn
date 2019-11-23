@@ -19,7 +19,7 @@ ms.locfileid: "71366270"
 ---
 # <a name="configure-virtual-machines-running-windows-7-with-no-more-than-4-virtual-processors"></a>配置运行 Windows 7 且不超过4个虚拟处理器的虚拟机
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71366270"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|Error|  
+|**Severity**|错误|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  
@@ -38,7 +38,7 @@ ms.locfileid: "71366270"
 ## <a name="impact"></a>**对**  
 *Microsoft 不支持以下虚拟机的配置：*  
   
-@no__t-虚拟机的 0list >  
+虚拟机 \<列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
 *关闭虚拟机，并删除一个或多个虚拟处理器。*  

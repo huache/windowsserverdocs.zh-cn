@@ -91,11 +91,11 @@ Dcpromo.exe 保留在 Windows Server 2012 中，仅用于命令行无人参与�
 > [!IMPORTANT]
 > Dcpromo.exe 不再包括图形向导，并且不再安装角色或功能二进制文件。 尝试从资源管理器外壳程序运行 Dcpromo.exe 时将返回：  
 > 
-> "Active Directory 域服务安装向导重定位到服务器管理器中。 有关详细信息，请参阅 <https://go.microsoft.com/fwlink/?LinkId=220921> "。  
+> "Active Directory 域服务安装向导重定位到服务器管理器中。 有关详细信息，请参阅 <https://go.microsoft.com/fwlink/?LinkId=220921>。  
 > 
 > 尝试运行 Dcpromo.exe /unattend 仍然可安装二进制文件，和之前的操作系统一样，但会发出警告：  
 > 
-> "Dcpromo 无人参与操作由 Windows PowerShell 的 ADDSDeployment 模块替换。 有关详细信息，请参阅 <https://go.microsoft.com/fwlink/?LinkId=220924> "。  
+> "Dcpromo 无人参与操作由 Windows PowerShell 的 ADDSDeployment 模块替换。 有关详细信息，请参阅 <https://go.microsoft.com/fwlink/?LinkId=220924>。  
 > 
 > Windows Server 2012 弃用 dcpromo.exe，而且它将不包括在 Windows 的将来版本中，也不会在此操作系统中得到进一步增强。 管理员应停止使用它，并切换到支持的 Windows PowerShell 模块（如果他们希望从命令行创建域控制器）。  
   
@@ -242,7 +242,7 @@ Active Directory 域服务角色删除与安装不同，因为它在完成之前
 有关有效域名的详细信息，请参阅知识库文章 [Active Directory 中计算机、域、站点和 OU 的命名约定](https://support.microsoft.com/kb/909264)。  
   
 > [!WARNING]  
-> 不要使用与外部 DNS 名称相同的名称创建新的 Active Directory 林。 例如，如果 Internet DNS URL http://contoso.com ，则必须为内部林选择不同的名称，以避免将来出现兼容性问题。 此名称应该是唯一的且不会产生 Web 流量。 例如：corp.contoso.com。  
+> 不要使用与外部 DNS 名称相同的名称创建新的 Active Directory 林。 例如，如果 http://contoso.comInternet DNS URL，则必须为内部林选择不同的名称，以避免将来出现兼容性问题。 此名称应该是唯一的且不会产生 Web 流量。 例如：corp.contoso.com。  
   
 新的林不需要用于域管理员帐户的新凭据。 域控制器升级进程使用内置管理员帐户的凭据，该帐户来自用于创建目录林根的第一个域控制器。 没有任何方法（默认情况下）可禁用或排除内置管理员帐户，如果其他管理域帐户不可用，它可能是林的唯一入口点。 在部署新林前知道密码至关重要。  
   
@@ -568,12 +568,12 @@ ADDSDeployment cmdlet 提供其他选项以跳过 DNS 客户端设置、转发�
 > [!WARNING]  
 > 不建议重写重新启动。 域控制器必须重新启动才能正常工作。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [Active Directory 域服务（TechNet 门户）](https://technet.microsoft.com/library/cc770946(WS.10).aspx)  
 [Windows Server 2008 R2 的 Active Directory 域服务](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
 [Windows Server 2008 的 Active Directory 域服务](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
 [Windows Server 技术参考（Windows Server 2003）](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
-@no__t 0Active Directory 管理中心：入门（Windows Server 2008 R2） ](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
+[Active Directory 管理中心：入门（Windows Server 2008 R2）](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
 [Active Directory Windows PowerShell 管理（Windows Server 2008 R2）](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
 [询问目录服务团队（官方 Microsoft 商业技术支持博客）](http://blogs.technet.com/b/askds)  
   

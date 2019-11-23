@@ -22,9 +22,9 @@ ms.locfileid: "71378417"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-通过执行以下操作，检查分布式文件系统 \(DFS @ no__t 命名空间的配置：  
+通过执行以下操作，检查分布式文件系统 \(DFS\) 命名空间的配置：  
   
 -   验证 DFS 命名空间服务是否正在运行，并且其启动类型在所有命名空间服务器上是否设置为自动。  
   
@@ -46,11 +46,11 @@ ms.locfileid: "71378417"
 dfsdiag /TestDFSConfig /DFSRoot:<namespace>  
 ```  
   
-### <a name="parameters"></a>Parameters  
+### <a name="parameters"></a>参数  
   
 |       参数       |               描述               |
 |-----------------------|-----------------------------------------|
-| \/DFSRoot： <namespace> | 命名空间 \(DFS root @ no__t-1 进行诊断。 |
+| \/DFSRoot：<namespace> | 命名空间 \(要诊断的 DFS 根\)。 |
   
 ## <a name="BKMK_Examples"></a>示例  
 若要待定，请键入：  

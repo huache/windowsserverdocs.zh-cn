@@ -32,7 +32,7 @@ ms.locfileid: "71382199"
 bdehdcfg -target {default|unallocated|<DriveLetter> shrink} -size <SizeinMB>
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -43,7 +43,7 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink} -size <SizeinMB>
 如果未指定大小，则该工具将使用默认值 300 MB。 系统驱动器的最小大小为 100 MB。 如果要将系统恢复或其他系统工具存储在系统分区上，则应相应地增加大小。
 
 > [!NOTE]
-> **Size**命令不能与**目标**@no__t > **merge**命令组合。
+> **Size**命令不能与**目标**\<驱动器号 > **merge**命令组合。
 
 ## <a name="BKMK_Examples"></a>示例
 

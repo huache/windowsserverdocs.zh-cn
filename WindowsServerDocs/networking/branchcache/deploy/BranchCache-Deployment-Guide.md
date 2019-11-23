@@ -29,11 +29,11 @@ ms.locfileid: "71356729"
   
 ## <a name="branchcache-deployment-overview"></a>BranchCache 部署概述
 
-BranchCache 是一种广域网络（WAN）带宽优化技术，包含在某些版本的 Windows Server 2016、Windows Server @ no__t-0 2012 R2、Windows Server @ no__t-1 2012、Windows Server @ no__t-2 2008 R2 和相关的 Windows 客户端中。操作系统。  
+BranchCache 是一种广域网络（WAN）带宽优化技术，包含在某些版本的 Windows Server 2016、Windows Server&reg; 2012 R2、Windows Server&reg; 2012、Windows Server&reg; 2008 R2 和相关的 Windows 客户端操作系统中。  
   
 若要优化 WAN 带宽，分支缓存从你的总部内容服务器复制内容，并将内容缓存在分支机构位置，使分支机构的客户端计算机可以从本地访问内容，而不是从 WAN 访问。  
   
-在分支机构，内容缓存在运行 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 或 Windows server 2008 R2 的 BranchCache 功能的服务器上，或者，如果分支机构中没有可用的服务器，则内容为 cac运行 Windows 10 @ no__t-0、Windows @ no__t-1 8.1、Windows 8 或 Windows 7 @ no__t-2 的客户端计算机上的 hed。  
+在分支机构，内容缓存在运行 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的 BranchCache 功能的服务器上，或者，如果分支机构中没有可用的服务器，则会在运行 Windows 10&reg;、Windows&reg; 8.1、Windows 8 或 Windows 7&reg; 的客户端计算机上缓存内容。  
   
 在客户端计算机请求并接收到总部或云数据中心的内容并将内容缓存在分支机构之后，同一分支机构的其他计算机可以本地获取内容，而不是通过WAN 链接。  
   
@@ -64,11 +64,11 @@ BranchCache 同时降低 WAN 流量和分支机构用户在网络上打开文件
 
 下面是使用本指南部署 BranchCache 的要求。  
   
--   **文件和 Web 内容服务器**必须运行以下操作系统之一才能提供 BranchCache 功能：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2。 在访问运行 Windows Server 2008 R2 的内容服务器时，windows 8 和更高版本的客户端将继续看到 BranchCache 的权益，但无法利用 Windows Server 2016、Windows Server 2012R2 和 Windows Server 2012。  
+-   **文件和 Web 内容服务器**必须运行以下操作系统之一才能提供 BranchCache 功能： windows server 2016、windows Server 2012 R2、windows server 2012 或 windows Server 2008 R2。 在访问运行 Windows Server 2008 R2 的内容服务器时，windows 8 和更高版本的客户端将继续看到 BranchCache 的权益，但无法利用 Windows Server 2016、Windows Server 2012R2 和 Windows Server 2012。  
   
 -   **客户端计算机**必须运行 windows 10、Windows 8.1 或 windows 8 才能使用最新的部署模型以及 Windows Server 2012 引入的分块和哈希改进。  
   
--   **托管缓存服务器**必须运行 windows server 2016、windows Server 2012 R2 或 windows server 2012 才能使用本文档中介绍的部署改进和缩放功能。  运行配置为托管缓存服务器的其中一种操作系统的计算机可以继续为运行 Windows 7 的客户端计算机提供服务，但为此，必须配备适用于传输层安全性（TLS）的证书），如 Windows Server 2008 R2 和 Windows 7 [BranchCache 部署指南](https://technet.microsoft.com/library/ee649232.aspx)中所述。  
+-   **托管缓存服务器**必须运行 windows server 2016、windows Server 2012 R2 或 windows server 2012 才能使用本文档中介绍的部署改进和缩放功能。  运行配置为托管缓存服务器的操作系统之一的计算机可以继续为运行 Windows 7 的客户端计算机提供服务，但为此，必须配备适用于传输层安全性（TLS）的证书，如 Windows Server 2008 R2 和 Windows 7 [BranchCache 部署指南](https://technet.microsoft.com/library/ee649232.aspx)中所述。  
   
 -   需要**Active Directory 域**才能利用组策略和托管缓存自动发现，但不要求域使用 BranchCache。  可以使用 Windows PowerShell 配置单个计算机。 此外，不要求域控制器运行 Windows Server 2012 或更高版本以利用新的 BranchCache 组策略设置;你可以将 BranchCache 管理模板导入到运行早期版本操作系统的域控制器上，也可以在运行 Windows 10、Windows Server 2016、Windows 8.1 的其他计算机上远程创作组策略对象。Windows Server 2012 R2、Windows 8 或 Windows Server 2012。
 
@@ -76,7 +76,7 @@ BranchCache 同时降低 WAN 流量和分支机构用户在网络上打开文件
 
 **BranchCache 历史记录和文档**
 
-BranchCache 是在 Windows 7 @ no__t-0 和 Windows Server @ no__t-1 2008 R2 中首次引入的，已在 Windows Server 2012、Windows 8 及更高版本的操作系统中得到改进。
+BranchCache 是在 windows 7&reg; 和 Windows Server&reg; 2008 R2 中首次引入的，已在 Windows Server 2012、Windows 8 和更高版本的操作系统中得到改进。
 
 > [!NOTE]
 > 如果在 Windows Server 2016 以外的操作系统中部署 BranchCache，则可以使用以下文档资源。

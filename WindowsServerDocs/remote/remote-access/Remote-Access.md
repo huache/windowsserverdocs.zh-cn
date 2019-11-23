@@ -18,7 +18,7 @@ ms.locfileid: "71388909"
 ---
 # <a name="remote-access"></a>远程访问
 
->适用于：Windows Server (半年频道), Windows Server 2016, Windows Server 2012 R2, Windows 10
+>适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
 远程访问指南提供了有关 Windows Server 2016 中的远程访问服务器角色的概述，并涵盖了以下主题：
 
@@ -34,15 +34,15 @@ ms.locfileid: "71388909"
 远程访问服务器角色是以下相关网络访问技术的逻辑分组：[远程访问服务（RAS）](#bkmk_da)、[路由](#bkmk_rras)和[Web 应用程序代理](#bkmk_proxy)。 这些技术是远程访问服务器角色的 *角色服务* 。 使用 "**添加角色和功能向导**" 或 Windows PowerShell 安装远程访问服务器角色时，可以安装这三个角色服务中的一个或多个。
 
 >[!IMPORTANT]
->请勿尝试在 Microsoft Azure 的虚拟机上部署远程访问 \(VM @ no__t-1。 不支持在 Microsoft Azure 中使用远程访问。 不能在 Azure VM 中使用远程访问在 Windows Server 2016 或更早版本的 Windows Server 中部署 VPN、DirectAccess 或任何其他远程访问功能。 有关详细信息，请参阅[Microsoft Azure 虚拟机的 Microsoft 服务器软件支持](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)。
+>请勿尝试在 Microsoft Azure 的虚拟机 \(VM\) 上部署远程访问。 不支持在 Microsoft Azure 中使用远程访问。 不能在 Azure VM 中使用远程访问在 Windows Server 2016 或更早版本的 Windows Server 中部署 VPN、DirectAccess 或任何其他远程访问功能。 有关详细信息，请参阅[Microsoft Azure 虚拟机的 Microsoft 服务器软件支持](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)。
 
-## <a name="bkmk_da"></a>远程访问服务 \(RAS @ no__t-2-RAS 网关
+## <a name="bkmk_da"></a>远程访问服务 \(RAS\)-RAS 网关
 
-安装**DirectAccess 和 VPN （RAS）** 角色服务时，将 \(**RAS 网关**部署远程访问服务网关 \)。 你可以使用单租户 RAS 网关虚拟专用网络 \(VPN @ no__t 服务器、多租户 RAS 网关 VPN 服务器以及 DirectAccess 服务器部署 RAS 网关。
+安装**DirectAccess 和 VPN （RAS）** 角色服务时，将 \(**RAS 网关**\)部署远程访问服务网关。 可以 \(VPN\) 服务器、多租户 RAS 网关 VPN 服务器，以及作为 DirectAccess 服务器，来部署 RAS 网关。
 
-- **RAS 网关-单个租户**。 通过使用 RAS 网关，你可以部署 VPN 连接，以便为最终用户提供对组织网络和资源的远程访问权限。 如果客户端运行的是 Windows 10，则可以部署 Always On VPN，无论何时远程计算机连接到 Internet，都可以在客户端与组织网络之间保持持久性连接。 使用 RAS 网关，还可以在两个服务器之间创建站点到站点 VPN 连接，例如在主办公室与分支机构之间，并使用网络地址转换 \(NAT @ no__t-1，使网络中的用户可以访问外部资源（如 Internet）。 此外，RAS 网关还支持边界网关协议（BGP），在远程办公室位置也有支持 BGP 的边缘网关时，提供动态路由服务。
+- **RAS 网关-单个租户**。 通过使用 RAS 网关，你可以部署 VPN 连接，以便为最终用户提供对组织网络和资源的远程访问权限。 如果客户端运行的是 Windows 10，则可以部署 Always On VPN，无论何时远程计算机连接到 Internet，都可以在客户端与组织网络之间保持持久性连接。 使用 RAS 网关，还可以在两个服务器之间创建站点到站点 VPN 连接，例如在主办公室与分支机构之间，并使用网络地址转换 \(NAT\) 使网络中的用户可以访问外部资源（如 Internet）。 此外，RAS 网关还支持边界网关协议（BGP），在远程办公室位置也有支持 BGP 的边缘网关时，提供动态路由服务。
 
-- **RAS 网关-多租户**。 使用超级 @ no__t-0V 网络虚拟化时，可以将 RAS 网关部署为多租户、基于软件的边缘网关和路由器，或者使用虚拟局域网部署的 VM 网络 \(VLANs @ no__t。 使用 RAS 网关，云服务提供商 \(CSPs @ no__t，企业可以在虚拟网络与物理网络（包括 Internet）之间进行数据中心和云网络流量路由。 使用 RAS 网关，租户可以使用点到站点 VPN 连接从任何位置访问数据中心内的 VM 网络资源。 你还可以向租户提供其远程站点与 CSP 数据中心之间的站点到站点 VPN 连接。 此外，还可以为 RAS 网关配置动态路由的 BGP 网关，还可以启用网络地址转换 \(NAT @ no__t，为 VM 网络上的 Vm 提供 Internet 访问。
+- **RAS 网关-多租户**。 使用超级\-V 网络虚拟化时，可以将 RAS 网关部署为多租户、基于软件的边缘网关和路由器，或者使用虚拟局域网 \(Vlan\)部署的 VM 网络。 使用 RAS 网关，云服务提供商 \(Csp\)，企业可以在虚拟网络与物理网络（包括 Internet）之间进行数据中心和云网络流量路由。 使用 RAS 网关，租户可以使用点到站点 VPN 连接从任何位置访问数据中心内的 VM 网络资源。 你还可以向租户提供其远程站点与 CSP 数据中心之间的站点到站点 VPN 连接。 此外，还可以为 RAS 网关配置动态路由的 BGP 网关，还可以启用网络地址转换 \(NAT\) 为 VM 网络上的 Vm 提供 Internet 访问。
 
 >[!IMPORTANT]
 > Windows Server 2012 R2 还提供了具有多租户功能的 RAS 网关。

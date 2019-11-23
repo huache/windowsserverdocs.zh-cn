@@ -19,7 +19,7 @@ ms.locfileid: "71402836"
 ---
 # <a name="storage-spaces-direct-overview"></a>存储空间直通概述
 
->适用于：Windows Server 2019、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server 2016
 
 存储空间直通使用具有本地连接驱动器的行业标准服务器来创建高度可用、高度可扩展的软件定义存储，其成本仅占传统 SAN 或 NAS 阵列的一小部分。 它的聚合或超聚合体系结构大大简化了采购和部署，同时提供了缓存、存储层和擦除编码等功能，以及最新的硬件创新，如 RDMA 网络和 NVMe 驱动器，提供无与伦比的效率和性能。
 
@@ -112,7 +112,7 @@ ms.locfileid: "71402836"
 
 请访问[Microsoft.com/HCI](https://www.microsoft.com/hci)阅读其故事：
 
-[客户徽标的 @no__t 1Grid](media/storage-spaces-direct-in-windows-server-2016/customer-stories.png)](https://www.microsoft.com/hci)
+[客户徽标 ![网格](media/storage-spaces-direct-in-windows-server-2016/customer-stories.png)](https://www.microsoft.com/hci)
 
 ## <a name="management-tools"></a>管理工具
 
@@ -129,7 +129,7 @@ ms.locfileid: "71402836"
 
 [在 Microsoft Azure 中](https://blogs.technet.microsoft.com/filecab/2016/05/05/s2dazuretp5/)试用存储空间直通，或者从 [Windows Server 评估](https://go.microsoft.com/fwlink/?linkid=842602) 中下载 Windows Server 的 180 天许可证评估副本。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [容错和存储效率](storage-spaces-fault-tolerance.md)
 - [存储副本](../storage-replica/storage-replica-overview.md)

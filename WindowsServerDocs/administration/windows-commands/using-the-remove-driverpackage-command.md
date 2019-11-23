@@ -22,23 +22,23 @@ ms.locfileid: "71362807"
 ---
 # <a name="using-the-remove-driverpackage-command"></a>使用 DriverPackage 命令
 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 > 
 > 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 从服务器中删除驱动程序包。
 ## <a name="syntax"></a>语法
 ```
 wdsutil /remove-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name> | /PackageId:<ID>}
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |        参数        |                                                                            描述                                                                             |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server： @no__t] |              指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。              |
-| [/DriverPackage： @no__t] |                                                        指定要删除的驱动程序包的名称。                                                         |
-|    [/PackageId： @no__t]    | 指定要删除的驱动程序包的 Windows 部署服务 ID。 如果无法按名称唯一地标识驱动程序包，则必须指定 ID。 |
+| [/Server： <Server name>] |              指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。              |
+| [/DriverPackage：<Name>] |                                                        指定要删除的驱动程序包的名称。                                                         |
+|    [/PackageId：<ID>]    | 指定要删除的驱动程序包的 Windows 部署服务 ID。 如果无法按名称唯一地标识驱动程序包，则必须指定 ID。 |
 
 ## <a name="BKMK_examples"></a>示例
 若要查看有关图像的信息，请键入下列内容之一：
@@ -49,5 +49,5 @@ wdsutil /remove-DriverPackage /PackageId:{4D36E972-E325-11CE-Bfc1-08002BE10318}
 wdsutil /remove-DriverPackage /Server:MyWdsServer /DriverPackage:MyDriverPackage
 ```
 #### <a name="additional-references"></a>其他参考
-[使用 DriverPackages 命令](using-the-remove-driverpackages-command.md)
- 的[命令行语法键](command-line-syntax-key.md)
+[使用 DriverPackages 命令
+的](using-the-remove-driverpackages-command.md)[命令行语法键](command-line-syntax-key.md)

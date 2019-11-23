@@ -21,7 +21,7 @@ ms.locfileid: "71358880"
 
 
 > [!WARNING]
-> 你可以在此处&nbsp;生成的示例仅供教育之用。 &nbsp;这些说明适用于公开模型所需元素的最简单的最小实现。&nbsp;没有身份验证后端、错误处理或配置数据。 
+> 你可以在此处生成的示例仅供教育目的&nbsp;。 &nbsp;这些说明适用于公开模型所需元素的最简单的最小实现。&nbsp; 没有身份验证后端、错误处理或配置数据。 
 > <P></P>
 
 
@@ -56,13 +56,13 @@ ms.locfileid: "71358880"
 
 ## <a name="create-the-provider"></a>创建提供程序
 
-1.  在 Visual Studio 2012 中：选择 "文件\>-新建\>-项目 ..."
+1.  在 Visual Studio 2012 中：选择 "文件-\>"\>项目 。
 
 2.  选择 "类库"，并确保以 .NET 4.5 为目标。
 
-    ![创建提供程序](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "创建提供程序")
+    ![创建提供]程序(media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "创建提供程序")
 
-3.  从安装了 AD FS 的 Windows Server 2012 R2 服务器上的% windir% \\ADFS 创建**IdentityServer**的副本，并将其粘贴到你的开发计算机上的项目文件夹中。
+3.  从安装了 AD FS 的 Windows Server 2012 R2 服务器上的% windir%\\ADFS 创建**IdentityServer**的副本，并将其粘贴到你的开发计算机上的项目文件夹中。
 
 4.  在**解决方案资源管理器**中，右键单击 "**引用**"，然后单击 "**添加引用 ...** "
 
@@ -70,13 +70,13 @@ ms.locfileid: "71358880"
 
 6.  单击 **"确定"** 以确认新的引用：
 
-    ![创建提供程序](media/ad-fs-build-custom-auth-method/Dn783423.f18df353-9259-4744-b4b6-dd780ce90951(MSDN.10).jpg "创建提供程序")
+    ![创建提供]程序(media/ad-fs-build-custom-auth-method/Dn783423.f18df353-9259-4744-b4b6-dd780ce90951(MSDN.10).jpg "创建提供程序")
 
     现在应设置为解析提供程序所需的所有类型。 
 
 7.  向项目中添加新类（右键单击项目，**添加 ...类 ...** ）并为其指定一个名称（如**MyAdapter**），如下所示：
 
-    ![创建提供程序](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "创建提供程序")
+    ![创建提供]程序(media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "创建提供程序")
 
 8.  在新文件 MyAdapter.cs 中，将现有代码替换为以下代码：
 
@@ -153,7 +153,7 @@ ms.locfileid: "71358880"
          }
          }
 
-10. 我们尚未准备好生成 .。。还有两个接口可以继续。
+10. 我们尚未准备好生成 。还有两个接口可以继续。
 
     向项目添加另外两个类：一个用于元数据，另一个用于显示形式。  您可以将这些文件添加到上面的类所在的文件中。
 
@@ -277,7 +277,7 @@ ms.locfileid: "71358880"
 
    你可以一分钟修复此问题，但首先，让我们根据新实现的类型将最后的必需 return 语句添加到初始 MyAdapter 类。  若要执行此操作，请在现有的 IAuthenticationAdapter 实现中将下面的*斜体*项添加到现有的实现：
 
-       类 MyAdapter：IAuthenticationAdapter {public IAuthenticationAdapterMetadata Metadata {//get {return new <instance of IAuthenticationAdapterMetadata derived class>;}    get {return new MyMetadata （）;}    }
+       类 MyAdapter： IAuthenticationAdapter {public IAuthenticationAdapterMetadata Metadata {//get {return new <instance of IAuthenticationAdapterMetadata derived class>;}    get {return new MyMetadata （）;}    }
 
         public IAdapterPresentation BeginAuthentication(Claim identityClaim, HttpListenerRequest request, IAuthenticationContext authContext)
         {
@@ -324,7 +324,10 @@ ms.locfileid: "71358880"
         <input id="authMethod" type="hidden" name="AuthMethod" value="%AuthMethod%"/>
         <input id="context" type="hidden" name="Context" value="%Context%"/>
         <!-- End inputs are required by the presentation framework. -->
-        <p id="pageIntroductionText">此内容由 MFA 示例适配器提供。 质询输入如下所示。</p>@no__t 0Question text @ no__t-1 @ no__t-2 @ no__t-3<div id="submissionArea" class="submitMargin">
+        <p id="pageIntroductionText">此内容由 MFA 示例适配器提供。 质询输入如下所示。</p>
+        <input id="challengeQuestionInput" name="ChallengeQuestionAnswer" type="text" value="" class="text" placeholder="Answer placeholder" />的
+        <label for="challengeQuestionInput" class="block">问题文本</label>
+        <div id="submissionArea" class="submitMargin">
         <input id="submitButton" type="submit" name="Submit" value="Submit" onclick="return AuthPage.submitAnswer()"/>
         </div>
         </form>
@@ -338,9 +341,9 @@ ms.locfileid: "71358880"
         //]]>
         </script></div>
 
-14. 然后，选择 **"项目\>-添加组件 ..."资源**文件并将文件命名为**资源**，然后单击 "**添加"：**
+14. 然后，选择 "**项目-\>添加组件 ..."资源**文件并将文件命名为**资源**，然后单击 "**添加"：**
 
-   ![创建提供程序](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "创建提供程序")
+   ![创建提供]程序(media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "创建提供程序")
 
 15. 然后，在**Resources .resx**文件中，选择 "**添加资源 ..."添加现有文件**。  导航到上面保存的文本文件（包含 html 片段）。
 
@@ -356,9 +359,9 @@ ms.locfileid: "71358880"
 
 1.  在解决方案资源管理器中右键单击项目名称，然后单击 "**属性**"。
 
-2.  在 "**签名**" 选项卡上，选中 **"为程序集签名"** ，然后选择 **\<"新建 ..."在\>** "**选择强名称密钥文件**" 下：输入密钥文件名和密码，然后单击 **"确定"** 。  然后确保选中 **"为程序集签名"** ，并取消选中 "**延迟签名**"。  "属性**签名**" 页应如下所示：
+2.  在 "**签名**" 选项卡上，选中 "为**程序集签名"** ，然后在 "**选择强名称密钥文件**" 下选择 **\<新建 ...\>** ：输入密钥文件名和密码，然后单击 **"确定"** 。  然后确保选中 **"为程序集签名"** ，并取消选中 "**延迟签名**"。  "属性**签名**" 页应如下所示：
 
-    ![构建提供程序](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "构建提供程序")
+    ![构建提供]程序(media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "构建提供程序")
 
 3.  然后生成解决方案。
 
@@ -378,15 +381,15 @@ ms.locfileid: "71358880"
 
 3.  将 Gacutil.exe 工具复制到服务器。
 
-    Gacutil.exe 可以在 Windows 8 计算机上的 **% homedrive% \\Program Files （x86） \\Microsoft sdk @ no__t-3Windows @ no__t-4v 8.0 a @ no__t-5bin @ no__t-6NETFX 4.0 Tools @ no__t**中找到。  你将需要**gacutil.exe**文件本身以及**1033**、 **en-us**和**NETFX 4.0 工具**位置下面的其他本地化资源文件夹。
+    在 Windows 8 计算机上，可以在 **% homedrive%\\Program Files （x86）\\Microsoft sdk\\Windows\\** v2.0\\\\\\NETFX 4.0 工具中找到 gacutil.exe。  你将需要**gacutil.exe**文件本身以及**1033**、 **en-us**和**NETFX 4.0 工具**位置下面的其他本地化资源文件夹。
 
 4.  将提供程序文件（一个或多个强名称签名 .dll 文件）复制到与**gacutil.exe**相同的文件夹位置（该位置只是为了方便）
 
 5.  将 .dll 文件添加到场中每个 AD FS 联合服务器上的 GAC 中：
 
-    示例：使用命令行工具 Gacutil.exe 将 dll 添加到 GAC：`C:\>.\gacutil.exe /if .\<yourdllname>.dll`
+    示例：使用命令行工具 Gacutil.exe 将 dll 添加到 GAC 中： `C:\>.\gacutil.exe /if .\<yourdllname>.dll`
 
-    查看 GAC 中的生成条目：`C:\>.\gacutil.exe /l <yourassemblyname>`
+    若要查看 GAC 中的生成条目：`C:\>.\gacutil.exe /l <yourassemblyname>`
 
 6.  
 
@@ -396,26 +399,26 @@ ms.locfileid: "71358880"
 
 1.  `Register-AdfsAuthenticationProvider –TypeName YourTypeName –Name “AnyNameYouWish” [–ConfigurationFilePath (optional)]`
 
-    其中，YourTypeName 是 .NET 强类型名称："YourDefaultNamespace，YourIAuthenticationAdapterImplementationClassName，; Yourassemblyname&gt，Version = YourAssemblyVersion，Culture = 中立，PublicKeyToken = YourPublicKeyTokenValue，processorArchitecture = MSIL"
+    其中，YourTypeName 是 .NET 强类型名称： "YourDefaultNamespace. YourIAuthenticationAdapterImplementationClassName，; Yourassemblyname&gt，Version = YourAssemblyVersion，Culture = 中立，PublicKeyToken = YourPublicKeyTokenValue，processorArchitecture = MSIL "
 
     这会将你的外部提供程序注册到 AD FS，并将其名称作为 AnyNameYouWish 提供给你。
 
 2.  重新启动 AD FS 服务（例如，使用 Windows 服务管理单元）。
 
-3.  运行以下命令: `Get-AdfsAuthenticationProvider`。
+3.  运行以下命令： `Get-AdfsAuthenticationProvider`。
 
     这会将提供程序显示为系统中的某个提供程序。
 
-    例如：
+    示例：
 
         PS C:\>$typeName = "MFAadapter.MyAdapter, MFAadapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e675eb33c62805a0, processorArchitecture=MSIL”
         PS C:\>Register-AdfsAuthenticationProvider -TypeName $typeName -Name “MyMFAAdapter”
         PS C:\>net stop adfssrv
         PS C:\>net start adfssrv
 
-    如果在 AD FS 环境中启用了设备注册服务，则还需执行以下操作：`PS C:\>net start drs`
+    如果在 AD FS 环境中启用了设备注册服务，则还需执行以下操作： `PS C:\>net start drs`
 
-    若要验证注册的提供程序，请使用以下`PS C:\>Get-AdfsAuthenticationProvider`命令：。
+    若要验证注册的提供程序，请使用以下命令：`PS C:\>Get-AdfsAuthenticationProvider`。
 
     这会将提供程序显示为系统中的某个提供程序。
 
@@ -431,13 +434,13 @@ ms.locfileid: "71358880"
 
 4.  在页面底部的 "**选择其他身份验证方法**" 下，选中提供商的 AdminName 的复选框。 单击 **“应用”** 。
 
-5.  若要提供 "触发器" 来使用适配器调用 MFA，请在 "**位置**" 下检查**Extranet**和**Intranet**，例如。 单击 **“确定”** 。 （若要配置每个信赖方的触发器，请参阅下面的 "使用 Windows PowerShell 创建身份验证策略"。）
+5.  若要提供 "触发器" 来使用适配器调用 MFA，请在 "**位置**" 下检查**Extranet**和**Intranet**，例如。 单击**确定**。 （若要配置每个信赖方的触发器，请参阅下面的 "使用 Windows PowerShell 创建身份验证策略"。）
 
 6.  使用以下命令检查结果：
 
-    第一`Get-AdfsGlobalAuthenticationPolicy`次使用。 你应看到提供程序名称为 AdditionalAuthenticationProvider 值之一。
+    首先使用 `Get-AdfsGlobalAuthenticationPolicy`。 你应看到提供程序名称为 AdditionalAuthenticationProvider 值之一。
 
-    然后使用`Get-AdfsAdditionalAuthenticationRule`。 你应看到配置为 "管理员" UI 中策略选择后的 Extranet 和 Intranet 的规则。
+    然后，使用 `Get-AdfsAdditionalAuthenticationRule`。 你应看到配置为 "管理员" UI 中策略选择后的 Extranet 和 Intranet 的规则。
 
 #### <a name="create-the-authentication-policy-using-windows-powershell"></a>使用 Windows PowerShell 创建身份验证策略
 
@@ -474,9 +477,9 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
         1.  或者只需单击**多因素策略**UI 中的 "**主要**" 选项卡即可。
 
-2.  确保为 Extranet 和 Intranet 身份验证方法都同时检查**Forms 身份验证**。  单击 **“确定”** 。
+2.  确保为 Extranet 和 Intranet 身份验证方法都同时检查**Forms 身份验证**。  单击**确定**。
 
-3.  打开 "IDP 发起的登录" html 页（ https://\<fsname\>/adfs/ls/idpinitiatedsignon.htm），并以有效的 AD 用户身份登录到测试环境中。
+3.  打开 "IDP 发起的登录" html 页（ https://\<fsname\>/adfs/ls/idpinitiatedsignon.htm），并在测试环境中以有效 AD 用户身份登录。
 
 4.  输入用于主要身份验证的凭据。
 
@@ -484,9 +487,9 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
     如果配置了多个适配器，则会看到 "MFA" 选项页，其中包含上面的友好名称。
 
-    ![通过适配器进行身份验证](media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "通过适配器进行身份验证")
+    通过适配器对![适配器](media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "进行身份")验证
 
-    ![通过适配器进行身份验证](media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "通过适配器进行身份验证")
+    通过适配器对![适配器](media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "进行身份")验证
 
 现在，你已有了接口的工作实现，并且你了解了该模型的工作原理。 您可以 trym 为在 BeginAuthentication 和 TryEndAuthentication 中设置断点的额外示例。  请注意，当用户首次输入 MFA 窗体时，如何执行 BeginAuthentication，而在每次提交窗体时都会触发 TryEndAuthentication。
 
@@ -562,7 +565,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 `PS C:\> Unregister-AdfsAuthenticationProvider –Name “YourAuthProviderName”`
 
-实例`PS C:\> Unregister-AdfsAuthenticationProvider –Name “MyMFAAdapter”`
+示例：`PS C:\> Unregister-AdfsAuthenticationProvider –Name “MyMFAAdapter”`
 
 请注意，你为 "Name" 传递的值与你向 Register-adfsauthenticationprovider cmdlet 提供的 "名称" 的值相同。  它也是从 Register-adfsauthenticationprovider 输出的 "Name" 属性。
 
@@ -574,11 +577,11 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 1.  首先，使用以下命令查找条目的完全限定强名称：`C:\>.\gacutil.exe /l <yourAdapterAssemblyName>`
 
-    实例`C:\>.\gacutil.exe /l mfaadapter`
+    示例：`C:\>.\gacutil.exe /l mfaadapter`
 
 2.  然后，使用以下命令将其从 GAC 中删除：`.\gacutil /u “<output from the above command>”`
 
-    实例`C:\>.\gacutil /u “mfaadapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e675eb33c62805a0, processorArchitecture=MSIL”`
+    示例：`C:\>.\gacutil /u “mfaadapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e675eb33c62805a0, processorArchitecture=MSIL”`
 
 ### <a name="add-the-updated-assembly-to-gac"></a>将更新后的程序集添加到 GAC
 
@@ -606,7 +609,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 4.  在 "**选择其他身份验证方法**" 下，选中提供程序的 AdminName 的复选框。 单击 **“应用”** 。
 
-5.  若要提供 "触发器" 来使用适配器调用 MFA，请在 "位置" 下检查**Extranet**和**Intranet**，例如。 单击 **“确定”** 。
+5.  若要提供 "触发器" 来使用适配器调用 MFA，请在 "位置" 下检查**Extranet**和**Intranet**，例如。 单击**确定**。
 
 ### <a name="authenticate-with-mfa-using-your-adapter"></a>使用适配器通过 MFA 进行身份验证
 
@@ -618,9 +621,9 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
         1.  或者只需单击多因素策略 UI 中的 "**主要**" 选项卡即可。
 
-2.  确保为**Extranet**和**Intranet**身份验证方法都同时检查**Forms 身份验证**。  单击 **“确定”** 。
+2.  确保为**Extranet**和**Intranet**身份验证方法都同时检查**Forms 身份验证**。  单击**确定**。
 
-3.  打开 "IDP 发起的登录" html 页（ https://\<fsname\>/adfs/ls/idpinitiatedsignon.htm），并以有效的 AD 用户身份登录到测试环境中。
+3.  打开 "IDP 发起的登录" html 页（ https://\<fsname\>/adfs/ls/idpinitiatedsignon.htm），并在测试环境中以有效 AD 用户身份登录。
 
 4.  输入用于主要身份验证的凭据。
 
@@ -630,11 +633,11 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 在 MFA 身份验证页上输入 "adfabric" 时，应会看到成功的登录。
 
-![用适配器登录](media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "用适配器登录")
+![用](media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "适配器登录")
 
-![用适配器登录](media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "用适配器登录")
+![用](media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "适配器登录")
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 #### <a name="other-resources"></a>其他资源
 

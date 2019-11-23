@@ -20,13 +20,13 @@ ms.locfileid: "71407808"
  
 了解如何生成代表用户调用另一个 Web API 的 Web API。  
  
-阅读本文之前，应熟悉[AD FS 的概念](../ad-fs-openid-connect-oauth-concepts.md)和[Behalf_Of 流程](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md#on-behalf-of-flow)
+阅读本文之前，应熟悉[AD FS 概念](../ad-fs-openid-connect-oauth-concepts.md)和[Behalf_Of 流](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md#on-behalf-of-flow)
 
 ## <a name="overview"></a>概述 
 
 
 - 客户端（Web 应用）-不在下图中表示-调用受保护的 Web API 并在其 "Authorization" Http 标头中提供 JWT 持有者令牌。 
-- 受保护的 Web API 将验证令牌，并使用 MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_)  method 来请求（从 AD FS）其他令牌，使其自身可以代表用户调用另一个 web api （名为下游 web api）。 
+- 受保护的 Web API 将验证令牌，并使用 MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) 方法请求（从 AD FS）其他令牌，使其自身可以代表用户调用另一个 Web api （名为下游 web api）。 
 - 受保护的 web API 使用此令牌来调用下游 API。 它还可以调用 AcquireTokenSilentlater 来请求其他下游 Api （但仍代表同一个用户）的令牌。 AcquireTokenSilent 在需要时刷新该令牌。  
  
      ![概述](media/adfs-msal-web-api-web-api/webapi1.png)
@@ -49,11 +49,11 @@ ms.locfileid: "71407808"
 
       ![应用注册](media/adfs-msal-web-api-web-api/webapi2.png)
 
-  3. 复制 "**客户端标识符**" 值。 稍后会将其用作应用程序的**app.config**文件中的**ClientId**值。 为 "**重定向 URI：**  -  https://ToDoListClient 输入以下内容。 单击**添加**。 单击**下一步**。 
+  3. 复制 "**客户端标识符**" 值。 稍后会将其用作应用程序的**app.config**文件中的**ClientId**值。 为 "**重定向 URI：**  - https://ToDoListClient输入以下内容。 单击**添加**。 单击**下一步**。 
   
       ![应用注册](media/adfs-msal-web-api-web-api/webapi3.png)
   
-  4. 在 "配置 Web API" 屏幕上，输入**标识符：** https://localhost:44321/ 。 单击**添加**。 单击**下一步**。 稍后将在应用程序的**app.config** **和 web.config**文件中使用此值。  
+  4. 在 "配置 Web API" 屏幕上，输入**标识符：** https://localhost:44321/。 单击**添加**。 单击**下一步**。 稍后将在应用程序的**app.config** **和 web.config**文件中使用此值。  
  
       ![应用注册](media/adfs-msal-web-api-web-api/webapi4.png)
 
@@ -143,11 +143,11 @@ ms.locfileid: "71407808"
   29. 单击 "WebApiToWebApi – Web API 属性" 屏幕上的 "确定"
 
   30. 在 WebApiToWebApi 的 "属性" 屏幕上，选择 "选择 WebApiToWebApi – Web API 2"，然后单击 "编辑 ..."</br> 
-   ![App Reg ](media/adfs-msal-web-api-web-api/webapi22.png)
+  ![应用注册](media/adfs-msal-web-api-web-api/webapi22.png)
 
   31. 在 "WebApiToWebApi – Web API 2 属性" 屏幕上，选择 "颁发转换规则" 选项卡，然后单击 "添加规则 ..." 
 
-  32. 在 "添加转换声明规则向导" 上，选择 "使用 dopdown 的自定义规则发送声明"，并单击 "下一步" ![App Reg ](media/adfs-msal-web-api-web-api/webapi23.png)
+  32. 在 "添加转换声明规则向导" 上，选择 "使用 dopdown 的自定义规则发送声明"，并单击 "下一步" ![应用注册](media/adfs-msal-web-api-web-api/webapi23.png)
 
   33. 在声明规则名称：字段和**x： [] = > 问题（声明 = x）** 中输入 "PassAllClaims"; "**自定义规则**中的声明规则：" 字段，然后单击 "**完成**"。  
    

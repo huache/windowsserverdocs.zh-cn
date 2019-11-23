@@ -24,7 +24,7 @@ AD FS 提供将远程 SQL Server 用于 AD FS 场数据的功能。  如果场�
 ### <a name="to-acquire-the-sql-connection-string"></a>获取 SQL 连接字符串
 1.  打开 Windows PowerShell
 2. 输入以下内容： `$adfs = gwmi -Namespace root/ADFS -Class SecurityTokenService` 并按 Enter
-3. 输入以下内容： `$adfs.ConfigurationDatabaseConnectionString` 并按 enter。
+3. 输入以下内容： `$adfs.ConfigurationDatabaseConnectionString`，然后按 enter。
 4. 应会看到连接字符串信息。
 ![](media/ad-fs-tshoot-sql/sql2.png)
 
@@ -36,10 +36,10 @@ AD FS 提供将远程 SQL Server 用于 AD FS 场数据的功能。  如果场�
 1. 打开记事本并将该文件另存为 "test.txt"。  请确保已从下拉菜单中选择了 "**保存为类型**" 的**所有文件**。
 2. 双击 "test.txt"
 3. 填写以下信息：。 **选择或输入服务器名称：** 使用位于 b 之上的连接字符串中的数据源。 **输入用于登录到服务器的信息：** 使用 AD FS 服务帐户或有权远程登录的帐户。  如果该帐户是 windows 帐户，请使用集成身份验证，否则输入用户名和密码。
-    c. **选择服务器上的数据库：** 使用上述字符串中的初始目录。  例如：AdfsConfigurationV3.
-   @no__t 0Test 连接 @ no__t-1
+    c. **选择服务器上的数据库：** 使用上述字符串中的初始目录。  例如： AdfsConfigurationV3。
+   ![测试连接](media/ad-fs-tshoot-sql/sql4.png)
 1. 单击 "**测试连接**"。</br>
-![Success @ no__t-1
+![成功](media/ad-fs-tshoot-sql/sql3.png)
 
 ## <a name="use-sql-server-management-studio-to-test-connectivity"></a>使用 SQL Server Management Studio 测试连接
 你还可以[下载](https://go.microsoft.com/fwlink/?linkid=864329)并安装 SSMS 来测试数据库连接。
@@ -51,7 +51,7 @@ AD FS 提供将远程 SQL Server 用于 AD FS 场数据的功能。  如果场�
 2. 使用 AD FS 服务帐户或有权远程登录的帐户。  如果该帐户是 windows 帐户，请使用集成身份验证，否则输入用户名和密码。
 ![“连接”](media/ad-fs-tshoot-sql/sql6.png)
 1. 你应看到已填充的左侧。  展开 "数据库"，并验证是否显示了 "AD FS 数据库"。
-@no__t 0AD FS 数据库 @ no__t-1
+![AD FS 数据库](media/ad-fs-tshoot-sql/sql7.png)
 
 ## <a name="next-steps"></a>后续步骤
 

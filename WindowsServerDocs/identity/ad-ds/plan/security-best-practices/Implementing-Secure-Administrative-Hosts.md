@@ -42,7 +42,7 @@ ms.locfileid: "71408619"
 ### <a name="account-configuration"></a>帐户配置  
 即使你的组织当前未使用智能卡，也应考虑为特权帐户和安全管理主机实现它们。 管理主机应配置为需要所有帐户的智能卡登录，方法是修改链接到包含管理主机的 Ou 的 GPO 中的以下设置：  
   
-@no__t 0Computer 配置 \windows \ 本地策略 \ 本地策略 \ Options\Interactive 登录：需要智能卡 @ no__t-0  
+**计算机配置 \windows \ 本地策略 \ 策略 \ Options\Interactive 登录：需要智能卡**  
   
 此设置将要求所有交互式登录都使用智能卡，而不考虑 Active Directory 中个人帐户的配置。  
   
@@ -70,7 +70,7 @@ ms.locfileid: "71408619"
 如果将跳转服务器作为管理主机策略的一部分来实现，则应使用内置安全配置向导来配置服务、注册表、审核和防火墙设置，以减少服务器的受攻击面。 如果已收集和配置安全配置向导配置设置，则可以将设置转换为用于在所有跳转服务器上强制执行一致的基线配置的 GPO。 你可以进一步编辑 GPO 以实现特定于跳转服务器的安全设置，并可以将所有设置与从 Microsoft 安全合规管理器中提取的附加基线设置组合在一起。  
   
 ### <a name="microsoft-security-compliance-manager"></a>Microsoft Security Compliance Manager  
-[Microsoft 安全合规管理器](https://technet.microsoft.com/library/cc677002.aspx)是一个免费的工具，可将 microsoft 推荐的安全配置与操作系统版本和角色配置相集成，并在可用于创建和配置域控制器的基准安全设置。 Microsoft 安全合规管理器模板可以与 "安全配置向导" 设置结合使用，以生成由部署在服务器的 Ou 中的 Gpo 部署和强制执行的位于 Active Directory。  
+[Microsoft 安全合规管理器](https://technet.microsoft.com/library/cc677002.aspx)是一种可免费使用的工具，可根据操作系统版本和角色配置集成 Microsoft 推荐的安全配置，并在可用于创建和配置域控制器基准安全设置的单个工具和 UI 中收集它们。 Microsoft 安全合规管理器模板可以与 "安全配置向导" 设置结合使用，以生成由部署在服务器的 Ou 中的 Gpo 部署和强制执行的位于 Active Directory。  
   
 > [!NOTE]  
 > 在撰写本文时，Microsoft 安全合规管理器不包括特定于跳转服务器或其他安全管理主机的设置，但仍可使用安全合规管理器（SCM）为管理创建初始基线主机. 但是，若要正确保护主机的安全，你应该应用适用于高度安全工作站和服务器的其他安全设置。  
@@ -84,7 +84,7 @@ ms.locfileid: "71408619"
 你应允许授权用户进行交互式登录，并且应删除或甚至阻止服务器访问时不需要的其他登录类型。  
   
 ### <a name="patch-and-configuration-management"></a>修补和配置管理  
-规模较小的组织可能依赖于 Windows 更新或[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) （WSUS）等产品来管理 Windows 系统更新的部署，而较大的组织可能实施企业修补和配置管理软件，如 System Center Configuration Manager。 无论你使用何种机制将更新部署到一般服务器和工作站总体，你都应该考虑为高度安全的系统（如域控制器、证书颁发机构和管理主机）进行单独的部署。 通过将这些系统与常规管理基础结构隔离，如果管理软件或服务帐户遭到入侵，则无法轻松地将此折衷扩展到基础结构中的最安全系统。  
+较小的组织可能依赖于 Windows 更新或[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) （WSUS）等产品来管理 Windows 系统更新的部署，而较大的组织可能会实施企业修补程序和配置管理软件（如 System Center Configuration Manager）。 无论你使用何种机制将更新部署到一般服务器和工作站总体，你都应该考虑为高度安全的系统（如域控制器、证书颁发机构和管理主机）进行单独的部署。 通过将这些系统与常规管理基础结构隔离，如果管理软件或服务帐户遭到入侵，则无法轻松地将此折衷扩展到基础结构中的最安全系统。  
   
 尽管不应为安全系统执行手动更新过程，但是，你应该配置单独的基础结构来更新安全系统。 即使在非常大的组织中，此基础结构通常也可以通过专用的 WSUS 服务器和 Gpo 来实现安全系统。  
   

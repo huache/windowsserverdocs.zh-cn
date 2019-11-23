@@ -72,10 +72,10 @@ Set-ADFSProperties -EnableOAuthLogout $true
 ```
 
 >[!NOTE]
-> 安装[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)后，参数 @no__t 将被标记为过时。 `EnableOAUthLogout` 将始终为 true，并且不会影响注销功能。
+> 安装[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)后，`EnableOAuthLogout` 参数将被标记为过时。 `EnableOAUthLogout` 将始终为 true，并且不会影响注销功能。
 
 >[!NOTE]
->frontchannel_logout**仅**支持 Vcredist 的[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)
+>**仅**在[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)的 vcredist 后支持 frontchannel_logout
 
 ## <a name="client-configuration"></a>客户端配置
 客户端需要实现一个 url，该 url 是已登录用户的 "注销"。 管理员可以使用以下 PowerShell cmdlet 在客户端配置中配置 LogoutUri。 
@@ -89,25 +89,25 @@ Set-ADFSProperties -EnableOAuthLogout $true
 Set-AdfsClient -LogoutUri <url>
 ```
 
-@No__t-0 是 AF FS 用于 "注销" 用户的 url。 对于实现 `LogoutUri`，客户端需要确保它清除应用程序中用户的身份验证状态，例如，删除其拥有的身份验证令牌。 AD FS 将浏览到该 URL，其中包含 SID 作为查询参数，并通知信赖方/应用程序注销用户。 
+`LogoutUri` 是 AF FS 用于 "注销" 用户的 url。 对于实现 `LogoutUri`，客户端需要确保它清除应用程序中用户的身份验证状态，例如，删除其拥有的身份验证令牌。 AD FS 将浏览到该 URL，其中包含 SID 作为查询参数，并通知信赖方/应用程序注销用户。 
 
 ![](media/ad-fs-logout-openid-connect/adfs_single_logout2.png)
 
 
-1.  **包含会话 ID 的 OAuth 令牌**：AD FS 在 id_token 令牌颁发时在 OAuth 令牌中包含会话 id。 稍后 AD FS 将使用此方法来确定要为用户清理的相关 SSO cookie。
-2.  **用户在 App1 上启动注销**：用户可以从任何已登录的应用程序启动注销。 在此示例方案中，用户启动了 App1 的注销。
-3.  **应用程序将注销请求发送到 AD FS**：用户启动注销后，应用程序会将 GET 请求发送到 AD FS 的 end_session_endpoint。 应用程序可以选择包含 id_token_hint 作为此请求的参数。 如果 id_token_hint 存在，AD FS 会将其与会话 ID 结合使用，以确定注销后应将客户端重定向到的 URI （post_logout_redirect_uri）。  Post_logout_redirect_uri 应是使用 RedirectUris 参数注册 AD FS 的有效 uri。
-4.  **AD FS 将注销发送到已登录的客户端**：AD FS 使用会话标识符值查找用户登录到的相关客户端。 标识的客户端将在 LogoutUri AD FS 注册的上发送请求，以在客户端启动注销。
+1.  **包含会话 id 的 oauth 令牌**： AD FS 在 id_token 令牌颁发时在 OAuth 令牌中包含会话 ID。 稍后 AD FS 将使用此方法来确定要为用户清理的相关 SSO cookie。
+2.  **用户启动 App1 上的注销**：用户可以从任何已登录的应用程序启动注销。 在此示例方案中，用户启动了 App1 的注销。
+3.  **应用程序将注销请求发送到 AD FS**：用户启动注销后，应用程序会将 GET 请求发送到 end_session_endpoint 的 AD FS。 应用程序可以选择包含 id_token_hint 作为此请求的参数。 如果 id_token_hint 存在，AD FS 会将其与会话 ID 结合使用，以确定客户端在注销后应重定向到的 URI （post_logout_redirect_uri）。  Post_logout_redirect_uri 应是使用 RedirectUris 参数注册到 AD FS 的有效 uri。
+4.  **AD FS 将注销发送到登录客户端**： AD FS 使用会话标识符值查找用户登录到的相关客户端。 标识的客户端将在 LogoutUri AD FS 注册的上发送请求，以在客户端启动注销。
 
 ## <a name="faqs"></a>常见问题
-**：** 我在发现文档中看不到 frontchannel_logout_supported 和 frontchannel_logout_session_supported 参数。</br>
+**问：** 我未在发现文档中看到 frontchannel_logout_supported 和 frontchannel_logout_session_supported 参数。</br>
 **答：** 确保所有 AD FS 服务器上都安装了[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) 。 请参阅服务器2016中的单一注销，其中包含[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)。
 
-**：** 我已经按顺序配置了单一注销，但用户仍在其他客户端上保持登录。</br>
-**答：** 确保为用户登录的所有客户端设置 `LogoutUri`。 此外，AD FS 会尝试在已注册的 @no__t 上发送注销请求。 客户端必须实现逻辑来处理请求，并采取措施从应用程序中注销用户。</br>
+**问：** 我已经按顺序配置了单一注销，但用户仍在其他客户端上保持登录。</br>
+**答：** 确保为用户登录的所有客户端设置 `LogoutUri`。 此外，AD FS 会尝试在已注册的 `LogoutUri`上发送注销请求。 客户端必须实现逻辑来处理请求，并采取措施从应用程序中注销用户。</br>
 
-**：** 如果在注销后，其中一个客户端将返回到 AD FS 并且使用有效的刷新令牌，将 AD FS 发出访问令牌？</br>
-**答：** 是。 在注册 `LogoutUri` 接收到注销请求之后，客户端应用程序负责删除所有经过身份验证的项目。
+**问：** 如果在注销后，其中一个客户端将返回到 AD FS 并且使用有效的刷新令牌，将 AD FS 发出访问令牌？</br>
+**答：** 有。 客户端应用程序负责在注册的 `LogoutUri`收到注销请求后删除所有经过身份验证的项目。
 
 
 ## <a name="next-steps"></a>后续步骤

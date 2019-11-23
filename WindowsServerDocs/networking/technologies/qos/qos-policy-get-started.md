@@ -19,7 +19,7 @@ ms.locfileid: "71405285"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-你可以使用以下主题开始使用 Service Quality \(QoS @ no__t 策略。
+你可以使用以下主题开始使用 Service Quality \(QoS\) 策略。
 
 - [QoS 策略的工作方式](qos-policy-works.md)
 - [QoS 策略体系结构](qos-policy-architecture.md)

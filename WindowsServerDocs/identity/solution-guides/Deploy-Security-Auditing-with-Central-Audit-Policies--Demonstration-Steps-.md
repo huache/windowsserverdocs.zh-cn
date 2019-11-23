@@ -34,7 +34,7 @@ ms.locfileid: "71407113"
   
 #### <a name="to-configure-a-global-object-access-policy"></a>配置全局对象访问策略的步骤  
   
-1. 以 contoso\administrator 的形式登录域控制器 DC1 作为 "密码<strong>pass@word1</strong>"。  
+1. 用密码<strong>pass@word1</strong>以 contoso\administrator 的身份登录到域控制器 DC1。  
   
 2. 在“服务器管理器”中，指向 **“工具”** ，然后单击 **“组策略管理器”** 。  
   
@@ -70,7 +70,7 @@ ms.locfileid: "71407113"
   
 #### <a name="to-update-group-policy-settings"></a>更新组策略设置的步骤  
   
-1. 以 contoso\Administrator 的身份登录到文件服务器，其中 "密码<strong>pass@word1</strong>"。  
+1. 以 contoso\Administrator 的身份登录到文件服务器，将密码<strong>pass@word1</strong>。  
   
 2. 按下 Windows 键+R，然后键入 **cmd** 打开“命令提示符”窗口。  
   
@@ -84,7 +84,7 @@ ms.locfileid: "71407113"
   
 #### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>验证是否应用全局对象访问策略的步骤  
   
-1.  以 Contoso\MReid 身份登录到客户端计算机 CLIENT1。 浏览到文件夹 HYPERLINK "file:///\\ @ no__t-1 @ no__t-2\ID_AD_FILE1 @ no__t-3\Finance" \\ \ FILE1\Finance Documents，并修改 Word Document 2。  
+1.  以 Contoso\MReid 身份登录到客户端计算机 CLIENT1。 浏览到文件夹 HYPERLINK "file:///\\\\\\\ ID_AD_FILE1\\\Finance" \\\ FILE1\Finance Documents，并修改 Word Document 2。  
   
 2.  以 contoso\administrator 的身份，登录到文件服务器 FILE1。 打开“事件查看器”，浏览到 **“Windows 日志”** ，选择 **“安全性”** ，并确认你的活动导致审核事件 **4656** 和 **4663** （虽然你没有在创建、修改和删除的文件或文件夹上设置显示审核 SACL）。  
   

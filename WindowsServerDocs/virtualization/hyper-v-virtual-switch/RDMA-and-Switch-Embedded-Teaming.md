@@ -15,15 +15,15 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365693"
 ---
-# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>远程直接内存访问 \(RDMA @ no__t; 交换机嵌入组合 \(SET @ no__t-3
+# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>\(RDMA\) 和交换机嵌入组合 \(集的远程直接内存访问\)
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-本主题提供有关使用 Windows Server 2016 中的 Hyper-v 配置远程直接内存访问 \(RDMA @ no__t 接口的信息，以及有关交换机嵌入组合的信息 \(SET @ no__t。  
+本主题提供有关使用 Windows Server 2016 中的 Hyper-v \(RDMA\) 接口配置远程直接内存访问的信息，以及有关交换机嵌入组合 \(设置\)的信息。  
 
 > [!NOTE]
 > 除了本主题之外，还提供了以下交换机嵌入的组合内容。 
-> - TechNet 库下载：[Windows Server 2016 NIC 和交换机嵌入式组合用户指南](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
+> - TechNet 库下载： [Windows Server 2016 NIC 和交换机嵌入式组合用户指南](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
 
 ## <a name="bkmk_rdma"></a>通过 Hyper-v 配置 RDMA 接口  
 
@@ -38,11 +38,11 @@ ms.locfileid: "71365693"
 
 ![体系结构更改](../media/RDMA-and-SET/rdma_over.jpg)
 
-以下各节提供了有关如何使用 Windows PowerShell 命令启用数据中心桥接（DCB）的说明，如何创建具有 RDMA 虚拟 NIC 的 Hyper-v 虚拟交换机 \(vNIC @ no__t），并使用 SET 和 RDMA Vnic 创建 Hyper-v 虚拟交换机。
+以下各节提供了有关如何使用 Windows PowerShell 命令启用数据中心桥接（DCB）、创建具有 RDMA 虚拟 NIC \(vNIC\)的 Hyper-v 虚拟交换机，以及使用 SET 和 RDMA Vnic 创建 Hyper-v 虚拟交换机的说明。
 
-### <a name="enable-data-center-bridging-dcb"></a>启用数据中心桥接 \(DCB @ no__t-1
+### <a name="enable-data-center-bridging-dcb"></a>启用数据中心桥接 \(DCB\)
 
-在使用任何 rdma over 聚合以太\(网\) RoCE 版本的 rdma 之前，必须启用 DCB。  尽管 Internet 广域 RDMA 协议不需要 \(iWARP @ no__t 网络，测试已确定所有基于以太网的 RDMA 技术更适用于 DCB。 因此，即使对于 iWARP RDMA 部署，也应考虑使用 DCB。
+使用任何 RDMA over 聚合以太网 \(RoCE\) RDMA 版本后，必须启用 DCB。  尽管 Internet 广域 RDMA 协议 \(iWARP\) 网络不需要，但测试已确定所有基于以太网的 RDMA 技术更适用于 DCB。 因此，即使对于 iWARP RDMA 部署，也应考虑使用 DCB。
 
 以下 Windows PowerShell 示例命令演示了如何为 SMB Direct 启用和配置 DCB。
 
@@ -66,7 +66,7 @@ ms.locfileid: "71365693"
 
     Enable-NetAdapterQos  -Name "SLOT 2"
 
-为 SMB 直接指定最小带宽的 30%：
+为 SMB 直接指定最小带宽的30%：
 
 `New-NetQosTrafficClass "SMB"  -Priority 3  -BandwidthPercentage 30  -Algorithm ETS`  
 
@@ -96,7 +96,7 @@ ms.locfileid: "71365693"
 
 ###  <a name="bkmk_set-rdma"></a>使用 SET 和 RDMA Vnic 创建 Hyper-v 虚拟交换机
 
-若要在 hyper-v 主机虚拟网络 @no__t 适配器上利用 RDMA 功能，请在支持 RDMA 组合的 Hyper-v 虚拟交换机上使用 0vNICs @ no__t-1，可以使用以下示例 Windows PowerShell 命令。
+若要在 Hyper-v 主机虚拟网络适配器上利用 RDMA 功能 \(Vnic\) 在支持 RDMA 组合的 Hyper-v 虚拟交换机上，你可以使用以下 Windows PowerShell 命令示例。
 
     New-VMSwitch -Name SETswitch -NetAdapterName "SLOT 2","SLOT 3" -EnableEmbeddedTeaming $true
 
@@ -146,7 +146,7 @@ ms.locfileid: "71365693"
 
 ## <a name="bkmk_over"></a>设置概述
 
-SET 是一种备用 NIC 组合解决方案，可在包括 Hyper-v 和 Windows Server 2016 中的软件定义网络 \(SDN @ no__t 堆栈的环境中使用。 将一些 NIC 组合功能集成到 Hyper-v 虚拟交换机。
+SET 是一种备用 NIC 组合解决方案，可用于在 Windows Server 2016 中包含 Hyper-v 的环境和软件定义的网络 \(SDN\) 堆栈。 将一些 NIC 组合功能集成到 Hyper-v 虚拟交换机。
 
 集允许在一个或多个基于软件的虚拟网络适配器之间分组到8个物理以太网网络适配器。 这些虚拟网络适配器可以提高性能，并在网络适配器发生故障时提供容错能力。
 
@@ -173,42 +173,42 @@ SET 是一种备用 NIC 组合解决方案，可在包括 Hyper-v 和 Windows Se
 
 ## <a name="bkmk_nics"></a>用于集的支持的 Nic
 
-你可以使用在 Windows Server 2016 的集团队中通过 Windows 硬件限定和徽标 \(WHQL @ no__t 测试的任何以太网 NIC。 设置要求所有属于集团队成员的网络适配器必须完全相同 \( i、相同型号、相同型号、相同的固件和驱动程序 @ no__t-1。 在一个组中的一到八个网络适配器之间设置支持。
+你可以使用已通过 windows Server 2016 中的集团队 \(WHQL\) 测试的任何以太网 NIC。 集要求所有属于集团队成员的网络适配器必须相同 \(即，同一制造商、相同型号、相同的固件和驱动程序\)。 在一个组中的一到八个网络适配器之间设置支持。
   
 ## <a name="bkmk_compat"></a>设置与 Windows Server 网络技术的兼容性
 
 集与 Windows Server 2016 中的以下网络技术兼容。
 
-- 数据中心桥接 \(DCB @ no__t-1
+- 数据中心桥接 \(DCB\)
   
 - Hyper-v 网络虚拟化-Windows Server 2016 中同时支持 NV 和 VxLAN。  
-- 接收方校验和卸载 \(IPv4、IPv6、TCP @ no__t-1-如果任何一个集成员支持这些设置，则支持这些设置。
+- 接收方校验和卸载 \(IPv4、IPv6、TCP\)-如果有任何组成员支持，则支持这些卸载。
 
-- 远程直接内存访问 \(RDMA @ no__t-1
+- \(RDMA\) 的远程直接内存访问
 
-- 单个根 i/o 虚拟化 \(SR @ no__t-1
+- 单个根 i/o 虚拟化 \(SR-IOV\)
 
-- 传输端校验和卸载 \(IPv4、IPv6、TCP @ no__t-1-如果所有组成员都支持这些设置，则支持这些设置。
+- 传输端校验和卸载 \(IPv4、IPv6、TCP\)，如果所有设置的团队成员都支持它们，则支持这些卸载。
 
-- 虚拟机队列 \(VMQ @ no__t-1
+- 虚拟机队列 \(VMQ\)
 
-- 虚拟接收方缩放 \(RSS @ no__t-1
+- \(RSS\) 的虚拟接收方缩放
 
 集与 Windows Server 2016 中的以下网络技术不兼容。
 
-- 802.1 x authentication。 802.1 x 可扩展身份验证协议 \(EAP @ no__t-1 数据包在集方案中由超级 @ no__t-Hqb-2v-fyv 虚拟交换机自动删除。
+- 802.1 x authentication。 802.1 x 可扩展身份验证协议 \(EAP\) 数据包将在集方案中由超级\-V 虚拟交换机自动删除。
  
-- IPsec 任务卸载 \(IPsecTO @ no__t-1。 这是一种传统的技术，它不受大多数网络适配器支持，并在其中存在，默认情况下处于禁用状态。
+- IPsec 任务卸载 \(IPsecTO\)。 这是一种传统的技术，它不受大多数网络适配器支持，并在其中存在，默认情况下处于禁用状态。
 
-- 在主机或本机操作系统中使用 QoS \(pacer @ no__t-1。 这些 QoS 方案不是超级 @ no__t-0V 方案，因此这些技术不会相交。 此外，QoS 仍可用，但默认情况下未启用-必须有意启用 QoS。
+- 在主机或本机操作系统中使用 QoS \(pacer\)。 这些 QoS 方案不是超\-V 方案，因此这些技术不会相交。 此外，QoS 仍可用，但默认情况下未启用-必须有意启用 QoS。
 
-- 接收方合并 \(RSC @ no__t-1。 已由超级 @ no__t-0V 虚拟交换机自动禁用 RSC。
+- 在 RSC\)\(接收端合并。 RSC 自动由 Hyper-v\-V 虚拟交换机禁用。
 
-- 接收方缩放 \(RSS @ no__t-1。 由于 Hyper-v 使用 VMQ 和 VMMQ 的队列，因此，在创建虚拟交换机时，RSS 始终处于禁用状态。
+- \(RSS\)接收方缩放。 由于 Hyper-v 使用 VMQ 和 VMMQ 的队列，因此，在创建虚拟交换机时，RSS 始终处于禁用状态。
 
 - TCP 烟囱卸载。 默认情况下，此技术处于禁用状态。
 
-- 虚拟机 QoS \(VM @ no__t-1。 VM QoS 可用，但默认情况下处于禁用状态。 如果在设置环境中配置 VM QoS，则 QoS 设置将导致不可预知的结果。
+- 虚拟机 QoS \(VM-QoS\)。 VM QoS 可用，但默认情况下处于禁用状态。 如果在设置环境中配置 VM QoS，则 QoS 设置将导致不可预知的结果。
 
 ## <a name="bkmk_modes"></a>设置模式和设置
 
@@ -260,20 +260,20 @@ VMQ 并将工作设置得很好，并且应在每次使用 Hyper-v 并设置时�
 > [!NOTE]
 > 设置 "始终显示所有集团队成员的可用队列总数"。 在 NIC 组合中，这称为 "队列总数" 模式。
 
-大多数网络适配器的队列都可用于接收方缩放 \(RSS @ no__t 或 VMQ，但不能同时用于这两种情况。
+大多数网络适配器的队列都可用于接收方缩放 \(RSS\) 或 VMQ，但不能同时用于这两种情况。
   
-某些 VMQ 设置似乎是 RSS 队列的设置，但实际上是基于当前正在使用的功能的通用队列上的设置。 每个 NIC 的高级属性中都有 `*RssBaseProcNumber` 和 `*MaxRssProcessors` 的值。
+某些 VMQ 设置似乎是 RSS 队列的设置，但实际上是基于当前正在使用的功能的通用队列上的设置。 每个 NIC 的高级属性中都有 `*RssBaseProcNumber` 和 `*MaxRssProcessors`的值。
 
 下面是几个提供更好系统性能的 VMQ 设置。
 
-- 理想情况下，每个 NIC 都应将 @no__t 设置为一个大于或等于2（2）的偶数。 这是因为第一个物理处理器（核心 0 @no__t 0logical 处理器0和 1 @ no__t）通常执行大部分系统处理，因此，网络处理应 steered 远离此物理处理器。 
+- 理想情况下，每个 NIC 应该将 `*RssBaseProcNumber` 设置为一个大于或等于两（2）的偶数。 这是因为第一个物理处理器（核心0） \(逻辑处理器0和 1\)，通常会执行大部分系统处理，因此 steered 的网络处理应远离此物理处理器。 
 
 >[!NOTE]
 >某些计算机体系结构每个物理处理器没有两个逻辑处理器，因此，对于这类计算机，基本处理器应大于或等于1。 如果有疑问，假定主机使用的是每个物理处理器体系结构2个逻辑处理器。
 
-- 团队成员的处理器应为可行的、不重叠的范围。 例如，在4核主机 \(8 个逻辑处理器 @ no__t-1 （包含2个 10Gbps Nic 的团队）中，你可以将第一个主机设置为使用第2个基处理器，并使用4个内核;第二个设置为使用基本处理器6并使用2个内核。
+- 团队成员的处理器应为可行的、不重叠的范围。 例如，在4核主机中 \(8 个逻辑处理器\) 组（2个 10Gbps Nic），可以将第一个处理器设置为使用2个基处理器，并使用4个内核;第二个设置为使用基本处理器6并使用2个内核。
 
-## <a name="bkmk_hnv"></a>设置和 Hyper-v 网络虚拟化 \(HNV @ no__t-2
+## <a name="bkmk_hnv"></a>\(HNV\) 设置和 Hyper-v 网络虚拟化
 
 设置与 Windows Server 2016 中的 Hyper-v 网络虚拟化完全兼容。 HNV 管理系统向集驱动程序提供信息，该信息允许设置以一种针对 HNV 流量进行优化的方式分发网络流量负载。
   
@@ -283,11 +283,11 @@ Windows Server 2016 支持实时迁移。
 
 ## <a name="bkmk_mac"></a>MAC 地址在传输的数据包上使用
 
-使用动态负载分布配置集团队时，来自单个源 \(such 作为单个 VM @ no__t 的数据包将同时分布在多个团队成员之间。 
+使用动态负载分布配置集团队时，来自单个源 \(（例如单个 VM\)）的数据包将同时分布在多个团队成员之间。 
 
 若要防止交换机混淆并阻止 MAC 稳定告警，请将源 MAC 地址替换为在关联团队成员以外的团队成员上传输的帧上的不同 MAC 地址。 因此，每个团队成员使用不同的 MAC 地址，并阻止 MAC 地址冲突，除非发生故障。
 
-当在主 NIC 上检测到故障时，集组合软件会开始使用被选为临时关联团队 @no__t 成员的团队成员上 VM 的 MAC 地址，该地址将作为 VM 的接口 @ no_ 立即显示给交换机： @_t-1。
+当在主 NIC 上检测到故障时，集组合软件会开始使用被选为临时关联团队成员的团队成员上 VM 的 MAC 地址，\(即，此时将作为 VM 的接口\)出现在交换机上。
 
 此更改仅适用于要在 VM 的关联团队成员上发送的流量，并将 VM 自己的 MAC 地址作为源 MAC 地址。 其他流量将继续与发生故障之前使用的任何源 MAC 地址一起发送。
 
@@ -313,7 +313,7 @@ Windows Server 2016 支持实时迁移。
   
 ## <a name="bkmk_manage"></a>管理集团队
 
-建议使用 System Center Virtual Machine Manager \(VMM @ no__t 来管理集团队，但也可以使用 Windows PowerShell 来管理集。 以下各节提供了可用于管理集的 Windows PowerShell 命令。
+建议你使用 \(VMM\) System Center Virtual Machine Manager 来管理集团队，但你也可以使用 Windows PowerShell 来管理集。 以下各节提供了可用于管理集的 Windows PowerShell 命令。
 
 有关如何使用 VMM 创建组集的信息，请参阅 System Center VMM 库主题[创建逻辑交换机](https://docs.microsoft.com/system-center/vmm/network-switch)中的 "设置逻辑交换机" 一节。
   
@@ -357,7 +357,7 @@ Remove-VMSwitch "SETvSwitch"
 
 ### <a name="changing-the-load-distribution-algorithm-for-a-set-team"></a>更改集团队的负载分配算法
 
-**VMSwitchTeam** Cmdlet 具有**LoadBalancingAlgorithm**选项。 此选项采用以下两个可能的值之一：**HyperVPort**或**Dynamic**。 若要设置或更改交换机嵌入的团队的负载分配算法，请使用此选项。 
+**VMSwitchTeam** Cmdlet 具有**LoadBalancingAlgorithm**选项。 此选项采用以下两个可能的值之一： **HyperVPort**或**Dynamic**。 若要设置或更改交换机嵌入的团队的负载分配算法，请使用此选项。 
 
 在下面的示例中，名为**TeamedvSwitch**的 VMSwitchTeam 使用**动态**负载平衡算法。  
 ```  
@@ -365,9 +365,9 @@ Set-VMSwitchTeam -Name TeamedvSwitch -LoadBalancingAlgorithm Dynamic
 ```  
 ### <a name="affinitizing-virtual-interfaces-to-physical-team-members"></a>将虚拟接口层面到物理团队成员
 
-集允许您在虚拟接口 \( i、Hyper-v 虚拟交换机端口 @ no__t 和团队中的一个物理 Nic 之间创建关联。 
+集允许在虚拟接口 \(例如，Hyper-v 虚拟交换机端口\) 以及团队中的一个物理 Nic 之间创建关联。 
 
-例如，如果为 SMB @ no__t-0Direct 创建了两个主机 Vnic，如[使用 SET 和 RDMA 创建 Hyper-v 虚拟交换机 vnic](#bkmk_set-rdma)部分中所述，可以确保这两个 vnic 使用不同的团队成员。 
+例如，如果为 SMB\-Direct 创建了两个主机 Vnic，如[使用 SET 和 RDMA Vnic 创建 Hyper-v 虚拟交换机](#bkmk_set-rdma)部分中所述，可以确保这两个 vnic 使用不同的团队成员。 
 
 添加到该部分中的脚本后，可以使用以下 Windows PowerShell 命令。
 

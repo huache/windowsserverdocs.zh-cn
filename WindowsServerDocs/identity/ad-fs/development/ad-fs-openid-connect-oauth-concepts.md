@@ -34,7 +34,7 @@ ms.locfileid: "71358760"
 ## <a name="application-types"></a>应用程序类型 
  
 
-|应用程序类型|描述|Role|
+|应用程序类型|描述|角色|
 |-----|-----|-----|
 |本机应用程序|有时称为 "**公共客户端**"，这旨在作为在电脑或设备上运行并与用户交互的客户端应用。|请求授权服务器（AD FS）提供的用于访问资源的用户的令牌。 使用令牌作为 HTTP 标头，将 HTTP 请求发送到受保护的资源。| 
 |服务器应用程序（Web 应用）|在服务器上运行并且用户通常通过浏览器访问的 web 应用程序。 由于它可以维护自己的客户端 "机密" 或凭据，因此有时称为**机密客户端**。 |请求授权服务器（AD FS）提供的用于访问资源的用户的令牌。 请求令牌之前，客户端（Web 应用）需要使用其机密进行身份验证。 | 
@@ -47,18 +47,18 @@ ms.locfileid: "71358760"
 ## <a name="security-tokens"></a>安全令牌 
  
 新式身份验证使用以下令牌类型： 
-- **id_token**： 由授权服务器（AD FS）颁发并由客户端使用的 JWT 令牌。 ID 令牌中的声明将包含有关用户的信息，以便客户端可以使用该信息。  
-- **access_token**： 由授权服务器（AD FS）颁发并供资源使用的 JWT 令牌。 此令牌的 "aud" 或听众声明必须与资源或 Web API 的标识符匹配。  
-- **refresh_token**： 这是由 AD FS 颁发的令牌，供客户端在需要刷新 id_token 和 access_token 时使用。 令牌对客户端是不透明的，并且只能由 AD FS 使用。  
+- **id_token**：由授权服务器（AD FS）颁发并由客户端使用的 JWT 令牌。 ID 令牌中的声明将包含有关用户的信息，以便客户端可以使用该信息。  
+- **access_token**：由授权服务器（AD FS）颁发并供资源使用的 JWT 令牌。 此令牌的 "aud" 或听众声明必须与资源或 Web API 的标识符匹配。  
+- **refresh_token**：这是由 AD FS 颁发的令牌，供客户端在需要刷新 id_token 和 access_token 时使用。 令牌对客户端是不透明的，并且只能由 AD FS 使用。  
 
-## <a name="scopes"></a>作用 
+## <a name="scopes"></a>范围 
  
 在 AD FS 中注册资源时，可以将作用域配置为允许 AD FS 执行特定操作。 除了配置范围之外，还需要在请求中发送范围值，以便 AD FS 执行该操作。 例如，管理员需要在资源注册过程中将范围配置为 openid，应用程序（客户端）需要将范围 = openid 发送到身份验证请求中的 AD FS 颁发 ID 令牌。 下面提供了 AD FS 中可用范围的详细信息 
  
-- aza-如果对 [代理客户端使用 OAuth 2.0 协议扩展](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) and 如果 scope 参数包含作用域 "aza"，则服务器将发出新的主刷新令牌并在响应的 refresh_token 字段中设置该令牌，并设置 refresh_如果强制执行，则为新的主刷新令牌的生存期的 token_expires_in 字段。 
+- aza-如果对 [代理客户端使用 OAuth 2.0 协议扩展](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) 并且 scope 参数包含作用域 "aza"，则服务器将发出新的主刷新令牌并在响应的 "refresh_token" 字段中设置该令牌，并将 "refresh_token_expires_in" 字段设置为新主刷新令牌的生存期（如果强制执行）。 
 - openid-允许应用程序请求使用 OpenID Connect 授权协议。 
 - logon_cert-logon_cert 范围允许应用程序请求登录证书，这些证书可用于以交互方式登录经过身份验证的用户。 AD FS 服务器忽略响应中的 access_token 参数，而是提供 base64 编码的 CMS 证书链或 CMC 完整 PKI 响应。  [此处](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供了更多详细信息。
-- user_impersonation-必须使用 user_impersonation 范围，才能成功地从 AD FS 请求代表访问令牌。 有关如何使用此作用域的详细信息，请参阅使用[OAuth 作为 AD FS 2016 的代表构建多层应用程序（OBO）](ad-fs-on-behalf-of-authentication-in-windows-server.md)。 
+- user_impersonation-user_impersonation 作用域是成功从 AD FS 请求代表访问令牌的必要条件。 有关如何使用此作用域的详细信息，请参阅使用[OAuth 作为 AD FS 2016 的代表构建多层应用程序（OBO）](ad-fs-on-behalf-of-authentication-in-windows-server.md)。 
 - allatclaims – allatclaims 范围允许应用程序在访问令牌中请求要添加到 ID 令牌中的声明。   
 - vpn_cert-vpn_cert 范围允许应用程序请求 VPN 证书，这些证书可用于通过 EAP-TLS 身份验证建立 VPN 连接。 这不再受支持。 
 - 电子邮件-允许应用程序请求已登录用户的电子邮件声明。  
@@ -106,21 +106,21 @@ AD FS 颁发的安全令牌（访问和 ID 令牌）包含有关已进行身份�
 ## <a name="types-of-libraries"></a>库的类型 
   
 两种类型的库与 AD FS 一起使用： 
-- **客户端库**:本机客户端和服务器应用程序使用客户端库获取访问令牌，以调用资源（如 Web API）。 使用 AD FS 2019 时，Microsoft 身份验证库（MSAL）是最新和推荐的客户端库。 建议为 2016 AD FS Active Directory 身份验证库（ADAL）。  
+- **客户端库**：本机客户端和服务器应用程序使用客户端库获取访问令牌，以调用资源（如 Web API）。 使用 AD FS 2019 时，Microsoft 身份验证库（MSAL）是最新和推荐的客户端库。 建议为 2016 AD FS Active Directory 身份验证库（ADAL）。  
 
-- **服务器中间件库**:Web 应用使用服务器中间件库进行用户登录。 Web Api 使用服务器中间件库验证本机客户端或其他服务器发送的令牌。 建议的中间件库是 OWIN （用于 .NET 的开放式 Web 界面）。 
+- **服务器中间件库**： Web 应用使用服务器中间件库进行用户登录。 Web Api 使用服务器中间件库验证本机客户端或其他服务器发送的令牌。 建议的中间件库是 OWIN （用于 .NET 的开放式 Web 界面）。 
 
 ## <a name="customize-id-token-additional-claims-in-id-token"></a>自定义 ID 令牌（ID 令牌中的其他声明）
  
 在某些情况下，Web 应用（客户端）可能需要 ID 令牌中的其他声明来帮助实现此功能。 可以通过使用以下选项之一来实现此目的。 
 
-**选项 1：** 使用公用客户端时，如果 web 应用没有尝试访问的资源，则应使用。 选项要求 
+**选项1：** 使用公用客户端时，如果 web 应用没有尝试访问的资源，则应使用。 选项要求 
 1.  response_mode 设置为 form_post 
 2.  信赖方标识符（Web API 标识符）与客户端标识符相同
 
 ![AD FS 自定义令牌选项1](media/adfs-modern-auth-concepts/option1.png)
 
-**选项 2：** 当 web 应用有一个尝试访问的资源，并且需要通过 ID 令牌传递其他声明时，应使用。 可以使用公共和机密客户端。 选项要求 
+**选项2：** 当 web 应用有一个尝试访问的资源，并且需要通过 ID 令牌传递其他声明时，应使用。 可以使用公共和机密客户端。 选项要求 
 1.  response_mode 设置为 form_post 
 2.  KB4019472 安装在 AD FS 服务器上 
 3.  分配给客户端– RP 对的作用域 allatclaims。 可以使用 ADFSApplicationPermission （使用 AdfsApplicationPermission （如果已授予一次） PowerShell cmdlet 来分配作用域，如以下示例中所示： 
@@ -131,7 +131,7 @@ AD FS 颁发的安全令牌（访问和 ID 令牌）包含有关已进行身份�
 
 ![AD FS 自定义令牌选项2](media/adfs-modern-auth-concepts/option2.png)
 
-若要更好地了解如何在 ADFS 中配置 Web 应用以获取自定义的 ID 令牌，请参阅[使用 OpenID connect 或 OAuth 与 AD FS 2016 或更高版本时，自定义要在 id_token 中发出的声明](Custom-Id-Tokens-in-AD-FS.md)。
+为了更好地了解如何在 ADFS 中配置 Web 应用以获取自定义的 ID 令牌，请参阅[使用 OpenID connect 或 OAuth 与 AD FS 2016 或更高版本一起使用时，自定义要在 id_token 中发出的声明](Custom-Id-Tokens-in-AD-FS.md)。
 
 ## <a name="single-log-out"></a>单一登录
 

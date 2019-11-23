@@ -22,17 +22,17 @@ ms.locfileid: "71363450"
 ---
 # <a name="using-the-enable-server-command"></a>使用 enable-Server 命令
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 启用 Windows 部署服务的所有服务。
 ## <a name="syntax"></a>语法
 ```
 wdsutil [Options] /Enable-Server [/Server:<Server name>]
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
-|[/Server： @no__t]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server： <Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
 ## <a name="BKMK_examples"></a>示例
 若要在服务器上启用这些服务，请运行下列操作之一：
 ```
@@ -41,7 +41,10 @@ wdsutil /verbose /Enable-Server /Server:MyWDSServer
 ```
 #### <a name="additional-references"></a>其他参考
 [命令行语法键](command-line-syntax-key.md)
- 使用[disable-server](using-the-disable-server-command.md)命令 @no__t[-3 使用服务器命令](using-the-get-server-command.md)
-，使用[Initialize-](using-the-initialize-server-command.md)server 命令 
-[子命令： set-server](subcommand-set-server.md)
-[子命令： start-Server](subcommand-start-server.md)1[子命令： Stop-server](subcommand-stop-server.md)3["取消初始化-服务器" 选项](the-uninitialize-server-option.md)
+使用[
+命令
+使用服务器](using-the-get-server-command.md)[命令的命令](using-the-disable-server-command.md)行语法，[使用 Initialize-](using-the-initialize-server-command.md) Server 命令
+[子命令： Set-server](subcommand-set-server.md)
+子命令[：启动-服务器](subcommand-start-server.md)
+子命令：[停止](subcommand-stop-server.md) [-服务器
+](the-uninitialize-server-option.md)

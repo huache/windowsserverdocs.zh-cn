@@ -17,7 +17,7 @@ ms.locfileid: "71406385"
 ---
 # <a name="create-content-server-data-packages-for-web-and-file-content-optional"></a>为 Web 和文件内容创建内容服务器数据包（可选）
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 您可以使用此过程来 prehash Web 和文件服务器上的内容，然后创建要导入到托管缓存服务器上的数据包。 
 
@@ -26,7 +26,7 @@ ms.locfileid: "71406385"
 此过程说明了如何在文件服务器和 Web 服务器上执行哈希内容。 如果你没有这种类型的内容服务器，则无需执行该内容服务器类型的说明。
 
 >[!IMPORTANT]
->在执行此过程之前，必须在内容服务器上安装并配置 BranchCache。 此外，如果你计划在内容服务器上更改服务器机密，请在前 @ no__t-0hashing content 之前执行此操作，修改服务器机密会使以前 @ no__t 1generated 哈希失效。
+>在执行此过程之前，必须在内容服务器上安装并配置 BranchCache。 此外，如果你计划在内容服务器上更改服务器机密，请在预\-哈希内容之前执行此操作，修改服务器机密将使之前\-生成的哈希值失效。
 
 若要执行该过程，你必须是 Administrators 组的成员。
 
@@ -53,7 +53,7 @@ ms.locfileid: "71406385"
         Publish-BCWebContent –Path D:\inetpub\wwwroot -StageData
         ```  
 
-4. 通过在每个内容服务器上运行以下命令来创建数据包。 将– Destination 参数的示例值 \(D： \\temp @ no__t 替换为在此过程开始时标识或创建的位置。
+4. 通过在每个内容服务器上运行以下命令来创建数据包。 将– Destination 参数 \(D：\\temp\) 的示例值替换为你在此过程开头标识或创建的位置。
 
     ```  
     Export-BCDataPackage –Destination D:\temp

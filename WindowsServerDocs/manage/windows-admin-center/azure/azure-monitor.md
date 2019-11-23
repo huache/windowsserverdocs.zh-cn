@@ -22,7 +22,7 @@ ms.locfileid: "71407018"
 [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)是一种解决方案，可从各种资源（包括在本地和云中的 Windows 服务器和 vm）收集、分析和处理遥测数据。 尽管 Azure Monitor 从 Azure Vm 和其他 Azure 资源拉取数据，本文重点介绍 Azure Monitor 与本地服务器和 Vm 一起工作的方式，尤其是使用 Windows 管理中心。 如果你有兴趣了解如何使用 Azure Monitor 获取有关超聚合群集的电子邮件警报，请参阅[使用 Azure Monitor 发送电子邮件以运行状况服务错误](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor)。
 
 ## <a name="how-does-azure-monitor-work"></a>Azure Monitor 是如何工作的？
-在 Azure Monitor 的 Log Analytics 工作区中收集从本地 Windows Server 生成的 @no__t 0img @ no__t 数据。 在工作区中，你可以启用各种监视解决方案，这是为特定方案提供见解的逻辑集。 例如，Azure 更新管理、Azure 安全中心和用于 VM 的 Azure Monitor 都是可在工作区中启用的所有监视解决方案。 
+在 Azure Monitor 的 Log Analytics 工作区中收集从本地 Windows Server 生成的 ![img](../media/azure-monitor-diagram.png) 数据。 在工作区中，你可以启用各种监视解决方案，这是为特定方案提供见解的逻辑集。 例如，Azure 更新管理、Azure 安全中心和用于 VM 的 Azure Monitor 都是可在工作区中启用的所有监视解决方案。 
 
 在 Log Analytics 工作区中启用监视解决方案时，所有向该工作区报告的服务器都将开始收集与该解决方案相关的数据，以便解决方案可以为工作区中的所有服务器生成见解。 
 
@@ -51,7 +51,7 @@ ms.locfileid: "71407018"
 如果连接到其他服务器，但已通过 WAC 或在 Azure 门户中手动设置了 Log Analytics 工作区，则还可以在服务器上安装 MMA 代理并将其连接到现有工作区。 将服务器连接到工作区时，它会自动开始收集数据并报告到该工作区中安装的解决方案。
 
 ## <a name="azure-monitor-for-virtual-machines-aka-virtual-machine-insights"></a>虚拟机的 Azure Monitor （也称为 虚拟机见解）
->适用于：Windows Admin Center 预览版
+>适用于： Windows 管理中心预览
 
 当你在 "服务器设置" 中设置用于 VM 的 Azure Monitor 时，Windows 管理中心会启用用于 VM 的 Azure Monitor 解决方案，也称为虚拟机 insights。 此解决方案允许你监视服务器运行状况和事件、创建电子邮件警报、在整个环境中获取服务器性能的合并视图，以及直观显示连接到给定服务器的应用程序、系统和服务。
 

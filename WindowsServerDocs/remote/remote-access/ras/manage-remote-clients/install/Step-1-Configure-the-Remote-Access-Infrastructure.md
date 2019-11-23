@@ -23,9 +23,9 @@ ms.locfileid: "71367322"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-**注意：** Windows Server 2012 将 DirectAccess 与路由及远程访问服务 (RRAS) 合并到了单个远程访问角色中。  
+**注意：** Windows Server 2012 将 DirectAccess 和路由和远程访问服务 (RRAS) 合并到了单个远程访问角色中。  
   
-本主题介绍如何使用混合的 IPv4 和 IPv6 环境中的单个远程访问服务器配置高级远程访问部署所需的基础结构。 在开始执行部署步骤之前，请确保已完成 @no__t 0Step 1 中所述的规划步骤：规划远程访问基础结构 @ no__t。  
+本主题介绍如何使用混合的 IPv4 和 IPv6 环境中的单个远程访问服务器配置高级远程访问部署所需的基础结构。 在开始执行部署步骤之前，请确保已完成[步骤1：规划远程访问基础结构](../plan/Step-1-Plan-the-Remote-Access-Infrastructure.md)中所述的规划步骤。  
   
 |任务|描述|  
 |----|--------|  
@@ -118,7 +118,7 @@ ms.locfileid: "71367322"
 ### <a name="remote-access-traffic"></a>远程访问流量  
 为远程访问通信应用以下内部网络防火墙例外：  
   
--   ISATAP协议41入站和出站  
+-   ISATAP：协议41入站和出站  
   
 -   所有 IPv4 或 IPv6 通信的 TCP/UDP  
   
@@ -231,7 +231,7 @@ ms.locfileid: "71367322"
   
 ### <a name="NLS_DNS"></a>添加网络位置服务器和 web 探测  
   
-1.  在内部网络 DNS 服务器上：在 "**开始**" 屏幕上，键入 "**dnsmgmt.msc**"，然后按 enter。  
+1.  在 "内部网络 DNS 服务器：" 的 "**开始**" 屏幕上，键入**dnsmgmt.msc**，然后按 enter。  
   
 2.  在“DNS 管理器”控制台的左窗格中，展开域的前向查找区域。 右键单击该域，然后单击 "**新建主机（A 或 AAAA）** "。  
   
@@ -241,9 +241,9 @@ ms.locfileid: "71367322"
   
 5.  为 directaccess corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在 " **DNS** " 对话框中，单击 **"确定"** 。  
   
-6.  单击 **“完成”** 。  
+6.  单击**完成**。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -315,7 +315,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 10. 出现提示时单击“立即重新启动”。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -370,7 +370,7 @@ Restart-Computer
   
 7.  在“选择用户、联系人、计算机或服务帐户”对话框中，选择你希望为 DirectAccess 启用的客户端计算机，然后单击“确定”。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
+![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -447,7 +447,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
     -   使用基于 HTTP 的 URL 的 Web 服务器，例如： https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
   
-    -   通过通用命名约定（UNC）路径（例如 \\ \ com\crld\corp-APP1-CA.crl）访问的文件服务器。  
+    -   通过通用命名约定（UNC）路径（例如 \\\crl.corp.contoso.com\crld\corp-APP1-CA.crl）访问的文件服务器  
   
     如果内部 CRL 分发点只能通过 IPv6 访问，则必须配置具有高级安全性的 Windows 防火墙连接安全规则。 此豁免 IPsec 保护从 intranet 的 IPv6 地址空间到 CRL 分发点的 IPv6 地址。  
   
@@ -455,5 +455,5 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>另请参阅  
   
--   [步骤 2：配置远程访问服务器](Step-2-Configure-the-Remote-Access-Server.md)
+-   [步骤2：配置远程访问服务器](Step-2-Configure-the-Remote-Access-Server.md)
 

@@ -39,7 +39,7 @@ ms.locfileid: "71402678"
 8.  [拓扑](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Topo)  
   
 ## <a name="BKMK_Intro"></a>产品介绍  
-Windows Server 2012 使用 25 个新 cmdlet 扩展用于 Windows PowerShell 的 Active Directory 模块，以管理复制和林拓扑。 在此之前，将强制使用泛型 **\*-restore-adobject**名词或调用 .net 函数。  
+Windows Server 2012 使用 25 个新 cmdlet 扩展用于 Windows PowerShell 的 Active Directory 模块，以管理复制和林拓扑。 在此之前，您被强制使用泛型 **\*restore-adobject**名词或调用 .net 函数。  
   
 与所有 Active Directory Windows PowerShell cmdlet 一样，此新功能需要在至少一个域控制器（最好是所有域控制器）上安装 [Active Directory 管理网关服务](https://www.microsoft.com/download/details.aspx?displaylang=en&id=2852) 。  
   
@@ -228,7 +228,7 @@ Get-ADDomainController -filter * | foreach {Sync-ADObject -object "cn=tony wang,
   
 例如，在快速扩张新的分支机构以及合并其他机构之后，你可能需要基于物理位置、网络更改和新容量要求来更改上百个站点。 可自动进行更改，而不是使用 Dssites.msc 和 Adsiedit.msc。 当你使用由网络和设施团队提供的数据电子表格开始操作时，这一点尤为引人注目。  
   
-**Get-adreplication @ no__t-1*** cmdlet 返回有关复制拓扑的信息，适用于批量进入**get-adreplication @ no__t-3*** cmdlet 的管道。 **Get** cmdlet 不会更改数据，只显示数据，或创建可通过管道传递到**get-adreplication @ no__t-2*** cmdlet 的 Windows PowerShell 会话对象。 **New** 和 **Remove** cmdlet 用于创建或删除 Active Directory 拓扑对象。  
+**Get-adreplication\\** * cmdlet 返回有关复制拓扑的信息，可用于将批量传输到**get-adreplication\\** * cmdlet。 **Get** cmdlet 不会更改数据，只显示数据，或创建可通过管道传递到**get-adreplication\\** * cmdlet 的 Windows PowerShell 会话对象。 **New** 和 **Remove** cmdlet 用于创建或删除 Active Directory 拓扑对象。  
   
 例如，你可以使用 CSV 文件创建新站点：  
   
@@ -267,7 +267,7 @@ get-adreplicationsite -filter * -property subnets | where-object {!$_.subnets -e
   
 ![通过 powershell 进行高级管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSiteFiltrer.png)  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [使用 Windows PowerShell &#40;的 Active Directory 复制和拓扑管理简介100&#41;](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)  
   
 

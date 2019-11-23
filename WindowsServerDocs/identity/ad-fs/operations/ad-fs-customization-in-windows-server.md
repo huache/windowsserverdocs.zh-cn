@@ -85,7 +85,7 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
 有关自定义 "更新密码" 页的信息，请参阅[自定义 AD FS 登录页](https://technet.microsoft.com/library/dn280950.aspx)。  
   
 ## <a name="customizing-and-alternate-ids"></a>自定义和备用 Id  
-用户可以使用 Active Directory 域服务（AD DS）所接受的任意形式的用户标识符登录到已启用 Active Directory 联合身份验证服务（AD FS）的应用程序。 其中包括用户主体名称（Upn）（@no__t 0）或域限定 sam 帐户名称（contoso\johndoe 或 com\johndoe）。  有关详细信息，请参阅[配置备用登录 ID。](Configuring-Alternate-Login-ID.md)  
+用户可以使用 Active Directory 域服务（AD DS）所接受的任意形式的用户标识符登录到已启用 Active Directory 联合身份验证服务（AD FS）的应用程序。 其中包括用户主体名称（Upn）（johndoe@contoso.com）或域限定 sam 帐户名称（contoso\johndoe 或 com\johndoe）。  有关详细信息，请参阅[配置备用登录 ID。](Configuring-Alternate-Login-ID.md)  
   
 你可能还需要自定义 AD FS 登录页面，以便向最终用户授予有关备用登录 ID 的一些提示。 可以通过添加自定义登录页说明来完成此操作。有关详细信息，请参阅[自定义 AD FS 登录页。](https://technet.microsoft.com/library/dn280950.aspx)   
   

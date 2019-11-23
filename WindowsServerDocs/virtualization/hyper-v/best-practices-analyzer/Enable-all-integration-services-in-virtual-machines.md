@@ -19,7 +19,7 @@ ms.locfileid: "71364886"
 ---
 # <a name="enable-all-integration-services-in-virtual-machines"></a>启用虚拟机中的所有集成服务
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳实践和扫描的详细信息，请参阅 [最佳实践分析程序](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71364886"
   
 *对于下列虚拟机，服务或集成功能可能无法正常运行：*  
   
-@no__t-虚拟机名称的 0list >  
+虚拟机名称 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
   

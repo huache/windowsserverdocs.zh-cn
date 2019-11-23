@@ -38,7 +38,7 @@ wbadmin get versions
 [-machine:BackupMachineName]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -55,7 +55,7 @@ wbadmin get versions
 ```
 wbadmin get versions -backupTarget:h:
 ```
-若要查看远程共享文件夹中存储的可用备份的列表 @no__t 为计算机 server01-0 @ no__t-1servername\share，请键入：
+若要查看远程共享文件夹中存储的可用备份的列表 \\\\servername\share 用于计算机 server01，请键入：
 ```
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```

@@ -15,9 +15,9 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356253"
 ---
-# <a name="prehash-and-preload-content-on-the-hosted-cache-server-optional"></a>托管缓存服务器上的 Prehash 和预加载内容 \(Optional @ no__t-1
+# <a name="prehash-and-preload-content-on-the-hosted-cache-server-optional"></a>托管缓存服务器上的 Prehash 和预加载内容 \(可选\)
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 你可以使用本部分中的过程来 prehash 内容服务器上的内容、将内容添加到数据包，然后在托管缓存服务器上预加载内容。 
 

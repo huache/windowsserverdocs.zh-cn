@@ -38,7 +38,7 @@ ms.locfileid: "71359380"
  |**联合服务器配置向导输入选项**|**使用以下值**| 
 |-----|-----| 
 |“指定联合身份验证服务名称”页面上的“SSL 证书”|选择你在准备 AD FS 联合服务器迁移时记录的其使用者名称和指纹的 SSL 证书。|  
-|“指定服务帐户”页面上的“服务帐户”和“密码”|输入你在准备 AD FS 联合服务器迁移时所记录的服务帐户信息。 **注意：** 如果你在向导的第二页上选择独立联合服务器，会自动将网络服务用作服务帐户。|  
+|“指定服务帐户”页面上的“服务帐户”和“密码”|输入你在准备 AD FS 联合服务器迁移时所记录的服务帐户信息。 **注意：** 如果在向导的第二页上选择 "独立联合服务器"，则会将网络服务自动用作服务帐户。|  
   
 > [!IMPORTANT] 
 > 仅当你使用 Windows 内部数据库 (WID) 为独立联合服务器或单节点 AD FS 场存储 AD FS 配置数据库时，可以采用此方法。  
@@ -57,7 +57,7 @@ ms.locfileid: "71359380"
 > [!NOTE]
 >  只有在迁移独立联合服务器或单节点 WID 场的情况下才需要执行此步骤。  如果联合服务器使用 SQL Server 数据库作为配置存储，则在数据库中保留服务设置和信任关系。  
   
-5. 更新你的 AD FS 网页。 这是一个手动步骤。 如果你在准备迁移时备份你的自定义 AD FS 网页，则使用你的备份数据来覆盖默认情况下在**位于%systemdrive%\inetpub\adfs\ls**目录中作为 AD FS 的结果创建的默认 AD FS 网页Windows Server 2012 上的配置。  
+5. 更新你的 AD FS 网页。 这是一个手动步骤。 如果你在准备迁移时备份你的自定义 AD FS 网页，则使用你的备份数据来覆盖默认的 AD FS 网页，这些网页在默认情况下作为 Windows Server 2012 上的 AD FS 配置的结果在**位于%systemdrive%\inetpub\adfs\ls**目录中创建。  
   
 6. 还原任何剩余 AD FS 自定义项，如自定义属性存储。  
   
@@ -87,9 +87,9 @@ ms.locfileid: "71359380"
 -   在 AD FS 管理控制台中，选择“信赖方信任”。 你必须使用“添加信赖方信任向导”手动重新创建每个信赖方信任。 使用你在准备 AD FS 迁移时已导出并已记录的信赖方信任列表。 有关创建信赖方信任的详细信息，请参阅[使用联合元数据创建信赖方信任](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-using-federation-metadata)或[手动创建信赖方信任](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-manually)。 
 
 ## <a name="next-steps"></a>后续步骤
- [准备将 AD FS 2.0 联合服务器迁移](prepare-to-migrate-ad-fs-fed-server.md)   
+ [准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-ad-fs-fed-server.md)   
  [准备迁移 AD FS 2.0 联合服务器代理](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [将 AD FS 2.0 联合服务器迁移](migrate-the-ad-fs-fed-server.md)   
+ [迁移 AD FS 2.0 联合服务器](migrate-the-ad-fs-fed-server.md)   
  [迁移 AD FS 2.0 联合服务器代理](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)
 

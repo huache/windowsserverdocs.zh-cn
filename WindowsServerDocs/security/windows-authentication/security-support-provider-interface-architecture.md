@@ -89,9 +89,9 @@ SSPI 是 Windows Server 操作系统中通用安全服务 API （GSSAPI）的实
 
 -   [Microsoft Kerberos （Windows）](https://msdn.microsoft.com/library/aa378747(VS.85).aspx)
 
--   [ @ NO__T-1MS-KILE @ NO__T-2：Kerberos 协议扩展 @ no__t-0
+-   [\[KILE\]： Kerberos 协议扩展](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
 
--   [ @ NO__T-1MS-SFU @ NO__T-2：Kerberos 协议扩展：用户的服务和约束委派协议规范 @ no__t-0
+-   [\[MS-SFU\]： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
 
 -   [Kerberos SSP/AP （Windows）](https://msdn.microsoft.com/library/aa377942(VS.85).aspx)
 
@@ -114,13 +114,13 @@ NTLM 安全支持提供程序（NTLM SSP）是安全支持提供程序接口（S
 
 -   安全远程过程调用服务或 DCOM 服务
 
-位置：%windir%\Windows\System32\msv1_0.dll
+Location：%windir%\Windows\System32\ msv1_0 .dll
 
 默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
 **NTLM 协议和 NTLM SSP 的其他资源**
 
--   [MSV1_0 Authentication Package （Windows）](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
+-   [MSV1_0 身份验证包（Windows）](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
 
 -   Windows 7 中[NTLM 身份验证的更改](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx) 
 
@@ -145,7 +145,7 @@ Digest SSP （Wdigest）用于以下内容：
 
 -   [Microsoft Digest 身份验证（Windows）](https://msdn.microsoft.com/library/aa378745(VS.85).aspx)
 
--   [ @ NO__T-1MS-DPSP @ NO__T-2：摘要式协议扩展 @ no__t-0
+-   [\[DPSP\]：摘要式协议扩展](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
 ### <a name="BKMK_SchannelSSP"></a>Schannel 安全支持提供程序
 安全通道（Schannel）用于基于 web 的服务器身份验证，例如，当用户尝试访问安全 web 服务器时。
@@ -183,7 +183,7 @@ TLS 协议、SSL 协议、专用通信技术（PCT）协议和数据报传输层
 
 -   [TLS/SSL 技术参考](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)
 
--   [ @ NO__T-1MS-TLSP @ NO__T-2：传输层安全性（TLS）配置文件 @ no__t-0
+-   [\[TLSP\]：传输层安全性（TLS）配置文件](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
 ### <a name="BKMK_NegoSSP"></a>协商安全支持提供程序
 简单且受保护的 GSS-API 协商机制（SPNEGO）构成协商 SSP 的基础，whichcan 用于协商特定身份验证协议。 当应用程序调用 SSPI 登录到网络时，它可以指定 SSP 来处理请求。 如果应用程序指定 Negotiate SSP，则它会分析请求，并根据客户配置的安全策略选择相应的提供程序来处理请求。
@@ -200,9 +200,9 @@ RFC 2478 中指定了 SPNEGO。
 
 -   [Microsoft Negotiate （Windows）](https://msdn.microsoft.com/library/aa378748(VS.85).aspx)
 
--   [ @ NO__T-1MS-SPNG @ NO__T-2：简单且受保护的 GSS-API 协商机制（SPNEGO） Extension @ no__t-0
+-   [\[SPNG\]：简单且受保护的 GSS-API 协商机制（SPNEGO）扩展](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
 
--   [ @ NO__T-1MS-N2HT @ NO__T-2：协商和 Nego2 HTTP 身份验证协议规范 @ no__t-0
+-   [\[N2HT\]：协商和 Nego2 HTTP 身份验证协议规范](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
 ### <a name="BKMK_CredSSP"></a>凭据安全支持提供程序
 凭据安全服务提供程序（CredSSP）提供启动新终端服务和远程桌面服务会话时的单一登录（SSO）用户体验。 使用 CredSSP，应用程序可以根据客户端的策略，将用户的凭据从客户端计算机（通过使用客户端 SSP）委托给目标服务器（通过服务器端 SSP）。 CredSSP 策略通过使用组策略进行配置，并且默认情况下禁用凭据的委派。
@@ -213,7 +213,7 @@ RFC 2478 中指定了 SPNEGO。
 
 **凭据 SSP 的其他资源**
 
--   [ @ NO__T-1MS-CSSP @ NO__T-2：凭据安全支持提供程序（CredSSP）协议规范 @ no__t-0
+-   [\[CSSP\]：凭据安全支持提供程序（CredSSP）协议规范](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
 
 -   [用于终端服务登录的凭据安全服务提供程序和 SSO](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
 
@@ -284,7 +284,7 @@ Negotiate 选项可用于允许客户端和服务器尝试查找可接受的协�
 
     -   如果客户端计算机不支持任何列出的协议，则身份验证交换会失败。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [Windows 身份验证体系结构](https://technet.microsoft.com/library/dn169024(v=ws.10).aspx)
 
 

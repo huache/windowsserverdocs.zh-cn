@@ -23,7 +23,7 @@ ms.locfileid: "71388768"
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-本主题介绍如何配置在现有 VPN 部署中启用 DirectAccess 所需的基础结构。 在开始执行部署步骤之前，请确保已完成 @no__t 0Step 1 中所述的规划步骤：规划 DirectAccess 基础结构 @ no__t。  
+本主题介绍如何配置在现有 VPN 部署中启用 DirectAccess 所需的基础结构。 在开始执行部署步骤之前，请确保已完成[步骤1：规划 DirectAccess 基础结构](Step-1-Plan-DirectAccess-Infrastructure.md)中所述的规划步骤。  
   
 |任务|描述|  
 |----|--------|  
@@ -179,7 +179,7 @@ ms.locfileid: "71388768"
   
 ### <a name="NLS_DNS"></a>创建网络位置服务器和 web 探测 DNS 记录  
   
-1.  在内部网络 DNS 服务器上：在 "**开始**" 屏幕上，键入 * * dnsmgmt.msc * *，然后按 enter。  
+1.  在 "内部网络 DNS 服务器：" 的 "**开始**" 屏幕上，键入 * * dnsmgmt.msc * *，然后按 enter。  
   
 2.  在“DNS 管理器”控制台的左窗格中，展开域的前向查找区域。 右键单击该域，然后单击“新建主机(A 或 AAAA)”。  
   
@@ -187,9 +187,9 @@ ms.locfileid: "71388768"
   
 4.  在“新主机”对话框的“名称(如果为空则使用父域名)”框中，输入 Web 探测的 DNS 名称（默认 Web 探测的名称为 directaccess-webprobehost）。 在“IP 地址”框中，输入 Web 探测的 IPv4 地址，然后单击“添加主机”。 为 directaccess corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在“DNS”对话框中，单击“确定”。  
   
-5.  单击 **“完成”** 。  
+5.  单击**完成**。  
 
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -202,7 +202,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 -   Ip-https**服务器**-DirectAccess 客户端必须能够从 Internet 解析远程访问服务器的 DNS 名称。  
   
--   **CRL 吊销检查**-directaccess 使用证书吊销检查来检查 directaccess 客户端与远程访问服务器之间的 ip-https 连接，以及 directaccess 客户端和网络之间基于 HTTPS 的连接的证书吊销检查位置服务器。 在这两种情况下，DirectAccess 客户端都必须能够解析和访问 CRL 分发点位置。  
+-   **CRL 吊销检查**-directaccess 使用证书吊销检查来检查 directaccess 客户端与远程访问服务器之间的 ip-https 连接，以及 directaccess 客户端和网络位置服务器之间基于 HTTPS 的连接。 在这两种情况下，DirectAccess 客户端都必须能够解析和访问 CRL 分发点位置。  
   
 ## <a name="ConfigAD"></a>配置 Active Directory  
 必须将远程访问服务器和所有 DirectAccess 客户端计算机都加入 Active Directory 域。 DirectAccess 客户端计算机必须是以下域类型之一的成员：  
@@ -233,7 +233,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 9. 在“系统属性”对话框中单击“关闭”。 出现提示时单击“立即重新启动”。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>Windows powershell 等效命令</em>***  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
@@ -277,7 +277,7 @@ Restart-Computer
   
 6.  在“选择用户、联系人、计算机或服务帐户”对话框中，选择你希望为 DirectAccess 启用的客户端计算机，然后单击“确定”。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   

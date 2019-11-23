@@ -18,7 +18,7 @@ ms.locfileid: "71392070"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>在 Active Directory 域服务中预安排群集计算机对象
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 本主题介绍如何在 Active Directory 域服务 (AD DS) 中预安排群集计算机对象。 当用户或组没有在 AD DS 中创建计算机对象的权限时，你可以使用此过程，允许用户或组创建故障转移群集。
 
@@ -29,7 +29,7 @@ ms.locfileid: "71392070"
 
 若要自动创建 CNO，创建故障转移群集的用户必须具备“ **创建计算机对象** ”权限，这一权限针对组织单位 (OU) 或将形成群集的服务器所在的容器。 若要允许用户或组在不具备此权限的情况下创建群集，可以让具有 AD DS 中的适当权限的用户（通常为域管理员）在 AD DS 中预安排 CNO。 这也让域管理员能够更多地控制用于群集的命名约定，以及在其中创建群集对象的 OU。
 
-## <a name="step-1-prestage-the-cno-in-ad-ds"></a>第 1 步：在 AD DS 中预安排 CNO
+## <a name="step-1-prestage-the-cno-in-ad-ds"></a>步骤 1：在 AD DS 中预安排 CNO
 
 开始之前，请确保你掌握了以下信息：
 
@@ -59,7 +59,7 @@ ms.locfileid: "71392070"
 
 ![示例群集 OU 中的已禁用 CNO](media/prestage-cluster-adds/disabled-cno-in-the-example-clusters-ou.png)
 
-**Figure 1。在示例群集 OU @ no__t 中禁用 CNO
+**图1。示例群集 OU 中的已禁用 CNO**
 
 ## <a name="step-2-grant-the-user-permissions-to-create-the-cluster"></a>步骤 2：向用户授予创建群集的权限
 
@@ -77,7 +77,7 @@ ms.locfileid: "71392070"
   
    ![向将要创建群集的用户或组授予“完全控制”权限](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
   
-   **Figure 2。向将创建群集 @ no__t 的用户或组授予 "完全控制" 权限
+   **图2。向将要创建群集的用户或组授予 "完全控制" 权限**
 6. 选择“确定”。
 
 完成此步骤后，你向其授予权限的用户将能够创建故障转移群集。 但是，如果 CNO 位于 OU 中，则在完成步骤 3 之前，用户将无法创建需要客户端访问点的群集角色。
@@ -85,18 +85,18 @@ ms.locfileid: "71392070"
 >[!NOTE]
 >如果 CNO 位于默认的计算机容器中，则群集管理员可以创建最多 10 个 VCO，而无需任何附加配置。 要添加 10 个以上的 VCO，你必须明确授予对计算机容器的 CNO 的“创建计算机对象”权限。
 
-## <a name="step-3-grant-the-cno-permissions-to-the-ou-or-prestage-vcos-for-clustered-roles"></a>步骤 3:向 OU 授予 CNO 权限，或为群集角色预安排 Vco
+## <a name="step-3-grant-the-cno-permissions-to-the-ou-or-prestage-vcos-for-clustered-roles"></a>步骤 3：向 CNO 授予对 OU 的权限，或为群集角色预安排 VCO
 
 当你创建具有客户端访问点的群集角色时，群集会在 CNO 所在的同一个 OU 中创建 VCO。 若要自动执行此操作，CNO 必须具备在 OU 中创建计算机对象的权限。
 
 如果你已在 AD DS 中预安排 CNO，则可以通过执行以下某一项操作来创建 VCO：
 
-- 选项 1：向[OU 授予 CNO 权限](#grant-the-cno-permissions-to-the-ou)。 如果使用此选项，则群集可以自动在 AD DS 中创建 VCO。 因此，故障转移群集的管理员可以创建群集角色，而无需请求你在 AD DS 中预安排 VCO。
+- 选项 1：[向 CNO 授予对 OU 的权限](#grant-the-cno-permissions-to-the-ou)。 如果使用此选项，则群集可以自动在 AD DS 中创建 VCO。 因此，故障转移群集的管理员可以创建群集角色，而无需请求你在 AD DS 中预安排 VCO。
 
 >[!NOTE]
 >**Domain Admins** 组中的成员身份或等效身份是完成此选项步骤所需的最低要求。
 
-- 选项 2：[为群集角色预安排 VCO](#prestage-a-vco-for-a-clustered-role)。 如果由于组织的要求，必须为群集角色预安排帐户，请使用此选项。 例如，你可能需要控制命名约定，或者控制创建哪些群集角色。
+- 选项2：为[群集角色预安排 VCO](#prestage-a-vco-for-a-clustered-role)。 如果由于组织的要求，必须为群集角色预安排帐户，请使用此选项。 例如，你可能需要控制命名约定，或者控制创建哪些群集角色。
 
 >[!NOTE]
 >**Account Operators** 组中的成员身份是完成此选项步骤所需的最低要求。
@@ -104,7 +104,7 @@ ms.locfileid: "71392070"
 ### <a name="grant-the-cno-permissions-to-the-ou"></a>向 OU 授予 CNO 权限
 
 1. 在“Active Directory 用户和计算机”中，在“查看”菜单上，确认“高级功能”处于选中状态。
-2. 右键单击你在其中创建了 CNO 的 OU [Step 1：预留 AD DS @ no__t-0 中的 CNO，然后选择 "**属性**"。
+2. 右键单击在[步骤1：在 AD DS 中预安排 CNO 中](#step-1-prestage-the-cno-in-ad-ds)创建了 CNO 的 OU，然后选择 "**属性**"。
 3. 在 "**安全**" 选项卡上，选择 "**高级**"。
 4. 在 "**高级安全设置**" 对话框中，选择 "**添加**"。
 5. 在 "**主体**" 旁边，选择 "**选择主体**"。
@@ -115,7 +115,7 @@ ms.locfileid: "71392070"
 
    ![向 CNO 授予创建计算机对象的权限](media/prestage-cluster-adds/granting-create-computer-objects-permission-to-the-cno.png)
 
-   **Figure 3。向 CNO @ no__t 授予 "创建计算机对象" 权限
+   **图3：向 CNO 授予创建计算机对象的权限**
 10. 选择 **"确定"** ，直到返回到 "Active Directory 用户和计算机" 管理单元。
 
 故障转移群集管理员现在能够创建具有客户端访问点的群集角色，并让资源联机。

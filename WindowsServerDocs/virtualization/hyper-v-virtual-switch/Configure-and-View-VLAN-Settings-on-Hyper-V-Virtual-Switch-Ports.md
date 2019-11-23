@@ -21,7 +21,7 @@ ms.locfileid: "71366868"
 
 你可以使用本主题来了解有关在 Hyper-v 虚拟交换机端口上配置和查看虚拟局域网（VLAN）设置的最佳实践。
 
-如果要在 Hyper-v 虚拟交换机端口上配置 VLAN 设置，则可以使用 Windows @ no__t-0 Server 2016 Hyper-v 管理器或 System Center Virtual Machine Manager （VMM）。
+如果要在 Hyper-v 虚拟交换机端口上配置 VLAN 设置，则可以使用 Windows&reg; Server 2016 Hyper-v 管理器或 System Center Virtual Machine Manager （VMM）。
 
 如果你使用的是 VMM，则 VMM 将使用以下 Windows PowerShell 命令来配置交换机端口。
 
@@ -48,8 +48,8 @@ Set-VMNetworkAdapterVlan <VM-name|-managementOS> -Access -VlanID <vlan-value>
 
 如果不遵循这些准则，你可能会遇到以下问题。
 
-- 在部署了 SDN 并使用 VMM、网络控制器或**VMNetworkAdapterIsolation** Cmdlet 配置 Hyper-v 虚拟交换机端口上的 VLAN 设置的情况下：如果你使用 Hyper-v 管理器或**获取 set-vmnetworkadaptervlan**来查看配置设置，则命令输出将不会显示你的 VLAN 设置。 相反，你必须使用**VMNetworkIsolation** cmdlet 来查看 VLAN 设置。
-- 在未部署 SDN 的情况下，改用 Hyper-v 管理器或**set-vmnetworkadaptervlan** cmdlet 来配置 Hyper-v 虚拟交换机端口上的 VLAN 设置：如果使用**VMNetworkIsolation** cmdlet 查看配置设置，则命令输出将不会显示你的 VLAN 设置。 相反，你必须使用**Get set-vmnetworkadaptervlan** cmdlet 来查看 VLAN 设置。
+- 如果你已部署了 SDN 并使用 VMM、网络控制器或**VMNetworkAdapterIsolation** cmdlet 来配置 Hyper-v 虚拟交换机端口上的 VLAN 设置：如果你使用 Hyper-v 管理器或**获取 set-vmnetworkadaptervlan**来查看配置设置，则命令输出将不会显示你的 VLAN 设置。 相反，你必须使用**VMNetworkIsolation** cmdlet 来查看 VLAN 设置。
+- 如果你尚未部署 SDN，而是使用 Hyper-v 管理器或**set-vmnetworkadaptervlan** cmdlet 来配置 Hyper-v 虚拟交换机端口上的 VLAN 设置：如果你使用**VMNetworkIsolation** cmdlet 查看配置设置，则命令输出将不会显示你的 VLAN 设置。 相反，你必须使用**Get set-vmnetworkadaptervlan** cmdlet 来查看 VLAN 设置。
 
 同时，不要尝试使用这两种配置方法来配置相同的交换机端口 VLAN 设置。 如果执行此操作，则不会错误地配置交换机端口，结果可能是网络通信失败。
 

@@ -17,7 +17,7 @@ ms.locfileid: "71402181"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>对命名空间启用基于访问的枚举
 
-> 适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 基于访问的枚举可隐藏用户无权访问的文件和文件夹。 默认情况下，对于 DFS 命名空间，不启用此功能。 你可以通过使用 DFS 管理对 DFS 文件夹启用基于访问的枚举。 若要控制对文件夹目标中的文件和文件夹进行基于访问的枚举，必须通过使用共享和存储管理，对每个共享文件夹启用基于访问的枚举。
 
@@ -51,7 +51,7 @@ ms.locfileid: "71402181"
 
 1.  在安装有**分布式文件系统**角色服务或**分布式文件系统工具**功能的服务器上打开命令提示符窗口。
 
-2.  键入以下命令，其中 *< namespace @ no__t-1root >* 是命名空间的根：
+2.  键入以下命令，其中 *< 命名空间\_root >* 是命名空间的根：
 
     ```  
     dfsutil property abe enable \\ <namespace_root>
@@ -80,13 +80,13 @@ ms.locfileid: "71402181"
 
 1. 在安装有**分布式文件系统**角色服务或**分布式文件系统工具**功能的服务器上打开命令提示符窗口。
 
-2. 键入以下命令，其中 *&lt;DFSPath @ no__t-2*是 DFS 文件夹（链接）的路径， *< DOMAIN @ no__t-4Account >* 是组或用户帐户的名称，而 *（...）* 替换为其他访问控制项（Ace）：
+2. 键入以下命令，其中 *&lt;DFSPath&gt;* 是 DFS 文件夹（链接）的路径， *< 域\\帐户 >* 是组或用户帐户的名称，而 *（...）* 替换为其他访问控制项（ace）：
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   例如，若要将现有权限替换为允许 Domain Admins 和 CONTOSO @ no__t-0Trainers 组读取（R） @no__t 访问1contoso 文件夹的权限，请键入以下命令：
+   例如，若要将现有权限替换为允许 "域管理员" 和 "CONTOSO"\\培训人员组读取（R） \\office\public\training 文件夹的权限，请键入以下命令：
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
@@ -95,13 +95,13 @@ ms.locfileid: "71402181"
 3. 若要从命令提示符执行其他任务，请使用以下命令：
 
 
-| Command | 描述 |
+| 命令 | 描述 |
 |---|---|
 |[Dfsutil 属性 sd deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|拒绝组或用户，使其无法查看文件夹。|
 |[Dfsutil 属性 sd reset](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |从文件夹中删除所有权限。|
 |[Dfsutil 属性 sd revoke](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| 从文件夹中删除组或用户 ACE。 |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [创建 DFS 命名空间](create-a-dfs-namespace.md)
 -   [委派 DFS 命名空间的管理权限](delegate-management-permissions-for-dfs-namespaces.md)

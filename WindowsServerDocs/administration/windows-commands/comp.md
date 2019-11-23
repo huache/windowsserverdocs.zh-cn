@@ -34,7 +34,7 @@ ms.locfileid: "71379265"
 comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
@@ -43,7 +43,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 |/d|以十进制格式显示差异。 （默认格式为十六进制。）|
 |/a|将差异显示为字符。|
 |/l|显示出现差异的行号，而不是显示字节偏移量。|
-|/n = \<Number >|仅比较为每个文件指定的行数，即使文件大小不同也是如此。|
+|/n =\<数字 >|仅比较为每个文件指定的行数，即使文件大小不同也是如此。|
 |/c|执行不区分大小写的比较。|
 |/off [line]|处理具有脱机属性集的文件。|
 |/?|在命令提示符下显示帮助。|
@@ -93,7 +93,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 
 ## <a name="BKMK_examples"></a>示例
 
-若要将目录 C:\Reports 的内容与备份目录进行比较 \\ @ no__t-1Sales\Backup\April，请键入：
+若要将目录 C:\Reports 的内容与备份目录进行比较 \\\\Sales\Backup\April "，请键入：
 ```
 comp c:\reports \\sales\backup\april
 ```

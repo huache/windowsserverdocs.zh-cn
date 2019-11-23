@@ -19,7 +19,7 @@ ms.locfileid: "71364906"
 ---
 # <a name="display-adapters-should-be-enabled-in-virtual-machines-to-provide-video-capabilities"></a>应在虚拟机中启用显示适配器以提供视频功能
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 
   
@@ -44,7 +44,7 @@ Microsoft 虚拟机总线视频设备是一种优化了用于 Hyper-v 虚拟机�
   
 *以下虚拟机的视频性能将会降级：*  
   
-@no__t-虚拟机名称的 0list >  
+虚拟机名称 \<列表 >  
   
 ## <a name="resolution"></a>分辨率  
   

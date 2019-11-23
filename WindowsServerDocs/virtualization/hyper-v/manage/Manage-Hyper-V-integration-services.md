@@ -17,7 +17,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71392773"
 ---
->适用于：Windows 10、Windows Server 2016、Windows Server 2019
+>适用于： Windows 10、Windows Server 2016、Windows Server 2019
 
 # <a name="manage-hyper-v-integration-services"></a>管理 Hyper-v Integration Services
 
@@ -98,7 +98,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 ### <a name="use-windows-services-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>使用 Windows 服务在 Windows 来宾中启动或停止集成服务
 
-1. 通过以管理员身份或通过双击 "控制面板" 中的 "服务" 图标运行 @no__t 来打开服务管理器。
+1. 通过以管理员身份运行 ```services.msc``` 或双击控制面板中的 "服务" 图标，打开 "服务管理器"。
 
     ![显示 "Windows 服务" 窗格的屏幕截图](media/HVServices.png) 
 
@@ -198,7 +198,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
 这些示例演示了如何停止和启动 KVP 守护程序，名为 `hv_kvp_daemon`。
 
-1. 使用进程 ID \(PID @ no__t 来停止守护程序的进程。 若要查找 PID，请查看输出的第二列，或使用 `pidof`。 Hyper-v 守护程序作为根运行，所以需要根权限。
+1. 使用进程 ID \(PID\) 停止守护程序的进程。 若要查找 PID，请查看输出的第二列，或使用 `pidof`。 Hyper-v 守护程序作为根运行，所以需要根权限。
 
     ``` BASH
     sudo kill -15 `pidof hv_kvp_daemon`
@@ -231,12 +231,12 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 > [!NOTE]
 > Windows 10 上的 Hyper-v 不附带映像文件 vmguest.iso，因为它不再需要。
 
-| Guest  | 更新机制 | 说明 |
+| Guest  | 更新机制 | 注释 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows 更新 | |
 | Windows 8.1 | Windows 更新 | |
 | Windows 8 | Windows 更新 | 需要“数据交换”集成服务。* |
-| Windows 7 | Windows 更新 | 需要“数据交换”集成服务。* |
+| Windows 7 | Windows 更新 | 需要“数据交换”集成服务。* |
 | Windows Vista (SP 2) | Windows 更新 | 需要“数据交换”集成服务。* |
 | - | | |
 | Windows Server 2016 | Windows 更新 | |
@@ -254,12 +254,12 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
 **对于在 Windows 8.1 主机上运行的虚拟机：**
 
-| Guest  | 更新机制 | 说明 |
+| Guest  | 更新机制 | 注释 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows 更新 | |
 | Windows 8.1 | Windows 更新 | |
 | Windows 8 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
+| Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Vista (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows XP（SP 2、SP 3） | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | - | | |
@@ -279,11 +279,11 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
 **对于在 Windows 8 主机上运行的虚拟机：**
 
-| Guest  | 更新机制 | 说明 |
+| Guest  | 更新机制 | 注释 |
 |:---------|:---------|:---------|
 | Windows 8.1 | Windows 更新 | |
 | Windows 8 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
+| Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Vista (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows XP（SP 2、SP 3） | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | - | | |

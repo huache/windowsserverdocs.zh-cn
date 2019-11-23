@@ -62,12 +62,12 @@ Protected Users 是一个新的全局安全组，你可以向该组添加新用�
   
 -   在超出最初的 4 小时生存期后续订用户票证 (TGT)  
   
-若要将用户添加到该组，可以使用[UI 工具](https://technet.microsoft.com/library/cc753515.aspx)（如 ACTIVE DIRECTORY 管理中心（ADAC）或 Active Directory 用户和计算机）或命令行工具（如[Dsmod 组](https://technet.microsoft.com/library/cc732423.aspx)）或 Windows PowerShell [add-adgroupmember](https://technet.microsoft.com/library/ee617210.aspx)cmdlet. 服务和计算机的帐户 *不应* 是受保护用户组的成员。 这些帐户的成员身份不提供本地保护，因为密码或证书在主机上始终可用。  
+若要将用户添加到该组，可以使用[UI 工具](https://technet.microsoft.com/library/cc753515.aspx)（如 ACTIVE DIRECTORY 管理中心（ADAC）或 Active Directory 用户和计算机）或命令行工具（如[Dsmod 组](https://technet.microsoft.com/library/cc732423.aspx)）或 Windows PowerShell [add-adgroupmember](https://technet.microsoft.com/library/ee617210.aspx) cmdlet。 服务和计算机的帐户 *不应* 是受保护用户组的成员。 这些帐户的成员身份不提供本地保护，因为密码或证书在主机上始终可用。  
   
 > [!WARNING]  
-> 身份验证限制没有规避方法，这意味着权限较高的组（例如 Enterprise Admins 组或 Domain Admins 组）的成员受到的限制与 Protected Users 组的其他成员一样。 如果此类组的所有成员都添加到 Protected Users 组，则可能不包含所有这些帐户。在已经全面测试潜在影响之前，永远不应将所有权限较高的帐户添加到 Protected Users 组。  
+> 身份验证限制没有规避方法，这意味着权限较高的组（例如 Enterprise Admins 组或 Domain Admins 组）的成员受到的限制与 Protected Users 组的其他成员一样。 如果此类组的所有成员都添加到受保护的用户组中，则可以锁定所有这些帐户。在全面测试潜在影响之前，永远不应将所有权限较高的帐户添加到受保护的用户组中。  
   
-Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerberos 进行身份验证。 对于 Active Directory 中的帐户，此方法需要 AES 密钥。 内置管理员不具有 AES 密钥，除非在运行 Windows Server 2008 或更高版本的域控制器上更改了密码。 此外，不包含已在域控制器上更改密码的任何帐户，该域控制器运行较早版本的 Windows Server。因此，请遵循以下最佳实践：  
+Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerberos 进行身份验证。 对于 Active Directory 中的帐户，此方法需要 AES 密钥。 内置管理员不具有 AES 密钥，除非在运行 Windows Server 2008 或更高版本的域控制器上更改了密码。 此外，在运行早期版本 Windows Server 的域控制器上更改的任何帐户都将被锁定。因此，请遵循以下最佳做法：  
   
 -   不要在域中进行测试，除非**所有域控制器都运行 Windows Server 2008 或更高版本**。  
   
@@ -114,7 +114,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
   
 -   拒绝 NTLM 身份验证：仅可通过[NTLM 块策略](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)进行配置。  
   
--   在 Kerberos 预身份验证中拒绝数据加密标准 (DES)：Windows Server 2012 R2 域控制器不会接受计算机帐户的 DES，除非仅为 DES 配置这些帐户，因为随 Kerberos 一起发布的每个版本的 Windows 还支持 RC4。  
+-   在 Kerberos 预身份验证中拒绝数据加密标准（DES）： Windows Server 2012 R2 域控制器不接受用于计算机帐户的 DES，除非仅为 DES 配置这些帐户，因为随 Kerberos 一起发布的每个版本的 Windows 还支持RC4.  
   
 -   在 Kerberos 预身份验证中拒绝 RC4：不可配置。  
   
@@ -123,7 +123,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
   
 -   将用户票证 (TGT) 限制为初始 4 小时生存期：使用身份验证策略。  
   
--   使用不受约束或约束委派拒绝委派：若要限制帐户，请打开 Active Directory 管理中心 (ADAC)，然后选中“敏感帐户，不能被委派”复选框。  
+-   使用不受约束或约束委派拒绝委派：若要限制帐户，请打开 Active Directory 管理中心 (ADAC)，然后选中“敏感帐户，不能被委派” 复选框。  
   
     ![显示在何处限制帐户的屏幕截图](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TshootDelegation.gif)  
   
@@ -132,7 +132,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
   
 在 Windows Server 2012 中，动态访问控制引入了名为 "中心访问策略" Active Directory 林范围的对象类，以提供一种跨组织配置文件服务器的简单方式。 在 Windows Server 2012 R2 中，可以使用一个名为 "身份验证策略" （objectClass Msds-authnpolicies）的新对象类将身份验证配置应用于 Windows Server 2012 R2 域中的帐户类。 Active Directory 帐户类包括：  
   
--   “用户”  
+-   用户  
   
 -   计算机  
   
@@ -196,12 +196,12 @@ AP 交换的发生频率与应用程序协议的中数据相同，并且不受�
 2.  在“选项”下的下拉列表框中，选择“始终提供声明”。  
   
     > [!NOTE]  
-    > 还可以配置**受支持**的，但由于域在 Windows Server 2012 R2 DFL 上，因此，如果在使用非声明感知设备和主机连接到声明感知设备时，dc 始终提供声明将允许进行基于用户声明的访问检查服务器.  
+    > 还可以配置**受支持**的，但由于域在 Windows Server 2012 R2 DFL 上，因此，如果在使用非声明感知设备和主机连接到声明感知服务时，dc 始终提供声明将允许进行基于用户声明的访问检查。  
   
     ![在下拉列表框中，选择 "选项"，然后选择 "始终提供声明"。](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)  
   
     > [!WARNING]  
-    > 配置 "**失败未保护身份验证请求**" 将导致任何不支持 Kerberos 保护的操作系统（例如 Windows 7 和早期版本的操作系统）或从Windows 8 尚未显式配置为支持它。  
+    > 配置 "**失败未保护身份验证请求**" 将导致任何不支持 Kerberos 保护的操作系统中的身份验证失败，例如 windows 7 和早期版本的操作系统，或从 windows 8 开始的操作系统（未显式配置为支持它）。  
   
 #### <a name="create-a-user-account-audit-for-authentication-policy-with-adac"></a>使用 ADAC 为身份验证策略创建用户帐户审核  
   
@@ -224,7 +224,7 @@ AP 交换的发生频率与应用程序协议的中数据相同，并且不受�
   
     根据 Active Directory 帐户类型应用身份验证策略。 通过为每种类型配置设置，可将单个策略应用到全部三个帐户类型。 帐户类型包括：  
   
-    -   “用户”  
+    -   用户  
   
     -   计算机  
   
@@ -337,7 +337,7 @@ AP 交换的发生频率与应用程序协议的中数据相同，并且不受�
 ![身份验证策略中的帐户部分的屏幕截图，显示已直接应用策略的帐户](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AccountsAssigned.gif)  
   
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>使用身份验证策略失败-域控制器管理日志  
-新的**身份验证策略失败-** **应用程序和服务日志**下的域控制器管理日志  > **Microsoft** > **Windows**@no__t 6**身份验证**发现身份验证策略导致的失败。 默认情况下，该日志处于禁用状态。 若要启用它，请右键单击日志名称，然后单击“启用日志”。 新事件中的内容与现有 Kerberos TGT 和服务票证审核事件中的内容非常相似。 有关这些事件的详细信息，请参阅 [身份验证策略和身份验证策略接收器](https://technet.microsoft.com/library/dn486813.aspx)。  
+新的**身份验证策略失败-** 已创建**应用程序和服务日志**下的域控制器管理日志 > **Microsoft** > **Windows** > **身份验证**，以便更轻松地发现由于身份验证策略导致的失败。 默认情况下，该日志处于禁用状态。 若要启用它，请右键单击日志名称，然后单击“启用日志”。 新事件中的内容与现有 Kerberos TGT 和服务票证审核事件中的内容非常相似。 有关这些事件的详细信息，请参阅 [身份验证策略和身份验证策略接收器](https://technet.microsoft.com/library/dn486813.aspx)。  
   
 ### <a name="manage-authentication-policies-by-using-windows-powershell"></a>使用 Windows PowerShell 管理身份验证策略  
 此命令创建名为 **TestAuthenticationPolicy**的身份验证策略。 **UserAllowedToAuthenticateFrom** 参数可指定一些设备，用户可从中通过名为 someFile.txt 的文件中的 SDDL 字符串进行身份验证。  

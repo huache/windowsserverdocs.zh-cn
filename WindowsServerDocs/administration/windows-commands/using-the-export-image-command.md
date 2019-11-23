@@ -22,7 +22,7 @@ ms.locfileid: "71363394"
 ---
 # <a name="using-the-export-image-command"></a>使用导出映像命令
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 将映像存储中的现有映像导出到另一个 Windows 映像（.wim）文件。
 ## <a name="syntax"></a>语法
@@ -47,17 +47,17 @@ wdsutil [Options] /Export-Imagmedia:<Image name> [/Server:<Server name>]
          [/Description:<Description>]
      [/Overwrite:{Yes | No | append}]
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
-媒体： <Image name>|指定要导出的映像的名称。|
-|[/Server： @no__t]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+媒体：<Image name>|指定要导出的映像的名称。|
+|[/Server： <Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
 媒体： {Boot &#124; Install}|指定要导出的图像的类型。|
-|\mediaGroup： <Image group name>]|指定包含要导出的映像的映像组。 如果未指定映像组名称，并且服务器上只存在一个映像组，则默认情况下将使用该映像组。 如果服务器上存在多个映像组，则必须指定映像组。|
+|\mediaGroup：<Image group name>]|指定包含要导出的映像的映像组。 如果未指定映像组名称，并且服务器上只存在一个映像组，则默认情况下将使用该映像组。 如果服务器上存在多个映像组，则必须指定映像组。|
 |/Architecture： {x86 &#124; ia64 &#124; x64}|指定要导出的映像的体系结构。 由于不同体系结构中的启动映像可能具有相同的映像名称，因此指定体系结构值可确保返回正确的映像。|
-|[/Filename： @no__t]|如果无法按名称唯一地标识图像，则必须指定文件名。|
-|/DestinationImage|指定目标映像的设置。 可以使用以下选项指定这些设置：<br /><br />-/Filepath： <File path and name>-指定新映像的完整文件路径。<br />-[/Name： @no__t]-设置图像的显示名称。 如果未指定名称，则使用源映像的显示名称。<br />-[/Description： <Description>]-设置映像的说明。|
-|[/Overwrite： {Yes &#124; No &#124; append}]|确定当/Filepath. 中已存在具有该名称的现有文件时，是否将覆盖在 **/DestinationImage**选项中指定的文件<br /><br />-   **Yes**会导致覆盖现有文件。<br />-   **no** （默认选项），如果已存在具有相同名称的文件，则会出现错误。<br />-   **append**导致生成的映像作为新映像追加到现有 .wim 文件中。|
+|[/Filename：<Filename>]|如果无法按名称唯一地标识图像，则必须指定文件名。|
+|/DestinationImage|指定目标映像的设置。 可以使用以下选项指定这些设置：<br /><br />-/Filepath：<File path and name>-指定新映像的完整文件路径。<br />-[/Name：<Name>]-设置图像的显示名称。 如果未指定名称，则使用源映像的显示名称。<br />-[/Description： <Description>]-设置映像的说明。|
+|[/Overwrite： {Yes &#124; No &#124; append}]|确定当/Filepath. 中已存在具有该名称的现有文件时，是否将覆盖在 **/DestinationImage**选项中指定的文件<br /><br />-    **"是"** 将导致覆盖现有文件。<br />-   **no** （默认选项），如果已存在同名的文件，则会出现错误。<br />-   **追加**导致生成的映像作为新映像追加到现有 .wim 文件中。|
 ## <a name="BKMK_examples"></a>示例
 若要导出启动映像，请键入下列内容之一：
 ```
@@ -72,7 +72,10 @@ wdsutil /verbose /Progress /Export-Imagmedia:"Windows Vista with Office" /Server
 /Filename:install.wim /DestinationImage /Filepath:\\server\share\export.wim /Name:"Exported Windows image" /Description:"Windows Vista image from WDS server" /Overwrite:append
 ```
 #### <a name="additional-references"></a>其他参考
-[命令行语法关键字](command-line-syntax-key.md)
-[使用 "添加图像](using-the-add-image-command.md)" 命令 
- 使用 "[复制映像](using-the-copy-image-command.md)" 命令 
- 使用 "[获取映像](using-the-get-image-command.md)" 命令 @no__t-[@no__t 7 使用](using-the-remove-image-command.md)[替换图像命令](using-the-replace-image-command.md)1[子命令：设置-图像](subcommand-set-image.md)
+[命令行语法键](command-line-syntax-key.md)
+[使用 "添加图像"](using-the-add-image-command.md)命令
+使用 "[复制映像"](using-the-copy-image-command.md)命令
+使用 " [" 命令的](using-the-remove-image-command.md)"获取
+[映像](using-the-get-image-command.md)" 命令，
+[使用 "替换图像" 命令](using-the-replace-image-command.md)
+子命令[：设置-图像](subcommand-set-image.md)

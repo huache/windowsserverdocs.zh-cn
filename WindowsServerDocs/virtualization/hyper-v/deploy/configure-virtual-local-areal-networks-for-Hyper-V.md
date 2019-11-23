@@ -19,7 +19,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71364276"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>配置 Hyper-v 的虚拟局域网
-虚拟局域网 \(VLANs @ no__t 提供一种隔离网络流量的方式。 Vlan 在支持 802.1 q 的交换机和路由器中进行配置。 如果你配置了多个 Vlan 并且需要在它们之间进行通信，则需要将网络设备配置为允许。 
+虚拟局域网 \(Vlan\) 提供一种隔离网络流量的方式。 Vlan 在支持 802.1 q 的交换机和路由器中进行配置。 如果你配置了多个 Vlan 并且需要在它们之间进行通信，则需要将网络设备配置为允许。 
 
 你将需要以下内容来配置 Vlan：  
   
@@ -30,7 +30,7 @@ ms.locfileid: "71364276"
   
 #### <a name="to-allow-a-virtual-switch-to-use-a-vlan"></a>允许虚拟交换机使用 VLAN  
   
-1.  打开 "超级 @ no__t-0V Manager"。  
+1.  打开 "Hyper-v\-管理器"。  
   
 2.  在 "操作" 菜单中，单击 "**虚拟交换机管理器**"。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "71364276"
   
 #### <a name="to-allow-a-virtual-machine-to-use-a-vlan"></a>允许虚拟机使用 VLAN  
   
-1.  打开 "超级 @ no__t-0V Manager"。  
+1.  打开 "Hyper-v\-管理器"。  
   
 2.  在结果窗格中的 "**虚拟机**" 下，选择相应的虚拟机，然后右键单击 "**设置**"。  
 
@@ -54,8 +54,8 @@ ms.locfileid: "71364276"
   
 -   将更多虚拟网络适配器连接到相应的虚拟交换机，并分配 VLAN Id。 请确保正确配置 IP 地址，并且要通过 VLAN 路由的流量也使用正确的 IP 地址。  
   
--   使用[Set @ no__t-1VMNetworkAdapterVlan](https://technet.microsoft.com/library/hh848475.aspx) cmdlt 配置干线模式下的虚拟网络字适配器。
+-   使用[Set\-set-vmnetworkadaptervlan](https://technet.microsoft.com/library/hh848475.aspx) cmdlt 配置干线模式下的虚拟网络字适配器。
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
  
-[超级 @ no__t-1V 虚拟交换机](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/hyper-v-virtual-switch)
+[超级\-V 虚拟交换机](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/hyper-v-virtual-switch)

@@ -21,9 +21,9 @@ ms.locfileid: "71381567"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
-返回   与 BITS 传输作业关联的 [帮助令牌](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)的用法标志。
+返回与 BITS 传输作业关联 的 [帮助程序令牌](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)的使用标志。
 
-**BITS 3.0 及更早版本**： 不受支持。
+**BITS 3.0 及更早版本**：不支持。
 
 ## <a name="syntax"></a>语法
 
@@ -31,7 +31,7 @@ ms.locfileid: "71381567"
 bitsadmin /GetHelperTokenFlags <Job>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
