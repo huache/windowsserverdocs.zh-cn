@@ -22,7 +22,7 @@ ms.locfileid: "71382996"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>软件清单日志记录入门
 
->适用于：Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
  软件清单日志记录按服务器收集 Microsoft 软件清单数据。 在 Windows Server 2012 R2 中使用软件清单日志记录之前，请确保在要列出清单的每个系统上安装 Windows 更新[kb 3000850](https://support.microsoft.com/kb/3000850)和[kb 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 不需要 Windows 更新。 此外，如果想要使用 SIL 将数据转发到聚合服务器，请确保 SSL 证书对于网络有效。
 
@@ -44,7 +44,7 @@ Windows Server 中软件清单日志记录功能包含一组简单的 PowerShell
 
 -   通过启用每台服务器的软件清单日志记录功能，并选择 web 服务器目标 URI 和用于身份验证的证书指纹，聚合各种软件资产管理方案的软件和服务器清单信息。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [软件清单日志记录聚合器](https://technet.microsoft.com/library/mt572043.aspx)<br>
 [管理软件清单日志记录](manage-software-inventory-logging.md)<br>
 [Windows PowerShell 中的软件清单日志记录 Cmdlet](https://technet.microsoft.com/library/dn283390.aspx)<br>

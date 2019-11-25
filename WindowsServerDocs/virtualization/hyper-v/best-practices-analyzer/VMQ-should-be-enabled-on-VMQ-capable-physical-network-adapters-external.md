@@ -19,7 +19,7 @@ ms.locfileid: "71393286"
 ---
 # <a name="vmq-should-be-enabled-on-vmq-capable-physical-network-adapters-bound-to-an-external-virtual-switch"></a>应在绑定到外部虚拟交换机的支持 VMQ 的物理网络适配器上启用 VMQ。
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "71393286"
 ## <a name="impact"></a>**对**  
 *Windows 无法充分利用以下网络适配器上的可用硬件卸载：*  
   
-@no__t 网络适配器的 0list >  
+\<网络适配器列表 >  
   
 ## <a name="resolution"></a>**解决方法**  
 *使用 Get-netadaptervmq Windows PowerShell cmdlet 或使用网络适配器的高级属性用户界面启用 VMQ。*  

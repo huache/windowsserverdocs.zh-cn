@@ -23,7 +23,7 @@ ms.locfileid: "71401874"
 >[!TIP]
 >如果在运行 Windows Server 2016 或 Windows 10 的计算机上使用 Windows PowerShell，请键入**netsh** ，然后按 enter。 在 netsh 提示符下，键入**http** ，然后按 enter 以获取 netsh http 提示符。
 >
->&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6netsh http @ no__t-7
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;netsh http\>
 
 可用的 netsh http 命令包括：
 
@@ -54,7 +54,7 @@ ms.locfileid: "71401874"
 add iplisten [ ipaddress= ] IPAddress
 ```
 
-**参数**
+**Parameters**
 
 |               |                                                                                                                                                                                                                          |          |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -83,7 +83,7 @@ add iplisten [ ipaddress= ] IPAddress
 add sslcert [ ipport= ] IPAddress:port [ certhash= ] CertHash [ appid= ] GUID [ [ certstorename= ] CertStoreName [ verifyclientcertrevocation= ] enable | disable [verifyrevocationwithcachedclientcertonly= ] enable | disable [ usagecheck= ] enable | disable [ revocationfreshnesstime= ] U-Int [ urlretrievaltimeout= ] U-Int [sslctlidentifier= ] SSLCTIdentifier [ sslctlstorename= ] SLCtStoreName [ dsmapperusage= ] enable | disable [ clientcertnegotiation= ] enable | disable ] ]
 ```
 
-**参数**
+**Parameters**
 
 
 |                                              |                                                                                                                                                                                          |          |
@@ -122,7 +122,7 @@ add sslcert ipport = 1.1.1.1： 443 certhash = 0102030405060708090A0B0C0D0E0F101
 add timeout [ timeouttype= ] IdleConnectionTimeout | HeaderWaitTimeout [ value=] U-Short
 ```
 
-**参数**
+**Parameters**
 
 |                 |                                                                                                     |
 |-----------------|-----------------------------------------------------------------------------------------------------|
@@ -150,14 +150,14 @@ add timeout [ timeouttype= ] IdleConnectionTimeout | HeaderWaitTimeout [ value=]
 add urlacl [ url= ] URL [ [user=] User [ [ listen= ] yes | no [ delegate= ] yes | no ] | [ sddl= ] SDDL ]
 ```
 
-**参数**
+**Parameters**
 
 |              |                                                                                                                                                  |          |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 |   **链接**    |                                          指定完全限定的统一资源定位器（URL）。                                           | 必需 |
 |   **user**   |                                                      指定用户或用户组名称                                                       | 必需 |
-|  **侦听**  | 指定下列值之一： yes：允许用户注册 Url。 这是默认值。 不：拒绝用户注册 Url。 | 可选 |
-| **委托** |  指定下列值之一： yes：允许用户委托 Url：拒绝用户委托 Url。 这是默认值。  | 可选 |
+|  **侦听**  | 指定下列值之一： yes：允许用户注册 Url。 这是默认值。 否：拒绝用户注册 Url。 | 可选 |
+| **委托** |  指定下列值之一： yes：允许用户委托 Url 否：拒绝用户委托 Url。 这是默认值。  | 可选 |
 |   **sddl**   |                                                指定描述 DACL 的 SDDL 字符串。                                                 | 可选 |
 
 ---
@@ -166,10 +166,10 @@ add urlacl [ url= ] URL [ [user=] User [ [ listen= ] yes | no [ delegate= ] yes 
 
 下面是 "**添加 urlacl** " 命令的四个示例。
 
-- 添加 urlacl url = https://+:80/MyUri user = DOMAIN @ no__t-1user
-- add urlacl url = <https://www.contoso.com:80/MyUri> user = DOMAIN @ no__t-1user 侦听 = yes
-- 添加 urlacl url = <https://www.contoso.com:80/MyUri> user = DOMAIN @ no__t-1user delegate = no
-- 添加 urlacl url = https://+:80/MyUri sddl = 。
+- 添加 urlacl url =https://+:80/MyUri 用户 = 域\\用户
+- 添加 urlacl url =<https://www.contoso.com:80/MyUri> user = DOMAIN\\user 侦听 = yes
+- 添加 urlacl url =<https://www.contoso.com:80/MyUri> 用户 = 域\\用户委托 = 否
+- 添加 urlacl url =https://+:80/MyUri sddl = 。
 
 ---
 
@@ -183,7 +183,7 @@ add urlacl [ url= ] URL [ [user=] User [ [ listen= ] yes | no [ delegate= ] yes 
 delete cache [ [ url= ] URL [ [recursive= ] yes | no ]
 ```
 
-**参数**
+**Parameters**
 
 |               |                                                                                                                              |          |
 |---------------|------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -196,7 +196,7 @@ delete cache [ [ url= ] URL [ [recursive= ] yes | no ]
 
 下面是两个**删除缓存**命令示例。
 
-- 删除缓存 url = <https://www.contoso.com:80/myresource/> recursive = 是
+- delete cache url =<https://www.contoso.com:80/myresource/> recursive = yes
 - 删除缓存
 
 ---
@@ -211,7 +211,7 @@ delete cache [ [ url= ] URL [ [recursive= ] yes | no ]
 delete iplisten [ ipaddress= ] IPAddress
 ```
 
-**参数**
+**Parameters**
 
 |               |                                                                                                                                                                                                                                                                     |          |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -242,7 +242,7 @@ delete iplisten [ ipaddress= ] IPAddress
 delete sslcert [ ipport= ] IPAddress:port
 ```
 
-**参数**
+**Parameters**
 
 |            |                                                                                                                                                                                          |          |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -271,7 +271,7 @@ delete sslcert [ ipport= ] IPAddress:port
 delete timeout [ timeouttype= ] idleconnectiontimeout | headerwaittimeout
 ```
 
-**参数**
+**Parameters**
 
 |                 |                                        |          |
 |-----------------|----------------------------------------|----------|
@@ -299,7 +299,7 @@ delete timeout [ timeouttype= ] idleconnectiontimeout | headerwaittimeout
 delete urlacl [ url= ] URL
 ```
 
-**参数**
+**Parameters**
 
 |         |                                                                                       |          |
 |---------|---------------------------------------------------------------------------------------|----------|
@@ -312,8 +312,8 @@ delete urlacl [ url= ] URL
 
 下面是 "**删除 urlacl** " 命令的两个示例。
 
-- 删除 urlacl url = https://+:80/MyUri
-- 删除 urlacl url = <https://www.contoso.com:80/MyUri>
+- 删除 urlacl url =https://+:80/MyUri
+- 删除 urlacl url =<https://www.contoso.com:80/MyUri>
 
 ---
 
@@ -339,7 +339,7 @@ flush logbuffer
 show cachestate [ [url= ] URL]
 ```
 
-**参数**
+**Parameters**
 
 |         |                                                                                                                                                    |          |
 |---------|----------------------------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -352,7 +352,7 @@ show cachestate [ [url= ] URL]
 
 下面是**show cachestate**命令的两个示例：
 
-- 显示 cachestate url = <https://www.contoso.com:80/myresource>
+- 显示 cachestate url =<https://www.contoso.com:80/myresource>
 - 显示 cachestate
 
 ---
@@ -378,11 +378,11 @@ show iplisten
 show servicestate [ [ view= ] session | requestq ] [ [ verbose= ] yes | no ]
 ```
 
-**参数**
+**Parameters**
 
 |             |                                                                                                                      |          |
 |-------------|----------------------------------------------------------------------------------------------------------------------|----------|
-|  **视图**   | 指定是否查看基于服务器会话或请求队列的 HTTP 服务状态的快照。 | 可选 |
+|  **查看**   | 指定是否查看基于服务器会话或请求队列的 HTTP 服务状态的快照。 | 可选 |
 | **详细** |                指定是否显示还显示属性信息的详细信息。                | 可选 |
 
 ---
@@ -406,7 +406,7 @@ show servicestate [ [ view= ] session | requestq ] [ [ verbose= ] yes | no ]
 show sslcert [ ipport= ] IPAddress:port
 ```
 
-**参数**
+**Parameters**
 
 |            |                                                                                                                                                                                                                                                |          |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -449,7 +449,7 @@ show timeout
 show urlacl [ [url= ] URL]
 ```
 
-**参数**
+**Parameters**
 
 |         |                                                                                                |          |
 |---------|------------------------------------------------------------------------------------------------|----------|
@@ -462,8 +462,8 @@ show urlacl [ [url= ] URL]
 
 以下是**show urlacl**命令的三个示例。
 
-- 显示 urlacl url = https://+:80/MyUri
-- 显示 urlacl url = <https://www.contoso.com:80/MyUri>
+- 显示 urlacl url =https://+:80/MyUri
+- 显示 urlacl url =<https://www.contoso.com:80/MyUri>
 - 显示 urlacl
 
 ---

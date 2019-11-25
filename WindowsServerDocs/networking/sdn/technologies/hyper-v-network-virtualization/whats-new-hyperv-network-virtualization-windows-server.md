@@ -41,7 +41,7 @@ HNV 是 Microsoft 更新的软件定义网络（SDN）解决方案的基本构�
   
 Microsoft 的新网络控制器将 HNV 策略推送到每个主机上运行的主机代理，并使用开放 vSwitch 数据库管理协议（OVSDB）作为 SouthBound 接口（SBI）。 主机代理使用[VTEP 架构](https://github.com/openvswitch/ovs/blob/master/vtep/vtep.ovsschema)的自定义来存储此策略，并将复杂流规则计划为 hyper-v 交换机中的高性能流引擎。  
   
-Hyper-v 交换机内的流引擎是 Microsoft Azure @ no__t 中使用的引擎，该引擎在 Microsoft Azure 公有云中已经过超大规模验证。 此外，整个 SDN 堆栈通过网络控制器以及网络资源提供程序（即将推出的详细信息）与 Microsoft Azure 一致，因此，将 Microsoft Azure 公有云的强大功能引入企业和托管服务提供商客户。  
+Hyper-v 交换机内的流引擎是 Microsoft Azure&trade;中使用的引擎，该引擎在 Microsoft Azure 公有云中已经过超大规模验证。 此外，整个 SDN 堆栈通过网络控制器以及网络资源提供程序（即将推出的详细信息）与 Microsoft Azure 一致，因此，将 Microsoft Azure 公有云的强大功能引入企业和托管服务提供商客户。  
   
 > [!NOTE]  
 > 有关 OVSDB 的详细信息，请参阅[RFC 7047](https://www.rfc-editor.org/info/rfc7047)。  
@@ -59,7 +59,7 @@ Windows Server 2016 包括软件负载平衡器（SLB），完全支持虚拟网
 ### <a name="L2"></a>符合 IEEE 以太网标头  
 HNV 实现了正确的 L2 以太网标头，以确保与依赖于行业标准协议的第三方虚拟设备和物理设备进行互操作。 Microsoft 确保所有传输的数据包在所有字段中都具有符合的值，以确保此互操作性。 此外，还需要在物理 L2 网络中支持巨型帧（MTU > 1780）来考虑封装协议（NVGRE、VXLAN）引入的数据包开销，同时确保附加到 HNV 虚拟网络的来宾虚拟机保持1514 MTU。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 -   [Hyper-V 网络虚拟化概述](hyperv-network-virtualization-overview-windows-server.md)  
   

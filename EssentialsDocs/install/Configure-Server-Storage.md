@@ -21,7 +21,7 @@ ms.locfileid: "70865043"
 ---
 # <a name="configure-server-storage"></a>配置服务器存储
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 ## <a name="sample-hard-disk-configurations"></a>示例硬盘配置  
  下表给出了示例硬盘配置的建议。 估计值基于典型用途和功能，但不说明影响最佳性能的问题。 你可以根据客户的喜好和需要对这些配置（如 SATA 或 SCSI）使用任意类型的受支持硬盘。  
@@ -43,17 +43,17 @@ ms.locfileid: "70865043"
 ## <a name="partition-configuration"></a>分区配置  
  在服务器的初始配置过程中，会在磁盘 0 上最大的数据分区中创建包含共享文件夹和客户端计算机备份文件夹的默认服务器文件夹集。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 
- [与 Windows Server Essentials ADK 入门](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [入门 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
  [其他自定义](Additional-Customizations.md)   
- [准备要部署的映像](Preparing-the-Image-for-Deployment.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)
 
- [与 Windows Server Essentials ADK 入门](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [入门 Windows Server ESSENTIALS ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [创建和自定义映像](../install/Creating-and-Customizing-the-Image.md)   
  [其他自定义](../install/Additional-Customizations.md)   
- [准备要部署的映像](../install/Preparing-the-Image-for-Deployment.md)   
+ [准备映像以进行部署](../install/Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](../install/Testing-the-Customer-Experience.md)
 

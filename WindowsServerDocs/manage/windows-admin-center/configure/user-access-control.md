@@ -10,14 +10,14 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 20b311e9330880c2b26e2494aabe27bb04891868
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71407034"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>配置用户访问控制和权限
 
-> 适用于：Windows Admin Center、Windows Admin Center 预览版
+> 适用于： Windows 管理中心、Windows 管理中心预览
 
 如果尚未这样做，请先熟悉[Windows 管理中心中的 "用户访问控制" 选项](../plan/user-access-options.md)
 
@@ -33,7 +33,7 @@ ms.locfileid: "71407034"
 **网关管理员**可以配置谁获取访问权限，以及用户如何向网关进行身份验证。 仅网关管理员可以在 Windows 管理中心中查看和配置访问设置。 网关计算机上的本地管理员始终为 Windows 管理中心网关服务的管理员。
 
 > [!NOTE]
-> 对网关的访问权限并不意味着可以访问网关可见的托管服务器。 若要管理目标服务器，连接用户必须使用具有管理访问权限的凭据（通过其传递的 Windows 凭据或使用 "**管理方式**" 操作在 Windows 管理中心会话中提供的凭据）目标服务器。
+> 对网关的访问权限并不意味着可以访问网关可见的托管服务器。 若要管理目标服务器，连接用户必须在具有对目标服务器的管理访问权限的情况下，使用凭据（通过其传递的 Windows 凭据或使用 "**管理方式**" 操作在 Windows 管理中心会话中提供的凭据）。
 
 ## <a name="active-directory-or-local-machine-groups"></a>Active Directory 或本地计算机组
 
@@ -41,7 +41,7 @@ ms.locfileid: "71407034"
 
 在 "**用户**" 选项卡上，你可以控制谁可以作为网关用户访问 Windows 管理中心。 默认情况下，如果未指定安全组，则访问网关 URL 的任何用户都可以访问。 将一个或多个安全组添加到 "用户" 列表后，对这些组的成员的访问将受到限制。
 
-如果未在你的环境中使用 Active Directory 域，则访问权限由 Windows 管理中心网关计算机上的 @no__t 0 和 @no__t 本地组控制。
+如果未在你的环境中使用 Active Directory 域，则访问权限由 `Users` 和 Windows 管理中心网关计算机上 `Administrators` 本地组控制。
 
 ### <a name="smartcard-authentication"></a>智能卡身份验证
 
@@ -55,21 +55,21 @@ ms.locfileid: "71407034"
 
 ### <a name="accessing-windows-admin-center-when-azure-ad-authentication-is-enabled"></a>在启用 Azure AD 身份验证时访问 Windows 管理中心
 
-根据所使用的浏览器，某些访问配置了 Azure AD 身份验证的 Windows 管理中心的用户将在**浏览器**中收到额外的提示，用户需要为计算机提供其 Windows 帐户凭据已安装 Windows 管理中心。 输入该信息后，用户将获得额外的 Azure Active Directory 身份验证提示，该提示需要 Azure 帐户的凭据，该帐户在 Azure 中的 Azure AD 应用程序中已获访问权限。
+根据所使用的浏览器，某些访问配置了 Azure AD 身份验证的 Windows 管理中心的用户将在**浏览器**中收到额外的提示，用户需要为安装 windows 管理中心的计算机提供其 windows 帐户凭据。 输入该信息后，用户将获得额外的 Azure Active Directory 身份验证提示，该提示需要 Azure 帐户的凭据，该帐户在 Azure 中的 Azure AD 应用程序中已获访问权限。
 
 > [!NOTE]
 > 如果用户的 Windows 帐户在网关计算机上具有**管理员权限**，则系统不会提示用户进行 Azure AD 身份验证。
 
 ### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>为 Windows 管理中心预览配置 Azure Active Directory 身份验证
 
-转到 "Windows 管理中心**设置** > **访问**"，并使用切换开关打开 "使用 Azure Active Directory 将安全层添加到网关"。 如果尚未向 Azure 注册网关，则会指导您此时执行此操作。
+转到 "Windows 管理中心**设置**" > "**访问**"，并使用切换开关打开 "使用 Azure Active Directory 将安全层添加到网关"。 如果尚未向 Azure 注册网关，则会指导您此时执行此操作。
 
 默认情况下，Azure AD 租户的所有成员都具有对 Windows 管理中心网关服务的用户访问权限。 只有网关计算机上的本地管理员才有权访问 Windows 管理中心的网关。 请注意，网关计算机上的本地管理员权限不受限制-本地管理员可以执行任何操作，无论 Azure AD 是否用于身份验证。
 
 如果要向特定 Azure AD 用户或组网关用户或网关管理员授予对 Windows 管理中心服务的访问权限，则必须执行以下操作：
 
 1.  使用 "访问设置" 中提供的超链接，在 Azure 门户中，使用 "访问权限" Azure AD 应用程序。 注意仅当启用 Azure Active Directory 身份验证时，此超链接才可用。 
-    -   你还可以在 Azure 门户中找到你的应用程序，方法是转到**Azure Active Directory**@no__t 1 个**企业应用程序** > **所有应用程序**并搜索**WindowsAdminCenter** （Azure AD 应用程序将命名为WindowsAdminCenter-<gateway name>）。 如果未收到任何搜索结果，请确保 "**显示**" 设置为 "**所有应用程序**"，将 "**应用程序状态**" 设置为 "**任意**"，然后单击 "应用"，然后尝试搜索。 找到应用程序后，请访问 "**用户和组**"
+    -   你还可以在 Azure 门户中找到应用程序，方法是转到**Azure Active Directory** > **企业应用程序** > **所有应用程序**并搜索**WindowsAdminCenter** （Azure AD 应用程序将命名为 WindowsAdminCenter-<gateway name>）。 如果未收到任何搜索结果，请确保 "**显示**" 设置为 "**所有应用程序**"，将 "**应用程序状态**" 设置为 "**任意**"，然后单击 "应用"，然后尝试搜索。 找到应用程序后，请访问 "**用户和组**"
 2.  在 "属性" 选项卡中，将 "**用户分配**" 设置为 "是"。
     完成此操作后，只有在 "**用户和组**" 选项卡中列出的成员才能够访问 Windows 管理中心网关。
 3.  在 "用户和组" 选项卡中，选择 "**添加用户**"。 必须为每个添加的用户/组分配网关用户或网关管理员角色。
@@ -88,7 +88,7 @@ ms.locfileid: "71407034"
 
 1.  请在 Azure 门户中找到你的 SME Azure AD 应用程序。 
     -   单击 "**更改访问控制**"，然后从 Windows 管理中心访问设置中选择**Azure Active Directory**时，可以使用 UI 中提供的超链接来访问 Azure 门户中的 Azure AD 应用程序。 单击 "保存" 并选择 "Azure AD 作为访问控制标识提供者时，此超链接也在访问设置中提供。
-    -   你还可以在 Azure 门户中找到你的应用程序，方法是转到**Azure Active Directory**@no__t 1 个**企业应用程序** > **所有应用程序**并搜索**SME** （将 Azure AD 应用命名为 sme-6）。 如果未收到任何搜索结果，请确保 "**显示**" 设置为 "**所有应用程序**"，将 "**应用程序状态**" 设置为 "**任意**"，然后单击 "应用"，然后尝试搜索。 找到应用程序后，请访问 "**用户和组**"
+    -   你还可以在 Azure 门户中找到你的应用程序，方法**Azure Active Directory**是在 "**所有应用程序**" > " > **企业应用程序**" 和 "搜索**sme** " （Azure AD 应用将命名为 sme-<gateway>）。 如果未收到任何搜索结果，请确保 "**显示**" 设置为 "**所有应用程序**"，将 "**应用程序状态**" 设置为 "**任意**"，然后单击 "应用"，然后尝试搜索。 找到应用程序后，请访问 "**用户和组**"
 2.  在 "属性" 选项卡中，将 "**用户分配**" 设置为 "是"。
     完成此操作后，只有在 "**用户和组**" 选项卡中列出的成员才能够访问 Windows 管理中心网关。
 3.  在 "用户和组" 选项卡中，选择 "**添加用户**"。 必须为每个添加的用户/组分配网关用户或网关管理员角色。
@@ -144,7 +144,7 @@ Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $null
 单计算机部署模型非常适合只需几台计算机进行管理的简单环境。
 配置具有基于角色的访问控制支持的计算机将导致以下更改：
 
--   包含 Windows 管理中心所需功能的 PowerShell 模块将安装在你的系统驱动器上 `C:\Program Files\WindowsPowerShell\Modules` 下。 所有模块都将从**Microsoft**
+-   包含 Windows 管理中心所需功能的 PowerShell 模块将安装在你的系统驱动器上 `C:\Program Files\WindowsPowerShell\Modules`下。 所有模块都将从**Microsoft**
 -   所需状态配置将运行一次性配置，以便在计算机上配置足够的管理终结点，名为 " **Microsoft**"。 此终结点定义 Windows 管理中心使用的3个角色，并将在用户连接到它时作为临时本地管理员运行。
 -   3将创建新的本地组，以控制为哪些用户分配了哪些角色的访问权限：
     -   Windows 管理中心管理员
@@ -154,7 +154,7 @@ Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $null
 若要在一台计算机上启用对基于角色的访问控制的支持，请执行以下步骤：
 
 1.  使用在目标计算机上具有本地管理员权限的帐户，打开 Windows 管理中心并连接到要使用基于角色的访问控制进行配置的计算机。
-2.  在**概述**工具上，单击 "**设置**"  > **基于角色的访问控制**。
+2.  在**概述**工具上，单击 "**设置**" > **基于角色的访问控制**。
 3.  单击页面底部的 "**应用**"，以在目标计算机上启用基于角色的访问控制支持。 应用程序过程涉及到复制 PowerShell 脚本和在目标计算机上调用配置（使用 PowerShell Desired State Configuration）。 最长可能需要10分钟才能完成。 这会暂时断开 Windows 管理中心、PowerShell 和 WMI 用户的连接。
 4.  刷新页面以检查基于角色的访问控制的状态。 准备就绪后，状态将更改为 "已**应用**"。
 
@@ -196,12 +196,12 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
 - InstallJeaFeatures
 - JustEnoughAdministration （目录）
 - 模块（目录）
-    - @No__t-0 （目录）
+    - \* （目录）
     - WindowsAdminCenter. Jea （目录）
 
 若要在节点上配置基于角色的访问控制支持，需要执行以下操作：
 
-1.  将 JustEnoughAdministration @no__t、和 WindowsAdminCenter 模块复制到目标计算机上的 PowerShell 模块目录中。 通常，此位置位于 @no__t 0。
+1.  复制 JustEnoughAdministration。将 WindowsAdminCenter 和 Jea 模块\*到目标计算机上的 PowerShell 模块目录。 通常，此位置位于 `C:\Program Files\WindowsPowerShell\Modules`。
 2.  更新**InstallJeaFeature**文件以匹配 RBAC 终结点所需的配置。
 3.  运行 InstallJeaFeature 以编译 DSC 资源。
 4.  将 DSC 配置部署到所有计算机，以应用配置。
@@ -210,7 +210,7 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
 
 #### <a name="deploy-on-multiple-machines"></a>在多台计算机上部署
 
-若要将下载的配置部署到多台计算机上，需要更新**InstallJeaFeatures**脚本，以便为你的环境添加适当的安全组，将文件复制到每台计算机，并调用配置脚本。
+若要将下载的配置部署到多台计算机上，需要更新**InstallJeaFeatures**脚本，以便为你的环境包括适当的安全组，将文件复制到每台计算机，并调用配置脚本。
 您可以使用您喜欢的自动化工具来实现此目的，但本文将着重介绍纯基于 PowerShell 的方法。
 
 默认情况下，配置脚本将在计算机上创建本地安全组，以控制对每个角色的访问。
@@ -225,7 +225,7 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
     1.  "[Group] MS-Readers-组"
     2.  "[Group] MS-Hyper-v-管理员-组"
     3.  "[组] MS-Administrators-组"
-3.  将 JeaEndpoint **RoleDefinitions**属性中的组名称更改为所需的安全组。 例如，如果你有一个安全组*CONTOSO\MyTrustedAdmins* ，该安全组应分配给 Windows 管理中心管理员角色的访问权限，请将 `'$env:COMPUTERNAME\Windows Admin Center Administrators'` 更改 `'CONTOSO\MyTrustedAdmins'`。 需要更新的三个字符串是：
+3.  将 JeaEndpoint **RoleDefinitions**属性中的组名称更改为所需的安全组。 例如，如果你有一个安全组*CONTOSO\MyTrustedAdmins* ，该安全组应分配给 Windows 管理中心管理员角色的访问权限，请将 `'$env:COMPUTERNAME\Windows Admin Center Administrators'` 更改为 `'CONTOSO\MyTrustedAdmins'`。 需要更新的三个字符串是：
     1.  ' $env： COMPUTERNAME\Windows 管理中心管理员
     2.  ' $env： COMPUTERNAME\Windows 管理中心
     3.  ' $env： COMPUTERNAME\Windows 管理中心读者 '

@@ -34,23 +34,23 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 
 ## <a name="bkmk_overview"></a>网络控制器概述
 
-网络控制器是高度可用且可缩放的服务器角色，它提供一个应用程序编程接口 \(API @ no__t-1，使网络控制器可以与网络通信，另一个 API 用于与网络控制器。
+网络控制器是高度可用且可缩放的服务器角色，它提供一个应用程序编程接口 \(API\)，使网络控制器可以与网络通信，另一个 API 用于与网络控制器进行通信。
 
 你可以在域和非域环境中部署网络控制器。 在域环境中，网络控制器使用 Kerberos 对用户和网络设备进行身份验证;在非域环境中，你必须部署用于身份验证的证书。
 
 >[!IMPORTANT]
->不要将网络控制器服务器角色部署到物理主机上。 若要部署网络控制器，必须在安装在 Hyper-v 主机上的 Hyper-v 虚拟机 \(VM @ no__t-1 上安装网络控制器服务器角色。 在三个不同的 no__t 主机上的虚拟机上安装了网络控制器之后，必须通过使用 Windows PowerShell 将主机添加到网络控制器，为软件定义的网络启用超级 @ no__t-1V 主机 \(SDN @ no__t**NetworkControllerServer**命令。 这样做会使 SDN 软件负载均衡器正常工作。 有关详细信息，请参阅[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
+>不要将网络控制器服务器角色部署到物理主机上。 若要部署网络控制器，必须在安装在 Hyper-v 主机上 \(VM\) 上的 Hyper-v 虚拟机上安装网络控制器服务器角色。 在三个不同的\-Hyper-v 主机上的虚拟机上安装了网络控制器之后，必须通过使用 Windows PowerShell 命令**NetworkControllerServer**将主机添加到网络控制器，为软件定义的网络 \(SDN\) 启用\-hyper-v 主机。 这样做会使 SDN 软件负载均衡器正常工作。 有关详细信息，请参阅[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
 
 网络控制器使用 Southbound API 与网络设备、服务和组件进行通信。 借助 Southbound API，网络控制器可以发现网络设备、检测服务配置并收集用户所需的所有网络信息。 此外，Southbound API 还为网络控制器提供了一种将信息发送到网络基础结构的方式，例如用户已做出的配置更改。
 
 网络控制器 Northbound API 使你能够从网络控制器收集网络信息并将其用于监视和配置网络。
 
-网络控制器 Northbound API 允许使用 Windows PowerShell、具象状态传输 \(REST @ no__t API 或带有图形的管理应用程序，在网络上配置、监视、故障排除和部署新设备用户界面，如 System Center Virtual Machine Manager。
+使用网络控制器 Northbound API，你可以通过使用 Windows PowerShell、具象状态传输 \(REST\) API 或带有图形用户界面（例如 System Center Virtual Machine Manager）的管理应用程序，在网络上配置、监视、故障排除和部署新设备。
 
 >[!NOTE]
 >网络控制器 Northbound API 作为 REST 接口而实现。
 
-你可以使用管理应用程序（如 System Center Virtual Machine Manager \(SCVMM @ no__t）管理数据中心网络，并 System Center Operations Manager \(SCOM @ no__t，因为网络控制器允许你配置、监视、计划和排查正在控制的网络基础结构。
+你可以通过使用管理应用程序（如 System Center Virtual Machine Manager \(SCVMM\)和 System Center Operations Manager \(SCOM\)）来管理你的数据中心网络，因为网络控制器允许你配置、监视、计划和排查正在控制的网络基础结构。
 
 通过使用 Windows PowerShell、REST API 或管理应用程序，你可以使用网络控制器来管理以下物理和虚拟网络基础结构：
 
@@ -58,7 +58,7 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 
 - 数据中心防火墙
 
-- 远程访问服务 \(RAS @ no__t-1 多租户网关、虚拟网关和网关池
+- 远程访问服务 \(RAS\) 多租户网关、虚拟网关和网关池
 
 - 软件负载均衡器
 
@@ -66,7 +66,7 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 
 ![网络控制器概述](../../../media/Network-Controller/NetController_overview.png)  
 
-如果要在测试实验室环境中部署网络控制器，可以在 hyper-v 虚拟机上运行网络控制器服务器角色，\(VM @ no__t-1 安装在 Hyper-v 主机上。
+如果要在测试实验室环境中部署网络控制器，可以在 hyper-v 虚拟机上运行网络控制器服务器角色，\(安装在 Hyper-v 主机上的 VM\)。
 
 若要在更大的数据中心内实现高可用性，可以使用安装在三个或更多 Hyper-v 主机上的三个 Vm 来部署群集。 有关详细信息，请参阅[网络控制器高可用性](network-controller-high-availability.md)。
 
@@ -128,7 +128,7 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 
 ## <a name="network-controller-deployment-options"></a>网络控制器部署选项
 
-若要使用 System Center Virtual Machine Manager \(VMM @ no__t 部署网络控制器，请参阅[在 VMM 构造中设置 SDN 网络控制器](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)。
+若要使用 System Center Virtual Machine Manager \(VMM\)部署网络控制器，请参阅[在 vmm 构造中设置 SDN 网络控制器](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)。
 
 若要使用脚本部署网络控制器，请参阅[使用脚本部署软件定义的网络基础结构](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)。
 

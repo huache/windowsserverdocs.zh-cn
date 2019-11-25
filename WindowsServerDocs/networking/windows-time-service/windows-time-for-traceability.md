@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71405204"
 ---
 # <a name="windows-time-for-traceability"></a>Windows 时间以实现可跟踪性
->适用于：Windows Server 2016 版本1709或更高版本，以及 Windows 10 版本1703或更高版本
+>适用于： Windows Server 2016 版本1709或更高版本，以及 Windows 10 版本1703或更高版本
 
 
 许多扇区中的规章都需要将系统跟踪到 UTC。  这意味着系统相对于 UTC 的偏移量可能是证明的。  若要启用法规遵从性方案，Windows 10 （版本1703或更高版本）和 Windows Server 2016 （版本1709或更高版本）提供了新的事件日志，以便从操作系统的角度提供一张图片，以了解对系统时钟。  这些事件日志是针对 Windows 时间服务连续生成的，可以检查或存档以供以后分析。

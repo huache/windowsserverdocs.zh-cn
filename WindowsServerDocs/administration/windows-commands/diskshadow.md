@@ -22,9 +22,9 @@ ms.locfileid: "71377766"
 ---
 # <a name="diskshadow"></a>diskshadow
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-diskshadow 是一种工具，它公开卷影复制服务所提供的功能 \(VSS @ no__t-1。 默认情况下，diskshadow 使用与 diskraid 或 DiskPart 类似的交互式命令解释器。 diskshadow 还包括可编写脚本的模式。  
+diskshadow 是一种工具，用于公开卷影复制服务 \(VSS\)提供的功能。 默认情况下，diskshadow 使用与 diskraid 或 DiskPart 类似的交互式命令解释器。 diskshadow 还包括可编写脚本的模式。  
   
 > [!NOTE]  
 > 本地 Administrators 组中的成员身份或等效身份是运行 diskshadow 所需的最低要求。  
@@ -66,7 +66,7 @@ diskshadow -s script.txt
 |[import](import.md)|将已加载的元数据文件中的可传送影子副本导入到系统中。|  
 |[mask](mask.md)|删除使用**import**命令导入的硬件卷影副本。|  
 |[让](expose.md)|将永久性卷影副本作为驱动器号、共享或装入点公开。|  
-|[隐藏](unexpose.md)|unexposes 使用**公开**命令公开的卷影副本。|  
+|[隐藏](unexpose.md)|Unexposes 使用**公开**命令公开的卷影副本。|  
 |[break_2](break_2.md)|将卷影副本卷与 VSS 解除。|  
 |[回到](revert.md)|将卷恢复到指定的卷影副本。|  
 |[exit_1](exit_1.md)|退出 diskshadow。|  
@@ -76,15 +76,15 @@ diskshadow -s script.txt
 -   创建卷影副本至少需要 "**添加**" 和 "**创建**"。 但是，这将使上下文和选项设置，将为副本备份，并且将仅创建不带备份执行脚本的卷影副本。  
   
 ## <a name="BKMK_examples"></a>示例  
-这是将创建卷影副本以进行备份的命令的示例序列。 可以将其另存为 dsh 文件，并在 diskshadow \/ dsh 中执行。  
+这是将创建卷影副本以进行备份的命令的示例序列。 可以将其另存为 dsh 文件，并在 diskshadow \/s dsh 中执行。  
   
 假设以下内容：  
   
--   你有一个名为 c @no__t：0diskshadowdata 的现有目录。  
+-   你有一个名为 c：\\diskshadowdata 的现有目录。  
   
 -   系统卷为 C：，数据卷为 d：  
   
--   你在 c： \\diskshadowdata 中有一个 backupscript 文件。  
+-   你在 c：\\diskshadowdata 中有一个 backupscript 文件。  
   
 -   你的 backupscript 文件将执行卷影数据 p：和 q：的副本到你的备份驱动器。  
   
