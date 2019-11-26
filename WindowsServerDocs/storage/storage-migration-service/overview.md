@@ -1,6 +1,6 @@
 ---
-title: Storage Migration Service overview
-description: Storage Migration Service makes it easier to migrate storage to Windows Server or to Azure. It provides a graphical tool that inventories data on Windows and Linux servers and then transfers the data to newer servers or to Azure virtual machines. Storage Migration Service also provides the option to transfer the identity of a server to the destination server so that apps and users can access their data without changing links or paths.
+title: 存储迁移服务概述
+description: 利用存储迁移服务，可以更轻松地将存储迁移到 Windows Server 或 Azure。 它提供了一个图形工具，该工具在 Windows 和 Linux 服务器上对数据进行清点，然后将数据传输到较新的服务器或 Azure 虚拟机。 存储迁移服务还提供了将服务器标识传输到目标服务器的选项，以便应用和用户可以在不更改链接或路径的情况下访问其数据。
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
@@ -15,75 +15,75 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74310381"
 ---
-# <a name="storage-migration-service-overview"></a>Storage Migration Service overview
+# <a name="storage-migration-service-overview"></a>存储迁移服务概述
 
->Applies to: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server (Semi-Annual Channel)
+>适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server （半年频道）
 
-Storage Migration Service makes it easier to migrate storage to Windows Server or to Azure. It provides a graphical tool that inventories data on Windows and Linux servers and then transfers the data to newer servers or to Azure virtual machines. Storage Migration Service also provides the option to transfer the identity of a server to the destination server so that apps and users can access their data without changing links or paths.
+利用存储迁移服务，可以更轻松地将存储迁移到 Windows Server 或 Azure。 它提供了一个图形工具，该工具在 Windows 和 Linux 服务器上对数据进行清点，然后将数据传输到较新的服务器或 Azure 虚拟机。 存储迁移服务还提供了将服务器标识传输到目标服务器的选项，以便应用和用户可以在不更改链接或路径的情况下访问其数据。
 
-This topic discusses why you'd want to use Storage Migration Service, how the migration process works, and what the requirements are for source and destination servers.
+本主题讨论为何要使用存储迁移服务、迁移过程的工作方式，以及源和目标服务器的要求。
 
-## <a name="why-use-storage-migration-service"></a>Why use Storage Migration Service
+## <a name="why-use-storage-migration-service"></a>为什么使用存储迁移服务
 
-Use Storage Migration Service because you've got a server (or a lot of servers) that you want to migrate to newer hardware or virtual machines. Storage Migration Service is designed to help by doing the following:
+使用存储迁移服务，因为你有要迁移到较新的硬件或虚拟机的一台或多台服务器。 存储迁移服务旨在帮助你执行以下操作：
 
-- Inventory multiple servers and their data
-- Rapidly transfer files, file shares, and security configuration from the source servers
-- Optionally take over the identity of the source servers (also known as cutting over) so that users and apps don't have to change anything to access existing data
-- Manage one or multiple migrations from the Windows Admin Center user interface
+- 清点多个服务器及其数据
+- 快速传输源服务器中的文件、文件共享和安全配置
+- （可选）接管源服务器的标识（也称为 "剪切"），以便用户和应用无需更改任何内容即可访问现有数据
+- 管理来自 Windows 管理中心用户界面的一个或多个迁移
 
-![Diagram showing Storage Migration Service migrating files & configuration from source servers to destination servers, Azure VMs, or Azure File Sync.](media/overview/storage-migration-service-diagram.png)
+![显示存储迁移服务将文件从源服务器迁移到目标服务器、Azure Vm 或 Azure 文件同步 & 配置的示意图。](media/overview/storage-migration-service-diagram.png)
 
-**Figure 1: Storage Migration Service sources and destinations**
+**图1：存储迁移服务源和目标**
 
-## <a name="how-the-migration-process-works"></a>How the migration process works
+## <a name="how-the-migration-process-works"></a>迁移过程的工作方式
 
-Migration is a three-step process:
+迁移过程分为三个步骤：
 
-1. **Inventory servers** to gather info about their files and configuration (shown in Figure 2).
-2. **Transfer (copy) data** from the source servers to the destination servers.
-3. **Cut over to the new servers** (optional).<br>The destination servers assume the source servers' former identities so that apps and users don't have to change anything. <br>The source servers enter a maintenance state where they still contain the same files they always have (we never remove files from the source servers) but are unavailable to users and apps. You can then decommission the servers at your convenience.
+1. **列出服务器的清单**，收集有关其文件和配置的信息（如图2所示）。
+2. 将数据从源服务器**传输（复制）** 到目标服务器。
+3. **剪切到新服务器**（可选）。<br>目标服务器采用源服务器以前的标识，以便应用和用户无需更改任何内容。 <br>源服务器进入维护状态，其中仍包含它们始终包含的相同文件（我们永远不会从源服务器中删除文件），但对用户和应用不可用。 然后，你可以在方便的时候停止服务器。
 
-![Screenshot showing a server ready to be scanned](media/migrate/inventory.png)
-**Figure 2: Storage Migration Service inventorying servers**
+![屏幕截图，显示可以扫描的服务器](media/migrate/inventory.png)
+**图2：存储迁移服务清点服务器**
 
 ## <a name="requirements"></a>要求
 
-To use Storage Migration Service, you need the following:
+若要使用存储迁移服务，需要以下各项：
 
-- A **source server** or **failover cluster** to migrate files and data from
-- A **destination server** running Windows Server 2019 (clustered or standalone) to migrate to. Windows Server 2016 and Windows Server 2012 R2 work as well but are around 50% slower
-- An **orchestrator server** running Windows Server 2019 to manage the migration  <br>If you're migrating only a few servers and one of the servers is running Windows Server 2019, you can use that as the orchestrator. If you're migrating more servers, we recommend using a separate orchestrator server.
-- A **PC or server running [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)** to run the Storage Migration Service user interface, unless you prefer using PowerShell to manage the migration. The Windows Admin Center and Windows Server 2019 version must both be at least version 1809.
+- 要从其迁移文件和数据的**源服务器**或**故障转移群集**
+- 运行 Windows Server 2019 （群集或独立版）以迁移到的**目标服务器**。 Windows Server 2016 和 Windows Server 2012 R2 也工作正常，但速度低于50%
+- 运行 Windows Server 2019 以管理迁移的**orchestrator 服务器**  <br>如果要仅迁移几个服务器，并且其中一个服务器正在运行 Windows Server 2019，则可以将其用作 orchestrator。 如果要迁移多个服务器，我们建议使用单独的 orchestrator 服务器。
+- **运行[Windows 管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)的 PC 或服务器**运行存储迁移服务用户界面，除非您更愿意使用 PowerShell 来管理迁移。 Windows 管理中心和 Windows Server 2019 版本必须至少为版本1809。
 
-We strongly recommend that the orchestrator and destination computers have at least two cores or two vCPUs, and at least 2 GB of memory. Inventory and transfer operations are significantly faster with more processors and memory.
+强烈建议 orchestrator 和 destination 计算机至少有两个核心或两个个 vcpu，至少有 2 GB 的内存。 对于更多的处理器和内存，清单和传输操作的速度要快得多。
 
-### <a name="security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports"></a>Security requirements, the Storage Migration Service proxy service, and firewall ports
+### <a name="security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports"></a>安全要求、存储迁移服务代理服务和防火墙端口
 
-- A migration account that is an administrator on the source computers and the orchestrator computer.
-- A migration account that is an administrator on the destination computers and the orchestrator computer.
-- The orchestrator computer must have the File and Printer Sharing (SMB-In) firewall rule enabled *inbound*.
-- The source and destination computers must have the following firewall rules enabled *inbound* (though you might already have them enabled):
+- 作为源计算机和 orchestrator 计算机上的管理员的迁移帐户。
+- 一个迁移帐户，它是目标计算机和 orchestrator 计算机上的管理员。
+- Orchestrator 计算机*必须启用 "* 文件和打印机共享（SMB）" 防火墙规则。
+- 源计算机和目标计算机必须启用以下防火墙规则*入站*（尽管可能已启用这些规则）：
   - 文件和打印机共享 (SMB-In)
-  - Netlogon Service (NP-In)
-  - Windows Management Instrumentation (DCOM-In)
+  - Netlogon 服务（NP-IN）
+  - Windows Management Instrumentation （DCOM-IN）
   - Windows Management Instrumentation (WMI-In)
   
   > [!TIP]
-  > Installing the Storage Migration Service Proxy service on a Windows Server 2019 computer automatically opens the necessary firewall ports on that computer. To do so, connect to the destination server in Windows Admin Center and then go to **Server Manager** (in Windows Admin Center) > **Roles and features**, select **Storage Migration Service Proxy**, and then select **Install**.
+  > 在 Windows Server 2019 计算机上安装存储迁移服务代理服务会自动在该计算机上打开所需的防火墙端口。 为此，请在 Windows 管理中心中连接到目标服务器，然后前往**服务器管理器**（在 Windows 管理中心中） >**角色和功能**"，选择"**存储迁移服务代理**"，然后选择"**安装**"。
 
 
-- If the computers belong to an Active Directory Domain Services domain, they should all belong to the same forest. The destination server must also be in the same domain as the source server if you want to transfer the source's domain name to the destination when cutting over. Cutover technically works across domains, but the fully-qualified domain name of the destination will be different from the source...
+- 如果计算机属于某个 Active Directory 域服务域，则它们应属于同一林。 如果要在剪切时将源的域名传输到目标，则目标服务器也必须与源服务器位于同一域中。 切换技术跨域运行，但目标的完全限定域名将不同于源 。
 
-### <a name="requirements-for-source-servers"></a>Requirements for source servers
+### <a name="requirements-for-source-servers"></a>源服务器的要求
 
-The source server must run one of the following operating systems:
+源服务器必须运行以下操作系统之一：
 
 - Windows Server 半年频道
-- Windows Server Standard 2012 R2
-- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2019
+- Windows Server 2016
 - Windows Server 2012 R2
-- Windows Server 2012
+- Windows Server 2012
 - Windows Server 2008 R2
 - Windows Server 2008
 - Windows Server 2003 R2
@@ -92,7 +92,7 @@ The source server must run one of the following operating systems:
 - Windows Small Business Server 2008
 - Windows Small Business Server 2011
 - Windows Server 2012 Essentials
-- Windows Server 2012 R2 Essentials
+- Windows Server 2012 R2 Essentials
 - Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
 - Windows Storage Server 2008
@@ -101,43 +101,43 @@ The source server must run one of the following operating systems:
 - Windows Storage Server 2012 R2
 - Windows Storage Server 2016
 
-Note: Windows Small Business Server and Windows Server Essentials are domain controllers. Storage Migration Service can't yet cut over from domain controllers, but can inventory and transfer files from them.   
+注意： Windows Small Business Server 和 Windows Server Essentials 是域控制器。 存储迁移服务目前无法从域控制器中剪切，但可以列出和传输文件。   
 
-You can migrate the following additional source types if the orchestrator is running Windows Server, version 1903 or later, or if the orchestrator is running an earlier version of Windows Server with [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) installed:
+如果 orchestrator 正在运行 Windows Server 1903 或更高版本，或者协调器运行的 Windows Server 的早期版本安装了[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) ，则可以迁移以下附加源类型：
 
 - 故障转移群集
-- Linux servers that use Samba. We've tested the following:
+- 使用 Samba 的 Linux 服务器。 我们测试了以下内容：
     - CentOS 7
     - Debian GNU/Linux 8
-    - RedHat Enterprise Linux 7.6
-    - SUSE Linux Enterprise Server (SLES) 11 SP4
-    - Ubuntu 16.04 LTS and 12.04.5 LTS
-    - Samba 4.8, 4.7, 4.3, 4.2, and 3.6
+    - RedHat Enterprise Linux 7。6
+    - SUSE Linux Enterprise Server （SLES） 11 SP4
+    - Ubuntu 16.04 LTS 和 12.04.5 LTS
+    - Samba 4.8、4.7、4.3、4.2 和3。6
 
-### <a name="requirements-for-destination-servers"></a>Requirements for destination servers
+### <a name="requirements-for-destination-servers"></a>目标服务器的要求
 
-The destination server must run one of the following operating systems:
+目标服务器必须运行以下操作系统之一：
 
 - Windows Server 半年频道
-- Windows Server Standard 2012 R2
-- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2019
+- Windows Server 2016
 - Windows Server 2012 R2
 
 > [!TIP]
-> Destination servers running Windows Server 2019 or Windows Server, Semi-Annual Channel or later have double the transfer performance of earlier versions of Windows Server. This performance boost is due to the inclusion of a built-in Storage Migration Service proxy service, which also opens the necessary firewall ports if they're not already open.
+> 运行 Windows Server 2019 或 Windows Server、半年频道或更高版本的目标服务器的 Windows Server 早期版本的传输性能加倍。 此性能提高的原因是包含内置的存储迁移服务代理服务，该服务还将打开所需的防火墙端口（如果尚未打开）。
 
-## <a name="whats-new-in-storage-migration-service"></a>What's new in Storage Migration Service
+## <a name="whats-new-in-storage-migration-service"></a>存储迁移服务中的新增功能
 
-The following new features are available when running the Storage Migration Server orchestrator on Windows Server, version 1903 or later, or an earlier version of Windows Server with [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) installed:
+在 Windows Server、版本1903或更高版本或 Windows [server 的早期](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)版本上运行存储迁移服务器 orchestrator 时，以下新功能可用：
 
 - 将本地用户和组迁移到新服务器
-- Migrate storage from failover clusters, migrate to failover clusters, and migrate between standalone servers and failover clusters
+- 从故障转移群集迁移存储，迁移到故障转移群集，并在独立服务器和故障转移群集之间迁移
 - 从使用 Samba 的 Linux 服务器迁移存储
 - 使用 Azure 文件同步更轻松地将已迁移的共享同步到 Azure 中
 - 迁移到 Azure 等新网络
 
 ## <a name="see-also"></a>另请参阅
 
-- [Migrate a file server by using Storage Migration Service](migrate-data.md)
-- [Storage Migration Services frequently asked questions (FAQ)](faq.md)
-- [Storage Migration Service known issues](known-issues.md)
+- [使用存储迁移服务迁移文件服务器](migrate-data.md)
+- [存储迁移服务常见问题（FAQ）](faq.md)
+- [存储迁移服务的已知问题](known-issues.md)

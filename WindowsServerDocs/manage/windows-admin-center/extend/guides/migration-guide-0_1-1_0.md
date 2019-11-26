@@ -1,6 +1,6 @@
 ---
-title: Migrate from Windows Admin Center SDK 0.1 to 1.0
-description: This guide will help you migrate from Windows Admin Center SDK version 0.1 to 1.0
+title: 从 Windows 管理中心 SDK 0.1 迁移到1。0
+description: 本指南将帮助你从 Windows 管理中心 SDK 0.1 版迁移到1。0
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -15,60 +15,60 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "71357056"
 ---
-# <a name="migrate-from-windows-admin-center-sdk-01-to-10"></a>Migrate from Windows Admin Center SDK 0.1 to 1.0
+# <a name="migrate-from-windows-admin-center-sdk-01-to-10"></a>从 Windows 管理中心 SDK 0.1 迁移到1。0
 
->Applies To: Windows Admin Center Preview
+>适用于： Windows 管理中心预览
 
-This guide will help you migrate from Windows Admin Center SDK version 0.1 to 1.0.  
+本指南将帮助你从 Windows 管理中心 SDK 版本0.1 升级到1.0。  
 
-## <a name="1-learn-about-new-controls-with-the-dev-guide-extension"></a>1. Learn about new controls with the Dev Guide extension
+## <a name="1-learn-about-new-controls-with-the-dev-guide-extension"></a>1. 了解具有开发人员指南扩展的新控件
 
-Windows Admin Center version 1902 and later includes the **Dev Guide** extension, which you can use to find examples of controls (including newly available controls) and scenarios to help you build your own extension.  Dev Guide replaces the **Developer Tools** extension from earlier versions of the SDK.
+Windows 管理中心版本1902及更高版本包含**开发人员指南**扩展，可用于查找控件示例（包括新提供的控件）和方案，以帮助你生成自己的扩展。  开发指南取代了 SDK 早期版本中的**开发人员工具**扩展。
 
-### <a name="use-the-dev-guide-in-windows-admin-center"></a>Use the Dev Guide in Windows Admin Center
+### <a name="use-the-dev-guide-in-windows-admin-center"></a>使用 Windows 管理中心中的开发指南
 
-Dev Guide is available as a solution in Windows Admin Center version 1902 and later.  Dev Guide is pre-installed, but it needs to be enabled via settings.
+开发人员指南在 Windows 管理中心版本1902及更高版本中以解决方案形式提供。  开发人员指南已预安装，但需要通过设置启用。
 
-**Enable Dev Guide in Windows Admin Center:**
+**在 Windows 管理中心中启用开发指南：**
 
-* Open Windows Admin Center (version 1902 and later)
-* Click on the **Settings** icon in the top right corner of the window
-* Select the **Advanced** tab
-* Under *Experiment Keys*, click **Add**
-* Enter a new value ```msft.sme.shell.devguide``` in the empty field that was created by the previous step
-* Click **Save and Reload**
+* 打开 Windows 管理中心（版本1902及更高版本）
+* 单击窗口右上角的 "**设置**" 图标
+* 选择 "**高级**" 选项卡
+* 在 "*试验密钥*" 下，单击 "**添加**"
+* 在上一步创建的空字段中输入新值 ```msft.sme.shell.devguide```
+* 单击 "**保存并重新加载**"
 
-**Open Dev Guide in Windows Admin Center:**
+**在 Windows 管理中心中打开开发指南：**
 
-* Open Windows Admin Center (version 1902 and later)
-* Click the drop-down in the top left to show all solution types
-* Select the **Dev Guide** solution 
-    * If you don't see the solution listed, make sure you have enabled the dev guide (see section above) and have reloaded Windows Admin Center.
-* Browse the content of Dev Guide by selecting one of the tabs
-    * **Landing:** Contains code samples for *Manage As* and *Notification* scenarios
-    * **Controls:** Contains examples of each available control in the SDK
-    * **Pipes:** Contains examples of available converter and formatter functions
-    * **Styles:** Contains examples of CSS styles available in the SDK
-    * **MsftSme:** Contains examples and guidance for advanced scenarios 
+* 打开 Windows 管理中心（版本1902及更高版本）
+* 单击左上角的下拉框以显示所有解决方案类型
+* 选择**开发指南**解决方案 
+    * 如果看不到列出的解决方案，请确保已启用开发指南（请参阅上面的部分）并重新加载 Windows 管理中心。
+* 通过选择其中一个选项卡浏览开发指南的内容
+    * **登陆：** 包含*管理 As*和*通知*方案的代码示例
+    * **控件：** 包含 SDK 中每个可用控件的示例
+    * **管道：** 包含可用转换器和格式化程序函数的示例
+    * **样式：** 包含 SDK 中可用的 CSS 样式的示例
+    * **MsftSme：** 包含高级方案的示例和指南 
 
-### <a name="browse-the-source-code-of-dev-guide-on-github"></a>Browse the source code of Dev Guide on GitHub
+### <a name="browse-the-source-code-of-dev-guide-on-github"></a>浏览 GitHub 上开发人员指南的源代码
 
-You can browse the [source code](https://github.com/Microsoft/windows-admin-center-sdk/) of Dev Guide on GitHub to find example HTML, CSS, and TypeScript code samples.
+可以浏览 GitHub 上的开发指南[源代码](https://github.com/Microsoft/windows-admin-center-sdk/)，查找示例 HTML、CSS 和 TypeScript 代码示例。
 
-## <a name="2-prepare-your-development-environment-for-the-latest-sdk"></a>2. Prepare your development environment for the latest SDK
+## <a name="2-prepare-your-development-environment-for-the-latest-sdk"></a>2. 准备适用于最新 SDK 的开发环境
 
-Install or update node.js version [10.15.1 LTS or later](https://nodejs.org/en/).
+安装或更新 node.js 版本[10.15.1 LTS 或更高](https://nodejs.org/en/)版本。
 
-Update the Windows Admin Center CLI to the latest version:
+将 Windows 管理中心 CLI 更新到最新版本：
 
-[//]: # "npm uninstall -g windows-admin-center-cli@next"
+[//]: # "npm 卸载-g windows-admin-center-cli@next"
 
 ``` cmd
 npm uninstall -g windows-admin-center-cli
 npm install -g windows-admin-center-cli
 ```
 
-Update your global dependencies to these versions:
+将全局依赖项更新为以下版本：
 
 ``` cmd
 npm install npm@6.4.1 -g
@@ -78,46 +78,46 @@ npm install typescript@3.1.6 -g
 npm install tslint@5.11.0 -g
 ```
 
-## <a name="3-create-a-new-project-with-the-latest-sdk"></a>3. Create a new project with the latest SDK
+## <a name="3-create-a-new-project-with-the-latest-sdk"></a>3. 使用最新的 SDK 创建新项目
 
-Use the Windows Admin Center CLI to create a new project targeting the ```next``` version (SDK 1.0):
+使用 Windows 管理中心 CLI 创建面向 ```next``` 版本的新项目（SDK 1.0）：
 
-[//]: # "wac create --company 'Contoso Inc' --tool 'Manage Foo Works' --version experimental"
+[//]: # "wac 创建--公司 "Contoso Inc."--工具 "管理 Foo 工作"--实验版本"
 
 ``` cmd
 wac create --company "Contoso Inc" --tool "Manage Foo Works" --version next
 ```
 
-Next, change directory into the folder just created, then install required local dependencies by running ```npm install ```.
+接下来，将目录更改为刚创建的文件夹，然后通过运行 ```npm install ```安装所需的本地依赖项。
 
-## <a name="4-modify-an-existing-project-to-use-the-latest-sdk"></a>4. Modify an existing project to use the latest SDK
+## <a name="4-modify-an-existing-project-to-use-the-latest-sdk"></a>4. 修改现有项目以使用最新的 SDK
 
-IMPORTANT: Make a backup of your project before continuing.
+重要提示：在继续操作之前，请备份项目。
 
-Modify the following line in ```package.json``` to target the ```next``` version (SDK 1.0):
+修改 ```package.json``` 中的以下行以面向 ```next``` 版本（SDK 1.0）：
 
-[//]: # "'@microsoft/windows-admin-center-sdk': 'experimental'"
+[//]: # ""@microsoft/windows-admin-center-sdk"： "试验""
 
 ``` json
 "@microsoft/windows-admin-center-sdk": "next",
 ```
 
-Then run ```npm install``` to update references throughout your project.
+然后，运行 ```npm install``` 以更新整个项目中的引用。
 
-## <a name="5-use-the-sdk-cli-to-fix-common-migration-issues"></a>5. Use the SDK CLI to fix common migration issues
+## <a name="5-use-the-sdk-cli-to-fix-common-migration-issues"></a>5. 使用 SDK CLI 修复常见的迁移问题
 
-IMPORTANT: Make a backup of your project before continuing.
+重要提示：在继续操作之前，请备份项目。
 
-From the root folder of your project, run the following CLI command on your project to fix common migration issues automatically:
+从项目的根文件夹中，对项目运行以下 CLI 命令，以自动修复常见的迁移问题：
 
 ``` cmd
 wac updateSeven --update
 ```
 
-This CLI command addresses the following issues automatically:
+此 CLI 命令自动解决以下问题：
 
-* Regenerate ```package-lock.json```
-* Update files in the angular compilation environment:
+* 重新生成 ```package-lock.json```
+* 在角度编译环境中更新文件：
     - ```.gitignore```
     - ```tslint.json```
     - ```tsconfig.json```
@@ -128,170 +128,170 @@ This CLI command addresses the following issues automatically:
     - ```src\tsconfig.lib.json```
     - ```src\tsconfig.spec.json```
 
-## <a name="6-use-the-sdk-cli-to-understand-common-migration-issues"></a>6. Use the SDK CLI to understand common migration issues
+## <a name="6-use-the-sdk-cli-to-understand-common-migration-issues"></a>6. 使用 SDK CLI 了解常见的迁移问题
 
-From the root folder of your project, run the following CLI command to audit your project and find common migration issues that need to be addressed manually:
+从项目的根文件夹中，运行以下 CLI 命令审核项目，查找需要手动解决的常见迁移问题：
 
 ``` cmd
 wac updateSeven --audit
 ```
 
-This will find instances of the following issues in your project:
+这会在项目中找到以下问题的实例：
 
-### <a name="replace-usage-of-the-following-css-classes-with-these-sme-classes"></a>Replace usage of the following CSS classes with these sme classes:
+### <a name="replace-usage-of-the-following-css-classes-with-these-sme-classes"></a>将以下 CSS 类的用法替换为这些 sme 类：
 
-| Old CSS class | New CSS class |
+| 旧 CSS 类 | 新建 CSS 类 |
 | -- | -- |
-| .auto-flex-size |  .sme-position-flex-auto |
-| .border-all |  .sme-border-inset-sm AND .sme-border-color-base-90 |
-| .border-bottom |  .sme-border-bottom-sm AND .sme-border-bottom-color-base-90 |
-| .border-horizontal |  .sme-border-horizontal-sm AND .sme-border-horizontal-color-base-90 |
-| .border-left |  .sme-border-left-sm AND .sme-border-left-color-base-90 |
-| .border-right |  .sme-border-right-sm AND .sme-border-right-color-base-90 |
-| .border-top |  .sme-border-top-sm AND .sme-border-top-color-base-90 |
-| .border-vertical |  .sme-border-vertical-sm AND .sme-border-vertical-color-base-90 |
-| .break-word |  .sme-arrange-ws-wrap |
-| .btn |  .sme-button OR button |
-| .btn-primary |  .sme-button.sme-button-primary OR .button.sme-button-primary |
-| .color-dark |  .sme-color-alt |
-| .color-light |  .sme-color-base |
-| .color-light-gray |  .sme-color-base-90 |
-| .fixed-flex-size |  .sme-position-flex-none |
-| .flex-layout |  .sme-arrange-stack-h OR .sme-arrange-stack-v |
-| .font-bold |  .sme-font-emphasis1 |
-| .highlight |  .sme-background-color-yellow |
-| .horizontal |  .sme-arrange-stack-h |
-| .no-scroll |  .sme-position-flex-auto |
-| .nowrap |  .sme-arrange-stack-h OR .sme-arrange-stack-v |
-| .relative |  .sme-layout-relative |
-| .relative-center |  .sme-layout-absolute .sme-position-center |
-| .reverse |  .sme-arrange-stack-reversed |
-| .stretch-absolute |  .sme-layout-absolute .sme-position-inset-none |
-| .stretch-fixed |  .sme-layout-fixed .sme-position-inset-none |
-| .stretch-vertical |  .sme-position-stretch-v |
-| .stretch-width |  .sme-position-stretch-h |
-| .vertical |  .sme-arrange-stack-v |
-| .vertical-scroll-only |  .sme-arrange-overflow-hide-x sme-arrange-overflow-auto-y |
-| .wrap |  .sme-arrange-wrapstack-h OR .sme-arrange-wrapstack-v |
+| 。自动调整弹性大小 |  sme-位置-弹性-自动 |
+| . border-全部 |  . sme-带边框的-sm 和90边框 |
+| 。下边框 |  "sme"-"下边框-sm" 90 和 "" |
+| 。边框-水平 |  "sme-水平-sm" 和 "sme-水平-水平-90" |
+| 。边框-左对齐 |  "sme-左-sm" 和 "sme-左边框-90" |
+| 。边框-右 |  "sme-右-sm" 和 "sme-右边框-90" |
+| 。上边框-顶部 |  "sme-顶部-sm" 和 "sme-顶部-最高颜色-90" |
+| 。边框-垂直 |  "sme-垂直-sm" 和 "sme-垂直-垂直-90" |
+| 。 break-word |  . sme-双包装 |
+| 。 btn |  sme-按钮或按钮 |
+| 。 btn-主要 |  . sme-button-primary 或 ... 按钮-主要 |
+| 。颜色-深色 |  sme-彩色-alt |
+| 。颜色-浅色 |  sme-颜色基数 |
+| 。颜色浅-灰色 |  sme-彩色-90 |
+| 。固定弹性大小 |  sme-位置-弹性-无 |
+| 。弹性-布局 |  -a--stack-h 或。 |
+| 。字体-粗体 |  . emphasis1 |
+| 。突出显示 |  sme-背景色-黄色 |
+| 。水平 |  --排布-h |
+| 。非滚动 |  sme-位置-弹性-自动 |
+| 。 nowrap |  -a--stack-h 或。 |
+| 。相对 |  sme-布局-相对 |
+| 。相对中心 |  sme-布局-绝对的 |
+| 。反向 |  . sme-堆栈反向 |
+| 。 stretch-绝对 |  sme-布局-绝对内容-位置-内陷-无 |
+| 。 stretch-已修复 |  sme-已修复-位置-内陷-无 |
+| 。拉伸-垂直 |  sme-位置-stretch |
+| . stretch-宽度 |  sme-位置-stretch-h |
+| vertical |  . sme-stack |
+| 。垂直-仅滚动 |  . sme –溢出-hide-x sme –溢出-auto y |
+| wrap |  wrapstack-h 或-wrapstack-v |
 
-### <a name="replace-usage-of-the-following-components-with-these-sme-components"></a>Replace usage of the following components with these sme components:
+### <a name="replace-usage-of-the-following-components-with-these-sme-components"></a>将以下组件的使用替换为这些 sme 组件：
 
-| Old component | New component |
+| 旧组件 | 新建组件 |
 | -- | -- |
-| .alert |  sme-alert |
-| .alert-danger |  sme-alert |
-| .breadCrumb |  sme-alert |
-| .checkbox |  sme-form-field[type="checkbox"] |
-| .combobox |  sme-form-field[type="select"] |
-| .dashboard |  sme-layout-content-zone-padded sme-arrange-stack-h |
-| .details-panel |  sme-property-grid |
-| .details-panel-container |  sme-property-grid |
-| .details-tab |  sme-property-grid OR sme-pivot |
-| .details-wrapper |  sme-property-grid |
-| .disabled |  sme-disabled |
-| .form-buttons | sme-form-field |
-| .form-control | sme-form-field |
-| .form-controls | sme-form-field |
-| .form-group | sme-form-field |
-| .form-group-label | sme-form-field |
-| .form-input | sme-form-field |
-| .form-stretch | sme-form-field |
-| .input-file | sme-form-field |
-| .nav-tabs |  sme-pivot |
-| .radio |  sme-form-field[type="radio"] |
-| .required-clue | sme-form-field |
-| .searchbox |  sme-form-field[type="search"] |
-| .toggle-switch |  sme-form-field[type="toggle-switch"] |
-| .tool-container |  sme-layout-content-zone OR sme-layout-content-zone-padded |
+| 。警报 |  sme-警报 |
+| 。警报-危险 |  sme-警报 |
+| 痕迹 |  sme-警报 |
+| 。复选框 |  sme 窗体-字段 [type = "checkbox"] |
+| combobox |  sme 窗体-字段 [type = "select"] |
+| 。仪表板 |  sme-布局-内容-区域填充的 sme-排列-h |
+| 。详细信息-面板 |  sme-属性网格 |
+| 。详细信息-面板-容器 |  sme-属性网格 |
+| 。详细信息-选项卡 |  sme-属性网格或 sme-透视 |
+| 。详细信息-包装器 |  sme-属性网格 |
+| 。已禁用 |  sme-已禁用 |
+| 。窗体-按钮 | sme 窗体-字段 |
+| 。窗体控件 | sme 窗体-字段 |
+| 。窗体控件 | sme 窗体-字段 |
+| 。窗体-组 | sme 窗体-字段 |
+| 。窗体组标签 | sme 窗体-字段 |
+| 。窗体-输入 | sme 窗体-字段 |
+| 。窗体-stretch | sme 窗体-字段 |
+| . 输入-文件 | sme 窗体-字段 |
+| 。导航选项卡 |  sme-透视 |
+| 。单选 |  sme 窗体-字段 [type = "单选"] |
+| 。必需-提示 | sme 窗体-字段 |
+| 。 searchbox |  sme 窗体-字段 [type = "search"] |
+| 。切换-切换 |  sme 窗体-字段 [type = "切换-切换"] |
+| 。工具-容器 |  sme-布局-内容区域或 sme-布局-内容-区域填充 |
 
-### <a name="these-css-classes-are-deprecated-and-are-no-longer-supported"></a>These CSS classes are deprecated and are no longer supported:
+### <a name="these-css-classes-are-deprecated-and-are-no-longer-supported"></a>这些 CSS 类已弃用，不再受支持：
 
-| Old class | 已弃用 |
+| 旧类 | 已弃用 |
 | -- | -- |
-| .acceptable | (deprecated) |
-| .color-error | (deprecated) |
-| .color-info | (deprecated) |
-| .color-success | (deprecated) |
-| .color-warning | (deprecated) |
-| .delete-button | (deprecated) |
-| .details-content | (deprecated) |
-| .error-cover | (deprecated) |
-| .error-message | (deprecated) |
-| .guided-pane-button | (deprecated) |
-| .header-container | (deprecated) |
-| .icon-win | (deprecated) |
-| .indent | (deprecated) |
-| .invalid | (deprecated) |
-| .item-list | (deprecated) |
-| .modal-scrollable | (deprecated) |
-| .multi-section | (deprecated) |
-| .no-action-bar | (deprecated) |
-| .overflow-margins | (deprecated) |
-| .overflow-tool | (deprecated) |
-| .progress-cover | (deprecated) |
-| .right-panel | (deprecated) |
-| .rollup | (deprecated) |
-| .rollup-status | (deprecated) |
-| .rollup-title | (deprecated) |
-| .rollup-value | (deprecated) |
-| .searchbox-action-bar | (deprecated) |
-| .size-h-1 | (deprecated) |
-| .size-h-2 | (deprecated) |
-| .size-h-3 | (deprecated) |
-| .size-h-4 | (deprecated) |
-| .size-h-full | (deprecated) |
-| .size-h-half | (deprecated) |
-| .size-v-1 | (deprecated) |
-| .size-v-2 | (deprecated) |
-| .size-v-3 | (deprecated) |
-| .size-v-4 | (deprecated) |
-| .status-icon | (deprecated) |
-| .svg-16px | (deprecated) |
-| .table-indent | (deprecated) |
-| .table-sm | (deprecated) |
-| .thin | (deprecated) |
-| .tile | (deprecated) |
-| .tile-body | (deprecated) |
-| .tile-content | (deprecated) |
-| .tile-footer | (deprecated) |
-| .tile-header | (deprecated) |
-| .tile-layout | (deprecated) |
-| .tile-table | (deprecated) |
-| .toolbar | (deprecated) |
-| .tool-bar | (deprecated) |
-| .tool-header | (deprecated) |
-| .tool-header-box | (deprecated) |
-| .tool-pane | (deprecated) |
-| .usage-bar | (deprecated) |
-| .usage-bar-area | (deprecated) |
-| .usage-bar-background | (deprecated) |
-| .usage-bar-title | (deprecated) |
-| .usage-bar-value | (deprecated) |
-| .usage-chart | (deprecated) |
-| .usage-message | (deprecated) |
-| .usage-message-area | (deprecated) |
-| .usage-message-title | (deprecated) |
-| .warning | (deprecated) |
-| .white-space | (deprecated) |
+| 。可接受 | 弃用 |
+| 。颜色-错误 | 弃用 |
+| 。颜色-信息 | 弃用 |
+| 。颜色-成功 | 弃用 |
+| 。颜色-警告 | 弃用 |
+| 。删除-按钮 | 弃用 |
+| 。详细信息-内容 | 弃用 |
+| 。错误-覆盖 | 弃用 |
+| 。错误-消息 | 弃用 |
+| 。引导式窗格按钮 | 弃用 |
+| 。标头-容器 | 弃用 |
+| 。图标-win | 弃用 |
+| 。缩进 | 弃用 |
+| 。无效 | 弃用 |
+| . 项-列表 | 弃用 |
+| 。模式-可滚动 | 弃用 |
+| 。多节 | 弃用 |
+| 。无操作栏 | 弃用 |
+| 。溢出-边距 | 弃用 |
+| 。溢出工具 | 弃用 |
+| 。进度-覆盖 | 弃用 |
+| 。右面板 | 弃用 |
+| 。汇总 | 弃用 |
+| 。汇总-状态 | 弃用 |
+| 。汇总-标题 | 弃用 |
+| 。汇总-值 | 弃用 |
+| 。 searchbox-操作栏 | 弃用 |
+| 。大小-h-1 | 弃用 |
+| 。大小-h-2 | 弃用 |
+| 。大小-h-3 | 弃用 |
+| 。大小-h-4 | 弃用 |
+| 。大小-h-完全 | 弃用 |
+| 。大小-h-半 | 弃用 |
+| 。大小-v-1 | 弃用 |
+| 。大小-v-2 | 弃用 |
+| 。大小-v-3 | 弃用 |
+| 。大小-v-4 | 弃用 |
+| 。状态-图标 | 弃用 |
+| 。 svg-16px | 弃用 |
+| 。表缩进 | 弃用 |
+| 。表-sm | 弃用 |
+| 。瘦 | 弃用 |
+| . 磁贴 | 弃用 |
+| . 磁贴-正文 | 弃用 |
+| . 磁贴-内容 | 弃用 |
+| . 磁贴页脚 | 弃用 |
+| . 磁贴-标头 | 弃用 |
+| . 磁贴-布局 | 弃用 |
+| . 磁贴-表 | 弃用 |
+| 。工具栏 | 弃用 |
+| 。工具条 | 弃用 |
+| . 工具标头 | 弃用 |
+| . 工具标头-框 | 弃用 |
+| 。工具窗格 | 弃用 |
+| 。用法-bar | 弃用 |
+| 。用法-条形图-面积图 | 弃用 |
+| 。用法-bar-背景 | 弃用 |
+| 。用法-条形图-标题 | 弃用 |
+| 。用法-条形值 | 弃用 |
+| 。用法-图表 | 弃用 |
+| 。用法-消息 | 弃用 |
+| 。使用情况-消息区域 | 弃用 |
+| 。用法-消息标题 | 弃用 |
+| 。警告 | 弃用 |
+| 。空白 | 弃用 |
 
-## <a name="7-understand-and-resolve-issues-with-observable-objects"></a>7. Understand and resolve issues with observable objects
+## <a name="7-understand-and-resolve-issues-with-observable-objects"></a>7. 了解并解决可观察对象的问题
 
-### <a name="update--rxjs-function-use-for-observable-objects"></a>Update  ```rxjs``` function use for observable objects
+### <a name="update--rxjs-function-use-for-observable-objects"></a>更新 ```rxjs``` 函数用于可观察对象
 
-These are some common function names that have been changed, there may be others in your project.
+这些是已更改的一些常见函数名称，你的项目中可能还有其他一些名称。
 
-* Update ```Observable.empty()``` to ```empty()```
-* Update ```Observable.of()``` to ```of()```
-* Update ```.switchMap()``` to ```.pipe(switchMap())```
-* Update ```.map()``` to ```.pipe(map())```
-* Update ```flatMap()``` to ```mergeMap()```
+* 更新 ```Observable.empty()``` 到 ```empty()```
+* 更新 ```Observable.of()``` 到 ```of()```
+* 更新 ```.switchMap()``` 到 ```.pipe(switchMap())```
+* 更新 ```.map()``` 到 ```.pipe(map())```
+* 更新 ```flatMap()``` 到 ```mergeMap()```
 
 
-### <a name="resolve-runtime-issues-with-map-and-filter-functions-on-observable-objects"></a>Resolve runtime issues with ```.map()``` and ```.filter()``` functions on observable objects
+### <a name="resolve-runtime-issues-with-map-and-filter-functions-on-observable-objects"></a>解决可观察对象上 ```.map()``` 和 ```.filter()``` 函数的运行时问题
 
-If the compiler cannot properly identify an ```observable``` object's type, ```.map()``` and ```.filter()``` functions from the ```array``` object might be mapped instead to your object, causing errors at runtime.  Make sure that your functions return an ```observable``` object specifying an explicit data type to avoid this issue.
+如果编译器无法正确标识 ```observable``` 对象的类型，则可能会将 ```array``` 对象中的 ```.map()``` 和 ```.filter()``` 函数映射到你的对象，从而导致运行时错误。  请确保函数返回指定了显式数据类型的 ```observable``` 对象，以避免此问题。
 
-```any``` and no return type can cause this problem, look for code with these patterns:
+```any``` 和无返回类型都可能导致此问题，请查找采用以下模式的代码：
 
 ``` ts
 public getMyObservable(): any { //any return type can cause issues
@@ -303,31 +303,31 @@ public getMyObservable() { //no return type can cause issues
 }
 ```
 
-## <a name="8-resolve-other-common-issues"></a>8. Resolve other common issues
+## <a name="8-resolve-other-common-issues"></a>8. 解决其他常见问题
 
-These techniques will help resolve other common issues:
+这些方法可帮助解决其他常见问题：
 
-* Run ```ng lint --fix``` to fix common lint issues
-* Run ```gulp build``` repeatedly to incrementally fix issues that ```gulp build``` can resolve automatically
+* 运行 ```ng lint --fix``` 以解决常见不起毛的问题
+* 重复运行 ```gulp build``` 以增量修复 ```gulp build``` 可以自动解决的问题
 
-## <a name="9-build-and-serve-your-project"></a>9. Build and serve your project
+## <a name="9-build-and-serve-your-project"></a>9. 生成并处理你的项目
 
-Run the following commands to build and serve your project with the latest version (SDK 1.0):
+运行以下命令以生成项目并为其提供最新版本（SDK 1.0）：
 
 ``` cmd
 gulp build
 gulp serve --port 4201
 ```
 
-## <a name="10-turn-on-dark-theme-in-windows-admin-center"></a>10. Turn on dark theme in Windows Admin Center
+## <a name="10-turn-on-dark-theme-in-windows-admin-center"></a>10. 在 Windows 管理中心中打开深色主题
 
-To turn on dark theme in Windows Admin Center version 1902 and later, follow these steps:
+若要在 Windows 管理中心版本1902及更高版本中打开深色主题，请执行以下步骤：
 
-* Open Windows Admin Center (version 1902 and later)
-* Click on the **Settings** icon in the top right corner of the window
-* Select the **Advanced** tab
-* Under *Experiment Keys*, click **Add**
-* Enter a new value ```msft.sme.shell.personalization``` in the empty field that was created by the previous step
-* Click **Save and Reload**
-* Settings will now have a new tab, **Personalization**.  Select this tab
-* Change **Colors** to **Dark mode (preview)**
+* 打开 Windows 管理中心（版本1902及更高版本）
+* 单击窗口右上角的 "**设置**" 图标
+* 选择 "**高级**" 选项卡
+* 在 "*试验密钥*" 下，单击 "**添加**"
+* 在上一步创建的空字段中输入新值 ```msft.sme.shell.personalization```
+* 单击 "**保存并重新加载**"
+* 设置现在具有新的选项卡 "**个性化**"。  选择此选项卡
+* 将**颜色**更改为**深色模式（预览）**
