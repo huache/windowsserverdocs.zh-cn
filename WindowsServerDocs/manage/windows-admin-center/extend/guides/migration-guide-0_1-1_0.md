@@ -80,7 +80,7 @@ npm install tslint@5.11.0 -g
 
 ## <a name="3-create-a-new-project-with-the-latest-sdk"></a>3. 使用最新的 SDK 创建新项目
 
-使用 Windows 管理中心 CLI 创建面向 ```next``` 版本的新项目（SDK 1.0）：
+使用 Windows 管理中心 CLI 创建面向 ```next``` 版本的新项目（SDK 1.0）
 
 [//]: # "wac 创建--公司 "Contoso Inc."--工具 "管理 Foo 工作"--实验版本"
 
@@ -94,7 +94,7 @@ wac create --company "Contoso Inc" --tool "Manage Foo Works" --version next
 
 重要提示：在继续操作之前，请备份项目。
 
-修改 ```package.json``` 中的以下行以面向 ```next``` 版本（SDK 1.0）：
+修改 ```package.json``` 中的以下行以面向 ```next``` 版本（SDK 1.0）
 
 [//]: # ""@microsoft/windows-admin-center-sdk"： "试验""
 
