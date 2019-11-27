@@ -26,15 +26,15 @@ ms.locfileid: "71357497"
 
 |阶段|描述  
 |---------|---------------  
-|[Plan：确定部署所需的策略和配置的需求 @ no__t-0|标识所需的策略和部署所需的配置。 
-|[Implement：配置组件和策略 @ no__t-0|配置组件和策略。  
+|[计划：确定需要策略和部署所需的配置](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.2)|标识所需的策略和部署所需的配置。 
+|[实现：配置组件和策略](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.3)|配置组件和策略。  
 |[部署中心访问策略](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.4)|部署策略。  
-|[Maintain：更改并暂存策略 @ no__t-0|策略更改和过渡。 
+|[维护：更改和暂存策略](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.5)|策略更改和过渡。 
 
 ## <a name="BKMK_1.1"></a>设置测试环境  
-在开始之前，需要设置实验室以测试该方案。 @No__t-0Appendix B 中详细说明了设置实验室的步骤：正在设置测试环境 @ no__t。  
+在开始之前，需要设置实验室以测试该方案。 [附录 B：设置测试环境](Appendix-B--Setting-Up-the-Test-Environment.md)中详细说明了设置实验室的步骤。  
 
-## <a name="BKMK_1.2"></a>计划标识对策略的需求和部署所需的配置。  
+## <a name="BKMK_1.2"></a>计划：确定需要策略和部署所需的配置  
 本部分提供了一系列高级步骤，可帮助你规划部署。  
 
 ||步骤|示例|  
@@ -46,7 +46,7 @@ ms.locfileid: "71357497"
 |1.5|确定策略所需的声明类型和组|声明类型：<br /><br />-国家/地区<br />-部门<br /><br />用户组：<br /><br />-FinanceAdmin<br />-FinanceException|  
 |1.6|确定应用此策略的服务器|将此策略应用于所有财务文件服务器。|  
 
-## <a name="BKMK_1.3"></a>实施配置组件和策略  
+## <a name="BKMK_1.3"></a>实现：配置组件和策略  
 本部分提供了有关为财务文档部署中心访问策略的示例。  
 
 |否|步骤|示例|  
@@ -58,11 +58,11 @@ ms.locfileid: "71357497"
 |2.5|将文件服务器作为中心访问策略的目标|将财务策略 CAP 发布到文件服务器。|  
 |2.6|为声明、复合身份验证和 Kerberos 保护启用 KDC 支持。|针对 contoso.com 的声明、复合身份验证和 Kerberos 保护启用 KDC 支持。|  
 
-在以下步骤中，可创建两个声明类型：国家/地区和部门。  
+在以下过程中，你将创建两个声明类型：国家/地区和部门。  
 
 #### <a name="to-create-claim-types"></a>创建声明类型  
 
-1. 打开 Hyper-v 管理器中的 Server DC1 并以 contoso\administrator 的身份登录，并将密码<strong>pass@word1</strong>。  
+1. 在 Hyper-v 管理器中打开 Server DC1，并以 contoso\administrator 的身份登录，并<strong>pass@word1</strong>密码。  
 
 2. 打开 Active Directory 管理中心。  
 
@@ -73,7 +73,7 @@ ms.locfileid: "71357497"
    > [!TIP]  
    > 还可以从“任务”窗格中打开“创建声明类型:”窗口。 在“任务”窗格上，单击“新建”，然后单击“声明类型”。  
 
-4. 在“源属性”列表中，向下滚动列表属性，然后单击“部门”。 这应该使用“部门”来填充“显示名称”。 单击 **“确定”** 。  
+4. 在“源属性”列表中，向下滚动列表属性，然后单击“部门”。 这应该使用“部门”来填充“显示名称”。 单击**确定**。  
 
 5. 在“任务”窗格中，单击“新建”，然后单击“声明类型”。  
 
@@ -85,7 +85,7 @@ ms.locfileid: "71357497"
 
 9. 重复上述步骤。 在“添加建议值”对话框中，在“值”和“显示名称”字段中，键入 **JP**，然后单击“确定”。  
 
-@no__t 0solution 指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
 
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
 
@@ -117,11 +117,11 @@ ms.locfileid: "71357497"
 
 6.  在 Active Directory 管理中心导航窗格上的“资源属性”列表中，现在将存在两个已启用的资源属性：  
 
-    -   Country  
+    -   国家/地区  
 
     -   部门  
 
-@no__t 0solution 指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
 
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
 
@@ -147,7 +147,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 
 或者，通过 Windows Server 2012 构造表达规则：  
 
-目标：Resource.Department 包含财务部门  
+目标： Resource 包含财务  
 
 访问规则：  
 
@@ -171,7 +171,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 5. 在“权限”部分中，选择“使用下列权限作为当前权限”，单击“编辑”，然后在“权限的高级安全设置”对话框中，单击“添加”。  
 
    > [!NOTE]  
-   > 在暂存期间，可使用“使用下列权限作为建议的权限”选项来创建策略。 有关如何执行此操作的详细信息，请参阅本主题中的“维护：更改并暂存该策略”部分。  
+   > 在暂存期间，可使用“使用下列权限作为建议的权限”选项来创建策略。 有关如何执行此操作的详细信息，请参阅本主题中的维护：更改和暂存策略部分。  
 
 6. 在“权限的权限条目”对话框中，单击“选择主体”，键入“经过身份验证的用户”，然后单击“确定”。  
 
@@ -189,7 +189,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 
 11. 单击“确定” 三次完成操作，然后返回到 Active Directory 管理中心。  
 
-    @no__t 0solution 指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+    ![解决方案指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
 
     下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
 
@@ -206,7 +206,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 
 > [!IMPORTANT]  
-> 在上述 cmdlet 示例中，将在创建时确定 FinanceAdmin 组和用户组的安全标识符 (SID)，并且它们在示例中会有所不同。 例如，需要将所提供的 FinanceAdmins 组的 SID 值 (S-1-5-21-1787166779-1215870801-2157059049-1113) 替换为要在部署中创建的 FinanceAdmin 组的实际 SID 值。 可以使用 Windows PowerShell 查找此组的 SID 值，将该值分配给变量，然后在此处使用该变量。 有关详细信息，请参阅 @no__t 0Windows PowerShell Tip：使用 Sid @ no__t-0。  
+> 在上述 cmdlet 示例中，将在创建时确定 FinanceAdmin 组和用户组的安全标识符 (SID)，并且它们在示例中会有所不同。 例如，需要将所提供的 FinanceAdmins 组的 SID 值 (S-1-5-21-1787166779-1215870801-2157059049-1113) 替换为要在部署中创建的 FinanceAdmin 组的实际 SID 值。 可以使用 Windows PowerShell 查找此组的 SID 值，将该值分配给变量，然后在此处使用该变量。 有关详细信息，请参阅[Windows PowerShell 提示：使用 sid](https://go.microsoft.com/fwlink/?LinkId=253545)。  
 
 现在应具有中心访问规则，该规则允许用户在同一国家/地区及同一部门中访问文档。 该规则允许 FinanceAdmin 组编辑文档，并且它还允许 FinanceException 组读取文档。 该规则仅适用于被归类为“财务”的文档。  
 
@@ -224,7 +224,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 6. 单击“确定”以完成操作。 现在应具有名为“财务策略”的中心访问策略。  
 
-   @no__t 0solution 指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+   ![解决方案指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
 
    下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
 
@@ -245,7 +245,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
     > [!TIP]  
     > 在生产环境中，应创建要在其中应用此策略的文件服务器组织单位 (OU)，并将所有文件服务器都添加到该 OU。 然后可以创建组策略，并将此 OU 添加到此策略。  
 
-2.  在此步骤中，你将编辑已在测试环境中的[生成域控制器](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)部分创建的组策略对象，以包含你所创建的中心访问策略。 在组策略管理编辑器中，导航至域（在本例中为 contoso.com）中的组织单位并将其选中：“组策略管理”、“林: contoso.com”、“域”、“contoso.com”、“Contoso”、“FileServerOU”。  
+2.  在此步骤中，你将编辑已在测试环境中的[生成域控制器](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)部分创建的组策略对象，以包含你所创建的中心访问策略。 在组策略管理编辑器中，导航到域中的组织单位（此示例中的 contoso.com）：**组策略管理**、**林： contoso.com**、**域**、 **contoso.com**、 **contoso**、 **FileServerOU**。  
 
 3.  右键单击“FlexibleAccessGPO”，然后单击“编辑”。  
 
@@ -301,7 +301,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
    > [!TIP]
    > 还可以通过登录到文件服务器来刷新全局资源属性。 若要通过文件服务器刷新全局资源属性，请执行以下操作  
    > 
-   > 1. 使用<strong>pass@word1</strong>密码以 contoso\administrator 的身份登录到文件服务器 FILE1。  
+   > 1. 使用密码<strong>pass@word1</strong>以 contoso\administrator 的身份登录到文件服务器 FILE1。  
    > 2. 打开文件服务器资源管理器。 若要打开文件服务器资源管理器，请单击“开始”，然后键入“文件服务器资源管理器”，最后单击“文件服务器资源管理器”。  
    > 3. 在文件服务器资源管理器中，单击“文件分类管理”，右键单击“分类属性”，然后单击“刷新”。  
 
@@ -340,7 +340,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
     请注意“有效访问”窗口中名为“访问限制”的最后一列。 此列告诉您哪些关口影响了人员的权限。 在此案例中，共享和 NTFS 权限将允许所有用户进行完全控制。 但是，中心访问策略将根据之前配置的规则来限制访问权限。  
 
-## <a name="BKMK_1.5"></a>实现更改并暂存策略  
+## <a name="BKMK_1.5"></a>维护：更改和暂存策略  
 
 ||||  
 |-|-|-|  
@@ -360,20 +360,20 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 #### <a name="to-enable-a-claim-for-devices"></a>启用设备的声明  
 
-1. 打开 Hyper-v 管理器中的 Server DC1 并以 contoso\Administrator 的身份登录，并将密码<strong>pass@word1</strong>。  
+1. 在 Hyper-v 管理器中打开 Server DC1，并以 contoso\Administrator 的身份登录，并<strong>pass@word1</strong>密码。  
 
 2. 通过“工具”菜单，打开“Active Directory 管理中心”。  
 
 3. 单击“树视图”，展开“动态访问控制”，双击“声明类型”，然后双击“国家/地区”声明。  
 
-4. 在“可为以下类发出此类声明”中，选中“计算机”复选框。 单击 **“确定”** 。   
+4. 在“可为以下类发出此类声明”中，选中“计算机”复选框。 单击**确定**。   
    现在应同时选中“用户”和“计算机”复选框。 现在，除了可以与用户一起使用外，国家/地区声明还可以与设备一起使用。  
 
 下一步是创建暂存策略规则。 通过使用暂存策略，可在启用新策略项之前监视它的效果。 在以下步骤中，将创建一个暂存策略项，并监视在共享文件夹上的效果。  
 
 #### <a name="to-create-a-staging-policy-rule-and-add-it-to-the-central-access-policy"></a>创建暂存策略规则并将其添加到中心访问策略  
 
-1. 打开 Hyper-v 管理器中的 Server DC1 并以 contoso\Administrator 的身份登录，并将密码<strong>pass@word1</strong>。  
+1. 在 Hyper-v 管理器中打开 Server DC1，并以 contoso\Administrator 的身份登录，并<strong>pass@word1</strong>密码。  
 
 2. 打开 Active Directory 管理中心。  
 
@@ -388,11 +388,11 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 7. 再次单击“添加条件”，并添加以下条件：  
    [**And**]   
-    [“设备”] [“国家/地区”] [“任何”] [“资源”] [“国家/地区”]  
+    [“设备”] [“国家/地区”] [“任何”] [“资源”[] [“国家/地区”]  
 
 8. 再次单击“添加条件”，并添加以下条件：  
    与   
-    [**用户**][**组**][**Any 的成员**][**值**] @no__t**FinanceException**）  
+    [**用户**][**组**][**Any 的成员**][**值**]\(**FinanceException**）  
 
 9. 若要设置 FinanceException 组，请单击“添加项”，并在“选择用户、计算机、服务的帐户或组”窗口中，键入“FinanceException”。  
 
@@ -402,7 +402,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 12. 单击“确定”两次以完成操作。  
 
-@no__t 0solution 指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+![解决方案指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
 
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
 
@@ -423,13 +423,13 @@ Set-ADCentralAccessRule
 
 #### <a name="to-verify-the-results-of-the-staging-policy"></a>验证暂存策略结果  
 
-1. 连接到 Hyper-v 管理器中的文件服务器 FILE1，并以 contoso\administrator 的身份登录，并且密码<strong>pass@word1</strong>。  
+1. 连接到 Hyper-v 管理器中的文件服务器 FILE1，并以 contoso\administrator 的身份登录，并提供密码<strong>pass@word1</strong>。  
 
 2. 打开“命令提示符”窗口并键入 **gpupdate /force**。 这样可以确保组策略的更改将在该服务器上生效。  
 
 3. 在 Hyper-V 管理器中，连接到服务器 CLIENT1。 注销当前登录的用户。 重新启动虚拟机 CLIENT1。 然后使用 contoso\EValle 登录到计算机 pass@word1。  
 
-4. 双击桌面快捷方式 \\ \ FILE1\Finance 文档。 EValle 应仍有权访问文件。 重新切换到 FILE1。  
+4. 双击桌面快捷方式 \\\FILE1\Finance 的文档。 EValle 应仍有权访问文件。 重新切换到 FILE1。  
 
 5. 通过桌面上的快捷方式打开“事件查看器”。 展开“Windows 日志”，然后选择“安全”。 在 "**中心访问策略暂存**" 任务类别下打开**事件 ID 为 4818**的条目。 你将看到 EValle 已具有访问权限；但是，根据暂存策略，将拒绝授予用户访问权限。  
 

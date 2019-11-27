@@ -22,7 +22,7 @@ ms.locfileid: "71407149"
 
 本主题概述了构建用于测试动态访问控制的动手实验室的步骤。 应按顺序遵循说明进行操作，因为其中存在许多具有相关性的组件。  
 
-## <a name="prerequisites"></a>先决条件  
+## <a name="prerequisites"></a>必备条件  
 **硬件和软件要求**  
 
 设置测试实验室的要求：  
@@ -100,11 +100,11 @@ ms.locfileid: "71407149"
 
 ##### <a name="to-install-active-directory-domain-services"></a>安装 Active Directory 域服务  
 
-1. 将虚拟机连接到 ID_AD_Network。 以管理员身份登录到 DC1，并<strong>pass@word1</strong>密码。  
+1. 将虚拟机连接到 ID_AD_Network。 用密码<strong>pass@word1</strong>以管理员身份登录到 DC1。  
 
 2. 在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。  
 
-3. 在“开始之前” 页上，单击“下一步”。  
+3. 在 **Before you begin** 页上，单击 **Next**。  
 
 4. 在“选择安装类型” 页上，单击“基于角色或基于功能的安装”，然后单击“下一步”。  
 
@@ -164,13 +164,13 @@ ms.locfileid: "71407149"
 4. 使用指示的属性创建以下用户：  
 
 
-   |       “用户”       |  Username  |     电子邮件地址      | 部门 |      Group       | 国家/地区 |
+   |       用户       |  Username  |     电子邮件地址      | 部门 |      组       | 国家/地区 |
    |------------------|------------|------------------------|------------|------------------|----------------|
-   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  财务组   |                  |       US       |
-   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  财务组   |   FinanceAdmin   |       US       |
-   |   Esther Valle   |   EValle   |   EValle@contoso.com   | 操作 | FinanceException |       US       |
-   |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       US       |
-   |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       US       |
+   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  财经   |                  |       美国       |
+   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  财经   |   FinanceAdmin   |       美国       |
+   |   Esther Valle   |   EValle   |   EValle@contoso.com   | 操作 | FinanceException |       美国       |
+   |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       美国       |
+   |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       美国       |
    |    RMS Server    |    rms     |    rms@contoso.com     |            |                  |                |
 
    有关创建安全组的详细信息，请参阅 Windows Server 网站上的 [创建新组](https://technet.microsoft.com/library/dd861305.aspx) 。  
@@ -205,7 +205,7 @@ ms.locfileid: "71407149"
 
 2. 将虚拟机连接到 ID_AD_Network。  
 
-3. 将虚拟机加入到 contoso.com 域，然后使用密码<strong>pass@word1</strong>以 contoso\administrator 的身份登录到 FILE1。  
+3. 将虚拟机加入到 contoso.com 域，然后使用密码<strong>pass@word1</strong>以 contoso\administrator 的身份登录。  
 
 #### <a name="install-file-services-resource-manager"></a>安装文件服务资源管理器  
 
@@ -213,7 +213,7 @@ ms.locfileid: "71407149"
 
 1.  在服务器管理器中，单击“添加角色和功能”。  
 
-2.  在“开始之前” 页上，单击“下一步”。  
+2.  在 **Before you begin** 页上，单击 **Next**。  
 
 3.  在“选择安装类型”页上，单击“下一步”。  
 
@@ -245,7 +245,7 @@ ms.locfileid: "71407149"
 
 3. 在“电子邮件通知” 选项卡上的 SMTP 服务器名称或 IP 地址下，键入将转发电子邮件通知的 SMTP 服务器的主机名或 IP 地址。  
 
-4. 如果要定期通知特定管理员的配额或文件屏蔽事件，请在 "**默认管理员收件人**" 下键入每个电子邮件地址，例如 fileadmin@contoso.com。 使用格式 account@domain，并使用分号分隔多个帐户。  
+4. 如果要定期通知特定管理员的配额或文件屏蔽事件，请在 "**默认管理员收件人**" 下键入每个电子邮件地址，如 fileadmin@contoso.com。 使用格式 account@domain，并使用分号分隔多个帐户。  
 
 #### <a name="create-groups-on-file1"></a>在 FILE1 上创建组  
 
@@ -263,7 +263,7 @@ ms.locfileid: "71407149"
 
     -   **财务备忘.docx**：在该文档中添加一些与财务相关的文本。 例如，"关于可访问财务文档的人员的业务规则已更改。 现在，只有 FinanceExpert 组的成员才能访问财务文档。 任何其他部门或组都不具有访问权限。 在环境中实现此更改之前，你需要评估它的影响。 请确保此文档每一页的页脚上都具有“CONTOSO 机密”。  
 
-    -   **请求批准聘用.docx**：在此文档中创建一个用于收集申请人信息的表单。 此文档中必须具有以下字段：**申请人姓名、身份证号、职务、建议薪酬、开始日期、主管姓名、部门**。 在文档中添加附加部分，该部分具有用于**主管签名、已批准薪酬、聘约确认**以及**聘约状态**内容的表单。   
+    -   **请求批准聘用.docx**：在此文档中创建一个用于收集申请人信息的表单。 此文档中必须具有以下字段： **申请人姓名、身份证号、职务、建议薪酬、开始日期、主管姓名、部门**。 在文档中添加附加部分，该部分具有用于**主管签名、已批准薪酬、聘约确认**以及**聘约状态**内容的表单。   
         启用该文档的权限管理。  
 
     -   **Word Document1.docx**：向此文档添加一些测试内容。  
@@ -275,7 +275,7 @@ ms.locfileid: "71407149"
     -   **Workbook2 .xlsx**  
 
     -   在桌面上创建称为“正则表达式”的文件夹。 在称为“RegEx-SSN”的文件夹下创建一个文本文档。 在该文件中键入以下内容，然后保存并关闭该文件：   
-        ^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
+        ^(?!000)([0-7]\d{4}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
 
 3.  将文件夹 D:\Finance Documents 作为财务文档共享，并允许每个人具有该共享的读写访问权限。  
 
@@ -347,7 +347,7 @@ ms.locfileid: "71407149"
 
 27. 在“确认”屏幕上，单击“安装”。  
 
-28. 在“结果” 屏幕上，单击“关闭”，然后在“安装进度” 屏幕上，单击“关闭” 。 完成后，请使用提供的密码注销并以 contoso\rms 的身份登录（<strong>pass@word1</strong>）。  
+28. 在“结果” 屏幕上，单击“关闭”，然后在“安装进度” 屏幕上，单击“关闭” 。 完成后，请使用提供的密码（<strong>pass@word1</strong>）注销并登录为 contoso\rms。  
 
 29. 启动 AD RMS 控制台，然后导航至“权限策略模板”。  
 
@@ -363,13 +363,13 @@ ms.locfileid: "71407149"
 
     单击 **“添加”** ，然后单击 **“下一步”** 。  
 
-31. 在 "用户和权限" 部分下，依次单击 "**用户和权限**"、"**添加**"、" <strong>@no__t"-3</strong>，然后单击 **"确定"** 。  
+31. 在 "用户和权限" 部分下，依次单击 "**用户和权限**"、"**添加**"、" <strong>financeadmin@contoso.com</strong>"，然后单击 **"确定"** 。  
 
 32. 选择“完全控制”，并保留“授予所有者(作者)不会过期的完全控制权限” 的选中状态。  
 
 33. 单击余下选项卡，而无需进行任何更改，然后单击“完成”。 以 CONTOSO\Administrator 身份登录。  
 
-34. 浏览到文件夹 C:\inetpub\wwwroot @ no__t-0_wmcs\certification，选择 Servercertification.asmx 文件，并添加经过身份验证的用户对文件具有读取和写入权限。  
+34. 浏览到文件夹，C:\inetpub\wwwroot\\_wmcs \certification "，选择 Servercertification.asmx 文件，并添加已验证的用户对文件具有读写权限。  
 
 35. 打开 Windows PowerShell 并运行 `Get-FsrmRmsTemplate`。 验证是否可以通过此命令在此过程看到你在之前步骤中创建的 RMS 模板。  
 
@@ -475,7 +475,7 @@ ms.locfileid: "71407149"
 
    当 cmdlet 提示你确认是否要开始安装时，请键入“Y”。  
 
-7. 以 CONTOSO\Administrator 的身份注销，并使用提供的密码（"pass@word1"）作为 CONTOSO\RMS 登录。  
+7. 以 CONTOSO\Administrator 的身份注销，并使用提供的密码登录 CONTOSO\RMS （"pass@word1"）。  
 
    > [!IMPORTANT]  
    > 若要管理 AD RMS 服务器角色，你所登录的用于管理服务器的帐户（在此案例中为 CONTOSO\RMS）必须既是 AD RMS 服务器计算机上本地 Administrators 组的成员，又是 Active Directory 中 Enterprise Admins 组的成员。  
@@ -530,7 +530,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
    - 传出邮件服务器：SRV1 的静态 IP 地址  
 
-   - 用户名：fileadmin@contoso.com  
+   - 用户名： fileadmin@contoso.com  
 
    - 记住密码：选择  
 
@@ -540,7 +540,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
 6. 删除已生成的所有测试邮件。  
 
-7. 为客户端虚拟机上的所有用户创建新的短暂切削，使其指向 \\ \ FILE1\Finance 的文档。  
+7. 在桌面上为客户端虚拟机上的所有用户创建新的短暂切削，使之指向 \\\FILE1\Finance 的文档。  
 
 8. 根据需要重新启动。  
 
@@ -571,11 +571,11 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
 ##### <a name="to-install-active-directory-domain-services"></a>安装 Active Directory 域服务  
 
-1. 将虚拟机连接到 ID_AD_Network。 以管理员身份登录到 DC2，并<strong>Pass@word1</strong>密码。  
+1. 将虚拟机连接到 ID_AD_Network。 以管理员身份登录到 DC2，并提供密码<strong>Pass@word1</strong>。  
 
 2. 在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。  
 
-3. 在“开始之前” 页上，单击“下一步”。  
+3. 在 **Before you begin** 页上，单击 **Next**。  
 
 4. 在“选择安装类型” 页上，单击“基于角色或基于功能的安装”，然后单击“下一步”。  
 
@@ -642,7 +642,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 8.  继续按照向导中的说明执行操作。  
 
 ### <a name="BKMK_2.4"></a>在 Adatum 林中创建其他用户  
-用密码<strong>@no__t</strong>为 Jeff Low 创建用户，并分配值为**Adatum**的公司属性。  
+用密码<strong>pass@word1</strong>创建 Jeff Low 的用户，并将 "公司" 属性指定为 " **Adatum**"。  
 
 ##### <a name="to-create-a-user-with-the-company-attribute"></a>创建带有公司属性的用户  
 
@@ -693,7 +693,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
 3.  在 Active Directory 管理中心的左窗格中，单击“树视图”。 在左窗格中，单击“动态访问控制”，然后双击“资源属性”。  
 
-4.  从“资源属性” 列表中选择“公司” ，然后右键单击并选择“属性”。 在“建议的值”部分，单击“添加”以添加建议的值：Contoso 和 Adatum，然后单击“确定”两次。  
+4.  从“资源属性” 列表中选择“公司” ，然后右键单击并选择“属性”。 在 "**建议的值**" 部分中，单击 "**添加**" 以添加建议的值： Contoso 和 Adatum，然后单击 **"确定"** 两次。  
 
 5.  从“资源属性”列表中选择“公司”，然后右键单击并选择“启用”。  
 
@@ -748,11 +748,11 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
 5. 在“权限的权限条目”对话框中，单击“添加条件”，然后输入以下条件：[**User**] [**Company**] [**Equals**] [**Value**] [**Adatum**]。 权限应为“修改、读取并执行、读取、写入”。  
 
-6. 单击 **“确定”** 。  
+6. 单击**确定**。  
 
 7. 单击“确定” 三次完成操作，然后返回到 Active Directory 管理中心。  
 
-   @no__t 0solution 指南](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
+   ![解决方案指南](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
 
    下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
 
@@ -821,7 +821,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
 ##### <a name="to-assign-the-central-access-policy-on-the-file-server"></a>在文件服务器上分配中心访问策略  
 
-1. 在 Hyper-V 管理器中，连接到服务器 FILE1。 使用 Contoso\Administrator 登录到服务器，密码<strong>@no__t 为-1</strong>。  
+1. 在 Hyper-V 管理器中，连接到服务器 FILE1。 使用 Contoso\Administrator 登录到服务器，并使用密码<strong>pass@word1</strong>。  
 
 2. 打开提升的命令提示符并键入： **gpupdate /force**。 这样可以确保组策略的更改将在你的服务器上生效。  
 
@@ -829,11 +829,11 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
 4. 打开 Windows 资源管理器，然后导航到 D:\EARNINGS。 右键单击“Earnings” 文件夹，然后单击“属性”。  
 
-5. 单击“分类” 选项卡。选择“公司” ，然后在“值” 字段中选择“Adatum” 。  
+5. 单击 "**分类**" 选项卡。选择 "**公司**"，然后在 "**值**" 字段中选择 " **Adatum** "。  
 
 6. 单击“更改”，从下拉菜单中选择“仅限 Adatum 访问策略” ，然后单击“应用”。  
 
-7. 依次单击“安全”选项卡、“高级”和“中心策略”选项卡。你应看到列出的“AdatumEmployeeAccessRule” 。 你可以展开项以查看你在 Active Directory 中创建规则时设置的所有权限。  
+7. 单击 "**安全**" 选项卡，单击 "**高级**"，然后单击 "**中心策略**" 选项卡。应会看到 " **AdatumEmployeeAccessRule** " 列。 你可以展开项以查看你在 Active Directory 中创建规则时设置的所有权限。  
 
 8. 单击“确定”返回到 Windows 资源管理器。  
 
