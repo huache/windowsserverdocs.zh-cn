@@ -1,6 +1,6 @@
 ---
-title: 不带 WSUS 的月度增量更新 ISV 支持
-description: Windows Server Update Service （WSUS）主题-独立软件供应商（ISV）如何暂时使用月度增量更新，而不是使用 WSUS Express 更新交付来减小包大小
+title: 每月 Delta 更新 ISV 支持（无 WSUS）
+description: Windows Server Update Service (WSUS) 主题 - 独立软件供应商 (ISV) 如何临时使用每月 Delta 更新而非 WSUS Express 更新交付来减小包大小
 ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
@@ -13,74 +13,74 @@ manager: dougkim
 ms.date: 10/16/2017
 ms.openlocfilehash: 4607827d73c34f50f721a2774fa498eb95f9dbb8
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71361727"
 ---
-# <a name="monthly-delta-update-isv-support-without-wsus"></a>不带 WSUS 的月度增量更新 ISV 支持
+# <a name="monthly-delta-update-isv-support-without-wsus"></a>每月 Delta 更新 ISV 支持（无 WSUS）
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows 10
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows 10
 
-Windows 10 更新下载可能会很大，因为每个包都包含以前发布的所有修补程序，以确保一致性和简洁性。  
+Windows 10 更新下载可能会很大，因为每个包都包含以前发布的所有修复以确保一致性和简单性。  
 
-自第7版起，Windows 已能够使用名为[Express](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2)的功能减小 Windows 更新下载的大小，但使用者设备在默认情况下支持它，windows 10 企业版设备需要 WINDOWS SERVER UPDATE SERVICES （WSUS）才能执行Express 的优势。 如果你有可用的 WSUS，请参阅[快速更新交付 ISV 支持](express-update-delivery-ISV-support.md)。 建议使用它来启用快速更新交付。 
+从版本 7 开始，Windows 已能够通过称为 [Express](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2) 的功能减小 Windows 更新下载的大小，虽然使用者设备默认情况下支持该功能，但是 Windows 10 企业版设备需要具有 Windows Server Update Services (WSUS) 才能利用 Express。 如果你有 WSUS 可用，请参阅 [Express 更新交付 ISV 支持](express-update-delivery-ISV-support.md)。 我们建议使用它来启用 Express 更新交付。 
 
-如果当前未安装 WSUS，但在过渡中需要较小的更新包大小，则可以使用每月增量更新。 增量更新显著减小了包大小，但并不像 WSUS Express 更新交付那么多。 建议你尽可能部署 WSUS Express 更新以最大程度地降低包大小。 以下图表比较了 Windows 10 版本1607的增量、累积和快速下载大小：
+如果你当前未安装 WSUS，但在此期间需要较小的更新包大小，则可以使用每月 Delta 更新。 Delta 更新大大减小了包大小，但没有使用 WSUS Express 更新交付时减小得那么多。 我们建议你尽可能部署 WSUS Express 更新以最大限度地减小包大小。 下面是一个图表，其中比较了 Windows 10 版本 1607 的 Delta、“累积”和 Express 下载大小：
 
 ![下载大小比较](../../media/express-update-delivery-isv-support/delta-1.png)
 
-## <a name="what-is-monthly-delta-update"></a>什么是月度增量更新？
+## <a name="what-is-monthly-delta-update"></a>什么是每月 Delta 更新？
 
-每月安全更新有两种变体：增量和累积性。
+每月安全更新有两种变体：Delta 和“累积”。
 
-每月增量更新是全新的，并且没有 WSUS 可用于帮助减少更新包大小的 Isv 的临时解决方案。
+每月 Delta 更新是新推出的临时解决方案，适用于没有 WSUS 可用来帮助减小更新包大小的 ISV。
 
 >[!IMPORTANT]
->**增量更新适用于 Windows 10 版本1607（周年更新）、版本1703（创意者更新）和版本1709（秋季创意者更新）的维护。** 对于版本1709之后的版本，你将需要实现支持[快速更新交付](express-update-delivery-ISV-support.md)的部署基础结构，以便继续利用增量更新。
+>**Delta 更新可用于 Windows 10 版本 1607（周年更新）、版本 1703（创意者更新）和版本 1709 (Fall Creators Update) 的服务。** 对于版本 1709 之后的版本，你将需要实现一个支持 [Express 更新交付](express-update-delivery-ISV-support.md)的部署基础结构以继续利用增量更新。
 
-使用月度增量更新时，包仅包含一个月的更新。 每月累积包含更新版本的所有更新，导致每个月增长一个大文件。 增量和每月更新都在每个月的第二个星期二发布，也称为 "更新星期二"。 下表比较了增量和累积更新：
+通过使用每月 Delta 更新，各个包将仅包含一个月的更新。 每月累积包含直至该更新版本的所有更新，导致生成每月增大的大型文件。 Delta 更新和每月更新都是在每月的第二个周二发布的，也称为“周二更新”。 下表比较了 Delta 更新和累积更新：
 
-|                    | 每月**增量**更新                                                                                                                                                                                                       | 每月**累积**更新                                                                                                                                                                                             |
+|                    | 每月 **Delta** 更新                                                                                                                                                                                                       | 每月**累积**更新                                                                                                                                                                                             |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **范围**          | **只包含本月新修补程序**的单个更新                                                                                                                                                                           | 单个更新，其中包含本月和所有前个月的所有新修补程序                                                                                                                                                   |
-| **应用程序**    | 只有在应用了上个月的更新后，才能应用（累计或增量）                                                                                                                                           | 可随时应用                                                                                                                                                                                                |
-| **传递**       | **仅发布到 Windows 更新目录**，可在其中下载该目录以便与其他工具或进程一起使用。 未提供给连接到 Windows 更新的 Pc                                                         | 已发布到 Windows 更新（所有消费者电脑将安装它）、WSUS 和 Windows 更新目录                                                                                                                |
+| **范围**          | **仅包含该月的新修补程序**的单一更新                                                                                                                                                                           | 包含该月和所有以前月份的所有新修补程序的单一更新                                                                                                                                                   |
+| **应用程序**    | 只有应用了上个月的更新时才能应用（“累积”或 Delta）                                                                                                                                           | 任何时候都可以应用                                                                                                                                                                                                |
+| **交付**       | **仅发布到 Windows 更新目录**，可以从中下载该更新以用于其他工具或流程。 不提供给连接到 Windows 更新的电脑                                                         | 发布到 Windows 更新（所有使用者电脑都将安装它）、WSUS 和 Windows 更新目录                                                                                                                |
 
-增量和累计具有相同的 KB 号，具有相同的分类，并同时发布。 可以通过目录中的更新标题或 msu 名称来区分更新：
+Delta 更新和累积更新具有相同的 KB 编号和相同的分类，并且在相同的时间发布。 可以通过目录中的更新标题或 msu 的名称来区分更新：
 
--  2017-02 *\*\** 适用于基于 x64 的系统的 Windows 10 版本1607的增量更新（KB1234567）
--  2017-02 *\*\** 适用于基于 x86 的系统的 Windows 10 版本1607累积更新（KB1234567）                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+- 2017-02 基于 x64 的系统的 Windows 10 版本 1607 的 *\***Delta 更新**\**   (KB1234567)
+- 2017-02 基于 x86 的系统的 Windows 10 版本 1607 的 *\***累积更新**\**   (KB1234567)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
-### <a name="when-to-use-monthly-delta-update"></a>何时使用月度增量更新
+### <a name="when-to-use-monthly-delta-update"></a>何时使用每月 Delta 更新
 
-如果对客户端设备进行更新的大小是一个问题，我们建议对具有上个月更新的设备使用增量更新，并对落后的设备进行累积更新。 这样一来，所有设备只需要一个更新，就能使它们保持最新状态。 这需要在总体更新管理过程中进行少量调整，因为你将需要根据设备在组织中的最新版本部署不同的更新：
+如果客户端设备的更新大小是一个顾虑，我们建议对具有上个月的更新的设备使用 Delta 更新，对落在后面的设备使用累积更新。 这样，所有设备仅需要单个更新便可保持最新。 这需要在整个更新管理过程中进行少量调整，因为你必须根据组织中各个设备的最新情况部署不同的更新：
 
 ![下载大小比较](../../media/express-update-delivery-isv-support/delta-2.png)
 
-### <a name="prevent-deployment-of-delta-and-cumulative-updates-in-the-same-month"></a>防止在同一月内部署增量和累积更新
+### <a name="prevent-deployment-of-delta-and-cumulative-updates-in-the-same-month"></a>防止在同一月份部署 Delta 更新和累积更新
 
-由于增量更新和累积更新同时可用，因此，如果在同一个月部署两个更新，则必须了解发生了什么情况。
+由于 Delta 更新和累积更新同时可用，因此，了解在同一月份同时部署这两个更新会发生什么情况非常重要。
 
-如果你批准并部署相同的增量和累积更新版本，则不会仅生成额外的网络流量，因为这两个流量都将下载到电脑，但在重启后，你可能无法将计算机重新启动到 Windows。
+如果你批准并部署相同版本的 Delta 更新和累积更新，则不仅会生成额外的网络流量（因为两者都将下载到电脑），而且在重启后，你可能无法将计算机重新引导到 Windows。
 
-如果不小心安装了增量和累积更新，并且计算机不再启动，则可以通过以下步骤进行恢复：
+如果意外地同时安装了 Delta 更新和累积更新，并且你的计算机无法引导，则可以通过以下步骤进行恢复：
 
-1. 启动到 WinRE 命令提示符
+1. 引导到 WinRE 命令提示符
 2. 列出处于挂起状态的包：
 
     `x:\windows\system32\dism.exe /image:<drive letter for windows directory> /Get-Packages >> <path to text file>`
  
     > **示例**：` x:\windows\system32\dism.exe /image:c:\ /Get-Packages >> c:\temp\packages.txt`
  
-3. 打开管道**包**所在的文本文件。 如果看到任何安装挂起的修补程序，请针对每个包名称运行**删除包**：
+3. 打开你通过管道将 **get-packages** 的返回结果传送到的文本文件。 如果发现存在任何尚未安装的修补程序，请针对每个包名称运行 **remove-package**：
  
    `dism.exe /image:<drive letter for windows directory> /remove-package /packagename:<package name>`
  
     > **示例**：`x:\windows\system32\dism.exe /image:c:\ /remove-package /packagename:Package_for_KB4014329~31bf3856ad364e35~amd64~~10.0.1.0`
  
     >[!NOTE]
-    >不要删除挂起的修补程序。
+    >不要删除卸载挂起修补程序。
 
 >[!IMPORTANT]
->**增量更新适用于 Windows 10 版本1607（周年更新）、版本1703（创意者更新）和版本1709（秋季创意者更新）的维护。** 对于版本1709之后的版本，你将需要实现支持[快速更新交付](express-update-delivery-ISV-support.md)的部署基础结构，以便继续利用增量更新。
+>**Delta 更新可用于 Windows 10 版本 1607（周年更新）、版本 1703（创意者更新）和版本 1709 (Fall Creators Update) 的服务。** 对于版本 1709 之后的版本，你将需要实现一个支持 [Express 更新交付](express-update-delivery-ISV-support.md)的部署基础结构以继续利用增量更新。

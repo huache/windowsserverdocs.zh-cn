@@ -1,6 +1,6 @@
 ---
-title: 步骤 3-在 WSUS 中批准和部署更新
-description: Windows Server Update Service （WSUS）主题-在 WSUS 中批准和部署更新是部署 WSUS 的四个步骤中的第三步
+title: 步骤 3 - 在 WSUS 中批准和部署更新
+description: Windows Server Update Service (WSUS) 主题 - 在 WSUS 中批准和部署更新是部署 WSUS 的四步流程中的第三步
 ms.prod: windows-server
 ms.reviewer: na
 ms.technology: manage-wsus
@@ -12,12 +12,12 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 68ff4c893302167815e3e8368d8b03f97d9be131
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71361690"
 ---
-# <a name="step-3-approve-and-deploy-updates-in-wsus"></a>步骤 3：在 WSUS 中批准和部署更新
+# <a name="step-3-approve-and-deploy-updates-in-wsus"></a>步骤 3:在 WSUS 中批准和部署更新
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -25,11 +25,11 @@ ms.locfileid: "71361690"
 
 |任务|描述|
 |----|--------|
-|[3.1. 批准和部署 WSUS 更新](3-approve-and-deploy-updates-in-wsus.md#BKM_3.1.)|使用 WSUS 管理控制台批准和部署 WSUS 更新。|
-|[3.2. 配置自动批准规则](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|配置 WSUS 以自动为所选组审批更新的安装以及如何审批对现有更新的修订。|
-|[3.3. 查看与 WSUS 报表一起安装的更新](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|使用 WSUS 报告功能，查看安装的更新、收到那些更新的计算机及其他详细信息。|
+|[3.1.批准和部署 WSUS 更新](3-approve-and-deploy-updates-in-wsus.md#BKM_3.1.)|使用 WSUS 管理控制台批准和部署 WSUS 更新。|
+|[3.2.配置自动审批规则](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|配置 WSUS 以自动为所选组审批更新的安装以及如何审批对现有更新的修订。|
+|[3.3.使用 WSUS 报告查看安装的更新](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|使用 WSUS 报告功能，查看安装的更新、收到那些更新的计算机及其他详细信息。|
 
-## <a name="BKM_3.1."></a>3.1。 批准和部署 WSUS 更新
+## <a name="BKM_3.1."></a>3.1. 批准和部署 WSUS 更新
 使用以下过程批准和部署更新。
 
 #### <a name="to-approve-and-deploy-wsus-updates"></a>批准和部署 WSUS 更新的步骤
@@ -38,7 +38,7 @@ ms.locfileid: "71361690"
 
 2.  在 **“所有更新”** 部分，单击 **“计算机需要的更新”** 。
 
-3.  在更新列表中，选择你希望批准以便安装在测试计算机组中的更新。 有关所选更新的信息可在 **“更新”** 面板的下窗格中找到。 若要选择多个连续更新，请在单击更新名称的同时按住**shift**键。 若要选择多个非连续更新，请在单击更新名称的同时按住 **CTRL** 键。
+3.  在更新列表中，选择你希望批准以便安装在测试计算机组中的更新。 有关所选更新的信息可在 **“更新”** 面板的下窗格中找到。 若要选择多个连续更新，请在单击更新名称的同时按住 **Shift** 键。 若要选择多个非连续更新，请在单击更新名称的同时按住 **CTRL** 键。
 
 4.  右键单击该选项，然后单击 **“批准”** 。
 
@@ -48,32 +48,32 @@ ms.locfileid: "71361690"
 
 7.  此时 **“批准进度”** 窗口出现，它显示了影响批准更新的任务进度。 完成批准进度时，单击 **“关闭”** 。
 
-## <a name="BKM_3.2.a."></a>3.2。 配置自动审批规则
+## <a name="BKM_3.2.a."></a>3.2. 配置自动审批规则
 自动审批使你可以指定如何自动为所选组审批更新的安装以及如何审批对现有更新的修订。
 
 #### <a name="to-configure-automatic-approvals"></a>配置自动审批
 
-1.  在 WSUS 管理控制台中的“更新服务”下，展开 WSUS 服务器，然后单击“选项”。 “选项”窗口随即打开。
+1.  在 WSUS 管理控制台中的“更新服务”  下，展开 WSUS 服务器，然后单击“选项”  。 “选项”  窗口随即打开。
 
-2.  在“选项”中，单击“自动审批”。 “自动审批”对话框随即打开。
+2.  在“选项”  中，单击“自动审批”  。 “自动审批”对话框随即打开。
 
-3.  在“更新规则”中，单击“新规则”。 "**添加规则**" 对话框随即打开。
+3.  在“更新规则”  中，单击“新规则”  。 “添加规则”  对话框随即打开。
 
-4.  在 "**添加规则**" 的 "**步骤1：选择属性**" 中，选择任意单个选项或以下选项的组合：
+4.  在“添加规则”  中，在“步骤1：选择属性”  中，从以下各项选择任何单个选项或选项组合：
 
     -   **当更新属于特定分类时**
 
     -   **当更新属于特定产品时**
 
-    -   设置审批期限
+    -   设置审批期限 
 
-5.  在 "**步骤2：编辑属性**" 中，单击列出的每个选项，然后为每个选项选择适当的选项。
+5.  在“步骤 2：编辑属性”  中，单击列出的每个选项，然后为每个选项选择合适的选项。
 
-6.  在 "**步骤3：指定名称**" 中，键入规则的名称，然后单击 **"确定"** 。
+6.  在“步骤 3：指定名称”  中，为你的规则键入名称，然后单击“确定”  。
 
-7.  单击“确定” 以关闭“自动审批”对话框。
+7.  单击“确定”  以关闭“自动审批”对话框。
 
-## <a name="BKM_3.3."></a>3.3。 使用 WSUS 报告查看安装的更新
+## <a name="BKM_3.3."></a>3.3. 使用 WSUS 报告查看安装的更新
 你批准更新后 24 小时，可使用 WSUS 报告功能来确定是否将更新部署到测试计算机组中。 若要检查更新的状态，你可按以下方式使用 WSUS 报告功能。
 
 #### <a name="to-review-updates"></a>查看更新的步骤

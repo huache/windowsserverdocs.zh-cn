@@ -1,6 +1,6 @@
 ---
 title: 部署 Windows Server Update Services
-description: Windows Server Update Service （WSUS）主题—概述部署过程，并链接到用于完成此操作的四个步骤
+description: Windows Server Update Service (WSUS) 主题 - 概述了部署流程，并提供了完成它的四个步骤的链接
 ms.prod: windows-server
 ms.reviewer: na
 ms.technology: manage-wsus
@@ -12,18 +12,18 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: e3e6bcd5f90d1a7df2a35dda45b4bf8951940815
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71361677"
 ---
 # <a name="deploy-windows-server-update-services"></a>部署 Windows Server Update Services
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server Update Service (WSUS) 启用信息技术管理员部署最新的 Microsoft 产品更新。 WSUS 是可安装以管理和分配更新的 Windows Server 服务器角色。 WSUS 服务器可以作为组织内其他 WSUS 服务器的更新源。 充当更新源的 WSUS 服务器称为上游服务器。  
 
-在 WSUS 实现过程中，网络中必须至少有一台 WSUS 服务器连接到 Microsoft 更新以获取可用的更新信息。 你可以根据网络安全和配置确定其他多少服务器直接连接到 Microsoft 更新。  
+在 WSUS 实现过程中，网络中必须至少有一台 WSUS 服务器连接到 Microsoft 更新以获取可用的更新信息。 你可以根据网络安全和配置来决定多少其他服务器直接连接到 Microsoft 更新。  
 
 本指南提供了有关规划和部署 Windows Server Update Service 的概念信息。  
 

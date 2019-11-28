@@ -11,7 +11,7 @@ ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 52f77e2cb60be66d8be2e3927fe0f97c2c945994
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71391020"
@@ -21,7 +21,7 @@ ms.locfileid: "71391020"
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
-你将在此页上找到指向 Active Directory 域 services 内容的链接。   
+在此页上，你将会发现指向 Active Directory 域服务内容的链接。   
 
 
 * [Active Directory 域服务中的新增功能](../whats-new-active-directory-domain-services.md)  
