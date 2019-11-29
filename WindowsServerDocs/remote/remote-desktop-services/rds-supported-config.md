@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7d4641e2bb40a9a70264c68d0268208a30f36a69
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: e501d550e5371c668f7e243f00106a0b79f694dc
+ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812298"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74187885"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>远程桌面服务支持的配置
 
@@ -57,7 +57,7 @@ Windows Server 2016 消除了在使用同样运行 Windows Server 2016 的远程
 
 远程桌面服务支持配有 GPU 的系统。 可通过远程连接使用需要 GPU 的应用程序。 此外，还可启用 GPU 加速的呈现和编程，以提升性能和可伸缩性。
 
-远程桌面服务会话主机是单会话客户端操作系统，它们可通过多种方式使用提供给操作系统的物理或虚拟 GPU，例如 [Azure GPU 优化虚拟机大小](/en-us/azure/virtual-machines/windows/sizes-gpu)、可用于物理 RDSH 服务器的 GPU、RemoteFX vGPU（仅限 Windows Server 2016），以及由受支持的虚拟机监控程序提供给 VM 的 GPU。
+远程桌面服务会话主机和单会话客户端操作系统可通过多种方式使用提供给操作系统的物理或虚拟 GPU，例如 [Azure GPU 优化虚拟机大小](/en-us/azure/virtual-machines/windows/sizes-gpu)、可用于物理 RDSH 服务器的 GPU、RemoteFX vGPU（仅限 Windows Server 2016），以及由受支持的虚拟机监控程序提供给 VM 的 GPU。
 
 在确定需求时如需帮助，请参阅[哪种图形虚拟化技术适合你？](rds-graphics-virtualization.md) 有关 DDA 的具体信息，请查看[规划离散设备分配的部署](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)。
 

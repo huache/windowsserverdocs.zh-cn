@@ -8,12 +8,12 @@ ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 69beba2c59617da5b501dc55e2509e41ce4ee3fd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6c37c28fded08ba68e46a10a534ee0269c714938
+ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404121"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74189472"
 ---
 # <a name="get-started-with-the-web-client"></a>Web 客户端入门
 
@@ -58,6 +58,10 @@ ms.locfileid: "71404121"
 ## <a name="copy-and-paste-from-the-remote-desktop-web-client"></a>从远程桌面 Web 客户端复制和粘贴
 
 Web 客户端当前仅支持复制和粘贴文本。 不能将文件复制或粘贴到 Web 客户端，也不能从 Web 客户端复制或粘贴文件。 此外，只能使用 Ctrl+C  和 Ctrl+V  来复制和粘贴文本。
+
+## <a name="use-an-input-method-editor-ime-in-the-remote-session"></a>在远程会话中使用输入法编辑器 (IME)
+
+若要在远程会话中使用输入法编辑器输入复杂字符，请选择导航栏中的齿轮图标来打开“设置”  侧面板，并将“启用输入法编辑器”  开关设置为“开启”  。 必须已在远程会话中安装并启用了输入法编辑器。 
 
 ## <a name="get-help-with-the-web-client"></a>获取有关 Web 客户端的帮助
 

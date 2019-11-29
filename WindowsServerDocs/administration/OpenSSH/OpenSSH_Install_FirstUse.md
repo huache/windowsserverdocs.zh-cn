@@ -1,46 +1,46 @@
 ---
 ms.date: 09/27/2019
 ms.topic: conceptual
-keywords: OpenSSH，SSH，SSHD，安装，安装程序
+keywords: OpenSSH, SSH, SSHD, 安装, 设置
 contributor: maertendMSFT
 author: maertendMSFT
 title: 安装适用于 Windows 的 OpenSSH
 ms.openlocfilehash: 3c742e20432d20ea3c402af66f19a803ea1f3a56
 ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/03/2019
 ms.locfileid: "71934930"
 ---
-# <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>Windows Server 2019 和 Windows 10 的 OpenSSH 安装 #
+# <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>安装适用于 Windows Server 2019 和 Windows 10 的 OpenSSH #
 
-OpenSSH 客户端和 OpenSSH 服务器是 Windows Server 2019 和 Windows 10 1809 中的可单独安装组件。
-具有这些 Windows 版本的用户应使用以下说明安装和配置 OpenSSH。 
+在 Windows Server 2019 和 Windows 10 1809 中，OpenSSH 客户端和 OpenSSH 服务器是可单独安装的组件。
+具有这些 Windows 版本的用户应使用以下说明来安装和配置 OpenSSH。 
 
 > [!NOTE] 
-> 从 PowerShell Github 存储库获取 OpenSSH 的用户（ https://github.com/PowerShell/OpenSSH-Portable) 应使用该存储库中的说明，__不应__使用这些说明。 
+> 从 PowerShell Github 存储库 (https://github.com/PowerShell/OpenSSH-Portable) 获取了 OpenSSH 的用户应当使用那里的说明，__不应当__使用这些说明。 
 
 
-## <a name="installing-openssh-from-the-settings-ui-on-windows-server-2019-or-windows-10-1809"></a>从 Windows Server 2019 或 Windows 10 1809 上的 "设置" UI 安装 OpenSSH
+## <a name="installing-openssh-from-the-settings-ui-on-windows-server-2019-or-windows-10-1809"></a>从 Windows Server 2019 或 Windows 10 1809 上的“设置”UI 安装 OpenSSH
 
 OpenSSH 客户端和服务器是 Windows 10 1809 的可安装功能。 
 
-若要安装 OpenSSH，请启动 "设置"，然后跳到 "应用 > 应用和功能" > 管理可选功能 
+若要安装 OpenSSH，请启动“设置”，然后转到“应用”>“应用和功能”>“管理可选功能”。 
 
-扫描此列表，查看是否已安装 OpenSSH 客户端。 如果不是，则在页面顶部选择 "添加功能"，然后： 
+扫描此列表，查看 OpenSSH 客户端是否已安装。 如果没有，则在页面顶部选择“添加功能”，然后： 
 
-* 若要安装 OpenSSH 客户端，请找到 "OpenSSH 客户端"，然后单击 "安装"。 
-* 若要安装 OpenSSH 服务器，请找到 "OpenSSH 服务器"，然后单击 "安装"。 
+* 若要安装 OpenSSH 客户端，请找到“OpenSSH 客户端”，然后单击“安装”。 
+* 若要安装 OpenSSH 服务器，请找到“OpenSSH 服务器”，然后单击“安装”。 
 
-安装完成后，请返回应用 > 应用和功能 > 管理可选功能，你应看到列出的 OpenSSH 组件。
+安装完成后，请返回“应用”>“应用和功能”>“管理可选功能”，你应当会看到列出的 OpenSSH 组件。
 
 > [!NOTE]
-> 安装 OpenSSH 服务器将创建并启用名为 "OpenSSH-在 TCP 内服务器" 的防火墙规则。 这允许端口22上的入站 SSH 流量。 
+> 安装 OpenSSH 服务器将创建并启用名为“OpenSSH-Server-In-TCP”的防火墙规则。 这允许端口 22 上的入站 SSH 流量。 
 
 ## <a name="installing-openssh-with-powershell"></a>通过 PowerShell 安装 OpenSSH 
 
 若要使用 PowerShell 安装 OpenSSH，请首先以管理员身份启动 PowerShell。
-若要确保可以安装 OpenSSH 功能，请执行以下操作：
+若要确保 OpenSSH 功能可以安装，请执行以下操作：
 
 ```powershell
 Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'
@@ -69,9 +69,9 @@ Online        : True
 RestartNeeded : False
 ```
 
-## <a name="uninstalling-openssh"></a>正在卸载 OpenSSH
+## <a name="uninstalling-openssh"></a>卸载 OpenSSH
 
-若要使用 Windows 设置卸载 OpenSSH，请启动 "设置"，然后在 "应用和功能" > "应用和功能" > 管理可选功能 "。 在已安装的功能列表中，选择 "OpenSSH 客户端" 或 "OpenSSH 服务器" 组件，然后选择 "卸载"。
+若要使用 Windows“设置”卸载 OpenSSH，请启动“设置”，然后转到“应用”>“应用和功能”>“管理可选功能”。 在已安装功能的列表中，选择 OpenSSH 客户端或 OpenSSH 服务器组件，然后选择“卸载”。
 
 若要使用 PowerShell 卸载 OpenSSH，请使用以下命令之一：
 
@@ -83,12 +83,12 @@ Remove-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 Remove-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
 
-如果服务在卸载后处于使用状态，则可能需要在删除 OpenSSH 后重新启动 Windows。
+如果卸载 OpenSSH 时该服务正在使用中，则在删除后可能需要重启 Windows。
 
 
 ## <a name="initial-configuration-of-ssh-server"></a>SSH 服务器的初始配置
 
-若要将 OpenSSH 服务器配置为在 Windows 上初始使用，请以管理员身份启动 PowerShell，然后运行以下命令以启动 SSHD 服务：
+若要配置 OpenSSH 服务器以在 Windows 上首次使用，请以管理员身份启动 PowerShell，然后运行以下命令来启动 SSHD 服务：
 
 ```powershell
 Start-Service sshd
@@ -101,15 +101,15 @@ Get-NetFirewallRule -Name *ssh*
 New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 ```
 
-## <a name="initial-use-of-ssh"></a>SSH 的初始使用
+## <a name="initial-use-of-ssh"></a>首次使用 SSH
 
-在 Windows 上安装 OpenSSH 服务器后，可以使用安装有 SSH 客户端的任何 Windows 设备上的 PowerShell 快速对其进行测试。 在 PowerShell 中，键入以下命令： 
+在 Windows 上安装 OpenSSH 服务器后，可以从安装了 SSH 客户端的任何 Windows 设备上使用 PowerShell 来快速测试它。 在 PowerShell 中，键入以下命令： 
 
 ```powershell
 Ssh username@servername
 ```
 
-第一次连接到任何服务器时，将生成如下所示的消息：
+到任何服务器的第一个连接都将生成类似以下内容的消息：
 
 ```
 The authenticity of host 'servername (10.00.00.001)' can't be established.
@@ -117,15 +117,15 @@ ECDSA key fingerprint is SHA256:(<a large string>).
 Are you sure you want to continue connecting (yes/no)?
 ```
 
-答案必须是 "是" 或 "否"。 如果回答 "是"，则会将该服务器添加到本地系统的已知 ssh 主机列表。
+回答必须是“yes”或“no”。 回答 Yes 会将该服务器添加到本地系统的已知 ssh 主机列表中。
 
-此时，系统会提示输入密码。 作为安全预防措施，你的密码将不会在你键入时显示。 
+系统此时会提示你输入密码。 作为安全预防措施，密码在键入的过程中不会显示。 
 
-连接后，会看到类似于以下内容的命令行提示：
+在连接后，你将看到类似于以下内容的命令 shell 提示符：
 
 ```
 domain\username@SERVERNAME C:\Users\username>
 ```
 
-Windows OpenSSH 服务器使用的默认 shell 为 Windows 命令行界面。 
+Windows OpenSSH 服务器使用的默认 shell 是 Windows 命令行解释器。 
 

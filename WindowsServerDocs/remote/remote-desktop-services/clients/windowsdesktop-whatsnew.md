@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/12/2019
+ms.date: 11/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: db9c2b64e018b41b053974b5459bd320098a6d2d
-ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
+ms.openlocfilehash: 54994aad08c2f428b429082ed450235ed8bbe7e7
+ms.sourcegitcommit: 244b89505c5131dfdb90628857cc7e31741c84c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74019592"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74265918"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -31,11 +31,22 @@ ms.locfileid: "74019592"
 |用户组 |版本  |
 |-----------|---------|
 |Public     |1.2.431  |
-|预览体验成员    |1.2.431  |
+|预览体验成员    |1.2.524  |
+
+## <a name="updates-for-version-12524"></a>针对版本 1.2.524 的更新
+
+*发布日期：2019 年 11 月 20 日*
+
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4e7Nj)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dZCo)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dX1s)
+
+- 你现在可以直接通过客户端顶部命令栏上的“更多选项”按钮访问有关更新的信息。
+- 你现在可以从客户端的命令栏报告反馈。
 
 ## <a name="updates-for-version-12431"></a>针对版本 1.2.431 的更新
 
 *发布日期：2019/11/12*
+
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - 客户端的 32 位版和 ARM64 版现已提供！
 - 客户端现在会保存你对连接栏所做的任何更改（例如，其位置、大小和固定状态），并跨会话应用这些更改。
@@ -55,15 +66,12 @@ ms.locfileid: "74019592"
 
 *发布日期：2019/09/17*
 
-- 修复了在连接过程中进行身份验证时发生的崩溃问题。
-- 修复了在关闭客户端时发生的崩溃问题。
-
-## <a name="updates-for-version-12246"></a>针对版本 1.2.246 的更新
-
-*发布日期：2019 年 8 月 28 日*
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - 改进了本地化版本的回退语言。 （例如，FR-CA 将以法语正确显示，而不是以英语显示。）
 - 删除订阅时，客户端现在会从凭据管理器中正确删除保存的凭据。
 - 现在，客户端更新过程在启动后无人参与的情况下完成，并且将在完成后重新启动客户端。
 - 现在可以在 Windows 10 上以 S 模式使用客户端。
 - 修复了一个问题，对于用户名中有一个空格的用户，该问题会导致更新过程失败。
+- 修复了在连接过程中进行身份验证时发生的崩溃问题。
+- 修复了在关闭客户端时发生的崩溃问题。

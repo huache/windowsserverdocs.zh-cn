@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/18/2019
+ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bcbd3292bcd4653a4568492a996d53c17f465aa8
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 41f5bd7be03e61471683d5fc04df9ee10bc09e58
+ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591044"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74189480"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web 客户端中的新增功能
 
@@ -26,6 +26,14 @@ ms.locfileid: "72591044"
 
 > [!NOTE]
 > 我们为 Web 客户端更改了版本控制系统。 从版本 1.0.18.0 开始，所有 Web 客户端发行版本都会包含编号（采用“W.X.Y.Z”的格式）。 远程桌面 Web 客户端的发行版号会始终以 0 结尾（例如 W.X.Y.0）。 每个 Windows 虚拟桌面 Web 客户端发行版都会更改最后一个数字，直到下一个远程桌面 Web 客户端发行版（例如 1.0.18.1）。
+
+## <a name="updates-for-version-10210"></a>针对版本 1.0.21.0 的更新
+*发布日期：2019 年 11 月 15 日*
+
+- 添加了对在远程会话中使用输入法编辑器 (IME) 输入复杂字符的支持。
+- 修复了用户无法在 macOS 设备上复制并粘贴到远程会话的一个回归。
+- 修复了 Firefox 上本地 Windows 密钥被发送到远程会话的一个回归。
+- 添加了 RDWeb 密码更改链接（如果管理员已启用）。
 
 ## <a name="updates-for-version-10200"></a>针对版本 1.0.20.0 的更新
 *发布日期：2019/10/18*
