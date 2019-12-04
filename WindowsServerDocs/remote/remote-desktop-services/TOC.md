@@ -8,6 +8,8 @@
 ## [规划和设计](rds-plan-and-design.md)
 ### [随处构建](rds-plan-build-anywhere.md)
 ### [适用于各种类型的用户](rds-plan-cater-to-users.md)
+### [远程桌面工作负荷](remote-desktop-workloads.md)
+### [虚拟机大小调整](virtual-machine-recs.md)
 ### [随处访问](rds-plan-access-from-anywhere.md)
 ### [高可用性](rds-plan-high-availability.md)
 ### [多重身份验证](rds-plan-mfa.md)
