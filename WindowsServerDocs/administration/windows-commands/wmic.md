@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9840bc20ddf6193241fe36055698e2bd3222496
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f5096ab82ebbd01cb4f3a7dc0cf0b15e4b9fae8e
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361885"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781324"
 ---
 # <a name="wmic"></a>wmic
 
@@ -31,7 +31,7 @@ ms.locfileid: "71361885"
 ## <a name="syntax"></a>语法
 
 ```
-command </parameter>
+wmic </parameter>
 ```
 
 ## <a name="sub-commands"></a>子命令
@@ -42,16 +42,8 @@ command </parameter>
 |-----------|-----------|
 |类|从 WMIC 的默认别名模式转义以直接访问 WMI 架构中的类。|
 |path|从 WMIC 的默认别名模式进行转义，以直接访问 WMI 架构中的实例。|
-|context|显示所有全局开关的当前值。|
+|快捷|显示所有全局开关的当前值。|
 |[quit \| exit]|退出 WMIC 命令行界面。|
-
-## <a name="parameters"></a>参数
-
-|参数|描述|
-|---------|-----------|
-|</parameter>|\<简要说明，则以动词开头。 >|
-|</param2>|\<另一简要说明，则以动词开头。 >|
-
 
 ## <a name="BKMK_examples"></a>示例
 

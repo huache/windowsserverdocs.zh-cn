@@ -11,16 +11,16 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 71b1985da522ef9ee2d7745bd19d2548e0241a2f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60f2f3a6ed885f2da80b9beac51eeb703789ec91
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366767"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791761"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Debian 虚拟机
 
->适用于：Windows Server 2016，Hyper-v Server 2016，Windows Server 2012 R2，Hyper-v Server 2012 R2，Windows Server 2012，Hyper-v Server 2012，Windows Server 2008 R2，Windows 10，Windows 8.1，Windows 8，Windows 7.1，Windows 7
+>适用于： Windows Server 2016，Hyper-v Server 2016，Windows Server 2012 R2，Hyper-v Server 2012 R2，Windows Server 2012，Hyper-v Server 2012，Windows Server 2008 R2，Windows 10，Windows 8.1，Windows 8，Windows 7.1，Windows 7
 
 以下功能分发映射指示每个版本中的功能。 表后面列出了每个分发的已知问题和解决方法。
 
@@ -32,7 +32,7 @@ ms.locfileid: "71366767"
 
 * （*空白*）-功能不可用
 
-| **功能**                                                                                                                                  | **Windows Server 操作系统版本** | **10（buster）** | **9.0-9.6 （stretch）** | **8.0-8.11 （jessie）** | **7.0-7.11 （wheezy）** |
+| **具有**                                                                                                                                  | **Windows Server 操作系统版本** | **10（buster）** | **9.0-9.6 （stretch）** | **8.0-8.11 （jessie）** | **7.0-7.11 （wheezy）** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
 | **可用性**                                                                                                                             |                                             | 内置              | 内置              | 内置              | 内置（备注6）     |
 | **[转储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2、2012、2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
@@ -45,7 +45,7 @@ ms.locfileid: "71366767"
 | vRSS                                                                                                                                         | 2019、2016、2012 R2                         | &#10004;备注8       | &#10004;备注8       |                       |                       |
 | TCP 分段和校验和卸载                                                                                                       | 2019、2016、2012 R2、2012、2008 R2          | &#10004;备注8       | &#10004;备注8       |                       |                       |
 | SR-IOV                                                                                                                                       | 2019、2016                                  | &#10004;备注8       | &#10004;备注8       |                       |                       |
-| **[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
+| **[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
 | VHDX 调整大小                                                                                                                                  | 2019、2016、2012 R2                         | &#10004;备注1       | &#10004;备注1       | &#10004;备注1       | &#10004;备注1       |
 | 虚拟光纤通道                                                                                                                        | 2019、2016、2012 R2                         |                       |                       |                       |                       |
 | 实时虚拟机备份                                                                                                                  | 2019、2016、2012 R2                         | &#10004;备注4、5     | &#10004;备注4、5     | &#10004;备注4、5     | &#10004;备注4       |
@@ -68,7 +68,7 @@ ms.locfileid: "71366767"
 | PCI 传递/DDA                                                                                                                          | 2019、2016                                  | &#10004;备注8       | &#10004;备注8       |                       |                       |
 | **[第2代虚拟机](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** |                                             |                       |                       |                       |                       |
 | 使用 UEFI 启动                                                                                                                              | 2019、2016、2012 R2                         | &#10004;备注7       | &#10004;备注7       | &#10004;备注7       |                       |
-| 安全启动                                                                                                                                  | 2019、2016                                  |                       |                       |                       |                       |
+| 安全启动                                                                                                                                  | 2019、2016                                  | &#10004;              |                       |                       |                       |
 
 
 ## <a name="BKMK_notes"></a>本票
@@ -93,7 +93,7 @@ ms.locfileid: "71366767"
    ```
 8. 最新的上游内核功能只能通过使用内核包含的[Debian precise-backports](https://wiki.debian.org/Backports)提供。
 
-请参阅
+另请参阅
 
 * [Hyper-v 上支持的 CentOS 和 Red Hat Enterprise Linux 虚拟机](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

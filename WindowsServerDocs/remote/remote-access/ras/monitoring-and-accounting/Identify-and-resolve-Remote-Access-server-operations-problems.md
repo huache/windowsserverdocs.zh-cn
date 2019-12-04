@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: db10f784f383938edb29b18d7e8febf869378abc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 831f484db8325bf9a27e9065ac5cf74913d0805c
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404571"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791162"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>识别并解决远程访问服务器操作问题
 
@@ -64,7 +64,7 @@ IP Helper 服务（IPHlpSvc）托管 IPv6 转换技术（如 IP-HTTPS、6to4 或
   
 4.  你将看到带有绿色或红色图标的组件列表，指示其操作状态。 在列表中单击 " **ip-https" 行**。 选择某一行后，**详细**信息窗格中会显示该操作的详细信息，如下所示：  
   
-    **错误**  
+    **条**  
   
     IP Helper 服务（IPHlpSvc）已停止。 DirectAccess 可能无法按预期方式工作。 IP Helper 服务使用连接平台、IPv6 转换技术和 ip-https 提供隧道连接。  
   
@@ -76,7 +76,7 @@ IP Helper 服务（IPHlpSvc）托管 IPv6 转换技术（如 IP-HTTPS、6to4 或
   
     **解决方法**  
   
-    1.  若要确保服务正在运行，请在 Windows PowerShell 提示符下键入**get-help iphlpsc** 。  
+    1.  若要确保服务正在运行，请在 Windows PowerShell 提示符下键入**get-help iphlpsvc** 。  
   
     2.  若要启用该服务，请在提升的 Windows PowerShell 提示符下键入**Start-service iphlpsvc** 。  
   
@@ -95,9 +95,6 @@ IP Helper 服务（IPHlpSvc）托管 IPv6 转换技术（如 IP-HTTPS、6to4 或
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
-```  
+```PowerShell
 PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property *  
-```  
-  
-
-
+```

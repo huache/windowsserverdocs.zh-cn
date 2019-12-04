@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 8086ce329c532e07363fd22fe424a9a1dda04250
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 45fe605228189f49d40543e5da703f9afe0d962e
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386895"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791209"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>托管服务帐户入门
 
@@ -88,12 +88,12 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 |------|--------|----------|
 |客户端应用程序主机|符合 RFC 的 Kerberos 客户端|Windows XP 及更高版本|
 |用户帐户的域 Dc|符合 RFC 的 KDC|Windows Server 2003 及更高版本|
-|共享的服务成员主机|| Windows Server 2012 |
+|共享的服务成员主机|| Windows Server 2012 |
 |成员主机的域 Dc|符合 RFC 的 KDC|Windows Server 2003 及更高版本|
 |gMSA 帐户的域 Dc| Windows Server 2012 Dc 可供主机用来检索密码|Windows Server 2012 域，windows server 2012 之前可能有一些系统 |
 |后端服务主机|符合 RFC 的 Kerberos 应用程序服务器|Windows Server 2003 及更高版本|
 |后端服务帐户的域 Dc|符合 RFC 的 KDC|Windows Server 2003 及更高版本|
-|Active Directory 的 Windows PowerShell|Active Directory 的 Windows PowerShell 安装在本地支持 64 位体系结构的计算机上或安装在你的远程管理计算机上（例如，使用远程服务器管理工具包）| Windows Server 2012 |
+|Active Directory 的 Windows PowerShell|Active Directory 的 Windows PowerShell 安装在本地支持 64 位体系结构的计算机上或安装在你的远程管理计算机上（例如，使用远程服务器管理工具包）| Windows Server 2012 |
 
 **Active Directory 域服务要求**
 
@@ -172,9 +172,8 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
     在一个单独的行中输入命令，即使此处可能因格式限制而出现自动换行为多行。
 
-    ```
-    New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
-
+    ```Powershell
+    New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$ -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
     ```
 
 必须至少具有“域管理员”、“帐户操作员”中的成员身份或能够创建 msDS-GroupManagedServiceAccount 对象才能完成此过程。 有关使用适当帐户和组成员身份的详细信息，请参阅 [本地和域默认组](https://technet.microsoft.com/library/dd728026(WS.10).aspx)。
@@ -198,9 +197,8 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
 **示例**
 
-```
-New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts
-
+```PowerShell
+New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$
 ```
 
 ### <a name="BKMK_ConfigureServiceIdentity"></a>步骤2：配置服务标识应用程序服务
@@ -262,14 +260,12 @@ New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsA
 
 例如，若要添加成员主机类型，请键入以下命令，然后按 ENTER。
 
-```
+```PowerShell
 Get-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
-
 ```
 
-```
-Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1,Host2,Host3
-
+```PowerShell
+Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host2$,Host3$
 ```
 
 ## <a name="BKMK_Update_gMSA"></a>更新组托管服务帐户属性
@@ -322,14 +318,12 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 
 例如，若要删除成员主机类型，请键入以下命令，然后按 ENTER。
 
-```
+```PowerShell
 Get-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
-
 ```
 
-```
-Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1,Host3
-
+```PowerShell
+Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host3$
 ```
 
 ### <a name="BKMK_RemoveGMSA"></a>步骤2：从系统中删除组托管服务帐户
@@ -349,7 +343,7 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 
     例如，若要删除名为 ITFarm1 的 gMSA 的缓存凭据，请键入以下命令，然后按 ENTER：
 
-    ```
+    ```PowerShell
     Uninstall-ADServiceAccount ITFarm1
     ```
 
@@ -360,6 +354,3 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 ## <a name="BKMK_Links"></a>另请参阅
 
 -   [组托管服务帐户概述](group-managed-service-accounts-overview.md)
-
-
-

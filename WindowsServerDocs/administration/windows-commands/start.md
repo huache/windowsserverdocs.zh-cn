@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fb0875c972f8259b47f48ef84ed486fc678d8b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e481048c23e634869b0238188d4a0ef8b49cb3e
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370888"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781304"
 ---
 # <a name="start"></a>start
 
@@ -31,7 +31,7 @@ ms.locfileid: "71370888"
 ## <a name="syntax"></a>语法
 
 ```
-start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/b {<Command> | <Program>} [<Parameters>]]
+start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b {<Command> | <Program>} [<Parameters>]]
 ```
 
 ## <a name="parameters"></a>参数
@@ -46,6 +46,7 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/low \|/normal \|/high \|/realtime \|/abovenormal \|/belownormal|启动指定优先级类中的应用程序。 有效的优先级类值为 **/low**、 **/normal**、 **/high**、 **/realtime**、 **/abovenormal**和 **/belownormal**。|
 |/affinity \<HexAffinity >|将指定的处理器关联掩码（表示为十六进制数）应用于新应用程序。|
 |/wait|启动应用程序并等待其结束。|
+|/elevate|以管理员身份运行应用程序。|
 |/b|启动应用程序而不打开新的命令提示符窗口。 除非应用程序启用了 CTRL + C 处理，否则将忽略 CTRL + C 处理。 使用 CTRL + BREAK 中断应用程序。|
 |/b \<命令 > \| \<程序 >|指定要启动的命令或程序。|
 |\<参数 >|指定要传递给命令或程序的参数。|

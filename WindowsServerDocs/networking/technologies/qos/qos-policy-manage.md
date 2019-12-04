@@ -8,12 +8,12 @@ ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ac717555d1ab751600527e294d32f10d1f05bfa5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b8f10ab7b3da05fbefabb735ee2b8bb4ef1cb8a
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395881"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781344"
 ---
 # <a name="manage-qos-policy"></a>管理 QoS 策略
 
@@ -90,7 +90,7 @@ QoS 策略的名称必须是唯一的。 如何将策略应用到服务器和最
 
 - "**所有应用程序**" 指定 QoS 策略向导第一页上的流量管理设置应用于所有应用程序。
 
-- **只有具有此可执行名称的应用程序**指定 QoS 策略向导第一页上的流量管理设置用于特定的应用程序。 可执行文件的名称必须以 .exe 文件名扩展名为结尾。
+- **只有具有此可执行名称的应用程序**指定 QoS 策略向导第一页上的流量管理设置用于特定的应用程序。 可执行文件的名称必须以 .exe 文件扩展名结尾。
 
 - **只有响应此 URL 的请求的 HTTP 服务器应用程序**指定 QoS 策略向导第一页上的流量管理设置仅应用于某些 HTTP 服务器应用程序。
 

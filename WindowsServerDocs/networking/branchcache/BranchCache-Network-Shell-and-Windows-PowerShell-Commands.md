@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: a0726752-0a78-472b-9667-2f91636c1b3b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4673fcf369bdb95d3aa20028ee57f78ffbcaf9c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6128dfb4ab4f6bd29d66cf4823345817f2cb119c
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356696"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791503"
 ---
 # <a name="branchcache-network-shell-and-windows-powershell-commands"></a>BranchCache Network Shell 和 Windows PowerShell 命令
 
@@ -31,7 +31,7 @@ Windows PowerShell 和 Netsh 命令参考处于以下位置中。 尽管这两�
   
 -   [Windows Server 2008 R2 中用于 BranchCache 的 Netsh 命令](https://technet.microsoft.com/library/dd979561(v=ws.10))  
   
--   Windows PowerShell for Windows Server 2012[中的 BranchCache cmdlet](https://technet.microsoft.com/library/hh848392.aspx) 。  
+-   [Windows PowerShell 中的 BranchCache Cmdlet](https://docs.microsoft.com/powershell/module/branchcache/?view=win10-ps)
   
 > [!TIP]  
 > 若要查看 Windows PowerShell 提示符下 BranchCache 的 Windows PowerShell 命令，请在 Windows PowerShell 提示符下键入 `Get-Command -Module BranchCache`，然后按 ENTER。  
