@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: eaebac19119525b659c09b5506c497afdbd9a263
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40e489089fc0c15c3e6ebf7b654377f4d6f7e482
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386989"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829632"
 ---
 # <a name="configuring-additional-lsa-protection"></a>配置其他 LSA 保护
 
@@ -73,17 +73,17 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 1.  打开注册表编辑器 (RegEdit.exe)，然后导航到位于以下位置的注册表项：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe。
 
-2.  将该注册表项的值设置为 **AuditLevel=dword:00000008**。
+2.  将该注册表项的值设置为 **AuditLevel=dword:00000008**.。
 
 3.  重新启动计算机。
 
 分析事件 3065 和事件 3066 的结果。
 
-完成此操作后，你可能会在事件查看器中看到这些事件：Microsoft Codeintegrity/操作：
+完成此操作后，你可能会在事件查看器中看到以下事件： Codeintegrity/操作：
 
--   **事件 3065**：此事件记录：代码完整性检查已确定某个进程（通常为 lsass.exe）尝试加载特定的驱动程序，但该驱动程序不符合共享区域的安全要求。 但是，由于所设置的系统策略的原因，允许加载相应的映像。
+-   **事件 3065**：此事件的记录表明，代码完整性检查确定某个进程（通常为 lsass.exe）尝试加载特定的驱动程序，但该驱动程序不符合共享区域的安全要求。 但是，由于所设置的系统策略的原因，允许加载相应的映像。
 
--   **事件 3066**:此事件记录：代码完整性检查已确定某个进程（通常为 lsass.exe）尝试加载特定的驱动程序，但该驱动程序不符合 Microsoft 签名级别要求。 但是，由于所设置的系统策略的原因，允许加载相应的映像。
+-   **事件 3066**：此事件的记录表明，代码完整性检查确定某个进程（通常为 lsass.exe）尝试加载特定的驱动程序，但该驱动程序不符合 Microsoft 签名级别要求。 但是，由于所设置的系统策略的原因，允许加载相应的映像。
 
 > [!IMPORTANT]
 > 如果在系统上附加并启用了内核调试程序，则不生成这些操作事件。
@@ -114,7 +114,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 10. 在 **值数据** 框中，键入 **00000008**。
 
-11. 单击 **“确定”** 。
+11. 单击**确定**。
 
 > [!NOTE]
 > 要使该 GPO 生效，必须将 GPO 更改复制到域中的所有域控制器。
@@ -126,11 +126,11 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 分析事件 3033 和事件 3063 的结果。
 
-完成此操作后，你可能会在事件查看器中看到这些事件：Microsoft Codeintegrity/操作：
+完成此操作后，你可能会在事件查看器中看到以下事件： Codeintegrity/操作：
 
--   **事件 3033**:此事件记录：代码完整性检查已确定某个进程（通常为 lsass.exe）尝试加载某个驱动程序，该驱动程序不符合 Microsoft 签名级别要求。
+-   **事件 3033**：此事件的记录表明，代码完整性检查确定某个进程（通常为 lsass.exe）尝试加载某个驱动程序，但该驱动程序不符合 Microsoft 签名级别要求。
 
--   **事件 3063**:此事件记录：代码完整性检查已确定某个进程（通常为 lsass.exe）尝试加载某个驱动程序，该驱动程序不符合共享区域的安全要求。
+-   **事件 3063**：此事件的记录表明，代码完整性检查确定某个进程（通常为 lsass.exe）尝试加载某个驱动程序，但该驱动程序不符合共享区域的安全要求。
 
 共享区域通常是运用某些编程技术的后果，这些技术允许实例数据与使用相同安全上下文的其他进程交互。 这可能会造成安全漏洞。
 
@@ -138,7 +138,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 在运行 Windows 8.1 的设备（有或没有安全启动或 UEFI）上，可以通过执行本部分中所述的过程来进行配置。 对于运行 Windows RT 8.1 的设备，lsass.exe 保护始终处于启用状态，并且不能关闭。
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>在使用或不使用安全启动和 UEFI 的基于 x86 或基于 x64 的设备上
-在使用安全启动和 UEFI 的基于 x86 或基于 x64 的设备上，使用注册表项启用 LSA 保护后，将在 UEFI 固件中设置一个 UEFI 变量。 在固件中存储设置后，无法在注册表项中删除或更改该 UEFI 变量， 而只能重新设置它。
+在使用安全启动或 UEFI 的基于 x86 或基于 x64 的设备上，使用注册表项启用 LSA 保护后，将在 UEFI 固件中设置一个 UEFI 变量。 在固件中存储设置后，无法在注册表项中删除或更改该 UEFI 变量， 而只能重新设置它。
 
 不支持 UEFI 或安全启动的基于 x86 或 x64 的设备将被禁用，无法在固件中存储 LSA 保护的配置，并且完全依赖于注册表项的存在状态。 在此情况下，可以使用对设备的远程访问权限来禁用 LSA 保护。
 
@@ -174,7 +174,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 10. 在“值数据” 框中，键入 **00000001**。
 
-11. 单击 **“确定”** 。
+11. 单击**确定**。
 
 ##### <a name="to-disable-lsa-protection"></a>禁用 LSA 保护的步骤
 
@@ -194,7 +194,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 ### <a name="verifying-lsa-protection"></a>验证 LSA 保护
 若要发现 Windows 启动时是否在保护模式下启动 LSA，请搜索“系统”日志下的“Windows 日志”中的以下 WinInit 事件:
 
--   12：LSASS.exe 已作为具有以下级别的受保护进程启动：4
+-   12: LSASS.exe 已作为级别为 4 的受保护进程启动
 
 ## <a name="additional-resources"></a>其他资源
 [凭据保护和管理](credentials-protection-and-management.md)

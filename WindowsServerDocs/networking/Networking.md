@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6d9abf96348a596fbd2f886cb67b5d97f686e2
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+ms.openlocfilehash: f3b580b108677b391065ad83f61e52504fe9ac91
+ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700150"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74823846"
 ---
 # <a name="networking"></a>网络
 
@@ -252,7 +252,7 @@ ms.locfileid: "74700150"
             </div>
         </div>
     </li>
-    <hr />
+   <hr />
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -263,7 +263,7 @@ ms.locfileid: "74700150"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="dns/dns-top.md">域名系统（DNS）&quot;&gt;</a></h3>
+                        <h3><a href="dns/dns-top.md">域名系统 (DNS)</a></h3>
                         <hr />
                         <p>域名系统（DNS）是包含 TCP/IP 的一套行业标准协议套件，同时 DNS 客户端和 DNS 服务器为计算机和用户提供计算机名称到 IP 地址的映射名称解析服务。</p>
                     </div>
@@ -382,7 +382,7 @@ ms.locfileid: "74700150"
                         <p>Windows Server 2016 中的网络卸载和优化技术包括仅限软件 (SO) 的功能和技术、软件和硬件 (SH) 集成功能和技术，以及仅限硬件 (HO) 的功能和技术。</p>
                         <p>此外，还提供以下卸载和优化技术文档：<p>
                         <hr />
-                        <a href="technologies/conv-nic/cnic-top.md">高性能网络</a>
+                        <a href="technologies/conv-nic/cnic-top.md">聚合网络接口卡（NIC）</a>
                         <hr />
                         <a href="technologies/dcb/dcb-top.md">数据中心桥接（DCB）</a>
                         <hr />
