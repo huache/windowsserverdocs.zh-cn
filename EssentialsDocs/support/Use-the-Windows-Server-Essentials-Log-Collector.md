@@ -1,6 +1,6 @@
 ---
 title: 使用 Windows Server Essentials 日志收集器
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,38 +12,38 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ba5c0de9d8689c63c95ea3410a74fc9a7289aeab
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: df467921f8a8f5633d2b0bd792885fe2c9ae2212
+ms.sourcegitcommit: a937eb17915a4a0e444a36ddb0fac9c9771cfbfa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435988"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74877902"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 日志收集器
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-解决计算机问题时，来自 Microsoft 客户服务和支持的代表可能会要求您从服务器、 通过使用 Windows Server Essentials 日志收集器和 / 或在网络上的计算机收集日志。  
+当你解决计算机问题时，来自 Microsoft 客户服务和支持的代表可能会要求你使用 Windows Server Essentials 日志收集器从服务器、网络上的计算机或两者收集日志。  
   
  日志收集器会将程序日志、事件查看器日志以及相关环境信息复制到位于指定位置的单个 zip 文件中。 你可以直接从服务器或网络上的任意计算机或者通过使用到计算机的远程连接运行日志收集器。  
   
 > [!NOTE]
-> - 日志收集器不会分析网络问题或对任何服务器或网络上的计算机进行更改。 有关如何解决网络问题的信息，请参阅服务器产品的帮助文档。  
->   -   在本指南中，不是服务器，你网络上的计算机称为网络计算机。  
->   -   [下载 Windows Server Essentials 日志收集器安装包](https://go.microsoft.com/fwlink/?LinkID=266341)。  
+>日志收集器不会分析网络问题或对任何服务器或网络上的计算机进行更改。 有关如何解决网络问题的信息，请参阅服务器产品的帮助文档。  
+>在本指南中，网络上的计算机（而不是服务器）称为 "网络计算机"。  
+>[下载 Windows Server Essentials 日志收集器安装包](https://www.microsoft.com/download/details.aspx?id=34821)。  
   
  若要安装并运行日志收集器，请执行以下主题中的步骤：  
   
 
-1.  [安装日志收集器](Install-the-Windows-Server-Essentials-Log-Collector.md)  
+1. [安装日志收集器](Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2.  [运行日志收集器](Run-the-Windows-Server-Essentials-Log-Collector.md)  
+2. [运行日志收集器](Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
-1.  [安装日志收集器](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
+3. [安装日志收集器](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2.  [运行日志收集器](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
+4. [运行日志收集器](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
-  
+
 ## <a name="environment-information-collected"></a>已收集的环境信息  
  对于你指定的每个网络计算机或服务器，日志收集器将收集以下环境信息并将其放置在日志集合文件中。  
   
@@ -112,7 +112,7 @@ ms.locfileid: "66435988"
   
 ### <a name="server-logs-and-registry-information"></a>服务器日志和注册表信息  
   
--   服务器产品日志，从 < ProgramData\>\Microsoft\Windows Server\Logs  
+-   服务器产品日志，来自 < ProgramData\>\Microsoft\Windows Server\Logs  
   
 -   计划任务  
   
@@ -128,21 +128,21 @@ ms.locfileid: "66435988"
   
 -   Panther 日志文件  
   
--   Services  
+-   “服务”  
   
 -   注册表项，来自  
   
-    -   \\\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\  
+    -   \\\ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows 服务器 \  
   
-    -   \\\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DevicesProviderSvc  
+    -   \\\ HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DevicesProviderSvc  
   
-    -   \\\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DomainManagerProviderSvc  
+    -   \\\ HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DomainManagerProviderSvc  
   
 ### <a name="network-computer-logs-and-registry-information"></a>网络计算机日志和注册表信息  
   
--   网络计算机产品日志位置 < ProgramData\>\Microsoft\Windows Server\Logs  
+-   < ProgramData 的网络计算机产品日志\>\Microsoft\Windows Server\Logs  
   
--   在运行状况警报文件 < ProgramData\>\Microsoft\Windows Server\Data  
+-   < ProgramData\>\Microsoft\Windows Server\Data 上的运行状况警报文件  
   
 -   Windows Update 日志  
   
@@ -150,7 +150,7 @@ ms.locfileid: "66435988"
   
 -   计划任务信息  
   
--   注册表项从\\\HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows Server\  
+-   \\\ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows Server \ 中的注册表项 \  
   
 ## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>未运行某个版本的 Windows 操作系统的计算机的日志  
  日志收集器不会从未运行某个版本的 Windows 操作系统的计算机收集日志文件。 对于非 Windows 计算机，请将以下日志文件手动复制到要存储日志收集器文件的相同位置。  
@@ -159,11 +159,11 @@ ms.locfileid: "66435988"
   
 -   Library/Logs/Windows Server.log  
   
--   Library/Logs/CrashReporter/LaunchPad-< nnn\> (复制所有 LaunchPad-< nnn\>.crash 文件)  
+-   Library/Logs/CrashReporter/快速启动板 < nnn\> （复制所有快速启动板 < nnn\>崩溃文件）  
   
--   Library/Logs/DiagnosticReports/LaunchPad-< nnn\> (复制所有 LaunchPad-< nnn\>.crash 文件)  
+-   Library/Logs/DiagnosticReports/快速启动板 < nnn\> （复制所有快速启动板 < nnn\>崩溃文件）  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 
 -   [日志收集器错误疑难解答](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)

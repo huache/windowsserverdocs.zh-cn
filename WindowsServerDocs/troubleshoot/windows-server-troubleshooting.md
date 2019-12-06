@@ -10,12 +10,12 @@ ms.date: 10/17/2019
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 58f88dbe485860cf685e0cafc960f60af06fc911
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 829ae15495d54aca8c476909988ea5a44ea487e7
+ms.sourcegitcommit: 8a017624682fe0172076f9169a9fa17aa972907f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781578"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74852624"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server 组件疑难解答
 
@@ -73,7 +73,7 @@ Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的�
 ## <a name="troubleshoot-directaccess"></a>排查 DirectAccess 问题
 - [DirectAccess 疑难解答](https://docs.microsoft.com/windows-server/remote/remote-access/directaccess/troubleshooting-directaccess)
 
-## <a name="troubleshoot-disk--management"></a>磁盘管理疑难解答
+## <a name="troubleshoot-disk-management"></a>磁盘管理疑难解答
 - [磁盘管理疑难解答](https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management)
 
 ## <a name="troubleshoot-dns"></a>DNS 疑难解答
