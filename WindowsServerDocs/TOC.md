@@ -11,5 +11,5 @@
 ## [安全和保障](security/security-and-assurance.md)
 ## [存储](storage/storage.md)
 ## [虚拟化](virtualization/virtualization.md)
-## [疑难解答](troubleshoot/windows-server-support-solutions.md)
+## [疑难解答](troubleshoot/windows-server-troubleshooting.md)
 ## [其他 Windows Server 版本](windows-server-versions.md)
