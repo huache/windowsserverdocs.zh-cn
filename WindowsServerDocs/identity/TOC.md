@@ -197,6 +197,7 @@
 
 ### [AD DS 故障排除](ad-ds/manage/AD-DS-Troubleshooting.md)
 #### [配置计算机进行故障排除](ad-ds/manage/troubleshoot/Configuring-a-computer-for-Troubleshooting.md)
+#### [使用 ETW 排查 LDAP 连接问题](ad-ds/manage/troubleshoot/troubleshoot-ldap-using-etw.md)
 #### [Active Directory 复制问题疑难解答](ad-ds/manage/troubleshoot/Troubleshooting-active-directory-Replication-Problems.md)
 ##### [其他资源](additional-Resources_12.md)
 
