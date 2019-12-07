@@ -9,16 +9,16 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: fb91ca583fd71a7fbe38369606d2dcc4a816d8aa
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 2625097c56e6b2121cbdac45e1cc5f86972e4898
+ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935009"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74823855"
 ---
 # <a name="privileged-access-workstations"></a>特权访问工作站
 
->适用于：Windows Server
+>适用于：WIN ENT LTSB 2016 Estonian 64 Bits
 
 特权访问工作站 (PAW) 为免受 Internet 攻击和威胁媒介的敏感任务提供专用操作系统。 将这些敏感任务和帐户与日常使用的工作站和设备分开，可提供很强的保护功能，免受仿冒攻击、应用程序和 OS 漏洞、各种假冒攻击及凭据被盗攻击（例如击键记录、[哈希传递](https://aka.ms/pth)及票证传递）。
 
@@ -175,7 +175,7 @@ PAW 方法是管理人员使用单独的管理员和用户帐户时广为接受�
 
 #### <a name="credential-guard-and-windows-hello-for-business"></a>Credential Guard 和 Windows Hello 企业版
 
-在 Windows 10 中引入的 [Credential Guard](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx) 使用基于硬件和虚拟化的安全性，通过保护派生的凭据来缓解常见的凭据被盗攻击（例如哈希传递）。 [Windows Hello 企业版](https://aka.ms/passport)所使用凭据的私钥还可以通过受信任的平台模块 (TPM) 硬件进行保护。
+在 Windows 10 中引入的[凭据保护](https://technet.microsoft.com/library/mt483740%28v=vs.85%29.aspx)使用基于硬件和虚拟化的安全性，通过保护派生的凭据来缓解常见的凭据被盗攻击（例如哈希传递）。 [Windows Hello 企业版](https://aka.ms/passport)所使用凭据的私钥还可以通过受信任的平台模块 (TPM) 硬件进行保护。
 
 这些都是功能强大的缓解措施，但即使受到 Credential Guard 或 Windows Hello 企业版的保护，工作站仍易受到某些攻击。 攻击包括滥用特权及使用来自被入侵设备的凭据、在启用凭据保护前重复使用先前盗取的凭据、滥用管理工具及在工作站上弱化应用程序配置。
 
@@ -269,7 +269,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
 |Active Directory 管理员 - 第 0 层|是|使用阶段 1 指南构建的 PAW 对此角色来说已足够。<br /><br />- 可以添加管理林来为此方案提供最强的保护。 有关 ESAE 管理林的详细信息，请参阅 [ESAE 管理林设计方法](../securing-privileged-access/securing-privileged-access-reference-material.md#esae-administrative-forest-design-approach)<br />- PAW 可用于管理多个域或多个林。<br />- 如果域控制器托管于基础设施即服务 (IaaS) 或本地虚拟化解决方案上，你应该为那些解决方案的管理员优先实现 PAW。|
 |Azure IaaS 和 PaaS 服务管理员 - 第 0 层或第 1 层（请参阅“范围和设计注意事项”）|是|使用阶段 2 中提供的指南构建的 PAW 对于此角色来说已足够。<br /><br />- PAW 应至少用于全局管理员和订阅计费管理员。 PAW 还应用于关键或敏感服务器的委派管理员。<br />- PAW 应用于管理可为云服务（例如 [Azure AD Connect](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect/) 和 Active Directory 联合身份验证服务 (ADFS)）提供目录同步和联合身份验证的操作系统和应用程序。<br />- 出站网络限制必须仅允许连接至使用阶段 2 中指南的已授权云服务。 PAW 不允许任何开放 Internet 接入。<br />- 应在工作站上配置 Windows Defender 攻击防护。**注意：**   如果域控制器或其他第 0 层主机包含在订阅中，则订阅被视为林的第 0 层。 如果没有第 0 层服务器托管在 Azure 中，则订阅将是第 1 层。|
 |管理 Office 365 租户 <br />- 第 1 层|是|使用阶段 2 中提供的指南构建的 PAW 对于此角色来说已足够。<br /><br />- PAW 应至少用于订阅计费管理员、全局管理员、Exchange 管理员、SharePoint 管理员及用户管理管理员角色。 你还应认真考虑将 PAW 用于极为关键或敏感数据的委派管理员。<br />- 应在工作站上配置 Windows Defender 攻击防护。<br />- 出站网络限制必须仅允许连接至使用阶段 2 中的指南的 Microsoft 服务。 PAW 不允许任何开放 Internet 接入。|
-|其他 IaaS 或 PaaS 云服务管理员<br />- 第 0 层或第 1 层（请参阅“范围和设计注意事项”）|是|使用阶段 2 中提供的指南构建的 PAW 对于此角色来说已足够。<br /><br />- PAW 应该用于具有云托管虚拟机管理权限的任意角色，包括安装代理、导出硬盘文件，或访问包含操作系统信息、敏感数据或关键业务数据的硬盘驱动器的存储等功能。<br />- 出站网络限制必须仅允许连接至使用阶段 2 中的指南的 Microsoft 服务。 PAW 不允许任何开放 Internet 接入。<br />- 应在工作站上配置 Windows Defender 攻击防护。 **注意：** 如果域控制器或其他第 0 层主机包含在订阅中，则订阅是林的第 0 层。 如果没有第 0 层服务器托管在 Azure 中，则订阅将是第 1 层。|
+|其他 IaaS 或 PaaS 云服务管理员<br />-第 0 层或第 1 层（请参阅“范围和设计注意事项”）|是|使用阶段 2 中提供的指南构建的 PAW 对于此角色来说已足够。<br /><br />- PAW 应该用于具有云托管虚拟机管理权限的任意角色，包括安装代理、导出硬盘文件，或访问包含操作系统信息、敏感数据或关键业务数据的硬盘驱动器的存储等功能。<br />- 出站网络限制必须仅允许连接至使用阶段 2 中的指南的 Microsoft 服务。 PAW 不允许任何开放 Internet 接入。<br />- 应在工作站上配置 Windows Defender 攻击防护。 **注意：** 如果域控制器或其他第 0 层主机包含在订阅中，则订阅是林的第 0 层。 如果没有第 0 层服务器托管在 Azure 中，则订阅将是第 1 层。|
 |虚拟化管理员<br />- 第 0 层或第 1 层（请参阅“范围和设计注意事项”）|是|使用阶段 2 中提供的指南构建的 PAW 对于此角色来说已足够。<br /><br />- PAW 应该用于具有虚拟机管理权限的任意角色，包括安装代理、导出虚拟硬盘文件，或访问包含操作系统信息、敏感数据或关键业务数据的硬盘驱动器的存储等功能。 **注意：** 如果域控制器或其他第 0 层主机位于订阅中，则虚拟化系统及其管理员被视为林的第 0 层。 如果没有第 0 层服务器托管在虚拟化系统中，则订阅将是第 1 层。|
 |服务器维护管理员<br />- 第 1 层|是|使用阶段 2 中提供的指南构建的 PAW 对于此角色来说已足够。<br /><br />- PAW 应该用于更新、修补及检修运行 Windows Server、Linux 和其他操作系统的企业服务器和应用程序的管理员。<br />- 可能需要为 PAW 添加专用管理工具，以便供更多管理员使用。|
 |用户工作站管理员 <br />- 第 2 层|是|使用阶段 2 中提供的指南构建的 PAW 对于具有最终用户设备管理权限的角色（例如支持人员和桌端支持角色）来说已足够。<br /><br />- 可能需要在 PAW 上安装其他应用程序，以便启用票证管理及其他支持功能。<br />- 应在工作站上配置 Windows Defender 攻击防护。<br />    可能需要为 PAW 添加专用管理工具，以便供更多管理员使用。|
@@ -516,7 +516,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
      Enterprise Admins
      Domain Admins
      Schema Admins
-     DOMAIN\Administrators
+     BUILTIN\Administrators
      Account Operators
      Backup Operators
      Print Operators
@@ -545,7 +545,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
      Enterprise Admins
      Domain Admins
      Schema Admins
-     DOMAIN\Administrators
+     BUILTIN\Administrators
      Account Operators
      Backup Operators
      Print Operators
@@ -575,7 +575,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
      Enterprise Admins
      Domain Admins
      Schema Admins
-     DOMAIN\Administrators
+     BUILTIN\Administrators
      Account Operators
      Backup Operators
      Print Operators
@@ -599,7 +599,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
      Enterprise Admins
      Domain Admins
      Schema Admins
-     DOMAIN\Administrators
+     BUILTIN\Administrators
      Account Operators
      Backup Operators
      Print Operators
@@ -623,7 +623,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
      Enterprise Admins
      Domain Admins
      Schema Admins
-     DOMAIN\Administrators
+     BUILTIN\Administrators
      Account Operators
      Backup Operators
      Print Operators
