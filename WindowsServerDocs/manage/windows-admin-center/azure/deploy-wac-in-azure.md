@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 42216375d1784a5bc853994a9de7cff72920088d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1da4df284febbf18b5796322868451c45ab247ab
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357323"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903929"
 ---
 # <a name="deploy-windows-admin-center-in-azure"></a>在 Azure 中部署 Windows 管理中心
 
@@ -23,11 +23,11 @@ ms.locfileid: "71357323"
 
 [跳转到手动部署步骤](#deploy-manually-on-an-existing-azure-virtual-machine)
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>必备条件
 
 * 在[Azure Cloud Shell](https://shell.azure.com)中设置帐户。 如果这是你第一次使用 Cloud Shell，则会要求你将 Azure 存储帐户与 Cloud Shell 相关联或创建。
-* 在**PowerShell** Cloud Shell 中，导航到主目录：```PS Azure:\> cd ~```
-* 若要上```Deploy-WACAzVM.ps1```传文件，请将其从本地计算机拖放到 Cloud Shell 窗口中的任意位置。
+* 在**PowerShell** Cloud Shell 中，导航到主目录： ```PS Azure:\> cd ~```
+* 若要上传 ```Deploy-WACAzVM.ps1``` 文件，请将其从本地计算机拖放到 "Cloud Shell" 窗口中的任意位置。
 
 如果指定自己的证书：
 
@@ -41,7 +41,7 @@ ms.locfileid: "71357323"
 
 * **凭据**-[PSCredential] 指定 VM 的凭据。
 
-* **MsiPath** -[String] 在现有 VM 上部署 windows 管理中心时，指定 WINDOWS 管理中心 MSI 的本地路径。 如果省略，则默认 http://aka.ms/WACDownload 为中的版本。
+* **MsiPath** -[String] 在现有 VM 上部署 windows 管理中心时，指定 WINDOWS 管理中心 MSI 的本地路径。 如果省略，则默认为 https://aka.ms/WACDownload 的版本。
 
 * **VaultName** -[String] 指定包含证书的密钥保管库的名称。
 
@@ -89,7 +89,7 @@ $Image = "Win2016Datacenter"
 $Credential = Get-Credential
 ```
 
-#### <a name="example-1-use-the-script-to-deploy-wac-gateway-on-a-new-vm-in-a-new-virtual-network-and-resource-group-use-the-msi-from-akamswacdownload-and-a-self-signed-cert-from-the-msi"></a>示例 1：使用脚本将 WAC 网关部署到新的虚拟网络和资源组中的新 VM。 使用 aka.ms/WACDownload 中的 MSI 和来自 MSI 的自签名证书。
+#### <a name="example-1-use-the-script-to-deploy-wac-gateway-on-a-new-vm-in-a-new-virtual-network-and-resource-group-use-the-msi-from-akamswacdownload-and-a-self-signed-cert-from-the-msi"></a>示例1：使用脚本在新的虚拟网络和资源组中的新 VM 上部署 WAC 网关。 使用 aka.ms/WACDownload 中的 MSI 和来自 MSI 的自签名证书。
 
 ```PowerShell
 $scriptParams = @{
@@ -103,7 +103,7 @@ $scriptParams = @{
 ./Deploy-WACAzVM.ps1 @scriptParams
 ```
 
-#### <a name="example-2-same-as-1-but-using-a-certificate-from-azure-key-vault"></a>示例 2：与 #1 相同，但使用 Azure Key Vault 中的证书。
+#### <a name="example-2-same-as-1-but-using-a-certificate-from-azure-key-vault"></a>示例2：与 #1 相同，但使用 Azure Key Vault 中的证书。
 
 ```PowerShell
 $scriptParams = @{
@@ -118,7 +118,7 @@ $scriptParams = @{
 ./Deploy-WACAzVM.ps1 @scriptParams
 ```
 
-#### <a name="example-3-using-a-local-msi-on-an-existing-vm-to-deploy-wac"></a>示例 3：使用现有 VM 上的本地 MSI 部署 WAC。
+#### <a name="example-3-using-a-local-msi-on-an-existing-vm-to-deploy-wac"></a>示例3：使用现有 VM 上的本地 MSI 部署 WAC。
 
 ```PowerShell
 $MsiPath = "C:\Users\<username>\Downloads\WindowsAdminCenter<version>.msi"
@@ -147,7 +147,7 @@ Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 ### <a name="requirements-for-managed-azure-vms"></a>托管 Azure VM 的要求
 
 端口5985（通过 HTTP 的 WinRM）必须为打开状态，并且具有活动侦听器。
-可以在 Azure Cloud Shell 中使用下面的代码来更新托管节点。 ```$ResourceGroupName```与```$Name```部署脚本使用相同的变量，但你需要```$Credential```使用特定于你所管理的 VM。
+可以在 Azure Cloud Shell 中使用下面的代码来更新托管节点。 ```$ResourceGroupName``` 和 ```$Name``` 使用与部署脚本相同的变量，但你需要使用特定于所管理的 VM 的 ```$Credential```。
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -190,10 +190,10 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 此时，你应该能够通过导航到你的网关 VM 的 DNS 名称，从本地计算机上的新式浏览器（边缘或 Chrome）访问 Windows 管理中心。 
 
 > [!NOTE]
-> 如果选择了443以外的端口，则可以通过导航到 VM\<\>的 https://DNS 名称来访问 Windows 管理中心：\<自定义端口\>
+> 如果选择了443以外的端口，则可以通过导航到 https://\<VM 的 DNS 名称来访问 Windows 管理中心\>：\<自定义端口\>
 
 当你尝试访问 Windows 管理中心时，浏览器将提示你提供凭据，以便访问安装了 Windows 管理中心的虚拟机。 此处需要输入虚拟机的 "本地用户" 或 "本地管理员" 组中的凭据。 
 
-若要在 VNet 中添加其他 Vm，请通过在 PowerShell 中运行以下命令，或在目标 VM 上的命令提示符下运行 WinRM，确保 WinRM 在目标 Vm 上运行：`winrm quickconfig`
+若要在 VNet 中添加其他 Vm，请通过在 PowerShell 中运行以下命令，或在目标 VM 上的命令提示符下运行 WinRM，确保 WinRM 在目标 Vm 上运行： `winrm quickconfig`
 
 如果尚未将 Azure VM 加入域，则 VM 的行为类似于工作组中的服务器，因此需要确保考虑[在工作组中使用 Windows 管理中心](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup)。

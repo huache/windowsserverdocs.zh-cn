@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 03/07/2019
+ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: c7f436ea9b2baa00294ccef52a5d7a27c7247e4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a116cc9d86dfe0bb4450efa0f18580a062af722
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406781"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903716"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>通过 Windows 管理中心管理服务器
 
@@ -23,7 +23,7 @@ ms.locfileid: "71406781"
 > 不熟悉 Windows Admin Center？
 > [了解有关 Windows Admin Center 的更多信息](../understand/windows-admin-center.md)或[立即下载](https://aka.ms/windowsadmincenter)。
 
-## <a name="managing-windows-server-machines"></a>管理 Windows Server 计算机
+## <a name="managing-windows-server-machines"></a>管理 Windows Server 机器
 
 你可以将运行 Windows Server 2012 或更高版本的单独服务器添加到 Windows 管理中心，以使用一组全面的工具（包括证书、设备、事件、进程、角色和功能、更新、虚拟机等）来管理服务器。
 
@@ -47,22 +47,24 @@ ms.locfileid: "71406781"
 
 以下工具可用于服务器连接：
 
-| Tool | 描述 |
+| 工具 | 描述 |
 | ---- | ----------- |
 | [概述](#overview) | 查看服务器详细信息和控制服务器状态 |
 | [Active Directory](#active-directory-preview) | 管理 Active Directory |
 | [备份](#backup) | 查看和配置 Azure 备份 |  
 | [证书](#certificates) | 查看和修改证书 |
-| [存放](#containers) | 查看容器 |
+| [“配置 SSIS 日志”](#containers) | 查看容器 |
 | [设备](#devices) | 查看和修改设备 |
-| [台](#dhcp) | 查看和管理 DHCP 服务器配置 |
+| [DHCP](#dhcp) | 查看和管理 DHCP 服务器配置 |
 | [DNS](#dns) | 查看和管理 DNS 服务器配置 |
-| [事件](#events) | 查看事件 |
+| [事件](#events) | 查看活动 |
 | [文件](#files) | 浏览文件和文件夹 |
 | [Firewall](#firewall) | 查看和修改防火墙规则 |
 | [安装的应用](#installed-apps) | 查看和删除已安装的应用 |
 | [本地用户和组](#local-users-and-groups) | 查看和修改本地用户和组 |
 | [网络](#network) | 查看和修改网络设备 |
+| [数据包监视](https://aka.ms/wac1908) | 监视网络数据包 |
+| [性能监视器](https://aka.ms/perfmon-blog) | 查看性能计数器和报告 |
 | [PowerShell](#powershell) | 通过 PowerShell 与服务器交互 |
 | [进程](#processes) | 查看和修改正在运行的进程 |
 | [Registry](#registry) | 查看和修改注册表项 |
@@ -75,7 +77,7 @@ ms.locfileid: "71406781"
 | [存储迁移服务](#storage-migration-service) | 将服务器和文件共享迁移到 Azure 或 Windows Server 2019 |
 | [存储副本](#storage-replica) | 使用存储副本来管理服务器到服务器的存储复制 |
 | [系统见解](#system-insights) | 系统见解使你可以更深入地了解服务器的功能。 |
-| [程序](#updates) | 查看已安装的并检查是否有新的更新 |
+| [Updates](#updates) | 查看已安装的并检查是否有新的更新 |
 | [虚拟机](manage-virtual-machines.md) | 查看和管理虚拟机 |
 | [虚拟交换机](#virtual-switches) | 查看和管理虚拟交换机 |
 
@@ -119,7 +121,7 @@ ms.locfileid: "71406781"
 
 [**查看 Active Directory 的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D)。
 
-## <a name="backup"></a>备份
+## <a name="backup"></a>“备份”
 
 利用**备份**，你可以通过将服务器直接备份到 Microsoft Azure 来保护 Windows server 免受损坏、攻击或灾难的影响。
 [了解有关 Azure 备份的详细信息。](https://aka.ms/windows-admin-center-backup)
@@ -160,7 +162,7 @@ ms.locfileid: "71406781"
 
 [**查看容器的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BContainers%5D)。
 
-## <a name="devices"></a>设备
+## <a name="devices"></a>“设备”
 
 使用**设备**，你可以管理计算机或服务器上的连接设备。
 
@@ -202,7 +204,7 @@ ms.locfileid: "71406781"
 
 [**查看 DHCP 的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D)。
 
-## <a name="events"></a>Events
+## <a name="events"></a>事件
 
 **事件**可用于管理计算机或服务器上的事件日志。
 
@@ -227,7 +229,7 @@ ms.locfileid: "71406781"
 
 - 浏览文件和文件夹
 - 搜索文件或文件夹
-- 创建新文件夹
+- 创建新的文件夹
 - 删除文件或文件夹
 - 下载文件或文件夹
 - 上传文件或文件夹
@@ -252,7 +254,7 @@ ms.locfileid: "71406781"
 - 查看传出防火墙规则
 - 搜索防火墙规则
 - 查看防火墙规则详细信息
-- 创建新的防火墙规则
+- 创建新防火墙规则
 - 启用或禁用防火墙规则
 - 删除防火墙规则
 - 编辑防火墙规则的属性
@@ -282,7 +284,7 @@ ms.locfileid: "71406781"
 
 [**查看本地用户和组的反馈和建议的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BLocal%20users%20and%20Groups%5D)
 
-## <a name="network"></a>网络
+## <a name="network"></a>“网络”
 
 **网络**允许您管理计算机或服务器上的网络设备和设置。
 
@@ -386,7 +388,7 @@ PowerShell 支持以下功能：
 
 [**查看计划任务的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BScheduled%20Tasks%5D)。
 
-## <a name="services"></a>Services
+## <a name="services"></a>“服务”
 
 **服务**允许你在计算机或服务器上管理服务。
 
@@ -402,7 +404,7 @@ PowerShell 支持以下功能：
 
 [**查看服务的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BServices%5D)。
 
-## <a name="settings"></a>设置
+## <a name="settings"></a>“设置”
 
 **设置**是用于管理计算机或服务器上的设置的中心位置。
 
@@ -430,7 +432,7 @@ PowerShell 支持以下功能：
 - 创建、附加和分离虚拟硬盘（VHD）
 - 使磁盘脱机
 - 格式化卷
-- 调整卷的大小
+- 重设卷大小
 - 编辑卷属性
 - 删除卷
 - 安装配额管理
@@ -454,7 +456,7 @@ PowerShell 支持以下功能：
 ## <a name="system-insights"></a>系统见解
 
 **System Insights**在 Windows Server 中以本机方式引入了预测分析，以帮助你更深入地了解服务器的功能。
-[获取系统见解的概述](http://aka.ms/systeminsights)
+[获取系统见解的概述](https://aka.ms/systeminsights)
 
 >[!NOTE]
 >系统见解需要 Windows Server 2019。

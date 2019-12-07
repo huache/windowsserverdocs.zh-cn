@@ -12,12 +12,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: df467921f8a8f5633d2b0bd792885fe2c9ae2212
-ms.sourcegitcommit: a937eb17915a4a0e444a36ddb0fac9c9771cfbfa
+ms.openlocfilehash: 3bc43b08df30d03f29d9f343b7d6ed4d63c85eda
+ms.sourcegitcommit: 39244de670f712857a5fdd56630e95d57b7001a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/06/2019
-ms.locfileid: "74877902"
+ms.locfileid: "74897672"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 日志收集器
 
@@ -30,6 +30,7 @@ ms.locfileid: "74877902"
 > [!NOTE]
 >日志收集器不会分析网络问题或对任何服务器或网络上的计算机进行更改。 有关如何解决网络问题的信息，请参阅服务器产品的帮助文档。  
 >在本指南中，网络上的计算机（而不是服务器）称为 "网络计算机"。  
+>
 >[下载 Windows Server Essentials 日志收集器安装包](https://www.microsoft.com/download/details.aspx?id=34821)。  
   
  若要安装并运行日志收集器，请执行以下主题中的步骤：  

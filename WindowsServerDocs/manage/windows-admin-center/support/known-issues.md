@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 23943c9567f371f7598c7dcda6db434760cabeab
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: c05987360256f7b7ed58911c1ded86586fc8b3aa
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567087"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903899"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知问题
 
@@ -53,7 +53,7 @@ ms.locfileid: "73567087"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试解决此问题，方法是将网关 https://login.microsoftonline.com 、 https://login.live.com 和 URL 添加为客户端浏览器上的 "受信任的站点" 和 "弹出窗口阻止程序" 设置的 "允许的站点"。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
+- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试添加来解决此问题 https://login.microsoftonline.com ， https://login.live.com ，为你网关的 URL 是受信任的站点并允许客户端浏览器上的弹出窗口阻止程序设置的站点。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -82,7 +82,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 如果未安装，则可以[下载并安装 WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
 
-## <a name="role-based-access-control-rbac"></a>基于角色的访问控制（RBAC）
+## <a name="role-based-access-control-rbac"></a>基于角色的访问控制 (RBAC)
 
 - 在配置为使用 Windows Defender 应用程序控制（WDAC，以前称为“代码完整性”）的计算机上，RBAC 部署将不会成功 [16568455]
 
@@ -189,9 +189,9 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 - 如果你使用的是 Microsoft 帐户（[MSA](https://account.microsoft.com/account/)），或者使用 AZURE ACTIVE DIRECTORY （AAD）登录到 Windows 10 计算机，则必须使用 "管理身份" 为本地管理员帐户提供凭据 [16568455]
 
-- 尝试管理 localhost 时，将提示你提升网关进程。 如果单击“用户帐户控制”弹出框中的**否**，Windows Admin Center 将无法再次显示它。 在这种情况下，通过右键单击系统托盘中的 Windows Admin Center 图标并选择“退出”以退出网关进程，然后从“开始”菜单重新启动 Windows Admin Center。
+- 尝试管理 localhost 时，将提示你提升网关进程。 如果单击后面的 "用户帐户控制" 弹出窗口中的 "**否**"，则必须取消连接尝试并重新启动。
 
-- 默认情况下，Windows 10 未开启 WinRM/PowerShell 远程处理
+- 默认情况下，Windows 10 不会启用 WinRM/PowerShell 远程处理。
   
   - 要启用 Windows 10 客户端管理，必须利用提升的 PowerShell 提示符发出 ```Enable-PSRemoting``` 命令。
 
@@ -226,4 +226,4 @@ Azure 文件同步需要 Azure 中的权限，但 Windows 管理中心未在版�
 Azure 管理服务（包括 Azure Monitor、Azure 更新管理和 Azure 安全中心）为本地服务器使用同一代理： Microsoft Monitoring Agent。 Azure 更新管理包含一组受支持的受支持区域，需要将 Log Analytics 工作区链接到 Azure 自动化帐户。 由于此限制，如果想要在 Windows 管理中心中设置多个服务，则必须首先设置 Azure 更新管理，然后设置 Azure 安全中心或 Azure Monitor。 如果已配置任何使用 Microsoft Monitoring Agent 的 Azure 管理服务，然后尝试使用 Windows 管理中心设置 Azure 更新管理，Windows 管理中心将仅允许你配置 Azure 更新管理如果现有链接到 Microsoft Monitoring Agent 的资源支持 Azure 更新管理。 如果不是这种情况，则有两个选择：
 
 1. 请通过 "控制面板" > Microsoft Monitoring Agent[断开服务器与现有 Azure 管理解决方案](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)（例如 Azure Monitor 或 Azure 安全中心）的连接。 然后在 Windows 管理中心中设置 Azure 更新管理。 之后，你可以返回到通过 Windows 管理中心设置其他 Azure 管理解决方案，而不会出现问题。
-2. 可以[手动设置 azure 更新管理所需的 azure 资源](https://docs.microsoft.com/azure/automation/automation-update-management)，然后[手动更新 Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) （位于 Windows 管理中心之外）以添加与更新管理解决方案相对应的新工作区要使用。
+2. 你可以[手动设置 azure 更新管理所需的 azure 资源](https://docs.microsoft.com/azure/automation/automation-update-management)，然后[手动更新 Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) （位于 Windows 管理中心之外）以添加与你要使用的更新管理解决方案相对应的新工作区。
