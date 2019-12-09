@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2019
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: c914a472869f9887c83733d6aab614b5676d17d7
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 37be666643dee4e5b9051ae29562a86b23fb71f7
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567123"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903959"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -53,7 +53,7 @@ ms.locfileid: "73567123"
             </ul>
         </td>
         <td style="vertical-align: top;">
-            <h3>规划</h3>
+            <h3>计划</h3>
             <ul>
             <li><a href="plan/installation-options.md">哪种安装类型适合你？</a>
             <li><a href="plan/user-access-options.md">用户访问选项</a>
@@ -77,12 +77,13 @@ ms.locfileid: "73567123"
             <li><a href="configure/user-access-control.md">用户访问控制和权限</a>
             <li><a href="configure/shared-connections.md">共享连接</a>
             <li><a href="configure/using-extensions.md">扩展</a>
+            <li><a href="configure/use-powershell.md">使用 Powershell 自动执行</a>
             </ul>
         </td>
     </tr>
     <tr>
         <td style="vertical-align: top;">
-            <h3>将</h3>
+            <h3>用途</h3>
             <ul>
             <li><a href="use/get-started.md">启动和添加连接</a>
             <li><a href="use/manage-servers.md">管理服务器</a>

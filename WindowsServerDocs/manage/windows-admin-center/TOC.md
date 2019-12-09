@@ -3,12 +3,12 @@
 ## 了解
 ### [你好，Windows Admin Center！](understand/windows-admin-center.md)
 ### [什么是 Windows Admin Center？](understand/what-is.md)
-### [常见问题解答](understand/faq.md)
+### [常见问题](understand/faq.md)
 ### [案例研究](understand/case-studies.md)
 ### [相关管理产品](understand/related-management.md)
 ### [视频](understand/videos.md)
 
-## 规划
+## 计划
 ### [哪种安装类型适合你？](plan/installation-options.md)
 ### [用户访问选项](plan/user-access-options.md)
 
@@ -23,8 +23,9 @@
 ### [用户访问控制和权限](configure/user-access-control.md)
 ### [使用扩展](configure/using-extensions.md)
 ### [共享连接](configure/shared-connections.md)
+### [使用 Powershell 自动执行](configure/use-powershell.md)
 
-## 将
+## 用途
 ### [开始行动](use/get-started.md)
 ### [管理服务器](use/manage-servers.md)
 ### [部署超融合基础设施](use/deploy-hyperconverged-infrastructure.md)
