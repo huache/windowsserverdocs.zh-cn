@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 46a1e2aa8c116f79c164448ab5644a7dda9607c8
-ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
+ms.openlocfilehash: 9abe199399e577eb06044377c30d5a2dc0e35dd1
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310373"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945232"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -64,7 +64,7 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 
 使用 Windows 管理中心或 PowerShell 下载传输操作仅限错误的 CSV 日志时，收到错误消息：
 
- >   传输日志-请检查防火墙中是否允许进行文件共享。 ：发送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此请求操作在配置的超时（00:01:00）内未收到答复。 分配给此操作的时间可能是更长超时的一部分。 这可能是因为服务仍在处理此操作，或者是因为服务无法发送答复消息。 请考虑增加操作超时（通过将通道/代理强制转换为 IContextChannel 并设置 OperationTimeout 属性），并确保服务能够连接到客户端。
+ >   传输日志-请检查防火墙中是否允许进行文件共享。 ：发送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此请求操作在配置的超时（00:01:00）内未收到答复。 分配给此操作的时间可能没有达到一个更长的超时时间。 这可能是因为服务仍然在处理操作或服务无法发送答复消息。 请考虑增加操作超时（通过将通道/代理强制转换为 IContextChannel 并设置 OperationTimeout 属性），并确保服务能够连接到客户端。
 
 此问题是由存储迁移服务允许的默认一分钟超时内无法筛选的传输文件数过多造成的。 
 
@@ -90,7 +90,7 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 7. 右键单击 "WcfOperationTimeoutInMinutes"，然后单击 "修改"。 
 8. 在 "基本数据" 框中，单击 "Decimal"
 9. 在 "数值数据" 框中，键入 "10"，然后单击 "确定"。
-10. 退出注册表编辑器。
+10. 启动注册表编辑器。
 11. 尝试再次下载错误的 CSV 文件。 
 
 我们打算在更高版本的 Windows Server 2019 中更改此行为。  
@@ -313,6 +313,13 @@ DFSR 调试日志：
   - 如果 "剪切过" 已经停滞：在确保 DHCP 作用域涵盖子网之后，登录到源计算机并在其网络接口上启用 DHCP。 当源计算机获得 DHCP 提供的 IP 地址时，SMS 将在正常情况下继续进行剪切。
   
 在这两种解决方法中，在剪切完成后，可以根据需要在旧源计算机上设置静态 IP 地址，就像使用 DHCP 进行调整和停止一样。   
+
+## <a name="slower-than-expected-re-transfer-performance"></a>比预期重新传输性能慢
+
+完成传输后，运行相同数据的后续重新传输后，即使源服务器上存在很少的数据发生更改，传输时间也不会显著提高。
+
+当传输大量文件和嵌套文件夹时，这是预期的行为。 数据的大小不相关。 首先，我们在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)中改进了此行为，并继续优化传输性能。 若要进一步调整性能，请查看[优化清单和传输性能](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
+
 
 ## <a name="see-also"></a>另请参阅
 

@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 09/19/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 448a8fb3e4340752b673b06f86d5d49211b6b147
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d8758342752ac71c5b700682d4c0f4317dc4cb4e
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357359"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945214"
 ---
 # <a name="configuring-azure-integration"></a>配置 Azure 集成
 
@@ -25,8 +25,30 @@ Windows 管理中心支持与 Azure 服务集成的多项可选功能。 [了解
 
 ## <a name="register-your-gateway-with-azure"></a>向 Azure 注册你的网关
 
-首次尝试使用 Windows 管理中心中的 Azure 集成功能时，系统将提示你将网关注册到 Azure。 你还可以通过转到 Windows 管理中心 "设置" 中的 " **Azure** " 选项卡来注册网关。
+首次尝试使用 Windows 管理中心中的 Azure 集成功能时，系统将提示你将网关注册到 Azure。 你还可以通过转到 Windows 管理中心 "设置" 中的 " **Azure** " 选项卡来注册网关。 请注意，只有 Windows 管理中心网关管理员可以向 Azure 注册 Windows 管理中心网关。 [了解有关 Windows 管理中心用户和管理员权限的详细信息](../configure/user-access-control.md#gateway-access-role-definitions)。
 
 指导式产品内步骤会在你的目录中创建一个 Azure AD 应用，以便 Windows 管理中心能够与 Azure 通信。 若要查看自动创建的 Azure AD 应用，请参阅 Windows 管理中心设置的**Azure**选项卡。 " **Azure** " 超链接中的视图可让你查看 Azure 门户中的 Azure AD 应用。 
 
-创建的 Azure AD 应用用于 Windows 管理中心中的所有 Azure 集成点，包括[网关 Azure AD 身份验证](../configure/user-access-control.md#azure-active-directory)。
+创建的 Azure AD 应用用于 Windows 管理中心中的所有 Azure 集成点，包括[网关 Azure AD 身份验证](../configure/user-access-control.md#azure-active-directory)。 Windows 管理中心自动配置代表您创建和管理 Azure 资源所需的权限：
+
+- Azure Active Directory Graph
+    - Directory.AccessAsUser.All
+    - User.Read
+- Azure 服务管理
+    - user_impersonation
+
+### <a name="manual-azure-ad-app-configuration"></a>手动 Azure AD 应用配置
+
+如果要手动配置 Azure AD 应用，而不是在网关注册过程中使用 Windows 管理中心自动创建的 Azure AD 应用，则必须执行以下操作。
+
+1. 将上面列出的所需 API 权限授予 Azure AD 应用。 可以通过导航到 Azure 门户中的 Azure AD 应用来完成此操作。 请参阅 Azure 门户 > **Azure Active Directory** > **应用注册**> 选择要使用的 Azure AD 应用。 然后添加到 " **api 权限**" 选项卡，并添加上面列出的 api 权限。
+2. 将 Windows 管理中心网关 URL 添加到回复 Url （也称为重定向 Uri）。 导航到 Azure AD 应用，然后转到 "**清单**"。 在清单中查找 "replyUrlsWithType" 键。 在注册表项中，添加包含两个键的对象： "url" 和 "type"。 密钥 "url" 的值应为 Windows 管理中心网关 URL，并在末尾追加通配符。 键 "type" 键的值应为 "Web"。 例如：
+
+    ```json
+    "replyUrlsWithType": [
+            {
+                    "url": "http://localhost:6516/*",
+                    "type": "Web"
+            }
+    ],
+    ```

@@ -6,14 +6,14 @@ ms.topic: article
 manager: klaasl
 ms.author: jeffpatt
 author: JeffPatt24
-ms.date: 6/242017
+ms.date: 6/24/2017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: ff0c6d4a6e457947c063a7ea5c3ce6463e9c17bb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17adf89d3a26767bbc736a31da7b7b2b204570a2
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365748"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945242"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤 4，设置 Web 应用程序代理
 
@@ -43,11 +43,11 @@ ms.locfileid: "71365748"
   
 若要安装证书，请执行以下步骤：  
   
-1.  单击 **“开始”** ，然后单击 **“运行”** 。  
+1.  单击**开始**，然后单击**运行**。  
   
 2.  键入 **MMC**。  
   
-3.  在“文件” 菜单上，单击“添加/删除管理单元”。  
+3.  在**文件**菜单上，单击**添加/删除管理单元**。  
   
 4.  在**可用的管理单元**列表中，单击**证书**，然后单击**添加**。 证书管理单元向导启动。  
   
@@ -88,7 +88,7 @@ ms.locfileid: "71365748"
   
 6.  在**角色服务**页上，选择 **Web 应用程序代理**，单击**添加功能**，然后单击**下一步**。
 
-7.  在 **“确认安装选择”** 页上，单击 **“安装”** 。  
+7.  在 **Confirm installation selections** 页上，单击 **Install**。  
   
 ## <a name="configure-web-application-proxy"></a>配置 Web 应用程序代理  
 要配置 Web 应用程序代理，请遵循下列步骤：  
@@ -144,7 +144,7 @@ ms.locfileid: "71365748"
   
    后端服务器 URL： **https://workfolders.contoso.com**  
   
-9. 确认页显示将执行以发布应用程序的 Windows PowerShell 命令。 单击“发布”。  
+9. 确认页显示将执行以发布应用程序的 Windows PowerShell 命令。 单击**发布**。  
   
 10. 在**结果**页上，你应该看到该应用程序已成功发布。
     >[!NOTE]
