@@ -11,18 +11,18 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/12/2019
+ms.date: 11/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f786a1db0854ae89c1ceb23942793deb7f608e1
-ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
+ms.openlocfilehash: e71aa2b1cccda85e0bf6f8a80ad68013346b30d4
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74019604"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829621"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows 桌面客户端入门
 
->适用于：Windows 10 和 Windows 7
+>适用于：Windows 10、Windows 10 IoT 企业版和 Windows 7
 
 可以使用 Windows 桌面的远程桌面客户端以远程方式从其他 Windows 设备访问 Windows 应用和桌面。
 
@@ -33,7 +33,7 @@ ms.locfileid: "74019604"
 
 ## <a name="install-the-client"></a>安装客户端
 
-选择与你的 Windows 版本相匹配的客户端：
+选择与 Windows 版本匹配的客户端。 新的远程桌面客户端 (MSRDC) 支持 Windows 10、Windows 10 IoT 企业版和 Windows 7 客户端设备。 
 
 - [Windows 64 位](https://go.microsoft.com/fwlink/?linkid=2068602)
 - [Windows 32 位](https://go.microsoft.com/fwlink/?linkid=2098960)

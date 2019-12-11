@@ -6,14 +6,14 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.date: 06/07/2019
+ms.date: 12/02/2019
 ms.prod: windows-server
-ms.openlocfilehash: e443616b4fcae3e84cfd00b3c20a4ebbf72749ea
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 6d04b641c56e9461f0134bfc4734fea36955106c
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567120"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74904061"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常见问题解答
 
@@ -27,7 +27,7 @@ Windows Admin Center 是一个轻型的基于浏览器的 GUI 平台及工具集
 
 ## <a name="can-i-use-windows-admin-center-in-production-environments"></a>我是否可以在生产环境中使用 Windows Admin Center？
 
-是。 Windows Admin Center 通常可供广泛使用和进行生产部署。 当前的平台功能和核心工具达到了 Microsoft 的标准发布准则，以及我们的可用性、可靠性、性能、辅助功能、安全性和采用质量标准。
+相同。 Windows Admin Center 通常可供广泛使用和进行生产部署。 当前的平台功能和核心工具达到了 Microsoft 的标准发布准则，以及我们的可用性、可靠性、性能、辅助功能、安全性和采用质量标准。
 
 [!INCLUDE [support-policy](../includes/support-policy.md)]
 
@@ -41,13 +41,13 @@ Windows Admin Center 将针对 Windows Server 2019 优化，可在 Windows Serve
 
 ## <a name="is-windows-admin-center-a-complete-replacement-for-all-traditional-in-box-and-rsat-tools"></a>Windows Admin Center 是否已完全取代了所有传统的内置和 RSAT 工具？
 
-否。 尽管 Windows Admin Center 可以管理许多常见场景，但它没有完全取代所有传统的 Microsoft 管理控制台 (MMC) 工具。 若要详细了解 Windows Admin Center 附带了哪些工具，请详细阅读我们文档中的[管理服务器](../use/manage-servers.md)内容。 Windows Admin Center 在其服务器管理器解决方案中提供以下主要功能：
+不能。 尽管 Windows Admin Center 可以管理许多常见场景，但它没有完全取代所有传统的 Microsoft 管理控制台 (MMC) 工具。 若要详细了解 Windows Admin Center 附带了哪些工具，请详细阅读我们文档中的[管理服务器](../use/manage-servers.md)内容。 Windows Admin Center 在其服务器管理器解决方案中提供以下主要功能：
 
 * 显示资源和资源使用率
 * 证书管理
 * 管理设备
 * 事件查看器
-* 文件资源管理器
+* 文件资源浏览器
 * 防火墙管理
 * 管理已安装的应用
 * 配置本地用户和组
@@ -74,7 +74,7 @@ Windows Admin Center 是对 RSAT（远程服务器管理工具）的补充，不
 
 ## <a name="can-windows-admin-center-be-used-to-manage-the-free-microsoft-hyper-v-server"></a>Windows Admin Center 能否用于管理免费的 Microsoft Hyper-V Server？
 
-是。 Windows Admin Center 可用于管理 Microsoft Hyper-V Server 2016 和 Microsoft Hyper-V Server 2012 R2。
+相同。 Windows Admin Center 可用于管理 Microsoft Hyper-V Server 2016 和 Microsoft Hyper-V Server 2012 R2。
 
 ## <a name="can-i-deploy-windows-admin-center-on-a-windows-10-computer"></a>我是否可以在 Windows 10 计算机上部署 Windows Admin Center？
 
@@ -94,7 +94,7 @@ Windows Admin Center 现在支持**有限的**功能来管理 Windows Server 200
 
 ## <a name="which-web-browsers-are-supported-by-windows-admin-center"></a>Windows Admin Center 支持哪些 Web 浏览器？
 
-Microsoft Edge 的最新版本（Windows 10 版本 1709 或更高版本）和 Google Chrome 浏览器已通过测试，在 Windows 10 上受支持。 [查看浏览器特定的已知问题](../support/known-issues.md#browser-specific-issues)。 其他现代的 Web 浏览器或其他平台当前不在我们的测试矩阵中，因此不受*正式*支持。
+Microsoft Edge 的最新版本（Windows 10 版本 1709 或更高版本）、Google Chrome 和 [Microsoft Edge Insider](https://microsoftedgeinsider.com) 已通过测试，在 Windows 10 上受支持。 [查看浏览器特定的已知问题](../support/known-issues.md#browser-specific-issues)。 其他现代的 Web 浏览器或其他平台当前不在我们的测试矩阵中，因此不受*正式*支持。
 
 ## <a name="how-does-windows-admin-center-handle-security"></a>Windows Admin Center 如何处理安全问题？
 
@@ -127,11 +127,11 @@ Windows Admin Center 提供一个 SDK，可让任何人编写自己的扩展。 
 
 ## <a name="can-i-manage-hyper-converged-infrastructure-with-windows-admin-center"></a>是否可以使用 Windows Admin Center 管理超融合基础设施？
 
-是。 Windows Admin Center 支持管理运行 Windows Server 2016 或 Windows Server 2019 的超融合群集。 Windows Admin Center 中的超融合群集管理器解决方案以前以预览版提供，但现在已推出**正式版**，其中保留了预览版中的一些新功能。 有关详细信息，[请阅读有关超融合基础设施的详细信息](../use/manage-hyper-converged.md)。
+相同。 Windows Admin Center 支持管理运行 Windows Server 2016 或 Windows Server 2019 的超融合群集。 Windows Admin Center 中的超融合群集管理器解决方案以前以预览版提供，但现在已推出**正式版**，其中保留了预览版中的一些新功能。 有关详细信息，[请阅读有关超融合基础设施的详细信息](../use/manage-hyper-converged.md)。
 
 ## <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center 是否需要 System Center？
 
-否。 Windows Admin Center 是对 System Center 的补充，但不需要 System Center。 [阅读有关 Windows Admin Center 和 System Center 的详细信息](related-management.md#system-center)。
+不能。 Windows Admin Center 是对 System Center 的补充，但不需要 System Center。 [阅读有关 Windows Admin Center 和 System Center 的详细信息](related-management.md#system-center)。
 
 ## <a name="can-windows-admin-center-replace-system-center-virtual-machine-manager-scvmm"></a>Windows Admin Center 能否取代 Center Virtual Machine Manager (SCVMM)？
 

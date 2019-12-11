@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/20/2019
+ms.date: 12/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 54994aad08c2f428b429082ed450235ed8bbe7e7
-ms.sourcegitcommit: 244b89505c5131dfdb90628857cc7e31741c84c2
+ms.openlocfilehash: 5526d401ba26cabcaccfc0b88df9b0e69f8149a5
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74265918"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829610"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -30,17 +30,21 @@ ms.locfileid: "74265918"
 
 |用户组 |版本  |
 |-----------|---------|
-|Public     |1.2.431  |
-|预览体验成员    |1.2.524  |
+|公用     |1.2.535  |
+|预览体验成员    |1.2.535  |
 
-## <a name="updates-for-version-12524"></a>针对版本 1.2.524 的更新
+## <a name="updates-for-version-12535"></a>针对版本 1.2.535 的更新
 
-*发布日期：2019 年 11 月 20 日*
+*发布日期：2019/12/04*
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4e7Nj)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dZCo)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dX1s)
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
 
 - 你现在可以直接通过客户端顶部命令栏上的“更多选项”按钮访问有关更新的信息。
 - 你现在可以从客户端的命令栏报告反馈。
+- 现在，“反馈”选项仅在反馈中心可用的情况下显示。
+- 确保在通过策略禁用通知的情况下不显示更新通知。
+- 修复了妨碍某些 RDP 文件启动的问题。
+- 修复了在启动客户端时发生崩溃的问题，该问题是某些持久性设置受损导致的。
 
 ## <a name="updates-for-version-12431"></a>针对版本 1.2.431 的更新
 

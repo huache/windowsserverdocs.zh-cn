@@ -6,12 +6,12 @@ contributor: maertendMSFT
 author: maertendMSFT
 title: 适用于 Windows 的 OpenSSH 服务器配置
 ms.product: w10
-ms.openlocfilehash: ed9f3653c79f1329b1334f52fe14c1184bc99539
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: fa3d40617a04c092403d9d2e018bd2eb82d20cd9
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866868"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781314"
 ---
 # <a name="openssh-key-management"></a>OpenSSH 密钥管理
 
@@ -135,7 +135,7 @@ ssh-add ~\.ssh\id_ed25519
 
 ## <a name="deploying-the-public-key"></a>部署公钥
 
-若要使用上面创建的用户密钥，需要将公钥放置在服务器上的一个文本文件中，该文件名为 *authorized_keys*，位于 users\username\ssh 下。 OpenSSH 工具包括了 scp 来帮助实现此目的，这是一个安全的文件传输实用工具。
+若要使用上面创建的用户密钥，需要将公钥放置在服务器上的一个文本文件中，该文件名为 *authorized_keys*，位于 users\username\.ssh\. 下 OpenSSH 工具包括了 scp 来帮助实现此目的，这是一个安全的文件传输实用工具。
 
 将公钥 (~\.ssh\id_ed25519.pub) 的内容移动到服务器/主机上 ~\.ssh 中名为 authorized_keys 的文本文件中。
 
