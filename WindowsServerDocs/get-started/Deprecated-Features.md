@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: b3f531325c338224d7ac69e46a9d16c9d236ee87
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e13886395040619a7509c3cf896112288c48115
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360365"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945210"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 中已删除或弃用的功能
 
@@ -79,7 +79,7 @@ wuauclt.exe /detectnow  命令已删除，并且不再受支持。 要触发更�
 
 -   Scregedit.exe  已弃用。 如果有依赖于 Scregedit.exe 的脚本，请调整这些脚本以使用 Reg.exe 或 Windows PowerShell 方法。  
 
--   Sconfig.exe  已弃用。 使用 Windows PowerShell 代替。  
+-   Sconfig.exe  已弃用。 请改用 [Sconfig.cmd](https://docs.microsoft.com/windows-server/get-started/sconfig-on-ws2016)。 
 
 ### <a name="netcfg-custom-apis"></a>NetCfg 自定义 API
 
