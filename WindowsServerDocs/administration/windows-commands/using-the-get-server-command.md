@@ -22,18 +22,18 @@ ms.locfileid: "71392117"
 ---
 # <a name="using-the-get-server-command"></a>使用 get-Server 命令
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 检索指定 Windows 部署服务服务器中的信息。
 ## <a name="syntax"></a>语法
 ```
 wdsutil [Options] /Get-Server [/Server:<Server name>] /Show:{Config | Images | All} [/detailed]
 ```
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 |参数|描述|
 |-------|--------|
-|[/Server： @no__t]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
-|/Show： {Config &#124; Images &#124; All}|指定要返回的信息的类型。<br /><br />-   **Config**返回配置信息。<br />@no__t 0 的**图像**返回有关映像组、启动映像和安装映像的信息。<br />-   **全部**返回配置信息和图像信息。|
+|[/Server： <Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
+|/Show： {Config &#124; Images &#124; All}|指定要返回的信息的类型。<br /><br />-   **Config**返回配置信息。<br />-   **映像**返回有关映像组、启动映像和安装映像的信息。<br />-   **全部**返回配置信息和图像信息。|
 |[/detailed]|可以将此选项与 **/show： Images**或 **/show： all**一起使用，以指示应返回每个图像中的所有图像元数据。 如果未使用 **/detailed**选项，则默认行为是返回映像名称、说明和文件名。|
 ## <a name="BKMK_examples"></a>示例
 若要查看有关服务器的信息，请键入：
@@ -45,9 +45,11 @@ wdsutil /Get-Server /Show:Config
 wdsutil /verbose /Get-Server /Server:MyWDSServer /Show:All /detailed
 ```
 #### <a name="additional-references"></a>其他参考
-[命令行语法键](command-line-syntax-key.md)
- 使用[disable](using-the-disable-server-command.md)-server 命令 
- 使用[enable](using-the-enable-server-command.md)-Server 命令 
- 使用[Initialize-](using-the-initialize-server-command.md)server 命令 
-[子命令： set-server](subcommand-set-server.md)
-[子命令： start-Server](subcommand-start-server.md)1[子命令： Stop-server](subcommand-stop-server.md)3["取消初始化-服务器" 选项](the-uninitialize-server-option.md)
+[命令行语法项](command-line-syntax-key.md)
+[使用 disable-Server 命令](using-the-disable-server-command.md)
+[使用 enable-Server 命令](using-the-enable-server-command.md)
+[使用 Initialize-Server 命令](using-the-initialize-server-command.md)
+[Subcommand: set-Server](subcommand-set-server.md)
+[Subcommand: start-Server](subcommand-start-server.md)
+[Subcommand: stop-Server](subcommand-stop-server.md)
+[uninitialize-Server 选项](the-uninitialize-server-option.md)

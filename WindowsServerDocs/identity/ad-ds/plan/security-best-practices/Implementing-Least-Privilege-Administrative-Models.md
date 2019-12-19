@@ -83,7 +83,7 @@ ms.locfileid: "71367728"
 
 在目前处于主流支持的所有 Windows 版本中，本地管理员帐户在默认情况下处于禁用状态，这将使该帐户无法用于传递哈希和其他凭据被盗攻击。 但是，在包含旧版操作系统或启用了本地管理员帐户的域中，可以使用这些帐户，如前文所述，在成员服务器和工作站之间传播安全漏洞。 出于此原因，建议将以下控件用于已加入域的系统上的所有本地管理员帐户。  
 
-@No__t-0Appendix H 中提供了有关实现这些控件的详细说明：保护本地管理员帐户和组 @ no__t-0。 但是，在实现这些设置之前，请确保当前未在环境中使用本地管理员帐户在计算机上运行服务，或执行不应使用这些帐户的其他活动。 在生产环境中实施这些设置之前，请对它们进行全面测试。  
+[附录 H：保护本地管理员帐户和组](../../../ad-ds/plan/security-best-practices/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups.md)中提供了有关实现这些控制的详细说明。 但是，在实现这些设置之前，请确保当前未在环境中使用本地管理员帐户在计算机上运行服务，或执行不应使用这些帐户的其他活动。 在生产环境中实施这些设置之前，请对它们进行全面测试。  
 
 #### <a name="controls-for-local-administrator-accounts"></a>本地管理员帐户的控件
 
@@ -91,7 +91,7 @@ ms.locfileid: "71367728"
 
 ##### <a name="configuring-gpos-to-restrict-administrator-accounts-on-domain-joined-systems"></a>配置 Gpo 以限制加入域的系统上的管理员帐户
 
-在你创建的一个或多个 Gpo 中，并链接到每个域中的工作站和成员服务器 Ou，将管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 本地策略 \ 用户" 权限中的以下用户权限分配**：  
+在你创建的一个或多个 Gpo 并链接到每个域中的工作站和成员服务器 Ou，将管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
 - 拒绝从网络访问这台计算机
 - 拒绝作为批处理作业登录
@@ -109,15 +109,15 @@ ms.locfileid: "71367728"
 
 ### <a name="securing-local-privileged-accounts-and-groups-in-active-directory"></a>在 Active Directory 中保护本地特权帐户和组
 
-*Law Number 6：计算机的安全性只是管理员可信。*@no__t[10 个安全永恒定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*定律6：计算机的安全性只是管理员可信任的。* - [十个不可变定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
 
-此处提供的信息旨在提供有关在 Active Directory 中保护最高权限内置帐户和组的一般准则。 @No__t 中还提供了详细的分步说明，请参阅 0Appendix D：Active Directory @ no__t 中保护内置管理员帐户，[Appendix E：Active Directory @ no__t 中保护 Enterprise Admins 组，[Appendix F：保护 Active Directory @ no__t 中的 Domain Admins 组和 [Appendix G：Active Directory @ no__t 中保护 Administrators 组。  
+此处提供的信息旨在提供有关在 Active Directory 中保护最高权限内置帐户和组的一般准则。 [附录 D：在 Active Directory 中保护内置管理员帐户](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)的详细分步说明，附录[E：在 Active Directory 中保护企业管理员组](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md)，[附录 F：保护 Active Directory 中的域管理员组](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)，[附录 G：保护 Active Directory 中的管理员组](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)。  
 
 在实现这些设置中的任何一种之前，还应测试所有设置，以确定它们是否适合您的环境。 并非所有组织都能实现这些设置。  
 
 #### <a name="securing-built-in-administrator-accounts-in-active-directory"></a>保护 Active Directory 中的内置管理员帐户
 
-在 Active Directory 的每个域中，将在创建域的过程中创建管理员帐户。 默认情况下，此帐户是域中 Domain Admins 和 Administrator 组的成员，并且如果域是目录林根级域，则该帐户也是 Enterprise Admins 组的成员。 只应为初始构建活动和灾难恢复方案保留域的本地管理员帐户的使用。 若要确保在不能使用其他帐户的情况下，可以使用内置的管理员帐户来影响修复，则不应在林中的任何域中更改管理员帐户的默认成员身份。 相反，你应该遵循指导原则来帮助保护林中每个域中的管理员帐户。 @No__t 中提供了有关实现这些控件的详细说明：Active Directory @ no__t 中保护内置管理员帐户。  
+在 Active Directory 的每个域中，将在创建域的过程中创建管理员帐户。 默认情况下，此帐户是域中 Domain Admins 和 Administrator 组的成员，并且如果域是目录林根级域，则该帐户也是 Enterprise Admins 组的成员。 只应为初始构建活动和灾难恢复方案保留域的本地管理员帐户的使用。 若要确保在不能使用其他帐户的情况下，可以使用内置的管理员帐户来影响修复，则不应在林中的任何域中更改管理员帐户的默认成员身份。 相反，你应该遵循指导原则来帮助保护林中每个域中的管理员帐户。 [附录 D：在 Active Directory 中保护内置管理员帐户](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中提供了有关实现这些控制的详细说明。  
 
 #### <a name="controls-for-built-in-administrator-accounts"></a>内置管理员帐户的控件
 
@@ -125,19 +125,19 @@ ms.locfileid: "71367728"
 
 ##### <a name="enable-the-account-is-sensitive-and-cannot-be-delegated-flag-on-the-account"></a>启用帐户上的 "敏感帐户，不能被委派" 标志
 
-默认情况下，Active Directory 中的所有帐户都可以被委派。 委托允许计算机或服务向其他计算机提供对计算机或服务的身份验证的凭据，以代表该帐户获取服务。 如果在基于域的帐户上启用该**帐户是敏感的，不能被委派**属性，则不能向网络上的其他计算机或服务提供帐户的凭据，这会限制利用委派的攻击使用帐户在其他系统上的凭据。  
+默认情况下，Active Directory 中的所有帐户都可以被委派。 委托允许计算机或服务向其他计算机提供对计算机或服务的身份验证的凭据，以代表该帐户获取服务。 如果在基于域的帐户上启用该**帐户是敏感帐户，不能被委派**属性，则不能向网络上的其他计算机或服务提供该帐户的凭据，这会限制利用委派来使用其他系统上的帐户凭据的攻击。  
 
 ##### <a name="enable-the-smart-card-is-required-for-interactive-logon-flag-on-the-account"></a>启用帐户上的 "交互式登录需要智能卡" 标志
 
 如果在帐户上启用 "**交互式登录" 属性需要智能卡**，Windows 会将该帐户的密码重置为120个字符的随机值。 通过在内置管理员帐户上设置此标志，可以确保该帐户的密码不仅长而复杂，而且对任何用户都是未知的。 在启用此属性之前，不需要为帐户创建智能卡，但如有可能，应在配置帐户限制之前为每个管理员帐户创建智能卡，并将智能卡存储在安全位置。  
 
-尽管**交互式登录标志需要设置智能卡**，但它不会阻止有权重置帐户密码的用户将帐户设置为已知值，并使用帐户的名称和新的用于访问网络资源的密码。 因此，应在帐户上实现以下附加控件。  
+尽管**交互式登录标志需要设置智能卡**，但它不会阻止有权重置帐户密码的用户将帐户设置为已知值，并使用帐户的名称和新密码来访问网络上的资源。 因此，应在帐户上实现以下附加控件。  
 
 ##### <a name="configuring-gpos-to-restrict-domains-administrator-accounts-on-domain-joined-systems"></a>在已加入域的系统上配置 Gpo 以限制域的管理员帐户
 
 尽管禁用域中的管理员帐户会使帐户有效地变得不可用，但应在帐户被无意或恶意启用时对该帐户实施附加限制。 尽管这些控件最终可以由管理员帐户反转，但目标是创建控制来降低攻击者的进度，并限制帐户的损害。  
 
-在创建的一个或多个 Gpo，并链接到每个域中的工作站和成员服务器 Ou，将每个域的管理员帐户添加到 "**计算机配置 \windows 设置 \ 安全设置 \ 本地策略 \" 中的以下用户权限 \用户权限分配**：  
+在你创建的一个或多个 Gpo 中，并链接到每个域中的工作站和成员服务器 Ou，将每个域的管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
 - 拒绝从网络访问这台计算机  
 - 拒绝作为批处理作业登录  
@@ -151,7 +151,7 @@ ms.locfileid: "71367728"
 
 ##### <a name="configuring-gpos-to-restrict-administrator-accounts-on-domain-controllers"></a>配置 Gpo 以限制域控制器上的管理员帐户
 
-在林中的每个域中，应修改默认域控制器策略或链接到域控制器 OU 的策略，以将每个域的管理员帐户添加到 "计算机配置 \windows" 设置中的以下用户权限 **\Security \ 本地策略 \ 权限分配**：  
+在林中的每个域中，应修改默认域控制器策略或链接到域控制器 OU 的策略，以将每个域的管理员帐户添加到 "**计算机配置 \windows 设置 \ 安全设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
 - 拒绝从网络访问这台计算机  
 - 拒绝作为批处理作业登录  
@@ -169,13 +169,13 @@ ms.locfileid: "71367728"
 
 #### <a name="securing-enterprise-admin-groups"></a>保护企业管理员组
 
-位于林根域中的 Enterprise Admins 组在日常工作中不应包含任何用户，并且在此域的本地管理员帐户的情况下也可能例外，前提是该帐户是安全的，如前文所述，在 [Appendix D：Active Directory @ no__t 中保护内置管理员帐户。  
+位于林根域中的 Enterprise Admins 组在日常工作中不应包含任何用户，前提是域的本地管理员帐户可能例外，前提是该帐户是安全的（如前文所述），并且在[附录 D：在 Active Directory 中保护内置管理员帐户](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)。  
 
-需要 EA 访问时，其帐户需要 EA 权限和权限的用户应暂时置于 Enterprise Admins 组中。 尽管用户使用的是具有高特权的帐户，但他们的活动应该经过审核，并且最好是在执行更改的用户的情况下执行，另一个用户会观察更改，以最大程度地降低意外滥用或配置错误的可能性. 完成活动后，应从 EA 组中删除帐户。 这可以通过手动过程和记录的进程、第三方特权标识/访问管理（PIM/PAM）软件或二者的组合来实现。 @No__t 1Appendix I 中提供了有关创建帐户的准则，这些帐户可用于控制 Active Directory 中特权组的成员身份，并在的相关[帐户](../../../ad-ds/plan/security-best-practices/Attractive-Accounts-for-Credential-Theft.md)中提供详细说明：为 Active Directory @ no__t 中的受保护帐户和组创建管理帐户。  
+需要 EA 访问时，其帐户需要 EA 权限和权限的用户应暂时置于 Enterprise Admins 组中。 尽管用户使用的是具有高特权的帐户，但他们的活动应该经过审核，并且最好是在执行更改的用户的情况下执行，另一个用户会观察更改，以最大程度地降低意外滥用或配置错误的可能性. 完成活动后，应从 EA 组中删除帐户。 这可以通过手动过程和记录的进程、第三方特权标识/访问管理（PIM/PAM）软件或二者的组合来实现。 [附录 I：在 Active Directory 中为受保护的帐户和组创建管理帐户](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)中提供了用于在 Active Directory 中提供用于控制特权组成员身份的帐户的准则。[凭据容易被盗的帐户](../../../ad-ds/plan/security-best-practices/Attractive-Accounts-for-Credential-Theft.md)  
 
 默认情况下，企业管理员是林中每个域内内置 Administrators 组的成员。 从每个域中的管理员组中删除 Enterprise Admins 组是不适当的修改，因为在林灾难恢复方案中，可能需要 EA 权限。 如果已从林中的管理员组中删除 Enterprise Admins 组，则应将其添加到每个域中的 Administrators 组，并应实施以下附加控件：  
 
-- 如前文所述，Enterprise Admins 组不应在日常工作中包含任何用户，并且可能例外的是目录林根级域的管理员帐户，该帐户应按照 @no__t 0Appendix D：Active Directory @ no__t 中保护内置管理员帐户。  
+- 如前文所述，Enterprise Admins 组不应在日常工作中包含任何用户，这可能是目录林根级域的管理员帐户的例外，应按照[附录 D：保护内置管理员帐户的 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述进行保护。  
 - 在链接到包含每个域中成员服务器和工作站的 Ou 的 Gpo 中，EA 组应添加到以下用户权限：  
    - 拒绝从网络访问这台计算机  
    - 拒绝作为批处理作业登录  
@@ -189,15 +189,15 @@ ms.locfileid: "71367728"
   
 #### <a name="securing-domain-admins-groups"></a>保护域管理员组
 
-与 Enterprise Admins 组一样，域管理员组中的成员身份只应在生成或灾难恢复方案中是必需的。 如果域的本地管理员帐户例外，则不应存在于 DA 组中的日常用户帐户，前提是该帐户已受保护，如 @no__t 0Appendix D：Active Directory @ no__t 中保护内置管理员帐户。  
+与 Enterprise Admins 组一样，域管理员组中的成员身份只应在生成或灾难恢复方案中是必需的。 除了域的本地管理员帐户（[在 Active Directory 中保护内置管理员帐户](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述），在 DA 组中不应有任何日常用户帐户，但该域的本地管理员帐户除外。  
   
-如果需要访问 DA，则需要此访问级别的帐户应暂时放置在相关域的 "DA" 组中。 尽管用户使用高特权帐户，但应审核活动，并且最好是在执行更改的用户的情况下执行，另一个用户会观察更改，以最大程度地降低意外滥用或配置错误的可能性。 活动完成后，应从 Domain Admins 组中删除帐户。 这可以通过手动过程和记录的进程通过第三方特权标识/访问管理（PIM/PAM）软件或二者的组合来实现。 @No__t-0Appendix I 中提供了有关创建帐户的准则，这些帐户可用于控制 Active Directory 中特权组的成员身份：为 Active Directory @ no__t 中的受保护帐户和组创建管理帐户。  
+如果需要访问 DA，则需要此访问级别的帐户应暂时放置在相关域的 "DA" 组中。 尽管用户使用高特权帐户，但应审核活动，并且最好是在执行更改的用户的情况下执行，另一个用户会观察更改，以最大程度地降低意外滥用或配置错误的可能性。 活动完成后，应从 Domain Admins 组中删除帐户。 这可以通过手动过程和记录的进程通过第三方特权标识/访问管理（PIM/PAM）软件或二者的组合来实现。 [附录 I：在 Active Directory 中为受保护帐户和组创建管理帐户](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)中提供了用于创建可用于控制 Active Directory 中特权组的成员身份的帐户的准则。  
   
-默认情况下，域管理员是所有成员服务器和工作站上的本地 Administrators 组的成员。 不应修改此默认嵌套，因为它会影响可支持性和灾难恢复选项。 如果已从成员服务器上的本地管理员组中删除了域管理员组，则应将这些组添加到域中的每个成员服务器和工作站上的管理员组中。 以下常规控件在 [Appendix F：还应实现 Active Directory @ no__t 中的域管理员组。  
+默认情况下，域管理员是所有成员服务器和工作站上的本地 Administrators 组的成员。 不应修改此默认嵌套，因为它会影响可支持性和灾难恢复选项。 如果已从成员服务器上的本地管理员组中删除了域管理员组，则应将这些组添加到域中的每个成员服务器和工作站上的管理员组中。 以下常规控件（[附录 F：保护 Active Directory 中的域管理员组](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)）也应该实现。  
 
 对于林中每个域中的 Domain Admins 组：  
 
-1. 删除 DA 组中的所有成员，并在域的内置管理员帐户可能例外的情况下将其删除，前提是该帐户已受保护，如 @no__t 0Appendix D：Active Directory @ no__t 中保护内置管理员帐户。  
+1. 删除 DA 组中的所有成员，并在域的内置管理员帐户可能例外的情况下进行保护，前提是该帐户已受到[以下附录 D：保护内置管理员帐户的 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述的保护。  
 2. 在链接到包含每个域中成员服务器和工作站的 Ou 的 Gpo 中，应将 DA 组添加到以下用户权限：  
    - 拒绝从网络访问这台计算机  
    - 拒绝作为批处理作业登录  
@@ -211,13 +211,13 @@ ms.locfileid: "71367728"
 
 #### <a name="securing-administrators-groups-in-active-directory"></a>保护 Active Directory 中的管理员组
 
-与 EA 和 DA 组一样，管理员（BA）组中的成员身份仅在生成或灾难恢复方案中是必需的。 只有域的本地管理员帐户例外，管理员组中不应有任何日常用户帐户，前提是该帐户已受保护，如 @no__t 0Appendix D：Active Directory @ no__t 中保护内置管理员帐户。  
+与 EA 和 DA 组一样，管理员（BA）组中的成员身份仅在生成或灾难恢复方案中是必需的。 除了域的本地管理员帐户（[在 Active Directory 中保护内置管理员帐户](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述），管理员组中的用户帐户不应是域的本地管理员帐户。  
 
 需要管理员访问权限时，需要此级别访问权限的帐户应暂时放置在相关域的 "管理员" 组中。 尽管用户使用的是高度特权的帐户，但也应该审核活动，并且最好是在用户执行更改的情况下执行，另一个用户会观察更改，从而最大程度地减少意外滥用或配置错误的可能性。 完成活动后，应立即从 Administrators 组中删除帐户。 这可以通过手动过程和记录的进程通过第三方特权标识/访问管理（PIM/PAM）软件或二者的组合来实现。  
 
-默认情况下，管理员默认情况下是其各自域中的大多数 AD DS 对象的所有者。 在生成和灾难恢复方案中，可能需要此组中的成员资格或取得对象所有权的权限。 此外，DAs 和 EAs 通过其在 Administrators 组中的默认成员身份来继承其权限。 不应修改 Active Directory 中特权组的默认组嵌套，并且应按照 [Appendix G：在 Active Directory @ no__t 中保护 Administrators 组，并在下面的一般说明中保护。  
+默认情况下，管理员默认情况下是其各自域中的大多数 AD DS 对象的所有者。 在生成和灾难恢复方案中，可能需要此组中的成员资格或取得对象所有权的权限。 此外，DAs 和 EAs 通过其在 Administrators 组中的默认成员身份来继承其权限。 不应修改 Active Directory 中特权组的默认组嵌套，并且应按照[附录 G：保护 Active Directory 中的管理员组中](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)所述对每个域的管理员组进行保护，并在下面的一般说明中进行保护。  
 
-1. 删除 Administrators 组中的所有成员，并在域的本地管理员帐户可能例外的情况下将其删除，前提是该帐户已被保护，如 @no__t 0Appendix D：Active Directory @ no__t 中保护内置管理员帐户。  
+1. 删除 Administrators 组中的所有成员（如果域为本地管理员帐户，则可能例外），前提是该帐户已受保护，如[附录 D：在 Active Directory 中保护内置管理员帐户](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)。  
 2. 域的 Administrators 组的成员不需要登录到成员服务器或工作站。 在链接到工作站和每个域中的成员服务器 Ou 的一个或多个 Gpo 中，应将管理员组添加到以下用户权限：  
    - 拒绝从网络访问这台计算机  
    - 拒绝作为批处理作业登录  
@@ -257,9 +257,9 @@ ms.locfileid: "71367728"
 
 在其他情况下，组织可能更愿意考虑部署提供 "现成" 功能的第三方 RBAC 软件。 适用于 Active Directory、Windows 和非 Windows 目录和操作系统 RBAC 的商业、现成（COTS）解决方案由许多供应商提供。 在本机解决方案和第三方产品之间进行选择时，应考虑以下因素：  
 
-1. 额定通过使用你已经拥有的软件和工具投资开发 RBAC，你可以减少部署解决方案所涉及的软件成本。 但是，除非你有在创建和部署本机 RBAC 解决方案的经验丰富的人员，否则你可能需要与咨询资源联系以开发解决方案。 你应仔细权衡自定义开发的解决方案的预期成本与部署 "现成" 解决方案的成本，尤其是在你的预算有限的情况下。  
-2. IT 环境的组合：如果你的环境主要包含 Windows 系统，或者你已在利用 Active Directory 来管理非 Windows 系统和帐户，则自定义本机解决方案可能会提供满足你的需求的最佳解决方案。 如果你的基础结构包含许多未运行 Windows 且不受 Active Directory 管理的系统，你可能需要考虑将非 Windows 系统与 Active Directory 环境分开管理的选项。  
-3. 解决方案中的特权模型：如果产品依赖于在 Active Directory 中将其服务帐户放置在高特权组中，但不提供不需要将过多权限授予 RBAC 软件的选项，则没有真正降低 Active Directory 攻击图面你只更改了目录中大多数特权组的组合。 除非应用程序供应商可以为服务帐户提供控制，从而最大程度地减少被泄漏和恶意使用的帐户的概率，否则你可能想要考虑其他选项。  
+1. 预算：通过使用你已经拥有的软件和工具投资开发 RBAC，你可以减少部署解决方案所涉及的软件成本。 但是，除非你有在创建和部署本机 RBAC 解决方案的经验丰富的人员，否则你可能需要与咨询资源联系以开发解决方案。 你应仔细权衡自定义开发的解决方案的预期成本与部署 "现成" 解决方案的成本，尤其是在你的预算有限的情况下。  
+2. IT 环境的组合：如果你的环境主要包含 Windows 系统，或者你已在利用 Active Directory 来管理非 Windows 系统和帐户，则自定义本机解决方案可能会提供最佳解决方案你的需求。 如果你的基础结构包含许多未运行 Windows 且不受 Active Directory 管理的系统，你可能需要考虑将非 Windows 系统与 Active Directory 环境分开管理的选项。  
+3. 解决方案中的特权模式：如果产品依赖于其服务帐户在 Active Directory 的高特权组中的位置，并且不提供不需要将过多特权授予 RBAC 软件的选项，则没有真正降低你的 Active Directory 攻击面仅更改了目录中大多数特权组的组合。 除非应用程序供应商可以为服务帐户提供控制，从而最大程度地减少被泄漏和恶意使用的帐户的概率，否则你可能想要考虑其他选项。  
 
 ### <a name="privileged-identity-management"></a>特权标识管理
 
@@ -276,11 +276,11 @@ ms.locfileid: "71367728"
 
 管理特权帐户的难题之一是，默认情况下，可以管理特权帐户和受保护帐户和组的帐户是特权和受保护的帐户。 如果为 Active Directory 安装实现相应的 RBAC 和 PIM 解决方案，则这些解决方案可能包括允许你有效地 depopulate 目录中大多数特权组的成员身份的方法，只填充组需要时暂时和。  
 
-不过，如果实现本机 RBAC 和 PIM，应考虑创建没有权限的帐户，并在需要时使用仅在 Active Directory 中填充和 depopulating 特权组的唯一功能。 [附录 I：为 Active Directory @ no__t 中的受保护帐户和组创建管理帐户提供了可用于为此目的创建帐户的分步说明。  
+不过，如果实现本机 RBAC 和 PIM，应考虑创建没有权限的帐户，并在需要时使用仅在 Active Directory 中填充和 depopulating 特权组的唯一功能。 [附录 I：在 Active Directory 中创建受保护帐户和组的管理帐户](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)提供了可用于创建帐户以实现此目的的分步说明。  
 
 ### <a name="implementing-robust-authentication-controls"></a>实现可靠的身份验证控制
 
-*Law Number 6：确实有人试图猜测你的密码。*[安全管理的 @no__t 0 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律6：真的有人试图猜测密码。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
 
 传递哈希和其他凭据盗窃攻击不特定于 Windows 操作系统，也不是新的。 第一次传递哈希攻击是在1997中创建的。 然而，在过去，这些攻击需要自定义的工具，其成功被击中或错失，并要求攻击者具有相对较高的技能。 在过去几年里，引入了免费的、易于使用的工具，该工具以本机方式提取凭据，导致凭据被盗攻击的数量呈指数增长。 但是，凭据盗窃攻击不是指凭据被定向并泄露的唯一机制。  
 
@@ -302,9 +302,9 @@ ms.locfileid: "71367728"
 
 #### <a name="configuring-privileged-account-authentication"></a>配置特权帐户身份验证
 
-在 "对所有管理帐户 Active Directory" 中，启用 "**需要智能卡进行交互式登录**" 属性，并审核对帐户的 "**帐户**" 选项卡上的任何属性（例如，cn、name、sAMAccountName、userPrincipalName 和 userAccountControl）管理用户对象。  
+在 "对所有管理帐户 Active Directory" 中，启用 "**需要智能卡进行交互式登录**" 属性，并审核（至少） "**帐户**" 选项卡上的任何属性（例如，Cn、Name、SAMAccountName、userPrincipalName 和 userAccountControl）管理用户对象的更改。  
 
-尽管设置 "**需要智能卡以进行交互式登录**" 帐户将帐户的密码重置为120个字符的随机值，并且需要智能卡进行交互式登录，但具有权限的用户仍然可以覆盖属性这样，他们就可以更改帐户的密码，然后就可以使用这些帐户，通过仅用户名和密码建立非交互式登录。  
+尽管设置 "**需要智能卡以进行交互式登录**" 帐户将帐户的密码重置为120个字符的随机值并且需要智能卡进行交互式登录，但具有允许用户更改帐户密码的权限的用户仍可以覆盖该属性，然后可以使用帐户仅使用用户名和密码建立非交互式登录。  
 
 在其他情况下，根据帐户在 Active Directory 证书服务（AD CS）或第三方 PKI 的 Active Directory 和证书设置中的配置，可以将管理或 VIP 帐户的用户主体名称（UPN）属性设定为目标对于特定类型的攻击，如此处所述。  
 
@@ -334,4 +334,4 @@ ms.locfileid: "71367728"
 
 为攻击者的帐户获取证书后，"新建" 帐户和目标帐户上的 Upn 将返回到其原始值。  
 
-现在，攻击者提供了一个或多个证书，用于对资源和应用程序进行身份验证，就像用户是其帐户被临时修改的 VIP 用户一样。 尽管对攻击者可将证书和 PKI 作为其目标的所有方法的全面讨论超出了本文档的讨论范围，但提供了这种攻击机制，目的是为了说明应该如何监视特权和 VIP 帐户的更改 AD DS，特别是对帐户的 "**帐户**" 选项卡上的任何属性的更改（例如，cn、Name、SAMAccountName、UserPrincipalName 和 userAccountControl）。 除了监视帐户之外，您还应将可以修改帐户的人员限制为一组较小的管理用户。 同样，应保护和监视管理用户的帐户，以防止未经授权的更改。  
+现在，攻击者提供了一个或多个证书，用于对资源和应用程序进行身份验证，就像用户是其帐户被临时修改的 VIP 用户一样。 尽管对攻击者可将证书和 PKI 作为其目标的所有方法的全面讨论超出了本文档的范围，但提供了这种攻击机制，目的是为了说明应该如何监视特权和 VIP 帐户的更改更改，尤其是 AD DS 在帐户的 "**帐户**" 选项卡上对任何属性的更改（例如，cn、Name、SAMAccountName、UserPrincipalName 和 userAccountControl）。 除了监视帐户之外，您还应将可以修改帐户的人员限制为一组较小的管理用户。 同样，应保护和监视管理用户的帐户，以防止未经授权的更改。  
