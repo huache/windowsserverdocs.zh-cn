@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 1ae6f881e1bd4b9b317e5622f18958f25f692eec
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: 26ff5e27494e2f42a0c8e4d28e2b9820f8d19e6a
+ms.sourcegitcommit: 471464a674a53c468a2f1e28575c91245ce9badf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940794"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548186"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>租户的受防护的 Vm-创建屏蔽数据来定义受防护的 VM
 
@@ -91,13 +91,13 @@ ms.locfileid: "71940794"
 
     | 替换字符串 | 示例替换 |
     |---------------------|----------------------|
-    | @IP4Addr-1@         | 192.168.1.10         |
+    | @IP4Addr-1@         | 192.168.1.10/24      |
     | @MACAddr-1@         | Ethernet             |
-    | @Prefix-1-1@        | 192.168.1.0/24       |
+    | @Prefix-1-1@        | 24                   |
     | @NextHop-1-1@       | 192.168.1.254        |
-    | @IP4Addr-2@         | 10.0.20.30           |
+    | @IP4Addr-2@         | 10.0.20.30/24        |
     | @MACAddr-2@         | 以太网2           |
-    | @Prefix-2-1@        | 10.0.20.0/24         |
+    | @Prefix-2-1@        | 24                   |
     | @NextHop-2-1@       | 10.0.20.1            |
 
 使用替换字符串时，务必确保在 VM 预配过程中填充字符串。 如果部署时未提供 @ProductKey@ 之类的字符串，则在无人参与文件中保留 &lt;ProductKey&gt; 节点，则特殊化过程将失败，并且你将无法连接到 VM。

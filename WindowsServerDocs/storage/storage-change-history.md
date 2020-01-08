@@ -7,22 +7,31 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 08/19/2019
+ms.date: 12/20/2019
 description: 面向 IT 专业人员的适用于 Windows Server 的本地存储文档中的新主题和更新主题。
-ms.openlocfilehash: ce937dfb5c6c0b46c8085cbb202590567ea829d3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d50d4ca5b49b7f895fad3d3866226f95c55ae485
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393930"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352779"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server 中存储主题的更改历史记录
 
-> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 本主题列出了 Windows Server[存储](storage.md)文档中的新主题和更新主题。
 
 > 如果你正在寻找 Windows Server 的更新历史记录，请参阅[windows 10 和 Windows server 2019 更新历史记录](https://support.microsoft.com/help/4464619)或[windows server 2016 更新历史](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)记录。
+
+## <a name="december-2019"></a>2019 年 12 月
+
+| 新的或已更改的主题                                        | 描述 |
+| ---                                                         | ---           |
+| [磁盘管理疑难解答](disk-management/troubleshooting-disk-management.md)| 根据客户请求进行编辑，进一步优化指导。|
+| [在磁盘管理中扩展卷](disk-management/extend-a-basic-volume.md) | 添加了指导以响应客户反馈。 |
+| [将动态磁盘更改回基本磁盘](disk-management/change-a-dynamic-disk-back-to-a-basic-disk.md) | 修复了命令行中的错误，并根据客户的反馈添加了某些信息。 |
+
 
 ## <a name="august-2019"></a>2019 年 8 月
 
@@ -30,7 +39,7 @@ ms.locfileid: "71393930"
 | ---                                                         | ---           |
 | [存储迁移服务常见问题解答](storage-migration-service/faq.md) | 经过更新以反映对 Linux 源的全新支持。 |
 
-## <a name="june-2019"></a>2019 年 7 月
+## <a name="june-2019"></a>2019 年 6 月
 
 | 新的或已更改的主题                                        | 描述 |
 | ---                                                         | ---           |
@@ -41,7 +50,7 @@ ms.locfileid: "71393930"
 
 |新的或已更改的主题                                        |描述|
 |---                                                         |---           |
-|[删除卷](storage-spaces/delete-volumes.md)| 新增        |
+|[删除卷](storage-spaces/delete-volumes.md)| “新建”        |
 |[创建卷](storage-spaces/create-volumes.md)| 添加了用于在 Windows 管理中心中创建卷的步骤和视频。|
 |[扩展卷](storage-spaces/resize-volumes.md)| 添加了用于在 Windows 管理中心调整卷大小的步骤和视频。|
 
@@ -49,9 +58,9 @@ ms.locfileid: "71393930"
 
 |新的或已更改的主题                                        |描述|
 |---                                                         |---           |
-| [使用 Azure Monitor 进行监视](storage-spaces/configure-azure-monitor.md) | 新增 |
-| [了解和部署永久性内存](storage-spaces/deploy-pmem.md) | 新增 |
-| [将存储空间直通群集升级为 Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新增        |
+| [使用 Azure Monitor 进行监视](storage-spaces/configure-azure-monitor.md) | “新建” |
+| [了解和部署永久性内存](storage-spaces/deploy-pmem.md) | “新建” |
+| [将存储空间直通群集升级为 Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| “新建”        |
 | [DFS 复制](dfs-replication/dfsr-overview.md)        | 从[以前版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))的库迁移|
 
 ## <a name="february-2019"></a>2019 年 2 月
@@ -60,13 +69,13 @@ ms.locfileid: "71393930"
 |---                                                         |---           |
 |[存储迁移服务的已知问题](storage-migration-service/known-issues.md)   | 添加了问题    |
 
-## <a name="january-2019"></a>2019年1月
+## <a name="january-2019"></a>2019 年 1 月
 
 |新的或已更改的主题                                        |描述|
 |---                                                         |---           |
 |[了解并监视存储重新同步](storage-spaces/understand-storage-resync.md)|新主题|
 
-## <a name="december-2018"></a>2018年12月
+## <a name="december-2018"></a>2018 年 12 月
 
 |新的或已更改的主题                                        |描述|
 |---                                                         |---           |
@@ -81,9 +90,9 @@ ms.locfileid: "71393930"
 |---                                                         |---           |
 |[嵌套复原](storage-spaces/nested-resiliency.md)    | 新主题    |
 |[存储迁移服务的已知问题](storage-migration-service/known-issues.md)   | 新主题    |
-|[DFS 复制：常见问题解答 (FAQ)](dfs-replication/dfsr-faq.md)|从[以前版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/)的库迁移|
+|[DFS 复制：常见问题（FAQ）](dfs-replication/dfsr-faq.md)|从[以前版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/)的库迁移|
 |[将 SYSVOL 复制迁移到 DFS 复制](dfs-replication/migrate-sysvol-to-dfsr.md)|从[以前版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)的库迁移|
-|[SMB：文件和打印机共享端口应打开](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|从[以前版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)的库迁移|
+|[SMB：应打开文件和打印机共享端口](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|从[以前版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)的库迁移|
 |[卷影复制服务](file-server/volume-shadow-copy-service.md)|从[以前版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)的库迁移|
 
 ## <a name="october-2018"></a>2018 年 10 月
@@ -93,7 +102,7 @@ ms.locfileid: "71393930"
 |[存储中的新增功能](whats-new-in-storage.md)|经过更新以涵盖 Windows Server 2019 中的新增功能|
 |[存储副本的已知问题](storage-replica/storage-replica-known-issues.md)|添加了有关新更新的信息。|
 
-## <a name="september-2018"></a>2018年9月
+## <a name="september-2018"></a>2018 年 9 月
 
 |新的或已更改的主题|描述|
 |---|---|
@@ -103,7 +112,7 @@ ms.locfileid: "71393930"
 | [iSCSI 目标服务器](iscsi/iscsi-target-server.md) | 已从[以前的版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)库迁移。|
 | [iSCSI 目标服务器可扩展性限制](iscsi/iscsi-target-server-limits.md) |已从[以前的版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)库迁移。|
 
-## <a name="june-2018"></a>2018年6月
+## <a name="june-2018"></a>2018 年 6 月
 
 |新的或已更改的主题|描述|
 |---|---|
@@ -164,7 +173,7 @@ ms.locfileid: "71393930"
 |新的或已更改的主题|描述|
 |---|---|
 |[更改驱动器号](disk-management/change-a-drive-letter.md)|新主题。|
-|[磁盘管理疑难解答](disk-management/troubleshooting-disk-management.md)|重写[磁盘的状态为 "未初始化" 或 "缺少磁盘"](disk-management/troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing)部分，用于根据客户请求添加广泛的故障排除步骤。|
+|[磁盘管理疑难解答](disk-management/troubleshooting-disk-management.md)|重写[磁盘的状态为 "未初始化" 或 "缺少磁盘"](disk-management/troubleshooting-disk-management.md#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)部分，用于根据客户请求添加广泛的故障排除步骤。|
 |[初始化新磁盘](disk-management/initialize-new-disks.md)|重写，尝试更轻松地了解和解决客户的问题。|
 |[规划存储空间直通中的卷](storage-spaces/plan-volumes.md)|添加了汇总四节点和更大群集上可用的复原类型的表。|
 |[ReFS 概述](refs/refs-overview.md)|阐明了镜像加速奇偶校验所建议的工作负荷，并更正了 ReFS 和 NTFS 支持的文件和卷大小。|

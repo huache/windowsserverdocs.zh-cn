@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c54fee98247b1ce0aa3ef3a2502cf18f314e763
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: edf714bc0d6b39dbe7c5e800e953d7820fe9abc5
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394374"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352602"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>启用重定向文件夹的优化移动
 
->适用于：Windows 10，Windows 8，Windows 8.1，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server （半年频道）
+>适用于： Windows 10，Windows 8，Windows 8.1，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server （半年频道）
 
 本主题介绍如何将重定向的文件夹（文件夹重定向）的优化移动到新的文件共享。 如果启用此策略设置，当管理员移动文件共享承载重定向的文件夹并更新组策略中重定向文件夹的目标路径时，将在本地脱机文件缓存中简单地重命名缓存内容，而不会有任何延迟或用户可能会丢失数据。
 
@@ -30,7 +30,7 @@ ms.locfileid: "71394374"
 - 必须设置文件夹重定向。 有关详细信息，请参阅[脱机文件部署文件夹重定向](deploy-folder-redirection.md)。
 - 客户端计算机必须运行 Windows 10，Windows 8.1，Windows 8，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012 或 Windows Server （半年频道）。
 
-## <a name="step-1-enable-optimized-move-in-group-policy"></a>第 1 步：启用优化移动组策略
+## <a name="step-1-enable-optimized-move-in-group-policy"></a>步骤1：启用优化移动组策略
 
 若要优化文件夹重定向数据的重定位，请使用组策略为相应的组策略对象（GPO）启用 "对**文件夹重定向服务器上的脱机文件缓存进行优化" 服务器路径更改策略设置中的 "启用优化内容移动**"。 如果将此策略设置配置为 "**已禁用**" 或 "**未配置**"，将导致客户端将所有文件夹重定向内容复制到新位置，然后在服务器路径更改时从旧位置删除内容。
 
@@ -41,9 +41,9 @@ ms.locfileid: "71394374"
 3. 右键单击 "在**文件夹重定向服务器路径更改时启用脱机文件缓存中优化的内容移动**"，然后选择 "**编辑**"。
 4. 选择 "**已启用**"，然后选择 **"确定"** 。
 
-## <a name="step-2-relocate-the-file-share-for-redirected-folders"></a>步骤 2：重定位重定向文件夹的文件共享
+## <a name="step-2-relocate-the-file-share-for-redirected-folders"></a>步骤2：重定位重定向文件夹的文件共享
 
-在移动包含用户重定向文件夹的文件共享时，会导入，以采取预防措施来确保正确地重新定位文件夹。
+移动包含用户重定向文件夹的文件共享时，必须采取预防措施来确保正确地重新定位文件夹。
 
 >[!IMPORTANT]
 >如果用户的文件正在使用中，或者如果移动时未保留完整的文件状态，则当通过网络复制文件、脱机文件生成的同步冲突，甚至数据丢失时，用户可能会遇到性能不佳的问题。
@@ -59,7 +59,7 @@ ms.locfileid: "71394374"
 
     用户将使用脱机文件脱机工作，直到移动完成，并收到组策略的更新文件夹重定向设置。
 
-3. 使用具有备份权限的帐户将文件共享的内容移到新位置，方法是使用保留文件时间戳的方法，例如备份和还原实用程序。 若要使用**Robocopy**命令，请打开提升的命令提示符，然后键入以下命令，其中```<Source>```是```<Destination>```文件共享的当前位置，是新位置：
+3. 使用具有备份权限的帐户将文件共享的内容移到新位置，方法是使用保留文件时间戳的方法，例如备份和还原实用程序。 若要使用**Robocopy**命令，请打开提升的命令提示符，然后键入以下命令，其中 ```<Source>``` 是文件共享的当前位置，```<Destination>``` 为新位置：
 
     ```PowerShell
     Robocopy /B <Source> <Destination> /Copyall /MIR /EFSRAW

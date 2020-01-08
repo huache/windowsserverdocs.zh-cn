@@ -8,12 +8,12 @@ ms.date: 10/25/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5963035846814f2ec3fd3417e629f71b146cc73e
-ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
+ms.openlocfilehash: 968122612845a9be105ca7d3231edc0faa039e76
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310381"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352679"
 ---
 # <a name="storage-migration-service-overview"></a>存储迁移服务概述
 
@@ -66,7 +66,7 @@ ms.locfileid: "74310381"
 - 源计算机和目标计算机必须启用以下防火墙规则*入站*（尽管可能已启用这些规则）：
   - 文件和打印机共享 (SMB-In)
   - Netlogon 服务（NP-IN）
-  - Windows Management Instrumentation （DCOM-IN）
+  - Windows Management Instrumentation (DCOM-In)
   - Windows Management Instrumentation (WMI-In)
   
   > [!TIP]
@@ -80,10 +80,10 @@ ms.locfileid: "74310381"
 源服务器必须运行以下操作系统之一：
 
 - Windows Server 半年频道
-- Windows Server 2019
-- Windows Server 2016
+- Windows Server Standard 2012 R2
+- WIN ENT LTSB 2016 Finnish 64 Bits
 - Windows Server 2012 R2
-- Windows Server 2012
+- Windows Server 2012
 - Windows Server 2008 R2
 - Windows Server 2008
 - Windows Server 2003 R2
@@ -92,7 +92,7 @@ ms.locfileid: "74310381"
 - Windows Small Business Server 2008
 - Windows Small Business Server 2011
 - Windows Server 2012 Essentials
-- Windows Server 2012 R2 Essentials
+- Windows Server 2012 R2 Essentials
 - Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
 - Windows Storage Server 2008
@@ -105,7 +105,7 @@ ms.locfileid: "74310381"
 
 如果 orchestrator 正在运行 Windows Server 1903 或更高版本，或者协调器运行的 Windows Server 的早期版本安装了[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) ，则可以迁移以下附加源类型：
 
-- 故障转移群集
+- 运行 Windows Server 2012、Windows Server 2012 R2、Windows Server 2016、Windows Server 2019 的故障转移群集
 - 使用 Samba 的 Linux 服务器。 我们测试了以下内容：
     - CentOS 7
     - Debian GNU/Linux 8
@@ -119,8 +119,8 @@ ms.locfileid: "74310381"
 目标服务器必须运行以下操作系统之一：
 
 - Windows Server 半年频道
-- Windows Server 2019
-- Windows Server 2016
+- Windows Server Standard 2012 R2
+- WIN ENT LTSB 2016 Finnish 64 Bits
 - Windows Server 2012 R2
 
 > [!TIP]
