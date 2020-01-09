@@ -5,14 +5,19 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: NedPyle; Danlo; DKruse
-ms.date: 4/14/2017
-ms.openlocfilehash: 5f772d2333acb2d48bf27168aca42754013dd8be
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: NedPyle; Danlo; DKruse; v-tea
+ms.date: 12/12/2019
+ms.custom:
+- CI ID 111495
+- CSSTroubleshoot
+manager: dcscontentpm
+audience: Admin
+ms.openlocfilehash: 2e37282abd246c8f2da387deda5e8bf4b400a3d8
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370220"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351641"
 ---
 # <a name="performance-tuning-for-file-servers"></a>文件服务器的性能优化
 
@@ -93,10 +98,24 @@ ms.locfileid: "71370220"
 
     默认值为 10 秒。 这是目录缓存超时。
 
-    > [!NOTE]
+    > [!NOTE]  
     > 此参数控制在缺少目录租约时的目录元数据缓存。
      
-
+     > [!NOTE]  
+     > Windows 10 版本 1803 中的一个已知问题会影响 Windows 10 缓存大型目录的能力。 将计算机升级到 Windows 10 版本 1803 后，请访问包含数千个文件和文件夹的网络共享，并打开位于该共享上的文档。 在这两个操作期间，均会遇到明显的延迟。
+     >  
+     > 若要解决此问题，请安装 Windows 10 版本 1809 或更高版本。
+     >  
+     > 若要解决此问题，请将 **DirectoryCacheLifetime** 设置为 **0**。
+     >  
+     > 此问题会影响 Windows 10 的以下版本：  
+     > - Windows 10 企业版版本 1803
+     > - Windows 10 专业工作站版版本 1803
+     > - Windows 10 专业教育版版本 1803
+     > - Windows 10 专业版版本 1803
+     > - Windows 10 教育版版本 1803
+     > - Windows 10 家庭版版本 1803
+   
 -   **DirectoryCacheEntrySizeMax**
 
     ```
@@ -213,7 +232,7 @@ ms.locfileid: "71370220"
 
 客户端计算机的常规优化参数可以优化计算机，帮助其访问远程文件共享，特别是通过一些高延迟网络（例如，分支机构、跨数据中心通信、家庭办公室和移动宽带）进行的访问。 所有计算机上的这些设置都不是最佳或最合适的。 应在应用各个设置之前评估其影响。
 
-| 参数                   | 值 | 默认 |
+| 参数                   | 值 | 默认值 |
 |-----------------------------|-------|---------|
 | DisableBandwidthThrottling  | 1     | 0       |
 | FileInfoCacheEntriesMax     | 32768 | 64      |

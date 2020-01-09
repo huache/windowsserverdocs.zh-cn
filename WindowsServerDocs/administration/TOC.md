@@ -2,8 +2,7 @@
 ## [使用 Windows Admin Center 管理你的环境（新增功能！）](../manage/windows-admin-center/overview.md)
 ## 管理 Windows Server 系统和环境
 ### [管理 Windows Server 混合云打印](hybrid-cloud-print/hybrid-cloud-print-overview.md)
-#### [部署 Windows Server 混合云打印与预身份验证](hybrid-cloud-print/hybrid-cloud-print-deploy.md)
-#### [部署 Windows Server 混合云打印与直通身份验证](hybrid-cloud-print/hybrid-cloud-print-deploy-passthrough.md)
+#### [部署 Windows Server 混合云打印](hybrid-cloud-print/hybrid-cloud-print-deploy.md)
 ### [什么是服务器核心安装选项？](server-core/what-is-server-core.md)
 #### [服务器核心安装选项中包含哪些内容？](server-core/server-core-roles-and-services.md)
 #### [服务器核心中的基本管理任务](server-core/server-core-administer.md)

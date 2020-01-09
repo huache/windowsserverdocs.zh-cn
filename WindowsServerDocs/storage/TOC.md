@@ -41,6 +41,17 @@
 ### [NTFS 概述](file-server/ntfs-overview.md)
 ### [卷影复制服务](file-server/volume-shadow-copy-service.md)
 ### [使用磁盘清理](file-server/disk-cleanup.md)
+### [对 SMB 进行高级故障排除](file-server/Troubleshoot/troubleshooting-smb.md)
+#### [检测、启用和禁用 SMBv1、SMBv2 与 SMBv3](file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md)
+#### [默认情况下不安装 SMBv1](file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md)
+### [SMB 已知问题](file-server/Troubleshoot/smb-known-issues.md)
+#### [TCP 三向握手失败](file-server/Troubleshoot/tcp-three-way-handshake-fails.md)
+#### [协商、会话设置和树连接故障](file-server/Troubleshoot/negotiate-session-setup-tree-connect-fails.md)
+#### [TCP 连接在验证协商期间中止](file-server/Troubleshoot/abort-during-validate-negotiate.md)
+#### [SMB 文件传输速度缓慢](file-server/Troubleshoot/slow-file-transfer.md)
+#### [CPU 使用率高](file-server/Troubleshoot/high-cpu-usage-issue-on-smb-server.md)
+#### [故障排除事件 ID 50](file-server/Troubleshoot/troubleshoot-event-id-50-error.md)
+#### [排查 SMB 多通道问题](file-server/Troubleshoot/smb-multichannel-troubleshooting.md)
 ## [文件服务器资源管理器](fsrm/fsrm-overview.md)
 ### [清单：将配额应用于卷或文件夹](fsrm/checklist-apply-quota-to-volume-or-folder.md)
 ### [清单：将文件屏蔽应用于卷或文件夹](fsrm/checklist-apply-file-screen-to-volume-or-folder.md)
@@ -117,7 +128,7 @@
 #### [了解并监视存储重新同步](storage-spaces/understand-storage-resync.md)
 #### [群集和池仲裁](storage-spaces/understand-quorum.md)
 #### [群集集](storage-spaces/cluster-sets.md)
-### 规划
+### 计划
 #### [硬件要求](storage-spaces/storage-spaces-direct-hardware-requirements.md)
 #### [使用 CSV 内存中读取缓存](storage-spaces/csv-cache.md)
 #### [选择驱动器](storage-spaces/choosing-drives.md)
@@ -152,7 +163,7 @@
 #### [分隔卷的分配](storage-spaces/delimit-volume-allocation.md)
 #### [使用 Azure Monitor 进行监视](storage-spaces/configure-azure-monitor.md)
 
-### 排除故障
+### 疑难解答
 #### [故障排除方案](storage-spaces/troubleshooting-storage-spaces.md)
 #### [运行状况和操作状态](storage-spaces/storage-spaces-states.md)
 #### [收集数据](storage-spaces/data-collection.md)
