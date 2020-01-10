@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2cd84949dddf75730aca6302f1244f784b5933d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6b8ebfe0a6b42fe174d4b376b981641f043cf58
+ms.sourcegitcommit: 3d5a8357491b6bbd180d1238ea98f23bfc544ac7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388572"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827674"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>步骤1配置基本 DirectAccess 基础结构
 
@@ -82,7 +82,7 @@ ms.locfileid: "71388572"
 -   在远程访问服务器上手动配置组织 IPv4 和 IPv6 路由。 添加已发布的路由，以便将所有具有组织 (/48) IPv6 前缀的通信都转发到内部网络。 此外，对于 IPv4 通信，请添加显式路由，以便将 IPv4 通信转发到内部网络。  
   
 ## <a name="ConfigFirewalls"></a>配置防火墙  
-在部署中使用其它防火墙的情况下，当远程访问服务器位于 IPv4 Internet 上时，应用远程访问通信的以下面向 Internet 的防火墙例外情况：  
+在部署中使用其他防火墙的情况下，当远程访问服务器位于 IPv4 Internet 上时，应用远程访问通信的以下面向 Internet 的防火墙例外情况：  
   
 -   6to4 流量-IP 协议41入站和出站。  
   
@@ -94,7 +94,7 @@ ms.locfileid: "71388572"
 > [!NOTE]  
 > 对于 Teredo 和 6to4 通信，这些例外应适用于远程访问服务器上两个面向 Internet 的连续公用 IPv4 地址。 对于 IP-HTTPS，仅需将例外情况应用于外部服务器名称解析为的地址。  
   
-在使用其它防火墙的情况下，当远程访问服务器位于 IPv6 Internet 上时，应用远程访问通信的以下面向 Internet 的防火墙例外：  
+在使用其他防火墙的情况下，当远程访问服务器位于 IPv6 Internet 上时，应用远程访问通信的以下面向 Internet 的防火墙例外：  
   
 -   IP 协议 50  
   
@@ -187,7 +187,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
-请注意，输入下面的 Add-Computer 命令后，必须提供域凭据。  
+注意：输入下面的“Add-Computer”命令后，你必须提供域凭据。  
   
 ```  
 Add-Computer -DomainName <domain_name>  
@@ -208,7 +208,10 @@ Restart-Computer
 > 4.  如果在运行 DirectAccess 向导之前尚未链接到 OU，则配置完成后，管理员可以将 DirectAccess 组策略对象链接到所需的组织单位。 可以删除指向域的链接。 可在[此处](https://technet.microsoft.com/library/cc732979.aspx)找到将组策略对象链接到组织单位的步骤  
   
 > [!NOTE]  
-> 如果手动创建了组策略对象，则在 DirectAccess 配置过程中可能无法使用组策略对象。 可能未将组策略对象复制到最接近管理计算机的域控制器。 在这种情况下，管理员可以等待复制完成，或者强制进行复制。  
+> 如果手动创建了组策略对象，则在 DirectAccess 配置过程中可能无法使用组策略对象。 可能未将组策略对象复制到最接近管理计算机的域控制器。 在这种情况下，管理员可以等待复制完成，或者强制进行复制。
+
+> [!Warning]
+> 不支持使用 DirectAccess 安装向导之外的任何方法来配置 DirectAccess，如直接修改 DirectAccess 组策略对象或手动修改服务器或客户端上的默认策略设置。
   
 ## <a name="ConfigSGs"></a>配置安全组  
 客户端计算机组策略对象中包含的 DirectAccess 设置仅应用于配置远程访问时指定的安全组成员的计算机。  
