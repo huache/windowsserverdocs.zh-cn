@@ -8,15 +8,15 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: c45ac44448326ec3a236a685387b7969d21aa607
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 04d39f222fbbc7943cc2074a857a76f38832935d
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395657"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919872"
 ---
 # <a name="windows-time-service-technical-reference"></a>Windows 时间服务技术参考
->适用于：Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 10 或更高版本
+>适用于： Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 或更高版本
 
 W32Time 服务为计算机提供网络时钟同步，而无需进行大量配置。 W32Time 服务对于成功操作 Kerberos V5 身份验证至关重要，因此，对于基于 AD DS 的身份验证至关重要。 任何 Kerberos 感知应用程序（包括大多数安全服务）都依赖于加入身份验证请求的计算机之间的时间同步。 AD DS 域控制器还必须具有同步的时钟，以帮助确保准确的数据复制。
 
@@ -31,17 +31,15 @@ W32Time 服务在名为 W32Time 的动态链接库（默认情况下安装在 **
 时间协议在两台计算机之间进行通信以交换时间信息，然后使用该信息同步其时钟。 使用 Windows 时间服务时间协议，客户端从服务器请求时间信息，并根据收到的信息同步其时钟。
   
 Windows 时间服务使用 NTP 来帮助在网络之间同步时间。 NTP 是一种 Internet 时间协议，其中包括同步时钟所需的专业算法。 NTP 是比在某些版本的 Windows 中使用的简单网络时间协议（SNTP）更准确的时间协议;但是，W32Time 继续支持 SNTP，以便能够与运行基于 SNTP 的时间服务（例如 Windows 2000）的计算机向后兼容。
-<!-- maybe this should be its own topic under the Tech Ref section -->
 ## <a name="where-to-find-windows-time-service-configuration-related-information"></a>在哪里可以找到与 Windows 时间服务配置相关的信息  
 本指南**不**讨论如何配置 Windows 时间服务。 Microsoft TechNet 和 Microsoft 知识库中提供了几个不同的主题，其中介绍了配置 Windows 时间服务的过程。 如果需要配置信息，请遵循以下主题来帮助你找到相应的信息。  
-<!-- should this be an if/then table -->
--   若要为林根主域控制器（PDC）仿真器配置 Windows 时间服务，请参阅：  
+-   若要为林根主域控制器（PDC）仿真器配置 Windows 时间服务，请参阅：
   
     -   [在林根域中的 PDC 模拟器上配置 Windows 时间服务](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29) 
   
     -   [为林配置时间源](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc794823%28v%3dws.10%29) 
   
-    -   Microsoft 知识库文章816042，[如何在 Windows server 中配置权威时间服务器](https://go.microsoft.com/fwlink/?LinkID=60402)，描述运行 Windows Server 2008 R2、windows server 2008、windows server 2003 和 windows 的计算机的配置设置Server 2003 R2。  
+    -   Microsoft 知识库文章816042：[如何在 Windows server 中配置权威时间服务器](https://go.microsoft.com/fwlink/?LinkID=60402)，此服务器描述运行 Windows Server 2008 R2、windows server 2008、windows server 2003 和 windows Server 2003 R2 的计算机的配置设置。  
   
 -   若要在任何域成员客户端或服务器上配置 Windows 时间服务，甚至在未配置为林根 PDC 模拟器的域控制器上配置 Windows 时间服务，请参阅为[自动域时间同步配置客户端计算机](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29)。  
   
@@ -52,9 +50,9 @@ Windows 时间服务使用 NTP 来帮助在网络之间同步时间。 NTP 是�
   
 -   若要在运行虚拟环境的主计算机上配置 Windows 时间服务，请参阅 Microsoft 知识库文章816042：[如何在 Windows server 中配置权威时间服务器](https://go.microsoft.com/fwlink/?LinkID=60402)。 如果你使用非 Microsoft 虚拟化产品，请务必查阅该产品的供应商文档。  
   
--   若要在虚拟机中运行的域控制器上配置 Windows 时间服务，建议您部分禁用充当域控制器的主机系统和来宾操作系统之间的时间同步。 这会使来宾域控制器为域层次结构同步时间，但如果从已保存状态还原，则保护其不会发生时间偏差。 有关详细信息，请参阅 Microsoft 知识库文章976924：在使用 Hyper-v 和部署的[基于 Windows Server 2008 的主机服务器上运行的虚拟化域控制器上收到 Windows 时间服务事件 id 24、29和 38](https://go.microsoft.com/fwlink/?LinkID=192236) [虚拟化域控制器的注意事项](https://go.microsoft.com/fwlink/?LinkID=192235)。  
+-   若要在虚拟机中运行的域控制器上配置 Windows 时间服务，建议您部分禁用充当域控制器的主机系统和来宾操作系统之间的时间同步。 这会使来宾域控制器为域层次结构同步时间，但如果从已保存状态还原，则保护其不会发生时间偏差。 有关详细信息，请参阅 Microsoft 知识库文章976924：在[使用 hyper-v 的基于 Windows Server 2008 的主机服务器上运行的虚拟化域控制器上收到 Windows 时间服务事件 id 24、29和 38](https://go.microsoft.com/fwlink/?LinkID=192236) ，以及[针对虚拟化域控制器的部署注意事项](https://go.microsoft.com/fwlink/?LinkID=192235)。  
   
--   若要在充当同时在虚拟机中运行的林根 PDC 模拟器的域控制器上配置 Windows 时间服务，请按照在[PDC 上配置 Windows 时间服务中所述，为物理计算机执行相同的说明目录林根级域中的模拟器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29)。  
+-   若要在充当同时在虚拟机中运行的林根 PDC 模拟器的域控制器上配置 Windows 时间服务，请按照在[林根域中的 PDC 模拟器上配置 Windows 时间服务](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29)中所述，对物理计算机执行相同的说明。  
   
 -   若要在作为虚拟计算机运行的成员服务器上配置 Windows 时间服务，请使用 "[为自动域时间同步配置客户端计算机](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29)" 中所述的域时间层次结构。
 
@@ -67,5 +65,5 @@ Windows 时间服务使用 NTP 来帮助在网络之间同步时间。 NTP 是�
 - [Windows Server 2016 的时间准确性改进](windows-server-2016-improvements.md)  
 - [Windows 时间服务的工作原理](How-the-Windows-Time-Service-Works.md)  
 - [Windows 时间服务工具和设置](Windows-Time-Service-Tools-and-Settings.md)  
-- [支持边界为高准确性环境配置 Windows 时间服务](support-boundary.md)
+- [为高精度环境配置 Windows 时间服务的支持边界](support-boundary.md)
 - [Microsoft 知识库文章902229](https://go.microsoft.com/fwlink/?LinkId=186066)
