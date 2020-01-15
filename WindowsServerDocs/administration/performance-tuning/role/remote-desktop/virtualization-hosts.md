@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: dbdf211138ddcd553171f3c8ce9c2e915ccf0057
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 1b66f6404df5debee2a4c52ffc9166c8eabb9f81
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812269"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947120"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>性能优化远程桌面虚拟化主机
 
@@ -20,7 +20,7 @@ ms.locfileid: "72812269"
 
 Windows Server 支持两种类型的虚拟桌面：个人虚拟机和共用虚拟机。
 
-## <a name="general-considerations"></a>一般注意事项
+## <a name="general-considerations"></a>常规注意事项
 
 ### <a name="storage"></a>存储
 
@@ -63,7 +63,7 @@ Enable-DedupVolume <volume> -UsageType HyperV
 
 ## <a name="performance-optimizations"></a>性能优化
 
-### <a name="dynamic-memory"></a>动态内存
+### <a name="dynamic-memory"></a>Dynamic Memory
 
 通过平衡内存在运行的虚拟机之间的分布情况，动态内存可以更有效地利用运行 Hyper-v 的服务器的内存资源。 可以在虚拟机之间动态分配内存，以响应其变化的工作负荷。
 
@@ -81,7 +81,7 @@ RD 虚拟化主机支持用于虚拟桌面池的分层存储。 集合中所有�
 
 ### <a name="csv-cache"></a>CSV 缓存
 
-Windows Server 2012 和更高版本中的故障转移群集提供群集共享卷（CSV）上的缓存。 这对于共用虚拟桌面集合非常有利，其中大多数读取 i/o 都来自管理操作系统。 CSV 缓存按几个数量级提供更高的性能，因为它会缓存一次读取的块并从系统内存中传递它们，从而减少 i/o。 有关 CSV 缓存的详细信息，请参阅[如何启用 Csv 缓存](http://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx)。
+Windows Server 2012 和更高版本中的故障转移群集提供群集共享卷（CSV）上的缓存。 这对于共用虚拟桌面集合非常有利，其中大多数读取 i/o 都来自管理操作系统。 CSV 缓存按几个数量级提供更高的性能，因为它会缓存一次读取的块并从系统内存中传递它们，从而减少 i/o。 有关 CSV 缓存的详细信息，请参阅[如何启用 Csv 缓存](https://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx)。
 
 ### <a name="pooled-virtual-desktops"></a>共用虚拟机
 
@@ -106,7 +106,7 @@ Windows Server 2012 和更高版本中的故障转移群集提供群集共享卷
 | Internet 连接共享                  | 以用户为中心的服务                                                                                                                                                                                  |
 | Media Center 扩展服务               | 以用户为中心的服务                                                                                                                                                                                  |
 > [!NOTE]
-> 此列表并不是完整列表，因为任何更改都将影响目标和方案。 有关详细信息，请参阅[热关闭按下、立即获取 Windows 8 VDI 优化脚本、/pfe！](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)。
+> 此列表并不是完整列表，因为任何更改都将影响目标和方案。 有关详细信息，请参阅[热关闭按下、立即获取 Windows 8 VDI 优化脚本、/pfe！](https://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)。
 
 
 > [!NOTE]

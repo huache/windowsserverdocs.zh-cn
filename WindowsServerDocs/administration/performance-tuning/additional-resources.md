@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 498e72377197bd2185a518949520275c36295a77
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee14a2bd9290dbaa5653640a80528d163635142d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355074"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947214"
 ---
 # <a name="additional-performance-tuning-resources"></a>其他性能优化资源
 
@@ -25,7 +25,7 @@ ms.locfileid: "71355074"
 
 -   [事务处理性能委员会](http://www.tpc.org/)
 
--   [Windows 评估和部署工具包](https://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit)
+-   [Windows 评估和部署工具包](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
 
 ## <a name="power-management-tuning-resources"></a>电源管理优化资源
 
@@ -33,7 +33,7 @@ ms.locfileid: "71355074"
 
 -   [使用 PowerCfg 评估系统能效](https://technet.microsoft.com/library/cc748940.aspx)
 
--   [中断关联策略工具](https://support.microsoft.com/en-us/kb/252867)
+-   [中断关联策略工具](https://support.microsoft.com/kb/252867)
 
 ## <a name="networking-subsystem-tuning-resources"></a>网络子系统优化资源
 
@@ -65,7 +65,7 @@ ms.locfileid: "71355074"
 
 -   [Hyper-v 动态内存配置指南](https://technet.microsoft.com/library/ff817651.aspx)
 
--   [NUMA 节点均衡](http://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
+-   [NUMA 节点均衡](https://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
 
 -   [Hyper-v WMI 提供程序](https://msdn2.microsoft.com/library/cc136992(VS.85).aspx)
 
@@ -73,9 +73,9 @@ ms.locfileid: "71355074"
 
 -   [关于虚拟机和来宾操作系统](https://technet.microsoft.com/library/cc794868(v=ws.10))
 
--   [优化 Hyper-v 存储并对其进行故障排除](http://blogs.msdn.com/b/microsoft_press/archive/2013/07/24/new-book-optimizing-and-troubleshooting-hyper-v-storage.aspx)
+-   [优化 Hyper-v 存储并对其进行故障排除](https://blogs.msdn.com/b/microsoft_press/archive/2013/07/24/new-book-optimizing-and-troubleshooting-hyper-v-storage.aspx)
 
--   [对 Hyper-v 网络进行优化和故障排除](http://blogs.msdn.com/b/microsoft_press/archive/2013/07/12/rtm-d-today-optimizing-and-troubleshooting-hyper-v-networking.aspx)
+-   [对 Hyper-v 网络进行优化和故障排除](https://blogs.msdn.com/b/microsoft_press/archive/2013/07/12/rtm-d-today-optimizing-and-troubleshooting-hyper-v-networking.aspx)
 
 ## <a name="print-server-tuning-resources"></a>打印服务器优化资源
 

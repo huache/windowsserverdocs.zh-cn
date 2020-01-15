@@ -7,12 +7,12 @@ ms.technology: storage-file-systems
 ms.topic: article
 author: jasongerend
 ms.date: 05/22/2018
-ms.openlocfilehash: 5de8b36916624b595d8f2ac9ddb0c000e015ee65
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cab92de2a96f1d44c8ad6a33e84aba08cad38837
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366062"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950243"
 ---
 # <a name="storage-spaces-overview"></a>存储空间概述
 
@@ -20,7 +20,7 @@ ms.locfileid: "71366062"
 
 使用存储空间有四种主要方式：
 
-- **在 WINDOWS 电脑上**-有关详细信息，请参阅[Windows 10 中的存储空间](http://windows.microsoft.com/en-us/windows-10/storage-spaces-windows-10)。
+- **在 WINDOWS 电脑上**-有关详细信息，请参阅[Windows 10 中的存储空间](https://windows.microsoft.com/windows-10/storage-spaces-windows-10)。
 - **在单个服务器上具有所有存储的独立服务器上**-有关详细信息，请参阅在[独立服务器上部署存储空间](deploy-standalone-storage-spaces.md)。
 - **在群集服务器上使用存储空间直通，并在每个群集节点中使用直接连接的存储**-有关详细信息，请参阅[存储空间直通概述](storage-spaces-direct-overview.md)。
 - **在具有一个或多个共享 sas 存储机箱的群集服务器上保存所有驱动器**-有关详细信息，请参阅[具有共享 SAS 的群集上的存储空间概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831739(v%3dws.11))。

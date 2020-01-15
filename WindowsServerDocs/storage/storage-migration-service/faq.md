@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 6895c4b5f74beb237378060f82135d6f578986b7
-ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
+ms.openlocfilehash: b7a6dd37cfc054ead153d274ffa7f0d13844305e
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973864"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953032"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>存储迁移服务常见问题（FAQ）
 
@@ -42,7 +42,7 @@ ms.locfileid: "71973864"
 
 ## <a name="is-domain-controller-migration-supported"></a>是否支持域控制器迁移？
 
-存储迁移服务当前不迁移 Windows Server 2019 中的域控制器。 作为一种解决方法，只要 Active Directory 域中有多个域控制器，则在迁移域控制器之前将其降级，然后在剪切完成后将目标提升。
+存储迁移服务当前不迁移 Windows Server 2019 中的域控制器。 作为一种解决方法，只要 Active Directory 域中有多个域控制器，则在迁移域控制器之前将其降级，然后在剪切完成后将目标提升。 如果选择迁移域控制器源或目标，将无法进行剪切。 在从或迁移到域控制器时，不能迁移用户和组。
 
 ## <a name="what-attributes-are-migrated-by-the-storage-migration-service"></a>存储迁移服务迁移哪些属性？
 
@@ -59,17 +59,17 @@ ms.locfileid: "71973864"
     - 并发用户限制
     - 持续可用
     - 描述           
-    - 加密数据
+    - 对数据进行加密
     - 标识远程处理
     - 基础结构
     - 名称
-    - Path
-    - 划分
+    - 路径
+    - 范围内
     - 作用域名称
     - 安全描述符
     - 卷影副本
-    - 专题
-    - 权宜之计
+    - 特殊
+    - Temporary
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>是否可以将多个服务器合并到一个服务器？
 
@@ -89,9 +89,9 @@ Windows Server 2019 中随附的存储迁移服务版本不支持迁移文件的
 
 - **为目标操作系统使用 Windows Server 2019。** Windows Server 2019 包含存储迁移服务代理服务。 当你安装此功能并迁移到 Windows Server 2019 目标时，所有传输操作都将作为源和目标之间的直接可见。 如果目标计算机是 Windows Server 2012 R2 或 Windows Server 2016，则在传输过程中，此服务在 orchestrator 运行，这意味着传输双跃点，将会慢得多。 如果有多个作业使用 Windows Server 2012 R2 或 Windows Server 2016 目标运行，则协调器会成为瓶颈。 
 
-- **更改默认传输线程。** 存储迁移服务代理服务在给定的作业中同时复制8个文件。 你可以通过在运行存储迁移服务代理的每个节点上，通过在 decimal 中调整以下注册表 REG_DWORD 值名称，增加同时复制线程数：
+- **更改默认传输线程。** 存储迁移服务代理服务在给定的作业中同时复制8个文件。 可以通过在运行存储迁移服务代理的每个节点上，通过以下方式调整以下注册表 REG_DWORD 值名称，从而增加同步复制线程数：
 
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy
+    HKEY_Local_Machine \Software\Microsoft\SMSProxy
     
     FileTransferThreadCount
 
@@ -110,7 +110,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持迁移文件的
    - 使用 NIC 组合配置的更多网络适配器之一
    - 一个或多个支持 RDMA 的网络适配器
 
-- **更新驱动程序。** 根据需要，安装最新的供应商存储和机箱固件及驱动程序、最新的供应商 HBA 驱动程序、最新的供应商 BIOS/UEFI 固件、最新的供应商网络驱动程序和最新的主板芯片驱动程序。服务器. 根据需要重启节点。 请查看配置共享存储和网络硬件的硬件供应商文档。
+- **更新驱动程序。** 根据需要，安装最新的供应商存储和机箱固件及驱动程序、最新的供应商 HBA 驱动程序、最新的供应商 BIOS/UEFI 固件、最新的供应商网络驱动程序以及源、目标和 orchestrator 服务器上的最新主板芯片驱动程序 根据需要重启节点。 请查看配置共享存储和网络硬件的硬件供应商文档。
 
 - **启用高性能处理。** 确保服务器的 BIOS/UEFI 设置启用高性能，例如禁用 C-State、设置 QPI 速度、启用 NUMA 和设置最高内存频率。 确保 Windows Server 中的电源管理设置为高性能。 根据需要重启。 完成迁移后，请不要忘记将这些状态返回到适当的状态。 
 
@@ -134,7 +134,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移
 4. 将文件夹移动到 orchestrator 计算机上的另一个驱动器。
 5. 设置以下注册表 REG_SZ 值：
 
-    HKEY_Local_Machine\Software\Microsoft\SMS DatabasePath =*指向不同卷上的新数据库文件夹的路径*。 
+    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath =*指向不同卷上的新数据库文件夹的路径*。 
 6. 确保系统对该文件夹的所有文件和子文件夹具有 "完全控制"
 7. 删除自己的帐户权限。
 8. 启动 "存储迁移服务" 服务。
@@ -158,6 +158,6 @@ Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移
  - [Windows Server 2019 Technet 论坛](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc)上的文章 
  - 通过[Microsoft 支持部门](https://support.microsoft.com)打开支持案例
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [存储迁移服务概述](overview.md)

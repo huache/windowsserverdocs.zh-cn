@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: d4046cc10a5e0fdc12cfb9587eef10d4263c2ddd
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 503cd64cac0673829fe21bc15e8ad9d6a83bbb15
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74904017"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950518"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>哪种安装类型适合你？
 
@@ -71,7 +71,7 @@ Microsoft Edge （包括[Microsoft edge 有问必答](https://microsoftedgeinsid
 > 
 > 在 PowerShell 中键入 `$PSVersiontable`，以验证是否安装了 WMF 并且版本是否为 5.1 或更高版本。 
 > 
-> 如果未安装 WMF，你可以[下载 wmf 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
+> 如果未安装 WMF，你可以[下载 wmf 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
 
 ## <a name="high-availability"></a>高可用性
 

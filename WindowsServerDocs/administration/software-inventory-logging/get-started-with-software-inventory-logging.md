@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a38c984b2d81fc4db980a969ef0312109950b867
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: add11bf51570e3cafa2bd03ee3585de89f3eecab
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382996"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946959"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>软件清单日志记录入门
 
@@ -26,8 +26,8 @@ ms.locfileid: "71382996"
 
  软件清单日志记录按服务器收集 Microsoft 软件清单数据。 在 Windows Server 2012 R2 中使用软件清单日志记录之前，请确保在要列出清单的每个系统上安装 Windows 更新[kb 3000850](https://support.microsoft.com/kb/3000850)和[kb 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 不需要 Windows 更新。 此外，如果想要使用 SIL 将数据转发到聚合服务器，请确保 SSL 证书对于网络有效。
 
-## <a name="BKMK_OVER"></a>功能说明
-Windows Server 中软件清单日志记录功能包含一组简单的 PowerShell cmdlet，可帮助服务器管理员检索其服务器上安装的 Microsoft 软件的列表。 它还提供了使用 HTTPS 协议通过网络定期收集数据并将此数据转发到目标 Web 服务器进行聚合的功能。 对该功能（主要是按小时进行收集和转发）的管理也可以通过 PowerShell 命令完成。
+## <a name="BKMK_OVER"></a>功能描述
+Windows Server 中的软件清单日志记录功能包含一组简单的 PowerShell cmdlet，可帮助服务器管理员检索其服务器上安装的 Microsoft 软件的列表。 它还提供了使用 HTTPS 协议通过网络定期收集此数据并将其转发到目标 Web 服务器进行聚合的功能。 对该功能（主要是按小时进行收集和转发）的管理也可以通过 PowerShell 命令完成。
 
 > [!NOTE]
 > 可以单独配置一台运行 Web 服务的聚合服务器。 了解有关 [软件清单日志记录聚合器](software-inventory-logging-aggregator.md)的详细信息。
@@ -49,5 +49,5 @@ Windows Server 中软件清单日志记录功能包含一组简单的 PowerShell
 [管理软件清单日志记录](manage-software-inventory-logging.md)<br>
 [Windows PowerShell 中的软件清单日志记录 Cmdlet](https://technet.microsoft.com/library/dn283390.aspx)<br>
 [Microsoft 评估和规划工具包](https://www.microsoft.com/download/en/details.aspx?id=7826)
-[批量激活管理工具](http://blogs.technet.com/b/volume-licensing/)
+[批量激活管理工具](https://blogs.technet.com/b/volume-licensing/)
 

@@ -7,12 +7,12 @@ ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 ms.date: 03/27/2018
-ms.openlocfilehash: f7d20a099f287d2ee05ae6e908c173e1eb3cfc66
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc1799db76f528a599ef70eec5093da0a76206a2
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361840"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948529"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>群集操作系统滚动升级
 
@@ -52,7 +52,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支持群集操作系
 - 不支持将存储空间直通群集升级到 Windows Server 1709 版。
 - 如果群集工作负载为 Hyper-v Vm 或横向扩展文件服务器，则可以预见到零停机时间的升级。
 - 使用以下方法之一验证 Hyper-v 节点具有支持二级寻址表（SLAT）的 Cpu。  
-        -请查看[是否与 SLAT 兼容？WP8 SDK Tip 01](http://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx)介绍了两种方法来检查 CPU 是否支持 SLATs 的文章  
+        -请查看[是否与 SLAT 兼容？WP8 SDK Tip 01](https://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx)介绍了两种方法来检查 CPU 是否支持 SLATs 的文章  
         -下载[Coreinfo v 3.31](https://technet.microsoft.com/sysinternals/cc835722)工具以确定 CPU 是否支持 SLAT。
 
 ## <a name="cluster-transition-states-during-cluster-os-rolling-upgrade"></a>群集操作系统滚动升级期间的群集转换状态
@@ -263,7 +263,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支持群集操作系
     是的，我们已设计好群集操作系统滚动升级，可以使用 PowerShell 自动完成。  
 
 **对于具有额外工作负荷和故障转移容量的大型群集，能否同时升级多个节点？**  
-    是。 从群集中删除一个节点以升级 OS 时，群集将有一个较小的故障转移节点，因此，故障转移能力会降低。 对于具有足够工作负荷和故障转移容量的大型群集，可以同时升级多个节点。 可以暂时将群集节点添加到群集，以便在群集操作系统滚动升级过程中提供改善的工作负荷和故障转移容量。  
+    是 从群集中删除一个节点以升级 OS 时，群集将有一个较小的故障转移节点，因此，故障转移能力会降低。 对于具有足够工作负荷和故障转移容量的大型群集，可以同时升级多个节点。 可以暂时将群集节点添加到群集，以便在群集操作系统滚动升级过程中提供改善的工作负荷和故障转移容量。  
 
 **如果在[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)成功运行后发现群集中的问题，该怎么办？**  
     如果在运行[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)之前已使用系统状态备份对群集数据库进行了备份，则应该能够在 Windows Server 2012 R2 群集节点上执行权威还原，并还原原始群集数据库和配置。  

@@ -8,30 +8,30 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: b7a89ce8d72cf4f060e83b3653b3b2d93eed5cfd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 87cf428482e2812e72d5cb527b35e90c46c8a3a1
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402032"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950277"
 ---
 # <a name="deploying-roaming-user-profiles"></a>部署漫游用户配置文件
 
->适用于：Windows 10，Windows 8.1，Windows 8，Windows 7，Windows Server 2019，Windows Server 2016，Windows Server （半年频道），Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+>适用于： Windows 10，Windows 8.1，Windows 8，Windows 7，Windows Server 2019，Windows Server 2016，Windows Server （半年频道），Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
 
 本主题介绍如何使用 Windows Server 将[漫游用户配置文件](folder-redirection-rup-overview.md)部署到 windows 客户端计算机。 漫游用户配置文件将用户配置文件重定向到文件共享，以便用户在多台计算机上接收相同的操作系统和应用程序设置。
 
 有关本主题最近更改的列表，请参阅本主题的[更改历史记录](#change-history)部分。
 
 > [!IMPORTANT]
-> 由于[MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016)中的安全更改，我们更新[了步骤4：可以选择在本主题中为漫游](#step-4-optionally-create-a-gpo-for-roaming-user-profiles)用户配置文件创建 GPO，以便 Windows 能够正确地应用漫游用户配置文件策略（而不是还原到受影响的 pc 上的本地策略）。
+> 由于[MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016)中的安全更改，我们更新了[步骤4：（可选）为漫游用户配置文件创建 GPO](#step-4-optionally-create-a-gpo-for-roaming-user-profiles) ，以便 Windows 可以正确应用漫游用户配置文件策略（而不是还原到受影响的 pc 上的本地策略）。
 
 > [!IMPORTANT]
 >  在以下配置中，操作系统就地升级后，开始的用户自定义将丢失：
 > - 为漫游配置文件配置用户
 > - 允许用户更改开始
 >
-> 因此，在操作系统就地升级之后，开始菜单将重置为新 OS 版本的默认值。 有关解决方法， [请参阅附录 C：解决升级](#appendix-c-working-around-reset-start-menu-layouts-after-upgrades)后的 "重置开始" 菜单布局。
+> 因此，在操作系统就地升级之后，开始菜单将重置为新 OS 版本的默认值。 有关解决方法，请参阅[附录 C：升级后重置开始菜单布局](#appendix-c-working-around-reset-start-menu-layouts-after-upgrades)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -65,9 +65,9 @@ ms.locfileid: "71402032"
 - 为漫游用户配置文件分配足够的存储空间。 如果支持两个操作系统版本，则配置文件的数目将增加一倍（因此占用了总空间），因为将为每个操作系统版本维护单独的配置文件。
 - 不要在运行 Windows Vista/Windows Server 2008 和 Windows 7/Windows Server 2008 R2 的计算机之间使用漫游用户配置文件。 由于其配置文件版本不兼容，因此不支持在这些操作系统版本之间漫游。
 - 通知用户，在一个操作系统版本上进行的更改将不会漫游到另一个操作系统版本。
-- 将你的环境移到使用不同配置文件版本的 windows 版本（例如，从 windows 10 到 windows 10，版本1607）时， [请参阅附录 B：配置文件的版本](#appendix-b-profile-version-reference-information)引用信息），用户将收到一个新的空漫游用户配置文件。 你可以通过使用文件夹重定向重定向常用文件夹来最大程度地减少获取新配置文件所造成的影响。 不支持将漫游用户配置文件从一个配置文件版本迁移到另一个版本的方法。
+- 将你的环境移到使用不同配置文件版本（例如，从 Windows 10 到 Windows 10、版本1607）的 Windows 版本时，用户将收到一个[新的空](#appendix-b-profile-version-reference-information)漫游用户配置文件。 你可以通过使用文件夹重定向重定向常用文件夹来最大程度地减少获取新配置文件所造成的影响。 不支持将漫游用户配置文件从一个配置文件版本迁移到另一个版本的方法。
 
-## <a name="step-1-enable-the-use-of-separate-profile-versions"></a>第 1 步：支持使用单独的配置文件版本
+## <a name="step-1-enable-the-use-of-separate-profile-versions"></a>步骤 1：支持使用单独的配置文件版本
 
 如果你在运行 Windows 8.1、Windows 8、Windows Server 2012 R2 或 Windows Server 2012 的计算机上部署漫游用户配置文件，我们建议你在部署之前对 Windows 环境进行一些更改。 这些更改有助于确保将来的操作系统升级顺利进行，并且有助于同时运行多个版本带有漫游用户配置文件的 Windows。
 
@@ -75,10 +75,10 @@ ms.locfileid: "71402032"
 
 1. 在要使用漫游、强制、超级强制或域默认配置文件的所有计算机上下载并安装相应的软件更新：
 
-    - Windows 8.1 或 Windows Server 2012 R2：安装 Microsoft 知识库的文章[2887595](http://support.microsoft.com/kb/2887595)中所述的软件更新（如果已发布）。
-    - Windows 8 或 Windows Server 2012：安装 Microsoft 知识库的文章 [2887239](http://support.microsoft.com/kb/2887239) 中所述的软件更新。
+    - Windows 8.1 或 Windows Server 2012 R2：安装 Microsoft 知识库的文章[2887595](https://support.microsoft.com/kb/2887595)中所述的软件更新（如果已发布）。
+    - Windows 8 或 Windows Server 2012：安装 Microsoft 知识库的文章 [2887239](https://support.microsoft.com/kb/2887239) 中所述的软件更新。
 
-2. 在你将使用漫游用户配置文件的运行 Windows 8.1、Windows 8、Windows Server 2012 R2 或 Windows Server 2012 的所有计算机上，使用注册表编辑器或组策略来创建以下注册表项 DWORD 值，并将其`1`设置为。 有关使用组策略创建注册表项的信息，请参阅 [配置注册表项](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)。
+2. 在你将使用漫游用户配置文件的运行 Windows 8.1、Windows 8、Windows Server 2012 R2 或 Windows Server 2012 的所有计算机上，使用注册表编辑器或组策略来创建以下注册表项 DWORD 值，并将其设置为 `1`。 有关使用组策略创建注册表项的信息，请参阅 [配置注册表项](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)。
 
     ```
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ProfSvc\Parameters\UseProfilePathExtensionVersion
@@ -100,16 +100,16 @@ ms.locfileid: "71402032"
 1. 在安装了 Active Directory 管理中心的计算机上打开服务器管理器。
 2. 在 "**工具**" 菜单上，选择 " **Active Directory 管理中心**"。 此时将出现 Active Directory 管理中心。
 3. 右键单击相应的域或 OU，选择 "**新建**"，然后选择 "**组**"。
-4. 在“创建组”窗口的“组”部分，指定以下设置：
+4. 在“创建组” 窗口的“组” 部分，指定以下设置：
 
-    - 在“组名”中，键入安全组的名称，例如：**漫游用户配置文件相关用户和计算机**。
+    - 在“组名”中，键入安全组的名称，例如： **漫游用户配置文件相关用户和计算机**。
     - 在 "**组作用域**" 中，选择 "**安全性**"，然后选择 "**全局**"。
 
 5. 在 "**成员**" 部分中，选择 "**添加**"。 此时将出现“选择用户、联系人、计算机、服务帐户或组”对话框。
 6. 如果要将计算机帐户包括在安全组中，请选择 "**对象类型**"，选中 "**计算机**" 复选框，然后选择 **"确定"** 。
 7. 键入要向其部署漫游用户配置文件的用户、组和/或计算机的名称，选择 **"确定**"，然后再次选择 **"确定"** 。
 
-## <a name="step-3-create-a-file-share-for-roaming-user-profiles"></a>步骤 3:创建用于漫游用户配置文件的文件共享
+## <a name="step-3-create-a-file-share-for-roaming-user-profiles"></a>步骤 3：创建用于漫游用户配置文件的文件共享
 
 如果对于漫游用户配置文件（独立于任何用于重定向文件夹的共享，以防止意外缓存漫游配置文件文件夹），请使用以下过程在运行 Windows 的服务器上创建文件共享。服务.
 
@@ -121,16 +121,16 @@ ms.locfileid: "71402032"
 1. 在服务器管理器导航窗格中，选择 "**文件和存储服务**"，然后选择 "**共享**" 以显示 "共享" 页。
 2. 在 "共享" 磁贴中，选择 "**任务**"，然后选择 "**新建共享**"。 此时将出现新建共享向导。
 3. 在 "**选择配置文件**" 页上，选择 " **SMB 共享–快速**"。 如果你安装了文件服务器资源管理器并且使用的是文件夹管理属性，则改为选择 " **SMB 共享-高级**"。
-4. 在“共享位置”页上，选择你要在其上创建共享的服务器和卷。
+4. 在“共享位置” 页上，选择你要在其上创建共享的服务器和卷。
 5. 在“共享名” 页上，在“共享名”框中键入共享的名称（例如， **用户配置文件$** ）。
 
     > [!TIP]
     > 在创建共享时，通过在共享名后放置 ```$``` 来隐藏共享。 这会在普通浏览器中隐藏共享。
 
-6. 在“其他设置”页上，清除“启用连续可用性”复选框（如果存在），并且可以选择性地选中“启用基于访问的枚举”和“加密数据访问”复选框。
+6. 在“其他设置” 页上，清除“启用连续可用性” 复选框（如果存在），并且可以选择性地选中“启用基于访问的枚举” 和“加密数据访问” 复选框。
 7. 在 "**权限**" 页上，选择 "**自定义权限 ...** "。 将出现高级安全设置对话框。
 8. 选择 "**禁用继承**"，然后选择 **"将继承权限转换为对此对象的显式权限"** 。
-9. 按照对[承载漫游用户配置文件的文件共享的 "所需权限](#required-permissions-for-the-file-share-hosting-roaming-user-profiles)" 中所述的设置权限，并在以下屏幕截图中显示，删除未列出的组和帐户的权限，以及向漫游用户添加特殊权限配置您在步骤1中创建的 "用户和计算机" 组。
+9. 按照对[承载漫游用户配置文件的文件共享的 "所需权限](#required-permissions-for-the-file-share-hosting-roaming-user-profiles)" 中所述设置权限，并在以下屏幕截图中显示，删除未列出的组和帐户的权限，以及向在步骤1中创建的漫游用户配置文件用户和计算机组添加特殊权限。
     
     ![显示权限的高级安全设置窗口，如表1所述](media/advanced-security-user-profiles.jpg)
     
@@ -141,9 +141,9 @@ ms.locfileid: "71402032"
 
 ### <a name="required-permissions-for-the-file-share-hosting-roaming-user-profiles"></a>承载漫游用户配置文件的文件共享所需的权限
 
-| 用户帐户 | 访问 | 适用对象 |
+| 用户帐户 | 访问 | 适用范围 |
 |   -   |   -   |   -   |
-|   系统    |  完全控制     |  此文件夹、子文件夹和文件     |
+|   “系统”    |  完全控制     |  此文件夹、子文件夹和文件     |
 |  Administrators     |  完全控制     |  仅此文件夹     |
 |  创建者/所有者     |  完全控制     |  仅子文件夹和文件     |
 | 需要将数据放在共享中的用户（漫游用户配置文件用户和计算机）的安全组      |  列出文件夹/读取数据 *（高级权限）* <br />创建文件夹/附加数据 *（高级权限）* |  仅此文件夹     |
@@ -168,34 +168,34 @@ ms.locfileid: "71402032"
     此步骤是必需的，因为[MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016)中进行了安全更改。
 
 >[!IMPORTANT]
->由于[MS16-072A](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016)中的安全性更改，你现在必须向经过身份验证的用户组委派对 GPO 的读取权限-否则，gpo 将不会应用于用户; 如果已应用 gpo，则会删除 gpo，并将用户配置文件重定向回到本地 PC。 有关详细信息，请参阅[部署组策略安全更新 MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/)。
+>由于[MS16-072A](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016)中的安全性更改，你现在必须向经过身份验证的用户组委派对 GPO 的读取权限-否则，gpo 将不会应用于用户; 如果已应用 gpo，则会删除 gpo，并将用户配置文件重定向回本地 PC。 有关详细信息，请参阅[部署组策略安全更新 MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/)。
 
 ## <a name="step-5-optionally-set-up-roaming-user-profiles-on-user-accounts"></a>步骤 5：（可选）在用户帐户上设置漫游用户配置文件
 
-如果你要将漫游用户配置文件部署到用户帐户，请使用以下过程在 Active Directory 域服务中指定用于用户帐户的漫游用户配置文件。 如果要将漫游用户配置文件部署到计算机，通常对远程桌面服务或虚拟化桌面部署执行此[操作，请改为使用步骤6：（可选）在计算机](#step-6-optionally-set-up-roaming-user-profiles-on-computers)上设置漫游用户配置文件。
+如果你要将漫游用户配置文件部署到用户帐户，请使用以下过程在 Active Directory 域服务中指定用于用户帐户的漫游用户配置文件。 如果要将漫游用户配置文件部署到计算机，通常对远程桌面服务或虚拟化桌面部署执行此操作，请改为使用[步骤6：（可选）在计算机上设置漫游用户配置文件](#step-6-optionally-set-up-roaming-user-profiles-on-computers)中所述的过程。
 
 > [!NOTE]
 > 如果你使用 Active Directory 在用户帐户上设置漫游用户配置文件，并使用组策略在计算机上进行设置，则基于计算机的策略设置优先级较高。
 
 下面介绍如何在用户帐户上设置漫游用户配置文件：
 
-1. 在 Active Directory 管理中心中，导航到相应域中的“用户”容器（或 OU）。
+1. 在 Active Directory 管理中心中，导航到相应域中的“用户” 容器（或 OU）。
 2. 选择要向其分配漫游用户配置文件的所有用户，右键单击用户，然后选择 "**属性**"。
-3. 在 "**配置**文件" 部分，选中 "**配置文件路径：** " 复选框，然后输入要在其中存储用户漫游用户配置文件的文件共享的路径`%username%` ，后跟（自动替换为第一个用户的用户名用户登录时的时间。 例如：
+3. 在 "**配置**文件" 部分中，选中 "**配置文件路径：** " 复选框，然后输入要在其中存储用户漫游用户配置文件的文件共享的路径，然后输入 `%username%` （首次登录时自动替换为用户名）。 例如：
     
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
     
-    若要指定必需的漫游用户配置文件，请指定前面创建的已文件的路径，例如`fs1.corp.contoso.comUser Profiles$default`。 有关详细信息，请参阅[创建强制用户配置文件](https://docs.microsoft.com/windows/client-management/mandatory-user-profile)。
+    若要指定必需的漫游用户配置文件，请指定先前创建的已文件的路径，例如 `fs1.corp.contoso.comUser Profiles$default`。 有关详细信息，请参阅[创建强制用户配置文件](https://docs.microsoft.com/windows/client-management/mandatory-user-profile)。
 4. 选择“确定”。
 
 > [!NOTE]
 > 默认情况下，在使用漫游用户配置文件时，允许部署所有基于 Windows ® 运行时的（Windows 应用商店）应用。 但是，在使用特殊配置文件时，默认情况下将不部署应用。 特殊配置文件是在用户注销后放弃所做更改的用户配置文件：
-> <br><br>若要删除对特殊配置文件的应用部署的限制，请启用**允许特殊配置文件中的部署操作**策略设置（位于 Computer Configuration\Policies\Administrative Templates\Windows Components\App Package Deployment）。 但在此情况下，已部署的应用将在计算机上存储一些数据，这些数据可能会累积，例如一台计算机有数百位用户的情况。 若要清理应用，请查找或开发一种工具，该工具使用[CleanupPackageForUserAsync](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.cleanuppackageforuserasync.aspx) API 为不再具有计算机上的配置文件的用户清理应用程序包。
+> <br><br>若要删除对特殊配置文件的应用部署的限制，请启用 **Allow deployment operations in special profiles** 策略设置（位于计算机配置\策略\管理模板\Windows 组件\应用程序包部署中）。 但在此情况下，已部署的应用将在计算机上存储一些数据，这些数据可能会累积，例如一台计算机有数百位用户的情况。 若要清理应用，请查找或开发一种工具，该工具使用[CleanupPackageForUserAsync](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.cleanuppackageforuserasync.aspx) API 为不再具有计算机上的配置文件的用户清理应用程序包。
 > <br><br>有关 Windows 应用商店应用的其他背景信息，请参阅 [管理客户端对 Windows 应用商店的访问](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh832040(v=ws.11)>)。
 
 ## <a name="step-6-optionally-set-up-roaming-user-profiles-on-computers"></a>步骤 6：（可选）在计算机上设置漫游用户配置文件
 
-如果你要将漫游用户配置文件部署到计算机（像通常对远程桌面服务或虚拟化桌面部署的做法一样），请使用以下过程。 如果要将漫游用户配置文件部署到用户帐户，请改为使用[步骤5：（可选）在用户帐户](#step-5-optionally-set-up-roaming-user-profiles-on-user-accounts)上设置漫游用户配置文件。
+如果你要将漫游用户配置文件部署到计算机（像通常对远程桌面服务或虚拟化桌面部署的做法一样），请使用以下过程。 如果要将漫游用户配置文件部署到用户帐户，请改为使用[步骤5：（可选）在用户帐户上设置漫游用户配置文件](#step-5-optionally-set-up-roaming-user-profiles-on-user-accounts)中所述的过程。
 
 你可以使用组策略将漫游用户配置文件应用于运行 Windows 8.1、Windows 8、Windows 7、Windows Vista、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 的计算机。
 
@@ -210,16 +210,16 @@ ms.locfileid: "71402032"
 4. 在组策略管理编辑器窗口中，依次导航到“计算机配置”、“策略”、“管理模板”、“系统”、“用户配置文件”。
 5. 右键单击 "**为登录到此计算机的所有用户设置漫游配置文件路径**"，然后选择 "**编辑**"。
     > [!TIP]
-    > 用户的主文件夹（如果已配置）是某些程序（如 Windows PowerShell）使用的默认文件夹。 你可以使用 AD DS 中用户帐户属性的“主文件夹” 部分，为每个用户配置备用的本地或网络位置。 若要在虚拟桌面环境中为运行 Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的计算机的所有用户配置主文件夹位置，请启用 "**设置用户主文件夹**"策略设置，然后指定要映射的文件共享和驱动器号（或指定一个本地文件夹）。 请不要使用环境变量或省略号。 用户的别名将附加到用户登录期间指定的路径末尾。
+    > 用户的主文件夹（如果已配置）是某些程序（如 Windows PowerShell）使用的默认文件夹。 你可以使用 AD DS 中用户帐户属性的“主文件夹” 部分，为每个用户配置备用的本地或网络位置。 若要在虚拟桌面环境中为运行 Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的计算机的所有用户配置主文件夹位置，请启用 "**设置用户主文件夹**" 策略设置，然后指定要映射的文件共享和驱动器号（或指定一个本地文件夹）。 请不要使用环境变量或省略号。 用户的别名将附加到用户登录期间指定的路径末尾。
 6. 在 "**属性**" 对话框中，选择 "**已启用**"
-7. 在 "**登录到此计算机的用户应使用此漫游配置文件路径**" 框中，输入要在其中存储用户漫游用户配置文件的文件共享的路径，后`%username%`跟（自动替换为用户名的用户首次登录时）。 例如：
+7. 在 "**登录到此计算机的用户应使用此漫游配置文件路径**" 框中，输入要在其中存储用户漫游用户配置文件的文件共享的路径，后跟 `%username%` （首次登录时自动替换为用户名）。 例如：
 
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
 
-    若要指定必需的漫游用户配置文件，即用户无法进行永久更改的预配置的配置文件（更改将在用户注销时重置），请指定先前创建的已文件的路径，例如`\\fs1.corp.contoso.com\User Profiles$\default`。 有关详细信息，请参阅 [创建强制用户配置文件](https://docs.microsoft.com/windows/client-management/mandatory-user-profile)。
+    若要指定必需的漫游用户配置文件，这是用户无法进行永久更改的预配置的配置文件（更改将在用户注销时重置），请指定先前创建的已文件的路径，例如 `\\fs1.corp.contoso.com\User Profiles$\default`。 有关详细信息，请参阅 [创建强制用户配置文件](https://docs.microsoft.com/windows/client-management/mandatory-user-profile)。
 8. 选择“确定”。
 
-## <a name="step-7-optionally-specify-a-start-layout-for-windows-10-pcs"></a>步骤 7：（可选）为 Windows 10 电脑指定开始布局
+## <a name="step-7-optionally-specify-a-start-layout-for-windows-10-pcs"></a>步骤7：（可选）为 Windows 10 电脑指定开始布局
 
 你可以使用组策略来应用特定的 "开始" 菜单布局，以便用户在所有电脑上看到相同的开始布局。 如果用户登录到多台 PC，并希望它们在多台电脑上具有一致的开始布局，请确保 GPO 适用于其所有 Pc。
 
@@ -231,10 +231,10 @@ ms.locfileid: "71402032"
 3. 使用组策略将自定义的开始布局应用于为漫游用户配置文件创建的 GPO。 为此，请参阅[使用组策略将自定义的开始布局应用于域中](https://docs.microsoft.com/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment)。
 4. 使用组策略在 Windows 10 电脑上设置以下注册表值。 为此，请参阅[配置注册表项](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)。
 
-| **Action**   | **Update**                  |
+| **操作**   | **Update**                  |
 | ------------ | ------------                |
 | 配置单元         | **HKEY_LOCAL_MACHINE**      |
-| 密钥路径     | **Software\Microsoft\Windows\CurrentVersion\Explorer** |
+| 注册表项路径     | **Software\Microsoft\Windows\CurrentVersion\Explorer** |
 | 值名称   | **SpecialRoamingOverrideAllowed** |
 | 值类型   | **REG_DWORD**               |
 | “数值数据”   | **1** （或**0**以禁用） |
@@ -259,7 +259,7 @@ ms.locfileid: "71402032"
 >[!NOTE]
 >卸载这些应用会减少登录时间，但如果您的部署需要，您可以将它们保留安装。
 
-## <a name="step-8-enable-the-roaming-user-profiles-gpo"></a>步骤 8：启用漫游用户配置文件 GPO
+## <a name="step-8-enable-the-roaming-user-profiles-gpo"></a>步骤8：启用漫游用户配置文件 GPO
 
 如果你使用组策略在计算机上设置漫游用户配置文件，或者如果使用组策略自定义其他漫游用户配置文件设置，则下一步是启用 GPO，以允许将其应用于受影响的用户。
 
@@ -271,7 +271,7 @@ ms.locfileid: "71402032"
 1. 打开“组策略管理”。
 2. 右键单击你创建的 GPO，然后选择 "**已启用链接**"。 菜单项旁边会出现一个复选框。
 
-## <a name="step-9-test-roaming-user-profiles"></a>步骤 9：测试漫游用户配置文件
+## <a name="step-9-test-roaming-user-profiles"></a>步骤9：测试漫游用户配置文件
 
 若要测试漫游用户配置文件，请登录到一台已针对漫游用户配置文件配置用户帐户的计算机，或登录到已针对漫游用户配置文件进行配置的计算机。 然后确认已将该配置文件重定向。
 
@@ -283,22 +283,22 @@ ms.locfileid: "71402032"
     ```PowerShell
     GpUpdate /Force
     ```
-3. 若要确认用户配置文件是否为漫游，请打开 "控制面板"，选择 **"** **系统和安全**"，选择 "**系统**"，选择 "**高级系统设置**"，在 "用户配置文件" 部分中选择 "**设置**"，然后查找在 "**类型**" 列中漫游。
+3. 若要确认用户配置文件是漫游，请打开 "**控制面板**"，依次选择 "**系统和安全**"、"**系统**"、"**高级系统设置**"、"用户配置文件" 部分中的 "**设置**"，然后在 "**类型**" 列中查找 "**漫游**"。
 
 ## <a name="appendix-a-checklist-for-deploying-roaming-user-profiles"></a>附录 A：有关部署漫游用户配置文件的清单
 
-| 状态                     | 操作                                                |
+| 状态                     | “操作”                                                |
 | ---                        | ------                                                |
 | ☐<br>☐<br>☐<br>☐<br>☐   | 1.准备域<br>-将计算机加入域<br>-支持使用单独的配置文件版本<br>-创建用户帐户<br>-（可选）部署文件夹重定向 |
 | ☐<br><br><br>             | 2.创建漫游用户配置文件的安全组<br>-组名称：<br>组员 |
 | ☐<br><br>                 | 3.创建用于漫游用户配置文件的文件共享<br>-文件共享名： |
 | ☐<br><br>                 | 4.创建用于漫游用户配置文件的 GPO<br>-GPO 名称：|
 | ☐                         | 5.配置漫游用户配置文件策略设置    |
-| ☐<br>☐<br>☐              | 6.启用漫游用户配置文件<br>-已在用户帐户 AD DS 中启用？<br>-已在计算机帐户组策略中启用？<br> |
-| ☐                         | 7.可有可无为 Windows 10 电脑指定必需的启动布局 |
-| ☐<br>☐<br><br>☐<br><br>☐ | 8.可有可无启用主计算机支持<br>-为用户指定主要计算机<br>-用户和主计算机映射的位置：<br>-（可选）为文件夹重定向启用主计算机支持<br>-基于计算机还是基于用户？<br>-（可选）为漫游用户配置文件启用主计算机支持 |
-| ☐                        | 9.启用漫游用户配置文件 GPO                |
-| ☐                        | 10.测试漫游用户配置文件                         |
+| ☐<br>☐<br>☐              | 6. 启用漫游用户配置文件<br>-已在用户帐户 AD DS 中启用？<br>-已在计算机帐户组策略中启用？<br> |
+| ☐                         | 7. （可选）为 Windows 10 电脑指定必需的启动布局 |
+| ☐<br>☐<br><br>☐<br><br>☐ | 8. （可选）启用主计算机支持<br>-为用户指定主要计算机<br>-用户和主计算机映射的位置：<br>-（可选）为文件夹重定向启用主计算机支持<br>-基于计算机还是基于用户？<br>-（可选）为漫游用户配置文件启用主计算机支持 |
+| ☐                        | 9. 启用漫游用户配置文件 GPO                |
+| ☐                        | 10. 测试漫游用户配置文件                         |
 
 ## <a name="appendix-b-profile-version-reference-information"></a>附录 B：配置文件版本参考信息
 
@@ -311,12 +311,12 @@ ms.locfileid: "71402032"
 | Windows XP 和 Windows Server 2003 | ```\\<servername>\<fileshare>\<username>``` |
 | Windows Vista 和 Windows Server 2008 | ```\\<servername>\<fileshare>\<username>.V2``` |
 | Windows 7 和 Windows Server 2008 R2 | ```\\<servername>\<fileshare>\<username>.V2``` |
-| Windows 8 和 Windows Server 2012 | ```\\<servername>\<fileshare>\<username>.V3```（应用软件更新和注册表项后）<br>```\\<servername>\<fileshare>\<username>.V2```（在应用软件更新和注册表项之前） |
-| Windows 8.1 和 Windows Server 2012 R2 | ```\\<servername>\<fileshare>\<username>.V4```（应用软件更新和注册表项后）<br>```\\<servername>\<fileshare>\<username>.V2```（在应用软件更新和注册表项之前） |
-| Windows 10 | ```\\<servername>\<fileshare>\<username>.V5``` |
+| Windows 8 和 Windows Server 2012 | ```\\<servername>\<fileshare>\<username>.V3``` （应用软件更新和注册表项后）<br>```\\<servername>\<fileshare>\<username>.V2``` （在应用软件更新和注册表项之前） |
+| Windows 8.1 和 Windows Server 2012 R2 | ```\\<servername>\<fileshare>\<username>.V4``` （应用软件更新和注册表项后）<br>```\\<servername>\<fileshare>\<username>.V2``` （在应用软件更新和注册表项之前） |
+| Windows 10 | ```\\<servername>\<fileshare>\<username>.V5``` |
 | Windows 10 版本1703和版本1607 | ```\\<servername>\<fileshare>\<username>.V6``` |
 
-## <a name="appendix-c-working-around-reset-start-menu-layouts-after-upgrades"></a>附录 C：解决升级之后的重置开始菜单布局
+## <a name="appendix-c-working-around-reset-start-menu-layouts-after-upgrades"></a>附录 C：在升级后解决重置开始菜单布局
 
 下面是一些解决开始菜单布局在就地升级之后重置的方法：
 
@@ -335,24 +335,24 @@ ms.locfileid: "71402032"
 
 - 让启动布局重置发生，并允许最终用户重新配置开始。 可以向最终用户发送通知电子邮件或其他通知，以便在 OS 升级到最小化影响后重置其开始布局。 
 
-# <a name="change-history"></a>更改历史记录
+## <a name="change-history"></a>更改历史记录
 
 下表总结了一些对本主题进行的最重要的更改。
 
-| Date | 描述 |Reason|
+| 日期 | 描述 |原因|
 | --- | ---         | ---   |
 | 5月1日，2019 | 添加了 Windows Server 2019 的更新 |
 | 2018年4月10日 | 添加了操作系统就地升级后，开始使用用户自定义的时间丢失的讨论|标注已知问题。 |
 | 2018年3月13日 | 已更新 Windows Server 2016 | 已从以前版本的库中移出，并已更新为当前版本的 Windows Server。 |
 | 2017年4月13日 | 添加了适用于 Windows 10 版本1703的配置文件信息，并阐明了在升级操作系统时漫游配置文件版本的工作方式，请参阅[在多个版本的 Windows 上使用漫游用户配置文件时的注意事项](#considerations-when-using-roaming-user-profiles-on-multiple-versions-of-windows)。 | 客户反馈。 |
-| 2017年3月14日 | 添加了可选步骤，用于为附录 a 中[的 Windows 10 电脑指定必需的开始布局：部署漫游用户配置文件](#appendix-a-checklist-for-deploying-roaming-user-profiles)的清单。 |最新的 Windows 更新中的功能更改。 |
-| 2017年1月23日 | 将步骤添加到[步骤4：（可选）为漫游用户配置文件](#step-4-optionally-create-a-gpo-for-roaming-user-profiles)创建 GPO，以将读取权限委派给经过身份验证的用户，这是因为组策略安全更新所必需的。|组策略处理的安全更改。 |
-| 2016年12月29日 | 添加了步骤 8 [中的链接：启用漫游用户配置文件 GPO](#step-8-enable-the-roaming-user-profiles-gpo) ，以便更轻松地获取有关如何为主计算机设置组策略的信息。 还修复了几个对步骤5和步骤6的引用，这些引用的数量有误。|客户反馈。 |
+| 2017年3月14日 | 添加了可选步骤，用于在[附录 a：用于部署漫游用户配置文件的清单](#appendix-a-checklist-for-deploying-roaming-user-profiles)中为 Windows 10 电脑指定必需的开始布局。 |最新的 Windows 更新中的功能更改。 |
+| 2017年1月23日 | 将步骤添加到[步骤4：（可选）为漫游用户配置文件创建一个 GPO](#step-4-optionally-create-a-gpo-for-roaming-user-profiles) ，以将读取权限委派给经过身份验证的用户，这是因为组策略安全更新所必需的。|组策略处理的安全更改。 |
+| 2016年12月29日 | 在[步骤8：启用漫游用户配置文件 GPO](#step-8-enable-the-roaming-user-profiles-gpo)中添加了一个链接，以便更容易地获取有关如何为主计算机设置组策略的信息。 还修复了几个对步骤5和步骤6的引用，这些引用的数量有误。|客户反馈。 |
 | 2016年12月5日 | 添加了说明开始菜单设置漫游问题的信息。 | 客户反馈。 |
-| 2016年7月6日 | 在附录 B 中[添加了 Windows 10 配置文件版本后缀：配置文件版本参考](#appendix-b-profile-version-reference-information)信息。 还从支持的操作系统的列表中删除了 Windows XP 和 Windows Server 2003。 | 新版本的 Windows 的更新，并且删除了有关不再受支持的 Windows 版本的信息。 |
+| 2016年7月6日 | 添加了[附录 B：配置文件版本参考信息](#appendix-b-profile-version-reference-information)中的 Windows 10 配置文件版本后缀。 还从支持的操作系统的列表中删除了 Windows XP 和 Windows Server 2003。 | 新版本的 Windows 的更新，并且删除了有关不再受支持的 Windows 版本的信息。 |
 | 2015 年 7 月 7日 | 添加了在使用群集文件服务器时禁用连续可用性的要求和步骤。 | 禁用连续可用性后，群集文件共享可以为小型写入操作（对于漫游用户配置文件很常见）提供更好的性能。 |
-| 2014 年 3 月 19 日 | 大写配置文件版本后缀（。V2。V3，。V4） [：配置文件版本参考](#appendix-b-profile-version-reference-information)信息。 | 尽管 Windows 不区分大小写，但如果将 NFS 与文件共享配合使用，则必须对配置文件后缀使用正确的大小写（大写）。 |
-| 2013 年 10 月 9 日 | 针对 windows Server 2012 R2 和 Windows 8.1 进行了修订，阐明了几项内容，并添加了[[在多个版本的 Windows 和附录 B 上使用漫游用户配置文件时的注意事项](#considerations-when-using-roaming-user-profiles-on-multiple-versions-of-windows)：配置文件版本参考](#appendix-b-profile-version-reference-information)信息部分。 | 新版本的更新;客户反馈。 |
+| 2014 年 3 月 19 日 | 大写配置文件版本后缀（。V2。V3，。V4），请[参阅附录 B：配置文件版本参考信息](#appendix-b-profile-version-reference-information)。 | 尽管 Windows 不区分大小写，但如果将 NFS 与文件共享配合使用，则必须对配置文件后缀使用正确的大小写（大写）。 |
+| 2013 年 10 月 9 日 | 针对 Windows Server 2012 R2 和 Windows 8.1 进行了修订，阐明了几项内容，并在多个版本的 Windows 和[附录 B：配置文件版本参考信息](#appendix-b-profile-version-reference-information)部分中[使用漫游用户配置文件时](#considerations-when-using-roaming-user-profiles-on-multiple-versions-of-windows)添加了注意事项。 | 新版本的更新;客户反馈。 |
 
 ## <a name="more-information"></a>详细信息
 

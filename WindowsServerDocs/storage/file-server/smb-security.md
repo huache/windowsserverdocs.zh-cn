@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7221d3ea94ff9f2d7fca8e95cee66597e2dc6270
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d7b96574dcfc2a4417aa36780d7bd87c2556f61f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402071"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950264"
 ---
 # <a name="smb-security-enhancements"></a>SMB 安全增强功能
 
->适用于：Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>适用于： Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
 本主题介绍 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2016 中的 SMB 安全增强功能。
 
@@ -78,7 +78,7 @@ Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 >[!NOTE]
 >* SMB 加密使用高级加密标准（AES）-CCM 算法加密和解密数据。 AES-CCM 还为加密文件共享提供数据完整性验证（签名），而不考虑 SMB 签名设置。 如果要在不加密的情况下启用 SMB 签名，则可继续执行此操作。 有关详细信息，请参阅[SMB 签名基础知识](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
 >* 如果你的组织使用广域网络（WAN）加速设备，则当你尝试访问文件共享或服务器时，可能会遇到问题。
->* 如果客户端不支持 SMB 3.0 尝试访问加密文件共享，则使用默认配置（不允许对加密文件共享进行未加密的访问），将事件 ID 1003 记录到 SmbServer/操作事件日志，客户端将收到 "**拒绝访问**" 错误消息。
+>* 使用默认配置（其中没有允许对加密文件共享进行加密的访问），如果不支持 SMB 3.0 的客户端尝试访问加密的文件共享，则会将事件 ID 1003 记录到 SmbServer/操作事件日志中，并且客户端将收到 "**拒绝访问**" 错误消息。
 >* SMB 加密和 NTFS 文件系统中的加密文件系统（EFS）是不相关的，SMB 加密不需要或依赖于使用 EFS。
 >* SMB 加密与 BitLocker 驱动器加密无关，SMB 加密不需要或依赖于使用 BitLocker 驱动器加密。
 
@@ -86,11 +86,11 @@ Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 
 SMB 3.0 能够检测到中间人攻击，这些攻击会尝试对客户端和服务器协商的 SMB 2.0 或 SMB 3.0 协议或功能进行降级。 当客户端或服务器检测到这种攻击时，连接将断开连接，并在 SmbServer/operation 事件日志中记录事件 ID 1005。 安全方言协商无法检测或阻止从 SMB 2.0 或3.0 降级到 SMB 1.0。 因此，为了充分利用 SMB 加密的全部功能，我们强烈建议你禁用 SMB 1.0 服务器。 有关详细信息，请参阅[禁用 SMB 1.0](#disabling-smb-10)。
 
-下一节中所述的安全方言协商功能可防止中间人攻击从 SMB 3 降级到 SMB 2 （这将使用未加密的访问）;但是，它不会阻止对 SMB 1 的降级，这也会导致未加密的访问。 有关 SMB 的早期非 Windows 实现的潜在问题的详细信息，请参阅[Microsoft 知识库](http://support.microsoft.com/kb/2686098)。
+下一节中所述的安全方言协商功能可防止中间人攻击从 SMB 3 降级到 SMB 2 （这将使用未加密的访问）;但是，它不会阻止对 SMB 1 的降级，这也会导致未加密的访问。 有关 SMB 的早期非 Windows 实现的潜在问题的详细信息，请参阅[Microsoft 知识库](https://support.microsoft.com/kb/2686098)。
 
 ## <a name="new-signing-algorithm"></a>新签名算法
 
-SMB 3.0 使用较新的加密算法进行签名：高级加密标准（AES）-基于密码的消息身份验证代码（CMAC）。 SMB 2.0 使用了较旧的 HMAC-SHA256 加密算法。 AES-CMAC 和 AES-CCM 可以极大地加快支持 AES 指令的大多数现代 Cpu 的数据加密。 有关详细信息，请参阅[SMB 签名基础知识](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
+SMB 3.0 使用一种较新的加密算法进行签名：高级加密标准（AES）基于密码的消息验证代码（CMAC）。 SMB 2.0 使用了较旧的 HMAC-SHA256 加密算法。 AES-CMAC 和 AES-CCM 可以极大地加快支持 AES 指令的大多数现代 Cpu 的数据加密。 有关详细信息，请参阅[SMB 签名基础知识](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
 
 ## <a name="disabling-smb-10"></a>禁用 SMB 1。0
 

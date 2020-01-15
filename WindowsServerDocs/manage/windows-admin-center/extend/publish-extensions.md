@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 24beb287aa35757e1f8057920e8fd95828baf83b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0182c4097ec3bc4432e2ba408d701a72d82a7c8d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385200"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950086"
 ---
 # <a name="publishing-extensions"></a>发布扩展
 
@@ -58,7 +58,7 @@ Windows 管理中心支持的可配置包源有三个主要选项：
 
 Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使你的包能够装运，你将需要生成包含插件和扩展的 NuGet 包。  单个包可以同时包含 UI 扩展插件和网关插件，以下部分将引导你完成此过程。
 
-### <a name="1-build-your-extension"></a>1.构建扩展
+### <a name="1-build-your-extension"></a>1. 生成扩展
 
 一旦准备好开始打包扩展，请在文件系统上创建一个新目录，打开控制台，并将 CD 放入其中。  这将是一个根目录，我们将使用该目录来包含构成包的所有 nuspec 和内容目录。  我们会在本文档的持续时间内将此文件夹引用为 "NuGet 包"。
 
@@ -70,18 +70,18 @@ Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使
 
 使用您的构建基础结构（这可能非常简单，只是打开 Visual Studio 并单击 "生成" 按钮），然后编译并生成插件。  打开您的生成输出目录，并复制代表您的插件的 Dll，并将其放在名为 "Package" 的 "NuGet 包" 目录中的新文件夹中。  不需要复制 FeatureInterface dll，只需复制代表代码的 Dll。
 
-### <a name="2-create-the-nuspec-file"></a>2.创建 nuspec 文件
+### <a name="2-create-the-nuspec-file"></a>2. 创建 nuspec 文件
 
-若要创建 NuGet 包，需要首先创建一个 nuspec 文件。 Nuspec 文件是包含 NuGet 包元数据的 XML 清单。 此清单既用于生成包, 也用于向使用者提供信息。  将此文件放置在 "NuGet 包" 文件夹的根目录下。
+若要创建 NuGet 包，需要首先创建一个 nuspec 文件。 Nuspec 文件是包含 NuGet 包元数据的 XML 清单。 此清单同时用于生成包以及为使用者提供信息。  将此文件放置在 "NuGet 包" 文件夹的根目录下。
 
 下面是 nuspec 文件以及必需或推荐属性的列表。 有关完整的架构，请参阅[nuspec 引用](https://docs.microsoft.com/nuget/reference/nuspec)。 将 nuspec 文件保存到项目的根文件夹中，文件名为你选择的文件名。
 
 > [!IMPORTANT]
-> Nuspec ```<id>```文件中的值需要与项目```manifest.json```文件中的```"name"```值匹配，否则，已发布的扩展将不会在 Windows 管理中心中成功加载。
+> Nuspec 文件中的 ```<id>``` 值需要与项目的 ```manifest.json``` 文件中的 ```"name"``` 值匹配，否则，已发布的扩展将不会在 Windows 管理中心中成功加载。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package xmlns="https://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <packageTypes>
       <packageType name="WindowsAdminCenterExtension" />
@@ -108,33 +108,33 @@ Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使
 
 #### <a name="required-or-recommended-properties"></a>必需或推荐的属性
 
-| 属性名 | 必需/建议 | 描述 |
+| 属性名称 | 必需/建议 | 描述 |
 | ---- | ---- | ---- |
-| PackageType | 必需 | 使用 "WindowsAdminCenterExtension"，它是为 Windows 管理中心扩展定义的 NuGet 包类型。 |
-| id | 必需 | 源中唯一的包标识符。 此值需要与项目的清单 json 文件中的 "名称" 值匹配。  有关指南, 请参阅[选择唯一的包标识符](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
+| packageType | 必需 | 使用 "WindowsAdminCenterExtension"，它是为 Windows 管理中心扩展定义的 NuGet 包类型。 |
+| ID | 必需 | 源中唯一的包标识符。 此值需要与项目的清单 json 文件中的 "名称" 值匹配。  有关指南，请参阅[选择唯一的包标识符](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
 | title | 需要将其发布到 Windows 管理中心源 | Windows 管理中心扩展管理器中显示的包的友好名称。 |
 | version | 必需 | 扩展版本。 建议使用[语义版本控制（SemVer 约定）](http://semver.org/spec/v1.0.0.html) ，但这不是必需的。 |
-| 人员 | 必需 | 如果代表你的公司发布，请使用你的公司名称。 |
-| description | 必需 | 提供扩展功能的说明。 |
+| authors | 必需 | 如果代表你的公司发布，请使用你的公司名称。 |
+| 说明 | 必需 | 提供扩展功能的说明。 |
 | iconUrl | 在发布到 Windows 管理中心源时建议 | 要在扩展管理器中显示的图标的 URL。 |
 | projectUrl | 需要将其发布到 Windows 管理中心源 | 指向扩展网站的 URL。 如果没有单独的网站，请使用 NuGet 源上包网页的 URL。 |
 | licenseUrl | 需要将其发布到 Windows 管理中心源 | 指向扩展的最终用户许可协议的 URL。 |
-| files | 必需 | 这两个设置设置 Windows 管理中心需要用于 UI 扩展和网关插件的文件夹结构。 |
+| 文件 | 必需 | 这两个设置设置 Windows 管理中心需要用于 UI 扩展和网关插件的文件夹结构。 |
 
-### <a name="3-build-the-extension-nuget-package"></a>3.构建扩展 NuGet 包
+### <a name="3-build-the-extension-nuget-package"></a>3. 生成扩展 NuGet 包
 
 使用前面创建的 nuspec 文件，你现在可以创建 NuGet 包 nupkg 文件，你可以将该文件上传并发布到 NuGet 源。
 
 1. 从[nuget 客户端工具网站](https://docs.microsoft.com/nuget/install-nuget-client-tools)下载 nuget.exe CLI 工具。
 2. 运行 "nuget.exe pack [. nuspec 文件名]" 来创建 nupkg 文件。
 
-### <a name="4-signing-your-extension-nuget-package"></a>4.为扩展 NuGet 包签名
+### <a name="4-signing-your-extension-nuget-package"></a>4. 对扩展 NuGet 包进行签名
 
 需要使用来自受信任证书颁发机构（CA）的证书对扩展中包含的任何 .dll 文件进行签名。 默认情况下，当 Windows 管理中心在生产模式下运行时，将阻止未签名的 .dll 文件执行。
 
 我们也强烈建议你对扩展 NuGet 包进行签名，以确保包的完整性，但这不是必需的步骤。
 
-### <a name="5-test-your-extension-nuget-package"></a>5.测试扩展 NuGet 包
+### <a name="5-test-your-extension-nuget-package"></a>5. 测试扩展 NuGet 包
 
 你的扩展包现已准备好进行测试！ 将 nupkg 文件上传到 NuGet 源，或将其复制到文件共享。 若要从其他源或文件共享查看和下载包，需要[将源配置更改](../configure/using-extensions.md#installing-extensions-from-a-different-feed)为指向 NuGet 源或文件共享。 测试时，请确保属性在 "扩展管理器" 中正确显示，并且可以成功安装和卸载扩展。
 
@@ -148,7 +148,7 @@ Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使
 
 ### <a name="submit-an-extension-review-request-to-microsoft"></a>向 Microsoft 提交扩展评审请求
 
-若要提交扩展审核请求，请输入以下信息，并以电子邮件的[wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request)形式发送到。 我们会在一周内回复你的电子邮件。
+若要提交扩展审核请求，请输入以下信息，并以电子邮件的形式发送到[wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request)。 我们会在一周内回复你的电子邮件。
 
 ```
 Windows Admin Center Extension Review Request
@@ -167,4 +167,4 @@ Windows Admin Center Extension Review Request
 - 扩展的详细说明，包括屏幕截图或视频
 - 用于接收反馈或问题的电子邮件地址或网站功能
 
-当你准备好发布扩展时，请向发送电子邮件[wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Package%20Review) ，我们将提供有关如何向我们发送你的扩展包的说明。 收到你的包后，我们将查看并批准，并发布到 Windows 管理中心源。
+准备好发布扩展时，请向[wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Package%20Review)发送电子邮件，我们将提供有关如何向我们发送你的扩展包的说明。 收到你的包后，我们将查看并批准，并发布到 Windows 管理中心源。

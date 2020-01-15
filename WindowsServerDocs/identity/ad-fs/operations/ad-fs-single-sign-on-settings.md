@@ -9,12 +9,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 311789fdec160faeeeba0ecf26491d1e0cd6105d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 76c34dc518f4578b4ae2ead3459f1d79c191b3d7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407399"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949190"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS 单一登录设置
 
@@ -46,7 +46,7 @@ AD FS 支持多种类型的单一登录体验：
   
  如上所述，已注册设备上的用户将始终获取永久性 SSO，除非禁用永久性 SSO。 对于未注册的设备，可通过启用 "使我保持登录" （KMSI）功能来实现持久的 SSO。 
  
- 对于 Windows Server 2012 R2，若要为 "使我保持登录" 方案启用 PSSO，需要安装此[修补程序](https://support.microsoft.com/en-us/kb/2958298/)，它也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的8月2014更新汇总](https://support.microsoft.com/en-us/kb/2975719)的一部分。   
+ 对于 Windows Server 2012 R2，若要为 "使我保持登录" 方案启用 PSSO，需要安装此[修补程序](https://support.microsoft.com/kb/2958298/)，它也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的8月2014更新汇总](https://support.microsoft.com/kb/2975719)的一部分。   
 
 任务 | PowerShell | 描述
 ------------ | ------------- | -------------
@@ -127,18 +127,18 @@ Set-AdfsProperties -PersistentSsoCutoffTime <DateTime>
 ```
   
 ## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>为 Office 365 用户启用 PSSO 以访问 SharePoint Online  
- 在 AD FS 中启用并配置 PSSO 后，AD FS 将在用户进行身份验证后写入永久性 cookie。 用户下次进入时，如果持久性 cookie 仍然有效，则用户无需提供凭据即可再次进行身份验证。 还可以通过在 AD FS 中配置以下两个声明规则，以便在 Microsoft Azure AD 和 SharePoint Online 上触发持久性，来避免 Office 365 和 SharePoint Online 用户的其他身份验证提示。  若要启用 PSSO for Office 365 用户访问 SharePoint online，需要安装此[修补程序](https://support.microsoft.com/en-us/kb/2958298/)，它也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的8月2014更新汇总](https://support.microsoft.com/en-us/kb/2975719)的一部分。  
+ 在 AD FS 中启用并配置 PSSO 后，AD FS 将在用户进行身份验证后写入永久性 cookie。 用户下次进入时，如果持久性 cookie 仍然有效，则用户无需提供凭据即可再次进行身份验证。 还可以通过在 AD FS 中配置以下两个声明规则，以便在 Microsoft Azure AD 和 SharePoint Online 上触发持久性，来避免 Office 365 和 SharePoint Online 用户的其他身份验证提示。  若要启用 PSSO for Office 365 用户访问 SharePoint online，需要安装此[修补程序](https://support.microsoft.com/kb/2958298/)，它也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的8月2014更新汇总](https://support.microsoft.com/kb/2975719)的一部分。  
   
  要传递 InsideCorporateNetwork 声明的颁发转换规则  
   
 ```  
 @RuleTemplate = "PassThroughClaims"  
 @RuleName = "Pass through claim - InsideCorporateNetwork"  
-c:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"]  
+c:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"]  
 => issue(claim = c);   
 A custom Issuance Transform rule to pass through the persistent SSO claim  
 @RuleName = "Pass Through Claim - Psso"  
-c:[Type == "http://schemas.microsoft.com/2014/03/psso"]  
+c:[Type == "https://schemas.microsoft.com/2014/03/psso"]  
 => issue(claim = c);  
   
 ```
@@ -165,21 +165,21 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
  <tr align="center">
     <td>SSO =&gt;设置刷新令牌 =&gt;</td>
     <td>8小时</td>
-    <td>不可用</td>
-    <td>不可用</td>
+    <td>N/A</td>
+    <td>N/A</td>
     <th></th>
     <td>8小时</td>
-    <td>不可用</td>
-    <td>不可用</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
 
  <tr align="center">
     <td>PSSO =&gt;设置刷新令牌 =&gt;</td>
-    <td>不可用</td>
+    <td>N/A</td>
     <td>24小时</td>
-    <td>7天</td>
+    <td>7 天</td>
     <th></th>
-    <td>不可用</td>
+    <td>N/A</td>
     <td>24小时</td>
     <td>最长90天，最长14天</td>
   </tr>

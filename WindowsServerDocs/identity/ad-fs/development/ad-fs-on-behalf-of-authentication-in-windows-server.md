@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9c6c6e7d2c12b6b822989bba05370015f7cd1833
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ce000ec618d0c06ca938b21e9bc363250e1aa38f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407815"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949618"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>在 AD FS 2016 或更高版本中，使用 OAuth （OBO）创建一个多层应用程序
 
@@ -77,7 +77,7 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 ## <a name="clone-or-download-this-repository"></a>克隆或下载此存储库
 
-从 shell 或命令行：
+从 shell 或命令行执行以下操作：
 
     git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
 
@@ -182,7 +182,7 @@ App.config 中的**appSettings**应如下所示：
 
 #### <a name="modifying-the-code"></a>修改代码
 
-**MainWindow.xaml.cs**
+MainWindow.xaml.cs
 
 注释从应用程序配置读取租户信息的行
 
@@ -274,14 +274,14 @@ App.config 中的**appSettings**应如下所示：
 * 打开 web.config 文件
 * 修改以下项
 
-| 密钥                      | 值                                                                                                                                                                                                                   |
+| 键                      | Value                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ida：受众             | 在配置 ToDoListService WebAPI 时 ToDoListService 的 ID，AD FS 如 https://localhost:44321/                                                                                         |
 | ida： ClientID             | 在配置 ToDoListService WebAPI 时 ToDoListService 的 ID，AD FS 如 <https://localhost:44321/> </br>**Ida：受众和 ida： ClientID 彼此匹配非常重要** |
-| ida： ClientSecret         | 这是在中配置 ToDoListService 客户端时 AD FS 生成的机密 AD FS                                                                                                                   |
+| ida:ClientSecret         | 这是在中配置 ToDoListService 客户端时 AD FS 生成的机密 AD FS                                                                                                                   |
 | ida： AdfsMetadataEndpoint | 这是 AD FS 元数据的 URL，例如 https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
 | ida： OBOWebAPIBase        | 这是将用于调用后端 API 的基址，例如 https://localhost:44300                                                                                                                     |
-| ida：颁发机构            | 这是 AD FS 服务的 URL，示例 https://fs.anandmsft.com/adfs/                                                                                                                                          |
+| ida:Authority            | 这是 AD FS 服务的 URL，示例 https://fs.anandmsft.com/adfs/                                                                                                                                          |
 
 **Appsettings**节点中的所有其他 IDA： xxxxxxx-xxxx ... 键都可以注释掉或删除
 
@@ -359,7 +359,7 @@ App.config 中的**appSettings**应如下所示：
     // POST api/todolist
     public async Task Post(TodoItem todo)
     {
-      if (!ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Contains("user_impersonation"))
+      if (!ClaimsPrincipal.Current.FindFirst("https://schemas.microsoft.com/identity/claims/scope").Value.Contains("user_impersonation"))
         {
             throw new HttpResponseException(new HttpResponseMessage { StatusCode = HttpStatusCode.Unauthorized, ReasonPhrase = "The Scope claim does not contain 'user_impersonation' or scope claim not found" });
         }
@@ -494,7 +494,7 @@ App.config 中的**appSettings**应如下所示：
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 你还可以在 Fiddler 上查看详细的跟踪。 启动 Fiddler 并启用 HTTPS 解密。 你可以看到，我们向/adfs/oautincludes 终结点发出两个请求。
-在第一次交互中，我们向令牌终结点显示访问代码，并获取 https://localhost:44321/ ![AD FS OBO 的访问令牌](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+在第一次交互中，我们向令牌终结点显示访问代码，并获取 https://localhost:44321/ ![ AD FS OBO 的访问令牌](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
 在第二次与令牌终结点交互时，您可以看到，我们**requested_token_use**设置为**on_behalf_of** ，我们使用的是为中间层 web 服务获取的访问令牌，即 https://localhost:44321/ 为获取代表令牌的断言。
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)

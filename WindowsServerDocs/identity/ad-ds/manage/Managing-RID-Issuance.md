@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dd265fecce06b849bd14d4d6b81503aba7311656
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 712fc6c4cf47b642cb2ab028fea693047d60c30e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390071"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948876"
 ---
 # <a name="managing-rid-issuance"></a>管理 RID 颁发
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 本主题介绍对 RID 主机 FSMO 角色的更改，包括 RID 主机中新的颁发和监视功能以及如何分析和解决 RID 颁发问题。  
   
@@ -26,7 +26,7 @@ ms.locfileid: "71390071"
   
 -   [消除 RID 颁发问题](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Tshoot)  
   
-有关详细信息，请参阅[AskDS 博客](http://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)。  
+有关详细信息，请参阅[AskDS 博客](https://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)。  
   
 ## <a name="BKMK_Manage"></a>管理 RID 颁发  
 默认情况下，一个域具有大约十亿个安全主体（例如用户、组和计算机）的容量。 当然，没有哪个域具有这么多经常使用的对象。 但是，Microsoft 客户支持发现了如下案例：  
@@ -256,53 +256,53 @@ Windows Server 2012 域控制器上的系统事件日志中记录以下新消息
 |||  
 |-|-|  
 |事件 ID|16653|  
-|Source|Directory-Services-SAM|  
-|severity|警告|  
-|Message|管理员所配置的帐户标识符 (RID) 的池大小大于支持的最大值。 当域控制器是 RID 主机时，将使用 %1 的最大值。<br /><br />有关详细信息，请参阅 [RID 块大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize)。|  
+|来源|Directory-Services-SAM|  
+|严重性|警告|  
+|消息|管理员所配置的帐户标识符 (RID) 的池大小大于支持的最大值。 当域控制器是 RID 主机时，将使用 %1 的最大值。<br /><br />有关详细信息，请参阅 [RID 块大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize)。|  
 |注释和解析|RID 块大小的最大值现在是十进制的 15000（十六进制的 3A98）。 域控制器无法请求多于 15,000 个 RID。 在每次启动时记录此事件，直到将该值设置为等于或小于此最大值。|  
   
 |||  
 |-|-|  
 |事件 ID|16654|  
-|Source|Directory-Services-SAM|  
-|severity|信息性|  
-|Message|帐户标识符 (RID) 池已失效。 在以下预期情况下，可能会出现该问题：<br /><br />1.通过备份还原域控制器。<br /><br />2.通过快照还原在虚拟机上运行的域控制器。<br /><br />3.管理员已手动使池失效。<br /><br />有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=226247 。|  
+|来源|Directory-Services-SAM|  
+|严重性|信息性|  
+|消息|帐户标识符 (RID) 池已失效。 在以下预期情况下，可能会出现该问题：<br /><br />1. 从备份还原域控制器。<br /><br />2. 从快照还原在虚拟机上运行的域控制器。<br /><br />3. 管理员已手动使池失效。<br /><br />有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=226247 。|  
 |注释和解析|如果此事件是意外，请联系所有域管理员并确定他们中谁执行了该操作。 目录服务事件记录还包含有关何时执行这些步骤之一的详细信息。|  
   
 |||  
 |-|-|  
 |事件 ID|16655|  
-|Source|Directory-Services-SAM|  
-|severity|信息性|  
-|Message|帐户标识符 (RID) 的全局最大值已增加为 %1。|  
+|来源|Directory-Services-SAM|  
+|严重性|信息性|  
+|消息|帐户标识符 (RID) 的全局最大值已增加为 %1。|  
 |注释和解析|如果此事件是意外，请联系所有域管理员并确定他们中谁执行了该操作。 此事件说明总体 RID 池大小的增加超过 2<sup>30</sup> 的默认值，而且不会自动发生；仅通过管理操作发生。|  
   
 |||  
 |-|-|  
 |事件 ID|16656|  
-|Source|Directory-Services-SAM|  
-|severity|警告|  
-|Message|帐户标识符 (RID) 的全局最大值已增加为 %1。|  
-|注释和解析|需要执行的操作！ 帐户标识符 (RID) 池已分配到此域控制器。 池值指示此域已使用了总可用帐户标识符中相当大的一部分。<br /><br />当域达到以下阈值时，将会激活保护机制：剩余可用帐户标识符总计：% 1。  保护机制将阻止帐户创建，直到你在 RID 主机域控制器上手动重新启用帐户标识符分配。<br /><br />有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=228610 。|  
+|来源|Directory-Services-SAM|  
+|严重性|警告|  
+|消息|帐户标识符 (RID) 的全局最大值已增加为 %1。|  
+|注释和解析|需要执行的操作！ 帐户标识符 (RID) 池已分配到此域控制器。 池值指示此域已使用了总可用帐户标识符中相当大的一部分。<br /><br />当域达到以下阈值时，将会激活保护机制：剩余可用帐户标识符总计： %1。  保护机制将阻止帐户创建，直到你在 RID 主机域控制器上手动重新启用帐户标识符分配。<br /><br />有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=228610 。|  
   
 |||  
 |-|-|  
 |事件 ID|16657|  
-|Source|Directory-Services-SAM|  
-|severity|Error|  
-|Message|需要执行的操作！ 此域已使用了总可用帐户标识符 (RID) 中相当大的一部分。 已激活保护机制，因为剩余的总可用帐户标识符小于：X% [artificial ceiling argument]。<br /><br />保护机制阻止帐户创建，直到你在 RID 主机域控制器上手动重新启用帐户标识符分配。<br /><br />在重新启用帐户创建之前执行特定的诊断非常重要，这可以确保此域不会以异常高的速率消耗帐户标识符。 任何标识的问题应该在重新启用帐户创建之前解决。<br /><br />如果未能诊断并修复导致异常高的帐户标识符消耗率的任何基本问题，可能会导致域中的帐户标识符耗尽，然后帐户创建将在此域中永久性地处于禁用状态。<br /><br />有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=228610 。|  
+|来源|Directory-Services-SAM|  
+|严重性|错误|  
+|消息|需要执行的操作！ 此域已使用了总可用帐户标识符 (RID) 中相当大的一部分。 已激活保护机制，因为剩余的可用帐户标识符总数小于： X% [人工上限参数]。<br /><br />保护机制阻止帐户创建，直到你在 RID 主机域控制器上手动重新启用帐户标识符分配。<br /><br />在重新启用帐户创建之前执行特定的诊断非常重要，这可以确保此域不会以异常高的速率消耗帐户标识符。 任何标识的问题应该在重新启用帐户创建之前解决。<br /><br />如果未能诊断并修复导致异常高的帐户标识符消耗率的任何基本问题，可能会导致域中的帐户标识符耗尽，然后帐户创建将在此域中永久性地处于禁用状态。<br /><br />有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=228610 。|  
 |注释和解析|联系所有域管理员并通知他们此域中无法再创建任何安全主体，直到重写此保护为止。 有关如何重写保护以及增加总体 RID 池（可能执行）的详细信息，请参阅[全局 RID 空间大小解锁](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock)。|  
   
 |||  
 |-|-|  
 |事件 ID|16658|  
-|Source|Directory-Services-SAM|  
-|severity|警告|  
-|Message|此事件是对可用帐户标识符 (RID) 剩余总量的定期更新。 剩余的帐户标识符数大约为：% 1。<br /><br />随着帐户的创建，将使用帐户标识符，当它们耗尽时，域中不可创建新帐户。<br /><br />有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=228745 。|  
+|来源|Directory-Services-SAM|  
+|严重性|警告|  
+|消息|此事件是对可用帐户标识符 (RID) 剩余总量的定期更新。 剩余的帐户标识符数大约为： %1。<br /><br />随着帐户的创建，将使用帐户标识符，当它们耗尽时，域中不可创建新帐户。<br /><br />有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=228745 。|  
 |注释和解析|联系所有域管理员并通知他们 RID 消耗已越过重要里程碑；通过查看安全信任项创建模式来确定这是否为预期的行为。 此事件非常罕见，因为它意味着已分配至少约 1 亿个 RID。|  
   
-## <a name="see-also"></a>请参阅  
-[在 Windows Server 2012 中管理 RID 颁发](http://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)  
+## <a name="see-also"></a>另请参阅  
+[在 Windows Server 2012 中管理 RID 颁发](https://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)  
   
 
 

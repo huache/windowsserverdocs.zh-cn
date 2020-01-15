@@ -1,6 +1,6 @@
 ---
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
-title: Active Directory 域服务安装和删除的新功能
+title: Active Directory 域服务安装和删除的新增功能
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -9,16 +9,16 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 286d3ee6e9c2b9959a4cc60a710b1cb078612201
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369560"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947907"
 ---
-# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 域服务安装和删除的新功能
+# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 域服务安装和删除的新增功能
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 Windows Server 2012 中的 Active Directory 域服务（AD DS）部署比以前版本的 Windows Server 更简单、更快。 AD DS 安装过程现在构建在 Windows PowerShell 上且与服务器管理器集成。 将域控制器引入现有 Active Directory 环境所需的步骤数减少。 这使得创建新 Active Directory 环境的过程更简单、更高效。 新 AD DS 部署过程可将会阻止安装的错误率降到最低。  
   
@@ -60,7 +60,7 @@ Windows Server 2012 版本的 adprep.log 可在运行64位版本的 Windows Serv
 >   
 > Adprep.exe 不是有效 Win32 应用程序。  
 
-![新增功能](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)  
+![最近更新](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)  
 
 有关解决 Adprep.exe 返回的其他错误的信息，请参阅 [Known issues](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_KnownIssues)。  
 
@@ -80,7 +80,7 @@ Adprep was unable to check the specified user's group membership. This could hap
 
 如果运行 Adprep.exe 时未指定 /user 和 /userdomain 参数且操作主机在运行 Windows Server 2003，Adprep.exe 将联系当前登录用户的域中的域控制器。 如果当前登录用户不是域帐户，Adprep.exe 无法执行组成员身份检查。 如果使用智能卡凭据，则即使指定了 /user 和 /userdomain，Adprep.exe 也无法执行组成员身份检查。  
   
-如果 Adprep 成功完成，则无需操作。 如果 Adprep 在执行期间失败且出现访问错误，请提供具有正确成员身份的帐户。 有关详细信息，请参阅[运行 Adprep.exe 和安装 Active Directory 域服务的凭据要求](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)。  
+如果 Adprep 成功完成，则无需操作。 如果 Adprep 在执行期间失败且出现访问错误，请提供具有正确成员身份的帐户。 有关详细信息，请参阅 [Credential requirements to run Adprep.exe and install Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)。  
   
 ### <a name="syntax-for-adprep-in-windows-server-2012"></a>Windows Server 2012 中的 Adprep 语法
 
@@ -124,13 +124,13 @@ AD DS 安装向导将在安装开始前，检查是否满足以下先决条件�
 
 ## <a name="BKMK_SystemReqs"></a>系统要求
 
-Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化。 有关详细信息，请参阅[Windows Server 2008 R2 SP1 系统要求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)。  
+Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化。 有关详细信息，请参阅[Windows Server 2008 R2 SP1 系统要求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 。  
 
 部分功能可能具有附加要求。 例如，虚拟域控制器克隆功能需要 PDC 仿真器运行 Windows Server 2012 和运行 Windows Server 2012 且安装了 Hyper-v 角色的计算机。  
 
 ## <a name="BKMK_KnownIssues"></a>已知问题
 
-本部分列出了一些在 Windows Server 2012 中会影响 AD DS 安装的已知问题。 有关更多已知问题，请参阅[域控制器部署疑难解答](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
+本部分列出了一些在 Windows Server 2012 中会影响 AD DS 安装的已知问题。 有关更多已知问题，请参阅 [Troubleshooting Domain Controller Deployment](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
 
 - 如果在远程运行 adprep /forestprep 时，Windows 防火墙阻止 WMI 访问架构主机，以下错误将记录到位于 %systemroot%\system32\debug\adprep 的 adprep 日志中：  
 
@@ -176,7 +176,7 @@ Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化
 
    在这种情况下，需要独立于不支持本机 64 位进程的 cmdlet 运行 ADDSDeployment cmdlet。  
 
-- Windows Server 2012 中有一个名为 "复原文件系统" 的新文件系统。 请勿将 Active Directory 数据库、日志文件或 SYSVOL 存储到使用恢复文件系统 (ReFS) 格式化的数据卷上。 有关 ReFS 的详细信息，请参阅 [构建 Windows 的下一代文件系统：ReFS](http://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)。  
+- Windows Server 2012 中有一个名为 "复原文件系统" 的新文件系统。 请勿将 Active Directory 数据库、日志文件或 SYSVOL 存储到使用恢复文件系统 (ReFS) 格式化的数据卷上。 有关 ReFS 的详细信息，请参阅 [构建 Windows 的下一代文件系统：ReFS](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)。  
 - 在服务器管理器中，在服务器核心安装上运行 AD DS 或其他服务器角色并且已升级到 Windows Server 2012 的服务器，该服务器角色可以显示为红色状态，即使按预期方式收集事件和状态也是如此。 运行预发行版本 Windows Server 2012 的服务器核心安装的服务器也会受到影响。  
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>如果错误阻止关键复制，Active Directory 域服务安装将挂起。
@@ -208,7 +208,7 @@ Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化
    <DC Name>  
    ```  
 
-   由于安装过程无限期地重试关键复制，因此在解决基础网络问题后，域控制器安装将继续。 根据需要，使用工具（如 ipconfig、nslookup 和 netmon）调查网络问题。 请确保正在升级的域控制器与在 AD DS 安装过程中选择的复制伙伴之间存在连接。 另外还要确保名称解析正常工作。  
+   由于安装过程无限期地重试关键复制，因此在解决基础网络问题后，域控制器安装将继续。 根据需要，使用工具（如 ipconfig、nslookup 和 netmon）调查网络问题。 在 AD DS 安装期间，对于你正在提升的域控制器和所选的复制伙伴，确保其中存在连接。 另外还要确保名称解析正常工作。  
 
    在安装开始前的先决条件检查期间，验证有关网络连接和名称解析的 AD DS 安装要求。 但在先决条件验证发生之后安装完成之前的时段，也会出现一些错误情况，如安装期间复制伙伴发生故障。  
 

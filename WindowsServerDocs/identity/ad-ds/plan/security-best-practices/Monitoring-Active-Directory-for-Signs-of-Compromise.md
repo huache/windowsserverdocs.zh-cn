@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ba67a5fcc127bbe6ffce9454ff98fd3bc3725e55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e51b7ea151db1ca5d53a8cacef3b042e345175de
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367709"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949635"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>监视 Active Directory 遭到破坏的迹象
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 *定律5：永久警惕是安全的价格。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
   
@@ -32,10 +32,10 @@ ms.locfileid: "71367709"
 
 下面是 Microsoft 官方企业支持博客的链接。 这些博客的内容提供有关审核的建议、指导和建议，这些建议可帮助你增强 Active Directory 基础结构的安全性，并且在设计审核策略时是有价值的资源。  
   
-* [全局对象访问审核非常神奇](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-介绍一种称为 "高级审核策略配置" 的控制机制，该机制已添加到 windows 7 和 windows Server 2008 R2，使你可以设置要轻松审核的数据类型，而不是调整的脚本和 auditpol。  
-* [Windows 2008 中的审核更改简介](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-介绍了在 windows Server 2008 中进行的审核更改。  
-* [Vista 和2008中的冷审核技巧](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)-介绍了 windows Vista 和 windows Server 2008 的有趣审核功能，这些功能可用于排查问题或查看环境中发生的情况。  
-* [Windows server 2008 和 Windows vista 中的一站式审核](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含对 windows server 2008 和 windows vista 中包含的审核功能和信息的编译。  
+* [全局对象访问审核非常神奇](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-介绍一种称为 "高级审核策略配置" 的控制机制，该机制已添加到 windows 7 和 windows Server 2008 R2，使你可以设置要轻松审核的数据类型，而不是调整的脚本和 auditpol。  
+* [Windows 2008 中的审核更改简介](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-介绍了在 windows Server 2008 中进行的审核更改。  
+* [Vista 和2008中的冷审核技巧](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)-介绍了 windows Vista 和 windows Server 2008 的有趣审核功能，这些功能可用于排查问题或查看环境中发生的情况。  
+* [Windows server 2008 和 Windows vista 中的一站式审核](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含对 windows server 2008 和 windows vista 中包含的审核功能和信息的编译。  
   
 以下链接提供了有关 windows 8 和 Windows Server 2012 中 Windows 审核改进的信息，以及有关 Windows Server 2008 中 AD DS 审核的信息。  
   
@@ -114,7 +114,7 @@ Windows 中有数十种用户权限（例如，作为批处理作业登录并作
 ![监视 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)  
   
 > [!NOTE]  
-> 组策略不会始终准确报告所有启用的审核策略的状态，而 svchost.exe 则执行。 有关更多详细信息，请参阅[在 Windows 7 和 2008 R2 中获取有效的审核策略](http://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)。  
+> 组策略不会始终准确报告所有启用的审核策略的状态，而 svchost.exe 则执行。 有关更多详细信息，请参阅[在 Windows 7 和 2008 R2 中获取有效的审核策略](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)。  
   
 每个主类别都有多个子类别。 下面是类别、子类别和其功能的说明的列表。  
   
@@ -293,7 +293,7 @@ Windows 中有数十种用户权限（例如，作为批处理作业登录并作
 ##### <a name="other-object-access-events"></a>其他对象访问事件  
 此子类别报告其他与对象访问相关的事件，例如任务计划程序作业和 COM + 对象。  
   
-#### <a name="system"></a>系统  
+#### <a name="system"></a>“系统”  
   
 ##### <a name="security-state-change"></a>安全状态更改  
 此子类别报告系统的安全状态更改，例如安全子系统启动和停止的时间。  
@@ -355,7 +355,7 @@ Auditpol 语法示例：
 
 Microsoft 为想要使用脚本设置高级审核策略，而不是在每个 svchost.exe 命令中手动键入的管理员提供了一个[示例脚本](https://support.microsoft.com/kb/921469)。  
   
-**注意**组策略不会始终准确报告所有启用的审核策略的状态，而 svchost.exe 则执行。 有关更多详细信息，请参阅[在 windows 7 和 windows 2008 R2 中获取有效的审核策略](http://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)。  
+**注意**组策略不会始终准确报告所有启用的审核策略的状态，而 svchost.exe 则执行。 有关更多详细信息，请参阅[在 windows 7 和 windows 2008 R2 中获取有效的审核策略](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)。  
   
 #### <a name="other-auditpol-commands"></a>其他 Auditpol 命令
 

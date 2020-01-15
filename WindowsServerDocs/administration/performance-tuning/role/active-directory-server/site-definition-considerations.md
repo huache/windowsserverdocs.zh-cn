@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3c9e8792b425fd24d01ab997a5f7c2ac573814
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 66c6f94f1f3fee924ba0d9a3bfa0c712d62bb095
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370248"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947109"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>正确放置域控制器和站点注意事项
 
@@ -58,7 +58,7 @@ ms.locfileid: "71370248"
 
     -   有关 Dc 定位程序工作原理的详细信息，请参阅[在最近的站点中查找域控制器](https://technet.microsoft.com/library/cc978016.aspx)。
 
-    -   聚合可信域和信任域之间的站点名称，以反映同一位置中的域控制器。 确保子网和 IP 地址映射正确地链接到两个林中的站点。 有关详细信息，请参阅[跨林信任的域定位器](http://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)。
+    -   聚合可信域和信任域之间的站点名称，以反映同一位置中的域控制器。 确保子网和 IP 地址映射正确地链接到两个林中的站点。 有关详细信息，请参阅[跨林信任的域定位器](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)。
 
     -   确保根据 Dc 定位程序的需要，为域控制器位置打开端口。 如果域之间存在防火墙，请确保为所有信任正确配置防火墙。 如果防火墙未打开，则信任域控制器仍将尝试访问受信任的域。 如果通信由于任何原因而失败，则信任域控制器最终会将请求超时到受信任的域控制器。 但是，对于每个请求，这些超时可能需要几秒钟，并且如果传入请求的数量很高，则可能会耗尽信任域控制器上的网络端口。 客户端可能会在域控制器上经历等待时间作为挂起线程超时，这可能会转换为挂起的应用程序（如果应用程序在前台线程中运行请求）。 有关详细信息，请参阅[如何为域和信任关系配置防火墙](https://support.microsoft.com/kb/179442)。
 

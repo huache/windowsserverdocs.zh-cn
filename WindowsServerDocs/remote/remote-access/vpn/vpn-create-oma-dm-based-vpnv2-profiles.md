@@ -15,12 +15,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 67d8a66552f77a66e1689989f412a844ef527880
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 016d9d2dcc26572f8d248ef2f4a922da2e456b83
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404324"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949893"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>步骤 7.5： 创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备
 
@@ -54,12 +54,12 @@ ms.locfileid: "71404324"
 3. 找到以 **\</AcceptServerName > 结束\</EapType >** 的部分，并在这两个值之间插入以下字符串，以便为 VPN 客户端提供选择 AAD 条件访问证书的逻辑：
 
     ```XML
-    <TLSExtensions xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
+    <TLSExtensions xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
     ```
 
 4. 选择 "**条件性访问**" 边栏选项卡，并将**此 VPN 连接的切换条件性访问** **启用**。
    
-   如果启用此设置，则会更改 VPNv2 配置文件 XML 中 **\<>\<启用 > true\</Enabled >** 设置。
+   如果启用此设置，则会更改 VPNv2 配置文件 XML 中 **\<\<启用 > true\</Enabled >** 设置。
 
     ![Always On VPN 的条件性访问-属性](../../media/Always-On-Vpn/vpn-conditional-access-azure-ad.png)
 
@@ -90,7 +90,7 @@ ms.locfileid: "71404324"
 
 你已完成将 VPN 配置文件配置为使用 Azure AD 条件访问。 
 
-|如果你想要 。  |然后查看 。  |
+|如果你需要…  |然后查看 。  |
 |---------|---------|
 |了解有关条件性访问如何与 Vpn 一起工作的详细信息  |[VPN 和条件性访问](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)：本页提供有关条件性访问如何与 vpn 一起工作的详细信息。      |
 |了解有关高级 VPN 功能的详细信息  |[高级 VPN 功能](always-on-vpn/deploy/always-on-vpn-adv-options.md#advanced-vpn-features)：本页提供有关以下内容的指导：如何启用 VPN 流量筛选器、如何使用应用程序触发器配置自动 vpn 连接，以及如何将 NPS 配置为仅允许使用 Azure AD 颁发的证书的客户端进行 VPN 连接。        |

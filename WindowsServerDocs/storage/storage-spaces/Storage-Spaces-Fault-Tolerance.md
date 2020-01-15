@@ -10,12 +10,12 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: 存储空间直通中的复原选项（包括镜像和奇偶校验）的讨论。
 ms.localizationpriority: medium
-ms.openlocfilehash: d2220584c0021352110b27c3107d1113eb17ef59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e60a715ffa0097f3f5c615792da3aa0a291d6bd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393806"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950046"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>存储空间直通中的容错和存储效率
 
@@ -37,18 +37,18 @@ ms.locfileid: "71393806"
 
 在 Windows Server 2016 中，存储空间提供两类镜像：“双向”和“三向”。
 
-### <a name="two-way-mirror"></a>“双向镜像”
+### <a name="two-way-mirror"></a>双向镜像
 
-双向镜像为所有数据编写两个副本。 存储效率为 50%，即若要编写 1 TB 的数据，需要至少 2 TB 的物理存储容量。 同样地，需要至少两个[硬件“容错域”](../../failover-clustering/fault-domains.md)，对存储空间直通而言，这意味着两台服务器。
+双向镜像为所有数据编写两个副本。 存储效率为 50%，即若要写入 1 TB 的数据，需要至少 2 TB 的物理存储容量。 同样地，需要至少两个[硬件“容错域”](../../failover-clustering/fault-domains.md)，对存储空间直通而言，这意味着两台服务器。
 
 ![双向镜像](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
 
    >[!WARNING]
    > 如果你有两个以上的服务器，我们建议改用三向镜像。
 
-### <a name="three-way-mirror"></a>“三向镜像”
+### <a name="three-way-mirror"></a>三向镜像
 
-三向镜像为所有数据编写三个副本。 存储效率为 33.3%，即若要编写 1 TB 的数据，需要至少 3 TB 的物理存储容量。 同样地，需要至少三个硬件容错域，对存储空间直通而言，这意味着三台服务器。
+三向镜像为所有数据编写三个副本。 存储效率为 33.3%，即若要写入 1 TB 的数据，需要至少 3 TB 的物理存储容量。 同样地，需要至少三个硬件容错域，对存储空间直通而言，这意味着三台服务器。
 
 三向镜像可以安全容忍[一次至少出现两个硬件（驱动器或服务器）问题](#examples)。 例如，如果你在另一个驱动器或服务器突然发生故障时重新启动一个服务器，则所有数据都将保持安全且可连续访问。
 
@@ -56,7 +56,7 @@ ms.locfileid: "71393806"
 
 ## <a name="parity"></a>奇偶校验
 
-奇偶校验编码通常称为“擦除编码”，使用按位运算提供容错，这会变得[异常复杂](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 奇偶校验的工作方式相比于镜像而言不太明显，并且有很多在线资源（例如第三方的[擦除编码的傻瓜指南](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)）可帮助理解。 这足以说明，它在不影响容错的前提下提供更好的存储效率。
+奇偶校验编码通常称为“擦除编码”，使用按位运算提供容错，这会变得[异常复杂](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 奇偶校验的工作方式相比于镜像而言不太明显，并且有很多在线资源（例如第三方的[擦除编码的傻瓜指南](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)）可帮助理解。 这足以说明，它在不影响容错的前提下提供更好的存储效率。
 
 在 Windows Server 2016 中，存储空间提供两类奇偶校验：“单”奇偶校验和“双”奇偶校验，后者在更大范围内使用名为“本地重建代码”的高级技术。
 
@@ -69,9 +69,9 @@ ms.locfileid: "71393806"
    >[!WARNING]
    > 我们不鼓励使用单奇偶校验，因为它一次只能安全地写入 一个硬件故障：如果你在另一个驱动器或服务器突然发生故障时重新启动一个服务器，则将遇到停机。 如果仅拥有三台服务器，我们建议使用三向镜像。 如果拥有四台或更多服务器，请参阅接下来的部分。
 
-### <a name="dual-parity"></a>双重奇偶校验
+### <a name="dual-parity"></a>双奇偶校验
 
-双奇偶校验实现 Reed-Solomon 错误更正代码，保留两个按位奇偶校验符号，因此提供与三向镜像提供的相同容错（即最多同时两个失败），但存储效率更高。 这最像 RAID-6。 若要使用双奇偶校验，需要至少四个硬件容错域，对存储空间直通而言，这意味着四台服务器。 在该范围内，存储效率为 50%，即若要编写 2 TB 的数据，需要至少 4 TB 的物理存储容量。
+双奇偶校验实现 Reed-Solomon 错误更正代码，保留两个按位奇偶校验符号，因此提供与三向镜像提供的相同容错（即最多同时两个失败），但存储效率更高。 这最像 RAID-6。 若要使用双奇偶校验，需要至少四个硬件容错域，对存储空间直通而言，这意味着四台服务器。 在该范围内，存储效率为 50%，即若要写入 2 TB 的数据，需要至少 4 TB 的物理存储容量。
 
 ![双奇偶校验](media/Storage-Spaces-Fault-Tolerance/dual-parity-180px.png)
 
@@ -102,7 +102,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 > [!IMPORTANT]
 > 我们建议对大多数性能敏感的工作负载使用镜像。 若要了解有关根据工作负荷平衡性能和容量的详细信息，请参阅[计划卷](plan-volumes.md#choosing-the-resiliency-type)。
 
-## <a name="summary"></a>小结
+## <a name="summary"></a>摘要
 
 本部分总结了存储空间直通可用的复原类型、使用每种类型的最低范围要求、每种类型可容忍的失败数以及相应的存储效率。
 
@@ -110,18 +110,18 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 |    复原          |    失败容差       |    存储效率      |
 |------------------------|----------------------------|----------------------------|
-|    “双向镜像”      |    1                       |    50.0%                   |
-|    “三向镜像”    |    2                       |    33.3%                   |
-|    双重奇偶校验         |    2                       |    50.0% - 80.0%           |
+|    双向镜像      |    1                       |    50.0%                   |
+|    三向镜像    |    2                       |    33.3%                   |
+|    双奇偶校验         |    2                       |    50.0% - 80.0%           |
 |    混合               |    2                       |    33.3% - 80.0%           |
 
 ### <a name="minimum-scale-requirements"></a>最小范围要求
 
 |    复原          |    所需的最小故障域数   |
 |------------------------|-------------------------------------|
-|    “双向镜像”      |    2                                |
-|    “三向镜像”    |    3                                |
-|    双重奇偶校验         |    4                                |
+|    双向镜像      |    2                                |
+|    三向镜像    |    3                                |
+|    双奇偶校验         |    4                                |
 |    混合               |    4                                |
 
    >[!TIP]
@@ -179,18 +179,18 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 这六个示例显示三向镜像和/或双奇偶校验**可以**容忍的失败。
 
-- **1.**  一个驱动器丢失（包括缓存驱动器）
-- **2.**  一台服务器丢失
+- **1.**    丢失了一个驱动器（包括缓存驱动器）
+- **2.**    丢失了一台服务器
 
 ![容错示例 1 和 2](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-12.png)
 
-- **三维空间.**  一个服务器和一个驱动器丢失
-- **4.**  不同服务器中的两个驱动器丢失
+- **3.**    丢失了一台服务器和一个驱动器
+- **4.**    不同服务器丢失了两个驱动器
 
 ![容错示例 3 和 4](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-34.png)
 
-- **5.**  如果两个以上的服务器受到影响，则会丢失两个以上的驱动器
-- **共.**  两台服务器丢失
+- **5.**    丢失了超过两个驱动器，前提是最多两台服务器受影响
+- **6.**    丢失了两台服务器
 
 ![容错示例 5 和 6](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-56.png)
 
@@ -200,23 +200,23 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 在生命周期内，存储空间可容忍任何数量的失败，因为如果时间充足，在每个失败后，它都可以还原到完整复原。 但是，在任何指定时刻，失败可安全影响最多两个容错域。 因此，以下是三向和/或双奇偶校验**无法**容忍的失败示例。
 
-- **全天候.** 三个或更多服务器一次丢失驱动器
-- **8.** 一次丢失三个或多个服务器
+- **7.** 三台或更多服务器同时丢失驱动器
+- **8.** 同时丢失三台或更多服务器
 
 ![容错示例 7 和 8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>Usage
 
 查看[在存储空间直通中创建卷](create-volumes.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 以下所有链接均是本主题正文某个位置的内联。
 
 - [Windows Server 2016 中的存储空间直通](storage-spaces-direct-overview.md)
 - [Windows Server 2016 中的容错域感知](../../failover-clustering/fault-domains.md)
-- [Azure 中由 Microsoft Research 进行的擦除编码](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
+- [Azure 中由 Microsoft Research 进行的擦除编码](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
 - [本地重建代码和加速奇偶校验卷](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
 - [存储管理 API 中的卷](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
 - [Microsoft Ignite 2016 的存储效率演示](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
-- [存储空间直通的容量计算器预览版](http://aka.ms/s2dcalc)
+- [存储空间直通的容量计算器预览版](https://aka.ms/s2dcalc)

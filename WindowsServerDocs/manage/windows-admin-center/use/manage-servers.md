@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 9a116cc9d86dfe0bb4450efa0f18580a062af722
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: ddc8eea67cde9d6677836af1201e169c911e77e0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903716"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950484"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>通过 Windows 管理中心管理服务器
 
@@ -21,7 +21,7 @@ ms.locfileid: "74903716"
 
 > [!Tip]
 > 不熟悉 Windows Admin Center？
-> [了解有关 Windows Admin Center 的更多信息](../understand/windows-admin-center.md)或[立即下载](https://aka.ms/windowsadmincenter)。
+> [下载或详细了解 Windows 管理中心](../overview.md)。
 
 ## <a name="managing-windows-server-machines"></a>管理 Windows Server 机器
 
@@ -53,13 +53,13 @@ ms.locfileid: "74903716"
 | [Active Directory](#active-directory-preview) | 管理 Active Directory |
 | [备份](#backup) | 查看和配置 Azure 备份 |  
 | [证书](#certificates) | 查看和修改证书 |
-| [“配置 SSIS 日志”](#containers) | 查看容器 |
+| [容器](#containers) | 查看容器 |
 | [设备](#devices) | 查看和修改设备 |
 | [DHCP](#dhcp) | 查看和管理 DHCP 服务器配置 |
 | [DNS](#dns) | 查看和管理 DNS 服务器配置 |
 | [事件](#events) | 查看活动 |
 | [文件](#files) | 浏览文件和文件夹 |
-| [Firewall](#firewall) | 查看和修改防火墙规则 |
+| [防火墙](#firewall) | 查看和修改防火墙规则 |
 | [安装的应用](#installed-apps) | 查看和删除已安装的应用 |
 | [本地用户和组](#local-users-and-groups) | 查看和修改本地用户和组 |
 | [网络](#network) | 查看和修改网络设备 |
@@ -77,7 +77,7 @@ ms.locfileid: "74903716"
 | [存储迁移服务](#storage-migration-service) | 将服务器和文件共享迁移到 Azure 或 Windows Server 2019 |
 | [存储副本](#storage-replica) | 使用存储副本来管理服务器到服务器的存储复制 |
 | [系统见解](#system-insights) | 系统见解使你可以更深入地了解服务器的功能。 |
-| [Updates](#updates) | 查看已安装的并检查是否有新的更新 |
+| [更新](#updates) | 查看已安装的并检查是否有新的更新 |
 | [虚拟机](manage-virtual-machines.md) | 查看和管理虚拟机 |
 | [虚拟交换机](#virtual-switches) | 查看和管理虚拟交换机 |
 

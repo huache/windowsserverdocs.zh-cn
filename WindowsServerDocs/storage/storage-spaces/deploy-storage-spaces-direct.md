@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: 逐步说明使用 Windows Server 中的存储空间直通将软件定义的存储部署为超聚合基础结构或聚合（也称为非聚合）基础结构。
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab96f737f7700e202c9d0382c06859c4ea84118
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402816"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950023"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署存储空间直通
 
@@ -102,7 +102,7 @@ ms.locfileid: "71402816"
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
 ```
 
-如果你的存储管理员帐户不是 Domain Admins 组的成员，请将你的存储管理员帐户添加到每个节点上的本地管理员组，或者，添加你的存储管理员组。 你可以使用以下命令（或编写 Windows PowerShell 函数来执行此操作-请参阅[使用 PowerShell 将域用户添加到本地组](http://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)，了解详细信息）：
+如果你的存储管理员帐户不是 Domain Admins 组的成员，请将你的存储管理员帐户添加到每个节点上的本地管理员组，或者，添加你的存储管理员组。 你可以使用以下命令（或编写 Windows PowerShell 函数来执行此操作-请参阅[使用 PowerShell 将域用户添加到本地组](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)，了解详细信息）：
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -307,7 +307,7 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 4. 在 "**客户端访问点**" 页上，键入横向扩展文件服务器的名称。
 5. 验证角色是否已成功设置，方法是转到 "**角色**"，确认 "状态"**列显示 "** **状态**" 列显示在创建的群集文件服务器角色旁边，如图1所示。
 
-   显示(media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "横向扩展文件服务器")的![横向扩展文件服务器故障转移群集管理器故障转移群集管理器屏幕截图]
+   ![显示横向扩展文件服务器故障转移群集管理器的屏幕截图](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "显示横向扩展文件服务器的故障转移群集管理器")
 
     **图 1**显示状态为 "正在运行" 的横向扩展文件服务器故障转移群集管理器
 
@@ -329,14 +329,14 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 创建虚拟磁盘并将其添加到 Csv 后，可以在这些磁盘上创建文件共享-每个虚拟磁盘每个 CSV 有一个文件共享。 System Center Virtual Machine Manager （VMM）可能是执行此操作的 handiest 方法，因为它处理你的权限，但如果你的环境中没有此权限，则可以使用 Windows PowerShell 部分自动完成部署。
 
-使用[适用于 Hyper-v 工作负荷的 SMB 共享配置](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)脚本中包含的脚本，该脚本部分自动执行创建组和共享的过程。 它是针对 Hyper-v 工作负荷编写的，因此，如果要部署其他工作负载，则你可能需要在创建共享后修改设置或执行其他步骤。 例如，如果你使用 Microsoft SQL Server，则必须向 SQL Server 服务帐户授予对共享和文件系统的完全控制权限。
+使用[适用于 Hyper-v 工作负荷的 SMB 共享配置](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)脚本中包含的脚本，该脚本部分自动执行创建组和共享的过程。 它是针对 Hyper-v 工作负荷编写的，因此，如果要部署其他工作负载，则你可能需要在创建共享后修改设置或执行其他步骤。 例如，如果你使用 Microsoft SQL Server，则必须向 SQL Server 服务帐户授予对共享和文件系统的完全控制权限。
 
 > [!NOTE]
 >  添加群集节点时必须更新组成员身份，除非使用 System Center Virtual Machine Manager 创建共享。
 
 若要使用 PowerShell 脚本创建文件共享，请执行以下操作：
 
-1. 将[Hyper-v 工作负荷的 SMB 共享配置](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)中包含的脚本下载到文件服务器群集的一个节点。
+1. 将[Hyper-v 工作负荷的 SMB 共享配置](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)中包含的脚本下载到文件服务器群集的一个节点。
 2. 在管理系统上使用域管理员凭据打开 Windows PowerShell 会话，然后使用以下脚本为 Hyper-v 计算机对象创建 Active Directory 组，并根据需要更改变量的值环境
 
     ```PowerShell
@@ -371,7 +371,7 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 ### <a name="step-43-enable-kerberos-constrained-delegation"></a>步骤4.3 启用 Kerberos 约束委派
 
-若要为远程方案管理设置 Kerberos 约束委派并增加实时迁移安全性，请在一个存储群集节点上，使用[适用于 Hyper-v 工作负荷的 SMB 共享配置](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)中包含的 KCDSetup 脚本。 下面是该脚本的小包装：
+若要为远程方案管理设置 Kerberos 约束委派并增加实时迁移安全性，请在一个存储群集节点上，使用[适用于 Hyper-v 工作负荷的 SMB 共享配置](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)中包含的 KCDSetup 脚本。 下面是该脚本的小包装：
 
 ```PowerShell
 $HyperVClusterName = "Compute01"

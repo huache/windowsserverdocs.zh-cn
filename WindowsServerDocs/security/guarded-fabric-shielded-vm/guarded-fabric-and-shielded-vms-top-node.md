@@ -1,5 +1,5 @@
 ---
-title: 受保护的构造和受防护的 VM
+title: 受保护的结构和受防护的虚拟机
 ms.custom: na
 ms.prod: windows-server
 ms.topic: article
@@ -9,16 +9,16 @@ author: rpsqrd
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: c06432a039341978956066344710920652187b97
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f23d0be0d860695b014f57fd55d8e321e81a70ca
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403664"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950330"
 ---
-# <a name="guarded-fabric-and-shielded-vms"></a>受保护的构造和受防护的 VM
+# <a name="guarded-fabric-and-shielded-vms"></a>受保护的结构和受防护的虚拟机
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 提供托管环境的最重要目标之一是保证在环境中运行的虚拟机的安全性。 作为云服务商或企业私有云管理员，你可以使用受保护的构造为 VM 提供更安全的环境。 受保护的结构包括一项主机保护者服务 (HGS)（通常是由三个节点组成的群集）、一个或多个被保护的主机以及一组受防护的虚拟机 (VM)。
 
@@ -27,12 +27,12 @@ ms.locfileid: "71403664"
 
 ## <a name="videos-blog-and-overview-topic-about-guarded-fabrics-and-shielded-vms"></a>有关受保护的构造和受防护的 Vm 的视频、博客和概述主题
 
-- 视频：[如何通过 Windows Server 2019 保护虚拟化结构与内部威胁](https://myignite.techcommunity.microsoft.com/sessions/64690)
-- 视频：[Windows Server 2016 中的受防护虚拟机简介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
-- 视频：[通过 Windows Server 2016 Hyper-v 深入了解受防护的 Vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
-- 视频：[使用 Windows Server 2016 部署受防护的 Vm 和受保护的构造](https://mva.microsoft.com/en-US/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)
-- 发布[数据中心和私有云安全博客](https://blogs.technet.microsoft.com/datacentersecurity/)
-- 概述：[受保护的构造和受防护的 VM 概述](Guarded-Fabric-and-Shielded-VMs.md)
+- 视频：[如何通过 Windows Server 2019 保护内部威胁的虚拟化结构](https://myignite.techcommunity.microsoft.com/sessions/64690)
+- 视频： [Windows Server 2016 中的受防护虚拟机简介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
+- 视频：[通过 Windows Server 2016 Hyper-v 深入了解受防护的 vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
+- 视频：[使用 Windows Server 2016 部署受防护的 vm 和受保护的构造](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)
+- 博客： [Datacenter 和私有云安全博客](https://blogs.technet.microsoft.com/datacentersecurity/)
+- 概述：[受保护的构造和受防护的 vm 概述](Guarded-Fabric-and-Shielded-VMs.md)
 
 ## <a name="planning-topics"></a>规划主题
 

@@ -9,16 +9,16 @@ ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 1ef9d511f8946452c5f9f05628c67c5908c53a55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61c10f25ac97934f73c4f393e2c91c9b36fc59fd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402763"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950178"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>适用于 Windows Server 2016 的顶级支持解决方案
 
-Microsoft 会定期为 Windows Server 发布更新和解决方案。 若要确保你的服务器能够收到将来的更新（包括安全更新），请务必保持更新服务器。 有关已发布更新的完整列表，请查看 [Windows 10 和 Windows Server 2016 更新历史记录](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history)。
+Microsoft 会定期为 Windows Server 发布更新和解决方案。 若要确保你的服务器能够收到将来的更新（包括安全更新），请务必保持更新服务器。 有关已发布更新的完整列表，请查看 [Windows 10 和 Windows Server 2016 更新历史记录](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)。
 
 以下是解决使用 Windows Server 2016 时遇到的最常见问题的顶级 Microsoft 支持解决方案。 下面的链接包含指向知识库文章、更新和库文章的链接。
 
@@ -28,13 +28,13 @@ Microsoft 会定期为 Windows Server 发布更新和解决方案。 若要确�
 ## <a name="solutions-for-installing-or-upgrading-windows-server"></a>用于安装或升级 Windows Server 的解决方案
 
 - [解决 Windows 10 升级错误：适用于 IT 专业人员的技术信息](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors)
-- [Windows 10 版本1607和 Windows Server 2016 的服务堆栈更新：2017年8月8日](https://support.microsoft.com/en-US/help/4035631)
-- [用于升级到 Windows 10 版本1607和 Windows Server 2016 的兼容性更新：2017年8月3日](https://support.microsoft.com/en-US/help/4033524)
-- [基于 Windows 的 Azure Vm 不支持就地系统升级](https://support.microsoft.com/en-US/help/4014997)
-- [Windows Server 2016 的升级和转换选项](../get-started/supported-upgrade-paths.md)
+- [Windows 10 版本1607和 Windows Server 2016 的服务堆栈更新：8月8日，2017](https://support.microsoft.com/help/4035631)
+- [升级到 Windows 10 版本1607和 Windows Server 2016 的兼容性更新：8月3日，2017](https://support.microsoft.com/help/4033524)
+- [基于 Windows 的 Azure Vm 不支持就地系统升级](https://support.microsoft.com/help/4014997)
+- [适用于 Windows Server 2016 的升级和转换选项](../get-started/supported-upgrade-paths.md)
 - [Windows Server 2016 的服务器角色升级和迁移矩阵](../get-started/server-role-upgradeability-table.md)
 - [Windows Server 安装和升级](../get-started/installation-and-upgrade.md)
-- [发行说明：Windows Server 2016 中的重要问题](../get-started/windows-server-2016-ga-release-notes.md)
+- [发行说明： Windows Server 2016 中的重要问题](../get-started/windows-server-2016-ga-release-notes.md)
 - [有关移动到 Windows Server 2016 的建议](../get-started/recommendations-moving-to-server2016.md)
 
 ## <a name="solutions-for-volume-activation"></a>批量激活解决方案
@@ -52,11 +52,11 @@ Microsoft 会定期为 Windows Server 发布更新和解决方案。 若要确�
 - [Windows Server 2016 的 Exchange Server 支持](https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx)
 - [使用 Ntdsutil.exe 传输或占用 FSMO 角色到域控制器](https://support.microsoft.com/kb/255504)
 - [域控制器部署疑难解答](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
-- [Active Directory 安装向导问题的疑难解答](https://msdn.microsoft.com/library/bb727058.aspx)
+- [排查 Active Directory 安装向导问题](https://msdn.microsoft.com/library/bb727058.aspx)
 - [用于安装和删除 AD DS 的已知问题](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
 
 ## <a name="solutions-for-active-directory-federation-services-ad-fs"></a>Active Directory 联合身份验证服务 (AD FS) 解决方案
-- [如何配置已加入 Windows 域的设备的自动注册 Azure Active Directory](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
+- [如何使用 Azure Active Directory 配置已加入 Windows 域的设备的自动注册](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
 - [设置声明的颁发](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims)
 - [配置 AD FS 以对存储在 LDAP 目录中的用户进行身份验证](../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md)
 - [AD FS 对证书身份验证的备用主机名绑定的支持](../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
@@ -70,8 +70,8 @@ Microsoft 会定期为 Windows Server 发布更新和解决方案。 若要确�
 
 - [Active Directory 复制问题疑难解答](../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md)
 - [从 Microsoft 下载中心下载 Active Directory 复制状态工具](https://www.microsoft.com/en-in/download/details.aspx?id=30005)
-- [e2e如何排查常见 Active Directory 复制错误](https://support.microsoft.com/kb/3108513)
-- [排查 AD 复制错误8606：提供的属性不足，无法创建对象](https://support.microsoft.com/kb/2028495)
+- [e2e：如何排查常见 Active Directory 复制错误](https://support.microsoft.com/kb/3108513)
+- [排查 AD 复制错误8606：提供的属性不足以创建对象](https://support.microsoft.com/kb/2028495)
 - [在 Windows 2000 服务器和 Windows Server 2003 中 Active Directory 的入站复制期间出现事件 ID 2108 和事件 ID 1084](https://support.microsoft.com/kb/837932)
 - [排查 AD 复制错误8451：复制操作遇到数据库错误](https://support.microsoft.com/kb/2645996)
 - [排查 AD 复制错误1127：在访问硬盘时，磁盘操作即使在重试后也失败](https://support.microsoft.com/kb/2025726)

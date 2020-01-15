@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 8359532113e04e2247b4af34effc7f5b89d36f34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e2b8400fc7b7f0e01e000fcb2f6472bdb4059ac8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402431"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949802"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>受保护的结构部署快速入门
 
@@ -22,7 +22,7 @@ ms.locfileid: "71402431"
 
 本主题介绍了受保护的结构、其要求和部署过程的摘要。 有关详细的部署步骤，请参阅为[受保护的主机和受防护的 Vm 部署主机保护者服务](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)。
 
-喜欢视频？ 请参阅 Microsoft 虚拟学院课程[使用 Windows Server 2016 部署受防护的 vm 和受保护的构造](https://mva.microsoft.com/en-US/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)。
+喜欢视频？ 请参阅 Microsoft 虚拟学院课程[使用 Windows Server 2016 部署受防护的 vm 和受保护的构造](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)。
 
 ## <a name="what-is-a-guarded-fabric"></a>什么是受保护的构造
 

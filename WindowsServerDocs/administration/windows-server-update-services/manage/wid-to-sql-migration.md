@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 0977aa1fd9a6848bd7b85bb592b6a82556277e72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 594c20cbfea521006de6d1ec69763669298376e6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361577"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948523"
 ---
 >适用于： Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
 
@@ -25,7 +25,7 @@ ms.locfileid: "71361577"
 
 使用以下步骤将 WSUS 数据库（SUSDB）从 Windows 内部数据库实例迁移到 SQL Server 的本地或远程实例。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 - SQL 实例。 这可以是默认的**MSSQLServer**或自定义实例。
 - SQL Server Management Studio
@@ -116,7 +116,7 @@ ms.locfileid: "71361577"
 ##### <a name="adding-nt-authoritynetwork-service-and-granting-it-rights"></a>添加 NT AUTHORITY\NETWORK SERVICE 并向其授予权限
 
 1. 右键单击 "**登录名**"，然后单击 "**新建登录名 ...** "
-    ![image6](images/image6.png)
+    ![图片6](images/image6.png)
 2. 在 "**常规**" 页上，填写**登录名**（**NT AUTHORITY\NETWORK SERVICE**），并将**默认数据库**设置为 "SUSDB"。
     ![image7](images/image7.png)
 3. 在 "**服务器角色**" 页上，确保选择 "**公用**" 和 " **sysadmin** "。
@@ -124,7 +124,7 @@ ms.locfileid: "71361577"
 4. 在 "**用户映射**" 页上：
     - 在 "**映射到此登录名的用户**" 下：选择**SUSDB**
     - 在 "**数据库角色成员身份： SUSDB**" 下，确保选中以下内容：
-        - **公布**
+        - public
         - **webService** ![image9](images/image9.png)
 5. 单击**确定**
 
@@ -158,7 +158,7 @@ ms.locfileid: "71361577"
 ### <a name="edit-the-registry-to-point-wsus-to-the-sql-server-instance"></a>编辑注册表以将 WSUS 指向 SQL Server 实例
 
 > [!IMPORTANT]
-> 请认真遵循本部分所述的步骤。 如果注册表修改不正确，可能会发生严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/en-us/help/322756)，以便在出现问题时可以还原。
+> 请认真遵循本部分所述的步骤。 如果注册表修改不正确，可能会发生严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
 
 1. 单击“开始”，单击“运行”，键入“regedit”，然后单击“确定”。
 2. 找到以下注册表项： **HKEY_LOCAL_MACHINE \software\microsoft\updateservices\server\setup\sqlservername**

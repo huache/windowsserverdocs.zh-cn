@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd8a26d158f53121074881ac8ff204287f9a19ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a14233e01c19df650d1059e1b60cd5398b05709a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382973"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946997"
 ---
 # <a name="manage-software-inventory-logging"></a>管理软件清单日志记录
 
@@ -31,20 +31,20 @@ ms.locfileid: "71382973"
 - **Windows Server 2012 （Standard 或 Datacenter Edition）** 
 
 > [!NOTE] 
-> 在应用以下更新包之前请确保你已安装 [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855)。
+> 在应用以下更新包之前请确保你已安装 [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855)。
 
--  Windows Server 2012 的 WMF 4.0 更新包： [KB 3119938](https://support.microsoft.com/en-us/kb/3119938)
+-  Windows Server 2012 的 WMF 4.0 更新包： [KB 3119938](https://support.microsoft.com/kb/3119938)
 
 - **Windows Server 2008 R2 SP1**
 
 > [!NOTE] 
-> 在应用以下更新包之前请确保你已安装 [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855)。
+> 在应用以下更新包之前请确保你已安装 [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855)。
 
 
-- 需要 [.NET Framework 4.5](https://www.microsoft.com/en-us/download/details.aspx?id=30653)
+- 需要 [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)
 
 
-- Windows Server 2008 R2 的 WMF 4.0 更新包： [KB 3109118](https://support.microsoft.com/en-us/kb/3109118)
+- Windows Server 2008 R2 的 WMF 4.0 更新包： [KB 3109118](https://support.microsoft.com/kb/3109118)
 
 
 可通过两种主要方法使用此功能列出清单：  

@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 19e07504dad49c5e23cc49630015529e2a746aa7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f2e8d3bfb5ef907ffb522b5b7be31d1def3001c8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394445"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949681"
 ---
 # <a name="volume-shadow-copy-service"></a>卷影复制服务
 
@@ -39,13 +39,13 @@ VSS 协调为要备份的数据创建一致的卷影副本（也称为快照或�
 
 使用 VSS 的 Windows 功能和应用程序包括：
 
-  - [Windows Server 备份](http://go.microsoft.com/fwlink/?linkid=180891)（ http://go.microsoft.com/fwlink/?LinkId=180891)  
+  - [Windows Server 备份](https://go.microsoft.com/fwlink/?linkid=180891)（ https://go.microsoft.com/fwlink/?LinkId=180891)  
       
-  - [共享文件夹的卷影副本](http://go.microsoft.com/fwlink/?linkid=142874)（ http://go.microsoft.com/fwlink/?LinkId=142874)  
+  - [共享文件夹的卷影副本](https://go.microsoft.com/fwlink/?linkid=142874)（ https://go.microsoft.com/fwlink/?LinkId=142874)  
       
-  - [System Center Data Protection Manager](http://go.microsoft.com/fwlink/?linkid=180892) （ http://go.microsoft.com/fwlink/?LinkId=180892)  
+  - [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=180892) （ https://go.microsoft.com/fwlink/?LinkId=180892)  
       
-  - [系统还原](http://go.microsoft.com/fwlink/?linkid=180893)（ http://go.microsoft.com/fwlink/?LinkId=180893)  
+  - [系统还原](https://go.microsoft.com/fwlink/?linkid=180893)（ https://go.microsoft.com/fwlink/?LinkId=180893)  
       
 
 ## <a name="how-volume-shadow-copy-service-works"></a>卷影复制服务的工作方式
@@ -227,7 +227,7 @@ VSS 协调为要备份的数据创建一致的卷影副本（也称为快照或�
 
 软件提供程序适用于比基于硬件的访问接口更广泛的存储平台，并且它应同样适用于基本磁盘或逻辑卷。 （逻辑卷是通过合并两个或更多磁盘上的可用空间来创建的卷。）与硬件卷影副本不同，软件提供程序使用操作系统资源来维护卷影副本。
 
-有关基本磁盘的详细信息，请参阅[什么是基本磁盘和卷？](http://go.microsoft.com/fwlink/?linkid=180894) （ http://go.microsoft.com/fwlink/?LinkId=180894) TechNet 上的。
+有关基本磁盘的详细信息，请参阅[什么是基本磁盘和卷？](https://go.microsoft.com/fwlink/?linkid=180894) （ https://go.microsoft.com/fwlink/?LinkId=180894) TechNet 上的。
 
 ### <a name="system-provider"></a>系统提供程序
 
@@ -247,11 +247,11 @@ Windows 操作系统包含一组 VSS 编写器，这些编写器负责枚举各�
 
 有关这些编写器的详细信息，请参阅以下 Microsoft 网站：
 
-  - [内置 VSS 编写](http://go.microsoft.com/fwlink/?linkid=180895)器（ http://go.microsoft.com/fwlink/?LinkId=180895)  
+  - [内置 VSS 编写](https://go.microsoft.com/fwlink/?linkid=180895)器（ https://go.microsoft.com/fwlink/?LinkId=180895)  
       
-  - [Windows Server 2008 和 Windows VISTA SP1 的新的内置 VSS 编写](http://go.microsoft.com/fwlink/?linkid=180896)器（ http://go.microsoft.com/fwlink/?LinkId=180896)  
+  - [Windows Server 2008 和 Windows VISTA SP1 的新的内置 VSS 编写](https://go.microsoft.com/fwlink/?linkid=180896)器（ https://go.microsoft.com/fwlink/?LinkId=180896)  
       
-  - [Windows Server 2008 R2 和 windows 7 的新的内置 VSS 编写](http://go.microsoft.com/fwlink/?linkid=180897)器（ http://go.microsoft.com/fwlink/?LinkId=180897)  
+  - [Windows Server 2008 R2 和 windows 7 的新的内置 VSS 编写](https://go.microsoft.com/fwlink/?linkid=180897)器（ https://go.microsoft.com/fwlink/?LinkId=180897)  
       
 
 ## <a name="how-shadow-copies-are-used"></a>如何使用卷影副本
@@ -298,7 +298,7 @@ LUN 重新同步不同于 LUN 交换。 LUN 交换是一种快速恢复方案，
 
 共享文件夹的卷影副本使用卷影复制服务提供共享网络资源（如文件服务器）上的文件的时点副本。 借助共享文件夹的卷影副本，用户可以快速恢复存储在网络上的已删除或已更改的文件。 由于可以在没有管理员帮助的情况下执行此操作，因此共享文件夹的卷影副本可以提高工作效率并降低管理成本。
 
-有关共享文件夹的卷影副本的详细信息，请参阅 TechNet上的[共享文件夹的卷影副本](http://go.microsoft.com/fwlink/?linkid=180898)http://go.microsoft.com/fwlink/?LinkId=180898)（在 TechNet 上）。
+有关共享文件夹的卷影副本的详细信息，请参阅 TechNet上的[共享文件夹的卷影副本](https://go.microsoft.com/fwlink/?linkid=180898)https://go.microsoft.com/fwlink/?LinkId=180898) （在 TechNet 上）。
 
 ### <a name="data-mining-by-using-transportable-shadow-copies"></a>使用可传送卷影副本进行数据挖掘
 
@@ -330,7 +330,7 @@ LUN 重新同步不同于 LUN 交换。 LUN 交换是一种快速恢复方案，
 
 ## <a name="frequently-asked-questions"></a>常见问题
 
-此常见问题回答了有关系统管理员卷影复制服务（VSS）的问题。 有关 VSS 应用程序编程接口的信息，请参阅 Windows开发人员中心库中的[卷影复制服务](http://go.microsoft.com/fwlink/?linkid=180899)http://go.microsoft.com/fwlink/?LinkId=180899)。
+此常见问题回答了有关系统管理员卷影复制服务（VSS）的问题。 有关 VSS 应用程序编程接口的信息，请参阅 Windows开发人员中心库中的[卷影复制服务](https://go.microsoft.com/fwlink/?linkid=180899)https://go.microsoft.com/fwlink/?LinkId=180899) 。
 
 ### <a name="when-was-volume-shadow-copy-service-introduced-on-which-windows-operating-system-versions-is-it-available"></a>何时卷影复制服务引入？ 可用的 Windows 操作系统版本是什么？
 
@@ -362,9 +362,9 @@ VSS 是在 Windows XP 中引入的。 它在 Windows XP、Windows Server 2003、
 
 有关详细信息，请参阅以下 Microsoft TechNet 网站：
 
-  - [系统还原](http://go.microsoft.com/fwlink/?linkid=157113)（ http://go.microsoft.com/fwlink/?LinkID=157113)  
+  - [系统还原](https://go.microsoft.com/fwlink/?linkid=157113)（ https://go.microsoft.com/fwlink/?LinkID=157113)  
       
-  - [Windows Server 备份](http://go.microsoft.com/fwlink/?linkid=180891)（ http://go.microsoft.com/fwlink/?LinkID=180891)  
+  - [Windows Server 备份](https://go.microsoft.com/fwlink/?linkid=180891)（ https://go.microsoft.com/fwlink/?LinkID=180891)  
       
 
 ### <a name="can-i-exclude-files-from-a-shadow-copy-to-save-space"></a>是否可以从卷影副本中排除文件以节省空间？
@@ -384,15 +384,15 @@ VSS 旨在创建整个卷的卷影副本。 将从卷影副本中自动省略临
 > <LI>文件会尽力地从卷影副本中删除。 这意味着不能保证它们被删除。<BR><BR></LI></UL>
 
 
-有关详细信息，请参阅 MSDN 上的[从卷影副本中排除文件](http://go.microsoft.com/fwlink/?linkid=180904)（ http://go.microsoft.com/fwlink/?LinkId=180904)。
+有关详细信息，请参阅 MSDN 上的[从卷影副本中排除文件](https://go.microsoft.com/fwlink/?linkid=180904)（ https://go.microsoft.com/fwlink/?LinkId=180904) 。
 
-### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>我的非 Microsoft 备份程序失败，出现 VSS 错误。 我该怎么办？
+### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>我的非 Microsoft 备份程序失败，出现 VSS 错误。 我该做什么？
 
 查看创建备份程序的公司网站的 "产品支持" 部分。 可能有可以下载并安装的产品更新来解决此问题。 否则，请与公司的产品支持部门联系。
 
 系统管理员可以使用以下 Microsoft TechNet Library 网站上的 VSS 疑难解答信息收集有关与 VSS 相关的问题的诊断信息。
 
-有关详细信息，请参阅 TechNet上的[卷影复制服务](http://go.microsoft.com/fwlink/?linkid=180905)http://go.microsoft.com/fwlink/?LinkId=180905)。
+有关详细信息，请参阅 TechNet上的[卷影复制服务](https://go.microsoft.com/fwlink/?linkid=180905)https://go.microsoft.com/fwlink/?LinkId=180905) 。
 
 ### <a name="what-is-the-diff-area"></a>什么是 "差异区域"？
 
@@ -417,7 +417,7 @@ VSS 旨在创建整个卷的卷影副本。 将从卷影副本中自动省略临
 
 ### <a name="can-vss-create-shadow-copies-of-non-ntfs-volumes"></a>VSS 是否可以创建非 NTFS 卷的卷影副本？
 
-是。 但是，只能对 NTFS 卷进行永久性卷影复制。 此外，系统上至少装入一个卷必须是 NTFS 卷。
+是 但是，只能对 NTFS 卷进行永久性卷影复制。 此外，系统上至少装入一个卷必须是 NTFS 卷。
 
 ### <a name="whats-the-maximum-number-of-shadow-copies-i-can-create-at-one-time"></a>我可以一次创建的卷影副本的最大数目是多少？
 
@@ -431,7 +431,7 @@ VSS 旨在创建整个卷的卷影副本。 将从卷影副本中自动省略临
 
 键入**vssadmin resize shadowstorage**命令。
 
-有关详细信息，请参阅 TechNet 上的[Vssadmin resize shadowstorage](http://go.microsoft.com/fwlink/?linkid=180906) （ http://go.microsoft.com/fwlink/?LinkId=180906)。
+有关详细信息，请参阅 TechNet 上的[Vssadmin resize shadowstorage](https://go.microsoft.com/fwlink/?linkid=180906) （ https://go.microsoft.com/fwlink/?LinkId=180906) 。
 
 ### <a name="what-happens-when-i-run-out-of-space"></a>当空间不足时，会发生什么情况？
 
@@ -441,9 +441,9 @@ VSS 旨在创建整个卷的卷影副本。 将从卷影副本中自动省略临
 
 Windows 操作系统提供了以下用于处理 VSS 的工具：
 
-  - [DiskShadow](http://go.microsoft.com/fwlink/?linkid=180907) （ http://go.microsoft.com/fwlink/?LinkId=180907)  
+  - [DiskShadow](https://go.microsoft.com/fwlink/?linkid=180907) （ https://go.microsoft.com/fwlink/?LinkId=180907)  
       
-  - [VssAdmin](http://go.microsoft.com/fwlink/?linkid=84008) （ http://go.microsoft.com/fwlink/?LinkId=84008)  
+  - [VssAdmin](https://go.microsoft.com/fwlink/?linkid=84008) （ https://go.microsoft.com/fwlink/?LinkId=84008)  
       
 
 ### <a name="diskshadow"></a>DiskShadow
@@ -503,9 +503,9 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 
 有关详细信息，请参阅 MSDN 网站上的以下条目：
 
-  - [编写器的安全注意事项](http://go.microsoft.com/fwlink/?linkid=157739)（ http://go.microsoft.com/fwlink/?LinkId=157739)  
+  - [编写器的安全注意事项](https://go.microsoft.com/fwlink/?linkid=157739)（ https://go.microsoft.com/fwlink/?LinkId=157739)  
       
-  - [请求者的安全注意事项](http://go.microsoft.com/fwlink/?linkid=180908)（ http://go.microsoft.com/fwlink/?LinkId=180908)  
+  - [请求者的安全注意事项](https://go.microsoft.com/fwlink/?linkid=180908)（ https://go.microsoft.com/fwlink/?LinkId=180908)  
       
 
 ### <a name="maxshadowcopies"></a>MaxShadowCopies
@@ -514,7 +514,7 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 
 有关详细信息，请参阅 MSDN 网站上的以下条目：
 
-[用于备份和还原的注册表项下的](http://go.microsoft.com/fwlink/?linkid=180909) **MaxShadowCopies** （ http://go.microsoft.com/fwlink/?LinkId=180909)
+[用于备份和还原的注册表项下的](https://go.microsoft.com/fwlink/?linkid=180909) **MaxShadowCopies** （ https://go.microsoft.com/fwlink/?LinkId=180909)
 
 ### <a name="mindiffareafilesize"></a>MinDiffAreaFileSize
 
@@ -522,7 +522,7 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 
 有关详细信息，请参阅 MSDN 网站上的以下条目：
 
-[用于备份和还原的注册表项下的](http://go.microsoft.com/fwlink/?linkid=180910) **MinDiffAreaFileSize** （ http://go.microsoft.com/fwlink/?LinkId=180910)
+[用于备份和还原的注册表项下的](https://go.microsoft.com/fwlink/?linkid=180910) **MinDiffAreaFileSize** （ https://go.microsoft.com/fwlink/?LinkId=180910)
 
 `##`支持的操作系统版本
 
@@ -546,12 +546,12 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 <tr class="odd">
 <td><p>LUN 重新同步</p></td>
 <td><p>无受支持的版本</p></td>
-<td><p>Windows Server 2008 R2</p></td>
+<td><p>Windows Server 2008 R2</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>FilesNotToSnapshot</strong>注册表项</p></td>
 <td><p>Windows Vista</p></td>
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 </tr>
 <tr class="odd">
 <td><p>可传送卷影副本</p></td>
@@ -595,7 +595,7 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 <p></p>
 </div></td>
 <td><p>无受支持的版本</p></td>
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 </tr>
 <tr class="even">
 <td><p>共享文件夹的卷影副本</p></td>
@@ -605,7 +605,7 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 <tr class="odd">
 <td><p>可传送自动恢复的卷影副本</p></td>
 <td><p>无受支持的版本</p></td>
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 </tr>
 <tr class="even">
 <td><p>并发备份会话（最多64）</p></td>
@@ -619,8 +619,8 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 </tr>
 <tr class="even">
 <td><p>最多8个还原会话并发备份</p></td>
-<td><p>Windows 7</p></td>
-<td><p>Windows Server 2003 R2</p></td>
+<td><p>Windows 7</p></td>
+<td><p>Windows Server 2003 R2</p></td>
 </tr>
 </tbody>
 </table>

@@ -8,15 +8,15 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 870dbb4303d216f05bc372610f3121ff08fc8c25
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f28e5feccb7544046104658585ab3f739f659957
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407844"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949508"
 ---
-# <a name="scenario-web-app-server-app-calling-web-api"></a>场景：Web 应用（服务器应用）调用 Web API 
->适用于：AD FS 2019 及更高版本 
+# <a name="scenario-web-app-server-app-calling-web-api"></a>方案： Web 应用（服务器应用）调用 Web API 
+>适用于： AD FS 2019 及更高版本 
  
 了解如何生成通过 AD FS 2019 进行身份验证的 web 应用登录，并使用[MSAL 库](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)来调用 web api。  
  
@@ -26,7 +26,7 @@ ms.locfileid: "71407844"
  
 ![Web 应用调用 web api 概述](media/adfs-msal-web-app-web-api/webapp1.png)
 
-在此流中，你将向 Web 应用（服务器应用）添加身份验证，从而使用户登录并调用 Web API。 从 Web 应用调用 Web API，并使用 MSAL 的[AcquireTokenByAuthorizationCode](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identity.client.acquiretokenbyauthorizationcodeparameterbuilder?view=azure-dotnet)令牌采集方法。 你将使用授权代码流, 在令牌缓存中存储获取的令牌。 然后, 在需要时, 控制器将以无提示方式从缓存中获取令牌。 MSAL 根据需要刷新该令牌。 
+在此流中，你将向 Web 应用（服务器应用）添加身份验证，从而使用户登录并调用 Web API。 从 Web 应用调用 Web API，并使用 MSAL 的[AcquireTokenByAuthorizationCode](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenbyauthorizationcodeparameterbuilder?view=azure-dotnet)令牌采集方法。 可使用授权代码流，在令牌缓存中存储获取的令牌。 然后，控制器在需要时将以无提示方式从缓存中获取令牌。 MSAL 根据需要刷新该令牌。 
 
 用于调用 Web Api 的 web 应用： 
 
@@ -47,19 +47,19 @@ ms.locfileid: "71407844"
 本部分说明如何将 Web 应用作为机密客户端和 Web API 注册为 AD FS 中的信赖方（RP）。 
 
   1. 在 AD FS 管理 "中，右键单击"**应用程序组**"，然后选择"**添加应用程序组**"。  
-  2. 在应用程序组向导上，为 **"** 输入**WebAppToWebApi** "，在 "**客户端-服务器应用程序**" 下选择用于**访问 Web API 模板的服务器应用程序**。 单击“下一步”。  
+  2. 在应用程序组向导上，为 **"** 输入**WebAppToWebApi** "，在 "**客户端-服务器应用程序**" 下选择用于**访问 Web API 模板的服务器应用程序**。 单击?下一步?。  
   
       ![添加应用程序组](media/adfs-msal-web-app-web-api/webapp2.png)
   
-  3. 复制 "**客户端标识符**" 值。 稍后将**在应用程序的 web.config 文件**中将其用作**ida： ClientId**的值。 对于 "**重定向 URI** - "，请输入以下内容： https://localhost:44326 。 单击“添加”。 单击“下一步”。 
+  3. 复制 "**客户端标识符**" 值。 稍后将**在应用程序的 web.config 文件**中将其用作**ida： ClientId**的值。 为 "**重定向 URI：**  - https://localhost:44326 输入以下内容。 单击“添加”。 单击?下一步?。 
   
       ![添加应用程序组](media/adfs-msal-web-app-web-api/webapp3.png)
   
-  4. 在 "配置应用程序凭据" 屏幕上，选中 "**生成共享机密**并复制机密"。 稍后将在**应用程序的 web.config 文件**中将其用作**ida： ClientSecret**的值。 单击“下一步”。  
+  4. 在 "配置应用程序凭据" 屏幕上，选中 "**生成共享机密**并复制机密"。 稍后将在**应用程序的 web.config 文件**中将其用作**ida： ClientSecret**的值。 单击?下一步?。  
   
       ![添加应用程序组](media/adfs-msal-web-app-web-api/webapp4.png)
   
-  5. 在 "配置 Web API" 屏幕上，输入**标识符：** https://webapi 。 单击**添加**。 单击“下一步”。 稍后将在**应用程序的 web.config 文件**中将此值用于**ida： GraphResourceId** 。 
+  5. 在 "配置 Web API" 屏幕上，输入**标识符：** https://webapi 。 单击**添加**。 单击?下一步?。 稍后将在**应用程序的 web.config 文件**中将此值用于**ida： GraphResourceId** 。 
   
       ![添加应用程序组](media/adfs-msal-web-app-web-api/webapp5.png)
   

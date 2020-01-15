@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: de4d64e3dbe4bc7c7cba32f066a696636632224d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 82d0ce962dfab0f7c9e5180e4b471894f507fb26
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403724"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950348"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>托管&#39;服务帐户的新增功能
 
@@ -31,7 +31,7 @@ ms.locfileid: "71403724"
 ## <a name="versions"></a>Windows Server 2012 和 Windows 8 中托管服务帐户的新增功能
 下面介绍了 Windows Server 2012 和 Windows 8 中的 MSA 功能更改。
 
-### <a name="group-managed-service-accounts"></a>组托管服务帐户
+### <a name="group-managed-service-accounts"></a>Group Managed Service Accounts
 当在域中为服务器配置域帐户时，客户端计算机可以对服务进行身份验证并连接到该服务。 以前，只有两种帐户类型提供了无需密码管理的身份。 但是，这些帐户类型具有以下一些限制：
 
 -   计算机帐户将仅限于一个域服务器，并且密码由该计算机管理。
@@ -57,6 +57,6 @@ ms.locfileid: "71403724"
 
 -   [Active Directory 域服务概述](active-directory-domain-services-overview.md)
 
--   [托管服务帐户：了解、实现、最佳做法和故障排除](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [托管服务帐户：了解、实现、最佳做法和故障排除](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

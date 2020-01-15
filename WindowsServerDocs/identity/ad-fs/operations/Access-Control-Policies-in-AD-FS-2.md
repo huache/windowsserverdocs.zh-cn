@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0d6133a6fb43b8624dc1329db632fb5dd4aa070
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4f5d2cfa8383bcf3c0813b272f8c4828473b8df9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358451"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948600"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 中的客户端访问控制策略
 Active Directory 联合身份验证服务2.0 中的客户端访问策略允许你限制或授予用户对资源的访问权限。  本文档介绍如何在 AD FS 2.0 中启用客户端访问策略以及如何配置最常见的方案。
@@ -25,7 +25,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 ### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>步骤1：在 AD FS 服务器上安装 AD FS 2.0 包的更新汇总2
 
-下载[Active Directory 联合身份验证服务（AD FS）2.0 包的更新汇总 2](https://support.microsoft.com/en-us/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) ，并将其安装在所有联合服务器和联合服务器代理上。
+下载[Active Directory 联合身份验证服务（AD FS）2.0 包的更新汇总 2](https://support.microsoft.com/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) ，并将其安装在所有联合服务器和联合服务器代理上。
 
 ### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>步骤2：将五个声明规则添加到 Active Directory 声明提供方信任
 
@@ -205,7 +205,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 首先，将匹配单个 IP 地址的基本模式如下： \b # # #\.###\.###\.# # # \b
 
-扩展此内容，我们可以使用或表达式匹配两个不同的 IP 地址，如下所示： \b # # #\.###\.###\.# # # \b | \b # # #\.###\.#### # # \b\.
+扩展此内容，我们可以使用或表达式匹配两个不同的 IP 地址，如下所示： \b # # #\.###\.###\.# # # \b | \b # # #\.###\.#### # # \b
 
 因此，仅匹配两个地址（如192.168.1.1 或10.0.0.1）的示例为： \b192\.168\.1\.1 \ b | \b10\.0\.0\.1 \ b
 

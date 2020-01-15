@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 1643568cd1a0cdbb693d773a8357d2c36b701fd3
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: fc8e6ffa39320cfc73bf3f5bd0a5bc765ded24b4
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903971"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950524"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows 管理中心入门
 
@@ -21,7 +21,7 @@ ms.locfileid: "74903971"
 
 > [!Tip]
 > 不熟悉 Windows Admin Center？
-> [了解有关 Windows Admin Center 的更多信息](../understand/windows-admin-center.md)或[立即下载](https://aka.ms/windowsadmincenter)。
+> [了解有关 Windows Admin Center 的更多信息](../overview.md)或[立即下载](https://aka.ms/windowsadmincenter)。
 
 ## <a name="windows-admin-center-installed-on-windows-10"></a>Windows 10 上安装的 windows 管理中心
 
@@ -97,7 +97,7 @@ Windows 管理中心支持通过多种机制对托管节点进行身份验证。
 
 您可以使用您当前的 Windows 凭据对托管节点进行身份验证。 这是默认设置，Windows 管理中心会在你添加服务器时尝试登录。 
 
-**在 Windows Server 上部署为服务时的单一登录**
+**在部署为 Windows Server 上的服务的情况下进行的单一登录**
 
 如果在 Windows Server 上安装了 Windows 管理中心，则需要进行其他配置才能进行单一登录。  [为委派配置环境](../configure/user-access-control.md)
 
@@ -151,7 +151,7 @@ Windows 管理中心支持通过多种机制对托管节点进行身份验证。
 * 您可以选择 "or"、"and" 或 "not" 来修改所选标记的筛选器行为。
 ![](../media/launch/tags-8.png)
 
-## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>使用 PowerShell 导入或导出连接（带有标记）
+## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>使用 PowerShell 通过标记导入或导出连接
 
 [!INCLUDE [ps-connections](../includes/ps-connections.md)]
 

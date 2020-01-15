@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: fcf10ee11e92a00aca8bc0589c7419690312b6b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d3e6b698bfd799fb1975bfdd20ecc8f85c07f935
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390136"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949077"
 ---
 # <a name="how-to-configure-protected-accounts"></a>如何配置受保护的帐户
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 通过哈希传递 (PtH) 攻击，攻击者可以使用用户密码（或其他凭据派生对象）的基础 NTLM 哈希针对远程服务器或服务验证自己的身份。 Microsoft 之前 [发布了指南](https://www.microsoft.com/download/details.aspx?id=36036) 以缓解传递哈希攻击。  Windows Server 2012 R2 包含有助于进一步缓解此类攻击的新功能。 有关其他帮助防止凭据被盗的安全功能的详细信息，请参阅 [凭据保护和管理](https://technet.microsoft.com/library/dn408190.aspx)。 本主题介绍了如何配置以下新功能：
 
@@ -30,7 +30,7 @@ ms.locfileid: "71390136"
 
 Windows 8.1 和 Windows Server 2012 R2 中内置了其他缓解措施，以帮助防止凭据被盗，如以下主题中所述：
 
--   [远程桌面的受限管理模式](http://blogs.technet.com/b/kfalde/archive/2013/08/14/restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)
+-   [远程桌面的受限管理模式](https://blogs.technet.com/b/kfalde/archive/2013/08/14/restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)
 
 -   [LSA 保护](https://technet.microsoft.com/library/dn408187)
 
@@ -39,7 +39,7 @@ Protected Users 是一个新的全局安全组，你可以向该组添加新用�
 
 登录到 Windows 8.1 设备和 Windows Server 2012 R2 主机的受保护用户组的成员*不能再*使用：
 
--   默认凭据委派 (CredSSP) - 不会缓存纯文本凭据，即使在启用了**允许委派默认凭据**策略时也是如此
+-   默认凭据委派 (CredSSP) - 不会缓存纯文本凭据，即使在启用了 **允许委派默认凭据** 策略时也是如此
 
 -   Windows 摘要 - 不会缓存纯文本凭据，即使在启用了它们时也是如此
 
@@ -53,7 +53,7 @@ Protected Users 是一个新的全局安全组，你可以向该组添加新用�
 
 -   使用 NTLM 身份验证进行身份验证
 
--   在 Kerberos 预身份验证中使用数据加密标准（DES）或 RC4 密码套件
+-   在 Kerberos 预身份验证中使用数据加密标准 (DES) 或 RC4 密码套件
 
 -   使用不受约束或约束委派进行委派
 
@@ -68,7 +68,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
 
 -   不要在域中进行测试，除非**所有域控制器都运行 Windows Server 2008 或更高版本**。
 
--   针对创建该域**之前**创建的所有域帐户“更改密码”。 否则，这些帐户无法进行身份验证。
+-   针对创建该域**之前** 创建的所有域帐户“更改密码” 。 否则，这些帐户无法进行身份验证。
 
 -   在将帐户添加到受保护的用户组之前更改每个用户的**密码**，或者确保最近在运行 Windows Server 2008 或更高版本的域控制器上更改了密码。
 
@@ -105,7 +105,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
 ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
 
 ### <a name="BKMK_AuditAuthNattempts"></a>审核身份验证尝试
-若要为“Protected Users”组的成员显式审核身份验证尝试，你可以继续收集安全日志审核事件或在新操作管理日志中收集数据。 有关这些事件的详细信息，请参阅 [身份验证策略和身份验证策略接收器](https://technet.microsoft.com/library/dn486813.aspx)
+若要为“Protected Users” 组的成员显式审核身份验证尝试，你可以继续收集安全日志审核事件或在新操作管理日志中收集数据。 有关这些事件的详细信息，请参阅 [身份验证策略和身份验证策略接收器](https://technet.microsoft.com/library/dn486813.aspx)
 
 ### <a name="BKMK_ProvidePUdcProtections"></a>为服务和计算机提供 DC 端保护
 服务和计算机的帐户不能是“Protected Users”的成员。 本部分说明了可以向这些帐户提供哪些基于域控制器的保护：
@@ -117,7 +117,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
 -   在 Kerberos 预身份验证中拒绝 RC4：不可配置。
 
     > [!NOTE]
-    > 尽管可以 [更改支持的加密类型的配置](http://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)，但如果未在目标环境中进行测试，不建议针对计算机帐户更改这些设置。
+    > 尽管可以 [更改支持的加密类型的配置](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)，但如果未在目标环境中进行测试，不建议针对计算机帐户更改这些设置。
 
 -   将用户票证 (TGT) 限制为初始 4 小时生存期：使用身份验证策略。
 
@@ -132,7 +132,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
 
 -   用户
 
--   计算机
+-   “计算机”
 
 -   托管服务帐户和组托管服务帐户 (GMSA)
 
@@ -180,7 +180,7 @@ AP 交换的发生频率与应用程序协议的中数据相同，并且不受�
 |限制基于用户声明或设备帐户、安全组或者声明的服务票证分发| 支持动态访问控制的 Windows Server 2012 R2 域功能级别资源域|
 
 ### <a name="restrict-a-user-account-to-specific-devices-and-hosts"></a>将用户帐户限制到特定设备和主机
-具有管理权限的高价值帐户应该是“Protected Users”组的成员。 默认情况下，所有帐户都不是“Protected Users” 组的成员。 将帐户添加到该组之前，配置域控制器支持并创建审核策略，以确保不存在阻止问题。
+具有管理权限的高价值帐户应该是“Protected Users” 组的成员。 默认情况下，所有帐户都不是“Protected Users” 组的成员。 将帐户添加到该组之前，配置域控制器支持并创建审核策略，以确保不存在阻止问题。
 
 #### <a name="configure-domain-controller-support"></a>配置域控制器支持
 
@@ -211,7 +211,7 @@ AP 交换的发生频率与应用程序协议的中数据相同，并且不受�
     > [!NOTE]
     > 对于 Windows Server 2012 R2 DFL 上的域，所选的**身份验证**节点可见。 如果未出现该节点，则使用 Windows Server 2012 R2 DFL 上的域中的域管理员帐户重试。
 
-2.  单击“身份验证策略”，然后单击“新建”以创建新策略。
+2.  单击“身份验证策略”，然后单击“新建” 以创建新策略。
 
     ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicy.gif)
 
@@ -225,7 +225,7 @@ AP 交换的发生频率与应用程序协议的中数据相同，并且不受�
 
     -   用户
 
-    -   计算机
+    -   “计算机”
 
     -   托管服务帐户和组托管服务帐户
 
@@ -239,22 +239,22 @@ AP 交换的发生频率与应用程序协议的中数据相同，并且不受�
 
     ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
 
-5.  若要限制用户帐户选择设备，请单击“编辑”以定义设备所需的条件。
+5.  若要限制用户帐户选择设备，请单击“编辑” 以定义设备所需的条件。
 
     ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EditAuthNPolicy.gif)
 
-6.  在“编辑访问控制条件”窗口中，单击“添加条件”。
+6.  在“编辑访问控制条件” 窗口中，单击“添加条件”。
 
     ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCondition.png)
 
 ##### <a name="add-computer-account-or-group-conditions"></a>添加计算机帐户或组条件
 
-1.  若要配置计算机帐户或组，请在下拉列表中，选中下拉列表框“每个组的成员”并更改为“任何组的成员”。
+1.  若要配置计算机帐户或组，请在下拉列表中，选中下拉列表框“每个组的成员” 并更改为“任何组的成员”。
 
     ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompMember.png)
 
     > [!NOTE]
-    > 此访问控制定义用户从中登录的设备或主机的条件。 在访问控制术语中，设备或主机的计算机帐户是用户，这就是“用户”是唯一选项的原因。
+    > 此访问控制定义用户从中登录的设备或主机的条件。 在访问控制术语中，设备或主机的计算机帐户是用户，这就是“用户” 是唯一选项的原因。
 
 2.  单击“添加项目”。
 
@@ -297,23 +297,23 @@ AP 交换的发生频率与应用程序协议的中数据相同，并且不受�
     ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaimComplete.gif)
 
 ##### <a name="troubleshoot-missing-computer-claims"></a>解决丢失计算机声明的问题
-如果已设置该声明，但不可用，则可能仅针对“计算机”类配置了它。
+如果已设置该声明，但不可用，则可能仅针对“计算机” 类配置了它。
 
 假设你想要根据计算机的组织单位（OU）限制身份验证，该计算机已配置，但仅适用于**计算机**类。
 
 ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictComputers.gif)
 
-为了使声明可用于限制用户登录设备，请选择“用户”复选框。
+为了使声明可用于限制用户登录设备，请选择“用户” 复选框。
 
 ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictUsersComputers.gif)
 
 #### <a name="provision-a-user-account-with-an-authentication-policy-with-adac"></a>使用 ADAC 设置具有身份验证策略的用户帐户
 
-1.  从“用户”帐户中，单击“策略”。
+1.  从“用户” 帐户中，单击“策略”。
 
     ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicy.gif)
 
-2.  选中“将身份验证策略分配给此帐户”复选框。
+2.  选中“将身份验证策略分配给此帐户” 复选框。
 
     ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicyAssign.gif)
 
@@ -364,7 +364,7 @@ PS C:\> Set-ADAuthenticationPolicy -Identity ADAuthenticationPolicy1 -Descriptio
 PS C:\> Remove-ADAuthenticationPolicy -Identity ADAuthenticationPolicy1
 ```
 
-此命令将结合使用 **Get-ADAuthenticationPolicy** cmdlet 和 **Filter** 参数，以获取不会强制执行的所有身份验证策略。 该结果集通过管道传送给 **Remove-ADAuthenticationPolicy** cmdlet。
+此命令将结合使用 **Get-ADAuthenticationPolicy** cmdlet 和 **Filter** 参数，以获取不会强制执行的所有身份验证策略。 结果集通过管道传送给 **Remove-ADAuthenticationPolicy** cmdlet。
 
 ```
 PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthenticationPolicy
@@ -435,7 +435,7 @@ PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthe
 PS C:\>New-ADAuthenticationPolicySilo -Name newSilo -Enforce
 ```
 
-此命令将获取与由 **Filter** 参数指定的筛选器相匹配的所有身份验证策略接收器。 输出随后将传递到 **Format-Table** cmdlet，以显示该策略的名称以及每个策略上 **Enforce** 的值。
+此命令将获取与 **Filter** 参数指定的筛选器相匹配的所有身份验证策略接收器。 输出随后将传递到 **Format-Table** cmdlet，以显示该策略的名称以及每个策略上 **Enforce** 的值。
 
 ```
 PS C:\>Get-ADAuthenticationPolicySilo -Filter 'Name -like "*silo*"' | Format-Table Name, Enforce -AutoSize
@@ -465,7 +465,7 @@ PS C:\>Grant-ADAuthenticationPolicySiloAccess -Identity Silo -Account User01
 PS C:\>Revoke-ADAuthenticationPolicySiloAccess -Identity Silo -Account User01 -Confirm:$False
 ```
 
-此示例首先使用 **Get-ADComputer** cmdlet 来获取与 **Filter** 参数指定的筛选器相匹配的所有计算机帐户。 此命令的输出将传递给 **Set-ADAccountAuthenticatinPolicySilo**，以将名为 *Silo* 的身份验证策略接收器和名为 *AuthenticationPolicy02* 的身份验证策略分配给它们。
+此示例首先使用 **Get-ADComputer** cmdlet 来获取与 **Filter** 参数指定的筛选器相匹配的所有计算机帐户。 此命令的输出将传递给 **Set-ADAccountAuthenticatinPolicySilo** ，以将名为 *Silo* 的身份验证策略接收器和名为 *AuthenticationPolicy02* 的身份验证策略分配给它们。
 
 ```
 PS C:\>Get-ADComputer -Filter 'Name -like "newComputer*"' | Set-ADAccountAuthenticationPolicySilo -AuthenticationPolicySilo Silo -AuthenticationPolicy AuthenticationPolicy02

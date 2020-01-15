@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a952e247ee40f832045d39d0e2164bb2e6613c54
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d205bcfad11d22fea7fc9d0651aca61f234347cf
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373209"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948508"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -37,7 +37,7 @@ nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 
 如果没有参数，则**nfsshare**命令行实用程序会列出 nfs 服务器导出的所有网络文件系统（NFS）共享。 使用*共享名*作为唯一参数， **Nfsshare**会列出*共享名*标识的 NFS 共享的属性。 如果提供了*共享名*和<em>驱动器</em> **：** <em>path</em> ，则**nfsshare**会将<em>Drive</em> **：** <em>path</em>标识的文件夹导出为*共享名*。 如果使用 **/delete**选项，则指定的文件夹将不再对 NFS 客户端可用。
 
-## <a name="options"></a>选项
+## <a name="options"></a>“选项”
 
 **Nfsshare**命令接受以下选项和参数：
 
@@ -56,6 +56,6 @@ nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 > [!NOTE]
 > 若要查看此命令的完整语法，请在命令提示符下键入：</br>> **nfsshare/？**
 
-# #
+## <a name="see-also"></a>另请参阅
 
-[网络文件系统服务命令参考](services-for-network-file-system-command-reference.md)另请参阅
+[网络文件系统命令参考服务](services-for-network-file-system-command-reference.md)

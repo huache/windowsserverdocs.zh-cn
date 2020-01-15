@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 70014c04bbb4425fe3c3fd0379f10cf00abe00ee
-ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
+ms.openlocfilehash: 04fdd52544b69d2c41abcbee00dd00b31bf5f21c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72986437"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949788"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>创建受防护的 Windows VM 模板磁盘
 
@@ -32,7 +32,7 @@ ms.locfileid: "72986437"
 |-----------|----|
 |必须是 GUID 分区表（GPT）磁盘 | 需要用于第2代虚拟机以支持 UEFI|
 |磁盘类型必须是**基本**磁盘，而不是**动态**磁盘。 <br>注意：这是指逻辑磁盘类型，而不是 Hyper-v 支持的 "动态扩展" VHDX 功能。 | BitLocker 不支持动态磁盘。|
-|磁盘至少有两个分区。 一个分区必须包含安装 Windows 的驱动器。 这是 BitLocker 将加密的驱动器。 其他分区是活动分区，其中包含引导程序并保持未加密状态，以便可以启动计算机。|BitLocker 需要|
+|磁盘至少有两个分区。 一个分区必须包含安装 Windows 的驱动器。 该驱动器是 BitLocker 将进行加密的驱动器。 其他分区是活动分区，其中包含引导程序并保持未加密状态，以便可以启动计算机。|BitLocker 需要|
 |文件系统为 NTFS | BitLocker 需要|
 |在 VHDX 上安装的操作系统是以下项之一：<br>-Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 <br>-Windows 10、Windows 8.1、Windows 8| 需要支持第2代虚拟机和 Microsoft 安全启动模板|
 |操作系统必须通用化（运行 sysprep.inf） | 模板预配涉及特定租户工作负荷的专用 Vm| 
@@ -59,7 +59,7 @@ ms.locfileid: "72986437"
 
         Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
         
-    你还可以从已安装[Windows 10 远程服务器管理工具](https://www.microsoft.com/en-us/download/details.aspx?id=45520)的客户端计算机管理服务器。
+    你还可以从已安装[Windows 10 远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)的客户端计算机管理服务器。
 
 3. 获取或创建一个证书，以便为要成为新的受防护 Vm 的模板磁盘的 VHDX 签名 VSC。 此证书的详细信息将在租户创建其防护数据文件并授权它们信任的磁盘时显示给租户。 因此，请务必从你和你的租户信任的证书颁发机构获取此证书。 在既是宿主又是租户的企业方案中，可能会考虑从 PKI 颁发此证书。
 
@@ -85,7 +85,7 @@ ms.locfileid: "72986437"
     > 模板磁盘只能用于安全防护的 VM 预配过程。
     > 尝试使用模板磁盘启动常规（非屏蔽） VM 可能会导致停止错误（蓝屏）并且不受支持。
 
-9. 在 "**摘要**" 页上，将显示有关磁盘模板、用于对 VSC 进行签名的证书和证书颁发者的信息。 单击 "**关闭**" 退出向导。
+9. 在 "**摘要**" 页上，将显示有关磁盘模板、用于对 VSC 进行签名的证书和证书颁发者的信息。 单击 **“关闭”** 以退出向导。
 
 如果使用 VMM，请按照本主题的其余部分中的步骤将模板磁盘合并到 VMM 中的受防护的 VM 模板。 
 

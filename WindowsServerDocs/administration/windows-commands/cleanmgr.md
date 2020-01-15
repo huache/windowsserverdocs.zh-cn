@@ -1,5 +1,5 @@
 ---
-title: cleanmgr.exe
+title: cleanmgr
 description: 了解如何使用命令行选项来配置磁盘清理工具（Cleanmgr.exe）以自动清除某些文件。
 ms.prod: windows-server
 ms.reviewer: cosmosdarwin
@@ -8,14 +8,14 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 20bc60abc747e6bab0ef59f38d0a392f18d75abe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0646922f409d4ea8abb85c927a329013e32016de
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379383"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947588"
 ---
-# <a name="cleanmgr"></a>cleanmgr.exe
+# <a name="cleanmgr"></a>cleanmgr
 
 > 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012，Windows Server 2008 R2，Windows Server （半年频道）
 
@@ -41,7 +41,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 | /VERYLOWDISK | 用默认设置运行，不提示用户。 |
 | /?           | 显示帮助。 |
 
-## <a name="options"></a>选项
+## <a name="options"></a>“选项”
 
 可以通过使用/sageset 和/sagerun 为磁盘清理指定的文件选项包括：
 
@@ -61,7 +61,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 - **脱机文件**脱机文件是网络文件的本地副本，你想要使其脱机可用，以便在断开网络连接后可以使用它们。 "查看文件" 按钮将打开脱机文件文件夹。
 
-- **压缩旧文件**-Windows 可以压缩最近未使用的文件。 压缩文件可节省磁盘空间，但仍可使用这些文件。 不会删除任何文件。 由于文件以不同的速率进行压缩，因此所显示的磁盘空间量将为近似值。 使用 "选项" 按钮，可以指定在 "磁盘清理" 压缩未使用的文件之前要等待的天数。
+- **压缩旧文件**-Windows 可以压缩最近未使用的文件。 压缩文件可节省磁盘空间，但仍可使用这些文件。 不删除任何文件。 由于文件以不同的速率进行压缩，因此所显示的磁盘空间量将为近似值。 使用 "选项" 按钮，可以指定在 "磁盘清理" 压缩未使用的文件之前要等待的天数。
 
 - **内容索引器的目录文件**-索引服务通过保留磁盘上的文件的索引来提高和提高文件搜索的速度。 这些目录文件保留自上一索引操作，可以安全地删除。 **注意：** 例如，目录文件可能出现在多个驱动器中，而不只是位于% SystemRoot%。
 
@@ -89,4 +89,4 @@ cleanmgr /tuneup:1
 
 ## <a name="additional-references"></a>其他参考
 
-[在 Windows 10 中释放驱动器空间](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[在 Windows 10 中释放驱动器空间](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)

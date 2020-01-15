@@ -11,12 +11,12 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: high
-ms.openlocfilehash: a29c43a87ccb55e85b018bc1b6dfe84bc53495b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fe2022ba3ff382d1070495b28dfdb03a34f9be42
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403444"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950317"
 ---
 # <a name="security--assurance"></a>安全 | 保障
 
@@ -86,7 +86,7 @@ Windows Server 安全提供操作系统中内置的保护层来防止出现安�
                             </div>
                           </a>
                         </li><li>
- <a href="http://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx">
+ <a href="https://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -104,7 +104,7 @@ Windows Server 安全提供操作系统中内置的保护层来防止出现安�
                             </div>
                           </a>
                         </li><li>
- <a href="http://channel9.msdn.com/events/ignite/2015/brk2482">
+ <a href="https://channel9.msdn.com/events/ignite/2015/brk2482">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -139,13 +139,13 @@ Windows Server 安全提供操作系统中内置的保护层来防止出现安�
                     <div class="cardText">
                         <h3>使用受防护的 VM 保障虚拟化</h3>
 <HR />
-                        <p><h3><a href="http://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016">频道 9 中的受防护的 VM</a></h3>受防护的 VM 技术的演练和权益</p>
+                        <p><h3><a href="https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016">频道 9 中的受防护的 VM</a></h3>受防护的 VM 技术的演练和权益</p>
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=xip5Qtk-7d8">受防护的 VM 演示</a></h3>这段时长 4 分钟的视频介绍了受防护的 VM 的价值以及受防护的 VM 和未受防护的 VM 之间的区别。</p>
 <HR />
                         <p><h3><a href="http://microsoft-cloud.cloudguides.com/Guides/Shielded%Virtual%Machines%in%Windows%Server.htm">Windows Server 中受防护的虚拟机视频演练</a></h3>本视频演练介绍主机保护者服务如何启用受防护的虚拟机，以便防止 Hyper-V 主机管理员对敏感数据进行未授权的访问。</p>
 <HR />
-                        <p><h3><a href="http://channel9.msdn.com/events/ignite/2015/brk3457">增强构造：保护 Hyper-V 中的租户密钥（Ignite 视频）</a></h3>此 Ignite 演示讨论了 Hyper-V 中的改进、Virtual Machine Manager 以及启用受防护的虚拟机的新主机保护者服务器角色。 </p>
+                        <p><h3><a href="https://channel9.msdn.com/events/ignite/2015/brk3457">增强构造：保护 Hyper-V 中的租户密钥（Ignite 视频）</a></h3>此 Ignite 演示讨论了 Hyper-V 中的改进、Virtual Machine Manager 以及启用受防护的虚拟机的新主机保护者服务器角色。 </p>
 <HR />
                         <p><h3><a href="guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview.md">受保护的构造部署指南</a></h3>本指南提供用于受保护的构造主机和受防护的 VM 的 Windows Server 和 System Center Virtual Machine Manager 的安装和验证信息。</p>
 <HR />
@@ -201,9 +201,9 @@ Windows Server 安全提供操作系统中内置的保护层来防止出现安�
 <HR />
                         <p><h3><a href="https://technet.microsoft.com/library/mt150258.aspx">使用 Microsoft Identity Manager 进行恰时管理</a></h3> 本文讨论 Microsoft Identity Manager 中所包含的特性和功能，包括对实时 (JIT) 特权访问管理的支持。</p>
 <HR />
-                        <p><h3><a href="http://channel9.msdn.com/events/ignite/2015/brk3873">使用 Privileged Access Management 保护 Windows 和 Microsoft Azure Active Directory</a></h3>此 Ignite 演示文稿介绍用于解决通过更强的身份验证进行管理员访问的风险，以及使用实时和 Just Enough Administration (JEA) 管理访问的 Windows Server、PowerShell、Active Directory、Identity Manager 和 Azure Active Directory 中的 Microsoft 策略和投资。</p>
+                        <p><h3><a href="https://channel9.msdn.com/events/ignite/2015/brk3873">使用 Privileged Access Management 保护 Windows 和 Microsoft Azure Active Directory</a></h3>此 Ignite 演示文稿介绍用于解决通过更强的身份验证进行管理员访问的风险，以及使用实时和 Just Enough Administration (JEA) 管理访问的 Windows Server、PowerShell、Active Directory、Identity Manager 和 Azure Active Directory 中的 Microsoft 策略和投资。</p>
 <HR />
-                        <p><h3><a href="http://aka.ms/JEA">Just Enough Administration 文章</a></h3>本文档分享 Just Enough Administration 的愿景和技术详细信息，这是一个 PowerShell 工具包，旨在帮助组织通过限制操作员仅具有执行特定任务所需的访问权限来降低风险。</p>
+                        <p><h3><a href="https://aka.ms/JEA">Just Enough Administration 文章</a></h3>本文档分享 Just Enough Administration 的愿景和技术详细信息，这是一个 PowerShell 工具包，旨在帮助组织通过限制操作员仅具有执行特定任务所需的访问权限来降低风险。</p>
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=xnBrbkY9P20">Just Enough Administration 演示视频</a></h3>Just Enough Administration 演示演练。</p>
                     </div>
@@ -223,7 +223,7 @@ Windows Server 安全提供操作系统中内置的保护层来防止出现安�
                     <div class="cardText">
                         <h3>凭据保护</h3>
 <HR />
-                        <p><h3><a href="https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard">使用 Credential Guard 保护派生的域凭据</a></h3>凭据保护使用基于虚拟化的安全性来隔离密钥，以便只有特权系统软件可以访问它们。 在未授权的情况下访问这些密钥将导致凭据盗窃攻击，例如哈希传递或票证传递。</a> Credential Guard 通过保护 NTLM 密码哈希和 Kerberos 票证授予票证来防止这些攻击。</p>
+                        <p><h3><a href="https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard">使用 Credential Guard 保护派生的域凭据</a></h3>凭据保护使用基于虚拟化的安全性来隔离密钥，以便只有特权系统软件可以访问它们。 在未授权的情况下访问这些密钥将导致凭据盗窃攻击，例如哈希传递或票证传递。</a> 凭据保护可通过保护 NTLM 密码哈希和 Kerberos 票证授予票证防止这些攻击。</p>
 <HR />
                         <p><h3><a href="https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard">使用远程 Credential Guard 来保护远程桌面凭据</a></h3> 远程凭据保护可通过将 Kerberos 请求重定向回请求连接的设备，通过远程桌面连接帮助保护凭据。 它还提供远程桌面会话的单一登录体验。 </p>
 <HR />
@@ -253,7 +253,7 @@ Windows Server 安全提供操作系统中内置的保护层来防止出现安�
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=_SaDw1dRy2k">OMS 和 Windows Server</a></h3>这段时长 3 分钟的视频演示 OMS 如何可以帮助检测 Windows Server 阻止的潜在的恶意行为。</p>
 <HR />
-                        <p><h3><a href="http://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx">Microsoft 高级威胁分析</a></h3>这篇博客文章讨论了 Microsoft 高级威胁分析，这是一种本地产品，可使用 Active Directory 网络流量和 SIEM 数据发现潜在威胁并发出警报。</p>
+                        <p><h3><a href="https://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx">Microsoft 高级威胁分析</a></h3>这篇博客文章讨论了 Microsoft 高级威胁分析，这是一种本地产品，可使用 Active Directory 网络流量和 SIEM 数据发现潜在威胁并发出警报。</p>
                     </div>
                 </div>
             </div>

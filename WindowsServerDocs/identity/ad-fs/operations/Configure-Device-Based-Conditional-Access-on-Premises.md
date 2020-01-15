@@ -9,19 +9,19 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a7646144b591fd7327f881cb54489201140e9287
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0eb0271dd27791e6f59e896e43bf79b15b89e730
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358147"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949456"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>使用已注册的设备配置本地条件性访问
 
 
 以下文档将指导你完成安装和配置已注册设备的本地条件性访问。
 
-![条件性访问](media/Using-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![条件访问](media/Using-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
 ## <a name="infrastructure-pre-requisites"></a>基础结构先决条件
 在开始使用本地条件访问之前，需要以下每个必备项。 
@@ -30,8 +30,8 @@ ms.locfileid: "71358147"
 |-----|-----
 |使用 Azure AD Premium 的 Azure AD 订阅 | 启用设备回写以实现本地条件访问-[免费试用版](https://azure.microsoft.com/trial/get-started-active-directory/)  
 |Intune 订阅|仅适用于设备符合性方案的 MDM 集成的要求-[免费试用版](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)
-|Azure AD Connect|2015年11月版或更高版本。  [在此处](https://www.microsoft.com/en-us/download/details.aspx?id=47594)获取最新版本。  
-|Windows Server 2016|AD FS 的版本10586或更高版本  
+|Azure AD Connect|2015年11月版或更高版本。  [在此处](https://www.microsoft.com/download/details.aspx?id=47594)获取最新版本。  
+|WIN ENT LTSB 2016 Finnish 64 Bits|AD FS 的版本10586或更高版本  
 |Windows Server 2016 Active Directory 架构|需要架构级别85或更高版本。
 |Windows Server 2016 域控制器|仅适用于企业密钥信任部署，这是必需的。  可在[此处](https://aka.ms/whfbdocs)找到其他信息。  
 |Windows 10 客户端|仅 Windows 10 域加入和 Microsoft Passport for Work 方案需要将生成10586或更高版本加入以上域  
@@ -210,7 +210,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 ### <a name="automatic-mdm-enrollment"></a>自动 MDM 注册   
 若要启用已注册设备的自动 MDM 注册，以便可以在访问控制策略中使用 isCompliant 声明，请按照此处的步骤操作[。](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)  
 
-## <a name="troubleshooting"></a>疑难解答  
+## <a name="troubleshooting"></a>“疑难解答”  
 1.  如果在 `Initialize-ADDeviceRegistration` 上出现错误，指出某个对象已存在于错误状态，例如 "未找到 drs 服务对象，但未提供所有必需的属性"，则可能之前已执行 Azure AD Connect powershell 命令，并且 AD DS 中具有部分配置。  尝试手动删除 " **CN = Device Registration Configuration，CN = Services，cn = Configuration，DC =&lt;域&gt;** 中的对象，然后重试。  
 2.  对于已加入域的 Windows 10 客户端  
     1. 若要验证设备身份验证是否正常工作，请以测试用户帐户的身份登录到加入域的客户端。 若要快速触发预配，请至少锁定并解锁桌面。   
@@ -224,5 +224,5 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 ### <a name="related-articles"></a>相关文章  
 * [保护对 Office 365 和其他连接到 Azure Active Directory 的应用的访问](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)  
 * [Office 365 服务的条件性访问设备策略](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-device-policies/)  
-* [使用 Azure Active Directory 设备注册设置本地条件性访问](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)  
-* [将已加入域的设备连接到 Windows 10 体验 Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  
+* [使用 Azure Active Directory Device Registration 设置本地条件性访问](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)  
+* [Connect domain-joined devices to Azure AD for Windows 10 experiences（体验 Windows 10 时会已加入域的设备连接到 Azure AD）](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  

@@ -12,12 +12,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 75a565eb9e26e03c1aad221059b327943485c81c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6490bd9a6cb7b305ba9746a357a8c909c7b84555
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403899"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950467"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Windows Server 软件定义数据中心
 
@@ -33,7 +33,7 @@ Microsoft 的 SDDC 实现包含本文重点介绍的 Windows Server 技术。 �
 
 内置于 Windows Server 和 System Center 的技术是 Windows Server SDDC 体验的主要构建基块。 但是，即使是虚拟化的平台，也仍然需要合适的基础硬件。 参与**Windows Server 软件定义（WSSD）解决方案**和**Azure Stack HCI 解决方案**计划的 Microsoft 合作伙伴可帮助企业获取适当的硬件，并使其在第零天启动并运行。
 
-![](media/sddc/video.png) **[观看视频，了解有关 Microsoft SDDC 的详细信息](https://mva.microsoft.com/en-US/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
+![](media/sddc/video.png) **[观看视频，了解有关 Microsoft SDDC 的详细信息](https://mva.microsoft.com/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
 
 ![](media/sddc/poster-ico.png) **[下载此页面的海报大小 .pdf 文件](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/media/sddc/sddc_poster_0801417_ANSI-E.pdf)**
 
@@ -47,7 +47,7 @@ Microsoft 合作伙伴提供一系列解决方案，这些解决方案通过 Azu
 
 ![](media/sddc/learn.png) **[了解有关 Azure Stack HCI 解决方案的详细信息](https://azure.microsoft.com/overview/azure-stack/hci)**
 
-![](media/sddc/learn.png) **[详细了解 WSSD 解决方案](https://www.microsoft.com/en-us/cloud-platform/software-defined-datacenter)**
+![](media/sddc/learn.png) **[详细了解 WSSD 解决方案](https://www.microsoft.com/cloud-platform/software-defined-datacenter)**
 
 ## <a name="windows-server-virtualized-technologies"></a>Windows Server 虚拟化技术 ##
 
@@ -71,7 +71,7 @@ Hyper-V 是基于虚拟机监控程序的虚拟化技术，适用于 Windows。 
 
 ![](media/sddc/spacer1.png)![](media/sddc/hypervisor.png)
 
-![](media/sddc/learn.png) **[了解有关 Hyper-v 虚拟机监控程序的详细信息](https://www.microsoft.com/en-us/cloud-platform/server-virtualization)**
+![](media/sddc/learn.png) **[了解有关 Hyper-v 虚拟机监控程序的详细信息](https://www.microsoft.com/cloud-platform/server-virtualization)**
 
 ### <a name="guest-clustering-with-shared-vhdx"></a>具有共享 VHDX 的来宾群集
 
@@ -149,7 +149,7 @@ SLB 允许多台服务器承载相同的工作负荷，具有较高的可用性�
 
 ![](media/sddc/storage.png)
 
-### <a name="storage-spaces-direct"></a>存储空间直通
+### <a name="storage-spaces-direct"></a>Storage Spaces Direct
 
 ![](media/sddc/storage-line.png)
 
@@ -206,7 +206,7 @@ t & t1：数据刷新到该卷，始终写入日志
 
 ![](media/sddc/learn.png) **[了解有关受保护的构造的详细信息](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms)**
 
-### <a name="shielded-vms"></a>受防护的 VM
+### <a name="shielded-vms"></a>受防护的虚拟机
 
 ![](media/sddc/security-line.png)
 
@@ -247,11 +247,11 @@ t & t1：数据刷新到该卷，始终写入日志
 
 ![](media/sddc/management.png)
 
-### <a name="powershell-desired-state-configuration"></a>PowerShell Desired State Configuration
+### <a name="powershell-desired-state-configuration"></a>PowerShell 所需状态配置
 
 ![](media/sddc/management-line.png)
 
-Windows PowerShell Desired State Configuration 是基于开放标准且内置于 Windows 中的配置管理平台。 DSC 足够灵活以在部署生命周期的各个阶段（开发、测试、预生产、生产）及扩展期间可靠而一致地运转。
+Windows PowerShell Desired State Configuration 是基于开放标准且内置于 Windows 中的配置管理平台。 DSC 足够灵活，可以在部署生命周期的各个阶段（开发、测试、预生产、生产）及扩展期间可靠而一致地运转。
 
 ![](media/sddc/spacer1.png)![](media/sddc/dsc.png)
 

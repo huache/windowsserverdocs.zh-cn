@@ -13,21 +13,21 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81dbfb89d2e72af57c070db8473fd3b0e521906c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e5834c07e0fdc9f826e3b02fd494c28b9e773ad8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382937"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947004"
 ---
 # <a name="software-inventory-logging-aggregator"></a>软件清单日志记录聚合器
 
->适用于：Windows Server 2012 R2
+>适用于： Windows Server 2012 R2
 
 ## <a name="what-is-software-inventory-logging-aggregator"></a>什么是软件清单日志记录聚合器？
 软件清单日志记录聚合器 (SILA) 将在数据中心接收、聚合和生成 Windows Server 上所安装 Microsoft 企业软件的数量和类型的基本报表。
 
-SILA 是安装在 Windows Server 上的软件，但未包含在 Windows Server 安装中。 若要安装软件，请先从 Windows 下载中心免费下载软件：[Windows Server 的软件清单日志记录聚合器1。0](https://www.microsoft.com/en-us/download/details.aspx?id=49046)
+SILA 是安装在 Windows Server 上的软件，但未包含在 Windows Server 安装中。 若要安装该软件，首先从 Windows 下载中心进行免费下载： [适用于 Windows Server 的软件清单日志记录聚合器 1.0](https://www.microsoft.com/download/details.aspx?id=49046)。
 
 软件清单日志记录框架旨在降低清点 IT 环境中众多服务器上所部署 Microsoft 软件的操作成本。 此框架由两个组件组成：此 SIL 聚合器和 Windows Server 功能，在 Windows Server 2012 R2 中引入，软件清单日志记录（SIL）。 此软件清单日志记录聚合器 1.0 将安装在一个服务器上并从配置为通过 SIL 向其转发数据的任何 Windows Server 接收清单数据。 此设计允许数据中心管理员在准备在其环境中进行广泛分发的主 Windows Server 映像中启用 SIL。  此软件程序包为目标点并且专供客户进行本地安装，以便随着时间的推移轻松记录清单数据。 此软件还允许在 Microsoft Excel 中定期创建基本清单报表。 软件清单日志记录聚合器 1.0 报表包含安装 Windows Server、System Center 和 SQL Server 的计数。
 
@@ -55,13 +55,13 @@ SILA 是安装在 Windows Server 上的软件，但未包含在 Windows Server �
 
 -   随时间推移在每个主机上同时运行的 Windows Server VM（或运行虚拟机监控程序的主机）的高水位线计数和标识
 
--   随着时间推移，在每个主机上同时运行托管\(系统中心\)代理的高水位线计数和主机名称
+-   随时间推移在每个主机上同时运行托管 \(System Center agent\) Windows Server Vm 的高水位线计数和主机名
 
--   安装在以托管高\-水位线计数的 vm 上的 System Center 代理名称
+-   安装在以托管高\-水位线计数的 Vm 上的 System Center 代理名称
 
--   只需 sku 和需要许可证的版本\(，在一段时间内 SQL Server 安装的计数和位置\)
+-   随时间推移 SQL Server 安装的计数和位置 \(只需 Sku 和需要许可证的版本\)
 
--   在 "添加\//删除程序" 中安装的软件的列表
+-   "添加\/删除程序" 中安装的软件的列表
 
 ### <a name="who-will-use-sil"></a>哪些人将使用 SIL？
 
@@ -76,13 +76,13 @@ SILA 是安装在 Windows Server 上的软件，但未包含在 Windows Server �
 
 -   **Windows Server 2012 R2**（Standard 或 Datacenter Edition）
 
--   **IIS 服务器角色**，随 .Net Framework 4.5、WCF Services 和 HTTP 激活一起添加，全部位于**添加角色和功能向导**的同一选择树中。
+-   **IIS 服务器角色** ，随 .Net Framework 4.5、WCF Services 和 HTTP 激活一起添加，全部位于 **添加角色和功能向导**的同一选择树中。
 
 -   **SQL Server** 2012 SP2 Standard Edition 或 SQL Server 2014 Standard Edition
 
 -   **64 位 Microsoft Excel** 2013（可选择安装，但创建报表时需要）
 
--   可选：**VMware PowerCLI 5.5.0.5836**（在 VMware 环境中需要）
+-   可选： **VMware PowerCLI 5.5.0.5836** （在 VMware 环境中需要）
 
 >[!Note]
 >使用 Windows Management Framework 时，仅在 SIL 聚合器上存在与 WMF 版本5.1 有关的已知兼容性问题。  安装 SIL 聚合器的服务器上不需要超过 WMF 版本4.0。
@@ -115,19 +115,19 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 3.  将此用户添加到“Hyper-V 管理员”组。
 
-4.  用 "**开始**->**运行**" 打开**wmimgmt.msc** 。
+4.  通过 "**开始**->**运行**打开**wmimgmt.msc** 。
 
 5.  单击“操作” 部分中的“更多操作” ，然后选择“属性”。
 
 6.  单击“安全”。
 
-7.  选择“命名空间”树视图中的“cimv2 命名空间”。
+7.  选择“命名空间” 树视图中的“cimv2 命名空间” 。
 
 8.  单击“安全”（按钮）。
 
 9. 以“计算机名\组名”格式添加“远程管理用户”组
 
-10. 单击 **“确定”** 。
+10. 单击**确定**。
 
 11. 返回“root\cimv2”窗口的“安全”中，选择“远程管理用户”。
 
@@ -156,7 +156,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
     -   安装完成后，SQL Server 代理应配置为自动运行。
 
--   **IIS 服务器**已随 .Net Framework 4.5、WCF Services 和 HTTP 激活一起添加，全部位于**添加角色和功能向导**的同一选择树中。
+-   **IIS 服务器** 已随 .Net Framework 4.5、WCF Services 和 HTTP 激活一起添加，全部位于 **添加角色和功能向导**的同一选择树中。
 
 -   你 **已使用在服务器上拥有管理权限的帐户登录到服务器** 。
 
@@ -164,7 +164,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
     或者
 
-    如果需要 SQL 身份验证，**则需要使用拥有 SQL 管理权限的帐户的密码**。
+    如果需要 SQL 身份验证， **则需要使用拥有 SQL 管理权限的帐户的密码**。
 
 ##### <a name="to-install-software-inventory-logging-aggregator"></a>安装软件清单日志记录聚合器
 
@@ -176,13 +176,13 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 4.  在“选择功能”中，选择“安装软件清单日志记录聚合器和报告模块”，然后单击“下一步”。
 
-    有关仅安装报告模块的详细信息，请参阅 **SIL 聚合器 Cmdlet 详细信息**部分下的 `Publish-SilReport` 。
+    有关仅安装报告模块的详细信息，请参阅 `Publish-SilReport` SIL 聚合器 Cmdlet 详细信息 **部分下的** 。
 
 5.  验证完所有的先决条件后，单击“下一步”。
 
 6.  在“选择帐户类型”中，根据你的偏好选择“本地用户” 或“gMSA”。
 
-    选择本地用户帐户选项将创建本地用户，并具有自动生成的强密码。 此帐户将用于本地服务器上的所有 SIL 聚合器服务和任务操作。  如果聚合器是 Active Directory 域（Windows Server 2012 及更高版本）的一部分，则建议使用组托管服务帐户 (gMSA)。 有关 gMSA 的详细信息，请参阅：[组托管服务帐户概述](https://technet.microsoft.com/library/hh831782.aspx)
+    选择本地用户帐户选项将创建本地用户，并具有自动生成的强密码。 此帐户将用于本地服务器上的所有 SIL 聚合器服务和任务操作。  如果聚合器是 Active Directory 域（Windows Server 2012 及更高版本）的一部分，则建议使用组托管服务帐户 (gMSA)。 有关 gMSA 的详细信息，请参阅： [组托管服务帐户概述](https://technet.microsoft.com/library/hh831782.aspx)
 
     -   如果你打算从 SIL 聚合器运行一个单独服务器上的 SQL Server 数据库，则必须使用 gMSA 帐户选项。
 
@@ -206,13 +206,13 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 1.  以管理员身份打开“PowerShell” ，然后键入 `Stop-SilAggregator`。 当提示符返回时，SIL 聚合器已停止。
 
-    按照设计，SIL 聚合器将在 20 分钟之后或接收 100 个文件之后处理文件。  在大规模环境中决不会发生这种情况，但在小规模环境中，可能仍需要处理某些文件才能停止聚合器。 如果不需要保留这些文件和数据，请使用 `–Force` 。
+    按照设计，SIL 聚合器将在 20 分钟之后或接收 100 个文件之后处理文件。  在大规模环境中决不会发生这种情况，但在小规模环境中，可能仍需要处理某些文件才能停止聚合器。 如果不需要保留这些文件和数据，请使用 `–Force`。
 
 2.  转到“控制面板”，依次单击“程序和功能”、“卸载程序”、“软件清单日志记录聚合器”和“卸载”。
 
     软件清单日志记录聚合器将打开一个窗口，提示你在删除数据库中所有数据与保留数据库中所有数据之间进行选择。 默认选择是保留（如果需要重新安装，你可以附加到现有数据库，以便从聚合器停止的地方开始）。
 
-3.  选择“保留”或“删除”，然后单击“下一步”。
+3.  选择“保留” 或“删除”，然后单击“下一步”。
 
 4.  进度栏完成后，单击“完成”。
 
@@ -221,16 +221,16 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 #### <a name="introduction-to-sil-aggregator-powershell-cmdlets"></a>SIL 聚合器 PowerShell cmdlet 简介
 可以通过管理员身份从 Windows PowerShell 控制台运行以下命令。
 
-|Windows PowerShell Cmdlet|Functions|
+|Windows PowerShell Cmdlet|功能|
 |-----------------------------|------------|
 |`Start-SilAggregator`|启动所有软件清单日志记录聚合器服务和任务。 这是聚合器通过 HTTPS 从启用 SIL 日志记录的服务器接收数据的必需步骤。|
 |`Stop-SilAggregator`|停止所有软件清单日志记录聚合器服务和任务。 如果任务或服务正在运行中，可能会延迟完成此命令。|
 |`Set-SilAggregator`|允许管理员对软件清单日志记录聚合器进行配置更改。|
-|`Add-SilVmHost`|用于添加特定主机名或主机名的数组，按固定间隔\(默认值为一小时的间隔。\)|
+|`Add-SilVmHost`|用于添加特定主机名或主机名的数组，以便定期轮询 \(默认值为一小时的间隔\)。|
 |`Remove-SilVmHost`|用于删除要每隔一定时间进行轮询的特定主机名或主机名的数组。|
 |`Get-SilVMHost`|用于检索物理主机的列表，其中软件清单日志记录聚合器配置为针对正在运行状态数据的 VM 进行轮询。|
 |`Get-SILAggregatorData`|用于检索从数据库到 PowerShell 控制台的数据。|
-|`Publish-SilReport`|用于从软件清单日志记录数据的数据库创建报告。 **注意：** 每天在聚合器上进行一次多维数据集处理。 因此，在聚合器上捕获的数据直到第二天才会显示。|
+|`Publish-SilReport`|用于从软件清单日志记录数据的数据库创建报告。 **注意：** 聚合器上的多维数据集处理每天进行一次。 因此，在聚合器上捕获的数据直到第二天才会显示。|
 
 #### <a name="suggested-order-to-start"></a>建议的启动顺序
 在服务器上安装软件清单日志记录聚合器后，请以管理员身份打开 PowerShell。
@@ -245,15 +245,15 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
         示例： `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
-        -   在此示例中，**contoso1** 是你希望聚合器向其轮询以进行定期更新（对于哪些 VM 在其中运行以便在一段时间内跟踪此数据）的物理主机服务器的网络名称（或 IP 地址）。 Get-Credential 将提示已登录用户输入一个用于在此之后轮询该主机的帐户。 在同一主机上运行相同的命令将允许你随时更新所使用的帐户。 请谨防帐户密码在一段时间后发生更改以及过期。 如果凭据发生更改或过期，将无法在主机上进行轮询。
+        -   在此示例中， **contoso1** 是你希望聚合器向其轮询以进行定期更新（对于哪些 VM 在其中运行以便在一段时间内跟踪此数据）的物理主机服务器的网络名称（或 IP 地址）。 Get-Credential 将提示已登录用户输入一个用于在此之后轮询该主机的帐户。 在同一主机上运行相同的命令将允许你随时更新所使用的帐户。 请谨防帐户密码在一段时间后发生更改以及过期。 如果凭据发生更改或过期，将无法在主机上进行轮询。
 
-        -   默认情况下，轮询将每小时开始一次，在 `Start-SilAggregator` 运行一小时后或在轮询列表中新增主机后一小时开始。  使用 `Set-SilAggregator cmdlet` 可以更改轮询间隔。
+        -   默认情况下，轮询将每小时开始一次，在 `Start-SilAggregator` 运行一小时后或在轮询列表中新增主机后一小时开始。  使用 `Set-SilAggregator cmdlet`可以更改轮询间隔。
 
-        -   此 cmdlet 将自动从预设的选项列表中进行检测（请参阅 **SIL 聚合器 Cmdlet 详细信息**部分），其中 HostType 和 HyperVisorType 均符合你要添加的主机。 如果无法识别这些选项或提供的凭据不正确，将显示一条提示。 如果你接受“Y”条目，将添加主机并将其列为“未知”，但不会对其进行轮询。
+        -   此 cmdlet 将自动从预设的选项列表中进行检测（请参阅 **SIL 聚合器 Cmdlet 详细信息** 部分），其中 HostType 和 HyperVisorType 均符合你要添加的主机。 如果无法识别这些选项或提供的凭据不正确，将显示一条提示。 如果你接受“Y” 条目，将添加主机并将其列为“未知”，但不会对其进行轮询。
 
-    -   运行`Set-SilAggregator –AddCertificateThumbprint` "你的客户端证书的指纹"
+    -   运行 `Set-SilAggregator –AddCertificateThumbprint` "你的客户端证书的指纹"
 
-        这是通过 HTTPS 从启用 SIL 日志记录的 Windows Server 接收数据必需的步骤。 指纹将添加到 SIL 聚合器将从其中接受数据的指纹列表中。 SIL 聚合器旨在接受有效的企业客户端身份验证证书。 使用的证书需要安装在转发数据的服务器上的 **\\localmachine\MY （本地计算机 > 个人**）存储中。
+        这是通过 HTTPS 从启用 SIL 日志记录的 Windows Server 接收数据必需的步骤。 指纹将添加到 SIL 聚合器将从其中接受数据的指纹列表中。 SIL 聚合器旨在接受有效的企业客户端身份验证证书。 需要在转发数据的服务器上的 **\\localmachine\MY （本地计算机 > 个人**）存储中安装所使用的证书。
 
 -   在要清点的 Windows Server 上，以管理员身份打开 PowerShell 并运行以下命令：
 
@@ -279,12 +279,12 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
         -   这便是手动一次性转发一个完整的数据集。
 
-        -   如果 SIL 日志记录已启动了一段时间并使用 `Set-SilLogging`指定了新的 SIL 聚合器，则需要运行此 cmdlet（仅一次）才能将完整的数据集发送到新的聚合器。
+        -   如果 SIL 日志记录已启动了一段时间并使用 `Set-SilLogging` 指定了新的 SIL 聚合器，则需要运行此 cmdlet（仅一次）才能将完整的数据集发送到新的聚合器。
 
-在按照这些步骤添加运行虚拟 Windows Server 计算机的物理主机后，并且在这些 Windows Server 内部启用软件清单日志记录（或 SIL 日志记录）后，可以在 SIL 聚合器上随时运行 `Publish-SilReport –OpenReport` （需要 Excel 2013）。 但是请注意，SQL Server Analysis Services 多维数据集每天处理一次，因此在同一天报表中不会提供数据。
+在按照这些步骤添加运行虚拟 Windows Server 计算机的物理主机后，并且在这些 Windows Server 内部启用软件清单日志记录（或 SIL 日志记录）后，可以在 SIL 聚合器上随时运行 `Publish-SilReport –OpenReport`（需要 Excel 2013）。 但是请注意，SQL Server Analysis Services 多维数据集每天处理一次，因此在同一天报表中不会提供数据。
 
 ## <a name="architectural-overview"></a>体系结构概述
-SIL 在推送和拉取模式下工作，并且由两个并行工作的组件组成：Windows Server 中的软件清单日志记录（SIL）功能，以及软件清单日志记录聚合器（SILA）可下载的 MSI。 要清点的服务器会将软件清单数据通过 HTTPS 使用 SIL 推送到 SIL 聚合器（每小时内不定时推送）。 反过来，聚合器每小时都会轮询或查询物理虚拟机监控程序主机来拉取硬件清单数据。 需要对推送和拉取进行正确配置才能启用 SIL 的完整功能。 可以按任意顺序进行配置。 但是，聚合器上的多维数据集处理每天进行一次，因此在聚合器上捕获的数据（通过推送或拉取）在第二天才会显示。
+SIL 同时适用于推送模式和拉取模式，而且由两个并行工作的组件组成：Windows Server 中的软件清单日志记录 (SIL) 功能以及软件清单日志记录聚合器 (SILA) 可下载 MSI。 要清点的服务器会将软件清单数据通过 HTTPS 使用 SIL 推送到 SIL 聚合器（每小时内不定时推送）。 反过来，聚合器每小时都会轮询或查询物理虚拟机监控程序主机来拉取硬件清单数据。 需要对推送和拉取进行正确配置才能启用 SIL 的完整功能。 可以按任意顺序进行配置。 但是，聚合器上的多维数据集处理每天进行一次，因此在聚合器上捕获的数据（通过推送或拉取）在第二天才会显示。
 
 ![](../media/software-inventory-logging/SILA_Architecture.png)
 
@@ -310,15 +310,15 @@ SIL 在推送和拉取模式下工作，并且由两个并行工作的组件组�
 
 -   `$firstAvailableDriveLetter = $availableDriveLetters[0]`
 
--   `New-PSDrive -Name $firstAvailableDriveLetter -PSProvider filesystem -root`**server\path 要共享的文件，其中保存了 pfx 证书文件 > < \\** `-credential $mycreds`
+-   `New-PSDrive -Name $firstAvailableDriveLetter -PSProvider filesystem -root` **<\\server\path 来共享保存 pfx 证书文件 > 的**`-credential $mycreds`
 
--   `Copy-Item ${firstAvailableDriveLetter}:\` **< 新驱动器目录中的 certificatename 文件 > c：\<你选择的位置 >**
+-   `Copy-Item ${firstAvailableDriveLetter}:\`**在新驱动器目录中 < certificatename 文件 > c：所选\<位置 >**
 
 -   `Remove-PSDrive –Name $firstAvailableDriveLetter`
 
 -   `$mypwd = ConvertTo-SecureString -String "`**<password for the certificate pfx file>**`" -Force –AsPlainText`
 
--   `Import-PfxCertificate -FilePath c:\` **< location\\certificatename >** `cert:\localMachine\my -Password $mypwd`
+-   `Import-PfxCertificate -FilePath c:\` **< 位置\\certificatename >** `cert:\localMachine\my -Password $mypwd`
 
 -   `Set-sillogging –targeturi "https://` **<machinename of your SIL Aggregator>** `–certificatethumbprint`
 
@@ -361,7 +361,7 @@ SIL 在推送和拉取模式下工作，并且由两个并行工作的组件组�
 
 -   摘要选项卡旨在提供清单的快速参考列表。 主机及其 VM 在同一列中列出。
 
--   忽略灰暗部分的所有值。这些是从 SSAS 多维数据集创建报表产生的项目。
+-   忽略所有灰色或 dim 值。这些是从 SSAS 多维数据集创建报表的项目。
 
 -   如果某个 VM 列出了 "未知操作系统"，则意味着聚合器尚未通过 SIL 通过 HTTPS 从该 VM 收到完整的数据负载。
 
@@ -375,12 +375,12 @@ SIL 在推送和拉取模式下工作，并且由两个并行工作的组件组�
 
 -   在“摘要” 和“详细信息” 选项卡上，在同时运行的 Windows Server 或托管的 Windows Server 列中列出的总数可指示以下所有主机的所有高水位线总和。 其中包括不是虚拟机监控程序主机且没有运行任何 Vm 的 Windows 服务器，以及可能运行了 Vm 但 "未知" 的 vm 的服务器，因为未通过 HTTPS 从 SIL 接收到 VM 中的数据。 为方便起见，这些服务器总计在一起。
 
--   在“仪表板” 选项卡的“SQL Server” 部分中，SQL Server 安装的总计数是仪表板上所有版本的总和。  如果一台服务器上安装了多个版本的 SQL，可能会导致在“SQL 详细信息”选项卡上发现的总数之间出现差异。  仪表板会在每台服务器上分别计算这些版本的数量，而“详细信息” 选项卡则不会。  根据许可条款，安装在一台 Windows Server 上的多个 SQL 版本始终算做一个计数。
+-   在“仪表板” 选项卡的“SQL Server” 部分中，SQL Server 安装的总计数是仪表板上所有版本的总和。  如果一台服务器上安装了多个版本的 SQL，可能会导致在“SQL 详细信息” 选项卡上发现的总数之间出现差异。  仪表板会在每台服务器上分别计算这些版本的数量，而“详细信息” 选项卡则不会。  根据许可条款，安装在一台 Windows Server 上的多个 SQL 版本始终算做一个计数。
 
 -   在“仪表板” 选项卡的“Windows Server” 部分中，“其他虚拟机监控程序主机” 行和“总虚拟机监控程序主机” 行包括可能运行或未运行 Hyper-V 的物理 Windows Server 主机。
 
 ### <a name="column-descriptions"></a>列描述
-以下是有关每列的说明，这些列位于 SIL 聚合器基于 Excel 创建的报告的“Windows Server 详细信息”选项卡上。 其他数据选项卡或是相同，或是这些列的子集。 "SQL Server" 选项卡上的 "安装计数" 是一个例外情况（请参阅**高水位**线部分）。
+以下是有关每列的说明，这些列位于 SIL 聚合器基于 Excel 创建的报告的“Windows Server 详细信息” 选项卡上。 其他数据选项卡或是相同，或是这些列的子集。 "SQL Server" 选项卡上的 "安装计数" 是一个例外情况（请参阅**高水位**线部分）。
 
 |列标题|描述|
 |-----------------|---------------|
@@ -401,7 +401,7 @@ SIL 在推送和拉取模式下工作，并且由两个并行工作的组件组�
 |上次发现主机的日期时间|聚合器上次通过 HTTPS 从此 Windows Server 物理主机中接收数据清单的日期和时间。<br /><br />支持运行 Windows Server 和 HyperV 的物理主机启用 SIL 并通过 HTTPS 向 SIL 聚合器转发清单数据。|
 
 ## <a name="sil-aggregator-cmdlets-detail"></a>SIL 聚合器 Cmdlet 详细信息
-以下是 SIL 聚合器 cmdlet 的详细信息。 有关完整的 cmdlet 文档，请参阅：[SIL 聚合器 PowerShell cmdlet](https://technet.microsoft.com/library/mt548455.aspx)
+以下是 SIL 聚合器 cmdlet 的详细信息。 有关完整的 cmdlet 文档，请参阅： [SIL 聚合器 PowerShell cmdlet](https://technet.microsoft.com/library/mt548455.aspx)
 
 ### <a name="publish-silreport"></a>Publish-SilReport
 
@@ -422,7 +422,7 @@ SIL 在推送和拉取模式下工作，并且由两个并行工作的组件组�
 
 |虚拟机监控程序版本|SIL 聚合器         HostType 值|SIL 聚合器 HypervisorType 值|
 |----------------------|-----------------------------------------|---------------------------------------|
-|Windows Server 2012 R2|Windows|HyperV|
+|Windows Server 2012 R2|WIN ENT LTSB 2016 English 64 Bits|HyperV|
 |VMware 5.5|VMware|Esxi|
 |Xen 4.x|Ubuntu、OpenSuse、或 CentOS|Xen|
 |XenServer 6.2|Citrix|XenServer|
@@ -478,7 +478,7 @@ Copyright (c) 2010, RENCI</pre>
 
 -   与参数一起使用时，此 cmdlet 将直接从协助自定义使用 SIL 整体解决方案的数据库中检索数据。
 
--   请注意， `–StartTime` 和 `–Endtime` 参数将显示从开始日期的第一个月到结束日期的最后一个月的报告数据。
+-   请注意，`–StartTime` 和 `–Endtime` 参数将显示从开始日期的第一个月到结束日期的最后一个月的报告数据。
 
 ![](../media/software-inventory-logging/SILA_Get-SILAggregator.png)
 
@@ -490,7 +490,7 @@ Copyright (c) 2010, RENCI</pre>
 
 -   此 cmdlet 还将列出已通过来自 VM 本身的数据添加的主机名称（如果可从 VM 中获取数据）。 这些名称将显示在列表中，但不含有任何 HostType 或 HypervisorType。 此数据有助于协调可能未进行轮询设置的 VM 和主机。
 
--   使用 `–StartTime` 和`–EndTime` 参数有助于了解主机首次添加或最后一次轮询的时间。
+-   使用 `–StartTime` 和 `–EndTime` 参数有助于了解主机首次添加或最后一次轮询的时间。
 
 ### <a name="remove-silvmhost"></a>Remove-SilVMHost
 
@@ -506,7 +506,7 @@ Copyright (c) 2010, RENCI</pre>
 
     -   确保“targeturi” 在条目中含有“https://” 。
 
-    -   确保已安装 Windows Server 的所有必需更新（请参阅 SIL 的先决条件）。  一种快速的检查方法是使用以下 cmdlet 查找这些内容：`Get-SilWindowsUpdate *3060*, *3000*`
+    -   确保已安装 Windows Server 的所有必需更新（请参阅 SIL 的先决条件）。  一种快速的检查方法是使用以下 cmdlet 查找这些内容： `Get-SilWindowsUpdate *3060*, *3000*`
 
     -   确保用于对聚合器进行身份验证的证书安装在要使用 SilLogging 进行清点的本地服务器的正确存储中（请参阅“快速入门”部分）。
 
@@ -516,7 +516,7 @@ Copyright (c) 2010, RENCI</pre>
 
     -   如果已检查上述所有事项，可以检查用于安装 SIL 聚合器的证书是否处于正常状态，以及是否与 SIL 聚合器服务器本身的名称相匹配（如果其他计算机已成功转发到同一 SIL 聚合器，则无需执行此步骤）。
 
-    -   你可以在尝试转发/推送 \Windows\System32\\日志\\文件 SIL 的服务器上查看缓存的 SIL 文件所在的位置。 如果 `SilLogging` 已启动并运行超过 1 小时，或者 `Publish-SilData` 最近已运行而此目录中没有任何文件，则表明已成功登录到聚合器。
+    -   可以在尝试转发/推送、\Windows\System32\\日志文件\\SIL 的服务器上查看缓存的 SIL 文件所在的位置。 如果 `SilLogging` 已启动并运行超过 1 小时，或者 `Publish-SilData` 最近已运行而此目录中没有任何文件，则表明已成功登录到聚合器。
 
 -   确认已登录的用户拥有 SQL 数据库和 Analysis Services 访问权限。
 
@@ -554,10 +554,10 @@ Copyright (c) 2010, RENCI</pre>
 -   NetBIOS 名称
 
 ### <a name="changing-sil-aggregators"></a>更改 SIL 聚合器
-如果你想要使用不同的 SIL 聚合器开始清点环境中的服务器，只需在这些服务器上使用 SIL cmdlet 更改 targeturi（如有必要还需更改证书指纹）、`Set-SilLogging –TargetUri` 即可。 请注意在执行此操作后，需要至少使用一次 `Publish-SilData` ，以便向新指定的 SIL 聚合器转发一份完整的清单。
+如果你想要使用不同的 SIL 聚合器开始清点环境中的服务器，只需在这些服务器上使用 SIL cmdlet 更改 targeturi（如有必要还需更改证书指纹）、`Set-SilLogging –TargetUri` 即可。 请注意在执行此操作后，需要至少使用一次 `Publish-SilData`，以便向新指定的 SIL 聚合器转发一份完整的清单。
 
 ### <a name="changing-or-updating-certificates"></a>更改或更新证书
-**避免数据丢失的重要步骤：** 如果需要更改服务器用于将数据转发到 SIL 聚合器的证书，但目标聚合器保持不变，请使用以下步骤以避免在向聚合器传输数据时可能发生的数据丢失：
+**避免数据丢失的重要步骤：** 如果需要更改服务器用于向 SIL 聚合器转发数据的证书，但目标聚合器保持不变，请使用以下步骤以避免在向聚合器传输的过程中可能发生的数据丢失。
 
 -   在 SIL 聚合器上，使用 `Set-SilAggregator –AddCertificateThumbprint` cmdlet 向 SIL 聚合器添加新的指纹。
 
@@ -565,7 +565,7 @@ Copyright (c) 2010, RENCI</pre>
 
 -   在所有转发数据的服务器上，使用 `Set-SilLogging –CertificateThumbprint` cmdlet 更新到新证书的指纹。
 
--   **来说只有在所有转发数据的服务器都更新后，才能使用** `Set-SilAggregator –RemoveCertificateThumbprint` cmdlet 从 SIL 聚合器中删除旧指纹。 如果转发数据的服务器继续使用已从 SIL 聚合器中删除的旧证书进行转发， **数据将丢失** 并且不会插入到聚合器上的数据库中。 这只会影响以下情况：服务器之前已成功地将数据转发到 SIL 聚合器，然后从 SIL 聚合器的指纹列表中删除该证书以接受来自的数据。
+-   **关键信息：只有在所有转发数据的服务器都更新后，才能使用 `Set-SilAggregator –RemoveCertificateThumbprint` cmdlet 从 SIL 聚合器中删除旧指纹**。 如果转发数据的服务器继续使用已从 SIL 聚合器中删除的旧证书进行转发， **数据将丢失** 并且不会插入到聚合器上的数据库中。 这只会影响以下情况：服务器之前已成功地将数据转发到 SIL 聚合器，然后从 SIL 聚合器的指纹列表中删除该证书以接受来自的数据。
 
 ## <a name="release-notes"></a>发行说明
 
@@ -593,8 +593,8 @@ Copyright (c) 2010, RENCI</pre>
 
 -   尽管可以将 Windows Server 2008 R2 和 Windows Server 2012 主机添加到轮询主机列表中，但对于基于 Windows/Hyper-V 的主机，此版本 (1.0) 的 SIL 聚合器仅支持轮询 Windows Server 2012 R2，以便成功使用所有特性和功能。  特别是，已知当轮询 Windows Server 2008 R2 主机时，虚拟机和主机可能在 SIL 聚合器报告中不匹配。
 
-## <a name="see-also"></a>请参阅
-[Windows Server 的软件清单日志记录聚合器1。0](https://www.microsoft.com/en-us/download/details.aspx?id=49046)<br>
+## <a name="see-also"></a>另请参阅
+[Windows Server 的软件清单日志记录聚合器1。0](https://www.microsoft.com/download/details.aspx?id=49046)<br>
 [SIL 聚合器 PowerShell cmdlet](https://technet.microsoft.com/library/mt548455.aspx)<br>
 [SIL PowerShell cmdlet](https://technet.microsoft.com/library/dn283390.aspx)<br>
 [SIL 概述](https://technet.microsoft.com/library/dn268301.aspx)<br>

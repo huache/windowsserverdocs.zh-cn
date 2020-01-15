@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ee1416a00fc0d347b7e05cb12c83f3d3532d693f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d3d08e954b7a2a9ce58eb61dec54f2848ab68c12
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360142"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949163"
 ---
 # <a name="planning-for-compromise"></a>规划泄露
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 *定律一：无人相信可能发生的任何错误，直到发生这种情况。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
   
@@ -103,12 +103,12 @@ Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：�
 ### <a name="leveraging-nonmigratory-migrations"></a>利用 "Nonmigratory" 迁移  
 无论你是否知道环境已遭到破坏、怀疑它已泄露，或者只是不愿意将旧的数据和对象从旧的 Active Directory 安装迁移到新的，请考虑不在技术上的迁移方法"迁移" 对象。  
   
-### <a name="user-accounts"></a>用户帐户  
+### <a name="user-accounts"></a>“用户帐户”  
 在传统的 Active Directory 从一个林迁移到另一个林时，用户对象上的 SIDHistory （SID 历史记录）属性用于存储用户的 SID 和用户作为旧林中成员的组的 Sid。 如果用户帐户已迁移到新的林，并且他们访问旧林中的资源，则 SID 历史记录中的 Sid 用于创建访问令牌，该令牌允许用户在迁移帐户之前访问其具有访问权限的资源。  
   
 然而，维护 SID 历史记录在某些环境中已经过验证，因为使用当前和历史 Sid 填充用户的访问令牌可能会导致令牌膨胀。 令牌膨胀的问题是，必须存储在用户的访问令牌中的 Sid 数使用或超过令牌中的可用空间量。  
   
-尽管令牌大小可以提高到有限的范围，但令牌膨胀的终极解决方案是减少与用户帐户关联的 Sid 数，无论是通过合理化组成员身份、删除 SID 历史记录还是同时使用二者。 有关令牌膨胀的详细信息，请参阅[MaxTokenSize 和 Kerberos 令牌膨胀](http://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)。  
+尽管令牌大小可以提高到有限的范围，但令牌膨胀的终极解决方案是减少与用户帐户关联的 Sid 数，无论是通过合理化组成员身份、删除 SID 历史记录还是同时使用二者。 有关令牌膨胀的详细信息，请参阅[MaxTokenSize 和 Kerberos 令牌膨胀](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)。  
   
 使用 SID 历史记录，而不是从旧环境（特别是组成员身份和 SID 历史记录可能会受到威胁的应用程序）迁移用户，请考虑利用元目录应用程序 "迁移" 用户，而无需携带 SID 历史记录到新林中。 在新林中创建用户帐户时，可以使用元目录应用程序将帐户映射到旧林中的相应帐户。  
   
@@ -144,7 +144,7 @@ Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：�
   
 例如，你可以定义一个策略，要求执行官和其他 Vip 使用安全工作站来访问敏感数据和系统，从而使他们能够使用其他设备来访问不太敏感的数据。 这是用户要记住的一个简单原则，但你可以实现一些后端控制，以帮助强制实施此方法。  
 
-如果用户使用智能卡登录到安全系统，则可以使用[身份验证机制保证](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)来允许用户访问敏感数据，并且可以使用 IPsec 和用户权限限制来控制可从中连接到敏感数据存储库的系统。 您可以使用[Microsoft 数据分类工具包](https://www.microsoft.com/download/details.aspx?id=27123)构建强大的文件分类基础结构，还可以实现[动态访问控制](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)，以根据访问尝试的特征限制对数据的访问，将业务规则转换为技术控制。  
+如果用户使用智能卡登录到安全系统，则可以使用[身份验证机制保证](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)来允许用户访问敏感数据，并且可以使用 IPsec 和用户权限限制来控制可从中连接到敏感数据存储库的系统。 您可以使用[Microsoft 数据分类工具包](https://www.microsoft.com/download/details.aspx?id=27123)构建强大的文件分类基础结构，还可以实现[动态访问控制](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)，以根据访问尝试的特征限制对数据的访问，将业务规则转换为技术控制。  
   
 从用户的角度来看，从安全系统访问敏感数据 "简单"，然后尝试从不安全系统中执行此操作 "不是"。 但是，从监视和管理你的环境的角度来看，你将帮助你在用户访问敏感数据和系统的方式中创建可识别模式，使你能够更轻松地检测异常的访问尝试。  
   

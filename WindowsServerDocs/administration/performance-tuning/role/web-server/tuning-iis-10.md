@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: DavSo; Ericam; YaShi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9563a3f3628851a0cf7b3cb79990db8c2141faa4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b86bf779a4ea9d67f959dacf125a98a8e26a729
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384946"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947138"
 ---
 # <a name="tuning-iis-100"></a>优化 IIS 10。0
 
@@ -142,12 +142,12 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.webserver/缓存**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
-|已启用|当设置为**False**时，禁用用户模式的 IIS 缓存。 如果缓存命中率非常小，则可以完全禁用缓存，以避免与缓存代码路径相关联的开销。 禁用用户模式缓存不会禁用内核模式缓存。|True|
+|启用|当设置为**False**时，禁用用户模式的 IIS 缓存。 如果缓存命中率非常小，则可以完全禁用缓存，以避免与缓存代码路径相关联的开销。 禁用用户模式缓存不会禁用内核模式缓存。|True|
 |enableKernelCache|当设置为**False**时禁用内核模式缓存。|True|
 |maxCacheSize|将 IIS 用户模式缓存大小限制为指定的大小（以 Mb 为单位）。 IIS 根据可用内存调整默认值。 根据经常访问的文件集的大小以及 RAM 或 IIS 进程地址空间的大小，仔细选择值。|0|
-|MaxResponseSize|将文件缓存到指定大小。 实际值取决于数据集中最大文件的数量和大小，以及可用 RAM。 缓存大型、频繁请求的文件可以降低 CPU 使用量、磁盘访问和相关的延迟。|262144|
+|maxResponseSize|将文件缓存到指定大小。 实际值取决于数据集中最大文件的数量和大小，以及可用 RAM。 缓存大型、频繁请求的文件可以降低 CPU 使用量、磁盘访问和相关的延迟。|262144|
 
 ## <a name="compression-behavior-settings"></a>压缩行为设置
 
@@ -157,16 +157,16 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.webserver/httpCompression**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
 |staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage|如果当前百分比 CPU 使用率高于或低于指定的限制，则启用或禁用压缩。<br><br>从 IIS 7.0 开始，如果稳定状态的 CPU 高于禁用阈值，则会自动禁用压缩。 如果 CPU 低于启用阈值，则启用压缩。|分别为50、100、50和90|
-|文件夹|指定临时存储和缓存压缩版本的静态文件的目录。 如果经常访问此目录，请考虑将其移出系统驱动器。|%SystemDrive%\inetpub\temp\IIS 临时压缩文件|
+|directory|指定临时存储和缓存压缩版本的静态文件的目录。 如果经常访问此目录，请考虑将其移出系统驱动器。|%SystemDrive%\inetpub\temp\IIS 临时压缩文件|
 |doDiskSpaceLimiting|指定是否对所有压缩文件所占用的磁盘空间量有限制。 压缩的文件存储在**目录**属性指定的压缩目录中。|True|
 |maxDiskSpaceUsage|指定压缩目录中压缩文件可以占用的磁盘空间字节数。<br><br>如果所有压缩内容的总大小太大，则可能需要增加此设置。|100 MB|
 
 **system.webserver/Urlcompression>**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
 |doStaticCompression|指定是否压缩静态内容。|True|
 |doDynamicCompression|指定是否压缩动态内容。|True|
@@ -186,7 +186,7 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.webserver/defaultDocument**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
 |已启用|指定启用默认文档。|True|
 |&lt;文件&gt; 元素|指定配置为默认文档的文件名。|默认列表为默认值 .htm、默认 .asp、index.htm、Index、Iisstart.png、和 default.aspx。|
@@ -199,16 +199,16 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.web/log**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
-|centralLogFileMode|指定服务器的日志记录模式。 将此值更改为 CentralBinary 以启用中心二进制日志记录。|站点|
+|centralLogFileMode|指定服务器的日志记录模式。 将此值更改为 CentralBinary 以启用中心二进制日志记录。|网站|
 
 **system.web/log/centralBinaryLogFile**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
 |已启用|指定是否启用中心二进制日志记录。|False|
-|文件夹|指定写入日志项的目录。|%SystemDrive%\inetpub\logs\LogFiles|
+|directory|指定写入日志项的目录。|%SystemDrive%\inetpub\logs\LogFiles|
 
 
 ## <a name="application-and-site-tunings"></a>应用程序和站点 tunings
@@ -217,14 +217,14 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.web/applicationPools/applicationPoolDefaults**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
 |queueLength|向 HTTP.SYS 指示在以后的请求被拒绝之前，对应用程序池排队的请求数。 超出此属性的值时，IIS 将拒绝后续请求，并出现503错误。<br><br>如果观察到503错误，请考虑为与高延迟后端数据存储通信的应用程序增加此项。|1000|
 |enable32BitAppOnWin64|如果为 True，则使32位应用程序能够在具有64位处理器的计算机上运行。<br><br>如果需要考虑内存消耗，请考虑启用32位模式。 由于指针大小和指令大小较小，32位应用程序使用的内存少于64位应用程序。 在64位计算机上运行32位应用程序的缺点是，用户模式地址空间限制为 4 GB。|False|
 
 **system.web/sites/VirtualDirectoryDefault**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
 |了 allowsubdirconfig|指定 IIS 在内容目录中查找低于当前级别的 web.config 文件（True），还是在内容目录中查找低于当前级别的 web.config 文件（False）。 通过施加简单的限制（仅允许在虚拟目录中进行配置），IISÂ10.0 可以知道，除非 **/&lt;名称&gt;.htm**是一个虚拟目录，否则它不会查找配置文件。 跳过其他文件操作可以显著提高包含大量随机访问的静态内容的网站的性能。|True|
 
@@ -244,7 +244,7 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 **system.webserver/asp/cache**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
 |diskTemplateCacheDirectory|当内存中缓存溢出时，ASP 用于存储已编译模板的目录的名称。<br><br>建议：设置为一个不会频繁使用的目录，例如，未与操作系统、IIS 日志或其他经常访问的内容共享的驱动器。|%SystemDrive%\inetpub\temp\ASP 编译的模板|
 |maxDiskTemplateCacheFiles|指定可在磁盘上缓存的已编译 ASP 模板的最大数目。<br><br>建议：设置为0x7FFFFFFF 的最大值。|2000|
@@ -253,20 +253,20 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 **system.webserver/asp/限制**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
 |processorThreadMax|指定 ASP 可以为每个处理器创建的最大工作线程数。 如果当前设置不足以处理负载，则增加，这可能会导致在处理请求时出现错误，或者导致 CPU 资源使用不足。|25|
 
 **system.webserver/asp/comPlus**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
 |executeInMta|如果在 IIS 为 ASP 内容提供服务时检测到错误或失败，则设置为**True** 。 例如，在托管多个独立的站点时，每个站点都在其自己的工作进程中运行。 错误通常从事件查看器中的 COM + 中报告。 此设置在 ASP 中启用多线程单元模型。|False|
 
 
 ## <a name="aspnet-concurrency-setting"></a>ASP.NET 并发设置
 
-### <a name="aspnet-35"></a>ASP.NET 3。5
+### <a name="aspnet-35"></a>ASP.NET 3.5
 默认情况下，ASP.NET 限制请求并发以降低服务器上稳定状态的内存消耗。 高并发性应用程序可能需要调整一些设置以提高整体性能。 你可以在 aspnet .config 文件中更改此设置：
 
 ``` syntax
@@ -301,7 +301,7 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 **system.web/applicationPools/ApplicationPoolDefaults/回收/periodicRestart**
 
-|属性|描述|默认|
+|属性|描述|默认值|
 |--- |--- |--- |
 |memory|如果虚拟内存消耗超过指定的限制（以 kb 为单位），则启用进程回收。 对于具有小型 2 GB 地址空间的32位计算机，这是一项有用的设置。 由于内存不足错误，此方法可帮助避免失败的请求。|0|
 |privateMemory|如果专用内存分配超过指定的限制（以 kb 为单位），则启用进程回收。|0|
@@ -402,6 +402,6 @@ IIS 10.0 中的集成管道模式实现了高度的灵活性和可扩展性。 �
 
     出于性能方面的考虑，不建议在 IIS 中使用 CGI 应用程序来处理请求。 经常创建和删除 CGI 进程涉及到很大的开销。 更好的替代方法包括使用 FastCGI、ISAPI 应用程序脚本、ASP 或 ASP.NET 脚本。 每个选项都提供隔离。
 
-# <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>另请参阅
 - [Web 服务器性能优化](index.md) 
 - [HTTP 1.1/2 优化](http-performance.md)

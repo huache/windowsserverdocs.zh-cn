@@ -12,23 +12,23 @@ ms.topic: article
 author: Femila
 ms.author: billmath
 ms.date: 05/31/2017
-ms.openlocfilehash: e3af163855e2550383b119d504449b2b43208a78
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 064ccf80faf77bbf128351a78ea437730983bf06
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391098"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948197"
 ---
 # <a name="what39s-new-in-active-directory-domain-services"></a>Active Directory 域服务&#39;中的新增功能 
 
 >适用于：Windows Server 2016
 
-Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务都是托管在云中，其他托管在本地。 改进包括：  
+Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务都是托管在云中，其他托管在本地。 这些改进包括：  
   
 -   [特权访问管理](https://technet.microsoft.com/library/mt150258.aspx   
 )  
   
-- [通过 Azure Active Directory 联接将云功能扩展到 Windows 10 设备](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
+- [通过 Azure Active Directory Join 将云功能扩展到 Windows 10 设备](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
   
 - [将已加入域的设备连接到 Windows 10 体验 Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)   
   
@@ -55,7 +55,7 @@ Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 
   
 -   新的监视功能可帮助您轻松识别请求访问的人员、授予的访问权限以及执行的活动。  
   
-**要求**  
+**惠?**  
   
 -   Microsoft 标识管理器  
   
@@ -70,7 +70,7 @@ Azure Active Directory 联接增强了企业、商业和 EDU 客户的标识体�
   
     -   漫游或个性化，辅助功能设置和凭据  
   
-    -   备份和还原  
+    -   备份和恢复  
   
     -   使用工作帐户访问 Microsoft Store  
   
@@ -90,7 +90,7 @@ Azure Active Directory 联接增强了企业、商业和 EDU 客户的标识体�
   
 -   **映像**选项可让你在首次运行体验期间，选择映像并允许用户直接配置公司拥有的设备。  
   
-有关详细信息， [请参阅适用于企业的 Windows 10：使用设备进行工作](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)的方式。  
+有关详细信息，请参阅适用于[企业的 Windows 10：使用设备进行工作的方式](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)。  
   
 ## <a name="BKMK_IDLocker"></a>Microsoft Passport  
 Microsoft Passport 是一种新的基于密钥的身份验证方法，组织和消费者超出了密码。 这种形式的身份验证依赖于安全漏洞、盗窃和诈骗网络的凭据。  
@@ -100,9 +100,9 @@ Microsoft Passport 是一种新的基于密钥的身份验证方法，组织和�
 有关详细信息，请参阅[使用不带密码的身份验证身份 Microsoft Passport](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport/)  
   
 ## <a name="BKMK_FRSDeprecation"></a>文件复制服务（FRS）和 Windows Server 2003 功能级别弃用  
-尽管在以前的 Windows Server 版本中不推荐使用文件复制服务（FRS）和 Windows Server 2003 功能级别，但这会导致不再支持 Windows Server 2003 操作系统。 因此，任何运行 Windows Server 2003 的域控制器都应该从域中删除。 应将域和林功能级别至少提升到 Windows Server 2008，以防止将运行早期版本 Windows Server 的域控制器添加到环境中。  
+尽管在以前的 Windows Server 版本中不推荐使用文件复制服务（FRS）和 Windows Server 2003 功能级别，但这会导致不再支持 Windows Server 2003 操作系统。 因此，应从域中删除任何运行 Windows Server 2003 的域控制器。 应将域和林功能级别至少提升到 Windows Server 2008，以防止将运行早期版本 Windows Server 的域控制器添加到环境中。  
   
-在 Windows Server 2008 和更高版本的域功能级别，使用分布式文件服务（DFS）复制来复制域控制器之间的 SYSVOL 文件夹内容。 如果在 Windows Server 2008 域功能级别或更高级别创建新域，则会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建了域，则需要从使用 FRS 迁移到 SYSVOL 的 DFS 复制。 对于迁移步骤，你可以按照[TechNet 上的过程](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)进行操作，也可以参考[存储团队文件 Cabinet 博客上的一组简化的步骤](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。  
+在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 有关迁移步骤，可以参阅 [TechNet 上的过程](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可参阅[存储团队文件柜博客上的简化步骤集](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。  
   
 仍支持 Windows Server 2003 域和林功能级别，但组织应将功能级别提升到 Windows Server 2008 （或更高版本，如有可能），以确保 SYSVOL 复制兼容性和将来支持。 此外，更高的功能级别还提供了许多其他的优势和功能。 有关详细信息，请参阅以下资源：  
   

@@ -11,16 +11,16 @@ ms.topic: landing-page
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 03/08/2019
-ms.openlocfilehash: eadac31cb623a15dd308f7e33f984fe1fb46ffe5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7e7fbd6ce3fcef6b0f8da88927d83f28d3fff0a8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365927"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950219"
 ---
 # <a name="storage"></a>存储
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+>适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 >[!TIP]
 > 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)了解具体信息。
@@ -41,7 +41,7 @@ Windows Server 中的存储为专注虚拟化工作负载的软件定义数据�
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>新增功能</h2>
+                                            <h2>新增功能有哪些？</h2>
                                             <p>了解 Windows Server 存储的新增功能</p>
                                         </div>
                                     </div>
@@ -124,7 +124,7 @@ Windows Server 中的存储为专注虚拟化工作负载的软件定义数据�
 <HR />
                         <p><h3><a href="refs/refs-overview.md">ReFS</a></h3> 一种复原文件系统，可最大程度地提高数据可用性、跨不同工作负荷有效地缩放到非常大的数据集，并通过对损坏的复原方式（无论软件或硬件故障）提供数据完整性。<p>
 <HR />
-                        <p><h3><a href="file-server/file-server-smb-overview.md">服务器消息块（SMB）协议</a></h3> 一种网络文件共享协议，该协议允许计算机上的应用程序读取和写入文件以及从计算机网络中的服务器程序请求服务。 SMB 协议可在其 TCP/IP 协议或其他网络协议上使用。 使用 SMB 协议时，应用程序（或应用程序用户）可访问远程服务器上的文件或其他资源。 这让应用程序可以读取、创建和更新远程服务器上的文件。 它还可以与任何设置为接收 SMB 客户端请求的服务器程序通信。<p>
+                        <p><h3><a href="file-server/file-server-smb-overview.md">服务器消息块 (SMB) 协议</a></h3> 一种网络文件共享协议，该协议允许计算机上的应用程序读取和写入文件以及从计算机网络中的服务器程序请求服务。 SMB 协议可在其 TCP/IP 协议或其他网络协议上使用。 使用 SMB 协议时，应用程序（或应用程序用户）可访问远程服务器上的文件或其他资源。 这让应用程序可以读取、创建和更新远程服务器上的文件。 它还可以与任何设置为接收 SMB 客户端请求的服务器程序通信。<p>
 <HR />
                         <p><h3><a href="storage-spaces/Storage-class-memory-health.md">存储类内存</a></h3> 提供类似于计算机内存（非常快速）的性能，但具有正常存储驱动器的数据持久性。 Windows 将存储类内存视为与常规驱动器类似（只是速度更快），但设备运行状态的管理方式有一些不同。<p>
 <HR />
@@ -146,4 +146,4 @@ Windows Server 中的存储为专注虚拟化工作负载的软件定义数据�
 ## <a name="in-azure"></a>在 Azure 中
 
 * [Azure 存储](https://azure.microsoft.com/documentation/services/storage/)
-* [Azure StorSimple](https://www.microsoft.com/en-us/cloud-platform/azure-storsimple)
+* [Azure StorSimple](https://www.microsoft.com/cloud-platform/azure-storsimple)

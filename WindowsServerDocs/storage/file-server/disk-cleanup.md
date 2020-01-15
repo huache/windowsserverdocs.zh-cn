@@ -8,16 +8,16 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 2de3452a3528122beb26f403fb0c73d7ff13efd7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb93ec15fd138ee65797c9d27413552c3a1759a6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402119"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949674"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>在 Windows Server 上使用磁盘清理
 
-> 适用于：Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
 
 磁盘清理工具将清除 Windows Server 环境中不必要的文件。 默认情况下，此工具在 Windows Server 2019 和 Windows Server 2016 上可用，但你可能需要执行几个手动步骤以在早期版本的 Windows Server 上启用它。
 
@@ -31,17 +31,17 @@ ms.locfileid: "71402119"
 
 1. 如果服务管理器已经打开，则继续执行下一步。 如果服务器管理器尚未打开，请执行以下任一操作打开它。
 
-   - 在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”。
+   - 在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的**服务器管理器**。
 
    - 中转到 "**开始**" 并选择 "服务器管理器" 磁贴。
 
 1. 在 "**管理**" 菜单上，选择 "添加**角色和功能**"。
 
-1. 在 "**开始之前**" 页上，验证是否已为要安装的功能准备好目标服务器和网络环境。 选择“**下一步**”。
+1. 在 "**开始之前**" 页上，验证是否已为要安装的功能准备好目标服务器和网络环境。 选择**下一步** 。
 
-1. 在 "**选择安装类型**" 页上，选择 "**基于角色或基于功能的安装**" 以在单台服务器上安装所有部件功能。 选择“**下一步**”。
+1. 在 "**选择安装类型**" 页上，选择 "**基于角色或基于功能的安装**" 以在单台服务器上安装所有部件功能。 选择**下一步** 。
 
-1. 在“选择目标服务器”页面上，从服务器池中选择一台服务器，或选择脱机 VHD。 选择“**下一步**”。
+1. 在“选择目标服务器” 页面上，从服务器池中选择一台服务器，或选择脱机 VHD。 选择**下一步** 。
 
 1. 在 "**选择服务器角色**" 页上，选择 "**下一步**"。
 
@@ -63,8 +63,8 @@ Windows Server 2012 R2 或更早版本中不存在磁盘清理工具（cleanmgr.
 
 | 操作系统  | 体系结构  | 文件位置  |
 | ----------------- | -------------- | --------------- |
-| Windows Server 2008 R2 | 64 位 | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da\cleanmgr.exe 
-| Windows Server 2008 R2 | 64 位 | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr.resources_31bf3856ad364e35_6.1.7600.16385_en-us_b9cb6194b257cc63\cleanmgr.exe.mui |
+| Windows Server 2008 R2 | 64 位 | C:\Windows\winsxs\ amd64_microsoft cleanmgr_31bf3856ad364e35_6-1.7600. 16385_none_c9392808773cd7da \cleanmgr.exe 
+| Windows Server 2008 R2 | 64 位 | C:\Windows\winsxs\ amd64_microsoft-resources_31bf3856ad364e35_6 cleanmgr.exe. 16385_en 1.7600 us_b9cb6194b257cc63 \cleanmgr.exe.mui |
 
 找到 cleanmgr.exe 并将该文件移动到 **%systemroot%\System32**。
 
@@ -76,6 +76,6 @@ Windows Server 2012 R2 或更早版本中不存在磁盘清理工具（cleanmgr.
 
 ## <a name="additional-references"></a>其他参考
 
-[在 Windows 10 中释放驱动器空间](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[在 Windows 10 中释放驱动器空间](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)
 
 [cleanmgr](../../administration/windows-commands/cleanmgr.md)

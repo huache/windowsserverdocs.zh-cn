@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5449c9e96a5a9ecd08ca35e703a76927f4e27158
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9f611f61150508d9170a6fe6757844bc29759886
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356019"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950476"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用 DNS 策略拆分\-大脑 DNS 部署
 
@@ -28,7 +28,7 @@ ms.locfileid: "71356019"
 
 用于拆分的另一种配置方案是选择性递归控制 DNS 名称解析。 在某些情况下，企业 DNS 服务器应该为内部用户在 Internet 上执行递归解析，同时，它们还必须充当外部用户的权威名称服务器，并阻止它们的递归。 
 
-本主题包含以下部分。
+本主题包含以下各部分内容。
 
 - [DNS 拆分的部署示例](#bkmk_sbexample)
 - [DNS 选择性递归控制的示例](#bkmk_recursion)
@@ -156,13 +156,13 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 ### <a name="bkmk_recursionhow"></a>DNS 选择性递归控制的工作原理
 
-如果为其接收了 Contoso DNS 服务器的查询（例如，对于 www.microsoft.com），则会针对 DNS 服务器上的策略评估名称解析请求。 
+如果为其接收了 Contoso DNS 服务器的查询（例如，对于 https://www.microsoft.com ），则根据 DNS 服务器上的策略评估名称解析请求。 
 
 由于这些查询不在任何区域中，因此不会计算 \(如\) split 示例中定义的区域级别策略。 
 
 DNS 服务器评估递归策略，专用接口上收到的查询与**SplitBrainRecursionPolicy**匹配。 此策略指向启用了递归的递归作用域。
 
-然后，DNS 服务器将执行递归以从 Internet 获取 www.microsoft.com 的答案，并将响应缓存在本地。 
+然后，DNS 服务器将执行递归，以从 Internet 获取 https://www.microsoft.com 的答案，并将响应缓存在本地。 
 
 如果在外部接口上收到查询，则不匹配任何 DNS 策略，并且默认递归设置（在此情况下为**禁用状态**）会应用。
 

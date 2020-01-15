@@ -7,12 +7,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 22cd926fdb873538631a6f6850157dceb5a020d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80cc75f983d4593e4ee98309d1fa39c024b7b379
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385830"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950298"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB：文件和打印机共享端口应打开
 
@@ -21,7 +21,7 @@ ms.locfileid: "71385830"
 
 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，windows server 2012，Windows Server 2008 R2
 
-*本主题旨在解决最佳做法分析器扫描标识的特定问题。只应将本主题中的信息应用到运行文件服务最佳做法分析器的计算机，并遇到本主题中所述的问题。有关最佳做法和扫描的详细信息，请参阅*[最佳做法分析器](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)。
+*本主题旨在解决最佳做法分析器扫描标识的特定问题。只应将本主题中的信息应用到运行文件服务最佳做法分析器的计算机，并遇到本主题中所述的问题。有关最佳做法和扫描的详细信息，请参阅*[最佳做法分析器](https://go.microsoft.com/fwlink/?linkid=122786%0d%0a)。
 
 
 <table>
@@ -31,8 +31,8 @@ ms.locfileid: "71385830"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>操作系统</strong></p></td>
-<td><p>Windows Server</p></td>
+<td><p>操作系统</p></td>
+<td><p>WIN ENT LTSB 2016 Estonian 64 Bits</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>产品/功能</strong></p></td>
@@ -71,7 +71,7 @@ ms.locfileid: "71385830"
 
 3.  在 "**入站规则**" 下，找到规则**文件和打印机共享（"NB-会话中"）** 以及 "**文件和打印机共享" （SMB）** 。
 
-4.  对于每个规则，右键单击规则，然后单击 "**启用规则**"。
+4.  请依次右键单击每个规则，然后单击“启用规则”。
 
 ## <a name="additional-references"></a>其他参考
 

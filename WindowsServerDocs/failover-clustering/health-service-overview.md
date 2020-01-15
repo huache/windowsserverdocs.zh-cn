@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: df455dfb0d2936192a3c2d7825e2d6d031cfe892
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 158681e2038e3d8015933771d06d3bfb24d31586
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361069"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948471"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server 中的运行状况服务
 
@@ -21,7 +21,7 @@ ms.locfileid: "71361069"
 
 运行状况服务是 Windows Server 2016 中的一项新功能，可改进运行存储空间直通的群集的日常监视和操作体验。
 
-## <a name="prerequisites"></a>必备条件  
+## <a name="prerequisites"></a>先决条件  
 
 默认情况下，存储空间直通启用运行状况服务。 设置或启动它时无需执行任何其他操作。 若要了解有关存储空间直通的详细信息，请参阅[Windows Server 2016 中的存储空间直通](../storage/storage-spaces/storage-spaces-direct-overview.md)。  
 
@@ -33,7 +33,7 @@ ms.locfileid: "71361069"
 
 请参阅[运行状况服务错误](health-service-faults.md)。
 
-## <a name="actions"></a>操作
+## <a name="actions"></a>“操作”
 
 请参阅[运行状况服务操作](health-service-actions.md)。
 
@@ -92,7 +92,7 @@ ms.locfileid: "71361069"
 
 ### <a name="usage"></a>Usage  
 
-支持的组件文档使用了 XML 灵感的语法。 建议使用最喜欢的文本编辑器，如免费[Visual Studio Code](http://code.visualstudio.com/)或记事本，创建一个可以保存并重复使用的 XML 文档。
+支持的组件文档使用了 XML 灵感的语法。 建议使用最喜欢的文本编辑器，如免费[Visual Studio Code](https://code.visualstudio.com/)或记事本，创建一个可以保存并重复使用的 XML 文档。
 
 #### <a name="sections"></a>部分
 

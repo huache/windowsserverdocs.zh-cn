@@ -9,19 +9,19 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 61c129ab8472d7e85602fa0a0244c4a925050d93
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c784c4b6dbfee7034dd9302dc87fc74b896763f5
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407303"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950146"
 ---
 # <a name="when-to-use-a-custom-claim-rule"></a>何时使用自定义声明规则
-使用声明规则语言在 Active Directory 联合身份验证服务\(AD FS\)中编写自定义声明规则，声明规则语言是声明颁发引擎用来以编程方式生成、转换、传递和筛选的框架支付. 通过使用自定义规则，可以创建逻辑比标准规则模板更复杂的规则。 在以下情况下可考虑使用自定义规则：  
+你可以使用声明规则语言在 Active Directory 联合身份验证服务 \(AD FS\) 中编写自定义声明规则，该语言是声明颁发引擎用来以编程方式生成、转换、传递和筛选声明的框架。 通过使用自定义规则，可以创建逻辑比标准规则模板更复杂的规则。 在以下情况下可考虑使用自定义规则：  
   
--   根据从结构化查询语言\(SQL\)特性存储提取的值发送声明。  
+-   基于从结构化查询语言 \(SQL\) 属性存储提取的值发送声明。  
   
--   使用自定义 LDAP 筛选器根据从轻型目录访问协议\(LDAP\)属性存储提取的值发送声明。  
+-   使用自定义 LDAP 筛选器从轻型目录访问协议 \(LDAP\) 属性存储中提取的值发送声明。  
   
 -   发送以从自定义属性存储提取的值为基础的声明。  
   
@@ -39,21 +39,21 @@ ms.locfileid: "71407303"
   
 声明规则语言基于规则。 它包含条件部分和执行部分。 你可以使用声明规则语言语法来枚举、添加、删除或修改声明，以满足组织的需求。 有关其中每个部分的工作原理的详细信息，请参阅[声明规则语言的角色](The-Role-of-the-Claim-Rule-Language.md)。  
   
-以下部分提供声明规则的基本简介。 它们还提供有关何时使用自定义声明规则的详细信息。  
+以下各节提供声明规则的基本简介。 它们还提供有关何时使用自定义声明规则的详细信息。  
   
 ## <a name="about-claim-rules"></a>关于声明规则  
-声明规则表示一个业务逻辑实例，该实例使用传入声明、向其\(应用条件（如果 x，然后是 y\) ）并基于条件参数生成传出声明。  
+声明规则表示使用传入声明的业务逻辑的实例、向其应用条件 \(如果 x，然后使用 y\) 并基于条件参数生成传出声明。  
   
 > [!IMPORTANT]  
-> -   在 AD FS 管理 "管理\-单元中，只能使用声明规则模板创建声明规则  
-> -   声明规则直接从声明提供程序\(（例如 Active Directory 或另一个联合身份验证服务\) ）或在声明提供方信任的接受转换规则的输出中处理传入声明。  
-> -   声明规则由声明颁发引擎按给定规则集内的时间顺序处理。 通过为规则设置优先级，可以进一步优化或筛选由给定规则集内以前的规则生成的声明。  
+> -   在 AD FS 管理 "\-中的" 管理 "管理单元中，只能使用声明规则模板创建声明规则  
+> -   声明规则处理来自声明提供程序的传入声明 \(例如 Active Directory 或另一个联合身份验证服务\) 或来自声明提供程序信任上的接受转换规则的输出。  
+> -   声明规则由声明发出引擎按给定规则集内的时间顺序处理。 通过为规则设置优先级，可以进一步优化或筛选由给定规则集内以前的规则生成的声明。  
 > -   声明规则模板始终要求你指定传入声明类型。 但是，你可以使用单个规则处理声明类型相同的多个声明值。  
   
 有关声明规则和声明规则集的更多详细信息，请参阅[声明规则的角色](The-Role-of-Claim-Rules.md)。 有关如何处理规则的详细信息，请参阅[声明引擎的角色](The-Role-of-the-Claims-Engine.md)。 有关如何处理声明规则集的详细信息，请参阅[声明管道的角色](The-Role-of-the-Claims-Pipeline.md)。  
   
 ## <a name="how-to-create-this-rule"></a>如何创建此规则  
-您可以通过以下方式创建此规则：首先使用声明规则语言创作操作所需的语法，然后将结果粘贴到 "使用自定义规则在声明提供程序的属性上发送声明" 模板中提供的文本框ust 或信赖方信任在 AD FS 管理 "管理单元\-中。  
+您可以通过以下方式创建此规则：首先使用声明规则语言创作操作所需的语法，然后将结果粘贴到 "使用自定义规则发送声明" 模板中提供的文本框中，该模板位于的 AD FS 管理 "管理单元\-中的声明提供方信任或信赖方信任的属性上。  
   
 此规则模板提供下列选项：  
   
@@ -63,13 +63,13 @@ ms.locfileid: "71407303"
   
 有关使用此模板创建自定义规则的详细说明，请参阅 AD FS 部署指南中的[创建使用自定义规则发送声明的规则](https://technet.microsoft.com/library/dd807049.aspx)。  
   
-为了更好地了解声明规则语言的工作原理，请通过单击该规则的属性中的 "**查看规则语言**" 选项\-卡，查看中已存在的其他规则的声明规则语言语法。 使用此部分中的信息和此选项卡上的语法信息可以深入了解如何构造你自己的自定义规则。  
+为了更好地了解声明规则语言的工作原理，请通过单击该规则的属性中的 "**查看规则语言**" 选项卡，查看中已\-存在的其他规则的声明规则语言语法。 使用此部分中的信息和此选项卡上的语法信息可以深入了解如何构造你自己的自定义规则。  
   
 有关如何使用声明规则语言的详细信息，请参阅[声明规则语言的角色](The-Role-of-the-Claim-Rule-Language.md)。  
   
 ## <a name="using-the-claim-rule-language"></a>使用声明规则语言  
   
-### <a name="example-how-to-combine-first-and-last-names-based-on-a-users-name-attribute-values"></a>例如：如何基于用户的名称属性值组合名字和姓氏  
+### <a name="example-how-to-combine-first-and-last-names-based-on-a-users-name-attribute-values"></a>示例：如何基于用户的名称属性值组合名字和姓氏  
 下面的规则语法根据给定属性存储中的属性值组合名字和姓氏。 策略引擎对每个条件的匹配项应用笛卡尔乘积。 例如，名字 {“Frank”, “Alan”} 和姓氏 {“Miller”, “Shen”} 的输出为 {“Frank Miller”, “Frank Shen”, “Alan Miller”, “Alan Shen”}：  
   
 ```  
@@ -78,7 +78,7 @@ c1:[type == "http://exampleschema/firstname" ]
 => issue(type = "http://exampleschema/name", value = c1.value + “  “ + c2.value);  
 ```  
   
-### <a name="example-how-to-issue-a-manager-claim-based-on-whether-users-have-direct-reports"></a>例如：如何根据用户是否有直接下属发出管理人员声明  
+### <a name="example-how-to-issue-a-manager-claim-based-on-whether-users-have-direct-reports"></a>例如：如何基于用户是否有直接报告发出管理人员声明  
 以下规则仅当用户有直接下属时发出管理人员声明：  
   
 ```  
@@ -87,10 +87,10 @@ count([type == “http://schemas.xmlsoap.org/claims/Reports“] ) > 0 => issue(=
 ```  
   
 ### <a name="example-how-to-issue-a-ppid-claim-based-on-an-ldap-attribute"></a>例如：如何基于 LDAP 属性发出 PPID 声明  
-以下规则基于 LDAP 属性存储中的\(用户\)的**windowsaccountname**和**originalissuer**属性颁发专用个人标识符 PPID 声明：  
+下面的规则基于 LDAP 属性存储中用户的**windowsaccountname**和**Originalissuer**属性颁发专用个人标识符 \(PPID\) 声明：  
   
 ```  
-c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]  
+c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]  
  => issue(store = "_OpaqueIdStore", types = ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier"), query = "{0};{1};{2}", param = "ppid", param = c.Value, param = c.OriginalIssuer);  
 ```  
   

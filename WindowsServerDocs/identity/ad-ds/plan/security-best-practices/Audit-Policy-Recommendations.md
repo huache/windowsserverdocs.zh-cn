@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c902f9a438afd226dfb58dbde9f3c00d57b0ed58
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6cecf2edcb834a963c706fa4a63e7d15b13f7888
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408595"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949621"
 ---
 # <a name="audit-policy-recommendations"></a>审核策略建议
 
@@ -34,19 +34,19 @@ ms.locfileid: "71408595"
 ## <a name="recommended-audit-policies-by-operating-system"></a>操作系统推荐的审核策略  
 本部分包含的表列出了适用于以下操作系统的审核设置建议：  
 
--   Windows Server 2016 
+-   WIN ENT LTSB 2016 Finnish 64 Bits 
 
--   Windows Server 2012  
+-   Windows Server 2012  
 
 -   Windows Server 2012 R2  
 
 -   Windows Server 2008  
 
--   Windows 10
+-   Windows 10
 
 -   Windows 8.1  
 
--   Windows 7  
+-   Windows 7  
 
 这些表包含 Windows 默认设置、基线建议以及这些操作系统的更强建议。  
 
@@ -57,7 +57,7 @@ ms.locfileid: "71408595"
 |**图解**|**建议**|  
 |是|在一般情况下启用|  
 |否|在一般情况下**不**启用|  
-|如果|对于特定方案，或在计算机上安装了所需审核的角色或功能时启用|  
+|IF|对于特定方案，或在计算机上安装了所需审核的角色或功能时启用|  
 |DC|在域控制器上启用|  
 |空字符|无建议|  
 
@@ -75,7 +75,7 @@ ms.locfileid: "71408595"
 |**帐户管理**||||  
 |审核应用程序组管理||||  
 |审核计算机帐户管理||是否|是的|  
-|审核通讯组管理||||  
+|审核分发组管理||||  
 |审核其他帐户管理事件||是否|是的|  
 |审核安全组管理||是否|是的|  
 |审核用户帐户管理|是否|是否|是的|  
@@ -102,7 +102,7 @@ ms.locfileid: "71408595"
 |审核特殊登录|是否|是否|是的|  
 |**对象访问**||||  
 |审核生成的应用程序||||  
-|审核认证服务||||  
+|审核证书服务||||  
 |审核详细的文件共享||||  
 |审核文件共享||||  
 |审核文件系统||||  
@@ -120,13 +120,13 @@ ms.locfileid: "71408595"
 |审核身份验证策略更改|是否|是否|是的|  
 |审核授权策略更改||||  
 |审核筛选平台策略更改||||  
-|审核 MPSSVC 规则级别策略更改|||是  |  
+|审核 MPSSVC 规则级别策略更改|||“是”  |  
 |审核其他策略更改事件||||  
 |**权限使用**||||  
 |审核非敏感权限使用||||  
 |审核其他权限使用事件||||  
 |审核敏感权限使用||||  
-|**主板**||||  
+|**系统**||||  
 |审核 IPsec 驱动程序||是的|是的|  
 |审核其他系统事件|是的|||  
 |审核安全状态更改|是否|是的|是的|  
@@ -153,7 +153,7 @@ ms.locfileid: "71408595"
 |**帐户管理**||||  
 |审核应用程序组管理||||  
 |审核计算机帐户管理||是 DC|是的|  
-|审核通讯组管理||||  
+|审核分发组管理||||  
 |审核其他帐户管理事件||是的|是的|  
 |审核安全组管理||是的|是的|  
 |审核用户帐户管理|是否|是的|是的|  
@@ -180,7 +180,7 @@ ms.locfileid: "71408595"
 |审核特殊登录|是否|是否|是的|  
 |**对象访问**||||  
 |审核生成的应用程序||||  
-|审核认证服务||||  
+|审核证书服务||||  
 |审核详细的文件共享||||  
 |审核文件共享||||  
 |审核文件系统||||  
@@ -198,13 +198,13 @@ ms.locfileid: "71408595"
 |审核身份验证策略更改|是否|是否|是的|  
 |审核授权策略更改||||  
 |审核筛选平台策略更改||||  
-|审核 MPSSVC 规则级别策略更改|||是  |  
+|审核 MPSSVC 规则级别策略更改|||“是”  |  
 |审核其他策略更改事件||||  
 |**权限使用**||||  
 |审核非敏感权限使用||||  
 |审核其他权限使用事件||||  
 |审核敏感权限使用||||  
-|**主板**||||  
+|**系统**||||  
 |审核 IPsec 驱动程序||是的|是的|  
 |审核其他系统事件|是的|||  
 |审核安全状态更改|是否|是的|是的|  
@@ -285,13 +285,13 @@ Aberrant 失败的登录次数可能表明存在密码猜测攻击。 为了使�
 ## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>用于监视 Active Directory 域服务的其他信息  
 查看以下链接，了解有关监视 AD DS 的其他信息：  
   
--   [全局对象访问审核非常神奇](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-提供有关配置和使用添加到 windows 7 和 windows Server 2008 R2 的高级审核策略配置的信息。  
+-   [全局对象访问审核非常神奇](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)-提供有关配置和使用添加到 windows 7 和 windows Server 2008 R2 的高级审核策略配置的信息。  
 
--   [Windows 2008 中的审核更改简介](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-介绍了在 windows 2008 中进行的审核更改。  
+-   [Windows 2008 中的审核更改简介](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-介绍了在 windows 2008 中进行的审核更改。  
 
--   [Vista 和2008中的冷审核技巧](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)-介绍了 windows Vista 和 windows Server 2008 中的有趣的新功能，这些功能可用于排查问题或查看环境中发生的情况。  
+-   [Vista 和2008中的冷审核技巧](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)-介绍了 windows Vista 和 windows Server 2008 中的有趣的新功能，这些功能可用于排查问题或查看环境中发生的情况。  
 
--   [Windows server 2008 和 Windows vista 中的一站式审核](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含对 windows server 2008 和 windows vista 中包含的审核功能和信息的编译。  
+-   [Windows server 2008 和 Windows vista 中的一站式审核](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-包含对 windows server 2008 和 windows vista 中包含的审核功能和信息的编译。  
 
 -   [AD DS 审核循序渐进指南](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx)-介绍了 Windows Server 2008 中的新 Active Directory 域服务（AD DS）审核功能。 它还提供了实现此新功能的过程。  
 

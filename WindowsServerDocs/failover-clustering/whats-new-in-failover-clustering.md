@@ -8,16 +8,16 @@ manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 26417f0fdbe2c4c8c374b3a1b8955c6297865397
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40342f43f7afbf020ba20f27586650767218fe83
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360833"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948031"
 ---
 # <a name="whats-new-in-failover-clustering"></a>故障转移群集中的新增功能
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 本主题介绍 Windows Server 2019 和 Windows Server 2016 的故障转移群集中的新增功能和更改的功能。
 
@@ -53,7 +53,7 @@ ms.locfileid: "71360833"
   - 由于远程位置不存在或极其糟糕的 Internet 访问，因此无法使用云见证。 
   - 磁盘见证缺少共享驱动器。 这可能是存储空间直通超聚合配置、SQL Server Always On 可用性组（AG）或 * Exchange 数据库可用性组（DAG），它们都不使用共享磁盘。 
   - 由于群集在 DMZ 后面，缺少域控制器连接。 
-  - 没有 Active Directory 群集名称对象（CNO）的工作组或跨域群集。 有关这些增强功能的详细信息，请参阅服务器 & 管理博客中的以下文章：故障转移群集文件共享见证和 DFS。
+  - 没有 Active Directory 群集名称对象（CNO）的工作组或跨域群集。 有关这些增强功能的详细信息，请参阅以下文章中的 & 管理博客：故障转移群集文件共享见证和 DFS。
     
     现在，我们还显式阻止使用 DFS 命名空间共享作为位置。 向 DFS 共享添加文件共享见证会导致群集出现稳定性问题，且从未支持此配置。 我们添加了逻辑来检测某个共享是否使用 DFS 命名空间，如果检测到 DFS 命名空间，故障转移群集管理器会阻止创建见证服务器，并显示有关不受支持的错误消息。
 - **群集强化**
@@ -72,11 +72,11 @@ ms.locfileid: "71360833"
 
 **这一更改增添了什么价值？**  
 
-将 Hyper-v 或横向扩展文件服务器群集从 Windows Server 2012 R2 升级到 Windows Server 2016 不再需要停机。 在群集中的所有节点都运行 Windows Server 2016 之前，群集将继续在 Windows Server 2012 R2 级别上工作。 通过使用 Windows PowerShell cmdlt `Update-ClusterFunctionalLevel` 将群集功能级别升级到 Windows Server 2016。 
+将 Hyper-v 或横向扩展文件服务器群集从 Windows Server 2012 R2 升级到 Windows Server 2016 不再需要停机。 在群集中的所有节点都运行 Windows Server 2016 之前，群集将继续在 Windows Server 2012 R2 级别上工作。 使用 Windows PowerShell cmdlt `Update-ClusterFunctionalLevel`将群集功能级别升级到 Windows Server 2016。 
 
 > [!WARNING]  
 > -   更新群集功能级别后，无法返回到 Windows Server 2012 R2 群集功能级别。 
-> -   在运行 `Update-ClusterFunctionalLevel` cmdlet 之前，该过程是可逆的，可以添加 Windows Server 2012 R2 节点并删除 Windows Server 2016 节点。 
+> -   在运行 `Update-ClusterFunctionalLevel` cmdlet 之前，该进程是可逆的，可以添加 Windows Server 2012 R2 节点并删除 Windows Server 2016 节点。 
 
 **工作原理的不同之处是什么？**  
 
@@ -90,12 +90,12 @@ Hyper-v 或横向扩展文件服务器故障转移群集现在可以轻松升级
 -   此时，群集被称为在混合模式下运行，因为群集节点正在运行 Windows Server 2012 R2 或 Windows Server 2016。 
 -   群集功能级别保留在 Windows Server 2012 R2 上。 在此功能级别，Windows Server 2016 中的新功能影响与早期版本的操作系统的兼容性。 
 -   最终，所有节点都将升级到 Windows Server 2016。 
--   然后，使用 Windows PowerShell cmdlet `Update-ClusterFunctionalLevel` 将群集功能级别更改为 Windows Server 2016。 此时，你可以利用 Windows Server 2016 功能。 
+-   然后，使用 Windows PowerShell cmdlet `Update-ClusterFunctionalLevel`将群集功能级别更改为 Windows Server 2016。 此时，你可以利用 Windows Server 2016 功能。 
 
 有关详细信息，请参阅[群集操作系统滚动升级](cluster-operating-system-rolling-upgrade.md)。 
 
 ### <a name="BKMK_SR"></a>存储副本  
-存储副本是一项新功能，可在服务器或群集之间实现存储不可知的块级同步复制以进行灾难恢复，以及在站点之间拉伸故障转移群集。 同步复制支持物理站点中的镜像数据和在崩溃时保持一致的卷，以确保文件系统级别的数据损失为零。 异步复制允许超出都市范围、可能存在数据损失的站点扩展。 
+存储副本是一项新功能，可在服务器或群集之间实现存储不可知的块级同步复制以进行灾难恢复，以及在站点之间拉伸故障转移群集。 同步复制支持物理站点中的镜像数据和在崩溃时保持一致的卷，以确保文件系统级别的数据损失为零。 异步复制允许超出都市范围、存在数据损失的可能性的站点扩展。 
 
 **这一更改增添了什么价值？**  
 
@@ -156,9 +156,9 @@ Hyper-v 或横向扩展文件服务器故障转移群集现在可以轻松升级
 
     -   **复原周期：** 帮助您定义允许所有虚拟机独立运行的时间长度。 
 
--   **不正常节点的隔离：** 不正常的节点会被隔离，并且不再允许加入群集。 这可以防止稳定节点负面影响其他节点和整个群集。 
+-   不**正常节点的隔离：** 不正常的节点会被隔离，并且不再允许加入群集。 这可以防止稳定节点负面影响其他节点和整个群集。 
 
-有关控制如何将节点置于隔离或隔离中的详细信息，请参阅[Windows Server 2016 中的虚拟机计算复原](http://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx)功能。 
+有关控制如何将节点置于隔离或隔离中的详细信息，请参阅[Windows Server 2016 中的虚拟机计算复原](https://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx)功能。 
 
 **存储复原**在 Windows Server 2016 中，虚拟机能够更灵活地防御暂时性存储故障。 改善了虚拟机复原能力，有助于在发生存储中断时保留租户虚拟机会话状态。 这是通过智能和快速虚拟机对存储基础结构问题的响应实现的。 
 
@@ -169,12 +169,12 @@ Hyper-v 或横向扩展文件服务器故障转移群集现在可以轻松升级
 ### <a name="BKMK_Diagnostics"></a>故障转移群集中的诊断改进  
 为了帮助诊断故障转移群集的问题，Windows Server 2016 包括以下各项：  
 
--   群集日志文件（如时区信息和 DiagnosticVerbose 日志）的几项增强功能，可更轻松地排查故障转移群集问题。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-群集日志](http://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx)。 
+-   群集日志文件（如时区信息和 DiagnosticVerbose 日志）的几项增强功能，可更轻松地排查故障转移群集问题。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-群集日志](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx)。 
 
--   新的转储类型为**活动内存转储**，它会筛选出分配给虚拟机的大部分内存页面，从而使内存的更小、更易于保存或复制。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-活动转储](http://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx)。 
+-   新的转储类型为**活动内存转储**，它会筛选出分配给虚拟机的大部分内存页面，从而使内存的更小、更易于保存或复制。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-活动转储](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx)。 
 
 ### <a name="BKMK_SiteAware"></a>站点感知故障转移群集  
-Windows Server 2016 包括站点感知故障转移群集，这些群集基于其物理位置（站点）启用延伸群集中的组节点。 群集站点感知改进了群集生命周期内的关键操作，例如故障转移行为、位置策略、节点之间的检测信号和仲裁行为。 有关详细信息，请参阅[Windows Server 2016 中的站点感知故障转移群集](http://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx)。 
+Windows Server 2016 包括站点感知故障转移群集，这些群集基于其物理位置（站点）启用延伸群集中的组节点。 群集站点感知改进了群集生命周期内的关键操作，例如故障转移行为、位置策略、节点之间的检测信号和仲裁行为。 有关详细信息，请参阅[Windows Server 2016 中的站点感知故障转移群集](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx)。 
 
 ### <a name="BKMK_multidomainclusters"></a>工作组和多域群集  
 在 Windows Server 2012 R2 和早期版本中，只能在联接到同一个域的成员节点之间创建群集。 Windows Server 2016 打破了这些障碍，并引入了创建故障转移群集的功能，且无需 Active Directory 依赖项。 你现在可以在以下配置中创建故障转移群集：  
@@ -185,7 +185,7 @@ Windows Server 2016 包括站点感知故障转移群集，这些群集基于其
 
 -   **工作组群集。** 节点是成员服务器/工作组的群集（未加入域）。 
 
-有关详细信息，请参阅[Windows Server 2016 中的工作组和多域群集](http://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)  
+有关详细信息，请参阅[Windows Server 2016 中的工作组和多域群集](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)  
 ### <a name="BKMK_VMLoadBalancing"></a>虚拟机负载平衡  
 虚拟机负载平衡是故障转移群集中的一项新功能，用于简化群集中各个节点上的虚拟机的无缝负载平衡。 基于节点上的虚拟机内存和 CPU 使用率标识过度提交的节点。 然后，将虚拟机从已过度提交的节点移动（实时迁移）到具有可用带宽的节点（如果适用）。 可以优化平衡的做法，以确保群集的最佳性能和利用率。 默认情况下，在 Windows Server 2016 Technical Preview 中启用负载平衡。 但是，启用 SCVMM 动态优化后，将禁用负载平衡。 
 
@@ -197,6 +197,6 @@ Windows Server 2016 包括站点感知故障转移群集，这些群集基于其
 
 有关详细信息，请参阅[简化的 SMB 多通道和多 NIC 群集网络](smb-multichannel.md)。
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 * [存储](../storage/storage.md)  
 * [Windows Server 2016 中的存储的新增功能](../storage/whats-new-in-storage.md)  

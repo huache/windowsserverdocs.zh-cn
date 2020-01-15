@@ -10,19 +10,19 @@ ms.date: 10/17/2019
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 829ae15495d54aca8c476909988ea5a44ea487e7
-ms.sourcegitcommit: 8a017624682fe0172076f9169a9fa17aa972907f
+ms.openlocfilehash: 5e6312075fffd62b599fb62f39cc94ca1f309a44
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852624"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950159"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server 组件疑难解答
 
 >- [!TIP]
 > 要查找有关较旧版 Windows Server 的信息？ 查看 docs.microsoft.com 上的其他[Windows Server 库](/previous-versions/windows/)。 你还可以在[此站点上搜索](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)特定信息。
 
-Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的服务器能够收到将来的更新（包括安全更新），请务必保持更新服务器。 有关已发布更新的完整列表，请查看- [Windows 10 和 Windows Server 2016 更新历史记录](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history)。
+Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的服务器能够收到将来的更新（包括安全更新），请务必保持更新服务器。 有关已发布更新的完整列表，请查看- [Windows 10 和 Windows Server 2016 更新历史记录](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)。
 
 本部分包含高级疑难解答主题和链接，以帮助你解决 Windows Server 问题。 其他主题将在可用时添加。
 

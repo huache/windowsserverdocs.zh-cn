@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a9bdc3b237d0d0f44995f2c359cc3ef6ed8568a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f87c383618bc1cef09652ea36e172fc634f5128e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71400365"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948817"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>安装新的 Windows Server 2012 Active Directory 林（级别 200）
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 本主题按入门级别说明了新的 Windows Server 2012 Active Directory 域服务域控制器升级功能。 在 Windows Server 2012 中，AD DS 使用服务器管理器和基于 Windows PowerShell 的部署系统替换 Dcpromo 工具。  
   
@@ -58,7 +58,7 @@ AD DS 简化管理是对域部署的重构。 这些功能包括：
   
 -   [Windows Server 2008 R2 的 Active Directory 域服务](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
   
--   [Windows Server 2008 的 Active Directory 域服务](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
+-   [适用于 Windows Server 2008 的 Active Directory 域服务](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
   
 -   [Windows Server 技术参考](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
   
@@ -117,9 +117,9 @@ Dcpromo.exe 保留在 Windows Server 2012 中，仅用于命令行无人参与�
   
 -   单击仪表板欢迎磁贴上的“添加要管理的其他服务器”  
   
--   单击“管理”菜单并选择“添加服务器”  
+-   单击“管理” 菜单并选择“添加服务器”  
   
--   右键单击“所有服务器”并选择“添加服务器”  
+-   右键单击“所有服务器” 并选择“添加服务器”  
   
 这将打开“添加服务器”对话框：  
   
@@ -133,7 +133,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中，仅用于命令行无人参与�
   
 -   导入（使用以 CR/LF 分隔的服务器的文本文件列表）  
   
-单击“立即查找”以从计算机加入的相同 Active Directory 域返回服务器列表，单击服务器列表中的一个或多个服务器名称。 单击右箭头以将服务器添加到“已选择”列表。 使用“添加服务器”对话框将选定的服务器添加到仪表板角色组。 或者单击“管理”，然后单击“创建服务器组”，或单击仪表板“欢迎使用服务器管理器”磁贴上的“创建服务器组”以创建自定义服务器组。  
+单击“立即查找” 以从计算机加入的相同 Active Directory 域返回服务器列表，单击服务器列表中的一个或多个服务器名称。 单击右箭头以将服务器添加到“已选择” 列表。 使用“添加服务器” 对话框将选定的服务器添加到仪表板角色组。 或者单击“管理”，然后单击“创建服务器组”，或单击仪表板“欢迎使用服务器管理器” 磁贴上的“创建服务器组” 以创建自定义服务器组。  
   
 > [!NOTE]  
 > 添加服务器过程不验证服务器是否联机或可访问。 但是，任何无法访问的服务器都将在下一次刷新时在服务器管理器的“可管理性”视图中标记出来。  
@@ -162,14 +162,14 @@ Dcpromo.exe 保留在 Windows Server 2012 中，仅用于命令行无人参与�
 #### <a name="server-selection"></a>服务器选择  
 ![安装一个新林](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectDestinationServer.png)  
   
-“服务器选择”对话框使你可以从之前添加到池的服务器中选择一个（只要它可访问）。 运行服务器管理器的本地服务器自动可用。  
+“服务器选择” 对话框使你可以从之前添加到池的服务器中选择一个（只要它可访问）。 运行服务器管理器的本地服务器自动可用。  
   
 此外，你可以选择使用 Windows Server 2012 操作系统的脱机 HYPER-V VHD 文件，服务器管理器直接通过组件服务将角色添加到它们中。 这使你可以在进一步配置它们之前使用必要的组件配置虚拟服务器。  
   
 #### <a name="server-roles-and-features"></a>服务器角色和功能  
 ![安装一个新林](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectServerRoles.png)  
   
-如果你想要升级域控制器，请选择“Active Directory 域服务”。 所有 Active Directory 管理功能和所需服务都将自动安装，即使它们表面上是另一个角色的一部分，或者不在服务器管理器界面中显示为选中状态。  
+如果你想要升级域控制器，请选择“Active Directory 域服务” 。 所有 Active Directory 管理功能和所需服务都将自动安装，即使它们表面上是另一个角色的一部分，或者不在服务器管理器界面中显示为选中状态。  
   
 服务器管理器还提供一个信息对话框，它显示此角色隐式安装的管理功能；这与 **-IncludeManagementTools** 参数等效。  
   
@@ -182,7 +182,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中，仅用于命令行无人参与�
 #### <a name="active-directory-domain-services"></a>Active Directory 域服务  
 ![安装一个新林](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSIntro.png)  
   
-“Active Directory 域服务”对话框提供有关要求和最佳实践的有限信息。 它主要用于确认你已选择 AD DS 角色 "如果此屏幕未出现，则表示你未选择 AD DS。  
+“Active Directory 域服务” 对话框提供有关要求和最佳实践的有限信息。 它主要用于确认你已选择 AD DS 角色 "如果此屏幕未出现，则表示你未选择 AD DS。  
   
 #### <a name="confirmation"></a>确认  
 ![安装一个新林](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Confirmation.png)  
@@ -242,7 +242,7 @@ Active Directory 域服务角色删除与安装不同，因为它在完成之前
 有关有效域名的详细信息，请参阅知识库文章 [Active Directory 中计算机、域、站点和 OU 的命名约定](https://support.microsoft.com/kb/909264)。  
   
 > [!WARNING]  
-> 不要使用与外部 DNS 名称相同的名称创建新的 Active Directory 林。 例如，如果 http://contoso.comInternet DNS URL，则必须为内部林选择不同的名称，以避免将来出现兼容性问题。 此名称应该是唯一的且不会产生 Web 流量。 例如：corp.contoso.com。  
+> 不要使用与外部 DNS 名称相同的名称创建新的 Active Directory 林。 例如，如果 http://contoso.com Internet DNS URL，则必须为内部林选择不同的名称，以避免将来出现兼容性问题。 此名称应该是唯一的且不会产生 Web 流量。 例如：corp.contoso.com。  
   
 新的林不需要用于域管理员帐户的新凭据。 域控制器升级进程使用内置管理员帐户的凭据，该帐户来自用于创建目录林根的第一个域控制器。 没有任何方法（默认情况下）可禁用或排除内置管理员帐户，如果其他管理域帐户不可用，它可能是林的唯一入口点。 在部署新林前知道密码至关重要。  
   
@@ -251,27 +251,27 @@ Active Directory 域服务角色删除与安装不同，因为它在完成之前
 #### <a name="domain-controller-options"></a>域控制器选项  
 ![安装一个新林](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DCOptions_Forest.gif)  
   
-“域控制器选项”使你能够为新的目录林根级域配置“林功能级别”和“域功能级别”。 默认情况下，这些设置在新的目录林根级域中是 Windows Server 2012。 Windows Server 2012 林功能级别不提供 Windows Server 2008 R2 林功能级别的任何新功能。 只有在实现新 Kerberos 设置 "始终提供声明" 和 "失败未保护 authentication 请求" 时，才需要 Windows Server 2012 域功能级别。 Windows Server 2012 中的功能级别的主要用途是将域中的参与限制为符合允许的最低操作系统要求的域控制器。 换句话说，你可以指定 Windows Server 2012 域功能级别，仅运行 Windows Server 2012 的域控制器可以托管域。  Windows Server 2012 在 NetLogon 的**DSGetDcName**函数中实现了一个名为**DS_WIN8_REQUIRED**的新域控制器标志，该标志专门查找 Windows Server 2012 域控制器。 这使你在允许在域控制器上运行哪些操作系统方面可以灵活地选择较为同质或较为异质的林。  
+“域控制器选项” 使你能够为新的目录林根级域配置“林功能级别” 和“域功能级别” 。 默认情况下，这些设置在新的目录林根级域中是 Windows Server 2012。 Windows Server 2012 林功能级别不提供 Windows Server 2008 R2 林功能级别的任何新功能。 只有在实现新 Kerberos 设置 "始终提供声明" 和 "失败未保护 authentication 请求" 时，才需要 Windows Server 2012 域功能级别。 Windows Server 2012 中的功能级别的主要用途是将域中的参与限制为符合允许的最低操作系统要求的域控制器。 换句话说，你可以指定 Windows Server 2012 域功能级别，仅运行 Windows Server 2012 的域控制器可以托管域。  Windows Server 2012 在 NetLogon 的**DSGetDcName**函数中实现了一个名为**DS_WIN8_REQUIRED**的新域控制器标志，该标志专门查找 Windows Server 2012 域控制器。 这使你在允许在域控制器上运行哪些操作系统方面可以灵活地选择较为同质或较为异质的林。  
   
 有关域控制器位置的详细信息，请参阅 [目录服务功能](https://msdn.microsoft.com/library/ms675900(VS.85).aspx)。  
   
 唯一的可配置域控制器功能是 DNS 服务器选项。 Microsoft 建议所有域控制器都提供 DNS 服务以实现分布式环境中的高可用性，这是在任何模式下或域中安装域控制器时默认选择此选项的原因。 全局编录和只读域控制器选项在创建新的目录林根级域时不可用；第一个域控制器必须是 GC，而且不能是只读域控制器 (RODC)。  
   
-指定的“目录服务还原模式密码”必须遵守应用于服务器的密码策略，该策略在默认情况下不要求强密码；仅需非空密码。 总是选择复杂强密码或首选密码。  
+指定的“目录服务还原模式密码” 必须遵守应用于服务器的密码策略，该策略在默认情况下不要求强密码；仅需非空密码。 总是选择复杂强密码或首选密码。  
   
 #### <a name="dns-options-and-dns-delegation-credentials"></a>DNS 选项和 DNS 委派凭据  
 ![安装一个新林](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestDNSOptions.png)  
   
 “DNS 选项” 页面使你可以配置 DNS 委派，并提供备用 DNS 管理凭据。  
   
-安装新的 Active Directory 目录林根级域（其中你在“域控制器选项”页面上选择了“DNS 服务器”）时，你无法在 Active Directory 域服务配置向导中配置 DNS 选项或委派。 在现有的 DNS 服务器基础结构中创建新的目录林根级 DNS 区域时，“创建 DNS 委派” 选项可用。 此选项使你可以提供有权限更新 DNS 区域的备用 DNS 管理凭据。  
+安装新的 Active Directory 目录林根级域（其中你在“域控制器选项” 页面上选择了“DNS 服务器” ）时，你无法在 Active Directory 域服务配置向导中配置 DNS 选项或委派。 在现有的 DNS 服务器基础结构中创建新的目录林根级 DNS 区域时，“创建 DNS 委派” 选项可用。 此选项使你可以提供有权限更新 DNS 区域的备用 DNS 管理凭据。  
   
 有关是否需要创建 DNS 委派的详细信息，请参阅 [了解区域委派](https://technet.microsoft.com/library/cc771640.aspx)。  
   
 #### <a name="additional-options"></a>其他选项  
 ![安装一个新林](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestAdditionalOptions.png)  
   
-“其他选项”页显示该域的 NetBIOS 名称并使你可以重写它。 默认情况下，NetBIOS 域名与“部署配置” 页上提供的完全限定的域名最左边的标签相匹配。 例如，如果你提供了 corp.contoso.com 的完全限定的域名，则默认 NetBIOS 域名是 CORP。  
+“其他选项” 页显示该域的 NetBIOS 名称并使你可以重写它。 默认情况下，NetBIOS 域名与“部署配置” 页上提供的完全限定的域名最左边的标签相匹配。 例如，如果你提供了 corp.contoso.com 的完全限定的域名，则默认 NetBIOS 域名是 CORP。  
   
 如果名称是 15 个字符或更少且与另一个 NetBIOS 名称不冲突，则它保持不变。 如果它与另一个 NetBIOS 名称发生冲突，则将数字附加到该名称。 如果该名称多于 15 个字符，则向导提供一个唯一的截断的建议名称。 在任一情况下，向导首先将通过 WINS 查找和 NetBIOS 广播验证该名称尚未被使用。  
   
@@ -280,7 +280,7 @@ Active Directory 域服务角色删除与安装不同，因为它在完成之前
 #### <a name="paths"></a>路径  
 ![安装一个新林](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestPaths.png)  
   
-“路径”页可以用于覆盖 AD DS 数据库、数据库事务日志和 SYSVOL 共享的默认文件夹位置。 默认位置始终位于 %systemroot%（即 C:\Windows）的子目录中。  
+“路径” 页可以用于覆盖 AD DS 数据库、数据库事务日志和 SYSVOL 共享的默认文件夹位置。 默认位置始终位于 %systemroot%（即 C:\Windows）的子目录中。  
   
 #### <a name="review-options-and-view-script"></a>审查选项和查看脚本  
 ![安装一个新林](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestReviewOptions.png)  
@@ -320,7 +320,7 @@ Install-ADDSForest `
   
 在安装新目录林根级域时，服务器管理器 Active Directory 域服务配置向导将调用一系列的模块化测试。 这些测试向你提出警告并提供建议的修复选项。 你可以根据需要多次运行测试。 域控制器进程在所有先决条件测试通过前无法继续。  
   
-“先决条件检查”还显示相关的信息，例如影响较早版本的操作系统的安全性更改。  
+“先决条件检查” 还显示相关的信息，例如影响较早版本的操作系统的安全性更改。  
   
 有关特定先决条件检查的详细信息，请参阅 [Prerequisite Checking](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。  
   
@@ -353,7 +353,7 @@ Install-ADDSForest `
   
 |||  
 |-|-|  
-|ServerManager Cmdlet|参数（需要**加粗**参数。 *斜体*参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。）|  
+|ServerManager Cmdlet|参数（需要**加粗** 参数。 *斜体* 参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。）|  
 |Install-WindowsFeature/Add-WindowsFeature|***-Name***<br /><br />*-重新启动*<br /><br />*-IncludeAllSubFeature*<br /><br />*-IncludeManagementTools*<br /><br />-Source<br /><br />*-ComputerName*<br /><br />-Credential<br /><br />-LogPath<br /><br />*-Vhd*<br /><br />*-ConfigurationFilePath*|  
   
 > [!NOTE]  
@@ -445,8 +445,8 @@ Install-addsforest
   
 |||  
 |-|-|  
-|ADDSDeployment Cmdlet|参数（需要**加粗**参数。 *斜体*参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。）|  
-|install-addsforest|-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />*-DatabasePath*<br /><br />*-DomainMode*<br /><br />***-DomainName***<br /><br />***-DomainNetBIOSName***<br /><br />*-DNSDelegationCredential*<br /><br />*-ForestMode*<br /><br />-Force<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-NoDnsOnNetwork<br /><br />-NoRebootOnCompletion<br /><br />*-SafeModeAdministratorPassword*<br /><br />-SkipAutoConfigureDNS<br /><br />-Skipprechecks 不可<br /><br />*-SYSVOLPath*<br /><br />*-Whatif*|  
+|ADDSDeployment Cmdlet|参数（需要**加粗** 参数。 *斜体* 参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。）|  
+|install-addsforest|-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />*-DatabasePath*<br /><br />*-DomainMode*<br /><br />***-DomainName***<br /><br />***-DomainNetBIOSName***<br /><br />*-DNSDelegationCredential*<br /><br />*-ForestMode*<br /><br />-Force<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-NoDnsOnNetwork<br /><br />-NoRebootOnCompletion<br /><br />*-SafeModeAdministratorPassword*<br /><br />-SkipAutoConfigureDNS<br /><br />-SkipPreChecks<br /><br />*-SYSVOLPath*<br /><br />*-Whatif*|  
   
 > [!NOTE]  
 > 如果要更改根据 DNS 域名前缀自动生成的 15 字符名称或名称超过 15 个字符，需要 **-DomainNetBIOSName** 参数。  
@@ -480,7 +480,7 @@ Install-ADDSForest
     Install-ADDSForest "DomainName corp.contoso.com  
     ```  
   
--   如果指定*值*，则该值必须是安全字符串。 以交互方式运行 cmdlet 时，这不是首选用法。  
+-   如果指定 *值*，则该值必须是安全字符串。 以交互方式运行 cmdlet 时，这不是首选用法。  
   
 例如，可通过使用 **Read-Host** cmdlet 提示用户提供安全字符串来手动提示输入密码：  
   
@@ -571,10 +571,10 @@ ADDSDeployment cmdlet 提供其他选项以跳过 DNS 客户端设置、转发�
 ## <a name="see-also"></a>另请参阅  
 [Active Directory 域服务（TechNet 门户）](https://technet.microsoft.com/library/cc770946(WS.10).aspx)  
 [Windows Server 2008 R2 的 Active Directory 域服务](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
-[Windows Server 2008 的 Active Directory 域服务](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
+[适用于 Windows Server 2008 的 Active Directory 域服务](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
 [Windows Server 技术参考（Windows Server 2003）](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
 [Active Directory 管理中心：入门（Windows Server 2008 R2）](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
 [Active Directory Windows PowerShell 管理（Windows Server 2008 R2）](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
-[询问目录服务团队（官方 Microsoft 商业技术支持博客）](http://blogs.technet.com/b/askds)  
+[询问目录服务团队（官方 Microsoft 商业技术支持博客）](https://blogs.technet.com/b/askds)  
   
 

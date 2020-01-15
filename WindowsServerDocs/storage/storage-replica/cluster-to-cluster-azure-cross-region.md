@@ -9,21 +9,21 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 26eba76c836d1157f4d4c10d7a989a3a7dcc1538
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 806857d5de067c0f4640344ed80338b474dd758e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393826"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950064"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Azure 中跨区域群集到群集存储副本
 
-> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 可以为 Azure 中的跨区域应用程序配置群集以群集存储副本。 在下面的示例中，我们使用双节点群集，但群集到群集的存储副本并不局限于双节点群集。 下图是一个双节点存储空间直通群集，可以相互通信，位于同一个域中，并且是跨区域。
 
 观看以下视频，了解整个过程。
-> [!video https://www.microsoft.com/en-us/videoplayer/embed/RE26xeW]
+> [!video https://www.microsoft.com/videoplayer/embed/RE26xeW]
 
 ![体系结构关系图展示 C2C SR in Azure 限相同区域。](media/Cluster-to-cluster-azure-cross-region/architecture.png)
 > [!IMPORTANT]
@@ -59,7 +59,7 @@ ms.locfileid: "71393826"
       - 向每台计算机添加至少两个托管磁盘
       - 安装故障转移群集和存储副本功能
 
-   使用可用性集中的虚拟网络（**AZCROSS**）和网络安全组 **（AZCROSS-** **NSG**）在资源组（**sr-iov-AZCROSS**）中创建两个虚拟机（**azcross1**， **azcross2**）. 在创建过程中将标准公共 IP 地址分配给每个虚拟机
+   使用可用性集中的虚拟网络（**AZCROSS**）和网络安全组 **（AZCROSS-** **NSG**）在资源组（**sr-iov-AZCROSS**）中创建两个虚拟机（**azcross1**， **azcross2**）。 在创建过程中将标准公共 IP 地址分配给每个虚拟机
       - 向每台计算机添加至少两个托管磁盘
       - 安装故障转移群集和存储副本功能
 
@@ -96,13 +96,13 @@ ms.locfileid: "71393826"
       - azlbr1 = > 前端 IP：10.3.0.100 （从虚拟网络（**az2az**）子网中获取未使用的 IP 地址）
       - 为每个负载均衡器创建后端池。 添加关联的群集节点。
       - 创建运行状况探测：端口59999
-      - 创建负载均衡规则：允许启用了浮动 IP 的 HA 端口。
+      - 创建负载均衡规则：允许 HA 端口，启用了浮动 IP。
 
    提供群集 IP 地址作为负载均衡器的静态专用 IP 地址。 
       - azlbazcross = > 前端 IP：10.0.0.10 （从虚拟网络（**azcross**）子网中获取未使用的 IP 地址）
       - 为每个负载均衡器创建后端池。 添加关联的群集节点。
       - 创建运行状况探测：端口59999
-      - 创建负载均衡规则：允许启用了浮动 IP 的 HA 端口。 
+      - 创建负载均衡规则：允许 HA 端口，启用了浮动 IP。 
 
 9. 为 Vnet 到 Vnet 连接创建[虚拟网络网关](https://ms.portal.azure.com/#create/Microsoft.VirtualNetworkGateway-ARM)。
 
@@ -166,7 +166,7 @@ ms.locfileid: "71393826"
 
 14. 在继续下一步之前运行[群集验证测试](../../failover-clustering/create-failover-cluster.md#validate-the-configuration)
 
-15. 启动 Windows PowerShell，并使用 [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) cmdlet 确定是否满足所有存储副本要求。 可以在仅要求模式下使用 cmdlet 以用于快速测试，也可以在长时间运行的性能评估模式下使用。
+15. 启动 Windows PowerShell，并使用 [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) cmdlet 确定是否满足所有存储副本要求。 可以在仅要求模式下使用 cmdlet 以用于快速测试，以及运行性能提升模式。
  
 16. 配置群集到群集存储副本。
     双向向另一个群集授予访问权限：

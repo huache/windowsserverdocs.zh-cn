@@ -9,12 +9,12 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 442aef6daccda2ab3e95690a82f43f642e5a3f73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 96659164a9eea1784cb529c47dd58be70d546f80
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358747"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948736"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>使用 AD FS 2016 或更高版本的 OAuth 公共客户端生成本机客户端应用程序
 
@@ -41,10 +41,10 @@ ms.locfileid: "71358747"
 
 1. 在 AD FS 管理 "中，右键单击"**应用程序组**"，然后选择"**添加应用程序组**"。
 
-2. 在应用程序组向导上，为 "名称" 输入你喜欢的任何名称，例如 NativeToDoListAppGroup。 选择**用于访问 WEB API 模板的本机应用程序**。 单击“下一步”。
+2. 在应用程序组向导上，为 "名称" 输入你喜欢的任何名称，例如 NativeToDoListAppGroup。 选择**用于访问 WEB API 模板的本机应用程序**。 单击?下一步?。
  ![添加应用程序组](media/native-client-with-ad-fs-2016/addapplicationgroup1.png)
 
-3. 在 "**本机应用程序**" 页上，记下 AD FS 生成的标识符。 这是 AD FS 将识别其公共客户端应用程序的 id。 复制 "**客户端标识符**" 值。 稍后将在应用程序代码中将其用作**ida： ClientId**的值。 如果需要，可以在此处提供任何自定义标识符。 重定向 URI 是任意值，例如，put https://ToDoListClient ![ 本机应用](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
+3. 在 "**本机应用程序**" 页上，记下 AD FS 生成的标识符。 这是 AD FS 将识别其公共客户端应用程序的 id。 复制 "**客户端标识符**" 值。 稍后将在应用程序代码中将其用作**ida： ClientId**的值。 如果需要，可以在此处提供任何自定义标识符。 重定向 URI 是任意值，例如，将 https://ToDoListClient 放 ![ 本机应用](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
 
 4. 在 "**配置 WEB api** " 页上，设置 Web api 的标识符值。 在此示例中，此值应为要在其中运行 Web 应用的**SSL URL**的值。 可以通过单击解决方案中的 TooListServer 项目的属性来获取此值。 稍后将其用作 native client**应用程序的 app.config 文件中**的**todo： TodoListResourceId**值，也作为**todo： TodoListBaseAddress**。
 ![Web API](media/native-client-with-ad-fs-2016/addapplicationgroup3.png)
@@ -59,7 +59,7 @@ ms.locfileid: "71358747"
 若要配置声明规则，请打开刚刚创建的应用程序组，然后双击 Web API。 选择 "颁发转换规则" 选项卡，然后单击 "添加规则" 按钮。 在声明规则的类型中，选择 "自定义声明规则"，然后添加声明规则，如下所示。
 
 ```  
-c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
+c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
  => issue(store = "Active Directory", types = ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"), query = ";givenName;{0}", param = c.Value);
 ```
 
@@ -98,7 +98,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
   ![应用配置](media/native-client-with-ad-fs-2016/app_configfile.PNG)
 
 
-**MainWindow.xaml.cs**
+MainWindow.xaml.cs
 
 * 备注 aadInstance 的行，如下所示
 
@@ -126,7 +126,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 **Web.config**
 
 * 注释密钥**ida：租户**，因为我们不需要它
-* 为**ida：核证机关**添加密钥，其值指示联合身份验证服务的 FQDN，例如 https://fs.contoso.com/adfs/
+* 添加**ida：核证机关**的密钥，其值指示联合身份验证服务的 FQDN，例如 https://fs.contoso.com/adfs/
 * 修改 key **ida：受众**，其中包含你在 AD FS 中的 "添加应用程序组" 期间在 "**配置 web api** " 页中指定的 web api 标识符的值。
 * 添加密钥**ida： AdfsMetadataEndpoint** ，其中包含与 AD FS 服务的联合元数据 URL 对应的值，例如： https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml
 

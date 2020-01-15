@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 0e848260dd4ba3b37d1351fba7c24dd3cd283e69
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 11d8abfc23cb0f192ed74a1082e83c8e0c8e87e9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393942"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950098"
 ---
 # <a name="storage-quality-of-service"></a>存储服务质量
 
@@ -31,7 +31,7 @@ ms.locfileid: "71393942"
 
 本文档概述了你的业务如何从新的存储 QoS 功能中获益。 它假定你已具备 Windows Server、Windows Server 故障转移群集、横向扩展文件服务器、Hyper-V 和 Windows PowerShell 的工作知识。
 
-## <a name="BKMK_Overview"></a>叙述  
+## <a name="BKMK_Overview"></a>概述  
 本部分介绍使用存储 QoS 的要求、使用存储 QoS 的软件定义的解决方案的概述，以及与存储 QoS 相关的术语列表。  
 
 ### <a name="BKMK_Requirements"></a>存储 QoS 要求  
@@ -45,7 +45,7 @@ ms.locfileid: "71393942"
 
     对于存储 QoS，在存储服务器上需要故障转移群集，但是计算群集无需处于故障转移群集中。 所有服务器（用于存储和计算的服务器）都必须运行 Windows Server 2016。  
 
-    如果尚未部署用于评估的横向扩展文件服务器群集，有关使用现有服务器或虚拟机进行构建的分步说明，请参阅 [Windows Server 2012 R2 存储：使用存储空间、SMB 横向扩展和共享 VHDX（物理）的分步说明](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx)。  
+    如果尚未部署用于评估的横向扩展文件服务器群集，有关使用现有服务器或虚拟机进行构建的分步说明，请参阅 [Windows Server 2012 R2 存储：使用存储空间、SMB 横向扩展和共享 VHDX（物理）的分步说明](https://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx)。  
 
 -   **使用群集共享卷的 hyper-v。** 此方案需要以下两项：  
 
@@ -62,7 +62,7 @@ ms.locfileid: "71393942"
 
 **图1：在横向扩展文件服务器中的软件定义的存储解决方案中使用存储 QoS**  
 
-当 Hyper-V 服务器启动虚拟机时，它们由策略管理器监视。 策略管理器会传达存储 QoS 策略和 Hyper-V 服务器的任何限制或保留，以对虚拟机的性能进行适当的控制。  
+当 Hyper-V 服务器启动虚拟机时，它们由策略管理器监视。 策略管理器会传达存储 QoS 策略和 Hyper-V 服务器的任何限制或预留，以对虚拟机的性能进行适当的控制。  
 
 当存在由虚拟机对存储 QoS 策略或性能需求进行的更改时，策略管理器将通知 Hyper-V 服务器调整其行为。 此反馈循环确保所有虚拟机 VHD 根据定义的存储 QoS 策略一致地执行。  
 
@@ -76,7 +76,7 @@ ms.locfileid: "71393942"
 |InitiatorID|与虚拟机 ID 匹配的标识符。  这可始终用于对单个流虚拟机进行唯一标识，即使该虚拟机具有相同的 InitiatorName。|  
 |策略|存储 QoS 策略存储在群集数据库中，并具有以下属性：PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy 和 PolicyType。|  
 |PolicyId|策略的唯一标识符。  默认生成，但可根据需要指定。|  
-|MinimumIOPS|将由策略提供的最小规范化 IOPS。  也称为“保留”。|  
+|MinimumIOPS|将由策略提供的最小规范化 IOPS。  也称为“预留”。|  
 |MaximumIOPS|将由策略限制的最大规范化 IOPS。  也称为“限制”。|  
 |聚合 |一种策略类型，其中指定的MinimumIOPS 和 MaximumIOPS 以及带宽在由策略分配的所有流之间共享。 所有 VHD 分配的该存储系统上的策略均具有单个 I/O 带宽的分配，以供其全部共享。|  
 |Dedicated|一种策略类型，其中对指定的最小和最大 IOPS 以及带宽进行管理，以供单个 VHD/VHDx 使用。|  
@@ -122,7 +122,7 @@ Windows Server 2016 中的 Hyper-V 角色具有对存储 QoS 的内置支持并�
 -   Windows PowerShell：Add-WindowsFeature RSAT-Hyper-V-Tools  
 
 #### <a name="deploy-virtual-machines-to-run-workloads-for-testing"></a>部署运行工作负荷的虚拟机以用于测试  
-你将需要存储在具有相关工作负荷的横向扩展文件服务器上的一些虚拟机。  有关模拟负载并执行某些压力测试的一些技巧，请参阅以下页面以获取推荐的工具 (DiskSpd) 和某些示例使用情况：[DiskSpd、PowerShell 和存储性能：为本地磁盘和 SMB 文件共享测量 IOPs、吞吐量和延迟](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)  
+你将需要存储在具有相关工作负荷的横向扩展文件服务器上的一些虚拟机。  有关模拟负载并执行某些压力测试的一些技巧，请参阅以下页面以获取推荐的工具 (DiskSpd) 和某些示例使用情况：[DiskSpd、PowerShell 和存储性能：为本地磁盘和 SMB 文件共享测量 IOPs、吞吐量和延迟](https://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)  
 
 本指南中所示的示例方案包括五个虚拟机。 BuildVM1、BuildVM2、BuildVM3 和 BuildVM4 运行从低到中等存储需求的桌面工作负荷。 TestVm1 运行具有高存储需求的联机事务处理基准。  
 
@@ -247,7 +247,7 @@ MinimumIops        : 500
     -   **UnknownPolicyId** - 策略被分配到 Hyper-V 主机上的虚拟机，但在文件服务器中丢失。  此策略应从虚拟机配置中删除，或应在文件服务器群集上创建匹配的策略。  
 
 #### <a name="view-performance-for-a-volume-using-get-storageqosvolume"></a>使用 Get-StorageQosVolume 查看卷的性能  
-除了每个流的性能指标，还将收集每个存储卷级别上的存储性能指标。  这样将易于查看以规范化 IOPs、延迟以及应用到卷的聚合限制和保留表示的平均总利用率。  
+除了每个流的性能指标，还将收集每个存储卷级别上的存储性能指标。  这样将易于查看以规范化 IOPs、延迟以及应用到卷的聚合限制和预留表示的平均总利用率。  
 
 ```PowerShell
 PS C:\> Get-StorageQosVolume | Format-List  
@@ -304,7 +304,7 @@ MinimumIops    : 781
 
 例如，如果你创建最小值为 300 IOPs、最大值为 500 IOPs 的聚合策略。 如果你将此策略应用到 5 个不同的 VHD/VHDx 文件，即表示你确定保证组合的 5 个 VHD/VHDx 文件至少为 300 IOPs（如果有此需求，且存储系统可以提供此性能）但不超出 500 IOPs。 如果 VHD/VHDx 对 IOPs 具有类似的高需求且存储系统能够满足，则每个 VHD/VHDx 将获得大约 100 IOPs。  
 
-但是，如果你创建具有类似限制的专用策略并将其应用到 5 个不同的虚拟机上的 VHD/VHDx 文件，则每个虚拟机将获得至少 300 IOPs 但不超过 500 IOPs。 如果虚拟机对 IOPs 具有类似的高需求且存储系统能够满足，则每个虚拟机将获得大约 500 IOPs。 .  如果其中一个虚拟机具有配置了同一 MulitInstance 策略的多个 VHD/VHDx 文件，则它们将共享限制以便具有该策略的文件的 VM 的总 IO 将不会超过限制。  
+但是，如果你创建具有类似限制的专用策略并将其应用到 5 个不同的虚拟机上的 VHD/VHDx 文件，则每个虚拟机将获得至少 300 IOPs 但不超过 500 IOPs。 如果虚拟机对 IOPs 具有类似的高需求且存储系统能够满足，则每个虚拟机将获得大约 500 IOPs。 。  如果其中一个虚拟机具有配置了同一 MulitInstance 策略的多个 VHD/VHDx 文件，则它们将共享限制以便具有该策略的文件的 VM 的总 IO 将不会超过限制。  
 
 因此，如果你有一组你不想展现同一性能特性且不想创建多个类似策略的 VHD/VHDx 文件，则可以使用单个专用策略并应用于每个虚拟机的文件。
 

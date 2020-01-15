@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 826769c1405648f37c86f97b4b9134871f4d30ed
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 227d66dafffd67b0b2e4f67158498cf43c7b59f8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791182"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950359"
 ---
 # <a name="protected-users-security-group"></a>受保护的用户安全组
 
@@ -26,7 +26,7 @@ ms.locfileid: "74791182"
 
 本主题面向 IT 专业人员介绍 Active Directory 安全组受保护用户，并说明工作原理。 此组是在 Windows Server 2012 R2 域控制器中引入的。
 
-## <a name="BKMK_ProtectedUsers"></a>叙述
+## <a name="BKMK_ProtectedUsers"></a>概述
 
 此安全组设计为管理企业内凭据公开的策略的一部分。 此组的成员将自动具有应用于其帐户的非可配置保护。 在默认情况下，受保护的用户组中的成员身份意味着受到限制并主动保护。 修改这些帐户保护的唯一方法是从安全组中删除该帐户。
 
@@ -89,7 +89,7 @@ ms.locfileid: "74791182"
 - 从 Windows 8.1 和 Windows Server 2012 R2 开始，即使启用了 Windows Digest，Windows 摘要式也不会缓存用户的纯文本凭据。
 
 > [!Note]
-> 安装[Microsoft 安全公告 2871997](https://technet.microsoft.com/library/security/2871997)后，Windows 摘要将继续缓存凭据，直到配置了注册表项。 有关说明，请参阅[Microsoft 安全公告：更新以改进凭据保护和管理：5月13日，2014](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) 。
+> 安装[Microsoft 安全公告 2871997](https://technet.microsoft.com/library/security/2871997)后，Windows 摘要将继续缓存凭据，直到配置了注册表项。 有关说明，请参阅[Microsoft 安全公告：更新以改进凭据保护和管理：5月13日，2014](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) 。
 
 - NTLM 不会缓存用户的纯文本凭据或 NT 单向功能（NTOWF）。
 
@@ -110,9 +110,9 @@ ms.locfileid: "74791182"
 
 - 在超出最初的四小时生存期后续订 Kerberos TGT。
 
-在受保护的用户组中为每个帐户建立 TGT 到期的非可配置设置。 通常，域控制器基于域策略、“用户票证最长生存期”和“用户票证续订的最长生存期”设置 TGT 生存期和续订。 对于受保护的用户组，为这些域策略设置为 600 分钟。
+在受保护的用户组中为每个帐户建立 TGT 到期的非可配置设置。 通常，域控制器基于域策略、“用户票证最长生存期” 和“用户票证续订的最长生存期”设置 TGT 生存期和续订。 对于受保护的用户组，为这些域策略设置为 600 分钟。
 
-有关详细信息，请参阅[如何配置受保护的帐户](how-to-configure-protected-accounts.md)。
+有关详细信息，请参阅 [How to Configure Protected Accounts](how-to-configure-protected-accounts.md)。
 
 ## <a name="troubleshooting"></a>“疑难解答”
 提供两个操作管理日志，以帮助对受保护用户的相关事件进行疑难解答。 这些新的日志位于事件查看器中，在默认情况下已禁用，并且位于“Applications and Services Logs\Microsoft\Windows\Microsoft\Authentication”下。

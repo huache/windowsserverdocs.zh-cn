@@ -9,12 +9,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: df9dac8c761a83a13fb937a99cba3697dce95201
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 19dcc1c57fe7c7eea74b003553a0b0a6ab5508aa
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402800"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950231"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>存储空间直通常见问题（FAQ）
 
@@ -22,7 +22,7 @@ ms.locfileid: "71402800"
 
 ## <a name="when-you-use-storage-spaces-direct-with-3-nodes-can-you-get-both-performance-and-capacity-tiers"></a>当你使用包含3个节点的存储空间直通时，是否可以获得性能和容量级别？
 
-是的，你可以在两节点存储空间直通配置中获取性能和容量层。 但是，必须确保具有2个容量设备。 这意味着，必须使用所有这三种类型的设备：NVME、SSD 和 HDD。
+是的，你可以在两节点存储空间直通配置中获取性能和容量层。 但是，必须确保具有2个容量设备。 这意味着，必须使用所有三种类型的设备： NVME、SSD 和 HDD。
  
 ## <a name="refs-file-system-provides-real-time-tiaring-with-storage-spaces-direct-does-refs-provides-the-same-functionality-with-shared-storage-spaces-in-2016"></a>Refs 文件系统提供存储空间直通的实时 tiaring。 REFS 在2016中提供与共享存储空间相同的功能吗？
 
@@ -42,9 +42,9 @@ ms.locfileid: "71402800"
  
 ## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>使用 SSD 设备创建存储空间直通后，是否可以向存储空间直通池添加旋转磁盘（HDD）？
 
-否。 默认情况下，如果使用单个设备类型创建池，则它不会配置缓存磁盘，所有磁盘都将用于容量。 可以将 NVME 磁盘添加到配置中，并为缓存配置 NVME 磁盘。
+不相同。 默认情况下，如果使用单个设备类型创建池，则它不会配置缓存磁盘，所有磁盘都将用于容量。 可以将 NVME 磁盘添加到配置中，并为缓存配置 NVME 磁盘。
  
-## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>我配置了一个2机架的容错域：机架1具有2个容错域，第2机架有1个容错域。 每台服务器有4个容量 100 GB 设备。 能否使用池中的所有 1200 GB 空间？
+## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>我配置了一个2机架的容错域：机架1有2个容错域，第2个机架有1个容错域。 每台服务器有4个容量 100 GB 设备。 能否使用池中的所有 1200 GB 空间？
 
 不能，只能使用 800 GB。 在机架容错域中，你必须确保有一个双向镜像配置，使每个 chuck 及其在不同机架中的重复。
  
@@ -58,7 +58,7 @@ ms.locfileid: "71402800"
  
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>是否有计算器显示为缓存、容量和复原而保留的磁盘的准确大小，这使我可以更好地进行规划呢？
 
-可以使用存储空间计算器来帮助进行规划。 可从 http://aka.ms/s2dcalc 获取。
+可以使用存储空间计算器来帮助进行规划。 它在 https://aka.ms/s2dcalc 提供。
  
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>配置6台服务器和3个机架时，建议的最佳配置是什么？
 
@@ -76,7 +76,7 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 
 建议你与硬件供应商联系以验证支持。 硬件供应商在其硬件上测试解决方案，并注释是否支持。 例如，在撰写本文时，具有8个以上驱动器插槽的服务器（例如 R730/R730xd/R630）可支持 SES，并与存储空间直通兼容。 Dell 仅支持存储空间直通的 HBA330。 R620 不支持 SES，与存储空间直通不兼容。
 
-有关硬件支持的详细信息，请参阅以下网站：Windows Server 编录
+有关硬件支持的详细信息，请参阅以下网站： Windows Server 目录
  
 ## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>存储空间直通如何利用 SES？
 

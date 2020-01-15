@@ -8,25 +8,25 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 1399ed6a50085baa37f06c09b8c3e18ca8bca98b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e8e9e86f81596c85219c37c07d8fd2e95cc3a49
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395714"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953079"
 ---
 # <a name="accurate-time-for-windows-server-2016"></a>Windows Server 2016 的准确时间
 
->适用于：Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 10 或更高版本
+>适用于： Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 或更高版本
 
 Windows 时间服务是一个组件，它使用客户端和服务器时间同步提供程序的插件模型。  Windows 上有两个内置的客户端提供程序，并且有第三方插件可用。 一种提供程序使用[ntp （RFC 1305）](https://tools.ietf.org/html/rfc1305)或[ms ntp](https://msdn.microsoft.com/library/cc246877.aspx)来将本地系统时间同步到 ntp 和/或与 ntp 兼容的引用服务器。 其他提供程序用于 Hyper-v，并将虚拟机（VM）同步到 Hyper-v 主机。  存在多个提供程序时，Windows 将首先使用层次级别选择最佳的提供程序，后跟根延迟、根分散和最后时间偏移。
 
 > [!NOTE]
-> 有关 Windows 时间服务的快速概述，请查看此[高级概述视频](https://aka.ms/WS2016TimeVideo)。
+> 有关 Windows 时间服务的快速概述，请参阅此[高级概述视频](https://aka.ms/WS2016TimeVideo)。
 
 在本主题中，我们将讨论 .。。这些主题与启用准确的时间相关： 
 
-- 措施
+- 改进
 - 度量
 - 最佳方案
 
@@ -39,7 +39,7 @@ Windows 时间服务是一个组件，它使用客户端和服务器时间同步
 ## <a name="domain-hierarchy"></a>域层次结构
 域和独立配置的工作方式不同。
 
-- 域成员使用安全 NTP 协议，该协议使用身份验证来确保时间引用的安全性和真实性。  域成员与由域层次结构和评分系统确定的主时钟同步。  在域中，有一层时间 stratums，因此每个 DC 指向具有更准确时间层次的父 DC。  层次结构解析为根林中的 PDC 或 DC，或具有 GTIMESERV 域标志的 DC，后者表示域的良好时间服务器。  请参阅下面的[使用 GTIMESERV 指定本地可靠时间服务](#GTIMESERV)部分。
+- 域成员使用安全 NTP 协议，该协议使用身份验证来确保时间引用的安全性和真实性。  域成员与由域层次结构和评分系统确定的主时钟同步。  在域中，有一层时间 stratums，因此每个 DC 指向具有更准确时间层次的父 DC。  层次结构解析为根林中的 PDC 或 DC，或具有 GTIMESERV 域标志的 DC，后者表示域的良好时间服务器。  请参阅下面的 [使用 GTIMESERV 指定本地可靠时间服务部分。
 
 - 默认情况下，独立计算机配置为使用 time.windows.com。  此名称由 DNS 服务器解析，它应指向 Microsoft 拥有的资源。  与所有远程定位的时间引用一样，网络中断都可能阻止同步。  网络流量负载和非对称网络路径可能降低时间同步的准确性。  对于 1 ms 准确性，不能依赖于远程时间源。
 

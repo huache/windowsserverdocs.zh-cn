@@ -1,6 +1,6 @@
 ---
 title: Windows Server Essentials 入门
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.prod: windows-server-2019-essentials
 ms.reviewer: na
@@ -11,18 +11,18 @@ ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: coreyp
 manager: jasgro
-ms.openlocfilehash: c505ddab123d3735d7f6a109fde073b344f090c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 807ea32a466b6717f61423e58d621a0050047586
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833118"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946853"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>Windows Server Essentials 入门 
 
->适用于：Windows Server 2016 Essentials;Windows Server 2019 Essentials
+>适用于： Windows Server 2016 Essentials;Windows Server 2019 Essentials
 
-**Windows Server Essentials** edition 是具有最多 25 个用户和 50 台设备的小型企业设计的云连接的第一个服务器。 但是，如果您正在考虑安装任何版本的 Windows Server Essentials，我们建议您考虑**Microsoft 365**。 有关不在 Windows Server Essentials 移动到 Microsoft 365 的详细信息，请参阅[What's New in Windows Server 2019 Essentials](what-s-new-19.md)。
+**Windows Server Essentials** edition 是云连接的第一台服务器，专为具有最多25个用户和50设备的小型企业而设计。 但是，如果你正在考虑安装任何版本的 Windows Server Essentials，则建议你考虑**Microsoft 365**。 若要详细了解如何将 Windows Server Essentials 移到 Microsoft 365，请参阅[Windows server 2019 Essentials 中的新增功能](what-s-new-19.md)。
   
 ## <a name="in-this-library"></a>本库内容  
  有关安装、配置、管理、使用和疑难解答 Windows Server Essentials 的信息，请参阅以下文档：  
@@ -40,7 +40,7 @@ ms.locfileid: "59833118"
   
 ## <a name="updates-and-downloads"></a>更新和下载  
   
--   [Windows Server Essentials 的评估](https://technet.microsoft.com/evalcenter/dn205288.aspx?wt.mc_id=TEC_144_1_7)  
+-   [Windows Server Essentials 评估](https://technet.microsoft.com/evalcenter/dn205288.aspx?wt.mc_id=TEC_144_1_7)  
   
 -   [Windows Server Essentials 运行状况报告](https://www.microsoft.com/download/details.aspx?id=35565)  
   
@@ -57,10 +57,10 @@ ms.locfileid: "59833118"
   
 -    若要了解如何安全地与合作伙伴和供应商进行协作，请参阅[改进中小型企业中的协作](https://technet.microsoft.com/library/dn747893.aspx)。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 -   [Windows Server TechNet 库](https://technet.microsoft.com/library/bb625087.aspx)  
   
--   [Windows Server Essentials 和 Windows Small Business Server 博客](http://blogs.technet.com/b/sbs/)  
+-   [Windows Server Essentials 和 Windows Small Business Server 博客](https://blogs.technet.com/b/sbs/)  
   
--   [Windows Server Essentials (Small Business Server) TechNet 库](https://technet.microsoft.com/library/cc514417.aspx)
+-   [Windows Server Essentials （Small Business Server） TechNet 库](https://technet.microsoft.com/library/cc514417.aspx)

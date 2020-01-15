@@ -10,14 +10,14 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/04/2018
-ms.openlocfilehash: 850aa376e8cd0060992573561a0c32af563b88ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3bbb70657cb009ce760ccfe273b24c6df17d3ca7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405152"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949904"
 ---
-## <a name="resolve-vrss-issues"></a>解决 vRSS 问题
+# <a name="resolve-vrss-issues"></a>解决 vRSS 问题
 
 如果已完成所有准备步骤，但仍未看到 vRSS 负载平衡向 VM LPs 的流量，则可能存在不同的问题。
 
@@ -34,7 +34,7 @@ ms.locfileid: "71405152"
 
    **查看当前设置：** 
 
-   在\(vm 中\)的虚拟机上或在主机上\(为主机 vNIC vRSS\)运行以下 PowerShell cmdlet。
+   在 vm 中的 vRSS\(中运行以下 PowerShell cmdlet\) 或在 host vNIC vRSS\)主机 \(上运行。
 
    ```PowerShell
    Get-NetAdapterRss
@@ -48,7 +48,7 @@ ms.locfileid: "71405152"
    Enable-NetAdapterRss *
    ```
    
-   另一种用于配置 RSS 的系统范围的方法是使用 netsh。 将 
+   另一种用于配置 RSS 的系统范围的方法是使用 netsh。 可使用 
    
     ```cmd
    netsh int tcp show global

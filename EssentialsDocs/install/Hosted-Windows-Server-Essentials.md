@@ -1,6 +1,6 @@
 ---
 title: 托管 Windows Server Essentials
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,42 +12,42 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: dded002df4ed0bbd70c549a8841b769a77f2fd6a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 84464c69d4b8576906e5fb0d0a7de7e382a59537
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433546"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947500"
 ---
 # <a name="hosted-windows-server-essentials"></a>托管 Windows Server Essentials
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本文档包括特定于想要在其实验室中部署 Windows Server Essentials 和 Windows Server Essentials 作为服务提供给其客户提供的信息。  
+本文档包含的信息特定于希望在其实验室中部署 Windows Server Essentials 并向其客户提供 Windows Server Essentials 即服务的托管商。  
   
 ## <a name="what-is-windows-server-essentials"></a>什么是 Windows Server Essentials？  
- Windows Server Essentials 是一个跨界小型企业解决方案，其中融合了最佳的、 64 位产品技术提供非常适合小型企业的绝大多数服务器环境。 Windows Server Essentials 中包括以下技术。  
+ Windows Server Essentials 是一种跨界小企业解决方案，它结合了同类最佳的64位产品技术，可为绝大多数的小型企业提供非常适用的服务器环境。 Windows Server Essentials 中包括以下技术。  
   
- **服务器操作系统：** Windows Server 2012 产品技术提供了 Windows Server Essentials 的内核。 有关详细信息，请访问 [Windows Server 2012 网站](https://www.microsoft.com/en-us/server-cloud/products/windows-server-2012-r2/default.aspx#fbid=ZH0GD_CRAWh)。  
+ **服务器操作系统：** Windows Server 2012 产品技术提供 Windows Server Essentials 的核心。 有关详细信息，请访问 [Windows Server 2012 网站](https://www.microsoft.com/server-cloud/products/windows-server-2012-r2/default.aspx#fbid=ZH0GD_CRAWh)。  
   
- **数据保护：** Windows Server Essentials 利用多个新功能适用于 Windows Server 2012 提供经过显著提高的数据保护性能。 [最新“存储空间”功能](https://technet.microsoft.com/library/hh831739.aspx) 允许你将分散的硬盘的物理存储容量集合起来，以动态地增加硬盘，并根据指定的修复能力级别创建数据卷。 Windows Server Essentials 可以执行完整系统备份和裸机还原的服务器本身以及连接到网络的客户端计算机？ 与目前支持大于 2 TB 的卷。 作为 Windows Server 2012 的新功能， [Windows Azure Online Backup](https://technet.microsoft.com/library/hh831419.aspx) 可用于保护由微软管理的云存储服务中的文件和文件夹。 Windows Server Essentials 还能集中管理和配置 Windows 8.1 客户端，帮助用户恢复意外删除或覆盖文件中，而无需管理员帮助的文件历史记录功能。  
+ **数据保护：** Windows Server Essentials 利用 Windows Server 2012 中提供的多项新功能来提供极大地改进的数据保护功能。 [最新“存储空间”功能](https://technet.microsoft.com/library/hh831739.aspx) 允许你将分散的硬盘的物理存储容量集合起来，以动态地增加硬盘，并根据指定的修复能力级别创建数据卷。 Windows Server Essentials 可以对服务器本身以及连接到网络的客户端计算机执行完整的系统备份和裸机还原，现在支持大于 2 TB 的卷。 作为 Windows Server 2012 的新功能， [Windows Azure Online Backup](https://technet.microsoft.com/library/hh831419.aspx) 可用于保护由微软管理的云存储服务中的文件和文件夹。 Windows Server Essentials 还能集中管理和配置 Windows 8.1 客户端的文件历史记录功能，帮助用户从意外删除或覆盖的文件中恢复，而无需管理员帮助。  
   
- **随处访问：** “远程 Web 访问”旨在提供精简的触摸式浏览器体验：几乎可从任何具有 Internet 连接的位置、使用几乎任何设备访问应用程序和数据。 Windows Server Essentials 还提供了更新的 Windows Phone 应用程序和新的应用程序的 Windows 8.1 客户端计算机，允许用户直观地连接，在进行搜索，并访问文件和服务器上的文件夹。 当与服务器的连接变得可用时，文件还可自动高速缓存，以便脱机访问和同步。 Windows Server Essentials 将设置到只需几下鼠标，轻松的向导驱动的进程的虚拟专用网络 (VPN)，并简化用户的 VPN 访问权限的管理。 客户端计算机可以通过 VPN 连接来远程连接 Windows SBS 的环境，且无需在办公室中就能操作。  
+ **随处访问：** 远程 Web 访问旨在提供精简的触摸式浏览器体验：几乎可从任何具有 Internet 连接的位置、使用几乎任何设备访问应用程序和数据。 Windows Server Essentials 还为 Windows 8.1 客户端计算机提供更新的 Windows Phone 应用程序和新应用程序，允许用户直观地连接、搜索并访问服务器上的文件和文件夹。 当与服务器的连接变得可用时，文件还可自动高速缓存，以便脱机访问和同步。 Windows Server Essentials 将虚拟专用网络（VPN）设置为只需几次单击即可轻松完成向导驱动的过程，并简化对用户的 VPN 访问的管理。 客户端计算机可以通过 VPN 连接来远程连接 Windows SBS 的环境，且无需在办公室中就能操作。  
   
- **工作负载灵活性：** Windows Server Essentials 的设计可使用户能够灵活地选择哪些应用程序和服务运行在本地和云中运行。 在以前的版本中，Windows Small Business Server Standard 将 Exchange Server 作为自己的一个组建产品，客户想要使用云端消息服务和协作服务时就必须多花费用，而且操作更加复杂。 与 Windows Server Essentials，客户可以利用的相同类型的集成的管理体验无论决定运行 Exchange Server 的本地副本、 订阅托管的 Exchange 服务，或 Microsoft Office 365 订阅。  
+ **工作负载灵活性：** Windows Server Essentials 旨在允许客户灵活地选择本地运行的应用程序和服务以及在云中运行的应用程序和服务。 在以前的版本中，Windows Small Business Server Standard 将 Exchange Server 作为自己的一个组建产品，客户想要使用云端消息服务和协作服务时就必须多花费用，而且操作更加复杂。 使用 Windows Server Essentials，无论用户选择运行 Exchange Server 的本地副本、订阅托管 Exchange 服务还是订阅 Microsoft Office 365，客户都可以利用同一种集成管理体验。  
   
- **运行状况监视：** Windows Server Essentials 监视其自己的运行状况状态和运行 Windows 8.1、 Windows 7 和 Mac OS X 版本 10.5 及更高版本的客户端计算机的状态。 运行状况会显示与计算机备份、服务器存储、磁盘空间不足等相关的结果或问题。  
+ **运行状况监视：** Windows Server Essentials 监视其自己的运行状况状态，以及运行 Windows 8.1、Windows 7 和 Mac OS X 版本10.5 及更高版本的客户端计算机的状态。 运行状况会显示与计算机备份、服务器存储、磁盘空间不足等相关的结果或问题。  
   
- **可扩展性：** Windows Server Essentials 的 Windows SBS 2011 Essentials，它允许其他软件供应商为核心产品中，添加功能和特性并添加一组新的 web 服务 Api 的可扩展模型上构建。 而且，它还兼容现有的 [软件开发工具包](https://msdn.microsoft.com/library/gg513958.aspx) (SDK) 和为 Windows SBS 2011 Essentials 而创建的 [加载项](https://pinpoint.microsoft.com/applications/search?fpt=300105&q=small+business+server+essentials) 。  
+ **扩展性：** Windows Server Essentials 在 Windows SBS 2011 Essentials 的扩展性模型的基础上构建，它允许其他软件供应商向核心产品添加功能和功能，并添加一组新的 web 服务 Api。 而且，它还兼容现有的 [软件开发工具包](https://msdn.microsoft.com/library/gg513958.aspx) (SDK) 和为 Windows SBS 2011 Essentials 而创建的 [加载项](https://pinpoint.microsoft.com/applications/search?fpt=300105&q=small+business+server+essentials) 。  
   
 ## <a name="how-can-i-customize-an-image"></a>我怎样自定义映像?  
- 请参阅[Windows Server Essentials](https://go.microsoft.com/fwlink/p/?LinkID=249124)，这是一个标准的 Windows Server sysprep 过程，与其他 Windows Server Essentials 的自定义步骤。 如需结束自定义，可按照 [创建简单的自定义映像](https://technet.microsoft.com/library/jj200117) 和 [自定义该映像](https://technet.microsoft.com/library/jj200161)中的说明，然后按照 [准备要部署的映像](https://technet.microsoft.com/library/jj200142) 中的说明来捕捉最终映像。  
+ 请参阅[Windows Server essentials](https://go.microsoft.com/fwlink/p/?LinkID=249124)，它是一个标准的 windows server sysprep 过程，其中包含其他 Windows server essentials 自定义步骤。 如需结束自定义，可按照 [创建简单的自定义映像](https://technet.microsoft.com/library/jj200117) 和 [自定义该映像](https://technet.microsoft.com/library/jj200161)中的说明，然后按照 [准备要部署的映像](https://technet.microsoft.com/library/jj200142) 中的说明来捕捉最终映像。  
   
  请注意以下几点：  
   
 1. 通过向任一驱动器的根目录添加 SkipIC.txt 文件来跳过初始配置 (IC)。 在安装服务器之后和进行初始配置之前，按组合键 Shift+F10 打开命令窗口，并在 C:/驱动器下创建 SkipIC.txt 文件。 自定义之后，切记删除该 SkipIC.txt 文件。  
   
-2. 如果你需要在小于 90GB 的磁盘上部署 Windows Server Essentials，你应添加系统准备之前注册表项：  
+2. 如果需要在小于 90 GB 的磁盘上部署 Windows Server Essentials，则应在 sysprep 之前添加一个注册表项：  
   
    ```  
    %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v HWRequirementChecks /t REG_DWORD /d 0 /f  
@@ -57,12 +57,12 @@ ms.locfileid: "66433546"
   
    如果你使用的是“虚拟机管理器”，则可使用正在运行的实例来创建模板。 创建模板时会对实例进行系统准备，并关闭该服务器。 将其存储在程序库中，可根据情况提出实例。  
   
-##  <a name="BKMK_automatedeployment"></a> 如何自动部署？  
- 获取自定义映像后，你可以用自己的映像来部署。 如需进行半自动安装，你必须为 WinPE 设置提供或部署 unattend.xml。 若要执行完全无人参与的安装，还需要为 Windows Server Essentials 初始配置提供 cfg.ini 文件。  
+##  <a name="BKMK_automatedeployment"></a>如何实现自动部署？  
+ 获取自定义映像后，你可以用自己的映像来部署。 如需进行半自动安装，你必须为 WinPE 设置提供或部署 unattend.xml。 若要执行完全无人参与的安装，还需要为 Windows Server Essentials 初始配置提供 cfg .ini 文件。  
   
-1. 仅执行无人值守式 WinPE 设置。 这操作只能自动设置 WinPE，并使安装在“初始配置”之前停止，以便最终用户在 RDP 至服务器会话之后自己提供公司、域名及管理员的信息。 要实现此目的，请执行以下操作：  
+1. 仅执行无人值守式 WinPE 设置。 这操作只能自动设置 WinPE，并使安装在“初始配置”之前停止，以便最终用户在 RDP 至服务器会话之后自己提供公司、域名及管理员的信息。 若要实现此目的，请执行以下操作：  
   
-   1.  提供 Windows unattend.xml 文件。 请按照[Windows 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)生成该文件，并提供所有必要的信息包括服务器名称、 产品密钥和管理员密码。 在 unattend.xml 文件的 Microsoft Windows 安装程序部分中，提供按如下所示的信息。  
+   1.  提供 Windows unattend.xml 文件。 按照[WINDOWS 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)生成文件，并提供所有必要的信息，包括服务器名称、产品密钥和管理员密码。 在 unattend.xml 文件的 "Microsoft Windows-设置" 部分，提供如下所示的信息。  
   
        ```  
        <InstallFrom>  
@@ -77,18 +77,18 @@ ms.locfileid: "66433546"
           </InstallFrom>  
        ```  
   
-   2.  因此，客户可以使用管理员，并通过 rdp 连接到该服务器在 unattend.xml 文件中指定的密码以完成初始配置，必须在公共 IP 上打开 RDP 端口 3389。  
+   2.  必须在公共 IP 上打开 RDP 端口3389，以便客户可以使用 unattend.xml 文件中指定的管理员和密码通过 RDP 连接到服务器以完成初始配置。  
   
    > [!NOTE]
    >  如果不修改默认密码，则服务器安装将会停在要求输入密码的屏幕上。**注意** 最终用户必须使用默认的管理员账号登录服务器并执行“初始配置”。  
   
    如果你使用的是“虚拟机管理器”，则当从模板创建新的实例时，可在控制台指定系统管理员密码。  
   
-2. 执行完全无人值守式设置，包括无人值守式“初始配置”。 要实现此目的，请执行以下操作：  
+2. 执行完全无人值守式设置，包括无人值守式“初始配置”。 若要实现此目的，请执行以下操作：  
   
    1.  如果部署是从 WinPE 设置开始，请按上述操作提供 unattend.xml 文件。  
   
-   2.  Windows Server Essentials ADK 部分标题，请参阅[创建 Cfg.ini 文件](https://technet.microsoft.com/library/jj200150)来生成 cfg.ini。  
+   2.  请参阅名为的 Windows Server Essentials ADK 部分，[创建 Cfg 文件](https://technet.microsoft.com/library/jj200150)以生成 cfg。  
   
    3.  在 [InitialConfiguration] 中提供信息。  
   
@@ -125,17 +125,17 @@ ms.locfileid: "66433546"
        ; All these are optional if you have DHCP Server Service on the subnet, otherwise provide static IP here.  
        ```  
   
-   5.  如果你提供 WebDomainName 参数，请确保已更新的 DNS 记录以指向服务器的公共 IP。  
+   5.  如果提供了 WebDomainName 参数，请确保还要将 DNS 记录更新为指向服务器的公共 IP。  
   
    6.  如果没有提供上述 WebDomainName 信息，请确保打开端口 3389 以便客户能够使用 RDP 连接到服务器并结束 VPN 配置。  
   
 > [!NOTE]
->  请确保 VM 主机服务器与 Windows Server Essentials VM 的时区设置相同。 否则，可能会出现几种不同的错误（“初始配置”可能在证书相关的任务上会失效；证书在安装之后几小时仍未生效；设备信息更新不正确；等等）。  
+>  确保 VM 主机服务器和 Windows Server Essentials VM 的时区设置相同。 否则，可能会出现几种不同的错误（“初始配置”可能在证书相关的任务上会失效；证书在安装之后几小时仍未生效；设备信息更新不正确；等等）。  
   
  部署后，请检查 HKLM\software\windows server\setup 路径下的下列注册表项，以验证“初始配置”是否成功。 如果 SetupStage == ICDone && ICStatus == 1，则表示“初始配置”成功完成。  
   
 ## <a name="what-is-the-supported-network-topology"></a>支持何种网络拓扑?  
- 若要从漫游客户端使用 Windows Server Essentials，应启用 VPN。 我们建议启用 443 端口进行 VPN SSTP 连接。 如果“媒体服务器”需要用于“远程网站访问”或“网站服务应用”，则还应启用 80 端口。  
+ 若要从漫游客户端使用 Windows Server Essentials，则应启用 VPN。 我们建议启用 443 端口进行 VPN SSTP 连接。 如果“媒体服务器”需要用于“远程网站访问”或“网站服务应用”，则还应启用 80 端口。  
   
  如果启用 VPN ，可在无人值守的部署中通过 Windows PowerShell 脚本完成，或者可以在初始配置后用我们的向导来配置。  
   
@@ -188,7 +188,7 @@ ms.locfileid: "66433546"
   
   -   该服务器有一个专用 IP 地址。  
   
-  -   从公共 IP 地址的端口 443 是可访问服务器上的端口 443。  
+  -   可从公共 IP 地址 s 端口443访问服务器上的端口443。  
   
   -   端口 443 允许使用 VPN 通道。  
   
@@ -203,7 +203,7 @@ ms.locfileid: "66433546"
 Enable-WssRemoteWebAccess [-SkipRouter] [-DenyAccessByDefault] [-ApplyToExistingUsers]  
 ```  
   
- 例如：  
+ 示例  
   
 ```  
 $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers  
@@ -217,18 +217,18 @@ $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers
 Add-WssUser [-Name] <string> [-Password] <securestring> [-AccessLevel <string> {User | Administrator}] [-FirstName <string>] [-LastName <string>] [-AllowRemoteAccess] [-AllowVpnAccess]   [<CommonParameters>]  
 ```  
   
- 例如：  
+ 示例  
   
 ```  
 $password = ConvertTo-SecureString "Passw0rd!" -asplaintext  œforce  
 $Add-WssUser -Name User2Test -Password $password -Accesslevel Administrator -FirstName User2 -LastName Test  
 ```  
   
- 此命令将添加一个管理员密码 Passw0rd 创建名为 User2Test ！。  
+ 此命令将添加一个名为 User2Test 的管理员，其中包含 password Passw0rd！。  
   
  **启用/禁用用户**  
   
- 例如：  
+ 示例  
   
 ```  
 $CurrentUser = get-wssuser  œname user2test  
@@ -244,22 +244,22 @@ $CurrentUser.Commit()
 Add-WssFolder [-Name] <string> [-Path] <string> [[-Description] <string>] [-KeepPermissions] [<CommonParameters>]  
 ```  
   
- 例如：  
+ 示例  
   
 ```  
 $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"  
 ```  
   
- 此命令将添加一个名为 MyTestFolder 中指定位置的服务器文件夹。  
+ 此命令将在指定位置添加一个名为 MyTestFolder 的服务器文件夹。  
   
-## <a name="how-do-i-add-a-second-server-to-the-windows-server-essentials-domain"></a>如何将第二个服务器添加到 Windows Server Essentials 域？  
- 因为 Windows Server Essentials 是域控制器，可以将第二个服务器加入域以标准方式。  
+## <a name="how-do-i-add-a-second-server-to-the-windows-server-essentials-domain"></a>如何实现向 Windows Server Essentials 域添加第二台服务器？  
+ 由于 Windows Server Essentials 是域控制器，因此可以采用标准方式将第二台服务器加入域。  
   
 ## <a name="which-email-solutions-can-be-integrated"></a>可以集成哪一种电子邮件解决方案?  
- Windows Server Essentials 支持与在初始状态下的两个电子邮件解决方案集成：Office 365 和本地 Exchange。 如果运行的托管电子邮件解决方案，您将需要开发外接程序与托管的电子邮件解决方案集成，Windows Server Essentials。  
+ Windows Server Essentials 支持与现成的两种电子邮件解决方案集成： Office 365 和本地 Exchange。 如果你正在运行自己的托管电子邮件解决方案，则需要开发外接程序以将 Windows Server Essentials 与托管的电子邮件解决方案集成。  
   
-## <a name="how-do-i-migrate-on-premises-windows-sbs-201120082003-to-the-hosted-windows-server-essentials"></a>如何将本地 Windows SBS (2011年/2008年/2003) 迁移到托管的 Windows Server Essentials？  
- 了可用于在本地 Windows Small Business Server (Windows SBS) 与 Windows Server Essentials 迁移的迁移指南。 有些步骤可能不完全适用于你的托管环境。 然而，普通的迁移任务和工作负载应该是同样的。 建议你参考 [迁移指南](https://go.microsoft.com/fwlink/p/?LinkID=254292) 并根据自己的托管环境进行必要的自定义。  
+## <a name="how-do-i-migrate-on-premises-windows-sbs-201120082003-to-the-hosted-windows-server-essentials"></a>如何实现将本地 Windows SBS （2011/2008/2003）迁移到托管的 Windows Server Essentials？  
+ 迁移指南可用于本地 Windows Small Business Server （Windows SBS）到 Windows Server Essentials 的迁移。 有些步骤可能不完全适用于你的托管环境。 然而，普通的迁移任务和工作负载应该是同样的。 建议你参考 [迁移指南](https://go.microsoft.com/fwlink/p/?LinkID=254292) 并根据自己的托管环境进行必要的自定义。  
   
  建议将源服务器和目标服务器放在同一个子网内。 如果无法放在同一子网内，请确保：  
   
@@ -268,63 +268,63 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 -   所有必要的端口都已打开。  
   
 ## <a name="how-can-i-upgrade-windows-server-essentials-to-windows-server-standard"></a>如何将 Windows Server Essentials 升级到 Windows Server Standard？  
- 可以将 Windows Server Essentials 升级到 Windows Server Standard。 解除锁定和限制，添加 Windows Server Standard 缺少的程序包。 若要获取详细信息，请 [下载文档](https://go.microsoft.com/fwlink/p/?LinkID=253181)。  
+ 你可以将 Windows Server Essentials 升级到 Windows Server Standard。 解除锁定和限制，添加 Windows Server Standard 缺少的程序包。 若要获取详细信息，请 [下载文档](https://go.microsoft.com/fwlink/p/?LinkID=253181)。  
   
 ## <a name="what-are-the-native-tools-for-monitoring-and-management"></a>监测和管理所用的本机工具有哪些？  
   
 ### <a name="group-policy-management"></a>“组策略”管理  
- Windows Server Essentials 利用 Windows Server 2012 中的本机组策略支持，并提供用户界面来配置文件夹重定向和安全设置。  
+ Windows Server Essentials 利用 Windows Server 2012 中的本机组策略支持，并提供了用于配置文件夹重定向和安全设置的用户界面。  
   
 > [!NOTE]
 >  在托管环境中，用户配置文件的文件夹重定向一旦启用，当数据量很大时就有可能增加最终用户的登录时间。  
   
 ### <a name="management-pack"></a>管理包  
- Windows Server Essentials 管理包提供监视功能通过 Windows Server Essentials，以帮助机主管理大量的 Windows Server Essentials 服务器专用于不同小公司中的运行状况警报系统。 此版本的监测功能仅包括系统内的严重警报。  
+ Windows Server Essentials 管理包通过 Windows Server Essentials 中的运行状况警报系统提供监视功能，以帮助托管商管理专用于不同小型企业公司的大量 Windows Server Essentials 服务器。 此版本的监测功能仅包括系统内的严重警报。  
   
 #### <a name="management-pack-scope"></a>管理包范围  
- 此管理包可帮助你监视特定于 Windows Server Essentials 的功能。 它无法监测 Windows Server 2012 Standard 操作系统中的通用功能。 为了监视 Windows Server Essentials，应使用 Windows Server Essentials 管理包和管理包为 Windows Server 2012 Standard。  
+ 此管理包可帮助你监视特定于 Windows Server Essentials 的功能。 它无法监测 Windows Server 2012 Standard 操作系统中的通用功能。 为了监视 Windows Server Essentials，应同时使用 windows server Essentials 管理包和 Windows Server 2012 Standard 管理包。  
   
 #### <a name="mandatory-configuration"></a>必须要进行的配置  
  需执行以下步骤方可使用管理包：  
   
-1.  安装“代理”并利用证书信任配置信任关系。 Windows Server Essentials 已预配置为域控制器，并且不能具有与其他域或林信任关系，因为 System Center Operation Manager 代理应安装在 Windows Server Essentials 上，并使用管理配置信任使用证书的服务器。  
+1.  安装“代理”并利用证书信任配置信任关系。 由于 Windows Server Essentials 已预配置为域控制器，并且不能与其他域或林信任，因此应在 Windows Server Essentials 上安装 System Center operations Manager 代理，并使用管理对其进行配置信任使用证书的服务器。  
   
-2.  下载管理包。 若要使用 Operations Manager 2007 监测 Windows Server Essentials，必须先下载[Windows Server 操作系统管理包](https://connect.microsoft.com/WindowsServer/Downloads/DownloadDetails.aspx?DownloadID=45010)从管理包目录。  
+2.  下载管理包。 若要使用 Operations Manager 2007 监视 Windows Server Essentials，你必须首先从管理包目录中下载[Windows Server 操作系统管理包](https://connect.microsoft.com/WindowsServer/Downloads/DownloadDetails.aspx?DownloadID=45010)。  
   
 3.  下载管理包文件。 如果你正在使用管理包的本地化版本，则需同时导入主要管理包文件和语言包。  
   
 #### <a name="files-in-this-monitoring-pack"></a>在此“监测包”中的文件  
- 监视 Windows Server Essentials 的包包括以下文件：  
+ 适用于 Windows Server Essentials 的监视包包括以下文件：  
   
 -   Microsoft.Windows.Server.2012.Essentials.mp  
   
--   Microsoft.Windows.Server.2012.Essentials.<locale\>.mp  
+-   \>< 区域设置的区域设置。  
   
 ### <a name="back-up-and-restore"></a>备份和还原  
- Windows Server Essentials 可以备份服务器和客户端。  
+ Windows Server Essentials 允许备份服务器和客户端。  
   
 #### <a name="back-up-the-server"></a>备份服务器  
- Windows Server Essentials 支持两种方法可以备份服务器： 在本地备份和异地备份。  
+ Windows Server Essentials 支持两种方式备份服务器：本地备份和非本地备份。  
   
- **本地备份**允许你定期执行块级的增量备份，并备份到独立的硬盘上。 作为机主，无法将虚拟磁盘附加到 Windows Server Essentials VM 并配置服务器备份到此虚拟磁盘。 虚拟磁盘应位于非 Windows Server Essentials VM 所在的物理磁盘上。  
+ **本地备份** 允许你定期执行块级的增量备份，并备份到独立的硬盘上。 作为宿主，你可以将虚拟磁盘附加到 Windows Server Essentials VM，并将服务器备份配置到此虚拟磁盘。 虚拟磁盘应位于与 Windows Server Essentials VM 不同的物理磁盘上。  
   
-- 如果你还有去其他机制备份 Windows Server Essentials VM，并且不希望让用户看到 Windows Server Essentials 本机服务器备份功能，可以将其关闭并从 Windows Server Essentials 中删除所有相关的用户界面仪表板。 有关详细信息，请参阅的自定义服务器备份部分[ADK 文档](https://go.microsoft.com/fwlink/p/?LinkID=249124)。  
+- 如果你有另一种机制来备份 Windows Server Essentials VM，并且你不希望用户看到 Windows Server Essentials 本机服务器备份功能，则可以将其关闭并从 Windows Server Essentials 中删除所有相关的用户界面板. 有关详细信息，请参阅[ADK 文档](https://go.microsoft.com/fwlink/p/?LinkID=249124)的 "自定义服务器备份" 一节。  
   
-  **非本地备份**允许你定期地将服务器数据备份到云计算服务。 您可以下载并安装 Microsoft Azure 备份集成模块的 Windows Server Essentials 来利用由 Microsoft 提供的 Azure 备份。  
+  **非本地备份** 允许你定期地将服务器数据备份到云计算服务。 您可以下载并安装适用于 Windows Server Essentials 的 Microsoft Azure 备份集成模块，以利用 Microsoft 提供的 Azure 备份。  
   
   如果你或你的用户喜欢别的云服务，可以：  
   
-1.  更新 Windows Server Essentials 仪表板的用户界面，以便其提供指向你的首选的云服务，而不是默认 Azure 备份。 有关详细信息，请参考 [ADK 文档](https://go.microsoft.com/fwlink/p/?LinkID=249124)的“自定义映像”一节。  
+1.  更新 Windows Server Essentials 仪表板的用户界面，使其提供指向你的首选云服务的链接，而不是默认的 Azure 备份。 有关详细信息，请参考 [ADK 文档](https://go.microsoft.com/fwlink/p/?LinkID=249124)的“自定义映像”一节。  
   
-2.  （可选）开发外接程序的 Windows Server Essentials 仪表板，若要配置和管理云备份服务。  
+2.  可有可无开发用于 Windows Server Essentials 仪表板的外接程序，以配置和管理云备份服务。  
   
 #### <a name="back-up-the-client"></a>备份客户端  
- Windows Server Essentials 支持两种类型的客户端数据备份： 完全客户端备份和文件历史记录。  
+ Windows Server Essentials 支持两种类型的客户端数据备份：完全客户端备份和文件历史记录。  
   
 > [!NOTE]
 >  备份客户端可能会影响到性能，因为数据需要通过 VPN 从客户端传送到服务器。  
   
- **完全客户端备份**连接到 Windows Server Essentials 网络的所有客户端设备上是默认情况下。 它以递增的方式备份完全客户端（系统及数据），并支持重复数据删除。 备份数据将运行 Windows Server Essentials 的服务器上。 客户端一旦发生故障，可以使其数据返回到上一个备份点。 您可以关闭此功能的步骤中创建 Cfg.ini 文件部分[ADK 文档](https://technet.microsoft.com/library/jj200150)。  
+ 对于所有连接到 Windows Server Essentials 网络的客户端设备，默认情况下都是**完全客户端备份**。 它以递增的方式备份完全客户端（系统及数据），并支持重复数据删除。 备份数据将位于运行 Windows Server Essentials 的服务器上。 客户端一旦发生故障，可以使其数据返回到上一个备份点。 你可以按照[ADK 文档](https://technet.microsoft.com/library/jj200150)的创建 Cfg 文件部分中的步骤关闭此功能。  
   
  完全客户端备份需要考虑以下几点：  
   
@@ -338,21 +338,21 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
 - 客户端裸机恢复：因为 Windows Preinstall Environment（预安装环境）不支持 VPN 连接，所以不支持客户端裸机备份。  
   
-  **文件历史记录**是 Windows 8.1 的特性的配置文件数据 （库、 桌面、 联系人、 收藏夹） 备份到网络共享。 在 Windows Server Essentials 中，我们允许集中管理已加入到 Windows Server Essentials 的所有 Windows 8.1 客户端的文件历史记录设置。 备份数据存储在运行 Windows Server Essentials 的服务器上。 您可以关闭此功能的步骤中创建 Cfg.ini 文件部分[ADK 文档](https://technet.microsoft.com/library/jj200150)。  
+  **文件历史记录**是一项 Windows 8.1 功能，用于将配置文件数据（库、桌面、联系人、收藏夹）备份到网络共享。 在 Windows Server Essentials 中，我们允许对所有连接到 Windows Server Essentials 的 Windows 8.1 客户端的 "文件历史记录" 设置进行集中管理。 备份数据存储在运行 Windows Server Essentials 的服务器上。 你可以按照[ADK 文档](https://technet.microsoft.com/library/jj200150)的创建 Cfg 文件部分中的步骤关闭此功能。  
   
 ### <a name="storage-management"></a>存储管理  
- [最新“存储空间”功能](https://technet.microsoft.com/library/hh831739.aspx) 允许你将分散的硬盘的物理存储容量集合起来，以动态地增加硬盘，并根据指定的修复能力级别创建数据卷。 你还可以将 iSCSI 磁盘附加到 Windows Server Essentials 来扩展其存储量。  
+ [最新“存储空间”功能](https://technet.microsoft.com/library/hh831739.aspx) 允许你将分散的硬盘的物理存储容量集合起来，以动态地增加硬盘，并根据指定的修复能力级别创建数据卷。 你还可以将 iSCSI 磁盘附加到 Windows Server Essentials 以扩展其存储。  
   
 ## <a name="what-are-the-main-scenarios-i-should-test"></a>我应该测试什么样的主要场景？  
  从托管的视角来看，建议你测试以下场景：  
   
  **服务器部署**  
   
-- 部署 Windows Server Essentials 服务器实验室环境中。  
+- 在实验室环境中部署 Windows Server Essentials 服务器。  
   
 - 根据需要自定义 Windows Server Essentials 映像。  
   
-- 自动使用无人参与的文件和 cfg.ini 的 Windows Server Essentials 部署。  
+- 利用无人参与的文件和 cfg 来自动部署 Windows Server Essentials。  
   
 - 将本地 Windows SBS 迁移到托管的 Windows Server Essentials。  
   

@@ -7,12 +7,12 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 5383d16ac4c98651aa6afe996dbad88a6d60ee7a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 918d21139a068da1a46fbda1fa5034e14c8379c0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370233"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947065"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB 文件服务器的性能优化
 
@@ -54,7 +54,7 @@ SMB 多通道允许文件服务器同时使用多个网络连接并提供更高�
 
 SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共享。 利用此主动/主动配置，可以进一步缩放文件服务器群集，而无需使用多个卷、共享和群集资源的复杂配置。 最大共享带宽是所有文件服务器群集节点的总带宽。 总带宽不再受限于单个群集节点的带宽，而是取决于后备存储系统的容量。 你可以通过添加节点来增加总带宽。
 
-有关 SMB 横向扩展的详细信息，请参阅[应用程序数据概述横向扩展文件服务器](https://technet.microsoft.com/library/hh831349.aspx)，以及[要横向扩展或不横向](http://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)扩展的博客文章。
+有关 SMB 横向扩展的详细信息，请参阅[应用程序数据概述横向扩展文件服务器](https://technet.microsoft.com/library/hh831349.aspx)，以及[要横向扩展或不横向](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)扩展的博客文章。
 
 ### <a name="performance-counters-for-smb-30"></a>SMB 3.0 的性能计数器
 
@@ -64,7 +64,7 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
 
     这些计数器显示有关正在使用 SMB 2.0 或更高版本的客户端访问的服务器上的文件共享的信息。
 
-    如果你已熟悉 Windows 中的常规磁盘计数器，则可能会注意到某个相似性。 这不是意外情况。 SMB 客户端共享性能计数器的设计与磁盘计数器完全匹配。 这样一来，您就可以轻松地重复使用目前所用的应用程序磁盘性能优化指南。 有关计数器映射的详细信息，请参阅[按共享客户端性能计数器博客](http://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)。
+    如果你已熟悉 Windows 中的常规磁盘计数器，则可能会注意到某个相似性。 这不是意外情况。 SMB 客户端共享性能计数器的设计与磁盘计数器完全匹配。 这样一来，您就可以轻松地重复使用目前所用的应用程序磁盘性能优化指南。 有关计数器映射的详细信息，请参阅[按共享客户端性能计数器博客](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)。
 
 -   **SMB 服务器共享**
 
@@ -86,7 +86,7 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
 
 -   **物理磁盘、SMB、CSV FS 性能计数器关系**
 
-    有关物理磁盘、SMB 和 CSV FS （文件系统）计数器如何相关的详细信息，请参阅以下博客文章：[群集共享卷性能计数器](http://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx)。
+    有关物理磁盘、SMB 和 CSV FS （文件系统）计数器如何相关的详细信息，请参阅以下博客文章：[群集共享卷性能计数器](https://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx)。
 
 ## <a name="tuning-parameters-for-smb-file-servers"></a>SMB 文件服务器的优化参数
 
@@ -127,7 +127,7 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\MaxThreadsPerQueue
   ```
 
-  默认值为20。 增加此值会引发文件服务器可用于为并发请求服务的线程数。 当需要为大量活动的连接提供服务，并且硬件资源（例如存储带宽）足够时，增加该值可以提高服务器的可伸缩性、性能和响应时间。
+  默认值为 20。 增加此值会引发文件服务器可用于为并发请求服务的线程数。 当需要为大量活动的连接提供服务，并且硬件资源（例如存储带宽）足够时，增加该值可以提高服务器的可伸缩性、性能和响应时间。
 
   >[!TIP]
   > 指示可能需要增加值的情况是，SMB2 工作队列是否增长得非常大（性能计数器 "服务器工作队列\\队列长度\\SMB2 非阻止性 \*" 持续时间超过 ~ 100）。
@@ -142,13 +142,13 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
   ```
 
-  默认值为512。 此参数限制单个连接上允许的并发异步 SMB 命令数。 某些情况下（例如，当具有后端 IIS 服务器的前端服务器时）需要大量并发（特别是对于文件更改通知请求）。 此项的值可以增加以支持这些情况。
+  默认值为 512。 此参数限制单个连接上允许的并发异步 SMB 命令数。 某些情况下（例如，当具有后端 IIS 服务器的前端服务器时）需要大量并发（特别是对于文件更改通知请求）。 此项的值可以增加以支持这些情况。
 
 ### <a name="smb-server-tuning-example"></a>SMB 服务器优化示例
 
 在许多情况下，以下设置可以优化计算机的文件服务器性能。 所有计算机上的这些设置都不是最佳或最合适的。 应在应用各个设置之前评估其影响。
 
-| 参数                       | 值 | 默认 |
+| 参数                       | Value | 默认值 |
 |---------------------------------|-------|---------|
 | AdditionalCriticalWorkerThreads | 64    | 0       |
 | MaxThreadsPerQueue              | 64    | 20      |
@@ -156,4 +156,4 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
 
 ### <a name="smb-client-performance-monitor-counters"></a>SMB 客户端性能监视器计数器
 
-有关 SMB 客户端计数器的详细信息，请参阅[Windows Server 2012 文件服务器提示：新的基于共享的 SMB 客户端性能计数器可提供强大的见解](http://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)。
+有关 SMB 客户端计数器的详细信息，请参阅[Windows Server 2012 文件服务器提示：新的基于共享的 SMB 客户端性能计数器可提供强大的见解](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)。

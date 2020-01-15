@@ -7,42 +7,48 @@ ms.topic: article
 author: JasonGerend
 manager: daveba
 ms.author: jgerend
-ms.date: 03/08/2019
+ms.date: 01/07/2020
 description: Windows Server 2016 故障转移群集文档中的新主题和更新主题
-ms.openlocfilehash: 501ad8f63eafdeadffcf5d67646c9e85005cf329
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b29a1dd979dc5ab14684a83e549ce3e6b3c273f1
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361210"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953044"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>故障转移群集主题的更改历史记录
 
->适用于：Windows Server 2019、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server 2016
 
 本主题列出了适用于 Windows Server 的[故障转移群集](failover-clustering-overview.md)文档中的新主题和更新主题。
 
 > 如果要查找 Windows Server 2016 的更新历史记录，请参阅 [Windows 10 和 Windows Server 2016 更新历史记录](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
 
+## <a name="january-2020"></a>2020 年 1 月
+
+|新的或已更改的主题                                    |描述 |
+|--------------------------------------------------------|------------|
+|[群集事件](system-events.md)| “新建”     |
+
 ## <a name="march-2019"></a>2019 年 3 月
 
 |新的或已更改的主题                                    |描述 |
 |--------------------------------------------------------|------------|
-|[群集关联](cluster-affinity.md)| 新增     |
+|[群集关联](cluster-affinity.md)| “新建”     |
 
 ## <a name="february-2019"></a>2019 年 2 月
 
 |新的或已更改的主题                                    |描述 |
 |--------------------------------------------------------|------------|
-| [在同一硬件上升级故障转移群集](upgrade-option-same-hardware.md)| 新增 |
-|[部署双节点文件服务器](deploy-two-node-clustered-file-server.md)| 新增 |
+| [在同一硬件上升级故障转移群集](upgrade-option-same-hardware.md)| “新建” |
+|[部署双节点文件服务器](deploy-two-node-clustered-file-server.md)| “新建” |
 
-## <a name="january-2019"></a>2019年1月
+## <a name="january-2019"></a>2019 年 1 月
 
 |新的或已更改的主题                                    |描述 |
 |--------------------------------------------------------|------------|
-|[部署文件共享见证](file-share-witness.md)    | 新增        |
-|[群集域迁移](cluster-domain-migration.md) | 新增        |
+|[部署文件共享见证](file-share-witness.md)    | “新建”        |
+|[群集域迁移](cluster-domain-migration.md) | “新建”        |
 
 ## <a name="november-2018"></a>2018 年 11 月
 
@@ -56,7 +62,7 @@ ms.locfileid: "71361210"
 |---|---|
 |[群集的新增功能](whats-new-in-failover-clustering.md)| Windows Server 2019 更新|
 
-## <a name="june-2018"></a>2018年6月
+## <a name="june-2018"></a>2018 年 6 月
 
 |新的或已更改的主题|描述|
 |---|---|

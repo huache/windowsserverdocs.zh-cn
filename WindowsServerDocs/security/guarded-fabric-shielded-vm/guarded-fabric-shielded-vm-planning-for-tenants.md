@@ -7,16 +7,16 @@ ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: c439a53abea07041e69e50d5d5148dae95243265
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 255429960735d70ff3a4d260bd9090b95882b6bd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386428"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949774"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>租户的受保护的构造和受防护 VM 规划指南
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 本主题重点介绍要保护其虚拟机（Vm）的 VM 所有者，以确保其符合性和安全性。 无论 Vm 是在托管提供程序的受保护的构造中还是在私有受保护的构造上运行，VM 所有者都需要控制其受防护的 Vm 的安全级别，其中包括保留在需要时对其进行解密的能力。
 
@@ -74,7 +74,7 @@ VM 是否受防护或受加密支持由创建 VM 时选择的防护数据决定�
 
 **我需要多少个防护数据文件？** 单个屏蔽数据文件可用于创建每个受防护的 VM。 但是，如果指定的受防护的 VM 要求四项中的任何一个都不同，则需要额外的屏蔽数据文件。 例如，你的 IT 部门可能有一个防护数据文件，为 HR 部门提供不同的防护数据文件，因为其初始管理员密码和 RDP 证书不同。
 
-虽然可以为每个受防护的 VM 使用单独的防护数据文件，但这并不一定是最佳选择，应该出于正确的原因进行操作。 例如，如果每个受防护的 VM 都需要使用不同的管理员密码，请考虑改用密码管理服务或工具，如[Microsoft 的本地管理员密码解决方案（LAPS）](https://www.microsoft.com/en-us/download/details.aspx?id=46899)。
+虽然可以为每个受防护的 VM 使用单独的防护数据文件，但这并不一定是最佳选择，应该出于正确的原因进行操作。 例如，如果每个受防护的 VM 都需要使用不同的管理员密码，请考虑改用密码管理服务或工具，如[Microsoft 的本地管理员密码解决方案（LAPS）](https://www.microsoft.com/download/details.aspx?id=46899)。
 
 ## <a name="creating-a-shielded-vm-on-a-virtualization-fabric"></a>在虚拟化结构上创建受防护的 VM
 

@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 9abe199399e577eb06044377c30d5a2dc0e35dd1
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: dccbfd7d3ff6d95615e9efecf840a840b42d0d27
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945232"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949646"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -320,6 +320,35 @@ DFSR 调试日志：
 
 当传输大量文件和嵌套文件夹时，这是预期的行为。 数据的大小不相关。 首先，我们在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)中改进了此行为，并继续优化传输性能。 若要进一步调整性能，请查看[优化清单和传输性能](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
 
+## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>数据不会传输，用户在迁移到域控制器或从域控制器中进行重命名
+
+从或向域控制器开始传输后：
+
+ 1. 不迁移数据，也不会在目标上创建任何共享。
+ 2. Windows 管理中心中显示了红色错误符号，无错误消息
+ 3. 一个或多个 AD 用户和域本地组已更改其名称和/或 Windows 2000 以前的登录属性
+ 4. 你会在 SMS orchestrator 中看到事件3509：
+ 
+ 日志名称： Microsoft StorageMigrationService/Admin 源： Microsoft-StorageMigrationService Date： 1/10/2020 2:53:48 PM 事件 ID：3509任务类别：无级别：错误关键字：      
+ 用户：网络服务计算机： orc2019-rtm.corp.contoso.com 说明：无法传输计算机的存储。
+
+ 作业： dctest3 计算机： dc02-2019.corp.contoso.com 目标计算机： dc03-2019.corp.contoso.com 状态：失败错误：53251错误消息：本地帐户迁移失败，出现错误系统。异常：-2147467259StorageMigration. DeviceHelper. MigrateSecurity （IDeviceRecord sourceDeviceRecord，IDeviceRecord destinationDeviceRecord，TransferConfiguration config，Guid proxyId，CancellationToken cancelToken）
+
+如果尝试使用存储迁移服务从或迁移到域控制器，并且使用 "迁移用户和组" 选项重命名或重新使用帐户，则这是预期的行为。 而不是选择 "不传输用户和组"。 [存储迁移服务不支持](faq.md)DC 迁移。 由于 DC 不具备真正的本地用户和组，因此存储迁移服务将这些安全主体视为在两个成员服务器之间迁移时的处理方式，并尝试根据指示的错误和损坏或复制的帐户调整 Acl。 
+
+如果你已经运行了一次或多次传输：
+
+ 1. 对 DC 使用以下 AD PowerShell 命令来查找任何已修改的用户或组（更改 SearchBase 以匹配域 dinstringuished 名称）： 
+
+    ```PowerShell
+    Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
+    ```
+   
+ 2. 对于使用其原始名称返回的任何用户，编辑其 "用户登录名（Windows 之前2000）" 以删除存储迁移服务添加的随机字符后缀，以便此落选方可以登录。
+ 3. 对于使用其原始名称返回的任何组，编辑其 "组名（Windows 之前2000）" 以删除存储迁移服务添加的随机字符后缀。
+ 4. 对于其名称现在包含存储迁移服务添加的后缀的任何已禁用的用户或组，你可以删除这些帐户。 你可以确认以后是否添加了用户帐户，因为它们只包含域用户组，并且将创建与存储迁移服务传输开始时间匹配的日期/时间。
+ 
+ 如果要将存储迁移服务用于域控制器以进行传输，请确保始终在 Windows 管理中心的 "传输设置" 页上选择 "不传输用户和组"。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c825ae9c9b52068b58b99bc6ff597304c9643d17
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ca63fa9504765b0376eb671b4decd67de7768f15
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390078"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948890"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>如何处理 LDAP 服务器 Cookie
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 在 LDAP 中，一些查询会生成大型结果集。 此类查询给 Windows Server 带来了一些难题。  
   
@@ -126,7 +126,7 @@ The client should consider a more efficient search filter.  The limit for Maximu
   
 如果你在 DC/LDAP 服务器上看到事件 2898，建议你将 MaxResultSetsPerConn 设为 25。 在单个 LDAP 连接上通常不会有超过 25 个并行分页搜索。 如果你仍看到事件 2898，请考虑调查遇到该错误的 LDAP 客户端应用程序。 怀疑是在检索后续分页结果时它不知何故停止响应了，将 Cookie 挂起，并重新启动一个新查询。 因此，请查看在某一时刻应用程序是否有足够多的 Cookie 用于其用途，你还可以将 MaxResultSetsPerConn 的值增加到超出 25。当你看到域控制器上记录的事件 2899 时，计划将会不同。 如果你的 DC/LDAP 服务器运行在具有足够内存（几 GB 的可用内存）的计算机上，建议你在 LDAP 服务器上将 MaxResultsetSize 设为 >= 250MB。 此限制已足够大，甚至可以针对非常大的目录提供大量 LDAP 页搜索。  
   
-如果你在使用 250MB 或更大容量的池时仍看到事件 2899，则你很可能正在使用许多客户端非常频繁地查询大量对象并返回这些对象。 使用 [Active Directory 数据收集器集](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) 可以帮你查找使 LDAP 服务器繁忙的重复性分页查询。 这些查询全部显示，其中包含与所用页面大小匹配的 "返回的条目数"。  
+如果你在使用 250MB 或更大容量的池时仍看到事件 2899，则你很可能正在使用许多客户端非常频繁地查询大量对象并返回这些对象。 使用 [Active Directory 数据收集器集](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) 可以帮你查找使 LDAP 服务器繁忙的重复性分页查询。 这些查询全部显示，其中包含与所用页面大小匹配的 "返回的条目数"。  
   
 如果可能，你应查看应用程序设计，并以较低的频率、数据量和/或更少的客户端实例查询此数据来实现其他方法。如果你有权访问源代码的应用程序，本[指南可帮助](https://msdn.microsoft.com/library/ms808539.aspx)你了解应用程序访问 ad 的最佳方式。  
   

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 506cd5cb44d93c9d7d221917505f76a2c5625baa
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 51768dc65128f27dcbf78cbfc776500ac3832615
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870550"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949837"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>开始适用于 Windows Server 的一般数据保护条例（GDPR）旅程 
 
@@ -28,7 +28,7 @@ Microsoft 和我们的客户正在为实现 GDPR 的隐私目标而努力。 在
 
 在[借助 Microsoft 云实现 GDPR 合规性](https://blogs.microsoft.com/on-the-issues/2017/02/15/get-gdpr-compliant-with-the-microsoft-cloud/#hv52B68OZTwhUj2c.99)博客（由我们的首席隐私官 [Brendon Lynch](https://blogs.microsoft.com/on-the-issues/author/brendonlynch/)发表）和[通过对一般数据保护条例的合同承诺赢得信任](https://blogs.microsoft.com/on-the-issues/2017/04/17/earning-trust-contractual-commitments-general-data-protection-regulation/#6QbqoGWXCLavGM63.99)博客（由 [Rich Sauer](https://blogs.microsoft.com/on-the-issues/author/rsauer/) - Microsoft 公司副总裁兼副总法律顾问发表）中，我们概述了我们对 GDPR 的承诺以及如何为客户提供支持。
 
-虽然你的 GDPR 合规性之旅似乎充满了挑战，但我们会竭尽所能地为你提供帮助。 有关 GDPR 的具体信息、我们的承诺以及如何开启你的旅程，请访问 [Microsoft 信任中心的 GDPR 部分](https://www.microsoft.com/en-us/trustcenter/privacy/gdpr)。
+虽然你的 GDPR 合规性之旅似乎充满了挑战，但我们会竭尽所能地为你提供帮助。 有关 GDPR 的具体信息、我们的承诺以及如何开启你的旅程，请访问 [Microsoft 信任中心的 GDPR 部分](https://www.microsoft.com/trustcenter/privacy/gdpr)。
 
 ## <a name="gdpr-and-its-implications"></a>GDPR 及其含义
 GDPR 是一项复杂法规，可能要求你对收集、使用和管理个人数据的方式进行重大更改。 Microsoft 在帮助客户遵守复杂法规方面拥有很长的历史，当你为遵守 GDPR 做准备时，我们将伴你一路同行。
@@ -80,7 +80,7 @@ GDPR 介绍遗传数据（如个人的基因序列）和生物识别数据的特
 
     ![关于 4 个主要 GDPR 步骤如何协同工作的图示](../media/GDPR-Windows-Server-Overview/gdpr-steps-diagram.png)
 
-对于每个步骤，我们已经概述了各种 Microsoft 解决方案中的示例工具、资源以及功能，它们可用来帮助你满足该步骤的要求。 虽然本文不是一种全面的 "操作方法" 指南，但我们提供了一些链接，可用于查找更多详细信息，并在[Microsoft 信任中心的 GDPR 部分](https://www.microsoft.com/en-us/trustcenter/privacy/gdpr)获得详细信息。
+对于每个步骤，我们已经概述了各种 Microsoft 解决方案中的示例工具、资源以及功能，它们可用来帮助你满足该步骤的要求。 虽然本文不是一种全面的 "操作方法" 指南，但我们提供了一些链接，可用于查找更多详细信息，并在[Microsoft 信任中心的 GDPR 部分](https://www.microsoft.com/trustcenter/privacy/gdpr)获得详细信息。
 
 ## <a name="windows-server-security-and-privacy"></a>Windows Server 安全和隐私
 GDPR 要求你实施适当的技术和组织安全措施来保护个人数据和处理系统。 在 GDPR 的上下文中，物理和虚拟服务器环境可能正在处理个人数据和敏感数据。 处理可以表示任何操作或操作集，如数据收集、存储和检索。
@@ -145,7 +145,7 @@ GDPR 中的密钥预配是按设计和默认方式进行数据保护的，并且
 
 与你的无数据泄露操作相关的其他高级设备保护包括 Windows 受信任启动，它通过确保在系统防御之前恶意软件无法启动来帮助维护系统的完整性。
 
-## <a name="windows-server-supporting-your-gdpr-compliance-journey"></a>Windows Server:支持 GDPR 合规性旅程
+## <a name="windows-server-supporting-your-gdpr-compliance-journey"></a>Windows Server：支持 GDPR 合规性旅程
 Windows Server 中的主要功能可帮助你有效有效地实施 GDPR 要求的安全和隐私机制。 虽然使用这些功能不能保证你的符合性，但它们将支持你的工作。
 
 服务器操作系统在组织的基础结构中处于战略层，使了新的机会，旨在防范可能盗取数据和中断业务的攻击。 GDPR 的关键方面（如设计、数据保护和访问控制）需要在服务器级别的 IT 基础结构中进行寻址。
@@ -185,11 +185,11 @@ Windows Server 2016 帮助保护标识、操作系统和虚拟化层的安全，
 
 如果 DNS 管理员凭据被盗，请设想这种情况。 首先，由于凭据没有附加的管理员特权，攻击者将无法访问 DNS 服务器或任何其他系统，从而进行任何更改。 如果攻击者尝试请求 DNS 服务器的权限，则第二重身份验证会要求用户确认其身份。 由于攻击者不可能具有 DNS 管理员的移动电话，因此身份验证会失败。 这会将攻击者锁定在系统之外，并提醒 IT 组织凭据可能会泄露。
 
-此外，许多组织使用免费的[本地管理员密码解决方案（LAPS）](http://aka.ms/laps)作为其服务器和客户端系统的简单但功能强大的 JIT 管理机制。 LAPS 功能提供了对加入域的计算机的本地帐户密码的管理。 密码存储在 Active Directory （AD）中并受和访问控制列表（ACL）保护，因此只有符合条件的用户才能读取它或请求其重置。
+此外，许多组织使用免费的[本地管理员密码解决方案（LAPS）](https://aka.ms/laps)作为其服务器和客户端系统的简单但功能强大的 JIT 管理机制。 LAPS 功能提供了对加入域的计算机的本地帐户密码的管理。 密码存储在 Active Directory （AD）中并受和访问控制列表（ACL）保护，因此只有符合条件的用户才能读取它或请求其重置。
 
-如[Windows 凭据盗窃缓解指南](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54095)中所述， 
+如[Windows 凭据盗窃缓解指南](https://www.microsoft.com/download/confirmation.aspx?id=54095)中所述， 
 
-> "_罪犯使用各种工具和技术来执行凭据被盗和重复使用，恶意攻击者发现实现其目标更容易。凭据盗窃通常依赖于操作实践或用户凭据的公开，因此有效的缓解措施要求使用一种全面的方法来解决人员、流程和技术。此外，这些攻击依赖于攻击者在损害系统后盗取凭据以扩展或保留访问权限，因此，组织必须通过实施策略来使攻击者在网络受到威胁。_ "
+> "_罪犯使用各种工具和技术来执行凭据被盗和重复使用，恶意攻击者发现实现其目标更容易。凭据盗窃通常依赖于操作实践或用户凭据的公开，因此有效的缓解措施要求使用一种全面的方法来解决人员、流程和技术。此外，这些攻击依赖于攻击者在危及系统安全以扩展或保留访问权限后盗取凭据，因此，组织必须通过实施策略来使攻击者无法在受攻击的网络中自由移动和未检测到，从而使组织必须迅速泄露。_ "
 
 Windows Server 的一项重要设计注意事项是减轻凭据被盗的情况，特别是派生凭据。 Credential Guard 通过在旨在帮助消除基于硬件的隔离攻击的 Windows 中实施重大体系结构更改，大大提高了对派生的凭据被盗和重复使用的安全性，而不是简单地尝试防御它们。
 
@@ -237,7 +237,7 @@ Windows Server 2016 包含 Windows Defender 设备防护，以确保只有受信
 
 Windows Defender Device Guard 还与 PowerShell 集成，因此你可以授权可以在你的系统上运行的脚本。 在早期版本的 Windows Server 中，管理员只需删除代码文件中的策略，就可以绕过代码完整性强制执行。 使用 Windows Server 2016，你可以配置由组织签名的策略，以便只有有权访问对策略进行签名的证书的人员才能更改策略。
 
-#### <a name="control-flow-guard"></a>控制流保护 
+#### <a name="control-flow-guard"></a>控制流防护 
 Windows Server 2016 还包括针对某些内存损坏攻击类的内置保护。 修补服务器非常重要，但始终有可能为尚未识别的漏洞开发恶意软件。 利用这些漏洞的一些最常见方法是向正在运行的程序提供异常或极端数据。 例如，攻击者可以通过提供对程序的更多输入来利用缓冲区溢出漏洞，并使程序保留响应的区域溢出。 这可能会损坏可能包含函数指针的相邻内存。
 
 当程序通过此函数调用时，它可以跳转到攻击者指定的意外位置。 这些攻击也称为定向编程（JOP）攻击。 控制流防护通过对可执行的应用程序代码施加严格限制（特别是间接调用说明）来防止 JOP 攻击。 它添加了轻型安全检查来识别应用程序中作为间接调用的有效目标的函数集。 当应用程序运行时，它会验证这些间接调用目标是否有效。
@@ -302,11 +302,11 @@ Windows Server 2016 支持适用于虚拟机的 TPM，使你能够在虚拟机�
 改善虚拟化环境中的保护的一种方法是将网络分段，使 Vm 只能与运行所需的特定系统进行通信。 例如，如果你的应用程序不需要连接到 Internet，则可以将其分区，从而将这些系统作为外部攻击者的目标。 Windows Server 2016 中的软件定义网络（SDN）包含一个分布式网络防火墙，该防火墙允许您动态创建安全策略，从而保护应用程序免受来自网络内部或外部的攻击。 此分布式网络防火墙通过使你能够将你的应用程序隔离到网络中，将层添加到了你的安全性。 策略可以应用于虚拟网络基础结构中的任何位置，隔离 VM 到 VM 的流量、VM 到主机流量或 VM 到 Internet 的流量（必要时），这些流量适用于可能已泄露或以编程方式跨的各个系统多个子网。 使用 Windows Server 2016 软件定义的网络功能，还可以将传入流量路由或镜像到非 Microsoft 虚拟设备。 例如，你可以选择通过 Barracuda 虚拟设备发送所有电子邮件流量，以进行其他垃圾邮件筛选保护。 这使你可以轻松地在本地或云中的其他安全性中分层。
 
 ### <a name="other-gdpr-considerations-for-servers"></a>服务器的其他 GDPR 注意事项
-GDPR 包括对泄露通知的明确要求，其中的个人数据泄露是指违反了严重_或非法破坏、丢失、更改、未经授权泄露或访问个人数据的安全漏洞传输、存储或以其他方式处理。_ "  很明显，如果无法在第一次检测到违规行为，则无法在72小时内开始继续满足严格的 GDPR 通知要求。
+此 GDPR 包括对泄露通知的明确要求，其中的个人数据泄露是指 "_违反安全要求，导致意外或非法的破坏、丢失、更改、未经授权泄露或访问、存储或以其他方式处理个人数据"。_  很明显，如果无法在第一次检测到违规行为，则无法在72小时内开始继续满足严格的 GDPR 通知要求。
 
-如 Windows 安全中心白皮书中所述， [破坏后：处理高级威胁](http://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
+如 Windows 安全中心白皮书中所述，[破坏后：处理高级威胁](http://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
 
-> "_违反了预侵害性，入侵后假设已发生违规情况-充当网络流量记录器和犯罪场景调查人员（CSI）。破坏后，为安全团队提供识别、调查和响应攻击所需的信息和工具集，否则将保持未检测到的和在该雷达图下面的内容。_ "
+> "违反_了预侵害性，入侵后假设已发生违规情况-充当网络流量记录器和犯罪场景调查人员（CSI）。破坏后，为安全团队提供识别、调查和响应攻击所需的信息和工具集，否则将保持未检测到的和在该雷达图下面的内容。_ "
 
 在本部分中，我们将介绍 Windows Server 如何帮助你满足 GDPR 违规通知义务。 这从了解可供 Microsoft 收集和分析的基础威胁数据开始，并通过 Windows Defender 高级威胁防护（ATP）通过 Windows Defender 高级威胁防护（ATP）使数据对你至关重要。
 
@@ -317,7 +317,7 @@ GDPR 包括对泄露通知的明确要求，其中的个人数据泄露是指违
 
 ![Microsoft 智能安全性图](../media/GDPR-Windows-Server-Overview/gdpr-intelligent-security-graph.png)
 
-Microsoft 的威胁情报范围（字面上）为数十亿个数据点：35000000000每月、每个企业和使用者之间扫描1000000000的、访问200多个云服务14000000000和每日执行的身份验证的消息。 所有这些数据都将由 Microsoft 代表你进行收集，以创建 Intelligent Security Graph，从而帮助你以动态方式保护前门，使其保持安全，并满足 GDPR 的要求。
+Microsoft 的威胁情报范围为：每月扫描35000000000条数据点，跨企业和使用者细分1000000000，访问200多个云服务，以及14000000000执行的身份验证日历. 所有这些数据都将由 Microsoft 代表你进行收集，以创建 Intelligent Security Graph，从而帮助你以动态方式保护前门，使其保持安全，并满足 GDPR 的要求。
 
 #### <a name="detecting-attacks-and-forensic-investigation"></a>检测攻击和取证调查
 即使是最好的端点防御最终也可能会被攻破，因为网络攻击变得越来越复杂和有针对性。 可以使用两种功能来帮助进行潜在的破坏性检测-Windows Defender 高级威胁防护（ATP）和 Microsoft 高级威胁分析（ATA）。
@@ -341,9 +341,9 @@ ATA 是一项本地产品，可帮助检测组织中的身份泄露。 ATA 可�
 
 |攻击类型 |描述 |
 |---------|---------|
-|恶意攻击 |通过从已知的攻击类型列表中查找攻击来检测这些攻击，其中包括：<ul><li>传递票证（PtT）</li><li>传递哈希（PtH）</li><li>超传递哈希</li><li>伪造 PAC （MS14-068）</li><li>黄金票证</li><li>恶意复制</li><li>侦察</li><li>暴力破解</li><li>远程执行</li></ul>有关可检测到的恶意攻击及其说明的完整列表，请参阅[ATA 可以检测哪些可疑活动？](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats)。|
+|恶意攻击 |通过从已知的攻击类型列表中查找攻击来检测这些攻击，其中包括：<ul><li>传递票证 (PtT)</li><li>传递哈希 (PtH)</li><li>超传递哈希</li><li>伪造 PAC (MS14-068)</li><li>黄金票证</li><li>恶意复制</li><li>侦察</li><li>暴力破解</li><li>远程执行</li></ul>有关可检测到的恶意攻击及其说明的完整列表，请参阅[ATA 可以检测哪些可疑活动？](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats)。|
 |异常行为 |这些攻击通过使用行为分析来检测，并使用机器学习识别有疑问的活动，包括：<ul><li>异常登录</li><li>未知威胁</li><li>密码共享</li><li>横向移动</li></ul>|
-|安全问题和风险 |通过查看当前的网络和系统配置来检测这些攻击，其中包括：<ul><li>信任中断</li><li>弱协议</li><li>已知协议漏洞</li></ul>|
+|安全问题和风险 |通过查看当前的网络和系统配置来检测这些攻击，其中包括：<ul><li>破坏信任</li><li>弱协议</li><li>已知协议漏洞</li></ul>|
 
 你可以使用 ATA 帮助检测攻击者尝试破坏特权标识。 有关部署 ATA 的详细信息，请参阅[高级威胁分析文档](https://docs.microsoft.com/advanced-threat-analytics/)中的计划、设计和部署主题。
 
@@ -359,7 +359,7 @@ ATA 是一项本地产品，可帮助检测组织中的身份泄露。 ATA 可�
 
 - **控制流防护：** https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
 
-- **安全性和保证：** https://docs.microsoft.com/windows-server/security/security-and-assurance
+- **安全和保证：** https://docs.microsoft.com/windows-server/security/security-and-assurance
 
 ## <a name="disclaimer"></a>免责声明
 本文是截至发布日期 Microsoft 对 GDPR 的评论。 我们花费了大量时间来 GDPR，并希望我们非常熟悉其意图和含义。 但是 GDPR 的应用高度具体，我们对 GDPR 的解释并非面面俱到。

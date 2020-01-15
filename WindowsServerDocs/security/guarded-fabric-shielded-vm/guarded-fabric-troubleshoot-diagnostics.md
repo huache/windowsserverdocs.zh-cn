@@ -7,12 +7,12 @@ ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
 author: huu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: deeaa7eab01dd5da6d997dd6ec039a3319e5c2b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6db9ce1db139558bd1a7aa731cb12c1b227ead03
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386463"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949764"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>使用受保护的构造诊断工具进行故障排除
 
@@ -24,7 +24,7 @@ ms.locfileid: "71386463"
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)] 
 
-# <a name="quick-start"></a>快速启动
+## <a name="quick-start"></a>快速启动
 
 您可以通过使用具有本地管理员权限的 Windows PowerShell 会话调用以下内容来诊断受保护的主机或 HGS 节点：
 ```PowerShell
@@ -57,7 +57,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 
 使用 `-Diagnostic` 参数，你可以将跟踪集合限制为仅限操作指定诊断所需的跟踪。  这会减少收集的数据量，以及调用诊断所需的权限。
 
-### <a name="diagnosis"></a>诊断
+### <a name="diagnosis"></a>Diagnosis
 可以通过 `-Path` 参数提供 `Get-HgsTrace` 跟踪的位置并指定 `-RunDiagnostics` 开关来诊断收集的跟踪。  此外，`Get-HgsTrace` 可以通过提供 `-RunDiagnostics` 开关和跟踪目标列表在单个传递中执行收集和诊断。  如果未提供任何跟踪目标，则将当前计算机用作隐式目标，其角色通过检查已安装的 Windows PowerShell 模块来推断。
 
 诊断将提供分层格式的结果，显示哪些跟踪目标、诊断集和个别诊断负责特定故障。  如果可以根据接下来应执行的操作进行确定，则故障包括修正和解决建议。  默认情况下，将隐藏传递和不相关的结果。  若要查看诊断测试的所有内容，请指定 `-Detailed` 开关。  这将导致显示所有结果，而不考虑它们的状态。

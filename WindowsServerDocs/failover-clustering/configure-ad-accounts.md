@@ -6,16 +6,16 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 8a540361cdd07f6adfc1c929d77c510ef8433d6d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47f3a515379eb79f628a0ee97ef2c7965c4d8d50
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369891"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948158"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>在 Active Directory 中配置群集帐户
 
-适用于：Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，windows server 2008
+适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，windows server 2008
 
 在 Windows Server 中，当你创建故障转移群集并配置群集服务或应用程序时，故障转移群集向导会创建必需的 Active Directory 计算机帐户（也称为计算机对象）并向其授予特定权限。 向导将为群集本身创建计算机帐户（此帐户也称为群集名称对象或 CNO）和计算机帐户，适用于大多数类型的群集服务和应用程序，这是 Hyper-v 虚拟机例外。 故障转移群集向导会自动设置这些帐户的权限。 如果更改了权限，则需要将其更改回以匹配群集要求。 本指南介绍了这些 Active Directory 帐户和权限，提供了有关其重要性的原因，并介绍了用于配置和管理帐户的步骤。
       
@@ -47,7 +47,7 @@ ms.locfileid: "71369891"
 </colgroup>
 <thead>
 <tr class="header">
-<th>帐户</th>
+<th>“帐户”</th>
 <th>有关权限的详细信息</th>
 </tr>
 </thead>
@@ -59,7 +59,7 @@ ms.locfileid: "71369891"
 <tr class="even">
 <td><p>群集名称帐户（群集自身的计算机帐户）</p></td>
 <td><p>在运行创建群集向导时，它会在默认容器中创建群集名称帐户，该帐户用于域中的计算机帐户。 默认情况下，群集名称帐户（如其他计算机帐户）最多可以在域中创建10个计算机帐户。</p>
-<p>如果在创建群集之前创建群集名称帐户（群集名称对象）（即，预安排帐户），则必须在用于计算机的容器中为其提供 "<strong>创建计算机对象</strong>" 和 "<strong>读取所有属性</strong>" 权限域中的帐户。 您还必须禁用该帐户，并对安装该群集的管理员将使用的帐户进行<strong>完全控制</strong>。 有关详细信息，请参阅本指南后面的预<a href="#steps-for-prestaging-the-cluster-name-account" data-raw-source="[Steps for prestaging the cluster name account](#steps-for-prestaging-the-cluster-name-account)">安排群集名称帐户的步骤</a>。</p></td>
+<p>如果在创建群集之前创建群集名称帐户（群集名称对象）（即，预安排帐户），则必须在用于域中的计算机帐户的容器中为其提供 "<strong>创建计算机对象</strong>" 和 "<strong>读取全部属性</strong>" 权限。 您还必须禁用该帐户，并对安装该群集的管理员将使用的帐户进行<strong>完全控制</strong>。 有关详细信息，请参阅本指南后面的预<a href="#steps-for-prestaging-the-cluster-name-account" data-raw-source="[Steps for prestaging the cluster name account](#steps-for-prestaging-the-cluster-name-account)">安排群集名称帐户的步骤</a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p>群集服务或应用程序的计算机帐户</p></td>
@@ -89,7 +89,7 @@ ms.locfileid: "71369891"
 
 ![](media/configure-ad-accounts/Cc731002.beecc4f7-049c-4945-8fad-2cceafd6a4a5(WS.10).gif)
 
-如果出现在关系图中显示的问题类型，则将在事件查看器中记录某个事件（1193、1194、1206或1207）。 有关这些事件的详细信息，请[http://go.microsoft.com/fwlink/?LinkId=118271](http://go.microsoft.com/fwlink/?linkid=118271)参阅。
+如果出现在关系图中显示的问题类型，则将在事件查看器中记录某个事件（1193、1194、1206或1207）。 有关这些事件的详细信息，请参阅[https://go.microsoft.com/fwlink/?LinkId=118271](https://go.microsoft.com/fwlink/?linkid=118271)。
 
 请注意，如果已达到用于创建计算机对象（默认为10）的全域配额，则创建群集服务或应用程序的帐户时，可能会出现类似的问题。 如果是这样，则可能需要咨询域管理员以增加配额，尽管这是一个域范围的设置，只应在仔细考虑后进行更改，并且仅在确认前面的关系图不描述您的情况。 有关详细信息，请参阅本指南后面的[解决与群集相关的 Active Directory 帐户中的更改导致的问题的步骤](#steps-for-troubleshooting-problems-caused-by-changes-in-cluster-related-active-directory-accounts)。
 
@@ -97,7 +97,7 @@ ms.locfileid: "71369891"
 
 如前面三部分所述，必须先满足某些要求，然后才能在故障转移群集上成功配置群集服务和应用程序。 最基本的要求涉及群集节点的位置（在单个域中）以及安装群集的人员的帐户的权限级别。 如果满足这些要求，则故障转移群集向导会自动创建群集所需的其他帐户。 以下列表提供了有关这些基本要求的详细信息。
 
-  - **结点**所有节点必须位于同一个 Active Directory 域中。 （域不能基于不包含 Active Directory 的 Windows NT 4.0。）  
+  - **节点：** 所有节点必须位于同一个 Active Directory 域中。 （域不能基于不包含 Active Directory 的 Windows NT 4.0。）  
       
   - **安装群集的人员的帐户：** 安装群集的人员必须使用具有以下特征的帐户：  
       
@@ -118,13 +118,13 @@ ms.locfileid: "71369891"
 
 安装群集的人员的帐户非常重要，因为它提供了为群集本身创建计算机帐户的基础。
 
-完成下列过程所需的最低组成员身份取决于你是要创建域帐户并向其分配域中所需的权限，还是仅将帐户（由其他人创建）放入将作为故障转移群集中的节点的服务器上的本地**管理员**组。 如果以前的成员身份**操作员**或等效成员身份是完成此过程的最低要求。 如果后者为故障转移群集中作为节点的服务器上的本地**管理员**组中的成员身份或同等身份，则这一切都是必需的。 有关使用适当帐户和组成员身份[http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)的详细信息，请参阅。
+完成下列过程所需的最低组成员身份取决于你是要创建域帐户并向其分配域中所需的权限，还是仅将帐户（由其他人创建）放到将成为故障转移群集中的节点的服务器上的本地**管理员**组中。 如果以前的成员身份**操作员**或等效成员身份是完成此过程的最低要求。 如果后者为故障转移群集中作为节点的服务器上的本地**管理员**组中的成员身份或同等身份，则这一切都是必需的。 有关使用适当帐户和组成员身份的详细信息，请参阅[https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477)。
 
 #### <a name="to-configure-the-account-for-the-person-who-installs-the-cluster"></a>为安装群集的人员配置帐户
 
 1.  为安装群集的人员创建或获取一个域帐户。 此帐户可以是域用户帐户，也可以是**帐户操作员**帐户。 如果你使用标准用户帐户，则必须在此过程中向其授予一些额外的权限。
 
-2.  如果在步骤1中创建或获取的帐户不会自动包含在域中计算机上的本地**管理员**组中，请将该帐户添加到将成为故障转移中的节点的服务器上的本地**管理员**组中。聚集
+2.  如果在步骤1中创建或获取的帐户不会自动包含在域中计算机上的本地**管理员**组中，请将该帐户添加到将成为故障转移群集中的节点的服务器上的本地**管理员**组中：
     
     1.  依次单击“开始”、“管理工具”和“服务器管理器”。  
           
@@ -143,7 +143,7 @@ ms.locfileid: "71369891"
 
 3. 如果在步骤1中创建或获取的帐户是域管理员帐户，请跳过此过程的其余部分。 否则，为域中的计算机帐户授予帐户 "**创建计算机对象**" 和 "**读取所有属性**" 权限：
     
-   1.  在域控制器上，依次单击 "**开始**"、"**管理工具**"，然后单击 " **Active Directory 用户和计算机**"。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。  
+   1.  在域控制器上，依次单击 "**开始**"、"**管理工具**"，然后单击 " **Active Directory 用户和计算机**"。 如果出现“用户帐户控制” 对话框，请确认它显示的是所需操作，然后单击“继续”。  
           
    2.  在 "**视图**" 菜单上，确保已选择 "**高级功能**"。  
           
@@ -163,13 +163,13 @@ ms.locfileid: "71369891"
 
 通常，如果不预留群集名称帐户，而是在运行创建群集向导时允许自动创建和配置帐户，则通常会更简单。 但是，如果由于组织中的要求而需要预留群集名称帐户，请使用以下过程。
 
-**Domain Admins** 组中的成员身份或同等身份是完成此过程所需的最低要求。 有关使用适当帐户和组成员身份[http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)的详细信息，请参阅。 请注意，你可以对此过程使用同一帐户，因为你将在创建群集时使用。
+**Domain Admins** 组中的成员身份或同等身份是完成此过程所需的最低要求。 有关使用适当帐户和组成员身份的详细信息，请参阅[https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477)。 请注意，你可以对此过程使用同一帐户，因为你将在创建群集时使用。
 
 #### <a name="to-prestage-a-cluster-name-account"></a>预留群集名称帐户
 
 1.  请确保知道群集将具有的名称，以及创建群集的用户将使用的用户帐户的名称。 （请注意，你可以使用该帐户来执行此过程。）
 
-2.  在域控制器上，依次单击 "**开始**"、"**管理工具**"，然后单击 " **Active Directory 用户和计算机**"。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
+2.  在域控制器上，依次单击 "**开始**"、"**管理工具**"，然后单击 " **Active Directory 用户和计算机**"。 如果出现“用户帐户控制” 对话框，请确认它显示的是所需操作，然后单击“继续”。
 
 3.  在控制台树中，右键单击 "**计算机**" 或在域中创建计算机帐户的默认容器。 **计算机**位于<b>Active Directory 用户和计算机/</b><i>域节点</i><b>/Computers</b>中。
 
@@ -203,7 +203,7 @@ ms.locfileid: "71369891"
           
     2.  右键单击刚创建的计算机帐户，然后单击 "**属性**"。  
           
-    3.  在“安全”选项卡上，单击“添加”。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。  
+    3.  在“安全” 选项卡上，单击“添加”。 如果出现“用户帐户控制” 对话框，请确认它显示的是所需操作，然后单击“继续”。  
           
     4.  使用 "**选择用户、计算机或组**" 对话框指定创建群集时将使用的用户帐户。 然后单击“确定”。  
           
@@ -215,13 +215,13 @@ ms.locfileid: "71369891"
 
 如果不为群集服务或应用程序预留计算机帐户，而是允许在运行高可用性向导时自动创建和配置帐户，则通常会更简单。 但是，如果出于组织的要求而需要预先安排帐户，请使用以下过程。
 
-**Account Operators**组中的成员身份或等效身份是完成此过程所需的最低要求。 有关使用适当帐户和组成员身份[http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)的详细信息，请参阅。
+**Account Operators**组中的成员身份或等效身份是完成此过程所需的最低要求。 有关使用适当帐户和组成员身份的详细信息，请参阅[https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477)。
 
 #### <a name="to-prestage-an-account-for-a-clustered-service-or-application"></a>为群集服务或应用程序预留帐户
 
 1.  确保你知道群集的名称，以及群集服务或应用程序将具有的名称。
 
-2.  在域控制器上，依次单击 "**开始**"、"**管理工具**"，然后单击 " **Active Directory 用户和计算机**"。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
+2.  在域控制器上，依次单击 "**开始**"、"**管理工具**"，然后单击 " **Active Directory 用户和计算机**"。 如果出现“用户帐户控制” 对话框，请确认它显示的是所需操作，然后单击“继续”。
 
 3.  在控制台树中，右键单击 "**计算机**" 或在域中创建计算机帐户的默认容器。 **计算机**位于<b>Active Directory 用户和计算机/</b><i>域节点</i><b>/Computers</b>中。
 
@@ -235,7 +235,7 @@ ms.locfileid: "71369891"
 
 7.  右键单击刚创建的计算机帐户，然后单击 "**属性**"。
 
-8.  在“安全”选项卡上，单击“添加”。
+8.  在“安全” 选项卡上，单击“添加”。
 
 9.  单击 "**对象类型**"，确保已选择 "**计算机**"，然后单击 **"确定"** 。 然后，在 "**输入要选择的对象名称**" 下，键入群集名称帐户，然后单击 **"确定"** 。 如果出现一条消息，指出您要添加一个已禁用的对象，请单击 **"确定"** 。
 
@@ -262,7 +262,7 @@ ms.locfileid: "71369891"
 
 有关确保群集管理员具有根据需要执行以下过程的正确权限的信息，请参阅本指南前面的为密码重置和其他帐户维护提前计划。
 
-必须至少具有本地 **Administrators** 组中的成员身份或同等身份才能完成此过程。 此外，必须为你的帐户授予群集名称帐户的 "**重置密码**" 权限（除非你的帐户是**域管理员**帐户，或者是群集名称帐户的创建者所有者）。 安装群集的人员使用的帐户可用于此过程。 有关使用适当帐户和组成员身份[http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)的详细信息，请参阅。
+必须至少具有本地 **Administrators** 组中的成员身份或同等身份才能完成此过程。 此外，必须为你的帐户授予群集名称帐户的 "**重置密码**" 权限（除非你的帐户是**域管理员**帐户，或者是群集名称帐户的创建者所有者）。 安装群集的人员使用的帐户可用于此过程。 有关使用适当帐户和组成员身份的详细信息，请参阅[https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477)。
 
 #### <a name="to-troubleshoot-password-problems-with-the-cluster-name-account"></a>排查群集名称帐户的密码问题
 
@@ -276,13 +276,13 @@ ms.locfileid: "71369891"
 
 ### <a name="steps-for-troubleshooting-problems-caused-by-changes-in-cluster-related-active-directory-accounts"></a>排查群集相关 Active Directory 帐户中的更改导致的问题的步骤
 
-如果删除群集名称帐户或者从该帐户中删除权限，则当你尝试配置新的群集服务或应用程序时，将会出现问题。 若要解决导致此问题的问题，请使用 Active Directory 用户和计算机 "管理单元来查看或更改群集名称帐户以及其他相关帐户。 有关发生此类问题（事件1193、1194、1206或1207）时记录的事件的信息，请参阅[http://go.microsoft.com/fwlink/?LinkId=118271](http://go.microsoft.com/fwlink/?linkid=118271)。
+如果删除群集名称帐户或者从该帐户中删除权限，则当你尝试配置新的群集服务或应用程序时，将会出现问题。 若要解决导致此问题的问题，请使用 Active Directory 用户和计算机 "管理单元来查看或更改群集名称帐户以及其他相关帐户。 有关发生此类问题（事件1193、1194、1206或1207）时记录的事件的信息，请参阅[https://go.microsoft.com/fwlink/?LinkId=118271](https://go.microsoft.com/fwlink/?linkid=118271)。
 
-**Domain Admins** 组中的成员身份或同等身份是完成此过程所需的最低要求。 有关使用适当帐户和组成员身份[http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)的详细信息，请参阅。
+**Domain Admins** 组中的成员身份或同等身份是完成此过程所需的最低要求。 有关使用适当帐户和组成员身份的详细信息，请参阅[https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477)。
 
 #### <a name="to-troubleshoot-problems-caused-by-changes-in-cluster-related-active-directory-accounts"></a>解决由群集相关的 Active Directory 帐户中的更改导致的问题
 
-1.  在域控制器上，依次单击 "**开始**"、"**管理工具**"，然后单击 " **Active Directory 用户和计算机**"。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
+1.  在域控制器上，依次单击 "**开始**"、"**管理工具**"，然后单击 " **Active Directory 用户和计算机**"。 如果出现“用户帐户控制” 对话框，请确认它显示的是所需操作，然后单击“继续”。
 
 2.  展开 "默认**计算机**" 容器或群集名称帐户（群集的计算机帐户）所在的文件夹。 **计算机**位于<b>Active Directory 用户和计算机/</b><i>域节点</i><b>/Computers</b>中。
 
@@ -294,7 +294,7 @@ ms.locfileid: "71369891"
 
 5.  右键单击 "默认**计算机**" 容器或群集名称帐户所在的文件夹。
 
-6.  单击“属性”。
+6.  单击**属性**。
 
 7.  在“安全” 选项卡中，单击“高级”。
 
@@ -312,7 +312,7 @@ ms.locfileid: "71369891"
 
 10. 单击 **"确定"** ，直到返回到 " **Active Directory 用户和计算机**" 管理单元。
 
-11. 查看与创建计算机帐户（对象）相关的域策略（咨询域管理员，如果适用）。 确保每次配置群集服务或应用程序时，群集名称帐户都可以创建计算机帐户。 例如，如果你的域管理员已配置了设置，这些设置会导致在专用容器而不是默认**计算机**容器中创建所有新计算机帐户，请确保这些设置允许群集名称帐户同时在该容器中创建新的计算机帐户。
+11. 查看与创建计算机帐户（对象）相关的域策略（咨询域管理员，如果适用）。 确保每次配置群集服务或应用程序时，群集名称帐户都可以创建计算机帐户。 例如，如果你的域管理员已配置了设置，这些设置会导致在专用容器而不是默认**计算机**容器中创建所有新计算机帐户，请确保这些设置也允许群集名称帐户在该容器中创建新的计算机帐户。
 
 12. 展开 "默认**计算机**" 容器或其中一个群集服务或应用程序所在的计算机帐户所在的容器。
 

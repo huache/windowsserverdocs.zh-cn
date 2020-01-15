@@ -6,12 +6,12 @@ ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 19e8eef008d3818c413808ab1f085a7cc247ec36
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 209e87b90656555062d9f7e343beedb0143c1df2
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369496"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949114"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>使用 Hyper-v 虚拟化域控制器
 
@@ -25,7 +25,7 @@ Hyper-v 将不同的服务器角色合并到单台物理计算机上。 本指�
 
 本部分介绍 Hyper-v 服务器的硬件要求，如何避免单点故障，为 Hyper-v 服务器和虚拟机选择适当的配置类型，以及安全和性能决策。
 
-## <a name="hyper-v-requirements"></a>Hyper-v 要求
+## <a name="hyper-v-requirements"></a>Hyper-V 需求
 
 若要安装和使用 Hyper-v 角色，必须具备以下各项：
 
@@ -66,7 +66,7 @@ Hyper-v 将不同的服务器角色合并到单台物理计算机上。 本指�
 
 |Machine|配置1|Configuration 2|
 |-------|---------------|---------------|
-|主机|工作组或成员计算机|工作组或成员计算机|
+|Host|工作组或成员计算机|工作组或成员计算机|
 |Guest|域控制器|工作组或成员计算机|
 
 ![](media/virtualized-domain-controller-architecture/Dd363553.f44706fd-317e-4f0b-9578-4243f4db225f(WS.10).gif)
@@ -91,7 +91,7 @@ Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例
 
 若要大致了解虚拟化域控制器的性能，请使用[Active Directory 性能测试工具（ADTest）](https://go.microsoft.com/fwlink/?linkid=137088)执行以下性能测试。
 
-轻型目录访问协议（LDAP）测试在具有 ADTest 的物理域控制器上运行，然后在与物理域控制器相同的服务器上托管的虚拟机上运行。 物理计算机只使用了一个逻辑处理器，且虚拟机只使用了一个虚拟处理器来轻松达到 100% 的 CPU 使用率。 在下表中，每个测试后，括号中的字母和数字表示 ADTest 中的特定测试。 如此数据所示，虚拟化域控制器的性能为88到 98% 的物理域控制器性能。
+轻型目录访问协议（LDAP）测试在具有 ADTest 的物理域控制器上运行，然后在与物理域控制器相同的服务器上托管的虚拟机上运行。 物理计算机只使用了一个逻辑处理器，且虚拟机只使用了一个虚拟处理器来轻松达到100% 的 CPU 使用率。 在下表中，每个测试后，括号中的字母和数字表示 ADTest 中的特定测试。 如此数据所示，虚拟化域控制器的性能为88到98% 的物理域控制器性能。
 
 <table>
 <colgroup>
@@ -103,10 +103,10 @@ Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例
 </colgroup>
 <thead>
 <tr class="header">
-<th>测量</th>
+<th>度量</th>
 <th>测试</th>
 <th>物理</th>
-<th>虚拟主机</th>
+<th>Virtual</th>
 <th>Delta</th>
 </tr>
 </thead>
@@ -161,7 +161,7 @@ Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例
 <td><p>-1.12%</p></td>
 </tr>
 <tr class="even">
-<td><p>写入数/秒</p></td>
+<td><p>写入次数/秒</p></td>
 <td><p>写入多个属性（W2）</p></td>
 <td><p>6467</p></td>
 <td><p>5885</p></td>
@@ -176,7 +176,7 @@ Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例
 
 有关 AD DS 和 Hyper-v 性能优化的详细信息，请参阅[Windows Server 2016 的性能优化指南](../../../../administration/performance-tuning/index.md)。
 
-此外，请不要计划在配置为域控制器的虚拟机上使用差异磁盘 VHD，因为差异磁盘 VHD 会降低性能。 若要了解有关 Hyper-v 磁盘类型（包括差异磁盘）的详细信息，请参阅[新建虚拟硬盘向导](http://go.microsoft.com/fwlink/?linkid=137279)。
+此外，请不要计划在配置为域控制器的虚拟机上使用差异磁盘 VHD，因为差异磁盘 VHD 会降低性能。 若要了解有关 Hyper-v 磁盘类型（包括差异磁盘）的详细信息，请参阅[新建虚拟硬盘向导](https://go.microsoft.com/fwlink/?linkid=137279)。
 
 有关虚拟宿主环境中 AD DS 的其他信息，请参阅在 Microsoft 知识库中的[虚拟宿主环境中承载 Active Directory 域控制器时要注意的事项](https://go.microsoft.com/fwlink/?linkid=141292)。
 
@@ -206,7 +206,7 @@ Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例
 
 System Center Virtual Machine Manager （VMM）2008提供对物理计算机和虚拟机的统一管理。 它还提供将物理计算机迁移到虚拟机的功能。 此过程称为物理到虚拟机转换（P2V 转换）。 在 P2V 转换过程中，要迁移的新虚拟机和物理域控制器不得同时运行，以避免在[usn 和 Usn 回滚](#usn-and-usn-rollback)中所述的 usn 回滚情况。
 
-应使用脱机模式执行 P2V 转换，以便在域控制器重新打开时目录数据保持一致。 在转换物理服务器向导中提供并建议使用 "脱机模式" 选项。 有关联机模式和脱机模式之间差异的说明，请参阅[P2V：在 VMM 中将物理计算机转换为虚拟机](https://go.microsoft.com/fwlink/?linkid=155072)。 在 P2V 转换期间，虚拟机不应连接到网络。 只有在完成并验证了 P2V 转换过程之后，才应启用虚拟机的网络适配器。 此时，物理源计算机将处于关闭状态。 重新格式化硬盘之前，不要再次将物理源计算机重新进入网络。
+应使用脱机模式执行 P2V 转换，以便在域控制器重新打开时目录数据保持一致。 在转换物理服务器向导中提供并建议使用 "脱机模式" 选项。 有关联机模式和脱机模式之间差异的说明，请参阅[在 VMM 中将物理计算机转换为虚拟机](https://go.microsoft.com/fwlink/?linkid=155072)。 在 P2V 转换期间，虚拟机不应连接到网络。 只有在完成并验证了 P2V 转换过程之后，才应启用虚拟机的网络适配器。 此时，物理源计算机将处于关闭状态。 重新格式化硬盘之前，不要再次将物理源计算机重新进入网络。
 
 > [!NOTE]
 > 有一些更安全的选项可用于创建新的虚拟 Dc，而不会运行创建 USN 回滚的风险。 你可以通过定期升级设置新的虚拟 DC，从介质安装（IfM）升级，还可以使用域控制器克隆（如果你已经有至少一个虚拟 DC）。
@@ -247,7 +247,7 @@ System Center Virtual Machine Manager （VMM）2008提供对物理计算机和�
   > 如果打算将 Bitlocker 用于虚拟 DC 来宾，则需要确保将其他卷配置为使用 "自动解锁"。
   > 有关配置自动解锁的详细信息，请参阅[BitLockerAutoUnlock](https://docs.microsoft.com/powershell/module/bitlocker/enable-bitlockerautounlock)
 
-- **VHD 文件的主机存储**。 针对主机存储建议解决 VHD 文件的存储。 为了获得最佳性能，请不要将 VHD 文件存储在由其他服务或应用程序使用的磁盘上，如安装了主机 Windows 操作系统的系统磁盘。 将每个 VHD 文件存储在独立于主机操作系统和任何其他 VHD 文件的分区中。 理想的配置是将每个 VHD 文件存储在单独的物理驱动器上。  
+- **VHD 文件的主机存储**。 建议：主机存储建议解决 VHD 文件的存储。 为了获得最佳性能，请不要将 VHD 文件存储在由其他服务或应用程序使用的磁盘上，如安装了主机 Windows 操作系统的系统磁盘。 将每个 VHD 文件存储在独立于主机操作系统和任何其他 VHD 文件的分区中。 理想的配置是将每个 VHD 文件存储在单独的物理驱动器上。  
 
   主机物理磁盘系统还必须至少满足以下条件**之一**，以满足虚拟化工作负荷数据完整性的要求：  
 
@@ -352,11 +352,11 @@ System Center Virtual Machine Manager （VMM）2008提供对物理计算机和�
 ## <a name="to-restore-a-previous-version-of-a-virtual-domain-controller-vhd-without-system-state-data-backup"></a>还原以前版本的虚拟域控制器 VHD 而不进行系统状态数据备份
 
 1. 使用以前的 VHD，如前一部分中所述，在 DSRM 中启动虚拟域控制器。 不允许域控制器在正常模式下启动。 如果错过了 Windows 启动管理器屏幕，并且域控制器开始在正常模式下启动，请关闭虚拟机以防止其完成启动。 有关输入 DSRM 的详细说明，请参阅上一节。
-2. 打开注册表编辑器。 若要打开注册表编辑器，请单击 "**开始**"，再单击 "**运行**"，键入**regedit**，然后单击 "确定"。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。 在注册表编辑器中，展开以下路径：**HKEY\_本地计算机系统\\CurrentControlSet Services NTDS参数\\。\\\\\_\\** 查找名为 " **DSA 先前还原计数**" 的值。 如果值为，请记下该设置。 如果值不存在，则设置等于默认值0。 如果看不到任何值，请不要添加值。
+2. 打开注册表编辑器。 若要打开注册表编辑器，请单击 "**开始**"，再单击 "**运行**"，键入**regedit**，然后单击 "确定"。 如果出现了“用户帐户控制” 对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。 在注册表编辑器中，展开以下路径： **HKEY\_本地\_计算机\\SYSTEM\\CurrentControlSet\\Services\\NTDS\\参数**。 查找名为 " **DSA 先前还原计数**" 的值。 如果值为，请记下该设置。 如果值不存在，则设置等于默认值0。 如果看不到任何值，请不要添加值。
 3. 右键单击**Parameters**项，单击 "**新建**"，然后单击 " **DWORD （32位）值**"。
 4. 键入 "**从备份中还原**的新名称数据库"，然后按 enter。
-5. 双击刚创建的值以打开 "**编辑 DWORD （32位）值**" 对话框，然后在 "**值数据**" 框中键入**1** 。 使用 "**从备份中还原的数据库**" 选项在运行带有 Service Pack 4 （SP4）的 Windows 2000 Server 的域控制器上提供，Windows Server 2003 的更新[包括在Microsoft 知识库中的 windows Server 2003、Windows Server 2008 和 Windows Server 2008 R2](https://go.microsoft.com/fwlink/?linkid=137182)以及 Windows server 2008。
-6. 在正常模式下重新启动域控制器。
+5. 双击刚创建的值以打开 "**编辑 DWORD （32位）值**" 对话框，然后在 "**值数据**" 框中键入**1** 。 使用 "**从备份中还原的数据库**" 选项在运行带有 Service Pack 4 （SP4）的 Windows 2000 Server 的域控制器上提供，windows server 2003 的更新包括在 Microsoft 知识库[中的 windows Server 2003、windows Server 2008 和 Windows server 2008 R2 （在 windows Server、windows Server 和 Windows server 2008 R2](https://go.microsoft.com/fwlink/?linkid=137182)中）中进行检测和恢复，以及 windows server。
+6. 以正常方式重新启动域控制器。
 7. 当域控制器重新启动时，打开事件查看器。 若要打开事件查看器，请依次单击“开始”、“控制面板”，双击“管理工具”，然后双击“事件查看器”。
 8. 展开 "**应用程序和服务日志**"，然后单击 "**目录服务**" 日志。 确保 "详细信息" 窗格中显示事件。
 9. 右键单击 "**目录服务**" 日志，然后单击 "**查找**"。 在 "**查找内容**" 中，键入**1109**，然后单击 "**查找下一个**"。
@@ -391,11 +391,11 @@ Active Directory 域服务（AD DS）使用更新序列号（Usn）来跟踪域�
 以下两个复制元数据表包含 Usn。 源域控制器和目标域控制器使用它们来筛选目标域控制器需要的更新。
 
 1. **最新矢量**：目标域控制器为跟踪从所有源域控制器接收的源更新而维护的表。 当目标域控制器请求对目录分区进行更改时，它将为源域控制器提供最新的矢量。 然后，源域控制器使用此值来筛选它发送到目标域控制器的更新。 在成功完成复制循环后，源域控制器会将其最新矢量发送到目标，以确保目标域控制器知道它已与每个域控制器同步原始更新和更新的级别与源相同。  
-2. **高水印**：一个值，目的域控制器维护此值以跟踪从特定分区的特定源域控制器接收的最新更改。 高水位线阻止源域控制器发送目标域控制器已收到的更改。  
+2. **高水印**：目标域控制器维护的一个值，用于跟踪从特定分区的特定源域控制器接收的最新更改。 高水位线阻止源域控制器发送目标域控制器已收到的更改。  
 
 ## <a name="directory-database-identity"></a>目录数据库标识
 
-除了 Usn 以外，域控制器还跟踪源复制伙伴的目录数据库。 服务器上运行的目录数据库的标识与服务器对象本身的标识分开维护。 每个域控制器上的目录数据库标识存储在 "NTDS 设置" 对象的**invocationID**属性中，该属性位于以下轻型目录访问协议（LDAP）路径下： CN = NTDS Settings，Cn = ServerName，cn= Servers，cn =*SiteName*，Cn = Sites，Cn = Configuration，Dc =*ForestRootDomain*。 服务器对象标识存储在 NTDS 设置对象的**objectGUID**特性中。 服务器对象的标识决不会更改。 但是，当服务器上出现系统状态还原过程或添加应用程序目录分区，并随后从服务器重新添加时，目录数据库的标识会更改。 （另一种情况：当 HyperV 实例在包含虚拟 DC VHD 的分区上触发其 VSS 编写器时，来宾反过来触发其自己的 VSS 编写器（与上述备份/还原所使用的机制相同的机制），这是 invocationID 的另一种方法。&
+除了 Usn 以外，域控制器还跟踪源复制伙伴的目录数据库。 服务器上运行的目录数据库的标识与服务器对象本身的标识分开维护。 每个域控制器上的目录数据库标识存储在 "NTDS 设置" 对象的**invocationID**属性中，该属性位于以下轻型目录访问协议（LDAP）路径下： CN = NTDS Settings，Cn = ServerName，Cn = Servers，Cn =*SiteName*，cn = Sites，cn = Configuration，dc =*ForestRootDomain*。 服务器对象标识存储在 NTDS 设置对象的**objectGUID**特性中。 服务器对象的标识决不会更改。 但是，当服务器上出现系统状态还原过程或添加应用程序目录分区，并随后从服务器重新添加时，目录数据库的标识会更改。 （另一种情况：当 HyperV 实例在包含虚拟 DC VHD 的分区上触发其 VSS 编写器时，来宾反过来触发其自己的 VSS 编写器（备份/还原所使用的相同机制），从而导致重置 invocationID 的另一种方法）
 
 因此， **invocationID**会有效地将域控制器上的一组原始更新与特定版本的目录数据库相关联。 最新的矢量和高水位标记表分别使用**invocationID**和 DC GUID，以便域控制器知道复制信息来自 Active Directory 数据库的哪个副本。
 

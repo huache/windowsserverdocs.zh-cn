@@ -11,12 +11,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: 0627c38f15966948dd4bea91b66a96ee59ec89e5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e32c11dac1d887ba0ae0192bb658f71ece77a42c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370450"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947245"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>适用于 Microsoft 产品的 Linux 软件存储库
 
@@ -27,10 +27,10 @@ Microsoft 的 Linux 软件存储库由多个子存储库组成：
 
  - 生产–为要在生产中使用的包指定生产子存储库。 根据 Microsoft 的适用支持协议或计划，Microsoft 对这些包进行商业支持。
 
- - mssql-服务器-这些存储库包含 Linux 上的 Microsoft SQL Server 的包-另请参阅：[Linux 上的 SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux)。
+ - mssql server-这些存储库包含 Linux 上的 Microsoft SQL Server 的包-另请参阅： [Linux 上的 SQL Server](https://www.microsoft.com/sql-server/sql-server-vnext-including-Linux)。
 
 > [!Note]
-> Linux 软件存储库中的包受包中的许可条款的约束。 使用包之前, 请阅读许可条款。 安装和使用此包即表示你接受这些条款。 如果不同意许可条款, 请不要使用包。
+> Linux 软件存储库中的包受包中的许可条款的约束。 使用程序包之前请阅读这些许可条款。 安装和使用程序包即表示接受这些条款。 如果不同意许可条款，则不要使用程序包。
 
 
 ## <a name="configuring-the-repositories"></a>配置存储库
@@ -91,9 +91,9 @@ Microsoft 的 Linux 软件存储库由多个子存储库组成：
 
 **包和存储库签名密钥**
 
- - 可在此处下载 Microsoft 的 GPG 公钥：[https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc)
- - 公钥 ID：Microsoft （版本签名）<gpgsecurity@microsoft.com>
- - 公钥指纹：`BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
+ - Microsoft 的 GPG 公钥可在此处下载： [https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc)
+ - 公钥 ID： Microsoft （Release 签名） <gpgsecurity@microsoft.com>
+ - 公钥指纹： `BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
 
 ### <a name="examples"></a>例如：
 

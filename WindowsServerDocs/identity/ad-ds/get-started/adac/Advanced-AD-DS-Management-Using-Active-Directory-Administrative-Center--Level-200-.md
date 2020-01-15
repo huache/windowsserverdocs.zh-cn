@@ -9,16 +9,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00e307da35911189114257eea88ccaf90ceab1ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6ec8ac4936889356ef92e82c0c89491e5c853a95
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390725"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949335"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 本主题详细介绍了更新的 Active Directory 管理中心及其新的 Active Directory 回收站、细化密码策略，以及更详细的 Windows PowerShell 历史记录查看器，包括体系结构、常见任务示例和疑难解答信息。 有关简介，请参阅[Active Directory 管理中心增强&#40;级别&#41;100 简介](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)。  
   
@@ -64,11 +64,11 @@ Active Directory 回收站需要 Windows Server 2008 R2 林功能级别，并且
   
 ### <a name="enabling-active-directory-recycle-bin-using-active-directory-administrative-center"></a>使用 Active Directory 管理中心启用 Active Directory 回收站
 
-若要启用 Active Directory 回收站，请打开 **Active Directory 管理中心** ，然后在导航窗格中单击你的林的名称。 从**任务**窗格中，单击“启用回收站”。  
+若要启用 Active Directory 回收站，请打开 **Active Directory 管理中心** ，然后在导航窗格中单击你的林的名称。 从 **任务** 窗格中，单击“启用回收站”。  
   
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
   
-Active Directory 管理中心显示“启用回收站确认” 对话框。 此对话框警告你启用回收站操作是不可逆的。 单击“确定”以启用 Active Directory 回收站。 Active Directory 管理中心将显示另一个对话框，以提醒你在所有域控制器都复制配置更改之后，Active Directory 回收站才能实现完整功能。  
+Active Directory 管理中心显示“启用回收站确认” 对话框。 此对话框警告你启用回收站操作是不可逆的。 单击“确定” 以启用 Active Directory 回收站。 Active Directory 管理中心将显示另一个对话框，以提醒你在所有域控制器都复制配置更改之后，Active Directory 回收站才能实现完整功能。  
   
 > [!IMPORTANT]  
 > 在以下情况下，用于启用 Active Directory 回收站的选项不可用：  
@@ -92,15 +92,15 @@ Enable-ADOptionalFeature
   
 #### <a name="storage-and-filtering"></a>存储和筛选
 
-Active Directory 回收站可保留在林中删除的所有对象。 它将根据 **msDS deletedObjectLifetime** 属性保存这些对象，默认情况下，该属性将设置为与林的 **tombstoneLifetime** 属性相匹配。 在使用 Windows Server 2003 SP1 或更高版本创建的任何林中，默认情况下， **tombstoneLifetime** 的值设置为 180 天。 在从 Windows 2000 升级或随 Windows Server 2003（没有 Service Pack）一起安装的任何林中，未设置默认 tombstoneLifetime 属性，因此 Windows 将使用内部默认的 60 天。 所有内容都可配置。你可以使用 Active Directory 管理中心还原从林的域分区中删除的任何对象。 你必须继续使用 cmdlet **Restore-adobject** 还原其他分区（例如“配置”）中删除的对象。启用 Active Directory 回收站可使**已删除对象**容器在 Active Directory 管理中心的每个域分区下可见。  
+Active Directory 回收站可保留在林中删除的所有对象。 它将根据 **msDS deletedObjectLifetime** 属性保存这些对象，默认情况下，该属性将设置为与林的 **tombstoneLifetime** 属性相匹配。 在使用 Windows Server 2003 SP1 或更高版本创建的任何林中，默认情况下， **tombstoneLifetime** 的值设置为 180 天。 在从 Windows 2000 升级或随 Windows Server 2003（没有 Service Pack）一起安装的任何林中，未设置默认 tombstoneLifetime 属性，因此 Windows 将使用内部默认的 60 天。 所有内容都可配置。你可以使用 Active Directory 管理中心还原从林的域分区中删除的任何对象。 你必须继续使用 cmdlet **Restore-adobject** 还原其他分区（例如“配置”）中删除的对象。启用 Active Directory 回收站可使 **已删除对象** 容器在 Active Directory 管理中心的每个域分区下可见。  
   
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_DeletedObjectsContainer.png)  
   
-**已删除对象**容器向你显示该域分区中的所有可还原对象。 早于 **msDS-deletedObjectLifetime** 的已删除对象称为已回收对象。 Active Directory 管理中心不会显示已回收对象，并且你无法使用 Active Directory 管理中心还原这些对象。  
+**已删除对象** 容器向你显示该域分区中的所有可还原对象。 早于 **msDS-deletedObjectLifetime** 的已删除对象称为已回收对象。 Active Directory 管理中心不会显示已回收对象，并且你无法使用 Active Directory 管理中心还原这些对象。  
   
-有关回收站的体系结构和处理规则的更深入说明，请参阅 [AD 回收站：了解、实现、最佳做法和故障排除](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)。  
+有关回收站的体系结构和处理规则的更深入说明，请参阅 [AD 回收站：了解、实现、最佳做法和故障排除](https://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)。  
   
-Active Directory 管理中心人为地将从容器返回的默认对象数量限制为 20,000 个对象。 通过依次单击“管理”菜单和“管理列表选项”，可以将此上限增加到 100,000 个对象。  
+Active Directory 管理中心人为地将从容器返回的默认对象数量限制为 20,000 个对象。 通过依次单击“管理” 菜单和“管理列表选项”，可以将此上限增加到 100,000 个对象。  
   
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_MgmtList.png)  
   
@@ -150,7 +150,7 @@ Active Directory 管理中心将提供强大的条件和筛选选项，你应该
 还原已删除对象一直都是单个操作。  Active Directory 管理中心使该操作更容易。 若要还原已删除对象（例如单个用户），请执行以下操作：  
   
 1. 在 Active Directory 管理中心的导航窗格中单击域名。  
-2. 在管理列表中，双击“已删除对象”。  
+2. 在管理列表中，双击“已删除对象” 。  
 3. 右键单击该对象，然后单击“还原”，或者从“任务” 窗格中单击“还原” 。  
   
 该对象将还原到其原始位置。  
@@ -180,7 +180,7 @@ Active Directory 管理中心将提供强大的条件和筛选选项，你应该
   
 “无法执行该操作，因为未实例化或删除该对象的父对象。”  
   
-**最后一个已知的父对象**属性显示每个对象的父关系。 当你在还原父对象后刷新 Active Directory 管理中心时， **最后一个已知的父对象** 属性将从已删除位置更改为已还原位置。 因此，你可以在父对象的位置不再显示已删除对象容器的可分辨名称时还原该子对象。  
+**最后一个已知的父对象** 属性显示每个对象的父关系。 当你在还原父对象后刷新 Active Directory 管理中心时， **最后一个已知的父对象** 属性将从已删除位置更改为已还原位置。 因此，你可以在父对象的位置不再显示已删除对象容器的可分辨名称时还原该子对象。  
   
 请考虑管理员意外删除包含子 OU 和用户的销售 OU 的情况。  
   
@@ -216,8 +216,8 @@ Restore-adobject
 
 随着时间的推移，大中型企业中的已删除对象容器可能会累计超过 20,000（甚至 100,000）个对象，并且很难显示所有对象。 由于 Active Directory 管理中心中的筛选器机制依赖于客户端筛选，因此它无法显示这些其他的对象。 若要解决此限制，请使用以下步骤执行服务器端搜索：  
   
-1. 右键单击“已删除对象”容器并单击“在此节点下搜索”。  
-2. 单击 V 形图标以显示“+添加条件”菜单，选择并添加“给定日期之间的最后修改时间”。 最后修改时间（**whenChanged** 属性）近似于删除时间；在大多数环境中，它们是相同的。 此查询执行服务器端搜索。  
+1. 右键单击“已删除对象” 容器并单击“在此节点下搜索”。  
+2. 单击 V 形图标以显示“+添加条件” 菜单，选择并添加“给定日期之间的最后修改时间”。 最后修改时间（ **whenChanged** 属性）近似于删除时间；在大多数环境中，它们是相同的。 此查询执行服务器端搜索。  
 3. 通过在结果中使用进一步显示筛选、排序等来找到要还原的已删除对象，然后以正常方式还原它们。  
   
 ## <a name="BKMK_FGPP"></a>使用 Active Directory 管理中心配置和管理细化密码策略  
@@ -226,7 +226,7 @@ Restore-adobject
 
 Active Directory 管理中心使你能够创建和管理细化密码策略 (FGPP) 对象。 Windows Server 2008 引入了 FGPP 功能，但 Windows Server 2012 具有它的第一个图形管理界面。 你可在域级别上应用细化密码策略，它能够替代 Windows Server 2003 所需的单个域密码。 通过创建具有不同设置的不同 FGPP，单个用户或组可在域中获取不同的密码策略。  
   
-有关细化密码策略的信息，请参阅 [AD DS 细化密码和帐户锁定策略分步指南 (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx)。  
+有关细化密码策略的信息，请参阅 [AD DS 细化密码和帐户锁定策略循序渐进指南 (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx)。  
   
 在“导航”窗格中，依次单击“树视图”、你的域、“系统”和“密码设置容器”，然后在“任务”窗格中，单击“新建” 和“密码设置”。  
   
@@ -234,7 +234,7 @@ Active Directory 管理中心使你能够创建和管理细化密码策略 (FGPP
   
 ### <a name="managing-fine-grained-password-policies"></a>管理细化密码策略
 
-创建新 FGPP 或编辑现有 FGPP 将启动“密码设置”编辑器。 你可从此处配置所有所需的密码策略，就像在 Windows Server 2008 或 Windows Server 2008 R2 中执行该操作一样，区别仅在于现在使用专用于该目的的编辑器。  
+创建新 FGPP 或编辑现有 FGPP 将启动“密码设置” 编辑器。 你可从此处配置所有所需的密码策略，就像在 Windows Server 2008 或 Windows Server 2008 R2 中执行该操作一样，区别仅在于现在使用专用于该目的的编辑器。  
   
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
   
@@ -290,7 +290,7 @@ Active Directory 管理中心 Windows PowerShell 历史记录查看器的目的�
   
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ViewArgs.png)  
   
-单击“启动任务”菜单以创建手动表示法，然后使用 Active Directory 管理中心来创建、修改或删除对象。 键入之前正在执行的操作。  完成所做的更改时，请选择“结束任务”。 任务备注将执行的所有操作汇集到折叠备注中，你可使用它来更好地了解情况。  
+单击“启动任务” 菜单以创建手动表示法，然后使用 Active Directory 管理中心来创建、修改或删除对象。 键入之前正在执行的操作。  完成所做的更改时，请选择“结束任务”。 任务备注将执行的所有操作汇集到折叠备注中，你可使用它来更好地了解情况。  
   
 例如，若要查看用于更改用户密码并从组中删除该用户的 Windows PowerShell 命令：  
   
@@ -348,7 +348,7 @@ Active Directory 管理中心现在包含内置日志记录，作为跟踪配置
 </system.diagnostics>
 ```
 
-**DsacLogLevel** 的详细级别为**无**、**错误**、**警告**、**信息**和**详细**。 输出文件名可进行配置，并将写入 dsac.exe 所在的相同文件夹。 该输出可以告诉你有关以下方面的更多信息：如何运行 ADAC、它联系了哪些域控制器、已执行哪些 Windows PowerShell 命令、响应了哪些内容以及进一步的详细信息的。  
+**DsacLogLevel** 的详细级别为 **无**、 **错误**、 **警告**、 **信息**和 **详细**。 输出文件名可进行配置，并将写入 dsac.exe 所在的相同文件夹。 该输出可以告诉你有关以下方面的更多信息：如何运行 ADAC、它联系了哪些域控制器、已执行哪些 Windows PowerShell 命令、响应了哪些内容以及进一步的详细信息的。  
 
 例如，在使用“信息”级别时（这会返回除跟踪级别详细级别之外的所有结果），将发生以下事件：  
   
@@ -470,7 +470,7 @@ Active Directory 管理中心现在包含内置日志记录，作为跟踪配置
    Netstat -anob > ports.txt  
    ```
 
-   检查 ports.txt 文件，并验证 ADWS 服务正在端口 9389 上进行侦听。 示例：  
+   检查 ports.txt 文件，并验证 ADWS 服务正在端口 9389 上进行侦听。 示例  
 
    ```
    TCP    0.0.0.0:9389    0.0.0.0:0    LISTENING    1828  

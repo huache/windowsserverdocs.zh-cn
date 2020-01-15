@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 27d456dd274b917233f0484f055b679dc8c73214
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cce76e006272104033e1437e0ccf6cad5bc47f3f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403502"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950307"
 ---
 # <a name="passwords-overview"></a>密码概述
 
@@ -26,7 +26,7 @@ ms.locfileid: "71403502"
 
 适用于 IT 专业人员的本主题介绍了 Windows 操作系统中使用的密码，并链接到有关凭据管理策略中的密码使用的文档和讨论。
 
-## <a name="BKMK_OVER"></a>功能说明
+## <a name="BKMK_OVER"></a>功能描述
 如今的操作系统和应用程序都是围绕密码来构建的，即使使用智能卡或生物识别系统，所有帐户仍具有密码，但在某些情况下仍然可以使用这些帐户。 某些帐户（特别是用于运行服务的帐户）甚至不能使用智能卡和生物识别令牌，因此必须使用密码进行身份验证。 Windows 使用加密哈希来保护密码。
 
 有关 Windows 密码的详细信息，请参阅[密码技术概述](https://technet.microsoft.com/library/hh994558(WS.10).aspx)。
@@ -50,11 +50,11 @@ Windows Server 2012 和 Windows 8 中未弃用密码功能。
 
 |内容类型|引用|
 |--------|-------|
-|**方案文档**|[保护数字标识](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
+|**方案文档**|[保护数字标识](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
 |**操作**|[Active Directory 用户和计算机](https://technet.microsoft.com/library/cc754217.aspx)|
-|**疑难解答**|[查看密码过期时间 \- Active Directory PowerShell 博客](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
+|**疑难解答**|[查看密码过期时间 \- Active Directory PowerShell 博客](https://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
 |**安全性**| Windows Server 2008 R2 和 Windows 7[威胁和对策指南：帐户策略](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx)<br /><br />[更改和创建强密码](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)的指南|
 |**工具和设置**|[Microsoft 下载中心上的 Windows 和 Windows Server 组策略设置参考](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
-|**社区资源**|[保护数字标识](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[使用 Windows Live ID 登录 Windows 8](http://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[使用图片密码登录](http://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[优化图片密码安全性](http://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
+|**社区资源**|[保护数字标识](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[使用 Windows Live ID 登录 Windows 8](https://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[使用图片密码登录](https://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[优化图片密码安全性](https://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
 
 

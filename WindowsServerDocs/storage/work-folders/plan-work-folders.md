@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: 如何计划工作文件夹部署（包括系统要求）和如何准备网络环境。
-ms.openlocfilehash: e62cd61350299461d725c5d84209230ce1cc41a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bf5cbc5a365dec3d34dcaa2c3bd6d27ad4f267bc
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365740"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950201"
 ---
 # <a name="planning-a-work-folders-deployment"></a>计划工作文件夹部署
 
@@ -32,7 +32,7 @@ ms.locfileid: "71365740"
   
 - 基本了解如何通过 Web 反向代理启用对内部资源的 Web 访问  
   
-  下列部分将会帮助你设计工作文件夹实施方案。 下一主题[部署工作文件夹](deploy-work-folders.md)中介绍了工作文件夹的部署。  
+  下列部分将会帮助你设计工作文件夹实施方案。 下一主题 [Deploying Work Folders](deploy-work-folders.md).中介绍了工作文件夹的部署。  
   
 ##  <a name="BKMK_SOFT"></a>软件要求  
 
@@ -60,7 +60,7 @@ ms.locfileid: "71365740"
   
 -   计算机必须运行下列操作系统之一：  
   
-    -   Windows 10  
+    -   Windows 10  
   
     -   Windows 8.1  
   
@@ -74,7 +74,7 @@ ms.locfileid: "71365740"
   
 -   Windows 7 电脑必须运行下列 Windows 版本操作系统之一：  
   
-    -   Windows 7 专业版  
+    -   Windows 7 专业版  
   
     -   Windows 7 旗舰版  
   
@@ -91,13 +91,13 @@ ms.locfileid: "71365740"
 -   工作文件夹不支持回滚客户端虚拟机的虚拟机状态。 但允许使用系统映像备份或其他备份应用从客户端虚拟机内部执行备份和还原操作。  
   
 > [!NOTE]
->  请确保在所有工作文件夹服务器和任何运行 Windows 8.1 或 Windows Server 2012 R2 的客户端计算机上安装 Windows 8.1 和 Windows Server 2012 R2 通用版本更新汇总。 有关详细信息，请参阅 Microsoft 知识库中的文章 [2883200](https://support.microsoft.com/kb/2883200) 。  
+>  请确保在所有工作文件夹服务器和任何运行 Windows 8.1 或 Windows Server 2012 R2 的客户端计算机上安装 Windows 8.1 和 Windows Server 2012 R2 通用版本更新汇总。 有关详细信息，请参阅 Microsoft 知识库中的文章 [2883200](https://support.microsoft.com/kb/2883200)。  
   
 ## <a name="deployment-scenarios"></a>部署方案  
  可以在客户环境中任意数目的文件服务器上实施工作文件夹。 这样，便可以根据客户的需求调整工作文件夹实施方案的规模，提高部署的个性化程度。 但是，大多数部署采用下列三种基本方案之一。  
   
 ### <a name="single-site-deployment"></a>单站点部署  
- 在单站点部署中，文件服务器托管在客户基础结构中的中心站点内。 使用高度集中化基础结构的客户，或者其小型分支机构未维护本地文件服务器的客户，经常采用此部署类型。 由于所有服务器资产都是本地的，同时，Internet 入口/出口在此位置很可能已集中化，因此，IT 工作人员可以更方便地管理这种部署模型。 但是，这种部署模型还依赖于中心站点与所有分支机构之间的良好 WAN 连接，出现网络状态问题时，位于分支机构的用户很容易遇到服务中断。  
+ 在单站点部署中，文件服务器托管在客户基础结构中的中央站点内。 使用高度集中化基础结构的客户，或者其小型分支机构未维护本地文件服务器的客户，经常采用此部署类型。 由于所有服务器资产都是本地的，同时，Internet 入口/出口在此位置很可能已集中化，因此，IT 工作人员可以更方便地管理这种部署模型。 但是，这种部署模型还依赖于中央站点与所有分支机构之间的良好 WAN 连接，出现网络状态问题时，位于分支机构的用户很容易遇到服务中断。  
   
 ### <a name="multiple-site-deployment"></a>多站点部署  
  在多站点部署中，文件服务器托管在客户基础结构中的多个位置。 这可能意味着需要建立多个数据中心，或者分支机构需要维护不同的文件服务器。 大型客户环境，或者其多个大型分支机构维护本地服务器资产的客户，经常采用此部署类型。 这种部署模型更复杂，IT 人员更难对它进行管理。另外，它还要求客户精心协调数据存储及维护 Active Directory 域服务 (AD DS)，以确保用户为工作文件夹使用正确的同步服务器。  
@@ -123,16 +123,16 @@ ms.locfileid: "71365740"
   
 - 在未加入域的电脑上使用工作文件夹**自动锁定屏幕，并要求输入密码**策略。  
   
-  同时可以使用组策略将工作文件夹服务器指定到已加入域的电脑。 这在一定程度上简化了工作文件夹的设置 – 否则，用户需要输入其工作电子邮件地址来查找设置（假设已正确设置工作文件夹），或者输入你通过电子邮件或其他通信方式明确提供给他们的工作文件夹 URL。  
+  同时可以使用组策略将工作文件夹服务器指定到已加入域的电脑。 这在一定程度上简化了工作文件夹的设置 - 否则，用户需要输入其工作电子邮件地址来查找设置（假设已正确设置工作文件夹），或者输入你通过电子邮件或其他通信方式明确提供给他们的工作文件夹 URL。  
   
   你还可以使用组策略强制基于用户或计算机设置工作文件夹，不过，这样做会导致工作文件夹在用户登录到的每台电脑上同步（使用按用户策略设置时），并且会阻止用户为其电脑上的工作文件夹指定备用位置（例如，在 microSD 卡上指定一个位置，以节省主驱动器上的空间）。 我们建议你在强制自动设置之前仔细评估用户的需求。  
   
 ### <a name="windows-intune"></a>Windows Intune  
- Windows Intune 还为未加入域的设备（这些设备只有在未加入域的情况下才能存在）提供了安全性与可管理性层。 你可以使用 Windows Intune 来配置和管理用户的个人设备，例如，通过 Internet 连接到工作文件夹的平板电脑。 Windows Intune 可以为设备提供要使用的同步服务器 URL –否则，用户必须输入其工作电子邮件地址来查找设置（如果以 https://workfolders形式发布公共工作文件夹 URL。<em>contoso.com</em>），或直接输入同步服务器 URL。  
+ Windows Intune 还为未加入域的设备（这些设备只有在未加入域的情况下才能存在）提供了安全性与可管理性层。 你可以使用 Windows Intune 来配置和管理用户的个人设备，例如，通过 Internet 连接到工作文件夹的平板电脑。 Windows Intune 可以为设备提供要使用的同步服务器 URL –否则，用户必须输入其工作电子邮件地址来查找设置（如果以 https://workfolders 形式发布公共工作文件夹 URL。<em>contoso.com</em>），或直接输入同步服务器 URL。  
   
  如果不部署 Windows Intune，用户必须手动配置外部设备，这可能会导致对客户技术支持工作人员的要求提高。  
   
- 还可以使用 Windows Intune 有选择性地擦除用户设备上的工作文件夹中的数据，且不影响其他数据 – 如果某个用户离职或者其设备失窃，此功能可以提供便利。  
+ 还可以使用 Windows Intune 有选择性地擦除用户设备上的工作文件夹中的数据，且不影响其他数据 - 如果某个用户离职或者其设备失窃，此功能可以提供便利。  
   
 ### <a name="web-application-proxyazure-ad-application-proxy"></a>Web 应用程序代理/Azure AD 应用程序代理  
  工作文件夹的设计思路是使连接到 Internet 的设备能够从内部网络安全地检索业务数据，从而让用户借助其平板电脑以及一般情况下无法访问工作文件的设备“随身携带其数据”。 为此，必须使用反向代理发布同步服务器 URL 并将其提供给 Internet 客户端。 
@@ -149,13 +149,13 @@ ms.locfileid: "71365740"
 ### <a name="number-of-sync-servers"></a>同步服务器数目  
  客户可以在一个环境中运行多个同步服务器。 出于下列多种原因，可能需要采用此配置：  
   
-- 用户的地理位置分散 – 例如，存在多个分支机构文件服务器或区域数据中心  
+- 用户的地理位置分散 - 例如，存在多个分支机构文件服务器或区域数据中心  
   
-- 数据存储要求 – 某些业务部门可能使用了特定的数据存储，或者需要使用专用服务器来更方便地达到处理要求  
+- 数据存储要求 - 某些业务部门可能使用了特定的数据存储，或者需要使用专用服务器来更方便地达到处理要求  
   
-- 负载平衡 – 在大型环境中，将用户数据存储在多个服务器上可以提高服务器性能和运行时间。  
+- 负载平衡 - 在大型环境中，将用户数据存储在多个服务器上可以提高服务器性能和运行时间。  
   
-  有关工作文件夹服务器调整和性能的信息，请参阅 [有关工作文件夹部署的性能注意事项](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)。  
+  有关工作文件夹服务器调整和性能的信息，请参阅[有关工作文件夹部署的性能注意事项](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)。  
   
 > [!NOTE]
 >  使用多个同步服务器时，我们建议为用户设置自动服务器发现。 此过程依赖于 AD DS 中每个用户帐户的某个属性的配置。 该属性名为 **msDS-SyncServerURL**，将 Windows Server 2012 R2 域控制器添加到域或者应用 Active Directory 架构更新后，便可以在用户帐户上使用该属性。 应该为每个用户设置此属性，以确保用户连接到正确的同步服务器。 通过使用自动服务器发现，组织可以在 "友好的" URL （例如 *https://workfolders.contoso.com* ）后面发布工作文件夹，而不考虑操作中的同步服务器的数量。  
@@ -163,15 +163,15 @@ ms.locfileid: "71365740"
 ### <a name="number-of-sync-shares"></a>同步共享数目  
  单个同步服务器可以维护多个同步共享。 这对于以下情况可能十分有用：  
   
--   审核和安全要求 – 如果特定部门使用的数据必须接受更严格的审核或者需要长时间保留，则独立的同步共享可以帮助管理员以不同的独立审核级别保留用户文件夹。  
+-   审核和安全要求 - 如果特定部门使用的数据必须接受更严格的审核或者需要长时间保留，则独立的同步共享可以帮助管理员以不同的独立审核级别保留用户文件夹。  
   
--   不同的配额或文件屏蔽 – 如果你要针对不同的用户组设置不同的存储配额，或者限制工作文件夹中允许的文件类型（文件屏蔽），那么，独立的同步共享可以提供帮助。  
+-   不同的配额或文件屏蔽 - 如果你要针对不同的用户组设置不同的存储配额，或者限制工作文件夹中允许的文件类型（文件屏蔽），那么，独立的同步共享可以提供帮助。  
   
--   部门控制 – 如果管理职责是按部门分配的，则针对不同的部门利用独立的共享可帮助管理员强制配额或其他策略。  
+-   部门控制 - 如果管理职责是按部门分配的，则针对不同的部门利用独立的共享可帮助管理员强制配额或其他策略。  
   
--   不同的设备策略 – 如果组织需要为不同的用户组维护多个设备策略（例如加密工作文件夹），则使用多个共享可以实现此目的。  
+-   不同的设备策略 - 如果组织需要为不同的用户组维护多个设备策略（例如加密工作文件夹），则使用多个共享可以实现此目的。  
   
--   存储容量 – 如果某个文件服务器有多个卷，则可以使用更多的共享来利用这些附加的卷。 单个共享只能访问它所在的卷，而无法利用文件服务器上的其他卷。  
+-   存储容量 - 如果某个文件服务器有多个卷，则可以使用更多的共享来利用这些附加的卷。 单个共享只能访问它所在的卷，而无法利用文件服务器上的其他卷。  
   
 #### <a name="access-to-sync-shares"></a>访问同步共享  
 
@@ -255,5 +255,5 @@ ms.locfileid: "71365740"
   
 |内容类型|引用|  
 |------------------|----------------|  
-|**产品评估**|-   [工作文件夹](work-folders-overview.md)<br />-   适用[于 Windows 7 的工作文件夹](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx)（博客文章）|  
-|**部署**|-   [设计工作文件夹实现](plan-work-folders.md)<br />-   [部署工作文件夹](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 应用程序代理（WAP）部署工作文件夹](deploy-work-folders-adfs-overview.md)<br />- [使用 Azure AD 应用程序代理部署工作文件夹](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [工作文件夹部署的性能注意事项](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   适用[于 Windows 7 的工作文件夹（64位下载）](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   适用[于 Windows 7 的工作文件夹（32位下载）](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作文件夹测试实验室部署](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)（博客文章）|
+|**产品评估**|-   [工作文件夹](work-folders-overview.md)<br />-   适用[于 Windows 7 的工作文件夹](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx)（博客文章）|  
+|**部署**|-   [设计工作文件夹实现](plan-work-folders.md)<br />-   [部署工作文件夹](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 应用程序代理（WAP）部署工作文件夹](deploy-work-folders-adfs-overview.md)<br />- [使用 Azure AD 应用程序代理部署工作文件夹](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [工作文件夹部署的性能注意事项](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   适用[于 Windows 7 的工作文件夹（64位下载）](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   适用[于 Windows 7 的工作文件夹（32位下载）](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作文件夹测试实验室部署](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)（博客文章）|

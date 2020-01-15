@@ -8,24 +8,24 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: c5c87be882a32958946198eb6ff1b9d7000577e7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3a93a1105862ffbf4fcbd1d23b15d9bcaa6010dc
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385287"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950503"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>在托管节点上安装扩展负载
 
 >适用于：Windows Admin Center、Windows Admin Center 预览版
 
-## <a name="setup"></a>安装
+## <a name="setup"></a>“安装程序”
 > [!NOTE]
 > 若要遵循本指南，你将需要生成1.2.1904.02001 或更高版本。 若要检查生成号，请打开 Windows 管理中心并单击右上方的问号。
 
 如果尚未这样做，请创建用于 Windows 管理中心的[工具扩展](../develop-tool.md)。 完成此操作后，请记下创建扩展时使用的值：
 
-| 值 | 说明 | 示例 |
+| Value | 说明 | 示例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | 公司名称（包含空格） | ```Contoso``` |
 | ```{!Tool Name}``` | 工具名称（包含空格） | ```InstallOnNode``` |
@@ -140,11 +140,11 @@ export class DefaultModule { }
 > [!IMPORTANT]
 > 在此扩展的 nuspec 文件中，```<id>``` 值与项目 ```manifest.json``` 中的名称匹配，并且 ```<version>``` 与 ```\src\app\default.component.ts```中添加的内容匹配，这一点非常重要。 此外，在 ```<files>```下添加一个条目： 
 > 
-> ```<file src="Node\**\*.*" target="Node" />```。
+> ```<file src="Node\**\*.*" target="Node" />```”。
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package xmlns="https://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>contoso.install-on-node</id>
     <version>1.0.0</version>

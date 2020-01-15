@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
 ms.prod: windows-server
-ms.openlocfilehash: 2aff8c0e43c6813c543511e643471c9cd9bcc292
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 67bd2a476cedd6d522daeaae54081b02fd893fbd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357044"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949977"
 ---
 # <a name="prepare-your-development-environment"></a>准备开发环境
 
@@ -31,8 +31,8 @@ ms.locfileid: "71357044"
 要开始使用 SDK 进行开发，请下载并安装以下必备组件：
 
 * [Windows 管理中心](https://aka.ms/WACDownloadPage)（GA 或预览版）
-* Visual Studio 或 [Visual Studio Code](http://code.visualstudio.com)
-* [节点包管理器](https://npmjs.com/get-npm)（8.12.0 或更高版本）
+* Visual Studio 或 [Visual Studio Code](https://code.visualstudio.com)
+* [Node 包管理器](https://npmjs.com/get-npm)（8.12.0 或更高版本）
 * [NuGet](https://www.nuget.org/downloads)（用于发布扩展）
 
 > [!NOTE]
@@ -58,7 +58,7 @@ npm install -g windows-admin-center-cli
 ```
 
 >[!NOTE]
->你可以安装的@angular/cli更高版本，但请注意，如果你安装的版本高于1.6.5，则在 gulp 生成步骤中将收到一条警告，指示本地 cli 版本与安装的版本不匹配。
+>你可以安装 @angular/cli的更高版本，但请注意，如果你安装的版本高于1.6.5，则在 gulp 生成步骤中，你将收到一条警告，指示本地 cli 版本与安装的版本不匹配。
 
 ## <a name="next-steps"></a>后续步骤
 

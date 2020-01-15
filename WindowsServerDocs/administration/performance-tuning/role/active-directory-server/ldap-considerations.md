@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f6670c8cfd718360518869f0551461c45e5aed27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e407f9f32339e3f9c75e3722ad218228b608b9d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370280"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947118"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>添加性能优化中的 LDAP 注意事项
 
@@ -60,7 +60,7 @@ ms.locfileid: "71370280"
 
 -   [跟踪代价高昂且低效的搜索](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   在性能监视器中 Active Directory 诊断数据收集器集（[SPA 的儿子： Win2008 和更高版本中的 AD 数据收集器集](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)）
+-   在性能监视器中 Active Directory 诊断数据收集器集（[SPA 的儿子： Win2008 和更高版本中的 AD 数据收集器集](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)）
 
 -   [Microsoft Server 性能顾问](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor 包
 

@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 如何使用 Microsoft Azure 在云中托管 Windows Server 故障转移群集的见证服务器，亦即如何部署云见证。
-ms.openlocfilehash: 1f38a1a436cfced8637b743817dc1b3d150f7fa6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ad5ff47a72319fee7650d1d9c0d0616cfaaa22d3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369879"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948177"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>部署故障转移群集的云见证
 
@@ -26,7 +26,7 @@ Cloud 见证是一种故障转移群集仲裁见证，使用 Microsoft Azure 在
 
 图1说明了 Windows Server 2016 中的多站点延伸故障转移群集仲裁配置。 在此示例配置（图1）中，有2个数据中心（称为站点）中有2个节点。 请注意，群集有可能跨越2个以上的数据中心。 此外，每个数据中心还可以有2个以上的节点。 此设置中的典型群集仲裁配置（自动故障转移 SLA）为每个节点提供投票。 向仲裁见证提供一项额外的投票，以允许群集继续运行，即使其中一个数据中心遇到电源中断也是如此。 数学计算非常简单-有5个投票，并且需要3个投票才能使群集保持运行。  
 
-![第三个站点中有2个节点的文件共享见证](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "文件共享见证")  
+![在2个其他站点中有2个节点的第三个独立站点中的文件共享见证](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "文件共享见证")  
 **图1：使用文件共享见证作为仲裁见证**  
 
 如果某个数据中心发生断电，为其他数据中心的群集提供平等的机会来使其保持运行状态，则建议在两个数据中心以外的位置托管仲裁见证。 这通常意味着需要第三个单独的数据中心（站点）来承载一个文件服务器，该文件服务器将作为仲裁见证（文件共享见证）使用的文件共享。  
@@ -75,15 +75,15 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
 
 ### <a name="to-create-an-azure-storage-account"></a>创建 Azure 存储帐户
 
-1. 登录到[Azure 门户](http://portal.azure.com)。
-2. 在 "中心" 菜单上，选择 "> 数据 + 存储-> 存储帐户"。
+1. 登录到 [Azure 门户](https://portal.azure.com)。
+2. 在“中心”菜单上，选择“新建”->“数据 + 存储”->“存储帐户”。
 3. 在 "创建存储帐户" 页中，执行以下操作：
-    1. 输入存储帐户的名称。
+    1. 为存储帐户输入名称。
     <br>存储帐户名称必须为 3 到 24 个字符，并且只能包含数字和小写字母。 存储帐户名称在 Azure 中也必须是唯一的。
         
     2. 对于 "**帐户类型**"，选择 "**常规用途**"。
     <br>不能将 Blob 存储帐户用于云见证。
-    3. 对于 "**性能**"，请选择 "**标准**"。
+    3. 对于“性能”，请选择“标准”。
     <br>不能将 Azure 高级存储用于云见证。
     2. 对于**复制**，请选择 "**本地冗余存储（LRS）** "。
     <br>故障转移群集使用 blob 文件作为仲裁点，这在读取数据时需要一些一致性保证。 因此，你必须为**复制**类型选择 "**本地冗余存储**"。

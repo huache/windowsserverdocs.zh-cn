@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4e7f46739dd8def6ffc34c6cc50210c0e6999c79
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 924fcd8e0c981c9164c3026a58cbb41ef8c0085a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403749"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950352"
 ---
 # <a name="group-managed-service-accounts-overview"></a>Group Managed Service Accounts Overview
 
@@ -27,8 +27,8 @@ ms.locfileid: "71403749"
 适用于 IT 专业人员的本主题介绍了组托管服务帐户，具体方法是描述实用应用程序、Microsoft 实现中的更改以及硬件和软件要求。
 
 
-## <a name="BKMK_OVER"></a>功能说明
-独立托管服务帐户（sMSA）是一种托管域帐户，可提供自动密码管理、简化的服务主体名称（SPN）管理以及将管理委派给其他管理员的能力。 此类型的托管服务帐户（MSA）是在 Windows Server 2008 R2 和 Windows 7 中引入的。
+## <a name="BKMK_OVER"></a>功能描述
+独立托管服务帐户（sMSA）是一种托管域帐户，可提供自动密码管理、简化的服务主体名称（SPN）管理以及将管理委派给其他管理员的能力。 此类型的托管服务帐户 (MSA) 是在 Windows Server 2008 R2 和 Windows 7 中引入的。
 
 组托管服务帐户（gMSA）在域中提供同样的功能，但也会在多个服务器上扩展该功能。 连接到服务器场上托管的服务（例如网络负载平衡解决方案）时，支持相互身份验证的身份验证协议要求服务的所有实例都使用同一主体。 将 gMSA 用作服务主体时，Windows 操作系统将管理帐户密码，而不是依靠管理员管理密码。
 
@@ -37,7 +37,7 @@ Microsoft 密钥分发服务 \(kdssvc.dll\) 提供了安全获得最新密钥或
 ## <a name="BKMK_APP"></a>实用应用程序
 Gmsa 为服务器场或网络负载均衡器后面的系统上运行的服务提供单个标识解决方案。 通过提供 gMSA 解决方案，可为新的 gMSA 主体配置服务，并由 Windows 处理密码管理。
 
-使用 gMSA、服务或服务管理员不需要管理服务实例之间的密码同步。 GMSA 支持在延长时间段内保持脱机的主机，并为服务的所有实例管理成员主机。 这意味着，你可以部署支持现有客户端计算机可进行身份验证的单个身份的服务器场，而无需知道其连接到的服务的实例。
+使用 gMSA，服务或服务管理员不需要管理服务实例之间的密码同步。 GMSA 支持在延长时间段内保持脱机的主机，并为服务的所有实例管理成员主机。 这意味着，你可以部署支持现有客户端计算机可进行身份验证的单个身份的服务器场，而无需知道其连接到的服务的实例。
 
 故障转移群集不支持 gMSA。 但是，如果在群集服务上运行的服务是 Windows 服务、应用池、计划任务或是本机支持的 gMSA 或 sMSA，则它们可以使用 gMSA 或 sMSA。
 
@@ -65,9 +65,9 @@ Gmsa 不适用于 Windows Server 2012 之前的 Windows 操作系统。
 |**部署**|尚未提供|
 |**操作**|[Active Directory 中的托管服务帐户](https://technet.microsoft.com/library/dd378925(v=ws.10).aspx)|
 |**疑难解答**|尚未提供|
-|**估算**|[组托管服务帐户入门](getting-started-with-group-managed-service-accounts.md)|
+|**评估**|[组托管服务帐户入门](getting-started-with-group-managed-service-accounts.md)|
 |**工具和设置**|[Active Directory 域服务中的托管服务帐户](https://technet.microsoft.com/library/dd378925(v=WS.10).aspx)|
-|**社区资源**|[托管服务帐户：了解、实现、最佳做法和故障排除](http://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
+|**社区资源**|[托管服务帐户：了解、实现、最佳做法和故障排除](https://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
 |**相关技术**|[Active Directory 域服务概述](active-directory-domain-services-overview.md)|
 
 

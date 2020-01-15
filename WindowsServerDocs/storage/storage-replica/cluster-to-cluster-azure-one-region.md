@@ -9,26 +9,26 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 55d9c600c86b6b64efdb5c7d4437697539f887ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e620b5597a2d25a7bb02daf80c5812d25f6a987
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402948"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950035"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>在 Azure 中的同一区域内群集到群集存储副本
 
-> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 可以在 Azure 中的同一区域内将群集配置为群集存储复制。 在下面的示例中，我们使用双节点群集，但群集到群集的存储副本并不局限于双节点群集。 下图是一个双节点存储空间直通群集，可以彼此通信、位于同一个域中以及位于同一区域中。
 
 观看以下视频，了解过程的完整演练。
 
 第一部分
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE26f2Y]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE26f2Y]
 
 第二部分
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE269Pq]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE269Pq]
 
 ![体系结构关系图在同一区域中的 Azure 中展示群集到群集的存储副本。](media/Cluster-to-cluster-azure-one-region/architecture.png)
 > [!IMPORTANT]
@@ -79,13 +79,13 @@ ms.locfileid: "71402948"
     - azlbr1 = > 前端 IP：10.3.0.100 （从虚拟网络（**az2az**）子网中获取未使用的 IP 地址）
     - 为每个负载均衡器创建后端池。 添加关联的群集节点。
     - 创建运行状况探测：端口59999
-    - 创建负载均衡规则：允许启用了浮动 IP 的 HA 端口。 
+    - 创建负载均衡规则：允许 HA 端口，启用了浮动 IP。 
    
     提供群集 IP 地址作为负载均衡器的静态专用 IP 地址。
     - azlbr2 = > 前端 IP：10.3.0.101 （从虚拟网络（**az2az**）子网中获取未使用的 IP 地址）
     - 为每个负载均衡器创建后端池。 添加关联的群集节点。
     - 创建运行状况探测：端口59999
-    - 创建负载均衡规则：允许启用了浮动 IP 的 HA 端口。 
+    - 创建负载均衡规则：允许 HA 端口，启用了浮动 IP。 
    
 12. 在每个群集节点上，打开端口59999（运行状况探测）。 
    
@@ -139,7 +139,7 @@ ms.locfileid: "71402948"
    
     双向向另一个群集授予访问权限：
 
-    在本示例中：
+    在示例中：
 
     ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2
@@ -159,7 +159,7 @@ ms.locfileid: "71402948"
     - 卷位置：-c:\ClusterStorage\DataDisk2
     - 日志位置：-g：
 
-运行下面的命令：
+运行以下命令：
 
 ```PowerShell
 

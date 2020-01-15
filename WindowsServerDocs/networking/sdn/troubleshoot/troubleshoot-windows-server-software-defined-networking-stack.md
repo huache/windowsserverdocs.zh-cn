@@ -9,12 +9,12 @@ ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: pashort
 author: JMesser81
 ms.date: 08/14/2018
-ms.openlocfilehash: 22dcfb318a0e60bd1694496288f3e63b2780d643
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2782419f0c3d99e7ec7f4ee3389f174df400bd55
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355501"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949928"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Windows Server 软件定义的网络堆栈疑难解答
 
@@ -121,7 +121,7 @@ Message:          Host is not Connected.
 下表显示了根据观察到的配置状态要采取的错误代码、消息和跟进操作的列表。
 
 
-| **编写**| **Message**| **操作**|  
+| 代码| **Message**| **操作**|  
 |--------|-----------|----------|  
 | Unknown| 未知错误| |  
 | HostUnreachable                       | 主机无法访问 | 检查网络控制器与主机之间的管理网络连接 |  
@@ -606,7 +606,7 @@ PA 路由信息：
     $uri = "https://sa18n30nc.sa18.nttest.microsoft.com"
     Get-NetworkControllerAccessControlList -ConnectionUri $uri 
 
-# <a name="look-at-ip-configuration-and-virtual-subnets-which-are-referencing-this-acl"></a>查看正在引用此 ACL 的 IP 配置和虚拟子网
+## <a name="look-at-ip-configuration-and-virtual-subnets-which-are-referencing-this-acl"></a>查看正在引用此 ACL 的 IP 配置和虚拟子网
 
 1. 宿主在托管两个有问题的租户虚拟机的 Hyper-v 主机上运行 ``Get-ProviderAddress``，然后从 Hyper-v 主机运行 ``Test-LogicalNetworkConnection`` 或 ``ping -c <compartment>``，以验证 HNV 提供程序逻辑网络上的连接
 2.  宿主请确保 hyper-v 主机和 Hyper-v 主机之间的任何第2层交换设备上的 MTU 设置正确。 在所有有问题的 Hyper-v 主机上运行 ``Test-EncapOverheadValue``。 还要检查两者之间的所有第2层交换机是否设置为至少1674字节，以最大限度地降低160字节的系统开销。  
@@ -658,7 +658,7 @@ PA 路由信息：
 - NCApplicationLogs
 - PerfCounters
 - SDNDiagnostics
-- 断
+- 跟踪
 
 网络控制器使用（Azure） Service Fabric。 排查某些问题时可能需要 Service Fabric 日志。 可在 C:\ProgramData\Microsoft\Service Fabric 中的每个网络控制器节点上找到这些日志。
 

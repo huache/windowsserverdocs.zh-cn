@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8880f26acd8b32a4ab8a32ede067d158f2d6aed1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 834aa2611ff2b965c9184524fa6782fb4477a4cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369215"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949138"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附录 I：为 Active Directory 中受保护的帐户和组创建管理帐户
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 在实现不依赖于高特权组中的永久成员身份的 Active Directory 模型时，其中一项难题是，当需要组中的临时成员身份时，必须有一种机制来填充这些组。 某些特权标识管理解决方案要求在林中的每个域的组（如 DA 或管理员）中授予软件的服务帐户永久成员身份。 不过，在技术上，Privileged Identity Management （PIM）解决方案在这种高度特权的上下文中运行其服务并不是必需的。  
   
@@ -81,9 +81,9 @@ ms.locfileid: "71369215"
   
 7.  在 "**安全**" 选项卡上，删除不允许访问此组的组。 例如，如果不想让经过身份验证的用户能够读取组的 "名称" 和 "常规" 属性，则可以删除该 ACE。 你还可以删除 Ace，如用于帐户操作员和 Windows 2000 以前的 Windows Server 兼容访问的 Ace。 但是，您应该保留一组最小的对象权限。 保留以下 Ace 不变：  
   
-    -   解压  
+    -   SELF  
   
-    -   主板  
+    -   系统  
   
     -   Domain Admins  
   
@@ -133,7 +133,7 @@ ms.locfileid: "71369215"
 
 7. 右键单击刚创建的用户对象，然后单击 "**属性**"。  
 
-8. 单击 "**帐户**" 选项卡。  
+8. 单击“帐户”选项卡。  
 
 9. 在 "**帐户选项**" 字段中，选择 "**敏感帐户，不能被委派**" 标志，选择 "**此帐户支持 kerberos aes 128 位加密**" 和/或 "**此帐户支持 kerberos aes 256 加密**标志"，然后单击 **"确定"** 。  
 
@@ -144,7 +144,7 @@ ms.locfileid: "71369215"
    >
    > 尽管为主机实现更安全的加密类型不能减少凭据被盗攻击，但安全主机的适当使用和配置也是如此。 为仅由特权帐户使用的主机设置更强的加密类型只是减少了计算机的整体攻击面。  
    >
-   > 有关在系统和帐户上配置加密类型的详细信息，请参阅 " [Kerberos 支持的加密类型的 Windows 配置](http://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)"。  
+   > 有关在系统和帐户上配置加密类型的详细信息，请参阅 " [Kerberos 支持的加密类型的 Windows 配置](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)"。  
    >
    > 只有运行 Windows Server 2012、Windows Server 2008 R2、Windows 8 或 Windows 7 的计算机才支持这些设置。  
   
