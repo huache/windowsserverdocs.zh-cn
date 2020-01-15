@@ -10,12 +10,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 116627059856f5815ec0d89ce63094a0852913ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fdb840aed4d78578edf8383e703a6786a5dc15c7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361116"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948042"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server 中的故障转移群集
 
@@ -46,6 +46,6 @@ ms.locfileid: "71361116"
 |**管理**  |  **工具和设置**  |  **社区资源**       |
 | ------------- |  -------------- | --------------------- |
 | [群集感知更新](cluster-aware-updating.md)    |   [故障转移群集 PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)      |  [高可用性（群集）论坛](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
-|  [运行状况服务](health-service-overview.md)   |   [群集感知更新 PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [故障转移群集和网络负载均衡团队博客](http://blogs.msdn.com/b/clustering/)        |
+|  [运行状况服务](health-service-overview.md)   |   [群集感知更新 PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [故障转移群集和网络负载均衡团队博客](https://blogs.msdn.com/b/clustering/)        |
 |  [群集域迁移](cluster-domain-migration.md)   |         |         |
 |  [使用 Windows 错误报告进行疑难解答](troubleshooting-using-wer-reports.md)   |         |         |

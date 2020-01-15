@@ -11,20 +11,53 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/18/2019
+ms.date: 01/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b44f7c14dce8a8c319f9240c24ebcd8e2d4f7202
-ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
+ms.openlocfilehash: 614962cacbc29a26b0db246812ad17e24fc9859e
+ms.sourcegitcommit: fdb3412a6139ca62913606fa18036a91c093cd51
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166164"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75688112"
 ---
 # <a name="whats-new-in-the-macos-client"></a>MacOS 客户端中的新增功能
 
 我们会定期更新[适用于 macOS 的远程桌面客户端](remote-desktop-mac.md)添加新功能并修复问题。 可在下面找到最新更新。
 
-如果遇到任何问题，始终可以通过“帮助”   > “报告问题”  来联系我们。
+如果遇到任何问题，可以随时通过导航到“帮助” > “报告问题”来联系我们   。
+
+## <a name="updates-for-version-1037"></a>针对版本 10.3.7 的更新
+
+*发布日期：2020/1/6*
+
+在我们的年度最终更新中，我们完善了一些代码并修复了以下行为：
+
+- 将内容从远程会话复制到网络共享或 U 盘不会再创建空文件。
+- 在用户帐户中指定密码为空不会再导致出现双重证书提示。
+
+## <a name="updates-for-version-1036"></a>针对版本 10.3.6 的更新
+
+*发布日期：2020/1/6*
+
+在此版本中，我们解决了每当使用文件复制和粘贴将文件夹从远程会话复制到本地计算机时都会创建零长度文件的问题。
+
+## <a name="updates-for-version-1035"></a>针对版本 10.3.5 的更新
+
+*发布日期：2020/1/6*
+
+我们在所有报告了问题的用户的帮助下进行了此更新。 在此版本中，我们进行了以下更改：
+
+- 现在可以将重定向的文件夹标记为只读，防止这些文件夹中的内容在远程会话中被更改。
+- 我们解决了使用 RPC 而不是 HTTPS RD 网关方案进行连接时出现的 0x607 错误。
+- 修复了两次提示用户输入凭据的问题。
+- 修复了用户两次收到证书警告提示的问题。
+- 添加了启发，用于改进基于触控板的滚动。
+- 如果没有用户创建的组，客户端将不再显示“已保存的桌面”组。
+- 更新了电脑视图中磁贴的 UI。
+- 修复了通过应用程序遥测发送给我们的故障。
+
+> [!NOTE]
+> 在此版本中，我们当前仅通过 [UserVoice](https://remotedesktop.uservoice.com/forums/287834-remote-desktop-for-mac) 接受针对 Mac 客户端的反馈。
 
 ## <a name="updates-for-version-1034"></a>针对版本 10.3.4 的更新
 

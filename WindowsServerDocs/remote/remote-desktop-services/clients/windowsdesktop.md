@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/18/2019
+ms.date: 01/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e71aa2b1cccda85e0bf6f8a80ad68013346b30d4
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: 09010878e2381e8f1f00d6883a6871fcd69a48be
+ms.sourcegitcommit: 28b71d779386cd31e1511217aa1a6f3ab186bf9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829621"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75682438"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows 桌面客户端入门
 
@@ -33,7 +33,7 @@ ms.locfileid: "74829621"
 
 ## <a name="install-the-client"></a>安装客户端
 
-选择与 Windows 版本匹配的客户端。 新的远程桌面客户端 (MSRDC) 支持 Windows 10、Windows 10 IoT 企业版和 Windows 7 客户端设备。 
+选择与 Windows 版本匹配的客户端。 新的远程桌面客户端 (MSRDC) 支持 Windows 10、Windows 10 IoT 企业版和 Windows 7 客户端设备。
 
 - [Windows 64 位](https://go.microsoft.com/fwlink/?linkid=2068602)
 - [Windows 32 位](https://go.microsoft.com/fwlink/?linkid=2098960)
@@ -120,7 +120,22 @@ ms.locfileid: "74829621"
 
 ## <a name="provide-feedback"></a>提供反馈
 
-想要提出功能建议，还是想要报告问题？ 请通过[反馈中心](feedback-hub://?tabid=2&contextid=883)告诉我们。 还可以通过客户端访问反馈中心：
+想要提出功能建议还是想要报告问题？ 请通过[反馈中心](feedback-hub://?tabid=2&contextid=883)告诉我们。 还可以通过客户端访问反馈中心：
 
-1. 在“连接中心”中，点击客户端顶部的命令栏上的溢出菜单 ( **...** )。
-2. 从下拉菜单中选择“反馈”以打开“反馈中心”  。
+1. 在连接中心中，点击客户端顶部命令栏上的“发送反馈”选项以打开反馈中心应用  。
+2. 在“摘要”和“详细信息”字段中输入必填信息   。 完成后，点击“下一步”  。
+3. 选择提出的是“问题”还是“建议”   。
+4. 检查类别是否位于“应用” > “远程桌面”中   。 如果是，点击“下一步”  。
+5. 查看现有反馈主题，了解其他人是否报告了相同的问题。 如果没有，请选择“提出新的 bug”，然后点击“下一步”   。
+6. 在下一页上，可以向我们提供详细信息，以便我们帮助你解决问题。 可以填写更详细的信息、提交屏幕截图，甚至可以将问题录制下来以向我们展示所发生的情况。 若要进行录制，选择“开始录制”，然后进行你之前的操作，直到问题出现为止  。 完成后，返回到反馈中心，然后选择“停止录制”  。
+7. 对信息感到满意后，点击“提交”  。
+8. 在“感谢你的反馈!” 页上，点击“共享我的反馈”以生成指向反馈的链接，你可以根据需要与他人共享  。
+
+### <a name="access-client-logs"></a>访问客户端日志
+
+调查问题时，可能需要用到客户端日志。
+
+检索客户端日志：
+
+1. 打开“文件资源管理器”  。
+2. 导航到“%temp%\DiagOutputDir\RdClientAutoTrace”文件夹  。

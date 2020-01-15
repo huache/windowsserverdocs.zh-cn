@@ -11,31 +11,38 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 12/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a13c7ccb7e1c72534ef63ba6d09f3055af174cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1edc7c78e2abe5fe4e2bf9cd2c48a6a19d89dbdd
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387766"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351829"
 ---
 # <a name="whats-new-in-the-ios-client"></a>iOS 客户端中的新增功能
 
-我们会定期更新[适用于 iOS 的远程桌面客户端](remote-desktop-ios.md)，添加新功能并修复问题。 可在下面找到最新更新。
+我们会定期更新[适用于 iOS 的远程桌面客户端](remote-desktop-ios.md)，添加新功能并修复问题。 可在此页上找到最新更新。
 
-## <a name="remote-desktop-ios-beta-client"></a>远程桌面 iOS Beta 客户端
+## <a name="updates-for-version-1000"></a>针对版本 10.0.0 的更新
 
-*发布日期：2019 年 2 月 20 日*
+*发布日期：2019/12/13*
 
-[远程桌面 iOS Beta 客户端](remote-desktop-ios.md#download-the-remote-desktop-ios-beta-client-from-apple-testflight)现已在 TestFlight 上推出。 在测试 iOS Beta 客户端时，请记住，这是新 iOS 客户端的预发布版本，不保证它与生产版本一样稳定。 我们将继续定期更新此客户端的新功能和修补程序。 下面重点介绍了 iOS Beta 客户端的若干功能：
+自我们上次更新适用于 iOS 的远程桌面客户端以来已经过了一年多的时间。 不过，这次回归我们带来了激动人心的新更新，并且从现在开始，我们还将定期发布更多更新。下面是版本 10.0.0 中的新增功能：
 
-- 改善了最新 iOS 设备上的体验。
-- 支持 Swiftpoint GT 和 ProPoint 物理鼠标。 请参阅 iOS Beta 客户端的[受支持的输入设备列表](remote-desktop-ios.md#supported-input-devices)。
-- 支持 [Windows 虚拟桌面](https://aka.ms/wvd)。
-- 麦克风和 iPhone 存储重定向。
-- AVC420 和 AVC444 支持。
-- 裸机硬件加速支持。
+- 支持 Windows 虚拟桌面服务。
+- 新的连接中心 UI。
+- 新的会话内 UI，可在已连接的电脑和应用之间切换。
+- 辅助屏幕键盘的全新布局。
+- 改进的外部键盘支持。
+- 支持 SwiftPoint 蓝牙鼠标。
+- 支持麦克风重定向。
+- 支持本地存储重定向。
+- 支持相机重定向（仅适用于 Windows 10 版本 1809 或更高版本）。
+- 支持新的 iPhone 和 iPad 设备。
+- 深色和浅色主题支持。
+- 控制在连接到远程电脑或应用时电话是否会锁定。
+- 现在可以通过长按远程桌面徽标按钮来折叠会话内的连接栏。
 
 ## <a name="updates-for-version-8142"></a>针对版本 8.1.42 的更新
 
@@ -48,3 +55,7 @@ ms.locfileid: "71387766"
 *发布日期：2018 年 3 月 28 日*
 
 - 用于解决 CVE-2018-0886 中所述的 CredSSP 加密 Oracle 修正的更新。
+
+## <a name="how-to-report-issues"></a>如何报告问题
+
+我们致力于尽全力地打造好此应用，因此我们重视你的反馈。 你可以通过在客户端中导航到“设置” > “报告问题”将问题报告给我们   。

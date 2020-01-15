@@ -1,19 +1,19 @@
 ---
 title: 初始化新磁盘
 description: 如何使用磁盘管理初始化新磁盘，使其可供使用。 还包括指向解决问题的链接。
-ms.date: 06/07/2019
+ms.date: 12/20/2019
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b38fd0b88cea3fcc386959c08af1169302ddaa1c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c2cb88d5b30be28a8ab7709e3a3908ce82ae8408
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385905"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352351"
 ---
 # <a name="initialize-new-disks"></a>初始化新磁盘
 
@@ -22,13 +22,13 @@ ms.locfileid: "71385905"
 如果向电脑添加新磁盘，但它没有显示在文件资源管理器中，可能需要[添加驱动器号](change-a-drive-letter.md)，或者在使用之前对其进行初始化。 只能初始化尚未格式化的驱动器。 初始化磁盘会擦除磁盘上的所有内容，并为 Windows 使用磁盘做好准备，之后可以对磁盘进行格式化，然后在其中存储文件。
 
 > [!WARNING]
-> 如果磁盘上已经有你关注的文件，不要初始化它 - 否则将丢失所有文件。 相反，建议对磁盘进行故障排除以了解是否可以读取文件 - 请参阅[磁盘状态为未初始化或磁盘完全丢失](troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing)。
+> 如果磁盘上已经有你关注的文件，不要初始化它 - 否则将丢失所有文件。 相反，建议对磁盘进行故障排除以了解是否可以读取文件 - 请参阅[磁盘状态为未初始化或磁盘完全丢失](troubleshooting-disk-management.md#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)。
 
 ## <a name="to-initialize-new-disks"></a>初始化新磁盘
 
 下面介绍了如何使用磁盘管理初始化新磁盘。 如果想要使用 PowerShell，则改用 [initialize-disk](https://docs.microsoft.com/powershell/module/storage/initialize-disk) cmdlet。
 
-1. 使用管理员权限打开磁盘管理。 
+1. 使用管理员权限打开磁盘管理。
  
     为此，请在任务栏上的搜索框中键入“磁盘管理”  ，选择并按住（或右键单击）“磁盘管理”  ，然后选择“以管理员身份运行”   > “是”  。 如果不能以管理员身份打开它，请键入“计算机管理”  ，然后转到“存储”   > “磁盘管理”  。
 1. 在“磁盘管理”中，右键单击想要初始化的磁盘，然后单击“初始化磁盘”  （如下所示）。 如果磁盘被列为“脱机”  ，首先右键单击它并选择“联机”  。
@@ -38,9 +38,14 @@ ms.locfileid: "71385905"
     ![显示未格式化磁盘的磁盘管理，并显示“初始化磁盘”快捷菜单](media/uninitialized-disk.PNG)
 2. 在“初始化磁盘”  对话框中（如下所示），检查以确保选择了正确磁盘，然后单击“确定”  接受默认分区样式。 如果需要更改分区样式（GPT 或 MBR），请参阅[关于分区样式 - GPT 和 MBR](#about-partition-styles---gpt-and-mbr)。
 
-     磁盘状态暂时变为“正在初始化”  ，然后变为“联机”  状态。 如果出于某种原因初始化失败，请参阅[磁盘状态为未初始化或磁盘完全丢失](troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing)。
+     磁盘状态暂时变为“正在初始化”  ，然后变为“联机”  状态。 如果出于某种原因初始化失败，请参阅[磁盘状态为未初始化或磁盘完全丢失](troubleshooting-disk-management.md#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)。
 
     ![选择了 GPT 分区样式的“初始化磁盘”对话框](media/initialize-disk.PNG)
+
+3. 选中并按住（或右键单击）驱动器上的未分配空间，然后选择“新建简单卷”  。
+4. 选择“下一步”，指定卷的大小（你可能想保留默认设置，这将使用整个驱动器），然后选择“下一步”   。
+5. 指定要向卷分配的驱动器号，然后选择“下一步”  。
+6. 指定要使用的文件系统（通常为 NTFS），选择“下一步”，然后选择“完成”   。
 
 ## <a name="about-partition-styles---gpt-and-mbr"></a>关于分区样式 - GPT 和 MBR
 

@@ -1,30 +1,37 @@
 ---
 title: 磁盘管理疑难解答
 description: 本文介绍如何解决磁盘管理问题
-ms.date: 06/07/2019
+ms.date: 12/20/2019
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d801b051918c090257a466ab58c200943487b2e8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7eeb462d31391a228ec0e89afb09673ef14b51cf
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402166"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352370"
 ---
 # <a name="troubleshooting-disk-management"></a>磁盘管理疑难解答
 
 > **适用于：** Windows 10、Windows 8.1、Windows 7、Windows Server（半年频道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主题列出了使用磁盘管理时可能会遇到的一些常见问题。
+本主题列出了使用磁盘管理和尝试故障排除步骤时可能会遇到的一些常见问题。
 
 > [!TIP]
-> 如果在执行这些步骤时出现错误或某些内容无法工作，不要惊慌！ 在 [Microsoft 社区](https://answers.microsoft.com/en-us/windows)网站上有大量信息，试着搜索[文件、文件夹和存储](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)部分，如果仍然需要帮助，请在那里发布问题，Microsoft 或其他社区成员将尝试提供帮助。 如果你有关于如何改进这些主题的反馈，我们很乐意听取你的意见！ 只需回答“此页面是否有用？”  提示，并在此处或本主题底部的公共评论会话中留下任何评论。
+> 如果在执行这些步骤时出现错误或某些内容无法工作，不要惊慌！ 本主题所涵盖的内容只是应首要尝试执行的操作；[Microsoft 社区](https://answers.microsoft.com/en-us/windows)网站上的[文件、文件夹和存储](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)部分中还提供了大量有关可能要处理的各种硬件和软件配置的信息。 如果仍需要帮助，请在那里发布问题，或[联系 Microsoft 支持部门](https://support.microsoft.com/contactus/)或你的硬件制造商。
 
-## <a name="a-disks-status-is-not-initialized-or-the-disk-is-missing"></a>磁盘状态未初始化或磁盘丢失
+## <a name="how-to-open-disk-management"></a>如何打开“磁盘管理”
+
+在我们开始讲解复杂的内容前，如果你尚未打开“磁盘管理”，可使用以下简单的方法进行访问：
+
+1. 在任务栏上的搜索框中键入“计算机管理”，选中并按住（或右键单击）“计算机管理”，然后选择“以管理员身份运行” > “是”     。
+2. 打开“计算机管理”后，转到“存储” > “磁盘管理”   。
+
+## <a name="disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps"></a>丢失或未初始化的磁盘，以及一般故障排除步骤
 
 ![显示必须初始化的未知磁盘的磁盘管理。](media/uninitialized-disk.PNG)
 
@@ -34,7 +41,7 @@ ms.locfileid: "71402166"
 
 **解决方案：**   如果驱动器是全新的且只需要初始化，擦除驱动器上的任何数据，那么解决方案很简单，请参阅[初始化新磁盘](initialize-new-disks.md)。 不过，很有可能你已经尝试过此操作，但没有成功。 或者你有一个装满重要文件的磁盘，你不希望通过对其进行初始化来擦除磁盘。
 
-磁盘丢失或初始化失败的原因有很多，其中一个常见的原因是磁盘发生故障。 要修复出故障的磁盘，你只能执行这些操作，但可以尝试下面一些步骤让它重新工作。 如果在完成其中一个步骤之后磁盘还能正常工作，就无需考虑后续步骤，只需重新启动（庆祝一下），或者更新备份。
+磁盘或内存卡丢失或初始化失败的原因可能有很多，其中一个常见原因是磁盘发生故障。 要修复出故障的磁盘，你只能执行这些操作，但可以尝试下面一些步骤让它重新工作。 如果在完成其中一个步骤之后磁盘还能正常工作，就无需考虑后续步骤，只需重新启动（庆祝一下），或者更新备份。
 
 1. 查看“磁盘管理”中的磁盘。 如果出现如下所示的“脱机”  ，试着右键单击它并选择“联机”  。
 
@@ -42,9 +49,13 @@ ms.locfileid: "71402166"
 2. 如果磁盘在“磁盘管理”中显示为“联机”  ，且主分区列为“正常”  （如图所示），那么这是个好迹象。
 
     ![显示为联机且卷正常的磁盘](media/healthy-volume.png)
-    - 如果分区有一个文件系统，但没有驱动器号（例如，E:），请参阅[更改驱动器号](change-a-drive-letter.md)手动添加驱动器号。
-    - 如果没有文件系统（NTFS、ReFS、FAT32 或 exFAT），并且你知道磁盘为空，则右键单击分区并选择“格式化”  。 格式化磁盘会擦除磁盘上的所有数据，因此，如果你试图从磁盘恢复文件，不要这样做，而是跳到下一步。
-3. 如果你有一个外部磁盘，拔下磁盘，将其插回，然后选择“操作”   > “重新扫描磁盘”  。 
+    - 如果某一分区有一个文件系统，但没有驱动器号（例如 E:），请参阅[更改驱动器号](change-a-drive-letter.md)以手动添加驱动器号。
+    - 如果某一分区没有文件系统（它被列为 RAW，而不是 NTFS、ReFS、FAT32 或 exFAT）并且你知道磁盘为空，请选中并按住（或右键单击）此分区，并选择“格式化”  。 格式化磁盘会擦除磁盘上的所有数据，因此，如果你试图从磁盘恢复文件，不要这样做，而是跳到下一步。
+    - 如果分区被列为“未分配”并且你知道分区为空，请选中并按住（或右键单击）未分配的分区，然后选择“新建简单卷”并按照说明在可用空间中创建卷   。 如果你试图从此分区恢复文件，请不要这样做，而是跳到下一步。
+
+    > [!NOTE]
+    > 忽略任何被列为“EFI 系统分区”或“恢复分区”的分区   。 这些分区中全都存储着电脑正常运行所需的非常重要的文件。 最好让它们独自完成它们的工作，启动你的电脑，帮助你从问题中恢复过来。
+3. 如果有未显示的外部磁盘，请先拔出磁盘，再插回去，然后选择“操作” > “重新扫描磁盘”   。 
 4. 关闭电脑，关闭外置硬盘（如果是带电源线的外置硬盘），然后再次打开电脑和硬盘。
     要关闭 Windows 10 系统电脑，请选择“开始”按钮，选择“电源”按钮，然后选择“关闭”  。
 5. 将磁盘插入直接位于电脑上（而不是集线器上）的另一个 USB 端口。
@@ -52,14 +63,14 @@ ms.locfileid: "71402166"
 6. 请尝试使用其他电缆。
     这听起来有点不切实际，但电缆经常会出现故障，因此请尝试使用不同的电缆插入磁盘。 如果桌面电脑具有内部磁盘，你可能需要先关闭电脑再切换电缆，请参阅电脑手册了解详细信息。
 7. 检查设备管理器是否有问题。
-    长按（或右键单击）“开始”按钮，然后从上下文菜单中选择“设备管理器”。 查找任何旁边有感叹号或有其他问题的设备，双击该设备，然后读取其状态。
+    选中并按住（或右键单击）“开始”按钮，然后从上下文菜单中选择“设备管理器”。 查找任何旁边有感叹号或有其他问题的设备，双击该设备，然后读取其状态。
 
-    下面是[设备管理器中的错误代码](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)列表，但有时一种有效的方法是右键单击有问题的设备，选择“卸载设备”  ，然后选择“操作”   > ”扫描检测硬件改动”  。
+    下面是[设备管理器中的错误代码](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)列表，但有时一种有效的方法是选中并按住（或右键单击）有问题的设备，选择“卸载设备”，然后选择“操作” > “扫描检测硬件改动”    。
 
     ![显示未知 USB 设备的设备管理器](media/device-manager.PNG)
 8. 把磁盘插到另一台电脑上。
     
-    如果磁盘不能在另一台电脑上工作，这是一个好迹象，说明磁盘出了问题，而不是电脑出了问题。 我们知道毫无乐趣可言。 在[外部 USB 驱动器错误“逻辑磁盘管理器访问磁盘之前必须初始化磁盘”](https://social.technet.microsoft.com/Forums/windows/en-US/2b069948-82e9-49ef-bbb7-e44ec7bfebdb/forum-faq-external-usb-drive-error-you-must-initialize-the-disk-before-logical-disk-manager-can?forum=w7itprohardware)中，你还可以尝试其他一些步骤，但现在可能需要在 [Microsoft 社区](https://answers.microsoft.com/en-us/windows)网站上搜索并寻求帮助，或者联系磁盘制造商。
+    如果磁盘不能在另一台电脑上工作，这是一个好迹象，说明磁盘出了问题，而不是电脑出了问题。 我们知道毫无乐趣可言。 尽管你还可以尝试[外部 USB 驱动器错误“必须初始化磁盘才能通过逻辑磁盘管理器访问它”](https://social.technet.microsoft.com/Forums/windows/en-US/2b069948-82e9-49ef-bbb7-e44ec7bfebdb/forum-faq-external-usb-drive-error-you-must-initialize-the-disk-before-logical-disk-manager-can?forum=w7itprohardware)中所述的一些其他步骤，不过，此时可能需要在 [Microsoft 社区](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)网站上搜索并寻求帮助，或者联系磁盘制造商或 [Microsoft 支持部门](https://support.microsoft.com/contactus/)。
 
     如果无法让它工作，也有一些应用程序可以尝试从故障磁盘恢复数据，或者如果文件真的很重要，你可以花钱请数据恢复实验室来尝试恢复它们。 如果找到适合你的方法，请在下面的评论部分告诉我们。
 
@@ -75,7 +86,7 @@ ms.locfileid: "71402166"
 
 磁盘在旋转时或者当磁盘管理正在重新扫描系统上的所有磁盘时，磁盘也可能会显示“不可读”  状态。 在某些情况下，无法读取的磁盘出现故障，且无法恢复。 对于动态磁盘，“不可读”  状态通常是由于部分磁盘的损坏或 I/O 错误所导致，而不是由整个磁盘故障导致。
 
-**解决方案：**  重新扫描磁盘或重启计算机，以查看磁盘状态是否发生变化。 此外，请尝试[磁盘状态为未初始化或磁盘完全丢失](#a-disks-status-is-not-initialized-or-the-disk-is-missing)中描述的故障排除步骤。
+**解决方案：**  重新扫描磁盘或重启计算机，以查看磁盘状态是否发生变化。 此外，请尝试[磁盘状态为未初始化或磁盘完全丢失](#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)中描述的故障排除步骤。
 
 ## <a name="a-dynamic-disks-status-is-foreign"></a>动态磁盘的状态为“外部”
 
@@ -83,7 +94,7 @@ ms.locfileid: "71402166"
 
 在某些情况下，以前连接到系统的磁盘可能会显示“外部”  状态。 动态磁盘的配置数据存储在所有动态磁盘上，因此当所有动态磁盘发生故障时，关于系统拥有哪些磁盘的信息将会丢失。
 
-**解决方案：**  将磁盘添加到计算机的系统配置中，以便访问磁盘上的数据。 若要将磁盘添加到计算机的系统配置中，请导入外部磁盘（右键单击磁盘，然后单击“导入外部磁盘”  ）。 导入磁盘时，外部磁盘上的任何现有卷会变为可见且可访问状态。 
+**解决方案：**  将磁盘添加到计算机的系统配置中，以便访问磁盘上的数据。 若要将磁盘添加到计算机的系统配置中，请导入外部磁盘（选中并按住/或右键单击磁盘，然后单击“导入外部磁盘”）  。 导入磁盘时，外部磁盘上的任何现有卷会变为可见且可访问状态。 
 
 ## <a name="a-dynamic-disks-status-is-online-errors"></a>动态磁盘的状态为“联机(错误)”
 
@@ -102,12 +113,12 @@ ms.locfileid: "71402166"
 1. 修复任何磁盘、控制器或电缆问题。 
 2. 确保物理磁盘处于打开状态、已接通电源并连接到计算机。 
 3. 接下来，使用“重新激活磁盘”  命令使磁盘恢复联机状态。
-4. 尝试[磁盘状态为未初始化或磁盘完全丢失](#a-disks-status-is-not-initialized-or-the-disk-is-missing)中描述的故障排除步骤。
-5. 如果磁盘状态仍是“脱机”  ，磁盘名称仍是“丢失”  ，并且你确定磁盘有无法修复的问题，则可以右键单击该磁盘，然后单击“删除磁盘”  ，以从系统中删除该磁盘。 但是，在删除磁盘之前，必须删除该磁盘上的所有卷（或镜像）。 你可以通过删除镜像卷而不是整个卷，来将任何镜像的卷保存在磁盘上。 删除卷会损坏卷中的数据，因此只有在完全确定磁盘已永久损坏并且不可用时，才应该删除该磁盘。
+4. 尝试[磁盘状态为未初始化或磁盘完全丢失](#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)中描述的故障排除步骤。
+5. 如果磁盘状态仍为“脱机”，磁盘名称仍为“丢失”，并且你确定此磁盘有无法修复的问题，则可以选中并按住（或右键单击）此磁盘，然后单击“删除磁盘”从系统中删除此磁盘    。 但是，在删除磁盘之前，必须删除该磁盘上的所有卷（或镜像）。 你可以通过删除镜像卷而不是整个卷，来将任何镜像的卷保存在磁盘上。 删除卷会损坏卷中的数据，因此只有在完全确定磁盘已永久损坏并且不可用时，才应该删除该磁盘。
 
 若要使处于脱机状态并且名称仍然为“磁盘 \#”（非“丢失”）的磁盘恢复联机状态，请尝试以下一个或多个步骤： 
 
-1. 在“磁盘管理”中，右键单击该磁盘，然后单击“重新激活磁盘”  以使磁盘恢复联机状态。 如果磁盘状态仍为“脱机”  ，请检查电缆和磁盘控制器，并确保物理磁盘正常。 解决任何问题，并再次尝试重新激活磁盘。 如果磁盘重新激活成功，则磁盘上的任何卷应该会自动恢复为“正常”  状态。
+1. 在“磁盘管理”中，选中并按住（或右键单击）此磁盘，然后单击“重新激活磁盘”以使磁盘恢复联机状态  。 如果磁盘状态仍为“脱机”  ，请检查电缆和磁盘控制器，并确保物理磁盘正常。 解决任何问题，并再次尝试重新激活磁盘。 如果磁盘重新激活成功，则磁盘上的任何卷应该会自动恢复为“正常”  状态。
 2. 在“事件查看器”中，检查事件日志中是否有任何与磁盘相关的错误，如“无完好的配置副本”。 如果事件日志包含此错误，请与 [Microsoft 产品支持服务](https://msdn.microsoft.com/library/aa263468(v=vs.60).aspx)联系。
 
 3. 请尝试将磁盘移到另一台计算机中。 如果可以在另一台计算机上使磁盘变为“联机”  状态，则问题很可能是由于磁盘未变为“联机”  状态的所在计算机的配置造成的。
@@ -123,13 +134,13 @@ ms.locfileid: "71402166"
 如果卷是具有“故障”  状态的基本卷：
 
 - 确保基础物理磁盘处于打开状态、已接通电源并连接到计算机。
-- 尝试[磁盘状态为未初始化或磁盘完全丢失](#a-disks-status-is-not-initialized-or-the-disk-is-missing)中描述的故障排除步骤。
+- 尝试[磁盘状态为未初始化或磁盘完全丢失](#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)中描述的故障排除步骤。
 
 如果卷是具有“故障”  状态的动态卷：
 
 -   请确保基础磁盘处于联机状态。 如果未处于联机状态，请将磁盘恢复为“联机”  状态。 如果此操作成功，则卷会自动重启并恢复为“正常”  状态。 如果动态磁盘恢复为“联机”  状态，但动态卷未恢复为“正常”  状态，可以手动重新激活此卷。
 -   如果动态卷是具有旧数据的镜像卷或 RAID-5 卷，则使基础磁盘联机将不会自动重启卷。 如果包含当前数据的磁盘已断开连接，请首先使这些磁盘联机（以允许同步数据）。 否则，手动重启镜像卷或 RAID-5 卷，然后运行错误检查工具或 Chkdsk.exe。
-- 尝试[磁盘状态为未初始化或磁盘完全丢失](#a-disks-status-is-not-initialized-or-the-disk-is-missing)中描述的故障排除步骤。
+- 尝试[磁盘状态为未初始化或磁盘完全丢失](#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)中描述的故障排除步骤。
 
 ## <a name="a-basic-or-dynamic-volumes-status-is-unknown"></a>基本卷或动态卷的状态为“未知”
 
@@ -148,8 +159,8 @@ ms.locfileid: "71402166"
 
 如果不再需要多磁盘卷，则可以导入磁盘并在其上创建新卷。 执行此操作的步骤：
 
-1. 右键单击具有“故障”  或“失败的重复”  状态的卷，然后单击“删除卷”  。
-2. 右键单击该磁盘，然后单击“新建卷”  。
+1. 选中并按住（或右键单击）状态为“失败”或“失败的重复”的卷，然后单击“删除卷”    。
+2. 选中并按住（或右键单击）此磁盘，然后单击“新建卷”  。
 
 ## <a name="a-dynamic-volumes-status-is-healthy-at-risk"></a>动态卷的状态为“正常(有危险)”
 
@@ -160,7 +171,7 @@ ms.locfileid: "71402166"
 **解决方案：**  
 1. 将基础磁盘恢复为“联机”  状态。 磁盘恢复为“联机”  状态后，卷应该会恢复为“正常”  状态。 如果“正常(有危险)”  状态仍然存在，则磁盘可能会出现故障。 
 
-2. 请尽快备份数据并更换磁盘。 
+2. 请尽快备份数据并更换磁盘。
 
 ## <a name="cannot-manage-striped-volumes-using-disk-management-or-diskpart"></a>无法使用磁盘管理或 DiskPart 来管理带区卷
 
@@ -183,3 +194,7 @@ ms.locfileid: "71402166"
 
 > [!NOTE]
 > 不支持工作组中的远程连接。 本地计算机和远程计算机都必须是某个域的成员。
+
+另请参阅
+
+- [在 Windows 10 中释放驱动器空间](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)

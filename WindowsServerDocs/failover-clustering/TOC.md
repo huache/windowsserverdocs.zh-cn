@@ -9,7 +9,7 @@
 ### [VM 负载均衡深度解析](vm-load-balancing-deep-dive.md)
 ### [群集集](../storage/storage-spaces/cluster-sets.md)
 ### [群集关联](cluster-affinity.md)
-## 规划
+## 计划
 ### [硬件要求](clustering-requirements.md)
 ### [使用群集共享卷 (CSV)](failover-cluster-csvs.md)
 ### [使用来宾 VM 群集](../storage/storage-spaces/storage-spaces-direct-in-vm.md)
@@ -36,4 +36,5 @@
 #### [设置](health-service-settings.md)
 ### [群集域迁移](cluster-domain-migration.md)
 ### [使用 Windows 错误报告进行疑难解答](troubleshooting-using-WER-reports.md)
+### [群集系统日志事件](system-events.md)
 ## [故障转移群集主题的更改历史记录](clustering-change-history.md)

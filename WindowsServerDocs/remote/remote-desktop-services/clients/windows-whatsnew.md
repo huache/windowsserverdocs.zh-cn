@@ -11,18 +11,27 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 01/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e6d57f2feb5b21385cf247856be05f752ddee0cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b97b7a22d59727bedd6bdbd67a19087612ebfa0
+ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404083"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653042"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Windows 应用商店客户端中的新增功能
 
 我们会定期更新 [Microsoft Store 客户端](windows.md)，添加新功能并修复问题。 可在下面找到最新更新。
+
+## <a name="updates-for-version-1011107"></a>针对版本 10.1.1107 的更新
+
+*发布日期：2019/9/4*
+
+- 现在可以在本地和远程电脑之间复制文件。
+- 现在可以使用你的电子邮件地址访问远程资源（如果你的管理员已启用此功能）。
+- 现在可以更改远程资源源的用户帐户分配。
+- 应用现在会在文件资源管理器中显示分配给此应用的 .rdp 文件的正确图标，而不是空的默认图标。
 
 ## <a name="updates-for-version-1011098"></a>针对版本 10.1.1098 的更新
 
