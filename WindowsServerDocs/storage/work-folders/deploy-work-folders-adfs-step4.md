@@ -6,14 +6,14 @@ ms.topic: article
 manager: klaasl
 ms.author: jeffpatt
 author: JeffPatt24
-ms.date: 6/24/2017
+ms.date: 06/24/2017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: 17adf89d3a26767bbc736a31da7b7b2b204570a2
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: f0222226191719fd11e68def8970c0e83529f801
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945242"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145903"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤 4，设置 Web 应用程序代理
 
@@ -101,7 +101,7 @@ ms.locfileid: "74945242"
   
 4.  在联合服务器上输入本地管理员帐户的凭据。 不要输入域凭据（例如 contoso\administrator），而是输入本地凭据（例如 administrator）。  
   
-5.  在 **AD FS 代理证书**页上，选择之前导入的 AD FS 证书。 在测试用例中，证书为 **blueadfs.contoso.com**。 单击**下一步**。  
+5.  在 **AD FS 代理证书**页上，选择之前导入的 AD FS 证书。 在测试用例中，证书为 **blueadfs.contoso.com**。 单击?下一步?。  
   
 6.  确认页显示将执行以配置服务的 Windows PowerShell 命令。 单击**配置**。  
   

@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b5f2202313c225d57b29997753b090e10b9c2e6c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c36555a8bca7882125451b2c86a0707e3de9b2db
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949297"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145923"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>为用户证书身份验证配置 AD FS
 
@@ -54,7 +54,7 @@ ms.locfileid: "75949297"
 本文档重点介绍在为用户配置证书身份验证 AD FS 时遇到的常见问题。 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>检查是否在所有 AD FS/WAP 服务器中正确配置了证书信任的颁发者
-*常见症状： HTTP 204 "没有来自 https\://certuath.adfs.contoso.com 的内容"*
+*常见症状： HTTP 204 "没有来自 https\://certauth.adfs.contoso.com 的内容"*
 
 AD FS 使用基础 windows 操作系统来证明用户证书的所有权，并通过执行证书信任链验证来确保它与受信任的颁发者匹配。 若要匹配受信任的颁发者，你将需要确保所有根和中间颁发机构都配置为本地计算机证书颁发机构存储中的受信任颁发者。 若要自动验证此情况，请使用[AD FS 诊断分析器工具](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze)。 该工具将查询所有服务器，并确保正确配置正确的证书。 
 1)  按照上面链接中提供的说明下载并运行该工具

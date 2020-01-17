@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0ef7860250a0a3d9b14fe24224432e00ee1bba86
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 4da69087ab1df6200394b36c938cb05ec5185045
+ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949655"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124885"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>使用存储迁移服务迁移服务器
 
@@ -57,7 +57,15 @@ ms.locfileid: "75949655"
 在此步骤中，你在指定将数据放置在目标服务器上的位置后传输数据。
 
 1. 在 "**传输数据** > **输入凭据**" 页上，键入在要迁移到的目标服务器上工作的管理员凭据，然后选择 "**下一步**"。
-2. 在 "**添加目标设备和映射**" 页上，将列出第一个源服务器。 键入要迁移到的服务器或群集文件服务器的名称，然后选择 "**扫描设备**"。 如果从已加入域的源计算机进行迁移，则目标服务器必须加入到同一个域。
+2. 在 "**添加目标设备和映射**" 页上，将列出第一个源服务器。 键入要迁移到的服务器或群集文件服务器的名称，然后选择 "**扫描设备**"。 如果从已加入域的源计算机进行迁移，则目标服务器必须加入到同一个域。 还可以单击 "创建新的 Azure VM"，并使用该向导在 Azure 中部署新的目标服务器。 这会自动调整 VM 的大小、设置存储、格式化磁盘，加入域，以及将存储迁移服务代理添加到 Windows Server 2019 目标。 你可以从 Windows Server 2019 （推荐）、Windows Server 2016 和 Windows Server 2012 R2 R2 Vm 中进行选择，并使用托管磁盘。   
+
+ > [!NOTE]
+   > 使用 "创建新的 Azure VM" 需要具有：
+   > - 有效的 Azure 订阅。
+   > - 具有创建权限的现有 Azure 计算资源组。
+   > - 现有的 Azure 虚拟网络和子网。 
+   > - 与虚拟网络和子网关联的 Azure Express 路由或 VPN 解决方案，该解决方案允许从 Azure IaaS VM 连接到本地客户端、域控制器、存储迁移服务 orchestrator 计算机、Windows 管理中心计算机要迁移的源计算机。
+
 3. 将源卷映射到目标卷，清除不想传输的任何共享的**包含**复选框（包括位于 Windows 系统文件夹中的任何管理共享），然后选择 "**下一步**"。
    ![屏幕截图，其中显示源服务器及其卷和共享位置，以及在目标](media/migrate/transfer.png)**图 3**中将它们传输到的位置。
 4. 为任何其他源服务器添加目标服务器和映射，然后选择 "**下一步**"。

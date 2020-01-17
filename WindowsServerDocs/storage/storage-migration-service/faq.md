@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: b7a6dd37cfc054ead153d274ffa7f0d13844305e
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 02829919c53e3488ad7f229ad8bee0d3ead14c9a
+ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953032"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124895"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>存储迁移服务常见问题（FAQ）
 
@@ -138,6 +138,10 @@ Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移
 6. 确保系统对该文件夹的所有文件和子文件夹具有 "完全控制"
 7. 删除自己的帐户权限。
 8. 启动 "存储迁移服务" 服务。
+
+## <a name="does-the-storage-migration-service-migrate-locally-installed-applications-from-the-source-computer"></a>存储迁移服务是否从源计算机迁移本地安装的应用程序？
+
+不是，存储迁移服务不迁移本地安装的应用程序。 完成迁移后，请在源计算机上运行的目标计算机上重新安装任何应用程序。 无需重新配置任何用户或其应用程序;存储迁移服务旨在使服务器更改对客户端不可见。 
 
 ## <a name="give-feedback"></a>什么是提供反馈、文件 bug 或获取支持的选项？
 

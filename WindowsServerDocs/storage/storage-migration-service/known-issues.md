@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: dccbfd7d3ff6d95615e9efecf840a840b42d0d27
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0f549310d568142f819e22422d41a72d38b306e2
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949646"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145933"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -25,7 +25,7 @@ ms.locfileid: "75949646"
 
 ## <a name="collecting-logs"></a>如何在使用 Microsoft 支持部门时收集日志文件
 
-存储迁移服务包含 Orchestrator 服务和代理服务的事件日志。 Urchestrator 服务器始终包含事件日志，并且安装了代理服务的目标服务器包含代理日志。 这些日志位于：
+存储迁移服务包含 Orchestrator 服务和代理服务的事件日志。 Orchestrator 服务器始终包含事件日志，并且安装了代理服务的目标服务器包含代理日志。 这些日志位于：
 
 - 应用程序和服务日志 \ Microsoft \ Windows \ StorageMigrationService
 - 应用程序和服务日志 \ Microsoft \ Windows \ StorageMigrationService-Proxy
