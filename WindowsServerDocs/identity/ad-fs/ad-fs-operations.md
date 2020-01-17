@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 99167850ff9ee193aca888d34d98503ea0554c30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2db9cd83ed08673835a38e443e90c5eb092f43ac
+ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408551"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162478"
 ---
 # <a name="ad-fs-operations"></a>AD FS 操作
 
@@ -29,7 +29,8 @@ ms.locfileid: "71408551"
 - [添加属性存储](../ad-fs/operations/Add-an-Attribute-Store.md)
 - [自定义 AD FS 2019 的 HTTP 安全响应标头](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [向非管理员用户委派 AD FS Powershell Commandlet 访问权限](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
-- [微调 SQL 和地址延迟](../ad-fs/operations/adfs-sql-latency.md) 
+- [微调 SQL 和地址延迟](../ad-fs/operations/adfs-sql-latency.md)
+- [AlwaysOn 可用性组](../ad-fs/operations/ad-fs-always-on.md) 
 
 
 ## <a name="authentication-configuration"></a>身份验证配置
@@ -82,10 +83,10 @@ ms.locfileid: "71408551"
 - [使用适用于敏感应用程序的附加多重身份验证管理风险](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [使用条件访问控制管理风险](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 - [设置 AD FS 实验室环境](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
-- [操作实例指南：利用适用于敏感应用程序的附加多重身份验证管理风险](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+- [演练指南：利用适用于敏感应用程序的附加多重身份验证管理风险](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [操作实例指南：使用条件访问控制管理风险](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-- [演练：使用 Windows 设备加入工作区](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-- [演练：使用 iOS 设备加入工作区](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+- [演练：使用 Windows 设备 Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [演练：使用 iOS 设备 Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
   
 
