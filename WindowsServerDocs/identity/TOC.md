@@ -392,6 +392,7 @@
 ##### [Windows Server 2012 R2 的 AD FS 中的访问控制策略](ad-fs/operations/Access-Control-Policies-W2K12.md)
 ##### [AD FS 2.0 中的访问控制策略](ad-fs/operations/Access-Control-Policies-in-AD-FS-2.md)
 #### [AD FS 2019 中的其他身份验证方法](ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
+#### [AlwaysOn 可用性组](ad-fs/operations/ad-fs-always-on.md)
 #### [AD FS 提示登录参数支持](ad-fs/operations/AD-FS-Prompt-Login.md)
 #### [AD FS 分页登录](ad-fs/operations/AD-FS-paginated-sign-in.md)
 #### [AD FS 2016 单一登录设置](ad-fs/operations/AD-FS-Single-Sign-On-Settings.md)
