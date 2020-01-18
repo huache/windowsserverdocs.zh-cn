@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: bcc4bf7b3fbdbff1aed2c8dd07b90346fe9eebab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 577014f6fd7e3a3eb58567b1a644d44360f9e498
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383430"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259058"
 ---
 # <a name="administer-a-server-core-server"></a>管理服务器核心服务器
 
@@ -124,8 +124,8 @@ ms.locfileid: "71383430"
 |         更改工作组中的计算机的名称         |                                                                                                                                                                **netdom renamecomputer \<currentcomputername\> 了/newname：\<newcomputername\>** <br>重新启动计算机。                                                                                                                                                                 |
 |                禁用页面文件管理                 |                                                                                                                                                                        **wmic 计算机名称 = "\<computername\>设置 AutomaticManagedPagefile = False**                                                                                                                                                                         |
 |                   配置页面文件                   |                                                            **wmic pagefileset，其中 name = "\<路径/filename\>" set InitialSize =\<InitialSize\>，MaximumSize =\<maxsize\>** <br>其中*path/filename*是页面文件的路径和名称， *initialsize*是页面文件的起始大小（以字节为单位）， *maxsize*是页面文件的最大大小（以字节为单位）。                                                             |
-|                 更改静态 IP 地址                 | **ipconfig/all** <br>记录相关信息或将其重定向到文本文件（**ipconfig/all > ipconfig .txt**）。<br>**netsh interface ipv4 show interface**<br>验证是否有接口列表。<br>**netsh interface ipv4 set address name \<ID from interface list\> source = static address =\<首选 IP 地址\> gateway =\<网关地址\>**<br>运行**ipconfig/all** ，验证 DHCP 是否已启用设置为 "**否**"。 |
-|                   设置静态 DNS 地址。                   |   <strong>netsh interface ipv4 add dnsserver name =\<name 或网络接口卡的 ID\> address = 主 DNS 服务器\<IP 地址\> index = 1 <br></strong>netsh interface ipv4 add dnsserver name =\<辅助 DNS 服务器的名称\> address =\<辅助 DNS 服务器的 IP 地址\> index = 2\*\* <br> 根据需要重复此步骤以添加其他服务器。<br>运行**ipconfig/all**以验证地址是否正确。   |
+|                 更改静态 IP 地址                 | **ipconfig/all** <br>记录相关信息或将其重定向到文本文件（**ipconfig/all > ipconfig .txt**）。<br>**netsh interface ipv4 show interface**<br>确认存在接口列表。<br>**netsh interface ipv4 set address \<Name ID from interface list\> source = static address =\<首选 IP 地址\> gateway =\<网关地址\>**<br>运行**ipconfig/all** ，验证 DHCP 是否已启用设置为 "**否**"。 |
+|                   设置静态 DNS 地址                   |   <strong>netsh interface ipv4 add dnsserver name =\<name 或网络接口卡的 ID\> address = 主 DNS 服务器\<IP 地址\> index = 1 <br></strong>netsh interface ipv4 add dnsserver name =\<辅助 DNS 服务器的名称\> address =\<辅助 DNS 服务器的 IP 地址\> index = 2\*\* <br> 根据需要重复添加其他服务器。<br>运行**ipconfig/all**以验证地址是否正确。   |
 | 从静态 IP 地址更改为 DHCP 提供的 IP 地址 |                                                                                                                                      **netsh interface ipv4 set address name =\<local system\> source = DHCP 的 IP 地址** <br>运行**ipconfig/all** ，验证是否已将 DCHP 设置为 **"是"** 。                                                                                                                                      |
 |                      输入产品密钥                      |                                                                                                                                                                                                   **slmgr.vbs – ipk \<产品密钥\>**                                                                                                                                                                                                    |
 |                  本地激活服务器                  |                                                                                                                                                                                                           **slmgr.vbs-ato**                                                                                                                                                                                                            |
@@ -140,7 +140,7 @@ ms.locfileid: "71383430"
 |显示或修改 IPSEC 配置|**netsh ipsec**| 
 |显示或修改 NAP 配置|**netsh nap**| 
 |显示或修改 IP 到物理地址的转换|**arp**| 
-|显示或配置本地路由表|**路由**| 
+|显示或配置本地路由表|route| 
 |查看或配置 DNS 服务器设置|**nslookup**| 
 |显示协议统计和当前 TCP/IP 网络连接|**netstat**| 
 |使用 TCP/IP 上的 NetBIOS （NBT）显示协议统计信息和当前 TCP/IP 连接|**nbtstat**| 

@@ -12,16 +12,16 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 121914f721cda7cbf0a117527b69568032d5541b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8e8206531e0939a1b6d6dfd17f5c5dd59947c81
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387089"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259132"
 ---
 # <a name="remote-server-administration-tools"></a>远程服务器管理工具
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 本主题支持适用于 Windows 10 的远程服务器管理工具。
 
@@ -32,10 +32,10 @@ RSAT 允许 IT 管理员管理 Windows 10 PC 中的 Windows Server 角色和功�
 
 远程服务器管理工具包括服务器管理器、Microsoft 管理控制台（mmc）管理单元、控制台、Windows PowerShell cmdlet 和提供程序，以及一些用于管理在 Windows Server 上运行的角色和功能的命令行工具。
 
-远程服务器管理工具包括可用于管理在远程服务器上运行的角色和功能的 Windows PowerShell cmdlet 模块。 虽然 windows PowerShell 远程管理在 Windows Server 2016 上默认启用，但在 Windows 10 上默认情况下未启用。 若要针对远程服务器运行作为远程服务器管理工具一部分的 cmdlet，请在安装后，在 Windows 客户端计算机上以提升的用户权限（即以管理员身份运行）打开的 Windows PowerShell 会话中运行 `Enable-PSremoting`远程服务器管理工具。
+远程服务器管理工具包括可用于管理在远程服务器上运行的角色和功能的 Windows PowerShell cmdlet 模块。 虽然 windows PowerShell 远程管理在 Windows Server 2016 上默认启用，但在 Windows 10 上默认情况下未启用。 若要针对远程服务器运行作为远程服务器管理工具的一部分的 cmdlet，请在安装远程服务器管理工具后，在 Windows 客户端计算机上以提升的用户权限（即以管理员身份运行）打开的 Windows PowerShell 会话中运行 `Enable-PSremoting`。
 
 ## <a name="BKMK_Thresh"></a>适用于 Windows 10 的远程服务器管理工具
-使用适用于 Windows 10 的远程服务器管理工具来管理运行 Windows Server 2016、Windows Server 2012 R2 的计算机上的特定技术，以及有限情况、Windows Server 2012 或 Windows Server 2008 R2。
+使用适用于 Windows 10 的远程服务器管理工具来管理运行 Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 的计算机上的特定技术，在有限情况下，Windows Server 2012 或 Windows Server 2008 R2。
 
 适用于 Windows 10 的远程服务器管理工具包括对运行服务器核心安装选项的计算机的远程管理，或 Windows Server 2016、Windows Server 2012 R2 的最小服务器界面配置和有限事例，Windows Server 2012 的服务器核心安装选项。 但是，不能在任何版本的 Windows Server 操作系统上安装适用于 Windows 10 的远程服务器管理工具。
 
@@ -50,7 +50,7 @@ RSAT 允许 IT 管理员管理 Windows 10 PC 中的 Windows Server 角色和功�
 > [!IMPORTANT]
 > 适用于 Windows 10 的远程服务器管理工具不应安装在运行 Windows 8.1、Windows 8、windows Server 2008 R2、Windows Server 2008、Windows Server 2003 或 Windows 2000 服务器的管理工具包的计算机上。 在安装远程服务器管理之前，从计算机中删除所有旧版本的管理工具包或远程服务器管理工具，包括早期的预发布版本和不同语言或区域设置的工具版本适用于 Windows 10 的工具。
 
-若要使用此版本的服务器管理器访问和管理运行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的远程服务器，你必须安装多个更新，以使旧版 Windows Server 操作系统可通过使用 Se 进行管理服务器管理器。 有关如何使用 Windows 10 的远程服务器管理工具中的服务器管理器为管理准备 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 的详细信息，请参阅使用[服务器管理多台远程服务器管理器](https://technet.microsoft.com/library/hh831456.aspx)。
+若要使用此版本的服务器管理器访问和管理运行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的远程服务器，你必须安装多个更新，以使旧版 Windows Server 操作系统可通过使用 Se 进行管理服务器管理器。 有关如何使用 Windows 10 的远程服务器管理工具中的服务器管理器为管理准备 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 的详细信息，请参阅[使用服务器管理器管理多台远程服务器](https://technet.microsoft.com/library/hh831456.aspx)。
 
 必须在远程服务器上启用 windows PowerShell 和服务器管理器远程管理，才能使用 Windows 10 远程服务器管理工具中的工具管理它们。 默认情况下，在运行 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 的服务器上启用远程管理。 有关如何在已禁用远程管理的情况下启用它的详细信息，请参阅 [使用服务器管理器管理多台远程服务器](https://go.microsoft.com/fwlink/p/?LinkId=241358)。
 
@@ -62,7 +62,7 @@ RSAT 允许 IT 管理员管理 Windows 10 PC 中的 Windows Server 角色和功�
 
 请参阅[**按需功能**提供的 RSAT 工具列表](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)。 除了通过图形**设置**应用程序安装以外，还可以通过命令行或自动化使用[**DISM/Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods)安装特定的 RSAT 工具。
 
-按需功能的一个好处是，已安装的功能在 Windows 10 版本升级期间仍然有效！
+按需功能的一个好处是，已安装的功能跨 Windows 10 版本升级保持不变。
 
 #### <a name="to-uninstall-specific-rsat-tools-on-windows-10-october-2018-update-or-later-after-installing-with-fod"></a>在 Windows 10 十月2018更新或更高版本（安装后安装了 FoD）上卸载特定的 RSAT 工具
 
@@ -74,11 +74,11 @@ RSAT 允许 IT 管理员管理 Windows 10 PC 中的 Windows Server 角色和功�
 
 如果你的 Windows 10 版本早于2018年10月更新（1809），则将不能按**需使用功能**。 你将需要下载并安装 RSAT 包。
 
-- 如上所述**直接从 Windows 10 安装 RSAT FODs，如下所述**：在 Windows 10 十月2018更新（1809）或更高版本上安装时，用于管理 Windows Server 2019 或早期版本。
+- **如上文所述，直接从 windows 10 安装 RSAT FODs**：在 Windows 10 十月2018更新（1809）或更高版本上安装（用于管理 windows Server 2019 或以前的版本）。
 
-- **下载并安装 WS_1803 RSAT 包，如下所述**：在 Windows 10 2018 年4月更新（1803）或更早版本上安装时，用于管理 Windows Server、版本1803或 Windows Server 版本1709。
+- **下载并安装 WS_1803 RSAT 包，如下所述**：在 windows 10 2018 年4月更新（1803）或更早版本上安装时，用于管理 windows server、版本1803或 Windows Server，版本1709。
 
-- **下载并安装 WS2016 RSAT 包，如下所述**：在 Windows 10 2018 年4月更新（1803）或更早版本上安装时，用于管理 Windows Server 2016 或早期版本。
+- **下载并安装 WS2016 RSAT 包，如下所述**：在 windows 10 2018 年4月更新（1803）或更早版本上安装时，用于管理 windows Server 2016 或早期版本。
 
 #### <a name="BKMK_installthresh"></a>下载用于安装 Windows 10 远程服务器管理工具的 RSAT 包
 
@@ -141,11 +141,11 @@ RSAT 允许 IT 管理员管理 Windows 10 PC 中的 Windows Server 角色和功�
 
 2.  在“管理工具” 文件夹中，单击“服务器管理器”。
 
-尽管它们未在服务器管理器控制台 "**工具**" 菜单中列出，但 Windows PowerShell Cmdlet 和命令提示符管理工具也作为远程服务器管理工具的一部分为角色和功能安装。 例如，如果你使用提升的用户权限打开 Windows PowerShell 会话（以管理员身份运行），并 `Get-Command -Module RDManagement` 运行 cmdlet，则结果将包含一个远程桌面服务 cmdlet 列表，在安装之后，这些 cmdlet 现在可在本地计算机上运行远程服务器管理工具，只要 cmdlet 针对的是运行全部或部分远程桌面服务角色的远程服务器。
+尽管它们未在服务器管理器控制台 "**工具**" 菜单中列出，但 Windows PowerShell Cmdlet 和命令提示符管理工具也作为远程服务器管理工具的一部分为角色和功能安装。 例如，如果你使用提升的用户权限打开 Windows PowerShell 会话（以管理员身份运行），并 `Get-Command -Module RDManagement`运行 cmdlet，则结果将包含一个远程桌面服务 cmdlet 列表，在安装远程服务器管理工具后，这些 cmdlet 现在可在本地计算机上运行，前提是这些 cmdlet 针对的是运行全部或部分远程桌面服务角色的远程服务器。
 
 ##### <a name="to-start-windows-powershell-with-elevated-user-rights-run-as-administrator"></a>使用提升的用户权限启动 Windows PowerShell（以管理员身份运行）
 
-1.  在“开始”菜单中，依次单击“所有应用”、“Windows 系统”和“Windows PowerShell”。
+1.  在“开始” 菜单中，依次单击“所有应用”、“Windows 系统”和“Windows PowerShell”。
 
 2.  若要从桌面以管理员身份运行 Windows PowerShell，请右键单击**Windows powershell**快捷方式，然后单击 "以**管理员身份运行**"。
 
@@ -155,44 +155,44 @@ RSAT 允许 IT 管理员管理 Windows 10 PC 中的 Windows Server 角色和功�
 
 ## <a name="known-issues"></a>已知问题
 
-### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**问题**：RSAT FOD 安装失败，错误代码为0x800f0954
+### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**问题**： RSAT FOD 安装失败，错误代码为0x800f0954
 
-> **影响**：WSUS/SCCM 环境中的 RSAT FODs on Windows 10 1809 （10月2018更新）
+> **影响**：在 WSUS/SCCM 环境中，Windows 10 1809 上的 RSAT FODs （10月2018更新）
 > 
-> **解决方法**:若要在已加入域的电脑上安装 FODs （通过 WSUS 或 SCCM 接收更新），需要更改组策略设置，以便直接从 Windows 更新或本地共享下载 FODs。 有关如何更改该设置的更多详细信息和说明，请参阅[使用 WSUS/SCCM 时如何根据需要提供功能和语言包](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)。
+> **解决方法**：若要在已加入域的电脑上安装 FODs （通过 WSUS 或 SCCM 接收更新），需要更改组策略设置，以便直接从 Windows 更新或本地共享下载 FODs。 有关如何更改该设置的更多详细信息和说明，请参阅[使用 WSUS/SCCM 时如何根据需要提供功能和语言包](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)。
 
 ---
 
-### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**问题**：通过 "设置" 应用的 RSAT FOD 安装不显示状态/进度
+### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**问题**：通过设置应用完成 RSAT FOD 安装不显示状态/进度
 
-> **影响**：Windows 10 1809 上的 RSAT FODs （2018年10月更新）
+> **影响**： Windows 10 1809 上的 RSAT FODs （2018年10月更新）
 > 
-> **解决方法**:若要查看安装进度，请单击 "**后退**" 按钮以查看 "**管理可选功能**" 页上的 "状态"。
+> **解决方法**：若要查看安装进度，请单击 "上**一步**" 按钮，查看 "**管理可选功能**" 页上的 "状态"。
 
 ---
 
 ### <a name="issue-rsat-fod-uninstallation-via-settings-app-may-fail"></a>**问题**：通过设置应用进行的 RSAT FOD 卸载可能会失败
 
-> **影响**：Windows 10 1809 上的 RSAT FODs （2018年10月更新）
+> **影响**： Windows 10 1809 上的 RSAT FODs （2018年10月更新）
 > 
-> **解决方法**:在某些情况下，卸载失败的原因是需要手动卸载依赖项。 具体来说，如果 RSAT 工具 B 需要 RSAT 工具 A，则如果仍安装了 RSAT 工具 B，则选择卸载 RSAT 工具 A 会失败。 在这种情况下，先卸载 RSAT 工具 B，然后卸载 RSAT 工具 A。请参阅包含依赖项的 RSAT FODs 列表。
+> **解决方法**：在某些情况下，卸载失败的原因是需要手动卸载依赖项。 具体来说，如果 RSAT 工具 B 需要 RSAT 工具 A，则如果仍安装了 RSAT 工具 B，则选择卸载 RSAT 工具 A 会失败。 在这种情况下，先卸载 RSAT 工具 B，然后卸载 RSAT 工具 A。请参阅包含依赖项的 RSAT FODs 列表。
 
 ---
 
-### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**问题**：RSAT FOD 卸载似乎已成功，但仍在安装该工具
+### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**问题**： RSAT FOD 卸载似乎已成功，但仍在安装该工具
 
-> **影响**：Windows 10 1809 上的 RSAT FODs （2018年10月更新）
+> **影响**： Windows 10 1809 上的 RSAT FODs （2018年10月更新）
 > 
-> **解决方法**:重新启动计算机将完成此工具的删除。
+> **解决方法**：重新启动计算机将会完成此工具的删除。
 
 ---
 
-### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**问题**：Windows 10 升级后，RSAT 丢失
+### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**问题**： Windows 10 升级后，RSAT 丢失
 
 > **影响**：任何 RSAT。未自动重新安装 MSU 包安装（在 RSAT FODs 之前）
 > 
-> **解决方法**:由于 RSAT，无法在操作系统升级过程中保留 RSAT 安装。将 MSU 作为 Windows 更新包交付。 请在升级 Windows 10 后再次安装 RSAT。 请注意，此限制是我们从 Windows 10 1809 开始迁移到 FODs 的原因之一。 在未来的 Windows 10 版本升级中，安装的 RSAT FODs 将保持不变。
+> **解决方法**：由于 rsat，无法在操作系统升级过程中保留 rsat 安装。将 MSU 作为 Windows 更新包交付。 请在升级 Windows 10 后再次安装 RSAT。 请注意，此限制是我们从 Windows 10 1809 开始迁移到 FODs 的原因之一。 在未来的 Windows 10 版本升级中，安装的 RSAT FODs 将保持不变。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 >- [适用于 Windows 10 的远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=404281)
 >- [适用于 Windows Vista、Windows 7、Windows 8、Windows Server 2008、Windows Server 2008 R2、Windows Server 2012 和 Windows Server 2012 R2 的远程服务器管理工具（RSAT）](https://go.microsoft.com/fwlink/p/?LinkID=221055)

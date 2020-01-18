@@ -8,12 +8,12 @@ ms.date: 06/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 785ecd4de86c06dd12eb57e41efaa1103f2afdc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e5e90119066285ae8e04b392a13ab1a38488f5ee
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357813"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265749"
 ---
 # <a name="fine-tuning-sql-and-addressing-latency-issues-with-ad-fs"></a>利用 AD FS 微调 SQL 和解决延迟问题
 在[AD FS 2016](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294)的更新中，我们引入了以下改进以减少跨数据库延迟。 即将推出的 AD FS 2019 更新将包括这些改进。
@@ -23,10 +23,12 @@ ms.locfileid: "71357813"
 
 在 AD FS 的最新更新中，通过添加后台线程来刷新 AD FS 配置缓存，并设置设置刷新时间段的设置，使延迟时间降低。 在请求线程中，数据库查找所花费的时间明显减少，因为数据库缓存更新会移到后台线程中。  
 
-`backgroundCacheRefreshEnabled`当设置为 true 时，AD FS 将允许后台线程运行缓存更新。 通过设置`cacheRefreshIntervalSecs`，可以将数据从缓存中提取的频率自定义为时间值。 如果`backgroundCacheRefreshEnabled`设置为 true，则默认值设置为300秒。 在设置的值持续时间后，AD FS 开始刷新它的缓存，而更新正在进行时，将继续使用旧的缓存数据。  
+将 `backgroundCacheRefreshEnabled` 设置为 true 时，AD FS 将使后台线程运行缓存更新。 可以通过设置 `cacheRefreshIntervalSecs`将从缓存中提取数据的频率自定义为时间值。 如果 `backgroundCacheRefreshEnabled` 设置为 true，则默认值设置为300秒。 在设置的值持续时间后，AD FS 开始刷新它的缓存，而更新正在进行时，将继续使用旧的缓存数据。  
+
+AD FS 收到应用程序的请求时，AD FS 从 SQL 中检索该应用程序并将其添加到缓存中。 在 `cacheRefreshIntervalSecs` 值，将使用后台线程刷新缓存中的应用程序。 当缓存中存在条目时，传入的请求会在后台刷新过程中使用缓存。 如果没有为 5 * `cacheRefreshIntervalSecs`访问某个条目，则将其从缓存中删除。 达到可配置的 `maxRelyingPartyEntries` 值后，也可以从缓存中删除最旧的条目。
 
 >[!NOTE]
-> 如果 ADFS 从 SQL 接收到指示数据库中发生`cacheRefreshIntervalSecs`了更改的通知，则将在值之外刷新缓存的数据。 此通知将触发缓存刷新。 
+> 如果 ADFS 从 SQL 收到通知，表明数据库中发生了更改，则将在 `cacheRefreshIntervalSecs` 值之外刷新缓存的数据。 此通知将触发缓存刷新。 
 
 ### <a name="recommendations-for-setting-the-cache-refresh"></a>有关设置缓存刷新的建议 
 缓存刷新的默认值为**5 分钟**。 建议将其设置为**1 小时**，以减少不必要的数据刷新，因为这会 AD FS，因为在发生任何 SQL 更改时将刷新缓存数据。  
@@ -43,7 +45,7 @@ AD FS 为 SQL 更改注册回调，并且在发生更改时，ADFS 会收到通�
   1. 导航到 AD FS 配置文件，在 "IdentityServer" 部分下，添加以下条目：  
   
   - `backgroundCacheRefreshEnabled`-指定是否启用后台缓存功能。 "true/false" 值。
-  - `cacheRefreshIntervalSecs`-时间值（以秒为单位），ADFS 将刷新缓存。 如果 SQL 中有任何更改，AD FS 会刷新缓存。 AD FS 将接收 SQL 通知并刷新缓存。  
+  - `cacheRefreshIntervalSecs` 的值（以秒为单位），ADFS 将刷新缓存。 如果 SQL 中有任何更改，AD FS 会刷新缓存。 AD FS 将接收 SQL 通知并刷新缓存。  
  
  >[!NOTE]
  > 配置文件中的所有项都区分大小写。  
@@ -51,8 +53,8 @@ AD FS 为 SQL 更改注册回调，并且在发生更改时，ADFS 会收到通�
  
 其他支持的可配置值： 
 
-   - **maxRelyingPartyEntries** -AD FS 将保留在内存中的信赖方条目的最大数量。 OAuth 应用程序权限缓存也使用此值。 如果有比 RPs 更多的应用程序权限，并且所有这些权限都将存储在内存中，则此值应为应用程序权限的数目。 默认值为1000。
-   - **maxIdentityProviderEntries** -这是 AD FS 将保留在内存中的声明提供程序条目的最大数量。 默认值为200。 
+   - **maxRelyingPartyEntries** -AD FS 将保留在内存中的信赖方条目的最大数量。 OAuth 应用程序权限缓存也使用此值。 如果有比 RPs 更多的应用程序权限，并且所有这些权限都将存储在内存中，则此值应为应用程序权限的数目。 默认值为 1000。
+   - **maxIdentityProviderEntries** -这是 AD FS 将保留在内存中的声明提供程序条目的最大数量。 默认值为 200。 
    - **maxClientEntries** -这是 AD FS 将保留在内存中的 OAuth 客户端条目的最大数量。 默认值为 500。 
    - **maxClaimDescriptorEntries** -AD FS 将保留在内存中的声明描述符条目的最大数目。 默认值为 500。 
    - **maxNullEntries** -用于作为否定缓存。 如果 AD FS 查找数据库中的条目，但找不到该条目，则 AD FS 会添加负缓存。 这是该缓存的最大大小。 对于每种类型的对象都有负缓存，它不是所有对象的单个缓存。 默认值为50，0000。 
@@ -65,9 +67,9 @@ AD FS 为 SQL 更改注册回调，并且在发生更改时，ADFS 会收到通�
 
 ### <a name="requirements"></a>要求： 
 在设置多个项目数据库支持之前，请在所有节点上运行更新并更新二进制文件，因为多节点调用通过此功能进行。 
-  1. 生成部署脚本以创建项目数据库：若要部署多个项目 DB 实例，管理员需要生成项目 DB 的 SQL 部署脚本。 作为此更新的一部分，已更新`Export-AdfsDeploymentSQLScript`现有 cmdlet，以根据需要使用参数，该参数指定要为其生成 SQL 部署脚本的 AD FS 数据库。 
+  1. 生成用于创建项目 DB 的部署脚本：若要部署多个项目 DB 实例，管理员需要为项目数据库生成 SQL 部署脚本。 作为此更新的一部分，现有 `Export-AdfsDeploymentSQLScript`cmdlet 已更新，可选择采用一个参数，该参数指定要为其生成 SQL 部署脚本的 AD FS 数据库。 
  
- 例如，若要只为项目 DB 生成部署脚本，请指定`-DatabaseType`参数，并传入值 "项目"。 可选`-DatabaseType`参数指定 AD FS 数据库类型，并且可以设置为：All （默认值）、项目或配置。 如果未`-DatabaseType`指定参数，则脚本将配置项目和配置脚本。  
+ 例如，若要只为项目 DB 生成部署脚本，请指定 `-DatabaseType` 参数，并传入值 "伪像"。 可选 `-DatabaseType` 参数指定 AD FS 数据库类型，并且可以设置为： All （默认值）、项目或配置。 如果未指定 `-DatabaseType` 参数，该脚本将同时配置项目和配置脚本。  
 
    ```PowerShell
    PS C:\> Export-AdfsDeploymentSQLScript -DestinationFolder <script folder where scripts will be created> -ServiceAccountName <domain\serviceaccount> -DatabaseType "Artifact" 

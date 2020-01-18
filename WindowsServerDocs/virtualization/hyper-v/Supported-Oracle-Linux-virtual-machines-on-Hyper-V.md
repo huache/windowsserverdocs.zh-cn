@@ -11,12 +11,12 @@ ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: 4b09b8e760ce716da7f5aa6abecbead52293e77b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e932a379a46675c7ae0bf34cf27d9e0eb3d40beb
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365492"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259122"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Oracle Linux 虚拟机
 
@@ -26,9 +26,9 @@ ms.locfileid: "71365492"
 
 本节内容：
 
-* [Red Hat 兼容内核序列](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_rhc)
+* [与 Red Hat 兼容内核 Oracle Linux 版本的功能](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_rhc)
 
-* [Unbreakable 企业内核系列](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_uek)
+* [Oracle Linux 版本与 Unbreakable Enterprise 内核（UEK）](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_uek)
 
 * [注意](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_notes)
 
@@ -40,9 +40,9 @@ ms.locfileid: "71365492"
 
 * （*空白*）-功能不可用
 
-* **UEK R\*x QU\*** Unbreakable Enterprise KERNEL （UEK），其中*x*是版本号， *y*是季度更新。
+* **UEK RxUy** -Unbreakable Enterprise KERNEL （UEK），其中 x 是版本号，y 是季度更新。
 
-## <a name="BKMK_rhc"></a>Red Hat 兼容内核序列
+## <a name="BKMK_rhc"></a>与 Red Hat 兼容内核 Oracle Linux 版本的功能
 
 用于1.x 系列的32位内核启用了 PAE。 Oracle Linux RHCK 6.0-6.3 的内置 .LIS 支持。 Oracle Linux 7. x 内核仅限64位。
 
@@ -71,7 +71,7 @@ ms.locfileid: "71365492"
 | 动态内存-热添加                                                                                                                     | 2019、2016、2012 R2、2012          | &#10004;备注8、9 | &#10004;备注8、9  | &#10004;备注7、8、9、10（备注6适用于 6.4-6.7）                      | &#10004;备注7、8、9、10（备注6适用于 6.4-6.7）                      | &#10004;备注6、7、8、9 | &#10004;备注6、7、8、9 | &#10004;备注6、7、8、9 | &#10004;备注6、7、8、9  |                           |
 | 动态内存-膨胀                                                                                                                  | 2019、2016、2012 R2、2012          | &#10004;备注8、9 | &#10004;备注8、9  | &#10004;备注7、9、10（备注6适用于 6.4-6.7）                         | &#10004;备注7、9、10（备注6适用于 6.4-6.7）                         | &#10004;备注6、8、9    | &#10004;备注6、8、9    | &#10004;备注6、8、9    | &#10004;备注6、8、9     | &#10004;备注6、8、9、10 |
 | 运行时内存大小调整                                                                                                                        | 2019、2016                         |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
-| **[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
+| **[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 | Hyper-v 特定视频设备                                                                                                                | 2019、2016、2012 R2、2012、2008 R2  | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 | &#10004;                 | &#10004;                  |                           |
 | **[杂](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 | 键值对                                                                                                                               | 2019、2016、2012 R2、2012、2008 R2 | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;备注12         | &#10004;备注12         | &#10004;备注12         | &#10004;备注12          | &#10004;备注12          |
@@ -85,11 +85,11 @@ ms.locfileid: "71365492"
 | 安全启动                                                                                                                                  | 2019、2016                         | &#10004;           | &#10004;            |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 
 
-## <a name="BKMK_uek"></a>Unbreakable 企业内核系列
+## <a name="BKMK_uek"></a>Oracle Linux 版本与 Unbreakable Enterprise 内核（UEK）
 
-Oracle Linux Unbreakable Enterprise 内核（UEK）仅限64位，并内置了 IIS 内置支持。
+Unbreakable Enterprise 内核（UEK） Oracle Linux 仅限64位，并内置了 IIS 内置支持。 
 
-| **功能**                                                                                                                                  | **Windows server 版本**         | **UEK R5**                | **UEK R4**                | **UEK R3 QU3**            | **UEK R3 QU2**            | **UEK R3 QU1**       |
+| **功能**                                                                                                                                  | **Windows server 版本**         | **R5**                | **R4**                | **R3 QU3**            | **R3 QU2**            | **R3 QU1**       |
 |----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|---------------------------|---------------------------|---------------------------|---------------------------|----------------------|
 | **可用性**                                                                                                                             |                                    | 内置                  | 内置                  | 内置                  | 内置                  | 内置             |
 | **[转储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2、2012、2008 R2 | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;             |
@@ -114,7 +114,7 @@ Oracle Linux Unbreakable Enterprise 内核（UEK）仅限64位，并内置了 II
 | 动态内存-热添加                                                                                                                     | 2019、2016、2012 R2、2012          | &#10004;                  | &#10004;                  |                           |                           |                      |
 | 动态内存-膨胀                                                                                                                  | 2019、2016、2012 R2、2012          | &#10004;                  | &#10004;                  |                           |                           |                      |
 | 运行时内存大小调整                                                                                                                        | 2019、2016                         |                           |                           |                           |                           |                      |
-| **[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                    |                           |                           |                           |                           |                      |
+| **[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                    |                           |                           |                           |                           |                      |
 | Hyper-v 特定视频设备                                                                                                                | 2019、2016、2012 R2、2012、2008 R2 | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  |                      |
 | **[杂](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                    |                           |                           |                           |                           |                      |
 | 键值对                                                                                                                               | 2019、2016、2012 R2、2012、2008 R2 | &#10004;注释11、12      | &#10004;注释11、12      | &#10004;注释11、12      | &#10004;注释11、12      | &#10004;注释11、12 |
@@ -137,7 +137,7 @@ Oracle Linux Unbreakable Enterprise 内核（UEK）仅限64位，并内置了 II
 
 4. 如果虚拟机有连接的 iSCSI 设备或直接连接的存储（也称为传递磁盘），则实时备份操作可能会悄悄地失败。
 
-5. Oracle Linux 6.4/6.5/UEKR3 QU2 和 QU3 的实时备份支持通过适用[于 Linux 的 Hyper-v 备份基础](https://github.com/LIS/backupessentials/tree/1.0)提供。
+5. 使用 UEK R3Q2 和 UEK R3Q3 的实时备份支持 Oracle Linux 6 更新4和 Oracle Linux 6 Update 5 可通过[适用于 Linux 的 Hyper-v Backup Essentials](https://github.com/LIS/backupessentials/tree/1.0)获得。
 
 6. 动态内存支持仅适用于64位虚拟机。
 

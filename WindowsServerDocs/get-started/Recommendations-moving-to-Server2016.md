@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 379808e861f087bdda800ae6877c73c02d242a7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: be63880e8a07e71aa6811f3a6979eb6e2fcd8eba
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391632"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947807"
 ---
 # <a name="recommendations-for-moving-to-windows-server-2016"></a>移动到 Windows Server 2016 的建议
 
@@ -29,8 +29,8 @@ ms.locfileid: "71391632"
 |如果运行的是：|Windows Server 2012 R2 或 Windows Server 2012|Windows Server 2008 R2 或 Windows Server 2008|  
 |-------------------|----------|--------------|--------------|---------------------------------------|  
 |**Windows Server 角色基础结构**|根据[特定角色指南](https://technet.microsoft.com/windowsserver/jj554790)选择升级或迁移。|- 若要充分利用 Windows Server 2016 中的新功能，可部署新硬件，或在现有主机上的虚拟机中安装 Windows Server 2016。 某些新功能在运行 Hyper-V 的 Windows Server 2016 物理主机上工作性能最佳。 <br>- 按照[特定角色指南](https://technet.microsoft.com/windowsserver/jj554790)操作。|
-|**Microsoft 服务器管理和应用程序工作负载**|- 应用程序升级应包括到 Windows Server 2016 的*迁移*。 请参阅[兼容性列表](Server-Application-Compatibility.md)。 <br>- 仅升级到 Windows Server 2016（即无需升级应用程序）应使用特定于应用程序的指南。|- 若要充分利用 Windows Server 2016 中的新功能，可部署新硬件，或在现有主机上的虚拟机中安装 Windows Server 2016。 某些新功能在运行 Hyper-V 的 Windows Server 2016 物理主机上工作性能最佳。 按照适用的迁移指南操作。 <br>- 或者，仍保留在当前的操作系统上，在 Windows Server 2016 主机上或 Microsoft Azure 上的虚拟机中运行。 通过[软件保障](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)与 EA 分销商、TAM 或 Microsoft 联系，了解扩展支持选项的信息。|
-|**ISV 应用程序工作负载**|- 升级到 Windows Server 2016 应使用特定于应用程序的指南。 <br>- 有关 Windows Server 与非 Microsoft 应用程序兼容性的详细信息，请访问 [Windows Server 徽标认证门户](https://msdn.microsoft.com/enterprisecloudcertified)。|- 若要充分利用 Windows Server 2016 中的新功能，可部署新硬件，或在现有主机上的虚拟机中安装 Windows Server 2016。 某些新功能在运行 Hyper-V 的 Windows Server 2016 物理主机上工作性能最佳。 按照适用的迁移指南操作。 <br>- 或者，仍保留在当前的操作系统上，在 Windows Server 2016 主机上或 Microsoft Azure 上的虚拟机中运行。 通过[软件保障](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)与 EA 分销商、TAM 或 Microsoft 联系，了解扩展支持选项的信息。|
+|**Microsoft 服务器管理和应用程序工作负载**|- 应用程序升级应包括到 Windows Server 2016 的*迁移*。 请参阅[兼容性列表](Server-Application-Compatibility.md)。 <br>- 仅升级到 Windows Server 2016（即无需升级应用程序）应使用特定于应用程序的指南。|- 若要充分利用 Windows Server 2016 中的新功能，可部署新硬件，或在现有主机上的虚拟机中安装 Windows Server 2016。 某些新功能在运行 Hyper-V 的 Windows Server 2016 物理主机上工作性能最佳。 按照适用的迁移指南操作。 <br>- 或者，仍保留在当前的操作系统上，在 Windows Server 2016 主机上或 Microsoft Azure 上的虚拟机中运行。 通过[软件保障](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx)与 EA 分销商、TAM 或 Microsoft 联系，了解扩展支持选项的信息。|
+|**ISV 应用程序工作负载**|- 升级到 Windows Server 2016 应使用特定于应用程序的指南。 <br>- 有关 Windows Server 与非 Microsoft 应用程序兼容性的详细信息，请访问 [Windows Server 徽标认证门户](https://msdn.microsoft.com/enterprisecloudcertified)。|- 若要充分利用 Windows Server 2016 中的新功能，可部署新硬件，或在现有主机上的虚拟机中安装 Windows Server 2016。 某些新功能在运行 Hyper-V 的 Windows Server 2016 物理主机上工作性能最佳。 按照适用的迁移指南操作。 <br>- 或者，仍保留在当前的操作系统上，在 Windows Server 2016 主机上或 Microsoft Azure 上的虚拟机中运行。 通过[软件保障](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx)与 EA 分销商、TAM 或 Microsoft 联系，了解扩展支持选项的信息。|
 |**自定义应用程序工作负载**|- 向应用程序开发人员咨询 Windows Server 2016 的兼容性和升级指南。 <br>- 先利用 Microsoft Azure 在 Windows Server 2016 上测试应用程序，再进行切换。 <br>- 在下一节中参阅完整选项。|- 向应用程序开发人员咨询 Windows Server 2016 的兼容性和升级指南。 <br>- 先利用 Microsoft Azure 在 Windows Server 2016 上测试应用程序，再进行切换。 <br>- 若要充分利用 Windows Server 2016 中的新功能，可部署新硬件，或在现有主机上的虚拟机中安装 Windows Server 2016。 某些新功能在运行 Hyper-V 的 Windows Server 2016 物理主机上工作性能最佳。 <br>- 在下一节中参阅完整选项。|
 
 ## <a name="complete-options-for-moving-servers-running-custom-or-in-house-applications-on-older-versions-of-windows-server-to-windows-server-2016"></a>将在旧版本 Windows Server 上运行自定义或“内部”应用程序的服务器移动到 Windows Server 2016 的完备选项
@@ -49,7 +49,7 @@ ms.locfileid: "71391632"
 
     - 如果已有 Windows Server 软件保障，可使用 [Azure 混合使用权益](https://azure.microsoft.com/pricing/hybrid-use-benefit/)进行部署来节省资金。 
 
-- Windows Server [软件保障](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)计划提供了新版本权限权益。 除一系列其他权益外，具有软件保障的服务器还可在适当时候升级到 Window Server 的最新版本，无需购买新的许可证。 
+- Windows Server [软件保障](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx)计划提供了新版本权限权益。 除一系列其他权益外，具有软件保障的服务器还可在适当时候升级到 Window Server 的最新版本，无需购买新的许可证。 
 
 ## <a name="additional-resources"></a>其他资源
 

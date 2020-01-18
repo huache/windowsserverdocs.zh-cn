@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 155e828c77670c7c489b334ec3e7c49aa0809d4d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9e8b0c04137ff3b11cdaa7aba3c7899ca6300848
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391624"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947744"
 ---
 # <a name="system-requirements"></a>系统要求
 
@@ -46,7 +46,7 @@ ms.locfileid: "71391624"
 ## <a name="processor"></a>处理器  
 处理器性能不仅取决于处理器的时钟频率，还取决于处理器内核数以及处理器缓存大小。 以下是本产品对处理器的要求：  
 
-**最低**：  
+**最低要求**：  
 - 1.4 GHz 64 位处理器  
 - 与 x64 指令集兼容  
 - 支持 NX 和 DEP  
@@ -58,7 +58,7 @@ ms.locfileid: "71391624"
 ## <a name="ram"></a>RAM  
 以下是本产品对 RAM 的预计要求：  
 
-**最低**：  
+**最低要求**：  
 - 512 MB（对于带桌面体验的服务器安装选项为 2 GB）
 - ECC（纠错代码）类型或类似技术  
 
@@ -75,7 +75,7 @@ ms.locfileid: "71391624"
 
 以下是系统分区对磁盘空间的预计 **最低** 要求。  
 
-**最低**：32 GB  
+**最低要求**：32 GB  
 
 > [!NOTE]
 > 请注意，32 GB 应视为确保成功安装的*绝对最低*值。 满足此最低值应该能够以“服务器核心”模式安装包含 Web 服务 (IIS) 服务器角色的 Windows Server 2016。 “服务器核心”模式中的服务器比带有 GUI 模式的服务器中的相同服务器大约 4 GB。 
@@ -128,4 +128,4 @@ ms.locfileid: "71391624"
 - [Windows 处理器要求](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
 - [Windows Server 2016 Standard 和 Datacenter 版本的比较](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
 - [Windows 10 系统要求](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
-- [下载 Windows Server 2016 许可数据表](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)
+- [下载 Windows Server 2016 许可数据表](https://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)

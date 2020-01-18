@@ -11,13 +11,13 @@ ms.date: 12/02/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 author: Heidilohr
-manager: daveba
-ms.openlocfilehash: 964dba2fc1a3cc1cf0e9cfe2392d40b9ea8f5ece
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+manager: lizross
+ms.openlocfilehash: 9564643e02a0b659914736c4047a8d723816976f
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700906"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919940"
 ---
 # <a name="virtual-machine-sizing-guidance"></a>虚拟机大小调整指南
 
@@ -32,7 +32,7 @@ ms.locfileid: "74700906"
 | 轻型 | 6 | 2 vCPU，8 GB RAM，16 GB 存储 | D2s_v3、F2s_v2 | 30 GB |
 | 中 | 4 | 4 vCPU，16 GB RAM，32 GB 存储 | D4s_v3、F4s_v2 | 30 GB |
 | 重型 | 2 | 4 vCPU，16 GB RAM，32 GB 存储 | D4s_v3、F4s_v2 | 30 GB |
-| 电源 | 1 | 6 vCPU，56 GB RAM，340 GB 存储 | D4s_v3、F4s_v2、NV6 | 30 GB |
+| 强力 | 1 | 6 vCPU，56 GB RAM，340 GB 存储 | D4s_v3、F4s_v2、NV6 | 30 GB |
 
 ## <a name="single-session-recommendations"></a>单会话建议
 

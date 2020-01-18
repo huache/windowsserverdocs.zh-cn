@@ -7,13 +7,13 @@ ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: f26f75b8ce3f5438362c15b84aeca9339b95ebbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: 44b98b485b69720a1459f052b68d15617954bffe
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387201"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949828"
 ---
 # <a name="remote-desktop-services-roles"></a>远程桌面服务角色
 
@@ -101,4 +101,4 @@ RD Web 访问需要 Internet Information Services (IIS) 才能正常工作。 �
 * [使用客户端访问许可证 (CAL) 许可 RDS 部署](rds-client-access-license.md)
 * [激活远程桌面服务许可证服务器](rds-activate-license-server.md)
 * [跟踪远程桌面服务客户端访问许可证 (RDS CAL)](rds-track-cals.md)
-* [Microsoft 批量许可：适用于服务提供商的许可选项](https://www.microsoft.com/en-us/Licensing/licensing-programs/spla-program.aspx)
+* [Microsoft 批量许可：适用于服务提供商的许可选项](https://www.microsoft.com/Licensing/licensing-programs/spla-program.aspx)

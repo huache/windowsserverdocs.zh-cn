@@ -9,12 +9,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 25fa6d32571597136580afe062aa8d9c7e2d82b7
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 5ed934e52b11db5b83948ba995eaf31e9ff2cce3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71962983"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947624"
 ---
 # <a name="mak-activation-known-issues"></a>MAK 激活：已知问题
 
@@ -26,7 +26,7 @@ ms.locfileid: "71962983"
 
 ## <a name="the-computer-does-not-activate-over-the-internet"></a>计算机不能通过 Internet 激活
 
-请确保在防火墙中打开必需的端口。 要获取端口列表，请参阅[批量激活部署指南](http://go.microsoft.com/fwlink/?linkid=150083)。
+请确保在防火墙中打开必需的端口。 要获取端口列表，请参阅[批量激活部署指南](https://go.microsoft.com/fwlink/?linkid=150083)。
 
 ## <a name="internet-and-telephone-activation-fail"></a>Internet 和电话激活失败
 

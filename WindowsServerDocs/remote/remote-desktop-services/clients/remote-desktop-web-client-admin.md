@@ -8,12 +8,12 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f54548e8e68a0ee693c5d8ec80e67057b3d5b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 864a15d7336abb56572ddc783ce41a35d6fc13bf
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387657"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950411"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>为用户设置远程桌面 Web 客户端
 
@@ -28,7 +28,7 @@ ms.locfileid: "71387657"
 
 * 确保[远程桌面部署](../rds-deploy-infrastructure.md)具有在 Windows Server 2016 或 2019年上运行的 RD 网关、RD 连接代理和 RD Web 访问。
 * 确保部署针对[每用户客户端访问许可证](../rds-client-access-license.md) (CAL)（而不是每设备）进行配置，否则会使用所有许可证。
-* 在 RD 网关上安装 [Windows 10 KB4025334 更新](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334)。 更高版本的累积更新可能已包含此 KB。
+* 在 RD 网关上安装 [Windows 10 KB4025334 更新](https://support.microsoft.com/help/4025334/windows-10-update-kb4025334)。 更高版本的累积更新可能已包含此 KB。
 * 确保为 RD 网关和 RD Web 访问角色配置了公共受信任证书。
 * 确保用户将连接到的任何计算机都在运行以下操作系统版本之一：
   * Windows 10
@@ -300,7 +300,7 @@ RD Web 访问角色可能未使用受信任的证书。 确保使用公开受信
 如果用户报告他们无法使用 Web 客户端进行连接，即使他们可以看到列出的资源，请检查以下事项：
 
 * RD 网关角色是否正确配置为使用受信任的公共证书？
-* RD 网关服务器是否安装了所需更新？ 确保服务器安装了 [KB4025334 更新](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334)。
+* RD 网关服务器是否安装了所需更新？ 确保服务器安装了 [KB4025334 更新](https://support.microsoft.com/help/4025334/windows-10-update-kb4025334)。
 
 如果用户在尝试连接时收到“收到了一个意外的服务器身份验证证书”错误消息，则该消息会显示证书的指纹。 使用该指纹搜索 RD 代理服务器的证书管理器，以找到正确的证书。 在远程桌面部署属性页面中验证该证书是否配置为用于 RD 代理角色。 确保该证书尚未过期之后，将 .cer 文件格式的证书复制到 RD Web 访问服务器并在 RD Web 访问服务器上运行以下命令（将括号括起来的值替换为该证书的文件路径）：
 

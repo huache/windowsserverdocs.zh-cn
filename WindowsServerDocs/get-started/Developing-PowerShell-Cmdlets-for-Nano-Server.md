@@ -12,19 +12,19 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80d6cdd3056d9c7e0a0815ce5856f961d79fcc34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 434b79508dbf88a90348840573255c3084d6e989
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391779"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948457"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>开发 Nano Server 的 PowerShell Cmdlet
 
 >适用于：Windows Server 2016
 
 > [!IMPORTANT]
-> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解这意味着什么。 
+> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解其含义。 
   
 ## <a name="overview"></a>概述  
 默认情况下，Nano Server 在所有 Nano Server 安装中都包括 PowerShell Core。 PowerShell Core 是基于 .NET Core 构建的 PowerShell 占用空间减小版本，在占用空间减小版本的 Windows （例如，Nano Server 和 Windows IoT Core）上运行。 PowerShell Core 与其他 PowerShell 版本（例如 Windows Server 2016 上运行的 Windows PowerShell）运行方式相同。 然而，Nano Server 占用空间减少意味着不是所有 Windows Server 2016 中的 PowerShell 功能都在 Nano Server 上的 PowerShell Core 中可用。  
@@ -138,7 +138,7 @@ PowerShell 支持多种 cmdlet 实现类型，你使用的类型决定其创建�
 ### <a name="building-c-for-nano-server"></a>生成适用于 Nano Server 的 C++  
 若要使 C++ DLL 在 Nano Server 上运行，请将其编译为适用于 Nano Server 而非某特定版本。  
   
-有关在 Nano Server 上开发 C++ 的先决条件和操作示例，请参阅 [Developing Native Apps on Nano Server](http://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx)（在 Nano Server 上开发本机应用）。  
+有关在 Nano Server 上开发 C++ 的先决条件和操作示例，请参阅 [Developing Native Apps on Nano Server](https://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx)（在 Nano Server 上开发本机应用）。  
   
   
 ## <a name="porting-net-cmdlets"></a>移植 .NET cmdlet  
@@ -151,7 +151,7 @@ Nano Server 上支持大多数 C# 代码。 可使用 [ApiPort](https://github.c
   
 PowerShell Core SDK 模块会暴露 cmdlet 来设置正确的 CoreCLR 和 PowerShell Core 引用程序集、在 Visual Studio 2015 中创建面向这些引用程序集的 C# 项目，并在 Nano Server 计算机上设置远程调试程序，从而使开发人员可在 Visual Studio 2015 中远程调试 Nano Server 上运行的 .NET cmdlet。  
   
-PowerShell Core SDK 模块需要 Visual Studio 2015 Update 2。 如未安装 Visual Studio 2015，可安装 [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)。  
+PowerShell Core SDK 模块需要 Visual Studio 2015 Update 2。 如未安装 Visual Studio 2015，可安装 [Visual Studio Community 2015](https://www.visualstudio.com/products/visual-studio-community-vs.aspx)。  
   
 该 SDK 模块还取决于 Visual Studio 2015 中要安装的以下功能：  
   

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: abbc9cf76056af4ac421d9a38381bd8d8f666e4c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b96a66c9e28454752fd4999fcfe74cbb15a3ae7d
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949535"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265809"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>保护 Active Directory 联合身份验证服务的最佳实践
 
@@ -26,6 +26,9 @@ ms.locfileid: "75949535"
 对于本地环境中的部署，建议使用一个标准部署拓扑，该拓扑包含内部企业网络中的一个或多个 AD FS 服务器，其中包含一个或多个 Web 应用程序代理（WAP）服务器。  在每个层，AD FS 和 WAP，硬件或软件负载平衡器置于服务器场的前面，并处理流量路由。  在每个（FS 和代理）场前面的负载均衡器的外部 IP 地址前面放置防火墙。
 
 ![AD FS 标准拓扑](media/Best-Practices-Securing-AD-FS/adfssec1.png)
+
+>[!NOTE]
+> AD FS 需要一个完全可写域控制器才能运行，而不是只读域控制器。 如果计划的拓扑包括只读域控制器，则可以使用只读域控制器进行身份验证，但 LDAP 声明处理将需要与可写域控制器建立连接。
 
 ## <a name="ports-required"></a>需要的端口
 下图描述了在 AD FS 和 WAP 部署的组件之间必须启用的防火墙端口。  如果部署不包括 Azure AD/Office 365，则可忽略同步要求。

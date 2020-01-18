@@ -9,12 +9,12 @@ ms.date: 11/05/2018
 ms.assetid: 8fe1c810-4599-4493-b4b8-73fa9aa18535
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ba0b3969695611385fb0a0bdc6df900eeab85254
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 2b9f1e01073f6ef8fdfe89623a383e26f8559977
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791136"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259112"
 ---
 # <a name="always-on-vpn-features-and-functionalities"></a>Always On VPN 功能和功能
 
@@ -53,7 +53,7 @@ ms.locfileid: "74791136"
 |                                       支持 IPv4 和 IPv6。                                        |                                                                                                                                                                 使用 Always On VPN，用户可以访问公司网络上的 IPv4 和 IPv6 资源。 Always On VPN 客户端使用不依赖于 IPv6 的双堆栈方法，或者需要 VPN 网关来提供 NAT64 或 DNS64 翻译服务。                                                                                                                                                                  |
 |                                支持双因素或 OTP 身份验证。                                 |                    Always On VPN 平台本身支持 EAP，这允许使用各种 Microsoft 和第三方 EAP 类型作为身份验证工作流的一部分。 Always On VPN 专门支持智能卡（物理和虚拟）和 Windows Hello 企业版证书，以满足双因素身份验证要求。 此外，Always On VPN 还通过使用 EAP RADIUS 集成，通过 MFA （仅在第三方插件上支持）支持 OTP。<p><p>定义使用：<br>**VPNv2/ProfileName/NativeProfile/Authentication**                    |
 |                                  支持多个域和林。                                   |                                   Always On VPN 平台不依赖于 Active Directory 域服务（AD DS）林或域拓扑（或关联的功能/架构级别），因为它不需要将 VPN 客户端加入域。 由于不在客户端配置过程中使用，因此组策略不是定义 VPN 配置文件设置的依赖项。 如果需要 Active Directory 授权集成，你可以在 EAP 身份验证和授权过程中通过 RADIUS 实现此集成。                                   |
-|              支持对 internet/intranet 通信分离进行拆分和强制隧道。               |                                                                                               你可以配置 Always On VPN 以支持强制隧道（默认运行模式）和本机拆分隧道。 Always On VPN 为特定于应用程序的路由策略提供额外的粒度。<p><p>***注意：***<br>仅由用户隧道支持。<p><p>定义使用：<p> **VPNv2/ProfileName/NativeProfile/RoutingPolicyType**<br>**VPNv2/ProfileName/TrafficFilterList/App/RoutingPolicyType**                                                                                               |
+|              支持对 internet/intranet 通信分离进行拆分和强制隧道。               |                                                                                               你可以配置 Always On VPN 以支持强制隧道（默认运行模式）和本机拆分隧道。 Always On VPN 为特定于应用程序的路由策略提供额外的粒度。<p><p>***注意：***<br>仅用户隧道支持强制隧道。 不能将其他 VPN 隧道并行激活到强制隧道用户隧道。<p><p>定义使用：<p> **VPNv2/ProfileName/NativeProfile/RoutingPolicyType**<br>**VPNv2/ProfileName/TrafficFilterList/App/RoutingPolicyType**                                                                                               |
 |                                          多协议支持。                                          |                                                                                                                                                                            如果需要 IKEv2 的安全套接字层回退，则可以将 Always On VPN 配置为本机支持 SSTP。<p><p>***注意：***<br>用户隧道支持 SSTP 和 IKEv2，而设备隧道仅支持 IKEv2，而不支持 SSTP 回退。                                                                                                                                                                            |
 |                       用于提供企业连接状态的连接助手。                       |                                                                                                            Always On VPN 与本机网络连接助手完全集成，并提供 "查看所有网络" 界面的连接状态。 随着 Windows 10 创意者更新（版本1703）的出现，现在可以通过网络飞出（适用于 Windows 内置 VPN 客户端）获取用户隧道的 VPN 连接状态和 VPN 连接控制。                                                                                                            |
 | 使用短名称、完全限定的域名（FQDN）和 DNS 后缀的公司资源的名称解析。 | Always On VPN 可以将一个或多个 DNS 后缀本机定义为 VPN 连接和 IP 地址分配过程的一部分，包括用于短名称、Fqdn 或整个 DNS 命名空间的公司资源名称解析。 Always On VPN 还支持使用名称解析策略表来提供特定于命名空间的分辨率粒度。<p><p>***注意：***<br>使用名称解析策略表时，请避免使用全局后缀，因为它们会干扰短名称解析。<p><p>定义使用：<br>**VPNv2/ProfileName/DnsSuffix**<br>**VPNv2/ProfileName/DomainNameInformationList** |

@@ -9,16 +9,16 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 007668d1c0f8f2a6701813385b0e0bb7a09b29a0
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 0932bbbb87c6fcae9dc0b871bd605302acdb25cc
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529947"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265909"
 ---
 # <a name="remote-desktop-client-disconnects-and-cant-reconnect-to-the-same-session"></a>远程桌面客户端断开连接且无法重新连接到同一会话
 
@@ -40,7 +40,7 @@ ms.locfileid: "68529947"
 
 > [!NOTE]  
 >  - 如果客户端与 RD 会话主机服务器之间的通信需要最高级别的加密，请使用符合 FIPS 的加密。
->  - 在“组策略”中配置的任何加密级别设置会替代使用远程桌面服务配置工具配置的设置。 此外，如果启用[系统加密:使用符合 FIPS 的算法进行加密、哈希处理和签名](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)策略，则此设置会替代“设置客户端连接加密级别”策略。  系统加密策略位于“计算机配置”\\“Windows 设置”\\“安全设置”\\“本地策略”\\“安全选项”文件夹中。 
+>  - 在“组策略”中配置的任何加密级别设置会替代使用远程桌面服务配置工具配置的设置。 此外，如果启用[系统加密:使用符合 FIPS 的算法进行加密、哈希处理和签名](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)策略，则此设置会替代“设置客户端连接加密级别”策略。  系统加密策略位于“计算机配置”\\“Windows 设置”\\“安全设置”\\“本地策略”\\“安全选项”文件夹中。 
 >  - 更改加密级别后，新的加密级别将在用户下一次登录时生效。 如果需要在一台服务器上使用多个加密级别，请安装多个网络适配器并单独配置每个适配器。
 >  - 若要验证证书是否有相应的私钥，请转到“远程桌面服务配置”，右键单击要查看其证书的连接，选择“常规”，然后选择“编辑”。   然后，选择“查看证书”。  转到“常规”选项卡时，如果有密钥，则会看到“你已有对应于此证书的私钥”语句。  也可以使用“证书”管理单元查看此信息。
 >  - “符合 FIPS”加密（远程桌面服务器配置中的“系统加密:  使用符合 FIPS 的算法进行加密、哈希处理和签名”策略或“符合 FIPS”设置）将通过那些使用 Microsoft 加密模块的联邦信息处理标准 (FIPS) 140-1 加密算法，对在服务器和客户端之间发送的数据进行加密和解密。  有关详细信息，请参阅 [FIPS 140 验证](https://docs.microsoft.com/windows/security/threat-protection/fips-140-validation)。

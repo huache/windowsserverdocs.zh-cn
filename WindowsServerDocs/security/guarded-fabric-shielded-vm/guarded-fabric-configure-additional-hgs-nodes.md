@@ -7,17 +7,17 @@ ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 10/22/2018
-ms.openlocfilehash: 5277a97f7f58d9d7edb1457cb363cb6ddf1d8b59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 01/14/2020
+ms.openlocfilehash: ece005617c4a2faac41c2be15967b2f43951517e
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403694"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265859"
 ---
 # <a name="configure-additional-hgs-nodes"></a>配置其他 HGS 节点
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 在生产环境中，应在高可用性群集中设置 HGS，以确保即使在 HGS 节点出现故障的情况下，也可以打开受防护的 Vm。 对于测试环境，不需要辅助 HGS 节点。
 
@@ -116,7 +116,7 @@ ms.locfileid: "71403694"
 如果要使用 SSL 证书保护 HGS 终结点，则必须在此节点上以及 HGS 群集中的每个其他节点上配置 SSL 证书。
 SSL 证书*不会*由 HGS 复制，并且不需要为每个节点使用相同的密钥（即每个节点都有不同的 SSL 证书）。
 
-请求 SSL 证书时，请确保群集完全限定的域名（如的输出`Get-HgsServer`中所示）是证书的使用者公用名，或包含为使用者可选 DNS 名称。
+请求 SSL 证书时，请确保群集完全限定的域名（如 `Get-HgsServer`输出中所示）是证书的使用者公用名，或者作为使用者备用 DNS 名称包含在内。
 从证书颁发机构获取证书后，可以将 HGS 配置为使用[HgsServer](https://technet.microsoft.com/itpro/powershell/windows/hgsserver/set-hgsserver)。
 
 ```powershell
@@ -141,16 +141,8 @@ HGS 将始终公开用于通信的 HTTP 和 HTTPS 端口。
 
    这会从群集中删除节点并卸载证明和密钥保护服务。 
    如果这是群集中的最后一个节点，则需要强制要求删除最后一个节点并销毁 Active Directory 中的群集。 
-   
+
    如果在堡垒林中部署了 HGS （默认值），则这是唯一的步骤。 
    你可以选择性地从域中脱离计算机，并从 Active Directory 中删除 gMSA 帐户。
 
-1. 如果 HGS 创建了自己的域，则还应[卸载 hgs](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration)来脱离域并降级域控制器。
-
-
-
-## <a name="next-step"></a>下一步
-
-> [!div class="nextstepaction"]
-> [验证 HGS 配置](guarded-fabric-verify-hgs-configuration.md)
-
+2. 如果 HGS 创建了自己的域，则还应[卸载 hgs](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration)来脱离域并降级域控制器。

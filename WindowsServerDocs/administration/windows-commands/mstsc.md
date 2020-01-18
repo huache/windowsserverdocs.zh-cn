@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf813c75c83154c76d4aeb53a259495d4ad1369e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bd68defd56f5e0b910c9505d6b159d242c95e6f0
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373353"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259092"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -41,7 +41,7 @@ mstsc.exe /migrate
 |        参数        |                                                         描述                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   指定用于连接的 .rdp 文件的名称。                                    |
-|   /v： < Server [：<Port>]   |                指定远程计算机，还可以选择要连接到的端口号。                 |
+|  /v： < Server\>[： < 端口\>] |                指定远程计算机，还可以选择要连接到的端口号。                 |
 |         /admin          |                                   将你连接到用于管理服务器的会话。                                   |
 |           /f            |                                    以全屏模式启动远程桌面连接。                                    |
 |       /w：<Width>        |                                      指定远程桌面窗口的宽度。                                      |
@@ -54,7 +54,7 @@ mstsc.exe /migrate
 
 ## <a name="remarks"></a>备注
 -   默认情况下，将为每个用户在用户的 Documents 文件夹中存储为隐藏文件。 用户创建的 .rdp 文件默认保存在用户的 Documents 文件夹中，但可以保存在任何位置。
--   若要跨越多台监视器，监视器必须使用相同的分辨率，并且必须水平对齐（即并排）。 当前不支持在客户端系统上垂直跨多个监视器。
+-   若要跨越多台监视器，监视器必须使用相同的分辨率，并且必须水平对齐（即并排）。 目前不支持跨越在客户端系统上垂直放置的多台监视器。
 
 ## <a name="BKMK_examples"></a>示例
 -   若要以全屏模式连接到会话，请键入：

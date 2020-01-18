@@ -8,12 +8,12 @@ ms.topic: article
 author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
-ms.openlocfilehash: 187abe06b469abe511d4bbbfb0aac9237d3c650a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 946c1266f1c2cdc78cedac6794abb9f8d26696cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868520"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947701"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>适用于 Windows Server 的 Azure 混合权益
 
@@ -84,7 +84,7 @@ Windows Server 和 SA 要求参考表：
 
 请务必清点你拥有的每个订阅，以生成许可情况的全面视图。
 
-[Azure 混合权益 WS SA 计数工具](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
+[Azure 混合权益 WS SA 计数工具](https://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
 
 如果执行了上述操作，并确认已针对正在运行的 Azure 混合权益实例数获得完全许可，则无需执行任何进一步的操作。 如果发现可以使用该权益涵盖增量 VM，则可能需改用该权益而非全部成本运行实例，进一步优化成本。
 

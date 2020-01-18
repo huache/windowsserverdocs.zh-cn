@@ -5,14 +5,15 @@ ms.prod: windows-server
 ms.topic: article
 ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
-author: huu
+author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 6db9ce1db139558bd1a7aa731cb12c1b227ead03
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.date: 01/14/2020
+ms.openlocfilehash: c69fc70282ff61ecce25f6413244d7ba3a5ba3bc
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949764"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265819"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>使用受保护的构造诊断工具进行故障排除
 
@@ -20,21 +21,24 @@ ms.locfileid: "75949764"
 
 本主题介绍如何使用受保护的结构诊断工具来确定和修正受保护的结构基础结构的部署、配置和日常操作中的常见故障。 这包括主机保护者服务（HGS）、所有受保护的主机，以及 DNS 和 Active Directory 等服务。 诊断工具可用于执行对失败的受保护结构的会审中的第一步，为管理员提供解决中断和标识配置错误的资产的起点。 该工具不能取代对受保护的构造进行操作的声音，只是为了快速验证日常操作过程中遇到的最常见问题。
 
-有关本主题中使用的 cmdlet 的文档，请参阅[TechNet](https://technet.microsoft.com/library/mt718834.aspx)。
+有关本文中使用的 cmdlet 的完整文档，请参阅[HgsDiagnostics 模块参考](https://docs.microsoft.com/powershell/module/hgsdiagnostics/?view=win10-ps)。
 
-[!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)] 
+[!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)]
 
 ## <a name="quick-start"></a>快速启动
 
 您可以通过使用具有本地管理员权限的 Windows PowerShell 会话调用以下内容来诊断受保护的主机或 HGS 节点：
+
 ```PowerShell
 Get-HgsTrace -RunDiagnostics -Detailed
 ```
+
 这会自动检测当前主机的角色，并诊断可以自动检测到的任何相关问题。  在此过程中生成的所有结果都将由于存在 `-Detailed` 开关而显示。
 
 本主题的其余部分将详细介绍 `Get-HgsTrace` 的高级用法，如一次诊断多个主机以及检测复杂的跨节点错误配置。
 
 ## <a name="diagnostics-overview"></a>诊断概述
+
 受保护的结构诊断在安装了与虚拟机相关的工具和功能的任何主机上可用，包括运行服务器核心的主机。  目前，诊断包含在以下功能/包中：
 
 1. 主机保护者服务角色
@@ -49,6 +53,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 管理员可以通过运行 `Get-HgsTrace`来开始任何诊断任务。  此命令基于运行时提供的开关执行两个不同的功能：跟踪收集和诊断。  这两者共同构成了受保护的结构诊断工具。  尽管没有明确要求，但最有用的诊断需要跟踪，这些跟踪只能在跟踪目标上通过管理员凭据收集。  如果用户执行跟踪集合所持有的权限不足，则需要提升的跟踪将会失败，而其他的跟踪将会失败。  这允许在有权限的操作员执行会审的情况下进行部分诊断。 
 
 ### <a name="trace-collection"></a>跟踪集合
+
 默认情况下，`Get-HgsTrace` 只收集跟踪并将其保存到临时文件夹中。  跟踪采用名为的文件夹的形式，在目标主机后以特殊格式的文件进行填充，这些文件描述了如何配置主机。  跟踪还包含元数据，用于描述如何调用诊断以收集跟踪。  在执行手动诊断时，诊断将使用此数据来解除冻结有关主机的信息。
 
 如有必要，可以手动查看跟踪。  所有格式都可以是用户可读的（XML），也可以使用标准工具（如 X509 证书和 Windows 加密 Shell 扩展）随时进行检查。  但请注意，跟踪并不是针对手动诊断设计的，并且通过 `Get-HgsTrace`的诊断工具处理跟踪始终更为有效。
@@ -58,6 +63,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 使用 `-Diagnostic` 参数，你可以将跟踪集合限制为仅限操作指定诊断所需的跟踪。  这会减少收集的数据量，以及调用诊断所需的权限。
 
 ### <a name="diagnosis"></a>Diagnosis
+
 可以通过 `-Path` 参数提供 `Get-HgsTrace` 跟踪的位置并指定 `-RunDiagnostics` 开关来诊断收集的跟踪。  此外，`Get-HgsTrace` 可以通过提供 `-RunDiagnostics` 开关和跟踪目标列表在单个传递中执行收集和诊断。  如果未提供任何跟踪目标，则将当前计算机用作隐式目标，其角色通过检查已安装的 Windows PowerShell 模块来推断。
 
 诊断将提供分层格式的结果，显示哪些跟踪目标、诊断集和个别诊断负责特定故障。  如果可以根据接下来应执行的操作进行确定，则故障包括修正和解决建议。  默认情况下，将隐藏传递和不相关的结果。  若要查看诊断测试的所有内容，请指定 `-Detailed` 开关。  这将导致显示所有结果，而不考虑它们的状态。
@@ -78,13 +84,17 @@ Get-HgsTrace -RunDiagnostics -Detailed
 隐式本地目标使用角色推理来确定当前主机在受保护的构造中所扮演的角色。  这取决于已安装的 Windows PowerShell 模块，这些模块大致对应于系统上已安装的功能。  `HgsServer` 模块的存在将导致跟踪目标采用角色 `HostGuardianService` 并且 `HgsClient` 模块的状态将导致跟踪目标接受角色 `GuardedHost`。  给定主机可以同时出现这两种模块，在这种情况下，它将被视为 `HostGuardianService` 和 `GuardedHost`。
 
 因此，默认情况下，诊断在本地收集跟踪：
+
 ```PowerShell
 Get-HgsTrace
 ```
+
 ...等效于以下内容：
+
 ```PowerShell
 New-HgsTraceTarget -Local | Get-HgsTrace
 ```
+
 > [!TIP]
 > `Get-HgsTrace` 可以通过管道或直接通过 `-Target` 参数来接受目标。  这两个操作之间没有区别。
 
@@ -159,6 +169,7 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
    ```PowerShell
    Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
    ```
+
 2. 请求每个主机管理员将生成的跟踪文件夹打包，并将其发送给您。  此过程可通过电子邮件、文件共享或任何其他机制（基于组织建立的操作策略和过程）驱动。
 
 3. 将所有接收的跟踪合并到一个文件夹中，无其他内容或文件夹。
@@ -197,3 +208,15 @@ Get-HgsTrace -RunDiagnostics -Target $hgs03 -Path .\FabricTraces
 ``` 
 
 诊断 cmdlet 将标识所有预收集的主机，以及仍需要跟踪并执行必要跟踪的其他主机。  然后，将诊断所有预先收集和刚收集的跟踪的总和。  生成的 trace 文件夹将包含新跟踪和新跟踪。
+
+## <a name="known-issues"></a>已知问题
+
+当在 Windows Server 2019 或 Windows 10、版本1809和更高版本的操作系统上运行时，受保护的结构诊断模块具有已知的限制。
+使用以下功能可能导致错误的结果：
+
+* 主机密钥证明
+* 仅证明 HGS 配置（适用于 SQL Server Always Encrypted 方案）
+* 在其证明策略默认为 v2 的 HGS 服务器上使用 v1 策略项目
+
+使用这些功能时，`Get-HgsTrace` 中的失败不一定表示 HGS 服务器或受保护的主机配置错误。
+在受保护的主机上使用其他诊断工具（如 `Get-HgsClientConfiguration`）来测试主机是否已通过证明。

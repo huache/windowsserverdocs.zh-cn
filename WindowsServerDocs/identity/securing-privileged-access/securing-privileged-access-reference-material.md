@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 56e1c028a9b18db7b23e8f04e943e4113837b66b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 16d711a288843163b134b0226ed4b8513d7070eb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407228"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950056"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 管理层模型
 
@@ -139,7 +139,7 @@ ms.locfileid: "71407228"
 
 ![应尽量减少 Active Directory 和域控制器依赖的系统数量图示](../media/securing-privileged-access-reference-material/PAW_RM_Fig010.JPG)
 
-有关强化 Active Directory 前几大风险的详细信息，请参阅[此页面](http://aka.ms/hardenAD)。
+有关强化 Active Directory 前几大风险的详细信息，请参阅[此页面](https://aka.ms/hardenAD)。
 
 ## <a name="operational-standards-based-on-clean-source-principle"></a>基于清洁源原则的操作标准
 
@@ -168,12 +168,12 @@ ms.locfileid: "71407228"
 - 要管理的所有工作站都运行 Windows 7 或更高版本，并且已启用 RDP RestrictedAdmin 模式。
 
    > [!NOTE]
-   > 要启用 RDP RestrictedAdmin 模式，请参阅[此页面](http://aka.ms/RDPRA)。
+   > 要启用 RDP RestrictedAdmin 模式，请参阅[此页面](https://aka.ms/RDPRA)。
 
 - 智能卡可用且已颁发给所有管理帐户。
 - 每个域的 *Builtin\Administrator* 已被指定为紧急访问帐户
 - 企业标识管理解决方案已部署。
-- [LAPS](http://aka.ms/laps) 已部署到服务器和工作站来管理本地管理员帐户密码
+- [LAPS](https://aka.ms/laps) 已部署到服务器和工作站来管理本地管理员帐户密码
 - 已有特权访问管理解决方案（如 Microsoft 标识管理器），或者计划采用此解决方案。
 - 已分配人员监视安全警报并对其做出响应。
 - 存在可用技术功能以快速应用 Microsoft 安全更新。
@@ -314,7 +314,7 @@ ms.locfileid: "71407228"
 > [!NOTE]
 > 这是必需的，因为以交互方式登录到主机将授予对该主机凭据的控制权限。
 >
-> 有关登录类型、常见管理工具和凭据公开的详细信息，请参阅[管理工具和登录类型](http://aka.ms/admintoolsecurity)。
+> 有关登录类型、常见管理工具和凭据公开的详细信息，请参阅[管理工具和登录类型](https://aka.ms/admintoolsecurity)。
 
 ##### <a name="use-of-approved-support-technology-and-methods"></a>使用已批准的支持技术和方法
 
@@ -330,7 +330,7 @@ ms.locfileid: "71407228"
 确保将以下做法应用于此情形：
 
 - **远程服务器支持** - 远程访问服务器时，第 0 层管理员必须遵守以下原则：
-  - **主要（工具）** - 使用网络登录的远程工具（类型 3）。 有关详细信息，请参阅[管理工具和登录类型](http://aka.ms/admintoolsecurity)。
+  - **主要（工具）** - 使用网络登录的远程工具（类型 3）。 有关详细信息，请参阅[管理工具和登录类型](https://aka.ms/admintoolsecurity)。
   - **主要（交互式）** - 通过域帐户从管理工作站使用 RDP RestrictedAdmin 或标准 RDP 会话
 
     > [!NOTE]
@@ -366,8 +366,8 @@ ms.locfileid: "71407228"
    - **主要** - 可以在没有工具的情况下提供“即时权限提升”支持。
    - **禁止** - 在此情形中不允许使用帐户管理凭据登录。 如果需要管理权限，请切换到桌边工作站支持。
 - **远程用户支持** - 第 2 层支持人员以物理方式远程到用户。
-   - **主要** - 可以使用远程协助、Skype for Business 或类似的用户屏幕共享功能。 有关详细信息，请参阅[什么是 Windows 远程协助？](https://windows.microsoft.com/en-us/windows/what-is-windows-remote-assistance)
-   - **禁止** - 在此情形中不允许使用帐户管理凭据登录。 如果需要管理权限，请切换到工作站支持。
+   - **主要** - 可以使用远程协助、Skype for Business 或类似的用户屏幕共享功能。 有关详细信息，请参阅[什么是 Windows 远程协助？](https://windows.microsoft.com/windows/what-is-windows-remote-assistance)
+   - **禁止** - 在此情形中不允许使用域帐户管理凭据登录。 如果需要管理权限，请切换到工作站支持。
 - **工作站支持** - 任务包括执行工作站维护或故障排除（需要访问系统以查看日志、安装软件、更新驱动程序等）。
    - **桌边工作站支持** - 第 2 层支持人员以物理方式位于用户工作站。
       - **主要** - 连接到用户工作站之前，从管理工作站检索由 LAPS 设置的本地帐户密码。
@@ -489,7 +489,7 @@ ms.locfileid: "71407228"
 
 - **工作站强化** - 使用“[特权访问工作站](../securing-privileged-access/privileged-access-workstations.md)”构建管理工作站（通过第 3 阶段），但域成员身份将更改为管理林（而不是生产环境）。
 - **服务器和 DC 强化** - 对于管理林中的所有域控制器和服务器：
-   - 确保已使用[安装介质的清洁源](http://aka.ms/cleansource)中的指南验证所有介质
+   - 确保已使用[安装介质的清洁源](https://aka.ms/cleansource)中的指南验证所有介质
    - 确保管理林服务器已安装最新的操作系统，即使这在生产中并不可行。
    - 管理林主机应使用安全更新自动更新。
 
@@ -523,7 +523,7 @@ ms.locfileid: "71407228"
    - 攻击面分析可防止在安装新软件的过程中将新的攻击媒介引入 Windows。
 
       > [!NOTE]
-      > 使用 [Attack Surface Analyzer (ASA)](https://www.microsoft.com/en-us/download/details.aspx?id=24487) 等工具，将有助于评估主机上的配置设置，并标识由软件或配置更改引入的攻击媒介。
+      > 使用 [Attack Surface Analyzer (ASA)](https://www.microsoft.com/download/details.aspx?id=24487) 等工具，将有助于评估主机上的配置设置，并标识由软件或配置更改引入的攻击媒介。
 
 - 帐户强化
    - 应对管理林中的所有帐户配置多重身份验证，但有一个帐户除外。 至少有一个管理帐户应是基于密码的，以确保能够在多重身份验证过程中断时进行正常访问。 此帐户应受到严格的物理控制过程保护。
@@ -568,32 +568,32 @@ ms.locfileid: "71407228"
 
 此表包含有关最常用管理工具和连接方法的指南：
 
-|连接方法|登录类型|目标上可重复使用的凭据|备注|
+|连接方法|登录类型|目标上可重复使用的凭据|说明|
 |-----------|-------|--------------------|------|
 |在控制台上登录|Interactive (交互)|v|包括硬件远程访问/无人照看卡和网络 KVM。|
 |RUNAS|Interactive (交互)|v||
 |RUNAS/网络|NewCredentials|v|克隆当前 LSA 会话进行本地访问，但连接到网络资源时使用新的凭据。|
 |远程桌面（成功）|RemoteInteractive|v|如果远程桌面客户端配置为共享本地设备和资源，这些可能也会受到影响。|
 |远程桌面（失败 - 登录类型被拒绝）|RemoteInteractive|-|默认情况下，如果 RDP 登录失败，凭据只会存储很短的时间。 如果计算机受到破坏，则可能并非如此。|
-|Net use * \\\SERVER|Network|-||
-|Net use * \\\SERVER /u:user|Network|-||
-|MMC 管理单元到远程计算机|Network|-|示例：计算机管理、事件查看器、设备管理器、服务|
-|PowerShell WinRM|Network|-|示例：Enter-PSSession server|
-|PowerShell WinRM（具有 CredSSP）|NetworkClearText|v|New-PSSession server<br />-Authentication Credssp<br />-Credential cred|
-|PsExec（无显式凭据）|Network|-|示例：PsExec \\\server cmd|
+|Net use * \\\SERVER|Network (网络)|-||
+|Net use * \\\SERVER /u:user|Network (网络)|-||
+|MMC 管理单元到远程计算机|Network (网络)|-|例如：计算机管理、事件查看器、设备管理器、服务|
+|PowerShell WinRM|Network (网络)|-|例如：Enter-PSSession server|
+|PowerShell WinRM（具有 CredSSP）|NetworkClearText|v|New-PSSession 服务器<br />-Authentication Credssp<br />-Credential cred|
+|PsExec（无显式凭据）|Network (网络)|-|例如：PsExec \\\server cmd|
 |PsExec（有显式凭据）|网络 + 交互|v|PsExec \\\server -u user -p pwd cmd<br />创建多个登录会话。|
-|远程注册表|Network|-||
-|远程桌面网关|Network|-|对远程桌面网关进行身份验证。|
+|远程注册表|Network (网络)|-||
+|远程桌面网关|Network (网络)|-|对远程桌面网关进行身份验证。|
 |计划任务|Batch|v|密码也将在磁盘上被另存为 LSA 机密。|
 |将工具作为服务运行|服务|v|密码也将在磁盘上被另存为 LSA 机密。|
-|漏洞扫描程序|Network|-|大多数扫描程序默认使用网络登录，但某些供应商可能会实施非网络登录并引入多个凭据被盗风险。|
+|漏洞扫描程序|Network (网络)|-|大多数扫描程序默认使用网络登录，但某些供应商可能会实施非网络登录并引入多个凭据被盗风险。|
 
 对于 Web 身份验证，请使用下表中的引用：
 
 |连接方法|登录类型|目标上可重复使用的凭据|说明|
 |-----------|-------|--------------------|------|
 |IIS“基本身份验证”|NetworkCleartext<br />(IIS 6.0+)<br /><br />Interactive (交互)<br />（低于 IIS 6.0）|v||
-|IIS“集成 Windows 身份验证”|Network|-|NTLM 和 Kerberos 提供程序。|
+|IIS“集成 Windows 身份验证”|Network (网络)|-|NTLM 和 Kerberos 提供程序。|
 
 列定义：
 
@@ -615,7 +615,7 @@ ms.locfileid: "71407228"
 |登录类型|#|接受的身份验证程序|LSA 会话中可重复使用的凭据|示例|
 |-------|---|--------------|--------------------|------|
 |交互（也称为本地登录）|2|密码、智能卡、<br />其他|是|控制台登录；<br />RUNAS；<br />硬件远程控制解决方案（如网络 KVM 或远程访问/服务器中的无人照看卡）<br />IIS 基本身份验证（低于 IIS 6.0）|
-|Network|3|密码、<br />NT 哈希、<br />Kerberos 票证|否（例外情况，如果已启用委派，则 Kerberos 票证存在）|NET USE；<br />RPC 调用；<br />远程注册表；<br />IIS 集成 Windows 身份验证；<br />SQL Windows 身份验证；|
+|Network (网络)|3|密码、<br />NT 哈希、<br />Kerberos 票证|否（例外情况，如果已启用委派，则 Kerberos 票证存在）|NET USE；<br />RPC 调用；<br />远程注册表；<br />IIS 集成 Windows 身份验证；<br />SQL Windows 身份验证；|
 |Batch|4|密码（通常存储为 LSA 机密）|是|计划任务|
 |服务|5|密码（通常存储为 LSA 机密）|是|Windows 服务|
 |NetworkCleartext|8|密码|是|IIS 基本身份验证（IIS 6.0 和更高版本）；<br />Windows PowerShell（具有 CredSSP）|

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 965a5c506535a2c52d6cc7b3557c6104182c12a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3751b185677bfee9d0519b9a617bea1df063c1e7
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373686"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259072"
 ---
 # <a name="md"></a>Md
 
@@ -38,12 +38,12 @@ md [<Drive>:]<Path>
 mkdir [<Drive>:]<Path>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|\<Drive >：|指定要在其上创建新目录的驱动器。|
-|\<Path >|必需。 指定新目录的名称和位置。 任何单个路径的最大长度由文件系统确定。|
+|\<驱动器 >：|指定要在其上创建新目录的驱动器。|
+|\<路径 >|必须的。 指定新目录的名称和位置。 任何单个路径的最大长度由文件系统确定。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -63,10 +63,8 @@ md \Taxes\Property\Current
 如前面的示例所示，若要在根目录中创建目录树 Taxes\Property\Current，但禁用了命令扩展，请键入以下命令序列：
 ```
 md \Taxes
-cd \Taxes 
-md Property
-cd Property
-md Current
+md \Taxes\Property
+md \Taxes\Property\Current
 ```
 
 #### <a name="additional-references"></a>其他参考

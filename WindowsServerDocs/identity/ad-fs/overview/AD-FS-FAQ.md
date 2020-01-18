@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0a2bbeeb459fd364db728579dc20015a2474fd25
-ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
+ms.openlocfilehash: 48d93f515a5f3e5f8ce2c3ff9a1b40f300ca57ed
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163089"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265739"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 常见问题（FAQ）
 
@@ -48,7 +48,7 @@ Windows Server 2016 中添加了 HTTP/2 支持，但 HTTP/2 不能用于客户�
 是的，此配置受支持，但此配置不支持新的 AD FS 2016 功能。  此配置在从 AD FS 2012 R2 到 AD FS 2016 的迁移阶段中是临时的，不应长时间部署。
 
 ### <a name="is-it-possible-to-deploy-ad-fs-for-office-365-without-publishing-a-proxy-to-office-365"></a>是否可以在不将代理发布到 Office 365 的情况下部署 Office 365 AD FS？
-是的，支持这种情况。 然而，作为副作用
+能，系统支持该操作。 然而，作为副作用
 
 1. 你将需要手动管理更新令牌签名证书，因为 Azure AD 将无法访问联合元数据。 有关手动更新令牌签名证书的详细信息，请参阅[续订 Office 365 和 Azure Active Directory 的联合身份验证证书](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)
 2. 你将无法利用旧的身份验证流（例如 Exo 除外代理身份验证流）
@@ -307,4 +307,7 @@ ADFS 和 Web 应用程序服务器支持不在终结点上执行 SSL 终止的�
 `Set-AdfsProperties -IgnoreTokenBinding $true`
 
 ### <a name="i-have-upgraded-my-farm-from-ad-fs-in-windows-server-2016-to-ad-fs-in-windows-server-2019-the-farm-behavior-level-for-the-ad-fs-farm-has-been-successfully-raised-to-2019-but-the-web-application-proxy-configuration-is-still-displayed-as-windows-server-2016"></a>我已经从 Windows Server 2016 中的 AD FS 将我的场升级到 Windows Server 2019 中 AD FS。 AD FS 场的场行为级别已成功提升为2019，但 Web 应用程序代理配置仍显示为 Windows Server 2016？
-升级到 Windows Server 2019 后，Web 应用程序代理的配置版本将继续显示为 Windows Server 2016。 Web 应用程序代理没有适用于 Windows Server 2019 的特定版本特定功能，如果在 AD FS 上成功引发了场行为级别，则 Web 应用程序代理将继续按设计方式显示为 Windows Server 2016。 
+升级到 Windows Server 2019 后，Web 应用程序代理的配置版本将继续显示为 Windows Server 2016。 Web 应用程序代理没有适用于 Windows Server 2019 的特定版本特定功能，如果在 AD FS 上成功引发了场行为级别，则 Web 应用程序代理将继续按设计方式显示为 Windows Server 2016。
+
+### <a name="can-i-estimate-the-size-of-the-adfsartifactstore-before-enabling-esl"></a>在启用 ESL 之前，是否可以估算 ADFSArtifactStore 的大小？
+在启用 ESL 的情况下，AD FS 在 ADFSArtifactStore 数据库中跟踪用户的帐户活动和已知位置。 此数据库相对于所跟踪的用户数和已知位置进行缩放。 当计划启用 ESL 时，可以估算 ADFSArtifactStore 数据库的大小，以每100000用户最多1GB 的速率增长。 如果 AD FS 场使用 Windows 内部数据库（WID），则数据库文件的默认位置为 C:\Windows\WID\Data。 若要防止填充此驱动器，请确保在启用 ESL 前至少有5GB 的可用存储。 除了磁盘存储以外，还应计划在启用 ESL 后增加的总进程内存，使其达到500000或更低的用户人口的额外内存。

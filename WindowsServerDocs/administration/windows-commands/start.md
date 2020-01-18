@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e481048c23e634869b0238188d4a0ef8b49cb3e
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 48197b1bc1d1c9f91a6a35b5fb8aad81b229eb6b
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781304"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259082"
 ---
 # <a name="start"></a>start
 
@@ -31,7 +31,7 @@ ms.locfileid: "74781304"
 ## <a name="syntax"></a>语法
 
 ```
-start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b {<Command> | <Program>} [<Parameters>]]
+start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b] [<Command> [<Parameter>... ] | <Program> [<Parameter>... ]]
 ```
 
 ## <a name="parameters"></a>参数
@@ -48,8 +48,8 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/wait|启动应用程序并等待其结束。|
 |/elevate|以管理员身份运行应用程序。|
 |/b|启动应用程序而不打开新的命令提示符窗口。 除非应用程序启用了 CTRL + C 处理，否则将忽略 CTRL + C 处理。 使用 CTRL + BREAK 中断应用程序。|
-|/b \<命令 > \| \<程序 >|指定要启动的命令或程序。|
-|\<参数 >|指定要传递给命令或程序的参数。|
+|\<命令 > \| \<程序 >|指定要启动的命令或程序。|
+|\<参数 > 。|指定要传递给命令或程序的参数。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -59,7 +59,7 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 - 运行32位图形用户界面（GUI）应用程序时， **cmd**在返回到命令提示符之前不等待应用程序退出。 如果从命令脚本运行应用程序，则不会发生此行为。
 - 当你运行使用不包含扩展的第一个令牌的命令时，Cmd.exe 将使用 PATHEXT 环境变量的值来确定要查找的扩展以及顺序。 PATHEXT 变量的默认值为：  
   ```
-  .COM;.EXE;.BAT;.CMD 
+  .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC 
   ```  
   请注意，语法与 PATH 变量相同，每个扩展名用分号分隔。
 - 当它搜索可执行文件时，如果任何扩展上都没有匹配项，则**开始**检查该名称是否与目录名称匹配。 如果是这样，请在该路径上**打开 "资源**管理器"。

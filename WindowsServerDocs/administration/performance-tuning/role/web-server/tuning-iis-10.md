@@ -7,16 +7,16 @@ ms.topic: landing-page
 ms.author: DavSo; Ericam; YaShi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b86bf779a4ea9d67f959dacf125a98a8e26a729
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5658a101371cf3b865dec04ac76716b536792602
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947138"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265699"
 ---
 # <a name="tuning-iis-100"></a>优化 IIS 10。0
 
-Windows Server 2016 随附 Internet Information Services （IIS）10.0。 它使用类似于 IIS 8.5 和 IIS 7.0 的进程模型。 内核模式 web 驱动程序（http.sys）接收并路由 HTTP 请求，并满足来自其响应缓存的请求。 工作进程注册 URL subspaces，http.sys 将请求路由到适当的进程（或应用程序池的进程集）。
+Windows Server 2016 附带 Internet Information Services （IIS）10.0。 它使用类似于 IIS 8.5 和 IIS 7.0 的进程模型。 内核模式 web 驱动程序（http.sys）接收并路由 HTTP 请求，并满足来自其响应缓存的请求。 工作进程注册 URL subspaces，http.sys 将请求路由到适当的进程（或应用程序池的进程集）。
 
 HTTP.SYS 负责连接管理和请求处理。 可以通过 HTTP.SYS 缓存来处理请求，或将请求传递到工作进程进行进一步处理。 可以配置多个工作进程，从而以降低的成本提供隔离。 有关请求处理的工作原理的详细信息，请参阅下图：
 

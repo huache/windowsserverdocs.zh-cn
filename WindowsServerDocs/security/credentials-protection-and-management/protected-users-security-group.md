@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 227d66dafffd67b0b2e4f67158498cf43c7b59f8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 10234611904a4ed5b58939d3fd5ca341221c073c
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950359"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259142"
 ---
 # <a name="protected-users-security-group"></a>受保护的用户安全组
 
@@ -115,7 +115,7 @@ ms.locfileid: "75950359"
 有关详细信息，请参阅 [How to Configure Protected Accounts](how-to-configure-protected-accounts.md)。
 
 ## <a name="troubleshooting"></a>“疑难解答”
-提供两个操作管理日志，以帮助对受保护用户的相关事件进行疑难解答。 这些新的日志位于事件查看器中，在默认情况下已禁用，并且位于“Applications and Services Logs\Microsoft\Windows\Microsoft\Authentication”下。
+提供两个操作管理日志，以帮助对受保护用户的相关事件进行疑难解答。 这些新日志位于事件查看器中，默认情况下被禁用，并且位于 "**应用程序和服务 Logs\Microsoft\Windows\Authentication**" 下。
 
 |事件 ID 和日志|描述|
 |----------|--------|

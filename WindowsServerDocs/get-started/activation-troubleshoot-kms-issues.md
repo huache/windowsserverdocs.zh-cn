@@ -9,12 +9,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: dab8294837a5f9116328e59364de9beb139a4b77
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 110e3a685293c447d03158eac57d38fedd28b0cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71963003"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948318"
 ---
 # <a name="kms-activation-known-issues"></a>KMS 激活：已知问题
 
@@ -35,7 +35,7 @@ KMS 主机无需备份。 但是，如果使用工具定期清理事件日志，
 
 ## <a name="the-kms-client-computer-does-not-activate"></a>KMS 客户端计算机未激活
 
-验证是否已达到 KMS 激活阈值。 在 KMS 主机上，运行 Slmgr.vbs 并使用 /dli 命令行选项来确定主机的当前计数  。 在 KMS 主机的计数达到 25 之前，Windows 7 客户端计算机都无法激活。 Windows Server 2008 R2 KMS 客户端需要在 KMS 计数为 5 时才能激活。 有关 KMS 要求的详细信息，请参阅[批量激活计划指南](http://go.microsoft.com/fwlink/?linkid=155926)。 
+验证是否已达到 KMS 激活阈值。 在 KMS 主机上，运行 Slmgr.vbs 并使用 /dli 命令行选项来确定主机的当前计数  。 在 KMS 主机的计数达到 25 之前，Windows 7 客户端计算机都无法激活。 Windows Server 2008 R2 KMS 客户端需要在 KMS 计数为 5 时才能激活。 有关 KMS 要求的详细信息，请参阅[批量激活计划指南](https://go.microsoft.com/fwlink/?linkid=155926)。 
 
 在 KMS 客户端计算机上，在应用程序事件日志中查找事件 ID 12289。 查看此事件以了解以下信息：
 
@@ -86,4 +86,4 @@ KMS 密钥应仅安装在 KMS 主机上，而不是 KMS 客户端上。 运行 s
 
 如果 KMS 主机出现故障，则必须在新主机上安装 KMS 主机密钥，然后再激活该主机。 请确保新的 KMS 主机在 DNS 数据库中具有 SRV RR。 如果使用与出现故障的 KMS 主机相同的计算机名和 IP 地址来安装新的 KMS 主机，则新的 KMS 主机可以使用故障主机的 DNS SRV 记录。 如果新主机具有其他计算机名，则可以手动删除故障主机的 DNS SRV RR，或让 DNS 自动删除它（如果在 DNS 中启用了清理）。 如果网络使用的是 DDNS，则新的 KMS 主机会自动在 DNS 服务器上创建新的 SRV RR。 然后，新的 KMS 主机会开始收集客户端续订请求，并在达到 KMS 激活阈值时立即开始激活客户端。
 
-如果 KMS 客户端使用自动发现，则当原始 KMS 主机不响应续订请求时，它们会自动选择另一台 KMS 主机。 如果客户端不使用自动发现，则必须通过运行 slmgr.vbs /skms 手动更新已分配给故障 KMS 主机的 KMS 客户端计算机  。 若要避免这种情况，请将 KMS 客户端配置为使用自动发现。 有关详细信息，请参阅[批量激活部署指南](http://go.microsoft.com/fwlink/?linkid=150083)。
+如果 KMS 客户端使用自动发现，则当原始 KMS 主机不响应续订请求时，它们会自动选择另一台 KMS 主机。 如果客户端不使用自动发现，则必须通过运行 slmgr.vbs /skms 手动更新已分配给故障 KMS 主机的 KMS 客户端计算机  。 若要避免这种情况，请将 KMS 客户端配置为使用自动发现。 有关详细信息，请参阅[批量激活部署指南](https://go.microsoft.com/fwlink/?linkid=150083)。
