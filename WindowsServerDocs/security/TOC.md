@@ -30,7 +30,6 @@
 ####### [配置 HGS DNS 和单向信任](guarded-fabric-shielded-vm/guarded-fabric-configure-dns-forwarding-and-trust.md)
 ##### [配置 HTTPS](guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-https.md)
 ##### [添加节点](guarded-fabric-shielded-vm/guarded-fabric-configure-additional-hgs-nodes.md)
-##### [验证配置](guarded-fabric-shielded-vm/guarded-fabric-verify-hgs-configuration.md)
 #### [部署受保护的主机](guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
 ##### [必备条件](guarded-fabric-shielded-vm/guarded-fabric-guarded-host-prerequisites.md)
 ##### [TPM 模式](guarded-fabric-shielded-vm/guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)

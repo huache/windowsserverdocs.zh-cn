@@ -9,12 +9,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 12/16/2019
-ms.openlocfilehash: a5af1ad5a730f1dc90111734a9b8b1aacc91201b
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 83ab3663b2c03017ba1bf613a49c394be0511002
+ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75466340"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162498"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>如何使用 Windows Server 2008 和 2008 R2 的扩展安全更新 (ESU)
 
@@ -49,6 +49,17 @@ Windows Server 的扩展安全更新 (ESU) 在 2020 年 1 月 14 日之后最多
 
 > [!NOTE]
 > 如果在 Azure 中运行 Windows Server 2008/2008 R2 VM，则无需执行以下步骤。 Azure VM 会自动启用扩展安全更新。 不需要创建扩展安全更新资源和密钥，并且将扩展安全更新用于 Azure VM 也没有额外费用。
+
+> [!NOTE]
+> 在执行以下步骤之前，请向 [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) 发送一封电子邮件并附上此信息进行允许列表审批：
+> * 客户名称：
+> * Azure 订阅：
+> * EA 协议编号（适用于 ESU）：
+> * ESU 服务器数目：
+> 
+> 团队将审阅所提供的信息并将用户/订阅添加到允许列表中。
+> 
+> 如果未将请求者加入允许列表，则可能出现以下错误：[“Microsoft.WindowsESU”命令空间中找不到此资源类型](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
 
 若要为扩展安全更新注册非 Azure VM 并创建密钥，请在 Azure 门户中完成以下步骤：
 

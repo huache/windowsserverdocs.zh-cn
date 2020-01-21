@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 814bcf3e989e9aa9b83ba447d07c45ee95309a5a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3d443ff123cc041196f59d93d156415c34bdf70f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391972"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947874"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 服务频道：LTSC 和 SAC
 
@@ -36,7 +36,7 @@ ms.locfileid: "71391972"
 
 半年频道中引入的大部分功能将汇总至 Windows Server 的 Long-Term Servicing Channel 版本。 版本、功能和支持内容可能因版本而异，具体取决于客户反馈。
 
-可使用[软件保障](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)，也可以通过 Azure 市场或其他云/托管服务提供商及 Visual Studio 订阅等会员计划为批量授权的客户提供半年频道。
+可使用[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，也可以通过 Azure 市场或其他云/托管服务提供商及 Visual Studio 订阅等会员计划为批量授权的客户提供半年频道。
 
 > [!Note]  
 > **当前的半年频道版本是 Windows Server 版本 1903**。 如果你要将服务器置于此频道，则应该安装 Windows Server 版本 1903，该版本可以在 Server Core 模式下安装或作为容器中运行的 Nano Server 来安装。 不支持从长期服务频道版本就地升级，因为它们处于**不同的发行频道**中。 半年频道发行版不是更新 – 它是半年频道中的下一个 Windows Server 发行版。
@@ -72,7 +72,7 @@ ms.locfileid: "71391972"
 
 ### <a name="servicing-tools"></a>维护工具
 
-IT 专业人员可以使用多种工具维护 Windows Server。 每个选项均有其优点和缺点，范围从功能和控制到简洁性和管理要求低。 以下是可用于管理维护更新的维护工具示例：
+IT 专业人员可以使用多种工具维护 Windows Server。 每个选项都有优点和缺点，从功能和控制到简洁性和低管理要求都涵盖在内。 以下是可用于管理维护更新的维护工具示例：
 
 - **Windows 更新（独立）** ：此选项仅适用于已连接到 Internet 并已启用 Windows 更新的服务器。
 - **Windows Server Update Services (WSUS)** 可在大范围内控制 Windows 10 和 Windows Server 更新，并且内置在 Windows Server 操作系统中。 除了能够延迟更新，组织还可以添加用于更新的批准层，并在准备就绪后将它们部署到特定计算机或计算机组。
@@ -84,9 +84,9 @@ IT 专业人员可以使用多种工具维护 Windows Server。 每个选项均�
 
 半年频道版本应作为干净安装产品进行安装。
 
-- 批量许可服务中心 (VLSC)：享受[软件保障](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)的批量许可客户可以转到[批量许可服务中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)并单击“登录”来获取此版本  。 然后，单击“下载和密钥”并搜索此版本  。 
+- 批量许可服务中心 (VLSC)：享受[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)的批量许可客户可以转到[批量许可服务中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)并单击“登录”来获取此版本  。 然后，单击“下载和密钥”并搜索此版本  。 
 
-- 半年频道版本也会在 [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview) 中提供。
+- 半年频道版本也会在 [Microsoft Azure](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview) 中提供。
 
 - Visual Studio 订阅：Visual Studio 订阅者可以从 [Visual Studio 订阅者下载页](https://my.visualstudio.com/downloads?pid=2347)下载半年频道版本。 如果你还不是订阅者，请转到 [Visual Studio 订阅](https://www.visualstudio.com/subscriptions/)进行注册，然后访问上方所述的 [Visual Studio 订阅者下载页](https://my.visualstudio.com/downloads?pid=2347)。 通过 Visual Studio 订阅获得的版本仅用于开发和测试。
 
