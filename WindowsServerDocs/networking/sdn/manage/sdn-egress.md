@@ -25,7 +25,7 @@ ms.locfileid: "71406006"
 
 Windows Server 2019 中 SDN 网络流量的出口计量功能可以提供出站数据传输的使用情况计量。 离开每个虚拟网络的网络流量可以单独进行跟踪，使其可以从计费计算中排除。 对于未包含在其中一个未开票地址范围内的目标 IP 地址绑定的数据包，将作为计费的出站数据传输进行跟踪。
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虚拟网络未开票地址范围（IP 范围的白名单）
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虚拟网络未开票地址范围（IP 范围的允许列表）
 
 可以在现有虚拟网络的**UnbilledAddressRanges**属性下找到未开票地址范围。 默认情况下，不会添加任何地址范围。
 

@@ -71,7 +71,7 @@ ms.locfileid: "71383336"
 | 任务栏                            | 不可用   | 有空                      |
 | 任务栏通知              | 不可用   | 有空                      |
 | 任务管理器                            | 有空       | 有空                      |
-| Internet Explorer 或 Edge          | 不可用   | 有空                      |
+| Internet Explorer 或 Microsoft Edge          | 不可用   | 有空                      |
 | 内置帮助系统               | 不可用   | 有空                      |
 | Windows 10 Shell                   | 不可用   | 有空                      |
 | Windows Media Player               | 不可用   | 有空                      |
