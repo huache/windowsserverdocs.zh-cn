@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd12a7858a24457251d8354a2df49632b5960c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1354d89ba2c9169b302dca10ae52bad34ef80b43
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391610"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947767"
 ---
 # <a name="windows-server-2016-activation"></a>Windows Server 2016 激活
 
@@ -33,13 +33,13 @@ KMS 主机不必是专用服务器，KMS 可与其他服务共用一台主机。
 下表总结了 KMS 主机和客户端（包括 Windows Server 2016 和 Windows 10 客户端）对网络的要求。
 
 > [!NOTE]
-> **注意：** 可能需要对 KMS 服务器进行更新以便支持对这些较新的客户端进行激活。 如果收到激活错误，请检查你是否具有在此表下面列出的相应更新。
+> 可能需要对 KMS 服务器进行更新以便支持对这些较新的客户端进行激活。 如果收到激活错误，请检查你是否具有在此表下面列出的相应更新。
 
 |产品密钥组|KMS 可以托管于|由此 KMS 主机激活的 Windows 版本|  
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|  
-|适用于 Windows Server 2016 的批量许可证|Windows Server 2012<br /><br />Windows Server 2012 R2<br /><br />Windows Server 2016<br /><br />|Windows Server 半年频道 <br><br>Windows Server 2016（所有版本）<br /><br />Windows 10 LTSB（2015 和 2016）<br /><br />Windows 10 专业版<br /><br />Windows 10 企业版<br /><br />Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br>Windows Server 2012 R2（所有版本）<br /><br />Windows 8.1 专业版<br /><br />Windows 8.1 企业版<br /><br />Windows Server 2012（所有版本）<br /><br />Windows Server 2008 R2（所有版本）<br /><br />Windows Server 2008（所有版本）<br /><br />Windows 7 专业版<br /><br />Windows 7 企业版| 
-|适用于 Windows 10 的批量许可证|Windows 7<br /><br />Windows 8.1<br /><br /> Windows 10|Windows 10 专业版<br /><br /> Windows 10 专业版 N<br /><br /> Windows 10 企业版<br /><br /> Windows 10 企业版 N<br /><br /> Windows 10 教育版<br /><br /> Windows 10 教育版 N<br /><br /> Windows 10 企业版 LTSB (2015)<br /><br /> Windows 10 企业版 LTSB N (2015)<br /><br /> Windows 10 专业工作站版<br><br>Windows 8.1 专业版<br /><br /> Windows 8.1 企业版<br /><br /> Windows 7 专业版<br /><br /> Windows 7 企业版<br /><br />|  
-|“适用于 Windows 10 的 Windows Server 2012 R2”批量许可证|Windows Server 2008 R2<br /><br /> Windows Server 2012 Standard<br /><br /> Windows Server 2012 Datacenter<br /><br /> Windows Server 2012 R2 Standard<br /><br />Windows Server 2012 R2 Datacenter|Windows 10 专业版<br /><br /> Windows 10 企业版<br /><br />Windows 10 企业版 LTSB (2015)<br><br>Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br> Windows Server 2012 R2（所有版本）<br /><br /> Windows 8.1 专业版<br /><br /> Windows 8.1 企业版<br /><br /> Windows Server 2012（所有版本）<br /><br /> Windows Server 2008 R2（所有版本）<br /><br />Windows Server 2008（所有版本）<br /><br /> Windows 7 专业版<br /><br /> Windows 7 企业版|
+|适用于 Windows Server 2016 的批量许可证|Windows Server 2012<br /><br />Windows Server 2012 R2<br /><br />Windows Server 2016<br /><br />|Windows Server 半年频道 <br><br>Windows Server 2016（所有版本）<br /><br />Windows 10 LTSB（2015 和 2016）<br /><br />Windows 10 专业版<br /><br />Windows 10 企业版<br /><br />Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br>Windows Server 2012 R2（所有版本）<br /><br />Windows 8.1 专业版<br /><br />Windows 8.1 企业版<br /><br />Windows Server 2012（所有版本）<br /><br />Windows Server 2008 R2（所有版本）<br /><br />Windows Server 2008（所有版本）<br /><br />Windows 7 专业版<br /><br />Windows 7 企业版| 
+|适用于 Windows 10 的批量许可证|Windows 7<br /><br />Windows 8.1<br /><br /> Windows 10|Windows 10 专业版<br /><br /> Windows 10 专业版 N<br /><br /> Windows 10 企业版<br /><br /> Windows 10 企业版 N<br /><br /> Windows 10 教育版<br /><br /> Windows 10 教育版 N<br /><br /> Windows 10 企业版 LTSB (2015)<br /><br /> Windows 10 企业版 LTSB N (2015)<br /><br /> Windows 10 专业工作站版<br><br>Windows 8.1 专业版<br /><br /> Windows 8.1 企业版<br /><br /> Windows 7 专业版<br /><br /> Windows 7 企业版<br /><br />|  
+|“适用于 Windows 10 的 Windows Server 2012 R2”批量许可证|Windows Server 2008 R2<br /><br /> Windows Server 2012 Standard<br /><br /> Windows Server 2012 Datacenter<br /><br /> Windows Server 2012 R2 Standard<br /><br />Windows Server 2012 R2 Datacenter|Windows 10 专业版<br /><br /> Windows 10 企业版<br /><br />Windows 10 企业版 LTSB (2015)<br><br>Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br> Windows Server 2012 R2（所有版本）<br /><br /> Windows 8.1 专业版<br /><br /> Windows 8.1 企业版<br /><br /> Windows Server 2012（所有版本）<br /><br /> Windows Server 2008 R2（所有版本）<br /><br />Windows Server 2008（所有版本）<br /><br /> Windows 7 专业版<br /><br /> Windows 7 企业版|
 
 > [!NOTE]  
 > 你可能需要安装这些更新中的一个或多个，具体取决于 KMS 服务器运行的操作系统以及你想要激活的操作系统。
@@ -50,14 +50,14 @@ KMS 主机不必是专用服务器，KMS 可与其他服务共用一台主机。
 
 一台 KMS 主机能够支持无限数量的 KMS 客户端。 如果客户端数量超过 50 个，我们建议至少准备两台 KMS 主机，以防某一台 KMS 主机不可用。 大多数组织单位运行两台 KMS 主机可以满足整个基础结构的需求。
 
-# <a name="addressing-kms-operational-requirements"></a>满足 KMS 的操作要求
+## <a name="addressing-kms-operational-requirements"></a>满足 KMS 的操作要求
 KMS 能够激活物理和虚拟计算机，但是要使用 KMS 激活，网络中计算机的数量必须达到最低要求（称为激活阈值）。 KMS 客户端只有在达到此阈值之后才会激活。 为确保达到激活阈值，KMS 主机会计算网络中请求激活的计算机的数量。
 
 KMS 主机计算最近的连接数。 当客户端或服务器联系 KMS 主机时，主机将计算机 ID 添加到其计数，然后在其响应中返回当前的计数值。 计数足够高时将激活客户端或服务器。 计数为 25 或更高时将激活客户端。 计数为 5 或更大时，将激活服务器和批量版 Microsoft Office 产品。 KMS 只对过去 30 天内的唯一连接计数，且仅存储 50 个最新联系人。
 
 KMS 激活的有效期为 180 天，这一时期称为激活有效期间隔。 要保持激活状态，KMS 客户端至少要每 180 天连接一次 KMS 主机，以续订他们的激活。 默认情况下，KMS 客户端计算机会每隔7 天尝试一次激活续订。 客户端的激活已续订之后，激活有效期将重新开始计算。
 
-# <a name="addressing-kms-functional-requirements"></a>满足 KMS 功能要求
+## <a name="addressing-kms-functional-requirements"></a>满足 KMS 功能要求
 
 KMS 激活要求 TCP/IP 连接。 KMS 主机可客户端默认配置使用域名系统 (DNS)。 默认情况下，KMS 主机使用 DNS 动态更新来自动发布 KMS 客户端查找并连接主机所需的信息。 您可以接收这些默认设置；如果有特殊的网络和安全配置要求，则可手动配置 KMS 主机和客户端。
 
@@ -70,4 +70,4 @@ KMS 激活要求 TCP/IP 连接。 KMS 主机可客户端默认配置使用域名
 
 默认情况下，运行批量许可版本的 Windows 10、Windows Server 2016、Windows 8.1、Windows Server 2012 R2、Windows Server 2012、Windows 7、Windows Server 2008 R2 的计算机为无需额外配置的 KMS 客户端。
 
-如果要将计算机从 KMS 主机、MAK 或零售版 Windows 转换为 KMS 客户端，请安装适用的 KMS 客户端安装程序密钥。 有关详细信息，请参阅  [KMS 客户端安装密钥](KMSclientkeys.md)。 
+如果要将计算机从 KMS 主机、MAK 或零售版 Windows 转换为 KMS 客户端，请安装适用的 KMS 客户端安装程序密钥。 有关详细信息，请参阅  [KMS 客户端安装密钥](KMSclientkeys.md)。

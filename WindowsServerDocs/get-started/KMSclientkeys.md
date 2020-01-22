@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: e2879c56b1dd41b8d357959cca473dd69da77d10
-ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
+ms.openlocfilehash: f2320b80fb372a227098f952dc8e7f0758420f34
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73956084"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947821"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 客户端安装密钥
 
@@ -32,9 +32,9 @@ ms.locfileid: "73956084"
 | 如果你希望    | 请使用以下资源   |
 |--------------------|------------------------|
 | 在批量激活方案之外激活 Windows（即，你尝试激活零售版本的 Windows），**这些密钥将不可用**。 | 请点击以下链接以获取零售版本的 Windows： |
-| 修复在尝试激活 Windows 8.1、Windows Server 2012 R2 或更新的系统时收到的以下错误：“错误：0xC004F050 软件授权服务报告产品密钥无效”… | 如果 KMS 主机运行的是 Windows 8.1、Windows Server 2012 R2、Windows 8 或 Windows Server 2012，则在 KMS 主机上[安装此更新](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) 。 |
+| 修复在尝试激活 Windows 8.1、Windows Server 2012 R2 或更新的系统时收到的以下错误：“错误：0xC004F050 软件授权服务报告产品密钥无效”… | 如果 KMS 主机运行的是 Windows 8.1、Windows Server 2012 R2、Windows 8 或 Windows Server 2012，则在 KMS 主机上[安装此更新](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) 。 |
 
--   [获取 Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10)
+-   [获取 Windows 10](https://www.microsoft.com/windows/get-windows-10)
 
 -   [获取新的 Windows 产品密钥](https://support.microsoft.com/help/10749/windows-product-key)
 
@@ -65,13 +65,13 @@ ms.locfileid: "73956084"
 
 | 操作系统版本       | KMS 客户端安装程序密钥          |
 |--------------------------------|-------------------------------|
-| Windows Server 2016 Datacenter | CB7KF-BWN84-R7R2Y-793K2-8XDDG |
-| Windows Server 2016 Standard   | WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY |
+| Windows Server 2016 Datacenter | CB7KF-BWN84-R7R2Y-793K2-8XDDG |
+| Windows Server 2016 Standard   | WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY |
 | Windows Server 2016 Essentials | JCKRF-N37P4-C2D82-9YXRT-4M63B |
 
 ## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10，所有支持的半年频道版本
 
-有关受支持的版本和服务终止日期的信息，请参阅 [Windows 生命周期情况说明书](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)。
+有关受支持的版本和服务终止日期的信息，请参阅 [Windows 生命周期情况说明书](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
 
 | 操作系统版本          | KMS 客户端安装程序密钥          |
 |-----------------------------------|-------------------------------|
@@ -156,11 +156,11 @@ ms.locfileid: "73956084"
 | Windows Server 2008 R2 Web 版                       | 6TPJF-RBVHG-WBW2R-86QPH-6RTM4 |
 | Windows Server 2008 R2 HPC 版               | TT8MH-CG224-D3D7Q-498W2-9QCTX |
 | Windows Server 2008 R2 标准版                  | YC6KT-GKW9T-YTKYR-T4X34-R7VHC |
-| Windows Server 2008 R2 企业版                | 489J6-VHDMP-X63PK-3K798-CPX3Y |
-| Windows Server 2008 R2 数据中心版                | 74YFP-3QFB3-KQT8W-PMXWJ-7M648 |
+| Windows Server 2008 R2 企业版                | 489J6-VHDMP-X63PK-3K798-CPX3Y |
+| Windows Server 2008 R2 Datacenter                | 74YFP-3QFB3-KQT8W-PMXWJ-7M648 |
 | 面向基于 Itanium 系统的 Windows Server 2008 R2 | GT63C-RJFQ3-4GMB6-BRFB9-CB83V |
 
-### <a name="windows-server-2008"></a>Windows Server 2008
+### <a name="windows-server-2008"></a>Windows 2008 Server
 
 | 操作系统版本                       | KMS 客户端安装程序密钥          |
 |------------------------------------------------|-------------------------------|
@@ -199,10 +199,10 @@ ms.locfileid: "73956084"
 
 | 操作系统版本                         | KMS 客户端安装程序密钥          |
 |--------------------------------------------------|-------------------------------|
-| Windows 7 专业版                           | FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4 |
+| Windows 7 专业版                           | FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4 |
 | Windows 7 专业版 N                         | MRPKT-YTG23-K7D7T-X2JMM-QY7MG |
 | Windows 7 专业版 E                         | W82YF-2Q76Y-63HXB-FGJG9-GF7QX |
-| Windows 7 企业版                             | 33PXH-7Y6KF-2VJC9-XBBR8-HVTHH |
+| Windows 7 企业版                             | 33PXH-7Y6KF-2VJC9-XBBR8-HVTHH |
 | Windows 7 企业版 N                           | YDRBP-3D83W-TY26F-D46B2-XCKRJ |
 | Windows 7 企业版 E                           | C29WB-22CC8-VJ326-GHFJW-H9DH4 |
 

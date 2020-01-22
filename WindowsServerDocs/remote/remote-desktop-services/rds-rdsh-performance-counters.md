@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: b59d93d576967ee83b3efecc2630034eab919bf2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b222104abd5b0b964bac748c3be15049075191d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403904"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950419"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>使用性能计数器来诊断远程桌面会话主机上的应用性能问题
 
@@ -42,7 +42,7 @@ ms.locfileid: "71403904"
 
 例如，在下表中，用户输入延迟在此时间间隔内会被报告为 1000 毫秒。 计数器报告该时间间隔内最慢的用户输入延迟，因为用户对“慢”的感知由体验到的最慢输入时间（最大值），而不是所有总输入的平均速度确定。
 
-|编号| 0 | 1 | 2 |
+|数量| 0 | 1 | 2 |
 |------|---|---|---|
 |延迟 |16 毫秒| 20 毫秒| 1,000 毫秒|
 
@@ -90,7 +90,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 |每个会话的用户输入延迟|1|    200|
 |每个会话的用户输入延迟|2|    16|
 |每个会话的用户输入延迟|平均值|  108|
-|每个会话的用户输入延迟|最大|  200|
+|每个会话的用户输入延迟|最大值|  200|
 
 ## <a name="counters-used-in-an-overloaded-system"></a>重载系统中使用的计数器
 
@@ -140,9 +140,9 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 ## <a name="download-windows-server-insider-software"></a>下载 Windows Server Insider 软件
 
-已注册预览体验成员可以直接导航到 [Windows Server Insider 预览版下载页](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)以获取最新 Insider 软件下载。  若要了解如何注册为预览体验成员，请参阅[服务器入门](https://insider.windows.com/en-us/for-business-getting-started-server/)。
+已注册预览体验成员可以直接导航到 [Windows Server Insider 预览版下载页](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)以获取最新 Insider 软件下载。  若要了解如何注册为预览体验成员，请参阅[服务器入门](https://insider.windows.com/en-us/for-business-getting-started-server/)。
 
-## <a name="share-your-feedback"></a>共享你的反馈
+## <a name="share-your-feedback"></a>分享反馈
 
 可以通过反馈中心提交此功能的反馈。 选择“应用”>“所有其他应用”  ，并在帖子标题中包括“RDS 性能计数器 - 性能监视器”。
 

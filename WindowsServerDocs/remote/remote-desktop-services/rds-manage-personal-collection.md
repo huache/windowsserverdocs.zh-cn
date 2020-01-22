@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 6bf0ad3a2cd35c9794fd13631ed29df94725685c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7be6b2bfe1105357811927f5da7092e8c16c3446
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387415"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949840"
 ---
-## <a name="manage-your-personal-desktop-session-collections"></a>管理个人桌面会话集合
+# <a name="manage-your-personal-desktop-session-collections"></a>管理个人桌面会话集合
 
 使用以下信息来管理远程桌面服务中的个人桌面会话集合。
 
-### <a name="manually-assign-a-user-to-a-personal-session-host"></a>手动将用户分配到个人会话主机
+## <a name="manually-assign-a-user-to-a-personal-session-host"></a>手动将用户分配到个人会话主机
 使用 Set-RDPersonalSessionDesktopAssignment  cmdlet 可将用户手动分配到集合中的个人会话主机服务器。 该 cmdlet 支持以下参数：
 
 -CollectionName \<字符串\>
@@ -49,7 +49,7 @@ Import-RDPersonalSessionDesktopAssignment  cmdlet 从文本文件导入用户帐
 
 -Path  指定要导入的文件的路径和文件名。
  
-### <a name="removing-a-user-assignment-from-a-personal-session-host"></a>从个人会话主机中删除用户分配
+## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>从个人会话主机中删除用户分配
 使用 Remove-RDPersonalSessionDesktopAssignment  cmdlet 可删除个人会话桌面与用户之间的关联。 该 cmdlet 支持以下参数：
 
 -CollectionName \<字符串\>
@@ -64,7 +64,7 @@ Import-RDPersonalSessionDesktopAssignment  cmdlet 从文本文件导入用户帐
 
 -Force  强制运行命令而不要求用户确认。
 
-### <a name="query-user-assignments"></a>查询用户分配
+## <a name="query-user-assignments"></a>查询用户分配
 使用 Get-RDPersonalSessionDesktopAssignment  cmdlet 可获取个人会话桌面和关联的用户帐户的列表。 该 cmdlet 支持以下参数：
 
 -CollectionName \<字符串\>

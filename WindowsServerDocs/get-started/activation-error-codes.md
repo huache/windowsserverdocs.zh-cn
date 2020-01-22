@@ -8,12 +8,12 @@ ms.assetid: ''
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: d4d9a8917bf455d8ed84207e2f9ecc6d13d01c3d
-ms.sourcegitcommit: b18ee742662b24b25d29ef1079b1c49f220f1d57
+ms.openlocfilehash: 4e977dbf71eb4afd004a773d06933fd8646ce8eb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74691867"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947671"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>根据 Windows 激活错误代码解决问题
 
@@ -26,7 +26,7 @@ ms.locfileid: "74691867"
 
 有关 Windows 当前版本和最新版本的批量激活的详细信息，请参阅[批量激活 [客户端]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10)。
 
-若要详细了解旧版 Windows 的批量激活，请参阅 KB 929712： [Volume Activation information for Windows Vista, Windows Server 2008, Windows Server 2008 R2 and Windows 7](https://support.microsoft.com/en-us/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi)（Windows Vista、Windows Server 2008、Windows Server 2008 R2 和 Windows 7 的批量激活信息）。
+若要详细了解旧版 Windows 的批量激活，请参阅 KB 929712： [Volume Activation information for Windows Vista, Windows Server 2008, Windows Server 2008 R2 and Windows 7](https://support.microsoft.com/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi)（Windows Vista、Windows Server 2008、Windows Server 2008 R2 和 Windows 7 的批量激活信息）。
 
 ## <a name="diagnostic-tool"></a>诊断工具
 
@@ -84,7 +84,7 @@ Microsoft 支持和恢复助手 (SaRA) 简化了 Windows KMS 激活的故障排�
 
 如果 Windows 已被恶意软件修改为允许安装其他功能，也可能出现此问题。 如果某些系统文件已损坏，也可能出现此问题。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 若要解决此问题，必须重新安装操作系统。  
 
@@ -98,7 +98,7 @@ Microsoft 支持和恢复助手 (SaRA) 简化了 Windows KMS 激活的故障排�
 
 用户帐户控制 (UAC) 阻止激活进程在非提升的命令提示符窗口中运行。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 在提升的命令提示符窗口中运行 **slmgr.vbs**。 为此，请在“开始”  菜单中右键单击“cmd.exe”  ，然后选择“以管理员身份运行”  。  
 
@@ -108,7 +108,7 @@ Microsoft 支持和恢复助手 (SaRA) 简化了 Windows KMS 激活的故障排�
 
 如果 KMS 客户端在 DNS 中找不到 KMS SRV 资源记录，则可能出现此问题。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 若要详细了解如何排查此类与 DNS 相关的问题，请参阅 [Common troubleshooting procedures for KMS and DNS issues](common-troubleshooting-procedures-kms-dns.md)（KMS 和 DNS 问题的常见排查过程）。  
 
@@ -121,7 +121,7 @@ Microsoft 支持和恢复助手 (SaRA) 简化了 Windows KMS 激活的故障排�
 
 输入的 MAK 无效或 Windows Server 2019 中存在已知问题会导致此问题。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 若要解决此问题并激活计算机，请在提升的命令提示符处运行 **slmgr -ipk <5x5 key>** 。
 
@@ -131,7 +131,7 @@ Microsoft 支持和恢复助手 (SaRA) 简化了 Windows KMS 激活的故障排�
 
 未在 KMS 主机上配置防火墙设置，或者 DNS SRV 记录已过时。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 在 KMS 主机上，确保已启用密钥管理服务（TCP 端口 1688）防火墙例外。
 
@@ -147,7 +147,7 @@ Microsoft 支持和恢复助手 (SaRA) 简化了 Windows KMS 激活的故障排�
 
 系统出现网络或 DNS 问题。
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 排查网络和 DNS 的问题。  
 
@@ -157,7 +157,7 @@ Microsoft 支持和恢复助手 (SaRA) 简化了 Windows KMS 激活的故障排�
 
 KMS 客户端在 DNS 中找不到 KMS 服务器资源记录 (SRV RR)。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 确认已安装 KMS 主机，并且已启用 DNS 发布（默认设置）。 如果 DNS 不可用，请使用 **slmgr.vbs /skms <*kms_host_name*>** 将 KMS 客户端指向 KMS 主机。  
 
@@ -171,7 +171,7 @@ KMS 客户端在 DNS 中找不到 KMS 服务器资源记录 (SRV RR)。
 
 KMS 客户端在 DNS 中找不到 KMS SRV 记录。
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 排查网络连接和 DNS 的问题。 若要详细了解如何排查此类与 DNS 相关的问题，请参阅 [Common troubleshooting procedures for KMS and DNS issues](common-troubleshooting-procedures-kms-dns.md)（KMS 和 DNS 问题的常见排查过程）。  
 
@@ -181,7 +181,7 @@ KMS 客户端在 DNS 中找不到 KMS SRV 记录。
 
 如果 KMS 客户端在 DNS 中找不到 KMS SRV 资源记录，则可能出现此问题。
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 若要详细了解如何排查此类与 DNS 相关的问题，请参阅 [Common troubleshooting procedures for KMS and DNS issues](common-troubleshooting-procedures-kms-dns.md)（KMS 和 DNS 问题的常见排查过程）。  
 
@@ -191,9 +191,9 @@ KMS 客户端在 DNS 中找不到 KMS SRV 记录。
 
 不支持 MAK。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
-若要排查此问题，请确认使用的 MAK 是 Microsoft 提供的 MAK。 若要确认 MAK 有效，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。
+若要排查此问题，请确认使用的 MAK 是 Microsoft 提供的 MAK。 若要确认 MAK 有效，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。
 
 ### <a name="0xc004c001-the-activation-server-determined-the-specified-product-key-is-invalid"></a>0xC004C001 激活服务器确定指定的产品密钥无效
 
@@ -201,9 +201,9 @@ KMS 客户端在 DNS 中找不到 KMS SRV 记录。
 
 输入的 MAK 无效。
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
-确认该密钥是 Microsoft 提供的 MAK。 如需其他帮助，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。
+确认该密钥是 Microsoft 提供的 MAK。 如需其他帮助，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。
 
 ### <a name="0xc004c003-the-activation-server-determined-the-specified-product-key-is-blocked"></a>0xC004C003 激活服务器确定指定的产品密钥被阻止
 
@@ -211,9 +211,9 @@ KMS 客户端在 DNS 中找不到 KMS SRV 记录。
 
 MAK 在激活服务器上被阻止。
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
-若要获取新 MAK，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。 获取新 MAK 后，请再次尝试安装并激活 Windows。  
+若要获取新 MAK，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。 获取新 MAK 后，请再次尝试安装并激活 Windows。  
 
 ### <a name="0xc004c008-the-activation-server-determined-that-the-specified-product-key-could-not-be-used"></a>0xC004C008 激活服务器确定无法使用指定的产品密钥
 
@@ -221,9 +221,9 @@ MAK 在激活服务器上被阻止。
 
 KMS 密钥已超过其激活限制。 KMS 主机密钥最多可以在 6 台不同的计算机上激活 10 次。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
-如果需要激活更多次，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。  
+如果需要激活更多次，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。  
 
 ### <a name="0xc004c020-the-activation-server-reported-that-the-multiple-activation-key-has-exceeded-its-limit"></a>0xC004C020 激活服务器报告多次激活密钥已超过其限制
 
@@ -231,9 +231,9 @@ KMS 密钥已超过其激活限制。 KMS 主机密钥最多可以在 6 台不�
 
 MAK 已超过其激活限制。 根据设计，MAK 可以激活的次数有限。
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
-如果需要激活更多次，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。
+如果需要激活更多次，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。
 
 ### <a name="0xc004c021-the-activation-server-reported-that-the-multiple-activation-key-extension-limit-has-been-exceeded"></a>0xC004C021 激活服务器报告已超过多次激活密钥扩展限制
 
@@ -241,9 +241,9 @@ MAK 已超过其激活限制。 根据设计，MAK 可以激活的次数有限�
 
 MAK 已超过其激活限制。 根据设计，MAK 的激活次数有限。
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
-如果需要激活更多次，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。
+如果需要激活更多次，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。
 
 ### <a name="0xc004f009-the-software-protection-service-reported-that-the-grace-period-expired"></a>0xC004F009 软件保护服务报告宽限期已过
 
@@ -251,9 +251,9 @@ MAK 已超过其激活限制。 根据设计，MAK 的激活次数有限。
 
 在激活系统之前宽限期已过期。 现在，系统处于“通知”状态。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
-如需帮助，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。
+如需帮助，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。
 
 ### <a name="0xc004f00f-the-software-licensing-server-reported-that-the-hardware-id-binding-is-beyond-level-of-tolerance"></a>0xC004F00F 软件授权服务器报告硬件 ID 绑定已超出容限级别
 
@@ -261,7 +261,7 @@ MAK 已超过其激活限制。 根据设计，MAK 的激活次数有限。
 
 系统上的硬件已更换，或者驱动程序已更新。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 如果使用 MAK 激活，请在 OOT 宽限期内使用联机激活或电话激活来重新激活系统。  
 
@@ -273,7 +273,7 @@ MAK 已超过其激活限制。 根据设计，MAK 的激活次数有限。
 
 系统上未安装产品密钥。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 如果使用 MAK 激活，请安装 MAK 产品密钥。 
 
@@ -285,7 +285,7 @@ MAK 已超过其激活限制。 根据设计，MAK 的激活次数有限。
 
 系统检测到电话激活期间输入的数据无效。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 确认已正确输入 CID。  
 
@@ -301,7 +301,7 @@ MAK 已超过其激活限制。 根据设计，MAK 的激活次数有限。
 
 Windows 7 批量版仅获得升级许可。 Microsoft 不支持在未安装合格操作系统的计算机上安装批量版操作系统。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 若要激活，需要执行下列操作之一：
 
@@ -310,7 +310,7 @@ Windows 7 批量版仅获得升级许可。 Microsoft 不支持在未安装合�
   > 如果在尝试激活时收到错误 0x80072ee2，请改用后续的电话激活方法。
 - 按照这些步骤操作，通过电话激活：
    1. 运行 slmgr /dti，然后记录安装 ID 的值  。 </li>
-   1. 请联系 [Microsoft 许可证激活中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)并提供安装 ID 以接收确认 ID。</li>
+   1. 请联系 [Microsoft 许可证激活中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)并提供安装 ID 以接收确认 ID。</li>
    1. 若要通过使用确认 ID 激活，请运行 slmgr /atp &lt;Confirmation ID&gt;  。
 
 ### <a name="0xc004f038-the-count-reported-by-your-key-management-service-kms-is-insufficient"></a>0xC004F038 你的密钥管理服务(KMS)报告的计数不足
@@ -323,7 +323,7 @@ Windows 7 批量版仅获得升级许可。 Microsoft 不支持在未安装合�
 
 KMS 主机上的计数不够大。 对于 Windows Server，KMS 计数必须大于或等于 5。 对于 Windows（客户端），KMS 计数必须大于或等于 25。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 使用 KMS 激活 Windows 之前，必须在 KMS 池中有更多的计算机。 若要获取 KMS 主机上的当前计数，请运行 **Slmgr.vbs /dli**。  
 
 ### <a name="0xc004f039-the-key-management-service-kms-is-not-enabled"></a>0xC004F039 未启用密钥管理服务(KMS)
@@ -336,7 +336,7 @@ KMS 主机上的计数不够大。 对于 Windows Server，KMS 计数必须大�
 
 KMS 未响应 KMS 请求。
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 排查 KMS 主机与客户端之间的网络连接问题。 确保 TCP 端口 1688（默认）未被防火墙阻止，也没有被其他方式筛选掉。
 
@@ -350,7 +350,7 @@ KMS 未响应 KMS 请求。
 
 未激活 KMS 主机。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 使用联机激活或电话激活来激活 KMS 主机。  
 
@@ -360,7 +360,7 @@ KMS 未响应 KMS 请求。
 
 如果 KMS 客户端联系一台无法激活客户端软件的 KMS 主机，则会出现此错误。 例如，在包含特定于应用程序和特定于操作系统的 KMS 主机的混合环境中，这种情况可能很常见。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 确保使用特定的 KMS 主机来激活特定的应用程序或操作系统，且 KMS 客户端连接到正确的主机。
 
@@ -370,7 +370,7 @@ KMS 未响应 KMS 请求。
 
 这可能是由于 KMS 密钥拼写错误，或者在正式发行版操作系统中键入 Beta 密钥而造成的。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 请在相应版本的 Windows 上安装相应的 KMS 密钥。 检查拼写。 如果密钥是复制后粘贴过来的，请确保不要将密钥中的连字符取代为长破折号线。  
 
@@ -380,7 +380,7 @@ KMS 未响应 KMS 请求。
 
 激活服务器确定 Microsoft 已阻止此产品密钥。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 获取新的 MAK 或 KMS 密钥，将它安装在系统上，然后激活。
 
@@ -390,9 +390,9 @@ KMS 未响应 KMS 请求。
 
 Windows 激活工具 (WAT) 已确定系统不是正版。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
-如需帮助，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)。
+如需帮助，请联系 [Microsoft 许可激活中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)。
 
 ### <a name="0xc004f065-the-software-protection-service-reported-that-the-application-is-running-within-the-valid-non-genuine-period"></a>0xC004F065 软件保护服务报告该应用程序正在有效的非正版宽限期内运行
 
@@ -400,7 +400,7 @@ Windows 激活工具 (WAT) 已确定系统不是正版。
 
 Windows 激活工具已确定系统不是正版。 系统将在非正版宽限期内继续运行。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 获取并安装正版产品密钥，并在宽限期内激活系统。 否则，系统将在宽限期结束时进入通知状态。
 
@@ -414,7 +414,7 @@ Windows 激活工具已确定系统不是正版。 系统将在非正版宽限�
 
 客户端计算机上的系统时间与 KMS 主机上的时间有很大的差异。 由于多种原因，时间同步对于系统和网络的安全非常重要。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 请更改客户端上的系统时间，使其与 KMS 主机同步，以便解决此问题。 建议使用网络时间协议 (NTP) 时间源或 Active Directory 域服务进行时间同步。 出现当前的问题是因为你使用了 UTP 时间，而这种时间与选择的时区无关。  
 
@@ -428,7 +428,7 @@ Windows 激活工具已确定系统不是正版。 系统将在非正版宽限�
 
 所有 KMS 主机系统都返回了错误。  
 
-#### <a name="resolution"></a>分辨率
+#### <a name="resolution"></a>解决方法
 
 在应用程序事件日志中，确定事件 ID 为 12288 且与激活尝试相关联的每个事件。 排查这些事件中的错误。
 

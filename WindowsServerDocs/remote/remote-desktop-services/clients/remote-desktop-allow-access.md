@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a875f8bddd934ac9fb70ca9c0b86772d9fa63b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de08101ed1d4d4527242778d657778f1a16b3dad
+ms.sourcegitcommit: 5b055fc1d73375f68149c214152f1d63396dd6ca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404172"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76248399"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>远程桌面 - 允许访问你的电脑
 
@@ -57,7 +57,7 @@ ms.locfileid: "71404172"
 
 ## <a name="should-i-enable-remote-desktop"></a>我应该启用远程桌面吗？
 
-如果你只想真正坐在电脑前访问电脑，则无需启用远程桌面。 启用远程桌面会在你的电脑上打开本地网络可见的端口。 应仅在受信任的网络中启用远程桌面，比如家里。 你也不会想在任何严格控制访问权限的电脑上启用远程桌面。
+如果只想在使用实体电脑时访问电脑，则无需启用远程桌面。 启用远程桌面会在你的电脑上打开本地网络可见的端口。 应仅在受信任的网络中启用远程桌面，比如家里。 你也不会想在任何严格控制访问权限的电脑上启用远程桌面。
 
 请注意，允许访问远程桌面，即表示授予 Administrators 组中的任何人以及所选的任何其他用户在计算机上远程访问其帐户的能力。
 

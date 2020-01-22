@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 54ed455955053ebb234864f827759385ecf3d3c5
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 8ab42d7781c547d516a51c89e9c8ecba0ff72ad6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935028"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950434"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>有关远程桌面客户端的常见问题
 
@@ -67,7 +67,7 @@ ms.locfileid: "71935028"
 可以授予特定用户访问此电脑的权限 - 为此，请单击“选择可以远程访问此电脑的用户”  。
 Administrators 组的成员自动拥有访问权限。
 
-对于 Windows 8.1，请按照[使用远程桌面连接连接到另一个桌面](https://support.microsoft.com/en-us/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8)中的说明允许远程连接。
+对于 Windows 8.1，请按照[使用远程桌面连接连接到另一个桌面](https://support.microsoft.com/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8)中的说明允许远程连接。
 
 
 
@@ -147,11 +147,11 @@ Web 客户端支持 Windows、macOS、Linux 和 ChromeOS。 目前不支持移�
 
 ### <a name="can-i-use-the-web-client-in-a-remote-desktop-deployment-without-a-gateway"></a>我是否可以在没有网关的远程桌面部署中使用 Web 客户端？
 
-否。 客户端需要远程桌面网关才能连接。 不知道这意味着什么？ 询问管理员相关信息。
+不能。 客户端需要远程桌面网关才能连接。 不知道这意味着什么？ 询问管理员相关信息。
 
 ### <a name="does-the-remote-desktop-web-client-replace-the-remote-desktop-web-access-page"></a>远程桌面 Web 客户端是否会取代远程桌面 Web 访问页面？
 
-否。 远程桌面 Web 客户端在与远程桌面 Web 访问页面不同的 URL 中托管。 可以使用 Web 客户端或 Web 访问页面在浏览器中查看远程资源。
+不能。 远程桌面 Web 客户端在与远程桌面 Web 访问页面不同的 URL 中托管。 可以使用 Web 客户端或 Web 访问页面在浏览器中查看远程资源。
 
 ### <a name="can-i-embed-the-web-client-in-another-web-page"></a>是否可以将 Web 客户端嵌入另一个网页？
 

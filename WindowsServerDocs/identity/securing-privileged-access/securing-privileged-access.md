@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: e6ff22d0563fa11aa633004966b2cd2648ba5877
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d60ba6ffd661aeb284a2ade775e14b9108cbb6c9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357701"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950534"
 ---
 # <a name="securing-privileged-access"></a>保护特权访问
 
@@ -90,7 +90,7 @@ Microsoft 建议按照此路线图来保护特许访问权限免受顽固攻击�
 
 ### <a name="2-just-in-time-local-admin-passwords"></a>2.实时使用的本地管理员密码
 
-为了降低攻击者从本地 SAM 数据库窃取本地管理员帐户密码哈希并将其滥用于攻击其他计算机的风险，组织应确保每台计算机都有唯一的本地管理员密码。 本地管理员密码解决方案 (LAPS) 工具可以在每个工作站和服务器上配置唯一的随机密码，并将其存储在受 ACL 保护的 Active Directory (AD) 中。 只有符合条件的授权用户才可以读取或请求重置这些本地管理员帐户密码。 可以从 [Microsoft 下载中心](http://Aka.ms/LAPS)获得在工作站和服务器上使用的 LAPS。
+为了降低攻击者从本地 SAM 数据库窃取本地管理员帐户密码哈希并将其滥用于攻击其他计算机的风险，组织应确保每台计算机都有唯一的本地管理员密码。 本地管理员密码解决方案 (LAPS) 工具可以在每个工作站和服务器上配置唯一的随机密码，并将其存储在受 ACL 保护的 Active Directory (AD) 中。 只有符合条件的授权用户才可以读取或请求重置这些本地管理员帐户密码。 可以从 [Microsoft 下载中心](https://aka.ms/LAPS)获得在工作站和服务器上使用的 LAPS。
 
 [基于清洁源原则的操作标准](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle)部分提供了其他指南，介绍如何通过 LAPS 和 PAW 操作某个环境。
 

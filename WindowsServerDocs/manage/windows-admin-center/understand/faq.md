@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
 ms.prod: windows-server
-ms.openlocfilehash: 6d04b641c56e9461f0134bfc4734fea36955106c
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 4ce42420430e9a12dd6123ec18c9ded25abc97bb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74904061"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949951"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常见问题解答
 
@@ -27,7 +27,7 @@ Windows Admin Center 是一个轻型的基于浏览器的 GUI 平台及工具集
 
 ## <a name="can-i-use-windows-admin-center-in-production-environments"></a>我是否可以在生产环境中使用 Windows Admin Center？
 
-相同。 Windows Admin Center 通常可供广泛使用和进行生产部署。 当前的平台功能和核心工具达到了 Microsoft 的标准发布准则，以及我们的可用性、可靠性、性能、辅助功能、安全性和采用质量标准。
+是的。 Windows Admin Center 通常可供广泛使用和进行生产部署。 当前的平台功能和核心工具达到了 Microsoft 的标准发布准则，以及我们的可用性、可靠性、性能、辅助功能、安全性和采用质量标准。
 
 [!INCLUDE [support-policy](../includes/support-policy.md)]
 
@@ -74,7 +74,7 @@ Windows Admin Center 是对 RSAT（远程服务器管理工具）的补充，不
 
 ## <a name="can-windows-admin-center-be-used-to-manage-the-free-microsoft-hyper-v-server"></a>Windows Admin Center 能否用于管理免费的 Microsoft Hyper-V Server？
 
-相同。 Windows Admin Center 可用于管理 Microsoft Hyper-V Server 2016 和 Microsoft Hyper-V Server 2012 R2。
+是的。 Windows Admin Center 可用于管理 Microsoft Hyper-V Server 2016 和 Microsoft Hyper-V Server 2012 R2。
 
 ## <a name="can-i-deploy-windows-admin-center-on-a-windows-10-computer"></a>我是否可以在 Windows 10 计算机上部署 Windows Admin Center？
 
@@ -86,7 +86,7 @@ Windows Admin Center 是对 RSAT（远程服务器管理工具）的补充，不
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-windows-server-2008-r2-or-earlier"></a>是否有 Windows Admin Center 管理 Windows Server 2008 R2 或更早版本的计划？
 
-Windows Admin Center 现在支持**有限的**功能来管理 Windows Server 2008 R2。 Windows Admin Center 依赖于 Windows Server 2008 R2 及更早版本中没有的 PowerShell 功能和平台技术，这让完全支持无法实现。 Windows Server 2008/2008 R2 将于 2020 年 1 月终止支持，因此 Microsoft 建议客户[过渡到 Azure 或升级到最新版本的 Windows Server](https://www.microsoft.com/en-us/cloud-platform/windows-server-2008)。
+Windows Admin Center 现在支持**有限的**功能来管理 Windows Server 2008 R2。 Windows Admin Center 依赖于 Windows Server 2008 R2 及更早版本中没有的 PowerShell 功能和平台技术，这让完全支持无法实现。 Windows Server 2008/2008 R2 将于 2020 年 1 月终止支持，因此 Microsoft 建议客户[过渡到 Azure 或升级到最新版本的 Windows Server](https://www.microsoft.com/cloud-platform/windows-server-2008)。
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-linux-connections"></a>是否有 Windows Admin Center 管理 Linux 连接的计划？
 
@@ -127,7 +127,7 @@ Windows Admin Center 提供一个 SDK，可让任何人编写自己的扩展。 
 
 ## <a name="can-i-manage-hyper-converged-infrastructure-with-windows-admin-center"></a>是否可以使用 Windows Admin Center 管理超融合基础设施？
 
-相同。 Windows Admin Center 支持管理运行 Windows Server 2016 或 Windows Server 2019 的超融合群集。 Windows Admin Center 中的超融合群集管理器解决方案以前以预览版提供，但现在已推出**正式版**，其中保留了预览版中的一些新功能。 有关详细信息，[请阅读有关超融合基础设施的详细信息](../use/manage-hyper-converged.md)。
+是的。 Windows Admin Center 支持管理运行 Windows Server 2016 或 Windows Server 2019 的超融合群集。 Windows Admin Center 中的超融合群集管理器解决方案以前以预览版提供，但现在已推出**正式版**，其中保留了预览版中的一些新功能。 有关详细信息，[请阅读有关超融合基础设施的详细信息](../use/manage-hyper-converged.md)。
 
 ## <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center 是否需要 System Center？
 
@@ -150,7 +150,7 @@ Windows Admin Center 和 SCVMM 是补充功能；Windows Admin Center 的目标�
 ### <a name="windows-admin-center-preview"></a>Windows Admin Center 预览版
 
 * 对于希望定期体验最新和最强大功能的 IT 管理员，应该选择这个版本。 我们打算每隔大约一个月提供后续更新版本。 核心平台仍然是生产就绪状态，许可证提供生产使用权限。 但是，请注意，后续将会引入被明确标注为“预览”的新工具和功能，它们适合用于评估和测试。
-* 要获取最新的 Insider 预览版，注册的预览体验成员可以直接从 [Windows Server Insider Preview 下载页面](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)下载 Windows Admin Center 预览版，位于“其他下载”下拉列表下。 如果你尚未注册成为预览体验成员，请参阅适用于企业的 Windows 预览体验成员门户上的 [Windows Server 入门](https://insider.windows.com/en-us/for-business-getting-started-server/)。
+* 要获取最新的 Insider 预览版，注册的预览体验成员可以直接从 [Windows Server Insider Preview 下载页面](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)下载 Windows Admin Center 预览版，位于“其他下载”下拉列表下。 如果你尚未注册成为预览体验成员，请参阅适用于企业的 Windows 预览体验成员门户上的 [Windows Server 入门](https://insider.windows.com/en-us/for-business-getting-started-server/)。
 
 ## <a name="why-was-windows-admin-center-chosen-as-the-final-name-for-project-honolulu"></a>为何选择“Windows Admin Center”作为“Project Honolulu”的最终名称？
 
@@ -162,7 +162,7 @@ Windows Admin Center 是“Project Honolulu”的官方产品名称，强调了�
 
 ## <a name="what-is-the-version-history-of-windows-admin-center"></a>什么是 Windows Admin Center 版本历史记录？
 
-[查看此处的版本历史记录。](../overview.md#release-history)
+[查看此处的版本历史记录。](../support/release-history.md)
 
 ## <a name="im-having-an-issue-with-windows-admin-center-where-can-i-get-help"></a>我有有关 Windows Admin Center 的问题，在哪里可以获得帮助？
 

@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 76cfd0f0cca18fb072883a9e14fae420516bd329
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: afcda1d3f94c5f6fa7524317ac21c5540c07895c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391362"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948261"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 中的新增功能
 
@@ -136,7 +136,7 @@ Device Guard 通过创建指定哪些代码可以在服务器上运行的策略�
 
 Windows Server 2016 中的存储包括软件定义存储以及传统文件服务器的新功能和增强功能。 下面是几个新功能，有关更多增强功能和详细信息，请参阅 [Windows Server 2016 中的存储的新增功能](../storage/whats-new-in-storage.md)。
 
-### <a name="storage-spaces-direct"></a>存储空间直通
+### <a name="storage-spaces-direct"></a>Storage Spaces Direct
 
 存储空间直通允许通过使用具有本地存储的服务器构建高可用性和可缩放存储。 该功能简化了软件定义的存储系统的部署和管理并且允许使用 SATA SSD 和 NVMe 磁盘设备等新型磁盘设备，而之前群集存储空间无法使用共享磁盘。
 
@@ -195,7 +195,7 @@ Microsoft Windows 10 和 Windows Server 2016 中添加了三个新功能：
 
 - DSN 名称限制从 256 字节扩大到 3072 字节。 有关详细信息，请参阅 [IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx)、[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx) 或 [IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx)。
 
-- 利用改进的跟踪功能，可以设置注册表项以在跟踪日志文件名中包括映像文件路径，以便能够告知要检查的跟踪日志文件。 有关为 MSDTC 配置跟踪的详细信息，请参阅[如何在基于 Windows 的计算机上为 MS DTC 启用诊断跟踪](https://support.microsoft.com/en-us/kb/926099)。
+- 利用改进的跟踪功能，可以设置注册表项以在跟踪日志文件名中包括映像文件路径，以便能够告知要检查的跟踪日志文件。 有关为 MSDTC 配置跟踪的详细信息，请参阅[如何在基于 Windows 的计算机上为 MS DTC 启用诊断跟踪](https://support.microsoft.com/kb/926099)。
 
 
 

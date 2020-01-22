@@ -14,14 +14,14 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5f899964414c10350cc22a594a959c940a1514
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dcd50b287ad0f3dd49a0df3c1fe531379bd4078e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391518"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948230"
 ---
-# <a name="release-notes-important-issues-in-windows-server-version-1709"></a>发行说明:Windows Server 版本 1709 中的重要问题
+# <a name="release-notes-important-issues-in-windows-server-version-1709"></a>发行说明：Windows Server 版本 1709 中的重要问题
 
 >适用于：Windows Server 半年频道
 
@@ -29,7 +29,7 @@ ms.locfileid: "71391518"
 
 本文档将持续更新。 发现需要解决的严重问题，以及有可用的新的解决方法和修补程序时，它们将被添加到此文档中。  
   
-## <a name="storage-spaces-direct"></a>存储空间直通
+## <a name="storage-spaces-direct"></a>Storage Spaces Direct
 [comment]: # (ID：未知；提交者：stevenek；状态：已签收)  
 Windows Server 版本 1709 中不包含存储空间直通。 如果你在运行 Windows Server 版本 1709 的服务器上调用 *Enable-ClusterStorageSpacesDirect* 或其别名 *Enable-ClusterS2D*，则你会收到错误以及“不支持请求的操作”消息。
 
@@ -41,4 +41,4 @@ Windows Server 半年频道注重于可从更快的创新中受益的容器和�
 
 存储空间直通已引入到了 Windows Server 2016 中，并且是我们的超融合平台的基础。 我们对客户积极采用 Microsoft 超融合平台一直都感到非常兴奋，并将致力于为客户提供服务。
 
-我们一直在听取客户的反馈并努力为我们的超融合平台提供[下一组创新](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/)。 如今，[Windows 预览体验成员](https://insider.windows.com/for-business/)版本中提供了这些功能，我们希望你试用它们并共享你的反馈。 对于寻求验证过的超融合解决方案的客户，我们建议加入 [Windows Server 软件定义](http://microsoft.com/wssd)计划。
+我们一直在听取客户的反馈并努力为我们的超融合平台提供[下一组创新](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/)。 如今，[Windows 预览体验成员](https://insider.windows.com/for-business/)版本中提供了这些功能，我们希望你试用它们并共享你的反馈。 对于寻求验证过的超融合解决方案的客户，我们建议加入 [Windows Server 软件定义](https://microsoft.com/wssd)计划。

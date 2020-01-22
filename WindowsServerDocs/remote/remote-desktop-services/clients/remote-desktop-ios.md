@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 700d419d06c0b007ed05be4f82137828f52143e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8361d1171c2526e701a5418696761a8400c47ca3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404148"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949875"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS 客户端入门
 
@@ -200,7 +200,7 @@ iOS Beta 客户端现已发布，可通过到 Windows 虚拟桌面资源的 Appl
 客户端使用标准触摸手势。 还可以使用触摸手势在远程桌面上复制鼠标操作。 下表定义了可用鼠标模式。
 
 > [!NOTE]
-> 与 Windows 8 或更高版本交互时，支持直接触摸模式下的本机触摸手势。 有关 Windows 8 手势的详细信息，请参阅[触摸：轻扫、点击等](https://windows.microsoft.com/en-US/windows-8/touch-swipe-tap-beyond)。
+> 与 Windows 8 或更高版本交互时，支持直接触摸模式下的本机触摸手势。 有关 Windows 8 手势的详细信息，请参阅[触摸：轻扫、点击等](https://windows.microsoft.com/windows-8/touch-swipe-tap-beyond)。
 
 | 鼠标模式    | 鼠标操作      | 手势                                                    |
 |---------------|----------------------|------------------------------------------------------------|
@@ -211,7 +211,7 @@ iOS Beta 客户端现已发布，可通过到 Windows 虚拟桌面资源的 Appl
 | 鼠标指针 | 右键单击          | 2 指点击                                               |
 | 鼠标指针 | 右键单击并拖动 | 2 指双击并按住，然后拖动                    |
 | 鼠标指针 | 鼠标滚轮          | 2 指点击并按住，然后上下拖动                |
-| 鼠标指针 | Zoom                 | 捏合 2 个手指进行放大或张开 2 个手指进行缩小 |
+| 鼠标指针 | 缩放                 | 捏合 2 个手指进行放大或张开 2 个手指进行缩小 |
 
 ## <a name="supported-input-devices"></a>支持的输入设备
 

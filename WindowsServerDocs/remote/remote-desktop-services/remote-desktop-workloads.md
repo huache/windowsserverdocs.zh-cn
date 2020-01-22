@@ -11,13 +11,13 @@ ms.date: 12/02/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 author: Heidilohr
-manager: daveba
-ms.openlocfilehash: 32781946ad2c49ec51e11dfe1e8af078425d35b0
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+manager: lizross
+ms.openlocfilehash: 693d1abd91fbfa2d44a6af42dd9f5338bd461927
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700926"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919943"
 ---
 # <a name="remote-desktop-workloads"></a>远程桌面工作负荷
 
@@ -30,6 +30,6 @@ ms.locfileid: "74700926"
 | 轻型 | 执行基本的数据输入任务的用户 | 数据库输入应用程序、命令行界面 |
 | 中 | 顾问和市场研究人员 | 数据库输入应用程序、命令行界面、Microsoft Word、静态网页 |
 | 重型 | 软件工程师、内容创建者 | 数据库输入应用程序、命令行界面、Microsoft Word、静态网页、Microsoft Outlook、Microsoft PowerPoint、动态网页 |
-| 电源 | 图形设计师、3D 制模师、机器学习研究人员 | 数据库输入应用程序、命令行界面、Microsoft Word、静态网页、Microsoft Outlook、Microsoft PowerPoint、动态网页、Adobe Photoshop, Adobe Illustrator、计算机辅助设计 (CAD)、计算机辅助制造 (CAM) |
+| 强力 | 图形设计师、3D 制模师、机器学习研究人员 | 数据库输入应用程序、命令行界面、Microsoft Word、静态网页、Microsoft Outlook、Microsoft PowerPoint、动态网页、Adobe Photoshop, Adobe Illustrator、计算机辅助设计 (CAD)、计算机辅助制造 (CAM) |
 
 若要了解大小调整建议，请参阅 [Virtual machine sizing guidance](virtual-machine-recs.md)（虚拟机大小调整指南）。

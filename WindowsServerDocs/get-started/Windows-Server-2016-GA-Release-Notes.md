@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 4e2f7cbaed42dd1c1b1884438467cf59f1529f0c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64c0daa8ecc2d6b196d4305e3246dadeebf7075a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391536"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948344"
 ---
-# <a name="release-notes-important-issues-in-windows-server-2016"></a>发行说明:Windows Server 2016 中的重要问题
+# <a name="release-notes-important-issues-in-windows-server-2016"></a>发行说明：Windows Server 2016 中的重要问题
 
 >适用于：Windows Server 2016
 
@@ -42,7 +42,7 @@ ms.locfileid: "71391536"
 ## <a name="containers"></a>容器
 
 [comment]: # (ID:371; Submitter: taylorb; state: signed off)
-- 使用容器前，先安装可用的 [Servicing stack update for Windows 10 Version 1607:August 23, 2016](https://support.microsoft.com/en-us/kb/3176936)（Windows 10 版本 1607 服务堆栈更新：2016 年 8 月 23 日）或任何更高版本。 否则，可能发生多个问题，包括生成、启动或运行容器失败，以及类似“CreateProcess 在 Win32 中失败：RPC 服务器不可用”的错误。
+- 使用容器前，先安装可用的 [Servicing stack update for Windows 10 Version 1607:August 23, 2016](https://support.microsoft.com/kb/3176936)（Windows 10 版本 1607 服务堆栈更新：2016 年 8 月 23 日）或任何更高版本。 否则，可能发生多个问题，包括生成、启动或运行容器失败，以及类似“CreateProcess 在 Win32 中失败：RPC 服务器不可用”的错误。
 
 [comment]: # (ID:373; Submitter: plang; state: signed off)
 - NanoServerPackage OneGet 提供程序在 Windows 容器中无效。 若要解决此问题，请在其他电脑（而非容器）上使用 Find-NanoServerPackage 和 Save-NanoServerPackage 下载所需的程序包。 然后将程序包复制到容器并安装。
@@ -50,12 +50,12 @@ ms.locfileid: "71391536"
 ## <a name="device-guard"></a>Device Guard
 
 [comment]: # (ID:369; Submitter: nirb; state: signed off)
-如果使用代码完整性的基于虚拟化的保护或受防护的虚拟机（使用代码完整性的基于虚拟化的保护），则应意识到这些技术与一些设备和应用程序不兼容。 应先在实验室中测试此类配置，再启用生产系统上的功能。 否则将导致意外的数据丢失或停止错误。
+如果使用基于虚拟化的代码完整性保护或受防护的虚拟机（使用基于虚拟化的代码完整性保护），则应意识到这些技术可能与一些设备和应用程序不兼容。 应先在实验室中测试此类配置，再启用生产系统上的功能。 否则将导致意外的数据丢失或停止错误。
 
 ## <a name="microsoft-exchange"></a>Microsoft Exchange
 
 [comment]: # (ID:375; Submitter: wgries; state: signed off)
-如果尝试在 Windows Server 2016 上运行 Microsoft Exchange 2016 CU3，将在 IIS 主机进程 W3WP.exe 中遇到错误。 此时没有解决办法。 应推迟在 Windows Server 2016 上部署 Exchange 2016 CU3，直到可使用受支持的修补程序。
+如果尝试在 Windows Server 2016 上运行 Microsoft Exchange 2016 CU3，将在 IIS 主机进程 W3WP.exe 中遇到错误。 此时没有解决办法。 应推迟在 Windows Server 2016 上部署 Exchange 2016 CU3，直到可使用受支持的修补程序。
 
 ## <a name="remote-server-administration-tools-rsat"></a>远程服务器管理工具 (RSAT)
 
@@ -69,7 +69,7 @@ ms.locfileid: "71391536"
 [comment]: # (ID:369; Submitter: nirb; state: signed off)  
 - 请确保安装了所有可用更新后再在生产中部署受防护的虚拟机。
 
-- 如果使用代码完整性的基于虚拟化的保护或受防护的虚拟机（使用代码完整性的基于虚拟化的保护），则应意识到这些技术与一些设备和应用程序不兼容。 应先在实验室中测试此类配置，再启用生产系统上的功能。 否则将导致意外的数据丢失或停止错误。
+- 如果使用基于虚拟化的代码完整性保护或受防护的虚拟机（使用基于虚拟化的代码完整性保护），则应意识到这些技术可能与一些设备和应用程序不兼容。 应先在实验室中测试此类配置，再启用生产系统上的功能。 否则将导致意外的数据丢失或停止错误。
 
 ## <a name="start-menu"></a>“开始”菜单
 
@@ -88,7 +88,7 @@ ms.locfileid: "71391536"
 
 本文档按“原样”提供。 本文档中表达的信息和视图（包括 URL 和其他 Internet 网站引用）如有更改，恕不另行通知。  
 
-本文档未向你提供针对任何 Microsoft 产品的任何知识产权的任何法律权限。 你可以复制和使用本文档作为内部参考之用。  
+本文档未向你提供针对任何 Microsoft 产品的任何知识产权的任何法律权限。 可以复制本文档并将其用于进行内部参考。  
 
 &copy; 2016 Microsoft Corporation。 保留所有权利。  
 

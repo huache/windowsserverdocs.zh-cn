@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: 适用于 Windows 的 OpenSSH 服务器配置
-ms.openlocfilehash: ed424c33c4cd2c19a9b5e985ab6083bcbcb9fbdc
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 5eb3d86950d169fd01512d330f0c04669beeffae
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546263"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259042"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>适用于 Windows 10 1809 和 Server 2019 的 OpenSSH 服务器配置
 
@@ -27,7 +27,7 @@ OpenSSH 在 [OpenSSH.com](https://www.openssh.com/manual.html) 上在线维护�
 
 命令 shell | 要使用的命令
 ------------- | -------------- 
-Command | path
+命令 | path
 PowerShell | $env:path
 
 通过将 shell 可执行文件的完整路径添加到 \SOFTWARE\OpenSSH 字符串值 DefaultShell 中的 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH，在 Windows 注册表中配置默认 ssh shell。 
@@ -84,9 +84,9 @@ AllowGroups sshusers
 
 ### <a name="hostkey"></a>HostKey
 
-默认值为 %programdata%/ssh/ssh_host_ecdsa_key、%programdata%/ssh/ssh_host_ed25519_key 和 %programdata%/ssh/ssh_host_rsa_key。 如果默认值不存在，则 sshd 会在服务启动时自动生成这些值。
+默认值为 %programdata%/ssh/ssh_host_ecdsa_key、%programdata%/ssh/ssh_host_ed25519_key、%programdata%/ssh/ssh_host_dsa_key 和 %programdata%/ssh/ssh_host_rsa_key。 如果默认值不存在，则 sshd 会在服务启动时自动生成这些值。
 
-### <a name="match"></a>Match
+### <a name="match"></a>匹配
 
 请注意此部分中的模式规则。 用户和组名称应采用小写。
 
@@ -109,7 +109,7 @@ Windows Server 2019 和 Windows 10 1809 中附带的 OpenSSH 版本中未提供�
 * AuthorizedKeysCommandUser
 * AuthorizedPrincipalsCommand
 * AuthorizedPrincipalsCommandUser
-* Compression
+* 压缩
 * ExposeAuthInfo
 * GSSAPIAuthentication
 * GSSAPICleanupCredentials

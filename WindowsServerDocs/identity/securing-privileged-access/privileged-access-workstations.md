@@ -9,16 +9,16 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 2625097c56e6b2121cbdac45e1cc5f86972e4898
-ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
+ms.openlocfilehash: 03f62fd8d9a95c4f0b83e64d672a3c1134833cae
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823855"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950557"
 ---
 # <a name="privileged-access-workstations"></a>特权访问工作站
 
->适用于：WIN ENT LTSB 2016 Estonian 64 Bits
+>适用于：Windows Server
 
 特权访问工作站 (PAW) 为免受 Internet 攻击和威胁媒介的敏感任务提供专用操作系统。 将这些敏感任务和帐户与日常使用的工作站和设备分开，可提供很强的保护功能，免受仿冒攻击、应用程序和 OS 漏洞、各种假冒攻击及凭据被盗攻击（例如击键记录、[哈希传递](https://aka.ms/pth)及票证传递）。
 
@@ -34,7 +34,7 @@ ms.locfileid: "74823855"
 > [!NOTE]
 > 没有 Windows 10 企业版访问权限的组织可以使用 Windows 10 专业版，其中包括 PAW 的许多关键基础技术，包括受信任的引导、BitLocker 和远程桌面。  教育客户可以使用 Windows 10 教育版。  Windows 10 家庭版不应用于 PAW。
 >
-> 对于 Windows 10 不同版本的比较矩阵，请参阅[此文章](https://www.microsoft.com/en-us/WindowsForBusiness/Compare)。
+> 对于 Windows 10 不同版本的比较矩阵，请参阅[此文章](https://www.microsoft.com/WindowsForBusiness/Compare)。
 
 PAW 安全控制机制侧重于缓解泄密造成的较大影响以及较高概率的风险。 这包括缓解对环境的攻击，以及不断降低 PAW 控制机制效率的风险：
 
@@ -50,7 +50,7 @@ PAW 安全控制机制侧重于缓解泄密造成的较大影响以及较高概�
 >
 > 有关响应和恢复指南的详细信息，请参阅[缓解哈希传递和其他凭据被盗](https://aka.ms/pth)第 2 版中的“对可疑活动进行响应”和“从漏洞中恢复”部分。
 >
-> 有关详细信息，请访问 [Microsoft 事件响应和恢复服务](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)页。
+> 有关详细信息，请访问 [Microsoft 事件响应和恢复服务](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx)页。
 
 ### <a name="paw-hardware-profiles"></a>PAW 硬件配置文件
 
@@ -96,7 +96,7 @@ PAW 安全控制机制侧重于缓解泄密造成的较大影响以及较高概�
 
 若要对此进行配置，按照本指南中对 PAW 主机的说明进行操作，添加客户端 Hyper-V 功能、创建用户虚拟机，然后在用户虚拟机上安装 Windows 10 企业映像。
 
-请参阅文章[客户端 Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index)，获取有关此功能的详细信息。 请注意，来宾虚拟机中的操作系统需要按 [Microsoft 产品许可](https://www.microsoft.com/en-us/Licensing/product-licensing/products.aspx)进行授权，我们还在[此处](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf)进行了说明。
+请参阅文章[客户端 Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index)，获取有关此功能的详细信息。 请注意，来宾虚拟机中的操作系统需要按 [Microsoft 产品许可](https://www.microsoft.com/Licensing/product-licensing/products.aspx)进行授权，我们还在[此处](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf)进行了说明。
 
 #### <a name="simultaneous-use---adding-remoteapp-rdp-or-a-vdi"></a>同时使用 - 添加 RemoteApp、RDP 或 VDI
 
@@ -274,7 +274,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
 |服务器维护管理员<br />- 第 1 层|是|使用阶段 2 中提供的指南构建的 PAW 对于此角色来说已足够。<br /><br />- PAW 应该用于更新、修补及检修运行 Windows Server、Linux 和其他操作系统的企业服务器和应用程序的管理员。<br />- 可能需要为 PAW 添加专用管理工具，以便供更多管理员使用。|
 |用户工作站管理员 <br />- 第 2 层|是|使用阶段 2 中提供的指南构建的 PAW 对于具有最终用户设备管理权限的角色（例如支持人员和桌端支持角色）来说已足够。<br /><br />- 可能需要在 PAW 上安装其他应用程序，以便启用票证管理及其他支持功能。<br />- 应在工作站上配置 Windows Defender 攻击防护。<br />    可能需要为 PAW 添加专用管理工具，以便供更多管理员使用。|
 |SQL、SharePoint 或业务线 (LOB) 管理员<br />- 第 1 层|是|使用阶段 2 指南构建的 PAW 对于此角色来说已足够。<br /><br />- 可能需要在 PAW 上安装其他管理工具，使管理员无需使用远程桌面连接服务器，即可管理应用程序。|
-|管理社交媒体状态的用户|部分|使用阶段 2 中提供的指南构建的 PAW 可以用作为这些角色提供安全功能的起点。<br /><br />- 使用 Azure Active Directory (AAD) 保护和管理社交媒体帐户以共享、保护和跟踪社交媒体帐户的访问权限。<br />    有关此功能的详细信息，请参阅[此博客文章](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)。<br />- 出站网络限制必须允许连接到这些服务。 这可通过允许开放的 Internet 连接（否定许多 PAW 保证的更高安全风险）或仅允许服务所需的 DNS 地址（可能比较难于获取）完成。|
+|管理社交媒体状态的用户|部分|使用阶段 2 中提供的指南构建的 PAW 可以用作为这些角色提供安全功能的起点。<br /><br />- 使用 Azure Active Directory (AAD) 保护和管理社交媒体帐户以共享、保护和跟踪社交媒体帐户的访问权限。<br />    有关此功能的详细信息，请参阅[此博客文章](https://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)。<br />- 出站网络限制必须允许连接到这些服务。 这可通过允许开放的 Internet 连接（否定许多 PAW 保证的更高安全风险）或仅允许服务所需的 DNS 地址（可能比较难于获取）完成。|
 |标准用户|否|尽管许多强化步骤可为标准用户所用，但 PAW 设计为将帐户与多数用户完成工作职责所需的开放 Internet 接入隔离。|
 |来宾 VDI/网亭|否|虽然许多强化步骤可为来宾用于网亭系统，PAW 体系结构旨在为高敏感度帐户而非较低敏感度帐户提供更高的安全性。|
 |VIP 用户（总经理、研究人员等）|部分|使用阶段 2 中提供的指南构建的 PAW 可以用作为这些角色提供安全功能的起点。<br /><br />- 此方案与标准用户桌面类似，但通常有一个更小、更简单且已知的应用程序配置文件。 此方案通常需要发现和保护敏感数据、服务及应用程序（应用程序可能会安装在桌面上，也可能不会）。<br />- 这些角色通常要求高度安全性和极高的可用性，这就要求更改设计以满足用户偏好。|
@@ -290,7 +290,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
 
 本指南包含针对如上所述方案的 PAW 配置的详细说明。 如果你对其他方案有需求，可以在本指南的基础上自行调整操作说明，或雇用类似于 Microsoft 的专业服务组织帮助实施。
 
-有关将 Microsoft 服务用于为环境量身打造一款 PAW 的详细信息，请联系 Microsoft 代表，或访问[此页面](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)。
+有关将 Microsoft 服务用于为环境量身打造一款 PAW 的详细信息，请联系 Microsoft 代表，或访问[此页面](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx)。
 
 ## <a name="paw-phased-implementation"></a>PAW 分阶段实现
 
@@ -345,7 +345,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
 4. **获取并验证所需的 Windows 10 企业版及应用程序软件**。 获取 PAW 所需的软件，并使用[安装介质的清洁源](https://aka.ms/cleansource)中的指南进行验证。
 
    * Windows 10 企业版
-   * 适用于 Windows 10 的 [远程服务器管理工具](https://www.microsoft.com/en-us/download/details.aspx?id=45520)
+   * 适用于 Windows 10 的 [远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)
    * [Windows 10 安全基线](https://aka.ms/win10baselines)
 
       > [!NOTE]
@@ -660,7 +660,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
 2. 为本地 Administrator 帐户设置唯一的复杂密码。  不要使用在相应环境中任何其他帐户已用过的密码。
 
    > [!NOTE]
-   > Microsoft 建议使用[本地管理员密码解决方案 (LAPS)](https://www.microsoft.com/en-us/download/details.aspx?id=46899) 来管理所有工作站（包括 PAW）的本地管理员密码。  如果你使用 LAPS，请确保仅授权 PAW 维护组为 PAW 读取 LAPS 管理的密码。
+   > Microsoft 建议使用[本地管理员密码解决方案 (LAPS)](https://www.microsoft.com/download/details.aspx?id=46899) 来管理所有工作站（包括 PAW）的本地管理员密码。  如果你使用 LAPS，请确保仅授权 PAW 维护组为 PAW 读取 LAPS 管理的密码。
 
 3. 使用清洁源安装介质为 Windows 10 安装远程服务器管理工具。
 4. 配置 Windows Defender 攻击防护
@@ -705,7 +705,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
 
        2. 此外，使用“**编辑本地用户和组**”，确保下列组没有任何成员：备份操作员、加密操作员、Hyper-V 管理员、网络配置操作员、超级用户、远程桌面用户、复制者
 
-12. （可选）如果你的组织使用安全信息和事件管理 (SIEM) 解决方案，请确保 PAW [配置为使用 Windows 事件转发 (WEF) 将事件转发到系统](http://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx)，或已通过此解决方案注册，以便 SIEM 主动接收来自 PAW 的事件和信息。  此操作的详细信息将因 SIEM 解决方案不同而有所不同。
+12. （可选）如果你的组织使用安全信息和事件管理 (SIEM) 解决方案，请确保 PAW [配置为使用 Windows 事件转发 (WEF) 将事件转发到系统](https://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx)，或已通过此解决方案注册，以便 SIEM 主动接收来自 PAW 的事件和信息。  此操作的详细信息将因 SIEM 解决方案不同而有所不同。
 
     > [!NOTE]
     > 如果 SIEM 需要作为系统运行的代理或 PAW 上的本地管理帐户，请确保通过与域控制器和标识系统同一级别的信任来管理 SIEM。
@@ -778,7 +778,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
 
          > [!NOTE]
          > 下载后需要更新 *proxy.pac* 文件，以确保文件为最新且完整。  
-         > Microsoft 在 Office [支持中心](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)发布所有最新的 Office 365 和 Azure URL。 这些说明假定你将使用 Internet Explorer（或 Microsoft Edge）管理 Office 365、Azure 和其他云服务。 Microsoft 建议为需要用于管理的任何第三方浏览器配置类似的限制。 PAW 上的 Web 浏览器仅用于管理云服务并且永远不用于常规的 Web 浏览。
+         > Microsoft 在 Office [支持中心](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)发布所有最新的 Office 365 和 Azure URL。 这些说明假定你将使用 Internet Explorer（或 Microsoft Edge）管理 Office 365、Azure 和其他云服务。 Microsoft 建议为需要用于管理的任何第三方浏览器配置类似的限制。 PAW 上的 Web 浏览器仅用于管理云服务并且永远不用于常规的 Web 浏览。
          >
          > 你可能需要为其他 IaaS 提供商将其他有效的 Internet 目标添加到此列表，但不要将工作效率、娱乐、新闻或搜索站点添加到此列表。
          >
@@ -800,7 +800,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
             6. 值数据：将完整 URL 输入到 *proxy.pac* 文件中（包括 http:// 和文件名称），例如 http://proxy.fabrikam.com/proxy.pac 。  URL 还可以是单标签 URL，例如 http://proxy/proxy.pac
 
                > [!NOTE]
-               > PAC 文件还可托管于文件共享上，语法为 file://server.fabrikan.com/share/proxy.pac，但这需要允许 file:// 协议。 请参阅博客[了解 Web 代理配置](http://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx)的“注意：已弃用基于 File:// 的代理脚本”部分，获取有关第配置所需的注册表值的详细信息。
+               > PAC 文件还可托管于文件共享上，语法为 file://server.fabrikan.com/share/proxy.pac，但这需要允许 file:// 协议。 请参阅博客[了解 Web 代理配置](https://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx)的“注意：已弃用基于 File:// 的代理脚本”部分，获取有关第配置所需的注册表值的详细信息。
 
             7. 单击“**通用**”选项卡，然后选择“**当不再应用项目时删除此项目**”。
             8. 在“**通用**”选项卡上选择“**项目级别目标**”，然后单击“**目标**”。
@@ -924,7 +924,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
       有关 Windows Hello 企业版的详细信息，请阅读 [Windows Hello 企业版](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)一文。
    * **Azure 多重身份验证**：Azure 多重身份验证 (MFA) 通过监控和基于机器学习的分析功能，提供了二次验证安全因素及增强的保护功能。  Azure MFA 不仅可以保护 Azure 管理员，还可以保护很多其他解决方案，包括 Web 应用程序、Azure Active Directory 和本地解决方案（例如远程访问和远程桌面）。  有关 Azure 多重身份验证的详细信息，请参阅文章[多重身份验证](https://azure.microsoft.com/services/multi-factor-authentication)。
 
-2. **使用 Windows Defender 应用程序控制和/或 AppLocker 将受信任的应用程序加入白名单**。  通过限制不受信任或未签署的代码在 PAW 上运行的功能，可以进一步降低恶意活动和入侵的可能性。  针对应用程序控制，Windows 包括两种主要选项：
+2. **使用 Windows Defender 应用程序控制和/或 AppLocker 将受信任的应用程序加入允许列表**。  通过限制不受信任或未签署的代码在 PAW 上运行的功能，可以进一步降低恶意活动和入侵的可能性。  针对应用程序控制，Windows 包括两种主要选项：
 
    * **AppLocker**：AppLocker 可帮助管理员控制哪些应用程序可在指定系统上运行。  AppLocker 可通过组策略进行集中控制，也可应用到特定的用户或组（针对 PAW 用户的目标应用程序）。  有关 AppLocker 的详细信息，请参阅 TechNet 文章 [AppLocker 概述](https://technet.microsoft.com/library/hh831440.aspx)。
    * **Windows Defender 应用程序控制**：新的 Windows Defender 应用程序控制功能提供基于硬件的增强应用程序控制，与 AppLocker 不同的是，设备保护无法在受影响的设备上重写。  与 AppLocker 类似，Windows Defender 应用程序控制可通过组策略进行控制，还可以将特定用户作为目标。  有关借助 Windows Defender 应用程序控制限制应用程序使用的详细信息，请参阅 [Windows Defender 应用程序控制部署指南](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
@@ -1070,7 +1070,7 @@ New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 
 ## <a name="related-topics"></a>相关主题
 
-[运用 Microsoft 网络安全服务](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)
+[运用 Microsoft 网络安全服务](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx)
 
 [新品尝鲜：如何缓解哈希传递和其他形式的凭据被盗](https://channel9.msdn.com/Blogs/Taste-of-Premier/Taste-of-Premier-How-to-Mitigate-Pass-the-Hash-and-Other-Forms-of-Credential-Theft)
 
@@ -1084,13 +1084,13 @@ New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 
 [Dave Probert 介绍 Windows 10 中的隔离用户模式（第 9 频道）](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 
-[Logan Gabriel 介绍 Windows 10 中的隔离用户模式过程和功能（第 9 频道）](http://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
+[Logan Gabriel 介绍 Windows 10 中的隔离用户模式过程和功能（第 9 频道）](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
 
 [Dave Probert 介绍有关 Windows 10 隔离用户模式过程和功能的详细信息（第 9 频道）](https://channel9.msdn.com/Blogs/Seth-Juarez/More-on-Processes-and-Features-in-Windows-10-Isolated-User-Mode-with-Dave-Probert)
 
 [使用 Windows 10 隔离用户模式缓解凭据盗窃（第 9 频道）](https://channel9.msdn.com/Blogs/Seth-Juarez/Mitigating-Credential-Theft-using-the-Windows-10-Isolated-User-Mode)
 
-[在 Windows Kerberos 中启用严格的 KDC 验证](https://www.microsoft.com/en-us/download/details.aspx?id=6382)
+[在 Windows Kerberos 中启用严格的 KDC 验证](https://www.microsoft.com/download/details.aspx?id=6382)
 
 [适用于 Windows Server 2012 的 Kerberos 身份验证新增功能](https://technet.microsoft.com/library/hh831747.aspx)
 

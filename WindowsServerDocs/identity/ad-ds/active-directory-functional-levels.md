@@ -11,12 +11,12 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 7f16d58eb6c5074c75f49ba7936c4d312a3dbda4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53793fc62b1bc1444c567f92c9f18642245fded9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390981"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948184"
 ---
 # <a name="forest-and-domain-functional-levels"></a>林和域功能级别
 
@@ -28,9 +28,9 @@ ms.locfileid: "71390981"
 
 随着 Windows 2003 生存期的结束，Windows 2003 域控制器 (DC) 需更新到 Windows Server 2008、2008R2、2012、2012R2、2016 或 2019。 因此，应从域中删除任何运行 Windows Server 2003 的域控制器。
 
-在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 有关迁移步骤，可以参阅 [TechNet 上的过程](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可参阅[存储团队文件柜博客上的简化步骤集](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。
+在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 有关迁移步骤，可以参阅 [TechNet 上的过程](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可参阅[存储团队文件柜博客上的简化步骤集](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。
 
-## <a name="windows-server-2019"></a>Windows Server 2019
+## <a name="windows-server-2019"></a>Windows Server Standard 2012 R2
 
 此版本没有新增的林或域功能级别。
 
@@ -40,7 +40,7 @@ ms.locfileid: "71390981"
 
 支持的域控制器操作系统：
 
-* Windows Server 2019
+* Windows Server Standard 2012 R2
 * Windows Server 2016
 
 ### <a name="windows-server-2016-forest-functional-level-features"></a>Windows Server 2016 林功能级别功能
@@ -61,7 +61,7 @@ ms.locfileid: "71390981"
 
 支持的域控制器操作系统：
 
-* Windows Server 2019
+* Windows Server Standard 2012 R2
 * Windows Server 2016
 * Windows Server 2012 R2
 
@@ -86,7 +86,7 @@ ms.locfileid: "71390981"
 
 支持的域控制器操作系统：
 
-* Windows Server 2019
+* Windows Server Standard 2012 R2
 * Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
@@ -104,7 +104,7 @@ ms.locfileid: "71390981"
 
 支持的域控制器操作系统：
 
-* Windows Server 2019
+* Windows Server Standard 2012 R2
 * Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
@@ -121,11 +121,11 @@ ms.locfileid: "71390981"
    * 身份验证机制保证，将对域用户进行身份验证所用的登录方法类型（智能卡或用户名/密码）的相关信息封装在每个用户的 Kerberos 令牌中。 如果在已部署联合身份管理基础结构（如 Active Directory 联合身份验证服务 (AD FS)）的网络环境中启用此功能，则每当用户尝试访问已开发为根据用户登录方法确定是否授权的声明感知应用程序时，都可以提取令牌中的信息。
    * 当计算机帐户的名称或 DNS 主机名更改时，针对在特定计算机上运行且处于“托管服务帐户”上下文中的服务自动进行 SPN 管理。 有关托管服务帐户的详细信息，请参阅 [Service Accounts Step-by-Step Guide](https://go.microsoft.com/fwlink/?LinkId=180401)（服务帐户分步指南）。
 
-## <a name="windows-server-2008"></a>Windows Server 2008
+## <a name="windows-server-2008"></a>Windows 2008 Server
 
 支持的域控制器操作系统：
 
-* Windows Server 2019
+* Windows Server Standard 2012 R2
 * Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
@@ -193,7 +193,7 @@ ms.locfileid: "71390981"
 * 提供所有默认的 AD DS 功能、所有在 Windows 2000 本机域功能级别可用的功能，以及下列功能：
    * 域管理工具 Netdom.exe，有了它就可以重命名域控制器。
    * 登录时间戳更新
-      * 使用用户或计算机的上次登录时间来更新 **lastLogonTimestamp** 属性。 可以在域内复制该属性。
+      * 使用用户或计算机的上次登录时间来更新 lastLogonTimestamp 属性  。 可以在域内复制该属性。
    * 在 **inetOrgPerson** 和用户对象上将 **userPassword** 属性设置为有效密码的功能
    * 重定向用户和计算机容器的功能
       * 默认情况下，已提供了两个已知的容器，用于容纳计算机和用户帐户，即：cn=Computers,<domain root> 和 cn=Users,<domain root>。 该功能可用于定义这些帐户新的已知位置。

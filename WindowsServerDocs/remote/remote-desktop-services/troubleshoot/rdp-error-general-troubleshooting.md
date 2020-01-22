@@ -9,16 +9,16 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b11dac044c38f1ae80d4401fbb66af0317ab56
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b934a585b3058cc2eec642cdb1234c8c9a015544
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870704"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265949"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>常见远程桌面连接故障排除
 
@@ -202,7 +202,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
     ```
   
     ![netstat 命令会生成端口列表以及正在侦听这些端口的服务列表。](../media/troubleshoot-remote-desktop-connections/WPS_netstat.png)
-3. 查找状态为“正在监听”  的 TCP 端口 3389（或分配的 RDP 端口）条目。 
+3. 查找状态为“正在监听”的 TCP 端口 3389（或分配的 RDP 端口）条目  。 
     > [!NOTE]  
    > 使用该端口的进程或服务的进程标识符 (PID) 显示在 PID 列下。
 4. 若要确定哪个应用程序正在使用端口 3389（或分配的 RDP 端口），请输入以下命令：  

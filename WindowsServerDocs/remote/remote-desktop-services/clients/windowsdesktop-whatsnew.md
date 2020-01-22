@@ -9,16 +9,16 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
-ms.date: 12/04/2019
+ms.date: 01/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5526d401ba26cabcaccfc0b88df9b0e69f8149a5
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: f1f4d6b32b8b7d717d2d424e0a60c5edc96f4cac
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829610"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953066"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -31,7 +31,20 @@ ms.locfileid: "74829610"
 |用户组 |版本  |
 |-----------|---------|
 |公用     |1.2.535  |
-|预览体验成员    |1.2.535  |
+|Insider    |1.2.594  |
+
+## <a name="updates-for-version-12594"></a>版本 1.2.594 的更新
+
+*发布日期：2020/01/14*
+
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cC)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cI)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oh9C)
+
+- 现在可以选择要用于桌面连接的显示器。 若要更改此设置，请右键单击桌面连接的图标，然后选择“设置”  。
+- 修复了连接设置未显示正确的可用缩放系数的问题。
+- 修复了讲述人无法读取连接启动时显示的对话框的问题。
+- 修复了在 Azure Active Directory 名称和 Active Directory 名称不匹配时显示错误用户名的问题。
+- 修复了在未连接网络的情况下启动连接时客户端停止响应的问题。
+- 修复了在附加耳机时导致客户端停止响应的问题。
 
 ## <a name="updates-for-version-12535"></a>针对版本 1.2.535 的更新
 
