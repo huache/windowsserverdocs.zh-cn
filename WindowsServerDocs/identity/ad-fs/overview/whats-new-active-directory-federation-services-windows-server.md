@@ -5,16 +5,16 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 04/23/2019
+ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6294c7b6ead0a9fa338f8b2cc8134b750f7e3e8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: adce37d8d06399d3a00221a12f3449244720ade7
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385547"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519479"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Active Directory 联合身份验证服务的新增功能
 
@@ -87,9 +87,8 @@ AD FS 2019 中现在包含以下部署更新：
  
 通过服务器2019上的 AD FS，现在可以传递嵌入在 scope 参数中的资源值。 这与可以对 Azure AD 进行身份验证的方式一致。 
 
-作用域参数现在可以组织为以空格分隔的列表，其中每个条目都作为资源/作用域的结构。 例如  
+作用域参数现在可以组织为以空格分隔的列表，其中每个条目都作为资源/作用域的结构。 
 
-**< 创建一个有效的示例请求 >**
 > [!NOTE]
 > 身份验证请求中只能指定一个资源。 如果请求中包含多个资源，AD FS 将返回错误，并且身份验证不会成功。 
 
@@ -106,15 +105,15 @@ B. 授权终结点的响应方式通常为，但记录为 "t （code_verifier）
 
 C. 然后，客户端像往常一样在访问令牌请求中发送授权代码，但包含在（A）生成的 "code_verifier" 机密。 
 
-2-d. AD FS 转换 "code_verifier"，并将其与（B）中的 "t （code_verifier）" 进行比较。  如果访问不相等，则拒绝访问。 
+D. AD FS 转换 "code_verifier"，并将其与（B）中的 "t （code_verifier）" 进行比较。  如果访问不相等，则拒绝访问。 
 
-#### <a name="faq"></a>常见问题解答 
-**：.** 能否传递资源值作为范围值的一部分，如如何对 Azure AD 进行请求呢？ 
-</br>**的.** 通过服务器2019上的 AD FS，现在可以传递嵌入在 scope 参数中的资源值。 作用域参数现在可以组织为以空格分隔的列表，其中每个条目都作为资源/作用域的结构。 例如  
+#### <a name="faq"></a>常见问题 
+**问：** 能否传递资源值作为范围值的一部分，如如何对 Azure AD 进行请求呢？ 
+</br>**A.** 通过服务器2019上的 AD FS，现在可以传递嵌入在 scope 参数中的资源值。 作用域参数现在可以组织为以空格分隔的列表，其中每个条目都作为资源/作用域的结构。 例如  
 **< 创建一个有效的示例请求 >**
 
-**：.** AD FS 是否支持 PKCE 扩展？
-</br>**的.** 服务器2019中的 AD FS 支持 OAuth 授权代码授予流的代码交换（PKCE）的证明密钥 
+**问：** AD FS 是否支持 PKCE 扩展？
+</br>**A.** 服务器2019中的 AD FS 支持 OAuth 授权代码授予流的代码交换（PKCE）的证明密钥 
 
 ## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>Windows Server 2016 的 Active Directory 联合身份验证服务的新增功能   
 如果你正在查找有关早期版本的 AD FS 的信息，请参阅以下文章：  
@@ -160,7 +159,11 @@ AD FS 提供混合方案中条件访问策略的本地组件。 向云资源的�
 *  [使用 AD FS 规划基于设备的条件性访问](../../ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)  
 * [AD FS 中的访问控制策略](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md)  
 
-### <a name="sign-in-with-windows-hello-for-business"></a>通过 Windows Hello 企业版登录   
+### <a name="sign-in-with-windows-hello-for-business"></a>通过 Windows Hello 企业版登录  
+
+> [!NOTE]
+> 目前，不支持通过 Microsoft Windows Hello 企业版基于浏览器的单一登录（SSO）在基于 Chromium 的开源项目浏览器上构建 Google Chrome 和[新的 Microsoft Edge](https://www.microsoft.com/edge?form=MB110A&OCID=MB110A) 。 请使用 Internet Explorer 或较早版本的 Microsoft Edge。  
+
 Windows 10 设备引入了 Windows Hello 和 Windows Hello 企业版，将用户密码替换为受用户手势保护的强设备绑定用户凭据（PIN、指纹等生物识别手势或面部识别）。 AD FS 2016 支持这些新的 Windows 10 功能，使用户可以从 intranet 或 extranet 登录到 AD FS 应用程序，而无需提供密码。
 
 有关在组织中使用 Microsoft Windows Hello for Business 的详细信息

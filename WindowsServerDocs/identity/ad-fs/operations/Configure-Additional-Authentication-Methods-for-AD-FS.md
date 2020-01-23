@@ -9,12 +9,12 @@ ms.date: 07/26/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 89a1f745e1e928a5e5bd79adb94e41fd9da399d9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a7cfc80a1e137a4184afa0e8b33a488f1e35dcfa
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948546"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519449"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>为 AD FS 配置额外的身份验证方法
 
@@ -33,6 +33,7 @@ ms.locfileid: "75948546"
 |提供程序|产品|用于了解详细信息的链接|
 |-|-|-| 
 |aPersona|适用于 Microsoft ADFS SSO 的 aPersona 自适应多重身份验证|[aPersona ASM ADFS 适配器](https://www.apersona.com/adfs)|
+|Cyphercor Inc。|用于 AD FS 的 LoginTC 多重身份验证|[LoginTC AD FS 连接器](https://www.logintc.com/docs/connectors/adfs.html)|
 |双重安全性|适用于 AD FS 的双核 MFA 适配器|[AD FS 的双核身份验证](https://duo.com/docs/adfs)|
 |Futurae|用于 AD FS 的 Futurae Authentication Suite|[Futurae 强身份验证](https://futurae.com)|
 |Gemalto|Gemalto 身份标识和安全服务|[http://www.gemalto.com/identity](http://www.gemalto.com/identity)|

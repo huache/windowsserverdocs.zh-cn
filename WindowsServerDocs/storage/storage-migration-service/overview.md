@@ -4,16 +4,16 @@ description: 利用存储迁移服务，可以更轻松地将存储迁移到 Win
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 10/25/2019
+ms.date: 01/17/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 968122612845a9be105ca7d3231edc0faa039e76
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 1a98de21e91fc7bdc431e7413c44089ce750bc05
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352679"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519469"
 ---
 # <a name="storage-migration-service-overview"></a>存储迁移服务概述
 
@@ -46,6 +46,10 @@ ms.locfileid: "75352679"
 
 ![屏幕截图，显示可以扫描的服务器](media/migrate/inventory.png)
 **图2：存储迁移服务清点服务器**
+
+下面的视频演示如何使用存储迁移服务来获取服务器（如现在不支持的 Windows Server 2008 R2 服务器），并将存储移到较新的服务器。
+
+> [!VIDEO https://www.youtube.com/embed/h-Xc9j1w144]
 
 ## <a name="requirements"></a>要求
 
