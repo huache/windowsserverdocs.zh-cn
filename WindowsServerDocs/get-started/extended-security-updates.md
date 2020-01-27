@@ -8,13 +8,13 @@ author: iainfoulds
 ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.date: 12/16/2019
-ms.openlocfilehash: 83ab3663b2c03017ba1bf613a49c394be0511002
-ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
+ms.date: 01/23/2020
+ms.openlocfilehash: 0f3ea0dacc200adaaec5064d19754ad6de0042a6
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76162498"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725772"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>如何使用 Windows Server 2008 和 2008 R2 的扩展安全更新 (ESU)
 
@@ -43,23 +43,38 @@ Windows Server 的扩展安全更新 (ESU) 在 2020 年 1 月 14 日之后最多
 
 有关详细信息，请参阅[扩展安全更新常见问题解答](https://www.microsoft.com/cloud-platform/extended-security-updates)。
 
+## <a name="how-to-use-extended-security-updates"></a>如何使用扩展安全更新
+
+如果在 Azure 中运行 Windows Server 2008/2008 R2 VM，系统会自动为其启用扩展安全更新。 你无需配置任何内容，并且，将扩展安全更新用于 Azure VM 也没有额外费用。 如果将 Azure VM 配置为接收扩展安全更新，则这些更新会自动传送到 Azure VM。
+
+对于其他环境（如本地 VM 或物理服务器），需要手动请求和配置扩展安全更新。 如果已购买可通过批量许可计划（如企业协议 (EA)、企业协议订阅 (EAS)、教育解决方案合约 (EES) 或服务器和云合约 (SCE)）获得的扩展安全更新，可以使用以下步骤之一来获取激活密钥：
+
+* 登录到 [Microsoft 批量许可服务中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)，查看并获取激活密钥。
+* 在 Azure 门户中注册扩展安全更新，获取 Windows Server 2008/R2 激活密钥。
+    * 请参阅本文中的以下步骤，了解有关如何完成此过程的步骤。
+
 ## <a name="register-for-extended-security-updates"></a>注册扩展安全更新
 
 若要使用扩展安全更新，请创建一个多次激活密钥 (MAK)，并将其应用于 Windows Server 2008 和 2008 R2 计算机。 此密钥使 Windows 更新服务器知道你可以继续接收安全更新。 请使用 Azure 门户注册扩展安全更新并管理这些密钥，即使只使用本地计算机也是如此。
 
 > [!NOTE]
-> 如果在 Azure 中运行 Windows Server 2008/2008 R2 VM，则无需执行以下步骤。 Azure VM 会自动启用扩展安全更新。 不需要创建扩展安全更新资源和密钥，并且将扩展安全更新用于 Azure VM 也没有额外费用。
+>
+> 如果在 Azure VM 上运行 Windows Server 2008 和 2008 R2，则无需注册扩展安全更新。 对于其他环境（如本地 VM 或物理服务器），请先[购买扩展安全更新](https://www.microsoft.com/licensing/how-to-buy/how-to-buy)，然后再尝试注册和使用它们。
 
-> [!NOTE]
-> 在执行以下步骤之前，请向 [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) 发送一封电子邮件并附上此信息进行允许列表审批：
+> [!IMPORTANT]
+>
+> 请确保已按照前面的步骤，通过批量许可计划购买了扩展安全更新。 在执行以下步骤之前，请向 [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) 发送一封电子邮件并附上以下信息，以便被批准使用该功能：
+>
 > * 客户名称：
 > * Azure 订阅：
 > * EA 协议编号（适用于 ESU）：
 > * ESU 服务器数目：
-> 
-> 团队将审阅所提供的信息并将用户/订阅添加到允许列表中。
-> 
-> 如果未将请求者加入允许列表，则可能出现以下错误：[“Microsoft.WindowsESU”命令空间中找不到此资源类型](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
+>
+> 团队将审阅所提供的信息并将用户/订阅添加到批准的列表中。
+>
+> 如果请求者未经批准，则可能出现以下错误：
+>
+> [“Microsoft.WindowsESU”命令空间中找不到此资源类型](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
 
 若要为扩展安全更新注册非 Azure VM 并创建密钥，请在 Azure 门户中完成以下步骤：
 

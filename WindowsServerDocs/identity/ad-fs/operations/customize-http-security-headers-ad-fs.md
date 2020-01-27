@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7fd06c06a2ea7af93b87c471f77b788ac51bddac
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b81d498c6e601fcce0a0760cb4877fcc98c8beb9
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949218"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725792"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>自定义 AD FS 2019 的 HTTP 安全响应标头 
  
@@ -31,12 +31,12 @@ ms.locfileid: "75949218"
  
 在讨论标题之前，让我们看看一些需要管理员自定义安全标头的方案 
  
-## <a name="scenarios"></a>场景 
-1. 管理员已启用[**Http 严格传输-安全（HSTS）** ](#http-strict-transport-security-hsts) （强制所有通过 HTTPS 加密的连接），以防止可能会受到攻击的公共 wifi 访问点使用 HTTP 访问 web 应用的用户。 她想要通过为子域启用 HSTS 来进一步增强安全性。  
-2. 管理员已配置[**X 帧选项**](#x-frame-options)响应标头（防止在 iFrame 中呈现任何网页），以防止网页被 clickjacked。 不过，她需要自定义标头值，因为新业务要求使用不同的源（域）从应用程序中显示数据（在 iFrame 中）。
-3. 如果浏览器检测到跨脚本攻击，管理员启用了[**X-XSS 保护**](#x-xss-protection)（阻止跨脚本攻击）来净化和阻止页面。 不过，她需要自定义标头，以允许页面在净化后加载。  
+## <a name="scenarios"></a>시나리오 
+1. 管理员已启用[**Http 严格传输-安全（HSTS）** ](#http-strict-transport-security-hsts) （强制所有通过 HTTPS 加密的连接），以防止可能会受到攻击的公共 wifi 访问点使用 HTTP 访问 web 应用的用户。 他们想通过为子域启用 HSTS 来进一步增强安全性。  
+2. 管理员已配置[**X 帧选项**](#x-frame-options)响应标头（防止在 iFrame 中呈现任何网页），以防止网页被 clickjacked。 但是，他们需要自定义标头值，因为新业务要求使用不同的源（域）从应用程序中显示数据（在 iFrame 中）。
+3. 如果浏览器检测到跨脚本攻击，管理员启用了[**X-XSS 保护**](#x-xss-protection)（阻止跨脚本攻击）来净化和阻止页面。 但是，它们需要自定义标头，以允许页面在净化后加载。  
 4. 管理员需要启用[**跨域资源共享（CORS）** ](#cross-origin-resource-sharing-cors-headers) ，并在 AD FS 上设置原点（域），以允许单个页面应用程序使用另一个域来访问 web API。  
-5. 管理员已启用[**内容安全策略（CSP）** ](#content-security-policy-csp)标头，通过禁止任何跨域请求来阻止跨站点脚本和数据注入攻击。 但是，由于新的业务要求，她需要自定义标头，以允许网页从任意来源加载图像，并将媒体限制为受信任的提供程序。  
+5. 管理员已启用[**内容安全策略（CSP）** ](#content-security-policy-csp)标头，通过禁止任何跨域请求来阻止跨站点脚本和数据注入攻击。 但是，由于新的业务要求，他们需要自定义标头，以允许网页从任意来源加载图像，并将媒体限制为受信任的提供程序。  
 
  
 ## <a name="http-security-response-headers"></a>HTTP 安全响应标头 
@@ -65,7 +65,7 @@ Web 身份验证流量的所有 AD FS 终结点都是通过 HTTPS 以独占方�
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=<seconds>; includeSubDomains" 
 ``` 
 
-示例 
+예: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=31536000; includeSubDomains" 
@@ -84,7 +84,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "Strict-Transport-Security"
  
 此 HTTP 安全响应标头用于与浏览器进行通信，无论它能否在 &lt;的帧中呈现页面&gt;/&lt;的 iframe&gt;。 标头可设置为以下值之一： 
  
-- **拒绝**–帧中的页面将不会显示。 这是默认设置，也是推荐设置。  
+- **拒绝**–帧中的页面将不会显示。 这是默认设置和建议的设置。  
 - **sameorigin** –如果原点与网页的原点相同，则页面将仅在框架中显示。 此选项不十分有用，除非所有上级也在同一源中。  
 - **允许-通过 <specified origin>** -只有源（如 https://www ，才会在框架中显示此页。com）匹配标头中的特定来源。 
 
@@ -94,7 +94,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "Strict-Transport-Security"
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "<deny/sameorigin/allow-from<specified origin>>" 
  ```
 
-示例 
+예: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "allow-from https://www.example.com" 
@@ -109,9 +109,9 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 ### <a name="x-xss-protection"></a>X-XSS-Protection 
 当浏览器检测到跨站点脚本（XSS）攻击时，此 HTTP 安全响应标头用于阻止网页加载。 这称为 XSS 筛选。 标头可设置为以下值之一：
  
-- **0** –禁用 XSS 筛选。 不推荐。  
+- **0** –禁用 XSS 筛选。 不建议使用。  
 - **1** –启用 XSS 筛选。 如果检测到 XSS 攻击，浏览器将净化页面。   
-- **1; mode = block** –启用 XSS 筛选。 如果检测到 XSS 攻击，浏览器将阻止页面的呈现。 这是默认设置，也是推荐设置。  
+- **1; mode = block** –启用 XSS 筛选。 如果检测到 XSS 攻击，浏览器将阻止页面的呈现。 这是默认设置和建议的设置。  
 
 #### <a name="x-xss-protection-customization"></a>X-XSS-保护自定义 
 默认情况下，标头将设置为 1;mode = block;但是，管理员可以通过 `Set-AdfsResponseHeaders` cmdlet 修改此值。  
@@ -120,7 +120,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "<0/1/1; mode=block/1; report=<reporting-uri>>" 
 ``` 
 
-示例 
+예: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "1" 
@@ -183,12 +183,12 @@ Set-AdfsResponseHeaders -CORSTrustedOrigins https://example1.com,https://example
  
 **默认的-src**指令用于修改[-src 指令](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/default-src)，而无需显式列出每个指令。 例如，在下面的示例中，策略1与策略2相同。  
 
-策略 1 
+策略1 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src 'self'" 
 ```
  
-策略 2
+策略2
 ```PowerShell 
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self'; img-src ‘self'; font-src 'self';  
 frame-src 'self'; manifest-src 'self'; media-src 'self';" 
@@ -226,7 +226,7 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 ## <a name="web-browser-compatibility"></a>Web 浏览器兼容性
 使用下表和链接来确定哪些 web 浏览器与每个安全响应标头兼容。
 
-|HTTP 安全响应标头|浏览器兼容性|
+|HTTP 安全响应标头|브라우저 호환성|
 |-----|-----|
 |HTTP 严格传输-安全性（HSTS）|[HSTS 浏览器兼容性](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#Browser_compatibility)|
 |X 框架-选项|[X 框架-选项浏览器兼容性](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility)| 
@@ -234,7 +234,7 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 |跨域资源共享（CORS）|[CORS 浏览器兼容性](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
 |内容安全策略（CSP）|[CSP 浏览器兼容性](https://developer.mozilla.org/docs/Web/HTTP/CSP#Browser_compatibility) 
 
-## <a name="next"></a>“下一步”
+## <a name="next"></a>다음을 탭하거나 클릭한 후
 
 - [使用 AD FS 帮助故障排除指南](https://aka.ms/adfshelp/troubleshooting )
-- [AD FS 疑难解答](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)
+- [AD FS 문제 해결](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)
