@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7fe8d948a5f43fdab394490f543f3583167bdfe9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 15d57d12679d7441da080ad671264ca1e5e1f42c
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406769"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822800"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -71,11 +71,11 @@ ms.locfileid: "71406769"
   
 ## <a name="bkmk_what"></a>什么是 BranchCache？
 
-BranchCache 是一种广域网络（WAN）带宽优化技术，包含在某些版本的 Windows Server 2016 和 Windows 10 操作系统以及某些版本的 Windows server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8 中。、Windows Server 2008 R2 和 Windows 7。 为了在用户访问远程服务器上的内容时优化 WAN 带宽，BranchCache 从总部或托管的云内容服务器复制内容，并将内容缓存在分支机构位置，使分支机构的客户端计算机可以从本地访问内容，而不是从 WAN 访问。
+BranchCache 是一种广域网络（WAN）带宽优化技术，包含在某些版本的 Windows Server 2016 和 Windows 10 操作系统以及某些版本的 Windows server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8 中。、Windows Server 2008 R2 和 Windows 7。 为了在用户访问远程服务器上的内容时优化 WAN 带宽，BranchCache 从总部或托管的云内容服务器获取内容，并将内容缓存在分支机构位置，使分支机构的客户端计算机可以从本地访问内容，而不是从 WAN 访问。
   
 在分支机构，内容存储在配置为托管缓存的服务器上，或在分支机构中没有可用服务器的情况下，在运行 Windows 10、Windows 8.1、Windows 8 或 Windows 7 的客户端计算机上存储。 当某客户端计算机请求并接收到来自总部的内容，而该内容又缓存在分支机构时，位于同一分支机构的其他计算机可以从本地获得内容，而不是通过 WAN 链接从内容服务器下载内容。
 
-客户端计算机后续请求同一内容时，客户端将从服务器下载*内容信息*，而不是实际内容。 内容信息包括使用大量原始内容计算的哈希，并且哈希和原始数据中内容相比极其地小。 客户端计算机随后会使用内容信息从分支机构内的缓存找到内容，无论缓存是位于客户端计算机还是服务器上。 客户端计算机和服务器还会使用内容信息确保缓存内容的安全，以防未经授权的用户访问这些内容。
+客户端计算机后续请求同一内容时，客户端将从服务器下载 *内容信息* ，而不是实际内容。 内容信息包括使用大量原始内容计算的哈希，并且哈希和原始数据中内容相比极其地小。 客户端计算机随后会使用内容信息从分支机构内的缓存找到内容，无论缓存是位于客户端计算机还是服务器上。 客户端计算机和服务器还会使用内容信息确保缓存内容的安全，以防未经授权的用户访问这些内容。
 
 BranchCache 通过改善分支机构中客户端和服务器的内容查询响应时间提高最终用户的工作效率，还有助于减少通过 WAN 链接的流量以提升网络性能。
 
@@ -136,7 +136,7 @@ BranchCache 有两种操作模式：分布式缓存模式和托管缓存模式�
 
 支持的应用程序服务器包括运行 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 且已安装并启用后台智能传输服务（BITS）的计算机。 
 
-另外，应用程序服务器必须安装 BranchCache 功能。 作为应用程序服务器的示例，你可以将 Microsoft Windows Server Update Services （WSUS）和 Microsoft System Center Configuration Manager 分支分发点服务器部署为 BranchCache 内容服务器。
+另外，应用程序服务器必须安装 BranchCache 功能。 作为应用程序服务器的示例，你可以将 Microsoft Windows Server Update Services （WSUS）和 Microsoft 终结点作为 BranchCache 内容服务器部署 Configuration Manager 分支分发点服务器。
 
 ## <a name="BKMK_3a"></a>BranchCache 和云
 
@@ -196,7 +196,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 |托管缓存服务器|分支机构|启用托管缓存服务器模式的 BranchCache 功能|
 |启用 BranchCache 的客户端计算机|分支机构|无需安装;只需在客户端上启用 BranchCache 和 BranchCache 模式 \(分布式或托管\)|
 
-若要安装角色服务或功能，打开“服务器管理器”，选择你希望为其启用 BranchCache 功能的计算机。 在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 这将打开“添加角色和功能”向导。 在你运行向导时，进行以下选择：
+若要安装角色服务或功能，打开“服务器管理器”，选择你希望为其启用 BranchCache 功能的计算机。 在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 这将打开“添加角色和功能” 向导。 在你运行向导时，进行以下选择：
 
 - 在向导页“选择安装类型”上，选择“基于角色或基于功能的安装”。
 
@@ -212,13 +212,13 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 
 以下操作系统提供 BranchCache 支持后台智能传输服务（BITS）、超文本传输协议（HTTP）和服务器消息块（SMB）。
 
-- Windows 10 企业版
+- 遇到问题，总有回复。
 
 - Windows 10 教育版
 
 - Windows 8.1 企业版
 
-- Windows 8 企业版
+- Windows 8 Enterprise
 
 - Windows 7 企业版
 
@@ -235,7 +235,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 -   Windows 7 专业版，仅支持 BITS
 
 > [!NOTE]
-> 默认情况下，BranchCache 在 Windows Server 2008 或 Windows Vista 操作系统中不可用。 但在这些操作系统中，如果下载并安装 Windows Management Framework 更新，BranchCache 功能仅适用于后台智能传输服务（BITS）协议。 有关详细信息以及要下载 Windows Management Framework，请参阅 https://go.microsoft.com/fwlink/?LinkId=188677上的[Windows Management framework （Windows PowerShell 2.0、WinRM 2.0 和 BITS 4.0）](https://go.microsoft.com/fwlink/?LinkId=188677) 。
+> 默认情况下，BranchCache 在 Windows Server 2008 或 Windows Vista 操作系统中不可用。 但在这些操作系统中，如果下载并安装 Windows Management Framework 更新，BranchCache 功能仅适用于后台智能传输服务（BITS）协议。 有关详细信息以及要下载 Windows Management Framework，请参阅 https://go.microsoft.com/fwlink/?LinkId=188677 上的[Windows Management framework （Windows PowerShell 2.0、WinRM 2.0 和 BITS 4.0）](https://go.microsoft.com/fwlink/?LinkId=188677) 。
   
 ### <a name="operating-systems-for-branchcache-content-server-functionality"></a>支持 BranchCache 内容服务器功能的操作系统
 
@@ -253,7 +253,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 
 此外，以下 Windows Server 2008 R2 操作系统可用作 BranchCache 托管缓存服务器：
 
-- Windows Server 2008 R2 企业版
+- Windows Server 2008 R2 企业版
 
 - 带有 Hyper-v 的 Windows Server 2008 R2 Enterprise
 

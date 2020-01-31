@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 11/05/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 054a41df281ff9720d381fd4854f34f56ed0307b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 33e00134960ca31ce966198ded0692550e164fd6
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388188"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822401"
 ---
 # <a name="deploy-always-on-vpn"></a>部署始终启用 VPN
 
@@ -73,7 +73,7 @@ ms.locfileid: "71388188"
 
 ## <a name="step-6-configure-windows-10-client-always-on-vpn-connectionsvpn-deploy-client-vpn-connectionsmd"></a>[步骤6。配置 Windows 10 客户端 Always On VPN 连接](vpn-deploy-client-vpn-connections.md)
 
-在此步骤中，你将 Windows 10 客户端计算机配置为使用 VPN 连接与该基础结构进行通信。 你可以使用多种技术来配置 Windows 10 VPN 客户端，包括 Windows PowerShell、System Center Configuration Manager 和 Intune。 所有三个都需要一个 XML VPN 配置文件来配置相应的 VPN 设置。
+在此步骤中，你将 Windows 10 客户端计算机配置为使用 VPN 连接与该基础结构进行通信。 你可以使用多种技术来配置 Windows 10 VPN 客户端，包括 Windows PowerShell、Microsoft Endpoint Configuration Manager 和 Intune。 所有三个都需要一个 XML VPN 配置文件来配置相应的 VPN 设置。
 
 ## <a name="step-7-optional-configure-conditional-access-for-vpn-connectivityad-ca-vpn-connectivity-windows10md"></a>[步骤7。可有可无为 VPN 连接配置条件访问](../../ad-ca-vpn-connectivity-windows10.md)
 

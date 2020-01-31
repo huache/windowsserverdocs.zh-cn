@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 59c659041c7553d8e97a3bfbefbc3bde24098ef2
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949929"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822700"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知问题
 
@@ -82,7 +82,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 如果未安装，则可以[下载并安装 WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
 
-## <a name="role-based-access-control-rbac"></a>基于角色的访问控制 (RBAC)
+## <a name="role-based-access-control-rbac"></a>基于角色的访问控制（RBAC）
 
 - 在配置为使用 Windows Defender 应用程序控制（WDAC，以前称为“代码完整性”）的计算机上，RBAC 部署将不会成功 [16568455]
 
@@ -201,7 +201,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 - 管理群集（是超聚合还是传统？）时可能会遇到**找不到 Shell** 错误。 如果发生这种情况，请重新加载浏览器，或导航到其他工具并返回。 [13882442]
 
-- 管理尚未完全配置的下层（Windows Server 2012 或 2012 R2）群集时，可能会出现问题。 此问题的解决方法是确保已在群集的**每个成员节点**上安装并启用了 Windows 功能 **RSAT-Clustering-PowerShell**。 要使用 PowerShell 执行此操作，请在所有群集节点上输入命令 `Install-WindowsFeature -Name RSAT-Windows-PowerShell`。 [12524664]
+- 管理尚未完全配置的下层（Windows Server 2012 或 2012 R2）群集时，可能会出现问题。 此问题的解决方法是确保已在群集的**每个成员节点**上安装并启用了 Windows 功能 **RSAT-Clustering-PowerShell**。 要使用 PowerShell 执行此操作，请在所有群集节点上输入命令 `Install-WindowsFeature -Name RSAT-Clustering-PowerShell`。 [12524664]
 
 - 可能需要添加群集与整个 FQDN 才能正确被发现。
 

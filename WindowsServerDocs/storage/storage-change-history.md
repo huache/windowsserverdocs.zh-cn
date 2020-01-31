@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 12/20/2019
+ms.date: 1/16/2019
 description: 面向 IT 专业人员的适用于 Windows Server 的本地存储文档中的新主题和更新主题。
-ms.openlocfilehash: d50d4ca5b49b7f895fad3d3866226f95c55ae485
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: eb0e4f5cd357718be298290930bdf6fb9f7f041f
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352779"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822600"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server 中存储主题的更改历史记录
 
@@ -23,6 +23,12 @@ ms.locfileid: "75352779"
 本主题列出了 Windows Server[存储](storage.md)文档中的新主题和更新主题。
 
 > 如果你正在寻找 Windows Server 的更新历史记录，请参阅[windows 10 和 Windows server 2019 更新历史记录](https://support.microsoft.com/help/4464619)或[windows server 2016 更新历史](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)记录。
+
+## <a name="january-2020"></a>2020年1月
+
+| 新的或已更改的主题 | 描述 |
+| --- | --- |
+|[了解和部署永久性内存](storage-spaces/deploy-pmem.md) | 添加了已知的硬件问题。 |
 
 ## <a name="december-2019"></a>2019 年 12 月
 
@@ -69,13 +75,13 @@ ms.locfileid: "75352779"
 |---                                                         |---           |
 |[存储迁移服务的已知问题](storage-migration-service/known-issues.md)   | 添加了问题    |
 
-## <a name="january-2019"></a>2019 年 1 月
+## <a name="january-2019"></a>2019年1月
 
 |新的或已更改的主题                                        |描述|
 |---                                                         |---           |
 |[了解并监视存储重新同步](storage-spaces/understand-storage-resync.md)|新主题|
 
-## <a name="december-2018"></a>2018 年 12 月
+## <a name="december-2018"></a>2018年12月
 
 |新的或已更改的主题                                        |描述|
 |---                                                         |---           |
@@ -102,7 +108,7 @@ ms.locfileid: "75352779"
 |[存储中的新增功能](whats-new-in-storage.md)|经过更新以涵盖 Windows Server 2019 中的新增功能|
 |[存储副本的已知问题](storage-replica/storage-replica-known-issues.md)|添加了有关新更新的信息。|
 
-## <a name="september-2018"></a>2018 年 9 月
+## <a name="september-2018"></a>2018年9月
 
 |新的或已更改的主题|描述|
 |---|---|
@@ -112,7 +118,7 @@ ms.locfileid: "75352779"
 | [iSCSI 目标服务器](iscsi/iscsi-target-server.md) | 已从[以前的版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)库迁移。|
 | [iSCSI 目标服务器可扩展性限制](iscsi/iscsi-target-server-limits.md) |已从[以前的版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)库迁移。|
 
-## <a name="june-2018"></a>2018 年 6 月
+## <a name="june-2018"></a>2018年6月
 
 |新的或已更改的主题|描述|
 |---|---|

@@ -1,6 +1,6 @@
 ---
-title: 步骤1规划高级 DirectAccess 基础结构
-description: 本主题是 "使用 Windows Server 2016 的高级设置部署单个 DirectAccess 服务器" 指南的一部分
+title: Step 1 Plan the Advanced DirectAccess Infrastructure
+description: This topic is part of the guide Deploy a Single DirectAccess Server with Advanced Settings for Windows Server 2016
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server
@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9fa6fe4de0c8723c17f6a61717281d0a38d1b579
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb8bb6dda6eab27413b462a4c7f17176fbed85a1
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388664"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822770"
 ---
-# <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>步骤1规划高级 DirectAccess 基础结构
+# <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>Step 1 Plan the Advanced DirectAccess Infrastructure
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
@@ -27,24 +27,24 @@ ms.locfileid: "71388664"
   
 |任务|描述|
 |----|--------|  
-|[1.1 规划网络拓扑和设置](#11-plan-network-topology-and-settings)|确定放置 DirectAccess 服务器的位置（在边缘，或者在网络地址转换 (NAT) 设备或防火墙后面），并规划 IP 寻址、路由和强制隧道。|  
-|[1.2 计划防火墙要求](#12-plan-firewall-requirements)|规划允许 DirectAccess 通信通过边缘防火墙。|  
-|[1.3 规划证书要求](#13-plan-certificate-requirements)|确定你打算使用 Kerberos 还是证书进行客户端身份验证，并规划你的网站证书。 IP-HTTPS 是一种转换协议，DirectAccess 客户端使用该协议在 IPv4 网络上对 IPv6 通信进行隧道传送。 确定是使用由证书颁发机构 (CA) 颁发的证书，还是使用由 DirectAccess 服务器自动颁发的自签名证书对 IP-HTTPS 服务器进行身份验证。|  
-|[1.4 规划 DNS 要求](#14-plan-dns-requirements)|规划用于 DirectAccess 服务器、基础结构服务器、本地名称解析选项和客户端连接的域名系统 (DNS) 设置。|  
-|[1.5 规划网络位置服务器](#15-plan-the-network-location-server)|DirectAccess 客户端使用网络位置服务器来确定它们是否位于内部网络上。 确定网络位置服务器网站放置在组织中的位置（在 DirectAccess 服务器上或备用服务器上）；如果网络位置服务器位于 DirectAccess 服务器上，则会规划证书要求。|  
-|[1.6 计划管理服务器](#16-plan-management-servers)|你可以在 Internet 上远程管理位于企业网络之外的 DirectAccess 客户端计算机。 规划在远程客户端管理过程中使用的管理服务器（如更新服务器）。|  
-|[1.7 计划 Active Directory 域服务](#17-plan-active-directory-domain-services)|规划你的域控制器、Active Directory 要求、客户端身份验证和多个域。|  
-|[1.8 计划组策略对象](#18-plan-group-policy-objects)|确定你的组织中需要哪些 GPO，以及如何创建或编辑这些 GPO。|  
+|[1.1 Plan network topology and settings](#11-plan-network-topology-and-settings)|确定放置 DirectAccess 服务器的位置（在边缘，或者在网络地址转换 (NAT) 设备或防火墙后面），并规划 IP 寻址、路由和强制隧道。|  
+|[1.2 Plan firewall requirements](#12-plan-firewall-requirements)|规划允许 DirectAccess 通信通过边缘防火墙。|  
+|[1.3 Plan certificate requirements](#13-plan-certificate-requirements)|确定你打算使用 Kerberos 还是证书进行客户端身份验证，并规划你的网站证书。 IP-HTTPS 是一种转换协议，DirectAccess 客户端使用该协议在 IPv4 网络上对 IPv6 通信进行隧道传送。 确定是使用由证书颁发机构 (CA) 颁发的证书，还是使用由 DirectAccess 服务器自动颁发的自签名证书对 IP-HTTPS 服务器进行身份验证。|  
+|[1.4 Plan DNS requirements](#14-plan-dns-requirements)|规划用于 DirectAccess 服务器、基础结构服务器、本地名称解析选项和客户端连接的域名系统 (DNS) 设置。|  
+|[1.5 Plan the network location server](#15-plan-the-network-location-server)|DirectAccess 客户端使用网络位置服务器来确定它们是否位于内部网络上。 确定网络位置服务器网站放置在组织中的位置（在 DirectAccess 服务器上或备用服务器上）；如果网络位置服务器位于 DirectAccess 服务器上，则会规划证书要求。|  
+|[1.6 Plan management servers](#16-plan-management-servers)|你可以在 Internet 上远程管理位于企业网络之外的 DirectAccess 客户端计算机。 规划在远程客户端管理过程中使用的管理服务器（如更新服务器）。|  
+|[1.7 Plan Active Directory Domain Services](#17-plan-active-directory-domain-services)|规划你的域控制器、Active Directory 要求、客户端身份验证和多个域。|  
+|[1.8 Plan Group Policy Objects](#18-plan-group-policy-objects)|确定你的组织中需要哪些 GPO，以及如何创建或编辑这些 GPO。|  
   
 ## <a name="11-plan-network-topology-and-settings"></a>1.1 规划网络拓扑和设置
 
 本部分介绍如何规划网络，包括：  
   
-- [1.1.1 规划网络适配器和 IP 寻址](#111-plan-network-adapters-and-ip-addressing)  
+- [1.1.1 Plan network adapters and IP addressing](#111-plan-network-adapters-and-ip-addressing)  
   
-- [1.1.2 规划 IPv6 intranet 连接](#112-plan-ipv6-intranet-connectivity)  
+- [1.1.2 Plan IPv6 intranet connectivity](#112-plan-ipv6-intranet-connectivity)  
   
-- [强制隧道的1.1.3 计划](#113-plan-for-force-tunneling)  
+- [1.1.3 Plan for force tunneling](#113-plan-for-force-tunneling)  
   
 ### <a name="111-plan-network-adapters-and-ip-addressing"></a>1.1.1 规划网络适配器和 IP 寻址  
   
@@ -58,16 +58,16 @@ ms.locfileid: "71388664"
   
     DirectAccess 使用 IPv6 和 IPsec 在 DirectAccess 客户端计算机和内部企业网络之间创建安全连接。 但是，DirectAccess 不一定需要连接到 IPv6 Internet 或内部网络上的本机 IPv6 支持。 相反，它会自动配置并使用 IPv6 转换技术在 IPv4 Internet 上（通过使用 6to4、Teredo 或 IP-HTTPS）和仅支持 IPv4 的 Intranet 上（通过使用 NAT64 或 ISATAP）对 IPv6 通信进行隧道传送。 有关这些转换技术的概述，请参阅以下资源：  
   
-    - [IPv6 转换技术](https://technet.microsoft.com/library/bb726951.aspx)  
+    - [IPv6 Transition Technologies](https://technet.microsoft.com/library/bb726951.aspx)  
   
-    - [Ip-https 隧道协议规范](https://msdn.microsoft.com/library/dd358571(PROT.10).aspx)  
+    - [IP-HTTPS Tunneling Protocol Specification](https://msdn.microsoft.com/library/dd358571(PROT.10).aspx)  
   
 3. 按下表配置所需的适配器和地址。 对于使用单个网络适配器并在 NAT 设备后面设置的部署，仅使用**内部网络适配器**列配置 IP 地址。  
   
     ||外部网络适配器|内部网络适配器|路由要求|  
     |-|--------------|--------------|------------|  
-    |IPv4 Internet 和 IPv4 Intranet|配置带有相应子网掩码的两个静态连续公用 IPv4 地址（仅 Teredo 要求)。<br/><br/>此外，配置 Internet 防火墙或本地 Internet 服务提供商 (ISP) 路由器的默认网关 IPv4 地址。 **注意：** DirectAccess 服务器需要两个连续的公用 IPv4 地址，以便它可用作 Teredo 服务器，基于 Windows 的客户端可以使用 DirectAccess 服务器检测其后面的 NAT 设备的类型。|配置以下内容：<br/><br/>-具有相应子网掩码的 IPv4 intranet 地址。<br/>-Intranet 命名空间的特定于连接的 DNS 后缀。 还应在内部接口上配置 DNS 服务器。 **警告：** 不要在任何 intranet 接口上配置默认网关。|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv4 地址空间。<br/>-使用**route add-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。|  
-    |IPv6 Internet 和 IPv6 Intranet|配置以下内容：<br/><br/>-使用你的 ISP 提供的地址配置。<br/>-使用**Route Print**命令，以确保默认 ipv6 路由存在并指向 IPv6 路由表中的 ISP 路由器。<br/>-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。<br/>    如果两个结果都为“是”，则默认路由不需要任何其他配置。 用于 ISP 路由器的更高级首选项可确保 DirectAccess 服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br/><br/>因为 DirectAccess 服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，这些数据包筛选器可阻止连接到 DirectAccess 服务器面向 Internet 的接口的 IPv6 地址。|配置以下内容：<br/><br/>-如果不使用默认首选等级，则可以使用以下命令**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled**来配置 intranet 接口。<br/>    这一命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以使用以下命令获取 Intranet 接口的接口索引：**netsh interface ipv6 show interface**。|如果你拥有 IPv6 Intranet，若要配置 DirectAccess 服务器以访问所有的 IPv6 位置，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv6 地址空间。<br/>-使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为 DirectAccess 服务器的 ipv6 路由表中的静态路由。|  
+    |IPv4 Internet 和 IPv4 Intranet|配置带有相应子网掩码的两个静态连续公用 IPv4 地址（仅 Teredo 要求)。<br/><br/>此外，配置 Internet 防火墙或本地 Internet 服务提供商 (ISP) 路由器的默认网关 IPv4 地址。 **Note:** The DirectAccess server requires two consecutive public IPv4 addresses so that it can act as a Teredo server and Windows-based clients can use the DirectAccess server to detect the type of NAT device that they are behind.|配置以下内容：<br/><br/>-   An IPv4 intranet address with the appropriate subnet mask.<br/>-   The connection-specific DNS suffix of your intranet namespace. 还应在内部接口上配置 DNS 服务器。 **Caution:** Do not configure a default gateway on any intranet interfaces.|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br/><br/>-   List the IPv4 address spaces for all the locations on your intranet.<br/>-   Use the **route add -p** or the**netsh interface ipv4 add route** command to add the IPv4 address spaces as static routes in the IPv4 routing table of the DirectAccess server.|  
+    |IPv6 Internet 和 IPv6 Intranet|配置以下内容：<br/><br/>-   Use the address configuration that is provided by your ISP.<br/>-使用**Route Print**命令，以确保默认 ipv6 路由存在并指向 IPv6 路由表中的 ISP 路由器。<br/>-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。<br/>    如果两个结果都为“是”，则默认路由不需要任何其他配置。 用于 ISP 路由器的更高级首选项可确保 DirectAccess 服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br/><br/>因为 DirectAccess 服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，这些数据包筛选器可阻止连接到 DirectAccess 服务器面向 Internet 的接口的 IPv6 地址。|配置以下内容：<br/><br/>-如果不使用默认首选等级，则可以使用以下命令**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled**来配置 intranet 接口。<br/>    这一命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以使用以下命令获取 Intranet 接口的接口索引：**netsh interface ipv6 show interface**。|如果你拥有 IPv6 Intranet，若要配置 DirectAccess 服务器以访问所有的 IPv6 位置，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv6 地址空间。<br/>-使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为 DirectAccess 服务器的 ipv6 路由表中的静态路由。|  
     |IPv4 Internet 和 IPv6 Intranet|在 IPv4 Internet 上，DirectAccess 服务器通过 Microsoft 6to4 适配器将 IPv6 路由通信转发到 6to4 中继。 可以使用以下命令，为 Microsoft 6to4 适配器的 IPv4 地址配置 DirectAccess 服务器：`netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`。|||  
   
     > [!NOTE]  
@@ -228,15 +228,15 @@ DirectAccess 服务器充当 IP-HTTPS 侦听器，而且必须在服务器上手
     Net stop iphlpsvc & net start iphlpsvc  
     ```  
   
-3.  更改 kdcproxy 的 URL 保留项。  
+3.  更改 kdcproxy 的 URL 预留。  
   
-    1.  若要删除现有的 URL 保留项，请输入：  
+    1.  若要删除现有的 URL 预留，请输入：  
   
         ```  
         netsh http del urlacl url=https://+:443/KdcProxy/  
         ```  
   
-    2.  若要添加新的 URL 保留项，请输入：  
+    2.  若要添加新的 URL 预留，请输入：  
   
         ```  
         netsh http add urlacl url=https://+:44500/KdcProxy/ sddl=D:(A;;GX;;;NS)  
@@ -361,7 +361,7 @@ DirectAccess 服务器充当 IP-HTTPS 侦听器，而且必须在服务器上手
     -   **directaccess-corpconnectivityhost**-应解析为本地主机（环回）地址。 应创建以下主机 (A) 和 (AAAA) 资源记录：具有值 127.0.0.1 的主机 (A) 资源记录，以及具有由 NAT64 前缀构造且最后 32 位类似于 127.0.0.1 的值的主机 (AAAA) 资源记录。 可以通过运行 Windows PowerShell 命令 **get-netnattransitionconfiguration** 来检索 NAT64 前缀。  
   
         > [!NOTE]  
-        > 这仅在仅适用于 IPv4 的环境中有效。 在支持 IPv4 和 IPv6 或者仅支持 IPv6 的环境中，仅应使用环回 IP 地址 ::1 创建主机 (AAAA) 资源记录。  
+        > 此方法只在仅支持 IPv4 的环境中有效。 在支持 IPv4 和 IPv6 或者仅支持 IPv6 的环境中，仅应使用环回 IP 地址 ::1 创建主机 (AAAA) 资源记录。  
   
     你可以通过 HTTP 使用其他 Web 地址或使用 **ping** 来创建其他连接性验证程序。 对于每个连接性验证程序，都必须存在 DNS 条目。  
   
@@ -465,9 +465,9 @@ DirectAccess 客户端将启动与提供服务（如 Windows 更新和防病毒�
   
 -   域控制器-对与 DirectAccess 服务器和客户端计算机位于同一林中的所有域执行自动发现域控制器。  
   
--   System Center Configuration Manager 服务器-对与 DirectAccess 服务器和客户端计算机位于同一林中的所有域执行自动发现 System Center Configuration Manager 服务器。  
+-   Microsoft 端点 Configuration Manager 服务器-对 DirectAccess 服务器和客户端计算机所在林中的所有域执行自动发现 Configuration Manager 服务器。  
   
-首次配置 DirectAccess 时，会自动检测域控制器和 System Center Configuration Manager 服务器。 检测到的域控制器不会显示在控制台中，但可以使用 Windows PowerShell cmdlet **get-damgmtserver-Type All**来检索设置。 如果修改了域控制器或 System Center Configuration Manager 服务器，则可通过单击远程访问管理控制台中的“刷新管理服务器”来刷新管理服务器列表。  
+首次配置 DirectAccess 时，会自动检测域控制器和 Configuration Manager 服务器。 检测到的域控制器不会显示在控制台中，但可以使用 Windows PowerShell cmdlet **get-damgmtserver-Type All**来检索设置。 如果修改了域控制器或 Configuration Manager 服务器，则单击 "远程访问管理" 控制台中的 "**刷新管理服务器**" 将刷新管理服务器列表。  
   
 **管理服务器要求**  
   

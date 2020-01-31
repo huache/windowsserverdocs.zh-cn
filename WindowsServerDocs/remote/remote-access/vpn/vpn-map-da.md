@@ -9,12 +9,12 @@ ms.date: 11/05/2018
 ms.assetid: 8fe1c810-4599-4493-b4b8-73fa9aa18535
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2b9f1e01073f6ef8fdfe89623a383e26f8559977
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 443e9b2531c6a4f6c3ad263ae90c2df326cb5f16
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259112"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822380"
 ---
 # <a name="always-on-vpn-features-and-functionalities"></a>Always On VPN 功能和功能
 
@@ -39,7 +39,7 @@ ms.locfileid: "76259112"
 |                    使用安全组来限制特定客户端的远程访问功能。                    |                                                                                                                                                                                                                                                                                                                                                                                 使用 RADIUS 时，可以配置 Always On VPN 以支持粒度授权，其中包括使用安全组控制 VPN 访问。                                                                                                                                                                                                                                                                                                                                                                                  |
 |                             支持边缘防火墙或 NAT 设备后的服务器。                              |                                                                                                                                                                                                                                                                                                          Always On VPN 使你能够使用 IKEv2 和 SSTP 等协议，它们完全支持使用 NAT 设备或边缘防火墙后面的 VPN 网关。<p><p>***注意：***<br>用户隧道支持 SSTP 和 IKEv2，而设备隧道仅支持 IKEv2，而不支持 SSTP 回退。                                                                                                                                                                                                                                                                                                          |
 |                 能够在连接到企业网络时确定 intranet 连接性。                 |                                                                                                                                                                                                                                                                                                               受信任的网络检测功能提供检测企业网络连接的功能，它基于分配给网络接口和网络配置文件的特定于连接的 DNS 后缀的评估。<p><p>定义使用：<br>**VPNv2/ProfileName/TrustedNetworkDetection**                                                                                                                                                                                                                                                                                                                |
-|                                  使用网络访问保护（NAP）的符合性。                                  | Always On VPN 客户端可以与 Azure 条件访问集成，以强制实施 MFA、设备符合性或二者的组合。 如果符合条件性访问策略，Azure AD 会发出短暂的（默认为60分钟） IPsec 身份验证证书，客户端可以使用该证书对 VPN 网关进行身份验证。 设备符合性利用 System Center Configuration Manager/Intune 合规性策略，这些策略可能包括设备运行状况证明状态。 目前，Azure VPN 条件访问提供了最接近现有 NAP 解决方案的替代方法，但不提供任何形式的更新服务或隔离网络功能。 有关更多详细信息，请参阅[VPN 和条件性访问](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-conditional-access)。<p>定义使用：<br>**VPNv2/ProfileName/DeviceCompliance** |
+|                                  使用网络访问保护（NAP）的符合性。                                  | Always On VPN 客户端可以与 Azure 条件访问集成，以强制实施 MFA、设备符合性或二者的组合。 如果符合条件性访问策略，Azure AD 会发出短暂的（默认为60分钟） IPsec 身份验证证书，客户端可以使用该证书对 VPN 网关进行身份验证。 设备符合性利用 Configuration Manager/Intune 合规性策略，这些策略可能包括设备运行状况证明状态。 目前，Azure VPN 条件访问提供了最接近现有 NAP 解决方案的替代方法，但不提供任何形式的更新服务或隔离网络功能。 有关更多详细信息，请参阅[VPN 和条件性访问](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-conditional-access)。<p>定义使用：<br>**VPNv2/ProfileName/DeviceCompliance** |
 |                   在用户登录之前定义哪些管理服务器可访问的功能。                    |                                                                                                                                                                        你可以使用 VPN 配置文件中的设备隧道功能（仅适用于 IKEv2 版本 1709-仅限 IKEv2）在 VPN 配置文件中实现此 Always On 功能，以控制可通过以下方式访问企业网络上的哪些管理系统：设备隧道。<p><p>***注意：***<br>如果在设备隧道配置文件中打开流量筛选器，则设备隧道将拒绝入站流量（从企业网络到客户端）。<p>定义使用：<br>**VPNv2/ProfileName/DeviceTunnel**<br>**VPNv2/ProfileName/TrafficFilterList**                                                                                                                                                                         |
 
 ## <a name="additional-functionalities"></a>其他功能

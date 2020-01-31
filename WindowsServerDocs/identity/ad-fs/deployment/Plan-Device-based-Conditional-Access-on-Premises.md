@@ -1,6 +1,6 @@
 ---
 ms.assetid: c5eb3fa0-550c-4a2f-a0bc-698b690c4199
-title: 规划基于设备的条件性访问本地
+title: 规划基于设备的本地条件访问
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,14 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 79dfc7fbf9e2dcc753829cc53d914f374010f925
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 00a7edf9529e1f116d951fd69d3bfa381d6d413a
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408332"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822750"
 ---
-# <a name="plan-device-based-conditional-access-on-premises"></a>规划基于设备的条件性访问本地
+# <a name="plan-device-based-conditional-access-on-premises"></a>规划基于设备的本地条件访问
 
 
 本文档介绍基于混合方案中的设备的条件访问策略，其中本地目录使用 Azure AD Connect 连接到 Azure AD。     
@@ -34,10 +34,10 @@ AD FS 提供混合方案中条件访问策略的本地组件。  向云资源的
 | --- | --- |--- | --- |
 |描述    |  用户以交互方式将其工作或学校帐户添加到其 BYOD 设备。  **注意：** 添加工作或学校帐户是 Windows 8/8.1 中 Workplace Join 的替代项       | 用户将其 Windows 10 工作设备加入 Azure AD。|已加入 Windows 10 域的设备会自动注册 Azure AD。|           
 |用户如何登录到设备     |  不以工作或学校帐户登录到 Windows。  使用 Microsoft 帐户登录。       |   以注册设备的（工作或学校帐户）登录到 Windows。      |     使用 AD 帐户登录。|      
-|如何管理设备    |      MDM 策略（附加 Intune 注册）   | MDM 策略（附加 Intune 注册）        |   组策略，System Center Configuration Manager （SCCM） |
+|如何管理设备    |      MDM 策略（附加 Intune 注册）   | MDM 策略（附加 Intune 注册）        |   组策略，Configuration Manager |
 |Azure AD 信任类型|已加入工作区|Azure AD 联接|加入域  |     
 |W10 设置位置    | 设置 > 帐户 > 帐户 > 添加工作或学校帐户        | 有关 > 联接 > 系统 > 的设置 Azure AD       |   有关 > 加入域的系统 > 设置 > |       
-|还适用于 iOS 和 Android 设备？   |    是     |       否  |   否   |   
+|还适用于 iOS 和 Android 设备？   |    “是”     |       无  |   无   |   
 
   
 
@@ -73,7 +73,7 @@ AD FS 2016 基于 PRT 和 Passport 凭据提供无缝设备和用户 SSO。  使
 #### <a name="authenticated-devices"></a>经过身份验证的设备  
 经过身份验证的设备是未在 MDM （Intune 和第三方 MDMs for Windows 10，Intune 仅适用于 iOS 和 Android）中注册的已注册设备。   
 
-经过身份验证的设备将具有值**为 FALSE**的**isManaged** AD FS 声明。 （而未注册的设备将不会缺少此声明。）经过身份验证的设备（和所有已注册的设备）将具有值**为 TRUE**的 isKnown AD FS 声明。  
+经过身份验证的设备将具有值**为 FALSE**的**isManaged** AD FS 声明。 （而未注册的设备将不会缺少此声明。） 经过身份验证的设备（和所有已注册的设备）将具有值**为 TRUE**的 isKnown AD FS 声明。  
 
 #### <a name="managed-devices"></a>托管设备：   
 
@@ -89,7 +89,7 @@ AD FS 2016 基于 PRT 和 Passport 凭据提供无缝设备和用户 SSO。  使
 有关 AD FS 2016 设备和条件性访问声明的完整列表，请参阅[参考](#reference)。  
 
 
-## <a name="reference"></a>参考  
+## <a name="reference"></a>引用  
 #### <a name="complete-list-of-new-ad-fs-2016-and-device-claims"></a>新 AD FS 2016 和设备声明的完整列表  
 
 * https://schemas.microsoft.com/ws/2014/01/identity/claims/anchorclaimtype  

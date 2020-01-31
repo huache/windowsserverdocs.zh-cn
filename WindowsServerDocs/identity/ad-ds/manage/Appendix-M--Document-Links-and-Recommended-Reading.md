@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 99a7df77f5f87b95ccd69ada7148b433a26d0f78
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c48b5330ee1b9a186885645aaa4c1ac79f1782e7
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948934"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822740"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>附录 M：文档链接和建议的读物
 
@@ -28,7 +28,7 @@ ms.locfileid: "75948934"
   
 |||  
 |-|-|  
-|**Links**|**URL**|  
+|**Links**|**Url**|  
 |[安全管理的10个永恒定律](https://technet.microsoft.com/library/cc722488.aspx)|[https://technet.microsoft.com/library/cc722488.aspx](https://technet.microsoft.com/library/cc722488.aspx)|  
 |[Microsoft 安全合规管理器](https://technet.microsoft.com/library/cc677002.aspx)|[https://technet.microsoft.com/library/cc677002.aspx](https://technet.microsoft.com/library/cc677002.aspx)|  
 |[Gartner 研讨会 ITXPO](http://www.gartner.com/technology/symposium/orlando/)|[http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/)|  
@@ -55,7 +55,7 @@ ms.locfileid: "75948934"
 |[在 Hyper-v 中运行域控制器](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx)|[https://technet.microsoft.com/library/dd363553(v=ws.10).aspx](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx)|  
 |[Hyper-v 安全指南](https://www.microsoft.com/download/details.aspx?id=16650)|[https://www.microsoft.com/download/details.aspx?id=16650](https://www.microsoft.com/download/details.aspx?id=16650)|  
 |[询问目录服务团队](https://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx)|[https://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx](https://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx)|  
-|[How to configure a firewall for domains and trusts](https://support.microsoft.com/kb/179442)（如何为域和信任关系配置防火墙）|[https://support.microsoft.com/kb/179442](https://support.microsoft.com/kb/179442)|  
+|[如何为域和信任关系配置防火墙](https://support.microsoft.com/kb/179442)|[https://support.microsoft.com/kb/179442](https://support.microsoft.com/kb/179442)|  
 |[2009 Verizon 数据违规报告](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf)|[http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf)|  
 |[2012 Verizon 数据违规报告](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)|[http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)|  
 |[Windows 2008 中的审核更改简介](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)|[https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)|  
@@ -80,7 +80,7 @@ ms.locfileid: "75948934"
 |[绝对管理 MDM](http://www.absolute.com/landing/Google/MDM-google/mobile-device-management)|[http://www.absolute.com/landing/Google/MDM-google/mobile-device-management](http://www.absolute.com/landing/Google/MDM-google/mobile-device-management)|  
 |[SolarWinds](http://www.solarwinds.com/eminentware-products.aspx)|[http://www.solarwinds.com/eminentware-products.aspx](http://www.solarwinds.com/eminentware-products.aspx)|  
 |[EminentWare WSUS 扩展包](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf)|  
-|[EminentWare System Center Configuration Manager 扩展包](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|  
+|[EminentWare Configuration Manager 扩展包](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|  
 |[GFI 软件](http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA)|[http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA](http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA)|  
 |[GFI LanGuard](http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g)|[http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g](http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g)|  
 |[Secunia](http://secunia.com/)|[http://secunia.com/](http://secunia.com/)|  
@@ -97,7 +97,7 @@ ms.locfileid: "75948934"
 |[从网络访问此计算机](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1)|  
 |[充当操作系统的一部分](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3)|  
 |[将工作站添加到域](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4)|  
-|[为进程调整内存配额](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|  
+|[调整进程的内存配额](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|  
 |[允许本地登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6)|  
 |[允许通过终端服务登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7)|  
 |[备份文件和目录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8)|  
@@ -112,7 +112,7 @@ ms.locfileid: "75948934"
 |[调试程序](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_17)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_17](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_17)|  
 |[拒绝从网络访问此计算机](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18)|  
 |[拒绝作为批处理作业登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18a)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18a](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18a)|  
-|[拒绝以服务登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19)|  
+|[拒绝作为服务登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19)|  
 |[拒绝本地登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_20)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_20](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_20)|  
 |[拒绝通过终端服务登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_21)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_21](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_21)|  
 |[使计算机和用户帐户可用于委派](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_22)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_22](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_22)|  
@@ -120,7 +120,7 @@ ms.locfileid: "75948934"
 |[生成安全审核](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_24)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_24](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_24)|  
 |[身份验证后模拟客户端](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_25)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_25](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_25)|  
 |[增加进程工作集](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_26)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_26](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_26)|  
-|[提高日程安排的优先级](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27)|  
+|[提高计划优先级](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27)|  
 |[加载和卸载设备驱动程序](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28)|  
 |[锁定内存页](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29)|  
 |[作为批处理作业登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30)|  
@@ -129,7 +129,7 @@ ms.locfileid: "75948934"
 |[修改对象标签](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|  
 |[修改固件环境值](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|  
 |[执行卷维护任务](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|  
-|[配置单一进程](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|  
+|[分析单一进程](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|  
 |[配置系统性能](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37)|  
 |[从扩展坞中删除计算机](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38)|  
 |[替换进程级令牌](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_39)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_39](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_39)|  
@@ -164,7 +164,7 @@ ms.locfileid: "75948934"
 |[管理员帐户安全规划指南](https://www.microsoft.com/download/details.aspx?id=19406)|[https://www.microsoft.com/download/details.aspx?id=19406](https://www.microsoft.com/download/details.aspx?id=19406)|  
 |保护 Windows Server 2003 [Active Directory 安装的最佳实践指南](https://www.microsoft.com/download/details.aspx?id=16755)|[https://www.microsoft.com/download/details.aspx?id=16755](https://www.microsoft.com/download/details.aspx?id=16755)|  
 |为 Windows Server 2003[委派 Active Directory 管理的最佳做法](https://www.microsoft.com/download/details.aspx?id=21678)|[https://www.microsoft.com/download/details.aspx?id=21678](https://www.microsoft.com/download/details.aspx?id=21678)|  
-|[Microsoft 支持生命周期](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
+|[Microsoft 支持部门生命周期](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
 |[Active Directory 技术规范](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|[https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|  
 |[已委派控制的非管理员用户尝试将计算机加入基于 Windows Server 2003 或基于 Windows Server 2008 的域控制器时出现错误消息： "访问被拒绝"](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
 |[Windows Server 2008 R2 中的 AD DS 身份验证机制保证分步指南](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
@@ -175,7 +175,7 @@ ms.locfileid: "75948934"
   
 ||  
 |---|  
-|**推荐阅读的主题**|  
+|**建议阅读**|  
 |[2014报表的格鲁吉亚州新兴网络威胁](http://www.gtsecuritysummit.com/2014Report.pdf)|  
 |[Microsoft 安全智能报告](https://www.microsoft.com/security/sir/default.aspx)|  
 |[缓解哈希传递（PTH）攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|  
@@ -187,7 +187,7 @@ ms.locfileid: "75948934"
 |[管理员帐户安全规划指南](https://www.microsoft.com/download/details.aspx?id=19406)|  
 |保护 Windows Server 2003 [Active Directory 安装的最佳实践指南](https://www.microsoft.com/download/details.aspx?id=16755)|  
 |为 Windows Server 2003[委派 Active Directory 管理的最佳做法](https://www.microsoft.com/download/details.aspx?id=21678)|  
-|[Microsoft 支持生命周期](https://support.microsoft.com/lifecycle/)|  
+|[Microsoft 支持部门生命周期](https://support.microsoft.com/lifecycle/)|  
 |[Active Directory 技术规范](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)-dSHeuristics 信息|  
 |[已委派控制的非管理员用户尝试将计算机加入基于 Windows Server 2003 或基于 Windows Server 2008 的域控制器时出现错误消息： "访问被拒绝"](https://support.microsoft.com/kb/932455)|  
 |[保护 Active Directory 安装的最佳实践指南。](https://go.microsoft.com/fwlink/?LinkId=140862)|  
@@ -200,13 +200,13 @@ ms.locfileid: "75948934"
   
 本白皮书仅用于提供信息。 Microsoft 对本文档不做任何明示或默示的担保。  
   
-用户有责任遵守所有适用的版权法。 在不限制版权所辖权利的前提下，未经 Microsoft Corporation 的明确书面许可，无论出于何种目的，均不得以任何形式或通过任何方法（电子、机械、影印、录音或其他手段）复制或传播文档中的任何部分内容，或将其存储于或引入检索系统。  
+用户有责任遵守所有适用的版权法。 在不限制版权所辖权利的情况下，不得在任何形式或通过任何方式（电子、机械、影印、录制或其他方式）或出于任何目的复制、存储或引入到检索系统中的本文档的任何部分，而不是 Microsoft Corporation 的明确书面许可。  
   
 微软可能拥有涉及本文档中的主题的专利、专利申请、商标、版权和其他知识产权。 除非得到 Microsoft Corporation 的明确书面许可，否则本文档不授予用户任何使用这些专利、商标、版权或其他知识产权的许可。  
   
 Microsoft、Active Directory、BitLocker、Hyper-v、Internet Explorer、Windows Vista、Windows 和 Windows Server 是 Microsoft Corporation 在美国和/或其他国家/地区的注册商标或商标。 所有其他商标均是其各自所有者的财产。  
   
-本文档示例中涉及的公司、组织、产品、域名、电子邮件地址、徽标、人物、场所和事件均属虚构。 与任何真实公司、组织、产品、域名、电子邮件地址、徽标、人物、地点或事件无关，也不应进行这方面的推断。  
+此处描述的示例公司、组织、产品、域名、电子邮件地址、徽标、人物、地点和事件都是虚构的。 与任何真实公司、组织、产品、域名、电子邮件地址、徽标、人物、地点或事件无关，也不应进行这方面的推断。  
   
 ? 2013 Microsoft Corporation。 保留所有权利。  
   

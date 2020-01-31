@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 56986f2ea9f49bdfc1194ae5342798793524e86c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 241418b87fd0f1e6fa64c4b1267e6d9fcde6b0d3
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408619"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822760"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>实现安全管理主机
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 安全管理主机指的是为创建安全平台而专门配置的工作站或服务器，特权帐户可以在 Active Directory 或域控制器上执行管理任务。已加入域的系统，以及在已加入域的系统上运行的应用程序。 在这种情况下，"特权帐户" 不仅指作为 Active Directory 中大多数特权组的成员的帐户，而且还引用已委派了允许执行管理任务的权限的任何帐户。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "71408619"
 ### <a name="account-configuration"></a>帐户配置  
 即使你的组织当前未使用智能卡，也应考虑为特权帐户和安全管理主机实现它们。 管理主机应配置为需要所有帐户的智能卡登录，方法是修改链接到包含管理主机的 Ou 的 GPO 中的以下设置：  
   
-@no__t 0Computer 配置 \windows \ 本地策略 \ 本地策略 \ Options\Interactive 登录：需要智能卡 @ no__t-0  
+**计算机配置 \windows \ 本地策略 \ 策略 \ Options\Interactive 登录：需要智能卡**  
   
 此设置将要求所有交互式登录都使用智能卡，而不考虑 Active Directory 中个人帐户的配置。  
   
@@ -69,14 +69,14 @@ ms.locfileid: "71408619"
 ### <a name="microsoft-security-configuration-wizard"></a>Microsoft 安全配置向导  
 如果将跳转服务器作为管理主机策略的一部分来实现，则应使用内置安全配置向导来配置服务、注册表、审核和防火墙设置，以减少服务器的受攻击面。 如果已收集和配置安全配置向导配置设置，则可以将设置转换为用于在所有跳转服务器上强制执行一致的基线配置的 GPO。 你可以进一步编辑 GPO 以实现特定于跳转服务器的安全设置，并可以将所有设置与从 Microsoft 安全合规管理器中提取的附加基线设置组合在一起。  
   
-### <a name="microsoft-security-compliance-manager"></a>Microsoft Security Compliance Manager  
-[Microsoft 安全合规管理器](https://technet.microsoft.com/library/cc677002.aspx)是一个免费的工具，可将 microsoft 推荐的安全配置与操作系统版本和角色配置相集成，并在可用于创建和配置域控制器的基准安全设置。 Microsoft 安全合规管理器模板可以与 "安全配置向导" 设置结合使用，以生成由部署在服务器的 Ou 中的 Gpo 部署和强制执行的位于 Active Directory。  
+### <a name="microsoft-security-compliance-manager"></a>Microsoft 安全合规管理器  
+[Microsoft 安全合规管理器](https://technet.microsoft.com/library/cc677002.aspx)是一种可免费使用的工具，可根据操作系统版本和角色配置集成 Microsoft 推荐的安全配置，并在可用于创建和配置域控制器基准安全设置的单个工具和 UI 中收集它们。 Microsoft 安全合规管理器模板可以与 "安全配置向导" 设置结合使用，以生成由部署在服务器的 Ou 中的 Gpo 部署和强制执行的位于 Active Directory。  
   
 > [!NOTE]  
 > 在撰写本文时，Microsoft 安全合规管理器不包括特定于跳转服务器或其他安全管理主机的设置，但仍可使用安全合规管理器（SCM）为管理创建初始基线主机. 但是，若要正确保护主机的安全，你应该应用适用于高度安全工作站和服务器的其他安全设置。  
   
 ### <a name="applocker"></a>AppLocker  
-通过 AppLocker 或第三方应用程序限制软件，使用脚本、工具和应用程序允许列表来配置管理主机和虚拟 machinesshould。 不符合安全设置的任何管理应用程序或实用程序应升级或替换为遵守安全开发和管理实践的工具。 当管理主机上需要新的或其他工具时，应全面测试应用程序和实用程序，如果工具适用于在管理主机上进行部署，则可以将其添加到系统的允许列表。  
+通过 AppLocker 或第三方应用程序限制软件，使用脚本、工具和应用程序白名单来配置管理主机和虚拟 machinesshould。 不符合安全设置的任何管理应用程序或实用程序应升级或替换为遵守安全开发和管理实践的工具。 当管理主机上需要新的或其他工具时，应全面测试应用程序和实用程序，如果工具适用于在管理主机上进行部署，则可以将其添加到系统的白名单。  
   
 ### <a name="rdp-restrictions"></a>RDP 限制  
 尽管特定配置因管理系统的体系结构而异，但你应包括对哪些帐户和计算机可用于与托管系统建立远程桌面协议（RDP）连接的限制。例如，使用远程桌面网关（RD 网关）跳转服务器来控制从已授权的用户和系统访问域控制器和其他托管系统。  
@@ -84,7 +84,7 @@ ms.locfileid: "71408619"
 你应允许授权用户进行交互式登录，并且应删除或甚至阻止服务器访问时不需要的其他登录类型。  
   
 ### <a name="patch-and-configuration-management"></a>修补和配置管理  
-规模较小的组织可能依赖于 Windows 更新或[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) （WSUS）等产品来管理 Windows 系统更新的部署，而较大的组织可能实施企业修补和配置管理软件，如 System Center Configuration Manager。 无论你使用何种机制将更新部署到一般服务器和工作站总体，你都应该考虑为高度安全的系统（如域控制器、证书颁发机构和管理主机）进行单独的部署。 通过将这些系统与常规管理基础结构隔离，如果管理软件或服务帐户遭到入侵，则无法轻松地将此折衷扩展到基础结构中的最安全系统。  
+小型组织可能依赖于 Windows 更新或[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) （WSUS）等产品来管理 Windows 系统更新的部署，而较大的组织可能会实施企业修补程序和配置管理软件（如 Microsoft 终结点 Configuration Manager）。 无论你使用何种机制将更新部署到一般服务器和工作站总体，你都应该考虑为高度安全的系统（如域控制器、证书颁发机构和管理主机）进行单独的部署。 通过将这些系统与常规管理基础结构隔离，如果管理软件或服务帐户遭到入侵，则无法轻松地将此折衷扩展到基础结构中的最安全系统。  
   
 尽管不应为安全系统执行手动更新过程，但是，你应该配置单独的基础结构来更新安全系统。 即使在非常大的组织中，此基础结构通常也可以通过专用的 WSUS 服务器和 Gpo 来实现安全系统。  
   

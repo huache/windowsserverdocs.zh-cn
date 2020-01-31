@@ -9,19 +9,19 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 06/11/2018
-ms.openlocfilehash: 326f1e8d52dc34ad433e8cc3bd4c4e84508026b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aa7658587b8434bfbaa6874498215a6b2c9213be
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388076"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822660"
 ---
 # <a name="step-5-configure-dns-and-firewall-settings"></a>步骤 5： 配置 DNS 和防火墙设置
 
->适用于：Windows Server (半年频道), Windows Server 2016, Windows Server 2012 R2, Windows 10
+>适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**以前**步骤 4：安装和配置 NPS 服务器](vpn-deploy-nps.md)
-- [**一个**步骤 6：配置 Windows 10 客户端始终启用 VPN 连接](vpn-deploy-client-vpn-connections.md)
+- [**上一个：** 步骤4。安装和配置 NPS 服务器](vpn-deploy-nps.md)
+- [**下一步：** 步骤6。配置 Windows 10 客户端 Always On VPN 连接](vpn-deploy-client-vpn-connections.md)
 
 在此步骤中，你将为 VPN 连接配置 DNS 和防火墙设置。
 
@@ -84,4 +84,4 @@ ms.locfileid: "71388076"
 
 ## <a name="next-steps"></a>后续步骤
 
-[步骤 6.配置 Windows 10 客户端 Always On VPN](vpn-deploy-client-vpn-connections.md)连接：在此步骤中，你将 Windows 10 客户端计算机配置为使用 VPN 连接与该基础结构进行通信。 你可以使用多种技术来配置 Windows 10 VPN 客户端，包括 Windows PowerShell、System Center Configuration Manager 和 Intune。 所有三个都需要一个 XML VPN 配置文件来配置相应的 VPN 设置。
+[步骤6。配置 Windows 10 客户端 Always On VPN 连接](vpn-deploy-client-vpn-connections.md)：在此步骤中，你将 windows 10 客户端计算机配置为使用 VPN 连接与该基础结构进行通信。 你可以使用多种技术来配置 Windows 10 VPN 客户端，包括 Windows PowerShell、Microsoft Endpoint Configuration Manager 和 Intune。 所有三个都需要一个 XML VPN 配置文件来配置相应的 VPN 设置。

@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 65275f4fc2717fdf9bf85ad2aa31eb12d318cc9f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2233a638aa0a422d5792f8c949c46ac8de099ba
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367702"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822040"
 ---
 # <a name="avenues-to-compromise"></a>危及系统安全的途径
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 *定律7：最安全的网络是一种管理良好的网络。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
   
@@ -60,7 +60,7 @@ ms.locfileid: "71367702"
 ### <a name="incomplete-patching"></a>修补未完成  
 *定律3：如果你不能跟上安全修补程序，你的网络将不会太长。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
   
-Microsoft 在每月的第二个星期二发布安全公告，尽管在很少的情况下，安全更新在每月安全更新（这些更新也称为 "带外" 更新）之间发布对客户系统的紧急风险。 小型企业是否会将其 Windows 计算机配置为使用 Windows 更新来管理系统和应用程序修补程序或大型组织使用管理软件（如 System Center Configuration Manager （SCCM））根据详细信息部署修补程序，分层计划，许多客户以相对及时的方式修补其 Windows 基础结构。  
+Microsoft 在每月的第二个星期二发布安全公告，尽管在很少的情况下，安全更新在每月安全更新（这些更新也称为 "带外" 更新）之间发布对客户系统的紧急风险。 小型企业是否会将其 Windows 计算机配置为使用 Windows 更新来管理系统和应用程序修补程序或大型组织使用管理软件（如 Microsoft 终结点 Configuration Manager）根据详细信息部署修补程序，分层计划，许多客户以相对及时的方式修补其 Windows 基础结构。  
   
 但是，少数基础结构仅包括 Windows 计算机和 Microsoft 应用程序，在已损坏的环境中，通常会发现组织的修补程序管理策略包含缺口。 在这些环境中，Windows 系统的修补顺序不一致。 非 Windows 操作系统偶尔就会修补。 商业外架（COTS）应用程序包含存在的修补程序，但这些漏洞尚未应用。 网络设备通常配置为出厂默认凭据，在安装后不会更新任何年份。 尽管不能再对其进行修补，但其供应商不再支持的应用程序和操作系统经常会保持运行，尽管不能再对漏洞进行修补。 其中的每个未修补系统都代表了攻击者的另一个潜在入口点。  
   

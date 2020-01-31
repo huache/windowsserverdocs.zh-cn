@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c8db30d3c5512fc72648c7894d66b715850fb619
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 71a6d38b9c77b3b8c24b28f78114daa63f5bd527
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367315"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822530"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>步骤1规划远程访问基础结构
 
@@ -81,7 +81,7 @@ ms.locfileid: "71367315"
 |---------------|--------|  
 |现有的本机 IPv6 intranet （无需 ISATAP）|使用现有的本机 IPv6 基础结构，可以在远程访问部署过程中指定组织的前缀，远程访问服务器不会将自身配置为 ISATAP 路由器。 请执行以下操作：<br/><br/>1. 若要确保可从 intranet 访问 DirectAccess 客户端，必须修改 IPv6 路由，以便将默认路由流量转发到远程访问服务器。 如果 intranet IPv6 地址空间使用的地址不是单个48位 IPv6 地址前缀，则必须在部署过程中指定相关的组织 IPv6 前缀。<br/>2. 如果你当前已连接到 IPv6 Internet，则必须配置默认路由流量，使其转发到远程访问服务器，然后在远程访问服务器上配置适当的连接和路由，以便默认路由流量将转发到连接到 IPv6 Internet 的设备。|  
 |现有 ISATAP 部署|如果你有现有的 ISATAP 基础结构，则在部署过程中，系统会提示你输入组织的48位前缀，并且远程访问服务器不会将自身配置为 ISATAP 路由器。 若要确保可从 intranet 访问 DirectAccess 客户端，必须修改 IPv6 路由基础结构，以便将默认路由流量转发到远程访问服务器。 需要在要将默认流量转发到 intranet 客户端的现有 ISATAP 路由器上完成此更改。|  
-|无现有 IPv6 连接|当远程访问设置向导检测到服务器没有基于本机或 ISATAP 的 IPv6 连接时，它会自动为 intranet 派生基于6to4 的48位前缀，并将远程访问服务器配置为 ISATAP 路由器以提供 IPv6跨 intranet 连接到 ISATAP 主机。 （仅当服务器具有公用地址时才使用基于6to4 的前缀，否则将从唯一的本地地址范围自动生成前缀。）<br/><br/>若要使用 ISATAP，请执行以下操作：<br/><br/>1. 在 DNS 服务器上为你要启用基于 ISATAP 的连接的每个域注册 ISATAP 名称，以便内部 DNS 服务器可将该 ISATAP 名称解析为远程访问服务器的内部 IPv4 地址。<br/>2. 默认情况下，使用全局查询块列表运行 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 块解析的 DNS 服务器。 若要启用 ISATAP，你必须从阻止列表中删除 ISATAP 名称。 有关详细信息，请参阅[从 DNS 全局查询阻止列表中删除 ISATAP](https://go.microsoft.com/fwlink/p/?LinkId=168593)。<br/><br/>可以解析 ISATAP 名称的基于 Windows 的 ISATAP 主机自动使用远程访问服务器配置一个地址，如下所示：<br/><br/>1. ISATAP 隧道接口上基于 ISATAP 的 IPv6 地址<br/>2. 向 intranet 上的其他 ISATAP 主机提供连接的64位路由<br/>3. 指向远程访问服务器的默认 IPv6 路由。 默认路由确保 intranet ISATAP 主机可以访问 DirectAccess 客户端<br/><br/>当基于 Windows 的 ISATAP 主机获得基于 ISATAP 的 IPv6 地址时，如果目标也是 ISATAP 主机，则它们会开始使用 ISATAP 封装的流量进行通信。 由于 ISATAP 对整个 intranet 使用单个64位子网，因此，通信将从分段的 IPv4 通信模型到使用 IPv6 的单个子网通信模型。 这可能会影响某些 Active Directory 域服务（AD DS）和依赖于 Active Directory 站点和服务配置的应用程序的行为。 例如，如果使用 "Active Directory 站点和服务" 管理单元来配置站点、基于 IPv4 的子网，以及用于将请求转发到站点中的服务器的站点间传输，则 ISATAP 主机不使用此配置。<br/><br/><ol><li>若要配置 Active Directory 站点和服务，以便在 ISATAP 主机内的站点中转发，请为每个 IPv4 子网对象配置一个等效的 IPv6 子网对象，在该对象中，子网的 IPv6 地址前缀表示同一范围的 ISATAP 主机作为 IPv4 子网的地址。 例如，对于 IPv4 子网 192.168.99.0/24 和64位 ISATAP 地址前缀2002：836b：1：8000：：/64，IPv6 子对象的等效 IPv6 地址前缀为2002：836b：1：8000：0：5efe： 192.168.99.0/120。 对于任意 IPv4 前缀长度（在示例中设置为24），可以从公式 96 + IPv4PrefixLength 确定相应的 IPv6 前缀长度。</li><li>对于 DirectAccess 客户端的 IPv6 地址，请添加以下内容：<br/><br/><ul><li>对于基于 Teredo 的 DirectAccess 客户端：范围为2001：0： WWXX： YYZZ：：/64 的 IPv6 子网，其中 WWXX： YYZZ 是远程访问服务器的第一个面向 Internet 的 IPv4 地址的冒号十六进制版本。 .</li><li>对于基于 IP-HTTPS 的 DirectAccess 客户端：范围为2002的 IPv6 子网： WWXX： YYZZ：8100：：/56，其中 WWXX： YYZZ 是远程访问服务器的第一个面向 Internet 的 IPv4 地址（w.x.y.z）的冒号十六进制版本。 .</li><li>对于基于6to4 的 DirectAccess 客户端：一系列从2002开始的基于6to4 的 IPv6 前缀，它们表示由 Internet 编号分配机构（IANA）和区域注册表管理的区域、公共 IPv4 地址前缀。 公用 IPv4 地址前缀的基于6to4 的前缀为2002： WWXX： YYZZ：：/[16 + n]，其中 WWXX： YYZZ 是的冒号十六进制版本<br/><br/>        例如，7.0.0.0/8 范围由美国注册表管理，用于北美的 Internet 号码（ARIN）。 此公共 IPv6 地址范围对应的基于6to4 的前缀为2002:700::/24。 有关 IPv4 公用地址空间的信息，请参阅[IANA IPv4 地址空间注册表](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)。 .</li></ul></li></ol>|  
+|无现有 IPv6 连接|当远程访问设置向导检测到服务器没有基于本机或 ISATAP 的 IPv6 连接时，它会自动为 intranet 派生基于6to4 的48位前缀，并将远程访问服务器配置为 ISATAP 路由器以提供 IPv6跨 intranet 连接到 ISATAP 主机。 （仅当服务器具有公用地址时才使用基于6to4 的前缀，否则将从唯一的本地地址范围自动生成前缀。）<br/><br/>若要使用 ISATAP，请执行以下操作：<br/><br/>1. 在 DNS 服务器上为你要启用基于 ISATAP 的连接的每个域注册 ISATAP 名称，以便内部 DNS 服务器可将该 ISATAP 名称解析为远程访问服务器的内部 IPv4 地址。<br/>2. 默认情况下，使用全局查询块列表运行 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 块解析的 DNS 服务器。 若要启用 ISATAP，你必须从阻止列表中删除 ISATAP 名称。 有关详细信息，请参阅[从 DNS 全局查询阻止列表中删除 ISATAP](https://go.microsoft.com/fwlink/p/?LinkId=168593)。<br/><br/>可以解析 ISATAP 名称的基于 Windows 的 ISATAP 主机自动使用远程访问服务器配置一个地址，如下所示：<br/><br/>1. ISATAP 隧道接口上基于 ISATAP 的 IPv6 地址<br/>2. 向 intranet 上的其他 ISATAP 主机提供连接的64位路由<br/>3. 指向远程访问服务器的默认 IPv6 路由。 默认路由确保 intranet ISATAP 主机可以访问 DirectAccess 客户端<br/><br/>当基于 Windows 的 ISATAP 主机获得基于 ISATAP 的 IPv6 地址时，如果目标也是 ISATAP 主机，则它们会开始使用 ISATAP 封装的流量进行通信。 由于 ISATAP 对整个 intranet 使用单个64位子网，因此，通信将从分段的 IPv4 通信模型到使用 IPv6 的单个子网通信模型。 这可能会影响某些 Active Directory 域服务（AD DS）和依赖于 Active Directory 站点和服务配置的应用程序的行为。 例如，如果使用 "Active Directory 站点和服务" 管理单元来配置站点、基于 IPv4 的子网，以及用于将请求转发到站点中的服务器的站点间传输，则 ISATAP 主机不使用此配置。<br/><br/><ol><li>若要配置 Active Directory 站点和服务，以便在 ISATAP 主机内的站点中转发，请为每个 IPv4 子网对象配置一个等效的 IPv6 子网对象，在该对象中，子网的 IPv6 地址前缀表示同一范围的 ISATAP 主机作为 IPv4 子网的地址。 例如，对于 IPv4 子网 192.168.99.0/24 和64位 ISATAP 地址前缀2002：836b：1：8000：：/64，IPv6 子对象的等效 IPv6 地址前缀为2002：836b：1：8000：0：5efe： 192.168.99.0/120。 对于任意 IPv4 前缀长度（在示例中设置为24），可以从公式 96 + IPv4PrefixLength 确定相应的 IPv6 前缀长度。</li><li>对于 DirectAccess 客户端的 IPv6 地址，请添加以下内容：<br/><br/><ul><li>对于基于 Teredo 的 DirectAccess 客户端：范围为2001：0： WWXX： YYZZ：：/64 的 IPv6 子网，其中 WWXX： YYZZ 是远程访问服务器的第一个面向 Internet 的 IPv4 地址的冒号十六进制版本。 。</li><li>对于基于 IP-HTTPS 的 DirectAccess 客户端：范围为2002的 IPv6 子网： WWXX： YYZZ：8100：：/56，其中 WWXX： YYZZ 是远程访问服务器的第一个面向 Internet 的 IPv4 地址（w.x.y.z）的冒号十六进制版本。 。</li><li>对于基于6to4 的 DirectAccess 客户端：一系列从2002开始的基于6to4 的 IPv6 前缀，它们表示由 Internet 编号分配机构（IANA）和区域注册表管理的区域、公共 IPv4 地址前缀。 公用 IPv4 地址前缀的基于6to4 的前缀为2002： WWXX： YYZZ：：/[16 + n]，其中 WWXX： YYZZ 是的冒号十六进制版本<br/><br/>        例如，7.0.0.0/8 范围由美国注册表管理，用于北美的 Internet 号码（ARIN）。 此公共 IPv6 地址范围对应的基于6to4 的前缀为2002:700::/24。 有关 IPv4 公用地址空间的信息，请参阅[IANA IPv4 地址空间注册表](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)。 。</li></ul></li></ol>|  
   
 > [!IMPORTANT]  
 > 确保 DirectAccess 服务器的内部接口上没有公共 IP 地址。 如果内部接口上有公共 IP 地址，则通过 ISATAP 的连接可能会失败。  
@@ -323,9 +323,9 @@ DirectAccess 客户端启动与管理服务器的通信，这些服务器提供 
   
 -   域控制器：对包含客户端计算机的域以及与远程访问服务器位于同一林中的所有域执行自动发现域控制器。  
   
--   System Center Configuration Manager 服务器  
+-   Microsoft 端点 Configuration Manager 服务器  
   
-首次配置 DirectAccess 时，会自动检测域控制器和 System Center Configuration Manager 服务器。 检测到的域控制器不会显示在控制台中，但可以使用 Windows PowerShell cmdlet 来检索设置。 如果修改了域控制器或 System Center Configuration Manager 服务器，请单击控制台中的 "**更新管理服务器**" 将刷新管理服务器列表。  
+首次配置 DirectAccess 时，会自动检测域控制器和 Configuration Manager 服务器。 检测到的域控制器不会显示在控制台中，但可以使用 Windows PowerShell cmdlet 来检索设置。 如果修改了域控制器或 Configuration Manager 服务器，请单击控制台中的 "**更新管理服务器**" 将刷新管理服务器列表。  
   
 **管理服务器要求**  
   

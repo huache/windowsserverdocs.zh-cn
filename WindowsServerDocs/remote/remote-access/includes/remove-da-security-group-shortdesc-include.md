@@ -1,1 +1,1 @@
-**从 DirectAccess 安全组中删除设备。** 用户迁移成功时，将从 DirectAccess 安全组中删除其设备。 从你的环境中删除 DirectAccess 之前, 检查 DirectAccess 安全组是否为空。 **不这样做**删除安全组，如果它仍包含的成员。 如果你删除安全组与在其中的成员，则可能会从其设备保留员工无需远程访问。 使用 Microsoft System Center Configuration Manager 或 Microsoft Intune 来确定设备分配信息并发现哪台设备属于每个用户。 
+**从 DirectAccess 安全组中删除设备。** 用户成功迁移后，将从 DirectAccess 安全组中删除其设备。 从环境中删除 DirectAccess 之前，请检查 DirectAccess 安全组是否为空。 如果安全组仍包含成员，**请**不要删除它。 如果删除包含成员的安全组，则会有风险，使员工无需从其设备进行远程访问。 使用 Microsoft 端点 Configuration Manager 或 Microsoft Intune 来确定设备分配信息，并发现哪个设备属于每个用户。 

@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: a216c490c92461e07fd5093783ec2c3049e8accb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b5be8827cee22b35fb31bf08d1c960b150dcad84
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388028"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822650"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中配置 VPN 设备隧道
 
@@ -46,9 +46,9 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>VPN 设备隧道配置
 
-下面的示例配置文件 XML 为仅要求客户端发起的请求通过设备隧道的情况提供了良好的指南。  将利用流量筛选器将设备隧道限制为仅管理流量。  此配置适用于 Windows 更新、典型的组策略（GP）和 System Center Configuration Manager （SCCM）更新方案，以及用于首次登录而没有缓存凭据或密码重置方案的 VPN 连接。 
+下面的示例配置文件 XML 为仅要求客户端发起的请求通过设备隧道的情况提供了良好的指南。  将利用流量筛选器将设备隧道限制为仅管理流量。  此配置适用于 Windows 更新、典型的组策略（GP）和 Microsoft 终结点 Configuration Manager 更新方案，以及用于首次登录而没有缓存凭据或密码重置方案的 VPN 连接。 
 
-对于服务器启动的推送案例（如 Windows 远程管理（WinRM）、远程 GPUpdate 和远程 SCCM 更新方案），必须允许设备隧道上的入站流量，因此无法使用流量筛选器。  如果在设备隧道配置文件中打开流量筛选器，则设备隧道将拒绝入站流量。  此限制将在未来版本中删除。
+对于服务器启动的推送案例（如 Windows 远程管理（WinRM）、远程 GPUpdate 和远程 Configuration Manager 更新方案），必须允许设备隧道上的入站流量，因此无法使用流量筛选器。  如果在设备隧道配置文件中打开流量筛选器，则设备隧道将拒绝入站流量。  此限制将在未来版本中删除。
 
 
 ### <a name="sample-vpn-profilexml"></a>示例 VPN profileXML
@@ -173,7 +173,7 @@ Write-Host "$Message"
 
 以下是 VPN 客户端配置资源。
 
-- [如何在 System Center Configuration Manager 中创建 VPN 配置文件](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
+- [如何在 Configuration Manager 中创建 VPN 配置文件](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles)
 - [配置 Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [VPN 配置文件选项](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 

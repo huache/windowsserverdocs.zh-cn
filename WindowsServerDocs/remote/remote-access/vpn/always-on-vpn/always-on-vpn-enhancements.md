@@ -9,25 +9,25 @@ ms.author: pashort
 author: shortpatti
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 65bf9f732e28e5974a3880c7d07ab7262de18144
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8a79e590a273d7d7ccb673e5043bed2fcd1aeace
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871378"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822670"
 ---
 # <a name="always-on-vpn-enhancements"></a>始终启用 VPN 增强功能
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows 10
+>适用于： Windows Server （半年频道）、Windows Server 2016、Windows 10
 
-- [**以前**了解 Always On VPN 功能](../vpn-map-da.md)
-- [**一个**了解 Always On VPN 技术](always-on-vpn-technology-overview.md)
+- [**上一个：** 了解 Always On VPN 功能](../vpn-map-da.md)
+- [**下一步：** 了解 Always On VPN 技术](always-on-vpn-technology-overview.md)
 
 Always On VPN 对过去的 Windows VPN 解决方案有许多好处。 以下重要改进与 Microsoft 的云优先、移动优先愿景 Always On 的 VPN 一致：
 
 - **平台集成：** Always On VPN 改进了与 Windows 操作系统和第三方解决方案的集成，为无数种高级连接方案提供了可靠的平台。
 
-- **安全**Always On VPN 提供了新的高级安全功能来限制流量类型、哪些应用程序可以使用 VPN 连接，以及可用于启动连接的身份验证方法。 在大多数情况下，连接处于活动状态时，确保连接安全尤其重要。 有关更多详细信息，请参阅[VPN 身份验证选项](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-authentication)。
+- **安全性：** Always On VPN 提供了新的高级安全功能来限制流量类型、哪些应用程序可以使用 VPN 连接，以及可用于启动连接的身份验证方法。 在大多数情况下，连接处于活动状态时，确保连接安全尤其重要。 有关更多详细信息，请参阅[VPN 身份验证选项](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-authentication)。
 
 - **VPN 连接：** 无需设备隧道即可 Always On VPN 提供自动触发器功能。 在 Always On VPN 之前，无法通过用户或设备身份验证触发自动连接。  
 
@@ -47,10 +47,10 @@ Microsoft 在 Always On VPN 中引入或改进了以下集成功能：
 |----------------|---|
 | **[Windows 信息保护（WIP）](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip)** | 与 WIP 的集成允许网络策略实施来确定是否允许流量通过 VPN。 如果用户配置文件处于活动状态并且应用了 WIP 策略，则会自动触发 Always On VPN 以进行连接。 此外，在使用 WIP 时，无需在 VPN 配置文件中单独指定 AppTriggerList 和 TrafficFilterList 规则（除非你需要更高级的配置），因为 WIP 策略和应用程序列表会自动生效。 |
 |**[Windows Hello 企业版](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-overview)** |Always On VPN 本机支持 Windows Hello 企业版（在基于证书的身份验证模式下），以便为登录到计算机和连接到 VPN 提供无缝单一登录体验。 因此，VPN 连接不需要辅助身份验证（用户凭据），因此可以将 Always On 连接与 Windows Hello 企业版身份验证配合使用。 |
-| **[Microsoft Azure 条件性访问](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-controls)**  |Always On VPN 客户端可以与 Azure 条件访问平台集成，以强制执行多重身份验证（MFA）、设备符合性或二者的组合。 当符合条件性访问策略时，Azure Active Directory （Azure AD）会发出一个短期（默认为60分钟） IP 安全（IPsec）身份验证证书，然后使用该证书对 VPN 网关进行身份验证。 设备符合性使用 System Center Configuration Manager/Intune 相容性策略，这些策略可能包括设备运行状况证明状态作为连接符合性检查的一部分。|
+| **[Microsoft Azure 条件性访问](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-controls)**  |Always On VPN 客户端可以与 Azure 条件访问平台集成，以强制执行多重身份验证（MFA）、设备符合性或二者的组合。 当符合条件性访问策略时，Azure Active Directory （Azure AD）会发出一个短期（默认为60分钟） IP 安全（IPsec）身份验证证书，然后使用该证书对 VPN 网关进行身份验证。 设备符合性使用 Configuration Manager/Intune 相容性策略，这些策略可能包括设备运行状况证明状态作为连接符合性检查的一部分。|
 |  **Azure MFA** |与 Azure MFA 的远程身份验证拨入用户服务（RADIUS）服务和网络策略服务器（NPS）扩展结合使用时，VPN 身份验证可以使用强 MFA。 | **第三方 VPN 插件**  | 使用通用 Windows 平台（UWP），第三方 VPN 提供程序可以为所有 Windows 10 设备创建单个应用程序。 UWP 跨设备提供有保障的核心 API 层，消除了通常与写入内核级驱动程序相关的问题和问题的复杂性。 目前，Windows 10 个 UWP VPN 插件适用于[脉冲安全](https://www.microsoft.com/p/pulse-secure/9nblggh3b0bp)、 [F5 访问](https://www.microsoft.com/p/f5-access/9wzdncrdsfn0)、 [Check Point 胶囊 Vpn](https://www.microsoft.com/p/check-point-capsule-vpn/9wzdncrdjxtj)、 [FortiClient](https://www.microsoft.com/p/forticlient/9wzdncrdh6mc)、 [SonicWall Mobile Connect](https://www.microsoft.com/p/sonicwall-mobile-connect/9wzdncrdsfkz)和[GlobalProtect](https://www.microsoft.com/p/globalprotect/9nblggh6bzl3);毫无疑问，以后会出现其他情况。 |
 
-## <a name="security"></a>安全性
+## <a name="security"></a>安全
 
 主要的安全性改进在以下方面：
 
@@ -93,7 +93,7 @@ Microsoft 在 Always On VPN 中引入或改进了以下集成功能：
 |    **第三方 VPN 网关兼容性**     | Always On VPN 客户端不需要使用基于 Microsoft 的 VPN 网关来运行。 通过支持 IKEv2 协议，客户端可帮助与支持此行业标准隧道类型的第三方 VPN 网关进行互操作。 你还可以通过使用包含自定义隧道类型的 UWP VPN 插件来实现与第三方 VPN 网关的互操作性，而无需牺牲 Always On VPN 平台功能和优势。<p><p>***注意：***<br>向网关或第三方后端设备供应商咨询使用 IKEv2 Always On VPN 和设备隧道的配置和兼容性。 |
 | **行业标准 IKEv2 VPN 协议支持** |                                                                                                                                                                                                                              Always On VPN 客户端支持 IKEv2，这是目前最广泛使用的行业标准隧道协议之一。 此兼容性最大化了与第三方 VPN 网关的互操作性。                                                                                                                                                                                                                               |
 |               **平台支持**               |                                                                                                                                                                                                           VPN 上的 AAlways 支持已加入域（工作组）的已加入域的设备，或 Azure AD 联接的设备，允许两个企业和自带设备（BYOD）方案。 此外，Always On VPN 在所有 Windows 版本中都可用。                                                                                                                                                                                                           |
-| **多样化的管理和部署机制** |                                                                                                                                 你可以使用许多管理和部署机制来管理 VPN 设置（称为*vpn 配置文件*），包括 windows PowerShell、System Center Configuration Manager、Intune 或第三方移动设备管理（MDM）工具和 Windows配置设计器。 无论使用何种客户端管理工具，这些选项都可以简化 Always On VPN 的配置。                                                                                                                                 |
+| **多样化的管理和部署机制** |                                                                                                                                 你可以使用许多管理和部署机制来管理 VPN 设置（称为*vpn 配置文件*），包括 windows PowerShell、Microsoft Endpoint Configuration Manager、Intune 或第三方移动设备管理（MDM）工具和 Windows 配置设计器。 无论使用何种客户端管理工具，这些选项都可以简化 Always On VPN 的配置。                                                                                                                                 |
 |     **标准化 VPN 配置文件定义**      |                                                                                                                                                                                                                                  Always On VPN 支持使用标准 XML 配置文件（ProfileXML）的配置，并提供了大多数管理和部署工具集使用的标准配置模板格式。                                                                                                                                                                                                                                   |
 
 ## <a name="next-steps"></a>后续步骤

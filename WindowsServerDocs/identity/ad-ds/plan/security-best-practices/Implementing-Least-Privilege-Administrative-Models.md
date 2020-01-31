@@ -9,16 +9,16 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8ad9b00070d5daef2e5aee43cfdee2d192bddae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f61bc1ccb7d9b09a17713946b5b8c2cc352f43ac
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367728"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822090"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>实现最小特权的管理模型
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 以下摘录来自于1999年4月1日发布[的管理员帐户安全规划指南](https://technet.microsoft.com/library/cc162797.aspx)：
 
@@ -94,8 +94,8 @@ ms.locfileid: "71367728"
 在你创建的一个或多个 Gpo 并链接到每个域中的工作站和成员服务器 Ou，将管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
 - 拒绝从网络访问这台计算机
-- 拒绝作为批处理作业登录
-- 拒绝以服务身份登录
+- 拒绝以批处理作业登录
+- 拒绝以服务登录
 - 拒绝通过远程桌面服务登录
 
 当你将管理员帐户添加到这些用户权限时，请指定你是通过标记帐户的方式添加本地管理员帐户还是域的管理员帐户。 例如，要将 NWTRADERS 域的管理员帐户添加到这些拒绝权限，请将该帐户键入为**NWTRADERS\Administrator**，或浏览到 NWTRADERS 域的管理员帐户。 若要确保限制本地管理员帐户，请在组策略对象编辑器中的这些用户权限设置中键入 "**管理员**"。  
@@ -140,8 +140,8 @@ ms.locfileid: "71367728"
 在你创建的一个或多个 Gpo 中，并链接到每个域中的工作站和成员服务器 Ou，将每个域的管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
 - 拒绝从网络访问这台计算机  
-- 拒绝作为批处理作业登录  
-- 拒绝以服务身份登录  
+- 拒绝以批处理作业登录  
+- 拒绝以服务登录  
 - 拒绝通过远程桌面服务登录  
 
 > [!NOTE]  
@@ -154,8 +154,8 @@ ms.locfileid: "71367728"
 在林中的每个域中，应修改默认域控制器策略或链接到域控制器 OU 的策略，以将每个域的管理员帐户添加到 "**计算机配置 \windows 设置 \ 安全设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
 - 拒绝从网络访问这台计算机  
-- 拒绝作为批处理作业登录  
-- 拒绝以服务身份登录  
+- 拒绝以批处理作业登录  
+- 拒绝以服务登录  
 - 拒绝通过远程桌面服务登录  
 
 > [!NOTE]  
@@ -178,8 +178,8 @@ ms.locfileid: "71367728"
 - 如前文所述，Enterprise Admins 组不应在日常工作中包含任何用户，这可能是目录林根级域的管理员帐户的例外，应按照[附录 D：保护内置管理员帐户的 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述进行保护。  
 - 在链接到包含每个域中成员服务器和工作站的 Ou 的 Gpo 中，EA 组应添加到以下用户权限：  
    - 拒绝从网络访问这台计算机  
-   - 拒绝作为批处理作业登录  
-   - 拒绝以服务身份登录  
+   - 拒绝以批处理作业登录  
+   - 拒绝以服务登录  
    - 拒绝本地登录  
    - 拒绝通过远程桌面服务登录。  
 
@@ -200,8 +200,8 @@ ms.locfileid: "71367728"
 1. 删除 DA 组中的所有成员，并在域的内置管理员帐户可能例外的情况下进行保护，前提是该帐户已受到[以下附录 D：保护内置管理员帐户的 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述的保护。  
 2. 在链接到包含每个域中成员服务器和工作站的 Ou 的 Gpo 中，应将 DA 组添加到以下用户权限：  
    - 拒绝从网络访问这台计算机  
-   - 拒绝作为批处理作业登录  
-   - 拒绝以服务身份登录  
+   - 拒绝以批处理作业登录  
+   - 拒绝以服务登录  
    - 拒绝本地登录  
    - 拒绝通过远程桌面服务登录  
   
@@ -221,7 +221,7 @@ ms.locfileid: "71367728"
 2. 域的 Administrators 组的成员不需要登录到成员服务器或工作站。 在链接到工作站和每个域中的成员服务器 Ou 的一个或多个 Gpo 中，应将管理员组添加到以下用户权限：  
    - 拒绝从网络访问这台计算机  
    - 拒绝作为批处理作业登录  
-   - 拒绝以服务身份登录  
+   - 拒绝以服务登录  
    - 这将阻止使用 Administrators 组的成员登录或连接到成员服务器或工作站（除非首先违反了多个控件），其中的凭据可能会被缓存并因此受到损害。 特权帐户绝不能用于登录到不太适用的系统，并强制实施这些控件来防范多种攻击。  
 
 3. 在林的每个域中的域控制器 OU 中，应向 Administrators 组授予以下用户权限（如果它们尚不具有这些权限），这样，管理员组的成员就可以执行所需的功能林范围灾难恢复方案：  
@@ -253,7 +253,7 @@ ms.locfileid: "71367728"
 3. 哪些用户应该获得角色成员资格。  
 4. 如何对角色成员身份进行管理。  
 
-在许多环境中，手动创建基于角色的访问控制以管理 Active Directory 环境可能会很难实现和维护。 如果已明确定义了管理 IT 基础结构所需的角色和责任，则可以利用其他工具来帮助你创建可管理的本机 RBAC 部署。 例如，如果你的环境中使用 Forefront Identity Manager （FIM），则可以使用 FIM 来自动创建和填充管理角色，这可以简化正在进行的管理。 如果使用 System Center Configuration Manager （SCCM）和 System Center Operations Manager （SCOM），则可以使用特定于应用程序的角色委托管理和监视功能，并在域。 如果已实现公钥基础结构（PKI），则可以发出并要求负责管理环境的 IT 人员使用智能卡。 通过 FIM 凭据管理（FIM CM），甚至可以为管理人员合并角色和凭据的管理。  
+在许多环境中，手动创建基于角色的访问控制以管理 Active Directory 环境可能会很难实现和维护。 如果已明确定义了管理 IT 基础结构所需的角色和责任，则可以利用其他工具来帮助你创建可管理的本机 RBAC 部署。 例如，如果你的环境中使用 Forefront Identity Manager （FIM），则可以使用 FIM 来自动创建和填充管理角色，这可以简化正在进行的管理。 如果使用 Microsoft Endpoint Configuration Manager 和 System Center Operations Manager （SCOM），则可以使用特定于应用程序的角色委托管理和监视功能，并在中的系统之间强制执行一致的配置和审核域。 如果已实现公钥基础结构（PKI），则可以发出并要求负责管理环境的 IT 人员使用智能卡。 通过 FIM 凭据管理（FIM CM），甚至可以为管理人员合并角色和凭据的管理。  
 
 在其他情况下，组织可能更愿意考虑部署提供 "现成" 功能的第三方 RBAC 软件。 适用于 Active Directory、Windows 和非 Windows 目录和操作系统 RBAC 的商业、现成（COTS）解决方案由许多供应商提供。 在本机解决方案和第三方产品之间进行选择时，应考虑以下因素：  
 

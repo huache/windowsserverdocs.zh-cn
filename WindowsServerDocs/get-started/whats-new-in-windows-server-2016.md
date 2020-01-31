@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: afcda1d3f94c5f6fa7524317ac21c5540c07895c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0c140c61a5887cc63b2a9d0b468f8d1daf02cd76
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948261"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822710"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 中的新增功能
 
@@ -86,7 +86,7 @@ Windows Server 2016 的新增功能包括：在 Nano Server 上本地运行 Powe
 ### <a name="powershell-desired-state-configuration-dsc-in-windows-management-framework-wmf-5"></a>Windows Management Framework (WMF) 5 中的 PowerShell 期望状态配置 (DSC)
 Windows Management Framework 5 包括对 Windows PowerShell 期望状态配置 (DSC)、Windows 远程管理 (WinRM) 和 Windows 管理规范 (WMI) 的更新。
 
-有关测试 Windows Management Framework 5 的 DSC 功能的详细信息，请参阅[验证 PowerShell DSC 的功能](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)中所论述的一系列博客文章。 若要下载，请参阅 [Windows Management Framework 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)。
+有关测试 Windows Management Framework 5 的 DSC 功能的详细信息，请参阅[验证 PowerShell DSC 的功能](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)中所论述的一系列博客文章。 若要下载，请参阅 [Windows Management Framework 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)。
 
 ### <a name="packagemanagement-unified-package-management-for-software-discovery-installation-and-inventory"></a>用于软件发现、安装和清单的 PackageManagement 统一包管理
 Windows Server 2016 和 Windows 10 引入了一种新的 PackageManagement 功能（以前称为 OneGet），该功能可以允许 IT 专业人员或开发人员使软件发现、安装、清单 (SDII) 在本地或远程自动进行，无论安装程序技术为何，也不管软件位于何处。 
@@ -201,4 +201,3 @@ Microsoft Windows 10 和 Windows Server 2016 中添加了三个新功能：
 
 ## <a name="see-also"></a>另请参阅  
 -   [发行说明：Windows Server 2016 中的重要问题](Windows-Server-2016-GA-Release-Notes.md)  
-

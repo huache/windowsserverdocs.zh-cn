@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: c0257b98-5633-4264-9df6-b6ffae80592c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b4e3c2f4a27652e7b28b826981d192d6a4c6c107
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0c112898217eb05ad2fd9b387f401ce129b47e54
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404556"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822690"
 ---
 # <a name="step-2-configure-the-remote-access-server"></a>步骤2配置远程访问服务器
 
@@ -59,7 +59,7 @@ ms.locfileid: "71404556"
   
 7. 单击 **“下一步”** ，然后单击 **“安装”** 。  
   
-8.  在“安装进度”对话框中，验证安装是否成功，然后单击“关闭”。  
+8.  在“安装进度” 对话框中，验证安装是否成功，然后单击“关闭”。  
   
 ![Windows PowerShell](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
@@ -83,7 +83,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-configure-the-deployment-type"></a>配置部署类型  
   
-1.  在远程访问服务器上，打开远程访问管理控制台：在 "**开始**" 屏幕上，键入，键入 "**远程访问管理控制台**"，然后按 enter。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在远程访问服务器上，打开远程访问管理控制台：在 "**开始**" 屏幕上，键入，键入 "**远程访问管理控制台**"，然后按 enter。 如果出现了“用户帐户控制” 对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
   
 2.  在远程访问管理控制台的中间窗格内，单击“运行远程访问设置向导”。  
   
@@ -98,7 +98,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 2.  在 "DirectAccess 客户端设置" 向导的 "**部署方案**" 页上，单击 "**仅部署 DirectAccess 以进行远程管理**"，然后单击 "**下一步**"。  
   
-3.  在“选择组”页上，单击“添加”。  
+3.  在“选择组” 页上，单击“添加”。  
   
 4.  在 "**选择组**" 对话框中，选择包含 DirectAccess 客户端计算机的安全组，然后单击 "**下一步**"。  
   
@@ -115,7 +115,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
         > [!NOTE]  
         > 启用本地名称解析时，运行 NCA 的用户可以通过使用 DirectAccess 客户端计算机上配置的 DNS 服务器来解析名称。  
   
-6.  单击 **“完成”** 。  
+6.  单击**完成**。  
   
 ## <a name="BKMK_Server"></a>配置远程访问服务器  
 若要部署远程访问，需要配置将充当远程访问服务器的服务器，如下所示：  
@@ -142,7 +142,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
     -   Ip-https 证书。 这取决于您在向导的前一步骤中设置的部署的公用名称。 如果向导没有检测到正确的 ip-https 证书，请单击 "**浏览**" 手动选择正确的证书。  
   
-4.  单击**下一步**。  
+4.  单击?下一步?。  
   
 5.  在 "**前缀配置**" 页上（仅当在内部网络中检测到 ipv6 时才会显示此页），向导会自动检测内部网络上使用的 ipv6 设置。 如果你的部署需要其他前缀，请配置用于内部网络的 IPv6 前缀、要分配给 DirectAccess 客户端计算机的 IPv6 前缀，以及要分配给 VPN 客户端计算机的 IPv6 前缀。  
   
@@ -152,7 +152,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
     -   要使运行 Windows 7 的客户端计算机能够通过 DirectAccess 进行连接，请选中 "**使 Windows 7 客户端计算机能够通过 directaccess 进行连接**" 复选框。 在这种类型的部署中，还必须使用计算机证书身份验证。  
   
-7.  单击 **“完成”** 。  
+7.  单击**完成**。  
   
 ## <a name="BKMK_Infra"></a>配置基础结构服务器  
 若要在远程访问部署中配置基础结构服务器，你必须配置以下各项：  
@@ -175,11 +175,11 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 3.  在 " **DNS** " 页上，在表中输入将应用为名称解析策略表（NRPT）例外的其他名称后缀。 选择本地名称解析选项，然后单击“下一步”。  
   
-4.  在 " **DNS 后缀搜索列表**" 页上，远程访问服务器会自动检测部署中的域后缀。 使用 "**添加**" 和 "**删除**" 按钮创建要使用的域后缀列表。 若要添加新的域后缀，请在“新后缀”中输入该后缀，然后单击“添加”。 单击**下一步**。  
+4.  在 " **DNS 后缀搜索列表**" 页上，远程访问服务器会自动检测部署中的域后缀。 使用 "**添加**" 和 "**删除**" 按钮创建要使用的域后缀列表。 若要添加新的域后缀，请在“新后缀”中输入该后缀，然后单击“添加”。 单击?下一步?。  
   
-5.  在 "**管理**" 页上，添加未自动检测到的管理服务器，然后单击 "**下一步**"。 远程访问将自动添加域控制器和 System Center Configuration Manager 服务器。  
+5.  在 "**管理**" 页上，添加未自动检测到的管理服务器，然后单击 "**下一步**"。 远程访问会自动添加域控制器和 Configuration Manager 服务器。  
   
-6.  单击 **“完成”** 。  
+6.  单击**完成**。  
   
 ## <a name="BKMK_App"></a>配置应用程序服务器  
 在完全远程访问部署中，配置应用程序服务器是一项可选任务。 在此方案中，将不会使用应用程序服务器来远程管理 DirectAccess 客户端，此步骤将灰显，以指示它处于不活动状态。 单击 "**完成**" 以应用配置。  

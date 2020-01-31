@@ -15,12 +15,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 016d9d2dcc26572f8d248ef2f4a922da2e456b83
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 804b7314054691fa0abc19f1cc4e4bffbd6457cf
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949893"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822440"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>步骤 7.5： 创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备
 
@@ -29,7 +29,7 @@ ms.locfileid: "75949893"
 - [**上一个：** 步骤7.4。将条件性访问根证书部署到本地 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 - [**下一步：** 了解 VPN 的条件性访问的工作原理](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)
 
-在此步骤中，你可以使用 Intune 创建基于 OMA 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果要使用 SCCM 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅[VPNV2 CSP 设置](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)了解更多详细信息。 
+在此步骤中，你可以使用 Intune 创建基于 OMA 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅[VPNV2 CSP 设置](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)了解更多详细信息。 
 
 ## <a name="managed-deployment-using-intune"></a>使用 Intune 的托管部署
 
@@ -90,7 +90,7 @@ ms.locfileid: "75949893"
 
 你已完成将 VPN 配置文件配置为使用 Azure AD 条件访问。 
 
-|如果你需要…  |然后查看 。  |
+|如果你想要 。  |然后查看 。  |
 |---------|---------|
 |了解有关条件性访问如何与 Vpn 一起工作的详细信息  |[VPN 和条件性访问](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)：本页提供有关条件性访问如何与 vpn 一起工作的详细信息。      |
 |了解有关高级 VPN 功能的详细信息  |[高级 VPN 功能](always-on-vpn/deploy/always-on-vpn-adv-options.md#advanced-vpn-features)：本页提供有关以下内容的指导：如何启用 VPN 流量筛选器、如何使用应用程序触发器配置自动 vpn 连接，以及如何将 NPS 配置为仅允许使用 Azure AD 颁发的证书的客户端进行 VPN 连接。        |

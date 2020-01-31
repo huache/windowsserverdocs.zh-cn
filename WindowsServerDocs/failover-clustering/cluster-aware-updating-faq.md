@@ -8,12 +8,12 @@ ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: 有关 Windows Server 中的群集感知更新的常见问题的解答。
-ms.openlocfilehash: a08366c7e64d9612d63e348d4cecdb4b2389737a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 736b49222ae4c9e2a27229341f0d886bd3e0343c
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361348"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822130"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>群集感知更新：常见问题
 
@@ -22,7 +22,7 @@ ms.locfileid: "71361348"
 [群集感知更新](cluster-aware-updating.md)\(CAU\) 是一项协调故障转移群集中所有服务器上的软件更新的功能，这种方法不会影响服务可用性，而不会影响群集节点的计划内故障转移。 对于一些具有连续可用性功能的应用程序 \(如使用实时迁移的 Hyper-v\-V 或具有 SMB 透明故障转移的 SMB 1.x 文件服务器\)，CAU 可协调自动群集更新，而不影响服务可用性。
 
 ## <a name="does-cau-support-updating-storage-spaces-direct-clusters"></a>CAU 是否支持更新存储空间直通群集？  
-是。 CAU 支持更新[存储空间直通](../storage/storage-spaces/storage-spaces-direct-overview.md)群集，而不考虑部署类型：超聚合或聚合。 具体而言，CAU 业务流程可确保暂停每个群集节点等待底层群集存储空间正常。
+是 CAU 支持更新[存储空间直通](../storage/storage-spaces/storage-spaces-direct-overview.md)群集，而不考虑部署类型：超聚合或聚合。 具体而言，CAU 业务流程可确保暂停每个群集节点等待底层群集存储空间正常。
 
 ## <a name="does-cau-work-with-windowsserver-2008r2-or-windows7"></a>CAU 是否可以与 Windows Server 2008 R2 或 Windows 7 一起使用？  
 不相同。 CAU 仅在运行 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Windows 8.1 或 Windows 8 的计算机中协调群集更新操作。 正在更新的故障转移群集必须运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。
@@ -34,37 +34,37 @@ ms.locfileid: "71361348"
 > 目前，对以下群集工作负载进行 CAU 测试和认证： SMB、超级\-V、DFS 复制、DFS 命名空间、iSCSI 和 NFS。  
   
 ## <a name="does-cau-support-updates-from-microsoft-update-and-windows-update"></a>CAU 是否支持从 Microsoft Update 和 Windows Update 更新？  
-是。 默认情况下，CAU 配置有一个在群集节点上使用 Windows 更新代理 \(WUA\) 实用工具 Api 的插件\-。 WUA 基础结构可配置为指向 Microsoft 更新和 Windows 更新或 Windows Server Update Services \(WSUS\) 作为其更新源。  
+是 默认情况下，CAU 配置有一个在群集节点上使用 Windows 更新代理 \(WUA\) 实用工具 Api 的插件\-。 WUA 基础结构可配置为指向 Microsoft 更新和 Windows 更新或 Windows Server Update Services \(WSUS\) 作为其更新源。  
   
 ## <a name="does-cau-support-wsus-updates"></a>CAU 是否支持 WSUS 更新？  
-是。 默认情况下，CAU 配置有一个在群集节点上使用 Windows 更新代理 \(WUA\) 实用工具 Api 的插件\-。 WUA 基础结构可配置为指向 Microsoft 更新和 Windows 更新或本地 Windows Server Update Services \(WSUS\) 服务器作为其更新源。  
+是 默认情况下，CAU 配置有一个在群集节点上使用 Windows 更新代理 \(WUA\) 实用工具 Api 的插件\-。 WUA 基础结构可配置为指向 Microsoft 更新和 Windows 更新或本地 Windows Server Update Services \(WSUS\) 服务器作为其更新源。  
   
 ## <a name="can-cau-apply-limited-distribution-release-updates"></a>CAU 是否可应用有限分发版本更新？  
-是。 有限分发版本 \(LDR\) 更新（也称为修补程序）不通过 Microsoft 更新或 Windows 更新发布，因此不能通过 Windows 更新代理 \(WUA 下载它们，\) 默认情况下，CAU 中的\-。  
+是 有限分发版本 \(LDR\) 更新（也称为修补程序）不通过 Microsoft 更新或 Windows 更新发布，因此不能通过 Windows 更新代理 \(WUA 下载它们，\) 默认情况下，CAU 中的\-。  
   
 但是，CAU 包含第二个插\-，你可以选择应用修补程序更新。 还可以自定义此修补程序的插入\-，以应用非\-Microsoft 驱动程序、固件和 BIOS 更新。  
   
 ## <a name="can-i-use-cau-to-apply-cumulative-updates"></a>我是否可以使用 CAU 来应用累积更新？  
-是。 如果累积更新是常规的分发版本更新或 LDR 更新，CAU 可以应用它们。  
+是 如果累积更新是常规的分发版本更新或 LDR 更新，CAU 可以应用它们。  
   
 ## <a name="can-i-schedule-updates"></a>能否计划更新？  
-是。 CAU 支持以下更新模式，都允许对更新进行计划：  
+是 CAU 支持以下更新模式，都允许对更新进行计划：  
   
 **自行\-更新**允许群集根据定义的配置文件和定期计划（例如在每月维护时段内）更新自身。 你还可以随时启动\-按需更新运行。 若要启用自行\-更新模式，必须将 CAU 群集角色添加到群集。 CAU 自我\-更新功能与其他任何群集工作负荷一样，可与更新协调器计算机的计划内和计划外故障转移无缝协作。  
   
 **远程\-更新**使你能够在运行 Windows 或 Windows Server 的计算机上随时启动更新运行。 可以通过群集感知更新窗口或通过使用**Invoke\-Invoke-caurun** PowerShell cmdlet 来启动更新运行。 远程\-更新是 CAU 的默认更新模式。 你可使用任务计划程序从不属于群集节点的远程计算机对所需的计划运行 [Invoke-CauRun](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/invoke-caurun) cmdlet。  
   
 ## <a name="can-i-schedule-updates-to-apply-during-a-backup"></a>能否计划在备份期间应用更新？  
-是。 在这方面，CAU 不会施加任何约束。 但是，当服务器备份正在进行时，在服务器\) \(上执行软件更新将不是一种最佳做法。 请注意：CAU 只会依赖群集 API 确定资源故障转移和故障回复；因此，CAU 不知道服务器备份状态。  
+是 在这方面，CAU 不会施加任何约束。 但是，当服务器备份正在进行时，在服务器\) \(上执行软件更新将不是一种最佳做法。 请注意：CAU 只会依赖群集 API 确定资源故障转移和故障回复；因此，CAU 不知道服务器备份状态。  
   
-## <a name="can-cau-work-with-system-center-configuration-manager"></a>CAU 能否与 System Center Configuration Manager 配合工作？  
+## <a name="can-cau-work-with-configuration-manager"></a>CAU 能否与 Configuration Manager 配合工作？  
 CAU 是一种工具，用于协调群集节点上的软件更新，并 Configuration Manager 还执行服务器软件更新。 必须配置这些工具，使其不会在任何数据中心部署中覆盖相同的服务器，包括使用不同 Windows Server Update Services 服务器。 这可确保使用 CAU 后的目标不会无意中失效，因为 Configuration Manager\-驱动的更新不会合并群集感知。  
   
 ## <a name="do-i-need-administrative-credentials-to-run-cau"></a>我是否需要管理凭据才能运行 CAU？  
-是。 为了运行 CAU 工具，CAU 需要本地服务器的管理凭据或需要运行所在本地服务器或客户端计算机的“身份验证后模拟客户端”用户权限。 但是，若要协调群集节点上的软件更新，CAU 需要每个节点上的群集管理凭据。 尽管 CAU UI 无需凭据即可启动，但它会在连接到群集实例以预览或应用更新时提示输入群集管理凭据。  
+是 为了运行 CAU 工具，CAU 需要本地服务器的管理凭据或需要运行所在本地服务器或客户端计算机的“身份验证后模拟客户端” 用户权限。 但是，若要协调群集节点上的软件更新，CAU 需要每个节点上的群集管理凭据。 尽管 CAU UI 无需凭据即可启动，但它会在连接到群集实例以预览或应用更新时提示输入群集管理凭据。  
   
 ## <a name="can-i-script-cau"></a>能否为 CAU 编写脚本？  
-是。 CAU 附带 PowerShell cmdlet，提供一组丰富的脚本选项。 其中有和 CAU UI 为了执行 CAU 操作所调用的相同的 cmdlet。  
+是 CAU 附带 PowerShell cmdlet，提供一组丰富的脚本选项。 其中有和 CAU UI 为了执行 CAU 操作所调用的相同的 cmdlet。  
 
 ## <a name="what-happens-to-active-clustered-roles"></a>活动群集角色会发生什么情况？
 
@@ -92,7 +92,7 @@ CAU 不会对群集节点进行负载平衡，但它会尝试保留群集角色�
 不相同。 CAU 仅可报告在 CAU 内启动的更新运行。 但是，当后续的 CAU 更新运行启动时，将适当地考虑通过非\-CAU 方法安装的更新，以确定可能适用于每个群集节点的其他更新。  
   
 ## <a name="can-cau-support-my-unique-it-process-needs"></a>CAU 是否可以支持我的独特 IT 流程需求？  
-是。 CAU 提供以下尺度的灵活性来满足企业客户的独特 IT 程序需求：  
+是 CAU 提供以下尺度的灵活性来满足企业客户的独特 IT 程序需求：  
   
 **脚本**更新运行可以指定预\-更新 PowerShell 脚本和 post\-更新 PowerShell 脚本。 在暂停节点之前，将在每个群集节点上运行预\-更新脚本。 安装节点更新后，会在每个群集节点上运行 post\-更新脚本。  
   
@@ -147,10 +147,10 @@ CAU 不需要在群集节点上运行的服务。 但是，CAU 需要在群集�
 -   仅在运行 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 的群集上支持 CAU。 VMM 还支持运行 Windows Server 2008 R2 和 Windows Server 2008 的计算机上的 Hyper-v\-V 群集。  
   
 ## <a name="can-i-use-remote-updating-on-a-cluster-that-is-configured-for-self-updating"></a>能否在配置为自行\-更新的群集上使用远程\-更新？  
-是。 可以通过远程\-更新配置\-在\-需求上更新配置的故障转移群集，就像你可以在计算机上强制执行 Windows 更新扫描一样，即使 Windows 更新配置为自动安装更新也是如此。 但是，你需要确保更新运行没有已在进行中。  
+是 可以通过远程\-更新配置\-在\-需求上更新配置的故障转移群集，就像你可以在计算机上强制执行 Windows 更新扫描一样，即使 Windows 更新配置为自动安装更新也是如此。 但是，你需要确保更新运行没有已在进行中。  
   
 ## <a name="can-i-reuse-my-cluster-update-settings-across-clusters"></a>我能不能在群集间重复使用群集更新设置。  
-是。 CAU 支持很多可以确定更新运行在其更新群集时的行为情况的更新运行选项。 这些选项可被另存为“更新运行配置文件”，并且可以在任何群集间重复使用。 我们建议你保存并在拥有相似更新需求的故障转移群集之间重复使用你的设置。 例如，你可以为支持业务\-关键服务的所有 Microsoft SQL Server 群集创建 "业务\-严重 SQL Server 群集更新运行配置文件"。  
+是 CAU 支持很多可以确定更新运行在其更新群集时的行为情况的更新运行选项。 这些选项可被另存为“更新运行配置文件”，并且可以在任何群集间重复使用。 我们建议你保存并在拥有相似更新需求的故障转移群集之间重复使用你的设置。 例如，你可以为支持业务\-关键服务的所有 Microsoft SQL Server 群集创建 "业务\-严重 SQL Server 群集更新运行配置文件"。  
   
 ## <a name="where-is-the-cau-plug-in-specification"></a>在规范中，CAU 插件\-在何处？  
   
@@ -160,5 +160,5 @@ CAU 不需要在群集节点上运行的服务。 但是，CAU 需要在群集�
   
 ## <a name="see-also"></a>另请参阅  
   
--   [群集\-感知更新概述](cluster-aware-updating.md)  
+-   [群集感知更新概述](cluster-aware-updating.md)  
   

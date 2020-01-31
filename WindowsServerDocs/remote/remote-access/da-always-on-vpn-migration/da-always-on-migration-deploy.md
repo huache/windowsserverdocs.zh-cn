@@ -1,6 +1,6 @@
 ---
-title: 迁移的 DirectAccess 添加到 Always On VPN
-description: 将 DirectAccess 迁移到 Always On VPN 要求特定的进程以迁移客户端，这有助于最大程度减少执行迁移步骤顺序从出现的争用条件。
+title: 从 DirectAccess 迁移到 Always On VPN
+description: 从 DirectAccess 迁移到 Always On VPN 需要一个特定的进程来迁移客户端，这有助于最大程度地减少执行迁移步骤时出现的争用情况。
 manager: dougkim
 ms.prod: windows-server
 ms.technology: networking-ras
@@ -9,75 +9,75 @@ ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
 ms.author: pashort
 author: shortpatti
 ms.date: 06/07/2018
-ms.openlocfilehash: 94852b33936ece0b329614f428e845f2c7a2ac6a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2bcbc7030d54e96b4ac120b943cc1adc0513feca
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854578"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822632"
 ---
 # <a name="migrate-to-always-on-vpn-and-decommission-directaccess"></a>迁移到始终启用 VPN 并解除 DirectAccess 授权
 
->适用于：Windows Server （半年频道），Windows Server 2016 中，Windows 10
+>适用于: Windows Server (半年频道)、Windows Server 2016、Windows 10
 
-&#171;[**前面：** 规划 DirectAccess 添加到 Always On VPN 迁移](da-always-on-migration-planning.md)<br>
+&#171;" [**上一步"：** 规划 DirectAccess Always On VPN 迁移](da-always-on-migration-planning.md)<br>
 
-将 DirectAccess 迁移到 Always On VPN 要求特定的进程以迁移客户端，这有助于最大程度减少执行迁移步骤顺序从出现的争用条件。 在高级别中，迁移过程包括以下四个主要步骤：
+从 DirectAccess 迁移到 Always On VPN 需要一个特定的进程来迁移客户端，这有助于最大程度地减少执行迁移步骤时出现的争用情况。 从较高层次来看，迁移过程包括以下四个主要步骤：
 
-1.  **部署由并行 VPN 基础结构。** 已确定迁移阶段和想要在部署中包含的功能后，你将部署与现有的 DirectAccess 基础结构并行 VPN 基础结构。  
+1.  **部署并行 VPN 基础结构。** 确定要在部署中包括的迁移阶段和功能后，会将 VPN 基础结构与现有的 DirectAccess 基础结构并行部署。  
 
-2.  **部署到客户端证书和配置。**  VPN 基础结构准备就绪后，创建并发布到客户端所需的证书。 当客户端收到了证书时，还会部署 VPN_Profile.ps1 配置脚本。 或者，可以使用 Intune 配置 VPN 客户端。 使用 Microsoft System Center Configuration Manager 或 Microsoft Intune 成功 VPN 配置部署的监视。
+2.  **将证书和配置部署到客户端。**  VPN 基础结构准备就绪后，创建所需的证书并将其发布到客户端。 当客户端收到证书后，你将部署 VPN_Profile ps1 配置脚本。 或者，你可以使用 Intune 来配置 VPN 客户端。 使用 Microsoft Endpoint Configuration Manager 或 Microsoft Intune 来监视是否成功部署了 VPN 配置。
 
 3.  [!INCLUDE [remove-da-security-group-shortdesc-include](../includes/remove-da-security-group-shortdesc-include.md)]
 
 4.  [!INCLUDE [decommission-da-shortdesc-include](../includes/decommission-da-shortdesc-include.md)]
 
-在开始之前迁移过程从 DirectAccess 到 Always On VPN，请确保规划了迁移。  如果不打算迁移，请参阅[规划 DirectAccess 添加到 Always On VPN 迁移](da-always-on-migration-planning.md)。
+在开始从 DirectAccess 到 Always On VPN 的迁移过程之前，请确保已计划迁移。  如果尚未计划迁移，请参阅[规划 DirectAccess 以便 ALWAYS ON VPN 迁移](da-always-on-migration-planning.md)。
 
 >[!TIP] 
->本部分不是 Always On VPN 的分步部署指南，但而是旨在补充[Always On VPN 部署的 Windows Server 和 Windows 10](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)并提供特定于迁移的部署指南。
+>本部分不是 Always On VPN 的分步部署指南，而是旨在补充[Windows Server 和 windows 10 的 ALWAYS ON VPN 部署](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)，并提供特定于迁移的部署指南。
 
-## <a name="deploy-a-side-by-side-vpn-infrastructure"></a>部署由并行 VPN 基础结构
+## <a name="deploy-a-side-by-side-vpn-infrastructure"></a>部署并排 VPN 基础结构
 
-部署 VPN 基础结构，与现有的 DirectAccess 基础结构。  有关分步详细信息，请参阅[Always On VPN 部署的 Windows Server 和 Windows 10](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)来安装和配置 Always On VPN 基础结构。 
+与现有的 DirectAccess 基础结构并行部署 VPN 基础结构。  有关分步详细信息，请参阅[Always On 适用于 Windows Server 和 windows 10 的 VPN 部署](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)，以便安装和配置 Always On vpn 基础结构。 
 
-通过并行部署包括以下高级任务：
+并行部署由以下高级任务组成：
 
-1.  创建 VPN 用户、 VPN 服务器和 NPS 服务器组。
+1.  创建 VPN 用户、VPN 服务器和 NPS 服务器组。
 
 2.  创建并发布所需的证书模板。
 
 3.  注册服务器证书。
 
-4.  安装和配置对于 Always On VPN 远程访问服务。
+4.  安装和配置 Always On VPN 的远程访问服务。
 
 5.  安装和配置 NPS。
 
 6.  为 Always On VPN 配置 DNS 和防火墙规则。
 
-下图提供 DirectAccess-到 – 始终打开 VPN 迁移整个基础结构更改的视觉参考。
+下图提供了有关 DirectAccess 到 Always On VPN 迁移中的基础结构更改的视觉参考。
 
 ![](../../media/DA-to-AlwaysOnVPN/6b64f322f945f837f22a32bf87a228f8.png)
 
-## <a name="deploy-certificates-and-vpn-configuration-script-to-the-clients"></a>部署到客户端的证书和 VPN 配置脚本
+## <a name="deploy-certificates-and-vpn-configuration-script-to-the-clients"></a>将证书和 VPN 配置脚本部署到客户端
 
-尽管 VPN 客户端配置中的大容量[部署 Always On VPN](../vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment.md)部分中，两个额外已成功完成到 Always On VPN 从 DirectAccess 迁移所需的步骤。 
+尽管[部署 ALWAYS ON vpn](../vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment.md)部分中的 VPN 客户端配置很大，但完成从 DirectAccess 到 Always On VPN 的迁移需要执行两个额外的步骤。 
 
-您必须确保**VPN_Profile.ps1**涉及_后_，以便 VPN 客户端不会尝试连接，而它已颁发了证书。 为此，请在执行将在证书中只有这些已注册的用户添加到 VPN 部署准备组中，可用于部署 Always On VPN 配置的脚本。
+你必须确保在颁发证书_之后_ **VPN_Profile PS1** ，使 VPN 客户端不会在没有它的情况下尝试连接。 为此，你将执行一个脚本，该脚本仅将已在证书中注册的用户添加到你用于部署 Always On VPN 配置的 VPN 部署就绪组。
 
 >[!NOTE] 
->Microsoft 建议你在执行任何用户迁移响铃次数之前测试此过程。
+>Microsoft 建议你在执行此过程之前，先对其进行测试，然后再执行任何用户迁移环。
 
-1.  **创建和发布该 VPN 证书，并启用自动注册组策略对象 (GPO)。** 对于传统的、 基于证书的 Windows 10 VPN 部署，证书被颁发给设备或用户，以便它可以连接的身份验证。 如果创建新的身份验证证书并将其自动注册为发布，必须创建并部署配置为 VPN 用户组的自动注册设置的 GPO。 若要配置证书和自动注册的步骤，请参阅[配置服务器基础结构](../vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure.md)。
+1.  **创建并发布 VPN 证书，并启用自动注册组策略对象（GPO）。** 对于传统的基于证书的 Windows 10 VPN 部署，会向设备或用户颁发证书，使其能够对连接进行身份验证。 为自动注册创建并发布新的身份验证证书时，必须使用配置为 VPN 用户组的自动注册设置来创建和部署 GPO。 有关配置证书和自动注册的步骤，请参阅[配置服务器基础结构](../vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure.md)。
 
-2.  **将用户添加到 VPN 用户组。** 添加到 VPN 用户组迁移任何用户。 这些用户，以便他们可以在将来收到任何证书更新迁移它们之后保持该安全组。 继续将用户添加到此组，直到您已从 DirectAccess 的每个用户移到 Always On VPN。 
+2.  **将用户添加到 VPN 用户组。** 添加任何迁移到 VPN 用户组的用户。 这些用户在迁移后会在该安全组中保留，以便以后可以接收任何证书更新。 继续向此组添加用户，直到将每个用户从 DirectAccess 移动到 Always On VPN。 
 
-3.  **标识已接收 VPN 身份验证证书的用户。** 要从迁移 DirectAccess，因此将需要添加用于标识了客户端已收到所需的证书，并已准备好接收 VPN 配置信息。 运行**GetUsersWithCert.ps1**脚本，以添加当前颁发 nonrevoked 证书从指定的模板名称发出到指定的 AD DS 安全组的用户。 例如，在运行**GetUsersWithCert.ps1**脚本中，任何用户颁发有效证书从 VPN 身份验证证书模板添加到 VPN 部署准备就绪的组。
+3.  **确定已接收 VPN 身份验证证书的用户。** 正在从 DirectAccess 迁移，因此你将需要添加一个方法，用于确定客户端何时接收到所需的证书并准备好接收 VPN 配置信息。 运行**GetUsersWithCert**脚本，将当前颁发的 nonrevoked 证书的用户从指定的模板名称添加到指定 AD DS 安全组。 例如，运行**GetUsersWithCert**脚本后，任何从 Vpn 身份验证证书模板颁发了有效证书的用户都会添加到 Vpn 部署就绪组。
 
     >[!NOTE] 
-    >如果还没有方法来确定客户端已收到所需的证书时，该证书已颁发给用户，从而导致 VPN 连接失败之前可以部署 VPN 配置。 若要避免这种情况下，运行**GetUsersWithCert.ps1**脚本在证书颁发机构或按计划同步已接收到的 VPN 部署准备就绪的组的证书的用户。 然后，将使用该安全组以面向 System Center Configuration Manager 或 Intune，可确保托管客户端不会收到证书之前收到的 VPN 配置中的 VPN 配置部署。
+    >如果你没有方法来确定客户端何时接收到所需的证书，你可以在向用户颁发证书之前部署 VPN 配置，导致 VPN 连接失败。 若要避免这种情况，请在证书颁发机构或按计划运行**GetUsersWithCert**脚本，以将接收到该证书的用户同步到 VPN 部署就绪组。 然后，你将使用该安全组来定位 Microsoft 终结点 Configuration Manager 或 Intune 中的 VPN 配置部署，这确保了托管客户端在收到证书之前不会接收到 VPN 配置。
     
-    ### <a name="getuserswithcertps1"></a>GetUsersWithCert.ps1
+    ### <a name="getuserswithcertps1"></a>GetUsersWithCert
     
     ```powershell
     Import-module ActiveDirectory
@@ -117,33 +117,33 @@ ms.locfileid: "59854578"
       }
     ```
 
-4. 部署 Always On VPN 配置。 为 VPN 颁发身份验证证书，以及运行**GetUsersWithCert.ps1**脚本中，用户添加到 VPN 部署准备就绪的安全组。
+4. 部署 Always On 的 VPN 配置。 颁发 VPN 身份验证证书并运行**GetUsersWithCert**脚本后，用户将添加到 VPN 部署就绪安全组。
 
 
-| 如果使用的...  | 则... |
+| 如果你使用的是 。  | 则... |
 | ---- | ---- |
-| System Center Configuration Manager | 创建基于该安全组的成员资格用户集合。<br><br>![](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)运算符|
-| Intune | 只需为目标的安全组直接后同步。 |
+| Configuration Manager | 基于该安全组的成员身份创建一个用户集合。<br><br>![](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)运算符|
+| Intune | 只需在同步后直接以安全组为目标。 |
 |
     
-每次运行**GetUsersWithCert.ps1**配置脚本，则还必须运行更新的安全组成员身份在 System Center Configuration Manager 中的 AD DS 发现规则。 此外，请确保部署集合的成员身份更新频繁发生足够 （脚本和发现规则与对齐）。
+每次运行**GetUsersWithCert**配置脚本时，还必须运行 AD DS 发现规则才能更新 Configuration Manager 中的安全组成员身份。 此外，请确保部署集合的成员身份更新经常发生（与脚本和发现规则对齐）。
 
-有关使用 System Center Configuration Manager 或 Intune 部署到 Windows 客户端的 Always On VPN 的其他信息，请参阅[Always On VPN 部署的 Windows Server 和 Windows 10](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)。 请务必，但是，若要将合并这些特定于迁移的任务。
+有关使用 Configuration Manager 或 Intune 将 Always On VPN 部署到 Windows 客户端的其他信息，请参阅[Always On 适用于 Windows Server 和 windows 10 的 Vpn 部署](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)。 但是，请务必合并这些特定于迁移的任务。
 
 >[!NOTE] 
->将合并这些特定于迁移的任务是一个简单的 Always On VPN 部署和迁移至 Always On VPN 之间的关键差异。 请务必正确定义要针对的安全组，而不是使用部署指南 》 中的方法的集合。
+>将这些特定于迁移的任务合并到简单 Always On VPN 部署与从 DirectAccess 迁移到 Always On VPN 之间存在重要差异。 务必正确定义集合，使其面向安全组，而不是使用 "部署指南" 中的方法。
 
 
 ## <a name="remove-devices-from-the-directaccess-security-group"></a>从 DirectAccess 安全组中删除设备
 
-用户收到身份验证证书并**VPN_Profile.ps1**配置脚本，您将看到相应的 System Center Configuration Manager 或 Intune 中的成功 VPN 配置脚本部署。 每个部署后删除该用户的设备从 DirectAccess 安全组，以便你可稍后删除 DirectAccess。 Intune 和 System Center Configuration Manager 包含可帮助您确定每个用户的设备的用户设备分配信息。
+当用户收到身份验证证书和**VPN_Profile ps1**配置脚本时，你会在 Configuration Manager 或 Intune 中看到相应的成功 VPN 配置脚本部署。 在每次部署后，从 DirectAccess 安全组中删除该用户的设备，以便以后可以删除 DirectAccess。 Intune 和 Configuration Manager 都包含用户设备分配信息，以帮助你确定每个用户的设备。
 
 >[!NOTE] 
->如果您要应用 DirectAccess Gpo 通过组织单位 (Ou) 而不计算机组移出 OU 的用户的计算机对象。
+>如果要通过组织单位（Ou）而不是计算机组来应用 DirectAccess Gpo，请将用户的计算机对象移出 OU。
 
-## <a name="decommission-the-directaccess-infrastructure"></a>取消配置 DirectAccess 基础结构
+## <a name="decommission-the-directaccess-infrastructure"></a>停止 DirectAccess 基础结构
 
-完成后将所有 DirectAccess 客户端都迁移到 Always On VPN 后，可以取消配置 DirectAccess 基础结构，并从组策略中删除的 DirectAccess 设置。 Microsoft 建议执行以下步骤以从环境中正常删除 DirectAccess:
+完成将所有 DirectAccess 客户端迁移到 Always On VPN 之后，可以解除 DirectAccess 基础结构的授权，并从组策略中删除 DirectAccess 设置。 Microsoft 建议执行以下步骤，以正常从环境中删除 DirectAccess：
 
 1.  [!INCLUDE [remove-config-settings-shortdesc-include](../includes/remove-config-settings-shortdesc-include.md)]
 
@@ -151,13 +151,13 @@ ms.locfileid: "59854578"
 
 2.  [!INCLUDE [remove-da-security-group-shortdesc-include](../includes/remove-da-security-group-shortdesc-include.md)]
 
-3.  **清除 DNS。** 请务必从内部 DNS 服务器中删除任何记录，公共 DNS 服务器与 DirectAccess，例如，DA.contoso.com，DAGateway.contoso.com。
+3.  **清理 DNS。** 请确保从内部 DNS 服务器和与 DirectAccess 相关的公共 DNS 服务器（例如，DA.contoso.com、DAGateway.contoso.com）中删除任何记录。
 
 4.  [!INCLUDE [decommission-da-shortdesc-include](../includes/decommission-da-shortdesc-include.md)]
 
-5.  **从 Active Directory 证书服务中删除任何 DirectAccess 证书。** 如果你将计算机证书用于 DirectAccess 实现中，从证书颁发机构控制台中的证书模板文件夹中删除已发布的模板。
+5.  **删除 Active Directory 证书服务中的所有 DirectAccess 证书。** 如果你使用计算机证书进行 DirectAccess 实现，请从证书颁发机构控制台中的 "证书模板" 文件夹中删除已发布的模板。
 
 ## <a name="next-step"></a>下一步
-完成从 DirectAccess 迁移到 Always On VPN。 
+已完成从 DirectAccess 到 Always On VPN 的迁移。 
 
 ---

@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0f549310d568142f819e22422d41a72d38b306e2
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: e5832843dce05832a231ed3a4d7e20cf90f1d183
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145933"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822590"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -64,7 +64,7 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 
 使用 Windows 管理中心或 PowerShell 下载传输操作仅限错误的 CSV 日志时，收到错误消息：
 
- >   传输日志-请检查防火墙中是否允许进行文件共享。 ：发送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此请求操作在配置的超时（00:01:00）内未收到答复。 分配给此操作的时间可能没有达到一个更长的超时时间。 这可能是因为服务仍然在处理操作或服务无法发送答复消息。 请考虑增加操作超时（通过将通道/代理强制转换为 IContextChannel 并设置 OperationTimeout 属性），并确保服务能够连接到客户端。
+ >   传输日志-请检查防火墙中是否允许进行文件共享。 ：发送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此请求操作在配置的超时（00:01:00）内未收到答复。 分配给此操作的时间可能是更长超时的一部分。 这可能是因为服务仍在处理此操作，或者是因为服务无法发送答复消息。 请考虑增加操作超时（通过将通道/代理强制转换为 IContextChannel 并设置 OperationTimeout 属性），并确保服务能够连接到客户端。
 
 此问题是由存储迁移服务允许的默认一分钟超时内无法筛选的传输文件数过多造成的。 
 
@@ -90,7 +90,7 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 7. 右键单击 "WcfOperationTimeoutInMinutes"，然后单击 "修改"。 
 8. 在 "基本数据" 框中，单击 "Decimal"
 9. 在 "数值数据" 框中，键入 "10"，然后单击 "确定"。
-10. 启动注册表编辑器。
+10. 退出注册表编辑器。
 11. 尝试再次下载错误的 CSV 文件。 
 
 我们打算在更高版本的 Windows Server 2019 中更改此行为。  
@@ -220,7 +220,7 @@ DFSR 调试日志：
    ```
 ## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>从群集节点运行清单时出现错误 "找不到 Dll"
 
-如果尝试使用安装在 Windows Server 2019 故障转移群集节点上的存储迁移服务 orchestrator 运行清单，并以 Windows Server 故障转移群集为目标，则会收到以下错误：
+当尝试使用存储迁移服务运行清单并针对 Windows Server 故障转移群集时，将收到以下错误：
 
     DLL not found
     [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)   

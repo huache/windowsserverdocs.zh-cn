@@ -11,12 +11,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 67d361db7a2dd3f2879e8beb924075dae68d52a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60be590d0d133f00817018018af42cfc23f1bee5
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404312"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822390"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>步骤 7.4： 将条件性访问根证书部署到本地 AD
 
@@ -59,4 +59,4 @@ ms.locfileid: "71404312"
 
 ## <a name="next-steps"></a>后续步骤
 
-[步骤7.5。创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备](vpn-create-oma-dm-based-vpnv2-profiles.md)：在此步骤中，可以使用 Intune 创建基于 oma 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果希望 SCCM 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅[VPNV2 CSP 设置](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)了解更多详细信息。
+[步骤7.5。创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备](vpn-create-oma-dm-based-vpnv2-profiles.md)：在此步骤中，可以使用 Intune 创建基于 oma 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅[VPNV2 CSP 设置](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)了解更多详细信息。
