@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ce000ec618d0c06ca938b21e9bc363250e1aa38f
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b3a30c081731de97e1bdf9abe711a5ef6460be0f
+ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949618"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76918308"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>在 AD FS 2016 或更高版本中，使用 OAuth （OBO）创建一个多层应用程序
 
@@ -77,7 +77,7 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 ## <a name="clone-or-download-this-repository"></a>克隆或下载此存储库
 
-从 shell 或命令行执行以下操作：
+从 shell 或命令行：
 
     git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
 
@@ -129,7 +129,7 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
     => issue(claim = c);
 
     @RuleName = "Issue user_impersonation scope"
-    => issue(Type = "https://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
+    => issue(Type = "http://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO10.PNG)
 
@@ -182,7 +182,7 @@ App.config 中的**appSettings**应如下所示：
 
 #### <a name="modifying-the-code"></a>修改代码
 
-MainWindow.xaml.cs
+**MainWindow.xaml.cs**
 
 注释从应用程序配置读取租户信息的行
 
@@ -278,10 +278,10 @@ MainWindow.xaml.cs
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ida：受众             | 在配置 ToDoListService WebAPI 时 ToDoListService 的 ID，AD FS 如 https://localhost:44321/                                                                                         |
 | ida： ClientID             | 在配置 ToDoListService WebAPI 时 ToDoListService 的 ID，AD FS 如 <https://localhost:44321/> </br>**Ida：受众和 ida： ClientID 彼此匹配非常重要** |
-| ida:ClientSecret         | 这是在中配置 ToDoListService 客户端时 AD FS 生成的机密 AD FS                                                                                                                   |
+| ida： ClientSecret         | 这是在中配置 ToDoListService 客户端时 AD FS 生成的机密 AD FS                                                                                                                   |
 | ida： AdfsMetadataEndpoint | 这是 AD FS 元数据的 URL，例如 https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
 | ida： OBOWebAPIBase        | 这是将用于调用后端 API 的基址，例如 https://localhost:44300                                                                                                                     |
-| ida:Authority            | 这是 AD FS 服务的 URL，示例 https://fs.anandmsft.com/adfs/                                                                                                                                          |
+| ida：颁发机构            | 这是 AD FS 服务的 URL，示例 https://fs.anandmsft.com/adfs/                                                                                                                                          |
 
 **Appsettings**节点中的所有其他 IDA： xxxxxxx-xxxx ... 键都可以注释掉或删除
 
