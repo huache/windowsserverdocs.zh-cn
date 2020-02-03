@@ -41,6 +41,7 @@
 #### [Azure 更新管理](azure/azure-update-management.md)
 ### [将 Windows Admin Center 连接到 Azure](azure/azure-integration.md)
 ### [在 Azure 中部署 Windows Admin Center](azure/deploy-wac-in-azure.md)
+### [通过 Windows Admin Center 创建 Azure VM](azure/create-azure-vms.md)
 ### [通过 Windows Admin Center 管理 Azure 虚拟机](azure/manage-azure-vms.md)
 
 ## 支持

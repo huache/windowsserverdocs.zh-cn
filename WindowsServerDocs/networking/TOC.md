@@ -253,7 +253,7 @@
 ### [规划 SDN](sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)
 #### [部署网络控制器的安装和准备要求](sdn/plan/Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)
 
-### [部署 SDN](sdn/deploy/Deploy-Software-Defined-Networking.md)
+### 部署 SDN
 #### [部署 SDN 基础结构](sdn/deploy/Deploy-a-Software-Defined-Network-Infrastructure.md)
 ##### [使用脚本部署 SDN 基础结构](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
 #### [使用 Windows PowerShell 部署 SDN 技术](sdn/deploy/Deploy-Software-Defined-Network-Technologies-using-Windows-powershell.md)
