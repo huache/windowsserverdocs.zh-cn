@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b3a30c081731de97e1bdf9abe711a5ef6460be0f
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 70281f581974493d3182fb6fdd8f35cb37bed4bf
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918308"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001902"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>在 AD FS 2016 或更高版本中，使用 OAuth （OBO）创建一个多层应用程序
 
@@ -44,7 +44,7 @@ ms.locfileid: "76918308"
 示例将包含三个模块
 
 
-模块 | 描述
+模块 | 说明
 -------|------------
 ToDoClient | 用户与之交互的 Native client
 ToDoService | 用作后端 WebAPI 客户端的中间层 web API
@@ -77,7 +77,7 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 ## <a name="clone-or-download-this-repository"></a>克隆或下载此存储库
 
-从 shell 或命令行：
+从 shell 或命令行执行以下操作：
 
     git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
 
@@ -222,14 +222,13 @@ App.config 中的**appSettings**应如下所示：
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO3.PNG)
 
-* 指定适当的控制器名称
+* 为控制器指定适当的名称。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO13.PNG)
 
-* 将以下代码添加到控制器中
+* 在控制器中添加以下代码：
 
-
-~~~
+```cs
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -238,15 +237,16 @@ App.config 中的**appSettings**应如下所示：
     using System.Web.Http;
     namespace WebAPIOBO.Controllers
     {
+        [Authorize]
         public class WebAPIOBOController : ApiController
         {
             public IHttpActionResult Get()
             {
-                return Ok("WebAPI via OBO");
+                return Ok($"WebAPI via OBO (user: {User.Identity.Name}");
             }
         }
     }
-~~~
+```
 
 当任何人向 WebAPI WebAPIOBO 发出 Get 请求时，此代码将直接返回字符串
 
@@ -274,7 +274,7 @@ App.config 中的**appSettings**应如下所示：
 * 打开 web.config 文件
 * 修改以下项
 
-| 键                      | Value                                                                                                                                                                                                                   |
+| Key                      | 值                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ida：受众             | 在配置 ToDoListService WebAPI 时 ToDoListService 的 ID，AD FS 如 https://localhost:44321/                                                                                         |
 | ida： ClientID             | 在配置 ToDoListService WebAPI 时 ToDoListService 的 ID，AD FS 如 <https://localhost:44321/> </br>**Ida：受众和 ida： ClientID 彼此匹配非常重要** |
@@ -494,7 +494,7 @@ App.config 中的**appSettings**应如下所示：
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 你还可以在 Fiddler 上查看详细的跟踪。 启动 Fiddler 并启用 HTTPS 解密。 你可以看到，我们向/adfs/oautincludes 终结点发出两个请求。
-在第一次交互中，我们向令牌终结点显示访问代码，并获取 https://localhost:44321/ ![ AD FS OBO 的访问令牌](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+在第一次交互中，我们向令牌终结点显示访问代码，并获取 https://localhost:44321/ ![AD FS OBO 的访问令牌](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
 在第二次与令牌终结点交互时，您可以看到，我们**requested_token_use**设置为**on_behalf_of** ，我们使用的是为中间层 web 服务获取的访问令牌，即 https://localhost:44321/ 为获取代表令牌的断言。
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)

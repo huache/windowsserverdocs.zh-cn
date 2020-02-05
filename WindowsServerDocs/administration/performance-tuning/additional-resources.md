@@ -7,19 +7,19 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ee14a2bd9290dbaa5653640a80528d163635142d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3c011d3c6e75fb1d5212d9b1ec3c6e6c69fac5d6
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947214"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001862"
 ---
 # <a name="additional-performance-tuning-resources"></a>其他性能优化资源
 
 使用本主题中的链接来了解有关此优化指南中讨论的概念的详细信息。
 
 ## <a name="microsoft-windows-server-websites"></a>Microsoft Windows Server 网站
--   [Windows Server 目录](http://www.windowsservercatalog.com/)
+-   [Windows Server 目录](https://www.windowsservercatalog.com/)
 
 -   [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default.aspx)
 

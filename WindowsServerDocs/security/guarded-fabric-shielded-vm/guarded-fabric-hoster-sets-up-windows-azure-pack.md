@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: d388da2b7416543c307bd931636902b4a7543e1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7336637bd3186f885db6d94eeffd0d2311edf3ac
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403659"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001836"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>受防护的 VM - 主机托管服务提供商设置 Windows Azure Pack
 
@@ -48,7 +48,7 @@ ms.locfileid: "71403659"
 
 1.  查看[WAP 系统要求](https://technet.microsoft.com/library/dn296442.aspx)并安装[必备软件](https://technet.microsoft.com/library/dn469335.aspx)。
 
-2.  下载并安装[Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)。 如果计算机未连接到 Internet，请按照[脱机安装说明](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)进行操作。
+2.  下载并安装[Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)。 如果计算机未连接到 Internet，请按照[脱机安装说明](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)进行操作。
 
 3.  打开 Web 平台安装程序，并在 "**产品**" 选项卡下找到**Windows Azure Pack：门户和 API Express** 。单击 "**添加**"，然后在窗口底部**安装**。
 
@@ -61,7 +61,7 @@ ms.locfileid: "71403659"
 
 ### <a name="configure-windows-azure-pack"></a>配置 Windows Azure Pack
 
-在使用 Windows Azure Pack 之前，你应该已为基础结构安装并配置了它。
+使用 Windows Azure Pack 之前，此软件应已安装且已针对基础结构进行了配置。
 
 1.  在*https://&lt;wapserver&gt;： 30091*导航到 Windows Azure Pack 管理门户，然后使用你的管理员凭据进行登录。
 
