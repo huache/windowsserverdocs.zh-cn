@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 7b25f6fe3c8a067d843fc12e9c1d1955a9606c09
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86e170e199c7286d883f1248610c6f195add5b01
+ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373939"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77013032"
 ---
 # <a name="manage-bde-protectors"></a>manage-bde：保护程序
 
@@ -29,7 +29,7 @@ ms.locfileid: "71373939"
 ```
 manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup}] <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 |   参数   |                                                                                                                                                                                           描述                                                                                                                                                                                            |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,7 +48,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 
 ### <a name="BKMK_addprotectors"></a>-添加语法和参数
 ```
-manage-bde  protectors  add [<Drive>] [-forceupgrade] [-recoverypassword <NumericalPassword>] [-recoverykey <pathToExternalKeydirectory>]
+manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <NumericalPassword>] [-recoverykey <pathToExternalKeydirectory>]
 [-startupkey <pathToExternalKeydirectory>] [-certificate {-cf <pathToCertificateFile>|-ct <CertificateThumbprint>}] [-tpm] [-tpmandpin] 
 [-tpmandstartupkey <pathToExternalKeydirectory>] [-tpmandpinandstartupkey <pathToExternalKeydirectory>] [-password][-adaccountorgroup <securityidentifier> [-computername <Name>] 
 [{-?|/?}] [{-help|-h}]
@@ -78,7 +78,7 @@ manage-bde  protectors  add [<Drive>] [-forceupgrade] [-recoverypassword <Numeri
 
 ### <a name="BKMK_deleteprotectors"></a>-delete 语法和 parameters
 ```
-manage-bde  protectors  delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}] 
+manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}] 
 [-id <KeyProtectorID>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
@@ -93,8 +93,8 @@ manage-bde  protectors  delete <Drive> [-type {recoverypassword|externalkey|cert
 |    tpmandstartupkey    |                                指定应删除与驱动器关联的任何基于 TPM 和启动密钥保护程序的密钥保护程序。                                |
 |       tpmandpin        |                                    指定应删除与驱动器关联的任何基于 TPM 和 PIN 的密钥保护程序。                                    |
 | tpmandpinandstartupkey |                             指定应删除与驱动器关联的任何基于 TPM、PIN 和启动密钥保护程序的密钥保护程序。                             |
-|        password        |                                        指定应删除与驱动器关联的任何密码密钥保护程序。                                         |
-|        标识        |                                        指定应删除与驱动器关联的任何标识密钥保护程序。                                         |
+|        密码        |                                        指定应删除与驱动器关联的任何密码密钥保护程序。                                         |
+|        身份        |                                        指定应删除与驱动器关联的任何标识密钥保护程序。                                         |
 |          -id           |                使用密钥标识符标识要删除的密钥保护程序。 此参数是 **-type**参数的替代选项。                 |
 |    <KeyProtectorID>    |        标识要删除的驱动器上的单个密钥保护程序。 可以通过使用**manage-bde-保护程序-get**命令显示密钥保护程序 id。         |
 |     -computername      | 指定 manage-bde.exe 将用于修改另一台计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
@@ -104,7 +104,7 @@ manage-bde  protectors  delete <Drive> [-type {recoverypassword|externalkey|cert
 
 ### <a name="BKMK_disableprot"></a>-禁用语法和参数
 ```
-manage-bde  protectors  disable <Drive> [-RebootCount <integer 0 - 15>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
 |   参数   |                                                                                                                                                                                                                   描述                                                                                                                                                                                                                    |
@@ -119,23 +119,23 @@ manage-bde  protectors  disable <Drive> [-RebootCount <integer 0 - 15>] [-comput
 ## <a name="BKMK_Examples"></a>示例
 以下示例演示了如何使用 **-保护程序**命令将证书文件标识的证书密钥保护程序添加到驱动器 E。
 ```
-manage-bde  protectors  add E: -certificate  cf "c:\File Folder\Filename.cer"
+manage-bde  -protectors  -add E: -certificate  -cf "c:\File Folder\Filename.cer"
 ```
 下面的示例演示如何使用 **-保护程序**命令将由域和用户名标识的**adaccountorgroup**密钥保护程序添加到驱动器 E。
 ```
-manage-bde  protectors  add E: -sid DOMAIN\user
+manage-bde  -protectors  -add E: -sid DOMAIN\user
 ```
 以下示例说明了如何使用**保护**程序命令禁用保护，直到计算机重新启动3次。
 ```
-manage-bde  protectors  disable C: -rc 3
+manage-bde  -protectors  -disable C: -rc 3
 ```
 下面的示例演示如何使用 **-保护程序**命令删除驱动器 C 上的所有基于 TPM 和启动密钥的保护程序。
 ```
-manage-bde  protectors  delete C: -type tpmandstartupkey
+manage-bde  -protectors -delete C: -type tpmandstartupkey
 ```
 下面的示例演示如何使用 **-保护程序**命令将驱动器 C 的所有恢复信息备份到 AD DS。
 ```
-manage-bde  protectors  adbackup C:
+manage-bde  -protectors  -adbackup C:
 ```
 ## <a name="additional-references"></a>其他参考
 -   [命令行语法项](command-line-syntax-key.md)
