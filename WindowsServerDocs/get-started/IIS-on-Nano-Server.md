@@ -12,12 +12,12 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c2d7eab2f149505758ab21f08cd6b8bdb74b85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 96a5e5f23ad3cdfc829fd141c3c90f6c200f06c9
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360301"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001802"
 ---
 # <a name="iis-on-nano-server"></a>Nano Server 上的 IIS
 
@@ -65,7 +65,7 @@ ms.locfileid: "71360301"
 |**管理工具**||  
 |Windows PowerShell 的 IISAdministration 模块|x|  
 
-有关 IIS 的其他配置（例如使用 ASP.NET、PHP 和 Java）的一系列文章以及其他相关内容发布在 [http://iis.net/learn](http://iis.net/learn)。  
+有关 IIS 的其他配置（例如使用 ASP.NET、PHP 和 Java）的一系列文章以及其他相关内容发布在 [http://iis.net/learn](https://iis.net/learn)。  
 
 ## <a name="installing-iis-on-nano-server"></a>在 Nano Server 上安装 IIS  
 可以脱机（Nano Server 断开时）或联机（Nano Server 运行时）安装此服务器角色；脱机安装是推荐选项。  
@@ -242,7 +242,7 @@ PS C:\> $sm.ApplicationPools.Add("DemoAppPool")
     $sm.CommitChanges()  
     ```  
 
-    还可以使用此语法将服务器名称指示 (SNI) 和特定主机名配合使用：`$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    还可以使用此语法将服务器名称指示 (SNI) 和特定主机名配合使用：`$sm.Sites["Default Web Site"].Bindings.Add("*:443: www.foo.bar.com", $hash, "My", "Sni".`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>附录 1：IIS 子功能列表
 
@@ -378,7 +378,7 @@ IIS 的每个功能作为一组配置元素存在。 本附录列出了此版本
 |`<modules>`|`<add name="DynamicCompressionModule" lockItem="true" />`|  
 |`<httpCompression>`|`<httpCompression directory\="%SystemDrive%\inetpub\temp\IIS Temporary Compressed Files"><br />    <scheme name="gzip" dll="%Windir%\system32\inetsrv\gzip.dll" \/><br />    \<dynamicTypes><br />        <add mimeType="text/*" enabled="true" \/><br />        <add mimeType="message/*" enabled="true" /><br />        <add mimeType="application/x-javascript" enabled="true" /><br />        <add mimeType="application/javascript" enabled="true" /><br />        <add mimeType="*/*" enabled="false" /><br />    <\/dynamicTypes><br /></httpCompression>`|  
 
-### <a name="security"></a>安全性  
+### <a name="security"></a>安全  
 **请求筛选**  
 
 
