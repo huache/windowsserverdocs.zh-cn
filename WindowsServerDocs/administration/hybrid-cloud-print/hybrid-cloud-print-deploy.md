@@ -12,16 +12,16 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: c756aaeb293f9e6822e979e0f305f0c4f98adf72
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 77462ab74ee63677362b779615376e831c71de00
+ms.sourcegitcommit: eca5bb75d1db20ac07232cea759b6b542626c02f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352170"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114526"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合云打印
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 本主题为 IT 管理员介绍了 Microsoft 混合云打印（HCP）解决方案的端到端部署。 此解决方案层位于作为打印服务器运行的现有 Windows Server 之上，并启用了 Azure Active Directory （Azure AD），并启用了 MDM 管理的设备，以发现和打印到组织托管的打印机。
 
@@ -108,7 +108,7 @@ ms.locfileid: "75352170"
     ![AAD 公开 API 5](../media/hybrid-cloud-print/AAD-AppRegistration-ECP-ExposeAPI-ScopeName.png)
 
 3. 添加 API 权限
-    - 返回应用注册边栏选项卡。 单击 "本机应用" 并选择 "API 权限"。 单击“添加权限”。
+    - 返回应用注册边栏选项卡。 单击 "本机应用" 并选择 "API 权限"。 单击 "**添加权限**"。
 
     ![AAD API 权限1](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission.png)
 
@@ -178,7 +178,7 @@ ms.locfileid: "75352170"
 1. 请确保打印服务器安装了所有可用 Windows 更新。 注意：必须将服务器2019修补为版本17763.165 或更高版本。
     - 安装以下服务器角色：
         - 打印服务器角色
-        - Internet Information Service (IIS)
+        - Internet 信息服务（IIS）
     - 有关如何安装服务器角色的详细信息，请参阅[使用添加角色和功能向导安装角色、角色服务和功能](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installarfw)。
 
     ![打印服务器角色](../media/hybrid-cloud-print/PrintServer-Roles.png)
@@ -215,9 +215,9 @@ ms.locfileid: "75352170"
 
     ![打印服务器云打印部署](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
-    - 检查日志文件以查看是否存在任何错误： `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0>notepad CloudPrintDeploy.log`
+    - 检查日志文件以查看是否存在任何错误： `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
-4. 在提升的命令提示符中打开 RegitEdit。 中转到计算机 \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService。
+4. 在提升的命令提示符下运行**RegitEdit** 。 中转到计算机 \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService。
     - 请确保将 AzureAudience 设置为企业云打印应用的应用程序 ID URI。
     - 请确保 AzureTenant 设置为 Azure AD 域名。
 
@@ -238,7 +238,7 @@ ms.locfileid: "75352170"
     - 如果向第三方提供商注册您的域，则需要配置带 SSL 证书的 IIS 终结点。 有关详细信息，请参阅此[指南](https://www.sslsupportdesk.com/microsoft-server-2016-iis-10-10-5-ssl-installation/)。
 
 8. 安装 SQLite 包。
-   - 打开权限提升的 PowerShell 命令提示符。
+   - 打开提升权限的 PowerShell 命令提示符。
    - 运行以下命令以下载 system.exception nuget 包。
 
         `Register-PackageSource -Name nuget.org -ProviderName NuGet -Location https://www.nuget.org/api/v2/ -Trusted -Force`
@@ -332,7 +332,7 @@ ms.locfileid: "75352170"
     - 在 Azure 门户上，请参阅**Azure Active Directory** > **企业应用程序** > **所有应用程序**"。
     - 选择 MopriaDiscoveryService 应用。
     - 中转到 "**应用程序代理**"。 将预身份验证方法更改为**Azure Active Directory**。
-    - 转到“单一登录”。 选择 "集成 Windows 身份验证" 作为单一登录方法。
+    - 请参阅**单一登录**。 选择 "集成 Windows 身份验证" 作为单一登录方法。
     - 将 "**内部应用程序 spn** " 设置为打印服务器计算机的 spn。
     - 将**委派的登录标识**设置为 "用户主体名称"。
     - 对 EntperiseCloudPrint 应用重复此步骤。
@@ -410,7 +410,7 @@ ms.locfileid: "75352170"
         - AzureTenantGuid = Azure AD 租户的目录 ID。
         - DiscoveryResourceId = Mopria Discovery 服务应用程序的应用程序 ID URI。
 
-    - 也可以在命令行中输入所有必需的参数值。 此语法为：
+    - 也可以在命令行中输入所有必需的参数值。 语法为：
 
         `Publish-CloudPrinter -Printer <string> -Manufacturer <string> -Model <string> -OrgLocation <string> -Sddl <string> -DiscoveryEndpoint <string> -PrintServerEndpoint <string> -AzureClientId <string> -AzureTenantGuid <string> -DiscoveryResourceId <string>`
 
@@ -429,7 +429,7 @@ ms.locfileid: "75352170"
 ## <a name="verify-the-deployment"></a>验证部署
 
 在配置了 MDM 策略的 Azure AD 联接设备上：
-- 打开 web 浏览器并中转*到 https://mopriadiscoveryservice- 的 msappproxy.net/mcs/services。*
+- 打开 web 浏览器并中转*到 https://mopriadiscoveryservice-的 msappproxy.net/mcs/services。*
 - 应该会看到描述此终结点功能集的 JSON 文本。
 - 请参阅 "**设置**" > **设备** > **打印机 & 扫描器**"。
     - 单击 "**添加打印机或扫描程序**"。
@@ -443,19 +443,21 @@ ms.locfileid: "75352170"
 
 > 注意：如果使用 "EcpPrintTest" 打印机，则可以在打印服务器计算机的 "C：\\ECPTestOutput\\EcpTestPrint" 位置下找到输出文件。
 
-## <a name="troubleshooting"></a>“疑难解答”
+## <a name="troubleshooting"></a>故障排除
 
-可以通过多种不同的日志来解决故障。
-- 在 Windows 10 客户端上。
-    - 使用反馈中心添加新的反馈。
-        - 单击 "**开始**"，然后键入 "反馈中心"。
-        - 在 "类别" 下，选择 "**问题**、**设备和驱动程序**"、"**打印**"。
-        - 在 "添加更多详细信息" 部分中，单击 "**开始录制**" 按钮。
-        - 重试失败的打印作业。
-        - 返回到反馈表，并单击 "**停止录制**" 按钮。
-        - 单击 "**提交**" 以提交您的反馈。
-    - 使用事件查看器查看 Azure AD 操作的日志。 单击 "**开始**"，然后键入 "事件查看器"。 导航到应用程序和服务日志 > Microsoft > Windows > AAD > 操作。
-- 在连接器服务器上。
-    - 使用事件查看器查看应用程序代理的日志。 单击 "**开始**"，然后键入 "事件查看器"。 导航到应用程序和服务日志 > Microsoft > AadApplicationProxy > 连接器 > Admin。
-- 打印服务器上的。
-    - 可在 C:\inetpub\logs\LogFiles\W3SVC1. 中找到 Mopria 发现服务应用和企业云打印应用的日志
+下面是 HCP 部署过程中的常见问题
+
+|错误 |建议的步骤 |
+|------|------|
+|CloudPrintDeploy PowerShell 脚本失败 | <ul><li>确保 Windows Server 具有最新更新。</li><li>如果使用 Windows Server Update Services （WSUS），请参阅[如何在使用 WSUS/SCCM 时提供按需功能和语言包](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)。</li></ul> |
+|SQLite 安装失败，出现以下消息：检测到包 "system.string" 的依赖关系循环 | 安装包 SkipDependencies-providername nuget-providername<br>安装包 EF6-providername nuget-SkipDependencies<br>安装包 system.object-providername-providername nuget-SkipDependencies<br><br>成功下载包后，请确保它们都是相同的版本。 如果没有，请将-requiredversion 参数添加到上述命令，并将其设置为相同版本。 |
+|发布打印机失败 | <ul><li>对于 "直通预身份验证"，请确保为发布打印机的用户提供对发布数据库的适当权限。</li><li>对于 Azure AD 预身份验证，请确保在 IIS 中启用 Windows 身份验证。 请参阅步骤5.3。 此外，先尝试先传递预身份验证。 如果直通预身份验证正常工作，则问题可能与应用程序代理有关。 请参阅[排查应用程序代理问题和错误消息](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 请注意，切换到 passthrough 会重置单一登录设置;重新访问步骤5，重新设置 Azure AD 预身份验证。</li></ul> |
+|打印作业处于 "发送到打印机" 状态 | <ul><li>确保连接器服务器上启用了 TLS 1.2。 请参阅步骤2.1 中的链接项目。</li><li>确保连接器服务器上已禁用 HTTP2。 请参阅步骤2.1 中的链接项目。</li></ul> |
+
+下面是可以帮助进行故障排除的日志的位置
+
+|组件 |日志位置 |
+|------|------|
+|Windows 10 客户端 | <ul><li>使用事件查看器查看 Azure AD 操作的日志。 单击 "**开始**"，然后键入 "事件查看器"。 导航到应用程序和服务日志 > Microsoft > Windows > AAD > 操作。</li><li>使用反馈中心收集日志。 请参阅[通过反馈中心应用将反馈发送到 Microsoft](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
+|连接器服务器 | 使用事件查看器查看应用程序代理的日志。 单击 "**开始**"，然后键入 "事件查看器"。 导航到应用程序和服务日志 > Microsoft > AadApplicationProxy > 连接器 > Admin。 |
+|打印服务器 | 可在 C:\inetpub\logs\LogFiles\W3SVC1. 中找到 Mopria 发现服务应用和企业云打印应用的日志 |
