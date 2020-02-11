@@ -14,12 +14,12 @@ ms.date: 1/24/2020
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 593fc4abbdce3ed53fa8d7ef73d529558b100bcc
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: cd4e61a9fac5b1a1f6a1b66309e514ef75b1e4db
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001792"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125128"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server 组件疑难解答
 
@@ -46,17 +46,17 @@ Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的�
 
 ## <a name="troubleshoot-startup-and-restart"></a>排查启动和重新启动问题
 
-- [Windows 启动的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup.md)
-- [如何确定64位版本的 Windows 的适当页面文件大小](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size.md)
-- [生成内核或完整故障转储](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump.md)
-- [页面文件简介](https://docs.microsoft.com/windows/client-management/introduction-page-file.md)
-- [在 Windows 中配置系统故障和恢复选项](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options.md)
-- [Windows 启动问题的高级故障排除](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems.md)
-- [基于 Windows 的计算机冻结的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze.md)
-- [针对停止错误或蓝屏错误的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors.md)
-- [停止错误7B 或 Inaccessible_Boot_Device 的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device.md)
-- [针对事件 ID 41 的高级故障排除 "系统已重新启动但未完全关闭"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart.md)
-- [更新内置 Broadcom 网络适配器驱动程序时出现停止错误](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update.md)
+- [Windows 启动的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
+- [如何确定64位版本的 Windows 的适当页面文件大小](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
+- [生成内核或完整故障转储](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump)
+- [页面文件简介](https://docs.microsoft.com/windows/client-management/introduction-page-file)
+- [在 Windows 中配置系统故障和恢复选项](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options)
+- [Windows 启动问题的高级故障排除](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [基于 Windows 的计算机冻结的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
+- [针对停止错误或蓝屏错误的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
+- [停止错误7B 或 Inaccessible_Boot_Device 的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
+- [针对事件 ID 41 的高级故障排除 "系统已重新启动但未完全关闭"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart)
+- [更新内置 Broadcom 网络适配器驱动程序时出现停止错误](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update)
 
 ## <a name="troubleshoot-ad-forest-recovery"></a>排查 AD 林恢复问题
 

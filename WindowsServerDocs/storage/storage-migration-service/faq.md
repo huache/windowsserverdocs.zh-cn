@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 02829919c53e3488ad7f229ad8bee0d3ead14c9a
-ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
+ms.openlocfilehash: a28b25c55b9ad66cd16f3d9e370fec22ec0f2a5d
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124895"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125138"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>存储迁移服务常见问题（FAQ）
 
@@ -27,6 +27,10 @@ ms.locfileid: "76124895"
 - $Recycle bin、Recycler、回收、系统卷信息、$UpgDrv $、$SysReset $Windows. ~ BT，$Windows. ~ LS，Windows .old，启动，恢复，文档和设置
 - 页面文件 .sys，hiberfil.sys，交换文件，winpepge，bootsect.exe，，bootmgr，bootnxt。
 - 源服务器上与目标上的已排除文件夹冲突的任何文件或文件夹。 <br>例如，如果源中有一个 N:\Windows 文件夹，并将其映射到 C：\目标上的卷不会传输（无论它包含什么内容），因为它会干扰目标上的 C：\Windows 系统文件夹。
+
+## <a name="are-locked-files-migrated"></a>是否已迁移锁定文件？
+
+存储迁移服务不迁移应用程序以独占方式锁定的文件。 服务会自动重试三次，并在两次尝试之间发生60秒的延迟，你可以控制尝试次数和延迟时间。 你还可以重新运行传输以仅复制之前由于共享冲突而跳过的文件。
 
 ## <a name="are-domain-migrations-supported"></a>是否支持域迁移？
 
@@ -58,18 +62,18 @@ ms.locfileid: "76124895"
     - CA 超时
     - 并发用户限制
     - 持续可用
-    - 描述           
-    - 对数据进行加密
+    - 说明           
+    - 加密数据
     - 标识远程处理
     - 基础结构
     - 名称
-    - 路径
-    - 范围内
+    - Path
+    - 划分
     - 作用域名称
     - 安全描述符
     - 卷影副本
     - 特殊
-    - Temporary
+    - 权宜之计
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>是否可以将多个服务器合并到一个服务器？
 
@@ -142,6 +146,14 @@ Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移
 ## <a name="does-the-storage-migration-service-migrate-locally-installed-applications-from-the-source-computer"></a>存储迁移服务是否从源计算机迁移本地安装的应用程序？
 
 不是，存储迁移服务不迁移本地安装的应用程序。 完成迁移后，请在源计算机上运行的目标计算机上重新安装任何应用程序。 无需重新配置任何用户或其应用程序;存储迁移服务旨在使服务器更改对客户端不可见。 
+
+## <a name="what-happens-with-existing-files-on-the-destination-server"></a>目标服务器上的现有文件会发生什么情况？
+
+执行传输时，存储迁移服务会寻找从源服务器镜像数据。 目标服务器不应包含任何生产数据或连接的用户，因为该数据可能会被覆盖。 默认情况下，第一次传输会将目标服务器上的任何数据的备份副本作为保护。 在所有后续传输中，默认情况下，存储迁移服务会将数据镜像到目标;这意味着不仅添加新文件，而且还可以随意覆盖任何现有文件，并删除源中不存在的任何文件。 此行为是有意的，为源计算机提供完美保真。 
+
+## <a name="what-do-the-error-numbers-mean-in-the-transfer-csv"></a>在传输 CSV 中，错误号是什么意思？
+
+在传输 CSV 文件中找到的大多数错误都是 Windows 系统错误代码。 您可以通过查看[Win32 错误代码文档](https://docs.microsoft.com/windows/win32/debug/system-error-codes)来了解每个错误的含义。 
 
 ## <a name="give-feedback"></a>什么是提供反馈、文件 bug 或获取支持的选项？
 

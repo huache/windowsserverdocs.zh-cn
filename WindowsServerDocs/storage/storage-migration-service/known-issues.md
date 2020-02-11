@@ -4,16 +4,16 @@ description: 有关存储迁移服务的已知问题和疑难解答支持，如�
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 10/09/2019
+ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a98c560306debc0e10c2c0ac44b41e12141b6e9f
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 77a23e5787283aa93d6f2f303cf45b461ccf52dd
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001882"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125108"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -349,6 +349,65 @@ DFSR 调试日志：
  4. 对于其名称现在包含存储迁移服务添加的后缀的任何已禁用的用户或组，你可以删除这些帐户。 你可以确认以后是否添加了用户帐户，因为它们只包含域用户组，并且将创建与存储迁移服务传输开始时间匹配的日期/时间。
  
  如果要将存储迁移服务用于域控制器以进行传输，请确保始终在 Windows 管理中心的 "传输设置" 页上选择 "不传输用户和组"。
+ 
+ ## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>运行清单时出现错误53，"未能清点所有指定的设备" 
+
+尝试运行清单时，会收到：
+
+    Failed to inventory all specified devices 
+    
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          1/16/2020 8:31:17 AM
+    Event ID:      2516
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      ned.corp.contoso.com
+    Description:
+    Couldn't inventory files on the specified endpoint.
+    Job: ned1
+    Computer: ned.corp.contoso.com
+    Endpoint: hithere
+    State: Failed
+    File Count: 0
+    File Size in KB: 0
+    Error: 53
+    Error Message: Endpoint scan failed
+    Guidance: Check the detailed error and make sure the inventory requirements are met. This could be because of missing permissions on the source computer.
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          1/16/2020 8:31:17 AM
+    Event ID:      10004
+    Task Category: None
+    Level:         Critical
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      ned.corp.contoso.com
+    Description:
+    01/16/2020-08:31:17.031 [Crit] Consumer Task failed with error:The network path was not found.
+    . StackTrace=   at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
+       at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
+       at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetEnvironmentPathFolders(String ServerName, Boolean IsServerLocal)
+       at Microsoft.StorageMigration.Proxy.Service.Discovery.ScanUtils.<ScanSMBEndpoint>d__3.MoveNext()
+       at Microsoft.StorageMigration.Proxy.EndpointScanOperation.Run()
+       at Microsoft.StorageMigration.Proxy.Service.Discovery.EndpointScanRequestHandler.ProcessRequest(EndpointScanRequest scanRequest, Guid operationId)
+       at Microsoft.StorageMigration.Proxy.Service.Discovery.EndpointScanRequestHandler.ProcessRequest(Object request)
+       at Microsoft.StorageMigration.Proxy.Common.ProducerConsumerManager`3.Consume(CancellationToken token)    
+       
+    01/16/2020-08:31:10.015 [Erro] Endpoint Scan failed. Error: (53) The network path was not found.
+    Stack trace:
+       at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
+       at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
+
+在此阶段，存储迁移服务协调器正在尝试执行远程注册表读取，以确定源计算机配置，但源服务器会拒绝该注册表路径不存在的情况。 这可能是以下原因引起的：
+
+ - 源计算机上没有运行远程注册表服务。
+ - 防火墙不允许从 Orchestrator 远程连接到源服务器。
+ - 源迁移帐户没有连接到源计算机的远程注册表权限。
+ - 源迁移帐户没有源计算机注册表中的读取权限，在 "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" 或 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ 下。LanmanServer
 
 ## <a name="see-also"></a>另请参阅
 
