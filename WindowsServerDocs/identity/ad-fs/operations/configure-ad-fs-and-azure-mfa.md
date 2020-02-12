@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c3a7e7c420ef63adc906e6558ed7aff6819e983c
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: b658644d1ba7cec1b02a2a51331cd7b7152efc77
+ms.sourcegitcommit: 75e611fd5de8b8aa03fc26c2a3d5dbf8211b8ce3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013052"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77145492"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>将 Azure MFA 配置为具有 AD FS 的身份验证提供程序
 
@@ -135,7 +135,7 @@ Set-AdfsAzureMfaTenant -TenantId <tenant ID> -ClientId 981f26a1-7f43-403b-a875-f
 1. 在 AD FS 服务器上打开**注册表编辑器**。
 1. 导航到 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ADFS`。 创建以下注册表项值：
 
-    | 注册表项       | Value |
+    | 注册表项       | 值 |
     |--------------------|-----------------------------------|
     | SasUrl             | https://adnotifications.windowsazure.us/StrongAuthenticationService.svc/Connector |
     | StsUrl             | https://login.microsoftonline.us |
@@ -160,11 +160,14 @@ Set-AdfsAzureMfaTenant -TenantId <tenant ID> -ClientId 981f26a1-7f43-403b-a875-f
 
 如果证书的有效期即将结束，请在每个 AD FS 服务器上生成新的 Azure MFA 证书，开始续订过程。 在 PowerShell 命令窗口中，使用以下 cmdlet 在每个 AD FS 服务器上生成新证书：
 
+> [!CAUTION]
+> 如果证书已过期，请不要将 `-Renew $true` 参数添加到下面的命令中。 在这种情况下，现有过期证书将替换为新证书，而不是保留原样，并创建其他证书。
+
 ```
 PS C:\> $newcert = New-AdfsAzureMfaTenantCertificate -TenantId <tenant id such as contoso.onmicrosoft.com> -Renew $true
 ```
 
-作为此 cmdlet 的结果，将生成一个新证书，该证书从未来2天到2天 + 2 年都有效。  AD FS 和 Azure MFA 操作不会受此 cmdlet 或新证书影响。 （请注意：此2天延迟是特意的，并提供执行以下步骤以在租户中配置新证书的时间，然后 AD FS 开始将它用于 Azure MFA。）
+如果证书尚未过期，则会生成一个新证书，该证书从未来2天到2天 + 2 年都有效。 AD FS 和 Azure MFA 操作不受此 cmdlet 或新证书影响。 （请注意：此2天延迟是特意的，并提供执行以下步骤以在租户中配置新证书的时间，然后 AD FS 开始将它用于 Azure MFA。）
 
 ### <a name="configure-each-new-ad-fs-azure-mfa-certificate-in-the-azure-ad-tenant"></a>在 Azure AD 租户中配置每个新 AD FS Azure MFA 证书
 
@@ -174,7 +177,7 @@ PS C:\> $newcert = New-AdfsAzureMfaTenantCertificate -TenantId <tenant id such a
 PS C:/> New-MsolServicePrincipalCredential -AppPrincipalId 981f26a1-7f43-403b-a875-f8b09b8cd720 -Type Asymmetric -Usage Verify -Value $newcert
 ```
 
-`$newcert` 是新证书。 可以通过将证书（不带私钥）导出为 DER 编码文件并在 Notepad.exe 中打开来获取 base64 编码的证书，然后复制/粘贴到 PowerShell 会话并分配给变量 `$newcert`。
+如果以前的证书已过期，请重新启动 AD FS 服务选取新证书。 如果证书过期之前已续订证书，则无需重新启动 AD FS 服务。
 
 ### <a name="verify-that-the-new-certificates-will-be-used-for-azure-mfa"></a>验证新证书将用于 Azure MFA
 
