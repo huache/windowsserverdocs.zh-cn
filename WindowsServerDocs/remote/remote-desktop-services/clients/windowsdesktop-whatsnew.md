@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/29/2020
+ms.date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d5215c7089ce1aadbeae68890dca1a0ae1c294
-ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
+ms.openlocfilehash: 3f8b035eef5bb956012627b5e2c7c59adaa8cd32
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889441"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77155381"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -31,7 +31,20 @@ ms.locfileid: "76889441"
 |用户组 |版本  |
 |-----------|---------|
 |公用     |1.2.605  |
-|Insider    |1.2.605  |
+|Insider    |1.2.673  |
+
+## <a name="updates-for-version-12673"></a>针对版本 1.2.673 的更新
+
+*发布日期：2020/02/11*
+
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pPJm)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pFbw)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pN07)
+
+- 现在，如果 RDP 文件缺少签名或 signscope 属性之一已被修改，那么，连接到 Windows 虚拟桌面将被阻止。
+- 当工作区为空或已删除时，连接中心将不再显示为空。
+- 添加了针对断开连接消息的活动 ID 和错误代码，以改进故障排除。 可以使用 **Ctrl + C** 复制对话框消息。
+- 修复了导致桌面连接设置无法检测到显示器的问题。
+- 客户端更新不再自动重启电脑。
+- 无窗口图标不应再出现在任务栏上。
 
 ## <a name="updates-for-version-12605"></a>针对版本 1.2.605 的更新
 
