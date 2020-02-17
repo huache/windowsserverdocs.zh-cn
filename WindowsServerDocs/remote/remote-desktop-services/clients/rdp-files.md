@@ -13,12 +13,12 @@ manager: dongill
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 43cffc007970245ab9bd96c7cae9bb5137a8030b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a596bcd29fdb80f8b2b0fa86ee808755dd09f43
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387798"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125089"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>受支持的远程桌面 RDP 文件设置
 
@@ -26,7 +26,7 @@ ms.locfileid: "71387798"
 
 请参阅[此文档](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409)，详细了解如何使用 PowerShell 为主机池自定义 RDP 属性。
 
-| RDP 设置                        | 描述            | 值                 | 默认值          | Windows 虚拟桌面 | Windows | HTML5   |
+| RDP 设置                        | 说明            | 值                 | 默认值          | Windows 虚拟桌面 | Windows | HTML5   |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|:-------:|:-------:|
 | alternate full address:s:value | 指定远程计算机的备用名称或 IP 地址。 | 远程计算机的任何有效名称或 IP 地址，例如“10.10.15.15” | | x | x | x |
 | alternate shell:s:value        | 确定在与 RDP 连接时程序是否自动启动。 若要指定备用 shell，请为该值输入可执行文件的有效路径，例如“C:\ProgramFiles\Office\word.exe”。 如果启用了 RemoteApplicationMode，此设置还可确定在连接时要启动的远程应用程序的路径或别名。 | “C:\ProgramFiles\Office\word.exe” || x | x | x |
@@ -40,6 +40,7 @@ ms.locfileid: "71387798"
 | desktop size id:i:value | 根据一组预定义选项指定远程会话桌面的尺寸。 如果指定了 desktopheight 或 desktopwidth，则会替代此设置。| -0：640 × 480<br>- 1：800 × 600<br>- 2：1024 × 768<br>- 3：1280 × 1024<br>- 4：1600 × 1200 | 0 | x | x | x |
 | desktopheight:i:value | 确定使用远程桌面连接进行连接时远程计算机上的分辨率高度（以像素为单位）。 此设置对应于 RDC 中“选项”下的“显示”选项卡上的“显示配置”滑块中的选择。 | 数值介于 200 和 2048 之间 | 默认值设置为本地计算机的分辨率 | x | x | x |
 | desktopwidth:i:value | 确定使用远程桌面连接进行连接时远程计算机上的分辨率宽度（以像素为单位）。 此设置对应于 RDC 中“选项”下的“显示”选项卡上的“显示配置”滑块中的选择。 | 数值介于 200 和 4096 之间 | 默认值设置为本地计算机的分辨率 | x | x | x |
+| devicestoredirect:s:value | 确定客户端计算机上将被重定向并在远程会话中可用的设备。 | - *：重定向所有支持的设备，包括稍后连接的设备<br> - 一个或多个设备的有效硬件 ID | | x | x | x |
 | disableconnectionsharing:i:value | 确定远程桌面客户端在 RemoteApp 或桌面启动时是重新连接到任何现有的已打开连接还是启动新的连接 | - 0：重新连接到任何现有会话<br>- 1：启动新的连接 | 0 | x | x | x |
 | domain:s:value | 指定将用于登录远程计算机的用户帐户所在域的名称。 | 有效的域名，例如“CONTOSO” | 无默认值 | x | x | x |
 | drivestoredirect:s:value | 确定客户端计算机上将被重定向并在远程会话中可用的本地磁盘驱动器。 | - 未指定值：不重定向任何驱动器<br>- *：重定向所有磁盘驱动器，包括稍后连接的驱动器<br>- DynamicDrives：重定向稍后连接的所有驱动器<br>- 驱动器以及一个或多个驱动器的标签，例如“drivestoredirect:s:C:;E:;”：重定向指定的驱动器| 未指定值：不重定向任何驱动器 | x | x    | |

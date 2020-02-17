@@ -8,12 +8,12 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 864a15d7336abb56572ddc783ce41a35d6fc13bf
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a8521eae302ade84904e3ba09c001eac21fffd6a
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950411"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125148"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>为用户设置远程桌面 Web 客户端
 
@@ -170,10 +170,12 @@ ms.locfileid: "75950411"
 
 按照[如何发布远程桌面 Web 客户端](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client)下的说明操作（将步骤 4 和 5 替换为以下内容）。
 
-4. 从本地文件夹导入远程桌面 Web 客户端管理 PowerShell 模块：
-    ```PowerShell
-    Import-Module -Name "C:\WebClient\"
-    ```
+4. 可以使用两个选项来检索最新的 Web 客户端管理 PowerShell 模块：
+    - 导入远程桌面 Web 客户端管理 PowerShell 模块：
+      ```PowerShell
+      Import-Module -Name RDWebClientManagement
+      ```
+    - 将下载的 RDWebClientManagement 文件夹复制到 **$env:psmodulePath** 下列出的某个本地 PowerShell 模块文件夹，或将下载的文件所在文件夹的路径添加到 **$env:psmodulePath**。
 
 5. 从本地文件夹部署最新版本的远程桌面 Web 客户端（替换为相应的 zip 文件）：
     ```PowerShell

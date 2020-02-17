@@ -9,17 +9,17 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
-author: lizap
-manager: dongill
-ms.author: elizapo
-date: 08/27/2019
+author: Heidilohr
+manager: lizross
+ms.author: helohr
+date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8361d1171c2526e701a5418696761a8400c47ca3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1724f24a794003aaae0ac89ee892269eed045114
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949875"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77179351"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS 客户端入门
 
@@ -33,60 +33,13 @@ ms.locfileid: "75949875"
 > - 想知道 iOS 客户端的新版本吗？ 请查看 [iOS 上的远程桌面的新增功能](ios-whatsnew.md)
 > - iOS 客户端支持运行 iOS 6.x 及更高版本的设备。
 
-## <a name="get-the-remote-desktop-beta-client-and-start-using-it"></a>获取远程桌面 Beta 客户端并开始使用
-iOS Beta 客户端现已发布，可通过到 Windows 虚拟桌面资源的 Apple TestFlight 支持连接获取。
-
-### <a name="download-the-remote-desktop-ios-beta-client-from-apple-testflight"></a>从 Apple TestFlight 下载远程桌面 iOS Beta 客户端
-下面介绍如何在 iOS 设备上设置远程桌面 Beta 客户端：
-
-1. 在 iOS 设备上安装 [Apple TestFlight](https://apps.apple.com/us/app/testflight/id899247664) 应用。
-2. 在 iOS 设备上打开浏览器，导航到 [aka.ms/rdiosbeta](https://aka.ms/rdiosbeta)。
-3. 在“步骤 2 加入 Beta”标签下选择“开始测试”。  
-4. 重定向到 TestFlight 应用后，选择“接受”，然后选择“安装”以安装客户端。  
-
-### <a name="add-a-connection-to-a-pc"></a>添加到电脑的连接
-若要创建到电脑的远程连接，请执行以下操作：
-
-1. 在“连接中心”点击 +  ，然后点击“添加电脑”  。
-2. 在“电脑名称”中输入远程电脑的名称。  可以是 Windows 计算机名、Internet 域名或 IP 地址。 还可以向电脑名称追加端口信息（例如，MyDesktop:3389  或 10.0.0.1:3389  ）。
-3. 选择将要用来访问远程电脑的“用户帐户”。 
-   - 选择“每次都询问”，这样，当你每次连接到远程电脑时，客户端就会请求你提供凭据。 
-   - 选择“添加用户帐户”，保存一个频繁使用的帐户，这样就不需每次登录时都输入凭据。  按照[这些说明](#manage-your-user-accounts)管理用户帐户。
-4. 还可设置以下可选参数：
-   - 在“易记名称”中，可以为你要连接到的电脑输入一个易记的名称。 
-   - 可以通过“管理模式”连接到远程电脑上的管理会话。 
-   - 可以通过“切换鼠标按钮”来切换左右鼠标手势发送的命令。  适用于左手用户。
-   - “网关”是远程桌面网关，用于从外部网络连接到某个计算机。  有关详细信息，请与系统管理员联系。
-   - “声音”  用于选择远程会话用于音频的设备。 可以选择在本地设备、远程设备上播放声音或完全不播放。
-   - 可以通过“麦克风”启用麦克风重定向。  默认情况下，此设置处于禁用状态。
-   - 可以通过“相机”启用相机重定向。  默认情况下，此设置处于禁用状态。
-   - 可以通过“剪贴板”启用剪贴板重定向。  默认情况下，此设置处于启用状态。
-   - 可以通过“存储”启用本地存储重定向。  默认情况下，此设置处于禁用状态。
-5. 选择“保存”，  添加远程电脑连接。
-
-### <a name="add-remote-resources"></a>添加远程资源
-远程资源包括 RemoteApp 程序、基于会话的桌面，以及由管理员发布的虚拟桌面。iOS 客户端支持从“远程桌面服务”  和“Windows 虚拟桌面”  部署发布的资源。 若要添加远程资源，请执行以下操作：
-
-1. 在“连接中心”点击 +  ，然后点击“添加工作区”  。
-2. 输入“源 URL”。  该项可以是 URL 或电子邮件地址：
-   - 此 **URL** 是 RD Web 访问服务器的 URL，由管理员提供给你。如果从 Windows 虚拟桌面访问资源，可以使用 `https://rdweb.wvd.microsoft.com`。
-   - 如何打算使用“电子邮件”，请在此字段中输入你的电子邮件地址。  这将告知客户端搜索与电子邮件地址关联的 RD Web 访问服务器，前提是管理员已进行此配置。
-3. 点击“下一步”。 
-4. 在系统提示时提供你的登录信息。 这可能因部署而异，其中可能包括：
-   - **用户名**：有权访问资源的用户名。
-   - **密码**：与用户名关联的密码。
-   - **其他因素**：如果管理员进行了这样的身份验证配置，系统可能会提示你输入此类信息。
-5. 点击“保存”  。
-
-将在“连接中心”显示远程资源。
-
 ## <a name="get-the-remote-desktop-client-and-start-using-it"></a>获取远程桌面客户端并开始使用
 
 ### <a name="download-the-remote-desktop-client-from-the-ios-store"></a>从 iOS 应用商店下载远程桌面客户端
 
 按照以下步骤开始在 iOS 设备上使用远程桌面：
 
-1. 从 [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8) 下载 Microsoft 远程桌面客户端。
+1. 从 [iOS App Store](https://aka.ms/rdios) 或 [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8) 下载 Microsoft 远程桌面客户端。
 2. [设置电脑接受远程连接](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop)。
 3. 添加[远程桌面连接](#add-a-remote-desktop-connection)或[远程资源](#add-a-remote-resource)。 可以使用连接直接连接到 Windows 电脑和远程资源，以使用 RemoteApp 程序、基于会话的桌面或是使用 RemoteApp 和桌面连接在本地发布的虚拟桌面。 此功能通常在企业环境中可用。
 
@@ -143,7 +96,7 @@ iOS Beta 客户端现已发布，可通过到 Windows 虚拟桌面资源的 Appl
 
 1. 在“连接中心”，点击“设置”  ，然后点击“用户帐户”  。
 2. 选择要删除的帐户。
-3. 点击“删除”  。   
+3. 点击“删除”  。
 
 ## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>连接到 RD 网关以访问内部资产
 
@@ -158,6 +111,7 @@ iOS Beta 客户端现已发布，可通过到 Windows 虚拟桌面资源的 Appl
    - **用户名** - 要用于连接到的远程桌面网关的用户名和密码。 还可以选择“使用连接凭据”  以使用与用于远程桌面连接的凭据相同的用户名和密码。
 
 ## <a name="navigate-the-remote-desktop-session"></a>导航远程桌面会话
+
 启动远程桌面会话时，可使用工具来导航会话。
 
 ### <a name="start-a-remote-desktop-connection"></a>启动远程桌面连接
@@ -178,6 +132,7 @@ iOS Beta 客户端现已发布，可通过到 Windows 虚拟桌面资源的 Appl
 - **移动连接栏**：点击并按住连接栏，然后拖放到屏幕顶部的新位置。
 
 ### <a name="session-selection"></a>会话选择
+
 可以同时在不同的电脑上打开多个连接。 点击连接栏以在屏幕左侧显示会话选择栏。 通过会话选择栏可以查看打开的连接并在它们之间切换。
 
 - 在打开的远程资源会话中的应用之间切换。
@@ -215,9 +170,7 @@ iOS Beta 客户端现已发布，可通过到 Windows 虚拟桌面资源的 Appl
 
 ## <a name="supported-input-devices"></a>支持的输入设备
 
-[远程桌面 iOS beta 客户端](https://aka.ms/rdiosbeta)支持 Swiftpoint GT 和 ProPoint 物理鼠标。 Swiftpoint 为 iOS beta 客户端用户提供 GT 的[专享折扣](https://www.swiftpoint.com/microsoft/)。
-
-iOS 客户端当前仅支持 Swiftpoint 鼠标。 有关将来支持其他设备的新闻，请参阅 [iOS 客户端的新增功能](ios-whatsnew.md)页和 [iOS 应用商店](https://aka.ms/rdios)。
+iOS 客户端当前仅支持 Swiftpoint GT 和 ProPoint 鼠标。 有关设备支持的详细信息，请参阅 [iOS 客户端的新增功能](ios-whatsnew.md)和 [iOS App Store](https://aka.ms/rdios)。
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>在远程会话中使用键盘
 

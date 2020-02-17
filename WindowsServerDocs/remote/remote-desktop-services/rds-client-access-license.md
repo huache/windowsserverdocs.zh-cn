@@ -11,14 +11,14 @@ ms.topic: article
 ms.assetid: 5be6546b-df16-4475-bcba-aa75aabef3e3
 author: lizap
 ms.author: elizapo
-ms.date: 09/20/2018
+ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: 252ee776946ba0c387d7a6cdf3dc97ffdc55a591
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 391f9e7569abd3c3496bfcc9b52d3ddf8abdebbb
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387585"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77173430"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>使用客户端访问许可证 (CAL) 许可 RDS 部署
 
@@ -33,12 +33,12 @@ ms.locfileid: "71387585"
 使用以下信息来了解客户端访问授权在远程桌面服务中的工作方式，以及部署和管理你的许可证：
 
 - [使用客户端访问许可证 (CAL) 许可 RDS 部署](#license-your-rds-deployment-with-client-access-licenses-cals)
-  - [了解 CAL 模型](#understanding-the-cals-model)
-  - [有关 CAL 版本的注释](#note-about-cal-versions)
+  - [了解 RDS CAL 模型](#understanding-the-rds-cal-model)
+  - [RDS CAL 版本兼容性](#rds-cal-version-compatibility)
 
-## <a name="understanding-the-cals-model"></a>了解 CAL 模型
+## <a name="understanding-the-rds-cal-model"></a>了解 RDS CAL 模型
 
-有两种类型的 CAL：
+有两种类型的 RDS CAL：
 
 - RDS - 每设备 CAL
 - RDS - 每用户 CAL
@@ -47,33 +47,43 @@ ms.locfileid: "71387585"
 
 | 每设备                                                     | 每用户                                                                         |
 |----------------------------------------------------------------|----------------------------------------------------------------------------------|
-| CAL 以物理方式分配给每个设备。                   | CAL 分配给 Active Directory 中的用户。                                 |
-| CAL 由许可证服务器跟踪。                        | CAL 由许可证服务器跟踪。                                          |
-| 无论 Active Directory 成员身份为何，都可以跟踪 CAL。 | 不能在工作组中跟踪 CAL。                                       |
-| 最多可以撤消 20% 的 CAL。                              | 无法撤消任何 CAL。                                                      |
-| 临时 CAL 的有效期为 52–89 天。                       | 临时 CAL 不可用。                                                |
-| 不能过度分配 CAL。                                  | 可以过度分配 CAL（违反远程桌面授权协议）。 |
+| RDS CAL 以物理方式分配给每个设备。                   | RDS CAL 分配给 Active Directory 中的用户。                                 |
+| RDS CAL 由许可证服务器跟踪。                        | RDS CAL 由许可证服务器跟踪。                                          |
+| 无论 Active Directory 成员身份为何，都可以跟踪 RDS CAL。 | 不能在工作组中跟踪 RDS CAL。                                       |
+| 最多可以撤消 20% 的 RDS CAL。                              | 无法撤消任何 RDS CAL。                                                      |
+| 临时 RDS CAL 的有效期为 52–89 天。                       | 临时 RDS CAL 不可用。                                                |
+| 不能过度分配 RDS CAL。                                  | 可以过度分配 RDS CAL（这违反远程桌面许可协议）。 |
 
-如果使用每设备模型，则在设备首次连接到 RD 会话主机时，会颁发临时许可证。 该设备第二次连接时，只要激活许可证服务器，并且存在可用 CAL，许可证服务器就会颁发永久的 RDS - 每设备 CAL。
+如果使用每设备模型，则在设备首次连接到 RD 会话主机时，会颁发临时许可证。 该设备第二次连接时，只要激活许可证服务器，并且存在可用 RDS CAL，许可证服务器就会按设备 CAL 颁发永久的 RDS。
 
-如果使用每用户模型，则不会强制执行授权，并向每个用户授予从任意数量的设备连接到 RD 会话主机的许可证。 许可证服务器颁发来自可用的 CAL 池或过度使用的 CAL 池的许可证。 你必须负责确保你的所有用户具有有效的许可证且没有过度使用的 CAL；否则，你违反了远程桌面服务许可条款。
+如果使用每用户模型，则不会强制执行授权，并向每个用户授予从任意数量的设备连接到 RD 会话主机的许可证。 许可证服务器颁发来自可用的 RDS CAL 池或过度使用的 RDS CAL 池的许可证。 你必须负责确保你的所有用户具有有效的许可证且没有过度使用的 CAL；否则，你违反了远程桌面服务许可条款。
 
-若要确保遵守远程桌面服务许可条款，请跟踪组织中使用的 RDS - 每用户 CAL 数，并确保有足够的每用户 CAL 安装在所有用户的许可证服务器上。
+若要确保遵守远程桌面服务许可条款，请跟踪组织中使用的每用户 CAL 的 RDS 数，确保每用户 CAL 有足够的 RDS 安装在所有用户的许可证服务器上。
 
 可以使用远程桌面授权管理器跟踪并生成有关 RDS - 每用户 CAL 的报告。
 
-## <a name="note-about-cal-versions"></a>有关 CAL 版本的注释
+## <a name="rds-cal-version-compatibility"></a>RDS CAL 版本兼容性
 
-由用户或设备使用的 CAL 必须对应于用户或设备连接到的 Windows Server 的版本。 不能使用较旧的 CAL 访问更高版本的 Windows Server，但可以使用较新的 CAL 访问早期版本的 Windows Server。
+用户或设备的 RDS CAL 必须兼容用户或设备连接到的 Windows Server 的版本。 不能使用较低版本的 RDS CAL 来访问较高版本的 Windows Server，但可以使用较高版本的 RDS CAL 来访问较低版本的 Windows Server。 例如，若要连接到 Windows Server 2016 RD 会话主机，需要使用 RDS 2016 CAL 或更高版本，而若要连接到 Windows Server 2012 R2 RD 会话主机，则需要使用 RDS 2012 CAL 或更高版本。
 
-下表显示了在 RD 会话主机和 RD 虚拟化主机上兼容的 CAL。
+下表显示了哪些 RDS CAL 和 RD 会话主机版本彼此兼容。
 
-|                  |2008 R2 及更早的 CAL|2012 CAL|2016 CAL|2019 CAL|
+|                  | RDS 2008 R2 及更低版本的 CAL | RDS 2012 CAL | RDS 2016 CAL | RDS 2019 CAL |
 |---------------------------------|--------|--------|--------|--------|
-| **2008、2008 R2 许可证服务器**| 是    | 否     | 否     | 否     |
-| **2012 许可证服务器**         | 是    | 是    | 否     | 否     |
-| **2012 R2 许可证服务器**      | 是    | 是    | 否     | 否     |
-| **2016 许可证服务器**         | 是    | 是    | 是    | 否     |
-| **2019 许可证服务器**         | 是    | 是    | 是    | 是    |
+| **2008、2008 R2 会话主机** | 是    | 是    | 是    | 是     |
+| **2012 会话主机**         | 否     | 是    | 是    | 是    |
+| **2012 R2 会话主机**      | 否     | 是    | 是    | 是    |
+| **2016 会话主机**         | 否     | 否     | 是    | 是    |
+| **2019 会话主机**         | 否     | 否     | 否     | 是    |
 
-任何 RDS 许可证服务器都可以托管来自所有以前版本的远程桌面服务和当前版本的远程桌面服务的许可证。 例如，Windows Server 2016 RDS 许可证服务器可以托管来自所有以前版本的 RDS 的许可证，而 Windows Server 2012 R2 RDS 许可证服务器最多只能托管来自 Windows Server 2012 R2 的许可证。
+必须在兼容的 RD 许可证服务器上安装 RDS CAL。 任何 RDS 许可证服务器都可以托管来自所有以前版本的远程桌面服务和当前版本的远程桌面服务的许可证。 例如，Windows Server 2016 RDS 许可证服务器可以托管来自所有以前版本的 RDS 的许可证，而 Windows Server 2012 R2 RDS 许可证服务器最多只能托管来自 Windows Server 2012 R2 的许可证。
+
+下表显示了哪些 RDS CAL 和许可证服务器版本彼此兼容。
+
+|                  | RDS 2008 R2 及更低版本的 CAL | RDS 2012 CAL | RDS 2016 CAL | RDS 2019 CAL |
+|---------------------------------|--------|--------|--------|--------|
+| **2008、2008 R2 许可证服务器** | 是    | 否   | 否   | 否    |
+| **2012 许可证服务器**         | 是     | 是    | 否   | 否    |
+| **2012 R2 许可证服务器**      | 是     | 是    | 否   | 否    |
+| **2016 许可证服务器**         | 是     | 是    | 是   | 否    |
+| **2019 许可证服务器**         | 是     | 是    | 是  | 是   |
