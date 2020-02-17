@@ -1,7 +1,7 @@
 ---
 ms.assetid: ''
-title: 支持高精度时间边界
-description: 本文介绍 Windows 时间（W32Time）服务在需要高度准确和稳定系统时间的环境中的支持边界。
+title: 高精度时间的支持边界
+description: 本文介绍用于需要高度准确和稳定系统时间的环境中的 Windows 时间 (W32Time) 服务的支持边界。
 author: shortpatti
 ms.author: dacuo
 manager: dougkim
@@ -11,89 +11,89 @@ ms.prod: windows-server
 ms.technology: networking
 ms.openlocfilehash: 212b9c79bc2e43e966180b928c865a9053332c3f
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71405261"
 ---
-# <a name="support-boundary-for-high-accuracy-time"></a>支持高精度时间边界
+# <a name="support-boundary-for-high-accuracy-time"></a>高精度时间的支持边界
 
->适用于： Windows Server 2016、Windows 10 版本1607或更高版本
+>适用于：Windows Server 2016 和 Windows 10 版本 1607 或更高版本
 
-本文介绍 Windows 时间服务（W32Time）在需要高度准确和稳定系统时间的环境中的支持边界。
+本文介绍 Windows 时间服务 (W32Time) 在需要高度准确和稳定系统时间的环境中的支持边界。
 
-## <a name="high-accuracy-support-for-windows-81-and-2012-r2-or-prior"></a>Windows 8.1 和 2012 R2 （或更高）的高准确性支持
+## <a name="high-accuracy-support-for-windows-81-and-2012-r2-or-prior"></a>面向 Windows 8.1 和 2012 R2（或更早版本）的高精度支持
 
-Windows 的早期版本（Windows 10 1607 或 Windows Server 2016 1607 之前）无法保证非常准确的时间。 这些系统上的 Windows 时间服务：
+Windows 的早期版本（Windows 10 1607 或 Windows Server 2016 1607 之前的版本）无法保证时间的高度精确。 这些系统上的 Windows 时间服务：
 
--   提供了满足 Kerberos 版本5身份验证要求所需的时间准确性
+-   提供了满足 Kerberos 版本 5 身份验证要求所需的时间精度
 
--   为加入到公共 Active Directory 林的 Windows 客户端和服务器提供了松散准确的时间
+-   为加入到公共 Active Directory 林的 Windows 客户端和服务器提供了大致准确的时间
 
-在这些操作系统上的 Windows 时间服务的设计规范之外，更严格的准确性要求不受支持。
+在这些操作系统上，更严格的精度要求超出了 Windows 时间服务的设计规范，因此不受支持。
 
 ## <a name="windows-10-and-windows-server-2016"></a>Windows 10 和 Windows Server 2016
 
-Windows 10 和 Windows Server 2016 中的时间准确性经过了大幅改进，同时保持与早期 Windows 版本的完全向后 NTP 兼容性。 在正确的操作条件下，运行 Windows 10 或 Windows Server 2016 及更高版本的系统可以提供1秒、50ms （毫秒）或1ms 准确性。
+Windows 10 和 Windows Server 2016 中的时间精度已显著改善，同时保持早期 Windows 版本的完全后向 NTP 兼容性。 在正确的操作条件下，运行 Windows 10 或 Windows Server 2016 及更高版本的系统可以提供 1 秒、50 ms（毫秒）或 1 ms 的精度。
 
 >[!IMPORTANT]
 >**高度准确的时间源**<br>
->拓扑中的生成时间准确性非常依赖于使用准确的稳定根（层次1）时间源。 第三方供应商销售的是基于 Windows 和非 Windows 的高准确性、Windows 兼容的 NTP 时间源硬件。 请与供应商核实其产品的准确性。
+>拓扑中的生成时间精度在很大程度上取决于使用准确、稳定的根（层次 1）时间源。 有第三方供应商出售基于 Windows 和非基于 Windows 的高精度且与 Windows 兼容的 NTP 时间源硬件。 请向供应商核实其产品的时间精度。
 
 >[!IMPORTANT]
->**时间准确性**<br>
->时间准确性需要从高度准确的权威时间源到最终设备的准确时间的端到端分发。 引入网络不对称的任何内容都将对准确性产生负面影响，例如，物理网络设备或目标系统上的高 CPU 负载。
+>**时间精度**<br>
+>时间精度需要准确时间从高度准确的权威时间源到终端设备进行端到端分布。 引入网络不对称性的任何因素都将对精度产生负面影响，例如物理网络设备或目标系统上的高 CPU 负载。
 
-## <a name="high-accuracy-requirements"></a>高准确度要求
+## <a name="high-accuracy-requirements"></a>高精度要求
 
-本文档的其余部分概述了支持相应的高准确性目标所必须满足的环境要求。
+本文档的其余部分概述了支持相应的高精度目标所必须满足的环境要求。
 
-### <a name="target-accuracy-1-second-1s"></a>目标准确性：1秒（1）
+### <a name="target-accuracy-1-second-1s"></a>目标精度：1 秒 (1 s)
 
-与高度精确的时间源相比，在特定目标计算机上实现1的精度：
+若要相较于高度精确的时间源使特定目标计算机的达到 1 s 精度：
 
 -   目标系统必须运行 Windows 10、Windows Server 2016。
 
--   目标系统必须从时间服务器的 NTP 层次结构中同步时间，culminating 在高度准确、Windows 兼容的 NTP 时间源中。
+-   目标系统必须从时间服务器的 NTP 层次结构同步时间，最终形成高度精确的、与 Windows 兼容的 NTP 时间源。
 
--   上述 NTP 层次结构中的所有 Windows 操作系统都必须配置为 "[配置系统以获得高准确性](configuring-systems-for-high-accuracy.md)" 文档中所述的配置。
+-   上述 NTP 层次结构中的所有 Windows 操作系统都必须按照[配置系统以实现高精度](configuring-systems-for-high-accuracy.md)文档中所述进行配置。
 
--   目标和源之间的累积单向网络延迟不能超过100ms。 通过在层次结构中的 NTP 客户端-服务器节点对之间添加单个单向延迟，从目标开始，到源结束。 有关详细信息，请查看高准确性时间同步文档。
+-   目标和源之间的累积单向网络延迟不能超过 100 ms。 累计网络延迟的计算方法为：将层次结构（从目标开始，到源结束）中的 NTP 客户端 - 服务器节点对之间的各个单向延迟进行相加。 有关详细信息，请查看高精度时间同步文档。
 
-### <a name="target-accuracy-50-milliseconds"></a>目标准确性：50毫秒
+### <a name="target-accuracy-50-milliseconds"></a>目标精度：50 毫秒
 
-"目标准确性" 一节中列出的所有要求（适用于**1 秒**），但本节中概述了更严格的控制。
+“目标精度：1 秒”部分中概述的所有要求均适用，  但此部分中概述的更严格的控制部分除外。
 
-实现特定目标系统的50ms 准确性的其他要求包括：
+特定目标系统达到 50 ms 精度的其他要求包括：
 
--   目标计算机的时间源之间的网络延迟必须比5ms 更好。
+-   目标计算机的时间源之间的网络延迟必须优于 5 ms。
 
--   对于高度准确的时间源，目标系统不得超过层次5
-
-    >[!Note]
-    >从命令行运行 "w32tm/query/status" 查看层次。
-
--   目标系统必须在高度准确的时间源内6个或更少的网络跃点内
-
--   所有 stratums 上的一天平均 CPU 使用率不得超过90%
-
--   对于虚拟化系统，主机的一天平均 CPU 使用率不得超过90%
-
-### <a name="target-accuracy-1-millisecond"></a>目标准确性：1毫秒
-
-目标准确性部分中概述的所有要求 **：1秒**和**目标准确性：50毫秒**适用，只不过本节中概述了更严格的控制。
-
-为特定目标系统实现1个 ms 准确性的其他要求包括：
-
--   目标计算机的时间源之间的网络延迟必须大于 0.1 ms
-
--   对于高度准确的时间源，目标系统不得超过层次5
+-   目标系统距高度准确的时间源不得超过层次 5
 
     >[!Note]
-    >从命令行运行 "w32tm/query/status" 查看层次
+    >从命令行运行“w32tm /query /status”以查看层次。
 
--   目标系统必须在高度准确的时间源内4个或更少的网络跃点内
+-   目标系统必须在距高度准确的时间源的 6 个或更少网络跃点范围内
 
--   每个层次上的一天平均 CPU 使用率不得超过80%
+-   所有层次的一天平均 CPU 使用率不得超过 90%
 
--   对于虚拟化系统，主机的一天平均 CPU 使用率不得超过80%
+-   对于虚拟化系统，主机的一天平均 CPU 使用率不得超过 90%
+
+### <a name="target-accuracy-1-millisecond"></a>目标精度：1 毫秒
+
+“目标精度：1 秒”和“目标精度：50 毫秒”部分  中概述的所有要求均适用，  但本部分中概述的更严格的控制部分除外。
+
+特定目标系统实现 1 ms 精度的其他要求包括：
+
+-   目标计算机的时间源之间的网络延迟必须优于 0.1 ms
+
+-   目标系统距高度准确的时间源不得超过层次 5
+
+    >[!Note]
+    >从命令行运行 `w32tm /query /status' 查看层次
+
+-   目标系统必须在距高度准确的时间源的 4 个或更少网络跃点范围内
+
+-   每个层次的一天平均 CPU 使用率不得超过 80%
+
+-   对于虚拟化系统，主机的一天平均 CPU 使用率不得超过 80%

@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 64c0daa8ecc2d6b196d4305e3246dadeebf7075a
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f4568e1781dbe385d8abe8a96f07841391506738
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948344"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822160"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>发行说明：Windows Server 2016 中的重要问题
 
@@ -29,7 +29,7 @@ ms.locfileid: "75948344"
 
 ## <a name="express-updates-available-starting-in-november-2018-new"></a>从 2018 年 11 月开始提供的快速更新（新）
 
-从 2018 年 11 月“星期二更新”更新开始，Windows 会再次发布适用于 Windows Server 2016 的[快速更新](express-updates.md)。 如果使用 WSUS 和 System Center Configuration Manager (SCCM)，则将再一次看到两个适用于 Windows Server 2016 更新的程序包：完整更新和快速更新。 如果要将快速更新用于服务器环境，则需要确认服务器自 2017 年 11 月 (KB# 4048953) 以来获取了完整更新，以确保快速更新正确安装。 如果在自 2017 年 11B 更新 (KB# 4048953) 以来未更新的服务器上尝试快速更新，则会看到以无限循环占用带宽和 CPU 资源的重复失败。 如果遇到这种情况，请停止推送快速更新，改为推送新的完整更新以停止失败循环。
+从 2018 年 11 月“星期二更新”更新开始，Windows 会再次发布适用于 Windows Server 2016 的[快速更新](express-updates.md)。 如果你使用 WSUS 和 Configuration Manager，将再一次看到两个适用于 Windows Server 2016 更新的程序包：完整更新和快速更新。 如果要将快速更新用于服务器环境，则需要确认服务器自 2017 年 11 月 (KB# 4048953) 以来获取了完整更新，以确保快速更新正确安装。 如果在自 2017 年 11B 更新 (KB# 4048953) 以来未更新的服务器上尝试快速更新，则会看到以无限循环占用带宽和 CPU 资源的重复失败。 如果遇到这种情况，请停止推送快速更新，改为推送新的完整更新以停止失败循环。
 
 ## <a name="server-core-installation-option"></a>服务器核心安装选项
 

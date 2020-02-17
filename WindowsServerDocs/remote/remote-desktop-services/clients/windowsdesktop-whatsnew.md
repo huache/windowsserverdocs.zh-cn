@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/14/2020
+ms.date: 01/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f1f4d6b32b8b7d717d2d424e0a60c5edc96f4cac
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: b2d5215c7089ce1aadbeae68890dca1a0ae1c294
+ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953066"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76889441"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -30,14 +30,14 @@ ms.locfileid: "75953066"
 
 |用户组 |版本  |
 |-----------|---------|
-|公用     |1.2.535  |
-|Insider    |1.2.594  |
+|公用     |1.2.605  |
+|Insider    |1.2.605  |
 
-## <a name="updates-for-version-12594"></a>版本 1.2.594 的更新
+## <a name="updates-for-version-12605"></a>针对版本 1.2.605 的更新
 
-*发布日期：2020/01/14*
+*发布日期：2020/01/29*
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cC)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cI)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oh9C)
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
 - 现在可以选择要用于桌面连接的显示器。 若要更改此设置，请右键单击桌面连接的图标，然后选择“设置”  。
 - 修复了连接设置未显示正确的可用缩放系数的问题。

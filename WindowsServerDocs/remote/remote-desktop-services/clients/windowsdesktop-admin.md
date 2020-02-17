@@ -13,12 +13,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2195c3bafaa01a1b1c16c17889d5e04d7213a5b6
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: c0a9f11aea9e24cc1a2bab275aae8dc0a81e9cba
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919705"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822358"
 ---
 # <a name="windows-desktop-client-for-admins"></a>适用于管理员的 Windows 桌面客户端
 
@@ -28,7 +28,7 @@ ms.locfileid: "75919705"
 
 ## <a name="installation-options"></a>安装选项
 
-虽然你的用户可以在下载客户端后直接进行安装，但如果你要将客户端部署到多个设备，则可能还需要通过其他方式进行部署。 使用组策略或 System Center Configuration Manager 进行部署时，可以通过一个命令行以无提示方式运行安装程序。 运行以下命令即可按设备或按用户部署客户端。
+虽然你的用户可以在下载客户端后直接进行安装，但如果你要将客户端部署到多个设备，则可能还需要通过其他方式进行部署。 使用组策略或 Microsoft Endpoint Configuration Manager 进行部署时，可以通过一个命令行以无提示方式运行安装程序。 运行以下命令即可按设备或按用户部署客户端。
 
 ### <a name="per-device-installation"></a>按设备安装
 

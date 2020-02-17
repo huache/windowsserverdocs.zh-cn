@@ -1,6 +1,6 @@
 ---
 title: 适用于 IT 管理员的 Windows Server 技术内容 - Windows Server
-description: 获取当前版本和以前版本的 Windows Server 技术文章以及 IT 专业人员的产品评估。
+description: 获取当前版本和以前版本的 Windows Server 技术文章以及适用于 IT 专业人员的产品评估。
 ms.custom: na
 ms.prod: windows-server
 ms.reviewer: na
@@ -16,7 +16,7 @@ manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 5430dfa2facfb7412077931637f5e95e35f0d934
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71392472"
@@ -25,12 +25,12 @@ ms.locfileid: "71392472"
 
 Windows Server 是一个平台，用于构建连接的应用程序、网络和 Web 服务的基础结构，包括从工作组到数据中心。
 
-使用以下链接可查看不同版本的 Windows Server 的 IT 专业人员技术内容。
+使用以下链接可查看适用于 IT 专业人员的不同版本的 Windows Server 的技术内容。
 
 > [!IMPORTANT]
-> 你的电脑上是否运行的是 Windows？ Windows 10、Windows 8 还是 Windows 8.1？ Windows 7？ 你有问题吗？ 转到 [Microsoft 支持](https://support.microsoft.com) - 只需在搜索栏中键入问题即可。 它们提供有关 Windows、Office 和 Skype 的信息，应有尽有。 
+> 你的电脑上是否运行的是 Windows？ Windows 10、Windows 8 还是 8.1？ Windows 7？ 你是否有任何疑问？ 转到 [Microsoft 支持](https://support.microsoft.com) - 只需在搜索栏中键入问题即可。 该处可提供有关 Windows、Office 和 Skype 的信息，应有尽有。 
 > 
-> 以下信息*仅*与 Windows **Server** 相关。
+> 以下信息仅与 Windows Server 相关   。
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -56,7 +56,7 @@ Windows Server 是一个平台，用于构建连接的应用程序、网络和 W
 
 ## <a name="product-evaluations"></a>产品评估
 
-[下载 Windows Server 2016 评估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
+[下载 Windows Server 2016 评估](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
 
 [下载 Windows Server 2012 R2 试用版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
 
@@ -64,5 +64,5 @@ Windows Server 是一个平台，用于构建连接的应用程序、网络和 W
 [Windows Server 2016 产品信息](https://www.microsoft.com/cloud-platform/windows-server) 
 
 > [!TIP]
-> 你遇到了问题？ 即刻体验 [Microsoft 支持](https://support.microsoft.com) - 只需在搜索栏中键入问题即可。 你可以获取有关 Windows、Office、Skype 方面的帮助，应有尽有。 
+> 你是否有任何疑问？ 即刻体验 [Microsoft 支持](https://support.microsoft.com) - 只需在搜索栏中键入问题即可。 该处可提供有关 Windows、Office、Skype 的帮助，应有尽有。 
 

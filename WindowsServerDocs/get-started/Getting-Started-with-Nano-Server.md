@@ -12,12 +12,12 @@ ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: f94e2c083f0bc05231543c15120818481afbabb0
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 09f031c19c8f6d1105d47b9f22d52db30e9c57ef
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947859"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822150"
 ---
 # <a name="install-nano-server"></a>安装 Nano Server
 
@@ -50,7 +50,7 @@ Nano Server 非常适合于多种方案：
 - 不支持组策略。 但是，可以使用[所需状态配置](https://msdn.microsoft.com/powershell/dsc/nanoDsc)大规模应用设置。
 - 不能将 Nano Server 配置为使用代理服务器访问 Internet。
 - 不支持 NIC 组合（特别是负载平衡和故障转移或 LBFO）。 但支持开关嵌入组合 (SET)。
-- 不支持 System Center Configuration Manager 和 System Center Data Protection Manager。
+- 不支持 Microsoft Endpoint Configuration Manager 和 System Center Data Protection Manager。
 - 不支持最佳做法分析器 (BPA) cmdlet 以及 BPA 与服务器管理器的集成。
 - Nano Server 不支持虚拟主机总线适配器 (HBA)。
 - Nano Server 不需要使用产品密钥激活。 Nano Server 充当 Hyper-V 主机时不支持[自动虚拟机激活](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx) (AVMA)。 通过将[密钥管理服务](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) (KMS) 与通用批量许可证密钥配合使用，或者使用[基于 Active Directory 的激活](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx)，可以激活 Nano Server 主机上运行的虚拟机。

@@ -10,34 +10,34 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 86fbe66978f7c09a332bba16a27a13fa029cb5a6
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71401920"
 ---
-# <a name="network-shell-netsh-example-batch-file"></a>网络 Shell \(Netsh\) 示例批处理文件
+# <a name="network-shell-netsh-example-batch-file"></a>Network Shell \(Netsh\) 示例批处理文件
 
-适用于：Windows Server 2016
+适用于：Windows Server 2016
 
-本主题介绍如何使用 Windows Server 2016 中的 Netsh 创建执行多个任务的批处理文件。 在此示例批处理文件中，使用了**netsh wins** context。
+本主题介绍如何使用 Windows Server 2016 中的 Netsh 创建执行多个任务的批处理文件。 在此示例批处理文件中，使用了 netsh wins 上下文  。
 
 ## <a name="example-batch-file-overview"></a>示例批处理文件概述
 
-你可以使用适用于 Windows Internet 名称服务的 Netsh 命令 \(批处理文件中的 WINS\) 和其他脚本来自动执行任务。 以下批处理文件示例演示如何使用适用于 WINS 的 Netsh 命令来执行各种相关任务。
+可以在批处理文件和其他脚本中将 Netsh 命令用于 Windows Internet 名称服务 \(WINS\)，以自动执行任务。 以下批处理文件示例演示如何将 Netsh 命令用于 WINS，以执行各种相关任务。
 
-在此示例批处理文件中，WINS\-是 IP 地址为192.168.125.30 的 WINS 服务器，而 WINS\-B 是 IP 地址为192.168.0.189 的 WINS 服务器。
+在此示例批处理文件中，WINS\-A 是 IP 地址为 192.168.125.30 的 WINS 服务器，而 WINS\-B 是 IP 地址为 192.168.0.189 的 WINS 服务器。
 
-示例批处理文件完成以下任务。
+示例批处理文件会完成以下任务。
 
-- 向 WINS 添加具有 IP 地址192.168.0.205、MY\_记录 \[04h\]）的动态名称记录\-
-- 将 WINS\-B 设置为 WINS\-的推送/请求复制伙伴
-- 连接到 WINS\-B，然后将 WINS\-设置为 WINS\-B 的推送/请求复制伙伴
+- 向 WINS\-A 添加 IP 地址为 192.168.0.205 的动态名称记录 (MY\_RECORD \[04h\])
+- 将 WINS\-B 设置为 WINS\-A 的推送/请求复制伙伴
+- 连接到 WINS\-B，然后将 WINS\-A 设置为 WINS\-B 的推送/请求复制伙伴
 - 启动从 WINS\-A 到 WINS\-B 的推送复制
-- 连接到 WINS\-B 以验证是否已成功复制新记录（我的\_记录）
+- 连接到 WINS\-B 以验证是否成功复制了新记录 MY\_RECORD
 
 ## <a name="netsh-example-batch-file"></a>Netsh 示例批处理文件
 
-在下面的示例批处理文件中，包含注释的行的前面有 "rem，" 注释。 Netsh 忽略注释。
+在下面的示例批处理文件中，包含注释的行加有“rem,”（表示注释）前缀。 Netsh 会忽略注释。
 
     rem: Begin example batch file.
     
@@ -71,12 +71,12 @@ ms.locfileid: "71401920"
 
 ## <a name="netsh-wins-commands-used-in-the-example-batch-file"></a>示例批处理文件中使用的 Netsh WINS 命令
 
-以下部分列出了此示例过程中使用的**netsh wins**命令。
+以下部分列出了此示例过程中使用的 netsh wins 命令  。
 
-- **服务器**。 将当前 WINS 命令\-行上下文转移到由其名称或 IP 地址指定的服务器。
-- **添加名称**。 在 WINS 服务器上注册名称。
-- **添加合作伙伴**。 在 WINS 服务器上添加复制伙伴。
-- **init 推送**。 启动推送触发器并发送到 WINS 服务器。
-- **显示名称**。 显示 WINS 服务器数据库中特定记录的详细信息。  
+- server  . 将当前 WINS 命令行上下文转移到由其名称或 IP 地址指定的服务器。
+- add name  . 在 WINS 服务器上注册名称。
+- add partner  . 在 WINS 服务器上添加复制伙伴。
+- init push  . 启动推送触发器并将其发送到 WINS 服务器。
+- show name  . 显示 WINS 服务器数据库中特定记录的详细信息。  
 
-有关详细信息，请参阅[Network Shell （Netsh）](netsh.md)。
+有关详细信息，请参阅 [Network Shell (Netsh)](netsh.md)。
