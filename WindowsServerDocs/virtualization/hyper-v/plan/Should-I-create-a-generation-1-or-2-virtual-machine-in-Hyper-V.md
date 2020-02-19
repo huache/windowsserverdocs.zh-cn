@@ -11,19 +11,19 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: bd0b50534096bc06edb41390ef2c4ec3554d8406
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fce9b45f538b0d506b621b888d413c99590b1362
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364076"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465551"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>是否应在 Hyper-v 中创建第1代或第2代虚拟机？
 
 >适用于： Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 > [!NOTE]
-> 如果你计划将 Windows 虚拟机（VM）从本地上传到 Microsoft Azure，则使用 VHD 文件格式的第1代和第2代 Vm，并支持固定大小的磁盘。 请参阅[azure 上的第2代 vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) ，了解有关 Azure 支持的第2代功能的详细信息。 有关上传 Windows VHD 或 VHDX 的详细信息，请参阅[准备要上传到 Azure 的 WINDOWS vhd 或 vhdx](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
+> 如果你计划将 Windows 虚拟机（Vm）从本地上传到 Microsoft Azure，则使用 VHD 文件格式的第1代和第2代 Vm，并支持固定大小的磁盘。 请参阅[azure 上的第2代 vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) ，了解有关 Azure 支持的第2代功能的详细信息。 有关上传 Windows VHD 或 VHDX 的详细信息，请参阅[准备要上传到 Azure 的 WINDOWS vhd 或 vhdx](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
 
 创建第1代或第2代虚拟机的选择取决于要安装的来宾操作系统以及要用于部署虚拟机的启动方法。 建议创建第2代虚拟机，以便充分利用安全启动等功能，除非满足以下任一陈述：  
 
@@ -68,7 +68,7 @@ ms.locfileid: "71364076"
 |Windows 10|&#10004;|&#10004;|  
 |Windows 8.1|&#10004;|&#10004;|  
 |Windows 8|&#10004;|&#10004;|  
-|Windows 7|&#10004;| &#10006;|
+|Windows 7|&#10004;| &#10006;|
 
 下表显示了可用作第1代和第2代虚拟机的来宾操作系统的 Windows 32 位版本。
 
@@ -77,7 +77,7 @@ ms.locfileid: "71364076"
 |Windows 10|&#10004;| &#10006;|  
 |Windows 8.1|&#10004;| &#10006;|  
 |Windows 8|&#10004;| &#10006;|  
-|Windows 7|&#10004;| &#10006;|  
+|Windows 7|&#10004;| &#10006;|  
 
 ### <a name="centos-and-red-hat-enterprise-linux-guest-operating-system-support"></a>CentOS 和 Red Hat Enterprise Linux 来宾操作系统支持
 
@@ -189,16 +189,16 @@ ms.locfileid: "71364076"
 |IDE CD-ROM|虚拟 SCSI CD-ROM|每个 SCSI 控制器最多支持 64 个 SCSI DVD 设备。|  
 |传统 BIOS|UEFI 固件|安全启动|  
 |旧版网络适配器|合成网络适配器|使用 IPv4 和 IPv6 的网络启动|  
-|软盘控制器和 DMA 控制器|不支持软盘控制器|N/A|  
+|软盘控制器和 DMA 控制器|不支持软盘控制器|不可用|  
 |适用于 COM 端口的通用异步收发器 (UART)|用于调试的可选 UART|更快且更可靠|  
 |i8042 键盘控制器|基于软件的输入|使用较少的资源，因为没有任何模拟。 还减少来自来宾操作系统的攻击面。|  
 |PS/2 键盘|基于软件的键盘|使用较少的资源，因为没有任何模拟。 还减少来自来宾操作系统的攻击面。|  
 |PS/2 鼠标|基于软件的鼠标|使用较少的资源，因为没有任何模拟。 还减少来自来宾操作系统的攻击面。|  
 |S3 视频|基于软件的视频|使用较少的资源，因为没有任何模拟。 还减少来自来宾操作系统的攻击面。|  
-|PCI 总线|不再需要|N/A|  
-|可编程中断控制器 (PIC)|不再需要|N/A|  
-|可编程间隔计时器 (PIT)|不再需要|N/A|  
-|超级 I/O 设备|不再需要|N/A|  
+|PCI 总线|不再需要|不可用|  
+|可编程中断控制器 (PIC)|不再需要|不可用|  
+|可编程间隔计时器 (PIT)|不再需要|不可用|  
+|超级 I/O 设备|不再需要|不可用|  
 
 ## <a name="more-about-generation-2-virtual-machines"></a>有关第2代虚拟机的详细信息
 

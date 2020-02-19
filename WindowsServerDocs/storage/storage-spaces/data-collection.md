@@ -10,24 +10,24 @@ ms.topic: article
 author: adagashe
 ms.date: 10/24/2018
 ms.localizationpriority: ''
-ms.openlocfilehash: 67f35e3afa8e9eafabe7b22eb60cc85c7be6cb23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d64e6188b24b5a1ec45242c3d99366fdde5a623
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402872"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465211"
 ---
 # <a name="collect-diagnostic-data-with-storage-spaces-direct"></a>通过存储空间直通收集诊断数据
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 可以使用各种诊断工具来收集对存储空间直通和故障转移群集进行故障排除所需的数据。 在本文中，我们将重点介绍**SDDCDiagnosticInfo** -一个触摸工具，它将收集所有相关信息来帮助你诊断群集。
 
-假设日志和**SDDCDiagnosticInfo**的其他信息是密集的，下面提供的故障排除信息将有助于排查已经升级的高级问题，并可能需要将数据发送到Microsoft 的会审。
+假设有一些日志和其他**SDDCDiagnosticInfo**的信息是密集的，下面提供的故障排除信息将有助于排查已经升级的高级问题，并可能需要将数据发送给 Microsoft 进行会审。
 
 ## <a name="installing-get-sddcdiagnosticinfo"></a>安装 SDDCDiagnosticInfo
 
-**SDDCDiagnosticInfo** PowerShell cmdlet （也称为 **PCStorageDiagnosticInfo**（以前称为**StorageHealth**）可用于收集日志，并为故障转移群集（群集、资源、网络、节点）、存储空间（物理磁盘、存储设备、虚拟磁盘）、群集共享卷、SMB 文件共享和重复数据删除。 
+**SDDCDiagnosticInfo** PowerShell cmdlet （也称为 **PCStorageDiagnosticInfo**（以前称为**StorageHealth**）可用于为故障转移群集（群集、资源、网络、节点）、存储空间（物理磁盘、存储设备、虚拟磁盘）、群集共享卷、SMB 文件共享和重复数据删除收集日志并执行运行状况检查。 
 
 有两种安装脚本的方法，这两种方法都是下面的轮廓。
 
@@ -35,12 +35,15 @@ ms.locfileid: "71402872"
 
 [PowerShell 库](https://www.powershellgallery.com/packages/PrivateCloud.DiagnosticInfo)是 GitHub 存储库的快照。 请注意，从 PowerShell 库安装项需要最新版本的 PowerShellGet 模块，该模块在 Windows 10、Windows Management Framework （WMF）5.0 或基于 MSI 的安装程序（适用于 PowerShell 3 和4）中提供。
 
+在此过程中，我们还会安装最新版本的[Microsoft 网络诊断工具](https://www.powershellgallery.com/packages/MSFT.Network.Diag)，因为 SDDCDiagnosticInfo 依赖于这一点。 此清单模块包含网络诊断和故障排除工具，该工具由 Microsoft 的 Microsoft 核心网络产品组维护。
+
 可以通过使用管理员权限在 PowerShell 中运行以下命令来安装该模块：
 
 ``` PowerShell
 Install-PackageProvider NuGet -Force
 Install-Module PrivateCloud.DiagnosticInfo -Force
 Import-Module PrivateCloud.DiagnosticInfo -Force
+Install-Module -Name MSFT.Network.Diag
 ```
 
 若要更新该模块，请在 PowerShell 中运行以下命令：
@@ -161,7 +164,7 @@ Get-SddcDiagnosticInfo -ClusterName S2D-Cluster -WriteToPath d:\SDDCDiagTemp
 ### <a name="health-summary-report"></a>运行状况摘要报表
 
 运行状况摘要报表另存为：
-- 0_CloudHealthSummary
+- 0_CloudHealthSummary .log
 
 此文件是在分析所有收集的数据后生成的，旨在提供系统的快速摘要。 它包含：
 

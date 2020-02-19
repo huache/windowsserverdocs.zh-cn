@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: d54c33e092204f208590bd15db0d3c7fe7f852f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4973da0d9e0c347cff8fc910f96277055b66dec
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407897"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465541"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL 构建单一页面 web 应用程序.JS 与 AD FS 2016 或更高版本
 
@@ -43,7 +43,7 @@ ms.locfileid: "71407897"
 ## <a name="setting-up-the-environment"></a>设置环境
 对于本演练，我们将使用的基本设置：
 
-1.  直流：将托管 AD FS 的域的域控制器
+1.  DC：将托管 AD FS 的域的域控制器
 2.  AD FS 服务器：域的 AD FS 服务器
 3.  开发计算机：安装了 Visual Studio 并将开发示例的计算机
 
@@ -59,12 +59,12 @@ ms.locfileid: "71407897"
 ## <a name="clone-or-download-this-repository"></a>克隆或下载此存储库
 我们将使用创建的用于将 Azure AD 集成到 AngularJS 单页面应用的示例应用程序，并将其修改为通过使用 AD FS 来保护后端资源。
 
-从 shell 或命令行：
+从 shell 或命令行执行以下操作：
 
     git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
 
 ## <a name="about-the-code"></a>关于代码
-包含身份验证逻辑的密钥文件如下所示：
+包含身份验证逻辑的主要文件如下：
 
 **Node.js** -注入 adal 模块依赖关系，提供 adal 用于驱动协议与 AAD 的交互的应用配置值，并指示在没有以前的身份验证的情况下不应访问哪些路由。
 
@@ -72,12 +72,12 @@ ms.locfileid: "71407897"
 
 **HomeController**-演示如何利用 ADAL 中的登录（）和注销（）方法。
 
-**UserDataController** -演示如何从缓存的 id_token 中提取用户信息。
+**UserDataController** -演示如何从缓存 id_token 提取用户信息。
 
 **Startup.Auth.cs** -包含用于持有者身份验证 Active Directory 联合身份验证服务的 WebAPI 配置。
 
 ## <a name="registering-the-public-client-in-ad-fs"></a>在 AD FS 中注册公共客户端
-在此示例中，WebAPI 配置为侦听 https://localhost:44326/ 。 应用程序组**web 浏览器访问 web 应用程序**可用于配置隐式授予流应用程序。
+在此示例中，WebAPI 配置为侦听 https://localhost:44326/。 应用程序组**web 浏览器访问 web 应用程序**可用于配置隐式授予流应用程序。
 
 1. 打开 AD FS 管理控制台，然后单击 "**添加应用程序组**"。 在 "**添加应用程序组" 向导**中，输入应用程序的名称，"说明"，然后从 "**客户端-服务器应用程序**" 部分选择 " **web 浏览器访问 web 应用程序**模板"，如下所示
 
@@ -110,11 +110,11 @@ ms.locfileid: "71407897"
         $httpProvider
         );
 
-|配置|描述|
+|配置|说明|
 |--------|--------|
 |实例|STS URL，例如 https://fs.contoso.com/|
-|组织|将其保留为 "adfs"|
-|ClientID|这是你在为单一页面应用程序配置公共客户端时指定的客户端 ID|
+|tenant|将其保留为 "adfs"|
+|clientID|这是你在为单一页面应用程序配置公共客户端时指定的客户端 ID|
 
 ## <a name="configure-webapi-to-use-ad-fs"></a>将 WebAPI 配置为使用 AD FS
 打开示例中的**Startup.Auth.cs**文件，并在开头添加以下内容：
@@ -144,7 +144,7 @@ ms.locfileid: "71407897"
     }
     );
 
-|参数|描述|
+|参数|说明|
 |--------|--------|
 |ValidAudience|这会在令牌中配置要检查的 "受众" 的值。|
 |ValidIssuer|这会在令牌中配置要检查的 "颁发者" 的值|
@@ -168,7 +168,7 @@ ms.locfileid: "71407897"
 
 单击 "登录"。  ToDo 列表将触发身份验证流，而 ADAL JS 会将身份验证定向到 AD FS
 
-![登录](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
 在 Fiddler 中，可以看到令牌作为 URL 的一部分返回到 # 片段。
 

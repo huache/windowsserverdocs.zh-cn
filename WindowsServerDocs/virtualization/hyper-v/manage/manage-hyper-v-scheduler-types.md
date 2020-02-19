@@ -9,23 +9,23 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: c7c2de8354d067faf0dcf1787c3e178421e2ac03
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8ba413b831c7b11780113ee2ffd3cce598781a44
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872027"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465571"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虚拟机监控程序计划程序类型
 
->适用于：Windows 10，Windows Server 2016，Windows Server，版本1709，Windows Server，版本1803，Windows Server 2019
+>适用于： Windows 10，Windows Server 2016，Windows Server，版本1709，Windows Server，版本1803，Windows Server 2019
 
 本文介绍了在 Windows Server 2016 中首次引入的虚拟处理器计划逻辑的新模式。 这些模式或计划程序类型确定 Hyper-v 虚拟机监控程序如何分配并管理来宾虚拟处理器上的工作。 Hyper-v 主机管理员可以选择最适合来宾虚拟机（Vm）的虚拟机监控程序计划程序类型，并将 Vm 配置为利用计划逻辑。
 
 >[!NOTE]
 >若要使用本文档中所述的虚拟机监控程序计划程序功能，需要进行更新。 有关详细信息，请参阅[所需更新](#required-updates)。
 
-## <a name="background"></a>后台
+## <a name="background"></a>背景
 
 在从 Hyper-v 虚拟处理器计划后面讨论逻辑和控件之前，请查看本文中所述的基本概念，这会很有帮助。
 
@@ -66,7 +66,7 @@ Intel 和 AMD 均提供支持 SMT 的处理器。 Intel 将其 SMT 的产品/服
 
 经典计划程序是自其开始后的所有版本 Windows Hyper-v 虚拟机监控程序（包括 Windows Server 2016 Hyper-v）的默认值。 经典计划程序为来宾虚拟处理器提供公平共享的抢先式循环计划模型。
 
-经典计划程序类型最适合大多数传统 Hyper-v 使用–适用于私有云、托管提供程序等。 性能特征非常了解并经过优化，可支持多种虚拟化方案，例如，VPs 到 LPs 的过度订阅、同时运行多个异类 Vm 和工作负荷、运行更大的高缩放性性能 Vm，支持无限制的 Hyper-v 的全部功能集，等等。
+经典计划程序类型最适合大多数传统 Hyper-v 使用–适用于私有云、托管提供程序等。 性能特征非常了解并经过优化，可支持多种虚拟化方案，如 VPs 到 LPs、同时运行多个异类 Vm 和工作负荷、运行更大的高缩放性性能 Vm，支持无限制的 Hyper-v 的全部功能集，等等。
 
 ### <a name="the-core-scheduler"></a>核心计划程序
 
@@ -122,8 +122,8 @@ PowerShell 必须用于在来宾虚拟机中启用 SMT;Hyper-v 管理器中没�
 Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 ```
 
-其中<n> ，是来宾 VM 将看到的每个核心的 SMT 线程数。  
-请注意<n> ，= 0 会将 HwThreadCountPerCore 值设置为与主机的每个核心的 SMT 线程计数值相匹配。
+其中 <n> 是来宾 VM 每个核心的 SMT 线程数。  
+请注意，<n> = 0 会将 HwThreadCountPerCore 值设置为与主机的 SMT "每个核心的线程计数" 值匹配。
 
 >[!NOTE] 
 >从 Windows Server 2019 开始，支持设置 HwThreadCountPerCore = 0。
@@ -148,7 +148,7 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 >[!NOTE]
 >使用本文档中所述的虚拟机监控程序计划程序功能需要以下更新。 这些更新包括支持新的 "hypervisorschedulertype" BCD 选项的更改，这对于主机配置是必需的。
 
-| Version | 发行版本  | 需要更新 | 知识库文章 |
+| 版本 | 发布  | 需要更新 | 知识库文章 |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018.07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018.07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
@@ -165,10 +165,10 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
      bcdedit /set hypervisorschedulertype type
 ```
 
-其中`type`是以下项之一：
+其中 `type` 是以下其中之一：
 
-* 经典
-* Core
+* Classic
+* 核心
 * 根
 
 必须重新启动系统才能使虚拟机监控程序计划程序类型的任何更改生效。

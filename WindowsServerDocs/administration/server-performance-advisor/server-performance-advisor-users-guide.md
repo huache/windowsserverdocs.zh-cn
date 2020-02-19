@@ -9,12 +9,12 @@ ms.date: 10/16/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: manage
-ms.openlocfilehash: 6a6ccedeeb007b9d3ab32c308fae991deb526442
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3b29a7e10cc6a862873516b9adc16182d64dd926
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383090"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465461"
 ---
 # <a name="server-performance-advisor-users-guide"></a>Server Performance Advisor 用户指南
 
@@ -28,7 +28,7 @@ SPA 可帮助你执行以下操作：
 
 * 提供有关常见配置和性能问题的数据报告和建议。
 
-* 基于收集的数据提供最佳 pratice 建议。
+* 提供基于收集的数据的最佳实践建议。
 
 > [!NOTE]
 > SPA 控制台不会对服务器进行任何更改。
@@ -126,7 +126,7 @@ SPA 控制台可在以下操作系统上运行：
 
 * Windows 8
 
-* Windows 7
+* Windows 7
 
 * Windows Server 2012 R2
 
@@ -222,7 +222,7 @@ SPA 控制台使用同一帐户来读取日志并将它们导入到数据库中�
 
     * 向目标服务器列表中添加服务器
 
-3.  单击**下一步**。 "**创建项目数据库**" 页要求您提供要在其中创建数据库的 Microsoft SQL Server 实例的名称。 例如，如果与控制台位于同一台计算机上，则可以使用**localhost\\&lt;SQL server 名称&gt;** 。
+3.  单击 **“下一步”** 。 "**创建项目数据库**" 页要求您提供要在其中创建数据库的 Microsoft SQL Server 实例的名称。 例如，如果与控制台位于同一台计算机上，则可以使用**localhost\\&lt;SQL server 名称&gt;** 。
 
     **注意**SQL Server 2008 R2 Express 安装的默认实例名称为 SQLExpress。 对于安装在本地计算机上 SQL Server 2008 R2 Express 的实例，数据库通常默认为**localhost\\SQLExpress**。 但是，在 SQL Server 安装过程中，它可能已更改，因此需要确保使用正确的 SQL Server 实例名称。
 
@@ -586,7 +586,7 @@ SPA 控制台支持通过 UI 进行定期数据收集。 如果该功能不足�
 
 下表介绍了 SPA Windows PowerShell cmdlet：
 
-| Cmdlet 名称 | 参数 | 描述 |
+| Cmdlet 名称 | 参数 | 说明 |
 | ------ | ------- | ------ |
 | SpaAnalysis | **-ServerName**目标服务器的名称。<br>**-AdvisorPackName**要在服务器上排队的 advisor 包的完整名称。 当计划同时运行多个包时，应将参数的值设置为 AP1name，AP2name。<br>**-Duration**数据收集的持续时间。<br>**-Credential**在目标服务器上运行数据收集的帐户的用户凭据。<br>**-SqlInstanceName**SQL Server 实例的名称。<br>**-SqlDatabaseName**SPA 项目数据库的名称。 | 在指定的服务器上启动 SPA 数据收集会话。 |
 | 停止-SpaAnalysis | **-SqlInstanceName**SQL Server 实例的名称。<br>**-SqlDatabaseName**SPA 项目数据库的名称。<br>**-ServerName**目标服务器的名称。 | 尝试停止正在运行的 SPA 会话。 如果会话已完成，它将返回，而不执行任何操作。 |

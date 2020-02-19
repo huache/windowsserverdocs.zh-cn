@@ -11,12 +11,12 @@ ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 1690230d326d7e32175ccde5da1e5fae421a76d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 829a3897ef54155e34ced75721ec048ba16b342a
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366798"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465171"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上的 Linux 和 FreeBSD 虚拟机的功能说明
 
@@ -24,9 +24,9 @@ ms.locfileid: "71366798"
 
 本文介绍在虚拟机上使用 Linux 和 FreeBSD 时组件中的可用功能，如核心、网络、存储和内存。
 
-## <a name="core"></a>核心版
+## <a name="core"></a>核心
 
-|**功能**|**描述**|
+|**具有**|**描述**|
 |-|-|
 |集成关闭|使用此功能，管理员可以从 Hyper-v 管理器关闭虚拟机。 有关详细信息，请参阅[操作系统关闭](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_Shutdown)。|
 |时间同步|此功能可确保虚拟机内的维护时间与主机上的维护时间保持同步。 有关详细信息，请参阅[时间同步](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_time)。|
@@ -37,9 +37,9 @@ ms.locfileid: "71366798"
 |Hyper-v 特定存储设备|此功能为连接到虚拟机的存储设备授予高性能访问权限。|
 |Hyper-v 特定网络设备|此功能为连接到虚拟机的网络适配器授予高性能访问权限。|
 
-## <a name="networking"></a>网络
+## <a name="networking"></a>联网
 
-|**功能**|**描述**|
+|**具有**|**描述**|
 |-|-|
 |Jumbo 帧|使用此功能，管理员可以增加超过1500个字节的网络帧大小，这将导致网络性能大幅提高。|
 |VLAN 标记和中继|此功能允许你为虚拟机配置虚拟 LAN （VLAN）流量。|
@@ -52,7 +52,7 @@ ms.locfileid: "71366798"
 
 ## <a name="storage"></a>存储
 
-|**功能**|**描述**|
+|**具有**|**描述**|
 |-|-|
 |VHDX 调整大小|使用此功能，管理员可以调整附加到虚拟机的固定大小的 .vhdx 文件的大小。 有关详细信息，请参阅[联机虚拟硬盘大小调整概述](https://technet.microsoft.com/library/dn282286.aspx)。|
 |虚拟光纤通道|利用此功能，虚拟机可以识别光纤通道设备并以本机方式装载它。 有关详细信息，请参阅 [Hyper-V 虚拟光纤通道概述](https://technet.microsoft.com/library/hh831413.aspx)。|
@@ -62,7 +62,7 @@ ms.locfileid: "71366798"
 
 ## <a name="memory"></a>内存
 
-|**功能**|**描述**|
+|**具有**|**描述**|
 |-|-|
 |PAE 内核支持|物理地址扩展（PAE）技术允许32位内核访问大于4GB 的物理地址空间。 旧版 Linux 分发（如 RHEL 1.x）用于发送启用了 PAE 的单独内核。 新分发（如 RHEL 1.x）具有预生成的 PAE 支持。|
 |MMIO 间隙的配置|利用此功能，设备制造商可以配置内存映射 i/o （MMIO）间隙的位置。 MMIO 间隙通常用于划分设备的足够的操作系统（JeOS）与设备的实际软件基础结构之间的可用物理内存。|
@@ -72,13 +72,13 @@ ms.locfileid: "71366798"
 
 ## <a name="video"></a>视频
 
-|**功能**|**描述**|
+|**具有**|**描述**|
 |-|-|
 |Hyper-v 特定视频设备|此功能为虚拟机提供高性能的图形和卓越的分辨率。 此设备不提供增强会话模式或 RemoteFX 功能。|
 
 ## <a name="miscellaneous"></a>其他
 
-|**功能**|**描述**|
+|**具有**|**描述**|
 |-|-|
 |KVP （键值对）交换|此功能为虚拟机提供了一个键/值对（KVP）交换服务。 通常，管理员使用 KVP 机制在虚拟机上执行读取和写入自定义数据操作。 有关详细信息，请参阅[数据交换：使用键值对在 hyper-v 上的主机和来宾之间共享信息](https://technet.microsoft.com/library/dn798287.aspx)。|
 |不可屏蔽中断|使用此功能，管理员可以向虚拟机发出不可屏蔽中断（NMI）。 在获取因应用程序错误而变得无响应的操作系统崩溃转储时，NMIs 非常有用。 重新启动后，可以诊断这些故障转储。|
@@ -89,7 +89,7 @@ ms.locfileid: "71366798"
 
 ## <a name="generation-2-virtual-machines"></a>第 2 代虚拟机
 
-|**功能**|**描述**|
+|**具有**|**描述**|
 |-|-|
 |使用 UEFI 启动|此功能允许虚拟机使用统一可扩展固件接口（UEFI）启动。<br /><br />有关详细信息，请参阅[第 2 代虚拟机概述](https://technet.microsoft.com/library/dn282285.aspx)。|
 |安全启动|此功能允许虚拟机使用基于 UEFI 的安全启动模式。 在安全模式下启动虚拟机时，将使用 UEFI 数据存储中存在的签名来验证各种操作系统组件。<br /><br />有关详细信息，请参阅[安全启动](https://technet.microsoft.com/library/dn486875.aspx)。|

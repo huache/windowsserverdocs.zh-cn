@@ -9,12 +9,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cb91bb61adf97fee6f157ca44eb657e20670a1e7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a80678f5d2773e3fcd7a95032853249dc36d5616
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948685"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465521"
 ---
 # <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Active Directory 联合身份验证服务 prompt = 登录参数支持
 
@@ -63,7 +63,7 @@ ms.locfileid: "75948685"
 ![Get-MsolDomainFederationSettings](media/AD-FS-Prompt-Login/GetMsol.png)
 
 > [!NOTE]
-> 如果 `PreferredAuthenticationMethod` 属性为空（`$null`），则表示 `TranslateToFreshPasswordAuth`的默认行为。
+> 如果属性的值 `PromptLoginBehavior` 为空（`$null`），则使用 `TranslateToFreshPasswordAuth` 的行为。
 
 2. 通过运行以下命令来配置所需的 `PromptLoginBehavior` 值：
 

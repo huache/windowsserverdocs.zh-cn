@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: 620ab75fc5f44af7cd754847e3e5b717eece5057
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d95feb67001dc7b5eff68a0062d5f944672bad80
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393817"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465226"
 ---
 # <a name="storage-replica-overview"></a>存储副本概述
 
@@ -75,7 +75,7 @@ ms.locfileid: "71393817"
 
 * **高性能初始同步**。存储副本支持种子初始同步，其中，数据的一个子集已存在于较旧的副本、备份或随附驱动器上的目标中。 初始复制仅复制不同的块，这可能会缩短初始同步时间并防止数据占用有限的带宽。 存储副本阻止校验和计算，聚合意味着初始同步性能只受存储和网络速度限制。  
 
-* **一致性组**。 写入顺序保证 Microsoft SQL Server 的应用程序可以写入多个复制的卷，并了解数据在目标服务器上按顺序写入。  
+* **一致性组**。 写入顺序保证应用程序（如 Microsoft SQL Server）可以写入多个复制的卷，并知道数据是按顺序写入到目标服务器上的。  
 
 * **用户委托**。 可对不是复制的节点上内置管理员组成员的用户委派管理复制的权限，从而限制他们对不相关区域的访问。  
 
@@ -87,16 +87,16 @@ ms.locfileid: "71393817"
 
 | 功能 | 详细信息 |
 | ----------- | ----------- |  
-| 在任务栏的搜索框中键入 | 基于主机 |
-| 同步 | 是 |
-| 异步 | 是 |
+| 类型 | 基于主机的连接 |
+| Synchronous | 是 |
+| Asynchronous | 是 |
 | 存储硬件不可知 | 是 |
 | 复制单元 | 卷（分区） |
 | Windows Server stretch 群集创建 | 是 |
 | 服务器到服务器复制 | 是 |
 | 群集到群集复制 | 是 |
-| “传输” | SMB3 |
-| Network | TCP/IP 或 RDMA |
+| Transport | SMB3 |
+| 网络 | TCP/IP 或 RDMA |
 | 网络约束支持 | 是 |
 | RDMA* | iWARP、InfiniBand、RoCE v2 |
 | 复制网络端口防火墙要求 | 单个 IANA 端口（TCP 445 或 5445） |
@@ -138,7 +138,7 @@ ms.locfileid: "71393817"
 
 当源数据副本上发生应用程序写入操作时，源存储不会立即确认 IO。 相反，那些数据更改对远程目标副本的复制，并返回一条确认。 此时，应用程序才会收到 IO 确认。 这可确保远程站点与源站点的固定同步，有效地跨网络扩展存储 IO。 在源站点故障时，应用程序可以故障转移到远程站点并恢复其运行，同时保证零数据丢失。  
 
-| 模式 | 图示 | 步骤 |
+| 模式 | 图表 | 步骤 |
 | -------- | ----------- | --------- |
 | **同步**<br /><br />零数据丢失<br /><br />RPO | ![显示存储副本如何在同步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.应用程序写入数据<br />2.写入日志数据，并将数据复制到远程站点<br />3.在远程站点写入日志数据<br />4.从远程站点确认<br />5.确认应用程序写入<br /><br />t & t1：数据刷新到该卷，始终写入日志 |
 
@@ -150,7 +150,7 @@ ms.locfileid: "71393817"
 
 使用其比 zero RPO 更高的版本，异步复制不太适用于 HA 解决方案，如故障转移群集，因为它们是为具有冗余和无数据丢失的连续操作而设计。  
 
-| 模式 | 图示 | 步骤 |
+| 模式 | 图表 | 步骤 |
 | -------- | ----------- | --------- |
 | **异步**<br /><br />几乎零数据丢失<br /><br />（取决于多种因素）<br /><br />RPO | ![显示存储副本如何在异步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.应用程序写入数据<br />2.写入日志数据<br />3.确认应用程序写入<br />4.数据复制到远程站点<br />5.日志数据在远程站点写入<br />6.从远程站点确认<br /><br />t & t1：数据刷新到该卷，始终写入日志 |
 

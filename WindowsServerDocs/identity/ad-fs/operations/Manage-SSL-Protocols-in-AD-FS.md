@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 44fb4c02421a431edb502daecaa38f00fb4dd2ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0c581a29db92cfb73e4225c72e7e1c2bad4ca68
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407536"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465273"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>管理 AD FS 的 SSL/TLS 协议和密码套件
 以下文档介绍了如何禁用和启用 AD FS 使用的某些 TLS/SSL 协议和密码套件
@@ -34,7 +34,7 @@ AD FS 使用 Schannel 执行其安全的通信交互。  目前 AD FS 支持 Sch
 
 ## <a name="managing-the-tlsssl-protocols-and-cipher-suites"></a>管理 TLS/SSL 协议和密码套件
 > [!IMPORTANT]
-> 本部分包含说明如何修改注册表的步骤。 但是，如果不正确地修改注册表，则可能会出现严重问题。 因此，请务必仔细执行这些步骤。 
+> 本部分包含说明如何修改注册表的步骤。 但是，如果修改注册表不当，可能会出现严重问题。 因此，务必仔细遵照这些步骤进行操作。 
 > 
 > 请注意，更改 SCHANNEL 的默认安全设置可能会中断或阻止特定客户端和服务器之间的通信。  如果需要安全通信，并且它们没有协议来协商与通信，则会发生这种情况。
 > 

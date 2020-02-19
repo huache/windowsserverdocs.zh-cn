@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 0b4e02e6759bdb91ea51b5dcf5e1d0ae307d13b4
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 5df216d8c7b829a6c60db4e5d771824a7bacdb47
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567101"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465321"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑难解答
 
@@ -165,8 +165,10 @@ REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalA
 
    > [!TIP]
    > 为简便起见，你可以利用通配符一次性设置所有 TrustedHosts。
-   > 
-   >     Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+   >
+   > ```powershell
+   > Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+   > ```
 
 4. 完成测试后，你可以从提升的 PowerShell 会话中发出以下命令来清除 TrustedHosts 设置：
 
@@ -191,14 +193,14 @@ netsh http delete urlacl url=https://+:443/
 
 ## <a name="azure-features-dont-work-properly-in-edge"></a>Azure 功能在边缘中无法正常工作
 
-边缘具有与安全区域相关的[已知问题](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，这些问题会影响 Windows 管理中心中的 Azure 登录。 如果使用边缘时使用 Azure 功能时遇到问题，请尝试在客户端浏览器上将 https://login.microsoftonline.com 、 https://login.live.com 和网关的 URL 添加为受信任的站点和允许的边缘弹出窗口阻止程序设置的站点。 
+边缘具有与安全区域相关的[已知问题](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，这些问题会影响 Windows 管理中心中的 Azure 登录。 如果使用边缘时使用 Azure 功能时遇到问题，请尝试在客户端浏览器上将 https://login.microsoftonline.com、 https://login.live.com 和网关的 URL 添加为受信任的站点和允许的边缘弹出窗口阻止程序设置的站点。 
 
-要实现此目的，请执行以下操作：
+为此，请执行以下操作：
 1. 在 Windows "开始" 菜单中搜索**Internet 选项**
 2. 中转到 "**安全**" 选项卡
-3. 在 "**受信任的站点**" 选项下，单击 "**站点**" 按钮，然后在打开的对话框中添加 url。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
+3. 在 "**受信任的站点**" 选项下，单击 "**站点**" 按钮，然后在打开的对话框中添加 url。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com。
 4. 中转到 "**隐私**" 选项卡
-5. 在 "**弹出窗口阻止**程序" 部分下，单击 "**设置**" 按钮，然后在打开的对话框中添加 url。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
+5. 在 "**弹出窗口阻止**程序" 部分下，单击 "**设置**" 按钮，然后在打开的对话框中添加 url。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com。
 
 ## <a name="having-an-issue-with-an-azure-related-feature"></a>Azure 相关功能有问题？
 
@@ -231,9 +233,9 @@ netsh http delete urlacl url=https://+:443/
 * 安装时是否使用了默认端口设置？
     * 如果不是，那么你指定的是哪个端口？
 * **安装** Windows Admin Center 的计算机是否加入了域？
-* **安装** Windows Admin Center 的 Windows [版本](#check-the-windows-version)：
+* [安装](#check-the-windows-version) Windows Admin Center 的 Windows **版本**：
 * 你**尝试管理**的计算机是否加入了域？
-* 你**尝试管理**的计算机的 Windows [版本](#check-the-windows-version)：
+* 你[尝试管理](#check-the-windows-version)的计算机的 Windows **版本**：
 * 你使用的是哪个浏览器？
     * 如果你使用的是 Google Chrome，那么它的版本是？ （“帮助”>“关于 Google Chrome”）
 

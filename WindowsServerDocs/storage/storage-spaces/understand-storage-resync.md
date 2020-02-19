@@ -9,16 +9,16 @@ ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 53f48421bddd416d24c5f46e53652cc89c10c785
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d271d92a14278e52a6020c60f96f48b1c8b35871
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402847"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465301"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>了解并监视存储重新同步
 
->适用于：Windows Server 2019
+>适用于： Windows Server 2019
 
 存储重新同步警报是 Windows Server 2019 中[存储空间直通](storage-spaces-direct-overview.md)的一项新功能，允许运行状况服务在重新同步存储时引发错误。 警报可用于在重新同步发生时通知你，因此你不会意外地将更多服务器关闭（这可能会导致多个容错域受到影响，导致群集停止）。 
 
@@ -112,7 +112,7 @@ Regeneration          00:01:19              Running               50            
 
 此视图的粒度更细，因为列出的存储作业是每个卷的，你可以查看正在运行的作业的列表，你可以跟踪其各个进度。 此 cmdlet 适用于 Windows Server 2016 和2019。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [使服务器脱机以进行维护](maintain-servers.md)
 - [存储空间直通概述](storage-spaces-direct-overview.md)

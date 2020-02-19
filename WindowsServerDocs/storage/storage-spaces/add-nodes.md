@@ -10,16 +10,16 @@ author: cosmosdarwin
 ms.date: 11/06/2017
 description: 如何将服务器或驱动器添加到存储空间直通群集
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d5949b8fce7253371ee7ecea5118596f713f037
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f5fb9da903bb76de3a075fa7feeeaba468d802c2
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393779"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465621"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>向存储空间直通添加服务器或驱动器
 
->适用于：Windows Server 2019、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server 2016
 
 本主题介绍如何向存储空间直通添加服务器或驱动器。
 
@@ -31,7 +31,7 @@ ms.locfileid: "71393779"
 
 通过添加服务器，典型的部署很容易实现横向扩展。 只需两个步骤：
 
-1. 使用故障转移群集管理单元或者在 PowerShell 中使用 **Test-Cluster** cmdlet，运行 [群集验证向导](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)（以管理员身份运行）。 包括你要添加的新服务器 *\<NewNode>* 。
+1. 使用故障转移群集管理单元或者在 PowerShell 中使用 [Test-Cluster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) cmdlet，运行 **群集验证向导**（以管理员身份运行）。 包括你要添加的新服务器 *\<NewNode>* 。
 
    ```PowerShell
    Test-Cluster -Node <Node>, <Node>, <Node>, <NewNode> -Include "Storage Spaces Direct", Inventory, Network, "System Configuration"
@@ -69,7 +69,7 @@ Add-ClusterNode -Name NewNode
 New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size <Size> -PhysicalDiskRedundancy 2
 ```
 
-#### <a name="option-2"></a>选项 2
+#### <a name="option-2"></a>方法 2
 
 你可以在该池的名为 **Mirror** 的 **ResiliencySetting** 对象上设置 **PhysicalDiskRedundancyDefault = 2**。 然后，任何新镜像卷都将自动使用*三向*镜像，即使你未指定。
 
@@ -81,7 +81,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 #### <a name="option-3"></a>选项 3
 
-在名为 *Capacity* 的 **StorageTier** 模板上设置 **PhysicalDiskRedundancy = 2**，然后通过引用层创建卷。
+在名为 **Capacity** 的 **StorageTier** 模板上设置 *PhysicalDiskRedundancy = 2*，然后通过引用层创建卷。
 
 ```PowerShell
 Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2 
@@ -105,7 +105,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size <Size> -PhysicalDiskRedundancy 2 -ResiliencySettingName Parity
 ```
 
-#### <a name="option-2"></a>选项 2
+#### <a name="option-2"></a>方法 2
 
 对名为 **Parity** 的池的 **ResiliencySetting** 对象设置 **PhysicalDiskRedundancy = 2**。 然后，任何新奇偶校验卷都将自动使用*双*奇偶校验，即使你未指定。
 
@@ -121,7 +121,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 #### <a name="option-3"></a>选项 3
 
-你可能会发现，最简单方式就是删除现有层模板并创建两个新模板。 这将不会影响通过引用层模板创建的预先存在的任何卷：它只是一个模板。
+你可能会发现，最简单方式就是删除现有层模板并创建两个新模板。 这不会影响通过引用层模板创建的任何预先存在的卷：它只是一个模板。
 
 ```PowerShell
 Remove-StorageTier -FriendlyName Capacity
@@ -200,7 +200,7 @@ Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 Get-StorageJob
 ```
 
-可以使用[StoragePool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) cmdlet 手动优化存储池。 以下是一个示例：
+可以使用[StoragePool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) cmdlet 手动优化存储池。 下面是一个示例：
 
 ```powershell
 Get-StoragePool <PoolName> | Optimize-StoragePool

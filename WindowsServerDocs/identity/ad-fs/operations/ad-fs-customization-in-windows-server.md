@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4b0ea70bd9346bf8abee4e0d96a8915e29cac462
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f7402cf549a7a2fb4b112bf92b36182f882b9d73
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357779"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465241"
 ---
 # <a name="ad-fs-customization-in-windows-server-2016"></a>Windows Server 2016 中的 AD FS 自定义
 
@@ -79,7 +79,7 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
 `Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme`  
   
 ## <a name="home-realm-discovery"></a>主领域发现  
-对于 home 领域发现自定义，请参阅[自定义 AD FS 登录页](https://technet.microsoft.com/library/dn280950.aspx)。  
+对于主领域发现自定义，请参阅[自定义 AD FS 登录页](https://technet.microsoft.com/library/dn280950.aspx)。  
   
 ## <a name="updated-password-page"></a>已更新密码页  
 有关自定义 "更新密码" 页的信息，请参阅[自定义 AD FS 登录页](https://technet.microsoft.com/library/dn280950.aspx)。  

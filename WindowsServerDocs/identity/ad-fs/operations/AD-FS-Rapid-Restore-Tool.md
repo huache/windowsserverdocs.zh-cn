@@ -9,12 +9,12 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8b47cdc4770b1ed6478d1502ed5264164e99352b
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: 2570aae52da2925a62dd6c9262af325fb5461fff
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013042"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465261"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS 快速还原工具
 
@@ -22,13 +22,16 @@ ms.locfileid: "77013042"
 今天 AD FS 通过设置 AD FS 场实现高度可用。 某些组织希望通过一种方法 AD FS 部署，从而无需使用多个 AD FS 服务器和网络负载平衡基础结构，同时仍有一些保证，如果出现问题，可以快速还原服务。
 新的 AD FS 快速还原工具提供了一种方法来还原 AD FS 的数据，无需完全备份和还原操作系统或系统状态。 可以使用新工具将 AD FS 配置导出到 Azure 或本地位置。  然后，可以将导出的数据应用于全新 AD FS 安装，重新创建或复制 AD FS 环境。 
 
-## <a name="scenarios"></a>场景
+## <a name="scenarios"></a>方案
 可以在以下方案中使用 AD FS 快速还原工具：
 
 1. 问题后快速还原 AD FS 功能
     - 使用工具创建 AD FS 的冷备用安装，这些安装可以快速部署以代替联机 AD FS 服务器
 2. 部署相同的测试环境和生产环境
     - 使用此工具可在测试环境中快速创建生产 AD FS 的精确副本，或快速将验证的测试配置部署到生产环境
+3. 从基于 SQL 的配置迁移到 WID，反之亦然
+    - 使用工具从基于 SQL 的场配置移动到 WID，反之亦然。 
+
 
 >[!NOTE] 
 >如果使用的是 SQL 合并复制或 Alwayson 可用性组，则不支持快速还原工具。 建议使用基于 SQL 的备份和 SSL 证书的备份作为替代方法。
@@ -220,14 +223,14 @@ RngCryptoServiceProvider 用于生成 AES 和 Rfc2898DeriveBytes 类使用的 sa
 ### <a name="version-10820"></a>版本1.0.82。0
 版本：2019年7月
 
-**已解决的问题：**
+**已修复的问题：**
 - AD FS 包含 LDAP 转义字符的服务帐户名称的 Bug 修复
 
 
 ### <a name="version-10810"></a>版本：1.0.81。0
 版本：2019年4月
 
-**已解决的问题：**
+**已修复的问题：**
 
 
 - 证书备份和还原的 Bug 修复
@@ -237,13 +240,13 @@ RngCryptoServiceProvider 用于生成 AES 和 Rfc2898DeriveBytes 类使用的 sa
 ### <a name="version-10750"></a>版本：1.0.75。0
 版本：8月2018
 
-**已解决的问题：**
+**已修复的问题：**
 * 当使用-BackupDKM 开关时，更新备份-ADFS。  该工具将确定当前上下文是否有权访问 DKM 容器。  如果是这样，则不需要域管理员权限或服务帐户凭据。  这允许自动备份，而无需显式提供凭据或作为域管理员帐户运行。
 
 ### <a name="version-10730"></a>版本：1.0.73。0
 版本：8月2018
 
-**已解决的问题：**
+**已修复的问题：**
 * 更新加密算法，使应用程序符合 FIPS
     
     >[!NOTE]
@@ -254,14 +257,14 @@ RngCryptoServiceProvider 用于生成 AES 和 Rfc2898DeriveBytes 类使用的 sa
 ### <a name="version-10720"></a>版本：1.0.72。0
 版本：2018年7月
 
-**已解决的问题：**
+**已修复的问题：**
 
    - Bug 修复：已修复。用于支持就地升级的 MSI 安装程序 
 
 ### <a name="10180"></a>1.0.18.0
 版本：2018年7月
 
-**已解决的问题：**
+**已修复的问题：**
 
    - Bug 修复：处理在其中包含特殊字符的服务帐户密码（即 "&"）
    - Bug 修复：还原失败，因为另一个进程正在使用 IdentityServer
