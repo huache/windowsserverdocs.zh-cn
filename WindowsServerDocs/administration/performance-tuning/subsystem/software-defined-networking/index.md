@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: grcusanz; AnPaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8227c94e6785f4acf9135aac12406b6ac98a0910
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ef8a991b8ababa13c0a7a7be605c6dbe2af17a2
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383519"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465451"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>软件定义的网络性能优化
 
@@ -73,4 +73,4 @@ SDN 在 Hyper-V 主机上使用虚拟交换机中的转发交换机扩展实现�
 
 ## <a name="software-load-balancer-slb"></a>软件负载均衡器 (SLB)
 
-SLB 网关只能与网络控制器和 SDN 一起使用。  可在[软件负载均衡器网关](slb-gateway-performance.md)部分中找到有关如何优化 SDN 以便与 SLB 网关一起使用的详细信息。
+SLB 网关只能与网络控制器和 SDN 一起使用。  可在[软件负载均衡器网关](slb-gateway-performance.md)部分中找到有关如何优化 SDN 以便将其与 SLB 网关配合使用的详细信息。
