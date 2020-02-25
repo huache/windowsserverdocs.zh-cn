@@ -7,7 +7,7 @@ Import-Module "$env:ProgramFiles\windows admin center\PowerShell\Modules\Connect
 Export-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
 # Import connections (including tags) from a .csv file
 Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
-# Import connections (including tags) from .csv files, and remove any connections that are not explictly in the imported file using the -prune switch parameter 
+# Import connections (including tags) from .csv files, and remove any connections that are not explicitly in the imported file using the -prune switch parameter 
 Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv" -prune
 ```
 ### <a name="csv-file-format-for-importing-connections"></a>用于导入连接的 CSV 文件格式
@@ -20,7 +20,7 @@ CSV 文件的格式以四个标题（```"name","type","tags","groupId"```）开�
 
 | 连接类型 | 连接字符串 |
 |------|-------------------------------|
-| WIN ENT LTSB 2016 Estonian 64 Bits | msft.sme.connection-type.server |
+| Windows Server | msft.sme.connection-type.server |
 | Windows 10 电脑 | msft.sme.connection-type.windows-client |
 | 故障转移群集 | msft.sme.connection-type.cluster |
 | 超融合群集 | msft.sme.connection-type.hyper-converged-cluster |
