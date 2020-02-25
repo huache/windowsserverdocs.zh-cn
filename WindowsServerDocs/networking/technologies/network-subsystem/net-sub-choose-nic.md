@@ -8,12 +8,12 @@ ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: cf93e6f91f4a1c21050c7ad1cb4de43258be1a65
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9271cf4e5f50adf93f421e830a226507034ac454
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401857"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517472"
 ---
 # <a name="choosing-a-network-adapter"></a>选择网络适配器
 
@@ -24,33 +24,33 @@ ms.locfileid: "71401857"
 需要高性能的网络适配器的网络密集型应用程序。 本部分探讨选择网络适配器的一些注意事项，以及如何配置不同的网络适配器设置以实现最佳网络性能。
 
 > [!TIP]
->  你可以使用 Windows PowerShell 配置网络适配器设置。 有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](https://technet.microsoft.com/library/jj134956.aspx)。
+>  你可以使用 Windows PowerShell 配置网络适配器设置。 有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](https://docs.microsoft.com/powershell/module/netadapter)。
 
 ##  <a name="bkmk_offload"></a>卸载功能
 
-从中央处理器\(cpu\)将任务卸载到网络适配器可降低服务器上的 cpu 使用率，从而提高系统的整体性能。
+将来自中央处理单元 \(CPU\) 的任务卸载到网络适配器可降低服务器上的 CPU 使用率，从而提高系统的整体性能。
 
 如果你选择具有适当卸载功能的网络适配器，Microsoft 产品中的网络堆栈可以将一个或多个任务卸载到网络适配器。 下表提供了 Windows Server 2016 中提供的不同卸载功能的简要概述。
   
-|卸载类型|描述|
+|卸载类型|说明|
 |------------------|-----------------|  
-|TCP 的校验和计算|网络堆栈可以在发送和接收代码路径上卸载传输控制\(协议\) TCP 校验和的计算和验证。 它还可以在发送和接收代码路径上卸载 IPv4 和 IPv6 校验和的计算和验证。|  
-|UDP 的校验和计算 |网络堆栈可以在发送和接收代码路径上卸载用户数据\(报\)协议 UDP 校验和的计算和验证。|
+|TCP 的校验和计算|网络堆栈可以在发送和接收代码路径上卸载传输控制协议 \(TCP\) 校验和的计算和验证。 它还可以在发送和接收代码路径上卸载 IPv4 和 IPv6 校验和的计算和验证。|  
+|UDP 的校验和计算 |网络堆栈可以在发送和接收代码路径上卸载用户数据报协议 \(UDP\) 校验和的计算和验证。|
 |IPv4 的校验和计算 |网络堆栈可以在发送和接收代码路径上卸载 IPv4 校验和的计算和验证。 |
 |IPv6 的校验和计算 |网络堆栈可以在发送和接收代码路径上卸载 IPv6 校验和的计算和验证。 | 
 |大 TCP 数据包的细分|TCP/IP 传输层支持大型发送卸载 v2 （LSOv2）。 通过 LSOv2，TCP/IP 传输层可以将大型 TCP 数据包的分段卸载到网络适配器。|  
-|接收方缩放\(RSS\)|RSS 是一种网络驱动程序技术，可在多处理器系统中跨多个 Cpu 高效地分发网络接收处理。 有关 RSS 的详细信息将在本主题的后面部分提供。|  
-|接收段合并\(RSC\)|RSC 可以将数据包组合在一起，以最大程度地减少主机执行所需的标头处理。 最多可将接收到的有效负载的最大大小 64 KB 合并为一个较大的数据包进行处理。 本主题后面提供了有关 RSC 的更多详细信息。|  
+|接收方缩放 \(RSS\)|RSS 是一种网络驱动程序技术，可在多处理器系统中跨多个 Cpu 高效地分发网络接收处理。 有关 RSS 的详细信息将在本主题的后面部分提供。|  
+|\(RSC\) 接收段合并|RSC 可以将数据包组合在一起，以最大程度地减少主机执行所需的标头处理。 最多可将接收到的有效负载的最大大小 64 KB 合并为一个较大的数据包进行处理。 本主题后面提供了有关 RSC 的更多详细信息。|  
   
 ###  <a name="bkmk_rss"></a>接收方缩放
 
-Windows server 2016、windows server 2012、windows server 2012 R2、windows server 2008 R2 和 windows server 2008 支持接收方缩放\(RSS。\) 
+Windows Server 2016、Windows Server 2012、Windows Server 2012 R2、Windows Server 2008 R2 和 Windows Server 2008 支持 \(RSS\)的接收方缩放。 
 
-某些服务器配置了多个逻辑处理器，它们共享了\(物理内核\)等硬件资源，并将这些资源视为同时进行多\(线程\) SMT 对等互连。 Intel 超线程技术是一个示例。 RSS 将网络处理定向到每个核心最多一个逻辑处理器。 例如，在具有 Intel 超线程、4核和8个逻辑处理器的服务器上，RSS 将不超过4个逻辑处理器用于网络处理。  
+某些服务器配置了多个逻辑处理器，这些处理器共享硬件资源 \(例如物理核心\) 并且被视为同时 \(SMT\) 对等方。 Intel 超线程技术是一个示例。 RSS 将网络处理定向到每个核心最多一个逻辑处理器。 例如，在具有 Intel 超线程、4核和8个逻辑处理器的服务器上，RSS 将不超过4个逻辑处理器用于网络处理。  
 
 RSS 在逻辑处理器之间分发传入的网络 i/o 数据包，以便在相同的逻辑处理器上处理属于同一 TCP 连接的数据包，从而保留排序。 
 
-RSS 还会对 UDP 单播和多播流量进行负载均衡，并通过\(将源地址和目标地址\)哈希到同一个逻辑处理器来路由相关的流，从而保留相关到达的顺序。 这有助于提高具有较少网络适配器（而不是符合合格逻辑处理器）的服务器的接收密集型方案的可伸缩性和性能。 
+RSS 还会对 UDP 单播流量和多播流量进行负载平衡，并通过将源和目标地址\) 哈希到同一个逻辑处理器来决定 \(的流，并保留相关到达的顺序。 这有助于提高具有较少网络适配器（而不是符合合格逻辑处理器）的服务器的接收密集型方案的可伸缩性和性能。 
 
 #### <a name="configuring-rss"></a>配置 RSS
 
@@ -65,13 +65,13 @@ RSS 还会对 UDP 单播和多播流量进行负载均衡，并通过\(将源地
 >[!NOTE]
 >若要详细了解每个 cmdlet （包括语法和参数），可以单击以下链接。 此外，还可以在 Windows PowerShell 提示符下将 cmdlet 名称传递到**get-help** ，以获取有关每个命令的详细信息。  
 
-- [Get-netadapterrss](https://technet.microsoft.com/library/jj130892)。 此命令将在指定的网络适配器上禁用 RSS。
+- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Disable-NetAdapterRss)。 此命令将在指定的网络适配器上禁用 RSS。
 
-- [Get-netadapterrss](https://technet.microsoft.com/library/jj130859)。 此命令在指定的网络适配器上启用 RSS。
+- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRss)。 此命令在指定的网络适配器上启用 RSS。
   
-- [Get-netadapterrss](https://technet.microsoft.com/library/jj130912)。 此命令检索指定的网络适配器的 RSS 属性。
+- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterRss)。 此命令检索指定的网络适配器的 RSS 属性。
   
-- [Get-netadapterrss](https://technet.microsoft.com/library/jj130863)。 此命令在指定的网络适配器上设置 RSS 属性。  
+- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss)。 此命令在指定的网络适配器上设置 RSS 属性。  
 
 #### <a name="rss-profiles"></a>RSS 配置文件
 
@@ -98,31 +98,31 @@ RSS 还会对 UDP 单播和多播流量进行负载均衡，并通过\(将源地
 >[!NOTE]
 >在下面每个参数的示例语法中，网络适配器名称 "**以太网**" 将用作**get-netadapterrss**命令的 **– name**参数的示例值。 当你运行 cmdlet 时，请确保你使用的网络适配器名称适用于你的环境。
 
-- **MaxProcessors\*** ：设置要使用的 RSS 处理器的最大数量。 这可确保将应用程序流量绑定到给定接口上的最大处理器数。 示例语法：
+- **\* MaxProcessors**：设置要使用的 RSS 处理器的最大数量。 这可确保将应用程序流量绑定到给定接口上的最大处理器数。 示例语法：
 
      `Set-NetAdapterRss –Name “Ethernet” –MaxProcessors <value>`
 
-- **BaseProcessorGroup\*** ：设置 NUMA 节点的基本处理器组。 这会影响 RSS 使用的处理器数组。 示例语法：
+- **\* BaseProcessorGroup**：设置 NUMA 节点的基本处理器组。 这会影响 RSS 使用的处理器数组。 示例语法：
 
      `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorGroup <value>`
   
-- **MaxProcessorGroup\*** ：设置 NUMA 节点的最大处理器组。 这会影响 RSS 使用的处理器数组。 设置此选项会限制最大处理器组，以便在 k 组内对齐负载平衡。 示例语法：
+- **\* MaxProcessorGroup**：设置 NUMA 节点的最大处理器组。 这会影响 RSS 使用的处理器数组。 设置此选项会限制最大处理器组，以便在 k 组内对齐负载平衡。 示例语法：
 
      `Set-NetAdapterRss –Name “Ethernet” –MaxProcessorGroup <value>`
 
-- **BaseProcessorNumber\*** ：设置 NUMA 节点的基础处理器编号。 这会影响 RSS 使用的处理器数组。 这允许跨网络适配器分区处理器。 这是分配给每个适配器的 RSS 处理器范围内的第一个逻辑处理器。 示例语法：
+- **\* BaseProcessorNumber**：设置 NUMA 节点的基础处理器编号。 这会影响 RSS 使用的处理器数组。 这允许跨网络适配器分区处理器。 这是分配给每个适配器的 RSS 处理器范围内的第一个逻辑处理器。 示例语法：
 
      `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorNumber <Byte Value>`
 
-- **NumaNode\*** ：每个网络适配器可从其分配内存的 NUMA 节点。 这可以在 k 组内，也可以位于不同的 k 组中。 示例语法：
+- **\* NumaNode**：每个网络适配器可从其分配内存的 NUMA 节点。 这可以在 k 组内，也可以位于不同的 k 组中。 示例语法：
 
      `Set-NetAdapterRss –Name “Ethernet” –NumaNodeID <value>`
 
-- **NumberofReceiveQueues\*** ：例如，如果在 "任务管理器\(\)" 中查看了逻辑处理器的接收流量，则可以尝试将 RSS 队列的数量从默认值2增加到网络适配器所支持的最大值. 网络适配器可能有选项可用于更改作为驱动程序的一部分的 RSS 队列的数量。 示例语法：
+- **\* NumberofReceiveQueues**：如果逻辑处理器看起来对于接收流量似乎不充分 \(例如，如在任务管理器\)中查看，则可以尝试将 RSS 队列的数量从默认值2增加到网络适配器所支持的最大值。 网络适配器可能有选项可用于更改作为驱动程序的一部分的 RSS 队列的数量。 示例语法：
 
      `Set-NetAdapterRss –Name “Ethernet” –NumberOfReceiveQueues <value>`
 
-有关详细信息，请单击以下链接下载[可缩放的网络：消除接收处理瓶颈-以 Word 格式](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)引入 RSS。
+有关详细信息，请单击以下链接下载[可缩放的网络：消除接收处理瓶颈-](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)以 Word 格式引入 RSS。
   
 #### <a name="understanding-rss-performance"></a>了解 RSS 性能
 
@@ -160,11 +160,11 @@ IndirectionTable: [Group:Number]:
   
 ###  <a name="bkmk_rsc"></a>接收段合并（RSC）
 
-接收段合并\(RSC\)通过减少针对给定数量接收的数据处理的 IP 标头来帮助提高性能。 它应该用于通过将较小的数据包分组\(或合并\)为较大的单位，来帮助扩展接收的数据的性能。
+\(RSC 的接收段合并\) 可减少针对给定数量接收的数据处理的 IP 标头的数量，从而帮助提高性能。 它应该用于通过将较小的数据包\) \(或合并为更大的单位，来帮助扩展接收的数据的性能。
 
 此方法可能会影响延迟，其中的优点主要体现在吞吐量提升。 建议使用 RSC 来增加收到的大量工作负荷的吞吐量。 请考虑部署支持 RSC 的网络适配器。 
 
-在这些网络适配器上， \(确保 rsc 为默认设置\)，除非你有特定的工作负荷\(（例如，低延迟、低吞吐量网络\) ，显示 RSC 的权益已关闭）.
+在这些网络适配器上，请确保 RSC 处于启用状态 \(这是\)的默认设置，除非你有特定的工作负荷 \(例如，低延迟、低吞吐量网络\) 显示 RSC 的权益。
 
 #### <a name="understanding-rsc-diagnostics"></a>了解 RSC 诊断
 
@@ -204,7 +204,7 @@ CoalescingExceptions : 0
 
 仅当主机网络适配器未绑定到 Hyper-v 虚拟交换机时，才能在物理主机中支持 RSC。 当主机绑定到 Hyper-v 虚拟交换机时，操作系统将禁用 RSC。 此外，虚拟机不会获得 RSC 的优势，因为虚拟网络适配器不支持 RSC。
 
-当启用单一根输入/输出虚拟化\(sr-iov\)时，可以为虚拟机启用 RSC。 在这种情况下，虚拟函数支持 RSC 功能;因此，虚拟机也会获得 RSC 的好处。
+如果启用了单一根输入/输出虚拟化 \(SR-IOV\)，则可以为虚拟机启用 RSC。 在这种情况下，虚拟函数支持 RSC 功能;因此，虚拟机也会获得 RSC 的好处。
 
 ##  <a name="bkmk_resources"></a>网络适配器资源
 
@@ -212,28 +212,28 @@ CoalescingExceptions : 0
 
 使用以下 Windows PowerShell cmdlet 可简化配置网络适配器资源的配置。
 
-- [NetAdapterAdvancedProperty](https://technet.microsoft.com/library/jj130901.aspx)
+- [NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterAdvancedProperty)
 
-- [NetAdapterAdvancedProperty](https://technet.microsoft.com/library/jj130894.aspx)
+- [NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterAdvancedProperty)
 
-- [Get-netadapter](https://technet.microsoft.com/library/jj130876.aspx)
+- [Get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapte)
 
-- [NetAdapterBinding](https://technet.microsoft.com/library/jj130913.aspx)
+- [NetAdapterBinding](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterBinding)
 
-- [NetAdapterChecksumOffload](https://technet.microsoft.com/library/jj130918.aspx)
+- [NetAdapterChecksumOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [NetAdapterIPSecOffload](https://technet.microsoft.com/library/jj130890.aspx)
+- [NetAdapterIPSecOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [NetAdapterLso](https://technet.microsoft.com/library/jj130922.aspx)
+- [NetAdapterLso](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterLso)
 
-- [NetAdapterPowerManagement](https://technet.microsoft.com/library/jj130907.aspx)
+- [NetAdapterPowerManagement](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterPowerManagement)
 
-- [Get-netadapterqos](https://technet.microsoft.com/library/jj130866.aspx)
+- [Get-netadapterqos](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterQos)
 
-- [NetAdapterRDMA](https://technet.microsoft.com/library/jj130909.aspx)
+- [NetAdapterRDMA](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRDMA)
 
-- [Get-netadaptersriov](https://technet.microsoft.com/library/jj130899.aspx)
+- [Get-netadaptersriov](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterSriov)
 
-有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](https://technet.microsoft.com/library/jj134956.aspx)。
+有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](https://docs.microsoft.com/powershell/module/netadapter)。
 
 有关本指南中的所有主题的链接，请参阅[网络子系统性能优化](net-sub-performance-top.md)。

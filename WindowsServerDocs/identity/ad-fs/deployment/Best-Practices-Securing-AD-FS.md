@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b96a66c9e28454752fd4999fcfe74cbb15a3ae7d
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 717308a157d7f4a5f54e3aef2e829fbed9f12152
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265809"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517542"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>保护 Active Directory 联合身份验证服务的最佳实践
 
@@ -41,30 +41,30 @@ ms.locfileid: "76265809"
 > 端口808（Windows Server 2012R2）或端口1501（Windows Server 2016 +）是 Net.tcp 端口 AD FS 用于本地 WCF 终结点，以将配置数据传输到服务进程和 Powershell。 可以通过运行 Set-adfsproperties | 来查看此端口选择 NetTcpPort。 这是一个本地端口，无需在防火墙中打开，但会在端口扫描中显示。 
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect 和联合服务器/WAP
-此表描述了 Azure AD Connect 服务器与 联合服务器/WAP 服务器之间通信所需的端口和协议。  
+下表描述了 Azure AD Connect 服务器和联合/WAP 服务器之间通信所需的端口和协议。  
 
-协议 |端口 |描述
+协议 |端口 |说明
 --------- | --------- |---------
-HTTP|80 (TCP/UDP)|用于下载 CRL（证书吊销列表）以验证 SSL 证书。
-HTTPS|443 (TCP/UDP)|用来与 Azure AD 同步。
+HTTP|80（TCP/UDP）|用于下载 Crl （证书吊销列表）以验证 SSL 证书。
+HTTPS|443（TCP/UDP）|用于与 Azure AD 同步。
 WinRM|5985| WinRM 侦听器
 
 ### <a name="wap-and-federation-servers"></a>WAP 和联合服务器
 此表描述了联合服务器与 WAP 服务器之间通信所需的端口和协议。
 
-协议 |端口 |描述
+协议 |端口 |说明
 --------- | --------- |---------
-HTTPS|443 (TCP/UDP)|用于身份验证。
+HTTPS|443（TCP/UDP）|用于身份验证。
 
 ### <a name="wap-and-users"></a>WAP 和用户
-此表描述了用户与 WAP 服务器之间通信所需的端口和协议。
+下表描述了用户与 WAP 服务器之间通信所需的端口和协议。
 
-协议 |端口 |描述
+协议 |端口 |说明
 --------- | --------- |--------- |
-HTTPS|443 (TCP/UDP)|用于设备身份验证。
-TCP|49443 (TCP)|用于证书身份验证。
+HTTPS|443（TCP/UDP）|用于设备身份验证。
+TCP|49443（TCP）|用于证书身份验证。
 
-有关混合部署所需的端口和协议的其他信息，请参阅[此处](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-ports/)的文档。
+有关混合部署所需的端口和协议的其他信息，请参阅[此处](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-ports)的文档。
 
 有关 Azure AD 和 Office 365 部署所需的端口和协议的详细信息，请参阅[此处](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)的文档。
 

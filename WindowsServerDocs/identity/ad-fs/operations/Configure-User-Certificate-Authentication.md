@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c36555a8bca7882125451b2c86a0707e3de9b2db
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: 6c8a3b30a337c164227bf344b5704cc7e782461a
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145923"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517512"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>为用户证书身份验证配置 AD FS
 
@@ -39,8 +39,10 @@ ms.locfileid: "76145923"
 如果要为 Azure AD 证书身份验证配置 AD FS，请确保已配置了证书颁发者和序列号所需的[Azure AD 设置](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)和[AD FS 声明规则](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements)
 
 此外，还有一些可选的方面。
-- 如果要使用基于证书字段和扩展的声明以及 EKU （声明类型 https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) ，请在 Active Directory 声明提供方信任上配置其他声明传递规则。  有关可用证书声明的完整列表，请参阅下文。  
+- 如果要使用基于证书字段和扩展的声明以及 EKU （声明类型 https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku)，请在 Active Directory 声明提供方信任上配置其他声明传递规则。  有关可用证书声明的完整列表，请参阅下文。  
 - 如果需要基于证书类型限制访问，则可以在应用程序 AD FS 颁发授权规则中使用证书的其他属性。 常见的情况是 "仅允许 MDM 提供程序预配的证书" 或 "仅允许智能卡证书"
+>[!IMPORTANT]
+> 如果客户使用设备代码流进行身份验证，并使用 Azure AD 以外的其他 IDP （如 AD FS）执行设备身份验证，则将不能对 Azure AD 资源强制实施基于设备的访问（例如，仅允许使用第三方 MDM 服务的托管设备）。 若要在 Azure AD 中保护对公司资源的访问并防止任何数据泄露，客户应配置基于 Azure AD 设备的条件性访问（即 "要求设备标记为投诉" 向 Azure AD 条件性访问授予控制权限）。
 - 在[本文](https://technet.microsoft.com/library/dn786429(v=ws.11).aspx)中，使用 "客户端身份验证的受信任颁发者的管理" 下的指导配置允许的客户端证书证书颁发机构。
 - 你可能想要在执行证书身份验证时，根据最终用户的需求来修改登录页。 常见的情况是将 "使用 X509 证书登录" 更改为最终用户友好的内容
 
@@ -90,7 +92,7 @@ AD FS 要求客户端设备（或浏览器）和负载均衡器支持 SNI。 某
     *   输入 `netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
 
 ### <a name="check-if-the-client-device-has-been-provisioned-with-the-certificate-correctly"></a>检查是否已通过证书正确设置了客户端设备
-你可能会注意到某些设备工作正常，但其他设备却不能正常工作。 在这种情况下，这通常是由于未在客户端设备上正确设置用户证书而导致的。 请按照以下步骤进行操作。 
+你可能会注意到某些设备工作正常，但其他设备却不能正常工作。 在这种情况下，这通常是由于未在客户端设备上正确设置用户证书而导致的。 请按照以下步骤操作。 
 1)  如果此问题特定于 Android 设备，最常见的问题是 Android 设备上不完全信任证书链。  请参阅 MDM 供应商，以确保已正确设置证书，并且整个证书链在 Android 设备上完全受信任。 
 2)  如果此问题特定于 Windows 设备，请通过检查已登录用户（而非系统/计算机）的 Windows 证书存储来检查是否正确设置了证书。
 3)  将客户端用户证书导出到 .cer 文件，并运行命令 "certutil-urlfetch-verify certificatefilename"
@@ -106,7 +108,7 @@ AD FS 要求客户端设备（或浏览器）和负载均衡器支持 SNI。 某
 
 有关详细信息，请参阅[此链接](ad-fs-prompt-login.md)。 
 
-### <a name="additional-troubleshooting"></a>更多故障排除方法
+### <a name="additional-troubleshooting"></a>其他疑难解答
 这种情况极少出现
 1)  如果 CRL 列表很长，则尝试下载时可能会超时。 在这种情况下，需要根据 https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows 更新 "MaxFieldLength" 和 "MaxRequestByte"
 

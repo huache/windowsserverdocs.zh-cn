@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29a87f9f07c25a0c671e47550e0a054d8308f747
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7345c1ad59a4209e607245db1b2a79055ffcb5fe
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384418"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517283"
 ---
 # <a name="rundll32"></a>rundll32
 
@@ -34,15 +34,15 @@ ms.locfileid: "71384418"
 Rundll32 <DLLname>
 ```
 
-## <a name="commands"></a>命令
+## <a name="commands"></a>Commands
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |[Rundll32.exe printui.dll，PrintUIEntry](rundll32-printui.md)|显示打印机用户界面|
 
 ## <a name="remarks"></a>备注
 
-Rundll32.exe 只能从显式编写为由 Rundll32.exe 调用的 DLL 调用函数。 有关 Rundll32.exe 要求的详细信息，请参阅 Microsoft 知识库中的[文章 164787](https://go.microsoft.com/fwlink/?LinkID=165773) （ https://go.microsoft.com/fwlink/?LinkID=165773) 。
+Rundll32.exe 只能从显式编写的 DLL 调用函数，以由 Rundll32.exe 调用。
 
 #### <a name="additional-references"></a>其他参考
 

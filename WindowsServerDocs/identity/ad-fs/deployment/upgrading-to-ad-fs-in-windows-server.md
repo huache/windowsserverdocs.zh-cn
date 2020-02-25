@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ebcc679b2bc5ab3c6d7c70c9e84ba45697c80165
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 913e45e52c5c6c137d2bf798bb5b86a65f9d1caa
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265589"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517572"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>使用 WID 数据库升级到 Windows Server 2016 中的 AD FS
 
@@ -34,7 +34,7 @@ ms.locfileid: "76265589"
 | ------------- | ------------- | ------------- |
 | 2012 R2  | 1  | AdfsConfiguration |
 | 2016  | 3  | AdfsConfigurationV3 |
-| WIN ENT LTSB 2016 Spanish 64 Bits  | 4  | AdfsConfigurationV4 |
+| 2019  | 4  | AdfsConfigurationV4 |
 
 > [!NOTE]
 > 升级 FBL 会创建新的 AD FS 配置数据库。  请参阅上表，了解每个 Windows Server AD FS 版本和 FBL 值的配置数据库的名称
@@ -149,3 +149,16 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 ```
 
 这将完成 WAP 服务器的升级。
+
+
+> [!NOTE] 
+> 如果执行了具有混合证书信任的 Windows Hello 企业版，则 AD FS 2019 中存在已知的 PRT 问题。 你可能会在 ADFS 管理事件日志中遇到此错误：接收到无效的 Oauth 请求。 禁止客户端 "NAME" 访问作用域为 "ugs" 的资源。 更正此错误： 
+> 1. 启动 AD FS 管理控制台。 Brose 到 "服务 > 范围说明"
+> 2. 右键单击 "作用域说明"，然后选择 "添加范围说明"
+> 3. 在 "名称" 中键入 "ugs"，并单击 "应用 > 确定"
+> 4. 以管理员身份启动 Powershell
+> 5. 执行 "AdfsApplicationPermission" 命令。 查找 ScopeNames： {openid，aza}，其中包含 ClientRoleIdentifier。 记下 ObjectIdentifier。
+> 6. 执行步骤5中的命令 "AdfsApplicationPermission-TargetIdentifier < ObjectIdentifier >-AddScope" ugs "
+> 7. 重新启动 ADFS 服务。
+> 8. 在客户端上：重新启动客户端。 应提示用户设置 WHFB。
+> 9. 如果未弹出预配窗口，则需要收集 NGC 跟踪日志和进一步的故障排除。
