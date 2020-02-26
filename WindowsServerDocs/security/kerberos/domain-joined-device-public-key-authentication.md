@@ -8,16 +8,16 @@ manager: alanth
 author: michikos
 ms.technology: security-authentication
 ms.date: 08/18/2017
-ms.openlocfilehash: 616ebf1a8e01f84618d22d535609a0dc8414d718
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9c4342281ee2036e152c8034fa72e421487a45b
+ms.sourcegitcommit: 9bc7a0478d72944f714f8041fa4506e0d1ed0366
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403500"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607084"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>已加入域的设备公钥身份验证
 
->适用于：Windows Server 2016、Windows 10
+>适用于： Windows Server 2016、Windows 10
 
 Kerberos 添加了对加入域的设备的支持，以便使用从 Windows Server 2012 和 Windows 8 开始的证书登录。 此更改允许第三方供应商创建解决方案来为已加入域的设备设置和初始化证书，以用于域身份验证。 
 
@@ -25,12 +25,12 @@ Kerberos 添加了对加入域的设备的支持，以便使用从 Windows Serve
 
 从 Windows 10 版本1507和 Windows Server 2016 开始，已加入域的设备会自动将绑定公钥预配到 Windows Server 2016 域控制器（DC）。 设置密钥后，Windows 可以使用域的公钥身份验证。
 
-### <a name="public-key-generation"></a>公钥生成
-如果设备正在运行 Credential Guard，则会通过 Credential Guard 来保护公钥。 
+### <a name="key-generation"></a>密钥生成
+如果设备正在运行 Credential Guard，则会创建一个公钥/私钥对，并受 Credential Guard 保护。 
 
-如果 Credential Guard 不可用，且 TPM 为，则会创建受 TPM 保护的公钥。 
+如果 Credential Guard 不可用，而 TPM 为，则会创建一个公钥/私钥对，由 TPM 保护。 
 
-如果两者都不可用，则不会生成密钥，并且设备只能使用密码进行身份验证。
+如果两者都不可用，则不会生成密钥对，并且设备只能使用密码进行身份验证。
 
 ### <a name="provisioning-computer-account-public-key"></a>预配计算机帐户公钥
 当 Windows 启动时，它会检查是否为其计算机帐户设置了公钥。 如果不是，则它将生成绑定的公钥，并使用 Windows Server 2016 或更高版本的 DC 为 AD 中的帐户配置该公钥。 如果所有 Dc 都已关闭，则不会设置任何密钥。
