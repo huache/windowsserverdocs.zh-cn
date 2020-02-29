@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 34ea5ca29672cb7bc0080a1c27b1910d5cf6b92e
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: b299ddc823b3fbbd5818f96202e3c01faf0762d7
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517522"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169597"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 要求
 
@@ -202,7 +202,7 @@ AD FS 将创建基于会话\-和永久 cookie，这些 cookie 必须存储在客
 此外，如果客户端用户证书身份验证 \(需要使用 X509 用户证书的 clientTLS authentication\)，则在 Windows Server 2012 R2 中 AD FS 需要在客户端和 Web 应用程序代理之间的防火墙上启用 TCP 端口49443。 无需在 Web 应用程序代理和联合服务器之间的防火墙上执行此操作。  
 
 > [!NOTE]
-> 还请确保 Web 应用程序代理服务器上的任何其他服务不使用端口49443。
+> 还应确保 AD FS 和 Web 应用程序代理服务器上的任何其他服务不使用端口49443。
 
 **Configuring DNS**（配置 DNS）  
   

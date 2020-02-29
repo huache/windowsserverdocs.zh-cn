@@ -10,14 +10,14 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 39d57afbd8c4df78764c5975d4cc3d48848475c1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcf8109530043f5e0a6d141c484233c4364fb307
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392773"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169567"
 ---
->适用于： Windows 10、Windows Server 2016、Windows Server 2019
+>适用于： Windows 10，Windows Server 2012，Windows Server 2012R2，Windows Server 2016，Windows Server 2019
 
 # <a name="manage-hyper-v-integration-services"></a>管理 Hyper-v Integration Services
 
@@ -226,46 +226,46 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
 建议使 integration services 保持最新状态，以获取虚拟机的最佳性能和最新功能。 默认情况下，如果这些来宾设置为从 Windows 更新获取重要更新，则默认情况下会发生这种情况。 当你更新内核时，使用当前内核的 Linux 来宾将接收到最新的集成组件。
 
-**对于在 Windows 10 主机上运行的虚拟机：**
+**对于在 Windows 10/Windows Server 2016/2019 主机上运行的虚拟机：**
 
 > [!NOTE]
-> Windows 10 上的 Hyper-v 不附带映像文件 vmguest.iso，因为它不再需要。
+> Windows 10/Windows Server 2016/2019 上的 Hyper-v 不附带 vmguest.iso 映像文件，因为不再需要此文件。
 
-| Guest  | 更新机制 | 注释 |
+| 来宾  | 更新机制 | 注意 |
 |:---------|:---------|:---------|
-| Windows 10 | Windows 更新 | |
-| Windows 8.1 | Windows 更新 | |
-| Windows 8 | Windows 更新 | 需要“数据交换”集成服务。* |
-| Windows 7 | Windows 更新 | 需要“数据交换”集成服务。* |
-| Windows Vista (SP 2) | Windows 更新 | 需要“数据交换”集成服务。* |
+| Windows 10 | Windows Update | |
+| Windows 8.1 | Windows Update | |
+| Windows 8 | Windows Update | 需要数据交换集成服务。* |
+| Windows 7 | Windows Update | 需要数据交换集成服务。* |
+| Windows Vista (SP 2) | Windows Update | 需要数据交换集成服务。* |
 | - | | |
-| Windows Server 2016 | Windows 更新 | |
-| Windows Server 半年频道 | Windows 更新 | |
-| Windows Server 2012 R2 | Windows 更新 | |
-| Windows Server 2012 | Windows 更新 | 需要“数据交换”集成服务。* |
-| Windows Server 2008 R2 (SP 1) | Windows 更新 | 需要“数据交换”集成服务。* |
-| Windows Server 2008 (SP 2) | Windows 更新 | 仅在 Windows Server 2016 中提供扩展支持（[阅读详细信息](https://support.microsoft.com/lifecycle?p1=12925)）。 |
-| Windows Home Server 2011 | Windows 更新 | 在 Windows Server 2016 中将不受支持（[阅读详细信息](https://support.microsoft.com/lifecycle?p1=15820)）。 |
-| Windows Small Business Server 2011 | Windows 更新 | 非主要支持（[阅读更多](https://support.microsoft.com/lifecycle?p1=15817)）。 |
+| Windows Server 2016 | Windows Update | |
+| Windows Server 半年频道 | Windows Update | |
+| Windows Server 2012 R2 | Windows Update | |
+| Windows Server 2012 | Windows Update | 需要数据交换集成服务。* |
+| Windows Server 2008 R2 (SP 1) | Windows Update | 需要数据交换集成服务。* |
+| Windows Server 2008 (SP 2) | Windows Update | 仅在 Windows Server 2016 中提供扩展支持（[阅读详细信息](https://support.microsoft.com/lifecycle?p1=12925)）。 |
+| Windows Home Server 2011 | Windows Update | 在 Windows Server 2016 中将不受支持（[阅读详细信息](https://support.microsoft.com/lifecycle?p1=15820)）。 |
+| Windows Small Business Server 2011 | Windows Update | 非主要支持（[阅读更多](https://support.microsoft.com/lifecycle?p1=15817)）。 |
 | - | | |
 | Linux 来宾 | 程序包管理器 | Linux 集成服务内置于发行版中，但可能有可选的更新可用。 ******** |
 
-\* 如果无法启用数据交换集成服务，这些来宾的集成服务将从[下载中心](https://support.microsoft.com/kb/3071740)作为 cabinet （cab）文件提供。 此[博客文章](https://blogs.technet.com/b/virtualization/archive/2015/07/24/integration-components-available-for-virtual-machines-not-connected-to-windows-update.aspx)提供了应用 cab 的说明。
+\* 如果无法启用数据交换集成服务，这些来宾的集成服务将从[下载中心](https://support.microsoft.com/kb/3071740)作为 cabinet （cab）文件提供。 此[博客文章](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)提供了应用 cab 的说明。
 
-**对于在 Windows 8.1 主机上运行的虚拟机：**
+**对于在 Windows 8.1/Windows Server 2012R2 主机上运行的虚拟机：**
 
-| Guest  | 更新机制 | 注释 |
+| 来宾  | 更新机制 | 注意 |
 |:---------|:---------|:---------|
-| Windows 10 | Windows 更新 | |
-| Windows 8.1 | Windows 更新 | |
+| Windows 10 | Windows Update | |
+| Windows 8.1 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows 8 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
+| Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Vista (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows XP（SP 2、SP 3） | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | - | | |
-| Windows Server 2016 | Windows 更新 | |
-| Windows Server 半年频道 | Windows 更新 | |
-| Windows Server 2012 R2 | Windows 更新 | |
+| Windows Server 2016 | Windows Update | |
+| Windows Server 半年频道 | Windows Update | |
+| Windows Server 2012 R2 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Server 2012 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Server 2008 R2 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Server 2008 (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
@@ -277,17 +277,17 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 | Linux 来宾 | 程序包管理器 | Linux 集成服务内置于发行版中，但可能有可选的更新可用。 ** |
 
 
-**对于在 Windows 8 主机上运行的虚拟机：**
+**对于在 Windows 8/Windows Server 2012 主机上运行的虚拟机：**
 
-| Guest  | 更新机制 | 注释 |
+| 来宾  | 更新机制 | 注意 |
 |:---------|:---------|:---------|
-| Windows 8.1 | Windows 更新 | |
+| Windows 8.1 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows 8 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
+| Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Vista (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows XP（SP 2、SP 3） | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | - | | |
-| Windows Server 2012 R2 | Windows 更新 | |
+| Windows Server 2012 R2 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Server 2012 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Server 2008 R2 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。|
 | Windows Server 2008 (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
@@ -302,14 +302,20 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
 ## <a name="install-or-update-integration-services"></a>安装或更新 integration services
 
-对于早于 Windows Server 2016 和 Windows 10 的主机，你将需要在来宾操作系统中手动安装或更新 integration services。 
-  
+> [!NOTE]
+> 对于早于 Windows Server 2016 和 Windows 10 的主机，你将需要在来宾操作系统中**手动安装或更新**integration services。 
+
+手动安装或更新 integration services 的过程：
+
 1.  打开 Hyper-V 管理器。 在服务器管理器的 "工具" 菜单中，单击 " **Hyper-v 管理器**"。  
   
 2.  连接到虚拟机。 右键单击该虚拟机，然后单击 "**连接**"。  
   
-3.  在虚拟机连接的“操作”菜单中，单击 **“插入集成服务安装盘”** . 该操作将在虚拟 DVD 驱动器中加载安装盘。 根据来宾操作系统的不同，您可能需要手动启动安装。  
+3.  在“虚拟机连接”的“操作”菜单中，单击“插入集成服务安装盘”。 该操作将在虚拟 DVD 驱动器中加载安装盘。 根据来宾操作系统的不同，您可能需要手动启动安装。  
   
 4.  安装完成后，所有集成服务均可使用。
 
-对于联机虚拟机，无法在 Windows PowerShell 会话中自动执行或执行这些步骤。 可以将其应用于脱机 VHDX 映像;[请参阅此博客文章](https://blogs.technet.microsoft.com/virtualization/2013/04/18/how-to-install-integration-services-when-the-virtual-machine-is-not-running/)。
+> [!NOTE]
+> 对于**联机**虚拟机，无法在 Windows PowerShell 会话中**自动**执行或执行这些步骤。
+> 可以将其应用于**脱机**VHDX 映像;请参阅[如何在虚拟机未运行时安装 integration services](https://docs.microsoft.com/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running)。
+> 你还可以通过将**Configuration Manager**与 vm**联机**来自动部署 integration services，但需要在安装结束时重新启动 vm;请参阅[使用配置管理器和 DISM 将 hyper-v Integration Services 部署到 vm](https://docs.microsoft.com/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)

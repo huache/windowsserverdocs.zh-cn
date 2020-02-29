@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5323210962298ff3f2d0b159cba7726adfbb89d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7da68fa9cbe71f8a67e74671d64d11908ae4654
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361621"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169557"
 ---
 # <a name="running-wsus-replica-mode"></a>运行 WSUS 副本模式
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 在副本模式下运行的 WSUS 服务器继承在管理服务器上创建的更新审批和计算机组。 在使用副本模式的方案中，通常会有一台管理服务器，并且一个或多个从属副本 WSUS 服务器会根据站点或组织拓扑分布在整个组织中。 你批准更新并在管理服务器上创建计算机组，然后副本模式服务器将镜像该服务器。 副本模式服务器只能在 WSUS 安装过程中设置，如果你实施了此方案，则很可能是因为你的组织中的更新审批和计算机组的集中管理是很重要的。
 
