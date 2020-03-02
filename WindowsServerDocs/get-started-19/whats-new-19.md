@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 13eed225dfc144d5e7e59be13dbed14d4de8bb01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dd8cd6700323075a380aa062bfa1d208b3e30f83
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360776"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465491"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 中的新增功能
 
@@ -49,7 +49,7 @@ Windows Server 2019 是长期服务频道 (LTSC) 版本，因此包含<b>桌面�
 
 此可选按需功能在单独的 ISO 上提供，可通过 DISM 将其仅添加到 Windows Server 核心安装和映像中。 
 
-## <a name="security"></a>安全性
+## <a name="security"></a>安全
 
 ### <a name="windows-defender-advanced-threat-protection-atp"></a>Windows Defender 高级威胁防护 (ATP)
 
@@ -115,7 +115,7 @@ ATP 的深度平台传感器和响应操作可暴露内存和内核级别攻击�
 
 存储迁移服务是一种新技术，可以更轻松地将服务器迁移到更新版本的 Windows Server。 它提供一个图形工具，可清查服务器上的数据、将数据和配置传输到更新的服务器，然后选择将旧服务器的标识移到新服务器，这样应用和用户就不必进行任何更改。 有关详细信息，请参阅[存储迁移服务](../storage/storage-migration-service/overview.md)。
 
-### <a name="storage-spaces-direct"></a>存储空间直通
+### <a name="storage-spaces-direct"></a>Storage Spaces Direct
 
 下面是存储空间直通中的新增功能的列表。 有关详细信息，请参阅[存储空间直通中的新增功能](../storage/whats-new-in-storage.md#storage-spaces-direct)。 另请参阅 [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview)，了解如何获取经验证的存储空间直通系统。
 
