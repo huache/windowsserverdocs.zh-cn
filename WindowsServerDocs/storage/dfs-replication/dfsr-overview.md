@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 22f9e25763217cbbfdfd8a4ab099344f23138344
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c17fd78a2cf726ab156d3eda09b9c0e2d4ed6a75
+ms.sourcegitcommit: aaae95cb05c44232099ec46b04a127c77a3f486e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949716"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77520353"
 ---
 # <a name="dfs-replication-overview"></a>DFS 复制概述
 
@@ -53,7 +53,7 @@ DFS 复制使用一种称为远程差分压缩 (RDC) 的压缩算法。 RDC 检�
 - 使用快照或已保存状态还原运行 DFS 复制的服务器以便复制 SYSVOL 文件夹之外的任何内容会导致 DFS 复制失败，这需要特殊的数据库恢复步骤。 同样，不要导出、克隆或复制虚拟机。 有关详细信息，请参阅 Microsoft 知识库中的文章 [2517913](https://support.microsoft.com/kb/2517913) 以及 [安全地虚拟化 DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/)。
 - 在虚拟机中承载的已复制文件夹中备份数据时，必须从来宾虚拟机中使用备份软件。
 - DFS 复制需要访问物理或虚拟化域控制器 - 它不能直接与 Azure AD 通信。
-- DFS 复制需要本地复制组成员与 Azure VM 中任何成员之间的 VPN 连接。 你还需要配置本地路由器（例如 Forefront 威胁管理网关）以允许 RPC 端点映射程序（端口 135）和随机分配的端口（介于 49152 与 65535 之间）通过 VPN 连接进行传递。 可以使用 Set-DfsrMachineConfiguration cmdlet 或 Dfsrdiag 命令行工具指定静态端口而不是随机端口。 有关如何为 DFS 复制指定静态端口的详细信息，请参阅 [Set-DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration)。 有关为管理 Windows Server 而打开的相关端口的信息，请参阅 Microsoft 知识库中的文章 [832017](https://support.microsoft.com/kb/832017) 。
+- DFS 复制需要在本地复制组成员与 Azure VM 中托管的任何成员之间建立 VPN 连接。 还需配置本地路由器（例如 Forefront 威胁管理网关），允许 RPC 终结点映射程序（端口 135）和随机分配的端口（介于 49152 与 65535 之间）通过 VPN 连接进行传递。 可以使用 Set-DfsrMachineConfiguration cmdlet 或 Dfsrdiag 命令行工具指定静态端口而不是随机端口。 有关如何为 DFS 复制指定静态端口的详细信息，请参阅 [Set-DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration)。 有关为管理 Windows Server 而打开的相关端口的信息，请参阅 Microsoft 知识库中的文章 [832017](https://support.microsoft.com/kb/832017) 。
 
 若要了解如何开始使用 Azure 虚拟机，请访问 [Microsoft Azure 网站](https://docs.microsoft.com/azure/virtual-machines/)。
 

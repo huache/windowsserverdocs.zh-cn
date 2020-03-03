@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a01d8881e8f0f7ca6feff691938f926a12460db0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8ebe1f82cd6f616d42521729c5efc14821c20fa
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361660"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169577"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>步骤 4：为自动更新配置组策略设置
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 Active Directory 环境中，可以使用组策略来定义计算机和用户（在本文档中称为 WSUS 客户端）如何与 Windows 更新交互，以从 Windows Server Update Services (WSUS) 获取自动更新。
 
@@ -94,7 +94,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
 > 如果“配置自动更新”策略设置为“已禁用”，则此策略不起作用。 
@@ -135,7 +135,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|Windows RT|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|RT Windows|
 
 > [!NOTE]
 > 来自 Intranet Microsoft 更新服务以外的服务的更新必须始终由 Microsoft 签名，且不受此策略设置的影响。
@@ -159,7 +159,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
 > 如果启用了“对于有已登录用户的计算机，计划的自动更新安装不执行自动重启”策略设置，则此策略不起作用。
@@ -178,7 +178,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|Windows RT|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|RT Windows|
 
 > [!NOTE]
 > 必须启用“指定 Intranet Microsoft 更新服务位置”设置才能使此策略发挥作用。
@@ -202,7 +202,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|Windows RT|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|RT Windows|
 
 如果启用，则必须选择此组策略设置中提供的四个选项之一。
 
@@ -220,7 +220,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
 > 仅当自动更新配置为执行更新的计划安装时，此策略才适用。 如果“配置自动更新”策略设置已禁用，则此策略不起作用。
@@ -239,10 +239,10 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
-> 如果“<策略名称>” > “计算机配置” > “策略” > “管理模板” > “Windows 组件” > “Windows 更新” > “不要在‘关闭 Windows’对话框中显示‘安装更新并关机’选项”策略设置已启用，则此策略设置不起作用。       
+> 如果启用了“PolicyName”   >  **“计算机配置”**  > “策略”   >   “管理模板” >   “Windows 组件” >   “Windows 更新” >   “在‘关闭 Windows’对话框中不显示‘安装更新并关机’选项”策略设置，则此策略设置不会产生任何影响。
 
 |||
 |-|-|
@@ -260,7 +260,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|从 Windows Server 2012 R2、Windows 8.1 或 Windows RT 8.1 开始，仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|从 Windows Server 2012 R2、Windows 8.1 或 Windows RT 8.1 开始，仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
 > 仅当计算机配置为使用“指定 Intranet Microsoft 更新服务位置”策略设置连接到 Intranet 更新服务时，此策略才适用。
@@ -279,7 +279,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 |||
 |-|-|
@@ -295,7 +295,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|Windows RT|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|RT Windows|
 
 > [!NOTE]
 > 仅当此计算机配置为支持 WSUS 中指定的目标组名称时，此策略才适用。 如果目标组名称在 WSUS 中不存在，则在创建该名称之前会将其忽略。 如果“指定 Intranet Microsoft 更新服务位置”策略设置已禁用或未配置，此策略将不起作用。
@@ -321,7 +321,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|从 Windows Vista 和 Windows Server 2008 (Windows 7) 开始，仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|从 Windows Vista 和 Windows Server 2008 (Windows 7) 开始，仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 |||
 |-|-|
@@ -337,7 +337,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
 > 仅当自动更新配置为执行更新的计划安装时，此策略才适用。 如果“配置自动更新”策略设置已禁用，则此策略不起作用。
@@ -356,7 +356,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|Windows RT|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|RT Windows|
 
 > [!IMPORTANT]
 > 仅当自动更新配置为执行更新的计划安装时，此策略才适用。 如果“配置自动更新”策略设置已禁用，则此策略不起作用。
@@ -380,7 +380,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
 > 仅当自动更新配置为执行更新的计划安装时，此策略才适用。 如果“配置自动更新”策略设置已禁用，则此策略不起作用。
@@ -431,7 +431,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|从 Windows Vista 开始，仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|从 Windows Vista 开始，仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 |||
 |-|-|
@@ -451,7 +451,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|从 Windows Server 2008 (Windows Vista) 和 Windows 7 开始，仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|从 Windows Server 2008 (Windows Vista) 和 Windows 7 开始，仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
 > 默认会禁用此策略设置。
@@ -466,7 +466,7 @@ ms.locfileid: "71361660"
 **选项：** 此设置没有选项。
 
 ### <a name="computer-configuration--maintenance-scheduler-policy-settings"></a>计算机配置 > 维护计划程序策略设置
-在“配置自动更新”设置中，你已选择“4 - 自动下载并计划安装”选项，现在可以在 GPMC 中为运行 Windows 8 和 Windows RT 的计算机指定“维护计划程序”设置。  如果未在“配置自动更新”设置中选择选项 4，则无需为自动更新的目的配置这些设置。 “维护计划程序”设置位于以下路径：<策略名称>   > **计算机配置** > **策略** > **管理模板** > **Windows 组件** > **维护计划程序**。 组策略的“维护计划程序”扩展包含以下设置：
+在“配置自动更新”设置中，你已选择“4 - 自动下载并计划安装”选项，现在可以在 GPMC 中为运行 Windows 8 和 Windows RT 的计算机指定“维护计划程序”设置。  如果未在“配置自动更新”设置中选择选项 4，则无需为自动更新的目的配置这些设置。 “维护计划程序”设置位于以下路径：“PolicyName” >  计算机配置  > “策略” > “管理模板” > “Windows 组件” > “维护计划程序”。       组策略的“维护计划程序”扩展包含以下设置：
 
 -   [自动维护激活边界](#automatic-maintenance-activation-boundary)
 
@@ -481,7 +481,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
 > 此设置与“配置自动更新”中的选项 4 相关。  如果在“配置自动更新”中未选择选项 4，则无需配置此设置。 
@@ -500,7 +500,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
 > 此设置与“配置自动更新”中的选项 4 相关。  如果在“配置自动更新”中未选择选项 4，则无需配置此设置。 
@@ -521,7 +521,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
 > 如果显式禁用了运行中计算机的电源唤醒策略，则此设置不起作用。
@@ -558,7 +558,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 |||
 |-|-|
@@ -574,10 +574,10 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 > [!NOTE]
-> 如果“<策略名称>” > “用户配置” > “策略” > “管理模板” > “Windows 组件” > “Windows 更新” > “不要在‘关闭 Windows’对话框中显示‘安装更新并关机’选项”已启用，则此策略设置不起作用。       
+> 如果启用了“PolicyName”   >  **“用户配置”**  > “策略”   >   “管理模板” >   “Windows 组件” >   “Windows 更新” >   “在‘关闭 Windows’对话框中不显示‘安装更新并关机’选项”，则此策略设置不会产生任何影响。
 
 |||
 |-|-|
@@ -593,7 +593,7 @@ ms.locfileid: "71361660"
 
 |支持的操作系统：|不包括：|
 |---------|-------|
-|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|null|
+|仍处于 [Microsoft 产品支持生命周期](https://support.microsoft.com/gp/lifeselect)内的 Windows 操作系统。|空|
 
 |||
 |-|-|
@@ -636,7 +636,7 @@ ms.locfileid: "71361660"
 
 1.  在组策略管理编辑器中执行以下操作之一：
 
-    -   **打开“计算机配置”>“组策略的 Windows 更新扩展”** 。 导航到：<策略名称>   > **计算机配置** > **策略** / **管理模板** > **Windows 组件** > **Windows 更新**。
+    -   **打开“计算机配置”>“组策略的 Windows 更新扩展”** 。 导航到：*PolicyName* > **计算机配置** > **策略** / **管理模板** > **Windows 组件** > **Windows 更新**。
 
     -   **打开“用户配置”>“组策略的 Windows 更新扩展”** 。 导航到：<策略名称>   > **用户配置** > **策略** > **管理模板** > **Windows 组件** > **Windows 更新**。
 
@@ -672,7 +672,7 @@ ms.locfileid: "71361660"
 ### <a name="changes-to-wsus-relevant-to-this-guide"></a>与本指南相关的 WSUS 更改
 下表汇总了与本指南相关的 WSUS 当前版本与以往版本之间的主要差异。
 
-|Windows Server 和 WSUS 版本|描述|
+|Windows Server 和 WSUS 版本|说明|
 |------------------|--------|
 | 使用 WSUS 6.0 和后续版本的 Windows Server 2012 R2|从 Windows Server 2012 开始，WSUS 服务器角色与操作系统集成，WSUS 客户端的关联组策略设置默认包含在组策略中。|
 | 使用 WSUS 3.2 和更低版本的 Windows Server 2008（及更低版本的 Windows Server）|在使用 WSUS 版本 3.2（和更低版本）的 Windows Server 2008（及更低版本的 Windows Server）中，控制 WSUS 客户端的组策略设置未包含在这些 Windows Server 操作系统中。 策略设置位于 WSUS 管理模板 **wuau.adm** 中。 在这些服务器版本中，必须先将 WSUS 管理模板添加到组策略管理控制台 (GPMC)，然后才能配置 WSUS 客户端设置。|
@@ -695,6 +695,6 @@ ms.locfileid: "71361660"
 |更新信息（也称为更新元数据）|有关更新的信息，而不是更新包中的更新二进制文件。 例如，元数据提供更新属性的信息，因此可让你知道该更新的作用。 元数据还包括 Microsoft 软件许可条款。 下载的更新元数据包通常比实际的更新文件包小得多。|
 |更新源|Windows Server Update Services (WSUS) 服务器为了获取更新文件而要同步到的位置。 此位置可以是 Microsoft 更新或上游 WSUS 服务器。|
 |上游服务器|一台 Windows Server Update Services (WSUS) 服务器，它将更新文件提供给另一台 WSUS 服务器，后者称为下游服务器。|
-|Windows Server Update Services (WSUS)|在企业网络中的一台或多台 Windows Server 计算机上运行的服务器角色程序。 WSUS 基础结构允许管理要为网络中的计算机安装的更新。<br /><br />可以使用 WSUS 在发布之前批准或拒绝更新、强制按给定的日期安装更新，并获取有关网络中的每台计算机需要哪些更新的详细报告。 可将 WSUS 配置为自动批准特定的更新种类（关键更新、安全更新、服务包、驱动程序等）。 WSUS 还允许批准仅供“检测”的更新，以便可以了解哪些计算机需要特定的更新，而无需安装更新。<br /><br />在 WSUS 实施方案中，网络中必须至少有一台 WSUS 服务器能够连接到 Microsoft 更新以获取可用的更新。 管理员可以根据网络安全性和配置，来确定还有其他多少台服务器可直接连接到 Microsoft 更新。<br /><br />可将 WSUS 服务器配置为通过 Internet 从如下所述的位置获取更新：<br /><br />-   公共 Microsoft 更新<br />-   公共 Windows 更新<br />-   Microsoft Store|
+|Windows 服务器更新服务 (WSUS)|在企业网络中的一台或多台 Windows Server 计算机上运行的服务器角色程序。 WSUS 基础结构允许管理要为网络中的计算机安装的更新。<br /><br />可以使用 WSUS 在发布之前批准或拒绝更新、强制按给定的日期安装更新，并获取有关网络中的每台计算机需要哪些更新的详细报告。 可将 WSUS 配置为自动批准特定的更新种类（关键更新、安全更新、服务包、驱动程序等）。 WSUS 还允许批准仅供“检测”的更新，以便可以了解哪些计算机需要特定的更新，而无需安装更新。<br /><br />在 WSUS 实施方案中，网络中必须至少有一台 WSUS 服务器能够连接到 Microsoft 更新以获取可用的更新。 管理员可以根据网络安全性和配置，来确定还有其他多少台服务器可直接连接到 Microsoft 更新。<br /><br />可将 WSUS 服务器配置为通过 Internet 从如下所述的位置获取更新：<br /><br />-   公共 Microsoft 更新<br />-   公共 Windows 更新<br />-   Microsoft Store|
 |Windows 更新|**基于 Internet 的 Microsoft 下载站点：** 一个 Microsoft Internet 站点，用于存储和分发 Windows 计算机（设备驱动程序）和 Windows 操作系统的更新。<br /><br />**计算机服务：** 在计算机上运行的 Windows 更新服务的名称。 Windows 更新将在 Windows 计算机上检测、下载和安装更新。<br /><br />根据计算机和策略配置，Windows 更新代理可从以下位置下载更新：<br /><br />-    Microsoft 更新<br />-    Windows 更新<br />-   Microsoft Store<br />-   Internet（网络）更新服务 (WSUS)<br /><br />不在基于 WSUS 的环境中进行管理的计算机通常使用 Windows 更新通过 Internet 直接连接到 Windows 更新、Microsoft 更新或 Microsoft Store，以获取更新。|
 |WSUS 客户端|从 WSUS Intranet 更新服务接收更新的计算机。<br /><br />在控制最终用户与自动更新之间的交互的组策略设置中，WSUS 客户端是指 WSUS 环境中的计算机用户。|

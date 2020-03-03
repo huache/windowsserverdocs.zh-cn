@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 03/22/2019
 ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: 67e35a47467b1f5f66bfd073c6f9db06094ea3f9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 25a5c2222f50b37bff2bcfe41184d6d9fa35995c
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391031"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465501"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>安全地虚拟化 Active Directory 域服务 (AD DS)
 
@@ -67,7 +67,7 @@ USN 孔的大小可能代表对用户、计算机、信任、密码和安全组�
 
 可能会在目录服务事件日志中捕获这些事件。 但是，在管理员看到它们之前，它们可能会被覆盖。
 
-如果你怀疑已发生 USN 回滚，但未在事件日志中看到对应的事件，请检查注册表中是否存在“DSA 不可写”条目。 此条目可以确凿地证明 USN 回滚已发生。
+如果怀疑已发生 USN 回退，但未在事件日志中看到对应的事件，请检查注册表中是否存在“DSA 不可写”条目。 此条目可以确凿地证明 USN 回滚已发生。
 
 ```
 HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\NTDS\Parameters
@@ -103,7 +103,7 @@ Value: 0x4
 > [!CAUTION]
 > 如果生产环境中的域控制器意外地还原到快照，建议你向供应商咨询应用程序、托管在该虚拟机上的服务、以及快照还原后验证这些程序状态的指南。
 
-有关详细信息，请参阅[虚拟化域控制器安全还原体系结构](../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)。
+有关详细信息，请参阅 [Virtualized domain controller safe restore architecture](../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)。
 
 ## <a name="recovering-from-a-usn-rollback"></a>通过 USN 回滚进行恢复
 
@@ -131,5 +131,5 @@ Value: 0x4
 
 ## <a name="next-steps"></a>后续步骤
 
-* 有关虚拟域控制器的更多疑难解答信息，请参阅[虚拟域控制器疑难解答](../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md)。
+* 有关虚拟域控制器的详细疑难解答信息，请参阅 [Virtualized Domain Controller Troubleshooting](../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md)。
 * [有关 Windows 时间服务 (W32Time) 的详细信息](../../networking/windows-time-service/windows-time-service-top.md)

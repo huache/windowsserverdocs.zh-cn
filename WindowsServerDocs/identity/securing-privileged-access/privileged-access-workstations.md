@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 03f62fd8d9a95c4f0b83e64d672a3c1134833cae
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 86d7b2ff99debbecec930693fb93dc965fefc59e
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950557"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517592"
 ---
 # <a name="privileged-access-workstations"></a>特权访问工作站
 
@@ -40,7 +40,7 @@ PAW 安全控制机制侧重于缓解泄密造成的较大影响以及较高概�
 
 * **Internet 攻击** - 大多数攻击直接或间接地源于 Internet 源，并使用 Internet 进行渗透及命令和控制 (C2)。 将 PAW 与开放的 Internet 隔离是确保 PAW 不会被入侵的关键因素。
 * **可用性风险** - 如果 PAW 因太难而无法在日常任务中使用，管理员将积极创建变通方法，以使他们的作业变得简单。 通常情况下，这些变通方法会使管理工作站和帐户面临重大安全风险，因此，安全地使 PAW 用户参与并授权其来缓解这些可用性问题很重要。 为此，可以听取他们的反馈意见，安装所需的工具和脚本以执行其作业，确保所有员工意识到为什么他们需要 PAW、PAW 是什么以及如何正确成功地使用它。
-* **环境风险** - 由于环境中的很多其他计算机和帐户直接或间接地暴露在 Internet 风险中，必须保护 PAW 免受生产环境中被入侵的资产攻击。 这要求将对 PAW 有访问权限的管理工具和帐户的使用限制到最低，以保护和监控这些专用的工作站。
+* **环境风险** - 由于环境中的很多其他计算机和帐户直接或间接地暴露在 Internet 风险中，必须保护 PAW，使之免受生产环境中被入侵的资产攻击。 这要求将对 PAW 有访问权限的管理工具和帐户的使用限制到最低，以保护和监控这些专用的工作站。
 * **供应链篡改** - 虽然不可能清除硬件和软件供应链中所有可能的篡改风险，但是执行一些关键操作可以缓解攻击者现已可用的关键攻击媒介。 这些操作包括验证所有安装介质的完整性（[清洁源原则](https://aka.ms/cleansource)），以及使用受信任且信誉好的供应商提供的硬件和软件。
 * **物理攻击** - PAW 可以物理方式移动，并可用于物理安全设施的外部，因此，必须保护它们免受利用未经授权的计算机物理访问权限的攻击。
 

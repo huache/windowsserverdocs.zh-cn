@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e73511709bfbee69a6dcbaaff4341c8b067079f3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ca68087ad238cbbd06c56e41dd65f318adae5222
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949868"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465471"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS 客户端入门
 
@@ -40,7 +40,7 @@ ms.locfileid: "75949868"
 3. 添加远程桌面连接或远程资源。 可以使用连接直接连接到 Windows 电脑和远程资源，以使用 RemoteApp 程序、基于会话的桌面或是使用 RemoteApp 和桌面连接在本地发布的虚拟桌面。 此功能通常在企业环境中可用。
 
 ## <a name="what-about-the-mac-beta-client"></a>Mac beta 版客户端怎么样？
-我们要在 HockeyApp 上测试我们预览频道中的新功能。 要看看么？ 转到[适用于 Mac 的 Microsoft 远程桌面](https://go.microsoft.com/fwlink/?LinkID=619698)并单击“下载”  。 无需创建帐户或登录 HockeyApp，即可下载 beta 版客户端。
+我们要在 AppCenter 上测试预览频道中的新功能。 要看看么？ 转到[适用于 Mac 的 Microsoft 远程桌面](https://aka.ms/rdmacbeta)并单击“下载”  。 无需创建帐户或登录 AppCenter 即可下载 beta 版客户端。
 
 如果已有该客户端，则可以检查更新，以确保具有最新版本。 在 beta 版客户端中，单击顶部的“Microsoft 远程桌面 Beta 版”  ，然后单击“检查更新”  。 
 

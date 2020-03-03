@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 37e37e33b5d8dd571f8519aaa48251856503578d
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953089"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77520721"
 ---
 # <a name="windows-server-2016-improvements"></a>Windows Server 2016 改进功能
 
@@ -39,7 +39,7 @@ Windows 2016 已改进 Hyper-V TimeSync 服务。 改进内容包括：提高了
 |----- | ----- |
 |计算时间偏移| 系统时钟与所选时间源之间的绝对时间偏移通过 W32Time 服务进行计算（以微秒为单位）。 新的有效样本可用时，将按样本指示的时间偏移更新计算时间。 这是本地时钟的实际时间偏移。 W32time 使用此偏移启动时钟更正，并使用其余时间偏移更新样本之间的计算时间，需要将后一个偏移应用于本地时钟。 可以使用此性能计数器以低轮询间隔（例如 256 秒或更短时间），通过寻找小于所需时钟精度限制的计数器值来跟踪时钟精度。|
 |时钟频率调整| W32Time 以纳秒为单位对本地系统时钟进行的绝对时钟频率调整。 此计数器有助于可视化 W32time 所执行的操作。|
-|NTP 往返延迟| NTP 客户端从服务器接收响应时的最新往返延迟，以微秒为单位。 这是 NTP 客户端上向 NTP 服务器发送请求到 |从服务器接收有效响应所经过的时间。 此计数器有助于描述 NTP 客户端遇到的延迟。 较大或多变的往返可能会增加对 NTP 时间计算的干扰，而这些干扰又可能会通过 NTP 影响时间同步的准确性。|
+|NTP 往返延迟| NTP 客户端从服务器接收响应时的最新往返延迟，以微秒为单位。 这是在 NTP 客户端向 NTP 服务器传输请求和从服务器接收有效响应之间经历的时间。 此计数器有助于描述 NTP 客户端遇到的延迟。 较大或多变的往返可能会增加对 NTP 时间计算的干扰，而这些干扰又可能会通过 NTP 影响时间同步的准确性。|
 |NTP 客户端源计数| NTP 客户端所使用的 NTP 时间源的有效数目。 这是时间服务器的有效且独立的 IP 地址计数，这些服务器可响应此客户端的请求。 此数字可能大于或小于配置的对等数，具体取决于对等数名称的 DNS 解析和当前的可达性。|
 |NTP 服务器传入请求| NTP 服务器接收的请求数（请求数/秒）。|
 |NTP 服务器传出响应| NTP 服务器应答的请求数（响应数/秒）。|

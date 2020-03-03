@@ -14,12 +14,12 @@ manager: lizross
 ms.author: helohr
 date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1724f24a794003aaae0ac89ee892269eed045114
-ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
+ms.openlocfilehash: ef13227a9f7b83f01786bbb11498da912c86581b
+ms.sourcegitcommit: 32211610ad9a24d282b35ed8c0aaa179497c63bf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77179351"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77780816"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS 客户端入门
 
@@ -170,7 +170,12 @@ ms.locfileid: "77179351"
 
 ## <a name="supported-input-devices"></a>支持的输入设备
 
-iOS 客户端当前仅支持 Swiftpoint GT 和 ProPoint 鼠标。 有关设备支持的详细信息，请参阅 [iOS 客户端的新增功能](ios-whatsnew.md)和 [iOS App Store](https://aka.ms/rdios)。
+在 iOS 13 和 iPadOS 中提供作为辅助功能的基本[蓝牙鼠标支持](https://support.apple.com/HT210546)。 使用 Swiftpoint GT 和 ProPoint 鼠标即可使用 RD 客户端中的更深层鼠标集成。 此外，也支持与 iOS 和 iPadOS 兼容的外部键盘。
+
+有关设备支持的详细信息，请参阅 [iOS 客户端的新增功能](ios-whatsnew.md)和 [iOS App Store](https://aka.ms/rdios)。
+
+> [!TIP]
+> Swiftpoint 为 iOS 客户端用户提供 [ProPoint 鼠标的专享折扣](https://www.swiftpoint.com/microsoft)。
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>在远程会话中使用键盘
 
@@ -180,20 +185,7 @@ iOS 客户端当前仅支持 Swiftpoint GT 和 ProPoint 鼠标。 有关设备�
 
 如果为你的 iOS 设备启用了蓝牙，客户端会自动检测蓝牙键盘。
 
-请注意，由于 OS 上的限制，Ctrl、选项和函数等特殊键将无法按预期与蓝牙键盘结合使用。 以下键起作用：
+尽管某些组合键可能无法在远程会话中按预期方式使用，但许多常见的 Windows 组合键（如 CTRL+C、CTRL+V 和 ALT+TAB）可以使用。
 
-- 字母数字键
-- 光标键
-- Tab：Tab 起作用，但 Shift+Tab 不起作用
-- Home/Pos1：Alt+向左键 = Home
-- End：Alt+向右键 = End
-- Page Up：Alt+向上键 = Page Up
-- Page Down：Alt+向下键 = Page Down
-- 全选：Command+A = Ctrl+A（在大多数程序中全选）
-- 剪切：Command+X = Ctrl+X（在大多数程序中剪切）
-- 复制：Command+C = Ctrl+C（在大多数程序中复制）
-- 粘贴：Command+V = Ctrl+V（在大多数程序中粘贴）
-- 符号：Alt+字母数字键将生成不同的符号，具体取决于配置的语言
-
-> [!TIP]
+> [!IMPORTANT]
 > 欢迎提出问题和意见。 但是，请不要使用本文末尾的评论功能来请求获取故障排除帮助。 而是转到[远程桌面客户端论坛](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)并启动一个新线程。 有功能建议？ 请在[客户端用户心声论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。

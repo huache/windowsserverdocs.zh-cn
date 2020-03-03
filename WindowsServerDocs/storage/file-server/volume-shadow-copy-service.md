@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: f2e8d3bfb5ef907ffb522b5b7be31d1def3001c8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1ab941e25da7171349bb24762940af3bf886c165
+ms.sourcegitcommit: a4b489d0597b6a73c905d3448d5bc332efd6191b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949681"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77675358"
 ---
 # <a name="volume-shadow-copy-service"></a>卷影复制服务
 
@@ -19,34 +19,34 @@ ms.locfileid: "75949681"
 
 由于以下问题，备份和还原关键业务数据可能非常复杂：
 
-  - 当生成数据的应用程序仍在运行时，通常需要备份数据。 这意味着，某些数据文件可能处于打开状态，或者可能处于不一致的状态。  
-      
-  - 如果数据集很大，则很难一次备份所有数据集。  
-      
+  - 当生成数据的应用程序仍在运行时，通常需要备份数据。 这意味着，某些数据文件可能处于打开状态，或者可能处于不一致的状态。
+
+  - 如果数据集很大，则很难一次备份所有数据集。
+
 
 正确执行备份和还原操作需要备份应用程序、要备份的业务线应用程序以及存储管理硬件和软件之间密切协调。 卷影复制服务 (VSS) 是在 Windows Server®2003 中引入的，它有助于这些组件之间的对话，以便更好地协同工作。 当所有组件都支持 VSS 时，你可以使用它们来备份应用程序数据，无需将应用程序脱机。
 
 VSS 协调为要备份的数据创建一致的卷影副本（也称为快照或时间点副本）所需的操作。 卷影副本可以按原样使用，也可以在以下情况下使用：
 
-  - 你需要备份应用程序数据和系统状态信息，包括将数据存档到其他硬盘驱动器、磁带或其他可移动媒体。  
-      
-  - 你正在执行数据挖掘。  
-      
-  - 你正在执行磁盘到磁盘备份。  
-      
-  - 你需要通过将数据恢复到原始 LUN 或全新的 LUN（替换出现故障的原始 LUN）来快速恢复数据丢失。  
-      
+  - 你需要备份应用程序数据和系统状态信息，包括将数据存档到其他硬盘驱动器、磁带或其他可移动媒体。
+
+  - 你正在执行数据挖掘。
+
+  - 你正在执行磁盘到磁盘备份。
+
+  - 你需要通过将数据恢复到原始 LUN 或全新的 LUN（替换出现故障的原始 LUN）来快速恢复数据丢失。
+
 
 使用 VSS 的 Windows 功能和应用程序包括：
 
-  - [Windows Server 备份](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkId=180891)  
-      
-  - [共享文件夹的卷影副本](https://go.microsoft.com/fwlink/?linkid=142874) (https://go.microsoft.com/fwlink/?LinkId=142874)  
-      
-  - [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=180892) (https://go.microsoft.com/fwlink/?LinkId=180892)  
-      
-  - [系统还原](https://go.microsoft.com/fwlink/?linkid=180893) (https://go.microsoft.com/fwlink/?LinkId=180893)  
-      
+  - [Windows Server 备份](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkId=180891)
+
+  - [共享文件夹的卷影副本](https://go.microsoft.com/fwlink/?linkid=142874) (https://go.microsoft.com/fwlink/?LinkId=142874)
+
+  - [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=180892) (https://go.microsoft.com/fwlink/?LinkId=180892)
+
+  - [系统还原](https://go.microsoft.com/fwlink/?linkid=180893) (https://go.microsoft.com/fwlink/?LinkId=180893)
+
 
 ## <a name="how-volume-shadow-copy-service-works"></a>卷影复制服务的工作原理
 
@@ -76,31 +76,31 @@ VSS 提供程序   创建和维护卷影副本的组件  。 这可能会在�
 
 若要创建卷影副本，请求程序、编写程序和提供程序将执行以下操作：
 
-1.  请求程序要求卷影复制服务枚举编写程序，收集编写程序元数据，并准备创建卷影副本。  
-      
-2.  每个编写程序都会为需要备份的组件和数据存储创建 XML 描述，并将其提供给卷影复制服务。 编写器还定义了用于所有组件的还原方法。 卷影复制服务向请求程序提供编写程序的描述，而请求程序则选择要备份的组件。  
-      
-3.  卷影复制服务通知所有编写程序准备数据以进行卷影复制。  
-      
-4.  每个编写程序都会根据需要准备数据，例如完成所有未结束事务、滚动事务日志和刷新缓存。 当数据准备好进行卷影复制时，编写程序将通知卷影复制服务。  
-      
-5.  卷影复制服务通知编写程序将应用程序写入 I/O 请求暂时冻结几秒钟（仍然可以执行读取 I/O 请求），创建卷的卷影副本需要这几秒的时间。 应用程序冻结的时间不允许超过 60 秒。 卷影复制服务刷新文件系统缓冲区，然后冻结文件系统，从而确保正确记录文件系统元数据，并以一致的顺序写入要进行卷影复制的数据。  
-      
-6.  卷影复制服务通知提供程序创建卷影副本。 卷影副本创建周期不超过 10 秒，在此期间，对文件系统的所有写入 I/O 请求都将保持冻结状态。  
-      
-7.  卷影复制服务释放文件系统写入 I/O 请求。  
-      
-8.  VSS 通知编写程序解除冻结应用程序写入 I/O 请求。 此时，应用程序可以继续将数据写入正在进行卷影复制的磁盘。  
-      
+1.  请求程序要求卷影复制服务枚举编写程序，收集编写程序元数据，并准备创建卷影副本。
+
+2.  每个编写程序都会为需要备份的组件和数据存储创建 XML 描述，并将其提供给卷影复制服务。 编写器还定义了用于所有组件的还原方法。 卷影复制服务向请求程序提供编写程序的描述，而请求程序则选择要备份的组件。
+
+3.  卷影复制服务通知所有编写程序准备数据以进行卷影复制。
+
+4.  每个编写程序都会根据需要准备数据，例如完成所有未结束事务、滚动事务日志和刷新缓存。 当数据准备好进行卷影复制时，编写程序将通知卷影复制服务。
+
+5.  卷影复制服务通知编写程序将应用程序写入 I/O 请求暂时冻结几秒钟（仍然可以执行读取 I/O 请求），创建卷的卷影副本需要这几秒的时间。 应用程序冻结的时间不允许超过 60 秒。 卷影复制服务刷新文件系统缓冲区，然后冻结文件系统，从而确保正确记录文件系统元数据，并以一致的顺序写入要进行卷影复制的数据。
+
+6.  卷影复制服务通知提供程序创建卷影副本。 卷影副本创建周期不超过 10 秒，在此期间，对文件系统的所有写入 I/O 请求都将保持冻结状态。
+
+7.  卷影复制服务释放文件系统写入 I/O 请求。
+
+8.  VSS 通知编写程序解除冻结应用程序写入 I/O 请求。 此时，应用程序可以继续将数据写入正在进行卷影复制的磁盘。
+
 
 > [!NOTE]
-> 如果编写程序保持冻结状态的时间超过 60 秒，或者提供程序提交卷影副本的时间超过 10 秒，则会中止创建卷影副本。 
+> 如果编写程序保持冻结状态的时间超过 60 秒，或者提供程序提交卷影副本的时间超过 10 秒，则会中止创建卷影副本。
 <br>
 
-9. 请求程序可以重试该过程（返回步骤 1）或通知管理员稍后重试。  
-      
-10. 如果已成功创建卷影副本，则卷影复制服务会将卷影副本的位置信息返回给请求程序。 在某些情况下，卷影副本可以临时作为读写卷使用，以便 VSS 和一个或多个应用程序可以在卷影副本完成之前，更改卷影副本的内容。 VSS 和应用程序进行更改后，卷影副本将变为只读。 此阶段称为自动恢复，用于撤消卷影副本卷上在创建卷影副本之前未完成的任何文件系统或应用程序事务。  
-      
+9. 请求程序可以重试该过程（返回步骤 1）或通知管理员稍后重试。
+
+10. 如果已成功创建卷影副本，则卷影复制服务会将卷影副本的位置信息返回给请求程序。 在某些情况下，卷影副本可以临时作为读写卷使用，以便 VSS 和一个或多个应用程序可以在卷影副本完成之前，更改卷影副本的内容。 VSS 和应用程序进行更改后，卷影副本将变为只读。 此阶段称为自动恢复，用于撤消卷影副本卷上在创建卷影副本之前未完成的任何文件系统或应用程序事务。
+
 
 ### <a name="how-the-provider-creates-a-shadow-copy"></a>提供程序创建卷影副本的方式
 
@@ -116,10 +116,10 @@ VSS 提供程序   创建和维护卷影副本的组件  。 这可能会在�
 
 通常通过制造“拆分镜像”创建完整的副本，如下所示：
 
-1.  原始卷和卷影副本卷是镜像卷集。  
-      
-2.  卷影副本卷与原始卷分离。 这会中断镜像连接。  
-      
+1. 原始卷和卷影副本卷是镜像卷集。
+
+2. 卷影副本卷与原始卷分离。 这会中断镜像连接。
+
 
 镜像连接断开后，原始卷和卷影副本卷彼此独立。 原始卷继续接受所有更改（写入 I/O 请求），而卷影副本卷在中断时仍是原始数据的准确只读副本。
 
@@ -245,25 +245,21 @@ Windows 操作系统中提供了一个卷影复制提供程序，即系统提供
 
 Windows 操作系统包含一组 VSS 编写程序，这些编写程序负责枚举各种 Windows 功能所需的数据。
 
-有关这些编写程序的详细信息，请参阅以下 Microsoft 网站：
+有关这些编写程序的详细信息，请参阅以下 Microsoft Docs 网页：
 
-  - [内置 VSS 编写程序](https://go.microsoft.com/fwlink/?linkid=180895) (https://go.microsoft.com/fwlink/?LinkId=180895)  
-      
-  - [Windows Server 2008 和 Windows Vista SP1 的内置 VSS 编写程序](https://go.microsoft.com/fwlink/?linkid=180896) (https://go.microsoft.com/fwlink/?LinkId=180896)  
-      
-  - [Windows Server 2008 R2 和 Windows 7 的内置 VSS 编写程序](https://go.microsoft.com/fwlink/?linkid=180897) (https://go.microsoft.com/fwlink/?LinkId=180897)  
-      
+- [内置 VSS 编写程序](https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
+
 
 ## <a name="how-shadow-copies-are-used"></a>如何使用卷影副本
 
 除了备份应用程序数据和系统状态信息外，还可以使用卷影副本实现多种目的，包括：
 
-  - 还原 LUN（LUN 重新同步和 LUN 交换）  
-      
-  - 还原单个文件（共享文件夹的卷影副本）  
-      
-  - 使用可传输卷影副本进行数据挖掘  
-      
+  - 还原 LUN（LUN 重新同步和 LUN 交换）
+
+  - 还原单个文件（共享文件夹的卷影副本）
+
+  - 使用可传输卷影副本进行数据挖掘
+
 
 ### <a name="restoring-luns-lun-resynchronization-and-lun-swapping"></a>还原 LUN（LUN 重新同步和 LUN 交换）
 
@@ -273,7 +269,7 @@ Windows 操作系统包含一组 VSS 编写程序，这些编写程序负责枚�
 
 
 > [!NOTE]
-> 卷影副本必须是可传输的硬件卷影副本。 
+> 卷影副本必须是可传输的硬件卷影副本。
 <br>
 
 
@@ -281,16 +277,15 @@ Windows 操作系统包含一组 VSS 编写程序，这些编写程序负责枚�
 
 LUN 重新同步不同于 LUN 交换。 LUN 交换是自 Windows Server 2003 SP1 以来 VSS 支持的一种快速恢复方案。 在 LUN 交换中，会导入卷影副本，然后将其转换为读写卷。 转换是一种不可逆的操作，此后无法使用 VSS API 控制卷和基础 LUN。 以下列表描述了如何将 LUN 重新同步与 LUN 交换进行比较：
 
-  - 在 LUN 重新同步中，卷影副本不会被更改，因此可以多次使用。 在 LUN 交换中，卷影副本只能用于一次恢复。 对于安全意识很高的管理员来说，这一点很重要。 使用 LUN 重新同步时，如果首次出现问题，请求程序可以重试整个还原操作。  
-      
-  - 在 LUN 交换结束时，卷影复本 LUN 用于生产 I/O 请求。 因此，卷影复本 LUN 必须使用与原始生产 LUN 相同的存储质量，以确保恢复操作后性能不会受到影响。 如果改为使用 LUN 重新同步，则硬件提供程序可以在成本低于生产质量存储的存储上维护卷影副本。  
-      
-  - 如果目标 LUN 不可用并且需要重新创建，则 LUN 交换可能更经济，因为它不需要目标 LUN。  
-      
+  - 在 LUN 重新同步中，卷影副本不会被更改，因此可以多次使用。 在 LUN 交换中，卷影副本只能用于一次恢复。 对于安全意识很高的管理员来说，这一点很重要。 使用 LUN 重新同步时，如果首次出现问题，请求程序可以重试整个还原操作。
+
+  - 在 LUN 交换结束时，卷影复本 LUN 用于生产 I/O 请求。 因此，卷影复本 LUN 必须使用与原始生产 LUN 相同的存储质量，以确保恢复操作后性能不会受到影响。 如果改为使用 LUN 重新同步，则硬件提供程序可以在成本低于生产质量存储的存储上维护卷影副本。
+
+  - 如果目标 LUN 不可用并且需要重新创建，则 LUN 交换可能更经济，因为它不需要目标 LUN。
 
 
 > [!WARNING]
-> 列出的所有操作都是 LUN 级别的操作。 如果尝试使用 LUN 重新同步来恢复特定卷，则会无意中还原共享该 LUN 的所有其他卷。 
+> 列出的所有操作都是 LUN 级别的操作。 如果尝试使用 LUN 重新同步来恢复特定卷，则会无意中还原共享该 LUN 的所有其他卷。
 <br>
 
 
@@ -320,7 +315,7 @@ LUN 重新同步不同于 LUN 交换。 LUN 交换是自 Windows Server 2003 SP
 
 
 > [!NOTE]
-> 在 Windows Server 2003 上创建的可传输卷影副本无法导入运行 Windows Server 2008 或 Windows Server 2008 R2 的服务器。 在 Windows Server 2008 或 Windows Server 2008 R2 上创建的可传输卷影副本无法导入运行 Windows Server 2003 的服务器。 但是，在 Windows Server 2008 上创建的卷影副本可以导入到运行 Windows Server 2008 R2 的服务器上，反之亦然。 
+> 在 Windows Server 2003 上创建的可传输卷影副本无法导入运行 Windows Server 2008 或 Windows Server 2008 R2 的服务器。 在 Windows Server 2008 或 Windows Server 2008 R2 上创建的可传输卷影副本无法导入运行 Windows Server 2003 的服务器。 但是，在 Windows Server 2008 上创建的卷影副本可以导入到运行 Windows Server 2008 R2 的服务器上，反之亦然。
 <br>
 
 
@@ -362,10 +357,10 @@ VSS 在 Windows XP 中引入。 它在 Windows XP、Windows Server 2003、Win
 
 有关详细信息，请参阅以下 Microsoft TechNet 网站：
 
-  - [系统还原](https://go.microsoft.com/fwlink/?linkid=157113) (https://go.microsoft.com/fwlink/?LinkID=157113)  
-      
-  - [Windows Server 备份](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkID=180891)  
-      
+- [系统还原](https://go.microsoft.com/fwlink/?linkid=157113) (https://go.microsoft.com/fwlink/?LinkID=157113)
+
+- [Windows Server 备份](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkID=180891)
+
 
 ### <a name="can-i-exclude-files-from-a-shadow-copy-to-save-space"></a>是否可以从卷影副本中排除文件以节省空间？
 
@@ -406,14 +401,14 @@ VSS 可用于创建整个卷的卷影副本。 临时文件（如页面文件）
 
 按此顺序评估以下条件以确定差异区域位置：
 
-  - 如果卷中已存在卷影副本，则使用该位置。  
-      
-  - 如果原始卷和卷影复本卷位置之间存在预先配置的手动关联，则使用该位置。  
-      
-  - 如果前两个条件未提供位置，卷影复制服务将根据可用空闲空间选择位置。 如果正在对多个卷进行卷影复制，卷影复制服务将根据空闲空间的大小按降序创建可能的快照位置列表。 提供的位置数等于要进行卷影复制的卷数。  
-      
-  - 如果要进行卷影复制的卷是可能的位置之一，则会创建本地关联。 否则将创建与具有最大可用空间的卷的关联。  
-      
+  - 如果卷中已存在卷影副本，则使用该位置。
+
+  - 如果原始卷和卷影复本卷位置之间存在预先配置的手动关联，则使用该位置。
+
+  - 如果前两个条件未提供位置，卷影复制服务将根据可用空闲空间选择位置。 如果正在对多个卷进行卷影复制，卷影复制服务将根据空闲空间的大小按降序创建可能的快照位置列表。 提供的位置数等于要进行卷影复制的卷数。
+
+  - 如果要进行卷影复制的卷是可能的位置之一，则会创建本地关联。 否则将创建与具有最大可用空间的卷的关联。
+
 
 ### <a name="can-vss-create-shadow-copies-of-non-ntfs-volumes"></a>VSS 是否可以创建非 NTFS 卷的卷影副本？
 
@@ -441,25 +436,25 @@ VSS 可用于创建整个卷的卷影副本。 临时文件（如页面文件）
 
 Windows 操作系统提供了以下用于处理 VSS 的工具：
 
-  - [DiskShadow](https://go.microsoft.com/fwlink/?linkid=180907) (https://go.microsoft.com/fwlink/?LinkId=180907)  
-      
-  - [VssAdmin](https://go.microsoft.com/fwlink/?linkid=84008) (https://go.microsoft.com/fwlink/?LinkId=84008)  
-      
+  - [DiskShadow](https://go.microsoft.com/fwlink/?linkid=180907) (https://go.microsoft.com/fwlink/?LinkId=180907)
+
+  - [VssAdmin](https://go.microsoft.com/fwlink/?linkid=84008) (https://go.microsoft.com/fwlink/?LinkId=84008)
+
 
 ### <a name="diskshadow"></a>DiskShadow
 
 DiskShadow 是一个 VSS 请求程序，可用来管理系统上的所有硬件和软件快照。 DiskShadow 包含如下所示的命令：
 
-  - list  ：列出 VSS 编写程序、VSS 提供程序和卷影副本  
-      
-  - create  ：创建新的卷影副本  
-      
-  - import  ：导入可传输的卷影副本  
-      
-  - expose  ：公开永久性卷影副本（例如驱动器号）  
-      
-  - revert  ：将卷还原到指定的卷影副本  
-      
+  - list  ：列出 VSS 编写程序、VSS 提供程序和卷影副本
+
+  - create  ：创建新的卷影副本
+
+  - import  ：导入可传输的卷影副本
+
+  - expose  ：公开永久性卷影副本（例如驱动器号）
+
+  - revert  ：将卷还原到指定的卷影副本
+
 
 此工具适用于 IT 专业人员，但开发人员会发现在测试 VSS 编写程序或 VSS 提供程序时它也很有用。
 
@@ -471,16 +466,16 @@ VssAdmin 用于创建、删除和列出有关卷影副本的信息。 它还可�
 
 VssAdmin 包含如下所示的命令：
 
-  - create shadow  ：创建新的卷影副本  
-      
-  - delete shadows  ：删除卷影副本  
-      
-  - list providers  ：列出所有已注册的 VSS 提供程序  
-      
-  - list writers  ：列出所有订阅的 VSS 编写程序  
-      
-  - resize shadowstorage  ：更改卷影副本存储区域的大小上限  
-      
+  - create shadow  ：创建新的卷影副本
+
+  - delete shadows  ：删除卷影副本
+
+  - list providers  ：列出所有已注册的 VSS 提供程序
+
+  - list writers  ：列出所有订阅的 VSS 编写程序
+
+  - resize shadowstorage  ：更改卷影副本存储区域的大小上限
+
 
 VssAdmin 只能用于管理由系统软件提供程序创建的卷影副本。
 
@@ -490,12 +485,12 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 
 以下注册表项可用于 VSS：
 
-  - VssAccessControl   
-      
-  - MaxShadowCopies   
-      
-  - MinDiffAreaFileSize   
-      
+  - VssAccessControl 
+
+  - MaxShadowCopies 
+
+  - MinDiffAreaFileSize 
+
 
 ### <a name="vssaccesscontrol"></a>VssAccessControl
 
@@ -503,10 +498,10 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 
 有关详细信息，请参阅 MSDN 网站上的以下条目：
 
-  - [编写程序的安全注意事项](https://go.microsoft.com/fwlink/?linkid=157739) (https://go.microsoft.com/fwlink/?LinkId=157739)  
-      
-  - [请求程序的安全注意事项](https://go.microsoft.com/fwlink/?linkid=180908) (https://go.microsoft.com/fwlink/?LinkId=180908)  
-      
+  - [编写程序的安全注意事项](https://go.microsoft.com/fwlink/?linkid=157739) (https://go.microsoft.com/fwlink/?LinkId=157739)
+
+  - [请求程序的安全注意事项](https://go.microsoft.com/fwlink/?linkid=180908) (https://go.microsoft.com/fwlink/?LinkId=180908)
+
 
 ### <a name="maxshadowcopies"></a>MaxShadowCopies
 
@@ -524,7 +519,7 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 
 [用于备份和还原的注册表项](https://go.microsoft.com/fwlink/?linkid=180910) (https://go.microsoft.com/fwlink/?LinkId=180910) 下的“MinDiffAreaFileSize” 
 
-`##`#` 支持的操作系统版本
+### <a name="supported-operating-system-versions"></a>支持的操作系统版本
 
 下表列出了 VSS 功能支持的最低操作系统版本。
 

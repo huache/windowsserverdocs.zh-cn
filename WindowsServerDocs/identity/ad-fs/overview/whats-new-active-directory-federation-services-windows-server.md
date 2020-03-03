@@ -9,12 +9,12 @@ ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: adce37d8d06399d3a00221a12f3449244720ade7
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: 8061f41dab0f02bccd59a659e0bcd209bd73a249
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519479"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517552"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Active Directory 联合身份验证服务的新增功能
 
@@ -108,6 +108,18 @@ C. 然后，客户端照常在访问令牌请求中发送授权代码，但包�
 D. AD FS 转换“code_verifier”，并将其与 (B) 中的“t(code_verifier)”进行比较。  如果它们不相等，则拒绝访问。 
 
 #### <a name="faq"></a>FAQ 
+> [!NOTE] 
+> 可能会在 ADFS 管理事件日志中遇到此错误：收到的 Oauth 请求无效。 禁止客户端 'NAME' 访问作用域为 'ugs' 的资源。 若要修正此错误，请执行以下操作： 
+> 1. 启动 AD FS 管理控制台。 浏览到“服务”>“作用域说明”
+> 2. 右键单击“作用域说明”，选择“添加作用域说明”
+> 3. 在名称下键入“ugs”，然后单击“应用”>“确定”
+> 4. 以管理员身份启动 PowerShell
+> 5. 执行“Get-AdfsApplicationPermission”命令。 查找 ScopeNames :{openid, aza}，其中包含 ClientRoleIdentifier。 记下 ObjectIdentifier。
+> 6. 执行“Set-AdfsApplicationPermission -TargetIdentifier <步骤 5 中的 ObjectIdentifier> -AddScope 'ugs'”命令
+> 7. 重启 ADFS 服务。
+> 8. 在客户端上执行以下操作：重启客户端。 系统会提示用户预配 WHFB。
+> 9. 如果未弹出预配窗口，则需收集 NGC 跟踪日志并进行进一步的故障排除。
+
 **Q.** 是否可以像在 Azure AD 中完成请求那样将资源值作为作用域值的一部分进行传递？ 
 </br>**A.** 借助 Server 2019 上的 AD FS，你现在可以传递嵌入在 scope 参数中的资源值。 现在可以将 scope 参数组织成一个用空格分隔的列表，其中每个条目的结构都作为资源/范围。 例如  
 **< create a valid sample request>**

@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: 适用于 Windows 的 OpenSSH 服务器配置
-ms.openlocfilehash: 5eb3d86950d169fd01512d330f0c04669beeffae
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 61e6e24e6682802fd07e70dcb49aa0f382e1638e
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259042"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169587"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>适用于 Windows 10 1809 和 Server 2019 的 OpenSSH 服务器配置
 
@@ -76,7 +76,7 @@ AllowGroups sshusers
 
 ### <a name="authorizedkeysfile"></a>AuthorizedKeysFile 
 
-默认值为“.ssh/authorized_keys .ssh/authorized_keys2”。 如果路径不是绝对路径，则它相对于用户的主目录（或配置文件图像路径）。 示例： c:\users\user。
+默认值为“.ssh/authorized_keys .ssh/authorized_keys2”。 如果路径不是绝对路径，则它相对于用户的主目录（或配置文件图像路径）。 示例： c:\users\user。 请注意，如果用户属于管理员组，则改为使用 %programdata%/ssh/administrators_authorized_keys。
 
 ### <a name="chrootdirectory-support-added-in-v7700"></a>ChrootDirectory（在 v7.7.0.0 中添加的支持）
 

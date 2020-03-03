@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 02/11/2020
+ms.date: 02/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8b035eef5bb956012627b5e2c7c59adaa8cd32
-ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
+ms.openlocfilehash: f435892f0a200056c08094cac1831c710a47a6be
+ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77155381"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77608794"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -30,14 +30,14 @@ ms.locfileid: "77155381"
 
 |用户组 |版本  |
 |-----------|---------|
-|公用     |1.2.605  |
-|Insider    |1.2.673  |
+|公用     |1.2.675  |
+|Insider    |1.2.675  |
 
-## <a name="updates-for-version-12673"></a>针对版本 1.2.673 的更新
+## <a name="updates-for-version-12675"></a>针对版本 1.2.675 的更新
 
-*发布日期：2020/02/11*
+*发布日期：2020/02/25*
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pPJm)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pFbw)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pN07)
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qeak)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7h)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7g)
 
 - 现在，如果 RDP 文件缺少签名或 signscope 属性之一已被修改，那么，连接到 Windows 虚拟桌面将被阻止。
 - 当工作区为空或已删除时，连接中心将不再显示为空。

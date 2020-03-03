@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 416145a8c4ec20eaf46cf4b5ac88a0cdf38bdf33
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: aafcfcd4d0f2f14836c5b7dee2bdbccbf99fa887
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919884"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169617"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>使用 Windows Server 中的 SMB 3 协议的文件共享概述
 
@@ -41,7 +41,7 @@ ms.locfileid: "75919884"
 
 | 特性/功能  | 新功能或更新功能  | 摘要  |
 | --------- | --------- | --------- |
-| 要求对无法连续使用的文件共享上的磁盘进行连续写入的功能 | “新建” | 若要提供一些写入文件共享的补充保证，使其在写入操作返回完成之前通过软件和硬件堆栈进入物理磁盘，请使用 `NET USE /WRITETHROUGH` 命令或 `New-SMBMapping -UseWriteThrough` PowerShell cmdlet 对文件共享启用连续写入操作。 使用连续写入会造成一些性能影响；有关进一步讨论，请参阅博客文章[控制 SMB 中的连续写入行为](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-write-through-behaviors-in-smb/bc-p/1083417#M677)。 |
+| 要求对无法连续使用的文件共享上的磁盘进行连续写入的功能 | “新建” | 若要提供一些写入文件共享的补充保证，使其在写入操作返回完成之前通过软件和硬件堆栈进入物理磁盘，可使用 `NET USE /WRITETHROUGH` 命令或 `New-SMBMapping -UseWriteThrough` PowerShell cmdlet 对文件共享启用连续写入操作。 使用连续写入会造成一些性能影响；有关进一步讨论，请参阅博客文章[控制 SMB 中的连续写入行为](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-write-through-behaviors-in-smb/bc-p/1083417#M677)。 |
 
 ## <a name="features-added-in-windows-server-version-1709-and-windows-10-version-1709"></a>Windows Server 版本 1709 和 Windows 10 版本 1709 中添加的功能
 
