@@ -204,6 +204,7 @@
 ### [Network Shell (Netsh) 示例批处理文件](technologies/netsh/netsh-wins.md)
 ### [Netsh http 命令](technologies/netsh/netsh-http.md)
 ### [Netsh 界面端口代理命令](technologies/netsh/netsh-interface-portproxy.md)
+### [Netsh mbn 命令](technologies/netsh/netsh-mbn.md)
 
 ## [网络子系统性能优化](technologies/network-subsystem/net-sub-performance-top.md)
 ### [选择网络适配器](technologies/network-subsystem/net-sub-choose-nic.md)

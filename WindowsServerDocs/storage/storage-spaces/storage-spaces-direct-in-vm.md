@@ -9,16 +9,16 @@ author: eldenchristensen
 ms.date: 10/25/2017
 description: 如何在虚拟机来宾群集中部署存储空间直通-例如，在 Microsoft Azure 中。
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0ce792c5a948e763a48493a78ccdac7a6fe74c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34241183a56cdb9be4690e1edd68b56320cc01de
+ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366050"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261916"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>在来宾虚拟机群集中使用存储空间直通
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 可以在物理服务器或虚拟机来宾群集的群集上部署存储空间直通，如本主题中所述。 这种类型的部署在私有或公有云之上跨一组 Vm 提供虚拟共享存储，以便应用程序高可用性解决方案可用于提高应用程序的可用性。
 
@@ -49,7 +49,7 @@ ms.locfileid: "71366050"
 
     -   Hyper-v –在虚拟机上配置 AntiAffinityClassNames 以跨节点分离 Vm
 
-    -   VMware –通过创建类型为 "单独的虚拟机" 的 DRS 规则来配置 VM-VM 抗相关性规则，以便跨 ESX 主机分隔 Vm。 为与存储空间直通一起使用而提供的磁盘应使用半虚拟 SCSI （PVSCSI）适配器。 有关 Windows Server 的 PVSCSI 支持，请参阅 https://kb.vmware.com/s/article/1010398 。
+    -   VMware –通过创建类型为 "单独的虚拟机" 的 DRS 规则来配置 VM-VM 抗相关性规则，以便跨 ESX 主机分隔 Vm。 为与存储空间直通一起使用而提供的磁盘应使用半虚拟 SCSI （PVSCSI）适配器。 有关 Windows Server 的 PVSCSI 支持，请参阅 https://kb.vmware.com/s/article/1010398。
 
 -   利用低延迟/高性能存储-需要 Azure 高级存储托管磁盘
 
@@ -65,10 +65,6 @@ ms.locfileid: "71366050"
     Get-storagesubsystem clus* | set-storagehealthsetting -name “System.Storage.PhysicalDisk.AutoReplace.Enabled” -value “False”
     ```
 
--   不支持：主机级虚拟磁盘快照/还原
-
-    改为使用传统的来宾级别备份解决方案来备份和还原存储空间直通卷上的数据。
-
 -   为了更好地复原来宾群集中可能的 VHD/VHDX/VMDK 存储延迟，请增加存储空间 i/o 超时值：
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
@@ -77,7 +73,17 @@ ms.locfileid: "71366050"
 
     十六进制7530的十进制等效项是30000，即30秒。 请注意，默认值为1770十六进制或 6000 Decimal，即6秒。
 
-## <a name="see-also"></a>请参阅
+## <a name="not-supported"></a>不支持
+
+-   主机级虚拟磁盘快照/还原
+
+    改为使用传统的来宾级别备份解决方案来备份和还原存储空间直通卷上的数据。
+
+-   主机级虚拟磁盘大小更改
+
+    通过虚拟机公开的虚拟磁盘必须保持相同的大小和特性。 可以通过将更多虚拟磁盘添加到每个虚拟机并将其添加到池中，来增加存储池的容量。 强烈建议使用与当前虚拟磁盘大小和特征相同的虚拟磁盘。
+
+## <a name="see-also"></a>另请参阅
 
 [用于部署存储空间直通、视频和循序渐进指南的其他 Azure IAAS VM 模板](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 
