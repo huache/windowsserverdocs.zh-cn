@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45c9946cc53fe3a901c3f6ee53f082a5b3d086c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 71525e4051a079eb9a3d0c8c197c8157b53e5e67
+ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379648"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278542"
 ---
 # <a name="certutil"></a>certutil
 
 Certutil 是作为证书服务的一部分安装的命令行程序。 可以使用 Certutil 转储并显示证书颁发机构（CA）配置信息、配置证书服务、备份和还原 CA 组件以及验证证书、密钥对和证书链。
 
-如果在没有其他参数的情况下在证书颁发机构上运行 certutil，则会显示当前的证书颁发机构配置。 在非证书颁发机构上运行 cerutil 时，该命令默认为运行 certutil [-dump](#-dump)谓词。
+如果在没有其他参数的情况下在证书颁发机构上运行 certutil，则会显示当前的证书颁发机构配置。 当在非证书颁发机构上运行 certutil 时，该命令默认为运行 certutil [-dump](#-dump)谓词。
 
 > [!WARNING]
 > 更早版本的 certutil 可能不提供本文档中所述的所有选项。 可以通过运行[语法表示法](#syntax-notations)部分中显示的命令来查看特定版本的 certutil 提供的所有选项。
@@ -42,7 +42,7 @@ Certutil 是作为证书服务的一部分安装的命令行程序。 可以使�
 
 下表描述了可与 certutil 命令一起使用的谓词。
 
-|谓词|描述|
+|谓词|说明|
 |-----|-----------|
 |[-dump](#-dump)|转储配置信息或文件|
 |[-asn](#-asn)|分析 ASN 1 文件|
@@ -143,17 +143,17 @@ Certutil 是作为证书服务的一部分安装的命令行程序。 可以使�
   - `certutil -v -? > certutilhelp.txt`
   - `notepad certutilhelp.txt`
 
-下表描述了用于指示命令行语法的表示法。
+下表描述用于指示命令行语法的表示法。
 
 
-|            图解             |                  描述                  |
+|            图解             |                  说明                  |
 |---------------------------------|-----------------------------------------------|
-| 不带方括号或大括号的文本 |         必须按如下所示键入项          |
+| 不含方括号或大括号的文本 |         必须按所显示键入的项          |
 |  尖括号内 \<文本 >  | 必须为其提供值的占位符 |
-|  [方括号内的文本]  |                可选项                 |
-|      {大括号内的文本}       |       一组必需的项;选择一个       |
+|  [方括号中的文本]  |                可选项                 |
+|      {大括号中的文本}       |       一组必需的项；选择一个       |
 |         竖线（          |                       )                       |
-|          省略号（...）           |          可以重复的项           |
+|          省略号 (…)           |          可重复的项           |
 
 返回[菜单](#menu)
 
@@ -729,7 +729,7 @@ CertUtil [Options]-store [CertificateStoreName [证书 id [OutputFile]]]
 
 转储证书存储
 
-CertificateStoreName：证书存储区名称。 示例：
+CertificateStoreName：证书存储区名称。 例如：
 
 - "My"、"CA" （默认）、"Root"、
 - "ldap:///CN=Certification 机关，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？" objectClass = 证书颁发机构 "（查看根证书）
@@ -751,7 +751,7 @@ OutputFile：保存匹配证书的文件
 
 使用-microsoft-windows-grouppolicy 访问计算机组策略存储。
 
-示例：
+例如：
 
 - -enterprise NTAuth
 - -enterprise Root 37
@@ -849,7 +849,7 @@ CertUtil [Options]-viewstore [CertificateStoreName [证书 id [OutputFile]]]
 
 转储证书存储
 
-CertificateStoreName：证书存储区名称。 示例：
+CertificateStoreName：证书存储区名称。 例如：
 
 - "My"、"CA" （默认）、"Root"、
 - "ldap:///CN=Certification 机关，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？" objectClass = 证书颁发机构 "（查看根证书）
@@ -871,7 +871,7 @@ OutputFile：保存匹配证书的文件
 
 使用-microsoft-windows-grouppolicy 访问计算机组策略存储。
 
-示例：
+例如：
 
 1. -enterprise NTAuth
 2. -enterprise Root 37
@@ -888,7 +888,7 @@ CertUtil [Options]-viewdelstore [CertificateStoreName [证书 id [OutputFile]]]
 
 从存储中删除证书
 
-CertificateStoreName：证书存储区名称。 示例：
+CertificateStoreName：证书存储区名称。 例如：
 
 - "My"、"CA" （默认）、"Root"、
 - "ldap:///CN=Certification 机关，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？" objectClass = 证书颁发机构 "（查看根证书）
@@ -910,7 +910,7 @@ OutputFile：保存匹配证书的文件
 
 使用-microsoft-windows-grouppolicy 访问计算机组策略存储。
 
-示例：
+例如：
 
 1. -enterprise NTAuth
 2. -enterprise Root 37
@@ -1626,7 +1626,7 @@ recover：在一个步骤中检索和恢复私钥（需要密钥恢复代理证�
 
 SearchToken：用于选择要恢复的密钥和证书。
 
-可以是以下任一项：
+可以是下列任一操作系统：
 
 1. 证书公用名
 2. 证书序列号
@@ -1695,11 +1695,11 @@ Salt： EPF 输出文件 salt 字符串
 
 返回[菜单](#menu)
 
-## <a name="options"></a>选项
+## <a name="options"></a>Options
 
 本部分定义可通过命令指定的选项。
 
-|选项|描述|
+|Options|说明|
 |-------|-----------|
 |-nullsign|使用数据哈希作为签名|
 |-f|强制覆盖|
@@ -1712,7 +1712,7 @@ Salt： EPF 输出文件 salt 字符串
 |-UnicodeText|用 Unicode 写入输出文件|
 |-gmt|将时间显示为 GMT|
 |-秒|显示时间（以秒和毫秒为单位）|
-|-无提示|使用无提示标志获取 dm-crypt 上下文|
+|-silent|使用无提示标志获取 dm-crypt 上下文|
 |-split|拆分嵌入的 node.js 元素，并保存到文件|
 |-v|详细操作|
 |-privatekey.ppk|显示密码和私钥数据|
@@ -1726,11 +1726,11 @@ Salt： EPF 输出文件 salt 字符串
 |-用户名用户名|使用命名帐户作为 SSL 凭据。 对于选择 U/I，请使用-UserName。|
 |-Cert 证书 id|签名证书|
 |-dc DCName|面向特定域控制器|
-|-限制 RestrictionList|逗号分隔的限制列表。 每个限制都包含列名称、关系运算符和常量整数、字符串或日期。 一个列名前面可能有一个加号或减号，用来指示排序顺序。 示例：</br>"RequestId = 47"</br>"+ RequesterName > = a，RequesterName < b"</br>"-RequesterName > 域，处置 = 21"|
+|-限制 RestrictionList|逗号分隔的限制列表。 每个限制都包含列名称、关系运算符和常量整数、字符串或日期。 一个列名前面可能有一个加号或减号，用来指示排序顺序。 例如：</br>"RequestId = 47"</br>"+ RequesterName > = a，RequesterName < b"</br>"-RequesterName > 域，处置 = 21"|
 |-out ColumnList|逗号分隔的列列表|
 |-p 密码|密码|
 |-ProtectTo SAMNameAndSIDList|逗号分隔 SAM 名称/SID 列表|
-|-csp 提供程序|提供程序|
+|-csp 提供程序|提供商|
 |-t 超时|URL 提取超时值（毫秒）|
 |-symkeyalg SymmetricKeyAlgorithm [，KeyLength]|具有可选密钥长度的对称密钥算法的名称，示例： AES、128或3DES|
 

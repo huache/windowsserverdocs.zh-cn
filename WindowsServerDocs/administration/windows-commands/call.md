@@ -1,5 +1,5 @@
 ---
-title: 调用
+title: call
 description: '适用于 * * * * 的 Windows 命令主题 '
 ms.custom: na
 ms.prod: windows-server
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 0e5f9f2b0102c12ee0925bb434fdeddde85e34cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 89097ec5d3711b3d8831f8c33b3778ed0752246f
+ms.sourcegitcommit: ee8fa8e1293f29229b5ce1b0f3d4a07ba99568f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379716"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280188"
 ---
-# <a name="call"></a>调用
+# <a name="call"></a>call
 
 
 
@@ -39,7 +39,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
 ## <a name="parameters"></a>参数
 
-|           参数           |                                                                         描述                                                                          |
+|           参数           |                                                                         说明                                                                          |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [\<驱动器 >：][\<路径 >]<FileName> | 指定要调用的批处理程序的位置和名称。 *FileName*参数是必需的，它必须具有 .bat 或 .cmd 扩展名。 |
 |      \<BatchParameters >       |                                            指定批处理程序所需的任何命令行信息。                                             |
@@ -55,7 +55,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
 你可以使用以下可选语法作为批处理参数（ **% n**）的替换：
 
-|批处理参数|描述|
+|批处理参数|说明|
 |---------------|-----------|
 |% ~ 1|展开 **%1**并删除周围的引号（""）。|
 |% ~ f1|将 **%1**扩展到完全限定的路径。|
@@ -71,14 +71,14 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
 下表显示了如何将修饰符与复合结果的批处理参数合并：
 
-|带有修饰符的批处理参数|描述|
+|带有修饰符的批处理参数|说明|
 |-----------------------------|-----------|
 |% ~ sjc-dp1|将 **%1**扩展到驱动器号和路径。|
 |% ~ nx1|仅将 **%1**扩展到文件名和扩展名。|
 |% ~ dp $ PATH：1|搜索 **%1**的 PATH 环境变量中列出的目录，然后扩展到找到的第一个目录的驱动器号和路径。|
 |% ~ ftza1|展开 **%1**以显示类似于**dir**命令的输出。|
 
-在上面的示例中， **%1**和 PATH 可替换为其他有效值。 <strong>%~</strong>语法由有效参数号终止。 <strong>%~</strong>修饰符不能与 **%\\\*** 一起使用。
+在上面的示例中， **%1**和 PATH 可替换为其他有效值。 <strong>%~</strong>语法由有效参数号终止。 <strong>%~</strong>修饰符不能与 **%\*** 一起使用。
 
 ## <a name="remarks"></a>备注
 
@@ -98,7 +98,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
     如果启用了命令扩展，则**调用**接受*标签*作为调用的目标。 正确的语法如下所示：
 
-    `call :\<Label> <Arguments>`
+    `call :<Label> <Arguments>`
 
 ## <a name="BKMK_examples"></a>示例
 

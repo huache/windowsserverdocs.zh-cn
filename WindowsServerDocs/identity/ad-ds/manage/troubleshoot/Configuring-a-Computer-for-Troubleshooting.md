@@ -9,16 +9,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8e11883de9f89d0b95ed0fc35b4f5f3941ef82a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53af8acd7da8f9008c88ad7c6c14b00e63801847
+ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368904"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278552"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>配置计算机进行故障排除
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
 使用高级故障排除技术识别和修复 Active Directory 问题之前，请配置计算机以进行故障排除。 您还应该对疑难解答的概念、过程和工具有一个基本的了解。
 
@@ -42,20 +42,20 @@ Windows Server 包括 Windows 可靠性和性能监视器，这是一个 Microso
 
 ### <a name="set-logging-levels"></a>设置日志记录级别
 
-如果在目录服务登录事件查看器中收到的信息不足以进行故障排除，请在 HKEY_LOCAL_ 中使用相应的注册表项提高日志记录级别。 **MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics**。
+如果在目录服务登录事件查看器中收到的信息不足以进行故障排除，请使用**HKEY_LOCAL_MACHINE \system\currentcontrolset\services\ntds\diagnostics**中的相应注册表项提高日志记录级别。
 
 默认情况下，所有条目的日志记录级别均设置为**0**，这将提供最小数量的信息。 最高日志记录级别为**5**。 增大条目的级别会导致在目录服务事件日志中记录其他事件。
 
-使用以下过程来更改诊断条目的日志记录级别。 必须至少具有 **Domain Admins** 中的成员身份或同等身份才能完成此过程。
+使用以下过程来更改诊断条目的日志记录级别。 若要完成该过程，必须至少具有 **Domain Admins** 的成员资格或同等权限。
 
 > [!WARNING]
-> 除非万不得已，否则建议不要直接编辑注册表。 注册表编辑器或 Windows 在应用之前对其进行了修改，因此，可能会存储不正确的值。 这可能会导致系统中出现不可恢复的错误。 如果可能，请使用组策略或其他 Windows 工具（如 MMC 管理单元）来完成任务，而不是直接编辑注册表。 如果必须编辑注册表，请格外小心。
+> 除非万不得已，否则建议不要直接编辑注册表。 在应用对注册表的修改之前，注册表编辑器或 Windows 不会对这些修改进行验证，因此可能会存储不正确的值。 这可能会导致系统中出现不可恢复的错误。 如果可能，请使用组策略或其他 Windows 工具（如 MMC 管理单元）来完成任务，而不是直接编辑注册表。 如果必须编辑注册表，请格外小心。
 >
 
 更改诊断条目的日志记录级别
 
-1. 单击 "**开始** > "**运行**> 键入**Regedit** > 单击 **"确定"** 。
+1. 单击 "**开始** > **运行**" > 键入**Regedit** > 单击 **"确定"** 。
 2. 导航到要为其设置日志记录的条目。
-   * 示例：HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics
+   * 示例： HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics
 3. 双击条目，然后在 "**基本**" 中单击 "**十进制**"。
 4. 在 "**值**" 中，键入从**0**到**5**的整数，然后单击 **"确定"** 。
