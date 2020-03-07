@@ -14,11 +14,11 @@ ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
 ms.openlocfilehash: e501d550e5371c668f7e243f00106a0b79f694dc
-ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74187885"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370665"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>远程桌面服务支持的配置
 
@@ -31,7 +31,7 @@ ms.locfileid: "74187885"
 > [!NOTE]
 > 请务必查看 [Windows Server 2016 的系统要求](../../get-started/system-requirements.md)和 [Windows Server 2019 的系统要求](../../get-started-19/sys-reqs-19.md)。
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳实践
 
 - 将 Windows Server 2019 用于远程桌面基础结构（Web 访问、网关、连接代理和许可证服务器）。 Windows Server 2019 与这些组件向后兼容，这意味着 Windows Server 2016 或 Windows Server 2012 R2 RD 会话主机可连接到 2019 RD 连接代理，但反之则不可。
 
@@ -51,7 +51,7 @@ Windows Server 2016 消除了在使用同样运行 Windows Server 2016 的远程
 |---|---|---|---|
  |Windows Server 2019 连接代理|支持|支持|支持|
  |Windows Server 2016 连接代理|N/A|支持|支持|
- |Windows Server 2012 R2 连接代理|N/A|N/A|不支持|
+ |Windows Server 2012 R2 连接代理|N/A|N/A|不受支持|
 
 ## <a name="support-for-graphics-processing-unit-gpu-acceleration"></a>支持图形处理单元 (GPU) 加速
 
@@ -69,7 +69,7 @@ GPU 供应商可对 RDSH 场景使用单独的许可方案，也可限制 GPU �
 
 下表显示了不同版本的 RDSH 主机支持的方案。
 
-|功能|Windows Server 2008 R2|Windows Server 2012 R2|Windows Server 2016|Windows Server 2019|
+|功能|Windows Server 2008 R2|Windows Server 2012 R2|Windows Server 2016|Windows Server Standard 2012 R2|
 |---|---|---|---|---|
 |对所有 RDP 会话使用硬件 GPU|否|是|是|是|
 |H.264/AVC 硬件编码（若 GPU 支持）|否|否|是|是|
