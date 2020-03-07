@@ -14,11 +14,11 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: bb5e56fe541a06b1100de2f25fc10f4db46b8d24
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407150"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371721"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>使用软件限制策略规则
 
@@ -26,7 +26,7 @@ ms.locfileid: "71407150"
 
 本主题介绍使用软件限制策略处理证书、路径、internet 区域和哈希规则的过程。
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>介绍
 使用软件限制策略，可以通过标识和指定允许运行的软件来保护计算环境免受不受信任的软件的限制。 可以为组策略对象（GPO）定义默认安全级别 "**无限制** **" 或 "不允许"** ，以便默认允许或不允许运行软件。 您可以通过为特定软件创建软件限制策略规则，对此默认安全级别进行例外。 例如，默认安全级别设置为“不允许”时，你可以创建允许运行特定软件的规则。 规则的类型如下：
 
 -   **证书规则**
@@ -164,7 +164,7 @@ ms.locfileid: "71407150"
 > 只有在执行此过程后，证书规则才会生效。
 
 ### <a name="set-trusted-publisher-options"></a>设置受信任的发布者选项
-越来越多的软件发行商和应用程序开发人员使用软件签名来证实其应用程序来自受信任的源。 但是，许多用户并不了解或没有注意他们所安装的应用程序关联的签名证书。
+越来越多的软件发行者和应用程序开发人员使用软件签名来证实其应用程序来自受信任的源。 但是，许多用户不了解或不注意与其安装的应用程序关联的签名证书。
 
 管理员使用证书路径验证策略的“受信任的发布者”选项卡中的策略设置，可以控制哪些证书可以作为来自受信任的发布者而被接受。
 
@@ -180,7 +180,7 @@ ms.locfileid: "71407150"
 
 ##### <a name="to-configure-the-trusted-publishers-policy-settings-for-a-domain"></a>配置域的受信任的发布者策略设置的步骤
 
-1.  打开**组策略管理**。
+1.  打开“组策略管理”。
 
 2.  在控制台树中，双击包含要编辑的 "**默认域策略**" 组策略对象（GPO）的林和域中的**组策略对象**。
 
@@ -206,7 +206,7 @@ ms.locfileid: "71407150"
 
 ##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-domain"></a>仅允许管理员管理用于域代码签名的证书的步骤
 
-1.  打开**组策略管理**。
+1.  打开“组策略管理”。
 
 2.  在控制台树中，双击包含要编辑的 "**默认域策略**" GPO 的林和域中的**组策略对象**。
 
