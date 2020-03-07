@@ -13,15 +13,15 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865156"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371195"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的设备
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
  
  以下部分讨论了服务器的设备管理功能，还介绍了如何在网络上设置和使用设备：  
   
@@ -74,7 +74,7 @@ ms.locfileid: "70865156"
   
 ### <a name="computer-tasks-in-the-dashboard"></a>仪表板中的计算机任务  
   
-|任务名称|描述|  
+|任务名称|说明|  
 |---------------|-----------------|  
 |查看计算机属性|显示选定计算机的常规信息，并允许你查看计算机备份的详细信息。|  
 |设置该计算机备份|运行“设置备份”向导。|  
@@ -100,7 +100,7 @@ ms.locfileid: "70865156"
   
 3.  在用户帐户列表中，选择要更改的用户帐户。  
   
-4.  在 **< 用户帐户\>任务**"窗格中，单击 **" 查看帐户属性 "** 。 这将显示用户帐户的“属性” 页面。  
+4.  在 **< 用户帐户 "\> 任务**" 窗格中，单击 **"查看帐户属性"** 。 这将显示用户帐户的“属性”页面。  
   
 5.  在“计算机访问”选项卡上，选择该用户可以远程访问的计算机，然后单击“确定”。  
   
@@ -114,7 +114,7 @@ ms.locfileid: "70865156"
   
 1.  打开 Windows Server Essentials 仪表板。  
   
-2.  在导航栏上，单击“设备” 选项卡。  
+2.  在导航栏上，单击“设备”选项卡。  
   
 3.  在计算机列表中，右键单击要从网络中删除的计算机，然后单击“删除该计算机”。  
   
@@ -127,17 +127,17 @@ ms.locfileid: "70865156"
   
 2.  在导航栏上，单击“设备”。  
   
-3.  对于 Windows Server Essentials：在全局“用户任务”窗格中，单击“实现组策略”。  
+3.  对于 Windows Server Essentials：在 "全局**用户任务**" 窗格中，单击 "**实现组策略**。  
   
-     对于 Windows Server Essentials：在全局“设备任务”窗格中，单击“实现组策略”。  
+     对于 Windows Server Essentials：在 "全局**设备任务**" 窗格中，单击 "**实现组策略**。  
   
 4.  此时将打开“实现组策略”向导。  
   
 5.  在该向导的“启用文件夹重定向组策略”页面上，你可以选择要重定向的用户文件夹。  
   
-6.  在该向导的“启用安全策略设置” 页面上，你可以选择启用适用于“Windows 更新”、“Windows Defender”以及“网络防火墙”的组策略设置。  
+6.  在该向导的“启用安全策略设置”页面上，你可以选择启用适用于“Windows 更新”、“Windows Defender”以及“网络防火墙”的组策略设置。  
   
-7.  单击“完成” 以实现组策略设置。  
+7.  单击“完成”以实现组策略设置。  
   
 ##  <a name="BKMK_7"></a>使用远程桌面会话连接到网络计算机  
  若要在离开办公室后远程访问 Windows Server Essentials 网络计算机，请使用 Web 浏览器登录到组织的远程 Web 访问网站，然后在 "**计算机**" 选项卡上，单击计算机的名称。  
@@ -161,7 +161,7 @@ ms.locfileid: "70865156"
      计算机连接受到防火墙阻止，或者计算机上的远程桌面已由组策略禁用。 如果有更改，则在服务器上更新此状态可能需要多达 6 个小时。  
   
 ##  <a name="BKMK_8"></a>查看计算机属性  
- Windows Server Essentials 仪表板的“设备” 部分将显示网络计算机列表。 该列表还提供有关每台计算机的其他信息。  
+ Windows Server Essentials 仪表板的“设备”部分将显示网络计算机列表。 该列表还提供有关每台计算机的其他信息。  
   
 #### <a name="to-view-a-list-of-computers"></a>查看计算机列表  
   
@@ -175,13 +175,13 @@ ms.locfileid: "70865156"
   
 1.  在计算机列表中，选择要查看或更改其属性的帐户。  
   
-2.  在 " **< Computername\>任务**" 窗格中，单击 **"查看计算机属性"** 。 这将显示计算机的“属性” 页面。  
+2.  在 **< Computername\> 任务**"窗格中，单击 **" 查看计算机属性 "** 。 这将显示计算机的“属性”页面。  
   
 3.  单击选项卡以显示该计算机的属性。  
   
 4.  若要保存对计算机属性所做的任何更改，请单击“应用”。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 -   [管理远程 Web 访问](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   

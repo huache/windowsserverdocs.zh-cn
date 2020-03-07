@@ -9,11 +9,11 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
 ms.openlocfilehash: 26ff5e27494e2f42a0c8e4d28e2b9820f8d19e6a
-ms.sourcegitcommit: 471464a674a53c468a2f1e28575c91245ce9badf
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75548186"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370751"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>租户的受防护的 Vm-创建屏蔽数据来定义受防护的 VM
 
@@ -78,7 +78,7 @@ ms.locfileid: "75548186"
     |-----------|-----------|
     | ComputerName        | @ComputerName@      |
     | TimeZone            | @TimeZone@          |
-    | ProductKey          | @ProductKey@        |
+    | 产品密钥          | @ProductKey@        |
     | IPAddr4-1           | @IP4Addr-1@         |
     | IPAddr6-1           | @IP6Addr-1@         |
     | MACAddr-1           | @MACAddr-1@         |
@@ -92,7 +92,7 @@ ms.locfileid: "75548186"
     | 替换字符串 | 示例替换 |
     |---------------------|----------------------|
     | @IP4Addr-1@         | 192.168.1.10/24      |
-    | @MACAddr-1@         | Ethernet             |
+    | @MACAddr-1@         | 以太网             |
     | @Prefix-1-1@        | 24                   |
     | @NextHop-1-1@       | 192.168.1.254        |
     | @IP4Addr-2@         | 10.0.20.30/24        |

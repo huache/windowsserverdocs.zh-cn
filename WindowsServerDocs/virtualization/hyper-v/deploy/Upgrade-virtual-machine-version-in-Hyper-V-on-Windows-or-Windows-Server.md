@@ -12,15 +12,15 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
 ms.openlocfilehash: 96678dfab2a3d5b6f503d8ce9d00850a3c437b35
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392932"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370601"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>在 Windows 10 或 Windows Server 上的 Hyper-v 中升级虚拟机版本
 
->适用于：Windows 10、Windows Server 2019、Windows Server 2016、Windows Server （半年频道）
+>适用于： Windows 10、Windows Server 2019、Windows Server 2016、Windows Server （半年频道）
 
 通过升级配置版本，使最新的 Hyper-v 功能在虚拟机上可用。 在以下时间之前不要执行此操作：
 
@@ -30,7 +30,7 @@ ms.locfileid: "71392932"
 
 有关详细信息，请参阅[群集操作系统滚动升级](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)和[在 VMM 中执行 hyper-v 主机群集的滚动升级](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade)。
 
-## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>第 1 步：检查虚拟机配置版本
+## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>步骤1：检查虚拟机配置版本
 
 1. 在 Windows 桌面上，单击“开始”按钮并键入名称 **Windows PowerShell** 的任一部分。
 2. 右键单击 "Windows PowerShell" 并选择 "以**管理员身份运行**"。
@@ -42,7 +42,7 @@ Get-VM * | Format-Table Name, Version
 
 还可以通过选择虚拟机并查看 "**摘要**" 选项卡来查看 Hyper-v 管理器中的配置版本。
 
-## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>步骤 2：升级虚拟机配置版本
+## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>步骤2：升级虚拟机配置版本
 
 1. 关闭 Hyper-v 管理器中的虚拟机。
 2. 选择操作 > 升级配置版本。 如果此选项不适用于虚拟机，则该选项已是 Hyper-v 主机支持的最高配置版本。
@@ -80,7 +80,7 @@ New-VM -Name "WindowsCV5" -Version 5.0
 |Windows 10 企业版 LTSC 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows 10 企业版 2016 长期服务|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 企业版 2015 LTSB|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|
+|Windows 10 企业版 2015 长期服务|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|
 |Windows Server 2012 R2|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|
 |Windows 8.1|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|
 
@@ -108,13 +108,13 @@ New-VM -Name "WindowsCV5" -Version 5.0
 
 下表列出了用于新的或升级的虚拟机的每种文件类型的说明、文件扩展名和默认位置。
 
- |虚拟机文件类型 | 描述|
+ |虚拟机文件类型 | 说明|
  |---|---|
-|配置 |以二进制文件格式存储的虚拟机配置信息。 <br /> 文件扩展名：. .vmcx <br /> 默认位置：C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual Machines|
- |运行时状态|以二进制文件格式存储的虚拟机运行时状态信息。 <br />文件扩展名：. .vmrs 和. vmgs <br />默认位置：C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual Machines|
-|虚拟硬盘|存储虚拟机的虚拟硬盘。 <br /> 文件扩展名： .vhd 或 .vhdx <br />默认位置：C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 硬盘|
- |自动虚拟硬盘 |用于虚拟机检查点的差异磁盘文件。 <br /> 文件扩展名：. .avhdx <br /> 默认位置：C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 硬盘|
- |Checkpoint|检查点存储在多个检查点文件中。 每个检查点都会创建一个配置文件和运行时状态文件。 <br /> 文件扩展名：. .vmrs 和. .vmcx <br />默认位置：C:\ProgramData\Microsoft\Windows\Snapshots|
+|配置 |以二进制文件格式存储的虚拟机配置信息。 <br /> 文件扩展名：. .vmcx <br /> 默认位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 计算机|
+ |运行时状态|以二进制文件格式存储的虚拟机运行时状态信息。 <br />文件扩展名：. .vmrs 和. vmgs <br />默认位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 计算机|
+|虚拟硬盘|存储虚拟机的虚拟硬盘。 <br /> 文件扩展名： .vhd 或 .vhdx <br />默认位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 硬盘|
+ |自动虚拟硬盘 |用于虚拟机检查点的差异磁盘文件。 <br /> 文件扩展名：. .avhdx <br /> 默认位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 硬盘|
+ |检查点|检查点存储在多个检查点文件中。 每个检查点都会创建一个配置文件和运行时状态文件。 <br /> 文件扩展名：. .vmrs 和. .vmcx <br />默认位置： C:\ProgramData\Microsoft\Windows\Snapshots|
 
 ## <a name="what-happens-if-i-dont-upgrade-the-virtual-machine-configuration-version"></a>如果不升级虚拟机配置版本，会发生什么情况？
 

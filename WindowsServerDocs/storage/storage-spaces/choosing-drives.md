@@ -10,15 +10,15 @@ author: cosmosdarwin
 ms.date: 09/19/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 21ba41f636c95660d16055908f6bef857b0f3608
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71934997"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370721"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>选择存储空间直通驱动器
 
->适用于：Windows 2019, Windows Server 2016
+>适用于： Windows 2019、Windows Server 2016
 
 本主题提供有关如何选择[存储空间直通](storage-spaces-direct-overview.md)驱动器以满足你的性能和容量要求的指南。
 
@@ -106,17 +106,17 @@ ms.locfileid: "71934997"
 
 ## <a name="sizing-considerations"></a>规模调整注意事项
 
-### <a name="cache"></a>缓存
+### <a name="cache"></a>高速缓存
 
 每个服务器都必须具有至少两个缓存驱动器（针对冗余的最低要求）。 我们建议容量驱动器数量是缓存驱动器数量的倍数。 例如，如果你有 4 个缓存驱动器，则使用 8 个容量驱动器（1:2 的比率），这样一来，你所能体验到的性能将比使用 7 个或 9 个容量驱动器更一致。
 
-应该调整缓存的大小, 以适应应用程序和工作负荷的工作集, 即, 在任何给定时间, 它们正在主动读取和写入的所有数据。 没有除此之外的缓存大小要求。 对于使用 Hdd 的部署，一个合理的起点是容量的 10% –例如，如果每个服务器具有 4 x 4 TB HDD = 16 TB 的容量，则 2 x 800 GB SSD = 1.6 TB 的缓存每个服务器。 对于所有闪存部署，尤其是对于非常[高](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)的 ssd，尤其是在容量非常高的情况下（例如，如果每台服务器具有 24 x 1.2 TB SSD = 28.8 TB 的容量），则 2 x 750 GB NVMe = 每个服务器的缓存 1.5 tb。 你始终可以在以后添加或移除缓存驱动器来进行调整。
+应该调整缓存的大小，以适应应用程序和工作负荷的工作集，即，在任何给定时间，它们正在主动读取和写入的所有数据。 没有除此之外的缓存大小要求。 对于使用 Hdd 的部署，一个合理的起点是容量的10% –例如，如果每个服务器具有 4 x 4 TB HDD = 16 TB 的容量，则 2 x 800 GB SSD = 1.6 TB 的缓存每个服务器。 对于所有闪存部署，尤其是对于非常[高](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)的 ssd，尤其是在容量非常高的情况下（例如，如果每台服务器具有 24 x 1.2 TB SSD = 28.8 TB 的容量），则 2 x 750 GB NVMe = 每个服务器的缓存 1.5 tb。 你始终可以在以后添加或移除缓存驱动器来进行调整。
 
 ### <a name="general"></a>常规
 
-建议将每个服务器的总存储容量限制为约 400 tb。 每个服务器的存储容量越高，在停机或重启后重新同步数据所需的时间就越长，例如在应用软件更新时。 对于 Windows Server 2019, 每个存储池的当前最大大小为 4 pb (PB) (4000 TB), 对于 Windows Server 2016 为 1 pb。
+建议将每个服务器的总存储容量限制为约 400 tb。 每个服务器的存储容量越高，在停机或重启后重新同步数据所需的时间就越长，例如在应用软件更新时。 对于 Windows Server 2019，每个存储池的当前最大大小为 4 pb （PB）（4000 TB），对于 Windows Server 2016 为 1 pb。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
 - [了解存储空间直通中的缓存](understand-the-cache.md)
