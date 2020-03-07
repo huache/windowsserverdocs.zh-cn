@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: a1b1a5492a6e5dbc48899b3918314676884e0454
-ms.sourcegitcommit: 39244de670f712857a5fdd56630e95d57b7001a5
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74897679"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371405"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>安装 Windows Server Essentials 日志收集器
 
@@ -52,9 +52,9 @@ Windows Server Essentials 日志收集器安装向导将日志收集器作为快
 2.  单击 **“加载项”** 选项卡，从列表中选择 **“日志收集器”** ，然后单击 **“卸载”** 。  
   
 
-3.  通过执行之前的过程 [To install the Log Collector](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)中的步骤，下载并安装日志收集器。  
+3.  通过执行之前的过程[安装日志收集器的步骤](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)中的步骤，下载并安装日志收集器。  
 
-3.  通过执行之前的过程 [To install the Log Collector](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)中的步骤，下载并安装日志收集器。  
+3.  通过执行之前的过程[安装日志收集器的步骤](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)中的步骤，下载并安装日志收集器。  
 
   
 ### <a name="manually-install-the-log-collector"></a>手动安装日志收集器  
