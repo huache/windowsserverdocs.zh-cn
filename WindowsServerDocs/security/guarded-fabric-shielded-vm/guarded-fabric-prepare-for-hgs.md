@@ -9,26 +9,26 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: 9024557dd42ede27144bf10aa5873b6bb12d585c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403487"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371441"
 ---
 # <a name="review-prerequisites-for-the-host-guardian-service"></a>查看主机保护者服务的先决条件
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 
 本主题介绍了用于准备 HGS 部署的 HGS 先决条件和初始步骤。
 
 ## <a name="prerequisites"></a>先决条件 
 
--   **硬件**：可以在物理计算机或虚拟机上运行 HGS，但建议使用物理计算机。
+-   **硬件**： HGS 可以在物理计算机或虚拟机上运行，但建议使用物理计算机。
 
     如果要将 HGS 作为三节点物理群集运行（以实现可用性），则必须具有三个物理服务器。 （作为群集的最佳做法，这三个服务器应该具有非常相似的硬件。）
   
--   **操作系统**:主机密钥证明需要 Windows Server 2019 Standard 或 Datacenter edition，操作[v2 证明](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#versioned-attestation-policies)。 对于基于 TPM 的证明，HGS 可以运行 Windows Server 2019 或 Windows Server 2016 （Standard 或 Datacenter edition）。
+-   **操作系统**：主机密钥证明需要 Windows Server 2019 Standard 或 Datacenter edition，操作[v2 证明](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#versioned-attestation-policies)。 对于基于 TPM 的证明，HGS 可以运行 Windows Server 2019 或 Windows Server 2016 （Standard 或 Datacenter edition）。
 
 -   **服务器角色**：主机保护者服务和支持服务器角色。
 

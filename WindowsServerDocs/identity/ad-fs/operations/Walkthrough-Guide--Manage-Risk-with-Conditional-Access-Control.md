@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: aefcd597a580de526a758c6d026c6c91d02d10c8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407467"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371659"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>操作实例指南：使用条件访问控制管理风险
 
@@ -57,7 +57,7 @@ ms.locfileid: "71407467"
 
 #### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>验证默认 AD FS 访问控制机制的步骤
 
-1.  在客户端计算机上打开一个浏览器窗口，并导航到示例应用程序： **https://webserv1.contoso.com/claimapp** 。
+1.  在客户端计算机上，打开浏览器窗口，然后导航到示例应用程序： **https://webserv1.contoso.com/claimapp** 。
 
     此操作会自动将请求重定向到联合服务器，并且系统会提示你使用用户名和密码登录。
 
@@ -66,7 +66,7 @@ ms.locfileid: "71407467"
     系统将授予你对应用程序的访问权限。
 
 ## <a name="BKMK_3"></a>步骤3：基于用户数据配置条件访问控制策略
-在此步骤中，你将基于用户组成员身份数据设置一个访问控制策略。 换而言之，你将在联合服务器上，为代表示例应用程序 ( **claimapp** ) 的信赖方信任配置“颁发授权规则”。 根据此规则的逻辑， **Robert Hatley** AD 用户将发出访问此应用程序所需的声明，因为该用户属于**财务**组。 已在为[Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中将**Robert Hatley**帐户添加到**财务**组。
+在此步骤中，你将基于用户组成员身份数据设置一个访问控制策略。 换而言之，你将在联合服务器上，为代表示例应用程序 (**claimapp**) 的信赖方信任配置“颁发授权规则”。 根据此规则的逻辑， **Robert Hatley** AD 用户将发出访问此应用程序所需的声明，因为该用户属于**财务**组。 已在为[Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中将**Robert Hatley**帐户添加到**财务**组。
 
 可以通过 AD FS 管理控制台或 Windows PowerShell 完成此任务。
 
@@ -74,23 +74,23 @@ ms.locfileid: "71407467"
 
 1.  在 AD FS 管理控制台中，依次导航到“信任关系”和“信赖方信任”。
 
-2.  选择代表示例应用程序 (**claimapp**) 的信赖方信任，然后在“操作” 窗格中选择“编辑声明规则”，或者通过右键单击此信赖方信任的方式进行选择。
+2.  选择代表示例应用程序 (**claimapp**) 的信赖方信任，然后在“操作”窗格中选择“编辑声明规则”，或者通过右键单击此信赖方信任的方式进行选择。
 
-3.  在“编辑 claimapp 的声明规则” 窗口中，选择“颁发授权规则” 选项卡，然后单击“添加规则”。
+3.  在“编辑 claimapp 的声明规则”窗口中，选择“颁发授权规则”选项卡，然后单击“添加规则”。
 
-4.  在“添加颁发授权声明规则向导”中的“选择规则模板”页面上，选择“根据传入声明允许或拒绝用户” 声明规则模板，然后单击“下一步”。
+4.  在“添加颁发授权声明规则向导”中的“选择规则模板”页面上，选择“根据传入声明允许或拒绝用户”声明规则模板，然后单击“下一步”。
 
 5.  在“配置规则”页面上执行下述所有操作，然后单击“完成”：
 
     1.  输入声明规则的名称，例如 **TestRule**。
 
-    2.  选择“组 SID” 作为“传入声明类型”。
+    2.  选择“组 SID”作为“传入声明类型”。
 
-    3.  单击“浏览”，键入 **Finance** 作为 AD 测试组的名称，然后解析该名称以填入“传入声明值” 字段。
+    3.  单击“浏览”，键入 **Finance** 作为 AD 测试组的名称，然后解析该名称以填入“传入声明值”字段。
 
-    4.  选择“拒绝访问具有此传入声明的用户”选项 。
+    4.  选择“拒绝访问具有此传入声明的用户”选项。
 
-6.  在“编辑 claimapp 的声明规则” 窗口中，请确保删除你在创建此信赖方信任时按默认创建的“允许访问所有用户” 规则。
+6.  在“编辑 claimapp 的声明规则”窗口中，请确保删除你在创建此信赖方信任时按默认创建的“允许访问所有用户”规则。
 
 #### <a name="to-configure-conditional-access-control-policy-based-on-user-data-via-windows-powershell"></a>通过 Windows PowerShell 基于用户数据配置条件访问控制策略的步骤
 

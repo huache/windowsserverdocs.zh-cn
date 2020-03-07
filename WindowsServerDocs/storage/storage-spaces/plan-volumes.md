@@ -10,11 +10,11 @@ author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 52c600068d5dd447ff9faa7c40788664e222a83a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366889"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370733"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>规划存储空间直通中的卷
 
@@ -151,7 +151,7 @@ ms.locfileid: "71366889"
 
 我们建议为每个服务器保留相当于一个容量驱动器的容量，最多可保留 4 个驱动器的容量。 你可以自行决定保留更多容量，但此最低容量建议可以保证在任何驱动器发生故障后均能够成功进行即时、就地、并行修复。
 
-![保留](media/plan-volumes/reserve.png)
+![reserve](media/plan-volumes/reserve.png)
 
 例如，如果你安装了 2 个服务器，并且你使用的是 1 TB 的容量驱动器，请留出 2 x 1 = 2 TB 的池作为保留容量。 如果你安装了 3 个服务器和 1TB 的容量驱动器，请留出 3 x 1 = 3 TB 作为保留容量。 如果你安装了 4 个或更多个服务器以及 1TB 的容量驱动器，请留出 4 x 1 = 4 TB 作为保留容量。
 
@@ -193,9 +193,9 @@ ms.locfileid: "71366889"
    >[!TIP]
    > 你无需立即创建所有卷。 你始终可以在稍后扩展卷或创建新卷。
 
-为简单起见，此示例从头到尾都使用十进制（基数为 10）单位，这意味着 1 TB = 1,000,000,000,000 字节。 但是，Windows 中的存储数量按二进制（基数为 2）单位显示。 例如，在 Windows 中，每个 2 TB 的驱动器都将显示为 1.82 TiB。 同样，128 TB 的存储池将显示为 116.41 TiB。 这是预期情况。
+为简单起见，此示例从头到尾都使用十进制（基数为 10）单位，这意味着 1 TB = 1,000,000,000,000 字节。 但是，Windows 中的存储数量按二进制（基数为 2）单位显示。 例如，在 Windows 中，每个 2 TB 的驱动器都将显示为 1.82 TiB。 同样，128 TB 的存储池将显示为 116.41 TiB。 这是正常情况。
 
-## <a name="usage"></a>Usage
+## <a name="usage"></a>用法
 
 请参阅[在存储空间直通中创建卷](create-volumes.md)。
 
