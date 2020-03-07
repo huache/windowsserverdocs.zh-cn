@@ -8,11 +8,11 @@ ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 7c1a70e36dfac9b23ded8f920ffcc8cccbfff023
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
-ms.translationtype: HT
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903940"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371115"
 ---
 # <a name="install-and-manage-extensions"></a>安装和管理扩展
 
@@ -24,31 +24,31 @@ Windows Admin Center 是作为可扩展的平台构建的，其中的每个连�
 
 Windows Admin Center 会显示指定的 NuGet 源提供的扩展。 默认情况下，Windows Admin Center 指向 Microsoft 官方 NuGet 源，其中托管由 Microsoft 和其他开发者发布的扩展。
 
-1. 单击右上角的“设置”按钮，  然后在左窗格中单击“扩展”。  
-2. “可用扩展”选项卡会列出源上可供安装的扩展。 
-3. 单击某个扩展，在“详细信息”窗格中查看扩展说明、版本、发布者和其他信息。 
-4. 单击“安装”，安装某个扩展。  如果网关必须在提升模式下运行才能进行此更改，则会显示 UAC 提升提示。 安装完成后，系统会自动刷新浏览器，并会使用已安装的新扩展重新加载 Windows Admin Center。 如果你尝试安装的扩展是对以前安装的扩展的更新，则可单击“更新到最新”按钮来安装该更新。  也可转到“已安装的扩展”选项卡来查看已安装的扩展，以及查看某个更新在“状态”列中是否可用。  
+1. 单击右上角的“设置”按钮，然后在左窗格中单击“扩展”。 
+2. “可用扩展”选项卡会列出源上可供安装的扩展。
+3. 单击某个扩展，在“详细信息”窗格中查看扩展说明、版本、发布者和其他信息。
+4. 单击“安装”，安装某个扩展。 如果网关必须在提升模式下运行才能进行此更改，则会显示 UAC 提升提示。 安装完成后，系统会自动刷新浏览器，并会使用已安装的新扩展重新加载 Windows Admin Center。 如果你尝试安装的扩展是对以前安装的扩展的更新，则可单击“更新到最新”按钮来安装该更新。 也可转到“已安装的扩展”选项卡来查看已安装的扩展，以及查看某个更新在“状态”列中是否可用。
 
 ## <a name="installing-extensions-from-a-different-feed"></a>从另一源安装扩展
 
 Windows Admin Center 支持多个源，你可以一次从多个源查看和管理包。 可以将任何支持 NuGet V2 API 或文件共享的 NuGet 源添加到 Windows Admin Center，方便从其安装扩展。
 
-1. 单击右上角的“设置”按钮，  然后在左窗格中单击“扩展”。 
-2. 在右窗格中，单击“源”  选项卡。
-3. 单击“添加”按钮以添加另一源。  对于 NuGet 源，请输入 NuGet V2 源 URL。 NuGet 源提供者或管理员应该能够提供 URL 信息。 对于文件共享，请输入在其中存储扩展包文件 (.nupkg) 的文件共享的完整路径。
+1. 单击右上角的“设置”按钮，然后在左窗格中单击“扩展”。
+2. 在右窗格中，单击“源”选项卡。
+3. 单击“添加”按钮以添加另一源。 对于 NuGet 源，请输入 NuGet V2 源 URL。 NuGet 源提供者或管理员应该能够提供 URL 信息。 对于文件共享，请输入在其中存储扩展包文件 (.nupkg) 的文件共享的完整路径。
 4. 单击 **“添加”** 。 如果网关必须在提升模式下运行才能进行此更改，则会显示 UAC 提升提示。
 
-“可用扩展”列表会显示所有已注册源提供的扩展。  可以使用“包源”列来查看每个扩展来自哪个源。 
+“可用扩展”列表会显示所有已注册源提供的扩展。 可以使用“包源”列来查看每个扩展来自哪个源。
 
 ## <a name="uninstalling-an-extension"></a>卸载扩展
 
 可以卸载以前安装的任何扩展，甚至可以卸载在安装 Windows Admin Center 过程中预安装的任何工具。
 
-1. 单击右上角的“设置”按钮，  然后在左窗格中单击“扩展”。  
-2. 单击“已安装的扩展”选项卡，查看所有已安装的扩展。 
-3. 选择要卸载的扩展，然后单击“卸载”  。
+1. 单击右上角的“设置”按钮，然后在左窗格中单击“扩展”。 
+2. 单击“已安装的扩展”选项卡，查看所有已安装的扩展。
+3. 选择要卸载的扩展，然后单击“卸载”。
 
-卸载完成后，系统会自动刷新浏览器，并会重新加载 Windows Admin Center，删除该扩展。 如果卸载了作为 Windows Admin Center 一部分预安装的工具，该工具会出现在“可用扩展”选项卡中，可供重新安装。 
+卸载完成后，系统会自动刷新浏览器，并会重新加载 Windows Admin Center，删除该扩展。 如果卸载了作为 Windows Admin Center 一部分预安装的工具，该工具会出现在“可用扩展”选项卡中，可供重新安装。
 
 ## <a name="installing-extensions-on-a-computer-without-internet-connectivity"></a>在未连接 Internet 的情况下在计算机上安装扩展
 
@@ -61,7 +61,7 @@ Windows Admin Center 支持多个源，你可以一次从多个源查看和管�
    * 若要查看扩展包，可能需要在 msft-sme.myget.org 上创建一个帐户并登录。
 
 2. 单击要安装的包的名称，查看包详细信息页。
-3. 单击包详细信息页的右侧窗格中的“下载”链接，下载该扩展的 .nupkg 文件。 
+3. 单击包详细信息页的右侧窗格中的“下载”链接，下载该扩展的 .nupkg 文件。
 4. 对所有需要下载的包重复步骤 2 和 3。
 5. 将包文件复制到可以从安装了 Windows Admin Center 的计算机访问的某个文件共享，或者复制到计算机的本地磁盘。
 6. [按说明从另一源安装扩展](#installing-extensions-from-a-different-feed)。
@@ -86,4 +86,4 @@ Windows Admin Center 预览版包含一个用于管理网关扩展的 PowerShell
 
 [!INCLUDE [ps-extensions](../includes/ps-extensions.md)]
 
-### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdkextendextensibility-overviewmd"></a>[详细了解如何使用 Windows Admin Center SDK 构建扩展](../extend/extensibility-overview.md)。
+### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdk"></a>[详细了解如何使用 Windows Admin Center SDK 构建扩展](../extend/extensibility-overview.md)。

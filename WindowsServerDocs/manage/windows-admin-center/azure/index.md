@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 05/31/2019
 ms.openlocfilehash: b82d2eaa9283d99993102f1656262e2eda86cfff
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
-ms.translationtype: HT
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950127"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371749"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>将 Windows Server 连接到 Azure 混合服务
 
@@ -80,7 +80,7 @@ ms.locfileid: "75950127"
 ### <a name="extend-compute-capacity"></a>扩展计算容量
 
 - **创建新的 Azure 虚拟机，而无需离开 Windows Admin Center**  
-在 Windows Admin Center 的“所有连接”页中，转到“添加”，然后选择“Azure VM”下的“新建”     。 甚至可以域加入 Azure VM，并在此分步创建工具中配置存储。
+在 Windows Admin Center 的“所有连接”页中，转到“添加”，然后选择“Azure VM”下的“新建”。 甚至可以域加入 Azure VM，并在此分步创建工具中配置存储。
 
 - **通过[云见证](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)利用 Azure 在故障转移群集上实现仲裁**  
 可以将 Azure 存储帐户用作 Azure Stack HCI 群集或其他故障转移群集的群集见证，而无需对其他硬件投资以实现 2 节点群集上的仲裁。  

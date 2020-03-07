@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 3563c30e86c53435c10cafc840a71c7b8c526943
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391202"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371557"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>AD DS 安装和删除向导页面说明
 
@@ -40,7 +40,7 @@ ms.locfileid: "71391202"
   
 -   [必备项检查](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_PrerqCheckPage)  
   
--   [结果](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_Results)  
+-   [后果](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_Results)  
   
 -   [角色删除凭据](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_RemovalCredsPage)  
   
@@ -61,7 +61,7 @@ ms.locfileid: "71391202"
   
 -   创建新林时，必须为林根域指定名称。 林根域名不能为单标记（例如，必须为 "contoso.com" 而不是 "contoso"）。 必须使用允许的 DNS 域命名约定。 你可以指定国际化域名 (IDN)。 有关 DNS 域命名约定的详细信息，请参阅 [KB 909264](https://support.microsoft.com/kb/909264)。  
   
--   不要使用与外部 NDS 名称相同的名称创建新 Active Directory 林。 例如，如果 Internet DNS URL 是 http： \//contoso .com，则必须为内部林选择不同的名称，以避免将来出现兼容性问题。 该名称应具有唯一性，且不会产生 Web 流量，比如 corp.contoso.com。  
+-   不要使用与外部 NDS 名称相同的名称创建新 Active Directory 林。 例如，如果 Internet DNS URL 是 http：\//contoso.com，则必须为内部林选择不同的名称，以避免将来出现兼容性问题。 该名称应具有唯一性，且不会产生 Web 流量，比如 corp.contoso.com。  
   
 -   在创建新林的服务器上，你必须属于 管理员组 的成员。  
   
@@ -160,7 +160,7 @@ ms.locfileid: "71391202"
   
 父域和要提升的子域之间的委派可在安装前后创建和验证。 新域控制器安装出现延迟不是因为无法创建或更新 DNS 委派。  
   
-有关委派的详细信息，请参阅[了解区域委派](https://go.microsoft.com/fwlink/?LinkId=164773)（ https://go.microsoft.com/fwlink/?LinkId=164773) 。 如果在所处情形中无法进行区域委派，可以考虑使用其他方法进行从其他域到你域中主机的名称解析。 例如，其他域的 DNS 管理员可配置条件转发、存根区域或辅助区域来解析你域中的名称。 有关详细信息，请参阅下列主题：  
+有关委派的详细信息，请参阅[了解区域委派](https://go.microsoft.com/fwlink/?LinkId=164773)（ https://go.microsoft.com/fwlink/?LinkId=164773)。 如果在所处情形中无法进行区域委派，可以考虑使用其他方法进行从其他域到你域中主机的名称解析。 例如，其他域的 DNS 管理员可配置条件转发、存根区域或辅助区域来解析你域中的名称。 有关详情，请参阅以下主题：  
   
 -   [了解区域类型](https://go.microsoft.com/fwlink/?LinkID=157399)（ https://go.microsoft.com/fwlink/?LinkID=157399)  
   
@@ -175,9 +175,9 @@ ms.locfileid: "71391202"
   
 -   委派的管理员帐户获得 RODC 的本地管理权限。 这些用户可以操作与本地计算机的管理员组等效的权限。 他们不是 Domain Admins 或域内置管理员组的成员。 在不指派域管理权限的情况下委派分支机构管理时，这样选择很有用。 不需要配置管理委派。 有关详细信息，请参阅[管理员角色分隔](https://technet.microsoft.com/library/cc753170(v=WS.10).aspx)。  
   
--   密码复制策略用作访问控制列表 (ACL)。 它确定是否应该允许 RODC 缓存密码。 在 RODC 收到经身份验证的用户或计算机登录请求时，它将参考密码复制策略来确定是否应该缓存帐户的密码。 那么，同一帐户就可以更高效地执行后续登录。  
+-   密码复制策略相当于一个访问控制列表 (ACL)。 它确定是否应该允许 RODC 缓存密码。 在 RODC 收到经过身份验证的用户或计算机登录请求时，它将参考密码复制策略来确定是否应缓存该帐户的密码。 然后，同一帐户便可以更有效地执行后续登录。  
   
-    密码复制策略 (PRP) 列出了可缓存密码的帐户，以及密码缓存被显式拒绝的帐户。 允许缓存用户和计算机帐户列表，并不表示 RODC 一定缓存了这些帐户的密码。 例如，管理员可以提前指定 RODC 将缓存的任何密码。 这样，RODC 可以对这些帐户进行身份验证，即使集线器站点的 WAN 链接处于脱机状态也是如此。  
+    密码复制策略 (PRP) 列出了可缓存密码的帐户，以及密码缓存被显式拒绝的帐户。 允许缓存的用户和计算机帐户列表并不表示 RODC 一定缓存了这些帐户的密码。 例如，管理员可以事先指定 RODC 将缓存的任何帐户。 这样即使指向中心站点的 WAN 链接脱机，RODC 也可以对这些帐户进行身份验证。  
   
     不允许（包括隐式）或被拒绝的任何用户或计算机都不会缓存密码。 如果这些用户或计算机不能访问可写域控制器，则无法访问 AD DS-提供的资源或功能。 有关 PRP 的详细信息，请参阅[密码复制策略](https://technet.microsoft.com/library/cc730883(v=ws.10).aspx)。 有关管理 PRP 的详细信息，请参阅[管理密码复制策略](https://technet.microsoft.com/library/rodc-guidance-for-administering-the-password-replication-policy(v=ws.10).aspx)。  
   
@@ -210,7 +210,7 @@ ms.locfileid: "71391202"
 ## <a name="BKMK_AdprepCreds"></a>准备选项  
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PreparationOptions.gif)  
   
-如果当前未使用足够凭据登录来运行 adprep.exe 命令和，且需要运行 adprep 才能完成 AD DS 安装，系统将提示你提供凭据来运行 adprep.exe。 需要运行 Adprep 才能将运行 Windows Server 2012 的第一个域控制器添加到现有域或林。 特别需要注意的是：  
+如果当前未使用足够凭据登录来运行 adprep.exe 命令和，且需要运行 adprep 才能完成 AD DS 安装，系统将提示你提供凭据来运行 adprep.exe。 需要运行 Adprep 才能将运行 Windows Server 2012 的第一个域控制器添加到现有域或林。 更具体的内容，请参阅：  
   
 -   必须运行 Adprep/forestprep 才能将运行 Windows Server 2012 的第一个域控制器添加到现有林。 此命令必须由托管架构主机的域的 Enterprise Admins 组、Schema Admins 组和 Domain Admins 组的成员来运行。 若要成功运行此命令，运行命令的计算机和林的架构主机之间必须存在连接。  
   
@@ -272,11 +272,11 @@ ms.locfileid: "71391202"
   
 必须单击“继续删除”确认附加角色不再提供，才能单击“下一步”继续。  
   
-如果强制删除域控制器，未复制到域中其他域控制器的任何 Active Directory 对象更改都将丢失。 此外，如果域控制器托管操作主机角色、全局目录或 DNS 服务器角色，可能会给域和林中的关键操作带来如下影响。 在删除托管任何操作主机角色的域控制器之前，尝试将角色传输到其他域控制器。 如果无法传输角色，请首先从该计算机中删除 Active Directory 域服务，然后使用 Ntdsutil.exe 来占用该角色。 在计划占用角色的域控制器上使用 Ntdsutil；如果可能，使用与此域控制器相同的站点中的最新复制伙伴。 有关传输和占用操作主机角色的详细信息，请参阅 Microsoft 知识库文章 [255504](https://go.microsoft.com/fwlink/?LinkId=80395)。 如果向导无法确定域控制器是否托管操作主机角色，请运行 netdom.exe 命令以确定此域控制器是否执行任何操作主机角色。  
+如果强制删除域控制器，未复制到域中其他域控制器的任何 Active Directory 对象更改都将丢失。 此外，如果域控制器托管操作主机角色、全局目录或 DNS 服务器角色，可能会给域和林中的关键操作带来如下影响。 在删除托管任何操作主机角色的域控制器之前，尝试将角色传输到其他域控制器。 如果无法传输角色，请先从此计算机删除 Active Directory 域服务，然后使用 Ntdsutil.exe 占用角色。 在计划占用角色的域控制器上使用 Ntdsutil；如果可能，使用与此域控制器相同的站点中的最新复制伙伴。 有关传输和占用操作主机角色的详细信息，请参阅 Microsoft 知识库文章 [255504](https://go.microsoft.com/fwlink/?LinkId=80395)。 如果向导无法确定域控制器是否托管操作主机角色，请运行 netdom.exe 命令以确定此域控制器是否执行任何操作主机角色。  
   
--   全局编录：用户在登录到林中的域时可能会遇到问题。 在删除全局目录服务器之前，确保此林和站点具有足够全局目录服务器来服务用户登录。 如有必要，指定其他全局目录服务器并使用新信息更新客户端和应用程序。  
+-   全局目录：用户可能无法登录林中的域。 在删除全局目录服务器之前，确保此林和站点具有足够全局目录服务器来服务用户登录。 如有必要，指定其他全局目录服务器并使用新信息更新客户端和应用程序。  
   
--   DNS 服务器：存储在 Active Directory 集成区域中的所有 DNS 数据都将丢失。 删除 AD DS 后，此 DNS 服务器将不能执行集成到 Active Directory 的 DNS 区域的名称解析。 因此，建议更新当前引用此 DNS 服务器的 IP 地址的所有计算机的 DNS 配置，以使用新 DNS 服务器的 IP 地址进行名称解析。  
+-   DNS 服务器：存储在 Active Directory-集成区域中的所有 DNS 数据都将丢失。 删除 AD DS 后，此 DNS 服务器将不能执行集成到 Active Directory 的 DNS 区域的名称解析。 因此，建议更新当前引用此 DNS 服务器的 IP 地址的所有计算机的 DNS 配置，以使用新 DNS 服务器的 IP 地址进行名称解析。  
   
 -   基础结构主机：域中的客户端可能无法找到其他域中的对象。 在继续之前，先将基础结构主机角色传输到非全局目录服务器的域控制器上。  
   

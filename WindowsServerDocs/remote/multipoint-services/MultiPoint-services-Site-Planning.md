@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 744e49f47f7144dac82dbe68c885060b0c08490d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389603"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371866"
 ---
 # <a name="multipoint-services-site-planning"></a>MultiPoint Services 站点规划
 你应该考虑将在其中部署一个或多个运行 MultiPoint 服务的计算机的位置。  
@@ -128,7 +128,7 @@ LAN 客户端没有物理距离限制。 只要它们位于 LAN 上，它们就�
   
 -   Server  
 -   监视器
--   使用中间\(集线器\) 
+-   中间集线器 \(（如果使用）\) 
 -   某些 USB 零客户端  
 -   USB 设备，如某些外部存储设备和 DVD 驱动器  
   
@@ -154,6 +154,6 @@ LAN 客户端没有物理距离限制。 只要它们位于 LAN 上，它们就�
   
 ![MultiPoint 服务活动中心](./media/WMSActivityCenter.gif)  
   
-**小型企业办公室**在此设置中，运行 MultiPoint 服务的计算机位于中心位置，并且整个办公室内的用户使用\(局域网局域网\)连接到该计算机。  
+**小型企业办公室**在此设置中，运行 MultiPoint 服务的计算机放在一个中心位置，并且通过使用局域网\)\(LAN 连接到整个办公室的用户。  
   
 ![USB 零客户端连接工作站](./media/Diagram1.gif)

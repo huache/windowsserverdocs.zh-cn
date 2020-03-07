@@ -13,17 +13,17 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 04d09574046474da5bee4437628ade9646cf58ca
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866936"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371192"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>在 Windows Server Essentials 中进行连接
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
- 可以通过使用连接器软件将计算机连接到 Windows Server Essentials 服务器。 在使用“将计算机连接到服务器”向导来将计算机连接到服务器时安装连接器软件。 可以通过键入**http：//< servername\>/connect**（其中 **\> < servername**是服务器的名称）来启动此向导。  
+ 可以通过使用连接器软件将计算机连接到 Windows Server Essentials 服务器。 在使用“将计算机连接到服务器”向导来将计算机连接到服务器时安装连接器软件。 你可以通过键入**http：//< servername\>/connect**来启动此向导，其中 **< servername\>** 是服务器的名称。  
 
  本主题内容：  
 
@@ -90,7 +90,7 @@ ms.locfileid: "70866936"
 -   Windows Server Essentials 的安装已完成，并且该服务器处于运行状态。 如果连接器软件无法与服务器通信，则它将退出安装。  
 
 
--   客户端计算机运行受支持的操作系统。 有关详细信息，请参阅 [Supported operating systems for client computers](Get-Connected-in-Windows-Server-Essentials.md#BKMK_4)。
+-   客户端计算机运行受支持的操作系统。 有关详细信息，请参阅[客户端计算机支持的操作系统](Get-Connected-in-Windows-Server-Essentials.md#BKMK_4)。
 
 
 -   客户端计算机必须有效连接到 Internet。  
@@ -103,7 +103,7 @@ ms.locfileid: "70866936"
 
     -   1.4 GHz 或更快的处理器  
 
-    -   1 GB RAM 或更多  
+    -   1 GB RAM 或更大  
 
     -   1 GB 的可用硬盘驱动器空间（安装后会释放此磁盘上的一个分区）  
 
@@ -121,13 +121,13 @@ ms.locfileid: "70866936"
 
 > [!NOTE]
 > 
->  在 Windows Server Essentials 或 Windows Server Essentials 的本地客户端部署中，你可以将计算机连接到服务器，而无需将计算机添加到 Windows Server Essentials 域。 此方法并非适用于所有受支持的客户端操作系统，将计算机连接到域所需的功能（例如组策略和虚拟专用网络 (VPN)）也不可用。 有关要求和说明，请参阅 [Connect computers to a Windows Server Essentials server without joining the domain](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)。  
+>  在 Windows Server Essentials 或 Windows Server Essentials 的本地客户端部署中，你可以将计算机连接到服务器，而无需将计算机添加到 Windows Server Essentials 域。 此方法并非适用于所有受支持的客户端操作系统，将计算机连接到域所需的功能（例如组策略和虚拟专用网络 (VPN)）也不可用。 有关要求和说明，请参阅[在不加入域的情况下将计算机连接到 Windows Server Essentials 服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)。  
 
- 有关将计算机连接到运行 Windows Server Essentials 的服务器的逐步说明，请参阅 [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
+ 有关将计算机连接到运行 Windows Server Essentials 的服务器的分步说明，请参阅[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
 
->  在 Windows Server Essentials 或 Windows Server Essentials 的本地客户端部署中，你可以将计算机连接到服务器，而无需将计算机添加到 Windows Server Essentials 域。 此方法并非适用于所有受支持的客户端操作系统，将计算机连接到域所需的功能（例如组策略和虚拟专用网络 (VPN)）也不可用。 有关要求和说明，请参阅 [Connect computers to a Windows Server Essentials server without joining the domain](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)。  
+>  在 Windows Server Essentials 或 Windows Server Essentials 的本地客户端部署中，你可以将计算机连接到服务器，而无需将计算机添加到 Windows Server Essentials 域。 此方法并非适用于所有受支持的客户端操作系统，将计算机连接到域所需的功能（例如组策略和虚拟专用网络 (VPN)）也不可用。 有关要求和说明，请参阅[在不加入域的情况下将计算机连接到 Windows Server Essentials 服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)。  
 
- 有关将计算机连接到运行 Windows Server Essentials 的服务器的逐步说明，请参阅 [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
+ 有关将计算机连接到运行 Windows Server Essentials 的服务器的分步说明，请参阅[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
 
 
 ###  <a name="BKMK_3"></a>将 Mac 计算机连接到网络的先决条件  
@@ -145,7 +145,7 @@ ms.locfileid: "70866936"
 
     -   1.4 GHz 或更快的处理器  
 
-    -   1 GB RAM 或更多  
+    -   1 GB RAM 或更大  
 
     -   1 GB 的可用硬盘驱动器空间（安装后会释放此磁盘上的一个分区）  
 
@@ -186,9 +186,9 @@ ms.locfileid: "70866936"
 
 - Windows 8.1  
 
-- Windows 8.1 专业版  
+- Windows 8.1 Pro  
 
-- Windows 8.1 企业版  
+- Windows 8.1 Enterprise  
 
   **Windows 10 操作系统**  
 
@@ -295,7 +295,7 @@ ms.locfileid: "70866936"
 -   如果在 Windows Server Essentials 上启用了 vpn 功能，则在客户端计算机上部署 VPN 并提供一次单击体验; 如果在 Windows Server Essentials 上启用了 VPN 功能，则提供自动连接体验  
 
 
- 有关将计算机连接到服务器的信息，请参阅 [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
+ 有关将计算机连接到服务器的信息，请参阅[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
 
 ###  <a name="BKMK_6"></a>网络用户名和密码信息  
  你可以从管理服务器的人员处获取网络用户名和密码信息。 你可以使用这些凭据将计算机连接到服务器并访问服务器中的信息。  
@@ -330,7 +330,7 @@ ms.locfileid: "70866936"
 
 1.  单击“开始”、右键单击“计算机”，然后单击“属性”。  
 
-2.  在“计算机名、域和工作组设置”下，单击“更改设置”。  
+2.  在 **“计算机名称、域和工作组设置”** 下，单击 **“更改设置”** 。  
 
     > [!NOTE]
     >  如果系统提示你输入管理员密码或确认信息，请键入域密码或提供确认信息。  
@@ -396,9 +396,9 @@ ms.locfileid: "70866936"
 
 > [!NOTE]
 > 
->  在 Windows Server Essentials 或 Windows Server Essentials 的本地客户端部署中，你可以将计算机连接到服务器，而无需将计算机添加到 Windows Server Essentials 域。 此方法并非适用于所有受支持的客户端操作系统，将计算机连接到域所需的功能（例如组策略和虚拟专用网络 (VPN)）也不可用。 有关要求和说明，请参阅 [Connect computers to a Windows Server Essentials server without joining the domain](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)。  
+>  在 Windows Server Essentials 或 Windows Server Essentials 的本地客户端部署中，你可以将计算机连接到服务器，而无需将计算机添加到 Windows Server Essentials 域。 此方法并非适用于所有受支持的客户端操作系统，将计算机连接到域所需的功能（例如组策略和虚拟专用网络 (VPN)）也不可用。 有关要求和说明，请参阅[在不加入域的情况下将计算机连接到 Windows Server Essentials 服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)。  
 > 
->  在 Windows Server Essentials 或 Windows Server Essentials 的本地客户端部署中，你可以将计算机连接到服务器，而无需将计算机添加到 Windows Server Essentials 域。 此方法并非适用于所有受支持的客户端操作系统，将计算机连接到域所需的功能（例如组策略和虚拟专用网络 (VPN)）也不可用。 有关要求和说明，请参阅 [Connect computers to a Windows Server Essentials server without joining the domain](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)。  
+>  在 Windows Server Essentials 或 Windows Server Essentials 的本地客户端部署中，你可以将计算机连接到服务器，而无需将计算机添加到 Windows Server Essentials 域。 此方法并非适用于所有受支持的客户端操作系统，将计算机连接到域所需的功能（例如组策略和虚拟专用网络 (VPN)）也不可用。 有关要求和说明，请参阅[在不加入域的情况下将计算机连接到 Windows Server Essentials 服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)。  
 
 
 ##### <a name="to-connect-a-client-computer-to-the-server"></a>将客户端计算机连接到服务器的步骤  
@@ -410,12 +410,12 @@ ms.locfileid: "70866936"
 
 2.  打开 Internet 浏览器，如 Internet Explorer。  
 
-3.  在地址栏中，键入**http：//<\>servername/Connect**，然后按 enter。  
+3.  在地址栏中，键入**http：//< servername\>/Connect**，然后按 enter。  
 
     > [!NOTE]
-    >  如果计算机位于 Windows Server Essentials 网络之外的远程位置，若要运行 "将计算机连接到服务器" 向导，请在 web 浏览器的地址栏中键入 http：/ **/< domainname\>/connect** （其中 < 域\>是组织的域名）。 你可以从网络管理员处获得你的域名信息。  
+    >  如果计算机位于 Windows Server Essentials 网络之外的远程位置，若要运行 "将计算机连接到服务器" 向导，请在 web 浏览器的地址栏中键入 http：/ **/< domainname\>/connect** （其中 < 域\> 是组织的域名）。 你可以从网络管理员处获得你的域名信息。  
 
-4.  此时将显示 **“将你的计算机连接到服务器”** 页面。 执行下列操作之一：  
+4.  此时将显示 **“将你的计算机连接到服务器”** 页面。 执行以下操作之一：  
 
     -   对于运行 Windows 操作系统的计算机，单击“下载适用于 Windows 的软件”。  
 
@@ -503,7 +503,7 @@ ms.locfileid: "70866936"
 
 2.  使用管理员权限打开命令提示符。  
 
-    -   在 Windows 10 中，单击 "**开始**" 按钮，选择 "**所有应用** -> " "**Windows 系统工具** -> " "**命令提示符**"，右键单击 "命令提示符"，然后单击 "以**管理员身份运行**"。  
+    -   在 Windows 10 中，单击 "**开始**" 按钮，选择 "**所有应用**" -> **Windows 系统工具**" -> **命令提示符**下，右键单击" 命令提示符 "，然后单击" 以**管理员身份运行**"。  
 
     -   在 Windows 8 中，在 "**开始**" 页上键入**command** ，然后按 enter。 在结果中，右键单击“命令提示符”，然后单击“以管理员身份运行”。  
 
@@ -516,7 +516,7 @@ ms.locfileid: "70866936"
     ```  
 
 
-4.  完成 [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)中的步骤。  
+4.  完成[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)中的步骤。  
 
 
 ####  <a name="BKMK_SecondServer"></a>将第二台服务器加入到网络  
@@ -539,7 +539,7 @@ ms.locfileid: "70866936"
 
         3.  单击“站点”。  
 
-        4.  该网站应该显示在“将该网站添加到区域” 字段中。 单击**添加**。  
+        4.  该网站应该显示在“将该网站添加到区域” 字段中。 单击 **“添加”** 。  
 
         5.  单击“关闭”，然后单击“确定”。  
 
@@ -582,10 +582,10 @@ ms.locfileid: "70866936"
 - 第二台服务器的组策略状态显示为 "**不适用**"。  
 
 ###  <a name="BKMK_11"></a>安装连接器软件  
- 在使用“将计算机连接到服务器”向导来将计算机连接到服务器时安装 Windows Server Essentials 中的连接器软件。 可以通过在 web 浏览器的地址栏中键入**http\>：//< ServerName/connect**来启动此向导（其中 *<\> ServerName*是服务器的名称）。  
+ 在使用“将计算机连接到服务器”向导来将计算机连接到服务器时安装 Windows Server Essentials 中的连接器软件。 可以通过在 web 浏览器的地址栏中键入**http：//< ServerName\>/connect**来启动此向导（其中 *< ServerName\>* 是服务器的名称）。  
 
 > [!NOTE]
->  如果计算机位于远程位置，若要运行 "将计算机连接到服务器" 向导，请在 web 浏览器的地址栏中键入 http：/ **/< domainname\>/connect** （其中 *< 域\>* 是你的域名组织）。 你可以从网络管理员处获得你的域名信息。  
+>  如果计算机位于远程位置，若要运行 "将计算机连接到服务器" 向导，请在 web 浏览器的地址栏中键入 http：/ **/< domainname\>/connect** （其中 *< 域\>* 是组织的域名）。 你可以从网络管理员处获得你的域名信息。  
 
  连接器软件将执行以下操作：  
 
@@ -598,7 +598,7 @@ ms.locfileid: "70866936"
 -   使你能够从家庭计算机配置并远程管理 Windows Server Essentials  
 
 
- 有关将计算机连接到 Windows Server Essentials 服务器的逐步说明，请参阅 [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。   
+ 有关将计算机连接到 Windows Server Essentials 服务器的分步说明，请参阅[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。   
 
 
 ###  <a name="BKMK_12"></a>手动移动计算机数据和设置  
@@ -607,7 +607,7 @@ ms.locfileid: "70866936"
  将 Windows 8、Windows 8.1 或 Windows 10 计算机连接到服务器时，无法自动传输用户配置文件。 但是，在 Windows 8 计算机上，你可以使用 Windows 轻松传送将数据和设置从原始本地用户传输到加入域的计算机。 若要实现这一点，你必须同时是 Windows 8 源计算机和 Windows 8 目标计算机上的管理员。 有关使用“Windows 轻松传送”来传输文件和设置的信息，请参阅 Microsoft 知识库中的 [文章 2735227](https://support.microsoft.com/kb/2735227) 。  
 
 ###  <a name="BKMK_Transfer"></a>在计算机部署期间传输多个用户配置文件  
- 在将运行 Windows 7 或 Windows 7 SP1 操作系统的计算机连接到 Windows Server Essentials 服务器之前，你必须先在服务器上创建相应的网络用户帐户，以便传输多个本地用户配置文件。 有关创建网络用户帐户的详细信息，请参阅 [Add a user account](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)。  
+ 在将运行 Windows 7 或 Windows 7 SP1 操作系统的计算机连接到 Windows Server Essentials 服务器之前，你必须先在服务器上创建相应的网络用户帐户，以便传输多个本地用户配置文件。 有关创建网络用户帐户的详细信息，请参阅[添加用户帐户](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)。  
 
  用户配置文件迁移仅在运行 Windows 7 （适用于 Windows Server Essentials）或 Windows 7 SP1 （适用于 Windows Server Essentials）的计算机上受支持。 当你使用“将计算机连接到服务器”向导将计算机连接到 Windows Server Essentials 服务器时，系统将向你提供一个选项，用于将旧的本地用户帐户的用户数据和设置移动到新的网络用户帐户中。 为此，在该向导的“移动现有用户数据和设置”页面上，将网络用户帐户映射到存在于计算机上的本地用户帐户，以便传输位于客户端计算机上的多个用户配置文件。  
 
@@ -632,27 +632,27 @@ ms.locfileid: "70866936"
 6.  等待程序卸载。 删除该软件后，已安装的程序或更新列表中将不再显示“Windows Server Essentials 连接器”。 此外，计算机的桌面上将不再显示快速启动板和仪表板的快捷方式。  
 
 > [!NOTE]
-> - 卸载连接器软件不会从显示在仪表板的“设备” 选项卡上的计算机列表中删除该计算机。 若要从仪表板中删除计算机，请参阅 [Remove a computer from the server](../manage/Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3)。  
+> - 卸载连接器软件不会从显示在仪表板的“设备” 选项卡上的计算机列表中删除该计算机。 若要从仪表板中删除计算机，请参阅[从服务器中删除计算机](../manage/Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3)。  
 >   -   卸载连接器软件时，不会删除客户端计算机上已映射到服务器的共享文件夹。 你必须手动删除映射到服务器的共享文件夹。  
 > 
-> -   卸载连接器软件不会使计算机脱离原始域。 你必须手动从域中脱离计算机。 有关说明，请参阅 [Remove a computer from a Windows domain](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)。  
+> -   卸载连接器软件不会使计算机脱离原始域。 你必须手动从域中脱离计算机。 有关说明，请参阅[从 Windows 域中删除计算机](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)。  
 
 
 ###  <a name="BKMK_14"></a>断开计算机与服务器的连接或将计算机重新连接到服务器  
  若要从服务器中断开计算机连接，你必须完成以下步骤：  
 
 
-1. 使用“控制面板”从计算机中卸载连接器软件。 有关逐步说明，请参阅 [Uninstall the Connector software](Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)。   
+1. 使用“控制面板”从计算机中卸载连接器软件。 有关分步说明，请参阅[卸载连接器软件](Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)。   
 
 
 2. 使计算机脱离 Windows Server Essentials 域，并将其加入到工作组。 有关将 Windows 加入工作组的逐步说明，请参阅 [加入或创建工作组](https://windows.microsoft.com/windows7/Join-or-create-a-workgroup)。  
 
-3. 使用仪表板从服务器中删除计算机 有关逐步说明，请参阅 [Remove a computer from the server](../manage/Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3)。  
+3. 使用仪表板从服务器中删除计算机 有关分步说明，请参阅[从服务器中删除计算机](../manage/Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3)。  
 
    若要将计算机重新连接到之前从 Windows Server Essentials 服务器网络断开连接的服务器，你必须完成以下步骤：  
 
 
-4. 使用“控制面板”从计算机中卸载连接器软件。 有关逐步说明，请参阅 [Uninstall the Connector software](Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)。  
+4. 使用“控制面板”从计算机中卸载连接器软件。 有关分步说明，请参阅[卸载连接器软件](Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)。  
 
 5. 使计算机脱离 Windows Server Essentials 域，并将其加入到工作组。 有关将 Windows 加入工作组的逐步说明，请参阅 [加入或创建工作组](https://windows.microsoft.com/windows7/Join-or-create-a-workgroup)。  
 
@@ -668,7 +668,7 @@ ms.locfileid: "70866936"
 
 -   [将快速启动板用于 Mac 计算机](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 
 -   [排查将计算机连接到服务器的问题](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md)  
 
