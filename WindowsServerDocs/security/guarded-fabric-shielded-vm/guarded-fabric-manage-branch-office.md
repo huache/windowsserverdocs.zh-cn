@@ -7,15 +7,15 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.openlocfilehash: 5a07553e6662fd79230d566ba2049c5e8997f4d6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403577"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371357"
 ---
 # <a name="branch-office-considerations"></a>分支机构注意事项
 
-> 适用于：Windows Server 2019、Windows Server （半年频道）、 
+> 适用于： Windows Server 2019、Windows Server （半年频道）、 
 
 本文介绍了如何在分支机构和其他远程方案中运行受防护的虚拟机的最佳实践，其中 Hyper-v 主机的连接时间可能与 HGS 的连接受限。
 
@@ -24,7 +24,7 @@ ms.locfileid: "71403577"
 从 Windows Server 版本1709开始，可以在 Hyper-v 主机上配置另一组主机保护者服务 Url，以便在主 HGS 无响应时使用。
 这允许您运行作为主服务器使用的本地 HGS 群集，以获得更好的性能，如果本地服务器关闭，则能够回退到您的企业数据中心的 HGS。
 
-若要使用回退选项，需要设置两个 HGS 服务器。 它们可以运行 Windows Server 2019 或 Windows Server 2016，也可以是相同或不同群集的一部分。 如果它们是不同的群集，你将需要建立操作做法，以确保在两个服务器之间同步认证策略。 它们都需要能够正确授权 Hyper-v 主机运行受防护的 Vm，并具有启动受防护的 Vm 所需的密钥材料。 你可以选择在两个群集之间具有一对共享加密和签名证书，也可以使用单独的证书并将 HGS 受防护的 VM 配置为在屏蔽数据中授权这两个监护人（加密/签名证书对）文件.
+若要使用回退选项，需要设置两个 HGS 服务器。 它们可以运行 Windows Server 2019 或 Windows Server 2016，也可以是相同或不同群集的一部分。 如果它们是不同的群集，你将需要建立操作做法，以确保在两个服务器之间同步认证策略。 它们都需要能够正确授权 Hyper-v 主机运行受防护的 Vm，并具有启动受防护的 Vm 所需的密钥材料。 你可以选择在两个群集之间具有一对共享加密和签名证书，也可以使用单独的证书并将 HGS 受防护的 VM 配置为在屏蔽数据文件中对这两个监护人（加密/签名证书对）进行授权。
 
 然后，将 Hyper-v 主机升级到 Windows Server 版本1709或 Windows Server 2019，并运行以下命令：
 ```powershell

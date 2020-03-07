@@ -8,15 +8,15 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: ace6eb30ae6df2dc29aacc05eb7852e03145df4f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386856"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370651"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>受保护的构造和受防护的 VM 概述
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 ## <a name="overview-of-the-guarded-fabric"></a>受保护的构造概述
 
@@ -49,7 +49,7 @@ ms.locfileid: "71386856"
 
 | **为主机选择的证明模式**                                            | **主机保证** |
 |-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|**受信任的 TPM 证明：** 提供最强大的保护，但也需要更多的配置步骤。 主机硬件和固件必须包含启用了安全启动的 TPM 2.0 和 UEFI 2.3.1。 | 受保护的主机根据其 TPM 标识、标准启动顺序和代码完整性策略获得批准，以确保它们只运行已批准的代码。| 
+|**受信任的 TPM 证明：** 提供可能的最强保护，同时需要执行更多的配置步骤。 主机硬件和固件必须包含启用了安全启动的 TPM 2.0 和 UEFI 2.3.1。 | 受保护的主机根据其 TPM 标识、标准启动顺序和代码完整性策略获得批准，以确保它们只运行已批准的代码。| 
 | **主机密钥证明：** 旨在支持 TPM 2.0 不可用的现有主机硬件。 需要较少的配置步骤且与常见服务器硬件兼容。 | 受保护的主机会根据密钥的所有权获得批准。 | 
 
 从 Windows Server 2019 开始，不再推荐使用名为 "**管理" 的**另一种模式。 此模式基于指定 Active Directory 域服务（AD DS）安全组中受保护的主机成员身份。 主机密钥证明提供类似的主机标识并且更易于设置。 
@@ -99,7 +99,7 @@ HGS 和创建受防护的 VM 的方法可帮助提供下列保证。
 
 下表总结了支持加密的 Vm 与受防护的 Vm 之间的区别。
 
-| 功能        | 支持的第 2 代加密     | 第 2 代防护         |
+| Capability        | 支持的第 2 代加密     | 第 2 代防护         |
 |----------|--------------------|----------------|
 |安全启动        | 是，必需但可配置        | 是，必需并强制执行    |
 |Vtpm               | 是，必需但可配置        | 是，必需并强制执行    |
@@ -113,7 +113,7 @@ HGS 和创建受防护的 VM 的方法可帮助提供下列保证。
 
 受防护的 VM 和支持加密的 VM 继续支持常见构造管理功能，例如实时迁移、Hyper-V 副本及 VM 检查点等。
 
-## <a name="the-host-guardian-service-in-action-how-a-shielded-vm-is-powered-on"></a>主机保护者服务的运行情况：受防护的 VM 的开机方式
+## <a name="the-host-guardian-service-in-action-how-a-shielded-vm-is-powered-on"></a>主机保护者服务的作用：如何启动受防护的 VM
 
 ![屏蔽数据文件](../media/Guarded-Fabric-Shielded-VM/shielded-vms-how-a-shielded-vm-is-powered-on.png)
 
@@ -125,7 +125,7 @@ HGS 和创建受防护的 VM 的方法可帮助提供下列保证。
 
     受保护的主机请求证明。 证明模式由主机保护者服务指定：
 
-    **受信任的 TPM 证明**：Hyper-v 主机发送包括以下内容的信息：
+    **受 TPM 信任的证明**： hyper-v 主机发送包括以下内容的信息：
 
        - TPM 识别信息（其认可密钥）
        - 在最新引导顺序（TCG 日志）期间启动的进程的信息
@@ -133,9 +133,9 @@ HGS 和创建受防护的 VM 的方法可帮助提供下列保证。
 
        Attestation happens when the host starts and every 8 hours thereafter. If for some reason a host doesn't have an attestation certificate when a VM tries to start, this also triggers attestation.
 
-    **主机密钥证明**：Hyper-v 主机发送密钥对的公共一半。 HGS 验证是否注册了主机密钥。 
+    **主机密钥证明**： hyper-v 主机发送密钥对的公共一半。 HGS 验证是否注册了主机密钥。 
     
-    **管理员信任的证明**：Hyper-v 主机发送 Kerberos 票证，用于标识主机所在的安全组。 HGS 验证该主机属于由受信任的 HGS 管理员之前所配置的安全组。
+    **受信任的管理员证明**：Hyper-V 主机发送 Kerberos 票证，这标识了该主机所处的安全组。 HGS 验证该主机属于由受信任的 HGS 管理员之前所配置的安全组。
 
 3. 证明成功（或失败）。
 
@@ -164,7 +164,7 @@ HGS 和创建受防护的 VM 的方法可帮助提供下列保证。
 
 ## <a name="guarded-fabric-and-shielded-vm-glossary"></a>受保护的构造和受防护的 VM 术语表
 
-| 术语              | 定义           |
+| 术语              | Definition           |
 |----------|------------|
 | 主机保护者服务 (HGS) | 启动或实时迁移受防护的 VM 时，安装在可以测量 Hyper-V 主机运行状况并向健康 Hyper-V 主机释放密钥的裸机服务器的安全群集上的 Windows Server 角色。 这两项是受防护的 VM 解决方案的基本功能，分别称为**证明服务**和**密钥保护服务**。 |
 | 受保护的主机 | 可以运行受防护的 VM 的 Hyper-V 主机。 仅当主机被 HGS 证明服务视为正常时，才能将其视为_受保护_。 受防护的 VM 无法在未经证明或证明失败的 Hyper-V 主机上启动，也无法实时迁移到这种主机上。 |
@@ -176,9 +176,9 @@ HGS 和创建受防护的 VM 的方法可帮助提供下列保证。
 | 基于虚拟化的安全 (VBS) | 受管理员保护的基于 Hyper-v 的处理和存储环境。 虚拟安全模式将为系统提供存储操作系统管理员不可见的操作系统密钥的功能。|
 | 虚拟 TPM | 受信任的平台模块 (TPM) 的虚拟化版本。 从 Windows Server 2016 中的 Hyper-v 开始，可以提供虚拟 TPM 2.0 设备，以便可以加密虚拟机，就像物理 TPM 允许物理计算机加密一样。|
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [受保护的结构和受防护的 VM](guarded-fabric-and-shielded-vms-top-node.md)
-- 发布[数据中心和私有云安全博客](https://blogs.technet.microsoft.com/datacentersecurity/)
+- 博客： [Datacenter 和私有云安全博客](https://blogs.technet.microsoft.com/datacentersecurity/)
 - 视频：[防护虚拟机简介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
-- 视频：[通过 Windows Server 2016 Hyper-v 深入了解受防护的 Vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
+- 视频：[通过 Windows Server 2016 Hyper-v 深入了解受防护的 vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)

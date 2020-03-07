@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369446"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371515"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 简化管理
 
@@ -114,7 +114,7 @@ Windows Server 2012 将其他 Active Directory 复制 cmdlet 添加到 Active Di
 
 Windows 2000 Active Directory 引入了 RID 主机，可将相对标识符的池颁发到域控制器，以创建安全信任项（例如用户、组和计算机）的安全标识符。  默认情况下，此全局 RID 控件限制为在域中创建的共 2<sup>30</sup> （或 1,073,741,823）个 SID。 SID 无法返回到池或重新颁发。 随着时间推移，大型域可能开始在 RID 上低效运行，或者事故可能会导致不必要的 RID 消耗并最终耗尽。  
   
-Windows Server 2012 处理了自 1999 年第一批 Active Directory 域创建以来的大量 RID 颁发和管理问题，随着 AD DS 日渐成熟，客户和 Microsoft 客户支持发现了这些问题。 这些问题包括：  
+Windows Server 2012 处理了自 1999 年第一批 Active Directory 域创建以来的大量 RID 颁发和管理问题，随着 AD DS 日渐成熟，客户和 Microsoft 客户支持发现了这些问题。 这些地方包括：  
 
 - 定期 RID 消耗警告将写入事件日志  
 - 管理员验证 RID 池时的事件日志  
@@ -205,7 +205,7 @@ Adprep 不再要求在架构主机上运行。 它可从运行 Windows Server 20
 |CheckRODCPrep<br /><br />GroupMembership|LDAP、<br /><br />RPC over SMB (LSARPC)|验证用户是 Enterprise Admins 组的成员并且在现有域控制器上有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
 |VerifyInitSync<br /><br />AfterReboot|LDAP|通过在 rootDSE 属性 becomeSchemaMaster 上设置一个虚拟值，验证架构主机已在其重新启动后至少复制一次|  
 |VerifySFUHotFix<br /><br />已应用|LDAP|验证现有林架构不包含具有 OID 1.2.840.113556.1.4.7000.187.102 的 UID 属性的已知问题 SFU2 扩展<br /><br />([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
-|VerifyExchange<br /><br />SchemaFixed|LDAP、WMI、DCOM、RPC|验证现有林架构是否仍未包含问题 Exchange 2000 扩展 Ms-exch-labeleduri，Ms-exch-labeleduri-Ms-exch-labeleduri，ms-Ms-exch-labeleduri 内部标识符（[https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649)）|  
+|VerifyExchange<br /><br />SchemaFixed|LDAP、WMI、DCOM、RPC|验证现有林架构是否仍未包含问题 Exchange 2000 扩展 Ms-exch-labeleduri，Ms-exch-labeleduri-Ms-exch-labeleduri，ms-Ms-exch-labeleduri-房子（[https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649)）|  
 |VerifyWin2KSchema<br /><br />一致性|LDAP|验证现有林架构具有一致的（未由第三方错误修改）核心属性和类。|  
 |DCPromo|DRSR over RPC、<br /><br />LDAP、<br /><br />DNS<br /><br />RPC over SMB (SAMR)|验证命令行语法已传递到升级代码和测试升级。 在新建时，验证林或域尚不存在。|  
 |VerifyOutbound<br /><br />ReplicationEnabled|LDAP、DRSR over SMB、RPC over SMB (LSARPC)|通过针对 NTDS 设置对象的选项属性检查 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004) 来验证指定为复制伙伴的现有域控制器已启用出站复制。|  

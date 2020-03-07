@@ -12,11 +12,11 @@ author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
 ms.openlocfilehash: fce9b45f538b0d506b621b888d413c99590b1362
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465551"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370621"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>是否应在 Hyper-v 中创建第1代或第2代虚拟机？
 
@@ -253,6 +253,6 @@ Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
 
 ## <a name="see-also"></a>另请参阅  
 
-- [Hyper-v 上的 Linux 和 FreeBSD 虚拟机](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
-- [在具有 VMConnect 的 Hyper-v 虚拟机上使用本地资源](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
+- [Hyper-V 上的 Linux 和 FreeBSD 虚拟机](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
+- [通过 VMConnect 在 Hyper-v 虚拟机上使用本地资源](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
 - [Windows Server 2016 中的 Hyper-v 可伸缩性规划](Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)

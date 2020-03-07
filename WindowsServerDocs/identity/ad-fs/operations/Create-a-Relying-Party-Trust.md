@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: a0d32edd7ebc23fa724439710c6511642d9c49a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407645"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371485"
 ---
 # <a name="create-a-relying-party-trust"></a>创建信赖方信任
 
@@ -25,7 +25,7 @@ ms.locfileid: "71407645"
 
 若要通过使用中的 AD FS 管理 "管理单元\-来添加新的信赖方信任并手动配置设置，请在联合服务器上执行以下过程。  
 
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。
   
 1. 在服务器管理器中，单击 "**工具**"，然后选择 " **AD FS 管理**"。  
   
@@ -35,7 +35,7 @@ ms.locfileid: "71407645"
 3.  在**欢迎**页上，选择 "**感知识别**"，然后单击 "**启动**"。  
 ![信赖方](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
   
-4.  在“选择数据源” 页上，单击“手动输入信赖方数据”，然后单击“下一步”。  
+4.  在“选择数据源”页上，单击“手动输入信赖方数据”，然后单击“下一步”。  
 ![信赖方](media/Create-a-Relying-Party-Trust/addtrust3.PNG) 
   
 5.  在 "**指定显示名称**" 页上，在 "**显示名称**" 中的 "**备注**" 下键入此信赖方信任的描述，然后单击 "**下一步**"。  
@@ -57,7 +57,7 @@ ms.locfileid: "71407645"
 9.  在 "**选择访问控制策略**" 中选择一个策略，然后单击 "**下一步**"。  有关访问控制策略的详细信息，请参阅[AD FS 中的访问控制策略](Access-Control-Policies-in-AD-FS.md)。 
 ![信赖方](media/Create-a-Relying-Party-Trust/addtrust9.PNG)
 
-10. 在“准备好添加信任” 页上，复查设置，然后单击“下一步” 来保存信赖方信任的信息。  
+10. 在“准备好添加信任”页上，复查设置，然后单击“下一步”来保存信赖方信任的信息。  
    ![信赖方](media/Create-a-Relying-Party-Trust/addtrust10.PNG) 
 11. 在“完成”页面上，单击“关闭”。 执行此操作会自动显示“编辑声明规则”对话框。  
 ![信赖方](media/Create-a-Relying-Party-Trust/addtrust11.PNG) 
@@ -69,7 +69,7 @@ ms.locfileid: "71407645"
 >[!NOTE]
 >尽管使用具有非限定主机名（如 https://myserver）的证书通常很常见，但这些证书没有安全价值，并且可以使攻击者模拟正在发布联合元数据的联合身份验证服务。 因此，在查询联合元数据时，只应使用完全限定的域名，如 https://myserver.contoso.com。
 
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。
 
 
 1. 在服务器管理器中，单击 "**工具**"，然后选择 " **AD FS 管理**"。  
@@ -89,7 +89,7 @@ ms.locfileid: "71407645"
 
 7. 在 "准备添加信任" 页上，查看设置，然后单击 "**下一步**" 以保存信赖方信任信息。
 
-8. 在 "完成" 页上，单击 "**关闭**"。 此操作会自动显示 "编辑声明规则" 对话框。 有关如何为此信赖方信任添加声明规则的详细信息，请参阅“其他参考”。
+8. 在 "完成" 页上，单击 "**关闭**"。 执行此操作会自动显示“编辑声明规则”对话框。 有关如何为此信赖方信任添加声明规则的详细信息，请参阅“其他参考”。
 
 
 

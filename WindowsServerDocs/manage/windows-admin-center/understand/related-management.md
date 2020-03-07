@@ -8,11 +8,11 @@ ms.author: harowl
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: d681e5007cd3ae3c14de774df0bc85abc23b51d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: HT
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406834"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371680"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center 和相关的 Microsoft 管理解决方案
 
@@ -43,8 +43,8 @@ ms.locfileid: "71406834"
 | 基于浏览器的**轻型**解决方案，可在**任意位置**对 Windows Server 实例进行远程管理；可以替代 RDP | **大规模**管理和监视**异构**系统，包括 Hyper-V、VMware 和 Linux |
 |**深度**下钻到单个服务器和单个群集，以进行故障排除、配置和维护|基础结构预配；自动化和自助服务；基础结构和工作负荷监视**广度**|
 |**单个** 2-4 节点 **HCI** 群集的优化管理、集成 Hyper-V、存储空间直通和 SDN|使用 SCVMM 以**数据中心的规模**从**祼机**部署和管理 Hyper-V、Windows Server 群集|
-|仅限**在 HCI 上进行监视**；群集运行状况服务可存储历史记录。 第一方和第三方**管理员工具扩展**的可扩展平台|SCOM 中的**可扩展**、**可缩放监视**平台，提供警报、通知和第三方工作负荷监视；SQL 提供历史记录|
+|仅限**在 HCI 上进行监视**；群集运行状况服务可存储历史记录。 第一方和第三方**管理员工具扩展**的可扩展平台|SCOM 中的**可扩展**、 & 可缩放监视**平台，提供警报、通知和第三方工作负荷监视；SQL 提供历史记录|
 |最简单的**混合**环境桥梁；载入并使用各种 Azure 服务进行数据保护、复制、更新等|**内置**数据保护、复制和更新 (DPM/VMM/SCCM)。 与 Log Analytics 和服务映射的混合集成|
-|Windows Server 的**平台功能亮点**：存储迁移服务、存储副本、系统见解，等等。|**其他平台**：业务流程协调程序/SMA 自动化。与 SCSM 和其他服务管理工具相集成|
+|将 Windows Server 的**平台功能保持在最新状态**：存储迁移服务、存储副本、系统见解等。|**其他平台**： ORCHESTRATOR/SMA 中的自动化。与 SCSM 集成 & 其他服务管理工具|
 
 #### <a name="each-delivers-targeted-value-independently-better-together-with-complementary-capabilities"></a>每个平台都可独立提供有针对性的价值；与互补功能**结合使用效果更佳**。
