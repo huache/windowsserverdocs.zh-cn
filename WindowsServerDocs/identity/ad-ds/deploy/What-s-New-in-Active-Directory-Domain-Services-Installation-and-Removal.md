@@ -1,6 +1,6 @@
 ---
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
-title: Active Directory 域服务安装和删除的新增功能
+title: Active Directory 域服务安装和删除的新功能
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -10,13 +10,13 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947907"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371556"
 ---
-# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 域服务安装和删除的新增功能
+# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 域服务安装和删除的新功能
 
 >适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
 
@@ -34,7 +34,7 @@ AD DS 安装包括以下功能：
 - **新 AD DS 安装包括先决条件验证。** 可在安装开始之前发现任何潜在错误。 你可以在出现前就更正错误情况，而无需担心仅部分完成升级。 例如，如果需要运行 adprep /domainprep，安装向导将验证用户是否具有足够权限执行操作。  
 - **配置页面按序列分组，镜像最常用升级选项的要求，包含分组到较少向导页面的相关选项。** 这可为进行安装选择提供更好的上下文。  
 - **你可以导出一个 Windows PowerShell 脚本，其中包含图形安装期间指定的所有选项的。** 安装或删除结束后，可以将设置导出到 Windows PowerShell 脚本，以用于自动执行相同操作。  
-- **仅在重新启动前才进行关键复制。** 允许在重新启动前复制非关键数据的新开关。 有关详细信息，请参阅 [ADDSDeployment cmdlet arguments](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)。  
+- **仅在重新启动前才进行关键复制。** 允许在重新启动前复制非关键数据的新开关。 有关详细信息，请参阅 [ADDSDeployment cmdlet 参数](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)。  
 
 ## <a name="BKMK_ADConfigurationWizard"></a>Active Directory 域服务配置向导
 
@@ -60,9 +60,9 @@ Windows Server 2012 版本的 adprep.log 可在运行64位版本的 Windows Serv
 >   
 > Adprep.exe 不是有效 Win32 应用程序。  
 
-![最近更新](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)  
+![新增功能](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)  
 
-有关解决 Adprep.exe 返回的其他错误的信息，请参阅 [Known issues](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_KnownIssues)。  
+有关解决 Adprep.exe 返回的其他错误的信息，请参阅[已知问题](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_KnownIssues)。  
 
 ### <a name="group-membership-check-against-windows-server-2003-operations-master-roles"></a>针对 Windows Server 2003 操作主机角色的组成员身份检查
 
@@ -80,7 +80,7 @@ Adprep was unable to check the specified user's group membership. This could hap
 
 如果运行 Adprep.exe 时未指定 /user 和 /userdomain 参数且操作主机在运行 Windows Server 2003，Adprep.exe 将联系当前登录用户的域中的域控制器。 如果当前登录用户不是域帐户，Adprep.exe 无法执行组成员身份检查。 如果使用智能卡凭据，则即使指定了 /user 和 /userdomain，Adprep.exe 也无法执行组成员身份检查。  
   
-如果 Adprep 成功完成，则无需操作。 如果 Adprep 在执行期间失败且出现访问错误，请提供具有正确成员身份的帐户。 有关详细信息，请参阅 [Credential requirements to run Adprep.exe and install Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)。  
+如果 Adprep 成功完成，则无需操作。 如果 Adprep 在执行期间失败且出现访问错误，请提供具有正确成员身份的帐户。 有关详细信息，请参阅[运行 Adprep.exe 和安装 Active Directory 域服务的凭据要求](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)。  
   
 ### <a name="syntax-for-adprep-in-windows-server-2012"></a>Windows Server 2012 中的 Adprep 语法
 
@@ -124,13 +124,13 @@ AD DS 安装向导将在安装开始前，检查是否满足以下先决条件�
 
 ## <a name="BKMK_SystemReqs"></a>系统要求
 
-Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化。 有关详细信息，请参阅[Windows Server 2008 R2 SP1 系统要求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 。  
+Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化。 有关详细信息，请参阅[Windows Server 2008 R2 SP1 系统要求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)。  
 
 部分功能可能具有附加要求。 例如，虚拟域控制器克隆功能需要 PDC 仿真器运行 Windows Server 2012 和运行 Windows Server 2012 且安装了 Hyper-v 角色的计算机。  
 
 ## <a name="BKMK_KnownIssues"></a>已知问题
 
-本部分列出了一些在 Windows Server 2012 中会影响 AD DS 安装的已知问题。 有关更多已知问题，请参阅 [Troubleshooting Domain Controller Deployment](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
+本部分列出了一些在 Windows Server 2012 中会影响 AD DS 安装的已知问题。 有关更多已知问题，请参阅[域控制器部署疑难解答](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
 
 - 如果在远程运行 adprep /forestprep 时，Windows 防火墙阻止 WMI 访问架构主机，以下错误将记录到位于 %systemroot%\system32\debug\adprep 的 adprep 日志中：  
 
@@ -168,7 +168,7 @@ Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化
 
    这种情况下返回的错误消息如下：  
 
-   无法连接到复制源域控制器 *源域控制器名称*。 （异常：Logonfailure：用户名未知或密码错误）  
+   无法连接到复制源域控制器*源域控制器名称*。 （异常：Logonfailure：用户名未知或密码错误）  
 
    如果让目标服务器加入域，然后使用智能卡执行安装，安装成功。  
   
