@@ -3,17 +3,17 @@ title: 存储迁移服务的已知问题
 description: 有关存储迁移服务的已知问题和疑难解答支持，如如何为 Microsoft 支持部门收集日志。
 author: nedpyle
 ms.author: nedpyle
-manager: siroy
+manager: tiaascs
 ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 92742929e3826fca3cf87cb84341d3aecec0d55d
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: a9759f0ea8835c8e07bcd298b75024e3ee29c9ed
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517492"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856341"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -295,13 +295,15 @@ DFSR 调试日志：
 
 ## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>针对 Windows Server 2003 源计算机运行清单时出现错误 "终结点映射器中没有更多的终结点可用"
 
-当尝试在存储迁移服务 orchestrator server 中通过[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)累积更新或更高版本进行修补时，会收到以下错误：
+尝试对 Windows Server 2003 源计算机使用存储迁移服务 orchestrator 运行清单时，会收到以下错误：
 
     There are no more endpoints available from the endpoint mapper  
 
-若要解决此问题，请从存储迁移服务 orchestrator 计算机暂时卸载 KB4512534 累积更新（以及任何取代它的更新）。 迁移完成后，重新安装最新的累积更新。  
+此问题由[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新程序解决。
 
-请注意，在某些情况下，卸载 KB4512534 或其取代的更新可能会导致存储迁移服务不再启动。 若要解决此问题，你可以备份和删除存储迁移服务数据库：
+## <a name="uninstalling-a-cumulutative-update-prevents-storage-migration-service-from-starting"></a>卸载 cumulutative 更新将导致存储迁移服务无法启动
+
+卸载 Windows Server 累积更新可能会使存储迁移服务无法启动。 若要解决此问题，你可以备份和删除存储迁移服务数据库：
 
 1.  打开提升的 cmd 提示符，你是存储迁移服务协调器服务器上的管理员成员，然后运行：
 
@@ -343,7 +345,7 @@ DFSR 调试日志：
 
 此问题是由较早版本的 Windows Server 中缺少的 API 导致的。 目前没有办法迁移 Windows Server 2008 和 Windows Server 2003 群集。 在 Windows Server 2008 R2 群集上，你可以执行清单和传输，而不是在 Windows Server R2 群集上进行，然后手动执行转换，方法是手动更改群集的源文件服务器资源网络名称和 IP 地址，然后更改目标群集网络名称和 IP与原始源相匹配的地址。 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在源计算机上的 "38% 映射网络接口" 上切换挂起 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>在源计算机上的 "38% 映射网络接口" 上切换挂起使用 DHCP 时 
 
 当尝试在源计算机上运行 cut 时，将源计算机设置为在一个或多个网络接口上使用新的静态（而非 DHCP） IP 地址时，剪切的会停滞在源 comnputer 上的 "38% 映射网络接口"。你会在 SMS 事件日志中收到以下错误：
 
@@ -372,13 +374,7 @@ DFSR 调试日志：
 
 如果在 Windows 管理中心的 "配置切换" 屏幕上选择了 "使用 DHCP"，则不会出现此问题，只在指定新的静态 IP 地址、子网和网关时才会出现此问题。 
 
-此问题是由[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新中的回归导致的。 目前有两种解决方法可解决此问题：
-
-  - 在切换之前：请选择 "使用 DHCP"，并确保 DHCP 作用域涵盖子网，而不是在切换时设置新的静态 IP 地址。 SMS 会将源计算机配置为在源计算机接口上使用 DHCP，并使其正常运行。 
-  
-  - 如果 "剪切过" 已经停滞：在确保 DHCP 作用域涵盖子网之后，登录到源计算机并在其网络接口上启用 DHCP。 当源计算机获得 DHCP 提供的 IP 地址时，SMS 将在正常情况下继续进行剪切。
-  
-在这两种解决方法中，在剪切完成后，可以根据需要在旧源计算机上设置静态 IP 地址，就像使用 DHCP 进行调整和停止一样。   
+此问题由[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新程序解决。
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>比预期重新传输性能慢
 
@@ -489,6 +485,48 @@ DFSR 调试日志：
  - 防火墙不允许从 Orchestrator 远程连接到源服务器。
  - 源迁移帐户没有连接到源计算机的远程注册表权限。
  - 源迁移帐户没有源计算机注册表中的读取权限，在 "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" 或 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ 下。LanmanServer
+ 
+ ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在源计算机上的 "38% 映射网络接口" 上切换挂起 
+
+当尝试对源计算机运行 cut 时，剪切的会停滞在源 comnputer 上的 "38% 映射网络接口"。你会在 SMS 事件日志中收到以下错误：
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          1/11/2020 8:51:14 AM
+    Event ID:      20505
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      nedwardo.contosocom
+    Description:
+    Couldn't establish a CIM session with the computer.
+
+    Computer: 172.16.10.37
+    User Name: nedwardo\MsftSmsStorMigratSvc
+    Error: 40970
+    Error Message: Unknown error (0xa00a)
+
+    Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
+
+此问题的原因是组策略在源计算机上设置以下注册表值：
+
+ "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System LocalAccountTokenFilterPolicy = 0"
+ 
+此设置不是标准组策略的一部分，它是使用[Microsoft 安全符合性工具包](https://www.microsoft.com/download/details.aspx?id=55319)配置的外接程序：
+ 
+ - Windows Server 2012 R2： "计算机配置 \ 管理 Templates\SCM：将哈希 Mitigations\Apply UAC 限制传递到网络登录上的本地帐户"
+ - 孤行服务器2016： "计算机配置 \ 管理 Templates\MS Security Guide\Apply 对网络登录上的本地帐户的 UAC 限制"
+ 
+还可以使用组策略首选项设置自定义注册表设置。 您可以使用 GPRESULT 工具来确定将此设置应用于源计算机的策略。
+
+存储迁移服务暂时将[LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows)启用为整个过程的一部分，并在完成后将其删除。 当组策略应用了冲突的组策略对象（GPO）时，它会替代存储迁移服务并阻止剪切。
+
+若要解决此问题，请使用以下选项之一：
+
+1. 临时从应用此冲突的 GPO 的 Active Directory OU 中移动源计算机。 
+2. 临时禁用应用此冲突策略的 GPO。
+3. 临时创建一个新的 GPO，该 GPO 将此设置设置为 "已禁用"，并应用于源服务器的特定 OU，其优先级高于任何其他 Gpo。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -9,11 +9,11 @@ ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.openlocfilehash: 158681e2038e3d8015933771d06d3bfb24d31586
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948471"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865396"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server 中的运行状况服务
 
@@ -25,15 +25,15 @@ ms.locfileid: "75948471"
 
 默认情况下，存储空间直通启用运行状况服务。 设置或启动它时无需执行任何其他操作。 若要了解有关存储空间直通的详细信息，请参阅[Windows Server 2016 中的存储空间直通](../storage/storage-spaces/storage-spaces-direct-overview.md)。  
 
-## <a name="reports"></a>报告
+## <a name="reports"></a>报表
 
 请参阅[运行状况服务报表](health-service-reports.md)。
 
-## <a name="faults"></a>故障
+## <a name="faults"></a>错误数
 
 请参阅[运行状况服务错误](health-service-faults.md)。
 
-## <a name="actions"></a>“操作”
+## <a name="actions"></a>Actions
 
 请参阅[运行状况服务操作](health-service-actions.md)。
 
@@ -90,7 +90,7 @@ ms.locfileid: "75948471"
 
 运行状况服务提供了一种强制机制，用于将存储空间直通所使用的组件限制到管理员或解决方案供应商提供的支持的组件文档中。 这可用来防止你或其他人误用不受支持的硬件，可能会帮助保证或支持合同的合规性。 此功能当前仅限于物理磁盘设备，包括 Ssd、Hdd 和 NVMe 驱动器。 支持的组件文档可以限制模型、制造商（可选）和固件版本（可选）。
 
-### <a name="usage"></a>Usage  
+### <a name="usage"></a>用法  
 
 支持的组件文档使用了 XML 灵感的语法。 建议使用最喜欢的文本编辑器，如免费[Visual Studio Code](https://code.visualstudio.com/)或记事本，创建一个可以保存并重复使用的 XML 文档。
 
@@ -166,7 +166,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.S
 Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion  
 ```
 
-## <a name="settings"></a>“设置”
+## <a name="settings"></a>设置
 
 请参阅[运行状况服务设置](health-service-settings.md)。
 
