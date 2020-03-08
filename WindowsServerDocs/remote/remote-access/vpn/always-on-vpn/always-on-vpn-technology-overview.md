@@ -9,18 +9,18 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.openlocfilehash: 31d0d5c12760fc627ce93972f4a70e85f61dd178
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404371"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371886"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN 技术概述
 
->适用于：Windows Server (半年频道), Windows Server 2016, Windows Server 2012 R2, Windows 10
+>适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**以前**了解 Always On VPN 增强功能](always-on-vpn-enhancements.md)
-- [**一个**了解 Always On VPN 的高级功能](deploy/always-on-vpn-adv-options.md)
+- [**上一个：** 了解 Always On VPN 增强功能](always-on-vpn-enhancements.md)
+- [**下一步：** 了解 Always On VPN 的高级功能](deploy/always-on-vpn-adv-options.md)
 
 对于此部署，你必须安装新的远程访问服务器，该服务器运行 Windows Server 2016，并修改部分现有的部署基础结构。
 
@@ -76,15 +76,15 @@ IKEv2 是 Internet 工程任务团队请求注释7296中所述的 VPN 隧道协�
 
 NPS 允许您为连接请求身份验证和授权创建和强制实施组织范围的网络访问策略。 使用 NPS 作为远程身份验证拨入用户服务（RADIUS）服务器时，可以在 NPS 中将网络访问服务器（如 VPN 服务器）配置为 RADIUS 客户端。
 
-也可以配置有关使用 NPS 对连接请求进行授权的网络策略，并且可以配置 RADIUS 记帐，以便 NPS 将记帐信息记录到本地硬盘上或 Microsoft SQL Server 数据库中的日志文件。
+还可以配置 NPS 用于对连接请求进行授权的网络策略，并且可以配置 RADIUS 记帐，以便 NPS 将记帐信息记录到本地硬盘上或 Microsoft SQL Server 数据库中的日志文件。
 
 有关详细信息，请参阅[网络策略服务器（NPS）](../../../../networking/technologies/nps/nps-top.md)。
 
-## <a name="active-directory-certificate-services"></a>Active Directory 证书服务
+## <a name="active-directory-certificate-services"></a>Active Directory Certificate Services
 
 证书颁发机构（CA）服务器是运行 Active Directory 证书服务的证书颁发机构。 VPN 配置需要基于 Active Directory 的公钥基础结构（PKI）。
 
-组织可以通过将个人、设备或服务的标识绑定到相应的公钥，使用 AD CS 来增强安全性。 AD CS 还包括一些功能，可用于在各种可伸缩环境中管理证书注册和吊销。 有关详细信息，请参阅[Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)和[公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)。
+组织可以通过将个人、设备或服务的标识绑定到相应的公钥，使用 AD CS 来增强安全性。 AD CS 还包括允许在各种可伸缩环境中管理证书注册及吊销的功能。 有关详细信息，请参阅[Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)和[公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)。
 
 部署完成期间，你将在 CA 上配置以下证书模板。
 
@@ -100,13 +100,13 @@ NPS 允许您为连接请求身份验证和授权创建和强制实施组织范�
 
 - 查看每个证书模板的属性。
 
-- 复制和修改证书模板。
+- 复制并修改证书模板。
 
 - 控制哪些用户和计算机可以读取模板和注册证书。
 
-- 执行与证书模板相关的其他管理任务。
+- 执行与证书模板有关的其他管理任务。
 
-证书模板是企业证书颁发机构（CA）的有机组成部分。 它们是环境证书策略的重要元素，它是证书注册、使用和管理的一组规则和格式。
+证书模板是企业证书颁发机构 (CA) 中必不可少的一部分。 对于环境而言，它们是证书策略的重要元素，是用于证书注册、使用和管理的一组规则和格式。
 
 有关详细信息，请参阅[证书模板](https://technet.microsoft.com/library/cc730705.aspx)。
 
@@ -122,7 +122,7 @@ NPS 允许您为连接请求身份验证和授权创建和强制实施组织范�
 
 3. 通过将证书密钥与计算机网络上的计算机、用户或设备帐户相关联进行身份验证。
 
-有关详细信息，请[参阅 AD CS 循序渐进指南：两层 PKI 层次结构](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)部署。
+有关详细信息，请参阅[AD CS 循序渐进指南：双层 PKI 层次结构部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)。
 
 ## <a name="active-directory-domain-services-ad-ds"></a>Active Directory 域服务 (AD DS)
 
@@ -144,7 +144,7 @@ AD DS 包含受保护的可扩展身份验证协议（PEAP）用于对用户凭�
 
 Active Directory 用户和计算机是包含代表物理实体（例如计算机、人员或安全组）的帐户的 AD DS 的组件。 安全组是管理员可以作为单个单元管理的用户或计算机帐户的集合。 属于特定组的用户帐户和计算机帐户称为组成员。
 
-Active Directory 用户和计算机中的用户帐户具有 NPS 在授权过程中评估的拨号属性-除非用户帐户的 "**网络访问权限**" 属性设置为 "**通过 NPS 网络策略控制访问"** . 这是所有用户帐户的默认设置。 但在某些情况下，此设置可能会有不同的配置，阻止用户使用 VPN 进行连接。 若要防范这种可能性，可以将 NPS 服务器配置为忽略用户帐户的拨入属性。
+Active Directory 用户和计算机中的用户帐户具有 NPS 在授权过程中评估的拨号属性-除非用户帐户的 "**网络访问权限**" 属性设置为 "**通过 NPS 网络策略控制访问**"。 这是所有用户帐户的默认设置。 但在某些情况下，此设置可能会有不同的配置，阻止用户使用 VPN 进行连接。 若要防范这种可能性，可以将 NPS 服务器配置为忽略用户帐户的拨入属性。
 
 有关详细信息，请参阅[将 NPS 配置为忽略用户帐户的拨入属性](../../../../networking/technologies/nps/nps-np-configure.md#configure-nps-to-ignore-user-account-dial-in-properties)。
 
@@ -161,7 +161,7 @@ Active Directory 用户和计算机中的用户帐户具有 NPS 在授权过程�
 
 Windows 10 VPN 客户端是高度可配置的，并且提供了许多选项。 为了更好地说明此方案使用的特定功能，表1标识了此部署引用的 VPN 功能类别和特定配置。 你将使用本部署稍后部分中讨论的 VPNv2 配置服务提供程序（CSP）来配置这些功能的各个设置。 
 
-表 1. 此部署中讨论的 VPN 功能和配置
+表 1。 此部署中讨论的 VPN 功能和配置
 
 | VPN 功能     |     部署方案配置         |
 |-----------------|-----------------------------------------------|
@@ -192,20 +192,20 @@ Windows 10 提供了许多 Csp，但此部署侧重于使用 VPNv2 CSP 来配置
 
 ## <a name="related-topics"></a>相关主题
 
-- [适用于 Microsoft Azure 虚拟机的 Microsoft 服务器软件支持](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)：本文讨论在 Microsoft Azure 虚拟机环境（基础结构即服务）中运行 Microsoft 服务器软件的支持策略。
+- [适用于 Microsoft Azure 虚拟机的 microsoft 服务器软件支持](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)：本文讨论在 Microsoft Azure 虚拟机环境（基础结构即服务）中运行 Microsoft 服务器软件的支持策略。
 
-- [远程访问](../../Remote-Access.md)：本主题概述了 Windows Server 2016 中的远程访问服务器角色。
+- [远程访问](../../Remote-Access.md)：本主题概述了 Windows server 2016 中的远程访问服务器角色。
 
 - [Windows 10 VPN 技术指南](https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide)：本指南将指导你完成在企业 VPN 解决方案中针对 Windows 10 客户端做出的决策，以及如何配置你的部署。 本指南引用 VPNv2 配置服务提供程序（CSP），并使用 Microsoft Intune 和适用于 Windows 10 的 VPN 配置文件模板提供移动设备管理（MDM）配置说明。
 
 - [核心网络指南](../../../../networking/core-network-guide/Core-Network-Guide.md)：本指南提供了有关如何在新林中规划和部署完全正常运行的网络和新的 Active Directory 域所需的核心组件的说明。
 
-- [域名系统（DNS）](../../../../networking/dns/dns-top.md)：本主题提供了域名系统（DNS）的概述。 在 Windows Server 2016 中，DNS 是可以使用服务器管理器或 Windows PowerShell 命令安装的服务器角色。 如果要安装新的 Active Directory 林和域，则 DNS 会自动安装 Active Directory 作为林和域的全局目录服务器。
+- [域名系统（dns）](../../../../networking/dns/dns-top.md)：本主题提供了域名系统（dns）的概述。 在 Windows Server 2016 中，DNS 是可以使用服务器管理器或 Windows PowerShell 命令安装的服务器角色。 如果要安装新的 Active Directory 林和域，则 DNS 会自动安装 Active Directory 作为林和域的全局目录服务器。
 
-- [Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)：本文档概述了 Windows Server®2012中的 Active Directory 证书服务（AD CS）。 AD CS 是允许你构建公钥基础机构 (PKI) 并为你的组织提供公钥加密、数字证书和数字签名功能的服务器角色。
+- [Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)：本文档提供 Windows Server®2012中 Active Directory 证书服务（AD CS）的概述。 AD CS 是允许你构建公钥基础机构 (PKI) 并为你的组织提供公钥加密、数字证书和数字签名功能的服务器角色。
 
-- [公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)：此 wiki 提供有关设计公钥基础结构（Pki）的指导。 在配置 PKI 和证书颁发机构（CA）层次结构之前，你应该了解你的组织的安全策略和证书实行声明（CPS）。
+- [公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)：此 wiki 提供了有关设计公钥基础结构（pki）的指导。 在配置 PKI 和证书颁发机构（CA）层次结构之前，你应该了解你的组织的安全策略和证书实行声明（CPS）。
 
-- [AD CS 循序渐进指南：两层 PKI 层次结构](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)部署：此循序渐进指南介绍了在实验室环境中设置 Active Directory®证书服务（AD CS）的基本配置所需的步骤。 Windows Server 中的 AD CS® 2008 R2 提供可自定义的服务，用于创建和管理在采用公钥技术的软件安全系统中使用的公钥证书。
+- [AD CS 循序渐进指南：双层 PKI 层次结构部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：本循序渐进指南介绍了在实验室环境中设置 Active Directory®证书服务（AD CS）的基本配置所需的步骤。 Windows Server 中的 AD CS® 2008 R2 提供可自定义的服务，用于创建和管理在采用公钥技术的软件安全系统中使用的公钥证书。
 
-- [网络策略服务器（NPS）](../../../../networking/technologies/nps/nps-top.md)：本主题概述了 Windows Server 2016 中的网络策略服务器。 通过网络策略服务器 (NPS)，你可以针对连接请求身份验证和授权创建并实施组织级网络访问策略。
+- [网络策略服务器（NPS）](../../../../networking/technologies/nps/nps-top.md)：本主题概述了 Windows server 2016 中的网络策略服务器。 通过网络策略服务器 (NPS)，你可以针对连接请求身份验证和授权创建并实施组织级网络访问策略。

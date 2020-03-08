@@ -14,11 +14,11 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 293239c9f746f939b06d45d6e8c1a50b59e2bc43
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407134"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371723"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>软件限制策略技术概述
 
@@ -97,7 +97,7 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 |指定的文件类型|SRP 支持被视为可执行文件类型的可扩展列表。 管理员可以为应视为可执行文件的文件添加扩展。|AppLocker 不支持此功能。 AppLocker 当前支持以下文件扩展名：<br /><br />-可执行文件（.exe，.com）<br />-Dll （.ocx，.dll）<br />-Scripts （.vbs，.js，. ps1，.cmd，.bat）<br />-Windows 安装程序（.msi、.mst、.msp）<br />-打包的应用安装程序（.appx）|
 |规则类型|SRP 支持四种类型的规则：<br /><br />-哈希<br />-路径<br />-签名<br />-Internet 区域|AppLocker 支持三种类型的规则：<br /><br />-哈希<br />-路径<br />-发布服务器|
 |编辑哈希值|SRP 允许管理员提供自定义哈希值。|AppLocker 计算哈希值本身。 在内部，它对可移植的可执行文件（Exe 和 Dll）和 Windows 安装程序使用 SHA1 Authenticode 哈希，并为 rest 使用 SHA1 平面文件哈希。|
-|支持不同的安全级别|使用 SRP administrators 可以指定应用可用于运行的权限。 因此，管理员可以配置一个规则，使记事本始终以受限权限运行，而永远不使用管理权限。<br /><br />Windows Vista 和更早版本上的 SRP 支持多个安全级别。 在 Windows 7 上，此列表仅限于两个级别：不允许和不受限制（基本用户转换为不允许）。|AppLocker 不支持安全级别。|
+|支持不同的安全级别|使用 SRP administrators 可以指定应用可用于运行的权限。 因此，管理员可以配置一个规则，使记事本始终以受限权限运行，而永远不使用管理权限。<br /><br />Windows Vista 和更早版本上的 SRP 支持多个安全级别。 在 Windows 7 上，此列表仅限于两个级别： "不允许" 和 "无限制" （基本用户转换为 "不允许"）。|AppLocker 不支持安全级别。|
 |管理打包应用和打包应用安装程序|不|.appx 是 AppLocker 可以管理的有效文件类型。|
 |将规则定向到用户或用户组|SRP 规则适用于特定计算机上的所有用户。|AppLocker 规则可以针对特定用户或用户组。|
 |规则异常支持|SRP 不支持规则异常|AppLocker 规则可以有例外，这些例外使管理员可以创建规则，例如 "允许来自 Windows 的所有内容（Regedit.exe 除外）"。|
@@ -175,7 +175,7 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 
 ## <a name="additional-resources"></a>其他资源
 
-|内容类型|参考资料|
+|内容类型|参考|
 |--------|-------|
 |**规划**|[软件限制策略技术参考](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx)|
 |**操作**|[管理软件限制策略](administer-software-restriction-policies.md)|
