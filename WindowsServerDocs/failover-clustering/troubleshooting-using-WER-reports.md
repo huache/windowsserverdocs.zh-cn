@@ -10,15 +10,15 @@ author: vpetter
 ms.date: 03/27/2018
 ms.localizationpriority: ''
 ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361006"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371779"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>使用 Windows 错误报告对故障转移群集进行故障排除 
 
-> 适用于：Windows Server 2019，Windows Server 2016，Windows Server
+> 适用于： Windows Server 2019、Windows Server 2016、Windows Server
 
 Windows 错误报告（WER）是基于事件的灵活反馈基础结构，旨在帮助高级管理员或第3层支持收集有关 Windows 可以检测到的硬件和软件问题的信息，并向 Microsoft 报告信息。并向用户提供任何可用的解决方案。 本[参考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting cmdlet 的说明和语法。
 
@@ -255,7 +255,7 @@ DynamicSig[29].Name=FailureTime
 DynamicSig[29].Value=2017//12//12-22:38:05.485
 ```
 
-由于资源未能联机，因此不会收集任何转储，但 Windows 错误报告报告会收集日志。 如果使用 Microsoft Message Analyzer 打开所有 .evtx 文件，您将看到通过系统通道、应用程序通道、故障转移群集诊断通道和一些其他查询使用以下查询收集的所有信息 **。** 泛型通道。
+由于资源未能联机，因此不会收集任何转储，但 Windows 错误报告报告会收集日志。 如果使用 Microsoft Message Analyzer 打开所有 **.evtx**文件，您将看到通过系统通道、应用程序通道、故障转移群集诊断通道和几个其他常规通道使用以下查询收集的所有信息。
 
 ```powershell
 PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQuery
@@ -302,7 +302,7 @@ PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQ
 
 ![按提供程序分组的日志](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-若要确定磁盘出现故障的原因，请导航到**FailoverClustering/** diagnostics 下的事件和**FailoverClustering/DiagnosticVerbose**。 然后运行以下查询：**EventData ["LogString"] 包含 "群集磁盘 10"** 。  这会显示以下输出：
+若要确定磁盘出现故障的原因，请导航到**FailoverClustering/** diagnostics 下的事件和**FailoverClustering/DiagnosticVerbose**。 然后运行以下查询： **EventData ["LogString"] 包含 "Cluster Disk 10"** 。  这会显示以下输出：
 
 ![正在运行的日志查询的输出](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
@@ -398,9 +398,9 @@ DynamicSig[29].Name=HangThreadId
 DynamicSig[29].Value=10008
 ```
 
-在转储中收集的服务和进程的列表由以下属性控制：**PS C:\Windows\system32 > （ClusterResourceType-Name "物理磁盘"）。DumpServicesSmphost**
+在转储中收集的服务和进程的列表由以下属性控制： **PS C:\Windows\system32 > （ClusterResourceType-Name "物理磁盘"）。DumpServicesSmphost**
 
-若要确定挂起的原因，请打开 dum 文件。 然后运行以下查询：**EventLog. EventData ["LogString"] 包含 "Cluster Disk 10"** 这会显示以下输出：
+若要确定挂起的原因，请打开 dum 文件。 然后运行以下查询： **EventLog. EventData ["LogString"] 包含 "Cluster Disk 10"** ，这将为您显示以下输出：
 
 ![运行日志查询的输出2](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
 

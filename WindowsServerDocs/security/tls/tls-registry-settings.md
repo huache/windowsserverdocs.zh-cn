@@ -13,15 +13,15 @@ ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
 ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403405"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371387"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>传输层安全性（TLS）注册表设置
 
->适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016、Windows 10
+>适用于： Windows Server （半年频道）、Windows Server 2019、Windows Server 2016、Windows 10
 
 本参考主题面向 IT 专业人员，包含通过 Schannel 安全支持的传输层安全性（TLS）协议和安全套接字层（SSL）协议的 Windows 实现支持的注册表设置信息提供程序（SSP）。 本主题中介绍的注册表子项和条目可帮助你管理 Schannel SSP （特别是 TLS 和 SSL 协议），并对其进行故障排除。 
 
@@ -51,9 +51,9 @@ ms.locfileid: "71403405"
 3. 一对一映射关系（也称为使用者/颁发者映射）
 4. 多对一映射
 
-适用的版本：本主题开头的“适用于”列表中指定的版本。
+适用的版本：本主题开头的 "**适用**于" 列表中指定的版本。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="ciphers"></a>Ciphers
 
@@ -76,7 +76,7 @@ TLS/SSL 密码应通过配置密码套件顺序来控制。 有关详细信息�
 
 从 Windows Server 2008 和 Windows Vista 开始，默认客户端缓存时间为10小时。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 默认客户端缓存时间
 
@@ -90,11 +90,11 @@ TLS/SSL 密码应通过配置密码套件顺序来控制。 有关详细信息�
 - 需要服务器名称指示
 - 使用集中式证书存储
 
-在这种情况下，默认情况下，TLS 握手期间的服务器 hello 响应不会包含 OCSP 装订状态。 此行为可提高性能：Windows OCSP 装订实现可扩展到数百个服务器证书。 由于 SNI 和 CCS 使 IIS 可以扩展到数千个可能具有数千个服务器证书的网站，因此默认情况下启用此行为可能会导致性能问题。
+在这种情况下，默认情况下，TLS 握手期间的服务器 hello 响应不会包含 OCSP 装订状态。 此行为可提高性能： Windows OCSP 装订实现可扩展到数百个服务器证书。 由于 SNI 和 CCS 使 IIS 可以扩展到数千个可能具有数千个服务器证书的网站，因此默认情况下启用此行为可能会导致性能问题。
 
-适用的版本：所有版本（从 Windows Server 2012 和 Windows 8 开始）。 
+适用的版本：从 Windows Server 2012 和 Windows 8 开始的所有版本。 
 
-注册表路径： [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
+注册表路径： [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
 
 添加以下项：
 
@@ -111,9 +111,9 @@ TLS/SSL 密码应通过配置密码套件顺序来控制。 有关详细信息�
 
 此项控制美国联邦信息处理 (FIPS) 合规性。 默认值为 0。
 
-适用的版本：所有版本（从 Windows Server 2012 和 Windows 8 开始）。 
+适用的版本：从 Windows Server 2012 和 Windows 8 开始的所有版本。 
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\LSA
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\LSA
 
 Windows Server FIPS 密码套件：请参阅[SCHANNEL SSP 中支持的密码套件和协议](https://technet.microsoft.com/library/dn786419.aspx)。
 
@@ -127,9 +127,9 @@ TLS/SSL 哈希算法应通过配置密码套件顺序来控制。 有关详细�
 
 为防止这种情况，服务器有一个负缓存，因此，如果某个颁发者名称未映射到帐户，会将它添加到负缓存中，在该缓存条目到期之前，Schannel SSP 不会尝试再次映射该颁发者名称。 此注册表项指定缓存大小。 默认情况下，注册表中不存在此项。 默认值为 100。 
 
-适用的版本：所有版本（从 Windows Server 2008 和 Windows Vista 开始）。
+适用的版本：从 Windows Server 2008 和 Windows Vista 开始的所有版本。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="issuercachetime"></a>IssuerCacheTime
 
@@ -137,9 +137,9 @@ TLS/SSL 哈希算法应通过配置密码套件顺序来控制。 有关详细�
 
 为防止这种情况，服务器有一个负缓存，因此，如果某个颁发者名称未映射到帐户，会将它添加到负缓存中，在该缓存条目到期之前，Schannel SSP 不会尝试再次映射该颁发者名称。 出于性能方面的考虑，将保留此缓存，以便系统不继续尝试映射相同的颁发者。 默认情况下，注册表中不存在此项。 默认值为 10 分钟。
 
-适用的版本：所有版本（从 Windows Server 2008 和 Windows Vista 开始）。
+适用的版本：从 Windows Server 2008 和 Windows Vista 开始的所有版本。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="keyexchangealgorithm---client-rsa-key-sizes"></a>KeyExchangeAlgorithm-客户端 RSA 密钥大小
 
@@ -149,7 +149,7 @@ TLS/SSL 哈希算法应通过配置密码套件顺序来控制。 有关详细�
 
 在 Windows 10 版本1507和 Windows Server 2016 中添加。
 
-注册表路径：HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS
+注册表路径： HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS
 
 若要为 TLS 客户端指定 RSA 密钥位长度的最小支持范围，请创建一个**ClientMinKeyBitLength**条目。 默认情况下，注册表中不存在此项。 创建项后，将 DWORD 值更改为所需的位长度。 如果未配置，则1024位将是最小值。 
 
@@ -163,7 +163,7 @@ TLS/SSL 哈希算法应通过配置密码套件顺序来控制。 有关详细�
 
 在 Windows 10 版本1507和 Windows Server 2016 中添加。
 
-注册表路径：HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman
+注册表路径： HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman
 
 若要为 TLS 客户端指定最小支持的 Helman 密钥位长度范围，请创建一个**ClientMinKeyBitLength**条目。 默认情况下，注册表中不存在此项。 创建项后，将 DWORD 值更改为所需的位长度。 如果未配置，则1024位将是最小值。 
  
@@ -175,9 +175,9 @@ TLS/SSL 哈希算法应通过配置密码套件顺序来控制。 有关详细�
 
 此项控制缓存元素的最大数目。 如果将 MaximumCacheSize 设置为 0，将禁用服务器端会话缓存并阻止重新连接。 将 MaximumCacheSize 增大到超过默认值后，会导致 Lsass.exe 占用额外的内存。 每个会话缓存元素通常需要2到 4 KB 的内存。 默认情况下，注册表中不存在此项。 默认值为20000个元素。 
 
-适用的版本：所有版本（从 Windows Server 2008 和 Windows Vista 开始）。
+适用的版本：从 Windows Server 2008 和 Windows Vista 开始的所有版本。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="messaging--fragment-parsing"></a>消息传递–片段分析
 
@@ -191,7 +191,7 @@ ________________________________________
 在 Windows 7 和 Windows Server 2008 R2 中添加。
 在 windows XP、Windows Vista 或 Windows Server 2008 中启用 Internet Explorer 的更新可用于分析碎的 TLS/SSL 握手消息。
 
-注册表路径：HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Messaging
+注册表路径： HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Messaging
 
 若要指定 TLS 客户端将接受的碎片 TLS 握手消息的最大允许大小，请创建**MessageLimitClient**条目。 创建项后，将 DWORD 值更改为所需的位长度。 如果未配置，则默认值将为0x8000 字节。 
 
@@ -211,24 +211,24 @@ ________________________________________
 
 默认发送受信任的颁发者列表行为
 
-| Windows 版本 | Time |
+| Windows 版本 | 时间 |
 |-----------------|------|
 | Windows Server 2012 和 Windows 8 及更高版本 | FALSE |
 | Windows Server 2008 R2 和 Windows 7 及更早版本 | TRUE |
 
-适用的版本：所有版本（从 Windows Server 2008 和 Windows Vista 开始）。
+适用的版本：从 Windows Server 2008 和 Windows Vista 开始的所有版本。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="servercachetime"></a>ServerCacheTime
 
 此项控制操作系统终止服务器端缓存条目所需的时间（以毫秒为单位）。 值 0 表示禁用服务器端会话缓存并阻止重新连接。 将 ServerCacheTime 增大到超过默认值后，会导致 Lsass.exe 占用额外的内存。 每个会话缓存元素通常需要2到 4 KB 的内存。 默认情况下，注册表中不存在此项。 
 
-适用的版本：所有版本（从 Windows Server 2008 和 Windows Vista 开始）。
+适用的版本：从 Windows Server 2008 和 Windows Vista 开始的所有版本。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
-默认服务器缓存时间：10 小时
+默认服务器缓存时间：10小时
 
 ## <a name="ssl-20"></a>SSL 2.0
 
@@ -237,13 +237,13 @@ ________________________________________
 从 Windows 10 版本1607和 Windows Server 2016 开始，SSL 2.0 已被删除且不再受支持。
 对于 SSL 2.0 默认设置，请参阅[TLS/SSL （SCHANNEL SSP）中的协议](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。 
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要启用 SSL 2.0 协议，请在客户端或服务器子项中创建一个**已启用**的条目，如下表所述。 默认情况下，注册表中不存在此项。 创建项后，将 DWORD 值更改为1。 
 
 SSL 2.0 子项表
 
-| 子项 | 描述 |
+| 子项 | 说明 |
 |--------|-------------|
 | 客户端 | 控制 ssl 客户端上 SSL 2.0 的使用。 |
 | Server | 控制 ssl 服务器上 SSL 2.0 的使用。 |
@@ -263,14 +263,14 @@ SSL 2.0 子项表
 
 从 Windows 10 版本1607和 Windows Server 2016 开始，SSL 3.0 在默认情况下已禁用。 对于 SSL 3.0 默认设置，请参阅[TLS/SSL （SCHANNEL SSP）中的协议](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。 
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要启用 SSL 3.0 协议，请在客户端或服务器子项中创建一个**已启用**的条目，如下表所述。  
 默认情况下，注册表中不存在此项。 创建项后，将 DWORD 值更改为1。 
 
 SSL 3.0 子项表
 
-| 子项 | 描述 |
+| 子项 | 说明 |
 |--------|-------------|
 | 客户端 | 控制 ssl 客户端上 SSL 3.0 的使用。 |
 | Server | 控制 ssl 服务器上 SSL 3.0 的使用。 |
@@ -290,13 +290,13 @@ SSL 3.0 子项表
 
 对于 TLS 1.0 默认设置，请参阅[tls/SSL （SCHANNEL SSP）中的协议](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要启用 TLS 1.0 协议，请在客户端或服务器子项中创建一个**启用**的项，如下表所述。 默认情况下，注册表中不存在此项。 创建项后，将 DWORD 值更改为1。 
 
 TLS 1.0 子项表
 
-| 子项 | 描述 |
+| 子项 | 说明 |
 |--------|-------------|
 | 客户端 | 控制 tls 客户端上 TLS 1.0 的使用。 |
 | Server | 控制 tls 服务器上的 TLS 1.0 的使用。 |
@@ -316,13 +316,13 @@ TLS 1.0 子项表
 
 对于 TLS 1.1 默认设置，请参阅[tls/SSL （SCHANNEL SSP）中的协议](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要启用 TLS 1.1 协议，请在客户端或服务器子项中创建一个**启用**的项，如下表所述。 默认情况下，注册表中不存在此项。 创建项后，将 DWORD 值更改为1。 
 
 TLS 1.1 子项表
 
-| 子项 | 描述 |
+| 子项 | 说明 |
 |--------|-------------|
 | 客户端 | 控制 tls 客户端上 TLS 1.1 的使用。 |
 | Server | 控制 tls 服务器上的 TLS 1.1 的使用。 |
@@ -342,13 +342,13 @@ TLS 1.1 子项表
 
 对于 TLS 1.2 默认设置，请参阅[tls/SSL （SCHANNEL SSP）中的协议](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要启用 TLS 1.2 协议，请在客户端或服务器子项中创建一个**启用**的项，如下表所述。 默认情况下，注册表中不存在此项。 创建项后，将 DWORD 值更改为1。 
 
 TLS 1.2 子项表
 
-| 子项 | 描述 |
+| 子项 | 说明 |
 |--------|-------------|
 | 客户端 | 控制 tls 客户端上 TLS 1.2 的使用。 |
 | Server | 控制 tls 服务器上的 TLS 1.2 的使用。 |
@@ -368,13 +368,13 @@ TLS 1.2 子项表
 
 对于 DTLS 1.0 默认设置，请参阅[TLS/SSL （SCHANNEL SSP）中的协议](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要启用 DTLS 1.0 协议，请在客户端或服务器子项中创建一个**已启用**的条目，如下表所述。 默认情况下，注册表中不存在此项。 创建项后，将 DWORD 值更改为1。 
 
 DTLS 1.0 子项表
 
-| 子项 | 描述 |
+| 子项 | 说明 |
 |--------|-------------|
 | 客户端 | 控制在 DTLS 客户端上使用 DTLS 1.0。 |
 | Server | 控制在 DTLS 服务器上使用 DTLS 1.0。 |
@@ -394,13 +394,13 @@ DTLS 1.0 子项表
 
 对于 DTLS 1.2 默认设置，请参阅[TLS/SSL （SCHANNEL SSP）中的协议](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)。
 
-注册表路径：HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+注册表路径： HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 若要启用 DTLS 1.2 协议，请在客户端或服务器子项中创建一个**已启用**的条目，如下表所述。 默认情况下，注册表中不存在此项。 创建项后，将 DWORD 值更改为1。 
 
 DTLS 1.2 子项表
 
-| 子项 | 描述 |
+| 子项 | 说明 |
 |--------|-------------|
 | 客户端 | 控制在 DTLS 客户端上使用 DTLS 1.2。 |
 | Server | 控制在 DTLS 服务器上使用 DTLS 1.2。 |

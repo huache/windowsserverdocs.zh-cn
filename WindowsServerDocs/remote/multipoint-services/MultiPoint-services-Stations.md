@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405075"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371819"
 ---
 # <a name="multipoint--stations"></a>MultiPoint 工作站
 在 MultiPoint 服务系统环境中，*工作站*是用于连接到运行 MultiPoint 服务的计算机的用户终结点。 每个工作站为用户提供独立的 Windows 10 体验。 支持以下工作站类型：  
@@ -64,7 +64,7 @@ USB 零客户端连接的工作站使用*usb 零客户端*作为工作站集线�
 USB over 以太网零客户端是将 USB over LAN 发送到 MultiPoint 服务系统的 USB 零客户端的变体。 这些类型的 USB 零客户端的工作方式类似于其他 USB 零客户端，但不受 USB 电缆长度最大的限制。 USB over 以太网零客户端不是传统瘦客户端，它们显示为 MultiPoint 服务系统上的虚拟 USB 设备。 使用这些设备时，请参考设备制造商，了解具体的性能和站点规划建议。 大多数设备都有一个用于 MultiPoint 管理器的第三方插件，使你能够将设备关联并连接到 MultiPoint 服务系统。  
   
 ## <a name="rdp-over-lan-connected-stations"></a>通过局域网的 RDP 连接工作站  
-瘦客户端和传统的台式机、便携式计算机或平板电脑可以通过局域网（LAN）连接到运行 MultiPoint 服务的计算机，方法是使用远程桌面协议（RDP）或专有协议和远程桌面协议程序. RDP 连接提供与任何其他 MultiPoint 工作站非常类似的最终用户体验，但使用本地客户端计算机的硬件。 [详细了解](../remote-desktop-services/clients/remote-desktop-clients.md)适用于适用于 Android、iOS、Mac 和 Windows 的远程桌面应用程序。 
+瘦客户端和传统的台式机、便携式计算机或平板电脑可以通过局域网（LAN）连接到运行 MultiPoint 服务的计算机，方法是使用远程桌面协议（RDP）或专有协议和远程桌面协议程序. RDP 连接提供与任何其他 MultiPoint 工作站非常类似的最终用户体验，但使用本地客户端计算机的硬件。 详细了解适用于适用于 Android、iOS、Mac 和 Windows 的[远程桌面应用程序。](../remote-desktop-services/clients/remote-desktop-clients.md) 
   
 运行 Microsoft RemoteFX 的客户端和设备可以利用本地瘦客户端或计算机的处理器和视频硬件功能，通过网络提供高清晰度视频，从而提供丰富的多媒体体验。  
   
@@ -120,9 +120,9 @@ MultiPoint 服务在具有直接连接到视频的工作站或连接了 USB 零�
 |视频性能|建议为获得最佳视频性能||使用支持 RemoteFX 的瘦客户端，以更低的网络带宽提高视频质量|  
 |物理限制|受视频电缆长度和 USB 集线器和电缆长度的限制（建议15米最大长度）|受 USB 集线器和电缆长度限制（建议使用15米最大长度）|受 LAN 分发限制|  
 |允许的工作站数量 |受主板上每个视频端口视频卡的可用 PCIe 槽数的限制|总数可能受 USB 零客户端制造商限制（有关详细信息，请参阅此表后面的说明。）|受网络交换机上的可用端口限制|  
-|拆分屏幕|是|是|否|  
-|MultiPoint 管理器工作站外设状态，自动登录配置，工作站重命名|是|是|否|  
-|访问服务器启动菜单|是|否|否|  
+|拆分屏幕|是|是|是|  
+|MultiPoint 管理器工作站外设状态，自动登录配置，工作站重命名|是|是|是|  
+|访问服务器启动菜单|是|是|是|  
   
 > [!NOTE]  
 > 连接到服务器的 USB 零客户端的总数可能受运行 MultiPoint 服务的计算机的制造商或硬件功能的限制。
