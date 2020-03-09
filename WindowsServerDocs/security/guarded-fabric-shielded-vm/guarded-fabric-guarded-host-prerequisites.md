@@ -8,15 +8,15 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: 8a9273eef906130b11b98148cf1e84f7e18812b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402373"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371442"
 ---
 # <a name="prerequisites-for-guarded-hosts"></a>受保护主机的先决条件
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 查看所选证明模式的主机必备项，然后单击 "下一步" 以添加受保护的主机。
 
@@ -34,12 +34,12 @@ ms.locfileid: "71402373"
     - 配置为使用 UEFI （而非 BIOS 或 "旧" 模式）启动
     - 已启用安全启动
         
--   **操作系统**:Windows Server 2016 Datacenter edition 或更高版本
+-   **操作系统**： Windows Server 2016 Datacenter edition 或更高版本
 
     > [!IMPORTANT]
     > 请确保安装[最新的累积更新](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。  
 
--   **角色和功能**：Hyper-v 角色和主机保护者 Hyper-v 支持功能。 主机保护者 Hyper-v 支持功能仅在 Windows Server Datacenter edition 上可用。 
+-   **角色和功能**： hyper-v 角色和主机保护者 hyper-v 支持功能。 主机保护者 Hyper-v 支持功能仅在 Windows Server Datacenter edition 上可用。 
 
 > [!WARNING]
 > 主机保护者 Hyper-v 支持功能可为可能与某些设备不兼容的代码完整性启用基于虚拟化的保护。 在启用此功能之前，强烈建议在实验室中测试此配置。 如果不这样做，可能会导致意外故障，其中包括数据丢失或蓝屏错误（也称为停止错误）。 有关详细信息，请参阅[兼容硬件和基于 Windows Server 虚拟化的代码完整性保护](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)。
@@ -52,9 +52,9 @@ ms.locfileid: "71402373"
 
 使用主机密钥证明的受保护主机必须满足以下先决条件：
 
-- **硬件**：所有能够运行 Hyper-v 的服务器，从 Windows Server 2019 开始
-- **操作系统**:Windows Server 2019 Datacenter Edition
-- **角色和功能**：Hyper-v 角色和主机保护者 Hyper-v 支持功能 
+- **硬件**：所有能够运行 hyper-v 的服务器，从 Windows server 2019 开始
+- **操作系统**： Windows Server 2019 Datacenter edition
+- **角色和功能**： hyper-v 角色和主机保护者 hyper-v 支持功能 
 
 主机可以加入域或工作组。 
 
@@ -71,14 +71,14 @@ ms.locfileid: "71402373"
 
 Hyper-v 主机必须满足 AD 模式的下列先决条件：
 
--   **硬件**：从 Windows Server 2016 开始，任何能够运行 Hyper-v 的服务器。 初始部署需要一个主机。 若要测试受防护 Vm 的 Hyper-v 实时迁移，需要至少两个主机。
+-   **硬件**：所有能够运行 hyper-v 的服务器，从 Windows server 2016 开始。 初始部署需要一个主机。 若要测试受防护 Vm 的 Hyper-v 实时迁移，需要至少两个主机。
 
--   **操作系统**:Windows Server 2016 Datacenter edition
+-   **操作系统**： Windows Server 2016 Datacenter edition
 
     > [!IMPORTANT]
     > 安装[最新的累积更新](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
 
--   **角色和功能**：Hyper-v 角色和主机保护者 Hyper-v 支持功能，它仅在 Windows Server 2016 Datacenter edition 中可用。 
+-   **角色和功能**： hyper-v 角色和主机保护者 hyper-v 支持功能，它仅在 Windows Server 2016 Datacenter edition 中可用。 
 
 > [!WARNING]
 > 主机保护者 Hyper-v 支持功能可为可能与某些设备不兼容的代码完整性启用基于虚拟化的保护。 在启用此功能之前，强烈建议在实验室中测试此配置。 如果不这样做，可能会导致意外故障，其中包括数据丢失或蓝屏错误（也称为停止错误）。 有关详细信息，请参阅[兼容硬件和基于 Windows Server 2016 的代码完整性保护](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)。
