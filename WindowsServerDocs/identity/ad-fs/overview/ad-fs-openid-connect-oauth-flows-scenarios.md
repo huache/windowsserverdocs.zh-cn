@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e1e0235e50945fadd09fe9dd5ffeaf6d7119e482
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 875edcf191596d181ec0d70a83f9f3c20f5d5f4a
+ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385604"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261936"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS OpenID Connect/OAuth 流和应用程序方案
 适用于 AD FS 2016 及更高版本
@@ -292,7 +292,7 @@ OAuth 2.0 代表 (OBO) 流适用于以下用例：应用程序调用服务/Web A
 
   1. 客户端应用程序使用令牌 A 向 API A 发出请求。  
   注意：在 AD FS 中配置 OBO 流时，请确保选择范围 `user_impersonation`，并且客户端在请求中确实请求了 `user_impersonation` 范围。 
-  2. API A 向 AD FS 令牌颁发终结点进行身份验证，并请求用于访问 API B 的令牌。注意：在 AD FS 中配置此流时，请确保 API A 也注册为服务器应用程序，而 clientID 与 API A 中的资源 ID 具有相同的值。有关更多详细信息，请参阅此处的代表示例：添加链接。  
+  2. API A 向 AD FS 令牌颁发终结点进行身份验证，并请求用于访问 API B 的令牌。注意：在 AD FS 中配置此流时，请确保 API A 也注册为服务器应用程序，其 clientID 与 API A 中的资源 ID 具有相同的值。
   3. AD FS 令牌颁发终结点使用令牌 A 验证 API A 的凭据，并颁发 API B 的访问令牌（令牌 B）。 
   4. 令牌 B 在针对 API B 的请求授权标头中设置。 
   5. API B 返回受保护资源中的数据。 
