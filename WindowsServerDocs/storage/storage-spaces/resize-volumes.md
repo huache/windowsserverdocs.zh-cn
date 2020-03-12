@@ -7,18 +7,21 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 05/07/2019
-ms.openlocfilehash: 20482fe1728b12d4fe56dcfa397352fbb4b4f981
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 03/10/2020
+ms.openlocfilehash: 4ce41da1da3dc90f698008902170d7cc1541619c
+ms.sourcegitcommit: bb2eb0b12f2a32113899a59aa5644bc6e8cab3d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366095"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089353"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>扩展存储空间直通中的卷
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 本主题提供使用 Windows 管理中心调整[存储空间直通](storage-spaces-direct-overview.md)群集上的卷大小的说明。
+
+> [!WARNING]
+> **不支持：调整存储空间直通使用的基础存储的大小。** 如果在虚拟化存储环境（包括在 Azure 中）中运行存储空间直通，则不支持调整或更改虚拟机所使用的存储设备的特性，将导致数据变得不可访问。 相反，请按照[添加服务器或驱动器](add-nodes.md)部分中的说明进行操作，然后再扩展卷。
 
 观看有关如何调整卷大小的快速视频。
 
@@ -139,7 +142,7 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 > [!TIP]
 > 你可以运行 **Get-Volume** 来验证卷是否具有新的大小。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Windows Server 2016 中的存储空间直通](storage-spaces-direct-overview.md)
 - [规划存储空间直通中的卷](plan-volumes.md)
