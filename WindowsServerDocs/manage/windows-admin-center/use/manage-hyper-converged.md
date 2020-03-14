@@ -9,11 +9,11 @@ ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 6795464bfbadd12fc220e941ad2175eb83d0f050
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949945"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322859"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>通过 Windows 管理中心管理超聚合基础结构
 
@@ -92,7 +92,7 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 
 部署需要大约30到45分钟。
 
-## <a name="get-started"></a>“开始”
+## <a name="get-started"></a>入门
 
 部署超聚合基础结构后，可以使用 Windows 管理中心对其进行管理。
 
@@ -131,11 +131,11 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 > [!Important]
 > 当前不支持具有 Kerberos 身份验证的 SDN 环境 Northbound 通信。
 
-## <a name="frequently-asked-questions"></a>常见问题解答
+## <a name="frequently-asked-questions"></a>常见问题
 
 ### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 和 Windows Server 2019 的管理是否有差异？
 
-是 超聚合基础结构的 Windows 管理中心接收频繁的更新，这些更新可改善 Windows Server 2016 和 Windows Server 2019 的体验。 但是，某些新功能仅适用于 Windows Server 2019 –例如，切换开关以进行重复数据删除和压缩。
+可以。 超聚合基础结构的 Windows 管理中心接收频繁的更新，这些更新可改善 Windows Server 2016 和 Windows Server 2019 的体验。 但是，某些新功能仅适用于 Windows Server 2019 –例如，切换开关以进行重复数据删除和压缩。
 
 ### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>能否使用 Windows 管理中心来管理其他用例（而非超聚合）的存储空间直通，例如聚合横向扩展文件服务器（SoFS）或 Microsoft SQL Server？
 
@@ -161,15 +161,15 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
 
 ### <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center 是否需要 System Center？
 
-不相同。
+No。
 
 ### <a name="does-it-require-an-internet-connection"></a>是否需要 Internet 连接？
 
-不相同。
+No。
 
 尽管 Windows 管理中心提供了与 Microsoft Azure 云强大且方便的集成，但超聚合基础结构的核心管理和监视体验完全在本地。 它可以在没有 Internet 连接的情况下安装和使用。
 
-## <a name="things-to-try"></a>要尝试的操作
+## <a name="things-to-try"></a>要尝试的功能
 
 如果刚开始使用，以下是一些快速教程，可帮助您了解如何组织 Windows 管理中心的超聚合基础结构和工作原理。 请毋庸置疑，在生产环境中小心。 这些视频是使用 Windows 管理中心版本1804和 Windows Server 2019 的内部预览版本记录的。
 
@@ -217,7 +217,7 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
     </tr>
 </table>
 
-### <a name="create-a-new-virtual-machine"></a>创建新的虚拟机
+### <a name="create-a-new-virtual-machine"></a>创建新虚拟机
 
 1. 单击左侧导航窗格中的 "**虚拟机**" 工具。
 2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡，然后单击 "**新建**" 以创建新的虚拟机。

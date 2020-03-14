@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
 ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822700"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322919"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知问题
 
@@ -27,7 +27,7 @@ ms.locfileid: "76822700"
 
 - 不支持使用低于1024的端口。 在服务模式下，你可以选择配置端口80以重定向到指定的端口。
 
-## <a name="general"></a>“常规”
+## <a name="general"></a>常规
 
 - 如果你已在**Windows Server 2016**上将 windows 管理中心作为网关安装，则该服务可能会因包含 ```Faulting application name: sme.exe``` 和 ```Faulting module name: WsmSvc.dll```的事件日志中的错误而崩溃。 这是由 Windows Server 2019 中已修复的 bug 引起的。 Windows Server 2016 的修补程序包含在 2 2019 月的累积更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
@@ -53,7 +53,7 @@ ms.locfileid: "76822700"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试添加来解决此问题 https://login.microsoftonline.com ， https://login.live.com ，为你网关的 URL 是受信任的站点并允许客户端浏览器上的弹出窗口阻止程序设置的站点。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
+- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试解决此问题，方法是将网关 https://login.microsoftonline.com、 https://login.live.com和 URL 添加为客户端浏览器上的 "受信任的站点" 和 "弹出窗口阻止程序" 设置的 "允许的站点"。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -80,7 +80,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 在 PowerShell 中键入 `$PSVersiontable`，以验证是否安装了 WMF 并且版本是否为 5.1 或更高版本。
 
-如果未安装，则可以[下载并安装 WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
+如果未安装，可以[下载并安装 WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
 
 ## <a name="role-based-access-control-rbac"></a>基于角色的访问控制（RBAC）
 
@@ -96,7 +96,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 - 无法将 .PFX 加密证书导入到当前用户存储。 [11818622]
 
-### <a name="events"></a>事件
+### <a name="events"></a>Events
 
 - [使用代理服务时的 WebSocket 兼容性](#websocket-compatibility-when-using-a-proxy-service)会影响事件。
 
@@ -104,7 +104,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
   - 若要解决此问题，请在网关计算机上的提升的命令提示符中使用以下命令： ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
-### <a name="files"></a>文件
+### <a name="files"></a>Files
 
 - 仍不支持上载或下载大文件。 （\~100mb 限制）[12524234]
 

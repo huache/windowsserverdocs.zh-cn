@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b073b0557cd011f6742a8a8e532165f53b0a6974
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8aeb2b3b7d62ae62ba9b8fa70988cf64060673ca
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377879"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79320011"
 ---
 # <a name="dir"></a>dir
 
@@ -36,7 +36,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 
 ## <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |[\<驱动器 >：][<Path>]|指定要查看其列表的驱动器和目录。|
 |[\<文件名 >]|指定要查看其列表的特定文件或文件组。|
@@ -64,7 +64,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
   **星号（\*）：** 使用星号代替任意字符串，例如：  
   - **dir \*** 列出当前目录中扩展名以 .txt 开头的所有文件，例如 .txt、. txt1、txt_old。
   - **dir read\*** 列出当前目录中以 "read" 开头、以 .txt 开头的所有文件（例如 .txt、. txt1 或 txt_old）。
-  - **dir read\*。\\** * 列出当前目录中所有扩展名以 "read" 开头的所有文件。
+  - **dir read\*。\*** 会列出当前目录中所有扩展名以 "read" 开头的所有文件。
 
   星号通配符始终使用短文件名映射，因此可能会收到意外的结果。 例如，以下目录包含两个文件（txt2 和 t97）： 
  

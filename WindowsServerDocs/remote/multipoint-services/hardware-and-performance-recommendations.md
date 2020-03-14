@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 284131028b308ee86389f25102d934390ba2f16d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389111"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322079"
 ---
 # <a name="hardware-requirements-and-performance-recommendations"></a>硬件要求和性能建议
 本主题介绍运行 MultiPoint 服务系统和支持用户应用程序方案所需的硬件。 用户方案直接影响 CPU、RAM 和网络带宽要求。  
@@ -41,14 +41,14 @@ MultiPoint 服务系统的性能将直接受到 CPU、GPU 和运行 MultiPoint �
   
 |应用程序方案|最多5个工作站|6-8 工作站|9-12 工作站|13-16 工作站|17-20 工作站|21-24 工作站|  
 |------------------------|----------------------|-------------------|------------------|-------------------|-------------------|-----------------|  
-|**提高**<br /><br />Office、web 浏览、业务线应用程序|CPU：上文<br /><br />RAM：2 GB|CPU：上文<br /><br />RAM：4 GB|CPU：4C<br /><br />RAM：6 GB|CPU：4C<br /><br />RAM：8 GB|CPU：4C + MT 或6C<br /><br />RAM：10 GB| CPU：6C + MT<br /><br />RAM：12 GB|
-|**混**<br /><br />某些用户偶尔使用的 Office、web 浏览、业务线应用程序和视频|CPU：上文<br /><br />RAM：2 GB|CPU：上文<br /><br />RAM：4 GB|CPU：4C<br /><br />RAM：6 GB|CPU：4C + MT 或6C<br /><br />RAM：8 GB|CPU：6C + MT<br /><br />RAM：10 GB| CPU：6C + MT<br /><br />RAM：12 GB| 
-|**视频密集型**<br /><br />Office、web 浏览、业务线应用程序，以及所有用户的频繁视频使用**备注：** 视频测试是使用360p 视频以本机分辨率执行的视频。|CPU：4C + MT<br /><br />RAM：2 GB|CPU：6C + MT<br /><br />RAM：4 GB|CPU：8C + MT<br /><br />RAM：6 GB|CPU：12C + MT<br /><br />RAM：8 GB|CPU：16C + MT<br /><br />RAM：10 GB<br /><br />-瘦客户端：RemoteFX<br />-不建议使用 USB 视频| CPU：20C + MT<br /><br />RAM：12 GB<br /><br />-瘦客户端：RemoteFX<br />-不建议使用 USB 视频|   
+|**提高**<br /><br />Office、web 浏览、业务线应用程序|CPU：2C<br /><br />RAM： 2 GB|CPU：2C<br /><br />RAM： 4 GB|CPU：4C<br /><br />RAM： 6 GB|CPU：4C<br /><br />RAM： 8 GB|CPU： 4C + MT 或6C<br /><br />RAM： 10 GB| CPU： 6C + MT<br /><br />RAM： 12 GB|
+|**混**<br /><br />某些用户偶尔使用的 Office、web 浏览、业务线应用程序和视频|CPU：2C<br /><br />RAM： 2 GB|CPU：2C<br /><br />RAM： 4 GB|CPU：4C<br /><br />RAM： 6 GB|CPU： 4C + MT 或6C<br /><br />RAM： 8 GB|CPU： 6C + MT<br /><br />RAM： 10 GB| CPU： 6C + MT<br /><br />RAM： 12 GB| 
+|**视频密集型**<br /><br />Office、web 浏览、业务线应用程序，以及所有用户的常用视频 **：注意：** 视频测试是使用360p|CPU： 4C + MT<br /><br />RAM： 2 GB|CPU： 6C + MT<br /><br />RAM： 4 GB|CPU： 8C + MT<br /><br />RAM： 6 GB|CPU： 12C + MT<br /><br />RAM： 8 GB|CPU： 16C + MT<br /><br />RAM： 10 GB<br /><br />-瘦客户端： RemoteFX<br />-不建议使用 USB 视频| CPU： 20C + MT<br /><br />RAM： 12 GB<br /><br />-瘦客户端： RemoteFX<br />-不建议使用 USB 视频|   
   
 ## <a name="minimum-recommended-hardware-for-running-full-windows-10-virtual-desktops"></a>运行完整的 Windows 10 虚拟桌面所建议的最低硬件  
 为每个工作站运行完整的虚拟操作系统实例比运行默认的 MultiPoint 桌面会话更耗费计算资源，因此，每个工作站的主机硬件要求更高：  
   
-1.  CPU：每个工作站1个核心或线程  
+1.  CPU：1个核心或每个工作站的线程  
   
 2.  固态硬盘（SSD）  
   

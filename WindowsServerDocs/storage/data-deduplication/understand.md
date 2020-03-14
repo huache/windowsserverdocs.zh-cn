@@ -9,15 +9,15 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: e26d285f1802e78b2cbf84e38407ff134e7b7035
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403225"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322389"
 ---
 # <a name="understanding-data-deduplication"></a>了解重复数据删除
 
-> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用于： Windows Server 2019、Windows Server 2016、Windows Server （半年频道）
 
 本文档介绍[重复数据删除](overview.md)的工作原理。
 
@@ -71,7 +71,7 @@ Windows Server 中的重复数据删除使用以下两个原则创建：
 | <a id="job-info-unoptimization"></a>取消优化 | **取消优化**作业是一项特殊作业，它只能手动运行，会撤消重复数据删除完成的优化并为该卷禁用重复数据删除。 | [仅点播](run.md#disabling-dedup) |
 
 ## <a id="dedup-term"></a>重复数据删除术语
-| 术语 | 定义 |
+| 术语 | Definition |
 |------|------------|
 | <a id="dedup-term-chunk"></a>区块 | 区块是重复数据删除区块算法（可能在其他类似文件中出现）所选择的文件的一部分。 |
 | <a id="dedup-term-chunk-store"></a>区块存储 | 区块存储是重复数据删除用于以唯一方式存储区块的系统卷信息文件夹中所组织的一系列容器文件。 |
@@ -89,7 +89,7 @@ Windows Server 中的重复数据删除使用以下两个原则创建：
 > [!Warning]  
 > 不要试图手动修改区块存储，除非由授权的 Microsoft 技术支持人员指示。 执行此操作可能导致数据损坏或丢失。
 
-## <a name="frequently-asked-questions"></a>常见问题解答
+## <a name="frequently-asked-questions"></a>常见问题
 **重复数据删除与其他优化产品有何不同？**  
 重复数据删除与其他常见的存储优化产品之间有几个重要区别：
 
@@ -103,7 +103,7 @@ Windows Server 中的重复数据删除使用以下两个原则创建：
     存档文件格式（如 zip、rar、7z、cab 等）对一组指定的文件执行压缩。 与重复数据删除相同，会优化文件内的重复模式或文件间的重复模式。 但是，必须选择要包含在存档中的文件。 访问语义也将有所不同。 若要访问存档内的特定文件，必须打开存档、选择特定的文件，并解压缩该文件以供使用。 重复数据删除对用户和管理员是透明运行的，且不需要手动启动。 此外，重复数据删除保留了访问语义，文件在优化后看起来没有任何更改。
 
 **能否更改所选使用类型的重复数据删除设置？**  
-是。 尽管重复数据删除为**建议的工作负荷**提供合理的默认值，用户仍可能希望对重复数据删除设置进行调整，充分利用存储。 此外，其他工作负荷将[需要进行一些调整，以确保重复数据删除不会干扰工作负荷](install-enable.md#enable-dedup-sometimes-considerations)。
+可以。 尽管重复数据删除为**建议的工作负荷**提供合理的默认值，用户仍可能希望对重复数据删除设置进行调整，充分利用存储。 此外，其他工作负荷将[需要进行一些调整，以确保重复数据删除不会干扰工作负荷](install-enable.md#enable-dedup-sometimes-considerations)。
 
 **我可以手动运行重复数据删除作业吗？**  
 可以，[所有重复数据删除作业均可手动运行](run.md#running-dedup-jobs-manually)。 当计划作业由于没有足够的系统资源或由于错误而不能运行时，此操作是可取的。 此外，取消优化作业只能手动运行。

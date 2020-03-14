@@ -9,15 +9,15 @@ ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371709"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323589"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>配置用户访问控制和权限
 
-> 适用于： Windows 管理中心、Windows 管理中心预览
+> 适用于：Windows Admin Center、Windows Admin Center 预览版
 
 请自行熟悉 [Windows Admin Center 中的用户访问控制选项](../plan/user-access-options.md)（如果还不熟悉的话）
 
@@ -33,21 +33,21 @@ ms.locfileid: "78371709"
 **网关管理员**可以对谁获得访问权限以及用户如何向网关进行身份验证进行配置。 仅网关管理员可以在 Windows Admin Center 中查看和配置“访问设置”。 网关计算机上的本地管理员始终是 Windows Admin Center 网关服务的管理员。
 
 > [!NOTE]
-> 可以访问网关并不意味着可以访问对网关可见的托管服务器。 若要管理目标服务器，连接用户必须使用可以对该目标服务器进行管理性访问的凭据（不管是使用传递型 Windows 凭据，还是使用通过“管理身份”操作在 Windows Admin Center 会话中提供的凭据）。
+> 可以访问网关并不意味着可以访问对网关可见的托管服务器。 若要管理目标服务器，连接用户必须使用可以对该目标服务器进行管理性访问的凭据（不管是使用传递型 Windows 凭据，还是使用通过“管理身份”操作在 Windows Admin Center 会话中提供的凭据  ）。
 
 ## <a name="active-directory-or-local-machine-groups"></a>Active Directory 或本地计算机组
 
 默认情况下，Active Directory 或本地计算机组用于控制网关访问。 如果有 Active Directory 域，则可在 Windows Admin Center 界面中管理网关用户和管理员的访问。
 
-在“用户”选项卡上，可以控制谁可以作为网关用户访问 Windows Admin Center。 默认情况下，如果不指定安全组，则任何能够访问网关 URL 的用户都可以进行访问。 向用户列表添加一个或多个安全组以后，仅限这些组的成员进行访问。
+在“用户”选项卡上，可以控制谁可以作为网关用户访问 Windows Admin Center。  默认情况下，如果不指定安全组，则任何能够访问网关 URL 的用户都可以进行访问。 向用户列表添加一个或多个安全组以后，仅限这些组的成员进行访问。
 
 如果不使用环境中的 Active Directory 域，则由 Windows Admin Center 网关计算机上的 `Users` 和 `Administrators` 本地组控制访问权限。
 
 ### <a name="smartcard-authentication"></a>智能卡身份验证
 
-可以强制实施**智能卡身份验证**，方法是：为基于智能卡的安全组指定另一个必需的组。 在你添加基于智能卡的安全组以后，用户访问 Windows Admin Center 服务的前提是：他/她必须是安全组的成员且用户列表中必须包含一个智能卡组。
+可以强制实施**智能卡身份验证**，方法是：为基于智能卡的安全组指定另一个必需的组。  在你添加基于智能卡的安全组以后，用户访问 Windows Admin Center 服务的前提是：他/她必须是安全组的成员且用户列表中必须包含一个智能卡组。
 
-在“管理员”选项卡上，可以控制谁可以作为网关管理员访问 Windows Admin Center。 计算机上的本地管理员组将始终拥有完全的管理员访问权限，不能将该组从列表中删除。 添加安全组后，这些组的成员就会获得更改 Windows Admin Center 网关设置的特权。 管理员列表支持智能卡身份验证的方式与用户列表一样：采用安全组和智能卡组的 AND 条件。
+在“管理员”选项卡上，可以控制谁可以作为网关管理员访问 Windows Admin Center。  计算机上的本地管理员组将始终拥有完全的管理员访问权限，不能将该组从列表中删除。 添加安全组后，这些组的成员就会获得更改 Windows Admin Center 网关设置的特权。 管理员列表支持智能卡身份验证的方式与用户列表一样：采用安全组和智能卡组的 AND 条件。
 
 ## <a name="azure-active-directory"></a>Azure Active Directory
 
@@ -62,23 +62,23 @@ ms.locfileid: "78371709"
 
 ### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>针对 Windows Admin Center 预览版配置 Azure Active Directory 身份验证
 
-请转到 Windows Admin Center 的“设置” > “访问权限”，通过切换开关启用“使用 Azure Active Directory 向网关添加安全层”功能。 如果尚未将网关注册到 Azure，系统此时会引导你那样做。
+请转到 Windows Admin Center 的“设置”   >   “访问权限”，通过切换开关启用“使用 Azure Active Directory 向网关添加安全层”功能。 如果尚未将网关注册到 Azure，系统此时会引导你那样做。
 
 默认情况下，Azure AD 租户的所有成员都有 Windows Admin Center 网关服务的用户访问权限。 仅网关计算机上的本地管理员具有 Windows Admin Center 网关的管理员访问权限。 请注意，网关计算机上本地管理员的权限不受限制 - 本地管理员可以执行任何操作，与是否使用 Azure AD 进行身份验证无关。
 
 若要为特定 Azure AD 用户或组网关用户或网关管理员提供 Windows Admin Center 服务的访问权限，必须执行以下操作：
 
 1.  使用“访问设置”中提供的超链接转到 Azure 门户中的 Windows Admin Center Azure AD 应用程序。 请注意，该超链接仅在启用 Azure Active Directory 身份验证的情况下可用。 
-    -   也可在 Azure 门户中找到应用程序，方法是：转到“Azure Active Directory” > “企业应用程序” > “所有应用程序”，搜索 **WindowsAdminCenter**（Azure AD 应用将以 WindowsAdminCenter-<gateway name> 命名）。 如果没有获得任何搜索结果，请确保将“显示”设置为“所有应用程序”，将“应用程序状态”设置为“任意”并单击“应用”，然后尝试搜索。 找到应用程序以后，请转到“用户和组”
-2.  在“属性”选项卡中，将“需要用户分配”设置为“是”。
-    这样做以后，将只有“用户和组”选项卡中列出的成员能够访问 Windows Admin Center 网关。
-3.  在“用户和组”选项卡中，选择“添加用户”。 必须为每个添加的用户/组分配网关用户或网关管理员角色。
+    -   也可在 Azure 门户中找到应用程序，方法是：转到“Azure Active Directory”   > “企业应用程序”   >   “所有应用程序”，搜索 **WindowsAdminCenter**（Azure AD 应用将以 WindowsAdminCenter-<gateway name> 命名）。 如果没有获得任何搜索结果，请确保将“显示”设置为“所有应用程序”，将“应用程序状态”设置为“任意”并单击“应用”，然后尝试搜索。     找到应用程序以后，请转到“用户和组” 
+2.  在“属性”选项卡中，将“需要用户分配”设置为“是”。 
+    这样做以后，将只有“用户和组”选项卡中列出的成员能够访问 Windows Admin Center 网关。 
+3.  在“用户和组”选项卡中，选择“添加用户”  。 必须为每个添加的用户/组分配网关用户或网关管理员角色。
 
 启用 Azure AD 身份验证以后，网关服务会重启，你必须刷新浏览器。 可以随时在 Azure 门户中更新 SME Azure AD 应用程序的用户访问权限。
 
 当用户尝试访问 Windows Admin Center 网关 URL 时，系统会提示其使用 Azure Active Directory 标识登录。 请记住，用户还必须是网关服务器上“本地用户”的成员才能访问 Windows Admin Center。
 
-用户和管理员可以在 Windows Admin Center 设置的“帐户”选项卡中查看当前登录的帐户以及注销该 Azure AD 帐户。
+用户和管理员可以在 Windows Admin Center 设置的“帐户”选项卡中查看当前登录的帐户以及注销该 Azure AD 帐户。 
 
 ### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center"></a>针对 Windows Admin Center 配置 Azure Active Directory 身份验证
 
@@ -87,17 +87,17 @@ ms.locfileid: "78371709"
 若要为特定 Azure AD 用户或组网关用户或网关管理员提供 Windows Admin Center 服务的访问权限，必须执行以下操作：
 
 1.  转到 Azure 门户中的 SME Azure AD 应用程序。 
-    -   在 Windows Admin Center 的“访问设置”中单击“更改访问控制”并选择“Azure Active Directory”时，可以使用 UI 中提供的超链接来访问 Azure 门户中的 Azure AD 应用程序。 在单击“保存”并选择 Azure AD 作为访问控制标识提供程序之后，此超链接也在“访问设置”中提供。
-    -   也可在 Azure 门户中找到应用程序，方法是：转到“Azure Active Directory” > “企业应用程序” > “所有应用程序”，搜索 **SME**（Azure AD 应用将以 SME-<gateway> 命名）。 如果没有获得任何搜索结果，请确保将“显示”设置为“所有应用程序”，将“应用程序状态”设置为“任意”并单击“应用”，然后尝试搜索。 找到应用程序以后，请转到“用户和组”
-2.  在“属性”选项卡中，将“需要用户分配”设置为“是”。
-    这样做以后，将只有“用户和组”选项卡中列出的成员能够访问 Windows Admin Center 网关。
-3.  在“用户和组”选项卡中，选择“添加用户”。 必须为每个添加的用户/组分配网关用户或网关管理员角色。
+    -   在 Windows Admin Center 的“访问设置”中单击“更改访问控制”并选择“Azure Active Directory”时，可以使用 UI 中提供的超链接来访问 Azure 门户中的 Azure AD 应用程序。   在单击“保存”并选择 Azure AD 作为访问控制标识提供程序之后，此超链接也在“访问设置”中提供。
+    -   也可在 Azure 门户中找到应用程序，方法是：转到“Azure Active Directory”   > “企业应用程序”   >   “所有应用程序”，搜索 **SME**（Azure AD 应用将以 SME-<gateway> 命名）。 如果没有获得任何搜索结果，请确保将“显示”设置为“所有应用程序”，将“应用程序状态”设置为“任意”并单击“应用”，然后尝试搜索。     找到应用程序以后，请转到“用户和组” 
+2.  在“属性”选项卡中，将“需要用户分配”设置为“是”。 
+    这样做以后，将只有“用户和组”选项卡中列出的成员能够访问 Windows Admin Center 网关。 
+3.  在“用户和组”选项卡中，选择“添加用户”  。 必须为每个添加的用户/组分配网关用户或网关管理员角色。
 
-在“更改访问控制”窗格中保存 Azure AD 访问控制以后，网关服务会重启，你必须刷新浏览器。 可以随时在 Azure 门户中更新 Windows Admin Center Azure AD 应用程序的用户访问权限。 
+在“更改访问控制”窗格中保存 Azure AD 访问控制以后，网关服务会重启，你必须刷新浏览器。  可以随时在 Azure 门户中更新 Windows Admin Center Azure AD 应用程序的用户访问权限。 
 
 当用户尝试访问 Windows Admin Center 网关 URL 时，系统会提示其使用 Azure Active Directory 标识登录。 请记住，用户还必须是网关服务器上“本地用户”的成员才能访问 Windows Admin Center。 
 
-使用 Windows Admin Center 常规设置的“Azure”选项卡，用户和管理员可以查看当前登录的帐户以及注销该 Azure AD 帐户。
+使用 Windows Admin Center 常规设置的“Azure”选项卡，用户和管理员可以查看当前登录的帐户以及注销该 Azure AD 帐户。 
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>条件访问和多重身份验证
 
@@ -111,7 +111,7 @@ ms.locfileid: "78371709"
 
 在 Windows 10 上安装 Windows Admin Center 后，即可使用单一登录。 但是，若要在 Windows Server 上使用 Windows Admin Center，需在环境中设置某种形式的 Kerberos 委托，然后才能使用单一登录。 该委托会将网关计算机配置为值得信任，可以委托到目标节点。 
 
-若要在环境中配置[基于资源的受约束委托](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)，请使用以下 PowerShell 示例。 此示例显示了如何将 Windows Server [node01.contoso.com] 配置为接受从 Windows 管理中心网关 [wac.contoso.com] 到 contoso.com 域中的委派。
+若要在环境中配置[基于资源的受约束委托](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)，请使用以下 PowerShell 示例。 此示例演示如何将 Windows Server [node01.contoso.com] 配置为接受来自 contoso.com 域中 Windows Admin Center 网关 [wac.contoso.com] 的委托。
 
 ```powershell
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount (Get-ADComputer wac)
@@ -148,16 +148,16 @@ Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToA
 若要在单台计算机上启用对基于角色的访问控制的支持，请执行以下步骤：
 
 1.  打开 Windows Admin Center，使用在目标计算机上具有本地管理员特权的帐户连接到要为其配置基于角色的访问控制的计算机。
-2.  在“概览”工具中，单击“设置” > “基于角色的访问控制”。
-3.  单击页面底部的“应用”，在目标计算机上启用对基于角色的访问控制的支持。 应用过程涉及在目标计算机上复制 PowerShell 脚本和调用一项配置（使用 PowerShell Desired State Configuration）。 此过程可能需要长达 10 分钟的时间才能完成，并且会导致 WinRM 重启。 这会临时断开 Windows Admin Center 用户、PowerShell 用户和 WMI 用户的连接。
-4.  刷新页面，检查基于角色的访问控制的状态。 可以使用时，状态会变为“已应用”。
+2.  在“概览”工具中，  单击“设置”   >   “基于角色的访问控制”。
+3.  单击页面底部的“应用”，在目标计算机上启用对基于角色的访问控制的支持。  应用过程涉及在目标计算机上复制 PowerShell 脚本和调用一项配置（使用 PowerShell Desired State Configuration）。 此过程可能需要长达 10 分钟的时间才能完成，并且会导致 WinRM 重启。 这会临时断开 Windows Admin Center 用户、PowerShell 用户和 WMI 用户的连接。
+4.  刷新页面，检查基于角色的访问控制的状态。 可以使用时，状态会变为“已应用”。 
 
 应用配置以后，即可为用户分配角色：
 
-1.  打开“本地用户和组”工具，导航到“组”选项卡。
-2.  选择“Windows Admin Center 读者”组。
-3.  在底部的“详细信息”窗格中，单击“添加用户”，然后输入应该通过 Windows Admin Center 对服务器进行只读访问的用户或安全组的名称。 用户和组可以来自本地计算机，也可以来自 Active Directory 域。
-4.  对“Windows Admin Center Hyper-V 管理员”组和“Windows Admin Center 管理员”组重复步骤 2-3。
+1.  打开“本地用户和组”工具，导航到“组”选项卡。  
+2.  选择“Windows Admin Center 读者”组。 
+3.  在底部的“详细信息”窗格中，单击“添加用户”，然后输入应该通过 Windows Admin Center 对服务器进行只读访问的用户或安全组的名称。   用户和组可以来自本地计算机，也可以来自 Active Directory 域。
+4.  对“Windows Admin Center Hyper-V 管理员”组和“Windows Admin Center 管理员”组重复步骤 2-3。  
 
 也可在整个域中一致地填充这些组，方法是：为组策略对象配置[受限组策略设置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29)。
 

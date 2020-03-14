@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: e8673b9e66a0aa3b6bea89b91ae5022efb26c65c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390511"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323149"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>虚拟化域控制器体系结构
 
@@ -29,7 +29,7 @@ ms.locfileid: "71390511"
 ## <a name="BKMK_CloneArch"></a>虚拟化域控制器克隆体系结构  
   
 ### <a name="overview"></a>概述  
-虚拟化域控制器克隆依赖于虚拟机监控程序平台以显示名为 **VM 生成 ID** 的标识符，用于检测虚拟机的创建。 在域控制器升级期间，AD DS 最初将此标识符的值存储在其数据库 (NTDS.DIT) 中。 虚拟机启动时，将比较虚拟机中 VM 生成 ID 的当前值和数据库中的值。 如果两个值不同，则域控制器重置调用 ID 并弃用 RID 池，从而阻止重复使用 USN 或消除创建重复安全主体的可能性。 然后，域控制器将在 [Cloning Detailed Processing](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails)的步骤 3 中标注的位置上查找 DCCloneConfig.xml 文件。 如果找到 DCCloneConfig.xml 文件，则可以确定正将其部署为克隆，因此它通过使用从源媒体复制过来的现有 NTDS.DIT 和 SYSVOL 内容进行重新升级，从而启动克隆以将其本身设置为额外的域控制器。  
+虚拟化域控制器克隆依赖于虚拟机监控程序平台以显示名为 **VM 生成 ID** 的标识符，用于检测虚拟机的创建。 在域控制器升级期间，AD DS 最初将此标识符的值存储在其数据库 (NTDS.DIT) 中。 虚拟机启动时，将比较虚拟机中 VM 生成 ID 的当前值和数据库中的值。 如果两个值不同，则域控制器重置调用 ID 并弃用 RID 池，从而阻止重复使用 USN 或消除创建重复安全主体的可能性。 然后，此域控制器将在[克隆详细处理](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails)的步骤 3 中标注的位置上查找 DCCloneConfig.xml 文件。 如果找到 DCCloneConfig.xml 文件，则可以确定正将其部署为克隆，因此它通过使用从源媒体复制过来的现有 NTDS.DIT 和 SYSVOL 内容进行重新升级，从而启动克隆以将其本身设置为额外的域控制器。  
   
 在混合环境中（某些虚拟机监控程序支持 VM 生成 ID 而其他虚拟机监控程序不支持），可能会在不支持 VM 生成 ID 的虚拟机监控程序上意外地部署克隆媒体。 DCCloneConfig.xml 文件的存在表明了要克隆 DC 的管理意图。 因此，如果在启动期间找到了 DCCloneConfig.xml 文件，但主机未提供 VM 生成 ID，则克隆 DC 将启动进入目录服务还原模式 (DSRM)，以防对环境的其余部分造成任何影响。 随后，可将克隆媒体移动到支持 VM 生成 ID 的虚拟机监控程序，然后可以重试克隆。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "71390511"
   
     1.  如果这两个 ID 匹配，则表明它不是新虚拟机，将不会继续克隆。 如果存在 DCCloneConfig.xml 文件，则域控制器将使用时间/日期戳重命名该文件以阻止克隆。 服务器将继续正常启动。 此即 Windows Server 2012 中任一虚拟域控制器每次重新启动的运行方式。  
   
-    2.  如果这两个 ID 不匹配，则表示它是新虚拟机，其中包含来自之前域控制器的 NTDS.DIT（或者它是还原的快照）。 如果存在 DCCloneConfig.xml 文件，则域控制器将继续执行克隆操作。 如果不存在，则它将继续执行快照还原操作。 请参阅 [Virtualized domain controller safe restore architecture](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)。  
+    2.  如果这两个 ID 不匹配，则表示它是新虚拟机，其中包含来自之前域控制器的 NTDS.DIT（或者它是还原的快照）。 如果存在 DCCloneConfig.xml 文件，则域控制器将继续执行克隆操作。 如果不存在，则它将继续执行快照还原操作。 请参阅[虚拟化域控制器安全还原体系结构](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)。  
   
     3.  如果虚拟机监控程序没有提供用于比较的 VM 生成 ID，但存在一个 DCCloneConfig.xml 文件，则来宾将重命名该文件，然后启动进入 DSRM 以防网络受重复域控制器的影响。 如果不存在 dccloneconfig.xml 文件，则来宾将正常启动（网络上可能会有重复的域控制器）。 有关如何回收此重复域控制器的详细信息，请参阅 Microsoft 知识库文章 [2742970](https://support.microsoft.com/kb/2742970)。  
   
@@ -94,7 +94,7 @@ ms.locfileid: "71390511"
   
 10. 如果由于空白 DCCloneConfig.xml 网络设置将使用自动 IP 寻址，则来宾在将网络适配器上启用 DHCP，以获得 IP 地址租用、网络路由和名称解析信息。  
   
-11. 来宾定位并联系运行 PDC 模拟器 FSMO 角色的域控制器。 这将使用 DNS 和 DCLocator 协议。 它将建立 RPC 连接并调用方法 IDL_DRSAddCloneDC 克隆域控制器计算机对象。  
+11. 来宾定位并联系运行 PDC 模拟器 FSMO 角色的域控制器。 这将使用 DNS 和 DCLocator 协议。 它将建立 RPC 连接并调用 IDL_DRSAddCloneDC 方法，以克隆域控制器计算机对象。  
   
     1.  如果来宾的源计算机对象保留“允许 DC 创建其自身的克隆”的域标头扩展权限，则克隆将继续。  
   

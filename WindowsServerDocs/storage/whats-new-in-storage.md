@@ -9,15 +9,15 @@ ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
 ms.openlocfilehash: ffcff036a7e30018e523def055ce3aeb8d30c225
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365837"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322329"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 中存储的新增功能
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+>适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 本主题介绍 Windows Server 2019、Windows Server 2016 和 Windows Server 半年版频道版本中存储的新增功能和更改的功能。
 
@@ -103,7 +103,7 @@ Windows Server 2019 中的存储空间直通有很多改进（存储空间直通
 
 - **驱动器延迟异常检测**
 
-    通过主动监视和内置离群值检测，轻松识别具有异常延迟的驱动器，这是 Microsoft Azure 的长期方法和成功方法。 无论是平均延迟还是更微妙的内容（如 99% 百分位的延迟），都将在 PowerShell 中自动标记慢速驱动器，并在 Windows 管理中心中自动标记为 "异常延迟" 状态。
+    通过主动监视和内置离群值检测，轻松识别具有异常延迟的驱动器，这是 Microsoft Azure 的长期方法和成功方法。 无论是平均延迟还是更微妙的内容（如99% 百分位的延迟），都将在 PowerShell 中自动标记慢速驱动器，并在 Windows 管理中心中自动标记为 "异常延迟" 状态。
 
 - **手动分隔卷的分配以提高容错能力**
 
@@ -120,7 +120,7 @@ Windows Server 2019 中的存储空间直通有很多改进（存储空间直通
 - 存储副本复制单个卷而不是无限数量的卷。
 - 卷的大小最大可达 2 TB，而不是无限大小。
 
-#### <a name="storage-replica-log-performance-improvements"></a>存储副本记录性能改进
+#### <a name="storage-replica-log-performance-improvements"></a>存储副本日志性能改进
 
 此外，我们还改进了存储副本日志跟踪复制的方式、提高复制吞吐量和延迟，尤其是在所有闪存存储上，以及在彼此之间相互复制存储空间直通群集之间。
 
@@ -128,7 +128,7 @@ Windows Server 2019 中的存储空间直通有很多改进（存储空间直通
 
 #### <a name="test-failover"></a>测试故障转移
 
-你现在可以在目标服务器上暂时装载复制存储的快照，以便进行测试或备份。 有关详细信息，请参阅[关于存储副本的常见问题](https://aka.ms/srfaq)。
+你现在可以在目标服务器上暂时装载复制存储的快照，以便进行测试或备份。 有关详细信息，请参阅[有关存储副本的常见问题](https://aka.ms/srfaq)。
 
 #### <a name="windows-admin-center-support"></a>Windows Admin Center 支持
 
@@ -143,24 +143,24 @@ Windows Server 2019 中的存储空间直通有很多改进（存储空间直通
 
 ### <a name="smb"></a>SMB
 
-- **SMB1 和来宾身份验证删除**：默认情况下，Windows Server 不再安装 SMB1 客户端和服务器。 此外，SMB2 及更高版本中作为来宾进行身份验证的功能默认情况下处于关闭状态。 有关详细信息，请查看[默认情况下，Windows 10 版本 1709 和 Windows Server 版本 1709 中未安装 SMBv1](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)。 
+- **Smb1 和来宾身份验证删除**：默认情况下，Windows Server 不再安装 SMB1 客户端和服务器。 此外，SMB2 及更高版本中作为来宾进行身份验证的功能默认情况下处于关闭状态。 有关详细信息，请查看[默认情况下，Windows 10 版本 1709 和 Windows Server 版本 1709 中未安装 SMBv1](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)。 
 
 - **SMB2/SMB3 安全性和兼容性**：添加了安全性和应用程序兼容性的附加选项（包括针对旧版应用程序在 SMB2+ 中禁用 oplock 的功能），并且这些选项要求从客户端对每个连接都进行签名或加密。 有关详细信息，请查看 SMBShare PowerShell 模块帮助。
 
 ### <a name="data-deduplication"></a>重复数据删除
 
-- **重复数据删除现在支持 ReFS**：不再需要在现代 ReFS 文件系统的优势与重复数据删除功能之间进行选择：现在，只要可以启用 ReFS，就可以启用重复数据删除。 使用 ReFS 将存储效率提高 95% 以上。
+- **重复数据删除现在支持 ReFS**：你不必再在现代 ReFS 文件系统的优势与重复数据删除功能之间进行选择：现在，只要可以启用 ReFS，你都可以启用重复数据删除。 使用 ReFS 将存储效率提高 95% 以上。
 - **适用于删除了重复数据的卷优化入口/出口的 DataPort API**：开发人员现在可以利用重复数据删除功能所了解的高效数据存储方式，在卷、服务器和群集之间高效移动数据。
 
-### <a name="file-server-resource-manager"></a>文件服务器资源管理器
+### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server 2019 包括阻止文件服务器资源管理器服务在服务启动时创建所有卷上的变更日志（也称为 USN 日志）的功能。 这可以节省每个卷的空间，但将禁用实时文件分类。 有关详细信息，请参阅[文件服务器资源管理器概述](fsrm/fsrm-overview.md)。
+Windows Server 2019 包括阻止文件服务器资源管理器服务在服务启动时创建所有卷上的变更日志（也称为 USN 日志）的功能。 这可以节省每个卷的空间，但会禁用实时文件分类。 有关详细信息，请参阅[文件服务器资源管理器概述](fsrm/fsrm-overview.md)。
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1803"></a>Windows Server 中存储的新增功能，版本1803
 
-### <a name="file-server-resource-manager"></a>文件服务器资源管理器
+### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server 版本1803包括阻止文件服务器资源管理器服务在服务启动时创建所有卷上的变更日志（也称为 USN 日志）的功能。 这可以节省每个卷的空间，但将禁用实时文件分类。 有关详细信息，请参阅[文件服务器资源管理器概述](fsrm/fsrm-overview.md)。
+Windows Server 版本1803包括阻止文件服务器资源管理器服务在服务启动时创建所有卷上的变更日志（也称为 USN 日志）的功能。 这可以节省每个卷的空间，但会禁用实时文件分类。 有关详细信息，请参阅[文件服务器资源管理器概述](fsrm/fsrm-overview.md)。
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>Windows Server 中存储的新增功能，版本1709
 
@@ -172,8 +172,8 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 
 存储副本添加的灾难恢复保护现在已扩展为包括：
 
-- **测试故障转移**：现在可以通过测试故障转移功能来选择安装目标存储。 可以在目标节点上临时安装复制的存储的快照以便进行测试或备份。 有关详细信息，请参阅[关于存储副本的常见问题](https://aka.ms/srfaq)。
-- **Windows 管理中心支持**：现在，通过服务器管理器工具在 Windows 管理中心中提供对复制的图形管理的支持。 这包括服务器到服务器复制、群集到群集以及 stretch 群集复制。
+- **测试故障转移**：现在可以通过测试故障转移功能来选择安装目标存储。 可以在目标节点上临时安装复制的存储的快照以便进行测试或备份。 有关详细信息，请参阅[有关存储副本的常见问题](https://aka.ms/srfaq)。
+- **Windows 管理中心支持**：现在，通过服务器管理器工具在 windows 管理中心中提供对复制的图形管理的支持。 这包括服务器到服务器复制、群集到群集以及 stretch 群集复制。
 
 存储副本还包含以下改进：
 
@@ -188,7 +188,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 
 ### <a name="data-deduplication"></a>重复数据删除
 
-- **重复数据删除现在支持 ReFS**：不再需要在现代 ReFS 文件系统的优势与重复数据删除功能之间进行选择：现在，只要可以启用 ReFS，就可以启用重复数据删除。 使用 ReFS 将存储效率提高 95% 以上。
+- **重复数据删除现在支持 ReFS**：你不必再在现代 ReFS 文件系统的优势与重复数据删除功能之间进行选择：现在，只要可以启用 ReFS，你都可以启用重复数据删除。 使用 ReFS 将存储效率提高 95% 以上。
 - **适用于删除了重复数据的卷优化入口/出口的 DataPort API**：开发人员现在可以利用重复数据删除功能所了解的高效数据存储方式，在卷、服务器和群集之间高效移动数据。
 
 ## <a name="whats-new-in-storage-in-windows-server-2016"></a>Windows Server 2016 中存储方面的新增功能
@@ -249,13 +249,13 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 有关详细信息，请参阅[存储服务质量](storage-qos/storage-qos-overview.md)
 
 ### <a name="dedup"></a>重复数据删除  
-| 功能 | 新功能或更新功能 | 描述 |
+| 功能 | 新功能或更新功能 | 说明 |
 |---------------|----------------|-------------|
 | [支持大型卷](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，必须专门调整卷的大小实现预期改动，大小超过 10 TB 的卷不适合进行重复数据删除。 在 Windows Server 2016 中，重复数据删除支持**高达 64 TB** 的卷大小。 |
 | [支持大型文件](data-deduplication/whats-new.md#large-file-support) | 已更新 | 在 Windows Server 2016 之前，大小接近 1 TB 的文件不适合进行重复数据删除。 在 Windows Server 2016 中，完全支持**高达 1 TB** 的文件。 |
-| [支持 Nano Server](data-deduplication/whats-new.md#nano-server-support) | 新增 | 重复数据删除在 Windows Server 2016 的新 Nano Server 部署选项中可用且完全受支持。 |
-| [简化的备份支持](data-deduplication/whats-new.md#simple-backup-support) | 新增 | 在 Windows Server 2012 R2 中，通过一系列手动配置步骤支持虚拟化备份应用程序，如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) 在 Windows Server 2016 中，已针对虚拟化备份应用程序的重复数据删除的无缝部署添加了新的默认使用类型“备份”。 |
-| [支持群集操作系统滚动升级](data-deduplication/whats-new.md#cluster-upgrade-support) | 新增 | 重复数据删除完全支持 Windows Server 2016 的新的[群集操作系统滚动升级](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
+| [支持 Nano Server](data-deduplication/whats-new.md#nano-server-support) | 新建 | 重复数据删除在 Windows Server 2016 的新 Nano Server 部署选项中可用且完全受支持。 |
+| [简化的备份支持](data-deduplication/whats-new.md#simple-backup-support) | 新建 | 在 Windows Server 2012 R2 中，通过一系列手动配置步骤支持虚拟化备份应用程序，如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) 在 Windows Server 2016 中，已针对虚拟化备份应用程序的重复数据删除的无缝部署添加了新的默认使用类型“备份”。 |
+| [支持群集操作系统滚动升级](data-deduplication/whats-new.md#cluster-upgrade-support) | 新建 | 重复数据删除完全支持 Windows Server 2016 的新的[群集操作系统滚动升级](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
 
 ### <a name="smb-hardening-improvements"></a>SYSVOL 和 NETLOGON 连接的 SMB 强化改进  
 在到默认的 Active Directory 域服务 SYSVOL 和 NETLOGON 的 Windows 10 和 Windows Server 2016 客户端连接中，域控制器上的共享现在要求 SMB 签名和相互身份验证（例如 Kerberos)。   
@@ -269,7 +269,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 > [!NOTE]  
 > 这些设置的注册表值默认情况下并不出现，但在被组策略或其他注册表值替代前，强化规则仍然适用。  
 
-有关这些安全改进的详细信息（也称为 UNC 强化），请参阅 Microsoft 知识库文章[3000483](https://support.microsoft.com/kb/3000483)和[MS15-011 & MS15-014：强化组策略](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy)。  
+有关这些安全改进（也称为 UNC 强化）的详细信息，请参阅 Microsoft 知识库文章 [3000483](https://support.microsoft.com/kb/3000483) 和 [MS15-011 & MS15-014：强化组策略](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy)。  
 
 ### <a name="work-folders"></a>工作文件夹
 改进了工作文件夹服务器运行 Windows Server 2016 和工作文件夹客户端时的更改通知。
@@ -297,5 +297,5 @@ ReFS 做了以下改进：
 **工作原理的不同之处是什么？**<br>
 这些功能是 Windows Server 2016 中的新增功能。 
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 * [Windows Server 2016 中的新增功能](../get-started/what-s-new-in-windows-server-2016.md)  

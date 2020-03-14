@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: e53b267f1319681f4a1914b16aaed149134054a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407070"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322969"
 ---
 # <a name="dynamic-access-control-scenario-overview"></a>动态访问控制：方案概述
 
@@ -45,7 +45,7 @@ ms.locfileid: "71407070"
   
 ## <a name="BKMK_APP"></a>动态访问控制内容路线图  
   
-|应用场景|评估|规划|部署|操作|  
+|方案|评估|计划|部署|操作|  
 |------------|------------|--------|----------|-----------|  
 |**方案：中心访问策略**<br /><br />创建文件的中央访问策略允许组织集中部署和管理授权策略，包括使用用户声明、设备声明和资源属性的条件表达式。 这些策略建立在合规性与业务监管要求之上。 这些策略在 Active Directory 中创建与托管，因此使得管理和部署更为容易。<br /><br />**跨林部署声明**<br /><br />在 Windows Server 2012 中，AD DS 维护每个林中的 "声明字典"，并且在林中使用的所有声明类型都在 Active Directory 林级别定义。 有许多方案，其中主体可能要遍历信任边界。 此方案描述了声明如何遍历信任边界。|[动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)<br /><br />[跨林部署声明](Deploy-Claims-Across-Forests.md)|[计划：中心访问策略部署](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f)<br /><br />将[业务请求映射到中心访问策略 -   过程](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_1)<br />-   [动态访问控制的管理委派](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_3.1)<br />[规划中心访问策略 -   异常机制](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_3.2)<br /><br />使用用户声明的最佳实践<br /><br />-   在[用户域中选择正确的配置以启用声明](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_DC_OP3)<br />[用于启用用户声明的 -   操作](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_3.4.2)<br />[在不使用中心访问策略的情况下，在文件服务器中使用用户声明](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_5)的 -   注意事项<br /><br />[使用设备声明和设备安全组](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_DeviceClaims)<br /><br />[使用静态设备声明 -   注意事项](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_4.1)<br />[启用设备声明 -   操作](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_4.3)<br /><br />部署工具<br /><br />-   [数据分类工具包](https://go.microsoft.com/fwlink/?LinkId=%20244300)|[部署中心访问策略&#40;演示步骤&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)<br /><br />[跨林&#40;部署声明演示步骤&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)|-对中心访问策略建模|  
 |**方案：文件访问审核**<br /><br />安全审核是用来帮助维护企业安全的功能最强大的工具之一。 安全审核的主要目标之一就是监管合规。 例如，像 Sarbanes Oxley、HIPAA 和 Payment Card Industry (PCI) 这类的行业标准要求企业遵守与数据安全和隐私权有关的一套严格的规则。 安全审核可以帮助确定此类策略是否存在；由此它们证明是否与这些标准相符。 此外，通过创建可用于取证分析的用户活动记录，安全审核可帮助发现异常的行为、识别并缓和在安全策略方面的差距并阻止不负责任的行为。|[方案：文件访问审核](Scenario--File-Access-Auditing.md)|[文件访问审核计划](Plan-for-File-Access-Auditing.md)|[利用中心审核策略&#40;部署安全审核演示步骤&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)|-   [监视在文件服务器上应用的中心访问策略](https://technet.microsoft.com/library/jj574188.aspx)<br />-   [监视与文件和文件夹相关的中央访问策略](https://technet.microsoft.com/library/jj574198.aspx)<br />-   [监视文件和文件夹上的资源属性](https://technet.microsoft.com/library/jj574208.aspx)<br />-   [监视器声明类型](https://technet.microsoft.com/library/jj574086.aspx)<br />[在登录过程中 -   监视用户和设备声明](https://technet.microsoft.com/library/jj574082.aspx)<br />-   [监视器中心访问策略和规则定义](https://technet.microsoft.com/library/jj574115.aspx)<br />-   [监视器资源属性定义](https://technet.microsoft.com/library/jj574155.aspx)<br />-   [监视可移动存储设备的使用情况](https://technet.microsoft.com/library/jj574128.aspx)。|  
@@ -59,7 +59,7 @@ ms.locfileid: "71407070"
   
 ## <a name="BKMK_LINKS"></a>另请参阅  
   
-|内容类型|引用|  
+|内容类型|参考|  
 |----------------|--------------|  
 |**产品评估**|-   [动态访问控制审阅者指南](https://go.microsoft.com/fwlink/?LinkId=244309)<br />-   [动态访问控制开发人员指南](https://go.microsoft.com/fwlink/?LinkId=245870)|  
 |**规划**|-   [规划中心访问策略部署](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f)<br />-   [规划文件访问审核](Plan-for-File-Access-Auditing.md)|  

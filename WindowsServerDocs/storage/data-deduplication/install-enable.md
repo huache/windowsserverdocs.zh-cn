@@ -10,11 +10,11 @@ ms.author: wgries
 ms.date: 05/09/2017
 description: 如何在 Windows Server 上安装重复数据删除，如何确定工作负荷是否适合进行重复数据删除，以及如何在卷上启用重复数据删除。
 ms.openlocfilehash: 36c9894fd8916643340134698f36af3bd50c34d8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402328"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322419"
 ---
 # <a name="install-and-enable-data-deduplication"></a>安装和启用重复数据删除
 > 适用于 Windows Server（半年频道）、Windows Server 2016
@@ -116,7 +116,7 @@ ms.locfileid: "71402328"
 #### <a id="enable-dedup-via-server-manager"></a>使用服务器管理器启用重复数据删除
 1. 选择“服务器管理器”中的“**文件和存储服务**”。  
 ![单击 "文件和存储服务"](media/enable-dedup-via-server-manager-1.PNG)
-2. 从**文件和存储服务**中选择**卷**。  
+2. 从“**文件和存储服务**”中选择“**卷**”。  
 ![单击卷](media/enable-dedup-via-server-manager-2.png)
 3. 右键单击所需的卷，并选择“**配置重复数据删除**”。  
 ![单击 "配置重复数据删除"](media/enable-dedup-via-server-manager-3.png)

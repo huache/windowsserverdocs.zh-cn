@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: ffc2849fa5e18f7984814d6187cf83d68566409b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369643"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323239"
 ---
 # <a name="simplified-administration-appendix"></a>简化管理附录
 
@@ -81,7 +81,7 @@ Get-Module -ListAvailable
   
 ```  
   
-使用**import-module**命令的主要情况是需要访问 "AD："Windows PowerShell 虚拟驱动器，但没有其他任何内容已加载该模块。 例如，使用以下命令：  
+使用**import-module**命令的主要情况是，需要访问 "AD：" Windows PowerShell 虚拟驱动器，但没有其他任何内容已加载该模块。 例如，使用以下命令：  
   
 ```  
 import-module activedirectory  

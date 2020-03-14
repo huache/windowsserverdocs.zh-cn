@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d9002a1530e114f490ddf1cfb0e5706ddec52431
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371191"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322129"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的系统运行状况
 

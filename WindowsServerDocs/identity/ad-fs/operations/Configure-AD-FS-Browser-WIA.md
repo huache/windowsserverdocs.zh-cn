@@ -4,17 +4,17 @@ description: 本文档介绍如何将浏览器配置为将 WIA 与 AD FS
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 05/31/2017
+ms.date: 03/20/2020
 ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6223d261467f1e73b22d5035a73c37868081cef7
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 47ef535c7e761f9de8331b80508703421feb68e9
+ms.sourcegitcommit: 5197a87e659589bcc8d2a32069803ae736b02892
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465251"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376254"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>通过 AD FS 将浏览器配置为使用 Windows 集成身份验证（WIA）
 
@@ -44,25 +44,37 @@ AD FS 2016 现在提供了一个改进的默认设置，使边缘浏览器可以
 ### <a name="change-wiasupporteduseragent-settings"></a>更改 WIASupportedUserAgent 设置
 默认情况下，新的 AD FS 安装会创建一组用户代理字符串匹配项。 但是，这些更改可能基于对浏览器和设备的更改而过期。 尤其是，Windows 设备具有类似的用户代理字符串，这些字符串在令牌中具有较小的变化。 以下 Windows PowerShell 示例为当前在市场上支持无缝 WIA 的一组设备提供了最佳指导：
 
+如果在 Windows Server 2012 R2 或更早版本上有 AD FS：
+
 ```powershell
-    Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client")
+   Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client", "Edg/79.0.309.43")
+```
+
+如果在 Windows Server 2016 或更高版本上有 AD FS：
+
+```powershell
+   Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client", "Edg/*")
 ```
 
 上述命令将确保 AD FS 仅涵盖 WIA 的以下用例：
 
-用户代理|用例|
------|-----|
-MSIE 6。0|IE 6。0|
-MSIE 7.0;Windows NT|IE 7、IE 在 intranet 区域中。 桌面操作系统发送 "Windows NT" 片段。|
-MSIE 8。0|IE 8.0 （无设备发送此信息，因此需要更具体的信息）|
-MSIE 9。0|IE 9.0 （无设备发送此信息，因此无需再进行此操作）|
-MSIE 10.0;Windows NT 6|适用于 Windows XP 和更高版本的桌面操作系统的 IE 10。0</br></br>将排除 Windows Phone 8.0 设备（将首选项设置为 "移动"），因为它们发送</br></br>用户代理： Mozilla/5.0 （兼容;MSIE 10.0;Windows Phone 8.0;Trident/6.0;IEMobile/10.0;单臂接触NOKIALumia 920）|
-Windows NT 6.3;Trident/7。0</br></br>Windows NT 6.3;Win6464Trident/7。0</br></br>Windows NT 6.3;WOW64Trident/7。0| Windows 8.1 桌面操作系统，不同的平台|
-Windows NT 6.2;Trident/7。0</br></br>Windows NT 6.2;Win6464Trident/7。0</br></br>Windows NT 6.2;WOW64Trident/7。0|Windows 8 桌面操作系统，不同平台|
-Windows NT 6.1;Trident/7。0</br></br>Windows NT 6.1;Win6464Trident/7。0</br></br>Windows NT 6.1;WOW64Trident/7。0|Windows 7 桌面操作系统，不同平台|
-Edg/79.0.309.43 | Microsoft Edge （Chromium） | 
-“MSIPC”| Microsoft Information Protection and Control 客户端|
-Windows Rights Management 客户端|Windows Rights Management 客户端|
+
+
+|用户代理|用例|
+|-----|-----|
+|MSIE 6。0|IE 6。0|
+|MSIE 7.0;Windows NT|IE 7、IE 在 intranet 区域中。 桌面操作系统发送 "Windows NT" 片段。|
+|MSIE 8。0|IE 8.0 （无设备发送此信息，因此需要更具体的信息）|
+|MSIE 9。0|IE 9.0 （无设备发送此信息，因此无需再进行此操作）|
+|MSIE 10.0;Windows NT 6|适用于 Windows XP 和更高版本的桌面操作系统的 IE 10。0</br></br>将排除 Windows Phone 8.0 设备（将首选项设置为 "移动"），因为它们发送</br></br>用户代理： Mozilla/5.0 （兼容;MSIE 10.0;Windows Phone 8.0;Trident/6.0;IEMobile/10.0;单臂接触NOKIALumia 920）|
+|Windows NT 6.3;Trident/7。0</br></br>Windows NT 6.3;Win6464Trident/7。0</br></br>Windows NT 6.3;WOW64Trident/7。0| Windows 8.1 桌面操作系统，不同的平台|
+|Windows NT 6.2;Trident/7。0</br></br>Windows NT 6.2;Win6464Trident/7。0</br></br>Windows NT 6.2;WOW64Trident/7。0|Windows 8 桌面操作系统，不同平台|
+|Windows NT 6.1;Trident/7。0</br></br>Windows NT 6.1;Win6464Trident/7。0</br></br>Windows NT 6.1;WOW64Trident/7。0|Windows 7 桌面操作系统，不同平台|
+|Edg/79.0.309.43 | 适用于 Windows Server 2012 R2 或更早版本的 Microsoft Edge （Chromium） |
+|Edg/*| 适用于 Windows Server 2016 或更高版本的 Microsoft Edge （Chromium）|  
+|“MSIPC”| Microsoft Information Protection and Control 客户端|
+|Windows Rights Management 客户端|Windows Rights Management 客户端|
+
 
 ### <a name="additional-links"></a>更多链接
 

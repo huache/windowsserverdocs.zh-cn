@@ -10,15 +10,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371556"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323199"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 域服务安装和删除的新功能
 
->适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
+>适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 2012 中的 Active Directory 域服务（AD DS）部署比以前版本的 Windows Server 更简单、更快。 AD DS 安装过程现在构建在 Windows PowerShell 上且与服务器管理器集成。 将域控制器引入现有 Active Directory 环境所需的步骤数减少。 这使得创建新 Active Directory 环境的过程更简单、更高效。 新 AD DS 部署过程可将会阻止安装的错误率降到最低。  
   
@@ -168,7 +168,7 @@ Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化
 
    这种情况下返回的错误消息如下：  
 
-   无法连接到复制源域控制器*源域控制器名称*。 （异常：Logonfailure：用户名未知或密码错误）  
+   无法连接到复制源域控制器 *源域控制器名称*。 （异常：Logonfailure：用户名未知或密码错误）  
 
    如果让目标服务器加入域，然后使用智能卡执行安装，安装成功。  
   

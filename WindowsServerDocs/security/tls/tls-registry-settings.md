@@ -13,11 +13,11 @@ ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
 ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371387"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322399"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>传输层安全性（TLS）注册表设置
 

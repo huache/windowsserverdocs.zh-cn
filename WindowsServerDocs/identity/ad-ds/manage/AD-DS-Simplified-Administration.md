@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371515"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323159"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 简化管理
 
@@ -195,11 +195,11 @@ Adprep 不再要求在架构主机上运行。 它可从运行 Windows Server 20
 
 ||||  
 |-|-|-|  
-|测试名称|协议<br /><br />已使用|说明和备注|  
+|测试名称|协议<br /><br />“已使用”|说明和备注|  
 |VerifyAdminTrusted<br /><br />ForDelegationProvider|LDAP|验证你在现有伙伴域控制器上有“使计算机和用户帐户可以受信任且可以委派”(SeEnableDelegationPrivilege) 权限。 这需要你构造的 tokenGroups 属性的访问权限。<br /><br />在联系 Windows Server 2003 域控制器时不使用。 你必须在升级前手动确认此权限|  
 |VerifyADPrep<br /><br />先决条件（林）|LDAP|使用 rootDSE namingContexts 属性和架构命名上下文 fsmoRoleOwner 属性发现并联系架构主机。 确定 AD DS 安装需要哪些预备操作（forestprep、domainprep 或 rodcprep）。 验证架构 objectVersion 是否和预料的一样以及它是否需要进一步扩展。|  
 |VerifyADPrep<br /><br />先决条件（域和 RODC）|LDAP|使用 rootDSE namingContexts 属性和基础结构容器 fsmoRoleOwner 属性发现并联系基础结构主机。 对于 RODC 安装，此测试发现域命名主机，并确保它处于联机状态。|  
-|CheckGroup<br /><br />Membership|LDAP、<br /><br />RPC over SMB (LSARPC)|根据操作验证用户是 Domain Admins 还是 Enterprise Admins 组的成员（添加或降级域控制器对应 DA，添加或删除域则对应 EA）|  
+|CheckGroup<br /><br />成员身份|LDAP、<br /><br />RPC over SMB (LSARPC)|根据操作验证用户是 Domain Admins 还是 Enterprise Admins 组的成员（添加或降级域控制器对应 DA，添加或删除域则对应 EA）|  
 |CheckForestPrep<br /><br />GroupMembership|LDAP、<br /><br />RPC over SMB (LSARPC)|验证用户是 Schema Admins 和 Enterprise Admins 组的成员，并且在现有域控制器上具有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
 |CheckDomainPrep<br /><br />GroupMembership|LDAP、<br /><br />RPC over SMB (LSARPC)|验证用户是 Domain Admins 组的成员并且在现有域控制器上有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
 |CheckRODCPrep<br /><br />GroupMembership|LDAP、<br /><br />RPC over SMB (LSARPC)|验证用户是 Enterprise Admins 组的成员并且在现有域控制器上有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  

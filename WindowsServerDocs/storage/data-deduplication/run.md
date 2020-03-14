@@ -9,11 +9,11 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 86aff55b4c548ccf4fcbb04cc477dd63a889bebd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403202"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322629"
 ---
 # <a name="running-data-deduplication"></a>运行重复数据删除
 
@@ -23,8 +23,8 @@ ms.locfileid: "71403202"
 
 你可以使用以下 PowerShell cmdlet 手动运行每个预定的重复数据删除作业：
 * [`Start-DedupJob`](https://technet.microsoft.com/library/hh848442.aspx)：启动新的重复数据删除作业
-* [`Stop-DedupJob`](https://technet.microsoft.com/library/hh848439.aspx)：停止正在进行的重复数据删除作业（或将其从队列中删除）
-* [`Get-DedupJob`](https://technet.microsoft.com/library/hh848452.aspx)：显示所有活动和已排队的重复数据删除作业
+* [`Stop-DedupJob`](https://technet.microsoft.com/library/hh848439.aspx)：停止进行中的重复数据删除作业（或将其从队列中删除）
+* [`Get-DedupJob`](https://technet.microsoft.com/library/hh848452.aspx)：显示所有活动和已排队重复数据删除作业
 
 [预定重复数据删除作业时可用的所有设置](advanced-settings.md#modifying-job-schedules-available-settings)也可在你手动启动作业时使用（排定特定的设置除外）。 例如，要手动启动具有高优先级、最大 CPU 使用率和最大内存使用量的[优化](understand.md#job-info-optimization)作业，请使用管理员特权执行以下 PowerShell 命令：
 
@@ -66,4 +66,4 @@ Start-DedupJob -Type Unoptimization -Volume <Desired-Volume>
 
 ## <a id="faq"></a>常见问题
 **是否有可用于监视重复数据删除的 System Center Operations Manager 管理包？**  
-是。 可通过 System Center 文件服务器管理包监控重复数据删除。 有关详细信息，请参阅[文件服务器 2012 R2 的 System Center 管理包指南](https://download.microsoft.com/download/6/F/7/6F7A33B9-9383-48ED-9252-23C2C8AD1BDA/MPGuide_FileServer2012R2.doc)文档。
+可以。 可通过 System Center 文件服务器管理包监控重复数据删除。 有关详细信息，请参阅[文件服务器 2012 R2 的 System Center 管理包指南](https://download.microsoft.com/download/6/F/7/6F7A33B9-9383-48ED-9252-23C2C8AD1BDA/MPGuide_FileServer2012R2.doc)文档。
