@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ca68087ad238cbbd06c56e41dd65f318adae5222
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 1b2ea23e95796f6cce90a1dc90de896c2242084a
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465471"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79319991"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS 客户端入门
 
@@ -164,7 +164,7 @@ Mac 键盘布局与 Windows 键盘布局不同。
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>对远程桌面网关可插入身份验证和授权的支持
 
-Windows Server 2012 R2 引入了对新身份验证方法（即远程桌面网关可插入身份验证和授权）的支持，该方法可为自定义身份验证例程提供更高的灵活性。 现在可以将此身份验证模型与 Mac 客户端结合使用。 
+Windows Server 2012 R2 引入了对新身份验证方法（即远程桌面网关可插入身份验证和授权）的支持，该方法可为自定义身份验证例程提供更高的灵活性。 现在可以通过 Mac 客户端尝试此身份验证模型。 
 
 > [!IMPORTANT]
 > 不支持 Windows 8.1 之前的自定义身份验证和授权模型，尽管上面的文章讨论了它们。
@@ -174,4 +174,3 @@ Windows Server 2012 R2 引入了对新身份验证方法（即远程桌面网关
 
 > [!TIP]
 > 欢迎提出问题和意见。 但是，请不要使用本文末尾的评论功能来请求获取故障排除帮助。 而是转到[远程桌面客户端论坛](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)并启动一个新线程。 有功能建议？ 请在[客户端用户心声论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。
-

@@ -9,11 +9,11 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 1d0677cec134ddeb4c706d0f1231f2c26b39967e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403212"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322639"
 ---
 # <a name="advanced-data-deduplication-settings"></a>高级重复数据删除设置
 
@@ -26,10 +26,10 @@ ms.locfileid: "71403212"
 
 ### <a id="modifying-job-schedules-change-schedule"></a>更改重复数据删除计划
 重复数据删除作业通过 Windows 任务计划程序进行计划，且可以在路径 Microsoft\Windows\Deduplication 下查看并编辑。 重复数据删除包括可轻松执行计划的几个 cmdlet。
-* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx)显示当前的计划作业。
-* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx)创建新的计划作业。
-* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx)修改现有的计划作业。
-* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx)删除计划的作业。
+* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) 显示当前的计划作业。
+* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx) 创建新的计划作业。
+* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx) 修改现有的计划作业。
+* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx) 删除计划作业。
 
 在重复数据删除作业运行时对其进行更改的最常见的原因是确保作业在空闲时间运行。 以下分步示例演示如何为*晴天*方案（在周末和工作日晚上 7:00 以后空闲的超聚合 Hyper-V 主机）修改重复数据删除计划。 若要更改计划，在管理员上下文中运行以下 PowerShell cmdlet。
 
@@ -69,14 +69,14 @@ ms.locfileid: "71403212"
     <thead>
         <tr>
             <th style="min-width:125px">参数名称</th>
-            <th>定义</th>
+            <th>Definition</th>
             <th>可接受的值</th>
             <th>为什么想要设置此值？</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>在任务栏的搜索框中键入</td>
+            <td>类型</td>
             <td>应计划的作业类型</td>
             <td>
                 <ul>
@@ -114,7 +114,7 @@ ms.locfileid: "71403212"
             <td>计划的作业必须至少运行一天。</td>
         </tr>
         <tr>
-            <td>核心</td>
+            <td>内核数</td>
             <td>系统上作业应使用的核心数的百分比</td>
             <td>整数 0-100（表示百分比）</td>
             <td>控制作业对系统上的计算资源具有的影响级别</td>
@@ -152,7 +152,7 @@ ms.locfileid: "71403212"
         <tr>
             <td>名称</td>
             <td>计划作业的名称</td>
-            <td>字符串</td>
+            <td>String</td>
             <td>作业必须具有唯一的可识别名称。</td>
         </tr>
         <tr>
@@ -162,7 +162,7 @@ ms.locfileid: "71403212"
             <td>你想要手动还原位于坏的磁盘区域的文件。</td>
         </tr>
         <tr>
-            <td>开始时间</td>
+            <td>Start</td>
             <td>指定作业应开始的时间</td>
             <td><code>System.DateTime</code></td>
             <td>提供给<em>开始</em><code>System.Datetime</code> 的&#39;<em>日期</em>部分不相关（只要它在过去），但时间部分指定作业应该启动的<em>时间</em>。</td>
@@ -200,7 +200,7 @@ ms.locfileid: "71403212"
     <thead>
         <tr>
             <th style="min-width:125px">设置名称</th>
-            <th>定义</th>
+            <th>Definition</th>
             <th>可接受的值</th>
             <th>为什么想要修改此值？</th>
         </tr>
@@ -296,7 +296,7 @@ ms.locfileid: "71403212"
     <thead>
         <tr>
             <th style="min-width:125px">设置名称</th>
-            <th>定义</th>
+            <th>Definition</th>
             <th>可接受的值</th>
             <th>为什么想要更改此设置？</th>
         </tr>

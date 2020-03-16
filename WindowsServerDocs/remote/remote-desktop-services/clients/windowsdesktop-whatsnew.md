@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 02/25/2020
+ms.date: 03/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f435892f0a200056c08094cac1831c710a47a6be
-ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
+ms.openlocfilehash: 981a9071b3f5daf1ca97dcde8a8b32b2a2588d99
+ms.sourcegitcommit: fc900eb19ac26c3d6bc2de179cc4b2c1e971043e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77608794"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79038060"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -31,7 +31,21 @@ ms.locfileid: "77608794"
 |用户组 |版本  |
 |-----------|---------|
 |公用     |1.2.675  |
-|Insider    |1.2.675  |
+|Insider    |1.2.787  |
+
+## <a name="updates-for-version-12787"></a>针对版本 1.2.787 的更新
+
+*发布日期：2020/03/10*
+
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qZVh)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qXhC)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qRVA)
+
+- 已将工作区的“更新”操作重命名为“刷新”，以与其他远程桌面客户端保持一致。
+- 现在可以直接从工作区的上下文菜单刷新工作区。
+- 手动刷新工作区现在可确保更新所有本地内容。
+- 现在可以从“关于”页重置客户端的用户数据，无需卸载该应用。
+- 还可以将 msrdcw.exe /reset 与可选参数 /f 配合使用来跳过提示，从而重置客户端的用户数据。
+- 现在，导航到“关于”页时，我们会自动查找客户端更新。
+- 更新了按钮的颜色以保持一致。
 
 ## <a name="updates-for-version-12675"></a>针对版本 1.2.675 的更新
 
@@ -54,7 +68,7 @@ ms.locfileid: "77608794"
 
 - 现在可以选择要用于桌面连接的显示器。 若要更改此设置，请右键单击桌面连接的图标，然后选择“设置”  。
 - 修复了连接设置未显示正确的可用缩放系数的问题。
-- 修复了讲述人无法读取连接启动时显示的对话框的问题。
+- 修复了“讲述人”无法读取在连接启动时显示的对话框的问题。
 - 修复了在 Azure Active Directory 名称和 Active Directory 名称不匹配时显示错误用户名的问题。
 - 修复了在未连接网络的情况下启动连接时客户端停止响应的问题。
 - 修复了在附加耳机时导致客户端停止响应的问题。

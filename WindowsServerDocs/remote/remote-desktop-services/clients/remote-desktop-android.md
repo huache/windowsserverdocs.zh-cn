@@ -12,14 +12,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/02/2019
+ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0fa7009c4a8fe53810f8b5f058e659c2391dc1
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.openlocfilehash: d4ef08107c816aebf6563e57e5e76b12b793d472
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370667"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323419"
 ---
 # <a name="get-started-with-the-android-client"></a>Android 客户端入门
 
@@ -103,7 +103,7 @@ ms.locfileid: "78370667"
 
 1. 点击“应用”  以启动应用菜单。
 2. 点击“小组件”  。
-3. 轻扫小组件，查找带有“固定远程桌面”说明的远程桌面图标。
+3. 轻扫小组件，查找带有以下说明的图标：“固定远程桌面”。
 4. 点击并按住远程桌面小组件，将其移动到主屏幕。
 5. 释放图标时，将看到保存的远程桌面。 选择要保存到主屏幕的连接。
 
@@ -185,7 +185,7 @@ ms.locfileid: "78370667"
 ### <a name="start-a-remote-desktop-connection"></a>启动远程桌面连接
 
 1. 点击**远程桌面连接的名称**以启动会话。
-2. 如果要求验证远程桌面的证书，请点击“连接”  。 还可以选择“不再询问是否连接到此计算机”  ，在默认情况下始终接受证书。
+2. 如果要求验证远程桌面的证书，请点击“连接”  。 还可以选择“不再询问是否连接到此计算机”  ，以便在默认情况下始终接受证书。
 
 ### <a name="connection-bar"></a>连接栏
 
@@ -223,9 +223,17 @@ ms.locfileid: "78370667"
 |---------------|----------------------|-------------------------------------------------------------------------|
 | 直接触摸  | 左键单击           | 单指点击                                                     |
 | 直接触摸  | 右键单击          | 单指点击并按住，然后松开                              |
-| 鼠标指针 | 缩放                 | 双指捏合即可缩小，双指分开即可放大。 |
+| 鼠标指针 | Zoom                 | 双指捏合即可缩小，双指分开即可放大。 |
 | 鼠标指针 | 左键单击           | 单指点击                                                     |
 | 鼠标指针 | 左键单击并拖动  | 单指双击并按住，然后拖动                          |
 | 鼠标指针 | 右键单击          | 双指点击                                                    |
 | 鼠标指针 | 右键单击并拖动 | 双指双击并按住，然后拖动                         |
 | 鼠标指针 | 鼠标滚轮          | 双指点击并按住，然后向上或向下拖动                     |
+
+## <a name="join-the-beta-channel"></a>加入 Beta 通道
+
+如果你想要在任何其他人之前访问最新功能，或想要帮助在新版本发布之前识别问题，则 Beta 通道适用于你！ 使用 Beta 通道也是企业管理员为其环境中的用户验证新版本的 Android 客户端的好方法。
+
+若要加入 Beta，只需同意访问预览版，然后下载客户端。 你将直接通过 Google Play 商店接收预览版。
+
+[加入 Beta](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)
