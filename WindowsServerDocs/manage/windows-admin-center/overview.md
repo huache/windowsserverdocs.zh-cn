@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: 7b3a75258086a73fbd618c2e8221454d7e616556
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bb2f6d7fcbf18ef9bc67534982d1a98fdc5172a1
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949987"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79320031"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -37,7 +37,7 @@ Windows Admin Center 是本地部署的基于浏览器的应用，用于管理 W
 
 |     |     |
 | --- | --- |
-| ![](media/simple-icon.png)| **简化服务器管理** <br/> 使用服务器管理器等熟悉的工具的新式版本管理你的服务器和群集。 5 分钟内即可完成安装并立即在你的环境中管理服务器，无需目标配置。 有关详细信息，请参阅[什么是 Windows Admin Center？](understand/what-is.md)。 |
+| ![](media/simple-icon.png)| **简化服务器管理** <br/> 使用服务器管理器等熟悉的工具的新式版本管理你的服务器和群集。 5 分钟内即可完成安装并立即在你的环境中管理服务器，无需其他配置。 有关详细信息，请参阅[什么是 Windows Admin Center？](understand/what-is.md)。 |
 | ![](media/future-icon.png)| **与混合解决方案结合使用** <br/> 与 Azure 的集成可帮助你选择性地将本地服务器与相关云服务相连。 有关详细信息，请参阅 [Azure 混合服务](azure/index.md) |
 | ![](media/secure-icon.png)| **简化超融合管理** <br/> 简化 Azure Stack HCI 或 Windows Server 超融合群集的管理。 使用简化的工作负载创建和管理 VM、存储空间直通卷和软件定义的网络等等。 有关详细信息，请参阅[能否使用 Windows Admin Center 管理超融合基础设施](use/manage-hyper-converged.md)|
 
