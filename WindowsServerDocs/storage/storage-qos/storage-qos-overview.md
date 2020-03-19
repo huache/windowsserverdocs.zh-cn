@@ -8,16 +8,16 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 11d8abfc23cb0f192ed74a1082e83c8e0c8e87e9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ed7d7ca4f41784f2ae12220eb2e30077e2467175
+ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950098"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79518742"
 ---
 # <a name="storage-quality-of-service"></a>存储服务质量
 
-> 适用于：Windows Server（半年频道）、Windows Server 2016
+> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 通过 Windows Server 2016 中的存储服务质量 (QoS)，可以使用 Hyper-V 和横向扩展文件服务器角色集中监视和管理虚拟机的存储性能。 此功能使用相同的文件服务器群集自动改进多个虚拟机间的存储资源公平度，并允许在标准的 IOPs 单元中配置基于策略的最小和最大性能目标。  
 
@@ -31,7 +31,7 @@ ms.locfileid: "75950098"
 
 本文档概述了你的业务如何从新的存储 QoS 功能中获益。 它假定你已具备 Windows Server、Windows Server 故障转移群集、横向扩展文件服务器、Hyper-V 和 Windows PowerShell 的工作知识。
 
-## <a name="BKMK_Overview"></a>概述  
+## <a name="BKMK_Overview"></a>叙述  
 本部分介绍使用存储 QoS 的要求、使用存储 QoS 的软件定义的解决方案的概述，以及与存储 QoS 相关的术语列表。  
 
 ### <a name="BKMK_Requirements"></a>存储 QoS 要求  
@@ -62,13 +62,13 @@ ms.locfileid: "75950098"
 
 **图1：在横向扩展文件服务器中的软件定义的存储解决方案中使用存储 QoS**  
 
-当 Hyper-V 服务器启动虚拟机时，它们由策略管理器监视。 策略管理器会传达存储 QoS 策略和 Hyper-V 服务器的任何限制或预留，以对虚拟机的性能进行适当的控制。  
+当 Hyper-V 服务器启动虚拟机时，它们由策略管理器监视。 策略管理器会传达存储 QoS 策略和 Hyper-V 服务器的任何限制或保留，以对虚拟机的性能进行适当的控制。  
 
 当存在由虚拟机对存储 QoS 策略或性能需求进行的更改时，策略管理器将通知 Hyper-V 服务器调整其行为。 此反馈循环确保所有虚拟机 VHD 根据定义的存储 QoS 策略一致地执行。  
 
 ### <a name="BKMK_Glossary"></a>词汇表  
 
-|术语|描述|  
+|术语|说明|  
 |--------|---------------|  
 |规范化 IOPs|所有的存储使用情况以“规范化 IOPs”测量。  这是每秒的存储输入/输出操作数。  任何 8 KB 或更小的 IO 被视为一个规范化 IO。  任何大于 8 KB 的 IO 被视为多个规范化 IO。 例如，一个 256 KB 的请求被视为 32 个规范化 IOPs。<br /><br />Windows Server 2016 包括指定用于规范化 IO 的大小的功能。  在存储群集上，可以指定规范化大小，并使其在规范化计算群集范围内生效。  默认值仍为 8 KB。|  
 |流|由 Hyper-V 服务器打开到 VHD 或 VHDX 文件的每个文件句柄均可视为一个“流”。 如果一个虚拟机连接了两个虚拟硬盘，则该虚拟机的每个文件的文件服务器群集均有一个流。 如果 VHDX 与多个虚拟机共享，则它的每个虚拟机均有一个流。|  
@@ -76,10 +76,10 @@ ms.locfileid: "75950098"
 |InitiatorID|与虚拟机 ID 匹配的标识符。  这可始终用于对单个流虚拟机进行唯一标识，即使该虚拟机具有相同的 InitiatorName。|  
 |策略|存储 QoS 策略存储在群集数据库中，并具有以下属性：PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy 和 PolicyType。|  
 |PolicyId|策略的唯一标识符。  默认生成，但可根据需要指定。|  
-|MinimumIOPS|将由策略提供的最小规范化 IOPS。  也称为“预留”。|  
+|MinimumIOPS|将由策略提供的最小规范化 IOPS。  也称为“保留”。|  
 |MaximumIOPS|将由策略限制的最大规范化 IOPS。  也称为“限制”。|  
 |聚合 |一种策略类型，其中指定的MinimumIOPS 和 MaximumIOPS 以及带宽在由策略分配的所有流之间共享。 所有 VHD 分配的该存储系统上的策略均具有单个 I/O 带宽的分配，以供其全部共享。|  
-|Dedicated|一种策略类型，其中对指定的最小和最大 IOPS 以及带宽进行管理，以供单个 VHD/VHDx 使用。|  
+|专用|一种策略类型，其中对指定的最小和最大 IOPS 以及带宽进行管理，以供单个 VHD/VHDx 使用。|  
 
 ## <a name="BKMK_SetUpQoS"></a>如何设置存储 QoS 和监视基本性能  
 本部分介绍如何启用新的存储 QoS 功能以及如何在未应用自定义策略的情况下监视存储性能。  
@@ -247,7 +247,7 @@ MinimumIops        : 500
     -   **UnknownPolicyId** - 策略被分配到 Hyper-V 主机上的虚拟机，但在文件服务器中丢失。  此策略应从虚拟机配置中删除，或应在文件服务器群集上创建匹配的策略。  
 
 #### <a name="view-performance-for-a-volume-using-get-storageqosvolume"></a>使用 Get-StorageQosVolume 查看卷的性能  
-除了每个流的性能指标，还将收集每个存储卷级别上的存储性能指标。  这样将易于查看以规范化 IOPs、延迟以及应用到卷的聚合限制和预留表示的平均总利用率。  
+除了每个流的性能指标，还将收集每个存储卷级别上的存储性能指标。  这样将易于查看以规范化 IOPs、延迟以及应用到卷的聚合限制和保留表示的平均总利用率。  
 
 ```PowerShell
 PS C:\> Get-StorageQosVolume | Format-List  
@@ -304,7 +304,7 @@ MinimumIops    : 781
 
 例如，如果你创建最小值为 300 IOPs、最大值为 500 IOPs 的聚合策略。 如果你将此策略应用到 5 个不同的 VHD/VHDx 文件，即表示你确定保证组合的 5 个 VHD/VHDx 文件至少为 300 IOPs（如果有此需求，且存储系统可以提供此性能）但不超出 500 IOPs。 如果 VHD/VHDx 对 IOPs 具有类似的高需求且存储系统能够满足，则每个 VHD/VHDx 将获得大约 100 IOPs。  
 
-但是，如果你创建具有类似限制的专用策略并将其应用到 5 个不同的虚拟机上的 VHD/VHDx 文件，则每个虚拟机将获得至少 300 IOPs 但不超过 500 IOPs。 如果虚拟机对 IOPs 具有类似的高需求且存储系统能够满足，则每个虚拟机将获得大约 500 IOPs。 。  如果其中一个虚拟机具有配置了同一 MulitInstance 策略的多个 VHD/VHDx 文件，则它们将共享限制以便具有该策略的文件的 VM 的总 IO 将不会超过限制。  
+但是，如果你创建具有类似限制的专用策略并将其应用到 5 个不同的虚拟机上的 VHD/VHDx 文件，则每个虚拟机将获得至少 300 IOPs 但不超过 500 IOPs。 如果虚拟机对 IOPs 具有类似的高需求且存储系统能够满足，则每个虚拟机将获得大约 500 IOPs。 .  如果其中一个虚拟机具有配置了同一 MulitInstance 策略的多个 VHD/VHDx 文件，则它们将共享限制以便具有该策略的文件的 VM 的总 IO 将不会超过限制。  
 
 因此，如果你有一组你不想展现同一性能特性且不想创建多个类似策略的 VHD/VHDx 文件，则可以使用单个专用策略并应用于每个虚拟机的文件。
 
