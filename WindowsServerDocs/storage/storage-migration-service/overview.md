@@ -8,12 +8,12 @@ ms.date: 01/17/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 1a98de21e91fc7bdc431e7413c44089ce750bc05
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: 70ce4ebca35e071cf6e27fe429d3c4e6f67d342c
+ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519469"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110670"
 ---
 # <a name="storage-migration-service-overview"></a>存储迁移服务概述
 
@@ -70,7 +70,7 @@ ms.locfileid: "76519469"
 - 源计算机和目标计算机必须启用以下防火墙规则*入站*（尽管可能已启用这些规则）：
   - 文件和打印机共享 (SMB-In)
   - Netlogon 服务（NP-IN）
-  - Windows Management Instrumentation (DCOM-In)
+  - Windows Management Instrumentation （DCOM-IN）
   - Windows Management Instrumentation (WMI-In)
   
   > [!TIP]
@@ -84,19 +84,19 @@ ms.locfileid: "76519469"
 源服务器必须运行以下操作系统之一：
 
 - Windows Server 半年频道
-- Windows Server Standard 2012 R2
-- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2019
+- Windows Server 2016
 - Windows Server 2012 R2
-- Windows Server 2012
+- Windows Server 2012
 - Windows Server 2008 R2
-- Windows Server 2008
+- Windows 2008 Server
 - Windows Server 2003 R2
 - Windows Server 2003
 - Windows Small Business Server 2003 R2
 - Windows Small Business Server 2008
 - Windows Small Business Server 2011
 - Windows Server 2012 Essentials
-- Windows Server 2012 R2 Essentials
+- Windows Server 2012 R2 Essentials
 - Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
 - Windows Storage Server 2008
@@ -123,12 +123,16 @@ ms.locfileid: "76519469"
 目标服务器必须运行以下操作系统之一：
 
 - Windows Server 半年频道
-- Windows Server Standard 2012 R2
-- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2019
+- Windows Server 2016
 - Windows Server 2012 R2
 
 > [!TIP]
 > 运行 Windows Server 2019 或 Windows Server、半年频道或更高版本的目标服务器的 Windows Server 早期版本的传输性能加倍。 此性能提高的原因是包含内置的存储迁移服务代理服务，该服务还将打开所需的防火墙端口（如果尚未打开）。
+
+## <a name="azure-vm-migration"></a>Azure VM 迁移
+
+Windows 管理中心版本1910允许你部署 Azure 虚拟机。 这会将 VM 部署集成到存储迁移服务中。 在部署工作负荷之前，无需在 Azure 门户中构建新的服务器和 Vm，还可能缺少所需的步骤和配置-Windows 管理中心可以部署 Azure VM、配置其存储、将其加入域、安装角色，以及然后设置你的分布式系统。 
 
 ## <a name="whats-new-in-storage-migration-service"></a>存储迁移服务中的新增功能
 

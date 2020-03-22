@@ -9,12 +9,12 @@ manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 1a31fac97a6697909774a084045ad5746b7241f3
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 08135ed3454bb22db1c2b0fa3a14a8342fbc2dab
+ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918271"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110660"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>从 Windows 管理中心部署 Azure 虚拟机
 
@@ -24,7 +24,7 @@ Windows 管理中心版本1910允许你部署 Azure 虚拟机。 这将 VM 部�
 
 Windows 管理中心还管理各种 Azure 服务。 [详细了解 Windows 管理中心提供的 Azure 集成选项](../plan/azure-integration-options.md)。
 
-## <a name="scenarios"></a>场景
+## <a name="scenarios"></a>方案
 
 Windows 管理中心版本 1910 Azure VM 部署支持以下方案：
 
@@ -42,7 +42,7 @@ Windows 管理中心版本 1910 Azure VM 部署支持以下方案：
 - 现有的[Azure 虚拟网络](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)和子网。
 - 与虚拟网络和子网关联的[Azure Express 路由](https://azure.microsoft.com/services/expressroute/)或[azure VPN 解决方案](https://azure.microsoft.com/services/vpn-gateway/)，该解决方案允许从 Azure vm 连接到本地客户端、域控制器、Windows 管理中心计算机，以及需要与此 VM 进行通信的任何服务器作为工作负荷部署的一部分。 例如，若要使用存储迁移服务将存储迁移到 Azure VM，orchestrator 计算机和源计算机必须都能联系到要迁移到的目标 Azure VM。
 
-## <a name="usage"></a>Usage
+## <a name="usage"></a>用法
 
 Azure VM 部署步骤和向导因情况而异。 查看工作负荷的文档，以获取有关整个方案的详细信息。
 
@@ -60,7 +60,15 @@ Azure VM 部署步骤和向导因情况而异。 查看工作负荷的文档，�
 这会开始一个过程，该过程会自动选择 Windows Server 2016 或 Windows Server 2019 Azure VM 作为迁移源的目标。 存储迁移服务建议 VM 大小与你的源匹配，但你可以通过选择 "**查看所有大小**" 来覆盖此项。 清单数据用于自动配置托管磁盘及其文件系统，并将新的 Azure VM 加入到 Active Directory 域。 
 3. Windows 管理中心创建 Azure VM 后，提供复制组名称，然后选择 "**创建**"。 然后，Windows 管理中心会开始正常存储副本初始同步过程以开始保护数据。
 
+以下视频演示了如何使用存储副本迁移到 Azure Vm。
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
+
 ### <a name="deploying-a-new-standalone-azure-vm"></a>部署新的独立 Azure VM
 
 1. 在 Windows 管理中心的 "*所有连接*" 页中，选择 "**添加**"。
 2. 在 " *AZURE VM* " 部分中，选择 "**新建**"。<br><br> 这将开始一个逐步创建的工具，该工具可让你选择 Windows Server 2012 R2、Windows Server 2016 或 Windows Server 2019 Azure VM，选择大小，添加托管磁盘，并选择性地加入 Active Directory 域。
+
+以下视频演示如何使用 Windows 管理中心创建 Azure Vm。
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/__A8J9aC_Jk] 
