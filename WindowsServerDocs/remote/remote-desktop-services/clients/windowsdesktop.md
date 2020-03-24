@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/29/2020
+ms.date: 03/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1753780474332a6d5786a5804fc1b4fe5e3d8883
-ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
+ms.openlocfilehash: 8b7aefa169fe2121c5a2da1f913714d23d989d16
+ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889431"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79518732"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows 桌面客户端入门
 
@@ -134,5 +134,6 @@ ms.locfileid: "76889431"
 
 检索客户端日志：
 
-1. 打开“文件资源管理器”  。
-2. 导航到“%temp%\DiagOutputDir\RdClientAutoTrace”文件夹  。
+1. 通过右键单击系统托盘中的“远程桌面”  图标并选择“断开所有会话连接”  ，确保会话均未处于活动状态并且客户端进程未在后台运行。
+2. 打开“文件资源管理器”  。
+3. 导航到“%temp%\DiagOutputDir\RdClientAutoTrace”文件夹  。
