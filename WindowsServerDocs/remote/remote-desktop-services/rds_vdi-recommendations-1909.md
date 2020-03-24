@@ -117,7 +117,7 @@ Windows 10 具有一个名为[系统准备工具](https://docs.microsoft.com/win
 
 可以在偏好的搜索引擎中使用关键字“"start value" site:support.microsoft.com”查找有关服务默认起始值的已知问题。
 
-你可能已注意到，本文档和 GitHub 上的相关脚本不会修改任何默认权限。 如果你有意提高安全设置，请从名为 **AaronLocker** 的项目着手。 有关详细信息，请参阅 [ANNOUNCING:Application whitelisting with “AaronLocker”](https://docs.microsoft.com/archive/blogs/aaron_margosis/announcing-application-whitelisting-with-aaronlocker)（公告：使用“AaronLocker”将应用程序加入白名单）。
+你可能已注意到，本文档和 GitHub 上的相关脚本不会修改任何默认权限。 如果你有意提高安全设置，请从名为 **AaronLocker** 的项目着手。 有关详细信息，请参阅 [ANNOUNCING:Application whitelisting with “AaronLocker”](https://docs.microsoft.com/archive/blogs/aaron_margosis/announcing-application-whitelisting-with-aaronlocker)（公告：使用“AaronLocker”将应用程序加入允许列表）。
 
 #### <a name="vdi-optimization-categories"></a>VDI 优化类别
 
