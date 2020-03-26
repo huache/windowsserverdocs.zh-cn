@@ -7,12 +7,12 @@ audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 9a6e9778e0ce1e50a70e68832390321fb2d9f971
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 27869820e49257d059d124bac3f515ac91fef7b0
+ms.sourcegitcommit: 30afd51d74cb6472720fb13ec47d80cf42b20c27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654358"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80272313"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>默认情况下，windows 10 版本1709、Windows Server 版本1709及更高版本中未安装 SMBv1
 
@@ -146,8 +146,22 @@ The client has SMB1 disabled or uninstalled. For more information: https://go.mi
 如果你不能使用这些解决方法中的任何一种，或者应用程序制造商无法提供支持的 SMB 版本，你可以按照[如何在 Windows 中检测、启用和禁用 SMBv1、SMBv2 和 SMBv3](detect-enable-and-disable-smbv1-v2-v3.md)中的步骤手动重新启用 SMBv1。
 
 > [!IMPORTANT]
-> 强烈建议您不要重新安装 SMBv1。 这是因为此较旧的协议具有有关勒索软件和其他恶意软件的已知安全问题。   
+> 强烈建议不要重新安装 SMBv1。 这是因为此较旧的协议具有有关勒索软件和其他恶意软件的已知安全问题。  
 
-## <a name="references"></a>引用
+#### <a name="windows-server-best-practices-analyzer-messaging"></a>Windows Server 最佳实践分析程序消息传递
+
+Windows Server 2012 和更高版本的服务器操作系统包含适用于文件服务器的最佳做法分析器（BPA）。 如果已按照正确的联机指导卸载 SMB1，运行此 BPA 将返回矛盾的警告消息：
+
+    Title: The SMB 1.0 file sharing protocol should be enabled
+    Severity: Warning
+    Date: 3/25/2020 12:38:47 PM
+    Category: Configuration
+    Problem: The Server Message Block 1.0 (SMB 1.0) file sharing protocol is disabled on this file server.
+    Impact: SMB not in a default configuration, which could lead to less than optimal behavior.
+    Resolution: Use Registry Editor to enable the SMB 1.0 protocol.
+
+你应忽略此特定 BPA 规则的指南，而不推荐使用。 重复：不要启用 SMB 1.0。
+
+## <a name="references"></a>参考
 
 [停止使用 SMB1](https://aka.ms/stopusingsmb1)
