@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e8406286599e5b03173ce1b5d6c34c35245a9094
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d34630b4faa8012eee73967a99bc0541f1305a09
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366949"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313522"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>步骤3规划 OTP 证书部署
 
@@ -35,16 +35,16 @@ ms.locfileid: "71366949"
   
 5.  CA 将验证凭据和请求。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |[3.1 计划 OTP CA](#bkmk_3_1_CA)|规划证书颁发机构（CA），以用于为 OTP 身份验证的 DirectAccess 客户端颁发证书。|  
 |[3.2 计划 OTP 证书模板](#bkmk_3_2_OTP_Cert)|规划 OTP 证书模板。|
 |[3.3 规划注册机构证书](#bkmk_33RACert)|规划注册机构证书以签署所有 OTP 身份验证证书申请。|
 
-## <a name="bkmk_3_1_CA"></a>3.1 计划 OTP CA  
+## <a name="31-plan-the-otp-ca"></a><a name="bkmk_3_1_CA"></a>3.1 计划 OTP CA  
 若要使用一次性密码身份验证（OTP）部署 DirectAccess，需要使用内部 CA 向 DirectAccess 客户端计算机颁发 OTP 身份验证证书。 出于此目的，你可以使用用于颁发证书的相同内部 CA，以便进行常规 IPsec 计算机身份验证。  
   
-## <a name="bkmk_3_2_OTP_Cert"></a>3.2 计划 OTP 证书模板  
+## <a name="32-plan-the-otp-certificate-template"></a><a name="bkmk_3_2_OTP_Cert"></a>3.2 计划 OTP 证书模板  
 每个 DirectAccess 客户端都需要一个 OTP 身份验证证书才能获得对内部网络的访问权限。 必须在内部 CA 上为 OTP 证书配置模板。 配置 OTP 证书模板时，请注意以下事项：  
   
 -   所有需要执行 OTP 身份验证的用户都必须具有此模板的 "读取" 和 "注册" 权限。  
@@ -70,10 +70,10 @@ ms.locfileid: "71366949"
   
     -   对于 OTP 身份验证证书模板，请使用密钥1.3.6.1.4.1.311.20.2.2 密钥。  
   
-## <a name="bkmk_33RACert"></a>3.3 规划注册机构证书  
+## <a name="33-plan-the-registration-authority-certificate"></a><a name="bkmk_33RACert"></a>3.3 规划注册机构证书  
 当 DirectAccess 客户端请求 OTP 证书时，远程访问服务器将接收来自客户端的请求。 远程访问服务器使用注册机构证书对来自客户端的所有 OTP 证书请求进行签名。 仅当远程访问服务器上的注册机构证书对请求进行签名时，CA 才会颁发证书。 证书必须由内部 CA 颁发，证书不能是自签名证书。 它不必由颁发 OTP 证书的 CA 颁发，但颁发 OTP 证书的 CA 必须信任颁发注册机构签名证书的 CA。  
   
-## <a name="BKMK_Links"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
   
 -   [步骤4：为远程访问服务器规划 OTP](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   

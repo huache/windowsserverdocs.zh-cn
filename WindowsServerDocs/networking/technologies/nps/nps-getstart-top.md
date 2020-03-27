@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 29976baf-b0e2-4c01-ab4d-f2940e2bc327
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cd4349499313d093c153b50fdb4c2118c38dd42d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7902af2d63e8ebe94914f3b604e9bae3c1778aa9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396230"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316072"
 ---
 # <a name="getting-started-with-network-policy-server"></a>网络策略服务器入门
 
@@ -28,7 +28,7 @@ ms.locfileid: "71396230"
 >- [管理网络策略服务器](nps-manage-top.md)
   
   
-本部分包含以下主题。
+本部分包含下列主题。
   
 - [连接请求处理](nps-crp-top.md)
 - [网络策略](nps-np-overview.md)

@@ -1,5 +1,5 @@
 ---
-title: 始终启用 VPN 疑难解答
+title: 排查 Always On VPN 问题
 description: 本主题提供有关在 Windows Server 2016 中验证和排查 Always On VPN 部署问题的说明。
 ms.prod: windows-server
 ms.technology: networking-ras
@@ -7,16 +7,16 @@ ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
 ms.localizationpriority: medium
 ms.date: 06/11/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 649fbc16e3dfef2ed1061d0ba6a5c22a8712b186
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6dc4f2f090d28f9fa25ce381f8cd981569da6a4a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404374"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313273"
 ---
-# <a name="troubleshoot-always-on-vpn"></a>始终启用 VPN 疑难解答 
+# <a name="troubleshoot-always-on-vpn"></a>排查 Always On VPN 问题 
 
 >适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 

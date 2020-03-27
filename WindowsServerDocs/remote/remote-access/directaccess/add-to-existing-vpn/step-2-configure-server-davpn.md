@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7ee691a02df385e29bdac9656d50bc2c6d3af087
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c26f1fbcfa2d94c001579aabd6794c6537bd06f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388739"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314743"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>步骤2配置 DirectAccess-VPN 服务器
 
@@ -27,7 +27,7 @@ ms.locfileid: "71388739"
 
 下表概述了可通过使用本主题完成的步骤。
 
-|任务       |描述|
+|任务       |说明|
 |-----------|-----------|
 |配置 DirectAccess 客户端|使用包含 DirectAccess 客户端的安全组配置远程访问服务器。|
 |配置网络拓扑|配置远程访问服务器设置。|
@@ -40,7 +40,7 @@ ms.locfileid: "71388739"
 
 2. 如果该向导没有自动启动，请右键单击 "路由和远程访问" 树中的服务器节点，然后单击 "**启用 DirectAccess**"。
 
-3. 单击**下一步**。
+3. 单击 **“下一步”** 。
 
 ## <a name="configure-directaccess-clients"></a>配置 DirectAccess 客户端
 
@@ -54,7 +54,7 @@ ms.locfileid: "71388739"
 
 4. 选中“使用强制隧道”复选框，以通过远程访问服务器路由所有客户端通信（到内部网络和 Internet）。
 
-5. 单击**下一步**。
+5. 单击 **“下一步”** 。
 
 ## <a name="configure-the-network-topology"></a>配置网络拓扑
 
@@ -64,7 +64,7 @@ ms.locfileid: "71388739"
 
 ## <a name="configure-the-dns-suffix-search-list"></a>配置 DNS 后缀搜索列表
 
-对于 DNS 客户端，你可以配置一个扩展或修改其 DNS 搜索功能的 DNS 域后缀搜索列表。 通过将其他后缀添加到列表，你可以在多个指定 DNS 域中搜索较短的、不合格的计算机名称。 然后，如果 DNS 查询失败，则 DNS 客户端服务可以使用此列表将其他名称后缀添加到原始名称末尾，并为这些备用 Fqdn 重复 DNS 服务器的 DNS 查询。
+对于 DNS 客户端，可以配置一个能够扩展或修改其 DNS 搜索功能的 DNS 域后缀搜索列表。 通过向该列表添加更多后缀，您可以在多个指定 DNS 域中搜索不合格的短计算机名。 然后，如果 DNS 查询失败，DNS 客户端服务可以使用该列表，将其他名称后缀结尾附加到原始名称之后，并为这些备选 FQDN 向 DNS 服务器重复 DNS 查询。
 
 1. 选择“配置具有 DNS 客户端后缀搜索列表的 DirectAccess 客户端” 以指定用于客户端名称搜索的其他后缀。
 
@@ -83,9 +83,9 @@ ms.locfileid: "71388739"
 如果通过附加和尝试列表中的每个后缀而形成的所有 FQDN 查询未得到解析，则查询过程失败，会产生“找不到名称”的结果。 
 
 > [!WARNING]
-> 如果使用了域后缀列表，则在查询未得到应答或解析时，客户端将根据不同的 DNS 域名继续发送其他备选查询。 一旦使用后缀列表中的某个条目解析名称，则不会再尝试未使用的列表条目。 因此，将最常用的域后缀排在第一位的列表排序方式效率最高。
+> 如果使用了域后缀列表，客户端会在查询未得到答案或未解析时，继续根据不同的 DNS 域名发送更多备选查询。 一旦使用后缀列表中的某个条目解析名称，则不会再尝试未使用的列表条目。 因此，将最常用的域后缀排在第一位的列表排序方式效率最高。
 > 
-> 仅当 DNS 名称条目不是完全限定时，才使用域名后缀搜索。 若要使 DNS 名称完全合格，请在名称末尾输入结尾句点 (.)。
+> 域名后缀搜索只有在 DNS 名称条目未全限定时才使用。 若要使 DNS 名称完全合格，请在名称末尾输入结尾句点 (.)。
 
 ## <a name="gpo-configuration"></a>GPO 配置
 

@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 7eb746e0-1046-4123-b532-77d5683ded44
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1ec5bc315381f85434753f9becc94409a74271b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2da57ab750cc556b521329f4096fb088e212a903
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356104"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318214"
 ---
 # <a name="server-certificate-deployment-planning"></a>服务器证书部署规划
 
@@ -37,25 +37,25 @@ ms.locfileid: "71356104"
   
 -   [在 CA 上规划服务器证书模板的配置](#bkmk_template)  
   
-## <a name="bkmk_basic"></a>规划基本服务器配置  
+## <a name="plan-basic-server-configuration"></a><a name="bkmk_basic"></a>规划基本服务器配置  
 在你打算用作证书颁发机构和 Web 服务器的计算机上安装 Windows Server 2016 后，你必须重命名计算机并为本地计算机分配和配置静态 IP 地址。  
   
 有关详细信息，请参阅 Windows Server 2016 [Core 网络指南](../../../core-network-guide/Core-Network-Guide.md)。  
   
-## <a name="bkmk_domain"></a>规划域访问  
+## <a name="plan-domain-access"></a><a name="bkmk_domain"></a>规划域访问  
 若要登录到域，计算机必须是域成员计算机，并且必须在登录尝试之前 AD DS 中创建用户帐户。 此外，本指南中的大多数过程都要求用户帐户是 Active Directory 用户和计算机中的 Enterprise Admins 或 Domain Admins 组的成员，因此你必须使用具有相应组成员身份的帐户登录到 CA。  
   
 有关详细信息，请参阅 Windows Server 2016 [Core 网络指南](../../../core-network-guide/Core-Network-Guide.md)。  
   
-## <a name="bkmk_virtual"></a>规划 Web 服务器上的虚拟目录的位置和名称  
+## <a name="plan-the-location-and-name-of-the-virtual-directory-on-your-web-server"></a><a name="bkmk_virtual"></a>规划 Web 服务器上的虚拟目录的位置和名称  
 若要向其他计算机提供对 CRL 和 CA 证书的访问权限，必须将这些项存储在 Web 服务器上的虚拟目录中。 本指南中的虚拟目录位于 Web 服务器 WEB1 上。 此文件夹位于 "C：" 驱动器上，名为 "pki"。 你可以在 Web 服务器上找到适合你的部署的任何文件夹位置上的虚拟目录。  
   
-## <a name="bkmk_cname"></a>规划 Web 服务器的 DNS 别名（CNAME）记录  
-别名（CNAME）资源记录有时也称为规范名称资源记录。 利用这些记录，你可以使用多个名称来指向单个主机，这样就可以轻松地在同一台计算机上同时承载文件传输协议（FTP）服务器和 Web 服务器等操作。 例如，已知服务器名称（ftp、www）使用别名（CNAME）资源记录进行注册，这些记录映射到承载这些服务的服务器计算机的域名系统（DNS）主机名（例如 WEB1）。  
+## <a name="plan-a-dns-alias-cname-record-for-your-web-server"></a><a name="bkmk_cname"></a>规划 Web 服务器的 DNS 别名（CNAME）记录  
+别名 (CNAME) 资源记录有时也称作规范名称资源记录。 借助这些记录，您可以使用多个名称来指向单一主机，从而轻松实现某些目的，例如在同一个计算机上同时驻留文件传输协议 (FTP) 服务器和 Web 服务器。 例如，已知服务器名称（ftp、www）使用别名（CNAME）资源记录进行注册，这些记录映射到承载这些服务的服务器计算机的域名系统（DNS）主机名（例如 WEB1）。  
   
 本指南提供有关配置 Web 服务器以承载证书颁发机构（CA）的证书吊销列表（CRL）的说明。 由于你可能还希望将 Web 服务器用于其他目的（例如）来托管 FTP 或网站，因此最好在 DNS 中为 Web 服务器创建别名资源记录。 在本指南中，CNAME 记录名为 "pki"，但你可以选择适合你的部署的名称。  
   
-## <a name="bkmk_capolicy"></a>规划 Capolicy.inf 的配置  
+## <a name="plan-configuration-of-capolicyinf"></a><a name="bkmk_capolicy"></a>规划 Capolicy.inf 的配置  
 安装 AD CS 之前，必须在 CA 上配置 Capolicy.inf，并将其信息用于部署。 Capolicy.inf 文件包含以下信息：  
   
 ```  
@@ -99,7 +99,7 @@ Critical=Yes
 > [!IMPORTANT]  
 > 建议您不要更改 Capolicy.inf 文件中的任何其他设置，除非您有具体的原因。  
   
-## <a name="bkmk_cdp"></a>在 CA1 上规划 CDP 和 AIA 扩展的配置  
+## <a name="plan-configuration-of-the-cdp-and-aia-extensions-on-ca1"></a><a name="bkmk_cdp"></a>在 CA1 上规划 CDP 和 AIA 扩展的配置  
 当你在 CA1 上配置证书吊销列表（CRL）分发点（CDP）和颁发机构信息访问（AIA）设置时，需要你的 Web 服务器名称和域名。 还需要在存储证书吊销列表（CRL）和证书颁发机构证书的 Web 服务器上创建的虚拟目录的名称。  
   
 在此部署步骤中必须输入的 CDP 位置的格式为：  
@@ -118,10 +118,10 @@ Critical=Yes
       
     `http:\/\/pki.corp.contoso.com\/pki\/<ServerDNSName>\_<CaName><CertificateName>.crt`  
       
-## <a name="bkmk_copy"></a>规划 CA 和 Web 服务器之间的复制操作  
+## <a name="plan-the-copy-operation-between-the-ca-and-the-web-server"></a><a name="bkmk_copy"></a>规划 CA 和 Web 服务器之间的复制操作  
 若要将 CRL 和 CA 证书从 CA 发布到 Web 服务器虚拟目录，可以在 CA 上配置 CDP 和 AIA 位置之后运行 certutil-CRL 命令。 在运行此命令之前，请确保在 "CA 属性**扩展**" 选项卡上配置正确路径，然后再按照本指南中的说明操作。 此外，若要将企业 CA 证书复制到 Web 服务器，则必须已在 Web 服务器上创建了虚拟目录，并将该文件夹配置为共享文件夹。  
   
-## <a name="bkmk_template"></a>在 CA 上规划服务器证书模板的配置  
+## <a name="plan-the-configuration-of-the-server-certificate-template-on-the-ca"></a><a name="bkmk_template"></a>在 CA 上规划服务器证书模板的配置  
 若要部署自动注册的服务器证书，你必须复制名为**RAS 和 IAS 服务器**的证书模板。 默认情况下，此副本为**RAS 和 IAS 服务器的命名副本**。 如果要重命名此模板副本，请规划要在此部署步骤中使用的名称。  
   
 > [!NOTE]  

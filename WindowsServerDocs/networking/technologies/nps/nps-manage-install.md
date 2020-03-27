@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 4842a4ab-70bb-4744-bea7-70f2ac892ad1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 25b8586d370865dd3ae4393c2536c348a5d0810f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d64498d5d77483ae43ade01b30aaeecd3e9fc753
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396193"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315988"
 ---
 # <a name="install-network-policy-server"></a>安装网络策略服务器
 
@@ -43,13 +43,13 @@ ms.locfileid: "71396193"
 
 3.  在 **“选择安装类型”** 中，确保选中 **“基于角色或基于功能的安装”** ，然后单击 **“下一步”** 。
 
-4.  在 **“选择目标服务器”** 中，确保选中 **“从服务器池中选择一个服务器”** 。 在 **“服务器池”** 中，确保选中了本地计算机。 单击**下一步**。
+4.  在 **“选择目标服务器”** 中，确保选中 **“从服务器池中选择一个服务器”** 。 在 **“服务器池”** 中，确保选中了本地计算机。 单击 **“下一步”** 。
 
 5.  在 "**选择服务器角色**" 的 "**角色**" 中，选择 "**网络策略和访问服务**"。 此时将打开一个对话框，询问是否应添加网络策略和访问服务所需的功能。 单击 "**添加功能**"，然后单击 "**下一步**"
 
 6.  在**选择功能**中，单击 **“下一步”** ，然后在 **“网络策略和访问服务”** 中查看提供的信息，然后单击 **“下一步”** 。
 
-7.  在**选择角色服务**中，单击 **“网络策略服务器”** 。  在**添加“网络策略服务器”需要的功能**中，单击 **“添加功能”** 。 单击**下一步**。
+7.  在**选择角色服务**中，单击 **“网络策略服务器”** 。  在**添加“网络策略服务器”需要的功能**中，单击 **“添加功能”** 。 单击 **“下一步”** 。
 
 8.  在 **“确认安装选择”** 中，单击 **“如果需要，自动重启目标服务器”** 。 当提示你确认这一选择时，单击 **“是”** ，然后单击 **“安装”** 。 在安装进程期间，安装进度页显示状态。 此过程完成后，将显示消息 " *computername*上安装成功"，其中*ComputerName*是安装了网络策略服务器的计算机的名称。 单击 **“关闭”** 。
 

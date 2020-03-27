@@ -1,9 +1,9 @@
 ---
 title: 更改仪表板和快速启动板的配色方案
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: b2913e51-7979-4d48-a431-d2ec5f1042be
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f7079c9e59c44907fa203db48ce366c2b5a1102b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3ffac0b89a62b04b73aada0a49cb755c7e7bd9a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879638"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312285"
 ---
 # <a name="change-the-color-scheme-of-the-dashboard-and-launchpad"></a>更改仪表板和快速启动板的配色方案
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 你可以通过以下方法更改仪表板和快速启动板的配色方案：在 XML 格式的文件中定义要使用的颜色，再将该 .xml 文件安装在服务器上的一个文件夹中，然后在注册表项中指定该 .xml 文件名。  
   
@@ -122,57 +122,57 @@ ms.locfileid: "59879638"
   
 #### <a name="to-install-the-xml-file"></a>安装 .xml 文件  
   
-1.  在服务器上，将鼠标移动到屏幕右上角，然后单击 **“搜索”**。  
+1.  在服务器上，将鼠标移动到屏幕右上角，然后单击 **“搜索”** 。  
   
-2.  在搜索框中，键入 **“regedit”**，然后单击 **“Regedit”** 应用程序。  
+2.  在搜索框中，键入 **“regedit”** ，然后单击 **“Regedit”** 应用程序。  
   
-3.  在左侧窗格中，依次展开 **“HKEY_LOCAL_MACHINE”**、 **“SOFTWARE”**、 **“Microsoft”** 和 **“Windows Server”**。 如果 **“OEM”** 项不存在，则你必须完成下列步骤来创建它：  
+3.  在左侧窗格中，依次展开 **“HKEY_LOCAL_MACHINE”** 、 **“SOFTWARE”** 、 **“Microsoft”** 和 **“Windows Server”** 。 如果 **“OEM”** 项不存在，则你必须完成下列步骤来创建它：  
   
-    1.  右键单击 **“Windows Server”**，指向 **“新建”**，然后单击 **“项”**。  
+    1.  右键单击 **“Windows Server”** ，指向 **“新建”** ，然后单击 **“项”** 。  
   
     2.  键入 **OEM** 作为该项的名称。  
   
-4.  右键单击 **“OEM”**，指向 **“新建”**，然后单击 **“字符串值”**。  
+4.  右键单击 **“OEM”** ，指向 **“新建”** ，然后单击 **“字符串值”** 。  
   
 5.  输入 **CustomColorScheme** 作为字符串名称，然后按 **Enter**。  
   
-6.  右键单击右侧窗格中的 **CustomColorScheme**，然后单击 **“修改”**。  
+6.  右键单击右侧窗格中的 **“CustomColorScheme”** ，然后单击 **“修改”** 。  
   
-7.  输入文件名，然后单击 **“确定”**。  
+7.  输入文件名，然后单击 **“确定”** 。  
   
 8.  将文件复制到 %programFiles%\Windows Server\Bin\OEM。 如果 OEM 目录不存在，请创建该目录。  
   
-##  <a name="BKMK_Dashboard"></a> 可以更改的仪表板和快速启动板区域  
+##  <a name="dashboard-and-launchpad-areas-that-can-be-changed"></a><a name="BKMK_Dashboard"></a>可以更改的仪表板和快速启动板区域  
  本节包含可以自定义的仪表板和快速启动板区域的示例。  
   
 ### <a name="examples"></a>示例  
   
-####  <a name="BKMK_Figure1"></a> 图 1:仪表板登录页  
+####  <a name="figure-1-sign-in-page-of-the-dashboard"></a><a name="BKMK_Figure1"></a>图1：仪表板的登录页  
  ![Windows Server Essentials 仪表板](media/SBS8_ADK_Dashboard_Signin_RC.png "SBS8_ADK_Dashboard_Signin_RC")  
   
-####  <a name="BKMK_Figure2"></a> 图 2:快速启动板  
- ![Windows SBS 启动板登录&#45;中](media/SBS8_ADK_LaunchpadSignin2.png "SBS8_ADK_LaunchpadSignin2")  
+####  <a name="figure-2-launchpad"></a><a name="BKMK_Figure2"></a>图2：快速启动板  
+ ![Windows SBS 快速启动&#45;板登录](media/SBS8_ADK_LaunchpadSignin2.png "SBS8_ADK_LaunchpadSignin2")  
   
-####  <a name="BKMK_Figure3"></a> 图 3:快速启动板登录页  
+####  <a name="figure-3-sign-in-page-of-the-launchpad"></a><a name="BKMK_Figure3"></a>图3：快速启动板的登录页  
  ![Windows Server Essentials 快速启动板](media/SBS8_ADK_Launchpad_Signin_RC.png "SBS8_ADK_Launchpad_Signin_RC")  
   
-####  <a name="BKMK_Figure4"></a> 图 4:仪表板文本  
+####  <a name="figure-4-dashboard-text"></a><a name="BKMK_Figure4"></a>图4：仪表板文本  
  ![Windows Server Essentials 导航窗格](media/SBS8_ADK_Navigation_RC.png "SBS8_ADK_Navigation_RC")  
   
-####  <a name="BKMK_Figure5"></a> 图 5:子表边框  
- ![Windows SBS 仪表板板子选项卡边框](media/SBS8_ADK_DashboardSubtabborder.png "SBS8_ADK_DashboardSubtabborder")  
+####  <a name="figure-5-subtab-border"></a><a name="BKMK_Figure5"></a>图5：子标签边框  
+ ![Windows SBS 仪表板子选项卡边框](media/SBS8_ADK_DashboardSubtabborder.png "SBS8_ADK_DashboardSubtabborder")  
   
-####  <a name="BKMK_Figure6"></a> 图 6:任务窗格  
+####  <a name="figure-6-task-pane"></a><a name="BKMK_Figure6"></a>图6：任务窗格  
  ![Windows SBS 仪表板任务窗格](media/SBS8_ADK_DashboardTaskPane.png "SBS8_ADK_DashboardTaskPane")  
   
-####  <a name="BKMK_Figure9"></a> 图 7a:产品初始屏幕  
+####  <a name="figure-7a-product-splash-screen"></a><a name="BKMK_Figure9"></a>图7a：产品初始屏幕  
  ![Windows Server Essentials 初始屏幕](media/SBS8_ADK_productspalshscreen_RC.png "SBS8_ADK_productspalshscreen_RC")  
   
 #### <a name="figure-7b-home-page"></a>图 7b：主页  
  ![Windows Server Essentials 主页](media/SBS8_ADK_Dashboard_HomePage_RC.png "SBS8_ADK_Dashboard_HomePage_RC")  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
- [其他自定义设置](Additional-Customizations.md)   
- [部署准备的映像](Preparing-the-Image-for-Deployment.md)   
+ [其他自定义](Additional-Customizations.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)

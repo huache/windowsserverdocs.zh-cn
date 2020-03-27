@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e497b0d73c816f0295588aa77a21c49d376c0dcf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e4bb075368bb3dfadaa8046b177dbbac637763e3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406187"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317825"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>使用针对基于时间的智能 DNS 响应的 DNS 策略
 
@@ -23,7 +23,7 @@ ms.locfileid: "71406187"
   
 如果希望将一个时区中的流量定向到位于另一个时区的备用应用程序服务器（如 Web 服务器），则此方案非常有用。 这使你可以在高峰时间段内通过流量对主服务器进行负载平衡，在高峰时段内对流量进行负载均衡。   
   
-### <a name="bkmk_example1"></a>基于一天中的时间的智能 DNS 响应示例  
+### <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day"></a><a name="bkmk_example1"></a>基于一天中的时间的智能 DNS 响应示例  
 下面的示例演示了如何使用 DNS 策略根据一天中的时间来平衡应用程序流量。  
   
 此示例使用了一家虚构的公司 Contoso 礼品服务，该公司通过其网站 contosogiftservices.com 提供了全球范围内的在线赠与政策解决方案。   
@@ -38,7 +38,7 @@ Contoso 礼券执行站点分析，发现每个晚上晚上6点到晚上9点的�
   
 ![当天的时间 DNS 策略示例](../../media/DNS-Policy-Tod1/dns_policy_tod1.jpg)  
   
-### <a name="bkmk_works1"></a>基于一天时间的智能 DNS 响应的工作方式  
+### <a name="how-intelligent-dns-responses-based-on-time-of-day-works"></a><a name="bkmk_works1"></a>基于一天时间的智能 DNS 响应的工作方式  
   
 如果 DNS 服务器配置为 "一天中的时间 DNS 策略"，则在每个地理位置晚上6：晚上6：晚上9： DNS 服务器将执行以下设置。  
   
@@ -53,7 +53,7 @@ Contoso 礼券执行站点分析，发现每个晚上晚上6点到晚上9点的�
   
 有关策略类型和条件的详细信息，请参阅[DNS 策略概述](../../dns/deploy/DNS-Policies-Overview.md)。  
   
-### <a name="bkmk_how1"></a>如何根据一天的时间为智能 DNS 响应配置 DNS 策略  
+### <a name="how-to-configure-dns-policy-for-intelligent-dns-responses-based-on-time-of-day"></a><a name="bkmk_how1"></a>如何根据一天的时间为智能 DNS 响应配置 DNS 策略  
 若要为基于应用程序负载平衡的查询响应配置 DNS 策略，必须执行以下步骤。  
   
 - [创建 DNS 客户端子网](#bkmk_subnets)  
@@ -69,7 +69,7 @@ Contoso 礼券执行站点分析，发现每个晚上晚上6点到晚上9点的�
 >[!IMPORTANT]
 >以下各节包含示例 Windows PowerShell 命令，其中包含许多参数的示例值。 在运行这些命令之前，请确保将这些命令中的示例值替换为适用于你的部署的值。  
   
-#### <a name="bkmk_subnets"></a>创建 DNS 客户端子网  
+#### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>创建 DNS 客户端子网  
 第一步是确定要将流量重定向到的区域的子网或 IP 地址空间。 例如，如果要重定向美国和欧洲的流量，则需要确定这些区域的子网或 IP 地址空间。  
   
 你可以从地理 IP 映射获取此信息。 根据这些地域 IP 分发，必须创建 "DNS 客户端子网"。 DNS 客户端子网是将查询发送到 DNS 服务器的 IPv4 或 IPv6 子网的逻辑分组。  
@@ -84,7 +84,7 @@ Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.
 ```  
 有关详细信息，请参阅[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。  
   
-#### <a name="bkmk_zscopes"></a>创建区域作用域  
+#### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>创建区域作用域  
 配置了客户端子网之后，必须将要重定向到的流量分区为两个不同的区域作用域，其中每个已配置的 DNS 客户端子网的作用域。  
   
 例如，如果要重定向 DNS 名称 www.contosogiftservices.com 的流量，则必须在 contosogiftservices.com 区域中创建两个不同的区域作用域，一个用于美国，一个用于欧洲。  
@@ -104,7 +104,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 ```  
 有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。  
   
-#### <a name="bkmk_records"></a>将记录添加到区域作用域  
+#### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>将记录添加到区域作用域  
 现在，必须将表示 web 服务器主机的记录添加到这两个区域作用域中。  
   
 例如，在**SeattleZoneScope**中，将使用 IP 地址192.0.0.1 添加记录<strong>www.contosogiftservices.com</strong> ，该地址位于西雅图数据中心。 同样，在**DublinZoneScope**中，记录<strong>Www.contosogiftservices.com</strong>添加到都柏林 datacenter 中的 IP 地址141.1.0。3  
@@ -121,15 +121,15 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
   
 有关详细信息，请参阅[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。  
   
-#### <a name="bkmk_policies"></a>创建 DNS 策略  
+#### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>创建 DNS 策略  
 创建子网、分区（区域作用域）并添加记录后，你必须创建用于连接子网和分区的策略，以便在查询来自某个 DNS 客户端子网中的源时，从区域的正确范围。 映射默认区域作用域不需要策略。  
   
 配置这些 DNS 策略后，DNS 服务器行为如下所示：  
   
 1. 欧洲的 DNS 客户端在其 DNS 查询响应中接收到都柏林 datacenter 中 Web 服务器的 IP 地址。  
 2. 美洲 DNS 客户端在其 DNS 查询响应中接收西雅图 datacenter 中 Web 服务器的 IP 地址。  
-3. 都柏林的 6 PM 和 9 PM 之间，欧洲客户的 20% 的查询将在其 DNS 查询响应中的西雅图 datacenter 内接收 Web 服务器的 IP 地址。  
-4. 在西雅图的 6 PM 和 9 PM 之间，来自美国客户的 20% 的查询在其 DNS 查询响应中接收到都柏林 datacenter 中 Web 服务器的 IP 地址。  
+3. 都柏林的 6 PM 和 9 PM 之间，欧洲客户的20% 的查询将在其 DNS 查询响应中的西雅图 datacenter 内接收 Web 服务器的 IP 地址。  
+4. 在西雅图的 6 PM 和 9 PM 之间，来自美国客户的20% 的查询在其 DNS 查询响应中接收到都柏林 datacenter 中 Web 服务器的 IP 地址。  
 5. 来自世界各地的一半查询会接收西雅图数据中心的 IP 地址，而另一半接收到都柏林数据中心的 IP 地址。  
   
   

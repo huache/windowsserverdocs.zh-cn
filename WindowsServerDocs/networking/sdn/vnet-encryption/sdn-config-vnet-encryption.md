@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: 40150e312f4776ec093c9230eedb646eec277f49
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e68da9be84e9567458467c9ebd89155e7c405c5c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405810"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312825"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>为虚拟子网配置加密
 
->适用于：Windows Server
+>适用于： Windows Server
 
 虚拟网络加密允许对在标记为 "已启用加密" 的子网中相互通信的 Vm 之间的虚拟网络通信进行加密。 它还利用虚拟子网上的数据报传输层安全性 (DTLS) 来加密数据包。 DTLS 可以防止能够访问物理网络的任何人进行窃听、篡改和伪造。
 
@@ -118,7 +118,7 @@ ms.locfileid: "71405810"
 
 3. 在每个 hyper-v 主机上安装证书 
 
-   PS c：\> dir c：\$subjectname. *
+   PS C：\> dir c：\$subjectname. *
 
 
 ~~~
@@ -218,7 +218,7 @@ Thumbprint                                Subject
 >你可以为每个加密的虚拟网络重复使用此凭据，也可以为每个租户部署并使用唯一的证书。
 
 
-## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>步骤 3： 配置虚拟网络以进行加密
+## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>步骤 3。 配置虚拟网络以进行加密
 
 此步骤假定你已创建虚拟网络名称 "我的网络" 并且包含至少一个虚拟子网。  有关创建虚拟网络的信息，请参阅[创建、删除或更新租户虚拟网络](../Manage/Create,-Delete,-or-Update-Tenant-Virtual-Networks.md)。
 

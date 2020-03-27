@@ -3,7 +3,7 @@ title: 托管 Windows Server Essentials
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 84464c69d4b8576906e5fb0d0a7de7e382a59537
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 76319f87a246c6fabbe0befaf7dc4c74d1416ac4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947500"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311750"
 ---
 # <a name="hosted-windows-server-essentials"></a>托管 Windows Server Essentials
 
@@ -57,10 +57,10 @@ ms.locfileid: "75947500"
   
    如果你使用的是“虚拟机管理器”，则可使用正在运行的实例来创建模板。 创建模板时会对实例进行系统准备，并关闭该服务器。 将其存储在程序库中，可根据情况提出实例。  
   
-##  <a name="BKMK_automatedeployment"></a>如何实现自动部署？  
+##  <a name="how-do-i-automate-the-deployment"></a><a name="BKMK_automatedeployment"></a>如何实现自动部署？  
  获取自定义映像后，你可以用自己的映像来部署。 如需进行半自动安装，你必须为 WinPE 设置提供或部署 unattend.xml。 若要执行完全无人参与的安装，还需要为 Windows Server Essentials 初始配置提供 cfg .ini 文件。  
   
-1. 仅执行无人值守式 WinPE 设置。 这操作只能自动设置 WinPE，并使安装在“初始配置”之前停止，以便最终用户在 RDP 至服务器会话之后自己提供公司、域名及管理员的信息。 若要实现此目的，请执行以下操作：  
+1. 仅执行无人值守式 WinPE 设置。 这操作只能自动设置 WinPE，并使安装在“初始配置”之前停止，以便最终用户在 RDP 至服务器会话之后自己提供公司、域名及管理员的信息。 为此，请执行以下操作：  
   
    1.  提供 Windows unattend.xml 文件。 按照[WINDOWS 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)生成文件，并提供所有必要的信息，包括服务器名称、产品密钥和管理员密码。 在 unattend.xml 文件的 "Microsoft Windows-设置" 部分，提供如下所示的信息。  
   
@@ -84,7 +84,7 @@ ms.locfileid: "75947500"
   
    如果你使用的是“虚拟机管理器”，则当从模板创建新的实例时，可在控制台指定系统管理员密码。  
   
-2. 执行完全无人值守式设置，包括无人值守式“初始配置”。 若要实现此目的，请执行以下操作：  
+2. 执行完全无人值守式设置，包括无人值守式“初始配置”。 为此，请执行以下操作：  
   
    1.  如果部署是从 WinPE 设置开始，请按上述操作提供 unattend.xml 文件。  
   
@@ -203,7 +203,7 @@ ms.locfileid: "75947500"
 Enable-WssRemoteWebAccess [-SkipRouter] [-DenyAccessByDefault] [-ApplyToExistingUsers]  
 ```  
   
- 示例  
+ 示例：  
   
 ```  
 $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers  
@@ -217,7 +217,7 @@ $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers
 Add-WssUser [-Name] <string> [-Password] <securestring> [-AccessLevel <string> {User | Administrator}] [-FirstName <string>] [-LastName <string>] [-AllowRemoteAccess] [-AllowVpnAccess]   [<CommonParameters>]  
 ```  
   
- 示例  
+ 示例：  
   
 ```  
 $password = ConvertTo-SecureString "Passw0rd!" -asplaintext  œforce  
@@ -228,7 +228,7 @@ $Add-WssUser -Name User2Test -Password $password -Accesslevel Administrator -Fir
   
  **启用/禁用用户**  
   
- 示例  
+ 示例：  
   
 ```  
 $CurrentUser = get-wssuser  œname user2test  
@@ -244,7 +244,7 @@ $CurrentUser.Commit()
 Add-WssFolder [-Name] <string> [-Path] <string> [[-Description] <string>] [-KeepPermissions] [<CommonParameters>]  
 ```  
   
- 示例  
+ 示例：  
   
 ```  
 $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"  
@@ -272,7 +272,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
 ## <a name="what-are-the-native-tools-for-monitoring-and-management"></a>监测和管理所用的本机工具有哪些？  
   
-### <a name="group-policy-management"></a>“组策略”管理  
+### <a name="group-policy-management"></a>组策略管理  
  Windows Server Essentials 利用 Windows Server 2012 中的本机组策略支持，并提供了用于配置文件夹重定向和安全设置的用户界面。  
   
 > [!NOTE]
@@ -281,7 +281,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 ### <a name="management-pack"></a>管理包  
  Windows Server Essentials 管理包通过 Windows Server Essentials 中的运行状况警报系统提供监视功能，以帮助托管商管理专用于不同小型企业公司的大量 Windows Server Essentials 服务器。 此版本的监测功能仅包括系统内的严重警报。  
   
-#### <a name="management-pack-scope"></a>管理包范围  
+#### <a name="management-pack-scope"></a>管理包作用域  
  此管理包可帮助你监视特定于 Windows Server Essentials 的功能。 它无法监测 Windows Server 2012 Standard 操作系统中的通用功能。 为了监视 Windows Server Essentials，应同时使用 windows server Essentials 管理包和 Windows Server 2012 Standard 管理包。  
   
 #### <a name="mandatory-configuration"></a>必须要进行的配置  
@@ -306,11 +306,11 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 #### <a name="back-up-the-server"></a>备份服务器  
  Windows Server Essentials 支持两种方式备份服务器：本地备份和非本地备份。  
   
- **本地备份** 允许你定期执行块级的增量备份，并备份到独立的硬盘上。 作为宿主，你可以将虚拟磁盘附加到 Windows Server Essentials VM，并将服务器备份配置到此虚拟磁盘。 虚拟磁盘应位于与 Windows Server Essentials VM 不同的物理磁盘上。  
+ **本地备份**允许你定期执行块级的增量备份，并备份到独立的硬盘上。 作为宿主，你可以将虚拟磁盘附加到 Windows Server Essentials VM，并将服务器备份配置到此虚拟磁盘。 虚拟磁盘应位于与 Windows Server Essentials VM 不同的物理磁盘上。  
   
 - 如果你有另一种机制来备份 Windows Server Essentials VM，并且你不希望用户看到 Windows Server Essentials 本机服务器备份功能，则可以将其关闭并从 Windows Server Essentials 中删除所有相关的用户界面板. 有关详细信息，请参阅[ADK 文档](https://go.microsoft.com/fwlink/p/?LinkID=249124)的 "自定义服务器备份" 一节。  
   
-  **非本地备份** 允许你定期地将服务器数据备份到云计算服务。 您可以下载并安装适用于 Windows Server Essentials 的 Microsoft Azure 备份集成模块，以利用 Microsoft 提供的 Azure 备份。  
+  **非本地备份**允许你定期地将服务器数据备份到云计算服务。 您可以下载并安装适用于 Windows Server Essentials 的 Microsoft Azure 备份集成模块，以利用 Microsoft 提供的 Azure 备份。  
   
   如果你或你的用户喜欢别的云服务，可以：  
   

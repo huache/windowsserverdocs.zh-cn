@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 35743d9e1a25c71a35eed018a4a3882a3d094d76
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1e7870e045f9af79ed46ec1ad998dbc1f1474afd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355574"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312900"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>用于 SDN 的软件负载平衡 \(SLB\)
 
@@ -114,7 +114,7 @@ SLB 包括运行状况探测来验证网络基础结构的运行状况，包括�
   
 不同于传统的负载均衡器设备，其中探测器出自设备，并通过线路传输到 DIP，SLB 探测是在 DIP 所在的主机上发出的，并直接从 SLB 主机代理转到 DIP，进一步分布跨主机工作。  
   
-## <a name="bkmk_infrastructure"></a>软件负载平衡基础结构  
+## <a name="software-load-balancing-infrastructure"></a><a name="bkmk_infrastructure"></a>软件负载平衡基础结构  
 若要部署 Windows Server SLB，你必须首先在 Windows Server 2016 中部署网络控制器和一个或多个 SLB MUX Vm。  
   
 此外，还必须将 Hyper-v 主机配置为启用了 SDN 的 Hyper-v 虚拟交换机，并确保 SLB 主机代理正在运行。  服务主机的路由器必须支持相等成本多路径（ECMP）路由和边界网关协议（BGP），并且必须配置为接受来自 SLB Mux 的 BGP 对等互连请求。  
@@ -179,7 +179,7 @@ BGP 路由器对 SLB 执行以下操作。
   
 -   如果保持活动失败，则从 SLB 轮换中删除 SLB Mux。  
   
-## <a name="bkmk_features"></a>软件负载平衡功能  
+## <a name="software-load-balancing-features"></a><a name="bkmk_features"></a>软件负载平衡功能  
 下面是 SLB 的一些特性和功能。  
   
 **核心功能**  

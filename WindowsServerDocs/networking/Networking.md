@@ -1,5 +1,5 @@
 ---
-title: 网络
+title: 联网
 description: 本主题概述了 Windows Server 2016 中提供的软件定义的网络和网络平台技术。
 ms.prod: windows-server
 layout: LandingPage
@@ -7,17 +7,17 @@ ms.technology: networking
 ms.topic: landing-page
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
-ms.openlocfilehash: f3b580b108677b391065ad83f61e52504fe9ac91
-ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
+ms.openlocfilehash: e625bb537ef514ff68241669c3e75f482a61f068
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823846"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318569"
 ---
-# <a name="networking"></a>网络
+# <a name="networking"></a>联网
 
 >[!TIP]
 > 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)了解具体信息。
@@ -107,7 +107,7 @@ ms.locfileid: "74823846"
                     <div class="cardText">
                         <h3><a href="sdn/technologies/network-controller/Network-Controller.md">网络控制器</a></h3>
                         <hr />
-                        <p>网络控制器提供集中的可编程点，可用于在数据中心自动管理、配置、监视虚拟和物理网络基础架构并进行故障排除。</p>
+                        <p>网络控制器提供集中的可编程点，可用于在数据中心自动管理、配置、监视虚拟和物理网络基础结构并进行故障排除。</p>
                     </div>
                 </div>
             </div>
@@ -193,7 +193,7 @@ ms.locfileid: "74823846"
 
 <hr />
 
-## <a name="bkmk_networking"></a>网络技术
+## <a name="networking-technologies"></a><a name="bkmk_networking"></a>网络技术
 
 <ul class="cardsF panelContent">
     <li>
@@ -208,7 +208,7 @@ ms.locfileid: "74823846"
                     <div class="cardText">
                         <h3><a href="branchcache/BranchCache.md">BranchCache</a></h3>
                         <hr />
-                        <p>BranchCache 是一种广域网 (WAN) 带宽优化技术。 为了在用户访问远程服务器上的内容时优化 WAN 带宽，BranchCache 从总部或托管的云内容服务器获取内容，并将内容缓存在分支机构位置，使分支机构的客户端计算机可以从本地访问内容，而不是从 WAN 访问。</p>
+                        <p>BranchCache 是一种广域网 (WAN) 带宽优化技术。 为了在用户访问远程服务器上的内容时优化 WAN 带宽，BranchCache 从总部或托管的云内容服务器复制内容，并将内容缓存在分支机构位置，使分支机构的客户端计算机可以从本地访问内容，而不是从 WAN 访问。</p>
                     </div>
                 </div>
             </div>
@@ -322,7 +322,7 @@ ms.locfileid: "74823846"
                     <div class="cardText">
                         <h3><a href="../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md">Hyper-V 虚拟交换机</a></h3>
                         <hr />
-                        <p>Hyper-V 虚拟交换机是基于软件的第 2 层以太网网络交换机，当安装 Hyper-V 服务器角色时 Hyper-V 管理器中提供了该交换机。 交换机包括以编程方式管理的功能和扩展功能，可将虚拟机同时连接到虚拟网络和物理网络。 此外，Hyper-V 虚拟交换机提供了针对安全、隔离和服务级别的策略执行。 </p>
+                        <p>Hyper-V 虚拟交换机是基于软件的第 2 层以太网网络交换机，当安装 Hyper-V 服务器角色时 Hyper-V 管理器中提供了该交换机。 交换机包括以编程方式管理的功能和扩展功能，可将虚拟机同时连接到虚拟网络和物理网络。 此外，Hyper-V 虚拟交换机提供了安全、隔离和服务级别的策略执行。 </p>
                     </div>
                 </div>
             </div>
@@ -462,7 +462,7 @@ ms.locfileid: "74823846"
                     <div class="cardText">
                         <h3><a href="technologies/nic-teaming/NIC-Teaming.md">NIC 组合</a></h3>
                         <hr />
-                        <p>NIC 组合可用于将物理以太网网络适配器组合为一个或多个基于软件的虚拟网络适配器。 这些虚拟网络适配器可以提高性能，并在网络适配器发生故障时提供容错能力。</p>
+                        <p>NIC 组合可以将物理以太网网络适配器组合为一个或多个基于软件的虚拟网络适配器。 这些虚拟网络适配器可以提高性能，并在网络适配器发生故障时提供容错能力。</p>
                     </div>
                 </div>
             </div>
@@ -574,6 +574,6 @@ ms.locfileid: "74823846"
 
 以下位置提供了早于 Windows Server 2016 的操作系统的网络资源。
 
-- Windows Server 2012 和 Windows Server 2012 R2 [网络概述](https://technet.microsoft.com/library/hh831357.aspx)
-- Windows Server 2008 和 Windows Server 2008 R2 [网络](https://technet.microsoft.com/library/cc753940)
+- Windows Server 2012 和 Windows Server 2012 R2 [网络连接概述](https://technet.microsoft.com/library/hh831357.aspx)
+- Windows Server 2008 和 Windows Server 2008 R2 [Networking](https://technet.microsoft.com/library/cc753940)（网络）
 - Windows Server 2003 [Windows server 2003/2003 R2 已停用内容](https://www.microsoft.com/download/details.aspx?id=53314)

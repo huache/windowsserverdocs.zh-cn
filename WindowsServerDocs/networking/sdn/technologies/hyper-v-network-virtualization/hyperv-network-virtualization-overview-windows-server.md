@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0115b7ad-d229-4c69-9d7e-a3f5fbaa3b2f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0eda30b0980f2080f1603eb906fd308440316248
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2d85545224d8487b4778b95b9366a0336b27b343
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405943"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317224"
 ---
 # <a name="hyper-v-network-virtualization-overview-in-windows-server-2016"></a>Windows Server 2016 中的 hyper-v 网络虚拟化概述
 
@@ -47,7 +47,7 @@ ms.locfileid: "71405943"
 
 -   [Hyper-V 虚拟交换机概述](assetId:///e6ec46af-6ef4-49b3-b1f1-5268dc03f05b)  
 
-## <a name="BKMK_OVER"></a>功能说明  
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>功能描述  
 Hyper-v 网络虚拟化为虚拟机提供 "虚拟网络" （称为 VM 网络），这类似于服务器虚拟化（虚拟机监控程序）为操作系统提供 "虚拟机" 的方式。 网络虚拟化将虚拟网络与物理网络基础结构脱耦，并摆脱了 VLAN 以及虚拟机配置的分等级 IP 地址分配的限制。 这种灵活性使客户容易移至 IaaS 云中，并且使主机和数据中心管理员更有效地管理其基础结构，同时能保持必要的多租户隔离、安全要求，还能支持重叠的虚拟机 IP 地址。  
 
 客户想要将其数据中心无缝地延伸到云中。 当前，构建这种无缝混合云架构面临一些技术挑战。 客户面临的最大障碍之一是在云中重复使用其现有网络拓扑（子网、IP 地址、网络服务等），并在本地资源与云资源之间进行桥接。  Hyper-V 网络虚拟化提供了一种独立于底层物理网络的 VM 网络的概念。 VM 网络由一个或多个虚拟子网组成，在这种概念下，连接到虚拟网络的虚拟机在物理网络中的确切位置与虚拟网络拓扑相互脱耦。 因此，客户可轻松地将其虚拟子网移至云中，同时在云中仍保持其现有 IP 地址和拓扑，这样现有的服务程序能继续运作，而不会察觉到子网的物理位置。 也就是说，Hyper-V 网络虚拟化可实现无缝混合云的建立。  
@@ -58,7 +58,7 @@ Hyper-v 网络虚拟化为虚拟机提供 "虚拟网络" （称为 VM 网络）�
 
 对于基础结构拥有者，虚拟机布置的额外灵活性使其可以将工作负荷移至数据中心的任何地方，而不用改变虚拟机或者重新配置网络。 比如，通过 Hyper-V 网络虚拟化，可以实现跨子网实时迁移，这样虚拟机就能在数据中心实时迁移到任何地方，并且不会发生服务中断现象。 原本实时迁移只限于在同一子网中，这样就限制了虚拟机可处的位置。 跨子网实时迁移可让管理员在动态资源需求以及能源效率的基础上整合工作负荷，也可以在不干扰客户工作负荷正常操作的条件下适应基础结构维护。  
 
-## <a name="BKMK_APP"></a>实用应用程序  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
 随着虚拟化数据中心的成功使用，IT 组织和托管提供商（提供主机代管或物理服务器出租的提供商）已经开始提供灵活的虚拟基础结构，从而可以轻松地根据客户需要向其提供服务器实例。 这种新的服务类别称为“基础结构即服务 (IaaS)”。 Windows Server 2016 提供了所有必需的平台功能，使企业客户能够构建私有云并过渡到 IT 即服务操作模型。 Windows Server 2016 2016 还支持托管商构建公有云，并为其客户提供 IaaS 解决方案。 与 Virtual Machine Manager 和 Windows Azure Pack 结合使用来管理 Hyper-v 网络虚拟化策略时，Microsoft 提供了强大的云解决方案。  
 
 Windows Server 2016 Hyper-v 网络虚拟化可提供基于策略的、由软件控制的网络虚拟化，可减少企业在扩大专用 IaaS 云时面临的管理开销，并可更好地提供 cloud 托管商用于管理虚拟机的灵活性和可伸缩性，以实现更高的资源利用率。  
@@ -91,7 +91,7 @@ Windows Server 2016 Hyper-v 网络虚拟化可提供基于策略的、由软件�
 
 Hyper-V 网络虚拟化将客户虚拟机的虚拟网络与物理网络基础结构脱耦。 因此，它能让客户虚拟机维持原有的 IP 地址，同时能让数据中心管理员将客户虚拟机布置在数据中心的任何地方，而不用重新配置物理 IP 地址或者 VLAN ID。 下一部分概述了其主要功能。  
 
-## <a name="BKMK_NEW"></a>重要功能  
+## <a name="important-functionality"></a><a name="BKMK_NEW"></a>重要功能  
 下面列出了 Windows Server 2016 中的 Hyper-v 网络虚拟化的主要功能、优点和功能：  
 
 -   **启用灵活的工作负荷放置-网络隔离和 IP 地址重复使用（无 Vlan）**  
@@ -132,14 +132,14 @@ Hyper-V 网络虚拟化将客户虚拟机的虚拟网络与物理网络基础结
 
     Windows Server 2016 中的网络虚拟化策略是通过 Microsoft 网络控制器配置的。 网络控制器具有 RESTful northbound API 和 Windows PowerShell 接口，可用于配置策略。 有关 Microsoft 网络控制器的详细信息，请参阅[网络控制器](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md)。  
 
-## <a name="BKMK_SOFT"></a>软件要求  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>软件要求  
 使用 Microsoft 网络控制器的 hyper-v 网络虚拟化需要 Windows Server 2016 和 Hyper-v 角色。  
 
-## <a name="BKMK_LINKS"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>另请参阅  
 若要了解有关 Windows Server 2016 中的 Hyper-v 网络虚拟化的详细信息，请参阅以下链接：  
 
 
-|       内容类型       |                                                                                                                                参考资料                                                                                                                                |
+|       内容类型       |                                                                                                                                参考                                                                                                                                |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **社区资源**  |     -   [私有云体系结构博客](https://blogs.technet.com/b/privatecloud/archive/2012/03/19/cloud-datacenter-network-architecture-in-the-windows-server-8-era.aspx)<br />-提出问题： [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)     |
 |         **RFC**          |                                                                                                     -VXLAN- [RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                                                      |

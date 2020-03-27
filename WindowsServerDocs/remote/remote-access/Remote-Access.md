@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/18/2018
-ms.openlocfilehash: d2fa9c82c4cab05b2a60916fee3f09c1ea48a472
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dbcd0380dffca29e782be2179024270da73a2c11
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388909"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309417"
 ---
 # <a name="remote-access"></a>远程访问
 
@@ -36,7 +36,7 @@ ms.locfileid: "71388909"
 >[!IMPORTANT]
 >请勿尝试在 Microsoft Azure 的虚拟机 \(VM\) 上部署远程访问。 不支持在 Microsoft Azure 中使用远程访问。 不能在 Azure VM 中使用远程访问在 Windows Server 2016 或更早版本的 Windows Server 中部署 VPN、DirectAccess 或任何其他远程访问功能。 有关详细信息，请参阅[Microsoft Azure 虚拟机的 Microsoft 服务器软件支持](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)。
 
-## <a name="bkmk_da"></a>远程访问服务 \(RAS\)-RAS 网关
+## <a name="remote-access-service-ras---ras-gateway"></a><a name="bkmk_da"></a>远程访问服务 \(RAS\)-RAS 网关
 
 安装**DirectAccess 和 VPN （RAS）** 角色服务时，将 \(**RAS 网关**\)部署远程访问服务网关。 可以 \(VPN\) 服务器、多租户 RAS 网关 VPN 服务器，以及作为 DirectAccess 服务器，来部署 RAS 网关。
 
@@ -51,7 +51,7 @@ ms.locfileid: "71388909"
 
 有关详细信息，请参阅[RAS 网关](ras-gateway/RAS-Gateway.md)和[边界网关协议（BGP）](bgp/Border-Gateway-Protocol-BGP.md)。
 
-## <a name="bkmk_rras"></a>传递
+## <a name="routing"></a><a name="bkmk_rras"></a>传递
 
 可以使用远程访问来路由局域网上子网之间的网络流量。 路由支持网络地址转换（NAT）路由器、运行 BGP 的 LAN 路由器、路由信息协议（RIP）和使用 Internet 组管理协议（IGMP）的支持多播的路由器。 作为功能齐全的路由器，你可以在运行 Hyper-v 的计算机上的服务器计算机或虚拟机（VM）上部署 RAS。
 
@@ -61,7 +61,7 @@ ms.locfileid: "71388909"
 Install-RemoteAccess -VpnType RoutingOnly
 ```  
 
-## <a name="bkmk_proxy"></a>Web 应用程序代理
+## <a name="web-application-proxy"></a><a name="bkmk_proxy"></a>Web 应用程序代理
 
 Web 应用程序代理是 Windows Server 2016 中的远程访问角色服务。 Web 应用程序代理为企业网络中的 Web 应用程序提供反向代理功能，使任一设备上的用户能够从企业网络外部访问这些 Web 应用程序。 Web 应用程序代理使用 Active Directory 联合身份验证服务（AD FS）预先验证对 web 应用程序的访问权限，并将其充当 AD FS 代理。
 

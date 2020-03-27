@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 854bd064-2f86-4678-a940-a04b3e48ae10
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da5cc366a08f9a3f5b69952a2dff1f717fb1647b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b5ce4c6dae668372521e5b8e0d5168a94cbb86e2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355356"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312645"
 ---
 # <a name="create-an-access-policy"></a>创建访问策略
 
@@ -50,7 +50,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![选择位置](../../media/Create-an-Access-Policy/ipam_CreateAP_04.jpg)  
   
-6.  在 "**选择用户或组**" 对话框的 "**输入要选择的对象名称**" 中，键入要为其创建访问策略的用户帐户名称。 单击 **“确定”** 。  
+6.  在 "**选择用户或组**" 对话框的 "**输入要选择的对象名称**" 中，键入要为其创建访问策略的用户帐户名称。 单击“确定”。  
   
 7.  在 "**添加访问策略**" 的 "**用户设置**" 中，"**用户别名**" 现在包含策略应用到的用户帐户。 在 "**访问设置**" 中，单击 "**新建**"。  
   
@@ -64,7 +64,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![选择角色](../../media/Create-an-Access-Policy/ipam_CreateAP_07.jpg)  
   
-10. 单击 "**添加设置**"。  
+10. 单击 **“添加设置”** 。  
   
     ![添加新设置](../../media/Create-an-Access-Policy/ipam_CreateAP_08.jpg)  
   
@@ -76,7 +76,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![查看新的访问策略](../../media/Create-an-Access-Policy/ipam_CreateAP_09a.jpg)  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [基于角色的访问控制](Role-based-Access-Control.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

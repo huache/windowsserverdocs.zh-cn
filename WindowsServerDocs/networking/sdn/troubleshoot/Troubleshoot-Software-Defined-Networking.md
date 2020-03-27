@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 427048db-bab6-49b1-9611-099bb547ec0e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 33eef13bc13081acf398f3d3f26dc04219aa1d20
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8358d52796fee29cc446aa78ae36572ee3332644
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405823"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312866"
 ---
 # <a name="troubleshoot-sdn"></a>SDN 疑难解答
 
@@ -30,9 +30,9 @@ ms.locfileid: "71405823"
 > - [管理 SDN](../manage/manage-sdn.md)
 > - [SDN 的安全性](../security/sdn-security-top.md)
 
-本部分包含以下主题。
+本部分包含下列主题。
 
-- [Windows Server 软件定义的网络堆栈疑难解答](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
+- [排查 Windows Server 软件定义网络堆栈问题](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
 - 博客文章[SDN 故障排除： UDP 通信故障和更改网络控制器证书](https://techcommunity.microsoft.com/t5/Networking-Blog/SDN-Troubleshooting-UDP-Communication-failures-and-changing-the/ba-p/339694)
 - 博客文章[软件定义的网络（SDN）中的证书问题疑难解答](https://techcommunity.microsoft.com/t5/Networking-Blog/Troubleshooting-certificate-issues-in-Software-Defined/ba-p/339671)
 - 博客文章[如何为 Windows Server 2016 中的 BGP 对等互连查找 SDN 网关本地地址](https://techcommunity.microsoft.com/t5/Networking-Blog/How-to-find-the-SDN-gateway-local-address-for-BGP-peering-in/ba-p/339663)

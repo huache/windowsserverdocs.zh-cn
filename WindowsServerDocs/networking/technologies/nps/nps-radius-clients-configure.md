@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: cde37849-ce79-4c26-aa14-cd0ef31cae18
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6870029e02ae91b1ef5bf4d4302ac2bed2e27d84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b7bc75ea81133c91ad7e9883f03c3e32f085b5eb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405292"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315704"
 ---
 # <a name="configure-radius-clients"></a>配置 RADIUS 客户端
 
@@ -65,7 +65,7 @@ ms.locfileid: "71405292"
     - 确保选择 "**手动**"，然后在 "**共享密钥**" 中，键入还在 NAS 上输入的强密码。 在 "**确认共享机密**" 中重新输入共享机密。
     - 选择 "**生成**"，然后单击 "**生成**" 以自动生成共享机密。 在 NAS 上保存用于配置的已生成共享机密，使其能够与 NPS 通信。
 7. 在 "**新建 RADIUS 客户端**" 的 "**其他选项**" 中，如果你使用的是 EAP 和 PEAP 以外的任何身份验证方法，并且如果你的 NAS 支持使用消息身份验证器属性，则选择 "**访问请求消息必须包含消息身份验证器属性"** 。
-8. 单击**确定**。 NAS 出现在 NPS 上配置的 RADIUS 客户端列表中。
+8. 单击“确定”。 NAS 出现在 NPS 上配置的 RADIUS 客户端列表中。
 
 ## <a name="configure-radius-clients-by-ip-address-range-in-windows-server-2016-datacenter"></a>在 Windows Server 2016 Datacenter 中按 IP 地址范围配置 RADIUS 客户端
 
@@ -90,7 +90,7 @@ ms.locfileid: "71405292"
     - 确保选择 "**手动**"，然后在 "**共享密钥**" 中，键入还在 NAS 上输入的强密码。 在 "**确认共享机密**" 中重新输入共享机密。
     - 选择 "**生成**"，然后单击 "**生成**" 以自动生成共享机密。 在 NAS 上保存用于配置的已生成共享机密，使其能够与 NPS 通信。
 7. 在 "**新建 RADIUS 客户端**" 的 "**其他选项**" 中，如果你使用的是 EAP 和 PEAP 以外的任何身份验证方法，并且你的所有 nas 都支持使用消息身份验证器属性，则选择 "**访问请求消息必须包含消息身份验证器属性"** 。
-8. 单击**确定**。 Nas 出现在 NPS 上配置的 RADIUS 客户端列表中。
+8. 单击“确定”。 Nas 出现在 NPS 上配置的 RADIUS 客户端列表中。
 
 有关详细信息，请参阅[RADIUS 客户端](nps-radius-clients.md)。
 

@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 55686a9c-60dd-47f4-9f1f-fe72c2873a44
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dc6ade92eb5fe04271033973911ccb98e871d236
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2ac8dc289cf321266d39016f841c243899fe6cf4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406381"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319064"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>BranchCache 托管缓存模式部署概述
 
@@ -23,7 +23,7 @@ ms.locfileid: "71406381"
 
 此概述包括所需的 BranchCache 基础结构，以及部署的简单分步概述。
 
-## <a name="bkmk_components"></a>托管缓存服务器部署基础结构
+## <a name="hosted-cache-server-deployment-infrastructure"></a><a name="bkmk_components"></a>托管缓存服务器部署基础结构
 
 在此部署中，托管缓存服务器通过使用 Active Directory 域服务 \(AD DS\)中的服务连接点进行部署，并且在 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中具有 BranchCache 的选项，以 prehash Web 和基于文件的内容服务器上的共享内容，然后在托管缓存服务器上预加载内容。
 
@@ -56,7 +56,7 @@ DC1 是一个域控制器，您必须配置默认域策略，或其他更适合�
 
 你必须在客户端计算机上刷新组策略以应用新的 BranchCache 组策略设置，并允许客户端查找并使用托管缓存服务器。
 
-## <a name="bkmk_overview"></a>托管缓存服务器部署过程概述
+## <a name="hosted-cache-server-deployment-process-overview"></a><a name="bkmk_overview"></a>托管缓存服务器部署过程概述
 
 >[!NOTE]
 >[BranchCache 托管缓存模式部署](4-Bc-Hcm-Deployment.md)部分提供了有关如何执行这些步骤的详细信息。

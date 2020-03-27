@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: beb94475-b21f-46a9-ac51-bf2bb28ca94e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 03d87fb086a9f2797af8399be3d833b11bed79a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4b2377816255189efbaa6d5c39cd4e91b923a039
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367257"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314220"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>监视用于活动和状态的连接的远程客户端
 
@@ -42,7 +42,7 @@ ms.locfileid: "71367257"
   
 ![Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 PS> Get-RemoteAccessConnectionStatistics  
@@ -53,8 +53,8 @@ PS> Get-RemoteAccessConnectionStatistics
 |字段名称|值|  
 |-------|-----|  
 |Username|远程用户的用户名或别名。 通配符可用于选择一组用户，例如 contoso\\* 或 \*\administrator。|  
-|主机名|远程用户的计算机帐户名称。 也可以指定 IPv4 或 IPv6 地址。|  
-|在任务栏的搜索框中键入|DirectAccess 或 VPN。 如果选择了 DirectAccess，则会列出使用 DirectAccess 连接的所有远程用户。 如果选择了 VPN，则会列出使用 VPN 连接的所有远程用户。|  
+|Hostname|远程用户的计算机帐户名称。 也可以指定 IPv4 或 IPv6 地址。|  
+|类型|DirectAccess 或 VPN。 如果选择了 DirectAccess，则会列出使用 DirectAccess 连接的所有远程用户。 如果选择了 VPN，则会列出使用 VPN 连接的所有远程用户。|  
 |ISP 地址|远程用户的 IPv4 或 IPv6 地址。|  
 |IPv4 地址|将远程用户连接到企业网络的隧道的内部 IPv4 地址。|  
 |IPv6 地址|将远程用户连接到企业网络的隧道的内部 IPv6 地址。|  

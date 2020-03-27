@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 8ff610e2-43ca-407f-a828-06d9366e02f0
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 35d5875c78dcd92f3b40b919568dabcf0d45d673
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fc4ba05466c2d87e6d6e9f7c0d5cee1bb405c79a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356760"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318392"
 ---
 # <a name="configure-the-server-certificate-template"></a>配置服务器证书模板
 
@@ -36,13 +36,13 @@ ms.locfileid: "71356760"
   
 2.  在 MMC 中，双击 CA 名称，右键单击 "**证书模板**"，然后单击 "**管理**"。  
   
-3.  此时将打开 "证书模板" 控制台。 所有证书模板都显示在 "详细信息" 窗格中。  
+3.  此时将打开 "证书模板" 控制台。 所有证书模板将显示在详细信息窗格中。  
   
 4.  在详细信息窗格中，单击 " **RAS 和 IAS 服务器**" 模板。  
   
 5.  单击 "**操作**" 菜单，然后单击 "**复制模板**"。 此时将打开 "模板**属性**" 对话框。  
   
-6.  单击 **“安全”** 选项卡。   
+6.  单击“安全性”选项卡。   
   
 7.  在 "**安全**" 选项卡上的 "**组或用户名**" 中，单击 " **RAS 和 IAS 服务器**"。  
   

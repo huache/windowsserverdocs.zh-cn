@@ -10,15 +10,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 158183bab74e6e45c36c579f3259fc2095a939b5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db634af114610cce0bdbcacd58986ceb5f00dd99
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406048"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317588"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>在虚拟网络上使用网络虚拟设备
 
@@ -44,11 +44,11 @@ ms.locfileid: "71406048"
 部署网络虚拟设备后，可以使用该设备进行定义的路由、移植镜像或同时使用这两者。 
 
 
-## <a name="example-user-defined-routing"></a>例如：用户定义的路由
+## <a name="example-user-defined-routing"></a>示例：用户定义的路由
 
 对于大多数环境，只需要虚拟网络的分布式路由器已经定义的系统路由。 不过，您可能需要创建一个路由表并在特定情况下添加一个或多个路由，例如：
 
-- 通过本地网络强制隧道连接到 Internet。
+- 强制通过本地网络以隧道方式连接到 Internet。
 - 在您的环境中使用虚拟设备。
 
 对于这些情况，您必须创建一个路由表，并将用户定义的路由添加到表中。 你可以有多个路由表，并且可以将相同的路由表关联到一个或多个子网。 只能将每个子网关联到单个路由表。 子网中的所有 Vm 都使用与子网关联的路由表。
@@ -93,11 +93,11 @@ ms.locfileid: "71406048"
 
 将路由表应用到虚拟网络后，会立即将流量转发到虚拟设备。 您必须将虚拟设备中的路由表配置为以适合您的环境的方式转发流量。
 
-## <a name="example-port-mirroring"></a>例如：端口镜像
+## <a name="example-port-mirroring"></a>示例：端口镜像
 
-在此示例中，将 MyVM_Ethernet1 的流量配置为 mirror Appliance_Ethernet1。  假设你已部署了两个 Vm，一个作为设备，另一个用作 VM 来监视镜像。 
+在此示例中，将 MyVM_Ethernet1 的流量配置为镜像 Appliance_Ethernet1。  假设你已部署了两个 Vm，一个作为设备，另一个用作 VM 来监视镜像。 
 
-设备必须具有另一个用于管理的网络接口。 在 Appliciance_Ethernet1 上启用镜像作为目标后，它将不再接收目标为在其中配置的 IP 接口的流量。
+设备必须具有另一个用于管理的网络接口。 启用镜像作为 Appliciance_Ethernet1 上的目标后，它将不再接收目标为在其中配置的 IP 接口的流量。
 
 
 **方法**
@@ -168,6 +168,6 @@ ms.locfileid: "71406048"
    $srcNic = New-NetworkControllerNetworkInterface -ConnectionUri $uri  -Properties $srcNic.Properties -ResourceId $srcNic.ResourceId
    ```
 
-完成这些步骤后，Appliance_Ethernet1 接口将镜像来自 MyVM_Ethernet1 接口的流量。
+完成这些步骤后，Appliance_Ethernet1 接口会从 MyVM_Ethernet1 接口镜像流量。
  
 ---

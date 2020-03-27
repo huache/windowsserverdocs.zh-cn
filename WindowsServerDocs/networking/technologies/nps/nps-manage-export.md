@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cbebd0388ccd5dd2540a20f5d325d7f97c7e2bb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8c1aef88aec45ee63614b889658daceca3779e91
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405435"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316004"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>导出 NPS 配置以便在其他服务器上导入
 
@@ -44,13 +44,13 @@ ms.locfileid: "71405435"
 
 下表列出了 Windows PowerShell 中**export-npsconfiguration** cmdlet 的参数。 粗体参数是必需的。
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|路径|指定要导出 NPS 配置的 XML 文件的名称和位置。|
+|Path|指定要导出 NPS 配置的 XML 文件的名称和位置。|
 
 **管理凭据**
 
-若要完成此过程，您必须是 Administrators 组的成员。
+若要完成此过程，你必须是Administrators组的成员。
 
 ### <a name="export-example"></a>导出示例 
 
@@ -85,7 +85,7 @@ ms.locfileid: "71405435"
 
 **管理凭据**
 
-若要完成此过程，您必须是 Administrators 组的成员。
+若要完成此过程，你必须是Administrators组的成员。
 
 ### <a name="to-copy-an-nps-configuration-to-another-nps-using-netsh-commands"></a>使用 Netsh 命令将 NPS 配置复制到其他 NPS
 

@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: c7789781-87e8-464e-981b-af887d01badd
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 07/16/2018
-ms.openlocfilehash: 09e775bfe956d67adbd70cf4ce3f9461e1c37cf5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcf179484718aa029302281ea91c99588ad2857a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405518"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316558"
 ---
 # <a name="performance-tools-for-network-workloads"></a>用于网络工作负荷的性能工具
 
@@ -24,13 +24,13 @@ ms.locfileid: "71405518"
 
 本主题包含有关客户端到服务器流量工具、TCP/IP 窗口大小和 Microsoft Server 性能顾问的部分。
 
-##  <a name="bkmk_tuning"></a>客户端到服务器流量工具
+##  <a name="client-to-server-traffic-tool"></a><a name="bkmk_tuning"></a>客户端到服务器流量工具
 
 \(ctsTraffic\) 工具的客户端到服务器流量提供了创建和验证网络流量的能力。
 
 有关详细信息并下载该工具，请参阅[ctsTraffic （客户端到服务器的流量）](https://github.com/Microsoft/ctsTraffic)。
   
-##  <a name="bkmk_size"></a>TCP/IP 窗口大小
+##  <a name="tcpip-window-size"></a><a name="bkmk_size"></a>TCP/IP 窗口大小
 
 对于 1 GB 适配器，上表中显示的设置应能提供良好的吞吐量，因为 NTttcp 通过特定的逻辑处理器选项将默认的 TCP 窗口大小设置为 64 K，\(SO_RCVBUF 连接\)。 这为低延迟网络提供了良好的性能。  
 
@@ -38,7 +38,7 @@ ms.locfileid: "71405518"
 
 可以使用 **-rb**选项将 TCP 窗口大小静态设置为较大的值。 此选项将禁用 TCP 窗口自动优化，建议仅在用户完全了解 TCP/IP 行为中的结果更改时才使用此选项。 默认情况下，TCP 窗口大小设置为足够的值，并且仅在繁重的负载下或通过高延迟的链接进行调整。  
 
-##  <a name="bkmk_advisor"></a>Microsoft Server 性能顾问
+##  <a name="microsoft-server-performance-advisor"></a><a name="bkmk_advisor"></a>Microsoft Server 性能顾问
 
 Microsoft Server Performance Advisor \(SPA\) 可帮助 IT 管理员收集指标，用于识别、比较和诊断 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 部署中的潜在性能问题。 
 

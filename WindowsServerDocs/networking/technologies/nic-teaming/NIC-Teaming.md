@@ -10,15 +10,15 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/10/2018
-ms.openlocfilehash: 2356de674bfc6e57c9444136b1244934464a2d02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4d9dd20d626f998bee0a8414c281cd27b2d3dbb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396500"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316446"
 ---
 # <a name="nic-teaming"></a>NIC 组合
 
@@ -88,7 +88,7 @@ Vmq 是一项 NIC 功能，用于为每个 VM 分配队列。  只要启用了 H
   
 -   当团队处于与交换机无关的模式并使用地址哈希负载平衡时，入站流量始终出现在一个 NIC （主要团队成员）中-所有这一切都是在一个团队成员上。 由于其他团队成员不处理入站流量，因此，它们使用与主成员相同的队列进行编程，因此，如果主成员出现故障，则可以使用任何其他团队成员来选择入站流量，并且队列已准备就绪。  
 
-- 大多数 Nic 都有队列用于接收方缩放（RSS）或 VMQ，但不是同时使用。 某些 VMQ 设置看起来像是 RSS 队列的设置，但这些设置是 RSS 和 VMQ 使用的通用队列的设置，具体取决于目前正在使用的功能。 每个 NIC 的高级属性中都有 * RssBaseProcNumber 和\*MaxRssProcessors 的值。 下面是几个提供更好系统性能的 VMQ 设置。  
+- 大多数 Nic 都有队列用于接收方缩放（RSS）或 VMQ，但不是同时使用。 某些 VMQ 设置看起来像是 RSS 队列的设置，但这些设置是 RSS 和 VMQ 使用的通用队列的设置，具体取决于目前正在使用的功能。 每个 NIC 的高级属性中都有 * RssBaseProcNumber 和 \*MaxRssProcessors 的值。 下面是几个提供更好系统性能的 VMQ 设置。  
   
 -   理想情况下，每个 NIC 的 * RssBaseProcNumber 设置为一个大于或等于2（2）的偶数。 第一个物理处理器 Core 0 （逻辑处理器0和1）通常执行大部分系统处理，因此网络处理应远离此物理处理器。 有些计算机体系结构每个物理处理器没有两个逻辑处理器，因此对于这类计算机，基本处理器应大于或等于1。 如果有疑问，假定主机使用的是每个物理处理器体系结构2个逻辑处理器。  
   
@@ -140,7 +140,7 @@ Vm 中的 NIC 组合不会影响实时迁移。 与在 VM 中配置 NIC 组合�
 Windows Server 2016 中的 NIC 组合支持 Vm 中包含两个成员的团队。 您可以创建更大的团队，但不支持更大的团队。 每个团队成员都必须连接到不同的外部 Hyper-v 虚拟交换机，并且必须将 VM 的网络接口配置为允许组合。
 
   
-如果在 VM 中配置 NIC 组，则必须选择 "_独立交换机_"和 "_地址哈希_的**负载平衡" 模式**。   
+如果在 VM 中配置 NIC 组，则必须选择 "_独立交换机_" **Teaming mode**和 "_地址哈希_的**负载平衡" 模式**。   
   
   
 ## <a name="sr-iov-capable-network-adapters"></a>支持 SR-IOV 的网络适配器  
@@ -155,11 +155,11 @@ Hyper-v 主机或 Hyper-v 主机下的 NIC 组无法保护 SR-IOV 流量，因�
 
 ## <a name="related-topics"></a>相关主题
 
-- [NIC 组合 MAC 地址使用和管理](NIC-Teaming-MAC-Address-Use-and-Management.md)：当你使用 "交换机独立" 模式配置 NIC 组，并使用 "地址哈希" 或 "动态负载" 分发时，团队将在出站流量上使用主要 NIC 组成员的媒体访问控制（MAC）地址。 主 NIC 组成员是操作系统从一组初始团队成员中选择的网络适配器。
+- [NIC 组合 MAC 地址使用和管理](NIC-Teaming-MAC-Address-Use-and-Management.md)：在使用 "交换机独立" 模式配置 nic 组，并使用 "地址哈希" 或 "动态负载分配" 时，团队将使用主 NIC 组成员在出站流量上的媒体访问控制（MAC）地址。 主 NIC 组成员是操作系统从一组初始团队成员中选择的网络适配器。
 
-- [NIC 组合设置](nic-teaming-settings.md)：在本主题中，我们将为你概述 NIC 组属性，例如组合和负载平衡模式。 此外，我们还会向你介绍备用适配器设置和主团队接口属性的详细信息。 如果 NIC 组中至少有两个网络适配器，则无需指定备用适配器来实现容错。
+- [Nic 组合设置](nic-teaming-settings.md)：在本主题中，我们将为你概述 NIC 组属性，例如组合和负载平衡模式。 此外，我们还会向你介绍备用适配器设置和主团队接口属性的详细信息。 如果 NIC 组中至少有两个网络适配器，则无需指定备用适配器来实现容错。
   
-- [在主计算机或 VM 上创建新的 NIC 组](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md)：在本主题中，你将在主计算机或运行 Windows Server 2016 的 Hyper-v 虚拟机（VM）中创建新的 NIC 组。
+- 在[主计算机或 VM 上创建新的 Nic 组](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md)：在本主题中，你将在主计算机或运行 Windows Server 2016 的 hyper-v 虚拟机（VM）中创建新的 nic 组。
 
-- [NIC 组合故障排除](Troubleshooting-NIC-Teaming.md)：在本主题中，我们将讨论使用 Windows PowerShell 对 NIC 组合（如硬件、物理交换机证券和禁用或启用网络适配器）进行故障排除的方法。 
+- [Nic 组合故障排除](Troubleshooting-NIC-Teaming.md)：在本主题中，我们将讨论使用 Windows POWERSHELL 对 nic 组合（如硬件、物理交换机证券和禁用或启用网络适配器）进行故障排除的方法。 
  

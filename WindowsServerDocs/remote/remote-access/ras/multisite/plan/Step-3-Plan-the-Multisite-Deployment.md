@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1320a5c8b8c267f270dae43e764533d9289006a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e85998138f3aa3627b5e212766d491cd3fc8305f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404455"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313862"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>步骤3规划多站点部署
 
@@ -27,7 +27,7 @@ ms.locfileid: "71404455"
 
 以下各节提供了详细的规划信息。
   
-## <a name="bkmk_3_1_IPHTTPS"></a>3.1 计划 IP-HTTPS 证书  
+## <a name="31-plan-ip-https-certificates"></a><a name="bkmk_3_1_IPHTTPS"></a>3.1 计划 IP-HTTPS 证书  
 配置入口点时，会使用特定的 ConnectTo 地址配置每个入口点。 每个入口点的 ip-https 证书必须与 ConnectTo 地址匹配。 获取证书时，请注意以下事项：  
   
 -   在多站点部署中你不能使用自签名证书。  
@@ -48,7 +48,7 @@ ms.locfileid: "71404455"
   
 -   Ip-https 证书必须直接导入到计算机的个人存储区中，而不是用户。  
   
-## <a name="bkmk_3_2_NLS"></a>3.2 规划网络位置服务器  
+## <a name="32-plan-the-network-location-server"></a><a name="bkmk_3_2_NLS"></a>3.2 规划网络位置服务器  
 网络位置服务器网站可以托管在远程访问服务器上，也可以托管在组织中的另一个服务器上。 如果将网络位置服务器托管在远程访问服务器上，则部署远程访问时将自动创建该网站。 如果将网络位置服务器托管在组织中另一台运行 Windows 操作系统的服务器上，则必须确保安装 Internet Information Services （IIS）以创建网站。  
   
 ### <a name="321-certificate-requirements-for-the-network-location-server"></a>网络位置服务器的3.2.1 证书要求  
@@ -79,7 +79,7 @@ ms.locfileid: "71404455"
 3.  对于 "CRL 分发点" 字段，请使用连接到 intranet 的 DirectAccess 客户端可访问的 CRL 分发点。  
   
 ### <a name="322dns-for-the-network-location-server"></a>网络位置服务器的 3.2.2 DNS  
-如果将网络位置服务器托管在远程访问服务器上，则必须为部署中的每个入口点添加网络位置服务器网站的 DNS 条目。 注意以下事项：  
+如果将网络位置服务器托管在远程访问服务器上，则必须为部署中的每个入口点添加网络位置服务器网站的 DNS 条目。 注意以下各项：  
   
 -   多站点部署中第一个网络位置服务器证书的使用者名称将用作所有入口点的网络位置服务器 URL，因此使用者名称和网络位置服务器 URL 不能与部署中的第一台远程访问服务器。 它必须是专用于网络位置服务器的 FQDN。  
   
@@ -89,7 +89,7 @@ ms.locfileid: "71404455"
   
 -   在添加入口点之前，必须先创建入口点的网络位置服务器基础结构（DNS 和证书设置）。  
   
-## <a name="bkmk_3_3_IPsec"></a>3.3 为所有远程访问服务器规划 IPsec 根证书  
+## <a name="33-plan-the-ipsec-root-certificate-for-all-remote-access-servers"></a><a name="bkmk_3_3_IPsec"></a>3.3 为所有远程访问服务器规划 IPsec 根证书  
 在多站点部署中规划 IPsec 客户端身份验证时，请注意以下事项：  
   
 1.  如果在设置单个远程访问服务器时选择使用内置 Kerberos 代理进行计算机身份验证，则必须将此设置更改为使用内部 CA 颁发的计算机证书，因为多站点不支持 Kerberos 代理部署.  
@@ -100,7 +100,7 @@ ms.locfileid: "71404455"
   
 4.  必须在多站点部署中的所有远程访问服务器上安装相同的 IPsec 根证书或中间证书。  
   
-## <a name="bkmk_3_4_GSLB"></a>3.4 计划全局服务器负载平衡  
+## <a name="34-plan-global-server-load-balancing"></a><a name="bkmk_3_4_GSLB"></a>3.4 计划全局服务器负载平衡  
 在多站点部署中，你还可以配置全局服务器负载均衡器。 如果你的部署涉及到大地理分布，全局服务器负载均衡器对你的组织很有用，因为它可以在入口点之间分配流量负载。  全局服务器负载均衡器可配置为为 DirectAccess 客户端提供最近入口点的入口点信息。 此过程的工作原理如下所示：  
   
 1.  运行 Windows 10 或 Windows 8 的客户端计算机具有全局服务器负载均衡器 IP 地址的列表，每个地址都与一个入口点相关联。  
@@ -111,7 +111,7 @@ ms.locfileid: "71404455"
   
 有关支持远程访问的全局服务器负载平衡设备的列表，请访问[Microsoft 服务器和云平台](https://www.microsoft.com/server-cloud/)上的查找合作伙伴页。  
   
-## <a name="bkmk_3_5_EP_Selection"></a>3.5 计划 DirectAccess 客户端入口点选择  
+## <a name="35-plan-directaccess-client-entry-point-selection"></a><a name="bkmk_3_5_EP_Selection"></a>3.5 计划 DirectAccess 客户端入口点选择  
 配置多站点部署时，默认情况下，为 Windows 10 和 Windows 8 客户端计算机配置连接到部署中的所有入口点所需的信息，并根据选择自动连接到单个入口点算法. 你还可以配置你的部署以允许 Windows 10 和 Windows 8 客户端计算机手动选择它们将连接到的入口点。 如果 Windows 10 或 Windows 8 客户端计算机当前已连接到美国入口点并启用了自动入口点选择美国，则在几分钟后，客户端计算机将尝试连接通过欧洲入口点。 建议使用自动入口点选择;但是，允许手动输入点选择允许最终用户根据当前网络条件连接到不同的入口点。 例如，如果计算机连接到美国入口点，并且与内部网络的连接比预期慢得多。 在这种情况下，最终用户可以手动选择连接到欧洲入口点，以改善与内部网络的连接。  
   
 > [!NOTE]  
@@ -119,7 +119,7 @@ ms.locfileid: "71404455"
   
  为 Windows 7 客户端计算机配置连接到多站点部署中的单个入口点所需的信息。 它们不能同时存储多个入口点的信息。 例如，可以将 Windows 7 客户端计算机配置为连接到美国入口点，但不能连接到欧洲入口点。 如果美国入口点不可访问，则 Windows 7 客户端计算机将失去与内部网络的连接，直到入口点可访问。 最终用户无法进行任何更改来尝试连接到欧洲入口点。  
   
-## <a name="bkmk_3_6_IPv6"></a>3.6 计划前缀和路由  
+## <a name="36-plan-prefixes-and-routing"></a><a name="bkmk_3_6_IPv6"></a>3.6 计划前缀和路由  
   
 ### <a name="internal-ipv6-prefix"></a>内部 IPv6 前缀  
 在部署单个远程访问服务器的过程中，你计划了内部网络 IPv6 前缀，请注意多站点部署中的以下内容：  
@@ -205,7 +205,7 @@ ms.locfileid: "71404455"
   
 3.  修改 EntryPointRange 参数时，请确保未删除属于 IPsec 隧道终结点和 DNS64 地址的现有128位前缀。  
   
-## <a name="bkmk_3_7_TransitionIPv6"></a>3.7 计划在部署多站点远程访问时转换为 IPv6  
+## <a name="37-plan-the-transition-to-ipv6-when-multisite-remote-access-is-deployed"></a><a name="bkmk_3_7_TransitionIPv6"></a>3.7 计划在部署多站点远程访问时转换为 IPv6  
 许多组织使用企业网络上的 IPv4 协议。 由于有可用的 IPv4 前缀，许多组织正在进行从 IPv4 到仅 IPv6 网络的转换。  
   
 这种转换最有可能分两个阶段进行：  
@@ -216,7 +216,7 @@ ms.locfileid: "71404455"
   
 在每个部分中，转换可以分阶段执行。 在每个阶段中，只有一个网络子网可以更改为新的网络配置。 因此，支持混合部署需要 DirectAccess 多站点部署，例如，某些入口点属于仅支持 IPv4 的子网，其他入口点属于 IPv6 + IPv4 子网。 此外，在转换过程中进行的配置更改不得中断通过 DirectAccess 的客户端连接。  
   
-### <a name="TransitionIPv4toMixed"></a>从 IPv4 转换为 IPv6 + IPv4 企业网络  
+### <a name="transition-from-an-ipv4-only-to-an-ipv6ipv4-corporate-network"></a><a name="TransitionIPv4toMixed"></a>从 IPv4 转换为 IPv6 + IPv4 企业网络  
 将 IPv6 地址添加到仅 IPv4 公司网络时，可能需要将 IPv6 地址添加到已部署的 DirectAccess 服务器。 此外，你可能需要将一个入口点或一个节点添加到负载平衡群集，同时将 IPv4 和 IPv6 地址添加到 DirectAccess 部署。  
   
 远程访问允许将包含 IPv4 和 IPv6 地址的服务器添加到最初配置了 IPv4 地址的部署。 这些服务器添加为仅 IPv4 服务器，并且 DirectAccess 忽略其 IPv6 地址;因此，你的组织无法利用这些新服务器上的本机 IPv6 连接权益。  
@@ -226,7 +226,7 @@ ms.locfileid: "71404455"
 > [!NOTE]  
 > 与仅使用 IPv4 的网络一样，在混合的 IPv4 + IPv6 网络中，用于解析客户端 DNS 请求的 DNS 服务器的地址必须使用部署在远程访问服务器本身上的 DNS64 来配置，而不是使用企业 DNS 进行配置。  
   
-### <a name="TransitionMixedtoIPv6"></a>从 IPv6 + IPv4 过渡到仅 IPv6 企业网络  
+### <a name="transition-from-an-ipv6ipv4-to-an-ipv6-only-corporate-network"></a><a name="TransitionMixedtoIPv6"></a>从 IPv6 + IPv4 过渡到仅 IPv6 企业网络  
 仅当部署中的第一个远程访问服务器最初同时具有 IPv4 和 IPv6 地址或仅有 IPv6 地址时，DirectAccess 才允许添加仅限 IPv6 的入口点。 也就是说，不能在无需重新安装 DirectAccess 的情况下，在单个步骤中将仅从 IPv4 网络转换为仅 IPv6 网络。 若要直接从仅 IPv4 网络直接转换到仅 IPv6 网络，请参阅使用双重 DirectAccess 部署从仅 IPv4 转换为仅限 IPv6 的部署。  
   
 完成从仅 IPv4 部署到 IPv6 + IPv4 部署的转换后，可以转换到仅包含 IPv6 的网络。 在转换期间和转换后，请注意以下事项：  
@@ -239,7 +239,7 @@ ms.locfileid: "71404455"
   
 若要支持到企业网络的客户端连接，必须确保将网络位置服务器解析为其 IPv6 地址。 还可以设置其他 IPv4 地址，但这不是必需的。  
   
-### <a name="DualDeployment"></a>使用双重 DirectAccess 部署从 IPv4 转换为仅限 IPv6 的部署  
+### <a name="transition-from-an-ipv4-only-to-an-ipv6-only-deployment-using-dual-directaccess-deployments"></a><a name="DualDeployment"></a>使用双重 DirectAccess 部署从 IPv4 转换为仅限 IPv6 的部署  
 无法在不重新安装 DirectAccess 部署的情况下从仅从 IPv4 到仅 IPv6 的公司网络进行转换。 若要在转换期间维护客户端连接，可以使用其他 DirectAccess 部署。 当第一个转换阶段完成（仅 IPv4 网络升级到 IPv4 + IPv6），并且你打算准备将来过渡到仅使用 IPv6 的公司网络时，需要进行双重部署，orto 利用本机 IPv6 连接权益。 以下常规步骤介绍了双重部署：  
   
 1.  安装第二个 DirectAccess 部署。 你可以在新服务器上安装 DirectAccess，或从第一个部署中删除服务器，并将其用于第二个部署。  

@@ -6,23 +6,23 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: c04074338cf4ba0189eb1e9bc45a80b948fdbfbf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d3afb21c466ef1010a20ec811df45b9dcb2b711
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388042"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312254"
 ---
-# <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>步骤 3： 为始终启用 VPN 配置远程访问服务器
+# <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>步骤 3。 为始终启用 VPN 配置远程访问服务器
 
->适用于：Windows Server (半年频道), Windows Server 2016, Windows Server 2012 R2, Windows 10
+>适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**以前**步骤 2：配置服务器基础结构](vpn-deploy-server-infrastructure.md)
-- [**以前**步骤 4：安装和配置网络策略服务器（NPS）](vpn-deploy-nps.md)
+- [**上一个：** 步骤2。配置服务器基础结构](vpn-deploy-server-infrastructure.md)
+- [**上一个：** 步骤4。安装和配置网络策略服务器（NPS）](vpn-deploy-nps.md)
 
 RRAS 旨在同时作为路由器和远程访问服务器执行，因为它支持多种功能。 对于此部署，只需一小部分这些功能：支持 IKEv2 VPN 连接和 LAN 路由。
 
@@ -140,7 +140,7 @@ IKEv2 是 Internet 工程任务团队请求注释7296中所述的 VPN 隧道协�
 
        "RADIUS 身份验证" 对话框随即打开。
 
-    c. 选择 **添加** 。
+    c. 选择“添加”。
 
        此时将打开 "添加 RADIUS 服务器" 对话框。
 
@@ -169,11 +169,11 @@ IKEv2 是 Internet 工程任务团队请求注释7296中所述的 VPN 隧道协�
 
 13. 如有必要，请更改这些值以匹配环境的要求，然后选择 **"确定"** 。
 
-    NAS 是提供对较大网络的某些级别的访问权限的设备。 使用 RADIUS 基础结构的 NAS 也是 RADIUS 客户端，将连接请求和记帐消息发送到 RADIUS 服务器，以进行身份验证、授权和记帐。
+    NAS 是提供对较大网络的某些级别的访问权限的设备。 使用 RADIUS 基础结构的 NAS 还是 RADIUS 客户端，它将连接请求和记帐消息发送到 RADIUS 服务器以便进行身份验证、授权和记帐。
 
 14. 查看**记帐提供程序**的设置：
 
-    |                    如果你想要 。                     |                                                     则…                                                      |
+    |                    如果你想要 。                     |                                                     那么...                                                      |
     |-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
     | 远程访问在远程访问服务器上的活动 |                               请确保已选择 " **Windows 记帐**"。                               |
     |        用于为 VPN 执行记帐服务的 NPS         | 将**记帐提供程序**更改为**RADIUS 记帐**，然后将 NPS 配置为记帐提供程序。 |
@@ -194,11 +194,11 @@ IKEv2 是 Internet 工程任务团队请求注释7296中所述的 VPN 隧道协�
 
 16. 可有可无*如果要配置 vpn 连接的条件性访问*，请在 "**证书**" 下拉列表中的 " **SSL 证书绑定**" 下，选择 VPN 服务器身份验证。
 
-17. 可有可无*如果要配置 VPN 连接的条件性访问*，请在 NPS MMC 中，展开 "**策略\\" "网络策略**"，然后执行以下操作： 
+17. 可有可无*如果要配置 VPN 连接的条件性访问*，请在 NPS MMC 中，展开 "**策略"\\"网络策略**"，然后执行以下操作： 
 
     a. 右键**连接到 Microsoft 路由和远程访问服务器**网络策略，然后选择 "**属性**"。
 
-    b. 选择 " **授予访问权限"。如果连接请求与此策略**选项匹配，则授予访问权限。
+    b. 选择 "**授予访问权限"。如果连接请求与此策略选项匹配，则授予访问权限**。
 
     c. 在 "网络访问服务器类型" 下，从下拉菜单中选择 "**远程访问服务器（VPN 拨号）** "。
 
@@ -234,4 +234,4 @@ IKEv2 是 Internet 工程任务团队请求注释7296中所述的 VPN 隧道协�
 
 ## <a name="next-step"></a>下一步
 
-[步骤 4.安装和配置网络策略服务器（NPS）](vpn-deploy-nps.md)：在此步骤中，你将使用 Windows PowerShell 或服务器管理器添加角色和功能向导 "安装网络策略服务器（NPS）。 你还可以将 NPS 配置为处理从 VPN 服务器接收的连接请求的所有身份验证、授权和记帐职责。
+[步骤4。安装和配置网络策略服务器（NPS）](vpn-deploy-nps.md)：在此步骤中，你可以使用 Windows PowerShell 或服务器管理器添加角色和功能向导 "安装网络策略服务器（nps）。 你还可以将 NPS 配置为处理从 VPN 服务器接收的连接请求的所有身份验证、授权和记帐职责。

@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 34d826c9-65bc-401f-889d-cf84e12f0144
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7d9c37629c0e0d9964554ba90887aa45f74a330a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5fca4fc6a636bcde155e60b6da3c827bc9313606
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355607"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313045"
 ---
 # <a name="ras-gateway-high-availability"></a>RAS 网关高可用性
 
@@ -25,7 +25,7 @@ ms.locfileid: "71355607"
 
 你可以使用本主题来了解用于软件定义的网络（SDN）的 RAS 多租户网关的高可用性配置。  
   
-本主题包含以下部分。  
+本主题包含以下各节。  
   
 -   [RAS 网关概述](#bkmk_overview)  
   
@@ -35,7 +35,7 @@ ms.locfileid: "71355607"
   
 -   [RAS 网关与网络控制器的集成](#bkmk_integration)  
   
-## <a name="bkmk_overview"></a>RAS 网关概述  
+## <a name="ras-gateway-overview"></a><a name="bkmk_overview"></a>RAS 网关概述  
 如果你的组织是云服务提供商（CSP）或具有多个租户的企业，则可以在多租户模式下部署 RAS 网关，以提供进出虚拟网络和物理网络（包括 Internet）的网络流量。  
   
 可以在多租户模式下部署 RAS 网关作为边缘网关，将租户客户网络流量路由到租户虚拟网络和资源。  
@@ -46,7 +46,7 @@ Windows Server 2016 中解决了此问题，该服务器提供多个网关池，
   
 有关 RAS 网关的更多概述信息，请参阅[Ras 网关](../../../../remote/remote-access/ras-gateway/RAS-Gateway.md)。  
   
-## <a name="bkmk_pools"></a>网关池概述  
+## <a name="gateway-pools-overview"></a><a name="bkmk_pools"></a>网关池概述  
 在 Windows Server 2016 中，可以在一个或多个池中部署网关。  
   
 下图显示了在虚拟网络之间提供流量路由的不同类型的网关池。  
@@ -73,7 +73,7 @@ Windows Server 2016 中解决了此问题，该服务器提供多个网关池，
   
 -   多个池可以提供相同的网关功能，但容量不同。 例如，可以创建支持高吞吐量和低吞吐量 IKEv2 S2S 连接的网关池。  
   
-## <a name="bkmk_deployment"></a>RAS 网关部署概述  
+## <a name="ras-gateway-deployment-overview"></a><a name="bkmk_deployment"></a>RAS 网关部署概述  
 下图演示了 RAS 网关的典型云服务提供商（CSP）部署。  
   
 ![RAS 网关部署概述](../../../media/RAS-Gateway-High-Availability/ras_csp_deploy.png)  
@@ -84,7 +84,7 @@ Windows Server 2016 中解决了此问题，该服务器提供多个网关池，
   
 序列图中分离了 BGP 路由器，用于说明这一集中式路由概念。 网关 BGP 实现还提供了传输路由，使云能够充当两个租户站点之间路由的传输点。 这些 BGP 功能适用于所有网关功能。  
   
-## <a name="bkmk_integration"></a>RAS 网关与网络控制器的集成  
+## <a name="ras-gateway-integration-with-network-controller"></a><a name="bkmk_integration"></a>RAS 网关与网络控制器的集成  
 RAS 网关与 Windows Server 2016 中的网络控制器完全集成。 部署 RAS 网关和网络控制器后，网络控制器将执行以下功能。  
   
 -   部署网关池  
@@ -103,7 +103,7 @@ RAS 网关与 Windows Server 2016 中的网络控制器完全集成。 部署 RA
   
 -   [L3 转发网关的高可用性](#bkmk_l3)  
   
-### <a name="bkmk_provisioning"></a>网关连接的预配和负载平衡（IKEv2、L3 和 GRE）  
+### <a name="provisioning-and-load-balancing-of-gateway-connections-ikev2-l3-and-gre"></a><a name="bkmk_provisioning"></a>网关连接的预配和负载平衡（IKEv2、L3 和 GRE）  
 当租户请求网关连接时，请求将发送到网络控制器。 网络控制器配置了有关所有网关池的信息，包括每个池中每个池的容量和每个网关的容量。 网络控制器为连接选择了正确的池和网关。 此选择基于连接的带宽要求。 网络控制器使用 "最佳匹配" 算法来有效地选择池中的连接。 如果这是租户的第一个连接，则也指定连接的 BGP 对等点。  
   
 网络控制器为连接选择 RAS 网关后，网络控制器将为网关上的连接预配所需的配置。 如果连接是 IKEv2 S2S 连接，则网络控制器还会在 SLB 池上设置网络地址转换（NAT）规则;SLB 池中的此 NAT 规则将来自租户的连接请求定向到指定的网关。 租户由源 IP 进行区分，这应该是唯一的。  
@@ -113,7 +113,7 @@ RAS 网关与 Windows Server 2016 中的网络控制器完全集成。 部署 RA
   
 如果为连接启用了 BGP 路由，则会通过 RAS 网关启动 BGP 对等互连，并在本地和云网关之间交换路由。 通过 BGP （或以静态方式配置的路由，如果未使用 BGP）获知的路由将发送到网络控制器。 然后，网络控制器将路由联结到安装了租户 Vm 的 Hyper-v 主机。 此时，租户流量可以路由到正确的本地站点。 网络控制器还创建关联的 Hyper-v 网络虚拟化策略，这些策略指定网关位置，并将其联结到 Hyper-v 主机。  
   
-### <a name="bkmk_ike"></a>IKEv2 S2S 的高可用性  
+### <a name="high-availability-for-ikev2-s2s"></a><a name="bkmk_ike"></a>IKEv2 S2S 的高可用性  
 池中的 RAS 网关包括不同租户的连接和 BGP 对等互连。 每个池都有 "活动网关" 和 "N" 备用网关。  
   
 网络控制器按以下方式处理网关失败。  
@@ -140,8 +140,8 @@ RAS 网关与 Windows Server 2016 中的网络控制器完全集成。 部署 RA
   
 -   同时，在新的活动网关上出现配置时，将重新建立 IKEv2 S2S 连接和 BGP 对等互连。 可以通过云网关或本地网关启动连接和 BGP 对等互连。 网关刷新其路由，并将其发送到网络控制器。 网络控制器了解网关发现的新路由后，网络控制器会将路由和关联的 Hyper-v 网络虚拟化策略发送到受故障影响的租户的 Vm 所在的 Hyper-v 主机。 此网络控制器活动类似于新连接设置的情况，这种情况下，只会在更大的规模上进行。  
   
-### <a name="bkmk_gre"></a>GRE 的高可用性  
-由网络控制器进行 RAS 网关故障转移响应的过程-包括故障检测、将连接和路由配置复制到备用网关、故障转移受影响的连接的 BGP/静态路由（包括提款和对计算主机和 BGP 重新对等互连上的路由进行重新检测，并在计算主机上重新配置 Hyper-v 网络虚拟化策略-对于 GRE 网关和连接是相同的。 但是，在重新建立 GRE 连接的过程中，也有一些额外的要求。  
+### <a name="high-availability-for-gre"></a><a name="bkmk_gre"></a>GRE 的高可用性  
+由网络控制器（包括故障检测、将连接和路由配置复制到备用网关）的 RAS 网关故障转移响应过程、受影响的连接的 BGP/静态路由故障转移（包括对计算主机上的路由和 BGP 重新对等机的恢复）以及对计算主机上 Hyper-v 网络虚拟化策略的重新配置-对于 GRE 网关和连接是相同的 但是，在重新建立 GRE 连接的过程中，也有一些额外的要求。  
   
 ![GRE 的高可用性](../../../media/RAS-Gateway-High-Availability/ras_ha.png)  
   
@@ -151,14 +151,14 @@ RAS 网关与 Windows Server 2016 中的网络控制器完全集成。 部署 RA
   
 当网关出现故障时，网络控制器会将失败的网关和其他配置数据的 VIP 地址复制到备用网关。 当备用网关变为活动状态时，它会将 VIP 播发到其 TOR 交换机，并将其转到物理网络。 远程路由器会继续将 GRE 隧道连接到相同的 VIP，路由基础结构可确保将数据包路由到新的活动网关。  
   
-### <a name="bkmk_l3"></a>L3 转发网关的高可用性  
+### <a name="high-availability-for-l3-forwarding-gateways"></a><a name="bkmk_l3"></a>L3 转发网关的高可用性  
 Hyper-v 网络虚拟化 L3 转发网关是数据中心的物理基础结构和 Hyper-v 网络虚拟化云中虚拟化的基础结构之间的桥梁。 在多租户 L3 转发网关上，每个租户使用其自己的 VLAN 标记的逻辑网络连接到租户的物理网络。  
   
 新租户创建新的 L3 网关时，网络控制器网关 Service Manager 选择可用的网关 VM，并使用高可用客户地址（CA）空间 IP 地址（来自租户的 VLAN 标记的逻辑网络）配置新租户接口). IP 地址用作远程网络（物理网络）网关上的对等 IP 地址，是到达租户的 Hyper-v 网络虚拟化网络的下一跃点。  
   
 与 IPsec 或 GRE 网络连接不同，TOR 交换机将无法动态了解租户的 VLAN 标记网络。 需要在 TOR 交换机上配置租户的 VLAN 标记网络的路由，并在物理基础结构和网关之间配置所有中间交换机和路由器，以确保端到端连接。  下面是一个示例 CSP 虚拟网络配置，如下图所示。  
   
-|网络|Subnet|VLAN ID|默认网关|  
+|网络|子网|VLAN ID|默认网关|  
 |-----------|----------|-----------|-------------------|  
 |Contoso L3 逻辑网络|10.127.134.0/24|1001|10.127.134.1|  
 |Woodgrove L3 逻辑网络|10.127.134.0/24|1002|10.127.134.1|  

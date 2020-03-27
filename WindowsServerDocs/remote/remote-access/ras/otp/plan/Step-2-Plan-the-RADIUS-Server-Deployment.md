@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d6ad863-02a5-49b0-9aff-d189e78b2b80
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a991b312a0938a3809acd2b94c00aa678f5b41da
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 44f8514bd046d2c5f526e85309af430383bf1ec1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404399"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313569"
 ---
 # <a name="step-2-plan-the-radius-server-deployment"></a>步骤2规划 RADIUS 服务器部署
 
@@ -25,11 +25,11 @@ ms.locfileid: "71404399"
 
 部署单个远程访问服务器后，请规划一次性密码（OTP）身份验证服务器。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |2.1 规划 RADIUS 服务器|对于 OTP 身份验证服务器，Windows Server 2016 和 Windows Server 2012 中的远程访问支持支持支持密码身份验证协议（PAP）的启用 RADIUS 的 OTP 服务器。|  
   
-## <a name="BKMK_1.1"></a>2.1 规划 RADIUS 服务器  
+## <a name="21-plan-the-radius-server"></a><a name="BKMK_1.1"></a>2.1 规划 RADIUS 服务器  
 在规划用于 OTP 身份验证的 RADIUS 服务器时，请注意以下事项：  
   
 -   对于大多数类型的 OTP 部署，你必须将远程访问服务器配置为 RADIUS 代理。 有关详细信息，请参阅 OTP 供应商文档。  

@@ -7,14 +7,14 @@ ms.topic: article
 ms.assetid: 5ae1a40b-4f10-4ace-8aaf-13f7ab581f4f
 ms.localizationpriority: medium
 ms.date: 12/20/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5eba89cf61354627b63bcdf2420c25e7a44e3d9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ca064f887a524c5f41b29837e8f8fec586a8d928
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388139"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313268"
 ---
 # <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Always On 适用于 Windows Server 和 Windows 10 的 VPN 部署
 
@@ -25,7 +25,7 @@ ms.locfileid: "71388139"
 
 Always On VPN 提供了一个用于远程访问的单内聚解决方案，并支持已加入域、未加入域（工作组）或已加入 Azure AD 的设备，甚至是个人拥有的设备。 使用 Always On VPN 时，连接类型不需要是用户独占或设备独占，可以是二者相结合。 例如，可以先启用设备身份验证，以便进行远程设备管理；然后启用用户身份验证，以便连接到公司内部站点和服务。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 你最有可能部署了可用于部署 Always On VPN 的技术。 除了 DC/DNS 服务器以外，Always On VPN 部署还需要 NPS （RADIUS）服务器、证书颁发机构（CA）服务器和远程访问（路由/VPN）服务器。 设置基础结构后，你必须注册客户端，然后通过多个网络更改安全地将客户端连接到本地。
 

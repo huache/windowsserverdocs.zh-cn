@@ -6,26 +6,26 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 10/02/2018
-ms.openlocfilehash: e68a3889867b75152ea941ac1d8eb113b9acd3cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5425a562264addd3b2fc416f659f8ba79d6d99d6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406006"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317489"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>虚拟网络中的出口计量
 
->适用于：Windows Server 2019
+>适用于： Windows Server 2019
 
 
 云网络盈利的一个重要方面是能够按网络带宽的使用情况进行计费。 根据在给定计费周期内通过 Internet 移出数据中心的数据总量对出站数据收费。
 
 Windows Server 2019 中 SDN 网络流量的出口计量功能可以提供出站数据传输的使用情况计量。 离开每个虚拟网络的网络流量可以单独进行跟踪，使其可以从计费计算中排除。 对于未包含在其中一个未开票地址范围内的目标 IP 地址绑定的数据包，将作为计费的出站数据传输进行跟踪。
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虚拟网络未开票地址范围（IP 范围的允许列表）
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虚拟网络未开票地址范围（IP 范围的白名单）
 
 可以在现有虚拟网络的**UnbilledAddressRanges**属性下找到未开票地址范围。 默认情况下，不会添加任何地址范围。
 
@@ -51,7 +51,7 @@ Windows Server 2019 中 SDN 网络流量的出口计量功能可以提供出站�
    ```
 
 
-## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>例如：管理虚拟网络的未开票地址范围
+## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>示例：管理虚拟网络的未开票地址范围
 
 你可以通过设置虚拟网络的**UnbilledAddressRange**属性来管理从计费的出口计量中排除的 IP 子网前缀集。  虚拟网络上的网络接口发送的任何流量与其中一个前缀相匹配的目标 IP 地址都不会包含在 BilledEgressBytes 属性中。
 

@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c5a316e1230692fb800c088d752c26ec4a0f3349
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fddffbc2954ef7f0687fc7865ec295295b32983a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388264"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314524"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>步骤7安装和配置 2-APP1
 
@@ -35,20 +35,20 @@ APP1 提供 web 和文件共享服务。 2-APP1 配置由以下内容组成：
   
 - 在 2-APP1 上创建共享文件夹 
   
-## <a name="bkmk_InstallOS"></a>在 2-APP1 上安装操作系统  
+## <a name="install-the-operating-system-on-2-app1"></a><a name="bkmk_InstallOS"></a>在 2-APP1 上安装操作系统  
 首先，安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。  
   
 #### <a name="to-install-the-operating-system-on-2-app1"></a>在 2-APP1 上安装操作系统  
   
 1.  开始安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）。  
   
-2.  按照说明完成安装，指定本地管理员账户的密码（强）。 使用本地管理员账户登录。  
+2.  按照说明完成安装，指定本地管理员账户的密码（强）。 使用本地管理员帐户登录。  
   
 3.  将 APP1 连接到具有 Internet 访问权限的网络，并运行 Windows 更新以安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然后从 Internet 断开连接。  
   
 4.  将 2-APP1 连接到2公司网络子网。  
   
-## <a name="bkmk_TCP"></a>配置 TCP/IP 属性  
+## <a name="configure-tcpip-properties"></a><a name="bkmk_TCP"></a>配置 TCP/IP 属性  
 配置 APP1 上的 TCP/IP 属性。  
   
 #### <a name="to-configure-tcpip-properties"></a>配置 TCP/IP 属性的步骤  
@@ -63,7 +63,7 @@ APP1 提供 web 和文件共享服务。 2-APP1 配置由以下内容组成：
   
 5.  单击 **“使用下面的 DNS 服务器地址”** 。 在 "**首选 DNS 服务器**" 中，键入**10.2.0.1**。  
   
-6.  单击 **“高级”** ，然后单击 **“DNS”** 选项卡。在 "**此连接的 DNS 后缀**" 中，键入**corp2.corp.contoso.com**，并单击 **"确定"** 两次。  
+6.  单击 "**高级**"，然后单击 " **DNS** " 选项卡。在 "**此连接的 DNS 后缀**" 中，键入**corp2.corp.contoso.com**，并单击 **"确定"** 两次。  
   
 7.  单击“Internet 协议版本 6 (TCP/IPv6)”，然后单击“属性”。  
   
@@ -77,7 +77,7 @@ APP1 提供 web 和文件共享服务。 2-APP1 配置由以下内容组成：
   
 12. 关闭 **“网络连接”** 窗口。  
   
-## <a name="bkmk_JoinDomain"></a>将 APP1 加入 CORP2 域  
+## <a name="join-2-app1-to-the-corp2-domain"></a><a name="bkmk_JoinDomain"></a>将 APP1 加入 CORP2 域  
 将 APP1 加入到 corp2.corp.contoso.com 域。  
   
 #### <a name="to-join-2-app1-to-the-corp2-domain"></a>将 APP1 加入 CORP2 域  
@@ -100,7 +100,7 @@ APP1 提供 web 和文件共享服务。 2-APP1 配置由以下内容组成：
   
 9. 计算机重启后，单击 "**切换用户**"，然后单击 "**其他用户**"，然后用管理员帐户登录到 CORP2 域。  
   
-## <a name="bkmk_IIS"></a>在 APP1 上安装 Web 服务器（IIS）角色  
+## <a name="install-the-web-server-iis-role-on-2-app1"></a><a name="bkmk_IIS"></a>在 APP1 上安装 Web 服务器（IIS）角色  
 安装 Web 服务器（IIS）角色，使 web 服务器 APP1。  
   
 #### <a name="to-install-the-web-server-iis-role"></a>安装 Web 服务器（IIS）角色  
@@ -115,7 +115,7 @@ APP1 提供 web 和文件共享服务。 2-APP1 配置由以下内容组成：
   
 5.  验证安装是否成功，然后单击 "**关闭**"。  
   
-## <a name="bkmk_Share"></a>在 2-APP1 上创建共享文件夹  
+## <a name="create-a-shared-folder-on-2-app1"></a><a name="bkmk_Share"></a>在 2-APP1 上创建共享文件夹  
 在 APP1 上的文件夹中创建共享文件夹和文本文件。  
   
 #### <a name="to-create-a-shared-folder"></a>创建共享文件夹  

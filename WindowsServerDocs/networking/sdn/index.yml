@@ -8,8 +8,8 @@ metadata:
   text: 使用软件定义的网络 (SDN)，可以动态地管理你的数据中心网络，以满足工作负荷和应用要求。 能够以一致的方式大规模地实现网络策略，即使是在跨虚拟或物理网络部署新工作负荷或移动工作负荷时。
   keywords: 'Windows Server, Windows Server 2016, 软件定义的网络, sdn'
   ms.localizationpriority: medium
-  author: shortpatti
-  ms.author: pashort
+  author: eross-msft
+  ms.author: lizross
   ms.date: 09/04/2018
   ms.topic: article
   ms.devlang: na

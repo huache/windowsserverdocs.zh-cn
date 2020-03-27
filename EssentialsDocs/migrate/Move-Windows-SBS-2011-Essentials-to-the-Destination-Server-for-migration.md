@@ -1,9 +1,9 @@
 ---
 title: 将 Windows SBS 2011 Essentials 设置和数据移到目标服务器以进行 Windows Server Essentials 迁移
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,29 +12,29 @@ ms.assetid: 47548994-9fa0-42e0-afa4-c2ccbd063acb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 506975db4238abca6ba2d07845281e936e82a76e
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: 78047680840d5d63f7f8dd884107e9c30658fdbe
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828561"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318861"
 ---
 # <a name="move-windows-sbs-2011-essentials-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>将 Windows SBS 2011 Essentials 设置和数据移到目标服务器以进行 Windows Server Essentials 迁移
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 将设置和数据移到目标服务器，如下所示：：  
   
 
 1.  [将数据复制到目标服务器](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_CopyData)  
   
-2.  [Active Directory 用户帐户导入到 Windows Server Essentials 仪表板 （可选）](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_ImportADaccounts)  
+2.  [将 Active Directory 用户帐户导入 Windows Server Essentials 仪表板（可选）](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_ImportADaccounts)  
   
 3.  [配置网络](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_Network)  
   
-4.  [将获得允许的计算机映射到用户帐户](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_MapPermittedComputers)  
+4.  [将允许的计算机映射到用户帐户](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_MapPermittedComputers)  
  
-##  <a name="BKMK_CopyData"></a> 将数据复制到目标服务器  
+##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a>将数据复制到目标服务器  
  在将数据从源服务器复制到目标服务器之前，请执行以下任务：  
   
 -   在源服务器上查看共享文件夹列表（包括每个文件夹的权限）。 在目标服务器上创建或自定义这些文件夹，使其与要从源服务器迁移的文件夹结构相匹配。  
@@ -52,17 +52,17 @@ ms.locfileid: "66828561"
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`  
   
      其中：
-     - \<SourceServerName\>是源服务器的名称
-     - \<SharedSourceFolderName\>是源服务器上的共享文件夹的名称
-     - \<DestinationServerName\>是目标服务器的名称
-     - \<SharedDestinationFolderName\>是数据将复制到目标服务器上的共享的文件夹。  
+     - \<SourceServerName\> 为源服务器的名称
+     - \<Sharedsourcefoldername&gt\> 是源服务器上共享文件夹的名称
+     - \<Destinationservername&gt\> 是目标服务器的名称，
+     - \<Shareddestinationfoldername&gt\> 是将数据复制到的目标服务器上的共享文件夹。  
         
 3.  对每个要从源服务器迁移的共享文件夹重复上一步。  
   
-##  <a name="BKMK_ImportADaccounts"></a> Active Directory 用户帐户导入到 Windows Server Essentials 仪表板 （可选）  
- 默认情况下，源服务器上创建的所有用户帐户自动都迁移到 Windows Server Essentials 中的仪表板中。 但是，如果并非所有属性都满足迁移要求，则 Active Directory 用户帐户的自动迁移将会失败。 可以使用以下 Windows PowerShell cmdlet 导入 Active Directory 用户。  
+##  <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard-optional"></a><a name="BKMK_ImportADaccounts"></a>将 Active Directory 用户帐户导入 Windows Server Essentials 仪表板（可选）  
+ 默认情况下，在源服务器上创建的所有用户帐户都会自动迁移到 Windows Server Essentials 中的仪表板。 但是，如果并非所有属性都满足迁移要求，则 Active Directory 用户帐户的自动迁移将会失败。 可以使用以下 Windows PowerShell cmdlet 导入 Active Directory 用户。  
   
-#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>若要将 Active Directory 用户帐户导入到 Windows Server Essentials 仪表板  
+#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>将 Active Directory 用户帐户导入到 Windows Server Essentials 仪表板  
   
 1.  以域管理员身份登录到目标服务器。  
   
@@ -72,13 +72,13 @@ ms.locfileid: "66828561"
   
      `Import-WssUser  SamAccountName [AD username]`  
   
-##  <a name="BKMK_Network"></a> 配置网络  
+##  <a name="configure-the-network"></a><a name="BKMK_Network"></a>配置网络  
   
 #### <a name="to-configure-the-network"></a>配置网络  
   
 1. 在目标服务器上，打开仪表板。  
   
-2. 在仪表板“主页”  页面上，单击“设置”  ，单击“设置随处访问”  ，然后选择“单击以配置随处访问”  选项。  
+2. 在仪表板“主页”页面上，单击“设置”，单击“设置随处访问”，然后选择“单击以配置随处访问”选项。  
   
 3. 完成向导中的说明，配置你的路由器名和域名。  
   
@@ -86,24 +86,24 @@ ms.locfileid: "66828561"
   
 -   端口 80：HTTP Web 流量  
   
--   端口 443:HTTPS Web 流量  
+-   端口 443：HTTP Web 流量  
   
-##  <a name="BKMK_MapPermittedComputers"></a> 将获得允许的计算机映射到用户帐户  
+##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a>将允许的计算机映射到用户帐户  
  从 Windows Small Business Server 2011 Essentials 迁移的每个用户帐户都必须映射到一台或多台计算机。  
   
 #### <a name="to-map-user-accounts-to-computers"></a>将用户帐户映射到计算机  
   
 1.  打开 Windows Server Essentials 仪表板。  
   
-2.  在导航栏中，单击“用户”  。  
+2.  在导航栏中，单击“用户”。  
   
-3.  在用户帐户列表中，右键单击用户帐户，然后单击“查看帐户属性”  。  
+3.  在用户帐户列表中，右键单击用户帐户，然后单击“查看帐户属性”。  
   
-4.  单击“随处访问”  选项卡，然后单击“允许远程 Web 访问和访问 Web 服务应用程序”  。  
+4.  单击“随处访问”选项卡，然后单击“允许远程 Web 访问和访问 Web 服务应用程序”。  
   
-5.  依次选择“共享文件夹”  、“计算机”  和“主页链接”  ，然后单击“应用”  。  
+5.  依次选择“共享文件夹”、“计算机”和“主页链接”，然后单击“应用”。  
   
-6.  单击“计算机访问”  选项卡，然后单击要允许访问的计算机的名称。  
+6.  单击“计算机访问”选项卡，然后单击要允许访问的计算机的名称。  
   
 7.  为每个用户帐户重复步骤 3、4、5 和 6。  
   

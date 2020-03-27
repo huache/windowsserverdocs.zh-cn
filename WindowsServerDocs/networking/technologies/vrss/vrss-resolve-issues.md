@@ -7,15 +7,15 @@ ms.topic: article
 ms.assetid: ''
 ms.localizationpriority: medium
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/04/2018
-ms.openlocfilehash: 3bbb70657cb009ce760ccfe273b24c6df17d3ca7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c214b0f7ffdceb662b783b0a3603e65604243261
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949904"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315275"
 ---
 # <a name="resolve-vrss-issues"></a>解决 vRSS 问题
 
@@ -48,7 +48,7 @@ ms.locfileid: "75949904"
    Enable-NetAdapterRss *
    ```
    
-   另一种用于配置 RSS 的系统范围的方法是使用 netsh。 可使用 
+   另一种用于配置 RSS 的系统范围的方法是使用 netsh。 使用 
    
     ```cmd
    netsh int tcp show global

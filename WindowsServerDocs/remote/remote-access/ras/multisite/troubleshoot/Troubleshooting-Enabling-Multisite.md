@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 570c81d6-c4f4-464c-bee9-0acbd4993584
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fc42040d68b8a22dcfc46aa30db3a2a3c3bc060a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 59db462e3772b551f0d80819e7cd79519e95fb14
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367059"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313825"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>启用多站点疑难解答
 
@@ -128,7 +128,7 @@ DirectAccess 无法确定 Active Directory 站点。 在 Active Directory 站点
   
 确认此问题是否是由于在远程访问服务器上运行 `nltest /dsgetsite` 命令而产生的。 如果是，该命令将返回 ERROR_NO_SITENAME。 要解决此问题，请确认你的域控制器上存在包含内部服务器 IP 地址的子网，并且该子网定义了 Active Directory 站点。  
   
-## <a name="SaveGPOSettings"></a>正在保存服务器 GPO 设置  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>正在保存服务器 GPO 设置  
 **接收到错误**。 将远程访问设置保存到 GPO < GPO_name > 时出错。  
   
 **原因**  
@@ -139,7 +139,7 @@ DirectAccess 无法确定 Active Directory 站点。 在 Active Directory 站点
   
 请确保远程服务器和域控制器之间的连接正确。 如果连接没有问题，请检查域控制器的 registry.pol 文件是否被其他用户锁定，必要时，结束该用户会话，以解锁文件。  
   
-## <a name="InternalServerError"></a>出现内部错误  
+## <a name="internal-error-occurred"></a><a name="InternalServerError"></a>出现内部错误  
 **接收到错误**。 出现内部错误。  
   
 **原因**  

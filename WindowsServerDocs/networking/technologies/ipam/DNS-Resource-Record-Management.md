@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b66c09d-e401-4f70-9a2a-6047dd629bfa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8fe318a8ac17c650d8dbf2339e72b561de529c4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3aa20913a01a23291879b98d6f53fe60a7138670
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405678"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312449"
 ---
 # <a name="dns-resource-record-management"></a>DNS 资源记录管理
 
@@ -61,7 +61,7 @@ ms.locfileid: "71405678"
   
 -   主机信息  
   
--   专线  
+-   ISDN  
   
 -   MX  
   
@@ -87,7 +87,7 @@ ms.locfileid: "71405678"
   
 -   WINS-R  
   
--   X.X.X。X  
+-   X.x.x。x  
   
 在 Windows Server 2016 中，IPAM 提供 IP 地址清单、DNS 区域和 DNS 资源记录之间的集成：  
   
@@ -113,7 +113,7 @@ IPAM 允许您对 IPAM 控制台中的资源记录执行以下操作。
   
 IPAM 会自动记录使用 IPAM 控制台进行的所有 DNS 配置更改。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [管理 IPAM](Manage-IPAM.md)  
   
 

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df1e87f2-6a0f-433b-8e42-816ae75395f9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 41cc5cc2df5ac9709818536df8fff098d2a0c297
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d588d9b8675dad8bffc9e020032bc66bebf503b0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404337"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313669"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>步骤3为 OTP 配置远程访问服务器
 
@@ -25,16 +25,16 @@ ms.locfileid: "71404337"
 
 为 RADIUS 服务器配置软件分发令牌后，通信端口会打开，已创建共享机密，与 Active Directory 相对应的用户帐户已在 RADIUS 服务器上创建，并且远程访问服务器具有配置为 RADIUS 身份验证代理，则需要配置远程访问服务器以支持 OTP。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |[3.1 从 OTP 身份验证中免除用户（可选）](#BKMK_Exempt)|如果将从具有 OTP 身份验证的 DirectAccess 中免除特定用户，请遵循以下预备步骤。|  
 |[3.2 将远程访问服务器配置为支持 OTP](#BKMK_Config)|在远程访问服务器上，更新远程访问配置以支持 OTP 双重身份验证。|  
 |[3.3 用于附加授权的智能卡](#BKMK_Smartcard)|有关智能卡使用的其他信息。|  
   
 > [!NOTE]  
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
-## <a name="BKMK_Exempt"></a>3.1 从 OTP 身份验证中免除用户（可选）  
+## <a name="31-exempt-users-from-otp-authentication-optional"></a><a name="BKMK_Exempt"></a>3.1 从 OTP 身份验证中免除用户（可选）  
 如果要免除特定用户的 OTP 身份验证，则必须在远程访问配置之前执行以下步骤：  
   
 > [!NOTE]  
@@ -49,7 +49,7 @@ ms.locfileid: "71404337"
     > [!NOTE]  
     > 请确保在 OTP 例外安全组中仅包括用户帐户，而不包括计算机帐户。  
   
-## <a name="BKMK_Config"></a>3.2 将远程访问服务器配置为支持 OTP  
+## <a name="32-configure-the-remote-access-server-to-support-otp"></a><a name="BKMK_Config"></a>3.2 将远程访问服务器配置为支持 OTP  
 若要配置远程访问以将双因素身份验证和 OTP 用于 RADIUS 服务器，并将证书部署用于前面的部分，请执行以下步骤：  
   
 #### <a name="configure-remote-access-for-otp"></a>为 OTP 配置远程访问  
@@ -65,7 +65,7 @@ ms.locfileid: "71404337"
   
 4.  如果需要 Windows 7 支持，请选中 "**使 windows 7 客户端计算机能够通过 DirectAccess 进行连接**" 复选框。 注意：如 "规划" 一节中所述，Windows 7 客户端必须安装了 DCA 2.0 以支持具有 OTP 的 DirectAccess。  
   
-5.  单击**下一步**。  
+5.  单击 **“下一步”** 。  
   
 6.  在 " **OTP RADIUS 服务器**" 部分中，双击 "空白**服务器名称**" 字段。  
   
@@ -74,14 +74,14 @@ ms.locfileid: "71404337"
     > [!NOTE]  
     > 如果 RADIUS 服务器所在的域不同于远程访问服务器，则 "**服务器名称**" 字段必须指定 RADIUS 服务器的 FQDN。  
   
-8.  在 " **OTP Ca 服务器**" 部分中，选择要用于注册 OTP 客户端身份验证证书的 CA 服务器，然后单击 "**添加**"。 单击**下一步**。  
+8.  在 " **OTP Ca 服务器**" 部分中，选择要用于注册 OTP 客户端身份验证证书的 CA 服务器，然后单击 "**添加**"。 单击 **“下一步”** 。  
   
 9. 在 " **OTP 证书模板**" 部分中，单击 "**浏览**" 选择用于注册用于 OTP 身份验证的证书的证书模板。  
   
     > [!NOTE]  
     > 企业 CA 颁发的 OTP 证书的证书模板必须配置为不包含 "在颁发的证书中不包含吊销信息" 选项。 如果在创建证书模板期间选择了此选项，则 OTP 客户端计算机将无法正常登录。  
   
-    单击 "**浏览**" 选择用于注册远程访问服务器用于签署 OTP 证书注册请求的证书的证书模板。 单击**确定**。 单击**下一步**。  
+    单击 "**浏览**" 选择用于注册远程访问服务器用于签署 OTP 证书注册请求的证书的证书模板。 单击“确定”。 单击 **“下一步”** 。  
   
 10. 如果需要使用 OTP 的豁免特定用户，请在 " **Otp 免除**" 部分中选择 "**不要求指定安全组中的用户使用双因素身份验证进行身份验证**"。 单击 "**安全组**"，然后选择为 OTP 例外创建的安全组。  
   
@@ -99,7 +99,7 @@ ms.locfileid: "71404337"
   
 17. 在 "**远程访问查看**" 对话框中，单击 "**应用**"，等待 DirectAccess 策略更新，然后单击 "**关闭**"。  
   
-18. 在 "**开始**" 屏幕上，键入 "**powershell**"，右键单击 " **Powershell**"，单击 "**高级**"，然后单击 "以**管理员身份运行**"。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+18. 在 "**开始**" 屏幕上，键入 "**powershell**"，右键单击 " **Powershell**"，单击 "**高级**"，然后单击 "以**管理员身份运行**"。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 19. 在 Windows PowerShell 窗口中，键入**gpupdate/force** ，然后按 enter。  
   
@@ -107,7 +107,7 @@ ms.locfileid: "71404337"
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 若要配置远程访问以在当前使用计算机证书身份验证的部署上使用双因素身份验证，请执行以下操作：  
   
@@ -134,7 +134,7 @@ Enable-DAOtpAuthentication -CertificateTemplateName 'DAOTPLogon' -SigningCertifi
 > [!NOTE]  
 > 请确保在添加入口点之前验证是否已在远程访问服务器上应用了 OTP 设置。  
   
-## <a name="BKMK_Smartcard"></a>3.3 用于附加授权的智能卡  
+## <a name="33-smart-cards-for-additional-authorization"></a><a name="BKMK_Smartcard"></a>3.3 用于附加授权的智能卡  
 在 "远程访问设置向导" 中步骤2的 "身份验证" 页上，你可以要求使用智能卡访问内部网络。 如果选择此选项，则远程访问设置向导将为 DirectAccess 服务器上的 intranet 隧道配置 IPsec 连接安全规则，以要求使用智能卡进行隧道模式授权。 隧道模式授权允许您指定只有经过授权的计算机或用户可以建立入站隧道。  
   
 若要将智能卡用于 intranet 隧道的 IPsec 隧道模式授权，必须使用智能卡基础结构部署公钥基础结构（PKI）。  

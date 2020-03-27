@@ -6,14 +6,14 @@ ms.technology: networking-dhcp
 ms.topic: article
 ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 16900809c2c6b877d2b5c45f1c3ca26e55c6bea9
-ms.sourcegitcommit: 7df2bd3a7d07a50ace86477335ed6fbfb2dac373
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a5b2e750bd7a0103382f6d91c515f4e283a112cb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77027944"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312662"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>使用 Windows PowerShell 部署 DHCP
 
@@ -39,19 +39,19 @@ ms.locfileid: "77027944"
 - [适用于 DHCP 的 Windows PowerShell 命令](#bkmk_dhcpwps)
 - [本指南中的 Windows PowerShell 命令列表](#bkmk_list)
 
-## <a name="bkmk_overview"></a>DHCP 部署概述
+## <a name="dhcp-deployment-overview"></a><a name="bkmk_overview"></a>DHCP 部署概述
 
 下图描绘了可以使用本指南部署的方案。 此方案包括 Active Directory 域中的一台 DHCP 服务器。 服务器配置为向两个不同子网上的 DHCP 客户端提供 IP 地址。 子网由启用了 DHCP 转发的路由器分隔。
 
 ![DHCP 网络拓扑概述](../../media/Core-Network-Guide/cng16_overview.jpg)
 
-## <a name="bkmk_technologies"></a>技术概述
+## <a name="technology-overviews"></a><a name="bkmk_technologies"></a>技术概述
 
 以下部分提供了 DHCP 和 TCP/IP 的简要概述。
 
 ### <a name="dhcp-overview"></a>DHCP 概述
 
-DHCP 是用于简化主机 IP 配置管理的 IP 标准。 DHCP 标准将 DHCP 服务器用于管理网络上启用 DHCP 客户端的 IP 地址动态分配以及其他相关的配置详细信息。
+DHCP 是用于简化主机 IP 配置管理的 IP 标准。 根据 DHCP 标准，可使用 DHCP 服务器对网络上启用了 DHCP 的客户端管理 IP 地址动态分配和其他相关的配置详细信息。
 
 DHCP 允许使用 DHCP 服务器动态地将 IP 地址分配给本地网络上的计算机或其他设备（如打印机），而不是使用静态 IP 地址手动配置每个设备。
 
@@ -79,21 +79,21 @@ Windows Server 2016 中的 TCP/IP 如下：
 
 TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算机可以与其他 Microsoft 和非 Microsoft 系统连接并共享信息，包括：
 
-- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2016
 
-- Windows 10
+- Windows 10
 
 - Windows Server 2012 R2
 
 - Windows 8.1
 
-- Windows Server 2012
+- Windows Server 2012
 
 - Windows 8
 
 - Windows Server 2008 R2
 
-- Windows 7
+- Windows 7
 
 - Windows Server 2008
 
@@ -113,7 +113,7 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 - 启用了有线以太网或无线802.11 技术的平板电脑和手机电话
 
-## <a name="bkmk_plan"></a>规划 DHCP 部署
+## <a name="plan-dhcp-deployment"></a><a name="bkmk_plan"></a>规划 DHCP 部署
 
 下面是在安装 DHCP 服务器角色之前的主要规划步骤。
 
@@ -145,7 +145,7 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 - 为向 DHCP 客户端进行分配而配置的所有 DHCP 作用域选项，例如 DNS 服务器 IP 地址和路由器/默认网关 IP 地址。
 
-- 预留，可以选择用于确保 DHCP 客户端始终接收相同的 IP 地址。
+- 保留，可以选择用于确保 DHCP 客户端始终接收相同的 IP 地址。
 
 部署服务器之前，请列出子网以及要用于每个子网的 IP 地址范围。
 
@@ -165,8 +165,8 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 |地址类别|子网掩码的位|子网掩码|
 |-----------------|------------------------|---------------|
-|A 类|11111111 00000000 00000000 00000000|255.0.0.0|
-|B 类|11111111 11111111 00000000 00000000|255.255.0.0|
+|类 A|11111111 00000000 00000000 00000000|255.0.0.0|
+|类 B|11111111 11111111 00000000 00000000|255.255.0.0|
 |C 类|11111111 11111111 11111111 00000000|255.255.255.0|
 
 在 DHCP 中创建作用域并且为该作用域输入 IP 地址范围时，DHCP 提供这些默认的子网掩码值。 通常，默认的子网掩码值对于没有特殊要求的大多数网络来说都是可以接受的，其中每个 IP 网段对应于一个物理网络。
@@ -204,13 +204,13 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 |配置项|示例值|
 |-----------------------|------------------|
-|网络连接绑定|Ethernet|
+|网络连接绑定|以太网|
 |DNS 服务器设置|DC1.corp.contoso.com|
 |首选 DNS 服务器 IP 地址|10.0.0.2|
 |作用域值<br /><br />1. 范围名称<br />2. 起始 IP 地址<br />3. 结束 IP 地址<br />4. 子网掩码<br />5. 默认网关（可选）<br />6. 租约期限|1. 主子网<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6 8 天|
 |IPv6 DHCP 服务器操作模式|未启用|
 
-## <a name="bkmk_lab"></a>在测试实验室中使用本指南
+## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>在测试实验室中使用本指南
 
 在生产环境中部署之前，可以使用本指南在测试实验室中部署 DHCP。 
 
@@ -273,7 +273,7 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 3. 一台运行 Windows 客户端操作系统的物理计算机，你将使用它来验证你的 DHCP 服务器是否将 IP 地址和 DHCP 选项动态分配给 DHCP 客户端。
 
 
-## <a name="bkmk_deploy"></a>部署 DHCP
+## <a name="deploy-dhcp"></a><a name="bkmk_deploy"></a>部署 DHCP
 
 本部分提供了可用于在一台服务器上部署 DHCP 的示例 Windows PowerShell 命令。 在服务器上运行这些示例命令之前，必须修改这些命令以匹配网络和环境。 
 
@@ -490,7 +490,7 @@ Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.1.1 -ScopeID 10.0.1.0 -Compu
 > [!IMPORTANT]
 > 确保为 dhcp 客户端与 DHCP 服务器之间的所有路由器配置了 DHCP 消息转发。 有关如何配置 DHCP 转发的信息，请参阅路由器文档。
 
-## <a name="bkmk_verify"></a>验证服务器功能
+## <a name="verify-server-functionality"></a><a name="bkmk_verify"></a>验证服务器功能
 
 若要验证 DHCP 服务器是否向 DHCP 客户端提供 IP 地址的动态分配，可以将另一台计算机连接到有服务的子网。 将以太网电缆连接到网络适配器并打开计算机后，它将从 DHCP 服务器请求 IP 地址。 你可以通过使用**ipconfig/all**命令并查看结果，或通过执行连接测试（例如尝试使用 Windows 资源管理器或其他应用程序访问 Web 资源）来验证配置是否成功。
 
@@ -501,7 +501,7 @@ Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.1.1 -ScopeID 10.0.1.0 -Compu
 3. 通过运行以下命令从 Active Directory 中检索授权的 DHCP 服务器的列表，确保 DHCP 服务器已在 Active Directory 中获得授权。 [DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/Get-DhcpServerInDC)。
 4. 通过打开 DHCP 控制台 \("服务器管理器"、"**工具**"、" **dhcp** "\)，展开服务器树以查看作用域，然后\-单击每个作用域，确保已激活作用域。 如果生成的菜单包含选择 "**激活**"，请单击 "**激活**"。 \(如果已激活作用域，则菜单选择将显示 "**停用**"。\)
 
-## <a name="bkmk_dhcpwps"></a>适用于 DHCP 的 Windows PowerShell 命令
+## <a name="windows-powershell-commands-for-dhcp"></a><a name="bkmk_dhcpwps"></a>适用于 DHCP 的 Windows PowerShell 命令
 
 以下参考提供了适用于 Windows Server 2016 的所有 DHCP 服务器 Windows PowerShell 命令的命令说明和语法。 本主题基于命令开头的谓词按字母顺序列出命令，如**Get**或**Set**。
 
@@ -517,7 +517,7 @@ Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.1.1 -ScopeID 10.0.1.0 -Compu
 
 - [Windows PowerShell 中的 DHCP 服务器 Cmdlet](https://docs.microsoft.com/windows-server/networking/technologies/dhcp/dhcp-deploy-wps)
 
-## <a name="bkmk_list"></a>本指南中的 Windows PowerShell 命令列表
+## <a name="list-of-windows-powershell-commands-in-this-guide"></a><a name="bkmk_list"></a>本指南中的 Windows PowerShell 命令列表
 
 下面是在本指南中使用的命令和示例值的简单列表。
 

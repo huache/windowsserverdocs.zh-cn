@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4437101c6cde25ebb370fe54a2f8ef821997f15d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 09cfde5bdd9e213e166345fb6844dcff08275b3f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388768"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314759"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>步骤1配置 DirectAccess 基础结构
 
@@ -25,7 +25,7 @@ ms.locfileid: "71388768"
 
 本主题介绍如何配置在现有 VPN 部署中启用 DirectAccess 所需的基础结构。 在开始执行部署步骤之前，请确保已完成[步骤1：规划 DirectAccess 基础结构](Step-1-Plan-DirectAccess-Infrastructure.md)中所述的规划步骤。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |配置服务器网络设置|配置远程访问服务器上的服务器网络设置。|  
 |配置企业网络中的路由|配置企业网络中的路由以确保正确地路由通信。|  
@@ -37,7 +37,7 @@ ms.locfileid: "71388768"
 |配置安全组|配置将包含 DirectAccess 客户端计算机的安全组，以及部署中所需的任何其他安全组。|  
 |配置网络位置服务器|启用 DirectAccess 向导将在 DirectAccess 服务器上配置网络位置服务器。|  
   
-## <a name="ConfigNetworkSettings"></a>配置服务器网络设置  
+## <a name="configure-server-network-settings"></a><a name="ConfigNetworkSettings"></a>配置服务器网络设置  
 在使用 IPv4 和 IPv6 的环境中部署单一服务器需要下面的网络接口设置。 可使用“Windows 网络和共享中心”中的“更改适配器设置”配置所有 IP 地址。  
   
 -   边缘拓扑  
@@ -66,14 +66,14 @@ ms.locfileid: "71388768"
 >     Save-NetGPO -GPOSession $gposession  
 >     ```  
   
-## <a name="ConfigRouting"></a>在企业网络中配置路由  
+## <a name="configure-routing-in-the-corporate-network"></a><a name="ConfigRouting"></a>在企业网络中配置路由  
 在企业网络中配置路由，如下所示：  
   
 -   在组织中部署本机 IPv6 时，添加一个路由，以便内部网络上的路由器通过远程访问服务器将 IPv6 通信路由回来。  
   
 -   在远程访问服务器上手动配置组织 IPv4 和 IPv6 路由。 添加已发布的路由，以便将所有具有组织 (/48) IPv6 前缀的通信都转发到内部网络。 此外，对于 IPv4 通信，请添加显式路由，以便将 IPv4 通信转发到内部网络。  
   
-## <a name="ConfigFirewalls"></a>配置防火墙  
+## <a name="configure-firewalls"></a><a name="ConfigFirewalls"></a>配置防火墙  
 在部署中使用其它防火墙的情况下，当远程访问服务器位于 IPv4 Internet 上时，应用远程访问通信的以下面向 Internet 的防火墙例外情况：  
   
 -   6to4 流量-IP 协议41入站和出站。  
@@ -92,10 +92,10 @@ ms.locfileid: "71388768"
   
 -   所有 IPv4/IPv6 通信的 TCP/UDP  
   
-## <a name="ConfigCAs"></a>配置 Ca 和证书  
+## <a name="configure-cas-and-certificates"></a><a name="ConfigCAs"></a>配置 Ca 和证书  
 启用 DirectAccess 向导将配置使用用户名和密码进行身份验证的内置 Kerberos 代理。 它还将在远程访问服务器上配置 IP-HTTPS 证书。  
   
-### <a name="ConfigCertTemp"></a>配置证书模板  
+### <a name="configure-certificate-templates"></a><a name="ConfigCertTemp"></a>配置证书模板  
 当你使用内部 CA 颁发证书时，必须为 IP-HTTPS 证书和网络位置服务器网站证书配置证书模板。  
   
 ##### <a name="to-configure-a-certificate-template"></a>配置证书模板的步骤  
@@ -154,7 +154,7 @@ ms.locfileid: "71388768"
   
 5.  右键单击“证书”，指向“所有任务”，然后单击“申请新证书”。  
   
-6.  单击“下一步” 两次。  
+6.  单击“下一步”两次。  
   
 7.  在 "**申请证书**" 页上，选中证书模板对应的复选框，如果需要，请单击 "**注册此证书需要详细信息**"。  
   
@@ -174,10 +174,10 @@ ms.locfileid: "71388768"
   
 15. 在证书管理单元的详细信息窗格中，通过“服务器身份验证的预期目的”验证是否注册了新证书。  
   
-## <a name="ConfigDNS"></a>配置 DNS 服务器  
+## <a name="configure-the-dns-server"></a><a name="ConfigDNS"></a>配置 DNS 服务器  
 你必须为部署中的内部网络手动配置用于网络位置服务器网站的 DNS 条目。  
   
-### <a name="NLS_DNS"></a>创建网络位置服务器和 web 探测 DNS 记录  
+### <a name="to-create-the-network-location-server-and-web-probe-dns-records"></a><a name="NLS_DNS"></a>创建网络位置服务器和 web 探测 DNS 记录  
   
 1.  在 "内部网络 DNS 服务器：" 的 "**开始**" 屏幕上，键入 * * dnsmgmt.msc * *，然后按 enter。  
   
@@ -185,13 +185,13 @@ ms.locfileid: "71388768"
   
 3.  在“新主机”对话框的“名称(如果为空则使用父域名)”框中，输入网络位置服务器网站的 DNS 名称（这是 DirectAccess 客户端用于连接到网络位置服务器的名称）。 在“IP 地址”框中，输入网络位置服务器的 IPv4 地址，然后单击“添加主机”。 在“DNS”对话框中，单击“确定”。  
   
-4.  在“新主机”对话框的“名称(如果为空则使用父域名)”框中，输入 Web 探测的 DNS 名称（默认 Web 探测的名称为 directaccess-webprobehost）。 在“IP 地址”框中，输入 Web 探测的 IPv4 地址，然后单击“添加主机”。 为 directaccess corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在“DNS”对话框中，单击“确定”。  
+4.  在“新主机”对话框的“名称(如果为空则使用父域名)”框中，输入 Web 探测的 DNS 名称（默认 Web 探测的名称为 directaccess-webprobehost）。 在“IP 地址”框中，输入 Web 探测的 IPv4 地址，然后单击“添加主机”。 为 directaccess-corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在“DNS”对话框中，单击“确定”。  
   
-5.  单击**完成**。  
+5.  单击 **“完成”** 。  
 
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -204,7 +204,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 -   **CRL 吊销检查**-directaccess 使用证书吊销检查来检查 directaccess 客户端与远程访问服务器之间的 ip-https 连接，以及 directaccess 客户端和网络位置服务器之间基于 HTTPS 的连接。 在这两种情况下，DirectAccess 客户端都必须能够解析和访问 CRL 分发点位置。  
   
-## <a name="ConfigAD"></a>配置 Active Directory  
+## <a name="configure-active-directory"></a><a name="ConfigAD"></a>配置 Active Directory  
 必须将远程访问服务器和所有 DirectAccess 客户端计算机都加入 Active Directory 域。 DirectAccess 客户端计算机必须是以下域类型之一的成员：  
   
 -   与远程访问服务器属于同一林的域。  
@@ -235,7 +235,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 请注意，输入下面的 Add-Computer 命令后，必须提供域凭据。  
   
@@ -244,7 +244,7 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="ConfigGPOs"></a>配置 Gpo  
+## <a name="configure-gpos"></a><a name="ConfigGPOs"></a>配置 Gpo  
 若要部署远程访问，需要至少两个组策略对象：一个组策略对象包含远程访问服务器的设置，另一个包含 DirectAccess 客户端计算机的设置。 配置远程访问时，向导将自动创建所需的组策略对象。 但是，如果你的组织强制使用命名约定，或者你没有创建或编辑组策略对象所需的权限，则必须在配置远程访问之前创建它们。  
   
 若要创建组策略对象，请参阅[创建和编辑组策略对象](https://technet.microsoft.com/library/cc754740.aspx)。  
@@ -260,10 +260,10 @@ Restart-Computer
 > [!NOTE]  
 > 如果组策略对象手动创建，则在 DirectAccess 配置过程中，组策略对象将不可用。 可能没有将组策略对象复制到最接近管理计算机的域控制器。 在这种情况下，管理员可以等待复制完成，或者强制进行复制。  
   
-## <a name="ConfigSGs"></a>配置安全组  
+## <a name="configure-security-groups"></a><a name="ConfigSGs"></a>配置安全组  
 客户端计算机组策略对象中包含的 DirectAccess 设置仅应用于配置远程访问时指定的安全组成员的计算机。 此外，如果要使用安全组管理应用程序服务器，则为这些服务器创建安全组。  
   
-### <a name="Sec_Group"></a>为 DirectAccess 客户端创建安全组  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>为 DirectAccess 客户端创建安全组  
   
 1.  在 "**开始**" 屏幕上，键入**dsa.msc**，然后按 enter。 在“Active Directory 用户和计算机”控制台的左窗格中，展开将包含安全组的域，右键单击“用户”，指向“新建”，然后单击“组”。  
   
@@ -273,21 +273,21 @@ Restart-Computer
   
 4.  双击 DirectAccess 客户端计算机安全组，然后在属性对话框中，单击“成员”选项卡。  
   
-5.  在“成员” 选项卡上，单击“添加”。  
+5.  在 **“成员”** 选项卡上，单击 **“添加”** 。  
   
 6.  在“选择用户、联系人、计算机或服务帐户”对话框中，选择你希望为 DirectAccess 启用的客户端计算机，然后单击“确定”。  
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="ConfigNLS"></a>配置网络位置服务器  
-网络位置服务器应该位于高可用性服务器上，它应具有 DirectAccess 客户端信任的有效 SSL 证书。 网络位置服务器证书有两个证书选项：  
+## <a name="configure-the-network-location-server"></a><a name="ConfigNLS"></a>配置网络位置服务器  
+网络位置服务器应该位于高可用性服务器上，它应具有 DirectAccess 客户端信任的有效 SSL 证书。 对于网络位置服务器证书而言，存在两种证书选择：  
   
 -   **Private**-需要以下项（如果它们尚不存在）：  
   
@@ -317,7 +317,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 5.  右键单击“证书”，指向“所有任务”，然后单击“申请新证书”。  
   
-6.  单击“下一步” 两次。  
+6.  单击“下一步”两次。  
   
 7.  在 "**申请证书**" 页上，选中证书模板对应的复选框，如果需要，请单击 "**注册此证书需要详细信息**"。  
   

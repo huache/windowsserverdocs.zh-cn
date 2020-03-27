@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ea3f959612de0f2bc56a887ba73aba47f1d3f141
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d4e005e65a3ff645ed91f488820435aff5173390
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406218"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317894"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>使用 DNS 策略通过地理位置感知执行应用程序负载平衡
 
@@ -45,7 +45,7 @@ DNS 管理员还希望世界上其他位置的所有查询在其所有数据中�
 >[!IMPORTANT]
 >以下各节包含示例 Windows PowerShell 命令，其中包含许多参数的示例值。 在运行这些命令之前，请确保将这些命令中的示例值替换为适用于你的部署的值。
 
-### <a name="bkmk_clientsubnets"></a>创建 DNS 客户端子网
+### <a name="create-the-dns-client-subnets"></a><a name="bkmk_clientsubnets"></a>创建 DNS 客户端子网
 
 必须首先识别北美和欧洲区域的子网或 IP 地址空间。
 
@@ -61,7 +61,7 @@ DNS 客户端子网是将查询发送到 DNS 服务器的 IPv4 或 IPv6 子网�
     
 有关详细信息，请参阅[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
-### <a name="bkmk_zscopes2"></a>创建区域作用域
+### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>创建区域作用域
 
 准备好客户端子网之后，必须将区域 contosogiftservices.com 分区到不同的区域作用域中，每个区域都适用于数据中心。
 
@@ -85,7 +85,7 @@ DNS 客户端子网是将查询发送到 DNS 服务器的 IPv4 或 IPv6 子网�
 
 有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records2"></a>将记录添加到区域作用域
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records2"></a>将记录添加到区域作用域
 
 现在，必须将表示 web 服务器主机的记录添加到区域作用域中。
 
@@ -98,13 +98,13 @@ DNS 客户端子网是将查询发送到 DNS 服务器的 IPv4 或 IPv6 子网�
 
 有关详细信息，请参阅[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
-### <a name="bkmk_policies2"></a>创建 DNS 策略
+### <a name="create-the-dns-policies"></a><a name="bkmk_policies2"></a>创建 DNS 策略
 
 创建分区（区域作用域）并添加记录后，必须创建在这些范围内分发传入查询的 DNS 策略。
 
 在此示例中，跨不同数据中心内的应用程序服务器的查询分布满足以下条件。
 
-1. 从北美客户端子网上的源接收 DNS 查询时，50% 的 DNS 响应点指向西雅图数据中心，25% 的响应指向芝加哥数据中心，其余 25% 的响应指向达拉斯 datacenter。
+1. 从北美客户端子网上的源接收 DNS 查询时，50% 的 DNS 响应点指向西雅图数据中心，25% 的响应指向芝加哥数据中心，其余25% 的响应指向达拉斯 datacenter。
 2. 从欧洲客户端子网中的源接收 DNS 查询时，50% 的 DNS 响应点将指向都柏林数据中心，50% 的 DNS 响应点将指向阿姆斯特丹数据中心。
 3. 如果查询来自世界各地的任何其他地方，则 DNS 响应分布在所有五个数据中心。
 

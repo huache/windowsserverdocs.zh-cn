@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 77b6ac92-eaff-46d7-95db-ee6fc96742ed
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5dfc3c8f31d25f5b72f39e33759d6e26917ae70f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a3fb0a4e09e348040a2e89f97c73371aca62bef0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405629"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316789"
 ---
 # <a name="manage-role-based-access-control-with-server-manager"></a>使用服务器管理器管理基于角色的访问控制
 
@@ -37,7 +37,7 @@ ms.locfileid: "71405629"
   
 或者，你可以使用 Windows PowerShell 来管理基于 IPAM 角色的访问控制。 有关详细信息，请参阅[使用 Windows PowerShell 管理基于角色的访问控制](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)。
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [管理 IPAM](Manage-IPAM.md)  
   
 

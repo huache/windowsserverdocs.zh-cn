@@ -1,9 +1,9 @@
 ---
-title: 降级和删除来自新的 Windows Server Essentials network1 源服务器
-description: 介绍如何使用 Windows Server Essentials
+title: 从新的 Windows Server Essentials 中降级和删除源服务器
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,18 +12,18 @@ ms.assetid: d9f18b29-8e03-439e-bdf0-1dac5e4f70c5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e5bcdd58f4d88f7a555151d755bf427ecc9b5108
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 160c575386feaab5353c97edc1b00b71d1ad7adf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433000"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319009"
 ---
-# <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>降级和删除来自新的 Windows Server Essentials network1 源服务器
+# <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>从新的 Windows Server Essentials 中降级和删除源服务器
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-完成安装 Windows Server Essentials 并完成迁移向导中的任务后，必须执行以下任务：  
+完成 Windows Server Essentials 的安装并完成迁移向导中的任务后，必须执行以下任务：  
   
 
 1.  [卸载 Exchange Server 2003](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_UninstallExchangeServer2003)。  
@@ -47,40 +47,40 @@ ms.locfileid: "66433000"
 5.  [删除源服务器并重新调整其用途](../migrate/Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)。  
 
   
-###  <a name="BKMK_UninstallExchangeServer2003"></a> 卸载 Exchange Server 2003  
+###  <a name="uninstall-exchange-server-2003"></a><a name="BKMK_UninstallExchangeServer2003"></a>卸载 Exchange Server 2003  
   
 > [!IMPORTANT]
->  如果后将邮箱移到目标服务器和源服务器中卸载 Exchange Server 2003 之前添加的用户帐户，请在源服务器上添加邮箱。 这是设计使然。 你必须为所有在此期间添加的用户帐户将邮箱移动到目标服务器。 为 Windows Server Essentials 迁移重复移动 Exchange Server 邮箱和设置中的说明，然后再卸载 Exchange Server 2003。  
+>  如果在将邮箱移动到目标服务器之后，并在从源服务器卸载 Exchange Server 2003 之前添加用户帐户，则会将邮箱添加到源服务器上。 这是由设计决定的。 你必须为所有在此期间添加的用户帐户将邮箱移动到目标服务器。 在卸载 Exchange Server 2003 之前，请重复移动 Exchange Server 邮箱和用于 Windows Server Essentials 迁移的设置中的说明。  
   
- 降级之前，必须从源服务器卸载 Exchange Server 2003。 这为源服务器上的 Exchange Server Active Directory 域服务 (AD DS) 中删除所有引用。 您必须具有你要删除 Exchange Server 2003 的 Windows Small Business Server 2003 媒体。  
+ 降级之前，必须从源服务器卸载 Exchange Server 2003。 这会删除源服务器上的 Exchange Server Active Directory 域服务（AD DS）中的所有引用。 必须使用 Windows Small Business Server 2003 媒体才能删除 Exchange Server 2003。  
   
-##### <a name="to-uninstall-exchange-server-2003-from-the-source-server"></a>若要从源服务器卸载 Exchange Server 2003  
+##### <a name="to-uninstall-exchange-server-2003-from-the-source-server"></a>从源服务器卸载 Exchange Server 2003  
   
 1. 以管理员身份登录到源服务器  
   
-2. 依次单击“开始”  、“控制面板”  ，然后单击“添加或删除程序”  。  
+2. 依次单击“开始”、“控制面板”，然后单击“添加或删除程序”。  
   
-3. 在程序列表中，选择**Windows Small Business Server 2003**，然后单击**更改/删除**。  
+3. 在程序列表中，选择 " **Windows Small Business Server 2003**"，然后单击 "**更改/删除**"。  
   
-4. 在设置向导中，单击“下一步”  ，直到“组件选择”  页面出现。  
+4. 在设置向导中，单击“下一步”，直到“组件选择”页面出现。  
   
-5. 在组件选择页面上，展开“Exchange Server”  ，然后选择“删除”  。  
+5. 在组件选择页面上，展开“Exchange Server”，然后选择“删除”。  
   
    > [!NOTE]
    > 
-   >  Exchange Server 将进行检查以确保服务器上没有邮箱或公共文件夹。 如果保留了任何数据，将在你单击“删除”  时显示错误消息。 若要避免此问题，请确保你已完成所有主题中的过程[移动 SBS 2003 设置和数据到目标服务器](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。  
+   >  Exchange Server 将进行检查以确保服务器上没有邮箱或公共文件夹。 如果保留了任何数据，将在你单击“删除”时显示错误消息。 若要避免此问题，请确保已完成将[SBS 2003 设置和数据移到目标服务器](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)主题中的所有过程。  
    > 
-   >  Exchange Server 将进行检查以确保服务器上没有邮箱或公共文件夹。 如果保留了任何数据，将在你单击“删除”  时显示错误消息。 若要避免此问题，请确保你已完成所有主题中的过程[移动 SBS 2003 设置和数据到目标服务器](../migrate/Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。  
+   >  Exchange Server 将进行检查以确保服务器上没有邮箱或公共文件夹。 如果保留了任何数据，将在你单击“删除”时显示错误消息。 若要避免此问题，请确保已完成将[SBS 2003 设置和数据移到目标服务器](../migrate/Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)主题中的所有过程。  
 
   
-6. 单击“下一步”  。  
+6. 单击 **“下一步”** 。  
   
-7. 出现提示时，插入 Windows Small Business Server 2003 CD #3 中，并按照屏幕上的说明。  
+7. 出现提示时，请插入 Windows Small Business Server 2003 CD # 3，然后按照屏幕上的说明进行操作。  
   
-###  <a name="BKMK_PhysicallyDisconnect"></a> 断开直接连接到源服务器的打印机连接  
- 在降级源服务器之前，请以物理方式断开直接连接到源服务器并通过源服务器共享的所有打印机的连接。 确保不会为已直接连接到源服务器的打印机保留任何 Active Directory 对象。 打印机可直接连接到目标服务器和从 Windows Server Essentials 中共享。  
+###  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a>断开直接连接到源服务器的打印机的连接  
+ 在降级源服务器之前，请以物理方式断开直接连接到源服务器并通过源服务器共享的所有打印机的连接。 确保不会为已直接连接到源服务器的打印机保留任何 Active Directory 对象。 然后，可以将打印机直接连接到目标服务器并从 Windows Server Essentials 进行共享。  
   
-###  <a name="BKMK_DemoteTheSourceServer"></a> 将源服务器降级  
+###  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a>降级源服务器  
  在将源服务器从 AD DS 域控制器的角色降级为域成员服务器的角色之前，请确保将组策略设置应用于所有的客户端计算机，如以下过程中所述。  
   
 > [!IMPORTANT]
@@ -94,20 +94,20 @@ ms.locfileid: "66433000"
   
 3.  在命令提示符下，键入 **gpupdate /force**，然后按 Enter。  
   
-4.  该过程可能需要注销并重新登录才能完成。 单击“是”  以确认。  
+4.  该过程可能需要注销并重新登录才能完成。 单击“是”以确认。  
   
 ##### <a name="to-demote-the-source-server"></a>对源服务器进行降级  
   
-1. 在源服务器上，依次单击“开始”  、“运行”  ，键入 **dcpromo**，然后单击“确定”  。  
+1. 在源服务器上，依次单击“开始”、“运行”，键入 **dcpromo**，然后单击“确定”。  
   
-2. 单击“下一步”  两次。  
+2. 单击“下一步”两次。  
   
    > [!NOTE]
-   >  请不要选择“此服务器是域中的最后一个域控制器”  。  
+   >  请不要选择“此服务器是域中的最后一个域控制器”。  
   
-3. 在服务器上，键入新的管理员帐户的密码，然后单击“下一步”  。  
+3. 在服务器上，键入新的管理员帐户的密码，然后单击“下一步”。  
   
-4. 在中**摘要**对话框中，系统将通知你，将从计算机中删除 AD DS，并且服务器将成为域的成员。 单击“下一步”  。  
+4. 在 "**摘要**" 对话框中，通知您 AD DS 将从计算机中删除，并且该服务器将成为该域的成员。 单击 **“下一步”** 。  
   
 5. 单击 **“完成”** 。 源服务器将重新启动。  
   
@@ -117,15 +117,15 @@ ms.locfileid: "66433000"
   
 ##### <a name="to-remove-the-source-server-from-active-directory"></a>从 Active Directory 中删除源服务器  
   
-1.  在目标服务器上，打开“Active Directory 用户和计算机”  。  
+1.  在目标服务器上，打开“Active Directory 用户和计算机”。  
   
-2.  在“Active Directory 用户和计算机”  导航窗格中，展开域名，然后再展开“计算机”  。  
+2.  在“Active Directory 用户和计算机”导航窗格中，展开域名，然后再展开“计算机”。  
   
-3.  右键单击源服务器名称（如果它仍存在于服务器列表中），单击“删除”  ，然后单击“是”  。  
+3.  右键单击源服务器名称（如果它仍存在于服务器列表中），单击“删除”，然后单击“是”。  
   
-4.  验证源服务器是否未列出，然后关闭“Active Directory 用户和计算机”  。  
+4.  验证源服务器是否未列出，然后关闭“Active Directory 用户和计算机”。  
   
-###  <a name="BKMK_MoveTheDHCPRole"></a> 将 DHCP 服务器角色从源服务器移到路由器  
+###  <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a><a name="BKMK_MoveTheDHCPRole"></a>将 DHCP 服务器角色从源服务器移到路由器  
   
 > [!NOTE]
 > 
@@ -140,11 +140,11 @@ ms.locfileid: "66433000"
   
 1.  关闭源服务器上的 DHCP 服务，如下所示：  
   
-    1.  在源服务器上，依次单击“开始”  、“管理工具”  ，然后单击“服务”  。  
+    1.  在源服务器上，依次单击“开始”、“管理工具”，然后单击“服务”。  
   
-    2.  在当前运行的服务列表中，右键单击“Windows 服务器”  ，然后单击“属性”  。  
+    2.  在当前运行的服务列表中，右键单击“Windows 服务器”，然后单击“属性”。  
   
-    3.  对于“启动类型”  ，选择“禁用”  。  
+    3.  对于“启动类型”，选择“禁用”。  
   
     4.  停止服务。  
   
@@ -157,7 +157,7 @@ ms.locfileid: "66433000"
     > [!IMPORTANT]
     >  如果你尚未为目标服务器在路由器上设置静态 IP 或 DHCP 保留，并且 DHCP 范围与源服务器不同，则可能路由器将为目标服务器颁发一个新的 IP 地址。 如果发生这种情况，则请重置路由器的端口转发规则，以转发到目标服务器的新 IP 地址。  
   
-###  <a name="BKMK_RemoveTheSourceServer"></a> 删除并重新使用源服务器  
+###  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a>删除源服务器并重新调整其用途  
  关闭源服务器并断开它到网络的连接。 我们建议你至少在一周的时间内不要重新格式化源服务器，以确保所有必要的数据都迁移到目标服务器。 在验证所有数据已迁移之后，如有必要，你可以在网络上将此服务器作为辅助服务器进行重新安装，以用于其他任务。  
   
 > [!NOTE]

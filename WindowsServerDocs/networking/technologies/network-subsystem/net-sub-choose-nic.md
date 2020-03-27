@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9271cf4e5f50adf93f421e830a226507034ac454
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5e1ed095b3180f3aebd25381ec9086445bb141ec
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517472"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316626"
 ---
 # <a name="choosing-a-network-adapter"></a>选择网络适配器
 
@@ -26,7 +26,7 @@ ms.locfileid: "77517472"
 > [!TIP]
 >  你可以使用 Windows PowerShell 配置网络适配器设置。 有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](https://docs.microsoft.com/powershell/module/netadapter)。
 
-##  <a name="bkmk_offload"></a>卸载功能
+##  <a name="offload-capabilities"></a><a name="bkmk_offload"></a>卸载功能
 
 将来自中央处理单元 \(CPU\) 的任务卸载到网络适配器可降低服务器上的 CPU 使用率，从而提高系统的整体性能。
 
@@ -42,7 +42,7 @@ ms.locfileid: "77517472"
 |接收方缩放 \(RSS\)|RSS 是一种网络驱动程序技术，可在多处理器系统中跨多个 Cpu 高效地分发网络接收处理。 有关 RSS 的详细信息将在本主题的后面部分提供。|  
 |\(RSC\) 接收段合并|RSC 可以将数据包组合在一起，以最大程度地减少主机执行所需的标头处理。 最多可将接收到的有效负载的最大大小 64 KB 合并为一个较大的数据包进行处理。 本主题后面提供了有关 RSC 的更多详细信息。|  
   
-###  <a name="bkmk_rss"></a>接收方缩放
+###  <a name="receive-side-scaling"></a><a name="bkmk_rss"></a>接收方缩放
 
 Windows Server 2016、Windows Server 2012、Windows Server 2012 R2、Windows Server 2008 R2 和 Windows Server 2008 支持 \(RSS\)的接收方缩放。 
 
@@ -158,7 +158,7 @@ IndirectionTable: [Group:Number]:
 
 可以在与使用 NIC 组合的另一个网络接口卡成组的网络适配器上启用 RSS。 在此方案中，只能将基础物理网络适配器配置为使用 RSS。 用户无法在成组的网络适配器上设置 RSS cmdlet。
   
-###  <a name="bkmk_rsc"></a>接收段合并（RSC）
+###  <a name="receive-segment-coalescing-rsc"></a><a name="bkmk_rsc"></a>接收段合并（RSC）
 
 \(RSC 的接收段合并\) 可减少针对给定数量接收的数据处理的 IP 标头的数量，从而帮助提高性能。 它应该用于通过将较小的数据包\) \(或合并为更大的单位，来帮助扩展接收的数据的性能。
 
@@ -206,7 +206,7 @@ CoalescingExceptions : 0
 
 如果启用了单一根输入/输出虚拟化 \(SR-IOV\)，则可以为虚拟机启用 RSC。 在这种情况下，虚拟函数支持 RSC 功能;因此，虚拟机也会获得 RSC 的好处。
 
-##  <a name="bkmk_resources"></a>网络适配器资源
+##  <a name="network-adapter-resources"></a><a name="bkmk_resources"></a>网络适配器资源
 
 几个网络适配器主动管理其资源，以获得最佳性能。 多个网络适配器允许使用适配器的 "**高级网络**" 选项卡手动配置资源。 对于此类适配器，可以设置多个参数的值，包括接收缓冲区数和发送缓冲区数。
 

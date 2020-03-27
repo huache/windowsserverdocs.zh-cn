@@ -1,9 +1,9 @@
 ---
 title: 在安装过程中自动安装加载项
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,19 +12,19 @@ ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c2345726a17a074fc7022c8c4dc9b2443e9ad384
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 579ed4e6e780c261ca582e943cebf2fc18b5ef62
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433640"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310116"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>在安装过程中自动安装加载项
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="BKMK_AddIns"></a> 在安装过程中自动安装加载项  
- 若要在设置期间安装加载项，请使用在本文档的 [创建用于运行后初始配置任务的 PostIC.cmd 文件](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) 部分中介绍的 PostIC.cmd 方法。  
+##  <a name="automate-installing-add-ins-during-setup"></a><a name="BKMK_AddIns"></a>在安装过程中自动安装外接程序  
+ 若要在安装过程中安装加载项，请使用本文档的[创建用于运行后初始配置任务的 PostIC.cmd 文件](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)部分中描述的 PostIC.cmd 方法。  
   
  将以下项添加到你的 PostIC.cmd：  
   
@@ -65,9 +65,9 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
 <¦>  
 ```  
   
- 其中 **exefile** 是加载项软件包中用于执行预安装步骤的可执行文件，必须指定。 **NormalArgs** 指定当使用交互模式时要在命令行中传递给 exefile 的参数。 在此模式中，exefile 可以弹出一些对话框用于用户交互。 **SilentArgs** 指定当使用静默模式时要在命令行中传递给 exefile 的参数（调用 installaddin.exe 时指定 -q）。 exefile 文件在此模式下不应弹出任何窗口。 如果将 **IgnoreExitCode** 指定为 true，则会始终将预安装步骤视为成功，否则退出代码 0 指示成功，1 指示取消，其他值指示失败。 标记 **NormalArgs**、 **SilentArgs**和 **IgnoreExitCode** 都是可选的。  
+ 其中 **exefile** 是加载项软件包中用于执行预安装步骤的可执行文件，必须指定。 **NormalArgs** 指定当使用交互模式时要在命令行中传递给 exefile 的参数。 在此模式中，exefile 可以弹出一些对话框用于用户交互。 **SilentArgs** 指定当使用静默模式时要在命令行中传递给 exefile 的参数（调用 installaddin.exe 时指定 -q）。 exefile 文件在此模式下不应弹出任何窗口。 如果将 **IgnoreExitCode** 指定为 true，则会始终将预安装步骤视为成功，否则退出代码 0 指示成功，1 指示取消，其他值指示失败。 标记 **NormalArgs**、**SilentArgs** 和 **IgnoreExitCode** 都是可选的。  
   
- 自定义的卸载步骤可用于以下任一项：  
+ 可以将自定义卸载步骤用于以下任何任务：  
   
 - 替换内置确认对话框。  
   
@@ -117,8 +117,8 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
   调用 exefile 时出现的任何故障都会产生与 exefile 返回非 0 和 1 的代码相同的行为。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
- [其他自定义设置](Additional-Customizations.md)   
- [部署准备的映像](Preparing-the-Image-for-Deployment.md)   
+ [其他自定义](Additional-Customizations.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)

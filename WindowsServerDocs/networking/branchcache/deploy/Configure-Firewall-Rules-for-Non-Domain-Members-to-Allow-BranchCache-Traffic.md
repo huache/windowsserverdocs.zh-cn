@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: da956be0-c92d-46ea-99eb-85e2bd67bf07
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a96b67b235b813ad455d5b289b7238f671e4c547
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4a86d37fe8744127a91b7fb89e4f34d4a0a021fa
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356705"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318496"
 ---
 # <a name="configure-firewall-rules-for-non-domain-members-to-allow-branchcache-traffic"></a>配置适用于非域成员的防火墙规则，以允许 BranchCache 流量
 
@@ -34,11 +34,11 @@ ms.locfileid: "71356705"
   
 IPv4 多播：239.255.255.250  
   
-IPv6 多播：FF02：： C  
+IPv6 多播： FF02：： C  
   
 入站流量：本地端口：3702，远程端口：暂时  
   
-出站流量：本地端口：临时、远程端口：3702  
+出站流量：本地端口：暂时，远程端口：3702  
   
 Program：%systemroot%\system32\svchost.exe （BranchCache 服务 [PeerDistSvc]）  
   
@@ -49,7 +49,7 @@ Program：%systemroot%\system32\svchost.exe （BranchCache 服务 [PeerDistSvc]�
   
 入站流量：本地端口：80，远程端口：暂时  
   
-出站流量：本地端口：临时、远程端口：80  
+出站流量：本地端口：暂时，远程端口：80  
   
 
 

@@ -10,15 +10,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: dcscontentpm
-ms.author: pashort
+ms.author: lizross
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: 3feec719934fb16ca34cebe1e653768da5fb9eb7
-ms.sourcegitcommit: 33c89b76ac902927490b9727f3cf92b374754699
+ms.openlocfilehash: f802804d64b3047a2612b7f346de03aff61c30cd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728428"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316545"
 ---
 # <a name="performance-tuning-network-adapters"></a>性能优化网络适配器
 
@@ -35,7 +35,7 @@ ms.locfileid: "75728428"
 
 以下各部分介绍了某些性能优化选项。  
 
-##  <a name="bkmk_offload"></a>启用卸载功能
+##  <a name="enabling-offload-features"></a><a name="bkmk_offload"></a>启用卸载功能
 
 启用网络适配器卸载功能通常会带来好处。 但是，网络适配器可能不够强大，无法处理高吞吐量的卸载功能。
 
@@ -48,7 +48,7 @@ ms.locfileid: "75728428"
 > [!NOTE]  
 > 某些网络适配器要求独立于发送和接收路径启用卸载功能。
 
-##  <a name="bkmk_rss_web"></a>启用 web 服务器的接收方缩放（RSS）
+##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>启用 web 服务器的接收方缩放（RSS）
 
 当服务器上的网络适配器少于逻辑处理器时，RSS 可以提高 Web 的可伸缩性和性能。 当所有 web 流量都通过支持 RSS 的网络适配器时，服务器可以跨不同的 Cpu 同时处理来自不同连接的传入 web 请求。
 
@@ -63,7 +63,7 @@ ms.locfileid: "75728428"
 
 例如，如果打开 "任务管理器" 并检查服务器上的逻辑处理器，而在接收流量看来没有充分利用，则可以尝试将 RSS 队列的数量从默认值从2增加到网络适配器支持的最大值。 你的网络适配器可能具有将 RSS 队列数目作为驱动程序的一部分进行更改的选项。
 
-##  <a name="bkmk_resources"></a>增加网络适配器资源
+##  <a name="increasing-network-adapter-resources"></a><a name="bkmk_resources"></a>增加网络适配器资源
 
 对于允许手动配置资源（如接收和发送缓冲区）的网络适配器，应增加分配的资源。  
 
@@ -78,7 +78,7 @@ ms.locfileid: "75728428"
 
 对于 CPU 绑定的工作负荷，应考虑中断裁决。 使用中断裁决时，请考虑在主机 CPU 节省和延迟之间进行权衡，同时降低主机 CPU 的节省，因为有更多中断，延迟更少。 如果网络适配器不执行中断裁决，但它确实公开了缓冲区合并，则可以通过增加合并的缓冲区数来允许每个发送或接收更多的缓冲区，从而提高性能。
 
-##  <a name="bkmk_low"></a>低延迟数据包处理的性能优化
+##  <a name="performance-tuning-for-low-latency-packet-processing"></a><a name="bkmk_low"></a>低延迟数据包处理的性能优化
 
 许多网络适配器提供选项来优化由操作系统触发的延迟。 延迟是处理网络驱动程序传入数据包和网络驱动程序发回数据包之间经过的时间。 此时间通常以微秒为单位。 为了进行比较，远距离的数据包传输的传输时间通常以毫秒为单位（增大一个数量级）。 此优化不会减少数据包在传输过程中所花的时间。
 
@@ -98,7 +98,7 @@ ms.locfileid: "75728428"
 
 - 在内核处理器上处理网络适配器中断和 DPC，该处理器与处理数据包的程序（用户线程）所用的内核共享 CPU 缓存。 可以使用 CPU 相关性优化将进程定向到特定的逻辑处理器并结合 RSS 配置来实现此目的。 将相同的内核用于中断、DPC 和用户模式线程会随着负载的增加而表现出最差的性能，因为 ISR、DPC 和线程会争夺对内核的使用。
 
-##  <a name="bkmk_smi"></a>系统管理中断
+##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>系统管理中断
 
 许多硬件系统使用系统管理中断（SMI-S）来实现多种维护功能，如报告错误纠正代码（ECC）内存错误、维护旧的 USB 兼容性、控制风扇和管理 BIOS 控制电源设置。
 
@@ -111,11 +111,11 @@ SMI 是系统上的最高优先级中断，并将 CPU 置于管理模式下。 �
 > [!NOTE]  
 > 操作系统无法控制 SMIs，因为逻辑处理器在特殊维护模式下运行，这会阻止操作系统介入。
 
-##  <a name="bkmk_tcp"></a>性能优化 TCP
+##  <a name="performance-tuning-tcp"></a><a name="bkmk_tcp"></a>性能优化 TCP
 
  你可以使用以下项来优化 TCP 性能。
 
-###  <a name="bkmk_tcp_params"></a>TCP 接收窗口自动优化
+###  <a name="tcp-receive-window-autotuning"></a><a name="bkmk_tcp_params"></a>TCP 接收窗口自动优化
 
 在 Windows Vista、Windows Server 2008 和更高版本的 Windows 中，Windows 网络堆栈使用名为*tcp 接收窗口自动优化级别*的功能来协商 tcp 接收窗口大小。 此功能可以在 TCP 握手期间为每个 TCP 通信协商定义的接收窗口大小。
 
@@ -231,13 +231,13 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 可以将接收窗口自动调谐设置为任意一种级别。 默认级别为 "**正常**"。 下表介绍了这些级别。
 
-|层次 |十六进制值 |说明 |
+|Level |十六进制值 |Comments |
 | --- | --- | --- |
 |标准（默认值） |0x8 （比例因子为8） |设置 TCP 接收窗口以适应几乎所有方案。 |
-|禁用 |没有可用的缩放比例 |将 TCP 接收窗口设置为其默认值。 |
-|限制 |0x4 （缩放系数为4） |设置 TCP 接收窗口，使其超出其默认值，但在某些情况下限制此类增长。 |
+|已禁用 |没有可用的缩放比例 |将 TCP 接收窗口设置为其默认值。 |
+|Restricted (受限的) |0x4 （缩放系数为4） |设置 TCP 接收窗口，使其超出其默认值，但在某些情况下限制此类增长。 |
 |高度限制 |0x2 （缩放比例为2） |设置 TCP 接收窗口，使其超出其默认值，但要非常谨慎。 |
-|试验 |0xE （缩放比例为14） |设置 TCP 接收窗口以适应极端方案。 |
+|性 |0xE （缩放比例为14） |设置 TCP 接收窗口以适应极端方案。 |
 
 如果使用应用程序来捕获网络数据包，则应用程序应为不同的窗口自动优化级别设置报告类似于以下内容的数据。
 
@@ -376,7 +376,7 @@ Windows Server 2003 中的以下注册表设置不再受支持，在更高版本
 
 > **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**  
 
-###  <a name="bkmk_wfp"></a>Windows 筛选平台
+###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Windows 筛选平台
 
 Windows Vista 和 Windows Server 2008 引进了 Windows 筛选平台（WFP）。 WFP 为非 Microsoft 独立软件供应商（Isv）提供 Api 来创建数据包处理筛选器。 其示例包括防火墙和防病毒软件。
 

@@ -3,7 +3,7 @@ title: 管理 Windows Server Essentials 中的远程 Web 访问
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3eace9281d9fcdea5262274ac7fb20ec30d30fb4
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 6f4277637ed0f721b0cae12c15086a59ac6190fc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322279"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311162"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的远程 Web 访问
 
@@ -37,7 +37,7 @@ ms.locfileid: "79322279"
   
 -   [远程 Web 访问疑难解答](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_5)  
   
-##  <a name="BKMK_1"></a>启用和配置远程 Web 访问  
+##  <a name="turn-on-and-configure-remote-web-access"></a><a name="BKMK_1"></a>启用和配置远程 Web 访问  
  以下主题将帮助你启用和配置远程 Web 访问：  
   
 -   [远程 Web 访问概述](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview)  
@@ -52,7 +52,7 @@ ms.locfileid: "79322279"
   
 -   [管理远程 Web 访问和 VPN 用户](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ManageRWAVPN)  
   
-###  <a name="BKMK_Overview"></a>远程 Web 访问概述  
+###  <a name="remote-web-access-overview"></a><a name="BKMK_Overview"></a>远程 Web 访问概述  
  当你离开办公室时，你可以打开 web 浏览器，并从可访问 Internet 的任何位置访问远程 Web 访问。 在远程 Web 访问中，可以：  
   
 - 访问服务器上的共享文件和文件夹。  
@@ -65,7 +65,7 @@ ms.locfileid: "79322279"
   
   将在 Windows Server Essentials 仪表板的 "**用户**" 选项卡上为每个用户帐户显示 "远程 Web 访问" 设置。 若要更改远程 Web 访问设置，请右键单击该用户帐户，然后单击 "**查看帐户属性"** 。  
   
-###  <a name="BKMK_TurnOnRWA"></a>打开远程 Web 访问  
+###  <a name="turn-on-remote-web-access"></a><a name="BKMK_TurnOnRWA"></a>打开远程 Web 访问  
  你可以通过从服务器仪表板运行“设置随处访问”向导的方式来启用远程 Web 访问。  
   
 ##### <a name="to-turn-on-remote-web-access"></a>启用远程 Web 访问的步骤  
@@ -80,7 +80,7 @@ ms.locfileid: "79322279"
   
 5.  按照说明完成向导。  
   
-###  <a name="BKMK_Region"></a>更改你所在的区域  
+###  <a name="change-your-region"></a><a name="BKMK_Region"></a>更改你所在的区域  
  只有以网络管理员身份才能更改 Windows Server Essentials 中的地区设置。  
   
 ##### <a name="to-change-the-region-setting"></a>更改地区设置  
@@ -93,7 +93,7 @@ ms.locfileid: "79322279"
   
 4.  从该下拉列表中选择新地区，然后单击“应用”接受新的地区设置。  
   
-###  <a name="BKMK_ManagePerms"></a>管理远程 Web 访问权限  
+###  <a name="manage-remote-web-access-permissions"></a><a name="BKMK_ManagePerms"></a>管理远程 Web 访问权限  
  当你在 Windows Server Essentials 中添加用户帐户时，默认情况下将允许新用户使用远程 Web 访问。 如果选择不允许用户帐户进行远程 Web 访问，然后发现用户需要使用远程 Web 访问，则可以更新用户帐户的属性。  
   
 ##### <a name="to-manage-remote-web-access-permissions-for-a-user-account"></a>管理用户帐户的远程 Web 访问权限  
@@ -110,13 +110,13 @@ ms.locfileid: "79322279"
   
    有关详细信息，请参阅[管理用户帐户](Manage-User-Accounts-in-Windows-Server-Essentials.md)。  
   
-###  <a name="BKMK_SecureRWA"></a>安全远程 Web 访问  
+###  <a name="secure-remote-web-access"></a><a name="BKMK_SecureRWA"></a>安全远程 Web 访问  
  Windows Server Essentials 使用安全证书以帮助保护在软件和 Web 浏览器之间交换的信息的安全。 在计算机上安装连接器软件后，适用于 Windows Server Essentials 的安全证书将添加到计算机上受信任的证书列表中。 当用户离开办公室时，他们访问远程 Web 访问的最佳方式是使用装有连接器软件的便携式计算机。  
   
 > [!WARNING]
 >  从公共位置或其他不受信任的计算机使用远程 Web 访问的用户应确保在计算机处于无人使用的状态前或完成其会话后注销网站。  
   
-###  <a name="BKMK_ManageRWAVPN"></a>管理远程 Web 访问和 VPN 用户  
+###  <a name="manage-remote-web-access-and-vpn-users"></a><a name="BKMK_ManageRWAVPN"></a>管理远程 Web 访问和 VPN 用户  
  你可以使用 VPN 连接到 Windows Server Essentials 并访问存储在服务器上的所有资源。 如果你有一台通过网络帐户设置的客户端计算机，并且该网络帐户可通过 VPN 连接来连接到托管的 Windows Server Essentials 服务器，则上述方法尤其有用。 在托管 Windows Server Essentials 服务器上新创建的所有用户帐户均必须在首次使用时通过 VPN 登录到客户端计算机。  
   
 ##### <a name="to-set-vpn-and-remote-web-access-permissions-for-network-users"></a>为网络用户设置 VPN 和远程 Web 访问权限  
@@ -139,7 +139,7 @@ ms.locfileid: "79322279"
   
 7.  单击“应用”，然后单击“确定”。  
   
-##  <a name="BKMK_2"></a>设置路由器  
+##  <a name="set-up-your-router"></a><a name="BKMK_2"></a>设置路由器  
  当配置远程 Web 访问服务器时，“设置随处访问”向导会尝试设置路由器。 如果更改路由器或更改路由器设置，你必须返回设置路由器向导。 有关详情，请参阅以下主题：  
   
 -   [设置路由器](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetUpRouter)  
@@ -150,7 +150,7 @@ ms.locfileid: "79322279"
   
 -   [启用远程桌面服务 ActiveX 控件](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ActiveX)  
   
-###  <a name="BKMK_SetUpRouter"></a>设置路由器  
+###  <a name="set-up-your-router"></a><a name="BKMK_SetUpRouter"></a>设置路由器  
  在此步骤中，Windows Server Essentials 会尝试使用 UPnP 命令自动配置路由器。 为此，你的路由器必须支持 UPnP 标准，而且也要启用 UPnP 设置。  
   
 > [!NOTE]
@@ -158,7 +158,7 @@ ms.locfileid: "79322279"
   
  如果未通过“设置域名”向导设置路由器，则必须手动设置转发端口 443。 有关如何在路由器上设置端口转发的信息，请参阅 [路由器设置](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx)。  
   
-###  <a name="BKMK_ReplaceRouter"></a>更换路由器  
+###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>更换路由器  
  根据制造商的说明更换路由器，然后运行 "设置路由器" 向导来配置新路由器。  
   
 ##### <a name="to-set-up-your-new-router"></a>设置新路由器  
@@ -169,7 +169,7 @@ ms.locfileid: "79322279"
   
 3.  按照该向导中的说明完成新路由器的设置。  
   
-###  <a name="BKMK_NetworkLocation"></a>定义的网络位置  
+###  <a name="network-location-defined"></a><a name="BKMK_NetworkLocation"></a>定义的网络位置  
  网络位置是在连接到网络时 Windows 应用的网络设置的集合。 这些设置各不相同，并且可以根据使用的网络类型进行自定义。 网络位置的设置将确定某些功能（如文件和打印机共享、网络发现以及公用文件夹共享）是处于打开还是关闭的状态。 当需要连接到其他网络时，网络位置十分有用。  
   
  例如，你可能拥有一台便携式计算机，可以在家中和工作中使用。 当你在办公室时，你可以连接到办公室网络。 而当你回到家时，你可以使用便携式计算机访问并播放存储在家庭服务器上的视频和音乐。 在你连接到新网络并指定位置类型后，Windows 将分配为该位置类型预设的网络配置文件。 下次连接到该网络时，Windows 将识别该网络并自动分配正确的设置。 这增加了一层安全性，可帮助保护计算机中的信息，并且只有该位置所需的网络功能才处于启用状态。  
@@ -184,7 +184,7 @@ ms.locfileid: "79322279"
   
 -   **域** 请针对域（例如，企业工作区的域）选择此网络。 这种类型的网络位置由网络管理员控制，它无法进行选择或更改。  
   
-###  <a name="BKMK_ActiveX"></a>启用远程桌面服务 ActiveX 控件  
+###  <a name="enable-remote-desktop-services-activex-controls"></a><a name="BKMK_ActiveX"></a>启用远程桌面服务 ActiveX 控件  
  远程桌面服务 ActiveX 控件允许您通过 Internet 从其他计算机使用远程 Web 访问访问家庭或企业计算机。  
   
 ##### <a name="to-enable-remote-desktop-services-activex-controls"></a>启用远程桌面服务 ActiveX 控件  
@@ -201,7 +201,7 @@ ms.locfileid: "79322279"
   
 4.  单击“确定”两次以接受这些更改并关闭对话框。  
   
-##  <a name="BKMK_3"></a>设置域名  
+##  <a name="set-up-your-domain-name"></a><a name="BKMK_3"></a>设置域名  
  在启用远程 Web 访问后，你可以为运行 Windows Server Essentials 的服务器设置域名。 如果计划从远程计算机使用远程 Web 访问功能，这将是一项必要步骤。 有关详情，请参阅以下主题：  
   
 -   [域名概述](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_DNOverview)  
@@ -228,12 +228,12 @@ ms.locfileid: "79322279"
   
 -   [查找域名服务提供商](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Find)  
   
-###  <a name="BKMK_DNOverview"></a>域名概述  
+###  <a name="domain-names-overview"></a><a name="BKMK_DNOverview"></a>域名概述  
  域名可在 Internet 上唯一地标识你的服务器。 域名至少包含以下两个部分：一级域名 (TLD) 和二级域名。 例如，在 contoso.com 中，com 为 TLD，contoso 为二级域名。  
   
  当你离开办公室时，你可以使用你的域名来访问网络上服务器和计算机上的共享文件。 当你离开时，你还可以管理自己的服务器。 例如，为你的服务器注册 contoso.com。 当你离开办公室时，你可以在你的便携式计算机上打开 Web 浏览器，然后在地址文本框中键入 **contoso.com**，以连接到你在 Windows Server Essentials 上设置的远程 Web 访问的实例。  
   
-###  <a name="BKMK_PersonalizedNames"></a>了解 Microsoft 个性化域名  
+###  <a name="understand-microsoft-personalized-domain-names"></a><a name="BKMK_PersonalizedNames"></a>了解 Microsoft 个性化域名  
  Microsoft 个性化域名包括以下功能：  
   
 - 远程 Web 访问的自定义域名（*例如，remotewebaccess.com）。* 你的域名与公用 IP 地址相关联。  
@@ -247,7 +247,7 @@ ms.locfileid: "79322279"
 > [!IMPORTANT]
 >  Windows Live 允许在 Microsoft 帐户密码中使用服务器不支持的特殊字符。 若使用 Microsoft 个性化域，请确保 Microsoft 帐户密码仅包含服务器支持的字符。 服务器不支持使用字符 $、/、' 和 %。  
   
-###  <a name="BKMK_UseNewName"></a>使用新的或现有的域名  
+###  <a name="use-a-new-or-existing-domain-name"></a><a name="BKMK_UseNewName"></a>使用新的或现有的域名  
  若要在运行 Windows Server Essentials 的服务器上自动设置域名，则必须使用“设置域名”向导中列出的域名服务提供商。 你可以选择获取新域名或者使用现有域名。 执行以下操作之一：  
   
 -   若要从该向导中列出的域名服务提供商处获取新域名，请单击“我想要设置新域名”。  
@@ -256,7 +256,7 @@ ms.locfileid: "79322279"
   
 -   如果具有一个从 Windows Server Essentials 不支持的域名服务提供商处购买的现有域名，并且希望使用“设置域名”向导为服务器设置域名，则可以将该域名传输到该向导中列出的某个域名服务提供商。 单击 "**我想要使用我已经拥有的域名**"，在 "**域名**" 文本框中键入域名，然后按照域名服务提供商的网站上的说明传输域名。  
   
-###  <a name="BKMK_SetUpName"></a>设置域名  
+###  <a name="set-up-a-domain-name"></a><a name="BKMK_SetUpName"></a>设置域名  
  当启用远程 Web 访问时，你可以选择设置服务器的 Internet 域名。  
   
 ##### <a name="to-set-up-or-manage-an-internet-domain-name"></a>设置或管理 Internet 域名  
@@ -269,7 +269,7 @@ ms.locfileid: "79322279"
   
 4.  按照说明完成向导。 如果你尚未拥有域名和证书，则向导可帮助你找到域名提供商以购买域名和证书，或者你可以获取 Microsoft 个性化域名。  
   
-###  <a name="BKMK_ChooseProvider"></a>选择域名服务提供商  
+###  <a name="choose-a-domain-name-service-provider"></a><a name="BKMK_ChooseProvider"></a>选择域名服务提供商  
  你应该选择一个域名服务提供商，它支持要使用的域名扩展名。 "设置域名" 向导包括可以与每个提供商网站的链接一起使用的合格提供商列表。 单击每个提供商的名称旁的 "**详细信息**" 链接，以获取有关提供商提供的服务和价格的信息。  
   
 > [!NOTE]
@@ -277,7 +277,7 @@ ms.locfileid: "79322279"
   
  当购买域名时，你可能还需要考虑从域名服务提供商处购买域名系统 (DNS) 动态更新协议服务。 DNS 动态更新协议是一项服务，它使 Internet 上的任何人都可以在本地网络的 IP 地址不断更改时获得该网络上资源的访问权限。 或者，你可以从 Internet 服务提供商 (ISP) 那里购买静态 IP 地址，以确保你的 IP 地址不会更改。  
   
-###  <a name="BKMK_ChooseDomainName"></a>选择域名  
+###  <a name="choose-a-domain-name"></a><a name="BKMK_ChooseDomainName"></a>选择域名  
  选择可唯一标识你公司服务器的名称。 例如，如果你的公司名称为 Contoso Ltd，则你可以选择 Contoso 来唯一标识 Internet 上的家庭服务器或公司服务器。 如果该域名不可用，则可以尝试该名称的另一种变体或完全不同的名称。  
   
  键入的名称可以包含以下内容：  
@@ -289,7 +289,7 @@ ms.locfileid: "79322279"
     > [!NOTE]
     >  域名不区分大小写。  
   
-###  <a name="BKMK_Prefixes"></a>选择域名前缀  
+###  <a name="choose-a-domain-name-prefix"></a><a name="BKMK_Prefixes"></a>选择域名前缀  
  域名由分层标签组成。  
   
  **一级域名扩展名**为域名中最右边的标签。 例如，在 www\.contoso.com 中，com 是顶级域名扩展。  
@@ -301,7 +301,7 @@ ms.locfileid: "79322279"
 > [!TIP]
 >  建议将默认的“Remote”用作你的域名前缀。  
   
-###  <a name="BKMK_Extension"></a>选择域名扩展  
+###  <a name="choose-a-domain-name-extension"></a><a name="BKMK_Extension"></a>选择域名扩展  
  在为你的 Internet 网站选择域名时，你还需要指定要使用的域名扩展名。 该扩展名由任意域名的最后一个点号后跟随的字母来进行标识。 （扩展的正式术语为顶级域或 TLD。）  
   
  可使用的域扩展名有两种主要类型：通用域扩展名和国家/地区代码。  
@@ -335,16 +335,16 @@ ms.locfileid: "79322279"
 #### <a name="if-a-domain-extension-is-not-available-to-select-in-the-set-up-domain-name-wizard"></a>若某个域扩展名在“设置域名”向导中不可选择  
  当你运行“设置域名”向导时，该向导将查看你的系统信息以确定你所在的国家或地区。 然后，该向导仅显示你所在区域的参与提供商支持的域扩展名。 如果你希望使用的域扩展名未在列表中显示，你必须选择另一个域扩展名以继续操作。 从该向导返回的列表中选择域扩展名。  
   
-###  <a name="BKMK_UpdateService"></a>更新或升级你的域名服务  
+###  <a name="update-or-upgrade-your-domain-name-service"></a><a name="BKMK_UpdateService"></a>更新或升级你的域名服务  
  如果你已购买域名，但未购买证书，则需要更新或升级你的域名服务。 你必须从你的域名服务提供商处获取用于域名的证书。  
   
 > [!NOTE]
 >  与你的域名服务提供商协作以确定所需的证书类型。 证书可以是提供的价格较低的证书之一。 但是，你应查看较高级别安全证书的文档和功能，以确定它们是否能更好地满足你的业务需求。  
   
-###  <a name="BKMK_ExportCert"></a>在服务器上导出或导入证书  
+###  <a name="export-or-import-your-certificate-on-your-server"></a><a name="BKMK_ExportCert"></a>在服务器上导出或导入证书  
  若要创建某个证书的备份副本或在其他服务器上使用它，则必须导出该证书。 有关导出证书的信息，请参阅 [导出证书](https://go.microsoft.com/fwlink/p/?LinkId=214362)。  
   
-###  <a name="BKMK_SetNameManually"></a>手动设置域名  
+###  <a name="set-up-a-domain-name-manually"></a><a name="BKMK_SetNameManually"></a>手动设置域名  
  如果选择此选项，那么服务器不会监视或维护你的域名，也不会在出现配置问题时向你发出警报。 如果满足以下任一情况，也可以考虑使用此选项：  
   
 - 你所在国家或地区的合作伙伴域名提供商未列出。  
@@ -369,7 +369,7 @@ ms.locfileid: "79322279"
   
 4.  收到向导提醒时，请导入一个受信任的证书。 如果没有受信任的证书，可以从向导中列出的某个受支持的域名提供商处获取一个，也可以选择一个受信任的提供商进行购买。 有关受信任证书的详细信息，请联系你的域名提供商。  
   
-###  <a name="BKMK_Find"></a>查找域名服务提供商  
+###  <a name="find-your-domain-name-service-provider"></a><a name="BKMK_Find"></a>查找域名服务提供商  
   
 ##### <a name="to-find-the-domain-name-service-provider-for-your-domain-name"></a>查找你的域名的域名服务提供商  
   
@@ -383,7 +383,7 @@ ms.locfileid: "79322279"
   
 5. 在搜索结果中，域名称服务提供商的名称已在“注册机构”下列出。  
   
-##  <a name="BKMK_4"></a>自定义远程 Web 访问  
+##  <a name="customize-remote-web-access"></a><a name="BKMK_4"></a>自定义远程 Web 访问  
  你可以通过添加个人徽标或背景图像自定义远程 Web 访问站点。 还可以在主页上添加链接，以便向你的所有用户提供此信息。 有关详情，请参阅以下主题：  
   
 -   [自定义远程 Web 访问](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeRWA)  
@@ -392,7 +392,7 @@ ms.locfileid: "79322279"
   
 -   [修复远程 Web 访问](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_RepairRWA)  
   
-###  <a name="BKMK_CustomizeRWA"></a>自定义远程 Web 访问  
+###  <a name="customize-remote-web-access"></a><a name="BKMK_CustomizeRWA"></a>自定义远程 Web 访问  
  通过更改网站的标题、更改背景图像和徽标以及添加指向主页上的其他网站的链接，你可以自定义远程 Web 访问。  
   
 ##### <a name="to-customize-remote-web-access"></a>自定义远程 Web 访问  
@@ -405,7 +405,7 @@ ms.locfileid: "79322279"
   
 4.  完成自定义远程 Web 访问后，单击“确定”。 测试远程 Web 访问上的更改。  
   
-###  <a name="BKMK_CustomizeImages"></a>为背景和徽标自定义图像  
+###  <a name="customize-images-for-backgrounds-and-logos"></a><a name="BKMK_CustomizeImages"></a>为背景和徽标自定义图像  
  本部分提供用于自定义远程 Web 访问的图像的相关信息。  
   
 #### <a name="image-size"></a>映像大小  
@@ -428,7 +428,7 @@ ms.locfileid: "79322279"
   
 -   JPG (*.jpg)  
   
-###  <a name="BKMK_RepairRWA"></a>修复远程 Web 访问  
+###  <a name="repair-remote-web-access"></a><a name="BKMK_RepairRWA"></a>修复远程 Web 访问  
  修复向导可以帮助检测并解决你的路由器或域名问题。 可使用两种方式来发现远程 Web 访问的问题：  
   
 -   在仪表板的“服务器设置”中，在“随处访问”选项卡上，将显示带有红色 X 的图标以及问题描述。  
@@ -450,7 +450,7 @@ ms.locfileid: "79322279"
   
 5.  如果你在向导完成后收到一个警报，你可以单击“重试”以尝试重新修复问题。 如果你仍收到警报，请检查该警报以获取有关问题和疑难解答步骤的其他信息。  
   
-##  <a name="BKMK_5"></a>远程 Web 访问疑难解答  
+##  <a name="troubleshoot-remote-web-access"></a><a name="BKMK_5"></a>远程 Web 访问疑难解答  
   
 -   [排查远程 Web 访问连接问题](../support/Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
   

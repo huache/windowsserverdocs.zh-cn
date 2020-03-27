@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5379373f-a3d9-4f51-b6fc-bf0f6df1d244
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f8fd9974ad1670ae4106c5c38470fa51b53cf4f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b89502a7ba5ceceea10e1f7cfae9e91f6a7ead59
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405725"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316908"
 ---
 # <a name="add-a-dns-resource-record"></a>添加 DNS 资源记录
 
@@ -71,9 +71,9 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![记录添加状态](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_04.jpg)  
   
-13. 单击 **“确定”** 。  
+13. 单击“确定”。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [DNS 资源记录管理](DNS-Resource-Record-Management.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

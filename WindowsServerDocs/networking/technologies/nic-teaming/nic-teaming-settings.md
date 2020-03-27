@@ -10,15 +10,15 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: ab9a8e309c8031108d58c73d82357e913d5ce398
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc9ab0fa3d1da0e7af8a7a1d7a8706ba6d128648
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396480"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316499"
 ---
 # <a name="nic-teaming-settings"></a>NIC 组合设置
 在本主题中，我们将为你概述 NIC 组属性，例如组合和负载平衡模式。 此外，我们还会向你介绍备用适配器设置和主团队接口属性的详细信息。 如果 NIC 组中至少有两个网络适配器，则无需指定备用适配器来实现容错。
@@ -82,7 +82,7 @@ TCP 端口哈希可创建流量流的最精细分布，从而可在 NIC 团队�
   
 但是，如果主机只有几个 Vm，则此模式可能不够精细，无法实现合理的分发。 此模式还始终将单个 VM （即来自单个交换机端口的流量）限制为单个接口上可用的带宽。 NIC 组合使用 Hyper-v 虚拟交换机端口作为标识符，而不是使用源 MAC 地址，因为在某些情况下，可能会在一个交换机端口上配置一个 VM 的多个 MAC 地址。  
   
-### <a name="dynamic"></a>动态
+### <a name="dynamic"></a>Dynamic
   
 [!INCLUDE [dynamic-shortdesc-include](../../includes/dynamic-shortdesc-include.md)]
   

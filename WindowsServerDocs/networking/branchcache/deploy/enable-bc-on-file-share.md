@@ -10,14 +10,14 @@ ms.technology: networking-bc
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9c465a9e-c504-44ec-9ebc-4e06ba54db30
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 37bab11a0914a3f6854314016bb59297aa6954f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d2b98e7ccd3604de60bfabf865404506569f8c82
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406361"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319131"
 ---
 # <a name="enable-branchcache-on-a-file-share-optional"></a>在文件共享上启用 BranchCache（可选）
 
@@ -32,9 +32,9 @@ ms.locfileid: "71406361"
   
 ### <a name="to-enable-branchcache-on-a-file-share"></a>在文件共享上启用 BranchCache  
   
-1.  打开 Windows PowerShell、键入 **mmc**，然后按 ENTER。 Microsoft 管理控制台 (MMC) 会打开。  
+1.  打开 Windows PowerShell，键入 **mmc**，然后按 Enter。 Microsoft 管理控制台 (MMC) 会打开。  
   
-2.  在 MMC 的 "**文件**" 菜单上，单击 "**添加/删除管理单元**"。 "**添加或删除管理单元**" 对话框将打开。  
+2.  在 MMC 的“文件”菜单上，单击“添加/删除管理单元”。 "**添加或删除管理单元**" 对话框将打开。  
   
 3.  在 "**添加或删除管理单元**" 的 "**可用管理单元**" 中，双击 "**共享文件夹**"。 共享文件夹向导将打开，并选中 "本地计算机" 对象。 配置所需的视图，单击 "**完成**"，然后单击 **"确定"** 。  
   

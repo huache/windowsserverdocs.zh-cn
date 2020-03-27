@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ed49a0a3-1c45-42e5-8f13-cad20c1c1d68
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 83ea3c4e4feefacde3e1ed7be6b605d8c0e644a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9a3d3fadbe2f187ae6b5a77137393b7ad7be338b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366971"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313636"
 ---
 # <a name="step-4-verify-directaccess-with-otp"></a>步骤4通过 OTP 验证 DirectAccess
 
@@ -36,7 +36,7 @@ ms.locfileid: "71366971"
 4. 验证 "OTP" 的状态是否显示绿色图标并且是否正常工作。  
   
     > [!NOTE]  
-    > 运行状况状态更新间隔将是注册表项 HKLM\SYSTEM\CCS\Services\Ramgmtsvc\parameters\HealthRefreshTimeout 中的值的总和，以及远程访问中设置的**服务器活动的时间间隔。** configuration.  
+    > 运行状况状态更新间隔最大为注册表项 HKLM\SYSTEM\CCS\Services\Ramgmtsvc\parameters\HealthRefreshTimeout 中的值与在远程访问配置中设置的**服务器活动的时间间隔**之和。  
   
 ### <a name="to-verify-access-to-internal-resources-using-otp-authentication"></a>使用 OTP 身份验证验证对内部资源的访问  
   

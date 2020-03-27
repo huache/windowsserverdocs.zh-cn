@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: b89213d8-143a-45f3-a609-bc6a7027204c
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5ecb6ef072dd2328a0a45d57d181dca9c2928a30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: edca8269178d9e1de9f8d57abac04400da0ac5c1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405791"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312806"
 ---
 # <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>在 Windows Server 2016 或 Windows 10 中安装数据中心桥接 \(DCB\)
 
@@ -75,9 +75,9 @@ ms.locfileid: "71405791"
 1. 在 DC1 上的服务器管理器中，单击 "**管理**"，然后单击 "**添加角色和功能**"。 将打开“添加角色和功能向导”。
 2. 在“开始之前”中单击“下一步”。
 3. 在 **“选择安装类型”** 中，确保选中 **“基于角色或基于功能的安装”** ，然后单击 **“下一步”** 。
-4. 在 **“选择目标服务器”** 中，确保选中 **“从服务器池中选择一个服务器”** 。 在 **“服务器池”** 中，确保选中了本地计算机。 单击**下一步**。
+4. 在 **“选择目标服务器”** 中，确保选中 **“从服务器池中选择一个服务器”** 。 在 **“服务器池”** 中，确保选中了本地计算机。 单击 **“下一步”** 。
 5. 在“选择服务器角色”中，单击“下一步”。
-6. 在 "**功能**" 的 "**选择功能**" 中，单击 "**数据中心桥接**"。 此时将打开一个对话框，询问你是否要添加 DCB 必需的功能。 单击 "**添加功能**"。
+6. 在 "**功能**" 的 "**选择功能**" 中，单击 "**数据中心桥接**"。 此时将打开一个对话框，询问你是否要添加 DCB 必需的功能。 单击 **“添加功能”** 。
 7. 在 "**选择功能**" 中，单击 "**下一步**"。 
 8. 7.In**确认安装选择**，请单击 "**安装**"。 安装**进度**页面显示安装过程中的状态。 显示 "安装已成功" 消息后，单击 "**关闭**"。
 
@@ -100,7 +100,7 @@ Set-ItemProperty HKLM:"\SYSTEM\CurrentControlSet\Services\NDIS\Parameters" Allow
 1. 单击 "**开始**"，然后向下滚动到并单击 " **Windows 系统**"。
 2. 单击 **“控制面板”** 。 此时将打开 "**控制面板**" 对话框。
 3. 在 "**控制面板**" 中，单击 "**查看方式**"，然后单击 "**大图标**" 或 "**小图标**"。
-4. 单击 "**程序和功能**"。 此时将打开 "程序和功能" 对话框。
+4. 单击“程序和功能”。 此时将打开 "程序和功能" 对话框。
 5. 在 "**程序和功能**" 的左窗格中，单击 "**打开或关闭 Windows 功能**"。 此时将打开 " **Windows 功能**" 对话框。
 6. 在**Windows 功能**中，单击 "**数据中心桥接**"，然后单击 **"确定"** 。
 

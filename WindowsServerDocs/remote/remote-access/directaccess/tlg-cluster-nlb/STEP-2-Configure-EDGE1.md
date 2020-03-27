@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84457351-1ca7-4e7c-8e2c-53d55b1fcdc0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b9eb37433e26c174ccae85482163c976577ff479
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: eea83bd9788ffd704b6169c140adc68465f9325d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388511"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310844"
 ---
 # <a name="step-2-configure-edge1"></a>步骤2配置 EDGE1
 
@@ -27,7 +27,7 @@ ms.locfileid: "71388511"
 
 ## <a name="to-configure-directaccess-on-edge1"></a>在 EDGE1 上配置 DirectAccess
   
-1.  在 "**开始**" 屏幕上，键入**ramgmtui.exe**，然后按 enter。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在 "**开始**" 屏幕上，键入**ramgmtui.exe**，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在远程访问管理控制台的左窗格中，单击 "**配置**"。  
   

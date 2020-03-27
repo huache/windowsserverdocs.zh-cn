@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 19a7a4a6-9a04-42ea-a5d0-ecb28a34dbaa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ea96a30caeedc188a5a41c097a5c8a90e2b5dbc7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dbeba9f1646cfb13d709cb4f7987802f69708adb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388211"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314427"
 ---
 # <a name="step-2-configure-app1"></a>步骤2配置 APP1
 
@@ -32,7 +32,7 @@ ms.locfileid: "71388211"
 > [!WARNING]  
 > 本测试实验室指南的设计包括基础结构服务器，如运行 Windows Server 2012 R2 或 Windows Server 2012 的域控制器和证书颁发机构（CA）。 本指南中未介绍如何使用此测试实验室指南来配置运行其他操作系统的基础结构服务器，以及配置其他操作系统的说明。  
   
-## <a name="DAOTPRA"></a>创建和部署用于对 OTP 证书请求进行签名的证书模板  
+## <a name="to-create-and-deploy-a-certificate-template-used-to-sign-otp-certificate-requests"></a><a name="DAOTPRA"></a>创建和部署用于对 OTP 证书请求进行签名的证书模板  
   
 1.  运行**certtmpl**，然后按 enter。  
   
@@ -52,7 +52,7 @@ ms.locfileid: "71388211"
   
 9. 单击 "**扩展**" 选项卡，选择 "**应用程序策略**"，然后单击 "**编辑**"。 删除所有现有的应用程序策略。 单击 "**添加**"，在 "**添加应用程序策略**" 对话框中，单击 "**新建**"，在 "**名称：** " 字段中输入**DA OTP RA** ，在 "**对象标识符：** " 字段中输入**1.3.6.1.4.1.311.81.1.1** ，然后单击 **"确定"** 。 在 "**添加应用程序策略**" 对话框中，单击 **"确定"** 。 在 "**编辑应用程序策略" 扩展**上，单击 **"确定"** 。 在 "**新模板的属性**" 对话框中，单击 **"确定"** 。  
   
-## <a name="DAOTPLogon"></a>为公司 CA 颁发的 OTP 证书创建和部署证书模板  
+## <a name="to-create-and-deploy-a-certificate-template-for-otp-certificates-issued-by-the-corporate-ca"></a><a name="DAOTPLogon"></a>为公司 CA 颁发的 OTP 证书创建和部署证书模板  
   
 1.  在 "证书模板" 控制台的 "详细信息" 窗格中，右键单击 "**智能卡登录**" 模板，然后单击 "**复制模板**"。  
   
@@ -65,13 +65,13 @@ ms.locfileid: "71388211"
     > [!IMPORTANT]  
     > **Windows Server 2003 CA**。 如果证书颁发机构（CA）在运行 Windows Server 2003 的计算机上，则必须在另一台计算机上配置证书模板。 这是必需的，因为在运行 Windows Server 2008 和 Windows Vista 之前的 Windows 版本时，不能以小时为单位设置**有效期**。 如果用于配置模板的计算机未安装 Active Directory 证书服务服务器角色，或者它是一台客户端计算机，则可能需要安装 "证书模板" 管理单元。 有关详细信息，请参阅[安装证书模板管理单元](https://technet.microsoft.com/library/cc732445.aspx)。  
     >   
-    > **Windows Server 2008 R2 CA**。 如果你已部署运行 Windows Server 2008 R2 的证书颁发机构（CA），则必须将证书模板**续订期**配置为1或2小时，并且**有效期**大于**续订期**，但不超过4小时。 如果使用运行 Windows Server 2008 R2 的 CA 配置的证书模板**有效期**不超过4小时，则 directaccess 安装向导将无法检测证书模板，directaccess 安装会失败。  
+    > **Windows Server 2008 R2 CA**。 如果你已经部署了运行 Windows Server 2008 R2 的证书颁发机构（CA），则必须将证书模板**续订期**配置为1或2小时，**有效期**应比**续订期**长，但不超过4小时。 如果使用运行 Windows Server 2008 R2 的 CA 配置的证书模板**有效期**不超过4小时，则 directaccess 安装向导将无法检测证书模板，directaccess 安装会失败。  
   
-5.  单击 "**安全**" 选项卡，在 "**允许**" 列中选择 "**已验证用户**"，然后选中 "**读取**" 和 "**注册**" 复选框。 单击 **“确定”** 。 单击 "**域管理员**" 和 "**企业管理员**"，然后单击 "**允许**" 列下的 "**完全控制**"。 单击 **“应用”** 。  
+5.  单击 "**安全**" 选项卡，在 "**允许**" 列中选择 "**已验证用户**"，然后选中 "**读取**" 和 "**注册**" 复选框。 单击“确定”。 单击 "**域管理员**" 和 "**企业管理员**"，然后单击 "**允许**" 列下的 "**完全控制**"。 单击 **“应用”** 。  
   
 6.  单击 "**使用者名称**" 选项卡，然后单击 "从此**Active Directory 信息生成**"。 在 "**使用者名称格式：** " 列表中，选择 "**完全可分辨名称**"，确保选中 "**用户主体名称（UPN）** " 框，然后单击 "**应用**"。  
   
-7.  单击 "**服务器**" 选项卡，选中 "**不将证书和请求存储在 CA 数据库中**" 复选框，清除 "**不在颁发的证书中包含吊销信息**" 复选框，然后在 "**新模板的属性**"对话框中，单击 "**应用**"。  
+7.  单击 "**服务器**" 选项卡，选中 "**不将证书和请求存储在 CA 数据库中**" 复选框，清除 "**不在已颁发的证书中包含吊销信息**" 复选框，然后在 "**新模板的属性**" 对话框中，单击 "**应用**"。  
   
 8.  单击 "**颁发要求**" 选项卡，选中 "**此数量的授权签名：** " 复选框，将值设置为1。 在 "**签名：列表所需的策略类型**" 列表中，选择 "**应用程序策略**"，然后在**应用程序策略**列表中选择 " **DA OTP RA**"。 在 "**新模板的属性**" 对话框中，单击 **"确定"** 。  
   
@@ -85,7 +85,7 @@ ms.locfileid: "71388211"
   
 13. 在证书模板列表中，单击 " **DAOTPRA** " 和 " **DAOTPLogon**"，然后单击 **"确定"** 。  
   
-14. 在控制台的详细信息窗格中，应会看到**DAOTPRA**证书模板，其**目标**是使用**DA OTP RA**和**DAOTPLogon**证书模板 **，目的是**使用**智能卡登录**.  
+14. 在控制台的详细信息窗格中，应会看到**DAOTPRA**证书模板，其**目标**是使用**DA OTP RA** ，将**DAOTPLogon**证书**模板用于** **智能卡登录**。  
   
 15. 重新启动服务。  
   

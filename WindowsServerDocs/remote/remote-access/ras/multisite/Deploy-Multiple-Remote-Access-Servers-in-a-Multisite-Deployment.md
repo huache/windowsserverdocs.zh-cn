@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da23f3082e1d97f1bcfbee7365b863d29ba2d020
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4b9da54822c1b7610bbd7a095beeb305eb243bb1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404493"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314036"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>在多站点部署中部署多台远程访问服务器
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404493"
 
  Windows Server 2016 和 Windows Server 2012 将 DirectAccess 和远程访问服务（RAS） VPN 合并到了单个远程访问角色中。 远程访问可在许多个企业方案中部署。 本概述介绍了在多站点配置中部署远程访问服务器的企业方案。  
   
-## <a name="BKMK_OVER"></a>方案描述  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>方案描述  
 在多站点部署中，将两个或多个远程访问服务器或服务器群集部署并配置为一个位置或分散的地理位置中的不同入口点。 在一个位置部署多个入口点允许服务器冗余，或将远程访问服务器与现有的网络体系结构对齐。 按地理位置进行部署可确保有效地使用资源，因为远程客户端计算机可以使用最接近它们的入口点连接到内部网络资源。 可以通过外部全局负载均衡器来分发和平衡多站点部署中的流量。  
   
 多站点部署支持运行 Windows 10、Windows 8 或 Windows 7 的客户端计算机。 运行 Windows 10 或 Windows 8 的客户端计算机自动标识入口点，或者用户可以手动选择一个入口点。 自动分配按以下优先级顺序进行：  
@@ -38,7 +38,7 @@ ms.locfileid: "71404493"
   
 必须在每个入口点上手动启用对运行 Windows 7 的客户端的支持，并且不支持选择这些客户端的入口点。  
   
-## <a name="prerequisites"></a>必备条件  
+## <a name="prerequisites"></a>先决条件  
 在开始部署此方案之前，请查看此列表以了解重要要求：  
   
 -   必须先部署[具有高级设置的单个 DirectAccess 服务器，](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)然后才能部署多站点部署。  
@@ -64,14 +64,14 @@ ms.locfileid: "71404493"
   
 4. [排查多站点部署问题](troubleshoot/Troubleshoot-a-Multisite-Deployment.md)。 此故障排除部分介绍了在多站点部署中部署远程访问时可能出现的一些最常见的错误。
   
-## <a name="BKMK_APP"></a>实用应用程序  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
 多站点部署提供以下内容：  
   
 -   改进的性能-多站点部署允许客户端计算机使用远程访问访问内部资源使用最接近和最合适的入口点进行连接。 客户端有效地访问内部资源，并改善通过 DirectAccess 路由的客户端 Internet 请求的速度。 可以使用外部全局负载均衡器对入口点之间的流量进行均衡。  
   
 -   易于管理-多站点允许管理员将远程访问部署与 Active Directory 站点部署保持一致，从而提供简化的体系结构。 可以在入口点服务器或群集上轻松设置共享设置。 可以从部署中的任何服务器管理远程访问设置，也可以使用远程服务器管理工具（RSAT）进行远程访问。 此外，可从单个远程访问管理控制台监视整个多站点部署。  
   
-## <a name="BKMK_NEW"></a>此方案中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的角色和功能  
 下表列出了此方案中使用的角色和功能。  
   
 |角色/功能|如何支持本方案|  
@@ -79,7 +79,7 @@ ms.locfileid: "71404493"
 |远程访问角色|该角色可使用服务器管理器控制台加以安装和卸载。 它包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务 (RRAS)（以前是网络策略和访问服务 (NPAS) 服务器角色项下的角色服务）。 远程访问角色由以下两个组件组成：<br /><br />-DirectAccess 和路由和远程访问服务（RRAS） VPN-DirectAccess 和 VPN 在远程访问管理控制台中一起进行管理。<br />-RRAS 路由-RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<br /><br />依赖关系如下所示：<br /><br />-Internet Information Services （IIS） Web 服务器-配置网络位置服务器和默认 Web 探测需要此功能。<br />-Windows 内部数据库-用于远程访问服务器上的本地记帐。|  
 |远程访问管理工具功能|此功能的安装如下所述：<br /><br />-在安装远程访问角色时，它默认安装在远程访问服务器上，并支持远程管理控制台用户界面。<br />-可选择将它安装在不运行远程访问服务器角色的服务器上。 在这种情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<br /><br />远程访问管理工具功能包括以下各项：<br /><br />-远程访问 GUI 和命令行工具<br />-适用于 Windows PowerShell 的远程访问模块<br /><br />依赖项包括：<br /><br />-组策略管理控制台<br />-RAS 连接管理器管理工具包（CMAK）<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|  
   
-## <a name="BKMK_HARD"></a>硬件要求  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬件要求  
 本方案的硬件要求包括以下各项：  
   
 -   至少两个要收集到多站点部署中的远程访问计算机。   
@@ -88,7 +88,7 @@ ms.locfileid: "71404493"
   
 -   若要对入口点服务器之间的流量进行负载均衡，需要使用第三方外部全局负载均衡器。  
   
-## <a name="BKMK_SOFT"></a>软件要求  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>软件要求  
 本方案的软件要求包括以下各项：  
   
 -   对单台服务器部署的软件要求。  
@@ -117,7 +117,7 @@ ms.locfileid: "71404493"
   
         -   对于每个域启用了每个 Windows 7 客户端支持的入口点，都需要唯一的 Windows 7 客户端 GPO。  
   
-## <a name="KnownIssues"></a>已知问题  
+## <a name="known-issues"></a><a name="KnownIssues"></a>已知问题  
 下面是配置多站点方案时的已知问题：  
   
 -   **同一 IPv4 子网中存在多个入口点**。 在同一 IPv4 子网中添加多个入口点将导致 IP 地址冲突，并且不会按预期方式配置入口点的 DNS64 地址。 如果尚未将 IPv6 部署到企业网络上的服务器的内部接口上，则会出现此问题。 若要避免此问题，请在当前和未来的所有远程访问服务器上运行以下 Windows PowerShell 命令：  

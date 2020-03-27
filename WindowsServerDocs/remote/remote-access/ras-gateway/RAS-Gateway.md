@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/23/2018
-ms.openlocfilehash: ebf2cc840be771707f23d7976b670baae96c1343
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 762ba98a57db1411098c6ae6a8394e9a9b063181
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367490"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308517"
 ---
 # <a name="ras-gateway"></a>RAS 网关
 
@@ -47,7 +47,7 @@ RAS 网关是一种软件路由器和网关，可在单租户模式或多租户�
  
 本主题面向信息技术（IT）专业人员，提供有关 RAS 网关的概述信息，包括 RAS 网关部署模式和功能。 
   
-本主题包含以下部分。  
+本主题包含以下各节。  
   
   
 -   [RAS 网关部署模式](#bkmk_modes)  
@@ -63,7 +63,7 @@ RAS 网关是一种软件路由器和网关，可在单租户模式或多租户�
 
 
   
-## <a name="bkmk_modes"></a>RAS 网关部署模式  
+## <a name="ras-gateway-deployment-modes"></a><a name="bkmk_modes"></a>RAS 网关部署模式  
 RAS 网关包括以下部署模式：  
   
 ### <a name="single-tenant-mode"></a>单租户模式  
@@ -81,7 +81,7 @@ RAS 网关包括以下部署模式：
 Hyper-v 网络虚拟化提供了部署独立于基础物理网络的虚拟机（VM）网络的功能。 如果 VM 网络由一个或多个虚拟子网组成，则 IP 子网的确切物理位置与虚拟网络拓扑分离。 因此，你可以轻松地将本地子网移至云中，同时在云中保留现有 IP 地址和拓扑。 这种保留基础结构的能力使得现有服务能够继续工作，而不考虑子网的物理位置， 也就是说，Hyper-V 网络虚拟化可实现无缝混合云的建立。  
   
 > [!NOTE]  
-> Hyper-v 网络虚拟化是一种使用网络虚拟化通用路由封装（[NVGRE](https://tools.ietf.org/html/draft-sridharan-virtualization-nvgre-00)）的网络覆盖技术，它允许租户引入其自己的地址空间，并允许使用用于租户隔离的 Vlan。  
+> Hyper-v 网络虚拟化是一种使用网络虚拟化通用路由封装（[NVGRE](https://tools.ietf.org/html/draft-sridharan-virtualization-nvgre-00)）的网络覆盖技术，它允许租户引入其自己的地址空间，并允许使用 vlan 隔离的 vlan 来实现 csp 更好的可伸缩性。  
   
 在 Windows Server 2016 中，RAS 网关可以在物理网络与 VM 网络资源之间路由网络流量，而不管资源位于何处。 可以使用 RAS 网关在位于同一物理位置或多个不同物理位置的物理网络与虚拟网络之间路由网络流量。  
   
@@ -91,7 +91,7 @@ Hyper-v 网络虚拟化提供了部署独立于基础物理网络的虚拟机（
   
 有关详细信息，请参阅[RAS 网关高可用性](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)。  
   
-## <a name="bkmk_clustering"></a>群集 RAS 网关以实现高可用性  
+## <a name="clustering-ras-gateway-for-high-availability"></a><a name="bkmk_clustering"></a>群集 RAS 网关以实现高可用性  
 RAS 网关部署在运行 Hyper-v 且配置了一个 VM 的专用计算机上。 然后，将 VM 配置为 RAS 网关。  
   
 为实现网络资源的高可用性，可以使用两台运行 Hyper-v 的物理主机服务器（每个运行 Hyper-v 的物理主机服务器还运行配置为网关的虚拟机（VM））部署 RAS 网关进行故障转移。 然后，可将网关 VM 配置为群集，以便在出现网络中断和硬件故障时提供故障转移保护。  
@@ -102,7 +102,7 @@ RAS 网关部署在运行 Hyper-v 且配置了一个 VM 的专用计算机上。
   
 部署 RAS 网关时，运行 Hyper-v 以及配置为网关的 Vm 的主机服务器必须运行 Windows Server 2012 R2 或 Windows Server 2016。  
   
-## <a name="bkmk_features"></a>RAS 网关功能  
+## <a name="ras-gateway-features"></a><a name="bkmk_features"></a>RAS 网关功能  
 RAS 网关包含以下功能。  
   
 -   **站点到站点 VPN**。 此 RAS 网关功能允许你使用站点到站点 VPN 连接在 Internet 上的不同物理位置连接两个网络。 如果你有一个总部和多个分支机构，则可以在每个位置部署一个边缘 RAS 网关，并创建站点到站点连接，以提供位置之间的网络流量。 对于在数据中心托管许多租户的 Csp，RAS 网关提供多租户网关解决方案，使租户能够通过站点到站点 VPN 连接访问和管理其资源，并允许网络流量在数据中心及其物理网络中的虚拟资源。  
@@ -114,19 +114,19 @@ RAS 网关包含以下功能。
 -   **网络地址转换（NAT）** 。 通过网络地址转换（NAT），可以通过单个公共 IP 地址的单一界面与公共 Internet 建立连接。 专用网络上的计算机使用专用的不可路由地址。 NAT 将专用地址映射到公共地址。 此 RAS 网关功能允许具有单租户部署的组织员工使用网关后访问 Internet 资源。 对于 Csp，此功能允许租户 Vm 上运行的应用程序访问 Internet。 例如，配置为 Web 服务器的租户 VM 可以联系外部财务资源来处理信用卡交易。  
 
   
-## <a name="bkmk_deploy"></a>RAS 网关部署方案  
+## <a name="ras-gateway-deployment-scenarios"></a><a name="bkmk_deploy"></a>RAS 网关部署方案  
 以下是 RAS 网关的推荐部署方案。  
   
 -   **企业边缘-单租户部署**。 使用单租户企业部署，你可以通过站点到站点 VPN 功能将一个物理位置连接到多个其他物理位置，并边界网关协议（BGP）允许你使用动态路由。 你还可以使用点到站点 VPN 连接和 DirectAccess 连接向远程员工提供对你的组织网络的访问权限。 （DirectAccess 连接始终处于启用状态，并且还提供了可轻松管理使用 DirectAccess 连接的计算机的优势，因为这些计算机在连接和连接 Internet 时都处于连接状态。）你还可以通过 NAT 配置单租户企业 RAS 网关，使你的 Intranet 上的计算机可以轻松地与 Internet 进行通信。  
   
 -   **云服务提供商边缘-多租户部署**。 Csp 的 RAS 网关多租户部署可让你为你的租户提供企业边缘单租户部署提供的所有功能。 你的数据中心内的租户虚拟网络与 Internet 上的租户网络位置之间的站点到站点 VPN 连接意味着租户始终能够无缝地访问其云资源。 租户的点到站点 VPN 访问意味着租户管理员始终可以连接到你的数据中心内的虚拟网络，以管理其资源。 BGP 提供动态路由，并使租户连接到其资产，即使在 Internet 或其他地方出现网络问题时也是如此。 和 NAT 允许租户 Vm 连接到 Internet 上的资源，例如信用卡处理资源。  
   
-## <a name="bkmk_manage"></a>RAS 网关管理工具  
+## <a name="ras-gateway-management-tools"></a><a name="bkmk_manage"></a>RAS 网关管理工具  
 以下是 RAS 网关的管理工具。  
   
 -   在 Windows Server 2016 中，若要部署 RAS 网关路由器，必须使用 Windows PowerShell 命令。 有关详细信息，请参阅适用于 Windows Server 2016 和 Windows 10 的[远程访问 cmdlet](https://docs.microsoft.com/powershell/module/remoteaccess) 。  
   
--   在 System Center 2012 R2 Virtual Machine Manager （VMM）中，RAS 网关名为 "Windows Server 网关"。 VMM 软件界面中提供一组有限的边界网关协议（BGP）配置选项，包括**本地 BGP IP 地址**和**自治系统编号（ASN）** 、 **BGP 对等 ip 地址列表**和**ASN 值**. 但是，你可以使用远程访问 Windows PowerShell BGP 命令来配置 Windows Server 网关的所有其他功能。 有关详细信息，请参阅[Virtual Machine Manager （VMM）](https://technet.microsoft.com/system-center-docs/vmm/vmm)和 windows Server 2016 和 windows 10 的[远程访问 cmdlet](https://technet.microsoft.com/library/hh918399.aspx) 。  
+-   在 System Center 2012 R2 Virtual Machine Manager （VMM）中，RAS 网关名为 "Windows Server 网关"。 VMM 软件界面中提供一组有限的边界网关协议（BGP）配置选项，包括**本地 BGP IP 地址**和**自治系统编号（ASN）** 、 **BGP 对等 ip 地址列表**和**ASN 值**。 但是，你可以使用远程访问 Windows PowerShell BGP 命令来配置 Windows Server 网关的所有其他功能。 有关详细信息，请参阅[Virtual Machine Manager （VMM）](https://technet.microsoft.com/system-center-docs/vmm/vmm)和 windows Server 2016 和 windows 10 的[远程访问 cmdlet](https://technet.microsoft.com/library/hh918399.aspx) 。  
   
 ## <a name="related-topics"></a>相关主题
 - [RAS 网关高可用性](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  

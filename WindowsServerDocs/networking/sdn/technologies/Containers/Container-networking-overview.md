@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 318659e5-e4a5-4e46-99d6-211dfc46f6b8
-ms.author: pashort
+ms.author: lizross
 author: jmesser81
 ms.date: 09/04/2018
-ms.openlocfilehash: 352b4303b7cf08a0c53712e46a309b8365c10d08
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8ec74ff0ebf0f0cb87db4d79ed5d37583f9beb9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355674"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317267"
 ---
 # <a name="container-networking-overview"></a>容器网络概述
 
@@ -41,4 +41,4 @@ Windows 容器与容器主机和主机上运行的所有容器共享内核。 �
 
 - [Windows 容器网络](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture)：了解如何创建和管理用于非覆盖/SDN 部署的容器网络。
 
-- [将容器终结点连接到租户虚拟网络](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md)：了解如何创建和管理包含 SDN 的虚拟网络的容器网络。 
+- [将容器终结点连接到租户虚拟网络](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md)：了解如何使用 SDN 为覆盖虚拟网络创建和管理容器网络。 

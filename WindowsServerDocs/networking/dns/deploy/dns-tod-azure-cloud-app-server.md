@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4307ce1512980277af819e0710e0447d8dbac8c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: be0604a850e54f4945e7416298fad30ce3dbf083
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406192"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317844"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>基于时间的 DNS 响应和 Azure 云应用服务器
 
@@ -57,7 +57,7 @@ DNS 服务器配置了区域作用域和 DNS 策略，以便每天 5-9 PM，将3
  
 本文演示如何将 DNS 服务器配置为使用两个不同的应用程序服务器 IP 地址应答 DNS 查询-一台 web 服务器在西雅图，另一台在 Azure 数据中心内。
 
-在配置新的 DNS 策略后，如果该策略基于西雅图的高峰期6：30，则 DNS 服务器会向包含西雅图 Web 服务器的 IP 地址的客户端发送70（每秒发送的 DNS 响应），以及对客户端的 DNS 响应的30美元。nts 包含 Azure Web 服务器的 IP 地址，从而将客户端流量定向到新的 Azure Web 服务器，并阻止西雅图 Web 服务器过载。 
+在配置新 DNS 策略后，该策略基于西雅图的高峰期下午6：30，DNS 服务器将每美分的 DNS 响应70发送到包含西雅图 Web 服务器 IP 地址的客户端，以及对客户端的 DNS 响应的30美元。包含 Azure Web 服务器的 IP 地址，从而将客户端流量定向到新的 Azure Web 服务器，并阻止西雅图 Web 服务器过载。 
 
 在一天的所有其他时间，将进行正常的查询处理，并从包含本地数据中心内 web 服务器记录的默认区域作用域发送响应。 
 

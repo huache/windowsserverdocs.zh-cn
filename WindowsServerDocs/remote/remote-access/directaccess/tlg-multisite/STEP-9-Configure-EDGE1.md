@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f6e8d85b-de65-43b3-bf3e-ec84471a1fcc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ce86a75ac5b8d53874d2fc5c6743979506591680
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 74c4eae329698d33b160ac7180bbabd6d1d8fbad
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388226"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314513"
 ---
 # <a name="step-9-configure-edge1"></a>步骤9配置 EDGE1
 
@@ -29,7 +29,7 @@ ms.locfileid: "71388226"
   
 2. 配置子网之间的路由。 配置 EDGE1 上的路由，以便在公司网络和2公司网络之间实现通信。  
   
-## <a name="IPv6"></a>在 EDGE1 上配置 DNS 服务器  
+## <a name="configure-the-dns-servers-on-edge1"></a><a name="IPv6"></a>在 EDGE1 上配置 DNS 服务器  
   
 1.  在服务器管理器控制台中，单击 "**本地服务器**"，然后在 "**属性**" 区域中的 "**公司**网络" 旁边，单击链接。  
   
@@ -47,9 +47,9 @@ ms.locfileid: "71388226"
   
 8.  关闭 **“网络连接”** 窗口。  
   
-## <a name="ConfigRouting"></a>配置子网之间的路由  
+## <a name="configure-routing-between-subnets"></a><a name="ConfigRouting"></a>配置子网之间的路由  
   
-1.  在 "**开始**" 屏幕上，键入**cmd.exe**，右键单击 " **Cmd**"，单击 "**高级**"，然后单击 "以**管理员身份运行**"。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在 "**开始**" 屏幕上，键入**cmd.exe**，右键单击 " **Cmd**"，单击 "**高级**"，然后单击 "以**管理员身份运行**"。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在 "命令提示符" 窗口中，输入以下命令。 输入每个命令后，按 ENTER。  
   
@@ -58,7 +58,7 @@ ms.locfileid: "71388226"
     netsh interface IPv6 add route 2001:db8:2::/64 Corpnet 2001:db8:1::fe  
     ```  
   
-3.  关闭命令提示符窗口。  
+3.  关闭“命令提示符”窗口。  
   
 
 

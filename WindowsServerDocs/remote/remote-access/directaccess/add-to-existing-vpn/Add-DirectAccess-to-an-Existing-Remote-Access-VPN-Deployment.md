@@ -10,26 +10,26 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5db01f7-1ae0-46f2-9be7-8d9e121446b2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9266acfb38c65711d6d0b12e2b6223a8a4e91746
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1ad1b823cf48a2c322c7ccab1799c76993b1e9bf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388796"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314817"
 ---
 # <a name="add-directaccess-to-an-existing-remote-access-vpn-deployment"></a>将 DirectAccess 添加到现有的远程访问 (VPN) 部署
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
   
-## <a name="BKMK_OVER"></a>方案描述  
-在此方案中，在已安装并配置 VPN 之后，运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的单台计算机配置为 DirectAccess 服务器，并提供推荐的设置。 如果要使用企业功能（如负载平衡的群集、多站点部署或双因素客户端身份验证）配置 DirectAccess，请完成本主题所述的方案以设置单个服务器，然后设置企业方案，如在[企业中部署远程访问中](../../ras/Deploy-Remote-Access-in-an-Enterprise.md)所述。  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>方案描述  
+在此方案中，在已安装并配置 VPN 之后，运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的单台计算机配置为 DirectAccess 服务器，并提供推荐的设置。 如果要使用企业功能配置 DirectAccess （如负载平衡的群集、多站点部署或双重客户端身份验证），请完成本主题所述的方案以设置单个服务器，然后根据在[企业中部署远程访问中](../../ras/Deploy-Remote-Access-in-an-Enterprise.md)所述设置企业方案。  
   
 ## <a name="in-this-scenario"></a>本方案内容  
 若要设置单个远程访问服务器，需要执行多个规划和部署步骤。  
   
-### <a name="planning-steps"></a>规划步骤  
+### <a name="planning-steps"></a>计划步骤  
 规划分成以下两个阶段：  
   
 1.  **规划远程访问基础结构**  
@@ -55,7 +55,7 @@ ms.locfileid: "71388796"
   
     在此阶段中，你将验证部署是否按要求工作。  
   
-## <a name="BKMK_APP"></a>实用应用程序  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
 部署单一远程访问服务器可提供以下优势：  
   
 -   **轻松访问**  
@@ -66,15 +66,15 @@ ms.locfileid: "71388796"
   
     即使客户端计算机不位于企业内部网络，也可以由远程访问管理员通过 DirectAccess 远程管理有权访问 Internet 的 DirectAccess 客户端计算机。 管理服务器可以自动修正不符合公司要求的客户端计算机。  
   
-## <a name="BKMK_NEW"></a>此方案所需的角色和功能  
+## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>此方案所需的角色和功能  
 下表列出了本方案所需的角色和功能：  
   
 |角色/功能|如何支持本方案|  
 |---------|-----------------|  
-|远程访问角色|通过使用服务器管理器控制台或 Windows PowerShell 安装或卸载此角色。 本角色包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务（以前是网络策略和访问服务 (NPAS) 服务器角色下的角色服务）。 远程访问角色由以下两个组件组成：<br /><br />1.DirectAccess 以及路由和远程访问服务 (RRAS) VPN：在远程访问管理控制台中管理。<br />2.RRAS 路由：在路由和远程访问控制台中管理。<br /><br />远程访问服务器角色取决于以下服务器功能：<br /><br />-Internet Information Services （IIS） Web 服务器：在远程访问服务器和默认 Web 探测上配置网络位置服务器时需要。<br />-Windows 内部数据库：用于远程访问服务器上的本地计帐。|  
+|远程访问角色|通过使用服务器管理器控制台或 Windows PowerShell 安装或卸载此角色。 本角色包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务（以前是网络策略和访问服务 (NPAS) 服务器角色下的角色服务）。 远程访问角色由以下两个组件组成：<br /><br />1. DirectAccess 和路由和远程访问服务（RRAS） VPN：在远程访问管理控制台中管理。<br />2. RRAS 路由：在路由和远程访问控制台中管理。<br /><br />远程访问服务器角色取决于以下服务器功能：<br /><br />-Internet Information Services （IIS） Web 服务器：在远程访问服务器和默认 Web 探测上配置网络位置服务器时需要。<br />-Windows 内部数据库：用于远程访问服务器上的本地记帐。|  
 |远程访问管理工具功能|此功能的安装如下所述：<br /><br />-默认情况下，在安装远程访问角色时在远程访问服务器上。 支持远程管理控制台用户界面和 Windows PowerShell cmdlet。<br />-（可选）安装在不运行远程访问服务器角色的服务器上。 在此情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<br /><br />远程访问管理工具功能包括以下各项：<br /><br />-远程访问 GUI<br />-适用于 Windows PowerShell 的远程访问模块<br /><br />依赖项包括：<br /><br />-组策略管理控制台<br />-RAS 连接管理器管理工具包（CMAK）<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|  
   
-## <a name="BKMK_HARD"></a>硬件要求  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬件要求  
 本方案的硬件要求包括以下各项：  
   
 **服务器要求**  
@@ -94,7 +94,7 @@ ms.locfileid: "71388796"
 -   客户端计算机必须运行 Windows 8 或 Windows 7。  
   
     > [!NOTE]  
-    > 仅可将以下操作系统用作 DirectAccess 客户端：Windows Server 2012、Windows Server 2008 R2、Windows 8 企业版、Windows 7 企业版和 Windows 7 旗舰版。  
+    > 仅可将以下操作系统用作 DirectAccess 客户端： Windows Server 2012、Windows Server 2008 R2、Windows 8 企业版、Windows 7 企业版和 Windows 7 旗舰版。  
   
 **基础结构和管理服务器要求**  
   
@@ -104,7 +104,7 @@ ms.locfileid: "71388796"
   
 -   需要运行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 SP2 的 DNS 服务器。  
   
-## <a name="BKMK_SOFT"></a>软件要求  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>软件要求  
 本方案的软件要求包括以下各项：  
   
 **服务器要求**  
@@ -119,7 +119,7 @@ ms.locfileid: "71388796"
   
 -   DirectAccess 客户端必须是域成员。 包含客户端的域可属于远程访问服务器所在的同一林中，或者它们可具有与远程访问服务器林或域的双向信任。  
   
--   包含配置为 DirectAccess 客户端的的计算机需要 Active Directory 安全组。 如果配置 DirectAccess 客户端设置时未指定安全组，则在默认情况下，客户端 GPO 将应用于 Domain Computers 安全组中的所有便携式计算机（支持 DirectAccess）。 仅可将以下操作系统用作 DirectAccess 客户端：Windows Server 2012、Windows Server 2008 R2、Windows 8 企业版、Windows 7 企业版和 Windows 7 旗舰版。  
+-   包含配置为 DirectAccess 客户端的的计算机需要 Active Directory 安全组。 如果配置 DirectAccess 客户端设置时未指定安全组，则在默认情况下，客户端 GPO 将应用于 Domain Computers 安全组中的所有便携式计算机（支持 DirectAccess）。 仅可将以下操作系统用作 DirectAccess 客户端： Windows Server 2012、Windows Server 2008 R2、Windows 8 企业版、Windows 7 企业版和 Windows 7 旗舰版。  
   
     > [!NOTE]  
     > 我们建议你为每个包含将配置为 DirectAccess 客户端的计算机的域创建安全组。  

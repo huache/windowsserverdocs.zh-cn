@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5a7252d0-6db8-4a9d-98ee-75082ecd2929
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fa89745d6efcae3591bba2aa5a694ee651bc9912
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 491533ae5d141de4ab4f15126d8977cf15c8f7f4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404853"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314685"
 ---
 # <a name="step-7-test-connectivity-when-returning-to-the-corpnet"></a>返回公司网络时的步骤7测试连接
 
@@ -31,7 +31,7 @@ ms.locfileid: "71404853"
   
 2. 打开提升的 Windows PowerShell 窗口，键入**ipconfig/all**，然后按 enter。 输出将指示 CLIENT1 具有本地 IP 地址，并且没有活动的6to4、Teredo 或 ip-https 隧道。  
   
-3. 测试与 APP2 上的网络共享的连接。 在 "**开始**" 屏幕上，键入<strong>\\ \ APP2\Files</strong>，然后按 enter。 您将能够打开该文件夹中的文件。  
+3. 测试与 APP2 上的网络共享的连接。 在 "**开始**" 屏幕上，键入<strong>\\\APP2\Files</strong>"，然后按 enter。 您将能够打开该文件夹中的文件。  
   
 
 

@@ -1,9 +1,9 @@
 ---
 title: 从 Windows Server Essentials 转换到 Windows Server 2012 Standard
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,100 +12,100 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 445472822de09263b84821e552c931ca19f14b2b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0d7ed80f61dcfa313f867afda5689b2c64b1406a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432530"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318705"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>从 Windows Server Essentials 转换到 Windows Server 2012 Standard
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
- Windows Server® 2012 Essentials 支持多达 25 名用户和 50 台设备。 当你的业务需求超过限制时，可以为 Windows Server 2012 Standard 保持许可证的合规性的就地许可证过渡执行从 Windows Server Essentials。  
+ Windows Server® 2012 Essentials 最多支持25个用户和50个设备。 当你的业务需求超过限制时，你可以执行从 Windows Server Essentials 到 Windows Server 2012 Standard 的就地许可转换，以保持许可证合规。  
   
 ## <a name="how-the-transition-affects-user-and-device-limits"></a>转换如何影响用户和设备限制  
- 转换到 Windows Server 2012 Standard 后，用户帐户和设备限制都会消除，但仍是唯一的 Windows Server Essentials （如仪表板、 远程 Web 访问和客户端计算机备份），这些功能仍保持可用。 但是，由于这些功能在技术上的限制，最多只能支持 75 个用户帐户和 75 台设备。 如果有必要添加 75 个用户帐户或设备时，应关闭 Windows Server Essentials 功能并使用 Windows Server 2012 Standard 本机工具来管理用户帐户和设备。  
+ 过渡到 Windows Server 2012 Standard 后，用户帐户和设备限制将被删除，但 Windows Server Essentials 独有的功能（如仪表板、远程 Web 访问和客户端计算机备份）仍然可用。 但是，由于这些功能在技术上的限制，最多只能支持 75 个用户帐户和 75 台设备。 如果需要添加超过75个用户帐户或设备，则应关闭 Windows Server Essentials 功能并使用 Windows Server 2012 标准本机工具来管理用户帐户和设备。  
   
 > [!IMPORTANT]
->   Windows Server 2012 Standard 需要为每个用户或您的环境中的设备客户端访问许可证 (CAL)。 这是不同于 Windows Server Essentials，不使用 CAL 模式，也不包含任何 Cal。  在从 Windows Server Essentials 转换到 Windows Server 2012 Standard 时，将需要购买相应数量和类型的 Cal （大多数客户购买的用户 Cal） 环境。  
+>   Windows Server 2012 Standard 需要为环境中的每个用户或设备提供客户端访问许可证（CAL）。 这不同于 Windows Server Essentials，后者不使用 CAL 模式，也不包含任何 Cal。  从 Windows Server Essentials 转换到 Windows Server 2012 Standard 时，需要为环境购买适当数量和类型的 Cal （大多数客户购买用户 Cal）。  
   
 ## <a name="before-the-transition"></a>转换前  
   
--   从 Windows Server Essentials 过渡到 Windows Server 2012 Standard 之前，应当完整备份服务器数据。  
+-   在从 Windows Server Essentials 转换到 Windows Server 2012 Standard 之前，你应该完全备份服务器数据。  
   
     > [!IMPORTANT]
     >  如果不完整备份服务器数据，则无法将服务器还原到转换前的状态。  
   
--   此外，请确保您阅读并了解最终用户许可协议 (EULA) 的 Windows Server 2012 Standard。 查看 EULA 的步骤：  
+-   此外，请确保阅读并了解适用于 Windows Server 2012 Standard 的最终用户许可协议（EULA）。 查看 EULA 的步骤：  
   
     1.  以管理员身份打开命令窗口。  
   
-    2.  运行下面的命令：  
+    2.  运行以下命令：  
   
-         **dism /online /set-edition:ServerStandard /geteula: eula path**  
+         **dism/online/set-edition： ServerStandard/geteula： eula 路径**  
   
          其中 **eula path** 表示希望用来保存 EULA 文件的位置。 例如，C:\ws8std_eula.rtf。  请务必使用 .rtf 作为文件后缀名。  
   
     3.  打开保存该文件的位置，然后双击打开该文件。  
   
-## <a name="transition-to--windows-server-2012-standard"></a>过渡到 Windows Server 2012 Standard  
- 之后您已决定转换从 Windows Server Essentials 到 Windows Server 2012 Standard，完成这两个步骤：  
+## <a name="transition-to--windows-server-2012-standard"></a>过渡到 Windows Server 2012 标准版  
+ 确定从 Windows Server Essentials 转换到 Windows Server 2012 Standard 后，请完成以下两个步骤：  
   
-1. Windows Server 2012 Standard 和适当数量的用户和/或设备客户端访问许可证为您的环境购买许可证。  
+1. 购买适用于你的环境的 Windows Server 2012 Standard 许可证以及适当数量的用户和/或设备客户端访问许可证。  
   
-    从零售商店、 经销商，或使用的帮助，可以为 Windows Server 2012 Standard 购买许可证[Microsoft 合作伙伴](https://pinpoint.microsoft.com/SelectCulture.aspx)。  
+    你可以从零售输出口、分销商处购买 Windows Server 2012 Standard 的许可证，也可以通过[Microsoft 合作伙伴](https://pinpoint.microsoft.com/SelectCulture.aspx)的帮助。  
   
    > [!NOTE]
-   >  如果最初购买 Windows Server 2012 Standard 和执行降级权限安装两个虚拟实例之一为 Windows Server Essentials，你不需要购买任何许可证。  
+   >  如果最初购买 Windows Server 2012 Standard 并执行降级权限，将两个虚拟实例之一安装为 Windows Server Essentials，则无需再购买任何其他产品。  
    >   
-   >  如果通过批量许可渠道购买了 Windows Server 2012 Standard，您可以为 Windows Server 2012 Standard 从批量许可服务中心 (VLSC) 下载的 ISO 映像和产品密钥。  
+   >  如果通过批量许可渠道购买 Windows Server 2012 Standard，则可以从批量许可服务中心（VLSC）下载 ISO 映像和 Windows Server 2012 Standard 的产品密钥。  
    >   
-   >  如果你通过其他渠道购买 Windows Server 2012 Standard 可以下载的 ISO 映像和评估版产品密钥适用于从 Windows Server Essentials [TechNet 评估中心](https://technet.microsoft.com/evalcenter/jj659306.aspx)。 下一步中介绍的转换操作会将评估产品转换为完全授权和受支持的产品。  
+   >  如果从所有其他渠道购买 Windows Server 2012 Standard，则可以从[TechNet 评估中心](https://technet.microsoft.com/evalcenter/jj659306.aspx)下载适用于 Windows server ESSENTIALS 的 ISO 映像和评估版产品密钥。 下一步中介绍的转换操作会将评估产品转换为完全授权和受支持的产品。  
   
 2. 以管理员身份打开 Windows PowerShell，然后运行如下命令。  
   
-    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *产品密钥*  
+    **dism/online/set-edition： ServerStandard/accepteula/productkey：** *产品密钥*  
   
-    其中*产品密钥*是您的 Windows Server 2012 Standard 副本的产品密钥。  
+    其中*产品密钥*是 Windows Server 2012 Standard 副本的产品密钥。  
   
     服务器将重新启动，完成转换过程。  
   
-   过渡后，Windows Server Essentials 功能保留在服务器上，并支持最多 75 位用户和 75 台设备。 如果你超出这些限制的任何一个，应使用 Windows Server 2012 Standard 本机工具来管理用户帐户和设备。  
+   转换后，Windows Server Essentials 功能将保留在服务器上，最多支持75用户和75设备。 如果超出了这两个限制，则应使用 Windows Server 2012 标准本机工具来管理用户帐户和设备。  
   
-   此外，你过渡到 Windows Server 2012 Standard 后，Windows Server Essentials 的媒体功能将不再可用。 这包括远程 Web 访问的媒体功能和仪表板上的媒体设置。  
+   此外，在转换到 Windows Server 2012 Standard 后，Windows Server Essentials 的媒体功能将不再可用。 这包括远程 Web 访问的媒体功能和仪表板上的媒体设置。  
   
-## <a name="turn-off--windows-server-essentials-features"></a>关闭 Windows Server Essentials 的功能  
- 如果您不再需要 Windows Server Essentials 仪表板或其他增值功能来管理服务器，可以关闭这些功能，并从服务器中删除。  
+## <a name="turn-off--windows-server-essentials-features"></a>禁用 Windows Server Essentials 功能  
+ 如果不再需要 Windows Server Essentials 仪表板或其他增值功能来管理服务器，则可以关闭这些功能并将其从服务器中删除。  
   
- **关闭 Windows Server Essentials 功能向导**可帮助你卸载这些功能。 它还会清除文件创建的 Windows Server Essentials 服务器软件的服务器。  某些清除操作会立即执行，而某些操作则需要等到服务器重新启动之后才会启动。  
+ "**关闭 Windows Server Essentials 功能向导**" 可帮助你卸载这些功能。 它还清除 Windows Server Essentials 服务器软件创建的文件服务器。  某些清除操作会立即执行，而某些操作则需要等到服务器重新启动之后才会启动。  
   
- **关闭 Windows Server Essentials 功能向导**需要在完成向导前手动卸载所有加载项。 若要查看已安装加载项的列表，请在仪表板中打开“应用程序”页。 此向导会通知你是否检测到已安装的加载项，如果有则提醒你卸载这些加载项。  
+ "**关闭 Windows Server Essentials 功能向导**" 需要你先手动卸载所有加载项，然后才能完成向导。 若要查看已安装加载项的列表，请在仪表板中打开“应用程序”页。 此向导会通知你是否检测到已安装的加载项，如果有则提醒你卸载这些加载项。  
   
- **关闭 Windows Server Essentials 功能向导**，可选择是否要关闭 Windows Server Essentials 功能后保留客户端的备份文件的计算机。  
+ "关闭**Windows Server Essentials 功能向导**" 允许你选择是否在关闭 Windows server essentials 功能后保留客户端计算机的备份文件。  
   
- 有两种方法来运行**关闭 Windows Server Essentials 功能向导**从仪表板：  
+ 可以通过两种方法从仪表板运行 "关闭**Windows Server Essentials 功能向导**"：  
   
 #### <a name="from-the-alert"></a>通过警报运行  
   
-1.  在仪表板中打开“警报查看器”。  
+1.  从“仪表板”中打开“警报查看器”。  
   
-2.  在组织列表中，选择报告有关在转换之后关闭 Windows Server Essentials 功能的信息的警报。  
+2.  在 "组织" 列表中，选择在转换后报告有关关闭 Windows Server Essentials 功能的信息的警报。  
   
-3.  在警报中，单击**关闭 Windows Server Essentials 功能**。  
+3.  在警报中，单击 "关闭**Windows Server Essentials 功能**"。  
   
 #### <a name="from-the-get-help-and-support-pane"></a>通过“获取帮助和支持”窗格运行  
   
 1. 在主页上单击“获取帮助和支持”。  
   
-2. 单击**关闭 Windows Server Essentials 功能向导**。  
+2. 单击 "关闭**Windows Server Essentials 功能向导**"。  
   
-   通过执行某些任务可能**关闭 Windows Server Essentials 功能向导**将无法成功完成。 某些情况下，这可能会阻止仪表板的运行。 如果发生此情况，你可以运行以下文件手动启动该向导：  
+   "关闭**Windows Server Essentials 功能向导**" 执行的某些任务可能不会成功完成。 某些情况下，这可能会阻止仪表板的运行。 如果发生此情况，你可以运行以下文件手动启动该向导：  
   
    **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 
 -   [转换到 Windows Server 2012 R2 Standard](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  

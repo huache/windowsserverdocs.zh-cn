@@ -7,14 +7,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3a6e4352-ff62-4290-b8a4-5c83740070fc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8b656bbd823a10f1e36d1757bb53c4565d4e828c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b8a3e1ede1cdec1ca5ee66be8d53d4420bec673b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405835"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317136"
 ---
 # <a name="install-the-network-controller-server-role-using-server-manager"></a>使用服务器管理器安装网络控制器服务器角色
 
@@ -29,7 +29,7 @@ ms.locfileid: "71405835"
   
 ### <a name="to-install-network-controller"></a>安装网络控制器  
   
-1.  在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 "添加角色和功能向导" 将打开。 单击**下一步**。  
+1.  在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 "添加角色和功能向导" 将打开。 单击 **“下一步”** 。  
   
 2.  在 "**选择安装类型**" 中，保留默认设置，然后单击 "**下一步**"。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71405835"
   
     ![网络控制器服务器角色](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_07.jpg)  
   
-5.  此时将打开 "**添加网络控制器所需的功能**" 对话框。 单击 "**添加功能**"。  
+5.  此时将打开 "**添加网络控制器所需的功能**" 对话框。 单击 **“添加功能”** 。  
   
     ![为网络控制器添加功能](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_06.jpg)  
   
@@ -51,7 +51,7 @@ ms.locfileid: "71405835"
   
 8.  在**网络控制器**中，单击 "**下一步**"。  
   
-9. 在 "**确认安装选择**" 中，检查你的选择。 安装网络控制器需要在向导运行后重新启动计算机。 为此，请单击 **"必要时自动重新启动目标服务器"** 。 此时将打开 "**添加角色和功能向导**" 对话框。 单击 **“是”** 。  
+9. 在 "**确认安装选择**" 中，检查你的选择。 安装网络控制器需要在向导运行后重新启动计算机。 为此，请单击 **"必要时自动重新启动目标服务器"** 。 此时将打开 "**添加角色和功能向导**" 对话框。 单击“是”。  
   
     ![“添加角色和功能”向导](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
   

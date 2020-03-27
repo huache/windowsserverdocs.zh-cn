@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 356c61c2cc5b60f43a69f17966c97f3c69d05cda
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 86ce83142cafe8ebe61aff2fb193e9b646172651
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356036"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317879"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>使用 DNS 策略执行应用程序负载平衡
 
@@ -79,7 +79,7 @@ Contosogiftservices.com 网站托管在多个数据中心中，每个数据中�
 
 有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-#### <a name="bkmk_records"></a>将记录添加到区域作用域
+#### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>将记录添加到区域作用域
 
 现在，必须将表示 web 服务器主机的记录添加到区域作用域中。
 
@@ -100,7 +100,7 @@ Contosogiftservices.com 网站托管在多个数据中心中，每个数据中�
 
 有关详细信息，请参阅[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
-#### <a name="bkmk_policies"></a>创建 DNS 策略
+#### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>创建 DNS 策略
 
 创建分区（区域作用域）并添加记录后，必须创建在这些范围内分发传入查询的 DNS 策略，以便使用 Web IP 地址对 contosogiftservices.com 的50% 的查询进行响应西雅图和达拉斯数据中心之间平均分布了西雅图数据中心的服务器。
 

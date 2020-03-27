@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 709cb192-313a-47b5-954e-eb5f6fee51a7
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 85595c47c599a72039e93e67ea2f33f92af7200c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b65f4aa2d10b1bdf6c0d212a111a169bad23591a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405901"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312888"
 ---
 # <a name="whats-new-in-ras-gateway"></a>RAS 网关中的新增功能
 
@@ -28,7 +28,7 @@ ms.locfileid: "71405901"
 > [!NOTE]  
 > 在 Windows Server 2012 R2 中，RAS 网关名为 RRAS 网关;在 System Center Virtual Machine Manager 中，RAS 网关名为 "Windows Server 网关"。  
   
-本主题包含以下部分。  
+本主题包含以下各节。  
   
 -   [站点到站点连接选项](#bkmk_s2s)  
   
@@ -40,12 +40,12 @@ ms.locfileid: "71405901"
   
 -   [路由反射器](#bkmk_rr)  
   
-## <a name="bkmk_s2s"></a>站点到站点连接选项  
-RAS 网关现在支持三种类型的 VPN 站点到站点连接：Internet 密钥交换版本2（IKEv2）站点到站点虚拟专用网络（VPN）、第3层（L3） VPN 和通用路由封装（GRE）隧道。  
+## <a name="site-to-site-connectivity-options"></a><a name="bkmk_s2s"></a>站点到站点连接选项  
+RAS 网关现在支持三种类型的 VPN 站点到站点连接： Internet 密钥交换版本2（IKEv2）站点到站点虚拟专用网络（VPN）、第3层（L3） VPN 和通用路由封装（GRE）隧道。  
   
 有关 GRE 的详细信息，请参阅[Windows Server 2016 中的 Gre 隧道](../../../../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md)。  
   
-## <a name="bkmk_pools"></a>网关池  
+## <a name="gateway-pools"></a><a name="bkmk_pools"></a>网关池  
 在 Windows Server 2016 中，可以创建不同类型的网关池。 网关池包含 RAS 网关的多个实例，并在物理网络与虚拟网络之间路由网络流量。 网关池可以执行任何单个网关功能-Internet 密钥交换版本2（IKEv2）站点到站点虚拟专用网络（VPN）、第3层（L3） VPN 和通用路由封装（GRE）隧道，或者池可执行所有这些功能函数和充当混合池。  
   
 可以根据基础结构要求使用所需的任何逻辑来创建网关池。 例如，你可以基于以下任何特征创建网关池。  
@@ -60,17 +60,17 @@ RAS 网关现在支持三种类型的 VPN 站点到站点连接：Internet 密�
   
 有关详细信息，请参阅[RAS 网关高可用性](RAS-Gateway-High-Availability.md)。  
   
-## <a name="bkmk_gps"></a>网关池可伸缩性  
+## <a name="gateway-pool-scalability"></a><a name="bkmk_gps"></a>网关池可伸缩性  
 可以通过在池中添加或删除网关 Vm 来轻松地向上或向下缩放网关池。 删除或添加网关不会中断池提供的服务。 你还可以添加和删除整个网关池。  
   
 有关详细信息，请参阅[RAS 网关高可用性](RAS-Gateway-High-Availability.md)。  
   
-## <a name="bkmk_m"></a>M + N 网关池冗余  
+## <a name="mn-gateway-pool-redundancy"></a><a name="bkmk_m"></a>M + N 网关池冗余  
 每个网关池均为 M + N 冗余。 这意味着，"N" 个备用网关虚拟机（Vm）数量由 "N" 个备用网关 Vm 备份。 通过 M + N 冗余，可以更灵活地确定部署 RAS 网关时所需的可靠性级别。 你可以根据需要配置任意数量的备用 Vm，而不是每个活动 RAS 网关 VM 只使用一个备用 RAS 网关（这是 Windows Server 2012 R2 的唯一配置选项）。 如果活动 RAS 网关 VM 发生故障或失去连接，网络控制器网关 Service Manager 功能有效地使用备用 RAS 网关 VM 容量来提供可靠的故障转移。  
   
 有关详细信息，请参阅[RAS 网关高可用性](RAS-Gateway-High-Availability.md)。  
   
-## <a name="bkmk_rr"></a>路由反射器  
+## <a name="route-reflector"></a><a name="bkmk_rr"></a>路由反射器  
 边界网关协议（BGP）路由反射器现在包含在 RAS 网关中，并提供对路由器之间的路由同步所需的 BGP 完整网格拓扑的替代方法。 对于完全网格同步，所有 BGP 路由器必须与路由拓扑中的所有其他路由器连接。 然而，使用路由反射器时，路由反射器是连接到其他所有路由器的唯一路由器，称为 BGP 客户端，因此简化了路由同步和减少网络流量。 路由反射器学习所有路由，计算最佳路由，并将最佳路由重新分发到其 BGP 客户端。  
   
 使用 Windows Server 2016，你可以配置单个租户的远程访问隧道，使其在多个 RAS 网关 VM 上终止。 这为云服务提供商提供了更大的灵活性，因为面临一个 RAS 网关 VM 无法满足租户连接的所有带宽要求的情况。  
@@ -93,6 +93,6 @@ RAS 网关现在支持三种类型的 VPN 站点到站点连接：Internet 密�
   
 -   如果企业客户在客户地址空间中使用 BGP 路由，则 RAS 网关路由反射器是对应租户的所有站点的唯一外部 BGP （eBGP）邻居。 无论企业租户的隧道终止点如何都是如此。 换句话说，无论 CSP 数据中心的哪个 RAS 网关 VM 终止租户站点的站点到站点 VPN 隧道，所有租户站点的 eBGP 对等方都是路由反射器。  
   
-有关详细信息，请参阅[RAS 网关部署体系结构](RAS-Gateway-Deployment-Architecture.md)和 Internet 工程任务组（IETF）征求意见主题 [RFC 4456 BGP 路由反射：完整网格内部 BGP （IBGP） ](https://tools.ietf.org/html/rfc4456) 的替代方法。  
+有关详细信息，请参阅[RAS 网关部署体系结构](RAS-Gateway-Deployment-Architecture.md)和 Internet 工程任务组（IETF）征求意见主题[RFC 4456 BGP 路由反射：完全网格内部 BGP （IBGP）的替代方法](https://tools.ietf.org/html/rfc4456)。  
   
 

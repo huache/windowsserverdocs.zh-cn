@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2a0f04a3ff7797d18f7647416dc99319860c7030
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8e483f5986a5a23123495e3a13440ddc57a6c521
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404520"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314043"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>计划多林部署
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404520"
 
 本主题介绍在多林部署中配置远程访问所需的计划步骤。  
   
-## <a name="prerequisites"></a>必备条件  
+## <a name="prerequisites"></a>先决条件  
 在开始部署此方案之前，请查看此列表以了解重要要求：  
   
 -   需要双向信任。  
@@ -38,7 +38,7 @@ ms.locfileid: "71404520"
   
 此外，远程访问管理员必须是所有远程访问服务器（包括新林中被添加作为原远程访问部署的入口点的远程访问服务器）的本地管理员。  
   
-## <a name="ClientSG"></a>规划客户端安全组  
+## <a name="plan-client-security-groups"></a><a name="ClientSG"></a>规划客户端安全组  
 你至少必须在新林中为该林的 DirectAccess 客户端计算机创建一个安全组。 这是因为一个安全组不能包含多个林的帐户。  
   
 > [!NOTE]  

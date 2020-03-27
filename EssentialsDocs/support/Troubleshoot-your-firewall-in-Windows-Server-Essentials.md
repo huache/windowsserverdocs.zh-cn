@@ -1,9 +1,9 @@
 ---
 title: 使用 Windows Server Essentials 排除防火墙故障
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 51d94b67-8b9b-4159-80dd-f652d73a43cb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 11372589528fcc78e0053bc7002449b53cb3181d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 15a2361284d041898d9ad7240643fdb55aa5b866
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436043"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318587"
 ---
 # <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>使用 Windows Server Essentials 排除防火墙故障
  
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
   
  如果遇到远程访问问题，请运行修复随处访问向导。  
   
@@ -29,13 +29,13 @@ ms.locfileid: "66436043"
   
 1. 打开“仪表板”。  
   
-2. 单击“设置”  、单击“随处访问”  选项卡，然后单击“修复”  。  
+2. 单击“设置”、单击“随处访问”选项卡，然后单击“修复”。  
   
 3. 按照“修复随处访问向导”中的说明操作。  
   
    如果你使用的是高级网络设置或非 Microsoft 防火墙，则可能需要打开防火墙上的其他端口。 下表中的端口通过 Internet 编号分配机构 (IANA) 进行注册。  
   
-|端口号|描述|  
+|端口号|说明|  
 |-----------------|-----------------|  
 |65500|证书 Web 服务|  
 |65510 和 65515|客户端计算机部署网站|  
@@ -43,7 +43,7 @@ ms.locfileid: "66436043"
 |65532|用于服务器环回通信的提供程序框架|  
 |6602|用于服务器和客户端计算机间通信的提供程序框架|  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 -   [使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   

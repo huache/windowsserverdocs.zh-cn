@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7e2b4540-de56-4d5f-bb8e-9f81ca0ea4eb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/26/2018
-ms.openlocfilehash: acfbfbde5a10393b100be36ce8853fc54b05a7a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 949ab458239786d531c98ff1bb97b41993e27c98
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406026"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317568"
 ---
 # <a name="manage-sdn"></a>管理 SDN
 
@@ -34,7 +34,7 @@ ms.locfileid: "71406026"
 >- [SDN 的安全性](../security/sdn-security-top.md)
 >- [SDN 疑难解答](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)  
 
-本部分包含以下主题。  
+本部分包含下列主题。  
   
 - [管理租户虚拟网络](Manage-Tenant-Virtual-Networks.md)
 - [管理租户工作负荷](Manage-Tenant-Workloads.md)

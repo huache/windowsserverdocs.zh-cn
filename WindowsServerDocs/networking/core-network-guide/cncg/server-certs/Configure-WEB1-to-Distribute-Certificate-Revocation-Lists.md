@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: fa4a8c41-8c2a-425c-8511-736fe5d196ac
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5d53cbba37699346db110f0748a9c3e0c834c18e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3319715e70c1e68739a10a4c67a9fa404d5ad80e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356293"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318418"
 ---
 # <a name="configure-web1-to-distribute-certificate-revocation-lists-crls"></a>配置 WEB1 以分发证书吊销列表（Crl）
 
@@ -21,7 +21,7 @@ ms.locfileid: "71356293"
 
 你可以使用此过程来配置 web 服务器 WEB1 以分发 Crl。  
   
-在根 CA 的扩展中，已声明可通过 https://pki.corp.contoso.com/pki 获取根 CA 的 CRL。 目前，WEB1 上没有 PKI 虚拟目录，所以必须创建一个。  
+在根 CA 的扩展中，已声明可通过 https://pki.corp.contoso.com/pki获取根 CA 的 CRL。 目前，WEB1 上没有 PKI 虚拟目录，所以必须创建一个。  
   
 若要执行此过程，您必须是**Domain Admins**的成员。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "71356293"
   
 9. 在 "**别名**" 中，键入 " **pki**"。 在 "**物理路径**" 中键入**C:\pki**，然后单击 **"确定"** 。  
   
-10. 启用对 pki 虚拟目录的匿名访问，以便任何客户端都可以检查 CA 证书和 Crl 的有效性。 为此，请执行以下操作：  
+10. 启用对 pki 虚拟目录的匿名访问，以便任何客户端都可以检查 CA 证书和 Crl 的有效性。 执行此操作的步骤：  
   
     1.  在 **“连接”** 窗格中，确保选中该 **“pki”** 。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "71356293"
   
     5.  在 **“pki 权限”** 对话框中，单击 **“添加”** 。  
   
-    6.  在 "**选择用户、计算机、服务帐户或组**" 中，键入 "**匿名登录";"所有人**"，然后单击 "**检查名称**"。 单击 **“确定”** 。  
+    6.  在 "**选择用户、计算机、服务帐户或组**" 中，键入 "**匿名登录";"所有人**"，然后单击 "**检查名称**"。 单击“确定”。  
   
     7.  在 "**选择用户、计算机、服务帐户或组**" 对话框中单击 **"确定"** 。  
   

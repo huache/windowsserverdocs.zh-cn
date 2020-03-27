@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b345ce7cdbb0cf9ff91ec99275232da5ba34edb0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6f020dc2bf5c0dc11d18e886346a98a4a40f3855
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367204"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314057"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>步骤2配置多站点基础结构
 
@@ -25,7 +25,7 @@ ms.locfileid: "71367204"
 
 若要配置多站点部署，需要执行许多步骤来修改网络基础结构设置，包括配置其他 Active Directory 站点和域控制器、配置其他安全组以及配置如果未使用自动配置的 Gpo，则组策略对象（Gpo）。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |2.1. 配置其他 Active Directory 站点|为部署配置其他 Active Directory 站点。|  
 |2.2. 配置其他域控制器|根据需要配置其他 Active Directory 域控制器。|  
@@ -33,9 +33,9 @@ ms.locfileid: "71367204"
 |2.4. 配置 GPO|根据需要配置其他组策略对象。|  
   
 > [!NOTE]  
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
-## <a name="BKMK_ConfigAD"></a>2.1。 配置其他 Active Directory 站点  
+## <a name="21-configure-additional-active-directory-sites"></a><a name="BKMK_ConfigAD"></a>2.1。 配置其他 Active Directory 站点  
 所有入口点都可以驻留在单个 Active Directory 站点中。 因此，在多站点配置中，必须至少有一个 Active Directory 站点来实现远程访问服务器。 如果需要创建第一个 Active Directory 站点，或如果想要为多站点部署使用其他 Active Directory 站点，请使用此步骤。 使用 "Active Directory 站点和服务" 管理单元在组织的网络中创建新站点。  
 
 林中的**Enterprise Admins**组或林根域中的**Domain admins**组的成员身份或同等身份至少需要完成此过程。 可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。  
@@ -62,7 +62,7 @@ ms.locfileid: "71367204"
   
 ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 若要安装 Windows 功能 "Active Directory module for Windows PowerShell"：  
   
@@ -92,7 +92,7 @@ New-ADReplicationSubnet -Name "10.2.0.0/24" -Site "Second-Site"
 New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"  
 ```  
   
-## <a name="BKMK_AddDC"></a>2.2。 配置其他域控制器  
+## <a name="22-configure-additional-domain-controllers"></a><a name="BKMK_AddDC"></a>2.2。 配置其他域控制器  
 若要在单个域中配置多站点部署，建议你在部署中为每个站点至少有一个可写域控制器。  
   
 若要执行此过程，至少必须是要在其中安装域控制器的域中的 Domain Admins 组的成员。  
@@ -115,13 +115,13 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 7.  在 "**域**" 中输入域名;例如，corp.contoso.com。  
   
-8.  在 "**提供用于执行此操作的凭据**" 下，单击 "**更改**"。 在 " **Windows 安全性**" 对话框中，提供可安装其他域控制器的帐户的用户名和密码。 若要安装其他域控制器，你必须是 Enterprise Admins 组或 Domain Admins 组的成员。 提供凭据后，单击 **“下一步”** 。  
+8.  在 "**提供用于执行此操作的凭据**" 下，单击 "**更改**"。 在 " **Windows 安全性**" 对话框中，提供可安装其他域控制器的帐户的用户名和密码。 若要安装其他域控制器，您必须是 Enterprise Admins 组或 Domain Admins 组的成员。 提供凭据后，单击 **“下一步”** 。  
   
 9. 在 "**域控制器选项**" 页上，执行以下操作：  
   
     1.  进行以下选择：  
   
-        -   **域名系统（DNS）服务器**"此选项默认情况下处于选中状态，以便域控制器可以充当域名系统（DNS）服务器。 如果你不希望该域控制器成为 DNS 服务器，则清除该选项。  
+        -   **域名系统（DNS）服务器**"此选项默认情况下处于选中状态，以便域控制器可以充当域名系统（DNS）服务器。 如果您不希望该域控制器成为 DNS 服务器，则清除该选项。  
   
             如果未在目录林根级域中的主域控制器（PDC）模拟器上安装 DNS 服务器角色，则在其他域控制器上安装 DNS 服务器的选项将不可用。 作为此情况的一种解决方法，你可以在安装 AD DS 之前或之后安装 DNS 服务器角色。  
   
@@ -148,8 +148,8 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 15. 如果计算机未自动重新启动，则重新启动计算机。  
   
-## <a name="BKMK_ConfigSG"></a>2.3。 配置安全组  
-多站点部署需要适用于 Windows 7 客户端计算机的其他安全组，该安全组允许对 Windows 7 客户端计算机进行访问。 如果有多个域包含 Windows 7 客户端计算机，则建议在每个域中为同一入口点创建一个安全组。 另外，还可以使用一个包含两个域中的客户端计算机的通用安全组。 例如，在包含两个域的环境中，如果你希望允许在入口点1和3中访问 Windows 7 客户端计算机，但不允许在入口点2中访问，则创建两个新的安全组以包含 Windows 7 客户端计算机，以便为每个 网域.  
+## <a name="23-configure-security-groups"></a><a name="BKMK_ConfigSG"></a>2.3。 配置安全组  
+多站点部署需要适用于 Windows 7 客户端计算机的其他安全组，该安全组允许对 Windows 7 客户端计算机进行访问。 如果有多个域包含 Windows 7 客户端计算机，则建议在每个域中为同一入口点创建一个安全组。 另外，还可以使用一个包含两个域中的客户端计算机的通用安全组。 例如，在包含两个域的环境中，如果你希望允许在入口点1和3中访问 Windows 7 客户端计算机，但不允许在入口点2中访问，则创建两个新的安全组以包含 Windows 7 客户端计算机，以便为每个网域.  
   
 ### <a name="to-configure-additional-security-groups"></a>配置其他安全组  
   
@@ -163,7 +163,7 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 5.  若要将计算机添加到新安全组，请双击安全组，然后在 " **< Group_Name > 属性**" 对话框中，单击 "**成员**" 选项卡。  
   
-6.  在“成员” 选项卡上，单击“添加”。  
+6.  在 **“成员”** 选项卡上，单击 **“添加”** 。  
   
 7.  选择要添加到此安全组的 Windows 7 计算机，然后单击 **"确定"** 。  
   
@@ -171,7 +171,7 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 若要安装 Windows 功能 "Active Directory module for Windows PowerShell"：  
   
@@ -194,7 +194,7 @@ New-ADGroup -GroupScope universal -Name Win7_Clients_Entrypoint1
 Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$  
 ```  
   
-## <a name="ConfigGPOs"></a>2.4。 配置 GPO  
+## <a name="24-configure-gpos"></a><a name="ConfigGPOs"></a>2.4。 配置 GPO  
 多站点远程访问部署需要以下组策略对象：  
   
 -   远程访问服务器的每个入口点的 GPO。  
@@ -213,7 +213,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
 若要创建组策略对象，请参阅[创建和编辑组策略对象](https://technet.microsoft.com/library/cc754740.aspx)。  
   
-### <a name="DCMaintandDowntime"></a>域控制器维护和停机时间  
+### <a name="domain-controller-maintenance-and-downtime"></a><a name="DCMaintandDowntime"></a>域控制器维护和停机时间  
 如果域控制器作为 PDC 模拟器运行，或者域控制器管理服务器 Gpo 时遇到停机，则不可能加载或修改远程访问配置。 如果其他域控制器可用，则这不会影响客户端连接。  
   
 若要加载或修改远程访问配置，可以将 PDC 仿真器角色转移到客户端或应用程序服务器 Gpo 的其他域控制器;对于服务器 Gpo，请更改用于管理服务器 Gpo 的域控制器。  
@@ -224,7 +224,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
 > [!NOTE]  
 > 在修改域控制器关联之前，请确保已将远程访问部署中的所有 Gpo 复制到域中的所有域控制器。 如果未同步 GPO，则在修改域控制器关联后可能会丢失最近的配置更改，这可能会导致配置损坏。 若要验证 GPO 同步，请参阅[检查组策略基础结构状态](https://technet.microsoft.com/library/jj134176.aspx)。  
   
-#### <a name="TransferPDC"></a>传输 PDC 仿真器角色  
+#### <a name="to-transfer-the-pdc-emulator-role"></a><a name="TransferPDC"></a>传输 PDC 仿真器角色  
   
 1.  在 "**开始**" 屏幕上，键入**dsa.msc**，然后按 enter。  
   
@@ -239,7 +239,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
 5.  单击 **"是"** 以确认要传输该角色，然后单击 "**关闭**"。  
   
-#### <a name="ChangeDC"></a>更改管理服务器 Gpo 的域控制器  
+#### <a name="to-change-the-domain-controller-that-manages-server-gpos"></a><a name="ChangeDC"></a>更改管理服务器 Gpo 的域控制器  
   
 -   在远程访问服务器上运行 Windows PowerShell cmdlet `HYPERLINK "https://technet.microsoft.com/library/hh918412.aspx" Set-DAEntryPointDC`，并指定*ExistingDC*参数的无法访问的域控制器名称。 此命令修改当前由该域控制器管理的入口点的服务器 Gpo 的域控制器关联。  
   
@@ -255,7 +255,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
         Set-DAEntryPointDC "ExistingDC 'dc1.corp.contoso.com' "ComputerName 'DA1.corp.contoso.com' "ErrorAction Inquire  
         ```  
   
-### <a name="ChangeTwoDCs"></a>更改两个或更多管理服务器 Gpo 的域控制器  
+### <a name="change-two-or-more-domain-controllers-that-manage-server-gpos"></a><a name="ChangeTwoDCs"></a>更改两个或更多管理服务器 Gpo 的域控制器  
 在极少数情况下，管理服务器 Gpo 的两个或多个域控制器不可用。 如果出现这种情况，则需要执行更多步骤来更改服务器 Gpo 的域控制器关联。  
   
 域控制器关联信息既存储在远程访问服务器的注册表中，也存储在所有服务器 Gpo 中。 在下面的示例中，有两个入口点，其中包含两个远程访问服务器： "DA1"，在 "入口点 1" 和 "DA2" 中的 "入口点 2" 中。 "入口点 1" 的服务器 GPO 在域控制器 "DC1" 中进行管理，而 "入口点 2" 的服务器 GPO 在域控制器 "DC2" 中进行管理。 "DC1" 和 "DC2" 不可用。 第三个域控制器仍在域 "DC3" 中可用，并且 "DC1" 和 "DC2" 中的数据已复制到 "DC3"。  
@@ -299,7 +299,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
-### <a name="ConfigDistOptimization"></a>配置分发的优化  
+### <a name="optimization-of-configuration-distribution"></a><a name="ConfigDistOptimization"></a>配置分发的优化  
 进行配置更改时，仅在服务器 Gpo 传播到远程访问服务器后应用更改。 为了减少配置分发时间，远程访问会自动选择一个可写域控制器，该控制器在创建其服务器 GPO 时最接近远程访问服务器的 "<https://technet.microsoft.com/library/cc978016.aspx>" 超链接。  
   
 在某些情况下，可能需要手动修改管理服务器 GPO 的域控制器，以便优化配置分发时间：  
@@ -332,7 +332,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
     > [!NOTE]  
     > 当修改与特定入口点相关联的域控制器时，必须指定作为*ComputerName*参数的入口点成员的远程访问服务器。  
   
-## <a name="BKMK_Links"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
   
 -   [步骤3：配置多站点部署](Step-3-Configure-the-Multisite-Deployment.md)  
 -   [步骤1：实现单一服务器远程访问部署](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  

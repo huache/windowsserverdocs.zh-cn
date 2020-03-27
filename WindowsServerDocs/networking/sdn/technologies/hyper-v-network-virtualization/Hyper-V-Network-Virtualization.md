@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 150976f0-ccd5-487a-a458-92261444a846
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 30e843e40f903bc6415159bfce13b9bc95eb05ef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a99fed5fb173ed2ef0698ab5c10bcf872e9abea8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405872"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317243"
 ---
 # <a name="hyper-v-network-virtualization"></a>Hyper-V 网络虚拟化
 
@@ -25,7 +25,7 @@ ms.locfileid: "71405872"
 
 Hyper-v 网络虚拟化（HNV）是在 Windows Server 2012 中引入的，它支持基于共享物理网络基础结构的客户网络虚拟化。 由于物理网络结构上只需进行少量的更改，HNV 为服务提供商提供灵活的灵活性，可在三个云中的任何位置部署和迁移租户工作负荷：服务提供商云、私有云或 Microsoft Azure 公有云。  
   
-有关详细信息，请参阅下列主题：  
+有关详情，请参阅以下主题：  
   
 -   [Windows Server 2016 中的 hyper-v 网络虚拟化概述](../../../sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server.md)  
   

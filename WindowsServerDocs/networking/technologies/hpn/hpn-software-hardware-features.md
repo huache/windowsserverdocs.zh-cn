@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: f032717b9f4dca65454d8251083b73ff2d57dba7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 93913acbe598c4fd1b8ee5556dbf70013f3d714a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355321"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316948"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>软件和硬件 (SH) 集成功能和技术
 
@@ -70,7 +70,7 @@ IPsec 任务卸载是一项 NIC 功能，使操作系统可以使用 NIC 上的�
 
 Pvlan 仅允许在同一虚拟化服务器上的虚拟机之间进行通信。 专用虚拟网络未绑定到物理网络适配器。 专用虚拟网络与虚拟化服务器上的所有外部网络流量隔离，以及管理操作系统和外部网络之间的任何网络流量。 当你需要创建隔离的网络环境（例如隔离的测试域）时，此类型的网络很有用。 Hyper-v 和 SDN 堆栈仅支持 PVLAN 隔离端口模式。
 
-有关 PVLAN 隔离的详细信息， [请参阅 System Center：Virtual Machine Manager 工程博客](https://blogs.technet.microsoft.com/scvmm/2013/06/04/logical-networks-part-iv-pvlan-isolation/)。
+有关 PVLAN 隔离的详细信息，请参阅[System Center： Virtual Machine Manager 工程博客](https://blogs.technet.microsoft.com/scvmm/2013/06/04/logical-networks-part-iv-pvlan-isolation/)。
 
 ## <a name="remote-direct-memory-access-rdma"></a>远程直接内存访问 (RDMA) 
 
@@ -90,7 +90,7 @@ SR-IOV 允许 VM 流量直接从 NIC 移至 VM，而无需通过 Hyper-v 主机�
 
 使用 SR-IOV 的流量将绕过 Hyper-v 交换机，这意味着将不会应用任何策略（如 Acl）或带宽管理。 不能通过任何网络虚拟化功能传递 SR-IOV 流量，因此不能应用 NV 或 VxLAN 封装。 仅在特定情况下，为受信任的工作负荷使用 SR-IOV。 此外，不能使用主机策略、带宽管理和虚拟化技术。
 
-将来，两种技术会允许 SR-IOV：一般流表（GFT）和硬件 QoS 卸载（NIC 中的带宽管理）–生态系统中的 Nic 支持它们。 这两种技术的组合会使 SR-IOV 对所有 Vm 都有用，这将允许应用策略、虚拟化和带宽管理规则，并可能在 SR-IOV 的一般应用程序中带来极大的进步。
+将来，两种技术会允许 SR-IOV：通用流表（GFT）和硬件 QoS 卸载（NIC 中的带宽管理）–生态系统中的 Nic 支持它们。 这两种技术的组合会使 SR-IOV 对所有 Vm 都有用，这将允许应用策略、虚拟化和带宽管理规则，并可能在 SR-IOV 的一般应用程序中带来极大的进步。
 
 有关更多详细信息，请参阅[单根 I/o 虚拟化（sr-iov）概述](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-)。
 

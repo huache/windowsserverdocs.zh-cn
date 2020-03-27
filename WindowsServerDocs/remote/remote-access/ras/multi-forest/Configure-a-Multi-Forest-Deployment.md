@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 08bd945bf808843286d390a089d9ac070b9a8813
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 68eed3866dc6c6fb02d54bda41c453a9c64c7578
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822680"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314074"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
@@ -25,7 +25,7 @@ ms.locfileid: "76822680"
 
 本主题介绍如何在几种可能的场景中配置远程访问多林部署。 所有场景均假定 DirectAccess 当前已部署在名为 Forest1 的单一林上，并且你正在配置 DirectAccess，以使其适用于名为 Forest2 的新林。  
   
-## <a name="AccessForest2"></a>从 Forest2 访问资源  
+## <a name="access-resources-from-forest2"></a><a name="AccessForest2"></a>从 Forest2 访问资源  
 在此场景中，DirectAccess 已部署在 Forest1 上，并且被配置为允许来自 Forest1 的客户端访问企业网络。 默认状态下，通过 DirectAccess 连接的客户端只能访问 Forest1 中的资源，而无法访问 Forest2 中的任何资源。  
   
 #### <a name="to-enable-directaccess-clients-to-access-resources-from-forest2"></a>允许 DirectAccess 客户端访问 Forest2 的资源的步骤  
@@ -34,20 +34,20 @@ ms.locfileid: "76822680"
   
 2.  如果内部网络上部署了 IPv6，则添加 Forest2 中的相关内部 IPv6 前缀。  
   
-## <a name="EnableForest2DA"></a>允许来自 Forest2 的客户端通过 DirectAccess 进行连接  
+## <a name="enable-clients-from-forest2-to-connect-via-directaccess"></a><a name="EnableForest2DA"></a>允许来自 Forest2 的客户端通过 DirectAccess 进行连接  
 在此场景中，你对远程访问部署进行配置，以允许来自 Forest2 的客户端访问企业网络。 假定你已经为 Forest2 中的客户端计算机创建了所需的安全组。   
   
 #### <a name="to-allow-clients-from-forest2-to-access-the-corporate-network"></a>允许来自 Forest2 的客户端访问企业网络的步骤  
   
 1.  添加来自 Forest2 的客户端安全组。  
   
-2.  如果 Forest2 的 DNS 后缀不是 Forest1 DNS 后缀的一部分，请在 Forest2 中使用客户端域的后缀添加 NRPT 规则，以允许访问域控制器进行身份验证，还可以选择将 Forest2 中的域的后缀添加到 DNS suf修复搜索列表。 
+2.  如果 Forest2 的 DNS 后缀不是 Forest1 DNS 后缀的一部分，请在 Forest2 中使用客户端域的后缀添加 NRPT 规则，以允许访问域控制器进行身份验证，还可以选择将 Forest2 中的域的后缀添加到 DNS后缀搜索列表。 
   
 3.  添加 Forest2 中的内部 IPv6 前缀，以使 DirectAccess 能够创建通向域控制器的 IPsec 隧道，从而进行身份验证。  
   
 4.  刷新管理服务器列表。  
   
-## <a name="AddEPForest2"></a>从 Forest2 添加入口点  
+## <a name="add-entry-points-from-forest2"></a><a name="AddEPForest2"></a>从 Forest2 添加入口点  
 在此场景中，DirectAccess 已部署在 Forest1 上的多站点配置中，并且你希望添加一个来自 Forest2 且名为 DA2 的远程访问服务器，作为现有 DirectAccess 多站点部署的入口点。  
   
 #### <a name="to-add-a-remote-access-server-from-forest2-as-an-entry-point"></a>添加来自 Forest2 的远程访问服务器用作入口点的步骤  
@@ -62,7 +62,7 @@ ms.locfileid: "76822680"
   
 5.  刷新管理服务器列表。  
   
-## <a name="OTPMultiForest"></a>在多林部署中配置 OTP  
+## <a name="configure-otp-in-a-multi-forest-deployment"></a><a name="OTPMultiForest"></a>在多林部署中配置 OTP  
 在多林部署中配置 OTP 时请注意以下术语：  
   
 -   根 CA-林的主 PKI 树 CA。  
@@ -76,9 +76,9 @@ ms.locfileid: "76822680"
 此程序需要 PowerShell 脚本 PKISync.ps1。 请参阅 [AD CS：用于跨林证书注册的 PKISync.ps1 脚本](https://technet.microsoft.com/library/ff961506.aspx)。  
   
 > [!NOTE]  
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
-### <a name="BKMK_CertPub"></a>将 Ca 配置为证书发布者  
+### <a name="configure-cas-as-certificate-publishers"></a><a name="BKMK_CertPub"></a>将 Ca 配置为证书发布者  
   
 1.  通过从提升的命令提示符运行以下命令，在所有林中的所有企业 CA 上启用 LDAP 引用支持：  
   
@@ -127,7 +127,7 @@ ms.locfileid: "76822680"
   
     5.  从颁发的证书模板列表中删除帐户林 OTP 证书模板。  
   
-### <a name="BKMK_DelImp"></a>删除和导入 OTP 证书模板  
+### <a name="delete-and-import-otp-certificate-templates"></a><a name="BKMK_DelImp"></a>删除和导入 OTP 证书模板  
   
 1.  从帐户林删除 OTP 证书模板；即 Forest2。  
   
@@ -139,11 +139,11 @@ ms.locfileid: "76822680"
     .\PKISync.ps1 -sourceforest <resource forest DNS> -targetforest <account forest DNS> -type Oid -f  
     ```  
   
-### <a name="BKMK_Publish"></a>发布 OTP 证书模板  
+### <a name="publish-otp-certificate-templates"></a><a name="BKMK_Publish"></a>发布 OTP 证书模板  
   
 -   在所有帐户林 CA 上发布最新导入的证书模板。  
   
-### <a name="BKMK_Extract"></a>提取和同步 CA  
+### <a name="extract-and-synchronize-the-ca"></a><a name="BKMK_Extract"></a>提取和同步 CA  
   
 1.  通过从提升的命令提示符运行以下命令，从帐户林提取所有企业 CA 证书：  
   
@@ -166,7 +166,7 @@ ms.locfileid: "76822680"
 ## <a name="configuration-procedures"></a>配置过程  
 以下各部分介绍上述场景部署的配置过程。 请在完成一个步骤后，返回场景以继续进行下一步。  
   
-### <a name="NRPT_DNSSearchSuffix"></a>添加 NRPT 规则和 DNS 后缀  
+### <a name="add-nrpt-rules-and-dns-suffixes"></a><a name="NRPT_DNSSearchSuffix"></a>添加 NRPT 规则和 DNS 后缀  
 通过 DirectAccess 与企业网络相连的客户端使用名称解析策略表 (NRPT) 来决定用来解析不同资源地址的 DNS 服务器。 这允许客户端解析企业资源地址，并帮助客户端维持一个正确的企业内外分类，这是保证 DirectAccess 运转所必须的。 DirectAccess 配置工具自动检测 Forest1 的根 DNS 后缀，并将其添加到 NRPT 表中。 但 Forest2 的 FQDN 后缀不会自动添加到 NRPT 表中，远程访问管理员必须手动添加。  
   
 DNS 后缀搜索列表允许客户端不使用 FQDN，而使用短标签名。 远程访问配置工具自动将 Forest1 中的所有域添加到 DNS 后缀搜索列表中。 如果你想让客户端对 Forest2 中的资源使用短标签名，则需要手动添加。  
@@ -177,19 +177,19 @@ DNS 后缀搜索列表允许客户端不使用 FQDN，而使用短标签名。 �
   
 2.  在 **“网络位置服务器”** 页面上，单击 **“下一步”** 。  
   
-3.  在 **“DNS”** 页的表格中，输入 Forest 2 中的企业网络所包含的任何其他名称后缀。 在 **“DNS 服务器地址”** 中，手动输入 DNS 服务器地址，或单击 **“检测”** 。 如果不输入地址，新条目将作为 NRPT 例外应用。 然后单击“下一步”。  
+3.  在 **“DNS”** 页的表格中，输入 Forest 2 中的企业网络所包含的任何其他名称后缀。 在 **“DNS 服务器地址”** 中，手动输入 DNS 服务器地址，或单击 **“检测”** 。 如果不输入地址，新条目将作为 NRPT 例外应用。 再单击 **“下一步”** 。  
   
-4.  可选：在“DNS 后缀搜索列表” 页面上，通过在“新建后缀” 框中输入后缀来添加任何 DNS 后缀，然后单击“添加”。 然后单击“下一步”。  
+4.  可选方法：在 **“DNS 后缀搜索列表”** 页面上，通过在 **“新建后缀”** 框中输入后缀来添加任何 DNS 后缀，然后单击 **“添加”** 。 再单击 **“下一步”** 。  
   
 5.  在 **“管理”** 页面上，单击 **“完成”** 。  
   
 6.  在远程访问管理控制台的中间窗格中，单击 **“完成”** 。  
   
-7.  在“远程访问查看” 对话框中，单击“应用”。  
+7.  在“远程访问查看”对话框中，单击“应用”。  
   
 8.  在 **“应用远程访问设置向导设置”** 对话框中，单击 **“关闭”** 。  
   
-### <a name="IPv6Prefix"></a>添加内部 IPv6 前缀  
+### <a name="add-internal-ipv6-prefix"></a><a name="IPv6Prefix"></a>添加内部 IPv6 前缀  
   
 > [!NOTE]  
 > 如果内部网络上部署了 IPv6，则只添加相关的内部 IPv6 前缀。  
@@ -202,17 +202,17 @@ DNS 后缀搜索列表允许客户端不使用 FQDN，而使用短标签名。 �
   
 2.  在“远程访问服务器设置”向导中，单击 **“前缀配置”** 。  
   
-3.  在 **“前缀配置”** 页面上，在 **“内部网络 IPv6 前缀”** 中，添加任何其他 IPv6 前缀，用分号分隔，例如 2001:db8:1::/64;2001:db8:2::/64。 然后单击“下一步”。  
+3.  在 **“前缀配置”** 页面上，在 **“内部网络 IPv6 前缀”** 中，添加任何其他 IPv6 前缀，用分号分隔，例如 2001:db8:1::/64;2001:db8:2::/64。 再单击 **“下一步”** 。  
   
 4.  在 **“身份验证”** 页面上，单击 **“完成”** 。  
   
 5.  在远程访问管理控制台的中间窗格中，单击 **“完成”** 。  
   
-6.  在“远程访问查看” 对话框中，单击“应用”。  
+6.  在“远程访问查看”对话框中，单击“应用”。  
   
 7.  在 **“应用远程访问设置向导设置”** 对话框中，单击 **“关闭”** 。  
   
-### <a name="SGs"></a>添加客户端安全组  
+### <a name="add-client-security-groups"></a><a name="SGs"></a>添加客户端安全组  
 若要使 Forest2 中的 Windows 8 客户端计算机能够通过 DirectAccess 访问资源，你必须将安全组从 Forest2 添加到远程访问部署。  
   
 ##### <a name="to-add-windows-8-client-security-groups"></a>添加 Windows 8 客户端安全组的步骤  
@@ -221,19 +221,19 @@ DNS 后缀搜索列表允许客户端不使用 FQDN，而使用短标签名。 �
   
 2.  在 DirectAccess 客户端设置向导中，单击 **“选择组”** ，然后在 **“选择组”** 页面上，单击 **“添加”** 。  
   
-3.  在 **“选择组”** 对话框中，选择包含 DirectAccess 客户端计算机的安全组。 然后单击“下一步”。  
+3.  在 **“选择组”** 对话框中，选择包含 DirectAccess 客户端计算机的安全组。 再单击 **“下一步”** 。  
   
 4.  在 **“网络连接助理”** 页面上，单击 **“完成”** 。  
   
 5.  在远程访问管理控制台的中间窗格中，单击 **“完成”** 。  
   
-6.  在“远程访问查看” 对话框中，单击“应用”。  
+6.  在“远程访问查看”对话框中，单击“应用”。  
   
 7.  在 **“应用远程访问设置向导设置”** 对话框中，单击 **“关闭”** 。  
   
 若要使 Forest2 的 Windows 7 客户端计算机能够在启用了多站点时通过 DirectAccess 访问资源，你必须将安全组从 Forest2 添加到每个入口点的远程访问部署。 有关添加 Windows 7 安全组的信息，请参阅3.6 中的**客户端支持**页的说明。 启用多站点部署。  
   
-### <a name="RefreshMgmtServers"></a>刷新管理服务器列表  
+### <a name="refresh-the-management-servers-list"></a><a name="RefreshMgmtServers"></a>刷新管理服务器列表  
 远程访问自动发现包含 DirectAccess 配置 GPO 的所有林中的基础结构服务器。 如果 DirectAccess 是从 Forest1 的服务器部署的，则服务器 GPO 将被写入 Forest1 的域中。 如果你启用了 Forest2 的客户端对 DirectAccess 的访问，则客户端 GPO 将被写入 Forest2 的域中。  
   
 基础结构服务器的自动发现过程是允许通过 DirectAccess 访问域控制器和 Microsoft 端点 Configuration Manager。 你必须手动启动发现过程。  

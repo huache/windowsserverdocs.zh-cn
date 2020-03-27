@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aded2881-99ed-4f18-868b-b765ab926597
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 472c1dc6c5531a7c8d41e40bc926bb3e25f73448
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 82e9720bc09593ea7b8d7af4b2102ac3e3ba3e3d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367596"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314703"
 ---
 # <a name="step-6-test-directaccess-client-connectivity-from-behind-a-nat-device"></a>步骤6从 NAT 设备后面测试 DirectAccess 客户端连接
 
@@ -50,7 +50,7 @@ ms.locfileid: "71367596"
   
 2. 检查 ipconfig 命令的输出。  
   
-   CLIENT1 现在已从 NAT 设备后面连接到 Internet 并且分配了专用 IPv4 地址。 当 DirectAccess 客户端在 NAT 设备后面并且分配了专用 IPv4 地址时，首选的 IPv6 转换技术是 Teredo。 如果查看 ipconfig 命令的输出，你应该会看到隧道适配器 Teredo 隧道伪接口部分，然后是说明 Microsoft Teredo 隧道适配器，其中 IP 地址以2001开头：与成为 Teredo 一致地址. 如果您看不到 Teredo 部分，使用以下命令启用 Teredo：**netsh interface Teredo set state enterpriseclient**，然后重新运行 ipconfig 命令。 你不会看到为 Teredo 隧道适配器列出的默认网关。  
+   CLIENT1 现在已从 NAT 设备后面连接到 Internet 并且分配了专用 IPv4 地址。 当 DirectAccess 客户端在 NAT 设备后面并且分配了专用 IPv4 地址时，首选的 IPv6 转换技术是 Teredo。 如果你看一下 ipconfig 命令的输出，你应看到有关隧道适配器 Teredo 隧道伪接口部分，然后是 Microsoft Teredo 隧道适配器的描述，并带有以 2001: 开头的 IP 地址，这与 Teredo 地址一致。 如果您看不到 Teredo 部分，使用以下命令启用 Teredo：**netsh interface Teredo set state enterpriseclient**，然后重新运行 ipconfig 命令。 你不会看到为 Teredo 隧道适配器列出的默认网关。  
   
 3. 在 Windows PowerShell 窗口中，键入**ipconfig/flushdns** ，然后按 enter。  
   
@@ -66,11 +66,11 @@ ms.locfileid: "71367596"
   
 7. 将 Windows PowerShell 窗口保持打开状态以进行下一过程。  
   
-8. 打开 Internet Explorer，在 Internet Explorer 地址栏中，输入 **https://app1/** ，然后按 enter。 在 APP1 上，你将看到默认的 IIS 网站。  
+8. 打开 Internet Explorer，在 Internet Explorer 地址栏中输入 **https://app1/** ，然后按 enter。 在 APP1 上，你将看到默认的 IIS 网站。  
   
-9. 在 Internet Explorer 地址栏中，输入 **https://app2/** "，然后按 enter。 在 APP2 上，你将看到默认网站。  
+9. 在 Internet Explorer 地址栏中，输入 **https://app2/** ，然后按 enter。 在 APP2 上，你将看到默认网站。  
   
-10. 在 "**开始**" 屏幕上，键入<strong>\\ \ App2\Files</strong>，然后按 enter。 双击“新文本文档”文件。 此示例演示你能够连接到 IPv4 唯一的服务器是使用 SMB 来获取 IPv4 唯一的主机上的资源。  
+10. 在 "**开始**" 屏幕上，键入<strong>\\\App2\Files</strong>"，然后按 enter。 双击“新文本文档”文件。 此示例演示你能够连接到 IPv4 唯一的服务器是使用 SMB 来获取 IPv4 唯一的主机上的资源。  
   
 ## <a name="test-ip-https-connectivity"></a>测试 IP-HTTPS 的连接  
   
@@ -78,7 +78,7 @@ ms.locfileid: "71367596"
   
 2. 在 Windows PowerShell 窗口中，键入**ipconfig/all** ，然后按 enter。  
   
-3. 检查 ipconfig 命令的输出。 此计算机现在已从 NAT 设备后面连接到 Internet，并且分配了专用 IPv4 地址。 Teredo 将禁用，并且 DirectAccess 客户端回退到 IP-HTTPS。 查看 ipconfig 命令的输出时，你会看到一个 "隧道适配器 iphttpsinterface" 部分，其中的 IP 地址以 "2001： db8：1： 100" 开头，这是基于在设置DirectAccess. 你不会看到为 IP-HTTPS 隧道适配器列出的默认网关。  
+3. 检查 ipconfig 命令的输出。 此计算机现在已从 NAT 设备后面连接到 Internet，并且分配了专用 IPv4 地址。 Teredo 将禁用，并且 DirectAccess 客户端回退到 IP-HTTPS。 当你查看 ipconfig 命令的输出时，你会看到有关隧道适配器 iphttpsinterface 的部分，带有开头为 2001:db8:1:100 的 IP 地址，这与基于在设置 DirectAccess 时配置的前缀而形成的 IP-HTTPS 地址一致。 你不会看到为 IP-HTTPS 隧道适配器列出的默认网关。  
   
 4. 在 Windows PowerShell 窗口中，键入**ipconfig/flushdns** ，然后按 enter。 这将刷新名称解析条目，这些条目在从客户端计算机连接到公司网络时开始，可能仍然存在于客户端 DNS 缓存中。  
   
@@ -86,8 +86,8 @@ ms.locfileid: "71367596"
   
 6. 在 Windows PowerShell 窗口中，键入**ping app2** ，然后按 enter。 你应该看到由 EDGE1 分配给 APP2 的来自 NAT64 地址的答复，在本例中为 fdc9:9f4e:eb1b:7777::a00:4。  
   
-7. 打开 Internet Explorer，在 Internet Explorer 地址栏中，输入 **https://app1/** ，然后按 enter。 在 APP1 上，你将看到默认的 IIS 站点。  
+7. 打开 Internet Explorer，在 Internet Explorer 地址栏中输入 **https://app1/** ，然后按 enter。 在 APP1 上，你将看到默认的 IIS 站点。  
   
-8. 在 Internet Explorer 地址栏中，输入 **https://app2/** "，然后按 enter。 在 APP2 上，你将看到默认网站。  
+8. 在 Internet Explorer 地址栏中，输入 **https://app2/** ，然后按 enter。 在 APP2 上，你将看到默认网站。  
   
-9. 在 "**开始**" 屏幕上，键入<strong>\\ \ App2\Files</strong>，然后按 enter。 双击“新文本文档”文件。 此示例演示你能够连接到 IPv4 唯一的服务器是使用 SMB 来获取 IPv4 唯一的主机上的资源。
+9. 在 "**开始**" 屏幕上，键入<strong>\\\App2\Files</strong>"，然后按 enter。 双击“新文本文档”文件。 此示例演示你能够连接到 IPv4 唯一的服务器是使用 SMB 来获取 IPv4 唯一的主机上的资源。

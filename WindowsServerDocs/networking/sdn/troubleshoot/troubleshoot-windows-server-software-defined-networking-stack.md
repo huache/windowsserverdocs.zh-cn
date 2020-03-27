@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
-ms.author: pashort
+ms.author: lizross
 author: JMesser81
 ms.date: 08/14/2018
-ms.openlocfilehash: 2782419f0c3d99e7ec7f4ee3389f174df400bd55
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5827ad3b23d6f084e0138bf34ad47223eccb4e76
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949928"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312840"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Windows Server 软件定义的网络堆栈疑难解答
 
@@ -121,9 +121,9 @@ Message:          Host is not Connected.
 下表显示了根据观察到的配置状态要采取的错误代码、消息和跟进操作的列表。
 
 
-| 代码| **Message**| **操作**|  
+| **编写**| **消息**| **操作**|  
 |--------|-----------|----------|  
-| Unknown| 未知错误| |  
+| 未知| 未知错误| |  
 | HostUnreachable                       | 主机无法访问 | 检查网络控制器与主机之间的管理网络连接 |  
 | PAIpAddressExhausted                  | 已耗尽 PA Ip 地址 | 增加 HNV 提供程序逻辑子网的 IP 池大小 |  
 | PAMacAddressExhausted                 | 已耗尽 PA Mac 地址 | 增加 Mac 池范围 |  
@@ -597,7 +597,7 @@ PA 路由信息：
     Local PA IP: 10.10.182.66
     Remote PA IP: 10.10.182.65
 
- <snip> ...
+ <snip> 。
 
 4. 组织检查将阻止流量的虚拟子网或 VM 网络接口上是否没有指定的分布式防火墙策略。    
 
@@ -658,7 +658,7 @@ PA 路由信息：
 - NCApplicationLogs
 - PerfCounters
 - SDNDiagnostics
-- 跟踪
+- Traces
 
 网络控制器使用（Azure） Service Fabric。 排查某些问题时可能需要 Service Fabric 日志。 可在 C:\ProgramData\Microsoft\Service Fabric 中的每个网络控制器节点上找到这些日志。
 
@@ -673,7 +673,7 @@ PA 路由信息：
     1.  负载均衡器（LB）引擎是否已连接到 SLBM？ （*SLBM LBEngine 配置*> 0）  
     2.  SLBM 是否至少知道自己的终结点？ （*VIP 端点总数*> = 2）  
     3.  Hyper-v （DIP）主机是否连接到 SLBM？ （*连接的 HP 客户端*= = num server）   
-    4.  SLBM 是否连接到 Mux？ （*Mux 连接* == *在 SLBM == Mux 上的 mux 正常*状态 = # SLB mux vm）。  
+    4.  SLBM 是否连接到 Mux？ （*Mux 连接* == *在 SLBM == Mux 上的 mux 正常*状态 = # SLB mux vm）。 *Muxes reporting healthy*  
 3.  确保配置的 BGP 路由器已成功与 SLB MUX 对等互连  
     1.  如果将 RRAS 用于远程访问（即 BGP 虚拟机）：  
         1.  Bgp 应显示已连接  

@@ -10,14 +10,14 @@ ms.technology: networking-bc
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 15d57d12679d7441da080ad671264ca1e5e1f42c
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1eea3e11231e1be94db1f88d77faa89a67d46444
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822800"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318526"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -69,17 +69,17 @@ ms.locfileid: "76822800"
   
 -   [缓存安全性](#bkmk_cache)  
   
-## <a name="bkmk_what"></a>什么是 BranchCache？
+## <a name="what-is-branchcache"></a><a name="bkmk_what"></a>什么是 BranchCache？
 
-BranchCache 是一种广域网络（WAN）带宽优化技术，包含在某些版本的 Windows Server 2016 和 Windows 10 操作系统以及某些版本的 Windows server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8 中。、Windows Server 2008 R2 和 Windows 7。 为了在用户访问远程服务器上的内容时优化 WAN 带宽，BranchCache 从总部或托管的云内容服务器获取内容，并将内容缓存在分支机构位置，使分支机构的客户端计算机可以从本地访问内容，而不是从 WAN 访问。
+BranchCache 是一种广域网络（WAN）带宽优化技术，包含在某些版本的 Windows Server 2016 和 Windows 10 操作系统以及某些版本的 Windows server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8 中。、Windows Server 2008 R2 和 Windows 7。 为了在用户访问远程服务器上的内容时优化 WAN 带宽，BranchCache 从总部或托管的云内容服务器复制内容，并将内容缓存在分支机构位置，使分支机构的客户端计算机可以从本地访问内容，而不是从 WAN 访问。
   
 在分支机构，内容存储在配置为托管缓存的服务器上，或在分支机构中没有可用服务器的情况下，在运行 Windows 10、Windows 8.1、Windows 8 或 Windows 7 的客户端计算机上存储。 当某客户端计算机请求并接收到来自总部的内容，而该内容又缓存在分支机构时，位于同一分支机构的其他计算机可以从本地获得内容，而不是通过 WAN 链接从内容服务器下载内容。
 
-客户端计算机后续请求同一内容时，客户端将从服务器下载 *内容信息* ，而不是实际内容。 内容信息包括使用大量原始内容计算的哈希，并且哈希和原始数据中内容相比极其地小。 客户端计算机随后会使用内容信息从分支机构内的缓存找到内容，无论缓存是位于客户端计算机还是服务器上。 客户端计算机和服务器还会使用内容信息确保缓存内容的安全，以防未经授权的用户访问这些内容。
+客户端计算机后续请求同一内容时，客户端将从服务器下载*内容信息*，而不是实际内容。 内容信息包括使用大量原始内容计算的哈希，并且哈希和原始数据中内容相比极其地小。 客户端计算机随后会使用内容信息从分支机构内的缓存找到内容，无论缓存是位于客户端计算机还是服务器上。 客户端计算机和服务器还会使用内容信息确保缓存内容的安全，以防未经授权的用户访问这些内容。
 
 BranchCache 通过改善分支机构中客户端和服务器的内容查询响应时间提高最终用户的工作效率，还有助于减少通过 WAN 链接的流量以提升网络性能。
 
-## <a name="BKMK_2"></a>BranchCache 模式
+## <a name="branchcache-modes"></a><a name="BKMK_2"></a>BranchCache 模式
 BranchCache 有两种操作模式：分布式缓存模式和托管缓存模式。
 
 当你在分布式缓存模式中部署 BranchCache 时，会在客户端计算机之间分布分支机构的内容缓存。
@@ -113,7 +113,7 @@ BranchCache 有两种操作模式：分布式缓存模式和托管缓存模式�
 > [!CAUTION]
 > 如果将 BranchCache 用于文件和文件夹的 SMB 缓存，请不要禁用脱机文件。 如果禁用脱机文件，BranchCache SMB 缓存将无法正确运行。
 
-## <a name="BKMK_3"></a>启用 BranchCache 的内容服务器
+## <a name="branchcache-enabled-content-servers"></a><a name="BKMK_3"></a>启用 BranchCache 的内容服务器
 
 部署 BranchCache 时，源内容会存储在总部中启用了 BranchCache 的内容服务器上，或存储在云数据中心。 BranchCache 支持以下类型的内容服务器：
 
@@ -138,7 +138,7 @@ BranchCache 有两种操作模式：分布式缓存模式和托管缓存模式�
 
 另外，应用程序服务器必须安装 BranchCache 功能。 作为应用程序服务器的示例，你可以将 Microsoft Windows Server Update Services （WSUS）和 Microsoft 终结点作为 BranchCache 内容服务器部署 Configuration Manager 分支分发点服务器。
 
-## <a name="BKMK_3a"></a>BranchCache 和云
+## <a name="branchcache-and-the-cloud"></a><a name="BKMK_3a"></a>BranchCache 和云
 
 云具备减少操作开支并使规模达到新高度的巨大潜力，但为依赖这些因素的工作人员减少工作负荷会增加网络成本并影响工作效率。 用户需要高性能，并不关心其应用程序和数据的托管位置。 
 
@@ -151,7 +151,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
   
 = = = = = = =。有关 Windows Server 2016 中的云技术的详细信息，请参阅[软件定义的网络&#40;SDN&#41;](../sdn/Software-Defined-Networking--SDN-.md)。
   
-## <a name="bkmk_version"></a>内容信息版本
+## <a name="content-information-versions"></a><a name="bkmk_version"></a>内容信息版本
 
 内容信息有以下两个版本：
 
@@ -164,7 +164,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 > [!NOTE]
 > 在下表中，首字母缩略词 "OS" 表示操作系统。
 
-|客户端 OS|内容服务器 OS|托管缓存服务器 OS|内容信息版本|
+|客户端操作系统|内容服务器 OS|托管缓存服务器 OS|内容信息版本|
 |-------------|---------------------|--------------------------|-------------------------------|
 |Windows Server 2008 R2 和 Windows 7 |Windows Server 2012 或更高版本|Windows Server 2012 或更高版本;对于分布式缓存模式为 none|V1|
 |Windows Server 2012 或更高版本;Windows 8 或更高版本|Windows Server 2008 R2 |Windows Server 2012 或更高版本;对于分布式缓存模式为 none|V1|
@@ -178,13 +178,13 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 >[!IMPORTANT]
 >当你在分布式缓存模式下部署 BranchCache 时，使用其他内容信息版本的客户端未彼此共享内容。 例如，运行 Windows 7 的客户端计算机以及运行安装在同一分支机构中的 Windows 10 的客户端计算机不会彼此共享内容。
   
-## <a name="bkmk_handles"></a>BranchCache 如何处理文件中的内容更新
+## <a name="how-branchcache-handles-content-updates-in-files"></a><a name="bkmk_handles"></a>BranchCache 如何处理文件中的内容更新
 
 当分支机构用户修改或更新文档内容时，其更改将直接写入总部的内容服务器，而不会涉及 BranchCache。 无论用户是从内容服务器下载了该文档还是从分支机构中的托管缓存或分布缓存获取了该文档，都是如此。
 
 当分支机构中的另一客户端对已修改文件发出请求时，将从总部服务器下载该文件的新增分段并将其添加到该分支中的分布缓存或托管缓存。 因此，分支机构用户总是会收到缓存内容的最新版本。
 
-## <a name="BKMK_4"></a>BranchCache 安装指南
+## <a name="branchcache-installation-guide"></a><a name="BKMK_4"></a>BranchCache 安装指南
 
 你可以使用 Windows Server 2016 中的服务器管理器来安装 BranchCache 功能或文件服务服务器角色的网络文件 BranchCache 角色服务。 你可使用下表确定安装角色服务还是功能。
 
@@ -196,7 +196,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 |托管缓存服务器|分支机构|启用托管缓存服务器模式的 BranchCache 功能|
 |启用 BranchCache 的客户端计算机|分支机构|无需安装;只需在客户端上启用 BranchCache 和 BranchCache 模式 \(分布式或托管\)|
 
-若要安装角色服务或功能，打开“服务器管理器”，选择你希望为其启用 BranchCache 功能的计算机。 在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 这将打开“添加角色和功能” 向导。 在你运行向导时，进行以下选择：
+若要安装角色服务或功能，打开“服务器管理器”，选择你希望为其启用 BranchCache 功能的计算机。 在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 这将打开“添加角色和功能”向导。 在你运行向导时，进行以下选择：
 
 - 在向导页“选择安装类型”上，选择“基于角色或基于功能的安装”。
 
@@ -204,7 +204,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 
 - 在向导页 "**选择功能**" 上，如果要安装不是文件服务器的内容服务器或要安装托管缓存服务器，请选择 " **BranchCache**"，然后继续完成向导的安装和完成。 如果你不想安装除了文件服务器以外的内容服务器或托管缓存服务器，请勿安装 BranchCache 功能。
   
-## <a name="bkmk_os"></a>BranchCache 的操作系统版本
+## <a name="operating-system-versions-for-branchcache"></a><a name="bkmk_os"></a>BranchCache 的操作系统版本
 
 下面是支持不同类型 BranchCache 功能的操作系统列表。
 
@@ -212,17 +212,17 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 
 以下操作系统提供 BranchCache 支持后台智能传输服务（BITS）、超文本传输协议（HTTP）和服务器消息块（SMB）。
 
-- 遇到问题，总有回复。
+- Windows 10 企业版
 
 - Windows 10 教育版
 
-- Windows 8.1 企业版
+- Windows 8.1 Enterprise
 
-- Windows 8 Enterprise
+- Windows 8 企业版
 
-- Windows 7 企业版
+- Windows 7 Enterprise
 
-- Windows 7 旗舰版
+- Windows 7 Ultimate
 
 在以下操作系统中，BranchCache 不支持 HTTP 和 SMB 功能，但支持 BranchCache 位功能。
 
@@ -235,7 +235,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 -   Windows 7 专业版，仅支持 BITS
 
 > [!NOTE]
-> 默认情况下，BranchCache 在 Windows Server 2008 或 Windows Vista 操作系统中不可用。 但在这些操作系统中，如果下载并安装 Windows Management Framework 更新，BranchCache 功能仅适用于后台智能传输服务（BITS）协议。 有关详细信息以及要下载 Windows Management Framework，请参阅 https://go.microsoft.com/fwlink/?LinkId=188677 上的[Windows Management framework （Windows PowerShell 2.0、WinRM 2.0 和 BITS 4.0）](https://go.microsoft.com/fwlink/?LinkId=188677) 。
+> 默认情况下，BranchCache 在 Windows Server 2008 或 Windows Vista 操作系统中不可用。 但在这些操作系统中，如果下载并安装 Windows Management Framework 更新，BranchCache 功能仅适用于后台智能传输服务（BITS）协议。 有关详细信息以及要下载 Windows Management Framework，请参阅 https://go.microsoft.com/fwlink/?LinkId=188677上的[Windows Management framework （Windows PowerShell 2.0、WinRM 2.0 和 BITS 4.0）](https://go.microsoft.com/fwlink/?LinkId=188677) 。
   
 ### <a name="operating-systems-for-branchcache-content-server-functionality"></a>支持 BranchCache 内容服务器功能的操作系统
 
@@ -253,7 +253,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 
 此外，以下 Windows Server 2008 R2 操作系统可用作 BranchCache 托管缓存服务器：
 
-- Windows Server 2008 R2 企业版
+- Windows Server 2008 R2 Enterprise
 
 - 带有 Hyper-v 的 Windows Server 2008 R2 Enterprise
 
@@ -263,13 +263,13 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 
 - Windows Server 2008 R2 for Itanium-Based Systems
 
-- Windows Server 2008 R2 Datacenter
+- Windows Server 2008 R2 数据中心版
 
 - 带有 Hyper-v 的 Windows Server 2008 R2 Datacenter
 
 - 带有 Hyper-v 的 Windows Server 2008 R2 Datacenter Server Core 安装
 
-## <a name="bkmk_security"></a>BranchCache 安全
+## <a name="branchcache-security"></a><a name="bkmk_security"></a>BranchCache 安全
 
 BranchCache 可实现设计安全方法，与你现有的网络安全体系结构无缝合作，无需其他设备或复杂的额外安全配置。
   
@@ -318,7 +318,7 @@ BranchCache 使用对等端内容缓存协议和检索框架协议实现确保�
 
 此外，BranchCache 能以在处理和传输实际内容时用到的相同的安全度处理内容信息。
 
-## <a name="bkmk_flow"></a>内容流和进程
+## <a name="content-flow-and-processes"></a><a name="bkmk_flow"></a>内容流和进程
 
 内容信息和实际内容的流动划分为四个阶段：
 
@@ -332,7 +332,7 @@ BranchCache 使用对等端内容缓存协议和检索框架协议实现确保�
 
 以下部分介绍这些阶段。
 
-## <a name="BKMK_8"></a>BranchCache 进程：请求内容
+## <a name="branchcache-processes-request-content"></a><a name="BKMK_8"></a>BranchCache 进程：请求内容
 
 在第一个阶段，分支机构中的客户端计算机请求来自远程位置（例如总部）中内容服务器的内容（例如文件或网页）。 内容服务器会验证客户端计算机是否经授权可以接收请求内容。 如果客户端计算机已获得授权，并且内容服务器和客户端都是 BranchCache\-启用，则内容服务器会生成内容信息。
 
@@ -352,7 +352,7 @@ BranchCache 使用对等端内容缓存协议和检索框架协议实现确保�
 
 此方法能确保没有服务器机密的实体无法发现数据块中的实际内容。 会使用和纯文本分段本身相同的安全度处理分段机密，因为对于给定分段的分段机密的知识可帮助实体从对等机获取分段再将其加密。 服务器机密的知识不会立即生成任何特殊纯文本，但可用于从密码文本派生特定类型的数据，然后就有可能使某些部分已知的数据面临暴力猜测攻击的风险。 因此服务器机密应保密。
   
-## <a name="BKMK_9"></a>BranchCache 进程：查找内容
+## <a name="branchcache-processes-locate-content"></a><a name="BKMK_9"></a>BranchCache 进程：查找内容
 
 客户端计算机收到内容信息后，客户端会使用分段 ID 在本地分支机构缓存中找到请求的内容，无论缓存是在客户端计算机间分布还是位于托管缓存服务器上。
 
@@ -372,7 +372,7 @@ WS-Discovery 过程是否成功取决于执行发现的客户端是否拥有内�
 
 收到内容后，它就会被添加到客户端计算机或托管缓存服务器上的本地缓存中。 在这种情况下，内容信息会阻止客户端或托管缓存服务器将任何不匹配哈希的内容添加到本地缓存。 通过匹配哈希验证内容的过程可确保仅有效内容会添加到缓存中，这样可以保护本地缓存的完整性。
 
-## <a name="BKMK_10"></a>BranchCache 进程：检索内容
+## <a name="branchcache-processes-retrieve-content"></a><a name="BKMK_10"></a>BranchCache 进程：检索内容
 
 客户端计算机在内容主机（可能是托管缓存服务器或分布式缓存模式客户端计算机）上找到所需内容后，客户端计算机会开始检索内容的过程。
 
@@ -421,7 +421,7 @@ BranchCache 会生成一个适合于加密算法的初始化向量，并使用�
 
     *客户端因大量数据请求而阻塞*。 BranchCache 协议会合并队列管理计数器和计时器以防客户端超载。
 
-## <a name="BKMK_11"></a>BranchCache 进程：缓存内容
+## <a name="branchcache-processes-cache-content"></a><a name="BKMK_11"></a>BranchCache 进程：缓存内容
 
 在位于分支机构内的分布式缓存模式客户端计算机和托管缓存服务器上，内容缓存会随着通过 WAN 链接检索内容不断积聚。
 
@@ -454,7 +454,7 @@ BranchCache 会生成一个适合于加密算法的初始化向量，并使用�
 
 分段数据哈希、块哈希列表和分段机密用于确保正在下载的内容免遭篡改或更改。 随后会将下载的块添加到托管缓存服务器的块缓存。
 
-## <a name="bkmk_cache"></a>缓存安全性  
+## <a name="cache-security"></a><a name="bkmk_cache"></a>缓存安全性  
 本节提供有关 BranchCache 如何确保客户端计算机和托管缓存服务器上缓存数据安全的信息。
 
 ### <a name="client-computer-cache-security"></a>客户端计算机缓存安全

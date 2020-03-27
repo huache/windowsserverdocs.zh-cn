@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b80294a-7325-476b-84eb-69f0d051e8b2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 541645a274481bb8b044c37df572d7746c5da30e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4e032e2c5b89dc362fceb34e06525d8632f7b19e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405663"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312408"
 ---
 # <a name="filter-the-view-of-dns-resource-records"></a>筛选 DNS 资源记录视图
 
@@ -47,7 +47,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![选择条件](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_02.jpg)  
   
-8.  单击**添加**。  
+8.  单击 **“添加”** 。  
   
     ![添加条件](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_03.jpg)  
   
@@ -59,7 +59,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![运行筛选器](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_05.jpg)  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [DNS 资源记录管理](DNS-Resource-Record-Management.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

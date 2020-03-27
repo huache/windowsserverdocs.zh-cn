@@ -1,9 +1,9 @@
 ---
 title: 准备要部署的映像
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 681c6cad-7fde-494f-86a5-f4c7c15d23f9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 16411ab073e9417c52592aa9a6b13707dd461537
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: aac776253c094c4a77269720bcc5762d6c41d720
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838528"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311554"
 ---
 # <a name="preparing-the-image-for-deployment"></a>准备要部署的映像
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 用于准备映像的一个典型工具是 sysprep.exe。 运行此工具可通用化映像并关闭服务器，从而当包含此映像的服务器重新启动时将运行初始配置。 运行 sysprep.exe 之前，必须完成所有的映像修改。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "59838528"
   
 1.  删除添加的 SkipIC.txt。  
   
-2.  打开提升的命令提示符窗口。 单击 **“开始”**，右键单击 **“命令提示符”**，然后选择 **“以管理员身份运行”**。  
+2.  打开提升的命令提示符窗口。 单击 **“开始”** ，右键单击 **“命令提示符”** ，然后选择 **“以管理员身份运行”** 。  
   
 3.  运行以下命令重设注册表项，以使用户在服务器出现故障之前拥有足够的宽限期。  
   
@@ -123,7 +123,7 @@ ms.locfileid: "59838528"
     ```  
   
     > [!IMPORTANT]
-    >  你也可以在 %systemdrive% 下添加 unattend.xml，而不是将其作为 sysprep 的参数。 如果该文件位于 c:\将介绍由用户 s 的设置，但如果使用的 sysprep 参数，它将不会转换由用户 s 的设置。 服务器每次重新启动时，将会删除 %systemdrive% 下的 unattend.xml。 因此，请确保在 %systemdrive% 下创建 unattend.xml 后，服务器没有重新启动。  
+    >  你也可以在 %systemdrive% 下添加 unattend.xml，而不是将其作为 sysprep 的参数。 如果文件位于 c：\ 下，它将被用户的设置覆盖，但如果用作 sysprep 的参数，则不会被用户的设置覆盖。 服务器每次重新启动时，将会删除 %systemdrive% 下的 unattend.xml。 因此，请确保在 %systemdrive% 下创建 unattend.xml 后，服务器没有重新启动。  
   
 10. 运行以下命令添加注册表项以跳过 Windows OOBE 项页面。  
   

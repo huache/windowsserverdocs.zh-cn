@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 10/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: a07b30517f0d45b7e6f4f41f0ef9a6549e6e2117
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.prod: windows-server
+ms.openlocfilehash: 5324f782ea3c02ed24968d4b3ef58ab8b6ac9d32
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71952768"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319356"
 ---
 # <a name="cluster-connection-type-changes-in-windows-admin-center-v1909"></a>Windows 管理中心中的群集连接类型更改 v1909
 
@@ -28,7 +28,7 @@ ms.locfileid: "71952768"
 
 ## <a name="manifestjson---solutionsids-and-connectiontypes"></a>solutionsIds 和 connectionTypes
 
-之前，若要为故障转移群集或 HCI 群集连接类型显示工具，你应在 ```manifest.json``` 文件中使用以下定义之一。
+以前，若要使工具为故障转移群集或 HCI 群集连接类型显示，您可以在 ```manifest.json``` 文件中使用以下定义之一。
 
 对于故障转移群集：
 ``` json
@@ -85,7 +85,7 @@ ms.locfileid: "71952768"
 这是目前支持的唯一与群集相关的 solutionIds 和 connectionTypes 类型。 如果你的工具仅定义了此 solutionIds 和 connectionTypes 类型，则将为任何故障转移群集连接加载该工具，而不管它是否为 HCI 群集。 如果要将工具限制为仅可用于 HCI 群集或非 HCI 群集，则需要另外使用下一部分中所述的新清单属性。
 
 ## <a name="manifestjson--inventory-properties"></a>.manifest-清单属性
-当连接到服务器或群集时，Windows 管理中心将查询一组清单属性，您可以使用这些属性来构建条件，确定何时可以使用您的工具（请参阅[控件的](dynamic-tool-display.md)详细信息的可见性文档）。 在 Windows 管理中心 v1909 中，我们已向此列表中添加了两个新属性，可用于确定群集是否为超聚合群集。 
+当连接到服务器或群集时，Windows 管理中心将查询一组清单属性，您可以使用这些属性来构建条件，确定何时可以使用您的工具（有关详细信息，请参阅[控制您的工具的可见性](dynamic-tool-display.md)文档中的 "清单属性" 一节）。 在 Windows 管理中心 v1909 中，我们已向此列表中添加了两个新属性，可用于确定群集是否为超聚合群集。 
 
 ### <a name="iss2denabled"></a>isS2dEnabled
 从技术上说，超聚合群集定义为启用了存储空间直通（S2D）的故障转移群集。 如果希望工具仅可用于超聚合群集，即启用 S2D 后，请添加以下清单条件：
@@ -168,8 +168,8 @@ ms.locfileid: "71952768"
     ]
 ```
 
-## <a name="known-issue-appcontextserviceactiveconnectionishyperconvergedclusterisfailovercluster-is-not-set-properly-in-windows-admin-center-v1909"></a>已知问题：AppContextService activeConnection. isHyperConvergedCluster/isFailoverCluster 在 Windows 管理中心 v1909 中未正确设置
-最近的更改回归是指未在 Windows 管理中心 v1909 中正确设置 ```AppContextService.activeConnection.isHyperConvergedCluster/isFailoverCluster``` 属性，这些属性将始终为 false。 这将在下一版本的 v1910 中得到修复，但也将在2020的以下 GA 版本中弃用，并且不再可用。 以后，可以将其替换为以下代码，并使用 ```this.connectHCI```。
+## <a name="known-issue-appcontextserviceactiveconnectionishyperconvergedclusterisfailovercluster-is-not-set-properly-in-windows-admin-center-v1909"></a>已知问题：在 Windows 管理中心 v1909 中未正确设置 isHyperConvergedCluster/isFailoverCluster AppContextService
+最近更改的回归是在 Windows 管理中心 v1909 中未正确设置 ```AppContextService.activeConnection.isHyperConvergedCluster/isFailoverCluster``` 属性，这些属性将始终为 false。 这将在下一版本的 v1910 中得到修复，但也将在2020的以下 GA 版本中弃用，并且不再可用。 以后，可以将其替换为以下代码，并使用 ```this.connectHCI```。
 ```
     import { ClusterInventoryCache } from '@msft-sme/core';
 

@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4f13f78e-0114-4e41-9a28-82a4feccecfc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dec5c9b9b5d5fe858e063af70ff0a8e16991e632
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a5cd347b849948052f4f7caa7fa8a863808e8c26
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355221"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309536"
 ---
 # <a name="manage-role-based-access-control-with-windows-powershell"></a>使用 Windows PowerShell 管理基于角色的访问控制
 
@@ -30,9 +30,9 @@ ms.locfileid: "71355221"
   
 新的 Windows PowerShell IPAM 命令使你能够检索和更改 DNS 和 DHCP 对象的访问作用域。 下表说明了要用于每个 IPAM 对象的正确命令。  
   
-|IPAM 对象|命令|描述|  
+|IPAM 对象|Command|说明|  
 |---------------|-----------|---------------|  
-|DNS 服务器|IpamDnsServer|此 cmdlet 将返回 IPAM 中的 DNS 服务器对象|  
+|DNS Server|IpamDnsServer|此 cmdlet 将返回 IPAM 中的 DNS 服务器对象|  
 |DNS 区域|IpamDnsZone|此 cmdlet 将返回 IPAM 中的 DNS 区域对象|  
 |DNS 资源记录|IpamResourceRecord|此 cmdlet 返回 IPAM 中的 DNS 资源记录对象|  
 |DNS 条件转发器|IpamDnsConditionalForwarder|此 cmdlet 将返回 IPAM 中的 DNS 条件转发器对象|  
@@ -66,7 +66,7 @@ ScavengeStaleRecords : False
   
 -   DNS 资源记录  
   
--   DNS 服务器  
+-   DNS Server  
   
 -   DNS 区域  
   

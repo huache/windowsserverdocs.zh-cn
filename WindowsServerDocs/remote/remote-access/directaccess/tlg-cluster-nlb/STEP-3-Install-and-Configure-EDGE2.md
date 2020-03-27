@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f04eb11e-ed5f-42a1-a77b-57a248ba2d10
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3dad1db575bd9b9b4a70a24da44d1d030273f021
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: cb869ad1617d52562e73eb6965a9f1c2184a56a7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404862"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310786"
 ---
 # <a name="step-3-install-and-configure-edge2"></a>步骤3安装和配置 EDGE2
 
@@ -27,17 +27,17 @@ EDGE2 是远程访问群集的第二个成员。 启用群集配置之前，会�
 
 执行以下步骤以配置 EDGE2：
 
-## <a name="installOS"></a>在 EDGE2 上安装操作系统  
+## <a name="install-the-operating-system-on-edge2"></a><a name="installOS"></a>在 EDGE2 上安装操作系统  
   
 1.  在 EDGE2 上，启动 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的安装。  
   
-2.  按照说明完成安装，为本地管理员帐户指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）和强密码。 使用本地管理员账户登录。  
+2.  按照说明完成安装，为本地管理员帐户指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）和强密码。 使用本地管理员帐户登录。  
   
 3.  将 EDGE2 连接到具有 Internet 访问权限的网络，并运行 Windows 更新以安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然后从 Internet 断开连接。  
   
 4.  将一个网络适配器连接到公司网络子网，或将表示公司网络子网的虚拟交换机连接到 Internet 子网，将另一个网络适配器连接到表示 Internet 子网  
   
-## <a name="TCP"></a>配置 TCP/IP 属性  
+## <a name="configure-tcpip-properties"></a><a name="TCP"></a>配置 TCP/IP 属性  
   
 1.  在服务器管理器控制台中，单击 "**本地服务器**"，然后在 "**有线以太网连接**" 旁边的 "**属性**" 区域中，单击链接。  
   
@@ -87,9 +87,9 @@ EDGE2 是远程访问群集的第二个成员。 启用群集配置之前，会�
   
 24. 在命令提示符窗口中，键入**ping dc1.corp.contoso.com** ，然后按 enter。 验证是否有四个来自10.0.0.1 或 IPv6 地址2001的响应： db8：1：：1  
   
-25. 关闭命令提示符窗口。  
+25. 关闭“命令提示符”窗口。  
   
-## <a name="rename"></a>重命名 EDGE2 并将其加入域  
+## <a name="rename-edge2-and-join-it-to-the-domain"></a><a name="rename"></a>重命名 EDGE2 并将其加入域  
   
 1.  在服务器管理器控制台中，在 "**本地服务器**" 的 "**属性**" 区域中，单击 "**计算机名**" 旁边的链接。  
   
@@ -109,9 +109,9 @@ EDGE2 是远程访问群集的第二个成员。 启用群集配置之前，会�
   
 9. 重新启动后，以 Corp\user1 身份的身份登录  
   
-## <a name="IPHTTPSCert"></a>安装 IP-HTTPS 证书  
+## <a name="install-the-ip-https-certificate"></a><a name="IPHTTPSCert"></a>安装 IP-HTTPS 证书  
   
-1.  在 "**开始**" 屏幕上，键入**mmc.exe**，然后按 enter。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在 "**开始**" 屏幕上，键入**mmc.exe**，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在 MMC 控制台中的“文件”菜单上，单击“添加/删除管理单元”。  
   
@@ -139,7 +139,7 @@ EDGE2 是远程访问群集的第二个成员。 启用群集配置之前，会�
   
 14. 关闭控制台窗口。 如果系统提示你保存设置，请单击 "**否**"。  
   
-## <a name="InstallDA"></a>在 EDGE2 上安装远程访问角色  
+## <a name="install-the-remote-access-role-on-edge2"></a><a name="InstallDA"></a>在 EDGE2 上安装远程访问角色  
   
 1.  在服务器管理器控制台的 "**仪表板**" 中，单击 "**添加角色和功能**"。  
   
@@ -149,9 +149,9 @@ EDGE2 是远程访问群集的第二个成员。 启用群集配置之前，会�
   
 4.  单击“下一步”五次。  
   
-5.  在“确认安装选择” 对话框中，单击“安装”。  
+5.  在 **“确认安装选择”** 对话框中单击 **“安装”** 。  
   
-6.  在“安装进度”对话框中，验证安装是否成功，然后单击“关闭”。  
+6.  在 **“安装进度”** 对话框中确认安装成功，然后单击 **“关闭”** 。  
   
 
 

@@ -1,9 +1,9 @@
 ---
 title: 将设置和数据移到目标服务器以进行 Windows Server Essentials 迁移
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 2b882e87-347a-4010-b7fd-9599d61198dd
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8e173de32230a219bec99586e1b5b533bbe84b73
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: 4f4ba08c17429f70ef754b0861553e38ba116e5d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826974"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318831"
 ---
 # <a name="move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>将设置和数据移到目标服务器以进行 Windows Server Essentials 迁移
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 将设置和数据移到目标服务器，如下所示：：
 
@@ -29,7 +29,7 @@ ms.locfileid: "66826974"
 
 2. [配置网络](#configure-the-network) 
 
-3. [将获得允许的计算机映射到用户帐户](#map-permitted-computers-to-user-accounts)
+3. [将允许的计算机映射到用户帐户](#map-permitted-computers-to-user-accounts)
  
 ## <a name="copy-data-to-the-destination-server"></a>将数据复制到目标服务器
  在将数据从源服务器复制到目标服务器之前，请执行以下任务： 
@@ -49,10 +49,10 @@ ms.locfileid: "66826974"
  `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt` 
  
  其中：
- - \<SourceServerName\>是源服务器的名称
- - \<SharedSourceFolderName\>是源服务器上的共享文件夹的名称
- - \<DestinationServerName\>是目标服务器的名称
- - \<SharedDestinationFolderName\>是数据将复制到目标服务器上的共享的文件夹。 
+ - \<SourceServerName\> 为源服务器的名称
+ - \<Sharedsourcefoldername&gt\> 是源服务器上共享文件夹的名称
+ - \<Destinationservername&gt\> 是目标服务器的名称，
+ - \<Shareddestinationfoldername&gt\> 是将数据复制到的目标服务器上的共享文件夹。 
  
 3. 对每个要从源服务器迁移的共享文件夹重复上一步。 
  
@@ -63,7 +63,7 @@ ms.locfileid: "66826974"
  
 1. 在目标服务器上，打开仪表板。 
  
-2. 在仪表板“主页”  页面上，单击“设置”  ，单击“设置随处访问”  ，然后选择“单击以配置随处访问”  选项。 
+2. 在仪表板“主页”页面上，单击“设置”，单击“设置随处访问”，然后选择“单击以配置随处访问”选项。 
  
 3. 完成向导中的说明，配置你的路由器名和域名。 
  
@@ -71,7 +71,7 @@ ms.locfileid: "66826974"
  
 - 端口 80：HTTP Web 流量 
  
-- 端口 443:HTTPS Web 流量 
+- 端口 443：HTTP Web 流量 
  
 ## <a name="map-permitted-computers-to-user-accounts"></a>将允许的计算机映射到用户帐户
  从源服务器迁移的每个用户帐户都必须映射到一个或多个计算机。 
@@ -80,15 +80,15 @@ ms.locfileid: "66826974"
  
 1. 打开 Windows Server Essentials 仪表板。 
  
-2. 在导航栏中，单击“用户”  。 
+2. 在导航栏中，单击“用户”。 
  
-3. 在用户帐户列表中，右键单击用户帐户，然后单击“查看帐户属性”  。 
+3. 在用户帐户列表中，右键单击用户帐户，然后单击“查看帐户属性”。 
  
-4. 单击“随处访问”  选项卡，然后单击”允许远程 Web 访问和访问 Web 服务应用程序”  。 
+4. 单击“随处访问”选项卡，然后单击”允许远程 Web 访问和访问 Web 服务应用程序”。 
  
-5. 依次选择“共享文件夹”  、“计算机”  和“主页链接”  ，然后单击“应用”  。 
+5. 依次选择“共享文件夹”、“计算机”和“主页链接”，然后单击“应用”。 
  
-6. 单击“计算机访问”  选项卡，然后单击要允许访问的计算机的名称。 
+6. 单击“计算机访问”选项卡，然后单击要允许访问的计算机的名称。 
  
 7. 为每个用户帐户重复步骤 3、4、5 和 6。 
  

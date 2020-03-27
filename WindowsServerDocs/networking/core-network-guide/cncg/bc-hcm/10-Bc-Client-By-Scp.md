@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: ea1c34fd-5a33-4228-9437-9bb3d44230eb
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 60ccc8b80537da0d0b689f6c508c75ef15a339c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9723dd40b831469c12412a7458376c4019dde199
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406398"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319080"
 ---
 #  <a name="configure-client-automatic-hosted-cache-discovery-by-service-connection-point"></a>通过服务连接点配置客户端自动托管缓存发现
 
@@ -23,7 +23,7 @@ ms.locfileid: "71406398"
 
 - Windows 10 企业版
 - Windows 10 教育版
-- Windows 8.1 企业版
+- Windows 8.1 Enterprise
 - Windows 8 企业版
 
 > [!NOTE]  
@@ -33,13 +33,13 @@ ms.locfileid: "71406398"
 
 ### <a name="to-use-group-policy-to-configure-clients-for-hosted-cache-mode"></a>使用组策略为托管缓存模式配置客户端
 
-1. 在安装了 Active Directory 域服务服务器角色的计算机上，打开服务器管理器，选择本地服务器，单击 "**工具**"，然后单击**组策略管理**"。 此时将打开组策略管理控制台。
+1. 在安装了 Active Directory 域服务服务器角色的计算机上，打开服务器管理器，选择本地服务器，单击 "**工具**"，然后单击**组策略管理**"。 此时会打开组策略管理控制台。
 
 2. 在组策略管理控制台中，展开以下路径： "**林：** *corp.contoso.com*"、"**域**"、" *corp.contoso.com*"、"**组策略对象**"，其中 " *corp.contoso.com* " 是要配置的 BranchCache 客户端计算机帐户所在的域的名称。
 
-3. 右键\-单击 "**组策略对象**"，然后单击 "**新建**"。 此时将打开 "**新建 GPO** " 对话框。 在 "**名称**" 中，键入 \(GPO\)的新组策略对象的名称。 例如，如果想要为对象 BranchCache 客户端计算机命名，请键入 " **Branchcache 客户端计算机**"。 单击**确定**。
+3. 右键\-单击 "**组策略对象**"，然后单击 "**新建**"。 此时将打开 "**新建 GPO** " 对话框。 在 "**名称**" 中，键入 \(GPO\)的新组策略对象的名称。 例如，如果想要为对象 BranchCache 客户端计算机命名，请键入 " **Branchcache 客户端计算机**"。 单击“确定”。
 
-4. 在组策略管理控制台中，确保选中 "**组策略对象**"，并在详细信息窗格中右键\-单击刚刚创建的 GPO。 例如，如果你命名了 GPO BranchCache 客户端计算机，则右键\-单击 " **BranchCache 客户端计算机**"。 单击**编辑**。 此时将打开组策略管理编辑器控制台。
+4. 在组策略管理控制台中，确保选中 "**组策略对象**"，并在详细信息窗格中右键\-单击刚刚创建的 GPO。 例如，如果你命名了 GPO BranchCache 客户端计算机，则右键\-单击 " **BranchCache 客户端计算机**"。 单击 **“编辑”** 。 此时将打开组策略管理编辑器控制台。
 
 5. 在组策略管理编辑器控制台中，展开以下路径： "**计算机配置**"、"**策略**"、"**管理模板：策略定义" \(ADMX 文件\) 从 "本地计算机**"、"**网络**"、" **BranchCache**" 中检索。
 
@@ -57,9 +57,9 @@ ms.locfileid: "71406398"
     > [!NOTE]
     > 默认情况下，如果往返网络延迟时间超过80毫秒，客户端计算机将从文件服务器缓存内容。
   
-12. 若要配置在每台客户端计算机上为 BranchCache 缓存分配的硬盘空间量，请执行以下操作：在组策略管理编辑器控制台中，确保仍选中 " **BranchCache** "，然后在详细信息窗格中，\-双击 "**设置用于客户端计算机缓存的磁盘空间百分比**"。 "**设置用于客户端计算机缓存的磁盘空间百分比**" 对话框将打开。 单击 "**已启用**"，然后在 "**选项**" 中键入一个数字值，该值表示在每台客户端计算机上为 BranchCache 缓存使用的硬盘空间百分比。 单击**确定**。
+12. 若要配置在每台客户端计算机上为 BranchCache 缓存分配的硬盘空间量，请执行以下操作：在组策略管理编辑器控制台中，确保仍选中 " **BranchCache** "，然后在详细信息窗格中，\-双击 "**设置用于客户端计算机缓存的磁盘空间百分比**"。 "**设置用于客户端计算机缓存的磁盘空间百分比**" 对话框将打开。 单击 "**已启用**"，然后在 "**选项**" 中键入一个数字值，该值表示在每台客户端计算机上为 BranchCache 缓存使用的硬盘空间百分比。 单击“确定”。
 
-13. 若要指定段在客户端计算机上 BranchCache 数据缓存中有效的默认期限（天）：在组策略管理编辑器控制台中，确保仍选中 " **branchcache** "，然后在详细信息窗格中\-双击 "**设置数据缓存中段的期限**"。 此时将打开 "在**数据缓存中设置段的生存期**" 对话框。 单击 "**已启用**"，然后在 "详细信息" 窗格中键入所需的天数。 单击**确定**。
+13. 若要指定段在客户端计算机上 BranchCache 数据缓存中有效的默认期限（天）：在组策略管理编辑器控制台中，确保仍选中 " **branchcache** "，然后在详细信息窗格中\-双击 "**设置数据缓存中段的期限**"。 此时将打开 "在**数据缓存中设置段的生存期**" 对话框。 单击 "**已启用**"，然后在 "详细信息" 窗格中键入所需的天数。 单击“确定”。
 
 14. 为客户端计算机配置适用于你的部署的其他 BranchCache 策略设置。
 

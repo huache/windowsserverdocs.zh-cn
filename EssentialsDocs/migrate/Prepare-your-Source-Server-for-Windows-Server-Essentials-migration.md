@@ -3,7 +3,7 @@ title: 为 Windows Server Essentials migration1 准备源服务器
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: f5861ae9-77cb-4d37-b4c5-8f0757213385
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d09ad4b66029c40c840ff5764fdaa2705b44bac2
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 503b8edc645b43da1dc5c5fb37547e8e0245d4a2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947445"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318817"
 ---
 # <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>为 Windows Server Essentials migration1 准备源服务器
 
@@ -49,7 +49,7 @@ ms.locfileid: "75947445"
 5.  [创建计划以迁移业务线应用程序](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_PlanToMigrateLineOfBusinessApplications)  
 
   
-###  <a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>备份源服务器  
+###  <a name="back-up-your-source-server"></a><a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>备份源服务器  
  在开始迁移过程之前，请备份源服务器。 进行备份有助于保护你的数据在迁移过程中出现不可恢复错误的情况下不意外丢失。  
   
 ##### <a name="to-back-up-the-source-server"></a>备份源服务器  
@@ -58,10 +58,10 @@ ms.locfileid: "75947445"
   
 2.  验证备份是否成功运行。 要测试备份的完整性，请从备份中选择随机文件，将它们还原到备用位置，然后确认还原后的文件是否与原始文件相同。  
   
-###  <a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>安装最新的 service pack  
+###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>安装最新的 service pack  
  在迁移之前，必须在源服务器上安装最新更新和 Service Pack。  
   
-###  <a name="BKMK_UseWindowsBestPracticeAnalyzer"></a>评估源服务器的运行状况  
+###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_UseWindowsBestPracticeAnalyzer"></a>评估源服务器的运行状况  
  请务必在开始迁移之前评估源服务器的运行状况。 使用以下过程以确保更新为最新版本、生成系统运行状况报告，并运行 Windows Server 解决方案最佳做法分析器 (BPA)。  
   
 #### <a name="download-and-install-critical-and-security-updates"></a>下载并安装重要更新和安全更新  
@@ -104,7 +104,7 @@ ms.locfileid: "75947445"
   
    收集有关服务器配置信息之后，Windows Server 解决方案 BPA 验证信息正确，然后向管理员呈现一个按严重性排序的信息和问题列表。 该列表描述每个问题并提供建议或可能的解决方案。 可以使用三种报告类型：  
   
-|报告类型|描述|  
+|报告类型|说明|  
 |-----------------|-----------------|  
 |列表报告|在一维列表中显示报告。|  
 |目录树报告|在分层列表中显示报告。|  
@@ -112,25 +112,25 @@ ms.locfileid: "75947445"
   
  要查看某个问题的描述和解决方案，请在报告中单击该问题。 并非 Windows SBS 2011 Essentials BPA 报告的所有问题都会对迁移造成影响，但应尽可能多地解决问题以确保迁移成功。  
   
-####  <a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>将源服务器时间与外部时间源同步  
+####  <a name="synchronize-the-source-server-time-with-an-external-time-source"></a><a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>将源服务器时间与外部时间源同步  
  源服务器上的时间与目标服务器上的时间差异必须设置为在 5 分钟之内，并且两个服务器上的日期和时区必须相同。 如果源服务器正在虚拟机中运行，则主机服务器上的日期、时间和时区必须与源服务器和目标服务器上日期、时间和时区匹配。 为了帮助确保成功安装 Windows Server Essentials，必须将源服务器时间与 Internet 上的网络时间协议（NTP）服务器同步。  
   
 ###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>将源服务器时间与 NTP 服务器同步的步骤  
   
 1.  使用域管理员帐户和密码登录源服务器。  
   
-2.  依次单击“开始”、“运行”，在文本框框中键入 **cmd** ，然后按 Enter 键。  
+2.  依次单击“开始” **、“运行”** ，在文本框框中键入 **cmd**，然后按 Enter 键。  
   
 3.  在命令提示符下，键入 w32tm /config /syncfromflags:domhier /reliable:no /update，然后按 Enter 键。  
   
-4.  在命令提示符下，键入 net stop w32time，然后按 Enter。  
+4.  在命令提示符下，键入 net stop w32time，然后按 ENTER。  
   
 5.  在命令提示符下，键入 net start w32time，然后按 ENTER。  
   
 > [!IMPORTANT]
 >  在 Windows Server Essentials 安装过程中，你有机会验证目标服务器上的时间并根据需要对其进行更改。 确保目标服务器时间与源服务器上设置的时间的差距在五分钟之内。 当安装完成后，目标服务器将与 NTP 同步。 所有加入域的计算机（包括源服务器）均与目标服务器同步，目标服务器承担了主域控制器 (PDC) 仿真器主机的角色。  
   
-###  <a name="BKMK_MPT"></a>在源服务器上运行迁移准备工具  
+###  <a name="run-the-migration-preparation-tool-on-the-source-server"></a><a name="BKMK_MPT"></a>在源服务器上运行迁移准备工具  
  如果不先在源服务器上运行迁移准备工具，则无法执行迁移模式安装。 此工具旨在准备要迁移到 Windows Server Essentials 的源服务器和域。  
   
 > [!IMPORTANT]
@@ -200,7 +200,7 @@ ms.locfileid: "75947445"
 > [!NOTE]
 >  在目标服务器上安装 Windows Server Essentials 的两周内，必须在源服务器上完成迁移准备工具的成功运行。 否则，会阻止在目标服务器上安装 Windows Server Essentials。 如果发生这种情况，则必须再次在源服务器上运行迁移准备工具。  
   
-###  <a name="BKMK_PlanToMigrateLineOfBusinessApplications"></a>创建计划以迁移业务线应用程序  
+###  <a name="create-a-plan-to-migrate-line-of-business-applications"></a><a name="BKMK_PlanToMigrateLineOfBusinessApplications"></a>创建计划以迁移业务线应用程序  
  业务线 (LOB) 应用程序是运转企业的关键计算机应用程序。 LOB 应用程序包括会计、供应链管理和资源计划应用程序。  
   
  在你计划迁移 LOB 应用程序时，请咨询 LOB 应用程序提供商来确定迁移每个应用程序的适当方法。 你还必须找到用于在目标服务器上安装 LOB 应用程序的介质。  

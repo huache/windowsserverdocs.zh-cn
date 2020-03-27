@@ -3,7 +3,7 @@ title: 使用 Windows Server Essentials 日志收集器
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3bc43b08df30d03f29d9f343b7d6ed4d63c85eda
-ms.sourcegitcommit: 39244de670f712857a5fdd56630e95d57b7001a5
+ms.openlocfilehash: d163195343b67ca38e565a0249363e7d1cec21f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74897672"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318561"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 日志收集器
 
@@ -129,7 +129,7 @@ ms.locfileid: "74897672"
   
 -   Panther 日志文件  
   
--   “服务”  
+-   服务  
   
 -   注册表项，来自  
   

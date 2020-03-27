@@ -1,9 +1,9 @@
 ---
 title: Windows Server Essentials 远程 Web 访问连接疑难解答
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fda0b5a227fe25b4e8780915089e97ee48620383
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6db623308184c5be2968fa1d8991de2b48eef5b7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432435"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318633"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Windows Server Essentials 远程 Web 访问连接疑难解答
  
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
   
  通常情况下，如果路由器是经 UPnP 认证的设备并且路由器上的 UPnP 设置已启用，则 Windows Server Essentials 可以自动配置宽带路由器。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "66432435"
   
 - 验证连接到你的 Internet 服务提供商的宽带设备是否启用、是否正常工作，并验证你的路由器是否连接到该宽带设备。  
   
-- 启用路由器的 UPnP 设置。 连接到路由器的配置网页以启用 UPnP 设置。 有关如何登录路由器以及如何启用 UPnP 设置的信息，请参阅路由器文档。 启用 UPnP 设置后，将在远程 Web 访问再次运行向导以配置你的路由器。  
+- 启用路由器的 UPnP 设置。 连接到路由器的配置网页以启用 UPnP 设置。 有关如何登录路由器以及如何启用 UPnP 设置的信息，请参阅路由器文档。 启用 UPnP 设置后，再次运行 "打开远程 Web 访问" 向导来配置路由器。  
   
 - 如果你的路由器不完全支持 UPnP 标准，则无法自动配置。 你必须手动配置路由器，或购买一台支持 UPnP 标准的路由器。  
   
@@ -53,16 +53,16 @@ ms.locfileid: "66432435"
   
      在手动将路由器配置为将所需端口转发到 Windows Server Essentials 之前，必须在路由器上为正在运行 Windows Server Essentials 的服务器设置动态主机配置协议 (DHCP) 保留。 此步骤将保证端口所转发到的 IP 地址不会发生变化。  
   
-     有关如何手动设置你的服务器在路由器上的 DHCP 保留的信息，请参阅路由器制造商的文档。  
+     有关如何在路由器上手动为服务器设置 DHCP 保留的信息，请参阅制造商的路由器文档。  
   
   - 在路由器上为以下端口配置端口转发：  
   
-    |服务或协议|Port|  
+    |服务或协议|端口|  
     |-------------------------|----------|  
     |HTTP|TCP 80|  
     |HTTPS|TCP 443|  
   
-    有关如何手动设置端口转发在路由器上的信息，请参阅制造商的文档。  
+    有关如何在路由器上手动设置端口转发的信息，请参阅制造商的文档。  
   
     典型的路由器配置页面包括一张与下表类似的表。  
   
@@ -74,14 +74,14 @@ ms.locfileid: "66432435"
   |192.168.0.100|TCP 80|始终|全部允许|  
   |192.168.0.100|TCP 443|始终|全部允许|  
   
-   手动配置路由器之后，运行将在远程 Web 访问向导，确保你选择**跳过路由器设置**选项卡上**入门**页。  
+   手动配置路由器之后，请运行 "打开远程 Web 访问" 向导，确保在 "**入门**" 页上选择 "**跳过路由器设置**" 选项。  
   
 - 如果你的路由器不完全支持 UPnP 标准，请购买新的路由器。  
   
 > [!TIP]
 >  请确保你的路由器安装了最新的 BIOS 固件。 通常，你可以从路由器配置网页为路由器更新 BIOS 固件。 有关详细信息，请参阅你的路由器文档。 更新路由器后，请运行“设置随处访问”向导。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 -   [使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   

@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a96a8752-5678-49c5-b069-d2cce8042a51
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b1790f2cbf84fd68f33ca30d2fe7663dde824240
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fd084c856b4f78810ce732fd64b801d6b0f7b67d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405642"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316787"
 ---
 # <a name="set-access-scope-for-dns-resource-records"></a>为 DNS 资源记录设置访问范围
 
@@ -45,7 +45,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![选择访问作用域](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_04.jpg)  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [基于角色的访问控制](Role-based-Access-Control.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

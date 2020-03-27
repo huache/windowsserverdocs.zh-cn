@@ -7,17 +7,17 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: ''
 ms.author: dacuo
-author: shortpatti
+author: eross-msft
 ms.date: 09/07/2018
-ms.openlocfilehash: dce890d5ae542789c49bf08b5e7f25e62ea2e8c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4a6fd33dce35cf2a185cf5e4357c37e8050197a2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355298"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312517"
 ---
 # <a name="rsc-in-the-vswitch"></a>VSwitch 中的 RSC
->适用于：Windows Server 2019
+>适用于： Windows Server 2019
 
 VSwitch 中的接收段合并（RSC）是 Windows Server 2019 和 Windows 10 2018 10 月版更新中的一项功能，可帮助降低主机 CPU 利用率，并通过将多个 TCP 段合并为较少但更大边. 处理较少，较大的段（合并）比处理很多小型段更为有效。
 
@@ -66,7 +66,7 @@ Get-VMSwitch -Name vSwitchName | Select-Object *RSC*
 
 
 >[!IMPORTANT]
->重要提示：可以在不影响现有连接的情况下，在 vSwitch 中启用和禁用 RSC。
+>重要提示：可以在不影响现有连接的情况下，动态启用和禁用 vSwitch。
 
 
 **在 vSwitch 中禁用 RSC**

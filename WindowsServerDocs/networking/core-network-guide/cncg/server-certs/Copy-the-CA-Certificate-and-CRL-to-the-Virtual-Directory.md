@@ -6,15 +6,15 @@ ms.topic: article
 ms.assetid: a1b5fa23-9cb1-4c32-916f-2d75f48b42c7
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 07/19/2018
-ms.openlocfilehash: 335efc4fae1f12f2af8443e91c67ff6ba936edb0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 275bec5c950ea20c3a7d5a933648cf7e068164d1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356208"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318355"
 ---
 # <a name="copy-the-ca-certificate-and-crl-to-the-virtual-directory"></a>将 CA 证书和 CRL 复制到虚拟目录
 
@@ -48,7 +48,7 @@ ms.locfileid: "71356208"
 > [!TIP]  
 > 如果任何项目的**状态**不是 **"正常"** ，请执行以下操作：  
 > -   打开 Web 服务器上的共享，验证是否已成功将证书和证书吊销列表文件复制到共享。 如果未成功将它们复制到共享，请用正确的文件源和共享目标修改复制命令，然后再次运行这些命令。  
-> -   验证是否已在 "CA 扩展" 选项卡上为 CDP 和 AIA 输入正确的位置。确保你提供的位置中没有多余的空格或其他字符。  
+> -   验证是否在 "CA 扩展" 选项卡上输入了 CDP 和 AIA 的正确位置。请确保你提供的位置中没有多余的空格或其他字符。  
 > -   验证是否已将 CRL 和 CA 证书复制到 Web 服务器上的正确位置，以及该位置是否与你为 CA 上的 CDP 和 AIA 位置提供的位置匹配。  
 > -   验证是否为存储 CA 证书和 CRL 的虚拟文件夹正确配置了权限。  
   

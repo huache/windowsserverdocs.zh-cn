@@ -10,14 +10,14 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 26d105e0-afc3-44b5-bb5e-0c884a4c5d62
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3ff03dae44600ff79ed22d298ee338c570e61e36
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d8e7130d5774c19cc3d51045786bfef319cf7d16
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405482"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316436"
 ---
 # <a name="nic-teaming-mac-address-use-and-management"></a>NIC 组合 MAC 地址的使用和管理
 
@@ -34,7 +34,7 @@ ms.locfileid: "71405482"
 ## <a name="mac-address-use-on-transmitted-packets"></a>MAC 地址在传输的数据包上使用  
 当你在 "交换机独立" 模式下配置 NIC 组，并使用 "地址哈希" 或 "动态负载" 分发时，来自单个源（如单个 VM）的数据包将同时分布在多个团队成员中。 若要防止交换机出现混淆，并阻止 MAC 稳定告警，则源 MAC 地址会替换为在主要团队成员以外的团队成员上传输的帧上的不同 MAC 地址。 因此，每个团队成员使用不同的 MAC 地址，并阻止 MAC 地址冲突，除非发生故障。  
   
-当在主 NIC 上检测到故障时，NIC 组合软件会开始使用被选为临时主要团队成员的团队成员上的主要团队成员的 MAC 地址（也就是说，现在会将其作为主要团队提供给交换机m)）。  此更改仅适用于要在主要团队成员的 MAC 地址作为其源 MAC 地址的主要团队成员上发送的流量。 其他流量将继续与发生故障之前使用的任何源 MAC 地址一起发送。  
+当在主 NIC 上检测到故障时，NIC 组合软件会开始使用被选为临时主要团队成员的团队成员上的主要团队成员的 MAC 地址（即，当前将作为主团队出现在交换机上的一个）。成员）。  此更改仅适用于要在主要团队成员的 MAC 地址作为其源 MAC 地址的主要团队成员上发送的流量。 其他流量将继续与发生故障之前使用的任何源 MAC 地址一起发送。  
   
 以下列表描述了基于团队配置方式的 NIC 组合 MAC 地址替换行为：  
   
@@ -71,11 +71,11 @@ ms.locfileid: "71405482"
 ## <a name="related-topics"></a>相关主题
 - [NIC 组合](NIC-Teaming.md)：在本主题中，我们将概述 Windows Server 2016 中的网络接口卡（NIC）组合。 NIC 组合允许在一个或多个基于软件的虚拟网络适配器之间分组到32物理以太网网络适配器。 这些虚拟网络适配器可以提高性能，并在网络适配器发生故障时提供容错能力。  
 
-- [NIC 组合设置](nic-teaming-settings.md)：在本主题中，我们将为你概述 NIC 组属性，例如组合和负载平衡模式。 此外，我们还会向你介绍备用适配器设置和主团队接口属性的详细信息。 如果 NIC 组中至少有两个网络适配器，则无需指定备用适配器来实现容错。
+- [Nic 组合设置](nic-teaming-settings.md)：在本主题中，我们将为你概述 NIC 组属性，例如组合和负载平衡模式。 此外，我们还会向你介绍备用适配器设置和主团队接口属性的详细信息。 如果 NIC 组中至少有两个网络适配器，则无需指定备用适配器来实现容错。
   
-- [在主计算机或 VM 上创建新的 NIC 组](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md)：在本主题中，你将在主计算机或运行 Windows Server 2016 的 Hyper-v 虚拟机（VM）中创建新的 NIC 组。
+- 在[主计算机或 VM 上创建新的 Nic 组](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md)：在本主题中，你将在主计算机或运行 Windows Server 2016 的 hyper-v 虚拟机（VM）中创建新的 nic 组。
 
-- [NIC 组合故障排除](Troubleshooting-NIC-Teaming.md)：在本主题中，我们将讨论使用 Windows PowerShell 对 NIC 组合（如硬件、物理交换机证券和禁用或启用网络适配器）进行故障排除的方法。 
+- [Nic 组合故障排除](Troubleshooting-NIC-Teaming.md)：在本主题中，我们将讨论使用 Windows POWERSHELL 对 nic 组合（如硬件、物理交换机证券和禁用或启用网络适配器）进行故障排除的方法。 
   
 
 

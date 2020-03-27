@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 54a8b9490fdf83d04c6b69fa88f4e8beca4f703a
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 196a124533b98c6945186ee827494b206028d2c8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259062"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317402"
 ---
 # <a name="secure-the-network-controller"></a>保护网络控制器
 
@@ -51,7 +51,7 @@ ms.locfileid: "76259062"
 可以通过使用带有_ClientAuthentication_参数的 Windows PowerShell 命令 **[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** 来配置 Northbound 通信的身份验证模式。 
 
 
-### <a name="authorization"></a>Authorization
+### <a name="authorization"></a>授权
 
 当你为网络控制器 Northbound 通信配置授权时，你允许网络控制器群集节点和管理客户端验证与其通信的设备是否受信任，以及是否有权参与通讯.
 
@@ -109,7 +109,7 @@ Northbound 通信使用 \(SSL\) 安全套接字层在管理客户端和网络控
 
 3. **无**。 选择此模式时，不会在网络控制器节点之间执行身份验证。 此模式仅用于测试目的，不建议在生产环境中使用。
 
-### <a name="authorization"></a>Authorization
+### <a name="authorization"></a>授权
 
 为网络控制器群集通信配置授权时，允许网络控制器群集节点验证与其通信的节点是否受信任，以及是否有权参与通信。
 
@@ -154,7 +154,7 @@ Northbound 通信使用 \(SSL\) 安全套接字层在管理客户端和网络控
 
 2. **WinRM**。 对于此协议，身份验证是使用已加入域的计算机的 Kerberos \(来执行的，\) 并使用证书 \(为未加入域的计算机\)使用证书。
 
-### <a name="authorization"></a>Authorization
+### <a name="authorization"></a>授权
 
 对于 Southbound 通信，使用以下协议和授权方法。
 

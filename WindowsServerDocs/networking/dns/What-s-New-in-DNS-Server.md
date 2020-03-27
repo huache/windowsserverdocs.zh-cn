@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: de502d7be023d12e3350063e467a60356b2472c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 26d9a532f8c2276a81e8718e76290d41c78f6633
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406238"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317977"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Windows Server 中 DNS 服务器的新增功能
 
@@ -23,13 +23,13 @@ ms.locfileid: "71406238"
   
 在 Windows Server 2016 中，DNS 服务器提供以下几个方面的增强支持。  
   
-|功能|新功能或改进功能|描述|  
+|功能|新功能或改进功能|说明|  
 |-----------------|-------------------|---------------|  
-|DNS 策略|新增|你可以配置 DNS 策略来指定 DNS 服务器如何响应 DNS 查询。 DNS 响应可以基于客户端 IP 地址（位置）、当天的时间和多个其他参数。 DNS 策略启用位置感知的 DNS、流量管理、负载平衡、裂脑 DNS 和其他方案。|  
-|响应速率限制（RRL）|新增|可以在 DNS 服务器上启用响应速率限制。 这样做可以避免恶意系统在 DNS 客户端上使用 DNS 服务器启动拒绝服务攻击的可能性。|  
-|命名实体的基于 DNS 的身份验证（窗格会）|新增|你可以使用 TLSA （传输层安全身份验证）记录向 DNS 客户端提供信息，这些客户端会向你的域名提供证书所需的 CA。 这可以防止中间人攻击，有人可能会损坏 DNS 缓存以指向自己的网站，并提供从其他 CA 颁发的证书。|  
-|未知记录支持|新增|你可以使用未知的记录功能添加 Windows DNS 服务器未显式支持的记录。|  
-|IPv6 根提示|新增|可以使用本地 IPV6 根提示支持通过 IPV6 根服务器执行 internet 名称解析。|  
+|DNS 策略|新建|你可以配置 DNS 策略来指定 DNS 服务器如何响应 DNS 查询。 DNS 响应可以基于客户端 IP 地址（位置）、当天的时间和多个其他参数。 DNS 策略启用位置感知的 DNS、流量管理、负载平衡、裂脑 DNS 和其他方案。|  
+|响应速率限制（RRL）|新建|可以在 DNS 服务器上启用响应速率限制。 这样做可以避免恶意系统在 DNS 客户端上使用 DNS 服务器启动拒绝服务攻击的可能性。|  
+|命名实体的基于 DNS 的身份验证（窗格会）|新建|你可以使用 TLSA （传输层安全身份验证）记录向 DNS 客户端提供信息，这些客户端会向你的域名提供证书所需的 CA。 这可以防止中间人攻击，有人可能会损坏 DNS 缓存以指向自己的网站，并提供从其他 CA 颁发的证书。|  
+|未知记录支持|新建|你可以使用未知的记录功能添加 Windows DNS 服务器未显式支持的记录。|  
+|IPv6 根提示|新建|可以使用本地 IPV6 根提示支持通过 IPV6 根服务器执行 internet 名称解析。|  
 |Windows PowerShell 支持|改进功能|新的 Windows PowerShell cmdlet 可用于 DNS 服务器。|  
   
 ## <a name="dns-policies"></a>DNS 策略

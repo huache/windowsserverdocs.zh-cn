@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4b8f10ab7b3da05fbefabb735ee2b8bb4ef1cb8a
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 36c30372b6cac40b603658eca9636a265801fb1a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781344"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315443"
 ---
 # <a name="manage-qos-policy"></a>管理 QoS 策略
 
@@ -32,7 +32,7 @@ ms.locfileid: "74781344"
 
 -  [查看、编辑或删除 QoS 策略](#bkmk_editpolicy)
 
-##  <a name="bkmk_createpolicy"></a>创建 QoS 策略
+##  <a name="create-a-qos-policy"></a><a name="bkmk_createpolicy"></a>创建 QoS 策略
 
 创建 QoS 策略之前，请务必了解用于管理网络流量的两个密钥 QoS 控制措施：
 
@@ -49,20 +49,20 @@ ms.locfileid: "74781344"
 > [!NOTE]
 >  默认情况下，Windows 流量的 DSCP 值为0。
   
-队列的数量及其优先级行为需要设计为你组织的 QoS 策略的构成部分。 例如，你的组织可以选择拥有五个队列：受延迟影响的流量、控制流量、业务关键流量、尽力流量以及大容量数据传输流量。  
+队列的数量及其优先行为需要作为组织的 QoS 策略的一部分进行设计。 例如，你的组织可以选择拥有五个队列：受延迟影响的流量、控制流量、业务关键流量、尽力流量以及大容量数据传输流量。  
   
-### <a name="throttling-traffic"></a>流量节流
+### <a name="throttling-traffic"></a>中止流量
 
-除了 DSCP 值，限制还是管理网络带宽的另一个主要控制。 如前文所述，你可以使用 "**指定节流率**" 设置为出站流量配置具有特定限制率的 QoS 策略。 通过使用阻止功能，QoS 策略将传出的网络流量限制为指定的限制速率。 DSCP 标记和节流同时使用能够有效地管理流量。
+除了 DSCP 值，限制还是管理网络带宽的另一个主要控制。 如前文所述，你可以使用 "**指定节流率**" 设置为出站流量配置具有特定限制率的 QoS 策略。 通过使用阻止功能，QoS 策略将传出的网络流量限制为指定的限制速率。 DSCP 标记功能和中止功能结合使用可有效管理网络流量。
 
 >[!NOTE]
 >默认情况下， **“指定节流率”** 复选框为未选中状态。
 
 若要创建 QoS 策略，请从组策略管理控制台（GPMC）工具中编辑组策略对象（GPO）的设置。 然后，GPMC 打开组策略对象编辑器。
 
-QoS 策略的名称必须是唯一的。 如何将策略应用到服务器和最终用户取决于 QoS 策略在组策略对象编辑器中的存储位置：
+QoS 策略名称必须具有唯一性。 如何将策略应用到服务器和最终用户取决于 QoS 策略在组策略对象编辑器中的存储位置：
 
-- 计算机配置 \Windows Settings\QoS 策略中的 QoS 策略适用于计算机，而与当前登录的用户无关。 对于服务器计算机，一般使用基于计算机的 QoS 策略。
+- 计算机配置 \Windows Settings\QoS 策略中的 QoS 策略适用于计算机，而与当前登录的用户无关。 对于服务器计算机，通常是使用基于计算机的 QoS 策略。
 
 - 用户配置单元 Settings\QoS 策略中的 QoS 策略在用户登录后适用于用户，而不管他们登录到哪台计算机。
 
@@ -70,11 +70,11 @@ QoS 策略的名称必须是唯一的。 如何将策略应用到服务器和最
 
 -   在组策略对象编辑器中，右键单击任一 " **QoS 策略**" 节点，然后单击 "**创建新策略**"。
 
-### <a name="wizard-page-1---policy-profile"></a>向导页 1-策略配置文件
+### <a name="wizard-page-1---policy-profile"></a>向导第 1 页 - 策略配置文件
 
 在 QoS 策略向导的第一页上，可以指定策略名称并配置 QoS 控制传出网络流量的方式。
 
-#### <a name="to-configure-the-policy-profile-page-of-the-qos-based-policy-wizard"></a>若要配置基于 QoS 的策略向导的策略概述页面
+#### <a name="to-configure-the-policy-profile-page-of-the-qos-based-policy-wizard"></a>配置基于 QoS 策略向导的策略配置文件页的步骤
 
 1. 在 **“策略名称”** 中，键入 QoS 策略的名称。 该名称必须唯一标识策略。
 
@@ -82,9 +82,9 @@ QoS 策略的名称必须是唯一的。 如何将策略应用到服务器和最
 
 3. 或者，使用 **“指定节流率”** 启用流量节流功能并配置节流率。 中止速率值必须大于1，你可以指定每秒千字节单位 \(KBps\) 或每秒 mb \(MBps\)。
 
-4. 单击**下一步**。
+4. 单击 **“下一步”** 。
 
-### <a name="wizard-page-2---application-name"></a>向导第2页-应用程序名称
+### <a name="wizard-page-2---application-name"></a>向导第 2 页 - 应用程序名称
 
 在 QoS 策略向导的第二页中，你可以将策略应用于所有应用程序、应用程序的可执行名称标识的特定应用程序、路径和应用程序名称，或者应用于处理特定 URL 请求的 HTTP 服务器应用程序。
 
@@ -94,7 +94,7 @@ QoS 策略的名称必须是唯一的。 如何将策略应用到服务器和最
 
 - **只有响应此 URL 的请求的 HTTP 服务器应用程序**指定 QoS 策略向导第一页上的流量管理设置仅应用于某些 HTTP 服务器应用程序。
 
-或者，你可以输入应用程序路径。 若要指定一个应用程序路径，则包含带有该应用程序名称的路径。 路径可以包含环境变量。 例如，%ProgramFiles%\My Application Path\MyApp.exe 或 c:\program files\my application path\myapp.exe。
+另外，也可输入应用程序路径。 若要指定应用程序路径，请将应用程序名称包括在路径中。 路径可以包含环境变量。 例如，%ProgramFiles%\My Application Path\MyApp.exe 或 c:\program files\my application path\myapp.exe。
 
 >[!NOTE]
 >应用程序路径不能包含解析为符号链接的路径。
@@ -111,13 +111,13 @@ URL 必须符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式为 `htt
 
 2. 如果选择了 **“仅带有该可执行名称的应用程序”** ，则需指定一个以 .exe 文件名扩展名结尾的可执行名称。
 
-3. 单击**下一步**。
+3. 单击 **“下一步”** 。
 
-### <a name="wizard-page-3---ip-addresses"></a>向导第3页-IP 地址
+### <a name="wizard-page-3---ip-addresses"></a>向导第 3 页 - IP 地址
 
 在 QoS 策略向导的第三页中，可以为 QoS 策略指定 IP 地址条件，其中包括：
 
-- 全部的源 IPv4 或 IPv6 地址或特定的源 IPv4 或 IPv6 地址
+- 所有源 IPv4 或 IPv6 地址，或特定的源 IPv4 或 IPv6 地址。
 
 - 所有目标 IPv4 或 IPv6 地址或特定的目标 IPv4 或 IPv6 地址
 
@@ -147,14 +147,14 @@ URL 必须符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式为 `htt
 
 4. 如果你只选择了**以下 IP 目标地址**，请指定与为源地址指定的地址或前缀的类型相对应的 IPv4 或 IPv6 地址或前缀。
 
-5.  单击**下一步**。  
+5.  单击 **“下一步”** 。  
 
-### <a name="wizard-page-4---protocols-and-ports"></a>向导页 4-协议和端口
+### <a name="wizard-page-4---protocols-and-ports"></a>向导第 4 页 - 协议和端口
 
 在 QoS 策略向导的第四页上，您可以指定在向导的第一页上由设置控制的流量类型和端口。 可以指定：  
--   TCP 流量、UDP 流量或两者兼而有之  
+-   TCP 流量和/或 UDP 流量  
 
--   全部源端口、一系列源端口或某个特定源端口
+-   所有源端口、一系列源端口或特定的源端口
 
 -   所有目标端口、一系列目标端口或特定的目标端口  
 
@@ -172,35 +172,35 @@ URL 必须符合[RFC 1738](https://tools.ietf.org/html/rfc1738)，格式为 `htt
 
 5. 如果在之前的步骤中选择了 **“至该目标端口号”** ，则需要键入一个端口号，范围为 1 到 65535。
 
-若要完成新的 QoS 策略的创建，请单击 QoS 策略向导的 "**协议和端口**" 页上的 "**完成**"。 完成后，新的 QoS 策略会在 "组策略对象编辑器的详细信息窗格中列出。  
+若要完成新的 QoS 策略的创建，请单击 QoS 策略向导的 "**协议和端口**" 页上的 "**完成**"。 完成后，新的 QoS 策略就会在组策略对象编辑器的详细信息窗格中列出。  
   
 若要将 QoS 策略设置应用到用户或计算机，请将 QoS 策略所在的 GPO 链接到 Active Directory 域服务容器，如域、站点或组织单位（OU）。  
   
-##  <a name="bkmk_editpolicy"></a>查看、编辑或删除 QoS 策略
+##  <a name="view-edit-or-delete-a-qos-policy"></a><a name="bkmk_editpolicy"></a>查看、编辑或删除 QoS 策略
 
 前面所述的 QoS 策略向导页面对应于查看或编辑策略属性时所显示的 "属性" 页。  
   
-### <a name="to-view-the-properties-of-a-qos-policy"></a>若要查看 QoS 策略的属性  
+### <a name="to-view-the-properties-of-a-qos-policy"></a>查看 QoS 策略的属性  
   
 -   在组策略对象编辑器的详细信息窗格中右键单击策略名称，然后单击 "**属性**"。  
   
-     组策略对象编辑器显示具有以下选项卡的 "属性" 页：  
+     组策略对象编辑器显示带有以下标签的属性页：  
   
-    -   策略概述  
+    -   策略配置文件  
   
-    -   应用程序名  
+    -   应用程序名称  
   
     -   IP 地址  
   
     -   协议和端口  
   
-### <a name="to-edit-a-qos-policy"></a>若要编辑 QoS 策略  
+### <a name="to-edit-a-qos-policy"></a>编辑 QoS 策略  
   
 -   在组策略对象编辑器的详细信息窗格中右键单击策略名称，然后单击 "**编辑现有策略**"。  
   
      组策略对象编辑器显示 "**编辑现有的 QoS 策略**" 对话框。  
   
-### <a name="to-delete-a-qos-policy"></a>若要删除 QoS 策略  
+### <a name="to-delete-a-qos-policy"></a>删除 QoS 策略  
   
 -   右键单击 "组策略对象编辑器的详细信息窗格中的策略名称，然后单击"**删除策略**"。  
   
@@ -253,7 +253,7 @@ QoS 策略的 DSCP 值、中止速率和策略条件在组策略对象编辑器�
   
 以前版本的 Windows 中的 Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows Server 2008 和 Windows Vista 中的 TCP 接收窗口已发生更改。 以前版本的 Windows 将 TCP 接收端窗口限制为最大为 64 kb，而 Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows Server 2008 和 Windows Vista 动态地将接收方窗口的大小限制为最大16兆字节（MB）). 在入站 TCP 流量控制中，可以通过设置 TCP 接收窗口可以增长到的最大值来控制入站吞吐量级别。 级别对应于以下最大值。 
   
-|入站吞吐量级别|最多|  
+|入站吞吐量级别|最大值|  
 |------------------------|-------|  
 |0|64 KB|
 |1|256 KB|
@@ -291,7 +291,7 @@ DSCP 标记替代可限制应用程序指定的功能（或 "标记"） DSCP 值
 
 你可以创建使用这些 DSCP 值的 QoS 策略，以确保具有适用于 WMM 无线适配器的 Wi-fi\-wlan 认证™的便携式计算机在与用于 WMM 接入点的 Wi-fi\-Fi 关联时接收优先级处理。
   
-### <a name="BKMK_precedencerules"></a>QoS 策略优先规则
+### <a name="qos-policy-precedence-rules"></a><a name="BKMK_precedencerules"></a>QoS 策略优先规则
 
 与 GPO 的优先级类似，当多个 QoS 策略应用于一组特定的流量时，QoS 策略具有优先规则来解决冲突。 对于出站 TCP 或 UDP 流量，一次只能应用一个 QoS 策略，这意味着 QoS 策略不会有累积效果，如在何处汇总限制速率。
 

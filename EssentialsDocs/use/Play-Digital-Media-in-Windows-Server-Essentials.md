@@ -3,7 +3,7 @@ title: 在 Windows Server Essentials 中播放数字媒体
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c967f2b0f174838567935b4f24339429f43e67bc
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 168569fc6ce7937090a45bf9e7c68353f8b62714
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947374"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310978"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>在 Windows Server Essentials 中播放数字媒体
 
@@ -57,7 +57,7 @@ ms.locfileid: "75947374"
 -   [查看和浏览共享的数字媒体](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_7)  
 
   
-##  <a name="BKMK_1"></a>数字媒体概述  
+##  <a name="digital-media-overview"></a><a name="BKMK_1"></a>数字媒体概述  
  数字媒体是指已编码（数字压缩）的音频、视频和照片内容。 编码内容包括将音频和视频输入转换为数字媒体文件，如 Windows Media 文件。 对数字媒体进行编码后，它可以通过计算机方便地操作、分发和播放，并且轻松地通过计算机网络传输。  
   
  数字媒体类型的示例包括：Windows Media 音频 (WMA)、Windows Media 视频 (WMV)、MP3、JPEG　和 AVI。 有关 Windows Media Player 支持的数字媒体类型的信息，请参阅 [Windows Media Player 支持的文件类型](https://support.microsoft.com/kb/316992)。  
@@ -76,7 +76,7 @@ ms.locfileid: "75947374"
   
  仅可以在用于购买它的计算机或设备上播放受版权保护的媒体。 版权保护防止你在多个计算机或设备上播放媒体，即使你将媒体复制到服务器并从那里播放它。 但是，可以在 Windows Server Essentials 上存储受版权保护的媒体，并继续在用来购买它的计算机或设备上播放该媒体。  
   
-##  <a name="BKMK_2"></a>播放和共享数字媒体  
+##  <a name="play-and-share-digital-media"></a><a name="BKMK_2"></a>播放和共享数字媒体  
  设置网络并将计算机和媒体设备成功连接到服务器网络后，你可以搜索你在服务器上存储和共享的任何数字媒体文件。  
   
 > [!NOTE]
@@ -94,7 +94,7 @@ ms.locfileid: "75947374"
 -   [将 Windows Server Essentials 上的媒体文件发送到 Windows Media Player、Xbox 360，或发送到网络中的联网数字媒体播放器](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)  
 
   
-###  <a name="BKMK_2.1"></a>从网络上的计算机或数字媒体播放器搜索和播放 Windows Server Essentials 上的媒体文件  
+###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a>从网络上的计算机或数字媒体播放器搜索和播放 Windows Server Essentials 上的媒体文件  
  当你的设备加入到 Windows Server Essentials 网络时，你可以通过以下任一方式搜索和播放数字媒体文件：  
   
 
@@ -123,7 +123,7 @@ ms.locfileid: "75947374"
 -   [使用远程 Web 访问搜索和播放共享的媒体](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)  
 
   
-####  <a name="BKMK_WMC"></a>在运行 Windows Media Center 的计算机上搜索和播放媒体文件  
+####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a>在运行 Windows Media Center 的计算机上搜索和播放媒体文件  
   
 1.  依次单击 **“开始”** 、 **“所有程序”** 和 **“Windows Media Center”** 。  
   
@@ -133,14 +133,14 @@ ms.locfileid: "75947374"
   
 4.  单击媒体文件映像以查看或播放该文件。  
   
-####  <a name="BKMK_MWP"></a>使用 Windows Media Player 从运行 Windows 的计算机搜索和播放媒体文件  
+####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-by-using-windows-media-player"></a><a name="BKMK_MWP"></a>使用 Windows Media Player 从运行 Windows 的计算机搜索和播放媒体文件  
   
 -   从计算机或媒体设备中，打开 **“Windows Media Player”** 并搜索你的媒体库。  
   
     > [!NOTE]
     >  搜索步骤因你使用的 Windows Media Player 的版本而异。 有关详细信息，请参考你的版本的帮助。  
   
-####  <a name="BKMK_Xbox"></a>使用 Xbox 360 搜索和播放媒体文件  
+####  <a name="search-for-and-play-media-files-by-using-xbox-360"></a><a name="BKMK_Xbox"></a>使用 Xbox 360 搜索和播放媒体文件  
   
 1.  通过使用有线或无线连接将 Xbox 360 控制台连接到你的家庭网络。  
   
@@ -157,13 +157,13 @@ ms.locfileid: "75947374"
   
     3.  浏览文件列表并选择要播放的项。  
   
-####  <a name="BKMK_Other"></a>使用与 Windows Server Essentials 兼容的其他数字媒体播放器或接收器搜索和播放媒体文件  
+####  <a name="search-for-and-play-media-files-by-using-other-digital-media-players-or-receivers-that-are-compatible-with-windows-server-essentials"></a><a name="BKMK_Other"></a>使用与 Windows Server Essentials 兼容的其他数字媒体播放器或接收器搜索和播放媒体文件  
   
 1.  转到 [Windows 兼容性中心](https://www.microsoft.com/windows/compatibility/CompatCenter/Home) 并确保你的数字媒体播放器或接收器在兼容设备的列表中显示。  
   
 2.  由于搜索的步骤根据你正在使用的数字媒体播放器而有所不同，因此请参考你的设备的帮助以获取详细说明。  
   
-####  <a name="BKMK_SharedFolders"></a>使用快速启动板的共享文件夹功能搜索和播放媒体文件  
+####  <a name="search-for-and-play-media-files-by-using-the-shared-folders-feature-of-the-launchpad"></a><a name="BKMK_SharedFolders"></a>使用快速启动板的共享文件夹功能搜索和播放媒体文件  
   
 1.  登录到 Windows Server Essentials 快速启动板。  
   
@@ -174,7 +174,7 @@ ms.locfileid: "75947374"
     > [!NOTE]
     >  作为一个选项，你还可以双击共享文件夹，以浏览文件夹内容。  
   
-####  <a name="BKMK_RWA2"></a>使用远程 Web 访问搜索和播放共享的媒体  
+####  <a name="search-for-and-play-shared-media-by-using-remote-web-access"></a><a name="BKMK_RWA2"></a>使用远程 Web 访问搜索和播放共享的媒体  
   
 1.  登录到远程 Web 访问。  
   
@@ -182,10 +182,10 @@ ms.locfileid: "75947374"
   
 3.  双击一个文件夹以查看该文件夹的内容。  
   
-###  <a name="BKMK_SendToDevice"></a>将 Windows Server Essentials 上的媒体文件发送到 Windows Media Player、Xbox 360，或发送到网络中的联网数字媒体播放器  
+###  <a name="send-media-files-on-windows-server-essentials-to-windows-media-player-xbox-360-or-to-a-networked-digital-media-player-in-the-network"></a><a name="BKMK_SendToDevice"></a>将 Windows Server Essentials 上的媒体文件发送到 Windows Media Player、Xbox 360，或发送到网络中的联网数字媒体播放器  
  使用 **“Windows Media Player”** 搜索你要的媒体文件。 右键单击此媒体文件，然后单击 **“播放到”** 以将此媒体文件发送到联网的媒体设备。  
   
-##  <a name="BKMK_3"></a>从远程位置播放共享的数字媒体文件  
+##  <a name="play-shared-digital-media-files-from-a-remote-location"></a><a name="BKMK_3"></a>从远程位置播放共享的数字媒体文件  
  使用远程 Web 访问离开 Windows Server Essentials 网络时，可以播放媒体文件。 可以使用移动电话、远程计算机或数字媒体播放器来搜索和播放你存储在服务器上的共享媒体文件。  
   
 #### <a name="to-play-shared-media-files-when-you-are-away-from-the-network"></a>当你离开网络时播放共享的媒体文件  
@@ -195,7 +195,7 @@ ms.locfileid: "75947374"
 2. 转到远程 Web 访问网站。 在 Internet 浏览器的地址栏中键入 https：/ **/< YourDomainName\>/remote** ，然后按 enter。  
   
    > [!NOTE]
-   >  *< YourDomainName\>* 是占位符。 它是服务器独有的名称，因此你键入的地址将类似于 **https://contoso.com/remote** 。 当在服务器上设置远程访问功能时，如果不知道你的域的名称，则请询问选择域名的管理员。 有关详细信息，请参阅 [Turn on Remote Web Access](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA)。  
+   >  *< YourDomainName\>* 是占位符。 它是服务器独有的名称，因此你键入的地址将类似于 **https://contoso.com/remote** 。 当在服务器上设置远程访问功能时，如果不知道你的域的名称，则请询问选择域名的管理员。 有关详细信息，请参阅[启用远程 Web 访问](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA)。  
   
 3. 在远程 Web 访问登录页上，键入你的用户帐户名和密码，然后单击箭头。  
   
@@ -210,11 +210,11 @@ ms.locfileid: "75947374"
   
 5. 当媒体文件名称出现时，单击该文件名称以播放媒体。  
   
-##  <a name="BKMK_4"></a>将数字媒体文件添加到服务器  
+##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_4"></a>将数字媒体文件添加到服务器  
 
- 服务器管理员可以通过直接访问服务器或通过使用远程 Web 访问站点登录到仪表板，将数字媒体添加到媒体库中的共享文件夹。 其他用户可以通过使用 "快速启动板" 上的 "**共享文件夹**" 连接、通过使用远程 Web 访问站点或使用适用于 Windows Phone 的 My server 应用，将媒体文件添加到服务器。 有关播放媒体的信息，请参阅 [Play and share digital media](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2)。  
+ 服务器管理员可以通过直接访问服务器或通过使用远程 Web 访问站点登录到仪表板，将数字媒体添加到媒体库中的共享文件夹。 其他用户可以通过使用 "快速启动板" 上的 "**共享文件夹**" 连接、通过使用远程 Web 访问站点或使用适用于 Windows Phone 的 My server 应用，将媒体文件添加到服务器。 有关播放媒体的信息，请参阅[播放和共享数字媒体](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2)。  
 
- 服务器管理员可以通过直接访问服务器或通过使用远程 Web 访问站点登录到仪表板，将数字媒体添加到媒体库中的共享文件夹。 其他用户可以通过使用 "快速启动板" 上的 "**共享文件夹**" 连接、通过使用远程 Web 访问站点或使用适用于 Windows Phone 的 My server 应用，将媒体文件添加到服务器。 有关播放媒体的信息，请参阅 [Play and share digital media](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2)。  
+ 服务器管理员可以通过直接访问服务器或通过使用远程 Web 访问站点登录到仪表板，将数字媒体添加到媒体库中的共享文件夹。 其他用户可以通过使用 "快速启动板" 上的 "**共享文件夹**" 连接、通过使用远程 Web 访问站点或使用适用于 Windows Phone 的 My server 应用，将媒体文件添加到服务器。 有关播放媒体的信息，请参阅[播放和共享数字媒体](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2)。  
 
   
 > [!NOTE]
@@ -236,7 +236,7 @@ ms.locfileid: "75947374"
   
 3.  将要添加的媒体文件复制并粘贴或拖放到服务器上的相应共享文件夹。  
   
-##  <a name="BKMK_5"></a>下载格式选项  
+##  <a name="download-format-options"></a><a name="BKMK_5"></a>下载格式选项  
  有两个下载文件的选项。 仅当你将多个文件或一个文件夹下载到基于 Windows 的计算机时，这些选项才可用。  
   
  选择以下符合你的下载需求的选项：  
@@ -257,10 +257,10 @@ ms.locfileid: "75947374"
   
   开始实际下载之前，将创建 exe 或 zip 文件。 这可能需要几分钟，具体取决于文件的数量和要下载文件的总大小。 创建下载文件后，下载文件的操作发生在后台。 这允许你在下载过程完成时可以继续工作。  
   
-##  <a name="BKMK_6"></a>轻松文件上载工具  
+##  <a name="easy-file-upload-tool"></a><a name="BKMK_6"></a>轻松文件上载工具  
  轻松文件上载工具简化了在 Windows Server Essentials 服务器上上传文件的过程。 你可以根据需要将任意多个文件添加到轻松文件上载工具，然后将它们上载到 Windows Server Essentials 服务器上的共享文件夹中。 有关详细信息，请参阅博客文章 [了解远程 Web 访问文件共享](https://blogs.technet.com/b/sbs/archive/2012/04/19/understanding-remote-web-access-file-sharing.aspx)。  
   
-##  <a name="BKMK_7"></a>查看和浏览共享的数字媒体  
+##  <a name="view-and-browse-shared-digital-media"></a><a name="BKMK_7"></a>查看和浏览共享的数字媒体  
  通过使用仪表板、快速启动板、远程 Web 访问网站或适用于 Windows Phone 的 My Server 应用，你可以查看或浏览资源。  
   
 #### <a name="to-view-and-browse-shared-media-from-the-dashboard"></a>从仪表板查看和浏览共享的媒体  

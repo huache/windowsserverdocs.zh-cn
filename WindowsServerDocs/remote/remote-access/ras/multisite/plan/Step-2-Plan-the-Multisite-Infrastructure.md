@@ -10,24 +10,24 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64c10107-cb03-41f3-92c6-ac249966f574
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ff8a58aa679691132d074ef52b876cea05366ab5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6e23c3c3d22509af46b1a1741b545a787be00bfc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367102"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313882"
 ---
 # <a name="step-2-plan-the-multisite-infrastructure"></a>步骤2规划多站点基础结构
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
 在多站点拓扑中部署远程访问的下一步是完成多站点基础结构规划;包括、Active Directory、安全组和组策略对象。  
-## <a name="bkmk_2_1_AD"></a>2.1 计划 Active Directory  
+## <a name="21-plan-active-directory"></a><a name="bkmk_2_1_AD"></a>2.1 计划 Active Directory  
 可以在多个拓扑中配置远程访问多站点部署：  
   
--   **单个 Active Directory 站点，多个入口点**-在此拓扑中，在整个站点中有一个具有快速 intranet 链接的整个组织的单一 Active Directory 站点，但在整个站点中部署了多个远程访问服务器你的组织，每个充当入口点。 此拓扑的地理示例是，在东海岸和西 coast 上具有入口点美国的单个 Active Directory 站点。  
+-   **单个 Active Directory 站点，多个入口点**-在此拓扑中，在整个站点中有一个具有快速 intranet 链接的整个组织的单一 Active Directory 站点，但在整个组织中部署了多个远程访问服务器，每个服务器都充当入口点。 此拓扑的地理示例是，在东海岸和西 coast 上具有入口点美国的单个 Active Directory 站点。  
   
     ![多站点基础结构](../../../../media/Step-2-Plan-the-Multisite-Infrastructure/RAMultisiteTopo1.png)  
   
@@ -50,22 +50,22 @@ ms.locfileid: "71367102"
   
 5.  在作为主域控制器（PDC）仿真器运行的域控制器上管理客户端 Gpo 和可选的应用程序服务器 Gpo。 这意味着不一定要在包含客户端连接到的入口点的 Active Directory 站点中管理客户端 Gpo。  
   
-6.  如果 Active Directory 站点的域控制器不可访问，则远程访问服务器将连接到站点中的备用域控制器（如果可用）。 如果没有，则它会连接到其他站点的域控制器，以检索更新的 GPO 并对客户端进行身份验证。 在这两种情况下，除非域控制器可用，否则不能使用远程访问管理控制台和 PowerShell cmdlet 来检索或修改配置设置。 请注意以下事项：  
+6.  如果 Active Directory 站点的域控制器不可访问，则远程访问服务器将连接到站点中的备用域控制器（如果可用）。 如果没有，则它会连接到其他站点的域控制器，以检索更新的 GPO 并对客户端进行身份验证。 在这两种情况下，除非域控制器可用，否则不能使用远程访问管理控制台和 PowerShell cmdlet 来检索或修改配置设置。 注意以下各项：  
   
     1.  如果作为 PDC 模拟器运行的服务器不可用，则必须指定一个具有已更新 Gpo 的可用域控制器作为 PDC 仿真器。  
   
     2.  如果管理服务器 GPO 的域控制器不可用，请使用 Set-daentrypointdc PowerShell cmdlet 将新的域控制器与入口点相关联。 在运行 cmdlet 之前，新的域控制器应具有最新的 Gpo。  
   
-## <a name="bkmk_2_2_SG"></a>2.2 计划安全组  
-在使用高级设置部署单个服务器的过程中，将通过 DirectAccess 访问内部网络的所有客户端计算机都收集到安全组中。 在多站点部署中，此安全组仅用于 Windows 8 客户端计算机。 对于多站点部署，将为多站点部署中的每个入口点将 Windows 7 客户端计算机收集到单独的安全组中。 例如，如果你先前已将组 DA_Clients 中的所有客户端计算机分组，你现在必须删除该组中的所有 Windows 7 计算机并将它们放在不同的安全组中。 例如，在多个 Active Directory 站点、多个入口点拓扑中，你为美国入口点（DA_Clients_US）创建一个安全组，并为欧洲入口点（DA_Clients_Europe）创建一个安全组。 将位于美国中的任何 Windows 7 客户端计算机放在 DA_Clients_US 组中，并将其放置在 DA_Clients_Europe 组中的任何位置。 如果没有任何 Windows 7 客户端计算机，则不需要为 Windows 7 计算机规划安全组。  
+## <a name="22-plan-security-groups"></a><a name="bkmk_2_2_SG"></a>2.2 计划安全组  
+在使用高级设置部署单个服务器的过程中，将通过 DirectAccess 访问内部网络的所有客户端计算机都收集到安全组中。 在多站点部署中，此安全组仅用于 Windows 8 客户端计算机。 对于多站点部署，将为多站点部署中的每个入口点将 Windows 7 客户端计算机收集到单独的安全组中。 例如，如果你以前将组中的所有客户端计算机分组 DA_Clients 中，则你现在必须删除该组中的所有 Windows 7 计算机并将它们放在不同的安全组中。 例如，在多个 Active Directory 站点、多个入口点拓扑中，你为美国入口点（DA_Clients_US）创建一个安全组，并为欧洲入口点（DA_Clients_Europe）创建一个安全组。 将位于美国中的所有 Windows 7 客户端计算机置于 DA_Clients_US 组中，并将其放置在 DA_Clients_Europe 组中的任何位置。 如果没有任何 Windows 7 客户端计算机，则不需要为 Windows 7 计算机规划安全组。  
   
 所需的安全组如下所示：  
   
 -   适用于所有 Windows 8 客户端计算机的一个安全组。 建议为每个域的客户端创建一个唯一的安全组。  
   
--   包含每个入口点的 Windows 7 客户端计算机的唯一安全组。 建议为每个域创建唯一组。 例如：Domain1\DA_Clients_Europe;Domain2\DA_Clients_Europe;Domain1\DA_Clients_US;Domain2\DA_Clients_US.  
+-   包含每个入口点的 Windows 7 客户端计算机的唯一安全组。 建议为每个域创建唯一组。 例如： Domain1 \ DA_Clients_Europe;2 \ DA_Clients_Europe;Domain1 \ DA_Clients_US;2 \ DA_Clients_US。  
   
-## <a name="bkmk_2_3_GPO"></a>2.3 计划组策略对象  
+## <a name="23-plan-group-policy-objects"></a><a name="bkmk_2_3_GPO"></a>2.3 计划组策略对象  
 在远程访问部署过程中配置的 DirectAccess 设置将收集到 Gpo 中。 你的单一服务器部署已为 DirectAccess 客户端、远程访问服务器和应用程序服务器使用 Gpo。 多站点部署需要以下 Gpo：  
   
 -   每个入口点的服务器 GPO。  
@@ -115,7 +115,7 @@ ms.locfileid: "71367102"
   
     -   **服务器 gpo**-每个入口点（在入口点所在的域中）的服务器 gpo。 此 GPO 将应用于入口点中的每个远程访问服务器。  
   
-    -   **客户端 GPO （Windows 7）** -每个入口点的 GPO 和包含将连接到多站点部署中入口点的 Windows 7 客户端计算机的每个域。 例如 Domain1\DA_W7_Clients_GPO_Europe;Domain2\DA_W7_Clients_GPO_Europe;Domain1\DA_W7_Clients_GPO_US;Domain2\DA_W7_Clients_GPO_US. 如果 Windows 7 客户端计算机将不会连接到入口点，则不需要 Gpo。  
+    -   **客户端 GPO （Windows 7）** -每个入口点的 GPO 和包含将连接到多站点部署中入口点的 Windows 7 客户端计算机的每个域。 例如 Domain1 \ DA_W7_Clients_GPO_Europe;2 \ DA_W7_Clients_GPO_Europe;Domain1 \ DA_W7_Clients_GPO_US;2 \ DA_W7_Clients_GPO_US。 如果 Windows 7 客户端计算机将不会连接到入口点，则不需要 Gpo。  
   
 -   不需要为 Windows 8 客户端计算机创建其他 Gpo。 部署单一远程访问服务器时，已经创建了包含客户端计算机的每个域的 GPO。 在多站点部署中，这些客户端 Gpo 将充当适用于 Windows 8 客户端的 Gpo。  
   
@@ -146,11 +146,11 @@ ms.locfileid: "71367102"
   
     2.  修改设置之后，必须等待将更改复制到与 Gpo 关联的域控制器。 在复制完成之前，请勿使用远程访问管理控制台或远程访问 PowerShell cmdlet 进行其他更改。 如果在复制完成之前，在两个不同的域控制器上编辑了 GPO，则可能会发生合并冲突，从而导致配置损坏  
   
--   或者，你可以在组策略管理控制台中使用 "**更改域控制器**" 对话框或使用**open-netgpo** PowerShell cmdlet 更改默认设置，以便使用控制台或网络 cmdlet 进行更改使用指定的域控制器。  
+-   或者，你可以在组策略管理控制台中使用 "**更改域控制器**" 对话框或使用**open-netgpo** PowerShell cmdlet 更改默认设置，以便使用控制台或网络 cmdlet 进行的更改使用指定的域控制器。  
   
     1.  若要在组策略管理控制台中执行此操作，请右键单击域或站点容器，然后单击 "**更改域控制器**"。  
   
-    2.  若要在 PowerShell 中执行此操作，请为 Open-netgpo cmdlet 指定 "输入" 参数。 例如，若要使用名为 europe-dc.corp.contoso.com 的域控制器在名为 domain1\DA_Server_GPO 要的 GPO 上的 Windows 防火墙中启用专用和公用配置文件，请执行以下操作：  
+    2.  若要在 PowerShell 中执行此操作，请为 Open-netgpo cmdlet 指定 "输入" 参数。 例如，若要使用名为 europe-dc.corp.contoso.com 的域控制器在 Windows 防火墙中启用 Windows _Europe DA_Server_GPO 防火墙中的专用配置文件和公用配置文件，请执行以下操作：  
   
         ```  
         $gpoSession = Open-NetGPO -PolicyStore "domain1\DA_Server_GPO _Europe" -DomainController "europe-dc.corp.contoso.com"  
@@ -165,7 +165,7 @@ ms.locfileid: "71367102"
   
 -   **配置分发优化**-在网络基础结构更改之后，可能需要在与入口点相同的 Active Directory 站点中管理域控制器上某个入口点的服务器 GPO。   
   
-## <a name="bkmk_2_4_DNS"></a>2.4 规划 DNS  
+## <a name="24-plan-dns"></a><a name="bkmk_2_4_DNS"></a>2.4 规划 DNS  
 为多站点部署规划 DNS 时，请注意以下事项：  
   
 1.  客户端计算机使用 ConnectTo 地址连接到远程访问服务器。 部署中的每个入口点都需要不同的 ConnectTo 地址。 每个入口点 ConnectTo 地址必须在公共 DNS 中提供，并且你选择的地址必须与你为 ip-https 连接部署的 ip-https 证书的使用者名称匹配。   

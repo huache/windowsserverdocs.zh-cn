@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d486735e-71fe-4443-9878-4b784cd588a7
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5fead00e1fbf0785d8c3af038039816e1cf618b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ea8c87960501abff5895bce2bfe1755684fe20bd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404942"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309131"
 ---
 # <a name="plan-an-advanced-directaccess-deployment"></a>规划高级 DirectAccess 部署
 
@@ -25,11 +25,11 @@ ms.locfileid: "71404942"
 
 本主题列出了使用各种基本功能和高级功能来部署运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的单个 DirectAccess 服务器所需的规划步骤。 规划阶段包括下列主题。  
   
--   [步骤 1：规划高级 DirectAccess 基础结构](da-adv-plan-s1-infrastructure.md)  
+-   [步骤1：规划高级 DirectAccess 基础结构](da-adv-plan-s1-infrastructure.md)  
   
     在这一阶段，你将规划网络和服务器拓扑、防火墙设置、证书要求、域名系统 (DNS)、Active Directory、DirectAccess 管理服务器和 DirectAccess 网络位置服务器。  
   
--   [步骤 2：规划高级 DirectAccess 部署](da-adv-plan-s2-deployments.md)  
+-   [步骤2：规划高级 DirectAccess 部署](da-adv-plan-s2-deployments.md)  
   
     在这一阶段，你将规划客户端和服务器部署，包括 DirectAccess 基础结构和应用程序服务器。  
   

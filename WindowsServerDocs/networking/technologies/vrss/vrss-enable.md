@@ -8,14 +8,14 @@ ms.assetid: cb48315c-0204-4927-aa24-64f6789c2e20
 manager: dougkim
 ms.localizationpriority: medium
 ms.date: 09/05/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8f2886f01e4835cf2edb86fcae0a1fe77bc03d25
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e4be9060da4a738e3ad8e4976d037f3a05467da3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405257"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315377"
 ---
 # <a name="enable-vrss-on-a-virtual-network-adapter"></a>在虚拟网络适配器上启用 vRSS
 
@@ -53,7 +53,7 @@ ms.locfileid: "71405257"
 
 7.  确保**已启用**"**值**" 中的选择。 
 
-8.  单击**确定**。
+8.  单击“确定”。
   
 > [!NOTE]
 > 在 "**高级**" 选项卡上，某些网络适配器还显示适配器所支持的 RSS 队列的数量。

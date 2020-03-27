@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a32357a5-ab1a-4a4c-848a-7a4ed65b1921
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 20fc19dc31ee612de0a736bfe989f930a9afa202
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 415a5f4728b1b08e59630935e47f22d74b0267e8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405864"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312932"
 ---
 # <a name="ras-gateway-for-sdn"></a>用于 SDN 的 RAS 网关
 
->适用于：Windows Server （半年频道），Windows Server 2016 # # SDN 的 RAS 网关  
+>适用于： Windows Server （半年频道）、Windows Server 2016 # # 用于 SDN 的 RAS 网关  
 
 
 RAS 网关是为云服务提供商（Csp）和使用 Hyper-v 网络虚拟化托管多个租户虚拟网络的企业而设计的基于软件、多租户、边界网关协议（BGP）的路由器。 RAS 网关用于在物理网络与 VM 网络资源之间路由网络流量，而不考虑位置。 您可以将网络流量路由到同一物理位置或多个不同的位置。   

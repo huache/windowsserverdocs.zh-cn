@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6a7836160fc7363ec3d7b2fb11e194db82970f9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f9bc1a35016ca5946eddeada2088a83f1fa8ca05
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406153"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317753"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>使用针对基于地理位置的流量管理和主要-辅助部署的 DNS 策略
 
@@ -37,7 +37,7 @@ ms.locfileid: "71406153"
   
 Contoso 云服务有两个数据中心，一个位于美国，另一个在欧洲，而另一个在欧洲，Contoso 为 woodgrove.com 托管其食品定购门户。  
   
-Contoso DNS 部署包括两个辅助服务器：**SecondaryServer1**，IP 地址为 10.0.0.2;IP 地址为10.0.0.3 的和**SecondaryServer2**。 这些辅助服务器充当两个不同区域中的名称服务器，SecondaryServer1 位于欧洲，SecondaryServer2 位于美国
+Contoso DNS 部署包括两个辅助服务器： **SecondaryServer1**，IP 地址为 10.0.0.2;IP 地址为10.0.0.3 的和**SecondaryServer2**。 这些辅助服务器充当两个不同区域中的名称服务器，SecondaryServer1 位于欧洲，SecondaryServer2 位于美国
   
 在**PrimaryServer** （IP 地址10.0.0.1）上有一个主要的可写区域副本，在其中进行区域更改。 对于到辅助服务器的常规区域传输，辅助服务器始终是最新的，并且对 PrimaryServer 上的区域进行了任何新的更改。
   
@@ -80,7 +80,7 @@ OPT RR 的值是要向其发送请求的区域范围名称。 主 DNS 服务器�
   
 ## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>如何配置基于主要-辅助地理位置的流量管理的 DNS 策略
 
-在开始之前，请确保已完成 "[将 DNS 策略用于基于地理位置的流量管理和主服务器](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md)" 主题中的所有步骤，并且为主 DNS 服务器配置了区域、区域作用域、Dns 客户端子网和 DNS政策.  
+在开始之前，请确保已完成 "[将 DNS 策略用于基于地理位置的流量管理和主服务器](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md)" 主题中的所有步骤，并且已使用区域、区域作用域、Dns 客户端子网和 dns 策略配置了主 DNS 服务器。  
   
 > [!NOTE]
 > 本主题中的说明将 dns 主服务器中的 DNS 客户端子网、区域作用域和 DNS 策略复制到 DNS 辅助服务器，用于初始 DNS 设置和验证。 将来，你可能想要更改主服务器上的 DNS 客户端子网、区域作用域和策略设置。 在这种情况下，你可以创建自动化脚本来使辅助服务器与主服务器保持同步。  

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 831f484db8325bf9a27e9065ac5cf74913d0805c
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1fd3a20cb6429d60f450478f5e817a7506b28346
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791162"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314240"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>识别并解决远程访问服务器操作问题
 
@@ -38,7 +38,7 @@ ms.locfileid: "74791162"
   
 - 还原 IP Helper 服务  
   
-### <a name="BKMK_Simulate"></a>模拟操作问题  
+### <a name="simulate-an-operations-issue"></a><a name="BKMK_Simulate"></a>模拟操作问题  
   
 > [!CAUTION]  
 > 由于你的远程访问服务器可能已正确配置且没有遇到任何问题，因此你可以使用以下过程来模拟操作问题。 如果你的服务器当前在生产环境中为客户端提供服务，则你可能不想在此时执行这些操作。 您可以通过阅读这些步骤来了解如何处理将来可能在远程访问服务器上出现的问题。  
@@ -51,7 +51,7 @@ IP Helper 服务（IPHlpSvc）托管 IPv6 转换技术（如 IP-HTTPS、6to4 或
   
 2.  在**服务**列表中，向下滚动并右键单击 " **IP 帮助**程序"，然后单击 "**停止**"。  
   
-### <a name="BKMK_Identify"></a>确定操作问题并采取纠正措施  
+### <a name="identify-the-operations-issue-and-take-corrective-action"></a><a name="BKMK_Identify"></a>确定操作问题并采取纠正措施  
 关闭 IP Helper 服务将导致远程访问服务器上出现严重错误。 监视仪表板将显示服务器的操作状态和问题的详细信息。  
   
 ##### <a name="to-identify-the-details-and-take-corrective-action"></a>确定详细信息并采取纠正措施  
@@ -82,7 +82,7 @@ IP Helper 服务（IPHlpSvc）托管 IPv6 转换技术（如 IP-HTTPS、6to4 或
   
     3.  若要重新启动该服务，请在提升的 Windows PowerShell 提示符下键入**restart-service iphlpsvc** 。  
   
-### <a name="BKMK_Restart"></a>还原 IP Helper 服务  
+### <a name="restore-the-ip-helper-service"></a><a name="BKMK_Restart"></a>还原 IP Helper 服务  
 若要在远程访问服务器上还原 IP Helper 服务，可以按照上述解决方法步骤来启动或重新启动该服务，或者可以使用以下过程反转用于模拟 IP Helper 服务故障的过程。  
   
 ##### <a name="to-restart-the-ip-helper-service-on-the-remote-access-server"></a>在远程访问服务器上重新启动 IP Helper 服务  
@@ -93,7 +93,7 @@ IP Helper 服务（IPHlpSvc）托管 IPv6 转换技术（如 IP-HTTPS、6to4 或
   
 ![Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```PowerShell
 PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property *  

@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3d66901a-c40b-474c-9948-f989f399cfea
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4c7a8243922f58f9705a85cd30b2a68cf4d876c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 558c99c187ab01f3084621410964f3a01c0dace8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404772"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308662"
 ---
 # <a name="step-6-install-and-configure-2-dc1"></a>步骤6安装和配置 2-DC1
 
@@ -50,7 +50,7 @@ ms.locfileid: "71404772"
   
 1.  开始安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。  
   
-2.  按照说明完成安装，为本地管理员帐户指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）和强密码。 使用本地管理员账户登录。  
+2.  按照说明完成安装，为本地管理员帐户指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）和强密码。 使用本地管理员帐户登录。  
   
 3.  将 2-DC1 连接到可访问 Internet 的网络，并运行 Windows 更新以安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然后从 Internet 断开连接。  
   
@@ -181,13 +181,13 @@ CORP2 域中的计算机必须从 APP1 上的证书颁发机构获取计算机�
   
 6.  在 "**输入要选择的对象名称**" 中，键入**Domain Admins;域计算机**，然后单击 **"确定"** 。  
   
-7.  在 "**客户端-服务器身份验证属性**" 对话框的 "**组或用户名**" 中，单击 "**域管理员" （CORP2\Domain Admins）** ，并在 "**域管理员**" 的 "**允许**" 列中，选择 "**写入**"和**注册**。  
+7.  在 "**客户端-服务器身份验证属性**" 对话框中的 "**组或用户名**" 中，单击 "**域管理员" （CORP2\Domain Admins）** ，并在 "**域管理员的权限**" 中的 "**允许**" 列中，选择 "**写入**并**注册**"。  
   
 8.  在 **"组或用户名**" 中，单击 "**域计算机" （CORP2\Domain 计算机）** ，并在 "**域计算机的权限**" 中的 "**允许**" 列中，选择 "**注册**和**自动注册**"，然后单击 **"确定"** 。  
   
 9. 关闭“证书模板控制台”。  
   
-## <a name="replication"></a>在 DC1 和2之间强制复制-DC1  
+## <a name="force-replication-between-dc1-and-2-dc1"></a><a name="replication"></a>在 DC1 和2之间强制复制-DC1  
 在 EDGE1 上注册证书之前，必须强制从 DC1 到 2-DC1 的设置复制。 应在 DC1 上完成此操作。  
   
 ### <a name="to-force-replication"></a>强制复制  
@@ -214,7 +214,7 @@ CORP2 域中的计算机必须从 APP1 上的证书颁发机构获取计算机�
   
     3.  请确保所有分区都同步且没有错误。 如果未报告任何错误，请重新运行该命令，然后继续。  
   
-7.  关闭命令提示符窗口。  
+7.  关闭“命令提示符”窗口。  
   
 
 

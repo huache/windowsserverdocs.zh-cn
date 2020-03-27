@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 131520f567da6529e342229a0f6965d3223f928b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 39b6d0b924d4939361cb66109d049a6924e9be3e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404575"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314237"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>步骤2规划远程访问部署
 
@@ -28,7 +28,7 @@ ms.locfileid: "71404575"
 > [!NOTE]  
 > 在继续执行这些任务之前，请参阅[步骤1：规划远程访问基础结构](Step-1-Plan-the-Remote-Access-Infrastructure.md)。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |[规划客户端部署策略](#plan-a-client-deployment-strategy)|确定将配置为 DirectAccess 客户端的托管服务器。|  
 |[规划远程访问服务器部署策略](#plan-a-remote-access-server-deployment-strategy)|规划如何部署远程访问服务器。|  
@@ -55,7 +55,7 @@ ms.locfileid: "71404575"
   
     -   **连接性验证**  
   
-        将创建默认 Web 探测，客户端可将其用于验证到内部网络的连接性。 默认名称是 `https://directaccess-WebProbeHost.<domain_name>`。 应在 DNS 中手动注册该名称。 可以通过 HTTP 或 PING 创建使用其他 web 地址的其他连接性验证程序。 对于每个连接性验证程序，都必须存在 DNS 条目。  
+        将创建默认 Web 探测，客户端可将其用于验证到内部网络的连接性。 默认名称为 `https://directaccess-WebProbeHost.<domain_name>`。 应在 DNS 中手动注册该名称。 可以通过 HTTP 或 PING 创建使用其他 web 地址的其他连接性验证程序。 对于每个连接性验证程序，都必须存在 DNS 条目。  
   
     -   **技术支持电子邮件地址**  
   

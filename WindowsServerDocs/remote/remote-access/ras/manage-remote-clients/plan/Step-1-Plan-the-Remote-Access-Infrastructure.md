@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 71a6d38b9c77b3b8c24b28f78114daa63f5bd527
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7c6b4e4d4975303aef6a2334bce164ce498f7254
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822530"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314286"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>步骤1规划远程访问基础结构
 
@@ -28,7 +28,7 @@ ms.locfileid: "76822530"
   
 本主题介绍规划基础结构的步骤，你可以使用这些步骤设置单个远程访问服务器以远程管理 DirectAccess 客户端。 下表列出了这些步骤，但不需要按特定顺序完成这些规划任务。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |[规划网络拓扑和服务器设置](#plan-network-topology-and-settings)|确定远程访问服务器的位置（在边缘或网络地址转换（NAT）设备或防火墙后面），并规划 IP 寻址和路由。|  
 |[规划防火墙要求](#plan-firewall-requirements)|规划允许远程访问通过边缘防火墙。|  
@@ -64,8 +64,8 @@ ms.locfileid: "76822530"
   
     ||外部网络适配器|内部网络适配器<sup>1，以上</sup>|路由要求|  
     |-|--------------|------------------------|------------|  
-    |IPv4 Internet 和 IPv4 Intranet|配置以下内容：<br/><br/>-具有相应子网掩码的两个静态连续公用 IPv4 地址（仅对 Teredo 是必需的）。<br/>-Internet 防火墙或本地 Internet 服务提供商（ISP）路由器的默认网关 IPv4 地址。 **注意：** 远程访问服务器需要两个连续的公用 IPv4 地址，以便它可用作 Teredo 服务器，基于 Windows 的 Teredo 客户端可以使用远程访问服务器来检测 NAT 设备的类型。|配置以下内容：<br/><br/>-具有相应子网掩码的 IPv4 intranet 地址。<br/>-Intranet 命名空间的特定于连接的 DNS 后缀。 还应在内部接口上配置 DNS 服务器。 **警告：** 不要在任何 intranet 接口上配置默认网关。|若要配置远程访问服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv4 地址空间。<br/>-使用 `route add -p` 或 `netsh interface ipv4 add route` 命令将 IPv4 地址空间添加为远程访问服务器的 IPv4 路由表中的静态路由。|  
-    |IPv6 Internet 和 IPv6 Intranet|配置以下内容：<br/><br/>-使用 ISP 提供的自动配置地址配置。<br/>-使用 `route print` 命令确保指向 ISP 路由器的默认 IPv6 路由存在于 IPv6 路由表中。<br/>-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，以及它们使用的默认首选项比本地 intranet 路由器更高。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 ISP 路由器的更高首选等级可确保远程访问服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br/><br/>因为远程访问服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，阻止连接到远程访问服务器的 Internet 接口的 IPv6 地址。|配置以下内容：<br/><br/>如果使用的不是默认首选项级别，请使用 `netsh interface ipv6 set InterfaceIndex ignoredefaultroutes=enabled` 命令来配置 intranet 接口。 这一命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从 `netsh interface show interface` 命令的显示中获得 intranet 接口的 InterfaceIndex。|如果你拥有 IPv6 Intranet，若要配置远程访问服务器以访问所有的 IPv6 位置，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv6 地址空间。<br/>-使用 `netsh interface ipv6 add route` 命令将 IPv6 地址空间添加为远程访问服务器的 IPv6 路由表中的静态路由。|  
+    |IPv4 Internet 和 IPv4 Intranet|配置下列内容：<br/><br/>-具有相应子网掩码的两个静态连续公用 IPv4 地址（仅对 Teredo 是必需的）。<br/>-Internet 防火墙或本地 Internet 服务提供商（ISP）路由器的默认网关 IPv4 地址。 **注意：** 远程访问服务器需要两个连续的公用 IPv4 地址，以便它可用作 Teredo 服务器，基于 Windows 的 Teredo 客户端可以使用远程访问服务器来检测 NAT 设备的类型。|配置下列内容：<br/><br/>-具有相应子网掩码的 IPv4 intranet 地址。<br/>-Intranet 命名空间的特定于连接的 DNS 后缀。 还应在内部接口上配置 DNS 服务器。 **警告：** 不要在任何 intranet 接口上配置默认网关。|若要配置远程访问服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv4 地址空间。<br/>-使用 `route add -p` 或 `netsh interface ipv4 add route` 命令将 IPv4 地址空间添加为远程访问服务器的 IPv4 路由表中的静态路由。|  
+    |IPv6 Internet 和 IPv6 Intranet|配置下列内容：<br/><br/>-使用 ISP 提供的自动配置地址配置。<br/>-使用 `route print` 命令确保指向 ISP 路由器的默认 IPv6 路由存在于 IPv6 路由表中。<br/>-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，以及它们使用的默认首选项比本地 intranet 路由器更高。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 ISP 路由器的更高首选等级可确保远程访问服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br/><br/>因为远程访问服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，阻止连接到远程访问服务器的 Internet 接口的 IPv6 地址。|配置下列内容：<br/><br/>如果使用的不是默认首选项级别，请使用 `netsh interface ipv6 set InterfaceIndex ignoredefaultroutes=enabled` 命令来配置 intranet 接口。 这一命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从 `netsh interface show interface` 命令的显示中获得 intranet 接口的 InterfaceIndex。|如果你拥有 IPv6 Intranet，若要配置远程访问服务器以访问所有的 IPv6 位置，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv6 地址空间。<br/>-使用 `netsh interface ipv6 add route` 命令将 IPv6 地址空间添加为远程访问服务器的 IPv6 路由表中的静态路由。|  
     |IPv4 Internet 和 IPv6 Intranet|远程访问服务器使用 Microsoft 6to4 适配器接口将默认的 IPv6 路由流量转发到 IPv4 Internet 上的6to4 中继。 在企业网络中未部署本机 IPv6 时，可以使用以下命令为 IPv4 Internet 上的 Microsoft 6to4 中继的 IPv4 地址配置远程访问服务器： `netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`。|||  
   
     > [!NOTE]  
@@ -81,7 +81,7 @@ ms.locfileid: "76822530"
 |---------------|--------|  
 |现有的本机 IPv6 intranet （无需 ISATAP）|使用现有的本机 IPv6 基础结构，可以在远程访问部署过程中指定组织的前缀，远程访问服务器不会将自身配置为 ISATAP 路由器。 请执行以下操作：<br/><br/>1. 若要确保可从 intranet 访问 DirectAccess 客户端，必须修改 IPv6 路由，以便将默认路由流量转发到远程访问服务器。 如果 intranet IPv6 地址空间使用的地址不是单个48位 IPv6 地址前缀，则必须在部署过程中指定相关的组织 IPv6 前缀。<br/>2. 如果你当前已连接到 IPv6 Internet，则必须配置默认路由流量，使其转发到远程访问服务器，然后在远程访问服务器上配置适当的连接和路由，以便默认路由流量将转发到连接到 IPv6 Internet 的设备。|  
 |现有 ISATAP 部署|如果你有现有的 ISATAP 基础结构，则在部署过程中，系统会提示你输入组织的48位前缀，并且远程访问服务器不会将自身配置为 ISATAP 路由器。 若要确保可从 intranet 访问 DirectAccess 客户端，必须修改 IPv6 路由基础结构，以便将默认路由流量转发到远程访问服务器。 需要在要将默认流量转发到 intranet 客户端的现有 ISATAP 路由器上完成此更改。|  
-|无现有 IPv6 连接|当远程访问设置向导检测到服务器没有基于本机或 ISATAP 的 IPv6 连接时，它会自动为 intranet 派生基于6to4 的48位前缀，并将远程访问服务器配置为 ISATAP 路由器以提供 IPv6跨 intranet 连接到 ISATAP 主机。 （仅当服务器具有公用地址时才使用基于6to4 的前缀，否则将从唯一的本地地址范围自动生成前缀。）<br/><br/>若要使用 ISATAP，请执行以下操作：<br/><br/>1. 在 DNS 服务器上为你要启用基于 ISATAP 的连接的每个域注册 ISATAP 名称，以便内部 DNS 服务器可将该 ISATAP 名称解析为远程访问服务器的内部 IPv4 地址。<br/>2. 默认情况下，使用全局查询块列表运行 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 块解析的 DNS 服务器。 若要启用 ISATAP，你必须从阻止列表中删除 ISATAP 名称。 有关详细信息，请参阅[从 DNS 全局查询阻止列表中删除 ISATAP](https://go.microsoft.com/fwlink/p/?LinkId=168593)。<br/><br/>可以解析 ISATAP 名称的基于 Windows 的 ISATAP 主机自动使用远程访问服务器配置一个地址，如下所示：<br/><br/>1. ISATAP 隧道接口上基于 ISATAP 的 IPv6 地址<br/>2. 向 intranet 上的其他 ISATAP 主机提供连接的64位路由<br/>3. 指向远程访问服务器的默认 IPv6 路由。 默认路由确保 intranet ISATAP 主机可以访问 DirectAccess 客户端<br/><br/>当基于 Windows 的 ISATAP 主机获得基于 ISATAP 的 IPv6 地址时，如果目标也是 ISATAP 主机，则它们会开始使用 ISATAP 封装的流量进行通信。 由于 ISATAP 对整个 intranet 使用单个64位子网，因此，通信将从分段的 IPv4 通信模型到使用 IPv6 的单个子网通信模型。 这可能会影响某些 Active Directory 域服务（AD DS）和依赖于 Active Directory 站点和服务配置的应用程序的行为。 例如，如果使用 "Active Directory 站点和服务" 管理单元来配置站点、基于 IPv4 的子网，以及用于将请求转发到站点中的服务器的站点间传输，则 ISATAP 主机不使用此配置。<br/><br/><ol><li>若要配置 Active Directory 站点和服务，以便在 ISATAP 主机内的站点中转发，请为每个 IPv4 子网对象配置一个等效的 IPv6 子网对象，在该对象中，子网的 IPv6 地址前缀表示同一范围的 ISATAP 主机作为 IPv4 子网的地址。 例如，对于 IPv4 子网 192.168.99.0/24 和64位 ISATAP 地址前缀2002：836b：1：8000：：/64，IPv6 子对象的等效 IPv6 地址前缀为2002：836b：1：8000：0：5efe： 192.168.99.0/120。 对于任意 IPv4 前缀长度（在示例中设置为24），可以从公式 96 + IPv4PrefixLength 确定相应的 IPv6 前缀长度。</li><li>对于 DirectAccess 客户端的 IPv6 地址，请添加以下内容：<br/><br/><ul><li>对于基于 Teredo 的 DirectAccess 客户端：范围为2001：0： WWXX： YYZZ：：/64 的 IPv6 子网，其中 WWXX： YYZZ 是远程访问服务器的第一个面向 Internet 的 IPv4 地址的冒号十六进制版本。 。</li><li>对于基于 IP-HTTPS 的 DirectAccess 客户端：范围为2002的 IPv6 子网： WWXX： YYZZ：8100：：/56，其中 WWXX： YYZZ 是远程访问服务器的第一个面向 Internet 的 IPv4 地址（w.x.y.z）的冒号十六进制版本。 。</li><li>对于基于6to4 的 DirectAccess 客户端：一系列从2002开始的基于6to4 的 IPv6 前缀，它们表示由 Internet 编号分配机构（IANA）和区域注册表管理的区域、公共 IPv4 地址前缀。 公用 IPv4 地址前缀的基于6to4 的前缀为2002： WWXX： YYZZ：：/[16 + n]，其中 WWXX： YYZZ 是的冒号十六进制版本<br/><br/>        例如，7.0.0.0/8 范围由美国注册表管理，用于北美的 Internet 号码（ARIN）。 此公共 IPv6 地址范围对应的基于6to4 的前缀为2002:700::/24。 有关 IPv4 公用地址空间的信息，请参阅[IANA IPv4 地址空间注册表](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)。 。</li></ul></li></ol>|  
+|无现有 IPv6 连接|当远程访问设置向导检测到服务器没有基于本机或 ISATAP 的 IPv6 连接时，它会自动为 intranet 派生基于6to4 的48位前缀，并将远程访问服务器配置为 ISATAP 路由器以提供 IPv6跨 intranet 连接到 ISATAP 主机。 （仅当服务器具有公用地址时才使用基于6to4 的前缀，否则将从唯一的本地地址范围自动生成前缀。）<br/><br/>若要使用 ISATAP，请执行以下操作：<br/><br/>1. 在 DNS 服务器上为你要启用基于 ISATAP 的连接的每个域注册 ISATAP 名称，以便内部 DNS 服务器可将该 ISATAP 名称解析为远程访问服务器的内部 IPv4 地址。<br/>2. 默认情况下，使用全局查询块列表运行 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 块解析的 DNS 服务器。 若要启用 ISATAP，你必须从阻止列表中删除 ISATAP 名称。 有关详细信息，请参阅[从 DNS 全局查询阻止列表中删除 ISATAP](https://go.microsoft.com/fwlink/p/?LinkId=168593)。<br/><br/>可以解析 ISATAP 名称的基于 Windows 的 ISATAP 主机自动使用远程访问服务器配置一个地址，如下所示：<br/><br/>1. ISATAP 隧道接口上基于 ISATAP 的 IPv6 地址<br/>2. 向 intranet 上的其他 ISATAP 主机提供连接的64位路由<br/>3. 指向远程访问服务器的默认 IPv6 路由。 默认路由确保 intranet ISATAP 主机可以访问 DirectAccess 客户端<br/><br/>当基于 Windows 的 ISATAP 主机获得基于 ISATAP 的 IPv6 地址时，如果目标也是 ISATAP 主机，则它们会开始使用 ISATAP 封装的流量进行通信。 由于 ISATAP 对整个 intranet 使用单个64位子网，因此，通信将从分段的 IPv4 通信模型到使用 IPv6 的单个子网通信模型。 这可能会影响某些 Active Directory 域服务（AD DS）和依赖于 Active Directory 站点和服务配置的应用程序的行为。 例如，如果使用 "Active Directory 站点和服务" 管理单元来配置站点、基于 IPv4 的子网，以及用于将请求转发到站点中的服务器的站点间传输，则 ISATAP 主机不使用此配置。<br/><br/><ol><li>若要配置 Active Directory 站点和服务，以便在 ISATAP 主机内的站点中转发，请为每个 IPv4 子网对象配置一个等效的 IPv6 子网对象，在该对象中，子网的 IPv6 地址前缀表示同一范围的 ISATAP 主机作为 IPv4 子网的地址。 例如，对于 IPv4 子网 192.168.99.0/24 和64位 ISATAP 地址前缀2002：836b：1：8000：：/64，IPv6 子对象的等效 IPv6 地址前缀为2002：836b：1：8000：0：5efe： 192.168.99.0/120。 对于任意 IPv4 前缀长度（在示例中设置为24），可以从公式 96 + IPv4PrefixLength 确定相应的 IPv6 前缀长度。</li><li>对于 DirectAccess 客户端的 IPv6 地址，请添加以下内容：<br/><br/><ul><li>对于基于 Teredo 的 DirectAccess 客户端：范围为2001：0： WWXX： YYZZ：：/64 的 IPv6 子网，其中 WWXX： YYZZ 是远程访问服务器的第一个面向 Internet 的 IPv4 地址的冒号十六进制版本。 .</li><li>对于基于 IP-HTTPS 的 DirectAccess 客户端：范围为2002的 IPv6 子网： WWXX： YYZZ：8100：：/56，其中 WWXX： YYZZ 是远程访问服务器的第一个面向 Internet 的 IPv4 地址（w.x.y.z）的冒号十六进制版本。 .</li><li>对于基于6to4 的 DirectAccess 客户端：一系列从2002开始的基于6to4 的 IPv6 前缀，它们表示由 Internet 编号分配机构（IANA）和区域注册表管理的区域、公共 IPv4 地址前缀。 公用 IPv4 地址前缀的基于6to4 的前缀为2002： WWXX： YYZZ：：/[16 + n]，其中 WWXX： YYZZ 是的冒号十六进制版本<br/><br/>        例如，7.0.0.0/8 范围由美国注册表管理，用于北美的 Internet 号码（ARIN）。 此公共 IPv6 地址范围对应的基于6to4 的前缀为2002:700::/24。 有关 IPv4 公用地址空间的信息，请参阅[IANA IPv4 地址空间注册表](https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)。 .</li></ul></li></ol>|  
   
 > [!IMPORTANT]  
 > 确保 DirectAccess 服务器的内部接口上没有公共 IP 地址。 如果内部接口上有公共 IP 地址，则通过 ISATAP 的连接可能会失败。  

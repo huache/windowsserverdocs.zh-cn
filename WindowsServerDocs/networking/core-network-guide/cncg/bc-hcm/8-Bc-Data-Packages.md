@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 31e8428f-a482-4734-be1b-213912e34825
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 104e3cfd0525c43857bb37d781f6b2475978238e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a02741b163aafe12c52bf0afb4c235aa9436347a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406385"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318439"
 ---
 # <a name="create-content-server-data-packages-for-web-and-file-content-optional"></a>为 Web 和文件内容创建内容服务器数据包（可选）
 
@@ -28,7 +28,7 @@ ms.locfileid: "71406385"
 >[!IMPORTANT]
 >在执行此过程之前，必须在内容服务器上安装并配置 BranchCache。 此外，如果你计划在内容服务器上更改服务器机密，请在预\-哈希内容之前执行此操作，修改服务器机密将使之前\-生成的哈希值失效。
 
-若要执行该过程，你必须是 Administrators 组的成员。
+若要执行该过程，您必须是 Administrators 组的成员。
 
 ## <a name="to-create-content-server-data-packages"></a>创建内容服务器数据包
 

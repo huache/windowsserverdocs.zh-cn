@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 9adf420b-5a58-4e59-9906-71bd58f757fd
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fe2120310c6c410b410649aff1372f93e0ea5db7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 987b46b1748d5a889aa69823d3492a707948a100
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356344"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318477"
 ---
 # <a name="install-the-branchcache-feature-and-configure-the-hosted-cache-server-by-service-connection-point"></a>通过服务连接点安装 BranchCache 功能并配置托管缓存服务器
 
@@ -26,7 +26,7 @@ ms.locfileid: "71356344"
 >[!IMPORTANT]
 >执行此过程之前，必须将计算机加入域，并使用静态 IP 地址来配置计算机。
 
-若要执行该过程，你必须是 Administrators 组的成员。
+若要执行该过程，您必须是 Administrators 组的成员。
 
 ## <a name="to-install-the-branchcache-feature-and-configure-the-hosted-cache-server"></a>安装 BranchCache 功能并配置托管缓存服务器  
 

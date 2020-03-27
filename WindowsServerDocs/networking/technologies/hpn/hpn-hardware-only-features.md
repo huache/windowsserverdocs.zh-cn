@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: d5a4d5f06cd433fa92c617a3cb36e95d09be3b27
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 7b2030535e65a94e285a3db00779dddb85411c95
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950454"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316987"
 ---
 # <a name="hardware-only-ho-features-and-technologies"></a>仅硬件 (HO) 功能和技术
 
@@ -79,6 +79,6 @@ Windows Server 2012 R2 中没有对超长帧支持的更改。
 
 LSO 允许应用程序将大数据块传递到 NIC，NIC 会将数据分解为可容纳在网络的最大传输单位（MTU）内的数据包。
 
-## <a name="receive-segment-coalescing-rsc"></a>接受段合并 (RSC)
+## <a name="receive-segment-coalescing-rsc"></a>Receive Segment Coalescing (RSC)
 
 接收段合并（也称为大型接收卸载）是一项 NIC 功能，该功能将数据包作为同一流中的一部分到达网络中断，并将它们合并到单个数据包中，然后将它们传递给操作系统。 RSC 在绑定到 Hyper-v 虚拟交换机的 Nic 上不可用。 有关详细信息，请参阅[接收段合并（RSC）](https://docs.microsoft.com/windows-server/networking/technologies/hpn/rsc-in-the-vswitch)。

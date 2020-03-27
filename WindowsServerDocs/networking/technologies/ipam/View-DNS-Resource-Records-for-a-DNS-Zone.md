@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 375feefc-949e-47c3-9e61-35b79e021966
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6e4b5ecd87e4976c0c65403bd63180e1d659e40b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ca2cf532fc9fa7e1f12e5294b40d29863fd42261
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405638"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312331"
 ---
 # <a name="view-dns-resource-records-for-a-dns-zone"></a>查看用于 DNS 区域的 DNS 资源记录
 
@@ -50,7 +50,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![使用条件筛选记录](../../media/View-DNS-Resource-Records-for-a-DNS-Zone/ipam_DNSzones_01d.jpg)  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [DNS 区域管理](DNS-Zone-Management.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 334b090d-bec4-4e67-8307-13831dbdd1d8
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 11f392e99803f0e0ddd0f8b62c9dbca5827a831c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ce3a0dd33ff105fa7cc36305048b8a311577aa21
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405935"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317068"
 ---
 # <a name="network-controller-high-availability"></a>网络控制器高可用性
 
@@ -60,7 +60,7 @@ ms.locfileid: "71405935"
 - **快速故障转移**。 Service Fabric 提供了极快的故障转移。 多个热辅助服务副本始终可用。 如果由于硬件故障而导致操作系统实例变得不可用，则会立即将一个辅助副本升级为主副本。 
 - **规模的灵活性**。 你可以轻松快速地从几个实例扩展到多个实例，然后根据资源需求恢复到几个实例。 
 
-### <a name="persistent-storage"></a>永久性存储
+### <a name="persistent-storage"></a>持久性存储
 
 网络控制器应用程序的配置和状态具有较大的存储要求。 应用程序还必须能够在计划内和计划外中断时使用。 为此，Service Fabric 提供了一个 \(KVS\) 的键-值存储，该存储是一个复制的事务和持久存储区。
 

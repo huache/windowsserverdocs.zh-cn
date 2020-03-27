@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: bdac7d2a-25b4-4f61-bed1-b290700c18f3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f675322c32db0816d5afb155d53fad9f096ad650
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0568bf051fee3c9ee4fd5d1f403f5110f7669ad3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356691"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319344"
 ---
 # <a name="configure-an-existing-file-server-as-a-content-server"></a>将现有的文件服务器配置为内容服务器
 
@@ -37,7 +37,7 @@ ms.locfileid: "71356691"
   
 ### <a name="to-install-the-branchcache-for-network-files-role-service"></a>安装网络文件的 BranchCache 角色服务  
   
-1.  在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 "添加角色和功能向导" 将打开。 单击“下一步”。  
+1.  在“服务器管理器”中，单击“管理”，然后单击“添加角色和功能”。 "添加角色和功能向导" 将打开。 单击 **“下一步”** 。  
   
 2.  在 "**选择安装类型**" 中，确保选择了 "**基于角色或基于功能的安装**"，然后单击 "**下一步**"。  
   
@@ -50,7 +50,7 @@ ms.locfileid: "71356691"
     > [!TIP]  
     > 如果尚未执行此操作，建议您同时选中 "**重复数据删除**" 复选框。  
   
-    单击“下一步”。  
+    单击 **“下一步”** 。  
   
 6.  在 "**选择功能**" 中，单击 "**下一步**"。  
   

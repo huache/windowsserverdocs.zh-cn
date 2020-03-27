@@ -7,14 +7,14 @@ ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: grcusanz
-author: shortpatti
+author: eross-msft
 ms.date: 08/27/2018
-ms.openlocfilehash: 7f385e094ca70027d1b036bf53af23c1fc4a1bd1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fbb173224797d32bd05fbdadb1bf4cefdc475cb6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406057"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317604"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>升级、备份和还原 SDN 基础结构
 
@@ -43,7 +43,7 @@ SDN 基础结构可以从 Windows Server 2016 升级到 Windows Server 2019。 �
 
 2. 在第一个网络控制器 VM 上，安装所有更新并重新启动。
 
-3. 在继续到下一个网络控制器 VM 之前，请`get-networkcontrollernode`使用 cmdlet 检查已更新并重新启动的节点的状态。
+3. 在继续到下一个网络控制器 VM 之前，请使用 `get-networkcontrollernode` cmdlet 检查已更新并重新启动的节点的状态。
 
 4. 在重新启动过程中，请等待网络控制器节点关闭，然后重新打开。<p>重新启动 VM 后，可能需要几分钟时间才能进入 " **_已启动" 状态。_** 有关输出的示例，请参阅 
 
@@ -64,9 +64,9 @@ SDN 基础结构可以从 Windows Server 2016 升级到 Windows Server 2019。 �
     f. 对于包含备用网关的每个其他主机重复此步骤。<p>如果不保留备用网关，请对所有剩余主机执行相同的步骤。
 
 
-### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>例如：使用 networkcontrollernode cmdlet 
+### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>示例：使用 networkcontrollernode cmdlet 
 
-在此示例中，你将在其中一个`get-networkcontrollernode`网络控制器 vm 中查看 cmdlet 的输出。  
+在此示例中，你将看到 `get-networkcontrollernode` cmdlet 的输出从一个网络控制器 Vm 中运行。  
 
 在示例输出中看到的节点状态如下：
 
@@ -80,7 +80,7 @@ SDN 基础结构可以从 Windows Server 2016 升级到 Windows Server 2019。 �
 更新所有网络控制器节点后，网络控制器会在一小时内更新网络控制器群集中运行的微服务。 
 
 >[!TIP]
->可以使用`update-networkcontroller` cmdlet 触发立即更新。
+>可以使用 `update-networkcontroller` cmdlet 触发立即更新。
 
 
 ```Powershell
@@ -107,8 +107,8 @@ NodeCertificate :
 Status          : Up
 ```
 
-### <a name="example-use-the-update-networkcontroller-cmdlet"></a>例如：使用 networkcontroller cmdlet
-在此示例中，你将看到`update-networkcontroller` cmdlet 的输出，用于强制网络控制器更新。 
+### <a name="example-use-the-update-networkcontroller-cmdlet"></a>示例：使用 networkcontroller cmdlet
+在此示例中，你将看到 `update-networkcontroller` cmdlet 的输出，用于强制更新网络控制器。 
 
 >[!IMPORTANT]
 >如果没有更多要安装的更新，请运行此 cmdlet。
@@ -125,7 +125,7 @@ NetworkControllerClusterVersion NetworkControllerVersion
 
 定期备份网络控制器数据库可确保在发生灾难或数据丢失时实现业务连续性。  备份网络控制器 Vm 并不能确保会话跨多个网络控制器节点继续。
 
-**要求**
+**要求：**
 * 对共享和文件系统具有读/写权限的 SMB 共享和凭据。
 * 如果还使用 GMSA 安装了网络控制器，则可以选择使用组托管服务帐户（GMSA）。
 
@@ -138,15 +138,15 @@ NetworkControllerClusterVersion NetworkControllerVersion
    >[!IMPORTANT]
    >在网络控制器备份完成之前，请不要重新启动 SCVMM 服务。
 
-3. 用`new-networkcontrollerbackup` cmdlet 备份网络控制器数据库。
+3. 用 `new-networkcontrollerbackup` cmdlet 备份网络控制器数据库。
 
-4. 通过`get-networkcontrollerbackup` cmdlet 检查备份的完成和成功情况。
+4. 通过 `get-networkcontrollerbackup` cmdlet 检查备份的完成和成功情况。
 
 5. 如果使用 SCVMM，请启动 SCVMM 服务。
 
 
 
-### <a name="example-backing-up-the-network-controller-database"></a>例如：备份网络控制器数据库
+### <a name="example-backing-up-the-network-controller-database"></a>示例：备份网络控制器数据库
 
 ```Powershell
 $URI = "https://NC.contoso.com"
@@ -177,7 +177,7 @@ $BackupProperties.Credential = $ShareCredential
 $Backup = New-NetworkControllerBackup -ConnectionURI $URI -Credential $Credential -Properties $BackupProperties -ResourceId $BackupTime -Force
 ```
 
-### <a name="example-checking-the-status-of-a-network-controller-backup-operation"></a>例如：检查网络控制器备份操作的状态
+### <a name="example-checking-the-status-of-a-network-controller-backup-operation"></a>示例：检查网络控制器备份操作的状态
 
 ```Powershell
 PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential -ResourceId $Backup.ResourceId
@@ -286,7 +286,7 @@ PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential
 
 5. 停止 SLB Mux Vm。
 
-6. 用`new-networkcontrollerrestore` cmdlet 还原网络控制器。
+6. 用 `new-networkcontrollerrestore` cmdlet 还原网络控制器。
 
 7. 检查 restore **ProvisioningState**以了解还原已成功完成的时间。
 
@@ -309,7 +309,7 @@ Fetching ResourceType:     loadbalancerMuxes
 Fetching ResourceType:     Gateways
 ```
 
-### <a name="example-restoring-a-network-controller-database"></a>例如：还原网络控制器数据库
+### <a name="example-restoring-a-network-controller-database"></a>示例：还原网络控制器数据库
  
 ```Powershell
 $URI = "https://NC.contoso.com"
@@ -326,7 +326,7 @@ $RestoreTime = (Get-Date).ToString("s").Replace(":", "_")
 New-NetworkControllerRestore -ConnectionURI $URI -Credential $Credential -Properties $RestoreProperties -ResourceId $RestoreTime -Force
 ```
 
-### <a name="example-checking-the-status-of-a-network-controller-database-restore"></a>例如：检查网络控制器数据库还原状态
+### <a name="example-checking-the-status-of-a-network-controller-database-restore"></a>示例：检查网络控制器数据库还原的状态
 
 ```PowerShell
 PS C:\ > get-networkcontrollerrestore -connectionuri $uri -credential $cred -ResourceId $restoreTime | convertto-json -depth 10

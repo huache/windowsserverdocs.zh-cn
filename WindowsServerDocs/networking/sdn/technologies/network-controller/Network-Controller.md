@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 13f535b9a91f26b30600b637b46817cfa33ccd7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ad13e41e756f0185a748fe9e17df64c71a8754bc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355646"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317074"
 ---
 # <a name="network-controller"></a>网络控制器
 
@@ -32,7 +32,7 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 > - [网络控制器的部署后步骤](post-deploy-steps-nc.md)
 > - [网络控制器 Cmdlet](https://technet.microsoft.com/library/mt576401.aspx) 
 
-## <a name="bkmk_overview"></a>网络控制器概述
+## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>网络控制器概述
 
 网络控制器是高度可用且可缩放的服务器角色，它提供一个应用程序编程接口 \(API\)，使网络控制器可以与网络通信，另一个 API 用于与网络控制器进行通信。
 
@@ -70,7 +70,7 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 
 若要在更大的数据中心内实现高可用性，可以使用安装在三个或更多 Hyper-v 主机上的三个 Vm 来部署群集。 有关详细信息，请参阅[网络控制器高可用性](network-controller-high-availability.md)。
 
-## <a name="bkmk_features"></a>网络控制器功能
+## <a name="network-controller-features"></a><a name="bkmk_features"></a>网络控制器功能
 
 以下网络控制器功能可用于配置和管理虚拟和物理网络设备和服务。  
   
@@ -85,25 +85,25 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 >[!IMPORTANT]
 >网络控制器的备份和还原目前在 Windows Server 2016 中不可用。
   
-### <a name="bkmk_firewall"></a>防火墙管理
+### <a name="firewall-management"></a><a name="bkmk_firewall"></a>防火墙管理
 
 借助此网络控制器功能，你能够为你的工作负荷 VM 配置和管理同时针对数据中心中的横向和纵向网络流量的允许/拒绝防火墙访问控制规则。 工作负荷 VM 的 vSwitch 端口将查明防火墙规则，以便将其分布到数据中心中的工作负荷上。 通过使用 Northbound API，你可以从工作负荷 VM 同时为传入和传出流量定义防火墙规则。 还可以配置每条防火墙规则，以记录该规则允许或拒绝的流量。  
 
 有关详细信息，请参阅[数据中心防火墙概述](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)。
 
-### <a name="bkmk_slb"></a>软件负载平衡器管理
+### <a name="software-load-balancer-management"></a><a name="bkmk_slb"></a>软件负载平衡器管理
 
 此网络控制器功能可使你允许多个服务器承载相同的工作负荷，从而提供高可用性和可扩展性。  
   
 有关详细信息，请参阅用于[SDN &#40;的&#41;软件负载平衡 SLB](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。  
   
-### <a name="bkmk_virtual"></a>虚拟网络管理
+### <a name="virtual-network-management"></a><a name="bkmk_virtual"></a>虚拟网络管理
 
 此网络控制器功能允许你部署和配置 Hyper-V 网络虚拟化（包括个别 VM 上的 Hyper-V 虚拟交换机和虚拟网络适配器），并可用于存储和分发虚拟网络策略。
 
 网络控制器同时支持网络虚拟化通用路由封装 (NVGRE) 和虚拟可扩展局域网 (VXLAN)。
 
-### <a name="bkmk_gateway"></a>RAS 网关管理
+### <a name="ras-gateway-management"></a><a name="bkmk_gateway"></a>RAS 网关管理
 
 此网络控制器功能可用于部署、配置和管理作为 RAS 网关池成员的虚拟机（Vm），从而向租户提供网关服务。 网络控制器允许您通过以下网关功能自动部署运行 RAS 网关的 Vm：
 

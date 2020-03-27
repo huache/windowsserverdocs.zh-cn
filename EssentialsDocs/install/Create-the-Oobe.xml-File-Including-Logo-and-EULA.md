@@ -1,9 +1,9 @@
 ---
 title: 创建包含徽标和 EULA 的 Oobe.xml 文件
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 8a7b3cc1-21bb-4344-8110-f5d5959b370d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5d7dac41ba6d6f73b0d3d65d3481fe45ff99a6bc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 58d98aa84b8851e3226ebc76c86cffd574400c42
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433609"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312049"
 ---
 # <a name="create-the-oobexml-file-including-logo-and-eula"></a>创建包含徽标和 EULA 的 Oobe.xml 文件
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 你可以通过使用 Oobe.xml 文件将你自己的最终用户许可协议 (EULA) 添加到“初始配置”中。 Oobe.xml 文件用于为呈现给最终用户的“初始配置”、“欢迎使用 Windows”和其他页面提供文本和图像。 可以添加多个 Oobe.xml 文件，以根据最终用户选择的语言和国家/地区自定义内容。 有关详细信息，请参阅 [Windows 8 的 Windows 评估和部署工具包](https://go.microsoft.com/fwlink/?LinkId=248694) 文档。  
   
@@ -31,11 +31,11 @@ ms.locfileid: "66433609"
   
 1. 在文本编辑器（例如记事本）中打开 Oobe.xml 文件。  
   
-2. 在 < logopath\>< / logopath\>标记中，输入徽标文件的绝对路径。 此文件应包含一个 240 x 100 像素的 32 位可移植网络图形 (.png) 文件。  
+2. 在 < h\></logopath\> 标记中，输入徽标文件的绝对路径。 此文件应包含一个 240 x 100 像素的 32 位可移植网络图形 (.png) 文件。  
   
-3. 在 < eulafilename\>< / eulafilename\>标记中，输入 EULA 文件的绝对路径。 EULA 文件必须为 RTF 格式 (.rtf) 文件。  
+3. 在 < eulafilename&gt\></eulafilename\> 标记中，输入 EULA 文件的绝对路径。 EULA 文件必须为 RTF 格式 (.rtf) 文件。  
   
-4. 在 < 名称\>< / 名称\>标记中，输入你的公司名称。  
+4. 在 < 名称\></name\> 标记中，输入公司名称。  
   
     以下示例显示 Oobe.xml 文件中的标记：  
   
@@ -53,15 +53,15 @@ ms.locfileid: "66433609"
   
    ```  
   
-5. 保存该文件。  
+5. 保存文件。  
   
 6. 将 Oobe.xml 文件置于下列任一位置：  
   
    |Oobe.xml 位置|用于确定位置的条件|  
    |-----------------------|----------------------------------------|  
-   |%windir%\system32\oobe\info\|服务器将在一个国家/地区和单语言版系统中进行发布。|  
-   |%windir%\system32\oobe\info\default\\<language\>|服务器将在一个国家/地区并采用多种语言系统进行发布。|  
-   |%windir%\system32\oobe\info\\< 国家/地区 > \ 和 %windir%\system32\oobe\info\\< 国家/地区 >\\< 语言\>\|服务器发布到多个国家/地区 /区域和设置需要在每个国家/地区/区域模式中，每个都有一种语言的自定义项。 其中，< 国家/地区 > 是十进制版地理位置标识符 (GeoID) 的国家/地区或区域的部署服务器，并 < 语言\>是十进制版区域设置标识符 (LCID)。|  
+   |%windir%\system32\oobe\info\|服务器在单个国家/地区和单语言系统中传送。|  
+   |%windir%\system32\oobe\info\default\\< 语言\>|服务器将在一个国家/地区并采用多种语言系统进行发布。|  
+   |%windir%\system32\oobe\info\\< 国家/地区 > \ 和%windir%\system32\oobe\info\\< 国家/地区 >\\< 语言\>\|将服务器运送到多个国家/地区，并且这些设置需要基于每个国家/地区的自定义，每个都使用一种语言。 其中 < "国家/地区" > 是部署服务器所在国家或地区的地理位置标识符（GeoID）的十进制版本，< language\> 是区域设置标识符（LCID）的十进制版本。|  
   
    如果你有包含白色文本的备用公司徽标，由于背景是蓝色的，所以在设置流程中的显示效果可能更佳。  你可以通过设置注册表项和值来选择性地指定此徽标。  
   
@@ -71,7 +71,7 @@ ms.locfileid: "66433609"
   
 2.  在搜索框中，键入 **regedit**，然后单击“Regedit”应用程序。  
   
-3.  在导航窗格中，导航至  **“HKEY_LOCAL_MACHINE”** ，展开 **“SOFTWARE”** ，展开 **“Microsoft”** ，展开 **“Windows Server”** 。 如果 OEM 注册表项不存在，请按照如下步骤创建该注册表项：  
+3.  在导航窗格中，导航至 **“HKEY_LOCAL_MACHINE”** ，展开 **“SOFTWARE”** ，展开 **“Microsoft”** ，展开 **“Windows Server”** 。 如果 OEM 注册表项不存在，请按照如下步骤创建该注册表项：  
   
     1.  右键单击 **“Windows Server”** ，单击 **“新建”** ，然后单击 **“项”** 。  
   
@@ -87,9 +87,9 @@ ms.locfileid: "66433609"
   
 8.  输入包含徽标图像的路径，然后单击“确定”。  
   
-## <a name="see-also"></a>请参阅  
- [Windows Server Essentials ADK 入门](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+## <a name="see-also"></a>另请参阅  
+ [入门 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
- [其他自定义设置](Additional-Customizations.md)   
- [部署准备的映像](Preparing-the-Image-for-Deployment.md)   
+ [其他自定义](Additional-Customizations.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)

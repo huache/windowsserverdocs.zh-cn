@@ -11,14 +11,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e692384e9416e21e00556af6ada9af8df1713a03
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a8628404de8a1b9caccc7f7f51b063cabb1caf27
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405861"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317207"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Windows Server 2016 中的 hyper-v 网络虚拟化技术详细信息
 
@@ -55,13 +55,13 @@ Windows Server 2016 中提供了两种 HNV 实现： HNVv1 和 HNVv2。
     > [!IMPORTANT]  
     > 本主题重点介绍 HNVv2。  
 
-### <a name="VirtualNetworks"></a>虚拟网络  
+### <a name="virtual-network"></a><a name="VirtualNetworks"></a>虚拟网络  
 
 -   每个虚拟网络由一个或多个虚拟子网组成。 虚拟网络构成隔离边界，在该边界内虚拟网络中的虚拟机只能相互通信。 传统上，这种隔离是使用具有隔离 IP 地址范围和 802.1 q 标记或 VLAN ID 的 Vlan 强制实施的。 但对于 HNV，将使用 NVGRE 或 VXLAN 封装来创建覆盖网络，从而能够在客户或租户之间重叠 IP 子网。  
 
 -   每个虚拟网络在主机上都有一个唯一的路由域 ID （RDID）。 此 RDID 大致映射到资源 ID 以标识网络控制器中的虚拟网络 REST 资源。 使用带有追加的资源 ID 的统一资源标识符（URI）命名空间引用虚拟网络 REST 资源。  
 
-### <a name="VirtualSubnets"></a>虚拟子网  
+### <a name="virtual-subnets"></a><a name="VirtualSubnets"></a>虚拟子网  
 
 -   虚拟子网为同一个虚拟子网中的虚拟机实行第三层 IP 子网语义。 虚拟子网形成一个广播域（与 VLAN 类似），并使用 "NVGRE 租户网络 ID" （TNI）或 "VXLAN 网络标识符（VNI）" 字段强制实施隔离。  
 
@@ -233,7 +233,7 @@ Windows Server 2012 R2 的 PA 共享方案为每个主机每个 VSID 一个 PA�
 
 -   然后，VFP 引擎将数据包转发到目标 VM 连接到的 vSwitch 端口。  
 
-Fabrikam 公司 **Web** 与 **SQL** 虚拟机之间用于通信的类似进程针对 Fabrikam 公司使用 HNV 策略设置。因此，在使用 HNV 时，Fabrikam 公司和 Contoso 公司虚拟机的交互就像在其原有的 Intranet 中进行一样。 尽管两家公司虚拟机使用的是相同的 IP 地址，也不会互相影响。  
+对于 Fabrikam 公司，Fabrikam 公司 **Web** 与  **SQL** 虚拟机之间使用了针对 Fabrikam 公司的 HNV 策略设置。因此，在使用 HNV 时，Fabrikam 公司和 Contoso 公司虚拟机的交互犹如在其原有的 Intranet 中进行。 尽管两家公司虚拟机使用的是相同的 IP 地址，也不会互相影响。  
 
 不同地址（Ca 和 PAs）、Hyper-v 主机的策略设置以及用于入站和出站虚拟机通讯的 CA 与 PA 之间的地址转换使用 NVGRE 键或 VLXAN VNID 隔离这些服务器集。 同时，虚拟化映射以及转化将虚拟网络构架从物理网络基础结构中脱离出来。 尽管 Contoso **SQL** 和 **Web** 以及 Fabrikam **SQL** 和**Web** 位于其自己的 CA IP 子网 (10.1.1/24)，两者的物理部署在两台有着不同的 PA 子网（分别为 192.168.1/24 和 192.168.2/24）的主机上进行。 这意味着通过 HNV，可以进行跨子网虚拟机配置和实时迁移。  
 
@@ -291,11 +291,11 @@ HNV 策略由主机代理进行编程。 每个虚拟机网络适配器都配置
 ## <a name="summary"></a>摘要  
 基于云的数据中心能带来许多好处，如改善可扩展性和资源使用情况。 为了实现这些潜在的好处，需要能基本解决动态环境中多租户可扩展性问题的技术。 HNV 旨在通过分离物理网络拓扑的虚拟网络拓拟来解决这些问题，并提高数据中心的运营效率。 基于现有标准，HNV 在当前的数据中心运行，并使用现有的 VXLAN 基础结构进行操作。 使用 HNV 的客户现在可以将其数据中心整合到私有云中，或者将其数据中心无缝扩展到使用混合云的托管服务器提供商环境。  
 
-## <a name="BKMK_LINKS"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>另请参阅  
 若要了解有关 HNVv2 的详细信息，请参阅以下链接：  
 
 
-|       内容类型       |                                                                                                                                              引用                                                                                                                                              |
+|       内容类型       |                                                                                                                                              参考                                                                                                                                              |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **社区资源**  |                                                                -   [私有云体系结构博客](https://blogs.technet.com/b/privatecloud)<br />-提出问题： [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)                                                                |
 |         **RFC**          |                                                                   -   [NVGRE 草案 RFC](https://www.ietf.org/id/draft-sridharan-virtualization-nvgre-07.txt)<br />-   [VXLAN-RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                    |
