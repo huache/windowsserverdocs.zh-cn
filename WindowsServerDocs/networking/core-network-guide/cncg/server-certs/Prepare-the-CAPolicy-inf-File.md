@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2af3a621991627addb94238e84cceb357fb47731
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4df23cd64bcf3bf9c27190908fb5f2a48b30b833
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588090"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318294"
 ---
 # <a name="capolicyinf-syntax"></a>Capolicy.inf 语法
 >   适用于：Windows Server（半年频道）、Windows Server 2016
@@ -42,7 +42,7 @@ Capolicy.inf 是：
 
 -   _值_–参数，并显示在等号的右侧。
 
-在下面的示例中， **[Version]** 为部分，**签名**是密钥，而 **"\$Windows NT \$"** 是值。
+在下面的示例中， **[Version]** 为部分，**签名**是密钥，而 **"\$Windows NT\$"** 为值。
 
 示例：
 
@@ -193,7 +193,7 @@ Certutil -setreg CACRLDeltaPeriodUnits 1
 
 在安装 CA 后，你可能不希望立即颁发任何证书，因此你可以使用 LoadDefaultTemplates 设置来阻止将默认模板添加到企业 CA。 如果未在 CA 上配置模板，则它不会颁发证书。
 
-**内容: alternatesignaturealgorithm**将 ca 配置为支持 ca 证书和证书请求的 PKCS \#1 2.1 签名格式。 当在根 CA 上设置为1时，CA 证书将包含 PKCS \#1 2.1 签名格式。 如果在从属 CA 上设置，从属 CA 将创建包含 PKCS \#1 2.1 版签名格式的证书请求。
+**内容: alternatesignaturealgorithm**将 ca 配置为支持 PKCS\#1 v 2.1 签名格式用于 CA 证书和证书申请。 当在根 CA 上设置为1时，CA 证书将包含 PKCS\#1 2.1 版签名格式。 如果在从属 CA 上设置，从属 CA 将创建包含 PKCS\#1 V 2.1 签名格式的证书请求。
 
 **ForceUTF8**将 Subject 和颁发者可分辨名称中的相对可分辨名称（RDNs）的默认编码更改为 utf-8。 只有那些支持 UTF-8 的 RDNs （例如，由 RFC 定义为目录字符串类型的那些）受影响。 例如，域组件（DC）的 RDN 支持编码为 IA5 或 UTF-8，而国家 RDN （C）仅支持编码为可打印字符串。 因此，ForceUTF8 指令会影响 DC RDN，但不会影响 C RDN。
 
@@ -254,4 +254,4 @@ Certutil -setreg CACRLDeltaPeriodUnits 1
 9. 关闭记事本。
 
 > [!IMPORTANT]
->   在 Capolicy.inf 中，可以看到有一行指定 URL https://pki.corp.contoso.com/pki/cps.txt 。 CAPolicy.inf 的“内部策略”部分只会作为你会如何指定证书实行声明 (CPS) 的位置的示例出现。 在本指南中，不会指示您创建证书实践语句（CPS）。
+>   在 Capolicy.inf 中，可以看到有一行指定 URL https://pki.corp.contoso.com/pki/cps.txt。 CAPolicy.inf 的“内部策略”部分只会作为你会如何指定证书实行声明 (CPS) 的位置的示例出现。 在本指南中，不会指示您创建证书实践语句（CPS）。

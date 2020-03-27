@@ -10,15 +10,15 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fdee02ec-3a7e-473e-9784-2889dc1b6dbb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 2f21301e0669fb593acda47787fed5f396618daf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 75b6ae2f2c7d6b4ab28aaedcc7309ccba3dcbd02
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405553"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316374"
 ---
 # <a name="troubleshooting-nic-teaming"></a>NIC 组合疑难解答
 
@@ -57,9 +57,9 @@ Enable-NetAdapter *
 ## <a name="related-topics"></a>相关主题  
 - [NIC 组合](NIC-Teaming.md)：在本主题中，我们将概述 Windows Server 2016 中的网络接口卡（NIC）组合。 NIC 组合允许在一个或多个基于软件的虚拟网络适配器之间分组到32物理以太网网络适配器。 这些虚拟网络适配器可以提高性能，并在网络适配器发生故障时提供容错能力。   
 
-- [NIC 组合 MAC 地址使用和管理](NIC-Teaming-MAC-Address-Use-and-Management.md)：当你使用 "交换机独立" 模式配置 NIC 组，并使用 "地址哈希" 或 "动态负载" 分发时，团队将在出站流量上使用主要 NIC 组成员的媒体访问控制（MAC）地址。 主 NIC 组成员是操作系统从一组初始团队成员中选择的网络适配器。
+- [NIC 组合 MAC 地址使用和管理](NIC-Teaming-MAC-Address-Use-and-Management.md)：在使用 "交换机独立" 模式配置 nic 组，并使用 "地址哈希" 或 "动态负载分配" 时，团队将使用主 NIC 组成员在出站流量上的媒体访问控制（MAC）地址。 主 NIC 组成员是操作系统从一组初始团队成员中选择的网络适配器。
 
-- [NIC 组合设置](nic-teaming-settings.md)：在本主题中，我们将为你概述 NIC 组属性，例如组合和负载平衡模式。 此外，我们还会向你介绍备用适配器设置和主团队接口属性的详细信息。 如果 NIC 组中至少有两个网络适配器，则无需指定备用适配器来实现容错。
+- [Nic 组合设置](nic-teaming-settings.md)：在本主题中，我们将为你概述 NIC 组属性，例如组合和负载平衡模式。 此外，我们还会向你介绍备用适配器设置和主团队接口属性的详细信息。 如果 NIC 组中至少有两个网络适配器，则无需指定备用适配器来实现容错。
   
 
 

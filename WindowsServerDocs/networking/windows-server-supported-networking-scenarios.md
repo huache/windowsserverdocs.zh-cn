@@ -7,14 +7,14 @@ ms.technology: networking
 ms.topic: article
 ms.date: ''
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f338ddf0a7d3a4fe41277ddbf49b0c3db34ae11b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e2e59b70b102e7ca942e2aafb8b216fecd62fc32
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395695"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315150"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Windows Server 支持的网络方案
 
@@ -24,7 +24,7 @@ ms.locfileid: "71395695"
 >[!IMPORTANT]
 >对于所有生产方案，请使用原始设备制造商提供的最新签名硬件驱动程序 \(OEM\) 或独立硬件供应商 \(IHV\)。
   
-## <a name="bkmk_supp"></a>支持的网络方案
+## <a name="supported-networking-scenarios"></a><a name="bkmk_supp"></a>支持的网络方案
 
 此部分包含有关 Windows Server 2016 支持的网络方案的信息，并包括以下方案类别。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71395695"
 
 - [切换嵌入组合 \(设置\) 方案](#bkmk_set)
   
-### <a name="bkmk_sdn"></a>软件定义的网络（SDN）方案
+### <a name="software-defined-networking-sdn-scenarios"></a><a name="bkmk_sdn"></a>软件定义的网络（SDN）方案
  
 你可以使用以下文档，使用 Windows Server 2016 部署 SDN 方案。  
   
@@ -49,7 +49,7 @@ ms.locfileid: "71395695"
   
 有关详细信息，请参阅[软件定义&#40;的&#41;网络 SDN](sdn/software-defined-networking.md)。  
   
-#### <a name="bkmk_netc"></a>网络控制器方案
+#### <a name="network-controller-scenarios"></a><a name="bkmk_netc"></a>网络控制器方案
 
 网络控制器方案使你能够：  
   
@@ -61,7 +61,7 @@ ms.locfileid: "71395695"
   
 有关详细信息，请参阅[网络控制器](sdn/technologies/network-controller/Network-Controller.md)。  
   
-#### <a name="bkmk_netf"></a>网络功能虚拟化（NFV）方案  
+#### <a name="network-function-virtualization-nfv-scenarios"></a><a name="bkmk_netf"></a>网络功能虚拟化（NFV）方案  
 NFV 方案使你能够：  
   
 -   部署并使用软件负载平衡器来分发 northbound 和 southbound 流量。  
@@ -84,7 +84,7 @@ NFV 方案使你能够：
   
 有关详细信息，请参阅[网络功能虚拟化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)。  
   
-### <a name="bkmk_netp"></a>网络平台方案
+### <a name="network-platform-scenarios"></a><a name="bkmk_netp"></a>网络平台方案
 
 对于本部分中的方案，Windows Server 网络团队支持使用任何 Windows Server 2016 认证驱动程序。 请咨询网络接口卡 \(NIC\) 制造商联系，以确保具有最新的驱动程序更新。
   
@@ -98,7 +98,7 @@ NFV 方案使你能够：
   
 有关详细信息，请[参阅远程直接内存&#40;访问&#41; RDMA 和交换机嵌入式&#40;组合&#41;集](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。  
   
-#### <a name="bkmk_switch"></a>Hyper-v 虚拟交换机方案
+#### <a name="hyper-v-virtual-switch-scenarios"></a><a name="bkmk_switch"></a>Hyper-v 虚拟交换机方案
 
 Hyper-v 虚拟交换机方案使你能够：  
   
@@ -112,7 +112,7 @@ Hyper-v 虚拟交换机方案使你能够：
   
 有关详细信息，请[参阅远程直接内存&#40;访问&#41; RDMA 和交换机嵌入式&#40;组合&#41;集](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
   
-### <a name="bkmk_dns"></a>DNS 服务器方案
+### <a name="dns-server-scenarios"></a><a name="bkmk_dns"></a>DNS 服务器方案
 
 DNS 服务器方案使你能够：  
   
@@ -138,7 +138,7 @@ DNS 服务器方案使你能够：
   
 有关详细信息，请参阅[Windows server 2016 中的 Dns 客户端中的新增功能](dns/What-s-New-in-DNS-Client.md)和[windows SERVER 2016 中 dns 服务器的](dns/What-s-New-in-DNS-Server.md)新增功能。  
   
-### <a name="bkmk_ipam"></a>具有 DHCP 和 DNS 的 IPAM 方案
+### <a name="ipam-scenarios-with-dhcp-and-dns"></a><a name="bkmk_ipam"></a>具有 DHCP 和 DNS 的 IPAM 方案
 
 IPAM 方案使你能够：  
   
@@ -152,7 +152,7 @@ IPAM 方案使你能够：
   
     有关详细信息，请参阅[管理 IPAM](technologies/ipam/Manage-IPAM.md)。  
   
-### <a name="bkmk_nicteam"></a>NIC 组合方案
+### <a name="nic-teaming-scenarios"></a><a name="bkmk_nicteam"></a>NIC 组合方案
 
 NIC 组合方案使你能够：  
   
@@ -169,7 +169,7 @@ NIC 组合方案使你能够：
 
 有关详细信息，请参阅[NIC 组合](technologies/nic-teaming/NIC-Teaming.md)。 
 
-### <a name="bkmk_set"></a>切换嵌入组合 \(设置\) 方案
+### <a name="switch-embedded-teaming-set-scenarios"></a><a name="bkmk_set"></a>切换嵌入组合 \(设置\) 方案
 
 SET 是一种备用 NIC 组合解决方案，可用于在 Windows Server 2016 中包含 Hyper-v 的环境和软件定义的网络（SDN）堆栈。 将一些 NIC 组合功能集成到 Hyper-v 虚拟交换机。 
 
@@ -177,7 +177,7 @@ SET 是一种备用 NIC 组合解决方案，可用于在 Windows Server 2016 �
   
  
   
-## <a name="bkmk_unsupp"></a>不支持的网络方案  
+## <a name="unsupported-networking-scenarios"></a><a name="bkmk_unsupp"></a>不支持的网络方案  
 Windows Server 2016 不支持以下网络方案。  
   
 -   基于 VLAN 的租户虚拟网络。  

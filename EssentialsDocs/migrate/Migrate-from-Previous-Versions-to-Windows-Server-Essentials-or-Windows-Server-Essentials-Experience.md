@@ -2,18 +2,18 @@
 title: 从早期版本迁移到 Windows Server Essentials 或 Windows Server Essentials 体验
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f58a8f83fed4185ee51145b988cfef1074f889c7
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: 55b31785de6e17232a717d534fcb21a24d9052bd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945141"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318897"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>从早期版本迁移到 Windows Server Essentials 或 Windows Server Essentials 体验
 
@@ -54,9 +54,9 @@ ms.locfileid: "74945141"
   
    某些迁移过程需要以管理员身份打开命令提示符窗口。 以下过程介绍如何执行此操作。  
   
-###  <a name="BKMK_OpenACommandPromptAsAdmin"></a>在源服务器上以管理员身份打开 "命令提示符" 窗口  
+###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>在源服务器上以管理员身份打开 "命令提示符" 窗口  
   
-1.  单击**开始**。  
+1.  单击 **“开始”** 。  
   
 2.  在搜索框中，键入“cmd”。  
   

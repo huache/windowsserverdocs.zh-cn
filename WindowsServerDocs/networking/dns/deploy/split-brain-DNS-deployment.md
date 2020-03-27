@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9f611f61150508d9170a6fe6757844bc29759886
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 75da22fa4b1e59a7a666ee1a2c8f4e88cf7beeef
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950476"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317734"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用 DNS 策略拆分\-大脑 DNS 部署
 
@@ -28,15 +28,15 @@ ms.locfileid: "75950476"
 
 用于拆分的另一种配置方案是选择性递归控制 DNS 名称解析。 在某些情况下，企业 DNS 服务器应该为内部用户在 Internet 上执行递归解析，同时，它们还必须充当外部用户的权威名称服务器，并阻止它们的递归。 
 
-本主题包含以下各部分内容。
+本主题包含以下各节。
 
 - [DNS 拆分的部署示例](#bkmk_sbexample)
 - [DNS 选择性递归控制的示例](#bkmk_recursion)
 
-## <a name="bkmk_sbexample"></a>DNS 拆分的部署示例
+## <a name="example-of-dns-split-brain-deployment"></a><a name="bkmk_sbexample"></a>DNS 拆分的部署示例
 下面的示例演示了如何使用 DNS 策略来完成上述拆分后的 DNS 应用场景。
 
-本部分包含以下主题。
+本部分包含下列主题。
 
 - [DNS 拆分过程的工作原理](#bkmk_sbhow)
 - [如何配置 DNS 拆分的部署](#bkmk_sbconfigure)
@@ -57,7 +57,7 @@ ms.locfileid: "75950476"
 ![裂脑 DNS 部署](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)  
 
 
-## <a name="bkmk_sbhow"></a>DNS 拆分过程的工作原理
+## <a name="how-dns-split-brain-deployment-works"></a><a name="bkmk_sbhow"></a>DNS 拆分过程的工作原理
 
 当 DNS 服务器配置了所需的 DNS 策略时，将针对 DNS 服务器上的策略评估每个名称解析请求。
 
@@ -67,7 +67,7 @@ ms.locfileid: "75950476"
 
 因此，在我们的示例中，对专用 IP （10.0.0.56）上收到的 www.career.contoso.com 的 DNS 查询接收包含内部 IP 地址的 DNS 响应;在公共网络接口上接收的 DNS 查询接收包含默认区域作用域中的公共 IP 地址的 DNS 响应（这与正常的查询解决方法相同）。  
 
-## <a name="bkmk_sbconfigure"></a>如何配置 DNS 拆分的部署
+## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>如何配置 DNS 拆分的部署
 若要使用 DNS 策略配置 DNS 拆分的部署，必须使用以下步骤。
 
 - [创建区域作用域](#bkmk_zscopes)  
@@ -79,7 +79,7 @@ ms.locfileid: "75950476"
 >[!IMPORTANT]
 >以下各节包含示例 Windows PowerShell 命令，其中包含许多参数的示例值。 在运行这些命令之前，请确保将这些命令中的示例值替换为适用于你的部署的值。 
 
-### <a name="bkmk_zscopes"></a>创建区域作用域
+### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>创建区域作用域
 
 区域作用域是区域的唯一实例。 DNS 区域可以有多个区域作用域，每个区域作用域包含其自己的一组 DNS 记录。 同一条记录可以出现在多个作用域中，具有不同的 IP 地址或相同的 IP 地址。 
 
@@ -92,7 +92,7 @@ ms.locfileid: "75950476"
 
 有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records"></a>将记录添加到区域作用域
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>将记录添加到区域作用域
 
 下一步是将代表 Web 服务器主机的记录添加到这两个区域作用域中：内部和默认（对于外部客户端）。 
 
@@ -109,7 +109,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 有关详细信息，请参阅[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
-### <a name="bkmk_policies"></a>创建 DNS 策略
+### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>创建 DNS 策略
 
 确定外部网络和内部网络的服务器接口并创建了区域作用域后，必须创建连接内部和外部区域作用域的 DNS 策略。
 
@@ -128,11 +128,11 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 有关详细信息，请参阅[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。  
 
 
-## <a name="bkmk_recursion"></a>DNS 选择性递归控制的示例
+## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>DNS 选择性递归控制的示例
 
 下面的示例演示了如何使用 DNS 策略来完成上述 DNS 选择性递归控制方案。
 
-本部分包含以下主题。
+本部分包含下列主题。
 
 - [DNS 选择性递归控制的工作原理](#bkmk_recursionhow)
 - [如何配置 DNS 选择性递归控制](#bkmk_recursionconfigure)
@@ -154,9 +154,9 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 ![选择性递归控制](../../media/DNS-Split-Brain/Dns-Split-Brain-02.jpg) 
 
 
-### <a name="bkmk_recursionhow"></a>DNS 选择性递归控制的工作原理
+### <a name="how-dns-selective-recursion-control-works"></a><a name="bkmk_recursionhow"></a>DNS 选择性递归控制的工作原理
 
-如果为其接收了 Contoso DNS 服务器的查询（例如，对于 https://www.microsoft.com ），则根据 DNS 服务器上的策略评估名称解析请求。 
+如果为其接收了 Contoso DNS 服务器的查询（例如，对于 https://www.microsoft.com），则根据 DNS 服务器上的策略评估名称解析请求。 
 
 由于这些查询不在任何区域中，因此不会计算 \(如\) split 示例中定义的区域级别策略。 
 
@@ -168,14 +168,14 @@ DNS 服务器评估递归策略，专用接口上收到的查询与**SplitBrainR
 
 这会阻止服务器作为外部客户端的开放解析程序，同时充当内部客户端的缓存解析程序。 
 
-### <a name="bkmk_recursionconfigure"></a>如何配置 DNS 选择性递归控制
+### <a name="how-to-configure-dns-selective-recursion-control"></a><a name="bkmk_recursionconfigure"></a>如何配置 DNS 选择性递归控制
 
 若要使用 DNS 策略配置 DNS 选择性递归控制，必须使用以下步骤。
 
 - [创建 DNS 递归作用域](#bkmk_recscopes)
 - [创建 DNS 递归策略](#bkmk_recpolicy)
 
-#### <a name="bkmk_recscopes"></a>创建 DNS 递归作用域
+#### <a name="create-dns-recursion-scopes"></a><a name="bkmk_recscopes"></a>创建 DNS 递归作用域
 
 递归作用域是一组设置的唯一实例，这些设置控制 DNS 服务器上的递归。 递归作用域包含转发器列表，并指定是否启用了递归。 DNS 服务器可以有多个递归作用域。 
 
@@ -190,7 +190,7 @@ DNS 服务器评估递归策略，专用接口上收到的查询与**SplitBrainR
 
 有关详细信息，请参阅[DnsServerRecursionScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
 
-#### <a name="bkmk_recpolicy"></a>创建 DNS 递归策略
+#### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>创建 DNS 递归策略
 
 你可以创建 DNS 服务器递归策略，为一组符合特定条件的查询选择一个递归作用域。 
 

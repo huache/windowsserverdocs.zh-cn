@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 4235231c-4732-4ea9-9330-2a8c8a616d39
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 49e74132dba2909b7e5b639c95ef50064cf23e8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1da6df19933d3a4b9866b0428fb0088ac5f862b9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356377"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319096"
 ---
 # <a name="deploy-branchcache-hosted-cache-mode"></a>部署 BranchCache 托管缓存模式
 
@@ -44,7 +44,7 @@ Windows Server 2016 Core 网络指南提供了有关在新林中规划和部署�
 
 - [其他资源](11-Bc-Hcm-additional-resources.md)
 
-## <a name="bkmk_pre"></a>使用本指南的先决条件
+## <a name="prerequisites-for-using-this-guide"></a><a name="bkmk_pre"></a>使用本指南的先决条件
 
 这是 Windows Server 2016 核心网络指南的助理指南。 若要参照本指南部署 BranchCache 托管缓存模式，必须先执行以下操作。
 
@@ -60,7 +60,7 @@ Windows Server 2016 Core 网络指南提供了有关在新林中规划和部署�
 - 在分支机构中部署运行以下操作系统之一的客户端计算机，该操作系统为 BranchCache 提供对后台智能传输服务（BITS）、超文本传输协议（HTTP）和服务器消息块（SMB）的支持.
     - Windows 10 企业版
     - Windows 10 教育版
-    - Windows 8.1 企业版
+    - Windows 8.1 Enterprise
     - Windows 8 企业版
 
 > [!NOTE]
@@ -69,13 +69,13 @@ Windows Server 2016 Core 网络指南提供了有关在新林中规划和部署�
 >     - Windows 8.1 Pro，仅支持 BITS
 >     - Windows 8 专业版，仅支持 BITS
 
-## <a name="bkmk_about"></a>关于本指南
+## <a name="about-this-guide"></a><a name="bkmk_about"></a>关于本指南
 
 本指南专为以下网络和系统管理员设计：按照 Windows Server 2016 核心网络指南或 Windows Server 2012 核心网络指南中的说明来部署核心网络，或为先前已部署核心网络指南中所含技术的人员（包括 Active Directory 域服务 \(AD DS\)、域名服务 \(DNS\)、动态主机配置协议 \(DHCP\)和 TCP\/IP v4。
 
 建议查看此部署方案中所用的每项技术的设计和部署指南。 这些指南可帮助你确定此部署方案是否为组织网络提供了所需的服务和配置。
 
-## <a name="bkmk_not"></a>本指南未提供的内容
+## <a name="what-this-guide-does-not-provide"></a><a name="bkmk_not"></a>本指南未提供的内容
 
 本指南不提供有关 BranchCache 的概念信息（包括有关 BranchCache 模式和功能的信息）。  
 
@@ -88,7 +88,7 @@ Windows Server 2016 Core 网络指南提供了有关在新林中规划和部署�
 > [!IMPORTANT]
 > 如果托管缓存服务器正在运行 Windows Server 2008 R2，请使用 Windows Server 2008 R2 [BranchCache 部署指南](https://technet.microsoft.com/library/ee649232(v=ws.10).aspx)，而不是本指南，以便在托管缓存模式下部署 BranchCache。 将该指南中所述的组策略设置应用于运行 windows 7 到 Windows 10 的 Windows 版本的所有 BranchCache 客户端。 无法使用本指南中的步骤配置运行 Windows Server 2008 R2 的计算机。
 
-## <a name="bkmk_tech"></a>技术概述
+## <a name="technology-overviews"></a><a name="bkmk_tech"></a>技术概述
 
 在本助理指南中，唯一需要安装和配置的技术就是 BranchCache。 你必须在内容服务器（如 Web 服务器和文件服务器）上运行 Windows PowerShell BranchCache 命令，但无需以其他任何方式更改或重新配置内容服务器。 此外，还必须使用在 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 上运行 AD DS 的域控制器上的组策略来配置客户端计算机。
 

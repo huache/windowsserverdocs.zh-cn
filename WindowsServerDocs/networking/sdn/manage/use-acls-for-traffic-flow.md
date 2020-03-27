@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a7ac5af-85e9-4440-a631-6a3a38e9015d
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/27/2018
-ms.openlocfilehash: 6a1d210d25309be322359add20da4eb8d0eee091
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f18ad9ddb0ea1a7575f6fcb26189f36f818ada2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355806"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317487"
 ---
 # <a name="use-access-control-lists-acls-to-manage-datacenter-network-traffic-flow"></a>使用访问控制列表（Acl）管理数据中心网络流量流
 
@@ -35,14 +35,14 @@ ms.locfileid: "71355806"
 使用下表中的条目创建一组允许所有入站和出站网络流量的规则。
 
 
-| 源 IP | 目标 IP | Protocol | 源端口 | 目标端口 | Direction | 操作 | Priority |
+| Source IP | Destination IP | 协议 | Source Port | Destination Port | Direction | 操作 | Priority |
 |:---------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
-|    \*     |       \*       |   全部    |     \*      |        \*        |  入站  | Allow  |   100    |
-|    \*     |       \*       |   全部    |     \*      |        \*        | 出站  | Allow  |   110    |
+|    \*     |       \*       |   全部    |     \*      |        \*        |  入站  | 允许  |   100    |
+|    \*     |       \*       |   全部    |     \*      |        \*        | 出站  | 允许  |   110    |
 
 ---       
 
-### <a name="example-create-an-acl"></a>例如：创建 ACL 
+### <a name="example-create-an-acl"></a>示例：创建 ACL 
 在此示例中，你将创建一个包含两个规则的 ACL：
 
 1. **AllowAll_Inbound** -允许所有网络流量传递到配置了此 ACL 的网络接口。    
@@ -90,14 +90,14 @@ New-NetworkControllerAccessControlList -ResourceId "AllowAll" -Properties $aclli
 在此示例中，将创建一个 ACL，以防止 192.168.0.0/24 子网中的 Vm 相互通信。 这种类型的 ACL 适用于限制攻击者在子网内传播横向的能力，同时仍允许 Vm 从子网外部接收请求，以及与其他子网上的其他服务通信。   
 
 
-|   源 IP    | 目标 IP | Protocol | 源端口 | 目标端口 | Direction | 操作 | Priority |
+|   Source IP    | Destination IP | 协议 | Source Port | Destination Port | Direction | 操作 | Priority |
 |:--------------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
-|  192.168.0.1   |       \*       |   全部    |     \*      |        \*        |  入站  | Allow  |   100    |
-|       \*       |  192.168.0.1   |   全部    |     \*      |        \*        | 出站  | Allow  |   101    |
-| 192.168.0.0/24 |       \*       |   全部    |     \*      |        \*        |  入站  | 阻止  |   102    |
-|       \*       | 192.168.0.0/24 |   全部    |     \*      |        \*        | 出站  | 阻止  |   103    |
-|       \*       |       \*       |   全部    |     \*      |        \*        |  入站  | Allow  |   104    |
-|       \*       |       \*       |   全部    |     \*      |        \*        | 出站  | Allow  |   105    |
+|  192.168.0.1   |       \*       |   全部    |     \*      |        \*        |  入站  | 允许  |   100    |
+|       \*       |  192.168.0.1   |   全部    |     \*      |        \*        | 出站  | 允许  |   101    |
+| 192.168.0.0/24 |       \*       |   全部    |     \*      |        \*        |  入站  | 块  |   102    |
+|       \*       | 192.168.0.0/24 |   全部    |     \*      |        \*        | 出站  | 块  |   103    |
+|       \*       |       \*       |   全部    |     \*      |        \*        |  入站  | 允许  |   104    |
+|       \*       |       \*       |   全部    |     \*      |        \*        | 出站  | 允许  |   105    |
 
 --- 
 

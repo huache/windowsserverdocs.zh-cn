@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7ebff972d670f3fd0b8d12959d161bce03ac487e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e62b92fbb78dc267dbd9cd09927bf54c62d8245f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401849"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316601"
 ---
 # <a name="network-related-performance-counters"></a>网络相关的性能计数器
 
@@ -27,7 +27,7 @@ ms.locfileid: "71401849"
   
 -   [接收方合并（RSC）性能](#bkmk_rsc)  
   
-##  <a name="bkmk_ru"></a>资源利用率  
+##  <a name="resource-utilization"></a><a name="bkmk_ru"></a>资源利用率  
 
 以下性能计数器与网络资源利用率相关。  
   
@@ -47,7 +47,7 @@ ms.locfileid: "71401849"
   
 - 网络接口（*）、网络适配器（\*）  
   
-  - 接收的字节数/秒  
+  - Bytes Received/sec  
   
   - 发送的字节数/秒  
   
@@ -69,7 +69,7 @@ ms.locfileid: "71401849"
   
     此计数器是将 Dpc 添加到逻辑处理器的 DPC 队列的平均速率。 每个逻辑处理器都有其自己的 DPC 队列。 此计数器测量将 Dpc 添加到队列的速率，而不是队列中 Dpc 的数目。 它显示最近两个样本中观测到的值之间的差异除以样本间隔的持续时间。  
   
-##  <a name="bkmk_np"></a>潜在网络问题  
+##  <a name="potential-network-problems"></a><a name="bkmk_np"></a>潜在网络问题  
 
 以下性能计数器与潜在的网络问题相关。  
   
@@ -119,7 +119,7 @@ ms.locfileid: "71401849"
   
     -   拒绝的连接数/秒  
   
-##  <a name="bkmk_rsc"></a>接收方合并（RSC）性能  
+##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a>接收方合并（RSC）性能  
 
 以下性能计数器与 RSC 性能相关。  
   

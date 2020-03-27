@@ -7,16 +7,16 @@ ms.technology: networking-ras
 ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 41e98648ab963347f8370233c320f5e38b5d4d96
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: def4c0d7437dd297460d0a863cd2568325825ca9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388014"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319037"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>步骤 7.2： 使用 Azure AD 创建用于 VPN 身份验证的条件性访问根证书
 
@@ -49,7 +49,7 @@ ms.locfileid: "71388014"
 4. 在 "**条件访问**" 页上的 "**管理**" 部分中，单击 " **VPN 连接（预览版）** "。
 5. 在 " **VPN 连接**" 页上，单击 "**新建证书**"。
 6. 在 "**新建**" 页上，执行以下步骤： a。 对于 "**选择持续时间**"，请选择1、2或3年。
-   b. 选择“创建”。
+   b. 选择 **“创建”** 。
 
 ## <a name="next-steps"></a>后续步骤
 

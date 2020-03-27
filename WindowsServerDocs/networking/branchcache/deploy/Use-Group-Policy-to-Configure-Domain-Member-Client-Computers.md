@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 911c1538-f79d-42e9-ba38-f4618f87b008
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/02/2018
-ms.openlocfilehash: 6f093e605ce735d8f86f7f4d479a646d144e8829
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6ca1ff8fabb559628afd2dd1abafc56a908909a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356515"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319198"
 ---
 # <a name="use-group-policy-to-configure-domain-member-client-computers"></a>使用组策略配置域成员客户端计算机
 
@@ -35,15 +35,15 @@ ms.locfileid: "71356515"
   
 您必须是**Domain Admins**的成员，或者是执行这些过程的等效项。  
   
-## <a name="bkmk_gp"></a>创建组策略对象并配置 BranchCache 模式  
+## <a name="to-create-a-group-policy-object-and-configure-branchcache-modes"></a><a name="bkmk_gp"></a>创建组策略对象并配置 BranchCache 模式  
   
-1.  在安装了 Active Directory 域服务服务器角色的计算机上，在服务器管理器中单击 "**工具**"，然后单击**组策略管理**"。 此时将打开组策略管理控制台。  
+1.  在安装了 Active Directory 域服务服务器角色的计算机上，在服务器管理器中单击 "**工具**"，然后单击**组策略管理**"。 此时会打开组策略管理控制台。  
   
 2.  在组策略管理控制台中，展开以下路径： "**林：** *example.com*"、"**域**"、" *example.com*"、"**组策略对象**"，其中 " *example.com* " 是要配置的 BranchCache 客户端计算机帐户所在的域的名称。  
   
-3.  右键单击**组策略对象**"，然后单击"**新建**"。 此时将打开 "**新建 GPO** " 对话框。 在 "**名称**" 中，键入新组策略对象（GPO）的名称。 例如，如果想要为对象 BranchCache 客户端计算机命名，请键入 " **Branchcache 客户端计算机**"。 单击**确定**。  
+3.  右键单击**组策略对象**"，然后单击"**新建**"。 此时将打开 "**新建 GPO** " 对话框。 在 "**名称**" 中，键入新组策略对象（GPO）的名称。 例如，如果想要为对象 BranchCache 客户端计算机命名，请键入 " **Branchcache 客户端计算机**"。 单击“确定”。  
   
-4.  在组策略管理控制台中，确保选中 "**组策略对象**"，然后在 "详细信息" 窗格中，右键单击刚创建的 GPO。 例如，如果你命名了 GPO BranchCache 客户端计算机，请右键单击 " **BranchCache 客户端计算机**"。 单击**编辑**。 此时将打开组策略管理编辑器控制台。  
+4.  在组策略管理控制台中，确保选中 "**组策略对象**"，然后在 "详细信息" 窗格中，右键单击刚创建的 GPO。 例如，如果你命名了 GPO BranchCache 客户端计算机，请右键单击 " **BranchCache 客户端计算机**"。 单击 **“编辑”** 。 此时将打开组策略管理编辑器控制台。  
   
 5.  在组策略管理编辑器控制台中，展开以下路径： "**计算机配置**"、"**策略**"、"**管理模板：从本地计算机检索的策略定义（ADMX 文件）** "、"**网络**"、" **BranchCache**"。  
   
@@ -64,17 +64,17 @@ ms.locfileid: "71356515"
   
 12. 使用以下过程在客户端计算机上使用组策略配置防火墙设置。  
   
-## <a name="bkmk_inbound"></a>配置具有高级安全性的 Windows 防火墙入站流量规则  
+## <a name="to-configure-windows-firewall-with-advanced-security-inbound-traffic-rules"></a><a name="bkmk_inbound"></a>配置具有高级安全性的 Windows 防火墙入站流量规则  
   
 1.  在组策略管理控制台中，展开以下路径： "**林：** *example.com*"、"**域**"、" *example.com*"、"**组策略对象**"，其中 " *example.com* " 是要配置的 BranchCache 客户端计算机帐户所在的域的名称。  
   
-2.  在组策略管理控制台中，确保选中 "**组策略对象**"，然后在 "详细信息" 窗格中，右键单击之前创建的 BranchCache 客户端计算机 GPO。 例如，如果你命名了 GPO BranchCache 客户端计算机，请右键单击 " **BranchCache 客户端计算机**"。 单击**编辑**。 此时将打开组策略管理编辑器控制台。  
+2.  在组策略管理控制台中，确保选中 "**组策略对象**"，然后在 "详细信息" 窗格中，右键单击之前创建的 BranchCache 客户端计算机 GPO。 例如，如果你命名了 GPO BranchCache 客户端计算机，请右键单击 " **BranchCache 客户端计算机**"。 单击 **“编辑”** 。 此时将打开组策略管理编辑器控制台。  
   
 3.  在组策略管理编辑器控制台中，展开以下路径： "**计算机配置**"、"**策略**"、" **windows 设置**"、"**安全设置**"、"**高级安全**Windows 防火墙"、"**具有高级安全性的 windows 防火墙**"、"**入站规则**"。  
   
 4.  右键单击“入站规则”，然后单击“新建规则”。 此时将打开 "新建入站规则向导"。  
   
-5.  在 "**规则类型**" 中，单击 "**预定义**"，展开选项列表，然后单击 " **BranchCache-内容检索（使用 HTTP）** "。 单击**下一步**。  
+5.  在 "**规则类型**" 中，单击 "**预定义**"，展开选项列表，然后单击 " **BranchCache-内容检索（使用 HTTP）** "。 单击 **“下一步”** 。  
   
 6.  在 "**预定义规则**" 中单击 "**下一步**"。  
   
@@ -85,7 +85,7 @@ ms.locfileid: "71356515"
   
 8.  若要创建 WS-RELIABLEMESSAGING 防火墙例外，请再次右键单击 "**入站规则**"，然后单击 "**新建规则**"。 此时将打开 "新建入站规则向导"。  
   
-9. 在 "**规则类型**" 中，单击 "**预定义**"，展开选项列表，然后单击 " **BranchCache-对等机发现（使用 WSD）** "。 单击**下一步**。  
+9. 在 "**规则类型**" 中，单击 "**预定义**"，展开选项列表，然后单击 " **BranchCache-对等机发现（使用 WSD）** "。 单击 **“下一步”** 。  
   
 10. 在 "**预定义规则**" 中单击 "**下一步**"。  
   
@@ -94,11 +94,11 @@ ms.locfileid: "71356515"
     > [!IMPORTANT]  
     > 你必须选择 "允许 BranchCache 客户端**的连接**才能在此端口上接收流量"。  
   
-## <a name="bkmk_outbound"></a>若要配置具有高级安全性的 Windows 防火墙出站流量规则  
+## <a name="to-configure-windows-firewall-with-advanced-security-outbound-traffic-rules"></a><a name="bkmk_outbound"></a>若要配置具有高级安全性的 Windows 防火墙出站流量规则  
   
 1.  在组策略管理编辑器控制台中，右键单击 "**出站规则**"，然后单击 "**新建规则**"。 此时将打开 "新建出站规则向导"。  
   
-2.  在 "**规则类型**" 中，单击 "**预定义**"，展开选项列表，然后单击 " **BranchCache-内容检索（使用 HTTP）** "。 单击**下一步**。  
+2.  在 "**规则类型**" 中，单击 "**预定义**"，展开选项列表，然后单击 " **BranchCache-内容检索（使用 HTTP）** "。 单击 **“下一步”** 。  
   
 3.  在 "**预定义规则**" 中单击 "**下一步**"。  
   
@@ -109,7 +109,7 @@ ms.locfileid: "71356515"
   
 5.  若要创建 WS-RELIABLEMESSAGING 防火墙例外，请再次右键单击 "**出站规则**"，然后单击 "**新建规则**"。 此时将打开 "新建出站规则向导"。  
   
-6.  在 "**规则类型**" 中，单击 "**预定义**"，展开选项列表，然后单击 " **BranchCache-对等机发现（使用 WSD）** "。 单击**下一步**。  
+6.  在 "**规则类型**" 中，单击 "**预定义**"，展开选项列表，然后单击 " **BranchCache-对等机发现（使用 WSD）** "。 单击 **“下一步”** 。  
   
 7.  在 "**预定义规则**" 中单击 "**下一步**"。  
   

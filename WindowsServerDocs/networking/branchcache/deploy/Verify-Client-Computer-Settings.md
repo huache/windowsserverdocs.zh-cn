@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 31ea58b0-d407-4f62-8ec6-6a1b19174042
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6d0adbf0db2d7888ca12ca49f50fc37baa8cbc16
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e4bd3c4d4b2998f5c4faea22887bdef8663587cb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356506"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319170"
 ---
 # <a name="verify-client-computer-settings"></a>验证客户端计算机设置
 
@@ -48,7 +48,7 @@ ms.locfileid: "71356506"
   
     在**ClientSettings**中， **CurrentClientMode**的值应为 " **DistributedClient** " 或 " **HostedCacheClient**"，具体取决于你使用本指南配置的模式。  
   
-    在**ClientSettings**中，如果在配置过程中配置了托管缓存模式并提供托管缓存服务器的名称，或者客户端已使用服务连接点自动定位了托管缓存服务器， **HostedCacheServerList**的值应与托管缓存服务器的名称相同。 例如，如果托管缓存服务器命名为 HCS1，并且你的域为 corp.contoso.com，则**HostedCacheServerList**的值为**HCS1.corp.contoso.com**。  
+    在**ClientSettings**中，如果在配置过程中配置了托管缓存模式并提供托管缓存服务器的名称，或者客户端已使用服务连接点自动定位了托管缓存服务器，则**HostedCacheServerList**应具有与托管缓存服务器的名称相同的值。 例如，如果托管缓存服务器命名为 HCS1，并且你的域为 corp.contoso.com，则**HostedCacheServerList**的值为**HCS1.corp.contoso.com**。  
   
 5.  如果上面列出的任何 BranchCache 设置没有正确的值，请使用本指南中的步骤来验证组策略或本地计算机策略设置以及你配置的防火墙例外，并确保它们是正确的。 此外，请重新启动计算机，或者按照此过程中的步骤刷新组策略并重新启动 BranchCache 服务。  
   

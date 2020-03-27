@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 1f49fc3c-28a6-4d3d-b787-1be9e61e792f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 489006c50ccbfa1f452d56b1a18217692d45cb1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5abe1520de24d366df43210219119ae9f806adc4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406453"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319236"
 ---
 # <a name="install-a-new-file-server-as-a-content-server"></a>安装新的文件服务器作为内容服务器
 
@@ -49,7 +49,7 @@ ms.locfileid: "71406453"
     > [!TIP]  
     > 建议还选中 "**重复数据删除**" 复选框。
   
-    单击“下一步”。  
+    单击 **“下一步”** 。  
   
 6.  在 "**选择功能**" 中，单击 "**下一步**"。  
   

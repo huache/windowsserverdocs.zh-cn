@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f07520dcdefa04cb43760c5e5c66e28c0d1ce878
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ddc5ebd5f2e00251bcd1cdd915702902dcdb14ae
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322109"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318096"
 ---
 # <a name="wireless-access-deployment"></a>无线访问部署
 
@@ -31,7 +31,7 @@ ms.locfileid: "79322109"
 
 - [将新的无线计算机加入到域](#bkmk_domain)
 
-## <a name="bkmk_aps"></a>部署和配置无线 Ap
+## <a name="deploy-and-configure-wireless-aps"></a><a name="bkmk_aps"></a>部署和配置无线 Ap
 
 按照以下步骤部署和配置无线 Ap：
 
@@ -42,7 +42,7 @@ ms.locfileid: "79322109"
 >[!NOTE]
 >本指南中的过程不包含有关在其中打开 "**用户帐户控制**" 对话框请求你允许继续操作的情况的说明。 如果在执行本指南中的过程时出现了此对话框，并且该对话框是因响应你的操作而出现的，则请单击 **“继续”** 。
 
-### <a name="bkmk_channel"></a>指定无线 AP 通道频率
+### <a name="specify-wireless-ap-channel-frequencies"></a><a name="bkmk_channel"></a>指定无线 AP 通道频率
 
 当你在一个地理位置部署多个无线 Ap 时，必须配置具有重叠信号的无线 Ap，以使用唯一通道频率来减少无线 Ap 之间的干扰。
 
@@ -52,7 +52,7 @@ ms.locfileid: "79322109"
 
 - 确定你的组织内相邻地面上的重叠无线信号。 在确定组织外和内的重叠覆盖区之后，为无线 Ap 分配通道频率，以确保为具有重叠覆盖范围的任何两个无线 Ap 分配不同的通道频率。
 
-### <a name="bkmk_wirelessaps"></a>配置无线 Ap
+### <a name="configure-wireless-aps"></a><a name="bkmk_wirelessaps"></a>配置无线 Ap
 
 使用以下信息以及无线 AP 制造商提供的产品文档来配置无线 Ap。
 
@@ -95,7 +95,7 @@ ms.locfileid: "79322109"
 
 - [将用户添加到无线安全组](#bkmk_addusers)
 
-### <a name="bkmk_groups"></a>创建无线用户安全组
+### <a name="create-a-wireless-users-security-group"></a><a name="bkmk_groups"></a>创建无线用户安全组
 
 你可以使用此过程在 Active Directory 用户和计算机 Microsoft 管理控制台 \(MMC\) snap\-中创建无线安全组。  
 
@@ -123,7 +123,7 @@ ms.locfileid: "79322109"
 
 如果需要为无线用户提供多个安全组，请重复这些步骤以创建其他无线用户组。 稍后，你可以在 NPS 中创建单独的网络策略，以将不同的条件和约束应用于每个组，并为它们提供不同的访问权限和连接规则。
 
-### <a name="bkmk_addusers"></a>将用户添加到无线用户安全组
+### <a name="add-users-to-the-wireless-users-security-group"></a><a name="bkmk_addusers"></a>将用户添加到无线用户安全组
 
 你可以使用此过程将用户、计算机或组添加到 Active Directory 用户和计算机 "中的" 用户和计算机 "Microsoft 管理控制台 \(MMC\)"\-中的 ""。
 
@@ -155,7 +155,7 @@ ms.locfileid: "79322109"
 
 4. 若要将组成员身份分配给其他计算机，请重复此过程的步骤 1\-3。
 
-## <a name="bkmk_policies"></a>\(IEEE 802.11\) 策略配置无线网络
+## <a name="configure-wireless-network-ieee-80211-policies"></a><a name="bkmk_policies"></a>\(IEEE 802.11\) 策略配置无线网络
 
 请按照以下步骤配置 \(IEEE 802.11\) 策略组策略扩展中的无线网络：
 
@@ -165,7 +165,7 @@ ms.locfileid: "79322109"
 
 - [配置新的无线网络策略](#bkmk_policyconfig)
 
-### <a name="bkmk_opengpme"></a>打开或添加并打开组策略对象
+### <a name="open-or-add-and-open-a-group-policy-object"></a><a name="bkmk_opengpme"></a>打开或添加并打开组策略对象
 
 默认情况下，如果安装了 Active Directory 域服务 \(AD DS\) Server 角色并将服务器配置为域控制器，则组策略管理功能安装在运行 Windows Server 2016 的计算机上。 以下过程描述如何在域控制器上打开 GPMC\) 组策略管理控制台 \(。 然后，该过程介绍如何打开现有域\-级别的组策略对象 \(GPO\) 进行编辑，或创建新的域 GPO 并将其打开进行编辑。
 
@@ -191,7 +191,7 @@ ms.locfileid: "79322109"
 
 在下一部分中，你将使用组策略管理编辑器创建无线策略。
 
-### <a name="bkmk_activate"></a>激活 \(IEEE 802.11\) 策略的默认无线网络
+### <a name="activate-default-wireless-network-ieee-80211-policies"></a><a name="bkmk_activate"></a>激活 \(IEEE 802.11\) 策略的默认无线网络
 
 此过程介绍如何使用组策略管理编辑器 \(GPME\)激活 \(IEEE 802.11\) 策略的默认无线网络。
 
@@ -220,7 +220,7 @@ ms.locfileid: "79322109"
 
 在下一部分中，你可以执行策略配置、策略处理首选项顺序和网络权限。
 
-### <a name="bkmk_policyconfig"></a>配置新的无线网络策略
+### <a name="configure-the-new-wireless-network-policy"></a><a name="bkmk_policyconfig"></a>配置新的无线网络策略
 
 你可以使用本部分中的过程来配置 \(IEEE 802.11\) 策略的无线网络。 此策略可让你配置安全和身份验证设置，管理无线配置文件，并指定未配置为首选网络的无线网络的权限。
 
@@ -230,7 +230,7 @@ ms.locfileid: "79322109"
 
 - [定义网络权限](#bkmk_permissions)  
 
-#### <a name="bkmk_configureprofile"></a>为 PEAP\-MS\-CHAP v2 配置无线连接配置文件
+#### <a name="configure-a-wireless-connection-profile-for-peap-ms-chap-v2"></a><a name="bkmk_configureprofile"></a>为 PEAP\-MS\-CHAP v2 配置无线连接配置文件
 
 此过程提供配置 PEAP\-MS\-CHAP v2 无线配置文件所需的步骤。  
 
@@ -309,7 +309,7 @@ ms.locfileid: "79322109"
 
 在下一部分中，你可以对策略配置文件进行排序以获得最佳安全性。
 
-#### <a name="bkmk_preferenceorder"></a>设置无线连接配置文件的首选顺序
+#### <a name="set-the-preference-order-for-wireless-connection-profiles"></a><a name="bkmk_preferenceorder"></a>设置无线连接配置文件的首选顺序
 如果在无线网络策略中创建了多个无线配置文件，并且想要对配置文件进行排序以获得最佳的效果和安全性，则可以使用此过程。
 
 为了确保无线客户端连接到它们可以支持的最高安全级别，请将最严格的策略置于列表的顶部。
@@ -332,7 +332,7 @@ ms.locfileid: "79322109"
 
 在下一部分中，你可以定义无线策略的网络权限。
 
-#### <a name="bkmk_permissions"></a>定义网络权限
+#### <a name="define-network-permissions"></a><a name="bkmk_permissions"></a>定义网络权限
 你可以在 "**网络权限**" 选项卡上配置 \(IEEE 802.11\) 策略所应用到的无线网络的域成员的设置。
 
 对于未在 "**无线网络策略属性**" 页的 "**常规**" 选项卡上配置的无线网络，只能应用以下设置：
@@ -382,7 +382,7 @@ ms.locfileid: "79322109"
 
     -   若要指定用户只能使用组策略配置文件连接到允许的网络，请选择 "**仅对允许的网络使用组策略配置文件**"。
 
-## <a name="bkmk_nps"></a>配置 NPSs
+## <a name="configure-your-npss"></a><a name="bkmk_nps"></a>配置 NPSs
 按照以下步骤配置 NPSs，为无线访问执行 802.1 X 身份验证：
 
 - [在 Active Directory 域服务中注册 NPS](#bkmk_npsreg)
@@ -391,7 +391,7 @@ ms.locfileid: "79322109"
 
 - [使用向导为 802.1 X 无线创建 NPS 策略](#bkmk_npspolicy)
 
-### <a name="bkmk_npsreg"></a>在 Active Directory 域服务中注册 NPS
+### <a name="register-nps-in-active-directory-domain-services"></a><a name="bkmk_npsreg"></a>在 Active Directory 域服务中注册 NPS
 你可以使用此过程将运行网络策略服务器 \(NPS\) 的服务器注册到 NPS 所属域中的 Active Directory 域服务 \(AD DS\)。 为了使 NPSs 在授权过程中被授予读取用户帐户属性中的拨号\-的权限，必须在 AD DS 中注册每个 NPS。 注册 NPS 会将服务器添加到 AD DS 中的**RAS 和 IAS 服务器**安全组。
 
 >[!NOTE]
@@ -409,7 +409,7 @@ ms.locfileid: "79322109"
 
 3. 在 **“网络策略服务器”** 中，单击 **“确定”** ，然后再次单击 **“确定”** 。
 
-### <a name="bkmk_radiusclient"></a>将无线 AP 配置为 NPS RADIUS 客户端
+### <a name="configure-a-wireless-ap-as-an-nps-radius-client"></a><a name="bkmk_radiusclient"></a>将无线 AP 配置为 NPS RADIUS 客户端
 你可以使用此过程将 AP （也称为*网络访问服务器 \(NAS\)* ）配置为用户服务中的远程身份验证拨号\-\(RADIUS\) 客户端，方法是使用中的 NPS snap\-。 
 
 >[!IMPORTANT]
@@ -450,7 +450,7 @@ ms.locfileid: "79322109"
 
 9. 单击“确定”。 NAS 出现在 NPS 上配置的 RADIUS 客户端列表中。
 
-### <a name="bkmk_npspolicy"></a>使用向导为 802.1 X 无线创建 NPS 策略
+### <a name="create-nps-policies-for-8021x-wireless-using-a-wizard"></a><a name="bkmk_npspolicy"></a>使用向导为 802.1 X 无线创建 NPS 策略
 你可以使用此过程来创建连接请求策略和网络策略，以将 802.1 X\-功能的无线访问点部署为用户服务中的远程身份验证拨号\-\(RADIUS\) 客户端连接到运行网络策略服务器 \(NPS\)的 RADIUS 服务器。  
 运行向导后，将创建下列策略：
 
@@ -512,7 +512,7 @@ ms.locfileid: "79322109"
 
 此时会创建 NPS 策略，你可以继续将无线计算机加入到域。
 
-## <a name="bkmk_domain"></a>将新的无线计算机加入到域
+## <a name="join-new-wireless-computers-to-the-domain"></a><a name="bkmk_domain"></a>将新的无线计算机加入到域
 最简单的方法是将新的无线计算机加入到域中，以物理方式将计算机连接到有线 LAN 的一段 \(在将计算机加入域之前未由 802.1 X 交换机\) 控制的段。 这是最简单的，因为无线组策略设置会自动并立即应用，如果你部署了自己的 PKI，则计算机将接收 CA 证书，并将其放在 "受信任的根证书颁发机构" 证书存储中。允许无线客户端与 CA 颁发的服务器证书信任 NPSs。
 
 同样，将新的无线计算机加入到域后，用户登录到域的首选方法是使用连接到网络的有线连接来执行登录。
@@ -528,7 +528,7 @@ ms.locfileid: "79322109"
 
 有关详细信息，请参阅[通过使用用户的启动无线配置文件配置联接域并登录](#bkmk_userbootstrap)部分。
 
-### <a name="bkmk_itstaff"></a>加入域并使用 IT 员工计算机配置方法登录
+### <a name="join-the-domain-and-log-on-by-using-the-it-staff-computer-configuration-method"></a><a name="bkmk_itstaff"></a>加入域并使用 IT 员工计算机配置方法登录
 如果域成员用户的域\-加入了域，则无线客户端计算机可以使用临时无线配置文件连接到 802.1 X\-身份验证的无线网络，而无需首先连接到有线 LAN。 此临时无线配置文件称为*启动无线配置文件*。
 
 启动无线配置文件要求用户手动指定其域用户帐户凭据，并且不会在运行网络策略服务器 \(NPS\)的用户服务 \(RADIUS\) 服务器中验证远程身份验证拨号\-的证书。
@@ -560,7 +560,7 @@ ms.locfileid: "79322109"
 
 当用户启动计算机时，Windows 将提示用户输入其域用户帐户名称和密码。 由于启用了单一登录，因此计算机使用域用户帐户凭据首先建立与无线网络的连接，然后登录到域。
 
-#### <a name="bkmk_w10"></a>使用运行 Windows 10 的计算机登录到域
+#### <a name="log-on-to-the-domain-using-computers-running-windows-10"></a><a name="bkmk_w10"></a>使用运行 Windows 10 的计算机登录到域
 
 1. 注销计算机，或重新启动计算机。
 
@@ -575,7 +575,7 @@ ms.locfileid: "79322109"
 >[!NOTE]
 >如果 "**其他用户**" 屏幕不包括文本 "**登录到：** " 和你的域名，你应以 "*域\\用户*" 格式输入你的用户名。 例如，若要使用名为**user\-01**的帐户登录到域 example.com，请键入 " **example\\user\-01**"。
 
-### <a name="bkmk_userbootstrap"></a>使用启动无线配置文件配置通过用户加入域并登录
+### <a name="join-the-domain-and-log-on-by-using-bootstrap-wireless-profile-configuration-by-users"></a><a name="bkmk_userbootstrap"></a>使用启动无线配置文件配置通过用户加入域并登录
 使用此方法，你可以完成常规步骤部分中的步骤，然后向你的域\-成员用户提供有关如何使用启动无线配置文件手动配置无线计算机的说明。 启动无线配置文件允许用户建立无线连接，然后加入域。 将计算机加入域并重新启动后，用户可以通过无线连接登录到域。
 
 #### <a name="general-steps"></a>一般步骤
