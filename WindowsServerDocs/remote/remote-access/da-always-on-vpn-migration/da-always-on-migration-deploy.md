@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/07/2018
-ms.openlocfilehash: 2bcbc7030d54e96b4ac120b943cc1adc0513feca
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 9f78edf0e48dc914b09a5e6f2d054e0fafba62e3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822632"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309306"
 ---
 # <a name="migrate-to-always-on-vpn-and-decommission-directaccess"></a>迁移到始终启用 VPN 并解除 DirectAccess 授权
 
@@ -122,7 +122,7 @@ ms.locfileid: "76822632"
 
 | 如果你使用的是 。  | 则... |
 | ---- | ---- |
-| Configuration Manager | 基于该安全组的成员身份创建一个用户集合。<br><br>![](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)运算符|
+| 配置管理器 | 基于该安全组的成员身份创建一个用户集合。<br><br>![](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)！|
 | Intune | 只需在同步后直接以安全组为目标。 |
 |
     

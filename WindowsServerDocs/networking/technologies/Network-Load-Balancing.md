@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-nlb
 ms.topic: article
 ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 4d79b6f29fbe64633bf04604ad586aff3dd86edf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80dae16442041e3b46babaca6d163095c1c5e475
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405850"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309689"
 ---
 # <a name="network-load-balancing"></a>网络负载平衡
 
@@ -27,11 +27,11 @@ ms.locfileid: "71405850"
 
 网络负载平衡 \(NLB\) 功能使用 TCP\/IP 网络协议在多个服务器之间分配流量。 通过将运行应用程序的两台或多台计算机组合到单个虚拟群集，NLB 为 web 服务器和其他任务\-关键服务器提供可靠性和性能。  
   
-NLB 群集中的服务器称为 *主机*，每个主机都运行服务器应用程序的单独副本。 NLB 将传入的客户端请求分发给群集中的各个主机。 可以配置将由每个主机处理的负载。 还可以动态地向群集中添加主机，以处理增长的负载。 NLB 还可以将所有流量引导至指定的单个主机，该主机称为 *默认主机*。  
+NLB 群集中的服务器称为 *主机*，每个主机都运行服务器应用程序的单独副本。 NLB 在群集的多个主机中分发传入的客户端请求。 可以配置将由每个主机处理的负载。 还可以动态地向群集中添加主机，以处理增长的负载。 NLB 还可以将所有流量引导至指定的单个主机，该主机称为 *默认主机*。  
   
 NLB 允许使用同一组 IP 地址指定群集中所有计算机的地址，而且它还为每个主机保留一组唯一且专用的 IP 地址。 对于负载\-平衡应用程序，当主机出现故障或脱机时，会自动在仍在运行的计算机之间重新分配负载。 准备就绪时，可以将脱机计算机以透明方式重新加入群集，并重新获取其工作量共享，以便使群集中的其他计算机处理更少的流量。  
   
-## <a name="practical-applications"></a>实际应用程序  
+## <a name="practical-applications"></a>实际应用  
 NLB 有助于确保无状态应用程序（例如运行 Internet Information Services \(IIS\)的 web 服务器）在最短的停机时间内可用，并可通过在负载\)增加时添加更多的服务器来进行可缩放的 \(。 以下部分描述了 NLB 如何支持运行这些应用程序的群集服务器的高可用性、可伸缩性和可管理性。  
   
 ### <a name="high-availability"></a>高可用性  
@@ -94,7 +94,7 @@ NLB 作为标准的 Windows Server 网络驱动程序组件进行安装。 它�
 > [!NOTE]  
 > 将 Vm 作为虚拟群集部署时，NLB 不要求服务器是多宿主的，才能具有多个虚拟 IP 地址。  
   
-- 可以将 NLB 绑定到多个网适配器，这样你便可以在每个主机上配置多个独立的群集。 支持多个网络适配器与虚拟群集不同，因为虚拟群集允许你在单个网络适配器上配置多个群集。  
+- 可以将 NLB 绑定到多个网适配器，这样你便可以在每个主机上配置多个独立的群集。 支持多个网络适配器与虚拟群集不同，因为虚拟群集允许您在单个网络适配器上配置多个群集。  
   
 - 无需对服务器应用程序进行修改，这样它们可以在 NLB 群集中运行。  
   
@@ -150,10 +150,10 @@ NLB 作为标准的 Windows Server 网络驱动程序组件进行安装。 它�
 ## <a name="additional-resources"></a>其他资源  
 下表提供了指向有关 NLB 功能的其他信息的链接。  
   
-|内容类型|引用|  
+|内容类型|参考|  
 |----------------|--------------|  
 |部署|[网络负载平衡部署指南](https://technet.microsoft.com/library/cc754833(WS.10).aspx) &#124; [通过终端服务配置网络负载平衡](https://technet.microsoft.com/library/cc771300(v=WS.10).aspx)|  
 |操作|[管理网络负载平衡群集](https://technet.microsoft.com/library/cc753954(WS.10).aspx) &#124; [设置](https://technet.microsoft.com/library/cc731619(WS.10).aspx) &#124;网络负载平衡参数[控制网络负载平衡群集上的主机](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|  
-|疑难解答|[网络负载平衡群集](https://technet.microsoft.com/library/cc732592(WS.10).aspx) &#124; [NLB 群集事件和错误](https://technet.microsoft.com/library/cc731678(WS.10).aspx)疑难解答|
+|故障排除|[网络负载平衡群集](https://technet.microsoft.com/library/cc732592(WS.10).aspx) &#124; [NLB 群集事件和错误](https://technet.microsoft.com/library/cc731678(WS.10).aspx)疑难解答|
 |工具和设置|[网络负载平衡 Windows PowerShell cmdlet](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
 |社区资源|[\) 论坛的高可用性 \(群集](https://go.microsoft.com/fwlink/p/?LinkId=230641)
