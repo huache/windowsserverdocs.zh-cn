@@ -1,9 +1,9 @@
 ---
 title: 自定义共享文件夹
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d8f52cbe76204bb00cb15c3093f69daf3d8abb6e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 387f9570e87bd2bd65266489b0f3eac6c945e3be
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433532"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311909"
 ---
 # <a name="customize-shared-folders"></a>自定义共享文件夹
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 默认情况下，会在磁盘 0 上的最大数据分区中创建服务器文件夹。 合作伙伴可以使用以下步骤来自定义位置并指定其他服务器文件夹：  
   
@@ -47,13 +47,13 @@ ms.locfileid: "66433532"
   
    9. 将此新项的值设置为 **1**，然后单击 **“确定”** 。  
   
-2. 使用 PostIC.cmd 脚本将文件夹移至其他位置或创建其他文件夹。 请参阅以下示例：[示例 1:创建自定义文件夹并将默认文件夹从 PostIC.cmd 使用 Windows PowerShell 的文件夹移到新位置中](Customize-Shared-Folders.md#BKMK_Example1)。  
+2. 使用 PostIC.cmd 脚本将文件夹移至其他位置或创建其他文件夹。 请参阅以下示例：[示例 1：使用 Windows PowerShell 从 PostIC.cmd 创建自定义文件夹并将默认文件夹移至新位置](Customize-Shared-Folders.md#BKMK_Example1)。  
   
-3. 使用 Windows Server 解决方案 SDK 将文件夹移至其他位置或创建其他文件夹。 请参阅以下示例：[示例 2:创建一个自定义文件夹并移动现有文件夹，通过使用 Windows Server 解决方案 SDK](Customize-Shared-Folders.md#BKMK_Example2)。  
+3. 使用 Windows Server 解决方案 SDK 将文件夹移至其他位置或创建其他文件夹。 请参阅以下示例：[示例 2：使用 Windows Server 解决方案 SDK 创建自定义文件夹并移动现有文件夹](Customize-Shared-Folders.md#BKMK_Example2)。  
   
    或者，合作伙伴可以将数据文件夹留在驱动器 C 中。这样可以由最终用户或经销商决定数据驱动器上的数据文件夹的布局。  
   
-###  <a name="BKMK_Example1"></a> 示例 1:使用 Windows PowerShell 创建自定义文件夹并将默认文件夹从 PostIC.cmd 移至新位置  
+###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a>示例1：使用 Windows PowerShell 创建自定义文件夹并将默认文件夹从 Postic.cmd 移动到新位置  
   
 1.  创建用于运行后初始配置任务的 PostIC.cmd 文件，[创建用于运行后初始配置任务的 PostIC.cmd 文件](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)部分有详细描述。  
   
@@ -99,7 +99,7 @@ ms.locfileid: "66433532"
     Set ERRORLEVEL=%error_level%  
     ```  
   
-###  <a name="BKMK_Example2"></a> 示例 2:使用 Windows Server 解决方案 SDK 创建自定义文件夹并移动现有文件夹  
+###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a>示例2：使用 Windows Server 解决方案 SDK 创建自定义文件夹并移动现有文件夹  
  你所创建的代码可以编译为可执行文件，然后从 PostIC.cmd 文件或直接从安装的加载项进行调用。  
   
 ```  
@@ -143,8 +143,8 @@ static void Main(string[] args)
 }  
 ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
- [其他自定义设置](Additional-Customizations.md)   
- [部署准备的映像](Preparing-the-Image-for-Deployment.md)   
+ [其他自定义](Additional-Customizations.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)

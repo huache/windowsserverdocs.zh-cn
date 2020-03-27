@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 294466ef70a9ffc230953b48bb292938be519eac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee3aa93c02419667b05a987f548ef4d14285231d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406113"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313069"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>使用 Windows PowerShell 部署网络控制器
 
@@ -29,7 +29,7 @@ ms.locfileid: "71406113"
 >[!IMPORTANT]
 >不要将网络控制器服务器角色部署到物理主机上。 若要部署网络控制器，必须在安装在 Hyper-v 主机上 \(VM\) 上的 Hyper-v 虚拟机上安装网络控制器服务器角色。 在三个不同的\-Hyper-v 主机上的虚拟机上安装了网络控制器之后，必须通过使用 Windows PowerShell 命令**NetworkControllerServer**将主机添加到网络控制器，为软件定义的网络 \(SDN\) 启用\-hyper-v 主机。 这样做会使 SDN 软件负载均衡器正常工作。 有关详细信息，请参阅[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
 
-本主题包含以下部分。
+本主题包含以下各节。
 
 - [安装网络控制器服务器角色](#install-the-network-controller-server-role)
 
@@ -86,11 +86,11 @@ New-NetworkControllerNodeObject -Name <string> -Server <String> -FaultDomain <st
 
 下表提供了**NetworkControllerNodeObject**命令的每个参数的说明。
 
-|参数|描述|
+|参数|说明|
 |-------------|---------------|
 |名称|**Name**参数指定要添加到群集的服务器的友好名称|
 |Server|**服务器**参数指定要添加到群集的服务器的主机名、完全限定的域名（FQDN）或 IP 地址。 对于已加入域的计算机，FQDN 是必需的。|
-|FaultDomain|**FaultDomain**参数指定要添加到群集的服务器的故障域。 此参数定义了与要添加到群集的服务器同时出现故障的服务器。 此故障可能是由于共享的物理依赖项（如电源和网络源）引起的。 容错域通常表示与这些共享依赖项相关的层次结构，更多服务器可能会从容错域树中的更高位置故障转移。 在运行时，网络控制器会考虑群集中的容错域，并尝试将网络控制器服务分散到不同的容错域中。 此过程有助于确保在任何一个容错域发生故障时，该服务及其状态的可用性不会受到影响。 容错域以分层格式指定。 例如： "Fd：/DC1/Rack1/Host1"，其中 DC1 是数据中心名称，Rack1 是机架名称，Host1 是放置节点的主机的名称。|
+|FaultDomain|**FaultDomain**参数指定要添加到群集的服务器的故障域。 此参数定义了与要添加到群集的服务器同时出现故障的服务器。 此故障可能是由于共享的物理依赖项（如电源和网络源）引起的。 容错域通常表示与这些共享依赖项相关的层次结构，更多服务器可能会从容错域树中的更高位置故障转移。 在运行时，网络控制器会考虑群集中的容错域，并尝试将网络控制器服务分散到不同的容错域中。 在任何一个容错域发生故障时，此过程有助于确保该服务及其状态的可用性不遭到破坏。 容错域以分层格式指定。 例如： "Fd：/DC1/Rack1/Host1"，其中 DC1 是数据中心名称，Rack1 是机架名称，Host1 是放置节点的主机的名称。|
 |RestInterface|**RestInterface**参数指定终止具象状态传输（REST）通信的节点上的接口的名称。 此网络控制器接口接收来自网络的管理层的 Northbound API 请求。|
 |NodeCertificate|**NodeCertificate**参数指定网络控制器用于计算机身份验证的证书。 如果使用基于证书的身份验证进行群集内的通信，则需要使用证书;证书还用于加密网络控制器服务之间的流量。 证书使用者名称必须与节点的 DNS 名称相同。|
 
@@ -104,7 +104,7 @@ Install-NetworkControllerCluster -Node <NetworkControllerNode[]> -ClusterAuthent
 
 下表提供了**NetworkControllerCluster**命令的每个参数的说明。
   
-|参数|描述|
+|参数|说明|
 |-------------|---------------|
 |ClusterAuthentication|**ClusterAuthentication**参数指定用于保护节点之间的通信的身份验证类型，还用于加密网络控制器服务之间的流量。 支持的值为**Kerberos**、 **X509**和**None**。 Kerberos 身份验证使用域帐户，且仅当网络控制器节点已加入域时才可使用。 如果指定基于 X509 的身份验证，则必须在 NetworkControllerNode 对象中提供证书。 此外，必须在运行此命令之前手动设置证书。|
 |ManagementSecurityGroup|**ManagementSecurityGroup**参数指定包含允许从远程计算机运行管理 cmdlet 的用户的安全组的名称。 仅当 ClusterAuthentication 为 Kerberos 时才适用。 您必须指定一个域安全组，而不是本地计算机上的安全组。|
@@ -128,7 +128,7 @@ Install-NetworkController -Node <NetworkControllerNode[]> -ClientAuthentication 
 
 下表提供了**NetworkController**命令的每个参数的说明。
 
-|参数|描述|
+|参数|说明|
 |-------------|---------------|
 |ClientAuthentication|**ClientAuthentication**参数指定用于保护 REST 和网络控制器之间的通信的身份验证类型。 支持的值为**Kerberos**、 **X509**和**None**。 Kerberos 身份验证使用域帐户，且仅当网络控制器节点已加入域时才可使用。 如果指定基于 X509 的身份验证，则必须在 NetworkControllerNode 对象中提供证书。 此外，必须在运行此命令之前手动设置证书。|
 |节点|**Node**参数指定你使用**NetworkControllerNodeObject**命令创建的网络控制器节点的列表。|
@@ -198,7 +198,7 @@ Install-NetworkController -Node <NetworkControllerNode[]> -ClientAuthentication 
 
 下表提供了可用于完成这些任务的 Windows PowerShell 命令的语法。
 
-|任务|命令|语法|
+|任务|Command|语法|
 |--------|-------|----------|
 |修改网络控制器群集设置|NetworkControllerCluster|`Set-NetworkControllerCluster [-ManagementSecurityGroup <string>][-Credential <PSCredential>] [-computerName <string>][-CertificateThumbprint <String> ] [-UseSSL]`
 |修改网络控制器应用程序设置|NetworkController|`Set-NetworkController [-ClientAuthentication <ClientAuthentication>] [-Credential <PSCredential>] [-ClientCertificateThumbprint <string[]>] [-ClientSecurityGroup <string>] [-ServerCertificate <X509Certificate2>] [-RestIPAddress <String>] [-ComputerName <String>][-CertificateThumbprint <String> ] [-UseSSL]`

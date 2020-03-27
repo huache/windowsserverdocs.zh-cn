@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8ccb91973dfb3493b534bdbc8fc4e2bcb26b26b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4e6c8379f225dbeefd7c97ac96b9a0047dfd4a0b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404958"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309210"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>使用高级设置部署单个 DirectAccess 服务器
 
@@ -32,11 +32,11 @@ ms.locfileid: "71404958"
   
 -   [部署 DirectAccess 的先决条件](../../../remote-access/directaccess/Prerequisites-for-Deploying-DirectAccess.md)  
   
-## <a name="BKMK_OVER"></a>方案描述  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>方案描述  
 在此方案中，运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的单台计算机配置为具有高级设置的 DirectAccess 服务器。  
   
 > [!NOTE]  
-> 如果你想要使用简单的设置配置基本部署，请参阅[部署单个 DirectAccess 服务器使用开始向导](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)。 在简单的方案中，将通过向导使用默认设置配置 DirectAccess，而无需配置基础结构设置，例如，证书颁发机构 (CA) 或 Active Directory 安全组。  
+> 如果你仅希望使用简单的设置来配置基本部署，请参阅 [Deploy a Single DirectAccess Server Using the Getting Started Wizard](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)。 在简单的方案中，将通过向导使用默认设置配置 DirectAccess，而无需配置基础结构设置，例如，证书颁发机构 (CA) 或 Active Directory 安全组。  
   
 ## <a name="in-this-scenario"></a>本方案内容  
 若要使用高级设置来设置单个 DirectAccess 服务器，必须完成几个规划和部署步骤。  
@@ -55,7 +55,7 @@ ms.locfileid: "71404958"
 >   
 > -   不支持企业网络中的站点内自动隧道寻址协议 (ISATAP)。 如果你正在使用 ISATAP，应将其删除并使用本机 IPv6。  
   
-### <a name="planning-steps"></a>规划步骤  
+### <a name="planning-steps"></a>计划步骤  
 规划分成以下两个阶段：  
   
 1.  **规划 DirectAccess 基础结构**。 本阶段描述在开始 DirectAccess 部署之前设置网络基础结构所需的规划。 它包括规划网络和服务器拓扑、计划证书、DNS、Active Directory 和组策略对象 (GPO) 配置以及 DirectAccess 网络位置服务器。  
@@ -71,24 +71,24 @@ ms.locfileid: "71404958"
   
 3.  **验证部署**。 本阶段包括用于验证 DirectAccess 部署的步骤。  
   
-有关详细的部署步骤，请参阅 [Install and Configure Advanced DirectAccess](../../../remote-access/directaccess/single-server-advanced/Install-and-Configure-Advanced-DirectAccess.md)。  
+有关详细的部署步骤，请参阅[安装和配置高级 DirectAccess](../../../remote-access/directaccess/single-server-advanced/Install-and-Configure-Advanced-DirectAccess.md)。  
   
-## <a name="BKMK_APP"></a>实用应用程序  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
 部署单个 DirectAccess 服务器可提供以下功能：  
   
 -   **轻松访问**。 运行 Windows 10、Windows 8.1、Windows 8 和 Windows 7 的托管客户端计算机可以配置为 DirectAccess 客户端计算机。 这些客户端只要位于 Internet 上，就可以随时通过 DirectAccess 访问内部网络资源，无须登录 VPN 连接。 未运行这些操作系统之一的客户端计算机可以通过 VPN 连接到内部网络。  
   
 -   **易于管理**。 远程访问管理员可以通过 DirectAccess 远程管理 Internet 上的 DirectAccess 客户端计算机，即使客户端计算机不在企业内部网络中也是如此。 管理服务器可以自动修正不符合公司要求的客户端计算机。 DirectAccess 和 VPN 由同一控制台管理并具有相同的向导集。 此外，可从单个远程访问管理控制台管理一台或多台 DirectAccess 服务器  
   
-## <a name="BKMK_NEW"></a>此方案所需的角色和功能  
+## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>此方案所需的角色和功能  
 下表列出了本方案所需的角色和功能：  
   
 |角色/功能|如何支持本方案|  
 |---------|-----------------|  
-|远程访问角色|使用服务器管理器控制台或 Windows PowerShell 安装或卸载此角色。 本角色包括 DirectAccess 和路由以及远程访问服务 (RRAS)。 远程访问角色由以下两个组件组成：<br/><br/>1.DirectAccess 和 RRAS VPN。 DirectAccess 和 VPN 在远程访问管理控制台中一起进行管理。<br/>2.RRAS 路由。 RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<br /><br />远程访问服务器角色取决于以下服务器角色/功能：<br/><br/> -Internet Information Services （IIS） Web 服务器-在 DirectAccess 服务器上配置网络位置服务器和默认 Web 探测需要此功能。<br/> -Windows 内部数据库。 用于 DirectAccess 服务器上的本地记帐。|  
+|远程访问角色|使用服务器管理器控制台或 Windows PowerShell 安装或卸载此角色。 本角色包括 DirectAccess 和路由以及远程访问服务 (RRAS)。 远程访问角色由以下两个组件组成：<br/><br/>1. DirectAccess 和 RRAS VPN。 DirectAccess 和 VPN 在远程访问管理控制台中一起进行管理。<br/>2. RRAS 路由。 RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<br /><br />远程访问服务器角色取决于以下服务器角色/功能：<br/><br/> -Internet Information Services （IIS） Web 服务器-在 DirectAccess 服务器上配置网络位置服务器和默认 Web 探测需要此功能。<br/> -Windows 内部数据库。 用于 DirectAccess 服务器上的本地记帐。|  
 |远程访问管理工具功能|此功能的安装如下所述：<br /><br />-默认情况下，当安装远程访问角色时，它会安装在 DirectAccess 服务器上，并支持远程管理控制台用户界面和 Windows PowerShell cmdlet。<br />-可选择将它安装在不运行 DirectAccess 服务器角色的服务器上。 在这种情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<br /><br />远程访问管理工具功能包括以下各项：<br /><br />-远程访问图形用户界面（GUI）<br />-适用于 Windows PowerShell 的远程访问模块<br /><br />依赖项包括：<br /><br />-组策略管理控制台<br />-RAS 连接管理器管理工具包（CMAK）<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|  
   
-## <a name="BKMK_HARD"></a>硬件要求  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬件要求  
 本方案的硬件要求包括以下各项：  
   
 -   服务器要求：  
@@ -110,7 +110,7 @@ ms.locfileid: "71404958"
     -   客户端计算机必须运行 Windows 10、Windows 8 或 Windows 7。  
   
         > [!NOTE]  
-        > 以下操作系统可用作 DirectAccess 客户端：Windows 10、Windows Server 2012 R2、Windows Server 2012、Windows 8 企业版、Windows 7 企业版或 Windows 7 旗舰版。  
+        > 以下操作系统可用作 DirectAccess 客户端： Windows 10、Windows Server 2012 R2、Windows Server 2012、Windows 8 企业版、Windows 7 企业版或 Windows 7 旗舰版。  
   
 -   基础机构和管理服务器要求：  
   
@@ -120,7 +120,7 @@ ms.locfileid: "71404958"
   
     -   如果启用了 VPN，则在不使用静态地址池的情况下，需要使用 DHCP 服务器，以将 IP 地址自动分配给 VPN 客户端。  
   
-## <a name="BKMK_SOFT"></a>软件要求  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>软件要求  
 存在许多对本方案的要求。  
   
 -   服务器要求：  
@@ -143,10 +143,10 @@ ms.locfileid: "71404958"
         > [!IMPORTANT]  
         > 如果你在 DirectAccess 部署中启用了 Teredo，并且希望提供对 Windows 7 客户端的访问权限，请确保将客户端升级到带 SP1 的 Windows 7。 使用 Windows 7 RTM 的客户端将无法通过 Teredo 进行连接。 但是，这些客户端仍将能够通过 IP-HTTPS 连接到企业网络。  
   
-## <a name="BKMK_LINKS"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>另请参阅  
 下表提供其他资源的链接。  
   
-|内容类型|参考资料|  
+|内容类型|参考|  
 |--------|-------|  
 |**部署**|[Windows Server 中的 DirectAccess 部署路径](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<br /><br />[使用入门向导部署单个 DirectAccess 服务器](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
 |**工具和设置**|[远程访问 PowerShell cmdlet](https://technet.microsoft.com/library/hh918399.aspx)|  

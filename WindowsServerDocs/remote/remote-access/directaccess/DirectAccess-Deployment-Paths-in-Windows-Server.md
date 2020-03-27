@@ -10,20 +10,20 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 22ccd5c3-0a26-484c-88c8-54119d1228cc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: edbc9a3e44f3f2aa2586f7c82462255beec3733b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f2874f5ab75723f6a0fec137dd1f1cd7d6a2efbb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404996"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310967"
 ---
 # <a name="directaccess-deployment-paths-in-windows-server"></a>Windows Server 中的 DirectAccess 部署路径
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-本主题提供了两个主要远程访问部署路径的文档列表：**基本**和**高级**。  
+本主题提供了两个主要远程访问部署路径的文档的列表： "**基本**" 和 "**高级**"。  
   
 你可以使用以下部分来了解 DirectAccess 基本部署路径和高级部署路径之间的差异，并且可以使用文档链接找到最适合你的目标的部署指南。  
   

@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 6005dc27-f49e-427f-92f7-b0e558ffe3ff
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7de8ddb79e9b23688c31e55795844c2cd714cb52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 89b0ff250d118b47b16996018ffb0e973072f6e7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405383"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315947"
 ---
 # <a name="manage-npss"></a>管理 NPS
 
@@ -26,7 +26,7 @@ ms.locfileid: "71405383"
 >- [与网络策略服务器入门](nps-getstart-top.md)
 >- [部署网络策略服务器](nps-deploy.md) 
 
-本部分包含以下主题。
+本部分包含下列主题。
 
 - [在多宿主计算机上配置 NPS](nps-multihomed-configure.md)
 - [配置 NPS UDP 端口信息](nps-udp-ports-configure.md)

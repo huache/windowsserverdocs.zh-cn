@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 110696d9f1ff082cfae315632c78fddc14359d52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 549150b10dede7dca9786fe38da40e9b7dea706f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367322"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308157"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>步骤1配置远程访问基础结构
 
@@ -27,7 +27,7 @@ ms.locfileid: "71367322"
   
 本主题介绍如何使用混合的 IPv4 和 IPv6 环境中的单个远程访问服务器配置高级远程访问部署所需的基础结构。 在开始执行部署步骤之前，请确保已完成[步骤1：规划远程访问基础结构](../plan/Step-1-Plan-the-Remote-Access-Infrastructure.md)中所述的规划步骤。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |配置服务器网络设置|配置远程访问服务器上的服务器网络设置。|  
 |配置企业网络中的路由|配置企业网络中的路由以确保正确地路由通信。|  
@@ -40,14 +40,14 @@ ms.locfileid: "71367322"
 |配置网络位置服务器|配置网络位置服务器，包括安装网络位置服务器网站证书。|  
   
 > [!NOTE]  
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
-## <a name="BKMK_ConfigNetworkSettings"></a>配置服务器网络设置  
+## <a name="configure-server-network-settings"></a><a name="BKMK_ConfigNetworkSettings"></a>配置服务器网络设置  
 根据你决定将远程访问服务器放置在边缘还是位于网络地址转换（NAT）设备后面，以下网络接口地址设置是使用 IPv4 和 IPv6 的环境中的单个服务器部署所必需的。 可使用“Windows 网络和共享中心”中的“更改适配器设置”配置所有 IP 地址。  
   
 **边缘拓扑**：  
   
-需要以下各项：  
+需要以下项：  
   
 -   两个面向 Internet 的连续公共静态 IPv4 或 IPv6 地址。  
   
@@ -78,14 +78,14 @@ ms.locfileid: "71367322"
   
     要在此命令中使用的 IPsec 策略的名称是**DaServerToInfra**和**DaServerToCorp**。  
   
-## <a name="BKMK_ConfigRouting"></a>在企业网络中配置路由  
+## <a name="configure-routing-in-the-corporate-network"></a><a name="BKMK_ConfigRouting"></a>在企业网络中配置路由  
 在企业网络中配置路由，如下所示：  
   
 -   在组织中部署本机 IPv6 时，添加一个路由，以便内部网络上的路由器通过远程访问服务器将 IPv6 通信路由回来。  
   
 -   在远程访问服务器上手动配置组织 IPv4 和 IPv6 路由。 添加已发布的路由，以便将具有（/48） IPv6 前缀的所有流量转发到内部网络。 此外，对于 IPv4 通信，请添加显式路由，以便将 IPv4 通信转发到内部网络。  
   
-## <a name="BKMK_ConfigFirewalls"></a>配置防火墙  
+## <a name="configure-firewalls"></a><a name="BKMK_ConfigFirewalls"></a>配置防火墙  
 根据你选择的网络设置，当你在部署中使用其他防火墙时，请为远程访问通信应用以下防火墙例外：  
   
 ### <a name="remote-access-server-on-ipv4-internet"></a>IPv4 Internet 上的远程访问服务器  
@@ -124,12 +124,12 @@ ms.locfileid: "71367322"
   
 -   所有 IPv4 或 IPv6 通信的 ICMP  
   
-## <a name="BKMK_ConfigCAs"></a>配置 Ca 和证书  
+## <a name="configure-cas-and-certificates"></a><a name="BKMK_ConfigCAs"></a>配置 Ca 和证书  
 使用 Windows Server 2012 中的远程访问，可以选择是使用证书进行计算机身份验证，还是使用使用用户名和密码的内置 Kerberos 身份验证。 还必须在远程访问服务器上配置 ip-https 证书。 本部分介绍如何配置这些证书。  
   
 有关设置公钥基础结构（PKI）的信息，请参阅[Active Directory 证书服务](https://technet.microsoft.com/library/cc770357.aspx)。  
   
-### <a name="BKMK_ConfigIPsec"></a>配置 IPsec 身份验证  
+### <a name="configure-ipsec-authentication"></a><a name="BKMK_ConfigIPsec"></a>配置 IPsec 身份验证  
 远程访问服务器和所有 DirectAccess 客户端上都需要一个证书，以便这些客户端可以使用 IPsec 身份验证。 证书必须由内部证书颁发机构（CA）颁发。 远程访问服务器和 DirectAccess 客户端必须信任颁发根证书和中间证书的 CA。  
   
 ##### <a name="to-configure-ipsec-authentication"></a>配置 IPsec 身份验证  
@@ -145,7 +145,7 @@ ms.locfileid: "71367322"
   
 4.  如果需要，配置证书自动注册。 有关详细信息，请参阅[配置证书自动注册](https://technet.microsoft.com/library/cc731522.aspx)。  
   
-### <a name="BKMK_ConfigCertTemp"></a>配置证书模板  
+### <a name="configure-certificate-templates"></a><a name="BKMK_ConfigCertTemp"></a>配置证书模板  
 当你使用内部 CA 颁发证书时，必须为 IP-HTTPS 证书和网络位置服务器网站证书配置证书模板。  
   
 ##### <a name="to-configure-a-certificate-template"></a>配置证书模板的步骤  
@@ -160,14 +160,14 @@ ms.locfileid: "71367322"
   
 -   [配置网络位置服务器](#BKMK_ConfigNLS)  
   
-### <a name="BKMK_IPHTTPS"></a>配置 ip-https 证书  
+### <a name="configure-the-ip-https-certificate"></a><a name="BKMK_IPHTTPS"></a>配置 ip-https 证书  
 远程访问需要使用 IP-HTTPS 证书对到远程访问服务器的 IP-HTTPS 连接进行身份验证。 有三个 IP-HTTPS 证书的证书选项：  
   
--   **Public**  
+-   **公布**  
   
     由第三方提供。  
   
--   **Private**  
+-   **专有**  
   
     此证书基于你在[配置证书模板](assetId:///6a5ec5c1-d653-47b1-a567-cc485004e7bc#ConfigCertTemp)中创建的证书模板。 它需要可从可公开解析的 FQDN 访问的证书吊销列表（CRL）分发点。  
   
@@ -226,10 +226,10 @@ ms.locfileid: "71367322"
   
 14. 在 "证书" 管理单元的详细信息窗格中，验证是否已将新证书注册到服务器身份验证的预期目的。  
   
-## <a name="BKMK_ConfigDNS"></a>配置 DNS 服务器  
+## <a name="configure-the-dns-server"></a><a name="BKMK_ConfigDNS"></a>配置 DNS 服务器  
 你必须为部署中的内部网络手动配置用于网络位置服务器网站的 DNS 条目。  
   
-### <a name="NLS_DNS"></a>添加网络位置服务器和 web 探测  
+### <a name="to-add-the-network-location-server-and-web-probe"></a><a name="NLS_DNS"></a>添加网络位置服务器和 web 探测  
   
 1.  在 "内部网络 DNS 服务器：" 的 "**开始**" 屏幕上，键入**dnsmgmt.msc**，然后按 enter。  
   
@@ -239,13 +239,13 @@ ms.locfileid: "71367322"
   
 4.  在 "**新建主机**" 对话框的 "**名称（如果为空则使用父域名称）** " 框中，输入 web 探测的 DNS 名称（默认 web 探测的名称为 directaccess-webprobehost）。 在“IP 地址”框中，输入 Web 探测的 IPv4 地址，然后单击“添加主机”。  
   
-5.  为 directaccess corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在 " **DNS** " 对话框中，单击 **"确定"** 。  
+5.  为 directaccess-corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在 " **DNS** " 对话框中，单击 **"确定"** 。  
   
-6.  单击**完成**。  
+6.  单击 **“完成”** 。  
   
 ![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -266,7 +266,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
     站点内自动隧道寻址协议（ISATAP）使用隧道来使 DirectAccess 客户端能够通过 IPv4 Internet 连接到远程访问服务器，并在 IPv4 标头中封装 IPv6 包。 远程访问使用它提供通过 Intranet 到 ISATAP 主机的 IPv6 连接。 在非本机 IPv6 网络环境中，远程访问服务器会自动将自身配置为 ISATAP 路由器。 要求支持对 ISATAP 名称进行解析。  
   
-## <a name="BKMK_ConfigAD"></a>配置 Active Directory  
+## <a name="configure-active-directory"></a><a name="BKMK_ConfigAD"></a>配置 Active Directory  
 必须将远程访问服务器和所有 DirectAccess 客户端计算机都加入 Active Directory 域。 DirectAccess 客户端计算机必须是以下域类型之一的成员：  
   
 -   与远程访问服务器属于同一林的域。  
@@ -317,7 +317,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 ![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 > [!NOTE]  
 > 输入以下命令后，必须提供域凭据。  
@@ -327,12 +327,12 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="BKMK_ConfigGPOs"></a>配置 Gpo  
+## <a name="configure-gpos"></a><a name="BKMK_ConfigGPOs"></a>配置 Gpo  
 若要部署远程访问，需要至少两个组策略的对象。 一个组策略对象包含远程访问服务器的设置，另一个包含 DirectAccess 客户端计算机的设置。 配置远程访问时，向导将自动创建所需的组策略对象。 但是，如果你的组织强制使用命名约定，或者你没有创建或编辑组策略对象所需的权限，则必须在配置远程访问之前创建它们。  
   
 若要创建组策略对象，请参阅[创建和编辑组策略对象](https://technet.microsoft.com/library/cc754740.aspx)。  
   
-管理员可以手动将 DirectAccess 组策略对象链接到组织单位（OU）。 请考虑下列各项：  
+管理员可以手动将 DirectAccess 组策略对象链接到组织单位（OU）。 请考虑以下事项：  
   
 1.  在配置 DirectAccess 之前，请将已创建的 Gpo 链接到各自的 Ou。  
   
@@ -351,10 +351,10 @@ Restart-Computer
 > [!NOTE]  
 > 如果组策略对象手动创建，则在 DirectAccess 配置过程中可能无法使用组策略对象。 可能没有将组策略对象复制到最接近管理计算机的域控制器。 管理员可以等待复制完成，或强制进行复制。  
   
-## <a name="BKMK_ConfigSGs"></a>配置安全组  
+## <a name="configure-security-groups"></a><a name="BKMK_ConfigSGs"></a>配置安全组  
 客户端计算机组策略对象中包含的 DirectAccess 设置仅应用于配置远程访问时指定的安全组成员的计算机。  
   
-### <a name="Sec_Group"></a>为 DirectAccess 客户端创建安全组  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>为 DirectAccess 客户端创建安全组  
   
 1.  在 "**开始**" 屏幕上，键入**dsa.msc**，然后按 enter。  
   
@@ -366,28 +366,28 @@ Restart-Computer
   
 5.  双击 "DirectAccess 客户端计算机" 安全组，然后在 "**属性**" 对话框中，单击 "**成员**" 选项卡。  
   
-6.  在“成员” 选项卡上，单击“添加”。  
+6.  在 **“成员”** 选项卡上，单击 **“添加”** 。  
   
 7.  在“选择用户、联系人、计算机或服务帐户”对话框中，选择你希望为 DirectAccess 启用的客户端计算机，然后单击“确定”。  
   
 ![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="BKMK_ConfigNLS"></a>配置网络位置服务器  
+## <a name="configure-the-network-location-server"></a><a name="BKMK_ConfigNLS"></a>配置网络位置服务器  
 网络位置服务器应在具有高可用性的服务器上，并且它需要受 DirectAccess 客户端信任的有效安全套接字层（SSL）证书。  
   
 > [!NOTE]  
 > 如果网络位置服务器网站位于远程访问服务器上，则在你配置远程访问时将自动创建一个网站，并且该网站将绑定到你提供的服务器证书。  
   
-网络位置服务器证书有两个证书选项：  
+对于网络位置服务器证书而言，存在两种证书选择：  
   
--   **Private**  
+-   **专有**  
   
     > [!NOTE]  
     > 此证书基于你在[配置证书模板](assetId:///6a5ec5c1-d653-47b1-a567-cc485004e7bc#ConfigCertTemp)中创建的证书模板。  
@@ -453,7 +453,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 4.  请确保内部网络上的 DirectAccess 客户端可以解析网络位置服务器的名称，并且 Internet 上的 DirectAccess 客户端无法解析该名称。  
   
-## <a name="BKMK_Links"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
   
 -   [步骤2：配置远程访问服务器](Step-2-Configure-the-Remote-Access-Server.md)
 

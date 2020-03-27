@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d98d6f7a-a2e6-45b1-9c63-08e2986a5c03
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7044a0d219decceb7669e92e884c78bcd9e3a61c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7d21d80f4970a501e31a053483c37268bdddb811
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388391"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314616"
 ---
 # <a name="step-10-install-and-configure-2-edge1"></a>步骤10安装和配置 2-EDGE1
 
@@ -41,17 +41,17 @@ ms.locfileid: "71388391"
   
 2-EDGE1 必须安装两个网络适配器。  
   
-## <a name="installOS"></a>在 2-EDGE1 上安装操作系统  
+## <a name="install-the-operating-system-on-2-edge1"></a><a name="installOS"></a>在 2-EDGE1 上安装操作系统  
   
 1.  开始安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。  
   
-2.  按照说明完成安装，为本地管理员帐户指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）和强密码。 使用本地管理员账户登录。  
+2.  按照说明完成安装，为本地管理员帐户指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）和强密码。 使用本地管理员帐户登录。  
   
 3.  将 EDGE1 连接到具有 Internet 访问权限的网络，并运行 Windows 更新以安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然后从 Internet 断开连接。  
   
 4.  将一个网络适配器连接到2公司网络子网，将另一个网络适配器连接到模拟 Internet。  
   
-## <a name="tcpip"></a>配置 TCP/IP 属性  
+## <a name="configure-tcpip-properties"></a><a name="tcpip"></a>配置 TCP/IP 属性  
   
 1.  在服务器管理器控制台中，单击 "**本地服务器**"，然后在 "**有线以太网连接**" 旁边的 "**属性**" 区域中，单击链接。  
   
@@ -87,7 +87,7 @@ ms.locfileid: "71388391"
   
 17. 单击 **“使用下面的 IP 地址”** 。 在 " **IP 地址**" 中，键入**131.107.0.20**。 在 **“子网掩码”** 框中，键入 **255.255.255.0**。  
   
-18. 单击“高级”。 在 **“IP 设置”** 选项卡的 **“IP 地址”** 区域中，单击 **“添加”** 。 在 " **Tcp/ip 地址**" 对话框中，在 " **IP 地址**类型**131.107.0.21**" 的 "**子网掩码**" 中键入**255.255.255.0**，然后单击 "**添加**"。  
+18. 单击 **“高级”** 。 在 **“IP 设置”** 选项卡的 **“IP 地址”** 区域中，单击 **“添加”** 。 在 " **Tcp/ip 地址**" 对话框中，在 " **IP 地址**类型**131.107.0.21**" 的 "**子网掩码**" 中键入**255.255.255.0**，然后单击 "**添加**"。  
   
 19. 单击 **DNS** 选项卡。  
   
@@ -95,7 +95,7 @@ ms.locfileid: "71388391"
   
 21. 关闭 **“网络连接”** 窗口。  
   
-## <a name="routing"></a>配置子网之间的路由  
+## <a name="configure-routing-between-subnets"></a><a name="routing"></a>配置子网之间的路由  
   
 1.  在 "**开始**" 屏幕上，键入 "**cmd.exe**"，然后按 enter。  
   
@@ -110,9 +110,9 @@ ms.locfileid: "71388391"
   
 4.  验证 IPv4 地址、10.0.0.1 或 IPv6 地址的四个响应是否为2001： db8：1：：1。  
   
-5.  关闭命令提示符窗口。  
+5.  关闭“命令提示符”窗口。  
   
-## <a name="Join"></a>将 EDGE1 加入 CORP2 域  
+## <a name="join-2-edge1-to-the-corp2-domain"></a><a name="Join"></a>将 EDGE1 加入 CORP2 域  
   
 1.  在服务器管理器控制台中，在 "**本地服务器**" 的 "**属性**" 区域中，单击 "**计算机名**" 旁边的链接。  
   
@@ -132,7 +132,7 @@ ms.locfileid: "71388391"
   
 9. 重新启动计算机后，单击 "**切换用户**"，然后单击 "**其他用户**"，然后用管理员帐户登录到 CORP2 域。  
   
-## <a name="certs"></a>在2上获取证书-EDGE1  
+## <a name="obtain-certificates-on-2-edge1"></a><a name="certs"></a>在2上获取证书-EDGE1  
   
 1.  在 "**开始**" 屏幕上，键入**mmc.exe**，然后按 enter。  
   
@@ -144,7 +144,7 @@ ms.locfileid: "71388391"
   
 5.  右键单击 "**个人**"，指向 "**所有任务**"，然后单击 "**申请新证书**"。  
   
-6.  单击“下一步” 两次。  
+6.  单击“下一步”两次。  
   
 7.  在 "**申请证书**" 页上，选中 "**客户端-服务器身份验证**" 和 " **Web 服务器**" 复选框，然后单击 "**注册此证书需要详细信息**"。  
   
@@ -164,7 +164,7 @@ ms.locfileid: "71388391"
   
 15. 关闭控制台窗口。 如果系统提示你保存设置，请单击 "**否**"。  
   
-## <a name="Access"></a>提供对 CORP\User1 的访问权限  
+## <a name="provide-access-to-corpuser1"></a><a name="Access"></a>提供对 CORP\User1 的访问权限  
   
 1.  在 "**开始**" 屏幕上，键入 "**compmgmt.msc**"，然后按 enter。  
   
@@ -180,9 +180,9 @@ ms.locfileid: "71388391"
   
 7.  在 "**管理员属性**" 对话框中，单击 **"确定"** 。  
   
-8.  关闭 "计算机管理" 窗口。  
+8.  关闭“计算机管理”窗口。  
   
-## <a name="InstallDA"></a>在 2-EDGE1 上安装远程访问角色  
+## <a name="install-the-remote-access-role-on-2-edge1"></a><a name="InstallDA"></a>在 2-EDGE1 上安装远程访问角色  
   
 1.  在服务器管理器控制台的 "**仪表板**" 中，单击 "**添加角色和功能**"。  
   
@@ -192,9 +192,9 @@ ms.locfileid: "71388391"
   
 4.  单击“下一步”五次。  
   
-5.  在“确认安装选择” 对话框中，单击“安装”。  
+5.  在 **“确认安装选择”** 对话框中单击 **“安装”** 。  
   
-6.  在“安装进度”对话框中，验证安装是否成功，然后单击“关闭”。  
+6.  在 **“安装进度”** 对话框中确认安装成功，然后单击 **“关闭”** 。  
   
 
 

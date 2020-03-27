@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 88ffd598-2fde-402c-bd12-be790f84dc96
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 764fd6d272a498898bbdb1f1da68e0d41c39cf84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 943ec8d386d5fe9910b4415a2ab2525d23efc32e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404619"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308253"
 ---
 # <a name="plan-a-remote-access-cluster-deployment"></a>规划远程访问群集部署
 
@@ -31,7 +31,7 @@ ms.locfileid: "71404619"
   
 -   [步骤3：计划负载平衡的群集部署](Step-3-Plan-a-Load-Balanced-Cluster-Deployment.md)。  
   
--   步骤 4：记录远程访问高级部署的规划决策。 对于完成部署步骤所涉及的每个人，此记录可用来帮助进行工作。  
+-   步骤4：记录远程访问高级部署的规划决策。 对于完成部署步骤所涉及的每个人，此记录可用来帮助进行工作。  
   
 完成这些规划步骤后，请参阅[配置远程访问群集](../configure/Configure-a-Remote-Access-Cluster.md)。 
 

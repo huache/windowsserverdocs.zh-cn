@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ca77d64a-065b-4bf2-8252-3e75f71b7734
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 29a48275dfd56cbf223e0fca0c9c276f35a675cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d64fceaf7242b7fe44912f105229c132ef9ee3b3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396022"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315758"
 ---
 # <a name="plan-nps-as-a-radius-proxy"></a>将 NPS 规划为 RADIUS 代理
 
@@ -107,9 +107,9 @@ RADIUS 客户端是网络访问服务器，例如无线访问点、虚拟专用�
 
 可以为以下属性创建规则。
 
-- 接收站 ID。 网络访问服务器（NAS）的电话号码。 此属性的值为字符串。 您可以使用模式匹配语法来指定区号。
+- 接收站 ID。 网络访问服务器（NAS）的电话号码。 此属性的值为字符串。 可以使用模式匹配的语法指定区号。
 
-- 调用工作站 ID。 调用方使用的电话号码。 此属性的值为字符串。 您可以使用模式匹配语法来指定区号。
+- 调用工作站 ID。 调用方使用的电话号码。 此属性的值为字符串。 可以使用模式匹配的语法指定区号。
 
 - 用户名。 由 access 客户端提供并且在 RADIUS 访问请求消息中由 NAS 包含的用户名。 此属性的值是一个字符串，通常包含领域名称和用户帐户名称。
 

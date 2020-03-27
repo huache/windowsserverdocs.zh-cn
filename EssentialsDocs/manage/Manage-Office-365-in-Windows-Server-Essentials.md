@@ -2,17 +2,17 @@
 title: 管理 Windows Server Essentials 中的 Office 365
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: ded26080ce59b48d7bbc3404684b3dbf926eceaa
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: d8051431f55a7a3e05f0a1917a003df044533571
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947467"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311249"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 Office 365
 
@@ -35,7 +35,7 @@ ms.locfileid: "75947467"
   
 -   [排查 Office 365 集成问题](Manage-Office-365-in-Windows-Server-Essentials.md#BKMK_Troubleshoot)  
   
-##  <a name="BKMK_IntegrationOverview"></a>为什么要将 Office 365 与我的服务器集成？  
+##  <a name="why-should-i-integrate-office-365-with-my-server"></a><a name="BKMK_IntegrationOverview"></a>为什么要将 Office 365 与我的服务器集成？  
  将 Office 365 与 Windows Server Essentials 服务器集成有很大的理由。 如果你在内部管理某些资源但将 Office 365 用于其他服务，你将能够从仪表板管理你的 Office 365 服务和资源以及本地资源，而无需在两个位置进行工作。  
   
 - 管理使你的用户能够访问 Office 365 和你的用户帐户的联机帐户：  
@@ -77,7 +77,7 @@ ms.locfileid: "75947467"
   
   -   使用 My Server 2012 R2 应用从便携式计算机、移动设备或 Windows phone 使用 SharePoint Online 库中的文档。 有关信息，请参阅[使用 My Server 应用](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md)。 此功能仅在 Windows Server Essentials 中可用。  
   
-##  <a name="BKMK_Configure"></a>设置 Office 365 集成  
+##  <a name="set-up-office-365-integration"></a><a name="BKMK_Configure"></a>设置 Office 365 集成  
  在完成服务器安装后，你可以随时将服务器与 Office 365 集成。 如果还没有 Office 365 订阅，可以购买一个或注册免费试用版订阅。  
   
  你将执行以下任务：  
@@ -88,7 +88,7 @@ ms.locfileid: "75947467"
   
 -   [步骤3：将组织的 Internet 域名链接到 Office 365 （可选）](#BKMK_StepThree)  
   
-###  <a name="BKMK_StepOne_VERIFY"></a>步骤1：验证 Office 365 集成要求  
+###  <a name="step-1-verify-office-365-integration-requirements"></a><a name="BKMK_StepOne_VERIFY"></a>步骤1：验证 Office 365 集成要求  
  在开始之前，请确保服务器满足以下要求：  
   
 -   服务器可以具有以下任一操作系统： Windows Server Essentials、Windows Server Essentials、Windows server 2012 R2 Standard 或 windows server 2012 R2 Datacenter 操作系统，并安装了 Windows Server Essentials Experience 角色。  
@@ -104,7 +104,7 @@ ms.locfileid: "75947467"
 > [!NOTE]
 >  不需要提前订阅 Office 365。 在 Office 365 集成期间，你将能够购买订阅或注册免费试用版。 若要查看 Office 365 的计划和定价，请[比较企业的 office 365 计划](https://office.microsoft.com/compare-office-365-for-business-plans-FX102918419.aspx?CR_CC=200061904&WT.srch=1&WT.mc_ID=PS_bing_O365Comm_subscribe-to-office-365_Text)。  
   
-###  <a name="BKMK_StepTwo"></a>步骤2：将服务器与 Microsoft Office 365 集成  
+###  <a name="step-2-integrate-the-server-with-microsoft-office-365"></a><a name="BKMK_StepTwo"></a>步骤2：将服务器与 Microsoft Office 365 集成  
  在域控制器上执行以下过程，将 Windows Server Essentials 服务器与 Office 365 集成。  
   
 > [!NOTE]
@@ -118,7 +118,7 @@ ms.locfileid: "75947467"
   
     将出现“与 Microsoft Office 365 集成”向导。  
   
-3. 在“入门” 页上，执行以下操作之一：  
+3. 在“入门”页上，执行以下操作之一：  
   
    -   如果你没有 Office 365 的订阅，请单击 "**下一步**"，然后按照说明订阅 Office 365 或注册试用版订阅。  
   
@@ -136,7 +136,7 @@ ms.locfileid: "75947467"
   
 -   Windows Server Essentials 服务器上的 "**存储**" 页具有 " **sharepoint 库**" 选项卡，用于管理 sharepoint Online 库和更改团队网站的权限。 Office 365 的每个业务计划都包括这些基本 SharePoint 联机功能。  
   
-###  <a name="BKMK_StepThree"></a>步骤3：将组织的 Internet 域名链接到 Office 365 （可选）  
+###  <a name="step-3-link-your-organizations-internet-domain-name-to-office-365-optional"></a><a name="BKMK_StepThree"></a>步骤3：将组织的 Internet 域名链接到 Office 365 （可选）  
  如果要在发送到组织的电子邮件和 SharePoint Online 资源的 Url 中使用自己的 Internet 域，可以将自定义域链接到 Office 365 订阅。 如果将 Windows Server Essentials 服务器与 Office 365 集成，则可以从仪表板执行此操作。  
   
  在为用户创建联机帐户之前执行此操作最为简单，这样你就可以在批量创建联机帐户时使用域。  
@@ -172,13 +172,13 @@ ms.locfileid: "75947467"
     > [!NOTE]
     >  若要使用该向导注册新的域名，则必须使用一个与 Microsoft 合作的域名服务提供商，以提供与该向导的无缝集成。 若要查找域名注册机构，请参阅 [如何购买域名](https://office.microsoft.com/office365-suite-help/how-to-buy-a-domain-name-HA102819883.aspx?CTT=5&origin=HA102818660)。  
   
-3.  如果向导检测到你的域名未由服务器托管，你将需要手动配置所需的 DNS 记录以完成配置。 有关说明，请参阅本主题后面的 [如何手动配置用于 Office 365 集成的 DNS 记录](#BKMK_ManuallyConfigureDNS)。  
+3.  如果向导检测到你的域名未由服务器托管，你将需要手动配置所需的 DNS 记录以完成配置。 有关说明，请参阅本主题后面的[如何手动配置用于 Office 365 集成的 DNS 记录](#BKMK_ManuallyConfigureDNS)。  
   
 4.  验证域是否正在 Office 365 中使用。  
   
      向导完成后需要等待一些等待，而域名注册机构将验证 DNS 记录。 这会自动发生;无需执行任何操作。 但它通常要花费大约一小时的时间，有时稍长一些。 域验证完成后， **Office 365**页面将列出你的组织的域。  
   
-####  <a name="BKMK_ManuallyConfigureDNS"></a>如何为 Office 365 集成手动配置 DNS 记录  
+####  <a name="how-to-manually-configure-dns-records-for-office-365-integration"></a><a name="BKMK_ManuallyConfigureDNS"></a>如何为 Office 365 集成手动配置 DNS 记录  
  如果“将域链接到 Office 365”向导检测到你的域名未由服务器托管，此时若要完成配置，必须手动配置所需的域名服务器 (DNS) 记录。 在这种情况下，你会看到一个 DNS 记录列表，你必须将这些记录配置为 **% username% \ NewDNSRecords_ （n） .txt**，其中 *（n）* 是一个随机数。  
   
  下表说明了必须添加的 DNS 记录。 输入方法可能因不同的域名注册机构而有所不同。 如果有任何疑问，请向你的域名称注册机构寻求帮助。  
@@ -189,7 +189,7 @@ ms.locfileid: "75947467"
 |-------------|--------------------------|-------------|  
 |（多个服务）|MX| Office 365 使用此记录来验证你是否拥有特定的域名。 此 MX 记录不会干扰电子邮件路由。|  
 |Exchange Online|MX|提供电子邮件路由。 **重要提示：** 如果要迁移电子邮件，请不要将零（**0**）的首选项分配给新的 MX 记录。 请确保该记录的值大于分配给当前 MX 记录的值。 当电子邮件迁移完成，并且你已准备好将电子邮件服务器更改为 Office 365 时，请让你的域名注册机构重置新 MX 记录的首选项值。|  
-|Exchange Online|别名 (CNAME)|自动发现用于帮助用户在 Exchange Online 及其 Outlook 桌面客户端或移动电子邮件客户端之间轻松地设置连接的记录。 **注意：** 如果希望使用组织自己的域名访问 Outlook Web 访问（例如， http://mail.contoso.com) 而不是标准 URL （ https://outlook.com/owa/office365.com) ，可以按如下所示配置别名（CName）记录： **Type = CName、TTL = 01：00：00、HostName = mail、Address = office365**|  
+|Exchange Online|别名 (CNAME)|自动发现用于帮助用户在 Exchange Online 及其 Outlook 桌面客户端或移动电子邮件客户端之间轻松地设置连接的记录。 **注意：** 如果希望使用组织自己的域名访问 Outlook Web 访问（例如， http://mail.contoso.com) 而不是标准 URL （ https://outlook.com/owa/office365.com)，可以按如下所示配置别名（CName）记录： **Type = CName、TTL = 01：00：00、HostName = mail、Address = office365**|  
 |Exchange Online|TXT|指定 outlook.com （Office 365 电子邮件服务器使用的域）有权代表你的域发送电子邮件。 创建此记录，以帮助防止你的出站电子邮件被标记为垃圾邮件。|  
 |Lync Online|SRV|帮助启用与其他即时消息服务（例如 Windows Live 或 yahoo!）的联盟。|  
 |Lync Online|SRV|自动发现用于帮助用户在 Lync 桌面客户端和 Microsoft Lync Online 之间轻松地设置连接的记录。|  
@@ -197,7 +197,7 @@ ms.locfileid: "75947467"
 > [!IMPORTANT]
 >  域验证完成后，请不要尝试添加或对 Office 365 门户中的 DNS 记录进行任何进一步的更改。  
   
-###  <a name="BKMK_StepFour_ACCOUNTS"></a> 下一步  
+###  <a name="next-step"></a><a name="BKMK_StepFour_ACCOUNTS"></a>下一步  
   
 -   为用户创建 Microsoft Online Services 帐户。  
   
@@ -206,7 +206,7 @@ ms.locfileid: "75947467"
 > [!NOTE]
 >  在 Windows Server Essentials 中的仪表板上，Microsoft Online Services 帐户称为 Office 365 帐户。 这两个帐户是相同的；只有术语发生了更改。  
   
-##  <a name="BKMK_ManageIntegration"></a>管理 Office 365 集成  
+##  <a name="manage-office-365-integration"></a><a name="BKMK_ManageIntegration"></a>管理 Office 365 集成  
  将服务器与 Office 365 集成后，仪表板上的 " **Office 365** " 页将显示有关 Office 365 订阅的信息并使这些任务可用：  
   
 -   [管理 Office 365 订阅](#BKMK_ManageO365)？更改用于管理订阅的管理员帐户。 打开 Office 365 管理面板来管理你的订阅。  
@@ -215,7 +215,7 @@ ms.locfileid: "75947467"
   
 -   [禁用 Office 365 集成](#BKMK_Disable)？如果你不想从仪表板管理 Office 365 服务、订阅和联机帐户，则可以禁用 Office 365 集成。 Office 365 门户上仍然提供这些服务。  
   
-###  <a name="BKMK_ManageO365"></a>管理 Office 365 订阅  
+###  <a name="manage-your-office-365-subscription"></a><a name="BKMK_ManageO365"></a>管理 Office 365 订阅  
  如果在服务器上工作时需要对 Office 365 订阅进行更改，则可以从仪表板的 " **office 365** " 页打开 office 365 中的订阅。 你还可以更改服务器用于对 Office 365 服务进行更改的管理员帐户。  
   
 ##### <a name="to-open-your-subscription-on-the-office-365-admin-dashboard"></a>在 Office 365 管理仪表板上打开订阅  
@@ -236,9 +236,9 @@ ms.locfileid: "75947467"
   
 3.  键入要用于连接到 Office 365 订阅的帐户的凭据，然后单击 "**下一步**"。  
   
-4.  单击**关闭**。 仪表板将重新启动。  
+4.  单击 **“关闭”** 。 仪表板将重新启动。  
   
-###  <a name="BKMK_Disable"></a>禁用 Office 365 集成  
+###  <a name="disable-office-365-integration"></a><a name="BKMK_Disable"></a>禁用 Office 365 集成  
  如果你决定不想从仪表板管理 Office 365 服务和联机帐户，则可以禁用 Office 365 集成。 Office 365 订阅将保持活动状态，并且在仪表板中所做的任何配置更改都将保持有效。 例如，你将收到电子邮件，该电子邮件将发送到你链接到 Office 365 订阅的域名。 你不会丢失任何电子邮件，并且你为移动设备设置的控件仍使用 Exchange Online。  
   
  今后，你将在 Office 365 中管理 Office 365 订阅、服务和资源，你的用户将需要在 Office 365 中管理其联机帐户的密码。 密码同步不再发生，并且禁用或删除用户帐户将不会对用户的联机帐户产生任何影响。  
@@ -256,10 +256,10 @@ ms.locfileid: "75947467"
 > [!NOTE]
 >  若要再次启用 Office 365 集成，请使用仪表板**主页**的 "**服务**" 选项卡上的 "**与 Office 365 集成**" 任务。 有关说明，请参阅本主题前面的 [步骤 2：将 Windows Server Essentials 服务器与 Microsoft Office 365 集成](#BKMK_StepTwo)。  
   
-##  <a name="BKMK_Troubleshoot"></a>排查 Office 365 集成问题  
+##  <a name="troubleshoot-office-365-integration"></a><a name="BKMK_Troubleshoot"></a>排查 Office 365 集成问题  
  本部分提供的信息可帮助你解决使用 Windows Server Essentials 中的 Office 365 集成功能时可能遇到的常见问题。  
   
-###  <a name="BKMK_AcctsNotCreated"></a>未创建某些 Microsoft Online Services 帐户  
+###  <a name="some-microsoft-online-services-accounts-were-not-created"></a><a name="BKMK_AcctsNotCreated"></a>未创建某些 Microsoft Online Services 帐户  
  **描述**  
   
  尝试从仪表板创建一个或多个 Microsoft Online Services 帐户的尝试未成功。  
@@ -272,7 +272,7 @@ ms.locfileid: "75947467"
   
 3.  如果此问题仍然存在，请重新启动服务器，然后尝试重新创建联机帐户。  
   
-###  <a name="BKMK_ProblemUninstalling"></a>卸载 Office 365 集成时出现问题  
+###  <a name="there-was-a-problem-uninstalling-office-365-integration"></a><a name="BKMK_ProblemUninstalling"></a>卸载 Office 365 集成时出现问题  
  **描述**  
   
  尝试禁用 Office 365 集成时出现未知错误。  

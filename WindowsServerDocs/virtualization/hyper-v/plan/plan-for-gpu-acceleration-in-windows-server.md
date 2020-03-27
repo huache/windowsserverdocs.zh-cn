@@ -1,19 +1,19 @@
 ---
 title: 在 Windows Server 中规划 GPU 加速
 description: 了解 GPU 加速的不同 Hyper-v 技术，包括 DDA 和 RemoteFX vGPU
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 08/21/2019
-ms.openlocfilehash: f62357de1ab167d0a6be4eb63b9d6d23bfac7371
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 7ca8d29b58dc8682575d9cb8b0f26aa49b257335
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923899"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307854"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>在 Windows Server 中规划 GPU 加速
 
@@ -26,7 +26,7 @@ ms.locfileid: "72923899"
 根据工作负荷，可能需要考虑 GPU 加速。 下面是选择 GPU 加速之前应考虑的事项：
 
 - **应用和桌面远程处理（VDI/DaaS）工作负载**：如果你要使用 Windows Server 生成应用或桌面远程处理服务，请考虑你希望用户运行的应用的目录。 某些类型的应用（例如 CAD/CAM 应用、模拟应用、游戏和渲染/可视化应用）很大程度上依赖于三维渲染，以提供平稳、快速的交互功能。 大多数客户将 Gpu 视为具有这些类型的应用的合理用户体验的必要条件。
-- **远程呈现、编码和可视化工作负荷**：这些面向图形的工作负荷往往非常依赖 GPU 的专用功能，如高效的3d 渲染和帧编码/解码，以便实现成本效益和吞吐量目标。 对于这种类型的工作负荷，单个启用 GPU 的 VM 可能会与多个仅 CPU Vm 的吞吐量相匹配。
+- **远程呈现、编码和可视化工作负荷**：这些面向图形的工作负荷往往非常依赖 GPU 的专用功能，如高效的3d 渲染和帧编码/解码，目的是为了实现成本效益和吞吐量目标。 对于这种类型的工作负荷，单个启用 GPU 的 VM 可能会与多个仅 CPU Vm 的吞吐量相匹配。
 - **HPC 和 ML 工作负荷**：对于高度数据并行计算工作负荷（例如高性能计算和机器学习模型定型或推理），gpu 可显著缩短生成时间、推断时间和定型时间。 或者，它们可能比仅 CPU 体系结构的性能级别更具成本效益。 许多 HPC 和机器学习框架都有启用 GPU 加速的选项;考虑这是否会使你的特定工作负荷受益。
 
 ## <a name="gpu-virtualization-in-windows-server"></a>Windows Server 中的 GPU 虚拟化
@@ -72,11 +72,11 @@ RemoteFX vGPU 是一种图形虚拟化技术，允许在多个虚拟机之间共
 | GPU 资源模型    | 专用或共享                                                                 | 仅专用                                                                      |
 | VM 密度            | 高（多个 Vm 的一个或多个 Gpu）                                                 | Low （一个或多个 Gpu 到一个 VM）                                                    |
 | 应用兼容性     | DX 11.1、OpenGL 4.4、OpenCL 1.1                                                     | 供应商（DX 12、OpenGL、CUDA）提供的所有 GPU 功能                       |
-| AVC444                | 默认情况下启用                                                                  | 通过组策略提供                                                      |
+| AVC444                | 默认为启用                                                                  | 通过组策略提供                                                      |
 | GPU VRAM              | 最多 1 GB 专用 VRAM                                                           | GPU 支持的 VRAM                                                     |
 | 帧速率            | 最高 30 fps                                                                         | 最高 60 fps                                                                         |
 | 来宾中的 GPU 驱动程序   | RemoteFX 3D 适配器显示驱动程序 (Microsoft)                                      | GPU 供应商驱动程序（NVIDIA、AMD、Intel）                                              |
-| 主机操作系统支持       | WIN ENT LTSB 2016 Finnish 64 Bits                                                                 | Windows Server 2016;Windows Server 2019                                            |
+| 主机操作系统支持       | Windows Server 2016                                                                 | Windows Server 2016;Windows Server 2019                                            |
 | 来宾操作系统支持      | Windows Server 2012 R2;Windows Server 2016;Windows 7 SP1;Windows 8.1;Windows 10 | Windows Server 2012 R2;Windows Server 2016;Windows Server 2019;Windows 10;Linux |
 | 虚拟机监控程序            | Microsoft Hyper-V                                                                   | Microsoft Hyper-V                                                                   |
 | GPU 硬件          | 企业 GPU（如 Nvidia Quadro/GRID 或 AMD FirePro）                         | 企业 GPU（如 Nvidia Quadro/GRID 或 AMD FirePro）                         |

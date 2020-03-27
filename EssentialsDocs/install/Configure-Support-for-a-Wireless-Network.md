@@ -1,9 +1,9 @@
 ---
 title: 配置对无线网络的支持
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 4d7020d4-fd46-4858-a406-de5c0f21ea06
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c5c98727b81bf37fdb3f90c612270462a51908c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4ce5f167339d7910b10f90bea5bbeae5606b5cf2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833108"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312218"
 ---
 # <a name="configure-support-for-a-wireless-network"></a>配置对无线网络的支持
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 你可以将操作系统配置为支持无线网络。 必须满足以下要求，才能在服务器上启用无线支持：  
   
@@ -49,8 +49,8 @@ ms.locfileid: "59833108"
 > [!NOTE]
 >  有关配置网络连接的详细信息，请参阅[预配置路由器](Preconfiguring-a-Router.md)。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
- [其他自定义设置](Additional-Customizations.md)   
- [部署准备的映像](Preparing-the-Image-for-Deployment.md)   
+ [其他自定义](Additional-Customizations.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)

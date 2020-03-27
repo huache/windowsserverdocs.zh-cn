@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 36255d80-a13e-4af7-a5c0-ab4c8f302622
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ecfbd6dc09f251d5197a16b166aa76e6a37b933a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a0e717b75e1d973f1594b254e1ea5c4eb55536b8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367277"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308229"
 ---
 # <a name="manage-directaccess-clients-remotely"></a>远程管理 DirectAccess 客户端
 
@@ -27,7 +27,7 @@ ms.locfileid: "71367277"
   
 **注意：** Windows Server 2016 将 DirectAccess 和远程访问服务（RAS）合并到单个远程访问角色中。  
   
-## <a name="in-this-guide"></a>本指南包含的内容  
+## <a name="in-this-guide"></a>本指南内容  
 本文档说明如何使用 DirectAccess 管理控制台和相应 Windows PowerShell cmdlet（作为远程访问服务器角色的一部分提供）来利用远程访问的监视功能。  
   
 将对下面的监视和记帐方案进行说明：  

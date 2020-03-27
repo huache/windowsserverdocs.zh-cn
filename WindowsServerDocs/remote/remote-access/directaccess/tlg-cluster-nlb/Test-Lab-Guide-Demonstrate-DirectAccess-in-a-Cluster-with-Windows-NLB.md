@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: db15dcf5-4d64-48d7-818a-06c2839e1289
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e0c82f9f56ea680c11cd612e17326fe7cf96aeca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 563ccf1cf68fc6ffd67a29533b3fb3b579a55ee6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388427"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308840"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>测试实验室指南：在采用 Windows NLB 的群集中演示 DirectAccess
 
@@ -31,12 +31,12 @@ ms.locfileid: "71388427"
 > [!IMPORTANT]  
 > 此实验室是一个使用最小量计算机的概述证明。 本指南中详细介绍的配置仅适用于测试实验室目的，不可用于生产环境。  
   
-## <a name="KnownIssues"></a>已知问题  
+## <a name="known-issues"></a><a name="KnownIssues"></a>已知问题  
 下面是配置群集方案时的已知问题：  
   
 -   使用单个网络适配器在仅使用 IPv4 的部署中配置 DirectAccess，并在网络适配器上自动配置默认的 DNS64（包含“:3333::”的 IPv6 地址）后，尝试通过远程访问管理控制台启用负载平衡会导致出现要求用户提供 IPv6 DIP 的提示。 如果提供 IPv6 DIP，则单击“提交” 后配置将失败，并出现以下错误：参数不正确。  
   
-    解决此问题：  
+    要解决此问题：  
   
     1.  从 [备份和还原远程访问配置](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6)中下载备份和还原脚本。  
   

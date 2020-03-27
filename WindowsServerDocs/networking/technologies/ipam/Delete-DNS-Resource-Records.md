@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 366e6fd5-d563-4de3-9551-5614cbb8f2cb
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fcaaf89989a44cc7a0e84e296ce16083fe021577
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8c93af6a5d43086320ab27982f7a0c0308ee551d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405656"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312466"
 ---
 # <a name="delete-dns-resource-records"></a>删除 DNS 资源记录
 
@@ -43,11 +43,11 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![删除记录](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_02.jpg)  
   
-6.  此时将打开 "**删除 DNS 资源记录**" 对话框。 验证是否选择了正确的 DNS 服务器。 如果不是，请单击 " **DNS 服务器**"，然后选择要从中删除资源记录的服务器。 单击 **“确定”** 。 IPAM 将删除 DNS 服务器中的资源记录。  
+6.  此时将打开 "**删除 DNS 资源记录**" 对话框。 验证是否选择了正确的 DNS 服务器。 如果不是，请单击 " **DNS 服务器**"，然后选择要从中删除资源记录的服务器。 单击“确定”。 IPAM 将删除 DNS 服务器中的资源记录。  
   
     ![验证是否选择了正确的 DNS 服务器并删除记录](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_03.jpg)  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [DNS 资源记录管理](DNS-Resource-Record-Management.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

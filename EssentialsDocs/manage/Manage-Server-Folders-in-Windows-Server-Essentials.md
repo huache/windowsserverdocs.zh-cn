@@ -3,7 +3,7 @@ title: 管理 Windows Server Essentials 中的服务器文件夹
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0c46d19f4f172786e0ffe7f3b9dd7ac1d8f4fcf0
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 6ba5dd5e5978687c9d80a6d34e5e622aaa37c4b9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322229"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311123"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的服务器文件夹
 
@@ -39,7 +39,7 @@ ms.locfileid: "79322229"
   
 -   [了解卷影副本](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_Shadow)  
   
-##  <a name="BKMK_2"></a>使用仪表板管理服务器文件夹  
+##  <a name="manage-server-folders-using-the-dashboard"></a><a name="BKMK_2"></a>使用仪表板管理服务器文件夹  
  通过 Windows Server Essentials，可以使用仪表板执行常见管理任务。 仪表板的“服务器文件夹”页面提供了以下内容：  
   
 - 可显示以下内容的服务器文件夹列表：  
@@ -72,7 +72,7 @@ ms.locfileid: "79322229"
 |添加文件夹|帮助你创建新的服务器文件夹，并指定每个用户帐户所允许的访问级别。|  
 |了解服务器文件夹|打开 Internet 上的帮助主题，该主题介绍了服务器文件夹的用途和功能。|  
   
-##  <a name="BKMK_1"></a>管理对服务器文件夹的访问  
+##  <a name="manage-access-to-server-folders"></a><a name="BKMK_1"></a>管理对服务器文件夹的访问  
  Windows Server Essentials 使你能够使用服务器文件夹将位于客户端计算机上的文件存储到中心位置。 将文件存储在服务器文件夹中将确保你的文件位于一个可始终通过安全方式从每个客户端访问的位置。  
   
  使用服务器文件夹存储你的文件使你能够执行以下操作：  
@@ -105,7 +105,7 @@ ms.locfileid: "79322229"
   
 -   [查看或修改服务器文件夹属性](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_10)  
   
-###  <a name="BKMK_Hide"></a>隐藏服务器文件夹  
+###  <a name="hide-server-folders"></a><a name="BKMK_Hide"></a>隐藏服务器文件夹  
  作为网络管理员，你可以选择隐藏任何服务器文件夹，并阻止将它们显示在远程 Web 访问网站或 Web 服务器应用程序（例如“我的服务器”）上。  
   
 > [!NOTE]
@@ -123,7 +123,7 @@ ms.locfileid: "79322229"
   
 5.  在 **< 文件夹名\> "属性**" 中，单击 "**共享**"，选择 "**从远程 Web 访问和 Web 服务应用程序中隐藏此文件夹**"，然后单击 "**应用**"。  
   
-###  <a name="BKMK_Perms"></a>设置对服务器文件夹的权限  
+###  <a name="set-permissions-to-server-folders"></a><a name="BKMK_Perms"></a>设置对服务器文件夹的权限  
  对于你使用仪表板添加在服务器上的任何其他服务器文件夹，你可以为它选择三种不同的访问设置：  
   
 -   **读/写**  
@@ -162,7 +162,7 @@ ms.locfileid: "79322229"
 > [!NOTE]
 >  不能修改“文件历史记录备份”、“文件夹重定向”和“用户”服务器文件夹的共享权限。 因此，这些服务器文件夹的文件夹属性不包含“共享”选项卡。  
   
-###  <a name="BKMK_10"></a>查看或修改服务器文件夹属性  
+###  <a name="view-or-modify-server-folder-properties"></a><a name="BKMK_10"></a>查看或修改服务器文件夹属性  
  通过仪表板的“服务器文件夹”选项卡上的“查看文件夹属性”任务，你可以修改服务器文件夹名称和说明，并定义哪些用户帐户有权访问服务器文件夹。  
   
 > [!NOTE]
@@ -183,7 +183,7 @@ ms.locfileid: "79322229"
     > [!NOTE]
     >  在安装了 Windows Server Essentials Experience 角色的 Windows Server Essentials 和 Windows Server 2012 R2 中，你还可以修改在服务器文件夹达到其指定大小时提供警告消息的文件夹配额。  
   
-##  <a name="BKMK_5"></a>添加或移动服务器文件夹  
+##  <a name="add-or-move-a-server-folder"></a><a name="BKMK_5"></a>添加或移动服务器文件夹  
  除了在设置期间创建的默认服务器文件夹，你还可以**添加更多的服务器文件夹**来存储服务器上的文件。 你可以将服务器文件夹添加到运行 Windows Server Essentials 的主服务器或成员服务器上。  
   
  通过使用“移动文件夹”向导，你可以在需要时将位于运行 Windows Server Essentials 的主服务器上并显示在仪表板的“服务器文件夹”选项卡上的**服务器文件夹**移动到另一个硬盘驱动器。 在以下情况下，你可以将服务器文件夹移动到另一个硬盘驱动器位置地址：  
@@ -226,7 +226,7 @@ ms.locfileid: "79322229"
   
 - 配额  
   
-###  <a name="BKMK_6"></a>添加或移动服务器文件夹的位置  
+###  <a name="where-to-add-or-move-a-server-folder"></a><a name="BKMK_6"></a>添加或移动服务器文件夹的位置  
  通常，你应将服务器文件夹添加或移动到具有最大可用空间量的硬盘驱动器上。 如果可能，避免将共享文件夹添加或移动到系统驱动器（例如 C:），因为它可能占用操作系统及其更新所需的必要驱动器空间。 同样，避免将服务器文件夹添加或移动到外部硬盘驱动器，因为它们很容易断开连接，从而导致你无法访问你的文件。 相反，我们建议你在内部驱动器上创建该文件夹。  
   
  无法将服务器文件夹添加或移动到以下位置，如果针对添加或移动操作选定以下任意位置，则该服务器文件夹将产生一个错误：  
@@ -278,7 +278,7 @@ ms.locfileid: "79322229"
   
 5.  按照说明完成向导。  
   
-##  <a name="BKMK_9"></a>添加丢失的服务器文件夹  
+##  <a name="add-a-missing-server-folder"></a><a name="BKMK_9"></a>添加丢失的服务器文件夹  
  当服务器检测到预定义的服务器文件夹时？公司、用户、客户端计算机备份、文件历史记录备份或文件夹重定向？不再共享（出于某种原因或其他原因），将生成一个警报来指导用户解决此问题。 建议你从服务器备份中尝试和还原文件夹。 但是，如果尚未备份服务器，则选择丢失的文件夹，然后单击“重新创建丢失的文件夹”以重新配置服务器文件夹的位置。  
   
 > [!NOTE]
@@ -288,10 +288,10 @@ ms.locfileid: "79322229"
   
  有关从服务器备份中还原文件的信息，请参阅[管理备份和还原](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)主题中的 "了解有关还原文件和文件夹的详细信息" 部分。  
   
-##  <a name="BKMK_11"></a>了解共享文件夹  
+##  <a name="understand-shared-folders"></a><a name="BKMK_11"></a>了解共享文件夹  
  你可以通过多种不同的方式从已连接到服务器的设备中访问 Windows Server Essentials 上的共享文件夹。 有关详细信息，请参阅主题[使用共享文件夹](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)。  
   
-##  <a name="BKMK_Shadow"></a>了解卷影副本  
+##  <a name="understand-shadow-copies"></a><a name="BKMK_Shadow"></a>了解卷影副本  
  借助服务器卷影副本，当共享文件和文件夹在过去的时间点出现时，用户可以查看这些文件和文件夹。 访问文件的以前版本或卷影副本非常有用，原因是用户可以：  
   
 1. **恢复意外删除的文件**。 如果您意外删除了某个文件，则可以打开以前的版本，然后将其复制到安全的位置。  

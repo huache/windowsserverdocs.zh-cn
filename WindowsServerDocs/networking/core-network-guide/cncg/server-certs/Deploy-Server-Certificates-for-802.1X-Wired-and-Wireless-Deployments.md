@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 0a39ecae-39cc-4f26-bd6f-b71ed02fc4ad
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0dce886555167ad651704045120fb92eff0dcea1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0636fc321b4e94351628fd577526a8e81b4fc4cf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356179"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318314"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>为 802.1X 有线和无线部署部署服务器证书
 
@@ -56,12 +56,12 @@ ms.locfileid: "71356179"
 - 域中的所有计算机都自动接收你的 CA 证书，该证书安装在每个域成员计算机上的 "受信任的根证书颁发机构" 存储中。 因此，域中的所有计算机都信任 CA 颁发的证书。 这种信任使身份验证服务器能够彼此证明其身份，并参与安全通信。  
 - 除了刷新组策略以外，无需手动重新配置每个服务器。  
 - 每个服务器证书都在增强型密钥用法（EKU）扩展中包括服务器身份验证和客户端身份验证目的。  
-- 可扩展性。 使用本指南部署企业根 CA 后，你可以通过添加企业从属 Ca 来扩展你的公钥基础结构（PKI）。  
+- 可伸缩性。 使用本指南部署企业根 CA 后，你可以通过添加企业从属 Ca 来扩展你的公钥基础结构（PKI）。  
 - 可管理性。 你可以使用 AD CS 控制台或 Windows PowerShell 命令和脚本来管理 AD CS。  
-- 简单易用。 使用 Active Directory 组帐户和组成员身份来指定注册服务器证书的服务器。   
+- 简单性。 使用 Active Directory 组帐户和组成员身份来指定注册服务器证书的服务器。   
 - 部署服务器证书时，证书基于你使用本指南中的说明配置的模板。 这意味着，你可以为特定服务器类型自定义不同的证书模板，也可以为要颁发的所有服务器证书使用同一模板。  
 
-## <a name="bkmk_pre"></a>使用本指南的先决条件  
+## <a name="prerequisites-for-using-this-guide"></a><a name="bkmk_pre"></a>使用本指南的先决条件  
 
 本指南提供有关如何使用 AD CS 和 Windows Server 2016 中的 Web 服务器（IIS）服务器角色部署服务器证书的说明。 下面是执行本指南中的过程的先决条件。  
 
@@ -71,19 +71,19 @@ ms.locfileid: "71356179"
 
 - 你必须阅读本指南的 "规划" 部分，以确保你已准备好进行此部署，然后再执行部署。  
 - 必须按显示的顺序执行本指南中的步骤。 不要提前尝试并部署 CA，而不执行用于部署服务器的步骤，否则部署将失败。  
-- 您必须准备好在您的网络上部署两个新服务器：一台服务器上将 AD CS 安装为企业根 CA，一个服务器用于安装 Web 服务器（IIS），以便您的 CA 可以将证书吊销列表（CRL）发布到 Web se服务器.   
+- 您必须准备好在网络上部署两个新服务器：一台服务器上将 AD CS 安装为企业根 CA，一个服务器用于安装 Web 服务器（IIS），以便您的 CA 可以将证书吊销列表（CRL）发布到 Web服务.   
 
 >[!NOTE]  
 >准备将静态 IP 地址分配到使用本指南部署的 Web 和 AD CS 服务器，并根据组织的命名约定为计算机命名。 此外，必须将计算机加入到域。  
 
-## <a name="bkmk_not"></a>本指南未提供的内容  
+## <a name="what-this-guide-does-not-provide"></a><a name="bkmk_not"></a>本指南未提供的内容  
 本指南未提供有关使用 AD CS 设计和部署公钥基础结构（PKI）的综合说明。 建议你在部署本指南中的技术之前查看 AD CS 文档和 PKI 设计文档。   
 
-## <a name="bkmk_tech"></a>技术概述  
+## <a name="technology-overviews"></a><a name="bkmk_tech"></a>技术概述  
 下面是对 AD CS 和 Web 服务器（IIS）的技术概述。  
 
-### <a name="active-directory-certificate-services"></a>Active Directory 证书服务  
-Windows Server 2016 中的 AD CS 提供可自定义的服务，用于创建和管理在采用公钥技术的软件安全系统中使用的 x.509 证书。 组织可以通过将个人、设备或服务的标识绑定到相应的公钥，使用 AD CS 来增强安全性。 AD CS 还包括一些功能，可用于在各种可伸缩环境中管理证书注册和吊销。  
+### <a name="active-directory-certificate-services"></a>Active Directory Certificate Services  
+Windows Server 2016 中的 AD CS 提供可自定义的服务，用于创建和管理在采用公钥技术的软件安全系统中使用的 x.509 证书。 组织可以通过将个人、设备或服务的标识绑定到相应的公钥，使用 AD CS 来增强安全性。 AD CS 还包括允许在各种可伸缩环境中管理证书注册及吊销的功能。  
 
 有关详细信息，请参阅[Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)和[公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)。  
 

@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 45e9edd6-acca-4d59-851a-a0cc8bd8b4c6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 29457f6f1859a8f3aee2f9d0f84e226b20905175
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ad45c0b5deb59a847413371083ff413eae8e8762
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388527"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308899"
 ---
 # <a name="step-3-verify-deployments"></a>步骤3验证部署
 
@@ -37,7 +37,7 @@ ms.locfileid: "71388527"
   
     你应能够访问所有公司资源。  
   
-## <a name="BKMK_Links"></a>上一步  
+## <a name="previous-step"></a><a name="BKMK_Links"></a>上一步  
   
 -   [步骤2：配置 DirectAccess 服务器](da-basic-configure-s2-server.md)  
   

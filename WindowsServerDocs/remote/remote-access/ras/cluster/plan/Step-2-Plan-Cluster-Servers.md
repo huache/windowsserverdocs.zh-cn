@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 673c5bfb-b590-4932-8e54-ca0a466d90cc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 17aadbb789052be7f33822ce49f3b797f2211d55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 608bc4b2805639e2638ac12f74b712c812ce165f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367377"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308245"
 ---
 # <a name="step-2-plan-cluster-servers"></a>步骤2规划群集服务器
 
@@ -25,16 +25,16 @@ ms.locfileid: "71367377"
 
 部署单个远程访问服务器后，请计划将其他服务器添加到群集。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |[2.1 安装角色和功能](#BKMK_Install)。|对于将添加到群集中的每个服务器，计划安装远程访问角色和 Windows NLB 功能（如果需要），规划拓扑、IP 寻址、路由和转发。|  
 |[2.2 配置服务器设置](#BKMK_Config)|配置将添加到群集中的每个服务器的设置。 请注意，可以使用虚拟机配置服务器的负载均衡群集。 为了使路由和连接正常工作，必须将虚拟机配置为使用 MAC 地址欺骗。|  
   
-## <a name="BKMK_Install"></a>2.1 安装角色和功能  
+## <a name="21-installing-roles-and-features"></a><a name="BKMK_Install"></a>2.1 安装角色和功能  
 对于要加入群集的每个服务器，请计划安装远程访问角色。 此外，如果你想要使用 Windows NLB 对流量进行负载均衡，请计划安装网络负载平衡（NLB）功能。 有关详细信息，请参阅[网络负载平衡](https://technet.microsoft.com/windows-server-docs/networking/technologies/network-load-balancing)。  
   
-## <a name="BKMK_Config"></a>2.2 配置服务器设置  
-对于将添加到群集的每个服务器，请规划 IP 地址和域设置。 请注意以下事项：  
+## <a name="22-configure-server-settings"></a><a name="BKMK_Config"></a>2.2 配置服务器设置  
+对于将添加到群集的每个服务器，请规划 IP 地址和域设置。 注意以下各项：  
   
 1.  群集中的所有服务器都必须属于同一个域。  
   

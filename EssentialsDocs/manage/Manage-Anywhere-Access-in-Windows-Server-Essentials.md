@@ -1,9 +1,9 @@
 ---
 title: 管理 Windows Server Essentials 中的随处访问
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,18 +12,18 @@ ms.assetid: c369c317-f94d-4179-a735-e74bf6f62692
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c9857cc6dd056e36133736c4888b46505ec8c3c7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 58cb5072ae037a4c0dca0328a17675d50fa5495f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838608"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311466"
 ---
 # <a name="manage-anywhere-access-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的随处访问
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-当您打开随处访问功能、 远程 Web 访问、 虚拟专用网络和 DirectAccess 在 Windows Server Essentials 或 Windows Server 2012 R2 中安装了 Windows Server Essentials 体验角色时，它们使你的网络若要从具有 Internet 连接，在任何时间，并在任何设备上的任何位置访问服务器资源的用户。 以下主题讨论如何在服务器上配置远程 Web 访问、虚拟专用网络 (VPN) 和 DirectAccess 功能。  
+当你在 Windows Server Essentials 中打开 "随处访问" 功能、远程 Web 访问、虚拟专用网络和 DirectAccess，或在安装了 Windows Server Essentials 体验角色的 Windows Server 2012 R2 中启用了 "远程访问" 功能时，它们会使你的网络用户随时可以从任何位置通过 Internet 连接访问服务器资源。 以下主题讨论如何在服务器上配置远程 Web 访问、虚拟专用网络 (VPN) 和 DirectAccess 功能。  
   
 -   [管理远程 Web 访问](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
@@ -35,8 +35,8 @@ ms.locfileid: "59838608"
   
 -   [配置 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md)  
   
-     DirectAccess，您可以无缝连接到你的组织"，而无需建立虚拟专用网络 (VPN) 连接任何配备 Internet 的远程位置从 s 网络。 DirectAccess 提供为你的组织提高工作效率"，s 移动办公人员通过提供在办公室内外的相同连接体验。  
+     使用 DirectAccess，可以从任何支持 Internet 的远程位置无缝连接到组织的存储网络，而不必建立虚拟专用网络（VPN）连接。 DirectAccess 通过在办公室内外提供同样的连接体验，为组织的存储移动办公人员提高工作效率。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 
 -   [管理 Windows Server Essentials](Manage-Windows-Server-Essentials.md)

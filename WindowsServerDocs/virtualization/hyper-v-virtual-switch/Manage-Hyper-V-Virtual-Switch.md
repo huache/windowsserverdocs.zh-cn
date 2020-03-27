@@ -10,14 +10,14 @@ ms.technology: networking-hv-switch
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a7a06a7d-b8f3-4c9d-a69e-762bbb0dec72
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: d2d78a74bc330beed80966049bad3def3cd0a426
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a2a7707fcb268ad5e011f5b59c3c0c9a36d5b517
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365595"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307969"
 ---
 # <a name="manage-hyper-v-virtual-switch"></a>管理 Hyper-V 虚拟交换机
 
@@ -25,7 +25,7 @@ ms.locfileid: "71365595"
 
 你可以使用本主题来访问 Hyper-v 虚拟交换机管理内容。
 
-本部分包含以下主题。
+本部分包含下列主题。
 
 - [在 Hyper-v 虚拟交换机端口上配置 Vlan](Configure-and-View-VLAN-Settings-on-Hyper-V-Virtual-Switch-Ports.md)
 - [使用扩展端口访问控制列表创建安全策略](Create-Security-Policies-with-Extended-Port-Access-Control-Lists.md)

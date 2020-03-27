@@ -1,9 +1,9 @@
 ---
 title: 管理 Windows Server Essentials
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 4f1902f1-a0e0-49a6-afa7-3c4b61a11b48
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 59dc0073aa6fe5a7dd35c84b477acda8294e100c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 79291293e69f88beae6e05112ec232a4ab3c77b5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873658"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319040"
 ---
 # <a name="manage-windows-server-essentials"></a>管理 Windows Server Essentials
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 下列主题提供了有关 Windows Server Essentials 中包含的服务器和网络管理功能的信息：  
   
@@ -43,7 +43,7 @@ ms.locfileid: "59873658"
   
 -   [管理电子邮件服务集成](Manage-Email-Service-Integration-in-Windows-Server-Essentials.md)  
   
--   [Manage Microsoft Online Services](Manage-Microsoft-Online-Services-in-Windows-Server-Essentials.md)  
+-   [管理 Microsoft Online Services](Manage-Microsoft-Online-Services-in-Windows-Server-Essentials.md)  
   
 -   [管理服务器文件夹](Manage-Server-Folders-in-Windows-Server-Essentials.md)  
   
@@ -61,7 +61,7 @@ ms.locfileid: "59873658"
   
 -    若要了解如何安全地与合作伙伴和供应商进行协作，请参阅[改进中小型企业中的协作](https://technet.microsoft.com/library/dn747893.aspx)。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 -   [安装 Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)  
   

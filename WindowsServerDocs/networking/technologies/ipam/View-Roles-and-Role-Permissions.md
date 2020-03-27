@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da8dce90-b54c-4ded-a48a-0cda5ccf1d8a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9f35f4a79bcdfebaedb2e5be5c34725d13a04fe9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 748b4a2547285edf6b04fc124d75facd245c38c9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401869"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309467"
 ---
 # <a name="view-roles-and-role-permissions"></a>查看角色和角色权限
 
@@ -41,7 +41,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![查看角色权限](../../media/View-Roles-and-Role-Permissions/ipam_ViewRoles_02.jpg)  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [基于角色的访问控制](Role-based-Access-Control.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

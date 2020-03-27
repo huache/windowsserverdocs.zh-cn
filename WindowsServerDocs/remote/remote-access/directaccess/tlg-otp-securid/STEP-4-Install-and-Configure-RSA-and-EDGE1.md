@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d46ede6f-1a21-414d-b8c3-6b5c87344b9d
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3519e9d6e89b26a733b6b0178334f86e284bddfb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1a2244422c8b625f5641fb775a2e503b096b07b5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404761"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308618"
 ---
 # <a name="step-4-install-and-configure-rsa-and-edge1"></a>步骤4安装和配置 RSA and EDGE1
 
@@ -49,17 +49,17 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 11. 配置 EDGE1 以支持 OTP 身份验证。 为 DirectAccess 配置 OTP，并验证配置。  
   
-## <a name="InstallOS"></a>在 RSA server 上安装操作系统  
+## <a name="install-the-operating-system-on-the-rsa-server"></a><a name="InstallOS"></a>在 RSA server 上安装操作系统  
   
 1.  在 RSA 上，开始安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。  
   
-2.  按照说明完成安装，为本地管理员帐户指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）和强密码。 使用本地管理员账户登录。  
+2.  按照说明完成安装，为本地管理员帐户指定 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）和强密码。 使用本地管理员帐户登录。  
   
 3.  将 RSA 连接到具有 Internet 访问权限的网络，然后运行 Windows 更新以安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然后从 Internet 断开连接。  
   
 4.  将 RSA 连接到公司网络子网。  
   
-## <a name="TCP"></a>在 RSA 上配置 TCP/IP  
+## <a name="configure-tcpip-on-rsa"></a><a name="TCP"></a>在 RSA 上配置 TCP/IP  
   
 1.  在初始配置任务中，单击 "**配置网络**"。  
   
@@ -77,7 +77,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 8.  关闭 **“网络连接”** 窗口。  
   
-## <a name="copyinstfiles"></a>将身份验证管理器安装文件复制到 RSA 服务器  
+## <a name="copy-authentication-manager-installation-files-to-the-rsa-server"></a><a name="copyinstfiles"></a>将身份验证管理器安装文件复制到 RSA 服务器  
   
 1.  在 RSA 服务器上，创建 C:\RSA 安装的文件夹。  
   
@@ -87,7 +87,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 4.  将 RSA 许可证文件复制到 C:\RSA Installation\License 和标记。  
   
-## <a name="JoinDomain"></a>将 RSA 服务器联接到 CORP 域  
+## <a name="join-the-rsa-server-to-the-corp-domain"></a><a name="JoinDomain"></a>将 RSA 服务器联接到 CORP 域  
   
 1.  右键单击**我的电脑**，然后单击 "**属性**"。  
   
@@ -107,7 +107,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 9. 重新启动计算机后，键入**User1**和密码，在 "**登录到：** " 下拉列表中选择 "公司"，然后单击 **"确定"** 。  
   
-## <a name="BKMK_Firewall"></a>在 RSA 上禁用 Windows 防火墙  
+## <a name="disable-windows-firewall-on-rsa"></a><a name="BKMK_Firewall"></a>在 RSA 上禁用 Windows 防火墙  
   
 1.  依次单击 "**开始**"、 **"控制面板**"、"**系统和安全**"，然后单击 " **Windows 防火墙**"。  
   
@@ -117,7 +117,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 4.  单击 **"确定"** 并关闭 Windows 防火墙。  
   
-## <a name="install"></a>在 RSA server 上安装 RSA 身份验证管理器  
+## <a name="install-rsa-authentication-manager-on-the-rsa-server"></a><a name="install"></a>在 RSA server 上安装 RSA 身份验证管理器  
   
 1.  如果在此过程中的任何时间出现安全警告消息，请单击 "**运行**" 以继续。  
   
@@ -137,7 +137,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 9. 在 "**验证许可证文件**" 页上，单击 "**下一步**"。  
   
-10. 在 "**用户 ID** " 字段中，键入 "**管理员**"，然后在 "**密码**" 和 "**确认密码**" 字段中键入强密码。 单击**下一步**。  
+10. 在 "**用户 ID** " 字段中，键入 "**管理员**"，然后在 "**密码**" 和 "**确认密码**" 字段中键入强密码。 单击 **“下一步”** 。  
   
 11. 在 "日志选择" 屏幕上，接受默认值，然后单击 "**下一步**"。  
   
@@ -145,7 +145,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 13. 安装完成后，单击 "**完成**"。  
   
-## <a name="confiauthmgr"></a>配置 RSA 身份验证管理器  
+## <a name="configure-rsa-authentication-manager"></a><a name="confiauthmgr"></a>配置 RSA 身份验证管理器  
   
 1.  如果 RSA 安全控制台未自动打开，则在 RSA 计算机桌面上双击 "RSA Security Console"。  
   
@@ -205,7 +205,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
     6.  在 "**配置 RADIUS 服务器**" 页**上，输入**用于管理员用户的密码和**主密码**的相同密码。 输入管理员用户 ID 和密码，然后单击 "**配置**"。  
   
-    7.  验证是否显示 **"已成功配置 RADIUS 服务器"** 消息。 单击**完成**。 关闭**RSA 操作控制台**。  
+    7.  验证是否显示 **"已成功配置 RADIUS 服务器"** 消息。 单击 **“完成”** 。 关闭**RSA 操作控制台**。  
   
     8.  切换回 **"RSA Security Console"** 。  
   
@@ -257,13 +257,13 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
     7.  从 RSA Authentication Manager media copy \ auth_mgr \windows-x86_64 \am\rsa-ace_nsload \win32-5.0-x86\ agent_nsload .exe 到 C:\RSA 安装。  
   
-## <a name="BKMK_DAProbeUser"></a>创建 DAProbeUser  
+## <a name="create-daprobeuser"></a><a name="BKMK_DAProbeUser"></a>创建 DAProbeUser  
   
 1.  在**RSA Security Console**中，单击 **"标识**" 选项卡，单击 "**用户**"，然后单击 "**添加新**项"。  
   
 2.  在 "**姓氏：** 节类型"**探测器**中，在 "**用户 ID：** " 节中键入**DAProbeUser**。 在 "**密码：** " 和 "**确认密码：** " 部分键入强密码。 清除 **"要求用户在下次登录时更改密码"** 复选框，并单击 "**保存**"。  
   
-## <a name="InstToken"></a>在 CLIENT1 上安装 RSA SecurID 软件令牌  
+## <a name="install-rsa-securid-software-token-on-client1"></a><a name="InstToken"></a>在 CLIENT1 上安装 RSA SecurID 软件令牌  
 使用此过程在 CLIENT1 上安装 SecurID 软件令牌。  
   
 #### <a name="install-securid-software-token"></a>安装 SecurID 软件令牌  
@@ -278,7 +278,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 5.  在 "**安装类型**" 对话框**中，依次选择 "** **下一步**" 和 "**安装**"。  
   
-6.  如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+6.  如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 7.  选中 "**启动 RSA SecurID 软件令牌**" 复选框，然后单击 "**完成**"。  
   
@@ -288,7 +288,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 10. 单击“确定”两次 。  
   
-## <a name="configAuthAgt"></a>将 EDGE1 配置为 RSA 身份验证代理  
+## <a name="configure-edge1-as-an-rsa-authentication-agent"></a><a name="configAuthAgt"></a>将 EDGE1 配置为 RSA 身份验证代理  
 使用此过程配置 EDGE1 以执行 RSA 身份验证。  
   
 #### <a name="configure-the-rsa-authentication-agent"></a>配置 RSA 身份验证代理  
@@ -311,7 +311,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 7. 将 C:\Windows\SysWOW64\securid 复制到 C:\Windows\System32。  
   
-## <a name="configOTP"></a>配置 EDGE1 以支持 OTP 身份验证  
+## <a name="configure-edge1-to-support-otp-authentication"></a><a name="configOTP"></a>配置 EDGE1 以支持 OTP 身份验证  
 使用此过程为 DirectAccess 配置 OTP，并验证配置。  
   
 #### <a name="configure-otp-for-directaccess"></a>为 DirectAccess 配置 OTP  
@@ -324,7 +324,7 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
   
 4.  在 " **DirectAccess 设置**" 窗口中的 "**步骤 2-远程访问服务器**" 下，单击 "**编辑**"。  
   
-5.  单击 "**下一步**" 三次，然后在 "**身份验证**" 部分中选择 "双重**身份验证**" 和 "**使用 OTP**"，并确保选中 "**使用计算机证书**"。 验证根 CA 是否设置为**CN = APP1-ca**。 单击**下一步**。  
+5.  单击 "**下一步**" 三次，然后在 "**身份验证**" 部分中选择 "双重**身份验证**" 和 "**使用 OTP**"，并确保选中 "**使用计算机证书**"。 验证根 CA 是否设置为**CN = APP1-ca**。 单击 **“下一步”** 。  
   
 6.  在 " **OTP RADIUS 服务器**" 部分中，双击 "空白**服务器名称**" 字段。  
   
@@ -333,15 +333,15 @@ RSA 是 RADIUS 和 OTP 服务器，在配置 RADIUS 和 OTP 之前安装。
     > [!NOTE]  
     > 如果 RADIUS 服务器所在的域不同于远程访问服务器，则 "**服务器名称**" 字段必须指定 RADIUS 服务器的 FQDN。  
   
-8.  在 " **OTP CA 服务器**" 部分中，选择 "APP1.corp.contoso.com"，然后单击 "**添加**"。 单击**下一步**。  
+8.  在 " **OTP CA 服务器**" 部分中，选择 "APP1.corp.contoso.com"，然后单击 "**添加**"。 单击 **“下一步”** 。  
   
-9. 在 " **OTP 证书模板**" 页上，单击 "**浏览**" 选择用于注册用于 OTP 身份验证的证书的证书模板，然后在 "**证书模板**" 对话框中选择 " **DAOTPLogon**"。 单击**确定**。 单击 "**浏览**" 选择用于注册远程访问服务器用于签署 OTP 证书注册请求的证书的证书模板，然后在 "**证书模板**" 对话框中选择 " **DAOTPRA**"。 单击“确定”。 单击**下一步**。  
+9. 在 " **OTP 证书模板**" 页上，单击 "**浏览**" 选择用于注册用于 OTP 身份验证的证书的证书模板，然后在 "**证书模板**" 对话框中选择 " **DAOTPLogon**"。 单击“确定”。 单击 "**浏览**" 选择用于注册远程访问服务器用于签署 OTP 证书注册请求的证书的证书模板，然后在 "**证书模板**" 对话框中选择 " **DAOTPRA**"。 单击 **“确定”** 。 单击 **“下一步”** 。  
   
 10. 在 "**远程访问服务器设置**" 页上，单击 "**完成**"，然后单击 " **DirectAccess 专家向导**" 上的 "**完成**"。  
   
 11. 在 "**远程访问查看**" 对话框中，单击 "**应用**"，等待 DirectAccess 策略更新，然后单击 "**关闭**"。  
   
-12. 在 "**开始**" 屏幕上，键入 "**powershell**"，右键单击 " **Powershell**"，单击 "**高级**"，然后单击 "以**管理员身份运行**"。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+12. 在 "**开始**" 屏幕上，键入 "**powershell**"，右键单击 " **Powershell**"，单击 "**高级**"，然后单击 "以**管理员身份运行**"。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 13. 在 Windows PowerShell 窗口中，键入**gpupdate/force** ，然后按 enter。  
   

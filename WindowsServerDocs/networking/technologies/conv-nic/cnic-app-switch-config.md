@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 6d53c797-fb67-4b9e-9066-1c9a8b76d2aa
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/14/2018
-ms.openlocfilehash: d10e8ca6e4689b89a8b9532f77613f17280282b1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 57fc944461254e78635913ac298bacc26a0789f2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355482"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309618"
 ---
 # <a name="physical-switch-configuration-for-converged-nic"></a>汇聚 NIC 的物理交换机配置
 
@@ -45,7 +45,7 @@ ms.locfileid: "71355482"
 13. 显示运行 \(验证是否在端口上正确设置了配置\)
 14. wr \(以使设置在交换机重启期间保持\)
 
-### <a name="tips"></a>技巧
+### <a name="tips"></a>提示：
 1.  No #command # 对命令求反
 2.  如何添加新的 VLAN： int VLAN 100 \(如果存储网络在 VLAN 100 上\)
 3.  如何检查现有的 Vlan：显示 vlan

@@ -1,9 +1,9 @@
 ---
 title: 添加三级域名
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,42 +12,42 @@ ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 64bf24e45155fdd981e2061b3de7ebce1c53b36c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5608fb5417b9e958b45d150879daccc3b7767e59
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833318"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310238"
 ---
 # <a name="add-third-level-domain-names"></a>添加三级域名
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 你可以在“设置域名”向导中为用户添加请求三级域名的功能。 此操作可通过创建和安装由操作系统中的域管理器使用的代码程序集来完成。  
   
 ## <a name="create-a-provider-of-third-level-domain-names"></a>创建三级域名的提供程序  
  可通过创建和安装为向导提供域名的代码程序集来提供三级域名。 若要执行此操作，请完成以下任务：  
   
--   [对程序集添加 IDomainSignupProvider 接口的实现](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
+-   [向程序集添加 IDomainSignupProvider 接口的实现](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
   
--   [对程序集添加 IDomainMaintenanceProvider 接口的实现](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
+-   [向程序集添加 IDomainMaintenanceProvider 接口的实现](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
   
--   [使用验证码签名程序集签名](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
+-   [使用 Authenticode 签名为程序集签名](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
   
--   [在引用计算机上安装该程序集](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
+-   [在引用计算机上安装程序集](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
   
--   [重新启动 Windows Server Domain Name Management 服务](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
+-   [重启 Windows Server 域名管理服务](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
   
-###  <a name="BKMK_DomainSignup"></a> 对程序集添加 IDomainSignupProvider 接口的实现  
+###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a>向程序集添加 IDomainSignupProvider 接口的实现  
  IDomainSignupProvider 接口用于为向导添加域服务。  
   
 ##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>向程序集添加 IDomainSignupProvider 代码  
   
-1.  通过在“开始”  菜单中右键单击 Visual Studio 2008 并选择“以管理员身份运行” ，以管理员身份打开该程序。  
+1.  通过在“开始”菜单中右键单击 Visual Studio 2008 并选择“以管理员身份运行”，以管理员身份打开该程序。  
   
-2.  依次单击 **“文件”**、 **“新建”** 和 **“项目”**。  
+2.  依次单击 **“文件”** 、 **“新建”** 和 **“项目”** 。  
   
-3.  在 **“新建项目”** 对话框中，依次单击 **“Visual C#”** 和 **“类库”**，输入解决方案名称，然后单击 **“确定”**。  
+3.  在 **“新建项目”** 对话框中，依次单击 **“Visual C#”** 和 **“类库”** ，输入解决方案名称，然后单击 **“确定”** 。  
   
 4.  重命名 Class1.cs 文件。 例如，MyDomainNameProvider.cs  
   
@@ -278,7 +278,7 @@ ms.locfileid: "59833318"
   
 21. 保存但不关闭该项目，因为你将在下一个步骤中添加该项目。 在完成下一个步骤之前，将不能生成项目。  
   
-###  <a name="BKMK_DomainMaintenance"></a> 对程序集添加 IDomainMaintenanceProvider 接口的实现  
+###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a>向程序集添加 IDomainMaintenanceProvider 接口的实现  
  IDomainMaintenanceProvider 用于在创建域之后维护域。  
   
 ##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>向程序集添加 IDomainMaintenanceProvider 代码  
@@ -517,10 +517,10 @@ ms.locfileid: "59833318"
   
 14. 保存并生成解决方案。  
   
-###  <a name="BKMK_SignAssembly"></a> 使用验证码签名程序集签名  
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>使用 Authenticode 签名为程序集签名  
  你必须使用验证码签名进行程序集签名，因为该签名将在操作系统中使用。 有关对程序集签名的详细信息，请参阅 [Signing and Checking Code with Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)（使用验证码对代码进行签名和检查）。  
   
-###  <a name="BKMK_InstallAssembly"></a> 在引用计算机上安装该程序集  
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>在引用计算机上安装程序集  
  将程序集放置在引用计算机上的某个文件夹中。 记下该文件夹的路径，因为需要在下一步中将其输入注册表中。  
   
 ### <a name="add-a-key-to-the-registry"></a>向注册表添加项  
@@ -528,59 +528,59 @@ ms.locfileid: "59833318"
   
 ##### <a name="to-add-a-key-to-the-registry"></a>向注册表添加项  
   
-1.  在引用计算机上，单击 **“开始”**，输入 **regedit**，然后按 **Enter**。  
+1.  在引用计算机上，单击 **“开始”** ，输入 **regedit**，然后按 **Enter**。  
   
-2.  在左侧窗格中，依次展开 **“HKEY_LOCAL_MACHINE”**、**“SOFTWARE”**、**“Microsoft”**、**“Windows Server”**、**“Domain Managers”** 和 **“Providers”**。  
+2.  在左侧窗格中，依次展开 **“HKEY_LOCAL_MACHINE”** 、 **“SOFTWARE”** 、 **“Microsoft”** 、 **“Windows Server”** 、 **“Domain Managers”** 和 **“Providers”** 。  
   
-3.  右键单击 **“Providers”**，指向 **“新建”**，然后单击 **“项”**。  
+3.  右键单击 **“Providers”** ，指向 **“新建”** ，然后单击 **“项”** 。  
   
-4.  输入提供程序的标识符，用作该项的名称。 该标识符是你在 [向程序集添加 IDomainSignupProvider 接口的实现](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)的步骤 8 中为提供程序定义的 GUID。  
+4.  输入提供程序的标识符，用作该项的名称。 标识符是你在[向程序集添加 IDomainSignupProvider 接口的实现](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)的步骤 8 中为提供程序定义的 GUID。  
   
-5.  右键单击刚刚创建的项，然后单击 **“字符串值”**。  
+5.  右键单击刚刚创建的项，然后单击 **“字符串值”** 。  
   
 6.  输入 **Assembly** 作为字符串名称，然后按 **Enter**。  
   
-7.  右键单击右侧窗格中新的 **Assembly** 字符串，然后单击 **“修改”**。  
+7.  右键单击右侧窗格中新的 **Assembly** 字符串，然后单击 **“修改”** 。  
   
-8.  输入之前创建的程序集文件的完整路径，然后单击 **“确定”**。  
+8.  输入之前创建的程序集文件的完整路径，然后单击 **“确定”** 。  
   
-9. 再次右键单击该项，然后单击 **“字符串值”**。  
+9. 再次右键单击该项，然后单击 **“字符串值”** 。  
   
 10. 输入 **Enabled** 作为字符串名称，然后按 **Enter**。  
   
-11. 右键单击右侧窗格中新的 **Enabled** 字符串，然后单击 **“修改”**。  
+11. 右键单击右侧窗格中新的 **Enabled** 字符串，然后单击 **“修改”** 。  
   
-12. 键入 **True**，然后单击 **“确定”**。  
+12. 键入 **True**，然后单击 **“确定”** 。  
   
-13. 再次右键单击该项，然后单击 **“字符串值”**。  
+13. 再次右键单击该项，然后单击 **“字符串值”** 。  
   
 14. 输入 **Type** 作为字符串名称，然后按 **Enter**。  
   
-15. 右键单击右侧窗格中新的 **Type** 字符串，然后单击 **“修改”**。  
+15. 右键单击右侧窗格中新的 **Type** 字符串，然后单击 **“修改”** 。  
   
-16. 输入在程序集中定义的提供程序的完整类名，然后单击 **“确定”**。  
+16. 输入在程序集中定义的提供程序的完整类名，然后单击 **“确定”** 。  
   
-###  <a name="BKMK_RestartService"></a> 重新启动 Windows Server Domain Name Management 服务  
+###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a>重启 Windows Server 域名管理服务  
  你必须重新启动 Windows Server Domain Management 服务，以便该提供程序对操作系统可用。  
   
-##### <a name="restart-the-service"></a>重新启动服务。  
+##### <a name="restart-the-service"></a>重新启动服务  
   
-1.  单击 **“开始”**，键入 **mmc**，然后按 **Enter**。  
+1.  单击 **“开始”** ，输入 **mmc**，然后按 **Enter**。  
   
 2.  如果没有在控制台中列出服务管理单元，请通过完成以下步骤添加该管理单元：  
   
-    1.  单击 **“文件”**，然后单击 **“添加/删除管理单元”**。  
+    1.  单击 **“文件”** ，然后单击 **“添加/删除管理单元”** 。  
   
-    2.  在 **“可用的管理单元”** 列表中单击 **“服务”**，然后单击 **“添加”**。  
+    2.  在 **“可用的管理单元”** 列表中单击 **“服务”** ，然后单击 **“添加”** 。  
   
-    3.  在 **“服务”** 对话框中，确保选中 **“本地计算机”** ，然后单击 **“完成”**。  
+    3.  在 **“服务”** 对话框中，确保选中 **“本地计算机”** ，然后单击 **“完成”** 。  
   
     4.  单击 **“确定”** 关闭 **“添加或删除管理单元”** 对话框。  
   
-3.  双击 **“服务”**，向下滚动并选择 **“Windows Server Domain Management”**，然后单击 **“重新启动服务”**。  
+3.  双击 **“服务”** ，向下滚动并选择 **“Windows Server Domain Management”** ，然后单击 **“重新启动服务”** 。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
- [其他自定义设置](Additional-Customizations.md)   
- [部署准备的映像](Preparing-the-Image-for-Deployment.md)   
+ [其他自定义](Additional-Customizations.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)

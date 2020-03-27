@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 804b7314054691fa0abc19f1cc4e4bffbd6457cf
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 1f004ec59c8d2eac2a944a69bbbfc9af76b39826
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822440"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307723"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>步骤 7.5： 创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备
 
@@ -59,7 +59,7 @@ ms.locfileid: "76822440"
 
 4. 选择 "**条件性访问**" 边栏选项卡，并将**此 VPN 连接的切换条件性访问** **启用**。
    
-   如果启用此设置，则会更改 VPNv2 配置文件 XML 中 **\<\<启用 > true\</Enabled >** 设置。
+   如果启用此设置，则会更改 VPNv2 配置文件 XML 中 **\<>\<启用 > true\</Enabled >** 设置。
 
     ![Always On VPN 的条件性访问-属性](../../media/Always-On-Vpn/vpn-conditional-access-azure-ad.png)
 
@@ -90,7 +90,7 @@ ms.locfileid: "76822440"
 
 你已完成将 VPN 配置文件配置为使用 Azure AD 条件访问。 
 
-|如果你想要 。  |然后查看 。  |
+|如果你需要…  |然后查看 。  |
 |---------|---------|
 |了解有关条件性访问如何与 Vpn 一起工作的详细信息  |[VPN 和条件性访问](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)：本页提供有关条件性访问如何与 vpn 一起工作的详细信息。      |
 |了解有关高级 VPN 功能的详细信息  |[高级 VPN 功能](always-on-vpn/deploy/always-on-vpn-adv-options.md#advanced-vpn-features)：本页提供有关以下内容的指导：如何启用 VPN 流量筛选器、如何使用应用程序触发器配置自动 vpn 连接，以及如何将 NPS 配置为仅允许使用 Azure AD 颁发的证书的客户端进行 VPN 连接。        |

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ea7ecd52-4c12-4a49-92fd-b8c08cec42a9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3ae66c125548e31603318a7e600c36c00df9d005
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0ac6e231ac797d1ba1e8dfb314c6aa3df99ff91d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822550"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313964"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>步骤3配置多站点部署
 
@@ -25,7 +25,7 @@ ms.locfileid: "76822550"
 
 配置多站点基础结构后，请按照以下步骤设置远程访问多站点部署。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |3.1. 配置远程访问服务器|通过设置 IP 地址、将它们加入域以及安装远程访问角色来配置其他远程访问服务器。|  
 |3.2. 授予管理员访问权限|向 DirectAccess 管理员授予对其他远程访问服务器的权限。|  
@@ -36,9 +36,9 @@ ms.locfileid: "76822550"
 |3.7。 向多站点部署添加入口点|向多站点部署添加其他入口点。|  
   
 > [!NOTE]  
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
-## <a name="BKMK_ConfigServer"></a>3.1. 配置远程访问服务器  
+## <a name="31-configure-remote-access-servers"></a><a name="BKMK_ConfigServer"></a>3.1. 配置远程访问服务器  
 
   
 ### <a name="to-install-the-remote-access-role"></a>安装远程访问角色  
@@ -63,7 +63,7 @@ ms.locfileid: "76822550"
   
 10. 单击 **“下一步”** ，然后单击 **“安装”** 。  
   
-11.  在“安装进度” 对话框中，验证安装是否成功，然后单击“关闭”。  
+11.  在 **“安装进度”** 对话框中确认安装成功，然后单击 **“关闭”** 。  
   
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
@@ -71,13 +71,13 @@ ms.locfileid: "76822550"
   
 步骤 1-3 必须手动执行，不能使用此 Windows PowerShell cmdlet 完成。  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
 ```  
   
-## <a name="BKMK_Admin"></a>3.2. 授予管理员访问权限  
+## <a name="32-grant-administrator-access"></a><a name="BKMK_Admin"></a>3.2. 授予管理员访问权限  
   
 #### <a name="to-grant-administrator-permissions"></a>授予管理员权限  
   
@@ -95,16 +95,16 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 7.  在 "**管理员属性**" 对话框中，单击 **"确定"** 。  
   
-8.  关闭 "计算机管理" 窗口。  
+8.  关闭“计算机管理”窗口。  
   
 9. 在将成为多站点部署的一部分的所有远程访问服务器上重复此过程。  
   
-## <a name="BKMK_IPHTTPS"></a>3.3. 为多站点部署配置 ip-https  
-在将添加到多站点部署的每个远程访问服务器上，需要使用 SSL 证书来验证到 ip-https web 服务器的 HTTPS 连接。 必须至少具有本地 **Administrators** 组中的成员身份或同等身份才能完成此过程。  
+## <a name="33-configure-ip-https-for-a-multisite-deployment"></a><a name="BKMK_IPHTTPS"></a>3.3. 为多站点部署配置 ip-https  
+在将添加到多站点部署的每个远程访问服务器上，需要使用 SSL 证书来验证到 ip-https web 服务器的 HTTPS 连接。 完成此过程至少需要本地“管理员”组中的成员资格或等效成员资格。  
   
 #### <a name="to-obtain-an-ip-https-certificate"></a>获取 IP-HTTPS 证书  
   
-1.  在每个远程访问服务器上：在 "**开始**" 屏幕上，键入**mmc**，然后按 enter。 如果出现了“用户帐户控制” 对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在每个远程访问服务器上：在 "**开始**" 屏幕上，键入**mmc**，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  单击 "**文件**"，然后单击 "**添加/删除管理单元**"。  
   
@@ -114,7 +114,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 5.  右键单击“证书”，指向“所有任务”，然后单击“申请新证书”。  
   
-6.  单击“下一步” 两次。  
+6.  单击“下一步”两次。  
   
 7.  在 "**申请证书**" 页上，单击 "Web 服务器证书" 模板，然后单击 "**注册此证书需要详细信息**"。  
   
@@ -137,12 +137,12 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 14. 在部署中的所有远程访问服务器上重复此过程。  
   
-## <a name="BKMK_NLS"></a>3.4。 为多站点部署配置网络位置服务器  
-如果在设置第一台服务器时选择了在远程访问服务器上设置网络位置服务器网站，则需要为所添加的每个新的远程访问服务器配置一个 Web 服务器证书，该证书具有为 t 选择的相同使用者名称第一台服务器的网络位置服务器。 每个服务器都需要一个证书来验证网络位置服务器的连接，并且位于内部网络中的客户端计算机必须能够解析 DNS 中网站的名称。  
+## <a name="34-configure-the-network-location-server-for-a-multisite-deployment"></a><a name="BKMK_NLS"></a>3.4。 为多站点部署配置网络位置服务器  
+如果在设置第一台服务器时选择了在远程访问服务器上设置网络位置服务器网站，则需要为你添加的每个新的远程访问服务器配置一个 Web 服务器证书，该证书的使用者名称与为第一台服务器的网络位置服务器。 每个服务器都需要一个证书来验证网络位置服务器的连接，并且位于内部网络中的客户端计算机必须能够解析 DNS 中网站的名称。  
   
 #### <a name="to-install-a-certificate-for-network-location"></a>为网络位置安装证书  
   
-1.  在远程访问服务器上：在 "**开始**" 屏幕上，键入**mmc**，然后按 enter。 如果出现了“用户帐户控制” 对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在远程访问服务器上：在 "**开始**" 屏幕上，键入**mmc**，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  单击 "**文件**"，然后单击 "**添加/删除管理单元**"。  
   
@@ -155,7 +155,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
     > [!NOTE]  
     > 你还可以为第一个远程访问服务器导入用于网络位置服务器的相同证书。  
   
-6.  单击“下一步” 两次。  
+6.  单击“下一步”两次。  
   
 7.  在 "**申请证书**" 页上，单击 "Web 服务器证书" 模板，然后单击 "**注册此证书需要详细信息**"。  
   
@@ -178,7 +178,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 14. 在部署中的所有远程访问服务器上重复此过程。  
   
-### <a name="NLS"></a>创建网络位置服务器 DNS 记录  
+### <a name="to-create-the-network-location-server-dns-records"></a><a name="NLS"></a>创建网络位置服务器 DNS 记录  
   
 1.  在 DNS 服务器上：在 "**开始**" 屏幕上，键入**dnsmgmt.msc**，然后按 enter。  
   
@@ -190,11 +190,11 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 5.  为部署中的每个远程访问服务器重复步骤3和4。  
   
-6.  单击**完成**。  
+6.  单击 **“完成”** 。  
   
 7.  在将服务器添加为部署中的其他入口点之前重复此过程。  
   
-## <a name="BKMK_Client"></a>3.5。 为多站点部署配置 DirectAccess 客户端  
+## <a name="35-configure-directaccess-clients-for-a-multisite-deployment"></a><a name="BKMK_Client"></a>3.5。 为多站点部署配置 DirectAccess 客户端  
 DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的安全组的成员。 启用多站点之前，这些安全组可能包含 Windows 8 客户端和 Windows 7 客户端（如果选择适当的 "下层" 模式）。 启用了 multisite 后，在单服务器模式下的现有客户端安全组将仅转换为适用于 Windows 8 的安全组。 启用多站点后，必须将 DirectAccess Windows 7 客户端计算机移动到相应的专用 Windows 7 客户端安全组（与特定入口点相关联），否则它们将不能通过 DirectAccess 进行连接。 必须首先从现在为 Windows 8 安全组的现有安全组中删除 Windows 7 客户端。 警告：作为 Windows 7 和 Windows 8 客户端安全组的成员的 Windows 7 客户端计算机将失去远程连接，并且没有安装 SP1 的 Windows 7 客户端也将失去企业连接。 因此，必须从 Windows 8 安全组中删除所有 Windows 7 客户端计算机。  
   
 #### <a name="remove--windows-7--clients-from-windows-8-security-groups"></a>从 Windows 8 安全组中删除 Windows 7 客户端  
@@ -210,7 +210,7 @@ DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的
 > [!IMPORTANT]  
 > 启用远程访问多站点配置时，所有客户端计算机（Windows 7 和 Windows 8）都将失去远程连接，直到它们能够直接连接到公司网络或通过 VPN 更新其组策略。 当首次启用多站点功能时，以及禁用 multisite 时，这种情况都是如此。  
   
-## <a name="BKMK_Enable"></a>3.6。 启用多站点部署  
+## <a name="36-enable-the-multisite-deployment"></a><a name="BKMK_Enable"></a>3.6。 启用多站点部署  
 若要配置多站点部署，请在现有的远程访问服务器上启用多站点功能。 在部署中启用多站点之前，请确保你具有以下信息：  
   
 1.  全局负载均衡器设置和 IP 地址，如果要对部署中的所有入口点进行 DirectAccess 客户端连接的负载平衡。  
@@ -219,9 +219,9 @@ DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的
   
 3.  如果需要对 Windows 7 客户端计算机提供支持，则组策略对象名称（如果需要使用在部署中的第一个入口点上适用的非默认组策略对象）。  
   
-### <a name="EnabledMultisite"></a>启用多站点配置  
+### <a name="to-enable-a-multisite-configuration"></a><a name="EnabledMultisite"></a>启用多站点配置  
   
-1.  在现有的远程访问服务器上：在 "**开始**" 屏幕上，键入**ramgmtui.exe**，然后按 enter。 如果出现了“用户帐户控制” 对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在现有的远程访问服务器上：在 "**开始**" 屏幕上，键入**ramgmtui.exe**，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在远程访问管理控制台中，单击 "**配置**"，然后在 "**任务**" 窗格中单击 "**启用多站点**"。  
   
@@ -231,7 +231,7 @@ DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的
   
 5.  在 "**入口点选择**" 页上，执行下列操作之一：  
   
-    -   单击 "**自动分配入口点"，并允许客户端手动选择**自动将客户端计算机路由到最合适的入口点，同时还允许客户端计算机手动选择入口点。 手动入口点选择仅适用于 Windows 8 计算机。 单击?下一步?。  
+    -   单击 "**自动分配入口点"，并允许客户端手动选择**自动将客户端计算机路由到最合适的入口点，同时还允许客户端计算机手动选择入口点。 手动入口点选择仅适用于 Windows 8 计算机。 单击 **“下一步”** 。  
   
     -   单击 "**自动分配入口点**"，自动将客户端计算机路由到最适合的入口点，然后单击 "**下一步**"。  
   
@@ -262,7 +262,7 @@ DirectAccess Windows 客户端计算机必须是定义其 DirectAccess 关联的
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 若要在名为 "Edge1-US" 的第一个入口点上启用名为 "Contoso" 的多站点部署。 部署允许客户端手动选择入口点，而不使用全局负载均衡器。  
   
@@ -276,7 +276,7 @@ Enable-DAMultiSite -Name 'Contoso' -EntryPointName 'Edge1-US' -ManualEntryPointS
 Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_US') -DownlevelGpoName @('corp.contoso.com\DA_W7_Clients_GPO_US)  
 ```  
   
-## <a name="BKMK_EntryPoint"></a>3.7。 向多站点部署添加入口点  
+## <a name="37-add-entry-points-to-the-multisite-deployment"></a><a name="BKMK_EntryPoint"></a>3.7。 向多站点部署添加入口点  
 在部署中启用多站点后，可以使用 "添加入口点向导" 添加其他入口点。 添加入口点之前，请确保你具有以下信息：  
   
 -   如果使用全局负载平衡，则为每个新入口点使用全局负载均衡器 IP 地址。  
@@ -287,9 +287,9 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 -   如果在组织的网络中部署了 IPv6，则需要为新的入口点准备 IP-HTTPS 前缀。  
   
-### <a name="AddEP"></a>向多站点部署添加入口点  
+### <a name="to-add-entry-points-to-your-multisite-deployment"></a><a name="AddEP"></a>向多站点部署添加入口点  
   
-1.  在现有的远程访问服务器上：在 "**开始**" 屏幕上，键入**ramgmtui.exe**，然后按 enter。 如果出现了“用户帐户控制” 对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在现有的远程访问服务器上：在 "**开始**" 屏幕上，键入**ramgmtui.exe**，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在远程访问管理控制台中，单击 "**配置**"，然后在 "**任务**" 窗格中单击 "**添加入口点**"。  
   
@@ -302,7 +302,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 5.  在 "**网络拓扑**" 页上，单击与要添加的远程访问服务器的网络拓扑相对应的拓扑，然后单击 "**下一步**"。  
   
-6.  在 "**网络名称或 Ip 地址**" 页上，在 **"键入客户端用于连接到远程访问服务器的公用名称或 ip 地址**" 中输入客户端用于连接到远程访问服务器的公用名称或 ip 地址。 公共名称对应于 IP-HTTPS 证书的使用者名称。 在实现了边缘网络拓扑的情况下，IP 地址是远程访问服务器的外部适配器的 IP 地址。 单击?下一步?。  
+6.  在 "**网络名称或 Ip 地址**" 页上，在 **"键入客户端用于连接到远程访问服务器的公用名称或 ip 地址**" 中输入客户端用于连接到远程访问服务器的公用名称或 ip 地址。 公共名称对应于 IP-HTTPS 证书的使用者名称。 在实现了边缘网络拓扑的情况下，IP 地址是远程访问服务器的外部适配器的 IP 地址。 单击 **“下一步”** 。  
   
 7.  在 "**网络适配器**" 页上，执行以下操作之一：  
   
@@ -310,7 +310,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
     -   如果要使用一个网络适配器部署拓扑，请在 "**网络适配器**" 中选择连接到内部网络的适配器。  
   
-8.  在 "**网络适配器**" 页上的 "**选择用于对 ip-https 连接进行身份验证的证书**" 页上，单击 "**浏览**" 查找并选择 ip-https 证书。 单击?下一步?。  
+8.  在 "**网络适配器**" 页上的 "**选择用于对 ip-https 连接进行身份验证的证书**" 页上，单击 "**浏览**" 查找并选择 ip-https 证书。 单击 **“下一步”** 。  
   
 9. 如果在企业网络中配置了 IPv6，则在 "**前缀配置**" 页上的 "**分配给客户端计算机的 ipv6 前缀**" 中，输入一个 Ip-https 前缀以将 Ipv6 地址分配到 DirectAccess 客户端计算机，然后单击 "**下一步**"。  
   
@@ -344,7 +344,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 若要将 corp2 域中的计算机 edge2 添加为名为 Edge2-欧洲的第二个入口点。 入口点配置是：客户端 IPv6 前缀 "2001： db8：2：2000：/64"、"连接到地址" （edge2 计算机上的 ip-https 证书） "edge2.contoso.com"、名为 "DirectAccess 服务器设置-Edge2-欧洲" 的服务器 GPO，以及分别为 Internet 和 Corpnet2 的内部和外部接口：  
   
@@ -358,6 +358,6 @@ Add-DAEntryPoint -RemoteAccessServer 'edge2.corp2.corp.contoso.com' -Name 'Edge2
 Add-DAClient -EntrypointName 'Edge2-Europe' -DownlevelGpoName @('corp.contoso.com\ DA_W7_Clients_GPO_Europe') -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_Europe')  
 ```  
   
-## <a name="BKMK_Links"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
   
 -   [步骤2：配置多站点基础结构](Step-2-Configure-the-Multisite-Infrastructure.md)

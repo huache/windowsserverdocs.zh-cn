@@ -3,7 +3,7 @@ title: 管理 Windows Server Essentials 中的设备
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: cd43826579bff16e4bdf50bba956f19a39fec5e6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322319"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311318"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的设备
 
@@ -37,7 +37,7 @@ ms.locfileid: "79322319"
   
 -   [查看计算机属性](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
   
-##  <a name="BKMK_1"></a>使用仪表板管理设备  
+##  <a name="manage-devices-by-using-the-dashboard"></a><a name="BKMK_1"></a>使用仪表板管理设备  
  通过 Windows Server Essentials，可以使用 Windows Server Essentials 仪表板执行常见管理任务。 仪表板的“设备”页面提供了以下内容：  
   
 -   显示以下内容的网络计算机列表：  
@@ -89,7 +89,7 @@ ms.locfileid: "79322319"
 |如何将计算机连接到服务器？|打开帮助主题，该主题介绍了将计算机加入网络时需执行的步骤。|  
 |实现组策略|将策略设置应用于已加入域的 Windows 8 和 Windows 7 计算机。|  
   
-##  <a name="BKMK_2"></a>为用户帐户分配登录特定网络计算机的权限  
+##  <a name="assign-user-accounts-permission-to-log-on-to-specific-network-computers"></a><a name="BKMK_2"></a>为用户帐户分配登录特定网络计算机的权限  
  你可以为用户帐户分配权限，以使用户从远程位置访问 Windows Server Essentials 网络时只能登录到特定网络计算机。  
   
 #### <a name="to-change-the-computer-access-for-a-user-account"></a>更改用户帐户对计算机的访问权限  
@@ -104,7 +104,7 @@ ms.locfileid: "79322319"
   
 5.  在“计算机访问”选项卡上，选择该用户可以远程访问的计算机，然后单击“确定”。  
   
-##  <a name="BKMK_3"></a>从服务器中删除计算机  
+##  <a name="remove-a-computer-from-the-server"></a><a name="BKMK_3"></a>从服务器中删除计算机  
  当你使用仪表板从运行 Windows Server Essentials 的服务器中删除计算机时，该服务器将不再管理该计算机。 因此，在从网络中删除计算机后，服务器将停止创建计算机备份或监控其运行状况。  
   
 > [!NOTE]
@@ -118,7 +118,7 @@ ms.locfileid: "79322319"
   
 3.  在计算机列表中，右键单击要从网络中删除的计算机，然后单击“删除该计算机”。  
   
-##  <a name="BKMK_5"></a>为文件夹重定向和安全性配置组策略设置  
+##  <a name="configure-group-policy-settings-for-folder-redirection-and-security"></a><a name="BKMK_5"></a>为文件夹重定向和安全性配置组策略设置  
  通过使用 Windows Server Essentials 仪表板，可以配置组策略并将其部署到 Windows Server Essentials 网络中的计算机。 Windows Server Essentials 中的组策略包括影响 Windows 更新、Windows Defender 以及网络防火墙的文件夹重定向和安全性设置。  
   
 #### <a name="to-configure-group-policy-in-windows-server-essentials"></a>配置 Windows Server Essentials 中的组策略  
@@ -139,7 +139,7 @@ ms.locfileid: "79322319"
   
 7.  单击“完成”以实现组策略设置。  
   
-##  <a name="BKMK_7"></a>使用远程桌面会话连接到网络计算机  
+##  <a name="connect-to-a-network-computer-by-using-a-remote-desktop-session"></a><a name="BKMK_7"></a>使用远程桌面会话连接到网络计算机  
  若要在离开办公室后远程访问 Windows Server Essentials 网络计算机，请使用 Web 浏览器登录到组织的远程 Web 访问网站，然后在 "**计算机**" 选项卡上，单击计算机的名称。  
   
  “状态”列将显示是否能连接到网络上的计算机，以及是否可以包含下列值：  
@@ -160,7 +160,7 @@ ms.locfileid: "79322319"
   
      计算机连接受到防火墙阻止，或者计算机上的远程桌面已由组策略禁用。 如果有更改，则在服务器上更新此状态可能需要多达 6 个小时。  
   
-##  <a name="BKMK_8"></a>查看计算机属性  
+##  <a name="view-computer-properties"></a><a name="BKMK_8"></a>查看计算机属性  
  Windows Server Essentials 仪表板的“设备”部分将显示网络计算机列表。 该列表还提供有关每台计算机的其他信息。  
   
 #### <a name="to-view-a-list-of-computers"></a>查看计算机列表  

@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5905532b-626d-4b35-99a3-72a063e25809
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e204eaca846f152da991f7f0674bc10f66555f3f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 15ba6f6039e9b2249fadd7898a5393527e6ea2ab
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406090"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313015"
 ---
 # <a name="manage-tenant-virtual-networks"></a>管理租户虚拟网络
 
@@ -25,7 +25,7 @@ ms.locfileid: "71406090"
 
 使用 "[使用脚本部署软件定义的网络基础结构](../../sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)" 主题部署软件定义的网络基础结构后，可以使用此部分中的主题来管理租户 Hyper-v 网络虚拟化虚拟网络。  
   
-本部分包含以下主题。  
+本部分包含下列主题。  
   
 - [了解虚拟网络和 Vlan 的使用情况](Understanding-Usage-of-Virtual-Networks-and-VLANs.md)  
 - [使用访问控制列表（Acl）管理数据中心网络流量流](use-acls-for-traffic-flow.md)  

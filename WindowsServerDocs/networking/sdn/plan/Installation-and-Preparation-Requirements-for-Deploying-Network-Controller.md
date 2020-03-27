@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/10/2018
-ms.openlocfilehash: 38d104bc3ceca478f0e261b3a364b5d4448b22f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a16d82e4db1e92a5dd20f6b4feb88f0619d50cc4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406017"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317513"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>部署网络控制器的要求
 
@@ -56,7 +56,7 @@ ms.locfileid: "71406017"
 >如果将日志存储在远程文件共享中，请确保可以从网络控制器访问该共享。
 
 
-### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>步骤 3： 为网络控制器配置动态 DNS 注册
+### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>步骤 3。 为网络控制器配置动态 DNS 注册
 
 最后，您要做的下一件事就是在同一子网或不同子网中部署网络控制器群集节点。 
 
@@ -85,7 +85,7 @@ ms.locfileid: "71406017"
 
    b. 在 "**高级安全设置**" 中，单击 "**添加**"。 
 
-   c. 单击**选择主体**。 
+   c. 单击 **“选择主体”** 。 
 
    d. 在 "**选择用户、计算机、服务帐户或组**" 对话框中，单击 "**对象类型**"。 
 
@@ -102,7 +102,7 @@ ms.locfileid: "71406017"
 
 3. 对网络控制器群集中的所有计算机和 Vm 重复此操作。
 
-### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>步骤 4： 如果使用基于 Kerberos 的身份验证，请配置服务主体名称
+### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>步骤 4. 如果使用基于 Kerberos 的身份验证，请配置服务主体名称
 
 如果网络控制器使用基于 Kerberos 的身份验证来与管理客户端通信，则必须在 Active Directory 中为网络控制器配置服务主体名称（SPN）。 网络控制器会自动配置 SPN。 只需为网络控制器计算机提供注册和修改 SPN 的权限即可。 有关更多详细信息，请参阅[配置服务主体名称（SPN）](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)。
 

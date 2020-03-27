@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 70357156-fcb0-4346-a61e-4ea963e3ffb0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: aa251ccc0cc48e3805667a247047711c2ae4fcf6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 698bc250b428fe5efc4d111f8783483005d48dc5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388300"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308670"
 ---
 # <a name="step-5-configure-dc1"></a>步骤5配置 DC1
 
@@ -66,9 +66,9 @@ DC1 充当 corp.contoso.com 域的域控制器、DNS 服务器和 DHCP 服务器
   
 4.  在“组范围”下单击“全局”，在“组类型”下单击“安全”，然后单击“确定”。  
   
-5.  双击 " **Win7_Clients_Site1** " 安全组，然后在 " **Win7_Clients_Site1 属性**" 对话框中，单击 "**成员**" 选项卡。  
+5.  双击**Win7_Clients_Site1**安全组，然后在 " **Win7_Clients_Site1 属性**" 对话框中，单击 "**成员**" 选项卡。  
   
-6.  在“成员” 选项卡上，单击“添加”。  
+6.  在 **“成员”** 选项卡上，单击 **“添加”** 。  
   
 7.  在 "**选择用户、联系人、计算机或服务帐户**" 对话框中，单击 "**对象类型**"。 在 "**对象类型**" 对话框中，选择 "**计算机**"，然后单击 **"确定"** 。  
   

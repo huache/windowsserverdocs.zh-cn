@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7540c17b-81de-47de-a04f-3247afa26f70
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: beb2f5ce27115bf328917e38910198794f523547
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1a195be9c00ef35f80a7e1975b52128681fca1f0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404608"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308215"
 ---
 # <a name="step-3-plan-a-load-balanced-cluster-deployment"></a>步骤3规划负载平衡群集部署
 
@@ -25,14 +25,14 @@ ms.locfileid: "71404608"
 
 下一步是规划负载平衡配置和群集部署。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |3.1 计划负载平衡|决定是使用 Windows 网络负载平衡（NLB），还是使用外部负载均衡器（ELB）。|  
 |3.2 计划 IP-HTTPS|如果未使用自签名证书，则远程访问服务器需要群集中每个服务器上的 SSL 证书，以便对 IP-HTTPS 连接进行身份验证。|  
 |3.3 规划 VPN 客户端连接|请注意 VPN 客户端连接的要求。|  
 |3.4 规划网络位置服务器|如果网络位置服务器网站托管在远程访问服务器上，并且未使用自签名证书，请确保群集中的每个服务器都具有服务器证书，以对网站的连接进行身份验证。|  
   
-## <a name="bkmk_2_1_Plan_LB"></a>3.1 计划负载平衡  
+## <a name="31-plan-load-balancing"></a><a name="bkmk_2_1_Plan_LB"></a>3.1 计划负载平衡  
 远程访问可以部署在单个服务器上，也可以部署在远程访问服务器的群集上。 可以对群集的流量进行负载平衡，为 DirectAccess 客户端提供高可用性和可伸缩性。 有两种负载平衡选项：  
   
 -   Windows **nlb**-windows nlb 是一项 windows server 功能。 若要使用它，您无需额外的硬件，因为群集中的所有服务器都负责管理流量负载。 Windows NLB 在远程访问群集中最多支持八个服务器。  
@@ -47,7 +47,7 @@ ms.locfileid: "71404608"
   
     -   管理员可以从 Windows NLB 切换到外部负载均衡器，反之亦然。 请注意，如果外部负载平衡器部署中的服务器超过8个，则管理员无法从外部负载均衡器切换到 Windows NLB。  
   
-### <a name="ELBConfigEx"></a>3.1.1 外部负载平衡器配置示例  
+### <a name="311-external-load-balancer-configuration-example"></a><a name="ELBConfigEx"></a>3.1.1 外部负载平衡器配置示例  
 本部分介绍在新的远程访问部署中启用外部负载均衡器的配置步骤。 使用外部负载均衡器时，远程访问群集可能如下图所示，其中的远程访问服务器通过内部网络上的负载均衡器连接到企业网络，通过负载均衡器连接到 Internet已连接到外部网络：  
   
 ![外部负载平衡器配置示例](../../../../media/Step-3-Plan-a-Load-Balanced-Cluster-Deployment/ELBDiagram-URA_Enterprise_NLB-.png)  
@@ -85,7 +85,7 @@ ms.locfileid: "71404608"
   
 6.  远程访问服务器现在将使用计划的 IP 地址进行配置，并且将根据计划的 IP 地址配置群集的外部和内部 IP 地址。  
   
-## <a name="bkmk_2_2_NLB"></a>3.2 计划 IP-HTTPS  
+## <a name="32-plan-ip-https"></a><a name="bkmk_2_2_NLB"></a>3.2 计划 IP-HTTPS  
   
 1.  **证书要求**-在部署的单个远程访问服务器的过程中，你选择使用由公共或内部证书颁发机构（CA）颁发的 ip-https 证书，或自签名证书。 对于群集部署，必须在远程访问群集的每个成员上使用相同类型的证书。 也就是说，如果使用公共 CA 颁发的证书（推荐），则必须在群集的每个成员上安装由公共 CA 颁发的证书。 新证书的使用者名称应与当前在部署中使用的 IP-HTTPS 证书的使用者名称相同。 请注意，如果使用的是自签名证书，则在群集部署过程中，将在每个服务器上自动配置这些证书。  
   
@@ -94,7 +94,7 @@ ms.locfileid: "71404608"
     > [!NOTE]  
     > 前缀要求仅适用于启用了 IPv6 的内部网络（仅适用于 IPv6 或 IPV4 + IPv6）。 在仅 IPv4 公司网络中，将自动配置客户端前缀，并且管理员无法更改它。  
   
-## <a name="BKMK_3.3"></a>3.3 规划 VPN 客户端连接  
+## <a name="33-plan-for-vpn-client-connections"></a><a name="BKMK_3.3"></a>3.3 规划 VPN 客户端连接  
 VPN 客户端连接有多个注意事项：  
   
 -   如果使用 DHCP 分配 VPN 客户端地址，则无法对 VPN 客户端流量进行负载平衡。 需要静态地址池。  
@@ -105,8 +105,8 @@ VPN 客户端连接有多个注意事项：
   
 -   若要启用 VPN IPv6 客户端流量以进行负载平衡，必须指定59位 IPv6 前缀。  
   
-## <a name="BKMK_nls"></a>3.4 规划网络位置服务器  
-如果你在单个远程访问服务器上运行网络位置服务器网站，则在部署过程中，你选择使用内部证书颁发机构（CA）颁发的证书，或者使用自签名证书。  请注意以下事项：  
+## <a name="34-plan-the-network-location-server"></a><a name="BKMK_nls"></a>3.4 规划网络位置服务器  
+如果你在单个远程访问服务器上运行网络位置服务器网站，则在部署过程中，你选择使用内部证书颁发机构（CA）颁发的证书，或者使用自签名证书。  注意以下各项：  
   
 1.  远程访问群集的每个成员都必须具有网络位置服务器的证书，该证书对应于网络位置服务器网站的 DNS 条目。  
   

@@ -1,9 +1,9 @@
 ---
 title: Windows Server Essentials 中的计算机备份和还原错误疑难解答
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 06/25/2013
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,23 +12,23 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 37e79661442ba9f66a564b6c6c8fb57db1978454
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 28e3564c93f192563626bfb44992ef9bc4a49598
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812328"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313241"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Windows Server Essentials 中的计算机备份和还原错误疑难解答
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 使用这些过程以解决 Windows Server Essentials 中的计算机备份问题，包括备份配置问题、不完整或不成功的备份、备份运行状况警报和文件、文件夹或完整系统还原的问题。  
   
 > [!NOTE]
->  从 Windows Server Essentials 社区的最新疑难解答信息，请访问[Windows Server Essentials 论坛](https://social.technet.microsoft.com/Forums//winserveressentials/threads)。  
+>  有关 Windows Server Essentials 社区中的最新疑难解答信息，请访问[Windows Server Essentials 论坛](https://social.technet.microsoft.com/Forums//winserveressentials/threads)。  
   
-##  <a name="BKMK_TroubleshootBackupConfigurationIssues"></a> 对已连接的计算机的备份配置问题进行故障排除  
+##  <a name="troubleshoot-backup-configuration-issues-for-a-connected-computer"></a><a name="BKMK_TroubleshootBackupConfigurationIssues"></a>排查连接的计算机的备份配置问题  
  使用以下过程解决在 Windows Server Essentials 服务器上备份的计算机的备份配置问题。  
   
 ### <a name="errors"></a>错误  
@@ -53,9 +53,9 @@ ms.locfileid: "59812328"
   
     1.  在服务器上，依次单击“开始”、“管理工具”，然后单击“服务”。  
   
-    2.  向下滚动并单击“Windows Server Client Computer Backup Provider Service”。 如果该服务的状态不是“已启动” ，则右键单击该服务，然后单击“启动” 。  
+    2.  向下滚动并单击“Windows Server Client Computer Backup Provider Service”。 如果该服务的状态不是“已启动”，则右键单击该服务，然后单击“启动”。  
   
-    3.  单击“Windows Server Client Computer Backup Service”。 如果该服务的状态不是“已启动” ，则右键单击该服务，然后单击“启动” 。  
+    3.  单击“Windows Server Client Computer Backup Service”。 如果该服务的状态不是“已启动”，则右键单击该服务，然后单击“启动”。  
   
     4.  关闭“服务”。  
   
@@ -65,7 +65,7 @@ ms.locfileid: "59812328"
   
     1.  在客户端计算机上，单击“开始”，在“搜索程序和文件”文本框中键入“Services”，然后按 Enter 键。  
   
-    2.  向下滚动并单击“Windows Server Client Computer Backup Provider Service”。 如果该服务的状态不是“已启动” ，则右键单击该服务，然后单击“启动” 。  
+    2.  向下滚动并单击“Windows Server Client Computer Backup Provider Service”。 如果该服务的状态不是“已启动”，则右键单击该服务，然后单击“启动”。  
   
     3.  关闭“服务”。  
   
@@ -73,7 +73,7 @@ ms.locfileid: "59812328"
   
 6.  从计算机上卸载 Windows Server Essentials 连接器软件，并重新安装它。 有关详细信息，请参阅主题[卸载连接器软件](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)和[安装连接器软件](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)。  
   
-##  <a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a> 对未正确完成的备份进行故障排除  
+##  <a name="troubleshoot-a-backup-that-did-not-complete-properly"></a><a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a>解决未正确完成的备份问题  
  当备份的状态为失败时，备份的任何部分都未成功并且没有可供你还原的数据。 但是，当备份具有不完整的状态时，不是所有在备份配置中指定的项都已备份，但某些数据可能可以供你还原。  
   
 ### <a name="errors"></a>错误  
@@ -88,7 +88,7 @@ ms.locfileid: "59812328"
   
 1.  打开 Windows Server Essentials 仪表板，然后单击“计算机和备份”。  
   
-2.  单击备份未成功完成的计算机的名称，然后单击“任务”  窗格中的“查看计算机属性”  。  
+2.  单击备份未成功完成的计算机的名称，然后单击“任务”窗格中的“查看计算机属性”。  
   
 3.  单击未成功完成的备份，然后单击“查看详细信息”。  
   
@@ -98,7 +98,7 @@ ms.locfileid: "59812328"
   
 1.  请确保硬盘已连接到计算机上、处于打开状态并且能正常工作。  
   
-2.  运行 **chkdsk /f /r** 来修复硬盘 (**/f**) 上的任何错误并从任何坏扇区 (**/r**) 恢复可读信息。 有关运行 **chkdsk**的详细信息，请参阅 [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562)。  
+2.  运行 **chkdsk /f /r** 来修复硬盘 ( **/f**) 上的任何错误并从任何坏扇区 ( **/r**) 恢复可读信息。 有关运行 **chkdsk**的详细信息，请参阅 [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562)。  
   
 3.  请确保在运行备份时计算机未关闭或从网络断开连接。  
   
@@ -110,11 +110,11 @@ ms.locfileid: "59812328"
   
         ###### <a name="to-extend-a-volume"></a>扩展卷  
   
-        1.  在控制面板中，单击“系统和安全” 。  
+        1.  在控制面板中，单击“系统和安全”。  
   
-        2.  在“管理工具” 下，单击“创建和格式化硬盘分区” 。  
+        2.  在“管理工具”下，单击“创建和格式化硬盘分区”。  
   
-        3.  右键单击想要扩展的卷。 如果“扩展卷”  已启用，则选择该选项。 如果未启用该选项，则不能扩展卷。  
+        3.  右键单击想要扩展的卷。 如果“扩展卷”已启用，则选择该选项。 如果未启用该选项，则不能扩展卷。  
   
         4.  按照扩展卷向导中的步骤扩展该卷。  
   
@@ -132,7 +132,7 @@ ms.locfileid: "59812328"
   
 6.  在命令提示符下运行 **vssadmin** 来对卷影复制服务 (VSS) 问题进行故障排除。 有关 **vssadmin**的信息，请参阅 [VSSADMIN](https://go.microsoft.com/fwlink/?LinkID=94332)。  
   
-##  <a name="BKMK_TroubleshootBackupHealthAlertIssues"></a> 解决备份运行状况警报问题  
+##  <a name="troubleshoot-backup-health-alert-issues"></a><a name="BKMK_TroubleshootBackupHealthAlertIssues"></a>解决备份运行状况警报问题  
   
 ### <a name="errors"></a>错误  
   
@@ -155,9 +155,9 @@ ms.locfileid: "59812328"
         > [!NOTE]
         >  如果你在远程管理服务器，则必须使用远程桌面连接访问服务器桌面。 有关使用远程桌面连接的信息，请参阅 [使用远程桌面连接连接到另一台计算机](https://windows.microsoft.com/windows-vista/Connect-to-another-computer-using-Remote-Desktop-Connection)。  
   
-    2.  向下滚动并单击“Windows Server Client Computer Backup Provider Service”。 如果该服务的状态不是“已启动” ，则右键单击该服务，然后单击“启动” 。  
+    2.  向下滚动并单击“Windows Server Client Computer Backup Provider Service”。 如果该服务的状态不是“已启动”，则右键单击该服务，然后单击“启动”。  
   
-    3.  单击“Windows Server Client Computer Backup Service”。 如果该服务的状态不是“已启动” ，则右键单击该服务，然后单击“启动” 。  
+    3.  单击“Windows Server Client Computer Backup Service”。 如果该服务的状态不是“已启动”，则右键单击该服务，然后单击“启动”。  
   
     4.  关闭“服务”。  
   
@@ -165,9 +165,9 @@ ms.locfileid: "59812328"
   
     1.  在客户端计算机上，单击“开始”，在“搜索程序和文件”文本框中键入“服务，然后单击 Enter。  
   
-    2.  右键单击“Windows Server Client Computer Backup Provider Service” ，然后单击“开始” 。  
+    2.  右键单击“Windows Server Client Computer Backup Provider Service”，然后单击“开始”。  
   
-    3.  关闭“服务” 。  
+    3.  关闭“服务”。  
   
 3.  检查客户端计算机或服务器上的事件日志，以查看是否存在与备份服务或驱动程序相关的问题。  
   
@@ -175,7 +175,7 @@ ms.locfileid: "59812328"
   
 5.  检查运行状况警报，了解可能会影响客户端备份的其他问题。  
   
-##  <a name="BKMK_FileAndFolder"></a> 对文件或文件夹还原进行故障排除  
+##  <a name="troubleshoot-a-file-or-folder-restore"></a><a name="BKMK_FileAndFolder"></a>排查文件或文件夹还原问题  
   
 ### <a name="errors"></a>错误  
   
@@ -197,7 +197,7 @@ ms.locfileid: "59812328"
   
     ###### <a name="to-check-the-status-of-the-windows-server-solution-computer-restore-driver"></a>检查 Windows Server 解决方案计算机还原驱动程序的状态  
   
-    1.  单击**启动**，类型**设备管理器**中**搜索程序和文件**文本框中，然后单击 ENTER。  
+    1.  单击“开始”，在“搜索程序和文件”文本框中键入 **Device Manager**，然后单击 Enter。  
   
     2.  在设备管理器中，单击“系统设备”，滚动到“Windows Server 解决方案计算机还原驱动程序”。  
   
@@ -205,25 +205,25 @@ ms.locfileid: "59812328"
   
         1.  使用管理员权限打开命令提示符，并运行以下命令：  
   
-             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe?  �i**  
+             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe？-i**  
   
         2.  刷新设备管理器。 该驱动程序应该会出现。  
   
-    4.  如果显示的图标是计算机监视器，则该驱动程序已安装并运行正常。 关闭设备管理器。  
+    4.  如果显示的图标是计算机监视器，则该驱动程序已安装并运行正常。 关闭“设备管理器”。  
   
     5.  如果显示的图标不是计算机监视器  
   
-        1.  右键单击“Windows Server 解决方案计算机还原驱动程序” ，然后单击“属性” 。  
+        1.  右键单击“Windows Server 解决方案计算机还原驱动程序”，然后单击“属性”。  
   
         2.  单击“驱动程序”选项卡，然后单击“更新驱动程序”。  
   
-        3.  单击“自动搜索更新的驱动程序软件” ，然后按照说明更新驱动器。  
+        3.  单击“自动搜索更新的驱动程序软件”，然后按照说明更新驱动器。  
   
-    6.  关闭设备管理器。  
+    6.  关闭“设备管理器”。  
   
 6.  从计算机上卸载 Windows Server Essentials 连接器软件，并重新安装它。 有关详细信息，请参阅主题[卸载连接器软件](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)和[安装连接器软件](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)。  
   
-##  <a name="BKMK_Troubleshootfullsystemrestoreissues"></a> 解决完整系统还原的问题  
+##  <a name="troubleshoot-a-full-system-restore"></a><a name="BKMK_Troubleshootfullsystemrestoreissues"></a>排查完全系统还原问题  
   
 ### <a name="errors"></a>错误  
   
@@ -236,12 +236,12 @@ ms.locfileid: "59812328"
   
 1.  以本地管理员身份登录计算机。  
   
-2.  卸载连接器软件。 有关详细信息，请参阅 [Uninstall the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)。  
+2.  卸载连接器软件。 有关详细信息，请参阅[卸载连接器软件](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)。  
   
-3.  从域中删除计算机。 有关详细信息，请参阅 [Remove a computer from a Windows domain](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)。  
+3.  从域中删除计算机。 有关详细信息，请参阅[从 Windows 域中删除计算机](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)。  
   
 4.  重新将计算机连接到服务器。 有关详细信息，请参阅[如何将计算机连接到服务器](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 -   [支持 Windows Server Essentials](Support-Windows-Server-Essentials.md)

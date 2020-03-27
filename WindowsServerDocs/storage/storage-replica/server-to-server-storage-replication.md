@@ -7,18 +7,18 @@ ms.author: nedpyle
 ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
-ms.date: 04/26/2019
+ms.date: 03/26/2020
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: a21000e857d702846703deb4f55380e1a998f6d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9873378d62ccc7b53dcc6fc629651df2aa1c6708
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402957"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308116"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>具有存储副本的服务器到服务器存储复制
 
-> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 可以使用存储副本配置两个同步数据的服务器，以便每个服务器都具有相同卷的相同副本。 本主题提供了此服务器到服务器复制配置的一些背景知识，以及如何对其进行设置和管理环境。
 
@@ -50,7 +50,7 @@ ms.locfileid: "71402957"
 
 若要将存储副本和 Windows 管理中心一起使用，需要以下各项：
 
-| 系统                        | 操作系统                                            | 所需的     |
+| System                        | 操作系统                                            | 所需的     |
 |-------------------------------|-------------------------------------------------------------|------------------|
 | 两个服务器 <br>（任何本地硬件、Vm 和云 Vm 混合，包括 Azure Vm）| Windows Server 2019、Windows Server 2016 或 Windows Server （半年频道） | 存储副本  |
 | 一台 PC                     | Windows 10                                                  | Windows Admin Center |
@@ -67,14 +67,14 @@ ms.locfileid: "71402957"
 
 ![显示使用构建 5 中的服务器复制构建 9 中的服务器的关系图](media/Server-to-Server-Storage-Replication/Storage_SR_ServertoServer.png)  
 
-**图 1：服务器到服务器的复制**  
+**图1：服务器到服务器的复制**  
 
-## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>第 1 步：在电脑上安装和配置 Windows 管理中心
+## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>步骤1：在计算机上安装和配置 Windows 管理中心
 
 如果你使用 Windows 管理中心来管理存储副本，请使用以下步骤来准备你的电脑以管理存储副本。
 1. 下载并安装[Windows 管理中心](../../manage/windows-admin-center/overview.md)。
 2. 下载并安装[远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)。
-    - 如果使用的是 Windows 10 版本1809或更高版本，请安装 "RSAT：Windows PowerShell 的存储副本模块 "按需功能"。
+    - 如果使用的是 Windows 10 版本1809或更高版本，请从 "按需功能" 中安装 "RSAT： Windows PowerShell 的存储副本模块"。
 3. 通过选择 "**开始**" 按钮，键入 " **powershell**"，右键单击 " **Windows PowerShell"，** 然后选择 "以**管理员身份运行**"，以管理员身份打开 PowerShell 会话。
 4. 输入以下命令以在本地计算机上启用 WS-MANAGEMENT 协议，并在客户端上设置远程管理的默认配置。
 
@@ -84,11 +84,14 @@ ms.locfileid: "71402957"
 
 5. 键入**Y**启用 winrm 服务并启用 Winrm 防火墙例外。
 
-## <a name="provision-os"></a>步骤2：设置操作系统、功能、角色、存储和网络
+## <a name="step-2-provision-operating-system-features-roles-storage-and-network"></a><a name="provision-os"></a>步骤2：设置操作系统、功能、角色、存储和网络
 
 1.  使用 Windows Server **（桌面体验）** 的安装类型在两个服务器节点上安装 windows server。 
  
     若要通过 ExpressRoute 使用连接到网络的 Azure VM，请参阅[添加通过 expressroute 连接到网络的 AZURE vm](#add-azure-vm-expressroute)。
+    
+    > [!NOTE]
+    > 从 Windows 管理中心版本1910开始，你可以在 Azure 中自动配置目标服务器。 如果选择该选项，请在源服务器上安装 Windows Server，然后跳到[步骤3：设置服务器到服务器的复制](#step-3-set-up-server-to-server-replication)。 
 
 3.  添加网络信息，将服务器加入到与 Windows 10 管理电脑相同的域（如果你使用的是 Windows 10 管理电脑），然后重新启动服务器。  
 
@@ -111,7 +114,7 @@ ms.locfileid: "71402957"
     -   **Windows 管理中心方法**
         1. 在 Windows 管理中心中，导航到 "服务器管理器"，然后选择其中一个服务器。
         2. 导航到 "**角色" & 功能**"。
-        3. 选择 "**功能** > " "**存储副本**"，然后单击 "**安装**"。
+        3. 选择 "**功能**" > **存储副本**"，然后单击"**安装**"。
         4. 在另一台服务器上重复此操作。
     -   **服务器管理器方法**  
 
@@ -149,7 +152,7 @@ ms.locfileid: "71402957"
 
         1.  确保每个服务器只能看到该站点的存储机箱，且 SAS 连接已正确配置。  
 
-        2.  使用 Windows PowerShell 或服务器管理器，按照[在独立服务器上部署存储空间](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的**步骤 1 至 3** 使用存储空间来配置存储。  
+        2.  使用 Windows PowerShell 或服务器管理器，按照**在独立服务器上部署存储空间**中提供的[步骤 1 至 3](../storage-spaces/deploy-standalone-storage-spaces.md) 使用存储空间来配置存储。  
 
     - **对于 iSCSI 存储：**  
 
@@ -188,9 +191,9 @@ ms.locfileid: "71402957"
 
     ![显示拓扑报告的屏幕](media/Server-to-Server-Storage-Replication/SRTestSRTopologyReport.png)
 
-    **图 2:存储复制拓扑报表**
+    **图2：存储复制拓扑报告**
 
-## <a name="step-3-set-up-server-to-server-replication"></a>步骤 3:设置服务器到服务器复制
+## <a name="step-3-set-up-server-to-server-replication"></a>步骤3：设置服务器到服务器的复制
 ### <a name="using-windows-admin-center"></a>使用 Windows 管理中心
 
 1. 添加源服务器。
@@ -199,11 +202,20 @@ ms.locfileid: "71402957"
     3. 键入服务器的名称，然后选择 "**提交**"。
 2. 在 "**所有连接**" 页上，选择源服务器。
 3. 从 "工具" 面板中选择**存储副本**。
-4. 选择 "**新建**" 以创建新的合作关系。
-5. 提供合作关系的详细信息，然后选择 "**创建**"。 <br>
-   ![新的合作关系屏幕显示了合作关系详细信息，如 8 GB 日志大小。](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
+4. 选择 "**新建**" 以创建新的合作关系。 若要创建新的 Azure VM 用作合作关系的目标，请执行以下操作：
+   
+    1. 在 "**复制到其他服务器**" 下选择 "**使用新的 Azure VM** "，然后选择 "**下一步**"。 如果看不到此选项，请确保使用的是 Windows 管理中心版本1910或更高版本。
+    2. 指定源服务器信息和复制组名称，然后选择 "**下一步**"。<br><br>这会开始一个过程，该过程会自动选择 Windows Server 2019 或 Windows Server 2016 Azure VM 作为迁移源的目标。 存储迁移服务建议 VM 大小与你的源匹配，但你可以通过选择 "**查看所有大小**" 来覆盖此项。 清单数据用于自动配置托管磁盘及其文件系统，并将新的 Azure VM 加入到 Active Directory 域。
+    3. Windows 管理中心创建 Azure VM 后，提供复制组名称，然后选择 "**创建**"。 然后，Windows 管理中心会开始正常存储副本初始同步过程以开始保护数据。
+    
+    以下视频演示了如何使用存储副本迁移到 Azure Vm。
 
-    **图 3:创建新的合作关系**
+    > [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
+
+5. 提供合作关系的详细信息，然后选择 "**创建**" （如图3所示）。 <br>
+   ![新的合作关系屏幕，其中显示了合作详细信息，如 8 GB 日志大小。](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
+
+    **图3：创建新的合作关系**
 
 > [!NOTE]
 > 从 Windows 管理中心的存储副本中删除合作关系不会删除复制组名称。
@@ -219,7 +231,7 @@ ms.locfileid: "71402957"
     New-SRPartnership -SourceComputerName sr-srv05 -SourceRGName rg01 -SourceVolumeName f: -SourceLogVolumeName g: -DestinationComputerName sr-srv06 -DestinationRGName rg02 -DestinationVolumeName f: -DestinationLogVolumeName g:  
     ```  
 
-   输出:
+   输出：
    ```PowerShell
    DestinationComputerName : SR-SRV06
    DestinationRGName       : rg02
@@ -237,7 +249,7 @@ ms.locfileid: "71402957"
     Get-SRPartnership  
     (Get-SRGroup).replicas  
     ```
-    输出:
+    输出：
 
     ```PowerShell
     CurrentLsn             : 0
@@ -262,7 +274,7 @@ ms.locfileid: "71402957"
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20  
         ```  
 
-    2.  在目标服务器上，运行以下命令以查看显示合作关系创建的存储副本事件。 此事件会显示复制的字节数和所用的时间。 例如：  
+    2.  在目标服务器上，运行以下命令以查看显示合作关系创建的存储副本事件。 此事件会显示复制的字节数和所用的时间。 示例：  
 
         ```PowerShell  
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | fl  
@@ -287,7 +299,7 @@ ms.locfileid: "71402957"
         ```  
 
         > [!NOTE]
-        > 存储复制卸除目标卷及其驱动器字母或装入点。 这是设计使然。  
+        > 存储复制卸除目标卷及其驱动器字母或装入点。 这是由设计决定的。  
 
     3.  或者，副本的目标服务器组始终规定要复制的剩余字节数，且可通过 PowerShell 查询。 例如：  
 
@@ -326,23 +338,23 @@ ms.locfileid: "71402957"
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of requests for last log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Flush Queue Length  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Current Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of Application Write Requests  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Number of requests per log write  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Number of requests per log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Write Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Write Latency  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Read Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Read Latency  
 
     -   \Storage Replica Statistics(*)\Target RPO  
 
     -   \Storage Replica Statistics(*)\Current RPO  
 
-    -   \Storage Replica Statistics(*)\Avg.Log Queue Length  
+    -   \Storage Replica Statistics(*)\Avg. Log Queue Length  
 
     -   \Storage Replica Statistics(*)\Current Log Queue Length  
 
@@ -350,11 +362,11 @@ ms.locfileid: "71402957"
 
     -   \Storage Replica Statistics(*)\Total Bytes Sent  
 
-    -   \Storage Replica Statistics(*)\Avg.Network Send Latency  
+    -   \Storage Replica Statistics(*)\Avg. Network Send Latency  
 
     -   \Storage Replica Statistics(*)\Replication State  
 
-    -   \Storage Replica Statistics(*)\Avg.Message Round Trip Latency  
+    -   \Storage Replica Statistics(*)\Avg. Message Round Trip Latency  
 
     -   \Storage Replica Statistics(*)\Last Recovery Elapsed Time  
 
@@ -428,10 +440,10 @@ ms.locfileid: "71402957"
    > [!NOTE]
    > 灾难恢复计划是一个复杂的主题，需要极其注意细节。 强烈建议创建 Runbook 并进行年度实时故障转移钻取。 当实际灾难发生时，混乱将占据主导，而有经验的人员可能都很忙碌。  
 
-## <a name="add-azure-vm-expressroute"></a>添加通过 ExpressRoute 连接到网络的 Azure VM
+## <a name="adding-an-azure-vm-connected-to-your-network-via-expressroute"></a><a name="add-azure-vm-expressroute"></a>添加通过 ExpressRoute 连接到网络的 Azure VM
 
 1. [在 Azure 门户中创建 ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)。<br>在批准 ExpressRoute 后，会向订阅添加一个资源组-导航到 "**资源组**" 以查看此新组。 记下虚拟网络名称。
-![显示随 ExpressRoute 一起添加的资源组的 Azure 门户](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
+显示添加了 ExpressRoute 的资源组的 ![Azure 门户](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
     
     **图4：与 ExpressRoute 关联的资源-记下虚拟网络名称**
 1. [创建新的资源组](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
@@ -439,11 +451,11 @@ ms.locfileid: "71402957"
 <br><br>将所需的任何入站和出站安全规则添加到网络安全组。 例如，你可能想要允许远程桌面访问 VM。
 1. 使用以下设置[创建 AZURE VM](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal) （如图5所示）：
     - **公共 IP 地址**：无
-    - **虚拟网络**:从添加了 ExpressRoute 的资源组中选择记下的虚拟网络。
+    - **虚拟网络**：从添加了 ExpressRoute 的资源组中选择您记下的虚拟网络。
     - **网络安全组（防火墙）** ：选择之前创建的网络安全组。
-    ![创建显示 ExpressRoute 网络设置](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
-    **的虚拟机图5：选择 ExpressRoute 网络设置时创建 VM**
-1. 创建 VM 后，请参阅[步骤2：设置操作系统、功能、角色、存储和网络](#provision-os)。
+    ![创建显示 ExpressRoute 网络设置的虚拟机](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
+    **图5：选择 expressroute 网络设置时创建 VM**
+1. 创建 VM 后，请参阅[步骤2：预配操作系统、功能、角色、存储和网络](#provision-os)。
 
 
 ## <a name="related-topics"></a>相关主题  
@@ -451,5 +463,5 @@ ms.locfileid: "71402957"
 - [使用共享存储拉伸群集复制](stretch-cluster-replication-using-shared-storage.md)  
 - [群集到群集存储复制](cluster-to-cluster-storage-replication.md)
 - [存储副本：已知问题](storage-replica-known-issues.md)  
-- [存储副本：常见问题解答](storage-replica-frequently-asked-questions.md)
+- [存储副本：常见问题](storage-replica-frequently-asked-questions.md)
 - [Windows Server 2016 中的存储空间直通](../storage-spaces/storage-spaces-direct-overview.md)  

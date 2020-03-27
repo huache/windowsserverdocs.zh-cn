@@ -10,29 +10,29 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 80f1319c1abc845d7e63a2d53868bf7a3c381019
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a12d9a1ea953b587918fed8367ee21626697e256
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406096"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309888"
 ---
 # <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>为负载平衡和网络地址转换 (NAT) 配置软件负载平衡器
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-可以使用本主题了解如何使用软件定义的网络\(SDN\)软件负载均衡器\(SLB\)来提供出站网络地址转换\(NAT\)，入站 NAT，或在应用程序的多个实例之间进行负载均衡。
+可以使用本主题了解如何使用软件定义的网络 \(SDN\) 软件负载平衡器 \(SLB\) 在应用程序的多个实例之间提供出站网络地址转换 \(NAT\)、入站 NAT 或负载平衡。
 
 ## <a name="software-load-balancer-overview"></a>软件负载均衡器概述
 
-SDN 软件负载均衡器\(SLB\)为应用程序提供高可用性和网络性能。 它是第 4 \(层 TCP，即 UDP\)负载均衡器，用于在云服务或负载均衡器集中定义的虚拟机中的健康服务实例之间分配传入流量。
+SDN 软件负载均衡器 \(SLB\) 为应用程序提供高可用性和网络性能。 它是第4层 \(TCP、UDP\) 负载均衡器，用于在云服务或负载均衡器集中定义的虚拟机中的健康服务实例之间分配传入流量。
 
 配置 SLB 以执行以下操作：
 
-- 将虚拟网络外部的传入流量负载均衡到虚拟机\(vm\)，也称为公共 VIP 负载平衡。
+- 将虚拟网络外部的传入流量负载均衡到 \(Vm\)的虚拟机，也称为公共 VIP 负载平衡。
 - 对虚拟网络中的 vm、云服务中的 Vm 之间的传入流量进行负载均衡，或在跨界虚拟网络中的本地计算机与 Vm 之间进行负载均衡。 
 - 使用网络地址转换（NAT）将虚拟网络中的 VM 网络流量转发到外部目标（也称为出站 NAT）。
 - 将外部流量转发到特定 VM，也称为入站 NAT。
@@ -40,7 +40,7 @@ SDN 软件负载均衡器\(SLB\)为应用程序提供高可用性和网络性能
 
 
 
-## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>例如：为虚拟网络中的两个 Vm 创建负载平衡的公共 VIP
+## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>示例：为虚拟网络中的两个 Vm 创建负载平衡的公共 VIP
 
 在此示例中，将创建一个具有公共 VIP 的负载均衡器对象和两个 Vm 作为池成员，以向 VIP 提供请求。 此代码示例还添加了一个 HTTP 运行状况探测，用于检测某个池成员是否变成了不响应。
 
@@ -136,7 +136,7 @@ SDN 软件负载均衡器\(SLB\)为应用程序提供高可用性和网络性能
 7. 按照下一个示例将网络接口添加到此后端池。
 
 
-## <a name="example-use-slb-for-outbound-nat"></a>例如：为出站 NAT 使用 SLB
+## <a name="example-use-slb-for-outbound-nat"></a>示例：对出站 NAT 使用 SLB
 
 在此示例中，你将使用后端池配置 SLB，以便为虚拟网络的专用地址空间中的 VM 提供出站 NAT 功能，以到达 internet 的出站。 
 
@@ -195,7 +195,7 @@ SDN 软件负载均衡器\(SLB\)为应用程序提供高可用性和网络性能
 
 4. 按照下一个示例，添加要为其提供 internet 访问权限的网络接口。
 
-## <a name="example-add-network-interfaces-to-the-back-end-pool"></a>例如：将网络接口添加到后端池
+## <a name="example-add-network-interfaces-to-the-back-end-pool"></a>示例：将网络接口添加到后端池
 在此示例中，将网络接口添加到后端池。  您必须为每个可处理对 VIP 发出的请求的网络接口重复此步骤。 
 
 也可以在单个网络接口上重复此过程，将其添加到多个负载均衡器对象。 例如，你有一个用于 web 服务器 VIP 的负载均衡器对象和一个单独的负载均衡器对象来提供出站 NAT。
@@ -221,7 +221,7 @@ SDN 软件负载均衡器\(SLB\)为应用程序提供高可用性和网络性能
    ``` 
 
 
-## <a name="example-use-the-software-load-balancer-for-forwarding-traffic"></a>例如：使用用于转发流量的软件负载均衡器
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic"></a>示例：使用软件负载均衡器转发流量
 如果需要将虚拟 IP 映射到虚拟网络上的单个网络接口而不定义单独的端口，可以创建三级转发规则。  此规则通过 PublicIPAddress 对象中包含的所分配的 VIP，将所有流量转发到 VM。
 
 如果将 VIP 和 DIP 定义为同一子网，则这等效于执行不带 NAT 的 L3 转发。
@@ -248,7 +248,7 @@ SDN 软件负载均衡器\(SLB\)为应用程序提供高可用性和网络性能
    New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
    ```
 
-## <a name="example-use-the-software-load-balancer-for-forwarding-traffic-with-a-dynamically-allocated-vip"></a>例如：使用软件负载平衡器通过动态分配的 VIP 转发流量
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic-with-a-dynamically-allocated-vip"></a>示例：使用软件负载平衡器通过动态分配的 VIP 转发流量
 此示例与上一个示例重复相同的操作，但它会自动从负载均衡器的可用 Vip 池中分配 VIP，而不是指定特定的 IP 地址。 
 
 1. 创建公共 IP 对象以包含 VIP。
@@ -287,7 +287,7 @@ SDN 软件负载均衡器\(SLB\)为应用程序提供高可用性和网络性能
    $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
    New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
    ```
-   ## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>例如：删除正在用于转发流量的 PublicIP 地址，并将其返回到 VIP 池
+   ## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>示例：删除正在用于转发流量的 PublicIP 地址，并将其返回到 VIP 池
    此示例将删除前面的示例创建的 PublicIPAddress 资源。  删除 PublicIPAddress 后，将自动从网络接口中删除对 PublicIPAddress 的引用，将停止转发流量，并将 IP 地址返回到公共 VIP 池以供重复使用。  
 
 4. 删除 PublicIP

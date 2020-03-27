@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a1c18f264a6a8d263f3e9f50bc325ef97f4240af
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2f3581451b65e96a277b23bd6808d2dea6ba45c9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366924"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313440"
 ---
 # <a name="troubleshooting-enabling-otp"></a>启用 OTP 疑难解答
 
@@ -49,7 +49,7 @@ ms.locfileid: "71366924"
 2.  如果模板不存在，请根据3.3 计划注册颁发机构证书中所述创建它，如果存在其他匹配的模板，则请重新配置 DirectAccess OTP 和新模板名称。  
   
 ## <a name="failed-to-enable-directaccess-otp-when-webdav-is-installed"></a>安装 WebDAV 后未能启用 DirectAccess OTP  
-**方案**。 尝试在远程访问管理控制台中或通过使用 `Enable-DAOtpAuthentication` PowerShell cmdlet 应用 DirectAccess OTP 配置时，操作将失败。  
+**方案**。 尝试在远程访问管理控制台中或通过使用 `Enable-DAOtpAuthentication` PowerShell cmdlet 来应用 DirectAccess OTP 配置时，操作将失败。  
   
 **收到错误**（服务器事件日志）。 无法应用 DirectAccess OTP 设置，因为 WebDAV IIS 扩展正在服务器上运行。 删除 WebDAV 并再次应用这些设置。  
   

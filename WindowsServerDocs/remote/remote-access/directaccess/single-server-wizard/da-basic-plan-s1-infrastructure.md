@@ -10,19 +10,19 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6f4c727dc8f7905502d47119bd0e911537e827aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9c71ef26f9e4ba5d20705827109d9ad22fe5c7ab
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404873"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308893"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步骤1规划基本 DirectAccess 基础结构
 在单台服务器上进行基本 DirectAccess 部署的第一步是针对部署所需的基础结构进行规划。 本主题介绍基础结构规划步骤：  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |规划网络拓扑和设置|决定将 DirectAccess 服务器 \(在边缘，或在网络地址转换之后 \(NAT\) 设备或防火墙\)，并规划 IP 寻址和路由。|  
 |规划防火墙要求|规划允许 DirectAccess 通过边缘防火墙。|  
@@ -33,7 +33,7 @@ ms.locfileid: "71404873"
   
 不需要按照特定顺序完成这些规划任务。  
   
-## <a name="bkmk_1_1_Network_svr_top_settings"></a>规划网络拓扑和设置  
+## <a name="plan-network-topology-and-settings"></a><a name="bkmk_1_1_Network_svr_top_settings"></a>规划网络拓扑和设置  
   
 ### <a name="plan-network-adapters-and-ip-addressing"></a>规划网络适配器和 IP 寻址  
   
@@ -55,17 +55,17 @@ ms.locfileid: "71404873"
   
     ||外部网络适配器|内部网络适配器<sup>1</sup>|路由要求|  
     |-|--------------|--------------------|------------|  
-    |IPv4 Intranet 和 IPv4 Internet|配置以下内容：<br /><br />-一个具有相应子网掩码的静态公用 IPv4 地址。<br />-Internet 防火墙或本地 Internet 服务提供商 \(ISP\) 路由器的默认网关 IPv4 地址。|配置以下内容：<br /><br />-具有相应子网掩码的 IPv4 intranet 地址。<br />-连接\-intranet 命名空间的特定 DNS 后缀。 还必须在内部接口上配置 DNS 服务器。<br />-不要在任何 intranet 接口上配置默认网关。|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br /><br />1. 列出 intranet 上所有位置的 IPv4 地址空间。<br />2. 使用**路由 add \-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。|  
-    |IPv6 Internet 和 IPv6 Intranet|配置以下内容：<br /><br />-使用 ISP 提供的自动配置地址配置。<br />-使用**route print**命令，以确保指向 ISP 路由器的默认 ipv6 路由存在于 IPv6 路由表中。<br />-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 用于 ISP 路由器的更高级首选项可确保 DirectAccess 服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br /><br />因为 DirectAccess 服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，请将数据包筛选器添加到外围网络中的域控制器，阻止连接到 DirectAccess 服务器\-面向 Internet 的接口的 IPv6 地址。|配置以下内容：<br /><br />-如果使用的不是默认首选项级别，请使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled**命令来配置 intranet 接口。 此命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从 netsh 接口显示接口命令的显示中获得 Intranet 接口的 InterfaceIndex。|如果你拥有 IPv6 Intranet，若要配置 DirectAccess 服务器以访问所有的 IPv6 位置，请执行以下操作：<br /><br />1. 列出 intranet 上所有位置的 IPv6 地址空间。<br />2. 使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为 DirectAccess 服务器的 ipv6 路由表中的静态路由。|  
+    |IPv4 Intranet 和 IPv4 Internet|配置下列内容：<br /><br />-一个具有相应子网掩码的静态公用 IPv4 地址。<br />-Internet 防火墙或本地 Internet 服务提供商 \(ISP\) 路由器的默认网关 IPv4 地址。|配置下列内容：<br /><br />-具有相应子网掩码的 IPv4 intranet 地址。<br />-连接\-intranet 命名空间的特定 DNS 后缀。 还必须在内部接口上配置 DNS 服务器。<br />-不要在任何 intranet 接口上配置默认网关。|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br /><br />1. 列出 intranet 上所有位置的 IPv4 地址空间。<br />2. 使用**路由 add \-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。|  
+    |IPv6 Internet 和 IPv6 Intranet|配置下列内容：<br /><br />-使用 ISP 提供的自动配置地址配置。<br />-使用**route print**命令，以确保指向 ISP 路由器的默认 ipv6 路由存在于 IPv6 路由表中。<br />-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 用于 ISP 路由器的更高级首选项可确保 DirectAccess 服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br /><br />因为 DirectAccess 服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，请将数据包筛选器添加到外围网络中的域控制器，阻止连接到 DirectAccess 服务器\-面向 Internet 的接口的 IPv6 地址。|配置下列内容：<br /><br />-如果使用的不是默认首选项级别，请使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled**命令来配置 intranet 接口。 此命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从 netsh 接口显示接口命令的显示中获得 Intranet 接口的 InterfaceIndex。|如果你拥有 IPv6 Intranet，若要配置 DirectAccess 服务器以访问所有的 IPv6 位置，请执行以下操作：<br /><br />1. 列出 intranet 上所有位置的 IPv6 地址空间。<br />2. 使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为 DirectAccess 服务器的 ipv6 路由表中的静态路由。|  
     |IPv4 Internet 和 IPv6 Intranet|在 IPv4 Internet 上，DirectAccess 服务器使用 Microsoft 6to4 适配器接口将默认 IPv6 路由通信转发到 6to4 中继。 你可以使用以下命令为 IPv4 Internet 上的 Microsoft 6to4 中继的 IPv4 地址配置 DirectAccess 服务器 \(在企业\) 网络中未部署本机 IPv6 时使用： netsh interface IPv6 6to4 set 中继 name\=192.88.99.1 state\=enabled 命令。|||  
   
     > [!NOTE]  
-    > 注意以下事项：  
+    > 注意以下各项：  
     >   
     > 1.  如果已为 DirectAccess 客户端分配公用 IPv4 地址，则它将使用 6to4 转换技术连接到 Intranet。 如果 DirectAccess 客户端无法使用6to4 连接到 DirectAccess 服务器，则它将使用\-HTTPS 的 IP。  
     > 2.  本机 IPv6 客户端计算机可以通过本机 IPv6 连接到 DirectAccess 服务器，而无需转换技术。  
   
-### <a name="ConfigFirewalls"></a>规划防火墙要求  
+### <a name="plan-firewall-requirements"></a><a name="ConfigFirewalls"></a>规划防火墙要求  
 如果 DirectAccess 服务器位于边缘防火墙后面，则当 DirectAccess 服务器位于 IPv4 Internet 上时，要进行 DirectAccess 通信还需要以下例外：  
   
 -   6to4 流量-IP 协议41入站和出站。  
@@ -89,7 +89,7 @@ ms.locfileid: "71404873"
   
 -   用于所有 IPv4\/IPv6 通信的 TCP\/UDP  
   
-### <a name="bkmk_1_2_CAs_and_certs"></a>规划证书要求  
+### <a name="plan-certificate-requirements"></a><a name="bkmk_1_2_CAs_and_certs"></a>规划证书要求  
 IPsec 的证书要求包括 DirectAccess 客户端计算机在客户端和 DirectAccess 服务器之间建立 IPsec 连接时使用的计算机证书，以及 DirectAccess 服务器用于建立与 DirectAccess 客户端的 IPsec 连接的计算机证书。 对于 Windows Server 2012 R2 和 Windows Server 2012 中的 DirectAccess，不强制使用这些 IPsec 证书。 入门向导将 DirectAccess 服务器配置为充当 Kerberos 代理来执行 IPsec 身份验证，而无需证书。
   
 1.  **IP\-HTTPS 服务器**。 配置 DirectAccess 时，DirectAccess 服务器将自动配置为充当 IP\-HTTPS web 侦听器。 IP\-HTTPS 站点需要网站证书，并且客户端计算机必须能够联系证书吊销列表 \(CRL\) 站点中的证书。 启用 DirectAccess 向导会尝试使用 SSTP VPN 证书。 如果未配置 SSTP，它会检查计算机个人存储区中是否存在 IP\-HTTPS 的证书。 如果没有可用的，它会自动创建自\-签名证书。
@@ -104,7 +104,7 @@ IPsec 的证书要求包括 DirectAccess 客户端计算机在客户端和 Direc
 ||内部 CA-可以使用内部 CA 颁发 IP\-HTTPS 证书;但是，必须确保 CRL 分发点在外部可用。|自行\-签名证书-可以为网络位置服务器网站使用自\-签名证书;但是，不能在多站点部署中使用自\-签名证书。|  
 ||自行\-签名证书-你可以对 IP\-HTTPS 服务器使用自\-签名证书;但是，必须确保 CRL 分发点在外部可用。 无法在多站点部署中使用自签名证书的\-。||  
   
-#### <a name="bkmk_website_cert_IPHTTPS"></a>规划 IP\-HTTPS 和网络位置服务器的证书  
+#### <a name="plan-certificates-for-ip-https-and-network-location-server"></a><a name="bkmk_website_cert_IPHTTPS"></a>规划 IP\-HTTPS 和网络位置服务器的证书  
 如果你想要针对这些目的设置证书，请参阅[使用高级设部署置单个 DirectAccess 服务器](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。 如果没有可用的证书，入门向导会自动创建自\-签名证书以用于这些目的。
   
 > [!NOTE]
@@ -146,14 +146,14 @@ IPsec 的证书要求包括 DirectAccess 客户端计算机在客户端和 Direc
 > [!NOTE]  
 > 部署 DirectAccess 时，不建议使用运行 Windows Server 2003 的 DNS 服务器。 尽管 Windows Server 2003 DNS 服务器支持 IPv6 记录，但 Microsoft 不再支持 Windows Server 2003。 此外，如果域控制器因为文件复制服务的问题而运行 Windows Server 2003，则不应部署 DirectAccess。 有关详细信息，请参阅 [DirectAccess 不受支持的配置](../DirectAccess-Unsupported-Configurations.md)。  
   
-### <a name="bkmk_1_4_NLS"></a>规划网络位置服务器  
+### <a name="plan-the-network-location-server"></a><a name="bkmk_1_4_NLS"></a>规划网络位置服务器  
 网络位置服务器是一个用于检测 DirectAccess 客户端是否位于企业网络中的网站。 企业网络中的客户端不会使用 DirectAccess 访问内部资源，相反，它们会直接进行连接。  
   
 入门向导会自动设置 DirectAccess 服务器上的网络位置服务器，而且当你部署 DirectAccess 时会自动创建网站。 这样，无需使用证书基础结构即可进行简单安装。
   
 如果要部署网络位置服务器且不使用自\-签名证书，请参阅[使用高级设置部署单个 DirectAccess 服务器](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。
   
-### <a name="bkmk_1_6_AD"></a>规划 Active Directory  
+### <a name="plan-active-directory"></a><a name="bkmk_1_6_AD"></a>规划 Active Directory  
 DirectAccess 使用 Active Directory 和 Active Directory 组策略对象，如下所示：
   
 -   **身份验证**。 Active Directory 用于身份验证。 DirectAccess 隧道使用 Kerberos 身份验证以使用户访问内部资源。
@@ -184,7 +184,7 @@ DirectAccess 使用 Active Directory 和 Active Directory 组策略对象，如�
 > - DirectAccess 服务器不可以是域控制器。  
 > - 无法从 DirectAccess 服务器的外部 Internet 适配器访问用于 DirectAccess 的 Active Directory 域控制器 \(该适配器不得位于 Windows 防火墙\)的域配置文件中。  
   
-### <a name="bkmk_1_7_GPOs"></a>规划组策略对象  
+### <a name="plan-group-policy-objects"></a><a name="bkmk_1_7_GPOs"></a>规划组策略对象  
 配置 DirectAccess 时配置的 DirectAccess 设置将收集到组策略对象 \(GPO\)中。 使用 DirectAccess 设置填充两个不同的 GPO，并通过以下方式进行分发：  
   
 -   **DirectAccess 客户端 GPO**。 此 GPO 包含客户端设置，包括 IPv6 转换技术设置、NRPT 条目和高级安全 Windows 防火墙连接安全规则。 将 GPO 应用于为客户端计算机指定的安全组。  
@@ -250,7 +250,7 @@ DirectAccess 使用 Active Directory 和 Active Directory 组策略对象，如�
   
 3.  你将看到关于未找到 GPO 的错误消息。 单击“删除配置设置”。 完成后，服务器将还原为不\-配置状态。  
   
-### <a name="BKMK_Links"></a>下一步  
+### <a name="next-step"></a><a name="BKMK_Links"></a>下一步  
   
 -   [步骤2：规划基本 DirectAccess 部署](da-basic-plan-s2-deployment.md)  
   

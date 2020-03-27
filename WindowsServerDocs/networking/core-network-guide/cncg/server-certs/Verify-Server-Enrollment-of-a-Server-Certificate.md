@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: bd80a018-5a30-47c3-89fc-aacb9f5ad298
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5f87db78d6f07d11c36193b1a56cf66bd44e7160
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b55988d9e5d4832acf6c74039815c9e8c9a8a6ca
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356100"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318137"
 ---
 # <a name="verify-server-enrollment-of-a-server-certificate"></a>验证服务器证书的服务器注册
 
@@ -34,7 +34,7 @@ ms.locfileid: "71356100"
   
 1.  在服务器管理器中，单击 "**工具**"，然后单击 "**网络策略服务器**"。 此时将打开网络策略服务器 Microsoft 管理控制台（MMC）。  
   
-2.  双击 "**策略**"，右键单击 "**网络策略**"，然后单击 "**新建**"。 此时将打开 "新建网络策略向导"。  
+2.  双击 "**策略**"，右键单击 "**网络策略**"，然后单击 "**新建**"。 将打开新建网络策略向导。  
   
 3.  在 "**指定网络策略名称和连接类型**" 的 "**策略名称**" 中，键入 "**测试策略**"。 确保**类型的网络访问服务器** **未指定**值，然后单击 "**下一步**"。  
   
@@ -44,7 +44,7 @@ ms.locfileid: "71356100"
   
 6.  在 "**指定访问权限**" 中，确保选择了 "**授予访问**权限"，然后单击 "**下一步**"。  
   
-7.  在 "**配置身份验证方法**" 中，单击 "**添加**"。 在 "**添加 EAP**" 中，单击 **Microsoft：受保护的 EAP （PEAP）** ，然后单击 **"确定"** 。 在 " **EAP 类型**" 中，选择 **Microsoft：受保护的 EAP （PEAP）** ，然后单击 "**编辑**"。 此时将打开 "**编辑受保护的 EAP 属性**" 对话框。  
+7.  在 "**配置身份验证方法**" 中，单击 "**添加**"。 在 "**添加 EAP**" 中，单击 " **Microsoft：受保护的 EAP （PEAP）** "，然后单击 **"确定"** 。 在 " **EAP 类型**" 中，选择 " **Microsoft：受保护的 EAP （PEAP）** "，然后单击 "**编辑**"。 此时将打开 "**编辑受保护的 EAP 属性**" 对话框。  
   
 8.  在 "**编辑受保护的 EAP 属性**" 对话框中，在 "**证书颁发给**" 中，NPS 以*ComputerName*格式显示服务器证书的名称。*域*。 例如，如果你的 NPS 命名为 NPS-01，而你的域为 example.com，则 NPS 将显示证书**NPS-01.example.com**。 此外，在**颁发者**中，会显示证书颁发机构的名称，并在**过期日期**中显示服务器证书的过期日期。 这说明 NPS 注册了有效的服务器证书，该证书可用于向尝试通过网络访问服务器（如虚拟专用网络（VPN）服务器、支持 802.1 X）访问网络的客户端计算机证明其身份无线接入点、远程桌面网关服务器以及支持 X 的以太网交换机。  
   

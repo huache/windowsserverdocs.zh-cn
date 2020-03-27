@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a35164e1-11ad-47c8-9843-580d30c70d07
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2175cf9c740d7b727ba017922a77c94d4379c891
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b2fa8ff6742dc393a5a2cc962c7f849049b5ef31
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355274"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312423"
 ---
 # <a name="edit-a-dns-zone"></a>编辑 DNS 区域
 
@@ -49,7 +49,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![编辑 DNS 区域](../../media/Edit-a-DNS-Zone/ipam_EditZone_02.jpg)  
   
-6.  此时将打开 "**编辑 DNS 区域**" 对话框，其中选择了 "**常规**" 页。 如果需要，编辑 "常规区域属性"：" **DNS 服务器**"、"**区域类别**" 和 "**区域类型**"，然后单击 "**应用**" 或如果编辑完成，请单击 **"确定"** 。  
+6.  此时将打开 "**编辑 DNS 区域**" 对话框，其中选择了 "**常规**" 页。 如果需要，编辑常规区域属性： " **DNS 服务器**"、"**区域类别**" 和 "**区域类型**"，然后单击 "**应用**"，或者，如果编辑完成，请单击 **"确定"** 。  
   
     ![编辑区域属性并保存](../../media/Edit-a-DNS-Zone/ipam_EditZone_03a.jpg)  
   
@@ -59,7 +59,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
 8.  如果需要，请选择 "其他区域属性" 页名称（名称服务器、SOA、区域传输），进行编辑，然后单击 "**应用** **" 或 "确定"** 。 若要查看区域的所有编辑，请单击 "**摘要**"，然后单击 **"确定"** 。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [DNS 区域管理](DNS-Zone-Management.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

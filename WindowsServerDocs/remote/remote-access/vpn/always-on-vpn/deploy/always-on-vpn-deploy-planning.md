@@ -6,24 +6,24 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 3c9de3ec-4bbd-4db0-b47a-03507a315383
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 11/05/2018
-ms.openlocfilehash: f92cfdbe13633dd4c59012f566c6888fdc7fc7a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0e061a38170242a3808fbad0c82a4154bf9c536
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388158"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313307"
 ---
 # <a name="step-1-plan-the-always-on-vpn-deployment"></a>步骤 1： 规划 Always On VPN 部署
 
->适用于：Windows Server (半年频道), Windows Server 2016, Windows Server 2012 R2, Windows 10
+>适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**以前**了解用于部署 Always On VPN 的工作流](always-on-vpn-deploy-deployment.md)
-- [**一个**步骤 2：配置服务器基础结构](vpn-deploy-server-infrastructure.md)
+- [**上一个：** 了解用于部署 Always On VPN 的工作流](always-on-vpn-deploy-deployment.md)
+- [**下一步：** 步骤2。配置服务器基础结构](vpn-deploy-server-infrastructure.md)
 
-在此步骤中，你将开始规划和准备 Always On VPN 部署。 在作为 VPN 服务器使用的计算机上安装远程访问服务器角色之前, 请执行以下任务。 进行适当规划后, 可以部署 Always On VPN, 还可以选择使用 Azure AD 配置 VPN 连接的条件性访问。
+在此步骤中，你将开始规划和准备 Always On VPN 部署。 在作为 VPN 服务器使用的计算机上安装远程访问服务器角色之前，请执行以下任务。 进行适当规划后，可以部署 Always On VPN，还可以选择使用 Azure AD 配置 VPN 连接的条件性访问。
 
 [!INCLUDE [always-on-vpn-standard-config-considerations-include](../../../includes/always-on-vpn-standard-config-considerations-include.md)]
 
@@ -73,4 +73,4 @@ IKEv2 是[Internet 工程任务团队请求注释 7296](https://datatracker.ietf
 
 ## <a name="next-steps"></a>后续步骤
 
-[步骤 2.配置服务器基础结构](vpn-deploy-server-infrastructure.md)：在此步骤中，将安装和配置支持 VPN 所需的服务器端组件。 服务器端组件包括配置 PKI 以分发用户、VPN 服务器和 NPS 服务器使用的证书。
+[步骤2。配置服务器基础结构](vpn-deploy-server-infrastructure.md)：在此步骤中，你将安装和配置支持 VPN 所需的服务器端组件。 服务器端组件包括配置 PKI 以分发用户、VPN 服务器和 NPS 服务器使用的证书。

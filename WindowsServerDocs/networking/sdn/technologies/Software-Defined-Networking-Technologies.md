@@ -7,23 +7,23 @@ ms.service: virtual-network
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: b491089c-5bcb-49d4-95b1-915b7ce69f88
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 02/14/2019
-ms.openlocfilehash: b71b17760ec11d7d2ea6a3bfeb118899be9504e7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f6a33d59cedecc49b50d01ebffb0fef9fe460afd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405959"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317209"
 ---
 # <a name="sdn-technologies"></a>SDN 技术
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+>适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 本节中的主题提供有关 Windows Server 2016 中包含的软件定义的网络技术的概述和技术信息。  
 
-## <a name="network-controllernetwork-controllernetwork-controllermd"></a>[网络控制器](network-controller/Network-Controller.md)
+## <a name="network-controller"></a>[网络控制器](network-controller/Network-Controller.md)
 
 网络控制器提供集中的可编程点，可用于管理、配置、监视和诊断数据中心中的虚拟和物理网络基础结构。 通过网络控制器，可以自动配置网络基础结构，而不是执行网络设备和服务的手动配置。 
 
@@ -41,21 +41,21 @@ ms.locfileid: "71405959"
 - VPN 网关，包括远程访问服务（RAS）多租户网关 
 - 负载平衡器 
   
-## <a name="hyper-v-network-virtualizationhyper-v-network-virtualizationhyper-v-network-virtualizationmd"></a>[Hyper-v 网络虚拟化](hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md)
+## <a name="hyper-v-network-virtualization"></a>[Hyper-v 网络虚拟化](hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md)
 
 Hyper-v 网络虚拟化（HNV）可帮助你使用虚拟网络从物理网络中抽象应用程序和工作负荷。 在共享物理网络结构中运行时，虚拟网络提供所需的多租户隔离，从而提高资源利用率。 若要确保可以继续现有的投资，可以在现有网络设备上设置虚拟网络。 此外，虚拟网络与虚拟局域网（Vlan）兼容。
   
-## <a name="hyper-v-virtual-switchvirtualizationhyper-v-virtual-switchhyper-v-virtual-switchmd"></a>[Hyper-V 虚拟交换机](../../../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md) 
+## <a name="hyper-v-virtual-switch"></a>[Hyper-V 虚拟交换机](../../../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md) 
 
 Hyper-v 虚拟交换机是基于软件的第2层以太网网络交换机，安装 Hyper-v 服务器角色后，Hyper-v 管理器中提供了该交换机。 交换机包括以编程方式管理的功能和扩展功能，可将虚拟机同时连接到虚拟网络和物理网络。 此外，Hyper-v 虚拟交换机提供安全、隔离和服务级别的策略实施。
   
 你还可以使用交换机嵌入式组合（SET）和远程直接内存访问（RDMA）部署 Hyper-v 虚拟交换机。 有关详细信息，请参阅本主题中的[远程直接内存访问（RDMA）和交换机嵌入式组合（SET）](#remote-direct-memory-access-rdma-and-switch-embedded-teaming-set)部分。
 
-## <a name="internal-dns-service-idns-for-sdnidns-for-sdnmd"></a>[SDN 的内部 DNS 服务（Idn）](Idns-for-Sdn.md)
+## <a name="internal-dns-service-idns-for-sdn"></a>[SDN 的内部 DNS 服务（Idn）](Idns-for-Sdn.md)
 
 托管的虚拟机（Vm）和应用程序需要 DNS 在其网络内以及 Internet 上的外部资源进行通信。 借助 Idn，你可以为租户提供 DNS 名称解析服务，用于隔离的本地命名空间和 Internet 资源。 
   
-## <a name="network-function-virtualizationnetwork-function-virtualizationnetwork-function-virtualizationmd"></a>[网络功能虚拟化](network-function-virtualization/Network-Function-Virtualization.md)
+## <a name="network-function-virtualization"></a>[网络功能虚拟化](network-function-virtualization/Network-Function-Virtualization.md)
 
 硬件设备（例如负载均衡器、防火墙、路由器和交换机）逐渐成为虚拟设备。 Microsoft 已经虚拟化网络、交换机、网关、Nat、负载均衡器和防火墙。 服务器虚拟化和网络虚拟化自然而然地形成了这种“网络功能虚拟化”。 虚拟设备迅速涌现，并创建全新市场。 它们会在虚拟化平台和云服务中不断产生兴趣并获得动力。 
   
@@ -77,14 +77,14 @@ SET 是一种备用 NIC 组合解决方案，可用于在 Windows Server 2016 �
   
 此外，还可以使用 Windows PowerShell 命令启用数据中心桥接（DCB）、创建具有 RDMA 虚拟 NIC （vNIC）的 Hyper-v 虚拟交换机，并使用 SET 和 RDMA Vnic 创建 Hyper-v 虚拟交换机。 有关详细信息，请参阅[远程直接内存访问（RDMA）和交换机嵌入式组合（SET）](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)。
 
-## <a name="border-gateway-protocol-bgpremoteremote-accessbgpborder-gateway-protocol-bgpmd"></a>[边界网关协议 (BGP)](../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
+## <a name="border-gateway-protocol-bgp"></a>[边界网关协议 (BGP)](../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
   
 边界网关协议（BGP）是一种动态路由协议，可自动了解使用站点到站点 VPN 连接的站点之间的路由。 因此，BGP 会减少路由器的手动配置。   当你配置 RAS 网关时，BGP 使你能够管理租户的 VM 网络和远程站点之间的网络流量路由。  
   
-## <a name="software-load-balancing-slb-for-sdnnetwork-function-virtualizationsoftware-load-balancing-for-sdnmd"></a>[用于 SDN 的软件负载均衡 (SLB)](network-function-virtualization/software-load-balancing-for-sdn.md)
+## <a name="software-load-balancing-slb-for-sdn"></a>[用于 SDN 的软件负载均衡 (SLB)](network-function-virtualization/software-load-balancing-for-sdn.md)
 云服务提供商（Csp）和部署 SDN 的企业可以使用软件负载平衡（SLB）在虚拟网络资源之间均匀分配租户和租户客户网络流量。 Windows Server SLB 允许多台服务器承载相同的工作负荷，具有较高的可用性和可扩展性。 
 
-## <a name="windows-server-containerscontainerscontainer-networking-overviewmd"></a>[Windows Server 容器](Containers/Container-networking-overview.md)
+## <a name="windows-server-containers"></a>[Windows Server 容器](Containers/Container-networking-overview.md)
 
 Windows Server 容器是一种轻型操作系统虚拟化方法，用于将应用程序或服务与相同容器主机上运行的其他服务区分开来。 每个容器都有自己的操作系统、进程、文件系统、注册表和 IP 地址，可以连接到虚拟网络。 
 

@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0c6bff2acc15b7ff90731e0113ae0d5a429c635c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3cd73f1a5e2612f4551be1f16e49e9645c5e12c0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404799"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308735"
 ---
 # <a name="step-2-install-and-configure-router1"></a>步骤2安装和配置 ROUTER1
 
@@ -40,7 +40,7 @@ ms.locfileid: "71404799"
   
 1.  开始安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）。  
   
-2.  按照说明完成安装，指定本地管理员账户的密码（强）。 使用本地管理员账户登录。  
+2.  按照说明完成安装，指定本地管理员账户的密码（强）。 使用本地管理员帐户登录。  
   
 3.  将 ROUTER1 连接到具有 Internet 访问权限的网络，并运行 Windows 更新以安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的最新更新，然后从 Internet 断开连接。  
   
@@ -112,7 +112,7 @@ ms.locfileid: "71404799"
   
 5.  在 "**高级安全 Windows 防火墙**" 对话框的 "**公共配置文件**" 选项卡上的 "**防火墙状态**" 中，单击 "**关闭**"，然后单击 **"确定"** 。  
   
-6.  关闭 "高级安全 Windows 防火墙"。  
+6.  关闭“高级安全 Windows 防火墙”。  
   
 ## <a name="configure-routing-and-forwarding"></a>配置路由和转发  
 若要在公司网络和2公司网络之间提供路由和转发服务，必须在网络接口上启用转发，并在子网之间配置静态路由。  
@@ -144,4 +144,4 @@ ms.locfileid: "71404799"
     netsh interface IPv6 add route 2001:0:836b:14::/64 2-Corpnet 2001:db8:2::20  
     ```  
   
-5.  关闭命令提示符窗口。
+5.  关闭“命令提示符”窗口。

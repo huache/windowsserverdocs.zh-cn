@@ -5,18 +5,18 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/28/2019
 ms.reviewer: deverette
-ms.openlocfilehash: b813e3f978ad1e61e6770edcf26b1c716efcbbe4
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 1a26f19cee5c6b6faf551633fd1739b1103c6ddf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822480"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313384"
 ---
-# <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>步骤 7： 可有可无使用 Azure AD 的 VPN 连接的条件性访问
+# <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>步骤 7。 可有可无使用 Azure AD 的 VPN 连接的条件性访问
 
 - [**上一个：** 步骤6。配置 Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [**下一步：** 步骤7.1。配置 EAP-TLS 以忽略证书吊销列表（CRL）检查](vpn-config-eap-tls-to-ignore-crl-checking.md)
@@ -38,13 +38,13 @@ ms.locfileid: "76822480"
 - [DNS 和防火墙设置](always-on-vpn/deploy/vpn-deploy-dns-firewall.md)
 - [Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 
-## <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checkingvpn-config-eap-tls-to-ignore-crl-checkingmd"></a>[步骤7.1。配置 EAP-TLS 以忽略证书吊销列表（CRL）检查](vpn-config-eap-tls-to-ignore-crl-checking.md)
+## <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>[步骤7.1。配置 EAP-TLS 以忽略证书吊销列表（CRL）检查](vpn-config-eap-tls-to-ignore-crl-checking.md)
 
 在此步骤中，你可以添加**IgnoreNoRevocationCheck** ，并将其设置为在证书不包括 CRL 分发点时允许客户端进行身份验证。 默认情况下，IgnoreNoRevocationCheck 设置为0（禁用）。
 
 如果 NPS 服务器完成了证书链的吊销检查（包括根证书），则 EAP-TLS 客户端将无法连接。 Azure AD 颁发给用户的云证书没有 CRL，因为它们是生存期为一小时的短有效期证书。 需要将 NPS 上的 EAP 配置为忽略缺少 CRL 的情况。 因为身份验证方法是 EAP-TLS，所以仅在**EAP\13**下需要此注册表值。 如果使用其他 EAP 身份验证方法，则还应将注册表值添加到这些方法下。
 
-## <a name="step-72-create-root-certificates-for-vpn-authentication-with-azure-advpn-create-root-cert-for-vpn-auth-azure-admd"></a>[步骤7.2。创建用于 VPN 身份验证的根证书 Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+## <a name="step-72-create-root-certificates-for-vpn-authentication-with-azure-ad"></a>[步骤7.2。创建用于 VPN 身份验证的根证书 Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
 在此步骤中，你将使用 Azure AD 配置用于 VPN 身份验证的根证书，这会在租户中自动创建 VPN 服务器云应用。  
 
@@ -57,7 +57,7 @@ ms.locfileid: "76822480"
 > [!IMPORTANT]
 > 在 Azure 门户中创建 VPN 证书后，Azure AD 会立即开始使用它来向 VPN 客户端颁发短暂的生存期证书。 将 VPN 证书立即部署到 VPN 服务器非常重要，以免 VPN 客户端的凭据验证出现任何问题。
 
-## <a name="step-73-configure-the-conditional-access-policyvpn-config-conditional-access-policymd"></a>[步骤7.3。配置条件访问策略](vpn-config-conditional-access-policy.md)
+## <a name="step-73-configure-the-conditional-access-policy"></a>[步骤7.3。配置条件访问策略](vpn-config-conditional-access-policy.md)
 
 在此步骤中，你将为 VPN 连接配置条件访问策略。
 
@@ -67,7 +67,7 @@ ms.locfileid: "76822480"
 2. 将云应用设置为**VPN 服务器**。
 3. 将授予权限（访问控制）设置为 "**需要多重身份验证**"。  您可以根据需要使用其他控件。
 
-## <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-advpn-deploy-cond-access-root-cert-to-on-premise-admd"></a>[步骤7.4。将条件性访问根证书部署到本地 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
+## <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>[步骤7.4。将条件性访问根证书部署到本地 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 
 在此步骤中，将 VPN 身份验证的受信任根证书部署到本地 AD。
 
@@ -77,7 +77,7 @@ ms.locfileid: "76822480"
 2. 将根证书导入到 VPN 服务器和 VPN 客户端。
 3. 验证证书是否存在，并显示为 "受信任"。
 
-## <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devicesvpn-create-oma-dm-based-vpnv2-profilesmd"></a>[步骤7.5。创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备](vpn-create-oma-dm-based-vpnv2-profiles.md)
+## <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>[步骤7.5。创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
 在此步骤中，你可以使用 Intune 创建基于 OMA 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果要使用 Configuration Manager 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅[VPNV2 CSP 设置](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)了解更多详细信息。
 

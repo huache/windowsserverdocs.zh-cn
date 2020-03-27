@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ae6fddce1564e44ad72a5630c6abb16cdb6735d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3e04c732cbacb182731717215a4cf99cf3cc1f76
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388978"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309293"
 ---
 # <a name="border-gateway-protocol-bgp"></a>边界网关协议 (BGP)
 
@@ -30,7 +30,7 @@ ms.locfileid: "71388978"
 >   
 > -   [BGP Windows PowerShell 命令参考](../../remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)  
   
-本主题包含以下部分。  
+本主题包含以下各节。  
   
 -   [BGP 支持的部署拓扑](#bkmk_top)  
   
@@ -61,7 +61,7 @@ Enable-RemoteAccessRoutingDomain -Name $Contoso_RoutingDomain -Type All -PassThr
 Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassThru  
 ```  
   
-## <a name="bkmk_top"></a>BGP 支持的部署拓扑  
+## <a name="bgp-supported-deployment-topologies"></a><a name="bkmk_top"></a>BGP 支持的部署拓扑  
 下面列出了受支持的部署拓扑（其中的企业站点连接到云服务提供程序 (CSP) 数据中心）。  
   
 在所有方案中，CSP 网关都是 Windows Server 2016 RAS 网关。 RAS 网关能够处理来自多个租户的多个连接，由 Hyper-v 主机以及实际配置为网关的 VM 组成。 此边缘网关使用站点到站点 VPN 连接配置为多租户 BGP 路由器，用于交换企业和 CSP 子网路由。  
@@ -80,7 +80,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 以下各部分包含有关每个受支持的 BGP 拓扑的其他信息。  
   
-### <a name="bkmk_top1"></a>位于企业站点边缘的具有 BGP 的 RAS VPN 站点到站点网关  
+### <a name="ras-vpn-site-to-site-gateway-with-bgp-at-enterprise-site-edge"></a><a name="bkmk_top1"></a>位于企业站点边缘的具有 BGP 的 RAS VPN 站点到站点网关  
 此拓扑描述连接到 CSP 的企业站点。 企业路由拓扑包含一个内部路由器、一个为 VPN 站点到站点连接配置的与 CSP 和一个边缘防火墙设备的 Windows Server 2016 RAS 网关。 RAS 网关会终止 S2S VPN 和 BGP 连接。  
   
 ![RAS VPN 站点到站点网关](../../media/Border-Gateway-Protocol-BGP/bgp_01.jpg)  
@@ -97,7 +97,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
     -   边缘设备可以使用静态路由或接口进行配置，以便使用 BGP选择路由进行播发。 边缘设备还可以使用 IGP 将外部路由分发到其他本地路由器。  
   
-### <a name="bkmk_top2"></a>企业站点边缘的具有 BGP 的第三方网关  
+### <a name="third-party-gateway-with-bgp-at-enterprise-site-edge"></a><a name="bkmk_top2"></a>企业站点边缘的具有 BGP 的第三方网关  
 此拓扑描绘使用第三方边缘路由器连接到 CSP 的企业站点。 边缘路由器还充当站点到站点 VPN 网关。  
   
 ![处于企业站点边缘的具有 BGP 的第三方网关](../../media/Border-Gateway-Protocol-BGP/bgp_02.jpg)  
@@ -108,7 +108,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 -   边缘设备实现内部网关协议 (IGP)，并直接参与内部路由。  
   
-### <a name="bkmk_top3"></a>连接到 CSP 云数据中心的多个企业站点  
+### <a name="multiple-enterprise-sites-connecting-to-csp-cloud-datacenter"></a><a name="bkmk_top3"></a>连接到 CSP 云数据中心的多个企业站点  
 此拓扑描绘使用第三方网关连接到 CSP 的多个企业站点。 第三方边缘设备充当站点到站点 VPN 网关和 BGP 路由器。  
   
 ![连接到 CSP 云数据中心的多个企业站点](../../media/Border-Gateway-Protocol-BGP/bgp_03.jpg)  
@@ -125,7 +125,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 如果企业站点1处的 BGP 路由器由于连接失败而无法与 Enterprise Site 2 BGP 路由器连接，则站点 1 BGP 路由器会动态开始从 CSP BGP 路由器了解到 Enterprise Site 2 网络的路由，并且流量无缝地在 CSP 处通过 Windows Server BGP 路由器从站点1重新路由到站点2。  
   
-### <a name="bkmk_top4"></a>BGP 和 VPN 的单独终止点  
+### <a name="separate-termination-points-for-bgp-and-vpn"></a><a name="bkmk_top4"></a>BGP 和 VPN 的单独终止点  
 此拓扑描绘使用两个不同的路由器作为 BGP 和站点到站点 VPN 终结点的企业。 站点到站点 VPN 在 Windows Server 2016 RAS 网关上终止，而 BGP 在内部路由器上终止。 在连接的 CSP 端，CSP 会终止 VPN 和 BGP 与 RAS 网关之间的连接。 使用此配置时，内部第三方路由器硬件必须支持将 IGP 路由重新分发到 BGP 以及将 BGP 路由重新分发到 IGP。  
   
 ![将不同的终结点用于 BGP 和 VPN](../../media/Border-Gateway-Protocol-BGP/bgp_04.jpg)  
@@ -144,7 +144,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 今后，企业内部路由器和 CSP RAS 网关会交换路由信息。 企业 RAS BGP 路由器了解 CSP 路由和企业路由，以便以物理方式在网络之间路由数据包。  
   
-## <a name="bkmk_features"></a>BGP 功能  
+## <a name="bgp-features"></a><a name="bkmk_features"></a>BGP 功能  
 以下是 RAS 网关 BGP 路由器的功能。  
   
 **作为远程访问的角色服务的 BGP 路由**。 你现在可以安装远程访问服务器角色的**路由**角色服务，而不安装**远程访问服务（RAS）** 角色服务（如果你想要使用远程访问作为 BGP LAN 路由器）。  这会减少 BGP 路由器内存占用量，并且仅安装动态 BGP 路由所需的组件。 当只需要 BGP 路由器 VM 且不需要使用 DirectAccess 或 VPN 时，路由角色服务非常有用。 此外，将远程访问作为带有 BGP 的 LAN 路由器，可提供内部网络上的 BGP 的动态路由优势。  

@@ -1,9 +1,9 @@
 ---
-title: 将计算机加入到新的 Windows Server Essentials 网络 1
-description: 介绍如何使用 Windows Server Essentials
+title: 将计算机加入新的 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 62f31f859ed3fd0f77baf37d3467d4702b24ad95
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 48703ed78ee7d604e67be06b540d4206617d4578
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432912"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318986"
 ---
-# <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>将计算机加入到新的 Windows Server Essentials 网络 1
+# <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>将计算机加入新的 Windows Server Essentials
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 ##  <a name="BKMK_JoinComputers"></a>   
  迁移过程的下一步是将客户端计算机加入到新的 Windows Server Essentials 网络并更新组策略设置。  
@@ -49,7 +49,7 @@ ms.locfileid: "66432912"
   
 2.  在命令提示符处键入 **GPRESULT /R**，然后按 Enter。  
   
-3.  查看来自应用的组策略部分的生成输出:，并确保它列出目标服务器上，例如**DestinationSrv.Domain.local**。 例如：  
+3.  查看应用组策略部分生成的输出，并确保它列出了目标服务器，例如**destinationsrv.domain.local**。 例如：  
   
     ```  
     USER SETTINGS  
@@ -67,8 +67,8 @@ ms.locfileid: "66432912"
   
 5.  如果目标服务器仍未出现，则在组策略设置中或者在将它们应用到此特定客户端计算机的过程中可能存在错误。 如果目标服务器未出现，则请执行以下步骤：  
   
-    1.  依次单击“开始”  、“运行”  ，键入 **rsop.msc** （生成的策略集），然后按 Enter。  
+    1.  依次单击“开始”、“运行”，键入 **rsop.msc**（生成的策略集），然后按 Enter。  
   
-    2.  展开具有对其的 X 的树，直到到达一个节点。  
+    2.  展开带有 X 的树，直到到达一个节点为止。  
   
-    3.  右键单击该节点，再单击“查看错误”  ，以获取有关组策略设置为何无法应用于列出的计算机的信息。
+    3.  右键单击该节点，再单击“查看错误”，以获取有关组策略设置为何无法应用于列出的计算机的信息。

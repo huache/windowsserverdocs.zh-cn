@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: df2023bf-ba64-481e-b222-6f709edaa5c1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: be57bc0ce1b509c49f269618765c79f380fd3b12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d246f0e56681f75e4336ed225d1557a0e05c581b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404679"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308558"
 ---
 # <a name="gre-tunneling-in-windows-server-2016"></a>Windows Server 2016 中的 GRE 隧道
 
@@ -60,23 +60,23 @@ GRE 隧道功能旨在满足以下要求：
   
 -   [向租户的第三方设备服务](#BKMK_thirdparty)  
   
-## <a name="key-scenarios"></a>关键方案
+## <a name="key-scenarios"></a>密钥方案
 
 下面是 GRE 隧道功能寻址的关键方案。  
   
-### <a name="BKMK_Access"></a>从租户虚拟网络访问到租户物理网络
+### <a name="access-from-tenant-virtual-networks-to-tenant-physical-networks"></a><a name="BKMK_Access"></a>从租户虚拟网络访问到租户物理网络
 
 此方案提供了一种可缩放的方式，可提供从租户虚拟网络到托管服务提供商的本地租户物理网络的访问。 在多租户网关上建立 GRE 隧道终结点，另一个 GRE 隧道终结点是在物理网络上的第三方设备上建立的。 在虚拟网络中的虚拟机与物理网络上的第三方设备之间路由第3层流量。  
   
 ![GRE 隧道连接主机物理网络和租户虚拟网络](../../media/gre-tunneling-in-windows-server/GRE_.png)  
   
-### <a name="BKMK_Speed"></a>高速连接
+### <a name="high-speed-connectivity"></a><a name="BKMK_Speed"></a>高速连接
 
 此方案可提供一种可缩放的方式，以提供从租户本地网络到托管服务提供商网络中的虚拟网络的高速连接。 租户通过多协议标签交换（MPLS）连接到服务提供商网络，在该网络中，将在托管服务提供商的边缘路由器与租户的虚拟网络之间建立 GRE 隧道。  
   
 ![连接租户企业 MPLS 网络和租户虚拟网络的 GRE 隧道](../../media/gre-tunneling-in-windows-server/GRE-.png)  
   
-### <a name="BKMK_Integration"></a>与基于 VLAN 的隔离集成
+### <a name="integration-with-vlan-based-isolation"></a><a name="BKMK_Integration"></a>与基于 VLAN 的隔离集成
 
 此方案使你可以将基于 VLAN 的隔离与 Hyper-v 网络虚拟化集成。 托管提供商网络上的物理网络包含使用基于 VLAN 的隔离的负载均衡器。 多租户网关在物理网络上的负载均衡器和虚拟网络上的多租户网关上建立 GRE 隧道。  
   
@@ -84,7 +84,7 @@ GRE 隧道功能旨在满足以下要求：
   
 ![连接租户虚拟网络的多个 GRE 隧道](../../media/gre-tunneling-in-windows-server/GRE-VLANIsolation.png)  
   
-### <a name="BKMK_Shared"></a>访问共享资源
+### <a name="access-shared-resources"></a><a name="BKMK_Shared"></a>访问共享资源
 
 此方案允许访问位于宿主提供商网络中的物理网络上的共享资源。  
   
@@ -96,7 +96,7 @@ GRE 隧道功能旨在满足以下要求：
   
 ![使用多个隧道连接多个虚拟网络的单租户网关](../../media/gre-tunneling-in-windows-server/GRE-SharedResource.png)  
   
-### <a name="BKMK_thirdparty"></a>向租户的第三方设备服务
+### <a name="services-of-third-party-devices-to-tenants"></a><a name="BKMK_thirdparty"></a>向租户的第三方设备服务
 
 此方案可用于将第三方设备（如硬件负载平衡器）集成到租户虚拟网络流量流中。 例如，源自企业站点的流量通过 S2S 隧道传递到多租户网关。 流量通过 GRE 隧道路由到负载均衡器。 负载均衡器将流量路由到企业虚拟网络上的多个虚拟机。 对于在虚拟网络中具有可能重叠的 IP 地址的其他租户，也会发生相同的情况。 网络流量在负载均衡器上使用 Vlan 隔离，适用于支持 Vlan 的所有第3层设备。  
   

@@ -10,14 +10,14 @@ ms.technology: networking-hv-switch
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a92e61c3-f7d4-4e42-8575-79d75d05a218
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f76a3146c1cb38dab26019be655fadbd15d924c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2beb4ec1d78200b5c62d18ffb3f935843bd12ae0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365605"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308019"
 ---
 # <a name="create-security-policies-with-extended-port-access-control-lists"></a>使用扩展端口访问控制列表创建安全策略
 
@@ -25,13 +25,13 @@ ms.locfileid: "71365605"
 
 本主题提供有关 Windows Server 2016 中的扩展端口访问控制列表（Acl）的信息。 你可以在 Hyper-V 虚拟交换机上配置扩展 ACL，以允许和阻止传往及传自通过虚拟网络适配器连接到交换机的虚拟机 (VM) 的网络流量。  
   
-本主题包含以下部分。  
+本主题包含以下各节。  
   
 -   [详细 ACL 规则](#bkmk_detailed)  
   
 -   [有状态 ACL 规则](#bkmk_stateful)  
   
-## <a name="bkmk_detailed"></a>详细 ACL 规则  
+## <a name="detailed-acl-rules"></a><a name="bkmk_detailed"></a>详细 ACL 规则  
 Hyper-v 虚拟交换机扩展 Acl 允许你创建可应用于连接到 Hyper-v 虚拟交换机的单个 VM 网络适配器的详细规则。 创建详细规则的功能允许企业和云服务提供商（Csp）处理多租户共享服务器环境中基于网络的安全威胁。  
   
 现在，借助扩展 ACL，你无需创建各种规则来阻止或允许各协议与某个 VM 之间相互传递的所有流量，就可以阻止或允许 VM 上运行的单个协议的网络流量。 你可以在 Windows Server 2016 中创建扩展 ACL 规则，其中包括以下5元组参数集：源 IP 地址、目标 IP 地址、协议、源端口和目标端口。 此外，每个规则都可以指定网络流量方向（入站或出站），以及该规则支持的操作（阻止或允许流量）。  
@@ -79,7 +79,7 @@ Hyper-v 虚拟交换机扩展 Acl 允许你创建可应用于连接到 Hyper-v �
         [-ComputerName <string[]>] [-WhatIf] [-Confirm]  [<CommonParameters>]  
     ```  
   
-4.  将扩展 ACL 添加到已在 Windows PowerShell 中创建的 VM 对象，例如 **$vm = my_vm**"。 在下一个代码行中，你可以使用以下语法运行此命令，以创建扩展 ACL：  
+4.  将扩展 ACL 添加到在 Windows PowerShell 中创建的 VM 对象，例如 **$vm = 获取 vm "my_vm"** 。 在下一个代码行中，你可以使用以下语法运行此命令，以创建扩展 ACL：  
   
     ```  
     Add-VMNetworkAdapterExtendedAcl [-VM] <VirtualMachine[]> [-Action] <VMNetworkAdapterExtendedAclAction> {Allow |  
@@ -101,14 +101,14 @@ Hyper-v 虚拟交换机扩展 Acl 允许你创建可应用于连接到 Hyper-v �
 > [!NOTE]  
 > 下列表格中规则参数“方向”的值基于传往或传自你正在为其创建规则的 VM 的流量。 如果该 VM 正在接收流量，则流量为入站流量；如果该 VM 正在发送流量，则流量为出站流量。 例如，如果向 VM 应用一个阻止入站流量的规则，则入站流量的方向是从外部资源到 VM。 如果应用一个阻止出站流量的规则，则出站流量的方向是从本地 VM 到外部资源。  
   
-### <a name="bkmk_enforce"></a>强制应用程序级别安全性  
+### <a name="enforce-application-level-security"></a><a name="bkmk_enforce"></a>强制应用程序级别安全性  
 由于许多应用程序服务器使用标准化 TCP/UDP 端口来与客户端计算机通信，因此，可以通过筛选传往和传自指定给应用程序的端口的流量来方便地创建规则，用于阻止或允许对应用程序服务器的访问。  
   
 例如，你可能想要允许用户使用远程桌面连接 (RDP) 登录数据中心内的应用程序服务器。 由于 RDP 使用 TCP 端口 3389，因此，你可以快速设置以下规则：  
   
-|源 IP|目标 IP|Protocol|源端口|目标端口|Direction|操作|  
+|Source IP|Destination IP|协议|Source Port|Destination Port|Direction|操作|  
 |-------------|------------------|------------|---------------|--------------------|-------------|----------|  
-|*|*|TCP|*|3389|放大|Allow|  
+|*|*|TCP|*|3389|放大|允许|  
   
 下面两个示例说明了如何使用 Windows PowerShell 命令创建规则。 第一个示例规则阻止到名为 "ApplicationServer" 的 VM 的所有流量。 应用于名为 "ApplicationServer" 的 VM 的网络适配器的第二个示例规则只允许入站 RDP 流量发送到 VM。  
   
@@ -120,16 +120,16 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ApplicationServer" -Action "Deny" -Dire
 Add-VMNetworkAdapterExtendedAcl -VMName "ApplicationServer" -Action "Allow" -Direction "Inbound" -LocalPort 3389 -Protocol "TCP" -Weight 10  
 ```  
   
-### <a name="bkmk_both"></a>同时强制执行用户级和应用程序级安全性  
+### <a name="enforce-both-user-level-and-application-level-security"></a><a name="bkmk_both"></a>同时强制执行用户级和应用程序级安全性  
 由于规则能够与 5 元组 IP 数据包（源 IP、目标 IP、协议、源端口和目标端口）匹配，因此，与端口 ACL 相比，该规则可以强制更详细的安全策略。  
   
 例如，如果你想要使用一组特定的 DHCP 服务器向有限数量的客户端计算机提供 DHCP 服务，则可以在运行 Hyper-v 的 Windows Server 2016 计算机（其中托管用户 Vm）上配置以下规则：  
   
-|源 IP|目标 IP|Protocol|源端口|目标端口|Direction|操作|  
+|Source IP|Destination IP|协议|Source Port|Destination Port|Direction|操作|  
 |-------------|------------------|------------|---------------|--------------------|-------------|----------|  
-|*|255.255.255.255|UDP|*|67|缩小|Allow|  
-|*|10.175.124.0/25|UDP|*|67|缩小|Allow|  
-|10.175.124.0/25|*|UDP|*|68|放大|Allow|  
+|*|255.255.255.255|UDP|*|67|缩小|允许|  
+|*|10.175.124.0/25|UDP|*|67|缩小|允许|  
+|10.175.124.0/25|*|UDP|*|68|放大|允许|  
   
 以下示例说明了如何使用 Windows PowerShell 命令创建这些规则。  
   
@@ -140,16 +140,16 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction 
 Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction "Inbound" -RemoteIPAddress 10.175.124.0/25 -RemotePort 68 -Protocol "UDP"-Weight 20  
 ```  
   
-### <a name="bkmk_tcp"></a>为非 TCP/UDP 应用程序提供安全支持  
+### <a name="provide-security-support-to-a-non-tcpudp-application"></a><a name="bkmk_tcp"></a>为非 TCP/UDP 应用程序提供安全支持  
 尽管数据中心内的大多数网络流量都使用 TCP 和 UDP，但仍有一些流量使用其他协议。 例如，如果你想要允许一组服务器运行依赖于 Internet 组管理协议 (IGMP) 的 IP 多播应用程序，则可以创建以下规则。  
   
 > [!NOTE]  
 > IGMP 具有一个指定的 IP 协议编号 0x02。  
   
-|源 IP|目标 IP|Protocol|源端口|目标端口|Direction|操作|  
+|Source IP|Destination IP|协议|Source Port|Destination Port|Direction|操作|  
 |-------------|------------------|------------|---------------|--------------------|-------------|----------|  
-|*|*|0x02|*|*|放大|Allow|  
-|*|*|0x02|*|*|缩小|Allow|  
+|*|*|0x02|*|*|放大|允许|  
+|*|*|0x02|*|*|缩小|允许|  
   
 以下示例说明了如何使用 Windows PowerShell 命令创建这些规则。  
   
@@ -158,7 +158,7 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction 
 Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction "Outbound" -Protocol 2 -Weight 20  
 ```  
   
-## <a name="bkmk_stateful"></a>有状态 ACL 规则  
+## <a name="stateful-acl-rules"></a><a name="bkmk_stateful"></a>有状态 ACL 规则  
 使用扩展 ACL 的另一个新功能可以配置有状态规则。 有状态规则根据数据包源 IP、目标 IP、协议、源端口和目标端口中的五个属性筛选数据包。  
   
 有状态规则提供以下功能：  
@@ -185,14 +185,14 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction 
   
 |参数|规则 1|规则 2|规则 3|  
 |-------------|----------|----------|----------|  
-|源 IP|*|*|*|  
-|目标 IP|*|*|*|  
-|Protocol|*|*|TCP|  
-|源端口|*|*|*|  
-|目标端口|*|*|80|  
+|Source IP|*|*|*|  
+|Destination IP|*|*|*|  
+|协议|*|*|TCP|  
+|Source Port|*|*|*|  
+|Destination Port|*|*|80|  
 |Direction|放大|缩小|缩小|  
-|操作|拒绝|拒绝|Allow|  
-|有状态|否|否|是|  
+|操作|拒绝|拒绝|允许|  
+|有状态|是|是|是|  
 |超时（以秒为单位）|不可用|不可用|3600|  
   
 该有状态规则允许 VM 应用程序服务器连接到远程 Web 服务器。 发出第一个数据包时，Hyper-V 虚拟交换机将动态创建两个流量状态，以允许发送到远程 Web 服务器的所有数据包，并允许远程 Web 服务器传回的所有数据包。 当服务器之间的数据包流停止时，流量状态将在指定的超时值 3600 秒（一小时）内超时。  

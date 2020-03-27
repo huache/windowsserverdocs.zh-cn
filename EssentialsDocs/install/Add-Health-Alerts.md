@@ -1,9 +1,9 @@
 ---
 title: 添加运行状况警报
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 270e0aac-dc42-46f3-a20b-a68ffbded06d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8c3ba4746211690ad52f775b8bdc1ccf9b6c74b7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4166d65d0008f3427947322b285221e7b0090029
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433725"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310257"
 ---
 # <a name="add-health-alerts"></a>添加运行状况警报
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 运行状况加载项为警报、运行状况检查和网络问题修复提供了定义。 运行状况加载项包含一些 xml 文件，可注释用于评估特定功能的运行状况信息的代码或数据。 运行状况加载项由开发人员创建，由管理员安装在服务器和客户端计算机上。  
   
@@ -49,8 +49,8 @@ ms.locfileid: "66433725"
     > [!NOTE]
     >  此任务不能安装二进制文件。 必须手动将二进制文件复制到客户端计算机上的 **%ProgramFiles%\Windows Server\Bin** 文件夹。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
- [其他自定义设置](Additional-Customizations.md)   
- [部署准备的映像](Preparing-the-Image-for-Deployment.md)   
+ [其他自定义](Additional-Customizations.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)

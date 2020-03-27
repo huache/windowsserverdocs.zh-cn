@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: d7642338-9b33-4dce-8100-8b2c38d7127a
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: d791e0d51278d1f83f344250d38b1c7005c1a14a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8824a6c6189a447f97f285052af8e5c13a66e766
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355436"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312810"
 ---
 # <a name="converged-network-interface-card-nic-configuration-guidance"></a>聚合网络接口卡 \(NIC\) 配置指南
 
@@ -34,7 +34,7 @@ ms.locfileid: "71355436"
 本指南提供了两组说明，一个用于在服务器上安装单个网络适配器的部署，这是汇聚 NIC 的基本部署;另外还有一组说明，其中的服务器安装了两个或更多网络适配器，这是通过交换机嵌入组合的聚合 NIC 部署 \(\-支持的网络适配器的 RDMA\) 组。
 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 下面是聚合 NIC 的基本部署和数据中心部署的先决条件。
 

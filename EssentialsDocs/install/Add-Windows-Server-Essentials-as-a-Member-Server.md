@@ -3,7 +3,7 @@ title: 将 Windows Server Essentials 添加为成员服务器
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 09943f9708af3839ff21717316853fab9ba0283b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4b87c066885ed2bf0ac6dfa29496317310b062d9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865047"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310170"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>将 Windows Server Essentials 添加为成员服务器
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 本主题适用于运行 Windows server 2012 R2 Standard、Windows Server 2012 R2 Datacenter 或 Windows server 2016 （安装了 Windows Server Essentials Experience 角色）的服务器。 在本文档的其余部分中，将 Windows Server Essentials 体验角色称为 Windows Server Essentials。  
   
@@ -51,11 +51,11 @@ ms.locfileid: "70865047"
   
 1. 在第二台服务器上完成 Windows Server Essentials 的安装后，关闭配置 Windows Server Essentials 向导。  
   
-2. 在“搜索” 框中，键入 **System Settings**，然后在搜索结果中，单击“查看高级系统设置”。  
+2. 在“搜索”框中，键入 **System Settings**，然后在搜索结果中，单击“查看高级系统设置”。  
   
 3. 在“系统属性”中，单击“计算机名称”选项卡。  
   
-4. 在“计算机名称”的“域” 部分中，单击“更改”。  
+4. 在“计算机名称”的“域”部分中，单击“更改”。  
   
 5. 在 "**计算机名/域更改**" 的 "**成员**" 部分中，选择是否要将运行 Windows server Essentials 的服务器加入**工作组**或**域**。  
   
@@ -76,7 +76,7 @@ ms.locfileid: "70865047"
   
 2.  使用域管理员帐户登录到服务器。  
   
-3.  打开服务器管理器。  
+3.  打开“服务器管理器”。  
   
 4.  在“服务器管理器”中的标志通知区域内，单击标志，然后单击“配置 Windows Server Essentials”。  
   
@@ -84,9 +84,9 @@ ms.locfileid: "70865047"
   
 6.  单击“配置”以开始进行配置。 完成配置过程需要大约 10 分钟的时间。  
   
-7.  在桌面上，单击仪表板图标以启动服务器仪表板。 在“主页”上，完成“安装” 选项卡上列出的“入门” 任务。  
+7.  在桌面上，单击仪表板图标以启动服务器仪表板。 在“主页”上，完成“安装”选项卡上列出的“入门”任务。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 
 -   [安装 Windows Server Essentials](Install-Windows-Server-Essentials.md)

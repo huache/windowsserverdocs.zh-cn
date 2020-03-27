@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 398440ac-5988-41ce-b91e-eab343a255d3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c508005af67e9dd5b0c9a22693aca25eb19e8e48
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fb2ebf485b5004e457558fc16d8535662c0c5ff2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366832"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307984"
 ---
 # <a name="hyper-v-virtual-switch"></a>Hyper-V 虚拟交换机
 
@@ -57,7 +57,7 @@ Hyper-v 虚拟交换机功能为你提供了更多选项，可用于强制实施
 >[!NOTE]
 > 在 Windows Server 2016 中，具有虚拟 NIC 的 VM 精确显示虚拟 NIC 的最大吞吐量。 若要在 "**网络连接**" 中查看虚拟 nic 速度，请右键单击所需的虚拟 nic 图标，然后单击 "**状态**"。 此时将打开 "虚拟 NIC**状态**" 对话框。 在 "**连接**" 中，"**速度**" 与服务器中安装的物理 NIC 的速度相匹配。
   
-## <a name="bkmk_apps"></a>用于 Hyper-v 虚拟交换机
+## <a name="uses-for-hyper-v-virtual-switch"></a><a name="bkmk_apps"></a>用于 Hyper-v 虚拟交换机
 
 下面是 Hyper-v 虚拟交换机的一些用例方案。
 
@@ -69,7 +69,7 @@ Hyper-v 虚拟交换机功能为你提供了更多选项，可用于强制实施
   
 **转发扩展管理 VLAN ID**：一个主要交换机公司正在建立应用所有网络策略的转发扩展。 受管理的一个元素是虚拟局域网 (VLAN) ID。 虚拟交换机将 VLAN 的控制移交给转发扩展。 交换机公司的安装以编程方式调用 Windows Management Instrumentation （WMI）应用程序编程接口（API），该接口启用透明度，通知 Hyper-v 虚拟交换机通过并且对 VLAN 标记不采取任何操作。  
   
-## <a name="bkmk_func"></a>Hyper-v 虚拟交换机功能
+## <a name="hyper-v-virtual-switch-functionality"></a><a name="bkmk_func"></a>Hyper-v 虚拟交换机功能
  
 Hyper-V 虚拟交换机包含的主要功能包括：  
   

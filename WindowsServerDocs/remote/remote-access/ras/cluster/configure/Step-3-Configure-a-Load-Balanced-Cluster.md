@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f000066e-7cf8-4085-82a3-4f4fe1cb3c5c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fb7dca9a0f7875936cbb30cbc9c5e9e0a7473237
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 19a87762e19dd763376f50c7c5b04da3f2187874
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404632"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308356"
 ---
 # <a name="step-3-configure-a-load-balanced-cluster"></a>步骤3配置负载平衡群集
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404632"
 
 为群集准备好服务器后，在单个服务器上配置负载平衡，配置所需的证书，然后部署群集。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |[3.1 配置 IPv6 前缀](#BKMK_Prefix)|如果公司环境是 IPv4 + IPv6 或仅限 IPv6，则在单个远程访问服务器上，确保分配给 DirectAccess 客户端计算机的 IPv6 前缀足够大，以涵盖群集中的所有服务器。|  
 |[3.2 启用负载均衡](#BKMK_NLB)|在单个远程访问服务器上启用负载均衡。|  
@@ -41,27 +41,27 @@ ms.locfileid: "71404632"
 > [!NOTE]  
 > 请确保不要使用网络中其他计算机上已存在的 DIP。  
   
-## <a name="BKMK_Prefix"></a>3.1 配置 IPv6 前缀  
+## <a name="31-configure-the-ipv6-prefix"></a><a name="BKMK_Prefix"></a>3.1 配置 IPv6 前缀  
   
-### <a name="configDA"></a>配置前缀  
+### <a name="to-configure-the-prefix"></a><a name="configDA"></a>配置前缀  
   
-1.  在远程访问服务器上，单击 "**开始**"，然后单击 "**远程访问管理**"。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在远程访问服务器上，单击 "**开始**"，然后单击 "**远程访问管理**"。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在远程访问管理控制台中，单击“配置”。  
   
 3.  在控制台的中间窗格中，在 "**步骤 2 DirectAccess 服务器**" 区域中，单击 "**编辑**"。  
   
-4.  单击 "**前缀配置**"。 在 "**前缀配置**" 页上，在 "**分配给 DirectAccess 客户端计算机的 ipv6 前缀**" 中，输入子网长度为59（例如， **2001： db8：1：1000：：/59**）用于 directaccess 客户端计算机的 ipv6 前缀。 如果 VPN 还启用了 IPv6，则将显示 IPv6 前缀，并且子网长度需要更改为59。 单击**下一步**。  
+4.  单击 "**前缀配置**"。 在 "**前缀配置**" 页上，在 "**分配给 DirectAccess 客户端计算机的 ipv6 前缀**" 中，输入子网长度为59（例如， **2001： db8：1：1000：：/59**）用于 directaccess 客户端计算机的 ipv6 前缀。 如果 VPN 还启用了 IPv6，则将显示 IPv6 前缀，并且子网长度需要更改为59。 单击 **“下一步”** 。  
   
 5.  在控制台的中间窗格中，单击 "**完成**"。  
   
 6.  在 "**远程访问查看**" 对话框中，检查配置设置，然后单击 "**应用**"。 在 **“应用远程访问设置向导设置”** 对话框中，单击 **“关闭”** 。  
   
-## <a name="BKMK_NLB"></a>3.2 启用负载均衡  
+## <a name="32-enable-load-balancing"></a><a name="BKMK_NLB"></a>3.2 启用负载均衡  
   
 #### <a name="to-enable-load-balancing"></a>启用负载平衡  
   
-1.  在配置的 DirectAccess 服务器上，单击 "**开始**"，然后单击 "**远程访问管理**"。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在配置的 DirectAccess 服务器上，单击 "**开始**"，然后单击 "**远程访问管理**"。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在远程访问管理控制台的左窗格中，单击 "**配置**"，然后在 "**任务**" 窗格中，单击 "**启用负载均衡**"。  
   
@@ -102,7 +102,7 @@ ms.locfileid: "71404632"
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 如果在规划步骤中选择使用 Windows NLB，则执行以下操作：  
   
@@ -119,12 +119,12 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
 > [!NOTE]  
 > 如果使用过渡 Gpo，则建议不要包含对任何其他设置的负载平衡器设置更改。 必须先应用对负载平衡器设置所做的任何更改，然后再进行其他配置更改。 此外，在新的 DirectAccess 服务器上配置负载平衡器之后，请在更改与新群集相关的其他 DirectAccess 设置之前，留出一段时间让 IP 更改应用并复制到企业中的 DNS 服务器。  
   
-## <a name="BKMK_InstallIPHTTP"></a>3.3 安装 IP-HTTPS 证书  
-必须至少具有本地 **Administrators** 组中的成员身份或同等身份才能完成此过程。  
+## <a name="33-install-the-ip-https-certificate"></a><a name="BKMK_InstallIPHTTP"></a>3.3 安装 IP-HTTPS 证书  
+完成此过程至少需要本地“管理员”组中的成员资格或等效成员资格。  
   
-### <a name="IPHTTPSCert"></a>安装 IP-HTTPS 证书  
+### <a name="to-install-the-ip-https-certificate"></a><a name="IPHTTPSCert"></a>安装 IP-HTTPS 证书  
   
-1.  在配置的远程访问服务器上，单击 "**开始**"，键入**mmc** ，然后按 enter。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在配置的远程访问服务器上，单击 "**开始**"，键入**mmc** ，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在 MMC 控制台中的“文件”菜单上，单击“添加/删除管理单元”。  
   
@@ -132,9 +132,9 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 4.  在控制台的左窗格中，导航到 "**证书（本地计算机） \** "。 右键单击 IP-HTTPS 证书，指向 "**所有任务**"，然后单击 "**导出**"。  
   
-5.  在 "**欢迎使用证书导出向导**" 页上，单击 "**下一步**"。  
+5.  在 **“欢迎使用‘证书导出向导’”** 页面上，单击 **“下一步”** 。  
   
-6.  在“导出私钥” 页面上，单击“是，导出私钥”，然后单击“下一步”。  
+6.  在“导出私钥”页面上，单击“是，导出私钥”，然后单击“下一步”。  
   
 7.  在 "**导出文件格式**" 页上，单击 "**个人信息交换-PKCS #12 （。PFX）** ，然后单击 "**下一步**"。  
   
@@ -148,7 +148,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 12. 将该证书复制到要作为群集成员的所有服务器。  
   
-13. 在新 DirectAccess 服务器上，单击 "**开始**"，键入**mmc** ，然后按 enter。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+13. 在新 DirectAccess 服务器上，单击 "**开始**"，键入**mmc** ，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 14. 在 MMC 控制台中的“文件”菜单上，单击“添加/删除管理单元”。  
   
@@ -170,12 +170,12 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 23. 在希望成为群集成员的所有服务器上重复步骤13-22。  
   
-## <a name="BKMK_NLS"></a>3.4 安装网络位置服务器证书  
-必须至少具有本地 **Administrators** 组中的成员身份或同等身份才能完成此过程。  
+## <a name="34-install-the-network-location-server-certificate"></a><a name="BKMK_NLS"></a>3.4 安装网络位置服务器证书  
+完成此过程至少需要本地“管理员”组中的成员资格或等效成员资格。  
   
 #### <a name="to-install-a-certificate-for-network-location"></a>为网络位置安装证书  
   
-1.  在远程访问服务器上，单击 "**开始**"，键入**mmc**，然后按 enter。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在远程访问服务器上，单击 "**开始**"，键入**mmc**，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  单击 "**文件**"，然后单击 "**添加/删除管理单元**"。  
   
@@ -185,7 +185,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 5.  右键单击“证书”，指向“所有任务”，然后单击“申请新证书”。  
   
-6.  单击“下一步” 两次。  
+6.  单击“下一步”两次。  
   
 7.  在 "**申请证书**" 页上，单击 "Web 服务器证书" 模板，然后单击 "**注册此证书需要详细信息**"。  
   
@@ -208,12 +208,12 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 14. 在要作为群集成员的所有服务器上重复此过程。  
   
-## <a name="BKMK_Add"></a>3.5 将服务器添加到群集  
+## <a name="35-add-servers-to-the-cluster"></a><a name="BKMK_Add"></a>3.5 将服务器添加到群集  
  
   
 #### <a name="to-add-servers-to-the-cluster"></a>向群集添加服务器  
   
-1.  在配置的 DirectAccess 服务器上，单击 "**开始**"，然后单击 "**远程访问管理**"。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在配置的 DirectAccess 服务器上，单击 "**开始**"，然后单击 "**远程访问管理**"。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在远程访问管理控制台中，单击“配置”。 在 "**任务**" 窗格中的 "**负载均衡群集**" 下，单击 "**添加或删除服务器**"。  
   
@@ -239,7 +239,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 8.  在 "**摘要**" 页上，单击 "**添加**"。  
   
-9. 在**完成**页上，单击**关闭**。  
+9. 在“完成”页上，单击“关闭”。  
   
 10. 对于要添加到群集的所有远程访问服务器，请重复此步骤。  
   
@@ -249,7 +249,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>  
@@ -258,12 +258,12 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
 > [!NOTE]  
 > 如果未在负载平衡群集中启用 VPN，则在使用 Windows PowerShell cmdlet 将新服务器添加到群集时不应提供任何 VPN 地址范围。 如果错误地执行了此操作，请从群集中删除服务器，并再次将其添加到群集中，而无需指定 VPN 地址范围。  
   
-## <a name="BKMK_remove"></a>3.6 从群集中删除服务器  
+## <a name="36-remove-a-server-from-the-cluster"></a><a name="BKMK_remove"></a>3.6 从群集中删除服务器  
  
   
 #### <a name="to-remove-a-server-from-the-cluster"></a>从群集中删除服务器  
   
-1.  在配置的远程访问服务器上，单击 "**开始**"，然后单击 "**远程访问管理**"。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在配置的远程访问服务器上，单击 "**开始**"，然后单击 "**远程访问管理**"。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在远程访问管理控制台中，单击“配置”。 在 "**任务**" 窗格中的 "**负载均衡群集**" 下，单击 "**添加或删除服务器**"。  
   
@@ -279,18 +279,18 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>  
 ```  
   
-## <a name="BKBK_disable"></a>3.7 禁用负载均衡  
+## <a name="37-disable-load-balancing"></a><a name="BKBK_disable"></a>3.7 禁用负载均衡  
 [使用 Windows PowerShell 执行此步骤](assetId:///7a817ca0-2b4a-4476-9d28-9a63ff2453f9)  
   
 #### <a name="to-disable-load-balancing"></a>禁用负载均衡  
   
-1.  在配置的 DirectAccess 服务器上，单击 "**开始**"，然后单击 "**远程访问管理**"。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在配置的 DirectAccess 服务器上，单击 "**开始**"，然后单击 "**远程访问管理**"。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在远程访问管理控制台中，单击“配置”。 在 "**任务**" 窗格中的 "**负载均衡群集**" 下，单击 "**禁用负载均衡**"。  
   
@@ -300,7 +300,7 @@ Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 ![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 set-RemoteAccessLoadBalancer -disable  
@@ -315,7 +315,7 @@ set-RemoteAccessLoadBalancer -disable
 > -   使用**RemoteAccessLoadBalancer** cmdlet 禁用负载平衡后，请在运行任何其他 cmdlet 之前等待2分钟。 此操作还应在运行**RemoteAccessLoadBalancer-disable** cmdlet 之后运行其他 cmdlet 的任何脚本中完成。  
 > -   禁用负载平衡会将群集的虚拟 IP 地址更改为专用 IP 地址。 因此，在服务器上缓存的 DNS 条目过期之前，查询服务器名称的任何操作都将失败。 请确保在禁用负载平衡之后不运行任何远程访问 PowerShell cmdlet，直至服务器上的缓存过期。 如果你尝试在另一个域中的另一台计算机上禁用负载平衡，则此问题更常见。 如果你从远程访问管理控制台禁用了负载平衡，并且可能会阻止加载配置，也会发生这种情况。 缓存过期或刷新后，将加载配置。  
   
-## <a name="BKMK_Links"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
   
 -   [步骤4：验证群集](Step-4-Verify-the-Cluster.md)  
   

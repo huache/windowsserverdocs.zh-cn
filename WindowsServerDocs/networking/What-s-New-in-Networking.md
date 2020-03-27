@@ -1,20 +1,20 @@
 ---
-title: 网络的新增功能
+title: 网络中的新增功能
 description: 本主题提供有关 Windows Server 2016 中用于网络的新功能和技术的概述信息
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da2166d28edda5662797824d9b26ad930f51083c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 35c3c3b2610918e8b0fd69ccf04422e3f6df4d0e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406759"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318542"
 ---
-# <a name="whats-new-in-networking"></a>网络的新增功能
+# <a name="whats-new-in-networking"></a>网络中的新增功能
 
 >适用于：Windows Server 2016
 
@@ -25,7 +25,7 @@ ms.locfileid: "71406759"
   
 -   [其他网络技术的新增功能](#bkmk_existing)  
   
-## <a name="bkmk_features"></a>新的网络功能和技术
+## <a name="new-networking-features-and-technologies"></a><a name="bkmk_features"></a>新的网络功能和技术
 
 网络是软件定义数据中心（SDDC）平台的基础部分，而 Windows Server 2016 提供了新的和经过改进的软件定义网络（SDN）技术，可帮助你迁移到适用于你的组织的完全实现的 SDDC 解决方案。  
   
@@ -72,28 +72,28 @@ ms.locfileid: "71406759"
   
 -   **切换嵌入组合（SET）** 。        集是在 Hyper-v 虚拟交换机中集成的 NIC 组合解决方案。 集允许将最多8个物理 NIC 组合成单个集组，从而提高可用性并提供故障转移。 在 Windows Server 2016 中，你可以创建限制为使用服务器消息块（SMB）和 RDMA 的集团队。 此外，你可以使用 "设置团队" 为 Hyper-v 网络虚拟化分发网络流量。 有关详细信息，请[参阅远程直接内存&#40;访问&#41; RDMA 和交换机嵌入式&#40;组合&#41;集](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。  
   
-## <a name="bkmk_existing"></a>其他网络技术的新增功能
+## <a name="new-features-for-additional-networking-technologies"></a><a name="bkmk_existing"></a>其他网络技术的新增功能
 
 本部分包含有关熟悉的网络技术的新功能的信息。
   
-## <a name="bkmk_dhcp"></a>台  
+## <a name="dhcp"></a><a name="bkmk_dhcp"></a>台  
 DHCP 是一项 Internet 工程任务组 (IETF) 标准，旨在减轻在基于 TCP/IP 的网络（如私人内部网）上配置主机的管理负担并降低复杂度。 使用 DHCP 服务器服务，在 DHCP 客户端上配置 TCP/IP 的过程是自动进行的。  
   
 有关详细信息，请参阅[DHCP 中的新增功能](technologies/dhcp/What-s-New-in-DHCP.md)。  
   
-## <a name="bkmk_dns"></a>DNS  
-DNS 是 TCP/IP 网络中用于命名计算机和网络服务的系统。 DNS 命名通过用户友好的名称定位计算机和服务。 当用户在应用程序中输入 DNS 名称时，DNS 服务可以将该名称解析为与此名称关联的其他信息，如 IP 地址。  
+## <a name="dns"></a><a name="bkmk_dns"></a>DNS  
+DNS 是 TCP/IP 网络中用于命名计算机和网络服务的系统。 DNS 命名通过用户友好的名称查找计算机和服务。 当用户在应用程序中输入 DNS 名称时，DNS 服务可以将此名称解析为与此名称相关的其他信息，如 IP 地址。  
   
 下面是有关 DNS 客户端和 DNS 服务器的信息。  
   
-### <a name="bkmk_dnsc"></a>DNS 客户端  
+### <a name="dns-client"></a><a name="bkmk_dnsc"></a>DNS 客户端  
 下面是新的或改进的 DNS 客户端技术。  
   
 -   **DNS 客户端服务绑定**。 在 Windows 10 中，DNS 客户端服务为具有多个网络接口的计算机提供了增强的支持。  
   
 有关详细信息，请参阅[Windows Server 2016 中 DNS 客户端的新增功能](dns/What-s-New-in-DNS-Client.md)  
   
-### <a name="bkmk_dnss"></a>DNS 服务器  
+### <a name="dns-server"></a><a name="bkmk_dnss"></a>DNS 服务器  
 下面是新的或改进的 DNS 服务器技术。  
   
 -   **DNS 策略**。  你可以配置 DNS 策略来指定 DNS 服务器如何响应 DNS 查询。 DNS 响应可以基于客户端 IP 地址（位置）、当天的时间和多个其他参数。 DNS 策略启用位置感知的 DNS、流量管理、负载平衡、裂脑 DNS 和其他方案。  
@@ -118,17 +118,17 @@ DNS 是 TCP/IP 网络中用于命名计算机和网络服务的系统。 DNS 命
   
 有关详细信息，请参阅[Windows server 2016 中 DNS 服务器的新增功能](dns/What-s-New-in-DNS-Server.md)  
   
-## <a name="bkmk_GRE"></a>GRE 隧道  
+## <a name="gre-tunneling"></a><a name="bkmk_GRE"></a>GRE 隧道  
 RAS 网关现在支持站点到站点连接的高可用性通用路由封装（GRE）隧道和网关的 M + N 冗余。 GRE 是一种轻型隧道协议，可以在 Internet 协议网间上的虚拟点对点链路内封装各种网络层协议。  
   
 有关详细信息，请参阅[Windows Server 2016 中的 GRE 隧道](../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md)。  
   
-## <a name="HNV"></a>Hyper-v 网络虚拟化  
+## <a name="hyper-v-network-virtualization"></a><a name="HNV"></a>Hyper-v 网络虚拟化  
 Hyper-v 网络虚拟化（HNV）是在 Windows Server 2012 中引入的，它支持基于共享物理网络基础结构的客户网络虚拟化。 由于物理网络结构上只需进行少量的更改，HNV 为服务提供商提供灵活的灵活性，可在三个云中的任何位置部署和迁移租户工作负荷：服务提供商云、私有云或 Microsoft Azure 公有云。  
   
 有关详细信息，请参阅[Windows Server 2016 中 Hyper-v 网络虚拟化的新增功能](sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)  
   
-## <a name="bkmk_ipam"></a>IPAM  
+## <a name="ipam"></a><a name="bkmk_ipam"></a>IPAM  
 IPAM 为组织网络上的 IP 地址和 DNS 基础结构提供可高度自定义的管理和监视功能。 使用 IPAM，你可以监视、审核和管理运行动态主机配置协议（DHCP）和域名系统（DNS）的服务器。  
   
 -   **增强了 IP 地址管理**。  

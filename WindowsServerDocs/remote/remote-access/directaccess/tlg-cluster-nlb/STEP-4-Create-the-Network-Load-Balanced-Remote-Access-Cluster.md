@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 509eaa08-c49d-448d-a71e-c1c45519ccd5
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f888ebadfaa91b35f0924b23e9818da1c32f26e5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c2f855512b978462f89b8f32b1f7edf59180f563
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388479"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310770"
 ---
 # <a name="step-4-create-the-network-load-balanced-remote-access-cluster"></a>步骤4创建网络负载平衡的远程访问群集
 
@@ -62,7 +62,7 @@ ms.locfileid: "71388479"
   
 3.  在 "**选择功能**" 对话框中，依次选择 "**网络负载平衡**"、"**添加功能**"、"**下一步**" 和 "**安装**"。  
   
-4.  在“安装进度”对话框中，验证安装是否成功，然后单击“关闭”。  
+4.  在 **“安装进度”** 对话框中确认安装成功，然后单击 **“关闭”** 。  
   
 5.  在 EDGE2 上重复此过程。  
   
@@ -71,7 +71,7 @@ ms.locfileid: "71388479"
   
 ### <a name="enable-load-balancing"></a>启用负载均衡  
   
-1.  在 EDGE1 上，单击 "**开始**"，键入**ramgmtui.exe**，然后按 enter。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在 EDGE1 上，单击 "**开始**"，键入**ramgmtui.exe**，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在远程访问管理控制台的左窗格中，单击 "**配置**"，然后在 "**任务**" 窗格中，单击 "**启用负载均衡**"。  
   
@@ -111,13 +111,13 @@ ms.locfileid: "71388479"
   
 5.  在 "**摘要**" 页上，单击 "**添加**"。  
   
-6.  在**完成**页上，单击**关闭**。  
+6.  在“完成”页上，单击“关闭”。  
   
 7.  在 "**添加或删除服务器**" 对话框中，单击 "**提交**"。  
   
 8.  在 "**添加和删除服务器**" 对话框中，单击 "**关闭**"。  
   
-9. 在 "**开始**" 屏幕上，键入**nlbmgr**，然后按 enter。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+9. 在 "**开始**" 屏幕上，键入**nlbmgr**，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 10. 在**网络负载平衡管理器**中，单击 "**内部 DA 群集**"。 在详细信息窗格中，确保**EDGE1 （企业网络）** 和**EDGE2 （企业网络）** 都具有**聚合**状态。  
   

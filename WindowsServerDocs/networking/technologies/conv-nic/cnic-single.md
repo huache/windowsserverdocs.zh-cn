@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: eed5c184-fa55-43a8-a879-b1610ebc70ca
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/14/2018
-ms.openlocfilehash: 2ad7592fd9faf1e92893e6271daabdad907d3aaa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5a088df043190de9e7f1df4dccdc2fc832751093
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405794"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309624"
 ---
 # <a name="converged-nic-configuration-with-a-single-network-adapter"></a>使用单个网络适配器汇聚 NIC 配置
 
@@ -121,7 +121,7 @@ ms.locfileid: "71405794"
    |      InterfaceAlias      |     限      |
    |      SourceAddress       | 192.168.1.3 |
    |      PingSucceeded       |    True     |
-   | PingReplyDetails \(RTT\) |    0毫秒     |
+   | PingReplyDetails \(RTT\) |    0 毫秒     |
 
    ---
 
@@ -149,13 +149,13 @@ ms.locfileid: "71405794"
    |      InterfaceAlias      | 测试-40G-1  |
    |      SourceAddress       | 192.168.1.3 |
    |      PingSucceeded       |    False    |
-   | PingReplyDetails \(RTT\) |    0毫秒     |
+   | PingReplyDetails \(RTT\) |    0 毫秒     |
 
    ---
 
 
 
-## <a name="step-3-optional-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>步骤 3： 可有可无为安装在 Hyper-v 主机中的 Nic 配置 VLAN Id
+## <a name="step-3-optional-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>步骤 3。 可有可无为安装在 Hyper-v 主机中的 Nic 配置 VLAN Id
 
 许多网络配置利用 Vlan，如果你计划在网络中使用 Vlan，则必须重复前面的测试并配置 Vlan。 此外，如果打算使用 RoCE 进行 RDMA 服务，则必须启用 Vlan。
 
@@ -224,7 +224,7 @@ ms.locfileid: "71405794"
    Test-NetConnection 192.168.1.5
    ```
 
-## <a name="step-4-configure-quality-of-service-qos"></a>步骤 4： 配置服务质量 \(QoS\)
+## <a name="step-4-configure-quality-of-service-qos"></a>步骤 4. 配置服务质量 \(QoS\)
 
 >[!NOTE]
 >必须在打算彼此通信的所有主机上执行以下所有 DCB 和 QoS 配置步骤。
@@ -257,7 +257,7 @@ ms.locfileid: "71405794"
    |      名称      |           SMB            |
    |     所有者      | \(机组策略\) |
    | NetworkProfile |           全部            |
-   |   优先级   |           127            |
+   |   优先权   |           127            |
    |   JobObject    |          &nbsp;          |
    | NetDirectPort  |           445            |
    | PriorityValue  |            3             |
@@ -365,7 +365,7 @@ ms.locfileid: "71405794"
 
    |   名称    | 算法 | 带宽（%） | Priority | PolicySet | ifIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
-   | 缺省值 |    ETS    |      70      | 0-2，4-7  |  全局   | &nbsp;  | &nbsp;  |
+   | [默认值] |    ETS    |      70      | 0-2，4-7  |  全局   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      30      |    3     |  全局   | &nbsp;  | &nbsp;  |
 
    ---
@@ -446,7 +446,7 @@ ms.locfileid: "71405794"
    >[!NOTE]
    >如果 RDMA 流量失败，则针对 RoCE 情况，请参阅 ToR 交换机配置，获取应该与主机设置匹配的正确 PFC/ETS 设置。 有关引用值，请参阅本文档中的 QoS 部分。
 
-## <a name="step-7-remove-the-access-vlan-setting"></a>步骤 7： 删除访问 VLAN 设置
+## <a name="step-7-remove-the-access-vlan-setting"></a>步骤 7。 删除访问 VLAN 设置
 
 为创建 Hyper-v 交换机做好准备，必须删除前面安装的 VLAN 设置。  
 
@@ -463,7 +463,7 @@ ms.locfileid: "71405794"
    ```  
 
 
-## <a name="step-8-create-a-hyper-v-vswitch-on-your-hyper-v-hosts"></a>步骤8。 在 Hyper-v 主机上创建 Hyper-v vSwitch
+## <a name="step-8-create-a-hyper-v-vswitch-on-your-hyper-v-hosts"></a>步骤 8。 在 Hyper-v 主机上创建 Hyper-v vSwitch
 
 下图描述了具有 vSwitch 的 Hyper-v 主机1。
 
@@ -568,7 +568,7 @@ ms.locfileid: "71405794"
     PingReplyDetails (RTT) : 0 ms
    ```
 
-## <a name="step-9-test-hyper-v-virtual-switch-rdma-mode-2"></a>步骤 9： 测试 Hyper-v 虚拟交换机 RDMA （模式2）
+## <a name="step-9-test-hyper-v-virtual-switch-rdma-mode-2"></a>步骤 9。 测试 Hyper-v 虚拟交换机 RDMA （模式2）
 
 下图描述了 Hyper-v 主机（包括 Hyper-v 主机1上的 vSwitch）的当前状态。
 

@@ -3,18 +3,18 @@ ms.assetid: ''
 title: Windows Server 2019 中的 HPN 功能的内部预览版
 description: 了解 Windows Server 2019 中的新增高性能网络功能。
 manager: dougkim
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 ms.date: 09/12/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: bca603344047ea5cc890bf9976ca5a6c79514136
-ms.sourcegitcommit: 9feb093a0acb8834c9ef3c066667c7062d85e6e1
+ms.openlocfilehash: 03a652372fd86b11a87863330bf9536a28367167
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/26/2020
-ms.locfileid: "80289792"
+ms.locfileid: "80316955"
 ---
 # <a name="new-hpn-features-in-windows-server-2019"></a>Windows Server 2019 中的新 HPN 功能
 
@@ -27,7 +27,7 @@ ms.locfileid: "80289792"
 
 Windows Server 2019 通过根据需要动态分配和优化网络工作负荷的处理来改善这些优化。 Windows Server 2019 确保最高效率，并为 IT 管理员消除了配置负担。
 
-有关更多信息，请参阅：
+有关详细信息，请参阅：
 
 -   [公告博客](https://blogs.technet.microsoft.com/networking/2018/08/22/netperf4vw/)
 
@@ -43,7 +43,7 @@ VSwitch 中的接收段合并（RSC）是一项增强功能，可在数据遍历
 
 默认情况下，在外部虚拟交换机上启用 vSwitch 中的 RSC。
 
-有关更多信息，请参阅：
+有关详细信息，请参阅：
 
 -  [公告博客](https://blogs.technet.microsoft.com/networking/2018/08/22/netperf4vw/)
 

@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b093c4cbf5ceb06e84d5e07c8735106797932bc1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8269fee952e60aa53facec95ab3070b906383ad2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404929"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309053"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>步骤2规划高级 DirectAccess 部署
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404929"
 
 规划 DirectAccess 基础结构后，使用 IPv4 和 IPv6 在单个服务器上部署高级 DirectAccess 的下一步是规划远程访问设置向导的设置。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |[2.1 规划客户端部署](#21-plan-for-client-deployment)|规划如何允许客户端计算机使用 DirectAccess 进行连接。 确定将哪些托管的计算机配置为 DirectAccess 客户端，并规划在客户端计算机上部署网络连接助手或 DirectAccess 连接助手。|  
 |[2.2 规划 DirectAccess 服务器部署](#22-plan-for-directaccess-server-deployment)|规划如何部署 DirectAccess 服务器。|  

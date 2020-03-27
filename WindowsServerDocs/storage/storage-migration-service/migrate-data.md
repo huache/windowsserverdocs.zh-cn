@@ -4,16 +4,16 @@ description: 搜索引擎结果主题的简短说明
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 02/13/2019
+ms.date: 03/25/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 20aa5fbc40efc5a3a439361dadfac0f47f4b41d8
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: cb1ac2fc1c7d4ed0a7f57bbe95cb9989bc85e99e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822620"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310562"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>使用存储迁移服务迁移服务器
 
@@ -28,7 +28,7 @@ ms.locfileid: "76822620"
 3. 中转到**服务器管理器**（在 Windows 管理中心中） >**存储迁移服务**，并选择 "**安装**" 以安装存储迁移服务及其必需组件（如图1所示）。
     存储迁移服务页 ![屏幕截图，其中显示了 "安装" 按钮](media/migrate/install.png)**图1：安装存储迁移服务**
 4. 在运行 Windows Server 2019 的所有目标服务器上安装存储迁移服务代理。 这会在目标服务器上安装时将传输速度加倍。 <br>为此，请在 Windows 管理中心中连接到目标服务器，然后前往**服务器管理器**（在 windows 管理中心中） >**角色和功能**，>**功能**"，选择"**存储迁移服务代理**"，然后选择"**安装**"。 
-5. 如果要在 Windows 故障转移群集之间进行迁移，请在 orchestrator server 上安装故障转移群集工具。 <br>为此，请在 Windows 管理中心中连接到 orchestrator 服务器，然后前往**服务器管理器**（在 windows 管理中心中） >**角色和功能**，>**功能**，>**远程服务器管理工具** **功能管理工具**中，选择 "**故障转移群集工具**"，然后选择 "**安装**"。 
+5. 如果要在 Windows 故障转移群集之间进行迁移，请在 orchestrator server 上安装故障转移群集工具。 <br>为此，请在 Windows 管理中心中连接到 orchestrator 服务器，然后前往**服务器管理器**（在 windows 管理中心中） >**角色和功能**，>**功能**，>**远程服务器管理工具**>**功能管理工具**中，选择 "**故障转移群集工具**"，然后选择 "**安装**"。 
 6. 在所有源服务器以及运行 Windows Server 2012 R2 或 Windows Server 2016 的任何目标服务器上，在 Windows 管理中心中连接到每台服务器，中转到**服务器管理器**（在 Windows 管理中心中） > **Firewall** > **传入规则**，然后检查是否已启用以下规则：
     - 文件和打印机共享 (SMB-In)
     - Netlogon 服务（NP-IN）
@@ -60,12 +60,15 @@ ms.locfileid: "76822620"
 1. 在 "**传输数据** > **输入凭据**" 页上，键入在要迁移到的目标服务器上工作的管理员凭据，然后选择 "**下一步**"。
 2. 在 "**添加目标设备和映射**" 页上，将列出第一个源服务器。 键入要迁移到的服务器或群集文件服务器的名称，然后选择 "**扫描设备**"。 如果从已加入域的源计算机进行迁移，则目标服务器必须加入到同一个域。 还可以单击 "创建新的 Azure VM"，并使用该向导在 Azure 中部署新的目标服务器。 这会自动调整 VM 的大小、设置存储、格式化磁盘，加入域，以及将存储迁移服务代理添加到 Windows Server 2019 目标。 你可以从 Windows Server 2019 （推荐）、Windows Server 2016 和 Windows Server 2012 R2 R2 Vm 中进行选择，并使用托管磁盘。   
 
- > [!NOTE]
-   > 使用 "创建新的 Azure VM" 需要具有：
-   > - 有效的 Azure 订阅。
-   > - 具有创建权限的现有 Azure 计算资源组。
-   > - 现有的 Azure 虚拟网络和子网。 
-   > - 与虚拟网络和子网关联的 Azure Express 路由或 VPN 解决方案，该解决方案允许从 Azure IaaS VM 连接到本地客户端、域控制器、存储迁移服务 orchestrator 计算机、Windows 管理中心计算机要迁移的源计算机。
+    > [!NOTE]
+    > 使用 "创建新的 Azure VM" 需要具有：
+    > - 有效的 Azure 订阅。
+    > - 具有创建权限的现有 Azure 计算资源组。
+    > - 现有的 Azure 虚拟网络和子网。 
+    > - 与虚拟网络和子网关联的 Azure Express 路由或 VPN 解决方案，该解决方案允许从 Azure IaaS VM 连接到本地客户端、域控制器、存储迁移服务 orchestrator 计算机、Windows 管理中心计算机要迁移的源计算机。
+   
+    以下视频演示了如何使用存储迁移服务迁移到 Azure Vm。
+    > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
 
 3. 将源卷映射到目标卷，清除不想传输的任何共享的**包含**复选框（包括位于 Windows 系统文件夹中的任何管理共享），然后选择 "**下一步**"。
    ![屏幕截图，其中显示源服务器及其卷和共享位置，以及在目标](media/migrate/transfer.png)**图 3**中将它们传输到的位置。

@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b6b8ebfe0a6b42fe174d4b376b981641f043cf58
-ms.sourcegitcommit: 3d5a8357491b6bbd180d1238ea98f23bfc544ac7
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c53adce68168ac4890f14c766e10b2b886dd598c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827674"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308955"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>步骤1配置基本 DirectAccess 基础结构
 
@@ -25,7 +25,7 @@ ms.locfileid: "75827674"
 
 本主题介绍了如何在混合的 IPv4 和 IPv6 环境中配置基本 DirectAccess 部署所需的基础结构，该部署使用单台 DirectAccess 服务器。 在开始执行部署步骤之前，请确保已完成[规划基本 DirectAccess 部署](../../../remote-access/directaccess/single-server-wizard/Plan-a-Basic-DirectAccess-Deployment.md)中所述的规划步骤。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |配置服务器网络设置|配置 DirectAccess 服务器上的服务器网络设置。|  
 |配置企业网络中的路由|配置企业网络中的路由以确保正确地路由通信。|  
@@ -36,9 +36,9 @@ ms.locfileid: "75827674"
 |配置安全组|配置将包含 DirectAccess 客户端计算机的安全组，以及部署中所需的任何其他安全组。|  
   
 > [!NOTE]  
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
-## <a name="ConfigNetworkSettings"></a>配置服务器网络设置  
+## <a name="configure-server-network-settings"></a><a name="ConfigNetworkSettings"></a>配置服务器网络设置  
 在使用 IPv4 和 IPv6 的环境中部署单一服务器需要下面的网络接口设置。 可使用“Windows 网络和共享中心”中的“更改适配器设置”配置所有 IP 地址。  
   
 -   边缘拓扑  
@@ -74,15 +74,15 @@ ms.locfileid: "75827674"
 >   
 >     IPsec 策略的名称是 DirectAccess-DaServerToInfra 和 DirectAccess-DaServerToCorp。  
   
-## <a name="ConfigRouting"></a>在企业网络中配置路由  
+## <a name="configure-routing-in-the-corporate-network"></a><a name="ConfigRouting"></a>在企业网络中配置路由  
 在企业网络中配置路由，如下所示：  
   
 -   在组织中部署本机 IPv6 时，添加一个路由，以便内部网络上的路由器通过远程访问服务器将 IPv6 通信路由回来。  
   
 -   在远程访问服务器上手动配置组织 IPv4 和 IPv6 路由。 添加已发布的路由，以便将所有具有组织 (/48) IPv6 前缀的通信都转发到内部网络。 此外，对于 IPv4 通信，请添加显式路由，以便将 IPv4 通信转发到内部网络。  
   
-## <a name="ConfigFirewalls"></a>配置防火墙  
-在部署中使用其他防火墙的情况下，当远程访问服务器位于 IPv4 Internet 上时，应用远程访问通信的以下面向 Internet 的防火墙例外情况：  
+## <a name="configure-firewalls"></a><a name="ConfigFirewalls"></a>配置防火墙  
+在部署中使用其它防火墙的情况下，当远程访问服务器位于 IPv4 Internet 上时，应用远程访问通信的以下面向 Internet 的防火墙例外情况：  
   
 -   6to4 流量-IP 协议41入站和出站。  
   
@@ -94,7 +94,7 @@ ms.locfileid: "75827674"
 > [!NOTE]  
 > 对于 Teredo 和 6to4 通信，这些例外应适用于远程访问服务器上两个面向 Internet 的连续公用 IPv4 地址。 对于 IP-HTTPS，仅需将例外情况应用于外部服务器名称解析为的地址。  
   
-在使用其他防火墙的情况下，当远程访问服务器位于 IPv6 Internet 上时，应用远程访问通信的以下面向 Internet 的防火墙例外：  
+在使用其它防火墙的情况下，当远程访问服务器位于 IPv6 Internet 上时，应用远程访问通信的以下面向 Internet 的防火墙例外：  
   
 -   IP 协议 50  
   
@@ -106,10 +106,10 @@ ms.locfileid: "75827674"
   
 -   所有 IPv4/IPv6 通信的 TCP/UDP  
   
-## <a name="ConfigDNS"></a>配置 DNS 服务器  
+## <a name="configure-the-dns-server"></a><a name="ConfigDNS"></a>配置 DNS 服务器  
 你必须为部署中的内部网络手动配置用于网络位置服务器网站的 DNS 条目。  
   
-### <a name="NLS_DNS"></a>创建网络位置服务器和 NCSI 探测 DNS 记录  
+### <a name="to-create-the-network-location-server-and-ncsi-probe-dns-records"></a><a name="NLS_DNS"></a>创建网络位置服务器和 NCSI 探测 DNS 记录  
   
 1.  在内部网络 DNS 服务器上，运行 " **dnsmgmt.msc** "，然后按 enter。  
   
@@ -117,13 +117,13 @@ ms.locfileid: "75827674"
   
 3.  在“新主机”对话框的“名称(如果为空则使用父域名)”框中，输入网络位置服务器网站的 DNS 名称（这是 DirectAccess 客户端用于连接到网络位置服务器的名称）。 在“IP 地址”框中，输入网络位置服务器的 IPv4 地址，然后单击“添加主机”。 在“DNS”对话框中，单击“确定”。  
   
-4.  在“新主机”对话框的“名称(如果为空则使用父域名)”框中，输入 Web 探测的 DNS 名称（默认 Web 探测的名称为 directaccess-webprobehost）。 在“IP 地址”框中，输入 Web 探测的 IPv4 地址，然后单击“添加主机”。 为 directaccess corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在“DNS”对话框中，单击“确定”。  
+4.  在“新主机”对话框的“名称(如果为空则使用父域名)”框中，输入 Web 探测的 DNS 名称（默认 Web 探测的名称为 directaccess-webprobehost）。 在“IP 地址”框中，输入 Web 探测的 IPv4 地址，然后单击“添加主机”。 为 directaccess-corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在“DNS”对话框中，单击“确定”。  
   
-5.  单击**完成**。  
+5.  单击 **“完成”** 。  
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -136,7 +136,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 -   **CRL 吊销检查**-directaccess 使用证书吊销检查来检查 directaccess 客户端与远程访问服务器之间的 ip-https 连接，以及 directaccess 客户端和网络位置服务器之间基于 HTTPS 的连接。 在这两种情况下，DirectAccess 客户端都必须能够解析和访问 CRL 分发点位置。  
   
-## <a name="ConfigAD"></a>配置 Active Directory  
+## <a name="configure-active-directory"></a><a name="ConfigAD"></a>配置 Active Directory  
 必须将远程访问服务器和所有 DirectAccess 客户端计算机都加入 Active Directory 域。 DirectAccess 客户端计算机必须是以下域类型之一的成员：  
   
 -   与远程访问服务器属于同一林的域。  
@@ -185,16 +185,16 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
-注意：输入下面的“Add-Computer”命令后，你必须提供域凭据。  
+请注意，输入下面的 Add-Computer 命令后，必须提供域凭据。  
   
 ```  
 Add-Computer -DomainName <domain_name>  
 Restart-Computer  
 ```  
   
-## <a name="ConfigGPOs"></a>配置 Gpo  
+## <a name="configure-gpos"></a><a name="ConfigGPOs"></a>配置 Gpo  
 若要部署远程访问，需要至少两个组策略对象：一个组策略对象包含远程访问服务器的设置，另一个包含 DirectAccess 客户端计算机的设置。 配置远程访问时，向导将自动创建所需的组策略对象。 但是，如果你的组织强制使用命名约定，或者你没有创建或编辑组策略对象所需的权限，则必须在配置远程访问之前创建它们。  
   
 若要创建组策略对象，请参阅[创建和编辑组策略对象](https://technet.microsoft.com/library/cc754740.aspx)。  
@@ -213,10 +213,10 @@ Restart-Computer
 > [!Warning]
 > 不支持使用 DirectAccess 安装向导之外的任何方法来配置 DirectAccess，如直接修改 DirectAccess 组策略对象或手动修改服务器或客户端上的默认策略设置。
   
-## <a name="ConfigSGs"></a>配置安全组  
+## <a name="configure-security-groups"></a><a name="ConfigSGs"></a>配置安全组  
 客户端计算机组策略对象中包含的 DirectAccess 设置仅应用于配置远程访问时指定的安全组成员的计算机。  
   
-### <a name="Sec_Group"></a>为 DirectAccess 客户端创建安全组  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>为 DirectAccess 客户端创建安全组  
   
 1.  运行**dsa.msc**。 在“Active Directory 用户和计算机”控制台的左窗格中，展开将包含安全组的域，右键单击“用户”，指向“新建”，然后单击“组”。  
   
@@ -226,20 +226,20 @@ Restart-Computer
   
 4.  双击 DirectAccess 客户端计算机安全组，然后在属性对话框中，单击“成员”选项卡。  
   
-5.  在“成员” 选项卡上，单击“添加”。  
+5.  在 **“成员”** 选项卡上，单击 **“添加”** 。  
   
 6.  在“选择用户、联系人、计算机或服务帐户”对话框中，选择你希望为 DirectAccess 启用的客户端计算机，然后单击“确定”。  
   
 ![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="BKMK_Links"></a>下一步  
+## <a name="next-step"></a><a name="BKMK_Links"></a>下一步  
   
 -   [步骤2：配置基本 DirectAccess 服务器](da-basic-configure-s2-server.md)  
   

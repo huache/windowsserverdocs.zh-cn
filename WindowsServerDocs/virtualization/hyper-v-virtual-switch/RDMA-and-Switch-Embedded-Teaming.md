@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b39cac842f115a1828c666eec52f17f80971510c
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: cfa8076b84a2fc62cec2a709fc15d3dc5be8eb77
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322709"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307998"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>\(RDMA\) 和交换机嵌入组合 \(集的远程直接内存访问\)
 
@@ -25,7 +25,7 @@ ms.locfileid: "79322709"
 > 除了本主题之外，还提供了以下交换机嵌入的组合内容。 
 > - TechNet 库下载： [Windows Server 2016 NIC 和交换机嵌入式组合用户指南](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
 
-## <a name="bkmk_rdma"></a>通过 Hyper-v 配置 RDMA 接口  
+## <a name="configuring-rdma-interfaces-with-hyper-v"></a><a name="bkmk_rdma"></a>通过 Hyper-v 配置 RDMA 接口  
 
 在 Windows Server 2012 R2 中，使用与提供 RDMA 服务的网络适配器相同的计算机上的 RDMA 和 Hyper-v 不能绑定到 Hyper-v 虚拟交换机。 这会增加需要安装在 Hyper-v 主机上的物理网络适配器的数量。
 
@@ -94,7 +94,7 @@ ms.locfileid: "79322709"
 
     Get-NetAdapterRdma
 
-###  <a name="bkmk_set-rdma"></a>使用 SET 和 RDMA Vnic 创建 Hyper-v 虚拟交换机
+###  <a name="create-a-hyper-v-virtual-switch-with-set-and-rdma-vnics"></a><a name="bkmk_set-rdma"></a>使用 SET 和 RDMA Vnic 创建 Hyper-v 虚拟交换机
 
 若要在 Hyper-v 主机虚拟网络适配器上利用 RDMA 功能 \(Vnic\) 在支持 RDMA 组合的 Hyper-v 虚拟交换机上，你可以使用以下 Windows PowerShell 命令示例。
 
@@ -144,7 +144,7 @@ ms.locfileid: "79322709"
 
 - [管理集团队](#bkmk_manage)
 
-## <a name="bkmk_over"></a>设置概述
+## <a name="set-overview"></a><a name="bkmk_over"></a>设置概述
 
 SET 是一种备用 NIC 组合解决方案，可用于在 Windows Server 2016 中包含 Hyper-v 的环境和软件定义的网络 \(SDN\) 堆栈。 将一些 NIC 组合功能集成到 Hyper-v 虚拟交换机。
 
@@ -167,15 +167,15 @@ SET 是一种备用 NIC 组合解决方案，可用于在 Windows Server 2016 �
 
 此外，集体系结构不会公开团队界面。 相反，你必须配置 Hyper-v 虚拟交换机端口。
 
-## <a name="bkmk_avail"></a>设置可用性
+## <a name="set-availability"></a><a name="bkmk_avail"></a>设置可用性
 
 集适用于所有版本的 Windows Server 2016，其中包括 Hyper-v 和 SDN 堆栈。 此外，你可以使用 Windows PowerShell 命令和远程桌面连接来管理从运行支持这些工具的客户端操作系统的远程计算机进行设置。
 
-## <a name="bkmk_nics"></a>用于集的支持的 Nic
+## <a name="supported-nics-for-set"></a><a name="bkmk_nics"></a>用于集的支持的 Nic
 
 你可以使用已通过 windows Server 2016 中的集团队 \(WHQL\) 测试的任何以太网 NIC。 集要求所有属于集团队成员的网络适配器必须相同 \(即，同一制造商、相同型号、相同的固件和驱动程序\)。 在一个组中的一到八个网络适配器之间设置支持。
   
-## <a name="bkmk_compat"></a>设置与 Windows Server 网络技术的兼容性
+## <a name="set-compatibility-with-windows-server-networking-technologies"></a><a name="bkmk_compat"></a>设置与 Windows Server 网络技术的兼容性
 
 集与 Windows Server 2016 中的以下网络技术兼容。
 
@@ -210,7 +210,7 @@ SET 是一种备用 NIC 组合解决方案，可用于在 Windows Server 2016 �
 
 - 虚拟机 QoS \(VM-QoS\)。 VM QoS 可用，但默认情况下处于禁用状态。 如果在设置环境中配置 VM QoS，则 QoS 设置将导致不可预知的结果。
 
-## <a name="bkmk_modes"></a>设置模式和设置
+## <a name="set-modes-and-settings"></a><a name="bkmk_modes"></a>设置模式和设置
 
 不同于 NIC 组合，在创建集团队时，无法配置团队名称。 此外，NIC 组合支持使用备用适配器，但在集中不支持。 在部署集时，所有网络适配器都处于活动状态，并且没有处于备用模式。
 
@@ -253,7 +253,7 @@ Vm 连接到 Hyper-v 虚拟交换机上的端口。 当对集团队使用 Hyper-
 
 当动态模式算法检测到已遇到 flowlet 边界时（例如，当 TCP 流中发生了足够的长度中断时，算法会自动将流间重新平衡到其他团队成员（如果适用）。  在某些不常见的情况下，该算法还可能会定期重新平衡不包含任何 flowlets 的流。 因此，TCP 流和团队成员之间的相关性可能会随时更改，因为动态平衡算法可用于平衡团队成员的工作负荷。
 
-## <a name="bkmk_vmq"></a>集和虚拟机队列（Vmq）
+## <a name="set-and-virtual-machine-queues-vmqs"></a><a name="bkmk_vmq"></a>集和虚拟机队列（Vmq）
 
 VMQ 并将工作设置得很好，并且应在每次使用 Hyper-v 并设置时启用 VMQ。
 
@@ -273,15 +273,15 @@ VMQ 并将工作设置得很好，并且应在每次使用 Hyper-v 并设置时�
 
 - 团队成员的处理器应为可行的、不重叠的范围。 例如，在4核主机中 \(8 个逻辑处理器\) 组（2个 10Gbps Nic），可以将第一个处理器设置为使用2个基处理器，并使用4个内核;第二个设置为使用基本处理器6并使用2个内核。
 
-## <a name="bkmk_hnv"></a>\(HNV\) 设置和 Hyper-v 网络虚拟化
+## <a name="set-and-hyper-v-network-virtualization-hnv"></a><a name="bkmk_hnv"></a>\(HNV\) 设置和 Hyper-v 网络虚拟化
 
 设置与 Windows Server 2016 中的 Hyper-v 网络虚拟化完全兼容。 HNV 管理系统向集驱动程序提供信息，该信息允许设置以一种针对 HNV 流量进行优化的方式分发网络流量负载。
   
-## <a name="bkmk_live"></a>设置和实时迁移
+## <a name="set-and-live-migration"></a><a name="bkmk_live"></a>设置和实时迁移
 
 Windows Server 2016 支持实时迁移。
 
-## <a name="bkmk_mac"></a>MAC 地址在传输的数据包上使用
+## <a name="mac-address-use-on-transmitted-packets"></a><a name="bkmk_mac"></a>MAC 地址在传输的数据包上使用
 
 使用动态负载分布配置集团队时，来自单个源 \(（例如单个 VM\)）的数据包将同时分布在多个团队成员之间。 
 
@@ -311,7 +311,7 @@ Windows Server 2016 支持实时迁移。
   
     - 在关联团队成员以外的团队成员上发送的数据包将进行源 MAC 地址替换  
   
-## <a name="bkmk_manage"></a>管理集团队
+## <a name="managing-a-set-team"></a><a name="bkmk_manage"></a>管理集团队
 
 建议你使用 \(VMM\) System Center Virtual Machine Manager 来管理集团队，但你也可以使用 Windows PowerShell 来管理集。 以下各节提供了可用于管理集的 Windows PowerShell 命令。
 

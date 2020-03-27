@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a09bfb03-95fc-4534-bf3c-97078ef6b07e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b8ae0ab02a5c14675d543087f635d53ee63e0423
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dd56dfd4db9dd41c98141e2239efcca544a364fe
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396250"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316160"
 ---
 # <a name="disable-nas-notification-forwarding-in-nps"></a>禁用 NPS 中的 NAS 通知转发
 
@@ -21,9 +21,9 @@ ms.locfileid: "71396250"
 
 您可以使用此过程禁用从网络访问服务器（Nas）到在 NPS 中配置的远程 RADIUS 服务器组成员的启动和停止消息转发。
 
-如果已配置远程 RADIUS 服务器组，并在 NPS**连接请求策略**中清除了 "将**请求转发到此远程 RADIUS 服务器组**" 复选框，则这些组仍将发送 NAS 启动和停止通知讯息. 
+如果已配置远程 RADIUS 服务器组，并在 NPS**连接请求策略**中清除了 "将**请求转发到此远程 RADIUS 服务器组**" 复选框，则这些组仍将发送 NAS 启动和停止通知消息。 
 
-这会产生不必要的网络流量。 若要消除此流量，请针对每个远程 RADIUS 服务器组中的各个服务器禁用 NAS 通知转发。
+这将创建不必要的网络流量。 若要消除此流量，请针对每个远程 RADIUS 服务器组中的各个服务器禁用 NAS 通知转发。
 
 若要完成此过程，你必须是**Administrators**组的成员。
 

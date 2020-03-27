@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f66ee49a-1fd3-4927-a813-64a15017b63b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: d1ba40f17506f8012462f43c1e124a6b414c0531
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c0e99dde090efa337bee9c0c25594f3f8c9e0377
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356005"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309986"
 ---
 # <a name="system-center-technologies-for-sdn"></a>用于 SDN 的 System Center 技术
 
@@ -30,12 +30,12 @@ System Center 包含以下用于软件定义的网络（SDN）的技术：
 -   [System Center Virtual Machine Manager](#bkmk_scvmm)  
   
   
-## <a name="bkmk_scom"></a>System Center Operations Manager  
+## <a name="system-center-operations-manager"></a><a name="bkmk_scom"></a>System Center Operations Manager  
 System Center 2016 Operations Manager 提供灵活且经济高效的基础结构监视，帮助确保重要应用程序的可预测性能和可用性，并为数据中心和云提供全面监视，私有和公共。  
   
 有关详细信息，请参阅[Operations Manager](https://technet.microsoft.com/library/hh205987.aspx)。  
   
-## <a name="bkmk_scvmm"></a>System Center Virtual Machine Manager  
+## <a name="system-center-virtual-machine-manager"></a><a name="bkmk_scvmm"></a>System Center Virtual Machine Manager  
 借助 System Center 2016 Virtual Machine Manager （VMM），可以：
 
 - 大规模预配和管理虚拟网络。

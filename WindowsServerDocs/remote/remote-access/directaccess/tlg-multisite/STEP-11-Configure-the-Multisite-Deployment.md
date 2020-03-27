@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cbdeb1d-5f7c-4360-bcc1-ab40d3cd8040
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3a80697665eeb67c2dda0d4d25201c7d02ed0c7e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d90b20716c49b2ea0b1cd002a1c1933fbd6e26e5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404808"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314577"
 ---
 # <a name="step-11-configure-the-multisite-deployment"></a>步骤11配置多站点部署
 
@@ -31,9 +31,9 @@ ms.locfileid: "71404808"
   
 - 将 EDGE1 添加为第二个入口点  
   
-## <a name="configDA"></a>在 EDGE1 上配置远程访问  
+## <a name="configure-remote-access-on-edge1"></a><a name="configDA"></a>在 EDGE1 上配置远程访问  
   
-1.  在 "**开始**" 屏幕上，键入**ramgmtui.exe**，然后按 enter。 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+1.  在 "**开始**" 屏幕上，键入**ramgmtui.exe**，然后按 enter。 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 2.  在远程访问管理控制台中，单击“配置”。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "71404808"
   
 5.  在控制台的中间窗格中，在 "**步骤3基础结构服务器**" 区域中，单击 "**编辑**"。  
   
-6.  单击 " **DNS 后缀搜索列表**"。 在 " **Dns 后缀搜索列表**" 页上，确保选中 **"用 DNS 客户端后缀搜索列表配置 DirectAccess 客户端**" 复选框，且**corp.contoso.com**和**corp2.corp.contoso.com**域后缀显示在 "**要使用的域后缀**" 列表中，单击 "**下一步**"，然后单击 "完成"。  
+6.  单击 " **DNS 后缀搜索列表**"。 在 " **Dns 后缀搜索列表**" 页上，确保已选中 "**使用 DNS 客户端后缀搜索列表配置 DirectAccess 客户端**" 复选框，且**corp.contoso.com**和**corp2.corp.contoso.com**域后缀出现在 "**要使用的域后缀**" 列表中，单击 "**下一步**"，然后单击 "完成"。  
   
 7.  在控制台的中间窗格中，单击 "**完成**"。  
   
@@ -51,7 +51,7 @@ ms.locfileid: "71404808"
   
 9. 在 "**任务**" 窗格中，单击 "**刷新管理服务器**"，完成后单击 "**关闭**"。  
   
-## <a name="EnabledMultisite"></a>启用 EDGE1 上的多站点配置  
+## <a name="enable-multisite-configuration-on-edge1"></a><a name="EnabledMultisite"></a>启用 EDGE1 上的多站点配置  
   
 1.  在远程访问管理控制台的 "**任务**" 窗格中，单击 "**启用多站点**"。  
   
@@ -65,7 +65,7 @@ ms.locfileid: "71404808"
   
 6.  在 "**客户端支持**" 页上，单击 "**允许运行 Windows 7 的客户端计算机访问此入口点**"，然后单击 "**添加**"。  
   
-7.  在 "**选择组**" 对话框的 "**输入要选择的对象名称**" 中，键入**Win7_Clients_Site1**，单击 **"确定**"，然后单击 "**下一步**"。  
+7.  在 "**选择组**" 对话框的 "**输入要选择的对象名称**" 中，键入**Win7_Clients_Site1**，单击 **"确定"** ，然后单击 "**下一步**"。  
   
 8.  在 "**客户端 GPO 设置**" 页上，单击 "**下一步**"。  
   
@@ -73,7 +73,7 @@ ms.locfileid: "71404808"
   
 10. 在 "**启用多站点部署**" 对话框中，单击 "**关闭**"，然后在 "启用多站点部署向导" 上，单击 "**关闭**"。  
   
-## <a name="AddEP"></a>将 EDGE1 添加为第二个入口点  
+## <a name="add-2-edge1-as-a-second-entry-point"></a><a name="AddEP"></a>将 EDGE1 添加为第二个入口点  
   
 1.  在远程访问管理控制台的 "**任务**" 窗格中，单击 "**添加入口点**"。  
   
@@ -89,7 +89,7 @@ ms.locfileid: "71404808"
   
 7.  在 "**客户端支持**" 页上，单击 "**允许运行 Windows 7 的客户端计算机访问此入口点**"，然后单击 "**添加**"。  
   
-8.  在 "**选择组**" 对话框的 "**输入要选择的对象名称**" 中，键入**Win7_Clients_Site2**，单击 **"确定**"，然后单击 "**下一步**"。  
+8.  在 "**选择组**" 对话框的 "**输入要选择的对象名称**" 中，键入**Win7_Clients_Site2**，单击 **"确定"** ，然后单击 "**下一步**"。  
   
 9. 在 "**客户端 GPO 设置**" 页上，单击 "**下一步**"。  
   

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b12dd0e8-1d80-4d4b-bb45-586f19d17ef0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 10a0f7952fc27d0185d4383da21f0614885ddac3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fbbba17567109363a9b9fd0963258744f8853f5f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367047"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313785"
 ---
 # <a name="troubleshooting-setting-the-entry-point-domain-controller"></a>设置入口点域控制器疑难解答
 
@@ -25,10 +25,10 @@ ms.locfileid: "71367047"
 
 本主题介绍与 `Set-DAEntryPointDC` 命令相关的问题疑难解答信息。 要确认你收到的错误是否与设置入口点域控制器有关，请检查 Windows 事件日志的事件 ID 10065。  
   
-## <a name="SaveGPOSettings"></a>正在保存服务器 GPO 设置  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>正在保存服务器 GPO 设置  
 **接收到错误**。 将远程访问设置保存到 GPO < GPO_name > 时出错。  
   
-若要解决此错误，请参阅保存服务器 GPO 设置。  
+要解决此错误，请参阅保存服务器 GPO 设置。  
   
 ## <a name="remote-access-is-not-configured"></a>未配置远程访问  
 **接收到错误**。 未在 < server_name > 上配置远程访问。 请指定属于多站点部署的服务器的名称。  

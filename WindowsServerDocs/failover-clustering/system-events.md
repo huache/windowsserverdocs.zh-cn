@@ -1,18 +1,18 @@
 ---
 title: 故障转移群集系统日志事件
 description: Windows Server 系统日志中的故障转移群集事件的列表。 这些事件可用于对群集进行故障排除。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 5c2606b96b42d08cc66da2e19596240c21bf4b88
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 0346b56ad2fe8a60ab84b7e6ab43e0558ed1c85b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956449"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310054"
 ---
 # <a name="failover-clustering-system-log-events"></a>故障转移群集系统日志事件
 
@@ -908,7 +908,7 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-5219-csv_register_snapshot_prov_with_vss_failed"></a>事件5219： CSV_REGISTER_SNAPSHOT_PROV_WITH_VSS_FAILED
 
-群集服务无法向卷影服务（VSS）注册群集共享卷快照提供程序。 这可能是由于 VSS 服务关闭导致的，或者可能是 VSS 服务出现问题，导致它无法接受传入的请求。 <br>错误: %1
+群集服务无法向卷影服务（VSS）注册群集共享卷快照提供程序。 这可能是由于 VSS 服务关闭导致的，或者可能是 VSS 服务出现问题，导致它无法接受传入的请求。 <br>错误： %1
 
 ### <a name="event-5377-operation_exceeded_timeout"></a>事件5377： OPERATION_EXCEEDED_TIMEOUT
 
@@ -924,7 +924,7 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-5398-nm_event_cluster_failed_to_form"></a>事件5398： NM_EVENT_CLUSTER_FAILED_TO_FORM
 
-群集无法启动。 群集配置数据的最新副本在尝试启动群集的节点集中不可用。 当节点集不在成员身份中时，对群集的更改发生，因此无法接收配置数据更新。 。<br><br>需要投票才能启动群集： %1<br>可用的投票： %2<br>具有投票的节点： %3
+群集无法启动。 群集配置数据的最新副本在尝试启动群集的节点集中不可用。 当节点集不在成员身份中时，对群集的更改发生，因此无法接收配置数据更新。 .<br><br>需要投票才能启动群集： %1<br>可用的投票： %2<br>具有投票的节点： %3
 
 #### <a name="guidance"></a>指南
 

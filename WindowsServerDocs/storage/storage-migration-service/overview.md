@@ -4,16 +4,16 @@ description: 利用存储迁移服务，可以更轻松地将存储迁移到 Win
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 01/17/2020
+ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 70ce4ebca35e071cf6e27fe429d3c4e6f67d342c
-ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
+ms.openlocfilehash: 0765c43333f23fb09c0f69ceca1ff21cfce25874
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110670"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310506"
 ---
 # <a name="storage-migration-service-overview"></a>存储迁移服务概述
 
@@ -21,7 +21,7 @@ ms.locfileid: "80110670"
 
 利用存储迁移服务，可以更轻松地将存储迁移到 Windows Server 或 Azure。 它提供了一个图形工具，该工具在 Windows 和 Linux 服务器上对数据进行清点，然后将数据传输到较新的服务器或 Azure 虚拟机。 存储迁移服务还提供了将服务器标识传输到目标服务器的选项，以便应用和用户可以在不更改链接或路径的情况下访问其数据。
 
-本主题讨论为何要使用存储迁移服务、迁移过程的工作方式，以及源和目标服务器的要求。
+本主题讨论为何要使用存储迁移服务，迁移过程的工作方式、源服务器和目标服务器的要求，以及[存储迁移服务中的新增功能](#whats-new-in-storage-migration-service)。
 
 ## <a name="why-use-storage-migration-service"></a>为什么使用存储迁移服务
 
@@ -89,7 +89,7 @@ ms.locfileid: "80110670"
 - Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2
-- Windows 2008 Server
+- Windows Server 2008
 - Windows Server 2003 R2
 - Windows Server 2003
 - Windows Small Business Server 2003 R2
@@ -134,7 +134,12 @@ ms.locfileid: "80110670"
 
 Windows 管理中心版本1910允许你部署 Azure 虚拟机。 这会将 VM 部署集成到存储迁移服务中。 在部署工作负荷之前，无需在 Azure 门户中构建新的服务器和 Vm，还可能缺少所需的步骤和配置-Windows 管理中心可以部署 Azure VM、配置其存储、将其加入域、安装角色，以及然后设置你的分布式系统。 
 
+   以下视频演示了如何使用存储迁移服务迁移到 Azure Vm。
+   > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
+
 ## <a name="whats-new-in-storage-migration-service"></a>存储迁移服务中的新增功能
+
+Windows 管理中心版本1910添加了部署 Azure 虚拟机的功能。 这会将 Azure VM 部署集成到存储迁移服务中。 有关详细信息，请参阅[AZURE VM 迁移](#azure-vm-migration)。
 
 在 Windows Server、版本1903或更高版本或 Windows [server 的早期](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)版本上运行存储迁移服务器 orchestrator 时，以下新功能可用：
 

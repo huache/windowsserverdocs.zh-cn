@@ -6,22 +6,22 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 5cb0d342afec9c28259efb7a2e15666358f3cb5b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18fa85189b082a4a88a8a0bc0d6df11e21e7c97d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404259"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307691"
 ---
-# <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>步骤 4： 安装和配置网络策略服务器（NPS）
+# <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>步骤 4. 安装和配置网络策略服务器（NPS）
 
-> 适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows 10
+> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows 10
 
-- [**一个**步骤 3：为始终启用 VPN 配置远程访问服务器](vpn-deploy-ras.md)
-- [**一个**步骤 5：配置 DNS 和防火墙设置](vpn-deploy-dns-firewall.md)
+- [**下一步：** 步骤3。为 Always On VPN 配置远程访问服务器](vpn-deploy-ras.md)
+- [**下一步：** 步骤5。配置 DNS 和防火墙设置](vpn-deploy-dns-firewall.md)
 
 在此步骤中，你将安装网络策略服务器（NPS）来处理 VPN 服务器发送的连接请求：
 
@@ -88,7 +88,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     
     "安装进度" 页面将在安装过程中显示状态。 此过程完成后，将显示消息 " *computername*上安装成功"，其中*ComputerName*是安装了网络策略服务器的计算机的名称。
 
-13. 选择**关闭**。
+13. 选择“关闭”。
 
 ## <a name="configure-nps"></a>配置 NPS
 
@@ -104,7 +104,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 2.  在 NPS 控制台中，右键单击 " **nps （本地）** "，然后选择 **"在 Active Directory 中注册服务器**"。
    
-     此时将打开 "网络策略服务器" 对话框。
+     打开“网络策略服务器”对话框。
 
 3.  在 "网络策略服务器" 对话框中，选择 **"确定"** 两次。
 
@@ -114,11 +114,11 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 在此过程中，使用以下日志记录类型之一配置网络策略服务器记帐：
 
-- **事件日志记录**。 主要用于对连接尝试进行审核和故障排除。 您可以通过在 NPS 控制台中获取 NPS 服务器属性来配置 NPS 事件日志记录。
+- **事件日志记录**。 主要用于对连接尝试进行审核和疑难解答。 您可以通过在 NPS 控制台中获取 NPS 服务器属性来配置 NPS 事件日志记录。
 
-- **将用户身份验证和记帐请求记录到本地文件**。 主要用于连接分析和计费。 它也用作一种安全调查工具，因为它为您提供了一种在攻击后跟踪恶意用户活动的方法。 您可以使用记帐配置向导来配置本地文件日志记录。
+- **将用户身份验证和记帐请求记录到本地文件**。 主要用于进行连接分析和记帐。 它也用作一种安全调查工具，因为它为您提供了一种在攻击后跟踪恶意用户活动的方法。 您可以使用记帐配置向导来配置本地文件日志记录。
 
-- **将用户身份验证和记帐请求记录到与 XML 兼容的 Microsoft SQL Server 数据库**。 用于允许多台运行 NPS 的服务器具有一个数据源。 还提供了使用关系数据库的优点。 您可以使用记帐配置向导来配置 SQL Server 日志记录。
+- **将用户身份验证和记帐请求记录到与 XML 兼容的 Microsoft SQL Server 数据库**。 用于允许多个运行 NPS 的服务器拥有一个数据源。 还提供使用关系数据库的优势。 您可以使用记帐配置向导来配置 SQL Server 日志记录。
 
 若要配置网络策略服务器记帐，请参阅[配置网络策略服务器记帐](../../../../../networking/technologies/nps/nps-accounting-configure.md)。
 
@@ -171,7 +171,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 4. 在 "指定拨号或 VPN 服务器" 的 "RADIUS 客户端" 中，选择你在上一步中添加的 VPN 服务器的名称。 例如，如果 VPN 服务器的 NetBIOS 名称是 RAS1，请选择**RAS1**。
 
-5. 选择“**下一步**”。
+5. 选择 **“下一步”** 。
 
 6. 在 "配置身份验证方法" 中，完成以下步骤：
 
@@ -179,27 +179,27 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
     2. 选中 "**可扩展身份验证协议**" 复选框以将其选中。
 
-    3. 在 "类型" （根据访问和网络配置的方法）中， **选择 "Microsoft：受保护的 EAP （** PEAP），然后选择 "**配置**"。
+    3. 在 "类型" （根据访问和网络配置的方法）中，选择 " **Microsoft：受保护的 EAP （PEAP）** "，然后选择 "**配置**"。
       
         此时将打开 "编辑受保护的 EAP 属性" 对话框。
 
     4. 选择 "**删除**" 以删除安全密码（MSCHAP V2） EAP 类型。
 
-    5. 选择 **添加** 。 此时将打开 "添加 EAP" 对话框。
+    5. 选择“添加”。 此时将打开 "添加 EAP" 对话框。
 
     6. 选择 "**智能卡或其他证书**"，然后选择 **"确定"** 。
 
     7. 选择 **"确定" 关闭 "** 编辑受保护的 EAP 属性"。
 
-7. 选择“**下一步**”。
+7. 选择 **“下一步”** 。
 
 8. 在 "指定用户组" 中完成以下步骤：
 
-    1. 选择 **添加** 。 此时将打开 "选择用户、计算机、服务帐户或组" 对话框。
+    1. 选择“添加”。 此时将打开 "选择用户、计算机、服务帐户或组" 对话框。
 
     2. 输入**VPN 用户**，然后选择 **"确定"** 。
 
-    3. 选择“**下一步**”。
+    3. 选择 **“下一步”** 。
 
 9. 在 "指定 IP 筛选器" 中，选择**下一步**。
 
@@ -228,4 +228,4 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 ## <a name="next-steps"></a>后续步骤
 
-[步骤 5.为 Always On VPN](vpn-deploy-dns-firewall.md)配置 DNS 和防火墙设置：在此步骤中，你将使用 Windows PowerShell 或服务器管理器添加角色和功能向导 "安装网络策略服务器（NPS）。 你还可以将 NPS 配置为处理从 VPN 服务器接收的连接请求的所有身份验证、授权和记帐职责。
+[步骤5。为 Always On VPN 配置 DNS 和防火墙设置](vpn-deploy-dns-firewall.md)：在此步骤中，你可以使用 Windows PowerShell 或服务器管理器添加角色和功能向导安装网络策略服务器（NPS）。 你还可以将 NPS 配置为处理从 VPN 服务器接收的连接请求的所有身份验证、授权和记帐职责。

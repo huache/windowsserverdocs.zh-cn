@@ -6,20 +6,20 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d3a09ac9-75f8-4f57-aab4-b0fdfe110118
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1dfc1bb71d2800a8a9587e54147950dfd7fb371f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6ae3a221c1889facc8b7696dea0bcd6cbd8df926
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395995"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315635"
 ---
 # <a name="radius-clients"></a>RADIUS 客户端
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-网络访问服务器 \(NAS\) 是提供对较大网络的某种级别访问权限的设备。 使用 RADIUS 基础结构的 NAS 也是 RADIUS 客户端，将连接请求和记帐消息发送到 RADIUS 服务器，以进行身份验证、授权和记帐。
+网络访问服务器 \(NAS\) 是提供对较大网络的某种级别访问权限的设备。 使用 RADIUS 基础结构的 NAS 还是 RADIUS 客户端，它将连接请求和记帐消息发送到 RADIUS 服务器以便进行身份验证、授权和记帐。
 
 >[!NOTE]
 >客户端计算机（如便携式计算机和其他运行客户端操作系统的计算机）不是 RADIUS 客户端。 RADIUS 客户端是网络访问服务器（如无线访问点、802.1 X 身份验证交换机、虚拟专用网络 \(VPN\) 服务器和拨号服务器），因为它们使用 RADIUS 协议与 RADIUS 服务器（如网络策略服务器 \(NPS\) 服务器）进行通信。
@@ -28,30 +28,30 @@ ms.locfileid: "71395995"
 
 ## <a name="radius-client-examples"></a>RADIUS 客户端示例
 
-网络访问服务器的示例如下：
+网络访问服务器的示例：
 
-- 提供与组织网络或 Internet 的远程访问连接的网络访问服务器。 例如，运行 Windows Server 2016 操作系统的计算机和远程访问服务，为组织 intranet 提供传统的拨号或虚拟专用网络（VPN）远程访问服务。
+- 提供对组织网络或 Internet 的远程访问连接的网络访问服务器。 例如，运行 Windows Server 2016 操作系统的计算机和远程访问服务，为组织 intranet 提供传统的拨号或虚拟专用网络（VPN）远程访问服务。
 - 无线接入点，可使用基于无线的传输和接收技术提供对组织网络的物理层访问。
-- 提供对组织网络的物理层访问的交换机，使用传统 LAN 技术（如以太网）。
-- 向 radius 服务器转发连接请求的 RADIUS 代理，该服务器是在 RADIUS 代理上配置的远程 RADIUS 服务器组的成员。
+- 使用传统的 LAN 技术（如 Ethernet），提供对组织网络的物理层访问权限的交换机。
+- 将连接请求转发到 RADIUS 服务器的 RADIUS 代理，该 RADIUS 服务器是在 RADIUS 代理上配置的远程 RADIUS 服务器组的成员。
 
 ## <a name="radius-access-request-messages"></a>RADIUS 访问-请求消息
 
-RADIUS 客户端可以创建 RADIUS 访问请求消息，并将其转发到 RADIUS 代理或 RADIUS 服务器，或者将访问请求消息转发到其已从其他 RADIUS 客户端接收但尚未自行创建的 RADIUS 服务器。
+RADIUS 客户端创建 RADIUS 访问-请求消息并将其转发到 RADIUS 代理或 RADIUS 服务器，或者它们将访问-请求消息转发到从其他 RADIUS 客户端接收消息而不自己创建消息的 RADIUS 服务器。
 
-RADIUS 客户端不会通过执行身份验证、授权和记帐来处理访问请求消息。 仅 RADIUS 服务器执行这些功能。
+RADIUS 客户端不通过执行身份验证、授权和记帐来处理访问-请求消息。 只有 RADIUS 服务器才执行这些功能。
 
-但是，可以同时将 NPS 配置为 RADIUS 代理和 RADIUS 服务器，以便它可以处理某些访问请求消息并转发其他消息。
+但是，可以将 NPS 同时配置为 RADIUS 代理和 RADIUS 服务器，以便它处理某些访问-请求消息和转发其他消息。
 
-## <a name="nps-as-a-radius-client"></a>作为 RADIUS 客户端的 NPS
+## <a name="nps-as-a-radius-client"></a>NPS 作为 RADIUS 客户端
 
-将 NPS 配置为 RADIUS 代理，以将访问请求消息转发给其他 RADIUS 服务器进行处理时，NPS 充当 RADIUS 客户端。 将 NPS 用作 RADIUS 代理时，需要以下常规配置步骤：
+在将 NPS 配置为 RADIUS 代理以便将访问-请求消息转发到其他 RADIUS 服务器进行处理时，NPS 充当 RADIUS 客户端。 当将 NPS 用作 RADIUS 代理时，需要进行以下常规配置步骤：
 
-1. 网络访问服务器（如无线访问点和 VPN 服务器）配置为使用 NPS 代理的 IP 地址作为指定的 RADIUS 服务器或身份验证服务器。 这允许网络访问服务器（根据从访问客户端接收的信息创建访问请求消息）将消息转发到 NPS 代理。
+1. 使用 NPS 代理的 IP 地址将网络访问服务器（如无线访问点和 VPN 服务器）配置为指定的 RADIUS 服务器或进行身份验证的服务器。 这将允许网络访问服务器（根据它们从访问客户端接收的信息创建访问-请求消息）将消息转发到 NPS 代理。
 
-2. 通过将每个网络访问服务器添加为 RADIUS 客户端来配置 NPS 代理。 此配置步骤允许 NPS 代理从网络访问服务器接收消息，并在身份验证过程中与它们进行通信。 此外，NPS 代理上的连接请求策略配置为指定转发到一个或多个 RADIUS 服务器的访问请求消息。 这些策略也是使用远程 RADIUS 服务器组配置的，该组告诉 NPS 向其发送从网络访问服务器接收的消息的位置。
+2. 通过添加每个网络访问服务器作为 RADIUS 客户端来配置 NPS 代理。 该配置步骤允许 NPS 代理在整个身份验证的过程中从网络访问服务器接收消息并与它们进行通信。 此外，在 NPS 代理上配置连接请求策略以指定哪些访问-请求消息会转发到一个或多个 RADIUS 服务器。 还可以通过远程 RADIUS 服务器组配置这些策略，可以告知 NPS 应将它从网络访问服务器接收的消息发送到哪里。
 
-3. Nps 或其他作为 NPS 代理上的远程 RADIUS 服务器组成员的 RADIUS 服务器配置为从 NPS 代理接收消息。 这是通过将 NPS 代理配置为 RADIUS 客户端来实现的。
+3. 配置 NPS 或其他远程 RADIUS 服务器组的 RADIUS 服务器从 NPS 代理接收消息。 通过将 NPS 代理配置为 RADIUS 客户端来完成该操作。
 
 ## <a name="radius-client-properties"></a>RADIUS 客户端属性
 
@@ -59,9 +59,9 @@ RADIUS 客户端不会通过执行身份验证、授权和记帐来处理访问�
 
 在 NPS 中配置 RADIUS 客户端时，可以指定以下属性：
 
-### <a name="client-name"></a>客户端名称
+### <a name="client-name"></a>客户端名
 
- RADIUS 客户端的友好名称，这使得在使用 nps 管理单元或 NPS 的 netsh 命令时更易于识别。
+ RADIUS 客户端的友好名称，使用 NPS 管理单元或 NPS 的 netsh 命令时，该名称使 RADIUS 客户端更容易识别。
 
 ### <a name="ip-address"></a>IP 地址
 
@@ -69,15 +69,15 @@ Internet 协议版本 4 \(IPv4\) 地址或域名系统 \(DNS\) 名称。
 
 ### <a name="client-vendor"></a>客户端-供应商
 
-RADIUS 客户端的供应商。 否则，可以使用客户端供应商的 RADIUS 标准值。
+RADIUS 客户端的供应商。 或者可以对客户端-供应商使用 RADIUS 标准值。
 
-### <a name="shared-secret"></a>共享密钥
+### <a name="shared-secret"></a>共享机密
 
-用作 RADIUS 客户端、RADIUS 服务器和 RADIUS 代理之间的密码的文本字符串。 使用消息身份验证器属性时，共享机密也用作加密 RADIUS 消息的密钥。 此字符串必须在 RADIUS 客户端和 NPS 管理单元中进行配置。
+在 RADIUS 客户端、RADIUS 服务器和 RADIUS 代理之间用作密码的文本字符串。 当使用消息身份验证器属性时，共享机密还用作加密 RADIUS 消息的密钥。 必须在 RADIUS 客户端上和 NPS 管理单元中配置此字符串。
 
 ### <a name="message-authenticator-attribute"></a>消息身份验证器属性
 
-RFC 2869 "RADIUS 扩展" 中所述，消息摘要5对整个 RADIUS 消息 \(MD5\) 哈希。 如果存在 RADIUS 消息身份验证器属性，则对其进行验证。 如果验证失败，则丢弃 RADIUS 消息。 如果客户端设置需要消息身份验证器属性，但该属性不存在，则会丢弃 RADIUS 消息。 建议使用消息身份验证器属性。
+RFC 2869 "RADIUS 扩展" 中所述，消息摘要5对整个 RADIUS 消息 \(MD5\) 哈希。 如果存在 RADIUS 消息身份验证器属性，则对其进行验证。 如果验证失败，则丢弃 RADIUS 消息。 如果客户端设置需要消息身份验证器属性并且该属性不存在，则丢弃 RADIUS 消息。 建议使用消息身份验证器属性。
 
 >[!NOTE]
 >当使用可扩展的身份验证协议 \(EAP\) 身份验证时，消息身份验证器属性是必需的，并且默认情况下处于启用状态。 

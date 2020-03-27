@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 41701592c0d9b143c84ad3fbad3fd77491eff5a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a4c944a61c44b9b67831bfd4e2852941e577e6b5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404715"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308784"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>步骤13从 NAT 设备后面测试 DirectAccess 连接
 
@@ -36,7 +36,7 @@ ms.locfileid: "71404715"
   
 在执行这些测试之前，将 CLIENT1 和 CLIENT2 从 Internet 交换机中拔出并将其连接到 Homenet 开关。 如果系统询问你要定义当前网络的网络类型，请选择 "**家庭网络**"。  
   
-## <a name="TeredoCLIENT1"></a>测试 Teredo 连接  
+## <a name="test-teredo-connectivity"></a><a name="TeredoCLIENT1"></a>测试 Teredo 连接  
   
 1. 在 CLIENT1 上，打开提升的 Windows PowerShell 窗口。  
   
@@ -58,15 +58,15 @@ ms.locfileid: "71404715"
   
 8. 在 Windows PowerShell 窗口中，键入**ping app1** ，然后按 enter。 你应看到来自 APP1，2001： db8：2：：3的 IPv6 地址的答复。  
   
-9. 打开 Internet Explorer，在 Internet Explorer 地址栏中，输入 **https://2-app1/** ，然后按 enter。 你将在 APP1 上看到默认的 IIS 网站。  
+9. 打开 Internet Explorer，在 Internet Explorer 地址栏中输入 **https://2-app1/** ，然后按 enter。 你将在 APP1 上看到默认的 IIS 网站。  
   
-10. 在 Internet Explorer 地址栏中，输入 **https://app2/** "，然后按 enter。 在 APP2 上，你将看到默认网站。  
+10. 在 Internet Explorer 地址栏中，输入 **https://app2/** ，然后按 enter。 在 APP2 上，你将看到默认网站。  
   
-11. 在 "**开始**" 屏幕上，键入<strong>\\ \ App2\Files</strong>，然后按 enter。 双击“新文本文档”文件。 此示例演示你能够连接到 IPv4 唯一的服务器是使用 SMB 来获取 IPv4 唯一的主机上的资源。  
+11. 在 "**开始**" 屏幕上，键入<strong>\\\App2\Files</strong>"，然后按 enter。 双击“新文本文档”文件。 此示例演示你能够连接到 IPv4 唯一的服务器是使用 SMB 来获取 IPv4 唯一的主机上的资源。  
   
 12. 在 CLIENT2 上重复此过程。  
   
-## <a name="IPHTTPS_CLIENT1"></a>测试 IP-HTTPS 连接  
+## <a name="test-ip-https-connectivity"></a><a name="IPHTTPS_CLIENT1"></a>测试 IP-HTTPS 连接  
   
 1. 在 CLIENT1 上，打开提升的 Windows PowerShell 窗口，键入**netsh interface teredo set state disabled** ，然后按 enter。 这将禁用客户端计算机上的 Teredo，并使客户端计算机能够将自身配置为使用 IP-HTTPS。 命令完成后，会出现“确定”响应。  
   
@@ -82,11 +82,11 @@ ms.locfileid: "71404715"
   
 7. 在 Windows PowerShell 窗口中，键入**ping app1** ，然后按 enter。 你应看到来自 APP1，2001： db8：2：：3的 IPv6 地址的答复。  
   
-8. 打开 Internet Explorer，在 Internet Explorer 地址栏中，输入 **https://2-app1/** ，然后按 enter。 你将在 APP1 上看到默认的 IIS 网站。  
+8. 打开 Internet Explorer，在 Internet Explorer 地址栏中输入 **https://2-app1/** ，然后按 enter。 你将在 APP1 上看到默认的 IIS 网站。  
   
-9. 在 Internet Explorer 地址栏中，输入 **https://app2/** "，然后按 enter。 在 APP2 上，你将看到默认网站。  
+9. 在 Internet Explorer 地址栏中，输入 **https://app2/** ，然后按 enter。 在 APP2 上，你将看到默认网站。  
   
-10. 在 "**开始**" 屏幕上，键入<strong>\\ \ App2\Files</strong>，然后按 enter。 双击“新文本文档”文件。 此示例演示你能够连接到 IPv4 唯一的服务器是使用 SMB 来获取 IPv4 唯一的主机上的资源。  
+10. 在 "**开始**" 屏幕上，键入<strong>\\\App2\Files</strong>"，然后按 enter。 双击“新文本文档”文件。 此示例演示你能够连接到 IPv4 唯一的服务器是使用 SMB 来获取 IPv4 唯一的主机上的资源。  
   
 11. 在 CLIENT2 上重复此过程。  
   

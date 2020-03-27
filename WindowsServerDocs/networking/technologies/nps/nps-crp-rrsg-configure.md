@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ca125e57-249c-4d97-85d1-2929cbf871f1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fe34d25d2b54b02bb56fcad99c433054a309f60b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d9e1afd9505d3bbf1383d174cac6a2f543fcaae2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405456"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316183"
 ---
 # <a name="configure-remote-radius-server-groups"></a>配置远程 RADIUS 服务器组
 
@@ -23,14 +23,14 @@ ms.locfileid: "71405456"
 
 ## <a name="add-a-remote-radius-server-group"></a>添加远程 RADIUS 服务器组
 
-您可以使用此过程在网络策略服务器（NPS）管理单元中添加新的远程 RADIUS 服务器组。
+可以使用此过程在网络策略服务器 (NPS) 管理单元中添加新的远程 RADIUS 服务器组。
 
-将 NPS 配置为 RADIUS 代理时，会创建一个新的连接请求策略，NPS 使用该策略来确定哪些连接请求转发到其他 RADIUS 服务器。 此外，通过指定包含一个或多个 RADIUS 服务器的远程 RADIUS 服务器组来配置连接请求策略，这将告知 NPS 向其中发送与连接请求策略匹配的连接请求的位置。
+当您将 NPS 配置为 RADIUS 代理时，可以创建新的连接请求策略，以供 NPS 用于确定将哪些连接请求转发给其他 RADIUS 服务器。 此外，通过指定包含一个或多个 RADIUS 服务器的远程 RADIUS 服务器组来配置连接请求策略，这将告知 NPS 向其中发送与连接请求策略匹配的连接请求的位置。
 
 >[!NOTE]
->你还可以在创建新的连接请求策略过程中配置新的远程 RADIUS 服务器组。
+>也可以在创建新连接请求策略过程中配置新的远程 RADIUS 服务器组。
 
-必须至少具有 **Domain Admins** 中的成员身份或同等身份才能完成此过程。
+若要完成该过程，必须至少具有 **Domain Admins** 的成员资格或同等权限。
 
 ### <a name="to-add-a-remote-radius-server-group"></a>添加远程 RADIUS 服务器组 
 
@@ -38,9 +38,9 @@ ms.locfileid: "71405456"
 2. 在控制台树中，双击 " **RADIUS 客户端和服务器**"，右键单击 "**远程 RADIUS 服务器组**"，然后单击 "**新建**"。
 3. 此时将打开 "**新建远程 RADIUS 服务器组**" 对话框。 在 "**组名**" 中，键入远程 RADIUS 服务器组的名称。
 4. **在 RADIUS 服务器中**，单击 "**添加**"。 此时将打开 "**添加 RADIUS 服务器**" 对话框。 键入要添加到组的 RADIUS 服务器的 IP 地址，或者键入 RADIUS 服务器 \(FQDN\) 的完全限定的域名，然后单击 "**验证**"。
-5. 在 "**添加 RADIUS 服务器**" 中，单击 "**身份验证/记帐**" 选项卡。在 "**共享机密**" 和 "**确认共享密钥**" 中，键入共享机密。 在远程 RADIUS 服务器上将本地计算机配置为 RADIUS 客户端时，必须使用相同的共享机密。
+5. 在 "**添加 RADIUS 服务器**" 中，单击 "**身份验证/记帐**" 选项卡。在 "**共享机密**" 和 "**确认共享密钥**" 中，键入共享机密。 当在远程 RADIUS 服务器上将本地计算机配置为 RADIUS 客户端时，必须使用相同的共享机密。
 6. 如果不使用可扩展的身份验证协议（EAP）进行身份验证，请单击 "**请求必须包含消息身份验证器属性"** 。 默认情况下，EAP 使用消息身份验证器属性。
-7. 验证你的部署的身份验证和记帐端口号是否正确。
+7. 确认身份验证和记帐端口号对您的部署正确。
 8. 如果你使用不同的共享机密来进行记帐，请在 "**记帐**" 中清除 "**为身份验证和记帐使用相同的共享机密**" 复选框，然后在 "**共享密钥**" 和 "**确认共享**机密" 中键入记帐共享机密。
 9. 如果你不想将网络访问服务器启动和停止消息转发到远程 RADIUS 服务器，则清除 "将**网络访问服务器启动和停止通知转发到此服务器**" 复选框。
 

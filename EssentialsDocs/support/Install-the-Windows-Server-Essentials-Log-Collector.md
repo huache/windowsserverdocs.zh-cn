@@ -3,7 +3,7 @@ title: 安装 Windows Server Essentials 日志收集器
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a1b1a5492a6e5dbc48899b3918314676884e0454
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 75faeb3fe1c9ced32a37f2ac96ffedbadb2db76f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322089"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318688"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>安装 Windows Server Essentials 日志收集器
 
@@ -25,7 +25,7 @@ ms.locfileid: "79322089"
 
 Windows Server Essentials 日志收集器安装向导将日志收集器作为快速启动板外接程序进行安装。 你可以在网络计算机或服务器或者这两者上安装并使用日志收集器。 安装后，日志收集器将显示在仪表板上。  
   
-###  <a name="BKMK_ToInstall"></a>安装日志收集器  
+###  <a name="to-install-the-log-collector"></a><a name="BKMK_ToInstall"></a>安装日志收集器  
   
 1.  将日志收集器安装包下载到任意服务器或网络中的计算机。  
   
@@ -42,7 +42,7 @@ Windows Server Essentials 日志收集器安装向导将日志收集器作为快
   
 6.  单击 **“安装加载项”** 。  
   
-###  <a name="BKMK_Reinstall"></a>重新安装日志收集器  
+###  <a name="reinstalling-the-log-collector"></a><a name="BKMK_Reinstall"></a>重新安装日志收集器  
  如果有必要重新安装日志收集器，你必须在服务器和网络中的网络计算机上卸载并重新安装日志收集器。 通过从仪表板卸载服务器上的日志收集器，所有网络计算机都将自动卸载日志收集器。  
   
 ##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>卸载并重新安装日志收集器  

@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 338d5a285f2524932a91a66db186554cd0f50e2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1d5d5aaae5983e062dae203c60a7001f36e5629b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355658"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309810"
 ---
 # <a name="network-function-virtualization"></a>网络功能虚拟化
 
@@ -33,7 +33,7 @@ ms.locfileid: "71355658"
   
 在当今的软件定义数据中心，硬件设备（例如负载均衡器、防火墙、路由器、交换机等）正在执行的网络功能越来越多地虚拟化为虚拟设备。 服务器虚拟化和网络虚拟化自然而然地形成了这种“网络功能虚拟化”。 虚拟设备迅速涌现，并创建全新市场。 它们会在虚拟化平台和云服务中不断产生兴趣并获得动力。  
   
-Microsoft 将独立网关作为虚拟设备包含在 Windows Server 2012 R2 的基础上。 有关详细信息，请参阅 [Windows Server 网关](https://technet.microsoft.com/library/dn313101.aspx)。 现在，在 Windows Server 2016 中，Microsoft 继续扩展并投入网络功能虚拟化市场。  
+Microsoft 将独立网关作为虚拟设备包含在 Windows Server 2012 R2 的基础上。 有关详细信息，请参阅[Windows Server 网关](https://technet.microsoft.com/library/dn313101.aspx)。 现在，在 Windows Server 2016 中，Microsoft 继续扩展并投入网络功能虚拟化市场。  
   
 ## <a name="virtual-appliance-benefits"></a>虚拟设备权益  
 虚拟设备是一种预先构建的自定义虚拟机，因为它是一个预先构建的自定义虚拟机。 它可以是一个或多个作为一个单元打包、更新和维护的虚拟机。 与软件定义的网络（SDN）结合在一起，可以获得当今基于云的基础结构所需的灵活性和灵活性。 例如：  
@@ -79,7 +79,7 @@ Microsoft 将独立网关作为虚拟设备包含在 Windows Server 2012 R2 的�
   
     -   路由器  
   
-    -   交换器  
+    -   交换机  
   
     -   NAT  
   

@@ -3,7 +3,7 @@ title: 预配置路由器
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bbff22c03b7bf4310b86048848ded276547b911f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: bdfa3215b7a2426bcde807119971d99ccc229716
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865200"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311578"
 ---
 # <a name="preconfiguring-a-router"></a>预配置路由器
 
@@ -46,7 +46,7 @@ ms.locfileid: "70865200"
 -   如果路由器具有对 Active Directory®域服务的集成访问控制功能，则可在服务器的初始配置过程中自动执行 Active Directory 集成。 你还应通过仪表板中的路由器管理加载项提供此功能。  
   
 > [!NOTE]
->  有关配置无线连接的详细信息，请参阅 [Configure Support for a Wireless Network](Configure-Support-for-a-Wireless-Network.md)。  
+>  有关配置无线连接的详细信息，请参阅[配置无线网络支持](Configure-Support-for-a-Wireless-Network.md)。  
   
 ## <a name="see-also"></a>另请参阅  
  [入门 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   

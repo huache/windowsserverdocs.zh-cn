@@ -1,9 +1,9 @@
 ---
 title: 安装 Windows Server Essentials
-description: 介绍如何安装和自定义 Windows Server Essentials
+description: 描述如何安装和自定义 Windows Server Essentials
 ms.custom: na
 ms.date: 01/02/2017
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,28 +12,28 @@ ms.assetid: fdf020cd-3184-4886-9f9d-7d729a89057e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 29f861b6d6f115dc1a1d2cab3ae04f566da90d8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51c61c22c2d9972e4a7e98509292b38e6443ddc8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879828"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311738"
 ---
 # <a name="install-windows-server-essentials"></a>安装 Windows Server Essentials
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-以下文档提供有关安装和配置 Windows Server Essentials 和 Windows Server Essentials，包括预安装任务和有关系统要求的信息的分步说明。   
+以下文档提供了有关安装和配置 Windows Server Essentials 和 Windows Server Essentials 的分步说明，包括预安装任务和有关系统要求的信息。   
   
--   [之前安装 Windows Server Essentials](Before-You-Install-Windows-Server-Essentials.md)  
+-   [安装 Windows Server Essentials 之前的准备事项](Before-You-Install-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials 的系统要求](../get-started/system-requirements.md)  
   
--   [适用于 Windows Server Essentials 发行文档](../get-started/release-notes.md)  
+-   [Windows Server Essentials 的发布文档](../get-started/release-notes.md)  
   
 -   [安装和配置 Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials.md)  
   
--   [托管的 Windows Server Essentials](Hosted-Windows-Server-Essentials.md)  
+-   [托管 Windows Server Essentials](Hosted-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials-评估和部署工具包](Assessment-and-Deployment-Kit-for-Windows-Server-Essentials.md)  
  
@@ -54,7 +54,7 @@ ms.locfileid: "59879828"
   
 -    若要了解如何安全地与合作伙伴和供应商进行协作，请参阅[改进中小型企业中的协作](https://technet.microsoft.com/library/dn747893.aspx)。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
     
   
 -   [将服务器数据迁移到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)  

@@ -6,20 +6,20 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: ef9828f8-c0ad-431d-ae52-e2065532e68f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9c313b88e2502a99baf5962a1f2eb224d67a38dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5c74ca9fe60374d1bc1396d95c2e34cc5cd1fdd6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406180"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317764"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers"></a>使用针对基于地理位置的流量管理和主服务器的 DNS 策略
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-你可以使用本主题来了解如何配置 DNS 策略，以允许主 DNS 服务器基于客户端尝试连接到的客户端和资源的地理位置来响应 DNS 客户端查询，并为客户端提供 IP ad最接近的资源的装饰。  
+你可以使用本主题来了解如何配置 DNS 策略，以允许主 DNS 服务器基于客户端尝试连接到的客户端和资源的地理位置来响应 DNS 客户端查询，同时向客户端提供 IP最接近的资源的地址。  
   
 >[!IMPORTANT]  
 >此方案说明了在仅使用主 DNS 服务器时，如何为基于地理位置的流量管理部署 DNS 策略。 如果同时拥有主 DNS 服务器和辅助 DNS 服务器，则还可以完成基于地理位置的流量管理。 如果你有主要辅助部署，请先完成本主题中的步骤，然后完成本主题中的步骤：[将 DNS 策略用于基于地理位置的流量管理和主要辅助部署](primary-secondary-geo-location.md)。
@@ -42,7 +42,7 @@ ms.locfileid: "71406180"
 - **拒绝**。 DNS 服务器使用失败响应来响应查询。          
 - **允许**。 DNS 服务器通过流量管理的响应回复。          
   
-##  <a name="bkmk_example"></a>基于地理位置的流量管理示例
+##  <a name="geo-location-based-traffic-management-example"></a><a name="bkmk_example"></a>基于地理位置的流量管理示例
 
 下面的示例演示了如何使用 DNS 策略来基于执行 DNS 查询的客户端的物理位置实现流量重定向。   
   
@@ -56,11 +56,11 @@ Contoso 云服务有两个数据中心，一个在美国，另一个在欧洲。
   
 ![基于地理位置的流量管理示例](../../media/DNS-Policy-Geo1/dns_policy_geo1.png)  
   
-##  <a name="bkmk_works"></a>DNS 名称解析过程的工作方式  
+##  <a name="how-the-dns-name-resolution-process-works"></a><a name="bkmk_works"></a>DNS 名称解析过程的工作方式  
   
 在名称解析过程中，用户尝试连接到 www.woodgrove.com。 这会生成一个 DNS 名称解析请求，该请求将发送到在用户计算机上的网络连接属性中配置的 DNS 服务器。 通常，这是作为缓存解析程序的本地 ISP 提供的 DNS 服务器，被称为 LDNS。   
   
-如果 DNS 名称未出现在 LDNS 的本地缓存中，则 LDNS 服务器会将该查询转发到对 woodgrove.com 具有权威的 DNS 服务器。 权威 DNS 服务器会将请求的记录（www.woodgrove.com）与 LDNS 服务器进行响应，后者反过来将记录缓存到用户的计算机上，然后再将其发送到用户的计算机。  
+如果 DNS 名称未出现在 LDNS 的本地缓存中，则 LDNS 服务器会将该查询转发到对 woodgrove.com 具有权威的 DNS 服务器。 权威 DNS 服务器会将请求的记录（ www.woodgrove.com）与 LDNS 服务器进行响应，后者反过来将记录缓存到用户的计算机上，然后再将其发送到用户的计算机。  
   
 由于 Contoso 云服务使用 DNS 服务器策略，因此将托管 contoso.com 的权威 DNS 服务器配置为返回基于地理位置的流量管理的响应。 如图中所示，这会导致欧洲的客户端与欧洲数据中心的客户和美国的数据中心的方向。  
   
@@ -69,7 +69,7 @@ Contoso 云服务有两个数据中心，一个在美国，另一个在欧洲。
 >[!NOTE]  
 >DNS 策略利用 UDP/TCP 数据包中的发件人 IP，其中包含 DNS 查询。 如果查询通过多个解析程序/LDNS 跃点到达主服务器，则该策略将仅考虑来自 DNS 服务器从中接收查询的最后一个解析程序的 IP。  
   
-##  <a name="bkmk_config"></a>如何为基于地理位置的查询响应配置 DNS 策略  
+##  <a name="how-to-configure-dns-policy-for-geo-location-based-query-responses"></a><a name="bkmk_config"></a>如何为基于地理位置的查询响应配置 DNS 策略  
 若要为基于地理位置的查询响应配置 DNS 策略，必须执行以下步骤。  
   
 1. [创建 DNS 客户端子网](#bkmk_subnets)  
@@ -85,7 +85,7 @@ Contoso 云服务有两个数据中心，一个在美国，另一个在欧洲。
 >[!IMPORTANT]  
 >以下各节包含示例 Windows PowerShell 命令，其中包含许多参数的示例值。 在运行这些命令之前，请确保将这些命令中的示例值替换为适用于你的部署的值。  
   
-### <a name="bkmk_subnets"></a>创建 DNS 客户端子网  
+### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>创建 DNS 客户端子网  
   
 第一步是确定要将流量重定向到的区域的子网或 IP 地址空间。 例如，如果要重定向美国和欧洲的流量，则需要确定这些区域的子网或 IP 地址空间。  
   
@@ -101,7 +101,7 @@ Contoso 云服务有两个数据中心，一个在美国，另一个在欧洲。
   
 有关详细信息，请参阅[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。  
   
-### <a name="bkmk_scopes"></a>创建区域作用域  
+### <a name="create-zone-scopes"></a><a name="bkmk_scopes"></a>创建区域作用域  
 配置了客户端子网之后，必须将要重定向到的流量分区为两个不同的区域作用域，其中每个已配置的 DNS 客户端子网的作用域。   
   
 例如，如果要重定向 DNS 名称 www.woodgrove.com 的流量，则必须在 woodgrove.com 区域中创建两个不同的区域作用域，一个用于美国，一个用于欧洲。  
@@ -120,10 +120,10 @@ Contoso 云服务有两个数据中心，一个在美国，另一个在欧洲。
 
 有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。  
   
-### <a name="bkmk_records"></a>将记录添加到区域作用域  
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>将记录添加到区域作用域  
 现在，必须将表示 web 服务器主机的记录添加到这两个区域作用域中。   
   
-例如， **USZoneScope**和**EuropeZoneScope**。 在 USZoneScope 中，可以使用 IP 地址192.0.0.1 （位于美国数据中心）添加记录 www.woodgrove.com;在 EuropeZoneScope 中，可以在欧洲数据中心添加同一记录（www.woodgrove.com）和 IP 地址141.1.0.1。   
+例如， **USZoneScope**和**EuropeZoneScope**。 在 USZoneScope 中，可以使用 IP 地址192.0.0.1 （位于美国数据中心）添加记录 www.woodgrove.com;在 EuropeZoneScope 中，可以在欧洲数据中心添加同一记录（ www.woodgrove.com）和 IP 地址141.1.0.1。   
   
 你可以使用以下 Windows PowerShell 命令将记录添加到区域作用域。  
   
@@ -145,7 +145,7 @@ Contoso 云服务有两个数据中心，一个在美国，另一个在欧洲。
   
 有关详细信息，请参阅[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。  
   
-### <a name="bkmk_policies"></a>创建策略  
+### <a name="create-the-policies"></a><a name="bkmk_policies"></a>创建策略  
 创建子网、分区（区域作用域）并添加记录后，你必须创建用于连接子网和分区的策略，以便在查询来自某个 DNS 客户端子网中的源时，从区域的正确范围。 映射默认区域作用域不需要策略。   
   
 你可以使用以下 Windows PowerShell 命令创建一个 DNS 策略，用于链接 DNS 客户端子网和区域作用域。   

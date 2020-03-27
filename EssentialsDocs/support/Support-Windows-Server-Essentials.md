@@ -3,7 +3,7 @@ title: 支持 Windows Server Essentials
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d6855e777ea6e59ce5a9596adc9ba2e186b0a3e5
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9142f44e61a7361bd4c40bdfdb5869e326d67343
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947386"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318662"
 ---
 # <a name="support-windows-server-essentials"></a>支持 Windows Server Essentials
 
@@ -25,7 +25,7 @@ ms.locfileid: "75947386"
 
 本主题提供 Windows Server Essentials 支持和疑难解答选项。  
   
-##  <a name="BKMK_Top"></a>热门支持解决方案和更新  
+##  <a name="top-support-solutions-and-updates"></a><a name="BKMK_Top"></a>热门支持解决方案和更新  
   
 -   [Windows Server 2012 R2 和 Windows Server 2012 的热门支持解决方案](https://blogs.technet.com/b/topsupportsolutions/archive/2014/02/04/top-support-solutions-for-microsoft-windows-server-2012.aspx)  
   
@@ -41,7 +41,7 @@ ms.locfileid: "75947386"
   
 -   [修补程序：无法在 Windows Server Essentials 中启用 Windows Server Update Services 角色](https://support.microsoft.com/kb/2762663)（2013年2月）  
   
-## <a name="troubleshoot"></a>“疑难解答”  
+## <a name="troubleshoot"></a>故障排除  
  本部分提供的信息可帮助你解决使用 Windows Server Essentials 集成功能时可能遇到的常见问题。 疑难解答信息分为对应于关键产品功能的不同逻辑领域。  
   
 -   [Windows Server Essentials 最佳做法分析器 (BPA) 工具所使用的规则](../migrate/Rules-used-by-the-Windows-Server-Essentials-Best-Practices-Analyzer--BPA--Tool.md)  

@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: ccdcbb953939345ef5e9a45dff87fc7af62eb7bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 01c768aefa685b688c2ed3f777c44a4665b5e4a7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355487"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309684"
 ---
 # <a name="virtual-network-peering"></a>虚拟网络对等
 
->适用于：Windows Server
+>适用于： Windows Server
 
 利用虚拟网络对等互连，无缝连接两个虚拟网络。 对等互连后，出于连接目的，虚拟网络显示为一。 
 
@@ -51,7 +51,7 @@ ms.locfileid: "71355487"
 
   [此处为 image]
 
-## <a name="connectivity"></a>连接性
+## <a name="connectivity"></a>连接
 
 对等互连虚拟网络后，任一虚拟网络中的资源可以直接与对等互连虚拟网络中的资源进行连接。
 
@@ -83,14 +83,14 @@ ms.locfileid: "71355487"
 
 你可以监视对等互连连接的状态，这可能处于以下状态之一：
 
--   **起始**创建从第一个虚拟网络到第二个虚拟网络的对等互连时显示的。
+-   已**启动：** 创建从第一个虚拟网络到第二个虚拟网络的对等互连时显示的。
 
--   **联机**在创建从第二个虚拟网络到第一个虚拟网络的对等互连后显示。 第一个虚拟网络的对等互连状态从 "已启动" 更改为 "已连接"。 在成功建立虚拟网络对等互连之前，这两个虚拟网络对等机的状态必须为 "已连接"。
+-   **已连接：** 在创建从第二个虚拟网络到第一个虚拟网络的对等互连后显示。 第一个虚拟网络的对等互连状态从 "已启动" 更改为 "已连接"。 在成功建立虚拟网络对等互连之前，这两个虚拟网络对等机的状态必须为 "已连接"。
 
--   **式**当一个虚拟网络与另一个虚拟网络断开连接时显示。
+-   **断开连接：** 当一个虚拟网络与另一个虚拟网络断开连接时显示。
 
 [状态的信息图]
 
 ## <a name="next-steps"></a>后续步骤
-[配置虚拟网络对等互连](sdn-configure-vnet-peering.md)：在此过程中，你将使用 Windows PowerShell 查找 HNV 提供程序逻辑网络，以创建两个虚拟网络，每个虚拟网络具有一个子网。 你还可以在两个虚拟网络之间配置对等互连。
+[配置虚拟网络对等互连](sdn-configure-vnet-peering.md)：在此过程中，你将使用 Windows POWERSHELL 查找 HNV 提供程序逻辑网络，以创建两个虚拟网络，每个虚拟网络具有一个子网。 你还可以在两个虚拟网络之间配置对等互连。
 

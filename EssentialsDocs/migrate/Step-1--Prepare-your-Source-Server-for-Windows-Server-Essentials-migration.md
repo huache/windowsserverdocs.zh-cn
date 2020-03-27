@@ -3,7 +3,7 @@ title: 步骤 1：为 Windows Server Essentials 迁移准备源服务器。
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f95ebfec13c2ec1f374c60f48d5f8af6c4b22324
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cb0cffdda0e0f1528887d3c94a1905a99c5c55c3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947394"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318786"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>步骤 1：为 Windows Server Essentials 迁移准备源服务器。
 
@@ -38,7 +38,7 @@ ms.locfileid: "75947394"
 
 5.  [创建计划以迁移业务线应用程序](Step-1--Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_MigrateLOB)  
 
-###  <a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>备份源服务器  
+###  <a name="back-up-your-source-server"></a><a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>备份源服务器  
  在开始迁移过程之前，请备份源服务器。 进行备份有助于保护你的数据在迁移过程中出现不可恢复错误的情况下不意外丢失。  
 
 ##### <a name="to-back-up-the-source-server"></a>备份源服务器  
@@ -56,15 +56,15 @@ ms.locfileid: "75947394"
    |Windows Small Business Server 2011 Standard|[管理服务器备份](https://technet.microsoft.com/library/cc527488.aspx)  
    |Windows Server Essentials|[管理 Windows Server Essentials 中的备份和还原](https://technet.microsoft.com/library/jj713536.aspx)
 
-###  <a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>安装最新的 service pack  
+###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>安装最新的 service pack  
  在迁移之前，必须在源服务器上安装最新更新和 Service Pack。  
 
-###  <a name="BKMK_DeleteSvcAcctSetting"></a>删除 "作为服务登录" 帐户设置  
- 如果要从 Windows Small Business Server 2003 或 Windows Server 2003 进行迁移，请从组策略中删除“作为服务登录” 帐户设置。  
+###  <a name="delete-the-log-on-as-a-service-account-setting"></a><a name="BKMK_DeleteSvcAcctSetting"></a>删除 "作为服务登录" 帐户设置  
+ 如果要从 Windows Small Business Server 2003 或 Windows Server 2003 进行迁移，请从组策略中删除“作为服务登录”帐户设置。  
 
 ##### <a name="to-delete-the-log-on-as-a-service-account-setting"></a>删除 "作为服务登录" 帐户设置  
 
-1.  若要打开“组策略管理” 工具，请依次单击“开始”、“控制面板”、“管理工具”和“组策略管理”。  
+1.  若要打开“组策略管理”工具，请依次单击“开始”、“控制面板”、“管理工具”和“组策略管理”。  
 
 2.  右键单击“默认域控制器策略”，然后单击“编辑”。  
 
@@ -72,11 +72,11 @@ ms.locfileid: "75947394"
 
 4.  在详细信息窗格中，双击“作为服务登录”。  
 
-5.  清除“定义这些策略设置” 复选框。  
+5.  清除“定义这些策略设置”复选框。  
 
 6.  删除 \\\localhost\SYSVOL\\< domainname\>\scripts\ SBS_LOGIN_SCRIPT。  
 
-###  <a name="BKMK_EvaluateHealth"></a>评估源服务器的运行状况  
+###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a>评估源服务器的运行状况  
  请务必在开始迁移之前评估源服务器的运行状况。 使用以下过程以确保更新为最新版本、生成系统运行状况报告，并运行 Windows Server 解决方案最佳做法分析器 (BPA)。  
 
 #### <a name="download-and-install-critical-and-security-updates"></a>下载并安装重要更新和安全更新  
@@ -97,7 +97,7 @@ ms.locfileid: "75947394"
 
 -   注册表  
 
--   Internet 信息服务 (IIS)  
+-   Internet Information Services (IIS)  
 
 ###### <a name="to-use-the-bpa-to-analyze-your-source-server"></a>使用 BPA 来分析源服务器  
 
@@ -123,7 +123,7 @@ ms.locfileid: "75947394"
 
    1.  以管理员身份登录到目标服务器，然后打开仪表板。  
 
-   2.  在仪表板上单击“设备” 选项卡。  
+   2.  在仪表板上单击“设备”选项卡。  
 
    3.  在 <**Server** >**任务**"窗格中，单击"**最佳做法分析器**"。  
 
@@ -133,32 +133,32 @@ ms.locfileid: "75947394"
 
    在 BPA 工具收集有关服务器配置的信息后，它将验证信息是否正确，然后向管理员提供信息和问题（按严重性排序）的列表。 该列表描述每个问题并提供建议或可能的解决方案。 可以使用三种报告类型：  
 
-|报告类型|描述
+|报表类型|说明
 |-----------------|----------------- 
 |列表报告|在一维列表中显示报告。 
 |目录树报告|在分层列表中显示报告。
 
 要查看某个问题的描述和解决方案，请在报告中单击该问题。 并非 BPA 报告的所有问题都会对迁移造成影响，但应尽可能多地解决问题以确保迁移成功。  
 
-####  <a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>将源服务器时间与外部时间源同步  
+####  <a name="synchronize-the-source-server-time-with-an-external-time-source"></a><a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>将源服务器时间与外部时间源同步  
  源服务器上的时间与目标服务器上的时间差异必须设置为在 5 分钟之内，并且两个服务器上的日期和时区必须相同。 如果源服务器正在虚拟机中运行，则主机服务器上的日期、时间和时区必须与源服务器和目标服务器上日期、时间和时区匹配。 为了帮助确保成功安装 Windows Server Essentials，必须将源服务器时间与 Internet 上的网络时间协议（NTP）服务器同步。  
 
 ###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>将源服务器时间与 NTP 服务器同步的步骤  
 
 1.  使用域管理员帐户和密码登录源服务器。  
 
-2.  依次单击“开始”、“运行”，在文本框框中键入 **cmd** ，然后按 Enter 键。  
+2.  依次单击“开始” **、“运行”** ，在文本框框中键入 **cmd**，然后按 Enter 键。  
 
 3.  在命令提示符下，键入 w32tm /config /syncfromflags:domhier /reliable:no /update，然后按 Enter 键。  
 
-4.  在命令提示符下，键入 net stop w32time，然后按 Enter。  
+4.  在命令提示符下，键入 net stop w32time，然后按 ENTER。  
 
 5.  在命令提示符下，键入 net start w32time，然后按 ENTER。  
 
 > [!IMPORTANT]
 >  在 Windows Server Essentials 安装过程中，你有机会验证目标服务器上的时间并根据需要对其进行更改。 确保目标服务器时间与源服务器上设置的时间的差距在五分钟之内。 当安装完成后，目标服务器将与 NTP 同步。 所有加入域的计算机（包括源服务器）均与目标服务器同步，目标服务器承担了主域控制器 (PDC) 仿真器主机的角色。  
 
-###  <a name="BKMK_MigrateLOB"></a>创建计划以迁移业务线应用程序  
+###  <a name="create-a-plan-to-migrate-line-of-business-applications"></a><a name="BKMK_MigrateLOB"></a>创建计划以迁移业务线应用程序  
  业务线 (LOB) 应用程序是运转企业的关键计算机应用程序。 LOB 应用程序包括会计、供应链管理和资源计划应用程序。  
 
  在你计划迁移 LOB 应用程序时，请咨询 LOB 应用程序提供商来确定迁移每个应用程序的适当方法。 你还必须找到用于在目标服务器上安装 LOB 应用程序的介质。  
@@ -184,7 +184,7 @@ ms.locfileid: "75947394"
 > [!IMPORTANT]
 >  若要允许 Office 365 迁移工具连接到在源服务器上运行的 Exchange Server，必须在源服务器上通过 HTTP 启用 RPC。 有关如何通过 HTTP 启用 RPC 的信息，请参阅 [如何在 Small Business Server 2003（Standard 或 Premium）中首次通过 HTTP 部署 RPC](https://technet.microsoft.com/library/bb123622%28EXCHG.65%29.aspx)。 如果在通过 HTTP 启用 RPC 后无法成功运行 Office 365 迁移工具，请在 HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy 查看注册表中的“ValidPorts” 设置，并确保列出源服务器的完全限定域名 (FQDN)。 如果未列出 FQDN，请使用以下示例进行手动添加：  
 >   
->  remote. *contoso*.com:6001-6002;remote. *contoso*.com:6004（使用你的域名替换 *contoso* ）  
+>  remote. *contoso*.com:6001-6002;remote. *contoso*.com:6004（使用你的域名替换 *contoso*）  
 
 #### <a name="migrate-email-to-another-on-premises-exchange-server"></a>将电子邮件迁移到另一个本地 Exchange Server  
  有关如何将电子邮件迁移到另一个本地 Exchange Server 的信息，请参阅将[本地 Exchange server 与 Windows Server Essentials 集成](https://technet.microsoft.com/library/jj200172.aspx)。 建议你在安装 Windows Server Essentials 后设置新的本地 Exchange Server，并在降级源服务器前完成电子邮件迁移。  

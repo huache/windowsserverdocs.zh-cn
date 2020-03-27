@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a21e5799824c968b29c719585ca16b6b45a9ef37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6faa40428df424f60637fb206641d8bae2774c79
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404915"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308937"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>步骤2配置基本 DirectAccess 服务器
 
@@ -25,16 +25,16 @@ ms.locfileid: "71404915"
 
 本主题介绍如何配置基本 DirectAccess 部署所需的客户端和服务器设置。 在开始执行部署步骤之前，请确保已完成[规划基本 DirectAccess 部署](Plan-a-Basic-DirectAccess-Deployment.md)中所述的规划步骤。  
   
-|任务|描述|  
+|任务|说明|  
 |----|--------|  
 |安装远程访问角色|安装远程访问角色。|  
 |使用开始向导配置 DirectAccess|新开始向导大大简化了配置体验。 该向导掩饰了 DirectAccess 的复杂性，在几个简单步骤内允许自动安装。 该向导通过自动配置 Kerberos 代理消除内部 PKI 部署需要，为管理员提供无缝体验。|  
 |使用 DirectAccess 配置更新客户端|若要接收 DirectAccess 设置，连接到 Intranet 时客户端必须更新组策略。|  
   
 > [!NOTE]  
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
-## <a name="BKMK_Role"></a>安装远程访问角色  
+## <a name="install-the-remote-access-role"></a><a name="BKMK_Role"></a>安装远程访问角色  
 若要部署远程访问，你必须将远程访问角色安装在组织中即将充当远程访问服务器的服务器上。  
   
 #### <a name="to-install-the-remote-access-role"></a>安装远程访问角色  
@@ -43,7 +43,7 @@ ms.locfileid: "71404915"
   
 2.  单击 **“下一步”** 三次以打开服务器角色选择屏幕。  
   
-3.  在“选择服务器角色” 对话框中选择“远程访问”，然后单击“下一步”。  
+3.  在“选择服务器角色”对话框中选择“远程访问”，然后单击“下一步”。  
   
 4.  在“选择功能”对话框上，单击“下一步”。  
   
@@ -51,7 +51,7 @@ ms.locfileid: "71404915"
   
 6.  单击 "**添加功能**"，单击 "**下一步**"，然后单击 "**安装**"。  
   
-7.  在“安装进度”对话框中，验证安装是否成功，然后单击“关闭”。  
+7.  在 **“安装进度”** 对话框中确认安装成功，然后单击 **“关闭”** 。  
   
 ![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
@@ -90,7 +90,7 @@ ms.locfileid: "71404915"
   
 3.  单击 **“仅部署 DirectAccess”** 。  
   
-4.  选择网络配置拓扑，并键入远程访问客户端将连接到的公用名称。 单击**下一步**。  
+4.  选择网络配置拓扑，并键入远程访问客户端将连接到的公用名称。 单击 **“下一步”** 。  
   
     > [!NOTE]  
     > 默认情况下，通过将 WMI 筛选器应用到客户端设置 GPO，开始向导将 DirectAccess 部署到域中所有便携式计算机和笔记本计算机。  
@@ -119,7 +119,7 @@ ms.locfileid: "71404915"
   
 6.  输入 **Get-DAConnectionStatus**，然后按 **Enter**。 因为客户端可以访问网络位置服务器 URL，状态会显示为 **“已本地连接”** 。  
   
-## <a name="BKMK_Links"></a>上一步  
+## <a name="previous-step"></a><a name="BKMK_Links"></a>上一步  
   
 -   [步骤1：配置 DirectAccess 基础结构](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   

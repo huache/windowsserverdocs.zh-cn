@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0bc6746f-2adb-43d8-a503-52f473833164
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 297044397088bfb64b51e1553d3f69d5b933e81b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c20c21c39e44d7eb3da812bbe71f175d0688d6c0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405909"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309656"
 ---
 # <a name="troubleshooting-converged-nic-configurations"></a>聚合 NIC 配置疑难解答
 
@@ -82,7 +82,7 @@ ms.locfileid: "71405909"
 
 ## <a name="get-netadapterqos"></a>Get-netadapterqos
 
-可以通过运行以下 Windows PowerShell 命令来查看\(网络\)适配器 QoS 配置的质量。
+通过运行以下 Windows PowerShell 命令，你可以查看 \(QoS\) 配置的网络适配器质量。
 
     Get-NetAdapterQos
 
@@ -96,14 +96,14 @@ ms.locfileid: "71405909"
 
 如果你的结果不是预期的，请执行以下步骤。
 
-1. 确保物理网络适配器支持数据中心桥接\(DCB\)和 QoS
+1. 确保物理网络适配器支持数据中心桥接 \(DCB\) 和 QoS
 2. 确保网络适配器驱动程序是最新的。
 
 --- 
 
 ## <a name="get-smbmultichannelconnection"></a>SmbMultiChannelConnection
 
-你可以使用以下 Windows PowerShell 命令来验证远程节点的 IP 地址是否支持 RDMA\-功能。
+你可以使用以下 Windows PowerShell 命令来验证远程节点的 IP 地址是否为 RDMA\-支持。
 
     Get-SmbMultiChannelConnection
 
@@ -125,7 +125,7 @@ ms.locfileid: "71405909"
 
 ## <a name="get-smbclientnetworkinterface"></a>SmbClientNetworkInterface
 
-你可以使用以下命令来验证你为 rdma 启用的虚拟 NIC 是否报告为 SMB 支持的\-rdma。
+你可以使用以下命令来验证你为 RDMA 启用的虚拟 NIC 是否报告为 RDMA\-可以通过 SMB 进行报告。
 
     Get-SmbClientNetworkInterface
 
@@ -145,9 +145,9 @@ ms.locfileid: "71405909"
 
 --- 
 
-## <a name="vstat-mellanox-specific"></a>vstat \(Mellanox 专用\)
+## <a name="vstat-mellanox-specific"></a>vstat \(Mellanox 特定\)
 
-如果使用的是 Mellanox 网络适配器，则可以使用**vstat**命令验证 hyper-v 节点上的 RDMA over 聚合\(以太\)网 RoCE 版本。
+如果使用的是 Mellanox 网络适配器，则可以使用**vstat**命令验证 hyper-v 节点上的 RDMA Over 聚合以太网 \(RoCE\) 版本。
 
 ### <a name="vstat-expected-results"></a>vstat 预期结果
 

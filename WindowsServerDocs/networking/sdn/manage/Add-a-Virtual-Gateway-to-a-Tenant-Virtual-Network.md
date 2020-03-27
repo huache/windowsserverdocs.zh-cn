@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: deeb226d81c48e0e389ea4d2619c43aca01e25c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: feee6f7bfaa34983290bfe173c7729666581e3f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355885"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309923"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>将虚拟网关添加到租户虚拟网络 
 
@@ -33,7 +33,7 @@ ms.locfileid: "71355885"
 
 |                                                        网络连接选项                                                         |                                              BGP 配置选项                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| <ul><li>IPSec 站点到站点虚拟专用网络（VPN）</li><li>通用路由封装（GRE）</li><li>第 3 层转发</li></ul> | <ul><li>BGP 路由器配置</li><li>BGP 对等配置</li><li>BGP 路由策略配置</li></ul> |
+| <ul><li>IPSec 站点到站点虚拟专用网络（VPN）</li><li>通用路由封装 (GRE)</li><li>第 3 层转发</li></ul> | <ul><li>BGP 路由器配置</li><li>BGP 对等配置</li><li>BGP 路由策略配置</li></ul> |
 
 ---
 

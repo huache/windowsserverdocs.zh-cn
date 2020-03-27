@@ -8,8 +8,8 @@ metadata:
   text: Always On VPN 为你的所有连接设备（甚至个人拥有的设备）提供了用于远程访问的单一且一致的解决方案。 使用 Always On VPN 时，连接类型不需要是用户独占或设备独占，可以是二者相结合。 例如，可以先启用设备身份验证，以便进行远程设备管理；然后启用用户身份验证，以便连接到公司内部站点和服务。
   keywords: 'Windows 10, Windows Server, Windows Server 2016, 远程访问, VPN'
   ms.localizationpriority: high
-  author: shortpatti
-  ms.author: pashort
+  author: eross-msft
+  ms.author: lizross
   ms.date: 11/05/2018
   ms.topic: article
   ms.devlang: na

@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7b3bd47052e482b562e84d5c44b928c0744b223c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 91d8081261d3cbc5e2da61cc2b5a9737e76a0dc7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405914"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309807"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>RAS 网关部署体系结构
 
@@ -29,7 +29,7 @@ ms.locfileid: "71405914"
   
 此外，还提供了一个示例部署，包括有关添加新租户、路由同步和数据平面路由、网关和路由反射器故障转移等过程的信息。  
   
-本主题包含以下部分。  
+本主题包含以下各节。  
   
 -   [使用 RAS 网关的新功能设计部署](#bkmk_new)  
   
@@ -43,7 +43,7 @@ ms.locfileid: "71405914"
   
 -   [使用新 RAS 网关功能的优点](#bkmk_advantages)  
   
-## <a name="bkmk_new"></a>使用 RAS 网关的新功能设计部署  
+## <a name="using-ras-gateway-new-features-to-design-your--deployment"></a><a name="bkmk_new"></a>使用 RAS 网关的新功能设计部署  
 RAS 网关包含多项新功能，这些功能可更改和改进你的数据中心内部署网关基础结构的方式。  
   
 ### <a name="bgp-route-reflector"></a>BGP 路由反射器  
@@ -51,22 +51,22 @@ RAS 网关包含多项新功能，这些功能可更改和改进你的数据中�
   
 有关详细信息，请参阅[RAS 网关中的新增功能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)。  
   
-### <a name="bkmk_pools"></a>网关池  
+### <a name="gateway-pools"></a><a name="bkmk_pools"></a>网关池  
 在 Windows Server 2016 中，可以创建多个不同类型的网关池。 网关池包含 RAS 网关的多个实例，并在物理网络与虚拟网络之间路由网络流量。  
   
 有关详细信息，请参阅 RAS 网关和[Ras 网关高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)[中的新增功能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)。  
   
-### <a name="bkmk_gps"></a>网关池可伸缩性  
+### <a name="gateway-pool-scalability"></a><a name="bkmk_gps"></a>网关池可伸缩性  
 可以通过在池中添加或删除网关 Vm 来轻松地向上或向下缩放网关池。 删除或添加网关不会中断池提供的服务。 你还可以添加和删除整个网关池。  
   
 有关详细信息，请参阅 RAS 网关和[Ras 网关高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)[中的新增功能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)。  
   
-### <a name="bkmk_m"></a>M + N 网关池冗余  
+### <a name="mn-gateway-pool-redundancy"></a><a name="bkmk_m"></a>M + N 网关池冗余  
 每个网关池均为 M + N 冗余。 这意味着，"N" 个备用网关 vm 数由 "N" 个备用网关 vm 备份。 通过 M + N 冗余，可以更灵活地确定部署 RAS 网关时所需的可靠性级别。  
   
 有关详细信息，请参阅 RAS 网关和[Ras 网关高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)[中的新增功能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)。  
   
-## <a name="bkmk_example"></a>部署示例  
+## <a name="example-deployment"></a><a name="bkmk_example"></a>部署示例  
 下图提供了一个示例，其中包含在两个租户、Contoso 和 Woodgrove 之间以及 Fabrikam CSP 数据中心之间配置的站点到站点 VPN 连接上的 eBGP 对等互连。  
   
 ![通过站点到站点 VPN 的 eBGP 对等互连](../../../media/RAS-Gateway-Deployment-Architecture/ras_gateway_architecture.png)  
@@ -82,7 +82,7 @@ RAS 网关包含多项新功能，这些功能可更改和改进你的数据中�
   
 网络控制器将 Hyper-v 网络虚拟化策略推送到 Contoso 和 Woodgrove 虚拟网络，并将 RAS 策略推送到 RAS 网关，并将负载均衡策略推送到配置为软件负载平衡的 Multiplexers (（Mux）池子.  
   
-## <a name="bkmk_tenant"></a>添加新租户和客户地址（CA）空间 eBGP 对等互连  
+## <a name="adding-new-tenants-and-customer-address-ca-space-ebgp-peering"></a><a name="bkmk_tenant"></a>添加新租户和客户地址（CA）空间 eBGP 对等互连  
 当你签署新客户并将客户添加为你的数据中心中的新租户时，你可以使用以下过程，其中许多操作由网络控制器和 RAS 网关 eBGP 路由器自动执行。  
   
 1.  根据租户的要求预配新的虚拟网络和工作负载。  
@@ -103,7 +103,7 @@ RAS 网关包含多项新功能，这些功能可更改和改进你的数据中�
   
 6.  对于 CA 空间 BGP 路由，还会建立企业站点和 CSP RAS 网关路由反射器之间的 eBGP 对等互连。  
   
-## <a name="bkmk_route"></a>路由同步和数据平面路由  
+## <a name="route-synchronization-and-data-plane-routing"></a><a name="bkmk_route"></a>路由同步和数据平面路由  
 在企业站点和 CSP RAS 网关路由反射器之间建立 eBGP 对等互连后，路由反射器使用动态 BGP 路由来了解所有企业路由。 路由反射器会在所有路由反射器客户端之间同步这些路由，以便所有这些路由都是用同一组路由配置的。  
   
 路由反射器还使用路由同步将这些合并的路由更新到网络控制器。 然后，网络控制器将路由转换为 Hyper-v 网络虚拟化策略，并配置结构网络以确保已设置端到端数据路径路由。 此过程使租户虚拟网络可从租户企业站点访问。  
@@ -114,7 +114,7 @@ RAS 网关包含多项新功能，这些功能可更改和改进你的数据中�
   
 另外。 从租户虚拟网络将流量返回到远程租户企业站点将绕过 SLBs，这是一个称为直接服务器返回（DSR）的进程。  
   
-## <a name="bkmk_failover"></a>网络控制器对 RAS 网关和路由反射器故障转移的响应方式  
+## <a name="how-network-controller-responds-to-ras-gateway-and-route-reflector-failover"></a><a name="bkmk_failover"></a>网络控制器对 RAS 网关和路由反射器故障转移的响应方式  
 下面是两种可能的故障转移方案-一种用于 RAS 网关路由反射器客户端，一个用于 RAS 网关路由发送程序，包括有关网络控制器在任一配置中如何处理 Vm 的故障转移的信息。  
   
 ### <a name="vm-failure-of-a-ras-gateway-bgp-route-reflector-client"></a>RAS 网关 BGP 路由反射器客户端的 VM 故障  
@@ -146,7 +146,7 @@ RAS 网关包含多项新功能，这些功能可更改和改进你的数据中�
   
 -   选择 BGP 路由后，RAS 网关 BGP 路由反射器会更新数据中心内的租户路由反射器客户端，并将路由与网络控制器同步，使端到端数据路径可用于租户通信。  
   
-## <a name="bkmk_advantages"></a>使用新 RAS 网关功能的优点  
+## <a name="advantages-of-using-new-ras-gateway-features"></a><a name="bkmk_advantages"></a>使用新 RAS 网关功能的优点  
 下面是在设计 RAS 网关部署时使用这些新 RAS 网关功能的几个优点。  
   
 **RAS 网关可伸缩性**  

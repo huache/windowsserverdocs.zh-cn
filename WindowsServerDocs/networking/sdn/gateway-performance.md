@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/22/2018
-ms.openlocfilehash: 58e85c15723126f2976fac3ccc21b3cfc6585750
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8cdf4e100c65fae11637c681924746115444f71
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355925"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313027"
 ---
 # <a name="windows-server-2019-gateway-performance"></a>Windows Server 2019 网关性能
 
->适用于：Windows Server
+>适用于： Windows Server
 
 
 在 Windows Server 2016 中，客户关心的一项问题是无法满足 SDN 网关的要求，无法满足新式网络的吞吐量要求。 IPsec 和 GRE 隧道的网络吞吐量有一些限制： IPsec 连接的单个连接吞吐量约为 300 Mbps，而 GRE 连接速度约为 2.5 Gbps。

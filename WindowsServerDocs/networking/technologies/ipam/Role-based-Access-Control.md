@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ecdfc589-fa14-4bb3-ab7e-456ebc719385
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cf6b8418482b606c86bac77b2790e3365e80bf5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dc4dc26a5079a34cdaa3d455e59f6bfb4d1f74c1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355156"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309523"
 ---
 # <a name="role-based-access-control"></a>基于角色的访问控制
 
@@ -42,7 +42,7 @@ ms.locfileid: "71355156"
   
 -   用户可以编辑特定区域的 DNS 资源记录  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [使用服务器管理器管理基于角色的访问控制](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Server-Manager.md)  
 [使用 Windows PowerShell 管理基于角色的访问控制](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)  
 [管理 IPAM](Manage-IPAM.md)  

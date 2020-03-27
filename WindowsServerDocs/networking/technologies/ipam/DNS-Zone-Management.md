@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de3dc14b-164a-49f1-8a57-b9e788046c23
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c5249cc61d1f6d4794c73b595781a59af0783f9f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6ab1450be2ceacb6f650b1be3d01e770c3c8116f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355257"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312418"
 ---
 # <a name="dns-zone-management"></a>DNS 区域管理
 
@@ -37,7 +37,7 @@ ms.locfileid: "71355257"
   
 在 IPAM 控制台中，可以查看特定 DNS 区域的 DNS 资源记录，并根据类型、IP 地址、资源记录数据和其他筛选选项筛选记录。 此外，还可以编辑特定区域的 DNS 资源记录  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [管理 IPAM](Manage-IPAM.md)  
   
 

@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
-ms.author: pashort
+ms.author: lizross
 author: jmesser81
 ms.date: 08/24/2018
-ms.openlocfilehash: 83996f7ffb82d01c9f36945efa022f0dd0b9825b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5673cb6f808f37fb7737e22cf93c3984073e4f48
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355816"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309829"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>将容器终结点连接到租户虚拟网络
 
@@ -45,7 +45,7 @@ ms.locfileid: "71355816"
 >这些网络模式不适用于将 windows 容器终结点连接到 Azure 公有云中的租户虚拟网络。
 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 -  使用网络控制器部署的 SDN 基础结构。
 -  租户虚拟网络已创建。
 -  已启用 Windows 容器功能、已安装 Docker 和 Hyper-v 功能的已部署的租户虚拟机。 需要 Hyper-v 功能才能安装 l2bridge 和 l2tunnel 网络的多个二进制文件。

@@ -6,29 +6,29 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: 4d35501b8d876f2a178a4744d495125dea8da6c7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4ea035d80a32e245edc4633ee14e98b9d1153fff
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405821"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309731"
 ---
 # <a name="configure-virtual-network-peering"></a>配置虚拟网络对等
 
->适用于：Windows Server
+>适用于： Windows Server
 
 在此过程中，使用 Windows PowerShell 创建两个虚拟网络，每个虚拟网络具有一个子网。 然后，在两个虚拟网络之间配置对等互连，以启用它们之间的连接。
 
-- [步骤 1.创建第一个虚拟网络](#step-1-create-the-first-virtual-network)
+- [步骤1。创建第一个虚拟网络](#step-1-create-the-first-virtual-network)
 
-- [步骤 2.创建第二个虚拟网络](#step-2-create-the-second-virtual-network)
+- [步骤2。创建第二个虚拟网络](#step-2-create-the-second-virtual-network)
 
-- [步骤 3.配置从第一个虚拟网络到第二个虚拟网络的对等互连](#step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network)
+- [步骤3。配置从第一个虚拟网络到第二个虚拟网络的对等互连](#step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network)
 
-- [步骤 4.配置从第二个虚拟网络到第一个虚拟网络的对等互连](#step-4-configure-peering-from-the-second-virtual-network-to-the-first-virtual-network)
+- [步骤4。配置从第二个虚拟网络到第一个虚拟网络的对等互连](#step-4-configure-peering-from-the-second-virtual-network-to-the-first-virtual-network)
 
 
 >[!IMPORTANT]
@@ -90,7 +90,7 @@ $vnetproperties.Subnets = @($vsubnet)
 New-NetworkControllerVirtualNetwork -ResourceId "Woodgrove_VNet1" -ConnectionUri $uri -Properties $vnetproperties
 ```
 
-## <a name="step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network"></a>步骤 3： 配置从第一个虚拟网络到第二个虚拟网络的对等互连
+## <a name="step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network"></a>步骤 3。 配置从第一个虚拟网络到第二个虚拟网络的对等互连
 
 在此步骤中，你将配置在上两个步骤中创建的第一个虚拟网络与第二个虚拟网络之间的对等互连。 以下示例脚本建立从**Contoso_vnet1**到**Woodgrove_vnet1**的虚拟网络对等互连。
 
@@ -118,7 +118,7 @@ New-NetworkControllerVirtualNetworkPeering -ConnectionUri $uri -VirtualNetworkId
 >[!IMPORTANT]
 >创建此对等互连之后，vnet 状态显示为 "已**启动**"。
 
-## <a name="step-4-configure-peering-from-the-second-virtual-network-to-the-first-virtual-network"></a>步骤 4： 配置从第二个虚拟网络到第一个虚拟网络的对等互连
+## <a name="step-4-configure-peering-from-the-second-virtual-network-to-the-first-virtual-network"></a>步骤 4. 配置从第二个虚拟网络到第一个虚拟网络的对等互连
 
 在此步骤中，你将配置在上面的步骤1和步骤2中创建的第二个虚拟网络和第一个虚拟网络之间的对等互连。 以下示例脚本建立从**Woodgrove_vnet1**到**Contoso_vnet1**的虚拟网络对等互连。
 

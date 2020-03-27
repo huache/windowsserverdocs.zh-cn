@@ -5,16 +5,16 @@ ms.prod: windows-server
 manager: dougkim
 ms.technology: compute
 ms.topic: article
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 ms.localizationpriority: medium
 ms.date: 03/16/2018
-ms.openlocfilehash: bbbd8ea812a25b0d538dcb87a380184412235b99
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d5a3390f1a072e5d155f19a97fe90ef481436f33
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364044"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307911"
 ---
 # <a name="virtualization"></a>虚拟化
 
@@ -23,7 +23,7 @@ ms.locfileid: "71364044"
 >[!TIP]
 > 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)了解具体信息。
 
-<img src="../media/landing-icons/virtualization.png" style='float:left; padding:.5em;' alt="Icon showing a box with spokes"> Windows Server 2016 中的虚拟化是创建软件定义的基础结构所需的基础技术之一。 除网络和存储外，虚拟化功能还可以提供支持客户工作负载所需的灵活性。
+<img src="../media/landing-icons/virtualization.png" style='float:left; padding:.5em;' alt="Icon showing a box with spokes"> Windows Server 2016 中的虚拟化是创建软件定义的基础结构所需的基础技术之一。 除网络和存储外，虚拟化功能还可以提供支持客户工作负荷所需的灵活性。
 
 Windows Server 虚拟化技术包括对 Hyper-v、Hyper-v 虚拟交换机、受保护的构造和受防护的虚拟机 \(Vm\)的更新，从而提高安全性、可伸缩性和可靠性。 与 Hyper-V 配合使用时，对故障转移群集、网络和存储的更新会使这些技术的部署和管理更加轻松。 
 
@@ -60,7 +60,7 @@ Windows Server 虚拟化技术包括对 Hyper-v、Hyper-v 虚拟交换机、受�
                     </div>
                     <div class="cardText">
                         <h3>适用于企业的 Windows 10：使用设备工作的方式</h3>
-                        <p>Hyper-V 技术可通过硬件虚拟化提供计算资源。 Hyper-V 可创建软件版本的计算机（称为虚拟机），可以用于运行操作系统和应用程序。 你可以同时运行多个虚拟机，也可以按需要创建和删除虚拟机。 </p>
+                        <p>Hyper-V 技术可通过硬件虚拟化提供计算资源。 Hyper-V 可创建软件版本的计算机（称为虚拟机），可以用于运行操作系统和应用程序。 可以同时运行多个虚拟机，也可以按需要创建和删除虚拟机。 </p>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@ Windows Server 虚拟化技术包括对 Hyper-v、Hyper-v 虚拟交换机、受�
                     </div>
                     <div class="cardText">
                         <h3>Microsoft Hyper-V Server</h3>
-                        <p>Hyper-V 技术可通过硬件虚拟化提供计算资源。 Hyper-V 可创建软件版本的计算机（称为虚拟机），可以用于运行操作系统和应用程序。 你可以同时运行多个虚拟机，也可以按需要创建和删除虚拟机。 </p>
+                        <p>Hyper-V 技术可通过硬件虚拟化提供计算资源。 Hyper-V 可创建软件版本的计算机（称为虚拟机），可以用于运行操作系统和应用程序。 可以同时运行多个虚拟机，也可以按需要创建和删除虚拟机。 </p>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@ Windows Server 虚拟化技术包括对 Hyper-v、Hyper-v 虚拟交换机、受�
                     </div>
                     <div class="cardText">
                         <h3>Windows 容器</h3>
-                        <p>Windows 容器提供操作系统级别虚拟化，允许多个独立的应用程序在单个系统上运行。 该功能附带两种不同类型的容器运行时，每个都有不同程度的应用程序隔离。</p>
+                        <p>Windows 容器提供操作系统级别的虚拟化，允许多个独立的应用程序在单个系统上运行。 该功能附带两种不同类型的容器运行时，每个都有不同程度的应用程序隔离。</p>
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@ Windows Server 虚拟化技术包括对 Hyper-v、Hyper-v 虚拟交换机、受�
 
 
 
-## <a name="related"></a>相关
+## <a name="related"></a>相关内容
 
 Hyper-V 需要特定的硬件来创建虚拟化环境。 有关详细信息，请参阅[基于 Windows Server 2016 的 Hyper-V 的系统要求](./hyper-v/system-requirements-for-hyper-v-on-windows.md)。 
 

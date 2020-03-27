@@ -1,9 +1,9 @@
 ---
 title: 向“设置”、“加载项”、“快速状态”和“帮助链接”添加条目
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f0a66d0d36a3012369a9bc26c513dad069235ad8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 074e4e638a1fe96bedf2c8340ec71848a8fa4ac4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433792"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310270"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>向“设置”、“加载项”、“快速状态”和“帮助链接”添加条目
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 你可以向 **“设置”** 、 **“加载项”** 、 **“快速状态”** 任务列表中添加任务，并且你可以向仪表板主页中的“社区链接”部分添加链接。 通过将名为 OEMHomePageContent.home 的 XML 文件或名为 OEMHomePageContent.dll 的嵌入式资源文件放置在 %ProgramFiles%\Windows Server\Bin\Addins\Home 中，可以将任务和链接添加到这些列表和部分。 嵌入式资源文件可以用于对所添加的任务和链接中的文本进行本地化。 .home 文件包含任务和链接的 XML 定义。  
   
@@ -37,13 +37,13 @@ ms.locfileid: "66433792"
   
 2. 依次单击 **“文件”** 、 **“新建”** 和 **“项目”** 。  
   
-3. 在 **“模板”** 窗格中，单击 **“类库”** ，在 **“名称”** 框中输入 **OEMHomePageContent** ，然后单击 **“确定”** 。  
+3. 在 **“模板”** 窗格中，单击 **“类库”** ，在 **“名称”** 框中输入 **OEMHomePageContent**，然后单击 **“确定”** 。  
   
 4. 删除 Class1.cs 文件。  
   
 5. 右键单击此新项目，单击 **“添加”** ，然后单击 **“新项目”** 。  
   
-6. 在 **“模板”** 窗格中，单击 **“XML 文件”** ，在 **“名称”** 框中键入 **OEMHomePageContent.home** ，然后单击 **“添加”** 。  
+6. 在 **“模板”** 窗格中，单击 **“XML 文件”** ，在 **“名称”** 框中键入 **OEMHomePageContent.home**，然后单击 **“添加”** 。  
   
    > [!NOTE]
    >  如果在不使用资源文件的情况下安装 XML 文件，则它必须命名为 OEMHomePageContent.home。 如果它包含在程序集中，则可以向它提供扩展名为 .home 的任何名称。  
@@ -99,21 +99,21 @@ ms.locfileid: "66433792"
   
     其中：  
   
-   |特性|描述|  
+   |属性|说明|  
    |---------------|-----------------|  
    |名称（任务）|列表中任务的显示名称。 如果要创建嵌入式资源文件，则此属性的值为字符串资源。|  
    |说明（任务）|任务的说明。 如果要创建嵌入式资源文件，则此属性的值为字符串资源。|  
-   |ID（任务）|任务的标识符。 此标识符必须是 GUID。 你可以为 **exe** 任务创建新的 GUID，但是对于**全局**任务，你仅可以使用在为子选项卡的任务窗格定义任务时所创建的 GUID。有关创建 GUID 的详细信息，请参阅 [创建 GUID (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098)。|  
-   |image|将忽略此字段。|  
+   |ID（任务）|任务的标识符。 此标识符必须是 GUID。 为**exe**任务创建新的 GUID，但是对于**全局**任务，使用在为子选项卡的任务窗格定义任务时所创建的 guid。有关创建 GUID 的详细信息，请参阅[创建 guid （guidgen.exe）](https://go.microsoft.com/fwlink/?LinkId=116098)。|  
+   |图像|将忽略此字段。|  
    |名称（操作）|显示任务的名称。|  
-   |类型（操作）|描述任务的类型。 任务可以是以下任务之一：**全局**任务、**exe** 或 url 任务。 **全局** 任务与你在为子选项卡的任务窗格定义任务时所创建的全局任务相同。有关创建子选项卡的任务窗格和在主页的开始任务或常见任务列表中可用的全局任务的详细信息，请参阅支持类 œCreating？在为 œ：创建子选项卡？[Windows Server 解决方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。 **exe** 任务可用于从“开始任务”或“常见任务”列表运行应用程序。|  
+   |类型（操作）|描述任务的类型。 任务可以是以下任务之一：**全局**任务、**exe** 或 url 任务。 **全局**任务与你在为子选项卡的任务窗格定义任务时所创建的全局任务相同。若要详细了解如何创建可在子选项卡的任务窗格和主页的 "入门任务" 或 "常见任务" 列表中使用的全局任务，请参阅œCreating the support 类？在如何中：创建子选项卡？[Windows Server 解决方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。 **exe** 任务可用于从“开始任务”或“常见任务”列表运行应用程序。|  
    |exelocation|与任务相关联的应用程序的路径。 此属性仅供 **exe** 任务使用。|  
    |replaceid|替换为此任务的任务标识符。|  
-   |程序集|提供类以实现快速状态查询的程序集的 AssemblyName。 程序集需要位于 Program files\ windows server\bin\\。|  
-   |类|实现快速状态查询的类的名称。 该类需要实现 **ITaskStatusQuery** 接口。|  
+   |程序集|提供类以实现快速状态查询的程序集的 AssemblyName。 该程序集需要位于 Program files \ windows server\bin\\中。|  
+   |class|实现快速状态查询的类的名称。 该类需要实现 **ITaskStatusQuery** 接口。|  
    |标题（链接）|链接的显示文本。 如果要创建嵌入式资源文件，则此属性的值为字符串资源。|  
    |说明（链接）|链接目标的说明。 如果要创建嵌入式资源文件，则此属性的值为字符串资源。|  
-   |ShellExecPath|应用程序或 URL 的路径。<br /><br /> **注意：** ShellExecPath 属性支持环境变量。|  
+   |ShellExecPath|应用程序或 URL 的路径。<br /><br /> **注意：** ShellExecPath 特性支持环境变量。|  
   
     以下代码示例说明如何定义指向应用程序的链接：  
   
@@ -147,7 +147,7 @@ ms.locfileid: "66433792"
 ##### <a name="replace-tasks"></a>替换任务  
  你可以替换在“开始任务”或“常见任务“列表中预定义的任务，方法是在任务定义的 replaceid 属性中为此任务添加 GUID。 下表列出了可在仪表板中替换的任务和相应标识符：  
   
-|任务名称|标识符|  
+|任务名称|Identifier|  
 |---------------|----------------|  
 |获取其他 Microsoft 产品的更新|8412D35A-13EE-4112-AE0B-F7DBC83EA83D|  
 |设置服务器备份|F68B3F3F-19DE-499D-9ACB-4BB41B8FF420|  
@@ -201,7 +201,7 @@ ms.locfileid: "66433792"
   
 5.  保存 OEMHomePageContent.home.resx 文件，然后生成解决方案。  
   
-#####  <a name="BKMK_SignAssembly"></a> 使用验证码签名程序集签名  
+#####  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>使用 Authenticode 签名为程序集签名  
  你必须使用验证码签名进行程序集签名，因为该签名将在操作系统中使用。 有关对程序集签名的详细信息，请参阅 [Signing and Checking Code with Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)（使用验证码对代码进行签名和检查）。  
   
 ##### <a name="install-the-task-files"></a>安装任务文件  
@@ -213,8 +213,8 @@ ms.locfileid: "66433792"
   
 2.  如果尚未创建嵌入式资源文件，则将 OEMHomePageContent.home 文件复制到服务器上的 **%ProgramFiles%\Windows Server\Bin\Addins\Home**。 如果已创建嵌入式资源文件，则将 OEMHomePageContent.dll 文件复制到服务器上的 **%ProgramFiles%\Windows Server\Bin\Addins\Home**。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
- [其他自定义设置](Additional-Customizations.md)   
- [部署准备的映像](Preparing-the-Image-for-Deployment.md)   
+ [其他自定义](Additional-Customizations.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)

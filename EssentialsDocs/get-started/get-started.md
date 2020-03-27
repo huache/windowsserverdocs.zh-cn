@@ -2,7 +2,7 @@
 title: Windows Server Essentials 入门
 description: 描述如何使用 Windows Server Essentials
 ms.custom: na
-ms.prod: windows-server-2019-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -11,12 +11,12 @@ ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: coreyp
 manager: jasgro
-ms.openlocfilehash: 807ea32a466b6717f61423e58d621a0050047586
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bafcd95abf24cb93ed0ae0bd83090d224666a5bd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946853"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310451"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>Windows Server Essentials 入门 
 
@@ -24,7 +24,7 @@ ms.locfileid: "75946853"
 
 **Windows Server Essentials** edition 是云连接的第一台服务器，专为具有最多25个用户和50设备的小型企业而设计。 但是，如果你正在考虑安装任何版本的 Windows Server Essentials，则建议你考虑**Microsoft 365**。 若要详细了解如何将 Windows Server Essentials 移到 Microsoft 365，请参阅[Windows server 2019 Essentials 中的新增功能](what-s-new-19.md)。
   
-## <a name="in-this-library"></a>本库内容  
+## <a name="in-this-library"></a>此库中  
  有关安装、配置、管理、使用和疑难解答 Windows Server Essentials 的信息，请参阅以下文档：  
   
 

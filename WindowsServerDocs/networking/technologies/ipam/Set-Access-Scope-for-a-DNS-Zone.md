@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a211dde-80eb-4888-b5bb-4e28fe8dc7df
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6155cee3f1924486f1358632dcef2fba7046edb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 870acde822fb5c8c038139710facb71208df3387
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355124"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309567"
 ---
 # <a name="set-access-scope-for-a-dns-zone"></a>为 DNS 区域设置访问范围
 
@@ -43,7 +43,7 @@ Administrators组成员或同等身份是执行此过程的最低要求。
   
     ![验证是否更改了区域的访问作用域](../../media/Set-Access-Scope-for-a-DNS-Zone/ipam_SetAccessScopeOfZone_04.jpg)  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [基于角色的访问控制](Role-based-Access-Control.md)  
 [管理 IPAM](Manage-IPAM.md)  
   

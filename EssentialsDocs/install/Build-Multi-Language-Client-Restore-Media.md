@@ -1,9 +1,9 @@
 ---
 title: 生成多语言客户端还原介质
-description: 介绍如何使用 Windows Server Essentials
+description: 描述如何使用 Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,19 +12,19 @@ ms.assetid: 2fdbc016-d464-43cb-bd75-8a63e61588a2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1ad934d297c3092050bd6adbb6bb0f50d1ec6f36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2b9d98c8c370e41ef87f96befdcd7746b0bb59f2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879868"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310086"
 ---
 # <a name="build-multi-language-client-restore-media"></a>生成多语言客户端还原介质
 
->适用于：Windows Server 2016 Essentials，Windows Server 2012 R2 Essentials 中，Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 > [!NOTE]
->  必须先创建多语 Windows 映像中所述[演练：多语言 Windows 映像创建](https://technet.microsoft.com/library/jj126995)添加到 install.wim 的 Windows Server Essentials 语言包之前。  
+>  必须首先创建多语言 Windows 映像，如在将 Windows Server Essentials 述 pack 添加到 install 之前[演练：多语言 Windows 映像创建](https://technet.microsoft.com/library/jj126995)中所述。  
   
  生成多语言服务器安装 DVD 时，会为服务器 install.wim 安装语言包。 还原向导的本地化资源会作为语言包的一部分进行安装。  
   
@@ -89,15 +89,15 @@ ms.locfileid: "59879868"
     dism /unmount-wim /mountdir:c:\mount /commit  
     ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
- [其他自定义设置](Additional-Customizations.md)   
- [部署准备的映像](Preparing-the-Image-for-Deployment.md)   
+ [其他自定义](Additional-Customizations.md)   
+ [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)
 
  [创建和自定义映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他自定义设置](../install/Additional-Customizations.md)   
- [部署准备的映像](../install/Preparing-the-Image-for-Deployment.md)   
+ [其他自定义](../install/Additional-Customizations.md)   
+ [准备映像以进行部署](../install/Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](../install/Testing-the-Customer-Experience.md)
 
