@@ -2,19 +2,19 @@
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
 title: Windows 时间服务技术参考
 description: ''
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 31c7c53a5dd28813076fcaa745093050808b5755
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6d6f203c43ccb764b3ccbfcabbf92f448920b41c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405229"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315041"
 ---
 # <a name="windows-time-service"></a>Windows 时间服务
 
@@ -37,7 +37,7 @@ Windows 时间服务（也称为 W32Time）同步在 AD DS 域上运行的所有
 > [!IMPORTANT]  
 > 在 Windows Server 2016 之前，W32Time 服务并不是为了满足时间敏感型应用程序的需要。  但是，通过 Windows Server 2016 的更新，现在可以在域中实施可达到 1 毫秒准确性的解决方案。  有关详细信息，请参阅 [Windows 2016 精确时间](accurate-time.md)和[用于针对高精度环境配置 Windows 时间服务的支持边界](support-boundary.md)。  
   
-## <a name="BKMK_Config"></a>查找 Windows 时间服务配置信息的位置  
+## <a name="where-to-find-windows-time-service-configuration-information"></a><a name="BKMK_Config"></a>查找 Windows 时间服务配置信息的位置  
 本指南不讨论如何配置 Windows 时间服务  。 Microsoft TechNet 和 Microsoft 知识库中有多个不同的主题，它们解释了配置 Windows 时间服务的过程。 如果你需要配置信息，以下主题应该可帮助你找到相应的信息。  
   
 -   若要为目录林根级主域控制器 (PDC) 模拟器配置 Windows 时间服务，请参阅：  
@@ -63,7 +63,7 @@ Windows 时间服务（也称为 W32Time）同步在 AD DS 域上运行的所有
   
 -   若要在作为虚拟计算机运行的成员服务器上配置 Windows 时间服务，请使用[配置客户端计算以进行自动域时间同步](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29)中所述的域时间层次结构。  
   
-## <a name="BKMK_WTS"></a>什么是 Windows 时间服务？  
+## <a name="what-is-the-windows-time-service"></a><a name="BKMK_WTS"></a>什么是 Windows 时间服务？  
 Windows 时间服务 (W32Time) 为计算机提供网络时钟同步，而无需进行大量配置。  
   
 Windows 时间服务对于成功运行 Kerberos 版本 5 身份验证非常重要，因此对于基于 AD DS 的身份验证也很重要。 任何 Kerberos 感知应用程序（包括大多数安全服务）都依赖于加入身份验证请求的计算机之间的时间同步。 AD DS 域控制器也必须具有同步的时钟，以帮助确保精确的数据复制。  
@@ -72,7 +72,7 @@ Windows 时间服务在名为 W32Time.dll 的动态链接库中实现。 W32Time
   
 W32Time.dll 最初是为 Windows 2000 Server 开发的，用于支持 Kerberos V5 身份验证协议所要求的规范，该协议要求同步网络上的时钟。 从 Windows Server 2003 开始，W32Time.dll 通过 Windows 2000 Server 操作系统提高了网络时钟同步的准确度，此外，还通过时间提供程序支持各种硬件设备和网络时间协议。 尽管最初旨在为 Kerberos 身份验证提供时钟同步，但当前许多应用程序都使用时间戳以确保事务一致性，并记录重要事件的时间以及其他业务关键型、时间敏感型信息。 这些应用程序受益于 Windows 时间服务提供的计算机之间的时间同步。  
   
-## <a name="BKMK_TimeProtocols"></a>时间协议的重要性  
+## <a name="importance-of-time-protocols"></a><a name="BKMK_TimeProtocols"></a>时间协议的重要性  
 时间协议在两台计算机之间进行通信以交换时间信息，然后使用该信息同步其时钟。 使用 Windows 时间服务时间协议，客户端可以从服务器请求时间信息，并根据收到的信息同步其时钟。  
   
 Windows 时间服务使用 NTP 来帮助同步网络上的时间。 NTP 是一种 Internet 时间协议，其中包括同步时钟所需的约束算法。 NTP 是比某些 Windows 版本中使用的简单网络时间协议 (SNTP) 更准确的时间协议；但是，W32Time 继续支持 SNTP，以便能够与运行基于 SNTP 的时间服务（例如 Windows 2000）的计算机后向兼容。  

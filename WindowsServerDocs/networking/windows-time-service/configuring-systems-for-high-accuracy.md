@@ -2,18 +2,18 @@
 ms.assetid: ''
 title: 配置系统以实现高精度
 description: Windows 10 和 Windows Server 2016 中的时间同步已大幅改善。  在合理的操作条件下，可将系统配置为维持 1ms（毫秒）的精度或更高的精度（相对于 UTC）。
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: b7cd256fdbbdbe7432e5b5d5b16254314132560f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8cdded0eb0dc663d352011fb1a6765a2ed358764
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405199"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315035"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>配置系统以实现高精度
 >适用于：Windows Server 2016 和 Windows 10 版本 1607 或更高版本
@@ -106,7 +106,7 @@ Windows 时间服务 (W32Time) 必须持续运行。  为此，请将 Windows �
 
 #### <a name="registry-settings"></a>注册表设置
 
-# <a name="minpollintervaltabminpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
+# <a name="minpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
 配置允许系统轮询的最小间隔（以 log2 秒为单位）。
 
 |  |  | 
@@ -120,7 +120,7 @@ Windows 时间服务 (W32Time) 必须持续运行。  为此，请将 Windows �
 `w32tm /config /update`
 
 
-# <a name="maxpollintervaltabmaxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
+# <a name="maxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
 配置允许系统轮询的最大间隔（以 log2 秒为单位）。
 
 |  |  |  
@@ -133,7 +133,7 @@ Windows 时间服务 (W32Time) 必须持续运行。  为此，请将 Windows �
 
 `w32tm /config /update`
 
-# <a name="updateintervaltabupdateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
+# <a name="updateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
 相位校正调整之间的时钟周期数。
 
 |  |  |  
@@ -146,7 +146,7 @@ Windows 时间服务 (W32Time) 必须持续运行。  为此，请将 Windows �
 
 `w32tm /config /update`
 
-# <a name="specialpollintervaltabspecialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
+# <a name="specialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
 配置启用 SpecialInterval 0x1 标志后的轮询间隔（以秒为单位）。
 
 |  |  |  
@@ -159,7 +159,7 @@ Windows 时间服务 (W32Time) 必须持续运行。  为此，请将 Windows �
 
 `net stop w32time && net start w32time`
 
-# <a name="frequencycorrectratetabfrequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
+# <a name="frequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
 
 |  |  |  
 |---------|---------|
