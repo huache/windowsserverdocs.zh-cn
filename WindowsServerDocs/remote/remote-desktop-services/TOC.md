@@ -63,7 +63,7 @@
 ### [针对虚拟桌面基础结构 (VDI) 角色优化 Windows 10 版本 1909](rds_vdi-recommendations-1909.md)
 ### [针对虚拟桌面基础结构 (VDI) 角色优化 Windows 10 版本 1803](rds-vdi-recommendations-1803.md)
 ### [管理 RDS 集合中的用户](rds-user-management.md)
-### [使用 Windows Server 上的 PowerShell 自定义 RDS 标题“工作资源”](rds-work-resources.md)
+### [在 Windows Server 上使用 PowerShell 自定义 RDS 标题“工作资源”](rds-work-resources.md)
 ### [利用性能计数器诊断应用性能问题](rds-rdsh-performance-counters.md)
 
 ## 访问远程桌面资源
@@ -93,8 +93,8 @@
 #### [允许从网络外部访问你的电脑](clients/remote-desktop-allow-outside-access.md)
 #### [更改你的电脑上的 RD 侦听端口](clients/change-listening-port.md)
 ### 高级信息
-#### [哪个客户端最适合你？](clients/remote-desktop-app-compare.md)
-#### [远程桌面 RDP 文件设置](clients/rdp-files.md)
+#### [比较客户端](clients/remote-desktop-app-compare.md)
+#### [受支持的远程桌面 RDP 文件设置](clients/rdp-files.md)
 #### [远程桌面 URI 方案](clients/remote-desktop-uri.md)
 #### [远程桌面客户端常见问题](clients/remote-desktop-client-faq.md)
 #### [托管应用和桌面的隐私设置](clients/remote-privacy-settings.md)
