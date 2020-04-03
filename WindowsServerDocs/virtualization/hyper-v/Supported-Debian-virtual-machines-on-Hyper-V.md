@@ -11,12 +11,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 60f2f3a6ed885f2da80b9beac51eeb703789ec91
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 7a717acf5c132d68d6ee041aeb5af5a430aa171b
+ms.sourcegitcommit: 9f7cc76b8c9add44dcbbd97f77b4f881d5a2c073
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791761"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80613005"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Debian 虚拟机
 
@@ -32,7 +32,7 @@ ms.locfileid: "74791761"
 
 * （*空白*）-功能不可用
 
-| **具有**                                                                                                                                  | **Windows Server 操作系统版本** | **10（buster）** | **9.0-9.6 （stretch）** | **8.0-8.11 （jessie）** | **7.0-7.11 （wheezy）** |
+| **具有**                                                                                                                                  | **Windows Server 操作系统版本** | **10.0-10.3 （buster）** | **9.0-9.12 （拉伸）** | **8.0-8.11 （jessie）** | **7.0-7.11 （wheezy）** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
 | **可用性**                                                                                                                             |                                             | 内置              | 内置              | 内置              | 内置（备注6）     |
 | **[转储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2、2012、2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
@@ -71,7 +71,7 @@ ms.locfileid: "74791761"
 | 安全启动                                                                                                                                  | 2019、2016                                  | &#10004;              |                       |                       |                       |
 
 
-## <a name="BKMK_notes"></a>本票
+## <a name="notes"></a><a name="BKMK_notes"></a>本票
 
 1. 不支持在大于2TB 的 Vhd 上创建文件系统。
 
