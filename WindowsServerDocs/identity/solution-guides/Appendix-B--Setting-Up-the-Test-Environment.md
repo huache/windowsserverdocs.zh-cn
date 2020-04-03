@@ -95,7 +95,7 @@ ms.locfileid: "71407149"
 
 6.  单击“确定” 创建虚拟网络并关闭虚拟网络管理器，或单击“应用” 创建虚拟网络并继续使用虚拟网络管理器。  
 
-### <a name="BKMK_Build"></a>构建域控制器  
+### <a name="build-the-domain-controller"></a><a name="BKMK_Build"></a>构建域控制器  
 构建要用作域控制器 (DC1) 的虚拟机。 使用 Windows Server 2012 ISO 安装虚拟机，并将其命名为 DC1。  
 
 ##### <a name="to-install-active-directory-domain-services"></a>安装 Active Directory 域服务  
@@ -199,7 +199,7 @@ ms.locfileid: "71407149"
     gpupdate /force  
     ```  
 
-### <a name="BKMK_FS1"></a>构建文件服务器和 AD RMS 服务器（FILE1）  
+### <a name="build-the-file-server-and-ad-rms-server-file1"></a><a name="BKMK_FS1"></a>构建文件服务器和 AD RMS 服务器（FILE1）  
 
 1. 使用 Windows Server 2012 ISO 构建名为 FILE1 的虚拟机。  
 
@@ -282,7 +282,7 @@ ms.locfileid: "71407149"
 > [!NOTE]  
 > 默认情况下，不会在系统卷 C: 或引导卷 C: 上启用中心访问策略。  
 
-#### <a name="BKMK_CS1"></a>安装 Active Directory Rights Management Services  
+#### <a name="install-active-directory-rights-management-services"></a><a name="BKMK_CS1"></a>安装 Active Directory Rights Management Services  
 通过服务器管理器添加 Active Directory Rights Management Services (AD RMS) 和所有需要的功能。 选择所有默认值。  
 
 ###### <a name="to-install-active-directory-rights-management-services"></a>安装 Active Directory Rights Management Services  
@@ -552,9 +552,9 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
     -   值：DWORD  
 
-## <a name="BKMK_CF"></a>用于跨林部署声明方案的实验室设置  
+## <a name="lab-setup-for-deploying-claims-across-forests-scenario"></a><a name="BKMK_CF"></a>用于跨林部署声明方案的实验室设置  
 
-### <a name="BKMK_2.1"></a>为 DC2 构建虚拟机  
+### <a name="build-a-virtual-machine-for-dc2"></a><a name="BKMK_2.1"></a>为 DC2 构建虚拟机  
 
 -   从 Windows Server 2012 ISO 构建虚拟机。  
 
@@ -567,7 +567,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 >   
 > 必须对所有虚拟机映像（服务器和客户端）进行重新配置，以使用静态 IP 版本 4 (IPv4) 地址和域名系统 (DNS) 客户端设置。 有关详细信息，请参阅 [为静态 IP 地址配置 DNS 客户端](https://go.microsoft.com/fwlink/?LinkId=150952)。  
 
-### <a name="BKMK_2.2"></a>设置名为 adatum.com 的新林  
+### <a name="set-up-a-new-forest-called-adatumcom"></a><a name="BKMK_2.2"></a>设置名为 adatum.com 的新林  
 
 ##### <a name="to-install-active-directory-domain-services"></a>安装 Active Directory 域服务  
 
@@ -620,7 +620,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 >   
 > 如果这些命令能够正确执行，则这两个林可相互通信。 有关 nslookup 错误的详细信息，请参阅 [使用 NSlookup.exe](https://support.microsoft.com/kb/200525)主题中的疑难解答部分  
 
-### <a name="BKMK_2.22"></a>将 contoso.com 设置为信任林到 adatum.com  
+### <a name="set-contosocom-as-a-trusting-forest-to-adatumcom"></a><a name="BKMK_2.22"></a>将 contoso.com 设置为信任林到 adatum.com  
 在此步骤中，你创建 Adatum Corporation 站点和 Contoso, Ltd. 站点之间的信任关系。  
 
 ##### <a name="to-set-contoso-as-a-trusting-forest-to-adatum"></a>将 Contoso 设置为 Adatum 的信任林  
@@ -641,7 +641,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
 8.  继续按照向导中的说明执行操作。  
 
-### <a name="BKMK_2.4"></a>在 Adatum 林中创建其他用户  
+### <a name="create-additional-users-in-the-adatum-forest"></a><a name="BKMK_2.4"></a>在 Adatum 林中创建其他用户  
 用密码<strong>pass@word1</strong>创建 Jeff Low 的用户，并将 "公司" 属性指定为 " **Adatum**"。  
 
 ##### <a name="to-create-a-user-with-the-company-attribute"></a>创建带有公司属性的用户  
@@ -662,7 +662,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
     ```  
 
-### <a name="BKMK_2.5"></a>在 adataum.com 上创建公司声明类型  
+### <a name="create-the-company-claim-type-on-adataumcom"></a><a name="BKMK_2.5"></a>在 adataum.com 上创建公司声明类型  
 
 ##### <a name="to-create-a-claim-type-by-using-windows-powershell"></a>使用 Windows PowerShell 创建声明类型  
 
@@ -683,7 +683,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
     ```  
 
-### <a name="BKMK_2.55"></a>启用 contoso.com 上的公司资源属性  
+### <a name="enable-the-company-resource-property-on-contosocom"></a><a name="BKMK_2.55"></a>启用 contoso.com 上的公司资源属性  
 
 ##### <a name="to-enable-the-company-resource-property-on-contosocom"></a>启用 contoso.com 上的公司资源属性  
 
@@ -697,7 +697,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
 5.  从“资源属性”列表中选择“公司”，然后右键单击并选择“启用”。  
 
-### <a name="BKMK_2.6"></a>对 adatum.com 启用动态访问控制  
+### <a name="enable-dynamic-access-control-on-adatumcom"></a><a name="BKMK_2.6"></a>对 adatum.com 启用动态访问控制  
 
 ##### <a name="to-enable-dynamic-access-control-for-adatumcom"></a>对 adatum.com 启用动态访问控制  
 
@@ -717,7 +717,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
     gpupdate /force  
     ```  
 
-### <a name="BKMK_2.8"></a>在 contoso.com 上创建公司声明类型  
+### <a name="create-the-company-claim-type-on-contosocom"></a><a name="BKMK_2.8"></a>在 contoso.com 上创建公司声明类型  
 
 ##### <a name="to-create-a-claim-type-by-using-windows-powershell"></a>使用 Windows PowerShell 创建声明类型  
 
@@ -734,7 +734,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
     ```  
 
-### <a name="BKMK_2.9"></a>创建中心访问规则  
+### <a name="create-the-central-access-rule"></a><a name="BKMK_2.9"></a>创建中心访问规则  
 
 ##### <a name="to-create-a-central-access-rule"></a>创建中心访问规则  
 
@@ -765,7 +765,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
    -Server:"contoso.com" `  
    ```  
 
-### <a name="BKMK_2.10"></a>创建中心访问策略  
+### <a name="create-the-central-access-policy"></a><a name="BKMK_2.10"></a>创建中心访问策略  
 
 ##### <a name="to-create-a-central-access-policy"></a>创建中心访问策略  
 
@@ -779,7 +779,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
     -Member "AdatumEmployeeAccessRule" `  
     ```  
 
-### <a name="BKMK_2.11"></a>通过组策略发布新策略  
+### <a name="publish-the-new-policy-through-group-policy"></a><a name="BKMK_2.11"></a>通过组策略发布新策略  
 
 ##### <a name="to-apply-the-central-access-policy-across-file-servers-through-group-policy"></a>通过组策略跨文件服务器应用中心访问策略  
 
@@ -811,13 +811,13 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
 7.  关闭“组策略管理编辑器”。 现在，你已经将中心访问策略添加到组策略。  
 
-### <a name="BKMK_2.12"></a>在文件服务器上创建收益文件夹  
+### <a name="create-the-earnings-folder-on-the-file-server"></a><a name="BKMK_2.12"></a>在文件服务器上创建收益文件夹  
 在 FILE1 上创建新的 NTFS 卷，并创建以下文件夹：D:\Earnings。  
 
 > [!NOTE]  
 > 默认情况下，不会在系统卷 C: 或引导卷 C: 上启用中心访问策略。  
 
-### <a name="BKMK_2.13"></a>设置分类并对 "收益" 文件夹应用中心访问策略  
+### <a name="set-classification-and-apply-the-central-access-policy-on-the-earnings-folder"></a><a name="BKMK_2.13"></a>设置分类并对 "收益" 文件夹应用中心访问策略  
 
 ##### <a name="to-assign-the-central-access-policy-on-the-file-server"></a>在文件服务器上分配中心访问策略  
 
