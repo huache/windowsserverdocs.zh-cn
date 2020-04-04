@@ -8,12 +8,12 @@ ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a9759f0ea8835c8e07bcd298b75024e3ee29c9ed
-ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
+ms.openlocfilehash: f8a1e70bba740875e19660d5a729a952c9fae8f2
+ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856341"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80661068"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -23,7 +23,7 @@ ms.locfileid: "78856341"
 
 例如，Windows Server 版本1903包括存储迁移服务的新功能和修复程序，它们也可用于 Windows Server 2019 和 Windows Server，版本1809通过安装[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)来实现。
 
-## <a name="collecting-logs"></a>如何在使用 Microsoft 支持部门时收集日志文件
+## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a>如何在使用 Microsoft 支持部门时收集日志文件
 
 存储迁移服务包含 Orchestrator 服务和代理服务的事件日志。 Orchestrator 服务器始终包含事件日志，并且安装了代理服务的目标服务器包含代理日志。 这些日志位于：
 
@@ -343,7 +343,7 @@ DFSR 调试日志：
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-此问题是由较早版本的 Windows Server 中缺少的 API 导致的。 目前没有办法迁移 Windows Server 2008 和 Windows Server 2003 群集。 在 Windows Server 2008 R2 群集上，你可以执行清单和传输，而不是在 Windows Server R2 群集上进行，然后手动执行转换，方法是手动更改群集的源文件服务器资源网络名称和 IP 地址，然后更改目标群集网络名称和 IP与原始源相匹配的地址。 
+此问题是由较早版本的 Windows Server 中缺少的 API 导致的。 目前没有办法迁移 Windows Server 2008 和 Windows Server 2003 群集。 在 Windows Server 2008 R2 群集上，你可以执行清单和传输，然后手动更改群集的源文件服务器资源网络名称和 IP 地址，然后更改目标群集的网络名称和 IP 地址以匹配原始源，从而手动执行转换。 
 
 ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>在源计算机上的 "38% 映射网络接口" 上切换挂起使用 DHCP 时 
 
@@ -421,7 +421,7 @@ DFSR 调试日志：
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
     ```
    
- 2. 对于使用其原始名称返回的任何用户，编辑其 "用户登录名（Windows 之前2000）" 以删除存储迁移服务添加的随机字符后缀，以便此落选方可以登录。
+ 2. 对于使用其原始名称返回的任何用户，编辑其 "用户登录名（Windows 之前2000）" 以删除存储迁移服务添加的随机字符后缀，使该用户能够登录。
  3. 对于使用其原始名称返回的任何组，编辑其 "组名（Windows 之前2000）" 以删除存储迁移服务添加的随机字符后缀。
  4. 对于其名称现在包含存储迁移服务添加的后缀的任何已禁用的用户或组，你可以删除这些帐户。 你可以确认以后是否添加了用户帐户，因为它们只包含域用户组，并且将创建与存储迁移服务传输开始时间匹配的日期/时间。
  
@@ -484,7 +484,7 @@ DFSR 调试日志：
  - 源计算机上没有运行远程注册表服务。
  - 防火墙不允许从 Orchestrator 远程连接到源服务器。
  - 源迁移帐户没有连接到源计算机的远程注册表权限。
- - 源迁移帐户没有源计算机注册表中的读取权限，在 "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" 或 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ 下。LanmanServer
+ - 源迁移帐户没有源计算机注册表中的读取权限，在 "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" 或 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer" 下
  
  ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在源计算机上的 "38% 映射网络接口" 上切换挂起 
 

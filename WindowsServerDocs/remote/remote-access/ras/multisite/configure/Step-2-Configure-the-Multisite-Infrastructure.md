@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6f020dc2bf5c0dc11d18e886346a98a4a40f3855
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9434f3192da110c8ad61e999d2aecd02bfff3812
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314057"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639841"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>步骤2配置多站点基础结构
 
@@ -241,7 +241,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
 #### <a name="to-change-the-domain-controller-that-manages-server-gpos"></a><a name="ChangeDC"></a>更改管理服务器 Gpo 的域控制器  
   
--   在远程访问服务器上运行 Windows PowerShell cmdlet `HYPERLINK "https://technet.microsoft.com/library/hh918412.aspx" Set-DAEntryPointDC`，并指定*ExistingDC*参数的无法访问的域控制器名称。 此命令修改当前由该域控制器管理的入口点的服务器 Gpo 的域控制器关联。  
+-   在远程访问服务器上运行 Windows PowerShell cmdlet [set-daentrypointdc](https://docs.microsoft.com/powershell/module/remoteaccess/set-daentrypointdc) ，并指定*ExistingDC*参数的无法访问的域控制器名称。 此命令修改当前由该域控制器管理的入口点的服务器 Gpo 的域控制器关联。
   
     -   若要将无法访问的域控制器 "dc1.corp.contoso.com" 替换为域控制器 "dc2.corp.contoso.com"，请执行以下操作：  
   
@@ -300,7 +300,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="optimization-of-configuration-distribution"></a><a name="ConfigDistOptimization"></a>配置分发的优化  
-进行配置更改时，仅在服务器 Gpo 传播到远程访问服务器后应用更改。 为了减少配置分发时间，远程访问会自动选择一个可写域控制器，该控制器在创建其服务器 GPO 时最接近远程访问服务器的 "<https://technet.microsoft.com/library/cc978016.aspx>" 超链接。  
+进行配置更改时，仅在服务器 Gpo 传播到远程访问服务器后应用更改。 为了减少配置分发时间，在创建服务器 GPO 时，远程访问会自动选择[最接近远程访问服务器](https://technet.microsoft.com/library/cc978016.aspx)的可写域控制器。  
   
 在某些情况下，可能需要手动修改管理服务器 GPO 的域控制器，以便优化配置分发时间：  
   
@@ -336,4 +336,3 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
   
 -   [步骤3：配置多站点部署](Step-3-Configure-the-Multisite-Deployment.md)  
 -   [步骤1：实现单一服务器远程访问部署](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  
-

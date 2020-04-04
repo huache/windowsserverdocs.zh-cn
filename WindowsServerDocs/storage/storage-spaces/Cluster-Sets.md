@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/30/2019
 description: 本文介绍群集集方案
 ms.localizationpriority: medium
-ms.openlocfilehash: 52d686fa9797d84f56182b15c36a26440792ec13
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db427e8fa4e5574c6eb7837cf0ab4a9fcc180410
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402912"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639964"
 ---
 # <a name="cluster-sets"></a>群集集
 
@@ -65,7 +65,7 @@ ms.locfileid: "71402912"
 
 **可用性集**
 
-可用性集可帮助管理员跨容错域配置群集工作负载所需的冗余，方法是将它们组织到可用性集中并将工作负荷部署到该可用性集中。 假设你正在部署双层应用程序，我们建议你在可用性集中为每个层配置至少两个虚拟机，这将确保当该可用性集中的一个容错域出现故障时，你的应用程序将至少具有每一层中的一个虚拟机托管在同一可用性集的不同容错域中。
+可用性集可帮助管理员跨容错域配置群集工作负载所需的冗余，方法是将它们组织到可用性集中并将工作负荷部署到该可用性集中。 假设你正在部署双层应用程序，我们建议你在可用性集中为每个层配置至少两个虚拟机，这将确保当可用性集中的一个容错域出现故障时，你的应用程序将至少有一个虚拟机位于同一可用性集的不同容错域中托管的每个层中。
 
 ## <a name="why-use-cluster-sets"></a>为什么使用群集集
 
@@ -116,7 +116,7 @@ ms.locfileid: "71402912"
 
 ## <a name="creating-a-cluster-set"></a>创建群集集
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>先决条件
 
 创建群集集时，建议遵循以下先决条件：
 
@@ -163,7 +163,7 @@ ms.locfileid: "71402912"
 
         Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
 
-8. 若要验证群集集创建过程创建了一个 SMB 共享（标识为 Volume1，还是在每个群集成员的基础结构 SOFS 上将 ScopeName 标记为 "基础结构文件服务器的名称" 和 "两者" 的路径）CSV 卷：
+8. 若要验证群集集创建过程创建了一个 SMB 共享（标识为 Volume1，还是在每个群集成员的 CSV 卷的基础结构 SOFS 上将 CSV 文件夹的名称标为 ScopeName，则为这两者）：
 
         Get-SmbShare -CimSession CSMASTER
 
@@ -171,7 +171,7 @@ ms.locfileid: "71402912"
 
         Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
 
-9. 在所有群集集成员之间配置 Kerberos[约束委派](https://blogs.technet.microsoft.com/virtualization/2017/02/01/live-migration-via-constrained-delegation-with-kerberos-in-windows-server-2016/)。
+9. 在所有群集集成员之间配置 Kerberos[约束委派](https://techcommunity.microsoft.com/t5/virtualization/live-migration-via-constrained-delegation-with-kerberos-in/ba-p/382334)。
 
 10. 在群集集中的每个节点上，将跨群集虚拟机的实时迁移身份验证类型配置为 Kerberos。
 
@@ -260,7 +260,7 @@ ms.locfileid: "71402912"
 
 对于群集集，无需执行这些步骤，只需执行一个命令。  首先，应使用以下命令将所有网络设置为可用于迁移：
 
-    Set-VMHost -UseAnyNetworkMigration $true
+    Set-VMHost -UseAnyNetworkForMigration $true
 
 例如，我想要将群集集的虚拟机从 CLUSTER1 移动到 CLUSTER3 上的 CL3。  单个命令为：
 

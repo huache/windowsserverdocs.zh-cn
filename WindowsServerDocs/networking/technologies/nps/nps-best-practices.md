@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 90e544bd-e826-4093-8c3b-6a6fc2dfd1d6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 278d813aa13ea42b7f597bdbe7eb210f68cee955
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 4e6e6d2612af80bdaaa3900414bb08c3f0c18ea3
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316305"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639914"
 ---
 # <a name="network-policy-server-best-practices"></a>网络策略服务器最佳做法
 
@@ -97,7 +97,7 @@ NPS 中有两种类型的记帐或日志记录：
 
 - 使用用户主体名尽可能地引用用户。 用户可以具有相同的用户主体名，无论域成员身份如何。 这种实践提供了具备大量域的组织可能需要的可伸缩性。
 
-- 如果在域控制器之外的计算机上安装了网络策略服务器 \(NPS\)，并且 NPS 每秒接收了大量的身份验证请求，则可以通过增加 NPS 和域控制器之间允许的并发身份验证次数，提高 NPS 性能。 有关详细信息，请参阅。 
+- 如果在域控制器之外的计算机上安装了网络策略服务器 \(NPS\)，并且 NPS 每秒接收了大量的身份验证请求，则可以通过增加 NPS 和域控制器之间允许的并发身份验证次数，提高 NPS 性能。 有关详细信息，请参阅[增加 NPS 处理的并发身份验证](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-concurrent-auth)。
 
 ## <a name="security-issues"></a>安全问题
 
