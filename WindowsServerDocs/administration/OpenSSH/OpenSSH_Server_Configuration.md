@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: 适用于 Windows 的 OpenSSH 服务器配置
-ms.openlocfilehash: 61e6e24e6682802fd07e70dcb49aa0f382e1638e
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.openlocfilehash: 3d8e656981661f8263484437e90780a4e1463d94
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169587"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639944"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>适用于 Windows 10 1809 和 Server 2019 的 OpenSSH 服务器配置
 

@@ -10,16 +10,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22554a9669c30cc827c509824f187fbaaedb1272
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5d71a26cbe889f5de11934b2af411ac407fc5e75
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361699"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639862"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>步骤 1：安装 WSUS 服务器角色
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于：Windows Server 2019、Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 部署 WSUS 服务器的下一步是安装 WSUS 服务器角色。 以下过程描述了使用服务器管理器安装 WSUS 服务器角色的步骤。
 
@@ -54,7 +54,7 @@ ms.locfileid: "71361699"
 
 10. 在“内容位置选择”  页上，键入有效的位置以存储更新。 例如，可以在 K 盘的根目录下专门为此创建一个名为 WSUS_database 的文件夹，并键入“k:\WSUS_database”  作为有效的位置。
 
-11. 单击“下一步”  。 此时将打开“Web 服务器角色(IIS)”  页。 查看信息，然后单击“下一步”  。 在“为 Web 服务器(IIS)选择要安装的角色服务”  中，保留默认值，然后单击“下一步”  。
+11. 单击 **下一步**。 此时将打开“Web 服务器角色(IIS)”  页。 查看信息，然后单击“下一步”  。 在“为 Web 服务器(IIS)选择要安装的角色服务”  中，保留默认值，然后单击“下一步”  。
 
 12. 在 **“确认安装选择”** 页上，查看所选的选项，然后单击 **“安装”** 。 WSUS 安装向导将运行。 这可能需要几分钟才能完成。
 

@@ -13,12 +13,12 @@ ms.custom:
 - CI ID 113344
 - CSSTroubleshoot
 audience: Admin
-ms.openlocfilehash: e9432aa11446cdd4f00efca3af28c24d757d6019
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 52c3d1527726241313cf2b741fbc5a5799aca661
+ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315130"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80661075"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 时间服务工具和设置
 
@@ -133,7 +133,7 @@ Windows 将这些设置加载到以下子项下的注册表策略区域中：
 |时间提供程序\启用 Windows NTP 服务器 |W32Time\TimeProviders\NtpServer |
 
 > <sup>1</sup> 类别路径：**计算机配置\管理模板\系统\Windows 时间服务**  
-> <sup>2</sup> 子项：**HKLM\SOFTWARE\Policies\Microsoft\Windows**  
+> <sup>2</sup> 子项：**HKLM\SOFTWARE\Policies\Microsoft**  
 > <sup>3</sup> 子项：**HKLM\SYSTEM\CurrentControlSet\Services**
 
 ## <a name="enabling-w32time-logging"></a>启用 W32Time 日志记录

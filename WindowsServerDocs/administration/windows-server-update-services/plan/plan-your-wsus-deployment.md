@@ -10,16 +10,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 37e3a7788ccd409f4002f5fe2d7ea087e89b3419
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 8d284c51bfa1e04a38c32adf5dce2b6f5d948b0a
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323519"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639934"
 ---
 # <a name="plan-your-wsus-deployment"></a>规划 WSUS 部署
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于：Windows Server 2019、Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 部署 Windows Server Update Services (WSUS) 的第一步是做出重要决定，例如确定 WSUS 部署方案、选择网络拓扑和了解系统要求。 以下清单汇总了为部署做准备时执行的步骤。
 
@@ -37,17 +37,20 @@ ms.locfileid: "79323519"
 
 ### <a name="system-requirements"></a>系统要求
 
-启用 WSUS 服务器角色之前，按照以下指南确认服务器满足系统要求，以及你拥有完成安装所需的权限：
+硬件和数据库软件要求取决于组织中要更新的客户端计算机的数量。  启用 WSUS 服务器角色之前，按照以下指南确认服务器满足系统要求，以及你拥有完成安装所需的权限：
 
 -   启用 WSUS 角色的服务器硬件要求与硬件要求相关。 WSUS 的最低硬件需求是：
 
-    -   **处理器：** 1.4 千兆赫 (GHz) x64 处理器（推荐使用 2Ghz 或以上）
+    -   **处理器：** 1.4 千兆赫 (GHz) x64 处理器（建议使用 2Ghz 或以上）
 
     -   **内存：** 除了服务器和所有其他服务或软件需要的内存量之外，WSUS 还需要额外的 2 GB RAM。
 
-    -   **可用磁盘空间：** 10 GB（建议 40 GB 或更多）
+    -   **可用磁盘空间：** 建议使用 40 GB 或更多
 
-    -   **网络适配器：** 每秒 100 兆位或以上 (Mbps)
+    -   **网络适配器：** 每秒 100 兆位 (Mbps) 或以上（建议使用 1GB）
+
+> [!NOTE] 
+> 这些指导原则假设 WSUS 客户端每 8 小时与服务器同步一次（客户端总共为 30000 个）。 如果同步频率更高，则服务器负载会相应地增加。  
 
 -   软件要求：
 
