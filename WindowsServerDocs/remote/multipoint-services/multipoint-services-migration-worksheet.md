@@ -1,28 +1,24 @@
 ---
 title: 针对 MultiPoint 服务迁移规划工作表
 description: 提供了规划工作表来帮助您迁移到 Windows Server 2016 中的 MultiPoint 服务
-ms.custom: na
 ms.date: 07/29/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 864405bb-47ed-4c83-97a2-8df4c6e6f96b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: d3d2ecca4062d28d210196d9191e08710eb731c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c0d5976e70bcf8009cd98e54e973dd6f585d7208
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394628"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858900"
 ---
 # <a name="planning-worksheet-for-multipoint-services-migration"></a>针对 MultiPoint 服务迁移规划工作表
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 使用以下列表和表来收集 MultiPoint 服务迁移过程中所需的设置。
 
@@ -81,20 +77,20 @@ ms.locfileid: "71394628"
 
 Administrators：
 
-- 用户名：
-- 用户名：
-- 用户名：
-- 用户名：
-- 用户名：
-- 用户名：
+- 用户名:
+- 用户名:
+- 用户名:
+- 用户名:
+- 用户名:
+- 用户名:
 
 仪表板用户：
 
-- 用户名：
-- 用户名：
-- 用户名：
-- 用户名：
-- 用户名：
+- 用户名:
+- 用户名:
+- 用户名:
+- 用户名:
+- 用户名:
 
 ## <a name="vdi-template-and-virtual-desktops"></a>VDI 模板和虚拟桌面
 

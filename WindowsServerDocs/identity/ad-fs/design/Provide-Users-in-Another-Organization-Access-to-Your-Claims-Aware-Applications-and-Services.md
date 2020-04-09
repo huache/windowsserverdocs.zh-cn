@@ -1,7 +1,6 @@
 ---
 ms.assetid: de7e1e4a-f96d-4b59-ac9b-f65f5d37a96f
 title: 为另一个组织中的用户提供对声明感知应用程序和服务的访问权限
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0b2429599036f2893f23df7921a11c8232d9f67
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e47197a980c9bcb576d6634a0031a8ae13afbfd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359067"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858600"
 ---
 # <a name="provide-users-in-another-organization-access-to-your-claims-aware-applications-and-services"></a>为另一个组织中的用户提供对声明感知应用程序和服务的访问权限
 
@@ -33,7 +32,7 @@ ms.locfileid: "71359067"
   
 -   **Active Directory 域服务 \(AD DS\)：** 资源伙伴联合服务器必须加入到 Active Directory 域。  
   
--   **外围 DNS：** 域名系统 \(DNS\) 应包含一个简单主机 \(\) 资源记录，以便客户端计算机可以找到资源伙伴联合服务器和 Web 服务器。 DNS 服务器可以托管在外围网络中也需要的其他 DNS 记录。 有关详细信息，请参阅 [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md)。  
+-   **外围 DNS：** 域名系统 \(DNS\) 应包含一个简单主机 \(\) 资源记录，以便客户端计算机可以找到资源伙伴联合服务器和 Web 服务器。 DNS 服务器可以托管在外围网络中也需要的其他 DNS 记录。 有关详细信息，请参阅[联合服务器的名称解析要求](Name-Resolution-Requirements-for-Federation-Servers.md)。  
   
 -   **资源伙伴联合服务器：** 资源伙伴联合服务器验证帐户伙伴发送 AD FS 令牌。 帐户伙伴发现是通过此联合服务器执行的。 有关详细信息，请参阅 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
   

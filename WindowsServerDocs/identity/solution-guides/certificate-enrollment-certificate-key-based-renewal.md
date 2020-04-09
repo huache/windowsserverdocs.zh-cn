@@ -1,18 +1,17 @@
 ---
 title: 为自定义端口上的基于证书密钥的续订配置证书注册 Web 服务
-description: ''
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 3d3d08d6abe9daa571dd7365815c1fc61f926501
-ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
+ms.openlocfilehash: a21a34448248658d2ceffcad07d2a4e6e17b9348
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163101"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856340"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>为自定义端口上的基于证书密钥的续订配置证书注册 Web 服务
 
@@ -21,7 +20,7 @@ Ankit Tyagi 支持工程师和 Windows 组
 
 ## <a name="summary"></a>摘要
 
-本文提供了在443以外的自定义端口上实现证书注册策略 Web 服务（CEP）和证书注册 Web 服务（CES）的分步说明，以便基于证书密钥的续订利用自动CEP 和 CES 的续订功能。
+本文提供了在443以外的自定义端口上实现证书注册策略 Web 服务（CEP）和证书注册 Web 服务（CES）的分步说明，以利用 CEP 和 CES 的自动续订功能。
 
 本文还介绍了 CEP 和 CES 如何工作，并提供了安装指南。
 
@@ -231,11 +230,11 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
    181https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
    ```
    
-   ![ADSI 编辑器](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
+   ![ADSI 编辑](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
 
 #### <a name="configure-the-client-computer"></a>配置客户端计算机
 
-在客户端计算机上，设置注册策略和自动注册策略。 要实现此目的，请执行下列步骤：
+在客户端计算机上，设置注册策略和自动注册策略。 要实现这一点，请执行下列操作：
 
 1. 选择 "**开始** > " "**运行**"，然后输入**gpedit.msc**。
 
@@ -279,7 +278,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 打开计算机的 "个人" 证书存储区，然后添加 "存档的证书" 视图。 为此，请将 "本地计算机帐户" 管理单元添加到 mmc.exe，单击 "**证书（本地计算机）"，单击 "证书（本地计算机）** " **，单击右侧**或 mmc 顶部的 "**操作" 选项卡**，单击 "**查看选项**"，选择 "**存档的证书**"，然后单击 **"确定"** 。
 
-### <a name="method-1"></a>方法1 
+### <a name="method-1"></a>方法 1 
 
 运行以下命令：
 
@@ -304,7 +303,7 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 > [!Note]
 > 前面的屏幕截图是演示自动注册引擎按预期工作的示例，因为 CA 日期仍设置为18。 因此，它会继续颁发证书。 在实际情况下，将不会进行大量的续订。
 
-## <a name="references"></a>引用
+## <a name="references"></a>参考
 
 [测试实验室指南：演示基于证书密钥的续订](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj590165(v%3Dws.11))
 

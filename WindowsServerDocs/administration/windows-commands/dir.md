@@ -1,28 +1,22 @@
 ---
 title: dir
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: Dir 的 Windows 命令主题，它显示目录的文件和子目录的列表。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: edcbf69b-eaa4-466e-b210-3dd8892f4d93
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8aeb2b3b7d62ae62ba9b8fa70988cf64060673ca
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 44e50707886df87b217f22bc04edcdaf7496b0d1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79320011"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845560"
 ---
 # <a name="dir"></a>dir
-
-
 
 显示目录的文件和子目录的列表。 如果在没有参数的情况下使用， **dir**将显示磁盘的卷标和序列号，后跟磁盘上的目录和文件的列表（包括它们的名称以及上次修改的日期和时间）。 对于文件， **dir**显示名称扩展名和大小（以字节为单位）。 **Dir**还显示了列出的文件和目录的总数、其累计大小以及磁盘上剩余的可用空间（以字节为单位）。
 
@@ -34,7 +28,7 @@ ms.locfileid: "79320011"
 dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>]][/o[[:]<SortOrder>]] [/t[[:]<TimeField>]] [/s] [/b] [/l] [/n] [/x] [/c] [/4]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
 |参数|说明|
 |---------|-----------|
@@ -44,7 +38,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 |/q|显示文件所有权信息。|
 |/w|以宽格式显示列表，每行最多有五个文件名或目录名称。|
 |/d|以与 **/w**相同的格式显示列表，但文件按列进行排序。|
-|/a [[：]\<特性 >]|仅显示具有指定属性的这些目录和文件的名称。 如果省略 **/a**， **dir**将显示除隐藏文件和系统文件以外的所有文件的名称。 如果在未指定*属性*的情况下使用 **/a** ， **dir**将显示所有文件的名称，包括隐藏文件和系统文件。</br>下面的列表介绍了可用于*特性*的每个值。 使用冒号（:)是可选的。 使用这些值的任意组合，不要将值与空格分隔开。</br>**d 个**目录</br>**h**隐藏文件</br>**s**系统文件</br>**l**重新分析点</br>**r**只读文件</br>准备好存档**的文件**</br>**我**不是内容索引文件</br>**-** 前缀含义为 "not"|
+|/a [[：]\<特性 >]|仅显示具有指定属性的这些目录和文件的名称。 如果省略 **/a**， **dir**将显示除隐藏文件和系统文件以外的所有文件的名称。 如果在未指定*属性*的情况下使用 **/a** ， **dir**将显示所有文件的名称，包括隐藏文件和系统文件。</br>下面的列表介绍了可用于*特性*的每个值。 使用冒号（:)是可选的。 使用这些值的任意组合，不要将值与空格分隔开。</br>**d 个**目录</br>**h**隐藏文件</br>**s**系统文件</br>**l**重新分析点</br>**r**只读文件</br>准备好存档**的文件**</br>**我**不是内容索引文件</br>**-** 前缀含义不是|
 |/o [[：]\<SortOrder >]|根据*SortOrder*排序输出，可以是以下值的任意组合：</br>**按名称**（字母）</br>**e**按扩展（字母）</br>**g**组目录优先</br>**s** （按大小）</br>**d**按日期/时间（首次最早）</br>**-** 反转顺序的前缀</br>注意：使用冒号是可选的。 按列出顺序处理多个值。 不要用空格分隔多个值。</br>如果未指定*SortOrder* ， **dir/o**会按字母顺序列出目录，后跟文件，它们也按字母顺序排序。|
 |/t [[：]\<TimeField >]|指定要显示或用于排序的时间字段。 下面的列表介绍了可用于*TimeField*的每个值：</br>**c**创建</br>**上次访问**</br>**w**上次写入时间|
 |/s|列出指定目录和所有子目录中指定文件名的每个匹配项。|
@@ -63,8 +57,8 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 
   **星号（\*）：** 使用星号代替任意字符串，例如：  
   - **dir \*** 列出当前目录中扩展名以 .txt 开头的所有文件，例如 .txt、. txt1、txt_old。
-  - **dir read\*** 列出当前目录中以 "read" 开头、以 .txt 开头的所有文件（例如 .txt、. txt1 或 txt_old）。
-  - **dir read\*。\*** 会列出当前目录中所有扩展名以 "read" 开头的所有文件。
+  - **dir read\*** 列出当前目录中以 read 开头并以 .txt 开头的所有文件，例如 .txt、. txt1 或 txt_old。
+  - **dir read\*。\*** 列出当前目录中所有扩展名以 "读取" 开头的所有文件。
 
   星号通配符始终使用短文件名映射，因此可能会收到意外的结果。 例如，以下目录包含两个文件（txt2 和 t97）： 
  
@@ -83,7 +77,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 
   你可能希望键入**dir t97\\** * 将返回文件 t97。 但是，键入**dir t97\\** * 将返回这两个文件，因为星号通配符使用短名称映射 T97B4 ~ 1 .txt 将 txt2 到 t97。 同样，在 **\\t97**中键入 del 会删除这两个文件。
 
-  **问号（？）：** 使用问号替换名称中的单个字符。 例如，键入**dir read???。txt**列出当前目录中的所有文件，其扩展名为 .txt，以 "read" 开头并且后跟三个字符。 这包括读取 .txt、Read1、Read12、Read123 和 Readme1，而不是 Readme12 .txt。
+  **问号（？）：** 使用问号替换名称中的单个字符。 例如，键入**dir read???。txt**列出当前目录中所有扩展名为 .txt 的文件，该文件以 read 开头，后跟最多三个字符。 这包括读取 .txt、Read1、Read12、Read123 和 Readme1，而不是 Readme12 .txt。
 - 指定文件显示属性
 
   如果对*属性*中的多个值使用 **/a** ， **dir**只显示那些具有所有指定属性的文件的名称。 例如，如果将 **/a**与**r**和 **-h**一起用作属性（通过使用 **/a： r-h**或 **/ar-h**）， **dir**将只显示未隐藏的只读文件的名称。
@@ -103,7 +97,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 dir /s/w/o/p
 ```
 
-**Dir**列出根目录、子目录以及根目录中的文件（包括扩展名）。 然后， **dir**列出树中每个子目录中的子目录名称和文件名。
+**Dir**命令列出根目录、子目录以及根目录中的文件，包括扩展名。 然后， **dir**列出树中每个子目录中的子目录名称和文件名。
 
 若要更改前面的示例，使**dir**显示文件名称和扩展名，但省略目录名称，请键入：
 
@@ -135,8 +129,8 @@ dir > \records\dir.doc
 dir c:\*.txt /w/o/s/p
 ```
 
-**Dir**以宽格式显示每个目录中匹配文件名的按字母顺序排列的列表，并在每次屏幕填满时暂停，直到你按任意键继续。
+**Dir**命令以宽格式显示每个目录中匹配文件名的按字母顺序排列的列表，并在每次屏幕填满时暂停，直到你按任意键继续。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- - [命令行语法项](command-line-syntax-key.md)

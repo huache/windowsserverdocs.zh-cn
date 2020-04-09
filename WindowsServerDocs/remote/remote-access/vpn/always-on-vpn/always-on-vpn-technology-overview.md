@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 11/05/2018
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: a5d65dd9f8fb6328bd00be8a46af37ee69ccd2bf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 570b96d07f414442a00d5f7ec48de80f270f0a76
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313397"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861310"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN 技术概述
 
@@ -68,7 +68,7 @@ ms.locfileid: "80313397"
 
 IKEv2 是 Internet 工程任务团队请求注释7296中所述的 VPN 隧道协议。 IKEv2 的主要优点是它不必完全了基础网络连接中的中断。 例如，如果连接暂时丢失或用户将客户端计算机从一个网络移到另一个网络，则在重新建立网络连接后，IKEv2 会自动恢复 VPN 连接，而无需用户干预。
 
-通过使用 RAS 网关，你可以部署 VPN 连接，以便为最终用户提供对组织网络和资源的远程访问权限。 当远程计算机连接到 Internet 时，部署 Always On VPN 会在客户端与组织网络之间保持持续连接。 使用 RAS 网关，还可以在不同位置的两个服务器之间创建站点到站点 VPN 连接，例如在主办公室与分支机构之间建立站点到站点 VPN 连接，并使用网络地址转换（NAT），以便网络中的用户可以访问外部资源（如 Internet）。 此外，RAS 网关还支持边界网关协议（BGP），在远程办公室位置也有支持 BGP 的边缘网关时，提供动态路由服务。
+通过使用 RAS 网关，你可以部署 VPN 连接，以便为最终用户提供对组织网络和资源的远程访问权限。 当远程计算机连接到 Internet 时，部署 Always On VPN 会在客户端与组织网络之间保持持续连接。 使用 RAS 网关，还可以在两个服务器之间创建站点到站点 VPN 连接，例如在主办公室与分支机构之间，并使用网络地址转换（NAT），以便网络中的用户可以访问外部资源（如 Internet）。 此外，RAS 网关还支持边界网关协议（BGP），在远程办公室位置也有支持 BGP 的边缘网关时，提供动态路由服务。
 
 你可以通过使用 Windows PowerShell 命令和远程访问 Microsoft 管理控制台（MMC）来管理远程访问服务（RAS）网关。
 
@@ -202,10 +202,10 @@ Windows 10 提供了许多 Csp，但此部署侧重于使用 VPNv2 CSP 来配置
 
 - [域名系统（dns）](../../../../networking/dns/dns-top.md)：本主题提供了域名系统（dns）的概述。 在 Windows Server 2016 中，DNS 是可以使用服务器管理器或 Windows PowerShell 命令安装的服务器角色。 如果要安装新的 Active Directory 林和域，则 DNS 会自动安装 Active Directory 作为林和域的全局目录服务器。
 
-- [Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)：本文档提供 Windows Server®2012中 Active Directory 证书服务（AD CS）的概述。 AD CS 是允许你构建公钥基础机构 (PKI) 并为你的组织提供公钥加密、数字证书和数字签名功能的服务器角色。
+- [Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)：本文档提供 Windows Server&reg; 2012 中 Active Directory 证书服务（AD CS）的概述。 AD CS 是允许你构建公钥基础机构 (PKI) 并为你的组织提供公钥加密、数字证书和数字签名功能的服务器角色。
 
 - [公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)：此 wiki 提供了有关设计公钥基础结构（pki）的指导。 在配置 PKI 和证书颁发机构（CA）层次结构之前，你应该了解你的组织的安全策略和证书实行声明（CPS）。
 
-- [AD CS 循序渐进指南：双层 PKI 层次结构部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：本循序渐进指南介绍了在实验室环境中设置 Active Directory®证书服务（AD CS）的基本配置所需的步骤。 Windows Server 中的 AD CS® 2008 R2 提供可自定义的服务，用于创建和管理在采用公钥技术的软件安全系统中使用的公钥证书。
+- [AD CS 循序渐进指南：双层 PKI 层次结构部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：本循序渐进指南介绍了在实验室环境中设置 Active Directory&reg; 证书服务（AD CS）的基本配置所需的步骤。 Windows Server 中的 AD CS&reg; 2008 R2 提供可自定义的服务，用于创建和管理在采用公钥技术的软件安全系统中使用的公钥证书。
 
 - [网络策略服务器（NPS）](../../../../networking/technologies/nps/nps-top.md)：本主题概述了 Windows server 2016 中的网络策略服务器。 通过网络策略服务器 (NPS)，你可以针对连接请求身份验证和授权创建并实施组织级网络访问策略。

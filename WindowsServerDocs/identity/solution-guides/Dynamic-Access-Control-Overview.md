@@ -1,7 +1,6 @@
 ---
 ms.assetid: 9ee8a6cb-7550-46e2-9c11-78d0545c3a97
 title: 动态访问控制概述
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 343e51f113f54c3965ef45d49f5d8fd64c260991
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2374e2c8a1efb204dbae1ee633bc5ee41d049d57
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357509"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861170"
 ---
 # <a name="dynamic-access-control-overview"></a>动态访问控制概述
 
@@ -40,12 +39,12 @@ Windows Server 2012 和 Windows 8 之前的 Windows 操作系统不支持动态�
   
 -   [建议的权限](#BKMK_Permissions2)  
   
-### <a name="BKMK_Rules"></a>中心访问规则  
+### <a name="central-access-rules"></a><a name="BKMK_Rules"></a>中心访问规则  
 中心访问规则是一个关于授权规则的表达，这个规则可能包括一个或多个涉及用户组、用户声明、设备声明和资源属性的条件。 可以将多个中心访问规则合并为一个中心访问策略。  
   
 如果给一个域定义了一条或多条中心访问规则，文件共享管理员将特定的规则匹配给特定的资源和业务要求。  
   
-### <a name="BKMK_Policies"></a>中心访问策略  
+### <a name="central-access-policies"></a><a name="BKMK_Policies"></a>中心访问策略  
 中央访问策略是包含条件表达式的授权策略。 例如，假设组织需要将文件中的个人身份信息（PII）的访问权限限制为仅允许查看 PII 信息的人力资源（HR）部门的文件所有者和成员。 这表示组织范围的策略适用于整个组织内在文件服务器上的任意位置的 PII 文件。 要实施这个策略，组织必须能够：  
   
 -   确定并标记包含 PII 的文件。  
@@ -56,7 +55,7 @@ Windows Server 2012 和 Windows 8 之前的 Windows 操作系统不支持动态�
   
 中央访问策略可用作组织应用于其内部所有服务器的安全保护伞。 这些策略是应用于文件和文件夹的本地访问策略或自定义访问控制列表 (DACL) 的补充（并非替代）。  
   
-### <a name="BKMK_Claims"></a>支付  
+### <a name="claims"></a><a name="BKMK_Claims"></a>支付  
 声明是关于域控制器发布的用户、设备或资源的一则独特信息。 用户的职位、文件的部门分类或计算机的健康状况都是声明的有效示例。 一个实体可以涉及不止一个声明，而声明的任何组合都可以被用来授权对资源的访问。 在受支持的 Windows 版本中提供了下列类型的声明︰  
   
 -   **用户声明**：与某一特定用户关联的 Active Directory 属性。  
@@ -67,12 +66,12 @@ Windows Server 2012 和 Windows 8 之前的 Windows 操作系统不支持动态�
   
 声明使管理员能够作出准确的组织，或企业范围内，关于用户、设备和资源的声明，它们可被纳入表达式、规则和策略当中。  
   
-### <a name="BKMK_Expressions2"></a>表达  
+### <a name="expressions"></a><a name="BKMK_Expressions2"></a>表达  
 条件表达式是访问控制管理的增强，它仅在特定条件满足的时候允许或拒绝对资源的访问，例如，组成员身份、位置或设备的安全性状态。 表达式通过 ACL 编辑器的高级安全设置对话框或 Active Directory 管理中心 (ADAC) 的中心访问规编辑器进行管理。  
   
 表达式帮助管理员在日益复杂的公司环境中，使用灵活的条件管理对敏感性资源的访问。  
   
-### <a name="BKMK_Permissions2"></a>建议的权限  
+### <a name="proposed-permissions"></a><a name="BKMK_Permissions2"></a>建议的权限  
 计划权限允许管理员更精确地塑造访问控制设置潜在变化的影响，而无需实际改变它们。  
   
 预测对资源的有效访问有助于你在实施那些更改之前，为那些资源计划和配置权限。  
@@ -125,7 +124,7 @@ Windows Server 2012 和 Windows 8 之前的 Windows 操作系统不支持动态�
   
 如果在声明离开林时转换声明，则必须在 Windows Server 2012 或更高版本的功能级别设置用户林根中的所有域控制器。  
   
-运行 Windows Server 2012 或 Windows Server 2012 R2 的文件服务器必须具有一个组策略设置，该设置指定是否需要为不携带声明的用户令牌获取用户声明。 这一设置默认设为“**自动**”，这会导致当存在包含该文件服务器的用户和/或设备声明的中心策略时，“组策略”设置被“**开启**”。 如果文件服务器包含了包括用户声明的自定义 ACL，则必须将这个“组策略”设置为“**开启**”，这样服务器就知道代表访问服务器时不提供声明的用户请求声明。  
+运行 Windows Server 2012 或 Windows Server 2012 R2 的文件服务器必须拥有一个“组策略”设置，指定其是否需要为不携带声明的用户令牌获取用户声明。 这一设置默认设为“**自动**”，这会导致当存在包含该文件服务器的用户和/或设备声明的中心策略时，“组策略”设置被“**开启**”。 如果文件服务器包含了包括用户声明的自定义 ACL，那么你必须将这个“组策略”设置为 **“开启”** ，这样服务器就知道代表访问服务器时不提供声明的用户请求声明。  
   
 ## <a name="additional-resource"></a>其他资源  
 有关基于此技术实现解决方案的信息，请参阅[动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)。  

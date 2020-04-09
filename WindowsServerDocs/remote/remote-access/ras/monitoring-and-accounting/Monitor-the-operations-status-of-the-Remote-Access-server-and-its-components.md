@@ -2,22 +2,18 @@
 title: 监视远程访问服务器及其组件的操作状态
 description: 本主题是 Windows Server 2016 中的远程访问监视和记帐指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 077a3a64-2fa3-4994-9711-ec1fbdc081ba
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 64471ba81842fb91a7f6ef765e171949294102fa
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a93f8100b16da1cabbda8ed3e273a2601adb647a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314184"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860520"
 ---
 # <a name="monitor-the-operations-status-of-the-remote-access-server-and-its-components"></a>监视远程访问服务器及其组件的操作状态
 

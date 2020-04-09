@@ -1,24 +1,20 @@
 ---
 title: 部署新的 Windows MultiPoint 服务系统
 description: 部署新的 MultiPoint 服务环境所需的步骤
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4bac9d1b-bd21-4bc8-8f72-0dd9bb2b3f5d
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: a4ee5145af0dd8cc7d90a2fd7c02ed810157de21
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e152d8d259d0d838147ff11d88423b9ad2204009
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389707"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859750"
 ---
 # <a name="deploy-a-new-windows-multipoint-services-system"></a>部署新的 Windows MultiPoint 服务系统
 本节中的主题介绍如何设置 MultiPoint 服务系统。 将安装和配置 MultiPoint 服务器;设置工作站;安装驱动程序、更新和软件;选择性地加入域;激活 MultiPoint Server;并为每个工作站添加客户端访问许可证（Cal）。  
@@ -26,7 +22,7 @@ ms.locfileid: "71389707"
 > [!IMPORTANT]  
 > 如果尚未计划 MultiPoint 服务部署，请参阅[规划 Windows Multipoint Services 部署](Planning-a-MultiPoint-Services-Deployment.md)。  
   
-## <a name="in-this-section"></a>本节内容  
+## <a name="in-this-section"></a>本部分内容  
 对于初始安装，我们建议您按照这些任务的显示顺序执行这些任务。  
   
 1.  [收集安装所需的硬件和设备驱动程序](Collect-hardware-and-device-drivers-needed-for-the-installation.md)  

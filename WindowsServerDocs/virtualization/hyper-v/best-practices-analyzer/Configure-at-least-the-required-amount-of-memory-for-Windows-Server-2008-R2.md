@@ -2,20 +2,19 @@
 title: 至少为运行 Windows Server 2008 R2 并为动态内存启用的虚拟机配置所需的内存量
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: db0bff4c-39fe-49c1-903a-1f2a0b0db891
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 7745a0399314726ac4d8fa1f67865b43c730464d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9fca177ad73fd11fc56b328ce84186ffe98e370f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365047"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862110"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-server-2008-r2-and-enabled-for-dynamic-memory"></a>至少为运行 Windows Server 2008 R2 并为动态内存启用的虚拟机配置所需的内存量
 
@@ -27,7 +26,7 @@ ms.locfileid: "71365047"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|错误|  
+|**对应**|错误|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  
@@ -55,7 +54,7 @@ ms.locfileid: "71365047"
   
 5.  在 "**动态内存**" 下，将**最小 ram**至少更改为 256 Mb，将**最大 ram**更改为 512 mb。  
   
-6.  单击**确定**。  
+6.  单击“确定”。  
   
 ### <a name="increase-memory-using-windows-powershell"></a>使用 Windows PowerShell 增加内存  
   

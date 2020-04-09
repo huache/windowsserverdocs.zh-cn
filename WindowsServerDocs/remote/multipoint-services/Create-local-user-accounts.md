@@ -1,27 +1,23 @@
 ---
 title: 创建本地用户帐户
 description: 了解 MultiPoint Services 中的 abou thte 三种用户帐户
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 33321932-4266-4961-9924-2cb4620bfcb4
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 874d9cbdb56c59693cb5843a898b9ebd6893d674
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b07c88e4961544f5854f6e9d829b8d4b97adf7e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405110"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859760"
 ---
 # <a name="create-local-user-accounts"></a>创建本地用户帐户
-可以使用 MultiPoint 管理器在中创建三个级别的本地用户帐户：标准用户帐户;具有有限管理权限的 MultiPoint 仪表板用户;和完全管理用户帐户。  
+可以使用 MultiPoint 管理器创建三个级别的本地用户帐户：标准用户帐户;具有有限管理权限的 MultiPoint 仪表板用户;和完全管理用户帐户。  
   
 使用以下过程在 MultiPoint 服务器上创建本地用户帐户。 如果你的环境包含多个多点服务器，并且你希望该用户能够登录到任何服务器上的任何工作站，则需要在每个服务器上创建一个本地用户帐户。 该安装程序存在一些限制。 在域环境中，你还可以让用户使用其域帐户。 有关选项的概述，请参阅为[Windows MultiPoint Services 环境规划用户帐户](Plan-user-accounts-for-your-MultiPoint-services-environment.md)。  
    

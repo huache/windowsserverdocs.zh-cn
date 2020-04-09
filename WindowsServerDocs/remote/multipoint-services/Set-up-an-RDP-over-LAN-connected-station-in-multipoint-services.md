@@ -1,24 +1,20 @@
 ---
 title: 在 MultiPoint Services 中设置通过 LAN 的连接工作站
 description: 了解如何在 MultiPoint Services 中设置基于 RDP 的 LAN 系统
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 60e1a025-c2fb-4708-a3ff-c44c223a3224
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: d0d63a75d3ef6e042d44df0ecf4cc08973e859a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36aaa4c1571ff6dd48ae645b9c7b5746be7c1857
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395001"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853900"
 ---
 # <a name="set-up-an-rdp-over-lan-connected-station-in-multipoint-services"></a>在 MultiPoint Services 中设置通过 LAN 的连接工作站
 使用远程桌面协议（RDP）连接到局域网（LAN）上的 MultiPoint 服务的瘦客户端、传统台式计算机或便携式计算机是一台瘦客户端、传统台式计算机或便携式计算机。 有关此类和其他工作站类型的详细信息，请参阅[MultiPoint 工作站](MultiPoint-services-Stations.md)。  

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6b38480e-5b1c-49f0-9d46-8cf22f70f0d2
 title: 为 Windows Server 2012 R2 中的 AD FS 设置实验室环境
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 52199ab8ca6f82443e78e72c6980746fa561363a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 44de547b0a9c8636b07886d35c451bca6ec46341
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323119"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855170"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>为 Windows Server 2012 R2 中的 AD FS 设置实验室环境
 
@@ -43,12 +42,12 @@ ms.locfileid: "79323119"
 
 4.  [步骤4：配置客户端计算机（Client1）](../../ad-fs/deployment/../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_10)
 
-## <a name="BKMK_1"></a>步骤1：配置域控制器（DC1）
+## <a name="step-1-configure-the-domain-controller-dc1"></a><a name="BKMK_1"></a>步骤1：配置域控制器（DC1）
 在此测试环境中，可以调用根 Active Directory 域**contoso.com** ，并指定<strong>pass@word1</strong>作为管理员密码。
 
 -   安装 AD DS 角色服务并安装 Active Directory 域服务（AD DS）以使你的计算机成为 Windows Server 2012 R2 中的域控制器。 此操作会在创建域控制器的过程中升级你的 AD DS 架构。 有关详细信息和分步说明，请参阅[https://technet.microsoft.com/library/hh472162.aspx](https://technet.microsoft.com/library/hh472162.aspx)。
 
-### <a name="BKMK_2"></a>创建测试 Active Directory 帐户
+### <a name="create-test-active-directory-accounts"></a><a name="BKMK_2"></a>创建测试 Active Directory 帐户
 在你的域控制器起作用后，可以在此域中创建一个测试组和测试用户帐户，并将该用户帐户添加到组帐户。 你可以使用这些帐户来完成本主题前面部分中引用的操作实例指南中的演练。
 
 创建以下帐户：
@@ -74,7 +73,7 @@ ms.locfileid: "79323119"
 
     ```
 
-## <a name="BKMK_4"></a>步骤2：使用设备注册服务配置联合服务器（ADFS1）
+## <a name="step-2-configure-the-federation-server-adfs1-by-using-device-registration-service"></a><a name="BKMK_4"></a>步骤2：使用设备注册服务配置联合服务器（ADFS1）
 若要设置另一台虚拟机，请安装 Windows Server 2012 R2 并将其连接到域**contoso.com**。 在将计算机加入域后设置计算机，然后继续安装和配置 AD FS 角色。
 
 有关视频，请参阅 [Active Directory 联合身份验证服务操作方法视频系列：安装 AD FS 服务器场](https://technet.microsoft.com/video/dn469436)。
@@ -202,7 +201,7 @@ ms.locfileid: "79323119"
     > [!IMPORTANT]
     > 在现实世界部署中，如果你的公司有多个用户主体名称 (UPN) 后缀，则必须创建多个 CNAME 记录，每个记录可用于那些在 DNS 中的 UPN 后缀。
 
-## <a name="BKMK_5"></a>步骤3：配置 web 服务器（WebServ1）和基于声明的示例应用程序
+## <a name="step-3-configure-the-web-server-webserv1-and-a-sample-claims-based-application"></a><a name="BKMK_5"></a>步骤3：配置 web 服务器（WebServ1）和基于声明的示例应用程序
 通过安装 Windows Server 2012 R2 操作系统并将其连接到域**contoso.com**来设置虚拟机（WebServ1）。 在加入域后，你可以继续安装和配置 Web 服务器角色。
 
 若要完成本主题前面部分中所引用的实例操作，你必须具备由联合服务器 (ADFS1) 保护的示例应用程序。
@@ -222,7 +221,7 @@ ms.locfileid: "79323119"
 
 4.  [在联合服务器上创建信赖方信任](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_11)
 
-### <a name="BKMK_15"></a>安装 Web 服务器角色和 Windows Identity Foundation
+### <a name="install-the-web-server-role-and-windows-identity-foundation"></a><a name="BKMK_15"></a>安装 Web 服务器角色和 Windows Identity Foundation
 
 1. > [!NOTE]
    > 你必须具有对 Windows Server 2012 R2 安装媒体的访问权限。
@@ -247,11 +246,11 @@ ms.locfileid: "79323119"
 
 10. 在“确认安装选择”页面上，单击“指定备用源路径”。 输入位于 Windows Server 2012 R2 安装媒体中的 Sxs 目录的路径。 例如，D:\Sources\Sxs。 单击“确定”，再单击“安装”。
 
-### <a name="BKMK_13"></a>安装 Windows Identity Foundation SDK
+### <a name="install-windows-identity-foundation-sdk"></a><a name="BKMK_13"></a>安装 Windows Identity Foundation SDK
 
 1.  运行 Windowsidentityfoundation-sdk-3.5.msi 以安装 Windows Identity Foundation SDK 3.5 （ https://www.microsoft.com/download/details.aspx?id=4451)。 选择所有默认选项。
 
-### <a name="BKMK_9"></a>在 IIS 中配置简单声明应用
+### <a name="configure-the-simple-claims-app-in-iis"></a><a name="BKMK_9"></a>在 IIS 中配置简单声明应用
 
 1.  在计算机证书存储中安装有效的 SSL 证书。 该证书应包含你的 Web 服务器的名称 **webserv1.contoso.com**。
 
@@ -322,7 +321,7 @@ ms.locfileid: "79323119"
 
 你现在必须通过 AD FS 保护在 web 服务器上运行的示例应用程序。 可以通过在你的联合服务器 (ADFS1) 上添加信赖方信任执行此操作。 有关视频，请参阅 [Active Directory 联合身份验证服务操作方法视频系列：添加信赖方信任](https://technet.microsoft.com/video/adfs-how-to-add-a-relying-party-trust)。
 
-### <a name="BKMK_11"></a>在联合服务器上创建信赖方信任
+### <a name="create-a-relying-party-trust-on-your-federation-server"></a><a name="BKMK_11"></a>在联合服务器上创建信赖方信任
 
 1.  在你的联合服务器 (ADFS1) 上，在“AD FS 管理控制台”中，导航到“信赖方信任”，然后单击“添加信赖方信任”。
 
@@ -350,7 +349,7 @@ ms.locfileid: "79323119"
 
 10. 单击“完成”，然后单击“确定”。
 
-## <a name="BKMK_10"></a>步骤4：配置客户端计算机（Client1）
+## <a name="step-4-configure-the-client-computer-client1"></a><a name="BKMK_10"></a>步骤4：配置客户端计算机（Client1）
 设置另一台虚拟机并安装 Windows 8.1。 此虚拟机必须与其他虚拟机在相同的虚拟网络上。 此虚拟机不应加入 Contoso 域。
 
 客户端必须信任用于联合服务器 (ADFS1) 的 SSL 证书（你在 [Step 2: Configure the federation server (ADFS1) with Device Registration Service](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)中设置）。 它还必须能够验证该证书的吊销信息。

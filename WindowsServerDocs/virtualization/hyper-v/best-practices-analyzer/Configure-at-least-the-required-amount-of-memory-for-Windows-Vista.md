@@ -2,20 +2,19 @@
 title: 至少为运行 Windows Vista 并为动态内存启用的虚拟机配置所需的内存量
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: d3de7614-6eee-4839-a939-d390bca9ba89
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d86510f0676c4d542f43d73cc8a5607aabfb3e18
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b140376ee58d2940fb26c5c090e9b454ead9b5ca
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366367"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862070"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-vista-and-enabled-for-dynamic-memory"></a>至少为运行 Windows Vista 并为动态内存启用的虚拟机配置所需的内存量
 
@@ -27,7 +26,7 @@ ms.locfileid: "71366367"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|错误|  
+|**对应**|错误|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  
@@ -55,7 +54,7 @@ ms.locfileid: "71366367"
   
 5.  在 "**动态内存**" 下，将**最小 ram**至少更改为 256 Mb，将**最大 ram**更改为 512 mb。  
   
-6.  单击**确定**。  
+6.  单击“确定”。  
   
 ### <a name="increase-memory-using-windows-powershell"></a>使用 Windows PowerShell 增加内存  
   

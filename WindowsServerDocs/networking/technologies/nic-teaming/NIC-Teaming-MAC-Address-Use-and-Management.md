@@ -2,22 +2,18 @@
 title: NIC 组合 MAC 地址的使用和管理
 description: 当你使用 "交换机独立" 模式配置 NIC 组，并使用 "地址哈希" 或 "动态负载" 分发时，团队将在出站流量上使用主要 NIC 组成员的媒体访问控制（MAC）地址。 主 NIC 组成员是操作系统从一组初始团队成员中选择的网络适配器。
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-nict
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 26d105e0-afc3-44b5-bb5e-0c884a4c5d62
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d8e7130d5774c19cc3d51045786bfef319cf7d16
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a1671b16bdadfcd159bc728f2d39ec45ad82fc0f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316436"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854720"
 ---
 # <a name="nic-teaming-mac-address-use-and-management"></a>NIC 组合 MAC 地址的使用和管理
 

@@ -1,24 +1,19 @@
 ---
 title: Windows Server 2016 中的 hyper-v 网络虚拟化技术详细信息
 description: 本主题提供有关 Windows Server 2016 中的 Hyper-v 网络虚拟化的技术信息
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: virtual-network
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: a8628404de8a1b9caccc7f7f51b063cabb1caf27
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 54fb9eba99a4e6dc565111a3f34c8ccceeca2ff4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317207"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859700"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Windows Server 2016 中的 hyper-v 网络虚拟化技术详细信息
 
@@ -41,7 +36,7 @@ Windows Server 2016 中提供了两种 HNV 实现： HNVv1 和 HNVv2。
 
     HNVv1 与 Windows Server 2012 R2 和 System Center 2012 Virtual Machine Manager R2 （VMM）兼容。 HNVv1 的配置依赖于 WMI 管理和 Windows PowerShell cmdlet （通过 System Center VMM 加速）来定义隔离设置和客户地址（CA）-虚拟网络到物理地址（PA）映射和路由。 在 Windows Server 2016 中没有添加到 HNVv1 的其他功能，并且未计划任何新功能。  
 
-    •集组合和 HNV V1 与平台不兼容。
+    *   集组合和 HNV V1 与平台不兼容。
 
     o 若要使用 HA NVGRE 网关，用户需要使用 LBFO 团队或无需团队。 或
 

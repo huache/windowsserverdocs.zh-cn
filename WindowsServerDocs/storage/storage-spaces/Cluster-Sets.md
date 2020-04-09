@@ -1,19 +1,20 @@
 ---
 title: 群集集
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/30/2019
 description: 本文介绍群集集方案
 ms.localizationpriority: medium
-ms.openlocfilehash: db427e8fa4e5574c6eb7837cf0ab4a9fcc180410
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 3c7ddef1831a82f7fc068ec4241bb1a72bd888bd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639964"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861040"
 ---
 # <a name="cluster-sets"></a>群集集
 
@@ -100,13 +101,13 @@ ms.locfileid: "80639964"
 
 以下注意事项适用于基础结构 SOFS 角色：
 
-1.  在一个故障转移群集上，最多只能有一个 SOFS 群集角色。 基础结构 SOFS 角色是通过将 " **-基础结构**" 交换机参数指定给**ClusterScaleOutFileServerRole** cmdlet 创建的。  例如：
+1.    在一个故障转移群集上，最多只能有一个 SOFS 群集角色。 基础结构 SOFS 角色是通过将 " **-基础结构**" 交换机参数指定给**ClusterScaleOutFileServerRole** cmdlet 创建的。  例如：
 
-        Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
+        ClusterScaleoutFileServerRole-Name "my_infra_sofs_name"-基础结构
 
-2.  在故障转移过程中创建的每个 CSV 卷都将使用基于 CSV 卷名的自动生成的名称来触发创建 SMB 共享。 管理员不能直接创建或修改 SOFS 角色下的 SMB 共享，而不是通过 CSV 卷创建/修改操作。
+2.    在故障转移过程中创建的每个 CSV 卷都将使用基于 CSV 卷名的自动生成的名称来触发创建 SMB 共享。 管理员不能直接创建或修改 SOFS 角色下的 SMB 共享，而不是通过 CSV 卷创建/修改操作。
 
-3.  在超聚合配置中，一种基础结构 SOFS 允许 SMB 客户端（Hyper-v 主机）与基础结构 SOFS SMB 服务器进行通信，以确保持续可用性（CA）。 此超聚合 SMB 环回 CA 是通过访问其虚拟磁盘（VHDx）文件的虚拟机实现的，其中，在客户端和服务器之间转发所属的虚拟机标识。 与之前一样，此标识转发使 ACL 的 VHDx 文件与标准的超聚合群集配置类似。
+3.    在超聚合配置中，一种基础结构 SOFS 允许 SMB 客户端（Hyper-v 主机）与基础结构 SOFS SMB 服务器进行通信，以确保持续可用性（CA）。 此超聚合 SMB 环回 CA 是通过访问其虚拟磁盘（VHDx）文件的虚拟机实现的，其中，在客户端和服务器之间转发所属的虚拟机标识。 与之前一样，此标识转发使 ACL 的 VHDx 文件与标准的超聚合群集配置类似。
 
 创建群集集后，群集集命名空间将依赖于每个成员群集上的基础结构 SOFS，此外还会在管理群集中 SOFS 基础结构。
 

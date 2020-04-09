@@ -1,24 +1,20 @@
 ---
 title: Sc 查询
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac365f89-4b20-4de6-a582-b204c5e7d0eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d2f3f603ad173b5ab90bc56a9a4e589c0fe9d8a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 38d83fa07e9f85f3a5a4b86388bbed41fcf326d1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384342"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835280"
 ---
 # <a name="sc-query"></a>Sc 查询
 
@@ -34,18 +30,18 @@ ms.locfileid: "71384342"
 sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|       参数        |                                                                                                                          描述                                                                                                                          |
+|       参数        |                                                                                                                          说明                                                                                                                          |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     \<ServerName >      |                       指定服务所在的远程服务器的名称。 名称必须使用通用命名约定（UNC）格式（例如 \\\\myserver）。 若要在本地运行 SC.EXE，请省略此参数。                        |
 |     \<ServiceName >     |                                      指定**getkeyname**操作返回的服务名称。 此**查询**参数不与其他**查询**参数一起使用（ *ServerName*除外）。                                      |
 |     type = {driver      |                                                                                                                            服务                                                                                                                            |
 |       type = {自有       |                                                                                                                             共享                                                                                                                             |
-|     state = {active     |                                                                                                                           不用                                                                                                                            |
+|     state = {active     |                                                                                                                           inactive                                                                                                                            |
 | bufsize = \<BufferSize > |                     指定枚举缓冲区的大小（以字节为单位）。 默认缓冲区大小为1024个字节。 当查询生成的显示超过1024个字节时，应增加枚举缓冲区的大小。                      |
 |   ri = \<ResumeIndex >   | 指定枚举开始或恢复的索引号。 默认值为**0** （零）。 当查询返回的详细信息超过默认缓冲区可显示的信息时，请将此参数与**bufsize =** 参数一起使用。 |
-|  group = \<组名 >   |                                                                             指定要枚举的服务组。 默认情况下，将枚举所有组（**group = ""** ）。                                                                              |
+|  group = \<组名 >   |                                                                             指定要枚举的服务组。 默认情况下，会枚举所有组（* * group = * *）。                                                                              |
 |           /?           |                                                                                                             在命令提示符下显示帮助。                                                                                                              |
 
 ## <a name="remarks"></a>备注
@@ -62,7 +58,7 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
   sc query bufsize= 1822 ri= 79
   ```
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要仅显示活动服务的信息，请键入以下命令之一：
 ```
@@ -98,6 +94,6 @@ sc query type= driver
 sc query type= driver group= ndis
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

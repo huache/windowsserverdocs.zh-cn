@@ -1,7 +1,6 @@
 ---
 ms.assetid: d254fca3-85a1-424d-ac22-d6687ec3798e
 title: 为声明感知应用程序和服务提供 Active Directory 用户访问权限
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 48436f8e98af965f2bc2b38d296c4a15924e4db1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0cb530eacfa8239f3a2a135397e54becfadb602b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407955"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858570"
 ---
 # <a name="provide-your-active-directory-users-access-to-your-claims-aware-applications-and-services"></a>为声明感知应用程序和服务提供 Active Directory 用户访问权限
 
@@ -35,9 +34,9 @@ ms.locfileid: "71407955"
     > [!NOTE]  
     > 你还可以使用轻型目录访问协议 \(LDAP\) 或结构化查询语言 \(SQL\) 以包含用于 AD FS 令牌生成的标识。  
   
--   **企业 DNS：** 此域名系统的实现 \(DNS\) 包含一个简单的主机 \(\) 资源记录，以便 intranet 客户端可以找到帐户联合服务器。 DNS 的此实现形式也可以托管企业网络所需的其他 DNS 记录。 有关详细信息，请参阅 [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md)。  
+-   **企业 DNS：** 此域名系统的实现 \(DNS\) 包含一个简单的主机 \(\) 资源记录，以便 intranet 客户端可以找到帐户联合服务器。 DNS 的此实现形式也可以托管企业网络所需的其他 DNS 记录。 有关详细信息，请参阅[联合服务器的名称解析要求](Name-Resolution-Requirements-for-Federation-Servers.md)。  
   
--   **帐户伙伴联合服务器：** 此联合服务器已加入帐户伙伴林中的域。 它对员工用户帐户进行身份验证并生成 AD FS 令牌。 员工的客户端计算机对此联合服务器执行 Windows 集成身份验证，以生成 AD FS 令牌。 有关详细信息，请参阅[查看帐户伙伴中的联合身份验证服务器的角色](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)。  
+-   **帐户伙伴联合服务器：** 此联合服务器已加入帐户伙伴林中的域。 它对员工用户帐户进行身份验证并生成 AD FS 令牌。 员工的客户端计算机对此联合服务器执行 Windows 集成身份验证，以生成 AD FS 令牌。 有关详细信息，请参阅 [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)。  
   
     帐户伙伴联合服务器可对以下用户进行身份验证：  
   

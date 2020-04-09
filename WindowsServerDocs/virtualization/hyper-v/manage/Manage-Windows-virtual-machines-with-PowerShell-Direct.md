@@ -2,25 +2,23 @@
 title: 通过 PowerShell Direct 管理 Windows 虚拟机
 description: 说明如何使用 PowerShell Direct 来管理虚拟机，而无需依赖于网络或与之建立远程连接。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc09093ba2d
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f42e221b073cf199117f85ea96beef4997bbbbc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c4a051de2d8f62c38ae0c44b1a62d5bf9df339e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392742"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859430"
 ---
 # <a name="manage-windows-virtual-machines-with-powershell-direct"></a>通过 PowerShell Direct 管理 Windows 虚拟机
 
->适用于：Windows 10、Windows Server 2016、Windows Server 2019
+>适用于： Windows 10、Windows Server 2016、Windows Server 2019
   
 可以使用 PowerShell Direct 从 Windows 10、Windows server 2016 或 Windows Server 2019 Hyper-v 主机远程管理 Windows 10、Windows Server 2016 或 Windows Server 2019 虚拟机。 当 Hyper-v 主机或虚拟机上的网络配置或远程管理设置不同时，PowerShell Direct 允许在虚拟机中管理 Windows PowerShell。 这使得 Hyper-V 管理员能够更简单地自动化虚拟机管理和配置，并为其编写脚本。  
   
@@ -83,7 +81,7 @@ Invoke-Command -VMName PSTest  -ScriptBlock { cmdlet }
   
 你可以使用[GET VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm) cmdlet 来检查你使用的凭据是否具有 hyper-v 管理员角色，以及如何获取在主机上本地运行并已启动的虚拟机的列表。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [Enter-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)  
 [Exit-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)  
 [调用-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)  

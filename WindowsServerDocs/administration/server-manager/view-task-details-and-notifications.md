@@ -1,24 +1,20 @@
 ---
 title: 查看任务详细信息和通知
 description: 服务器管理器
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95117407-2dd3-4f9a-841f-4331be3544c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3dcbac95e60fce75316f8a4427aef54bdfad15b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0047a9f2d4b6b66cec85b2746b1975af2ced3316
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383018"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851450"
 ---
 # <a name="view-task-details-and-notifications"></a>查看任务详细信息和通知
 
@@ -50,7 +46,7 @@ ms.locfileid: "71383018"
 ## <a name="viewing-and-troubleshooting-tasks-by-using-task-details"></a>使用任务详细信息查看和排查任务
 "**通知**" 菜单底部的 "**任务详细信息**" 命令会打开 "**任务详细信息**" 对话框，其中提供了任务事件的完整描述（启动、停止、警告、成功或失败）。 与服务器管理器中的其他列表控件，如 "**事件**"、"**服务**" 和 "**最佳做法分析器**" 磁贴一样，你可以筛选并创建在 "**任务详细信息**" 对话框中显示的任务上运行的查询。 （有关筛选和创建列表控件查询的详细信息，请参阅[筛选、排序和查询服务器管理器磁贴中的数据](filter-sort-and-query-data-in-server-manager-tiles.md)。）在顶部窗格中，你可以查看 "**通知**" 菜单中显示的通知，并查看对同一任务生成了多少通知。 在顶部窗格中选择一个通知将在底部窗格中显示有关通知的完整详细信息。
 
-底部窗格对于解决失败的任务特别有用。 如果服务器管理器无法连接到作为服务器池成员的服务器或获取数据，此窗格中的条目通常会包含详细的消息，包括基本 Windows 远程管理（WinRM）、网络或安全问题的完整文本阻止服务器管理器与目标服务器进行通信。
+底部窗格对于解决失败的任务特别有用。 如果服务器管理器无法连接到作为服务器池成员的服务器或为其获取数据，此窗格中的条目通常包含详细消息，其中包括基本 Windows 远程管理（WinRM）的完整文本、网络或防止服务器管理器与目标服务器通信的安全问题。
 
 ## <a name="see-also"></a>另请参阅
 [在服务器管理器磁贴中筛选、排序和查询数据](filter-sort-and-query-data-in-server-manager-tiles.md)

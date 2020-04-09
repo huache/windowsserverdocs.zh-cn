@@ -1,7 +1,6 @@
 ---
 ms.assetid: b7109e46-b66e-4c5c-8b87-a6611d68415a
 title: 在仅为外围网络提供服务的 DNS 区域中为联合服务器代理配置名称解析
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: de4627f2e03e6432f4e678cd9ca932819cb483d5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 451ed2bb2b2da9481d33c6e9e339bb582824a4e1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408430"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854920"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-only-the-perimeter-network"></a>在仅为外围网络提供服务的 DNS 区域中为联合服务器代理配置名称解析
 
@@ -31,13 +30,13 @@ ms.locfileid: "71408430"
 ## <a name="add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>将联合服务器的 IP 地址添加到 hosts 文件  
 为了使联合服务器代理在帐户伙伴的外围网络中能够按预期运行，必须在该联合服务器代理上的 hosts 文件中添加一个条目，指向联合服务器的 DNS 主机名 \(例如，fs.fabrikam.com\) 和 IP 地址 \(例如，帐户伙伴的企业网络中的 192.168.1.4\)。 如果将此条目添加到 hosts 文件中，联合服务器代理将无法与自身联系以解析客户端\-启动对帐户伙伴中的联合服务器的调用。  
   
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
   
 #### <a name="to-add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>将联合服务器的 IP 地址添加到 hosts 文件  
   
 1.  导航到% systemroot%\\Winnt\\System32\\驱动程序目录文件夹并找到**hosts**文件。  
   
-2.  启动记事本，然后打开“主机”文件。  
+2.  启动记事本，然后打开 **hosts** 文件。  
   
 3.  将帐户伙伴中的联合服务器的 IP 地址和主机名添加到**hosts**文件中，如以下示例中所示：  
   
@@ -63,7 +62,7 @@ ms.locfileid: "71408430"
   
 4.  在 " **IP 地址**" 中，键入新联合服务器代理的 IP 地址，例如**131.107.27.68**。  
   
-5.  单击“添加主机”。  
+5.  单击 **“添加主机”** 。  
   
 ## <a name="additional-references"></a>其他参考  
 [清单：设置联合服务器代理](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  

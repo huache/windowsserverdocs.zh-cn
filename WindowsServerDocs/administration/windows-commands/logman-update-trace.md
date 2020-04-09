@@ -1,24 +1,20 @@
 ---
 title: logman 更新跟踪
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7111f7f-4162-4d1a-8e53-d766db0ede1f britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c28256826e341ce1421984025546421258bb1db7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d619dc0c267351e842286044cc037e63c75740b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374266"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840510"
 ---
 # <a name="logman-update-trace"></a>logman 更新跟踪
 
@@ -30,9 +26,9 @@ ms.locfileid: "71374266"
 ```  
 logman update trace <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>参数  
+### <a name="parameters"></a>参数  
 
-|                         参数                          |                                                                                                                                                                                                                                                                                                                                描述                                                                                                                                                                                                                                                                                                                                |
+|                         参数                          |                                                                                                                                                                                                                                                                                                                                说明                                                                                                                                                                                                                                                                                                                                |
 |------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                             /?                             |                                                                                                                                                                                                                                                                                                                     显示区分上下文的帮助。                                                                                                                                                                                                                                                                                                                      |
 |                     -s <computer name>                     |                                                                                                                                                                                                                                                                                                           在指定的远程计算机上执行命令。                                                                                                                                                                                                                                                                                                           |
@@ -63,15 +59,15 @@ logman update trace <[-n] <name>> [options]
 |                           -[-] ul                           |                                                                                                                                                                                                                                                                                                                 在用户模式下运行事件跟踪会话。                                                                                                                                                                                                                                                                                                                 |
 |                        -bs.1770 <value>                         |                                                                                                                                                                                                                                                                                                           指定事件跟踪会话缓冲区大小（kb）。                                                                                                                                                                                                                                                                                                            |
 |                       -nb <min max>                        |                                                                                                                                                                                                                                                                                                           指定事件跟踪会话缓冲区的数量。                                                                                                                                                                                                                                                                                                            |
-| -mode < globalsequence&#124;localsequence&#124;pagedmemory > | 指定事件跟踪会话记录器模式。<br /><br />**Globalsequence**指定事件跟踪器将序列号添加到它接收的每个事件，而不考虑哪个跟踪会话收到了该事件。<br /><br />**Localsequence**指定事件跟踪器为在特定跟踪会话中接收的事件添加序列号。 使用**localsequence**选项时，重复的序列号在所有会话中都可能存在，但在每个跟踪会话中是唯一的。<br /><br />**Pagedmemory**指定事件跟踪器使用分页内存而不是默认的非分页内存池来实现其内部缓冲区分配。 |
+| -mode < globalsequence&#124;localsequence&#124;pagedmemory > | 指定事件跟踪会话记录器模式。<p>**Globalsequence**指定事件跟踪器将序列号添加到它接收的每个事件，而不考虑哪个跟踪会话收到了该事件。<p>**Localsequence**指定事件跟踪器为在特定跟踪会话中接收的事件添加序列号。 使用**localsequence**选项时，重复的序列号在所有会话中都可能存在，但在每个跟踪会话中是唯一的。<p>**Pagedmemory**指定事件跟踪器使用分页内存而不是默认的非分页内存池来实现其内部缓冲区分配。 |
 
 ## <a name="remarks"></a>备注  
 其中列出了 [-]，额外-会对选项求反。  
-## <a name="BKMK_examples"></a>示例  
+## <a name="examples"></a><a name=BKMK_examples></a>示例  
 以下命令将更新现有的数据收集器 perf_log，将最大日志大小更改为 10 MB，将日志文件格式更新为 CSV，并以 mmddhhmm 格式追加文件版本控制。  
 ```  
 logman update perf_log -max 10 -f csv -v mmddhhmm  
 ```  
-#### <a name="additional-references"></a>其他参考  
+## <a name="additional-references"></a>其他参考  
 [logman](logman.md)  
 [logman 创建跟踪](logman-create-trace.md)  

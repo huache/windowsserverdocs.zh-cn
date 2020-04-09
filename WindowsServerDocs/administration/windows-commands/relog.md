@@ -1,24 +1,20 @@
 ---
 title: relog
 description: 了解如何从性能 coutner 日志文件提取性能计数器信息。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7480f6c0-9953-4d70-9b1c-b27e09d8db13
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: daedd85f1557c191a690e7eb750559cfd268d3a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ecd06b11c2f055761ed06ef6c9332fb491eaaf3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371623"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836180"
 ---
 # <a name="relog"></a>relog
 
@@ -31,9 +27,9 @@ ms.locfileid: "71371623"
 relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName>] [/f  {bin|csv|tsv|SQL}] [/t <Value>] [/o {OutputFile|DSN!CounterLog}] [/b <M/D/YYYY> [[<HH>:] <MM>:] <SS>] [/e <M/D/YYYY> [[<HH>:] <MM>:] <SS>] [/config {<FileName>|i}] [/q]  
 ```  
 
-### <a name="parameters"></a>参数  
+#### <a name="parameters"></a>参数  
 
-|                                         参数                                          |                                                                                                                                                                  描述                                                                                                                                                                   |
+|                                         参数                                          |                                                                                                                                                                  说明                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                *FileName* [*filename ...* ]                                 |                                                                                                                      指定现有性能计数器日志的路径名。 可以指定多个输入文件。                                                                                                                      |
 |                                             -a                                             |                                                                                                          追加输出文件而不是覆盖。 此选项不适用于默认情况下始终追加的 SQL 格式。                                                                                                           |
@@ -74,7 +70,7 @@ relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName
 
 有关将**重新登录纳入**WINDOWS MANAGEMENT INSTRUMENTATION （WMI）脚本的详细信息，请参阅[Microsoft Windows 资源工具包网站](https://go.microsoft.com/fwlink/?LinkId=4665)上的 "脚本编写 WMI"。  
 
-## <a name="BKMK_Examples"></a>示例  
+## <a name="examples"></a><a name="BKMK_Examples"></a>示例  
 若要按固定的时间间隔（30）对现有跟踪日志进行重新采样，请列出计数器路径、输出文件和格式：  
 ```  
 relog c:\perflogs\daily_trace_log.blg /cf counter_file.txt /o c:\perflogs\reduced_log.csv /t 30 /f csv  
@@ -89,4 +85,4 @@ relog "c:\perflogs\daily_trace_log.blg" -f sql -o "SQL:sql2016x64odbc!counter_lo
 ```
 
 ## <a name="additional-references"></a>其他参考  
--   [命令行语法项](command-line-syntax-key.md)  
+-   - [命令行语法项](command-line-syntax-key.md)  

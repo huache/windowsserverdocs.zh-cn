@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5c8c6cc0-0d22-4f27-a111-0aa90db7d6c8
 title: 规划 AD FS 部署拓扑
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9cd036e9dd0b249197fb475504c9cad532ead0ea
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53364e076a8c3b7d95e8c834a5a7621071ed6061
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408036"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858670"
 ---
 # <a name="plan-your-ad-fs-deployment-topology"></a>规划 AD FS 部署拓扑
 
 规划部署 Active Directory 联合身份验证服务 \(AD FS\) 的第一步是确定正确的部署拓扑以满足组织的需求。  
   
-阅读本主题之前，请先查看如何存储 AD FS 数据并将其复制到联合服务器场中的其他联合服务器，并确保了解的用途以及可用于存储在 AD FS con 中的基础数据的复制方法。f) 数据库。  
+阅读本主题之前，请查看如何存储 AD FS 数据并将其复制到联合服务器场中的其他联合身份验证服务器，并确保了解的用途以及可用于存储在 AD FS 配置数据库中的基础数据的复制方法。  
   
 您可以使用两种数据库类型来存储 AD FS 配置数据： Windows Internal Database \(WID\) 和 Microsoft SQL Server。 有关详细信息，请参阅 [AD FS 配置数据库的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。 查看与使用 WID 或 SQL Server 作为 AD FS 配置数据库相关联的各种优势和限制，以及它们支持的各种应用程序方案，然后进行选择。  
   
@@ -34,11 +33,11 @@ AD FS 使用数据库来存储配置和（在某些情况下）与联合身份�
   
 ||功能|WID 支持吗？|SQL Server 支持吗？
 | --- | --- | --- |--- |
-|AD FS 功能|联合服务器场部署|是。 如果有100个或更少的信赖方信任，则 WID 场的限制为30个联合服务器。</br></br>WID 场不支持令牌重播检测或项目解析（安全断言标记语言（SAML）协议的一部分。 |是。 对可以在单个服务器场中部署的联合服务器数目没有强制限制  
-|AD FS 功能|SAML 项目解析 </br></br>**注意：** 此功能不是 Microsoft Online Services、Microsoft Office 365、Microsoft Exchange 或 Microsoft Office SharePoint 方案所必需的。|否|是  
-|AD FS 功能|SAML\/WS\-联合身份验证令牌重放检测|否|是  
-|数据库功能|使用 "拉" 复制的基本数据库冗余，其中的一个或多个服务器承载读取\-仅数据库请求的副本在承载数据库的\/读写副本的源服务器上所做的更改|是|否 
-|数据库功能|使用高\-可用性解决方案（例如，仅在数据库层上的故障转移群集或镜像 \(提供数据库冗余\)**注意：** 所有 AD FS 部署拓扑都支持 AD FS 服务层的群集。|否|是  
+|AD FS 功能|联合服务器场部署|可以。 如果有100个或更少的信赖方信任，则 WID 场的限制为30个联合服务器。</br></br>WID 场不支持令牌重播检测或项目解析（安全断言标记语言（SAML）协议的一部分。 |可以。 对可以在单个服务器场中部署的联合服务器数目没有强制限制  
+|AD FS 功能|SAML 项目解析 </br></br>**注意：** 此功能不是 Microsoft Online Services、Microsoft Office 365、Microsoft Exchange 或 Microsoft Office SharePoint 方案所必需的。|是|是  
+|AD FS 功能|SAML\/WS\-联合身份验证令牌重放检测|是|是  
+|数据库功能|使用 "拉" 复制的基本数据库冗余，其中的一个或多个服务器承载读取\-仅数据库请求的副本在承载数据库的\/读写副本的源服务器上所做的更改|是|是 
+|数据库功能|使用高\-可用性解决方案（例如，仅在数据库层上的故障转移群集或镜像 \(提供数据库冗余\)**注意：** 所有 AD FS 部署拓扑都支持 AD FS 服务层的群集。|是|是  
 
   
 ## <a name="sql-server-considerations"></a>SQL Server 注意事项  
@@ -53,7 +52,7 @@ AD FS 使用数据库来存储配置和（在某些情况下）与联合身份�
   
 比较而言，在使用 SQL Server 数据库的服务器场中部署的联合服务器不一定包含 AD FS 配置数据库的本地实例。 因此，它们可能会对硬件资源提出略少的要求。  
   
-## <a name="BKMK_1"></a>联合服务器的放置位置  
+## <a name="where-to-place-a-federation-server"></a><a name="BKMK_1"></a>联合服务器的放置位置  
 作为安全方面的最佳做法，请将 AD FS 联合服务器置于防火墙前面，然后将它们连接到企业网络以防止从 Internet 暴露。 这一点很重要，因为联合服务器具有授予安全令牌的完全授权。 因此，它们应具有与域控制器相同的保护。 如果联合服务器泄露，则恶意用户能够向所有 Web 应用程序和受 AD FS 保护的联合服务器颁发完全访问令牌。  
   
 > [!NOTE]  

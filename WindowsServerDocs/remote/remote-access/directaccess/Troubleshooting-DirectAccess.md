@@ -2,22 +2,18 @@
 title: DirectAccess 疑难解答
 description: 本主题提供有关在 Windows Server 2016 中对 DirectAccess 部署进行故障排除的信息。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 61040e19-5960-4eb0-b612-d710627988f7
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6f969dfdaa2932990619c1e545f77615796e7104
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: bfd7d67a84eb6f2af4c52d05f3dc7c69835ed743
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314846"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856240"
 ---
 # <a name="troubleshooting-directaccess"></a>DirectAccess 疑难解答
 
@@ -34,8 +30,8 @@ ms.locfileid: "80314846"
 |遇到与多站点配置相关的问题（例如，启用多站点、添加入口点或为入口点设置域控制器）|按照[对多站点部署进行疑难解答](https://technet.microsoft.com/library/jj554657(v=ws.11).aspx)中的步骤操作。|  
 |仪表板上的 "配置状态" 磁贴显示警告或错误|按照[监视远程访问服务器的配置分发状态](https://technet.microsoft.com/library/jj574221(v=ws.11).aspx)中的步骤进行操作。|  
 |遇到与配置负载平衡相关的问题（例如，启用负载平衡时配置失败，或者当你在群集中添加或删除服务器时出现问题）|如果你启用了负载平衡或添加节点，并且在你单击 "**应用**" 时刷新了配置，但群集未在服务器上正确地进行窗体，请运行以下命令： **cmd.exe/c "reg add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters/f/v DebugFlag/t REG_DWORD/d" "0xffffffff"** "" 来收集新服务器上的用户界面日志。|  
-|"操作状态" 显示在执行以下步骤后出现的错误或警告，以更正此问题|如果操作状态显示不正确的信息（例如错误，即使在修复这些错误之后）：<br /><br />-启用注册表项**cmd.exe/c "reg add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters/f/V EnableTracing/t REG_DWORD/d" "5"** ""。<br />-刷新操作状态并从 **% windir%/tracing**收集日志。|  
-|Windows 8 及更高版本的 DirectAccess 客户端计算机将报告 "无 Internet" 作为 DirectAccess 连接的状态，并且网络连接状态指示器（NCSI）报告限制的连接。|如果在 DirectAccess 配置中启用了强制隧道，则会发生这种情况，因此，只使用 IPHTTPS。 若要解决此问题，你可以创建和配置代理服务器。 然后，NCSI 使用代理服务器执行 Internet 连接检查。 建议使用以下过程将静态代理添加到名称解析策略表（NRPT）。<br /><br />在运行此过程中的命令之前，请确保将所有域名、计算机名称和其他 Windows PowerShell 命令变量替换为适用于你的部署的值。<br /><br />**为 NRPT 规则配置静态代理**<br />1. 显示 "."NRPT 规则： `Get-DnsClientNrptRule -GpoName "corp.example.com\DirectAccess Client Settings" -Server <DomainControllerNetBIOSName>`<br />2. 记下 "." 的名称（GUID）。NRPT 规则。 名称（GUID）应以**DA-{...}** 开头<br />3. 设置 "" 的代理。NRPT 规则到**proxy.corp.example.com:8080**： `Set-DnsClientNrptRule -Name "DA-{..}" -Server <DomainControllerNetBIOSName> -GPOName "corp.example.com\DirectAccess Client Settings" -DAProxyServerName "proxy.corp.example.com:8080" -DAProxyType "UseProxyName"`<br />4. 显示 "."通过运行 `Get-DnsClientNrptRule`再次运行 NRPT 规则，并验证是否现在正确配置了**ProxyFQDN：端口**。<br />5. 刷新组策略，方法是在客户端内部连接时，在 DirectAccess 客户端上运行 `gpupdate /force`，然后使用 `Get-DnsClientNrptPolicy` 显示 NRPT，并验证 "." 规则是否显示**ProxyFQDN： port**。|  
+|"操作状态" 显示在执行以下步骤后出现的错误或警告，以更正此问题|如果操作状态显示不正确的信息（例如错误，即使在修复这些错误之后）：<p>-启用注册表项**cmd.exe/c "reg add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters/f/V EnableTracing/t REG_DWORD/d" "5"** ""。<br />-刷新操作状态并从 **% windir%/tracing**收集日志。|  
+|Windows 8 及更高版本的 DirectAccess 客户端计算机将报告 "无 Internet" 作为 DirectAccess 连接的状态，并且网络连接状态指示器（NCSI）报告限制的连接。|如果在 DirectAccess 配置中启用了强制隧道，则会发生这种情况，因此，只使用 IPHTTPS。 若要解决此问题，你可以创建和配置代理服务器。 然后，NCSI 使用代理服务器执行 Internet 连接检查。 建议使用以下过程将静态代理添加到名称解析策略表（NRPT）。<p>在运行此过程中的命令之前，请确保将所有域名、计算机名称和其他 Windows PowerShell 命令变量替换为适用于你的部署的值。<p>**为 NRPT 规则配置静态代理**<br />1. 显示 "."NRPT 规则： `Get-DnsClientNrptRule -GpoName "corp.example.com\DirectAccess Client Settings" -Server <DomainControllerNetBIOSName>`<br />2. 记下 "." 的名称（GUID）。NRPT 规则。 名称（GUID）应以**DA-{...}** 开头<br />3. 设置 "" 的代理。NRPT 规则到**proxy.corp.example.com:8080**： `Set-DnsClientNrptRule -Name "DA-{..}" -Server <DomainControllerNetBIOSName> -GPOName "corp.example.com\DirectAccess Client Settings" -DAProxyServerName "proxy.corp.example.com:8080" -DAProxyType "UseProxyName"`<br />4. 显示 "."通过运行 `Get-DnsClientNrptRule`再次运行 NRPT 规则，并验证是否现在正确配置了**ProxyFQDN：端口**。<br />5. 刷新组策略，方法是在客户端内部连接时，在 DirectAccess 客户端上运行 `gpupdate /force`，然后使用 `Get-DnsClientNrptPolicy` 显示 NRPT，并验证 "." 规则是否显示**ProxyFQDN： port**。|  
   
 
 

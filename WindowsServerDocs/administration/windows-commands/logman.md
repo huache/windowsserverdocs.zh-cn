@@ -1,36 +1,32 @@
 ---
 title: logman
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 574a5203-5b3b-4759-a678-f26d00dde447
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 420c591a8a6c15d563a344d0450be5eb7da46191
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb6654cce0e23ac08a2fa6334d6144b08c8b65f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374263"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840400"
 ---
 # <a name="logman"></a>logman
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 **logman**创建并管理事件跟踪会话和性能日志，并通过命令行支持性能监视器的许多功能。
 ## <a name="syntax"></a>语法
 ```
 logman [create | query | start | stop | delete| update | import | export | /?] [options]
 ```
-## <a name="actions"></a>操作
-|操作|描述|
+## <a name="actions"></a>Actions
+|操作|说明|
 |-----|--------|
 |[logman create](logman-create.md)|创建计数器、跟踪、配置数据收集器或 API。|
 |[logman query](logman-query.md)|查询数据收集器属性。|

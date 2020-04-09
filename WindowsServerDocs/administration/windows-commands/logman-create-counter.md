@@ -1,24 +1,20 @@
 ---
 title: logman create 计数器
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1e214c32-b704-43c1-b548-e1cf43b583c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3245ce1c153ac0d5fe95ea0c85009e33f71a230c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 416a62331bccc9c646ce0a00ec71b9ef7bb4238d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374561"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840870"
 ---
 # <a name="logman-create-counter"></a>logman create 计数器
 
@@ -30,9 +26,9 @@ ms.locfileid: "71374561"
 ```  
 logman create counter <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>参数  
+### <a name="parameters"></a>参数  
 
-|                    参数                     |                                                                               描述                                                                               |
+|                    参数                     |                                                                               说明                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                        /?                        |                                                                    显示区分上下文的帮助。                                                                     |
 |                -s <computer name>                |                                                          在指定的远程计算机上执行命令。                                                          |
@@ -60,14 +56,14 @@ logman create counter <[-n] <name>> [options]
 
 ## <a name="remarks"></a>备注  
 其中列出了 [-]，额外-会对选项求反。  
-## <a name="BKMK_examples"></a>示例  
+## <a name="examples"></a><a name=BKMK_examples></a>示例  
 下面的命令使用处理器（_Total）计数器类别中的% Processor time 计数器创建名为 perf_log 的计数器。  
 ```  
-logman create counter perf_log -c "\Processor(_Total)\% Processor time"  
+logman create counter perf_log -c \Processor(_Total)\% Processor time  
 ```  
 以下命令使用 "处理器（_Total）" 计数器类别中的 "% Processor time" 计数器创建一个名为 perf_log 的计数器，创建最大大小为 10 MB 的日志文件，并收集1分钟到0秒的数据。  
 ```  
-logman create counter perf_log -c "\Processor(_Total)\% Processor time" -max 10 -rf 01:00  
+logman create counter perf_log -c \Processor(_Total)\% Processor time -max 10 -rf 01:00  
 ```  
-#### <a name="additional-references"></a>其他参考  
+## <a name="additional-references"></a>其他参考  
 [logman](logman.md)  

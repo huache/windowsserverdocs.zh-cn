@@ -2,22 +2,18 @@
 title: 配置多站点部署
 description: 本主题是在 Windows Server 2016 中的多站点部署中部署多台远程访问服务器指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cb84920e-7cf5-4266-b071-d09e3d5e1f10
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4a0229d5605271876f89e8e0ae75f8612e3f5762
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2c2d044c02673d74d7aa8ec076aeac7e2f1aebdb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314009"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858380"
 ---
 # <a name="configure-a-multisite-deployment"></a>配置多站点部署
 

@@ -1,24 +1,20 @@
 ---
 title: bootcfg copy
-description: 适用于**bootcfg copy**的 Windows 命令主题复制-创建现有启动项的副本，您可以将命令行选项添加到该副本中。
-ms.custom: na
+description: 适用于 bootcfg copy 的 Windows 命令主题，它复制现有启动条目，你可以将命令行选项添加到该副本。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2a236c2a-8675-444d-b695-9cbc9aff643b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42a408443cbe6722c25780f7c27d70b05da7eb8e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5194418a07aece4f15a84c3eccbc044431a865b9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380117"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848680"
 ---
 # <a name="bootcfg-copy"></a>bootcfg copy
 
@@ -30,9 +26,9 @@ ms.locfileid: "71380117"
 ```
 bootcfg /copy [/s <computer> [/u <Domain>\<User> /p <Password>]] [/d <Description>] [/id <OSEntryLineNum>]
 ```
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|      参数       |                                                                                             描述                                                                                             |
+|      参数       |                                                                                             说明                                                                                             |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>     |                                         指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                          |
 | /u <Domain>\\<User>  | 使用 <User>或 <Domain>\\<User>指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
@@ -41,10 +37,10 @@ bootcfg /copy [/s <computer> [/u <Domain>\<User> /p <Password>]] [/d <Descriptio
 | /id <OSEntryLineNum> |         指定要复制的 Boot.ini 文件的 [操作系统] 部分中的操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。         |
 |          /?          |                                                                                在命令提示符下显示帮助。                                                                                 |
 
-## <a name="BKMK_examples"></a>示例
-下面的示例演示如何使用**bootcfg/copy**命令复制启动条目1，并输入 "\ABC Server\\" 作为描述：
+## <a name="examples"></a><a name=BKMK_examples></a>示例
+下面的示例演示如何使用**bootcfg/copy**命令复制启动条目1并输入 \ABC Server\\ 作为说明：
 ```
-bootcfg /copy /d "\ABC Server\" /id 1
+bootcfg /copy /d \ABC Server\ /id 1
 ```
-#### <a name="additional-references"></a>其他参考
-[命令行语法项](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他参考
+- [命令行语法项](command-line-syntax-key.md)

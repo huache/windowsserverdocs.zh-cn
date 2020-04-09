@@ -1,24 +1,20 @@
 ---
 title: bootcfg default
-description: 适用于 bootcfg 的 Windows 命令主题**默认值**-指定要指定为默认值的操作系统项。
-ms.custom: na
+description: 适用于 bootcfg 默认值的 Windows 命令主题，它指定要指定为默认的操作系统项。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e21824d7-8278-41d7-a2c5-ce09803d513a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e69868739a9c338b711984ba0f03452f307b430b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 517cf444a5517b3d612266b57b428e47ac60d4ef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380021"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848561"
 ---
 # <a name="bootcfg-default"></a>bootcfg default
 
@@ -30,9 +26,9 @@ ms.locfileid: "71380021"
 ```
 bootcfg /default [/s <computer> [/u <Domain>\<User> /p <Password>]] [/id <OSEntryLineNum>]
 ```
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|      参数       |                                                                                             描述                                                                                              |
+|      参数       |                                                                                             说明                                                                                              |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>     |                                          指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                          |
 | /u <Domain>\\<User>  | 使用 <User> 或 <Domain>\\<User>指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
@@ -40,11 +36,11 @@ bootcfg /default [/s <computer> [/u <Domain>\<User> /p <Password>]] [/id <OSEntr
 | /id <OSEntryLineNum> | 指定 Boot.ini 文件的 [操作系统] 部分中的操作系统条目行号，以指定为默认值。 [操作系统] 部分标题后面的第一行是1。  |
 |          /?          |                                                                                 在命令提示符下显示帮助。                                                                                 |
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 下面的示例演示如何使用**bootcfg/默认 27000**命令：
 ```
 bootcfg /default /id 2
 bootcfg /default /s srvmain /u maindom\hiropln /p p@ssW23 /id 2
 ```
-#### <a name="additional-references"></a>其他参考
-[命令行语法项](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他参考
+- [命令行语法项](command-line-syntax-key.md)

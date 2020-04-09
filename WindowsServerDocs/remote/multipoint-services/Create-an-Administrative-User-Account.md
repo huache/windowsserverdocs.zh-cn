@@ -1,27 +1,23 @@
 ---
 title: 创建管理用户帐户
 description: 在 MultiPoint Services 中创建具有管理权限的帐户
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8ce4c5a9-3dec-412f-910b-54a252f8f209
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 6737f7b96396a13aa18485095e0687425cf8b93e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 72b7517d35d18064806d3df35f2f9ed7b636df8d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389698"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859770"
 ---
 # <a name="create-an-administrative-user-account"></a>创建管理用户帐户
-为将管理 MultiPoint 服务系统的个人创建管理用户帐户。 若要查看具有管理访问权限的人员，请在 MultiPoint 管理器中单击 "**用户**" 选项卡。管理用户帐户在“帐户类型”列中显示为“管理员”。 *管理用户*可以访问更改桌面和系统设置的所有 MultiPoint 管理器任务，例如：  
+为将管理 MultiPoint 服务系统的个人创建管理用户帐户。 若要查看具有管理访问权限的人员，请在 MultiPoint 管理器中单击 "**用户**" 选项卡。管理用户帐户在 "**帐户类型**" 列中显示为**管理员**。 *管理用户*可以访问更改桌面和系统设置的所有 MultiPoint 管理器任务，例如：  
   
 -   创建帐户  
   

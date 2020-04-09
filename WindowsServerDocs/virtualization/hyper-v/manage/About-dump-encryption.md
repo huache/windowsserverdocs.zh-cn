@@ -8,12 +8,12 @@ author: larsiwer
 ms.asset: b78ab493-e7c3-41f5-ab36-29397f086f32
 ms.author: kathydav
 ms.date: 11/03/2016
-ms.openlocfilehash: 2232f62090e171060f25e4c2513a217e2ab98eaa
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a7df8de5a828b68a341191eaa1a400f80dd9127b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950541"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852900"
 ---
 # <a name="about-dump-encryption"></a>关于转储加密
 转储加密可用于加密为系统生成的故障转储和实时转储。 转储使用为每个转储生成的对称加密密钥进行加密。 然后，使用由主机的受信任管理员指定的公钥（故障转储加密密钥保护程序）加密此密钥本身。 这可确保只有具有匹配私钥的人员才能解密并因此访问转储的内容。 此功能在受保护的构造中得以利用。
@@ -23,11 +23,11 @@ ms.locfileid: "75950541"
 ### <a name="manual-configuration"></a>手动配置
 若要使用注册表启用转储加密，请在 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl` 下配置以下注册表值
 
-| 值名称 | 在任务栏的搜索框中键入 | Value |
+| 值名称 | 类型 | 值 |
 | ---------- | ---- | ----- |
 | DumpEncryptionEnabled | DWORD | 1若要启用转储加密，请使用0禁用转储加密 |
-| EncryptionCertificates\Certificate.1：:P ublicKey | 二进制 | 用于加密转储的公钥（RSA，2048位）。 这必须设置为[BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx)格式。 |
-| EncryptionCertificates\Certificate.1：： Thumbprint | 字符串 | 允许在解密故障转储时自动查找本地证书存储中的私钥的证书指纹。 |
+| EncryptionCertificates\Certificate.1：:P ublicKey | Binary | 用于加密转储的公钥（RSA，2048位）。 这必须设置为[BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx)格式。 |
+| EncryptionCertificates\Certificate.1：： Thumbprint | String | 允许在解密故障转储时自动查找本地证书存储中的私钥的证书指纹。 |
 
 
 ### <a name="configuration-using-script"></a>使用脚本进行配置

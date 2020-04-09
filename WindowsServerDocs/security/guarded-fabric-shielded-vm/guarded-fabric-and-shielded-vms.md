@@ -1,18 +1,18 @@
 ---
 title: 受保护的构造和受防护的 VM 概述
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: ace6eb30ae6df2dc29aacc05eb7852e03145df4f
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: edcf2e011b701904fb8c1b27d4f9b7d13415b2a8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79321989"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856900"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>受保护的构造和受防护的 VM 概述
 
@@ -89,9 +89,9 @@ HGS 和创建受防护的 VM 的方法可帮助提供下列保证。
 
 受保护的构造能够以三种可能的方式之一运行 VM：
 
-1.  常规 VM 不提供超越 Hyper-V 之前版本的任何保护功能
-2.  支持加密的 VM 的保护功能可由构造管理员配置
-3.  受防护的 VM 的保护功能均已打开，并且不能由构造管理员禁用
+1.    常规 VM 不提供超越 Hyper-V 之前版本的任何保护功能
+2.    支持加密的 VM 的保护功能可由构造管理员配置
+3.    受防护的 VM 的保护功能均已打开，并且不能由构造管理员禁用
 
 支持加密的 VM 旨在用于构造管理员完全受信任的地方。  例如，企业可以部署受保护的构造，以确保 VM 磁盘可以静态加密来达到相容目的。 构造管理员可以继续使用方便的管理功能，例如 VM 控制台连接、PowerShell Direct 及其他日常管理和故障排除工具。
 

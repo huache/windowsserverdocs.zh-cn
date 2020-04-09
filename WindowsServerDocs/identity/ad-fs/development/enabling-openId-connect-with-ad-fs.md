@@ -1,7 +1,6 @@
 ---
 ms.assetid: d282bb4e-38a0-4c7c-83d8-f6ea89278057
 title: 使用 OpenID Connect 和 AD FS 2016 及更高版本构建 web 应用程序
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9b3d64558c27e7b4bda20b6af27e02d55431c94d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49d952a49cf474708f57a0ae2a7760d2470af607
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358793"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857490"
 ---
 # <a name="build-a-web-application-using-openid-connect-with-ad-fs-2016-and-later"></a>使用 OpenID Connect 和 AD FS 2016 及更高版本构建 web 应用程序
 
@@ -34,13 +33,13 @@ ms.locfileid: "71358793"
 
 1.  在 AD FS 管理 "中，右键单击" 应用程序组 "，然后选择"**添加应用程序组**"。  
 
-2.  在应用程序组向导上，为 "输入**ADFSSSO** "，在 "**客户端-服务器应用程序**" 下，选择 " **web 浏览器访问 web 应用程序**" 模板。  单击“下一步”。
+2.  在应用程序组向导上，为 "输入**ADFSSSO** "，在 "**客户端-服务器应用程序**" 下，选择 " **web 浏览器访问 web 应用程序**" 模板。  单击 **“下一步”** 。
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_1.PNG)  
 
 3.  复制 "**客户端标识符**" 值。  稍后将在应用程序的 web.config 文件中将其用作 ida： ClientId 的值。  
 
-4.  对于 "**重定向 URI** - "，请输入以下内容： **https://localhost:44320/** 。  单击**添加**。 单击“下一步”。  
+4.  为 "**重定向 URI：**  -  **https://localhost:44320/** 输入以下内容。  单击 **“添加”** 。 单击 **“下一步”** 。  
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)  
 
@@ -118,7 +117,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
         -   我们不是使用授权来传达有关受信任颁发者的数据，而是通过 MetadataAddress 直接指定发现文档位置  
 
-        -   Azure AD 不会强制在请求中存在 redirect_uri，但 ADFS 会执行此项。 那么，我们需要在此添加  
+        -   Azure AD 不会强制在请求中存在 redirect_uri，但 ADFS 确实如此。 那么，我们需要在此添加  
 
 ## <a name="verify-the-app-is-working"></a>验证应用是否正在运行  
 进行上述更改后，按 F5。  这将显示示例页。  单击 "登录"。  

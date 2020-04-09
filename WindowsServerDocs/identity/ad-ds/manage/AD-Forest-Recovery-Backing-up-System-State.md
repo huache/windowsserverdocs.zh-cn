@@ -1,6 +1,5 @@
 ---
 title: AD 林恢复-备份完整服务器
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 9238cb27-0020-42f7-90d6-fcebf7e3c0bc
 ms.technology: identity-adds
-ms.openlocfilehash: 14aa7abc19573b76ebc144cb6dea5f510b45e269
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 321f927a3efc4f2391daff92ac4c8b7acb47c055
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369347"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824276"
 ---
 # <a name="ad-forest-recovery---backing-up-the-system-state-data"></a>AD 林恢复-备份系统状态数据  
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 使用以下过程在 DC 上使用 Windows Server 备份或 wbadmin 执行系统状态备份。  
 

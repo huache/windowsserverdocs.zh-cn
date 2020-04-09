@@ -1,7 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
 title: 配置 AD FS Extranet 锁定保护
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtilman
@@ -9,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9ef595cc98a95caca0f2043b011868e0573a5b19
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 28f7fc4a8c7129d9f88cc030b1b150db44321bf9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407700"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859940"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS Extranet 锁定和 Extranet 智能锁定
 
@@ -39,17 +38,17 @@ ESL 仅适用于通过 extranet 使用 Web 应用程序代理或第三方代理�
 
 所有辅助节点将通过端口80与每个全新登录上的主节点联系，以了解错误密码计数和新的常见位置值的最新值，并在处理登录名后更新该节点。
 
-![配置](media/configure-ad-fs-extranet-smart-lockout-protection/esl1.png)
+![configuration](media/configure-ad-fs-extranet-smart-lockout-protection/esl1.png)
 
  如果辅助节点无法联系主节点，它会将错误事件写入 AD FS 管理日志中。 将继续处理身份验证，但 AD FS 将仅在本地写入更新的状态。 AD FS 将每10分钟重试一次，并将在主节点可用后切换回主节点。
 
 ### <a name="terminology"></a>术语
-- **FamiliarLocation**：在身份验证请求期间，ESL 将检查所有提供的 Ip。 这些 ip 将是网络 IP、转发 IP 和可选的 x 转发的 IP 的组合。 如果请求成功，则所有 Ip 都作为 "熟悉的 Ip" 添加到 "帐户" 活动表。 如果请求包含 "熟悉的 Ip" 中的所有 Ip，请求将被视为 "熟悉的" 位置。
-- **Unknownlocation.xsd**：如果传入的请求中至少有一个 IP 未出现在现有 "FamiliarLocation" 列表中，则该请求将被视为 "未知" 位置。 这是为了处理代理方案，例如 Exchange online 旧身份验证，其中 Exchange Online 地址处理成功和失败的请求。  
+- **FamiliarLocation**：在身份验证请求期间，ESL 将检查所有提供的 ip。 这些 ip 将是网络 IP、转发 IP 和可选的 x 转发的 IP 的组合。 如果请求成功，则所有 Ip 都作为 "熟悉的 Ip" 添加到 "帐户" 活动表。 如果请求包含 "熟悉的 Ip" 中的所有 Ip，请求将被视为 "熟悉的" 位置。
+- **Unknownlocation.xsd**：如果传入的请求中至少有一个 IP 未出现在现有的 "FamiliarLocation" 列表中，则该请求将被视为 "未知" 位置。 这是为了处理代理方案，例如 Exchange online 旧身份验证，其中 Exchange Online 地址处理成功和失败的请求。  
 - **badPwdCount**：一个值，表示提交错误密码和身份验证失败的次数。 对于每个用户，单独的计数器保存在熟悉的位置和未知位置。
 - **UnknownLockout**：如果用户被锁定，无法从未知位置访问，则为每个用户的布尔值。 此值是基于 badPwdCountUnfamiliar 和 ExtranetLockoutThreshold 值计算得出的。
 - **ExtranetLockoutThreshold**：此值决定错误密码尝试的最大次数。 达到阈值时，ADFS 将拒绝来自 extranet 的请求，直到达到 "观察" 窗口。
-- **ExtranetObservationWindow**：此值确定未知位置的用户名和密码请求被锁定的持续时间。当窗口通过后，ADFS 将开始再次从未知位置执行用户名和密码身份验证。
+- **ExtranetObservationWindow**：此值确定来自未知位置的用户名和密码请求被锁定的持续时间。当窗口通过后，ADFS 将开始再次从未知位置执行用户名和密码身份验证。
 - **ExtranetLockoutRequirePDC**：启用后，extranet 锁定需要主域控制器（PDC）。 禁用后，如果 PDC 不可用，extranet 锁定将回退到另一个域控制器。  
 - **ExtranetLockoutMode**：控制仅记录与强制执行的 Extranet 智能锁定模式
     - **ADFSSmartLockoutLogOnly**：已启用 Extranet 智能锁定，但 AD FS 仅写入管理和审核事件，但不会拒绝身份验证请求。 此模式最初旨在允许在启用 "ADFSSmartLockoutEnforce" 前填充 FamiliarLocation。
@@ -58,13 +57,13 @@ ESL 仅适用于通过 extranet 使用 Web 应用程序代理或第三方代理�
 支持 IPv4 和 IPv6 地址。
 
 ### <a name="anatomy-of-a-transaction"></a>事务解析
-- **预身份验证检查**：在身份验证请求期间，ESL 将检查所有提供的 Ip。 这些 ip 将是网络 IP、转发 IP 和可选的 x 转发的 IP 的组合。 在审核日志中，这些 ip <IpAddress>在字段中以 x-e 转发的-客户端 ip （x-e）---e-
+- **预身份验证检查**：在身份验证请求期间，ESL 将检查所有提供的 ip。 这些 ip 将是网络 IP、转发 IP 和可选的 x 转发的 IP 的组合。 在审核日志中，这些 Ip 在 "<IpAddress>" 字段中以 x-e 转发的-客户端 ip 的 x-e--e-
 
-  根据这些 Ip，ADFS 确定请求是来自熟悉还是不熟悉的位置，然后检查各自的 badPwdCount 是否小于设置阈值限制，或者上次**失败**尝试是否比观察时段时间长期限. 如果满足这些条件之一，ADFS 将允许此事务进行进一步的处理和凭据验证。 如果这两个条件都为 false，则在观察窗口通过之前，该帐户已处于锁定状态。 观察窗口通过后，允许用户尝试一次身份验证。 请注意，在2019中，ADFS 会根据 IP 地址是否与熟悉的位置匹配来检查适当的阈值限制。
-- **成功登录**：如果登录成功，则会将请求中的 Ip 添加到用户的熟悉位置 IP 列表。  
-- **登录失败**：如果登录失败，badPwdCount 会增加。 如果攻击者向系统发送的密码超过阈值允许的数量，用户将进入锁定状态。 （badPwdCount > ExtranetLockoutThreshold）  
+  根据这些 Ip，ADFS 确定请求是来自熟悉还是不熟悉的位置，然后检查各自的 badPwdCount 是否小于设置阈值限制，或者上次**失败**尝试是否比观察时段时间范围长。 如果满足这些条件之一，ADFS 将允许此事务进行进一步的处理和凭据验证。 如果这两个条件都为 false，则在观察窗口通过之前，该帐户已处于锁定状态。 观察窗口通过后，允许用户尝试一次身份验证。 请注意，在2019中，ADFS 会根据 IP 地址是否与熟悉的位置匹配来检查适当的阈值限制。
+- **成功登录**：如果登录成功，则会将请求中的 ip 添加到用户的熟悉位置 IP 列表。  
+- **登录失败**：如果登录失败，badPwdCount 将增加。 如果攻击者向系统发送的密码超过阈值允许的数量，用户将进入锁定状态。 （badPwdCount > ExtranetLockoutThreshold）  
 
-![配置](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
+![configuration](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
 
 当帐户被锁定时，"UnknownLockout" 值将等于 true。这意味着用户的 badPwdCount 超过了阈值，即有人尝试使用的密码比系统允许的多。 在此状态下，有效的用户可以通过2种方式登录。
 - 用户必须等待 ObservationWindow 时间或
@@ -145,7 +144,7 @@ ESL 仅适用于通过 extranet 使用 Web 应用程序代理或第三方代理�
 此功能利用了安全审核日志，因此必须在 AD FS 和所有 AD FS 服务器上的本地策略中启用审核。
 
 ### <a name="configuration-instructions"></a>配置说明
-Extranet 智能锁定使用 ADFS 属性**ExtranetLockoutEnabled**。 此属性以前用于控制服务器2012R2 中的 "Extranet 软锁定"。 如果启用了 Extranet 软锁定，若要查看当前属性配置，请` Get-AdfsProperties`运行。
+Extranet 智能锁定使用 ADFS 属性**ExtranetLockoutEnabled**。 此属性以前用于控制服务器2012R2 中的 "Extranet 软锁定"。 如果启用了 Extranet 软锁定，若要查看当前属性配置，请运行 ` Get-AdfsProperties`。
 
 ### <a name="configuration-recommendations"></a>配置建议
 配置 Extranet 智能锁定时，请遵循设置阈值的最佳方案：  
@@ -154,7 +153,7 @@ Extranet 智能锁定使用 ADFS 属性**ExtranetLockoutEnabled**。 此属性�
 
 `ExtranetLockoutThreshold: – 2x AD Threshold Value`
 
-AD 值：20，ExtranetLockoutThreshold：10
+AD 值：20、ExtranetLockoutThreshold：10
 
 Active Directory 锁定独立于 Extranet 智能锁定工作。 但是，如果启用 Active Directory 锁定，则 AD FS AD 中 < 帐户锁定阈值的 ExtranetLockoutThreshold
 
@@ -213,13 +212,13 @@ AD FS 提供了三个用于管理帐户活动数据的 cmdlet。 这些 cmdlet �
 
 `Get-ADFSAccountActivity user@contoso.com`
 
-  属性:
-    - BadPwdCountFamiliar:从已知位置成功进行身份验证时递增。
-    - BadPwdCountUnknown:当身份验证从未知位置失败时递增
-    - LastFailedAuthFamiliar:如果身份验证不成功，则将 LastFailedAuthUnknown 设置为不成功的身份验证的时间
-    - LastFailedAuthUnknown:如果未知位置的身份验证失败，则将 LastFailedAuthUnknown 设置为不成功的身份验证的时间
-    - FamiliarLockout:如果 "BadPwdCountFamiliar" > ExtranetLockoutThreshold，则为 "True" 的布尔值。
-    - UnknownLockout:如果 "BadPwdCountUnknown" > ExtranetLockoutThreshold，则为 "True" 的布尔值。  
+  属性：
+    - BadPwdCountFamiliar：在从已知位置成功进行身份验证时递增。
+    - BadPwdCountUnknown：在未知位置的身份验证失败时递增
+    - LastFailedAuthFamiliar：如果身份验证不成功，则将 LastFailedAuthUnknown 设置为不成功的身份验证的时间
+    - LastFailedAuthUnknown：如果未知位置的身份验证失败，则将 LastFailedAuthUnknown 设置为不成功的身份验证的时间
+    - FamiliarLockout：如果 "BadPwdCountFamiliar" > ExtranetLockoutThreshold，则为 "True" 的布尔值。
+    - UnknownLockout：如果 "BadPwdCountUnknown" > ExtranetLockoutThreshold，则为 "True" 的布尔值。  
     - FamiliarIPs：最多可为用户所熟悉的20个 Ip。 超过此限制时，将删除列表中最早的 IP。
 -    ADFSAccountActivity
 
@@ -248,22 +247,22 @@ AD FS 会将 extranet 锁定事件写入安全审核日志：
 在 "仅日志" 模式下，你可以查看安全审核日志中的锁定事件。 对于找到的任何事件，你可以使用 ADFSAccountActivity cmdlet 检查用户状态，以确定是否从熟悉或不熟悉的 IP 地址进行了锁定，并再次检查该用户的熟悉 IP 地址的列表。
 
 
-|事件 ID|描述|
+|事件 ID|说明|
 |-----|-----|
-|1203|此事件是针对每个错误密码尝试而编写的。 一旦 badPwdCount 达到 ExtranetLockoutThreshold 中指定的值，该帐户将在 ADFS 中被锁定，以在 ExtranetObservationWindow 中指定的持续时间。</br>活动 ID：% 1</br>XML：% 2|
-|1201|每次锁定用户时都会写入此事件。 </br>活动 ID：% 1</br>XML：% 2|
-|557（ADFS 2019）| 尝试与节点% 1 上的帐户存储 rest 服务进行通信时出错。 如果这是一个 WID 场，则主节点可能处于脱机状态。 如果这是 SQL 场，ADFS 会自动选择一个新节点来托管用户存储主机角色。|
-|562（ADFS 2019）|Communcating 服务器% 1 上的帐户存储终结点时出错。</br>异常消息：% 2|
-|563（ADFS 2019）|计算 extranet 锁定状态时出错。 由于% 1 的值将允许此用户进行身份验证，因此令牌颁发将继续。 如果这是一个 WID 场，则主节点可能处于脱机状态。 如果这是 SQL 场，ADFS 会自动选择一个新节点来托管用户存储主机角色。</br>帐户存储服务器名称：% 2</br>用户 Id：% 3</br>异常消息：% 4|
-|512|已锁定以下用户的帐户。由于系统配置，允许登录尝试。</br>活动 ID：% 1 </br>用户：% 2 </br>客户端 IP：% 3 </br>错误的密码计数：% 4  </br>上次错误密码尝试：% 5|
-|515|以下用户帐户处于锁定状态，并且刚刚提供了正确的密码。 此帐户可能已泄露。</br>其他数据 </br>活动 ID：% 1 </br>用户：% 2 </br>客户端 IP：% 3 |
-|516|由于无效的密码尝试次数过多，以下用户帐户已被锁定。</br>活动 ID：% 1  </br>用户：% 2  </br>客户端 IP：% 3  </br>错误的密码计数：% 4  </br>上次错误密码尝试：% 5|
+|1203|此事件是针对每个错误密码尝试而编写的。 一旦 badPwdCount 达到 ExtranetLockoutThreshold 中指定的值，该帐户将在 ADFS 中被锁定，以在 ExtranetObservationWindow 中指定的持续时间。</br>活动 ID： %1</br>XML： %2|
+|1201|每次锁定用户时都会写入此事件。 </br>活动 ID： %1</br>XML： %2|
+|557（ADFS 2019）| 尝试与节点 %1 上的帐户存储 rest 服务进行通信时出错。 如果这是一个 WID 场，则主节点可能处于脱机状态。 如果这是 SQL 场，ADFS 会自动选择一个新节点来托管用户存储主机角色。|
+|562（ADFS 2019）|Communcating 服务器 %1 上的帐户存储终结点时出错。</br>异常消息： %2|
+|563（ADFS 2019）|计算 extranet 锁定状态时出错。 由于 %1 的值将允许此用户进行身份验证，因此令牌颁发将继续。 如果这是一个 WID 场，则主节点可能处于脱机状态。 如果这是 SQL 场，ADFS 会自动选择一个新节点来托管用户存储主机角色。</br>帐户存储服务器名称： %2</br>用户 Id： %3</br>异常消息： %4|
+|512|已锁定以下用户的帐户。由于系统配置，允许登录尝试。</br>活动 ID： %1 </br>用户： %2 </br>客户端 IP： %3 </br>错误的密码计数： %4  </br>上次错误密码尝试： %5|
+|515|以下用户帐户处于锁定状态，并且刚刚提供了正确的密码。 此帐户可能已泄露。</br>其他数据 </br>活动 ID： %1 </br>用户： %2 </br>客户端 IP： %3 |
+|516|由于无效的密码尝试次数过多，以下用户帐户已被锁定。</br>活动 ID： %1  </br>用户： %2  </br>客户端 IP： %3  </br>错误的密码计数： %4  </br>上次错误密码尝试： %5|
 
 ## <a name="esl-frequently-asked-questions"></a>ESL 常见问题
 
 **在强制模式下使用 Extranet 智能锁定的 ADFS 场是否会发现恶意用户锁定？** 
 
-答：如果 ADFS 智能锁定设置为 "强制" 模式，则永远不会看到合法用户的帐户被暴力破解或拒绝服务锁定。 恶意帐户锁定可阻止用户登录的唯一方法是：如果错误的执行组件具有用户密码，或者可以为该用户发送已知良好（熟悉）的 IP 地址的请求。 
+答：如果 ADFS 智能锁定设置为 "强制" 模式，则永远不会看到由暴力破解或拒绝服务锁定的合法用户帐户。 恶意帐户锁定可阻止用户登录的唯一方法是：如果错误的执行组件具有用户密码，或者可以为该用户发送已知良好（熟悉）的 IP 地址的请求。 
 
 **启用了 ESL 并且错误的执行组件具有用户密码会发生什么情况？** 
 
@@ -271,7 +270,7 @@ AD FS 会将 extranet 锁定事件写入安全审核日志：
 
 **如果我的用户从未从某一 IP 成功登录，然后多次尝试使用错误的密码，他们最后键入正确的密码，他们将能够登录？** 
 
-答：如果用户提交多个错误密码（例如合法的错误键入），并且在以下尝试获得密码更正后，用户将立即成功登录。  这会清除错误的密码计数，并将该 IP 添加到 FamiliarIPs 列表中。  但是，如果它们超过未知位置的失败登录阈值，它们将进入 "正在锁定" 状态，并将需要等待 "观察" 窗口，并使用有效密码登录，或者需要管理员干预来重置其帐户。  
+答：如果用户提交多个错误密码（即合法的错误键入），并且在以下尝试获得密码更正后，用户将立即成功登录。  这会清除错误的密码计数，并将该 IP 添加到 FamiliarIPs 列表中。  但是，如果它们超过未知位置的失败登录阈值，它们将进入 "正在锁定" 状态，并将需要等待 "观察" 窗口，并使用有效密码登录，或者需要管理员干预来重置其帐户。  
  
 **ESL 是否也适用于 intranet？**
 
@@ -279,12 +278,12 @@ AD FS 会将 extranet 锁定事件写入安全审核日志：
 
 **我在 "客户端 IP" 字段中看到 Microsoft IP 地址。ESL 是否会阻止 EXO 除外代理暴力攻击？**  
 
-答：ESL 可以非常有效地阻止 Exchange Online 或其他旧身份验证暴力破解攻击方案。 旧身份验证的 "活动 ID" 为00000000-0000-0000-0000-000000000000。 在这些攻击中，糟糕的执行组件利用 Exchange Online 基本身份验证（也称为传统身份验证），因此客户端 IP 地址显示为 Microsoft。 云中的 Exchange online 服务器代表 Outlook 客户端验证身份验证。 在这些情况下，恶意提交者的 IP 地址将位于 "x-毫秒-转发的客户端 ip" 中，Microsoft Exchange Online server IP 将为 "x-ms-客户端-ip" 值。
+答： ESL 可以很好地防止 Exchange Online 或其他旧身份验证暴力破解攻击方案。 旧身份验证的 "活动 ID" 为00000000-0000-0000-0000-000000000000。 在这些攻击中，糟糕的执行组件利用 Exchange Online 基本身份验证（也称为传统身份验证），因此客户端 IP 地址显示为 Microsoft。 云中的 Exchange online 服务器代表 Outlook 客户端验证身份验证。 在这些情况下，恶意提交者的 IP 地址将位于 "x-毫秒-转发的客户端 ip" 中，Microsoft Exchange Online server IP 将为 "x-ms-客户端-ip" 值。
 Extranet 智能锁定检查网络 Ip、转发的 Ip、x 转发的客户端 IP 和 x-客户端 ip 值。 如果请求成功，则所有 Ip 都将添加到熟悉的列表。 如果请求传入，并且任何提供的 Ip 不在熟悉的列表中，则该请求将被标记为不熟悉。 熟悉的用户将无法成功登录，同时会阻止来自不熟悉位置的请求。  
 
-\* * 问：在启用 ESL 之前，是否可以估算 ADFSArtifactStore 的大小？
+\* * 问：是否可以在启用 ESL 之前估算 ADFSArtifactStore 的大小？
 
-答：在启用 ESL 的情况下，AD FS 在 ADFSArtifactStore 数据库中跟踪用户的帐户活动和已知位置。 此数据库相对于所跟踪的用户数和已知位置进行缩放。 当计划启用 ESL 时，可以估算 ADFSArtifactStore 数据库的大小，以每100000用户最多1GB 的速率增长。 如果 AD FS 场使用 Windows 内部数据库（WID），则数据库文件的默认位置为 C:\Windows\WID\Data\。 若要防止填充此驱动器，请确保在启用 ESL 前至少有5GB 的可用存储。 除了磁盘存储以外，还应计划在启用 ESL 后增加的总进程内存，使其达到500000或更低的用户人口的额外内存。
+答：如果启用了 ESL，AD FS 将跟踪 ADFSArtifactStore 数据库中用户的帐户活动和已知位置。 此数据库相对于所跟踪的用户数和已知位置进行缩放。 当计划启用 ESL 时，你可以估算 ADFSArtifactStore 数据库的大小，以每 100,000 个用户最多 1GB 的速率增长。 如果 AD FS 场使用 Windows 内部数据库（WID），则数据库文件的默认位置为 C:\Windows\WID\Data\。 若要防止填充此驱动器，请在启用 ESL 之前确保至少有 5GB 的可用存储空间。 除了磁盘存储，还应在启用 ESL 后为 500,000 及以下的用户群体增加最多 1GB 的RAM，从而计划增加总进程内存。
 
 
 ## <a name="additional-references"></a>其他参考  

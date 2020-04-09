@@ -1,22 +1,18 @@
 ---
 title: 管理 Active Directory 管理中心中的不同域
-ms.prod: windows-server
 description: Windows Server 安全
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.assetid: 166351c3-4076-48be-aa8f-797adf1e9d68
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 71edf6bb38cc665fe5c780ce986d0c0b8807d6ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6690ffbc558db4026c3fe67168907ca953ad4081
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386928"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856980"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>管理 Active Directory 管理中心中的不同域
 
@@ -24,7 +20,7 @@ ms.locfileid: "71386928"
 
   当你打开 Active Directory 管理 "时，你当前登录到此计算机上的域将 \(本地域\) 出现在 Active Directory 管理中心导航窗格中 \(左窗格\)。 根据当前登录凭据集的权限，你可以查看或管理本地域中的 Active Directory 对象。
 
- 你还可以使用相同的一组登录凭据和 Active Directory 管理中心的同一个实例来查看或管理同一林中的任何其他域中的 Active Directory 对象，或者使用与本地域名. 同时支持两种\-方式信任和两种\-的信任。
+ 你还可以使用相同的一组登录凭据和 Active Directory 管理中心的同一个实例来查看或管理同一林中的任何其他域中的 Active Directory 对象或与本地域建立了信任关系的另一个林中的域。 同时支持两种\-方式信任和两种\-的信任。
 
 > [!NOTE]
 >  如果域 a 和域 B 之间存在一种\-方式信任，域 A 中的用户可以访问域 B 中的资源，但是域 B 中的用户无法访问域 A 中的资源，如果在域 A 所属的计算机上运行 Active Directory 管理中心，则可以使用当前的一组登录凭据和在同一 Active Directory 管理中心实例中连接到域 B。 但如果在域 B 是本地域的计算机上运行 Active Directory 管理中心，则无法使用同一 Active Directory 管理中心实例中的相同凭据集连接到域 A。
@@ -74,7 +70,7 @@ ms.locfileid: "71386928"
 
    有关自定义 Active Directory 管理中心导航窗格的详细信息，请参阅[自定义 Active Directory 管理中心导航窗格](customize-the-active-directory-administrative-center-navigation-pane.md)。
 
-   你还可以通过使用一组不同于当前登录凭据集的登录凭据来打开 Active Directory 管理中心。 如果你使用普通用户凭据登录到运行 Active Directory 管理中心的计算机，但你想要在此计算机上使用 Active Directory 管理中心来管理你的作为管理员的本地域。 如果你想要使用 Active Directory 管理中心以远程方式管理与你的本地域不同的外域，并使用与当前登录凭据集不同的一组凭据，\(此命令也会很有用。 但是，外部域必须与本地域建立了信任关系。\)
+   你还可以通过使用一组不同于当前登录凭据集的登录凭据来打开 Active Directory 管理中心。 如果你使用普通用户凭据登录到运行 Active Directory 管理中心的计算机，但你想要在此计算机上使用 Active Directory 管理中心来以管理员身份管理本地域，则以下过程中的命令可能非常有用。 如果你想要使用 Active Directory 管理中心以远程方式管理与你的本地域不同的外域，并使用与当前登录凭据集不同的一组凭据，\(此命令也会很有用。 但是，外部域必须与本地域建立了信任关系。\)
 
    不需要任何最低组成员身份即可完成此过程。
 

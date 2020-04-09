@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
-author: Heidilohr
-ms.openlocfilehash: 0a109d0bfc4fc09b5e8097059d68b728d17752a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+author: heidilohr
+ms.openlocfilehash: 13167dad848ac31827c42045360e45c76718207a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383379"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851590"
 ---
 # <a name="what-is-server-core-2008"></a>什么是 Server Core 2008？
->适用于：Windows Server 2008
+>适用于： Windows Server 2008
 
 >[!NOTE]
 >此信息适用于 Windows Server 2008。 有关 Windows Server 中的服务器核心的信息，请参阅[什么是 Windows server 中的服务器核心安装](https://docs.microsoft.com/windows-server/administration/server-core/what-is-server-core)。 
@@ -25,7 +25,7 @@ ms.locfileid: "71383379"
 
 **表 1-1**Windows Server 2008 版本及其对安装选项的支持
 
-| 版本       | 完全          | 服务器核心  |
+| 版本类别       | 完全          | 服务器核心  |
 | ------------- | :-------------: | :------------: |
 | Windows Server 2008 Standard （x86 和 x64）       | X | X        |
 | Windows Server 2008 企业版（x86 和 x64）       | X | X        |
@@ -43,14 +43,14 @@ ms.locfileid: "71383379"
 
 **图 1-1**选择要安装的服务器核心安装选项
 
-在图1-1 中，你的批量许可（或产品密钥，适用于零售媒体）提供了两个可供选择的安装选项：第二个选项（Windows Server 2008 Enterprise 的完整安装）和第五个选项（Windows 的服务器核心安装服务器2008企业版），在此示例中选择后者。 
+在图1-1 中，你的批量许可证（或零售媒体的产品密钥）提供了两个可供选择的安装选项：第二个选项（Windows Server 2008 Enterprise 的完整安装）和第五个选项（Windows Server 2008 Enterprise 的服务器核心安装），后者在此示例中选择了后者。 
 
 ## <a name="full-vs-server-core"></a>完全与服务器核心 
 自 Microsoft Windows 平台早期以来，Windows server 本质上是 "所有内容" 服务器，其中包含所有类型的功能，其中一些功能在你的网络环境中永远不会实际使用。 例如，当你在系统上安装 Windows Server 2003 时，将在你的服务器上安装路由和远程访问服务（RRAS）的二进制文件，即使你不需要此服务也是如此（尽管你仍必须配置并启用 RRAS，然后才能正常运行）。 Windows Server 2008 仅在您选择在服务器上安装该特定角色时，通过安装服务器角色所需的二进制文件来改善早期版本。 但是，Windows Server 2008 的完全安装选项仍将安装许多服务和其他组件，这些组件通常不需要特定的使用方案。 
 
 这就是 Microsoft 创建了第二个安装选项（服务器核心，适用于 Windows Server 2008）的原因：为了消除对某些常用服务器角色的支持不重要的任何服务和其他功能。 例如，域名系统（DNS）服务器实际上不需要安装 Windows Internet Explorer，因为出于安全原因，你不想从 DNS 服务器浏览 Web。 并且 DNS 服务器甚至不需要图形用户界面（GUI），因为你可以通过命令行使用强大的 Dnscmd 命令来管理几乎所有方面的 DNS，或使用 DNS Microsoft 管理控制台（MMC）管理单元远程管理。
 
-为避免出现这种情况，Microsoft 决定从 Windows Server 2008 中去除所有内容，这些都是运行核心网络服务（如 Active Directory 域服务（AD DS）、DNS、动态主机配置协议（DHCP）、文件和打印以及其他一些服务器角色。 结果为 "新服务器核心" 安装选项，该选项可用于创建仅支持有限数量的角色和功能的服务器。 
+为避免这种情况，Microsoft 决定从 Windows Server 2008 中去除所有内容，这些都不是运行核心网络服务（如 Active Directory 域服务（AD DS）、DNS、动态主机配置协议（DHCP）、文件和打印以及一些其他服务器角色）所必需的。 结果为 "新服务器核心" 安装选项，该选项可用于创建仅支持有限数量的角色和功能的服务器。 
 
 ## <a name="the-server-core-gui"></a>服务器核心 GUI
 在系统上完成安装 Server Core 并首次登录时，你会感到惊讶。 图1-2 显示第一次登录后的服务器核心用户界面。
@@ -59,7 +59,7 @@ ms.locfileid: "71383379"
 
 **图 1-2**服务器核心用户界面
 
-没有桌面！ 也就是说，没有 Windows 资源管理器 shell，其 "开始" 菜单、任务栏以及您可能会看到的其他功能。 你只是一个命令提示符，这意味着，你必须使用一次键入一个命令（速度较慢，或使用脚本和批处理文件）来配置服务器核心安装，这可以帮助你加速和简化 configurati通过自动执行任务。 你还可以在执行服务器核心的无人参与安装时使用应答文件来执行某些初始配置任务。 
+没有桌面！ 也就是说，没有 Windows 资源管理器 shell，其 "开始" 菜单、任务栏以及您可能会看到的其他功能。 你只是命令提示符，这意味着，你必须执行以下操作：通过一次键入一个命令（速度较慢，或使用脚本和批处理文件）来配置服务器核心安装，这可以帮助你通过自动执行配置任务来加速和简化配置任务。 你还可以在执行服务器核心的无人参与安装时使用应答文件来执行某些初始配置任务。 
 
 对于在使用诸如 dism.exe、Dfscmd 和 Dnscmd 之类的命令行工具的专家，使用命令行工具的管理员，配置和管理服务器核心安装可能很容易，甚至很有趣。 但对于不是专家的用户，所有这些都不会丢失。 你仍可以使用标准 Windows Server 2008 MMC 工具来管理服务器核心安装。 你只需在运行完整安装的 Windows Server 2008 或带有 Service Pack 1 的 Windows Vista 的其他系统上使用它们。 
 
@@ -109,13 +109,13 @@ ms.locfileid: "71383379"
 | Active Directory 权限管理服务 (AD RMS)  | X  |  |
 | 应用程序服务器  | X  |  |
 | DHCP 服务器  | X  | X |
-| DNS 服务器  | X  | X |
+| DNS Server  | X  | X |
 | 传真服务器  | X  |  |
 | 文件服务  | X  | X |
 | Hyper-V  | X | X |
-| 网络策略和访问服务  | X  |  |
+| Network Policy and Access Services  | X  |  |
 | 打印服务  | X  | X |
-| 流式媒体服务  | X  | X |
+| 流媒体服务  | X  | X |
 | 终端服务  | X  |  |
 | UDDI 服务  | X  |  |
 | Web 服务器 (IIS) | X | X |
@@ -135,7 +135,7 @@ ms.locfileid: "71383379"
 | 功能  | 完全安装中提供  | 在服务器核心中提供  |
 | ------------- | :-------------: | :------------: |
 | .NET Framework 3.0 功能  | X  |  |
-| BitLocker 驱动器加密  | X  | X |
+| BitLocker Drive Encryption  | X  | X |
 | BITS 服务器扩展  | X  |  |
 | 连接管理器管理工具包  | X |  |
 | 桌面体验  | X |  |
@@ -144,7 +144,7 @@ ms.locfileid: "71383379"
 | Internet 打印客户端  | X  |  |
 | Internet 存储名称服务器  | X  |  |
 | LPR 端口监视器  | X  |  |
-| 消息队列  | X  |  |
+| 消息队列（可能为英文网页）  | X  |  |
 | 多路径 IO  | X  | X |
 | 网络负载平衡  | X  | X |
 | 对等名称解析协议  | X  |  |
@@ -155,9 +155,9 @@ ms.locfileid: "71383379"
 | 可移动存储管理器 | X  | X |
 | HTTP 代理上的 RPC | X  |  |
 | 简单 TCP/IP 服务  | X  |  |
-| SMTP 服务器  | X  |  |
+| SMTP Server  | X  |  |
 | SMNP 服务  | X  | X  |
-| San 存储管理器  | X  |  |
+| SAN 存储管理器  | X  |  |
 | 基于 UNIX 的应用程序的子系统 | X | X  |
 | Telnet 客户端  | X | X  |
 | Telnet 服务器  | X   |  |
@@ -165,7 +165,7 @@ ms.locfileid: "71383379"
 | Windows 内部数据库  | X  |  |
 | Windows PowerShell  | X  |  |
 | Windows 产品激活服务  | X   |  |
-| Windows Server 备份功能  | X  | X  |
+| Windows Server Backup 功能  | X  | X  |
 | Windows 系统资源管理器  | X  |  |
 | WINS 服务器  | X | X |
 | 无线 LAN 服务 | X  |  |
@@ -178,7 +178,7 @@ ms.locfileid: "71383379"
 深入更深入地了解了 Server Core，接下来让我们简单了解一下 Windows Server 2008 的服务器核心安装的体系结构，并将其与完全安装的体系结构进行比较。 首先，请记住，服务器核心不是不同版本的 Windows Server 2008，而只是安装选项，可以在将 Windows Server 2008 安装到系统时选择此选项。 这表示：
 * 服务器核心安装上的内核在相同硬件体系结构（x86 或 x64）和版本的完全安装上找到的同一个。 
 * 如果某个二进制文件存在于服务器核心安装中，则相同硬件体系结构（x86 或 x64）和版本的完全安装将具有该特定二进制文件的相同版本（稍后将介绍两个例外）。 
-* 如果特定的设置（例如，特定的防火墙例外或特定服务的启动类型）在服务器核心安装上具有特定的默认配置，则该设置的配置方式完全相同。硬件体系结构（x86 或 x64）和版本。
+* 如果特定的设置（例如，特定的防火墙例外或特定服务的启动类型）在服务器核心安装上具有特定的默认配置，则在完全安装相同硬件体系结构（x86 或 x64）和版本时，该设置的配置方式完全相同。
 
 图1-3 显示了 Windows Server 2008 的完全安装和服务器核心安装的体系结构的简化视图。 点线指示服务器核心的结构，而整个关系图表示完全安装的体系结构。 
 
@@ -200,7 +200,7 @@ ms.locfileid: "71383379"
 
 请注意，对于此处显示的三个设备类别中的每一个，服务器核心都包含在相应的完全安装上找到的相同内置驱动程序（适用于同一硬件体系结构）。 
 
-此外，当 PnP 子系统自动安装新设备的驱动程序时，它会以静默方式执行此操作，而不会显示气球弹出通知。 为什么不呢？ 因为服务器核心上没有 GUI，所以任务栏上没有通知区域！ 
+此外，当 PnP 子系统自动安装新设备的驱动程序时，它会以静默方式执行此操作，而不会显示气球弹出通知。 为什么？ 因为服务器核心上没有 GUI，所以任务栏上没有通知区域！ 
 
 那么，当你将打印服务角色添加到服务器核心安装时，你要执行什么操作，并且你想要安装打印机？ 手动将打印机驱动程序添加到服务器-服务器核心没有内置的打印驱动程序。
 
@@ -211,15 +211,15 @@ ms.locfileid: "71383379"
 
 **表 1-5**默认情况下，在 Server Core 上安装的系统服务
 
-| 服务名称  | Display name  | 启动模式  | 帐户  |
+| Service name  | 显示名称  | 启动模式  | Account  |
 | ------------- | ------------- | ------------ | ------------ |
 | AeLookupSvc  | 应用程序体验  | 自动 | LocalSystem |
-| AppMgmt  | 应用程序管理  | Manual | LocalSystem |
-| BFE | 基本筛选引擎  | 自动 | LocalService |
+| AppMgmt  | 应用程序管理  | 手动 | LocalSystem |
+| BFE | 基础筛选引擎  | 自动 | LocalService |
 | BITS | 后台智能传送服务  | 自动 | LocalSystem |
-| Browser | 计算机浏览器  | Manual | LocalSystem |
-| CertPropSvc | 证书传播  | Manual | LocalSystem |
-| COMSysApp  | COM+ 系统应用程序  | Manual | LocalSystem |
+| 浏览器 | 计算机浏览器  | 手动 | LocalSystem |
+| CertPropSvc | 证书传播  | 手动 | LocalSystem |
+| COMSysApp  | COM+ System Application  | 手动 | LocalSystem |
 | CryptSvc  | 加密服务  | 自动 | 网络服务 |
 | DcomLaunch  | DCOM 服务器进程启动器  | 自动 | LocalSystem |
 | Dhcp  | DHCP 客户端  | 自动 | LocalService |
@@ -227,59 +227,59 @@ ms.locfileid: "71383379"
 | DPS  | 诊断策略服务  | 自动 | LocalService |
 | 事件日志 | Windows 事件日志  | 自动 | LocalService |
 | EventSystem  | COM+ 事件系统  | 自动 | LocalService |
-| FCRegSvc  | Microsoft 光纤通道平台注册服务  | Manual | LocalService |
+| FCRegSvc  | Microsoft 光纤通道平台注册服务  | 手动 | LocalService |
 | gpsvc  | 组策略客户端  | 自动 | LocalSystem |
-| hidserv | 人体学接口设备访问  | Manual | LocalSystem |
-| hkmsvc  | 运行状况密钥和证书管理  | Manual | LocalSystem |
-| IKEEXT  | IKE 和 AuthIP IPsec 密钥模块  | 自动 | LocalSystem |
+| hidserv | 人体学接口设备访问  | 手动 | LocalSystem |
+| hkmsvc  | 运行状况密钥和证书管理  | 手动 | LocalSystem |
+| IKEEXT  | IKE 和 AuthIP IPsec 关键模块  | 自动 | LocalSystem |
 | iphlpsvc  | IP 帮助程序  | 自动 | LocalSystem |
-| KeyIso | CNG 密钥隔离  | Manual | LocalSystem |
+| KeyIso | CNG 密钥隔离  | 手动 | LocalSystem |
 | KtmRm  | 适用于分布式事务处理协调器的 KtmRm  | 自动 | 网络服务 |
 | LanmanServer  | Server  | 自动 | LocalSystem |
 | LanmanWorkstation  | Workstatione  | 自动 | LocalService |
-| lltdsvc  | 链路层拓扑发现映射器  | Manual | LocalService |
+| lltdsvc  | 链路层拓扑发现映射程序  | 手动 | LocalService |
 | lmhosts  | TCP/IP NetBIOS 帮助程序  | 自动 | LocalService |
 | MpsSvc  | Windows 防火墙  | 自动 | LocalService |
 | MSDTC  | 分布式事务处理协调器  | 自动 | 网络服务 |
-| MSiSCSI  | Microsoft iSCSI 发起程序服务  | Manual | LocalSystem |
-| msiserver  | Windows Installer  | Manual | LocalSystem |
-| napagent  | 网络访问保护代理  | Manual | 网络服务 |
-| Netlogon  | Netlogon  | Manual | LocalSystem |
+| MSiSCSI  | Microsoft iSCSI 发起程序服务  | 手动 | LocalSystem |
+| msiserver  | Windows Installer  | 手动 | LocalSystem |
+| napagent  | 网络访问保护代理  | 手动 | 网络服务 |
+| Netlogon  | Netlogon  | 手动 | LocalSystem |
 | netprofm  | 网络列表服务  | 自动 | LocalService |
-| NlaSvc  | 网络位置感知  | 自动 | 网络服务 |
+| NlaSvc  | 网络位置识别  | 自动 | 网络服务 |
 | nsi  | 网络存储接口服务  | 自动 | LocalService |
-| pla  | 性能日志和警报  | Manual | LocalService |
+| pla  | 性能日志和警报  | 手动 | LocalService |
 | PlugPlay  | 即插即用  | 自动 | LocalSystem |
 | PolicyAgent  | IPsec 策略代理  | 自动 | 网络服务 |
 | ProfSvc  | 用户配置文件服务  | 自动 | LocalSystem |
-| ProtectedStorage  | 受保护的存储  | Manual | LocalSystem |
+| ProtectedStorage  | 受保护的存储  | 手动 | LocalSystem |
 | RemoteRegistry  | 远程注册表  | 自动 | LocalService |
 | RpcSs  | 远程过程调用 (RPC)  | 自动 | 网络服务 |
-| RSoPProv | 策略提供程序的结果集  | Manual | LocalSystem |
-| sacsvr  | 特殊管理控制台帮助程序  | Manual | LocalSystem |
+| RSoPProv | 策略提供程序的结果集  | 手动 | LocalSystem |
+| sacsvr  | 特殊管理控制台帮助程序  | 手动 | LocalSystem |
 | SamSs  | 安全帐户管理器  | 自动 | LocalSystem |
-| SCardSvr | 智能卡  | Manual | LocalService |
+| SCardSvr | 智能卡  | 手动 | LocalService |
 | 计划 | 任务计划程序  | 自动 | LocalSystem |
-| SCPolicySvc | 智能卡移除策略  | Manual | LocalSystem |
+| SCPolicySvc | 智能卡移除策略  | 手动 | LocalSystem |
 | seclogon | 辅助登录  | 自动 | LocalSystem |
 | SENS | 系统事件通知服务  | 自动 | LocalSystem |
-| SessionEnv | 终端服务配置  | Manual | LocalSystem |
+| SessionEnv | 终端服务配置  | 手动 | LocalSystem |
 | slsvc  | 软件授权 | 自动 | 网络服务 |
-| SNMPTRAP  | SNMP 陷阱  | Manual | LocalService |
-| swprv  | Microsoft 软件卷影复制提供程序 | Manual | LocalSystem |
-| TBS | TPM 基本服务  | Manual | LocalService |
+| SNMPTRAP  | SNMP 陷阱  | 手动 | LocalService |
+| swprv  | Microsoft 软件卷影副本提供程序 | 手动 | LocalSystem |
+| TBS | TPM 基本服务  | 手动 | LocalService |
 | TermService  | 终端服务 | 自动 | 网络服务 |
 | TrustedInstaller | Windows 模块安装程序  | 自动 | LocalSystem |
-| UmRdpService | 终端服务 UserMode 端口重定向程序  | Manual | LocalSystem |
-| vds | 虚拟磁盘  | Manual | LocalSystem |
-| VSS | 卷影复制  | Manual | LocalSystem |
+| UmRdpService | 终端服务 UserMode 端口重定向程序  | 手动 | LocalSystem |
+| vds | 虚拟磁盘  | 手动 | LocalSystem |
+| VSS | 卷影复制  | 手动 | LocalSystem |
 | W32Time | Windows 时间  | 自动 | LocalService |
-| WcsPlugInService  | Windows 颜色系统  | Manual | LocalService |
-| WdiServiceHost  | 诊断服务主机  | Manual | LocalService |
-| WdiSystemHost  | 诊断系统主机  | Manual | LocalSystem |
-| Wecsvc | Windows 事件收集器  | Manual | 网络服务 |
+| WcsPlugInService  | Windows 颜色系统  | 手动 | LocalService |
+| WdiServiceHost  | 诊断服务主机  | 手动 | LocalService |
+| WdiSystemHost  | 诊断系统主机  | 手动 | LocalSystem |
+| Wecsvc | Windows 事件收集器  | 手动 | 网络服务 |
 | WinHttpAuto-ProxySvc  | WinHTTP Web 代理自动发现服务  | 自动 | LocalService |
 | Winmgmt | Windows Management Instrumentation | 自动 | LocalSystem |
 | WinRM  | Windows 远程管理 (WS-Management) | 自动 | 网络服务 |
-| wmiApSrv  | WMI 性能适配器  | Manual | LocalSystem |
-| wuauserv | Windows 更新 | 自动 | LocalSystem |
+| wmiApSrv  | WMI 性能适配器  | 手动 | LocalSystem |
+| wuauserv | Windows Update | 自动 | LocalSystem |

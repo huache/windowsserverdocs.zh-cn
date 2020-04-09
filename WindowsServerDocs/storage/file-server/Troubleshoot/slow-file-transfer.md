@@ -3,16 +3,15 @@ title: SMB 文件传输速度缓慢
 description: 介绍如何排查 SMB 文件传输性能问题。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 0e6c049404f464eba872075a8ef5060b303920c8
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: af05daa164b5b2c5eca73eff51d97d4c25ba1ca3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654558"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815390"
 ---
 # <a name="slow-smb-files-transfer-speed"></a>SMB 文件传输速度缓慢
 
@@ -66,7 +65,7 @@ ms.locfileid: "75654558"
 
 此问题通常发生在 WAN 连接上。 这种情况很常见，通常是由 Office 应用程序（特别是 Microsoft Excel）访问和读取数据的方式引起的。
 
-建议确保办公室和 SMB 的二进制文件是最新的，然后通过在 SMB 服务器上禁用租约来进行测试。 要实现此目的，请执行下列步骤：
+建议确保办公室和 SMB 的二进制文件是最新的，然后通过在 SMB 服务器上禁用租约来进行测试。 要实现这一点，请执行下列操作：
    
 1. 在 Windows 8 和 Windows Server 2012 或更高版本的 Windows 中运行以下 PowerShell 命令：
       

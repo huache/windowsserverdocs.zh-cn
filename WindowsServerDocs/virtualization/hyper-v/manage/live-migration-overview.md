@@ -2,20 +2,18 @@
 title: 实时迁移概述
 description: 概述 Windows Server 2016 中的实时迁移功能。
 ms.prod: windows-server
-ms.service: na
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5cc875ab-05c4-439e-b27d-6bfc77054660
 author: johncslack
 ms.author: joslack
 ms.date: 06/27/2017
-ms.openlocfilehash: ba239343728502c4928b86a2a0d4a3db5c36e7f6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 11fd67f5b4b3c9ce6a8aebe7dac4008f38d0f08e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392546"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815170"
 ---
 # <a name="live-migration-overview"></a>实时迁移概述
 
@@ -25,15 +23,15 @@ ms.locfileid: "71392546"
 
 实时迁移通常与一些相关技术（如故障转移群集和 System Center Virtual Machine Manager）结合使用。  如果在通过这些技术使用实时迁移，以下是指向其最新文档的指针：
 * [故障转移群集](../../../failover-clustering/failover-clustering-overview.md)（Windows Server 2016） 
-* [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/)（系统中心2016） 
+* [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/) （系统中心2016） 
 
 如果你使用的是较旧版本的 Windows Server，或需要有关更早版本的 Windows Server 中引入的功能的详细信息，请参阅以下指向历史文档的指针： 
 * [实时迁移](https://technet.microsoft.com/library/ee815293(v=ws.10).aspx)（Windows Server 2008 R2）  
 * [实时迁移](https://technet.microsoft.com/library/hh831435(v=ws.11).aspx)（Windows Server 2012 R2） 
 * [故障转移群集](https://technet.microsoft.com/library/hh831579(v=ws.11).aspx)（Windows Server 2012 R2）
 * [故障转移群集](https://technet.microsoft.com/library/ff182338(v=ws.10).aspx)（Windows Server 2008 R2）
-* [System Center Virtual Machine Manager](https://technet.microsoft.com/library/gg610610.aspx)（System Center 2012 R2）
-* [System Center Virtual Machine Manager](https://technet.microsoft.com/library/cc917964.aspx)（System Center 2008 R2）
+* [System Center Virtual Machine Manager](https://technet.microsoft.com/library/gg610610.aspx) （System Center 2012 R2）
+* [System Center Virtual Machine Manager](https://technet.microsoft.com/library/cc917964.aspx) （System Center 2008 R2）
 
 ## <a name="live-migration-in-windows-server-2016"></a>Windows Server 2016 中的实时迁移
 

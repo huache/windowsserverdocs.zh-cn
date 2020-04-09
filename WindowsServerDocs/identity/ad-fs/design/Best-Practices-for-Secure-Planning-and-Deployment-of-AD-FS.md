@@ -1,7 +1,6 @@
 ---
 ms.assetid: 963a3d37-d5f1-4153-b8d5-2537038863cb
 title: AD FS 安全规划和部署的最佳做法
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: be488ccffee7b267d2a3a120b85436abf206f65a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcddb3cc7534f45f0a84e25a6174648f1e3b82af
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359198"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858410"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>AD FS 安全规划和部署的最佳做法
 
@@ -62,7 +61,7 @@ ms.locfileid: "71359198"
     |独立联合服务器|Windows 内部数据库|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
     |加入场的联合服务器|Windows 内部数据库|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
     |加入场的联合服务器|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
-    |联合服务器代理|N/A|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
+    |联合身份验证服务器代理|不可用|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
     有关可以用于 AD FS 的数据库的详细信息，请参阅 [AD FS 配置数据库的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
@@ -83,7 +82,7 @@ ms.locfileid: "71359198"
   
     身份验证的扩展保护有助于保护计算机免受中间人 (MITM) 攻击，其中攻击者会截获客户端凭据，并将它们转发到服务器。 可以通过通道绑定令牌 (CBT) 实现针对此类攻击的保护，当服务器建立与客户端的通信时，服务器可要求、允许或不要求该令牌。  
   
-    若要启用扩展保护功能，请使用 **Set-ADFSProperties** cmdlet 上的 **ExtendedProtectionTokenCheck** 参数。 下表描述了用于此设置的可能值，以及这些值提供的安全级别。  
+    若要启用扩展保护功能，请使用 **ExtendedProtectionTokenCheck** cmdlet 上的 **Set-ADFSProperties** 参数。 下表描述了用于此设置的可能值，以及这些值提供的安全级别。  
   
     |参数值|安全级别|保护设置|  
     |-------------------|------------------|----------------------|  
@@ -114,7 +113,7 @@ ms.locfileid: "71359198"
      对于 Windows Server 2016 上的 AD FS Extranet 智能锁定，请参阅[AD FS Extranet 智能锁定保护](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md)。  
   
 ## <a name="sql-serverspecific-security-best-practices-for-ad-fs"></a>AD FS 的特定于 SQL 服务器的安全最佳实践  
-以下安全最佳实践特定于使用 Microsoft SQL Server®或 Windows 内部数据库（WID）（当这些数据库技术用于管理 AD FS 设计和部署中的数据时）。  
+以下安全最佳实践特定于使用 Microsoft SQL Server&reg; 或 Windows 内部数据库（WID）（当这些数据库技术用于管理 AD FS 设计和部署中的数据时）。  
   
 > [!NOTE]  
 > 这些建议旨在扩展但不能替代 SQL Server 产品安全指南。 有关规划安全 SQL Server 安装的详细信息，请参阅安全[SQL 安装的安全注意事项](https://go.microsoft.com/fwlink/?LinkID=139831)（ https://go.microsoft.com/fwlink/?LinkID=139831)。  
@@ -125,7 +124,7 @@ ms.locfileid: "71359198"
   
 -   **请在服务帐户下运行 SQL Server，而不是使用内置的默认系统服务帐户。**  
   
-    默认情况下，经常将 SQL Server 安装和配置为使用一个受支持的内置系统帐户，例如 LocalSystem 或 NetworkService 帐户。 若要提高 AD FS SQL Server 安装的安全性，只要可能，请使用单独的服务帐户访问 SQL Server 服务，并通过在你的帐户中注册此帐户的安全主体名称（SPN）来启用 Kerberos 身份验证。Active Directory 部署。 这样可以使客户端和服务器之间进行相互身份验证。 SQL Server 将使用基于 Windows 的 NTLM 身份验证，而无需单独的服务帐户的 SPN 注册，在 NTLM 身份验证中只有客户端进行身份验证。  
+    默认情况下，经常将 SQL Server 安装和配置为使用一个受支持的内置系统帐户，例如 LocalSystem 或 NetworkService 帐户。 若要提高 AD FS SQL Server 安装的安全性，只要有可能，请使用单独的服务帐户访问 SQL Server 服务，并通过在 Active Directory 部署中注册此帐户的安全主体名称（SPN）来启用 Kerberos 身份验证。 这样可以使客户端和服务器之间进行相互身份验证。 SQL Server 将使用基于 Windows 的 NTLM 身份验证，而无需单独的服务帐户的 SPN 注册，在 NTLM 身份验证中只有客户端进行身份验证。  
   
 -   **最小化 SQL Server 的外围应用。**  
   

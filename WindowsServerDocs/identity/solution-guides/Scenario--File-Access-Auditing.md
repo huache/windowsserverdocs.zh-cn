@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7be1f2cb-02d5-4209-ba79-edf496a88f47
 title: 方案文件访问审核
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 37a3b17360112d958b59a7e9c3f64aed5e6f6a5b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37ea1cf28e42f74a18cd57b8fa9def5f9d1646be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406994"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861120"
 ---
-# <a name="scenario-file-access-auditing"></a>场景：文件访问审核
+# <a name="scenario-file-access-auditing"></a>Scenario: File Access Auditing
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -71,12 +70,12 @@ ms.locfileid: "71406994"
   
 -   [利用中心审核策略&#40;部署安全审核演示步骤&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
   
-## <a name="BKMK_NEW"></a>此方案中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的角色和功能  
 下表列出了作为本方案组成部分的角色和功能，并描述了它们如何为本方案提供支持。  
   
 |角色/功能|如何支持本方案|  
 |-----------------|---------------------------------|  
-|“Active Directory 域服务”角色|Windows Server 2012 中的 AD DS 引入了基于声明的授权平台，该平台允许创建用户声明和设备声明、复合标识、（用户加设备的声明）、新的中心访问策略（CAP）模型和文件分类的使用授权决定的信息。|  
+|“Active Directory 域服务”角色|Windows Server 2012 中的 AD DS 引入了基于声明的授权平台，该平台允许创建用户声明和设备声明、复合标识、（用户加设备的声明）、新的中心访问策略（CAP）模型，以及在授权决策中使用文件分类信息。|  
 |“文件和存储服务”角色|Windows Server 2012 中的文件服务器提供了一个用户界面，管理员可以在其中查看用户对文件或文件夹的有效权限，并对访问问题进行故障排除，并根据需要授予访问权限。|  
   
 

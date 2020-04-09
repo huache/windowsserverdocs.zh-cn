@@ -1,6 +1,5 @@
 ---
 title: ReFS 完整性流
-description: ''
 author: gawatu
 ms.author: jgerend
 manager: dmoss
@@ -9,15 +8,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 0e41d7ae577bf7e9227ff0c02689d916f1008a3d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e4ce1870d8aea01de0ab621d7efe197026643db
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403036"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861330"
 ---
 # <a name="refs-integrity-streams"></a>ReFS 完整性流
->适用于：Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server （半年频道），Windows 10
+>适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server （半年频道），Windows 10
 
 完整性流是 ReFS 中的可选功能，可使用校验和验证和维护数据完整性。 尽管 ReFS 始终将校验和用于元数据，但默认情况下，ReFS 不会生成或验证文件数据的校验和。 完整性流是一项可让用户将校验和用于文件数据的可选功能。 启用完整性流后，ReFS 可以清楚地确定数据有效还是已损坏。 此外，ReFS 和存储空间还可以一起自动更正损坏的元数据和数据。
 
@@ -93,7 +92,7 @@ PS C:\> Set-FileIntegrity H:\ -Enable $True
 PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [ReFS 概述](refs-overview.md)
 -   [ReFS 块克隆](block-cloning.md)

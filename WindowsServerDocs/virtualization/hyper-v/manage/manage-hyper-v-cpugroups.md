@@ -1,21 +1,20 @@
 ---
 title: 虚拟机资源控制
 description: 使用虚拟机 CPU 组
-keywords: windows 10, hyper-v
 author: allenma
 ms.date: 06/18/2018
 ms.topic: article
-ms.prod: windows-10-hyperv
+ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: 41390421c9e3126915cdf2e827e251e84495bafd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: fcf61c22a24abb6b16baf75b4846cc188dcecd49
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872025"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860790"
 ---
->适用于：Windows Server 2016，Microsoft Hyper-V Server 2016，Windows Server 2019，Microsoft Hyper-V 服务器2019
+>适用于： Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 # <a name="virtual-machine-resource-controls"></a>虚拟机资源控制
 
@@ -46,7 +45,7 @@ CPU 组上限计算为 G = *n* x *C*，其中：
     *n* is the total number of logical processors (LPs) in the group
     *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system's total compute capacity
 
-例如，假设某个 CPU 组配置有4个逻辑处理器（LPs），上限为 50%。
+例如，假设某个 CPU 组配置有4个逻辑处理器（LPs），上限为50%。
 
     G = n * C
     G = 4 * 50%
@@ -62,37 +61,37 @@ CPU 组上限计算为 G = *n* x *C*，其中：
 
 1. 低端 "C" 层。 我们将为此第10层的整个主机计算资源分配。
 
-1. 中间范围 "B" 层。 此级别分配了整个主机计算资源的 50%。
+1. 中间范围 "B" 层。 此级别分配了整个主机计算资源的50%。
 
 在本示例中，我们将断言未使用其他 CPU 资源控制，如单个 VM cap、权重和预留。
 不过，单个 VM cap 非常重要，因为我们稍后会看到。
 
 为简单起见，我们假设每个 VM 都有1个副总裁，主机有 8 LPs。 我们将从一个空主机开始。
 
-若要创建 "B" 层，主机 adminstartor 会将组上限设置为 50%：
+若要创建 "B" 层，主机 adminstartor 会将组上限设置为50%：
 
     G = n * C
     G = 8 * 50%
     G = 4 LP's worth of CPU time for the entire group
 
 主机管理员添加了一个 "B" 层 VM。
-此时，"B" 层 VM 最多可使用 50% 的主机 CPU，或在我们的示例系统中相当于 4 LPs。
+此时，"B" 层 VM 最多可使用50% 的主机 CPU，或在我们的示例系统中相当于 4 LPs。
 
-现在，管理员添加了第二个 "B 层" VM。 CPU 组的分配-在所有 Vm 之间平均划分。 我们总共在 B 组中有2个 Vm，因此，每个 VM 现在获取全部 50%、25% 或等于 2 LPs 计算时间的一半。
+现在，管理员添加了第二个 "B 层" VM。 CPU 组的分配-在所有 Vm 之间平均划分。 我们总共在 B 组中有2个 Vm，因此，每个 VM 现在获取全部50%、25% 或等于 2 LPs 计算时间的一半。
 
 ## <a name="setting-cpu-caps-on-individual-vms"></a>在单个 Vm 上设置 CPU 上限
 
 除组帽外，每个 VM 还可以有一个单独的 "VM cap"。 自其简介以来，每个 VM 的 CPU 资源控制（包括 CPU 上限、权重和预留）都属于 Hyper-v。
 与组帽结合使用时，VM cap 会指定每个 VP 可以获得的最大 CPU 数量，即使该组具有可用的 CPU 资源。
 
-例如，主机管理员可能希望在 "C" Vm 上放置 10% 的 VM cap。
-这样，即使大多数 "C" VPs 处于空闲状态，每个副总裁也永远不会超过 10%。
+例如，主机管理员可能希望在 "C" Vm 上放置10% 的 VM cap。
+这样，即使大多数 "C" VPs 处于空闲状态，每个副总裁也永远不会超过10%。
 如果没有 VM cap，"C" Vm 就会找机会在其层所允许的级别之外实现性能。
 
 ## <a name="isolating-vm-groups-to-specific-host-processors"></a>将 VM 组隔离到特定主机处理器
 
 Hyper-v 主机管理员可能还希望能够将计算资源专用于 VM。
-例如，假设管理员想要提供一个高级的 "A" VM，其类帽为 100%。
+例如，假设管理员想要提供一个高级的 "A" VM，其类帽为100%。
 这些高级 Vm 还需要尽可能低的计划延迟和抖动;也就是说，它们不能由任何其他 VM 取消计划。
 若要实现这种分离，还可以使用特定的 LP 关联映射来配置一个 CPU 组。
 
@@ -217,9 +216,9 @@ CpuGroupId                          CpuCap LpIndexes
 36AB08CB-3A76-4B38-992E-000000000004 65536 24,25,26,27,28,29,30,31
 ```
 
-### <a name="example-5--set-the-cpu-group-cap-to-50"></a>示例5–将 CPU 组上限设置为 50%
+### <a name="example-5--set-the-cpu-group-cap-to-50"></a>示例5–将 CPU 组上限设置为50%
 
-在这里，我们将 CPU 组上限设置为 50%。
+在这里，我们将 CPU 组上限设置为50%。
 
 ```console
 C:\vm\tools>CpuGroups.exe SetGroupProperty /GroupId:36AB08CB-3A76-4B38-992E-000000000001 /CpuCap:32768

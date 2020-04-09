@@ -1,7 +1,6 @@
 ---
 ms.assetid: e863ab80-4e4c-48d3-bdaa-31815ef36bae
 title: 配置 AD FS 对存储在 LDAP 目录中的用户进行身份验证
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 191ec0243c8c34c2084dd07f94f0b3f70b197756
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c194128cb5d96bf84e19b11b9d8803c61e34490
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358075"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859900"
 ---
 # <a name="configure-ad-fs-to-authenticate-users-stored-in-ldap-directories"></a>配置 AD FS 对存储在 LDAP 目录中的用户进行身份验证
 
@@ -23,13 +22,13 @@ ms.locfileid: "71358075"
 在许多组织中，身份管理解决方案由 Active Directory、AD LDS 或第三方 LDAP 目录的组合组成。 添加了 AD FS 对对存储在符合 LDAP v3 的目录中的用户进行身份验证的支持，您可以从整个企业级 AD FS 功能集中获益，无论用户身份存储在何处。 AD FS 支持任何符合 LDAP v3 的目录。
 
 > [!NOTE]
-> 某些 AD FS 功能包括单一登录（SSO）、设备身份验证、灵活的条件性访问策略、通过与 Web 应用程序代理集成的任何位置支持工作，以及与 Azure AD 的无缝联合使你和你的用户能够利用云，包括 Office 365 和其他 SaaS 应用程序。  有关详细信息，请参阅[Active Directory 联合身份验证服务概述](../../ad-fs/AD-FS-2016-Overview.md)。
+> 某些 AD FS 功能包括：单一登录（SSO）、设备身份验证、灵活的条件性访问策略、通过与 Web 应用程序代理的集成对工作的支持、与 Azure AD 的无缝联合，进而使你和你的用户能够利用云，包括 Office 365 和其他 SaaS 应用程序。  有关详细信息，请参阅[Active Directory 联合身份验证服务概述](../../ad-fs/AD-FS-2016-Overview.md)。
 
 为了使 AD FS 从 LDAP 目录对用户进行身份验证，必须通过创建**本地声明提供程序信任**将此 LDAP 目录连接到 AD FS 场。  本地声明提供程序信任是表示 AD FS 场中的 LDAP 目录的信任对象。 本地声明提供程序信任对象包含各种标识符、名称和用于将此 LDAP 目录标识到本地联合身份验证服务的规则。
 
 你可以通过添加多个**本地声明提供程序信任**，在同一 AD FS 场中支持多个具有自己的配置的 LDAP 目录。 此外，也可以将不受 AD FS 所在的林信任的 AD DS 林建模为本地声明提供程序信任。 可以使用 Windows PowerShell 创建本地声明提供程序信任。
 
-LDAP 目录（本地声明提供程序信任）可以与 AD 目录（声明提供程序信任）共存于同一 AD FS 场中的同一 AD FS 服务器上，因此，AD FS 的单个实例可以对存储在 AD 和非 AD 目录中。
+LDAP 目录（本地声明提供程序信任）可以与同一服务器场 AD FS 中相同 AD FS 服务器上的 AD 目录（声明提供程序信任）共存，因此，AD FS 的单个实例可以对存储在 AD 和非 AD 目录中的用户进行身份验证和授权。
 
 仅支持基于窗体的身份验证从 LDAP 目录对用户进行身份验证。 在 LDAP 目录中对用户进行身份验证时不支持基于证书和集成的 Windows 身份验证。
 

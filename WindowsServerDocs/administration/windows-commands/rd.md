@@ -1,24 +1,20 @@
 ---
 title: rd
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 42e672f6-5bc2-4c16-af25-18e7ed2dd555
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 029935bcd8773e41adefcd6ca916d75edcea3065
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 298e6b291a6aa08701b6d54a11470b0cc4bea486
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371808"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836710"
 ---
 # <a name="rd"></a>rd
 
@@ -35,9 +31,9 @@ rd [<Drive>:]<Path> [/s [/q]]
 rmdir [<Drive>:]<Path> [/s [/q]]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|     参数     |                                                                 描述                                                                  |
+|     参数     |                                                                 说明                                                                  |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | [\<驱动器 >：]<Path> |                      指定要删除的目录的位置和名称。 *路径*是必需的。                       |
 |        /s         |                     删除目录树（指定的目录及其所有子目录，包括所有文件）。                      |
@@ -59,7 +55,7 @@ rmdir [<Drive>:]<Path> [/s [/q]]
     如果收到此错误消息，则必须更改为其他目录（而不是当前目录的子目录），然后使用**rd** （如有必要，请指定*路径*）。
 -   可从恢复控制台获取带有不同参数的**rd**命令。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 不能删除当前正在使用的目录。 必须更改为不在当前目录中的目录。 例如，要更改为父目录，请键入：
 ```
@@ -79,6 +75,6 @@ rd /s /q test
 > [!CAUTION]
 > 在安静模式下运行**rd/s**时，将删除整个目录树而不进行确认。 请确保在使用 **/q**命令行选项之前移动或备份重要文件。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

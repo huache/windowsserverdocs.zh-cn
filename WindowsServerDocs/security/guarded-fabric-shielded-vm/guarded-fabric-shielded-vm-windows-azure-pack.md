@@ -1,23 +1,23 @@
 ---
 title: 受防护的用于租户的 Vm-通过使用 Windows Azure Pack 部署受防护的 VM
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 095315e4-c4a7-4b80-91d8-528119b62c4c
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: ec9f12990e7e16aebb208edfe0d97d6671623da1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ce3aac47ea6c44abd1811efc1e23b901f53333bb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403540"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856460"
 ---
 # <a name="shielded-vms--for-tenants---deploying-a-shielded-vm-by-using-windows-azure-pack"></a>受防护的用于租户的 Vm-通过使用 Windows Azure Pack 部署受防护的 VM
 
->适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016
+>适用于： Windows Server （半年频道）、Windows Server 2019、Windows Server 2016
 
 如果托管服务提供商支持，则可以使用 Windows Azure Pack 来部署受防护的 VM。
 
@@ -44,7 +44,7 @@ ms.locfileid: "71403540"
        > [!NOTE]
        > 如果将虚拟机转换为受防护的虚拟机，则不会加密现有的检查点和备份。 应尽可能删除旧的检查点，以防止对旧的已解密数据的访问。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [受保护的主机和受防护的 Vm 的托管服务提供商配置步骤](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受保护的结构和受防护的 VM](guarded-fabric-and-shielded-vms-top-node.md)

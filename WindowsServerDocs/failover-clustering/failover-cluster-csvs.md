@@ -5,15 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: da0f541c34c7f8687822bec365364fdd406fa3c3
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 1d275e0379b5374899437bcf1f0387b304350840
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322689"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827740"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>在故障转移群集中使用群集共享卷
 
@@ -31,7 +32,7 @@ CSV 提供了在 NTFS （或 Windows Server 2012 R2 中的 ReFS）上分层的�
 
 在 Windows Server 2012 中，CSV 功能得到显著增强。 例如，已删除 Active Directory 域服务上的依赖关系。 已对 **chkdsk** 中的功能改进、与防病毒和备份应用程序的互操作性以及与常规存储功能（如 BitLocker 加密卷和存储空间）的集成的支持。 有关 Windows Server 2012 中引入的 CSV 功能的概述，请参阅[Windows server 2012 中故障转移群集的新增功能 \[重定向\]](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
 
-Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权，通过服务器服务的可用性增加了复原能力，可以更灵活地分配给 CSV 缓存的物理内存量，更好地诊断能力和增强的互操作性，其中包括对 ReFS 和重复数据删除的支持。 有关详细信息，请参阅[故障转移群集中的新增功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
+Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权、通过服务器服务的可用性增加了复原能力、可以分配给 CSV 缓存的物理内存量的灵活性、更好的诊断能力和增强的互操作性（包括对 ReFS 和重复数据删除的支持）。 有关详细信息，请参阅[故障转移群集中的新增功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
 
 > [!NOTE]
 > 有关将 CSV 上的数据重复删除用于虚拟桌面基础结构 (VDI) 方案的信息，请参阅博客文章 [在 Windows Server 2012 R2 中部署 VDI 存储的数据重复删除](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) 和 [在 Windows Server 2012 R2 中将数据重复删除扩展到新的工作负荷](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx)。
@@ -65,7 +66,7 @@ Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权，通�
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>有关 CSV 通信中的 I/O 同步和 I/O 重定向
 
-- **I/o 同步**： CSV 允许多个节点同时具有对同一共享存储的读写访问权限。 当某个节点在 CSV 卷上执行磁盘输入/输出 (I/O) 时，该节点将直接与存储进行通信（例如，通过存储区域网络 (SAN)）。 但是，单个节点（称为协调器节点）随时“拥有”与该 LUN 关联的物理磁盘资源。 CSV 卷的协调器节点作为“磁盘”下的“所有者节点”显示在故障转移群集管理器中。 它还显示在[Add-clustersharedvolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell cmdlet 的输出中。
+- **I/o 同步**： CSV 允许多个节点同时具有对同一共享存储的读写访问权限。 当某个节点在 CSV 卷上执行磁盘输入/输出 (I/O) 时，该节点将直接与存储进行通信（例如，通过存储区域网络 (SAN)）。 但是，在任何时候，单个节点（称为协调器节点） "拥有" 与该 LUN 关联的物理磁盘资源。 CSV 卷的协调器节点作为“磁盘”下的“所有者节点”显示在故障转移群集管理器中。 它还显示在[Add-clustersharedvolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell cmdlet 的输出中。
 
   >[!NOTE]
   >在 Windows Server 2012 R2 中，CSV 所有权根据每个节点所拥有的 CSV 卷的数量均匀地分布在故障转移群集节点上。 此外，当存在以下条件时自动重新平衡所有权：CSV 故障转移、某个节点重新加入该群集、将新节点添加到该群集、重新启动群集节点，或者在关闭故障转移群集后启动该群集。

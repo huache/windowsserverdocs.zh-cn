@@ -1,24 +1,20 @@
 ---
 title: Configure Features on Demand in Windows Server
 description: 服务器管理器
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e663bbea-d025-41fa-b16c-c2bff00a88e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f834ca2e4c4acd045ccaeb4f46142dcc0e86f674
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 090b87810dc519728bf915bdb2cd79668c7f01f4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383274"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851550"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -28,7 +24,7 @@ ms.locfileid: "71383274"
 
 "按需功能" 是 Windows 8 和 Windows Server 2012 中引入的一项功能，允许从操作系统删除角色和功能文件（有时称为功能*负载*），以节省磁盘空间，并从远程位置或安装媒体而非本地计算机安装角色和功能。 你可以从运行中的物理或虚拟计算机删除功能文件。 你也可以对 Windows 映像 (WIM) 文件或脱机虚拟硬盘 (VHD) 进行添加或删除功能文件，为“按需功能”配置创建一个可复制的副本。
 
-在 "按需功能" 配置中，当功能文件在计算机上不可用时，如果安装需要这些功能文件，则可以将 Windows Server 2012 R2 或 Windows Server 2012 定向到从并行功能存储（共享文件夹）获取文件。，它包含功能文件，可用于网络上的计算机、从 Windows 更新或从安装媒体中获取。 默认情况下，当功能文件不在目标服务器上时，“按需功能”就会按照所示顺序执行下列任务，来搜索丢失的功能文件。
+在 "按需功能" 配置中，当功能文件在计算机上不可用时，如果安装需要这些功能文件，则可以将 Windows Server 2012 R2 或 Windows Server 2012 定向到从并行功能存储（包含功能文件的共享文件夹，以及网络上的计算机可用的共享文件夹）获取文件，Windows 更新或从安装介质。 默认情况下，当功能文件不在目标服务器上时，“按需功能”就会按照所示顺序执行下列任务，来搜索丢失的功能文件。
 
 1.  在 "添加角色和功能向导" 或 DISM 安装命令的用户指定的位置搜索
 
@@ -44,7 +40,7 @@ ms.locfileid: "71383274"
 
 -   配置“组策略”设置，“指定可选组件安装和组件修复的设置”
 
-本主题包含以下部分。
+本主题包含以下各节。
 
 -   [创建功能文件或并排存储](#BKMK_store)
 
@@ -52,7 +48,7 @@ ms.locfileid: "71383274"
 
 -   [使用 Uninstall-Add-windowsfeature 删除功能文件](#BKMK_remove)
 
-## <a name="BKMK_store"></a>创建功能文件或并排存储
+## <a name="create-a-feature-file-or-side-by-side-store"></a><a name=BKMK_store></a>创建功能文件或并排存储
 本部分介绍如何设置远程功能文件共享文件夹（也称为并排存储区），用于存储在运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器上安装角色、角色服务和功能所需的文件。 设置功能存储区后，可以在运行这些操作系统的服务器上安装角色、角色服务和功能，并将功能存储指定为安装源文件的位置。
 
 #### <a name="to-create-a-feature-file-store"></a>创建功能文件存储区的步骤
@@ -72,14 +68,14 @@ ms.locfileid: "71383274"
 
 3.  将 **Sources\SxS** 文件夹从 Windows Server 安装媒体复制到步骤 1 中创建的共享文件夹中。
 
-## <a name="BKMK_methods"></a>删除功能文件的方法
+## <a name="methods-of-removing-feature-files"></a><a name=BKMK_methods></a>删除功能文件的方法
 在“按需功能”配置中，有两种方法可用来从 Windows Server 删除功能文件。
 
 -   `Uninstall-WindowsFeature` cmdlet 的 `remove` 参数使你可以从运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器或脱机虚拟硬盘（VHD）中删除功能文件。 `remove` 参数的有效值为角色、角色服务和功能的名称。
 
 -   部署映像服务和管理 (DISM) 命令让你创建自定义 WIM 文件，通过删除不需要的或是可从其他远程数据源获取的功能文件，来节省磁盘空间。 有关使用 DISM 准备自定义映像的详细信息，请参阅 [如何启用或禁用 Windows 功能](https://technet.microsoft.com/library/hh824822.aspx)。
 
-## <a name="BKMK_remove"></a>使用 Uninstall-Add-windowsfeature 删除功能文件
+## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>使用 Uninstall-Add-windowsfeature 删除功能文件
 可以使用 Add-windowsfeature cmdlet 从运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器和脱机 Vhd 中卸载角色、角色服务和功能，并删除功能文件。 如果需要，可以在同一命令中同时卸载和删除相同的角色、角色服务和功能。
 
 > [!IMPORTANT]

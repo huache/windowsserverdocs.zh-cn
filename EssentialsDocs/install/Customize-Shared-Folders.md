@@ -1,23 +1,19 @@
 ---
 title: 自定义共享文件夹
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 387f9570e87bd2bd65266489b0f3eac6c945e3be
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 861107035408fc39d0dc5e4d94a4d82d8dfba74e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311909"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818070"
 ---
 # <a name="customize-shared-folders"></a>自定义共享文件夹
 
@@ -57,7 +53,7 @@ ms.locfileid: "80311909"
   
 1.  创建用于运行后初始配置任务的 PostIC.cmd 文件，[创建用于运行后初始配置任务的 PostIC.cmd 文件](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)部分有详细描述。  
   
-2.  使用记事本在 C:\Windows\Setup\Scripts 文件夹中创建名为 **customizefolders.ps1** 的文件，然后将以下 Windows PowerShell® 命令粘贴到该文件中（根据所需的行为，取消相应行的标记）。  
+2.  使用记事本在 C:\Windows\Setup\Scripts 文件夹中创建名为**customizefolders.ps1**的文件，然后将以下 Windows PowerShell&reg; 命令粘贴到该文件中（根据所需的行为，取消相应行的标记）。  
   
     ```  
     # Move the Documents folder to D:\ServerFolders  

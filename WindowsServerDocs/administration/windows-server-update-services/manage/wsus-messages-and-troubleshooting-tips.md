@@ -2,22 +2,19 @@
 title: WSUS 消息和疑难解答提示
 description: Windows Server Update Service （WSUS）主题-使用 WSUS 邮件进行故障排除
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c66e655ea6b6c44ee3ba375f75e6532fab74bfb
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: e4fe14eeaba3fc82e125288f8c47fb445f6e00b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948486"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828310"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS 消息和疑难解答提示
 
@@ -25,13 +22,13 @@ ms.locfileid: "75948486"
 
 本主题包含有关以下 WSUS 消息的信息：
 
--   "计算机未报告状态"
+-   计算机未报告状态
 
--   "消息 ID 6703-WSUS 同步失败"
+-   消息 ID 6703-WSUS 同步失败
 
--   "错误0x80070643：安装过程中的致命错误"
+-   错误0x80070643：安装过程中出现严重错误
 
--   "某些服务没有运行。 检查以下服务 [...] "
+-   某些服务没有运行。 检查以下服务 [...]
 
 ## <a name="computer-has-not-reported-status"></a>计算机未报告状态
 当 WSUS 客户端计算机未向 WSUS 服务器发送信息以指示其当前更新状态时，将在 WSUS 控制台中生成此消息。 此问题通常是由于 WSUS 客户端计算机（而不是 WSUS 服务器）引起的。
@@ -90,6 +87,6 @@ WSUS 安装程序使用 Microsoft SQL Server 执行安装。 之所以出现此�
     
   - **MSSQLSERver** （如果使用的是 WMSDE 或 MSDE，或者使用 SQL Server 并且使用实例名称的默认实例名称）
     
-  - **MSSQL $ WSUS** （如果你使用的是 SQL Server 数据库，并且已命名数据库实例 "WSUS"）
+  - **MSSQL $ WSUS** （如果你使用的是 SQL Server 数据库，并且已命名了你的数据库实例 WSUS）
     
     右键单击该服务，如果该服务未运行，则单击 "**启动**"; 如果该服务正在运行，则单击 "**重新启动**" 以刷新它。

@@ -1,24 +1,20 @@
 ---
 title: 为工作站创建 Windows 10 企业版虚拟桌面
 description: 了解如何创建适用于工作站的 Windows Server 2016 桌面
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: cd08caef8228a4d20c6d5f4a40fe5bd90aacbe40
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40af6ea98aa91730f78bde8a71f2ad9a741a6490
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395535"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859800"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>为工作站创建 Windows 10 企业版虚拟桌面
 MultiPoint Services 中的此可选配置主要用于以下情况：对于每个用户，基本应用程序需要其自己的客户端操作系统实例。 示例包括无法在 Windows Server 上安装的应用程序，以及不会在同一台主机上运行多个实例的应用程序。  
@@ -32,7 +28,7 @@ MultiPoint Services 中的此可选配置主要用于以下情况：对于每个
 |硬件|要求|         |
 |------------|----------------|----------------| 
 |CPU （多媒体）|每个虚拟机1个核心或线程|  
-|固态硬盘（SSD）|容量 > = 每个工作站 20 gb + 40 GB 用于 MultiPoint 服务主机操作系统<br /><br />随机读取\/写入 IOPS > = 每个工作站3K|  
+|固态硬盘（SSD）|容量 > = 每个工作站 20 gb + 40 GB 用于 MultiPoint 服务主机操作系统<p>随机读取\/写入 IOPS > = 每个工作站3K|  
 |RAM|每个工作站 2GB + 2GB 用于 Windows MultiPoint Server 主机操作系统|  
 |图形|DX11|  
 |BIOS|BIOS CPU 设置配置为启用虚拟化–第二级地址转换（SLAT）|  
@@ -156,7 +152,7 @@ MultiPoint Services 中的此可选配置主要用于以下情况：对于每个
   
 3.  单击 "**虚拟机**" 选项卡。  
   
-4.  单击 "**导入虚拟桌面模板**"，并使用 "**浏览**" 选择要导入的 .vhd 文件（模板）。 导入模板时，将生成原始 .vhd 的副本。 默认情况下，MultiPoint 服务将 .vhd 文件存储在 C：\\Users\\公共\\文档\\\-\\\\中。  
+4.  单击 "**导入虚拟桌面模板**"，并使用 "**浏览**" 选择要导入的 .vhd 文件（模板）。 导入模板时，将生成原始 .vhd 的副本。 默认情况下，MultiPoint 服务会在 C：\\用户\\公用\\文档中存储 .vhd 文件\\超级\-\\\\ 文件夹。  
   
 5.  为新模板输入前缀，然后单击 **"确定"** 。  
   

@@ -1,35 +1,31 @@
 ---
 title: 将连接设置保存到文件
 description: 了解如何创建用于在 MultiPoint 服务中从一台计算机连接到另一台计算机的连接文件
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93814c41-60ba-4154-8283-f5d7baf790c0
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 76c49bb6a6d78425b654046902df60d1a12f04ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bc76a9632a58f8a1bbe74442f3be63d47eb5321f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395094"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855660"
 ---
 # <a name="save-connection-settings-to-file"></a>将连接设置保存到文件
 使用远程桌面可以从其他计算机连接到 MultiPoint 服务系统。 如果远程计算机支持远程桌面协议，则可自动与此计算机建立连接。  
   
 可以创建三种类型的连接文件：  
   
-- **MultiPoint 管理器连接文件**：允许 MultiPoint 管理器在另一台计算机上作为远程应用程序运行。  
+- **Multipoint 管理器连接文件**：允许 Multipoint 管理器在另一台计算机上作为远程应用程序运行。  
   
-- **MultiPoint 仪表板连接文件**：允许 MultiPoint 仪表板在另一台计算机上作为远程应用程序运行。  
+- **Multipoint 仪表板连接文件**：允许 Multipoint 仪表板在另一台计算机上作为远程应用程序运行。  
   
-- **远程工作站连接文件**：允许另一台计算机作为远程工作站连接到 MultiPoint 服务系统。  
+- **远程工作站连接文件**：允许其他计算机作为远程工作站连接到 MultiPoint 服务系统。  
   
 ## <a name="to-save-system-connection-settings-to-a-file"></a>将系统连接设置保存到文件  
   

@@ -1,24 +1,19 @@
 ---
 title: Winlogon 自动重启登录 (ARSO)
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: na
-ms.suite: na
 ms.technology: security-auditing
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 15cddcfa-8a8e-45e4-bb76-b8e1a14ceac0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f085cf78a01148f97a450577131213ce977a432a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3dd66cc799ee23f77c9c60e23e49d3088a27b2fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402322"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855100"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自动重启登录 (ARSO)
 
@@ -60,13 +55,13 @@ Windows 8 引入了锁定屏幕应用。  这些应用程序是在锁定用户�
   
     -   在服务器 Sku 中默认禁用  
   
--   为什么？  
+-   为什么?  
   
     -   在用户重新登录之前，某些更新无法完成。  
   
     -   更好的用户体验：若要完成安装，无需等待15分钟  
   
--   帮助? AutoLogon  
+-   如何计算？ AutoLogon  
   
     -   存储密码，使用该凭据登录  
   
@@ -93,9 +88,9 @@ Windows 8 引入了锁定屏幕应用。  这些应用程序是在锁定用户�
   
 **注册表编辑器**  
   
-|值名称|在任务栏的搜索框中键入|数据|  
+|值名称|类型|数据|  
 |-------|----|----|  
-|DisableAutomaticRestartSignOn|DWORD|0<br /><br />**示例：**<br /><br />0（已启用）<br /><br />1（禁用）|  
+|DisableAutomaticRestartSignOn|DWORD|0<p>**示例：**<p>0（已启用）<p>1（禁用）|  
   
 **策略注册表位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System  
   
@@ -111,7 +106,7 @@ Windows 8 引入了锁定屏幕应用。  这些应用程序是在锁定用户�
   
 ![显示策略设置控制 UI 的屏幕截图，你可以在其中指定设备在 Windows 更新重新启动系统后是否会自动登录上一个交互式用户](../media/winlogon-automatic-restart-sign-on-arso/GTR_ADDS_SignInPolicy.gif)  
   
-## <a name="troubleshooting"></a>疑难解答  
+## <a name="troubleshooting"></a>故障排除  
 当 WinLogon 自动锁定时，WinLogon 的状态跟踪将存储在 WinLogon 事件日志中。  
   
 记录自动登录配置的状态  
@@ -145,8 +140,8 @@ Windows 8 引入了锁定屏幕应用。  这些应用程序是在锁定用户�
 ## <a name="additional-resources"></a>其他资源  
 **表 SEQ 表 \\\* 阿拉伯语3： ARSO 术语表**  
   
-|术语|定义|  
+|术语|Definition|  
 |----|-------|  
-|Autologon|自动登录是在 Windows 中为多个版本提供的一项功能。  它是 Windows 的已记录功能，甚至包含 Windows 3.01  *[http：/sysinternals/Bb963905](https://technet.microsoft.com/sysinternals/bb963905.aspx)的自动登录等工具*<br /><br />它允许设备的单个用户自动登录而无需输入凭据。 凭据作为加密的 LSA 机密配置并存储在注册表中。|  
+|Autologon|自动登录是在 Windows 中为多个版本提供的一项功能。  它是 Windows 的已记录功能，甚至包含 Windows 3.01  *[http：/sysinternals/Bb963905](https://technet.microsoft.com/sysinternals/bb963905.aspx)的自动登录等工具*<p>它允许设备的单个用户自动登录而无需输入凭据。 凭据作为加密的 LSA 机密配置并存储在注册表中。|  
   
 

@@ -1,24 +1,19 @@
 ---
 title: 了解功能
 description: 本主题定义了 System Insights 中的功能概念，并介绍了 Windows Server 2019 中提供的默认功能。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 131fbacaab97c1c2c42920a518ce96ba1b8f5d2b
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 9b0f043aab5773773785afc7fb48ba0295a76865
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465561"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858740"
 ---
 # <a name="understanding-capabilities"></a>了解功能
 
@@ -83,7 +78,7 @@ ms.locfileid: "77465561"
  CPU 容量预测                | % Processor Time  | 每日最大2小时平均   
  网络容量预测         | 字节总数/秒         | 每日最大2小时平均  
 
-在评估上述筛选逻辑时，必须注意的是，每项功能在将来使用有意义超过可用容量时寻找通知管理员–即使 CPU 短暂达到100% 的利用率，CPU 使用率也可能不会导致性能显著降低或资源争用。 对于 CPU 和网络，应该存在持续的高利用率，而不是瞬时高峰。 但是，在整个日子内平均 CPU 和网络使用情况会丢失重要的使用情况信息，因为在几个小时的 CPU 或网络使用情况下，可能会对关键工作负荷的性能产生影响。 每一天最多2小时的平均平均值将避免这些极端，并为每个要分析的功能生成有意义的数据。
+在评估上述筛选逻辑时，务必要注意的是，每个功能在未来使用会有意义地超过可用容量时设法通知管理员–即使 CPU 暂时达到了100% 的利用率，CPU 使用率也可能不会导致性能下降或资源争用。 对于 CPU 和网络，应该存在持续的高利用率，而不是瞬时高峰。 但是，在整个日子内平均 CPU 和网络使用情况会丢失重要的使用情况信息，因为在几个小时的 CPU 或网络使用情况下，可能会对关键工作负荷的性能产生影响。 每一天最多2小时的平均平均值将避免这些极端，并为每个要分析的功能生成有意义的数据。
 
 不过，对于卷和总存储使用量，存储使用量不能超过可用容量（即使是这样），因此，每日使用的最大值可用于这些功能。 
 

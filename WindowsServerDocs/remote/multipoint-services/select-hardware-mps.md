@@ -1,24 +1,20 @@
 ---
 title: 为 MultiPoint Services 系统选择硬件
 description: MultiPoint Services 的硬件注意事项
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 9cfd6572c82bf5c3754165420e61054ec12b9617
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3dca1b68564c977394c1b71f72db0fde5727c861
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389000"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859070"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>为 MultiPoint Services 系统选择硬件
 生成 MultiPoint 服务系统时，应选择满足 Windows Server 2016 系统要求的计算机。 如果要确定要选择的组件，请考虑以下事项：  
@@ -129,7 +125,7 @@ USB 零客户端包含外部视频控制器用于将监视器连接到客户端�
   
 如果你想要在不打开计算机的情况下启用对其他监视器的支持，或者如果你想要支持的工作站比可用的视频输出更多，请选择 USB 零客户端。 例如，如果你先前已将四台监视器插入\-内部视频卡，并且想要另外添加两个监视器，则可以将两个外部视频控制器中的\-插到计算机，并为两个监视器提供空间。 通过这种方式，可以将 USB 零客户端与视频控制器组合在一起，而不是在主板上使用其他 PCI 或 PCIe 槽。  
   
-## <a name="BKMK_Selectingdirect-video-connectedorUSBzeroclientstationdevices"></a>选择直接\-视频\-连接或 USB 零客户端工作站设备  
+## <a name="selecting-direct-video-connected-or-usb-zero-client-station-devices"></a><a name="BKMK_Selectingdirect-video-connectedorUSBzeroclientstationdevices"></a>选择直接\-视频\-连接或 USB 零客户端工作站设备  
 MultiPoint 服务工作站由工作站集线器或 USB 零客户端组成，其中\-中插入了键盘和鼠标，并将\-插入到主计算机或 USB 零客户端的监视器。 其他外围设备可\-接入工作站集线器或 USB 零客户端，但不需要它们来创建 MultiPoint 工作站。 其他外围设备在[选择其他工作站外围设备](#selecting-other-station-peripheral-devices)中进行了介绍。  
   
 选择用于创建 MultiPoint 服务工作站的设备应满足使用 MultiPoint 服务的最低要求。 本主题提供了有关以下 MultiPoint 服务工作站设备的要求的详细信息：  
@@ -186,14 +182,14 @@ MultiPoint 服务支持连接到工作站集线器、USB 零客户端或直接�
   
 ||已连接到主机|已连接到工作站集线器或下游集线器|  
 |-|------------------------------|----------------------------------------------|  
-|键盘|不起作用，除非它是 PS/2 工作站的成员。 |可用于单个工作站<br /><br />无法连接到下游集线器|  
+|键盘|不起作用，除非它是 PS/2 工作站的成员。 |可用于单个工作站<p>无法连接到下游集线器|  
 |鼠标|不起作用，除非它是 PS/2 工作站的成员。 |可用于单个工作站|  
 |扬声器/耳机|不起作用，除非它是 PS/2 工作站的成员。|可用于单个工作站|  
 |USB 存储设备|适用于所有工作站|可用于单个工作站|  
 |HID 使用者控件|不起作用|可用于单个工作站|  
 |其他 USB 设备，如相机、文档读取器和 DVD 驱动器|Windows Server 2012 支持时，适用于所有工作站|Windows Server 2008 R2 支持的所有工作站可用远程桌面服务|  
   
-## <a name="BKMK_SelectingRDP-over-LAN-connectedstationhardware"></a>选择 RDP\-通过\-LAN\-连接工作站硬件  
+## <a name="selecting-rdp-over-lan-connected-station-hardware"></a><a name="BKMK_SelectingRDP-over-LAN-connectedstationhardware"></a>选择 RDP\-通过\-LAN\-连接工作站硬件  
 可以通过使用远程桌面协议连接到远程桌面服务的任何 LAN 客户端都可以成为 MultiPoint 服务工作站。  
   
 如果希望 LAN 客户端仅用作 MultiPoint 工作站，则可能需要 "锁定" LAN 客户端。 例如，配置瘦客户端，使其只能连接到 MultiPoint 服务会话，或配置桌面计算机以便删除对桌面图标和 "开始" 菜单项（如 web 浏览器）的访问，以防止直接访问 Internet。 可以使用 LAN 客户端配置工具或组或本地策略进行这些配置。  

@@ -2,25 +2,23 @@
 title: Windows Server 上的 Hyper-v 的系统要求
 description: 列出 Windows Server 中 Hyper-v 的硬件和固件要求
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: fabaa1933fef836bb6ce3fc01badf337b832d072
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9bb50448f1ee819b3b886536424ee1556775b78d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365443"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857980"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 的系统要求
 
->适用于：Windows Server 2016，Microsoft Hyper-V Server 2016，Windows Server 2019，Microsoft Hyper-V 服务器2019
+>适用于： Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 Hyper-v 具有特定硬件要求，某些 Hyper-v 功能具有其他要求。 使用本文中的详细信息可以确定系统必须满足的要求，以便你可以使用你计划的方式来使用 Hyper-v。 然后，查看[Windows Server 目录](https://www.windowsservercatalog.com/)。 请记住，Hyper-v 要求超过 Windows Server 2016 的一般最低要求，因为虚拟化环境需要更多的计算资源。
 
@@ -40,7 +38,7 @@ Hyper-v 具有特定硬件要求，某些 Hyper-v 功能具有其他要求。 �
 
 - 虚拟化支持在 BIOS 或 UEFI 中启用：
 
-  - 硬件协助的虚拟化。 此功能在包含虚拟化选项的处理器（特别是具有 Intel 虚拟化技术（Intel VT）或 AMD 虚拟化（AMD）技术的处理器）中提供。
+  - 硬件协助虚拟化。 此功能在包含虚拟化选项的处理器（特别是具有 Intel 虚拟化技术（Intel VT）或 AMD 虚拟化（AMD）技术的处理器）中提供。
 
   - 硬件强制实施的数据执行保护 (DEP) 必须可用且已启用。 对于 Intel 系统，这是 XD 位（执行禁用位）。 对于 AMD 系统，这是 NX 位（无执行位）。
 

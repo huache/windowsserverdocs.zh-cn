@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8ce6e7c4-cf8e-4b55-980c-048fea28d50f
 title: 使用 SQL Server 的联合服务器场
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b299ddc823b3fbbd5818f96202e3c01faf0762d7
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 9f8375ffb73ff6be290b534d59e6ce5c8a7be27b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323099"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858060"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 要求
 
@@ -48,7 +47,7 @@ ms.locfileid: "79323099"
   
 -   [权限要求](AD-FS-Requirements.md#BKMK_13)  
   
-## <a name="BKMK_1"></a>证书要求  
+## <a name="certificate-requirements"></a><a name="BKMK_1"></a>证书要求  
 证书在保护联合服务器、Web 应用程序代理、声明\-感知应用程序和 Web 客户端之间的通信方面发挥着最重要的作用。 证书要求因你设置的是联合服务器还是代理计算机而异，具体取决于此部分中所述。  
   
 **联合服务器证书**  
@@ -70,7 +69,7 @@ ms.locfileid: "79323099"
 > [!NOTE]  
 > 从 CA 收到证书后，请确保将所有的证书导入到本地计算机的个人证书存储中。 你可以将证书导入到个人存储区，并在中包含证书 MMC 管理单元\-。  
   
-## <a name="BKMK_2"></a>硬件要求  
+## <a name="hardware-requirements"></a><a name="BKMK_2"></a>硬件要求  
 以下最低要求和建议的硬件要求适用于 Windows Server 2012 R2 中的 AD FS 联合服务器：  
   
 ||||  
@@ -80,14 +79,14 @@ ms.locfileid: "79323099"
 |RAM|512 MB|4 GB|  
 |磁盘空间|32 GB|100 GB|  
   
-## <a name="BKMK_3"></a>软件要求  
-以下 AD FS 要求适用于 Windows Server® 2012 R2 操作系统中内置的服务器功能：  
+## <a name="software-requirements"></a><a name="BKMK_3"></a>软件要求  
+以下 AD FS 要求适用于 Windows Server&reg; 2012 R2 操作系统中内置的服务器功能：  
   
--   对于 extranet 访问，你必须部署 Web 应用程序代理角色服务 \- Windows Server® 2012 R2 远程访问服务器角色的一部分。 Windows Server® 2012 R2 中的 AD FS 不支持早期版本的联合服务器代理。  
+-   对于 extranet 访问，你必须部署 Web 应用程序代理角色服务 \- Windows Server&reg; 2012 R2 远程访问服务器角色的一部分。 Windows Server&reg; 2012 R2 中的 AD FS 不支持早期版本的联合服务器代理。  
   
 -   不能在同一台计算机上安装联合服务器和 Web 应用程序代理角色服务。  
   
-## <a name="BKMK_4"></a>AD DS 要求  
+## <a name="ad-ds-requirements"></a><a name="BKMK_4"></a>AD DS 要求  
 **域控制器要求**  
   
 所有用户域中的域控制器和 AD FS 服务器加入到的域中的域控制器必须运行 Windows Server 2008 或更高版本。  
@@ -134,7 +133,7 @@ ms.locfileid: "79323099"
   
 -   每个用户域中都必须有 AD FS 的服务帐户，该帐户包含对 AD FS 服务进行身份验证的用户。  
   
-## <a name="BKMK_5"></a>配置数据库要求  
+## <a name="configuration-database-requirements"></a><a name="BKMK_5"></a>配置数据库要求  
 下面是根据配置存储的类型应用的要求和限制：  
   
 **WID**  
@@ -157,7 +156,7 @@ ms.locfileid: "79323099"
   
 对于 Windows Server 2012 R2 中的 AD FS，可以使用 SQL Server 2008 及更高版本  
   
-## <a name="BKMK_6"></a>浏览器要求  
+## <a name="browser-requirements"></a><a name="BKMK_6"></a>浏览器要求  
 通过浏览器或浏览器控件执行 AD FS 身份验证时，浏览器必须符合遵守以下要求：  
   
 -   必须启用 JavaScript  
@@ -187,12 +186,12 @@ ms.locfileid: "79323099"
   
 AD FS 将创建基于会话\-和永久 cookie，这些 cookie 必须存储在客户端计算机上，以便在中提供签名\-，在\-SSO \(上签署\-out、single sign\)和其他功能。 因此，必须将客户端浏览器配置为接受 Cookie。 用于身份验证的 cookie 始终是为原始服务器编写的安全超文本传输协议 \(HTTPS\) 会话 cookie。 如果未将客户端浏览器配置为允许使用这些 Cookie，则 AD FS 不能正常工作。 永久 Cookie 用于保留用户选择的声明提供方。 你可以使用配置文件中的配置设置来禁用这些配置文件，以便在页面中 AD FS sign\-。 出于安全考虑，需要支持 TLS\/SSL。  
   
-## <a name="BKMK_extranet"></a>Extranet 要求  
+## <a name="extranet-requirements"></a><a name="BKMK_extranet"></a>Extranet 要求  
 若要提供对 AD FS 服务的 extranet 访问，必须将 Web 应用程序代理角色服务部署为面向公众的角色，以安全方式将身份验证请求代理到 AD FS 服务。 这将提供 AD FS 服务终结点的隔离，并将所有安全密钥的隔离 \(例如从 internet 发出的请求\) 令牌签名证书。 此外，软 Extranet 帐户锁定等功能需要使用 Web 应用程序代理。 有关 Web 应用程序代理的详细信息，请参阅[Web 应用程序代理](https://technet.microsoft.com/library/dn584107.aspx)。  
   
 如果要使用第三方\-方代理进行 extranet 访问，则此第三方\-方代理必须支持 http：\/\/download.microsoft.com 中定义的协议 9026\/\/\/\/\/\-\-\-\-\/\-[A4F81802D92C% 5bMS ADFSPIP %5 d. .pdf](https://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-ADFSPIP%5d.pdf)。  
   
-## <a name="BKMK_7"></a>网络要求  
+## <a name="network-requirements"></a><a name="BKMK_7"></a>网络要求  
 适当地配置以下网络服务对于在贵组织中成功部署 AD FS 至关重要：  
   
 **配置企业防火墙**  
@@ -220,7 +219,7 @@ AD FS 将创建基于会话\-和永久 cookie，这些 cookie 必须存储在客
   
 有关如何使用 NLB 配置群集 IP 地址或群集 FQDN 的信息，请参阅在 http：\/中指定群集参数[\/go.microsoft.com\/fwlink\/？LinkId\=75282](https://go.microsoft.com/fwlink/?LinkId=75282)。  
   
-## <a name="BKMK_8"></a>属性存储要求  
+## <a name="attribute-store-requirements"></a><a name="BKMK_8"></a>属性存储要求  
 AD FS 要求至少使用一个属性存储来对用户进行身份验证，并为这些用户提取安全声明。 有关 AD FS 支持的属性存储的列表，请参阅[属性存储的角色](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)。  
   
 > [!NOTE]  
@@ -256,7 +255,7 @@ AD FS 要求至少使用一个属性存储来对用户进行身份验证，并�
   
 使用自定义属性存储时，可能还需要配置连接字符串。 在这种情况下，可以输入所选的自定义代码，以便能够连接到自定义属性存储。 此情况下的连接字符串是一组名称\/值对，这些值对被解释为自定义属性存储的开发人员实现的。有关开发和使用自定义属性存储的详细信息，请参阅[属性存储概述](https://go.microsoft.com/fwlink/?LinkId=190782)。  
   
-## <a name="BKMK_9"></a>应用程序要求  
+## <a name="application-requirements"></a><a name="BKMK_9"></a>应用程序要求  
 AD FS 支持使用以下协议\-感知应用程序的声明：  
   
 -   WS\-联合  
@@ -269,7 +268,7 @@ AD FS 支持使用以下协议\-感知应用程序的声明：
   
 AD FS 还支持对任何非\-声明\-识别 Web 应用程序代理支持的应用程序的身份验证和授权。  
   
-## <a name="BKMK_10"></a>身份验证要求  
+## <a name="authentication-requirements"></a><a name="BKMK_10"></a>身份验证要求  
 **AD DS 身份验证 \(主要身份验证\)**  
   
 对于 intranet 访问，支持以下 AD DS 标准身份验证机制：  
@@ -322,7 +321,7 @@ AD FS 支持除主要身份验证之外的其他身份验证 \(AD DS\) 使用提
   
 AD FS 支持设备身份验证，使用设备注册服务在加入其设备的最终用户工作区的操作过程中设置的证书。  
   
-## <a name="BKMK_11"></a>工作区加入要求  
+## <a name="workplace-join-requirements"></a><a name="BKMK_11"></a>工作区加入要求  
 最终用户可以通过工作区将其设备加入到使用 AD FS 的组织。 AD FS 中的设备注册服务支持此项。 因此，最终用户可以在 AD FS 所支持的应用程序中获得 SSO 的额外权益。 此外，管理员还可以通过将对应用程序的访问权限限制为已加入到组织的工作区的设备来管理风险。 若要启用此方案，需要满足以下要求。  
   
 -   AD FS 支持 Windows 8.1 和 iOS 5\+ 设备的工作区加入  
@@ -331,7 +330,7 @@ AD FS 支持设备身份验证，使用设备注册服务在加入其设备的�
   
 -   AD FS 服务的 SSL 证书的使用者可选名称必须包含值 enterpriseregistration，后跟组织的用户主体名称 \(UPN\) 后缀，例如，enterpriseregistration.corp.contoso.com。  
   
-## <a name="BKMK_12"></a>加密要求  
+## <a name="cryptography-requirements"></a><a name="BKMK_12"></a>加密要求  
 下表提供了有关 AD FS 令牌签名、令牌加密\/解密功能的其他加密支持信息：  
   
 ||||  
@@ -347,10 +346,10 @@ AD FS 支持设备身份验证，使用设备注册服务在加入其设备的�
 |AES256KeyWrap \- [http：\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes256](http://www.w3.org/2001/04/xmlenc#kw-aes256)|256|支持对加密安全令牌的对称密钥进行加密的算法。|  
 |RsaV15KeyWrap \- [http：\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-1\_5](http://www.w3.org/2001/04/xmlenc#rsa-1_5)|1024|支持对加密安全令牌的对称密钥进行加密的算法。|  
 |RsaOaepKeyWrap \- [http：\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-oaep\-rsa-oaep-mgf1p](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|默认。 支持对加密安全令牌的对称密钥进行加密的算法。|  
-|SHA1\-[http：\/\/www.w3.org\/图片\/DSig\/SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/A|由 AD FS Server 在项目 SourceId 生成中使用：在这种情况下，STS 根据 SAML 2.0 标准\) 中的建议使用 SHA1 \(，为项目 sourceiD 创建一个较小的160位值。<br /><br />ADFS web 代理还使用 \(旧组件从 WS2003 时间范围\)，以标识 "上次更新时间" 值中的更改，以便它知道何时从 STS 更新信息。|  
-|SHA1withRSA\-<br /><br />[http：\/\/www.w3.org\/图片\/DSig\/RSA\-SHA1\_1\_](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/A|用于 AD FS 服务器验证 SAML AuthenticationRequest 的签名、对项目解析请求或响应进行签名、创建令牌\-签名证书时使用。<br /><br />在这些情况下，SHA256 为默认值，仅当伙伴 \(信赖方\) 不支持 SHA256 并且必须使用 SHA1 时，才使用 SHA1。|  
+|SHA1\-[http：\/\/www.w3.org\/图片\/DSig\/SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/A|由 AD FS Server 在项目 SourceId 生成中使用：在这种情况下，STS 根据 SAML 2.0 标准\) 中的建议使用 SHA1 \(，为项目 sourceiD 创建一个较小的160位值。<p>ADFS web 代理还使用 \(旧组件从 WS2003 时间范围\)，以标识 "上次更新时间" 值中的更改，以便它知道何时从 STS 更新信息。|  
+|SHA1withRSA\-<p>[http：\/\/www.w3.org\/图片\/DSig\/RSA\-SHA1\_1\_](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/A|用于 AD FS 服务器验证 SAML AuthenticationRequest 的签名、对项目解析请求或响应进行签名、创建令牌\-签名证书时使用。<p>在这些情况下，SHA256 为默认值，仅当伙伴 \(信赖方\) 不支持 SHA256 并且必须使用 SHA1 时，才使用 SHA1。|  
   
-## <a name="BKMK_13"></a>权限要求  
+## <a name="permissions-requirements"></a><a name="BKMK_13"></a>权限要求  
 执行安装和初始配置 AD FS 的管理员必须在本地域 \(中具有域管理员权限，即联合服务器加入到的域。\)  
   
 ## <a name="see-also"></a>另请参阅  

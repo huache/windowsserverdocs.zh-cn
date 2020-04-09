@@ -2,22 +2,18 @@
 title: 步骤7安装和配置 2-APP1
 description: 本主题是测试实验室指南-演示适用于 Windows Server 2016 的 DirectAccess 多站点部署的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fddffbc2954ef7f0687fc7865ec295295b32983a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8b6f5438498349e7d02fd6c9122d300e55fe2517
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314524"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861550"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>步骤7安装和配置 2-APP1
 

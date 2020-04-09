@@ -1,7 +1,6 @@
 ---
 title: 了解和部署永久性内存
 description: 有关永久性内存的详细信息以及如何在 Windows Server 2019 中通过存储空间直通对其进行设置的详细信息。
-keywords: 存储空间直通、永久性内存、pmem、存储、S2D
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
@@ -9,12 +8,12 @@ ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a9070d2e2ab73c7882f4b2ef585ccb01986695bb
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 43268986f0ef42aabc218062ac19f1d98f27be6d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822310"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861030"
 ---
 # <a name="understand-and-deploy-persistent-memory"></a>了解和部署永久性内存
 
@@ -22,7 +21,7 @@ ms.locfileid: "76822310"
 
 永久性内存（或 PMem）是一种新类型的内存技术，可提供经济实惠的大容量和持久性的独特组合。 本文提供有关 PMem 的背景以及使用存储空间直通在 Windows Server 2019 中部署它的步骤。
 
-## <a name="background"></a>后台
+## <a name="background"></a>背景
 
 PMem 是一种非易失性 RAM （NVDIMM），它通过电源周期保留其内容。 即使在出现意外断电、用户启动了关机、系统崩溃等事件时，也会保留内存内容。 这一独特的特征是，还可以使用 PMem 作为存储。 这就是为什么你会听到人们将 PMem 称为 "存储类内存" 的原因。
 
@@ -38,11 +37,11 @@ PMem 是一种非易失性 RAM （NVDIMM），它通过电源周期保留其内�
 
 如果你密切观看视频，你会注意到，甚至会有更多的 jaw。 即使在超过13.7 的 IOPS，Windows 中的文件系统也报告的延迟始终小于40μs！ （这是毫秒数的符号，一秒的秒。）此速度比典型的所有闪存供应商骄傲公布的速度要快得多。
 
-同时，Windows Server 2019 和 Intel® Optane 中的存储空间直通™ DC 持久性内存提供了突破性的性能。 这种业界领先的13.7 的 HCI 基准，超过了可预测性和极低的延迟，这比我们先前业界领先的 6.7 M IOPS 基准更多。 而且，这一次我们只需要12个服务器节点&mdash;比两年前少25%。
+同时，Windows Server 2019 和 Intel&reg; Optane 中的存储空间直通&trade; DC 持久性内存提供了突破性的性能。 这种业界领先的13.7 的 HCI 基准，超过了可预测性和极低的延迟，这比我们先前业界领先的 6.7 M IOPS 基准更多。 而且，这一次我们只需要12个服务器节点&mdash;比两年前少25%。
 
 ![IOPS 收益](media/deploy-pmem/iops-gains.png)
 
-测试硬件是一个12服务器群集，它配置为使用三向镜像和分隔的 ReFS 卷、 **12** x INTEL® S2600WFT、 **384 GiB** memory、2 x 28 核心 "CASCADELAKE"、 **1.5 TB** Intel® Optane™ DC 永久性内存作为缓存、 **32 TB** NVME （4 x 8 TB Intel® DC P4510）作为容量， **2** x Mellanox ConnectX-4 25 Gbps。
+测试硬件是一个12服务器群集，它配置为使用三向镜像和分隔的 ReFS 卷、 **12** x INTEL&reg; S2600WFT、 **384 GiB** memory、2 x 28 核心 "CASCADELAKE"、 **1.5 TB** Intel&reg; Optane&trade; DC 永久性内存作为缓存、 **32 TB** NVME （4 x 8 TB Intel&reg; DC P4510）作为容量， **2** x Mellanox ConnectX-4 25 Gbps。
 
 下表显示了完整的性能数字。  
 
@@ -56,17 +55,17 @@ PMem 是一种非易失性 RAM （NVDIMM），它通过电源周期保留其内�
 
 下表显示了 Windows Server 2019 和 Windows Server 2016 支持的永久性内存硬件。  
 
-| 永久性内存技术                                      | WIN ENT LTSB 2016 Finnish 64 Bits | Windows Server Standard 2012 R2 |
+| 永久性内存技术                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
 | 在持续模式下**的 nvdimm-n**                                  | 支持                | 支持                |
-| Intel Optane 在应用程序直接模式下**™ DC 永久性内存**             | 不受支持            | 支持                |
-| **Intel Optane™ DC 永久性内存（** 内存模式） | 支持            | 支持                |
+| Intel Optane 在应用程序直接模式下 **&trade; DC 永久性内存**             | 不支持            | 支持                |
+| **Intel Optane&trade; DC 永久性内存（** 内存模式） | 支持            | 支持                |
 
 > [!NOTE]  
 > Intel Optane 支持*内存*（可变）模式和*应用直接*（持久）模式。
    
 > [!NOTE]  
-> 当你重新启动具有多个 Intel® Optane 的系统时™应用直接模式中划分为多个命名空间的 PMem 模块，你可能会失去对部分或全部相关逻辑存储磁盘的访问权限。 此问题发生在早于版本1903的 Windows Server 2019 版本上。
+> 当你重新启动具有多个 Intel&reg; Optane 的系统时&trade; 应用直接模式中划分为多个命名空间的 PMem 模块，你可能会失去对部分或全部相关逻辑存储磁盘的访问权限。 此问题发生在早于版本1903的 Windows Server 2019 版本上。
 >   
 > 由于 PMem 模块已训练或在系统启动时失败，导致此访问权限丢失。 在这种情况下，系统上任何 PMem 模块上的所有存储命名空间都将失败，包括不以物理方式映射到故障模块的命名空间。
 >   
@@ -159,7 +158,7 @@ Windows Server 2019 上的存储空间直通支持使用持久性内存作为缓
 
 ### <a name="understanding-dax"></a>了解 DAX
 
-可以通过两种方法来访问永久性内存。 它们是：
+可以通过两种方法来访问永久性内存。 它们具有以下特点：
 
 1. **直接访问（DAX）** ，其操作类似于内存来获得最低延迟。 应用直接修改持久性内存，绕过堆栈。 请注意，只能将 DAX 与 NTFS 结合使用。
 1. **阻止访问**，它的操作类似于应用程序兼容性的存储。 在此配置中，数据流经堆栈。 可以将此配置与 NTFS 和 ReFS 结合使用。

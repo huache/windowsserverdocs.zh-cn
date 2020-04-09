@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a0da2265f8f66256ed2ba71d4847bf8a548626f8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b58fe9eaa66abd91de27713398759529ae6147ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319142"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861760"
 ---
 # <a name="core-network-components"></a>核心网络组件
 
@@ -283,11 +283,11 @@ AD DS 设计过程的第一步是确定组织所需的林数量。 林是顶级 
 
 |配置项：|示例值：|
 |------------------------|-------------------|
-|完整 DNS 名|示例：<br /><br />-corp.contoso.com<br />-example.com|
+|完整 DNS 名|示例：<p>-corp.contoso.com<br />-example.com|
 |林功能级别|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
-|Active Directory 域服务数据库文件夹位置|E:\Configuration\\<br /><br />或接受默认位置。|
-|Active Directory 域服务日志文件文件夹位置|E:\Configuration\\<br /><br />或接受默认位置。|
-|Active Directory 域服务 SYSVOL 文件夹位置|E:\Configuration\\<br /><br />或接受默认位置|
+|Active Directory 域服务数据库文件夹位置|E:\Configuration\\<p>或接受默认位置。|
+|Active Directory 域服务日志文件文件夹位置|E:\Configuration\\<p>或接受默认位置。|
+|Active Directory 域服务 SYSVOL 文件夹位置|E:\Configuration\\<p>或接受默认位置|
 |目录还原模式的管理员密码|**J\*p2leO4 $ F**|
 |答案文件名（可选）|**AD DS_AnswerFile**|
 
@@ -412,7 +412,7 @@ Arpa 域适用于基于 Internet 协议版本4（IPv4）寻址的所有 TCP/IP �
 |网络连接绑定|以太网|
 |DNS 服务器设置|DC1.corp.contoso.com|
 |首选 DNS 服务器 IP 地址|10.0.0.2|
-|“添加作用域”对话框值<br /><br />1. 范围名称<br />2. 起始 IP 地址<br />3. 结束 IP 地址<br />4. 子网掩码<br />5. 默认网关（可选）<br />6. 租约期限|1. 主子网<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6 8 天|
+|“添加作用域”对话框值<p>1. 范围名称<br />2. 起始 IP 地址<br />3. 结束 IP 地址<br />4. 子网掩码<br />5. 默认网关（可选）<br />6. 租约期限|1. 主子网<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6 8 天|
 |IPv6 DHCP 服务器操作模式|未启用|
 
 ## <a name="core-network-deployment"></a><a name="BKMK_deployment"></a>核心网络部署
@@ -1437,9 +1437,9 @@ Windows Server 核心网络部署过程[为新林安装 AD DS 和 DNS](#BKMK_ins
 |-----------------------|------------------|----------|
 |完整 DNS 名|corp.contoso.com||
 |林功能级别|Windows Server 2003||
-|“Active Directory 域服务”数据库文件夹位置|E:\Configuration\\<br /><br />或接受默认位置。||
-|“Active Directory 域服务”日志文件文件夹位置|E:\Configuration\\<br /><br />或接受默认位置。||
-|Active Directory 域服务 SYSVOL 文件夹位置|E:\Configuration\\<br /><br />或接受默认位置||
+|“Active Directory 域服务”数据库文件夹位置|E:\Configuration\\<p>或接受默认位置。||
+|“Active Directory 域服务”日志文件文件夹位置|E:\Configuration\\<p>或接受默认位置。||
+|Active Directory 域服务 SYSVOL 文件夹位置|E:\Configuration\\<p>或接受默认位置||
 |目录还原模式的管理员密码|J*p2leO4$F||
 |答案文件名（可选）|AD DS_AnswerFile||
 
@@ -1448,10 +1448,10 @@ Windows Server 核心网络部署过程[为新林安装 AD DS 和 DNS](#BKMK_ins
 |配置项|示例值|值|
 |-----------------------|------------------|----------|
 |区域类型：|-主区域<br />-辅助区域<br />-存根区域||
-|区域类型<br /><br />**将区域存储在 Active Directory**|-选定<br />-未选择||
+|区域类型<p>**将区域存储在 Active Directory**|-选定<br />-未选择||
 |Active Directory 区域传送作用域|-到此林中的所有 DNS 服务器<br />-到此域中的所有 DNS 服务器<br />-到此域中的所有域控制器<br />-到在此目录分区范围内指定的所有域控制器||
-|反向查找区域名称<br /><br />（IP 类型）|-IPv4 反向查找区域<br />-IPv6 反向查找区域||
-|反向查找区域名称<br /><br />（网络 ID）|10.0.0||
+|反向查找区域名称<p>（IP 类型）|-IPv4 反向查找区域<br />-IPv6 反向查找区域||
+|反向查找区域名称<p>（网络 ID）|10.0.0||
 
 ### <a name="installing-dhcp"></a><a name="BKMK_FndtnPrep_InstallDHCP"></a>安装 DHCP
 此部分中的表列出了 DHCP 的预安装配置项和安装配置项。
@@ -1509,16 +1509,16 @@ Windows Server 核心网络部署过程[新建并激活 DHCP 作用域](#BKMK_ne
 |-----------------------|------------------|----------|
 |新作用域名称|Corp2||
 |作用域描述|总公司子网2||
-|（IP 地址范围）<br /><br />起始 IP 地址|10.0.1.1||
-|（IP 地址范围）<br /><br />结束 IP 地址|10.0.1.254||
+|（IP 地址范围）<p>起始 IP 地址|10.0.1.1||
+|（IP 地址范围）<p>结束 IP 地址|10.0.1.254||
 |长度|8||
 |子网掩码|255.255.255.0||
 |（排除范围）起始 IP 地址|10.0.1.1||
 |排除范围结束 IP 地址|10.0.1.15||
-|租用期限<br /><br />天<br /><br />小时<br /><br />分钟|-8<br />-   0<br />-   0||
-|路由器（默认网关）<br /><br />IP 地址|10.0.1.1||
+|租用期限<p>天<p>小时<p>分钟|-8<br />-   0<br />-   0||
+|路由器（默认网关）<p>IP 地址|10.0.1.1||
 |DNS 父域|corp.contoso.com||
-|DNS 服务器<br /><br />IP 地址|10.0.0.2||
+|DNS 服务器<p>IP 地址|10.0.0.2||
 
 ### <a name="installing-network-policy-server-optional"></a><a name="BKMK_FndtnPrep_InstallNPS"></a>安装网络策略服务器（可选）
 此部分中的表列出了 NPS 的预安装配置项和安装配置项。

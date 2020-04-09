@@ -2,20 +2,19 @@
 title: 必须先安装 Integration services，然后才能在主虚拟机或副本虚拟机在故障转移后使用备用 IP 地址
 description: 此最佳做法分析器规则文本的联机版本，其中包含指向详细信息的链接。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: a7fdd185-d6c8-4f58-9b58-2df5827bb056
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 58e744c182fb2013e55e91f58140c6ba14181f9f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d532d58d21b39963b41de969d83b720ed077e9c7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393587"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861900"
 ---
 # <a name="integration-services-must-be-installed-before-primary-or-replica-virtual-machines-can-use-an-alternate-ip-address-after-a-failover"></a>必须先安装 Integration services，然后才能在主虚拟机或副本虚拟机在故障转移后使用备用 IP 地址
 
@@ -27,7 +26,7 @@ ms.locfileid: "71393587"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|Error|  
+|**对应**|错误|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  

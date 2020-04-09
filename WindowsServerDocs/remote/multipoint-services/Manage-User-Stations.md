@@ -1,30 +1,26 @@
 ---
 title: 管理用户工作站
 description: 了解如何在 MultiPoint Services 中管理用户工作站
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b418578d-3a4c-49b0-90db-8389b320b2f6
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 7f46d2a68fc6247bddc1251c32ac55544b6fbf52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b434002b5f542e3a9242290217fa66d418ee2f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405070"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853490"
 ---
 # <a name="manage-user-stations"></a>管理用户工作站
 本节讨论如何管理构成 MultiPoint 服务系统的工作站。 管理 MultiPoint 服务系统包括管理 MultiPoint 管理器的硬件和软件组件。 在 MultiPoint 服务系统中，桌面是为每个用户工作站提供的监视器上的软件用户界面。  
   
 ## <a name="station-status"></a>工作站状态  
-可在“工作站”选项卡上查看每个桌面的以下状态类型。状态包括：  
+可以在 "**工作站**" 选项卡上查看每个桌面的以下状态类型。状态包括：  
   
 -   登录的用户  
   
@@ -52,7 +48,7 @@ ms.locfileid: "71405070"
 ## <a name="split-a-station"></a>拆分工作站  
 任何分辨率高于 1024x768 的工作站显示器均可拆分为两个工作站。 有关拆分工作站的详细信息，请参阅[拆分用户工作站](Split-a-User-Station.md)主题。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [查看用户连接状态](View-User-Connection-Status.md)  
 [注销或断开用户会话](Log-off-or-Disconnect-User-Sessions.md)  
 [暂停用户会话并使其保持活动状态](Suspend-and-Leave-User-Session-Active.md)  

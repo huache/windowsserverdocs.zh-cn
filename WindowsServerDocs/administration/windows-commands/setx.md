@@ -1,28 +1,22 @@
 ---
 title: setx
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 setx 的 Windows 命令主题，用于在用户或系统环境中创建或修改环境变量，无需编程或编写脚本。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c206f36e2d0bc947329124b08fb797091e838bcd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 19f6625ffaaf745ae2af26e52986e97382f42702
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384029"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834340"
 ---
 # <a name="setx"></a>setx
-
-
 
 在用户或系统环境中创建或修改环境变量，无需编程或编写脚本。 **Setx**命令还检索注册表项的值，并将它们写入文本文件。
 
@@ -33,12 +27,12 @@ ms.locfileid: "71384029"
 ```
 setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] <Variable> <Value> [/m]
 setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] [<Variable>] /k <Path> [/m]
-setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName> {[<Variable>] {/a <X>,<Y> | /r <X>,<Y> "<String>"} [/m] | /x} [/d <Delimiters>]
+setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName> {[<Variable>] {/a <X>,<Y> | /r <X>,<Y> <String>} [/m] | /x} [/d <Delimiters>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|         参数          |                                                                                                                                              描述                                                                                                                                              |
+|         参数          |                                                                                                                                              说明                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /s \<计算机 >       |                                                                                  指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认值为本地计算机的名称。                                                                                  |
 | /u [\<域 >\]<User name> |                                                                                           用指定用户帐户的凭据运行脚本。 默认值为 "系统权限"。                                                                                            |
@@ -48,10 +42,10 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 |         /k \<路径 >         | 指定根据注册表项中的信息设置变量。 P*a*使用以下语法：</br>`\\<HIVE>\<KEY>\...\<Value>`</br>例如，你可以指定以下路径：</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
 |      /f \<文件名 >       |                                                                                                                               指定要使用的文件。                                                                                                                                |
 |        /a \<X >，<Y>         |                                                                                                                    指定绝对坐标，偏移量作为搜索参数。                                                                                                                    |
-|   /r \<X >，<Y> "<String>"   |                                                                                                            指定相对坐标和作为搜索参数的**字符串**的偏移量。                                                                                                            |
+|   /r \<X >，<Y> <String>   |                                                                                                            指定相对坐标和作为搜索参数的**字符串**的偏移量。                                                                                                            |
 |             /m             |                                                                                                指定在系统环境中设置变量。 默认设置为本地环境。                                                                                                 |
 |             /x             |                                                                                                       显示文件坐标，并忽略 **/a**、 **/r**和 **/d**命令行选项。                                                                                                        |
-|      /d \<分隔符 >      |                    指定除四个内置分隔符外要使用的分隔符，如 " **、** " 或 " **\\** " （空格、制表符、回车符和换行符）。 有效的分隔符包含任何 ASCII 字符。 最大分隔符数为15，其中包括内置分隔符。                    |
+|      /d \<分隔符 >      |                    指定除四个内置分隔符外使用的分隔符（如或 **）** **\\** ： SPACE、TAB、ENTER 和换行。 有效的分隔符包含任何 ASCII 字符。 最大分隔符数为15，其中包括内置分隔符。                    |
 |             /?             |                                                                                                                                 在命令提示符下显示帮助。                                                                                                                                  |
 
 ## <a name="remarks"></a>备注
@@ -66,7 +60,7 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 -   REG_DWORD 在十六进制模式下提取和使用注册表值。
 -   文件模式支持仅分析回车符和换行符（CRLF）文本文件。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要将本地环境中的计算机环境变量设置为 Brand1 值，请键入：
 ```
@@ -74,7 +68,7 @@ setx MACHINE Brand1
 ```
 若要将系统环境中的计算机环境变量设置为值 Brand1 计算机，请键入：
 ```
-setx MACHINE "Brand1 Computer" /m
+setx MACHINE Brand1 Computer /m
 ```
 若要将本地环境中的 MYPATH 环境变量设置为使用 PATH 环境变量中定义的搜索路径，请键入：
 ```
@@ -102,11 +96,11 @@ setx /s computer1 /u maindom\hiropln /p p@ssW23 TZONE /k HKEY_LOCAL_MACHINE\Syst
 ```
 若要在系统环境中将生成环境变量设置为在**HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber**注册表项中找到的值，请键入：
 ```
-setx BUILD /k "HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber" /m
+setx BUILD /k HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber /m
 ```
 若要在名为 Computer1 的远程计算机的系统环境中将生成环境变量设置为在**HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber**注册表项中找到的值，请键入：
 ```
-setx /s computer1 /u maindom\hiropln /p p@ssW23  BUILD /k "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\CurrentBuildNumber" /m
+setx /s computer1 /u maindom\hiropln /p p@ssW23  BUILD /k HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\CurrentBuildNumber /m
 ```
 若要显示名为 Ipconfig. out 的文件的内容，以及内容的对应坐标，请键入：
 ```
@@ -116,11 +110,11 @@ setx /f ipconfig.out /x
 ```
 setx IPADDR /f ipconfig.out /a 5,11
 ```
-若要将本地环境中的 OCTET1 环境变量设置为在坐标5中找到的值，请在文件 Ipconfig. out 中将其设置为 **"# $\*。"** ，请键入：
+若要将本地环境中的 OCTET1 环境变量设置为在坐标5的值中找到的值，请在文件 Ipconfig 中 **#$\*。** 键入：
 ```
-setx OCTET1 /f ipconfig.out /a 5,3 /d "#$*." 
+setx OCTET1 /f ipconfig.out /a 5,3 /d #$*. 
 ```
-若要将本地环境中的 IPGATEWAY 环境变量设置为在坐标0、7上找到的值（相对于文件中的 "网关" 坐标），请键入：
+若要将本地环境中的 IPGATEWAY 环境变量设置为在坐标0中找到的值，7相对于文件中的网关坐标，请键入：
 ```
 setx IPGATEWAY /f ipconfig.out /r 0,7 Gateway 
 ```
@@ -129,6 +123,6 @@ setx IPGATEWAY /f ipconfig.out /r 0,7 Gateway
 setx /s computer1 /u maindom\hiropln /p p@ssW23 /f ipconfig.out /x 
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

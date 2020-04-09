@@ -1,20 +1,18 @@
 ---
 title: 了解和配置 Azure Monitor
 description: 详细设置信息 Azure Monitor 是什么，以及如何为 Windows Server 2016 和2019中的存储空间直通群集配置电子邮件和短信警报。
-keywords: 存储空间直通，azure monitor，通知，电子邮件，短信
-ms.assetid: ''
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: 878bbce9543439cf78501e496c59e06e077c5ddc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fa4d8793c07cabd39ee6cc0d54b5cddc84eac202
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308183"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859040"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>使用 Azure Monitor 发送运行状况服务错误的电子邮件
 

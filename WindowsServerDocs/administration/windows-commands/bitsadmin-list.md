@@ -1,55 +1,46 @@
 ---
 title: bitsadmin list
-description: '**Bitsadmin 列表**的 Windows 命令主题-列出当前用户拥有的传输作业。'
-ms.custom: na
+description: '**Bitsadmin 列表**的 Windows 命令主题，其中列出了当前用户拥有的传输作业。'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1416965e-e0e6-49cf-b1d4-b286d3cf8716
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd4787f51dc2a7843ff6cf5c4f786658e530ad8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1883da7bfa71a41952f6f67e25eca4dbbdd3353c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381105"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850320"
 ---
 # <a name="bitsadmin-list"></a>bitsadmin list
-
-
 
 列出当前用户拥有的传输作业。
 
 ## <a name="syntax"></a>语法
 
 ```
-bitsadmin /List [/allusers][/verbose]
+bitsadmin /list [/allusers][/verbose]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|/Allusers|可选-列出所有用户的作业|
-|/Verbose|可选-提供每个作业的详细信息。|
+| 参数 | 说明 |
+| -------------- | -------------- |
+| /allusers | 可选。 列出所有用户的作业。 您必须具有管理员特权才能使用此参数。 |
+| /verbose | 可选。 提供有关每个作业的详细信息。 |
 
-## <a name="remarks"></a>备注
-
-您必须具有管理员特权才能使用/allusers 参数
-
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 下面的示例检索有关当前用户拥有的作业的信息。
+
 ```
-C:\>bitsadmin /List 
+C:\>bitsadmin /list
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

@@ -1,25 +1,20 @@
 ---
 title: Active Directory 域服务概述
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: na
-ms.suite: na
 ms.technology: security-auditing
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6cfe9479-5d17-41d5-939a-891e5233fdca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c0ee85358c5e39f1ebf8cd901298a6083a3ebb97
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 73272086b176fa8fb086063ff3d4249a02b016b2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403763"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857020"
 ---
 # <a name="active-directory-domain-services-overview"></a>Active Directory 域服务概述
 
@@ -27,7 +22,7 @@ ms.locfileid: "71403763"
   
 目录是存储有关网络上对象的信息的层次结构。 目录服务（例如 Active Directory 域服务（AD DS））提供存储目录数据以及使此数据可供网络用户和管理员使用的方法。 例如，AD DS 存储有关用户帐户的信息，如名称、密码、电话号码等，并使同一网络上的其他授权用户可以访问此信息。  
   
-Active Directory 存储有关网络上对象的信息，并使管理员和用户可以轻松查找和使用此信息。 Active Directory 使用结构化数据存储作为目录信息的逻辑层次结构的基础。  
+Active Directory 存储有关网络上对象的信息，并让管理员和用户可以更容易地使用这些信息。 Active Directory 使用结构化数据存储作为目录信息的逻辑层次组织的基础。  
   
 此数据存储（也称为目录）包含 Active Directory 对象的相关信息。 这些对象通常包含共享资源，如服务器、卷、打印机、网络用户和计算机帐户。 有关 Active Directory 数据存储的详细信息，请参阅[目录数据存储](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx)。  
   

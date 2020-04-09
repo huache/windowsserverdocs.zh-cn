@@ -1,24 +1,24 @@
 ---
 title: HCN RPC 上下文句柄
-description: ''
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 0eb620fe52de5ee98a247e17ed73304b2325c7c8
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: d55a990b2158f8dfbc61d8e75e9b0606edc9bf7c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031493"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859860"
 ---
 # <a name="rpc-context-handles-for-hcn"></a>HCN RPC 上下文句柄
 
->适用于：Windows Server (半年频道), Windows Server 2019
+>适用于： Windows Server （半年频道）、Windows Server 2019
 
 
 ## <a name="hcn_network"></a>HCN_Network
 
-HCN 网络是用于表示主机计算网络及其关联系统资源和策略的实体。 例如, HCN 网络通常包含一组元数据 (例如 id、名称、类型)、虚拟交换机、主机虚拟网络适配器 (充当网络的默认网关)、NAT 实例 (如果网络类型需要)、一组子网和 MAC 池以及要应用的任何网络范围的策略 (例如 Acl)。
+HCN 网络是用于表示主机计算网络及其关联系统资源和策略的实体。 例如，HCN 网络通常由一组元数据（例如 id、名称、类型）、虚拟交换机、主机虚拟网络适配器（充当网络的默认网关）、NAT 实例（如果网络类型需要）、一组子网和 MAC 池以及要应用的任何网络范围的策略（例如 Acl）组成。
 
 HCN 网络实体使用 HCN_NETWORK RPC 上下文句柄表示。
 
@@ -151,7 +151,7 @@ HcnCloseNetwork(
 
 ## <a name="hcn_endpoint"></a>HCN_Endpoint
 
-HCN 终结点是用于表示 HCN 网络上的 IP 终结点及其关联系统资源和策略的实体。 例如, HCN 终结点通常包含一组元数据 (例如 id、名称、父网络 id)、其网络标识 (例如 IP 地址、MAC 地址) 和要应用的任何终结点特定策略 (如 Acl、路由)。
+HCN 终结点是用于表示 HCN 网络上的 IP 终结点及其关联系统资源和策略的实体。 例如，HCN 终结点通常包含一组元数据（例如 id、名称、父网络 id）、其网络标识（例如 IP 地址、MAC 地址）和要应用的任何终结点特定策略（如 Acl、路由）。
 HCN 终结点实体使用 HCN_ENDPOINT RPC 上下文句柄表示。
 
 ```
@@ -285,7 +285,7 @@ HcnCloseEndpoint(
 
 ## <a name="hcn_namespace"></a>HCN_Namespace
 
-HCN 命名空间是用于表示主机计算网络命名空间的实体。 命名空间可让你在单个主机上具有隔离的网络环境, 其中每个命名空间都有其自己的网络接口和路由表, 与其他命名空间分开。
+HCN 命名空间是用于表示主机计算网络命名空间的实体。 命名空间可让你在单个主机上具有隔离的网络环境，其中每个命名空间都有其自己的网络接口和路由表，与其他命名空间分开。
 
 使用 HCN_NAMESPACE RPC 上下文句柄表示 HCN 命名空间实体。
 
@@ -422,7 +422,7 @@ HcnCloseNamespace(
 ## <a name="hcn_loadbalancer"></a>HCN_LoadBalancer
 
 HCN LoadBalancer 是用于表示主机计算网络 LoadBalancer 的实体。 LoadBalancers 允许你具有负载平衡主机计算网络终结点。
-HCN LoadBalancer 实体使用 HCN_LOADBALANCER RPC 上下文句柄表示。
+HCN LoadBalancer 实体是使用 HCN_LOADBALANCER RPC 上下文句柄表示的。
 
 ```
 /// Handle to an operation
@@ -560,7 +560,7 @@ HcnCloseLoadBalancer(
 
 ## <a name="hcn_notification_callback"></a>HCN_Notification_Callback
 
-有一些功能可用于访问服务范围的操作, 例如通知 (例如, 接收新网络创建的通知)。
+有一些功能可用于访问服务范围的操作，例如通知（例如，接收新网络创建的通知）。
 
 ```
 /// Registers a callback function to receive notifications of service-wide events such as network

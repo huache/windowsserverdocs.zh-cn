@@ -1,7 +1,6 @@
 ---
 ms.assetid: 02580b2f-a339-4470-947c-d700b2d55f3f
 title: 何时创建联合服务器场
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fcfc7d640d3688bf0e23557af9bd56082418ef37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61e5c2c31ef4f6771c379c93e61b78640f4a180a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358939"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858500"
 ---
 # <a name="when-to-create-a-federation-server-farm"></a>何时创建联合服务器场
 
@@ -32,7 +31,7 @@ ms.locfileid: "71358939"
 ## <a name="best-practices-for-deploying-a-federation-server-farm"></a>部署联合服务器场的最佳做法  
 建议在生产环境中部署联合服务器时采用以下最佳做法：  
   
--   如果要同时部署多台联合服务器，或者知道将随着时间的推移向场中添加更多服务器，请考虑在服务器场中创建现有联合服务器的服务器映像，然后在需要 cr 时从该映像进行安装快速 e) 其他联合服务器。  
+-   如果要同时部署多台联合服务器，或者知道将在一段时间内向场中添加更多服务器，请考虑在服务器场中创建现有联合服务器的服务器映像，然后在需要快速创建更多联合服务器时从该映像进行安装。  
   
     > [!NOTE]  
     > 如果决定使用服务器映像方法部署其他联合服务器，则无需完成清单中的任务：每次要向场中添加新服务器时都要[设置联合服务器](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。  
@@ -46,10 +45,10 @@ ms.locfileid: "71358939"
 ## <a name="configuring-federation-servers-for-a-farm"></a>为场配置联合服务器  
 下表描述了必须完成的任务，以便每个联合服务器可以参与到场环境中。  
   
-|任务|描述|  
+|任务|说明|  
 |--------|---------------|  
 |如果要使用 SQL Server 存储 AD FS 配置数据库|联合服务器场由两台或更多联合服务器组成，它们共享相同的 AD FS 配置数据库和令牌\-签名证书。 配置数据库可以存储在 Windows 内部数据库或 SQL Server 数据库中。 如果计划将配置数据库存储在 SQL 数据库中，请确保配置数据库可访问，以便加入场的所有新联合服务器都可以访问该数据库。 **注意：** 对于场方案，将配置数据库放置在未作为服务器场中的联合服务器的计算机上，这一点非常重要。 Microsoft NLB 不允许加入场的任何计算机相互通信。 **注意：** 请确保加入场的每个联合服务器上的 Internet Information Services \(IIS \)\)AD FS AppPool 的标识具有对配置数据库的读取访问权限。|  
-|获取和共享证书|你可以从公共证书颁发机构获取单一服务器身份验证证书，\(CA\)-例如 VeriSign。 然后，你可以配置证书，以便所有联合服务器共享证书的相同私钥部分。 有关如何共享相同证书的详细信息，请参阅 [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。 **注意：** 中的 AD FS 管理 "管理单元\-是指作为服务通信证书的联合服务器的服务器身份验证证书。<br /><br />有关详细信息，请参阅 [Certificate Requirements for Federation Servers](Certificate-Requirements-for-Federation-Servers.md)。|  
+|获取和共享证书|你可以从公共证书颁发机构获取单一服务器身份验证证书，\(CA\)-例如 VeriSign。 然后，你可以配置证书，以便所有联合服务器共享证书的相同私钥部分。 有关如何共享相同证书的详细信息，请参阅 [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)。 **注意：** 中的 AD FS 管理 "管理单元\-是指作为服务通信证书的联合服务器的服务器身份验证证书。<p>有关详细信息，请参阅 [Certificate Requirements for Federation Servers](Certificate-Requirements-for-Federation-Servers.md)。|  
 |指向相同的 SQL Server 实例|如果 AD FS 配置数据库将存储在 SQL 数据库中，则新的联合服务器必须指向场中其他联合服务器使用的同一 SQL Server 实例，以便新服务器可以加入到场中。|  
   
 ## <a name="see-also"></a>另请参阅

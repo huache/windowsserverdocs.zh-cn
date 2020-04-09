@@ -3,16 +3,15 @@ title: 高级疑难解答服务器消息块（SMB）
 description: 介绍高级服务器消息块（SMB）故障排除方法。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 433221f9846e9e071557b5537974b5739131742b
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 654cb1b0eea65457d521d201739721ed8c3c0203
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949698"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815190"
 ---
 # <a name="advanced-troubleshooting-server-message-block-smb"></a>高级疑难解答服务器消息块（SMB）
 
@@ -31,7 +30,7 @@ SMB 故障排除可能非常复杂。 本文并不是一个详尽的故障排除
 
 ### <a name="collect-data"></a>收集数据
 
-在解决 SMB 问题之前，建议先在客户端和服务器端收集网络跟踪。 以下准则将适用：
+在解决 SMB 问题之前，建议先在客户端和服务器端收集网络跟踪。 以下准则适用：
 
 - 在 Windows 系统上，可以使用 netshell （netsh）、网络监视器、Message 分析器或 Wireshark 来收集网络跟踪。
 
@@ -68,7 +67,7 @@ SMB 故障排除可能非常复杂。 本文并不是一个详尽的故障排除
    Start-NetEventSession trace
    ```
    
-2. 重现问题。
+2. 重现此问题。
 
 3. 通过运行以下命令停止跟踪：
 
@@ -100,7 +99,7 @@ SMB 是使用 TCP/IP 作为网络传输协议的应用程序级协议。 因此�
 
 4. 将减少 TCP 接收窗口。 这可能是因为存储速度缓慢或某些其他问题导致无法从辅助函数驱动程序（AFD） Winsock 缓冲区检索数据。
 
-如果没有明显的 TCP/IP 问题，请查看 SMB 错误。 要实现此目的，请执行下列步骤：
+如果没有明显的 TCP/IP 问题，请查看 SMB 错误。 要实现这一点，请执行下列操作：
 
 1. 请始终根据 SMB2 协议规范检查 SMB 错误。 许多 SMB 错误都是良性的（不有害）。 请参阅以下信息，确定在结论错误与以下任何问题相关后，SMB 返回错误的原因：
 
@@ -129,7 +128,7 @@ SMB 是使用 TCP/IP 作为网络传输协议的应用程序级协议。 因此�
 
 - 可以通过检查 SMB 命令了解应用程序尝试执行的操作。
 
-将命令和操作与协议规范进行比较以确保一切正常运行。 如果不是，则收集更接近或较低级别的数据，以查找有关根本原因的详细信息。 要实现此目的，请执行下列步骤：
+将命令和操作与协议规范进行比较以确保一切正常运行。 如果不是，则收集更接近或较低级别的数据，以查找有关根本原因的详细信息。 要实现这一点，请执行下列操作：
 
 1. 收集标准数据包捕获。
 
@@ -200,6 +199,6 @@ SMB 客户端二进制文件列在 **% windir%\\system32\\驱动程序**：
 
 - 为了获得更好的性能和稳定性，请更新 Windows Core。
 
-## <a name="reference"></a>引用
+## <a name="reference"></a>参考
 
 [Microsoft SMB 协议数据包交换方案](https://docs.microsoft.com/windows/win32/fileio/microsoft-smb-protocol-packet-exchange-scenario)

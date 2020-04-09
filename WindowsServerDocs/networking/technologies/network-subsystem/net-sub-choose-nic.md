@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
-manager: brianlic
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 5e1ed095b3180f3aebd25381ec9086445bb141ec
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+manager: dcscontentpm
+ms.author: v-tea
+author: Teresa-Motiv
+ms.openlocfilehash: 2e902f3aea4025afe4f475c45193710a8b474dcd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316626"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862220"
 ---
 # <a name="choosing-a-network-adapter"></a>选择网络适配器
 
@@ -100,27 +100,27 @@ RSS 还会对 UDP 单播流量和多播流量进行负载平衡，并通过将�
 
 - **\* MaxProcessors**：设置要使用的 RSS 处理器的最大数量。 这可确保将应用程序流量绑定到给定接口上的最大处理器数。 示例语法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –MaxProcessors <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –MaxProcessors <value>`
 
 - **\* BaseProcessorGroup**：设置 NUMA 节点的基本处理器组。 这会影响 RSS 使用的处理器数组。 示例语法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorGroup <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –BaseProcessorGroup <value>`
   
 - **\* MaxProcessorGroup**：设置 NUMA 节点的最大处理器组。 这会影响 RSS 使用的处理器数组。 设置此选项会限制最大处理器组，以便在 k 组内对齐负载平衡。 示例语法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –MaxProcessorGroup <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –MaxProcessorGroup <value>`
 
 - **\* BaseProcessorNumber**：设置 NUMA 节点的基础处理器编号。 这会影响 RSS 使用的处理器数组。 这允许跨网络适配器分区处理器。 这是分配给每个适配器的 RSS 处理器范围内的第一个逻辑处理器。 示例语法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorNumber <Byte Value>`
+     `Set-NetAdapterRss –Name "Ethernet" –BaseProcessorNumber <Byte Value>`
 
 - **\* NumaNode**：每个网络适配器可从其分配内存的 NUMA 节点。 这可以在 k 组内，也可以位于不同的 k 组中。 示例语法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –NumaNodeID <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –NumaNodeID <value>`
 
 - **\* NumberofReceiveQueues**：如果逻辑处理器看起来对于接收流量似乎不充分 \(例如，如在任务管理器\)中查看，则可以尝试将 RSS 队列的数量从默认值2增加到网络适配器所支持的最大值。 网络适配器可能有选项可用于更改作为驱动程序的一部分的 RSS 队列的数量。 示例语法：
 
-     `Set-NetAdapterRss –Name “Ethernet” –NumberOfReceiveQueues <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –NumberOfReceiveQueues <value>`
 
 有关详细信息，请单击以下链接下载[可缩放的网络：消除接收处理瓶颈-](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)以 Word 格式引入 RSS。
   
@@ -190,7 +190,7 @@ Ethernet                       True         False        True            False  
 下面是运行 NetAdapterStatistics cmdlet 时的示例输出。
 
 ```  
-PS C:\Users\Administrator> $x = Get-NetAdapterStatistics “myAdapter”   
+PS C:\Users\Administrator> $x = Get-NetAdapterStatistics "myAdapter"   
 PS C:\Users\Administrator> $x.rscstatistics  
   
 CoalescedBytes       : 0  

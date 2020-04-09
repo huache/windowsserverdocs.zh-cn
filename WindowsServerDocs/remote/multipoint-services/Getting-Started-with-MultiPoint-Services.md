@@ -1,24 +1,20 @@
 ---
 title: 带 MultiPoint 服务的入门
 description: 介绍 MultiPoint 服务并使你开始使用它。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aca5f0be-f253-46b5-b1e7-0bffa15f3227
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: cf31e62345b006ef9572a2ea97a23e3e0bf41b64
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2213c734831c1cde88ad0e2b6fb172f99a31b89c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395368"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859230"
 ---
 # <a name="getting-started-with-multipoint-services"></a>带 MultiPoint 服务的入门
 你的 MultiPoint 服务系统允许许多用户使用只使用工作站中心连接的多个工作站，只使用一台计算机。 每个工作站通常由工作站集线器、鼠标、键盘和视频显示器组成。 MultiPoint 服务工作站上的每个用户都有一个唯一的 Windows 计算会话，你可以使用 MultiPoint 管理器进行管理。  
@@ -59,7 +55,7 @@ MultiPoint 管理器提供了四个选项卡，用于管理 MultiPoint 服务工
   
 -   **切换到控制台模式：** 可以将 MultiPoint 服务系统更改为控制台模式，以便在 MultiPoint 服务系统上安装新软件。 你可以指定所有用户都可以运行该软件，或者仅你可以使用该软件，具体取决于软件的安装和许可选项。  
   
--   **有关**如果遇到 MultiPoint 服务问题，请查看[故障排除](Troubleshooting.md)部分，查找有助于解决问题的主题。  
+-   **故障排除：** 如果遇到 MultiPoint 服务问题，请查看[故障排除](Troubleshooting.md)部分，查找有助于解决问题的主题。  
   
 ## <a name="overview-of-multipoint-dashboard"></a>MultiPoint 仪表板概述  
 MultiPoint 仪表板具有功能区体验，可在其中选择两个选项卡来访问常见的日常任务。  
@@ -95,7 +91,7 @@ MultiPoint 仪表板具有功能区体验，可在其中选择两个选项卡来
   
 -   如果用户忘记了密码，你可以从使用标准 Windows 用户帐户管理功能的 "**用户**" 选项卡重置密码。 有关详细信息，请参阅[更新或删除用户帐户](Update-or-Delete-a-User-Account.md)主题。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [管理 MultiPoint Server 系统](managing-your-multipoint-services-system.md)  
 [有关软件许可证符合性的重要信息](Important-Information-about-Software-License-Compliance.md)  
 [使用 MultiPoint 管理器管理系统任务](Manage-System-Tasks-Using-MultiPoint-Manager.md)  

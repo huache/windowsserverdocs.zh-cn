@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2a3cf6cd523f5cfd69785104fed7aa3938d79525
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6c2f9c8079eb2dfaf208c8835940351a925d0a16
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359386"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857500"
 ---
 # <a name="migrate-active-directory-federation-services-role-services-to-windows-server-2012-r2"></a>将 Active Directory 联合身份验证服务角色服务迁移到 Windows Server 2012 R2
  本文档提供有关将以下角色服务迁移到随 Windows Server 2012 R2 一起安装的 Active Directory 联合身份验证服务（AD FS）的说明：  
@@ -59,8 +59,8 @@ ms.locfileid: "71359386"
   
 |从|与 Windows Server 2012 R2 一起安装 AD FS|  
 |----------|----------------------------------------------------------------------------------------------|  
-|Windows Server 2008 或 Windows Server 2008 R2 上安装的 AD FS 2.0 联合服务器|支持在同一台服务器上迁移。 有关详细信息，请参阅：<br /><br /> [正在准备迁移 AD FS 联合服务器](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [迁移 AD FS 联合服务器](migrate-ad-fs-fed-server-r2.md)|  
-|在 Windows Server 2012 上安装 AD FS 联合服务器|支持在同一台服务器上迁移。  有关详细信息，请参阅：<br /><br /> [正在准备迁移 AD FS 联合服务器](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [迁移 AD FS 联合服务器](migrate-ad-fs-fed-server-r2.md)|  
+|Windows Server 2008 或 Windows Server 2008 R2 上安装的 AD FS 2.0 联合服务器|支持在同一台服务器上迁移。 有关详细信息，请参阅：<p> [正在准备迁移 AD FS 联合服务器](prepare-migrate-ad-fs-server-r2.md)<p> [迁移 AD FS 联合服务器](migrate-ad-fs-fed-server-r2.md)|  
+|在 Windows Server 2012 上安装 AD FS 联合服务器|支持在同一台服务器上迁移。  有关详细信息，请参阅：<p> [正在准备迁移 AD FS 联合服务器](prepare-migrate-ad-fs-server-r2.md)<p> [迁移 AD FS 联合服务器](migrate-ad-fs-fed-server-r2.md)|  
   
 ## <a name="next-steps"></a>后续步骤
  [正在准备迁移 AD FS 联合服务器](prepare-migrate-ad-fs-server-r2.md)   

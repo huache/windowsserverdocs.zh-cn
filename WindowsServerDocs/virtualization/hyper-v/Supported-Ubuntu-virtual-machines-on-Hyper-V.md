@@ -2,25 +2,23 @@
 title: Hyper-v 上支持的 Ubuntu 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 06/13/2019
-ms.openlocfilehash: ed1c1a9f678dd7cb68b59d2df239ca278b7a3688
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 06c836d9671547ea3d40e5582c2ed7b330777ac9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365479"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857990"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Ubuntu 虚拟机
 
->适用于：Windows Server 2019，2016，Hyper-v Server 2019，2016，Windows Server 2012 R2，Hyper-v Server 2012 R2，Windows Server 2012，Hyper-v Server 2012，Windows Server 2008 R2，Windows 10，Windows 8.1，Windows 8，Windows 7.1，Windows 7
+>适用于： Windows Server 2019，2016，Hyper-v Server 2019，2016，Windows Server 2012 R2，Hyper-v Server 2012 R2，Windows Server 2012，Hyper-v Server 2012，Windows Server 2008 R2，Windows 10，Windows 8.1，Windows 8，Windows 7.1，Windows 7
 
 从 Ubuntu 12.04 开始，加载 "linux-虚拟" 包将安装一个适合用作来宾虚拟机的内核。 此包总是依赖于用于虚拟机的最新的最小通用内核映像和标头。 虽然它的使用是可选的，但 linux 虚拟内核将加载更少的驱动程序，并且启动速度更快且内存开销低于一般映像。
 
@@ -36,7 +34,7 @@ ms.locfileid: "71365479"
 
 * （*空白*）-功能不可用
 
-|**功能**|**Windows Server 操作系统版本**|**18.10/19.04**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|**12.04 LTS**|
+|**具有**|**Windows Server 操作系统版本**|**18.10/19.04**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|**12.04 LTS**|
 |-|-|-|-|-|-|-|
 |**可用性**||内置|内置|内置|内置|内置|
 |**[转储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -49,7 +47,7 @@ ms.locfileid: "71365479"
 |vRSS|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |TCP 分段和校验和卸载|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |SR-IOV|2019、2016|&#10004;|&#10004;|&#10004;|||
-|**[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||||||
+|**[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||||||
 |VHDX 调整大小|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||
 |虚拟光纤通道|2019、2016、2012 R2|&#10004;备注2|&#10004;备注2|&#10004;备注2|&#10004;备注2||
 |实时虚拟机备份|2019、2016、2012 R2|&#10004;备注3、4、6|&#10004;备注3、4、5|&#10004;备注3、4、5|&#10004;备注3、4、5||
@@ -74,7 +72,7 @@ ms.locfileid: "71365479"
 |使用 UEFI 启动|2019、2016、2012 R2|&#10004;注释11、12|&#10004;注释11、12|&#10004;注释11、12|&#10004;注释11、12||
 |安全启动|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;||
 
-## <a name="notes"></a>说明
+## <a name="notes"></a>注意
 
 1. 如果为虚拟机上的特定 Hyper-v 特定网络适配器配置了**网络管理器**，则静态 IP 注入可能不起作用。 若要确保静态 IP 注入正常运行，请确保网络管理器已完全关闭，或已通过其**ifcfg-eth0-ethX**文件在特定网络适配器上关闭网络管理器。
 
@@ -131,7 +129,7 @@ ms.locfileid: "71365479"
 
    * 启动内存和最小内存应等于或大于分发供应商建议的内存量。
 
-   * 通常会消耗系统中的全部可用内存的应用程序，仅消耗最多 80% 的可用 RAM。
+   * 通常会消耗系统中的全部可用内存的应用程序，仅消耗最多80% 的可用 RAM。
 
 9. 如果使用的是 Windows Server 2019、Windows Server 2016 或 Windows Server 2012/2012 R2 操作系统上的动态内存，请指定 "**启动内存**"、"**最小内存**" 和 "**最大内存**" 参数，以128兆字节（MB）为倍数。 如果不这样做，可能会导致热添加失败，并且在来宾操作系统上可能看不到任何内存增长。
 
@@ -171,7 +169,7 @@ ms.locfileid: "71365479"
        # sudo mv shimx64.efi bootx64.efi
        ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 * [Hyper-v 上支持的 CentOS 和 Red Hat Enterprise Linux 虚拟机](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

@@ -1,23 +1,23 @@
 ---
 title: 租户的受防护的 Vm-创建模板磁盘-可选
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: c1992f8b-6f88-4dbc-b4a5-08368bba2787
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8e5080dd74506e86687dddb7be0fd35af92f5b56
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f51a0f90f60847929f6fe46732c98f355a6a859
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403438"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856440"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-template-disk-optional"></a>租户的受防护的 Vm-创建模板磁盘（可选）
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 若要创建新的受防护 VM，你将需要使用经过特别准备的已签名模板磁盘。 已签名模板磁盘中的元数据有助于确保磁盘在创建后不会被修改，并允许你作为租户来限制可用于创建受防护 Vm 的磁盘。 提供此磁盘的一种方法是创建它的租户，如本主题中所述。 
 
@@ -28,11 +28,11 @@ ms.locfileid: "71403438"
 
 若要创建受防护的模板磁盘，需要首先准备将通过模板磁盘向导运行的 OS 磁盘。 此磁盘将用作受防护的 Vm 中的 OS 磁盘。 你可以使用任何现有工具创建此磁盘（如 Microsoft Desktop Image Service Manager （DISM）），或者使用空白 VHDX 手动设置 VM，并将操作系统安装到该磁盘上。 设置磁盘时，必须遵守特定于第2代和/或受防护 Vm 的以下要求： 
 
-| VHDX 的要求 | Reason |
+| VHDX 的要求 | 原因 |
 |-----------|----|
 |必须是 GUID 分区表（GPT）磁盘 | 需要用于第2代虚拟机以支持 UEFI|
-|磁盘类型必须是**基本**磁盘，而不是**动态**磁盘。 <br>注意:这是指逻辑磁盘类型，而不是 Hyper-v 支持的 "动态扩展" VHDX 功能。 | BitLocker 不支持动态磁盘。|
-|磁盘至少有两个分区。 一个分区必须包含安装 Windows 的驱动器。 这是 BitLocker 将加密的驱动器。 其他分区是活动分区，其中包含引导程序并保持未加密状态，以便可以启动计算机。|BitLocker 需要|
+|磁盘类型必须是**基本**磁盘，而不是**动态**磁盘。 <br>注意：这是指逻辑磁盘类型，而不是 Hyper-v 支持的 "动态扩展" VHDX 功能。 | BitLocker 不支持动态磁盘。|
+|磁盘至少有两个分区。 一个分区必须包含安装 Windows 的驱动器。 该驱动器是 BitLocker 将进行加密的驱动器。 其他分区是活动分区，其中包含引导程序并保持未加密状态，以便可以启动计算机。|BitLocker 需要|
 |文件系统为 NTFS | BitLocker 需要|
 |在 VHDX 上安装的操作系统是以下项之一：<br>-Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 <br>-Windows 10、Windows 8.1、Windows 8| 需要支持第2代虚拟机和 Microsoft 安全启动模板|
 |操作系统必须通用化（运行 sysprep.inf） | 模板预配涉及特定租户工作负荷的专用 Vm| 
@@ -86,12 +86,12 @@ ms.locfileid: "71403438"
 
     等待签名过程完成，然后再尝试装载或移动模板磁盘。 完成此过程可能需要一段时间，具体取决于磁盘的大小。 
 
-9. 在 "**摘要**" 页上，将显示有关磁盘模板、用于签署模板的证书和证书颁发者的信息。 单击 "**关闭**" 退出向导。
+9. 在 "**摘要**" 页上，将显示有关磁盘模板、用于签署模板的证书和证书颁发者的信息。 单击 **“关闭”** 退出向导。
 
 
 如[创建用于定义受防护的 VM 的防护数据](guarded-fabric-tenant-creates-shielding-data.md)中所述，向托管服务提供商和你创建的防护数据文件提供屏蔽磁盘模板。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [部署受防护的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受保护的结构和受防护的 VM](guarded-fabric-and-shielded-vms-top-node.md)

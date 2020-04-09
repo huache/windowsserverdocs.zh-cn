@@ -1,24 +1,20 @@
 ---
 title: verify
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于验证的 Windows 命令主题，它会告知**cmd**是否验证文件已正确写入磁盘。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dfe8bc91-d948-4e47-84ad-a79a60506ffa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 840fd3609ed3aded1c9cfebd4e395ddcc6d5588b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 91a0777999a604a23e2de83eda6b89c926cb241c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363098"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830050"
 ---
 # <a name="verify"></a>verify
 
@@ -34,14 +30,14 @@ ms.locfileid: "71363098"
 verify [on | off]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|[\| off]|打开或关闭**验证**设置。|
+|[打开 \|]|打开或关闭**验证**设置。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要显示当前**验证**设置，请键入：
 ```
@@ -52,6 +48,6 @@ verify
 Verify on
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

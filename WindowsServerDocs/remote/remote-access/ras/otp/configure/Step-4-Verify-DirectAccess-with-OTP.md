@@ -2,22 +2,18 @@
 title: 步骤4通过 OTP 验证 DirectAccess
 description: 本主题是指南使用 Windows Server 2016 中的 "使用 OTP 身份验证部署远程访问" 指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ed49a0a3-1c45-42e5-8f13-cad20c1c1d68
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9a3d3fadbe2f187ae6b5a77137393b7ad7be338b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 14d8a3a2138682fb552538948db604a75a1fe898
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313636"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858200"
 ---
 # <a name="step-4-verify-directaccess-with-otp"></a>步骤4通过 OTP 验证 DirectAccess
 

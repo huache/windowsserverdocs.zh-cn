@@ -2,23 +2,22 @@
 title: 副本服务器必须配置为接受复制请求
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 54868d4db2dccc893bd2897134d9125446873384
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 09bb573bbb091d1b167f3c354be4d6448476e26d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366722"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857950"
 ---
 # <a name="a-replica-server-must-be-configured-to-accept-replication-requests"></a>副本服务器必须配置为接受复制请求
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -26,7 +25,7 @@ ms.locfileid: "71366722"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|Error|  
+|**对应**|错误|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
@@ -42,7 +41,7 @@ ms.locfileid: "71366722"
   
 #### <a name="create-authorization-entries-using-hyper-v-manager"></a>使用 Hyper-v 管理器创建授权条目  
   
-1.  打开 Hyper-V 管理器。 （从服务器管理器中，单击 "**工具**"  >  "**hyper-v 管理器**"。）  
+1.  打开 Hyper-V 管理器。 （从服务器管理器中，单击 "**工具**" > **hyper-v 管理器**"。）  
   
 2.  在主机列表中，右键单击所需的主机，然后单击 " **Hyper-v 设置**"。  
   
@@ -58,7 +57,7 @@ ms.locfileid: "71366722"
   
     -   指定一个专用位置以仅存储该服务器的文件。  
   
-7.  单击 **“确定”** 。  
+7.  单击“确定”。  
   
 8.  为每个主服务器重复上述步骤。  
   

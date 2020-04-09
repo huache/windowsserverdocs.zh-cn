@@ -1,7 +1,6 @@
 ---
 ms.assetid: 39ecc468-77c5-4938-827e-48ce498a25ad
 title: 附录 A-回顾 AD FS 要求
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 281bb3763bc13e28b007a819254de382dc977f1c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8a11c7e6072d4aaa1ace19885c92639acfdbbb8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408152"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858050"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>附录 A：查看 AD FS 要求
 
-为了使你的 Active Directory 联合身份验证服务（AD FS）部署中的组织伙伴可以成功地进行协作，你必须首先确保你的企业网络基础结构配置为 AD FS 支持帐户、名称解析和证书。 AD FS 具有以下类型的要求：  
+为了使你的 Active Directory 联合身份验证服务（AD FS）部署中的组织伙伴可以成功地进行协作，你必须首先确保你的企业网络基础结构配置为支持帐户、名称解析和证书的 AD FS 要求。 AD FS 提出了以下类型的要求：  
   
 > [!TIP]  
 > 可以在 Microsoft TechNet Wiki 上的 [AD FS 内容导航图](https://social.technet.microsoft.com/wiki/contents/articles/2735.aspx) 页面中找到更多 AD FS 资源链接。 此页面由 AD FS 社区的成员管理，并由 AD FS 产品团队定期进行监视。  
@@ -33,7 +32,7 @@ ms.locfileid: "71408152"
 |磁盘空间|50 MB|100 MB|  
   
 ## <a name="software-requirements"></a>软件要求  
-AD FS 依赖于 Windows Server®2012操作系统中内置的服务器功能。  
+AD FS 依赖于 Windows Server&reg; 2012 操作系统中内置的服务器功能。  
   
 > [!NOTE]  
 > 联合身份验证服务和联合身份验证服务代理角色服务无法共存于同一台计算机上。  
@@ -42,14 +41,14 @@ AD FS 依赖于 Windows Server®2012操作系统中内置的服务器功能。
 证书在联合服务器、联合服务器代理、声明感知应用程序和 Web 客户端之间起到保护通信安全的最重要作用。 对证书的要求各不相同，具体取决于你要设置的是联合服务器计算机还是联合服务器代理计算机，如本部分中所述。  
   
 ### <a name="federation-server-certificates"></a>联合服务器证书  
-联合服务器要求下表中的证书。  
+联合服务器需要下表中的证书。  
   
-|证书类型|描述|在部署之前你需要知道的内容|  
+|证书类型|说明|部署前须知|  
 |--------------------|---------------|------------------------------------------|  
-|安全套接字层 (SSL) 证书|这是用于保护联合服务器和客户端之间通信安全的标准安全套接字层 (SSL) 证书。|此证书必须绑定到 Internet 信息服务 (IIS) 中的联合服务器或联合服务器代理的默认网站。  对于联合服务器代理，必须在成功运行联合服务器代理配置向导之前，在 IIS 中配置该绑定。<br /><br />**推荐**因为此证书必须受 AD FS 的客户端信任，所以请使用由公共（第三方）证书颁发机构 (CA)（例如 VeriSign）颁发的服务器身份验证证书。 **更改暂存文件夹路径**此证书的使用者名称用于表示部署的 AD FS 的每个实例的联合身份验证服务名称。 出于此原因，你可能要考虑为任何新的 CA 颁发的证书选择最能代表你的公司或伙伴组织名称的使用者名称。|  
+|安全套接字层 (SSL) 证书|这是用于保护联合服务器和客户端之间通信安全的标准安全套接字层 (SSL) 证书。|此证书必须绑定到 Internet 信息服务 (IIS) 中的联合服务器或联合服务器代理的默认网站。  对于联合服务器代理，必须在成功运行联合服务器代理配置向导之前，在 IIS 中配置该绑定。<p>**建议：** 因为此证书必须受 AD FS 的客户端信任，所以请使用由公共（第三方）证书颁发机构 (CA)（例如 VeriSign）颁发的服务器身份验证证书。 **提示：** 此证书的使用者名称用于表示部署的 AD FS 的每个实例的联合身份验证服务名称。 出于此原因，你可能要考虑为任何新的 CA 颁发的证书选择最能代表你的公司或伙伴组织名称的使用者名称。|  
 |服务通信证书|此证书用于保护联合服务器之间的通信安全以确保 WCF 消息的安全性。|默认情况下，将 SSL 证书用作服务通信证书。  这可以使用 AD FS 管理控制台进行更改。|  
-|令牌签名证书|这是一种用于安全地对联合服务器颁发的所有令牌进行签名的标准 X509 证书。|令牌签名证书必须包含私钥，而且它应链接到联合身份验证服务中受信任的根。 默认情况下，AD FS 创建自签名证书。 但是，你以后可以使用“AD FS 管理”管理单元将其更改为 CA 颁发的证书，具体取决于你的组织的需求。|  
-|令牌解密证书|这是用于解密由伙伴联合服务器加密的任何传入令牌的标准 SSL 证书。 该证书也在联合元数据中发布。|默认情况下，AD FS 创建自签名证书。 但是，你以后可以使用“AD FS 管理”管理单元将其更改为 CA 颁发的证书，具体取决于你的组织的需求。|  
+|令牌签名证书|这是一种用于安全地对联合服务器颁发的所有令牌进行签名的标准 X509 证书。|令牌签名证书必须包含一个私钥，并且应链接至联合身份验证服务中的可信根。 默认情况下，AD FS 将创建自签名证书。 但是，你以后可以使用“AD FS 管理”管理单元将其更改为 CA 颁发的证书，具体取决于你的组织的需求。|  
+|令牌解密证书|这是用于解密由伙伴联合服务器加密的任何传入令牌的标准 SSL 证书。 该证书也在联合元数据中发布。|默认情况下，AD FS 将创建自签名证书。 但是，你以后可以使用“AD FS 管理”管理单元将其更改为 CA 颁发的证书，具体取决于你的组织的需求。|  
   
 > [!CAUTION]  
 > 用于令牌签名和令牌解密的证书对联合身份验证服务的稳定性至关重要。 由于任何为此目的配置的证书的丢失或非计划删除都可能中断服务，因此应备份任何为此目的配置的证书。  
@@ -59,9 +58,9 @@ AD FS 依赖于 Windows Server®2012操作系统中内置的服务器功能。
 ### <a name="federation-server-proxy-certificates"></a>联合服务器代理证书  
 联合服务器代理要求下表中的证书。  
   
-|证书类型|描述|在部署之前你需要知道的内容|  
+|证书类型|说明|部署前须知|  
 |--------------------|---------------|------------------------------------------|  
-|服务器身份验证证书|这是用于保护联合服务器代理和 Internet 客户端计算机之间通信安全的标准安全套接字层 (SSL) 证书。|此证书必须绑定到 Internet 信息服务 (IIS) 中的默认网站，才能成功运行 AD FS 联合服务器代理配置向导。<br /><br />**推荐**因为此证书必须受 AD FS 的客户端信任，所以请使用由公共（第三方）证书颁发机构 (CA)（例如 VeriSign）颁发的服务器身份验证证书。<br /><br />**更改暂存文件夹路径**此证书的使用者名称用于表示部署的 AD FS 的每个实例的联合身份验证服务名称。 出于此原因，你可能要考虑选择最能代表你的公司或伙伴组织名称的使用者名称。|  
+|服务器身份验证证书|这是用于保护联合服务器代理和 Internet 客户端计算机之间通信安全的标准安全套接字层 (SSL) 证书。|此证书必须绑定到 Internet 信息服务 (IIS) 中的默认网站，才能成功运行 AD FS 联合服务器代理配置向导。<p>**建议：** 因为此证书必须受 AD FS 的客户端信任，所以请使用由公共（第三方）证书颁发机构 (CA)（例如 VeriSign）颁发的服务器身份验证证书。<p>**提示：** 此证书的使用者名称用于表示部署的 AD FS 的每个实例的联合身份验证服务名称。 出于此原因，你可能要考虑选择最能代表你的公司或伙伴组织名称的使用者名称。|  
   
 有关联合服务器代理使用证书的详细信息，请参阅[联合服务器代理的证书要求](Certificate-Requirements-for-Federation-Server-Proxies.md)。  
   
@@ -70,7 +69,7 @@ AD FS 依赖于 Windows Server®2012操作系统中内置的服务器功能。
   
 Microsoft 的 AD FS 产品团队已成功测试下表中的浏览器和操作系统配置。  
   
-|Browser|Windows 7|Windows Vista|  
+|浏览器|Windows 7|Windows Vista|  
 |-----------|-------------|-----------------|  
 |Internet Explorer 7.0|X|X|  
 |Internet Explorer 8.0|X|X|  
@@ -87,13 +86,13 @@ AD FS 将创建必须存储在客户端计算机上的基于会话的 Cookie 和
 出于安全原因，对 TLS/SSL 的支持是必需的。  
   
 ## <a name="network-requirements"></a>网络要求  
-适当地配置以下网络服务对于在贵组织中成功部署 AD FS 至关重要。  
+要在组织中成功部署 AD FS，正确配置以下网络服务至关重要。  
   
 ### <a name="tcpip-network-connectivity"></a>TCP/IP 网络连接  
 要使 AD FS 正常工作，客户端之间必须存在 TCP/IP 网络连接;域控制器;承载联合身份验证服务的计算机、联合身份验证服务代理（使用时）以及 AD FS Web 代理。  
   
 ### <a name="dns"></a>DNS  
-Active Directory 域服务（AD DS）以外的 AD FS 操作的主要网络服务是域名系统（DNS）。 在部署 DNS 时，用户可以使用很容易记住的友好的计算机名称来连接到 IP 网络上的计算机以及其他资源。  
+Active Directory 域服务（AD DS）以外的 AD FS 操作的主要网络服务是域名系统（DNS）。 部署 DNS 后，用户可以使用易于记住的友好计算机名称连接到 IP 网络上的计算机和其他资源。  
   
  Windows Server 2008 使用 DNS 进行名称解析，而不是在基于 Windows NT 4.0 的网络中使用的 Windows Internet 名称服务（WINS） NetBIOS 名称解析。 仍可能将 WINS 用于需要它的应用程序。 但是，AD DS 和 AD FS 需要 DNS 名称解析。  
   
@@ -101,7 +100,7 @@ Active Directory 域服务（AD DS）以外的 AD FS 操作的主要网络服务
   
 -   你的组织已经具有现有的 DNS 基础结构。 在大多数情况下，DNS 已配置在整个网络中，以便你企业网络中的 Web 浏览器客户端有权访问 Internet。 由于 Internet 访问和名称解析是 AD FS 的要求，因此，此基础结构假定为部署 AD FS。  
   
--   你要将联合服务器添加到企业网络。 为了在企业网络中对用户进行身份验证，必须将企业网络林中的内部 DNS 服务器配置为返回运行联合身份验证服务的内部服务器的 CNAME。 有关详细信息，请参阅 [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md)。  
+-   你要将联合服务器添加到企业网络。 为了在企业网络中对用户进行身份验证，必须将企业网络林中的内部 DNS 服务器配置为返回运行联合身份验证服务的内部服务器的 CNAME。 有关详细信息，请参阅[联合服务器的名称解析要求](Name-Resolution-Requirements-for-Federation-Servers.md)。  
   
 -   你要将联合服务器代理添加到外围网络。 如果要对位于标识伙伴组织的企业网络中的用户帐户进行身份验证，则必须将企业网络林中的内部 DNS 服务器配置为返回内部联合服务器代理的 CNAME。 有关如何配置 DNS 以适应添加联合服务器代理的信息，请参阅[联合服务器代理的名称解析要求](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)。  
   
@@ -179,5 +178,5 @@ AD FS 联合服务器代理角色使得使用 SSL 客户端身份验证从外部
   
 若要在某些情况下支持某些身份验证强度要求，也可以配置 AD FS 以创建指示用户通过身份验证的方式的声明。 然后，信赖方可以使用此声明做出授权决定。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [Windows Server 2012 中的 AD FS 设计指南](AD-FS-Design-Guide-in-Windows-Server-2012.md)

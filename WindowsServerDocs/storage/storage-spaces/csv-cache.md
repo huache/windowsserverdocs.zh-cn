@@ -2,21 +2,21 @@
 title: 存储空间直通内存中读取缓存
 ms.prod: windows-server
 ms.author: eldenc
-ms.manager: siroy
+manager: siroy
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 83fc923f505531f955fc0131d7dcc1ce98974daa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d9ebc40b69373dafbebdb87f2abe624a5a7a4375
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394087"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858950"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>将存储空间直通与 CSV 内存中读取缓存一起使用
-> 适用于：Windows Server 2016、Windows Server 2019
+> 适用于： Windows Server 2016、Windows Server 2019
 
 本主题介绍如何使用系统内存来提高[存储空间直通](storage-spaces-direct-overview.md)性能。
 
@@ -28,7 +28,7 @@ ms.locfileid: "71394087"
 
 内存中读取缓存最适用于读取密集型工作负荷，如虚拟桌面基础结构（VDI）。 相反，如果工作负荷非常耗费写入，则缓存可能会引入比值更多的开销，因此应将其禁用。
 
-对于 CSV 内存中读取缓存，最多可以使用 80% 的总物理内存。
+对于 CSV 内存中读取缓存，最多可以使用80% 的总物理内存。
 
   > [!TIP]
   > 对于超聚合部署（其中计算和存储在相同的服务器上运行），请注意为虚拟机留出足够的内存。 对于聚合横向扩展文件服务器（SoFS）部署（内存争夺更少），这不适用。
@@ -40,7 +40,7 @@ ms.locfileid: "71394087"
 
 CSV 内存中读取缓存在 Windows Server 2016 和 Windows Server 2019 中提供，具有相同的功能。 在 Windows Server 2016 中，它在默认情况下处于关闭状态。 在 Windows Server 2019 中，默认情况下，它默认为 1 GB。
 
-| 操作系统版本          | 默认 CSV 缓存大小 |
+| OS 版本          | 默认 CSV 缓存大小 |
 |---------------------|------------------------|
 | Windows Server 2016 | 0（已禁用）           |
 | Windows Server 2019 | 1 GiB                   |
@@ -69,6 +69,6 @@ Get-ClusterSharedVolume | ForEach {
 }
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)

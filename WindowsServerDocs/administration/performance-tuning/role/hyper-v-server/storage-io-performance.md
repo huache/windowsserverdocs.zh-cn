@@ -4,15 +4,15 @@ description: Hyper-v 性能优化中的存储 i/o 性能注意事项
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c5a7b667f24ee929a80010dc51508033f991ed5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 83b22c47cb23b02bb9984e03d78fcae93be1ca0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370059"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851810"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Hyper-v 存储 i/o 性能
 
@@ -20,7 +20,7 @@ ms.locfileid: "71370059"
 
 ## <a name="virtual-controllers"></a>虚拟控制器
 
-Hyper-v 提供了三种类型的虚拟控制器：IDE、SCSI 和虚拟主机总线适配器（Hba）。
+Hyper-v 提供了三种类型的虚拟控制器： IDE、SCSI 和虚拟主机总线适配器（Hba）。
 
 ## <a name="ide"></a>IDE
 
@@ -160,7 +160,7 @@ VHD 指向父 VHD 文件。 不写入的任何块写入会导致 VHD 文件中�
 
 ## <a name="block-size-considerations"></a>块大小注意事项
 
-块大小会显著影响性能。 最佳做法是将块大小与使用磁盘的工作负荷的分配模式相匹配。 例如，如果应用程序在 16 MB 的块区中分配，则虚拟硬盘块大小为 16 MB 是最佳的。 只有 VHDX 格式的&gt;虚拟硬盘上才能有 2 MB 的块大小。 对于随机 i/o 工作负荷的分配模式，更大的块大小会显著增加主机上的空间使用率。
+块大小会显著影响性能。 最佳做法是将块大小与使用磁盘的工作负荷的分配模式相匹配。 例如，如果应用程序在 16 MB 的块区中分配，则虚拟硬盘块大小为 16 MB 是最佳的。 只有 VHDX 格式的虚拟硬盘上才能有 &gt;2 MB 的块大小。 对于随机 i/o 工作负荷的分配模式，更大的块大小会显著增加主机上的空间使用率。
 
 ## <a name="sector-size-implications"></a>扇区大小影响
 
@@ -244,7 +244,7 @@ Windows Server 2012 和更高版本支持大型虚拟机，并且任何大型虚
 
 -   一种更有效的 i/o 完成机制，涉及虚拟处理器间的中断分布，以避免昂贵的 interprocessor 中断。
 
-Windows Server 2012 中引入了几个注册表项，位于 HKLM\\系统\\CurrentControlSet\\Enum\\VMBUS\\{device id}\\{instance id}\\StorChannel，它允许调整通道数。 它们还将处理 i/o 完成的虚拟处理器与应用程序分配给 i/o 处理器的虚拟 Cpu 对齐。 注册表设置在设备硬件密钥上基于每个适配器进行配置。
+Windows Server 2012 中引入了几个注册表项，它们位于 HKLM\\System\\CurrentControlSet\\Enum\\VMBUS\\{device id}\\{instance id}\\StorChannel，这允许调整通道数。 它们还将处理 i/o 完成的虚拟处理器与应用程序分配给 i/o 处理器的虚拟 Cpu 对齐。 注册表设置在设备硬件密钥上基于每个适配器进行配置。
 
 -   **ChannelCount （DWORD）** 要使用的通道总数，最大值为16。 它的默认值为上限，即虚拟处理器/16 的数目。
 
@@ -262,7 +262,7 @@ Windows Server 2012 和更高版本中的 hyper-v 支持卸载数据传输（ODX
 
 虚拟硬盘文件作为文件存在于存储卷上，它们与其他文件共享可用空间。 由于这些文件的大小往往很大，它们占用的空间可能会迅速增长。 对更多物理存储的需求会影响 IT 硬件预算。 尽可能优化物理存储的使用非常重要。
 
-在 Windows Server 2012 之前，当应用程序在虚拟硬盘中删除内容，而该虚拟硬盘实际上放弃了内容的存储空间时，来宾操作系统中的 Windows 存储堆栈和 Hyper-v 主机的限制会阻止此情况信息被传递到虚拟硬盘和物理存储设备。 这会阻止 Hyper-v 存储堆栈通过基于 VHD 的虚拟磁盘文件优化空间使用量。 它还会阻止基础存储设备回收已删除数据以前占用的空间。
+在 Windows Server 2012 之前，当应用程序删除虚拟硬盘中的内容（此操作实际上放弃了内容的存储空间）时，来宾操作系统中的 Windows 存储堆栈和 Hyper-v 主机会阻止将此信息传递给虚拟硬盘和物理存储设备。 这会阻止 Hyper-v 存储堆栈通过基于 VHD 的虚拟磁盘文件优化空间使用量。 它还会阻止基础存储设备回收已删除数据以前占用的空间。
 
 从 Windows Server 2012 开始，Hyper-v 支持取消映射通知，这使得 VHDX 文件在表示其中的数据时更有效。 这会生成较小的文件，并允许基础物理存储设备回收未使用的空间。
 
@@ -270,7 +270,7 @@ Windows Server 2012 和更高版本中的 hyper-v 支持卸载数据传输（ODX
 
 出于此原因，我们建议在不使用虚拟光纤通道磁盘时，使用附加到 SCSI 控制器的 VHDX 文件。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [Hyper-V 术语](terminology.md)
 

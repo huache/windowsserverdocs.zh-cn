@@ -1,23 +1,19 @@
 ---
 title: 管理 Windows Server Essentials 中的系统运行状况
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bbe05c0564e706ef0227e723a52bd10b2f774756
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8bca8f89e876da56dc6ede53a017e4d4331e39fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311076"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852710"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的系统运行状况
 
@@ -28,7 +24,7 @@ ms.locfileid: "80311076"
 > [!NOTE]
 >  在安装了 Windows Server Essentials Experience 角色的 Windows Server Essentials 和 Windows Server 2012 R2 中，网络中的服务器和客户端计算机的运行状况警报不再在警报查看器中显示，而是可以在**主页**的 "**运行状况报告**" 选项卡上查看。  
   
- Windows Server Essentials 主动监视已连接到服务器的每台计算机，并向管理员通知与系统运行状况相关的问题，包括关键更新、缺少恶意软件防护、客户端过期的病毒定义。计算机以及其他需要操作的重要问题。 这些问题在警报查看器中显示为警报，可从服务器的仪表板或 Windows Server Essentials 中的客户端计算机的快速启动板或 Windows Server Essentials 中的 "**运行状况报告**" 选项卡上启动。 默认情况下，警报每隔三十分钟刷新一次，但你可以通过单击警报查看器中或 **“运行状况报告”** 选项卡上的 **“刷新”** ，随时评估用于警报的网络。  
+ Windows Server Essentials 主动监视连接到服务器的每台计算机，并通知管理员与系统运行状况相关的问题，包括关键更新、缺少恶意软件防护、客户端计算机上的过期病毒定义以及其他需要操作的重要问题。 这些问题在警报查看器中显示为警报，可从服务器的仪表板或 Windows Server Essentials 中的客户端计算机的快速启动板或 Windows Server Essentials 中的 "**运行状况报告**" 选项卡上启动。 默认情况下，警报每隔三十分钟刷新一次，但你可以通过单击警报查看器中或 **“运行状况报告”** 选项卡上的 **“刷新”** ，随时评估用于警报的网络。  
   
  以下主题将帮助你了解、查看和响应警报查看器中的警报，还提供了如何配置服务器以通过电子邮件接收警报的说明。  
   

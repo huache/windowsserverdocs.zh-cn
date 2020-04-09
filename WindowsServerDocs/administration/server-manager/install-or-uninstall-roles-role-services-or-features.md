@@ -1,24 +1,20 @@
 ---
 title: 安装或卸载角色、角色服务或功能
 description: 服务器管理器
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 04f16d84-45c2-4771-84c1-1cc973d0ee02
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cca2e4c7ba2658c4d85b14ef61ef5f79fbc96345
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8c270fbdacf5359af4e3150d61693470207f566b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383187"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851520"
 ---
 # <a name="install-or-uninstall-roles-role-services-or-features"></a>安装或卸载角色、角色服务或功能
 
@@ -29,11 +25,11 @@ ms.locfileid: "71383187"
 > [!IMPORTANT]  
 > 服务器管理器无法用于管理较新版本的 Windows Server 操作系统。 在 Windows Server 2012 R2 或 Windows 8.1 上运行服务器管理器不能用于在运行 Windows Server 2016 的服务器上安装角色、角色服务和功能。  
   
-您必须以管理员身份登录服务器才能安装或卸载角色、角色服务和功能。 如果使用在目标服务器上没有管理员权限的帐户登录到本地计算机，请右键单击 "**服务器**" 磁贴中的目标服务器，然后单击 "**管理身份**" 提供具有管理员权限的帐户。 要装载脱机 VHD 的服务器必须添加到服务器管理器，且你必须具有对该服务器的管理员权限。  
+您必须以管理员身份登录服务器才能安装或卸载角色、角色服务和功能。 如果你在目标服务器上使用不具备管理员权限的帐户登录到本地计算机，则右键单击“服务器”磁贴中的目标服务器，然后单击“管理身份”提供具有管理员权限的帐户。 要装载脱机 VHD 的服务器必须添加到服务器管理器，且你必须具有对该服务器的管理员权限。  
   
 有关角色、角色服务和功能的详细信息，请参阅[角色、角色服务和功能](https://go.microsoft.com/fwlink/p/?LinkId=239558)。  
   
-本主题包含以下部分。  
+本主题包含以下各节。  
   
 -   [使用 "添加角色和功能" 向导安装角色、角色服务和功能](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard)  
   
@@ -63,11 +59,11 @@ ms.locfileid: "71383187"
   
 2.  在 "**管理**" 菜单上，单击 "**添加角色和功能**"。  
   
-3.  在 **“开始之前”** 页面上，确定目标服务器和网络环境已为要安装的角色和功能做好准备。 单击**下一步**。  
+3.  在 **“开始之前”** 页面上，确定目标服务器和网络环境已为要安装的角色和功能做好准备。 单击 **“下一步”** 。  
   
-4.  在“选择安装类型”页面，选择“基于角色或基于功能的安装”以在单台服务器上安装角色或功能的所有部分，或选择“远程桌面服务安装”以安装远程桌面服务的基于虚拟机的桌面基础结构或基于会话的桌面基础结构。 “远程桌面服务安装” 选项可根据管理员的需要将远程桌面服务角色的逻辑部分分布于不同的服务器。 单击**下一步**。  
+4.  在“选择安装类型”页面，选择“基于角色或基于功能的安装”以在单台服务器上安装角色或功能的所有部分，或选择“远程桌面服务安装”以安装远程桌面服务的基于虚拟机的桌面基础结构或基于会话的桌面基础结构。 “远程桌面服务安装”选项可根据管理员的需要将远程桌面服务角色的逻辑部分分布于不同的服务器。 单击 **“下一步”** 。  
   
-5.  在“选择目标服务器”页面上，从服务器池中选择一台服务器，或选择脱机 VHD。 若要将离线的 VHD 选择为你的目标服务器，则先选择安装 VHD 的服务器，然后选择 VHD 文件。 有关如何将服务器添加到服务器池的信息，请参阅[将服务器添加到服务器管理器](add-servers-to-server-manager.md)。 选择目标服务器后，单击“下一步”。  
+5.  在“选择目标服务器”页面上，从服务器池中选择一台服务器，或选择脱机 VHD。 若要将离线的 VHD 选择为你的目标服务器，则先选择安装 VHD 的服务器，然后选择 VHD 文件。 有关如何将服务器添加到服务器池的信息，请参阅[将服务器添加到服务器管理器](add-servers-to-server-manager.md)。 选择了目标服务器之后，单击“下一步”。  
   
     > [!NOTE]  
     > 若要在脱机 VHD 上安装角色和功能，目标 VHD 必须符合以下要求。  
@@ -79,24 +75,24 @@ ms.locfileid: "71383187"
     >     -   “文件共享”对话框上的“读/写”权限。  
     >     -   "**安全**" 选项卡上的 "文件或文件夹**属性**" 对话框中的 "**完全控制**" 权限。  
   
-6.  选择角色、选择该角色的角色服务（如果适用），然后单击“下一步” 以选择功能。  
+6.  选择角色、选择该角色的角色服务（如果适用），然后单击“下一步”以选择功能。  
   
     当你继续操作时，"添加角色和功能向导" 会自动通知你在目标服务器上是否发现了可能阻止选定角色或功能安装或正常操作的冲突。 系统还会提示你添加你已选中的角色或功能所需的所有角色、角色服务或功能。  
   
     此外，如果你计划远程管理角色（从另一台服务器，或从运行远程服务器管理工具的基于 Windows 客户端的计算机），则可以选择不在目标服务器上安装角色的管理工具和管理单元。 默认情况下，在 "添加角色和功能向导" 中，选择 "管理工具" 进行安装。  
   
-7.  在“确认安装选择” 页上，检查你的角色、功能和服务器选择。 如果准备好安装，单击 **“安装”** 。  
+7.  在“确认安装选择”页上，检查你的角色、功能和服务器选择。 如果准备好安装，单击 **“安装”** 。  
   
     你还可以将选择导出到基于 XML 的配置文件，该文件可用于通过 Windows PowerShell 进行无人参与的安装。 若要导出在 "添加角色和功能向导" 会话中指定的配置，请单击 "**导出配置设置**"，然后将 XML 文件保存到一个方便的位置。  
   
-    使用“确认安装选择”页上的“指定备用源路径” 命令 可以为在选定服务器上安装角色和功能时所必需的文件指定备用源路径。 在 Windows Server 2012 和更高版本的 Windows Server 中，按[需功能](https://go.microsoft.com/fwlink/p/?LinkID=241573)可以通过从以远程方式进行管理的服务器中删除角色和功能文件来减少操作系统使用的磁盘空间量。 如果使用 `Uninstall-WindowsFeature -remove` cmdlet 从服务器中删除了角色和功能文件，日后可通过指定备用源路径，或指定存储必需角色和功能文件的共享，来在服务器上安装角色和功能。 源路径或文件共享必须将 "**读取**" 权限授予 " **Everyone** " 组（出于安全原因，不建议这样做），或授予目标服务器的计算机帐户（*域*\\*SERverNAME*$）;授予用户帐户访问权限是不够的。 若要深入了解按需功能，请参阅 [Windows Server 安装选项](https://go.microsoft.com/fwlink/p/?LinkId=241573)。  
+    使用“确认安装选择”页上的“指定备用源路径”命令可以为在选定服务器上安装角色和功能时所必需的文件指定备用源路径。 在 Windows Server 2012 和更高版本的 Windows Server 中，按[需功能](https://go.microsoft.com/fwlink/p/?LinkID=241573)可以通过从以远程方式进行管理的服务器中删除角色和功能文件来减少操作系统使用的磁盘空间量。 如果使用 `Uninstall-WindowsFeature -remove` cmdlet 从服务器中删除了角色和功能文件，日后可通过指定备用源路径，或指定存储必需角色和功能文件的共享，来在服务器上安装角色和功能。 源路径或文件共享必须将 "**读取**" 权限授予 " **Everyone** " 组（出于安全原因，不建议这样做），或授予目标服务器的计算机帐户（*域*\\*SERverNAME*$）;授予用户帐户访问权限是不够的。 若要深入了解按需功能，请参阅 [Windows Server 安装选项](https://go.microsoft.com/fwlink/p/?LinkId=241573)。  
   
     在运行的物理服务器上安装角色、角色服务和功能时，可以将 WIM 文件指定为备用功能文件源。 WIM 文件的源路径应采用以下格式，使用 **WIM** 作为前缀，功能文件所在的索引作为后缀：**WIM:e:\sources\install.wim:4**。 但是，不能直接使用 WIM 文件作为将角色、角色服务和功能安装到脱机 VHD 的源;你必须安装脱机 VHD 并指向其源文件的安装路径，或者必须指向包含 WIM 文件内容副本的文件夹的文件夹。  
   
 8.  单击 "**安装**" 之后，"**安装进度**" 页将显示安装进度、结果和消息，如警告、失败或已安装的角色或功能所需的安装后配置步骤。 在 windows Server 2012 和更高版本的 Windows Server 中，你可以在安装仍在进行时关闭 "添加角色和功能向导"，并在服务器管理器控制台顶部的 "**通知**" 区域中查看安装结果或其他消息。 单击 "**通知**" 标志图标可查看有关在服务器管理器中执行的安装或其他任务的更多详细信息。  
   
 ## <a name="install-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell cmdlet 安装角色、角色服务和功能  
-适用于 Windows PowerShell 的服务器管理器部署 cmdlet 的功能与基于 GUI 的 "添加角色和功能向导" 类似，并且删除角色和功能向导，具有重要的差异。 在 Windows PowerShell 中，与 "添加角色和功能向导" 不同，默认情况下不包括角色的管理工具和管理单元。 要在角色安装中包括管理工具，可在 cmdlet 中添加 `IncludeManagementTools` 参数。 如果要在运行 Windows Server 2012 或更高版本的服务器核心安装选项的服务器上安装角色和功能，则可以将角色的管理工具添加到安装，但无法安装基于 GUI 的管理工具和管理单元在运行 Windows Server 服务器核心安装选项的服务器上。 在服务器核心安装选项上，只能安装命令行和 Windows PowerShell 管理工具。  
+适用于 Windows PowerShell 的服务器管理器部署 cmdlet 的功能与基于 GUI 的 "添加角色和功能向导" 类似，并且删除角色和功能向导，具有重要的差异。 在 Windows PowerShell 中，与 "添加角色和功能向导" 不同，默认情况下不包括角色的管理工具和管理单元。 要在角色安装中包括管理工具，可在 cmdlet 中添加 `IncludeManagementTools` 参数。 如果要在运行 Windows Server 2012 或更高版本的服务器核心安装选项的服务器上安装角色和功能，则可以将角色的管理工具添加到安装，但不能在运行 Windows Server 服务器核心安装选项的服务器上安装基于 GUI 的管理工具和管理单元。 在服务器核心安装选项上，只能安装命令行和 Windows PowerShell 管理工具。  
   
 #### <a name="to-install-roles-and-features-by-using-the-install-windowsfeature-cmdlet"></a>若要使用 Install-WindowsFeature cmdlet 安装角色和功能  
   
@@ -109,7 +105,7 @@ ms.locfileid: "71383187"
   
    -   在 Windows 的 "**开始**" 屏幕上，右键单击 "windows PowerShell" 磁贴，然后单击应用栏上的 "以**管理员身份运行**"。  
   
-2. 键入 **Get-WindowsFeature** ，再按 **Enter** ，以查看本地服务器上可用和安装的角色和功能的列表。 如果本地计算机不是服务器，或者如果你需要有关远程服务器的信息，则运行 **<** <em>computer_name</em> **>** ，其中*computer_name*表示运行 Windows server 2016 的远程计算机的名称。 Cmdlet 的结果包含在步骤4中添加到 cmdlet 的角色和功能的命令名称。  
+2. 键入 **Get-WindowsFeature**，再按 **Enter**，以查看本地服务器上可用和安装的角色和功能的列表。 如果本地计算机不是服务器，或者如果你需要有关远程服务器的信息，则运行 **<** <em>computer_name</em> **>** ，其中*computer_name*表示运行 Windows server 2016 的远程计算机的名称。 Cmdlet 的结果包含在步骤4中添加到 cmdlet 的角色和功能的命令名称。  
   
    > [!NOTE]  
    > 在 windows powershell 3.0 及更高版本的 Windows PowerShell 中，在运行作为模块一部分的 cmdlet 之前，无需将服务器管理器 cmdlet 模块导入到 Windows PowerShell 会话中。 在你首次运行 cmdlet（模块的一部分）时，模块被自动导入。 此外，与 cmdlet 一起使用的 Windows PowerShell cmdlet 和功能名称都不区分大小写。  
@@ -149,7 +145,7 @@ ms.locfileid: "71383187"
 5. 安装完成后，请通过打开服务器管理器中的 "**所有服务器**" 页，选择安装角色和功能的服务器，然后在选定服务器的页面上查看 "**角色和功能**" 磁贴来验证安装。 你还可以运行以所选服务器为目标的 `Get-WindowsFeature` cmdlet （<*computer_name*>），查看服务器上安装的角色和功能的列表。  
   
 ## <a name="remove-roles-role-services-and-features-by-using-the-remove-roles-and-features-wizard"></a>使用删除角色和功能向导删除角色、角色服务和功能  
-您必须以管理员身份登录服务器才能卸载角色、角色服务和功能。 如果使用在卸载目标服务器上没有管理员权限的帐户登录到本地计算机，请右键单击 "**服务器**" 磁贴中的目标服务器，然后单击 "**管理身份**" 提供具有管理员权限的帐户。 要装载脱机 VHD 的服务器必须添加到服务器管理器，且你必须具有对该服务器的管理员权限。  
+您必须以管理员身份登录服务器才能卸载角色、角色服务和功能。 如果你在卸载目标服务器上使用不具备管理员权限的帐户登录到本地计算机，则右键单击“服务器”磁贴中的目标服务器，然后单击“管理身份”提供具有管理员权限的帐户。 要装载脱机 VHD 的服务器必须添加到服务器管理器，且你必须具有对该服务器的管理员权限。  
   
 #### <a name="to-remove-roles-and-features-by-using-the-remove-roles-and-features-wizard"></a>使用删除角色和功能向导删除角色和功能  
   
@@ -161,7 +157,7 @@ ms.locfileid: "71383187"
   
 2.  在“管理”菜单上，单击“删除角色和功能”。  
   
-3.  在“开始之前”页上，验证是否准备好从服务器中删除角色和功能。 单击**下一步**。  
+3.  在“开始之前”页上，验证是否准备好从服务器中删除角色和功能。 单击 **“下一步”** 。  
   
 4.  在 "**选择目标服务器**" 页上，从服务器池中选择一个服务器，或选择脱机 VHD。 若要选择离线的 VHD，请选择安装 VHD 的服务器，然后选择 VHD 文件。  
   
@@ -171,23 +167,23 @@ ms.locfileid: "71383187"
     > -   “文件共享”对话框上的“读/写”权限。  
     > -   文件或文件夹“属性”对话框中“安全”选项卡上的“完全控制”访问权限。  
   
-    有关如何将服务器添加到服务器池的信息，请参阅[将服务器添加到服务器管理器](add-servers-to-server-manager.md)。 选择目标服务器后，单击“下一步”。  
+    有关如何将服务器添加到服务器池的信息，请参阅[将服务器添加到服务器管理器](add-servers-to-server-manager.md)。 选择了目标服务器之后，单击“下一步”。  
   
     > [!NOTE]  
     > 您可以使用 "删除角色和功能向导" 从运行同一版本 Windows Server 的服务器中删除角色和功能，该版本支持您正在使用的服务器管理器版本。 如果在 Windows Server 2012 R2、Windows Server 2012 或 Windows 8 上运行服务器管理器，则不能从运行 Windows Server 2016 的服务器中删除角色、角色服务或功能。 你不能使用 "删除角色和功能向导" 删除运行 Windows Server 2008 或 Windows Server 2008 R2 的服务器上的角色和功能。  
   
-5.  选择角色、选择该角色的角色服务（如果适用），然后单击“下一步” 以选择功能。  
+5.  选择角色、选择该角色的角色服务（如果适用），然后单击“下一步”以选择功能。  
   
     当你继续时，"删除角色和功能向导" 会自动提示你删除无法运行的任何角色、角色服务或功能，而不需要你要删除的角色或功能。  
   
     此外，你可以选择删除目标服务器上的角色管理工具和管理单元。 默认情况下，在 "删除角色和功能" 向导中，选择 "管理工具" 以进行删除。 如果你计划使用选中的服务器管理其他远程服务器上的角色，则可以保留管理工具和管理单元。  
   
-6.  在 "**确认删除选择**" 页上，检查你的角色、功能和服务器选择。 如果已准备好删除角色或功能，请单击 "**删除**"。  
+6.  在“确认删除选择”页上，检查你的角色、功能和服务器选择。 如果已准备好删除角色或功能，请单击 "**删除**"。  
   
 7.  单击 "**删除**" 之后，"**删除进度**" 页会显示删除进度、结果以及消息（如警告、失败或必需的删除后配置步骤，如重新启动目标服务器）。 在 windows Server 2012 和更高版本的 Windows Server 中，你可以在仍在进行删除时关闭 "删除角色和功能向导"，然后在服务器管理器控制台顶部的 "**通知**" 区域中查看删除结果或其他消息。 单击 "**通知**" 标志可查看有关在服务器管理器中执行的删除或其他任务的更多详细信息。  
   
 ## <a name="remove-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell cmdlet 删除角色、角色服务和功能  
-Windows PowerShell 的服务器管理器部署 cmdlet 的功能与基于 GUI 的 "删除角色和功能向导" 类似。 在 Windows PowerShell 中，与 "删除角色和功能向导" 不同，默认情况下不会删除角色的管理工具和管理单元。 要在角色删除中包括管理工具，可向 cmdlet 中添加 `IncludeManagementTools` 参数。 如果要从运行 Windows Server 2012 或更高版本的 Windows server 的服务器核心安装选项的服务器卸载角色和功能，则此参数会删除指定角色和功能。  
+Windows PowerShell 的服务器管理器部署 cmdlet 的功能与基于 GUI 的 "删除角色和功能向导" 类似。 在 Windows PowerShell 中，与 "删除角色和功能向导" 不同，默认情况下不会删除角色的管理工具和管理单元。 要在角色删除中包括管理工具，可向 cmdlet 中添加 `IncludeManagementTools` 参数。 如果要从运行 Windows Server 2012 或更高版本的 Windows server 的服务器核心安装选项的服务器卸载角色和功能，则此参数会删除指定角色和功能的命令行和 Windows PowerShell 管理工具。  
   
 #### <a name="to-remove-roles-and-features-by-using-the-uninstall-windowsfeature-cmdlet"></a>若要使用 Uninstall-WindowsFeature cmdlet 删除角色和功能  
   
@@ -200,7 +196,7 @@ Windows PowerShell 的服务器管理器部署 cmdlet 的功能与基于 GUI 的
   
    -   在 Windows 的 "**开始**" 屏幕上，右键单击 "windows PowerShell" 磁贴，然后单击应用栏上的 "以**管理员身份运行**"。  
   
-2. 键入 **Get-WindowsFeature** ，再按 **Enter** ，以查看本地服务器上可用和安装的角色和功能的列表。 如果本地计算机不是服务器，或者如果你需要有关远程服务器的信息，则运行 **<** <em>computer_name</em> **>** ，其中*computer_name*表示运行 Windows server 2016 的远程计算机的名称。 Cmdlet 的结果包含在步骤4中添加到 cmdlet 的角色和功能的命令名称。  
+2. 键入 **Get-WindowsFeature**，再按 **Enter**，以查看本地服务器上可用和安装的角色和功能的列表。 如果本地计算机不是服务器，或者如果你需要有关远程服务器的信息，则运行 **<** <em>computer_name</em> **>** ，其中*computer_name*表示运行 Windows server 2016 的远程计算机的名称。 Cmdlet 的结果包含在步骤4中添加到 cmdlet 的角色和功能的命令名称。  
   
    > [!NOTE]  
    > 在 windows powershell 3.0 及更高版本的 Windows PowerShell 中，在运行作为模块一部分的 cmdlet 之前，无需将服务器管理器 cmdlet 模块导入到 Windows PowerShell 会话中。 在你首次运行 cmdlet（模块的一部分）时，模块被自动导入。 此外，与 cmdlet 一起使用的 Windows PowerShell cmdlet 和功能名称都不区分大小写。  
@@ -236,16 +232,16 @@ Windows PowerShell 的服务器管理器部署 cmdlet 的功能与基于 GUI 的
 5. 删除完成后，请通过打开服务器管理器中的 "**所有服务器**" 页，选择从中删除角色和功能的服务器，然后在选定服务器的页面上查看 "**角色和功能**" 磁贴来验证角色和功能是否已删除。 你还可以运行以所选服务器为目标的 `Get-WindowsFeature` cmdlet （<*computer_name*>），查看服务器上安装的角色和功能的列表。  
   
 ## <a name="install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script"></a>通过运行 Windows PowerShell 脚本在多个服务器上安装角色和功能  
-尽管你不能使用 "添加角色和功能向导" 在单个向导会话中的多个目标服务器上安装角色、角色服务和功能，但你可以使用 Windows PowerShell 脚本在多个目标上安装角色、角色服务和功能使用服务器管理器管理的服务器。 用于执行批量部署的脚本（作为此过程的调用）指向可通过使用 "添加角色和功能向导" 轻松创建的 XML 配置文件，并在通过向导前进到 "添加角色和功能向导" 的 "**确认安装选择**" 页后单击 "**导出配置设置**"。  
+尽管你不能使用 "添加角色和功能向导" 在单个向导会话中的多个目标服务器上安装角色、角色服务和功能，但你可以使用 Windows PowerShell 脚本在你使用服务器管理器管理的多个目标服务器上安装角色、角色服务和功能。 用于执行批量部署的脚本（作为此过程的调用）指向可通过使用 "添加角色和功能向导" 轻松创建的 XML 配置文件，并在通过向导前进到 "添加角色和功能向导" 的 "**确认安装选择**" 页后单击 "**导出配置设置**"。  
   
 > [!IMPORTANT]  
-> 脚本中指定的所有目标服务器都必须运行与你在本地计算机上运行的服务器管理器版本相匹配的 Windows Server 版本。 例如，如果在 Windows 10 上运行服务器管理器，则可以在运行 Windows Server 2016 的服务器上安装角色、角色服务和功能。 如果将基于 GUI 的管理工具添加到安装中，则安装进程会自动将运行 Windows Server 服务器核心安装选项的目标服务器转换为完全安装选项（具有完整 GUI 的服务器，也称为作为运行服务器图形 Shell）。  
+> 脚本中指定的所有目标服务器都必须运行与你在本地计算机上运行的服务器管理器版本相匹配的 Windows Server 版本。 例如，如果在 Windows 10 上运行服务器管理器，则可以在运行 Windows Server 2016 的服务器上安装角色、角色服务和功能。 如果将基于 GUI 的管理工具添加到安装中，则安装进程会自动将运行 Windows Server 服务器核心安装选项的目标服务器转换为完全安装选项（具有完整 GUI 的服务器，也称为 "运行服务器图形 Shell"）。  
 >   
 > 本部分中提供的脚本是一个示例，说明如何使用 `Install-WindowsFeature` cmdlet 和 Windows PowerShell 脚本来执行批处理部署。 有其他可能的脚本和方法可执行对多个服务器的批量部署。 若要搜索或提供用于部署角色和功能的其他脚本，请搜索 [脚本中心存储库](https://gallery.technet.microsoft.com/ScriptCenter)。  
   
 #### <a name="to-install-roles-and-features-on-multiple-servers"></a>在多个服务器上安装角色和功能  
   
-1.  如果尚未这样做，请创建一个 XML 配置文件，其中包含要安装在多个服务器上的角色、角色服务和功能。 您可以通过运行 "添加角色和功能向导"，选择所需的角色、角色服务和功能，并在通过向导前进到 "**确认安装选择**" 页后单击 "**导出配置设置**" 来创建此配置文件。 将配置文件保存到某个方便的位置。 如果只是要创建配置文件，则无需单击 "**安装**" 或完成向导。  
+1.  如果尚未这样做，请创建一个 XML 配置文件，其中包含要安装在多个服务器上的角色、角色服务和功能。 您可以通过运行 "添加角色和功能向导"，选择所需的角色、角色服务和功能，并在通过向导前进到 "**确认安装选择**" 页后单击 "**导出配置设置**" 来创建此配置文件。 将配置文件保存到某个方便的位置。 如果你运行向导仅用于创建配置文件，则无需单击“安装”或完成向导。  
   
 2.  使用提升的用户权限执行以下操作之一以打开 Windows PowerShell 会话。  
   
@@ -288,27 +284,27 @@ Windows PowerShell 的服务器管理器部署 cmdlet 的功能与基于 GUI 的
         Invoke-WindowsFeatureBatchDeployment -computerNames $ServerNames -ConfigurationFilepath C:\Users\sampleuser\Desktop\DeploymentConfigTemplate.xml  
         ```  
   
-    2.  若要运行此函数，请键入以下内容，然后按 Enter，其中 `$ServerNames` 为在上述步骤中所创建变量的示例， *C:\Users\Sampleuser\Desktop\DeploymentConfigTemplate.xml* 为在步骤 1 中所创建配置文件路径的示例。  
+    2.  若要运行此函数，请键入以下内容，然后按 Enter **，其中**  为在上述步骤中所创建变量的示例，`$ServerNames`C:\Users\Sampleuser\Desktop\DeploymentConfigTemplate.xml* 为在步骤 1 中所创建配置文件路径的示例。  
   
         **WindowsFeatureBatchDeployment-computerNames $ServerNames-ConfigurationFilepath C:\Users\Sampleuser\Desktop\DeploymentConfigTemplate.xml**  
   
 5.  安装完成后，请通过打开服务器管理器中的 "**所有服务器**" 页，选择安装角色和功能的服务器，然后在选定服务器的页面上查看 "**角色和功能**" 磁贴来验证安装。 你还可以运行面向特定服务器的 `Get-WindowsFeature` cmdlet （`Get-WindowsFeature -computerName` <*computer_name*>），查看服务器上安装的角色和功能的列表。  
   
 ## <a name="install-net-framework-35-and-other-features-on-demand"></a>安装 .NET Framework 3.5 和其他按需功能  
-从 Windows Server 2012 和 Windows 8 开始，默认情况下，在本地计算机上不能使用 .NET Framework 3.5 的功能文件（包括 .NET Framework 2.0 和 .NET Framework 3.0）。 文件已删除。 已在 "按需功能" 配置中删除的功能的文件以及 .NET Framework 3.5 的功能文件均通过 Windows 更新提供。 默认情况下，如果功能文件在运行 Windows Server 2012 或更高版本的目标服务器上不可用，则安装过程会通过连接到 Windows 更新搜索缺少的文件。 无论是使用 "添加角色和功能向导" GUI 还是命令行进行安装，都可以在安装过程中配置组策略设置或指定备用源路径来覆盖默认行为。  
+从 Windows Server 2012 和 Windows 8 开始，默认情况下，在本地计算机上不能使用 .NET Framework 3.5 的功能文件（包括 .NET Framework 2.0 和 .NET Framework 3.0）。 文件已删除。 已在按需功能配置中删除的功能的文件以及 .NET Framework 3.5 的功能文件通过 Windows 更新提供。 默认情况下，如果功能文件在运行 Windows Server 2012 或更高版本的目标服务器上不可用，则安装过程会通过连接到 Windows 更新搜索缺少的文件。 无论是使用 "添加角色和功能向导" GUI 还是命令行进行安装，都可以在安装过程中配置组策略设置或指定备用源路径来覆盖默认行为。  
   
 通过执行以下一项操作，可以安装 .NET Framework 3.5。  
   
--   使用 [通过运行 Install-WindowsFeature cmdlet 来安装 .NET Framework 3.5](#to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet) 来添加 `Source` 参数，并指定从中获取 .NET Framework 3.5 功能文件的源。 如果未添加 `Source` 参数，安装进程先确定组策略设置是否指定了功能文件路径，并在找到此类路径后，使用 Windows 更新搜索缺少的功能文件。  
+-   使用 [通过运行 Install-WindowsFeature cmdlet 来安装 .NET Framework 3.5](#to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet) 添加 `Source` 参数，并指定要从中获取 .NET Framework 3.5 功能文件的来源。 如果未添加 `Source` 参数，安装进程先确定组策略设置是否指定了功能文件路径，并在找到此类路径后，使用 Windows 更新搜索缺少的功能文件。  
   
 -   使用[通过 "添加角色和功能向导" 来安装 .NET Framework 3.5](#to-install-net-framework-35-by-using-the-add-roles-and-features-wizard) ，以在 "添加角色和功能向导" 的 "**确认安装选项**" 页上指定备用源文件位置。  
   
--   使用 [使用 DISM 安装 .NET Framework 3.5](#to-install-net-framework-35-by-using-dism) 来从 Windows 更新中默认获取文件，或通过指定到安装媒体的源路径来实现获取。  
+-   使用[使用 DISM 安装 .NET Framework 3.5](#to-install-net-framework-35-by-using-dism) 默认情况下从 Windows 更新获取文件，或通过指定安装介质的源路径。  
   
 如果在本地计算机上找不到功能文件，则使用[在组策略中为功能文件配置备用来源](#configure-alternate-sources-for-feature-files-in-group-policy) 来获取 .NET Framework 3.5 或其他功能。  
   
 > [!IMPORTANT]  
-> 从远程来源安装功能文件时，源路径或文件共享必须将“读取” 权限授予“任何人” 组（出于安全原因，不建议这样做），或授予目标服务器的计算机（本地系统）帐户；授予用户帐户访问权限并不足够。  
+> 从远程来源安装功能文件时，源路径或文件共享必须将“读取”权限授予“任何人”组（出于安全原因，不建议这样做），或授予目标服务器的计算机（本地系统）帐户；授予用户帐户访问权限并不足够。  
 >   
 > 即使工作组服务器的计算机帐户具有外部共享“读取” 权限，位于工作组中的服务器也无法访问外部文件共享。 为工作组服务器服务的备用源位置包括安装媒体、Windows 更新和存储在本地工作组服务器上的 VHD 或 WIM 文件。  
 >   
@@ -378,7 +374,7 @@ Windows PowerShell 的服务器管理器部署 cmdlet 的功能与基于 GUI 的
         DISM /online /Enable-Feature /Featurename:NetFx3 /All  
         ```  
   
-    -   如果计算机有权访问安装介质，请运行如下所示的命令。 在以下示例中，操作系统安装介质位于驱动器 D 上。`LimitAccess` 参数可防止命令尝试联系 Windows 更新或运行 WSUS 的服务器。  
+    -   如果计算机有权访问安装介质，请运行如下所示的命令。 在以下示例中，操作系统安装介质位于驱动器 D。 `LimitAccess` 参数可防止命令尝试联系 Windows 更新或运行 WSUS 的服务器。  
   
         ```  
         DISM /online /Enable-Feature /Featurename:NetFx3 /All /LimitAccess /Source:d:\sources\sxs  

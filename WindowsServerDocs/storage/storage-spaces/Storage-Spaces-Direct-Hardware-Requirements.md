@@ -3,18 +3,18 @@ title: 存储空间直通的硬件要求
 ms.prod: windows-server
 description: 测试存储空间直通的最低硬件要求。
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a7152ec6abb318a096ac321ae7ccfaaef4d199
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 42022b6e2e3564d1440e2ba1d45f9f98430242c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402937"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861050"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>存储空间直通的硬件要求
 
@@ -58,7 +58,7 @@ ms.locfileid: "71402937"
 - RAID 1 镜像**不**是必需的，但支持启动
 - 建议： 200 GB 的最小大小
 
-## <a name="networking"></a>网络
+## <a name="networking"></a>联网
 
 存储空间直通需要在每个节点之间进行可靠的高带宽、低延迟的网络连接。  
 

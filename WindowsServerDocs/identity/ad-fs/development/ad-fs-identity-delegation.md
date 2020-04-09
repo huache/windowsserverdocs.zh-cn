@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 292bec5f73e2746103ffc41cde729ddc59728e0b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c36de1c3565be7f0f0e6c6203a21345f3d227e96
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407873"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857320"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>具有 AD FS 的标识委托方案
 
@@ -26,20 +26,20 @@ ms.locfileid: "71407873"
 
 下图显示了一个典型的标识委托方案，其中 Fabrikam 员工访问 Contoso.com 应用程序中公开的资源。
 
-![标识](media/ad-fs-identity-delegation/id1.png)
+![身份](media/ad-fs-identity-delegation/id1.png)
 
 参与此方案的虚构用户包括：
 
-- Frank要访问 Contoso 资源的 Fabrikam 员工。
-- Daniel在应用程序中实现必要更改的 Contoso 应用程序开发人员。
-- AdamContoso IT 管理员。
+- Frank：要访问 Contoso 资源的 Fabrikam 员工。
+- Daniel：在应用程序中实现必需更改的 Contoso 应用程序开发人员。
+- Adam： Contoso IT 管理员。
 
 此方案涉及的组件包括：
 
-- web1一个 Web 应用程序，其中包含指向需要初始调用方的委托标识的后端资源的链接。 此应用程序是通过 ASP.NET 生成的。
+- web1：一个 Web 应用程序，其中包含指向需要初始调用方的委托标识的后端资源的链接。 此应用程序是通过 ASP.NET 生成的。
 - 访问 SQL Server 的 Web 服务，它需要初始调用方的委托标识以及直接调用方的委托标识。 此服务是通过 WCF 生成的。
-- sts1:作为声明提供程序角色的 STS，并发出应用程序（web1）所需的声明。 它与 Fabrikam.com 和应用程序建立了信任关系。
-- sts2:作为 Fabrikam.com 的标识提供者角色的 STS，提供 Fabrikam 员工用于进行身份验证的终结点。 它与 Contoso.com 建立了信任关系，以便 Fabrikam 员工可以访问 Contoso.com 上的资源。
+- sts1：一个 STS，它是声明提供程序的角色，它发出应用程序所需的声明（web1）。 它与 Fabrikam.com 和应用程序建立了信任关系。
+- sts2：作为 Fabrikam.com 标识提供者角色的 STS，并提供 Fabrikam 员工用于进行身份验证的终结点。 它与 Contoso.com 建立了信任关系，以便 Fabrikam 员工可以访问 Contoso.com 上的资源。
 
 >[!NOTE] 
 >通常在此方案中使用的术语 "ActAs token" 是指由 STS 颁发并包含用户标识的令牌。 执行组件属性包含 STS 的标识。
@@ -57,7 +57,7 @@ ms.locfileid: "71407873"
 Fabrikam.com 管理员可以使用三个选项，Frank：
 
 
-1. 购买并安装 STS 产品，如 Active Directory®联合身份验证服务（AD FS）。
+1. 购买并安装 STS 产品，如 Active Directory&reg; 联合身份验证服务（AD FS）。
 2. 订阅云 STS 产品，如 LiveID STS。
 3. 使用 WIF 生成自定义 STS。
 

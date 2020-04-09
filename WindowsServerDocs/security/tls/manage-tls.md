@@ -1,23 +1,19 @@
 ---
 title: 管理传输层安全性（TLS）
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 author: justinha
 ms.author: justinha
-manager: brianlic-msft
+manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: a4ac1ea5b0648dbb80f103c146ad3df23fc04ab7
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 065c8932667eed12d347e796c29cc7ee013c0383
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322679"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852930"
 ---
 # <a name="manage-transport-layer-security-tls"></a>管理传输层安全性（TLS）
 
@@ -121,11 +117,11 @@ Certutil.exe –deleteEccCurve curveName
 组织可以使用组策略和组策略首选项注册表扩展将曲线参数分配给企业、已加入域的计算机。  
 分布曲线的过程如下：
 
-1.  在 Windows 10 和 Windows Server 2016 上，使用**certutil**将新的已注册命名曲线添加到 windows。
-2.  在同一台计算机上，打开组策略管理控制台（GPMC），创建新的组策略对象，并对其进行编辑。
-3.  导航到 "**计算机配置" |首选项 |Windows 设置 |注册表**。  右键单击 "**注册表**"。 悬停在 "**新建**" 上并选择 "**收集项**"。 重命名收集项以匹配曲线的名称。 将为*HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters*下的每个注册表项创建一个注册表项。
-4.  通过为*HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters\[curveName]* 下列出的每个注册表值添加新的**注册表项**，来配置新创建的组策略首选项注册表集合。
-5.  将包含组策略注册表收集项的组策略对象部署到应接收新命名曲线的 Windows 10 和 Windows Server 2016 计算机。
+1.    在 Windows 10 和 Windows Server 2016 上，使用**certutil**将新的已注册命名曲线添加到 windows。
+2.    在同一台计算机上，打开组策略管理控制台（GPMC），创建新的组策略对象，并对其进行编辑。
+3.    导航到 "**计算机配置" |首选项 |Windows 设置 |注册表**。  右键单击 "**注册表**"。 悬停在 "**新建**" 上并选择 "**收集项**"。 重命名收集项以匹配曲线的名称。 将为*HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters*下的每个注册表项创建一个注册表项。
+4.    通过为*HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters\[curveName]* 下列出的每个注册表值添加新的**注册表项**，来配置新创建的组策略首选项注册表集合。
+5.    将包含组策略注册表收集项的组策略对象部署到应接收新命名曲线的 Windows 10 和 Windows Server 2016 计算机。
 
     ![GPP 分布曲线](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)
 
@@ -133,7 +129,7 @@ Certutil.exe –deleteEccCurve curveName
 
 ## <a name="managing-tls-ecc-order"></a>管理 TLS ECC 顺序
 
-从 Windows 10 和 Windows Server 2016 开始，可以使用 ECC 曲线顺序组策略设置来配置默认 TLS ECC 曲线顺序。 使用通用 ECC 和此设置，组织可以将其自己的受信任的命名曲线（已批准与 TLS 一起使用）添加到操作系统，然后将这些命名曲线添加到曲线优先级组策略设置，以确保在未来的 TLS 中使用它们握手. 接收策略设置后，下一次重新启动时，新的曲线优先级列表将变为活动状态。     
+从 Windows 10 和 Windows Server 2016 开始，可以使用 ECC 曲线顺序组策略设置来配置默认 TLS ECC 曲线顺序。 使用通用 ECC 和此设置，组织可以将其自己的受信任的命名曲线（已批准与 TLS 一起使用）添加到操作系统，然后将这些命名曲线添加到曲线优先级组策略设置，以确保在未来的 TLS 握手中使用它们。 接收策略设置后，下一次重新启动时，新的曲线优先级列表将变为活动状态。     
 
 ![GPP 分布曲线](../media/Transport-Layer-Security-protocol/gp-managing-tls-curve-priority-order.png)
 

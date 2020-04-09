@@ -1,24 +1,20 @@
 ---
 title: 常见 MultiPoint 服务使用方案
 description: 了解 MultiPoint Services 的常见用途
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9aefaf1b-3ba2-4f41-9068-9629a28157ad
 author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: b6e1ce47be76d8df1d8c9079204106f51c9067b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9429bb297ead933f461b563951a628b1514f28c7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395577"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859080"
 ---
 # <a name="common-usage-scenarios"></a>常见使用方案
 MultiPoint 服务提供单个用户桌面，其中包含 Windows 10 桌面体验中最重要的元素。 它还提供了一个简单的管理工具（MultiPoint 管理器），系统管理员可以使用该工具来发现和控制多个 MultiPoint 服务器和客户端。 此外，MultiPoint 服务还包括 MultiPoint 仪表板，用于实时可见性。 可对 MultiPoint 服务执行的操作的示例包括：  

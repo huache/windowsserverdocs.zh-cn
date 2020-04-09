@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5a64e790-6725-4099-aa08-8067d57c3168
 title: 使用 AD FS 2016 或更高版本的 OAuth 机密客户端生成服务器端应用程序
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5b2bf036de1de8300e36c3413c551e51d408a4d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8a8567a497e10df66f77fb996c937791b4aa9e08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407868"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857560"
 ---
 # <a name="build-a-server-side-application-using-oauth-confidential-clients-with-ad-fs-2016-or-later"></a>使用 AD FS 2016 或更高版本的 OAuth 机密客户端生成服务器端应用程序
 
@@ -38,7 +37,7 @@ AD FS 2016 及更高版本为能够维护自己的机密的客户端（例如，
 
 1.  在 AD FS 管理 "中，右键单击" 应用程序组 "，然后选择"**添加应用程序组**"。  
 
-2.  在应用程序组向导上，为 **"** 输入**ADFSOAUTHCC** "，在 "**客户端-服务器应用程序**" 下选择用于**访问 Web API 模板的服务器应用程序**。  单击**下一步**。  
+2.  在应用程序组向导上，为 **"** 输入**ADFSOAUTHCC** "，在 "**客户端-服务器应用程序**" 下选择用于**访问 Web API 模板的服务器应用程序**。  单击 **“下一步”** 。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_2.PNG)  
 
@@ -46,13 +45,13 @@ AD FS 2016 及更高版本为能够维护自己的机密的客户端（例如，
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_3.PNG)  
 
-4.  为 "**重定向 URI：**  -  **https://localhost:44323** 输入以下内容。  单击**添加**。 单击**下一步**。  
+4.  为 "**重定向 URI：**  -  **https://localhost:44323** 输入以下内容。  单击 **“添加”** 。 单击 **“下一步”** 。  
 
-5.  在 "**配置应用程序凭据**" 屏幕上，选中 "**生成共享机密**并复制机密"。  稍后将在应用程序的 web.config 文件中将其用作**ida： ClientSecret**的值。  单击**下一步**。  
+5.  在 "**配置应用程序凭据**" 屏幕上，选中 "**生成共享机密**并复制机密"。  稍后将在应用程序的 web.config 文件中将其用作**ida： ClientSecret**的值。  单击 **“下一步”** 。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_4.PNG)   
 
-6. 在 "**配置 WEB API** " 屏幕上，为**标识符** -  **https://contoso.com/WebApp** 输入以下项。  单击**添加**。 单击**下一步**。  稍后将在应用程序的 web.config 文件中将此值用于**ida： GraphResourceId** 。  
+6. 在 "**配置 WEB API** " 屏幕上，为**标识符** -  **https://contoso.com/WebApp** 输入以下项。  单击 **“添加”** 。 单击 **“下一步”** 。  稍后将在应用程序的 web.config 文件中将此值用于**ida： GraphResourceId** 。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_9.PNG)  
 
@@ -83,7 +82,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
 #### <a name="to-upgrade-the-database-file"></a>升级数据库文件  
 
-1.  在 Visual Studio 中打开项目，将出现一个弹出窗口，告诉你该应用需要 SQL Server 2012 Express，或者需要升级数据库。  单击 "确定"。  
+1.  在 Visual Studio 中打开项目，将出现一个弹出窗口，告诉你该应用需要 SQL Server 2012 Express，或者需要升级数据库。  单击“确定”。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_12.PNG)  
 
@@ -107,7 +106,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_16.PNG)  
 
-7.  单击 "确定"。 单击 "确定"。  单击 "是" 升级数据库。  
+7.  单击“确定”。 单击“确定”。  单击 "是" 升级数据库。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_17.PNG)  
 
@@ -115,7 +114,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_18.PNG)  
 
-9.  现在，打开 web.config 文件并将 connectionString 中的值替换为你在上面复制的值。  保存 web.config 文件。  
+9.  现在，打开 web.config 文件并将 connectionString 中的值替换为你在上面复制的值。  保存 Web.config 文件。  
 
     > [!NOTE]  
     > 以上步骤是必需的，以便我们可以获取新的 connectionString。  否则，当我们运行下面的更新数据库时，将会出现错误。  
@@ -159,7 +158,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
 3.  打开 App_Start 下的 Startup.Auth.cs 文件，并进行以下更改：  
 
-    -   注释掉以下行：  
+    -   取消注释以下行：  
 
         ```  
         //private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];  
@@ -234,7 +233,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_31.PNG)  
 
-3. 请注意，ASP.NET 站点显示 Hello abby@contoso.com！。  单击 "**配置文件**"。  
+3. 请注意，ASP.NET 站点显示 Hello abby@contoso.com！。  单击 **“配置文件”** 。  
 
    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_32.PNG)  
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: c5eb3fa0-550c-4a2f-a0bc-698b690c4199
-title: 规划基于设备的本地条件访问
-description: ''
+title: 规划基于设备的条件性访问本地
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,21 +8,21 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 00a7edf9529e1f116d951fd69d3bfa381d6d413a
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: d22897111588393efc148e6f24affeb243ee9e88
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822750"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855330"
 ---
-# <a name="plan-device-based-conditional-access-on-premises"></a>规划基于设备的本地条件访问
+# <a name="plan-device-based-conditional-access-on-premises"></a>规划基于设备的条件性访问本地
 
 
 本文档介绍基于混合方案中的设备的条件访问策略，其中本地目录使用 Azure AD Connect 连接到 Azure AD。     
 
 ## <a name="ad-fs-and-hybrid-conditional-access"></a>AD FS 和混合条件性访问  
 
-AD FS 提供混合方案中条件访问策略的本地组件。  向云资源的条件性访问注册设备时，Azure AD Connect 设备写回功能会使设备注册信息在本地提供，以供 AD FS 策略使用和实施 Azure AD。  这样一来，就可以通过一致的方式访问本地和云资源的控制策略。  
+AD FS 在混合方案中提供条件访问策略的本地组件。  向云资源的条件性访问注册设备时，Azure AD Connect 设备写回功能会使设备注册信息在本地提供，以供 AD FS 策略使用和实施 Azure AD。  这样一来，就可以通过一致的方式访问本地和云资源的控制策略。  
 
 ![条件性访问](media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
@@ -32,12 +31,12 @@ AD FS 提供混合方案中条件访问策略的本地组件。  向云资源的
 
 | |添加工作或学校帐户  |加入 Azure AD  |Windows 10 域加入    
 | --- | --- |--- | --- |
-|描述    |  用户以交互方式将其工作或学校帐户添加到其 BYOD 设备。  **注意：** 添加工作或学校帐户是 Windows 8/8.1 中 Workplace Join 的替代项       | 用户将其 Windows 10 工作设备加入 Azure AD。|已加入 Windows 10 域的设备会自动注册 Azure AD。|           
+|说明    |  用户以交互方式将其工作或学校帐户添加到其 BYOD 设备。  **注意：** 添加工作或学校帐户是 Windows 8/8.1 中 Workplace Join 的替代项       | 用户将其 Windows 10 工作设备加入 Azure AD。|已加入 Windows 10 域的设备会自动注册 Azure AD。|           
 |用户如何登录到设备     |  不以工作或学校帐户登录到 Windows。  使用 Microsoft 帐户登录。       |   以注册设备的（工作或学校帐户）登录到 Windows。      |     使用 AD 帐户登录。|      
 |如何管理设备    |      MDM 策略（附加 Intune 注册）   | MDM 策略（附加 Intune 注册）        |   组策略，Configuration Manager |
-|Azure AD 信任类型|已加入工作区|Azure AD 联接|加入域  |     
+|Azure AD 信任类型|已加入工作区|Azure AD 联接|域  |     
 |W10 设置位置    | 设置 > 帐户 > 帐户 > 添加工作或学校帐户        | 有关 > 联接 > 系统 > 的设置 Azure AD       |   有关 > 加入域的系统 > 设置 > |       
-|还适用于 iOS 和 Android 设备？   |    “是”     |       无  |   无   |   
+|还适用于 iOS 和 Android 设备？   |    是     |       是  |   是   |   
 
   
 
@@ -89,7 +88,7 @@ AD FS 2016 基于 PRT 和 Passport 凭据提供无缝设备和用户 SSO。  使
 有关 AD FS 2016 设备和条件性访问声明的完整列表，请参阅[参考](#reference)。  
 
 
-## <a name="reference"></a>引用  
+## <a name="reference"></a>参考  
 #### <a name="complete-list-of-new-ad-fs-2016-and-device-claims"></a>新 AD FS 2016 和设备声明的完整列表  
 
 * https://schemas.microsoft.com/ws/2014/01/identity/claims/anchorclaimtype  

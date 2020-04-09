@@ -2,19 +2,17 @@
 title: 使用离散设备分配计划部署设备
 description: 了解如何在 Windows Server 中使用 DDA
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.date: 08/21/2019
-ms.openlocfilehash: 114dd87b86bfffd1070229af57ae65deea2c2db0
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 9cc9614524c424398df550351aa2abfa7d173d43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923863"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856090"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>使用离散设备分配计划部署设备
 >适用于： Microsoft Hyper-V Server 2016、Windows Server 2016、Microsoft Hyper-V Server 2019、Windows Server 2019
@@ -29,11 +27,11 @@ ms.locfileid: "72923863"
 第1代或第2代 Vm 支持离散设备分配。  此外，支持的来宾包括 Windows 10、Windows Server 2019、Windows Server 2016、应用了[KB 3133690](https://support.microsoft.com/kb/3133690)的 windows server 2012R2 和[Linux 操作系统](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)的各种分发。
 
 ## <a name="system-requirements"></a>系统要求
-除了适用于[Windows Server 的系统要求](../../../get-started/System-Requirements--and-Installation.md)以及 Hyper-v 的[系统要求](../System-requirements-for-Hyper-V-on-Windows.md)外，离散设备分配要求服务器类硬件，该硬件能够授予操作系统控制配置 PCIe 的权限fabric （本机 PCI Express 控件）。 此外，PCIe 根复杂必须支持 "访问控制服务" （ACS），这使 Hyper-v 可以通过 i/o MMU 强制所有 PCIe 流量。
+除了适用于[Windows Server 的系统要求](../../../get-started/System-Requirements--and-Installation.md)和 Hyper-v 的[系统要求](../System-requirements-for-Hyper-V-on-Windows.md)外，离散设备分配还需要服务器类硬件，该硬件能够向操作系统控制配置 PCIE 构造（本机 PCI Express 控件）。 此外，PCIe 根复杂必须支持 "访问控制服务" （ACS），这使 Hyper-v 可以通过 i/o MMU 强制所有 PCIe 流量。
 
 通常不会在服务器的 BIOS 中直接公开这些功能，这些功能通常隐藏在其他设置后面。  例如，SR-IOV 支持需要相同的功能，在 BIOS 中，你可能需要设置 "Enable SR-IOV"。  如果无法识别 BIOS 中的正确设置，请联系你的系统供应商。
 
-为了帮助确保硬件硬件能够分配不同的设备，我们的工程师将[计算机配置文件脚本](#machine-profile-script)组合在一起，你可以在启用 hyper-v 的主机上运行该脚本，以测试你的服务器是否安装正确以及哪些设备能够离散设备分配。
+为了帮助确保硬件硬件能够分配不同的设备，我们的工程师将[计算机配置文件脚本](#machine-profile-script)组合在一起，你可以在已启用 hyper-v 的主机上运行该脚本，以测试你的服务器是否安装正确以及哪些设备能够进行离散设备分配。
 
 ## <a name="device-requirements"></a>设备要求
 并非每个 PCIe 设备都可用于离散设备分配。  例如，不支持使用旧版（INTx） PCI 中断的旧版设备。 Jake Oshin 的[博客文章](https://blogs.technet.microsoft.com/virtualization/2015/11/20/discrete-device-assignment-machines-and-devices/)更详细-但是，对于使用者，运行[计算机配置文件脚本](#machine-profile-script)将显示哪些设备能够用于离散设备分配。
@@ -52,7 +50,7 @@ ms.locfileid: "72923863"
 - 使用动态内存
 - 将 VM 添加到高可用性（HA）群集
 
-## <a name="security"></a>安全
+## <a name="security"></a>安全性
 离散设备分配将整个设备传递到 VM 中。  这意味着可以从来宾操作系统访问该设备的所有功能。 某些功能（如固件更新）可能会对系统的稳定性产生不利影响。 因此，在从主机中卸载设备时，会向管理员显示许多警告。 我们强烈建议仅在 Vm 的租户受信任的情况下使用离散设备分配。  
 
 如果管理员想要将设备与不受信任的租户一起使用，我们提供了设备制造商，可以创建可在主机上安装的设备缓解驱动程序。  有关是否提供设备缓解驱动程序的详细信息，请与设备制造商联系。
@@ -63,7 +61,7 @@ ms.locfileid: "72923863"
 需要通过 PCIe 位置路径从主机中卸载并装载设备。  示例位置路径如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。   [计算机配置文件脚本](#machine-profile-script)还会返回 PCIe 设备的位置路径。
 
 ### <a name="getting-the-location-path-by-using-device-manager"></a>使用设备管理器获取位置路径
-![“设备管理器”](../deploy/media/dda-devicemanager.png)
+![设备管理器](../deploy/media/dda-devicemanager.png)
 - 打开设备管理器并找到设备。  
 - 右键单击该设备，然后选择 "属性"。
 - 导航到 "详细信息" 选项卡，然后选择属性下拉的 "位置路径"。  

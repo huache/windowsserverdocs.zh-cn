@@ -1,25 +1,21 @@
 ---
 title: 创建标准用户帐户
-ms.custom: na
 description: 为 MultiPoint Services 创建基本用户帐户
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1e113666-e45f-48b6-aad8-42c361c9046d
 author: lizap
 manager: dongill
-ms.openlocfilehash: dc1307855b847b3d27f655e953c718e4049f8332
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d92b5b21c5a10e808e52bf5081ebc1ed7a2b9a3d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395476"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859780"
 ---
 # <a name="create-a-standard-user-account"></a>创建标准用户帐户
-为经常访问站但并不管理你的 MultiPoint 服务系统的用户创建“标准用户帐户”。 具有标准用户帐户的用户可以运行大多数应用程序并保存文件，但无法运行 MultiPoint 管理器。 若要查看具有标准用户访问权限的用户，请在 "MultiPoint 管理器" 中单击 "**用户**" 选项卡。标准用户帐户在“帐户类型”列中显示为“标准”。  
+为经常访问站但并不管理你的 MultiPoint 服务系统的用户创建“标准用户帐户”。 具有标准用户帐户的用户可以运行大多数应用程序并保存文件，但无法运行 MultiPoint 管理器。 若要查看具有标准用户访问权限的用户，请在 "MultiPoint 管理器" 中单击 "**用户**" 选项卡。标准用户帐户在 "**帐户类型**" 列中显示为 "**标准**"。  
   
 如果你的 MultiPoint 服务用户将在 Windows 中存储专用文档，则每位用户应使用唯一用户名和密码登录到 MultiPoint 服务系统。  
   

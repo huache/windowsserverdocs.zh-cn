@@ -1,24 +1,20 @@
 ---
 title: 规划 MultiPoint 服务环境的用户帐户
 description: MultiPoint Services 中用户帐户的规划信息
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d47be540-e891-47bd-85da-6df4bbf93b2f
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 056c3b9773387cf00b40baf6f14e4e1f3583f6c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 28ee7a1475ec55352fe344842b8df7633abb9137
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405008"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853390"
 ---
 # <a name="plan-user-accounts-for-your-multipoint-services-environment"></a>规划 MultiPoint 服务环境的用户帐户
 在 MultiPoint Services 中实现用户帐户的最佳方式取决于部署的大小和复杂性：  
@@ -62,7 +58,7 @@ ms.locfileid: "71405008"
 |UserAccount_04|UserAccount_04|  
 |UserAccount_05|UserAccount_05|  
   
-此方法的优点是用户在每个可用的 MultiPoint 服务上都有一个本地用户帐户。 但是，缺点可能超过此优势。 例如，即使在这两台计算机上，特定用户的用户名和密码是相同的，也不会彼此链接。 因此，如果用户在星期一登录到计算机 A 上的帐户，保存文件，然后登录到星期二计算机 B 上的帐户，则他/她将无法访问以前在计算机 A 上保存的文件。此外，，在多台计算机上复制用户帐户会增加管理开销和存储要求。  
+此方法的优点是用户在每个可用的 MultiPoint 服务上都有一个本地用户帐户。 但是，缺点可能超过此优势。 例如，即使在这两台计算机上，特定用户的用户名和密码是相同的，也不会彼此链接。 因此，如果用户在星期一登录到计算机 A 上的帐户，保存文件，然后登录到星期二的计算机 B 上的帐户，则他/她将无法访问之前在计算机 A 上保存的文件。此外，在多台计算机上复制用户帐户会增加管理开销和存储要求。  
   
 ### <a name="use-generic-local-user-accounts"></a>使用通用本地用户帐户  
 如果你的 MultiPoint 服务系统未连接到域，并且你不希望为每个用户创建一个单独的帐户，则可以为每个工作站创建通用帐户。 例如，如果有两台运行 MultiPoint 服务的计算机，并且有5个工作站与每台计算机相关联，则你可能会决定创建类似于下表中所示的用户帐户。  

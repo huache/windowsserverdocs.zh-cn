@@ -1,24 +1,20 @@
 ---
 title: extend
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2414e21d-fc0b-40e8-9e33-3e072f8ad76b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb54a661bf60b55fd95bf3a686d758d13831a6ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 11991f9fc338dca5201d8f9c9c598b9d7dcf239b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377306"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844780"
 ---
 # <a name="extend"></a>extend
 
@@ -35,14 +31,14 @@ extend [size=<n>] [disk=<n>] [noerr]
 extend filesystem [noerr]  
 ```  
   
-## <a name="parameters"></a>参数  
+### <a name="parameters"></a>参数  
   
-| 参数  |                                                                                             描述                                                                                              |
+| 参数  |                                                                                             说明                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 大小\=<n>  |      指定要添加到当前卷或分区的空间量（以 mb 为单位） \(MB\)。 如果没有给定大小，则使用磁盘上可用的所有连续可用空间。       |
 | 磁盘\=<n>  |                          指定扩展卷或分区的磁盘。 如果未指定磁盘，则在当前磁盘上扩展卷或分区。                          |
 | 文件系统 |                                   扩展具有焦点的卷的文件系统。 仅适用于未使用卷进行扩展的文件系统。                                    |
-|   noerr    | 仅用于脚本编写。 遇到错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
+|   noerr    | 仅用于脚本编写。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
   
 ## <a name="remarks"></a>备注  
   
@@ -58,7 +54,7 @@ extend filesystem [noerr]
   
 -   分区必须具有关联的卷，然后才能对其进行扩展。  
   
-## <a name="BKMK_examples"></a>示例  
+## <a name="examples"></a><a name=BKMK_examples></a>示例  
 若要通过 500 mb 扩展包含焦点的卷或分区，请键入：  
   
 ```  
@@ -71,8 +67,8 @@ extend size=500 disk=3
 extend filesystem  
 ```  
   
-#### <a name="additional-references"></a>其他参考  
-[命令行语法项](command-line-syntax-key.md)  
+## <a name="additional-references"></a>其他参考  
+- [命令行语法项](command-line-syntax-key.md)  
   
 
   

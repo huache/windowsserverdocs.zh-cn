@@ -2,25 +2,23 @@
 title: Hyper-v 功能按代和来宾的兼容性
 description: 列出与注册表项 Hyper-v 功能兼容的生成和操作系统
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: cdca6c31ff14fe63e99ec4afa2581885677bb61d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7212cf21858c8031db0a72efa8d79d78974b0309
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365536"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853230"
 ---
 # <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>Hyper-v 功能按代和来宾的兼容性
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
   
 本文中的表介绍与一些 Hyper-v 功能兼容的生成和操作系统，这些功能按类别分组。 通常，可以使用第2代虚拟机运行最新操作系统的功能，从而获得最佳可用性。  
   
@@ -51,14 +49,14 @@ ms.locfileid: "71365536"
 ------------- | ------------- | -----------  
 COM/串行端口 | 1和2 <br>**注意：** 对于第2代，使用 Windows PowerShell 进行配置。 有关详细信息，请参阅为[内核调试添加 COM 端口](./plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md#add-a-com-port-for-kernel-debugging)。 | 任何受支持的来宾  
   
-## <a name="mobility"></a>移动性  
+## <a name="mobility"></a>机动性  
   
 功能  | 产生 | 来宾操作系统  
 ------------- | ------------- | -----------  
 实时迁移  | 1和2 |  任何受支持的来宾  
 导入/导出 | 1和2 |  任何受支持的来宾  
   
-## <a name="networking"></a>网络  
+## <a name="networking"></a>联网  
   
 功能  | 产生 | 来宾操作系统  
 ------------- | ------------- | -----------  
@@ -79,7 +77,7 @@ RemoteFx | 1和2 | 从 Windows 8 开始，32位和64位 Windows 版本上的第1
   
 功能  | 产生 | 来宾操作系统  
 ------------- | ------------- | -----------  
-安全启动 | 2 | **Linux**：Ubuntu 14.04 及更高版本、SUSE Linux Enterprise Server 12 及更高版本、Red Hat Enterprise Linux 7.0 及更高版本以及 CentOS 7.0 及更高版本<br>**Windows**：可在第2代虚拟机上运行的所有支持的版本  
+安全启动 | 2 | **Linux**： Ubuntu 14.04 及更高版本、SUSE Linux Enterprise Server 12 及更高版本、Red Hat Enterprise Linux 7.0 及更高版本以及 CentOS 7.0 及更高版本<br>**Windows**：可在第2代虚拟机上运行的所有支持的版本  
 受防护的虚拟机 | 2 | **Windows**：可在第2代虚拟机上运行的所有支持的版本  
   
 ## <a name="storage"></a>存储  

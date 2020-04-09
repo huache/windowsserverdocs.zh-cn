@@ -2,20 +2,19 @@
 title: 初始复制完成后应尝试测试故障转移
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: cea7eeaa-c1a7-4f87-89be-d4e1208c546f
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: ec3ad3994227eb14d1d2e53842c755af76ac538d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 41d96b33c686631f57cd35e76b64ee3dde206655
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364702"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858940"
 ---
 # <a name="test-failover-should-be-attempted-after-initial-replication-is-complete"></a>初始复制完成后应尝试测试故障转移
 
@@ -27,12 +26,12 @@ ms.locfileid: "71364702"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|操作|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  
   
-## <a name="problem"></a>问题  
+## <a name="problem"></a>Problem  
 *至少一个月内没有任何测试性故障转移。*  
   
 ## <a name="impact"></a>影响  

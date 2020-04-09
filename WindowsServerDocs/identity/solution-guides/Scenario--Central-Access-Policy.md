@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7f285c9f-c3e8-4aae-9ff4-a9123815114e
 title: 方案中心访问策略
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 91fd437895e765d4d73f3a200f76a5f8f96b52f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a22592e5c8af9fa23725de90a14a9a8a46c286d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407096"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861150"
 ---
-# <a name="scenario-central-access-policy"></a>场景：中心访问策略
+# <a name="scenario-central-access-policy"></a>方案：中央访问策略
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -85,12 +84,12 @@ ms.locfileid: "71407096"
   
 -   [动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>此方案中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的角色和功能  
 下表列出了作为本方案组成部分的角色和功能，并描述了它们如何为本方案提供支持。  
   
 |角色/功能|如何支持本方案|  
 |-----------------|---------------------------------|  
-|Active Directory 域服务角色|Windows Server 2012 中的 AD DS 引入了基于声明的授权平台，该平台允许创建用户声明和设备声明、复合标识、（用户加设备的声明）、新的中心访问策略（CAP）模型以及文件分类的使用授权决定的信息。|  
+|Active Directory 域服务角色|Windows Server 2012 中的 AD DS 引入了基于声明的授权平台，该平台允许创建用户声明和设备声明、复合标识、（用户加设备的声明）、新的中心访问策略（CAP）模型，以及在授权决策中使用文件分类信息。|  
 |文件和存储服务服务器角色|文件和存储服务提供了可帮助设置和管理一台或多台文件服务器的技术，这些服务器提供了你可在网络上集中存储文件并与用户一起共享的位置。 如果你的网络用户需要访问相同的文件和应用程序，或如果集中备份和文件管理对于你的组织非常重要，则应该通过向计算机添加文件和存储服务角色和相应的角色服务的方式，将一个或多个计算机设置为文件服务器。|  
 |Windows 客户端计算机|用户可以通过客户端计算机访问网络上的文件和文件夹。|  
   

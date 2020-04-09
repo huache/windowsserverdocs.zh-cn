@@ -1,6 +1,5 @@
 ---
 title: AD 林恢复-设计 AD 林恢复计划
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 17381f30-55f2-4e00-977a-b701675fa4ff
 ms.technology: identity-adds
-ms.openlocfilehash: 0ef0fbc19f1b3ba5a46fe09f66da6721f2e84712
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ebdff0616d0e3a99b710e07e3bff149a275ff4ea
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369146"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824021"
 ---
 # <a name="ad-forest-recovery---devising-an-ad-forest-recovery-plan"></a>AD 林恢复-设计 AD 林恢复计划
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 根据你的环境和业务要求，你可能需要也可能不需要执行本指南中所述的所有步骤来执行成功的林恢复。 由于本指南仅用作林恢复模板，因此必须设计适合你的环境并满足你的业务需求的自定义林恢复计划。  
   

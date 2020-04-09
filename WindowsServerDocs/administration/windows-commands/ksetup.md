@@ -1,24 +1,20 @@
 ---
 title: ksetup
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4e046f8a-811b-48dc-9a69-18d8e097f353
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 265f67bff65794938485472a41064837551c7699
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b3c61fd81691f9db44330eddbf40d4212d1786ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374804"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841250"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -55,9 +51,9 @@ ksetup
 
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |[Ksetup:setrealm](ksetup-setrealm.md)|使此计算机成为 Kerberos 领域的成员。|
 |[Ksetup:mapuser](ksetup-mapuser.md)|将 Kerberos 主体映射到帐户。|
@@ -81,7 +77,7 @@ ksetup
 |[Ksetup:getenctypeattr](ksetup-getenctypeattr.md)|获取域的加密类型信任属性。|
 |[Ksetup:addenctypeattr](ksetup-addenctypeattr.md)|向域的 "加密类型" 信任属性添加加密类型。|
 |[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|删除域的 "加密类型" 信任属性。|
-|/?|在命令提示符下显示帮助。|
+|/?|在命令提示符处显示帮助。|
 
 ## <a name="remarks"></a>备注
 
@@ -91,6 +87,6 @@ ksetup
 
 Kerberos 版本5协议是运行 Windows XP Professional、Windows Vista 和 Windows 7 的计算机上网络身份验证的默认值。 Kerberos SSP 会在注册表中搜索用户领域的域名，然后通过查询 DNS 服务器将该名称解析为 IP 地址。 Kerberos 协议可以使用 DNS 来仅使用领域名称查找 Kdc，但必须对其进行特殊配置。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

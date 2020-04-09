@@ -1,24 +1,20 @@
 ---
 title: 术语表
 description: 定义 MultiPoint Services 中的字词、术语和概念
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 807bce1d-b993-49c6-9783-b01a3c55846c
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 0c966f0c8e1ad239769c58e4648832ae5020d0dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a5f76f0f41d9ff1726a1a468fde7f53b6a7634d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389647"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859220"
 ---
 # <a name="glossary"></a>术语表
 **关联工作站**  
@@ -57,7 +53,7 @@ MultiPoint 服务可以启动这两种模式之一。 当系统处于控制台�
 **MultiPoint 服务系统**  
 包含一台计算机的硬件和软件的集合，该计算机安装了启用了 MultiPoint 服务角色且至少具有一个 MultiPoint 工作站的 Windows Server 2016。 有关系统布局选项的详细信息，请参阅[MultiPoint Services 站点规划](MultiPoint-services-Site-Planning.md)  
   
-**partition**  
+**依据**  
 物理磁盘上的一段空间，它的作用就像它是一个独立的磁盘。  
   
 **主工作站**  
@@ -79,13 +75,13 @@ MultiPoint 服务可以启动这两种模式之一。 当系统处于控制台�
 用于连接到运行 MultiPoint 服务的计算机的用户终结点。 支持三种工作站类型：连接到视频、连接了 USB 零的客户端，以及通过 LAN 连接的工作站。 有关工作站的详细信息，请参阅[MultiPoint 电台](MultiPoint-services-Stations.md)。  
   
 **工作站集线器**  
-与监视器关联的 USB 集线器，用于创建 MultiPoint 工作站。 它将外围 USB 设备连接到 MultiPoint 服务。 另请参阅： *USB 零客户端* 并 *USB 集线器* 。  
+与监视器关联的 USB 集线器，用于创建 MultiPoint 工作站。 它将外围 USB 设备连接到 MultiPoint 服务。 另请参阅： *usb 零客户端*和*usb 集线器*。  
   
 **工作站模式**  
 MultiPoint 服务可以启动这两种模式之一。 通常，MultiPoint 服务系统处于工作站模式。 在工作站模式下，MultiPoint 服务工作站的行为就好像每个工作站是运行 Windows 操作系统的单独计算机，多个用户可以同时使用系统。 另请参阅：*控制台模式*。  
   
 **USB 集线器**  
-符合通用串行总线（USB）2.0 或更高规格的通用多端口 USB 扩展集线器。 此类集线器通常具有多个 USB 端口，这允许将多个 USB 设备连接到计算机上的单个 USB 端口。 USB 集线器通常是可以进行*外部供电*或*总线供电*的单独设备。 某些其他设备（如某些键盘和视频监视器）可能会将 USB 集线器纳入其设计中。 另请参阅：*USB 零客户端*。  
+符合通用串行总线（USB）2.0 或更高规格的通用多端口 USB 扩展集线器。 此类集线器通常具有多个 USB 端口，这允许将多个 USB 设备连接到计算机上的单个 USB 端口。 USB 集线器通常是可以进行*外部供电*或*总线供电*的单独设备。 某些其他设备（如某些键盘和视频监视器）可能会将 USB 集线器纳入其设计中。 另请参阅： *USB 零客户端*。  
   
 **USB over 以太网零客户端**  
 通过 LAN 连接而不是 USB 端口连接到计算机的 USB 零客户端。 即使通过以太网连接发送数据，也会将此客户端作为 USB 设备出现在服务器上。  

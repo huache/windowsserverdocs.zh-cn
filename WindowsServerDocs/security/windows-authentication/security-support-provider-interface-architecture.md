@@ -1,24 +1,20 @@
 ---
 title: 安全支持提供程序接口体系结构
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de09e099-5711-48f8-adbd-e7b8093a0336
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4db407b24b00bc8313d2e17f1fcf55d9fa160c8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 89e6696c286cae7c3e89346d2044869082cdd8bc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403308"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861730"
 ---
 # <a name="security-support-provider-interface-architecture"></a>安全支持提供程序接口体系结构
 
@@ -58,7 +54,7 @@ SSPI 是 Windows Server 操作系统中通用安全服务 API （GSSAPI）的实
 
 [安全支持提供程序选择](security-support-provider-interface-architecture.md#BKMK_SecuritySupportProviderSelection)
 
-### <a name="BKMK_KerbSSP"></a>Kerberos 安全支持提供程序
+### <a name="kerberos-security-support-provider"></a><a name="BKMK_KerbSSP"></a>Kerberos 安全支持提供程序
 此 SSP 仅使用 Microsoft 实现的 Kerberos 版本5协议。 此协议基于网络工作组的 RFC 4120 和草稿版本。 它是一种行业标准协议，用于交互式登录的密码或智能卡。 它也是 Windows 中服务的首选身份验证方法。
 
 由于从 Windows 2000 开始，Kerberos 协议是默认的身份验证协议，因此所有域服务都支持 Kerberos SSP。 这些服务包括：
@@ -101,7 +97,7 @@ SSPI 是 Windows Server 操作系统中通用安全服务 API （GSSAPI）的实
 
 -   [Kerberos 身份验证技术参考](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx)
 
-### <a name="BKMK_NTLMSSP"></a>NTLM 安全支持提供程序
+### <a name="ntlm-security-support-provider"></a><a name="BKMK_NTLMSSP"></a>NTLM 安全支持提供程序
 NTLM 安全支持提供程序（NTLM SSP）是安全支持提供程序接口（SSPI）使用的一种二进制消息传递协议，可用于实现 NTLM 质询-响应身份验证以及协商完整性和机密性选项。 如果使用 SSPI 身份验证，则使用 NTLM，其中包括服务器消息块或 CIFS 身份验证、HTTP 协商身份验证（例如 Internet Web 身份验证）和远程过程调用服务。 NTLM SSP 包括 NTLM 和 NTLM 版本2（NTLMv2）身份验证协议。
 
 受支持的 Windows 操作系统可将 NTLM SSP 用于以下内容：
@@ -128,7 +124,7 @@ Location：%windir%\Windows\System32\ msv1_0 .dll
 
 -   [审核和限制 NTLM 使用指南](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
 
-### <a name="BKMK_DigestSSP"></a>摘要式安全支持提供程序
+### <a name="digest-security-support-provider"></a><a name="BKMK_DigestSSP"></a>摘要式安全支持提供程序
 摘要式身份验证是一种行业标准，用于轻型目录访问协议（LDAP）和 web 身份验证。 摘要式身份验证通过网络以 MD5 哈希或消息摘要形式传输凭据。
 
 Digest SSP （Wdigest）用于以下内容：
@@ -147,7 +143,7 @@ Digest SSP （Wdigest）用于以下内容：
 
 -   [\[DPSP\]：摘要式协议扩展](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
-### <a name="BKMK_SchannelSSP"></a>Schannel 安全支持提供程序
+### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>Schannel 安全支持提供程序
 安全通道（Schannel）用于基于 web 的服务器身份验证，例如，当用户尝试访问安全 web 服务器时。
 
 TLS 协议、SSL 协议、专用通信技术（PCT）协议和数据报传输层（DTLS）协议基于公钥加密。 Schannel 提供所有这些协议。 所有 Schannel 协议均使用客户端/服务器模型。 Schannel SSP 使用公钥证书验证参与方。 对参与方进行身份验证时，Schannel SSP 按以下优先顺序选择协议：
@@ -185,7 +181,7 @@ TLS 协议、SSL 协议、专用通信技术（PCT）协议和数据报传输层
 
 -   [\[TLSP\]：传输层安全性（TLS）配置文件](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
-### <a name="BKMK_NegoSSP"></a>协商安全支持提供程序
+### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>协商安全支持提供程序
 简单且受保护的 GSS-API 协商机制（SPNEGO）构成协商 SSP 的基础，whichcan 用于协商特定身份验证协议。 当应用程序调用 SSPI 登录到网络时，它可以指定 SSP 来处理请求。 如果应用程序指定 Negotiate SSP，则它会分析请求，并根据客户配置的安全策略选择相应的提供程序来处理请求。
 
 RFC 2478 中指定了 SPNEGO。
@@ -204,7 +200,7 @@ RFC 2478 中指定了 SPNEGO。
 
 -   [\[N2HT\]：协商和 Nego2 HTTP 身份验证协议规范](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
-### <a name="BKMK_CredSSP"></a>凭据安全支持提供程序
+### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>凭据安全支持提供程序
 凭据安全服务提供程序（CredSSP）提供启动新终端服务和远程桌面服务会话时的单一登录（SSO）用户体验。 使用 CredSSP，应用程序可以根据客户端的策略，将用户的凭据从客户端计算机（通过使用客户端 SSP）委托给目标服务器（通过服务器端 SSP）。 CredSSP 策略通过使用组策略进行配置，并且默认情况下禁用凭据的委派。
 
 位置：%windir%\Windows\System32\credssp.dll
@@ -217,7 +213,7 @@ RFC 2478 中指定了 SPNEGO。
 
 -   [用于终端服务登录的凭据安全服务提供程序和 SSO](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
 
-### <a name="BKMK_NegoExtsSSP"></a>协商扩展安全支持提供程序
+### <a name="negotiate-extensions-security-support-provider"></a><a name="BKMK_NegoExtsSSP"></a>协商扩展安全支持提供程序
 协商扩展（NegoExts）是一种身份验证包，用于协商由 Microsoft 和其他软件公司实施的应用程序和方案所使用的 Ssp （NTLM 或 Kerberos 协议除外）。
 
 协商包的这一扩展允许以下方案：
@@ -238,7 +234,7 @@ NegoExts 支持的 Ssp 不是独立的 Ssp，如 Kerberos 和 NTLM。 因此，�
 
 默认情况下，此提供程序包含在本主题开头的 "**适用于**" 列表中指定的版本中，不包括 windows Server 2008 和 windows Vista。
 
-### <a name="BKMK_PKU2USSP"></a>PKU2U 安全支持提供程序
+### <a name="pku2u-security-support-provider"></a><a name="BKMK_PKU2USSP"></a>PKU2U 安全支持提供程序
 Windows 7 和 Windows Server 2008 R2 中引入了 PKU2U 协议，并将其作为 SSP 实现。 此 SSP 启用对等身份验证，特别是在 Windows 7 中引入了名为 "家庭组" 的媒体和文件共享功能。 此功能允许在非域成员的计算机之间共享。
 
 位置：%windir%\Windows\System32\pku2u.dll
@@ -249,8 +245,8 @@ Windows 7 和 Windows Server 2008 R2 中引入了 PKU2U 协议，并将其作为
 
 -   [联机标识集成简介](https://technet.microsoft.com/library/dd560662(v=ws.10).aspx)
 
-## <a name="BKMK_SecuritySupportProviderSelection"></a>安全支持提供程序选择
-Windows SSPI 可以使用通过安装的安全支持提供程序支持的任何协议。 但是，由于并非所有操作系统都支持与运行 Windows Server 的任何给定计算机相同的 SSP 包，因此，客户端和服务器必须协商使用两者都支持的协议。 Windows Server 倾向于客户端计算机和应用程序使用 Kerberos 协议，这是一个基于标准的强大协议（如果可能），但操作系统会继续允许不支持 Kerberos 的客户端计算机和客户端应用程序要进行身份验证的协议。
+## <a name="security-support-provider-selection"></a><a name="BKMK_SecuritySupportProviderSelection"></a>安全支持提供程序选择
+Windows SSPI 可以使用通过安装的安全支持提供程序支持的任何协议。 但是，由于并非所有操作系统都支持与运行 Windows Server 的任何给定计算机相同的 SSP 包，因此，客户端和服务器必须协商使用两者都支持的协议。 Windows Server 倾向于客户端计算机和应用程序使用 Kerberos 协议，这是一种基于标准的强大协议，但操作系统继续允许不支持 Kerberos 协议进行身份验证的客户端计算机和客户端应用程序。
 
 在进行身份验证之前，两台通信计算机必须同意它们都可以支持的协议。 对于任何可通过 SSPI 使用的协议，每台计算机都必须具有相应的 SSP。 例如，要使客户端计算机和服务器使用 Kerberos 身份验证协议，它们必须都支持 Kerberos v5。 Windows Server 使用函数**EnumerateSecurityPackages**来确定计算机上支持的 ssp 以及这些 ssp 的功能。
 
@@ -260,7 +256,7 @@ Windows SSPI 可以使用通过安装的安全支持提供程序支持的任何�
 
 2.  [Negotiate 选项](#BKMK_Negotiate)
 
-### <a name="BKMK_SingleAuth"></a>单个身份验证协议
+### <a name="single-authentication-protocol"></a><a name="BKMK_SingleAuth"></a>单个身份验证协议
 在服务器上指定一个可接受的协议时，客户端计算机必须支持指定的协议，否则通信将失败。 当指定了一个可接受的协议时，将按如下所示进行身份验证交换：
 
 1.  客户端计算机请求对服务的访问权限。
@@ -269,7 +265,7 @@ Windows SSPI 可以使用通过安装的安全支持提供程序支持的任何�
 
 3.  客户端计算机检查回复的内容并检查以确定它是否支持指定的协议。 如果客户端计算机确实支持指定的协议，则会继续进行身份验证。 如果客户端计算机不支持协议，则身份验证将失败，无论客户端计算机是否有权访问该资源。
 
-### <a name="BKMK_Negotiate"></a>Negotiate 选项
+### <a name="negotiate-option"></a><a name="BKMK_Negotiate"></a>Negotiate 选项
 Negotiate 选项可用于允许客户端和服务器尝试查找可接受的协议。 这基于简单且受保护的 GSS-API 协商机制（SPNEGO）。 使用协商身份验证协议的选项开始身份验证时，SPNEGO 交换的发生方式如下：
 
 1.  客户端计算机请求对服务的访问权限。

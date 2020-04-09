@@ -1,7 +1,6 @@
 ---
 ms.assetid: fd427da3-3869-428f-bf2a-56c4b7d99b40
 title: ReFS 上的块克隆
-description: ''
 author: gawatu
 ms.author: gawatu
 manager: gawatu
@@ -9,16 +8,16 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: 81186624e19f9235cbdf8c7f0d44bd2927a68099
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b133e518c4226c516974ca89a457cf0aa64cac7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394019"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861350"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS 上的块克隆
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+>适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 块克隆指示文件系统代表应用程序复制某个范围的文件字节，其中，目标文件可与源文件相同或不同。 遗憾的是，复制操作的系统成本较高，因为它们会触发很耗费资源的对基础物理数据的读取和写入。 
 
@@ -62,7 +61,7 @@ ReFS 上的块克隆将文件数据操作转换为元数据操作。 为了实�
 - 块克隆操作将破坏共享机会锁（也称作 [2 级机会锁](https://msdn.microsoft.com/library/windows/desktop/aa365713(v=vs.85).aspx)）。
 - ReFS 卷必须已使用 Windows Server 2016 进行了格式化；此外，如果正在使用故障转移群集，则在格式化时群集功能级别必须已是 Windows Server 2016 或更高版本。 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [ReFS 概述](refs-overview.md)
 -   [ReFS 完整性流](integrity-streams.md)

@@ -1,24 +1,20 @@
 ---
 title: certutil
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 certutil 的 Windows 命令主题，这是一个命令行程序，可转储并显示证书颁发机构（CA）配置信息、配置证书服务、备份和还原 CA 组件以及验证证书、密钥对和证书链。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 71525e4051a079eb9a3d0c8c197c8157b53e5e67
-ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
+ms.openlocfilehash: 3ae2d68ee6a23422dda3dee8b261027c36707bd1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278542"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848190"
 ---
 # <a name="certutil"></a>certutil
 
@@ -241,8 +237,8 @@ AttributeString-请求属性名称和值对
 
 - 名称和值以冒号分隔。
 - 多个名称、值对由换行符分隔。
-- 示例： "CertificateTemplate:User\nEMail:User@Domain.com"
-- 每个 "\n" 序列都转换为换行符。
+- 示例： CertificateTemplate:User\nEMail:User@Domain.com
+- 每个 \n 序列都转换为换行符分隔符。
 
 [-config Machine\CAName]
 
@@ -337,7 +333,7 @@ CertUtil [Options]-CAInfo [InfoName [Index |ErrorCode]]
 
 显示 CA 信息
 
-InfoName-表示要显示的 CA 属性（见下文）。 为所有属性使用 "\*"。
+InfoName-表示要显示的 CA 属性（见下文）。 将 \* 用于所有属性。
 
 Index--可选的从零开始的属性索引
 
@@ -530,19 +526,19 @@ csv：作为逗号分隔值输出
 
 显示所有条目的 StatusCode 列：-out StatusCode
 
-显示最后一个条目的所有列：-restrict "RequestId = = $"
+显示最后一个条目的所有列：-restrict RequestId = = $
 
-显示三个请求的 RequestId 和处置：-restrict "RequestId > = 37，RequestId\<40"-out "RequestId，处置"
+显示三个请求的 RequestId 和处置：-限制 RequestId > = 37，RequestId\<40-out RequestId，处置
 
-若要显示所有基本 Crl 的行 Id 和 CRL 号，请执行以下操作：-restrict "CRLMinBase = 0"-out "CRLRowId，CRLNumber" CRL
+显示所有基本 Crl 的行 Id 和 CRL 号：-restrict CRLMinBase = 0-out CRLRowId，CRLNumber CRL
 
-显示基本 CRL 号3：-v-restrict "CRLMinBase = 0，CRLNumber = 3"-out "CRLRawCRL" CRL
+显示基本 CRL 号3：-v-限制 CRLMinBase = 0，CRLNumber = 3-out CRLRawCRL CRL
 
 显示整个 CRL 表： CRL
 
-使用 "Date [+ |-dd： hh]" 作为日期限制
+使用 Date [+ |-dd： hh] 表示日期限制
 
-使用 "now + dd： hh" 表示相对于当前时间的日期
+使用 now + dd： hh 表示相对于当前时间的日期
 
 [-无声][-split][-config Machine\CAName][-restrict RestrictionList][-out ColumnList]
 
@@ -729,13 +725,13 @@ CertUtil [Options]-store [CertificateStoreName [证书 id [OutputFile]]]
 
 转储证书存储
 
-CertificateStoreName：证书存储区名称。 例如：
+CertificateStoreName：证书存储区名称。 示例：
 
-- "My"、"CA" （默认）、"Root"、
-- "ldap:///CN=Certification 机关，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？" objectClass = 证书颁发机构 "（查看根证书）
-- "ldap:///CN=CAName,CN=Certification 机关，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？" objectClass = 证书颁发机构 "（修改根证书）
-- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ certificateRevocationList？ base？ objectClass = cRLDistributionPoint" （查看 Crl）
-- "ldap:///CN=NTAuthCertificates,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ base？ objectClass = 证书颁发机构" （企业 CA 证书）
+- My、CA （默认）、根、
+- ldap:///CN=Certification 颁发机构，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate 呢？ objectClass = 证书颁发机构（查看根证书）
+- ldap:///CN=CAName,CN=Certification 机构，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ "objectClass = 证书颁发机构" （修改根证书）
+- ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ certificateRevocationList？ base？ objectClass = cRLDistributionPoint （查看 Crl）
+- ldap:///CN=NTAuthCertificates,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ base？ objectClass = 证书颁发机构（企业 CA 证书）
 - ldap：（AD 计算机对象证书）
 - -user ldap：（AD 用户对象证书）
 
@@ -751,7 +747,7 @@ OutputFile：保存匹配证书的文件
 
 使用-microsoft-windows-grouppolicy 访问计算机组策略存储。
 
-例如：
+示例：
 
 - -enterprise NTAuth
 - -enterprise Root 37
@@ -821,22 +817,22 @@ PropertyInfFile-包含外部属性的 INF 文件：
      19 = Empty ; Add archived property, OR:
      19 =       ; Remove archived property
 
-     11 = "{text}Friendly Name" ; Add friendly name property
+     11 = {text}Friendly Name ; Add friendly name property
 
-     127 = "{hex}" ; Add custom hexadecimal property
-         _continue_ = "00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f"
-         _continue_ = "10 11 12 13 14 15 16 17 18 19 1a 1b 1c 1d 1e 1f"
+     127 = {hex} ; Add custom hexadecimal property
+         _continue_ = 00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+         _continue_ = 10 11 12 13 14 15 16 17 18 19 1a 1b 1c 1d 1e 1f
 
-     2 = "{text}" ; Add Key Provider Information property
-       _continue_ = "Container=Container Name&"
-       _continue_ = "Provider=Microsoft Strong Cryptographic Provider&"
-       _continue_ = "ProviderType=1&"
-       _continue_ = "Flags=0&"
-       _continue_ = "KeySpec=2"
+     2 = {text} ; Add Key Provider Information property
+       _continue_ = Container=Container Name&
+       _continue_ = Provider=Microsoft Strong Cryptographic Provider&
+       _continue_ = ProviderType=1&
+       _continue_ = Flags=0&
+       _continue_ = KeySpec=2
 
-     9 = "{text}" ; Add Enhanced Key Usage property
-       _continue_ = "1.3.6.1.5.5.7.3.2,"
-       _continue_ = "1.3.6.1.5.5.7.3.1,"
+     9 = {text} ; Add Enhanced Key Usage property
+       _continue_ = 1.3.6.1.5.5.7.3.2,
+       _continue_ = 1.3.6.1.5.5.7.3.1,
 ```
 
 [-f][-enterprise][-user][-Microsoft-windows-grouppolicy][-无声][-split][-csp 提供程序]
@@ -849,13 +845,13 @@ CertUtil [Options]-viewstore [CertificateStoreName [证书 id [OutputFile]]]
 
 转储证书存储
 
-CertificateStoreName：证书存储区名称。 例如：
+CertificateStoreName：证书存储区名称。 示例：
 
-- "My"、"CA" （默认）、"Root"、
-- "ldap:///CN=Certification 机关，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？" objectClass = 证书颁发机构 "（查看根证书）
-- "ldap:///CN=CAName,CN=Certification 机关，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？" objectClass = 证书颁发机构 "（修改根证书）
-- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ certificateRevocationList？ base？ objectClass = cRLDistributionPoint" （查看 Crl）
-- "ldap:///CN=NTAuthCertificates,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ base？ objectClass = 证书颁发机构" （企业 CA 证书）
+- My、CA （默认）、根、
+- ldap:///CN=Certification 颁发机构，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate 呢？ objectClass = 证书颁发机构（查看根证书）
+- ldap:///CN=CAName,CN=Certification 机构，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ "objectClass = 证书颁发机构" （修改根证书）
+- ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ certificateRevocationList？ base？ objectClass = cRLDistributionPoint （查看 Crl）
+- ldap:///CN=NTAuthCertificates,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ base？ objectClass = 证书颁发机构（企业 CA 证书）
 - ldap：（AD 计算机对象证书）
 - -user ldap：（AD 用户对象证书）
 
@@ -871,7 +867,7 @@ OutputFile：保存匹配证书的文件
 
 使用-microsoft-windows-grouppolicy 访问计算机组策略存储。
 
-例如：
+示例：
 
 1. -enterprise NTAuth
 2. -enterprise Root 37
@@ -888,13 +884,13 @@ CertUtil [Options]-viewdelstore [CertificateStoreName [证书 id [OutputFile]]]
 
 从存储中删除证书
 
-CertificateStoreName：证书存储区名称。 例如：
+CertificateStoreName：证书存储区名称。 示例：
 
-- "My"、"CA" （默认）、"Root"、
-- "ldap:///CN=Certification 机关，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？" objectClass = 证书颁发机构 "（查看根证书）
-- "ldap:///CN=CAName,CN=Certification 机关，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？" objectClass = 证书颁发机构 "（修改根证书）
-- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ certificateRevocationList？ base？ objectClass = cRLDistributionPoint" （查看 Crl）
-- "ldap:///CN=NTAuthCertificates,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ base？ objectClass = 证书颁发机构" （企业 CA 证书）
+- My、CA （默认）、根、
+- ldap:///CN=Certification 颁发机构，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate 呢？ objectClass = 证书颁发机构（查看根证书）
+- ldap:///CN=CAName,CN=Certification 机构，CN = Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ "objectClass = 证书颁发机构" （修改根证书）
+- ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ certificateRevocationList？ base？ objectClass = cRLDistributionPoint （查看 Crl）
+- ldap:///CN=NTAuthCertificates,CN=Public Key Services，CN = Services，CN = Configuration，DC = cpandl，DC = com？ cACertificate？ base？ objectClass = 证书颁发机构（企业 CA 证书）
 - ldap：（AD 计算机对象证书）
 - -user ldap：（AD 用户对象证书）
 
@@ -910,7 +906,7 @@ OutputFile：保存匹配证书的文件
 
 使用-microsoft-windows-grouppolicy 访问计算机组策略存储。
 
-例如：
+示例：
 
 1. -enterprise NTAuth
 2. -enterprise Root 37
@@ -1322,7 +1318,7 @@ CRL：创建空 CRL。 有效期和其他选项不得存在。
 
 OutFileList：以逗号分隔的已修改证书或 CRL 输出文件的列表。 文件数量必须与 InFileList 匹配。
 
-开始日期 + dd： hh：新的有效期：可选的日期加上;可选日期和小时有效期;如果同时指定两者，则使用加号（+）分隔符。 使用 "now [+ dd： hh]" 从当前时间开始。 使用 "从不" 无到期日期（仅适用于 Crl）。
+开始日期 + dd： hh：新的有效期：可选的日期加上;可选日期和小时有效期;如果同时指定两者，则使用加号（+）分隔符。 现在使用 [+ dd： hh] 从当前时间开始。 使用 "从不" 无到期日期（仅适用于 Crl）。
 
 SerialNumberList：要添加或删除的以逗号分隔的序列号列表
 
@@ -1333,8 +1329,8 @@ ObjectIdList：要删除的以逗号分隔的扩展 ObjectId 列表
 ```
 [Extensions]
      2.5.29.31 = ; Remove CRL Distribution Points extension
-     2.5.29.15 = "{hex}" ; Update Key Usage extension
-     _continue_="03 02 01 86"
+     2.5.29.15 = {hex} ; Update Key Usage extension
+     _continue_=03 02 01 86
 ```
 
 HashAlgorithm：哈希算法的名称，前面加上一个 # 号
@@ -1483,15 +1479,15 @@ PolicyServers：使用策略服务器注册表项
 
 ProgId：使用策略或退出模块的 ProgId （注册表子项名称）
 
-RegistryValueName：注册表值名称（使用 "名称\*" 以前缀匹配）
+RegistryValueName：注册表值名称（使用名称\* 前缀匹配）
 
-值：新的数字、字符串或日期注册表值或文件名。 如果数字值以 "+" 或 "-" 开头，则在现有注册表值中设置或清除在新值中指定的位。
+值：新的数字、字符串或日期注册表值或文件名。 如果数字值以 + 或-开头，则在现有注册表值中设置或清除在新值中指定的位。
 
-如果字符串值以 "+" 或 "-" 开头，并且现有值是 REG_MULTI_SZ 值，则会将该字符串添加到现有注册表值中或从中删除。 若要强制创建 REG_MULTI_SZ 值，请将 "\n" 添加到字符串值的末尾。
+如果字符串值以 + 或-开头，并且现有值是 REG_MULTI_SZ 值，则会将该字符串添加到现有注册表值或从中删除。 若要强制创建 REG_MULTI_SZ 值，请将 \n 添加到字符串值的末尾。
 
-如果值以 "\@" 开头，则该值的其余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则会将其视为 [Date] [+ |-] [dd： hh]--可选的日期加上或减去可选的日和小时。 如果同时指定两者，则使用加号（+）或减号（-）分隔符。 使用 "now + dd： hh" 表示相对于当前时间的日期。
+如果值以 \@开头，则值的剩余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则会将其视为 [Date] [+ |-] [dd： hh]--可选的日期加上或减去可选的日和小时。 如果同时指定两者，则使用加号（+）或减号（-）分隔符。 使用 now + dd： hh 表示相对于当前时间的日期。
 
-使用 "chain\ChainCacheResyncFiletime \@now" 有效地刷新缓存的 Crl。
+立即使用 chain\ChainCacheResyncFiletime \@来有效地刷新缓存的 Crl。
 
 [-f][-user][-Microsoft-windows-grouppolicy][-config Machine\CAName]
 
@@ -1521,15 +1517,15 @@ PolicyServers：使用策略服务器注册表项
 
 ProgId：使用策略或退出模块的 ProgId （注册表子项名称）
 
-RegistryValueName：注册表值名称（使用 "名称\*" 以前缀匹配）
+RegistryValueName：注册表值名称（使用名称\* 前缀匹配）
 
-值：新的数字、字符串或日期注册表值或文件名。 如果数字值以 "+" 或 "-" 开头，则在现有注册表值中设置或清除在新值中指定的位。
+值：新的数字、字符串或日期注册表值或文件名。 如果数字值以 + 或-开头，则在现有注册表值中设置或清除在新值中指定的位。
 
-如果字符串值以 "+" 或 "-" 开头，并且现有值是 REG_MULTI_SZ 值，则会将该字符串添加到现有注册表值中或从中删除。 若要强制创建 REG_MULTI_SZ 值，请将 "\n" 添加到字符串值的末尾。
+如果字符串值以 + 或-开头，并且现有值是 REG_MULTI_SZ 值，则会将该字符串添加到现有注册表值或从中删除。 若要强制创建 REG_MULTI_SZ 值，请将 \n 添加到字符串值的末尾。
 
-如果值以 "\@" 开头，则该值的其余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则会将其视为 [Date] [+ |-] [dd： hh]--可选的日期加上或减去可选的日和小时。 如果同时指定两者，则使用加号（+）或减号（-）分隔符。 使用 "now + dd： hh" 表示相对于当前时间的日期。
+如果值以 \@开头，则值的剩余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则会将其视为 [Date] [+ |-] [dd： hh]--可选的日期加上或减去可选的日和小时。 如果同时指定两者，则使用加号（+）或减号（-）分隔符。 使用 now + dd： hh 表示相对于当前时间的日期。
 
-使用 "chain\ChainCacheResyncFiletime \@now" 有效地刷新缓存的 Crl。
+立即使用 chain\ChainCacheResyncFiletime \@来有效地刷新缓存的 Crl。
 
 [-f][-user][-Microsoft-windows-grouppolicy][-config Machine\CAName]
 
@@ -1559,15 +1555,15 @@ PolicyServers：使用策略服务器注册表项
 
 ProgId：使用策略或退出模块的 ProgId （注册表子项名称）
 
-RegistryValueName：注册表值名称（使用 "名称\*" 以前缀匹配）
+RegistryValueName：注册表值名称（使用名称\* 前缀匹配）
 
-值：新的数字、字符串或日期注册表值或文件名。 如果数字值以 "+" 或 "-" 开头，则在现有注册表值中设置或清除在新值中指定的位。
+值：新的数字、字符串或日期注册表值或文件名。 如果数字值以 + 或-开头，则在现有注册表值中设置或清除在新值中指定的位。
 
-如果字符串值以 "+" 或 "-" 开头，并且现有值是 REG_MULTI_SZ 值，则会将该字符串添加到现有注册表值中或从中删除。 若要强制创建 REG_MULTI_SZ 值，请将 "\n" 添加到字符串值的末尾。
+如果字符串值以 + 或-开头，并且现有值是 REG_MULTI_SZ 值，则会将该字符串添加到现有注册表值或从中删除。 若要强制创建 REG_MULTI_SZ 值，请将 \n 添加到字符串值的末尾。
 
-如果值以 "\@" 开头，则该值的其余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则会将其视为 [Date] [+ |-] [dd： hh]--可选的日期加上或减去可选的日和小时。 如果同时指定两者，则使用加号（+）或减号（-）分隔符。 使用 "now + dd： hh" 表示相对于当前时间的日期。
+如果值以 \@开头，则值的剩余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则会将其视为 [Date] [+ |-] [dd： hh]--可选的日期加上或减去可选的日和小时。 如果同时指定两者，则使用加号（+）或减号（-）分隔符。 使用 now + dd： hh 表示相对于当前时间的日期。
 
-使用 "chain\ChainCacheResyncFiletime \@now" 有效地刷新缓存的 Crl。
+立即使用 chain\ChainCacheResyncFiletime \@来有效地刷新缓存的 Crl。
 
 [-f][-user][-Microsoft-windows-grouppolicy][-config Machine\CAName]
 
@@ -1665,7 +1661,7 @@ PFXOutFile： PFX 输出文件
 
 ExtendedProperties：包含扩展属性
 
-在命令行中指定的密码是以逗号分隔的密码列表。  如果指定了多个密码，则将最后一个密码用于输出文件。  如果只提供了一个密码或最后一个密码为 "\*"，则系统会提示用户输入输出文件密码。
+在命令行中指定的密码是以逗号分隔的密码列表。  如果指定了多个密码，则将最后一个密码用于输出文件。  如果只提供了一个密码，或者 \*了最后一个密码，则系统会提示用户输入输出文件密码。
 
 [-f][-user][-split][-p Password][-ProtectTo SAMNameAndSIDList][-csp 提供程序]
 
@@ -1689,7 +1685,7 @@ V3CACertId： V3 CA 证书匹配令牌。  请参阅[-store](#-store)证书 id d
 
 Salt： EPF 输出文件 salt 字符串
 
-在命令行中指定的密码是以逗号分隔的密码列表。 如果指定了多个密码，则将最后一个密码用于输出文件。  如果只提供了一个密码或最后一个密码为 "\*"，则系统会提示用户输入输出文件密码。
+在命令行中指定的密码是以逗号分隔的密码列表。 如果指定了多个密码，则将最后一个密码用于输出文件。  如果只提供了一个密码，或者 \*了最后一个密码，则系统会提示用户输入输出文件密码。
 
 [-f][-无声][-split][-dc DCName][-p Password][-csp 提供程序]
 
@@ -1726,7 +1722,7 @@ Salt： EPF 输出文件 salt 字符串
 |-用户名用户名|使用命名帐户作为 SSL 凭据。 对于选择 U/I，请使用-UserName。|
 |-Cert 证书 id|签名证书|
 |-dc DCName|面向特定域控制器|
-|-限制 RestrictionList|逗号分隔的限制列表。 每个限制都包含列名称、关系运算符和常量整数、字符串或日期。 一个列名前面可能有一个加号或减号，用来指示排序顺序。 例如：</br>"RequestId = 47"</br>"+ RequesterName > = a，RequesterName < b"</br>"-RequesterName > 域，处置 = 21"|
+|-限制 RestrictionList|逗号分隔的限制列表。 每个限制都包含列名称、关系运算符和常量整数、字符串或日期。 一个列名前面可能有一个加号或减号，用来指示排序顺序。 示例：</br>RequestId = 47</br>\+ RequesterName > = a，RequesterName < b</br>-RequesterName > 域，处置 = 21|
 |-out ColumnList|逗号分隔的列列表|
 |-p 密码|密码|
 |-ProtectTo SAMNameAndSIDList|逗号分隔 SAM 名称/SID 列表|

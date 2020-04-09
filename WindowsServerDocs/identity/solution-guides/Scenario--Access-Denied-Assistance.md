@@ -1,7 +1,6 @@
 ---
 ms.assetid: aae907eb-11cf-4a87-a046-8680872ed0b1
 title: 方案访问-拒绝帮助
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d3c1354c54cf421e59d6b37a44ce703f52b6f4b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a6418f7ac317f060adb72f32e231e1577a5f8b92
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357480"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861140"
 ---
-# <a name="scenario-access-denied-assistance"></a>场景：“拒绝访问”协助
+# <a name="scenario-access-denied-assistance"></a>方案：拒绝访问协助
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 当用户尝试访问其不具有访问权限的文件服务器上的共享文件和文件夹时，他们将收到一条拒绝访问的消息。 管理员通常不具有用于解决访问问题的相应上下文，这使他们难以解决该问题。  
   
-## <a name="scenario-description"></a>方案说明  
+## <a name="scenario-description"></a>方案描述  
 "拒绝访问" 协助是 Windows Server 2012 中的一项新功能，它提供了以下方式来解决与访问文件和文件夹相关的问题：  
   
 -   **自我协助。** 如果用户可以确定造成问题的原因并修正该问题，则该用户就可获得所请求的访问权限，这样可以降低对业务的影响，并且不需要在中心访问策略中设置特殊例外。 “拒绝访问”协助提供了一条拒绝访问的消息，文件服务器管理员可以使用特定于其组织的信息自定义该消息。 例如，管理员可以设置该消息，以便用户可以从数据所有者请求访问权限，而无需文件服务器管理员干预。  
@@ -33,13 +32,13 @@ ms.locfileid: "71357480"
   
 Windows Server 2012 中的 "拒绝访问" 协助为文件服务器管理员提供了相关访问详细信息，以便他们可以确定问题和相应的工具，以便他们能够进行配置更改以满足访问请求。 例如，用户可以按照以下步骤访问一个他们当前没有访问权限的文件：  
   
--   用户尝试读取 \\ \ financeshares 共享文件夹中的文件，但服务器显示拒绝访问的消息。  
+-   用户尝试读取 \\\financeshares 共享文件夹中的文件，但服务器显示拒绝访问的消息。  
   
 -    Windows Server 2012 向用户显示 "拒绝访问" 协助信息，其中包含请求协助的选项。  
   
 -   如果用户请求访问资源，则服务器会向文件夹所有者发送一封包含访问请求信息的电子邮件。  
   
-可以在 [Plan for Access-Denied Assistance](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)中找到关于配置“拒绝访问”协助的规划信息。  
+可以在[“拒绝访问”协助规划](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)中找到关于配置“拒绝访问”协助的规划信息。  
   
 可以在[部署拒绝访问&#40;协助演示步骤&#41;](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md)中找到有关配置 "拒绝访问" 协助的步骤。  
   
@@ -48,10 +47,10 @@ Windows Server 2012 中的 "拒绝访问" 协助为文件服务器管理员提�
   
 -   [动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="practical-applications"></a>实际应用程序  
+## <a name="practical-applications"></a>实际应用  
 Windows Server 2012 中的 "拒绝访问" 协助使用户能够直接从拒绝访问消息请求对共享文件和文件夹的访问权限，从而有助于实现动态访问控制。  
   
-## <a name="BKMK_NEW"></a>此方案中包含的功能  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的功能  
 下表列出了本方案的部分功能并说明了支持该方案的工作原理。  
   
 |功能|如何支持本方案|  

@@ -2,22 +2,18 @@
 title: 为 DNS 区域设置访问范围
 description: 本主题是 Windows Server 2016 中的 IP 地址管理（IPAM）管理指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a211dde-80eb-4888-b5bb-4e28fe8dc7df
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 870acde822fb5c8c038139710facb71208df3387
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ca1899a4d49639b047b672c42b9743fb27df8a67
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309567"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860600"
 ---
 # <a name="set-access-scope-for-a-dns-zone"></a>为 DNS 区域设置访问范围
 

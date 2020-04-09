@@ -2,22 +2,18 @@
 title: 步骤3规划负载平衡群集部署
 description: 本主题是在 Windows Server 2016 的群集中部署远程访问指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7540c17b-81de-47de-a04f-3247afa26f70
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1a195be9c00ef35f80a7e1975b52128681fca1f0
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 28a255031e9168105b285dbece1c9230d1ab20a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308215"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855230"
 ---
 # <a name="step-3-plan-a-load-balanced-cluster-deployment"></a>步骤3规划负载平衡群集部署
 

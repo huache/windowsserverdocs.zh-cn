@@ -1,7 +1,6 @@
 ---
 ms.assetid: cd4d4902-dcdf-49dd-8059-82a56bf4b585
 title: 导出服务器身份验证证书的私钥部分
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 8e1bbeddc4bae1c420b6cc78b52d6b873320ae8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6baa734e3fc346d94f4387e2ed54d3e707e5af75
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359577"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855420"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>导出服务器身份验证证书的私钥部分
 
@@ -27,13 +26,13 @@ Active Directory 联合身份验证服务 \(AD FS\) 场中的每个联合服务�
   
 根据此计算机将扮演的角色，在使用私钥安装了服务器身份验证证书的联合服务器计算机或联合服务器代理计算机上使用此过程。 当完成该过程时，就可以在服务器场中的每个服务器的默认网站上导入此证书。 有关详细信息，请参阅将[服务器身份验证证书导入到默认](Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)网站。  
   
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
   
 ### <a name="to-export-the-private-key-portion-of-a-server-authentication-certificate"></a>导出服务器身份验证证书的私钥部分  
   
 1. 在 "**开始**" 屏幕上，键入 "**Internet Information Services \(IIS\) 管理器**"，然后按 enter。  
   
-2. 在控制台树中，单击“计算机名称”。  
+2. 在控制台树中单击 **“ComputerName”** 。  
   
 3. 在中心窗格中，双击 "**服务器证书**"\-"。  
   

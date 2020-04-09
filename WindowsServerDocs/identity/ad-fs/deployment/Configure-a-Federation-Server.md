@@ -1,7 +1,6 @@
 ---
 ms.assetid: 434fd617-373a-405e-bae4-da324ea83efc
 title: Windows Server 2012 R2 AD FS 部署指南
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7a3cada555fbf22a853e3aaf002c6413b6555fb8
-ms.sourcegitcommit: 5197a87e659589bcc8d2a32069803ae736b02892
+ms.openlocfilehash: b4cf161d9dfcbeeb467ccb0a83cc260c5299057e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376274"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855520"
 ---
 # <a name="configure-a-federation-server"></a>配置联合服务器
 
@@ -151,7 +150,7 @@ ms.locfileid: "79376274"
 4.  在 "**指定场**" 页上，提供在场中使用 WID 的主联合服务器的名称，或者指定使用 SQL Server 的现有联合服务器场的数据库主机名和数据库实例名称。  
   
     > [!WARNING]  
-    > 在 Windows Server® 2012 R2 中，有一种方法可以指定 SQL Server 的默认实例。 此方法不是使用用户界面， 而应使用[通过 Windows PowerShell 配置新联合服务器场中的第一个联合服务器](Configure-a-Federation-Server.md#BKMK_3)的步骤。  
+    > 在 Windows Server&reg; 2012 R2 中，有一种方法可以指定 SQL Server 的默认实例。 此方法不是使用用户界面， 而应使用[通过 Windows PowerShell 配置新联合服务器场中的第一个联合服务器](Configure-a-Federation-Server.md#BKMK_3)的步骤。  
   
     > [!IMPORTANT]  
     > 如果需要创建 AD FS 场并使用 SQL Server 来存储配置数据，可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012。  
@@ -225,7 +224,7 @@ ms.locfileid: "79376274"
 
 -   [将联合服务器添加到现有的联合服务器场](Configure-a-Federation-Server.md#BKMK_2)
 
-## <a name="BKMK_1"></a>配置新联合服务器场中的第一台联合服务器
+## <a name="configure-the-first-federation-server-in-a-new-federation-server-farm"></a><a name="BKMK_1"></a>配置新联合服务器场中的第一台联合服务器
 
 ### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-by-using-the-active-directory-federation-service-configuration-wizard"></a>使用 Active Directory 联合身份验证服务配置向导在新的联合服务器场中配置第一台联合服务器
 
@@ -271,7 +270,7 @@ ms.locfileid: "79376274"
 
 9. 在 "**结果**" 页上，查看结果并检查配置是否已成功完成，然后单击 "**完成联合身份验证服务部署所需的后续步骤**"。 有关详细信息，请参阅[完成 AD FS 安装的后续步骤](https://go.microsoft.com/fwlink/p/?LinkId=286704)。 单击 **“关闭”** 退出向导。
 
-### <a name="BKMK_3"></a>通过 Windows PowerShell 配置新联合服务器场中的第一台联合服务器
+### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-via-windows-powershell"></a><a name="BKMK_3"></a>通过 Windows PowerShell 配置新联合服务器场中的第一台联合服务器
 您可以使用新的或现有的 gMSA 帐户或现有的域用户帐户创建新的联合服务器场。
 
 -   **如果要使用新的 gMSA 帐户创建新的联合服务器，请执行以下操作：**
@@ -330,7 +329,7 @@ ms.locfileid: "79376274"
         > [!IMPORTANT]
         > 如果要创建 AD FS 场并使用 SQL Server 来存储配置数据，可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012 和 SQL Server 2014。
 
-## <a name="BKMK_2"></a>将联合服务器添加到现有的联合服务器场
+## <a name="add-a-federation-server-to-an-existing-federation-server-farm"></a><a name="BKMK_2"></a>将联合服务器添加到现有的联合服务器场
 
 > [!IMPORTANT]
 > 在开始本部分中的任何过程之前，请确保已完成[步骤3：安装 AD FS 角色服务](../../ad-fs/deployment/Install-the-AD-FS-Role-Service.md)。
@@ -351,7 +350,7 @@ ms.locfileid: "79376274"
 4.  在 "**指定场**" 页上，提供在场中使用 WID 的主联合服务器的名称，或者指定使用 SQL Server 的现有联合服务器场的数据库主机名和数据库实例名称。
 
     > [!WARNING]
-    > 在 Windows Server® 2012 R2 中，有一种方法可以指定 SQL Server 的默认实例。 此方法不是使用用户界面， 而应使用[通过 Windows PowerShell 配置新联合服务器场中的第一个联合服务器](Configure-a-Federation-Server.md#BKMK_3)的步骤。
+    > 在 Windows Server&reg; 2012 R2 中，有一种方法可以指定 SQL Server 的默认实例。 此方法不是使用用户界面， 而应使用[通过 Windows PowerShell 配置新联合服务器场中的第一个联合服务器](Configure-a-Federation-Server.md#BKMK_3)的步骤。
 
     > [!IMPORTANT]
     > 如果需要创建 AD FS 场并使用 SQL Server 来存储配置数据，可以使用 SQL Server 2008 和更新版本，包括 SQL Server 2012。
