@@ -4,15 +4,15 @@ description: 用于快速响应时间的建议的均衡电源计划参数
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 96037a577c9f2a835e9c49bf9339ed8dc6da1a6b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 288746b5361c550e167f64886a929c96c81ff8d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383511"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851960"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>针对需要快速响应时间的工作负荷推荐的均衡电源计划参数
 
@@ -21,7 +21,7 @@ ms.locfileid: "71383511"
 但是，利用率增加**可能会呈**指数级增长。 如今，快速响应时间的要求已大幅增加。 即使 Microsoft 建议用户在需要快速响应时间的情况下切换到**高性能**电源计划，某些用户也不希望在光速到中等负载级别的情况下获得强大的功能。 因此，对于需要快速响应时间的工作负荷，Microsoft 提供了以下一组建议的参数更改。
 
 
-| 参数 | 描述 | 默认值 | 建议值 |
+| 参数 | 说明 | 默认值 | 建议值 |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 处理器性能增加阈值 | 要增加的频率的利用率阈值 | 90 | 60 |
 | 处理器性能降低阈值 | 降低频率的利用率阈值 | 80 | 40 |

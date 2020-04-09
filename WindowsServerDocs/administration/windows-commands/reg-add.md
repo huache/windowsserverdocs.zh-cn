@@ -1,26 +1,22 @@
 ---
-title: reg 添加
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: reg add
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d9ad143e-dc10-4e2e-a229-408393c40079
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b478ce0c98ec77f1387d8f894364f53cf8d2142
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: df59477c980169699dac897e36836e5226b6a0fa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371760"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836590"
 ---
-# <a name="reg-add"></a>reg 添加
+# <a name="reg-add"></a>reg add
 
 
 向注册表中添加新的子项或条目。
@@ -32,9 +28,9 @@ reg add <KeyName> [{/v ValueName | /ve}] [/t DataType] [/s Separator] [/d Data] 
 ```
 有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|      参数      |                                                                                                                                                                                                                                                                   描述                                                                                                                                                                                                                                                                   |
+|      参数      |                                                                                                                                                                                                                                                                   说明                                                                                                                                                                                                                                                                   |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | \<KeyName<em>></em> | 指定要添加的子项或项的完整路径。 若要指定远程计算机，请包含计算机名称（格式 \\\\\<ComputerName >\) 作为*KeyName*的一部分。 省略 \\\\ComputerName \ 会使操作默认为本地计算机。 *KeyName*必须包含有效的根密钥。 本地计算机的有效根密钥为： HKLM、HKCU、HKCR、HKU 开头和 HKCC。 如果指定了远程计算机，则有效的根密钥为： HKLM 和 HKU 开头。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
 |   /v \<ValueName >   |                                                                                                                                                                                                                                指定要添加到指定子项下的注册表项的名称。                                                                                                                                                                                                                                 |
@@ -50,14 +46,14 @@ reg add <KeyName> [{/v ValueName | /ve}] [/t DataType] [/s Separator] [/d Data] 
 -   此操作无法添加子树。 此版本的**reg**不要求在添加子项时进行确认。
 -   下表列出了**reg add**操作的返回值。
 
-| 值 | 描述 |
+| 值 | 说明 |
 |-------|-------------|
 |   0   |   成功   |
 |   1   |   失败   |
 
--   对于 REG_EXPAND_SZ 密钥类型，请在/d 参数内使用带有 **%** "的插入符号（ **^** ）
+-   对于 REG_EXPAND_SZ 密钥类型，请在/d 参数内使用带有 **%** 的脱字号（ **^** ）
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要在远程计算机 ABC 上添加密钥 HKLM\Software\MyCo，请键入：
 ```
@@ -76,6 +72,6 @@ REG ADD HKLM\Software\MyCo /v MRU /t REG_MULTI_SZ /d fax\0mail\0\0
 REG ADD HKLM\Software\MyCo /v Path /t REG_EXPAND_SZ /d ^%systemroot^%
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

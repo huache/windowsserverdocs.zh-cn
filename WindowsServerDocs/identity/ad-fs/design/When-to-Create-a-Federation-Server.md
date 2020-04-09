@@ -1,7 +1,6 @@
 ---
 ms.assetid: 824005ae-c3c1-459b-9baa-1660158918ab
 title: 何时创建联合服务器
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 91c260dad1bd260a7dad7320fecd15e6472c50a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b1e58e8940d024b2fbca9ada5d5fa430aeab70a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407880"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858470"
 ---
 # <a name="when-to-create-a-federation-server"></a>何时创建联合服务器
 
@@ -29,9 +28,9 @@ ms.locfileid: "71407880"
 ## <a name="determine-the-organizational-role-for-the-federation-server"></a>确定联合服务器的组织角色  
 若要明智地决定何时创建新的联合服务器，你必须首先确定服务器将驻留在哪个组织中。 联合服务器在组织中扮演的角色取决于你是将联合服务器放在帐户伙伴组织中还是资源伙伴组织中。  
   
-当联合服务器置于帐户伙伴的企业网络中时，其角色是对浏览器、Web 服务或身份选择器客户端的用户凭据进行身份验证，并将安全令牌发送到客户端。 有关详细信息，请参阅[查看帐户伙伴中的联合身份验证服务器的角色](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)。  
+当联合服务器置于帐户伙伴的企业网络中时，其角色是对浏览器、Web 服务或身份选择器客户端的用户凭据进行身份验证，并将安全令牌发送到客户端。 有关详细信息，请参阅 [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)。  
   
-当联合服务器位于资源伙伴的企业网络中时，其角色是基于由资源伙伴组织中的联合服务器颁发的安全令牌对用户进行身份验证，或其角色是将令牌请求从为客户端所属的帐户伙伴组织配置 Web 应用程序或 Web 服务。 有关详细信息，请参阅 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
+当联合服务器位于资源伙伴的企业网络中时，其角色是基于由资源伙伴组织中的联合服务器颁发的安全令牌对用户进行身份验证，或其角色是将令牌请求从配置的 Web 应用程序或 Web 服务重定向到客户端所属的帐户伙伴组织。 有关详细信息，请参阅 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)。  
   
 ## <a name="determine-which-ad-fs-design-to-deploy"></a>确定要部署的 AD FS 设计  
 每当要部署以下任何 AD FS 设计时，你将在组织中创建联合服务器：  

@@ -4,15 +4,15 @@ description: 远程桌面网关的性能优化建议
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS
+ms.author: hammadbu; vladmis
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: fcd7afd840df12ec19e162f751df9e5c0c9c84d4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3794b47e7226a905944495dd7c31f3196a33d0d5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385010"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851730"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>性能优化远程桌面网关
 
@@ -44,7 +44,7 @@ Internet Information Services （IIS）和 RD 网关导出以下注册表参数�
     HKLM\System\CurrentControlSet\Services\InetInfo\Parameters\MaxPoolThreads (REG_DWORD)
     ```
 
-    此参数指定要为每个逻辑处理器创建的 IIS 池线程数。 IIS 池线程监视网络中的请求并处理所有传入的请求。 **MaxPoolThreads**计数不包括 RD 网关使用的线程。 默认值为4。
+    此参数指定要为每个逻辑处理器创建的 IIS 池线程数。 IIS 池线程监视网络中的请求并处理所有传入的请求。 **MaxPoolThreads**计数不包括 RD 网关使用的线程。 默认值为 4。
 
 **RD 网关的远程过程调用 tunings**
 
@@ -74,7 +74,7 @@ Internet Information Services （IIS）和 RD 网关导出以下注册表参数�
 
 -   \\RPC/HTTP 代理\\\*
 
--   \\每台服务器的 RPC/HTTP 代理\\\*
+-   每个服务器\\\\RPC/HTTP 代理 \*
 
 -   \\Web 服务\\\*
 
@@ -82,30 +82,30 @@ Internet Information Services （IIS）和 RD 网关导出以下注册表参数�
 
 -   \\IPv4\\\*
 
--   \\记忆\\\*
+-   \\内存\\\*
 
--   \\网络接口（\*）\\\*
+-   \\的网络接口（\*）\\\*
 
--   \\Process （\*）\\\*
+-   \\进程（\*）\\\*
 
 -   \\处理器信息（\*）\\\*
 
 -   \\同步（\*）\\\*
 
--   \\主板\\\*
+-   \\系统\\\*
 
 -   \\TCPv4\\\*
 
 以下性能计数器仅适用于旧 RPC 传输：
 
--   \\Rpc/HTTP 代理\\rpc \*
+-   \* RPC \\RPC/HTTP 代理\\
 
--   \\Rpc/HTTP Proxy Per Server\\rpc \*
+-   每个服务器\\\* RPC \\RPC/HTTP 代理
 
--   \\Web 服务\\ \* RPC
+-   \\Web 服务\\\* RPC
 
--   \\W3SVC\_W3WP.EXE\\ RPC\*
+-   \\W3SVC\_W3WP.EXE\\\* RPC
 
 > [!NOTE]
-> 如果适用，则添加\\IPv6\\ \*和\\TCPv6\\ 对象\* 。ReplaceThisText
+> 如果适用，请将 \\IPv6\\\* 和 \\TCPv6\\\* 对象。ReplaceThisText
 

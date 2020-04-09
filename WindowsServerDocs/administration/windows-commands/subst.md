@@ -1,24 +1,20 @@
 ---
 title: subst
 description: 了解如何将路径与驱动器号关联。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3e69234c-2312-4343-868b-afc1017c622a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f3010d1e58fbd360b8311512e6664873b020c12b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 43cbc57aba29ea0b9150dccdfc566a93017a09a5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383752"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833640"
 ---
 # <a name="subst"></a>subst
 
@@ -35,9 +31,9 @@ subst [<Drive1>: [<Drive2>:]<Path>]
 subst <Drive1>: /d
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<Drive1 >：|指定要为其分配路径的虚拟驱动器。|
 |[\<Drive2 >：]\<路径 >|指定要分配给虚拟驱动器的物理驱动器和路径。|
@@ -63,7 +59,7 @@ subst <Drive1>: /d
 
     `Invalid parameter - drive1:`
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 
 若要为路径 B:\User\Betty\Forms 创建虚拟驱动器 Z，请键入：
 ```
@@ -74,6 +70,6 @@ subst z: b:\user\betty\forms
 z: 
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

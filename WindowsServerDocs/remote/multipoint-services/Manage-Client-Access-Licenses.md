@@ -1,24 +1,20 @@
 ---
 title: 管理客户端访问许可证
 description: 了解如何在 MultiPoint Services 中使用 Cal
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 675e089e-d841-401e-bba7-69f3929ef609
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 4d809ab1bf2a18dff537bf63620623d576c0b25d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2981f22b2b85d90f4102c3a0b67e25901cb12395
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949886"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853540"
 ---
 # <a name="manage-client-access-licenses"></a>管理客户端访问许可证
 连接到 MultiPoint 服务系统的每个工作站（包括运行 MultiPoint 服务的计算机）都必须具有有效的按用户远程桌面*客户端访问许可证（CAL）* 。
@@ -41,12 +37,12 @@ ms.locfileid: "75949886"
 3. 在右侧窗格中，右键单击 **"使用指定的远程桌面许可证服务器"** ，然后选择 "**编辑**"：
    - 在 "组策略编辑器" 对话框中，选择 "**已启用**"
    - 在 "**要使用的许可证服务器**" 字段中输入本地计算机名称。
-   - 选择“确定”
+   - 选择 **"确定"**
   
 4. 在右侧窗格中，右键单击 **"设置远程桌面授权模式"** ，然后选择 "**编辑**"
    - 在 "组策略编辑器" 对话框中，选择 "**已启用**"
    - 为每个设备/每个用户设置**授权模式**
-   - 选择“确定” 
+   - 选择 **"确定"** 
 
   
 ## <a name="see-also"></a>另请参阅  

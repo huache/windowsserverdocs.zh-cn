@@ -1,7 +1,6 @@
 ---
 ms.assetid: a91339ef-6ad4-445f-8ecc-a95fbcc04296
 title: AD DS 设计和规划
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5267561e4a3d19514d9105f21122db73f85bffb9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fa596fd3897c9fd2cc368e4c5ef164d05bfc4c20
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409029"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822900"
 ---
 # <a name="ad-ds-design-and-planning"></a>AD DS 设计和规划
 
@@ -28,11 +27,11 @@ ms.locfileid: "71409029"
   
 本指南介绍了 Windows Server 2008 AD DS 部署的几个可能的起点的任务集。 本指南可帮助你确定最适合你的环境的部署策略。  
   
-尽管本指南中所述的策略适用于几乎所有服务器操作系统部署，但它们已专门针对包含少于100000个用户和少于1000个站点的环境进行了测试和验证，并提供了最小每秒28.8 千比特（Kbps）的网络连接。 如果你的环境不满足这些条件，请考虑使用在更复杂的环境中部署 AD DS 的咨询公司。  
+尽管本指南中所述的策略适用于几乎所有服务器操作系统部署，但已专门针对包含少于100000个用户和少于1000个站点的环境（其网络连接的网络连接最低为每秒28.8 千比特（Kbps））对其进行了测试和验证。 如果你的环境不满足这些条件，请考虑使用在更复杂的环境中部署 AD DS 的咨询公司。  
   
 有关测试 AD DS 部署过程的详细信息，请参阅[测试和验证部署过程](https://go.microsoft.com/fwlink/?LinkId=100206)一文。  
   
-## <a name="in-this-guide"></a>本指南包含的内容
+## <a name="in-this-guide"></a>本指南内容
 
 [了解 AD DS 设计](Understanding-AD-DS-Design.md)  
   
@@ -48,4 +47,4 @@ ms.locfileid: "71409029"
   
 [评估 AD DS 部署策略示例](Evaluating-AD-DS-Deployment-Strategy-Examples.md)  
   
-[附录 A：查看关键的 AD DS 条款](Appendix-A--Reviewing-Key-AD-DS-Terms.md)  
+[附录 A：查看关键 AD DS 术语](Appendix-A--Reviewing-Key-AD-DS-Terms.md)  

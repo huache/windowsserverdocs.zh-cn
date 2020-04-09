@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6a852428-c1ec-4703-b3b3-a4bfdf8cbb9d
-title: Windows&#39;Server 2016 中 Active Directory 域服务的新增功能
-description: ''
+title: Windows Server 2016 中 Active Directory 域服务的新增功能
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,22 +8,22 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1ef77613919ea6caf39a7cb41ba575652680466d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a82f45772e5e35afffc632de2b40c02c75b5e5e4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950109"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856280"
 ---
-# <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 Active Directory 域服务的新增项
+# <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 的 Active Directory 域服务的新增功能
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
-Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务都是托管在云中，其他托管在本地。 这些改进包括：  
+Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务托管在云中，而其他应用程序和服务托管在本地。 改进包括：  
   
 - [特权访问管理](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
   
-- [通过 Azure Active Directory Join 将云功能扩展到 Windows 10 设备](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
+- [通过 Azure Active Directory 联接将云功能扩展到 Windows 10 设备](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
   
 - [将已加入域的设备连接到 Windows 10 体验 Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)
   
@@ -53,7 +52,7 @@ Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 
 
 ### <a name="requirements-for-privileged-access-management"></a>特权访问管理的要求
   
-- Microsoft 标识管理器  
+- Microsoft Identity Manager  
   
 - Windows Server 2012 R2 或更高版本的 Active Directory 林功能级别。  
   
@@ -66,7 +65,7 @@ Azure Active Directory 联接增强了企业、商业和 EDU 客户的标识体�
 - 公司拥有的 Windows 设备上**的新式设置的可用性**。 氧气服务不再需要个人 Microsoft 帐户：它们现在会关闭用户的现有工作帐户以确保合规性。 氧气 Services 将在加入本地 Windows 域的 Pc 上工作，以及 "加入" 到 Azure AD 租户（"云域"）的电脑和设备。 这些设置包括：  
 
    - 漫游或个性化，辅助功能设置和凭据  
-   - 备份和恢复  
+   - 备份和还原  
    - 使用工作帐户访问 Microsoft Store  
    - 动态磁贴和通知  
   

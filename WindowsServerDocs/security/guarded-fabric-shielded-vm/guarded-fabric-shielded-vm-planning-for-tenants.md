@@ -1,18 +1,18 @@
 ---
 title: 适用于托管商的受保护的构造和受防护 VM 规划指南
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
+ms.author: nirb
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 255429960735d70ff3a4d260bd9090b95882b6bd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 829d6a3efef082e35c6a4f98e0ba9e4b70c27a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949774"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856470"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>租户的受保护的构造和受防护 VM 规划指南
 
@@ -63,7 +63,7 @@ VM 是否受防护或受加密支持由创建 VM 时选择的防护数据决定�
 
 屏蔽数据是使用防护数据文件向导创建的，并存储在 PDK 文件中，VM 所有者将其上传到受保护的结构。
 
-受防护的 Vm 可帮助防止受到受攻击的虚拟化结构的攻击，因此，我们需要一种安全机制来传递敏感的初始化数据，例如管理员密码、域加入凭据或 RDP 证书，而不会将这些数据泄漏到虚拟化构造本身或其管理员。 此外，防护数据包含以下各项：
+受防护的 Vm 可帮助防止受到受攻击的虚拟化结构的攻击，因此，我们需要一种安全机制来传递敏感的初始化数据，例如管理员密码、域加入凭据或 RDP 证书，而不会将这些数据泄露给虚拟化结构本身或其管理员。 此外，防护数据包含以下各项：
 
 1. 安全级别–受防护或加密-支持
 2. VM 可运行的受信任主机保护者的所有者和列表

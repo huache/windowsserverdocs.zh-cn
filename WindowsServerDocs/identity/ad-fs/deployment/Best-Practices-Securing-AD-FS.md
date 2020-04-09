@@ -1,7 +1,7 @@
 ---
 ms.assetid: b7bf7579-ca53-49e3-a26a-6f9f8690762f
 title: 保护 AD FS 和 Web 应用程序代理的最佳做法
-description: 本文档提供 Active Directory 联合身份验证服务（AD FS）和 Web 应用程序代理的安全规划和部署的最佳实践。
+description: Active Directory 联合身份验证服务（AD FS）和 Web 应用程序代理的安全规划和部署的最佳实践。
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 717308a157d7f4a5f54e3aef2e829fbed9f12152
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 8206ddc43eab7a220a9f0f988c294c627bc8c977
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517542"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853020"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>保护 Active Directory 联合身份验证服务的最佳实践
 
@@ -83,7 +83,7 @@ TCP|49443（TCP）|用于证书身份验证。
 |/adfs/services/trust/13/usernamemixed|用于与 Office 2013 以前版本的 Office 客户端进行的 Exchange Online 2015 更新。  更高版本的客户端使用被动 \adfs\ls 终结点。
 |/adfs/oauth2|此帐户用于已配置为直接 AD FS （即不通过 AAD）进行身份验证的任何现代应用（即本地或云中）
 |/adfs/services/trust/mex|用于与 Office 2013 以前版本的 Office 客户端进行的 Exchange Online 2015 更新。  更高版本的客户端使用被动 \adfs\ls 终结点。
-|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml |任何被动流的要求;并由 Office 365/Azure AD 用于检查 AD FS 证书
+|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml    |任何被动流的要求;并由 Office 365/Azure AD 用于检查 AD FS 证书
 
 
 可以使用以下 PowerShell cmdlet 在代理上禁用 AD FS 终结点：
@@ -109,11 +109,11 @@ TCP|49443（TCP）|用于证书身份验证。
 联合身份验证服务代理（WAP 的一部分）提供拥塞控制以保护 AD FS 服务免受大量请求的攻击。  如果通过 Web 应用程序代理与联合服务器之间的延迟检测到，则 Web 应用程序代理将拒绝外部客户端身份验证请求。  默认情况下，此功能配置为建议的延迟阈值级别。
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>若要验证设置，可以执行以下操作：
-1.  在 Web 应用程序代理计算机上，启动一个提升的命令窗口。
-2.  导航到 ADFS 目录，网址为%WINDIR%\adfs\config。
-3.  将拥塞控制设置从其默认值更改为 "<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />"。
-4.  保存并关闭该文件。
-5.  通过运行 "net stop adfssrv" 和 "net start adfssrv" 来重新启动 AD FS 服务。
+1.    在 Web 应用程序代理计算机上，启动一个提升的命令窗口。
+2.    导航到 ADFS 目录，网址为%WINDIR%\adfs\config。
+3.    将拥塞控制设置从其默认值更改为 "<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />"。
+4.    保存并关闭该文件。
+5.    通过运行 "net stop adfssrv" 和 "net start adfssrv" 来重新启动 AD FS 服务。
 有关参考，可在[此处](https://msdn.microsoft.com/library/azure/dn528859.aspx )找到有关此功能的指南。
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>在代理中检查标准 HTTP 请求
@@ -124,7 +124,7 @@ TCP|49443（TCP）|用于证书身份验证。
 - FS-P 执行 HTTP 请求验证，该验证专门筛选出 AD FS 服务不需要的 HTTP 标头。
 
 ## <a name="recommended-security-configurations"></a>推荐的安全配置
-确保所有 AD FS 和 WAP 服务器都能接收最新的更新，为你的 AD FS 基础结构提供最重要的安全建议，确保你有一种方法来使你的 AD FS 和 WAP 服务器最新，并提供所有安全更新以及这些可选指定为此页上 AD FS 的重要更新。
+确保所有 AD FS 和 WAP 服务器都能接收最新的更新，对于您的 AD FS 基础结构，最重要的安全建议是确保您有一种方法，用于使您的 AD FS 和 WAP 服务器最新，并提供所有安全更新以及指定为此页上 AD FS 重要的可选更新。
 
 Azure AD 客户监视和保持当前基础结构的推荐方式是通过 Azure AD Connect Health AD FS Azure AD Premium 的一项功能。  Azure AD Connect Health 包括 AD FS 或 WAP 计算机是否缺少专门用于 AD FS 和 WAP 的重要更新之一时触发的监视器和警报。
 

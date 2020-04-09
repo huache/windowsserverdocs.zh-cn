@@ -2,21 +2,19 @@
 title: Hyper-v 上支持的 Oracle Linux 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: cc2a864ddb1b2bcbc972c895fbb79105107a84b8
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.openlocfilehash: edf92689f1dbe93c387c65e64694c64635fe3958
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169627"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858010"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Oracle Linux 虚拟机
 
@@ -42,7 +40,7 @@ ms.locfileid: "78169627"
 
 * **UEK RxUy** -Unbreakable Enterprise KERNEL （UEK），其中 x 是版本号，y 是季度更新。
 
-## <a name="BKMK_rhc"></a>与 Red Hat 兼容内核 Oracle Linux 版本的功能
+## <a name="features-of-oracle-linux-releases-with-the-red-hat-compatible-kernel"></a><a name="BKMK_rhc"></a>与 Red Hat 兼容内核 Oracle Linux 版本的功能
 
 用于1.x 系列的32位内核启用了 PAE。 Oracle Linux RHCK 6.0-6.3 的内置 .LIS 支持。 Oracle Linux 7. x 内核仅限64位。
 
@@ -85,7 +83,7 @@ ms.locfileid: "78169627"
 | 安全启动                                                                                                                                  | 2019、2016                         | &#10004;           | &#10004;            |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 
 
-## <a name="BKMK_uek"></a>Oracle Linux 版本与 Unbreakable Enterprise 内核（UEK）
+## <a name="oracle-linux-releases-with-the-unbreakable-enterprise-kernel-uek"></a><a name="BKMK_uek"></a>Oracle Linux 版本与 Unbreakable Enterprise 内核（UEK）
 
 Unbreakable Enterprise 内核（UEK） Oracle Linux 仅限64位，并内置了 IIS 内置支持。 
 
@@ -127,7 +125,7 @@ Unbreakable Enterprise 内核（UEK） Oracle Linux 仅限64位，并内置了 I
 | 使用 UEFI 启动                                                                                                                              | 2019、2016、2012 R2                | &#10004;                  | &#10004;                  |                           |                           |                      |
 | 安全启动                                                                                                                                  | 2019、2016                         | &#10004;                  | &#10004;                  |                           |                           |                      |
 
-## <a name="BKMK_notes"></a>本票
+## <a name="notes"></a><a name="BKMK_notes"></a>本票
 
 1. 对于此 Oracle Linux 版本，VLAN 标记有效，但 VLAN 中继不起作用。
 

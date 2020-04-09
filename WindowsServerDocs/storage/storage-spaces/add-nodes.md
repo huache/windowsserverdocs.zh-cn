@@ -3,19 +3,19 @@ ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: 向存储空间直通添加服务器或驱动器
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
 description: 如何将服务器或驱动器添加到存储空间直通群集
 ms.localizationpriority: medium
-ms.openlocfilehash: f5fb9da903bb76de3a075fa7feeeaba468d802c2
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: be79a2d3e0e8c56afc409298518d967c9bc80453
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465621"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859120"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>向存储空间直通添加服务器或驱动器
 
@@ -23,7 +23,7 @@ ms.locfileid: "77465621"
 
 本主题介绍如何向存储空间直通添加服务器或驱动器。
 
-## <a name="adding-servers"></a>添加服务器
+## <a name="adding-servers"></a><a name="adding-servers"></a>添加服务器
 
 添加服务器（通常称作横向扩展）可增加存储容量、提高存储性能并实现更高的存储效率。 如果你的部署是超聚合的，则添加服务器还可为你的工作负载提供更多计算资源。
 
@@ -166,7 +166,7 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 3. 如 [添加服务器](#adding-servers) 中所述将服务器添加到群集。 当新服务器加入群集时，它会自动（使用其名称）与占位符容错域相关联。
 
-## <a name="adding-drives"></a>添加驱动器
+## <a name="adding-drives"></a><a name="adding-drives"></a>添加驱动器
 
 添加驱动器（也称为纵向扩展）将增加存储容量并提高性能。 如果你有可用插槽，则无需添加服务器便可将驱动器添加到每个服务器，从而扩展你的存储容量。 你随时可以独立添加缓存驱动器或容量驱动器。
 

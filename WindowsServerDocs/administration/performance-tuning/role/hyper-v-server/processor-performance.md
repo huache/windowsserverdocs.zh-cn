@@ -4,15 +4,15 @@ description: Hyper-v 性能优化中的处理器性能注意事项
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d61d0e37bd80033bfcfb0cf5c601d8bcedda104
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc1d6bdb848ea9662ba9b3d3119f286af3476688
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370038"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851750"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper-v 处理器性能
 
@@ -29,7 +29,7 @@ Windows Server 2016 中的 hyper-v 支持每个虚拟机最多支持240个虚拟
 
 ## <a name="background-activity"></a>后台活动
 
-最大程度地降低空闲虚拟机中的后台活动会释放可在其他虚拟机其他地方使用的 CPU 周期。 当 Windows 来宾处于空闲状态时，通常会使用不到 1% 的 CPU。 下面是将虚拟机的后台 CPU 使用降至最低的几个最佳做法：
+最大程度地降低空闲虚拟机中的后台活动会释放可在其他虚拟机其他地方使用的 CPU 周期。 当 Windows 来宾处于空闲状态时，通常会使用不到1% 的 CPU。 下面是将虚拟机的后台 CPU 使用降至最低的几个最佳做法：
 
 -   安装最新版本的虚拟机 Integration Services。
 
@@ -69,7 +69,7 @@ Microsoft SQL Server 是 NUMA 感知应用程序的一个示例。 有关详细�
 
 有关虚拟 NUMA 的详细信息，请参阅[Hyper-v 虚拟 Numa 概述](https://technet.microsoft.com/library/dn282282.aspx)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [Hyper-V 术语](terminology.md)
 

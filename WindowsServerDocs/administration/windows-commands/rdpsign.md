@@ -1,24 +1,20 @@
 ---
 title: rdpsign
 description: 了解如何对 RDP 文件进行数字签名。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a6fa8ce-3d32-49a5-b056-bcc1a23391f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 406563a07d3760c2846c201410f3a7b8f1c2829b
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: c9df46ab09b758cbd86334d5b418c876c41f0eff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588058"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836670"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -28,16 +24,16 @@ ms.locfileid: "72588058"
 有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，“终端服务”被重命名为“远程桌面服务”。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
 
 ## <a name="syntax"></a>语法
 ```
 rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |/sha1 \<哈希 >|指定指纹，该指纹是证书存储中包含的签名证书的安全哈希算法1（SHA1）哈希。 在 Windows Server 2012 R2 及更早版本中使用。|
 |/sha256 \<哈希 >|指定指纹，该指纹是证书存储中包含的签名证书的安全哈希算法256（SHA256）哈希。 替换 Windows Server 2016 和更高版本中的/sha1。|
@@ -56,7 +52,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 -   已签名的输出文件将覆盖输入文件。
 -   如果无法读取或写入任何 .rdp 文件，则该工具将继续到下一个文件（如果指定了多个文件）。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 - 若要对名为 File1 的 .rdp 文件进行签名，请导航到保存 .rdp 文件的文件夹，然后键入以下内容：
   ```
   rdpsign /sha1 hash file1.rdp
@@ -72,5 +68,5 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
   rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
   ```
   ## <a name="see-also"></a>另请参阅
-  [命令行语法解答](command-line-syntax-key.md)
-  [远程桌面服务 & #40;终端服务和 #41;命令参考](remote-desktop-services-terminal-services-command-reference.md)
+  - [命令行语法键](command-line-syntax-key.md)
+  [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

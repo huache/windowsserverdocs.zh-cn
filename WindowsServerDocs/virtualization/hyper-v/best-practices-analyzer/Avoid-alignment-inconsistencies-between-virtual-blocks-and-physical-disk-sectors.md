@@ -2,20 +2,19 @@
 title: 避免在动态虚拟硬盘或差异磁盘上的虚拟块与物理磁盘扇区之间出现对齐不一致
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: a17c8fd2-af81-485b-bfea-bd1ef3e43923
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f77d80db1e2454eb460043cacef632e979fc16de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f090f015f2179ba372e56d580477ef8d72d977f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366490"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857800"
 ---
 # <a name="avoid-alignment-inconsistencies-between-virtual-blocks-and-physical-disk-sectors-on-dynamic-virtual-hard-disks-or-differencing-disks"></a>避免在动态虚拟硬盘或差异磁盘上的虚拟块与物理磁盘扇区之间出现对齐不一致
 
@@ -27,7 +26,7 @@ ms.locfileid: "71366490"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  

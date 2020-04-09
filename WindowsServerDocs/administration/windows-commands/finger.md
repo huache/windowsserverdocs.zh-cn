@@ -1,24 +1,20 @@
 ---
 title: finger
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 907ea637-5c6c-4752-84c2-46bbf2a68a33
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e16120eb19ff2f194fe2c8bdeb3af80ca459ebe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 78313fc4980b32e3aeb6d1611ef80d7eb6831fc1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377162"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844600"
 ---
 # <a name="finger"></a>finger
 
@@ -29,9 +25,9 @@ ms.locfileid: "71377162"
 ```
 finger [-l] [<User>] [@<Host>] [...]
 ```
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-| 参数 |                                                                            描述                                                                            |
+| 参数 |                                                                            说明                                                                            |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    -l     |                                                          以长列表格式显示用户信息。                                                           |
 |  <User>   | 指定您要了解其信息的用户。 如果省略*User*参数，则**finger**会显示有关指定计算机上的所有用户的信息。 |
@@ -43,7 +39,7 @@ finger [-l] [<User>] [@<Host>] [...]
 必须使用连字符（-）而不是斜线（/）作为**finger**参数的前缀。
 仅当 Internet 协议（TCP/IP）协议安装为网络连接中的网络适配器属性中的组件时，此命令才可用。
 Windows Server 2003 不提供 finger 服务。
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 若要在计算机 users.microsoft.com 上显示 user1 的信息，请键入：
 ```
 finger user1@users.microsoft.com
@@ -53,4 +49,4 @@ finger user1@users.microsoft.com
 finger @users.microsoft.com
 ```
 ## <a name="additional-references"></a>其他参考
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

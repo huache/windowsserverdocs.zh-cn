@@ -1,6 +1,5 @@
 ---
 title: 存储
-description: ''
 author: JasonGerend
 manager: elizapo
 layout: LandingPage
@@ -11,12 +10,12 @@ ms.topic: landing-page
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 03/08/2019
-ms.openlocfilehash: 7e7fbd6ce3fcef6b0f8da88927d83f28d3fff0a8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5c8e6831e7e424896722c65d2ca6f34b3cc15e8d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950219"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820911"
 ---
 # <a name="storage"></a>存储
 
@@ -41,7 +40,7 @@ Windows Server 中的存储为专注虚拟化工作负载的软件定义数据�
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>新增功能有哪些？</h2>
+                                            <h2>新增功能</h2>
                                             <p>了解 Windows Server 存储的新增功能</p>
                                         </div>
                                     </div>
@@ -124,13 +123,13 @@ Windows Server 中的存储为专注虚拟化工作负载的软件定义数据�
 <HR />
                         <p><h3><a href="refs/refs-overview.md">ReFS</a></h3> 一种复原文件系统，可最大程度地提高数据可用性、跨不同工作负荷有效地缩放到非常大的数据集，并通过对损坏的复原方式（无论软件或硬件故障）提供数据完整性。<p>
 <HR />
-                        <p><h3><a href="file-server/file-server-smb-overview.md">服务器消息块 (SMB) 协议</a></h3> 一种网络文件共享协议，该协议允许计算机上的应用程序读取和写入文件以及从计算机网络中的服务器程序请求服务。 SMB 协议可在其 TCP/IP 协议或其他网络协议上使用。 使用 SMB 协议时，应用程序（或应用程序用户）可访问远程服务器上的文件或其他资源。 这让应用程序可以读取、创建和更新远程服务器上的文件。 它还可以与任何设置为接收 SMB 客户端请求的服务器程序通信。<p>
+                        <p><h3><a href="file-server/file-server-smb-overview.md">服务器消息块（SMB）协议</a></h3> 一种网络文件共享协议，该协议允许计算机上的应用程序读取和写入文件以及从计算机网络中的服务器程序请求服务。 SMB 协议可在其 TCP/IP 协议或其他网络协议上使用。 使用 SMB 协议时，应用程序（或应用程序用户）可访问远程服务器上的文件或其他资源。 这让应用程序可以读取、创建和更新远程服务器上的文件。 它还可以与任何设置为接收 SMB 客户端请求的服务器程序通信。<p>
 <HR />
                         <p><h3><a href="storage-spaces/Storage-class-memory-health.md">存储类内存</a></h3> 提供类似于计算机内存（非常快速）的性能，但具有正常存储驱动器的数据持久性。 Windows 将存储类内存视为与常规驱动器类似（只是速度更快），但设备运行状态的管理方式有一些不同。<p>
 <HR />
                         <p><h3><a href="https://technet.microsoft.com/library/cc766295(v=ws.10).aspx">BitLocker 驱动器加密</a></h3> 将数据以加密格式存储在卷上，即使计算机被篡改或操作系统未运行也是如此。 这有助于保护计算机免受如下攻击：脱机攻击、禁用或绕过所安装操作系统进行的攻击，或以物理方式删除硬盘单独攻击数据的攻击。<p>
 <HR />
-                        <p><h3><a href="https://technet.microsoft.com/library/dn466522(v=ws.11).aspx">NTFS</a></h3> 最新版本的 Windows 和 Windows Server 的主要文件系统-提供一组完整的功能，包括安全描述符、加密、磁盘配额和丰富的元数据，并且可以与群集共享卷（CSV）一起使用，以持续提供可从多个故障转移群集的多个节点同时访问的可用卷。<p>
+                        <p><h3><a href="https://technet.microsoft.com/library/dn466522(v=ws.11).aspx">NTFS</a></h3> 最新版本的 Windows 和 Windows Server 的主要文件系统-提供一组完整的功能，包括安全描述符、加密、磁盘配额和丰富的元数据，并且可以与群集共享卷（CSV）一起使用，以提供可在多个故障转移群集的多个节点中同时访问的连续可用卷。<p>
 <HR />
                         <p><h3><a href="https://technet.microsoft.com/library/jj592688(v=ws.11).aspx">网络文件系统（NFS）</a></h3> 为具有由 Windows 和非 Windows 计算机组成的异类环境的企业提供文件共享解决方案。<p>
                     </div>

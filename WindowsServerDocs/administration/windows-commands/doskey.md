@@ -1,24 +1,20 @@
 ---
 title: doskey
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4874fd43-d5ea-45f3-ae24-388ae925ed76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d45a2ddfeba7ec136add07eac11c3a8522ef872b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 72a5a362a225f57245a015de43a7538928c0937e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377686"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845260"
 ---
 # <a name="doskey"></a>doskey
 
@@ -34,9 +30,9 @@ ms.locfileid: "71377686"
 doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/insert | /overstrike] [/exename=<ExeName>] [/macrofile=<FileName>] [<MacroName>=[<Text>]]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|       参数        |                                                                                                                          描述                                                                                                                           |
+|       参数        |                                                                                                                          说明                                                                                                                           |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /reinstall       |                                                                                            安装 Doskey 的新副本并清除命令历史记录缓冲区。                                                                                            |
 |   /listsize =\<大小 >    |                                                                                                指定历史记录缓冲区中的最大命令数。                                                                                                 |
@@ -60,12 +56,12 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
 
   若要重新调用命令，你可以在启动 Doskey 后使用以下任何密钥。 如果您在程序中使用 Doskey，则优先使用该程序的密钥分配。  
 
-  |    密钥     |                              描述                              |
+  |    Key     |                              说明                              |
   |------------|-----------------------------------------------------------------------|
   |  向上键  |  撤回在显示的命令之前使用的命令。  |
   | 向下键 |  撤回在显示后使用的命令。   |
-  |  Page Up   |    撤回在当前会话中使用的第一个命令。    |
-  | Page Down  | 撤回当前会话中使用的最近使用的命令。 |
+  |  PAGE UP   |    撤回在当前会话中使用的第一个命令。    |
+  | PAGE DOWN  | 撤回当前会话中使用的最近使用的命令。 |
 
 
 - 编辑命令行
@@ -74,13 +70,13 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
 
   下表列出了**doskey**编辑密钥及其功能。  
 
-  | 键或键组合 |                                                                                                                                                       描述                                                                                                                                                       |
+  | 键或键组合 |                                                                                                                                                       说明                                                                                                                                                       |
   |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
   |       向左键       |                                                                                                                                      将插入点向后移动一个字符。                                                                                                                                      |
   |      向右键       |                                                                                                                                    将插入点向后移动一个字符。                                                                                                                                     |
-  |    CTRL + 向左键     |                                                                                                                                        将插入点向后移动一个单词。                                                                                                                                         |
-  |    CTRL + 向右键    |                                                                                                                                       将插入点向前移动一个单词。                                                                                                                                       |
-  |          Home          |                                                                                                                                 将插入点移动到行首。                                                                                                                                 |
+  |    Ctrl + 向左键     |                                                                                                                                        将插入点向后移动一个单词。                                                                                                                                         |
+  |    Ctrl + 向右键    |                                                                                                                                       将插入点向前移动一个单词。                                                                                                                                       |
+  |          主页          |                                                                                                                                 将插入点移动到行首。                                                                                                                                 |
   |          End           |                                                                                                                                    将插入点移动到行的末尾。                                                                                                                                    |
   |          ESC           |                                                                                                                                          清除显示的命令。                                                                                                                                           |
   |           F1           |                                                                      将模板中的列中的一个字符复制到命令提示符窗口中的相同列。 （模板是存储所键入的最后一个命令的内存缓冲区。）                                                                       |
@@ -90,10 +86,10 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
   |           F5           |                                                                                                                                   将模板复制到当前命令行中。                                                                                                                                    |
   |           F6           |                                                                                                                    将文件尾字符（CTRL + Z）置于当前插入点位置。                                                                                                                    |
   |           F7           | 显示此程序存储在内存中的所有命令（在对话框中）。 使用向上键和向下键选择所需的命令，然后按 ENTER 运行该命令。 还可以记下命令前面的序列号，并将此数字与 F9 键结合使用。 |
-  |         ALT + F7         |                                                                                                                          为当前历史记录缓冲区删除存储在内存中的所有命令。                                                                                                                          |
+  |         Alt+F7         |                                                                                                                          为当前历史记录缓冲区删除存储在内存中的所有命令。                                                                                                                          |
   |           F8           |                                                                                                           显示历史缓冲区中以当前命令中的字符开头的所有命令。                                                                                                            |
   |           F9           |                                             将提示您输入历史缓冲区命令编号，然后显示与您指定的号码关联的命令。 按 ENTER 运行该命令。 若要显示所有数字及其关联的命令，请按 F7。                                             |
-  |        ALT + F10         |                                                                                                                                             删除所有宏定义。                                                                                                                                              |
+  |        Alt+F10         |                                                                                                                                             删除所有宏定义。                                                                                                                                              |
 
 
 - 在程序中使用**doskey**
@@ -116,7 +112,7 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
 
   可以使用 Doskey 创建执行一个或多个命令的宏。 下表列出了可用于在定义宏时控制命令操作的特殊字符。  
 
-  |   字符   |                                                                                                                                                                               描述                                                                                                                                                                               |
+  |   字符   |                                                                                                                                                                               说明                                                                                                                                                                               |
   |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
   |   $G 或 $g    |                                                                                   重定向输出。 使用这两个特殊字符将输出发送到设备或文件而不是屏幕。 此字符等效于 output 的重定向符号（ **>** ）。                                                                                    |
   | $G $ G 或 $g $ g  |                                                         将输出追加到文件末尾。 使用这两个双字符将输出追加到现有文件，而不是替换文件中的数据。 这些双字符等效于 output 的追加重定向符号（ **>>** ）。                                                         |
@@ -143,7 +139,7 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
   doskey <MacroName> =
   ```
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 **/Macros**和 **/history**命令行选项可用于创建批处理程序以保存宏和命令。 例如，若要存储所有当前**doskey**宏，请键入：
 ```
@@ -196,6 +192,6 @@ qf a:
 doskey vlist =
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

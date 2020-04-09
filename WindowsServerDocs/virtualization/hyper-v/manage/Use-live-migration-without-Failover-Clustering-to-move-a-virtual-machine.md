@@ -2,21 +2,19 @@
 title: 使用没有故障转移群集的实时迁移来移动虚拟机
 description: 提供在独立环境中进行实时迁移的先决条件和说明。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 75c32e42-97f7-48df-aac9-1d82d34825e1
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 01/17/2017
-ms.openlocfilehash: 55c96ff4696871e4013c3abd6247209d0d4517c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 41d5edb02d4384955e711024d4e4d68cee5d3937
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392553"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858920"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>使用没有故障转移群集的实时迁移来移动虚拟机
 
@@ -48,13 +46,13 @@ ms.locfileid: "71392553"
 
 ## <a name="use-windows-powershell-to-move-a-running-virtual-machine"></a>使用 Windows PowerShell 移动正在运行的虚拟机
   
-下面的示例使用 LMTest cmdlet 将名为 " " 的虚拟机移到名为 " *TestServer02* " 的目标服务器，并将虚拟硬盘和其他文件（如检查点和智能页面文件）移到目标服务器上的*D:\LMTest*目录中。  
+下面的示例使用 LMTest cmdlet 将名为 " *LMTest* " 的虚拟机移到名为 " *TestServer02* " 的目标服务器，并将虚拟硬盘和其他文件（如检查点和智能页面文件）移到目标服务器上的*D:\LMTest*目录中。  
   
 ```  
 PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\LMTest  
 ```  
   
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 ### <a name="failed-to-establish-a-connection"></a>未能建立连接 
 
@@ -76,7 +74,7 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 1. 从 Hyper-v 管理器的 "**虚拟机**" 窗格中，右键单击虚拟机，然后单击 "设置"。
 2. 在导航窗格中，展开 "**处理器**" 并单击 "**兼容性**"。
 3. 选中 "**迁移到具有不同处理器版本的计算机**"。
-4. 单击**确定**。
+4. 单击“确定”。
  
    若要使用 Windows PowerShell，请使用[VMProcessor](https://technet.microsoft.com/library/hh848533.aspx) cmdlet：
  

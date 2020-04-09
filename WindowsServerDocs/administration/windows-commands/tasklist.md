@@ -1,26 +1,22 @@
 ---
-title: Tasklist
+title: tasklist
 description: 了解如何显示在本地或远程计算机上运行的进程的列表。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8dbe30ee-1484-46be-917b-5ca3ff4fdc9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ad61dfe8beb86c8299dd71bec1d862805e50e0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b43f4c9a89fa60f2244253d48d3dca646fe8e02d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383678"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833430"
 ---
-# <a name="tasklist"></a>Tasklist
+# <a name="tasklist"></a>tasklist
 
 显示本地计算机或远程计算机上当前正在运行的进程列表。 **Tasklist**替换**tlist.exe**工具。
 
@@ -32,9 +28,9 @@ ms.locfileid: "71383678"
 tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module> | /svc | /v}] [/fo {table | list | csv}] [/nh] [/fi <Filter> [/fi <Filter> [ ... ]]]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|          参数           |                                                                                                                                            描述                                                                                                                                             |
+|          参数           |                                                                                                                                            说明                                                                                                                                             |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        /s \<计算机 >        |                                                                                         指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                                                                         |
 | /u [\<域 >\\\]\<用户名 > | 使用*用户名*或*域*\*username 指定的用户的帐户权限运行命令。只有指定 **/s**后，才能指定<em>\*\*/u</em>\*。 默认值是当前登录到发出命令的计算机的用户的权限。 |
@@ -51,23 +47,23 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 
 | 筛选器名称 |    有效的运算符     |                                                                 有效值                                                                 |
 |-------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-|   状态值    |         eq, ne         |                                                                   耗尽                                                                    |
-|  IMAGENAME  |         eq, ne         |                                                                  映像名称                                                                  |
+|   STATUS    |         eq、ne         |                                                                   正在运行                                                                    |
+|  IMAGENAME  |         eq、ne         |                                                                  映像名称                                                                  |
 |     PID     | eq, ne, gt, lt, ge, le |                                                                  PID 值                                                                   |
-|   会议   | eq, ne, gt, lt, ge, le |                                                                会话编号                                                                |
-| SESSIONNAME |         eq, ne         |                                                                 会话名称                                                                 |
+|   会议   | eq, ne, gt, lt, ge, le |                                                                会话号                                                                |
+| SESSIONNAME |         eq、ne         |                                                                 会话名称                                                                 |
 |   CPUTIME   | eq, ne, gt, lt, ge, le | 采用<em>HH</em> **：** <em>MM</em> **：** <em>SS</em>格式的 CPU 时间，其中*MM*和*SS*介于0到59之间， *HH*是任意无符号数字 |
 |  MEMUSAGE   | eq, ne, gt, lt, ge, le |                                                              内存使用量（KB）                                                              |
-|  用户名   |         eq, ne         |                                                             任何有效的用户名                                                              |
-|  服务器   |         eq, ne         |                                                                 服务名称                                                                 |
-| SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE |         eq, ne         |                                                                 窗口标题                                                                 |
-|   模块   |         eq, ne         |                                                                   DLL 名称                                                                   |
+|  用户名   |         eq、ne         |                                                             任何有效的用户名                                                              |
+|  服务   |         eq、ne         |                                                                 Service name                                                                 |
+| SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE |         eq、ne         |                                                                 窗口标题                                                                 |
+|   模块   |         eq、ne         |                                                                   DLL 名称                                                                   |
 
 ## <a name="remarks"></a>备注
 
 指定远程系统时，不支持 SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE 和 STATUS 筛选器。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 
 若要列出进程 ID 大于1000的所有任务并将其显示为 CSV 格式，请键入：
 ```
@@ -94,6 +90,6 @@ tasklist /s srvmain
 tasklist /s srvmain /u maindom\hiropln /p p@ssW23
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

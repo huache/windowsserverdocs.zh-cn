@@ -1,7 +1,6 @@
 ---
 ms.assetid: ad0bf21d-2ace-4565-b1f5-ce57c8eb2689
 title: 何时创建联合服务器代理场
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 247daf1b9b49124188f6bb16bce7da381fe997ef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4b2b889159dee9f3b93a54a2b1924be286792f4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402430"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858490"
 ---
 # <a name="when-to-create-a-federation-server-proxy-farm"></a>何时创建联合服务器代理场
 
@@ -29,10 +28,10 @@ Active Directory 联合身份验证服务如果 \(AD FS\) 部署，并且想要�
 ## <a name="configuring-federation-server-proxies-for-a-farm"></a>为场配置联合服务器代理  
 下表描述了必须完成的任务，以便每个联合服务器代理都可以参与到场。  
   
-|任务|描述|  
+|任务|说明|  
 |--------|---------------|  
-|将场中的所有代理指向相同的 AD FS 联合身份验证服务名称|创建联合服务器代理时，必须为将参与场的所有联合服务器代理在 AD FS 联合服务器代理配置向导中键入相同的联合身份验证服务名称。 联合服务器代理使用构成此 DNS 主机名的 URL 来确定它与哪个 AD FS 联合身份验证服务实例联系在一起。<br /><br />有关详细信息，请参阅 [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)。|  
-|获取和共享证书|你可以从公共证书颁发机构 \(CA\)（例如 VeriSign）获取服务器身份验证证书，然后配置该证书，以便所有联合服务器代理在每个联合服务器代理的默认网站上共享相同证书的相同私钥部分。 若要共享证书，必须在每个联合服务器代理的默认网站上安装相同的服务器身份验证证书。 有关详细信息，请参阅将[服务器身份验证证书导入到默认](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)网站。<br /><br />有关详细信息，请参阅 [Certificate Requirements for Federation Server Proxies](Certificate-Requirements-for-Federation-Server-Proxies.md)。|  
+|将场中的所有代理指向相同的 AD FS 联合身份验证服务名称|创建联合服务器代理时，必须为将参与场的所有联合服务器代理在 AD FS 联合服务器代理配置向导中键入相同的联合身份验证服务名称。 联合服务器代理使用构成此 DNS 主机名的 URL 来确定它与哪个 AD FS 联合身份验证服务实例联系在一起。<p>有关详细信息，请参阅 [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)。|  
+|获取和共享证书|你可以从公共证书颁发机构 \(CA\)（例如 VeriSign）获取服务器身份验证证书，然后配置该证书，以便所有联合服务器代理在每个联合服务器代理的默认网站上共享相同证书的相同私钥部分。 若要共享证书，必须在每个联合服务器代理的默认网站上安装相同的服务器身份验证证书。 有关详细信息，请参阅将[服务器身份验证证书导入到默认](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)网站。<p>有关详细信息，请参阅 [Certificate Requirements for Federation Server Proxies](Certificate-Requirements-for-Federation-Server-Proxies.md)。|  
   
 有关添加新的联合服务器代理以创建联合服务器代理场的详细信息，请参阅[清单：设置联合服务器代理](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)。  
   

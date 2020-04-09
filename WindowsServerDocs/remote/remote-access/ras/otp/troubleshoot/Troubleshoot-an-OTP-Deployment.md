@@ -2,22 +2,18 @@
 title: OTP 部署疑难解答
 description: 本主题是指南使用 Windows Server 2016 中的 "使用 OTP 身份验证部署远程访问" 指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b9569b8-a366-43ad-a52a-b35d88a08d41
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6f3cabd460a13112cce0eb93dc9ce6ec0506c10c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 217a116961a9f47bc88eb16f87dfc0ed02eb42c3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313468"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858150"
 ---
 # <a name="troubleshoot-an-otp-deployment"></a>OTP 部署疑难解答
 

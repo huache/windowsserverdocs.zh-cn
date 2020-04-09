@@ -1,24 +1,20 @@
 ---
 title: 设置物理计算机和主工作站
 description: 了解如何在 MultiPoint 服务中设置第一个系统（主要工作站）
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4e83b126-ce9a-4cd7-a0bd-6627c9e0f81b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 1a5865b6bd15b6cd07cde393012afd495e3378be
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0f52d3fa4aeca8fd4e036a93ee5a175bf1e96d0b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395286"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855620"
 ---
 # <a name="set-up-the-physical-computer-and-primary-station"></a>设置物理计算机和主工作站
 安装 MultiPoint 服务之前，需要为 MultiPoint 服务系统设置主站。 如果使用局域网（LAN）将计算机连接到 LAN。  

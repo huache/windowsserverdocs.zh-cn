@@ -2,24 +2,23 @@
 title: 应至少为 Windows 7 配置最小内存量
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 1b81ec0b-ceca-4fba-83ea-90d5f1d9bda8
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: fee0fb772ff0f3c2344ed3ef4ef2b9786480ff8e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9f29ff11b601bf3fe841e2634be6096e59d78cd5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393223"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854970"
 ---
 # <a name="windows-7-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>应至少为 Windows 7 配置最小内存量
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳实践和扫描的详细信息，请参阅 [最佳实践分析程序](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71393223"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|Error|  
+|**对应**|错误|  
 |**类别**|配置|  
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
@@ -70,7 +69,7 @@ ms.locfileid: "71393223"
 Set-VMMemory <MyVM> -StartupBytes 512MB  
 ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

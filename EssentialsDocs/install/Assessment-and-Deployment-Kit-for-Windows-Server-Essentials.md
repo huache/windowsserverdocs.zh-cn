@@ -1,29 +1,25 @@
 ---
 title: Windows Server Essentials 的评估和部署工具包
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 88e268f1bdb01488667e4b88878552561fe7c762
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: daa8f75671c4dc663cca12dd0618a593c2010103
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310123"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817440"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Windows Server Essentials 的评估和部署工具包
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-Windows Server® 2012 Essentials 评估和部署工具包（ADK）是可以用于在新计算机上自定义、评估和部署 Windows Server Essentials 的工具、二进制文件和操作系统语言包的集合。 本文档包含特定于要为其客户预安装操作系统的合作伙伴的信息，并包含以下主题：  
+Windows Server&reg; 2012 Essentials 评估和部署工具包（ADK）是可以用于在新计算机上自定义、评估和部署 Windows Server Essentials 的工具、二进制文件和操作系统语言包的集合。 本文档包含特定于要为其客户预安装操作系统的合作伙伴的信息，并包含以下主题：  
   
 
 -   [Windows Server Essentials ADK 入门](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)  
@@ -152,4 +148,4 @@ Windows Server® 2012 Essentials 评估和部署工具包（ADK）是可以用�
   
  Active Directory、Microsoft、Windows Live、Windows PowerShell、Windows 和 Windows Server 是 Microsoft 公司集团的商标。 所有其他商标均为其各自所有者的财产。  
   
- © 2012 Microsoft。 保留所有权利。
+ &copy; 2012 Microsoft。 保留所有权利。

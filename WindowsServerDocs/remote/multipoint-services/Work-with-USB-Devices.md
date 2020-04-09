@@ -1,24 +1,20 @@
 ---
 title: 使用 USB 设备
 description: 了解 USB 设备如何使用 MultiPoint 服务
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a33f2b83-bbc2-4fc1-8a94-aaa985dfe1f9
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: ce4338eccc5640f8743093649685054718f9ed2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d366e8c61da86d0e47b2ce99d08a2046c8f8bd0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394784"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858030"
 ---
 # <a name="work-with-usb-devices"></a>使用 USB 设备
 你可以将设备连接到 MultiPoint 服务系统中的计算机或连接到 MultiPoint 工作站集线器。 设备连接到的位置和设备的类型会影响设备是对系统上的所有用户可用，还是仅对单个用户可用，还是对任何用户都不可用。 不同连接类型的示例如下：  
@@ -33,9 +29,9 @@ ms.locfileid: "71394784"
   
 |||||  
 |-|-|-|-|  
-|**设备**|**直接连接到计算机时的行为**|**连接到工作站时的行为**|**注意**|  
-|键盘|我们不建议将键盘直接连接到计算机。|仅允许工作站用户访问。|如果键盘包含 USB 端口，则键盘内部的 USB 集线器可能是工作站集线器。 附加到该端口的其他 USB 设备仅对使用该键盘的用户可用。<br /><br />有些工作站集线器配备有 PS\/2 鼠标端口，此端口转换为集线器内的 USB 连接。|  
-|鼠标|我们不建议将鼠标直接连接到计算机。|仅允许工作站用户访问。|有些工作站集线器配备有 PS\/2 鼠标端口，此端口转换为集线器内的 USB 连接。|  
+|**装置**|**直接连接到计算机时的行为**|**连接到工作站时的行为**|**注意**|  
+|键盘|我们不建议将键盘直接连接到计算机。|仅允许工作站用户访问。|如果键盘包含 USB 端口，则键盘内部的 USB 集线器可能是工作站集线器。 附加到该端口的其他 USB 设备仅对使用该键盘的用户可用。<p>有些工作站集线器配备有 PS/2 鼠标端口，该端口在集线器内部转换为 USB 连接。|  
+|鼠标|我们不建议将鼠标直接连接到计算机。|仅允许工作站用户访问。|有些工作站集线器配备有 PS/2 鼠标端口，该端口在集线器内部转换为 USB 连接。|  
 |USB 集线器|请参阅使用[工作站中心](#working-with-station-hubs)。|请参阅使用[工作站中心](#working-with-station-hubs)。||  
 |视频显示器|请参阅[MultiPoint Services 视频设备](work-with-video-devices.md)。|请参阅[MultiPoint Services 视频设备](work-with-video-devices.md)。||  
 |音频输出设备（例如耳机）|我们不建议将音频输出设备直接连接到计算机。|仅允许工作站用户访问。|有些工作站集线器配备有模拟音频端口，该端口在集线器内部转换为 USB 音频连接。|  

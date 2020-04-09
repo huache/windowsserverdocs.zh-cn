@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7b7ae389-5032-44f7-9c0a-94398c3e4d88
 title: 创建非声明感知信赖方信任
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0ea877170a07db6abe9ac82e72d1722600ec933
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6886145e910b76edbe99549266d651cdd7c3edf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358108"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816920"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>创建非声明感知信赖方信任
 
@@ -25,7 +24,7 @@ ms.locfileid: "71358108"
   
 若要添加新的非\-声明\-感知信赖方信任，请使用中的 AD FS 管理 "管理单元\-，执行以下过程。  
   
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
   
 ## <a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>手动创建非声明感知信赖方信任 
 1. 在服务器管理器中，单击 "**工具**"，然后选择 " **AD FS 管理**"。  
@@ -45,7 +44,7 @@ ms.locfileid: "71358108"
 6.  在 "**选择访问控制策略**" 中选择一个策略，然后单击 "**下一步**"。  有关访问控制策略的详细信息，请参阅[AD FS 中的访问控制策略](Access-Control-Policies-in-AD-FS.md)。 
 ![信赖方](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
 
-7. 在“准备好添加信任” 页上，复查设置，然后单击“下一步” 来保存信赖方信任的信息。  
+7. 在“准备好添加信任”页上，复查设置，然后单击“下一步”来保存信赖方信任的信息。  
    ![信赖方](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG) 
 
 8. 在“完成”页面上，单击“关闭”。 执行此操作会自动显示“编辑声明规则”对话框。  

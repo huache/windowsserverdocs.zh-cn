@@ -2,20 +2,19 @@
 title: 在可用时使用所有虚拟函数进行网络连接
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: bf895484-6a0d-4aa4-9a42-9fac739e875d
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 8798a7021b3df0113b8d957340d6d688acead5c7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0fab06ae21a4632df73b7a4d8b17b12665ffed98
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393347"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854210"
 ---
 # <a name="use-all-virtual-functions-for-networking-when-they-are-available"></a>在可用时使用所有虚拟函数进行网络连接
 
@@ -27,7 +26,7 @@ ms.locfileid: "71393347"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  

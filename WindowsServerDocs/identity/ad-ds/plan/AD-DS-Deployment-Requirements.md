@@ -1,7 +1,6 @@
 ---
 ms.assetid: e02bb152-d0db-40b0-9942-846dce75f6c7
 title: AD DS 部署要求
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a23ba4ac8bbdb076381c8419e3a0821bee364acf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dff95633b71d42e25aad33793abd609ac61adbdf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409030"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822920"
 ---
 # <a name="ad-ds-deployment-requirements"></a>AD DS 部署要求
 
@@ -25,7 +24,7 @@ ms.locfileid: "71409030"
 另外，作为 AD DS 部署的一部分，你可能决定升级并重构你的环境。 例如，如果你的组织具有现有的 Windows 2000 域结构，你可以执行某些域的就地升级，并重构其他域。 此外，你可能会决定在部署 AD DS 后，通过在林之间重建域或在林中重新构建域，来降低环境的复杂性。  
   
 ## <a name="deploying-a-windows-server-2008-forest-root-domain"></a>部署 Windows Server 2008 林根级域  
-目录林根级域提供 AD DS 林基础结构的基础。 若要部署 AD DS，你必须首先部署目录林根级域。 为此，必须查看 AD DS 设计;为目录林根级域配置 DNS 服务;创建目录林根级域，其中包括部署目录林根级域控制器、为目录林根级域配置站点拓扑，以及配置操作主机角色（也称为灵活单主机操作或 FSMO）;并提升林和域功能级别。 下图显示了部署目录林根级域的整个过程。  
+目录林根级域提供 AD DS 林结构的基础。 若要部署 AD DS，你必须首先部署目录林根级域。 为此，必须查看 AD DS 设计;为目录林根级域配置 DNS 服务;创建目录林根级域，其中包括部署目录林根级域控制器、为目录林根级域配置站点拓扑，以及配置操作主机角色（也称为灵活单主机操作或 FSMO）;并提升林和域功能级别。 下图显示了部署目录林根级域的整个过程。  
   
 ![AD DS 要求](media/AD-DS-Deployment-Requirements/033aad0b-25ff-4793-8825-88a6daa01a55.gif)  
   

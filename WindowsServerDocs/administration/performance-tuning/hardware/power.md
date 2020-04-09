@@ -4,15 +4,15 @@ description: 服务器硬件电源注意事项
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a9d4653824d497ea0c42337260aa788bab354ba3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 865899e5f33bde97dff97efaff6010b95aafd3e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355023"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851980"
 ---
 # <a name="server-hardware-power-considerations"></a>服务器硬件电源注意事项
 
@@ -62,12 +62,12 @@ RPM 越大，消耗的能耗就会增加。 SSD 驱动器比旋转驱动器更�
 
 -   处理器插座
 -   NUMA 节点
--   Core
+-   核心
 -   逻辑处理器
 
 ![处理器术语](../media/perftune-guide-figure-1.png)
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 - [服务器硬件性能注意事项](index.md)
 - [电源和性能优化](power/power-performance-tuning.md)
 - [处理器电源管理优化](power/processor-power-management-tuning.md)

@@ -1,24 +1,20 @@
 ---
 title: MultiPoint 工作站
 description: 了解 MultiPoint Services 中的工作站，包括用户的不同选项
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 3bcdd2d3f7492b29ecf92c59714f1d93b910c9b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322799"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853420"
 ---
 # <a name="multipoint--stations"></a>MultiPoint 工作站
 在 MultiPoint 服务系统环境中，*工作站*是用于连接到运行 MultiPoint 服务的计算机的用户终结点。 每个工作站为用户提供独立的 Windows 10 体验。 支持以下工作站类型：  
@@ -48,7 +44,7 @@ Multipoint Services 支持这些工作站类型的任意组合，但建议一个
   
 **图 1**带有四个直接连接到视频的工作站的 MultiPoint 服务系统  
   
-### <a name="BKMK_PS2stations"></a>PS/2 工作站  
+### <a name="ps2-stations"></a><a name="BKMK_PS2stations"></a>PS/2 工作站  
 使用 MultiPoint 服务，可以将主板上的 PS/2 键盘和鼠标映射到直接连接视频的监视器，以创建 PS/2 工作站。 母板上的高清晰模拟音频是与此类工作站关联的音频。 这不适用于主板上没有 PS/2 插孔的计算机。  
   
 ## <a name="usb-zero-client-connected-stations"></a>USB-连接到客户端的工作站  
@@ -64,7 +60,7 @@ USB 零客户端连接的工作站使用*usb 零客户端*作为工作站集线�
 USB over 以太网零客户端是将 USB over LAN 发送到 MultiPoint 服务系统的 USB 零客户端的变体。 这些类型的 USB 零客户端的工作方式类似于其他 USB 零客户端，但不受 USB 电缆长度最大的限制。 USB over 以太网零客户端不是传统瘦客户端，它们显示为 MultiPoint 服务系统上的虚拟 USB 设备。 使用这些设备时，请参考设备制造商，了解具体的性能和站点规划建议。 大多数设备都有一个用于 MultiPoint 管理器的第三方插件，使你能够将设备关联并连接到 MultiPoint 服务系统。  
   
 ## <a name="rdp-over-lan-connected-stations"></a>通过局域网的 RDP 连接工作站  
-瘦客户端和传统的台式机、便携式计算机或平板电脑可以通过局域网（LAN）连接到运行 MultiPoint 服务的计算机，方法是使用远程桌面协议（RDP）或专有协议和远程桌面协议程序. RDP 连接提供与任何其他 MultiPoint 工作站非常类似的最终用户体验，但使用本地客户端计算机的硬件。 详细了解适用于适用于 Android、iOS、Mac 和 Windows 的[远程桌面应用程序。](../remote-desktop-services/clients/remote-desktop-clients.md) 
+瘦客户端和传统的台式机、便携式计算机或平板电脑可以通过局域网（LAN）连接到运行 MultiPoint 服务的计算机，方法是使用远程桌面协议（RDP）或专有协议和远程桌面协议提供程序。 RDP 连接提供与任何其他 MultiPoint 工作站非常类似的最终用户体验，但使用本地客户端计算机的硬件。 详细了解适用于适用于 Android、iOS、Mac 和 Windows 的[远程桌面应用程序。](../remote-desktop-services/clients/remote-desktop-clients.md) 
   
 运行 Microsoft RemoteFX 的客户端和设备可以利用本地瘦客户端或计算机的处理器和视频硬件功能，通过网络提供高清晰度视频，从而提供丰富的多媒体体验。  
   
@@ -113,7 +109,7 @@ MultiPoint 服务在具有直接连接到视频的工作站或连接了 USB 零�
   
 **图 4**带拆分屏幕的 MultiPoint 服务系统  
   
-## <a name="BKMK_StationTypeComparison"></a>工作站类型比较  
+## <a name="station-type-comparison"></a><a name="BKMK_StationTypeComparison"></a>工作站类型比较  
   
 ||直接视频连接|USB 零客户端连接|已连接 RDP-TCP over LAN|  
 |-|--------------------------|-----------------------------|----------------------------|  

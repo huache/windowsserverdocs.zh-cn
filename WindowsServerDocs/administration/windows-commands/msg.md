@@ -1,42 +1,38 @@
 ---
 title: msg
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9501cf3e-568e-4982-9987-8daecc6c17ff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42a614f313d1e68dbf78d19a498563b541c52be1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 91a85cd5d043b6c613f88e199670f55f6e0e72a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373431"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839140"
 ---
 # <a name="msg"></a>msg
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 向远程桌面会话主机（rd 会话主机）服务器上的用户发送消息。
 有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，“终端服务”被重命名为“远程桌面服务”。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
 
 ## <a name="syntax"></a>语法
 ```
 msg {<UserName> | <SessionName> | <SessionID>| @<FileName> | *} [/server:<ServerName>] [/time:<Seconds>] [/v] [/w] [<Message>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|      参数       |                                                                                                                               描述                                                                                                                               |
+|      参数       |                                                                                                                               说明                                                                                                                               |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      <UserName>      |                                                                                                  指定要接收该消息的用户的名称。                                                                                                   |
 |    <SessionName>     |                                                                                                 指定要接收消息的会话的名称。                                                                                                 |
@@ -44,9 +40,9 @@ msg {<UserName> | <SessionName> | <SessionID>| @<FileName> | *} [/server:<Server
 |     @<FileName>      |                                                                         标识一个文件，该文件包含要接收消息的用户名、会话名称和会话 Id 的列表。                                                                         |
 |          \*          |                                                                                                           将消息发送到系统中的所有用户名。                                                                                                            |
 | /server:<ServerName> |                                              指定要接收消息的会话或用户的 rd 会话主机服务器。 如果未指定， **/server**将使用你当前登录到的服务器。                                              |
-|   /time： <Seconds>    | 指定您发送的消息在用户屏幕上显示的时间长度。 在达到时间限制后，消息将消失。 如果未设置时间限制，则在用户看到该消息并单击 **"确定"** 之前，消息将保留在用户屏幕上。 |
+|   /time：<Seconds>    | 指定您发送的消息在用户屏幕上显示的时间长度。 在达到时间限制后，消息将消失。 如果未设置时间限制，则在用户看到该消息并单击 **"确定"** 之前，消息将保留在用户屏幕上。 |
 |          /v          |                                                                                                         显示要执行的操作的相关信息。                                                                                                         |
-|          /w          |         等待用户确认已收到消息。 如果用户不立即响应，请将此参数与 **/time：** <*秒*>，以避免可能的长时间延迟。 将此参数与 **/v**一起使用也很有用。          |
+|          /w          |         等待用户确认已收到消息。 如果用户不立即响应，请将此参数与 **/time：** <*秒*> 一起使用，以避免可能的长时间延迟。 将此参数与 **/v**一起使用也很有用。          |
 |      <Message>       |                  指定要发送的消息的文本。 如果未指定邮件，系统将提示您输入一条消息。 若要发送文件中包含的消息，请键入小于号（<）符号，后跟文件名。                  |
 |          /?          |                                                                                                                  在命令提示符下显示帮助。                                                                                                                   |
 
@@ -54,8 +50,8 @@ msg {<UserName> | <SessionName> | <SessionID>| @<FileName> | *} [/server:<Server
 -   如果未指定用户或会话， **msg**会显示错误消息。 指定会话时，它必须是活动的。
 -   用户必须具有消息特殊访问权限才能发送消息。
 
-## <a name="BKMK_examples"></a>示例
--   若要向 User1 的所有会话发送名为 "我们今天下午1点的" 的消息，请键入：
+## <a name="examples"></a><a name=BKMK_examples></a>示例
+-   若要发送给 User1 的所有会话的名为的消息，如今天所示，请键入：
     ```
     msg User1 Let's meet at 1PM today
     ```
@@ -80,6 +76,6 @@ msg {<UserName> | <SessionName> | <SessionID>| @<FileName> | *} [/server:<Server
     msg * /time:10 Let's meet at 1PM today
     ```
 
-#### <a name="additional-references"></a>其他参考
--  [命令行语法项](command-line-syntax-key.md)
--  [远程桌面服务&#40;终端服务&#41;命令参考](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>其他参考
+-  - [命令行语法项](command-line-syntax-key.md)
+-  [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

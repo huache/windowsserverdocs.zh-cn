@@ -1,7 +1,6 @@
 ---
 ms.assetid: bbb84ea6-7e31-4442-85ab-a9447e7c19e8
 title: 添加令牌签名证书
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c8b2246842dd70c06442faed995f6b883dbaf70a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9b737cf8c9efb89ef9b3befaa1875b273bfcadf9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360095"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814930"
 ---
 # <a name="add-a-token-signing-certificate"></a>添加令牌签名证书
 
@@ -26,7 +25,7 @@ Active Directory 联合身份验证服务 \(AD FS\) 中的联合服务器需要�
   
 令牌\-签名证书应链接到联合身份验证服务中的受信任的根。 你可以使用以下过程将令牌\-签名证书添加到中的 "AD FS 管理" 管理单元\-，从已导出的文件。  
   
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  有关使用适当帐户和组成员身份的详细信息，请参阅[本地和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)\(http：\/\/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  有关使用适当帐户和组成员身份的详细信息，请参阅[本地和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)\(http：\/\/go.microsoft.com\/fwlink\/？LinkId\=83477\)。   
   
 ### <a name="to-add-a-token-signing-certificate"></a>\-签名证书添加令牌  
   

@@ -5,15 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dc083a15d0cd6a21b5512c1506bc9a461c4b886c
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 78f95f25d365b1b30a9e4e2d311128b8c7cb13b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001762"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827410"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>应用程序数据用横向扩展文件服务器概述
 
@@ -271,7 +272,7 @@ ms.locfileid: "77001762"
 
 - [软件定义的存储设计注意事项指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
 - [提高服务器、存储和网络可用性](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
-- [部署基于 SMB 的 Hyper-v](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-- [为服务器应用程序部署快速且高效的文件服务器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+- [部署基于 SMB 的 Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+- [针对服务器应用程序部署快速且高效的文件服务器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
 - [要不要横向扩展，这才是问题所在](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx) （博客文章）
-- [文件夹重定向、脱机文件和漫游用户配置文件](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)
+- [文件夹重定向、脱机文件和漫游用户策略文件](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 9ad81367-f3fe-4b2e-bd7c-5900b2b9f77f
 title: 设计逻辑结构
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8d72d7ed9617d18b42f1be10daeafbac994dad88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de56205c163abff1b05d57ea90954fa93606abce
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402632"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822610"
 ---
 # <a name="designing-the-logical-structure"></a>设计逻辑结构
 
@@ -42,7 +41,7 @@ Active Directory 域服务（AD DS）使组织能够为用户和资源管理创�
   
 在部署 AD DS 之前设计 Active Directory 逻辑结构时，你可以优化部署过程以充分利用 Active Directory 功能。 为了设计 Active Directory 逻辑结构，你的设计团队首先确定你的组织的要求，并且根据此信息确定放置林和域边界的位置。 然后，设计团队决定如何配置域名系统（DNS）环境以满足林的需求。 最后，设计团队确定委托组织中资源管理所需的组织单位（OU）结构。  
   
-## <a name="in-this-guide"></a>本指南包含的内容  
+## <a name="in-this-guide"></a>本指南内容  
   
 -   [了解 Active Directory 逻辑模型](../../ad-ds/plan/Understanding-the-Active-Directory-Logical-Model.md)  
   
@@ -56,7 +55,7 @@ Active Directory 域服务（AD DS）使组织能够为用户和资源管理创�
   
 -   [创建组织单位设计](../../ad-ds/plan/Creating-an-Organizational-Unit-Design.md)  
   
--   [附录 A：DNS 清单](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)  
+-   [附录 A： DNS 清单](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)  
   
 
 

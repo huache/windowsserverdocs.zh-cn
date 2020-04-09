@@ -1,23 +1,19 @@
 ---
 title: 目标计算机的硬件要求
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2ab2608095ffe6c0f2006f9f52cce106ff68cffc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a566a8f342ba076ee402d1f19e35f99c58b931e4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313254"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817870"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>目标计算机的硬件要求
 
@@ -44,7 +40,7 @@ ms.locfileid: "80313254"
 |组件|说明|  
 |---------------|-----------------|  
 |网络适配器|千兆以太网适配器 (10/100/1000baseT PHY/MAC)|  
-|Internet|某些功能可能需要 Internet 访问（可能收费）或 Windows Live® ID 帐户|  
+|Internet|某些功能可能需要 Internet 访问（可能收费）或 Windows Live&reg; ID 帐户|  
 |受支持的客户端操作系统|-Windows 7<br />-Windows 8<br />-Macintosh OS X 10.5 到10.8。<br /><br /> **注意：** 某些功能需要专业版或更高版本。<br /><br /> 1 GB 的可用硬盘空间（安装后会释放此磁盘上的一个分区）|  
 |路由器|支持 IPv4 NAT 的路由器或防火墙|  
 |其他要求|DVD-ROM 驱动器|  

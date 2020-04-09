@@ -1,7 +1,6 @@
 ---
 ms.assetid: 65ed5956-6140-4e06-8d99-8771553637d1
 title: 降级域控制器和域（级别 200）
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e3f320b67196a2400ebedbaeaf0a5b59969400e8
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: b8c5502f50b065e8c75d0167328868ac129dfad1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588095"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825426"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>降级域控制器和域
 
@@ -36,8 +35,8 @@ ms.locfileid: "72588095"
 |||  
 |-|-|  
 |**ADDSDeployment 和 ServerManager Cmdlet**|参数（需要**加粗**参数。 *斜体*参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。）|  
-|卸载-Install-addsdomaincontroller|-Skipprechecks 不可<br /><br />*-LocalAdministratorPassword*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-LastDomainControllerInDomain*<br /><br />-Norebootoncompletion<br /><br />*-RemoveApplicationPartitions*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
-|Uninstall-WindowsFeature/Remove-WindowsFeature|***-Name***<br /><br />***-IncludeManagementTools***<br /><br />*-重新启动*<br /><br />-Remove<br /><br />-Force<br /><br />-ComputerName<br /><br />-Credential<br /><br />-LogPath<br /><br />-Vhd|  
+|卸载-Install-addsdomaincontroller|-SkipPreChecks<p>*-LocalAdministratorPassword*<p>-Confirm<p>***-Credential***<p>-DemoteOperationMasterRole<p>*-DNSDelegationRemovalCredential*<p>-Force<p>*-ForceRemoval*<p>*-IgnoreLastDCInDomainMismatch*<p>*-IgnoreLastDNSServerForZone*<p>*-LastDomainControllerInDomain*<p>-Norebootoncompletion<p>*-RemoveApplicationPartitions*<p>*-RemoveDNSDelegation*<p>-RetainDCMetadata|  
+|Uninstall-WindowsFeature/Remove-WindowsFeature|***-Name***<p>***-IncludeManagementTools***<p>*-重新启动*<p>-Remove<p>-Force<p>-ComputerName<p>-Credential<p>-LogPath<p>-Vhd|  
   
 > [!NOTE]  
 > 仅在你尚未作为 Enterprise Admins 组（降级域中的最后一个 DC）或 Domain Admins 组（降级副本 DC）的成员登录时，才需要 **-credential** 参数。仅在你希望删除所有 AD DS 管理实用程序时，才需要 **-includemanagementtools** 参数。  
@@ -79,7 +78,7 @@ ServerManager cmdlet **Uninstall 和 Uninstall**会阻止你删除 AD DS**角色
    * AD DS 和 AD LDS 工具功能  
    * Active Directory 管理中心功能  
    * AD DS 管理单元和命令行工具功能  
-   * DNS 服务器  
+   * DNS Server  
    * 组策略管理控制台  
   
 等效的 ADDSDeployment 和 ServerManager Windows PowerShell cmdlet 如下：  

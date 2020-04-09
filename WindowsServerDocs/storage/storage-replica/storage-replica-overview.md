@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: d95feb67001dc7b5eff68a0062d5f944672bad80
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 33626dd632dc8c065d2e32b3a21d9f4c9cf77fa7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465226"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861070"
 ---
 # <a name="storage-replica-overview"></a>存储副本概述
 
@@ -36,7 +36,7 @@ ms.locfileid: "77465226"
 
 存储副本还支持适用于更长范围和更高延迟网络的异步复制。 由于它不是基于检查点的，而是连续复制，因此更改的差异往往比基于快照的产品要低得多。 此外，存储副本在分区层进行操作，因此它将复制由 Windows Server 或备份软件创建的所有 VSS 快照；这允许将应用程序一致的数据快照用于时间点恢复，尤其是异步复制的非结构化用户数据。  
 
-## <a name="BKMK_SRSupportedScenarios"></a>支持的配置
+## <a name="supported-configurations"></a><a name="BKMK_SRSupportedScenarios"></a>支持的配置
 
 你可以在拉伸群集中、在群集到群集之间和服务器到服务器配置之间部署存储副本（请参阅图1-3）。
 
@@ -61,7 +61,7 @@ ms.locfileid: "77465226"
 > [!NOTE]
 > 还可以在一台计算机上使用四个单独的卷配置服务器到自我复制。 但是，本指南不涉及这种情况。  
 
-## <a name="BKMK_SR2"></a>存储副本功能  
+## <a name="storage-replica-features"></a><a name="BKMK_SR2"> </a>存储副本功能  
 
 * **零数据丢失、块级复制**。 使用同步复制，不可能丢失数据。 使用块级复制，不可能锁定文件。  
 
@@ -109,7 +109,7 @@ ms.locfileid: "77465226"
 
 *可能需要其他远程设备和电缆线路。  
 
-## <a name="BKMK_SR3"></a>存储副本必备组件
+## <a name="storage-replica-prerequisites"></a><a name="BKMK_SR3"></a>存储副本必备组件
 
 * Active Directory 域服务林。
 * 具有 SAS JBOD 的存储空间、存储空间直通、光纤通道 SAN、共享 VHDX、iSCSI 目标或本地 SAS/SCSI/SATA 存储。 对于复制日志驱动器，建议使用 SSD 或更快速度。 Microsoft 建议日志存储应比数据存储速度快。 日志卷不得用于其他工作负荷。
@@ -122,7 +122,7 @@ ms.locfileid: "77465226"
   * 存储副本复制单个卷而不是无限数量的卷。
   * 卷的大小最大可达 2 TB，而不是无限大小。
 
-##  <a name="BKMK_SR4"></a>背景
+##  <a name="background"></a><a name="BKMK_SR4"> </a>背景
 
 本节包括有关高级行业术语、同步和异步复制以及关键行为的信息。
 
@@ -140,7 +140,7 @@ ms.locfileid: "77465226"
 
 | 模式 | 图表 | 步骤 |
 | -------- | ----------- | --------- |
-| **同步**<br /><br />零数据丢失<br /><br />RPO | ![显示存储副本如何在同步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.应用程序写入数据<br />2.写入日志数据，并将数据复制到远程站点<br />3.在远程站点写入日志数据<br />4.从远程站点确认<br />5.确认应用程序写入<br /><br />t & t1：数据刷新到该卷，始终写入日志 |
+| **同步**<p>零数据丢失<p>RPO | ![显示存储副本如何在同步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.应用程序写入数据<br />2.写入日志数据，并将数据复制到远程站点<br />3.在远程站点写入日志数据<br />4.从远程站点确认<br />5.确认应用程序写入<p>t & t1：数据刷新到该卷，始终写入日志 |
 
 ### <a name="asynchronous-replication"></a>异步复制
 
@@ -152,7 +152,7 @@ ms.locfileid: "77465226"
 
 | 模式 | 图表 | 步骤 |
 | -------- | ----------- | --------- |
-| **异步**<br /><br />几乎零数据丢失<br /><br />（取决于多种因素）<br /><br />RPO | ![显示存储副本如何在异步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.应用程序写入数据<br />2.写入日志数据<br />3.确认应用程序写入<br />4.数据复制到远程站点<br />5.日志数据在远程站点写入<br />6.从远程站点确认<br /><br />t & t1：数据刷新到该卷，始终写入日志 |
+| **异步**<p>几乎零数据丢失<p>（取决于多种因素）<p>RPO | ![显示存储副本如何在异步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.应用程序写入数据<br />2.写入日志数据<br />3.确认应用程序写入<br />4.数据复制到远程站点<br />5.日志数据在远程站点写入<br />6.从远程站点确认<p>t & t1：数据刷新到该卷，始终写入日志 |
 
 ### <a name="key-evaluation-points-and-behaviors"></a>关键评估点和行为  
 

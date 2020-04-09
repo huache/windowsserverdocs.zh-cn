@@ -1,24 +1,20 @@
 ---
 title: 有关
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e275726c-035f-4a74-8062-013c37f5ded1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db0bf54e35e4226cb020b040d5fc36ddd88dc02b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7040e4cb8e0f38e58ce5e868535dcfb2d897fbd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377121"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844530"
 ---
 # <a name="for"></a>有关
 
@@ -34,9 +30,9 @@ ms.locfileid: "71377121"
 for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |{%%\|%}\<变量 >|必需。 表示可替换参数。 使用单个百分号（ **%** ）在命令提示符下执行**for**命令。 使用双百分号（ **%%** ）在批处理文件中执行**for**命令。 变量区分大小写，并且必须使用字母值（如 **% A**、 **% B**或 **% C**）来表示。|
 |（\<设置 >）|必需。 指定要对其运行命令的一个或多个文件、目录或文本字符串或值的范围。 需要括号。|
@@ -76,7 +72,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     如果*设置*包含通配符 **&#42;** （或 **？** ），则会对每个目录（而不是指定目录中的一组文件）执行指定的*命令*，以匹配*集*。
 
-    此语法为：  
+    语法为：  
     ```
     for /d {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>] 
     ```  
@@ -84,7 +80,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     遍历位于*Drive*：*Path*的根目录树，并在树的每个目录中执行**for**语句。 如果在 **/r**之后未指定目录，将使用当前目录作为根目录。 如果*Set*只是一个句点（.），则它仅枚举目录树。
 
-    此语法为：  
+    语法为：  
     ```
     for /r [[<Drive>:]<Path>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
     ```  
@@ -92,7 +88,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     使用迭代变量设置起始值（*Start*#），然后单步执行一组值，直到值超过设置的结束值（*End*#）。 **/l**将*开始*# 与*结束*# 进行比较，以执行迭代。 如果*Start*# 小于命令将执行的*结束*#。 当迭代变量超过*End*# 时，命令外壳将退出该循环。 还可以使用负*步骤*# 单步执行递减值中的范围。 例如，（1，1，5）生成序列 1 2 3 4 5，（5，-1，1）生成序列 5 4 3 2 1。
 
-    此语法为：  
+    语法为：  
     ```
     for /l {%%|%}<Variable> in (<Start#>,<Step#>,<End#>) do <Command> [<CommandLineOptions>]
     ```  
@@ -104,21 +100,21 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     语法为：  
     ```
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in ("<LiteralString>") do <Command> [<CommandLineOptions>]
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in ('<Command>') do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in (<LiteralString>) do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in ('<Command>') do <Command> [<CommandLineOptions>]
     ```  
     *Set*参数指定一个或多个文件名。 在移动到*集*内的下一个文件之前，将打开、读取和处理每个文件。 若要覆盖默认的分析行为，请指定*ParsingKeywords*。 这是一个带引号的字符串，其中包含一个或多个用于指定不同分析选项的关键字。
 
     如果使用**usebackq**选项，请使用以下语法之一：  
     ```
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in ("<Set>") do <Command> [<CommandLineOptions>]
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in ('<LiteralString>') do <Command> [<CommandLineOptions>]
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in (`<Command>`) do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in ('<LiteralString>') do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in (`<Command>`) do <Command> [<CommandLineOptions>]
     ```  
     下表列出了可用于*ParsingKeywords*的分析关键字。  
 
-    |      关键字      |                                                                                                                                                                                                          描述                                                                                                                                                                                                          |
+    |      关键字      |                                                                                                                                                                                                          说明                                                                                                                                                                                                          |
     |-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     |     eol =\<c >      |                                                                                                                                                                                   指定行尾字符（仅一个字符）。                                                                                                                                                                                    |
     |     skip =\<N >     |                                                                                                                                                                              指定文件开头要跳过的行数。                                                                                                                                                                              |
@@ -131,9 +127,9 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     下表列出了可选语法（适用于任何变量**I**）。  
 
-    |带有修饰符的变量|描述|
+    |带有修饰符的变量|说明|
     |----------------------|-----------|
-    |% ~ I|展开 **% I** ，删除所有两侧的引号（""）。|
+    |% ~ I|展开 **% I** ，删除任何周围的引号（）。|
     |% ~ fI|将 **% I**扩展到完全限定的路径名称。|
     |% ~ dI|仅将 **% I**扩展到驱动器号。|
     |% ~ pI|仅将 **% I**展开为路径。|
@@ -147,7 +143,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     下表列出了可用于获取复合结果的修饰符组合。  
 
-    |包含组合修饰符的变量|描述|
+    |包含组合修饰符的变量|说明|
     |--------------------------------|-----------|
     |% ~ dpI|仅将 **% I**扩展到驱动器号和路径。|
     |% ~ nxI|仅将 **% I**扩展到文件名和扩展名。|
@@ -160,12 +156,12 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
     通过使用大写变量名称（如 **% I**），可以使代码更具可读性，并避免与不区分大小写的修饰符混淆。
 - 分析字符串
 
-  您可以通过以下两种方式使用**for/f**解析逻辑：将 *\<的 LiteralString\>* ：双引号（*无*"usebackq"）或单引号（*带有*"usebackq"），例如（"MyString"）或（"MyString"）。 *\<LiteralString\>* 将被视为来自文件的单个行输入。 在分析双引号 *\<LiteralString\>* 时，命令符号（例如 **\\ \& \|** \> \< \^）将被视为普通字符。
+  可以通过以下两种方式使用**for/f**解析逻辑：将 *\<LiteralString\>* ：双引号（*无*usebackq）或单引号（*带有*usebackq）--例如，（MyString）或（' MyString '）。 *\<LiteralString\>* 将被视为来自文件的单个行输入。 在分析双引号 *\<LiteralString\>* 时，命令符号（例如 **\\ \& \|** \> \< \^）将被视为普通字符。
 - 分析输出
 
   可以使用**for/f**命令来分析命令的输出，方法是在括号之间放置一个反引号 *\<命令\>* 。 它被视为传递给子 Cmd.exe 的命令行。 将输出捕获到内存中，并将其作为文件进行分析。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要**在批处理**文件中使用，请使用以下语法：
 ```
@@ -179,17 +175,17 @@ for %f in (*.doc *.txt) do type %f
 
 若要分析文件，忽略注释行，请键入：
 ```
-for /f "eol=; tokens=2,3* delims=," %i in (myfile.txt) do @echo %i %j %k
+for /f eol=; tokens=2,3* delims=, %i in (myfile.txt) do @echo %i %j %k
 ```
-此命令分析 Myfile.txt 中的每一行。 它将忽略以分号开头的行，并将每一行的第二个和第三个标记传递到**for**正文（标记之间用逗号或空格分隔）。 **For**语句的主体引用 **% i**获取第二个标记， **% j**获取第三个标记，并为 **% k**以获取所有剩余标记。 如果提供的文件名包含空格，请使用引号将文本括起来（例如，"File Name"）。 若要使用引号，必须使用**usebackq**。 否则，引号被解释为定义要分析的文本字符串。
+此命令分析 Myfile.txt 中的每一行。 它将忽略以分号开头的行，并将每一行的第二个和第三个标记传递到**for**正文（标记之间用逗号或空格分隔）。 **For**语句的主体引用 **% i**获取第二个标记， **% j**获取第三个标记，并为 **% k**以获取所有剩余标记。 如果提供的文件名包含空格，请使用引号将文本括起来（例如，文件名）。 若要使用引号，必须使用**usebackq**。 否则，引号被解释为定义要分析的文本字符串。
 
-已在**for**语句中显式声明了 **% i** 。 **% j**和 **% k**使用**标记 =** 隐式声明。 可以使用**标记 =** 来指定最多26个标记，前提是它不会导致尝试声明大于字母 "z" 或 "z" 的变量。
+已在**for**语句中显式声明了 **% i** 。 **% j**和 **% k**使用**标记 =** 隐式声明。 您可以使用**标记 =** 来指定最多26个标记，前提是它不会导致将变量声明为大于字母 Z 或 z 的尝试。
 
 下面的示例枚举当前环境中的环境变量名称。 若要分析命令的输出，请*将集*放在括号之间，键入：
 ```
-for /f "usebackq delims==" %i in ('set') do @echo %i 
+for /f usebackq delims== %i in ('set') do @echo %i 
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 934ac796-e2ee-490d-8265-6a818be5ee79
 title: 使用适用于敏感应用程序的附加多重身份验证管理风险
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 79319f54ceb14195dffd56b5a4dfe1b17f048df9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6608713ddd60d20b0b717d4133d93d23fc7b25
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407527"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816250"
 ---
 # <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>使用适用于敏感应用程序的附加多重身份验证管理风险
 
@@ -27,7 +26,7 @@ ms.locfileid: "71407527"
 
 -   [为 AD FS 配置其他身份验证方法](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
-## <a name="in-this-guide"></a>本指南包含的内容
+## <a name="in-this-guide"></a>本指南内容
 本指南提供以下信息：
 
 -   [AD FS](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_1)中的身份验证机制-描述 Windows Server 2012 R2 中 Active Directory 联合身份验证服务（AD FS）提供的身份验证机制
@@ -39,10 +38,10 @@ ms.locfileid: "71407527"
 
     有关配置和验证此方案的详细分步操作实例说明，请参阅[操作实例指南：使用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)。
 
-## <a name="BKMK_1"></a>关键概念-AD FS 中的身份验证机制
+## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>关键概念-AD FS 中的身份验证机制
 
 ### <a name="benefits-of-authentication-mechanisms-in-ad---fs"></a>AD FS 中的身份验证机制的优势
-Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS）为 IT 管理员提供了更丰富、更灵活的工具集，用于对想要访问公司资源的用户进行身份验证。 它使管理员能够灵活控制主要和附加身份验证方法，为配置身份验证策略提供丰富的管理体验（通过用户界面和 Windows PowerShell），并增强访问 AD FS 保护的应用程序和服务的最终用户的体验。 下面是在 Windows Server 2012 R2 中 AD FS 保护应用程序和服务的一些优点：
+Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS）为 IT 管理员提供了更丰富、更灵活的工具集，用于对想要访问公司资源的用户进行身份验证。 它使管理员能够灵活控制主要和附加身份验证方法，为配置身份验证策略提供丰富的管理体验（通过用户界面和 Windows PowerShell），并增强访问受 AD FS 保护的应用程序和服务的最终用户的体验。 下面是在 Windows Server 2012 R2 中 AD FS 保护应用程序和服务的一些优点：
 
 -   全局身份验证策略-一种集中管理功能，IT 管理员可以从该管理功能中选择使用哪种身份验证方法根据访问受保护资源的网络位置对用户进行身份验证。 这样，管理员便可以执行以下操作：
 
@@ -118,7 +117,7 @@ Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS�
 
 -   可以要求在对受保护资源的访问请求来自 Extranet 或 Intranet 时使用 MFA。
 
-## <a name="BKMK_2"></a>方案概述
+## <a name="scenario-overview"></a><a name="BKMK_2"></a>方案概述
 在此方案中，基于用户的组成员身份数据，对特定应用程序启用 MFA。 换而言之，你将在联合服务器上设置一个身份验证策略，要求属于特定组的用户请求访问 Web 服务器上托管的特定应用程序时使用 MFA。
 
 更具体地说，在此方案中，你将会针对名为 **claimapp** 的基于声明的测试应用程序启用一个身份验证策略，方案中的 AD 用户 **Robert Hatley** 需要运行 MFA，因为他属于 AD 组 **Finance**。

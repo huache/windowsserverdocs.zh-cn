@@ -1,24 +1,20 @@
 ---
 title: nslookup set querytype
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5af54ac5-fc1a-4af6-977b-f8e97c8eba90
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc0eb19fd66e738b4bfc110a2bbc172153a12d98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1c066277a22325e5db8383f58cda31038aa656e0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372901"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838430"
 ---
 # <a name="nslookup-set-querytype"></a>nslookup set querytype
 
@@ -29,10 +25,10 @@ ms.locfileid: "71372901"
 ```
 set querytype=<ResourceRecordtype>
 ```
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 <ResourceRecordtype> 指定 DNS 资源记录类型。 默认资源记录类型是。下表列出了此命令的有效值。
 
-| 值 |                                                   描述                                                   |
+| 值 |                                                   说明                                                   |
 |-------|-----------------------------------------------------------------------------------------------------------------|
 |   A   |                                      指定计算机&#39;的 IP 地址                                      |
 |  随时  |                                     指定计算机&#39;的 IP 地址。                                      |
@@ -44,7 +40,7 @@ set querytype=<ResourceRecordtype>
 | MINFO |                                   指定邮箱或邮件列表信息。                                   |
 |  MR   |                                     指定邮件重命名域名。                                      |
 |  MX   |                                          指定邮件交换器。                                          |
-|  N   |                                 指定命名区域的 DNS 名称服务器。                                 |
+|  NS   |                                 指定命名区域的 DNS 名称服务器。                                 |
 |  PTR  | 如果查询是 IP 地址，则指定计算机名;否则，指定指向其他信息的指针。 |
 |  SOA  |                                指定 DNS 区域的授权。                                 |
 |  TXT  |                                         指定文本信息。                                         |
@@ -58,5 +54,4 @@ set querytype=<ResourceRecordtype>
 - <strong>Set type</strong>命令执行与<strong>set querytype</strong>命令相同的功能。
 - 有关资源记录类型的详细信息，请参阅请求注释（Rfc）1035。
   ## <a name="additional-references"></a>其他参考
-  <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">命令行语法键</a>
-  <a href="nslookup-set-type.md" data-raw-source="[nslookup set type](nslookup-set-type.md)">nslookup 集类型</a>
+  < href = key.md =-命令行语法[键](command-line-syntax-key.md)> 命令行语法键，</a> < href = nslookup =[nslookup 集类型](nslookup-set-type.md)> nslookup 集类型的数据源 = nslookup 集的类型</a>。

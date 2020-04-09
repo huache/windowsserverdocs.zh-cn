@@ -5,14 +5,14 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: NedPyle; Danlo; DKruse
+ms.author: nedpyle; danlo; dkruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 918d21139a068da1a46fbda1fa5034e14c8379c0
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 89017686801501593c51245d44bf88a6ecf4baf6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947065"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851820"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB 文件服务器的性能优化
 
@@ -26,7 +26,7 @@ ms.locfileid: "75947065"
 ## <a name="smb-performance-tuning"></a>SMB 性能优化
 
 
-文件服务器性能和可用的 tunings 取决于在每个客户端和服务器之间协商的 SMB 协议，以及已部署的文件服务器功能。 当前可用的最高协议版本是 Windows Server 2016 和 Windows 10 中的 SMB 3.1.1。 可以通过在客户端上使用 Windows PowerShell **SMBConnection**和 SMBSession | 来检查网络上使用的 SMB 版本。服务器上的 FL。
+文件服务器性能和可用的 tunings 取决于在每个客户端和服务器之间协商的 SMB 协议，以及已部署的文件服务器功能。 当前可用的最高协议版本是 Windows Server 2016 和 Windows 10 中的 SMB 3.1.1。 可以通过在客户端上使用 Windows PowerShell **SMBConnection**和 SMBSession | 来检查网络上使用的 SMB 版本。 **Get-SMBSession | FL**服务器上的 FL。
 
 ### <a name="smb-30-protocol-family"></a>SMB 3.0 协议系列
 
@@ -106,7 +106,7 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
   默认值分别为512和8192。 这些参数允许服务器在指定边界内动态地限制客户端操作并发。 某些客户端可能会提高吞吐量，增加并发限制，例如，通过高带宽、高延迟链路复制文件。
     
   > [!TIP]
-  > 在 Windows 10 和 Windows Server 2016 之前，向客户端授予的信用额度将在 Smb2CreditsMin 和 Smb2creditsmax 为之间动态变化，这是基于尝试根据网络延迟确定要授予的最佳信用额度的算法。和信用使用情况。 在 Windows 10 和 Windows Server 2016 中，SMB 服务器已更改为在请求达到配置的最大信用额度时无条件地授予信用额度。 作为此更改的一部分，信用限制机制会在服务器处于内存压力下时减少每个连接的信用时段的大小。 触发限制的内核内存不足事件仅在服务器内存不足（< 几 MB）时才会发出信号。 由于服务器不再缩小信用时段，Smb2CreditsMin 设置不再是必需的，现已被忽略。
+  > 在 Windows 10 和 Windows Server 2016 之前，根据网络延迟和信用使用情况，向客户端授予的信用额度将在 Smb2CreditsMin 和 Smb2creditsmax 为之间动态变化。 在 Windows 10 和 Windows Server 2016 中，SMB 服务器已更改为在请求达到配置的最大信用额度时无条件地授予信用额度。 作为此更改的一部分，信用限制机制会在服务器处于内存压力下时减少每个连接的信用时段的大小。 触发限制的内核内存不足事件仅在服务器内存不足（< 几 MB）时才会发出信号。 由于服务器不再缩小信用时段，Smb2CreditsMin 设置不再是必需的，现已被忽略。
   > 
   > 可以监视 SMB 客户端共享\\贷隔一秒，查看信用是否有任何问题。
 
@@ -142,13 +142,13 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
   ```
 
-  默认值为 512。 此参数限制单个连接上允许的并发异步 SMB 命令数。 某些情况下（例如，当具有后端 IIS 服务器的前端服务器时）需要大量并发（特别是对于文件更改通知请求）。 此项的值可以增加以支持这些情况。
+  默认值为512。 此参数限制单个连接上允许的并发异步 SMB 命令数。 某些情况下（例如，当具有后端 IIS 服务器的前端服务器时）需要大量并发（特别是对于文件更改通知请求）。 此项的值可以增加以支持这些情况。
 
 ### <a name="smb-server-tuning-example"></a>SMB 服务器优化示例
 
 在许多情况下，以下设置可以优化计算机的文件服务器性能。 所有计算机上的这些设置都不是最佳或最合适的。 应在应用各个设置之前评估其影响。
 
-| 参数                       | Value | 默认值 |
+| 参数                       | 值 | 默认 |
 |---------------------------------|-------|---------|
 | AdditionalCriticalWorkerThreads | 64    | 0       |
 | MaxThreadsPerQueue              | 64    | 20      |

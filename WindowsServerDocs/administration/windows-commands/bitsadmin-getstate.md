@@ -1,66 +1,61 @@
 ---
 title: bitsadmin getstate
-description: 适用于 bitsadmin getstate 的 Windows 命令主题
-ms.custom: na
+description: 用于**bitsadmin getstate**的 Windows 命令主题，它检索指定作业的状态。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1252d6cf-14ca-44df-beb2-930ff011f297
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2cff790c8787b1514e8523a4583184d6f6a59efc
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 43cd8c8e614cce65f55b16fc5395b1d37de0cf95
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259102"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850460"
 ---
 # <a name="bitsadmin-getstate"></a>bitsadmin getstate
-
 
 检索指定作业的状态。
 
 ## <a name="syntax"></a>语法
 
 ```
-bitsadmin /GetState <Job>
+bitsadmin /getstate <job>
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
-| --------- | ----------- |
-|    作业    | 该作业的显示名称或 GUID |
+| 参数 | 说明 |
+| -------------- | -------------- |
+| 作业 | 作业的显示名称或 GUID。 |
 
-## <a name="remarks"></a>备注
+## <a name="output"></a>Output
 
-可能的状态包括：
+输出值包括：
 
-|      State      | 描述 |
+| State | 说明 |
 | --------------- | ----------- |
-| 好          | 作业正在等待运行。 |
-| 连接      | BITS 正在联系服务器。 |
-| 转    | BITS 正在传输数据。 |
-| 此前     | BITS 已成功传输作业中的所有文件。 |
-| SUSPENDED       | 作业已暂停。 |
-| 错误           | 发生了不可恢复的错误;将不会重试传输。 |
-| TRANSIENT_ERROR | 发生了可恢复的错误;当最小重试延迟到期时，将重试传输。 |
-| 已确认    | 作业已完成。 |
-| 已取消        | 已取消作业。 |
+| 已排队 | 作业正在等待运行。 |
+| 正在连接 | BITS 正在联系服务器。 |
+| 转移 | BITS 正在传输数据。 |
+| 此前 | BITS 已成功传输作业中的所有文件。 |
+| Suspended | 作业已暂停。 |
+| 错误 | 发生了不可恢复的错误;将不会重试传输。 |
+| Transient_Error | 发生了可恢复的错误;当最小重试延迟到期时，将重试传输。 |
+| 承认 | 作业已完成。 |
+| Canceled | 已取消作业。 |
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 下面的示例将检索名为*myDownloadJob*的作业的状态。
 
 ```
-C:\>bitsadmin /GetState myDownloadJob
+C:\>bitsadmin /getstate myDownloadJob
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

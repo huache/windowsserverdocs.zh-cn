@@ -1,28 +1,24 @@
 ---
 title: nslookup
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 41516932-7833-434a-aa92-b4cf0f9a7ef7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b47592be57d5999ac26465097490da266bd0aea
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 15062d81992ee1b6e55d47cb9e49822350e4f2bc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372702"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838090"
 ---
 # <a name="nslookup"></a>nslookup
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 显示可用于诊断域名系统（DNS）基础结构的信息。 使用此工具之前，应熟悉 DNS 的工作原理。 只有安装了 TCP/IP 协议，才能使用 nslookup 命令行工具。
 ## <a name="syntax"></a>语法
@@ -57,9 +53,9 @@ nslookup /set [no]vc
 nslookup /view <FileName>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|                       参数                       |                                                                                                         描述                                                                                                         |
+|                       参数                       |                                                                                                         说明                                                                                                         |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   [nslookup exit 命令](nslookup-exit-command.md)   |                                                                                                     退出**nslookup**。                                                                                                     |
 | [nslookup finger 命令](nslookup-finger-command.md) |                                                                                  与当前计算机上的 finger 服务器连接。                                                                                   |
@@ -100,21 +96,21 @@ nslookup /view <FileName>
   -   若要将内置命令视为计算机名称，请在该命令前面加上转义符（\\）。
   -   无法识别的命令被解释为计算机名。
 - 如果查找请求失败， **nslookup**将打印一条错误消息。 下表列出了可能的错误消息。
-  |**错误消息**|**说明**|
+  |**错误消息**|**描述**|
   |-----------|----------|
   |`timed out`|服务器在一段时间内未响应请求，并且有一定次数的重试。 你可以设置超时时间和**设置超时**子命令。 可以用**set retry**子命令设置重试次数。|
   |`No response from server`|服务器计算机上没有运行任何 DNS 名称服务器。|
   |`No records`|DNS 名称服务器没有计算机的当前查询类型的资源记录，但计算机名称有效。 查询类型是通过**set querytype**命令指定的。|
   |`Nonexistent domain`|计算机或 DNS 域名不存在。|
-  |`Connection refused`<br /><br />-或-<br /><br />`Network is unreachable`|无法连接到 DNS 名称服务器或 finger 服务器。 此错误通常发生在**ls**和**finger**请求上。|
+  |`Connection refused`<p>\- 或 -<p>`Network is unreachable`|无法连接到 DNS 名称服务器或 finger 服务器。 此错误通常发生在**ls**和**finger**请求上。|
   |`Server failure`|DNS 名称服务器在其数据库中发现内部不一致，无法返回有效的答案。|
   |`Refused`|DNS 名称服务器拒绝为请求服务。|
   |`format error`|DNS 名称服务器发现请求数据包的格式不正确。 这可能表示**nslookup**中存在错误。|
 - 有关**nslookup**命令和 DNS 的详细信息，请参阅以下资源：
-  - 先生，T.，Davies，J。2000。 *Microsoft Windows 2000 Tcp/ip 协议和服务技术参考*。 华盛顿州雷蒙德：Microsoft 新闻。
-  - Albitz、Loukides、Liu 和。 2001。 *DNS 和绑定，第四版*。 Sebastopol，加利福尼亚州：O'Reilly 和联合会，Inc。
-  - Larson、Liu。 2001。 *Windows 2000 上的 DNS*。 Sebastopol，加利福尼亚州：O'Reilly 和联合会，Inc。
+  - 先生，T.，Davies，J. 2000。 *Microsoft Windows 2000 Tcp/ip 协议和服务技术参考*。 华盛顿州雷蒙德：微软出版社。
+  - Albitz、Loukides、Liu 和。 2001。 *DNS 和绑定，第四版*。 Sebastopol，加利福尼亚州： O'Reilly and 联合会，Inc。
+  - Larson、Liu。 2001。 *Windows 2000 上的 DNS*。 Sebastopol，加利福尼亚州： O'Reilly and 联合会，Inc。
     #### <a name="examples"></a>示例
     每个命令行选项都包含一个连字符（-），后跟命令名称和（在某些情况下为等号（=），然后是一个值）。 例如，若要将默认查询类型更改为主机（计算机）信息并且初始超时值为10秒，请键入： **nslookup-querytype = hinfo-timeout = 10**
-    ## <a name="see-also"></a>请参阅
-    [命令行语法项](command-line-syntax-key.md)
+    ## <a name="see-also"></a>另请参阅
+    - [命令行语法项](command-line-syntax-key.md)

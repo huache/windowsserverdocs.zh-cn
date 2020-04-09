@@ -1,31 +1,27 @@
 ---
-title: 使用 "添加" 命令
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: add
+description: 各种 add 命令的 Windows 命令主题。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6fcdd154-baaf-4288-a355-2a95a3028bce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb60d0790fb4f8ab08e02664e26bc7ca6697b5c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 057db2ece58b2b02adc138bc2645489c47ebe258
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363869"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832210"
 ---
-# <a name="using-the-add-command"></a>使用 "添加" 命令
+# <a name="add"></a>add
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="subcommands"></a>个子
-|命令|描述|
+|命令|说明|
 |-------|--------|
 |[使用 "添加设备" 命令](using-the-add-device-command.md)|在 active directory 中其预留计算机。|
 |[使用 "添加图像" 命令](using-the-add-image-command.md)|添加启动映像或安装映像。|

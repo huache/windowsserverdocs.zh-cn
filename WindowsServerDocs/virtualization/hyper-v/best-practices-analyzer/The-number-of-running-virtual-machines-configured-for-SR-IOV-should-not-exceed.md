@@ -2,20 +2,19 @@
 title: 为 SR-IOV 配置的正在运行的虚拟机的数量不应超过可供虚拟机使用的虚拟功能的数目
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 8bd4af5e-9e7d-4710-8950-39435a8bb373
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0887035c84ebc4b7d93163533387f2f8ab20fb87
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3c58e980471284c950f41551b02b92bf74aca7cc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364615"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854610"
 ---
 # <a name="the-number-of-running-virtual-machines-configured-for-sr-iov-should-not-exceed-the-number-of-virtual-functions-available-to-the-virtual-machines"></a>为 SR-IOV 配置的正在运行的虚拟机的数量不应超过可供虚拟机使用的虚拟功能的数目
 
@@ -27,7 +26,7 @@ ms.locfileid: "71364615"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  

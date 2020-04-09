@@ -3,17 +3,17 @@ ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Windows Server 中存储方面的新增功能
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dongill
+manager: dongill
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: ffcff036a7e30018e523def055ce3aeb8d30c225
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 0de83c8642629b3a7ff21c9accadec5f9331178e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322329"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820850"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 中存储的新增功能
 
@@ -65,7 +65,7 @@ ms.locfileid: "79322329"
 
 存储迁移服务是一种新技术，可以更轻松地将服务器迁移到更新版本的 Windows Server。 它提供一个图形工具，可清查服务器上的数据、将数据和配置传输到更新的服务器，然后选择将旧服务器的标识移到新服务器，这样应用和用户就不必进行任何更改。 有关详细信息，请参阅[存储迁移服务](storage-migration-service/overview.md)。
 
-### <a id="storage-spaces-direct"></a>存储空间直通（仅限 Windows Server 2019）
+### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>存储空间直通（仅限 Windows Server 2019）
 
 Windows Server 2019 中的存储空间直通有很多改进（存储空间直通不包含在 Windows Server 中，半年频道）：
 
@@ -109,7 +109,7 @@ Windows Server 2019 中的存储空间直通有很多改进（存储空间直通
 
     这使管理员能够在存储空间直通中手动分隔卷的分配。 这样做可能会在某些情况下显著增加容错能力，但会带来一些额外的管理注意事项和复杂性。 有关详细信息，请参阅[分隔卷的分配](storage-spaces/delimit-volume-allocation.md)。
 
-### <a name="storage-replica2019"></a>存储副本
+### <a name="storage-replica"></a><a name="storage-replica2019"></a>存储副本
 
 在此版本中，对[存储副本](storage-replica/storage-replica-overview.md)进行了很多改进：
 
@@ -193,7 +193,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 
 ## <a name="whats-new-in-storage-in-windows-server-2016"></a>Windows Server 2016 中存储方面的新增功能
 
-### <a name="s2d"></a>存储空间直通  
+### <a name="storage-spaces-direct"></a><a name="s2d"></a>存储空间直通  
 存储空间直通允许通过使用具有本地存储的服务器构建高可用性和可缩放存储。 该功能简化了软件定义的存储系统的部署和管理并且允许使用 SATA SSD 和 NVMe 磁盘设备等新型磁盘设备，而之前群集存储空间无法使用共享磁盘。  
 
 **这一更改增添了什么价值？**  
@@ -205,7 +205,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 **工作原理的不同之处是什么？**  
 此功能是 Windows Server 2016 的新增功能。  
 
-### <a name="storage-replica"></a>存储副本
+### <a name="storage-replica"></a><a name="storage-replica"></a>存储副本
 
 存储副本可在各个服务器或群集之间实现存储不可知的块级同步复制，以便在站点间进行灾难恢复及故障转移群集扩展。 同步复制支持物理站点中的镜像数据和在崩溃时保持一致的卷，以确保文件系统级别的数据损失为零。 异步复制允许超出都市范围、可能存在数据损失的站点扩展。  
 
@@ -229,7 +229,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 **工作原理的不同之处是什么？**  
 此功能是 Windows Server 2016 的新增功能。  
 
-### <a name="storage-qos"></a>存储服务质量  
+### <a name="storage-quality-of-service"></a><a name="storage-qos"></a>存储服务质量  
 现在可以使用存储服务质量 (QoS) 来集中监控端到端存储性能，并使用 Windows Server 2016 中的 Hyper-V 和 CSV 群集创建策略。  
 
 **这一更改增添了什么价值？**  
@@ -248,7 +248,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 
 有关详细信息，请参阅[存储服务质量](storage-qos/storage-qos-overview.md)
 
-### <a name="dedup"></a>重复数据删除  
+### <a name="data-deduplication"></a><a name="dedup"></a>重复数据删除  
 | 功能 | 新功能或更新功能 | 说明 |
 |---------------|----------------|-------------|
 | [支持大型卷](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，必须专门调整卷的大小实现预期改动，大小超过 10 TB 的卷不适合进行重复数据删除。 在 Windows Server 2016 中，重复数据删除支持**高达 64 TB** 的卷大小。 |
@@ -257,7 +257,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 | [简化的备份支持](data-deduplication/whats-new.md#simple-backup-support) | 新建 | 在 Windows Server 2012 R2 中，通过一系列手动配置步骤支持虚拟化备份应用程序，如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) 在 Windows Server 2016 中，已针对虚拟化备份应用程序的重复数据删除的无缝部署添加了新的默认使用类型“备份”。 |
 | [支持群集操作系统滚动升级](data-deduplication/whats-new.md#cluster-upgrade-support) | 新建 | 重复数据删除完全支持 Windows Server 2016 的新的[群集操作系统滚动升级](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)功能。 |
 
-### <a name="smb-hardening-improvements"></a>SYSVOL 和 NETLOGON 连接的 SMB 强化改进  
+### <a name="smb-hardening-improvements-for-sysvol-and-netlogon-connections"></a><a name="smb-hardening-improvements"></a>SYSVOL 和 NETLOGON 连接的 SMB 强化改进  
 在到默认的 Active Directory 域服务 SYSVOL 和 NETLOGON 的 Windows 10 和 Windows Server 2016 客户端连接中，域控制器上的共享现在要求 SMB 签名和相互身份验证（例如 Kerberos)。   
 
 **这一更改增添了什么价值？**  

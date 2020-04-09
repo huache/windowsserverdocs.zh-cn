@@ -1,17 +1,17 @@
 ---
 title: 分隔存储空间直通中的卷分配
 ms.author: cosmosdarwin
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: 19e5a38ca406878b7dbc5a187b0057e97e4fe2d1
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 26454881279e1d33392a827f794788370def2cab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918296"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858970"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>分隔存储空间直通中的卷分配
 > 适用于： Windows Server 2019
@@ -23,12 +23,12 @@ Windows Server 2019 引入了一个选项，用于在存储空间直通中手动
 
 ## <a name="prerequisites"></a>先决条件
 
-### <a name="green-checkmark-iconmediadelimit-volume-allocationsupportedpng-consider-using-this-option-if"></a>![绿色复选标记图标。](media/delimit-volume-allocation/supported.png) 如果是以下情况，请考虑使用此选项：
+### <a name="green-checkmark-icon-consider-using-this-option-if"></a>![绿色复选标记图标。](media/delimit-volume-allocation/supported.png) 如果是以下情况，请考虑使用此选项：
 
 - 群集包含六个或更多服务器;与
 - 群集只使用[三向镜像](storage-spaces-fault-tolerance.md#mirroring)复原
 
-### <a name="red-x-iconmediadelimit-volume-allocationunsupportedpng-do-not-use-this-option-if"></a>![红色 X 图标。](media/delimit-volume-allocation/unsupported.png) 如果是以下情况，请不要使用此选项：
+### <a name="red-x-icon-do-not-use-this-option-if"></a>![红色 X 图标。](media/delimit-volume-allocation/unsupported.png) 如果是以下情况，请不要使用此选项：
 
 - 你的群集包含六个以上的服务器;或
 - 群集使用[奇偶](storage-spaces-fault-tolerance.md#parity)校验或[镜像加速奇偶校验](storage-spaces-fault-tolerance.md#mirror-accelerated-parity)复原
@@ -153,7 +153,7 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 请注意，Server1 不会再包含*MyVolume*的碎片–而是 Server5。
 
-## <a name="best-practices"></a>最佳实践
+## <a name="best-practices"></a>最佳做法
 
 下面是使用带分隔符的卷分配时应遵循的最佳做法：
 
@@ -190,11 +190,11 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 如果一次发生了三次或更多故障，但至少一半的服务器和驱动器仍处于开启状态，则带分隔分配的卷可能会保持联机并可访问，具体取决于哪些服务器发生故障。
 
-## <a name="frequently-asked-questions"></a>常见问题解答
+## <a name="frequently-asked-questions"></a>常见问题
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>是否可以分隔某些卷，但不能分隔其他卷？
 
-是 无论是否分隔分配，都可以选择每个卷。
+可以。 无论是否分隔分配，都可以选择每个卷。
 
 ### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>分隔分配是否会改变驱动器更换的工作方式？
 

@@ -1,39 +1,35 @@
 ---
 title: msinfo32
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a38f31d7-1766-4103-becc-9d0b87c2826d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ec08171816476cf04bbfb70637ff8253192e21b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5a77cf9ae4c5f054e66839ff5b5b057e031b36ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373382"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839110"
 ---
 # <a name="msinfo32"></a>msinfo32
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 打开 "系统信息" 工具，以显示本地计算机上的硬件、系统组件和软件环境的综合视图。 
 ## <a name="syntax"></a>语法
 ```
 msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/showcategories] [/category <CategoryID>] [/categories {+<CategoryID>(+<CategoryID>)|+all(-<CategoryID>)}]
 ```
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
-|    参数    |                                                                                                                                 描述                                                                                                                                  |
+|    参数    |                                                                                                                                 说明                                                                                                                                  |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     <path>      | 指定要以*C:\Folder1\File1.XXX*格式打开的文件，其中*C*是驱动器号， *Folder1*是文件夹， *File1*是文件名， *XXX*是文件扩展名。<br /><br />此文件可以是 **.nfo**、 **.xml**、 **.txt**或 **.cab**文件。 |
+|     <path>      | 指定要以*C:\Folder1\File1.XXX*格式打开的文件，其中*C*是驱动器号， *Folder1*是文件夹， *File1*是文件名， *XXX*是文件扩展名。<p>此文件可以是 **.nfo**、 **.xml**、 **.txt**或 **.cab**文件。 |
 | <computerName>  |                                                                             指定目标或本地计算机的名称。 这可以是 UNC 名称、IP 地址或完整的计算机名称。                                                                              |
 |  <CategoryID>   |                                                                                     指定类别项的 ID。 可以使用 **/showcategories**获取类别 ID。                                                                                      |
 |      /pch       |                                                                                                       在 "系统信息" 工具中显示系统历史记录视图。                                                                                                       |
@@ -47,7 +43,7 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/show
 
 ## <a name="remarks"></a>备注
 某些系统信息类别包含大量数据。 可以使用**start/wait**命令优化这些类别的报告性能。 有关详细信息，请参阅[系统信息](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)。
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 若要列出可用的类别 Id，请键入：
 ```
 msinfo32 /showcategories
@@ -65,5 +61,5 @@ msinfo32 /nfo syssum.nfo /categories +systemsummary
 msinfo32 /nfo conflicts.nfo /categories    +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
 ## <a name="additional-references"></a>其他参考
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)
 

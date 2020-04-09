@@ -1,7 +1,6 @@
 ---
 ms.assetid: 09f335bb-896a-45dd-adc2-f215b8fba828
 title: 联合 Web SSO 设计
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a3e7eb6c42c8190da799c88c1e947e6aef1c29f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9915a2942c9336d5aeb7776169d2e51491c22909
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408101"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853140"
 ---
 # <a name="federated-web-sso-design"></a>联合 Web SSO 设计
 
@@ -26,7 +25,7 @@ ms.locfileid: "71408101"
   
 ![联合的 web sso](media/adfs2_FederatedWebSSODesign.gif)  
   
-图中的一个\-方式箭头表示联合身份验证信任的方向，这与 Windows 信任的方向类似，它始终指向林的帐户端。 这意味着，身份验证将从帐户伙伴组织流向资源伙伴组织。  
+图中的一个\-方式箭头表示联合身份验证信任的方向，这与 Windows 信任的方向类似，它始终指向林的帐户端。 这意味着身份验证从帐户伙伴组织流向资源伙伴组织。  
   
 在此联合 Web SSO 设计中，两个联合服务器 \(Fabrikam 中的一个，而另一个在 Contoso 中\) 将来自 Fabrikam 中用户帐户的身份验证请求路由到 Contoso 中基于 Web\-的应用程序或服务。  
   

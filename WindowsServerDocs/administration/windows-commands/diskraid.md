@@ -1,32 +1,26 @@
 ---
 title: diskraid
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 diskraid 的 Windows 命令主题，它是一种命令行工具，可用于配置和管理独立（或廉价）磁盘（RAID）存储子系统冗余阵列。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f72e91f856da3b24e7450381b293f4b365d914f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea71fc67420700527a3a14494c947aed7a2ec747
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377799"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845400"
 ---
 # <a name="diskraid"></a>diskraid
 
-
-
 DiskRAID 是一种命令行工具，可用于配置和管理独立（或廉价）磁盘（RAID）的冗余阵列（RAID）存储子系统。
 
-RAID 是一种用于标准化和分类容错磁盘系统的方法。 RAID 级别提供各种性能、可靠性和成本组合。 RAID 通常在服务器上使用。 某些服务器提供了三个 RAID 级别：级别0（条带化）、级别1（镜像）和级别5（带奇偶校验的带区）。
+RAID 是一种用于标准化和分类容错磁盘系统的方法。 RAID 等级提供了性能、可靠性和费用方面的不同组合。 RAID 通常在服务器上使用。 某些服务器提供了三个 RAID 级别：级别0（条带化）、级别1（镜像）和级别5（带奇偶校验的带区）。
 
 硬件 RAID 子系统使用逻辑单元号（LUN）将物理上可寻址的存储单元彼此区分开来。 LUN 对象必须至少具有一个 plex，并且可以有任意数量的附加丛。 每个 plex 都包含 LUN 对象上的数据副本。 可以将丛添加到 LUN 对象并从中删除。
 
@@ -43,7 +37,7 @@ RAID 是一种用于标准化和分类容错磁盘系统的方法。 RAID 级别
 -   [automagic](#BKMK_3)
 -   [break](#BKMK_4)
 -   [chap](#BKMK_5)
--   [create](#BKMK_6)
+-   [创建](#BKMK_6)
 -   [delete](#BKMK_7)
 -   [仔细](#BKMK_8)
 -   [取消](#BKMK_9)
@@ -55,27 +49,27 @@ RAID 是一种用于标准化和分类容错磁盘系统的方法。 RAID 级别
 -   [初始](#BKMK_15)
 -   [invalidatecache](#BKMK_16)
 -   [lbpolicy](#BKMK_18)
--   [list](#BKMK_19)
--   [login](#BKMK_20)
+-   [成员列表](#BKMK_19)
+-   [id](#BKMK_20)
 -   [注销](#BKMK_21)
 -   [维护](#BKMK_22)
--   [名称](#BKMK_23)
+-   [name](#BKMK_23)
 -   [断开](#BKMK_24)
 -   [联机](#BKMK_25)
 -   [recover](#BKMK_26)
 -   [reenumerate](#BKMK_27)
--   [refresh](#BKMK_28)
+-   [刷新](#BKMK_28)
 -   [rem](#BKMK_29)
 -   [删除](#BKMK_30)
 -   [replace](#BKMK_31)
--   [&](#BKMK_32)
+-   [reset](#BKMK_32)
 -   [单击](#BKMK_33)
 -   [setflag](#BKMK_34)
 -   [shrink](#BKMK_shrink)
 -   [转入](#BKMK_35)
 -   [取消屏蔽](#BKMK_36)
 
-### <a name="BKMK_1"></a>把
+### <a name="add"></a><a name=BKMK_1></a>把
 
 向当前选定的 LUN 添加现有 LUN，或将 iSCSI 目标门户添加到当前选定的 iSCSI 目标门户组。
 
@@ -86,7 +80,7 @@ add plex lun=n [noerr]
 add tpgroup tportal=n [noerr]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **plex lun**=*n*
 
@@ -103,9 +97,9 @@ add tpgroup tportal=n [noerr]
 
 指定将忽略在执行此操作时出现的任何失败。 这在脚本模式下非常有用。
 
-### <a name="BKMK_2"></a>将
+### <a name="associate"></a><a name=BKMK_2></a>将
 
-为当前所选的 LUN （其他控制器端口处于非活动状态）设置指定的控制器端口列表，或将指定的控制器端口添加到当前所选 LUN 的现有活动控制器端口列表，或将当前所选 LUN 的指定 iSCSI 目标。
+为当前所选的 LUN （其他控制器端口处于非活动状态）设置指定的控制器端口列表，或将指定的控制器端口添加到当前所选 lun 的现有活动控制器端口列表，或将指定的 iSCSI 目标与当前选定的 LUN 关联。
 
 #### <a name="syntax"></a>语法
 
@@ -115,7 +109,7 @@ associate ports [add] <n-m>[,<n-m>[,…]]
 associate targets [add] <n>[,<n> [,…]]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **控制器**
 
@@ -159,7 +153,7 @@ Controller port associations changed.
 (Controller ports active after this command: Ctlr 0 Port 0, Ctlr 0 Port 1, Ctlr 1 Port 1)
 ```
 
-### <a name="BKMK_3"></a>automagic
+### <a name="automagic"></a><a name=BKMK_3></a>automagic
 
 设置或清除一些标志，这些标志向提供程序提供有关如何配置 LUN 的提示。 使用不带参数的**automagic**操作将显示标志列表。
 
@@ -169,7 +163,7 @@ Controller port associations changed.
 automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **set**
 
@@ -187,7 +181,7 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 
 标志由三个字母组成的缩写词标识。
 
-|Flag|描述|
+|Flag|说明|
 |----|-----------|
 |FCR|需要快速崩溃恢复|
 |FTL|容错|
@@ -205,9 +199,9 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 |RMP|已启用映射|
 |STS|条带大小|
 |WTC|已启用写入缓存|
-|YNK-F8-CLZ|去除|
+|YNK-F8-CLZ|可移动|
 
-### <a name="BKMK_4"></a>分
+### <a name="break"></a><a name=BKMK_4></a>分
 
 从当前所选的 LUN 中删除 plex。 不保留 plex 及其包含的数据，并且可以回收驱动器范围。
 
@@ -217,7 +211,7 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 break plex=<plex_number> [noerr]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **丛**
 
@@ -238,7 +232,7 @@ break plex=<plex_number> [noerr]
 > [!CAUTION]
 > 原始 LUN 上包含的所有数据都不一定是一致的。
 
-### <a name="BKMK_5"></a>chap
+### <a name="chap"></a><a name=BKMK_5></a>chap
 
 设置质询握手身份验证协议（CHAP）共享机密，以便 iSCSI 发起程序和 iSCSI 目标可以相互通信。
 
@@ -251,7 +245,7 @@ chap target set secret=[<secret>] [initiator=<initiatorname>]
 chap target remember secret=[<secret>] initiator=<initiatorname>
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **发起方集**
 
@@ -281,7 +275,7 @@ chap target remember secret=[<secret>] initiator=<initiatorname>
 
 指定要与机密关联的发起方 iSCSI 名称。 如果在目标上设置机密，并将其留出，则这是可选的，它指示该机密将用于还没有关联密钥的所有发起程序。
 
-### <a name="BKMK_6"></a>创建
+### <a name="create"></a><a name=BKMK_6></a>创建
 
 在当前选定的子系统上创建新的 LUN 或 iSCSI 目标，或在当前选定的目标上创建目标门户组。 您可以使用**DiskRAID list**命令查看实际绑定。
 
@@ -311,7 +305,7 @@ create tpgroup [noerr]
 
 创建具有奇偶校验的带区 LUN。
 
-**mirror**
+**制作**
 
 创建镜像 LUN。
 
@@ -353,7 +347,7 @@ create tpgroup [noerr]
 
 在当前选定的子系统上创建新的 iSCSI 目标。
 
-**名称**
+**name**
 
 提供目标的友好名称。
 
@@ -374,7 +368,7 @@ create tpgroup [noerr]
 -   必须指定**size**= 或**驱动器**= 参数。 它们也可以一起使用。
 -   LUN 的条带大小在创建后无法更改。
 
-### <a name="BKMK_7"></a>delete
+### <a name="delete"></a><a name=BKMK_7></a>delete
 
 删除当前所选的 LUN、iSCSI 目标（只要没有与 iSCSI 目标关联的 Lun）或 iSCSI 目标门户组。
 
@@ -386,7 +380,7 @@ delete target [noerr]
 delete tpgroup [noerr]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **lun**
 
@@ -408,7 +402,7 @@ delete tpgroup [noerr]
 
 指定将忽略在执行此操作时出现的任何失败。 这在脚本模式下非常有用。
 
-### <a name="BKMK_8"></a>仔细
+### <a name="detail"></a><a name=BKMK_8></a>仔细
 
 显示有关指定类型的当前所选对象的详细信息。
 
@@ -418,7 +412,7 @@ delete tpgroup [noerr]
 Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup} [verbose]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **hbaport**
 
@@ -432,11 +426,11 @@ Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 列出有关当前所选 iSCSI 发起程序门户的详细信息。
 
-**provider**
+**程序**
 
 列出有关当前所选提供程序的详细信息。
 
-**subsystem**
+**适用**
 
 列出有关当前所选子系统的详细信息。
 
@@ -448,7 +442,7 @@ Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 列出有关当前所选控制器端口的详细信息。
 
-**drive**
+**光驱**
 
 列出有关当前所选驱动器的详细信息，包括占用的 Lun。
 
@@ -472,7 +466,7 @@ Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 仅与 LUN 参数一起使用。 列出附加信息，包括其 plex。
 
-### <a name="BKMK_9"></a>取消
+### <a name="dissociate"></a><a name=BKMK_9></a>取消
 
 为当前所选 LUN （其他控制器端口不受影响）将指定的控制器端口列表设置为非活动状态，或将当前所选 LUN 的 iSCSI 目标的指定列表取消。
 
@@ -525,7 +519,7 @@ Controller port associations changed.
 (Controller ports active after this command: Ctlr 0 Port 1)
 ```
 
-### <a name="BKMK_10"></a>离开
+### <a name="exit"></a><a name=BKMK_10></a>离开
 
 退出 DiskRAID。
 
@@ -535,7 +529,7 @@ Controller port associations changed.
 exit
 ```
 
-### <a name="BKMK_11"></a>扩展
+### <a name="extend"></a><a name=BKMK_11></a>扩展
 
 通过将扇区添加到 LUN 的末尾来扩展当前选定的 LUN。 并非所有提供程序都支持扩展 Lun。 不扩展 LUN 上包含的任何卷或文件系统。 扩展 LUN 后，应使用**DiskPart 扩展**命令扩展关联的磁盘上结构。
 
@@ -545,7 +539,7 @@ exit
 extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noerr]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **大小 =**
 
@@ -571,7 +565,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 必须指定*大小*或 \<驱动器 > 参数。 它们也可以一起使用。
 
-### <a name="BKMK_12"></a>flushcache
+### <a name="flushcache"></a><a name=BKMK_12></a>flushcache
 
 清除当前所选控制器上的缓存。
 
@@ -581,7 +575,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 flushcache controller
 ```
 
-### <a name="BKMK_13"></a>帮助
+### <a name="help"></a><a name=BKMK_13></a>帮助
 
 显示所有 DiskRAID 命令的列表。
 
@@ -591,7 +585,7 @@ flushcache controller
 help
 ```
 
-### <a name="BKMK_14"></a>importtarget
+### <a name="importtarget"></a><a name=BKMK_14></a>importtarget
 
 检索或设置当前所选子系统的当前卷影复制服务（VSS）导入目标。
 
@@ -607,7 +601,7 @@ importtarget subsystem [set target]
 
 如果已指定，则将当前选定的目标设置为当前所选子系统的 VSS 导入目标。 如果未指定，则该命令将检索为当前所选子系统设置的当前 VSS 导入目标。
 
-### <a name="BKMK_15"></a>初始
+### <a name="initiator"></a><a name=BKMK_15></a>初始
 
 检索有关本地 iSCSI 发起程序的信息。
 
@@ -617,7 +611,7 @@ importtarget subsystem [set target]
 initiator
 ```
 
-### <a name="BKMK_16"></a>invalidatecache
+### <a name="invalidatecache"></a><a name=BKMK_16></a>invalidatecache
 
 使当前选定的控制器上的缓存失效。
 
@@ -627,7 +621,7 @@ initiator
 invalidatecache controller
 ```
 
-### <a name="BKMK_18"></a>lbpolicy
+### <a name="lbpolicy"></a><a name=BKMK_18></a>lbpolicy
 
 设置当前所选 LUN 上的负载平衡策略。
 
@@ -638,7 +632,7 @@ lbpolicy set lun type=<type> [paths=<path>-{primary | <weight>}[,<path>-{primary
 lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[,…]]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **type**
 
@@ -662,7 +656,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 
 指定路径是**主**路径还是具有特定的 \<权重 >。 未指定的任何路径将隐式设置为备份。 列出的任何路径都必须是当前选定的 LUN 路径之一。
 
-### <a name="BKMK_19"></a>成员列表
+### <a name="list"></a><a name=BKMK_19></a>成员列表
 
 显示指定类型的对象的列表。
 
@@ -672,7 +666,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 List {hbaports | iadapters | iportals | providers | subsystems | controllers | ports | drives | LUNs | tportals | targets | tpgroups}
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **hbaports**
 
@@ -722,7 +716,7 @@ List {hbaports | iadapters | iportals | providers | subsystems | controllers | p
 
 列出有关当前所选目标中所有 iSCSI 目标门户组的摘要信息。 当前选定的门户组标有星号（*）。
 
-### <a name="BKMK_20"></a>id
+### <a name="login"></a><a name=BKMK_20></a>id
 
 将指定的 iSCSI 发起程序适配器记录到当前选定的 iSCSI 目标。
 
@@ -732,7 +726,7 @@ List {hbaports | iadapters | iportals | providers | subsystems | controllers | p
 login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none | oneway | mutual}] [iportal=<iportal>] [tportal=<tportal>] [<flag> [<flag> […]]]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **type**
 
@@ -768,7 +762,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 **EDD**：启用数据摘要
 
-### <a name="BKMK_21"></a>注销
+### <a name="logout"></a><a name=BKMK_21></a>注销
 
 将指定的 iSCSI 发起程序适配器记录在当前选定的 iSCSI 目标外。
 
@@ -778,13 +772,13 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 logout target iadapter= <iadapter>
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **iadapter**
 
 指定发起程序适配器以及要从中注销的登录会话。
 
-### <a name="BKMK_22"></a>维护
+### <a name="maintenance"></a><a name=BKMK_22></a>维护
 
 对指定类型的当前选定对象执行维护操作。
 
@@ -794,7 +788,7 @@ logout target iadapter= <iadapter>
 maintenance <object operation> [count=<iteration>]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 \<对象 >
 
@@ -808,7 +802,7 @@ maintenance <object operation> [count=<iteration>]
 
 指定*操作*的重复次数。 通常使用**闪烁**、**嘟嘟声**或**ping**来使用。
 
-### <a name="BKMK_23"></a>路径名
+### <a name="name"></a><a name=BKMK_23></a>路径名
 
 将当前所选子系统、LUN 或 iSCSI 目标的友好名称设置为指定名称。
 
@@ -824,7 +818,7 @@ name {subsystem | lun | target} [<name>]
 
 指定子系统、LUN 或目标的名称。 名称的长度必须小于64个字符。 如果未提供任何名称，则会删除现有名称（如果有）。
 
-### <a name="BKMK_24"></a>断开
+### <a name="offline"></a><a name=BKMK_24></a>断开
 
 将指定类型的当前选定对象的状态设置为**脱机**。
 
@@ -842,7 +836,7 @@ offline <object>
 
 类型可以是**子系统**、**控制器**、**驱动器**、 **LUN**或**门户**。
 
-### <a name="BKMK_25"></a>联机
+### <a name="online"></a><a name=BKMK_25></a>联机
 
 将指定类型的选定对象的状态设置为 "**联机**"。 如果对象为**hbaport**，则将当前所选 HBA 端口的路径状态更改为 "**联机**"。
 
@@ -860,7 +854,7 @@ online <object>
 
 类型可以是**hbaport**、**子系统**、**控制器**、**驱动器**、 **LUN**或**门户**。
 
-### <a name="BKMK_26"></a>恢复
+### <a name="recover"></a><a name=BKMK_26></a>恢复
 
 执行必要的操作，如重新同步或热备用，以修复当前选定的容错 LUN。 例如，RECOVER 可能导致热备用绑定到磁盘或其他磁盘区重新分配的 RAID 集。
 
@@ -870,7 +864,7 @@ online <object>
 recover <lun>
 ```
 
-### <a name="BKMK_27"></a>reenumerate
+### <a name="reenumerate"></a><a name=BKMK_27></a>reenumerate
 
 指定类型的 Reenumerates 对象。 如果使用 "扩展 LUN" 命令，则在使用 reenumerate 命令之前，必须使用 refresh 命令更新磁盘大小。
 
@@ -880,7 +874,7 @@ recover <lun>
 reenumerate {subsystems | drives}
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **子系统**
 
@@ -890,7 +884,7 @@ reenumerate {subsystems | drives}
 
 查询内部 i/o 总线，以发现当前所选子系统中添加的任何新驱动器。
 
-### <a name="BKMK_28"></a>刷新
+### <a name="refresh"></a><a name=BKMK_28></a>刷新
 
 刷新当前所选提供程序的内部数据。
 
@@ -900,7 +894,7 @@ reenumerate {subsystems | drives}
 refresh provider
 ```
 
-### <a name="BKMK_29"></a>剩余
+### <a name="rem"></a><a name=BKMK_29></a>剩余
 
 用于注释脚本。
 
@@ -910,7 +904,7 @@ refresh provider
 Rem <comment>
 ```
 
-### <a name="BKMK_30"></a>取消
+### <a name="remove"></a><a name=BKMK_30></a>取消
 
 从当前所选的目标门户组中删除指定的 iSCSI 目标门户。
 
@@ -930,7 +924,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 指定应忽略在执行此操作时出现的任何失败。 这在脚本模式下非常有用。
 
-### <a name="BKMK_31"></a>全部
+### <a name="replace"></a><a name=BKMK_31></a>全部
 
 将指定的驱动器替换为当前选定的驱动器。
 
@@ -950,7 +944,7 @@ replace drive=<drive_number>
 
 -   指定的驱动器可能不是当前所选驱动器。
 
-### <a name="BKMK_32"></a>&
+### <a name="reset"></a><a name=BKMK_32></a>&
 
 重置当前选定的控制器或端口。
 
@@ -960,7 +954,7 @@ replace drive=<drive_number>
 Reset {controller | port}
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **控制器**
 
@@ -970,7 +964,7 @@ Reset {controller | port}
 
 重置端口。
 
-### <a name="BKMK_33"></a>单击
+### <a name="select"></a><a name=BKMK_33></a>单击
 
 显示或更改当前选定的对象。
 
@@ -980,9 +974,9 @@ Reset {controller | port}
 Select {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup } [<n>]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
-**object**
+**对象**
 
 指定要选择的对象的类型。 > 类型的 \<对象可以是**提供程序**、**子系统**、**控制器**、**驱动器**或**LUN**。
 
@@ -1038,7 +1032,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 指定 > 选择 \<对象号。 如果指定的 <object number> 无效，则会清除指定类型的对象的任何现有选择。 如果未指定 <object number>，则显示当前的对象。
 
-### <a name="BKMK_34"></a>setflag
+### <a name="setflag"></a><a name=BKMK_34></a>setflag
 
 将当前所选驱动器设置为热备用。
 
@@ -1048,7 +1042,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 setflag drive hotspare={true | false}
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **true**
 
@@ -1062,7 +1056,7 @@ setflag drive hotspare={true | false}
 
 不能将热备用用于普通 LUN 绑定操作。 它们仅用于错误处理。 驱动器当前不得绑定到任何现有的 LUN。
 
-### <a name="BKMK_shrink"></a>收缩
+### <a name="shrink"></a><a name=BKMK_shrink></a>收缩
 
 减小所选 LUN 的大小。
 
@@ -1072,7 +1066,7 @@ setflag drive hotspare={true | false}
 shrink lun size=<n> [noerr]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **大小 =**
 
@@ -1082,7 +1076,7 @@ shrink lun size=<n> [noerr]
 
 指定将忽略在执行此操作时出现的任何失败。 这在脚本模式下非常有用。
 
-### <a name="BKMK_35"></a>转入
+### <a name="standby"></a><a name=BKMK_35></a>转入
 
 将当前所选主机总线适配器（HBA）端口的路径状态更改为 "备用"。
 
@@ -1092,13 +1086,13 @@ shrink lun size=<n> [noerr]
 standby hbaport
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **hbaport**
 
 将当前所选主机总线适配器（HBA）端口的路径状态更改为 "备用"。
 
-### <a name="BKMK_36"></a>取消屏蔽
+### <a name="unmask"></a><a name=BKMK_36></a>取消屏蔽
 
 使当前选定的 Lun 可从指定的主机访问。
 
@@ -1108,7 +1102,7 @@ standby hbaport
 unmask LUN {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [;…]] | [add] initiator=<initiator>[;<initiator>[;…]]} [uninstall]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **一切**
 
@@ -1150,14 +1144,14 @@ diskraid /s <script.txt>
 
 ### <a name="diskraid-error-codes"></a>DiskRAID 错误代码
 
-|错误代码|错误描述|
+|错误代码|错误说明|
 |----------|-----------------|
-|0|未发生错误。 整个脚本运行失败。|
-|1|出现严重异常。|
+|0|未发生错误。 成功运行整个脚本。|
+|1|出现异常情况。|
 |2|在 DiskRAID 命令行上指定的参数不正确。|
 |3|DiskRAID 无法打开指定的脚本或输出文件。|
 |4|某个 DiskRAID 使用的服务返回了故障。|
-|5|出现命令语法错误。 由于对象选择不正确或与该命令一起使用，该脚本失败。|
+|5|出现一个命令语法错误。 脚本失败，因为不正确地选择了对象或对象不能与此命令一起使用。|
 
 ## <a name="example-interactively-view-status-of-subsystem"></a>示例：以交互方式查看子系统的状态
 

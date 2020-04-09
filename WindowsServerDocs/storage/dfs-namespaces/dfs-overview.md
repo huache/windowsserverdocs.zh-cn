@@ -2,18 +2,18 @@
 title: DFS 命名空间概述
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: daveba
+manager: daveba
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: 本主题介绍 DFS 命名空间，这是 Windows Server 中的一个角色服务，可用于将不同服务器上的共享文件夹组合到一个或多个逻辑结构的命名空间中。
-ms.openlocfilehash: f4ff1bc394ddb57a290e5ffab1a89f596fc48d05
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 07f6ac857164257810b297f9e2b83db4e4bd42be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949728"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858980"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 命名空间概述
 
@@ -26,8 +26,8 @@ DFS 命名空间是 Windows Server 中的一种角色服务，支持你将位于
 以下说明了 DFS 命名空间的组成元素：
 
 - **命名空间服务器** - 命名空间服务器承载命名空间。 命名空间服务器可以是成员服务器或域控制器。
-- **命名空间根路径** - 命名空间根路径是命名空间的起点。 在上图中，根的名称为 Public，命名空间路径 \\\\Contoso\\Public。 此类型命名空间是基于域的命名空间，因为它以域名开头（例如 Contoso），并且其元数据存储在 Active Directory 域服务 (AD DS) 中。 尽管上图显示了单个命名空间服务器，但是基于域的命名空间可以存放在多个命名空间服务器上，以提高命名空间的可用性。
-- **文件夹** - 没有文件夹目标的文件夹将结构和层次结构添加到命名空间，具有文件夹目标的文件夹为用户提供实际内容。 用户浏览命名空间中具有文件夹目标的文件夹时，客户端计算机将收到将客户端计算机透明地重定向到一个文件夹目标的引荐。
+- **命名空间根路径** - 命名空间根路径是命名空间的起点。 在上图中，根的名称为 Public，命名空间路径 \\\\Contoso\\Public。 此类型命名空间是基于域的命名空间，因为它以域名开头（例如 Contoso），并且其元数据存储在 Active Directory 域服务 (AD DS) 中。 尽管上图中显示单个命名空间服务器，但是基于域的命名空间可以存放在多个命名空间服务器上，以提高命名空间的可用性。
+- **文件夹** - 没有文件夹目标的文件夹将结构和层次结构添加到命名空间，具有文件夹目标的文件夹为用户提供实际内容。 用户浏览命名空间中包含文件夹目标的文件夹时，客户端计算机将收到透明地将客户端计算机重定向到一个文件夹目标的引用。
 - **文件夹目标** - 文件夹目标是共享文件夹或与命名空间中的某个文件夹关联的另一个命名空间的 UNC 路径。 文件夹目标是存储数据和内容的位置。 在上图中，名为 Tools 的文件夹包含两个文件夹目标，一个位于伦敦，一个位于纽约，名为 Training Guides 的文件夹包含一个文件夹目标，位于纽约。 浏览 \\\\Contoso\\公共\\软件\\工具的用户以透明方式重定向到共享文件夹 \\\\LDN-SVR\\工具或 \\\\\\工具，具体取决于用户当前所在的站点。
 
 本主题讨论如何安装 DFS、新增功能，以及在哪里可以找到评估和部署信息。
@@ -38,14 +38,14 @@ DFS 命名空间是 Windows Server 中的一种角色服务，支持你将位于
 
 运行 DFS 管理或使用 DFS 命名空间没有其他硬件或软件要求。
 
-命名空间服务器是承载命名空间的域控制器或成员服务器。 服务器上可以承载的命名空间数量取决于命名空间服务器上运行的操作系统。
+命名空间服务器是承载命名空间的域控制器或成员服务器。 可以在服务器上承载的命名空间数由命名空间服务器上运行的操作系统决定。
 
 除了单个独立命名空间之外，运行下列操作系统的服务器还可以承载多个基于域的命名空间。 
 
-- Windows Server Standard 2012 R2
-- WIN ENT LTSB 2016 Finnish 64 Bits
+- Windows Server 2019
+- Windows Server 2016
 - Windows Server 2012 R2
-- Windows Server 2012
+- Windows Server 2012
 - Windows Server 2008 R2 Datacenter 和 Enterprise Edition
 - Windows Server（半年频道）
 
@@ -53,21 +53,21 @@ DFS 命名空间是 Windows Server 中的一种角色服务，支持你将位于
 
 - Windows Server 2008 R2 Standard
 
-下表描述了在选择要承载命名空间的服务器时需要考虑的其他因素。
+下表说明在选择承载命名空间的服务器时要考虑的其他因素。
 
 | 承载独立命名空间的服务器 | 承载基于域的命名空间的服务器 |
 | ---                                   |        ---                                |
-| 必须包含一个 NTFS 卷以承载命名空间。|必须包含一个 NTFS 卷以承载命名空间。 |
-| 可以是成员服务器或域控制器。|必须是命名空间配置时所在域中的成员服务器或域控制器。 （此要求适用于每个承载既定基于域的命名空间的命名空间服务器。） |
-| 可以通过故障转移群集承载以提高命名空间的可用性。|命名空间不得为故障转移群集中的群集资源。 但是，如果将命名空间配置为仅使用充当故障转移群集中节点的服务器上的本地资源，则可以在该服务器上定位命名空间。 |
+| 必须包含承载命名空间的 NTFS 卷。|必须包含承载命名空间的 NTFS 卷。 |
+| 可以是成员服务器或域控制器。|必须是配置了命名空间的域中的成员服务器或域控制器。 （此要求适用于承载给定的基于域的命名空间的每个命名空间服务器。） |
+| 可以通过故障转移群集承载以提高命名空间的可用性。|命名空间不能是故障转移群集中的群集资源。 但是，如果将命名空间配置为仅使用充当故障转移群集中节点的服务器上的本地资源，则可以在该服务器上定位命名空间。 |
 
 ## <a name="installing-dfs-namespaces"></a>安装 DFS 命名空间
 
-DFS 命名空间和 DFS 复制是文件和存储服务角色中的一部分。 DFS 的管理工具（DFS 管理、适用于 Windows PowerShell 的 DFS 命名空间模块及命令行工具）分别安装为远程服务器管理工具的一部分。
+DFS 命名空间和 DFS 复制是文件和存储服务角色中的一部分。 DFS 的管理工具（DFS 管理、Windows PowerShell 的 DFS 命名空间模块及命令行工具）分别安装为远程服务器管理工具的一部分。
 
 使用[Windows 管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)、服务器管理器或 POWERSHELL 安装 DFS 命名空间，如下一节中所述。
 
-### <a name="to-install-dfs-by-using-server-manager"></a>使用服务器管理器安装 DFS
+### <a name="to-install-dfs-by-using-server-manager"></a>使用服务器管理器安装 DFS 的步骤
 
 1. 打开服务器管理器，单击 **“管理”** ，然后单击 **“添加角色和功能”** 。 将出现“添加角色和功能向导”。
 
@@ -77,13 +77,13 @@ DFS 命名空间和 DFS 复制是文件和存储服务角色中的一部分。 D
 
     - 若要安装 DFS 命名空间服务，请在**服务角色**页上选择 **DFS 命名空间**。
 
-    - 若要只安装 DFS 管理工具，在**功能**页上，请依次展开**远程服务器管理工具**、**角色管理工具**、**文件服务工具**，然后选择 **DFS 管理工具**。
+    - 若只安装 DFS 管理工具，请在 **“功能”** 页上，展开 **“远程服务器管理工具”** 、 **“角色管理工具”** 、 **“文件服务工具”** ，然后选择 **“DFS 管理工具”** 。
 
-         **DFS 管理工具**会安装 DFS 管理管理单元、适用于 Windows PowerShell 的 DFS 命名空间模块和命令行工具，但不会在服务器上安装任何 DFS 服务。
+         **“DFS 管理工具”** 安装 DFS 管理管理单元、Windows PowerShell 的 DFS 命名空间模块和命令行工具，但它不在服务器上安装任何 DFS 服务。
 
-### <a name="to-install-dfs-by-using-windows-powershell"></a>使用 Windows PowerShell 安装 DFS
+### <a name="to-install-dfs-by-using-windows-powershell"></a>使用 Windows PowerShell 安装 DFS 的步骤
 
-使用提升的用户权限打开 Windows PowerShell 会话，然后键入以下命令，其中 < 名称\> 是你要安装的角色服务或功能（请参阅下表了解相关角色服务或功能名称的列表）：
+使用提升的用户权限打开 Windows PowerShell 会话，然后键入以下命令，其中 <name\> 是你想要安装的角色服务或功能（请参阅下表获取一列相关角色服务或功能名称）：
 
 ```PowerShell
 Install-WindowsFeature <name>
@@ -120,7 +120,7 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 有关其他相关信息，请参阅以下资源。
 
-| 内容类型        | 引用 |
+| 内容类型        | 参考 |
 | ------------------  | ----------------|
 | **产品评估** | [Windows Server 中 DFS 命名空间和 DFS 复制的新增功能](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
 | **部署**    | [DFS 命名空间可伸缩性注意事项](https://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |

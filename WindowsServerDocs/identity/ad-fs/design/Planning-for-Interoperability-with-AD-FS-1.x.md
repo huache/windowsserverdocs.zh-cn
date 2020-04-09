@@ -1,7 +1,6 @@
 ---
 ms.assetid: 04b63d9f-e924-4146-9b1d-785ed8b4239c
 title: 规划与 AD FS 1.x 的互操作性
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e9f72bd83c90a804749329521a72e3232589c735
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a0bbf64a7bf110e3d73084dd047c84b2b83be8d9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407967"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858610"
 ---
 # <a name="planning-for-interoperability-with-ad-fs-1x"></a>规划与 AD FS 1.x 的互操作性
 
-Active Directory 联合身份验证服务 \(AD FS\) 运行 Windows Server®2012的联合服务器可以1.0 与随 Windows Server 2003 R2 AD FS \(\) 联合身份验证服务 AD FS \(\) 联合身份验证服务和 windows server 2008 或 Windows Server 2008 R2 安装的1.1 互操作。 支持以下任何互操作性组合：  
+Active Directory 联合身份验证服务 \(AD FS\) 运行 Windows Server&reg; 2012 的联合服务器可以1.0 与随 Windows Server 2003 R2 AD FS \(\) 联合身份验证服务 AD FS \(\) 联合身份验证服务和 windows server 2008 或 Windows Server 2008 R2 安装的1.1 互操作。 支持以下任何互操作性组合：  
 
 -   任何 AD FS 1。*x*联合身份验证服务可以发送可由 Windows Server 2012 中的 AD FS 联合身份验证服务使用的声明。 有关详细信息，请参阅[清单：将 AD FS 配置为使用 AD FS 1.x 中的声明](../../ad-fs/deployment/Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md)。  
 

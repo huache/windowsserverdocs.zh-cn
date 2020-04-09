@@ -1,32 +1,28 @@
 ---
 title: 打印命令参考
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 88d8fa87-6fa8-4774-9294-080b0157ea8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73850c35b6f228c49496a2bb4505fe8203cb52ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 009400fd2afe1e1e5cea6baa9abec1b89b59df7f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372169"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837380"
 ---
 # <a name="print-command-reference"></a>打印命令参考
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 下面是打印命令行工具的列表。
 
-|                         Command                          |                                                                描述                                                                 |
+|                         Command                          |                                                                说明                                                                 |
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 |                       [lpq](lpq.md)                       |                           显示运行 Line printer Daemon （LPD）的计算机上打印队列的状态。                            |
 |                      [lpr](lpr.md)                       |      将文件发送到运行行打印机后台程序（LPD）服务的计算机或打印机共享设备，以便为打印做准备。       |

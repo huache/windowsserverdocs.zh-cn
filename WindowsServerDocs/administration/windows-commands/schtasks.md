@@ -1,24 +1,20 @@
 ---
 title: schtasks
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2e713203-3dd8-491b-b9e1-9423618dc7e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8029bff5907c044e51b0a371265c3bde452e1366
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d4c28072a8e4d01ea3a045314796bcda32c8a59
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371271"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835240"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -51,7 +47,7 @@ ms.locfileid: "71371271"
   ```  
   你无法恢复损坏的任务。 若要还原系统的任务计划功能，请使用**schtasks.exe**或**计划任务**从系统中删除任务并重新计划。
 
-## <a name="BKMK_create"></a>schtasks 创建
+## <a name="schtasks-create"></a><a name=BKMK_create></a>schtasks 创建
 
 计划任务。
 
@@ -76,7 +72,7 @@ ms.locfileid: "71371271"
 -   [计划运行多个程序的任务](#BKMK_multi_progs)
 -   [计划在远程计算机上运行的任务](#BKMK_remote)
 
-### <a name="BKMK_syntax"></a>组合语法和参数说明
+### <a name="combined-syntax-and-parameter-descriptions"></a><a name=BKMK_syntax></a>组合语法和参数说明
 
 #### <a name="syntax"></a>语法
 
@@ -84,13 +80,13 @@ ms.locfileid: "71371271"
 schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]] [/ru {[<Domain>\]<User> | System}] [/rp <Password>] [/mo <Modifier>] [/d <Day>[,<Day>...] | *] [/m <Month>[,<Month>...]] [/i <IdleTime>] [/st <StartTime>] [/ri <Interval>] [{/et <EndTime> | /du <Duration>} [/k]] [/sd <StartDate>] [/ed <EndDate>] [/it] [/z] [/f]
 ```
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 ##### <a name="sc-scheduletype"></a>/sc \<ScheduleType >
 
 指定计划类型。 有效值为分钟、每小时、每天、每周、每月、一次、ONSTART、ONLOGON、ONIDLE。
 
-|计划类型|描述|
+|计划类型|说明|
 |-------------|-----------|
 |分钟、每小时、每日、每周、每月|指定计划的时间单位。|
 |曾经|任务在指定的日期和时间运行一次。|
@@ -129,10 +125,10 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 用指定用户帐户的权限运行任务。 默认情况下，任务使用本地计算机的当前用户的权限运行，或使用 **/u**参数指定的用户的权限（如果包括在内）来运行。 在本地或远程计算机上计划任务时， **/ru**参数是有效的。
 
 
-|       值        |                                                    描述                                                    |
+|       值        |                                                    说明                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------|
 | [\<域 >\]<User> |                                       指定另一个用户帐户。                                        |
-|    系统或 ""    | 指定本地系统帐户，该帐户是操作系统和系统服务使用的一个高特权帐户。 |
+|    系统或     | 指定本地系统帐户，该帐户是操作系统和系统服务使用的一个高特权帐户。 |
 
 ##### <a name="rp-password"></a>/rp \<密码 >
 
@@ -144,11 +140,11 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 
 指定任务在其计划类型中的运行频率。 对于每分钟、每小时、每日、每周和每月计划，此参数均有效，但可选。 默认值为 1。
 
-|计划类型|修饰符值|描述|
+|计划类型|修饰符值|说明|
 |-------------|---------------|-----------|
 |分钟|1 - 1439|任务每 \<N > 分钟运行一次。|
 |工资|1 - 23|任务每 \<N > 小时运行一次。|
-|日历|1 - 365|任务每 \<N > 天运行一次。|
+|DAILY|1 - 365|任务每 \<N > 天运行一次。|
 |两|1 - 52|任务每 \<N > 周运行一次。|
 |曾经|无修饰符。|任务运行一次。|
 |ONSTART|无修饰符。|任务在启动时运行。|
@@ -163,11 +159,11 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 指定一周中的某一天（或几天）或一个月中的一天（或几天）。 仅对每周或每月计划有效。
 
 
-| 计划类型 |              修饰符              |     Day 值（/d）      |                                                                                                 描述                                                                                                 |
+| 计划类型 |              修饰符              |     Day 值（/d）      |                                                                                                 说明                                                                                                 |
 |---------------|------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    两     |               1 - 52               | 周一至周日 [，周一至周日 ...] |                                                                                                     \*                                                                                                      |
 |    每月    | 第一个、第二个、第三个、第四个、最后一个 |        周一至周日         |                                                                                   对于特定周计划是必需的。                                                                                    |
-|    每月    |          无或 {1-12}          |          1 - 31          | 可选且仅在不使用修饰符（ **/mo**）参数（特定日期计划）时或在 **/mo**为 1-12 （"每个 \<N > 个月" 计划）时有效。 默认值为 day 1 （每月的第一天）。 |
+|    每月    |          无或 {1-12}          |          1 - 31          | 可选且仅在不使用修饰符（ **/mo**）参数（特定日期计划）时，或在 **/mo**为 1-12 （每个 \<N > 月计划）时有效。 默认值为 day 1 （每月的第一天）。 |
 
 ##### <a name="m-monthmonth"></a>/m Month [，Month ...]
 
@@ -190,21 +186,21 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 指定每分钟或每小时任务计划以 \<HH： MM > 24 小时格式结束的时间。 在指定的结束时间之后， **schtasks**不会再次启动任务，直到开始时间重复。 默认情况下，任务计划没有结束时间。 此参数是可选的，仅在每分钟或每小时计划时有效。
 
 有关示例，请参阅：
--   "计划在非工作时间运行每100分钟一次的任务" 的计划**任务，** 该任务将每 \<N >**分钟**部分运行一次。
+-   若要计划每隔100分钟在非工作时间运行的任务，请**计划每**\<N >**分钟**部分运行的任务。
 
 ##### <a name="du-duration"></a>/du \<持续时间 >
 
 指定 \<HHHH： MM > 24 小时格式的分钟或小时计划的最大时间长度。 经过指定的时间后， **schtasks**将不会重新启动任务，直到开始时间重复。 默认情况下，任务计划没有最大持续时间。 此参数是可选的，仅在每分钟或每小时计划时有效。
 
 有关示例，请参阅：
--   "计划每隔3小时运行一次的任务一次，用于**计划每**\<N >**小时**" 部分运行的任务。
+-   若要计划每3小时运行一次的任务，以便**计划每**\<N >**小时**部分运行的任务。
 
 ##### <a name="k"></a>遇到
 
 停止任务在 **/et**或 **/du**指定的时间运行的程序。 如果不使用 **/k**，则**schtasks**在到达由 **/et**或 **/du**指定的时间后不会重新启动该程序，但如果程序仍在运行，则它不会停止它。 此参数是可选的，仅在每分钟或每小时计划时有效。
 
 有关示例，请参阅：
--   "计划在非工作时间运行每100分钟一次的任务" 的计划**任务，** 该任务将每 \<N >**分钟**部分运行一次。
+-   若要计划每隔100分钟在非工作时间运行的任务，请**计划每**\<N >**分钟**部分运行的任务。
 
 ##### <a name="sd-startdate"></a>/sd \<开始 >
 
@@ -215,7 +211,7 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 下表列出了有效的日期格式。 使用与在本地计算机上的 **"控制面板**" 中 "**区域和语言选项**" 中**选择的格式**最相似的格式。
 
 
-|       值       |                                        描述                                         |
+|       值       |                                        说明                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM >/<DD>/<YYYY> | 用于月份优先格式，例如**英语（美国）** 和**西班牙语（巴拿马）** 。 |
 | \<DD >/<MM>/<YYYY> |       用于第一天的格式，如**保加利亚语**和**荷兰语（荷兰）** 。        |
@@ -223,14 +219,14 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 
 /ed \<结束 >
 
-指定计划的结束日期。 该参数为可选参数。 它在一次、ONSTART、ONLOGON 或 ONIDLE 计划中无效。 默认情况下，计划无结束日期。
+指定计划的结束日期。 此参数可选。 它在一次、ONSTART、ONLOGON 或 ONIDLE 计划中无效。 默认情况下，计划无结束日期。
 
 *结束*日期的格式因 "**控制面板**" 的 "**区域和语言选项**" 中为本地计算机选择的区域设置而异。 每个区域设置只有一种格式有效。
 
 下表列出了有效的日期格式。 使用与在本地计算机上的 **"控制面板**" 中 "**区域和语言选项**" 中**选择的格式**最相似的格式。
 
 
-|       值       |                                        描述                                         |
+|       值       |                                        说明                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM >/<DD>/<YYYY> | 用于月份优先格式，例如**英语（美国）** 和**西班牙语（巴拿马）** 。 |
 | \<DD >/<MM>/<YYYY> |       用于第一天的格式，如**保加利亚语**和**荷兰语（荷兰）** 。        |
@@ -238,13 +234,13 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 
 ##### <a name="it"></a>/it
 
-指定仅当 "运行身份" 用户（运行任务的用户帐户）登录到计算机时才运行任务。 此参数对以系统权限运行的任务不起作用。
+指定仅当运行方式用户（运行任务的用户帐户）登录到计算机时才运行该任务。 此参数对以系统权限运行的任务不起作用。
 
-默认情况下，当计划任务或使用 **/u**参数指定的帐户时，"运行身份" 用户为本地计算机的当前用户（如果使用）。 但是，如果该命令包含 **/ru**参数，则 "运行身份" 用户是由 **/ru**参数指定的帐户。
+默认情况下，"运行方式用户" 是计划任务时本地计算机的当前用户，如果使用了一个，则为 " **/u** " 参数指定的帐户。 但是，如果该命令包含 **/ru**参数，则 "以用户身份运行" 是由 **/ru**参数指定的帐户。
 
 有关示例，请参阅：
--   "如果我登录"，则计划**70 每隔***一天***运行一**次的任务 "计划任务"。
--   **若要计划使用不同权限运行的任务，** 请在中的 "仅在特定用户登录时运行任务" 一节。
+-   若要计划每隔*N* **天** **运行的任务**，请计划每70天运行一次的任务。
+-   如果为，则仅在特定用户登录时运行任务 **，才能计划使用不同权限部分运行的任务**。
 
 ##### <a name="z"></a>/z
 
@@ -258,7 +254,7 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 
 在命令提示符下显示帮助。
 
-### <a name="BKMK_minutes"></a>计划每 N 分钟运行一次的任务
+### <a name="to-schedule-a-task-that-runs-every-n-minutes"></a><a name=BKMK_minutes></a>计划每 N 分钟运行一次的任务
 
 #### <a name="minute-schedule-syntax"></a>分钟计划语法
 
@@ -278,17 +274,17 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc minute [/mo {1 - 1439}] [/st <
 
 由于该命令不包含开始日期或时间，因此该任务将在该命令完成20分钟后开始运行，每隔20分钟运行一次。 请注意，安全脚本源文件位于远程计算机上，但该任务已计划并在本地计算机上执行。
 ```
-schtasks /create /sc minute /mo 20 /tn "Security Script" /tr \\central\data\scripts\sec.vbs
+schtasks /create /sc minute /mo 20 /tn Security Script /tr \\central\data\scripts\sec.vbs
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-100-minutes-during-non-business-hours"></a>计划在非工作时间运行每100分钟一次的任务
 
 下面的命令将计划在本地计算机上运行的安全脚本（Sec），每隔100分钟在 5:00 P.M. 运行一次。 到上午7:59 每天。 该命令使用 **/sc**参数来指定分钟计划，并使用 **/mo**参数指定时间间隔100分钟。 它使用 **/st**和 **/et**参数指定每日计划的开始时间和结束时间。 如果脚本仍在凌晨7:59 运行，它还会使用 **/k**参数停止该脚本。 如果没有 **/k**，则**schtasks**将不会在 7:59 a.m. 之后启动脚本，而是在上午6:20 启动的实例。 仍在运行，它不会将其停止。
 ```
-schtasks /create /tn "Security Script" /tr sec.vbs /sc minute /mo 100 /st 17:00 /et 08:00 /k
+schtasks /create /tn Security Script /tr sec.vbs /sc minute /mo 100 /st 17:00 /et 08:00 /k
 ```
 
-### <a name="BKMK_hours"></a>计划每 N 小时运行一次的任务
+### <a name="to-schedule-a-task-that-runs-every-n-hours"></a><a name=BKMK_hours></a>计划每 N 小时运行一次的任务
 
 #### <a name="hourly-schedule-syntax"></a>每小时计划语法
 
@@ -308,14 +304,14 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc hourly [/mo {1 - 23}] [/st <HH
 
 因为本地计算机设置为在 **"控制面板**" 的 "**区域和语言选项**" 中使用 "**英语（津巴布韦）** " 选项，所以开始日期的格式为 MM/DD/YYYY （03/01/2002）。
 ```
-schtasks /create /sc hourly /mo 5 /sd 03/01/2002 /tn "My App" /tr c:\apps\myapp.exe
+schtasks /create /sc hourly /mo 5 /sd 03/01/2002 /tn My App /tr c:\apps\myapp.exe
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-hour-at-five-minutes-past-the-hour"></a>计划任务，该任务每小时运行一次，持续时间为5分钟
 
 以下命令将 MyApp 程序计划为从午夜晚五分钟开始每小时运行一次。 由于省略了 **/mo**参数，因此该命令使用每小时计划的默认值，即每（1）小时。 如果此命令在 12:05 A.M. 之后运行，则在第二天之前，程序将不会运行。
 ```
-schtasks /create /sc hourly /st 00:05 /tn "My App" /tr c:\apps\myapp.exe
+schtasks /create /sc hourly /st 00:05 /tn My App /tr c:\apps\myapp.exe
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-3-hours-for-10-hours"></a>计划每隔3小时运行一次的任务10小时
@@ -324,11 +320,11 @@ schtasks /create /sc hourly /st 00:05 /tn "My App" /tr c:\apps\myapp.exe
 
 该命令使用 **/sc**参数来指定每小时计划，并使用 **/mo**参数指定3小时的间隔。 它使用 **/st**参数在午夜启动计划，并使用 **/du**参数结束10小时后的重复周期。 由于程序只运行几分钟，因此不需要使用 **/k**参数（如果该程序在持续时间到期时仍在运行）。
 ```
-schtasks /create /tn "My App" /tr myapp.exe /sc hourly /mo 3 /st 00:00 /du 0010:00
+schtasks /create /tn My App /tr myapp.exe /sc hourly /mo 3 /st 00:00 /du 0010:00
 ```
 在此示例中，任务在凌晨12:00、3:00 A.M.、6:00 A.M 和凌晨9:00 运行。 由于持续时间为10小时，因此该任务不会在下午12:00 再次运行。 相反，它将在凌晨12:00 重新开始。 第二天。
 
-### <a name="BKMK_days"></a>计划每 N 天运行的任务
+### <a name="to-schedule-a-task-that-runs-every-n-days"></a><a name=BKMK_days></a>计划每 N 天运行的任务
 
 #### <a name="daily-schedule-syntax"></a>每日计划语法
 
@@ -348,7 +344,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc daily [/mo {1 - 365}] [/st <HH
 
 在此示例中，因为本地计算机系统在 **"控制面板**" 的 "**区域和语言选项**" 中设置为 "**英语（英国）** " 选项，所以结束日期的格式为 DD/MM/YYYY （31/12/2002）
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /st 08:00 /ed 31/12/2002
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc daily /st 08:00 /ed 31/12/2002
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-12-days"></a>计划每12天运行一次的任务
@@ -357,20 +353,20 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /st 08:00 /ed 31/1
 
 在此示例中，由于 "**控制面板**" 的 "**区域和语言选项**" 中的 "系统" 设置为 "**英语（津巴布韦）** " 选项，因此结束日期的格式为 MM/DD/YYYY （12/31/2002）
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /mo 12 /sd 12/31/2002 /st 13:00
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc daily /mo 12 /sd 12/31/2002 /st 13:00
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-70-days-if-i-am-logged-on"></a>计划每隔70天运行的任务（如果我登录）
 
 以下命令计划每70天运行一次安全脚本（Sec）。 该命令使用 **/mo**参数指定70天的间隔。 它还使用 **/it**参数来指定仅在其帐户运行任务的用户登录到计算机时任务才运行。 由于任务将以用户帐户的权限运行，因此该任务仅在我登录时才会运行。
 ```
-schtasks /create /tn "Security Script" /tr sec.vbs /sc daily /mo 70 /it
+schtasks /create /tn Security Script /tr sec.vbs /sc daily /mo 70 /it
 ```
 
 > [!NOTE]
 > 若要使用仅交互（ **/it**）属性标识任务，请使用详细查询 **（/query/v**）。 在带有 **/it**的任务的详细查询显示中，"**登录模式**" 字段的值仅为 "**交互式**"。
 
-### <a name="BKMK_weeks"></a>计划每 N 周运行的任务
+### <a name="to-schedule-a-task-that-runs-every-n-weeks"></a><a name=BKMK_weeks></a>计划每 N 周运行的任务
 
 #### <a name="weekly-schedule-syntax"></a>每周计划语法
 
@@ -394,17 +390,17 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/mo {1 - 52}] [/d {<MO
 
 此外，由于命令以远程方式运行，因此命令中的所有路径（包括 MyApp 的路径）都指远程计算机上的路径。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 6 /s Server16 /u Admin01
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /mo 6 /s Server16 /u Admin01
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-other-week-on-friday"></a>计划每隔一周在星期五运行的任务
 
 以下命令将任务计划为每隔一个星期五运行一次。 它使用 **/mo**参数指定两周的时间间隔，并使用 **/d**参数指定一周中的某一天。 若要计划每个星期五运行的任务，请省略 **/mo**参数或将其设置为1。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 2 /d FRI
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /mo 2 /d FRI
 ```
 
-### <a name="BKMK_months"></a>计划每 N 个月运行一次的任务
+### <a name="to-schedule-a-task-that-runs-every-n-months"></a><a name=BKMK_months></a>计划每 N 个月运行一次的任务
 
 #### <a name="syntax"></a>语法
 
@@ -422,14 +418,14 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly [/mo {1 - 12}] [/d {1 
 
 以下命令将 MyApp 程序计划为在每月的第一天运行。 由于值1是 **/mo** （修饰符）参数和 **/d** （day）参数的默认值，因此从命令中省略这些参数。
 ```
-schtasks /create /tn "My App" /tr myapp.exe /sc monthly
+schtasks /create /tn My App /tr myapp.exe /sc monthly
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-three-months"></a>计划每三个月运行一次的任务
 
 以下命令将 MyApp 程序计划为每三个月运行一次。 它使用 **/mo**参数来指定间隔。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo 3
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 3
 ```
 
 #### <a name="to-schedule-a-task-that-runs-at-midnight-on-the-21st-day-of-every-other-month"></a>计划在每隔一个月21天的午夜运行的任务
@@ -438,10 +434,10 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo 3
 
 该命令使用 **/mo**参数指定每月间隔（每两个月），指定日期指定为 **/d**参数，并使用 **/st**指定时间。 它还使用 **/sd**和 **/ed**参数分别指定开始日期和结束日期。 由于 "**控制面板**" 的 "**区域和语言选项**" 中的 "本地计算机" 设置为 "**英语（南非）** " 选项，因此将以本地格式（YYYY/MM/DD）来指定日期。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 00:00 /sd 2002/07/01 /ed 2003/06/30 
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 00:00 /sd 2002/07/01 /ed 2003/06/30 
 ```
 
-### <a name="BKMK_spec_day"></a>计划任务在一周的特定天运行
+### <a name="to-schedule-a-task-that-runs-on-a-specific-day-of-the-week"></a><a name=BKMK_spec_day></a>计划任务在一周的特定天运行
 
 #### <a name="weekly-schedule-syntax"></a>每周计划语法
 
@@ -451,7 +447,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/d {<MON - SUN>[,MON -
 
 #### <a name="remarks"></a>备注
 
-"一周的某一日" 计划是每周计划的一种变化形式。 在每周计划中， **/sc 每周**参数是必需的。 **/Mo** （修饰符）参数是可选的，它指定每次运行任务之间的周数。 **/Mo**的默认值为1（每周）。 **/D**参数是可选的，它将任务计划为在一周的指定日子运行，或在所有日期（\*）上运行。 默认值为 "周一（星期一）"。 "每天" 选项（ **/d \*** ）等效于计划每日任务。
+周计划中的日期是每周计划的变体。 在每周计划中， **/sc 每周**参数是必需的。 **/Mo** （修饰符）参数是可选的，它指定每次运行任务之间的周数。 **/Mo**的默认值为1（每周）。 **/D**参数是可选的，它将任务计划为在一周的指定日子运行，或在所有日期（\*）上运行。 默认值为 "周一（星期一）"。 "每天" 选项（ **/d \*** ）等效于计划每日任务。
 
 #### <a name="examples"></a>示例
 
@@ -459,17 +455,17 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/d {<MON - SUN>[,MON -
 
 以下命令将 MyApp 程序计划为每周在星期三运行。 该命令使用 **/d**参数指定一周中的某一天。 因为该命令省略了 **/mo**参数，所以任务每周运行一次。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /d WED
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /d WED
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-eight-weeks-on-monday-and-friday"></a>计划在星期一和星期五每八周运行一次的任务
 
 下面的命令将任务计划为在每八周的星期一和星期五运行。 它使用 **/d**参数指定天，使用 **/mo**参数指定八周间隔。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 8 /d MON,FRI
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /mo 8 /d MON,FRI
 ```
 
-### <a name="BKMK_spec_week"></a>计划任务在月份的特定周运行
+### <a name="to-schedule-a-task-that-runs-on-a-specific-week-of-the-month"></a><a name=BKMK_spec_week></a>计划任务在月份的特定周运行
 
 #### <a name="specific-week-syntax"></a>特定周语法
 
@@ -487,17 +483,17 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | 
 
 以下命令将 MyApp 程序计划为在每月的第二个星期日运行。 它使用 **/mo**参数来指定每月的第二周，并使用 **/d**参数来指定日期。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo SECOND /d SUN
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo SECOND /d SUN
 ```
 
 #### <a name="to-schedule-a-task-for-the-first-monday-in-march-and-september"></a>为三月和九月的第一个星期一计划任务
 
 以下命令计划 MyApp 程序在3月和9月的第一个星期一运行。 它使用 **/mo**参数指定月份的第一周，并使用 **/d**参数来指定日期。 它使用 **/m**参数指定月份，并用逗号分隔月份参数。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo FIRST /d MON /m MAR,SEP
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo FIRST /d MON /m MAR,SEP
 ```
 
-### <a name="BKMK_spec_date"></a>计划每月特定日期运行的任务
+### <a name="to-schedule-a-task-that-runs-on-a-specific-date-each-month"></a><a name=BKMK_spec_date></a>计划每月特定日期运行的任务
 
 #### <a name="specific-date-syntax"></a>特定日期语法
 
@@ -517,17 +513,17 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /d {1 - 31} [/m {JAN -
 
 以下命令将 MyApp 程序计划为在每月的第一天运行。 由于默认修饰符为 none （无修饰符），因此默认日期为第1天，默认月份为每月，该命令不需要任何其他参数。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly
 ```
 
 #### <a name="to-schedule-a-task-for-the-15th-days-of-may-and-june"></a>计划任务在5月15日
 
 以下命令将 MyApp 程序计划为在5月15日和6月15日下午3:00 运行。 （15:00）。 它使用 **/m**参数指定日期，使用 **/m**参数指定月份。 它还使用 **/st**参数指定开始时间。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d 15 /m MAY,JUN /st 15:00
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /d 15 /m MAY,JUN /st 15:00
 ```
 
-### <a name="BKMK_last_day"></a>计划任务在一个月的最后一天运行
+### <a name="to-schedule-a-task-that-runs-on-the-last-day-of-a-month"></a><a name=BKMK_last_day></a>计划任务在一个月的最后一天运行
 
 #### <a name="last-day-syntax"></a>最后一天的语法
 
@@ -545,17 +541,17 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo LASTDAY /m {JAN - 
 
 以下命令将 MyApp 程序计划为在每月的最后一天运行。 它使用 **/mo**参数指定最后一天，使用通配符（*）指定 **/m**参数，以指示该程序每月运行一次。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo lastday /m *
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo lastday /m *
 ```
 
 #### <a name="to-schedule-a-task-at-600-pm-on-the-last-days-of-february-and-march"></a>在下午6:00 计划任务 在二月份和三月的最后一天
 
 以下命令计划 MyApp 程序在二月份的最后一天运行，在3月的最后一天的下午6:00 运行。 它使用 **/mo**参数指定上一天，使用 **/m**参数指定月份，使用 **/st**参数指定开始时间。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo lastday /m FEB,MAR /st 18:00
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo lastday /m FEB,MAR /st 18:00
 ```
 
-### <a name="BKMK_once"></a>计划运行一次的任务
+### <a name="to-schedule-a-task-that-runs-once"></a><a name=BKMK_once></a>计划运行一次的任务
 
 #### <a name="syntax"></a>语法
 
@@ -577,10 +573,10 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc once /st <HH:MM> [/sd <StartDa
 
 因为本地计算机使用 "**控制面板**" 的 "**区域和语言选项**" 中的 "**英语（美国）** " 选项，所以开始日期的格式为 MM/DD/YYYY。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc once /sd 01/01/2003 /st 00:00
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc once /sd 01/01/2003 /st 00:00
 ```
 
-### <a name="BKMK_startup"></a>计划每次系统启动时运行的任务
+### <a name="to-schedule-a-task-that-runs-every-time-the-system-starts"></a><a name=BKMK_startup></a>计划每次系统启动时运行的任务
 
 #### <a name="syntax"></a>语法
 
@@ -600,10 +596,10 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc onstart [/sd <StartDate>] [/it
 
 因为本地计算机使用 "**控制面板**" 的 "**区域和语言选项**" 中的 "**英语（美国）** " 选项，所以开始日期的格式为 MM/DD/YYYY。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onstart /sd 03/15/2001
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc onstart /sd 03/15/2001
 ```
 
-### <a name="BKMK_logon"></a>计划在用户登录时运行的任务
+### <a name="to-schedule-a-task-that-runs-when-a-user-logs-on"></a><a name=BKMK_logon></a>计划在用户登录时运行的任务
 
 #### <a name="syntax"></a>语法
 
@@ -613,7 +609,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc onlogon [/sd <StartDate>] [/it
 
 #### <a name="remarks"></a>备注
 
-"登录时" 计划类型计划在任何用户登录到计算机时运行的任务。 在 "登录时" 计划类型中， **/sc onlogon**参数是必需的。 **/Sd** （开始日期）参数是可选的，默认值为当前日期。
+登录计划类型计划在任何用户登录到计算机时运行的任务。 在 "登录时计划" 类型中， **/sc onlogon**参数是必需的。 **/Sd** （开始日期）参数是可选的，默认值为当前日期。
 
 #### <a name="examples"></a>示例
 
@@ -621,10 +617,10 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc onlogon [/sd <StartDate>] [/it
 
 以下命令计划每次用户（任何用户）登录到远程计算机时运行的批处理文件。 它使用 **/s**参数来指定远程计算机。 因为该命令是远程的，所以该命令中的所有路径（包括批处理文件的路径）都是指远程计算机上的路径。
 ```
-schtasks /create /tn "Start Web Site" /tr c:\myiis\webstart.bat /sc onlogon /s Server23
+schtasks /create /tn Start Web Site /tr c:\myiis\webstart.bat /sc onlogon /s Server23
 ```
 
-### <a name="BKMK_idle"></a>计划在系统空闲时运行的任务
+### <a name="to-schedule-a-task-that-runs-when-the-system-is-idle"></a><a name=BKMK_idle></a>计划在系统空闲时运行的任务
 
 #### <a name="syntax"></a>语法
 
@@ -634,7 +630,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc onidle /i {1 - 999} [/sd <Star
 
 #### <a name="remarks"></a>备注
 
-"空闲时" 计划类型计划在 **/i**参数指定的时间内没有用户活动时运行的任务。 在 "空闲时" 计划类型中， **/sc onidle**参数和 **/i**参数是必需的。 **/Sd** （开始日期）是可选的，默认值为当前日期。
+空闲计划类型计划在 **/i**参数指定的时间内没有用户活动时运行的任务。 在 "空闲时计划" 类型中， **/sc onidle**参数和 **/i**参数是必需的。 **/Sd** （开始日期）是可选的，默认值为当前日期。
 
 #### <a name="examples"></a>示例
 
@@ -642,12 +638,12 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc onidle /i {1 - 999} [/sd <Star
 
 以下命令计划 MyApp 程序在计算机空闲时运行。 它使用所需的 **/i**参数指定计算机必须在任务开始之前十分钟处于空闲状态。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onidle /i 10
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc onidle /i 10
 ```
 
-### <a name="BKMK_now"></a>计划立即运行的任务
+### <a name="to-schedule-a-task-that-runs-now"></a><a name=BKMK_now></a>计划立即运行的任务
 
-**Schtasks**没有 "立即运行" 选项，但你可以通过创建运行一次并在几分钟内启动的任务来模拟该选项。
+**Schtasks**没有立即运行选项，但你可以通过创建一次运行一次并在几分钟内启动的任务来模拟该选项。
 
 #### <a name="syntax"></a>语法
 
@@ -663,10 +659,10 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc once [/st <HH:MM>] /sd <MM/DD/
 
 因为本地计算机使用 "**控制面板**" 的 "**区域和语言选项**" 中的 "**英语（美国）** " 选项，所以开始日期的格式为 MM/DD/YYYY。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc once /st 14:18 /sd 11/13/2002
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc once /st 14:18 /sd 11/13/2002
 ```
 
-### <a name="BKMK_diff_perms"></a>计划使用不同权限运行的任务
+### <a name="to-schedule-a-task-that-runs-with-different-permissions"></a><a name=BKMK_diff_perms></a>计划使用不同权限运行的任务
 
 你可以将所有类型的任务计划为在本地计算机和远程计算机上以备用帐户的权限运行。 除了特定计划类型所需的参数外， **/ru**参数是必需的，并且 **/rp**参数是可选的。
 
@@ -676,12 +672,12 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc once /st 14:18 /sd 11/13
 
 以下命令计划 MyApp 程序在本地计算机上运行。 它使用 **/ru**指定该任务应以用户的管理员帐户（Admin06）的权限运行。 在此示例中，任务计划每周二运行一次，但你可以将任何计划类型用于具有替代权限的任务运行。
 ```
-schtasks /create /tn "My App" /tr myapp.exe /sc weekly /d TUE /ru Admin06
+schtasks /create /tn My App /tr myapp.exe /sc weekly /d TUE /ru Admin06
 ```
 在响应中， **schtasks.exe**会提示输入 Admin06 帐户的 "运行身份" 密码，然后显示一条成功消息。
 ```
 Please enter the run as password for Admin06: ********
-SUCCESS: The scheduled task "My App" has successfully been created.
+SUCCESS: The scheduled task My App has successfully been created.
 ```
 
 #### <a name="to-run-a-task-with-alternate-permissions-on-a-remote-computer"></a>在远程计算机上使用替代权限运行任务
@@ -692,7 +688,7 @@ SUCCESS: The scheduled task "My App" has successfully been created.
 
 该命令使用 **/s**参数提供远程计算机的名称，使用 **/u**参数来指定有权在远程计算机上计划任务的帐户（营销计算机上的 Admin01）。 它还使用 **/ru**参数来指定任务应以用户的非管理员帐户（Reskits 域中的 User01）的权限运行。 如果没有 **/ru**参数，任务将使用 **/u**所指定帐户的权限运行。
 ```
-schtasks /create /tn "My App" /tr myapp.exe /sc daily /mo 4 /s Marketing /u Marketing\Admin01 /ru Reskits\User01
+schtasks /create /tn My App /tr myapp.exe /sc daily /mo 4 /s Marketing /u Marketing\Admin01 /ru Reskits\User01
 ```
 **Schtasks**首先请求由 **/u**参数命名的用户的密码（运行该命令），然后请求由 **/ru**参数命名的用户的密码（以运行该任务）。 对密码进行身份验证后， **schtasks**会显示一条消息，指示已计划任务。
 ```
@@ -700,7 +696,7 @@ Type the password for Marketing\Admin01:********
 
 Please enter the run as password for Reskits\User01: ********
 
-SUCCESS: The scheduled task "My App" has successfully been created.
+SUCCESS: The scheduled task My App has successfully been created.
 ```
 
 #### <a name="to-run-a-task-only-when-a-particular-user-is-logged-on"></a>仅在特定用户登录时才运行任务
@@ -711,14 +707,14 @@ SUCCESS: The scheduled task "My App" has successfully been created.
 
 该命令使用 **/s**参数提供远程计算机的名称，使用 **/u**参数来指定有权在远程计算机上计划任务的帐户。 它还使用 **/ru**参数将任务配置为使用公共计算机的管理员的权限（Public\Admin01）和 **/it**参数来运行，以指示仅当 Public\Admin01 帐户登录时任务才运行。
 ```
-schtasks /create /tn "Check Admin" /tr AdminCheck.exe /sc weekly /d FRI /st 04:00 /s Public /u Domain3\Admin06 /ru Public\Admin01 /it
+schtasks /create /tn Check Admin /tr AdminCheck.exe /sc weekly /d FRI /st 04:00 /s Public /u Domain3\Admin06 /ru Public\Admin01 /it
 ```
 **注意**
 -   若要使用仅交互（ **/it**）属性标识任务，请使用详细查询 **（/query/v**）。 在带有 **/it**的任务的详细查询显示中，"**登录模式**" 字段的值仅为 "**交互式**"。
 
-### <a name="BKMK_sys_perms"></a>计划以系统权限运行的任务
+### <a name="to-schedule-a-task-that-runs-with-system-permissions"></a><a name=BKMK_sys_perms></a>计划以系统权限运行的任务
 
-所有类型的任务都可以使用系统帐户在本地和远程计算机上的权限运行。 除特定计划类型所需的参数外， **/ru 系统**（或 **/ru ""** ）参数是必需的，并且 **/rp**参数无效。
+所有类型的任务都可以使用系统帐户在本地和远程计算机上的权限运行。 除了特定计划类型所需的参数外， **/ru 系统**（或 * */ru * *）参数是必需的，并且 **/rp**参数无效。
 
 **重要须知**
 -   系统帐户没有交互式登录权限。 用户无法通过系统权限查看或与程序或任务交互。
@@ -736,12 +732,12 @@ schtasks /create /tn "Check Admin" /tr AdminCheck.exe /sc weekly /d FRI /st 04:0
 
 该命令使用 **/Ru 系统**参数指定系统安全上下文。 因为系统任务不使用密码，所以省略了 **/rp**参数。
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d 15 /ru System
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /d 15 /ru System
 ```
 在响应中， **schtasks.exe**显示信息性消息和成功消息。 它不会提示输入密码。
 ```
-INFO: The task will be created under user name ("NT AUTHORITY\SYSTEM").
-SUCCESS: The Scheduled task "My App" has successfully been created.
+INFO: The task will be created under user name (NT AUTHORITY\SYSTEM).
+SUCCESS: The Scheduled task My App has successfully been created.
 ```
 
 #### <a name="to-run-a-task-with-system-permissions-on-a-remote-computer"></a>在远程计算机上运行具有系统权限的任务
@@ -752,18 +748,18 @@ SUCCESS: The Scheduled task "My App" has successfully been created.
 
 该命令使用 **/s**参数提供远程计算机的名称，使用 **/u**参数来指定有权在远程计算机上计划任务的帐户。 它还使用 **/ru**参数来指定任务应在系统帐户下运行。 如果没有 **/ru**参数，任务将使用 **/u**所指定帐户的权限运行。
 ```
-schtasks /create /tn "My App" /tr myapp.exe /sc daily /st 04:00 /s Finance01 /u Admin01 /ru System
+schtasks /create /tn My App /tr myapp.exe /sc daily /st 04:00 /s Finance01 /u Admin01 /ru System
 ```
 **Schtasks**请求由 **/u**参数命名的用户的密码，并且在对密码进行身份验证后，将显示一条消息，指示已创建该任务，并且它将以系统帐户的权限运行。
 ```
 Type the password for Admin01:**********
 
-INFO: The Schedule Task "My App" will be created under user name ("NT AUTHORITY\
-SYSTEM").
-SUCCESS: The scheduled task "My App" has successfully been created.
+INFO: The Schedule Task My App will be created under user name (NT AUTHORITY\
+SYSTEM).
+SUCCESS: The scheduled task My App has successfully been created.
 ```
 
-### <a name="BKMK_multi_progs"></a>计划运行多个程序的任务
+### <a name="to-schedule-a-task-that-runs-more-than-one-program"></a><a name=BKMK_multi_progs></a>计划运行多个程序的任务
 
 每个任务仅运行一个程序。 但是，您可以创建运行多个程序的批处理文件，然后计划运行该批处理文件的任务。 下面的过程演示了此方法：
 1. 创建一个批处理文件，用于启动要运行的程序。
@@ -784,7 +780,7 @@ SUCCESS: The scheduled task "My App" has successfully been created.
    ```  
    此命令的结果是，每当用户登录到计算机时，此任务都会启动事件查看器和系统监视器。
 
-### <a name="BKMK_remote"></a>计划在远程计算机上运行的任务
+### <a name="to-schedule-a-task-that-runs-on-a-remote-computer"></a><a name=BKMK_remote></a>计划在远程计算机上运行的任务
 
 若要计划在远程计算机上运行的任务，必须将任务添加到远程计算机的计划中。 可以在远程计算机上计划所有类型的任务，但必须满足以下条件。
 -   您必须具有计划任务的权限。 因此，你必须使用作为远程计算机上 Administrators 组的成员的帐户登录到本地计算机，或者必须使用 **/u**参数来提供远程计算机的管理员的凭据。
@@ -799,7 +795,7 @@ SUCCESS: The scheduled task "My App" has successfully been created.
 
 请注意，在远程计算机上计划任务时，所有参数都是指远程计算机。 因此， **/tr**参数指定的可执行文件是指远程计算机上 MyApp 的副本。
 ```
-schtasks /create /s SRV01 /tn "My App" /tr "c:\program files\corpapps\myapp.exe" /sc daily /mo 10
+schtasks /create /s SRV01 /tn My App /tr c:\program files\corpapps\myapp.exe /sc daily /mo 10
 ```
 作为响应，" **schtasks** " 会显示一条成功消息，指示已计划任务。
 
@@ -807,7 +803,7 @@ schtasks /create /s SRV01 /tn "My App" /tr "c:\program files\corpapps\myapp.exe"
 
 以下命令计划 MyApp 程序每隔三小时在 SR-SRV06 远程计算机上运行。 由于需要管理员权限来计划任务，因此该命令使用 **/u**和 **/p**参数提供用户的管理员帐户（Reskits 域中的 Admin01）的凭据。 默认情况下，这些权限也用于运行任务。 但是，因为该任务不需要管理员权限来运行，所以该命令包括 **/u**和 **/rp**参数以替代默认值，并以用户在远程计算机上的非管理员帐户的权限运行该任务。
 ```
-schtasks /create /s SRV06 /tn "My App" /tr "c:\program files\corpapps\myapp.exe" /sc hourly /mo 3 /u reskits\admin01 /p R43253@4$ /ru SRV06\user03 /rp MyFav!!Pswd
+schtasks /create /s SRV06 /tn My App /tr c:\program files\corpapps\myapp.exe /sc hourly /mo 3 /u reskits\admin01 /p R43253@4$ /ru SRV06\user03 /rp MyFav!!Pswd
 ```
 作为响应，" **schtasks** " 会显示一条成功消息，指示已计划任务。
 
@@ -815,15 +811,15 @@ schtasks /create /s SRV06 /tn "My App" /tr "c:\program files\corpapps\myapp.exe"
 
 以下命令将 MyApp 程序计划为在每月最后一天的 SRV02 远程计算机上运行。 由于本地当前用户（user03）不是远程计算机的管理员，因此该命令使用 **/u**参数提供用户的管理员帐户（Admin01 在 Reskits 域中）的凭据。 管理员帐户权限将用于计划任务和运行任务。
 ```
-schtasks /create /s SRV02 /tn "My App" /tr "c:\program files\corpapps\myapp.exe" /sc monthly /mo LASTDAY /m * /u reskits\admin01
+schtasks /create /s SRV02 /tn My App /tr c:\program files\corpapps\myapp.exe /sc monthly /mo LASTDAY /m * /u reskits\admin01
 ```
 由于该命令不包含 **/p** （password）参数，因此**schtasks**会提示输入密码。 然后，将显示一条成功消息，在本例中为警告。
 ```
 Type the password for reskits\admin01:********
 
-SUCCESS: The scheduled task "My App" has successfully been created.
+SUCCESS: The scheduled task My App has successfully been created.
 
-WARNING: The Scheduled task "My App" has been created, but may not run because
+WARNING: The Scheduled task My App has been created, but may not run because
 the account information could not be set.
 ```
 此警告表示远程域无法对 **/u**参数指定的帐户进行身份验证。 在这种情况下，远程域无法对用户帐户进行身份验证，因为本地计算机不是远程计算机域所信任的域的成员。 出现这种情况时，任务作业将显示在计划任务的列表中，但该任务实际上是空的，将不会运行。
@@ -877,7 +873,7 @@ Power Management: Disabled
 -   每个任务仅运行一个程序。 不过，您可以创建一个批处理文件来启动多个任务，然后计划一个运行该批处理文件的任务。
 -   您可以在创建任务后立即对其进行测试。 使用**运行**操作来测试任务，然后检查 SchedLgU 文件（*SystemRoot*\SchedLgU.txt）是否存在错误。
 
-## <a name="BKMK_change"></a>schtasks 更改
+## <a name="schtasks-change"></a><a name=BKMK_change></a>schtasks 更改
 
 更改任务的以下一个或多个属性。
 -   任务运行的程序（ **/tr**）。
@@ -891,9 +887,9 @@ Power Management: Disabled
 schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]] [/ru {[<Domain>\]<User> | System}] [/rp <Password>] [/tr <TaskRun>] [/st <StartTime>] [/ri <Interval>] [{/et <EndTime> | /du <Duration>} [/k]] [/sd <StartDate>] [/ed <EndDate>] [/{ENABLE | DISABLE}] [/it] [/z]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|          术语           |                                                                                                                                                                                                                                                                                                                                     定义                                                                                                                                                                                                                                                                                                                                      |
+|          术语           |                                                                                                                                                                                                                                                                                                                                     Definition                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /tn \<TaskName >     |                                                                                                                                                                                                                                                                                                               标识要更改的任务。 输入任务名称。                                                                                                                                                                                                                                                                                                               |
 |     /s \<计算机 >      |                                                                                                                                                                                                                                                                               指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认值为本地计算机。                                                                                                                                                                                                                                                                               |
@@ -911,7 +907,7 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 |     /ed \<结束 >      |                                                                                                                                                                                                                                                                                                 指定任务应在其上运行的最后日期。 格式为 MM/DD/YYYY。                                                                                                                                                                                                                                                                                                  |
 |         /ENABLE         |                                                                                                                                                                                                                                                                                                                       指定启用计划任务。                                                                                                                                                                                                                                                                                                                       |
 |        /DISABLE         |                                                                                                                                                                                                                                                                                                                      指定禁用计划任务。                                                                                                                                                                                                                                                                                                                       |
-|           /it           | 指定仅当 "运行身份" 用户（运行任务的用户帐户）登录到计算机时才运行计划的任务。</br>此参数不会影响使用系统权限运行的任务，也不会影响已设置交互的属性的任务。 不能使用 change 命令从任务中删除仅交互属性。</br>默认情况下，当计划任务或使用 **/u**参数指定的帐户时，"运行身份" 用户为本地计算机的当前用户（如果使用）。 但是，如果该命令包含 **/ru**参数，则 "运行身份" 用户是由 **/ru**参数指定的帐户。 |
+|           /it           | 指定仅当运行方式用户（运行任务的用户帐户）登录到计算机时才运行计划的任务。</br>此参数不会影响使用系统权限运行的任务，也不会影响已设置交互的属性的任务。 不能使用 change 命令从任务中删除仅交互属性。</br>默认情况下，"运行方式用户" 是计划任务时本地计算机的当前用户，如果使用了一个，则为 " **/u** " 参数指定的帐户。 但是，如果该命令包含 **/ru**参数，则 "以用户身份运行" 是由 **/ru**参数指定的帐户。 |
 |           /z            |                                                                                                                                                                                                                                                                                                          指定在其计划完成后删除任务。                                                                                                                                                                                                                                                                                                          |
 |           /?            |                                                                                                                                                                                                                                                                                                                        在命令提示符下显示帮助。                                                                                                                                                                                                                                                                                                                         |
 
@@ -930,11 +926,11 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 
 以下命令将病毒检查任务运行的程序从 VirusCheck 更改为 VirusCheck2。 此命令使用 **/tn**参数来标识任务，使用 **/tr**参数为任务指定新程序。 （不能更改任务名称。）
 ```
-schtasks /change /tn "Virus Check" /tr C:\VirusCheck2.exe
+schtasks /change /tn Virus Check /tr C:\VirusCheck2.exe
 ```
 在响应中， **schtasks.exe**显示以下成功消息：
 ```
-SUCCESS: The parameters of the scheduled task "Virus Check" have been changed.
+SUCCESS: The parameters of the scheduled task Virus Check have been changed.
 ```
 此命令的结果是，病毒检查任务现在运行 VirusCheck2。
 
@@ -948,7 +944,7 @@ schtasks /change /tn RemindMe /s Svr01 /rp p@ssWord3
 ```
 在响应中， **schtasks.exe**显示以下成功消息：
 ```
-SUCCESS: The parameters of the scheduled task "RemindMe" have been changed.
+SUCCESS: The parameters of the scheduled task RemindMe have been changed.
 ```
 此命令的结果是，RemindMe 任务现在在其原始用户帐户下运行，但使用新密码。
 
@@ -960,7 +956,7 @@ SUCCESS: The parameters of the scheduled task "RemindMe" have been changed.
 
 省略了用于提供用户帐户密码的 **/ru**和 **/rp**参数。 您必须提供帐户的密码，但您可以使用 **/ru**和 **/rp**参数并以明文形式键入密码，或者等待**schtasks.exe**提示您输入密码，然后在 "模糊文本" 中输入密码。
 ```
-schtasks /change /tn ChkNews /tr "c:\program files\Internet Explorer\iexplore.exe" /ru DomainX\Admin01
+schtasks /change /tn ChkNews /tr c:\program files\Internet Explorer\iexplore.exe /ru DomainX\Admin01
 ```
 在响应中， **schtasks.exe**请求用户帐户的密码。 它会遮盖您键入的文本，因此密码不可见。
 ```
@@ -970,26 +966,26 @@ Please enter the password for DomainX\Admin01:
 
 在响应中， **schtasks.exe**显示以下成功消息：
 ```
-SUCCESS: The parameters of the scheduled task "ChkNews" have been changed.
+SUCCESS: The parameters of the scheduled task ChkNews have been changed.
 ```
 此命令的结果是，ChkNews 任务现在使用管理员帐户的权限运行 Internet Explorer。
 
 ### <a name="to-change-a-program-to-the-system-account"></a>将程序更改为系统帐户
 
-以下命令将更改 SecurityScript 任务，使其以系统帐户的权限运行。 它使用 **/ru ""** 参数来指示系统帐户。
+以下命令将更改 SecurityScript 任务，使其以系统帐户的权限运行。 它使用 * */ru * * 参数来指示系统帐户。
 ```
-schtasks /change /tn SecurityScript /ru ""
+schtasks /change /tn SecurityScript /ru 
 ```
 在响应中， **schtasks.exe**显示以下成功消息：
 ```
-INFO: The run as user name for the scheduled task "SecurityScript" will be changed to "NT AUTHORITY\SYSTEM".
-SUCCESS: The parameters of the scheduled task "SecurityScript" have been changed.
+INFO: The run as user name for the scheduled task SecurityScript will be changed to NT AUTHORITY\SYSTEM.
+SUCCESS: The parameters of the scheduled task SecurityScript have been changed.
 ```
 由于使用系统帐户权限运行的任务不需要密码，因此**schtasks.exe**不会提示输入密码。
 
 ### <a name="to-run-a-program-only-when-i-am-logged-on"></a>仅在登录时运行程序
 
-以下命令将仅交互属性添加到 MyApp，即现有任务。 此属性可确保任务仅在 "运行身份" 用户（即运行任务的用户帐户）登录到计算机时运行。
+以下命令将仅交互属性添加到 MyApp，即现有任务。 此属性可确保任务仅在运行方式用户（即运行任务的用户帐户）登录到计算机时运行。
 
 该命令使用 **/tn**参数来标识该任务，并使用 **/it**参数将仅交互属性添加到任务。 由于任务已经用用户帐户的权限运行，因此我不需要更改任务的 **/ru**参数。
 ```
@@ -997,10 +993,10 @@ schtasks /change /tn MyApp /it
 ```
 在响应中， **schtasks.exe**显示以下成功消息。
 ```
-SUCCESS: The parameters of the scheduled task "MyApp" have been changed.
+SUCCESS: The parameters of the scheduled task MyApp have been changed.
 ```
 
-## <a name="BKMK_run"></a>schtasks 运行
+## <a name="schtasks-run"></a><a name=BKMK_run></a>schtasks 运行
 
 立即启动计划任务。 **运行**操作将忽略计划，但使用任务中保存的程序文件位置、用户帐户和密码来立即运行任务。
 
@@ -1010,9 +1006,9 @@ SUCCESS: The parameters of the scheduled task "MyApp" have been changed.
 schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|         术语          |                                                                                                                                                                 定义                                                                                                                                                                  |
+|         术语          |                                                                                                                                                                 Definition                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /tn \<TaskName >    |                                                                                                                                                       必需。 标识任务。                                                                                                                                                        |
 |    /s \<计算机 >     |                                                                                                           指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认值为本地计算机。                                                                                                           |
@@ -1030,13 +1026,13 @@ schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 ### <a name="to-run-a-task-on-the-local-computer"></a>在本地计算机上运行任务
 
-下面的命令启动 "安全脚本" 任务。
+下面的命令启动安全脚本任务。
 ```
-schtasks /run /tn "Security Script"
+schtasks /run /tn Security Script
 ```
 作为响应， **schtasks.exe**启动与任务相关联的脚本并显示以下消息：
 ```
-SUCCESS: Attempted to run the scheduled task "Security Script".
+SUCCESS: Attempted to run the scheduled task Security Script.
 ```
 正如消息中所示， **schtasks**尝试启动程序，但它不能完全启动程序。
 
@@ -1048,11 +1044,11 @@ schtasks /run /tn Update /s Svr01
 ```
 在这种情况下， **schtasks.exe**显示以下错误消息：
 ```
-ERROR: Unable to run the scheduled task "Update".
+ERROR: Unable to run the scheduled task Update.
 ```
 若要找出错误的原因，请查看 Svr01 上的计划任务事务日志 C:\Windows\SchedLgU.txt。 在这种情况下，日志中会出现以下条目：
 ```
-"Update.job" (update.exe) 3/26/2001 1:15:46 PM ** ERROR **
+Update.job (update.exe) 3/26/2001 1:15:46 PM ** ERROR **
 The attempt to log on to the account associated with the task failed, therefore, the task did not run.
 The specific error is:
 0x8007052e: Logon failure: unknown user name or bad password.
@@ -1064,11 +1060,11 @@ schtasks /change /tn Update /s Svr01 /ru Administrator /rp PassW@rd3
 ```
 **更改**命令完成后，将重复**运行**命令。 此时，update.exe 程序启动，而**schtasks.exe**将显示以下消息：
 ```
-SUCCESS: Attempted to run the scheduled task "Update".
+SUCCESS: Attempted to run the scheduled task Update.
 ```
 正如消息中所示， **schtasks**尝试启动程序，但它不能完全启动程序。
 
-## <a name="BKMK_end"></a>schtasks 结束
+## <a name="schtasks-end"></a><a name=BKMK_end></a>schtasks 结束
 
 停止任务启动的程序。
 
@@ -1078,9 +1074,9 @@ SUCCESS: Attempted to run the scheduled task "Update".
 schtasks /end /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|         术语          |                                                                                                                                                               定义                                                                                                                                                                |
+|         术语          |                                                                                                                                                               Definition                                                                                                                                                                |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /tn \<TaskName >    |                                                                                                                                         必需。 标识启动程序的任务。                                                                                                                                         |
 |    /s \<计算机 >     |                                                                                                                        指定远程计算机的名称或 IP 地址。 默认值为本地计算机。                                                                                                                        |
@@ -1098,11 +1094,11 @@ schtasks /end /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 以下命令将停止由 My Notepad 任务启动的 Notepad.exe 实例：
 ```
-schtasks /end /tn "My Notepad"
+schtasks /end /tn My Notepad
 ```
 在响应中， **schtasks.exe**停止任务启动的 notepad.exe 实例，并显示以下成功消息：
 ```
-SUCCESS: The scheduled task "My Notepad" has been terminated successfully.
+SUCCESS: The scheduled task My Notepad has been terminated successfully.
 ```
 
 ### <a name="to-end-a-task-on-a-remote-computer"></a>结束远程计算机上的任务
@@ -1113,10 +1109,10 @@ schtasks /end /tn InternetOn /s Svr01
 ```
 在响应中， **schtasks.exe**停止任务启动的 Internet Explorer 实例，并显示以下成功消息：
 ```
-SUCCESS: The scheduled task "InternetOn" has been terminated successfully.
+SUCCESS: The scheduled task InternetOn has been terminated successfully.
 ```
 
-## <a name="BKMK_delete"></a>schtasks 删除
+## <a name="schtasks-delete"></a><a name=BKMK_delete></a>schtasks 删除
 
 删除计划任务。
 
@@ -1126,9 +1122,9 @@ SUCCESS: The scheduled task "InternetOn" has been terminated successfully.
 schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|         术语          |                                                                                                                                                                 定义                                                                                                                                                                  |
+|         术语          |                                                                                                                                                                 Definition                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   /tn {\<TaskName >    |                                                                                                                                                                     \*}                                                                                                                                                                     |
 |          /f           |                                                                                                                                  禁止显示确认消息。 删除任务但不发出警告。                                                                                                                                  |
@@ -1146,14 +1142,14 @@ schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> 
 
 ### <a name="to-delete-a-task-from-the-schedule-of-a-remote-computer"></a>从远程计算机计划中删除任务
 
-以下命令将从远程计算机的计划中删除 "开始邮件" 任务。 它使用 **/s**参数来识别远程计算机。
+以下命令将从远程计算机的计划中删除启动邮件任务。 它使用 **/s**参数来识别远程计算机。
 ```
-schtasks /delete /tn "Start Mail" /s Svr16
+schtasks /delete /tn Start Mail /s Svr16
 ```
 在响应中， **schtasks.exe**显示以下确认消息。 若要删除任务，请按 Y<strong>。</strong>若要取消命令，请键入**n**：
 ```
-WARNING: Are you sure you want to remove the task "Start Mail" (Y/N )? 
-SUCCESS: The scheduled task "Start Mail" was successfully deleted.
+WARNING: Are you sure you want to remove the task Start Mail (Y/N )? 
+SUCCESS: The scheduled task Start Mail was successfully deleted.
 ```
 
 ### <a name="to-delete-all-tasks-scheduled-for-the-local-computer"></a>删除为本地计算机计划的所有任务
@@ -1164,9 +1160,9 @@ schtasks /delete /tn * /f
 ```
 在响应中， **schtasks.exe**显示以下成功消息，指示已计划的唯一任务 SecureScript。
 
-`SUCCESS: The scheduled task "SecureScript" was successfully deleted.`
+`SUCCESS: The scheduled task SecureScript was successfully deleted.`
 
-## <a name="BKMK_query"></a>schtasks 查询
+## <a name="schtasks-query"></a><a name=BKMK_query></a>schtasks 查询
 
 显示计划在计算机上运行的任务。
 
@@ -1176,12 +1172,12 @@ schtasks /delete /tn * /f
 schtasks [/query] [/fo {TABLE | LIST | CSV}] [/nh] [/v] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|         术语          |                                                                                                                                                                 定义                                                                                                                                                                  |
+|         术语          |                                                                                                                                                                 Definition                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /query        |                                                                                                                        操作名称是可选的。 在不使用任何参数的情况下键入**schtasks**会执行查询。                                                                                                                         |
-|      /fo {TABLE       |                                                                                                                                                                    成员列表                                                                                                                                                                     |
+|      /fo {TABLE       |                                                                                                                                                                    LIST                                                                                                                                                                     |
 |          /nh          |                                                                                                            省略表显示的列标题。 此参数对**表**和**CSV**输出格式有效。                                                                                                             |
 |          /v           |                                                                                                         向显示添加任务的高级属性。</br>使用 **/v**的查询应该设置为**LIST**或**CSV**格式。                                                                                                          |
 |    /s \<计算机 >     |                                                                                                           指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认值为本地计算机。                                                                                                           |
@@ -1262,6 +1258,6 @@ schtasks /query /s Reskit16 /fo csv /nh >> \\svr01\data\tasklogs\p0102.csv
 ```
 作为响应， **schtasks.exe**将为 Reskit16 计算机计划的任务添加到本地计算机 Svr01 上的 p0102 文件中。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

@@ -1,32 +1,28 @@
 ---
 title: 在服务器管理器磁贴中对数据进行筛选、排序和查询
 description: 服务器管理器
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8786f791-73e5-4c75-8d12-46e88a196976
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89604b73fd071030d0f800b3a38a7ac3858ef1c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8447d06c03b6adca00966d05978d4337d9b5984
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383201"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851530"
 ---
 # <a name="filter-sort-and-query-data-in-server-manager-tiles"></a>在服务器管理器磁贴中对数据进行筛选、排序和查询
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在 Windows Server 中，服务器管理器中的磁贴使你可以对数据进行筛选和排序，还可以创建和保存自定义查询。 可以在服务器管理器的服务器角色或组页面上的 "事件"、"性能"、"最佳做法分析器"、"服务" 和 "角色和功能" 磁贴中对列表条目进行排序、使用关键字筛选器以及运行查询。  
   
-本主题包含以下部分。  
+本主题包含以下各节。  
   
 -   [在磁贴中筛选列表条目](#BKMK_tiles)  
   
@@ -34,7 +30,7 @@ ms.locfileid: "71383201"
   
 -   [创建和运行针对磁贴数据的自定义查询](#BKMK_query)  
   
-## <a name="BKMK_tiles"></a>在磁贴中筛选列表条目  
+## <a name="filter-list-entries-in-tiles"></a><a name=BKMK_tiles></a>在磁贴中筛选列表条目  
 **“筛选器”** 文本框是一种方法，可以迅速将磁贴中显示的条目列表减少为只有包含指定文本字符串的条目。  
   
 #### <a name="to-apply-a-filter-to-the-list-of-entries-in-a-tile"></a>若要将筛选器应用到磁贴中的条目列表  
@@ -49,10 +45,10 @@ ms.locfileid: "71383201"
   
 4.  若要清除筛选器，请删除筛选器框中的字符串，或单击 **“X”** 。  
   
-## <a name="BKMK_sort"></a>对磁贴中的列表条目进行排序  
+## <a name="sort-list-entries-in-tiles"></a><a name=BKMK_sort></a>对磁贴中的列表条目进行排序  
 通过单击列标题对服务器管理器磁贴中的列表条目进行排序。 首次单击列标题将列值按字母数字升序顺序排序（箭头向上）；再次单击将列值按字母数字降序顺序排序（箭头向下）。  
   
-## <a name="BKMK_query"></a>创建和运行针对磁贴数据的自定义查询  
+## <a name="create-and-run-custom-queries-on-tile-data"></a><a name=BKMK_query></a>创建和运行针对磁贴数据的自定义查询  
 可以在服务器管理器中的事件、性能、最佳做法分析器、服务或角色和功能磁贴中创建自定义查询。 默认情况下，将隐藏图块工具栏中用于选择生成自定义查询的条件的区域;单击 "**展开**" （位于磁贴工具栏右边缘的 v 形按钮）以显示查询条件。  
   
 #### <a name="to-create-a-custom-query-for-tile-data"></a>若要创建磁贴数据的自定义查询  
@@ -85,7 +81,7 @@ ms.locfileid: "71383201"
   
 12. 若要删除一个已保存查询，请单击 **“已保存搜索查询”** ，然后找到要删除的已保存查询的名称，单击 **“X”** 。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [服务器管理器](server-manager.md)  
 [查看和配置性能、事件和服务数据](view-and-configure-performance-event-and-service-data.md)  
   

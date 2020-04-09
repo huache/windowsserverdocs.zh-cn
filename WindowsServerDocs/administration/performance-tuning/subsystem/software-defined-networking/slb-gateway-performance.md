@@ -4,15 +4,15 @@ description: 有关 SDN 网络的 SLB 网关性能优化指南
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: grcusanz; AnPaul
+ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a0d239da2ca321333ec757db22bbaf9a9b8ba30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1a497f24eba26b3b9b866772ae5171ea0fcbb24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383456"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851580"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>软件定义的网络中的 SLB 网关性能优化
 
@@ -26,7 +26,7 @@ SLB Mux 虚拟机部署为主动-主动配置。  这意味着，部署并添加
 
 将始终向同一 Mux 发送单个虚拟 IP （VIP）的连接，假设 mux 数保持不变，因此，其吞吐量限制为单个 Mux VM 的吞吐量。  Mux 仅处理发往 VIP 的入站流量。  响应数据包直接从将响应发送到物理交换机的 VM 发送到客户端。
 
-在某些情况下，当请求源源自添加到管理 VIP 的同一网络控制器的 SDN 主机时，还会执行该请求的入站路径进一步优化，从而使大多数数据包直接从客户端到服务器的完全绕过 Mux VM。  此优化不需要其他配置即可进行。
+在某些情况下，当请求源源自添加到管理 VIP 的同一网络控制器的 SDN 主机时，还会执行该请求的入站路径进一步优化，从而使大多数数据包直接从客户端传输到服务器，同时绕过 Mux VM。  此优化不需要其他配置即可进行。
 
 每个 SLB Mux VM 必须根据 "[规划软件定义的网络基础结构](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)" 主题的 "SDN 基础结构虚拟机角色要求" 部分中提供的指导原则调整大小。
 

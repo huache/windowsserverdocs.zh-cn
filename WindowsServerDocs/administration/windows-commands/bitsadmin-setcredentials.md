@@ -1,30 +1,26 @@
 ---
 title: bitsadmin setcredentials
-description: 适用于**bitsadmin setcredentials**的 Windows 命令主题-将凭据添加到作业。
-ms.custom: na
+description: 适用于 bitsadmin setcredentials 的 Windows 命令主题，用于将凭据添加到作业。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3cd099a4-9e85-46d8-8527-edb6dfab7f97
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70ac9a01a2e713b5a2fb881f327a52552a6bbec6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 918bda93407e029cedaaf5eab937d1bb23dc3c4c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380720"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80849640"
 ---
 # <a name="bitsadmin-setcredentials"></a>bitsadmin setcredentials
 
 向作业添加凭据。
 
-**BITS 1.2 及更早版本**： 不受支持。
+**BITS 1.2 及更早版本**：不支持。
 
 ## <a name="syntax"></a>语法
 
@@ -32,9 +28,9 @@ ms.locfileid: "71380720"
 bitsadmin /SetCredentials <Job> <Target> <Scheme> <Username> <Password>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |作业|该作业的显示名称或 GUID|
 |目标|服务器或代理|
@@ -42,13 +38,13 @@ bitsadmin /SetCredentials <Job> <Target> <Scheme> <Username> <Password>
 |Username|提供的凭据的名称|
 |密码|与提供的*用户名*关联的密码|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 下面的示例将凭据添加到名为*myDownloadJob*的作业。
 ```
 C:\>bitsadmin /RemoveCredentials myDownloadJob SERVER BASIC Edward Password20
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

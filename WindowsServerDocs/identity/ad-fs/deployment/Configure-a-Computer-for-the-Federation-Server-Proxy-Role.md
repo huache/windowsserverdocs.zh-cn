@@ -1,7 +1,6 @@
 ---
 ms.assetid: a2f23877-30a7-439f-817d-387da9e00e86
 title: 为联合服务器代理角色配置计算机
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d47f7d3985aa779276f0712347eb9030857cefdb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a8bfe21f50a68edfcdbc7c937dc914ff1e1d94c3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359796"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854900"
 ---
 # <a name="configure-a-computer-for-the-federation-server-proxy-role"></a>为联合服务器代理角色配置计算机
 
@@ -25,29 +24,29 @@ ms.locfileid: "71359796"
   
 完成设置计算机之后，验证联合服务器代理按预期方式工作。 有关详细信息，请参阅[验证联合服务器代理是否正常运行](Verify-That-a-Federation-Server-Proxy-Is-Operational.md)。  
   
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
   
-### <a name="to-configure-a-computer-for-the-federation-server-proxy-role"></a>配置计算机以用于联合服务器代理角色  
+### <a name="to-configure-a-computer-for-the-federation-server-proxy-role"></a>配置承担联合服务器代理角色的计算机  
   
-1.  可以通过两种方式启动 AD FS 联合服务器配置向导。 若要启动该向导，请执行下列操作之一：  
+1.  可通过两种方法启动 AD FS 联合服务器配置向导。 若要启动该向导，可执行以下操作之一：  
   
     -   在 "**开始**" 屏幕上，键入 "**AD FS 联合服务器代理配置向导**"，然后按 enter。  
   
     -   安装向导完成后，请打开 Windows 资源管理器，导航到**C：\\Windows\\ADFS**文件夹，然后\-双击 " **fspconfigwizard.exe**"。  
   
-2.  使用这两种方法中的任意一种，启动该向导，然后在“欢迎使用”页上，单击“下一步”。  
+2.  使用任一方法启动向导，然后在 **“欢迎”** 页上单击 **“下一步”** 。  
   
-3.  在“指定联合身份验证服务名称”页上，在“联合身份验证服务名称”下，键入表示联合身份验证服务的名称，此计算机将为其以代理角色进行操作。  
+3.  在 **“指定联合身份验证服务名称”** 页的 **“联合身份验证服务名称”** 下，键入表示此计算机要充当其代理角色的联合身份验证服务的名称。  
   
-4.  根据你的特定网络要求，确定是否将需要使用 HTTP 代理服务器将请求转发到联合身份验证服务。 如果是这样，则选中“将请求发送到此联合身份验证服务时使用 HTTP 代理服务器” 复选框、在“HTTP 代理服务器地址” 下键入代理服务器的地址、单击“测试连接” 以验证连接性，然后单击“下一步”。  
+4.  根据你的特定网络要求，确定你是否需要使用 HTTP 代理服务器将请求转发到联合身份验证服务。 如果是，请选中 **“向此联合身份验证服务发送请求时使用 HTTP 代理服务器”** 复选框，在 **“HTTP 代理服务器地址”** 下键入代理服务器的地址，单击 **“测试连接”** 以验证连接，然后单击 **“下一步”** 。  
   
-5.  在收到提示时，指定在此联合服务器代理和联合身份验证服务之间建立信任所需的凭据。  
+5.  当系统提示时，指定在此联合服务器代理与联合身份验证服务之间建立信任所需的凭据。  
   
     默认情况下，只有联合身份验证服务或本地内置\\管理员组的成员才能授权联合服务器代理。  
   
-6.  在“已准备好应用设置”页上，查看详细信息。 如果设置正确，请单击“下一步”以开始使用这些代理设置配置此计算机。  
+6.  在 **“准备应用设置”** 页上复查详细信息。 如果设置看上去没有问题，请单击 **“下一步”** ，以开始使用这些代理设置配置此计算机。  
   
-7.  在“配置结果” 页上，查看结果。 完成所有配置步骤后，单击“关闭”  以退出向导。  
+7.  在 **“配置结果”** 页上复查结果。 完成所有配置步骤后，单击“关闭”  以退出向导。  
   
     没有 Microsoft 管理控制台 \(MMC\) 管理联合服务器代理中的\-。 若要为组织中的每个联合服务器代理配置设置，请使用 Windows PowerShell cmdlet。  
   
@@ -80,7 +79,7 @@ ms.locfileid: "71359796"
     > [!NOTE]  
     > 默认情况下，不会为联合服务器代理服务启用终结点 Url。 如果要配置新的联合服务器安装，则必须首先启用联合服务器代理服务终结点。 例如，假设对于本过程中的示例所引用的所有终结点，通过在中的 AD FS 管理 "管理单元\-中选择它们，然后选择 **" 在代理上启用 "** 来启用代理。  
   
-3.  在联合服务器代理上更新 IIS 安装，以便将安全断言标记语言 \(SAML\) 和 WS\-信任终结点配置为反映已更新的端口号。 为此，可以使用记事本来修改 web.config 文件中的以下文件，该文件位于联合服务器代理计算机上的 systemdrive%\\inetpub\\adfs\\ls\\ 上。 例如，假设你有一个名为 sts1.contoso.com 的联合服务器，并且新的端口号为444，则在联合服务器代理计算机上浏览到记事本中的 web.config 文件并将其打开，找到以下部分，将该端口号修改为突出显示，然后保存并退出记事本。  
+3.  在联合服务器代理上更新 IIS 安装，以便将安全断言标记语言 \(SAML\) 和 WS\-信任终结点配置为反映已更新的端口号。 为此，可以使用记事本来修改 web.config 文件中的以下文件，该文件位于联合服务器代理计算机上的 systemdrive%\\inetpub\\adfs\\ls\\ 上。 例如，假设你有一个名为 sts1.contoso.com 的联合服务器，并且新的端口号为444，则在联合服务器代理计算机上浏览到 "记事本" 并打开 web.config 文件，找到以下部分，修改下面突出显示的端口号，然后保存并退出记事本。  
   
     ```  
     <securityTokenService samlProtocolEndpoint="https://sts1.contoso.com:444/adfs/services/trust/samlprotocol/proxycertificatetransport"  

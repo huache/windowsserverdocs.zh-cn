@@ -1,24 +1,20 @@
 ---
 title: pushd
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 396bc545-0f41-473e-b0ac-76fbbb74d390
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 634dd6dee471751cc62b6899a3963e02e8e783a2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7866a54e83bd57c8689512a1b75b151f74cb93c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371976"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837090"
 ---
 # <a name="pushd"></a>pushd
 
@@ -34,11 +30,11 @@ ms.locfileid: "71371976"
 pushd [<Path>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|\<Path >|指定要生成当前目录的目录。 此命令支持相对路径。|
+|\<路径 >|指定要生成当前目录的目录。 此命令支持相对路径。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -51,7 +47,7 @@ pushd [<Path>]
 -   如果启用了命令扩展， **pushd**命令将接受网络路径或本地驱动器号和路径。
 -   如果指定网络路径， **pushd**命令会暂时分配最高的未使用的驱动器号（以 Z：）到指定的网络资源。 然后，该命令将当前驱动器和目录更改为新分配的驱动器上的指定目录。 如果在启用了命令扩展的情况下使用**popd**命令， **popd**命令将删除**pushd**创建的驱动器号分配。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 下面的示例演示如何在批处理程序中使用**pushd**命令和**popd**命令，以更改运行批处理程序的目录，然后将其更改回：
 ```
@@ -64,8 +60,8 @@ cls
 echo All text files deleted in the %1 directory
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 
 [Popd](popd.md)

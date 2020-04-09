@@ -1,7 +1,6 @@
 ---
 ms.assetid: 64142026-07b5-4601-840a-c8dcf6ab9814
 title: 创建站点链接桥设计
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 79e91481c357d05617ee0ddc716e2bf6e90b8b27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f75feb34b64e2ab41859dd708147a2e8d05a768a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408966"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822760"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>创建站点链接桥设计
 
@@ -39,4 +38,4 @@ ms.locfileid: "71408966"
   
 ### <a name="controlling-replication-through-a-firewall"></a>通过防火墙控制复制
 
-如果在两个不同的站点中代表同一个域的两个域控制器只允许通过防火墙进行通信，则可以禁用 "**桥接所有站点链接**"，并在firewall. 因此，如果你的网络是由防火墙分隔的，则建议你禁止传递站点链接，并为防火墙一侧的网络创建站点链接桥。 有关通过防火墙管理复制的信息，请参阅文章[Active Directory 防火墙分段的网络中](https://go.microsoft.com/fwlink/?LinkId=107074)。
+如果两个不同站点中代表同一个域的两个域控制器只允许通过防火墙进行通信，则可以禁用 "**桥接所有站点链接**"，并在防火墙的同一端为站点创建站点链接桥。 因此，如果你的网络是由防火墙分隔的，则建议你禁止传递站点链接，并为防火墙一侧的网络创建站点链接桥。 有关通过防火墙管理复制的信息，请参阅文章[Active Directory 防火墙分段的网络中](https://go.microsoft.com/fwlink/?LinkId=107074)。

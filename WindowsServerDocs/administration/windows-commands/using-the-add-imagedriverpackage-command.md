@@ -1,30 +1,27 @@
 ---
-title: 使用 ImageDriverPackage 命令
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: ImageDriverPackage
+description: ImageDriverPackage 的 Windows 命令主题，用于将驱动程序存储区中的驱动程序包添加到服务器上的现有启动映像。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6c2a4833-6427-47f8-9ffb-20b3786cb406
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1069b7c63e8b3bbc28fd900e8c869afc8abc03bc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9b61a5beabed655ae629ad5c1e43d681568d07db
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363735"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80831920"
 ---
-# <a name="using-the-add-imagedriverpackage-command"></a>使用 ImageDriverPackage 命令
+# <a name="add-imagedriverpackage"></a>ImageDriverPackage
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 将驱动程序存储区中的驱动程序包添加到服务器上的现有启动映像。 映像版本必须是 Windows 7 或 Windows Server 2008 R2 或更高版本。
+
 ## <a name="syntax"></a>语法
 ```
 wdsutil /add-ImageDriverPackage [/Server:<Server name>media:<Image namemediatype:Boot /Architecture:{x86 | ia64 | x64} 
@@ -32,9 +29,9 @@ wdsutil /add-ImageDriverPackage [/Server:<Server name>media:<Image namemediatype
 ```
 [/Filename:<File name>] {/DriverPackage:<Package Name> | /PackageId:<ID>}
 ```
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|                 参数                  |                                                                                                                                                                                                            描述                                                                                                                                                                                                             |
+|                 参数                  |                                                                                                                                                                                                            说明                                                                                                                                                                                                             |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           [/Server：<Server name>           |                                                                                                                                               指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。                                                                                                                                                |
 |             媒体：<Image name>             |                                                                                                                                                                                       指定要将驱动程序添加到的映像的名称。                                                                                                                                                                                        |
@@ -44,14 +41,14 @@ wdsutil /add-ImageDriverPackage [/Server:<Server name>media:<Image namemediatype
 |           [/DriverPackage：<Name>           |                                                                                                                                                                                   指定要添加到映像的驱动程序包的名称。                                                                                                                                                                                    |
 |             [/PackageId：<ID>]              | 指定驱动程序包的 Windows 部署服务 ID。 如果无法按名称唯一地标识驱动程序包，则必须指定此选项。 若要查找包 ID，请单击包所在的驱动程序组（或 "**所有包**" 节点），右键单击该包，然后单击 "**属性**"。 包 ID 在 "**常规**" 选项卡上列出。例如： {DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}。 |
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 若要将驱动程序包添加到启动映像，请键入下列内容之一：
 ```
-wdsutil /add-ImageDriverPackagmedia:"WinPE Boot Imagemediatype:Boot /Architecture:x86 /DriverPackage:XYZ
+wdsutil /add-ImageDriverPackagmedia:WinPE Boot Imagemediatype:Boot /Architecture:x86 /DriverPackage:XYZ
 ```
 ```
-wdsutil /verbose /add-ImageDriverPackagmedia:"WinPE Boot Image" /Server:MyWDSServemediatype:Boot /Architecture:x64 /PackageId:{4D36E972-E325-11CE-Bfc1-08002BE10318}
+wdsutil /verbose /add-ImageDriverPackagmedia:WinPE Boot Image /Server:MyWDSServemediatype:Boot /Architecture:x64 /PackageId:{4D36E972-E325-11CE-Bfc1-08002BE10318}
 ```
-#### <a name="additional-references"></a>其他参考
-[使用 ImageDriverPackages 命令
+## <a name="additional-references"></a>其他参考
+- [使用 ImageDriverPackages 命令
 的](using-the-add-imagedriverpackages-command.md)[命令行语法键](command-line-syntax-key.md)

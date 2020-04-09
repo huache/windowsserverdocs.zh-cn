@@ -1,6 +1,5 @@
 ---
 title: AD 林恢复虚拟化
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
 ms.technology: identity-adds
-ms.openlocfilehash: c055445c2d3aecd8c6d92e94799f556962c977bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9e99b6ab5deadf0f3499e4764cdb87b2ed3d65f9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390132"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823370"
 ---
 # <a name="active-directory-forest-recovery-virtualization"></a>Active Directory 林恢复虚拟化
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 本主题介绍 Windows Server 2016、2012 R2 和2012中的虚拟化域控制器克隆功能。  
 

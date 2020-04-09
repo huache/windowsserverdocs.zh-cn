@@ -2,20 +2,19 @@
 title: 对于在生产环境中运行服务器工作负荷的虚拟机，不建议使用 VHD 格式的动态虚拟硬盘
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 324a60a0-1d15-4ef2-9f17-23cbd2eb42ce
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: bf5464208fc145a31571f01822bb5ba54efe89c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 195bc4c85d380c8f0b15b27d042b30491f635d5d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364588"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854170"
 ---
 # <a name="vhd-format-dynamic-virtual-hard-disks-are-not-recommended-for-virtual-machines-that-run-server-workloads-in-a-production-environment"></a>对于在生产环境中运行服务器工作负荷的虚拟机，不建议使用 VHD 格式的动态虚拟硬盘
 
@@ -27,7 +26,7 @@ ms.locfileid: "71364588"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。

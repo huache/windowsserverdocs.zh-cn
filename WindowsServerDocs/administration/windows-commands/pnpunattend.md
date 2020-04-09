@@ -1,24 +1,20 @@
 ---
 title: pnpunattend
 description: 了解如何在计算机上审核设备驱动程序，以及如何执行无提示的驱动程序安装。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fa88932-cff0-4dfc-936c-98c0e3dfbeb8 britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 77a6ab1ea45322e3c53e8b095c412cf8838be60d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c4836665946b39acdacf4c204c6e79fc2d8507bd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372268"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837530"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -30,11 +26,11 @@ ms.locfileid: "71372268"
 PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|auditSystem|指定联机驱动程序安装。</br>必需，但在运行**pnpunattend**时，无论是 **/help**还是 **/？** parameters.|
+|auditSystem|指定联机驱动程序安装。</br>必需，但在运行**pnpunattend**时，无论是 **/help**还是 **/？** 参数。|
 |/s|可选。 指定在不安装的情况下搜索驱动程序。|
 |/L|可选。 指定在命令提示符中显示此命令的日志信息。|
 |/?|可选。 在命令提示符下显示此命令的帮助。|
@@ -60,4 +56,4 @@ pnpunattend auditsystem /s /l
 
 ## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

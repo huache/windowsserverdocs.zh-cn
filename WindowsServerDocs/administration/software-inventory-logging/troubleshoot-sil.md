@@ -1,27 +1,23 @@
 ---
 title: 软件清单日志记录疑难解答
 description: 描述如何解决常见的软件清单日志记录部署问题。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 author: brentfor
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: fb6e6fbba835e049748ca8578f24a1ff7fc750bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5a02caf63bbd02705aebb8306a7b50a32f3d6c82
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382897"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851410"
 ---
 # <a name="troubleshoot-software-inventory-logging"></a>软件清单日志记录疑难解答 
 
->适用于：Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+>适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
 
 ## <a name="understanding-sil"></a>了解 SIL
 
@@ -54,7 +50,7 @@ SIL 框架包含两个主要组件和两个通信通道。 在两个通道之间
 >[!IMPORTANT]
 >在3AM 本地系统时间处理 SQL 数据多维数据集之前，报表中将不会有任何数据。 在多维数据集处理数据之前，不要继续执行故障排除步骤。
 
-如果对报表中的数据（或报表中缺少的数据）进行故障排除，该数据比上次处理多维数据集的时间新，或在处理完多维数据集之前（对于全新安装），请按照以下步骤进行操作：:
+如果对报表中的数据（或报表中缺少的数据）进行故障排除，该数据比上次处理多维数据集的时间新，或在处理完多维数据集之前（对于全新安装），请按照以下步骤进行操作：
 
 1. 以 SQL Server 管理员身份登录，并在命令提示符下运行**SSMS** 。
 2. 连接到数据库引擎。
@@ -69,11 +65,11 @@ SIL 框架包含两个主要组件和两个通信通道。 在两个通道之间
 
 #### <a name="no-data-in-the-report-when-using-the-publish-silreport-cmdlet-or-data-is-generally-missing"></a>使用 SilReport cmdlet 时报表中不存在数据（或一般数据缺失）
 
-如果数据丢失，则很可能是因为 SQL 数据多维数据集尚未处理。 如果已对其进行了最近的处理，但你认为丢失的数据应在处理多维数据集之前到达聚合器，请按照相反的顺序执行数据的路径。 选取唯一主机和唯一的 VM 进行故障排除。 相反，数据路径将为**SILA Report** &lt; **SILA database** &lt; **SILA local directory** &lt; **远程物理主机**或**WS VM 运行 SIL agent/task**。
+如果数据丢失，则很可能是因为 SQL 数据多维数据集尚未处理。 如果已对其进行了最近的处理，但你认为丢失的数据应在处理多维数据集之前到达聚合器，请按照相反的顺序执行数据的路径。 选取唯一主机和唯一的 VM 进行故障排除。 相反，数据路径应为**SILA Report** &lt; **SILA database** &lt; **SILA local directory** &lt;**远程物理主机**或**WS VM 运行 SIL agent/task**。
 
 #### <a name="check-to-see-if-data-is-in-the-database"></a>查看数据库中是否有数据
 
-可以通过两种方式检查数据：**Powershell**或**SSMS**。
+可以通过两种方式检查数据： **Powershell**或**SSMS**。
 
 >[!Important]
 >如果多维数据集至少处理了一次，因为 SILA 将数据插入到数据库中，则此数据应反映在报表中。 如果数据库中没有数据，则轮询物理主机失败，或者不是通过 HTTPS 接收任何内容，或者两者都不是。
@@ -92,9 +88,9 @@ SIL 框架包含两个主要组件和两个通信通道。 在两个通道之间
 
 **其他相关命令**
 
-**Set-silaggregator-已知服务器的&lt;Computername fqdn 推送数据&gt;** ：这会在处理完多维数据集之前，从数据库中生成有关计算机（VM）的信息。 因此，此 cmdlet 可用于检查数据库中的数据，以便 Windows Server 在3AM （或者在此部分开头所述的情况下，如果未按本部分开头所述的方式实时刷新多维数据集）上推送 SIL 数据。
+**Set-silaggregator-Computername &lt;&gt;推送数据的已知服务器的 fqdn** ：这将从数据库中生成有关计算机（VM）的信息，甚至在处理多维数据集之前。 因此，此 cmdlet 可用于检查数据库中的数据，以便 Windows Server 在3AM （或者在此部分开头所述的情况下，如果未按本部分开头所述的方式实时刷新多维数据集）上推送 SIL 数据。
 
-**使用 add-silvmhost cmdlet &lt;&gt;时，set-silaggregator-VmHostName 已轮询的物理主机的 fqdn，其中存在 "最近轮询" 列下的值**：即使在处理多维数据集之前，也会在数据库中生成有关物理主机的信息。
+**Set-silaggregator-VmHostName &lt;在使用 add-silvmhost&gt;cmdlet 时在 "最近轮询" 列下有值的轮询的物理主机的 fqdn** ：这将从数据库中生成有关物理主机的信息，甚至在处理多维数据集之前。
 
 #### <a name="ssms"></a>SSMS
 
@@ -145,7 +141,7 @@ n**检查要轮询的主机中的数据：**
    - 如果出现错误：
      - 确保**targeturi**在条目中具有**https://** 。
      - 确保满足所有先决条件 
-     - 确保已安装 Windows Server 的所有必需更新（请参阅 SIL 的先决条件）。 若要快速检查（仅限 WS 2012 R2），请使用以下 cmdlet 来查找这些内容：**Get-silwindowsupdate \*3060， \*3000**
+     - 确保已安装 Windows Server 的所有必需更新（请参阅 SIL 的先决条件）。 快速检查（仅限 WS 2012 R2）是使用以下 cmdlet 查找这些内容： **get-silwindowsupdate \*3060，\*3000**
      - 确保用于对聚合器进行身份验证的证书安装在要使用**set-sillogging**进行清点的本地服务器上的正确存储中。
      - 在 SIL 聚合器上，请确保使用**set-silaggregator** **– AddCertificateThumbprint** cmdlet 将用于向聚合器进行身份验证的证书的证书指纹添加到列表。
      - 如果使用企业证书，请检查启用 SIL 的服务器是否已加入为之而创建证书的域，或是否可通过根证书颁发机构进行验证。 如果证书在尝试向聚合器转发/推送数据的本地计算机上不受信任，此操作将失败并返回错误。
@@ -156,7 +152,7 @@ n**检查要轮询的主机中的数据：**
 
      -  最后，可以在尝试转发/推送、 **\Windows\System32\Logfiles\SIL**的服务器上查看缓存的 SIL 文件所在的位置。 如果**set-sillogging**已启动并运行超过1小时，或者最近运行过**get-sildata** ，且此目录中没有任何文件，则不会成功记录到聚合器。
 
-如果没有错误，并且在控制台上没有输出，则通过 HTTPS 从 Windows Server 结束节点到 SIL 聚合器的数据推送/发布已成功。 若要跟踪数据的路径，请以管理员身份登录到 SIL 聚合器，并检查收到的数据文件。 请参阅**Program Files （x86）** &gt; **Microsoft SIL 聚合** &gt;器 SILA directory。 您可以实时查看数据文件。
+如果没有错误，并且在控制台上没有输出，则通过 HTTPS 从 Windows Server 结束节点到 SIL 聚合器的数据推送/发布已成功。 若要跟踪数据的路径，请以管理员身份登录到 SIL 聚合器，并检查收到的数据文件。 请参阅**Program Files （x86）** &gt; **Microsoft SIL 聚合**器 &gt; SILA directory。 您可以实时查看数据文件。
 
 >[!NOTE] 
 >可以使用**get-sildata** cmdlet 传输多个数据文件。 结束节点上的 SIL 会将失败的推送缓存多达30天。 在下一次成功推送时，所有数据文件都将发送到聚合器进行处理。 通过这种方式，新设置的 SIL 聚合器可以在其自身安装之前，从结束节点中显示数据。

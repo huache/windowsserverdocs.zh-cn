@@ -1,7 +1,6 @@
 ---
 ms.assetid: 16a344a9-f9a6-4ae2-9bea-c79a0075fd04
 title: TPM 密钥证明
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d7104daaa10cf7093370cb309e0366e1ab2b9b51
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de5a38ff6f811046d06c52a1ca4598f9650b3cfe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389862"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823010"
 ---
 # <a name="tpm-key-attestation"></a>TPM 密钥证明
 
@@ -33,7 +32,7 @@ ms.locfileid: "71389862"
   
 ### <a name="terminology"></a>术语  
   
-|术语|定义|  
+|术语|Definition|  
 |--------|--------------|  
 |EK|认可密钥。 这是 TPM 内包含的非对称密钥（在制造时注入）。 EK 对于每个 TPM 都是唯一的，可以识别它。 不能更改或删除 EK。|  
 |EKpub|引用 EK 的公钥。|  
@@ -67,7 +66,7 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
 4.  CA 颁发具有特殊颁发策略 OID 的证书，以表示该密钥现在证明受 TPM 保护。  
   
-## <a name="BKMK_DeploymentOverview"></a>部署概述  
+## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>部署概述  
 在此部署中，假定已设置 Windows Server 2012 R2 企业 CA。 此外，客户端（Windows 8.1）配置为使用证书模板针对该企业 CA 进行注册。 
 
 部署 TPM 密钥证明有三个步骤：  
@@ -101,9 +100,9 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
     > -   独立 CA 不支持 TPM 密钥证明。  
     > -   TPM 密钥证明不支持[非持久证书处理](https://technet.microsoft.com/library/ff934598)。  
   
-## <a name="BKMK_DeploymentDetails"></a>部署详细信息  
+## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>部署详细信息  
   
-### <a name="BKMK_ConfigCertTemplate"></a>配置证书模板  
+### <a name="configure-a-certificate-template"></a><a name="BKMK_ConfigCertTemplate"></a>配置证书模板  
 若要配置 TPM 密钥证明的证书模板，请执行以下配置步骤：  
   
 1.  **兼容性**选项卡  
@@ -152,7 +151,7 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
     **颁发策略 Oid**  
   
-    |OID|密钥证明类型|描述|保证级别|  
+    |OID|密钥证明类型|说明|保证级别|  
     |-------|------------------------|---------------|-------------------|  
     |1.3.6.1.4.1.311.21.30|EK|"已验证 EK"：适用于管理员托管的 EK 列表|高|  
     |1.3.6.1.4.1.311.21.31|认可证书|"EK 证书已验证"：当对 EK 证书链进行验证时|中等|  
@@ -165,7 +164,7 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
     > [!TIP]  
     > 在证书中具有 OID 的一个潜在用途是将对 VPN 或无线网络的访问限制为特定设备。 例如，如果在证书中存在 OID 1.3.6.1.4.1.311.21.30，则访问策略可能允许连接（或访问其他 VLAN）。 这样，便可以限制对 EKPUB 列表中的 TPM EK 存在的设备的访问。  
   
-### <a name="BKMK_CAConfig"></a>CA 配置  
+### <a name="ca-configuration"></a><a name="BKMK_CAConfig"></a>CA 配置  
   
 1.  **在颁发 CA 上安装 EKCA 和 EKROOT 证书存储**  
   
@@ -199,9 +198,9 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
         EndorsementKeyListDirectories in certutil 命令是如下表中所述的注册表设置。  
   
-        |值名称|在任务栏的搜索框中键入|数据|  
+        |值名称|类型|数据|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|< 允许列表的本地路径或 UNC 路径 ><br /><br />示例：<br /><br />*\\\blueCA.contoso.com\ekpub*<br /><br />*\\\bluecluster1.contoso.com\ekpub*<br /><br />D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|< 允许列表的本地路径或 UNC 路径 ><p>示例：<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
   
         HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\\<CA Sanitized Name>  
   
@@ -218,7 +217,7 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
         PS C:>$b=new-item $a.PublicKeyHash -ItemType file  
         ```  
   
-## <a name="troubleshooting"></a>疑难解答  
+## <a name="troubleshooting"></a>故障排除  
   
 ### <a name="key-attestation-fields-are-unavailable-on-a-certificate-template"></a>密钥证明字段在证书模板上不可用  
 如果模板设置不满足证明的要求，则 "密钥证明" 字段不可用。 常见原因如下：  

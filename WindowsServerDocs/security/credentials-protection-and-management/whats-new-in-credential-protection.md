@@ -1,24 +1,20 @@
 ---
 title: 凭据保护的新增功能
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f297
 author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: 2351be82ad1d8b9af17715ce363836f57c71ea66
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 35097cee243239735995a00cec7a6fd3936c62a8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386921"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857040"
 ---
 # <a name="whats-new-in-credential-protection"></a>凭据保护的新增功能
 
@@ -47,7 +43,7 @@ ms.locfileid: "71386921"
 
 ### <a name="domain-joined-device-support-for-authentication-using-public-key"></a>已加入域的设备支持使用公钥进行身份验证
 
-从 Windows 10 版本1507和 Windows Server 2016 开始，如果已加入域的设备能够向 Windows Server 2016 域控制器（DC）注册其绑定的公钥，则设备可以使用 Kerberos PKINIT 通过公钥进行身份验证Windows Server 2016 DC 的身份验证。
+从 Windows 10 版本1507和 Windows Server 2016 开始，如果已加入域的设备能够向 Windows Server 2016 域控制器（DC）注册其绑定的公钥，则设备可以使用对 Windows Server 2016 DC 使用 Kerberos PKINIT 身份验证的公钥进行身份验证。
 
 从 Windows Server 2016 开始，Kdc 支持使用 Kerberos 密钥信任进行身份验证。  
 
@@ -78,12 +74,12 @@ ms.locfileid: "71386921"
 
     ![Autoroll 过期 NTLM 机密](../media/Credentials-Protection-And-Management/autoroll-ntlm.png)
 
-3. 单击 **“确定”** 。 
+3. 单击“确定”。 
 
 ### <a name="allowing-network-ntlm-when-user-is-restricted-to-specific-domain-joined-devices"></a>当用户仅限于特定的已加入域的设备时允许网络 NTLM
 
 从 Windows Server 2016 域功能级别（DFL）开始，如果用户仅限于特定的已加入域的设备，DCs 就可以支持允许网络 NTLM。 此功能在较低的 DFLs 中不可用。
 
-配置：在 "身份验证策略" 上，单击 **"允许将 NTLM 网络身份验证限制为所选设备"** 。 
+配置：在 "身份验证策略" 上，单击 **"如果用户仅限所选设备，则允许 NTLM 网络身份验证"** 。 
 
 [详细了解身份验证策略](https://technet.microsoft.com/windows-server-docs/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos)。

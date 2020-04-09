@@ -1,23 +1,19 @@
 ---
 title: tpmtool
-description: 适用于 tpmtool 的 Windows 命令主题-获取有关受信任的平台模块的信息。
-ms.custom: na
+description: 适用于 tpmtool 的 Windows 命令主题，用于获取有关受信任的平台模块的信息。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 author: ashleytqy
 ms.author: ashleytqy
 manager: ronaldai
 ms.date: 05/07/2019
-ms.openlocfilehash: 3967136bc64d1e06425a019466dea15ddce3a563
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 14a2401fae008c9749f33b076346fe8df7794d3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385725"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832740"
 ---
 # <a name="tpmtool"></a>tpmtool
 
@@ -33,17 +29,17 @@ ms.locfileid: "71385725"
 ```
 tpmtool /parameter [<arguments>]
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |getdeviceinformation|显示 TPM 的基本信息。 [此处](https://docs.microsoft.com/windows/desktop/SecProv/win32-tpm-isreadyinformation#parameters)提供信息标志值的含义。|
 |gatherlogs [输出目录路径]|收集 TPM 日志，并将其放在指定的目录中。 如果该目录不存在，则创建它。 默认情况下，它们位于当前目录中。 生成的可能文件包括： </br>-TpmEvents .evtx</br>-TpmInformation .txt</br>-SRTMBoot</br>-SRTMResume</br>-DRTMBoot</br>-DRTMResume</br>|
 |drivertracing [start/stop]|开始/停止收集 TPM 驱动程序跟踪。 将生成跟踪日志 TPMTRACE，并将其放入当前目录。|
-|parsetcglogs [-validate （-v）]|显示已分析的 TCG 日志，也称为 Windows 启动配置日志（WBCL）。 可在[TCG 网站](https://trustedcomputinggroup.org/resource/pc-client-specific-platform-firmware-profile-specification/)上的**事件说明**中找到最新的事件说明。 如果设置了 `-validate` 标志，则验证 TPM 上的平台配置注册（PCR）值是否与日志中的值匹配。|
+|parsetcglogs [-validate （-v）]|显示已分析的 TCG 日志，也称为 Windows 启动配置日志（WBCL）。 可在[TCG 网站](https://trustedcomputinggroup.org/resource/pc-client-specific-platform-firmware-profile-specification/)上的**事件说明**中找到最新的事件说明。 如果设置了 `-validate` 标志，则验证 TPM 中的平台配置注册（PCR）值是否与日志中的值匹配。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="tpmtool_examples"></a>示例
+## <a name="examples"></a><a name=tpmtool_examples></a>示例
 
 若要显示 TPM 的基本信息，请键入：
 ```

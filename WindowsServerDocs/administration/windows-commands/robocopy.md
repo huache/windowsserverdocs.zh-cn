@@ -1,24 +1,20 @@
 ---
 title: robocopy
 description: 了解如何使用 Windows 和 Windows Server 中的 robocopy 命令复制文件
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d4c6e8e9-fcb3-4a4a-9d04-2d8c367b6354
 author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 07/25/2018
-ms.openlocfilehash: f675f66eaafbfd79ac6b452a92417159d8ebb28c
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 27a08aabbfd1c2f19f4c70120182f4092cc2a6c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259039"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835670"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -30,9 +26,9 @@ ms.locfileid: "76259039"
 robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|   参数    |                                                                                            描述                                                                                           |
+|   参数    |                                                                                            说明                                                                                           |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   \<源 >    |                                                                            指定源目录的路径。                                                                           |
 | \<目标 > |                                                                          指定目标目录的路径。                                                                        |
@@ -41,13 +37,13 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="copy-options"></a>复制选项
 
-|选项|描述|
+|选项|说明|
 |------|-----------|
 |/s|复制子目录。 请注意，此选项不包括空目录。|
 |/e|复制子目录。 请注意，此选项包含空目录。 有关其他信息，请参阅 "[备注](#remarks)"。|
 |/lev：\<N >|仅复制源目录树的前*N*个级别。|
 |/z|在可重启模式下复制文件。|
-|/b|在备份模式下复制文件。|
+|/b|以备份模式复制文件。|
 |/zb|使用可重新启动模式。 如果访问被拒绝，此选项将使用备份模式。|
 |/efsraw|复制 EFS RAW 模式下的所有加密文件。|
 |/copy：\<CopyFlags >|指定要复制的文件属性。 下面是此选项的有效值：</br>**D**数据</br>**特性**</br>**T**时间戳</br>**S** NTFS 访问控制列表（ACL）</br>**O**所有者信息</br>**U**审核信息</br>**CopyFlags**的默认值为 " **DAT** " （数据、属性和时间戳）。|
@@ -68,7 +64,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/256|关闭对非常长的路径（长度超过256个字符）的支持。|
 |/mon：\<N >|监视源，并在检测到超过*N*个更改时再次运行。|
 |/mot：\<M >|监视源，如果检测到更改，则在*M*分钟内再次运行。|
-|/MT[:N]|用*N*个线程创建多线程副本。 *N*必须是介于1到128之间的整数。 *N*的默认值为8。</br>**/Mt**参数不能与 **/IPG**和 **/EFSRAW**参数一起使用。</br>使用 **/log**选项重定向输出以提高性能。</br>注意：/MT 参数适用于 Windows Server 2008 R2 和 Windows 7。|
+|/MT [： N]|用*N*个线程创建多线程副本。 *N*必须是介于1到128之间的整数。 *N*的默认值为8。</br>**/Mt**参数不能与 **/IPG**和 **/EFSRAW**参数一起使用。</br>使用 **/log**选项重定向输出以提高性能。</br>注意：/MT 参数适用于 Windows Server 2008 R2 和 Windows 7。|
 |/rh： hhmm-hhmm|指定可能启动新副本时的运行时间。|
 |/pf|检查每个文件（而不是按次通过）的运行时间。|
 |/ipg： n|指定在慢速线路上释放带宽的数据包间间隔。|
@@ -84,7 +80,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="file-selection-options"></a>文件选择选项
 
-|选项|描述|
+|选项|说明|
 |------|-----------|
 |/a|仅复制为其设置了**存档**属性的文件。|
 |/m|仅复制设置了**存档**属性的文件，并重置**存档**属性。|
@@ -97,7 +93,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/xo|排除较旧的文件。|
 |/xx|排除多余的文件和目录。|
 |/xl|排除 "孤立的" 文件和目录。|
-|/is|包括相同的文件。|
+|/is|包含相同的文件。|
 |/it|包括 "调整" 文件。|
 |/max：\<N >|指定最大文件大小（以排除超过*N*个字节的文件）。|
 |/min：\<N >|指定最小文件大小（以排除小于*N*个字节的文件）。|
@@ -106,23 +102,23 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/maxlad：\<N >|指定最大上次访问日期（排除自*N*之后未使用的文件）。|
 |/minlad：\<N >|指定在*n*小于1900的情况下最短的上次访问日期（排除使用的文件，自*n*之后）， *n*指定天数。 否则， *N*以 YYYYMMDD 格式指定日期。|
 |/xj|排除联接点，默认情况下这些联接点通常包括在内。|
-|/fft|采用 FAT 文件时间（精度为两秒）。|
+|/fft|假设 FAT 文件时间（两秒精度）。|
 |/dst|补偿一小时的 DST 时间差异。|
 |/xjd|排除目录的交接点。|
 |/xjf|排除文件的交接点。|
 
 ### <a name="retry-options"></a>重试选项
 
-|选项|描述|
+|选项|说明|
 |------|-----------|
-|/r：\<N >|指定复制失败时的重试次数。 *N*的默认值为1000000（1000000重试）。|
-|/w：\<N >|指定等待重试的间隔时间，以秒为单位。 *N*的默认值为30（等待时间为30秒）。|
+|/r：\<N >|指定失败副本的重试次数。 *N*的默认值为1000000（1000000重试）。|
+|/w：\<N >|指定两次重试之间的等待时间（以秒为单位）。 *N*的默认值为30（等待时间为30秒）。|
 |/reg|将 **/r**和 **/w**选项中指定的值保存为注册表中的默认设置。|
 |/tbd|指定系统将等待定义共享名称（重试错误67）。|
 
 ### <a name="logging-options"></a>日志记录选项
 
-|选项|描述|
+|选项|说明|
 |------|-----------|
 |/l|指定仅列出（不复制、删除或时间戳）文件。|
 |/x|报告所有多余的文件，而不仅仅是所选的文件。|
@@ -133,10 +129,10 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/ns|指定不记录文件大小。|
 |/nc|指定不记录文件类。|
 |/nfl|指定不记录文件名。|
-|/ndl|指定不记录目录名。|
-|/np|指定不要显示复制操作的进度（到目前为止复制的文件或目录数）。|
+|/ndl|指定不记录目录名称。|
+|/np|指定不显示复制操作的进度（迄今为止复制的文件或目录的数目）。|
 |/eta|显示复制的文件的预计到达时间（ETA）。|
-|/log：\<日志文件 >|将状态输出写入到日志文件（覆盖现有的日志文件）。|
+|/log：\<日志文件 >|将状态输出写入日志文件（覆盖现有的日志文件）。|
 |/log +：\<日志文件 >|将状态输出写入日志文件（将输出附加到现有日志文件）。|
 |/unicode|将状态输出显示为 Unicode 文本。|
 |/unilog：\<日志文件 >|将状态输出作为 Unicode 文本写入日志文件（覆盖现有的日志文件）。|
@@ -147,7 +143,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="job-options"></a>作业选项
 
-|选项|描述|
+|选项|说明|
 |------|-----------|
 |/作业：\<JobName >|指定参数将从命名作业文件派生。|
 |/save：\<JobName >|指定将参数保存到指定的作业文件中。|
@@ -158,7 +154,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="exit-return-codes"></a>退出（返回）代码
 
-Value | 描述
+值 | 说明
 -- | --
 0 | 未复制文件。 未遇到任何故障。  没有文件不匹配。 文件已存在于目标目录中;因此，已跳过复制操作。
 1 | 已成功复制所有文件。
@@ -178,6 +174,6 @@ Value | 描述
     -   借助 **/e** plus **/purge**选项，如果目标目录存在，则不会覆盖目标目录安全设置。
     -   对于 **/mir**选项，如果目标目录存在，则将覆盖目标目录安全设置。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

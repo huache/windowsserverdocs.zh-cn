@@ -1,7 +1,6 @@
 ---
 ms.assetid: da7b6dcf-53ec-4394-88c0-c087d92f3893
 title: 服务管理员的授权范围
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2c54279f591545c6207dfec1536f16e29e69aa99
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3a891ade46fdee1dffc35df31a11c6d138e71e8a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408669"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821890"
 ---
 # <a name="service-administrator-scope-of-authority"></a>服务管理员的授权范围
 
@@ -38,7 +37,7 @@ ms.locfileid: "71408669"
   
 -   可以信任林所有者来处理组的兴趣，并且没有理由对组进行恶意处理。  
   
--   林所有者适当地限制了对域控制器的物理访问。 林中的域控制器不能彼此隔离。 具有对单个域控制器的物理访问权限的攻击者可能会对目录数据库进行脱机更改，并通过这样做，干扰林中任何域的操作，查看或操作存储在林中任意位置的数据和查看或操作存储在加入到林中的任何计算机上的数据。 出于此原因，对域控制器的物理访问必须限制为受信任的人员。  
+-   林所有者适当地限制了对域控制器的物理访问。 林中的域控制器不能彼此隔离。 对单一域控制器具有物理访问权限的攻击者可能会对目录数据库进行脱机更改，这种情况下，将干扰林中任何域的操作，查看或操作林中任何位置的数据，查看或操作已加入到林中的任何计算机上存储的数据。 出于此原因，对域控制器的物理访问必须限制为受信任的人员。  
   
 -   你了解并接受受信任的服务管理员可以强制危害系统安全性的潜在风险。  
   

@@ -1,28 +1,22 @@
 ---
 title: diskperf
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 diskperf 的 Windows 命令主题，可用于在运行 Windows 2000 的计算机上远程启用或禁用物理或逻辑磁盘性能计数器。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f06916e8-069b-4ec8-a6eb-59f1d9f77111
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 829f0284d761e6a5134011fa1dff99646d55fc13
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1b07471c051d57d0279e4fd8b38afdc4acdc4069
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377808"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845460"
 ---
 # <a name="diskperf"></a>diskperf
-
-
 
 在 Windows 2000 中，默认情况下不启用物理磁盘和逻辑磁盘性能计数器。
 
@@ -34,9 +28,9 @@ ms.locfileid: "71377808"
 diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 ```
 
-## <a name="options"></a>选项
+## <a name="options"></a>Options
 
-|选项|描述|
+|选项|说明|
 |------|-----------|
 |-?|显示上下文相关的帮助。|
 |-Y|计算机重新启动时，启动所有磁盘性能计数器。|

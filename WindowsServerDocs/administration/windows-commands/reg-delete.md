@@ -1,24 +1,20 @@
 ---
 title: 注册删除
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cee05071-1607-4ab1-b8ab-65caebeb85c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7156bf58b27da1602931f0dc1903de71d86764e7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 726a3c700a9278dbc7abb1873aae7ea3c957bbb5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384759"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836500"
 ---
 # <a name="reg-delete"></a>注册删除
 
@@ -34,9 +30,9 @@ ms.locfileid: "71384759"
 Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<KeyName >|指定要删除的子项或项的完整路径。 若要指定远程计算机，请包含计算机名称（格式 \\\\ComputerName\) 作为*KeyName*的一部分。 省略 \\\\ComputerName \ 会使操作默认为本地计算机。 *KeyName*必须包含有效的根密钥。 本地计算机的有效根密钥为： HKLM、HKCU、HKCR、HKU 开头和 HKCC。 如果指定了远程计算机，则有效的根密钥为： HKLM 和 HKU 开头。|
 |/v \<ValueName >|删除子项下的特定项。 如果未指定任何项，则将删除子项下的所有项和子项。|
@@ -49,12 +45,12 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 
 下表列出了**reg delete**操作的返回值。
 
-|值|描述|
+|值|说明|
 |-----|-----------|
 |0|成功|
 |1|失败|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要删除注册表项超时及其所有子项和值，请键入：
 ```
@@ -65,6 +61,6 @@ REG DELETE HKLM\Software\MyCo\MyApp\Timeout
 REG DELETE \\ZODIAC\HKLM\Software\MyCo /v MTU
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

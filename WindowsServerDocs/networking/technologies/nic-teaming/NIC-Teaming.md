@@ -2,23 +2,19 @@
 title: NIC 组合
 description: 在本主题中，我们将概述 Windows Server 2016 中的网络接口卡（NIC）组合。 NIC 组合允许在一个或多个基于软件的虚拟网络适配器之间分组到32物理以太网网络适配器。 这些虚拟网络适配器可以提高性能，并在网络适配器发生故障时提供容错能力。
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-nict
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: lizross
 author: eross-msft
 ms.date: 09/10/2018
-ms.openlocfilehash: f4d9dd20d626f998bee0a8414c281cd27b2d3dbb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 13607bedb436b794e03e3b2ef67ca0e90d865ed7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316446"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854730"
 ---
 # <a name="nic-teaming"></a>NIC 组合
 
@@ -41,7 +37,10 @@ ms.locfileid: "80316446"
 此外，还可以将组合 Nic 连接到相同的开关或不同的交换机。 如果将 Nic 连接到不同的交换机，则这两个交换机必须位于同一子网中。  
   
 ## <a name="availability"></a>可用性  
-所有版本的 Windows Server 2016 中都提供了 NIC 组合。 你可以使用各种工具来管理运行客户端操作系统的计算机的 NIC 组合，例如：• Windows PowerShell cmdlet •远程桌面•远程服务器管理工具  
+所有版本的 Windows Server 2016 中都提供了 NIC 组合。 你可以使用各种工具来管理运行客户端操作系统的计算机的 NIC 组合，例如：
+*    Windows PowerShell cmdlet
+*    远程桌面
+*    远程服务器管理工具  
   
 ## <a name="supported-and-unsupported-nics"></a>支持和不支持的 Nic   
 你可以使用在 Windows Server 2016 的 NIC 组中已通过 Windows 硬件认证和徽标测试（WHQL 测试）的任何以太网 NIC。  
@@ -116,9 +115,9 @@ Vm 中的 NIC 组合不会影响实时迁移。 与在 VM 中配置 NIC 组合�
 
 使用以下准则计划在配置有 NIC 的 VM 中使用 Vlan：
   
--   在 VM 中支持多个 Vlan 的首选方法是使用 Hyper-v 虚拟交换机上的多个端口配置 VM，并将每个端口与 VLAN 相关联。 请勿将这些端口组合到 VM 中，因为这样做会导致网络通信问题。  
+-    在 VM 中支持多个 Vlan 的首选方法是使用 Hyper-v 虚拟交换机上的多个端口配置 VM，并将每个端口与 VLAN 相关联。 请勿将这些端口组合到 VM 中，因为这样做会导致网络通信问题。  
 
--   如果 VM 有多个 SR-IOV 虚拟功能（VFs），请确保它们位于同一 VLAN 上，然后在 VM 中对它们进行分组。 可以轻松地将不同的 VFs 配置到不同的 Vlan 上，这样做会导致网络通信问题。  
+-    如果 VM 有多个 SR-IOV 虚拟功能（VFs），请确保它们位于同一 VLAN 上，然后在 VM 中对它们进行分组。 可以轻松地将不同的 VFs 配置到不同的 Vlan 上，这样做会导致网络通信问题。  
  
   
 ### <a name="manage-network-interfaces-and-vlans"></a>管理网络接口和 Vlan 

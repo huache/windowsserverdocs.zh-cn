@@ -1,34 +1,29 @@
 ---
 ms.assetid: 9a06cd41-426f-4cb9-89cf-f5be730e0b79
-title: Active Directory 域服务&#39;中的新增功能
-ms.custom: na
+title: Active Directory 域服务的新增功能
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: ''
-ms.suite: na
 ms.technology: active-directory-domain-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: Femila
 ms.author: billmath
 ms.date: 05/31/2017
-ms.openlocfilehash: 064ccf80faf77bbf128351a78ea437730983bf06
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5e58bb229aa8fe02fb20f870a0e922d1aa8c34b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948197"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825640"
 ---
-# <a name="what39s-new-in-active-directory-domain-services"></a>Active Directory 域服务&#39;中的新增功能 
+# <a name="whats-new-in-active-directory-domain-services"></a>Active Directory 域服务的新增功能 
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
-Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务都是托管在云中，其他托管在本地。 这些改进包括：  
+Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务托管在云中，而其他应用程序和服务托管在本地。 改进包括：  
   
 -   [特权访问管理](https://technet.microsoft.com/library/mt150258.aspx   
 )  
   
-- [通过 Azure Active Directory Join 将云功能扩展到 Windows 10 设备](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
+- [通过 Azure Active Directory 联接将云功能扩展到 Windows 10 设备](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
   
 - [将已加入域的设备连接到 Windows 10 体验 Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)   
   
@@ -37,7 +32,7 @@ Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 
 -  [文件复制服务（FRS）和 Windows Server 2003 功能级别弃用](ad-ds/active-directory-functional-levels.md)  
   
   
-## <a name="BKMK_PAM"></a>特权访问管理  
+## <a name="privileged-access-management"></a><a name="BKMK_PAM"></a>特权访问管理  
 特权访问管理（PAM）有助于缓解由凭据盗窃技术（例如传递哈希、鱼叉式的网络钓鱼和类似类型的攻击）引起的 Active Directory 环境的安全问题。 它提供新的管理访问解决方案，该解决方案是使用 Microsoft Identity Manager （MIM）配置的。 PAM 引入：  
   
 -   由 MIM 预配的新堡垒 Active Directory 林。 堡垒林与现有林有特殊的 PAM 信任。 它提供了一个新的 Active Directory 环境，该环境已知不会有任何恶意活动，并与现有林隔离以使用特权帐户。  
@@ -55,13 +50,13 @@ Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 
   
 -   新的监视功能可帮助您轻松识别请求访问的人员、授予的访问权限以及执行的活动。  
   
-**惠?**  
+**要求**  
   
--   Microsoft 标识管理器  
+-   Microsoft Identity Manager  
   
 -   Windows Server 2012 R2 或更高版本的 Active Directory 林功能级别。  
   
-## <a name="BKMK_AzureADJoin"></a>Azure AD 联接  
+## <a name="azure-ad-join"></a><a name="BKMK_AzureADJoin"></a>Azure AD 联接  
 Azure Active Directory 联接增强了企业、商业和 EDU 客户的标识体验-改进了企业和个人设备的功能。  
   
 优势：  
@@ -70,7 +65,7 @@ Azure Active Directory 联接增强了企业、商业和 EDU 客户的标识体�
   
     -   漫游或个性化，辅助功能设置和凭据  
   
-    -   备份和恢复  
+    -   备份和还原  
   
     -   使用工作帐户访问 Microsoft Store  
   
@@ -92,14 +87,14 @@ Azure Active Directory 联接增强了企业、商业和 EDU 客户的标识体�
   
 有关详细信息，请参阅适用于[企业的 Windows 10：使用设备进行工作的方式](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)。  
   
-## <a name="BKMK_IDLocker"></a>Microsoft Passport  
+## <a name="microsoft-passport"></a><a name="BKMK_IDLocker"></a>Microsoft Passport  
 Microsoft Passport 是一种新的基于密钥的身份验证方法，组织和消费者超出了密码。 这种形式的身份验证依赖于安全漏洞、盗窃和诈骗网络的凭据。  
   
 用户使用已链接到证书或非对称密钥对的信息，在设备上登录到带有生物识别或 PIN 的日志。 标识提供者（Idp）通过将用户的公钥映射到 IDLocker 来验证用户，并通过一次性密码（OTP）、Phonefactor 或不同的通知机制提供登录信息。  
   
 有关详细信息，请参阅[使用不带密码的身份验证身份 Microsoft Passport](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport/)  
   
-## <a name="BKMK_FRSDeprecation"></a>文件复制服务（FRS）和 Windows Server 2003 功能级别弃用  
+## <a name="deprecation-of-file-replication-service-frs-and-windows-server-2003-functional-levels"></a><a name="BKMK_FRSDeprecation"></a>文件复制服务（FRS）和 Windows Server 2003 功能级别弃用  
 尽管在以前的 Windows Server 版本中不推荐使用文件复制服务（FRS）和 Windows Server 2003 功能级别，但这会导致不再支持 Windows Server 2003 操作系统。 因此，应从域中删除任何运行 Windows Server 2003 的域控制器。 应将域和林功能级别至少提升到 Windows Server 2008，以防止将运行早期版本 Windows Server 的域控制器添加到环境中。  
   
 在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 有关迁移步骤，可以参阅 [TechNet 上的过程](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可参阅[存储团队文件柜博客上的简化步骤集](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。  

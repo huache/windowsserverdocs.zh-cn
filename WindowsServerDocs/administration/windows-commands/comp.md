@@ -1,28 +1,22 @@
 ---
 title: comp
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 comp 的 Windows 命令主题，它将两个文件或文件集的内容逐字节进行比较。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 40319d23-704d-4da1-be93-8259547275d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84604cea36b0b4c9543a7169002551c0da4f0493
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f61743b55f38cfdebb17506368609895f48b4f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379265"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847450"
 ---
 # <a name="comp"></a>comp
-
-
 
 逐字节比较两个文件或文件集的内容。 如果在没有参数的情况下使用，则**comp**会提示你输入要比较的文件。
 
@@ -34,9 +28,9 @@ ms.locfileid: "71379265"
 comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<Data1 >|指定要比较的第一个文件或一组文件的位置和名称。 您可以使用通配符（ **&#42;** 和 **？** ）来指定多个文件。|
 |\<Data2 >|指定要比较的第二个文件或一组文件的位置和名称。 您可以使用通配符（ **&#42;** 和 **？** ）来指定多个文件。|
@@ -46,7 +40,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 |/n =\<数字 >|仅比较为每个文件指定的行数，即使文件大小不同也是如此。|
 |/c|执行不区分大小写的比较。|
 |/off [line]|处理具有脱机属性集的文件。|
-|/?|在命令提示符下显示帮助。|
+|/?|在命令提示符处显示帮助。|
 
 ## <a name="remarks"></a>备注
 
@@ -91,7 +85,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 
     若要比较多个文件，请按 Y。**Comp**命令会提示你输入新文件的位置和名称。 若要停止比较，请按 N。按 Y 时，将**提示你输入要**使用的命令行选项。 如果未指定任何命令行选项，则**comp**将使用您之前指定的任何命令行选项。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要将目录 C:\Reports 的内容与备份目录进行比较 \\\\Sales\Backup\April "，请键入：
 ```
@@ -102,6 +96,6 @@ comp c:\reports \\sales\backup\april
 comp \invoice\*.txt \invoice\backup\*.txt /n=10 /d
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

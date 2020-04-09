@@ -1,28 +1,24 @@
 ---
 title: PowerShell
 description: 了解如何从命令提示符中打开 PowerShell 控制台。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 694fc970-0b6c-4046-b1b5-7eb1a0d26609
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 2c43c71fce9bb25efcf3f03284160d5534475a8a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 327ac844bec0e4c89ee1443c193aa628de038dea
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372201"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837400"
 ---
 # <a name="powershell"></a>PowerShell
 
-Windows PowerShell 是一种基于任务的命令行 shell 和脚本语言，专为系统管理而设计。 在 .NET Framework 的基础上构建的 Windows PowerShell 可帮助 IT 专业人士和高级用户控制和自动执行 Windows 操作系统以及在 Windows 上运行的应用程序的管理。
+Windows PowerShell 是一种基于任务的命令行 shell 和脚本语言，专为系统管理而设计。 Windows PowerShell 构建在 .NET Framework 之上，可帮助 IT 专业人士和超级用户控制和自动化在 Windows 上运行的 Windows 操作系统和应用程序的管理。
 
 **Ngen.exe**命令行工具在命令提示符窗口中启动 Windows PowerShell 会话。 使用**PowerShell**时，可以使用它的可选参数自定义会话。 例如，可以启动使用特定执行策略或排除 Windows PowerShell 配置文件的会话。 否则，该会话与 Windows PowerShell 控制台中启动的任何会话相同。
 
@@ -70,7 +66,7 @@ Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项
 
 ## <a name="additional-references"></a>其他参考
 
-[about_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)
-[about_PowerShell_Ise](https://go.microsoft.com/fwlink/?LinkId=256512)
-[windows Powershell](https://go.microsoft.com/fwlink/?LinkID=107116)
-[通过 windows powershell 编写脚本](https://technet.microsoft.com/scriptcenter/dd742419)的另请参阅
+[About_PowerShell .exe](https://go.microsoft.com/fwlink/?LinkID=113439)
+[About_PowerShell_Ise .Exe](https://go.microsoft.com/fwlink/?LinkId=256512)
+[Windows Powershell](https://go.microsoft.com/fwlink/?LinkID=107116)
+[通过 windows powershell 编写脚本的](https://technet.microsoft.com/scriptcenter/dd742419)另请参阅

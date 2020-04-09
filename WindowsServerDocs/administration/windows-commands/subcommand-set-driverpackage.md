@@ -1,28 +1,22 @@
 ---
 title: 子命令集-DriverPackage
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: DriverPackage 的 Windows 命令主题，用于重命名和/或启用或禁用服务器上的驱动程序包。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 11804bb6-ca29-4461-8c63-5131748cd742
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65751cf6e03baa87c7734b318a26111652bee0a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 68d282b3338e67a33a55481658f55db69930b10e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370819"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834012"
 ---
 # <a name="subcommand-set-driverpackage"></a>子命令： set-DriverPackage
-
-
 
 重命名和/或启用或禁用服务器上的驱动程序包。
 
@@ -32,9 +26,9 @@ ms.locfileid: "71370819"
 WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /PackageId:<ID>} [/Name:<New Name>] [/Enabled:{Yes | No}
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|        参数         |                                                                                                                                                                                                               描述                                                                                                                                                                                                                |
+|        参数         |                                                                                                                                                                                                               说明                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server：\<Server name >] |                                                                                                                                                 指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。                                                                                                                                                 |
 | [/DriverPackage：\<名称 >] |                                                                                                                                                                                       指定要修改的驱动程序包的当前名称。                                                                                                                                                                                        |
@@ -42,7 +36,7 @@ WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /Pac
 |   [/Name：\<新名称 >]    |                                                                                                                                                                                              指定驱动程序包的新名称。                                                                                                                                                                                              |
 |      [/Enabled： {Yes      |                                                                                                                                                                                                                   不                                                                                                                                                                                                                    |
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要更改包的设置，请键入下列内容之一：
 ```
@@ -52,6 +46,6 @@ WDSUTIL /Set-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318} /Na
 WDSUTIL /Set-DriverPackage /DriverPackage:MyDriverPackage /Name:NewName /Enabled:Yes
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

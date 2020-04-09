@@ -1,7 +1,6 @@
 ---
 ms.assetid: 67d8a8d7-2fbd-4ed7-bb41-75769f942024
 title: 配置性能监视
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 37dd52b8771eda695069dd996fbd920e31f80ef1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 94ff5a5e4ca16bdd1851a2997fdca1fd36741888
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359806"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854910"
 ---
 # <a name="configure-performance-monitoring"></a>配置性能监视
   
@@ -60,7 +59,7 @@ AD FS 包括其自己的专用性能计数器，以帮助你监视联合服务�
 ## <a name="ad-fs-performance-counters"></a>AD FS 性能计数器  
 下表列出了 AD FS 性能计数器，并说明了它们对于监视与联合服务器或联合服务器代理相关的活动非常有用。  
   
-|计数器|描述|可用于： 
+|计数器|说明|可用于： 
 |-----------|---------------|------------------- 
 |令牌请求次数|监视发送到联合服务器的令牌请求数，包括 SSOAuth 令牌请求。|联合服务器 
 |令牌请求\/秒|监视发送到联合服务器的令牌请求数，包括每秒 SSOAuth 令牌请求数。|联合服务器  

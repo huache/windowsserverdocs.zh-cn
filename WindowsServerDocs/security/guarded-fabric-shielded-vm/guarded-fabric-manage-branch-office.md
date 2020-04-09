@@ -1,17 +1,17 @@
 ---
 title: 分支机构注意事项
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 5a07553e6662fd79230d566ba2049c5e8997f4d6
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: a9893ecd76e142dd243a1d99e83a48d2edfd5872
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322499"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856560"
 ---
 # <a name="branch-office-considerations"></a>分支机构注意事项
 
@@ -61,4 +61,4 @@ Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
 ```
 
 由于可缓存的密钥保护程序对于每个受防护的 VM 都是唯一的，因此，在 HGS 启用此设置后，你需要完全关闭（不重新启动）并启动受防护的 Vm 以获取可缓存的密钥保护程序。
-如果受防护的 VM 迁移到运行较早版本的 Windows Server 的 Hyper-v 主机，或从早期版本的 HGS 获取新的密钥保护程序，则它将不能在脱机模式下启动自身，但可以继续在脱机模式下运行只能.
+如果受防护的 VM 迁移到运行较早版本的 Windows Server 的 Hyper-v 主机，或从早期版本的 HGS 获取新的密钥保护程序，则它将不能在脱机模式下启动自身，但可以继续在脱机模式下运行。

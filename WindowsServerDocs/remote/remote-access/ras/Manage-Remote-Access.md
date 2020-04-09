@@ -2,22 +2,18 @@
 title: 管理远程访问
 description: 本主题提供有关如何在 Windows Server 2016 中管理远程访问的信息。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6437a7aa5a535352ad4f6c6be8fbac2162b6feea
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 19798c5fb29d3b8aea68b29e5a42775970eeca46
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308434"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857442"
 ---
 # <a name="manage-remote-access"></a>管理远程访问
 
@@ -86,8 +82,8 @@ DirectAccess 远程客户端管理部署方案包括以下规划和配置步骤�
   
 |角色或功能|如何支持本方案|  
 |----------|-----------------|  
-|*远程访问角色*|使用服务器管理器控制台或 Windows PowerShell 安装和卸载此角色。 本角色包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务（以前是网络策略和访问服务 (NPAS) 服务器角色下的角色服务）。 远程访问角色由以下两个组件组成：<br /><br />1. DirectAccess 和路由和远程访问服务（RRAS） VPN： DirectAccess 和 VPN 在远程访问管理控制台中进行管理。<br />2. RRAS：在路由和远程访问控制台中管理功能。<br /><br />远程访问服务器角色依赖以下功能：<br /><br />-Web 服务器（IIS）：配置网络位置服务器和默认 Web 探测时需要。<br />-Windows 内部数据库：用于远程访问服务器上的本地记帐。|  
-|远程访问管理工具功能|此功能的安装如下所述：<br /><br />-默认情况下，在安装了远程访问角色并且支持远程管理控制台用户界面的远程访问服务器上。<br />-作为不运行远程访问服务器角色的服务器上的选项。 在此情况下，它可用于远程管理远程访问服务器。<br /><br />此功能由下列组件构成：<br /><br />-远程访问 GUI 和命令行工具<br />-适用于 Windows PowerShell 的远程访问模块<br /><br />依赖项包括：<br /><br />-组策略管理控制台<br />-RAS 连接管理器管理工具包（CMAK）<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|  
+|*远程访问角色*|使用服务器管理器控制台或 Windows PowerShell 安装和卸载此角色。 本角色包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务（以前是网络策略和访问服务 (NPAS) 服务器角色下的角色服务）。 远程访问角色由以下两个组件组成：<p>1. DirectAccess 和路由和远程访问服务（RRAS） VPN： DirectAccess 和 VPN 在远程访问管理控制台中进行管理。<br />2. RRAS：在路由和远程访问控制台中管理功能。<p>远程访问服务器角色依赖以下功能：<p>-Web 服务器（IIS）：配置网络位置服务器和默认 Web 探测时需要。<br />-Windows 内部数据库：用于远程访问服务器上的本地记帐。|  
+|远程访问管理工具功能|此功能的安装如下所述：<p>-默认情况下，在安装了远程访问角色并且支持远程管理控制台用户界面的远程访问服务器上。<br />-作为不运行远程访问服务器角色的服务器上的选项。 在此情况下，它可用于远程管理远程访问服务器。<p>此功能由下列组件构成：<p>-远程访问 GUI 和命令行工具<br />-适用于 Windows PowerShell 的远程访问模块<p>依赖项包括：<p>-组策略管理控制台<br />-RAS 连接管理器管理工具包（CMAK）<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬件要求  
 本方案的硬件要求包括以下各项：  

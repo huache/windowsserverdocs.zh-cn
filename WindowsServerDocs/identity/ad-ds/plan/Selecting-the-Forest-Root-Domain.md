@@ -1,7 +1,6 @@
 ---
 ms.assetid: ef4ef4a9-8969-4ad0-bd17-b2bb24f36ef6
 title: 选择林根域
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 80d39a5910d06559b98211eaf55a4cd0c82442a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3fddf5179e2944800d57568f0b8e52262c04cd43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402502"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821900"
 ---
 # <a name="selecting-the-forest-root-domain"></a>选择林根域
 
@@ -89,4 +88,4 @@ Active Directory DNS 所有者与组织的 DNS 所有者合作，以获取将用
   
 ## <a name="documenting-the-forest-root-domain-name"></a>记录目录林根域名
 
-记录为林根域选择的 DNS 前缀和后缀。 此时，确定哪个域将成为林根。 您可以将目录林根域名信息添加到您创建的 "域计划" 工作表中，以便记录新域和升级域的计划以及域名。 若要打开它，请从[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，并打开 "域计划" （DSSLOGI_5）。
+记录为林根域选择的 DNS 前缀和后缀。 此时，确定哪个域将成为林根。 您可以将目录林根域名信息添加到您创建的 "域计划" 工作表中，以便记录新域和升级域的计划以及域名。 若要打开它，请从[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "域计划" （DSSLOGI_5 .doc）。

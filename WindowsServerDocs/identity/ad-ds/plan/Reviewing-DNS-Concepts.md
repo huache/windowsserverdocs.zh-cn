@@ -1,7 +1,6 @@
 ---
 ms.assetid: 133474ee-316d-4b1c-acc6-ad5434a064d5
 title: 查看 DNS 概念
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0a1ffe065991e76c91fa95a6ac080a8e8d54bcce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37c33ca181394c66ef149715c3f1477774061660
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408705"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822060"
 ---
 # <a name="reviewing-dns-concepts"></a>查看 DNS 概念
 
@@ -36,7 +35,7 @@ ms.locfileid: "71408705"
   
 ![DNS 概念](../../media/Reviewing-DNS-Concepts/0c24b576-d41a-4e5d-ad3d-6be81e095835.gif)  
   
-DNS 根服务器承载以圆点（。 )。 根区域包含对层次结构的下一级别中的区域的委派，即 com 区域。 根区域中的委托告知 DNS 根服务器，若要查找 com 区域，必须联系 Com 服务器。 同样，com 区域中的委派会告诉 Com 服务器，若要查找 contoso.com 区域，必须联系 Contoso 服务器。  
+DNS 根服务器承载以圆点（。 ）。 根区域包含对层次结构的下一级别中的区域的委派，即 com 区域。 根区域中的委托告知 DNS 根服务器，若要查找 com 区域，必须联系 Com 服务器。 同样，com 区域中的委派会告诉 Com 服务器，若要查找 contoso.com 区域，必须联系 Contoso 服务器。  
   
 > [!NOTE]  
 > 委托使用两种类型的记录。 名称服务器（NS）资源记录提供权威服务器的名称。 主机（A）和主机（AAAA）资源记录提供权威服务器的 IP 版本4（IPv4）和 IP 版本6（IPv6）地址。  

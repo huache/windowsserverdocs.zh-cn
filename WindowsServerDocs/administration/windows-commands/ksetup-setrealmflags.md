@@ -1,24 +1,20 @@
 ---
 title: ksetup： setrealmflags
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bcb2824e-fba7-4ebe-be62-e62b4fae5b17
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b594ae0a1c3c9814d93496ac76e82a594ff4ee00
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 29ef5de8130fa9b10ce6d999e16765b0aa2697a4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374807"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841280"
 ---
 # <a name="ksetupsetrealmflags"></a>ksetup： setrealmflags
 
@@ -32,24 +28,24 @@ ms.locfileid: "71374807"
 ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<RealmName >|领域名称被声明为大写的 DNS 名称，例如 CORP。CONTOSO.COM。|
 |领域标志|表示下列标志之一：</br>-SendAddress</br>- TcpSupported</br>-委托</br>- NcSupported</br>-RC4|
 
 ## <a name="remarks"></a>备注
 
-领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 的计算机可以使用 Kerberos 服务器来管理身份验证，而不是使用运行 Windows Server 操作系统的域，这些系统参与Kerberos 领域。 此条目将建立领域的功能。 下表对每个进行了说明。
+领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 的计算机可以使用 Kerberos 服务器来管理身份验证，而不是使用运行 Windows Server 操作系统的域，这些系统参与了 Kerberos 领域。 此条目将建立领域的功能。 下表对每个进行了说明。
 
-|值|领域标志|描述|
+|值|领域标志|说明|
 |-----|----------|-----------|
 |0xF|全部|设置所有领域标志。|
 |0x00|无|未设置领域标志，并且未启用任何其他功能。|
 |0x01|SendAddress|此 IP 地址将包含在票证授予票证中。|
 |0x02|TcpSupported|此领域支持传输控制协议（TCP）和用户数据报协议（UDP）。|
-|0x04|委派|此领域中的每个人都受信任，可用于委派。|
+|0x04|委托|此领域中的每个人都受信任，可用于委派。|
 |0x08|NcSupported|此领域支持名称规范化，这允许 DNS 和领域的命名标准。|
 |0x80|RC4|此领域支持 RC4 加密以启用跨领域信任，这允许使用 TLS。|
 
@@ -57,7 +53,7 @@ ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 可以通过查看**ksetup**的输出来查看哪些领域标志可用和设置。
 
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 
 列出可用的和设置领域 CONTOSO 的领域标志：
 ```
@@ -69,9 +65,9 @@ ksetup /setrealmflags CONTOSO ncsupported delegate
 ```
 运行**ksetup**命令，以验证是否已通过查看输出和查找**领域**标志来设置领域标志。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
 -   [Ksetup:listrealmflags](ksetup-listrealmflags.md)
 -   [Ksetup:addrealmflags](ksetup-addrealmflags.md)
 -   [Ksetup:delrealmflags](ksetup-delrealmflags.md)
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

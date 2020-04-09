@@ -1,35 +1,29 @@
 ---
 title: call
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于调用的 Windows 命令主题，该主题从一个批处理程序调用另一个批处理程序，而不停止父批处理程序。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 89097ec5d3711b3d8831f8c33b3778ed0752246f
-ms.sourcegitcommit: ee8fa8e1293f29229b5ce1b0f3d4a07ba99568f5
+ms.openlocfilehash: 58b2d03c76f53fa7bbf5c483c1a423cd4a011f94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280188"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848230"
 ---
 # <a name="call"></a>call
 
-
-
-从一个批处理程序调用另一个批处理程序，而不停止父批处理程序。 **Call**命令接受标签作为调用的目标。
-
-> [!NOTE]
-> 当在脚本或批处理文件外使用时，**调用**在命令提示符下不起作用。
+从一个批处理程序调用另一个批处理程序，而不停止父批处理程序。 **Call**命令接受标签作为调用的目标
 
 有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
+> [!NOTE]
+> 当在脚本或批处理文件外使用时，调用在命令提示符下不起作用。
 
 ## <a name="syntax"></a>语法
 
@@ -37,7 +31,7 @@ ms.locfileid: "78280188"
 call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
 |           参数           |                                                                         说明                                                                          |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,7 +51,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
 |批处理参数|说明|
 |---------------|-----------|
-|% ~ 1|展开 **%1**并删除周围的引号（""）。|
+|% ~ 1|展开 **%1**并删除周围的引号（）。|
 |% ~ f1|将 **%1**扩展到完全限定的路径。|
 |% ~ d1|仅将 **%1**扩展到驱动器号。|
 |% ~ p1|仅将 **%1**展开为路径。|
@@ -100,7 +94,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
     `call :<Label> <Arguments>`
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要从另一个批处理程序运行 Checknew 程序，请在父批处理程序中键入以下命令：
 ```
@@ -111,6 +105,6 @@ call checknew
 call checknew %1 %2
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

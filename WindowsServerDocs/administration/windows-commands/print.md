@@ -1,24 +1,20 @@
 ---
 title: print
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ada0657e2f17754e55e97e6488aac99fb0025afb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36966d8d3beb032ee0dcee50d9bd5bc0111bf4f5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372150"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837370"
 ---
 # <a name="print"></a>print
 
@@ -34,9 +30,9 @@ ms.locfileid: "71372150"
 Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/d：\<PrinterName >|指定要打印作业的打印机。 若要打印到本地连接的打印机，请在计算机上指定连接打印机的端口。</br>-并行端口的有效值为 LPT1、LPT2 和 LPT3。</br>-串行端口的有效值为 COM1、COM2、COM3 和 COM4。</br>还可以通过使用其队列名称（\\\\*ServerName*\*PrinterName *）来指定网络打印机。 如果未指定打印机，则默认情况下会将打印作业发送到 LPT1。|
 |\<驱动器 >：|指定要打印的文件所在的逻辑或物理驱动器。 如果要打印的文件位于当前驱动器上，则不需要此参数。|
@@ -55,7 +51,7 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
     -   显示打印机的状态
     -   为代码页切换准备打印机
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要将当前目录中的文件 Report .txt 发送到本地计算机上连接到 LPT2 的打印机，请键入：
 ```
@@ -66,9 +62,9 @@ print /d:lpt2 report.txt
 print /d:\\copyroom\printer1 c:\accounting\report.txt 
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 
 [打印命令参考](print-command-reference.md)
 

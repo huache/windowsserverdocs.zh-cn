@@ -2,22 +2,18 @@
 title: 步骤2配置 DirectAccess-VPN 服务器
 description: 本主题是将 DirectAccess 添加到 Windows Server 2016 现有远程访问（VPN）部署的指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c26f1fbcfa2d94c001579aabd6794c6537bd06f8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f055a51c93276474bb1b5d4162a914dfa7bbb69a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314743"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819630"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>步骤2配置 DirectAccess-VPN 服务器
 

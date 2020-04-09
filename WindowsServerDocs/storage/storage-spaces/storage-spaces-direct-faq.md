@@ -1,7 +1,6 @@
 ---
 title: 存储空间直通-常见问题
 description: 了解存储空间直通
-keywords: 存储空间
 ms.prod: windows-server
 ms.author: kaushik
 ms.technology: storage-spaces
@@ -9,12 +8,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 19dcc1c57fe7c7eea74b003553a0b0a6ab5508aa
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 18384ab3c9e520ace9237b68474a45c8ec349502
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950231"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856100"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>存储空间直通常见问题（FAQ）
 
@@ -36,13 +35,13 @@ ms.locfileid: "75950231"
 
 添加新的容错域后，你创建的新虚拟磁盘将跳转到3向镜像。 但是，现有虚拟磁盘将保留为双向镜像磁盘。 可以从现有卷将数据复制到新的虚拟磁盘，以获得新的复原能力。
  
-## <a name="the-storage-spaces-direct-was-created-using-the-autoconfig0-switch-and-the-pool-created-manually-when-i-try-to-query-the-storage-spaces-direct-pool-to-create-a-new-volume-i-get-a-message-that-says-enable-clusters2d-again-what-should-i-do"></a>该存储空间直通是使用自动配置：0创建的开关和手动创建的池。 当我尝试查询存储空间直通池来创建新卷时，会收到一条消息，显示 "Enable-clusters2d"。我该怎么办？
+## <a name="the-storage-spaces-direct-was-created-using-the-autoconfig0-switch-and-the-pool-created-manually-when-i-try-to-query-the-storage-spaces-direct-pool-to-create-a-new-volume-i-get-a-message-that-says-enable-clusters2d-again-what-should-i-do"></a>该存储空间直通是使用自动配置：0创建的开关和手动创建的池。 当我尝试查询存储空间直通池来创建新卷时，会收到一条消息，显示 "Enable-clusters2d"。 我该怎么办？
 
 默认情况下，当你使用 enable-S2D cmdlet 配置存储空间直通时，该 cmdlet 会为你执行所有操作。 它创建池和层。 使用自动配置时，必须手动完成所有操作。 如果只创建了池，则不一定要创建层。 如果未使用与附加的设备相对应的方式在所有层或未创建层上创建层，将会收到 "Enable-clusters2d" 错误消息。 建议你不要在生产环境中使用自动配置开关。 
  
 ## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>使用 SSD 设备创建存储空间直通后，是否可以向存储空间直通池添加旋转磁盘（HDD）？
 
-不相同。 默认情况下，如果使用单个设备类型创建池，则它不会配置缓存磁盘，所有磁盘都将用于容量。 可以将 NVME 磁盘添加到配置中，并为缓存配置 NVME 磁盘。
+No。 默认情况下，如果使用单个设备类型创建池，则它不会配置缓存磁盘，所有磁盘都将用于容量。 可以将 NVME 磁盘添加到配置中，并为缓存配置 NVME 磁盘。
  
 ## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>我配置了一个2机架的容错域：机架1有2个容错域，第2个机架有1个容错域。 每台服务器有4个容量 100 GB 设备。 能否使用池中的所有 1200 GB 空间？
 
@@ -58,7 +57,7 @@ ms.locfileid: "75950231"
  
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>是否有计算器显示为缓存、容量和复原而保留的磁盘的准确大小，这使我可以更好地进行规划呢？
 
-可以使用存储空间计算器来帮助进行规划。 它在 https://aka.ms/s2dcalc 提供。
+可以使用存储空间计算器来帮助进行规划。 它在 https://aka.ms/s2dcalc提供。
  
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>配置6台服务器和3个机架时，建议的最佳配置是什么？
 
@@ -87,5 +86,5 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 这个：
 
 ```powershell
-get-virtualdisk -friendlyname “xyz” | get-physicalextent
+get-virtualdisk -friendlyname "xyz" | get-physicalextent
 ```

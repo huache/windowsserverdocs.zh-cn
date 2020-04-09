@@ -1,28 +1,22 @@
 ---
 title: setlocal
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 setlocal 的 Windows 命令主题，可在批处理文件中启动环境变量的本地化。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 997c996854f488bb1776f135e3288e3b094e683c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 24ed41289bb517d41db11fd3ebc41e5751b7afd9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384086"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834360"
 ---
 # <a name="setlocal"></a>setlocal
-
-
 
 开始批处理文件中的环境变量的本地化。 在遇到匹配的**endlocal**命令或到达批处理文件的末尾之前，本地化将继续。
 
@@ -36,7 +30,7 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 
 ## <a name="arguments"></a>参数
 
-|参数|描述|
+|Argument|说明|
 |--------|-----------|
 |enableextensions|在遇到匹配的**endlocal**命令之前启用命令扩展，而不考虑在运行**setlocal**命令之前的设置。|
 |disableextensions|在遇到匹配的**endlocal**命令之前禁用命令扩展，而不考虑在运行**setlocal**命令之前的设置。|
@@ -65,7 +59,7 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     ```  
     由于**cmd**在禁用命令扩展时未设置 ERRORLEVEL 变量，因此当你将 ERRORLEVEL 变量与无效参数一起使用时， **verify**命令会将其初始化为非零值。 此外，如果将**setlocal**命令与参数 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **DISABLEDELAYEDEXPANSION**} 一起使用，并且它未将 ERRORLEVEL 变量设置为**1**，则命令扩展不可用。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 可以在批处理文件中本地化环境变量，如下面的示例脚本所示：
 ```
@@ -82,6 +76,6 @@ endlocal
 start notepad c:\superapp.out
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

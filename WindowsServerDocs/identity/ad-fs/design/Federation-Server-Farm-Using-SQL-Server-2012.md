@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6618b3ce-0e94-4009-b887-d8e05453358b
 title: 使用 SQL Server 的联合服务器场
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 358199fd37cdbb320bc8f3e3e5b2900d261986f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 862cbc74833e2d4e9f385ba961b58a1f703e6611
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359152"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853130"
 ---
 # <a name="federation-server-farm-using-sql-server"></a>使用 SQL Server 的联合服务器场
 
@@ -51,7 +50,7 @@ Microsoft 信息技术 \(IT\) 部门使用高\-安全 SQL Server 数据库镜像
   
 -   SQL Server 2008 \/ R2  
   
--   SQL Server 2012  
+-   SQL 2012 Server  
   
 ## <a name="server-placement-and-network-layout-recommendations"></a>服务器布局和网络布局建议  
 与带有 WID 拓扑的联合服务器场类似，场中的所有联合服务器都配置为使用一个群集域名系统 \(DNS\) 名称 \(表示联合身份验证服务名称\)，另一个群集 IP 地址作为网络负载平衡 \(NLB\) 群集配置的一部分。 这有助于 NLB 主机将客户端请求分配给各个联合服务器。 联合服务器代理可用于将客户端请求代理到联合服务器场。  

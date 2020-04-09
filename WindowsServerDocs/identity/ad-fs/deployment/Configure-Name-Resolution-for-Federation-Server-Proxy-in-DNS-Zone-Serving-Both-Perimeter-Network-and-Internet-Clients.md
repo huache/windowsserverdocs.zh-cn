@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1a6740e6-5b6d-41f8-9ec4-32cdbee3e1bb
 title: 在为外围网络和 Internet 客户端提供服务的 DNS 区域中为联合服务器代理配置名称解析
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 118c03ada32d3cd5b198ecd238078984a38df0db
-ms.sourcegitcommit: 8fbd2d877612a9feb02d7d91ed0372d7cd441d5c
+ms.openlocfilehash: 487ba9d90043ada0d401d7e5a9d02872e1872b7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71359830"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854930"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-both-the-perimeter-network-and-internet-clients"></a>在为外围网络和 Internet 客户端提供服务的 DNS 区域中为联合服务器代理配置名称解析
 
@@ -46,13 +45,13 @@ ms.locfileid: "71359830"
   
 4.  在 " **IP 地址**" 中，键入新联合服务器代理的 IP 地址，例如131.107.27.68。  
   
-5.  单击“添加主机”。  
+5.  单击 **“添加主机”** 。  
   
 ## <a name="add-a-host-a-resource-record-to-the-perimeter-dns-zone-for-a-federation-server-proxy"></a>将\) 资源记录 \(主机添加到联合服务器代理的外围 DNS 区域  
 为了使 Internet 客户端请求可由联合服务器代理成功处理并在由 Internet DNS 区域解析后访问联合服务器，你必须在外围 DNS 区域中 \(\) 资源记录创建主机。 此资源记录解析帐户联合服务器 \(的主机名，例如 fs。 fabrikam.com\) 到帐户联合服务器的 IP 地址 \(例如，企业网络中的 192.168.1.4\)。  
   
 > [!NOTE]  
-> 假设你使用的 DNS 服务器运行的是 Windows 2000 Server、Windows Server 2003、Windows Server 2008 或 Windows Server®2012，其中 DNS 服务器服务用于控制外围 DNS 区域。  
+> 假设你使用的 DNS 服务器运行的是 Windows 2000 Server、Windows Server 2003、Windows Server 2008 或 Windows Server&reg; 2012，其中 DNS 服务器服务用于控制外围 DNS 区域。  
   
 **Administrators**中的成员身份或同等身份是完成此过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
   
@@ -62,11 +61,11 @@ ms.locfileid: "71359830"
   
 2.  在控制台树中，\-右键单击适用的正向查找区域，然后单击 "**新建主机 \(A 或 AAAA\)** "。  
   
-3.  在 "**名称**" 中，仅键入联合服务器的计算机名称。 例如，对于 FQDN fs.fabrikam.com，键入 **fs**。  
+3.  在 "**名称**" 中，仅键入联合服务器的计算机名称。 例如，对于 FQDN fs.fabrikam.com，请键入 **fs**。  
   
 4.  在 " **IP 地址**" 文本框中，键入企业网络中联合服务器的 IP 地址，例如192.168.1.4。  
   
-5.  单击“添加主机”。  
+5.  单击 **“添加主机”** 。  
   
 ## <a name="additional-references"></a>其他参考  
 [清单：设置联合服务器代理](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  

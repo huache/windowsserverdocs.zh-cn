@@ -2,22 +2,18 @@
 title: 测试实验室方案概述
 description: 本主题是测试实验室指南-演示适用于 Windows Server 2016 的 DirectAccess 多站点部署的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9afeced4-1a9b-4cb3-9fc4-d7e44c675755
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8f58072fba266bb6f50b78785654a4748c1b8cb3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 46bcc22604a11a3fc3da764e149d900b1ada1dc8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314641"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860380"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>测试实验室方案概述
 

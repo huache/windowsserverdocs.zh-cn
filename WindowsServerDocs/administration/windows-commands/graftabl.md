@@ -1,24 +1,20 @@
 ---
 title: graftabl
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b08351d4-3d24-490c-86f6-1252da11d923
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac7748b43eb8859a17a2c61ef9ef4444019ad51b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d55df814cb962e82775a86e154a024c579987cf2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375626"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842410"
 ---
 # <a name="graftabl"></a>graftabl
 
@@ -35,11 +31,11 @@ graftabl <CodePage>
 graftabl /status
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|\<CodePage >|指定一个代码页，用于定义图形模式下扩展字符的外观。</br>有效的代码页标识号为：</br>437：美国</br>850：多语言 (拉丁文我)</br>852：西里尔语 （俄语）</br>855：西里尔语 （俄语）</br>857：土耳其语</br>860：葡萄牙语</br>861：冰岛语</br>863：加拿大法语</br>865：北欧</br>866：俄语</br>869：现代希腊语|
+|\<代码页 >|指定一个代码页，用于定义图形模式下扩展字符的外观。</br>有效的代码页标识号为：</br>437：美国</br>850：多语言（拉丁语 I）</br>852：斯拉夫语（拉丁语 II）</br>855：西里尔语（俄语）</br>857：土耳其语</br>860：葡萄牙语</br>861：冰岛语</br>863：加拿大-法语</br>865：北欧</br>866：俄语</br>869：新式希腊语|
 |/status|显示**graftabl**正在使用的当前代码页。|
 |/?|在命令提示符下显示帮助。|
 
@@ -47,14 +43,14 @@ graftabl /status
 
 -   **Graftabl**仅影响指定的代码页的扩展字符的监视器显示。 它不会更改实际的控制台输入代码页。 若要更改控制台输入代码页，请使用**模式**或**chcp**命令。
 -   下表列出了每个退出代码以及它的简短说明。  
-    |退出代码|描述|
+    |退出代码|说明|
     |---------|-----------|
     |0|已成功加载字符集。 未加载上一个代码页。|
     |1|指定的参数不正确。 未采取任何操作。|
     |2|出现文件错误。|
 -   可以在批处理程序中使用 ERRORLEVEL 环境变量来处理**graftabl**返回的退出代码。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要查看**graftabl**使用的当前代码页，请键入：
 ```
@@ -69,9 +65,9 @@ graftabl 437
 graftabl 850
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 
 [Freedisk](freedisk.md)
 

@@ -1,24 +1,20 @@
 ---
 title: 创建、删除或更新租户虚拟网络
 description: 在本主题中，你将了解如何在部署软件定义的网络（SDN）后创建、删除和更新 Hyper-v 网络虚拟化虚拟网络。 Hyper-v 网络虚拟化可帮助隔离租户网络，使每个租户网络为单独的实体。 除非你配置了公共访问工作负荷，否则每个实体都不能进行交叉连接。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a820826-e829-4ef2-9a20-f74235f8c25b
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: f85f593ec3dca33c5b35fb065c7d84ed12ea9af2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: acb663cd33d015c1ce96241abffd4ca260cc5559
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309825"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854520"
 ---
 # <a name="create-delete-or-update-tenant-virtual-networks"></a>创建、删除或更新租户虚拟网络
 

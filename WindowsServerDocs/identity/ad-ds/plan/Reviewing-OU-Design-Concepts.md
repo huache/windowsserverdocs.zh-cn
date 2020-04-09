@@ -1,7 +1,6 @@
 ---
 ms.assetid: 41b56704-c6f9-4d29-af97-62123e300565
 title: 查看 OU 设计概念
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6dc2cbb7ddff8725876f8dd4ec2760e828fd4e4c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 67f8ef3ec37146002f3e099caa459fc209fcf5b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402516"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821971"
 ---
 # <a name="reviewing-ou-design-concepts"></a>查看 OU 设计概念
 
@@ -42,7 +41,7 @@ OU 层次结构不需要反映组织或组的部门层次结构。 Ou 是为特�
   
 您可以通过为特定目的创建 Ou 的子树（例如组策略的应用程序）或限制受保护对象的可见性，使只有特定用户可以看到它们，从而进一步优化 OU 结构。 例如，如果需要将组策略应用到一组选择的用户或资源，则可以将这些用户或资源添加到 OU，然后将组策略应用到该 OU。 你还可以使用 OU 层次结构来启用更进一步的管理控制委派。  
   
-虽然 OU 结构中的级别数没有技术限制，但为了便于管理，我们建议你将 OU 结构限制为不超过10个级别的深度。 每个级别的 Ou 数量没有技术限制。 请注意，启用 Active Directory 域服务（AD DS）的应用程序可能对可分辨名称中使用的字符数（即，目录中对象的完全轻型目录访问协议（LDAP）路径）或层次结构中的 OU 深度。  
+虽然 OU 结构中的级别数没有技术限制，但为了便于管理，我们建议你将 OU 结构限制为不超过10个级别的深度。 每个级别的 Ou 数量没有技术限制。 请注意，启用 Active Directory 域服务（AD DS）的应用程序可能对可分辨名称中使用的字符数（即目录中对象的完全轻型目录访问协议（LDAP）路径）或层次结构中的 OU 深度具有限制。  
   
 AD DS 中的 OU 结构不应向最终用户显示。 OU 结构是为服务管理员和数据管理员提供的管理工具，并且可以轻松地进行更改。 继续查看和更新你的 OU 结构设计，以反映你的管理结构中的更改并支持基于策略的管理。  
   

@@ -2,24 +2,23 @@
 title: 正在运行或配置的虚拟机的数量必须在支持的限制范围内
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 9d3c4aa3-8416-46ec-a253-26dc98088d7b
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 56d7fd528d7fda20dbdbb16a6262bb072f053ef0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49013d6a4c9dda6e79d6a803bae0f5641d826817
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364626"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854620"
 ---
 # <a name="the-number-of-running-or-configured-virtual-machines-must-be-within-supported-limits"></a>正在运行或配置的虚拟机的数量必须在支持的限制范围内
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71364626"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|Error  
+|**对应**|错误  
 |**类别**|配置|  
   
 在以下部分中，斜体表示在此问题的最佳做法分析器工具中出现的文本。  
@@ -82,7 +81,7 @@ ms.locfileid: "71364626"
 1.  在安装了 Active Directory 域服务工具功能的计算机上，在 "**管理工具**" 中**Active Directory 打开 "用户和计算机**"，然后导航到运行 hyper-v 的计算机的计算机帐户。  
   
     > [!NOTE]  
-    > 如果 **“Active Directory 用户和计算机”** 没有列出，则请安装 Active Directory 域服务工具功能。 有关说明，请参阅[安装 AD DS 的远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkId=140463)（ https://go.microsoft.com/fwlink/?LinkId=140463) 。  
+    > 如果 **“Active Directory 用户和计算机”** 没有列出，则请安装 Active Directory 域服务工具功能。 有关说明，请参阅为[AD DS 安装远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkId=140463)（ https://go.microsoft.com/fwlink/?LinkId=140463)。  
   
 2.  右键单击运行 Hyper-v 的计算机的计算机帐户，然后单击 "**属性**"。  
   
@@ -90,7 +89,7 @@ ms.locfileid: "71364626"
   
 4.  若要允许 Hyper-v 计算机帐户提供到远程计算机的委派凭据，请执行以下操作：  
   
-    1.  单击**添加**。  
+    1.  单击 **“添加”** 。  
   
     2.  在 "**添加服务**" 对话框中，单击 "**用户或计算机**"，选择远程计算机，然后单击 **"确定"** 。  
   

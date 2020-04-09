@@ -1,24 +1,20 @@
 ---
 title: takeown
 description: 了解如何通过成为文件所有者来获取对文件的访问权限。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0683cd65-a6db-4cab-962b-45a0ff61f43c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08804db36357c3d1d1efa7243b338bd85d5c48e2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: af6952b8c4c14a717f7904ee0b77bf6ec9f5030e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383759"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833441"
 ---
 # <a name="takeown"></a>takeown
 
@@ -32,9 +28,9 @@ ms.locfileid: "71383759"
 takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File name> [/a] [/r [/d {Y|N}]]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/s \<计算机 >|指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。|
 |/u [\<域 >\]<User name>|用指定用户帐户的权限运行脚本。 默认值为 "系统权限"。|
@@ -49,16 +45,16 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 
 -   通常在批处理文件中使用此命令。
 -   如果未指定 **/a**参数，则会为当前登录到计算机的用户提供文件所有权。
--   混合模式使用（ **？** takeown **&#42;** 命令不支持和） 。
+-   混合模式使用（ **？** takeown **&#42;** 命令不支持和） **takeown** 。
 -   删除**takeown**的锁定后，你可能需要使用 Windows 资源管理器或**cacls**命令向自己授予对文件和目录的完全权限，然后才能删除它们。 有关**cacls**的详细信息，请参阅本主题末尾的 "其他参考"。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 
 若要获取名为 Lostfile 的文件的所有权，请键入：
 ```
 takeown /f lostfile
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

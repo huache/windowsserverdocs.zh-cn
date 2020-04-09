@@ -2,19 +2,19 @@
 title: 在虚拟机中使用存储空间直通
 ms.prod: windows-server
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/25/2017
 description: 如何在虚拟机来宾群集中部署存储空间直通-例如，在 Microsoft Azure 中。
 ms.localizationpriority: medium
-ms.openlocfilehash: 34241183a56cdb9be4690e1edd68b56320cc01de
-ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
+ms.openlocfilehash: 74b1b90a780a0b238a356e942f8348e2a483d94a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78261916"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856110"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>在来宾虚拟机群集中使用存储空间直通
 
@@ -33,9 +33,9 @@ ms.locfileid: "78261916"
 ## <a name="requirements"></a>要求
 
 在虚拟化环境中部署存储空间直通时，请注意以下事项。
-
-> [!TIP]
-> Azure 模板会自动为你配置以下注意事项，在 Azure IaaS Vm 中部署时，建议使用此解决方案。
+       
+>        !TIP]
+>        zure templates will automatically configure the below considerations for you and are the recommended solution when deploying in Azure IaaS VMs.
 
 -   最小2个节点，最多3个节点
 
@@ -59,32 +59,33 @@ ms.locfileid: "78261916"
 
     此数字不同于裸机部署，因为虚拟磁盘可以作为不容易出现物理故障的文件来实现。
 
--   通过运行以下 PowerShell cmdlet，在运行状况服务中禁用自动驱动器更换功能：
+-   通过运行以下 PowerShell cmdlet，在运行状况服务中禁用自动驱动器替换 "apab" lities：
 
     ```powershell
-    Get-storagesubsystem clus* | set-storagehealthsetting -name “System.Storage.PhysicalDisk.AutoReplace.Enabled” -value “False”
-    ```
+          Get-storagesubsystem clus* | set-storagehealthsetting -name "System.Storage.PhysicalDisk.AutoReplace.Enabled" -value "False"
+          ```
 
--   为了更好地复原来宾群集中可能的 VHD/VHDX/VMDK 存储延迟，请增加存储空间 i/o 超时值：
+-   To give greater resiliency to possible VHD / VHDX / VMDK storage latency in guest clusters, increase the Storage Spaces I/O timeout value:
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
 
     `dword: 00007530`
 
-    十六进制7530的十进制等效项是30000，即30秒。 请注意，默认值为1770十六进制或 6000 Decimal，即6秒。
+    The decimal equivalent of Hexadecimal 7530 is 30000, which is 30 seconds. Note that the default value is 1770 Hexadecimal, or 6000 Decimal, which is 6 seconds.
 
-## <a name="not-supported"></a>不支持
+## Not supported
 
--   主机级虚拟磁盘快照/还原
+-   Host level virtual disk snapshot/restore
 
-    改为使用传统的来宾级别备份解决方案来备份和还原存储空间直通卷上的数据。
+    Instead use traditional guest level backup solutions to backup and restore the data on the Storage Spaces Direct volumes.
 
--   主机级虚拟磁盘大小更改
+-   Host level virtual disk size change
 
-    通过虚拟机公开的虚拟磁盘必须保持相同的大小和特性。 可以通过将更多虚拟磁盘添加到每个虚拟机并将其添加到池中，来增加存储池的容量。 强烈建议使用与当前虚拟磁盘大小和特征相同的虚拟磁盘。
+    The virtual disks exposed through the virtual machine must retain the same size and characteristics. Adding more capacity to the storage pool can be accomplished by adding more virtual disks to each of the virtual machines and adding them to the pool. It's highly recommended to use virtual disks of the same size and characteristics as the current virtual disks.
 
-## <a name="see-also"></a>另请参阅
+## See also
 
-[用于部署存储空间直通、视频和循序渐进指南的其他 Azure IAAS VM 模板](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
+[Additional Azure Iaas VM templates for deploying Storage Spaces Direct, videos, and step-by-step guides](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126).
 
-[其他存储空间直通概述](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+[Additional Storage Spaces Direct Overview](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+""""""''''                                                                                                                                                                        """"""''''                                                                                                                                                                        

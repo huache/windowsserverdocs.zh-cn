@@ -1,7 +1,5 @@
 ---
-ms.assetid: ''
 title: Active Directory 联合身份验证服务2.0 中的客户端访问控制策略
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4f5d2cfa8383bcf3c0813b272f8c4828473b8df9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6ae1f34343e8574ce776fcc5761c078b12bc9977
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948600"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814820"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 中的客户端访问控制策略
 Active Directory 联合身份验证服务2.0 中的客户端访问策略允许你限制或授予用户对资源的访问权限。  本文档介绍如何在 AD FS 2.0 中启用客户端访问策略以及如何配置最常见的方案。
@@ -45,7 +43,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 5. 在 "配置规则" 页上的 "声明规则名称" 下，键入此规则的显示名称;在 "传入声明类型" 中，键入以下声明类型 URL，然后选择 "传递所有声明值"。</br>
         `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`</br>
 6. 若要验证规则，请在列表中选择它，然后单击 "编辑规则"，然后单击 "查看规则语言"。 声明规则语言应如下所示： `c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
-7. 单击 Finish。
+7. 单击“完成”。
 8. 在 "编辑声明规则" 对话框中，单击 "确定" 保存规则。
 9. 重复步骤2到步骤6，为下面所示的其余四种声明类型创建其他声明规则，直到创建了所有五个规则。
 
@@ -83,7 +81,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
-6. 单击 Finish。 验证 "颁发授权规则" 列表中的 "允许访问所有用户的规则" 下面是否出现了新规则。
+6. 单击“完成”。 验证 "颁发授权规则" 列表中的 "允许访问所有用户的规则" 下面是否出现了新规则。
 7. 若要保存规则，请在 "编辑声明规则" 对话框中，单击 "确定"。
 
 >[!NOTE]
@@ -110,7 +108,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. 单击 Finish。 验证 "颁发授权规则" 列表中的 "允许访问所有用户的规则" 下面是否出现了新规则。
+6. 单击“完成”。 验证 "颁发授权规则" 列表中的 "允许访问所有用户的规则" 下面是否出现了新规则。
 7. 若要保存规则，请在 "编辑声明规则" 对话框中，单击 "确定"。
 
 >[!NOTE]
@@ -136,12 +134,12 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
     Value=~"customer-provided public ip address regex"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. 单击 Finish。 验证 "颁发授权规则" 列表中的 "允许访问所有用户的规则" 下面是否出现了新规则。
+6. 单击“完成”。 验证 "颁发授权规则" 列表中的 "允许访问所有用户的规则" 下面是否出现了新规则。
 7. 若要保存规则，请在 "编辑声明规则" 对话框中，单击 "确定"。
 
 ### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>方案4：阻止指定 Active Directory 组对 Office 365 的所有外部访问
 
-以下示例启用了基于 IP 地址的内部客户端的访问。 它阻止从公司网络外部的客户端进行访问，这些客户端具有外部客户端 IP 地址，但指定 Active Directory 组中的个人除外。规则集建立在名为 "允许访问" 的默认颁发授权规则之上所有用户。 使用以下步骤，通过声明规则向导将颁发授权规则添加到 Microsoft Office 365 标识平台信赖方信任：
+以下示例启用了基于 IP 地址的内部客户端的访问。 它阻止从公司网络外部的客户端进行访问，这些客户端具有外部客户端 IP 地址，但指定 Active Directory 组中的个人除外。规则集建立在名为 "允许所有用户访问" 的默认颁发授权规则之上。 使用以下步骤，通过声明规则向导将颁发授权规则添加到 Microsoft Office 365 标识平台信赖方信任：
 
 #### <a name="to-create-a-rule-to-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>创建规则以阻止指定 Active Directory 组对 Office 365 的所有外部访问
 
@@ -156,13 +154,13 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. 单击 Finish。 验证 "颁发授权规则" 列表中的 "允许访问所有用户的规则" 下面是否出现了新规则。
+6. 单击“完成”。 验证 "颁发授权规则" 列表中的 "允许访问所有用户的规则" 下面是否出现了新规则。
 7. 若要保存规则，请在 "编辑声明规则" 对话框中，单击 "确定"。
 
 
 ### <a name="descriptions-of-the-claim-rule-language-syntax-used-in-the-above-scenarios"></a>上述方案中使用的声明规则语言语法的说明
 
-|                                                                                                   描述                                                                                                   |                                                                     声明规则语言语法                                                                     |
+|                                                                                                   说明                                                                                                   |                                                                     声明规则语言语法                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              默认 AD FS 规则，以允许访问所有用户。 此规则应已存在于 Microsoft Office 365 标识平台信赖方信任颁发授权规则列表中。              |                                  = > 问题（类型 = "<https://schemas.microsoft.com/authorization/claims/permit>"，值 = "true"）;                                   |
 |                               如果将此子句添加到新的自定义规则，则指定请求来自联合服务器代理（即，它具有 x ms proxy 标头）                                |                                                                                                                                                                    |
@@ -187,7 +185,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 通过 VPN 或 Microsoft DirectAccess （DA）连接到公司网络的客户端可以显示为内部企业客户端，也可以作为外部客户端出现，具体取决于 VPN 或 DA 的配置。
 
-一个或多个 IP 地址：当 Exchange Online 无法确定正在连接的客户端的 IP 地址时，它将基于 x 转发的标头的值设置值，该标头可以包含在基于 HTTP 的请求中，并且受多个客户端、负载均衡器以及市场上的代理。
+一个或多个 IP 地址：当 Exchange Online 无法确定正在连接的客户端的 IP 地址时，它将基于 x 转发的标头的值设置值，这是一个可包含在基于 HTTP 的请求中的非标准标头，由许多客户端、负载平衡器和市场上的代理提供支持。
 
 >[!Note]
 >多个 IP 地址（表示通过请求的每个代理的客户端 IP 地址和地址）将用逗号分隔。
@@ -205,7 +203,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 首先，将匹配单个 IP 地址的基本模式如下： \b # # #\.###\.###\.# # # \b
 
-扩展此内容，我们可以使用或表达式匹配两个不同的 IP 地址，如下所示： \b # # #\.###\.###\.# # # \b | \b # # #\.###\.#### # # \b
+扩展此内容，我们可以使用或表达式匹配两个不同的 IP 地址，如下所示： \b # # #\.###\.###\.# # # \b | \b # # #\.###\.#### # # \b\.
 
 因此，仅匹配两个地址（如192.168.1.1 或10.0.0.1）的示例为： \b192\.168\.1\.1 \ b | \b10\.0\.0\.1 \ b
 
@@ -271,6 +269,6 @@ AD FS 跟踪事件记录到 AD FS 2.0 调试日志中。 若要启用跟踪，�
 
 启用跟踪后，请使用以下命令行语法启用详细日志记录级别： wevtutil sl "AD FS 2.0 跟踪/调试"/l：5  
 
-## <a name="related"></a>相关
+## <a name="related"></a>相关内容
 有关新声明类型的详细信息，请参阅[AD FS 声明类型](AD-FS-Claims-Types.md)。
 

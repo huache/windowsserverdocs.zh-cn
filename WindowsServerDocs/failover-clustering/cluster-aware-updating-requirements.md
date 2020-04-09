@@ -3,18 +3,18 @@ ms.assetid: 75cc1d24-fa2f-45bd-8f3b-1bbd4a1aead0
 title: 群集感知更新要求和最佳做法
 ms.prod: windows-server
 ms.topic: article
-ms.manager: dongill
+manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 description: 使用群集感知更新在运行 Windows Server 的群集上安装更新的要求。
-ms.openlocfilehash: 14ef72c2d2dd74dbc67bec37d9b09bb6fb077925
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 6062004f094dfa3b412942f44db568459ce61e17
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465511"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828020"
 ---
 # <a name="cluster-aware-updating-requirements-and-best-practices"></a>群集感知更新要求和最佳做法
 
@@ -25,7 +25,7 @@ ms.locfileid: "77465511"
 > [!NOTE]  
 > 如果使用**microsoft.windowsupdateplugin**之外的插件\-，则可能需要独立验证群集环境是否已准备好应用更新。 如果使用的是不\-的 Microsoft 插件\-，请与发布者联系以获取详细信息。 有关插件\-的详细信息，请参阅[插件\-的工作方式](cluster-aware-updating-plug-ins.md)。   
 
-## <a name="BKMK_REQ_CLUS"></a>安装故障转移群集功能和故障转移群集工具  
+## <a name="install-the-failover-clustering-feature-and-the-failover-clustering-tools"></a><a name="BKMK_REQ_CLUS"></a>安装故障转移群集功能和故障转移群集工具  
 CAU 需要安装故障转移群集功能和故障转移群集工具。 故障转移群集工具包括 CAU 工具 \(clusterawareupdating.dll\)、故障转移群集 cmdlet，以及 CAU 操作所需的其他组件。 有关安装故障转移群集功能的步骤，请参阅 [安装故障转移群集功能和工具](create-failover-cluster.md#install-the-failover-clustering-feature)。  
 
 故障转移群集工具的准确安装要求取决于 CAU 是否在故障转移群集上通过\) 或从远程计算机使用自动\-更新模式来更新为群集角色 \(。 自动运行 CAU 的自我\-更新模式需要通过使用 CAU 工具在故障转移群集上安装 CAU 群集角色。    
@@ -62,7 +62,7 @@ CAU 需要安装故障转移群集功能和故障转移群集工具。 故障转
 
 -   若要在 CAU 更新运行期间使用 PowerShell pre\-update 或 post\-更新脚本，请确保在所有群集节点上安装脚本，或在所有节点都可以访问这些脚本，例如，在高度可用的网络文件共享上。 如果将脚本保存到网络文件共享，请为 Everyone 组配置对该文件夹的读取权限。  
 
-## <a name="BKMK_NODE_CONFIG"></a>为远程管理配置节点  
+## <a name="configure-the-nodes-for-remote-management"></a><a name="BKMK_NODE_CONFIG"></a>为远程管理配置节点  
 若要使用群集感知更新，必须为群集的所有节点配置远程管理。 默认情况下，为远程管理配置节点时必须执行的唯一任务是[启用防火墙规则以允许自动重新启动](#BKMK_FW)。 
 
 下表列出了在环境与其分离默认值时的完整远程管理要求。
@@ -73,10 +73,10 @@ CAU 需要安装故障转移群集功能和故障转移群集工具。 故障转
 |---------------|---|-----------------------|-------------------------|  
 |[启用防火墙规则以允许自动重新启动](#BKMK_FW)|已禁用|如果防火墙正在使用中，则在所有群集节点上都是必需的|如果防火墙正在使用中，则在所有群集节点上都是必需的|  
 |[启用 Windows Management Instrumentation](#BKMK_WMI)|已启用|在所有群集节点上必需|在所有群集节点上必需|  
-|[启用 Windows PowerShell 3.0 或4.0 并使用 Windows PowerShell 远程处理](#BKMK_PS)|已启用|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<br /><br />- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预\-更新，并在更新运行期间发布\-更新脚本<br />-使用群集感知更新窗口或[测试\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|  
-|[安装 .NET Framework 4.6 或4。5](#BKMK_NET)|已启用|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<br /><br />- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预\-更新，并在更新运行期间发布\-更新脚本<br />-使用群集感知更新窗口或[测试\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|  
+|[启用 Windows PowerShell 3.0 或4.0 并使用 Windows PowerShell 远程处理](#BKMK_PS)|已启用|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预\-更新，并在更新运行期间发布\-更新脚本<br />-使用群集感知更新窗口或[测试\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|  
+|[安装 .NET Framework 4.6 或4。5](#BKMK_NET)|已启用|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预\-更新，并在更新运行期间发布\-更新脚本<br />-使用群集感知更新窗口或[测试\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|  
 
-### <a name="BKMK_FW"></a>启用防火墙规则以允许自动重新启动  
+### <a name="enable-a-firewall-rule-to-allow-automatic-restarts"></a><a name="BKMK_FW"></a>启用防火墙规则以允许自动重新启动  
 若要在应用更新后允许自动重新启动 \(如果更新的安装需要重新启动\)如果在群集节点上使用 Windows 防火墙或非\-Microsoft 防火墙，则必须在每个允许以下流量的节点上启用防火墙规则：  
 
 -   协议：TCP  
@@ -102,7 +102,7 @@ CAU 需要安装故障转移群集功能和故障转移群集工具。 故障转
 Set-NetFirewallRule -Group "@firewallapi.dll,-36751" -Profile Domain -Enabled true  
 ```  
 
-### <a name="BKMK_WMI"></a>启用 Windows Management Instrumentation （WMI） 
+### <a name="enable-windows-management-instrumentation-wmi"></a><a name="BKMK_WMI"></a>启用 Windows Management Instrumentation （WMI） 
 必须使用 Windows Management Instrumentation \(WMI\)为远程管理配置所有群集节点。 默认情况下已启用此项。  
 
 若要手动启用远程管理，请执行以下操作：  
@@ -117,7 +117,7 @@ Set-NetFirewallRule -Group "@firewallapi.dll,-36751" -Profile Domain -Enabled tr
 
 若要支持 WMI 远程处理，如果正在群集节点上使用 Windows 防火墙，则必须在每个节点上启用 **\)中 Windows 远程管理 \(HTTP\-** 的入站防火墙规则。  默认情况下，启用此规则。  
 
-### <a name="BKMK_PS"></a>启用 Windows PowerShell 和 Windows PowerShell 远程处理  
+### <a name="enable-windows-powershell-and-windows-powershell-remoting"></a><a name="BKMK_PS"></a>启用 Windows PowerShell 和 Windows PowerShell 远程处理  
 若要在远程\-更新模式中启用自我\-更新模式和某些 CAU 功能，则必须安装并启用 PowerShell，才能在所有群集节点上运行远程命令。 默认情况下，将安装并启用 PowerShell 以进行远程处理。  
 
 若要启用 PowerShell 远程处理，请使用以下方法之一：  
@@ -128,7 +128,7 @@ Set-NetFirewallRule -Group "@firewallapi.dll,-36751" -Profile Domain -Enabled tr
 
 有关启用 PowerShell 远程处理的详细信息，请参阅[关于远程要求](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-6)。  
 
-### <a name="BKMK_NET"></a>安装 .NET Framework 4.6 或4。5  
+### <a name="install-net-framework-46-or-45"></a><a name="BKMK_NET"></a>安装 .NET Framework 4.6 或4。5  
 若要在远程\-更新模式中启用自我\-更新模式和某些 CAU 功能，则必须在所有群集节点上安装 NET Framework 4.6 或 .NET Framework 4.5 （在 Windows Server 2012 R2 上）。 默认情况下，已安装 NET Framework。  
 
 若要使用 PowerShell 安装 .NET Framework 4.6 （或4.5）（如果尚未安装），请使用以下命令：
@@ -137,9 +137,9 @@ Set-NetFirewallRule -Group "@firewallapi.dll,-36751" -Profile Domain -Enabled tr
 Install-WindowsFeature -Name NET-Framework-45-Core
 ```
 
-## <a name="BKMK_BEST_PRAC"></a>使用群集感知更新的最佳实践建议 
+## <a name="best-practices-recommendations-for-using-cluster-aware-updating"></a><a name="BKMK_BEST_PRAC"></a>使用群集感知更新的最佳实践建议 
 
-### <a name="BKMK_BP_WUA"></a>有关应用 Microsoft 更新的建议
+### <a name="recommendations-for-applying-microsoft-updates"></a><a name="BKMK_BP_WUA"></a>有关应用 Microsoft 更新的建议
 
 我们建议，当你开始使用 CAU 来将更新应用于群集上的默认**microsoft.windowsupdateplugin**插件\-时，你将停止使用其他方法从 Microsoft 的群集节点上安装软件更新。  
 
@@ -169,7 +169,7 @@ Install-WindowsFeature -Name NET-Framework-45-Core
 
 -   如果 \(的内部软件分发服务器（例如，WSUS 服务器\) 用于包含和部署更新，请确保这些服务器正确标识群集节点的已批准更新。  
 
-#### <a name="BKMK_PROXY"></a>在分支机构方案中应用 Microsoft 更新  
+#### <a name="apply-microsoft-updates-in-branch-office-scenarios"></a><a name="BKMK_PROXY"></a>在分支机构方案中应用 Microsoft 更新  
 若要从 Microsoft 更新或 Windows 更新将 Microsoft 更新下载到某些分支机构方案中的群集节点，你可能需要配置每个节点上的本地系统帐户的代理设置。 例如，如果分支机构群集访问 Microsoft 更新或 Windows 更新以通过使用本地代理服务器下载更新，则可能需要执行此操作。  
 
 如有必要，请在每个节点上配置 WinHTTP 代理设置以指定本地代理服务器并配置本地地址例外 \(即，本地地址的跳过列表\)。 若要执行此操作，你可以在每个群集节点上从提升的命令提示符运行以下命令：  
@@ -186,7 +186,7 @@ netsh winhttp set proxy <ProxyServerFQDN >:<port> "<local>"
 netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"  
 ```  
 
-### <a name="BKMK_BP_HF"></a>有关使用 Microsoft.hotfixplugin 的建议  
+### <a name="recommendations-for-using-the-microsofthotfixplugin"></a><a name="BKMK_BP_HF"></a>有关使用 Microsoft.hotfixplugin 的建议  
 
 -   我们建议你将修补程序根文件夹和修补程序配置文件的权限配置为只限制用于存储这些文件的计算机上本地管理员的写入访问权限。 当应用修补程序时，这有助于防止未经授权的用户篡改这些文件，这些用户可能损害故障转移群集的功能。  
 
@@ -204,7 +204,7 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 
 -   若要在 IT 组织中根据相似更新需求跨故障转移群集保存和重复使用更新运行设置，你可以创建更新运行配置文件。 此外，根据更新模式，你可以在所有远程更新协调器计算机或故障转移群集均可访问的文件共享上保存和管理更新运行配置文件。 有关详细信息，请参阅[高级选项和更新 CAU 的运行配置文件](cluster-aware-updating-options.md)。  
 
-## <a name="BKMK_BPA"></a>测试群集更新准备情况  
+## <a name="test-cluster-updating-readiness"></a><a name="BKMK_BPA"></a>测试群集更新准备情况  
 您可以运行 CAU 最佳做法分析器 \(BPA\) 模型，以测试故障转移群集和网络环境是否满足由 CAU 应用软件更新的许多要求。 很多测试通过使用**microsoft.windowsupdateplugin**中的默认插件\-来检查环境是否准备好应用 Microsoft 更新。  
 
 > [!NOTE]  
@@ -235,16 +235,16 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                     故障转移群集必须可用                                     |                                                                                       无法解析该故障转移群集名称，或者无法访问一个或多个群集节点。 BPA 无法运行群集准备情况测试。                                                                                        |                                                                   -检查在 BPA 运行过程中指定的群集名称的拼写是否正确。<br />-确保群集的所有节点都处于联机状态且正在运行。<br />-检查验证配置向导是否可以在故障转移群集上成功运行。                                                                    |
 |                    通过 WMI 的远程管理，必须启用故障转移群集节点                    |                                                一个或多个故障转移群集节点未通过使用 Windows Management Instrumentation \(WMI\)启用远程管理。 如果未对远程管理配置节点，则 CAU 无法更新群集节点。                                                 |                                                                                                  确保通过 WMI 的远程管理启用所有故障转移群集节点。 有关详细信息，请参阅本主题中的[配置用于远程管理的节点](#BKMK_NODE_CONFIG)。                                                                                                   |
-|                      应在每个故障转移群集节点上启用 PowerShell 远程处理                       |                                                           对于一个或多个故障转移群集节点上的远程处理，未安装或未启用 PowerShell。 无法为自我\-更新模式配置 CAU，或使用远程\-更新模式下的某些功能。                                                            |                                                                                             请确保在所有群集节点上安装了 PowerShell，并为远程处理启用了。<br /><br />有关详细信息，请参阅本主题中的[配置用于远程管理的节点](#BKMK_NODE_CONFIG)。                                                                                             |
-|                                            故障转移群集版本                                            |                                                                            故障转移群集中的一个或多个节点不运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。 CAU 无法更新故障转移群集。                                                                             |                                                                   验证在 BPA 运行过程中指定的故障转移群集是否正在运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。<br /><br />有关详细信息，请参阅本主题中的[验证群集配置](#BKMK_REQ_CLUS)。                                                                   |
-| 必须在所有故障转移群集节点上安装 .NET Framework 和 Windows PowerShell 的所需版本 |                                                                                              在一个或多个群集节点上未安装 .NET Framework 4.6、4.5 或 Windows PowerShell。 某些 CAU 功能可能无法工作。                                                                                              |                                                                            请确保在所有群集节点上安装 .NET Framework 4.6 或4.5 和 Windows PowerShell （如果需要）。<br /><br />有关详细信息，请参阅本主题中的[配置用于远程管理的节点](#BKMK_NODE_CONFIG)。                                                                             |
-|                           群集服务应在所有群集节点上运行                           |                                                                                                            群集服务未在一个或多个节点上运行。 CAU 无法更新故障转移群集。                                                                                                             |                        -确保在群集中的所有节点上启动了群集服务 \(clussvc\)，并将其配置为自动启动。<br />-检查验证配置向导是否可以在故障转移群集上成功运行。<br /><br />有关详细信息，请参阅本主题中的[验证群集配置](#BKMK_REQ_CLUS)。                         |
-|     自动更新不能配置为在任何故障转移群集节点上自动安装更新     |                                           至少在一个故障转移群集节点上，自动更新配置为在该节点上自动安装 Microsoft 更新。 将 CAU 与其他更新方法结合起来使用可能会导致非计划停机时间或无法预料的结果。                                            |                                                     如果 Windows 更新功能在一个或多个群集节点上配置为自动更新，请确保自动更新未配置为自动安装更新。<br /><br />有关详细信息，请参阅[对应用 Microsoft 更新的建议](#BKMK_BP_WUA)。                                                     |
-|                          故障转移群集节点应使用相同的更新源                          |                                                    一个或多个故障转移群集节点配置为针对 Microsoft 更新使用与其余节点不同的更新源。 可能不会通过 CAU 在群集节点上统一应用更新。                                                    |                                                                        请确保将每个群集节点配置为使用相同的更新源，例如，WSUS 服务器、Windows 更新或 Microsoft 更新。<br /><br />有关详细信息，请参阅[对应用 Microsoft 更新的建议](#BKMK_BP_WUA)。                                                                         |
-|       允许应在故障转移群集中的每个节点上启用远程关机的防火墙规则       |                 一个或多个故障转移群集节点不启用允许远程关机的防火墙规则，或者组策略设置阻止启用此规则。 应用需要自动重新启动节点的更新的更新运行可能未正确完成。                  |                                                                    如果在群集节点上使用 Windows 防火墙或非\-Microsoft 防火墙，则配置允许远程关机的防火墙规则。<br /><br />有关详细信息，请参阅本主题中的[启用防火墙规则以允许自动重新启动](#BKMK_FW)。                                                                    |
-|          在每个故障转移群集节点上的代理服务器设置应设置为本地代理服务器          |                             一个或多个故障转移群集节点具有不正确的代理服务器配置。<br /><br />如果本地代理服务器正在使用中，则每个节点上的代理服务器设置必须正确配置以便群集能够访问 Microsoft 更新或 Windows 更新。                              |                                            如果需要，请确保将每个群集节点上的 WinHTTP 代理设置配置为本地代理服务器。 如果你的环境中没有使用代理服务器，则可以忽略此警告。<br /><br />有关详细信息，请参阅本主题中的[在分支机构方案中应用更新](#BKMK_PROXY)。                                            |
-|        应在故障转移群集上安装 CAU 群集角色以启用自我\-更新模式        |                                                                                                   在此故障转移群集上未安装 CAU 群集角色。 群集自行\-更新需要此角色。                                                                                                   |      若要在自我\-更新模式中使用 CAU，请通过以下方法之一在故障转移群集上添加 CAU 群集角色：<br /><br />-运行[Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole) PowerShell cmdlet。<br />-在 "群集感知更新" 窗口中选择 "**配置群集自助\-更新选项**" 操作。      |
-|         应在故障转移群集上启用 CAU 群集角色以启用自我\-更新模式         | CAU 群集角色处于禁用状态。 例如，未安装 CAU 群集角色，或已通过使用[Disable\-Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole) PowerShell cmdlet 禁用了该角色。 群集自行\-更新需要此角色。 | 若要在自我\-更新模式中使用 CAU，请通过以下方式之一在此故障转移群集上启用 CAU 群集角色：<br /><br />-运行[Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole) PowerShell cmdlet。<br />-在 "群集感知更新" 窗口中选择 "**配置群集自助\-更新选项**" 操作。 |
+|                      应在每个故障转移群集节点上启用 PowerShell 远程处理                       |                                                           对于一个或多个故障转移群集节点上的远程处理，未安装或未启用 PowerShell。 无法为自我\-更新模式配置 CAU，或使用远程\-更新模式下的某些功能。                                                            |                                                                                             请确保在所有群集节点上安装了 PowerShell，并为远程处理启用了。<p>有关详细信息，请参阅本主题中的[配置用于远程管理的节点](#BKMK_NODE_CONFIG)。                                                                                             |
+|                                            故障转移群集版本                                            |                                                                            故障转移群集中的一个或多个节点不运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。 CAU 无法更新故障转移群集。                                                                             |                                                                   验证在 BPA 运行过程中指定的故障转移群集是否正在运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。<p>有关详细信息，请参阅本主题中的[验证群集配置](#BKMK_REQ_CLUS)。                                                                   |
+| 必须在所有故障转移群集节点上安装 .NET Framework 和 Windows PowerShell 的所需版本 |                                                                                              在一个或多个群集节点上未安装 .NET Framework 4.6、4.5 或 Windows PowerShell。 某些 CAU 功能可能无法工作。                                                                                              |                                                                            请确保在所有群集节点上安装 .NET Framework 4.6 或4.5 和 Windows PowerShell （如果需要）。<p>有关详细信息，请参阅本主题中的[配置用于远程管理的节点](#BKMK_NODE_CONFIG)。                                                                             |
+|                           群集服务应在所有群集节点上运行                           |                                                                                                            群集服务未在一个或多个节点上运行。 CAU 无法更新故障转移群集。                                                                                                             |                        -确保在群集中的所有节点上启动了群集服务 \(clussvc\)，并将其配置为自动启动。<br />-检查验证配置向导是否可以在故障转移群集上成功运行。<p>有关详细信息，请参阅本主题中的[验证群集配置](#BKMK_REQ_CLUS)。                         |
+|     自动更新不能配置为在任何故障转移群集节点上自动安装更新     |                                           至少在一个故障转移群集节点上，自动更新配置为在该节点上自动安装 Microsoft 更新。 将 CAU 与其他更新方法结合起来使用可能会导致非计划停机时间或无法预料的结果。                                            |                                                     如果 Windows 更新功能在一个或多个群集节点上配置为自动更新，请确保自动更新未配置为自动安装更新。<p>有关详细信息，请参阅[对应用 Microsoft 更新的建议](#BKMK_BP_WUA)。                                                     |
+|                          故障转移群集节点应使用相同的更新源                          |                                                    一个或多个故障转移群集节点配置为针对 Microsoft 更新使用与其余节点不同的更新源。 可能不会通过 CAU 在群集节点上统一应用更新。                                                    |                                                                        请确保将每个群集节点配置为使用相同的更新源，例如，WSUS 服务器、Windows 更新或 Microsoft 更新。<p>有关详细信息，请参阅[对应用 Microsoft 更新的建议](#BKMK_BP_WUA)。                                                                         |
+|       允许应在故障转移群集中的每个节点上启用远程关机的防火墙规则       |                 一个或多个故障转移群集节点不启用允许远程关机的防火墙规则，或者组策略设置阻止启用此规则。 应用需要自动重新启动节点的更新的更新运行可能未正确完成。                  |                                                                    如果在群集节点上使用 Windows 防火墙或非\-Microsoft 防火墙，则配置允许远程关机的防火墙规则。<p>有关详细信息，请参阅本主题中的[启用防火墙规则以允许自动重新启动](#BKMK_FW)。                                                                    |
+|          在每个故障转移群集节点上的代理服务器设置应设置为本地代理服务器          |                             一个或多个故障转移群集节点具有不正确的代理服务器配置。<p>如果本地代理服务器正在使用中，则每个节点上的代理服务器设置必须正确配置以便群集能够访问 Microsoft 更新或 Windows 更新。                              |                                            如果需要，请确保将每个群集节点上的 WinHTTP 代理设置配置为本地代理服务器。 如果你的环境中没有使用代理服务器，则可以忽略此警告。<p>有关详细信息，请参阅本主题中的[在分支机构方案中应用更新](#BKMK_PROXY)。                                            |
+|        应在故障转移群集上安装 CAU 群集角色以启用自我\-更新模式        |                                                                                                   在此故障转移群集上未安装 CAU 群集角色。 群集自行\-更新需要此角色。                                                                                                   |      若要在自我\-更新模式中使用 CAU，请通过以下方法之一在故障转移群集上添加 CAU 群集角色：<p>-运行[Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole) PowerShell cmdlet。<br />-在 "群集感知更新" 窗口中选择 "**配置群集自助\-更新选项**" 操作。      |
+|         应在故障转移群集上启用 CAU 群集角色以启用自我\-更新模式         | CAU 群集角色处于禁用状态。 例如，未安装 CAU 群集角色，或已通过使用[Disable\-Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole) PowerShell cmdlet 禁用了该角色。 群集自行\-更新需要此角色。 | 若要在自我\-更新模式中使用 CAU，请通过以下方式之一在此故障转移群集上启用 CAU 群集角色：<p>-运行[Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole) PowerShell cmdlet。<br />-在 "群集感知更新" 窗口中选择 "**配置群集自助\-更新选项**" 操作。 |
 |      必须在所有故障转移群集节点上注册已配置的 CAU 插件\-用于自助\-更新模式      |                                                              此故障转移群集的一个或多个节点上的 CAU 群集角色无法访问自\-更新选项中配置的模块中的 CAU 插件\-。 自行\-更新运行可能会失败。                                                              |           -确保在所有群集节点上安装了已配置的 CAU 插件\-，方法是遵循提供 CAU 插件\-的产品的安装步骤。<br />-运行[register\-Register-cauplugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/Register-CauPlugin) PowerShell cmdlet 以在所需群集节点上注册插件\-。           |
 |                所有故障转移群集节点应具有相同的已注册 CAU 插件\-                 |                                                                             如果将配置为在更新运行中使用的插件\-更改为在所有群集节点上都不可用的插件，则自我\-更新运行可能会失败。                                                                              |           -确保在所有群集节点上安装了已配置的 CAU 插件\-，方法是遵循提供 CAU 插件\-的产品的安装步骤。<br />-运行[register\-Register-cauplugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/Register-CauPlugin) PowerShell cmdlet 以在所需群集节点上注册插件\-。           |
 |                               配置的更新运行选项必须是有效的                                |                                                                          为此故障转移群集配置的自我\-更新计划和更新运行选项不完整或无效。 自行\-更新运行可能会失败。                                                                           |                                                            配置有效的自我\-更新计划和更新运行选项集。 例如，可以使用[Set\-Add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Set-CauClusterRole) PowerShell CMDLET 配置 CAU 群集角色。                                                            |

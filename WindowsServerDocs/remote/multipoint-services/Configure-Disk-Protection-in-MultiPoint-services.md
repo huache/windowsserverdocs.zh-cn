@@ -1,24 +1,20 @@
 ---
 title: 在 MultiPoint 服务中配置磁盘保护
 description: 了解如何为 MultiPoint 服务设置磁盘保护
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bd9bf5b9-e481-499b-9c15-7ee5a4f470c4
 author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: ae930162de32335ac32e3bda0ac381a26c5ea6dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: eee4fc1b80ff57ee1ab5ee683d82c06fbe36b549
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389821"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854080"
 ---
 # <a name="configure-disk-protection"></a>配置磁盘保护
 你可以在 Multipoint 服务中使用磁盘保护，以防止意外更新中的系统卷，计划在磁盘保护处于活动状态时保留 Windows 更新、暂时禁用磁盘保护以及卸载磁盘保护。  
@@ -62,7 +58,7 @@ Windows 需要更新一些系统文件，包括系统页面文件、故障转储
   
 6.  **完成**后，选择是否让系统恢复到以前的电源状态，或在应用更新后关闭。  
   
-7.  单击 **“确定”** 。  
+7.  单击“确定”。  
   
 ## <a name="temporarily-disable-disk-protection"></a>临时禁用磁盘保护  
 如果管理员需要安装软件、更改系统设置或执行涉及系统更新的其他维护任务，则他们可以暂时禁用磁盘保护。 进行更改后，重新启用磁盘保护。 在系统重新启动期间，系统将在启用磁盘保护时保留其状态。  

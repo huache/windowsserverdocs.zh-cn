@@ -1,7 +1,6 @@
 ---
 ms.assetid: 73a4deba-7da6-4eae-8fdd-2a4d369f9cbb
 title: 虚拟化域控制器技术参考附录
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e1018d5bbff5922df5a696e5c4fad12dc9f6ec3d
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: ee5a46781a61b8546fef113763c0d8ef9ca9f6cc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323129"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853980"
 ---
 # <a name="virtualized-domain-controller-technical-reference-appendix"></a>虚拟化域控制器技术参考附录
 
@@ -26,7 +25,7 @@ ms.locfileid: "79323129"
   
 -   [Fixvdcpermissions.ps1](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)  
   
-## <a name="BKMK_Terms"></a>规范  
+## <a name="terminology"></a><a name="BKMK_Terms"></a>规范  
   
 -   **Snapshot** -虚拟机在特定时间点的状态。 它依赖于以前拍摄的快照、硬件上和虚拟化平台上的快照链。  
   
@@ -44,7 +43,7 @@ ms.locfileid: "79323129"
   
 -   **导入/导出**-一项 hyper-v 功能，该功能允许用户保存整个虚拟机（VM 文件、VHD 和计算机配置）。 然后，它允许用户使用一组文件将计算机重新置于同一 VM （还原）的同一台计算机上，并在不同的计算机上作为同一 VM （移动）或新的 VM （复制）  
   
-## <a name="BKMK_FixPDCPerms"></a>Fixvdcpermissions.ps1  
+## <a name="fixvdcpermissionsps1"></a><a name="BKMK_FixPDCPerms"></a>Fixvdcpermissions.ps1  
   
 ```  
 # Unsigned script, requires use of set-executionpolicy remotesigned -force  

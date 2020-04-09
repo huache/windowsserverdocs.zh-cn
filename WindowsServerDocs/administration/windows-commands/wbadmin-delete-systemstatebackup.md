@@ -1,24 +1,20 @@
 ---
 title: wbadmin delete systemstatebackup
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 wbadmin delete systemstatebackup 的 Windows 命令主题，用于删除指定的系统状态备份。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 707d37cb-448d-4542-b6ac-1fc89e749788
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f324cba3fcdae8639009395c4df734a2db6b814
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e184a40612024f81e1c6ab93de8cec4a63eee578
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362520"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829890"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>wbadmin delete systemstatebackup
 
@@ -46,9 +42,9 @@ wbadmin delete systemstatebackup
 > [!IMPORTANT]
 > 必须仅指定其中一个参数： **-keepVersions**、 **-version**或 **-deleteOldest**。
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-keepVersions|指定要保留的最新系统状态备份的数量。 该值必须是一个正整数。 参数值 **-keepVersions： 0**将删除所有系统状态备份。|
 |-版本|指定备份的版本标识符，格式为 MM/DD/YYYY-HH： MM。 如果你不知道版本标识符，请键入**wbadmin get 版本**。</br>可以使用此命令删除独占系统状态备份的版本。 使用**wbadmin get items**查看版本类型。|
@@ -57,7 +53,7 @@ wbadmin delete systemstatebackup
 |-计算机|指定要删除其系统状态备份的计算机。 当多台计算机备份到同一位置时非常有用。 当指定 **-backupTarget**参数时，应使用。|
 |-quiet|对用户运行无提示的子命令。|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要删除在 10:00 2013 年3月31日创建的系统状态备份，请键入：
 ```
@@ -72,7 +68,7 @@ wbadmin delete systemstatebackup -keepVersions:3
 wbadmin delete systemstatebackup -backupTarget:f -deleteOldest
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)
 -   [Backup](wbadmin.md)

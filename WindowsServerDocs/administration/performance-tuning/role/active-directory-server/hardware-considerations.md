@@ -4,15 +4,15 @@ description: AD 性能优化中的硬件注意事项
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e9b121036d33bc36cabb92ca682407bc2382fca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c40faca06668adf6fd29a5e4e753e5790b8104b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355097"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851910"
 ---
 # <a name="hardware-considerations-in-adds-performance-tuning"></a>中的硬件注意事项添加性能优化 
 
@@ -55,7 +55,7 @@ Active Directory 将数据库缓存为内存允许的数量。 从内存中获�
 
 ## <a name="dont-over-tax-the-processors"></a>不要对处理器进行税费
 
-如果处理器没有足够的可用循环，则可能会导致长时间等待，使线程进入处理器执行。 在许多环境中，这一理念旨在确保有足够的空间可适应电涌或负载峰值，从而最大程度地减少对客户端响应的影响。 简而言之，超过以下阈值在短期内（5到15分钟，一天的时间）不正确，但使用这些统计信息运行持续的系统不会提供任何头空间来容纳异常负载，并可以轻松地将其放入cenario. 应调查比阈值更高的时间段的系统开销，以减少处理器负载。
+如果处理器没有足够的可用循环，则可能会导致长时间等待，使线程进入处理器执行。 在许多环境中，这一理念旨在确保有足够的空间可适应电涌或负载峰值，从而最大程度地减少对客户端响应的影响。 简而言之，超过以下阈值在短期（5到15分钟，一天后的几次）中是不正确的，但是，使用这些统计信息运行持续时间的系统不会提供足够的空间来容纳异常负载，并可以轻松地将其放入超过负载情况。 应调查比阈值更高的时间段的系统开销，以减少处理器负载。
 
 -   有关如何选择处理器的详细信息，请参阅[服务器硬件性能优化](../../hardware/index.md)。
 

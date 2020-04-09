@@ -1,24 +1,20 @@
 ---
 title: ping
 description: 使用 ping 验证网络连接。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 49272671-2eec-4fa5-881f-65c24cfbef52
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 7d9841c12d403d91e14021ff9df65246d322debd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9e03b45d889bcac87bd3e533ab69c7a07be74ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372309"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837550"
 ---
 # <a name="ping"></a>ping
 
@@ -32,9 +28,9 @@ ms.locfileid: "71372309"
 ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] [/s <Count>] [{/j <Hostlist> | /k <Hostlist>}] [/w <timeout>] [/R] [/S <Srcaddr>] [/4] [/6] <TargetName>
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |/t|指定 ping 继续向目标发送回显请求消息，直到中断。 若要中断和显示统计信息，请按 CTRL + break。 若要中断和退出**ping**，请按 CTRL + C。|
 |/a|指定对目标 IP 地址执行反向名称解析。 如果此操作成功，则 ping 将显示相应的主机名。|
@@ -60,7 +56,7 @@ ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] 
 -   可以使用**ping**测试计算机的计算机名和 IP 地址。 如果成功完成 IP 地址的 ping 操作，但不对计算机名称进行 ping 操作，则可能存在名称解析问题。 在这种情况下，可通过使用域名系统（DNS）查询或通过 NetBIOS 名称解析技术，确保你指定的计算机名可以通过本地主机文件解析。
 -   仅当 Internet 协议（TCP/IP）协议安装为网络连接中的网络适配器属性中的组件时，此命令才可用。
 
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name="BKMK_Examples"></a>示例
 
 下面的示例演示了**ping**命令输出：
 
@@ -98,4 +94,4 @@ ping /j 10.12.0.1 10.29.3.1 10.1.44.1 10.0.99.221
 ```
 
 ## <a name="additional-references"></a>其他参考
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

@@ -1,19 +1,19 @@
 ---
 title: 租户的受防护的 Vm-创建屏蔽数据来定义受防护的 VM
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 49f4e84d-c1f7-45e5-9143-e7ebbb2ef052
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 26ff5e27494e2f42a0c8e4d28e2b9820f8d19e6a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 6ff502e7246c899a7b4f29125266bf05d07e40ef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322459"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856450"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>租户的受防护的 Vm-创建屏蔽数据来定义受防护的 VM
 
@@ -39,7 +39,7 @@ ms.locfileid: "79322459"
 
 ## <a name="optional-obtain-a-certificate-for-remote-desktop-connection"></a>可有可无获取远程桌面连接的证书
 
-由于租户只能使用远程桌面连接或其他远程管理工具连接到受防护的 Vm，因此请务必确保租户可以验证它们是否连接到正确的终结点（即，没有 "中间人"截获连接）。
+由于租户只能使用远程桌面连接或其他远程管理工具连接到其受防护的 Vm，因此请务必确保租户可以验证它们是否连接到正确的终结点（即，没有 "中间人" 拦截连接）。
 
 验证连接到目标服务器的一种方法是安装和配置一个证书，以便在启动连接时提供远程桌面服务。 连接到服务器的客户端计算机将检查其是否信任证书，并在不显示警告的情况。 通常，若要确保连接客户端信任证书，则会从租户的 PKI 颁发 RDP 证书。 有关[在远程桌面服务中使用证书的](https://technet.microsoft.com/library/dn781533.aspx)详细信息，请参阅 TechNet。
 
@@ -96,7 +96,7 @@ ms.locfileid: "79322459"
     | @Prefix-1-1@        | 24                   |
     | @NextHop-1-1@       | 192.168.1.254        |
     | @IP4Addr-2@         | 10.0.20.30/24        |
-    | @MACAddr-2@         | 以太网2           |
+    | @MACAddr-2@         | 以太网 2           |
     | @Prefix-2-1@        | 24                   |
     | @NextHop-2-1@       | 10.0.20.1            |
 

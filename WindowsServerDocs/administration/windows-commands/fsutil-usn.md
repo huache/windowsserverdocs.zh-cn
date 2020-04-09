@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b62d031c547f140ac5008af20a9e0ee4bcecc919
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 326390a5b40de46ca932043e9982f84c7758d901
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376788"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844000"
 ---
 # <a name="fsutil-usn"></a>Fsutil usn
 >适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
@@ -33,9 +33,9 @@ fsutil usn [readdata] <FileName>
 fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------------|---------------|
 |createjournal|创建 USN 更改日志。|
 |m =\<MaxSize >|指定 NTFS 为变更日志分配的最大大小（以字节为单位）。|
@@ -57,7 +57,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 |readjournal|读取 USN 日志中的 USN 记录。|
 |minver =\<号 >|要返回的 USN_RECORD 的最低主要版本。 默认值为2。|
 |maxver =\<号 >|要返回的 USN_RECORD 的最大主版本。 默认值 = 4。|
-|startusn =\<USN 号 >|要开始从读取 USN 日志的 USN。 默认值为0。|
+|startusn =\<USN 号 >|要开始从读取 USN 日志的 USN。 默认值 = 0。|
 
 
 ## <a name="remarks"></a>备注
@@ -76,7 +76,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
     更改日志会增长到大于此目标值，但更改日志将在下一个 NTFS 检查点被截断为小于此值。 NTFS 检查变更日志，并在其大小超过*MaxSize*的值和*AllocationDelta*值时对其进行修整。 在 NTFS 检查点，操作系统将记录写入 NTFS 日志文件，该文件可使 NTFS 确定从故障中恢复所需的处理。
 
--   使用
+-   使用**a**
 
     在修整之前，变更日志可能会增长到大于*MaxSize*和*AllocationDelta*值的总和。
 
@@ -84,7 +84,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
     删除或禁用活动更改日志非常耗时，因为系统必须访问主文件表（MFT）中的所有记录，并将最后一个 USN 属性设置为0（零）。 此过程可能需要几分钟的时间，如果需要重新启动，它可以在系统重新启动后继续。 在此过程中，变更日志不被视为处于活动状态，也不会被禁用。 当系统禁用日志时，无法访问它，所有日志操作都将返回错误。 禁用活动的日志时应特别小心，因为它会对其他使用该日志的应用程序产生负面影响。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 若要在驱动器 C 上创建 USN 更改日志，请键入：
 
 ```
@@ -127,8 +127,8 @@ fsutil usn readdata c:\temp\sample.txt
 fsutil usn readjournal startusn=0xF00
 ```
 
-#### <a name="additional-references"></a>其他参考
-[命令行语法项](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>其他参考
+- [命令行语法项](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

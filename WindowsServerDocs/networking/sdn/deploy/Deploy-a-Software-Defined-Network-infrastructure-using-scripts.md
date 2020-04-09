@@ -1,27 +1,24 @@
 ---
 title: 使用脚本部署软件定义的网络基础结构
-description: 本主题介绍如何使用 Windows Server 2016 中的脚本部署 Microsoft 软件定义的网络（SDN）基础结构。
-manager: dougkim
+description: 本主题介绍如何使用 Windows Server 2016 中的脚本部署 Microsoft 软件定义的网络（SDN）基础结构。 ”启用
+manager: grcusanz
 ms.prod: windows-server
-ms.service: virtual-network
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 1a17d5f5fec0a05b4258b295eb37b6dc80cdaee1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 522c4c640daf438f122857154fed2b0ec8138bec
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313058"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855720"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>使用脚本部署软件定义的网络基础结构
 
->适用于：Windows Server（半年频道）、Windows Server 2016
-
-本主题介绍如何使用脚本部署 Microsoft 软件定义的网络（SDN）基础结构。 该基础结构包括高可用性（HA）网络控制器、HA 软件负载平衡器（SLB）/MUX、虚拟网络和关联的访问控制列表（Acl）。 此外，另一个脚本将部署一个租户工作负荷，用于验证 SDN 基础结构。  
+>适用于： Windows Server （半年频道）、Windows Server 2016 '。在本主题中，你将使用脚本部署 Microsoft 软件定义的网络（SDN）基础结构。 该基础结构包括高可用性（HA）网络控制器、HA 软件负载平衡器（SLB）/MUX、虚拟网络和关联的访问控制列表（Acl）。 此外，另一个脚本将部署一个租户工作负荷，用于验证 SDN 基础结构。  
 
 如果你希望你的租户工作负荷在其虚拟网络外部进行通信，则可以设置 SLB NAT 规则、站点到站点网关隧道或第3层转发，以在虚拟和物理工作负载之间进行路由。  
 
@@ -88,8 +85,7 @@ ms.locfileid: "80313058"
 
    a. 右键单击 "**开始**"，单击 "**系统**"，然后单击 "**更改设置**"。  
    b. 单击“更改”。  
-   c. 单击 "**域**" 并指定域名。  
-   d. 单击“确定”。  
+   c. 单击 "**域**" 并指定域名。  "" "d。 单击“确定”。  
    e. 出现提示时，键入用户名和密码凭据。  
    f. 重新启动服务器。  
 
@@ -158,7 +154,7 @@ ms.locfileid: "80313058"
    |    证书    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         NC 证书文件的临时共享位置。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    |   图像    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         空，将 Windows Server 2016 vhdx 映像置于此处                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    |    工具    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            用于故障排除和调试的实用程序。  复制到主机和虚拟机。  建议将网络监视器或 Wireshark 放在此处，以便它在需要时可用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-   |   脚本   | 部署脚本。<br /><br />-   **SDNExpress**<br />    部署和配置构造，包括网络控制器虚拟机、SLB Mux 虚拟机、网关池和与池相对应的 HNV 网关虚拟机。<br />-   **FabricConfig. psd1**<br />    SDNExpress 脚本的配置文件模板。  你将为你的环境自定义此。<br />-   **SDNExpressTenant**<br />    在具有负载平衡 VIP 的虚拟网络上部署示例租户工作负荷。<br />    还在已连接到以前创建的租户工作负荷的服务提供商边缘网关上预配一个或多个网络连接（IPSec S2S VPN、GRE、L3）。 IPSec 和 GRE 网关可通过相应的 VIP IP 地址连接，并可通过相应的地址池连接到 L3 转发网关。<br />    此脚本也可用于删除带有撤消选项的相应配置。<br />-   **TenantConfig. psd1**<br />    租户工作负荷和 S2S 网关配置的模板配置文件。<br />-   **SDNExpressUndo**<br />    清理构造环境，并将其重置为启动状态。<br />-   **SDNExpressEnterpriseExample**<br />    为每个站点提供一个或多个具有一个远程访问网关和（可选）一个对应企业虚拟机的企业站点环境。 IPSec 或 GRE 企业网关连接到服务提供商网关对应的 VIP IP 地址，以建立 S2S 隧道。 L3 转发网关通过相应的对等 IP 地址进行连接。 <br />            此脚本也可用于删除带有撤消选项的相应配置。<br />-   **EnterpriseConfig. psd1**<br />    企业站点到站点网关和客户端 VM 配置的模板配置文件。 |
+   |   脚本   | 部署脚本。<p>-   **SDNExpress**<br />    部署和配置构造，包括网络控制器虚拟机、SLB Mux 虚拟机、网关池和与池相对应的 HNV 网关虚拟机。<br />-   **FabricConfig. psd1**<br />    SDNExpress 脚本的配置文件模板。  你将为你的环境自定义此。<br />-   **SDNExpressTenant**<br />    在具有负载平衡 VIP 的虚拟网络上部署示例租户工作负荷。<br />    还在已连接到以前创建的租户工作负荷的服务提供商边缘网关上预配一个或多个网络连接（IPSec S2S VPN、GRE、L3）。 IPSec 和 GRE 网关可通过相应的 VIP IP 地址连接，并可通过相应的地址池连接到 L3 转发网关。<br />    此脚本也可用于删除带有撤消选项的相应配置。<br />-   **TenantConfig. psd1**<br />    租户工作负荷和 S2S 网关配置的模板配置文件。<br />-   **SDNExpressUndo**<br />    清理构造环境，并将其重置为启动状态。<br />-   **SDNExpressEnterpriseExample**<br />    为每个站点提供一个或多个具有一个远程访问网关和（可选）一个对应企业虚拟机的企业站点环境。 IPSec 或 GRE 企业网关连接到服务提供商网关对应的 VIP IP 地址，以建立 S2S 隧道。 L3 转发网关通过相应的对等 IP 地址进行连接。 <br />            此脚本也可用于删除带有撤消选项的相应配置。<br />-   **EnterpriseConfig. psd1**<br />    企业站点到站点网关和客户端 VM 配置的模板配置文件。 |
    | TenantApps  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             用于部署示例租户工作负荷的文件。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
    ---

@@ -1,28 +1,22 @@
 ---
-title: shift
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: 移位
+description: 用于 shift 的 Windows 命令主题，它更改批处理文件中批处理参数的位置。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b56574e8-570a-4cc9-bbac-1b94fbf6a47a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f74e0f1f9041a4a7b95d83772ea79376c82876de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c242fe90a8bf32eda5a3db511910e3d7aa4610f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371249"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834260"
 ---
-# <a name="shift"></a>shift
-
-
+# <a name="shift"></a>移位
 
 更改批处理文件中批处理参数的位置。
 
@@ -34,9 +28,9 @@ ms.locfileid: "71371249"
 shift [/n <N>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/n \<N >|指定从第*n*个参数开始移位，其中*n*是从0到8的任何值。 需要命令扩展，默认情况下已启用。|
 |/?|在命令提示符下显示帮助。|
@@ -49,7 +43,7 @@ shift [/n <N>]
 - **Shift**命令对 **%\\** * batch 参数无效。
 - 没有**后退命令**。 实现**shift**命令后，将无法恢复在移位之前存在的批处理参数（ **%0**）。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 名为 Mycopy 的示例批处理文件中的以下行演示了如何对任意数量的批处理参数使用**shift** 。 在此示例中，Mycopy 将文件列表复制到特定目录。 批处理参数由目录和文件名参数表示。
 ```
@@ -61,7 +55,7 @@ rem mycopy dir file1 file2 ...
 set todir=%1
 :getfile
 shift
-if "%1"=="" goto end
+if %1== goto end
 copy %1 %todir%
 goto getfile
 :end
@@ -69,6 +63,6 @@ set todir=
 echo All done
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

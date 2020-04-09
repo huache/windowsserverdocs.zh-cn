@@ -1,7 +1,6 @@
 ---
 ms.assetid: 68db7f26-d6e3-4e67-859b-80f352e6ab6a
 title: AD FS 配置数据库的角色
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,22 +8,22 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 22047a93ab67d3f21b3e2318fcce497feab8f996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9ffdd1876e2dfbc044cebb65d7d6ef80880a64b8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385580"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860160"
 ---
 # <a name="the-role-of-the-ad-fs-configuration-database"></a>AD FS 配置数据库的角色
-AD FS 配置数据库存储所有表示单个实例的配置数据 Active Directory 联合身份验证服务 \(AD FS\) \(联合身份验证服务\)。 AD FS 配置数据库定义联合身份验证服务识别伙伴、证书、属性存储、声明和有关这些相关联实体的各种数据所需的参数集。 你可以将此配置数据存储在 Windows Server®2008、Windows Server 2008 R2 和 Windows server®2012附带的 Microsoft SQL Server®数据库或 Windows 内部数据库 \(WID\) 功能中。  
+AD FS 配置数据库存储所有表示单个实例的配置数据 Active Directory 联合身份验证服务 \(AD FS\) \(联合身份验证服务\)。 AD FS 配置数据库定义联合身份验证服务识别伙伴、证书、属性存储、声明和有关这些相关联实体的各种数据所需的参数集。 你可以将此配置数据存储在 Windows Server&reg; 2008、Windows Server 2008 R2 和 Windows server&reg; 2012 附带的 Microsoft SQL Server&reg; 数据库或 Windows 内部数据库 \(WID\) 功能中。  
   
 > [!NOTE]  
 > AD FS 配置数据库的全部内容可以存储在 WID 实例中或 SQL 数据库的实例中，但不能同时存储在这两者中。 这意味着你无法对 AD FS 配置数据库的同一个实例拥有某些使用 WID 的联合服务器和其他使用 SQL Server 数据库的服务器。  
   
 你可以使用本主题中的以下信息以及 [AD FS 部署拓扑注意事项](https://technet.microsoft.com/library/gg982489.aspx)中提供的内容了解有关选择 WID 或 SQL Server 存储 AD FS 配置数据库的优缺点：  
   
-WID 使用关系数据存储，并且没有自己的管理用户界面 \(UI\)。 相反，管理员可以使用中的 "AD FS 管理" 管理单元\-、Fsconfig.exe 或 Windows PowerShell™ cmdlet 来修改 AD FS 配置数据库的内容。  
+WID 使用关系数据存储，并且没有自己的管理用户界面 \(UI\)。 相反，管理员可以使用中的 "AD FS 管理" 管理单元\-、Fsconfig.exe 或 Windows PowerShell&trade; cmdlet 来修改 AD FS 配置数据库的内容。  
   
 ## <a name="using-wid-to-store-the-ad-fs-configuration-database"></a>使用 WID 存储 AD FS 配置数据库  
 可以使用 Fsconfig.exe 命令\-行工具或 AD FS 联合服务器配置向导，将 WID 作为存储来创建 AD FS 配置数据库。 当你使用这些工具中的任何一个时，可以选择以下任一选项来创建你的联合服务器拓扑结构。 上述的每个选项将 WID 用于存储 AD FS 配置数据库：  
@@ -48,7 +47,7 @@ WID 使用关系数据存储，并且没有自己的管理用户界面 \(UI\)。
 本部分介绍一些重要概念，这些概念描述 WID 联合服务器场如何在主联合服务器和辅助联合服务器之间复制数据。 .  
   
 #### <a name="primary-federation-server"></a>主联合服务器  
-主联合服务器是运行 Windows Server 2008、Windows Server 2008 R2 或 Windows Server®2012的计算机，它已使用 AD FS 联合服务器配置向导在联合服务器角色中进行配置，并且具有 AD FS 配置数据库的读/写副本。 当你使用 AD FS 联合服务器配置向导并选择创建新联合身份验证服务的选项并使该计算机成为服务器场中的第一台联合服务器时，将始终创建主联合服务器。 所有在此服务器场中的其他联合服务器，也称为辅助联合服务器，必须将主联合服务器所做的更改同步到存储在本地的 AD FS 配置数据库的副本。  
+主联合服务器是运行 Windows Server 2008、Windows Server 2008 R2 或 Windows Server&reg; 2012 的计算机，它已使用 AD FS 联合服务器配置向导在联合服务器角色中进行配置，并且具有 AD FS 配置数据库的读/写副本。 当你使用 AD FS 联合服务器配置向导并选择创建新联合身份验证服务的选项并使该计算机成为服务器场中的第一台联合服务器时，将始终创建主联合服务器。 所有在此服务器场中的其他联合服务器，也称为辅助联合服务器，必须将主联合服务器所做的更改同步到存储在本地的 AD FS 配置数据库的副本。  
   
 #### <a name="secondary-federation-servers"></a>辅助联合服务器  
 辅助联合服务器从主联合服务器存储 AD FS 配置数据库的副本，但这些副本仅\-读取。 辅助联合服务器通过定期轮询来连接到场中的主联合服务器并与之同步数据，以检查数据是否已更改。 辅助联合服务器存在于为主联合服务器提供容错，同时用于负载\-平衡在整个网络环境中的不同站点中进行的访问请求。  
@@ -79,7 +78,7 @@ WID 同步过程还支持用于中间更改的更高效传输的增量传输。 
   
 -   它提供 SAML 项目解析和 SAML/WS\-联合身份验证令牌重放检测的功能支持 \(下面\)所述。  
   
-当 AD FS 配置数据库存储在 SQL 数据库实例中时，术语“主联合服务器”不适用，因为所有联合服务器可以平等地读取和写入到 AD FS 配置数据库，该库使用相同群集的 SQL Server 实例，如下图所示。  
+当 AD FS 配置数据库存储在 SQL 数据库实例中时，术语 "主联合服务器" 不适用，因为所有联合服务器都可以对使用同一个聚集 SQL Server 实例的 AD FS 配置数据库进行同样的读取和写入，如下图所示。  
   
 ![AD FS 角色](media/adfs2_SQL.png)  
   

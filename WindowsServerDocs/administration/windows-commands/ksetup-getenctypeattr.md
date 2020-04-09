@@ -1,24 +1,20 @@
 ---
 title: ksetup： getenctypeattr
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6c7ec002-355e-474d-bc27-27215049f1a8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ff55cfd204f76b42c5f1342b3cf206ee4c14f14
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60de138ac73140c69e9a863083e01a51c0e13ca3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374994"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841530"
 ---
 # <a name="ksetupgetenctypeattr"></a>ksetup： getenctypeattr
 
@@ -32,9 +28,9 @@ ms.locfileid: "71374994"
 ksetup /getenctypeattr <DomainName> 
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<DomainName >|要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。|
 
@@ -46,18 +42,18 @@ ksetup /getenctypeattr <DomainName>
 
 若要设置要连接到并使用的域，请运行**ksetup/domain \<DomainName >** 命令。
 
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 
 验证域的 "加密类型" 属性：
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
 -   [Klist](klist.md)
 -   [Ksetup:domain](ksetup-domain.md)
 -   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
 -   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
 -   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

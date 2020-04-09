@@ -1,36 +1,32 @@
 ---
 title: Manage the Local Server and the Server Manager Console
 description: 服务器管理器
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eeb32f65-d588-4ed5-82ba-1ca37f517139
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45bb0efcaf989cadd717ddbfde27230b76901113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d64d45fec0c48f66da72dfee7ab9f1f9965205ad
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383109"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851490"
 ---
 # <a name="manage-the-local-server-and-the-server-manager-console"></a>Manage the Local Server and the Server Manager Console
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在 Windows Server 中，服务器管理器使你能够管理本地服务器（如果你在 Windows Server 上运行服务器管理器，而不是在基于 Windows 的客户端操作系统上运行）和运行 Windows Server 2008 和更新版本的 Windows 的远程服务器服务器操作系统。
+在 Windows Server 中，服务器管理器使你能够管理本地服务器（如果你在 Windows Server 上运行服务器管理器，而不是在基于 Windows 的客户端操作系统上运行）和运行 Windows Server 2008 和更新版本的 Windows Server 操作系统的远程服务器。
 
 服务器管理器中的 "**本地服务器**" 页面显示本地服务器的服务器属性、事件、服务和性能计数器数据，以及最佳做法分析器（BPA）结果。 事件、服务、BPA 和性能磁贴的功能与它们在角色和服务器组页面的功能相同。 有关配置这些磁贴中显示的数据的详细信息，请参阅 [View 和 Configure Performance, Event, 和 Service Data](view-and-configure-performance-event-and-service-data.md) 和 [Run Best Practices Analyzer Scans 和 Manage Scan Results](run-best-practices-analyzer-scans-and-manage-scan-results.md)。
 
 "服务器管理器控制台" 标题栏中的菜单命令和设置适用于服务器池中的所有服务器，并让你使用服务器管理器来管理整个服务器池。
 
-本主题包含以下部分。
+本主题包含以下各节。
 
 -   [关闭本地服务器](#BKMK_shutdown)
 
@@ -42,7 +38,7 @@ ms.locfileid: "71383109"
 
 -   [管理角色主页上的角色](#BKMK_roles)
 
-## <a name="BKMK_shutdown"></a>关闭本地服务器
+## <a name="shut-down-the-local-server"></a><a name=BKMK_shutdown></a>关闭本地服务器
 使用本地服务器 "**属性**" 磁贴中的 "**任务**" 菜单，可以在本地服务器上启动 Windows PowerShell 会话，打开**计算机管理**mmc 管理单元，或者打开本地服务器上安装的角色或功能的 mmc 管理单元。 你还可以使用 **“任务”** 菜单中的 **“关闭本地服务器”** 命令来关闭本地服务器。 **“关闭本地服务器”** 命令还可用于 **“所有服务器”** 页面上的 **“服务器”** 磁贴中的本地服务器，或者代表本地服务器的任何角色或组页面。
 
 使用此方法关闭本地服务器与从 "**开始**" 屏幕关闭 windows server 2016 不同，打开 "**关闭 windows** " 对话框，该对话框允许您在 "**关闭事件跟踪**程序" 区域指定关闭原因。
@@ -50,7 +46,7 @@ ms.locfileid: "71383109"
 > [!NOTE]
 > 只有管理员组的成员才能关闭或重启服务器。 标准用户不能关闭或重启服务器。 单击 **“关闭本地服务器”** 命令可注销标准用户的服务器会话。 这与普通用户从服务器桌面运行 **Alt+F4** 关闭命令的效果相同。
 
-## <a name="BKMK_props"></a>配置服务器管理器属性
+## <a name="configure-server-manager-properties"></a><a name=BKMK_props></a>配置服务器管理器属性
 你可以在 **“本地服务器”** 页面的 **“属性”** 磁贴中查看或更改以下设置。 若要更改设置的值，请单击该设置的超文本值。
 
 > [!NOTE]
@@ -58,30 +54,30 @@ ms.locfileid: "71383109"
 > 
 > 由于 "**属性**" 磁贴中显示的许多属性都是由不属于服务器管理器（例如，控制面板）的工具控制的，因此，对**属性**设置的更改不会立即显示在 "**属性**" 磁贴中。 默认情况下， **“属性”** 磁贴中的数据每两分钟刷新一次。 若要立即刷新 "**属性**" 磁贴数据，请在服务器管理器地址栏中单击 "**刷新**"。
 
-|设置|描述|
+|设置|说明|
 |------|--------|
-|计算机名称|显示计算机友好名称并打开 "**系统属性**" 对话框，该对话框允许您更改服务器的名称、域成员身份以及其他系统设置（例如用户配置文件）。|
+|计算机名|显示计算机友好名称并打开 "**系统属性**" 对话框，该对话框允许您更改服务器的名称、域成员身份以及其他系统设置（例如用户配置文件）。|
 |域（如果服务器未加入域，则为工作组）|显示服务器所属域或工作组。 打开 "**系统属性**" 对话框，该对话框允许您更改服务器的名称、域成员身份以及其他系统设置（例如用户配置文件）。|
 |Windows 防火墙|显示本地服务器的 Windows 防火墙状态。 打开 **“控制面板”\“系统和安全”\“Windows 防火墙”** 。 有关配置 Windows 防火墙的详细信息，请参阅 [高级安全 Windows 防火墙和 IPsec](https://go.microsoft.com/fwlink/?LinkId=253465)。|
 |远程管理|显示服务器管理器和 Windows PowerShell 远程管理状态。 打开 "**配置远程管理**" 对话框。 有关远程管理的详细信息，请参阅[在服务器管理器中配置远程管理](configure-remote-management-in-server-manager.md)。|
 |远程桌面|显示用户是否可以通过远程桌面会话来连接远程服务器。 打开 "**系统属性**" 对话框的 "**远程**" 选项卡。|
 |NIC 组合|显示本地服务器是否参与了 NIC 组合。 打开 **“NIC 组合”** 对话框，并且可以根据需要将本地服务器加入 NIC 组。 有关 NIC 组合的详细信息，请参阅 [NIC 组合白皮书](https://go.microsoft.com/fwlink/?LinkID=253449)。|
-|Ethernet|显示服务器的网络状态。 打开 **“控制面板”\“网络和 Internet”\“网络连接”** 。|
+|以太网|显示服务器的网络状态。 打开 **“控制面板”\“网络和 Internet”\“网络连接”** 。|
 |操作系统版本|该只读字段显示本地服务器正在运行的 Windows 操作系统版本。|
 |硬件信息|该只读字段显示服务器硬件的制造商、型号和编号。|
 |上次安装更新的时间|显示上次安装 Windows 更新的日期和时间。 打开 **“控制面板”\“系统和安全”\“Windows 更新”** 。|
-|Windows 更新|显示本地服务器的 Windows 更新设置。 打开 **“控制面板”\“系统和安全”\“Windows 更新”** 。|
+|Windows Update|显示本地服务器的 Windows 更新设置。 打开 **“控制面板”\“系统和安全”\“Windows 更新”** 。|
 |上次检查更新的时间|显示服务器上次检查是否有 Windows 更新的日期和时间。 打开 **“控制面板”\“系统和安全”\“Windows 更新”** 。|
 |Windows 错误报告|显示 Windows 错误报告选择启用状态。 打开 **“Windows 错误报告配置”** 对话框。 有关 Windows 错误报告、其优点、隐私声明以及选择启用设置的详细信息，请参阅 [Windows 错误报告](https://go.microsoft.com/fwlink/?LinkID=245991)。|
 |客户体验改善计划|显示客户体验改善计划选择性加入状态。 打开 **“客户体验改善计划配置”** 对话框。 有关 Windows 客户体验改善计划、其优点以及选择加入设置的详细信息，请参阅 [Windows 客户体验改善计划](https://go.microsoft.com/fwlink/?LinkID=245992)。|
 |Internet Explorer (IE) 增强的安全配置|显示 IE 增强的安全配置（也称 IE 强化或 IE ESC）是否开启。 打开 **“Internet Explorer 增强的安全配置”** 对话框。 IE 增强的安全配置是服务器防止从 Internet Explorer 打开网页的一种安全措施。 有关 IE 增强的安全配置、其优点以及设置的详细信息，请参阅 [Internet Explorer：增强的安全配置](https://go.microsoft.com/fwlink/?LinkId=253461)。|
 |时区|显示本地服务器的时区。 打开 "**日期和时间**" 对话框。|
-|产品 ID|显示 windows Server 2016 操作系统的 Windows 激活状态和产品 ID 号（如果 Windows 已激活）。 此号码与 Windows 产品密钥不同。 打开 **“Windows 激活”** 对话框。|
+|Product ID|显示 windows Server 2016 操作系统的 Windows 激活状态和产品 ID 号（如果 Windows 已激活）。 此号码与 Windows 产品密钥不同。 打开 **“Windows 激活”** 对话框。|
 |处理器|此只读字段显示制造商、型号名称和有关本地服务器处理器的速度信息。|
 |安装的内存 (RAM)|该只读字段显示可用内存空间，以 GB 为单位。|
 |磁盘总空间|该只读字段显示可用磁盘空间，以 GB 为单位。|
 
-## <a name="BKMK_managesm"></a>管理服务器管理器控制台
+## <a name="manage-the-server-manager-console"></a><a name=BKMK_managesm></a>管理服务器管理器控制台
 适用于整个服务器管理器控制台和已添加到服务器管理器服务器池的所有远程服务器的全局设置位于服务器管理器控制台窗口顶部的标题栏中。
 
 ### <a name="add-servers-to-server-manager"></a>将服务器添加到服务器管理器
@@ -94,7 +90,7 @@ ms.locfileid: "71383109"
 
 1.  在服务器管理器控制台中的 "**管理**" 菜单上，单击**服务器管理器属性**"。
 
-2.  在 "**服务器管理器属性**" 对话框中，指定刷新服务器管理器中显示的数据的时间段，以分钟为单位。 默认值为 10 分钟。 完成后单击“确定”。
+2.  在 "**服务器管理器属性**" 对话框中，指定刷新服务器管理器中显示的数据的时间段，以分钟为单位。 默认值为 10 分钟。 完成时单击“确定”。
 
 #### <a name="refresh-limitations"></a>刷新限制
 刷新将全局应用于已添加到服务器管理器服务器池的所有服务器中的数据。 你无法为单个服务器、角色或组来刷新数据或配置不同的刷新间隔时间。
@@ -104,7 +100,7 @@ ms.locfileid: "71383109"
 在服务器管理器用于远程桌面服务、IP 地址管理以及文件和存储服务的角色主页中显示的数据不会自动刷新。 在这些页面上按**F5**或单击 "服务器管理器控制台" 标题中的 "**刷新**"，手动刷新这些页面中显示的数据。
 
 ### <a name="add-or-remove-roles-or-features"></a>添加或删除角色或功能
-用于打开 "添加角色和功能向导" 和 "删除角色和功能向导" 的命令，可让你在服务器池中的服务器上添加或删除角色、角色服务和功能，它们位于服务器管理器控制台的 "**管理**" 菜单中，以及角色或组页面上 "**角色和功能**" 磁贴的 "**任务**" 菜单。 有关如何添加或删除角色或功能的详细信息，请参阅 [Install or Uninstall Roles, Role Services, or Features](install-or-uninstall-roles-role-services-or-features.md)。
+用于打开 "添加角色和功能向导" 和 "删除角色和功能向导" 的命令，可让你在服务器池中的服务器上添加或删除角色、角色服务和功能，它们位于服务器管理器控制台的 "**管理**" 菜单中，以及角色或组页面上 "**角色和功能**" 磁贴的 "**任务**" 菜单。 有关如何使添加或删除角色或功能的详细信息，请参阅[安装或卸载角色、角色服务或功能](install-or-uninstall-roles-role-services-or-features.md)。
 
 在服务器管理器中，角色和功能数据以系统的基本语言（也称为系统默认 GUI 语言）或操作系统安装过程中选择的语言显示。
 
@@ -117,7 +113,7 @@ ms.locfileid: "71383109"
 ### <a name="zoom-in-or-out"></a>放大或缩小
 若要在服务器管理器控制台的视图中放大或缩小，可以使用 "**视图**" 菜单上的 "**缩放**" 命令，或者按**ctrl + 加号（+）** 放大，按**ctrl + 减号（-）** 缩小。
 
-## <a name="BKMK_tools"></a>自定义 "工具" 菜单中显示的工具
+## <a name="customize-tools-that-are-displayed-in-the-tools-menu"></a><a name=BKMK_tools></a>自定义 "工具" 菜单中显示的工具
 服务器管理器中的 "**工具**" 菜单包含指向 "**控制面板/系统和安全**" 中 "**管理工具**" 文件夹中的快捷方式的软链接。 "**管理工具**" 文件夹包含可用管理工具（例如 mmc 管理单元）的快捷方式或 .lnk 文件的列表。服务器管理器使用这些快捷方式的链接来填充 "**工具**" 菜单，并将 "**管理工具**" 文件夹的文件夹结构复制到 "**工具**" 菜单。 默认情况下，“管理工具”文件夹中的工具以无层次列表形式显示，以及按类型和名称排序。 在服务器管理器**工具**"菜单中，项只按名称排序，而不按类型排序。
 
 若要定制该 **“工具”** 菜单，可将要使用的工具或脚本快捷方式复制到 **“管理工具”** 文件夹。 你还可以组织文件夹中的快捷方式，为 **“工具”** 菜单创建级联菜单。 此外，如果想要限制对 "**工具**" 菜单上的自定义工具的访问，则可以在 "管理工具" 中的两个自定义工具文件夹上设置用户访问权限，或直接在原始工具或脚本文件中设置用户访问权限。
@@ -158,8 +154,8 @@ ms.locfileid: "71383109"
 
 8.  如有必要，请刷新或重新启动服务器管理器，以查看 "**工具**" 菜单中的自定义工具快捷方式。
 
-## <a name="BKMK_roles"></a>管理角色主页上的角色
-将服务器添加到服务器管理器服务器池并服务器管理器收集池中服务器的清单数据后，服务器管理器为在托管服务器上发现的角色将页面添加到导航窗格中。 角色页面上的 **“服务器”** 磁贴列出正在运行角色的托管服务器。 默认情况下，“事件”、“最佳做法分析器”、“服务”和“性能” 磁贴显示所有运行角色的服务器的数据；选择“服务器” 磁贴中的特定服务器会让事件、服务、性能计数器和 BPA 结果的范围仅限于所选服务器。 在管理的服务器上安装或发现角色或功能后，通常可以在服务器管理器控制台的 "**工具**" 菜单中使用管理工具。 你还可以右键单击角色或组的“服务器”磁贴中的服务器条目，然后启动要使用的管理工具。
+## <a name="manage-roles-on-role-home-pages"></a><a name=BKMK_roles></a>管理角色主页上的角色
+将服务器添加到服务器管理器服务器池并服务器管理器收集池中服务器的清单数据后，服务器管理器为在托管服务器上发现的角色将页面添加到导航窗格中。 角色页面上的 **“服务器”** 磁贴列出正在运行角色的托管服务器。 默认情况下，“事件”、“最佳做法分析器”、“服务”和“性能”磁贴显示所有运行角色的服务器的数据；选择“服务器”磁贴中的特定服务器会让事件、服务、性能计数器和 BPA 结果的范围仅限于所选服务器。 在管理的服务器上安装或发现角色或功能后，通常可以在服务器管理器控制台的 "**工具**" 菜单中使用管理工具。 你还可以右键单击角色或组的 **“服务器”** 磁贴中的服务器条目，然后启动要使用的管理工具。
 
 在 Windows Server 2016 中，以下角色和功能的管理工具以页面形式集成到服务器管理器控制台。
 

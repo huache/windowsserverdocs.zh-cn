@@ -1,7 +1,6 @@
 ---
 ms.assetid: f74eec9a-2485-4ee0-a0d8-cce01250a294
 title: AD DS 简化管理
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e1989630cadd7d63f8ed041174135722d568484f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323159"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824420"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 简化管理
 
@@ -173,7 +172,7 @@ Adprep 不再要求在架构主机上运行。 它可从运行 Windows Server 20
 > [!IMPORTANT]  
 > Windows Server 2012 没有 32 位 Adprep32.exe 工具。 若要准备林或域，你必须有至少一个 Windows Server 2008 x64、Windows Server 2008 R2 或 Windows Server 2012 计算机，且该计算机作为域控制器、成员服务器运行或在工作组中运行。 Adprep.exe 不在 Windows Server 2003 x64 上运行。  
   
-## <a name="BKMK_PrereuisiteChecking"></a>先决条件检查
+## <a name="prerequisite-checking"></a><a name="BKMK_PrereuisiteChecking"></a>先决条件检查
 
 根据操作，内置于 ADDSDeployment Windows PowerShell 托管代码的先决条件检查系统在不同模式下工作。 以下表格介绍了每项测试以及使用它的时间，并说明了它的验证原理和对象。 在出现验证失败且错误不足以解决该问题时的情况时，这些表格非常有用。  
   
@@ -191,23 +190,23 @@ Adprep 不再要求在架构主机上运行。 它可从运行 Windows Server 20
 
 通常无需运行这些 cmdlet；它们已默认使用部署 cmdlet 自动执行。  
 
-#### <a name="BKMK_ADDSInstallPrerequisiteTests"></a>先决条件测试
+#### <a name="prerequisite-tests"></a><a name="BKMK_ADDSInstallPrerequisiteTests"></a>先决条件测试
 
 ||||  
 |-|-|-|  
-|测试名称|协议<br /><br />“已使用”|说明和备注|  
-|VerifyAdminTrusted<br /><br />ForDelegationProvider|LDAP|验证你在现有伙伴域控制器上有“使计算机和用户帐户可以受信任且可以委派”(SeEnableDelegationPrivilege) 权限。 这需要你构造的 tokenGroups 属性的访问权限。<br /><br />在联系 Windows Server 2003 域控制器时不使用。 你必须在升级前手动确认此权限|  
-|VerifyADPrep<br /><br />先决条件（林）|LDAP|使用 rootDSE namingContexts 属性和架构命名上下文 fsmoRoleOwner 属性发现并联系架构主机。 确定 AD DS 安装需要哪些预备操作（forestprep、domainprep 或 rodcprep）。 验证架构 objectVersion 是否和预料的一样以及它是否需要进一步扩展。|  
-|VerifyADPrep<br /><br />先决条件（域和 RODC）|LDAP|使用 rootDSE namingContexts 属性和基础结构容器 fsmoRoleOwner 属性发现并联系基础结构主机。 对于 RODC 安装，此测试发现域命名主机，并确保它处于联机状态。|  
-|CheckGroup<br /><br />成员身份|LDAP、<br /><br />RPC over SMB (LSARPC)|根据操作验证用户是 Domain Admins 还是 Enterprise Admins 组的成员（添加或降级域控制器对应 DA，添加或删除域则对应 EA）|  
-|CheckForestPrep<br /><br />GroupMembership|LDAP、<br /><br />RPC over SMB (LSARPC)|验证用户是 Schema Admins 和 Enterprise Admins 组的成员，并且在现有域控制器上具有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
-|CheckDomainPrep<br /><br />GroupMembership|LDAP、<br /><br />RPC over SMB (LSARPC)|验证用户是 Domain Admins 组的成员并且在现有域控制器上有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
-|CheckRODCPrep<br /><br />GroupMembership|LDAP、<br /><br />RPC over SMB (LSARPC)|验证用户是 Enterprise Admins 组的成员并且在现有域控制器上有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
-|VerifyInitSync<br /><br />AfterReboot|LDAP|通过在 rootDSE 属性 becomeSchemaMaster 上设置一个虚拟值，验证架构主机已在其重新启动后至少复制一次|  
-|VerifySFUHotFix<br /><br />已应用|LDAP|验证现有林架构不包含具有 OID 1.2.840.113556.1.4.7000.187.102 的 UID 属性的已知问题 SFU2 扩展<br /><br />([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
-|VerifyExchange<br /><br />SchemaFixed|LDAP、WMI、DCOM、RPC|验证现有林架构是否仍未包含问题 Exchange 2000 扩展 Ms-exch-labeleduri，Ms-exch-labeleduri-Ms-exch-labeleduri，ms-Ms-exch-labeleduri-房子（[https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649)）|  
-|VerifyWin2KSchema<br /><br />一致性|LDAP|验证现有林架构具有一致的（未由第三方错误修改）核心属性和类。|  
-|DCPromo|DRSR over RPC、<br /><br />LDAP、<br /><br />DNS<br /><br />RPC over SMB (SAMR)|验证命令行语法已传递到升级代码和测试升级。 在新建时，验证林或域尚不存在。|  
-|VerifyOutbound<br /><br />ReplicationEnabled|LDAP、DRSR over SMB、RPC over SMB (LSARPC)|通过针对 NTDS 设置对象的选项属性检查 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004) 来验证指定为复制伙伴的现有域控制器已启用出站复制。|  
-|VerifyMachineAdmin<br /><br />密码|DRSR over RPC、<br /><br />LDAP、<br /><br />DNS<br /><br />RPC over SMB (SAMR)|验证 DSRM 的安全模式密码集符合域复杂性要求。|  
+|测试名称|协议<p>“已使用”|说明和备注|  
+|VerifyAdminTrusted<p>ForDelegationProvider|LDAP|验证你在现有伙伴域控制器上有“使计算机和用户帐户可以受信任且可以委派”(SeEnableDelegationPrivilege) 权限。 这需要你构造的 tokenGroups 属性的访问权限。<p>在联系 Windows Server 2003 域控制器时不使用。 你必须在升级前手动确认此权限|  
+|VerifyADPrep<p>先决条件（林）|LDAP|使用 rootDSE namingContexts 属性和架构命名上下文 fsmoRoleOwner 属性发现并联系架构主机。 确定 AD DS 安装需要哪些预备操作（forestprep、domainprep 或 rodcprep）。 验证架构 objectVersion 是否和预料的一样以及它是否需要进一步扩展。|  
+|VerifyADPrep<p>先决条件（域和 RODC）|LDAP|使用 rootDSE namingContexts 属性和基础结构容器 fsmoRoleOwner 属性发现并联系基础结构主机。 对于 RODC 安装，此测试发现域命名主机，并确保它处于联机状态。|  
+|CheckGroup<p>成员身份|LDAP、<p>RPC over SMB (LSARPC)|根据操作验证用户是 Domain Admins 还是 Enterprise Admins 组的成员（添加或降级域控制器对应 DA，添加或删除域则对应 EA）|  
+|CheckForestPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|验证用户是 Schema Admins 和 Enterprise Admins 组的成员，并且在现有域控制器上具有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
+|CheckDomainPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|验证用户是 Domain Admins 组的成员并且在现有域控制器上有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
+|CheckRODCPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|验证用户是 Enterprise Admins 组的成员并且在现有域控制器上有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
+|VerifyInitSync<p>AfterReboot|LDAP|通过在 rootDSE 属性 becomeSchemaMaster 上设置一个虚拟值，验证架构主机已在其重新启动后至少复制一次|  
+|VerifySFUHotFix<p>已应用|LDAP|验证现有林架构不包含具有 OID 1.2.840.113556.1.4.7000.187.102 的 UID 属性的已知问题 SFU2 扩展<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
+|VerifyExchange<p>SchemaFixed|LDAP、WMI、DCOM、RPC|验证现有林架构是否仍未包含问题 Exchange 2000 扩展 Ms-exch-labeleduri，Ms-exch-labeleduri-Ms-exch-labeleduri，ms-Ms-exch-labeleduri-房子（[https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649)）|  
+|VerifyWin2KSchema<p>一致性|LDAP|验证现有林架构具有一致的（未由第三方错误修改）核心属性和类。|  
+|DCPromo|DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR)|验证命令行语法已传递到升级代码和测试升级。 在新建时，验证林或域尚不存在。|  
+|VerifyOutbound<p>ReplicationEnabled|LDAP、DRSR over SMB、RPC over SMB (LSARPC)|通过针对 NTDS 设置对象的选项属性检查 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004) 来验证指定为复制伙伴的现有域控制器已启用出站复制。|  
+|VerifyMachineAdmin<p>密码|DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR)|验证 DSRM 的安全模式密码集符合域复杂性要求。|  
 |VerifySafeModePassword|*N/A*|验证本地管理员密码集符合计算机安全策略复杂性要求。|  

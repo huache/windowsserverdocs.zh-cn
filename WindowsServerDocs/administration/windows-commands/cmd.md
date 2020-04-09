@@ -1,26 +1,22 @@
 ---
-title: Cmd
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: cmd
+description: Cmd 的 Windows 命令主题，用于启动命令解释器（Cmd.exe）的新实例。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6ec588db-31a9-4a73-a970-65a2c6f4abbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 032fbea2039faa09753ac0c2b51e4b62004d36ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 83b5e27017a9a0f979acec428b8ddaa73cd9d46b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379327"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847620"
 ---
-# <a name="cmd"></a>Cmd
+# <a name="cmd"></a>cmd
 
 启动命令解释器 Cmd.exe 的新实例。 如果不使用参数， **cmd**将显示操作系统的版本和版权信息。
 
@@ -30,9 +26,9 @@ ms.locfileid: "71379327"
 cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}] [/v:{on|off}] [<String>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/c|执行*字符串*指定的命令，然后停止。|
 |遇到|执行*String*指定的命令，然后继续。|
@@ -55,13 +51,13 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 |值|颜色|
 |-----|-----|
-|0|黑色|
+|0|Black|
 |1|蓝色|
-|2|厚︹|
+|2|绿色|
 |3|水|
 |4|红色|
 |5|紫|
-|6|独︹|
+|6|黄色|
 |7|白色|
 |8|灰色|
 |9|浅蓝色|
@@ -69,7 +65,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |b|浅浅绿色|
 |c|浅红色|
 |d|浅紫色|
-|电邮|浅黄色|
+|e|浅黄色|
 |f|亮白色|
 
 ## <a name="remarks"></a>备注
@@ -79,7 +75,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
     若要将多个命令用于 \<字符串 >，请使用命令分隔符分隔它们 **&&** 并将它们括在引号中。 例如：
 
     ```
-    "<Command>&&<Command>&&<Command>"
+    <Command>&&<Command>&&<Command>
     ``` 
  
 -   处理引号
@@ -103,7 +99,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
     如果存在一个或两个注册表子项，它们将在所有其他变量之前执行。
 
 > [!CAUTION]
-> 不正确地编辑注册表可能会对系统造成严重损坏。 在更改注册表之前，应备份计算机上任何有价值的数据。
+> 错误编辑注册表可能会严重损坏您的系统。 在更改注册表之前，应备份计算机上任何有价值的数据。
 
 -   启用和禁用命令扩展
 
@@ -116,7 +112,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
     使用 Regedit.exe 将**REG_DWORD**值设置为**0 × 1** （已启用）或**0 × 0** （禁用）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
 
 > [!CAUTION]
-> 不正确地编辑注册表可能会对系统造成严重损坏。 在更改注册表之前，应备份计算机上任何有价值的数据。
+> 错误编辑注册表可能会严重损坏您的系统。 在更改注册表之前，应备份计算机上任何有价值的数据。
 
     When you enable command extensions, the following commands are affected:  
     -  **assoc**
@@ -156,7 +152,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
     若要设置**REG_DWORD**值，请运行 regedit.exe，并对特定函数使用控制字符的十六进制值（例如， **0 × 9**为 TAB， **0 × 08**表示退格符）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
 
 > [!CAUTION]
-> 不正确地编辑注册表可能会对系统造成严重损坏。 在更改注册表之前，应备份计算机上任何有价值的数据。
+> 错误编辑注册表可能会严重损坏您的系统。 在更改注册表之前，应备份计算机上任何有价值的数据。
 
 如果通过使用 **/f： on**启用文件和目录名完成，请使用 Ctrl + D 来完成目录名称，并使用 Ctrl + f 来完成文件名。 若要在注册表中禁用特定的完成字符，请使用空白 [**0 × 20**] 的值，因为它不是有效的控制字符。
 
@@ -166,10 +162,10 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 以下特殊字符需要用引号引起来： & < > [] {} ^ =;！ "+，" ~ [空格]。
 
-如果提供的信息包含空格，请使用引号将文本括起来（例如，"计算机名称"）。
+如果提供的信息包含空格，请使用引号将文本括起来（例如，计算机名）。
 
 如果从*字符串*内处理文件和目录名完成，则将丢弃光标右侧*路径*的任何部分（在*字符串*中处理完成的位置）。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

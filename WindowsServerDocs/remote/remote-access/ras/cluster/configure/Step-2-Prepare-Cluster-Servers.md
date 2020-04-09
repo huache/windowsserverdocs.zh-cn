@@ -2,22 +2,18 @@
 title: 步骤2准备群集服务器
 description: 本主题是在 Windows Server 2016 的群集中部署远程访问指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35d68abb-6914-42e0-91e8-803933cf785e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 74aac416a5aa69a0cd935d58e3ecb931e4b5fd02
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e53557f1fb2715f1d0318adc12aebb8f84423519
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308336"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861440"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>步骤2准备群集服务器
 
@@ -27,7 +23,7 @@ ms.locfileid: "80308336"
   
 |任务|说明|  
 |----|--------|  
-|[2.1 配置远程访问基础结构](#BKMK_config)|在要添加到群集的每个服务器上，配置服务器拓扑、IP 寻址、路由和转发。 如果配置虚拟机的负载平衡群集，则必须将虚拟机配置为使用 MAC 地址欺骗。<br /><br />此外，将每个服务器联接到同一个域，并将所有服务器连接到同一子网。|  
+|[2.1 配置远程访问基础结构](#BKMK_config)|在要添加到群集的每个服务器上，配置服务器拓扑、IP 寻址、路由和转发。 如果配置虚拟机的负载平衡群集，则必须将虚拟机配置为使用 MAC 地址欺骗。<p>此外，将每个服务器联接到同一个域，并将所有服务器连接到同一子网。|  
 |[2.2 安装远程访问角色](#BKMK_Install)|在要添加到群集的每个其他服务器上，安装远程访问角色|  
 |[2.3 安装 NLB](#BKMK_NLB)|在部署的远程访问服务器和每个要添加到群集中的其他服务器上，安装 NLB 功能。 请注意，使用外部负载均衡器时，不需要执行此步骤。|  
   

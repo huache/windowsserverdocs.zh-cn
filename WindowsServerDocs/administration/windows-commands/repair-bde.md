@@ -1,24 +1,20 @@
 ---
 title: repair-bde
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 534dca1a-05f7-4ea8-ac24-4fe5f14f988a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 817e5fb5cf032376ddfddb3a54f73411ac175def
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2107e5b7ef0339fc4f682632f3ef5a593578680a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384551"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835960"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -41,11 +37,11 @@ ms.locfileid: "71384551"
 repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–lf] [-f] [{-?|/?}]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|\<InputVolume >|标识要修复的 BitLocker 加密驱动器的驱动器号。 驱动器号必须包含冒号;例如：**C：** 。|
+|\<InputVolume >|标识要修复的 BitLocker 加密驱动器的驱动器号。 驱动器号必须包含冒号;例如： **C：** 。|
 |\<OutputVolumeorImage >|标识要在其上存储已修复驱动器的内容的驱动器。 输出驱动器上的所有信息都将被覆盖。|
 |-rk|标识应用于解锁卷的恢复密钥的位置。 此命令还可以指定为 **-recoverykey**。|
 |-rp|标识用于解锁卷的数字恢复密码。 此命令还可以指定为 **-ms-fve-recoverypassword**。|
@@ -53,13 +49,13 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 |-kp|标识可用于解锁卷的恢复密钥包。 此命令还可以指定为 **-ms-fve-keypackage**。|
 |-lf|指定文件的路径，该文件将存储 Repair 错误、警告和信息消息。 此命令也可以指定为 **-logfile**。|
 |-f|强制卸除卷，即使它无法锁定也是如此。 此命令也可以指定为 **-force**。|
-|-? 或 /?|在命令提示符下显示帮助。|
+|-? 或 /?|在命令提示符处显示帮助。|
 
 ## <a name="remarks"></a>备注
 
 如果未指定密钥包的路径，则**repair**将在驱动器上搜索密钥包。 但是，如果硬盘驱动器已损坏，则**manage-bde**可能找不到包，并会提示你提供路径。
 
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 
 以下示例尝试修复驱动器 C，并使用存储在驱动器 F 上的恢复密钥文件（RecoveryKey. bek）将该文件的内容写入驱动器 D，并将此尝试的结果写入驱动器 Z 上的日志文件（log .txt）。
 ```
@@ -78,6 +74,6 @@ repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 repair-bde C: D: -pw
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

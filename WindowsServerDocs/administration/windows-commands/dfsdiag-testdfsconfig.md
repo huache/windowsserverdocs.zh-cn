@@ -1,30 +1,26 @@
 ---
 title: dfsdiag TestDFSConfig
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 dfsdiag TestDFSConfig 的 Windows 命令主题，用于检查分布式文件系统（DFS）命名空间的配置。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 106aeeb9-ea79-4e6e-829c-eca06309bab2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8008e02d588edaa6fe7700a331c43f9680d89431
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ffb75ba26b4ed90dbf5c8bfda80f4a81f986e46a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378417"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846330"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-通过执行以下操作，检查分布式文件系统 \(DFS\) 命名空间的配置：  
+通过执行以下操作检查分布式文件系统（DFS）命名空间的配置：  
   
 -   验证 DFS 命名空间服务是否正在运行，并且其启动类型在所有命名空间服务器上是否设置为自动。  
   
@@ -36,24 +32,21 @@ ms.locfileid: "71378417"
   
     -   IP 地址资源依赖于网络名称资源。  
   
-    -   命名空间根资源依赖于物理磁盘资源。  
-  
-  
-  
+    -   命名空间根资源依赖于物理磁盘资源。
+
 ## <a name="syntax"></a>语法  
   
 ```  
 dfsdiag /TestDFSConfig /DFSRoot:<namespace>  
 ```  
   
-### <a name="parameters"></a>参数  
+#### <a name="parameters"></a>参数  
   
-|       参数       |               描述               |
+|       参数       |               说明               |
 |-----------------------|-----------------------------------------|
-| \/DFSRoot：<namespace> | 命名空间 \(要诊断的 DFS 根\)。 |
+| /DFSRoot：`<namespace>` | 要诊断的命名空间（DFS 根目录）。 |
   
-## <a name="BKMK_Examples"></a>示例  
-若要待定，请键入：  
+## <a name="examples"></a><a name=BKMK_Examples></a>示例  
   
 ```  
 dfsdiag /TestDFSConfig /DFSRoot:\\Contoso.com\MyNamespace  
@@ -61,7 +54,7 @@ dfsdiag /TestDFSConfig /DFSRoot:\\Contoso.com\MyNamespace
   
 ## <a name="additional-references"></a>其他参考  
   
--   [命令行语法项](command-line-syntax-key.md)  
+-   - [命令行语法项](command-line-syntax-key.md)  
   
 -   [dfsdiag](dfsdiag.md)  
   

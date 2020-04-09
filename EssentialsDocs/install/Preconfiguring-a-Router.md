@@ -1,23 +1,19 @@
 ---
 title: 预配置路由器
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bdfa3215b7a2426bcde807119971d99ccc229716
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c39bf3ac260a23b7fc9cc9feec7f34786b1e8aae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311578"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819940"
 ---
 # <a name="preconfiguring-a-router"></a>预配置路由器
 
@@ -43,7 +39,7 @@ ms.locfileid: "80311578"
   
 -   如果路由器支持多个子网，服务器的 IP 地址必须作为 DNS 服务器通过 DHCP 进行分配。  
   
--   如果路由器具有对 Active Directory®域服务的集成访问控制功能，则可在服务器的初始配置过程中自动执行 Active Directory 集成。 你还应通过仪表板中的路由器管理加载项提供此功能。  
+-   如果路由器具有对 Active Directory&reg; 域服务的集成访问控制功能，则可在服务器的初始配置过程中自动执行 Active Directory 集成。 你还应通过仪表板中的路由器管理加载项提供此功能。  
   
 > [!NOTE]
 >  有关配置无线连接的详细信息，请参阅[配置无线网络支持](Configure-Support-for-a-Wireless-Network.md)。  

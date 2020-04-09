@@ -1,34 +1,30 @@
 ---
 title: 服务器管理器
 description: 服务器管理器
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d996ef40-8bcc-42b0-b6ae-806b828223f6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 373e2063622317905686b1c5fc74425943abd9ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 41d9227dd5472fc55858d75fa25e728dc69c2c7c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383064"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851470"
 ---
 # <a name="server-manager"></a>服务器管理器
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-服务器管理器是 Windows Server 中的管理控制台，可帮助 IT 专业人员从其桌面预配和管理基于 Windows 的本地和远程服务器，而无需物理访问服务器或启用远程桌面协议（rdP）连接到每台服务器。 虽然 Windows Server 2008 R2 和 Windows Server 2008 中提供了服务器管理器，但服务器管理器已在 Windows Server 2012 中更新，以支持远程、多服务器管理，并帮助增加管理员可管理的服务器数量。
+服务器管理器是 Windows Server 中的管理控制台，可帮助 IT 专业人员从其桌面配置和管理基于 Windows 的本地和远程服务器，而无需物理访问服务器或启用到每台服务器的远程桌面协议（rdP）连接。 虽然 Windows Server 2008 R2 和 Windows Server 2008 中提供了服务器管理器，但服务器管理器已在 Windows Server 2012 中更新，以支持远程、多服务器管理，并帮助增加管理员可管理的服务器数量。
 
-在我们的测试中，Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中的服务器管理器可用于管理最多100服务器，具体取决于服务器运行的工作负荷。 可以使用单一服务器管理器控制台管理的服务器数量可能取决于从托管服务器请求的数据量，以及可用于运行服务器管理器的计算机的硬件和网络资源的量。 当你想要显示的数据量接近该计算机的资源容量时，服务器管理器的响应可能变慢，刷新可能延迟完成。 若要使用服务器管理器管理更多服务器，我们建议使用**配置事件数据**对话框中的设置，限制服务器管理器从你的托管服务器获取的事件数据。 “配置事件数据”可从“事件” 磁贴中的“任务” 菜单打开。 如果你需要管理组织中服务器的企业级数量，我们建议评估 [Microsoft System Center 套件](https://go.microsoft.com/fwlink/p/?LinkId=239437)中的产品。
+在我们的测试中，Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中的服务器管理器可用于管理最多100服务器，具体取决于服务器运行的工作负荷。 可以使用单一服务器管理器控制台管理的服务器数量可能取决于从托管服务器请求的数据量，以及可用于运行服务器管理器的计算机的硬件和网络资源的量。 当你想要显示的数据量接近该计算机的资源容量时，服务器管理器的响应可能变慢，刷新可能延迟完成。 若要使用服务器管理器管理更多服务器，我们建议使用**配置事件数据**对话框中的设置，限制服务器管理器从你的托管服务器获取的事件数据。 “配置事件数据”可从“事件”磁贴中的“任务”菜单打开。 如果你需要管理组织中服务器的企业级数量，我们建议评估 [Microsoft System Center 套件](https://go.microsoft.com/fwlink/p/?LinkId=239437)中的产品。
 
-本主题及其子主题提供了有关如何在服务器管理器控制台中使用功能的信息。 本主题包含以下部分。
+本主题及其子主题提供了有关如何在服务器管理器控制台中使用功能的信息。 本主题包含以下各节。
 
 -   [查看初始注意事项和系统要求](#review-initial-considerations-and-system-requirements)
 
@@ -72,7 +68,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 1.  按照[远程服务器管理工具](../../remote/remote-server-administration-tools.md)安装适用于 Windows 10 的远程服务器管理工具中的说明进行操作。
 
-2.  在 "**开始**" 屏幕上，单击 "**服务器管理器**"。 安装远程服务器管理工具后，可使用“服务器管理器” 磁贴。
+2.  在 "**开始**" 屏幕上，单击 "**服务器管理器**"。 安装远程服务器管理工具后，可使用“服务器管理器”磁贴。
 
 3.  如果安装远程服务器管理工具后 "**开始**" 屏幕上不显示 "**管理工具**" 和 "**服务器管理器**" 磁贴，并且在 "**开始**" 屏幕上搜索服务器管理器未显示结果，请确认 "**显示管理工具**" 设置已打开。 若要查看此设置，请将鼠标光标悬停在 "**开始**" 屏幕的右上角，然后单击 "**设置**"。 如果“显示管理工具”已关闭，请打开该设置，显示已作为远程服务器管理工具一部分安装的工具。
 
@@ -106,7 +102,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 ##### <a name="to-enable-server-manager-remote-management-on--windows-server-2012-r2--or--windows-server-2012--by-using-windows-powershell"></a>使用 Windows PowerShell 在 Windows Server 2012 R2 或 Windows Server 2012 上启用服务器管理器远程管理
 
-1.  请执行以下操作之一。
+1.  执行以下操作之一。
 
     -   若要从 "**开始**" 屏幕以管理员身份运行 windows powershell，请右键单击 " **windows powershell** " 磁贴，然后单击 "以**管理员身份运行**"。
 
@@ -123,14 +119,14 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 ###### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-older-operating-systems"></a>在较早版本操作系统上启用服务器管理器和 Windows PowerShell 远程管理的步骤
 
--   请执行以下操作之一。
+-   执行以下操作之一。
 
     -   若要在运行 Windows Server 2008 R2 的服务器上启用远程管理，请参阅 Windows Server 2008 R2 帮助中的[使用服务器管理器进行远程管理](https://go.microsoft.com/fwlink/?LinkID=137378)。
 
     -   若要在运行 Windows Server 2008 的服务器上启用远程管理，请参阅[在 Windows PowerShell 中启用和使用远程命令](https://go.microsoft.com/fwlink/p/?LinkId=242565)。
 
 ## <a name="tasks-that-you-can-perform-in-server-manager"></a>可在服务器管理器中执行的任务
-通过允许管理员使用单个工具执行下表中的任务，服务器管理器使服务器管理更高效。 在 Windows Server 2012 R2 和 Windows Server 2012 中，服务器的标准用户和管理员组的成员都可以在服务器管理器执行管理任务，但默认情况下，会阻止标准用户执行某些任务，如下表。
+通过允许管理员使用单个工具执行下表中的任务，服务器管理器使服务器管理更高效。 在 Windows Server 2012 R2 和 Windows Server 2012 中，服务器的标准用户和管理员组的成员都可以在服务器管理器执行管理任务，但默认情况下，会阻止标准用户执行某些任务，如下表所示。
 
 管理员可以使用服务器管理器 cmdlet 模块[disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205470.aspx)和[disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205468.aspx)中的两个 Windows PowerShell cmdlet，进一步控制标准用户对某些其他数据的访问权限。 **Disable-servermanagerstandarduserremoting** cmdlet 可向一个或多个标准、非管理员用户提供对事件、服务、性能计数器以及角色和功能清单数据的访问权限。
 
@@ -139,18 +135,18 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 |任务描述|管理员（包括内置管理员帐户）|标准服务器用户|
 |----------|----------------------------------|-------------|
-|将远程服务器添加到服务器管理器可用于管理的服务器池。|是|否|
+|将远程服务器添加到服务器管理器可用于管理的服务器池。|是|是|
 |创建和编辑自定义服务器组，如位于特定地理位置的服务器，或者用于特定用途的服务器。|是|是|
-|在运行 Windows Server 2012 R2 或 Windows Server 2012 的本地或远程服务器上安装或卸载角色、角色服务和功能。 有关角色、角色服务和功能的定义，请参阅[角色、角色服务和功能](https://go.microsoft.com/fwlink/p/?LinkId=239558)。|是|否|
+|在运行 Windows Server 2012 R2 或 Windows Server 2012 的本地或远程服务器上安装或卸载角色、角色服务和功能。 有关角色、角色服务和功能的定义，请参阅[角色、角色服务和功能](https://go.microsoft.com/fwlink/p/?LinkId=239558)。|是|是|
 |查看和更改本地或远程服务器上安装的服务器角色及功能。 **注意：** 在服务器管理器中，角色和功能数据以系统的基本语言（也称为系统默认 GUI 语言）或操作系统安装过程中选择的语言显示。|是|标准用户可以查看并管理角色和功能，并执行如查看角色事件之类的任务，但无法添加或删除角色服务。|
 |启动管理工具，例如 Windows PowerShell 或 mmc 管理单元。您可以通过右键单击 "**服务器**" 磁贴中的服务器，然后单击 " **Windows powershell**"，启动一个针对远程服务器的 Windows powershell 会话。 可以从服务器管理器控制台的 "**工具**" 菜单启动 mmc 管理单元，然后在管理单元打开后将 mmc 指向远程计算机。|是|是|
-|通过右键单击“服务器” 磁贴中的服务器，然后单击“管理形式”，使用不同的凭据管理远程服务器。 可将“管理形式”用于常规服务器和“文件和存储服务”管理任务|是|否|
+|通过右键单击“服务器”磁贴中的服务器，然后单击“管理形式”，使用不同的凭据管理远程服务器。 可将“管理形式”用于常规服务器和“文件和存储服务”管理任务|是|是|
 |执行与服务器运行生命周期关联的管理任务，如启动或停止服务;然后启动其他工具来配置服务器的网络设置、用户和组以及远程桌面连接。|是|标准用户无法启动或停止服务。 他们可以更改本地服务器的名称、工作组或域成员身份和 "远程桌面" 设置，但 "用户帐户控制" 会提示你提供管理员凭据，然后才能完成这些任务。 他们无法更改远程管理设置。|
 |执行与服务器上安装的角色运行生命周期关联的管理任务，包括扫描某些角色，看其是否符合最佳做法。|是|标准用户无法运行最佳做法分析器扫描。|
-|确定服务器状态，标识关键事件，分析并解决配置问题和故障。|是|是|
+|确定服务器状态，识别关键事件，分析并解决配置问题和故障。|是|是|
 |自定义事件、性能数据、服务以及要在服务器管理器仪表板上向其发出警报的最佳做法分析器结果。|是|是|
-|重新启动服务器。|是|否|
-|刷新有关托管服务器的服务器管理器控制台中显示的数据。|是|否|
+|重新启动服务器。|是|是|
+|刷新有关托管服务器的服务器管理器控制台中显示的数据。|是|是|
 
 > [!NOTE]
 > 服务器管理器不能用于将角色和功能添加到运行 Windows Server 2008 R2 或 Windows Server 2008 的服务器。
@@ -170,7 +166,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 1.  在服务器管理器控制台中，在 "**管理**" 菜单上单击 "**服务器管理器属性**"。
 
-2.  在“服务器管理器属性” 对话框中，选中“在登录时不自动启动服务器管理器”的复选框。 单击**确定**。
+2.  在“服务器管理器属性”对话框中，选中“在登录时不自动启动服务器管理器”的复选框。 单击“确定”。
 
 3.  或者，你可以通过启用组策略设置来阻止服务器管理器自动启动，**而不会在登录时自动启动服务器管理器**。 此策略设置在 "本地组策略编辑器" 控制台中的路径是 "计算机配置 \ 管理模板" 系统 "Manager"。
 
@@ -180,7 +176,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 > [!IMPORTANT]
 > 重新启动远程服务器迫使服务器重新启动，即使用户仍然登录远程服务器，即使数据未保存的程序仍打开，也是如此。 此行为不同于关闭或重新启动本地计算机，在后一种情况下，会提示你保存未保存的程序数据，并确认要强制已登录用户登出。 确认你可以强制其他用户登出远程服务器，并且可以放弃运行在远程服务器上程序的未保存数据。
 > 
-> 如果在管理的服务器关闭和重新启动时服务器管理器中发生自动刷新，则托管服务器可能会发生刷新和可管理性状态错误，因为服务器管理器无法连接到远程服务器，直到其完成重新.
+> 如果在管理的服务器关闭和重新启动时服务器管理器中发生自动刷新，则托管服务器可能会发生刷新和可管理性状态错误，因为服务器管理器无法连接到远程服务器，直到它完成重新启动。
 
 #### <a name="to-restart-remote-servers-in-server-manager"></a>在服务器管理器中重新启动远程服务器的步骤
 
@@ -199,7 +195,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 > [!NOTE]
 > -   你服务器池中服务器的“管理形式”（或替代）凭据不被存储在漫游配置文件中。 服务器管理器用户必须将凭据添加到想要管理的每台计算机上。
-> -   网络共享漫游配置文件在用户登录到网络之后才会创建，然后第一次将其注销。 **Serverlist.xml** 文件在此时创建。
+> -   网络共享漫游配置文件不会被创建，直到有用户首次登录到网络然后登出。 **Serverlist.xml** 文件在此时创建。
 
 可以通过以下两种方式之一导出服务器管理器设置、使服务器管理器的设置可移植，或在其他计算机上使用它们。
 
@@ -213,7 +209,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
 2.  在 "**配置文件**" 选项卡上，添加一个指向网络共享的路径，以存储用户的配置文件。
 
-3.  请执行以下操作之一。
+3.  执行以下操作之一。
 
     -   在美国英语（en-us）版本中，对**Serverlist**文件所做的更改会自动保存到配置文件中。 继续进行下一步。
 
@@ -223,7 +219,7 @@ Windows 10[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=
 
         -   %*localappdata*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
-4.  单击“确定” 保存你的更改，然后关闭“属性” 对话框。
+4.  单击“确定”保存你的更改，然后关闭“属性”对话框。
 
 #### <a name="to-export-server-manager-settings-to-computers-in-workgroups"></a>导出“服务器管理器”设置到工作组计算机的方法
 

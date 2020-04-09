@@ -1,24 +1,20 @@
 ---
 title: prnjobs
 description: 了解如何从命令行管理打印作业。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5ad34199-7a5a-40c1-8053-bccd5929df43
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c4fb9be9545274bbbf33926042f7a4deec5ceb05
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 231b8a7a9f4f8623b3d84cc789064d256883a733
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372105"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837290"
 ---
 # <a name="prnjobs"></a>prnjobs
 
@@ -32,9 +28,9 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 [-p <printerName>] [-j <JobID>] [-u <UserName>] [-w <Password>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|          参数           |                                                                                                                                                                                        描述                                                                                                                                                                                        |
+|          参数           |                                                                                                                                                                                        说明                                                                                                                                                                                        |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              -z              |                                                                                                                                                                 暂停指定了 **-j**参数的打印作业。                                                                                                                                                                 |
 |              -m              |                                                                                                                                                                恢复用 **-j**参数指定的打印作业。                                                                                                                                                                 |
@@ -53,7 +49,7 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
     ```
 -   如果提供的信息包含空格，请使用引号将文本括起来（例如 `"computer Name"`）。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 若要将作业 ID 为27的打印作业暂停发送到名为 HRServer 的远程计算机进行打印，请在名为 colorprinter 的打印机上键入：
 ```
 cscript prnjobs.vbs -z -s HRServer -p colorprinter -j 27
@@ -63,7 +59,7 @@ cscript prnjobs.vbs -z -s HRServer -p colorprinter -j 27
 cscript prnjobs.vbs -l -p colorprinter_2
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)
 -   [打印命令参考](print-command-reference.md)

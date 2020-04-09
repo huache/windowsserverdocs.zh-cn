@@ -3,23 +3,17 @@ title: Windows Server 疑难解答
 description: 获取有关 Windows Server 问题疑难解答文章的链接
 layout: LandingPage
 ms.prod: windows-server
-ms.custom:
-- CI 113175
-- CSSTroubleshooting
-audience: Admin
-ms.service: na
-manager: ''
 ms.technology: server-general
 ms.date: 1/24/2020
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: cd4e61a9fac5b1a1f6a1b66309e514ef75b1e4db
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 0537f00a06b27f855fcd87e9b1caa9d2e5085685
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125128"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820730"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server 组件疑难解答
 

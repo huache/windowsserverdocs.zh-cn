@@ -1,7 +1,6 @@
 ---
 ms.assetid: b146f47e-3081-4c8e-bf68-d0f993564db2
 title: 虚拟化域控制器部署和配置
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: be2c919e4379cf615fe25d68446855229ace87dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 97d726f8bfbbe664dfdfd6b7000988f009174631
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390704"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824690"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>虚拟化域控制器部署和配置
 
@@ -34,7 +33,7 @@ ms.locfileid: "71390704"
   
     本部分详细说明在虚拟化域控制器安全还原期间所进行的验证。  
   
-## <a name="BKMK_InstallConsiderations"></a>安装注意事项  
+## <a name="installation-considerations"></a><a name="BKMK_InstallConsiderations"></a>安装注意事项  
 虚拟化域控制器不存在任何特殊的角色或功能安装；所有域控制器都将自动包含克隆和安全还原功能。 无法删除或禁用这些功能。  
   
 使用 Windows Server 2012 域控制器要求 Windows Server 2012 AD DS 架构版本 56 或更高版本，以及与 Windows Server 2003 本机或更高版本相等的林功能级别。  
@@ -44,7 +43,7 @@ ms.locfileid: "71390704"
 > [!IMPORTANT]  
 > 克隆开始时，PDC 模拟器 FSMO 角色所有者必须处于联机状态。  
   
-### <a name="BKMK_PlatformReqs"></a>平台要求  
+### <a name="platform-requirements"></a><a name="BKMK_PlatformReqs"></a>平台要求  
 虚拟化域控制器克隆要求：  
   
 -   Windows Server 2012 DC 上托管的 PDC 模拟器 FSMO 角色  
@@ -65,7 +64,7 @@ ms.locfileid: "71390704"
 |**带有 Hyper-v 功能的 Microsoft Windows Server 2012 服务器**|是|  
 |**Microsoft Windows Server 2012 Hyper-v 服务器**|是|  
 |**具有 Hyper-v 客户端功能的 Microsoft Windows 8**|是|  
-|**Windows Server 2008 R2 和 Windows Server 2008**|否|  
+|**Windows Server 2008 R2 和 Windows Server 2008**|是|  
 |**非 Microsoft 虚拟化解决方案**|联系供应商|  
   
 即使 Microsoft 支持 Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004 和 Virtual Server 2005，它们也无法运行 64 位来宾，无法支持 VM 生成 ID。  
@@ -93,7 +92,7 @@ ms.locfileid: "71390704"
   
 有关 USN 气泡和延迟对象的详细信息，请参阅 [解决失败的 Active Directory 操作，它们带有错误 8606：“提供的属性不足以创建对象”](https://support.microsoft.com/kb/2028495)。  
   
-## <a name="BKMK_VDCCloning"></a>虚拟化域控制器克隆  
+## <a name="virtualized-domain-controller-cloning"></a><a name="BKMK_VDCCloning"></a>虚拟化域控制器克隆  
 无论使用图形工具或 Windows PowerShell，都存在大量用于克隆虚拟化域控制器的阶段和步骤。 在较高级别，这三个阶段为：  
   
 **准备环境**  
@@ -186,7 +185,7 @@ get-adcomputer(Get-ADDomainController -Discover -Service "PrimaryDC").name -prop
   
 ![虚拟化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PDCOSInfo.png)  
   
-### <a name="step-3---authorize-a-source-dc"></a>步骤 3-授权源 DC  
+### <a name="step-3---authorize-a-source-dc"></a>步骤 3 – 授予源 DC 权限  
 源域控制器必须具有对域 NC 头的控制访问权限 (CAR) **允许 DC 创建其自身的克隆**。 默认情况下，已知组 **可克隆的域控制器** 具有此权限，并且不包含任何成员。 该 FSMO 角色传输到 Windows Server 2012 域控制器后，PDCE 将创建此组。  
   
 #### <a name="active-directory-administrative-center-method"></a>Active Directory 管理中心方法  
@@ -237,7 +236,7 @@ set-acl -aclobject $acl $domainNC
 cd c:  
 ```  
   
-此外，在 Windows PowerShell 控制台中运行该示例 [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms) ，其中控制台将在受影响域中的域控制器上以提升的管理员身份启动。 它将自动设置权限。 该示例位于此模块的附录中。  
+此外，在 Windows PowerShell 控制台中运行该示例 [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)，其中控制台将在受影响域中的域控制器上以提升的管理员身份启动。 它将自动设置权限。 该示例位于此模块的附录中。  
   
 ### <a name="step-4---remove-incompatible-applications-or-services-if-not-using-customdccloneallowlistxml"></a>步骤 4 – 删除不兼容的应用程序或服务（如果不使用 CustomDCCloneAllowList.xml）  
 在克隆之前，必须删除任何之前由 Get-ADDCCloningExcludedApplicationList *返回（且未添加到 CustomDCCloneAllowList.xml* ）的程序或服务。 卸载应用程序或服务是建议的方法。  
@@ -268,7 +267,7 @@ New-ADDCCloneConfigFile
   
 ||||  
 |-|-|-|  
-|**Active**<br /><br />**Cmdlet**|**参数**|**做出**|  
+|**Active**<p>**Cmdlet**|**形参**|**做出**|  
 |**新-New-addccloneconfigfile**|*<no argument specified>*|在 DSA 工作目录中创建空白 DcCloneConfig.xml 文件（默认位置：%systemroot%\ntds）|  
 ||-CloneComputerName|指定克隆 DC 计算机名。 字符串数据类型。|  
 ||-Path|指定文件夹以创建 DcCloneConfig.xml。 如果未指定，则将写入 DSA 工作目录（默认位置：%systemroot%\ntds）。 字符串数据类型。|  
@@ -451,7 +450,7 @@ Convert-vm
   
 ![虚拟化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSConvertVhd.png)  
   
-#### <a name="BKMK_Offline"></a>将 XML 添加到脱机系统磁盘  
+#### <a name="adding-xml-to-the-offline-system-disk"></a><a name="BKMK_Offline"></a>将 XML 添加到脱机系统磁盘  
 如果你将 Dccloneconfig.xml 复制到运行中的源 DC，则你现在必须将更新的 dccloneconfig.xml 文件复制到脱机复制/导出的系统盘。 具体取决于之前使用 Get-ADDCCloningExcludedApplicationList 检测到的已安装应用程序，你可能还需要将 CustomDCCloneAllowList.xml 文件复制到磁盘。  
   
 以下位置可能包含 DcCloneConfig.xml 文件：  
@@ -670,7 +669,7 @@ Start-VM
   
 在克隆完成并重启计算机后，它将成为域控制器，你可以正常地登录以确认正常操作。 如果存在任何错误，则服务器将设置为在目录服务还原模式下启动以进行调查。  
   
-## <a name="BKMK_VDCSafeRestore"></a>虚拟化安全措施  
+## <a name="virtualization-safeguards"></a><a name="BKMK_VDCSafeRestore"></a>虚拟化安全措施  
 与虚拟化域控制器克隆不同，Windows Server 2012 虚拟化安全措施无需执行任何配置步骤。 只要满足一些简单的条件，该功能即可不受干预地运行：  
   
 -   虚拟机监控程序支持 VM 生成 ID  

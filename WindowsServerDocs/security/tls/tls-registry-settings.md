@@ -1,29 +1,25 @@
 ---
 title: 传输层安全性（TLS）注册表设置
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 author: justinha
 ms.author: justinha
-manager: brianlic-msft
+manager: brianlic
 ms.date: 02/28/2019
-ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: d65b314d6896c886ce606d2b649fcfd7309c583b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322399"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820280"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>传输层安全性（TLS）注册表设置
 
 >适用于： Windows Server （半年频道）、Windows Server 2019、Windows Server 2016、Windows 10
 
-本参考主题面向 IT 专业人员，包含通过 Schannel 安全支持的传输层安全性（TLS）协议和安全套接字层（SSL）协议的 Windows 实现支持的注册表设置信息提供程序（SSP）。 本主题中介绍的注册表子项和条目可帮助你管理 Schannel SSP （特别是 TLS 和 SSL 协议），并对其进行故障排除。 
+本参考主题面向 IT 专业人员，其中包含通过 Schannel 安全支持提供程序（SSP）对传输层安全性（TLS）协议和安全套接字层（SSL）协议的 Windows 实现支持的注册表设置信息。 本主题中介绍的注册表子项和条目可帮助你管理 Schannel SSP （特别是 TLS 和 SSL 协议），并对其进行故障排除。 
 
 > [!CAUTION]
 > 在排除故障或验证是否应用了必需的设置时，可参考本信息。

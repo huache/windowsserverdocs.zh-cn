@@ -1,23 +1,19 @@
 ---
 title: 在 Windows Server Essentials 中远程工作
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8b183f8f-1279-4fdf-a495-c7c801563cb0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2918a0f198d9c591803fa7bf945e01dd48c9e318
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ec6b97dd153802ea2ff8b55f6ba58f3208e4abb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313095"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852080"
 ---
 # <a name="work-remotely-in-windows-server-essentials"></a>在 Windows Server Essentials 中远程工作
 
@@ -28,8 +24,8 @@ ms.locfileid: "80313095"
  以下主题可帮助你远程访问服务器资源：  
   
 
--   [在 Windows Server Essentials 中使用远程 Web 访问](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
-  
+-      [在 Windows Server Essentials 中使用远程 Web 访问](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
+     
 -   [使用 VPN 连接到 Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
   
 -   [使用 My Server 应用连接到 Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_App)  

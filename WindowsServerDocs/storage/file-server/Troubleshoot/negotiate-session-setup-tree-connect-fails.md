@@ -3,16 +3,15 @@ title: 协商、会话设置和树连接故障
 description: 介绍如何对协商、会话设置和树连接失败进行故障排除。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 0ccd8d882060432dcfc27ee47b82d0c61e3aad4d
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 13124176e530aa7b74d18a38c906bf5297be511e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654368"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815380"
 ---
 # <a name="negotiate-session-setup-and-tree-connect-failures"></a>协商、会话设置和树连接故障
 
@@ -30,7 +29,7 @@ SMB 服务器从 SMB 客户端接收 SMB 协商请求。 连接超时，在60秒
 
 SMB 服务器从 SMB 客户端\_安装请求接收 SMB 会话，但未能响应。
 
-如果在通用命名约定（UNC）路径中使用服务器的完全限定的域名（FQDN）或网络基本输入/输出系统（NetBIOS）名称，则 Windows 将使用 Kerberos 进行身份验证。
+如果服务器的完全限定的域名（FQDN）或网络基本输入/输出系统（NetBIOS）名称为 "sed" （通用命名约定（UNC）路径），则 Windows 将使用 Kerberos 进行身份验证。
 
 协商响应后，将尝试获取服务器的通用 Internet 文件系统（CIFS）服务主体名称（SPN）的 Kerberos 票证。 查看 TCP 端口88上的 Kerberos 流量，确保 SMB 客户端正在获取令牌时不会出现 Kerberos 错误。
 
@@ -87,7 +86,7 @@ SMB 服务器从 SMB 客户端\_安装请求接收 SMB 会话，但未能响应�
 
 - Samba 和第三方设备可能不支持加密。 可能需要参考产品文档来了解详细信息。
 
-## <a name="references"></a>引用
+## <a name="references"></a>参考
 
 有关详细信息，请参阅以下文章。
 

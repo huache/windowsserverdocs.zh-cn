@@ -1,6 +1,5 @@
 ---
 title: 设置 SQL Server 复制的地理冗余
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.technology: active-directory-federation-services
 ms.author: billmath
 ms.assetId: 7b9f9a4f-888c-4358-bacd-3237661b1935
-ms.openlocfilehash: 16cf1a237043aa546d4fc24164045aa9f9a1e6ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54106ae635d44368542986c7c469560981f9888a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359821"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855840"
 ---
 # <a name="setup-geographic-redundancy-with-sql-server-replication"></a>设置 SQL Server 复制的地理冗余
 
@@ -24,7 +23,7 @@ ms.locfileid: "71359821"
   
 如果使用 SQL Server 作为 AD FS 配置数据库，则可以使用 SQL Server 复制为 AD FS 场设置异地\-冗余。 异地\-冗余在两个地理位置遥远的站点之间复制数据，以便应用程序可以从一个站点切换到另一个站点。 这样一来，如果一个站点发生故障，你仍可以在第二个站点上提供所有配置数据。 有关详细信息，请参阅[使用 SQL Server 的联合服务器场](../design/Federation-Server-Farm-Using-SQL-Server.md)中的 "SQL Server 地理冗余部分"。  
   
-## <a name="prerequisites"></a>必备条件  
+## <a name="prerequisites"></a>先决条件  
 安装和配置 SQL server 场。 有关详细信息，请参阅[https://technet.microsoft.com/evalcenter/hh225126.aspx](https://technet.microsoft.com/evalcenter/hh225126.aspx)。 在初始 SQL Server 上，确保 SQL Server 代理服务正在运行，并设置为自动启动。  
   
 ## <a name="create-the-second-replica-sql-server-for-geo-redundancy"></a>为地域\-冗余创建第二个 \(副本\) SQL Server  
@@ -89,7 +88,7 @@ ms.locfileid: "71359821"
     ![设置地理冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql18.png) </br>   
     可能需要为 SQL 代理创建域帐户。 使用为[域帐户 CONTOSO\\Sqlagent 配置 sql 登录名](Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md#sqlagent)中的步骤为此新 AD 用户创建 sql 登录名并分配特定权限。  
   
-13. 在 "**代理安全性**" 页上，单击 "**安全设置**"，输入域帐户的用户名\/密码 \(不是为 SQL 代理创建的 GMSA\)，然后单击 **"确定"** 。  单击**下一步**。  
+13. 在 "**代理安全性**" 页上，单击 "**安全设置**"，输入域帐户的用户名\/密码 \(不是为 SQL 代理创建的 GMSA\)，然后单击 **"确定"** 。  单击 **“下一步”** 。  
     ![设置地理冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql19.png) </br>  
 
 14. 在 "**向导操作**" 页上，单击 "**下一步**"。   
@@ -156,7 +155,7 @@ ms.locfileid: "71359821"
   
 4.  此外，还可以在 " **SQL Server 代理\\作业**" 节点下查看作业\(\) 计划执行发布\/订阅的操作。  仅显示本地作业，因此请确保在发布服务器和订阅服务器上进行故障排除。  右键\-单击某个作业，然后选择 "**查看历史记录**" 以查看执行历史记录和结果。  
   
-## <a name="sqlagent"></a>为域帐户 CONTOSO\\sqlagent 配置 SQL 登录名  
+## <a name="configure-sql-login-for-the-domain-account-contososqlagent"></a><a name="sqlagent"></a>为域帐户 CONTOSO\\sqlagent 配置 SQL 登录名  
   
 1.  在名为 CONTOSO\\sqlagent 的主副本和副本 SQL Server 上创建新登录名，\(在上述过程中的 "**代理安全性**" 页上创建和配置的新域用户的名称。\)  
   

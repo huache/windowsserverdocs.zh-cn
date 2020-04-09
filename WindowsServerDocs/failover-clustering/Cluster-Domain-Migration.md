@@ -1,23 +1,24 @@
 ---
 title: Windows Server 2016/2019 中的跨域群集迁移
+description: 本文介绍如何将 Windows Server 2019 群集从一个域迁移到另一个域
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/18/2019
-description: 本文介绍如何将 Windows Server 2019 群集从一个域迁移到另一个域
 ms.localizationpriority: medium
-ms.openlocfilehash: 68f49795124dedf0655726853a4d865686f6d697
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba556b5a00f3932e2049135b177a7ad8bbceec9c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361407"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828290"
 ---
 # <a name="failover-cluster-domain-migration"></a>故障转移群集域迁移
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 本主题概述了如何将 Windows Server 故障转移群集从一个域移到另一个域。
 
@@ -40,7 +41,7 @@ ms.locfileid: "71361407"
 
 在 Windows Server 2016 及更早版本中，群集服务没有从一个域迁移到另一个域的功能。  这是因为增加了对 Active Directory 域服务和创建的虚拟名称的依赖。   
 
-## <a name="options"></a>选项
+## <a name="options"></a>Options
 
 为了执行此类迁移，有两个选项。
 
@@ -122,7 +123,7 @@ ms.locfileid: "71361407"
    New-ClusterNameAccount -Name CLUSTERNAME -Domain NEWDOMAINNAME.com -UpgradeVCOs
    ```
 
-    注意：如果没有包含网络名称的任何其他组（即仅具有虚拟机的 Hyper-v 群集），则不需要-UpgradeVCOs 参数开关。
+    注意：如果没有任何其他组的网络名称（即只包含虚拟机的 Hyper-v 群集），则不需要-UpgradeVCOs 参数开关。
 
 9. 使用 Active Directory 用户和计算机检查新域，并确保创建了关联的计算机对象。 如果有，请将其余资源联机。
 

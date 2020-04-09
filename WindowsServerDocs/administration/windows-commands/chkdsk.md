@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 10/09/2019
-ms.openlocfilehash: 130b51e472ebf3d900186d6d63e318c88a340579
-ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
+ms.openlocfilehash: 21f6ac91faefa17f153df43fbd2530a2c8c0f713
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252354"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847780"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -37,9 +37,9 @@ ms.locfileid: "72252354"
 chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]] [/b]  
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|      参数       |                  描述                                    |
+|      参数       |                  说明                                    |
 | -------------------- | ------------------------------------------------------------------------ |
 |      \<卷 >      | 指定驱动器号（后跟冒号）、装入点或卷名。  |
 | [\<路径 >]<FileName> | 仅用于文件分配表（FAT）和 FAT32。 指定您希望**chkdsk**检查碎片的文件或文件集的位置和名称。 您可以使用 **？** 和 **&#42;** 通配符来指定多个文件。 |
@@ -47,13 +47,13 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 |         /v          | 检查磁盘时，显示每个目录中每个文件的名称。     |
 |         /r          | 查找坏扇区并恢复可读的信息。 必须锁定磁盘。 **/r**包括 **/f**的功能，并对物理磁盘错误进行额外的分析。                                   |
 |         /x          | 必要时强制首先卸除卷。 驱动器的所有打开的句柄都将失效。 **/x**还包括 **/f**的功能。  |
-|         i          | 仅适用于 NTFS。 对索引条目执行更少的经历检查，这会减少运行**chkdsk**所需的时间。  |
+|         /i          | 仅适用于 NTFS。 对索引条目执行更少的经历检查，这会减少运行**chkdsk**所需的时间。  |
 |         /c          | 仅适用于 NTFS。 不检查文件夹结构内的循环，这会减少运行**chkdsk**所需的时间。  |
 |    /l [：\<大小 >]     | 仅适用于 NTFS。 将日志文件大小更改为你键入的大小。 如果省略 size 参数，则 **/l**显示当前大小。 |
 |         /b          | 仅 NTFS：清除卷上的损坏群集列表，并重新扫描所有已分配和可用的群集以查找错误。 **/b**包括 **/r**的功能。 在将卷镜像到新硬盘驱动器之后，使用此参数。            |
 | /scan               | 仅适用于 NTFS：在卷上运行联机扫描。 |
-| /forceofflinefix    | 仅 NTFS：（必须与 "/scan" 一起使用）。 绕过所有联机修复;所有发现的缺陷都排队等候脱机修复（即 "chkdsk/spotfix"）。 |
-| /perf               | 仅 NTFS：（必须与 "/scan" 一起使用）。 使用更多系统资源，以 aspossible 的速度完成扫描。 这可能会对系统上运行的其他任务造成负面的性能影响。|
+| /forceofflinefix    | 仅 NTFS：（必须与/scan 一起使用）。 绕过所有联机修复;所有发现的缺陷都排队等候脱机修复（即 chkdsk/spotfix）。 |
+| /perf               | 仅 NTFS：（必须与/scan 一起使用）。 使用更多系统资源，以 aspossible 的速度完成扫描。 这可能会对系统上运行的其他任务造成负面的性能影响。|
 | /spotfix            | 仅 NTFS：在卷上运行点修复。 |
 | /sdcleanup          | 仅 NTFS：垃圾回收不需要的安全描述符数据（隐含/F）。 |
 | /offlinescanandfix  | 在卷上运行脱机扫描并修复。 |
@@ -113,7 +113,7 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 
   下表列出了**chkdsk**在完成后报告的退出代码。  
 
-  | 退出代码 |                                                   描述                                                    |
+  | 退出代码 |                                                   说明                                                    |
   |-----------|------------------------------------------------------------------------------------------------------------------|
   |     0     |                                              未发现任何错误。                                               |
   |     1     |                                           发现并修复了错误。                                           |
@@ -144,4 +144,4 @@ chkdsk *.*
 
 ## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

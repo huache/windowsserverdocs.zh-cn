@@ -1,24 +1,20 @@
 ---
 title: nslookup set
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1fe5b36d-e93e-468b-abca-43b0204b32d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e584a9727fc0cd552d0c07840ccb12b555428af
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3883e6b032c5a4542711ad14a4e45b31fb605485
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372728"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838140"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
@@ -29,9 +25,9 @@ ms.locfileid: "71372728"
 ```
 set <KeyWord>[=<Value>]
 ```
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|    参数    |                                                                                                                    描述                                                                                                                    |
+|    参数    |                                                                                                                    说明                                                                                                                    |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    <KeyWord>    | 标识派生自**set**子命令的子命令。 例如，子命令**集 d2**包含关键字 [**no**]**d2**。 有关从**set**子命令派生的子命令的列表，请参阅 "其他参考"。 |
 |     <Value>     |                                                                                      指定每个子命令的 nslookup 配置设置值。                                                                                      |
@@ -40,5 +36,5 @@ set <KeyWord>[=<Value>]
 ## <a name="remarks"></a>备注
 使用 "**全部设置**" 查看当前设置的列表。
 ## <a name="additional-references"></a>其他参考
-[命令行语法键](command-line-syntax-key.md)
+- [命令行语法键](command-line-syntax-key.md)
 [nslookup 全部设置](nslookup-set-all.md)

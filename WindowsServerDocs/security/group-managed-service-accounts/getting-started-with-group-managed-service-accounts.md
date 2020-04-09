@@ -1,26 +1,22 @@
 ---
-title: Getting Started with Group Managed Service Accounts
+title: 托管服务帐户入门
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-gmsa
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7130ad73-9688-4f64-aca1-46a9187a46cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f3f3e1724ddb92ee3622a599fbc19fb8ca2a5803
-ms.sourcegitcommit: 3d5a8357491b6bbd180d1238ea98f23bfc544ac7
+ms.openlocfilehash: 52456b8027196f20c4ca52a08bcd7f7bba92eb82
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827684"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856990"
 ---
-# <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
+# <a name="getting-started-with-group-managed-service-accounts"></a>托管服务帐户入门
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
@@ -43,12 +39,12 @@ ms.locfileid: "75827684"
 
 
 > [!NOTE]
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。
 
-## <a name="BKMK_Prereqs"></a>先决条件
-请参阅 [组托管服务帐户的要求](#BKMK_gMSA_Req)上本主题中的部分。
+## <a name="prerequisites"></a><a name="BKMK_Prereqs"></a>先决条件
+请参阅[组托管服务帐户的要求](#BKMK_gMSA_Req)中本主题的该部分。
 
-## <a name="BKMK_Intro"></a>简介
+## <a name="introduction"></a><a name="BKMK_Intro"></a>产品介绍
 当客户端计算机使用网络负载平衡 (NLB) 或其他某些方法（其中所有服务器对于客户端而言似乎是相同的服务）连接到在服务器场中托管的某项服务时，无法使用支持相互身份验证的身份验证协议（如 Kerberos），除非服务的所有实例都使用同一主体。 这意味着每种服务必须使用相同的密码/密钥以证明它们的身份。
 
 > [!NOTE]
@@ -56,11 +52,11 @@ ms.locfileid: "75827684"
 
 服务具有以下主体可供选择，并且每个主体存在某些限制。
 
-|主体|作用域|支持的服务|密码管理|
+|联机丛书中的 Principals|范围|支持的服务|密码管理|
 |-------|-----|-----------|------------|
 |Windows 系统的计算机帐户|域|限于一个加入域的服务器|计算机管理|
 |没有 Windows 系统的计算机帐户|域|任何加入域的服务器|无|
-|虚拟帐户|本地|限于一台服务器|计算机管理|
+|虚拟帐户|Local|限于一台服务器|计算机管理|
 |Windows 7 独立托管服务帐户|域|限于一个加入域的服务器|计算机管理|
 |用户帐户|域|任何加入域的服务器|无|
 |组托管服务帐户|域|任何已加入域的 Windows Server 2012 服务器|域控制器管理，以及主机检索|
@@ -77,7 +73,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
 -   使用任务计划程序的任务。
 
-### <a name="BKMK_gMSA_Req"></a>组托管服务帐户的要求
+### <a name="requirements-for-group-managed-service-accounts"></a><a name="BKMK_gMSA_Req"></a>组托管服务帐户的要求
 下表列出了要与使用 gMSA 的服务搭配使用的针对 Kerberos 身份验证的操作系统要求。 在表后列出了 Active Directory 的要求。
 
 若要运行用于管理组托管服务帐户的 Windows PowerShell 命令，需要 64 位体系结构。
@@ -88,12 +84,12 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 |------|--------|----------|
 |客户端应用程序主机|符合 RFC 的 Kerberos 客户端|Windows XP 及更高版本|
 |用户帐户的域 Dc|符合 RFC 的 KDC|Windows Server 2003 及更高版本|
-|共享的服务成员主机|| Windows Server 2012 |
+|共享的服务成员主机|| Windows Server 2012 |
 |成员主机的域 Dc|符合 RFC 的 KDC|Windows Server 2003 及更高版本|
 |gMSA 帐户的域 Dc| Windows Server 2012 Dc 可供主机用来检索密码|Windows Server 2012 域，windows server 2012 之前可能有一些系统 |
 |后端服务主机|符合 RFC 的 Kerberos 应用程序服务器|Windows Server 2003 及更高版本|
 |后端服务帐户的域 Dc|符合 RFC 的 KDC|Windows Server 2003 及更高版本|
-|Active Directory 的 Windows PowerShell|Active Directory 的 Windows PowerShell 安装在本地支持 64 位体系结构的计算机上或安装在你的远程管理计算机上（例如，使用远程服务器管理工具包）| Windows Server 2012 |
+|Active Directory 的 Windows PowerShell|Active Directory 的 Windows PowerShell 安装在本地支持 64 位体系结构的计算机上或安装在你的远程管理计算机上（例如，使用远程服务器管理工具包）| Windows Server 2012 |
 
 **Active Directory 域服务要求**
 
@@ -111,7 +107,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
 有关如何创建密钥的说明，请参阅[创建密钥分发服务 KDS 根密钥](create-the-key-distribution-services-kds-root-key.md)。 Microsoft 密钥分发服务 (kdssvc.dll) AD 的根密钥。
 
-**生命周期**
+**内**
 
 使用 gMSA 功能的服务器场的生命周期通常涉及以下任务：
 
@@ -125,7 +121,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
 -   如果需要，请从服务器场中删除已遭到破坏的成员主机。
 
-## <a name="BKMK_DeployNewFarm"></a>部署新服务器场
+## <a name="deploying-a-new-server-farm"></a><a name="BKMK_DeployNewFarm"></a>部署新服务器场
 在部署新服务器场时，服务管理员将需要确定：
 
 -   该服务是否支持使用 gMSA
@@ -142,16 +138,16 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
 -   密码更改间隔（默认值为 30 天）。
 
-### <a name="BKMK_Step1"></a>步骤1：设置组托管服务帐户
+### <a name="step-1-provisioning-group-managed-service-accounts"></a><a name="BKMK_Step1"></a>步骤1：设置组托管服务帐户
 只有在林架构已更新到 Windows Server 2012、已部署 Active Directory 的主根密钥，以及在其中创建 gMSA 的域中至少有一个 Windows Server 2012 DC 的情况下，才可以创建 gMSA。
 
-必须至少具有“域管理员”、“帐户操作员” 中的成员身份或能够创建 msDS-GroupManagedServiceAccount 对象才能完成下列过程。
+必须至少具有“域管理员”、“帐户操作员”中的成员身份或能够创建 msDS-GroupManagedServiceAccount 对象才能完成下列过程。
 
 > [!NOTE]
 > -Name 参数的值始终是必需的（无论你指定的是名称还是不是指定的），其中-DNSHostName、-RestrictToSingleComputer 和-RestrictToOutboundAuthentication 是三个部署方案的次要要求。    
 
 
-#### <a name="BKMK_CreateGMSA"></a>使用 Uninstall-adserviceaccount cmdlet 创建 gMSA
+#### <a name="to-create-a-gmsa-using-the-new-adserviceaccount-cmdlet"></a><a name="BKMK_CreateGMSA"></a>使用 Uninstall-adserviceaccount cmdlet 创建 gMSA
 
 1.  在 Windows Server 2012 域控制器上，从任务栏中运行 Windows PowerShell。
 
@@ -159,7 +155,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
     **Uninstall-adserviceaccount [-Name] &lt;string&gt;-DNSHostName &lt;string&gt; [-KerberosEncryptionType &lt;ADKerberosEncryptionType&gt;] [-ManagedPasswordIntervalInDays < Null [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < P a l [] >] [-SamAccountName &lt;string&gt;] [-ServicePrincipalNames < string [] >]**
 
-    |参数|字符串|示例|
+    |参数|String|示例|
     |-------|-----|------|
     |名称|帐户的名称|ITFarm1|
     |DNSHostName|服务的 DNS 主机名称|ITFarm1.contoso.com|
@@ -190,7 +186,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
     **Uninstall-adserviceaccount [-Name] &lt;string&gt;-RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays < 可以为 Null [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < P a l [] >]**
 
-    |参数|字符串|示例|
+    |参数|String|示例|
     |-------|-----|------|
     |名称|命名帐户|ITFarm1|
     |ManagedPasswordIntervalInDays|密码更改时间间隔，以天为单位（如果不提供，则默认值为 30 天）|75|
@@ -205,7 +201,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$
 ```
 
-### <a name="BKMK_ConfigureServiceIdentity"></a>步骤2：配置服务标识应用程序服务
+### <a name="step-2-configuring-service-identity-application-service"></a><a name="BKMK_ConfigureServiceIdentity"></a>步骤2：配置服务标识应用程序服务
 若要配置 Windows Server 2012 中的服务，请参阅以下功能文档：
 
 -   IIS 应用程序池
@@ -222,7 +218,7 @@ New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsA
 
 其他服务可以支持 gMSA。 请参阅相应的产品文档以了解有关如何配置这些服务的详细信息。
 
-## <a name="BKMK_AddMemberHosts"></a>将成员主机添加到现有服务器场
+## <a name="adding-member-hosts-to-an-existing-server-farm"></a><a name="BKMK_AddMemberHosts"></a>将成员主机添加到现有服务器场
 如果使用安全组来管理成员主机，请使用下列方法之一将新成员主机的计算机帐户添加到安全组（gMSA 的成员主机是其成员）。
 
 必须至少具有“域管理员”中的成员身份或能够将成员添加到安全组对象才能完成这些过程。
@@ -255,7 +251,7 @@ New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsA
 
     **Uninstall-adserviceaccount [-Name] &lt;string&gt;-PrincipalsAllowedToRetrieveManagedPassword < P a l [] >**
 
-|参数|字符串|示例|
+|参数|String|示例|
 |-------|-----|------|
 |名称|命名帐户|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|成员主机或成员主机是其成员的安全组的计算机帐户|Host1、Host2、Host3|
@@ -272,14 +268,14 @@ Get-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host2$,Host3$
 ```
 
-## <a name="BKMK_Update_gMSA"></a>更新组托管服务帐户属性
+## <a name="updating-the-group-managed-service-account-properties"></a><a name="BKMK_Update_gMSA"></a>更新组托管服务帐户属性
 必须至少具有“域管理员”、“帐户操作员”中的成员身份或能够写入 msDS-GroupManagedServiceAccount 对象才能完成这些过程。
 
 请打开 Windows PowerShell 的 Active Directory 模块，并通过使用 Set-ADServiceAccount cmdlet 设置任何属性。
 
 有关如何设置这些属性的详细信息，请参阅 TechNet 库中的 [Set-ADServiceAccount](https://technet.microsoft.com/library/ee617252.aspx) 或通过在 Windows PowerShell 的 Active Directory 模块的命令提示符下输入 **Get-Help Set-ADServiceAccount** 并按 ENTER 来查看。
 
-## <a name="BKMK_DecommMemberHosts"></a>从现有服务器场解除成员主机的授权
+## <a name="decommissioning-member-hosts-from-an-existing-server-farm"></a><a name="BKMK_DecommMemberHosts"></a>从现有服务器场解除成员主机的授权
 必须至少具有“域管理员”中的成员身份或能够将成员从安全组对象删除才能完成这些过程。
 
 ### <a name="step-1-remove-member-host-from-gmsa"></a>步骤 1：从 gMSA 删除成员主机
@@ -313,7 +309,7 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 
     **Uninstall-adserviceaccount [-Name] &lt;string&gt;-PrincipalsAllowedToRetrieveManagedPassword < P a l [] >**
 
-|参数|字符串|示例|
+|参数|String|示例|
 |-------|-----|------|
 |名称|命名帐户|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|成员主机或成员主机是其成员的安全组的计算机帐户|Host1、Host3|
@@ -330,7 +326,7 @@ Get-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host3$
 ```
 
-### <a name="BKMK_RemoveGMSA"></a>步骤2：从系统中删除组托管服务帐户
+### <a name="step-2-removing-a-group-managed-service-account-from-the-system"></a><a name="BKMK_RemoveGMSA"></a>步骤2：从系统中删除组托管服务帐户
 在主机系统上使用 Uninstall-ADServiceAccount 或 NetRemoveServiceAccount API 从成员主机删除缓存的 gMSA 凭据。
 
 必须至少具有“管理员”的成员身份或同等身份才能完成这些过程。
@@ -355,6 +351,6 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 
 
 
-## <a name="BKMK_Links"></a>另请参阅
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅
 
 -   [组托管服务帐户概述](group-managed-service-accounts-overview.md)

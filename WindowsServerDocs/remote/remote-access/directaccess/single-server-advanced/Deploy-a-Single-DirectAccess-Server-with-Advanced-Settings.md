@@ -2,22 +2,18 @@
 title: 使用高级设置部署单个 DirectAccess 服务器
 description: 本主题是 "使用 Windows Server 2016 的高级设置部署单个 DirectAccess 服务器" 指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4e6c8379f225dbeefd7c97ac96b9a0047dfd4a0b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7f6a6724a2ab7bb6da48a11d31fb04461912e388
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309210"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859520"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>使用高级设置部署单个 DirectAccess 服务器
 
@@ -85,8 +81,8 @@ ms.locfileid: "80309210"
   
 |角色/功能|如何支持本方案|  
 |---------|-----------------|  
-|远程访问角色|使用服务器管理器控制台或 Windows PowerShell 安装或卸载此角色。 本角色包括 DirectAccess 和路由以及远程访问服务 (RRAS)。 远程访问角色由以下两个组件组成：<br/><br/>1. DirectAccess 和 RRAS VPN。 DirectAccess 和 VPN 在远程访问管理控制台中一起进行管理。<br/>2. RRAS 路由。 RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<br /><br />远程访问服务器角色取决于以下服务器角色/功能：<br/><br/> -Internet Information Services （IIS） Web 服务器-在 DirectAccess 服务器上配置网络位置服务器和默认 Web 探测需要此功能。<br/> -Windows 内部数据库。 用于 DirectAccess 服务器上的本地记帐。|  
-|远程访问管理工具功能|此功能的安装如下所述：<br /><br />-默认情况下，当安装远程访问角色时，它会安装在 DirectAccess 服务器上，并支持远程管理控制台用户界面和 Windows PowerShell cmdlet。<br />-可选择将它安装在不运行 DirectAccess 服务器角色的服务器上。 在这种情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<br /><br />远程访问管理工具功能包括以下各项：<br /><br />-远程访问图形用户界面（GUI）<br />-适用于 Windows PowerShell 的远程访问模块<br /><br />依赖项包括：<br /><br />-组策略管理控制台<br />-RAS 连接管理器管理工具包（CMAK）<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|  
+|远程访问角色|使用服务器管理器控制台或 Windows PowerShell 安装或卸载此角色。 本角色包括 DirectAccess 和路由以及远程访问服务 (RRAS)。 远程访问角色由以下两个组件组成：<br/><br/>1. DirectAccess 和 RRAS VPN。 DirectAccess 和 VPN 在远程访问管理控制台中一起进行管理。<br/>2. RRAS 路由。 RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<p>远程访问服务器角色取决于以下服务器角色/功能：<br/><br/> -Internet Information Services （IIS） Web 服务器-在 DirectAccess 服务器上配置网络位置服务器和默认 Web 探测需要此功能。<br/> -Windows 内部数据库。 用于 DirectAccess 服务器上的本地记帐。|  
+|远程访问管理工具功能|此功能的安装如下所述：<p>-默认情况下，当安装远程访问角色时，它会安装在 DirectAccess 服务器上，并支持远程管理控制台用户界面和 Windows PowerShell cmdlet。<br />-可选择将它安装在不运行 DirectAccess 服务器角色的服务器上。 在这种情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<p>远程访问管理工具功能包括以下各项：<p>-远程访问图形用户界面（GUI）<br />-适用于 Windows PowerShell 的远程访问模块<p>依赖项包括：<p>-组策略管理控制台<br />-RAS 连接管理器管理工具包（CMAK）<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬件要求  
 本方案的硬件要求包括以下各项：  
@@ -148,9 +144,9 @@ ms.locfileid: "80309210"
   
 |内容类型|参考|  
 |--------|-------|  
-|**部署**|[Windows Server 中的 DirectAccess 部署路径](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<br /><br />[使用入门向导部署单个 DirectAccess 服务器](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
+|**部署**|[Windows Server 中的 DirectAccess 部署路径](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[使用入门向导部署单个 DirectAccess 服务器](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
 |**工具和设置**|[远程访问 PowerShell cmdlet](https://technet.microsoft.com/library/hh918399.aspx)|  
-|**社区资源**|[DirectAccess 生存指南](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<br /><br />[DirectAccess Wiki 条目](https://go.microsoft.com/fwlink/?LinkId=236871)|  
+|**社区资源**|[DirectAccess 生存指南](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[DirectAccess Wiki 条目](https://go.microsoft.com/fwlink/?LinkId=236871)|  
 |**相关技术**|[IPv6 的工作原理](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
   
 

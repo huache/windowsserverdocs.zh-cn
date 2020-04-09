@@ -2,22 +2,18 @@
 title: DirectAccess 容量规划
 description: 你可以使用本主题来了解 Windows Server 2012 DirectAccess 服务器性能，以帮助你在 Windows Server 2016 中进行 DirectAccess 的容量规划。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e63b4c4f266d286b766c89b61676493328aa8652
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 413dc88ce9ec551a318b63f3df44ed256f289219
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310981"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815790"
 ---
 # <a name="directaccess-capacity-planning"></a>DirectAccess 容量规划
 
@@ -37,7 +33,7 @@ ms.locfileid: "80310981"
 ||||  
 |-|-|-|  
 |配置-硬件|低端硬件（4GB RAM，4 核）|高端硬件（8 GB，8 核）|  
-|双隧道<br /><br />-PKI<br /><br />-包括 DNS64/NAT64|750 个并发连接占用 50% 的 CPU 和 50% 的内存，Corpnet NIC 吞吐量为 75 Mbps。 扩展目标为 1000 个用户，占用 50% 的 CPU。|1500 个并发连接占用 50% 的 CPU 和 50% 的内存，Corpnet NIC 吞吐量为 150 Mbps。|  
+|双隧道<p>-PKI<p>-包括 DNS64/NAT64|750 个并发连接占用 50% 的 CPU 和 50% 的内存，Corpnet NIC 吞吐量为 75 Mbps。 扩展目标为 1000 个用户，占用 50% 的 CPU。|1500 个并发连接占用 50% 的 CPU 和 50% 的内存，Corpnet NIC 吞吐量为 150 Mbps。|  
 ## <a name="test-environment"></a>测试环境
 
 **性能工作台拓扑**  

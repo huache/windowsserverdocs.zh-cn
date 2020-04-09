@@ -1,24 +1,20 @@
 ---
 title: reg 负载
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3b0b2b1b-f510-4108-9e9d-7057e924aa6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db661e311e3fe8c393750716de5dab375e7817f4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 140c6b51b9f88081a8686ebebbc9400f241b5ef6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384696"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836380"
 ---
 # <a name="reg-load"></a>reg 负载
 
@@ -34,9 +30,9 @@ ms.locfileid: "71384696"
 reg load KeyName FileName
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<KeyName >|指定要加载的子项的完整路径。 若要指定远程计算机，请包含计算机名称（格式 \\\\ComputerName\) 作为*KeyName*的一部分。 省略 \\\\ComputerName \ 会使操作默认为本地计算机。 *KeyName*必须包含有效的根密钥。 本地计算机的有效根密钥为： HKLM、HKCU、HKCR、HKU 开头和 HKCC。 如果指定了远程计算机，则有效的根密钥为： HKLM 和 HKU 开头。|
 |\<文件名 >|指定要加载的文件的名称和路径。 必须事先使用**reg save**操作和扩展名 hiv 来创建此文件。|
@@ -46,18 +42,18 @@ reg load KeyName FileName
 
 下表列出了**reg load**操作的返回值。
 
-|值|描述|
+|值|说明|
 |-----|-----------|
 |0|成功|
 |1|失败|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要将名为 hiv 的文件加载到密钥 HKLM\TempHive，请键入：
 ```
 REG LOAD HKLM\TempHive TempHive.hiv
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

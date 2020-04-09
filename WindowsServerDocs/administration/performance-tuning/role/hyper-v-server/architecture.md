@@ -4,15 +4,15 @@ description: 用于性能优化的 hyper-v 体系结构 condsiderations
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0feb2977791dd181907c381e4898924ff51c2bc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47ff4a25f67e2b03655d17ab5a57aeaa3274a835
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383487"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851830"
 ---
 # <a name="hyper-v-architecture"></a>Hyper-V 体系结构
 
@@ -28,7 +28,7 @@ Hyper-v 特定 i/o 体系结构由子分区中根分区和虚拟化服务客户�
 
 以下各部分提供了在运行 Hyper-v 角色的服务器上提高性能的最佳做法。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [Hyper-V 术语](terminology.md)
 

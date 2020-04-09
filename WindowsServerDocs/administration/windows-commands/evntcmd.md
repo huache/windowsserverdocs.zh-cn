@@ -1,24 +1,20 @@
 ---
 title: Evntcmd
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4496df6df1a40b383505627d58389c098493f59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86e4290543ffcc0da1c768a661fd88a7638b1146
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377438"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845010"
 ---
 # <a name="evntcmd"></a>Evntcmd
 
@@ -29,9 +25,9 @@ ms.locfileid: "71377438"
 ```  
 evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>  
 ```  
-### <a name="parameters"></a>参数  
+#### <a name="parameters"></a>参数  
 
-|      参数      |                                                                                                                                                            描述                                                                                                                                                             |
+|      参数      |                                                                                                                                                            说明                                                                                                                                                             |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  /s <computerName>  |                                                         按名称指定要在其上配置事件转换的计算机和/或陷阱目标的计算机。 如果未指定计算机，则会在本地计算机上进行配置。                                                          |
 | /v <verbosityLevel> | 指定哪些类型的状态消息会显示为陷阱，并配置陷阱目标。 此参数必须是一个介于0到10之间的整数。 如果指定10，则显示所有类型的消息，包括有关陷阱配置是否成功的跟踪消息和警告。 如果指定0，则不会显示任何消息。 |
@@ -65,19 +61,19 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
   - 参数*delete_TRAP_DEST*指定你不希望将陷阱消息发送到社区中的指定主机。  
   - 参数*CommunityName*按名称指定发送陷阱消息的团体。  
   - 参数*id*按名称或 IP 地址指定你不希望将陷阱消息发送到的主机。  
-    ## <a name="BKMK_Examples"></a>示例  
+    ## <a name="examples"></a><a name=BKMK_Examples></a>示例  
     下面的示例说明了**evntcmd**命令的配置文件中的条目。 它们的设计目的不是在命令提示符下键入。  
     若要在事件日志服务重新启动时发送陷阱消息，请键入：  
     ```  
-    #pragma add System "Eventlog" 2147489653  
+    #pragma add System Eventlog 2147489653  
     ```  
     若要在三分钟内重启事件日志服务两次，请键入：  
     ```  
-    #pragma add System "Eventlog" 2147489653 2 180  
+    #pragma add System Eventlog 2147489653 2 180  
     ```  
     若要在事件日志服务重新启动时停止发送陷阱消息，请键入：  
     ```  
-    #pragma delete System "Eventlog" 2147489653  
+    #pragma delete System Eventlog 2147489653  
     ```  
     若要将名为 "公共" 的社区中的陷阱消息发送到 IP 地址为192.168.100.100 的主机，请键入：  
     ```  
@@ -92,4 +88,4 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
     #pragma delete_TRAP_DEST private localhost  
     ```  
     ## <a name="additional-references"></a>其他参考  
-- [命令行语法项](command-line-syntax-key.md)  
+- - [命令行语法项](command-line-syntax-key.md)  

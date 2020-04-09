@@ -1,24 +1,20 @@
 ---
 title: route_ws2008
 description: 了解如何修改和显示本地 IP 路由表中的条目。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: afcd666c-0cef-47c2-9bcc-02d202b983b3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: cc68dd5634ae4832376924c1678dc10a0427f2b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a0287fed8452cb155ea858ff0a544962dd765c3a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371420"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835600"
 ---
 # <a name="route_ws2008"></a>route_ws2008
 
@@ -31,18 +27,18 @@ ms.locfileid: "71371420"
 route [/f] [/p] [<Command> [<Destination>] [mask <Netmask>] [<Gateway>] [metric <Metric>]] [if <Interface>]]  
 ```  
 
-### <a name="parameters"></a>参数  
+#### <a name="parameters"></a>参数  
 
-|参数|描述|  
+|参数|说明|  
 |-------|--------|  
-|/f|清除所有不是宿主路由的条目的路由表（网络掩码为255.255.255.255 的路由）、环回网络路由（目标为127.0.0.0 的路由和网络掩码）或多播路由（目标为224.0.0.0 的路由和240.0.0.0 的网络掩码。 如果将此与其中一个命令（如添加、更改或删除）结合使用，则在运行该命令之前将清除该表。|  
+|/f|清除所有不是宿主路由的条目的路由表（网络掩码为255.255.255.255 的路由）、环回网络路由（目标为127.0.0.0 的路由和网络掩码）或多播路由（路由的目标为224.0.0.0，子网掩码为240.0.0.0）。 如果将此与其中一个命令（如添加、更改或删除）结合使用，则在运行该命令之前将清除该表。|  
 |/p|与 add 命令一起使用时，会将指定的路由添加到注册表中，并在每次启动 TCP/IP 协议时用于初始化 IP 路由表。 默认情况下，启动 TCP/IP 协议后，不会保留已添加的路由。 与 print 命令一起使用时，将显示持久路由的列表。 对于所有其他命令，将忽略此参数。 持久性路由存储**HKEY_LOCAL_MACHINE \system\currentcontrolset\services\tcpip\parameters\persistentroutes**的注册表位置。|  
-|\<命令 >|指定要运行的命令。 下表列出了有效的命令：<br /><br />-   **添加：** 添加路由。<br />-   **更改：** 修改现有路由。<br />-   **删除：** 删除路由或路由。<br />-   **打印：** 打印路线或路线。|  
+|\<命令 >|指定要运行的命令。 下表列出了有效的命令：<p>-   **添加：** 添加路由。<br />-   **更改：** 修改现有路由。<br />-   **删除：** 删除路由或路由。<br />-   **打印：** 打印路线或路线。|  
 |\<目标 >|指定路由的网络目标。 目标可以是 IP 网络地址（其中，网络地址的主机位设置为0）、主机路由的 IP 地址，或者使用0.0.0.0 作为默认路由。|  
 |掩码 \<网络掩码 >|指定路由的网络目标。 目标可以是 IP 网络地址（其中，网络地址的主机位设置为0）、主机路由的 IP 地址，或者使用0.0.0.0 作为默认路由。|  
 |\<网关 >|指定 "转发" 或 "下一跃点" IP 地址，通过该地址可以访问网络目标和子网掩码定义的地址集。 对于本地附加的子网路由，网关地址为分配给连接到子网的接口的 IP 地址。 对于在一个或多个路由器上可用的远程路由，网关地址是可直接访问的 IP 地址，分配给邻居路由器。|  
-|指标 \<指标 >|指定路由的整数开销指标（范围从1到9999），这是在路由表中选择与要转发的数据包的目标地址最匹配的路由表中的多个路由时使用的。 将选择具有最低指标的路由。 此指标可以反映跃点数、路径速度、路径可靠性、路径吞吐量或管理属性。|  
-|如果 \<接口 >|指定可在其上访问目标的接口的接口索引。 若要查看接口及其相应接口索引的列表，请使用 "路由打印" 命令的显示。 可以为接口索引使用十进制或十六进制值。 对于十六进制值，请在十六进制数值前面加上0x。 如果省略 if 参数，则从网关地址确定接口。|  
+|指标 \<指标 >|指定路由的整数成本度量值（从 1 到 9999），用于在路由表中的多个路由(这些路由最接近匹配要转发的数据包目标地址）间进行选择。 将选择最低度量值的路由。 度量值可以反映跃点数目、路径速度、路径可靠性、路径吞吐量或管理属性。|  
+|如果 \<接口 >|指定访问目标所使用的接口的接口索引。 有关接口及其对应的接口索引的列表，请使用路由打印命令的显示功能。 可以对接口索引使用十进制或十六进制值。 十六进制数以 0x 开头。 省略 if 参数时，接口将通过网关地址确定。|  
 |/?|在命令提示符下显示帮助。|  
 
 ## <a name="remarks"></a>备注  
@@ -53,7 +49,7 @@ route [/f] [/p] [<Command> [<Destination>] [mask <Netmask>] [<Gateway>] [metric 
 - **/P**参数仅支持用于 windows NT 4.0、windows 2000、windows Millennium Edition、windows XP 和 windows Server 2003 的路由命令。 Windows 95 或 Windows 98 的**路由**命令不支持此参数。  
 - 仅当 Internet 协议（TCP/IP）协议安装为网络连接中的网络适配器属性中的组件时，此命令才可用。  
 
-## <a name="BKMK_Examples"></a>示例  
+## <a name="examples"></a><a name="BKMK_Examples"></a>示例  
 若要显示 IP 路由表的全部内容，请键入：  
 ```  
 route print  
@@ -96,4 +92,4 @@ route change 10.41.0.0 mask 255.255.0.0 10.27.0.25
 ```  
 
 ## <a name="additional-references"></a>其他参考  
--   [命令行语法项](command-line-syntax-key.md)  
+-   - [命令行语法项](command-line-syntax-key.md)  

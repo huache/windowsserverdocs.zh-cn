@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 472c3b91285810ac1ff528da24de50533bae526d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56e27c386451c561de8f62e523e2d1e59a8ce84c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376940"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844300"
 ---
 # <a name="fsutil-fsinfo"></a>Fsutil fsinfo
 >适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
@@ -33,20 +33,20 @@ fsutil fsinfo [statistics] <VolumePath>
 fsutil fsinfo [volumeinfo] <RootPath>
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------------|---------------|
-|着|列出计算机中的所有驱动器。|
+|驱动器|列出计算机中的所有驱动器。|
 |drivetype|查询驱动器并列出其类型，如 cd-rom 驱动器。|
 |ntfsinfo|列出指定卷的 NTFS 特定卷信息，如扇区数、群集总数、可用群集以及 MFT 区的开头和结尾。|
 |sectorinfo|列出有关硬件的扇区大小和对齐方式的信息。|
-|标识|列出指定卷的文件系统统计信息，如元数据、日志文件和 MFT 读取和写入。|
+|统计|列出指定卷的文件系统统计信息，如元数据、日志文件和 MFT 读取和写入。|
 |volumeinfo|列出指定卷的信息，例如文件系统、卷是否支持区分大小写的文件名、文件名中的 unicode 或磁盘配额，或是 DirectAccess （DAX）卷。|
 |< "VolumePath" >|指定驱动器号（后跟冒号）。|
 |< "RootPathname" >|指定根驱动器的驱动器号（后跟冒号）。|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 若要列出计算机中的所有驱动器，请键入：
 
 ```
@@ -153,8 +153,8 @@ UserFileReadBytes :    1305244512
 LogFileWriteBytes :    180936704       
 ```
 
-#### <a name="additional-references"></a>其他参考
-[命令行语法键](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>其他参考
+- [命令行语法键](command-line-syntax-key.md)
 [Fsutil](Fsutil.md)
 
 

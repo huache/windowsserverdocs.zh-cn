@@ -1,24 +1,20 @@
 ---
 title: 在服务器管理器中配置远程管理
 description: 服务器管理器
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 509182ed-c37d-4b81-84bc-aee43d006873
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e1058a5679f73fcd2ceb8586da687158762d10f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 01bc2d2d262882c08d1213bae6149896a8b284ab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383208"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851560"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>在服务器管理器中配置远程管理
 
@@ -101,7 +97,7 @@ ms.locfileid: "71383208"
 
     **%windir%\system32\Configure-SMremoting.exe**
 
-3.  执行下列操作之一：
+3.  执行以下操作之一：
 
     -   若要禁用远程管理，键入**configure-smremoting.exe-disable**，然后按**enter**。
 
@@ -111,7 +107,7 @@ ms.locfileid: "71383208"
 
 ### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>在较早版本 Windows Server 上启用服务器管理器和 Windows PowerShell 远程管理的步骤
 
--   执行下列操作之一：
+-   执行以下操作之一：
 
     -   若要在运行 Windows Server 2012 的服务器上启用远程管理，请参阅本主题中[的使用 Windows 界面启用服务器管理器远程管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)。
 
@@ -131,7 +127,7 @@ ms.locfileid: "71383208"
 
 3.  验证是否启用了以下防火墙规则的例外，并且组策略设置未禁用。 如果未启用其中任一项，则继续执行下一步骤。
 
-    -   COM+ 网络访问(DCOM-In)
+    -   COM+ 网络访问 (DCOM-In)
 
     -   远程事件日志管理（NP-IN）
 
@@ -168,7 +164,7 @@ ms.locfileid: "71383208"
     > [!NOTE]
     > 此设置将禁止远程管理作为操作系统设置过程的一部分。 配置此设置不会阻止管理员在操作系统设置完成后启用服务器上服务器管理器远程管理。 管理员可以通过使用[windows 界面配置服务器管理器远程管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)或使用 windows PowerShell 在本主题中[启用服务器管理器远程](#to-enable-server-manager-remote-management-by-using-windows-powershell)管理，使用中的步骤来再次启用服务器管理器远程管理。
     > 
-    > 如果默认情况下禁用远程管理作为无人参与安装的一部分，并且安装完成后不在该服务器上启用远程管理，则无法使用服务器管理器完全管理此应答文件应用到的服务器。 在将服务器管理器控制台添加到服务器管理器服务器后，运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （并且默认禁用了远程管理）的服务器将在控制台中生成可管理性状态错误。池子.
+    > 如果默认情况下禁用远程管理作为无人参与安装的一部分，并且安装完成后不在该服务器上启用远程管理，则无法使用服务器管理器完全管理此应答文件应用到的服务器。 默认情况下，运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （并且默认禁用远程管理）的服务器在添加到服务器管理器服务器池后，会在服务器管理器控制台中生成可管理性状态错误。
 
 ## <a name="windows-remote-management-winrm-listener-settings"></a>Windows 远程管理（WinRM）侦听器设置
 服务器管理器依赖于要管理的远程服务器上的默认 WinRM 侦听器设置。 如果远程服务器上的默认身份验证机制或 WinRM 侦听器端口号已从默认设置中更改，则服务器管理器无法与远程服务器通信。

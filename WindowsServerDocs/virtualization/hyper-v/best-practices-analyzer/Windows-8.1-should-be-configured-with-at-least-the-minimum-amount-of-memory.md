@@ -2,24 +2,23 @@
 title: Windows 8.1 应至少配置最小内存量
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 84d7edab-610e-4265-87d0-9869f64b0039
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0004432dc9fbfd0d294f3f7d96dcb1ea80334801
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d8524039d23b0f5df523218177ba21568be27b54
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393327"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855530"
 ---
 # <a name="windows-81-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 8.1 应至少配置最小内存量
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 有关最佳做法和扫描的详细信息，请参阅[运行最佳做法分析器扫描并管理扫描结果](https://go.microsoft.com/fwlink/p/?LinkID=223177)。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71393327"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|Error|  
+|**对应**|错误|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
@@ -67,7 +66,7 @@ ms.locfileid: "71393327"
 Set-VMMemory <MyVM> -StartupBytes 512MB  
 ```  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

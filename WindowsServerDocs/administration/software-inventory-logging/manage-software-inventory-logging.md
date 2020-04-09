@@ -1,24 +1,20 @@
 ---
 title: 管理软件清单日志记录
 description: 描述如何管理软件清单日志记录
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 812173d1-2904-42f4-a9e2-de19effec201
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a14233e01c19df650d1059e1b60cd5398b05709a
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2176793bd0b7103f69c57476034342a0617329e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946997"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851420"
 ---
 # <a name="manage-software-inventory-logging"></a>管理软件清单日志记录
 
@@ -90,10 +86,10 @@ ms.locfileid: "75946997"
 -   [在 Windows Server 2012 R2 Hyper-v 环境中使用软件清单日志记录，不含 KB 3000850](manage-software-inventory-logging.md#BKMK_Step12)  
   
 > [!NOTE]  
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅使用 Cmdlet。
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅使用 Cmdlet。
 
   
-## <a name="BKMK_Step1"></a>启动和停止软件清单日志记录  
+## <a name="starting-and-stopping-software-inventory-logging"></a><a name="BKMK_Step1"></a>启动和停止软件清单日志记录  
 必须在运行 Windows Server 2012 R2 的计算机上启用软件清单日志记录每日收集和通过网络进行的转发，才能记录软件清单。  
   
 > [!NOTE]  
@@ -131,13 +127,13 @@ ms.locfileid: "75946997"
   
 有关整体设置 SIL 框架的全面指南，请参阅 [Software Inventory Logging Aggregator](software-inventory-logging-aggregator.md)。  特别地，如果 **Publish-SilData** 生成错误或 SIL 日志记录失败，请参阅疑难解答部分。  
   
-## <a name="BKMK_Step2"></a>软件清单日志记录时间  
+## <a name="software-inventory-logging-over-time"></a><a name="BKMK_Step2"></a>软件清单日志记录时间  
 如果软件清单日志记录已由管理员启动，便会开始每小时收集数据并转发到聚合服务器（目标 URI）。 第一次转发是 [Get-SilData](https://technet.microsoft.com/library/dn283388.aspx) 在某个时间点检索并显示在控制台上的相同数据的完整数据集。 此后，SIL 会在每个间隔检查数据，如果自上一次收集以来数据中未进行任何更改，则仅将一个小型标识确认转发到目标聚合服务器。 如果有任何值发生了更改，则 SIL 会再次发送完整数据集。  
   
 > [!IMPORTANT]  
 > 如果在任何间隔目标 URI 不可访问或通过网络进行的数据传输出于任何原因未成功，则收集的数据会在本地存储最多 30 天（这是默认值，在此之后数据会删除）。 在下一次将数据成功转发到目标聚合服务器时，本地存储的所有数据都会进行转发，本地缓存的数据会删除。  
   
-## <a name="BKMK_Step3"></a>显示软件清单日志记录数据  
+## <a name="displaying-software-inventory-logging-data"></a><a name="BKMK_Step3"></a>显示软件清单日志记录数据  
 除了在前一个部分介绍的 PowerShell cmdlet，还可以使用六个其他 cmdlet 来收集软件清单日志记录数据：  
   
 -   **[Get-silcomputer](https://technet.microsoft.com/library/dn283392.aspx)** ：显示特定服务器和操作系统相关数据的时间点值，以及物理主机的 FQDN 或主机名（如果可用）。  
@@ -201,20 +197,20 @@ SystemManufacturer        : Microsoft Corporation
 >   
 > 无需启动软件清单日志记录，即可使用 **Get-Sil** cmdlet。  
   
-## <a name="BKMK_Step4"></a>删除软件清单日志记录所记录的数据  
+## <a name="deleting-data-logged-by-software-inventory-logging"></a><a name="BKMK_Step4"></a>删除软件清单日志记录所记录的数据  
 软件清单日志记录意图不在于充当一个关键任务组件。 它的设计目的是在保持高水平的可靠性的同时尽可能小地影响本地系统操作。 这也允许管理员手动删除软件清单日志记录数据库和支持文件（\Windows\System32\LogFiles\SIL 目录中的每个文件）以满足操作需求。  
   
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>删除软件清单日志记录所记录的数据  
   
 1. 在 PowerShell 中，使用 **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** 命令停止软件清单日志记录。  
   
-2. 打开 Windows Explorer。  
+2. 打开 Windows 资源管理器。  
   
 3. 中转到 **\Windows\System32\Logfiles\SIL\\**  
   
 4. 删除文件夹中的所有文件。  
   
-## <a name="BKMK_Step5"></a>备份和还原软件清单日志记录所记录的数据  
+## <a name="backing-up-and-restoring-data-logged-by-software-inventory-logging"></a><a name="BKMK_Step5"></a>备份和还原软件清单日志记录所记录的数据  
 如果通过网络进行的转发失败，则软件清单日志记录会暂时存储每小时的数据集合。 日志文件存储在 \Windows\System32\LogFiles\SIL\ 目录中。 可以使用定期计划的服务器备份来备份此软件清单日志记录数据。  
   
 > [!IMPORTANT]  
@@ -223,17 +219,17 @@ SystemManufacturer        : Microsoft Corporation
 > [!NOTE]  
 > 如果出于任何原因管理 SIL 在本地记录的数据的保留期很重要，可通过更改此处的注册表值进行配置： \ HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging。 默认值为30天。  
   
-## <a name="BKMK_Step6"></a>读取软件清单日志记录所记录和发布的数据  
+## <a name="reading-data-logged-and-published-by-software-inventory-logging"></a><a name="BKMK_Step6"></a>读取软件清单日志记录所记录和发布的数据  
 由 SIL 记录、但在本地存储（如果对目标 URI 进行的转发失败）的数据，或成功转发到目标聚合服务器的数据存储在二进制文件中（对于每天的数据）。 若要在 PowerShell 中显示此数据，请使用 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) cmdlet。  
   
-## <a name="BKMK_Step7"></a>软件清单日志记录安全性  
+## <a name="software-inventory-logging-security"></a><a name="BKMK_Step7"></a>软件清单日志记录安全性  
 需要本地服务器上的管理权限才能成功地从软件清单日志记录 WMI 和 PowerShell API 检索数据。  
   
 若要成功利用软件清单日志记录功能的完整功能，以便随时间推移持续地（以小时为间隔）将数据转发到聚合点，管理员需要使用客户端证书确保将安全的 SSL 会话用于通过 HTTPS 进行的数据传输。 可以在以下位置找到 HTTPS 身份验证的基本概述： [HTTPS 身份验证](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx)。  
   
 在 Windows Server 上本地存储的任何数据（仅当该功能已启动，但出于任何原因而无法访问目标时才这样进行）只能使用本地服务器上的管理权限来访问。  
   
-## <a name="BKMK_Step8"></a>使用 Windows Server 2012 R2 软件清单日志记录中的日期和时间设置  
+## <a name="working-with-date-and-time-settings-in-windows-server-2012-r2-software-inventory-logging"></a><a name="BKMK_Step8"></a>使用 Windows Server 2012 R2 软件清单日志记录中的日期和时间设置  
   
 -   使用 [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay 设置 SIL 日志记录运行的时间时，必须指定日期和时间。 将设置日历日期，在本地系统时间达到该日期之前，将不会进行日志记录。  
   
@@ -241,17 +237,17 @@ SystemManufacturer        : Microsoft Corporation
   
 -   当使用[get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)时，"SampleDate" 将始终显示11：59： 00 (，这是一个毫无意义的值。  日期是这些 cmdlet 查询的相关数据。  
   
-## <a name="BKMK_Step10"></a>在装载的虚拟硬盘中启用和配置软件清单日志记录  
+## <a name="enabling-and-configuring-software-inventory-logging-in-a-mounted-virtual-hard-disk"></a><a name="BKMK_Step10"></a>在装载的虚拟硬盘中启用和配置软件清单日志记录  
 软件清单日志记录还支持脱机虚拟机上的配置和启用。 这种情况的实际用途旨在涵盖跨数据中心的广泛部署的 "黄金映像" 设置，以及配置从本地到云部署的最终用户映像。  
   
 为了支持这些用途，软件清单日志记录具有与每个可配置选项相关联的注册表项。  可以在 \ HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. 下找到这些注册表值。  
   
 |||||  
 |-|-|-|-|  
-|**Function**|**值名称**|**数据**|**对应的 Cmdlet （仅在正在运行的操作系统中可用）**|  
+|**函数**|**值名称**|**数据**|**对应的 Cmdlet （仅在正在运行的操作系统中可用）**|  
 |启动/停止功能|CollectionState|1 或 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)、 [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|  
-|指定网络上的目标聚合点|TargetUri|字符串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
-|为目标 Web 服务器指定用于 SSL 身份验证的证书的证书指纹或哈希|CertificateThumbprint|字符串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
+|指定网络上的目标聚合点|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
+|为目标 Web 服务器指定用于 SSL 身份验证的证书的证书指纹或哈希|CertificateThumbprint|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
 |指定功能应启动的日期和时间（如果设置的值根据本地系统时间是将来时间）|CollectionTime|默认：2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
   
 若要在脱机 VHD（未运行虚拟机操作系统）上修改这些值，必须首先装载 VHD，然后可以使用以下命令进行更改：  
@@ -266,7 +262,7 @@ SystemManufacturer        : Microsoft Corporation
   
 软件清单日志记录会在操作系统启动时检查这些值，并执行相应操作。  
   
-## <a name="BKMK_Step11"></a>在 Windows Server 2012 R2 中使用软件清单日志记录的概述（不含 KB 3000850）  
+## <a name="overview-of-using-software-inventory-logging-in-windows-server-2012-r2-without-kb-3000850"></a><a name="BKMK_Step11"></a>在 Windows Server 2012 R2 中使用软件清单日志记录的概述（不含 KB 3000850）  
 在 [KB 3000850](https://support.microsoft.com/kb/3000850)中对软件清单日志记录功能和默认设置进行了以下更改：  
   
 -   在启动 SIL 日志记录时收集和通过网络进行的转发的默认间隔从每天更改为每小时（每小时中的随机时间）。  
@@ -275,7 +271,7 @@ SystemManufacturer        : Microsoft Corporation
   
 -   删除了 Hyper-V 环境中来宾到主机的通道通信。  
   
-## <a name="BKMK_Step12"></a>在 Windows Server 2012 R2 Hyper-v 环境中使用软件清单日志记录，不含 KB 3000850  
+## <a name="using-software-inventory-logging-in-a-windows-server-2012-r2-hyper-v-environment-without-kb-3000850"></a><a name="BKMK_Step12"></a>在 Windows Server 2012 R2 Hyper-v 环境中使用软件清单日志记录，不含 KB 3000850  
   
 > [!NOTE]  
 > 随着安装 [KB 3000850](https://support.microsoft.com/kb/3000850) 更新，会删除此功能。  

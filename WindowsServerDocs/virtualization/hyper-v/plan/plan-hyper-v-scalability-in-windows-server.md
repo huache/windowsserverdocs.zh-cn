@@ -2,20 +2,18 @@
 title: Windows Server 2016 和 Windows Server 2019 中的 Hyper-v 可伸缩性规划
 description: 列出了可在 Hyper-v 和虚拟机中添加或删除的组件所支持的最大数目，如内存量和虚拟处理器的数量。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: 493f7926a6ef686e6d47c1a3120a65ed0799b0db
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 2eb75283f68a1d1e0c05397b67d9c012d0adc899
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71934954"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860750"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 和 Windows Server 2019 中的 Hyper-v 可伸缩性规划
 
@@ -31,12 +29,12 @@ ms.locfileid: "71934954"
 ## <a name="maximums-for-virtual-machines"></a>最大虚拟机  
 这些最大的应用于每个虚拟机。 并非所有组件都可用于两代虚拟机。 有关生成的比较，请参阅是否[应在 hyper-v 中创建第1代或第2代虚拟机？](should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md) 
   
-|Component|最多|注释|  
+|组件|最大值|注意|  
 |-------------|-----------|---------|  
 |检查点|50|实际数量可能较少，这取决于可用的存储。 每个检查点都存储为使用物理存储的 .avhd 文件。|  
 |内存|对于第2代为 12 TB; <br>1 TB，适用于第1代|复查特定操作系统的要求，以确定最小数量和推荐的数量。|  
 |串行 (COM) 端口|2|无。|  
-|直接连接到虚拟机的物理磁盘的大小|变化不定|最大大小由来宾操作系统决定。|  
+|直接连接到虚拟机的物理磁盘的大小|不定|最大大小由来宾操作系统决定。|  
 |虚拟光纤通道适配器|4|作为最佳实践，我们建议你将每个虚拟光纤通道适配器连接到不同的虚拟 SAN。|  
 |虚拟软盘设备|1 个虚拟软盘驱动器|无。|
 |虚拟硬盘容量|64 TB，适用于 VHDX 格式;<br>2040 GB 用于 VHD 格式|每个虚拟硬盘都将作为 .vhdx 或 .vhd 文件存储在物理媒体上，具体取决于虚拟硬盘所使用的格式。|  
@@ -49,9 +47,9 @@ ms.locfileid: "71934954"
 ## <a name="maximums-for-hyper-v-hosts"></a>最大为 Hyper-v 主机  
 这些最大的适用于每个 Hyper-v 主机。  
   
-|Component|最多|注释|  
+|组件|最大值|注意|  
 |-------------|-----------|---------|  
-|逻辑处理器|512|这两个必须在固件中启用：<br /><br />-硬件辅助虚拟化<br />-硬件强制实施的数据执行保护（DEP）<br /><br />主机操作系统（根分区）将只看到最多320逻辑处理器|  
+|逻辑处理器|512|这两个必须在固件中启用：<p>-硬件辅助虚拟化<br />-硬件强制实施的数据执行保护（DEP）<p>主机操作系统（根分区）将只看到最多320逻辑处理器|  
 |内存|24 TB|无。|  
 |网络适配器组（NIC 组合）|Hyper-V 无限制。|有关详细信息，请参阅[NIC 组合](../../../networking/technologies/nic-teaming/NIC-Teaming.md)。|  
 |物理网络适配器|Hyper-V 无限制。|无。|  
@@ -68,7 +66,7 @@ ms.locfileid: "71934954"
 
 若要了解故障转移群集的更新（包括虚拟机的新功能），请参阅[Windows Server 2016 中故障转移群集的新增](../../../failover-clustering/whats-new-in-failover-clustering.md)功能。
 
-|Component|最多|注释|  
+|组件|最大值|注意|  
 |-------------|-----------|---------|  
 |每群集的节点|64|请考虑为故障转移及为维护任务（如应用更新）保留的节点数量。 我们建议你计划使用足够的资源为故障转移保留 1 个节点，即在另一个节点故障转移到该节点之前，该节点一直保持空闲。 （这有时称为被动节点。）如果要保留其他节点，可以增加此数量。 没有建议的保留节点与活动节点的比率或乘数;唯一的要求是，群集中的节点总数不能超过最大值64。|  
 |每个群集中和每个节点上运行的虚拟机数|每个群集 8,000 个|多个因素可能会影响可在一个节点上同时运行的实际虚拟机数，例如：<br />-每个虚拟机正在使用的物理内存量。<br />-网络和存储带宽。<br />-磁盘主轴的数量，影响磁盘 i/o 性能。|  

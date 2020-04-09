@@ -2,18 +2,18 @@
 title: 文件服务器资源管理器 (FSRM) 概述
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: brianlic
+manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: 文件服务器资源管理器（FSRM）是一个工具，可用于管理和分类 Windows Server 文件服务器上的数据。
-ms.openlocfilehash: 719176307afc320ad676fd1acfc07ad9d15920cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ed7e5abce9389283a9b9d641f813b5df89a586b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394165"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854240"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>文件服务器资源管理器 (FSRM) 概述
 
@@ -31,15 +31,15 @@ ms.locfileid: "71394165"
 -   [文件分类基础结构](classification-management.md)通过自动化分类流程来提供对你的数据的见解，以便你可以更有效地管理数据。 你可以基于此分类对文件进行分类和应用策略。 示例策略包括限制访问文件的动态访问控制、文件加密和文件过期。 可以使用文件分类规则自动分类文件，也可以修改所选文件或文件夹的属性手动分类文件。
 -   [文件管理任务](file-management-tasks.md)使你可以基于文件的分类对文件应用条件策略或操作。 文件管理任务的条件包括文件位置、分类属性、创建文件的数据、文件的上一次修改日期或上一次访问文件的时间。 文件管理任务可以采取的操作包括对过期文件、加密文件的功能，或运行自定义命令的功能。
 -   [文件屏蔽管理](file-screening-management.md)可帮助控制用户可存储在文件服务器上的文件类型。 你可以限制可存储在共享文件上的扩展名。 例如，你可以创建文件屏蔽，不允许包含 MP3 扩展名的文件存储在文件服务器上的个人共享文件夹上。
--   [存储报告](storage-reports-management.md)可帮助你确定磁盘使用的趋势以及数据的分类方式。 还可以用于监视尝试要保存未授权文件的一组所选用户。  
+-   [存储报告](storage-reports-management.md)可帮助你确定磁盘使用的趋势以及数据的分类方式。 你还可以监视尝试要保存未授权文件的一组所选用户。  
   
 文件服务器资源管理器附带的功能可以通过使用文件服务器资源管理器应用程序或使用 Windows PowerShell 来配置和管理。
   
 > [!IMPORTANT]
 >  文件服务器资源管理器支持仅使用 NTFS 文件系统格式化的卷。 不支持弹性文件系统。  
   
-## <a name="practical-applications"></a>实际应用程序  
- 文件服务器资源管理器的一些实际应用程序包括：  
+## <a name="practical-applications"></a>实际应用  
+ 文件服务器资源管理器的一些实际应用包括：  
   
 -   通过动态访问控制方案使用文件分类基础结构，基于在文件服务器上的文件分类方式创建授予文件和文件夹访问权限的策略。  
   
@@ -53,7 +53,7 @@ ms.locfileid: "71394165"
   
 -   安排将在每个星期日午夜运行的报告，生成自前两天以来最近访问的文件的列表。 这可以帮助确定周末存储活动，并相应地计划服务器停机时间。  
 
-## <a name="whats-new"></a>新增功能-阻止 FSRM 创建变更日志
+## <a name="whats-new---prevent-fsrm-from-creating-change-journals"></a><a name="whats-new"></a>新增功能-阻止 FSRM 创建变更日志
 
 从 Windows Server 版本1803开始，现在可以阻止文件服务器资源管理器服务在服务启动时在卷上创建更改日志（也称为 USN 日志）。 这可以在每个卷上保留少许空间，但会禁用实时文件分类。
 

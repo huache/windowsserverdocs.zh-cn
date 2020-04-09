@@ -1,7 +1,6 @@
 ---
 title: Azure 中跨区域群集到群集存储副本
 description: 群集到群集存储复制跨区域的 Azure
-keywords: 存储副本、服务器管理器、Windows Server、Azure、群集、跨区域、不同的区域
 author: arduppal
 ms.author: arduppal
 ms.date: 12/19/2018
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 806857d5de067c0f4640344ed80338b474dd758e
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ee4f508cf0a65b59c3253d6865c649cc9652c569
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950064"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856300"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Azure 中跨区域群集到群集存储副本
 
@@ -135,7 +134,7 @@ ms.locfileid: "75950064"
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.3.0.100" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```
 
 12. 从任何一个节点**azcross1**/**azcross2**运行以下命令
@@ -144,7 +143,7 @@ ms.locfileid: "75950064"
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.0.0.10" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```
 
     确保两个群集之间可以相互连接/通信。
@@ -159,14 +158,14 @@ ms.locfileid: "75950064"
       Get-Cluster -Name SRAZCross (ran from az2az1) 
     ```
 
-13. 为两个群集创建云见证。 在 Azure 中创建两个[存储帐户](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM)（**az2azcw**，**azcrosssa**），每个资源组中的每个群集都有一个。
+13. 为两个群集创建云见证。 在 Azure 中创建两个[存储帐户](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM)（**az2azcw**，**azcrosssa**），每个资源组中的每**SR-AZ2AZ**个群集都有**SR-AZCROSS**一个。
    
     - 从 "访问密钥" 复制存储帐户名称和密钥
     - 从 "故障转移群集管理器" 创建云见证，并使用上述帐户名称和密钥来创建云见证。 
 
 14. 在继续下一步之前运行[群集验证测试](../../failover-clustering/create-failover-cluster.md#validate-the-configuration)
 
-15. 启动 Windows PowerShell，并使用 [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) cmdlet 确定是否满足所有存储副本要求。 可以在仅要求模式下使用 cmdlet 以用于快速测试，以及运行性能提升模式。
+15. 启动 Windows PowerShell，并使用 [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) cmdlet 确定是否满足所有存储副本要求。 可以在仅要求模式下使用 cmdlet 以用于快速测试，也可以在长时间运行的性能评估模式下使用。
  
 16. 配置群集到群集存储副本。
     双向向另一个群集授予访问权限：

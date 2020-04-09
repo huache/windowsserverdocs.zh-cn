@@ -1,24 +1,20 @@
 ---
 title: Sc config
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ad4d68a6-efe5-452b-8501-7f1f1c552a4a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 26157df1db358dd1a0e0fb48d334dc0e131c5089
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc864afe98823fa609cbe82398a486bf6e29defd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371328"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835310"
 ---
 # <a name="sc-config"></a>Sc config
 
@@ -34,9 +30,9 @@ ms.locfileid: "71371328"
 sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys | rec | adapt | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto}] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<ServerName >|指定服务所在的远程服务器的名称。 名称必须使用通用命名约定（UNC）格式（例如 \\\\myserver）。 若要在本地运行 SC.EXE，请省略此参数。|
 |\<ServiceName >|指定**getkeyname**操作返回的服务名称。|
@@ -57,13 +53,13 @@ sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys 
 -   对于每个命令行选项（参数），等号都是选项名称的一部分。
 -   选项和其值之间需要空格（例如， **type =** an）。 如果省略此空间，则操作将失败。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要指定 NEWSERVICE 服务的二进制路径，请键入：
 ```
-sc config NewService binpath= "ntsd -d c:\windows\system32\NewServ.exe"
+sc config NewService binpath= ntsd -d c:\windows\system32\NewServ.exe
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

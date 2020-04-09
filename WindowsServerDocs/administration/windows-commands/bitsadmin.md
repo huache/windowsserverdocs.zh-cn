@@ -1,30 +1,26 @@
 ---
 title: bitsadmin
-description: '**Bitsadmin** -bitsadmin 的 Windows 命令主题是一个命令行工具，可用于创建、下载或上传作业并监视其进度。'
-ms.custom: na
+description: 适用于 bitsadmin 的 Windows 命令主题，它是一个用于创建、下载或上传作业并监视其进度的命令行工具。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4853036e-1df8-45ad-8be6-cfb097b8dd27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b53293b28a83ecced34d248741996c958531d517
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ae6536b5c149f54bbfd37a5e0e814ffaa09a6bae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380104"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848740"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
 > **适用于**： windows Server （半年频道），windows server 2016，windows Server 2012 R2，windows server 2012，windows 10
 
-bitsadmin 是一个命令行工具，可用于创建下载或上载作业并监视其进度。 Bitsadmin 工具使用开关来确定要执行的工作。  可以调用 `bitsadmin /?` 或 `bitsadmin /HELP` 以获取开关列表。
+Bitsadmin 是一个命令行工具，可用于创建下载或上载作业并监视其进度。 Bitsadmin 工具使用开关来确定要执行的工作。  可以调用 `bitsadmin /?` 或 `bitsadmin /HELP` 以获取开关列表。
 
 大多数交换机都需要设置为作业的显示名称或 GUID 的 \<作业\> 参数。 请注意，作业的显示名称可能不唯一。 **/Create**和 **/list**开关返回作业的 GUID。
 
@@ -34,7 +30,7 @@ bitsadmin 是一个命令行工具，可用于创建下载或上载作业并监�
 
 使用以下开关创建作业、设置和检索作业的属性，以及监视作业的状态。 有关演示如何使用其中一些开关执行任务的示例，请参阅[bitsadmin 示例](bitsadmin-examples.md)。
 
-## <a name="switches"></a>交换器
+## <a name="switches"></a>交换机
 
 [bitsadmin addfile](bitsadmin-addfile.md)  
 [bitsadmin addfileset](bitsadmin-addfileset.md)  

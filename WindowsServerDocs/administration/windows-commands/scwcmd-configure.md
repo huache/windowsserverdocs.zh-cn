@@ -1,24 +1,20 @@
 ---
 title: Scwcmd 配置
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6528b9dc-3d82-4228-b734-ed717458d74c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43bd70c33294b09f63b9718e4c0f2cdc6cace156
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac4333628c33b60daabbb6cff55575d6ec8cd5f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384287"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835180"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: configure
 
@@ -32,24 +28,24 @@ ms.locfileid: "71384287"
 scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<ComputerList>] [/u:<UserName>] [/pw:<Password>] [/t:<Threads>]
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|/m： \<ComputerName >|指定要配置的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m**参数，则还必须指定 **/p**参数。|
-|/ou： \<OuName >|指定 Active Directory 域服务中组织单位（OU）的完全限定的域名（FQDN）。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将根据给定的策略进行分析。|
-|/p： \<Policy >|指定要用于执行配置的 .xml 策略文件的路径和文件名。|
-|/i： \<ComputerList >|指定 .xml 文件的路径和文件名，该文件包含计算机的列表及其预期的策略文件。 .Xml 文件中的所有计算机都将根据其相应的策略文件进行配置。 示例 .xml 文件为%windir%\security\SampleMachineList.xml。|
-|/u： \<UserName >|指定在配置远程计算机时要使用的备用用户凭据。 默认值为已登录的用户。|
-|/pw： \<Password >|指定在配置远程计算机时要使用的备用用户凭据。 默认值为登录用户的密码。|
-|/t： \<Threads >|指定在配置过程中应保持的同时未完成配置操作的数量（DefaultValue = 40，MinValue = 1，|
+|/m：\<ComputerName >|指定要配置的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m**参数，则还必须指定 **/p**参数。|
+|/ou：\<OuName >|指定 Active Directory 域服务中组织单位（OU）的完全限定的域名（FQDN）。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将根据给定的策略进行分析。|
+|/p：\<策略 >|指定要用于执行配置的 .xml 策略文件的路径和文件名。|
+|/i：\<ComputerList >|指定 .xml 文件的路径和文件名，该文件包含计算机的列表及其预期的策略文件。 .Xml 文件中的所有计算机都将根据其相应的策略文件进行配置。 示例 .xml 文件为%windir%\security\SampleMachineList.xml。|
+|/u：\<用户名 >|指定在配置远程计算机时要使用的备用用户凭据。 默认值为已登录的用户。|
+|/pw：\<密码 >|指定在配置远程计算机时要使用的备用用户凭据。 默认值为登录用户的密码。|
+|/t：\<线程 >|指定在配置过程中应保持的同时未完成配置操作的数量（DefaultValue = 40，MinValue = 1，|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
 
 Scwcmd 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
 
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 
 若要针对文件 webpolicy 配置安全策略，请键入：
 ```
@@ -68,6 +64,6 @@ scwcmd configure /i:campusmachines.xml /t:100
 scwcmd configure /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolicy.xml /u:DomainAdmin
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

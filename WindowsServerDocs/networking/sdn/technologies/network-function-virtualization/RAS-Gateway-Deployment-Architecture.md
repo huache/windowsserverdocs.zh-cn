@@ -1,23 +1,19 @@
 ---
 title: RAS 网关部署体系结构
 description: 你可以使用本主题来了解 Windows Server 2016 中 RAS 网关的云服务提供商（CSP）部署，包括 RAS 网关池、路由发送程序，以及为各个租户部署多个网关。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 91d8081261d3cbc5e2da61cc2b5a9737e76a0dc7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 1704cd6d933af1e796a9ac1237ff2de3a49fb3d3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309807"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859600"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>RAS 网关部署体系结构
 

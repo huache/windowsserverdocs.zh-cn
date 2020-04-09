@@ -2,25 +2,23 @@
 title: 在 Hyper-v 上运行 FreeBSD 的最佳做法
 description: 提供有关在虚拟机上运行 FreeBSD 的建议
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c66f1c8-2606-43a3-b4cc-166acaaf2d2a
 author: shirgall
 ms.author: kathydav
 ms.date: 01/09/2017
-ms.openlocfilehash: 1d284b38e1bdb642aa40ecbb8e82caa7712f7aad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18f59020ed4878e9a54150dcda18bca3da1dd614
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365627"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853280"
 ---
 # <a name="best-practices-for-running-freebsd-on-hyper-v"></a>在 Hyper-v 上运行 FreeBSD 的最佳做法
 
->适用于：Windows Server 2019, Windows Server 2016, Hyper-v Server 2016, Windows Server 2012 R2, Hyper-v server 2012 R2, Windows Server 2012, Hyper-v Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7.1, Windows 7
+>适用于： Windows Server 2019，Windows Server 2016，Hyper-v Server 2016，Windows Server 2012 R2，Hyper-v server 2012 R2，Windows Server 2012，Hyper-v Server 2012，Windows Server 2008 R2，Windows 10，Windows 8.1，Windows 8，Windows 7.1，Windows 7
 
 本主题包含在 Hyper-v 虚拟机上作为来宾操作系统运行 FreeBSD 的建议列表。
 
@@ -28,13 +26,13 @@ ms.locfileid: "71365627"
 
 通用地址冗余协议（CARP）允许多台主机共享相同的 IP 地址和虚拟主机 ID （VHID），以帮助为一个或多个服务提供高可用性。 如果一个或多个主机出现故障，其他主机会以透明方式接管，因此用户不会注意到服务失败。若要在 FreeBSD 10.2 中使用 CARP，请按照[FreeBSD 手册](https://www.freebsd.org/doc/en/books/handbook/carp.html)中的说明进行操作，然后在 Hyper-v 管理器中执行以下操作。
 
-* 验证虚拟机是否具有网络适配器，并为其分配一个虚拟交换机。 选择虚拟机，并选择 "**操作**"  >  "**设置**。
+* 验证虚拟机是否具有网络适配器，并为其分配一个虚拟交换机。 选择虚拟机，并选择 "**操作**" > **设置**"。
 
 ![已选择网络适配器的虚拟机设置的屏幕截图](media/Hyper-V_Settings_NetworkAdapter.png)
 
 * 启用 MAC 地址欺骗。 为此，请执行以下操作：
 
-   1. 选择虚拟机，并选择 "**操作**"  >  "**设置**。
+   1. 选择虚拟机，并选择 "**操作**" > **设置**"。
 
    2. 展开 "**网络适配器**"，然后选择 "**高级功能**"。
 
@@ -62,7 +60,7 @@ ms.locfileid: "71365627"
    # exit
    ```
 
-   有关几何标签的其他信息，请参阅：为[磁盘设备添加标签](https://www.freebsd.org/doc/handbook/geom-glabel.html)。
+   有关几何标签的其他信息，请参阅：[标记磁盘设备](https://www.freebsd.org/doc/handbook/geom-glabel.html)。
 
 3. 系统将继续执行多用户启动。 启动完成后，编辑/etc/fstab 并将常规设备名称替换为各自的标签。 最终的/etc/fstab 将如下所示：
 
@@ -90,6 +88,6 @@ ms.locfileid: "71365627"
 ```
 
 
-请参阅
+另请参阅
 
 * [Hyper-v 上支持的 FreeBSD 虚拟机](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)

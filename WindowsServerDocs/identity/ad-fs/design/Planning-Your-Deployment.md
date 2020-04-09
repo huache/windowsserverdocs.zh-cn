@@ -1,7 +1,6 @@
 ---
 ms.assetid: bb9b9e18-bf2f-4115-be77-9a165944db41
 title: 规划部署
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 607dc34c8f44d8d96a8dc0c9d1ed004edc799167
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6386aac112fcf936ccdd9772e3d5566d8dd21ad8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407994"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858640"
 ---
 # <a name="planning-your-deployment"></a>规划部署
 
@@ -23,7 +22,7 @@ ms.locfileid: "71407994"
 > [!NOTE]  
 > 请确保所有各方都清楚地了解组织在联合协议中所扮演的角色。  
   
-对于[联合 WEB SSO 设计](Federated-Web-SSO-Design.md)，AD FS 使用*帐户伙伴*\(等术语在 AD FS 管理 "管理器" 中的 "管理"\-中也称为 "*标识提供者*"。\) 中的 "管理" 管理单元 \(也称为 "*依赖方*" *AD FS，这*有助于区分托管帐户的组织\-从基于 Web\) 资源的组织 \(帐户伙伴\)资源伙伴\)。\-\(  
+对于[联合 WEB SSO 设计](Federated-Web-SSO-Design.md)，AD FS 使用*帐户伙伴*\(等术语在 AD FS 管理 "管理器" 中的 "管理" 管理单元\-中称为 "*标识提供者*"。\) 中的 "管理" 管理单元 \(也称为 "*依赖方*" *AD FS，这*有助于区分托管帐户的组织\-\) 资源伙伴 \(的基于 Web\) 资源的组织。\-\(\)  
   
 在 [Web SSO Design](Web-SSO-Design.md)中，组织同时扮演帐户伙伴和资源伙伴角色，因为它会向其用户提供对其应用程序的访问。  
   

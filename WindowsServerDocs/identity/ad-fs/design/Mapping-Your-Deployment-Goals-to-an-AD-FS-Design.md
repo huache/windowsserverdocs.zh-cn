@@ -1,7 +1,6 @@
 ---
 ms.assetid: 68979914-8a1c-465a-bd37-08df30722d69
 title: 将部署目标映射到 AD FS 设计
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ca10f8e784fea3b99a60b2117f65ba1ccaf6501e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4154f46bdb1a7b3a2c81eba6882a6a095a16ee45
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359088"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853050"
 ---
 # <a name="mapping-your-deployment-goals-to-an-ad-fs-design"></a>将部署目标映射到 AD FS 设计
 
@@ -25,8 +24,8 @@ ms.locfileid: "71359088"
   
 |AD FS 部署目标|[Web SSO 设计](Web-SSO-Design.md)|[联合 Web SSO 设计](Federated-Web-SSO-Design.md)|  
 |---------------------------------------------------------------------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|  
-|[为声明感知应用程序和服务提供 Active Directory 用户访问权限](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)|否|是，在帐户伙伴中|  
-|[为其他组织的应用程序和服务提供 Active Directory 用户访问权限](Provide-Your-Active-Directory-Users-Access-to-the-Applications-and-Services-of-Other-Organizations.md)|否|是，在帐户伙伴中（可选）|  
+|[为声明感知应用程序和服务提供 Active Directory 用户访问权限](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)|是|是，在帐户伙伴中|  
+|[为其他组织的应用程序和服务提供 Active Directory 用户访问权限](Provide-Your-Active-Directory-Users-Access-to-the-Applications-and-Services-of-Other-Organizations.md)|是|是，在帐户伙伴中（可选）|  
 |[为另一个组织中的用户提供对声明感知应用程序和服务的访问权限](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)|是|是|  
 
 ## <a name="see-also"></a>另请参阅

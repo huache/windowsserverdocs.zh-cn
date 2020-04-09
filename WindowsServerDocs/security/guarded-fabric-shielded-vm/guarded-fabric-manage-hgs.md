@@ -1,18 +1,18 @@
 ---
 title: 管理主机保护者服务
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 41912c90beacbb0c0c285ea4da8305c1afdf2a51
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 2eb9107427ff005c1b3c27e7064d677429d817ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322599"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856550"
 ---
 # <a name="managing-the-host-guardian-service"></a>管理主机保护者服务
 
@@ -706,7 +706,7 @@ HGS 上的过期加密或签名证书不表示受防护的 Vm 的保护不受保
    $updatedKP = Get-Content -Path .\updatedVM001.kp
    Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
    ```
-12. 最后，启动 VM 并确保其成功运行。
+12.    最后，启动 VM 并确保其成功运行。
 
 > [!NOTE]
 > 如果 VM 所有者在 VM 上设置了不正确的密钥保护程序，并且未授权构造运行 VM，则无法启动受防护的 VM。

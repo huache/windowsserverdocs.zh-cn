@@ -1,24 +1,20 @@
 ---
 title: Kerberos Authentication Overview
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-kerberos
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 646c6309-e865-4be2-b415-44dd125af5c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 33712dc8502035bd9e47e1d2bdd4583eb8347dec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b5ec9bfa5c17a9ee9a5ad15af183d25bd533d7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386315"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856320"
 ---
 # <a name="kerberos-authentication-overview"></a>Kerberos Authentication Overview
 
@@ -26,12 +22,12 @@ ms.locfileid: "71386315"
 
 Kerberos 是一个用于验证用户或主机身份的身份验证协议。 本主题包含有关 Windows Server 2012 和 Windows 8 中的 Kerberos 身份验证的信息。
 
-## <a name="BKMK_OVER"></a>功能说明
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>功能描述
 Windows Server 操作系统可实现 Kerberos 版本 5 身份验证协议和对公钥身份验证的扩展，用于传输授权数据和委派。 Kerberos 身份验证客户端作为安全支持提供程序实现 \(SSP\)，并可通过安全支持提供程序接口 \(SSPI\)访问该客户端。 初始用户身份验证与对体系结构的 Winlogon 单一登录\-集成。
 
 Kerberos 密钥发行中心 \(KDC\) 与域控制器上运行的其他 Windows Server 安全服务相集成。 KDC 使用域的 Active Directory 域服务数据库作为其安全帐户数据库。 Active Directory 域服务是域或林中的默认 Kerberos 实现所必需的。
 
-## <a name="kerb_tr_Kerb_Benefits"></a>实用应用程序
+## <a name="practical-applications"></a><a name="kerb_tr_Kerb_Benefits"></a>实用应用程序
 使用 Kerberos 进行基于域\-的身份验证的好处包括：
 
 -   **委托身份验证。**
@@ -48,7 +44,7 @@ Kerberos 密钥发行中心 \(KDC\) 与域控制器上运行的其他 Windows Se
 
 -   **对服务器进行更高效的身份验证。**
 
-    在 Kerberos 出现之前，可以使用 NTLM 身份验证，它要求应用程序服务器必须连接到域控制器，以便验证每个客户端计算机或服务的身份。 使用 Kerberos 协议，可续订会话票证会将 pass\-替换为通过身份验证。 服务器不需要 \(到域控制器，除非它需要验证特权属性证书 \(PAC\)\)。 服务器可以通过检查客户端出示的凭据来验证客户端计算机的身份。 客户端计算机可以获得一次特定服务器的凭据，然后在整个网络登录会话中重复使用这些凭据。
+    在 Kerberos 出现之前，可以使用 NTLM 身份验证，它要求应用程序服务器必须连接到域控制器，以便验证每个客户端计算机或服务的身份。 使用 Kerberos 协议，可续订会话票证会将 pass\-替换为通过身份验证。 服务器不需要 \(到域控制器，除非它需要验证特权属性证书 \(PAC\)\)。 服务器可以通过检查客户端出示的凭据来验证客户端计算机的身份。 客户端计算机在获得一次特定服务器的凭据后，即可在整个网络登录会话期间重复使用这些凭据。
 
 -   **相互身份验证。**
 

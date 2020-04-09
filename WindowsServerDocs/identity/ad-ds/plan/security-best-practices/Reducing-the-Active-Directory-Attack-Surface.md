@@ -1,7 +1,6 @@
 ---
 ms.assetid: 864ad4bc-8428-4a8b-8671-cb93b68b0c03
 title: 减少 Active Directory 攻击面
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 94bc65d42fa90dd7c93ba759a41d34edec10de09
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dcd0b412e7a0005bc6574638e0f6fce4554c6487
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367655"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821050"
 ---
 # <a name="reducing-the-active-directory-attack-surface"></a>减少 Active Directory 攻击面
 
@@ -32,7 +31,7 @@ ms.locfileid: "71367655"
 本部分提供有关 Active Directory 中的特权帐户和组的背景信息，用于说明 Active Directory 中特权帐户和组之间的共性和差异。 了解这些区别后，无论你是在实现[最小权限管理模型](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)的原义还是为你的组织自定义这些建议，你都可以使用适当的工具来确保每个组和帐户的安全。  
   
 ### <a name="built-in-privileged-accounts-and-groups"></a>内置特权帐户和组  
-Active Directory 有助于委派管理，并在分配权限和权限时支持最低权限原则。 默认情况下，在域中具有帐户的 "常规" 用户可以读取目录中的大部分内容，但只能更改目录中非常有限的一组数据。 需要额外权限的用户可以被授予目录中内置的各种 "特权" 组的成员身份，以便他们可以执行与其角色相关的特定任务，但无法执行与职责无关的任务。 组织还可以创建专为特定作业责任定制的组，并向其授予了精细的权限和权限，使 IT 人员能够执行日常管理功能，而无需授予超出对于这些函数是必需的。  
+Active Directory 有助于委派管理，并在分配权限和权限时支持最低权限原则。 默认情况下，在域中具有帐户的 "常规" 用户可以读取目录中的大部分内容，但只能更改目录中非常有限的一组数据。 需要额外权限的用户可以被授予目录中内置的各种 "特权" 组的成员身份，以便他们可以执行与其角色相关的特定任务，但无法执行与职责无关的任务。 组织还可以创建专为特定作业责任定制的组，并被授予特定的权限，使 IT 员工能够执行日常管理功能，而不授予超过这些功能所需的权限。  
   
 在 Active Directory 中，三个内置组是目录中的最高特权组： Enterprise Admins、Domain Admins 和 Administrator。 以下部分介绍了每个组的默认配置和功能：  
   
@@ -43,7 +42,7 @@ Enterprise Admins （EA）是仅存在于林根域中的组，默认情况下，
   
 ##### <a name="domain-admins"></a>Domain Admins  
 
-林中的每个域都有自己的域管理员（DA）组，该组是该域的 Administrators 组的成员，并且是加入域的每台计算机上的本地管理员组的成员。 域的 DA 组唯一的默认成员是该域的内置管理员帐户。 DAs 在其域中 "功能强大"，而 EAs 具有全林性的权限。 在正确设计和实现的委派模型中，仅在 "中断玻璃" 方案中才需要域管理员成员身份（例如，在需要域中的每台计算机上具有高级权限的帐户）。 尽管本机 Active Directory 委托机制允许委托只能在紧急情况下使用 DA 帐户，但构建有效的委派模型可能会很耗时，并且许多组织都利用用于加快此过程的第三方工具。  
+林中的每个域都有自己的域管理员（DA）组，该组是该域的 Administrators 组的成员，并且是加入域的每台计算机上的本地管理员组的成员。 域的 DA 组唯一的默认成员是该域的内置管理员帐户。 DAs 在其域中 "功能强大"，而 EAs 具有全林性的权限。 在正确设计和实现的委派模型中，仅在 "中断玻璃" 方案中才需要域管理员成员身份（例如，在需要域中的每台计算机上具有高级权限的帐户）。 尽管本机 Active Directory 委托机制允许委托只能在紧急情况下使用 DA 帐户，但构建有效的委派模型可能会很耗时，并且许多组织都利用第三方工具来加快过程。  
   
 ##### <a name="administrators"></a>Administrators  
 第三个组是将 DAs 和 EAs 嵌套到其中的内置域本地管理员（BA）组。 此组被授予了目录和域控制器上的许多直接权限和权限。 但是，域的 Administrators 组对成员服务器或工作站没有特权。 它通过计算机的本地管理员组中的成员身份授予本地特权。  
@@ -55,7 +54,7 @@ Enterprise Admins （EA）是仅存在于林根域中的组，默认情况下，
 
 第四个特权组 "架构管理员" （SA）仅存在于目录林根级域中，并且仅包含该域的内置管理员帐户作为默认成员，这类似于 Enterprise Admins 组。 Schema Admins 组仅适用于临时而偶尔地填充（需要修改 AD DS 架构）。  
   
-尽管 SA 组是唯一可以修改 Active Directory 架构的组（即，目录的基础数据结构，例如对象和属性），但 SA 组的权限和权限的作用域比前面介绍的更有限组合. 还经常会发现，组织制定了适当的管理 SA 组成员资格的做法，因为组中的成员身份通常不太必要，并且仅在短时间内。 这在技术上也是 Active Directory 中的 EA、DA 和 BA 组，但在很少的情况下，可以发现组织已为这些组实现类似于 SA 组的相似做法。  
+尽管 SA 组是唯一可以修改 Active Directory 架构的组（即，目录的基础数据结构，例如对象和属性），但 SA 组的权限和权限的作用域比前面介绍的组更受限制。 还经常会发现，组织制定了适当的管理 SA 组成员资格的做法，因为组中的成员身份通常不太必要，并且仅在短时间内。 这在技术上也是 Active Directory 中的 EA、DA 和 BA 组，但在很少的情况下，可以发现组织已为这些组实现类似于 SA 组的相似做法。  
   
 #### <a name="protected-accounts-and-groups-in-active-directory"></a>Active Directory 中的受保护帐户和组  
 在 Active Directory 中，名为 "受保护" 的帐户和组的默认权限集和组的保护方式不同于目录中的其他对象。 任何受保护组中具有直接或可传递成员身份的任何帐户（无论成员身份是派生自安全组还是分发组）均继承此受限安全。  
@@ -77,7 +76,7 @@ Enterprise Admins （EA）是仅存在于林根域中的组，默认情况下，
 ||管理员|管理员|管理员|  
 ||Administrators|Administrators|Administrators|  
 |Domain Admins|Backup Operators|Backup Operators|Backup Operators|  
-||Cert Publishers|||  
+||证书发行者|||  
 ||Domain Admins|Domain Admins|Domain Admins|  
 |Enterprise Admins|域控制器|域控制器|域控制器|  
 ||Enterprise Admins|Enterprise Admins|Enterprise Admins|  
@@ -100,7 +99,7 @@ Enterprise Admins （EA）是仅存在于林根域中的组，默认情况下，
 ###### <a name="adminsdholder-ownership"></a>AdminSDHolder 所有权  
 Active Directory 中的大多数对象都属于域的 BA 组。 但是，默认情况下，AdminSDHolder 对象由域的 DA 组拥有。 （这种情况下，DAs 不会通过域 Administrators 组中的成员资格来派生其权限和权限。）  
   
-在早于 Windows Server 2008 的 Windows 版本中，对象的所有者可以更改对象的权限，包括授予自身最初没有的权限。 因此，域的 AdminSDHolder 对象上的默认权限会阻止作为 BA 或 EA 组成员的用户更改域的 AdminSDHolder 对象的权限。 但是，域的 Administrators 组的成员可以获得对象的所有权，并向自己授予额外的权限，这意味着此保护是基本的，只是保护对象以防用户意外修改。不是域中 DA 组的成员。 此外，BA 和 EA （如果适用）组有权更改本地域（EA 的根域）中的 AdminSDHolder 对象的属性。  
+在早于 Windows Server 2008 的 Windows 版本中，对象的所有者可以更改对象的权限，包括授予自身最初没有的权限。 因此，域的 AdminSDHolder 对象上的默认权限会阻止作为 BA 或 EA 组成员的用户更改域的 AdminSDHolder 对象的权限。 但是，域的 Administrators 组的成员可以获得对象的所有权，并向自己授予额外的权限，这意味着此保护是基本的，只是保护对象不受域中 DA 组成员的用户的意外修改。 此外，BA 和 EA （如果适用）组有权更改本地域（EA 的根域）中的 AdminSDHolder 对象的属性。  
   
 > [!NOTE]  
 > DSHeuristics 的 AdminSDHolder 对象上的属性允许对被视为受保护组的组进行有限的自定义（删除），并受 AdminSDHolder 和 SDProp 的影响。 如果实现此自定义项，则应认真考虑此自定义，不过，在 AdminSDHolder 中修改 dSHeuristics 的情况会很有用。 有关修改 AdminSDHolder 对象上的 dSHeuristics 属性的详细信息，请参阅 Microsoft 支持部门文章[817433](https://support.microsoft.com/?id=817433)和[973840](https://support.microsoft.com/kb/973840)，以及[附录 C： Active Directory 中的受保护帐户和组](Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  

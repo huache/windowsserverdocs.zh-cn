@@ -2,20 +2,19 @@
 title: 避免将虚拟机配置为允许未筛选的 SCSI 命令
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: dd4a3d78-a77f-451e-a383-d5cf45ea17cf
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5deb20862ed0e359febd4a9b58202d53c85058ca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac059bce1704a4e72b2c373d8186dbd4e31f2164
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365269"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857790"
 ---
 # <a name="avoid-configuring-virtual-machines-to-allow-unfiltered-scsi-commands"></a>避免将虚拟机配置为允许未筛选的 SCSI 命令
 
@@ -29,7 +28,7 @@ ms.locfileid: "71365269"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|操作|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  

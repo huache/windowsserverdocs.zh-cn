@@ -1,24 +1,20 @@
 ---
 title: goto
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e0de1458-1f78-48ff-a746-c285a945a510
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1caf3da3e8b873150af5be7ed8316cfcb526db83
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 928a9031a7f86261789676257afe95ffc3be8a99
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375690"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842560"
 ---
 # <a name="goto"></a>goto
 
@@ -34,11 +30,11 @@ ms.locfileid: "71375690"
 goto <Label> 
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|\<Label >|指定一个文本字符串，该字符串用作批处理程序中的标签。|
+|\<标签 >|指定一个文本字符串，该字符串用作批处理程序中的标签。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -62,7 +58,7 @@ goto <Label>
 
     可以将**goto**与其他命令结合使用来执行条件操作。 有关对条件运算使用**goto**的详细信息，请参阅[If](if.md)命令参考。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 以下批处理程序将驱动器 A 中的磁盘格式化为系统磁盘。 如果操作成功， **goto**命令会将处理定向到 **：结束**标签：
 ```
@@ -74,9 +70,9 @@ echo An error occurred during formatting.
 echo End of batch program. 
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 
 [Cmd](cmd.md)
 

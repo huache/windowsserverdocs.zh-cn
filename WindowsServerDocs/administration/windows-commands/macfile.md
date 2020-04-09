@@ -1,24 +1,20 @@
 ---
 title: macfile
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e2ce586c-b316-41d3-90f8-4be0d074cc0e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 194d1adaaf64ffee2a217982638ddf0661dd0369
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0156be5a3209bf8cedf13b35ceab61ef38a0f49a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374175"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840310"
 ---
 # <a name="macfile"></a>macfile
 
@@ -30,14 +26,14 @@ ms.locfileid: "71374175"
 -   [更改登录消息和限制会话](#BKMK_LogonLimit)
 -   [添加、更改或删除 Macintosh 可访问的卷](#BKMK_addvol)
 
-## <a name="BKMK_Moddirs"></a>修改 Macintosh 可访问卷中的目录
+## <a name="to-modify-directories-in-macintosh-accessible-volumes"></a><a name=BKMK_Moddirs></a>修改 Macintosh 可访问卷中的目录
 
 ### <a name="syntax"></a>语法
 ```
 macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName>] [/group:<GroupName>] [/permissions:<Permissions>]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 -   /server：\\\\<computerName> 指定要在其上更改目录的服务器。 如果省略，则在本地计算机上执行该操作。
 -   /path：<directory> 必需的。 指定要更改的目录的路径。 该目录必须存在。 **macfile 目录**不创建目录。
 -   /owner：<OwnerName> 更改目录的所有者。 如果省略，所有者将保持不变。
@@ -47,12 +43,12 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 
     |位置|设置权限|
     |------|------------|
-    |第一个|OwnerSeeFiles|
+    |First|OwnerSeeFiles|
     |第二个|OwnerSeeFolders|
     |第三个|OwnerMakechanges|
     |第四个|GroupSeeFiles|
     |第五个|GroupSeeFolders|
-    |连续|GroupMakechanges|
+    |第六个|GroupMakechanges|
     |第七个|WorldSeeFiles|
     |第|WorldSeeFolders|
     |第九个|WorldMakechanges|
@@ -63,24 +59,24 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
     在命令提示符下显示帮助。
 
 ### <a name="remarks"></a>备注
-- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如， **"** <em>computer Name</em> **"** ）。
+- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如，* * * *<em>计算机名称</em>* * * * *）。
 - 使用**macfiledirectory**将可供 macintosh 用户使用的 macintosh 可访问卷中的现有目录。 **Macfiledirectory**命令不会创建目录。 使用**macfile directory**命令之前，请使用文件管理器、命令提示符或**macintosh 新文件夹**命令在 macintosh 可访问的卷中创建一个目录。
-  ### <a name="BKMK_Examples"></a>示例
+  ### <a name="examples"></a><a name=BKMK_Examples></a>示例
   下面的示例在本地服务器的 E 驱动器上更改了在 Macintosh 可访问的卷统计信息中，子目录的权限。 该示例分配 "查看文件"、"查看文件夹" 并对所有者做出更改权限，查看文件并查看文件夹对所有其他用户的权限，同时防止目录被重命名、移动或删除。
   ```
-  macfile directory /path:"e:\statistics\may sales" /permissions:11111011000
+  macfile directory /path:e:\statistics\may sales /permissions:11111011000
   ```
 
-## <a name="BKMK_Joinforks"></a>联接 Macintosh 文件的数据和资源分叉
+## <a name="to-join-a-macintosh-files-data-and-resource-forks"></a><a name=BKMK_Joinforks></a>联接 Macintosh 文件的数据和资源分叉
 
 ### <a name="syntax"></a>语法
 ```
 macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeName>]  [/datafork:<Filepath>] [/resourcefork:<Filepath>] /targetfile:<Filepath>
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|         参数          |                                                                                                           描述                                                                                                            |
+|         参数          |                                                                                                           说明                                                                                                            |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /server：\\\\<computerName> |                                                            指定要在其上联接文件的服务器。 如果省略，则在本地计算机上执行该操作。                                                            |
 |   /creator：<CreatorName>   |                                      指定文件的创建者。 Macintosh 查找器使用 **/creator**命令行选项来确定创建该文件的应用程序。                                       |
@@ -91,27 +87,27 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 |             /?             |                                                                                               在命令提示符下显示帮助。                                                                                               |
 
 ### <a name="remarks"></a>备注
-- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如， **"** <em>computer Name</em> **"** ）。
+- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如，* * * *<em>计算机名称</em>* * * * *）。
 
 ### <a name="examples"></a>示例
-若要在 Macintosh 可访问的卷 D:\Release 上创建 treeapp 文件，请使用资源分叉 C:\Cross\Mac\Appcode，并将此新文件显示为 Macintosh 客户端（Macintosh 应用程序使用类型 APPL.EXE）和创建者（签名））设置为木兰，请键入：
+若要在 Macintosh 可访问的卷 D:\Release 上创建文件 treeapp，请使用资源分叉 C:\Cross\Mac\Appcode，若要使此新文件显示为 Macintosh 客户端（Macintosh 应用程序使用类型 APPL.EXE），并将 creator （签名）设置为木兰，请键入：
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\treeapp
 ```
 若要将文件创建者更改为 Microsoft Word 5.1，请在 server \\\SERverA 上的 documents\Group 文件中，键入以下内容：
 ```
-macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:"d:\Word documents\Group files\Word.txt"
+macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt
 ```
 
-## <a name="BKMK_LogonLimit"></a>更改登录消息和限制会话
+## <a name="to-change-the-logon-message-and-limit-sessions"></a><a name=BKMK_LogonLimit></a>更改登录消息和限制会话
 ### <a name="syntax"></a>语法
 ```
 macfile server [/server:\\<computerName>] [/maxsessions:{Number | unlimited}] [/loginmessage:<Message>]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|               参数                |                                                                                                                                                                           描述                                                                                                                                                                            |
+|               参数                |                                                                                                                                                                           说明                                                                                                                                                                            |
 |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /server：\\\\<computerName>       |                                                                                                                        指定要在其上更改参数的服务器。 如果省略，则在本地计算机上执行该操作。                                                                                                                         |
 | /maxsessions： {Number &#124;无限制} |                                                                                         指定可以同时对 Macintosh 使用文件和打印服务器的用户的最大数量。 如果省略，则服务器的**maxsessions**设置保持不变。                                                                                         |
@@ -119,24 +115,24 @@ macfile server [/server:\\<computerName>] [/maxsessions:{Number | unlimited}] [/
 |                   /?                   |                                                                                                                                                               在命令提示符下显示帮助。                                                                                                                                                               |
 
 ### <a name="remarks"></a>备注
-- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如， **"** <em>computer Name</em> **"** ）。
+- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如，* * * *<em>计算机名称</em>* * * * *）。
 
 ### <a name="examples"></a>示例
-若要更改从当前设置到5个会话中允许在本地服务器上使用的 Macintosh 会话文件和打印服务器的数量，并添加登录消息 "在完成时从服务器 for Macintosh 注销"。键入：
+若要将本地服务器上允许的 Macintosh 会话的文件和打印服务器的数目更改为5个会话，并在完成后将其从用于 Macintosh 的服务器中注销，请键入：
 ```
-macfile server /maxsessions:5 /loginmessage:"Log off from Server for Macintosh when you are finished."
+macfile server /maxsessions:5 /loginmessage:Log off from Server for Macintosh when you are finished.
 ```
 
-## <a name="BKMK_addvol"></a>添加、更改或删除 Macintosh 可访问的卷
+## <a name="to-add-change-or-remove-macintosh-accessible-volumes"></a><a name=BKMK_addvol></a>添加、更改或删除 Macintosh 可访问的卷
 ### <a name="syntax"></a>语法
 ```
 macfile volume {/add|/set} [/server:\\<computerName>] /name:<volumeName>/path:<directory>[/readonly:{true | false}] [/guestsallowed:{true | false}] [/password:<Password>] [/maxusers:{<Number>>|unlimited}]
 macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|              参数               |                                                                                                                                                                       描述                                                                                                                                                                        |
+|              参数               |                                                                                                                                                                       说明                                                                                                                                                                        |
 |--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |          {/add &#124; /set}          |                                                                                                                      在添加或更改 Macintosh 可访问的卷时是必需的。 添加或更改指定的卷。                                                                                                                       |
 |      /server：\\\\<computerName>      |                                                                                                             指定要在其上添加、更改或删除卷的服务器。 如果省略，则在本地计算机上执行该操作。                                                                                                              |
@@ -150,25 +146,25 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 |                  /?                  |                                                                                                                                                           在命令提示符下显示帮助。                                                                                                                                                           |
 
 ### <a name="remarks"></a>备注
-- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如， **"** <em>computer Name</em> **"** ）。
+- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如，* * * *<em>计算机名称</em>* * * * *）。
 
 ### <a name="examples"></a>示例
 若要在本地服务器上创建名为 "美国市场营销统计信息" 的卷，使用 E 驱动器中的 "统计信息" 目录，并指定来宾不能访问该卷，请键入：
 ```
-macfile volume /add /name:"US Marketing Statistics" /guestsallowed:false /path:e:\Stats
+macfile volume /add /name:US Marketing Statistics /guestsallowed:false /path:e:\Stats
 ```
 若要将上面创建的卷更改为只读并且需要密码，并将最大用户数设置为5，请键入：
 ```
-macfile volume /set /name:"US Marketing Statistics" /readonly:true /password:saturn /maxusers:5
+macfile volume /set /name:US Marketing Statistics /readonly:true /password:saturn /maxusers:5
 ```
 若要添加名为横向设计的卷，请在服务器上 \\\Magnolia 上，使用 E 驱动器中的树目录，并指定来宾可以访问该卷，请键入：
 ```
-macfile volume /add /server:\\Magnolia /name:"Landscape Design" /path:e:\trees
+macfile volume /add /server:\\Magnolia /name:Landscape Design /path:e:\trees
 ```
 若要删除本地服务器上名为 "销售报表" 的卷，请键入：
 ```
-macfile volume /remove /name:"Sales Reports"
+macfile volume /remove /name:Sales Reports
 ```
 
 ## <a name="additional-references"></a>其他参考
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

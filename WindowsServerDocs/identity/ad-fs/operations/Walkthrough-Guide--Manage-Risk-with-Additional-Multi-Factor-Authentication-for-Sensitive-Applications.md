@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5fd4063d-34dc-4b15-9a88-cc6c1fff455a
 title: 演练指南-利用适用于敏感应用程序的附加多重身份验证管理风险
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 08aadcf0322fcb937bdde17d18aa5d30e3da68ce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 99d1ac21953091cb69a85efa1795412a2c43493c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357795"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815950"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>操作实例指南：使用适用于敏感应用程序的附加多重身份验证管理风险
 
@@ -36,7 +35,7 @@ ms.locfileid: "71357795"
 
 -   [步骤4：验证 MFA 机制](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_4)
 
-## <a name="BKMK_1"></a>步骤1：设置实验室环境
+## <a name="step-1-setting-up-the-lab-environment"></a><a name="BKMK_1"></a>步骤1：设置实验室环境
 若要完成本操作实例，需要一个包括以下组件的环境：
 
 -   一个 Active Directory 域，其中包含一个测试用户和组帐户，在 Windows server 2012 R2 上运行，Active Directory 或者在 Windows server 2008、Windows Server 2008 R2 或 Windows Server 2012 上运行，并且其架构已升级到 Windows Server 2012 R2
@@ -54,10 +53,10 @@ ms.locfileid: "71357795"
 
 有关如何设置此环境的说明，请参阅[在 Windows Server 2012 R2 中设置 AD FS 的实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)。
 
-## <a name="BKMK_2"></a>步骤2：验证默认 AD FS 身份验证机制
-在此步骤中，你将验证默认的 AD FS 访问控制机制（适用于 Extranet 的“表单身份验证” 和适用于 Intranet 的“Windows 身份验证” ），在此过程中，用户将被重定向到 AD FS 登录页，提供有效的凭据，然后被授予应用程序的访问权限。 可以使用**Robert Hatley** AD 帐户和**claimapp**示例应用程序，该应用程序是在[为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中配置的。
+## <a name="step-2-verify-the-default-ad-fs-authentication-mechanism"></a><a name="BKMK_2"></a>步骤2：验证默认 AD FS 身份验证机制
+在此步骤中，你将验证默认的 AD FS 访问控制机制（适用于 Extranet 的“表单身份验证”和适用于 Intranet 的“Windows 身份验证”），在此过程中，用户将被重定向到 AD FS 登录页，提供有效的凭据，然后被授予应用程序的访问权限。 可以使用**Robert Hatley** AD 帐户和**claimapp**示例应用程序，该应用程序是在[为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中配置的。
 
-1.  在客户端计算机上打开一个浏览器窗口，并导航到示例应用程序： **https://webserv1.contoso.com/claimapp** 。
+1.  在客户端计算机上，打开浏览器窗口，然后导航到示例应用程序： **https://webserv1.contoso.com/claimapp** 。
 
     此操作会自动将请求重定向到联合服务器，并且系统会提示你使用用户名和密码登录。
 
@@ -65,21 +64,21 @@ ms.locfileid: "71357795"
 
     系统将授予你对应用程序的访问权限。
 
-## <a name="BKMK_3"></a>步骤3：在联合服务器上配置 MFA
+## <a name="step-3-configure-mfa-on-your-federation-server"></a><a name="BKMK_3"></a>步骤3：在联合服务器上配置 MFA
 在 Windows Server 2012 R2 的 AD FS 中，有两部分配置 MFA：
 
 -   [选择其他身份验证方法](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_5)
 
 -   [设置 MFA 策略](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_6)
 
-### <a name="BKMK_5"></a>选择其他身份验证方法
+### <a name="select-an-additional-authentication-method"></a><a name="BKMK_5"></a>选择其他身份验证方法
 若要设置 MFA，必须选择一个附加的身份验证方法。 在本操作实例中，若要选择附加身份验证方法，可以使用下列选项之一：
 
 -   选择默认情况下在 Windows Server 2012 R2 中 AD FS 可用的[证书身份验证](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_7)方法
 
 -   配置和选择 [Windows Azure Multi-Factor Authentication](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_8)
 
-#### <a name="BKMK_7"></a>证书身份验证
+#### <a name="certificate-authentication"></a><a name="BKMK_7"></a>证书身份验证
 完成下列过程之一，选择证书身份验证作为附加身份验证方法：
 
 ###### <a name="to-configure-certificate-authentication-as-an-additional-authentication-method-via-the-ad-fs-management-console"></a>通过 AD FS 管理控制台将证书身份验证配置为附加身份验证方法的步骤
@@ -100,7 +99,7 @@ ms.locfileid: "71357795"
     > [!WARNING]
     > 若要验证是否已成功运行此命令，可以运行 `Get-AdfsGlobalAuthenticationPolicy` 命令。
 
-#### <a name="BKMK_8"></a>Windows Azure 多重身份验证
+#### <a name="windows-azure-multi-factor-authentication"></a><a name="BKMK_8"></a>Windows Azure 多重身份验证
 完成以下过程，以便在联合服务器上下载并配置和选择 **Windows Azure Multi-Factor Authentication** 作为附加身份验证：
 
 1.  [通过 Windows Azure 门户创建多重身份验证提供程序](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_a)
@@ -111,17 +110,17 @@ ms.locfileid: "71357795"
 
 4.  [将 Windows Azure 多重身份验证配置为附加身份验证方法](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_d)
 
-##### <a name="BKMK_a"></a>通过 Windows Azure 门户创建多重身份验证提供程序
+##### <a name="create-a-multi-factor-authentication-provider-via-the-windows-azure-portal"></a><a name="BKMK_a"></a>通过 Windows Azure 门户创建多重身份验证提供程序
 
-1.  以管理员身份登录 Windows Azure 门户。
+1.  以管理员身份登录到 Azure 门户。
 
 2.  在左侧选择“Active Directory”。
 
-3.  在“Active Directory”页面顶部选择“多重身份验证提供程序”。  然后，在底部单击“新建”。
+3.  在“Active Directory”页面顶部选择“多重身份验证提供程序”。  然后在底部，单击“新建”。
 
 4.  在 "**应用服务->" Active Directory**中，选择 "**多重身份验证提供程序**"，然后选择 "**快速创建**"。
 
-5.  在“应用服务”下，选择“Active Authentication 提供程序”，然后选择“快速创建”。
+5.  在 **“应用服务”** 下选择 **“Active Auth 提供程序”** ，然后选择 **“快速创建”** 。
 
 6.  填写以下字段并选择“创建”。
 
@@ -137,13 +136,13 @@ ms.locfileid: "71357795"
 
     3.  **目录**-与多重身份验证提供程序关联的 Windows Azure Active Directory 租户。 这是一个可选字段，因为在保护本地应用程序时，提供程序不一定要链接到 Windows Azure Active Directory。
 
-7.  单击“创建”后，将会创建该多重身份验证提供程序，并且会显示这样一条消息：已成功创建多重身份验证提供程序。  单击“确定”。
+7.  单击“创建”后，将会创建该多重身份验证提供程序，并且会显示这样一条消息：已成功创建多重身份验证提供程序。  单击 **“确定”** 。
 
 接下来，必须下载 Windows Azure Multi-Factor Authentication 服务器。 若要执行此操作，你可以通过 Windows Azure 门户启动 Windows Azure Multi-Factor Authentication 门户。
 
-##### <a name="BKMK_b"></a>下载 Microsoft Azure 多重身份验证服务器
+##### <a name="download-the-windows-azure-multi-factor-authentication-server"></a><a name="BKMK_b"></a>下载 Microsoft Azure 多重身份验证服务器
 
-1.  以管理员身份登录 Windows Azure 门户，再单击你在上一步骤中创建的多重身份验证提供程序。 然后单击“管理” 按钮。
+1.  以管理员身份登录 Windows Azure 门户，再单击你在上一步骤中创建的多重身份验证提供程序。 然后单击“管理”按钮。
 
     这将会启动“Windows Azure Multi-Factor Authentication”门户 。
 
@@ -151,11 +150,11 @@ ms.locfileid: "71357795"
 
 下载 Windows Azure 多重身份验证服务器的可执行文件后，必须将它安装在联合服务器上。
 
-##### <a name="BKMK_c"></a>在联合服务器上安装 Microsoft Azure 多重身份验证服务器
+##### <a name="install-the-windows-azure-multi-factor-authentication-server-on-your-federation-server"></a><a name="BKMK_c"></a>在联合服务器上安装 Microsoft Azure 多重身份验证服务器
 
-1.  下载并双击 Windows Azure Multi-Factor Authentication 服务器的可执行文件。  此时将开始安装。
+1.  下载并双击 Windows Azure Multi-Factor Authentication 服务器的可执行文件。  随即将会开始安装。
 
-2.  在“许可协议” 屏幕上，阅读协议，选择“我同意”，然后单击“下一步”。
+2.  在“许可协议”屏幕上，阅读协议，选择“我同意”，然后单击“下一步”。
 
 3.  确保目标文件夹正确并单击“下一步”。
 
@@ -163,7 +162,7 @@ ms.locfileid: "71357795"
 
 现在，你可以启动安装在联合服务器上的 Windows Azure Multi-Factor Authentication 服务器，并将它配置为附加身份验证方法。
 
-##### <a name="BKMK_d"></a>将 Windows Azure 多重身份验证配置为附加身份验证方法
+##### <a name="configure-windows-azure-multi-factor-authentication-as-an-additional-authentication-method"></a><a name="BKMK_d"></a>将 Windows Azure 多重身份验证配置为附加身份验证方法
 
 1.  启动**Windows Azure 多重身份验证**，将其安装在联合服务器上，然后在 "欢迎" 页上，选中 "**跳过使用身份验证配置向导**" 复选框，并单击 "**下一步**"。
 
@@ -172,33 +171,33 @@ ms.locfileid: "71357795"
 3.  随后，“Multi-Factor Authentication 服务器” 用户界面将提示你运行“多服务器配置向导”。  选择“否”。
 
     > [!IMPORTANT]
-    > 如果实验室环境只包含一台用于完成本操作实例的联合服务器，则无需完成“多服务器配置向导”。 但是，如果你的环境包含多台联合服务器，则你必须在每台联合服务器上安装 Multi-Factor Authentication 服务器并完成“多服务器配置向导” ，这样才能在多重身份验证服务器（在联合服务器上运行）之间启用复制。
+    > 如果实验室环境只包含一台用于完成本操作实例的联合服务器，则无需完成“多服务器配置向导”。 但是，如果你的环境包含多台联合服务器，则你必须在每台联合服务器上安装 Multi-Factor Authentication 服务器并完成“多服务器配置向导”，这样才能在多重身份验证服务器（在联合服务器上运行）之间启用复制。
 
 4.  在“Multi-Factor Authentication 服务器” 用户界面中选择“用户” 图标，单击“从 Active Directory 导入”，选择 **Robert Hatley** 帐户以便在 Windows Azure Multi-Factor Authentication 中对它进行设置，然后单击“导入”。
 
-5.  在“用户” 列表中选择 **Robert Hatley** 帐户，单击“编辑”，在“编辑用户” 窗口中提供此帐户的手机号码，确保“已启用” 复选框已被选中，然后单击“应用”。
+5.  在“用户”列表中选择 **Robert Hatley** 帐户，单击“编辑”，在“编辑用户”窗口中提供此帐户的手机号码，确保“已启用”复选框已被选中，然后单击“应用”。
 
-6.  在“用户”列表中选择 **Robert Hatley** 帐户，然后单击“测试”。 在“测试用户” 窗口中，提供 **Robert Hatley** 帐户的凭据。 当手机响铃时，按 "#" 完成帐户验证。
+6.  在“用户”列表中选择 **Robert Hatley** 帐户，然后单击“测试”。 在“测试用户”窗口中，提供 **Robert Hatley** 帐户的凭据。 当手机响铃时，按 "#" 完成帐户验证。
 
 7.  在“多重身份验证服务器”用户界面中选择“AD FS”图标，确保“允许用户注册”、“允许用户选择方法”（包括“电话呼叫”和“短信”）、“使用回退安全问题”和“启用日志记录”复选框已被选中，单击“安装 AD FS 适配器”，然后完成“多重身份验证 AD FS 适配器”安装向导。
 
     > [!NOTE]
     > “多重身份验证 AD FS 适配器”安装向导将在 Active Directory 中创建一个名为“PhoneFactor Admins”的安全组，然后将联合身份验证服务的 AD FS 服务帐户添加到此组。
     > 
-    > 建议在域控制器上验证是否确实创建了“PhoneFactor Admins”组 ，以及 AD FS 服务帐户是否是此组的成员。
+    > 建议在域控制器上验证是否确实创建了“PhoneFactor Admins”组，以及 AD FS 服务帐户是否是此组的成员。
     > 
-    > 如果需要，请将 AD FS 服务帐户手动添加到域控制器上的“PhoneFactor Admins”组。
+    > 需要时，在域控制器上手动将 AD FS 服务帐户添加到 **PhoneFactor 管理员**组。
 
     有关安装 AD FS 适配器的更多详细信息，请单击多重身份验证服务器右上角的“帮助”链接。
 
 8.  若要在联合身份验证服务中注册该适配器，请在联合服务器上启动 Windows PowerShell 命令窗口并运行以下命令： `\Program Files\Multi-Factor Authentication Server\Register-MultiFactorAuthenticationAdfsAdapter.ps1`。 现在，该适配器已注册为“WindowsAzureMultiFactorAuthentication”。  若要使注册生效，必须重新启动 AD FS 服务。
 
-9. 若要将 Windows Azure Multi-Factor Authentication 配置为附加身份验证方法，请在 AD FS 管理控制台中，导航到“身份验证策略”节点，然后在“多重身份验证”部分下，单击“全局设置”子部分旁边的“编辑”链接。 在“编辑全局身份验证策略”窗口中，选择“多重身份验证”作为附加身份验证方法，然后单击“确定”。
+9. 若要将 Windows Azure Multi-Factor Authentication 配置为附加身份验证方法，请在 AD FS 管理控制台中，导航到“身份验证策略”节点，然后在“多重身份验证”部分下，单击“全局设置”子部分旁边的“编辑”链接。 在“编辑全局身份验证策略”窗口中，选择“多重身份验证”作为其他身份验证方法，然后单击“确定”。
 
     > [!NOTE]
     > 可以通过运行 **Set-AdfsAuthenticationProviderWebContent** cmdlet 来自定义 Windows Azure Multi-Factor Authentication 方法以及配置的任何第三方身份验证方法的名称和说明，如 AD FS UI 所示。 有关详细信息，请参阅[https://technet.microsoft.com/library/dn479401.aspx](https://technet.microsoft.com/library/dn479401.aspx)
 
-### <a name="BKMK_6"></a>设置 MFA 策略
+### <a name="set-up-mfa-policy"></a><a name="BKMK_6"></a>设置 MFA 策略
 若要启用 MFA，必须在联合服务器上设置 MFA 策略。 对于本演练，根据我们的 MFA 策略，需要**Robert Hatley**帐户进行 MFA，因为他属于在[为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中设置的**财务**组。
 
 可以通过 AD FS 管理控制台或使用 Windows PowerShell 来设置 MFA 策略。
@@ -232,10 +231,10 @@ ms.locfileid: "71357795"
     > [!NOTE]
     > 确保将 <group_SID> 替换为 AD 组 **Finance** 的 SID 值。
 
-## <a name="BKMK_4"></a>步骤4：验证 MFA 机制
+## <a name="step-4-verify-mfa-mechanism"></a><a name="BKMK_4"></a>步骤4：验证 MFA 机制
 此步骤将验证你在前一步骤中设置的 MFA 功能。 可以使用以下过程来验证 **Robert Hatley** AD 用户是否可以访问你的示例应用程序。这一次需要运行 MFA，因为它属于 **Finance** 组。
 
-1.  在客户端计算机上打开一个浏览器窗口，并导航到示例应用程序： **https://webserv1.contoso.com/claimapp** 。
+1.  在客户端计算机上，打开浏览器窗口，然后导航到示例应用程序： **https://webserv1.contoso.com/claimapp** 。
 
     此操作会自动将请求重定向到联合服务器，并且系统会提示你使用用户名和密码登录。
 

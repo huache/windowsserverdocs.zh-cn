@@ -1,24 +1,20 @@
 ---
 title: wevtutil
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 wevtutil 的 Windows 命令主题，可用于检索有关事件日志和发布服务器的信息。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d4c791e0-7e59-45c5-aa55-0223b77a4822 vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21f3b721a2a08a7fa101ec09f1f11b5e984f0113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 62be2b14373457a3b114e8d067e1c7aa32b2182d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362175"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829350"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -40,9 +36,9 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 [{cl | clear-log} <Logname> [/bu:<Backup>]] [/r:<Remote>] [/u:<Username>] [/p:<Password>] [/a:<Auth>] [/uni:<Unicode>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |{el \| 枚举-日志}|显示所有日志的名称。|
 |{gl \| 获取日志} \<Logname > [/f：\<格式 >]|显示指定日志的配置信息，其中包括日志是否已启用、日志的当前最大大小限制以及日志所存储到文件的路径。|
@@ -57,9 +53,9 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |{al \| 存档-log} \<Logpath > [/l：\<Locale >]|以自包含格式存档指定的日志文件。 将创建一个子目录，其中包含区域设置的名称，并将所有特定于区域设置的信息保存在该子目录中。 通过运行**wevtutil al**创建目录和日志文件之后，无论是否安装了发布服务器，都可以读取文件中的事件。|
 |{cl \| clear-log} \<Logname > [/bu：\<备份 >]|从指定的事件日志中清除事件。 可以使用 **/bu**选项来备份已清除的事件。|
 
-## <a name="options"></a>选项
+## <a name="options"></a>Options
 
-|       选项       |                                                                                                                                                                                                                                                                 描述                                                                                                                                                                                                                                                                  |
+|       选项       |                                                                                                                                                                                                                                                                 说明                                                                                                                                                                                                                                                                  |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /f：\<格式 >    |                                                                                                                                                               指定输出应为 XML 格式或文本格式。 如果 \<格式 > 为 XML，则输出以 XML 格式显示。 如果 \<格式 > 是文本，则显示不带 XML 标记的输出。 默认值为 Text。                                                                                                                                                                |
 |   /e：\<已启用 >    |                                                                                                                                                                                                                                         启用或禁用日志。 \<启用 > 可以为 true 或 false。                                                                                                                                                                                                                                          |
@@ -87,7 +83,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |   /bu：\<备份 >    |                                                                                                                                                                                                      指定将在其中存储已清除事件的文件的路径。 在备份文件的名称中包含 .evtx 扩展名。                                                                                                                                                                                                       |
 |    /r：\<远程 >    |                                                                                                                                                                                            在远程计算机上运行命令。 \<远程 > 是远程计算机的名称。 **Im**和**um**参数不支持远程操作。                                                                                                                                                                                            |
 |   /u：\<用户名 >   |                                                                                                                                                                          指定其他用户登录到远程计算机。 \<用户名 "> 是" 域 \ 用户 "或" 用户 "格式的用户名。 仅当指定 **/r**选项时，此选项才适用。                                                                                                                                                                          |
-|   /p：\<密码 >   |                                                                                                                                               指定用户的密码。 如果使用了 **/u**选项并且未指定此选项，或 \<密码 > 为 " *"，则系统会提示用户输入密码。仅当指定了 \*\*/u\* 选项时，此选项才适用*。                                                                                                                                                |
+|   /p：\<密码 >   |                                                                                                                                               指定用户的密码。 如果使用了 **/u**选项并且未指定此选项，或 \<密码 > 为 *，则系统将提示用户输入密码。仅当指定了 \*\*/u\* 选项时，此选项才适用*。                                                                                                                                                |
 |     /a：\<Auth >     |                                                                                                                                                                                             定义用于连接到远程计算机的身份验证类型。 \<身份验证 > 可以是默认值、协商、Kerberos 或 NTLM。 默认值为 "协商"。                                                                                                                                                                                              |
 |  /uni：\<Unicode >   |                                                                                                                                                                                                             以 Unicode 格式显示输出。 \<Unicode > 可以为 true 或 false。 如果 <Unicode> 为 true，则输出为 Unicode。                                                                                                                                                                                                             |
 
@@ -97,9 +93,9 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 
     配置文件是一个 XML 文件，其格式与 wevtutil gl 的输出 \<Logname >/f： xml 相同。 以下示例显示了配置文件的格式，该配置文件启用保留、启用 autobackup 并设置应用程序日志的最大日志大小：  
     ```
-    <?xml version="1.0" encoding="UTF-8"?>
-    <channel name="Application" isolation="Application"
-    xmlns="https://schemas.microsoft.com/win/2004/08/events">
+    <?xml version=1.0 encoding=UTF-8?>
+    <channel name=Application isolation=Application
+    xmlns=https://schemas.microsoft.com/win/2004/08/events>
     <logging>
     <retention>true</retention>
     <autoBackup>true</autoBackup>
@@ -110,7 +106,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
     </channel>
     ```
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 列出所有日志的名称：
 ```
@@ -155,4 +151,4 @@ wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 
 #### <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

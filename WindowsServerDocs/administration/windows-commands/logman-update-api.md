@@ -1,24 +1,20 @@
 ---
 title: logman 更新 api
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8e5a45270ec0ed70928688728abceb5bcb8bb29
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7739098343f7b98b0812a9b7199dea2da044786e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374368"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840590"
 ---
 # <a name="logman-update-api"></a>logman 更新 api
 
@@ -30,9 +26,9 @@ ms.locfileid: "71374368"
 ```  
 logman update api <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>参数  
+### <a name="parameters"></a>参数  
 
-|                    参数                     |                                                                               描述                                                                               |
+|                    参数                     |                                                                               说明                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                        /?                        |                                                                    显示区分上下文的帮助。                                                                     |
 |                -s <computer name>                |                                                          在指定的远程计算机上执行命令。                                                          |
@@ -63,11 +59,11 @@ logman update api <[-n] <name>> [options]
 
 ## <a name="remarks"></a>备注  
 其中列出了 [-]，额外-会对选项求反。  
-## <a name="BKMK_examples"></a>示例  
+## <a name="examples"></a><a name=BKMK_examples></a>示例  
 下面的命令通过排除模块 kernel32.dll 生成的 API 调用 TlsGetValue，为可执行文件 c:\windows\notepad.exe 更新名为 trace_notepad 的现有 API 跟踪计数器。  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue  
 ```  
-#### <a name="additional-references"></a>其他参考  
+## <a name="additional-references"></a>其他参考  
 [logman](logman.md)  
 [logman 创建 api](logman-create-api.md)  

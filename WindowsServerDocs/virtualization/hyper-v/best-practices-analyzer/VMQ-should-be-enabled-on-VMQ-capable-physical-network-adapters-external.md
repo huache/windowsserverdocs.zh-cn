@@ -2,20 +2,19 @@
 title: 应在绑定到外部虚拟交换机的支持 VMQ 的物理网络适配器上启用 VMQ。
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 93d1b155-bf44-46b0-bb69-d34d5b30e574
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: e8607ee891ef693d4e4e7a868540237855aebd2e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a66c1c4580f8ecda90caa5446e74bc9b12ac0476
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393286"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855040"
 ---
 # <a name="vmq-should-be-enabled-on-vmq-capable-physical-network-adapters-bound-to-an-external-virtual-switch"></a>应在绑定到外部虚拟交换机的支持 VMQ 的物理网络适配器上启用 VMQ。
 
@@ -27,7 +26,7 @@ ms.locfileid: "71393286"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  

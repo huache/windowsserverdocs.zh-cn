@@ -5,15 +5,14 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: e65db8834bd0b059dc7bbebbcaf9288fb46da225
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3b47e1abf3805b7e6e3dc180d5d937ddb2723fa4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369676"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827540"
 ---
 # <a name="health-service-reports"></a>运行状况服务报表
 > 适用于： Windows Server 2019、Windows Server 2016
@@ -213,15 +212,15 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 每个指标仅有三个属性，每个表。
 
-| **Property** | **示例**       |
+| **知识产权** | **示例**       |
 | -------------|-------------------|
 | 名称         | IOLatencyAverage  |
 | 值        | 0.00021           |
-| 计算        | 3                 |
+| 单位        | 3                 |
 
 单位 = {0，1，2，3，4}，其中 0 = "字节"，1 = "BytesPerSecond"，2 = "CountPerSecond"，3 = "秒"，或 4 = "百分比"。
 
-## <a name="coverage"></a>覆盖范围
+## <a name="coverage"></a>涵盖范围广
 
 下面是适用于 Windows Server 2016 中每个作用域的指标。
 

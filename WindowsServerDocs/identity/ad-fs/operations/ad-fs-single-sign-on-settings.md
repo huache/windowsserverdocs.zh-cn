@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1a443181-7ded-4912-8e40-5aa447faf00c
 title: AD FS 2016 单一登录设置
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 76c34dc518f4578b4ae2ead3459f1d79c191b3d7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bad6ad9a95618239825366187c8083c1fe77ae94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949190"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860080"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS 单一登录设置
 
@@ -40,7 +39,7 @@ AD FS 支持多种类型的单一登录体验：
   
      在 OAuth 情况下，刷新令牌用于维护特定应用程序范围内用户的 SSO 状态。  
   
-     如果注册了某个设备，则 AD FS 将基于已注册设备的永久 SSO cookie 生存期设置刷新令牌的过期时间，默认情况下，对于 AD FS 2012R2 为7天 2016 AD FS 90，如果使用其设备访问14天窗口中 AD FS 的资源。 
+     如果注册了某个设备，则 AD FS 将基于已注册设备的永久 SSO cookie 生存期（默认为7天）设置刷新令牌的过期时间，该时间为 AD FS 2012R2 的默认值为7天，如果使用其设备在14天内使用其设备访问 AD FS 资源，则为最多 90 2016 AD FS 天。 
 
 如果设备未注册，但用户选择 "使我保持登录状态" 选项，则刷新令牌的过期时间将等于 "使我保持登录状态" 的持久 SSO cookie 生存期，默认值为1天，最大值为7天。 否则，刷新令牌生存期等于会话 SSO cookie 生存期，默认情况下为8小时  
   
@@ -48,7 +47,7 @@ AD FS 支持多种类型的单一登录体验：
  
  对于 Windows Server 2012 R2，若要为 "使我保持登录" 方案启用 PSSO，需要安装此[修补程序](https://support.microsoft.com/kb/2958298/)，它也是[windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 的8月2014更新汇总](https://support.microsoft.com/kb/2975719)的一部分。   
 
-任务 | PowerShell | 描述
+任务 | PowerShell | 说明
 ------------ | ------------- | -------------
 启用/禁用永久性 SSO | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| 默认情况下启用持久性 SSO。 如果已禁用，则不会写入任何 PSSO cookie。
 "启用/禁用" 使我保持登录 " | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | 默认情况下禁用 "使我保持登录状态" 功能。 如果已启用，最终用户将在 AD FS 登录页上看到 "使我保持登录状态" 选项
@@ -96,7 +95,7 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ```   
 
 ## <a name="multi-factor-authentication-mfa-behavior"></a>多重身份验证（MFA）行为  
-请务必注意，尽管提供相对较长的单一登录时间段，但当上一次登录时，AD FS 会提示进行附加身份验证（多重身份验证）。需要 MFA。  这与 SSO 配置无关。 AD FS，当接收到身份验证请求时，首先确定是否有 SSO 上下文（如 cookie），然后，如果需要 MFA （例如，如果请求来自外部），它将评估 SSO 上下文是否包含 MFA。  否则，系统会提示 MFA。  
+请务必注意，尽管提供相对较长的单一登录时间段，但当上一次登录时，AD FS 会提示进行附加身份验证（多重身份验证），但当前登录需要进行 MFA。  这与 SSO 配置无关。 AD FS，当接收到身份验证请求时，首先确定是否有 SSO 上下文（如 cookie），然后，如果需要 MFA （例如，如果请求来自外部），它将评估 SSO 上下文是否包含 MFA。  否则，系统会提示 MFA。  
 
 
   
@@ -165,21 +164,21 @@ c:[Type == "https://schemas.microsoft.com/2014/03/psso"]
  <tr align="center">
     <td>SSO =&gt;设置刷新令牌 =&gt;</td>
     <td>8小时</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>不可用</td>
+    <td>不可用</td>
     <th></th>
     <td>8小时</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>不可用</td>
+    <td>不可用</td>
   </tr>
 
  <tr align="center">
     <td>PSSO =&gt;设置刷新令牌 =&gt;</td>
-    <td>N/A</td>
+    <td>不可用</td>
     <td>24小时</td>
     <td>7 天</td>
     <th></th>
-    <td>N/A</td>
+    <td>不可用</td>
     <td>24小时</td>
     <td>最长90天，最长14天</td>
   </tr>

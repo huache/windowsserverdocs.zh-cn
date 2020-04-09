@@ -1,24 +1,20 @@
 ---
 title: manage-bde changekey
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 69463db9-7e03-47ff-b233-a95d5055725f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0fc273bc84e0bc25a7409941af6dca02b6042640
-ms.sourcegitcommit: 479ad84a0d6c7c7b8308122b8bac8308cb36fe9b
+ms.openlocfilehash: 2885723f7712ee507fb43465035513bc8c7a1b2b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391702"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840190"
 ---
 # <a name="manage-bde-changekey"></a>manage-bde： changekey
 
@@ -32,7 +28,7 @@ ms.locfileid: "80391702"
 manage-bde -changekey [<Drive>] [<PathToExternalKeyDirectory>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |参数|说明|
 |---------|-----------|
@@ -43,14 +39,14 @@ manage-bde -changekey [<Drive>] [<PathToExternalKeyDirectory>] [-computername <N
 |-? 或 /?|在命令提示符下显示 brief Help。|
 |-help 或-h|在命令提示符下显示完整的帮助。|
 
-## <a name="examples"></a><a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 
 以下示例演示了如何使用 **-changekey**命令在驱动器 E 上创建新的启动密钥，以便在驱动器 C 上与 BitLocker 加密配合使用。
 ```
 manage-bde -changekey C: E:\
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

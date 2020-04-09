@@ -1,23 +1,19 @@
 ---
 title: wecutil
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 wecutil 的 Windows 命令主题，可用于创建和管理从远程计算机转发的事件的订阅。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimps
-ms.openlocfilehash: 78005a715a0dbd20124bfb24be27586a8e153310
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2bb397ace7cc99c8b8d6bbed3598346ff2d0801c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362188"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829431"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -39,22 +35,22 @@ wecutil  [{es | enum-subscription}]
 [{qc | quick-config} [/q:[<Quiet>]]].
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |{es \| 枚举}|显示存在的所有远程事件订阅的名称。|
 |{gs \| 获取订阅} \<Subid > [/f：\<格式 >] [/uni：\<Unicode >]|显示远程订阅配置信息。 \<Subid > 是唯一标识订阅的字符串。 \<Subid > 与用于创建订阅的 XML 配置文件的 \<SubscriptionId > 标记中指定的字符串相同。|
 |{gr \| subscriptionruntimestatus} \<Subid > [\<Eventsource > ...]|显示订阅的运行时状态。 \<Subid > 是唯一标识订阅的字符串。 \<Subid > 与用于创建订阅的 XML 配置文件的 \<SubscriptionId > 标记中指定的字符串相同。 \<Eventsource > 是一个字符串，用于标识用作事件源的计算机。 \<Eventsource > 应为完全限定的域名、NetBIOS 名称或 IP 地址。|
-|{ss \| 集-订阅} \<Subid > [/e： [\<Subenabled >]] [/esa：\<Address >] [/ese： [\<Srcenabled >]] [/aes] [/res] [/un：\<用户名 >] [/up：\<密码 >] [/d：\<Desc >] [/uri：\<Uri >] [/cm：\<Configmode >] [/ex：\<Expires >] [/q：\<查询 >] [/dia：\<方言 >] [/tn：\<Net-transportname >：\<Deliverymode >] [/dmi：\<Deliverymax >] [/dmlt：\<Deliverytime >] [/hi：\<检测信号 >] [/cf：\<内容 >] [/l：\<区域设置 >] [/ree： [\<Readexist >]] [/lf：\<日志文件 >] [/pn：\<Publishername >] [/essp：\<Hostname >] [Enableport：\<类型 >]\<\<</br>或者</br>{ss \| 集-订阅/c：\<Read-configfile > [/cun：\<Comusername >/cup：\<Compassword >]|更改订阅配置。 您可以指定订阅 ID 以及用于更改订阅参数的适当选项，也可以指定一个 XML 配置文件来更改订阅参数。|
+|{ss \| 集-订阅} \<Subid > [/e： [\<Subenabled >]] [/esa：\<Address >] [/ese： [\<Srcenabled >]] [/aes] [/res] [/un：\<Username >] [/up：\<Password >] [/d：\<>] [/uri：\<Uri >] [/cm：\<Configmode >] [/ex：\<Expires >] [/q：\<查询 >] [/dia：\<方言 >] [/tn：\<Net-transportname >] [/tp：\<Transportport >] [/dm：\<Deliverymode >] [/dmi：\<Deliverymax >] [/dmlt：\<Deliverytime >] [/hi：\<检测信号 >] [/cf：\<内容 >] [/l：\<区域设置 >] [/ree： [\<Readexist >]] [/lf：\<日志文件 >] [/pn：\<Publishername >] [/essp：\<>\<] [Enableport： > 类型\<]</br>或者</br>{ss \| 集-订阅/c：\<Read-configfile > [/cun：\<Comusername >/cup：\<Compassword >]|更改订阅配置。 您可以指定订阅 ID 以及用于更改订阅参数的适当选项，也可以指定一个 XML 配置文件来更改订阅参数。|
 |{cs \| 创建订阅} \<： > [/cun：\<用户名 >/cup：\<密码 >]|创建远程订阅。 \<Read-configfile > 指定包含订阅配置的 XML 文件的路径。 路径可以是相对于当前目录的绝对路径或相对路径。|
 |{ds \| delete} \<Subid >|删除订阅并从将事件传递给订阅的事件日志的所有事件源取消订阅。 已收到并记录的任何事件都不会被删除。 \<Subid > 是唯一标识订阅的字符串。 \<Subid > 与用于创建订阅的 XML 配置文件的 \<SubscriptionId > 标记中指定的字符串相同。|
 |{rs \| 重试-订阅} \<Subid > [\<Eventsource > ...]|重试建立连接并向非活动订阅发送远程订阅请求。 尝试重新激活所有事件源或指定的事件源。 不会重试禁用的源。 \<Subid > 是唯一标识订阅的字符串。 \<Subid > 与用于创建订阅的 XML 配置文件的 \<SubscriptionId > 标记中指定的字符串相同。 \<Eventsource > 是一个字符串，用于标识用作事件源的计算机。 \<Eventsource > 应为完全限定的域名、NetBIOS 名称或 IP 地址。|
 |{qc \| 快速配置}[/q： [\<Quiet >]]|配置 Windows 事件收集器服务，以确保可以通过重新启动来创建和保持订阅的持续时间。 这包括以下步骤：</br>1. 如果 ForwardedEvents 通道处于禁用状态，则启用它。</br>2. 将 Windows 事件收集器服务设置为 "延迟启动"。</br>3. 如果 Windows 事件收集器服务未运行，请启动该服务。|
 
-## <a name="options"></a>选项
+## <a name="options"></a>Options
 
-|选项|描述|
+|选项|说明|
 |------|-----------|
 |/f：\<格式 >|指定显示的信息的格式。 \<格式 > 可以是 XML 或简要。 如果 <Format> 为 XML，则输出以 XML 格式显示。 如果 \<格式 > 为简要，则输出将以名称-值对显示。 默认值为简要。|
 |/c：\<Read-configfile >|指定包含订阅配置的 XML 文件的路径。 路径可以是相对于当前目录的绝对路径或相对路径。 此选项只能与 **/cun**和 **/cup**选项一起使用，并且与所有其他选项互相排斥。|
@@ -78,7 +74,7 @@ wecutil  [{es | enum-subscription}]
 |/dmlt：\<Deliverytime >|设置提供一批事件时的最大延迟。 \<Deliverytime > 是毫秒数。 仅当 **/cm**设置为 Custom 时，此选项才有效。|
 |/hi：\<检测信号 >|定义检测信号间隔。 \<检测信号 > 是毫秒数。 仅当 **/cm**设置为 Custom 时，此选项才有效。|
 |/cf：\<内容 >|指定返回的事件的格式。 \<内容 > 可以是事件或 RenderedText。 如果值为 RenderedText，则会返回附加到事件的已本地化字符串（例如事件描述）的事件。 默认值为 RenderedText。|
-|/l：\<区域设置 >|指定以 RenderedText 格式传递本地化字符串的区域设置。 \<区域设置 > 为语言和国家/地区标识符，例如 "EN-US"。 仅当 **/cf**选项设置为 RenderedText 时，此选项才有效。|
+|/l：\<区域设置 >|指定以 RenderedText 格式传递本地化字符串的区域设置。 \<区域设置 > 为语言和国家/地区标识符，例如 EN-US。 仅当 **/cf**选项设置为 RenderedText 时，此选项才有效。|
 |/ree： [\<Readexist >]|标识为订阅传递的事件。 \<Readexist > 可以为 true 或 false。 如果 <Readexist> 为 true，则会从订阅事件源中读取所有现有事件。 如果 <Readexist> 为 false，则只传递未来的（到达的）事件。 对于没有值的 **/ree**选项，默认值为 true。 如果未指定 **/ree**选项，则默认值为 false。|
 |/lf：\<日志文件 >|指定用于存储从事件源接收的事件的本地事件日志。|
 |/pn：\<Publishername >|指定发布服务器名称。 它必须是拥有或导入 **/lf**选项指定的日志的发布者。|
@@ -96,7 +92,7 @@ wecutil  [{es | enum-subscription}]
 
 - 下面的示例显示了配置文件的内容：  
   ```
-  <Subscription xmlns="https://schemas.microsoft.com/2006/03/windows/events/subscription">
+  <Subscription xmlns=https://schemas.microsoft.com/2006/03/windows/events/subscription>
   <Uri>https://schemas.microsoft.com/wbem/wsman/1/windows/EventLog</Uri>
   <!-- Use Normal (default), Custom, MinLatency, MinBandwidth -->
   <ConfigurationMode>Normal</ConfigurationMode>
@@ -104,24 +100,24 @@ wecutil  [{es | enum-subscription}]
   <SubscriptionId>SampleSubscription</SubscriptionId>
   <Query><![CDATA[
   <QueryList>
-  <Query Path="Application">
+  <Query Path=Application>
   <Select>*</Select>
   </Query>
   </QueryList>
   ]]></Query>
   <EventSources>
-  <EventSource Enabled="true">
+  <EventSource Enabled=true>
   <Address>mySource.myDomain.com</Address>
   <UserName>myUserName</UserName>
   <Password>*</Password>
   </EventSource>
   </EventSources>
   <CredentialsType>Default</CredentialsType>
-  <Locale Language="EN-US"></Locale>
+  <Locale Language=EN-US></Locale>
   </Subscription>
   ```
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 输出名为 sub1 的订阅的配置信息：
 ```
@@ -164,6 +160,6 @@ wecutil cs subscription.xml
 wecutil ds sub1
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

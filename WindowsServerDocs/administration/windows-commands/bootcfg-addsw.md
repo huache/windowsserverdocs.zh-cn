@@ -1,24 +1,20 @@
 ---
 title: bootcfg addsw
-description: 适用于**bootcfg addsw**的 Windows 命令主题-为指定的操作系统条目添加操作系统加载选项。
-ms.custom: na
+description: 适用于 bootcfg addsw 的 Windows 命令主题，用于为指定的操作系统条目添加操作系统加载选项。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d8389293-ecd9-42f0-b84b-b9ead4cf52e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2dd727c839babe1ae4f7743285844f35cf5bf76e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a9ae5175dfc3b068276f6ab95d6823699c96b2b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380178"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848710"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 
@@ -30,9 +26,9 @@ ms.locfileid: "71380178"
 ```
 bootcfg /addsw [/s <computer> [/u <Domain>\<User> /p <Password>]] [/mm <MaximumRAM>] [/bv] [/so] [/ng] /id <OSEntryLineNum>
 ```
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|         术语         |                                                                                                            定义                                                                                                            |
+|         术语         |                                                                                                            Definition                                                                                                            |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>     |                                                        指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                                        |
 | /u <Domain>\\<User>  |               使用 <User> 或 <Domain>\\<User>指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。               |
@@ -44,7 +40,7 @@ bootcfg /addsw [/s <computer> [/u <Domain>\<User> /p <Password>]] [/mm <MaximumR
 | /id <OSEntryLineNum> | 指定 Boot.ini 文件的 [操作系统] 部分中添加了操作系统加载选项的操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。 |
 |          /?          |                                                                                               在命令提示符下显示帮助。                                                                                               |
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 下面的示例演示如何使用**bootcfg/addsw**命令：
 ```
 bootcfg /addsw /mm 64 /id 2 
@@ -53,5 +49,5 @@ bootcfg /addsw /so /ng /s srvmain /u hiropln /id 2
 bootcfg /addsw /ng /id 2 
 bootcfg /addsw /mm 96 /ng /s srvmain /u maindom\hiropln /p p@ssW23 /id 2
 ```
-#### <a name="additional-references"></a>其他参考
-[命令行语法项](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他参考
+- [命令行语法项](command-line-syntax-key.md)

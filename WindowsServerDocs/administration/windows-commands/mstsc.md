@@ -1,33 +1,29 @@
 ---
 title: mstsc
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd68defd56f5e0b910c9505d6b159d242c95e6f0
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: e5accd56ea622b85966bf0cb95750d8bb2d97e42
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259092"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839070"
 ---
 # <a name="mstsc"></a>mstsc
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-创建与远程桌面会话主机（rd 会话主机）服务器或其他远程计算机的连接，编辑现有远程桌面连接（.rdp）配置文件，并迁移使用客户端连接管理器创建的旧连接文件到新的 .rdp 连接文件。
+创建与远程桌面会话主机（rd 会话主机）服务器或其他远程计算机的连接，编辑现有远程桌面连接（.rdp）配置文件，并将使用客户端连接管理器创建的旧连接文件迁移到新的 .rdp 连接文件。
 有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，“终端服务”被重命名为“远程桌面服务”。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
 
 ## <a name="syntax"></a>语法
 ```
@@ -36,9 +32,9 @@ mstsc.exe /edit <Connection File>
 mstsc.exe /migrate
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|        参数        |                                                         描述                                                         |
+|        参数        |                                                         说明                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   指定用于连接的 .rdp 文件的名称。                                    |
 |  /v： < Server\>[： < 端口\>] |                指定远程计算机，还可以选择要连接到的端口号。                 |
@@ -56,7 +52,7 @@ mstsc.exe /migrate
 -   默认情况下，将为每个用户在用户的 Documents 文件夹中存储为隐藏文件。 用户创建的 .rdp 文件默认保存在用户的 Documents 文件夹中，但可以保存在任何位置。
 -   若要跨越多台监视器，监视器必须使用相同的分辨率，并且必须水平对齐（即并排）。 目前不支持跨越在客户端系统上垂直放置的多台监视器。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 -   若要以全屏模式连接到会话，请键入：
     ```
     mstsc /f
@@ -66,6 +62,6 @@ mstsc.exe /migrate
     mstsc /edit filename.rdp
     ```
 
-#### <a name="additional-references"></a>其他参考
--   [命令行语法项](command-line-syntax-key.md)
--   [远程桌面服务&#40;终端服务&#41;命令参考](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>其他参考
+-   - [命令行语法项](command-line-syntax-key.md)
+-   [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

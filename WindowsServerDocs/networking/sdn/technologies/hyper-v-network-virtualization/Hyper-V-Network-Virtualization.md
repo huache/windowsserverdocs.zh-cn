@@ -1,23 +1,19 @@
 ---
 title: Hyper-V 网络虚拟化
 description: 本主题提供有关 Windows Server 2016 中的 Hyper-v 网络虚拟化内容的链接。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 150976f0-ccd5-487a-a458-92261444a846
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: a99fed5fb173ed2ef0698ab5c10bcf872e9abea8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 4bd2af103507610e1837f1e4f8e2b36678b14b55
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317243"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854300"
 ---
 # <a name="hyper-v-network-virtualization"></a>Hyper-V 网络虚拟化
 
@@ -33,4 +29,4 @@ Hyper-v 网络虚拟化（HNV）是在 Windows Server 2012 中引入的，它支
   
 |||  
 |-|-|  
-|![云](../../../media/Hyper-V-Network-Virtualization/All_Symbols_Cloud.png)|你是否知道 Microsoft Azure 在云中提供类似的功能？ 了解有关 [Microsoft Azure 虚拟化解决方案](https://aka.ms/f9bh7g)的详细信息。<br /><br />在 Microsoft Azure 中创建混合虚拟化解决方案：<br />- [通过站点到站点 VPN 将本地网络连接到 azure，并将 Active Directory 扩展到 azure 中的 IAAS VM DC](https://aka.ms/d1dinb)|  
+|![云](../../../media/Hyper-V-Network-Virtualization/All_Symbols_Cloud.png)|你是否知道 Microsoft Azure 在云中提供类似的功能？ 了解有关 [Microsoft Azure 虚拟化解决方案](https://aka.ms/f9bh7g)的详细信息。<p>在 Microsoft Azure 中创建混合虚拟化解决方案：<br />- [通过站点到站点 VPN 将本地网络连接到 azure，并将 Active Directory 扩展到 azure 中的 IAAS VM DC](https://aka.ms/d1dinb)|  

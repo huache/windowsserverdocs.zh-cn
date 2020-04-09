@@ -1,7 +1,6 @@
 ---
 ms.assetid: e3d55565-ad45-4504-ad73-8103d1a92170
 title: 安装新的 Windows Server 2012 Active Directory 子域或树域（级别 200）
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d0944377739f43ea5d9b8d0d9c94c13e9f18985f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f7244b76364c8e2ce7249af8e76825a08b2a75c8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390894"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825330"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-child-or-tree-domain-level-200"></a>安装新的 Windows Server 2012 Active Directory 子域或树域（级别 200）
 
@@ -28,22 +27,22 @@ ms.locfileid: "71390894"
   
 -   [部署](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_Deployment)  
   
-## <a name="BKMK_Workflow"></a>子工作流和树域工作流  
+## <a name="child-and-tree-domain-workflow"></a><a name="BKMK_Workflow"></a>子工作流和树域工作流  
 当你之前已安装 AD DS 角色，并且已使用服务器管理器启动 Active Directory 域服务配置向导以在现有林中创建新域时，下图说明了此情况下的 Active Directory 域服务配置过程。  
   
 ![安装新的 AD 子项](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/adds_childtreedeploy_beta1.png)  
   
-## <a name="BKMK_PS"></a>子域和树域 Windows PowerShell  
+## <a name="child-and-tree-domain-windows-powershell"></a><a name="BKMK_PS"></a>子域和树域 Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment Cmdlet**|参数（需要**加粗**参数。 *斜体*参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。）|  
-|**安装-Install-addsdomain**|-Skipprechecks 不可<br /><br />***-NewDomainName***<br /><br />***-ParentDomainName***<br /><br />***-SafeModeAdministratorPassword***<br /><br />*-ADPrepCredential*<br /><br />-AllowDomainReinstall<br /><br />-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-NoDNSOnNetwork<br /><br />*-DomainMode*<br /><br />***-DomainType***<br /><br />-Force<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />*-NewDomainNetBIOSName*<br /><br />*-NoGlobalCatalog*<br /><br />-NoNorebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />*-SiteName*<br /><br />-SkipAutoConfigureDNS<br /><br />*-SYSVOLPath*<br /><br />*-Whatif*|  
+|**安装-Install-addsdomain**|-SkipPreChecks<p>***-NewDomainName***<p>***-ParentDomainName***<p>***-SafeModeAdministratorPassword***<p>*-ADPrepCredential*<p>-AllowDomainReinstall<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-NoDNSOnNetwork<p>*-DomainMode*<p>***-DomainType***<p>-Force<p>*-InstallDNS*<p>*-LogPath*<p>*-NewDomainNetBIOSName*<p>*-NoGlobalCatalog*<p>-NoNorebootoncompletion<p>*-ReplicationSourceDC*<p>*-SiteName*<p>-SkipAutoConfigureDNS<p>*-SYSVOLPath*<p>*-Whatif*|  
   
 > [!NOTE]  
 > 仅在当前未作为 Enterprise Admins 组成员登录时需要 **-credential** 参数。如果你希望更改根据 DNS 域名前缀自动生成的 15 个字符的名称，或者名称超过 15 个字符，则需要 **-NewDomainNetBIOSName** 参数。  
   
-## <a name="BKMK_Deployment"></a>部署  
+## <a name="deployment"></a><a name="BKMK_Deployment"></a>部署  
   
 ### <a name="deployment-configuration"></a>部署配置  
 下面的屏幕截图显示了用于添加子域的选项：  
@@ -249,7 +248,7 @@ Install-ADDSDomain `
   
 ![安装新的 AD 子项](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildWhatIf.png)  
   
-### <a name="prerequisites-check"></a>先决条件检查  
+### <a name="prerequisites-check"></a>必备组件检查  
 ![安装新的 AD 子项](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildPrereqCheck.png)  
   
 “先决条件检查” 是 AD DS 域配置中的新功能。 此新阶段验证服务配置是否能够支持新的 AD DS 域。  
@@ -258,7 +257,7 @@ Install-ADDSDomain `
   
 “先决条件检查”还显示相关的信息，例如影响较早版本的操作系统的安全性更改。  
   
-有关特定先决条件检查的详细信息，请参阅 [Prerequisite Checking](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。  
+有关特定先决条件检查的详细信息，请参阅[先决条件检查](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)。  
   
 使用服务器管理器时你无法绕过“先决条件检查” ，但是你可以在使用 AD DS 部署 cmdlet 时使用以下参数跳过该进程：  
   

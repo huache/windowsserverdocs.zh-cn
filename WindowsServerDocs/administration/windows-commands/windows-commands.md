@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 5cb26bcff99d9cf3a1ee8b3a937ad6098a913c3d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d68e2becbf9c6522be7e1ff6e6742d44f3a8247
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362064"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829230"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -24,12 +24,30 @@ ms.locfileid: "71362064"
 
 若要查找有关特定命令的信息，请在下面的 A-z 菜单中，单击命令开头的字母，然后单击命令名称。
 
-[@NO__T-](#a)1[B](#b) | 
+[A](#a) |
+[B](#b) | 
 [C](#c) | 
 [D](#d) | 
 [E](#e) | 
-[F](#f) |
-1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)@NO__T[-37 @NO__T](#t)-39[U](#u)@NO__T[-41 3](#v)[W](#w)5[X](#x) |Y |Z
+[F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[I](#i) |
+[J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[ | 
+ | 
+ | 
+](#m) | 
+[ | 
+](#o) | 
+[ | 
+](#p) | 
+[ | 
+ | 
+ | 
+](#q) [S](#s) [T](#t) [U](#u) [V](#v) [X](#x) | [W](#w) [N](#n) [R](#r)Y |Z
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -49,7 +67,7 @@ ms.locfileid: "71362064"
 
 命令行界面是 Windows 中内置的第一个 shell，用批处理（.bat）文件自动完成日常任务，如用户帐户管理或夜间备份。 借助 Windows 脚本宿主，你可以在命令行界面中运行更复杂的脚本。 有关详细信息，请参阅[cscript](cscript.md)或[wscript.echo](wscript.md)。 使用脚本可以更有效地执行操作，而不是使用用户界面。 脚本接受命令行中可用的所有命令。
 
-Windows 有两个命令 shell：命令行界面和[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 每个 shell 是一种软件程序，它提供你与操作系统或应用程序之间的直接通信，同时提供用于自动执行 IT 操作的环境。
+Windows 有两个命令 shell：命令 shell 和[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 每个 shell 是一种软件程序，它提供你与操作系统或应用程序之间的直接通信，同时提供用于自动执行 IT 操作的环境。
 
 PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 PowerShell 命令。 Cmdlet 类似于 Windows 命令，但提供更可扩展的脚本语言。 可以在 Powershell 中运行 Windows 命令和 PowerShell cmdlet，但命令 shell 只能运行 Windows 命令，而不能运行 PowerShell cmdlet。
 
@@ -58,12 +76,12 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
 >你还可以下载和安装 powershell [Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，即 powershell 的开源版本。 
 
 > [!CAUTION]
-> 不正确地编辑注册表可能会对系统造成严重损坏。 在对注册表进行以下更改之前，应备份计算机上任何有价值的数据。
+> 错误编辑注册表可能会严重损坏您的系统。 在对注册表进行以下更改之前，应备份计算机上任何有价值的数据。
 
 > [!NOTE]
 > 若要在计算机或用户登录会话上的命令行界面中启用或禁用文件和目录名完成，请运行**regedit.exe**并设置以下**reg_DWOrd 值**：
 > 
-> HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\completionChar\reg_DWOrd
+> HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
 > 
 > 若要设置**reg_DWOrd**值，请将控制字符的十六进制值用于特定函数（例如， **0 9**为 Tab， **0 08**为 Backspace）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
 
@@ -71,12 +89,30 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
 
 若要查找有关特定 Windows 命令的信息，请在以下 a-z 菜单中，单击该命令的开头字母，然后单击命令名称。
 
-[@NO__T-](#a)1[B](#b) | 
+[A](#a) |
+[B](#b) | 
 [C](#c) | 
 [D](#d) | 
 [E](#e) | 
-[F](#f) |
-1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)@NO__T[-37 @NO__T](#t)-39[U](#u)@NO__T[-41 3](#v)[W](#w)5[X](#x) |Y |Z
+[F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[I](#i) |
+[J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[ | 
+ | 
+ | 
+](#m) | 
+[ | 
+](#o) | 
+[ | 
+](#p) | 
+[ | 
+ | 
+ | 
+](#q) [S](#s) [T](#t) [U](#u) [V](#v) [X](#x) | [W](#w) [N](#n) [R](#r)Y |Z
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -348,13 +384,13 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
   -   [manage-bde：保护程序](manage-bde-protectors.md)
   -   [manage-bde： tpm](manage-bde-tpm.md)
   -   [manage-bde： setidentifier](manage-bde-setidentifier.md)
-  -   [manage-manage-bde：ForceRecovery](manage-bde-forcerecovery.md)
+  -   [manage-bde： ForceRecovery](manage-bde-forcerecovery.md)
   -   [manage-bde： changepassword](manage-bde-changepassword.md)
   -   [manage-bde： changepin](manage-bde-changepin.md)
   -   [manage-bde： changekey](manage-bde-changekey.md)
-  -   [manage-manage-bde：KeyPackage](manage-bde-keypackage.md)
+  -   [manage-bde： Ms-fve-keypackage](manage-bde-keypackage.md)
   -   [manage-bde：升级](manage-bde-upgrade.md)
-  -   [manage-manage-bde：WipeFreeSpace](manage-bde-wipefreespace.md)
+  -   [manage-bde： WipeFreeSpace](manage-bde-wipefreespace.md)
 - [mapadmin](mapadmin.md)
 - [Md](Md.md)
 - [mkdir](mkdir.md)
@@ -582,7 +618,6 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
 - [winnt32](winnt32.md)
 - [winpop](winpop.md)
 - [winrs](winrs.md)
-- [wlbs.exe](wlbs_1.md)
 - [wmic](wmic.md)
 - [wscript](wscript.md)
 
