@@ -1,7 +1,6 @@
 ---
 ms.assetid: c8597cc8-bdcb-4e59-a09e-128ef5ebeaf8
 title: 命令行进程审核
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5d5ab971327ab7ec16bf2748571882458cc38f72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6cba306a36589d8b585b23ecb43e7d16b7d201
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368994"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823070"
 ---
 # <a name="command-line-process-auditing"></a>命令行进程审核
 
@@ -71,10 +70,10 @@ ms.locfileid: "71368994"
 |策略配置|详细信息|  
 |------------------------|-----------|  
 |**Path**|管理 Templates\System\Audit 进程创建|  
-|**设置**|**在进程创建事件中包含命令行**|  
+|**将**|**在进程创建事件中包含命令行**|  
 |**默认设置**|未配置（未启用）|  
 |**支持：**|?|  
-|**描述**|此策略设置确定在创建新进程时安全审核事件中记录的信息。<br /><br />仅当启用了审核过程创建策略时，此设置才适用。 如果启用此策略设置，则在安全事件日志中，每个进程的命令行信息都将以纯文本4688形式记录在安全事件日志中，这是在此策略应用设置。<br /><br />如果禁用或未配置此策略设置，则将不会在审核过程创建事件中包括进程的命令行信息。<br /><br />默认：未配置<br /><br />注意：如果启用此策略设置，则具有 "读取安全事件" 权限的任何用户都可以读取任何成功创建的进程的命令行参数。 命令行参数可能包含敏感信息或私有信息，如密码或用户数据。|  
+|**描述**|此策略设置确定在创建新进程时安全审核事件中记录的信息。<p>仅当启用了审核过程创建策略时，此设置才适用。 如果启用此策略设置，则在应用此策略设置的工作站和服务器上，将在安全事件日志中以纯文本形式记录每个进程的命令行信息，作为审核过程创建事件4688的一部分。<p>如果禁用或未配置此策略设置，则将不会在审核过程创建事件中包括进程的命令行信息。<p>默认：未配置<p>注意：如果启用此策略设置，则具有 "读取安全事件" 权限的任何用户都可以读取任何成功创建的进程的命令行参数。 命令行参数可能包含敏感信息或私有信息，如密码或用户数据。|  
   
 ![命令行审核](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)  
   
@@ -89,13 +88,13 @@ ms.locfileid: "71368994"
   
 1.  打开组策略管理控制台  
   
-2.  右键单击 "默认域策略"，然后单击 "编辑"。  
+2.  右键单击“默认域策略”，然后单击“编辑”。  
   
 3.  双击 "计算机配置"，双击 "策略"，然后双击 "Windows 设置"。  
   
 4.  双击 "安全设置"，双击 "本地策略"，然后单击 "安全选项"。  
   
-5.  双击 "审核：强制审核策略子类别设置（Windows Vista 或更高版本）替代审核策略类别设置"，然后单击 "定义此策略设置"。  
+5.  双击“审核: 强制审核策略子类别设置(Windows Vista 或更高版本)替代审核策略类别设置”，然后单击“定义此策略设置”。  
   
 6.  单击 "已启用"，然后单击 "确定"。  
   

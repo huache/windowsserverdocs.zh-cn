@@ -1,24 +1,20 @@
 ---
 title: gpresult
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb61911450ea8c0c68af0cf1a35c2f571810504b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 480599a4040ab1fdcc3842cdb0eaa8c35afa873c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375665"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842460"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -33,12 +29,12 @@ ms.locfileid: "71375665"
 gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\]<TARGETUSER>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <FILENAME> [/f] | /?}
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
 > [!NOTE]
 > 除了使用 **/？** 时，您必须包含一个输出选项，即 **/r**、 **/v**、 **/z**、 **/x**或 **/h**。
 
-|                参数                 |                                                                                                     描述                                                                                                      |
+|                参数                 |                                                                                                     说明                                                                                                      |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              /s \<系统\>               |                                                  指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认值为本地计算机。                                                   |
 |             /u \<用户名\>              |                                使用指定用户的凭据运行该命令。 默认用户是登录到发出命令的计算机的用户。                                 |
@@ -79,4 +75,4 @@ gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\
 ## <a name="additional-references"></a>其他参考
 - [组策略技术中心](https://go.microsoft.com/fwlink/?LinkID=145531)
 
-- [命令行语法项](command-line-syntax-key.md)
+- - [命令行语法项](command-line-syntax-key.md)

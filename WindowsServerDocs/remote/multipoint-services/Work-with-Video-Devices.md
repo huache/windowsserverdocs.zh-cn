@@ -1,24 +1,20 @@
 ---
 title: 使用视频设备
 description: 了解视频监视器和投影仪如何在 MultiPoint Services 中使用工作站
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2f7f5a97-efd2-4184-8ad3-cf029d615eab
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: b7019000c99295204f196ee918129cded02e084f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b967d4523058fe1dfcb086e5918f84257bd51bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389246"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820440"
 ---
 # <a name="work-with-video-devices"></a>使用视频设备
 了解视频设备（例如显示器或投影仪）在连接到 MultiPoint 服务系统中的计算机或连接到 MultiPoint 服务工作站时是如何工作的。  
@@ -53,12 +49,12 @@ ms.locfileid: "71389246"
   
 -   可能需要使用适配器或转换器设备以在 DVI 和 VGA 接口之间转换。  
   
--   使用“Y”型拆分器电缆可能会降低两个视频设备的视频质量。  
+-   使用 "Y" 拆分器电缆可能会降低两个视频设备的视频质量。  
   
--   通过“Y”型拆分器电缆同时使用投影仪和显示器时，MultiPoint 服务会将两个设备的屏幕分辨率都调整到其最高支持的最低分辨率 - 通常是投影仪的分辨率。  
+-   通过 "Y" 拆分器电缆同时使用投影仪和监视器时，MultiPoint 服务会将两个设备的屏幕分辨率调整为最小的设备分辨率（最常见的是投影仪）。  
   
 -   MultiPoint 服务不支持在多个监视器之间扩展单一工作站的显示。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [管理工作站硬件](Manage-Station-Hardware.md)  
 [设置工作站](Set-Up-a-Station.md) 

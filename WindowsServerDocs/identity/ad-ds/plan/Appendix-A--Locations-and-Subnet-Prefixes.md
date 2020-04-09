@@ -1,7 +1,6 @@
 ---
 ms.assetid: 28aad3ba-f129-46f2-ba94-c3da831c9811
 title: 附录 A-位置和子网前缀
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f147cf630c49dfa8e9279b723a1ab02516028bf5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 20a05e5651c8298507718e9d383541468a905611
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402655"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822870"
 ---
 # <a name="appendix-a-locations-and-subnet-prefixes"></a>附录 A：位置和子网前缀
 

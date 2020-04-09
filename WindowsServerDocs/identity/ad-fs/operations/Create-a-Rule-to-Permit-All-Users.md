@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8c179884-f0d9-4c7a-973d-820119cf3c38
 title: 创建规则以允许所有用户
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1356218c5f9f47073f007286e8acfdf4c3608b73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 894857813115002f3998a9ab5000d57b944fd448
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407620"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816780"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>创建规则以允许所有用户
 
@@ -24,7 +23,7 @@ ms.locfileid: "71407620"
   
 你可以使用下列过程，通过中的 AD FS 管理 "管理单元\-来创建声明规则。  
   
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。 
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。 
 
 ## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2016"></a>创建规则以允许 Windows Server 2016 中的所有用户
 

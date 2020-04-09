@@ -1,24 +1,20 @@
 ---
 title: ksetup： changepassword
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 283078e7-a88f-4875-90e6-f8605e6b7ea7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51be9e71c2b290e6346d23144543e0eec29f9d07
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 68b14388ff3c33458873b494c8d5a770b44f7545
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375177"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841780"
 ---
 # <a name="ksetupchangepassword"></a>ksetup： changepassword
 
@@ -32,9 +28,9 @@ ms.locfileid: "71375177"
 ksetup /changepassword <OldPasswd> <NewPasswd>
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<OldPasswd >|指出登录用户的现有密码。|
 |\<NewPasswd >|指出登录用户的新密码。|
@@ -51,7 +47,7 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 命令的输出会通知你成功或失败状态。
 
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 
 更改此域中当前登录到此计算机的用户的密码：
 ```
@@ -66,6 +62,6 @@ ksetup /domain CONTOSO /changepassword Pas$w0rd Pa$$w0rd
 ksetup /changepassword Pas$w0rd *
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

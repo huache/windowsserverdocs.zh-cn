@@ -1,24 +1,20 @@
 ---
 title: xcopy
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 xcopy 的 Windows 命令主题，w hich 复制文件和目录，包括子目录。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 76a310d7-9925-4571-a252-0e28960d5f89
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: 885729f2bca100d7ac89a3463135d56f48c8b75a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 660ef69a5f1df99c3b959a588984719c9d4dea6b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361789"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828920"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -32,9 +28,9 @@ ms.locfileid: "71361789"
 Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-DD-YYYY]] [/u] [/i] [/s [/e]] [/t] [/k] [/r] [/h] [{/a | /m}] [/n] [/o] [/x] [/exclude:FileName1[+[FileName2]][+[FileName3]] [{/y | /-y}] [/z] [/b] [/j]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<源 >|必需。 指定要复制的文件的位置和名称。 此参数必须包含驱动器或路径。|
 |[\<目标 >]|指定要复制的文件的目标。 此参数可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
@@ -48,7 +44,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/g|如果目标不支持加密，则创建已解密的*目标*文件。|
 |/d [： MM-DD]|仅复制在指定日期或指定日期之后更改的源文件。 如果不包括*MM DD*值，则**xcopy**会复制比现有*目标*文件新的所有*源文件*。 使用此命令行选项，可以更新已更改的文件。|
 |/u|*仅* *从源*副本复制文件。|
-|i|如果*源*是一个目录或包含通配符并且*目标*不存在，则**xcopy**假设*destination*指定目录名称并创建一个新目录。 然后， **xcopy**将所有指定的文件复制到新目录中。 默认情况下， **xcopy**会提示您指定*目标*是文件还是目录。|
+|/i|如果*源*是一个目录或包含通配符并且*目标*不存在，则**xcopy**假设*destination*指定目录名称并创建一个新目录。 然后， **xcopy**将所有指定的文件复制到新目录中。 默认情况下， **xcopy**会提示您指定*目标*是文件还是目录。|
 |/s|复制目录和子目录，除非它们为空。 如果省略 **/s**，则**xcopy**在单个目录中工作。|
 |/e|复制所有子目录（即使它们为空）。 使用 **/e**和 **/s**和 **/t**命令行选项。|
 |/t|仅复制子目录结构（即树），而不复制文件。 若要复制空目录，必须包含 **/e**命令行选项。|
@@ -113,7 +109,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
   若要处理**xcopy**返回的退出代码，请在批处理程序的**if**命令行中使用**ErrorLevel**参数。 有关使用**if**处理退出代码的批处理程序的示例，请参阅 "[其他参考](#additional-references)"。 下表列出了每个退出代码和说明。  
 
-  |退出代码|描述|
+  |退出代码|说明|
   |---------|-----------|
   |0|复制文件时没有错误。|
   |1|找不到要复制的文件。|
@@ -210,7 +206,7 @@ rem  3 File(s) copied
 
 在前面的示例中，此特定的源参数值 **。\\toc\*** 复制相同的3个文件，即使删除了两个路径字符 **\\** 也是如此。 但是，如果从 source 参数中删除星号通配符，则不会复制任何文件，只需将其作为 **\\docker-compose.override.yml**。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
 -   [复制](copy.md)
 -   [移动](move.md)
@@ -218,4 +214,4 @@ rem  3 File(s) copied
 -   [恶性](attrib.md)
 -   [Diskcopy](diskcopy.md)
 -   [如果](if.md)
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

@@ -1,28 +1,22 @@
 ---
 title: chcp
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于更改活动控制台代码页的 chcp 的 Windows 命令主题。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc7b1c71-7b80-443d-9cf1-9bcf305aa1fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d5784b052ff1d7084d68cca0589caf518b8e44a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e644cf8544d135c5d21c344b0fd0a3364c7f89c1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379535"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847940"
 ---
 # <a name="chcp"></a>chcp
-
-
 
 更改活动控制台代码页。 如果使用不带参数， **chcp** 显示活动控制台代码页的数目。
 
@@ -34,9 +28,9 @@ ms.locfileid: "71379535"
 chcp [<NNN>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<NNN >|指定代码页。|
 |/?|在命令提示符下显示帮助。|
@@ -64,7 +58,7 @@ chcp [<NNN>]
 -   不需要准备 （如上所示 MS-DOS) 的代码页。
 -   之后启动的程序，将分配新的代码页使用新的代码页。 但是，在之前启动的程序 （除了 Cmd.exe) 分配新的代码页使用原来的代码页。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要查看活动的代码页设置，请键入︰
 ```
@@ -82,6 +76,6 @@ chcp 850
 
 `Invalid code page`
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

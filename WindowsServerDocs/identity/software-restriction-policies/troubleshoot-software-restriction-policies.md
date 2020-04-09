@@ -1,24 +1,20 @@
 ---
 title: 软件限制策略疑难解答
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fd53736-03e7-4bf9-ba90-d1212d93e19a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 8dff3e1542afcc3cba3645b6834981bd6ed33f58
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6b3a475f21925b506d073bd3618d78e2ee0c1d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407165"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819720"
 ---
 # <a name="troubleshoot-software-restriction-policies"></a>软件限制策略疑难解答
 
@@ -49,7 +45,7 @@ ms.locfileid: "71407165"
 
 2.  刷新策略，方法是注销网络，然后再次登录到网络。 如果任何策略通过组策略应用，则重新登录将会刷新这些策略。
 
-3.  您可以使用命令行实用工具 gpupdate 或从注销，然后重新登录到您的计算机，以刷新策略设置。 为获得最佳结果，请运行 gpupdate，然后注销并重新登录到您的计算机。 通常，工作站或服务器上的安全设置每90分钟刷新一次，在域控制器上每5分钟刷新一次。 还可将设置指定为每 16 个小时刷新一次，无论是否存在更改。 这些是可配置的设置，因此，每个域中的刷新间隔可能不同。
+3.  您可以使用命令行实用工具 gpupdate 或从注销，然后重新登录到您的计算机，以刷新策略设置。 为获得最佳结果，请运行 gpupdate，然后注销并重新登录到您的计算机。 通常，工作站或服务器上的安全设置每90分钟刷新一次，在域控制器上每5分钟刷新一次。 此外，不管是否发生更改，这些设置都会每 16 小时刷新一次。 这些是可配置的设置，因此，每个域中的刷新间隔可能不同。
 
 4.  检查应用的策略。 检查 "**没有替代**设置的域级别策略"。
 

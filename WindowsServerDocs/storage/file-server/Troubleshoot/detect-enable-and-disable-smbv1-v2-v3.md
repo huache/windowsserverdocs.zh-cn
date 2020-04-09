@@ -3,16 +3,15 @@ title: 如何在 Windows 中检测、启用和禁用 SMBv1、SMBv2 和 SMBv3
 description: 介绍如何启用和禁用 Windows 客户端和服务器环境中的服务器消息块协议（SMBv1、SMBv2 和 SMBv3）。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 9da4d6f2b5616dc6f8aec3fefb1ae7141ed88b0b
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: d6c47843dedaf45842f70d1bb408b59d63c03eb4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654388"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815500"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>如何在 Windows 中检测、启用和禁用 SMBv1、SMBv2 和 SMBv3
 
@@ -76,7 +75,7 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
   Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
-- 启用： 
+- 可 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName smb1protocol
@@ -96,7 +95,7 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- 启用：
+- 可
 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true 
@@ -124,7 +123,7 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
   Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-- 启用： 
+- 可 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
@@ -144,7 +143,7 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
   Set-SmbServerConfiguration –EnableSMB2Protocol $false
   ```
 
-- 启用：
+- 可
 
   ```PowerShell
   Set-SmbServerConfiguration –EnableSMB2Protocol $true
@@ -179,7 +178,7 @@ Windows 8 和 Windows Server 2012 引入了新的**SMBServerConfiguration** Wind
   Set-SmbServerConfiguration -EnableSMB1Protocol $false
   ```
 
-- 启用： 
+- 可 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB1Protocol $true
   ```
@@ -199,7 +198,7 @@ Windows 8 和 Windows Server 2012 引入了新的**SMBServerConfiguration** Wind
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- 启用：
+- 可
   
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true
@@ -230,7 +229,7 @@ Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters | ForEa
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 –Force
 ```
 
-启用：  
+可  
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
@@ -251,7 +250,7 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 –Force  
 ```
 
-启用：
+可
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 –Force 
@@ -263,7 +262,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 #### <a name="registry-editor"></a>注册表编辑器
 
 > [!IMPORTANT]
-> 请认真遵循本部分所述的步骤。 如果注册表修改不正确，可能会发生严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
+> 请认真遵循本部分所述的步骤。 如果不正确地修改注册表，可能会出现严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
  
 若要在 SMB 服务器上启用或禁用 SMBv1，请配置以下注册表项：
 
@@ -299,7 +298,7 @@ Default: 1 = Enabled (No registry key is created)
 
 ##### <a name="smb-v1-on-smb-client"></a>SMB v1 （在 SMB 客户端上）
 
-- Detect
+- 检测
   
   ```cmd
   sc.exe qc lanmanworkstation
@@ -312,7 +311,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= disabled
   ```
 
-- 启用：
+- 可
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -335,7 +334,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb20 start= disabled 
   ```
 
-- 启用：
+- 可
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -358,7 +357,7 @@ Default: 1 = Enabled (No registry key is created)
 
 若要使用组策略进行配置，请执行以下步骤：
  
-1. 打开“组策略管理控制台”。 右键单击应该包含新首选项的组策略对象 (GPO)，然后单击**编辑**。
+1. 打开“组策略管理控制台”。 右键单击应该包含新首选项的组策略对象 (GPO)，然后单击 **“编辑”** 。
 
 2. 在控制台树中的 "**计算机配置**" 下，展开 "**首选项**" 文件夹，然后展开 " **Windows 设置**" 文件夹。
 
@@ -404,7 +403,7 @@ Default: 1 = Enabled (No registry key is created)
 
 若要使用组策略进行配置，请执行以下步骤：
  
-1. 打开“组策略管理控制台”。 右键单击应该包含新首选项的组策略对象 (GPO)，然后单击**编辑**。
+1. 打开“组策略管理控制台”。 右键单击应该包含新首选项的组策略对象 (GPO)，然后单击 **“编辑”** 。
 
 2. 在控制台树中的 "**计算机配置**" 下，展开 "**首选项**" 文件夹，然后展开 " **Windows 设置**" 文件夹。
 

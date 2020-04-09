@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/07/2019
 description: 工作文件夹概述 - Windows Server 中的一个服务器角色，可为用户访问电脑和设备上的工作文件提供一致的方式。
-ms.openlocfilehash: ca76412a6e623b42718fc4f7589f7053073e0f64
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 67c62d81c7d9b6d33a198f5282fa39a88e07f2e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950196"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820780"
 ---
 # <a name="work-folders-overview"></a>工作文件夹概述
 
@@ -30,13 +30,13 @@ ms.locfileid: "75950196"
 - [IOS 工作文件夹](https://itunes.apple.com/app/work-folders/id950878067)
 - [适用于 Android 的工作文件夹](https://play.google.com/store/apps/details?id=com.microsoft.workfolders)
 
-## <a name="role-description"></a>角色描述
+## <a name="role-description"></a>角色说明
 
  使用工作文件夹，除公司电脑外，用户还可以在个人电脑和个人设备上存储工作文件以及访问这些设备上存储的工作文件，通常称为自带设备办公 (BYOD)。 用户可以在方便的位置存储工作文件，随时随地访问这些文件。 通过在集中管理的文件服务器上存储文件，并有选择地指定用户设备策略（如加密和锁屏密码），组织可以维持对公司数据的控制。  
   
  可以使用现有的文件夹重定向、脱机文件和家庭文件夹部署来部署工作文件夹。 工作文件夹将用户文件存储在名为*同步共享*的服务器上的文件夹中。 你可以指定已经包含用户数据的文件夹，这能使你无需迁移服务器和数据或立即淘汰现有的解决方案就能采用工作文件夹。  
   
-## <a name="practical-applications"></a>实际应用程序
+## <a name="practical-applications"></a>实际应用
 
  管理员可以使用工作文件夹为用户提供对其工作文件的访问权限，同时对组织的数据保持集中的存储和控制。 工作文件夹的一些特定应用包括：  
   
@@ -56,18 +56,18 @@ ms.locfileid: "75950196"
 
  工作文件夹包含以下功能。  
   
-| 功能 | 可用性 | 描述 |  
+| 功能 | 可用性 | 说明 |  
 | ------------------- | ------------------ | ----------------- |  
 | 服务器管理器中的工作文件夹角色服务 | Windows Server 2019、Windows Server 2016 或 Windows Server 2012 R2 | 文件和存储服务提供了一种设置同步共享（存储用户的工作文件的文件夹）、监视工作文件夹和管理同步共享和用户访问的方式 |
 | 工作文件夹 cmdlet | Windows Server 2019、Windows Server 2016 或 Windows Server 2012 R2 | 一个 Windows PowerShell 模块，包含用于管理工作文件夹服务器的全面 cmdlet |  
-| 工作文件夹与 Windows 的集成 | Windows 10<br /><br /> Windows 8.1<br /><br /> Windows RT 8.1<br /><br /> Windows 7（需要下载） | 工作文件夹在 Windows 计算机中提供以下功能：<br /><br /> -   控制面板项，可设置和监视工作文件夹<br />-   文件资源管理器集成，允许轻松访问工作文件夹中的文件<br />-   同步引擎，可与中央文件服务器来回传输文件，并实现电池使用时间和系统性能的最大化 |
-| 设备的工作文件夹应用 | Android<br /><br /> Apple iPhone 和 iPad® | 一款应用，允许受欢迎的设备访问工作文件夹中的文件 |  
+| 工作文件夹与 Windows 的集成 | Windows 10<p> Windows 8.1<p> Windows RT 8.1<p> Windows 7（需要下载） | 工作文件夹在 Windows 计算机中提供以下功能：<p> -   控制面板项，可设置和监视工作文件夹<br />-   文件资源管理器集成，允许轻松访问工作文件夹中的文件<br />-   同步引擎，可与中央文件服务器来回传输文件，并实现电池使用时间和系统性能的最大化 |
+| 设备的工作文件夹应用 | Android<p> Apple iPhone 和 iPad® | 一款应用，允许受欢迎的设备访问工作文件夹中的文件 |  
   
-## <a name="new-and-changed-functionality"></a>新功能和更改的功能
+## <a name="new-and-changed-functionality"></a>新增功能和更改的功能
   
 下表描述了工作文件夹的某些主要变化。  
   
-| 特性/功能 | 新功能或更新的功能？ | 描述 |
+| 特性/功能 | 新功能或更新的功能？ | 说明 |
 | ---------------------------- | --------------------- | ----------------- |
 | Azure AD 应用程序代理支持 | 已添加到 Windows 10 版本 1703、Android、iOS | 远程用户可使用 Azure AD 应用程序代理安全访问工作文件夹服务器上的文件。 |
 | 更快更改复制 | 在 Windows 10 和 Windows Server 2016 中进行了更新 | 对于 Windows Server 2012 R2，当文件更改同步到工作文件夹服务器上时，不向客户端通知这一更改并等待 10 分钟获取更新。 使用 Windows Server 2016 时，工作文件夹服务器会立即通知 Windows 10 客户端，文件更改会立即同步。 这是 Windows Server 2016 中的新增功能，需要 Windows 10 客户端。 如果你使用的是较旧客户端或工作文件夹服务器为 Windows Server 2012 R2，则客户端将继续每 10 分钟轮询一次更改。 |  
@@ -82,7 +82,7 @@ ms.locfileid: "75950196"
   
 -   一个使用 NTFS 文件系统格式化的卷，用于存储用户文件  
   
--   若要强制在 Windows 7 电脑上执行密码策略，则必须使用组策略密码策略。 你还需要从工作文件夹密码策略（如果能够使用）排除 Windows 7 电脑。
+-   若要强制在 Windows 7 电脑上执行密码策略，则必须使用组策略密码策略。 你还需要从工作文件夹密码策略（如果你使用它们）排除 Windows 7 电脑。
 
 -   为将要托管工作文件夹的每个文件服务器提供一个服务器证书。 这些证书应该来自用户信任的证书颁发机构 (CA) - 最好是公共 CA。
 
@@ -100,13 +100,13 @@ ms.locfileid: "75950196"
   
 -   电脑和设备必须运行下列操作系统之一：  
   
-    -   Windows 10  
+    -   Windows 10  
   
     -   Windows 8.1  
   
     -   Windows RT 8.1  
   
-    -   Windows 7  
+    -   Windows 7  
   
     -   Android 4.4 KitKat 及更高版本  
   
@@ -114,11 +114,11 @@ ms.locfileid: "75950196"
   
 -   Windows 7 电脑必须运行下列 Windows 版本操作系统之一：  
   
-    -   Windows 7 专业版  
+    -   Windows 7 Professional  
   
-    -   Windows 7 旗舰版  
+    -   Windows 7 Ultimate  
   
-    -   Windows 7 企业版  
+    -   Windows 7 Enterprise  
   
 -   Windows 7 电脑都必须加入到你的组织域中（它们不能加入到工作组）。  
   
@@ -137,7 +137,7 @@ ms.locfileid: "75950196"
 | | 工作文件夹 | 脱机文件 | OneDrive for Business | OneDrive |
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
 | **技术摘要** | 同步存储在电脑和设备的文件服务器上的文件 | 同步文件，用具有企业网络访问权限（可替换为工作文件夹）的电脑存储在文件服务器中 | 同步文件，用企业网络内部和外部的电脑和设备存储在 Office 365 或 SharePoint 中，并提供文档协作功能 | 同步存储在电脑、Mac 计算机和设备的 OneDrive 中的个人文件 |
-| **旨在提供用户对工作文件的访问权限** | “是” | “是” | “是” | 无 |
+| **旨在提供用户对工作文件的访问权限** | 是 | 是 | 是 | 是 |
 | **云服务** | 无 | 无 | Office 365 | Microsoft OneDrive |
 | **内部网络服务器** | 运行 Windows Server 2012 R2 或 Windows Server 2016 的文件服务器 | 文件服务器 | SharePoint 服务器（可选） | 无 |
 | **支持的客户端** | 电脑、iOS、Android | 企业网络中的电脑，或通过 DirectAccess、VPN 或其他远程访问技术连接的电脑 | 电脑、iOS、Android、Windows Phone | 电脑、Mac 计算机、Windows Phone、iOS、Android |
@@ -165,7 +165,7 @@ ms.locfileid: "75950196"
 
  有关其他相关信息，请参阅以下资源。  
   
-| 内容类型 | 引用 |
+| 内容类型 | 参考 |
 | ------------------ | ---------------- |
 | **产品评估** | -   适用[于 Android 的工作文件夹–已发布](https://blogs.technet.microsoft.com/filecab/2016/03/16/work-folders-for-android-released)（博客文章）<br />-   [适用于 iOS 的工作文件夹– IPad 应用版本](https://blogs.technet.com/b/filecab/archive/2015/01/16/work-folders-for-ios-ipad-app-release.aspx)（博客文章）<br />-   [在 Windows Server 2012 R2 上引入工作文件夹](https://blogs.technet.com/b/filecab/archive/2013/07/09/introducing-work-folders-on-windows-server-2012-r2.aspx)（博客文章）<br />-   [工作文件夹简介](https://channel9.msdn.com/posts/Introduction-to-Work-Folders)（第9频道视频）<br />-   [工作文件夹测试实验室部署](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)（博客文章）<br />-   适用[于 Windows 7 的工作文件夹](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx)（博客文章） |
 | **部署** | -   [设计工作文件夹实现](plan-work-folders.md)<br />-   [部署工作文件夹](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 应用程序代理（WAP）部署工作文件夹](deploy-work-folders-adfs-overview.md)<br />-   [使用 Azure AD 应用程序代理部署工作文件夹](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />- [脱机文件（CSC）到工作文件夹迁移指南](https://blogs.technet.microsoft.com/filecab/2016/08/12/offline-files-csc-to-work-folders-migration-guide/)<br />-   [工作文件夹部署的性能注意事项](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   适用[于 Windows 7 的工作文件夹（64位下载）](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   适用[于 Windows 7 的工作文件夹（32位下载）](https://www.microsoft.com/download/details.aspx?id=42559) |

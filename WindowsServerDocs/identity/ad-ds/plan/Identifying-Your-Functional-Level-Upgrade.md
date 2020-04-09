@@ -1,7 +1,6 @@
 ---
 ms.assetid: 231158d8-5e81-4630-b8d5-93fee16e0cd3
 title: 标识功能级别升级
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e43bec8a8d61cd0f6fd82982d5e3a0f01984fc65
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 920f051ef188670f81233098ba38370900e015ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408786"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822350"
 ---
 # <a name="identifying-your-functional-level-upgrade"></a>标识功能级别升级
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在提升域和林功能级别之前，必须先评估当前环境，并确定最符合组织需求的功能级别要求。 通过标识林中的域、每个域中的域控制器、每个域控制器正在运行的操作系统和 service pack 以及计划升级域的日期，来评估当前环境控制器. 如果打算停用域控制器，请确保您了解对环境所做的完全影响。  
+在提升域和林功能级别之前，必须先评估当前环境，并确定最符合组织需求的功能级别要求。 通过标识林中的域、每个域中的域控制器、每个域控制器运行的操作系统和 service pack 以及计划升级域控制器的日期，来评估当前环境。 如果打算停用域控制器，请确保您了解对环境所做的完全影响。  
   
 以下情况可能会阻止你将早期版本的 Windows Server 操作系统升级到 Windows Server 2008 或 Windows Server 2008 R2 功能级别：  
   
@@ -60,7 +59,7 @@ ms.locfileid: "71408786"
     > [!IMPORTANT]  
     >  Windows Server 2008 R2 是基于 x64 的操作系统。 如果你的服务器运行的是基于 x64 版本的 Windows Server 2003，你可以成功地将此计算机的操作系统就地升级到 Windows Server 2008 R2。 如果你的服务器运行的是基于 x86 版本的 Windows Server 2003，则你无法将此计算机升级到 Windows Server 2008 R2。  
   
-若要使用 Windows Server 2008 或 Windows Server 2008 R2 域级功能而不将整个 Windows 2000 林升级到 Windows Server 2008 或 Windows Server 2008 R2，只会将域功能级别提升到 Windows Server 2008 或 Windows Server 2008R2.  
+若要使用 Windows Server 2008 或 Windows Server 2008 R2 域级功能而不将整个 Windows 2000 林升级到 Windows Server 2008 或 Windows Server 2008 R2，只会将域功能级别提升到 Windows Server 2008 或 Windows Server 2008 R2。  
   
 > [!NOTE]  
 > 提升域功能级别之前，必须将该域中的所有基于 Windows 2000 的域控制器升级到 Windows Server 2008 或 Windows Server 2008 R2。  
@@ -85,7 +84,7 @@ ms.locfileid: "71408786"
 > [!IMPORTANT]  
 >  Windows Server 2008 R2 是基于 x64 的操作系统。 如果你的服务器运行的是基于 x64 版本的 Windows Server 2003，你可以成功地将此计算机的操作系统就地升级到 Windows Server 2008 R2。 如果你的服务器运行的是基于 x86 版本的 Windows Server 2003，则你无法将此计算机升级为运行 Windows Server 2008 R2。  
   
-若要使用所有 Windows Server 2008 或 Windows Server 2008 R2 域级功能，而无需将整个 Windows Server 2003 林升级到 Windows Server 2008 或 Windows Server 2008 R2，请仅将域功能级别提升到 Windows Server 2008 或 Windows Se) 2008 R2。  
+若要使用所有 Windows Server 2008 或 Windows Server 2008 R2 域级功能而不将整个 Windows Server 2003 林升级到 Windows Server 2008 或 Windows Server 2008 R2，只需将域功能级别提升到 Windows Server 2008 或 Windows Server 2008 R2。  
   
 > [!NOTE]  
 > 提升域功能级别之前，必须将该域中的所有基于 Windows Server 2003 的域控制器升级到 Windows Server 2008 或 Windows Server 2008 R2。  
@@ -101,7 +100,7 @@ ms.locfileid: "71408786"
   
 -   Windows 2000 林功能级别  
   
-功能级别在这些默认级别上设置，可让你选择将基于 Windows 2000 或 Windows Server 2003 的域控制器添加到新的 Windows Server 2008 林。 创建目录林根级域后，你添加到 Windows Server 2008 林的每个域的域功能级别将设置为 Windows 2000 native。 但是，如果你希望新的 Windows Server 2008 环境中的所有域控制器都运行 Windows Server 2008，请在 fores 中安装第一个域控制器时，将林功能级别和域功能级别设置为 Windows Server 2008关心. 这样做可以节省时间，并启用 Windows Server 2008 中的所有林级和域级功能。  
+功能级别在这些默认级别上设置，可让你选择将基于 Windows 2000 或 Windows Server 2003 的域控制器添加到新的 Windows Server 2008 林。 创建目录林根级域后，你添加到 Windows Server 2008 林的每个域的域功能级别将设置为 Windows 2000 native。 但是，如果你希望新的 Windows Server 2008 环境中的所有域控制器都运行 Windows Server 2008，请在林中安装第一个域控制器时，将林功能级别和域功能级别设置为 "Windows Server 2008"。 这样做可以节省时间，并启用 Windows Server 2008 中的所有林级和域级功能。  
   
 > [!IMPORTANT]  
 > 如果林在 Windows Server 2008 功能级别上运行，并且您尝试在基于 Windows Server 2003 的成员服务器或基于 Windows 2000 的成员服务器上安装 Active Directory，则安装将失败。  
@@ -115,7 +114,7 @@ ms.locfileid: "71408786"
   
 -   Windows Server 2003 林功能级别  
   
-功能级别在这些默认级别上设置，可让你选择将基于 Windows Server 2003 的域控制器添加到新的 Windows Server 2008 R2 林。 创建目录林根级域后，你添加到 Windows Server 2008 R2 林的每个域的域功能级别设置为 Windows Server 2003。 但是，如果你希望新的 Windows Server 2008 R2 环境中的所有域控制器都运行 Windows Server 2008 R2，请将林功能级别和域功能级别设置为 Windows Server 2008 R2，当你在 yo 中安装第一个域控制器时林。 这样做可以节省时间，并在 Windows Server 2008 R2 中启用所有林级和域级功能。  
+功能级别在这些默认级别上设置，可让你选择将基于 Windows Server 2003 的域控制器添加到新的 Windows Server 2008 R2 林。 创建目录林根级域后，你添加到 Windows Server 2008 R2 林的每个域的域功能级别设置为 Windows Server 2003。 但是，如果你希望新的 Windows Server 2008 R2 环境中的所有域控制器都运行 Windows Server 2008 R2，请在林中安装第一个域控制器时，将林功能级别和域功能级别设置为 Windows Server 2008 R2。 这样做可以节省时间，并在 Windows Server 2008 R2 中启用所有林级和域级功能。  
   
 > [!IMPORTANT]  
 > 如果林在 Windows Server 2008 R2 功能级别上运行，并且您尝试在基于 Windows Server 2008 或 Windows Server 2003 的成员服务器上或基于 Windows 2000 的成员服务器上安装 Active Directory，则安装将失败。  

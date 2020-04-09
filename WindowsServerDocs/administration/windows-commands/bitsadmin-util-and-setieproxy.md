@@ -1,30 +1,26 @@
 ---
 title: bitsadmin util 和 setieproxy
-description: Windows 命令主题，适用于**bitsadmin util 和 setieproxy** -设置使用服务帐户传输文件时要使用的代理设置。
-ms.custom: na
+description: Bitsadmin util 和 setieproxy 的 Windows 命令主题，用于设置使用服务帐户传输文件时使用的代理设置。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e9f31ba-3070-4ffd-a94c-388c8d78f688
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d485c0e9cb135febdb1bf99cec4de08d7c9321b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4e7d8a9ff4e2388b61ee5ae00ae7afe421de68e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380222"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848880"
 ---
 # <a name="bitsadmin-util-and-setieproxy"></a>bitsadmin util 和 setieproxy
 
 设置使用服务帐户传输文件时使用的代理设置。
 
-**BITSAdmin 1.5 及更早版本**： 不受支持。
+**BITSAdmin 1.5 及更早版本**：不支持。
 
 ## <a name="syntax"></a>语法
 
@@ -32,12 +28,12 @@ ms.locfileid: "71380222"
 bitsadmin /Util /SetIEProxy <Account> <Usage>[/Conn <ConnectionName>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|帐户|指定要定义其代理设置的服务帐户的类型。 可能的值为：</br>-LOCALSYSTEM</br>-NETWORKSERVICE</br>-LOCALSERVICE|
-|用法|指定要使用的代理检测的形式。 可能的值为：</br>-NO_PROXY-不使用代理服务器。</br>-自动检测-自动检测代理设置。</br>-MANUAL_PROXY-使用显式代理列表和绕过列表。 紧随用量标记，指定代理列表和跳过列表。 例如，MANUAL_PROXY proxy1，proxy2 NULL。</br>    -代理列表是要使用的代理服务器的逗号分隔列表。</br>    -旁路列表是以空格分隔的主机名或 IP 地址的列表，或者两者，不通过代理路由传输。 这可以 \<local >，以指代同一 LAN 上的所有服务器。 NULL 或 "" 的值可以用于空代理绕过列表。</br>-AUTOSCRIPT-与自动检测相同，只不过它还执行脚本。 指定紧跟在用量标记后面的脚本 URL。 例如，AUTOSCRIPT http://server/proxy.js 。</br>-RESET-与 NO_PROXY 相同，不同之处在于它删除手动代理 Url （如果已指定）和使用自动检测发现的 Url。|
+|Account|指定要定义其代理设置的服务帐户的类型。 可能的值为：</br>-LOCALSYSTEM</br>-NETWORKSERVICE</br>-LOCALSERVICE|
+|用法|指定要使用的代理检测的形式。 可能的值为：</br>-NO_PROXY-不使用代理服务器。</br>-自动检测-自动检测代理设置。</br>-MANUAL_PROXY-使用显式代理列表和绕过列表。 紧随用量标记，指定代理列表和跳过列表。 例如，MANUAL_PROXY proxy1，proxy2 为 NULL。</br>    -代理列表是要使用的代理服务器的逗号分隔列表。</br>    -旁路列表是以空格分隔的主机名或 IP 地址的列表，或者两者，不通过代理路由传输。 这可以 \<本地 >，以指同一 LAN 上的所有服务器。 NULL 或的值可能用于空代理跳过列表。</br>-AUTOSCRIPT-与自动检测相同，只不过它还执行脚本。 指定紧跟在用量标记后面的脚本 URL。 例如，AUTOSCRIPT http://server/proxy.js。</br>-RESET-与 NO_PROXY 相同，不同之处在于删除手动代理 Url （如果已指定）和使用自动检测发现的 Url。|
 |ConnectionName|可选-与 **/Conn**参数结合使用，用于指定要使用的调制解调器连接。 如果未指定 **/Conn**参数，则 BITS 将使用 LAN 连接。 指定紧跟 **/Conn**参数的调制解调器连接名称。|
 
 ## <a name="remarks"></a>备注
@@ -59,9 +55,9 @@ C:\>bitsadmin /Util /SetIEProxy localsystem AUTODETECT
 
 ```
 bitsadmin /util /setieproxy localsystem MANUAL_PROXY proxy1,proxy2,proxy3 NULL
-bitsadmin /util /setieproxy localsystem MANUAL_PROXY proxy1:80 ""
+bitsadmin /util /setieproxy localsystem MANUAL_PROXY proxy1:80 
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

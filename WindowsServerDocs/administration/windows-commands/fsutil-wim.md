@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: fc79b70e8dedb9ecad5e8c6e89f51ece3279faa4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4a8f2c008c1a28e498edb7726a8c209e91f41af
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376656"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843920"
 ---
 # <a name="fsutil-wim"></a>Fsutil wim
 >适用于: Windows Server (半年频道)、Windows Server 2016、Windows 10
@@ -30,9 +30,9 @@ fsutil wim [queryfile] <filename>
 fsutil wim [removewim] <drive name> <data source>
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------------|---------------|
 |enumfiles|枚举支持 WIM 的文件。|
 |\<驱动器名称 >|指定驱动器名称。|
@@ -72,6 +72,6 @@ fsutil wim removewims C: 2
 ```
 
 ### <a name="additional-references"></a>其他参考
-[命令行语法项](Command-Line-Syntax-Key.md)
+- [命令行语法项](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)

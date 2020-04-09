@@ -1,7 +1,6 @@
 ---
 ms.assetid: 074e63e9-976c-49da-8cba-9ae0b3325e34
 title: Introduction to Active Directory Administrative Center Enhancements (Level 100)
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a3bd82feb3a0caf827091bd0cb10edf991921b3c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f3f33673d254b66688aa6623837d990e17d7181a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390625"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824660"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -26,7 +25,7 @@ Windows Server 中的 Active Directory 管理中心包含以下各项的管理�
 - [细化密码策略](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#fine_grained_pswd_policy_mgmt)
 - [Windows PowerShell 历史记录查看器](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#windows_powershell_history_viewer)
 
-## <a name="ad_recycle_bin_mgmt"></a>Active Directory 回收站
+## <a name="active-directory-recycle-bin"></a><a name="ad_recycle_bin_mgmt"></a>Active Directory 回收站
 
 Active Directory 域服务 (AD DS) 和 Active Directory 轻型目录服务 (AD LDS) 的用户会经常遇到意外删除 Active Directory 对象的情况。 在以前版本的 Windows Server 中，在 Windows Server 2008 R2 之前，可以在 Active Directory 中恢复意外删除的对象，但这些解决方案有其缺点。
 
@@ -63,7 +62,7 @@ Active Directory 域服务 (AD DS) 和 Active Directory 轻型目录服务 (AD L
 > [!NOTE]
 > 需要 Enterprise Admins 组的成员身份或同等权限才能执行以下步骤。
 
-### <a name="bkmk_raise_ffl"></a>步骤1：提升林功能级别
+### <a name="step-1-raise-the-forest-functional-level"></a><a name="bkmk_raise_ffl"></a>步骤1：提升林功能级别
 
 在此步骤中，将提升林功能级别。 在启用 Active Directory 回收站之前，必须先将目标林的功能级别至少提升为 Windows Server 2008 R2。
 
@@ -77,7 +76,7 @@ Active Directory 域服务 (AD DS) 和 Active Directory 轻型目录服务 (AD L
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ```powershell
 Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:$false
@@ -85,7 +84,7 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 对于 **-Identity**参数，请指定完全限定的 DNS 域名。
 
-### <a name="bkmk_enable_recycle_bin"></a>步骤2：启用回收站
+### <a name="step-2-enable-recycle-bin"></a><a name="bkmk_enable_recycle_bin"></a>步骤2：启用回收站
 
 在此步骤中，将启用回收站来还原 AD DS 中删除的对象。
 
@@ -101,13 +100,13 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ```powershell
 Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,CN=Directory Service,CN=Windows NT,CN=Services,CN=Configuration,DC=contoso,DC=com' -Scope ForestOrConfigurationSet -Target 'contoso.com'
 ```
 
-### <a name="bkmk_create_test_env"></a>步骤3：创建测试用户、组和组织单位
+### <a name="step-3-create-test-users-group-and-organizational-unit"></a><a name="bkmk_create_test_env"></a>步骤3：创建测试用户、组和组织单位
 
 在以下步骤中，将创建两个测试用户。 然后,将创建测试组并将测试用户添加到该组。 此外，还将创建 OU。
 
@@ -144,7 +143,7 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ```powershell
 Add-ADGroupMember -Identity group1 -Member test1
@@ -161,7 +160,7 @@ Add-ADGroupMember -Identity group1 -Member test1
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ```powershell
 1..2 | ForEach-Object {New-ADUser -SamAccountName test$_ -Name "test$_" -Path "DC=fabrikam,DC=com" -AccountPassword (ConvertTo-SecureString -AsPlainText "p@ssword1" -Force) -Enabled $true}
@@ -169,7 +168,7 @@ New-ADGroup -Name "group1" -SamAccountName group1 -GroupCategory Security -Group
 New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 ```
 
-### <a name="bkmk_restore_del_obj"></a>步骤4：还原已删除的对象
+### <a name="step-4-restore-deleted-objects"></a><a name="bkmk_restore_del_obj"></a>步骤4：还原已删除的对象
 
 在以下过程中，将删除的对象从 **“Deleted Objects”** 容器还原到原始位置和其他位置。
 
@@ -183,20 +182,20 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 
     ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-    下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+    下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
     ```powershell
     Get-ADUser -Filter 'Name -Like "*test*"'|Remove-ADUser -Confirm:$false
     ```
 
-4. 导航到 **“Deleted Objects”** 容器，选择 **test2** 和 **test1** ，再单击 **“任务”** 窗格中的 **“还原”** 。
+4. 导航到 **“Deleted Objects”** 容器，选择 **test2** 和 **test1**，再单击 **“任务”** 窗格中的 **“还原”** 。
 
 5. 若要确认对象已还原到原始位置，请导航到目标域并确认用户帐户已列出。
 
     > [!NOTE]
     > 如果导航到用户帐户 **test1** 和 **test2** 的 **“属性”** ，再单击 **“成员”** ，将看到该组成员身份也已还原。
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
@@ -220,17 +219,17 @@ Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADOb
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ```powershell
 Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADObject -TargetPath "OU=OU1,DC=contoso,DC=com"
 ```
 
-## <a name="fine_grained_pswd_policy_mgmt"></a>细化密码策略
+## <a name="fine-grained-password-policy"></a><a name="fine_grained_pswd_policy_mgmt"></a>细化密码策略
 
-Windows Server 2008 操作系统将向组织提供一种为域中不同用户集定义不同密码和帐户锁定策略的方法。 在 Windows Server 2008 之前的 Active Directory 域中，只能对域中的所有用户应用一种密码策略和帐户锁定策略。 这些策略已在域的“Default Domain Policy”中指定。 因此，如果组织希望为不同用户集使用不同密码和帐户锁定设置，就必须创建密码筛选器或部署多个域。 选择这两种方法的代价都很高。
+Windows Server 2008 操作系统将向组织提供一种为域中不同用户集定义不同密码和帐户锁定策略的方法。 在 Windows Server 2008 之前的 Active Directory 域中，只能对域中的所有用户应用一种密码策略和帐户锁定策略。 这些策略在域的默认域策略中指定。 因此，想让不同的用户组拥有不同的密码和帐户锁定设置的组织必须创建密码筛选器或部署多个域。 选择这两种方法的代价都很高。
 
-你可以使用细化密码策略，在单个域中指定多个密码策略，并对域中不同的用户集应用不同的密码和帐户锁定策略限制。 例如，可以将较严格的设置应用于有权限的帐户，而将较不严格的设置应用其他用户的帐户。 在其他情况下，可能需要针对密码与其他数据源同步的帐户应用特殊密码策略。 有关细化密码策略的详细说明，请参阅 [AD DS：细粒度密码策略](https://technet.microsoft.com/library/cc770394(WS.10).aspx)
+你可以使用细化密码策略，在单个域中指定多个密码策略，并对域中不同的用户集应用不同的密码和帐户锁定策略限制。 例如，可以对有权限的帐户应用更严格的设置，而对其他用户帐户应用不太严格的设置。 另一些时候，您可能想对其密码与其他数据源同步的帐户应用特殊的密码策略。 有关细化密码策略的详细说明，请参阅 [AD DS：细粒度密码策略](https://technet.microsoft.com/library/cc770394(WS.10).aspx)
 
 **新增功能**
 
@@ -238,7 +237,7 @@ Windows Server 2008 操作系统将向组织提供一种为域中不同用户集
 
 如果你计划使用 Windows Server 2012 中的细化密码策略，请考虑以下事项：
 
-- 细化密码策略仅适用于全局安全组和用户对象（或 inetOrgPerson 对象，如果它们使用的是而不是用户对象）。 默认情况下，只有 Domain Admins 组的成员可以设置细化密码策略。 然而，也可以将设置这些策略的能力委派给其他用户。 域功能级别必须属于 Windows Server 2008 或更高版本。
+- 细化密码策略仅适用于全局安全组和用户对象（或 inetOrgPerson 对象，如果它们使用的是而不是用户对象）。 默认情况下，只有 Domain Admins 组的成员才能设置严格的密码策略。 但是，还可以将设置这些策略的能力委派给其他用户。 域功能级别必须属于 Windows Server 2008 或更高版本。
 
 - 必须使用 Windows Server 2012 或更高版本的 Active Directory 管理中心通过图形用户界面管理细化密码策略。
 
@@ -261,7 +260,7 @@ Windows Server 2008 操作系统将向组织提供一种为域中不同用户集
 > [!NOTE]
 > 需要 Domain Admins 组的成员身份或同等权限才能执行以下步骤。
 
-#### <a name="bkmk_raise_dfl"></a>步骤1：提升域功能级别
+#### <a name="step-1-raise-the-domain-functional-level"></a><a name="bkmk_raise_dfl"></a>步骤1：提升域功能级别
 
 在以下过程中，你会将目标域的域功能级别提升到 Windows Server 2008 或更高版本。 启用细化密码策略需要 Windows Server 2008 或更高版本的域功能级别。
 
@@ -275,17 +274,17 @@ Windows Server 2008 操作系统将向组织提供一种为域中不同用户集
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ```powershell
 Set-ADDomainMode -Identity contoso.com -DomainMode 3
 ```
 
-#### <a name="bkmk2_test_fgpp"></a>步骤2：创建测试用户、组和组织单位
+#### <a name="step-2-create-test-users-group-and-organizational-unit"></a><a name="bkmk2_test_fgpp"></a>步骤2：创建测试用户、组和组织单位
 
 若要创建此步骤所需的测试用户和组，请按照此处的步骤操作：[步骤3：创建测试用户、组和组织单位](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env)（无需创建 OU 来演示细化密码策略）。
 
-#### <a name="bkmk_create_fgpp"></a>步骤3：创建新的细化密码策略
+#### <a name="step-3-create-a-new-fine-grained-password-policy"></a><a name="bkmk_create_fgpp"></a>步骤3：创建新的细化密码策略
 
 在以下步骤中，将在 ADAC 中使用 UI 创建新细化密码策略。
 
@@ -311,16 +310,16 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ```powershell
 New-ADFineGrainedPasswordPolicy TestPswd -ComplexityEnabled:$true -LockoutDuration:"00:30:00" -LockoutObservationWindow:"00:30:00" -LockoutThreshold:"0" -MaxPasswordAge:"42.00:00:00" -MinPasswordAge:"1.00:00:00" -MinPasswordLength:"7" -PasswordHistoryCount:"24" -Precedence:"1" -ReversibleEncryptionEnabled:$false -ProtectedFromAccidentalDeletion:$true
 Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 ```
 
-#### <a name="bkmk_view_resultant_fgpp"></a>步骤4：查看用户的策略的结果集
+#### <a name="step-4-view-a-resultant-set-of-policies-for-a-user"></a><a name="bkmk_view_resultant_fgpp"></a>步骤4：查看用户的策略的结果集
 
-若一位用户是在 [Step 3: Create a new fine-grained password policy](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中分配了细化密码策略的组成员，在以下步骤中，可查看为该用户生成的密码设置。
+若一位用户是在[步骤 3：创建新细化密码策略](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中分配了细化密码策略的组成员，在以下步骤中，可查看为该用户生成的密码设置。
 
 ##### <a name="to-view-a-resultant-set-of-policies-for-a-user"></a>查看生成的用户策略集
 
@@ -336,13 +335,13 @@ Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ```powershell
 Get-ADUserResultantPasswordPolicy test1
 ```
 
-#### <a name="bkmk_edit_fgpp"></a>步骤5：编辑细化密码策略
+#### <a name="step-5-edit-a-fine-grained-password-policy"></a><a name="bkmk_edit_fgpp"></a>步骤5：编辑细化密码策略
 
 在以下步骤中，将编辑在[步骤 3：创建新细化密码策略](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中创建的细化密码策略。
 
@@ -358,17 +357,17 @@ Get-ADUserResultantPasswordPolicy test1
 
 5. 在 **“强制密码历史”** 下，将 **“记住密码的次数”** 更改为 **30**。
 
-6. 单击**确定**。
+6. 单击“确定”。
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ```powershell
 Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 ```
 
-#### <a name="bkmk_delete_fgpp"></a>步骤6：删除细化密码策略
+#### <a name="step-6-delete-a-fine-grained-password-policy"></a><a name="bkmk_delete_fgpp"></a>步骤6：删除细化密码策略
 
 ##### <a name="to-delete-a-fine-grained-password-policy"></a>删除细化密码策略
 
@@ -376,7 +375,7 @@ Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 
 2. 单击 **“管理”** ，单击 **“添加导航节点”** ，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”** 。
 
-3. 在 ADAC 导航窗格中，展开 **System** ，再单击 **Password Settings Container**。
+3. 在 ADAC 导航窗格中，展开 **System**，再单击 **Password Settings Container**。
 
 4. 选择在[步骤 3：创建新细化密码策略](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)中创建的细化密码策略，并在 **“任务”** 窗格中单击 **“属性”** 。
 
@@ -388,14 +387,14 @@ Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 
 ![简介 AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
 
 ```powershell
 Set-ADFineGrainedPasswordPolicy -Identity TestPswd -ProtectedFromAccidentalDeletion $False
 Remove-ADFineGrainedPasswordPolicy TestPswd -Confirm
 ```
 
-## <a name="windows_powershell_history_viewer"></a>Windows PowerShell 历史记录查看器
+## <a name="windows-powershell-history-viewer"></a><a name="windows_powershell_history_viewer"></a>Windows PowerShell 历史记录查看器
 
 ADAC 是构建在 Windows PowerShell 上的用户界面工具。 在 Windows Server 2012 及更高版本中，IT 管理员可以利用 ADAC，通过使用 Windows PowerShell 历史记录查看器了解适用于 Active Directory cmdlet 的 Windows PowerShell。 在用户界面中执行操作时，会在 Windows PowerShell 历史记录查看器中向用户显示相对应的 Windows PowerShell 命令。 这样，管理员可以创建自动脚本并减少重复任务，从而提高 IT 工作效率。 此外，此功能减少了了解适用于 Active Directory 的 Windows PowerShell 的时间，并使用户能够更有把握地确保其自动化脚本的正确性。
 

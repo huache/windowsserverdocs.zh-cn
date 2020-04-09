@@ -1,7 +1,6 @@
 ---
 ms.assetid: 40bc24b1-2e7d-4e77-bd0f-794743250888
 title: SPN 和 UPN 唯一性
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ded707276471fccd28f0ec17afef0a24015ff32f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f182f79b5bb97e45f1cfd34ad59cf52322f09063
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390026"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823060"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN 和 UPN 唯一性
 
@@ -51,7 +50,7 @@ ms.locfileid: "71390026"
   
 **表 SEQ 表 \\\* 阿拉伯2： UPN 和 SPN 唯一错误代码**  
   
-|十进制|Hex|符号|字符串|  
+|十进制|Hex|符号|String|  
 |-----------|-------|------------|----------|  
 |8467|21C7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|操作失败，因为提供的用于添加/修改的 SPN 值在林范围内不唯一。|  
 |8648|21C8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|操作失败，因为提供的用于添加/修改的 UPN 值在林范围内不唯一。|  
@@ -240,7 +239,7 @@ servicePrincipalName Value=<SPN>
   
             -   如果返回的条目！ = 0-> 写入失败  
   
-                -   记录的事件  
+                -   是否记录事件  
   
                 -   还会返回扩展错误：  
   
@@ -256,7 +255,7 @@ servicePrincipalName Value=<SPN>
   
             -   如果返回的条目！ = 0-> 写入失败  
   
-                -   记录的事件  
+                -   是否记录事件  
   
                 -   还会返回扩展错误：  
   
@@ -280,7 +279,7 @@ servicePrincipalName Value=<SPN>
   
             -   如果返回的条目！ = 0-> 写入失败  
   
-                -   记录的事件  
+                -   是否记录事件  
   
                 -   还会返回扩展错误：  
   
@@ -296,7 +295,7 @@ servicePrincipalName Value=<SPN>
   
             -   如果返回的条目！ = 0-> 写入失败  
   
-                -   记录的事件  
+                -   是否记录事件  
   
                 -   还会返回扩展错误：  
   

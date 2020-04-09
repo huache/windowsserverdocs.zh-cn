@@ -6,13 +6,14 @@ ms.topic: get-started-article
 ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
+manager: lizross
 ms.date: 03/27/2018
-ms.openlocfilehash: fc1799db76f528a599ef70eec5093da0a76206a2
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 8b2ea665542d57b12899a5993a62973c446485a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948529"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828350"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>群集操作系统滚动升级
 
@@ -226,7 +227,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支持群集操作系
         ![截图，其中显示 VMHostSupportedVersion cmdlet 的输出](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_GetVMHostSupportVersion.png)  
         **图21：查看主机支持的 Hyper-v VM 配置版本**  
 
-   3. 在群集中的每个 Hyper-v 主机节点上，可以通过使用用户计划简短的维护时段、备份、关闭虚拟机以及运行[`Update-VMVersion`](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) cmdlet 来升级 hyper-v VM 配置版本（请参阅图22）。 这将更新虚拟机版本并启用新的 Hyper-v 功能，从而无需以后再进行 Hyper-v 集成组件（IC）更新。 此 cmdlet 可以从托管 VM 的 Hyper-v 节点运行，也可以使用 `-ComputerName` 参数远程更新 VM 版本。 在此示例中，我们将 VM1 的配置版本从5.0 升级到7.0，以利用与此 VM 配置版本关联的许多新 Hyper-v 功能，如生产检查点（应用程序一致性备份）和二进制 VM配置文件。  
+   3. 在群集中的每个 Hyper-v 主机节点上，可以通过使用用户计划简短的维护时段、备份、关闭虚拟机以及运行[`Update-VMVersion`](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) cmdlet 来升级 hyper-v VM 配置版本（请参阅图22）。 这将更新虚拟机版本并启用新的 Hyper-v 功能，从而无需以后再进行 Hyper-v 集成组件（IC）更新。 此 cmdlet 可以从托管 VM 的 Hyper-v 节点运行，也可以使用 `-ComputerName` 参数远程更新 VM 版本。 在此示例中，我们将 VM1 的配置版本从5.0 升级到7.0，以利用与此 VM 配置版本关联的许多新 Hyper-v 功能，如生产检查点（应用程序一致性备份）和二进制 VM 配置文件。  
 
        ![截图在操作中显示 VMVersion cmdlet](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
        **图22：使用 VMVersion PowerShell cmdlet 升级 VM 版本**  
@@ -243,7 +244,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支持群集操作系
 - 我们鼓励客户快速浏览群集升级过程，因为某些群集功能没有针对混合 OS 模式进行优化。  
 - 由于从 Windows server 2016 节点故障转移到下层 Windows Server 2012 R2 节点的故障转移可能不兼容，因此应避免在 Windows Server 2016 节点上创建或调整其大小。  
 
-## <a name="frequently-asked-questions"></a>常见问题解答  
+## <a name="frequently-asked-questions"></a>常见问题  
 **故障转移群集在混合 OS 模式下运行的时间有多长？**  
     我们鼓励客户在四周内完成升级。 Windows Server 2016 中有很多优化。 我们已成功升级 Hyper-v 和横向扩展文件服务器群集，在四个小时内不会出现停机时间。  
 
@@ -254,7 +255,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支持群集操作系
     是，在开始群集 OS 滚动升级过程之前，请验证是否已更新所有群集节点的最新软件更新。  
 
 **节点关闭或暂停时，能否运行[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet？**  
-    不相同。 所有群集节点都必须在 active 成员身份中，才能使[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet 正常运行。  
+    No。 所有群集节点都必须在 active 成员身份中，才能使[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet 正常运行。  
 
 **群集操作系统滚动升级是否适用于任何群集工作负荷？它是否适用于 SQL Server？**  
     是的，群集操作系统滚动升级适用于任何群集工作负荷。 但是，Hyper-v 和横向扩展文件服务器群集只需零停机时间。 大多数其他工作负荷会在故障转移时导致停机（通常几分钟），并且在群集 OS 滚动升级过程中至少需要一次故障转移。  
@@ -263,7 +264,7 @@ System Center Virtual Machine Manager （SCVMM）2016完全支持群集操作系
     是的，我们已设计好群集操作系统滚动升级，可以使用 PowerShell 自动完成。  
 
 **对于具有额外工作负荷和故障转移容量的大型群集，能否同时升级多个节点？**  
-    是 从群集中删除一个节点以升级 OS 时，群集将有一个较小的故障转移节点，因此，故障转移能力会降低。 对于具有足够工作负荷和故障转移容量的大型群集，可以同时升级多个节点。 可以暂时将群集节点添加到群集，以便在群集操作系统滚动升级过程中提供改善的工作负荷和故障转移容量。  
+    可以。 从群集中删除一个节点以升级 OS 时，群集将有一个较小的故障转移节点，因此，故障转移能力会降低。 对于具有足够工作负荷和故障转移容量的大型群集，可以同时升级多个节点。 可以暂时将群集节点添加到群集，以便在群集操作系统滚动升级过程中提供改善的工作负荷和故障转移容量。  
 
 **如果在[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)成功运行后发现群集中的问题，该怎么办？**  
     如果在运行[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)之前已使用系统状态备份对群集数据库进行了备份，则应该能够在 Windows Server 2012 R2 群集节点上执行权威还原，并还原原始群集数据库和配置。  

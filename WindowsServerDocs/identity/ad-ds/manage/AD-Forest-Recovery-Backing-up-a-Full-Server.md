@@ -1,6 +1,5 @@
 ---
 title: AD 林恢复-备份完整服务器
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: 4377c1d993b4f6d30cf8ca8a7d149b741d7f8d2f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1579f8e88ea852ddf3f973b51b1b6ceed7c50a00
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369359"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824270"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 林恢复-备份完整服务器  
 
@@ -22,9 +21,9 @@ ms.locfileid: "71369359"
 
 建议使用完整服务器备份来准备林恢复，因为它可以还原到不同的硬件或不同的操作系统实例。  使用 Windows Server 备份可以对服务器执行完整备份。 
 
-## <a name="windows-server-backup"></a>Windows Server 备份
+## <a name="windows-server-backup"></a>Windows Server Backup
 
-默认情况下，不会安装 Windows Server 备份。 在 Windows Server 2016 和 Windows Server 2012 R2 中，按照以下步骤安装它。
+默认情况下不安装 Windows Server Backup。 在 Windows Server 2016 和 Windows Server 2012 R2 中，按照以下步骤安装它。
 
 >[!NOTE]
 >请注意，Windows Server 2016 和 Windows Server 2012 R2 的步骤可能略有不同。
@@ -40,7 +39,7 @@ ms.locfileid: "71369359"
 5. 在 "**服务器角色**" 屏幕上，单击 "**下一步**"。
 6. 在 "**功能**" 屏幕上，选择**Windows Server 备份**然后单击 "**下一步**"
    ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
-7. 单击“安装”。
+7. 单击 **“安装”** 。
 8. 安装完成后，单击 "**关闭**"。
 
 ### <a name="to-perform-a-backup-with-windows-server-backup"></a>使用 Windows Server 备份执行备份

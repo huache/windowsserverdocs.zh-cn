@@ -1,24 +1,25 @@
 ---
 title: 群集关联
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 03/07/2019
 description: 本文介绍故障转移群集相关性和 antiAffinity 级别
-ms.openlocfilehash: 9a269d2b14e953daee849008a473c750dfbfe84b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9910cac602802b753391fad1009fb7f1fa3d2f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361464"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828280"
 ---
 # <a name="cluster-affinity"></a>群集关联
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
-故障转移群集可以拥有多个可在节点间移动和运行的角色。  有时某些角色（例如虚拟机、资源组等）不应在同一个节点上运行。  这可能是由于资源消耗、内存使用情况等引起的。例如，有两个虚拟机占用大量内存和 CPU，如果这两个虚拟机运行在同一节点上，则一个或两个虚拟机可能会影响性能。  本文将介绍群集 antiaffinity 级别以及如何使用它们。
+故障转移群集可以拥有多个可在节点间移动和运行的角色。  有时某些角色（例如虚拟机、资源组等）不应在同一个节点上运行。  这可能是由于资源消耗、内存使用情况等引起的。 例如，有两个虚拟机占用大量内存和 CPU，如果这两个虚拟机运行在同一节点上，则一个或两个虚拟机可能会影响性能。  本文将介绍群集 antiaffinity 级别以及如何使用它们。
 
 ## <a name="what-is-affinity-and-antiaffinity"></a>什么是相关性和 AntiAffinity？
 

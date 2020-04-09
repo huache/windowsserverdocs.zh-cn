@@ -1,23 +1,19 @@
 ---
 title: 在 Windows Server Essentials 中配置 DirectAccess
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 618c88e14fa86a06e763206a981bb42a667705eb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d8029b954a5957433fb0fcc71d3bef610a187939
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311484"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819701"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>在 Windows Server Essentials 中配置 DirectAccess
 
@@ -77,7 +73,7 @@ ms.locfileid: "80311484"
   
 ##  <a name="step-1-add-remote-access-management-tools-to-your-server"></a><a name="BKMK_AddRAM"></a>步骤1：将远程访问管理工具添加到服务器  
   
-#### <a name="to-add-remote-access-management-tools"></a>添加远程访问管理工具的步骤  
+#### <a name="to-add-remote-accregss-management-tools--reg"></a>添加远程 Acc&reg;ss 管理工具 &reg;
   
 1.  在服务器上，在“开始”页的左下角，单击“服务器管理器”图标。  
   

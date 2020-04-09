@@ -2,22 +2,18 @@
 title: DirectAccess 群集 NLB 测试实验室方案概述
 description: 本主题是测试实验室指南的一部分-使用 windows Server 2016 的 Windows NLB 在群集中演示 DirectAccess
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cd1e9efd-19e9-49e7-8432-881f661c9792
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: abc3038cfe0dacb09c115f37289fe72f1c14b96d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7394562ce7a5c08a81fb3c243fb8671d281d8370
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308858"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819040"
 ---
 # <a name="overview-of-the-directaccess-cluster-nlb-test-lab-scenario"></a>DirectAccess 群集 NLB 测试实验室方案概述
 

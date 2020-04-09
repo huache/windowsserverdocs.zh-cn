@@ -1,7 +1,6 @@
 ---
 title: 存储空间直通疑难解答
 description: 了解如何排查存储空间直通部署问题。
-keywords: 存储空间
 ms.prod: windows-server
 ms.author: ''
 ms.technology: storage-spaces
@@ -9,16 +8,16 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ace19b711445106956ae223f17afb6b4181d352d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 429eddf30fddf6bfd035d1f928196a3b66d14646
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365938"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820940"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>排查存储空间直通
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 使用以下信息来排查存储空间直通部署问题。
 
@@ -36,12 +35,12 @@ ms.locfileid: "71365938"
 ## <a name="virtual-disk-resources-are-in-no-redundancy-state"></a>虚拟磁盘资源无冗余状态
 由于崩溃或电源故障，存储空间直通系统的节点意外重启。 然后，一个或多个虚拟磁盘可能未联机，并且你会看到说明 "没有足够的冗余信息"。
 
-|FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|Size| PSComputerName|
+|FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|大小| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| Mirror| 确定|  正常| True|  10 TB|  Node-01. conto|
-|Disk3         |Mirror                 |确定                          |正常       |True            |10 TB | Node-01. conto|
-|Disk2         |Mirror                 |无冗余               |Unhealthy     |True            |10 TB | Node-01. conto|
-|Disk1         |Mirror                 |{无冗余，InService}  |Unhealthy     |True            |10 TB | Node-01. conto| 
+|Disk4| 镜像| 确定|  正常运行| True|  10 TB|  Node-01. conto|
+|Disk3         |镜像                 |确定                          |正常运行       |True            |10 TB | Node-01. conto|
+|Disk2         |镜像                 |无冗余               |不正常     |True            |10 TB | Node-01. conto|
+|Disk1         |镜像                 |{无冗余，InService}  |不正常     |True            |10 TB | Node-01. conto| 
 
 此外，在尝试使虚拟磁盘联机后，会在群集日志（DiskRecoveryAction）中记录以下信息。  
 
@@ -99,12 +98,12 @@ ms.locfileid: "71365938"
 
 下面是**VirtualDisk** cmdlet 的输出示例。
 
-|FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  Size|   PSComputerName|
+|FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  大小|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         Mirror|                 确定|                  正常|       True|            10 TB|  Node-01. conto|
-|Disk3|         Mirror|                 确定|                  正常|       True|            10 TB|  Node-01. conto|
-|Disk2|         Mirror|                 Detached|            Unknown|       True|            10 TB|  Node-01. conto|
-|Disk1|         Mirror|                 Detached|            Unknown|       True|            10 TB|  Node-01. conto| 
+|Disk4|         镜像|                 确定|                  正常运行|       True|            10 TB|  Node-01. conto|
+|Disk3|         镜像|                 确定|                  正常运行|       True|            10 TB|  Node-01. conto|
+|Disk2|         镜像|                 Detached|            未知|       True|            10 TB|  Node-01. conto|
+|Disk1|         镜像|                 Detached|            未知|       True|            10 TB|  Node-01. conto| 
 
 
 此外，还可以在节点上记录以下事件：
@@ -151,7 +150,7 @@ DeviceName:
 Volume Name:
 ``` 
 
-如果脏区域跟踪（DRT）日志已满，则可能发生**分离的操作状态**。 存储空间为镜像空间使用脏区域跟踪（DRT），以确保在发生电源故障时，对元数据进行的任何正在进行的更新都将记录下来，以确保存储空间可以重做或撤消操作，使存储空间恢复为灵活性当电源恢复并且系统恢复正常时，状态一致。 如果 DRT 日志已满，则在同步和刷新 DRT 元数据之前，不能使虚拟磁盘处于联机状态。 此过程需要运行完全扫描，这可能需要几个小时才能完成。
+如果脏区域跟踪（DRT）日志已满，则可能发生**分离的操作状态**。 存储空间为镜像空间使用脏区域跟踪（DRT），以确保在发生电源故障时，对元数据进行的任何正在进行的更新都将记录下来，以确保在恢复电源并且系统恢复正常时，存储空间可以重做或撤消操作，使存储空间恢复为灵活且一致的状态。 如果 DRT 日志已满，则在同步和刷新 DRT 元数据之前，不能使虚拟磁盘处于联机状态。 此过程需要运行完全扫描，这可能需要几个小时才能完成。
 
 若要解决此问题，请执行以下步骤：
 1. 从 CSV 中删除受影响的虚拟磁盘。
@@ -203,12 +202,12 @@ Volume Name:
 
 有关详细信息，请参阅[存储空间直通运行状况和运行状态疑难解答](storage-spaces-states.md)。
 
-## <a name="event-5120-with-status_io_timeout-c00000b5"></a>事件5120与 STATUS_IO_TIMEOUT c00000b5 
+## <a name="event-5120-with-status_io_timeout-c00000b5"></a>事件 5120 STATUS_IO_TIMEOUT c00000b5 
 
 > [!Important]
-> **对于 Windows Server 2016：** 若要减少在将更新与修补程序一起应用时遇到这些问题的可能性，建议使用下面的存储维护模式过程安装[10 月18日2018、Windows Server 2016](https://support.microsoft.com/help/4462928)或更高版本的累积更新当节点当前安装了从[5 月 8 2018 日](https://support.microsoft.com/help/4103723)起发布的 Windows Server 2016 累积更新时[，2018](https://support.microsoft.com/help/KB4462917)。
+> **对于 Windows Server 2016：** 若要在将更新与修补程序结合使用时减少遇到这些问题的可能性，建议使用下面的存储维护模式过程安装[10 月18日2018、Windows server 2016 的累积更新](https://support.microsoft.com/help/4462928)或更高版本（如果节点当前已安装了从[5 月 8 2018 日](https://support.microsoft.com/help/4103723)到[年10月 9 2018 日](https://support.microsoft.com/help/KB4462917)发布的 windows server 2016 累积更新）。
 
-使用从5月8日发布的累积更新（从[5 月8日到 2018 kb 4103723](https://support.microsoft.com/help/4103723)到[10 月9日，已安装 2018 kb 4462917](https://support.microsoft.com/help/4462917) ）重启 Windows Server 2016 上的节点后，你可能会收到事件5120和 STATUS_IO_TIMEOUT c00000b5。
+使用从5月8日发布的累积更新（从[5 月8日到 2018 kb 4103723](https://support.microsoft.com/help/4103723)到[10 月9日，已安装 2018 kb 4462917](https://support.microsoft.com/help/4462917) ）重新启动 Windows Server 2016 上的节点时，可能会收到 STATUS_IO_TIMEOUT c00000b5 的事件5120。
 
 重新启动节点时，事件5120将记录在系统事件日志中，并包含以下错误代码之一：
 
@@ -217,7 +216,7 @@ Event Source: Microsoft-Windows-FailoverClustering
 Event ID: 5120
 Description:    Cluster Shared Volume 'CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_IO_TIMEOUT(c00000b5)'. All I/O will temporarily be queued until a path to the volume is reestablished. 
 
-Cluster Shared Volume ‘CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
+Cluster Shared Volume 'CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
 ```
 
 记录事件5120时，会生成实时转储，收集可能会导致其他症状或性能影响的调试信息。 生成实时转储会创建一个短暂的暂停，以启用内存快照来写入转储文件。 具有大量内存且处于压力下的系统可能导致节点丢弃群集成员身份，还会导致记录以下事件1135。
@@ -274,7 +273,7 @@ Description: Cluster node 'NODENAME'was removed from the active failover cluster
 #### <a name="method-1-recommended-in-this-scenario"></a>方法1（在此方案中建议使用）
 若要完全禁用所有转储，包括实时转储系统，请执行以下步骤：
 
-1. 创建以下注册表项：HKLM\System\CurrentControlSet\Control\CrashControl\ForceDumpsDisabled
+1. 创建以下注册表项： HKLM\System\CurrentControlSet\Control\CrashControl\ForceDumpsDisabled
 2. 在新的**ForceDumpsDisabled**项下，创建一个 REG_DWORD 属性作为 GuardedHost，然后将其值设置为0x10000000。
 3. 将新的注册表项应用于每个群集节点。
 
@@ -311,20 +310,20 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 1. 使用群集日志。 在所选的文本编辑器中打开群集日志，并搜索 "[= = = SBL 磁盘 = = =]"。 这将是在其上生成日志的节点上的磁盘的列表。 
 
-     启用缓存的磁盘示例：请注意，此处的状态为 CacheDiskStateInitializedAndBound，此时存在 GUID。 
+     已启用缓存的磁盘示例：请注意，此处的状态为 CacheDiskStateInitializedAndBound，此时存在 GUID。 
 
    ```
    [=== SBL Disks ===]
     {26e2e40f-a243-1196-49e3-8522f987df76},3,false,true,1,48,{1ff348f1-d10d-7a1a-d781-4734f4440481},CacheDiskStateInitializedAndBound,1,8087,54,false,false,HGST    ,HUH721010AL4200 ,        7PG3N2ER,A21D,{d5e27a3b-42fb-410a-81c6-9d8cc12da20c},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0],
     ```
 
-    未启用缓存：这里我们可以看到，没有 GUID，并且状态为 CacheDiskStateNonHybrid。 
+    未启用缓存：在这里，我们可以看到没有 GUID 并且状态为 CacheDiskStateNonHybrid。 
     ```
    [=== SBL Disks ===]
     {426f7f04-e975-fc9d-28fd-72a32f811b7d},12,false,true,1,24,{00000000-0000-0000-0000-000000000000},CacheDiskStateNonHybrid,0,0,0,false,false,HGST    ,HUH721010AL4200 ,        7PGXXG6C,A21D,{d5e27a3b-42fb-410a-81c6-9d8cc12da20c},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0],
     ```
 
-    未启用缓存：默认情况下，如果所有磁盘都属于相同的类型，则不启用。 这里我们可以看到，没有 GUID，并且状态为 CacheDiskStateIneligibleDataPartition。 
+    未启用缓存：默认情况下，不启用所有磁盘的类型。 这里我们可以看到，没有 GUID，并且状态为 CacheDiskStateIneligibleDataPartition。 
     ```
     {d543f90c-798b-d2fe-7f0a-cb226c77eeed},10,false,false,1,20,{00000000-0000-0000-0000-000000000000},CacheDiskStateIneligibleDataPartition,0,0,0,false,false,NVMe    ,INTEL SSDPE7KX02,  PHLF7330004V2P0LGN,0170,{79b4d631-976f-4c94-a783-df950389fd38},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0], 
     ```  
@@ -333,19 +332,19 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
     2. 运行 "ipmo 存储"
     3. 运行 "$d"。 请注意，使用情况为自动选择，而不是日记本你将看到如下输出： 
 
-   |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| 用法| Size|
+   |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| 用法| 大小|
    |-----------|------------|---------| -------| -----------------| ------------| -----| ----|
-   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| False|   确定|                正常|      自动选择 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  False|    确定|                正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  False|  确定|                正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| False| 确定|    正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| False|确定|       正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| False| 确定|      正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| False| 确定|      正常|自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| False| 确定|  正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| 确定| 正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| 确定|正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| 确定| 正常| 自动选择 |1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| False|   确定|                正常运行|      自动选择 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  False|    确定|                正常运行| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  False|  确定|                正常运行| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| False| 确定|    正常运行| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| False|确定|       正常运行| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| False| 确定|      正常运行| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| False| 确定|      正常运行|自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| False| 确定|  正常运行| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| 确定| 正常运行| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| 确定|正常运行| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| 确定| 正常运行| 自动选择 |1.82 TB|
 
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>如何销毁现有群集以便可以再次使用相同的磁盘
 
@@ -360,23 +359,23 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 |编号| 友好名称| 序列号|HealthStatus|OperationalStatus|总大小| 分区形式|
 |-|-|-|-|-|-|-|-|
-|0|Msft Virtu  ||正常 | 联机|  127 GB| GPT|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-|1|Msft Virtu||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-|2|Msft Virtu||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-|4|Msft Virtu||正常| 脱机| 100 GB| 原材料|
-|3|Msft Virtu||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
-||Msft Virtu ||正常| 脱机| 100 GB| 原材料|
+|0|Msft Virtu  ||正常运行 | Online|  127 GB| GPT|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+|1|Msft Virtu||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+|2|Msft Virtu||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+|4|Msft Virtu||正常运行| 脱机| 100 GB| RAW|
+|3|Msft Virtu||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
+||Msft Virtu ||正常运行| 脱机| 100 GB| RAW|
 
 
 ## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>使用 Enable-clusters2d 创建存储空间直通群集时出现的有关 "不支持的媒体类型" 的错误消息  
@@ -387,26 +386,26 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 若要解决此问题，请确保 HBA 适配器是在 HBA 模式下配置的。 不应在 RAID 模式下配置 HBA。  
 
-## <a name="enable-clusterstoragespacesdirect-hangs-at-waiting-until-sbl-disks-are-surfaced-or-at-27"></a>启用-ClusterStorageSpacesDirect 在 "等待 SBL 磁盘出现" 或 27% 时挂起
+## <a name="enable-clusterstoragespacesdirect-hangs-at-waiting-until-sbl-disks-are-surfaced-or-at-27"></a>启用-ClusterStorageSpacesDirect 在 "等待 SBL 磁盘出现" 或27% 时挂起
 
 验证报告中将显示以下信息：
 
     Disk <identifier> connected to node <nodename> returned a SCSI Port Association and the corresponding enclosure device could not be found. The hardware is not compatible with Storage Spaces Direct (S2D), contact the hardware vendor to verify support for SCSI Enclosure Services (SES). 
 
 
-此问题的原因在于磁盘和 HBA 卡之间的 HPE SAS 扩展器卡。 SAS 扩展器在连接到扩展器的第一个驱动器与扩展器本身之间创建重复的 ID。  此操作已在 HPE [智能阵列控制器 SAS 扩展器固件中得到解决：4.02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3)。
+此问题的原因在于磁盘和 HBA 卡之间的 HPE SAS 扩展器卡。 SAS 扩展器在连接到扩展器的第一个驱动器与扩展器本身之间创建重复的 ID。  此操作已在[HPE 智能阵列控制器 SAS 扩展器固件： 4.02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3)中得到解决。
 
 ## <a name="intel-ssd-dc-p4600-series-has-a-non-unique-nguid"></a>Intel SSD DC P4600 系列具有非唯一的 n
 在下面的示例中，可能会出现一个问题，即 Intel SSD DC P4600 系列设备似乎为多个命名空间（如0100000001000000E4D25C000014E214 或0100000001000000E4D25C0000EEE214）报告类似的16字节 n。
 
 
-|               uniqueid               | deviceid | MediaType | BusType |               serialnumber               |      大小      | canpool | 友好 | OperationalStatus |
+|               uniqueid               | deviceid | MediaType | BusType |               serialnumber               |      size      | canpool | 友好 | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
 |           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  False  |     HGST     |  HUH721010AL4200  |
-| eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
 
 若要解决此问题，请将 Intel 驱动器上的固件更新到最新版本。  已知固件版本 QDV101B1 可能是2018。
 

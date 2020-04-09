@@ -2,22 +2,19 @@
 title: 查看和管理更新
 description: Windows Server Update Service （WSUS）主题-如何在 WSUS 控制台中查看和管理更新
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac70192b-0309-4385-b697-2e8eda51911c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de2d12ad34ba11f948baa390546747a6bf4b635c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2a9f7e1f1f3f648a0cba22d599ccc64e7b424d8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361494"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828440"
 ---
 # <a name="viewing-and-managing-updates"></a>查看和管理更新
 
@@ -76,7 +73,7 @@ ms.locfileid: "71361494"
 
 5.  在 "**步骤3：指定一个名称**" 下，为新视图指定一个名称。
 
-6.  单击**确定**。
+6.  单击“确定”。
 
 新视图将显示在 "更新" 下的 "树视图" 窗格中。 当你选择它时，它将显示在中心窗格中，如标准视图。
 
@@ -98,7 +95,7 @@ ms.locfileid: "71361494"
 
     -   标题栏将显示更新的标题;例如，Windows Media Player 9 （KB911565）的安全更新。
 
-    -   "状态" 部分显示更新的安装状态（需要在其上安装它的计算机、安装了错误的计算机、已安装的计算机或不适用的计算机，以及未报告的计算机更新的状态）以及一般信息（KB 和 MSRC 编号发布日期等）。
+    -   "状态" 部分显示更新的安装状态（需要在其上安装它的计算机、安装了该应用程序的计算机上有错误的计算机、安装了该应用程序的计算机或不适用的计算机，以及一般信息（KB 和 MSRC 编号发布日期等）。
 
     -   "描述" 部分显示更新的简短说明。
 
@@ -123,7 +120,7 @@ ms.locfileid: "71361494"
 ## <a name="managing-updates-with-wsus"></a>用 WSUS 管理更新
 更新用于更新或提供计算机上安装的软件的完整文件替换。 Microsoft 更新上提供的每个更新都由两个组件组成：
 
--   Metadata：提供有关更新的信息。 例如，元数据提供有关更新的属性的信息，从而使您可以了解更新的用途。 元数据还包括 Microsoft 软件许可条款。 下载到更新的元数据包通常比实际的更新文件包小得多。
+-   Metadata：提供有关更新的信息。 例如，元数据提供更新属性的信息，因此可让你知道该更新的作用。 元数据还包括 Microsoft 软件许可条款。 下载的更新元数据包通常比实际的更新文件包小得多。
 
 -   更新文件：在计算机上安装更新所需的实际文件。
 
@@ -158,7 +155,7 @@ Microsoft 更新上可用的更新将按产品（或产品系列）和分类来�
 
 更新分类表示更新的类型。 对于任何给定的产品或产品系列，可以在多个更新分类之间提供更新（例如，Windows 7 系列关键更新和安全更新）。 下表列出了更新分类。
 
-| 更新分类  | 描述   |
+| 更新分类  | 说明   |
 |--|--|
 |关键更新|广泛发布的修补程序，用于解决与安全无关的关键错误。|
 |定义更新|病毒或其他定义文件的更新。|

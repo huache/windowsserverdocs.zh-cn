@@ -1,7 +1,6 @@
 ---
 ms.assetid: ac727bd1-a892-47ed-a7ba-439b34187d4e
 title: AD DS 安装和删除向导页面说明
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3563c30e86c53435c10cafc840a71c7b8c526943
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 7370dfed68e22ca88030aec913db4eb52eef9ec3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323249"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825450"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>AD DS 安装和删除向导页面说明
 
@@ -50,7 +49,7 @@ ms.locfileid: "79323249"
   
 -   [确认角色删除选择](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_ConfirmRoleRemovalPage)  
   
-## <a name="BKMK_DepConfigPage"></a>部署配置  
+## <a name="deployment-configuration"></a><a name="BKMK_DepConfigPage"></a>部署配置  
 服务器管理器从“部署配置”页面开始执行每个域控制器的安装。 其余选项和必填字段在此页面和后续页面上会有所变化，这视所选部署操作而定。 例如，如果创建新林，"**准备选项**" 页不会显示，但是如果在现有林或域中安装运行 Windows Server 2012 的第一个域控制器，则会出现此情况。  
   
 有些验证测试会在此页面上执行，之后作为先决条件检查的一部分再次执行。 例如，如果你尝试在具有 Windows 2000 功能级别的林中安装第一个 Windows Server 2012 域控制器，则此页上将显示错误。  
@@ -96,14 +95,14 @@ ms.locfileid: "79323249"
   
 有关如何向现有域添加域控制器的详细信息，请参阅[在现有域&#40;级别&#41;200 中安装副本 Windows Server 2012 域控制器](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。  
   
-## <a name="BKMK_DCOptionsPage"></a>域控制器选项  
+## <a name="domain-controller-options"></a><a name="BKMK_DCOptionsPage"></a>域控制器选项  
 如果要创建新林，“域控制器选项”页将显示以下选项。  
   
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_DCOptions_Forest.gif)  
   
 -   默认情况下，林和域功能级别设置为 Windows Server 2012。  
   
-    Windows Server 2012 域功能级别提供了一个新功能：支持动态访问控制和 Kerberos 保护 KDC 管理模板策略具有两个设置（始终提供声明和未保护身份验证请求），需要 Windows Server 2012 域功能级别。 有关详细信息，请参阅[Kerberos 身份验证中的新增功能中的](https://technet.microsoft.com/library/hh831747.aspx)"支持声明、复合身份验证和 Kerberos 保护"。    
+    Windows Server 2012 域功能级别提供了一个新功能：支持动态访问控制和 Kerberos 保护 KDC 管理模板策略具有两个设置（"始终提供声明" 和 "未保护身份验证请求失败"），需要 Windows Server 2012 域功能级别。 有关详细信息，请参阅[Kerberos 身份验证中的新增功能中的](https://technet.microsoft.com/library/hh831747.aspx)"支持声明、复合身份验证和 Kerberos 保护"。    
     Windows Server 2012 林功能级别不提供任何新功能，但可确保在林中创建的任何新域都将在 Windows Server 2012 域功能级别上自动运行。 Windows Server 2012 域功能级别不提供支持动态访问控制和 Kerberos 保护的其他任何新功能，但可确保域中的任何域控制器都运行 Windows Server 2012。 有关不同功能级别提供的其他功能的详细信息，请参阅 [了解 Active Directory 域服务 (AD DS) 功能级别](../active-directory-functional-levels.md)。  
   
     除了功能级别以外，运行 Windows Server 2012 的域控制器还提供运行早期版本 Windows Server 的域控制器上不可用的其他功能。 例如，运行 Windows Server 2012 的域控制器可用于虚拟域控制器克隆，而运行早期版本 Windows Server 的域控制器则不能。  
@@ -141,7 +140,7 @@ ms.locfileid: "79323249"
   
 有关如何向现有域添加域控制器的详细信息，请参阅[在现有域&#40;级别&#41;200 中安装副本 Windows Server 2012 域控制器](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。  
   
-## <a name="BKMK_DNSOptionsPage"></a>DNS 选项  
+## <a name="dns-options"></a><a name="BKMK_DNSOptionsPage"></a>DNS 选项  
 如果安装 DNS 服务器，则将显示以下“DNS 选项”页。  
   
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_DNSOptions_Replica.gif)  
@@ -168,7 +167,7 @@ ms.locfileid: "79323249"
   
 -   [了解转发器](https://go.microsoft.com/fwlink/?LinkId=164778)（ https://go.microsoft.com/fwlink/?LinkId=164778)  
   
-## <a name="BKMK_RODCOptionsPage"></a>RODC 选项  
+## <a name="rodc-options"></a><a name="BKMK_RODCOptionsPage"></a>RODC 选项  
 在安装只读域控制器 (RODC) 时，将显示以下选项。  
   
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_RODCOptions.gif)  
@@ -183,7 +182,7 @@ ms.locfileid: "79323249"
   
 有关安装 rodc 的详细信息，请参阅[安装 Windows Server 2012 Active Directory 只读域控制器&#40;RODC&#41; &#40;Level 200&#41;](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md)。  
   
-## <a name="BKMK_AdditionalOptionsPage"></a>其他选项  
+## <a name="additional-options"></a><a name="BKMK_AdditionalOptionsPage"></a>其他选项  
 如果要创建新域，以下选项将显示在“其他选项”页中。  
   
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_AdditionalOptions_Child.gif)  
@@ -198,7 +197,7 @@ ms.locfileid: "79323249"
   
 有关如何创建域的详细信息，请参阅[安装新的 Windows Server 2012 Active Directory 子或树域&#40;级别 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)。 有关如何向现有域添加域控制器的详细信息，请参阅[在现有域&#40;级别&#41;200 中安装副本 Windows Server 2012 域控制器](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。  
   
-## <a name="BKMK_Paths"></a>路径  
+## <a name="paths"></a><a name="BKMK_Paths"></a>路径  
 以下选项显示在“路径”页。  
   
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_Paths.gif)  
@@ -207,7 +206,7 @@ ms.locfileid: "79323249"
   
 指定 AD DS 数据库 (NTDS.DIT)、日志文件和 SYSVOL 的位置。 对于本地安装，可以浏览到要用于存储文件的位置。  
   
-## <a name="BKMK_AdprepCreds"></a>准备选项  
+## <a name="preparation-options"></a><a name="BKMK_AdprepCreds"></a>准备选项  
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PreparationOptions.gif)  
   
 如果当前未使用足够凭据登录来运行 adprep.exe 命令和，且需要运行 adprep 才能完成 AD DS 安装，系统将提示你提供凭据来运行 adprep.exe。 需要运行 Adprep 才能将运行 Windows Server 2012 的第一个域控制器添加到现有域或林。 更具体的内容，请参阅：  
@@ -220,14 +219,14 @@ ms.locfileid: "79323249"
   
 有关 al.exe 的详细信息，请参阅[adprep.log 集成](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_NewAdprep)，请参阅[运行 al.exe](https://technet.microsoft.com/library/dd464018(WS.10).aspx)。  
   
-## <a name="BKMK_ViewInstallOptionsPage"></a>查看选项  
+## <a name="review-options"></a><a name="BKMK_ViewInstallOptionsPage"></a>查看选项  
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_ReviewOptions.gif)  
   
 -   “审查” 选项 页可以用于验证设置并确保在开始安装前满足要求。 这不是停止使用服务器管理器安装的最后一次机会。 此页只是让你先查看和确认设置，然后再继续配置。  
   
 -   服务器管理器中的“审查选项” 页还提供可选的“查看脚本” 按钮，可将包含当前 ADDSDeployment 配置的 Unicode 文本文件创建为一个 Windows PowerShell 脚本。 这样，你可以将服务器管理器图形界面用作 Windows PowerShell 部署工作台。 使用 Active Directory 域服务配置向导来配置选项、导出配置和取消向导。 此过程将创建有效且语法正确的示例，以便做进一步修改或直接使用。  
   
-## <a name="BKMK_PrerqCheckPage"></a>必备项检查  
+## <a name="prerequisites-check"></a><a name="BKMK_PrerqCheckPage"></a>必备项检查  
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PrerequisitesCheck.gif)  
   
 此页面上显示的一些警告包括：  
@@ -240,7 +239,7 @@ ms.locfileid: "79323249"
   
 有关 AD DS 安装需要执行的先决条件检查的详细信息，请参阅[先决条件测试](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_ADDSInstallPrerequisiteTests)。  
   
-## <a name="BKMK_Results"></a>后果  
+## <a name="results"></a><a name="BKMK_Results"></a>后果  
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_SMResultsBeta.gif)  
   
 在此页面上，可以查看安装结果。  
@@ -249,7 +248,7 @@ ms.locfileid: "79323249"
   
 如果目标服务器无法在这种情况下重新启动，必须手动重新启动。 shutdown.exe 或 Windows PowerShell 等工具无法重新启动它。 你可以使用远程桌面服务登录并远程关闭目标服务器。  
   
-## <a name="BKMK_RemovalCredsPage"></a>角色删除凭据  
+## <a name="role-removal-credentials"></a><a name="BKMK_RemovalCredsPage"></a>角色删除凭据  
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_Credentials.gif)  
   
 你可在“凭据” 页上配置降级选项。 从以下列表提供执行降级所需的凭据：  
@@ -263,7 +262,7 @@ ms.locfileid: "79323249"
   
 有关删除 AD DS 的详细信息，请参阅[删除 Active Directory 域服务（级别100）](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c)和[降级域控制器和&#40;域级别&#41;200](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。  
   
-## <a name="BKMK_RemovalOptionsPage"></a>AD DS 删除选项和警告  
+## <a name="ad-ds-removal-options-and-warnings"></a><a name="BKMK_RemovalOptionsPage"></a>AD DS 删除选项和警告  
 如果需要“审查” 选项页的相关帮助，请参阅“审查” 选项。  
   
 如果域控制器托管附加角色（如 DNS 服务器角色或全局目录服务器），将显示以下警告消息：  
@@ -298,14 +297,14 @@ ms.locfileid: "79323249"
   
 有关删除 AD DS 的详细信息，请参阅[删除 Active Directory 域服务（级别100）](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c)和[降级域控制器和&#40;域级别&#41;200](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。  
   
-## <a name="BKMK_NewAdminPwdPage"></a>新的管理员密码  
+## <a name="new-administrator-password"></a><a name="BKMK_NewAdminPwdPage"></a>新的管理员密码  
 当降级完成且计算机成为域成员服务器或工作组计算机后，"**新建管理员密码**" 页将要求你提供内置本地计算机的管理员帐户的密码。  
   
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_NewAdminPwd.gif)  
   
 有关删除 AD DS 的详细信息，请参阅[删除 Active Directory 域服务（级别100）](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c)和[降级域控制器和&#40;域级别&#41;200](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。  
   
-## <a name="BKMK_ConfirmRoleRemovalPage"></a>查看选项  
+## <a name="review-options"></a><a name="BKMK_ConfirmRoleRemovalPage"></a>查看选项  
 “审查” 选项页面可以将降级配置设置导出到 Windows PowerShell 脚本，以便可以自动执行附加降级。 单击“降级”以删除 AD DS。  
   
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_ReviewOptions.gif)  

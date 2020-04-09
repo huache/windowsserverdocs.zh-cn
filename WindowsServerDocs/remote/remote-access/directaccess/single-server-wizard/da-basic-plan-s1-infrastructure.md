@@ -2,22 +2,17 @@
 title: 步骤1规划基本 DirectAccess 基础结构
 description: 本主题是使用 Windows Server 2016 的入门向导部署单个 DirectAccess 服务器指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9c71ef26f9e4ba5d20705827109d9ad22fe5c7ab
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6bab4adbcf006556c73c96f403afe7538079e967
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308893"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819340"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步骤1规划基本 DirectAccess 基础结构
 在单台服务器上进行基本 DirectAccess 部署的第一步是针对部署所需的基础结构进行规划。 本主题介绍基础结构规划步骤：  
@@ -55,8 +50,8 @@ ms.locfileid: "80308893"
   
     ||外部网络适配器|内部网络适配器<sup>1</sup>|路由要求|  
     |-|--------------|--------------------|------------|  
-    |IPv4 Intranet 和 IPv4 Internet|配置下列内容：<br /><br />-一个具有相应子网掩码的静态公用 IPv4 地址。<br />-Internet 防火墙或本地 Internet 服务提供商 \(ISP\) 路由器的默认网关 IPv4 地址。|配置下列内容：<br /><br />-具有相应子网掩码的 IPv4 intranet 地址。<br />-连接\-intranet 命名空间的特定 DNS 后缀。 还必须在内部接口上配置 DNS 服务器。<br />-不要在任何 intranet 接口上配置默认网关。|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br /><br />1. 列出 intranet 上所有位置的 IPv4 地址空间。<br />2. 使用**路由 add \-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。|  
-    |IPv6 Internet 和 IPv6 Intranet|配置下列内容：<br /><br />-使用 ISP 提供的自动配置地址配置。<br />-使用**route print**命令，以确保指向 ISP 路由器的默认 ipv6 路由存在于 IPv6 路由表中。<br />-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 用于 ISP 路由器的更高级首选项可确保 DirectAccess 服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br /><br />因为 DirectAccess 服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，请将数据包筛选器添加到外围网络中的域控制器，阻止连接到 DirectAccess 服务器\-面向 Internet 的接口的 IPv6 地址。|配置下列内容：<br /><br />-如果使用的不是默认首选项级别，请使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled**命令来配置 intranet 接口。 此命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从 netsh 接口显示接口命令的显示中获得 Intranet 接口的 InterfaceIndex。|如果你拥有 IPv6 Intranet，若要配置 DirectAccess 服务器以访问所有的 IPv6 位置，请执行以下操作：<br /><br />1. 列出 intranet 上所有位置的 IPv6 地址空间。<br />2. 使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为 DirectAccess 服务器的 ipv6 路由表中的静态路由。|  
+    |IPv4 Intranet 和 IPv4 Internet|配置下列内容：<p>-一个具有相应子网掩码的静态公用 IPv4 地址。<br />-Internet 防火墙或本地 Internet 服务提供商 \(ISP\) 路由器的默认网关 IPv4 地址。|配置下列内容：<p>-具有相应子网掩码的 IPv4 intranet 地址。<br />-连接\-intranet 命名空间的特定 DNS 后缀。 还必须在内部接口上配置 DNS 服务器。<br />-不要在任何 intranet 接口上配置默认网关。|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<p>1. 列出 intranet 上所有位置的 IPv4 地址空间。<br />2. 使用**路由 add \-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。|  
+    |IPv6 Internet 和 IPv6 Intranet|配置下列内容：<p>-使用 ISP 提供的自动配置地址配置。<br />-使用**route print**命令，以确保指向 ISP 路由器的默认 ipv6 路由存在于 IPv6 路由表中。<br />-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 用于 ISP 路由器的更高级首选项可确保 DirectAccess 服务器的活动默认 IPv6 路由指向 IPv6 Internet。<p>因为 DirectAccess 服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，请将数据包筛选器添加到外围网络中的域控制器，阻止连接到 DirectAccess 服务器\-面向 Internet 的接口的 IPv6 地址。|配置下列内容：<p>-如果使用的不是默认首选项级别，请使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled**命令来配置 intranet 接口。 此命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从 netsh 接口显示接口命令的显示中获得 Intranet 接口的 InterfaceIndex。|如果你拥有 IPv6 Intranet，若要配置 DirectAccess 服务器以访问所有的 IPv6 位置，请执行以下操作：<p>1. 列出 intranet 上所有位置的 IPv6 地址空间。<br />2. 使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为 DirectAccess 服务器的 ipv6 路由表中的静态路由。|  
     |IPv4 Internet 和 IPv6 Intranet|在 IPv4 Internet 上，DirectAccess 服务器使用 Microsoft 6to4 适配器接口将默认 IPv6 路由通信转发到 6to4 中继。 你可以使用以下命令为 IPv4 Internet 上的 Microsoft 6to4 中继的 IPv4 地址配置 DirectAccess 服务器 \(在企业\) 网络中未部署本机 IPv6 时使用： netsh interface IPv6 6to4 set 中继 name\=192.88.99.1 state\=enabled 命令。|||  
   
     > [!NOTE]  

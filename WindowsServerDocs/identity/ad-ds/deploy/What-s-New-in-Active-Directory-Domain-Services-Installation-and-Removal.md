@@ -1,7 +1,6 @@
 ---
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
 title: Active Directory 域服务安装和删除的新功能
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: b290b11487ce84b0c7cd962b272f52fea538769a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323199"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824940"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 域服务安装和删除的新功能
 
@@ -36,7 +35,7 @@ AD DS 安装包括以下功能：
 - **你可以导出一个 Windows PowerShell 脚本，其中包含图形安装期间指定的所有选项的。** 安装或删除结束后，可以将设置导出到 Windows PowerShell 脚本，以用于自动执行相同操作。  
 - **仅在重新启动前才进行关键复制。** 允许在重新启动前复制非关键数据的新开关。 有关详细信息，请参阅 [ADDSDeployment cmdlet 参数](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)。  
 
-## <a name="BKMK_ADConfigurationWizard"></a>Active Directory 域服务配置向导
+## <a name="the-active-directory-domain-services-configuration-wizard"></a><a name="BKMK_ADConfigurationWizard"></a>Active Directory 域服务配置向导
 
 从 Windows Server 2012 开始，Active Directory 域服务配置向导会将旧 Active Directory 域服务安装向导替换为在安装域控制器时指定设置的用户界面（UI）选项。 Active Directory 域服务配置向导在完成添加角色向导后开始。  
 
@@ -45,7 +44,7 @@ AD DS 安装包括以下功能：
 
 在[安装 Active Directory 域服务&#40;级别 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)中，UI 过程显示如何启动添加角色向导以安装 AD DS 服务器角色二进制文件，然后运行 Active Directory 域服务配置向导来完成域控制器安装。 Windows PowerShell 示例显示如何使用 AD DS 部署 cmdlet 完成这两个步骤。  
   
-## <a name="BKMK_NewAdprep"></a>Adprep.log 集成
+## <a name="adprepexe-integration"></a><a name="BKMK_NewAdprep"></a>Adprep.log 集成
 
 从 Windows Server 2012 开始，只有一个版本的 Adprep.log （没有32位版本，adprep32.exe）。 将运行 Windows Server 2012 的域控制器安装到现有 Active Directory 域或林时，将根据需要自动运行 Adprep 命令。  
   
@@ -104,7 +103,7 @@ adprep /domainprep /gpprep 命令不在 AD DS 安装中运行。 此命令设置
 
 可以安全地将运行 Windows Server 2012 的域控制器添加到现有域，而无需运行 adprep/domainprep/gpprep，但 RSOP 计划模式将不会正常运行。  
 
-## <a name="BKMK_PrereqCheck"></a>AD DS 安装先决条件验证
+## <a name="ad-ds-installation-prerequisite-validation"></a><a name="BKMK_PrereqCheck"></a>AD DS 安装先决条件验证
 
 AD DS 安装向导将在安装开始前，检查是否满足以下先决条件。 这可让你可更正可能会阻止安装的问题。  
   
@@ -122,13 +121,13 @@ AD DS 安装向导将在安装开始前，检查是否满足以下先决条件�
 - 子域名验证：确保父域名称和新子域名称有效且不与现有域冲突。  
 - 树域名验证：确保指定树名称有效且当前不存在。  
 
-## <a name="BKMK_SystemReqs"></a>系统要求
+## <a name="system-requirements"></a><a name="BKMK_SystemReqs"></a>系统要求
 
 Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化。 有关详细信息，请参阅[Windows Server 2008 R2 SP1 系统要求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)（ https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)。  
 
 部分功能可能具有附加要求。 例如，虚拟域控制器克隆功能需要 PDC 仿真器运行 Windows Server 2012 和运行 Windows Server 2012 且安装了 Hyper-v 角色的计算机。  
 
-## <a name="BKMK_KnownIssues"></a>已知问题
+## <a name="known-issues"></a><a name="BKMK_KnownIssues"></a>已知问题
 
 本部分列出了一些在 Windows Server 2012 中会影响 AD DS 安装的已知问题。 有关更多已知问题，请参阅[域控制器部署疑难解答](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
 
@@ -172,7 +171,7 @@ Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化
 
    如果让目标服务器加入域，然后使用智能卡执行安装，安装成功。  
   
-- **ADDSDeployment 模块未在 32 位进程下运行。** 如果你使用包含 ADDSDeployment cmdlet 和任何其他不支持本机64位进程的 cmdlet 的脚本自动部署和配置 Windows Server 2012，则脚本可能会失败，并显示一条指示 ADDSDeployment找不到 cmdlet。  
+- **ADDSDeployment 模块未在 32 位进程下运行。** 如果你使用包含 ADDSDeployment cmdlet 和任何其他不支持本机64位进程的 cmdlet 的脚本自动部署和配置 Windows Server 2012，则脚本可能会失败，并显示一个错误，指示找不到 ADDSDeployment cmdlet。  
 
    在这种情况下，需要独立于不支持本机 64 位进程的 cmdlet 运行 ADDSDeployment cmdlet。  
 
@@ -230,7 +229,7 @@ Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化
 
    如果指定本地管理员帐户和密码导致错误，那么要进行恢复，就需要重新安装操作系统，对无法完成安装的域控制器 [执行帐户元数据清理](https://technet.microsoft.com/library/cc816907(WS.10).aspx) ，然后使用域管理员凭据再次尝试 AD DS 安装。 重启服务器不会纠正该错误情况，因为服务器会标明 AD DS 已安装，即使安装没有成功完成也是如此。  
 
-### <a name="BKMK_nonnormalDNSNameWarning"></a>当指定了非规范化 DNS 名称时，Active Directory 域服务配置向导会发出警告
+### <a name="active-directory-domain-services-configuration-wizard-warns-when-a-non-normalized-dns-name-is-specified"></a><a name="BKMK_nonnormalDNSNameWarning"></a>当指定了非规范化 DNS 名称时，Active Directory 域服务配置向导会发出警告
 
 如果创建新域或新林且指定的 DNS 域名包括非标准化的国际化字符，则 Active Directory 域服务配置向导将显示警告，指示 DNS 名称查询将失败。 尽管在“部署配置”页指定了 DNS 域名，但在向导后面的“先决条件检查”页上显示警告。  
 

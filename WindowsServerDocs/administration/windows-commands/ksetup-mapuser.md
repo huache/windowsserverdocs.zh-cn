@@ -1,24 +1,20 @@
 ---
 title: ksetup： mapuser
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84113e6e-89ff-488a-9cd0-f14bbf23b543
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b80538999c364e9ed10ca0ed43387f603ac9ad3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f61c67fa21eccb77601b78aed51791259d609c5e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374977"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841480"
 ---
 # <a name="ksetupmapuser"></a>ksetup： mapuser
 
@@ -32,12 +28,12 @@ ms.locfileid: "71374977"
 ksetup /mapuser <Principal> <Account>
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
-|  参数   |                                                   描述                                                   |
+|  参数   |                                                   说明                                                   |
 |--------------|-----------------------------------------------------------------------------------------------------------------|
-| \<Principal > |              任何主体的完全限定的域名;例如，mike@corp.CONTOSO.COM。              |
-|  \<Account >  | 此计算机上存在的任何帐户或安全组名称，如来宾、域用户或管理员。 |
+| \<主体 > |              任何主体的完全限定的域名;例如，mike@corp.CONTOSO.COM。              |
+|  \<帐户 >  | 此计算机上存在的任何帐户或安全组名称，如来宾、域用户或管理员。 |
 
 ## <a name="remarks"></a>备注
 
@@ -51,7 +47,7 @@ ksetup /mapuser <Principal> <Account>
 
 每当对外部密钥发行中心（KDC）和领域配置进行更改时，都需要重新启动更改了设置的计算机。
 
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 
 将你的 Kerberos 领域中的 Mike Danseglio 的帐户映射到此计算机上的来宾帐户，向他授予内置来宾帐户成员的所有权限，而无需对此计算机进行身份验证：
 ```
@@ -70,7 +66,7 @@ ksetup /mapuser mike@corp.CONTOSO.COM *
 ksetup /mapuser * *
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)
 -   [Ksetup](ksetup.md)

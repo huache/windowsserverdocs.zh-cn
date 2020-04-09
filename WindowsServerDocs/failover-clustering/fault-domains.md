@@ -3,17 +3,17 @@ ms.assetid: 56fc7f80-9558-467e-a6e9-a04c9abbee33
 title: 故障域感知
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/16/2016
-ms.openlocfilehash: 439f898b7c96ecc3d2f380509fe86d528aa737c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4e42333ecc80ab7401b6e39151377baa86dcf190
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361140"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827750"
 ---
 # <a name="fault-domain-awareness"></a>故障域感知
 
@@ -58,7 +58,7 @@ Windows Server 2019 中提供了容错域感知功能，但它在默认情况下
 
 ![不同级别的容错域的图示](media/Fault-Domains-in-Windows-Server-2016/levels-of-fault-domains.png)
 
-## <a name="usage"></a>Usage  
+## <a name="usage"></a>用法  
 可以使用 PowerShell 或 XML 标记来指定容错域。 这两种方法是等效的并可提供完整功能。
 
 >[!IMPORTANT]

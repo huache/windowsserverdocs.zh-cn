@@ -1,28 +1,24 @@
 ---
 title: bitsadmin util 和 repairservice
-description: Windows 命令主题，适用于**bitsadmin util 和 repairservice**命令，用于修复各种版本的 BITS 服务的已知问题。
-ms.custom: na
+description: Windows 命令主题，适用于 bitsadmin util 和 repairservice，用于修复各种版本的 BITS 服务中的已知问题。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2ac7baeb-4340-4186-bfcb-66478195378d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ab06ac9c784cfa438eb285c28f0e661cf4b8302
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aaaa6edab22031dc53d266984bb669634e3bb362
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380276"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848890"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util 和 repairservice
 
-如果 BITS 无法启动，请使用此开关修复不同版本的 BITS 的已知问题。
+如果 BITS 无法启动，请使用此开关修复各种版本的 BITS 中的已知问题。
 
 **BITSAdmin 1.5 及更早版本：**  不受支持。
 
@@ -32,9 +28,9 @@ ms.locfileid: "71380276"
 bitsadmin /Util /RepairService [/Force]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |Force|可选-删除并重新创建该服务。|
 
@@ -48,13 +44,13 @@ bitsadmin /Util /RepairService [/Force]
 > [!IMPORTANT]
 > Windows Vista 不支持此命令。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 以下示例修复 BITS 服务配置。
 ```
 C:\>bitsadmin /Util /RepairService
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

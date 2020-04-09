@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6785de86-4f7d-4ed1-9055-8de0871d59b5
 title: 附录 M-文档链接和建议阅读
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c48b5330ee1b9a186885645aaa4c1ac79f1782e7
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: f1c13f0a7054f236f1ba35201ad9ad62c978d08f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822740"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823290"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>附录 M：文档链接和建议的读物
 
->适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
+>适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
 ## <a name="appendix-m-document-links-and-recommended-reading"></a>附录 M：文档链接和建议的读物  
@@ -28,7 +27,7 @@ ms.locfileid: "76822740"
   
 |||  
 |-|-|  
-|**Links**|**Url**|  
+|**链接**|**Url**|  
 |[安全管理的10个永恒定律](https://technet.microsoft.com/library/cc722488.aspx)|[https://technet.microsoft.com/library/cc722488.aspx](https://technet.microsoft.com/library/cc722488.aspx)|  
 |[Microsoft 安全合规管理器](https://technet.microsoft.com/library/cc677002.aspx)|[https://technet.microsoft.com/library/cc677002.aspx](https://technet.microsoft.com/library/cc677002.aspx)|  
 |[Gartner 研讨会 ITXPO](http://www.gartner.com/technology/symposium/orlando/)|[http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/)|  
@@ -196,17 +195,17 @@ ms.locfileid: "76822740"
 |[严格 KDC 验证](https://www.microsoft.com/download/details.aspx?id=6382)|  
   
 #### <a name="copyright-information"></a>版权信息  
-此文档中包含的信息代表 Microsoft Corporation 对自发布之日起所讨论问题持有的当前观点。 Microsoft 必须响应更改市场条件，因此它并不解释为 Microsoft 的承诺，并且 Microsoft 不能保证发布之日后所呈现信息的准确度。  
+本文档中包含的信息代表 Microsoft Corporation 对文档发布时所讨论问题的当前观点。 由于 Microsoft 必须对市场情况的变化做出响应，因此不应将本文档视为 Microsoft 方的承诺，并且自本文档发布之日后，Microsoft 无法保证所提供的所有信息的准确性。  
   
 本白皮书仅用于提供信息。 Microsoft 对本文档不做任何明示或默示的担保。  
   
-用户有责任遵守所有适用的版权法。 在不限制版权所辖权利的情况下，不得在任何形式或通过任何方式（电子、机械、影印、录制或其他方式）或出于任何目的复制、存储或引入到检索系统中的本文档的任何部分，而不是 Microsoft Corporation 的明确书面许可。  
+用户有责任遵守所有适用的著作权法/版权法。 在不限制版权所辖权利的前提下，未经 Microsoft Corporation 的明确书面许可，无论出于何种目的，均不得以任何形式或通过任何方法（电子、机械、影印、录音或其他手段）复制或传播文档中的任何部分内容，或将其存储于或引入检索系统。  
   
-微软可能拥有涉及本文档中的主题的专利、专利申请、商标、版权和其他知识产权。 除非得到 Microsoft Corporation 的明确书面许可，否则本文档不授予用户任何使用这些专利、商标、版权或其他知识产权的许可。  
+对于本文档中涉及的主题，Microsoft 可能拥有专利、专利申请、商标、版权或其他知识产权。 除非 Microsoft 提供的书面许可协议中有明文规定，否则提供本文档并不授予您对这些专利、商标、版权或其他知识产权的许可。  
   
-Microsoft、Active Directory、BitLocker、Hyper-v、Internet Explorer、Windows Vista、Windows 和 Windows Server 是 Microsoft Corporation 在美国和/或其他国家/地区的注册商标或商标。 所有其他商标均是其各自所有者的财产。  
+Microsoft、Active Directory、BitLocker、Hyper-v、Internet Explorer、Windows Vista、Windows 和 Windows Server 是 Microsoft Corporation 在美国和/或其他国家/地区的注册商标或商标。 所有其他商标均为其各自所有者的财产。  
   
-此处描述的示例公司、组织、产品、域名、电子邮件地址、徽标、人物、地点和事件都是虚构的。 与任何真实公司、组织、产品、域名、电子邮件地址、徽标、人物、地点或事件无关，也不应进行这方面的推断。  
+本文档示例中涉及的公司、组织、产品、域名、电子邮件地址、徽标、人物、场所和事件均属虚构。 这里决无意影射，也不应由此臆测任何真实的公司、组织、产品、域名、电子邮件地址、徽标、人物、地点和事件。  
   
 ? 2013 Microsoft Corporation。 保留所有权利。  
   

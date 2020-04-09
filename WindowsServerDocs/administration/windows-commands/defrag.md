@@ -1,30 +1,27 @@
 ---
 title: defrag
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 defrag 的 Windows 命令主题，用于在本地卷上查找和合并碎片文件以提高系统性能。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aaf1d1ac-996a-4282-9b4d-1e8245ff162c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d930e224ac1610b5e49cbf5701778bfb6f14b2e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8723afc936fa1ea311e275a58a85b20988f92a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378713"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846710"
 ---
 # <a name="defrag"></a>defrag
 
->适用于：Windows 10，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于： Windows 10、Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 查找并合并本地卷上的零碎文件以提高系统性能。
+
 本地**Administrators**组中的成员身份或等效身份是运行此命令所需的最低要求。
 
 ## <a name="syntax"></a>语法
@@ -34,9 +31,9 @@ defrag <volumes> | /C | /E <volumes> /A [/H] [/M [n]| [/U] [/V]]
 defrag <volumes> | /C | /E <volumes> /X [/H] [/M [n]| [/U] [/V]]
 defrag <volume> [/<Parameter>]*
 ```
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |`<volume>`|指定要进行碎片整理或分析的卷的驱动器号或装入点路径。|
 |A|在指定的卷上执行分析。|
@@ -64,15 +61,15 @@ defrag <volume> [/<Parameter>]*
   -   不能对 cdROMs 进行碎片整理。
   -   不能对**NTFS**、 **ReFS**、 **Fat**或**Fat32**以外的文件系统卷进行碎片整理。
 - 使用 Windows Server 2008 R2、Windows Server 2008 和 Windows Vista，您可以计划对卷进行碎片整理。 但是，不能计划在驻留于 SSD 上的虚拟硬盘（VHD）上对固态驱动器（SSD）或卷进行碎片整理。
-- 若要执行该过程，你必须是本地计算机上Administrators 组的成员，或你必须已被委派适当的权限。 如果计算机已加入某个域，则 Domain Admins 组的成员可能会执行该过程。 作为最佳安全方案，请考虑使用**运行方式**来执行此过程。
-- 卷必须至少具有 15% 的可用空间，**碎片整理**才能完整地对其进行碎片整理。 **defrag**使用此空间作为文件片段的排序区域。 如果卷的可用空间小于 15%，则**defrag**只对其进行部分碎片整理。 若要增加卷上的可用空间，请删除不需要的文件或将其移到另一个磁盘上。
+- 若要执行此过程，您必须是本地计算机上“Administrators”组的成员或者必须被委派了适当的授权。 如果计算机已加入某个域，则“Domain Admins”组的成员也许能够执行此过程。 作为最佳安全方案，请考虑使用**运行方式**来执行此过程。
+- 卷必须至少具有15% 的可用空间，**碎片整理**才能完整地对其进行碎片整理。 **defrag**使用此空间作为文件片段的排序区域。 如果卷的可用空间小于15%，则**defrag**只对其进行部分碎片整理。 若要增加卷上的可用空间，请删除不需要的文件或将其移到另一个磁盘上。
 - 当**碎片整理**正在分析卷并对其进行碎片整理时，它会显示闪烁的光标。 当**defrag**完成分析并对卷进行碎片整理时，它会显示分析报告、碎片整理报告或两个报告，然后退出到命令提示符。
 - 默认情况下，如果未指定 **/a**或 **/v**参数，则**defrag**将显示分析和碎片整理报告的摘要。
-- 您可以通过键入 **>** <em>filename .txt</em>将报告发送给文本文件，其中*FileName .txt*是您指定的文件名称。 例如： `defrag volume /v > FileName.txt`
+- 您可以通过键入 **>** <em>filename .txt</em>将报告发送给文本文件，其中*filename .txt*是您指定的文件名称。 例如：`defrag volume /v > FileName.txt`
 - 若要中断碎片整理进程，请在命令行上按**CTRL + C**。
 - 运行**defrag**命令和磁盘碎片整理程序是相互排斥的。 如果使用磁盘碎片整理程序对卷进行碎片整理，并在命令行中运行**defrag**命令，则**defrag**命令将失败。 相反，如果运行**defrag**命令并打开磁盘碎片整理程序，磁盘碎片整理程序中的碎片整理选项将不可用。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 若要在提供进度和详细输出时对驱动器 C 上的卷进行碎片整理，请键入：
 ```
 defrag C: /U /V
@@ -90,7 +87,7 @@ defrag C: mountpoint /A /U
 defrag /C /H /V
 ```
 
-## <a name="BKMK_scheduledTask"></a>计划任务
+## <a name="scheduled-task"></a><a name=BKMK_scheduledTask></a>计划任务
 碎片整理的计划任务作为维护任务运行，通常计划每周运行一次。 管理员可以使用 "**优化驱动器**" 应用程序更改频率。
 - 从计划任务运行时， **defrag**的 ssd 策略如下：
    - **传统碎片整理**（即移动文件以使它们合理连续），并且**重新剪裁**每月仅运行一次。
@@ -102,8 +99,8 @@ defrag /C /H /V
    - 仅在计算机使用交流电源时启动，并且在计算机切换到电池电源时停止
    - 如果计算机不再处于空闲状态，则停止
 
-## <a name="BKMK_additionalRef"></a>其他参考
+## <a name="additional-references"></a><a name=BKMK_additionalRef></a>其他参考
 -   [chkdsk](chkdsk.md)
 -   [fsutil](fsutil.md)
 -   [fsutil 脏](fsutil-dirty.md)
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

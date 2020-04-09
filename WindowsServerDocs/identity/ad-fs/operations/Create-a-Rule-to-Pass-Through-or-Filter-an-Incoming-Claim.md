@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6127963f-71b2-4d8f-8b53-7c525bf06521
 title: 创建传递或筛选传入声明的规则
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 145558e620188c4311d79d2a9ba4ed7aaf7b13a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb885d8b822faf4bd5ee82ad70c59b99678a58e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358139"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816830"
 ---
 # <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>创建传递或筛选传入声明的规则
 
-使用 "传递或筛选传入声明" 规则模板 Active Directory 联合身份验证服务 \(AD FS\)中，可以通过所选声明类型传递所有传入声明。 你还可以使用所选声明类型筛选传入声明的值。 例如，你可以使用此规则模板创建一个规则，该规则将发送所有传入组声明。 你还可以使用此规则仅发送以 @fabrikam结尾 \(UPN\) 声明的用户主体名称。  
+使用 "传递或筛选传入声明" 规则模板 Active Directory 联合身份验证服务 \(AD FS\)中，可以通过所选声明类型传递所有传入声明。 你还可以筛选具有所选声明类型的传入声明的值。 例如，你可以使用此规则模板来创建一个将发送所有传入组声明的规则。 你还可以使用此规则仅发送以 @fabrikam结尾 \(UPN\) 声明的用户主体名称。  
   
 你可以使用以下过程，通过中的 AD FS 管理 "管理单元\-来创建声明规则。  
   
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。   
 
 ## <a name="to-create-a-rule-to-pass-through-or-filter-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>创建规则以在 Windows Server 2016 中的信赖方信任上传递或筛选传入声明 
 

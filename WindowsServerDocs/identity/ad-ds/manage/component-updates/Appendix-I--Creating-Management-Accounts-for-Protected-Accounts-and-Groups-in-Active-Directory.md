@@ -1,7 +1,6 @@
 ---
 ms.assetid: 13fe87d9-75cf-45bc-a954-ef75d4423839
 title: 附录 I-为 Active Directory 中的受保护帐户和组创建管理帐户
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,27 +8,27 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 834aa2611ff2b965c9184524fa6782fb4477a4cd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c2141e4fad564579fd687b2dfc7e4a12e1634acb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949138"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823480"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附录 I：为 Active Directory 中受保护的帐户和组创建管理帐户
 
->适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
+>适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 在实现不依赖于高特权组中的永久成员身份的 Active Directory 模型时，其中一项难题是，当需要组中的临时成员身份时，必须有一种机制来填充这些组。 某些特权标识管理解决方案要求在林中的每个域的组（如 DA 或管理员）中授予软件的服务帐户永久成员身份。 不过，在技术上，Privileged Identity Management （PIM）解决方案在这种高度特权的上下文中运行其服务并不是必需的。  
   
-本附录提供了可用于本机实现的或第三方 PIM 解决方案的信息，用于创建具有有限权限且可得到控制的帐户，但 Active Directory 可以在需要临时提升。 如果要将 PIM 作为本机解决方案来实现，则管理人员可能会使用这些帐户来执行临时组填充，如果你要通过第三方软件实现 PIM，则可以将这些帐户改编为充当服务帐户.  
+本附录提供了可用于本机实现的或第三方 PIM 解决方案的信息，用于创建具有有限权限且可得到控制的帐户，但当需要临时提升时，可用于填充 Active Directory 中的特权组。 如果要将 PIM 作为本机解决方案来实现，则管理人员可能会使用这些帐户来执行临时组填充，如果你要通过第三方软件实现 PIM，则可以改编这些帐户以用作服务帐户。  
   
 > [!NOTE]  
 > 本附录中描述的过程提供了一种方法来管理 Active Directory 中的高特权组。 您可以根据需要修改这些过程，添加其他限制，或者省略此处所述的某些限制。  
   
 ## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>为 Active Directory 中的受保护帐户和组创建管理帐户
 
-创建可用于管理特权组成员身份的帐户，而无需授予管理帐户过多的权限和权限，这四个常规活动在分步说明中进行了介绍。参照  
+创建可用于管理特权组的成员身份的帐户，而无需授予管理帐户过多的权限和权限，这包括下面的分步说明中描述的四个常规活动：  
   
 1.  首先，您应创建一个将管理帐户的组，因为这些帐户应由一组有限的受信任的用户进行管理。 如果你还没有 OU 结构可用于从域中的常规填充中分离特权和受保护的帐户和系统，则应该创建一个。 尽管此附录中未提供特定说明，但屏幕截图显示了此类 OU 层次结构的示例。  
   
@@ -39,7 +38,7 @@ ms.locfileid: "75949138"
   
 4.  在每个域中的 AdminSDHolder 对象上配置权限，以允许管理帐户更改域中特权组的成员身份。  
   
-在生产环境中实施这些过程之前，应全面测试所有这些过程并根据环境需要对其进行修改。 还应验证所有设置是否按预期方式工作（本附录中提供了一些测试过程），并且你应该测试灾难恢复方案，在此方案中，管理帐户不能用于填充受保护的组以进行恢复之. 有关备份和还原 Active Directory 的详细信息，请参阅[AD DS 备份和恢复循序渐进指南](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)。  
+在生产环境中实施这些过程之前，应全面测试所有这些过程并根据环境需要对其进行修改。 还应验证所有设置是否按预期工作（本附录中提供了一些测试过程），并且应测试灾难恢复方案，在此方案中，管理帐户不能用于填充受保护的组以进行恢复。 有关备份和还原 Active Directory 的详细信息，请参阅[AD DS 备份和恢复循序渐进指南](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)。  
   
 > [!NOTE]  
 > 通过实施此附录中所述的步骤，你将创建可管理每个域中所有受保护组的成员身份的帐户，而不仅是最高特权 Active Directory 组（如 EAs、DAs 和 BAs）。 有关 Active Directory 中的受保护组的详细信息，请参阅[附录 C： Active Directory 中的受保护帐户和组](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  
@@ -48,7 +47,7 @@ ms.locfileid: "75949138"
   
 #### <a name="creating-a-group-to-enable-and-disable-management-accounts"></a>创建组以启用和禁用管理帐户
 
-管理帐户应在每次使用时重置密码，并应在需要这些帐户的活动完成后将其禁用。 尽管你可能还会考虑为这些帐户实现智能卡登录要求，但它是一个可选配置，并且这些说明假定管理帐户将使用用户名和长的复杂密码（最小密码）进行配置控件. 在此步骤中，你将创建一个有权在管理帐户上重置密码以及启用和禁用帐户的组。  
+管理帐户应在每次使用时重置密码，并应在需要这些帐户的活动完成后将其禁用。 尽管你可能还会考虑为这些帐户实现智能卡登录要求，但它是一个可选配置，并且这些说明假定管理帐户将使用用户名和长而复杂的密码（作为最小控件）进行配置。 在此步骤中，你将创建一个有权在管理帐户上重置密码以及启用和禁用帐户的组。  
   
 若要创建一个组以启用和禁用管理帐户，请执行以下步骤：  
   
@@ -81,9 +80,9 @@ ms.locfileid: "75949138"
   
 7.  在 "**安全**" 选项卡上，删除不允许访问此组的组。 例如，如果不想让经过身份验证的用户能够读取组的 "名称" 和 "常规" 属性，则可以删除该 ACE。 你还可以删除 Ace，如用于帐户操作员和 Windows 2000 以前的 Windows Server 兼容访问的 Ace。 但是，您应该保留一组最小的对象权限。 保留以下 Ace 不变：  
   
-    -   SELF  
+    -   解压  
   
-    -   系统  
+    -   SYSTEM  
   
     -   Domain Admins  
   
@@ -106,7 +105,7 @@ ms.locfileid: "75949138"
   
 #### <a name="creating-the-management-accounts"></a>创建管理帐户
 
-你应该至少创建一个用于管理 Active Directory 安装中特权组的成员身份的帐户，并最好创建一个用于作为备份的第二个帐户。 无论你选择在林中的单个域中创建管理帐户并为所有域的受保护组授予管理功能，还是选择在林中的每个域中实施管理帐户，这些过程都是实际上是相同的。  
+你应该至少创建一个用于管理 Active Directory 安装中特权组的成员身份的帐户，并最好创建一个用于作为备份的第二个帐户。 无论你选择在林中的单个域中创建管理帐户并为所有域的受保护组授予管理功能，还是选择在林中的每个域中实施管理帐户，这些过程都是相同的。  
   
 > [!NOTE]  
 > 本文档中的步骤假设您尚未实现 Active Directory 的基于角色的访问控制和特权标识管理。 因此，某些过程必须由其帐户是所述域的 Domain Admins 组成员的用户执行。  
@@ -133,7 +132,7 @@ ms.locfileid: "75949138"
 
 7. 右键单击刚创建的用户对象，然后单击 "**属性**"。  
 
-8. 单击“帐户”选项卡。  
+8. 单击 "**帐户**" 选项卡。  
 
 9. 在 "**帐户选项**" 字段中，选择 "**敏感帐户，不能被委派**" 标志，选择 "**此帐户支持 kerberos aes 128 位加密**" 和/或 "**此帐户支持 kerberos aes 256 加密**标志"，然后单击 **"确定"** 。  
 
@@ -178,15 +177,15 @@ ms.locfileid: "75949138"
     > [!NOTE]  
     > 此帐户不太可能用于登录到您的环境中的只读域控制器（Rodc）。 但是，如果需要使用该帐户登录到 RODC，则应将此帐户添加到 "拒绝的 RODC 密码复制组"，以使其密码不会缓存在 RODC 上。  
     >
-    > 尽管应在每次使用后重置帐户的密码，并且应禁用该帐户，但实现此设置并不会对帐户产生产生负面影响，并且可能会在管理员忘记重置帐户的密码并禁用密码。  
+    > 尽管应在每次使用后重置帐户的密码，并且应禁用该帐户，但实现此设置并不会对帐户产生产生负面影响，在某些情况下，管理员忘记密码地重置帐户密码并禁用密码。  
 
 17. 单击 **“隶属于”** 选项卡。  
 
-18. 单击**添加**。  
+18. 单击 **“添加”** 。  
 
 19. 在 "**选择用户、联系人、计算机**" 对话框中，键入 "**拒绝的 RODC 密码复制组**"，然后单击 "**检查名称**"。 在对象选取器中为组的名称加下划线后，单击 **"确定"** ，然后验证该帐户是否为以下屏幕截图中显示的两个组的成员。 不要将该帐户添加到任何受保护的组。  
 
-20. 单击**确定**。  
+20. 单击“确定”。  
 
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
 
@@ -239,7 +238,7 @@ ms.locfileid: "75949138"
 
 应将审核配置为至少记录所有写入帐户的帐户。 这样，你不仅可以识别成功启用帐户并在授权使用期间重置其密码，还可以确定未经授权的用户操纵帐户的尝试。 应在安全信息和事件监视（SIEM）系统（如果适用）中捕获帐户上的失败写入，并触发警报，向负责调查潜在损害的人员提供通知。  
   
-SIEM 解决方案从涉及的安全源（例如，事件日志、应用程序数据、网络流、反恶意软件产品和入侵检测源）获取事件信息，对数据进行整理，并尝试建立智能视图和主动操作. 有很多商业 SIEM 解决方案，许多企业创建专用实现。 设计良好且适当实现的 SIEM 可以显著增强安全监视和事件响应功能。 但解决方案之间的功能和准确性会有所不同。 Siem 超出了本文的范围，但任何 SIEM 实施者都应该考虑到包含的特定事件建议。  
+SIEM 解决方案从涉及的安全源（例如，事件日志、应用程序数据、网络流、反恶意软件产品和入侵检测源）获取事件信息，对数据进行整理，并尝试建立智能视图和主动操作。 有很多商业 SIEM 解决方案，许多企业创建专用实现。 设计良好且适当实现的 SIEM 可以显著增强安全监视和事件响应功能。 但解决方案之间的功能和准确性会有所不同。 Siem 超出了本文的范围，但任何 SIEM 实施者都应该考虑到包含的特定事件建议。  
   
 有关域控制器的建议审核配置设置的详细信息，请参阅[监视 Active Directory 是否有泄露迹象](../../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md)。 监视 Active Directory 中提供了特定于域控制器的配置设置[，以应对泄露迹象](../../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md)。  
   
@@ -309,7 +308,7 @@ SIEM 解决方案从涉及的安全源（例如，事件日志、应用程序数
   
 #### <a name="verifying-group-and-account-configuration-settings"></a>正在验证组和帐户配置设置
 
-现在，你已创建并配置了可修改域中受保护组的成员身份（包括最高特权的 EA、DA 和 BA 组）的管理帐户，你应验证这些帐户及其管理组是否已已正确创建。 验证包含以下常规任务：  
+现在，你已创建并配置了可修改域中受保护组的成员身份（包括最高特权的 EA、DA 和 BA 组）的管理帐户，你应验证是否已正确创建帐户和其管理组。 验证包含以下常规任务：  
   
 1.  测试可以启用和禁用管理帐户的组，以验证组的成员是否可以启用和禁用帐户并重置其密码，但不能在管理帐户上执行其他管理活动。  
   

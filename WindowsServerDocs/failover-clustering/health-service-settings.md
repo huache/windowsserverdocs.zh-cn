@@ -5,18 +5,17 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: 1b10d7c5432b10262e8df85d427f17f402d4f64a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7ae78137bbd4e39291cc2e307f62697876c98135
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361038"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827520"
 ---
 # <a name="health-service-settings"></a>运行状况服务设置
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 运行状况服务是 Windows Server 2016 中的一项新功能，可改进运行存储空间直通的群集的日常监视和操作体验。
 
@@ -87,7 +86,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "Platform.Quiescence.MaxDelaySeconds" = 420 (i.e. 7 minutes)
 ```
 
-#### <a name="metrics"></a>指标
+#### <a name="metrics"></a>度量值
 
 ```
 "System.Reports.ReportingPeriodSeconds" = 1
@@ -99,7 +98,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.LogLevel" = 4
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Windows Server 2016 中的运行状况服务](health-service-overview.md)
 - [Windows Server 2016 中的存储空间直通](../storage/storage-spaces/storage-spaces-direct-overview.md)

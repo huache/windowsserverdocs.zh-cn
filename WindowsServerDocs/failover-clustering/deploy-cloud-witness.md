@@ -2,19 +2,19 @@
 ms.assetid: 0cd1ac70-532c-416d-9de6-6f920a300a45
 title: 为故障转移群集部署云见证
 ms.prod: windows-server
-manager: eldenc
+manager: lizross
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 如何使用 Microsoft Azure 在云中托管 Windows Server 故障转移群集的见证服务器，亦即如何部署云见证。
-ms.openlocfilehash: ad5ff47a72319fee7650d1d9c0d0616cfaaa22d3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0b4ba643dca81d2d19b94b1d27485149f938e1c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948177"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827910"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>部署故障转移群集的云见证
 
@@ -22,7 +22,7 @@ ms.locfileid: "75948177"
 
 Cloud 见证是一种故障转移群集仲裁见证，使用 Microsoft Azure 在群集仲裁上提供投票。 本主题概述了云见证功能、它支持的方案，以及有关如何为故障转移群集配置云见证的说明。
 
-## <a name="CloudWitnessOverview"></a>云见证概述
+## <a name="cloud-witness-overview"></a><a name="CloudWitnessOverview"></a>云见证概述
 
 图1说明了 Windows Server 2016 中的多站点延伸故障转移群集仲裁配置。 在此示例配置（图1）中，有2个数据中心（称为站点）中有2个节点。 请注意，群集有可能跨越2个以上的数据中心。 此外，每个数据中心还可以有2个以上的节点。 此设置中的典型群集仲裁配置（自动故障转移 SLA）为每个节点提供投票。 向仲裁见证提供一项额外的投票，以允许群集继续运行，即使其中一个数据中心遇到电源中断也是如此。 数学计算非常简单-有5个投票，并且需要3个投票才能使群集保持运行。  
 
@@ -47,7 +47,7 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
 
 如图2所示，没有需要的第三个单独的站点。 与任何其他仲裁见证一样，云见证会获得投票，并且可以参与仲裁计算。  
 
-## <a name="CloudWitnessSupportedScenarios"></a>云见证：单一见证服务器支持的方案
+## <a name="cloud-witness-supported-scenarios-for-single-witness-type"></a><a name="CloudWitnessSupportedScenarios"></a>云见证：单一见证服务器支持的方案
 如果你有一个故障转移群集部署（其中所有节点都可以访问 internet），则建议你将云见证配置为仲裁见证资源。  
 
 支持使用云见证作为仲裁见证的某些方案如下：  
@@ -60,7 +60,7 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
 
 从 Windows Server 2012 R2 开始，建议始终配置见证服务器，因为群集会自动管理见证服务器投票，并使用动态仲裁来投票节点。  
 
-## <a name="CloudWitnessSetUp"></a>为群集设置云见证
+## <a name="set-up-a-cloud-witness-for-a-cluster"></a><a name="CloudWitnessSetUp"></a>为群集设置云见证
 若要将云见证设置为群集的仲裁见证，请完成以下步骤：
 1. 创建要用作云见证的 Azure 存储帐户
 2. 将云见证配置为群集的仲裁见证。
@@ -75,15 +75,15 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
 
 ### <a name="to-create-an-azure-storage-account"></a>创建 Azure 存储帐户
 
-1. 登录到 [Azure 门户](https://portal.azure.com)。
+1. 登录 [Azure 门户](https://portal.azure.com)。
 2. 在“中心”菜单上，选择“新建”->“数据 + 存储”->“存储帐户”。
 3. 在 "创建存储帐户" 页中，执行以下操作：
-    1. 为存储帐户输入名称。
+    1. 输入存储帐户的名称。
     <br>存储帐户名称必须为 3 到 24 个字符，并且只能包含数字和小写字母。 存储帐户名称在 Azure 中也必须是唯一的。
         
     2. 对于 "**帐户类型**"，选择 "**常规用途**"。
     <br>不能将 Blob 存储帐户用于云见证。
-    3. 对于“性能”，请选择“标准”。
+    3. 对于 "**性能**"，请选择 "**标准**"。
     <br>不能将 Azure 高级存储用于云见证。
     2. 对于**复制**，请选择 "**本地冗余存储（LRS）** "。
     <br>故障转移群集使用 blob 文件作为仲裁点，这在读取数据时需要一些一致性保证。 因此，你必须为**复制**类型选择 "**本地冗余存储**"。

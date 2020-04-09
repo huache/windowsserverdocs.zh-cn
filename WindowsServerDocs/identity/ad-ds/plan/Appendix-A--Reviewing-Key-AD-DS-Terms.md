@@ -1,7 +1,6 @@
 ---
 ms.assetid: 87196b65-a356-409f-9af0-b5950797d668
 title: 附录 A-查看关键 AD DS 术语
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 81beba874440f7a75c2d7932357fae70f046d996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ad8c1cf769c0c2a22e2d55f7bd2d111095410afe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409013"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822860"
 ---
-# <a name="appendix-a-reviewing-key-ad-ds-terms"></a>附录 A：查看关键 AD DS 术语
+# <a name="appendix-a-reviewing-key-ad-ds-terms"></a>附录 A：查看关键的 AD DS 条款
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -54,7 +53,7 @@ ms.locfileid: "71409013"
 将域的目录服务升级到更高版本的目录服务的过程。 这包括升级所有域控制器上的操作系统，并在适用的情况下提升 AD DS 功能级别。  
   
 ## <a name="in-place-domain-upgrade"></a>就地域升级  
-升级给定域中所有域控制器的操作系统的过程（例如，将 Windows Server 2003 升级到 Windows Server 2008），并在保留域对象（如用户）的同时提高域的功能级别。和组。  
+升级给定域中所有域控制器的操作系统（例如，将 Windows Server 2003 升级到 Windows Server 2008，并提高域的功能级别（如果适用），同时保留域对象（如用户和组）的过程。  
   
 ## <a name="forest-root-domain"></a>目录林根级域  
 在 Active Directory 林中创建的第一个域。 此域自动指定为目录林根级域。 它为 Active Directory 林基础结构奠定了基础。  

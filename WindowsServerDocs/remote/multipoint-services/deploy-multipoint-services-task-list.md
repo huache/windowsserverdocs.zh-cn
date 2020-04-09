@@ -1,31 +1,27 @@
 ---
 title: 用于部署 MultiPoint 服务的任务
 description: 列出部署 MultiPoint 服务时涉及的所有任务，以及指向说明的链接
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e08c5784-5b3e-4028-86c1-96deaee41f09
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 9d50cfc3ed48f77281af400e9e80fb8b4895bac5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 70488d3c7d6c60071d52f9f60dcde4f825928824
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394755"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820350"
 ---
-# <a name="task-lists-multipoint-services"></a>任务列表：MultiPoint 服务
+# <a name="task-lists-multipoint-services"></a>任务列表： MultiPoint 服务
 使用本主题中的任务列表来帮助你部署 MultiPoint 服务系统，并跟踪已完成的任务。 并非所有任务都适用于每个环境。 例如，某些任务仅在 Active Directory 域上部署了 MultiPoint 服务器时执行。 其他某些工具（例如创建拆分屏幕工作站或为工作站部署虚拟机）是可选的。 有关说明如何执行这些任务的过程，请参阅[部署 MultiPoint 服务](deploying-multipoint-services.md)。  
   
 ## <a name="task-list-deploy-the-server"></a>任务列表：部署服务器  
 
-|任务|描述|  
+|任务|说明|  
 |--------|---------------|  
 |**1**|[规划 MultiPoint 服务部署](planning-a-multipoint-services-deployment.md)|  
 |**2**|[收集安装所需的硬件和设备驱动程序](Collect-hardware-and-device-drivers-needed-for-the-installation.md)|  
@@ -35,9 +31,9 @@ ms.locfileid: "71394755"
 |**6**|[设置日期、时间和时区](Set-the-date--time--and-time-zone.md)|  
 |**7**|[将 MultiPoint 服务计算机加入域-可选](Join-the-MultiPoint-services-computer-to-a-domain--optional-.md)|  
 |**8**|[安装更新](Install-updates.md)|  
-|**9**|[将其他工作站附加到 MultiPoint 服务计算机](Attach-additional-stations-to-your-MultiPoint-services-computer.md)|  
+|**900**|[将其他工作站附加到 MultiPoint 服务计算机](Attach-additional-stations-to-your-MultiPoint-services-computer.md)|  
 |**10**|[激活 MultiPoint 服务并添加 Cal](manage-client-access-licenses-with-multipoint-services.md)|  
-|**11**|[在 MultiPoint 服务系统上安装软件](Install-software-on-your-MultiPoint-services-system.md)|  
+|**11x17**|[在 MultiPoint 服务系统上安装软件](Install-software-on-your-MultiPoint-services-system.md)|  
   
 ## <a name="task-list-optional-configurations"></a>任务列表：可选配置  
   

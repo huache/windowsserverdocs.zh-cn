@@ -1,7 +1,6 @@
 ---
 ms.assetid: b11f7a65-ec7b-4c11-8dc4-d7cabb54cd94
 title: Active Directory 复制问题疑难解答
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cf6b50ab3b4991bd8cab8523494261f1284945a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a3e9c3e901f164d793ca40943934efbbccafda38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409067"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822960"
 ---
 # <a name="troubleshooting-active-directory-replication-problems"></a>Active Directory 复制问题疑难解答
 
@@ -26,7 +25,7 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 
 ## <a name="introduction-and-resources-for-troubleshooting-active-directory-replication"></a>Active Directory 复制疑难解答的简介和资源
 
-入站或出站复制失败导致 Active Directory 对象代表复制拓扑、复制计划、域控制器、用户、计算机、密码、安全组、组成员身份和组策略不一致域控制器之间。 目录不一致和复制失败会导致操作失败或不一致的结果，具体取决于与该操作联系的域控制器，并可阻止应用组策略和访问控制权限。 Active Directory 域服务（AD DS）依赖于网络连接、名称解析、身份验证和授权、目录数据库、复制拓扑和复制引擎。 如果复制问题的根本原因不是很明显，则确定可能的原因可能会导致系统排除可能的原因。
+入站或出站复制失败会导致代表复制拓扑、复制计划、域控制器、用户、计算机、密码、安全组、组成员身份和组策略在域控制器之间不一致的 Active Directory 对象。 目录不一致和复制失败会导致操作失败或不一致的结果，具体取决于与该操作联系的域控制器，并可阻止应用组策略和访问控制权限。 Active Directory 域服务（AD DS）依赖于网络连接、名称解析、身份验证和授权、目录数据库、复制拓扑和复制引擎。 如果复制问题的根本原因不是很明显，则确定可能的原因可能会导致系统排除可能的原因。
 
 有关基于 UI 的工具以帮助监视复制和诊断错误，请参阅[Active Directory 复制状态工具](https://www.microsoft.com/download/details.aspx?id=30005)
 
@@ -49,7 +48,7 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 
 ### <a name="intentional-disconnections"></a>有意断开
 
-如果某个域控制器报告复制错误，该控制器尝试使用已在暂存站点中生成的域控制器进行复制，并且当前处于脱机状态，但在最终生产站点（如分支机构）中等待其部署，），您可以考虑这些复制错误。 若要避免长时间将域控制器从复制拓扑中分离出来（这会导致连续错误，直到域控制器重新连接），请考虑将此类计算机初始作为成员服务器并使用从介质安装（IFM）方法安装 Active Directory 域服务（AD DS）。 可以使用 Ntdsutil 命令行工具创建可存储在可移动介质（CD、DVD 或其他介质）上并寄送到目标站点的安装介质。 然后，你可以使用安装媒体将 AD DS 安装在站点上的域控制器上，而无需使用复制。 
+如果某个域控制器报告复制错误，而此域控制器正在尝试与某个域控制器进行复制，而该域控制器已在暂存站点中生成，并且当前脱机等待其部署在最终生产站点（如分支机构）中，则可以考虑这些复制错误。 若要避免长时间将域控制器从复制拓扑中分离出来（这会导致连续错误，直到域控制器重新连接），请考虑首先将此类计算机添加为成员服务器，并使用从介质安装（IFM）方法安装 Active Directory 域服务（AD DS）。 可以使用 Ntdsutil 命令行工具创建可存储在可移动介质（CD、DVD 或其他介质）上并寄送到目标站点的安装介质。 然后，你可以使用安装媒体将 AD DS 安装在站点上的域控制器上，而无需使用复制。 
 
 ### <a name="hardware-failures-or-upgradestitle"></a>硬件故障或升级</title>
 
@@ -146,7 +145,7 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 12. 对于 "上次失败时间" 列重复步骤11，但使用 "不等于" 值，然后键入值0。
 13. 解决复制失败问题。
 
-对于林中的每个域控制器，电子表格会显示源复制伙伴、复制上一次发生的时间，以及每个命名上下文（目录分区）发生最后一次复制失败的时间。 通过在 Excel 中使用自动筛选，你可以仅查看工作域控制器的复制运行状况、仅失败的域控制器或至少或最新的域控制器，并且你可以看到正在复制的复制伙伴顺利.
+对于林中的每个域控制器，电子表格会显示源复制伙伴、复制上一次发生的时间，以及每个命名上下文（目录分区）发生最后一次复制失败的时间。 通过在 Excel 中使用自动筛选，你可以仅查看工作域控制器的复制运行状况、仅失败的域控制器或最少或最新的域控制器，并且你可以看到成功复制的复制伙伴。
 
 ## <a name="replication-problems-and-resolutions"></a>复制问题和解决方法
 

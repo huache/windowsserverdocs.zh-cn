@@ -1,24 +1,20 @@
 ---
 title: 使用软件限制策略规则
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a8047d5-9bb9-4bed-bc8f-583a237731e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bb5e56fe541a06b1100de2f25fc10f4db46b8d24
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 249426f7b0ef1b427d903e8d0cac9ca2e0747b68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322949"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820980"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>使用软件限制策略规则
 
@@ -47,7 +43,7 @@ ms.locfileid: "79322949"
 
 有关管理软件限制策略的其他任务的信息，请参阅[管理软件限制策略](administer-software-restriction-policies.md)。
 
-## <a name="BKMK_Cert_Rules"></a>使用证书规则
+## <a name="working-with-certificate-rules"></a><a name="BKMK_Cert_Rules"></a>使用证书规则
 软件限制策略还可以通过签名证书来识别软件。 你可以创建一个证书规则来识别软件，然后根据安全级别允许或不允许运行该软件。 例如，可以使用证书规则自动信任来自域中受信任源的软件，且不提示用户。 还可以使用证书规则来运行操作系统的不受允许区域中的文件。 默认情况下，不会启用证书规则。
 
 当使用组策略为域创建规则时，您必须具有创建或修改组策略对象的权限。 如果要为本地计算机创建规则，则你必须拥有该计算机上的管理凭据。
@@ -82,7 +78,7 @@ ms.locfileid: "79322949"
 
 -   [仅适用于域控制器，并且你位于域控制器或安装了远程服务器管理工具 Pack 的工作站上](#BKMK_4)
 
-#### <a name="BKMK_1"></a>为本地计算机启用证书规则
+#### <a name="to-enable-certificate-rules-for-your-local-computer"></a><a name="BKMK_1"></a>为本地计算机启用证书规则
 
 1.  打开“本地安全设置”。
 
@@ -96,7 +92,7 @@ ms.locfileid: "79322949"
 
     -   若要禁用证书规则，请单击“禁用”。
 
-#### <a name="BKMK_2"></a>为组策略对象启用证书规则，并且位于加入到域中的服务器上
+#### <a name="to-enable-certificate-rules-for-a-group-policy-object-and-you-are-on-a-server-that-is-joined-to-a-domain"></a><a name="BKMK_2"></a>为组策略对象启用证书规则，并且位于加入到域中的服务器上
 
 1.  打开 Microsoft 管理控制台 (MMC)。
 
@@ -122,7 +118,7 @@ ms.locfileid: "79322949"
 
     -   若要禁用证书规则，请单击“禁用”。
 
-#### <a name="BKMK_3"></a>为组策略对象启用证书规则，并且位于安装了远程服务器管理工具的域控制器或工作站上
+#### <a name="to-enable-certificate-rules-for-a-group-policy-object-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_3"></a>为组策略对象启用证书规则，并且位于安装了远程服务器管理工具的域控制器或工作站上
 
 1.  打开“Active Directory 用户和计算机”。
 
@@ -144,7 +140,7 @@ ms.locfileid: "79322949"
 
     -   若要禁用证书规则，请单击“禁用”。
 
-#### <a name="BKMK_4"></a>仅为域控制器启用证书规则，并且位于安装了远程服务器管理工具的域控制器或工作站上
+#### <a name="to-enable-certificate-rules-for-only-domain-controllers-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_4"></a>仅为域控制器启用证书规则，并且位于安装了远程服务器管理工具的域控制器或工作站上
 
 1.  打开“域控制器安全设置”。
 
@@ -218,7 +214,7 @@ ms.locfileid: "79322949"
 
 6.  选中“定义这些策略设置”复选框，实施所需的更改，然后单击“确定”以应用新设置。
 
-## <a name="BKMK_Hash_Rules"></a>使用哈希规则
+## <a name="working-with-hash-rules"></a><a name="BKMK_Hash_Rules"></a>使用哈希规则
 哈希是具有固定长度的一系列字节，用于唯一标识某个软件程序或文件。 哈希由哈希算法计算。 为软件程序创建哈希规则后，软件限制策略将计算该程序的哈希。 当用户尝试打开某个软件程序时，会将该程序的哈希与软件限制策略的现有哈希规则进行比较。 不管软件程序位于计算机上的哪个位置，该程序的哈希都始终相同。 但是，如果以任何方式对软件程序做了更改，则其哈希也会更改，不再与软件限制策略的哈希规则中的哈希匹配。
 
 例如，可以创建一个哈希规则并将安全级别设置为“不允许”，以防止用户运行特定的文件。 可以重命名某个文件或将其移到另一个文件夹，而哈希仍保持相同。 但是，如果对该文件进行了任何更改，则也会更改它的哈希值，并允许它绕过限制。
@@ -248,7 +244,7 @@ ms.locfileid: "79322949"
 > -   为了使软件限制策略生效，用户必须通过注销并登录到其计算机来更新策略设置。
 > -   如果将多个软件限制策略规则应用于策略设置，则有一种优先的规则用于处理冲突。
 
-## <a name="BKMK_Internet_Zone_Rules"></a>使用 Internet 区域规则
+## <a name="working-with-internet-zone-rules"></a><a name="BKMK_Internet_Zone_Rules"></a>使用 Internet 区域规则
 Internet 区域规则只适用于 Windows Installer 程序包。 区域规则可以识别通过 Internet Explorer 指定的区域中的软件。 这些区域为“Internet”、“本地 Intranet”、“受限制的站点”、“受信任的站点”和“我的电脑”。 Internet 区域规则用于阻止用户下载和安装软件。
 
 #### <a name="to-create-an-internet-zone-rule"></a>创建 Internet 区域规则的步骤
@@ -267,7 +263,7 @@ Internet 区域规则只适用于 Windows Installer 程序包。 区域规则可
 > -   为了使软件限制策略生效，用户必须通过注销并登录到其计算机来更新策略设置。
 > -   如果将多个软件限制策略规则应用于策略设置，则有一种优先的规则用于处理冲突。
 
-## <a name="BKMK_Path_Rules"></a>使用路径规则
+## <a name="working-with-path-rules"></a><a name="BKMK_Path_Rules"></a>使用路径规则
 路径规则根据软件的文件路径来识别软件。 例如，如果计算机的默认安全级别为“不允许”，则你仍可为每个用户授予对特定文件夹的无限制访问权限。 你可以创建一个路径规则，方法是使用文件路径，并将路径规则的安全级别设置为“不受限”。 这种类型的规则的某些常见路径为 %userprofile%、%windir%、%appdata%、%programfiles% 和 %temp%。 还可以创建注册表路径规则，这些规则使用软件的注册表项作为其路径。
 
 由于这些规则是按路径指定的，因此，如果移动了软件程序，路径规则将不再适用。

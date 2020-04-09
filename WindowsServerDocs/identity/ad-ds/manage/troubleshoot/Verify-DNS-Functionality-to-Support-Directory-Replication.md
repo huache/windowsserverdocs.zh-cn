@@ -1,22 +1,17 @@
 ---
 ms.assetid: 709353b0-b913-4367-8580-44745183e2bc
 title: 验证 DNS 功能以支持目录复制
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: ''
-ms.suite: na
 ms.technology: identity-adds
 ms.author: joflore
 ms.date: 05/31/2017
-ms.tgt_pltfrm: na
 author: Femila
-ms.openlocfilehash: 066f7ebe1cd8f981344e059797daa9d3f86bdf49
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 51472c1a64b7825b48362efbe76ea8ef6bbaac73
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409055"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822950"
 ---
 # <a name="verify-dns-functionality-to-support-directory-replication"></a>验证 DNS 功能以支持目录复制
 
@@ -24,7 +19,7 @@ ms.locfileid: "71409055"
 
  若要检查可能会干扰 Active Directory 复制的域名系统（DNS）设置，你可以先运行基本测试，确保 DNS 为你的域正常运行。 运行基本测试后，可以测试 DNS 功能的其他方面，包括资源记录注册和动态更新。
 
-尽管可以在任何域控制器上运行此基本 DNS 功能测试，但通常在你认为可能遇到复制问题的域控制器上运行此测试，例如，报告事件 Id 1844、1925、2087或的域控制器事件查看器目录服务 DNS 日志中的2088。
+虽然你可以在任何域控制器上运行此基本 DNS 功能测试，但通常在你认为可能遇到复制问题的域控制器上运行此测试，例如，在事件查看器目录服务 DNS 日志中报告事件 Id 1844、1925、2087或2088的域控制器。
 
 
 
@@ -49,7 +44,7 @@ Enterprise Admins 中的成员身份或同等身份是完成这些过程所需�
 
 1. 在要测试的域控制器或安装了 Active Directory 域服务（AD DS）工具的域成员计算机上，以管理员身份打开命令提示符。 若要以管理员身份打开命令提示符，请单击“开始”。 
 2. 在“开始搜索”中，键入 ldp。 
-3. 在 "开始" 菜单的顶部，右键单击 "命令提示符"，然后单击 "以管理员身份运行"。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
+3. 在“开始”菜单的顶部，右键单击“命令提示符”，然后单击“以管理员身份运行”。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
 4. 在命令提示符下，键入以下命令，然后按 ENTER： `dcdiag /test:dns /v /s:<DCName> /DnsBasic /f:dcdiagreport.txt`
 </br></br>替换 &lt;DCName&gt;的域控制器的实际可分辨名称、NetBIOS 名称或 DNS 名称。 作为替代方法，你可以通过键入/e：而不是/s：来测试林中的所有域控制器。 /F 开关指定文件名，在上一个命令中为 dcdiagreport。 如果要将文件放在当前工作目录以外的位置，则可以指定文件路径，例如/f： c:reportsdcdiagreport.txt。
 
@@ -63,15 +58,15 @@ Enterprise Admins 中的成员身份或同等身份是完成这些过程所需�
             
 ## <a name="verifying-resource-record-registration"></a>验证资源记录注册
     
-目标域控制器使用 DNS 别名（CNAME）资源记录定位其源域控制器复制伙伴。 尽管运行 Windows Server 的域控制器（从带有 Service Pack 1 （SP1）的 Windows Server 2003 开始）可以使用完全限定的域名（Fqdn）查找源复制伙伴，如果失败，则会使用别名（CNAME）的 NetBIOS namesthe预期资源记录，并且应该验证其是否正常运行。 
+目标域控制器使用 DNS 别名（CNAME）资源记录定位其源域控制器复制伙伴。 尽管运行 Windows Server 的域控制器（从带有 Service Pack 1 （SP1）的 Windows Server 2003 开始）可以使用完全限定的域名（Fqdn）查找源复制伙伴，如果失败，则会要求使用别名（CNAME）资源记录的 NetBIOS namesthe 状态，并且应该验证其是否正常运行。 
       
 你可以使用以下过程来验证资源记录注册，包括别名（CNAME）资源记录注册。
       
 ### <a name="to-verify-resource-record-registrationtitle"></a>验证资源记录注册</title>
 
 
-1. 以管理员身份打开命令提示符。 若要以管理员身份打开命令提示符，请单击 "启动"。 在“开始搜索”中，键入 ldp。 
-2. 在 "开始" 菜单的顶部，右键单击 "命令提示符"，然后单击 "以管理员身份运行"。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。  </br></br>通过运行 `dcdiag /test:dns /DnsRecordRegistration` 命令，你可以使用 Dcdiag 工具来验证是否注册了域控制器位置所必需的所有资源记录。
+1. 以管理员身份打开命令提示符。 若要以管理员身份打开命令提示符，请单击“开始”。 在“开始搜索”中，键入 ldp。 
+2. 在“开始”菜单的顶部，右键单击“命令提示符”，然后单击“以管理员身份运行”。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。  </br></br>通过运行 `dcdiag /test:dns /DnsRecordRegistration` 命令，你可以使用 Dcdiag 工具来验证是否注册了域控制器位置所必需的所有资源记录。
 
 此命令验证是否在 DNS 中注册了以下资源记录：
 
@@ -100,7 +95,7 @@ Enterprise Admins 中的成员身份或同等身份是完成这些过程所需�
 ### <a name="to-verify-dynamic-updatetitle"></a>验证动态更新</title>
 
 
-1. 以管理员身份打开命令提示符。 若要以管理员身份打开命令提示符，请单击 "启动"。 在“开始搜索”中，键入 ldp。 在 "开始" 菜单的顶部，右键单击 "命令提示符"，然后单击 "以管理员身份运行"。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
+1. 以管理员身份打开命令提示符。 若要以管理员身份打开命令提示符，请单击“开始”。 在“开始搜索”中，键入 ldp。 在“开始”菜单的顶部，右键单击“命令提示符”，然后单击“以管理员身份运行”。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
 2. 在命令提示符下，键入以下命令，然后按 ENTER： `dcdiag /test:dns /v /s:<DCName> /DnsDynamicUpdate`
    </br></br>替换 &lt;DCName&gt;的域控制器的可分辨名称、NetBIOS 名称或 DNS 名称。 作为替代方法，你可以通过键入/e：而不是/s：来测试林中的所有域控制器。 如果在域控制器上未启用 IPv6，则应预计测试的主机（AAAA）资源记录部分失败，这是未启用 IPv6 时的正常情况。
 
@@ -111,8 +106,8 @@ Enterprise Admins 中的成员身份或同等身份是完成这些过程所需�
 
 1. 打开 DNS 管理单元。 若要打开 DNS，请单击 "启动"。 
 2. 在 "开始搜索" 中，键入 dnsmgmt.msc，然后按 ENTER。 如果出现 "用户帐户控制" 对话框，请确认它显示的是所需操作，然后单击 "继续"。
-3. 在控制台树中，右键单击适用的区域，然后单击 "属性"。
-4. 在 "常规" 选项卡上，验证区域类型是否 Active Directory 集成。
+3. 在控制台树中，右键单击适用区域，然后单击“属性”。
+4. 在“常规”选项卡上，验证区域类型是否为“Active Directory 集成”。
 5. 在 "动态更新" 中，单击 "仅安全"。
 
 ## <a name="registering-dns-resource-records"></a>注册 DNS 资源记录
@@ -122,7 +117,7 @@ Enterprise Admins 中的成员身份或同等身份是完成这些过程所需�
 ### <a name="to-register-dns-resource-records-manuallytitle"></a>手动注册 DNS 资源记录</title>
 
 
-1. 以管理员身份打开命令提示符。 若要以管理员身份打开命令提示符，请单击 "启动"。 
+1. 以管理员身份打开命令提示符。 若要以管理员身份打开命令提示符，请单击“开始”。 
 2. 在“开始搜索”中，键入 ldp。 
 3. 在开头的顶部，右键单击 "命令提示符"，然后单击 "以管理员身份运行"。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
 4. 若要在源域控制器上手动注册域控制器定位器资源记录，请在命令提示符下键入以下命令，然后按 ENTER： `net stop netlogon && net start netlogon`

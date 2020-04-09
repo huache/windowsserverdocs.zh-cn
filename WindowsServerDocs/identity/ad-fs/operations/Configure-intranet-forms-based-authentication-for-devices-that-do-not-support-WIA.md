@@ -1,7 +1,6 @@
 ---
 ms.assetid: d562ef46-f240-48be-bbd4-fd88fc6bbbdc
 title: 为不支持 WIA 的设备配置基于 intranet 窗体的身份验证
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,17 +8,17 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 09172b3fcfcedf0888205d099409647a6e077577
-ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
+ms.openlocfilehash: 7db040d98317cee67e78493b2210f33279221aa9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856351"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817040"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>为不支持 WIA 的设备配置基于 intranet 窗体的身份验证
 
 
-默认情况下，在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务（AD FS）中启用 Windows 集成身份验证（WIA），以便在组织的内部网络（intranet）内发生身份验证请求，这些请求使用用于身份验证的浏览器。 例如，这些应用程序可以是基于浏览器的应用程序，它们使用 WS 联合身份验证或 SAML 协议以及使用 OAuth 协议的丰富应用程序。 WIA 向最终用户提供无缝登录到应用程序，而无需手动输入其凭据。 但是，某些设备和浏览器不能支持 WIA，因此这些设备发出的身份验证请求会失败。 此外，在某些与 NTLM 协商的浏览器上的体验并不理想。 推荐的方法是回退到此类设备和浏览器的基于窗体的身份验证。
+默认情况下，在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务（AD FS）中启用 Windows 集成身份验证（WIA），以便在组织的内部网络（intranet）内针对使用浏览器进行身份验证的任何应用程序进行身份验证请求。 例如，这些应用程序可以是基于浏览器的应用程序，它们使用 WS 联合身份验证或 SAML 协议以及使用 OAuth 协议的丰富应用程序。 WIA 向最终用户提供无缝登录到应用程序，而无需手动输入其凭据。 但是，某些设备和浏览器不能支持 WIA，因此这些设备发出的身份验证请求会失败。 此外，在某些与 NTLM 协商的浏览器上的体验并不理想。 推荐的方法是回退到此类设备和浏览器的基于窗体的身份验证。
 
 Windows Server 2016 和 Windows Server 2012 R2 中的 AD FS 使管理员能够配置支持回退到基于窗体的身份验证的用户代理列表。 可以通过两个配置进行回退：
 

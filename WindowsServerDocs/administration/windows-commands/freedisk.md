@@ -1,24 +1,20 @@
 ---
 title: freedisk
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 91c15166-5baa-4b80-9e0c-4cd815d00530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e417a8f9768706fe391f705adde37c62ceaa818
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5d652aa89c689a97bf2ecc67383bc2fd464a3054
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377035"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844440"
 ---
 # <a name="freedisk"></a>freedisk
 
@@ -30,9 +26,9 @@ ms.locfileid: "71377035"
 ```
 freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [<Value>]
 ```
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|       参数       |                                                                                         描述                                                                                          |
+|       参数       |                                                                                         说明                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /s <computer>     | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
 | /u [<Domain>\\]<User> |                                            用指定用户帐户的权限运行脚本。 默认值为 "系统权限"。                                            |
@@ -44,7 +40,7 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
 - 仅当使用 **/s**时，才能使用 **/s**、 **/u**和 **/p**命令行选项。 必须使用 **/p** with **/u**来提供用户的密码。
 - 对于无人参与的安装，可以在安装批处理文件中使用**freedisk**来检查必备空间可用空间，然后再继续安装。
 - 在批处理文件中使用**freedisk**时，如果有足够的空间，则返回**0** ; 如果空间不足，则返回**1** 。
-  ## <a name="BKMK_examples"></a>示例
+  ## <a name="examples"></a><a name=BKMK_examples></a>示例
   若要确定驱动器 C：上是否有至少 50 MB 的可用空间，请键入：
   ```
   freedisk 50mb 
@@ -54,4 +50,4 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
   INFO: The specified 52,428,800 byte(s) of free space is available on current drive.
   ```
   ## <a name="additional-references"></a>其他参考
-  [命令行语法项](command-line-syntax-key.md)
+  - [命令行语法项](command-line-syntax-key.md)

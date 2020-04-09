@@ -1,6 +1,5 @@
 ---
 title: AD 林恢复-备份完整服务器
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: e9222685e8f6369e560a841990bc13ab8b0e4d37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6466fbc1caed7dc6efcbcd925eba1bd4e01135b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390264"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823690"
 ---
 # <a name="resetting-a-trust-password-on-one-side-of-the-trust"></a>重置信任一方的信任密码  
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
  如果林恢复与安全漏洞相关，请使用以下过程在信任的一方重置信任密码。 这包括子域和父域之间的隐式信任，以及此域（信任域）与另一个域（受信任域）之间的显式信任关系。 
   

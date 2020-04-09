@@ -1,6 +1,5 @@
 ---
 title: AD 林恢复 - 常见问题解答
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: ac9e5a3d-8b1e-41b7-8e02-f64b7acf1359
 ms.technology: identity-adds
-ms.openlocfilehash: 49cd12621c6ddf89393f0463e4856555ca241491
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f32111cf7cc81f8f49b7b1058cc1a0ccc780da7f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369114"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824000"
 ---
 # <a name="ad-forest-recovery---faq"></a>AD 林恢复 - 常见问题解答
 

@@ -1,26 +1,23 @@
 ---
 title: 使用 Windows 错误报告对故障转移群集进行故障排除
 description: 使用 WER 报表对故障转移群集进行故障排除，并提供有关如何收集报表和诊断常见问题的特定详细信息。
-keywords: 故障转移群集，WER 报告，诊断，群集，Windows 错误报告
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.author: vpetter
-ms.topic: article
-author: vpetter
+author: dcuomo
 ms.date: 03/27/2018
-ms.localizationpriority: ''
-ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e8db88dc4fe3ad9176299c5b423a7aac6093f254
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322149"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827350"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>使用 Windows 错误报告对故障转移群集进行故障排除 
 
 > 适用于： Windows Server 2019、Windows Server 2016、Windows Server
 
-Windows 错误报告（WER）是基于事件的灵活反馈基础结构，旨在帮助高级管理员或第3层支持收集有关 Windows 可以检测到的硬件和软件问题的信息，并向 Microsoft 报告信息。并向用户提供任何可用的解决方案。 本[参考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting cmdlet 的说明和语法。
+Windows 错误报告（WER）是基于事件的灵活的反馈基础结构，旨在帮助高级管理员或第3层支持收集有关 Windows 可以检测到的硬件和软件问题的信息，将该信息报告给 Microsoft，并为用户提供任何可用的解决方案。 本[参考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting cmdlet 的说明和语法。
 
 下面提供的故障排除信息将有助于排查已经升级的高级问题，并可能需要将数据发送给 Microsoft 进行会审。
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 73897497-b189-4305-b234-e057ffda163a
 title: 分配域名
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 357c136f108c6d8e9e2a15dd9449ab61663079e2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d605a2f0d0b98a65848f94be9803122c4492a8b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408994"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822840"
 ---
 # <a name="assigning-domain-names"></a>分配域名
 
@@ -31,7 +30,7 @@ ms.locfileid: "71408994"
 有关详细信息，请参阅 Active Directory 中的计算机、域、站点和 Ou 的命名约定（[https://go.microsoft.com/fwlink/?LinkId=106629](https://go.microsoft.com/fwlink/?LinkId=106629)）。  
   
 > [!NOTE]  
->  虽然 Windows Server 2008 和 Windows Server 2003 中的 Dcpromo.exe 可让你创建单标签的 DNS 域名，但由于几种原因，你不得对域使用单标签 DNS 域名。 在 Windows Server 2008 R2 中，Dcpromo.exe 不允许你为域创建单标签 DNS 域名。 有关详细信息，请参阅[https://go.microsoft.com/fwlink/?LinkId=92467 。](https://go.microsoft.com/fwlink/?LinkId=92467)   
+>  虽然在 Windows Server 2008 和 Windows Server 2003 中通过 Dcpromo.exe 可创建单标签 DNS 域名，但鉴于某些原因不应对一个域使用单标签 DNS 名称。 在 Windows Server 2008 R2 中，Dcpromo.exe 不允许为一个域创建单标签 DNS 名称。 有关详细信息，请参阅[https://go.microsoft.com/fwlink/?LinkId=92467。](https://go.microsoft.com/fwlink/?LinkId=92467)   
   
 如果域的当前 NetBIOS 名称不适合表示区域，或者无法满足前缀命名规则，请选择新的前缀。 在这种情况下，域的 NetBIOS 名称不同于域的 DNS 前缀。  
   

@@ -1,24 +1,20 @@
 ---
 title: wbadmin restore catalog
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 wbadmin restore catalog 的 Windows 命令主题，该主题从指定的存储位置恢复本地计算机的备份目录。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ce1e24a0-821d-4353-b09d-8f82c5c4ad56
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0d646440ca9b30f9fa30fb1ac3ff08458b8e44d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ce9182e4e405b1538277db25f06b6a49d7240f9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362335"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829700"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 
@@ -39,9 +35,9 @@ wbadmin restore catalog
 [-quiet]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-backupTarget|指定在创建备份后的时间点的系统备份目录的位置。|
 |-计算机|指定要恢复其备份目录的计算机的名称。 当多台计算机的备份存储在同一位置时使用。 当指定 **-backupTarget**时，应使用。|
@@ -51,7 +47,7 @@ wbadmin restore catalog
 
 如果存储备份的位置（磁盘、DVD 或远程共享文件夹）已损坏或丢失，并且无法用于还原备份目录，请使用**wbadmin delete catalog**删除损坏的目录。 在这种情况下，你应在删除备份目录后创建新备份。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要从磁盘 d：上存储的备份还原目录，请键入：
 ```
@@ -62,8 +58,8 @@ wbadmin restore catalog -backupTarget:d
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)
 -   [Backup](wbadmin.md)
 -   [WBCatalog](https://technet.microsoft.com/library/jj902437.aspx) cmdlet

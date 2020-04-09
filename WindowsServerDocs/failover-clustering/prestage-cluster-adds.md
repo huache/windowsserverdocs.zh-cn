@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.manager: daveba
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 56bf122923525de6e0005dd6d866220221dc9ce1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b14561a05778ed30e71363a2cd3b3b6fdf24f78e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392070"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827470"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>在 Active Directory 域服务中预安排群集计算机对象
 
@@ -27,7 +27,7 @@ ms.locfileid: "71392070"
 >[!NOTE]
 >可以选择创建 Active Directory 分离的群集，其中不会在 AD DS 中创建 CNO 或 Vco。 此选项适用于特定类型的群集部署。 有关详细信息，请参阅[部署与 Active Directory 分离的群集](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>)。
 
-若要自动创建 CNO，创建故障转移群集的用户必须具备“ **创建计算机对象** ”权限，这一权限针对组织单位 (OU) 或将形成群集的服务器所在的容器。 若要允许用户或组在不具备此权限的情况下创建群集，可以让具有 AD DS 中的适当权限的用户（通常为域管理员）在 AD DS 中预安排 CNO。 这也让域管理员能够更多地控制用于群集的命名约定，以及在其中创建群集对象的 OU。
+若要自动创建 CNO，创建故障转移群集的用户必须具备“**创建计算机对象**”权限，这一权限针对组织单位 (OU) 或将形成群集的服务器所在的容器。 若要允许用户或组在不具备此权限的情况下创建群集，可以让具有 AD DS 中的适当权限的用户（通常为域管理员）在 AD DS 中预安排 CNO。 这也让域管理员能够更多地控制用于群集的命名约定，以及在其中创建群集对象的 OU。
 
 ## <a name="step-1-prestage-the-cno-in-ad-ds"></a>步骤 1：在 AD DS 中预安排 CNO
 
@@ -73,7 +73,7 @@ ms.locfileid: "71392070"
 2. 找到并右键单击 CNO，然后选择 "**属性**"。
 3. 在 "**安全**" 选项卡上，选择 "**添加**"。
 4. 在 "**选择用户、计算机或组**" 对话框中，指定要向其授予权限的用户帐户或组，然后选择 **"确定"** 。
-5. 选中刚才添加的用户帐户或组，然后选中“完全控制”旁边的“允许” 复选框。
+5. 选中刚才添加的用户帐户或组，然后选中“完全控制”旁边的“允许”复选框。
   
    ![向将要创建群集的用户或组授予“完全控制”权限](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
   

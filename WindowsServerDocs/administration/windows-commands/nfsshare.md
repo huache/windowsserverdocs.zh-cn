@@ -1,24 +1,20 @@
 ---
 title: nfsshare
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 437a2615-335a-442f-9713-d50d5f3983a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d205bcfad11d22fea7fc9d0651aca61f234347cf
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 032baaf3013d2658b1040345da3a35cb6a1631f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948508"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838900"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -33,16 +29,16 @@ nfsshare <ShareName>=<Drive:Path> [-o <Option=value>...]
 nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 ```
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 如果没有参数，则**nfsshare**命令行实用程序会列出 nfs 服务器导出的所有网络文件系统（NFS）共享。 使用*共享名*作为唯一参数， **Nfsshare**会列出*共享名*标识的 NFS 共享的属性。 如果提供了*共享名*和<em>驱动器</em> **：** <em>path</em> ，则**nfsshare**会将<em>Drive</em> **：** <em>path</em>标识的文件夹导出为*共享名*。 如果使用 **/delete**选项，则指定的文件夹将不再对 NFS 客户端可用。
 
-## <a name="options"></a>“选项”
+## <a name="options"></a>Options
 
 **Nfsshare**命令接受以下选项和参数：
 
 
-|             术语              |                                                                                                                                                                                                                      定义                                                                                                                                                                                                                       |
+|             术语              |                                                                                                                                                                                                                      Definition                                                                                                                                                                                                                       |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         -o anon = {yes          |                                                                                                                                                                                                                          不                                                                                                                                                                                                                          |
 |  -o rw [=\<Host > [：<Host>] ...]  |                       提供由*主机*指定的主机或客户端组对共享目录的读写访问权限。 使用冒号（ **：** ）分隔主机名和组名。 如果未指定*Host* ，则所有主机和客户端组（使用**ro**选项指定的组除外）都具有读写访问权限。 如果不设置**ro**或**rw**选项，所有客户端都具有对共享目录的读写访问权限。                       |
@@ -54,7 +50,7 @@ nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 |            /delete            |                                                                                                                                                       如果指定了*共享名*或<em>驱动器</em> **：** <em>Path</em> ，则将删除指定的共享。 如果指定 \*，将删除所有 NFS 共享。                                                                                                                                                       |
 
 > [!NOTE]
-> 若要查看此命令的完整语法，请在命令提示符下键入：</br>> **nfsshare/？**
+> 若要查看此命令的完整语法，请在命令提示符下键入以下内容：</br>> **nfsshare/？**
 
 ## <a name="see-also"></a>另请参阅
 

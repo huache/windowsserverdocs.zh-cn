@@ -3,21 +3,21 @@ ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: 驱动器固件更新疑难解答
 ms.prod: windows-server
 ms.author: toklima
-ms.manager: masriniv
+manager: masriniv
 ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: 9c9c1083def53e09b063a0ca9879e4d4527e98c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b62fdfe64ea579f61239dc582c639fb10ec1371c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365893"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820880"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>驱动器固件更新疑难解答
 
->适用于：Windows 10、Windows Server （半年频道）、
+>适用于：Windows 10、Windows Server（半年频道）
 
 Windows 10 版本 1703 和更高版本以及 Windows Server（半年频道）能够更新已使用固件可升级 AQ（其他限定符）通过 PowerShell 认证的 HDD 和 SSD 的固件。
 
@@ -64,7 +64,7 @@ FirmwareVersionInSlot : {0013}
 
 要验证 SAS 设备是否支持所需的命令集，有两个选择：
 1.  使用相应的固件映像通过 Update-StorageFirmware cmdlet 试一下，或者
-2.  请查阅 Windows Server 目录，以确定哪些 SAS 设备已成功获得 FW 更新 AQ （ https://www.windowsservercatalog.com/)
+2.  请查阅 Windows Server 目录以确定哪些 SAS 设备已成功获取了 FW 更新 AQ （ https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>修正选项
 如果你正在测试的给定设备不支持相应的命令集，则询问你的供应商，了解是否可获得提供所需命令集的已更新固件，或者查看 Windows Server 目录，确定用于获得源的可实现相应命令集的设备。
@@ -142,7 +142,7 @@ NumberOfRetriesDone 0
 
 要收集这些高级日志条目，则启用该日志，重现固件更新失败，然后保存诊断日志。
 
-下面是 SATA 设备上固件更新的示例失败，因为要下载的映像无效（事件 ID：258）：
+下面是 SATA 设备上的固件更新因将下载的映像无效（事件 ID：258）而失败的示例：
 
 ``` 
 EventData
@@ -174,11 +174,11 @@ Parameter8Value 0
 ```
 
 上述事件在参数值 2 至 6 中包含详细的设备信息。 在这里，我们将查看各个 ATA 注册值。 可使用 ATA ACS 规范来解码针对下载微代码命令失败的以下值：
-- 返回代码：0（0000 0000）（由于未传输有效负载，因此没有任何意义）
+- 返回代码：0 (0000 0000)（不适用 - 由于未转移任何负载，因此没有意义）
 - 功能：15（0000 1111）（第1位设置为 "1"，表示 "中止"）
-- SectorCount:0（0000 0000）（不适用）
-- DriveHead:160（1010 0000）（无-仅设置过时的位）
-- Command146（1001 0010）（Bit 1 设置为 "1"，表示感知数据的可用性）
+- SectorCount：0 (0000 0000)（不适用）
+- DriveHead：160 (1010 0000)（不适用 – 仅设置了过时位）
+- 命令：146（1001 0010）（Bit 1 设置为 "1"，表示感知数据的可用性）
 
 这告诉我们，设备终止了固件更新操作。
 

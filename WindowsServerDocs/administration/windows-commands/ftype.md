@@ -1,24 +1,20 @@
 ---
 title: ftype
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6fb53cee-9bed-44dd-af5d-bc7cec1dd114
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ce3f4c360269eb9cabd2cbef8abb89935923a595
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f982f68f25a4decbc9c572b533fa1ecc5e893a8c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375825"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842700"
 ---
 # <a name="ftype"></a>ftype
 
@@ -34,11 +30,11 @@ ms.locfileid: "71375825"
 ftype [<FileType>[=[<OpenCommandString>]]]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|\<FileType >|指定要显示或更改的文件类型。|
+|\<类型 >|指定要显示或更改的文件类型。|
 |\<OpenCommandString >|指定打开指定文件类型的文件时要使用的 open 命令字符串。|
 |/?|在命令提示符下显示帮助。|
 
@@ -48,12 +44,12 @@ ftype [<FileType>[=[<OpenCommandString>]]]
 
 |变量|替换值|
 |--------|-----------------|
-|% 0或% 1|替换为通过关联启动的文件名。|
+|%0或 %1|替换为通过关联启动的文件名。|
 |%*|获取所有参数。|
-|% 2，% 3，。|获取第一个参数（% 2）、第二个参数（% 3）等。|
-|%~ @ NO__T-1N >|获取以第*n*个参数开头的所有剩余参数，其中*N*可以是从2到9的任意数字。|
+|%2，%3，。|获取第一个参数（%2）、第二个参数（%3）等。|
+|%~\<N >|获取以第*n*个参数开头的所有剩余参数，其中*N*可以是从2到9的任意数字。|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要显示已定义打开命令字符串的当前文件类型，请键入：
 ```
@@ -81,6 +77,6 @@ ftype PerlScript=perl.exe %1 %*
 set PATHEXT=.pl;%PATHEXT%
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

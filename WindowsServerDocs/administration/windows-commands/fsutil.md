@@ -9,16 +9,16 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 0f338c80dca0ed88ca206aea5aeb415bc191e03a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 717c287995be2ab56bd49f2f24d46001f77e0e68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376667"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843900"
 ---
 # <a name="fsutil"></a>Fsutil
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+>适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 执行与文件分配表（FAT）和 NTFS 文件系统相关的任务，例如管理重新分析点、管理稀疏文件或卸除卷。 如果不使用参数，则**Fsutil**将显示受支持的子命令的列表。 
 
@@ -32,14 +32,14 @@ ms.locfileid: "71376667"
 >```
 > 安装后，系统将提示您重新启动计算机。 计算机重启后，你将能够以管理员身份运行**Fsutil** 。
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|命令 |描述|
+|命令 |说明|
 |---|---|
 |[Fsutil 8dot3name](fsutil-8dot3name.md) | 例如，查询或更改系统上的短名称行为的设置会生成8.3 个字符长度的文件名。 删除目录中的所有文件的短名称。 如果从目录中的文件中去除短名称，则扫描目录并标识可能会受到影响的注册表项。|
 |[Fsutil 行为](fsutil-behavior.md) |查询或设置卷行为。|
 |[Fsutil 脏](fsutil-dirty.md)| 查询卷的未更新位是否已设置或是否设置卷的未更新位。 如果设置了卷的未更新位，则在下次重新启动计算机时， **autochk**会自动检查卷中是否存在错误。|
-|[Fsutil 文件](fsutil-file.md)|按用户名查找文件（如果启用了磁盘配额），查询为文件分配的范围，设置文件的短名称，设置文件的有效数据长度，为文件设置零数据，创建指定大小的新文件，并在给定名称的情况下查找文件 ID，或查找指定文件 ID 的文件链接名称。|
+|[Fsutil 文件](fsutil-file.md)|按用户名查找文件（如果启用了磁盘配额），查询为文件分配的范围，设置文件的短名称，设置文件的有效数据长度，为文件设置零数据，创建指定大小的新文件，在给定的情况下查找文件 ID，或者查找指定文件 ID 的文件链接名称。|
 |[Fsutil fsinfo](fsutil-fsinfo.md)|列出所有驱动器并查询驱动器类型、卷信息、特定于 NTFS 的卷信息或文件系统统计信息。|
 |[Fsutil 硬链接](fsutil-hardlink.md)|列出文件的硬链接，或创建硬链接（文件的目录条目）。 每个文件都可以被视为至少具有一个硬链接。 在 NTFS 卷上，每个文件可以有多个硬链接，因此单个文件可以出现在多个目录中（甚至在同一目录中，具有不同的名称）。 由于所有链接都引用同一个文件，因此程序可以打开任何链接，并修改该文件。 只有在删除文件的所有链接后，才会从文件系统中删除该文件。 创建硬链接后，程序可以像使用任何其他文件名一样使用它。|
 |[Fsutil objectid](fsutil-objectid.md)|管理对象标识符，Windows 操作系统使用这些标识符跟踪对象（如文件和目录）。|
@@ -54,5 +54,5 @@ ms.locfileid: "71376667"
 |[Fsutil volume](fsutil-volume.md)|管理卷。 卸载卷，查询以查看磁盘上可用空间量，或查找正在使用指定群集的文件。|
 |[Fsutil wim](fsutil-wim.md)|提供用于发现和管理支持 WIM 的文件的函数。|
 
-## <a name="see-also"></a>请参阅
-[命令行语法项](Command-Line-Syntax-Key.md)
+## <a name="see-also"></a>另请参阅
+- [命令行语法项](command-line-syntax-key.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5b2876ac-fe7d-4054-bfba-b692e57bc0d2
 title: Active Directory 中的附录 C-受保护的帐户和组
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 606b3a42d70ee5c2a3479f9c9df2f95a495d6afd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3036176127cbb5401c582d81ddb2704d790a209a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408721"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821680"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附录 C：Active Directory 中受保护的帐户和组
 
@@ -22,7 +21,7 @@ ms.locfileid: "71408721"
 
 ## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附录 C：Active Directory 中受保护的帐户和组
 
-在 Active Directory 中，会将一组高度特权的帐户和组视为受保护的帐户和组。 使用 Active Directory 中的大多数对象，委派的管理员（已被委派管理 Active Directory 对象的权限的用户）可以更改对象的权限，包括更改权限以允许自身更改成员身份例如，组。  
+在 Active Directory 中，会将一组高度特权的帐户和组视为受保护的帐户和组。 使用 Active Directory 中的大多数对象，委派的管理员（已被委派管理 Active Directory 对象的权限的用户）可以更改对象的权限，包括更改权限以允许自身更改组的成员身份，例如。  
 
 但是，对于受保护的帐户和组，通过自动过程设置和强制实施对象的权限，从而确保对象的权限保持一致，即使对象已移动到目录也是如此。 即使有人手动更改了某个受保护对象的权限，此过程也可以确保将权限快速返回到默认值。  
 
@@ -38,7 +37,7 @@ ms.locfileid: "71408721"
 |管理员|管理员|管理员|管理员|
 |Administrators|Administrators|Administrators|Administrators|
 |Backup Operators|Backup Operators|Backup Operators|Backup Operators|
-|Cert Publishers|||
+|证书发行者|||
 |Domain Admins|Domain Admins|Domain Admins|Domain Admins|
 |域控制器|域控制器|域控制器|域控制器|
 |Enterprise Admins|Enterprise Admins|Enterprise Admins|Enterprise Admins|

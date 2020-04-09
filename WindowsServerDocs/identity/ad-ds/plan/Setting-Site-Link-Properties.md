@@ -1,7 +1,6 @@
 ---
 ms.assetid: de054ac2-a386-43ec-a537-c0de21549741
 title: 设置站点链接属性
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c9a9b25aa56948e3116ebfef67a6af73917b76c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f448a29384b9ae9409981a67c515dab3640899dd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402478"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821860"
 ---
 # <a name="setting-site-link-properties"></a>设置站点链接属性
 
@@ -30,7 +29,7 @@ ms.locfileid: "71402478"
   
 -   确定复制时间间隔，该时间间隔定义允许复制的时间（按计划中的定义）。  
   
-## <a name="in-this-guide"></a>本指南包含的内容  
+## <a name="in-this-guide"></a>本指南内容  
   
 -   [确定成本](../../ad-ds/plan/Determining-the-Cost.md)  
   

@@ -1,24 +1,20 @@
 ---
 title: getmac
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a749a348-7cd1-4336-9f33-bb42dd0e31e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c770f5da5159e0037af479f90fadb4cd83464c77
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b593bf61bb08d2c1c7868b1bbb175ed64a8bcf7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375806"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842610"
 ---
 # <a name="getmac"></a>getmac
 
@@ -29,9 +25,9 @@ ms.locfileid: "71375806"
 ```
 getmac[.exe][/s <computer> [/u <Domain\<User> [/p <Password>]]][/fo {TABLE | list | CSV}][/nh][/v]
 ```
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|             参数              |                                                                                          描述                                                                                          |
+|             参数              |                                                                                          说明                                                                                          |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           /s <computer>            |                                      指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                       |
 |        /u <Domain>\\<User>         | 使用用户或 Domain\user 指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
@@ -43,7 +39,7 @@ getmac[.exe][/s <computer> [/u <Domain\<User> [/p <Password>]]][/fo {TABLE | lis
 
 ## <a name="remarks"></a>备注
 当你希望将 MAC 地址输入网络分析器时，或者需要知道计算机中每个网络适配器当前正在使用的协议时， **getmac**可能非常有用。
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 下面的示例演示如何使用**getmac**命令：
 ```
 getmac /fo table /nh /v
@@ -64,4 +60,4 @@ getmac /s srvmain /u maindom\hiropln /p p@ssW23 /fo list /v
 getmac /s srvmain /u maindom\hiropln /p p@ssW23 /fo table /nh
 ```
 ## <a name="additional-references"></a>其他参考
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

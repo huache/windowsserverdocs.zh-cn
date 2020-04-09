@@ -1,7 +1,6 @@
 ---
 ms.assetid: f0cbdd78-f5ae-47ff-b5d3-96faf4940f4a
 title: 配置备用登录 ID
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 026873e231628e93738cba096cfae44c8b053217
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 7e7a881a2e6bae499ed7d4713bd70a804c3412e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948555"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816960"
 ---
 # <a name="configuring-alternate-login-id"></a>配置备用登录 ID
 
@@ -36,7 +35,7 @@ Active Directory 联合身份验证服务（AD FS）允许使用 AD FS 的联合
    在上述方案中，具有 AD FS 的备用 ID 使用户能够登录到 Azure AD，而无需修改本地 Upn。 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>具有备用登录 ID 的最终用户体验
-最终用户体验根据用于备用登录 id 的身份验证方法而有所不同。 目前有三种方法可以实现使用备用登录 id。  它们是：
+最终用户体验根据用于备用登录 id 的身份验证方法而有所不同。 目前有三种方法可以实现使用备用登录 id。  它们具有以下特点：
 
 - **常规身份验证（旧）** -使用基本身份验证协议。
 - **新式身份验证**-基于 ACTIVE DIRECTORY 身份验证库（ADAL）登录到应用程序。 这将启用多因素身份验证（MFA）、基于 SAML 的第三方标识提供程序与 Office 客户端应用程序、智能卡和基于证书的身份验证等登录功能。
@@ -132,10 +131,10 @@ Office 版本1712（build no 8827.2148）和更高版本已更新身份验证逻
 ##### <a name="step-2-update-to-required-windows-version"></a>步骤 2： 更新为所需的 Windows 版本
 Windows 版本1709及更高版本已更新身份验证逻辑来处理备用 id 方案。 为了利用新的逻辑，需要将客户端计算机更新到 Windows 版本1709及更高版本。
 
-##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>步骤 3： 使用组策略为受影响的用户配置注册表
+##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>步骤 3。 使用组策略为受影响的用户配置注册表
 Office 应用程序依赖于目录管理员推送的信息来标识备用 id 环境。 需要将以下注册表项配置为帮助 office 应用程序通过备用 id 对用户进行身份验证，而不显示任何额外的提示
 
-|要添加的 Regkey|Regkey 数据名称、类型和值|Windows 7/8|Windows 10|描述|
+|要添加的 Regkey|Regkey 数据名称、类型和值|Windows 7/8|Windows 10|说明|
 |-----|-----|-----|-----|-----|
 |HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必需|必需|此 regkey 的值是组织的租户中已验证的自定义域名。 例如，如果 Contoso.com 是租户 Contoso.onmicrosoft.com 中某个已验证的自定义域名，则 Contoso corp 可以在此 regkey 中提供值 Contoso.com。|
 HKEY_CURRENT_USER \Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|对于 Outlook 2016 ProPlus 是必需的|对于 Outlook 2016 ProPlus 是必需的|此 regkey 的值可以为 1/0，以指示 Outlook 应用程序是否应参与改进后的备用 id 身份验证逻辑。|
@@ -156,7 +155,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>非 Exchange 和 Skype for Business 客户端
 
-|客户端|支持声明|备注|
+|客户端|支持语句|备注|
 | ----- | -----|-----|
 |Microsoft Teams|支持|<li>Microsoft 团队支持 AD FS （SAML-P、WS 送、WS 信任和 OAuth）以及新式身份验证。</li><li> 核心 Microsoft 团队（如渠道、聊天和文件功能）可用于备用登录 ID。</li><li>第一个和第三方应用必须由客户单独调查。 这是因为每个应用程序都有自己的可支持性身份验证协议。</li>|     
 |OneDrive for Business|支持的-客户端注册表项建议 |配置备用 ID 后，会在验证字段中预先填充本地 UPN。 需要将其更改为所使用的备用标识。 建议使用本文中提到的客户端注册表项： Office 2013 和 Lync 2013 会定期提示输入 SharePoint Online、OneDrive 和 Lync Online 的凭据。|
@@ -185,7 +184,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 -   启用后，"备用登录 ID" 功能仅可用于在 AD FS 支持的所有用户名/密码身份验证协议（SAML-P、WS 送、WS 信任和 OAuth）之间进行用户名/密码身份验证。
 
 
--   当执行 Windows 集成身份验证（WIA）时（例如，当用户尝试从 intranet 访问已加入域的计算机上的企业应用程序，并且 AD FS 管理员已将身份验证策略配置为使用 WIA 进行 intranet），UPN isused用于身份验证。 如果已为信赖方配置了 "备用登录 ID" 功能的任何声明规则，则应确保这些规则在 WIA 情况下仍然有效。
+-   当执行 Windows 集成身份验证（WIA）时（例如，当用户尝试从 intranet 访问已加入域的计算机上的企业应用程序，并且 AD FS 管理员已将身份验证策略配置为将 WIA 用于 intranet），UPN isused 进行身份验证。 如果已为信赖方配置了 "备用登录 ID" 功能的任何声明规则，则应确保这些规则在 WIA 情况下仍然有效。
 
 -   启用备用登录 ID 功能后，需要为 AD FS 支持的每个用户帐户林从 AD FS 服务器访问至少一个全局编录服务器。 如果无法访问用户帐户林中的全局编录服务器，则会导致 AD FS 回退为使用 UPN。 默认情况下，所有域控制器都是全局编录服务器。
 
@@ -212,7 +211,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 
 
-|                       **错误事例**                        | **对登录体验的影响** |                                                              **Event**                                                              |
+|                       **错误事例**                        | **对登录体验的影响** |                                                              **引发**                                                              |
 |--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | 无法获取 user 对象的 SAMAccountName 值 |          登录失败           |                  事件 ID 364，出现异常消息 MSIS8012：无法为用户找到 samAccountName： "{0}"。                   |
 |        CanonicalName 属性不可访问         |          登录失败           |               用户 "{1}" 的事件 ID 364 的事件 ID 的{0}MSIS8013 格式不正确。                |

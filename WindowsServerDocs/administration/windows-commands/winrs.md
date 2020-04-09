@@ -1,24 +1,20 @@
 ---
 title: winrs
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 winrs 的 Windows 命令主题，可用于远程管理和执行程序。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c370de31-5651-400a-872d-ef229aae2309
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6ee44cb530614485f0dbd58a9ec13a4788370fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d3b714f851c981611bbe4d4f26a7b7eed2db7903
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361938"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829140"
 ---
 # <a name="winrs"></a>winrs
 
@@ -29,21 +25,21 @@ Windows 远程管理允许您远程管理和执行程序。
 ```  
 winrs [/<parameter>[:<value>]] <command>  
 ```  
-### <a name="parameters"></a>参数  
+#### <a name="parameters"></a>参数  
 
-|           参数            |                                                                                                                                                                                    描述                                                                                                                                                                                     |
+|           参数            |                                                                                                                                                                                    说明                                                                                                                                                                                     |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /remote：\<终结点 >       |                                                                                          使用 NetBIOS 名称或标准连接指定目标端点：<br /><br />-   <url>[\<传输 >：//]\<目标 > [：\<端口 >]<br /><br />如果未指定，则使用 **/r： localhost** 。                                                                                          |
-|          /unencrypted          | 指定不加密到远程 shell 的消息。 这对于故障排除或已使用**ipsec**加密网络流量或强制实施物理安全性很有用。<br /><br />默认情况下，使用 Kerberos 或 NTLM 密钥对消息进行加密。<br /><br />选择 HTTPS 传输时，将忽略此命令行选项。 |
-|     /username：\<用户名 >      |                                                                                在命令行上指定用户名。<br /><br />如果未指定，则该工具将使用协商身份验证或提示输入名称。<br /><br />如果指定了 **/username** ，则还必须指定 **/password** 。                                                                                 |
-|     /password：\<密码 >      |                                                                           指定命令行上的密码。<br /><br />如果未指定 **/password**但 **/username**为，则该工具将提示输入密码。<br /><br />如果指定了 **/password** ，还必须指定 **/username** 。                                                                            |
+|      /remote：\<终结点 >       |                                                                                          使用 NetBIOS 名称或标准连接指定目标端点：<p>-   <url>[\<传输 >：//]\<目标 > [：\<端口 >]<p>如果未指定，则使用 **/r： localhost** 。                                                                                          |
+|          /unencrypted          | 指定不加密到远程 shell 的消息。 这对于故障排除或已使用**ipsec**加密网络流量或强制实施物理安全性很有用。<p>默认情况下，使用 Kerberos 或 NTLM 密钥对消息进行加密。<p>选择 HTTPS 传输时，将忽略此命令行选项。 |
+|     /username：\<用户名 >      |                                                                                在命令行上指定用户名。<p>如果未指定，则该工具将使用协商身份验证或提示输入名称。<p>如果指定了 **/username** ，则还必须指定 **/password** 。                                                                                 |
+|     /password：\<密码 >      |                                                                           指定命令行上的密码。<p>如果未指定 **/password**但 **/username**为，则该工具将提示输入密码。<p>如果指定了 **/password** ，还必须指定 **/username** 。                                                                            |
 |      /timeout：\<秒 >       |                                                                                                                                                                             不推荐使用此选项。                                                                                                                                                                             |
-|       /目录：\<路径 >       |                                                                                            指定远程 shell 的起始目录。<br /><br />如果未指定，将在由环境变量 **% USERPROFILE%** 定义的用户的主目录中启动远程 shell。                                                                                             |
-| /environment：\<string > =<value> |                                                                          指定在 shell 开始时要设置的单个环境变量，该变量允许更改 shell 的默认环境。<br /><br />此开关的多次出现必须用于指定多个环境变量。                                                                          |
-|            /noecho             |                                                                                                    指定应禁用 echo。 这可能是为了确保不会在本地显示用户对远程提示的答案。<br /><br />默认情况下，echo 为 "on"。                                                                                                    |
-|           /noprofile           |                                              指定不应加载用户的配置文件。<br /><br />默认情况下，服务器将尝试加载用户配置文件。<br /><br />如果远程用户不是目标系统上的本地管理员，则需要此选项（默认值将导致错误）。                                               |
+|       /目录：\<路径 >       |                                                                                            指定远程 shell 的起始目录。<p>如果未指定，将在由环境变量 **% USERPROFILE%** 定义的用户的主目录中启动远程 shell。                                                                                             |
+| /environment：\<string > =<value> |                                                                          指定在 shell 开始时要设置的单个环境变量，该变量允许更改 shell 的默认环境。<p>此开关的多次出现必须用于指定多个环境变量。                                                                          |
+|            /noecho             |                                                                                                    指定应禁用 echo。 这可能是为了确保不会在本地显示用户对远程提示的答案。<p>默认情况下，echo 处于开启状态。                                                                                                    |
+|           /noprofile           |                                              指定不应加载用户的配置文件。<p>默认情况下，服务器将尝试加载用户配置文件。<p>如果远程用户不是目标系统上的本地管理员，则需要此选项（默认值将导致错误）。                                               |
 |         /allowdelegate         |                                                                                                                  指定用户的凭据可用于访问远程共享，例如，在与目标终结点不同的计算机上找到。                                                                                                                   |
-|          /compression          |                                                                           启用压缩。  远程计算机上的较旧安装可能不支持压缩，因此默认情况下处于关闭状态。<br /><br />默认设置为 off，因为远程计算机上的较旧安装可能不支持压缩。                                                                           |
+|          /compression          |                                                                           启用压缩。  远程计算机上的较旧安装可能不支持压缩，因此默认情况下处于关闭状态。<p>默认设置为 off，因为远程计算机上的较旧安装可能不支持压缩。                                                                           |
 |            /usessl             |                                                                                                               使用远程终结点时使用 SSL 连接。  指定它而不是传输**https：** 将使用默认的**WinRM**默认端口。                                                                                                                |
 |               /?               |                                                                                                                                                                        在命令提示符下显示帮助。                                                                                                                                                                        |
 
@@ -52,7 +48,7 @@ winrs [/<parameter>[:<value>]] <command>
 -   若要终止 **/remote**命令，用户可以键入**ctrl + C**或**ctrl + break**，这将发送到远程 shell。 第二个**ctrl-c**将强制终止**winrs.exe**。  
 -   若要管理活动远程 shell 或 winrs 配置，请使用 WinRM 工具。  用于管理活动 shell 的 URI 别名为**shell/cmd**。  Winrs 配置的 URI 别名为**winrm/config/winrs**。  
 
-## <a name="BKMK_Examples"></a>示例  
+## <a name="examples"></a><a name=BKMK_Examples></a>示例  
 ```  
 winrs /r:https://contoso.com command  
 ```  
@@ -88,5 +84,5 @@ winrs /r:myserver /ad /u:administrator /p:$%fgh7 dir \\anotherserver\share
 ```  
 
 ## <a name="additional-references"></a>其他参考  
--   [命令行语法项](command-line-syntax-key.md)  
+-   - [命令行语法项](command-line-syntax-key.md)  
 

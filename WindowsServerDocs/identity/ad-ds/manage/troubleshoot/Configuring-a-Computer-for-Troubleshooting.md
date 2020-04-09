@@ -1,7 +1,6 @@
 ---
 ms.assetid: 155abe09-6360-4913-8dd9-7392d71ea4e6
 title: 配置计算机进行故障排除
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53af8acd7da8f9008c88ad7c6c14b00e63801847
-ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
+ms.openlocfilehash: d9d279615dc1f70ffdcff9e49a4aa619f0106a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278552"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822970"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>配置计算机进行故障排除
 
->适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
+>适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 使用高级故障排除技术识别和修复 Active Directory 问题之前，请配置计算机以进行故障排除。 您还应该对疑难解答的概念、过程和工具有一个基本的了解。
 
@@ -36,7 +35,7 @@ ms.locfileid: "78278552"
 
 ### <a name="configure-reliability-and-performance-monitor"></a>配置可靠性和性能监视器
 
-Windows Server 包括 Windows 可靠性和性能监视器，这是一个 Microsoft 管理控制台（MMC）管理单元，它结合了以前的独立工具（包括性能日志和警报、服务器性能顾问、和系统监视器。 此管理单元提供了图形用户界面（GUI），用于自定义数据收集器集和事件跟踪会话。
+Windows Server 包括 Windows 可靠性和性能监视器，这是一个 Microsoft 管理控制台（MMC）管理单元，它结合了以前的独立工具（包括性能日志和警报、服务器性能顾问和系统监视器）的功能。 此管理单元提供了图形用户界面（GUI），用于自定义数据收集器集和事件跟踪会话。
 
 可靠性和性能监视器还包含可靠性监视器，这是一个 MMC 管理单元，用于跟踪系统的更改并将其与系统稳定性的变化进行比较，从而提供其关系的图形视图。
 

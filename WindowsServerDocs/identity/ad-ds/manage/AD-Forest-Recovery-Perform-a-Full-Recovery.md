@@ -1,6 +1,5 @@
 ---
 title: AD 林恢复-执行完整服务器恢复
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 1a1182a6-4462-4a13-806e-0e642a0d5db2
 ms.technology: identity-adds
-ms.openlocfilehash: 1ade1f2e316387fbe84209c1bc7a986fff6f2a71
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bf321ae769aa6f0da1cebce7700ea429161a0956
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390537"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824010"
 ---
 # <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>AD 林恢复-执行完整服务器恢复 
 
@@ -51,8 +50,8 @@ ms.locfileid: "71390537"
    -  安装驱动程序
    -  取消选择自动重启和检查磁盘错误的**高级**功能。 默认情况下，这些设置处于启用状态。
    ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore6.png)
-8. 单击**下一步**。
-9. 单击 **“完成”** 。 系统将提示你是否确定要继续。 单击 **“是”** 。 
+8. 单击 **“下一步”** 。
+9. 单击 **“完成”** 。 系统将提示你是否确定要继续。 单击“是”。 
    ![Server Restore](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore11.png) 
 10. 完成后，执行 SYSVOL 的权威还原，如[AD 林恢复中所述-执行 DFSR 复制的 SYSVOL 的权威同步](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)。
 
@@ -75,8 +74,8 @@ ms.locfileid: "71390537"
     - 对磁盘进行格式化和重新分区
     - 安装驱动程序
     - 取消选择自动重启和检查磁盘错误的**高级**功能。 默认情况下，这些设置处于启用状态。
-12. 单击**下一步**。
-13. 单击 **“完成”** 。 系统将提示你是否确定要继续。 单击 **“是”** 。  
+12. 单击 **“下一步”** 。
+13. 单击 **“完成”** 。 系统将提示你是否确定要继续。 单击“是”。  
 14. 完成后，执行 SYSVOL 的权威还原，如[AD 林恢复中所述-执行 DFSR 复制的 SYSVOL 的权威同步](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)。
 
 ## <a name="enabling-the-network-adapter-for-a-network-backup"></a>为网络备份启用网络适配器
@@ -86,7 +85,7 @@ ms.locfileid: "71390537"
 1. 开始 Windows 安装程序 "，指定语言、时间和货币格式以及键盘选项，然后单击"**下一步**"。 
 2. 单击**修复计算机**。 I
 3. 单击 "**疑难解答**"，单击 "**命令提示符**"。 
-4. 键入以下命令，然后按 Enter：  
+4. 键入以下命令并按 Enter：  
 
    ```  
    wpeinit  

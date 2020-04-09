@@ -1,24 +1,20 @@
 ---
 title: ksetup： delenctypeattr
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fc25ef3-e271-4229-a712-72c507df55aa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3810d83c06b9ea08766451e13390b02b1867c83
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c650b973ac34e28394d5b6ec38142a058ad76338
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375156"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841760"
 ---
 # <a name="ksetupdelenctypeattr"></a>ksetup： delenctypeattr
 
@@ -32,9 +28,9 @@ ms.locfileid: "71375156"
 ksetup /delenctypeattr <DomainName> 
 ```
 
-### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<DomainName >|要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。|
 
@@ -46,7 +42,7 @@ ksetup /delenctypeattr <DomainName>
 
 若要设置要连接到并使用的域，请运行**ksetup/domain \<DomainName >** 命令。
 
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 
 确定在此计算机上设置的当前加密类型：
 ```
@@ -65,11 +61,11 @@ ksetup /getenctypeattr mit.contoso.com
 ksetup /delenctypeattr mit.contoso.com
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
 -   [Klist](klist.md)
 -   [Ksetup:domain](ksetup-domain.md)
 -   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
 -   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
 -   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

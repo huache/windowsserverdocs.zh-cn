@@ -1,27 +1,23 @@
 ---
 title: 用户帐户注意事项
 description: 提供 MultiPoint Services 的用户帐户、用户名和密码注意事项
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e225900b-cee9-48c9-b21c-394dc5e72b78
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: c81d14d46e96d39676e1fb6fa31892e0d5e1b683
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 732100a79adbdd7d9fbe4ade742c43084d6b54f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389261"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820570"
 ---
 # <a name="user-account-considerations"></a>用户帐户注意事项
-本主题介绍你作为管理用户在创建和管理用户帐户时应考虑的问题。 可在 MultiPoint 管理器的 "用户" 选项卡中管理用户帐户。 有关详细信息，请参阅[管理用户帐户](Manage-User-Accounts.md)主题。  
+本主题描述以管理用户的身份创建和管理用户帐户时应考虑的问题。 可在 MultiPoint 管理器的 "用户" 选项卡中管理用户帐户。 有关详细信息，请参阅[管理用户帐户](Manage-User-Accounts.md)主题。  
   
 ## <a name="user-account-types"></a>用户帐户类型  
 用户帐户是信息的集合，通知 MultiPoint 服务用户可以访问的文件和文件夹、可对 MultiPoint 服务系统进行哪些更改以及每个用户的首选项（如桌面背景）。 每个人通过使用唯一的帐户名和密码访问各自的用户帐户。 MultiPoint 服务支持三种类型的用户帐户：  

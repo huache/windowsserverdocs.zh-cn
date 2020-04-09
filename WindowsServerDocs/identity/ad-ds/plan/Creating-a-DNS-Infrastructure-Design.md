@@ -1,7 +1,6 @@
 ---
 ms.assetid: cd70b0aa-0a67-4966-a041-4dd3f302c98b
 title: 创建 DNS 基础结构设计
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b4b7cea18a6bb6b435b3c3fb6b4e94cfdddb2c04
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 90c670d5f59702ce932c004a016adb855b040f77
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408975"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822800"
 ---
 # <a name="creating-a-dns-infrastructure-design"></a>创建 DNS 基础结构设计
 
@@ -25,7 +24,7 @@ ms.locfileid: "71408975"
 根据你的组织是否已有 DNS 服务器服务或正在部署新的 DNS 服务器服务，设计 DNS 以支持 AD DS 的过程会有所不同：  
   
 - 如果你已有现有的 DNS 基础结构，则必须将 Active Directory 命名空间集成到该环境中。 有关详细信息，请参阅[将 AD DS 集成到现有的 DNS 基础结构](../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)。  
-- 如果尚未准备好 DNS 基础结构，则必须设计和部署新的 DNS 基础结构来支持 AD DS。 有关详细信息，请参阅[部署域名系统（DNS）](https://go.microsoft.com/fwlink/?LinkId=93656)。  
+- 如果没有现成的 DNS 基础结构，则必须设计和部署新的 DNS 基础结构来支持 AD DS。 有关详细信息，请参阅[部署域名系统（DNS）](https://go.microsoft.com/fwlink/?LinkId=93656)。  
   
 如果你的组织具有现有的 DNS 基础结构，则必须确保了解你的 DNS 基础结构将如何与 Active Directory 命名空间进行交互。 要使工作表可以帮助你记录现有 DNS 基础结构的设计，请从[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "DNS 清单" （DSSLOGI_8 .doc）。  
   

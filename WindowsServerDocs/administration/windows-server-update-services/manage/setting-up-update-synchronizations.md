@@ -1,24 +1,20 @@
 ---
 title: 设置更新同步
 description: Windows Server Update Service （WSUS）主题-如何设置和配置更新同步
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddd5c395-451b-44a0-8e08-a05db26d2282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c7bca5be7a8ec0e857cba65680fbc3b967af4f8
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: f4da028b2100d824b55c00c185f8b90df7d787bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639747"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828537"
 ---
 # <a name="setting-up-update-synchronizations"></a>设置更新同步
 
@@ -89,7 +85,7 @@ WSUS 服务器将根据你指定的语言下载更新。 你可以同步其可�
 
 -   可以指定用于同步的自定义端口。 有关配置端口的信息，请参阅 WSUS 部署指南中的[步骤3：配置 wsus](../deploy/2-configure-wsus.md) 。
 
--   可以使用安全套接字层（SSL）来保护 WSUS 服务器之间更新信息的同步。 有关使用 SSL 的详细信息，请参阅 "3.5" 部分。 《 WSUS 部署指南》中的[步骤3：配置 wsus](../deploy/2-configure-wsus.md)的安全套接字层协议的安全 WSUS。
+-   可以使用安全套接字层（SSL）来保护 WSUS 服务器之间更新信息的同步。 有关使用 SSL 的详细信息，请参阅3.5 节。 在 WSUS 部署指南中[配置 wsus 的步骤3：配置 wsus](../deploy/2-configure-wsus.md)中的安全套接字层协议的安全 wsus。
 
 ## <a name="synchronizing-manually-or-automatically"></a>手动或自动同步
 你可以手动同步 WSUS 服务器或指定它自动同步的时间。

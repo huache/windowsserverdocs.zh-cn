@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5b9fc9c1-5d12-4ad4-8ddc-3b8a6d45b217
 title: 创建信赖方信任
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0d32edd7ebc23fa724439710c6511642d9c49a3
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: c9134360498184ab578b02809634279a84753e43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323049"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816840"
 ---
 # <a name="create-a-relying-party-trust"></a>创建信赖方信任
 
@@ -64,7 +63,7 @@ ms.locfileid: "79323049"
 
 ## <a name="to-create-a-claims-aware-relying-party-trust-using-federation-metadata"></a>使用联合元数据创建声明感知信赖方信任
 
-若要添加新的信赖方信任，请使用 AD FS 管理 "管理单元，通过从合作伙伴发布到本地网络或 Internet 的联合元数据自动导入有关合作伙伴的配置数据，请在帐户伙伴组织中的联合服务器。
+若要添加新的信赖方信任，请使用 AD FS 管理 "管理单元，通过从合作伙伴发布到本地网络或 Internet 的联合元数据自动导入有关合作伙伴的配置数据，请在帐户伙伴组织中的联合服务器上执行以下过程。
 
 >[!NOTE]
 >尽管使用具有非限定主机名（如 https://myserver）的证书通常很常见，但这些证书没有安全价值，并且可以使攻击者模拟正在发布联合元数据的联合身份验证服务。 因此，在查询联合元数据时，只应使用完全限定的域名，如 https://myserver.contoso.com。

@@ -5,15 +5,14 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 11af69d1c6f32205b87ad4605edebacb59b0b710
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 913a596a46720718a165295345cb02e3e2baa1de
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369709"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827560"
 ---
 # <a name="health-service-faults"></a>运行状况服务故障
 > 适用于： Windows Server 2019、Windows Server 2016
@@ -24,7 +23,7 @@ ms.locfileid: "71369709"
 
 每个故障都包含五个重要字段：  
 
--   严重性
+-   Severity
 -   问题的描述
 -   用于解决问题的建议后续步骤
 -   故障实体的标识信息
@@ -287,7 +286,7 @@ class FaultsObserver : IObserver
 
 此表显示了错误对象的几个关键属性。 对于完整的架构，请在*storagewmi*中检查**MSFT\_StorageDiagnoseResult**类。
 
-| **Property**              | **示例**                                                     |
+| **知识产权**              | **示例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | FaultType （正常）                      |
@@ -313,7 +312,7 @@ class FaultsObserver : IObserver
 
 请注意**ChangeType**，它指示是否正在创建、删除或更新错误，以及**FaultId**。 事件还包含受影响的错误的所有属性。
 
-| **Property**              | **示例**                                                     |
+| **知识产权**              | **示例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
@@ -326,7 +325,7 @@ class FaultsObserver : IObserver
 
 **ChangeType**ChangeType = {0，1，2} = {"创建"，"删除"，"更新"}。
 
-## <a name="coverage"></a>覆盖范围
+## <a name="coverage"></a>涵盖范围广
 
 在 Windows Server 2016 中，运行状况服务提供以下故障范围：  
 

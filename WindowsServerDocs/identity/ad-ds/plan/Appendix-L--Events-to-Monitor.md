@@ -1,7 +1,6 @@
 ---
 ms.assetid: 99a68050-8d19-4c58-ad86-e08a3dcdb4f7
 title: 附录 L-监视事件
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 07/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e069fe004d9256682e5754fc90ae6cba88ee7cb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e47b1fbe2df16aca9514e8a29c82d56d8dc96cba
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402722"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822850"
 ---
-# <a name="appendix-l-events-to-monitor"></a>附录 L：要监视的事件
+# <a name="appendix-l-events-to-monitor"></a>附录 L：事件监视器
 
 >适用于：Windows Server
 
@@ -114,9 +113,9 @@ ms.locfileid: "71402722"
 |-|640|中等|常规帐户数据库已更改|  
 |-|619|中等|服务质量策略已更改|  
 |24586|不可用|中等|转换卷时出错|  
-|24592|不可用|中等|尝试自动重新启动卷% 2 上的转换失败。|  
-|24593|不可用|中等|元数据写入：卷% 2 在尝试修改元数据时返回错误。 如果失败继续，请解密卷|  
-|24594|不可用|中等|元数据重新生成：尝试写入卷% 2 上的元数据副本失败，可能显示为磁盘损坏。 如果失败，请解密卷。|  
+|24592|不可用|中等|尝试自动重新启动卷 %2 上的转换失败。|  
+|24593|不可用|中等|元数据写入：卷 %2 在尝试修改元数据时返回错误。 如果失败继续，请解密卷|  
+|24594|不可用|中等|元数据重新生成：试图写入卷 %2 上的元数据副本失败，可能显示为磁盘损坏。 如果失败，请解密卷。|  
 |4608|512|低|Windows 正在启动。|  
 |4609|513|低|Windows 正在关闭。|  
 |4610|514|低|本地安全机构已加载身份验证包。|  
@@ -174,7 +173,7 @@ ms.locfileid: "71402722"
 |4707|611|低|删除了域的信任。|  
 |4709|不可用|低|已启动 IPsec 服务。|  
 |4710|不可用|低|IPsec 服务已禁用。|  
-|4711|不可用|低|可以包含以下任一项：PAStore 引擎在计算机上应用了 Active Directory 存储 IPsec 策略的本地缓存副本。 PAStore 引擎应用 Active Directory 计算机上的存储 IPsec 策略。 PAStore 引擎在计算机上应用了本地注册表存储 IPsec 策略。 PAStore 引擎无法在计算机上应用 Active Directory 存储 IPsec 策略的本地缓存副本。 PAStore 引擎无法在计算机上应用 Active Directory 存储 IPsec 策略。 PAStore 引擎无法在计算机上应用本地注册表存储 IPsec 策略。 PAStore 引擎无法在计算机上应用 active IPsec 策略的某些规则。 PAStore 引擎无法在计算机上加载目录存储 IPsec 策略。 PAStore 引擎已在计算机上加载了目录存储 IPsec 策略。 PAStore 引擎无法在计算机上加载本地存储 IPsec 策略。 PAStore 引擎在计算机上加载了本地存储 IPsec 策略。PAStore 引擎轮询了对活动 IPsec 策略的更改，但未检测到任何更改。 |  
+|4711|不可用|低|可能包含以下任何一项： PAStore 引擎在计算机上应用 Active Directory 存储 IPsec 策略的本地缓存副本。 PAStore 引擎应用 Active Directory 计算机上的存储 IPsec 策略。 PAStore 引擎在计算机上应用了本地注册表存储 IPsec 策略。 PAStore 引擎无法在计算机上应用 Active Directory 存储 IPsec 策略的本地缓存副本。 PAStore 引擎无法在计算机上应用 Active Directory 存储 IPsec 策略。 PAStore 引擎无法在计算机上应用本地注册表存储 IPsec 策略。 PAStore 引擎无法在计算机上应用 active IPsec 策略的某些规则。 PAStore 引擎无法在计算机上加载目录存储 IPsec 策略。 PAStore 引擎已在计算机上加载了目录存储 IPsec 策略。 PAStore 引擎无法在计算机上加载本地存储 IPsec 策略。 PAStore 引擎在计算机上加载了本地存储 IPsec 策略。PAStore 引擎轮询了对活动 IPsec 策略的更改，但未检测到任何更改。 |  
 |4712|不可用|低|IPsec 服务遇到可能严重的错误。|  
 |4717|621|低|已将系统安全访问权限授予帐户。|  
 |4718|622|低|已从帐户中删除系统安全访问。|  
@@ -250,7 +249,7 @@ ms.locfileid: "71402722"
 |4877|781|低|证书服务备份已完成。|  
 |4878|782|低|证书服务还原已启动。|  
 |4879|783|低|证书服务还原已完成。|  
-|4880|784|低|证书服务已启动。|  
+|4880|6\.|低|证书服务已启动。|  
 |4881|785|低|证书服务已停止。|  
 |4883|787|低|证书服务检索到存档的密钥。|  
 |4884|788|低|证书服务已将证书导入到其数据库中。|  
@@ -403,9 +402,9 @@ ms.locfileid: "71402722"
 |24582|不可用|低|已完成解密卷|  
 |24583|不可用|低|卷的转换工作线程已启动|  
 |24584|不可用|低|卷的转换工作线程暂时停止|  
-|24588|不可用|低|卷% 2 上的转换操作遇到错误扇区错误。 请验证此卷上的数据|  
-|24595|不可用|低|卷% 2 包含错误群集。 在转换过程中将跳过这些群集。|  
-|24621|不可用|低|初始状态检查：正在滚动% 2 上的卷转换事务。|  
+|24588|不可用|低|卷 %2 上的转换操作遇到错误扇区错误。 请验证此卷上的数据|  
+|24595|不可用|低|卷 %2 包含错误群集。 在转换过程中将跳过这些群集。|  
+|24621|不可用|低|初始状态检查：滚动 %2 上的卷转换事务。|  
 |5049|不可用|低|已删除 IPsec 安全关联。|  
 |5478|不可用|低|IPsec 服务已成功启动。|  
   
@@ -414,4 +413,4 @@ ms.locfileid: "71402722"
 >
 > 运行**wevtutil Gp Microsoft Windows-Security-审核/ge/gm： true**以获取所有安全事件 id 的详细列表  
   
-有关 Windows 安全事件 Id 及其含义的详细信息，请参阅 Microsoft 支持部门文章[windows 7 和 Windows Server 2008 R2 中的安全事件描述](https://support.microsoft.com/kb/977519)。 你还可以下载[适用于 windows 7 和 Windows server 2008 R2](https://www.microsoft.com/download/details.aspx?id=21561)和 windows [8 和 Windows Server 2012 安全事件](https://www.microsoft.com/download/details.aspx?id=35753)的安全审核事件，这些事件详细信息提供了电子表格中引用的操作系统的详细事件信息形式.  
+有关 Windows 安全事件 Id 及其含义的详细信息，请参阅 Microsoft 支持部门文章[windows 7 和 Windows Server 2008 R2 中的安全事件描述](https://support.microsoft.com/kb/977519)。 你还可以下载[适用于 windows 7 和 Windows server 2008 R2](https://www.microsoft.com/download/details.aspx?id=21561)和 windows [8 和 Windows Server 2012 安全事件详细](https://www.microsoft.com/download/details.aspx?id=35753)信息的安全审核事件，这些事件详细信息提供了针对电子表格格式的引用操作系统的详细事件信息。  

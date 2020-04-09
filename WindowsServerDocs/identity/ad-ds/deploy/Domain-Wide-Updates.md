@@ -9,12 +9,12 @@ ms.date: 10/29/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 28bb22c0f2dc70e899fe5ddfe232eacedfd400bc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3b82958471e5292f202aa338aee7f4f5863459af
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390758"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825210"
 ---
 # <a name="domain-wide-schema-updates"></a>域范围的架构更新
 
@@ -28,21 +28,21 @@ ms.locfileid: "71390758"
 
 ## <a name="windows-server-semi-annual-channel-domain-wide-updates"></a>Windows Server （半年频道）：全域性更新
 
-完成 Windows Server 2016 （操作89）中的 "**域**完成" 执行的操作之后，"Cn = 都，Cn = DOMAINUPDATES，Cn = SYSTEM，DC = ForestRootDomain" 对象的 "**修订版本**" 属性设置为**16**.
+完成 Windows Server 2016 （操作89）中的 "**域**完成" 执行的操作之后，"Cn = 都，Cn = DOMAINUPDATES，Cn = SYSTEM，DC = ForestRootDomain" 对象的 "**修订版本**" 属性将设置为**16**。
 
-|操作编号和 GUID|描述|权限|
+|操作编号和 GUID|说明|权限|
 |------------------------------|---------------|--------------|---------------|
 |**操作 89**： {A0C238BA-9E30-4EE6-80A6-43F731E9A5CD}|删除向企业密钥管理员授予完全控制权限的 ACE，并添加 ACE 授予企业密钥管理员只需完全控制 msdsKeyCredentialLink 属性。|Delete （A;CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;企业密钥管理员） <br /> <br />添加（OA;CIRPWP;5b47d60f-6090-40b2-9f37-2a4de88f3063;;企业密钥管理员）|
 
 ## <a name="windows-server-2016-domain-wide-updates"></a>Windows Server 2016：全域性更新
 
-完成 Windows Server 2016 （操作82-88）中的 "**域**完成" 执行的操作之后，"Cn = 都，Cn = DOMAINUPDATES，Cn = SYSTEM，DC = ForestRootDomain" 对象的 "**修订版本**" 属性设置为**15。** .
+完成 Windows Server 2016 （操作82-88）中的 "**域**完成" 执行的操作之后，"Cn = 都，Cn = DOMAINUPDATES，Cn = SYSTEM，DC = ForestRootDomain" 对象的 "**修订版本**" 属性设置为**15**。
 
-|操作编号和 GUID|描述|特性|权限|
+|操作编号和 GUID|说明|Attributes|权限|
 |------------------------------|---------------|--------------|---------------|
-|**操作 82**： {83C53DA7-427E-47A4-A07A-A324598B88F7}|在域的根目录创建 CN = Keys 容器|-objectClass：容器<br />2008密钥凭据对象的默认容器<br />ShowInAdvancedViewOnlyTRUE|的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;中文<br />的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;D的<br />的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY<br />的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;D2-D<br />的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;ED-24000B|
+|**操作 82**： {83C53DA7-427E-47A4-A07A-A324598B88F7}|在域的根目录创建 CN = Keys 容器|-objectClass：容器<br />-description：密钥凭据对象的默认容器<br />-ShowInAdvancedViewOnly： TRUE|的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;中文<br />的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;D的<br />的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY<br />的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;D2-d<br />的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;ED-24000B|
 |**操作 83**： {C81FC9CC-0130-4FD1-B272-634D74818133}|添加完全控制允许 "domain\Key Admins" 和 "rootdomain\Enterprise Key Admins" 的 "CN = Keys" 容器的 ace。|不可用|的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;密钥管理员）<br />的CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;企业密钥管理员）|
-|**操作 84**： {E5F9E791-D96D-4FC9-93C9-D53E1DC439BA}|修改 otherWellKnownObjects 属性，使其指向 CN = Keys 容器。|- otherWellKnownObjects:B:32：683A24E2E8164BD3AF86AC3C2CF3F981： CN = Keys，% ws|不可用|
+|**操作 84**： {E5F9E791-D96D-4FC9-93C9-D53E1DC439BA}|修改 otherWellKnownObjects 属性，使其指向 CN = Keys 容器。|-otherWellKnownObjects： B:32：683A24E2E8164BD3AF86AC3C2CF3F981： CN = Keys，% ws|不可用|
 |**操作 85**： {e6d5fd00-385d-4e65-b02d-9da3493ed850}|修改域 NC，以允许 "domain\Key Admins" 和 "rootdomain\Enterprise Key Admins" 修改 KeyCredentialLink 特性。 |不可用|OACIRPWP;5b47d60f-6090-40b2-9f37-2a4de88f3063;;密钥管理员）<br />OACIRPWP;5b47d60f-6090-40b2-9f37-2a4de88f3063;;根域中的企业密钥管理员，但在非根域中，产生了具有不可解析-527 SID 的虚假域相对 ACE）|
 |**操作 86**： {3a6b3fbf-3168-4312-a10d-dd5b3393952d}|向 creator 所有者和自助授予 DS 验证的写入计算机车载|不可用|OACIIO; SW; 9b026da6-0d3c-465c-8bee-5199d7165cba; bf967a86-0de6-11d0-a285-00aa003049e2; PS）<br />OACIIO; SW; 9b026da6-0d3c-465c-8bee-5199d7165cba; bf967a86-0de6-11d0-a285-00aa003049e2; CO）|
 |**操作 87**： {7F950403-0AB3-47F9-9730-5D7B0269F9BD}|删除 ACE "向不正确的域相对企业密钥管理员组授予完全控制"，并向企业密钥管理员组添加 ACE "授予完全控制权限"。 |不可用|Delete （A;CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;企业密钥管理员）<br /> <br />Add （A;CIRPWPCRLCLOCCDCRCWDWOSDDTSW;;;企业密钥管理员）|
@@ -52,13 +52,13 @@ ms.locfileid: "71390758"
 
 ## <a name="windows-server-2012-r2-domain-wide-updates"></a>Windows Server 2012 R2：全域性更新
 
-尽管 Windows Server 2012 **R2 中的**"完成" 操作不会执行任何操作，但在命令完成后，Cn = 都，Cn = DOMAINUPDATES，Cn = SYSTEM，DC = ForestRootDomain 对象的**修订**属性设置为**10。** .
+尽管 Windows Server 2012 **R2 中的**"完成" 操作不会执行任何操作，但在命令完成后，Cn = 都，Cn = DOMAINUPDATES，Cn = SYSTEM，DC = ForestRootDomain 对象的**修订**属性设置为**10**。
 
 ## <a name="windows-server-2012-domain-wide-updates"></a>Windows Server 2012：全域性更新
 
-在 Windows Server 2012 中的 "**域**完成" 执行的操作（操作78、79、80和81）完成后，Cn = 都，Cn = DOMAINUPDATES，Cn = SYSTEM，DC = ForestRootDomain 对象的**修订**属性为设置为**9**。
+在 Windows Server 2012 中的 "**域**完成" （操作78、79、80和81）中完成的操作完成后，Cn = 都，Cn = DOMAINUPDATES，Cn = SYSTEM，DC = ForestRootDomain 对象的**修订**属性设置为**9**。
 
-|操作编号和 GUID|描述|特性|权限|
+|操作编号和 GUID|说明|Attributes|权限|
 |------------------------------|---------------|--------------|---------------|
 |**操作 78**： {c3c927a6-cc1d-47c0-966b-be8f9b63d991}|创建新的对象 CN = 域分区中的 TPM 设备。|对象类： Mstpm-ownerinformation-InformationObjectsContainer|不可用|
 |**操作 79**： {54afcfb9-637a-4251-9f47-4d50e7021211}|创建了 TPM 服务的访问控制项。|不可用|OACIIO;WP; ea1b7b93-5e48-46d5-bc6c-4df4fda78a35; bf967a86-0de6-11d0-a285-00aa003049e2; PS）|

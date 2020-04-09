@@ -1,28 +1,22 @@
 ---
 title: diskcopy
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 diskcopy 的 Windows 命令主题，它将源驱动器中软盘的内容复制到目标驱动器中已格式化或未格式化的软盘。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5fd21efa-52cc-4e70-a7fe-35125a435106
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 553a85ac4fd9b7708d7adc668be4e000b36a9346
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 675694503cab207f05fd6b48e0d17c23196f85d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377816"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845540"
 ---
 # <a name="diskcopy"></a>diskcopy
-
-
 
 将源驱动器中软盘的内容复制到目标驱动器中已格式化或未格式化的软盘。 如果在没有参数的情况下使用，则**diskcopy**使用源磁盘和目标磁盘的当前驱动器。
 
@@ -37,9 +31,9 @@ ms.locfileid: "71377816"
 diskcopy [<Drive1>: [<Drive2>:]] [/v]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<Drive1 >|指定包含源磁盘的驱动器。|
 |\<Drive2 >|指定包含目标磁盘的驱动器。|
@@ -84,10 +78,12 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 > [!NOTE]
 > 不能使用**xcopy**复制启动磁盘。
-> -   了解**diskcopy**退出代码
 
-    The following table explains each exit code.  
-    |退出代码|描述|
+### <a name="understanding-diskcopy-exit-codes"></a>了解**diskcopy**退出代码
+
+    The following table explains each exit code.
+    
+    |退出代码|说明|
     |---------|-----------|
     |0|复制操作成功|
     |1|出现非致命读/写错误|
@@ -96,7 +92,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
     To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要将驱动器 B 中的磁盘复制到驱动器 A 中的磁盘，请键入：
 ```
@@ -106,6 +102,6 @@ diskcopy b: a:
 
 diskcopy a： a：
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: c0d64566-5530-482e-a332-af029a5fb575
 title: 将设计要求映射到林设计模型
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d65b03dc255de5523c48c2bb9359530b8e7c3167
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9e5a1d17cbbc5a17b98dff2abf72359ce22142f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408763"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822230"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>将设计要求映射到林设计模型
 
@@ -24,26 +23,26 @@ ms.locfileid: "71408763"
 
 由于初始组织林可以在组织中托管多个组，因此，林所有者必须与每个组建立服务级别协议，以便所有参与方都能理解它们的预期。 这将通过建立议定的服务期望来保护各个组和林所有者。  
 
-如果组织中的所有组都不能共享一个组织林，则必须扩展林的设计，以满足不同组的需求。 这涉及到基于其独立性和隔离需要应用于组的设计要求，以及它们是否具有受限连接网络，然后确定可用于满足这些需求的林模型要求. 下表列出了基于独立性、隔离和连接因素的林设计模型方案。 确定最符合要求的林设计方案后，确定是否需要作出任何其他决策来满足您的设计规范。  
+如果组织中的所有组都不能共享一个组织林，则必须扩展林的设计，以满足不同组的需求。 这涉及到基于其独立性和隔离需要应用于组的设计要求，以及它们是否具有受限连接网络，然后确定可用于满足这些要求的林模型。 下表列出了基于独立性、隔离和连接因素的林设计模型方案。 确定最符合要求的林设计方案后，确定是否需要作出任何其他决策来满足您的设计规范。  
 
 > [!NOTE]  
 > 如果某个因素列为 "N/A"，则不会考虑这一点，因为其他要求也适用于该因素。  
 
-|应用场景|受限连接|数据隔离|数据独立性|服务隔离|服务自治|  
+|方案|受限连接|数据隔离|数据独立性|服务隔离|服务自治|  
 |------------|------------------------|------------------|-----------------|---------------------|--------------------|  
-|[方案1：加入现有林以进行数据自治](#BKMK_1)|否|否|是|否|否|  
-|[方案2：使用组织林或域进行服务自治](#BKMK_2)|否|否|N/A|否|是|  
-|[方案3：使用组织林或资源林进行服务隔离](#BKMK_3)|否|否|N/A|是|N/A|  
-|[方案4：使用组织林或受限访问林进行数据隔离](#BKMK_4)|N/A|是|N/A|N/A|N/A|  
-|[方案5：使用组织林，或为受限连接重新配置防火墙](#BKMK_5)|是|否|N/A|否|否|  
-|[方案6：使用组织林或域，并使用有限连接性为服务自治重新配置防火墙](#BKMK_6)|是|否|N/A|否|是|  
-|[方案7：使用资源林，并使用有限连接性为服务隔离重新配置防火墙](#BKMK_7)|是|否|N/A|是|N/A|  
+|[方案1：加入现有林以进行数据自治](#BKMK_1)|是|是|是|是|是|  
+|[方案2：使用组织林或域进行服务自治](#BKMK_2)|是|是|不可用|是|是|  
+|[方案3：使用组织林或资源林进行服务隔离](#BKMK_3)|是|是|不可用|是|不可用|  
+|[方案4：使用组织林或受限访问林进行数据隔离](#BKMK_4)|不可用|是|不可用|不可用|不可用|  
+|[方案5：使用组织林，或为受限连接重新配置防火墙](#BKMK_5)|是|是|不可用|是|是|  
+|[方案6：使用组织林或域，并使用有限连接性为服务自治重新配置防火墙](#BKMK_6)|是|是|不可用|是|是|  
+|[方案7：使用资源林，并使用有限连接性为服务隔离重新配置防火墙](#BKMK_7)|是|是|不可用|是|不可用|  
 
-## <a name="BKMK_1"></a>方案1：加入现有林以进行数据自治  
+## <a name="scenario-1-join-an-existing-forest-for-data-autonomy"></a><a name="BKMK_1"></a>方案1：加入现有林以进行数据自治  
 
 只需在现有组织林中的组织单位（Ou）中托管组即可满足数据自治的要求。 将 Ou 控制委派给该组中的数据管理员，以实现数据独立性。 有关使用 Ou 委托控件的详细信息，请参阅[创建组织单位设计](../../ad-ds/plan/Creating-an-Organizational-Unit-Design.md)。  
   
-## <a name="BKMK_2"></a>方案2：使用组织林或域进行服务自治  
+## <a name="scenario-2-use-an-organizational-forest-or-domain-for-service-autonomy"></a><a name="BKMK_2"></a>方案2：使用组织林或域进行服务自治  
 
 如果组织中的某个组将服务自治标识为要求，我们建议您首先重新考虑此要求。 实现服务自治会为组织带来更多的管理开销和额外成本。 确保对服务独立性的要求并不只是为了方便起见，您可以调整满足此要求所涉及的成本。  
   
@@ -55,7 +54,7 @@ ms.locfileid: "71408763"
 
 有关使用组织域的详细信息，请参阅[使用组织域林模型](../../ad-ds/plan/../../ad-ds/plan/Using-the-Organizational-Domain-Forest-Model.md)。  
 
-## <a name="BKMK_3"></a>方案3：使用组织林或资源林进行服务隔离  
+## <a name="scenario-3-use-an-organizational-forest-or-resource-forest-for-service-isolation"></a><a name="BKMK_3"></a>方案3：使用组织林或资源林进行服务隔离  
 
 通过执行以下操作之一，可以满足服务隔离的要求：  
 
@@ -77,7 +76,7 @@ ms.locfileid: "71408763"
 
 - 服务隔离需要创建其他林。 评估维护基础结构以支持其他林的成本是否超过了由于组织林不可用而导致资源访问丢失相关的成本。  
 
-## <a name="BKMK_4"></a>方案4：使用组织林或受限访问林进行数据隔离  
+## <a name="scenario-4-use-an-organizational-forest-or-restricted-access-forest-for-data-isolation"></a><a name="BKMK_4"></a>方案4：使用组织林或受限访问林进行数据隔离  
 
 可以通过执行下列操作之一来实现数据隔离：  
 
@@ -104,12 +103,12 @@ ms.locfileid: "71408763"
 
 - 你可能需要在组织林和组织中的其他林之间建立防火墙，以限制用户对其林以外的信息的访问。  
 
-- 尽管单独创建林会启用数据隔离，但只要隔离林中的域控制器和托管受保护信息的计算机在网络上都是可访问的，它们就会受到从该网络上的计算机发起的攻击。 确定攻击风险太高或者攻击或安全违规后果太大的组织需要限制对网络或托管域控制器和托管受保护数据的计算机的网络的访问. 可以通过使用防火墙和 Internet 协议安全（IPsec）等技术来限制访问。 在极端情况下，组织可能会选择在独立网络上维护受保护的数据，该网络不与组织中的任何其他网络建立物理连接。  
+- 尽管单独创建林会启用数据隔离，但只要隔离林中的域控制器和托管受保护信息的计算机在网络上都是可访问的，它们就会受到从该网络上的计算机发起的攻击。 确定攻击风险过高或者攻击或安全冲突的后果太大的组织需要限制对网络的访问，或托管域控制器和托管受保护数据的计算机的网络。 可以通过使用防火墙和 Internet 协议安全（IPsec）等技术来限制访问。 在极端情况下，组织可能会选择在独立网络上维护受保护的数据，该网络不与组织中的任何其他网络建立物理连接。  
 
    > [!NOTE]  
    > 如果受限制的访问林与其他网络之间存在任何网络连接，则在将受限区域中的数据传输到其他网络时，可能会出现这种情况。  
 
-## <a name="BKMK_5"></a>方案5：使用组织林，或为受限连接重新配置防火墙  
+## <a name="scenario-5-use-an-organizational-forest-or-reconfigure-the-firewall-for-limited-connectivity"></a><a name="BKMK_5"></a>方案5：使用组织林，或为受限连接重新配置防火墙  
 
 若要满足有限的连接要求，可以执行以下操作之一：  
 
@@ -119,7 +118,7 @@ ms.locfileid: "71408763"
 
 有关配置用于 Active Directory 域服务（AD DS）的防火墙的详细信息，请参阅[按防火墙分段的网络中的 Active Directory](https://go.microsoft.com/fwlink/?LinkId=37928)。  
 
-## <a name="BKMK_6"></a>方案6：使用组织林或域，并使用有限连接性为服务自治重新配置防火墙  
+## <a name="scenario-6-use-an-organizational-forest-or-domain-and-reconfigure-the-firewall-for-service-autonomy-with-limited-connectivity"></a><a name="BKMK_6"></a>方案6：使用组织林或域，并使用有限连接性为服务自治重新配置防火墙  
 
 如果组织中的某个组将服务自治标识为要求，我们建议您首先重新考虑此要求。 实现服务自治会为组织带来更多的管理开销和额外成本。 确保对服务独立性的要求并不只是为了方便起见，您可以调整满足此要求所涉及的成本。  
 
@@ -131,7 +130,7 @@ ms.locfileid: "71408763"
 
 还需要打开防火墙，以允许 Active Directory 流量通过。 有关配置防火墙以与 AD DS 一起使用的详细信息，请参阅[由防火墙分段的网络中的 Active Directory](https://go.microsoft.com/fwlink/?LinkId=37928)。  
 
-## <a name="BKMK_7"></a>方案7：使用资源林，并使用有限连接性为服务隔离重新配置防火墙  
+## <a name="scenario-7-use-a-resource-forest-and-reconfigure-the-firewall-for-service-isolation-with-limited-connectivity"></a><a name="BKMK_7"></a>方案7：使用资源林，并使用有限连接性为服务隔离重新配置防火墙  
 
 如果连接受到限制并且需要服务隔离，则可以执行以下操作之一：  
 

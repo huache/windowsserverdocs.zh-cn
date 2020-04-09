@@ -3,22 +3,21 @@ title: SMB 连接期间的 TCP 三向握手失败
 description: 介绍 SMB 连接期间的 TCP 三向握手失败。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 8cef47e164b8768747cb383f4d7012130c7cb516
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: cb88fa89344172cfc1ed036865a4496ed73e9a22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654628"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815320"
 ---
 # <a name="tcp-three-way-handshake-failure-during-smb-connection"></a>SMB 连接期间的 TCP 三向握手失败
 
 分析网络跟踪时，你会注意到存在一个传输控制协议（TCP）三向握手故障，导致 SMB 问题发生。 本文介绍如何解决此问题。
 
-## <a name="troubleshooting"></a>“疑难解答”
+## <a name="troubleshooting"></a>故障排除
 
 通常，原因是阻止流量的本地或基础结构防火墙。 在以下任一情况下都可能发生此问题。
 
@@ -71,7 +70,7 @@ netsh wfp capture stop
 > [!NOTE]
 > "Windows 防火墙" 可能称为 "Windows Defender 防火墙"，具体取决于计算机的设置方式。
 
-## <a name="scenario-2"></a>场景 2
+## <a name="scenario-2"></a>方案2
 
 TCP SYN 数据包永远不会到达 SMB 服务器。
 

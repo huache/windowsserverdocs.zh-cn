@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4baefbd3-038f-44c0-85ba-f24e9722b757
 title: 附录 G-保护 Active Directory 中的管理员组
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cdea04e211b1873ff51c4bc3dc9ff24e746ead69
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f113dc7fc5b131a2c0ef10433125ef12a775707c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408645"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821520"
 ---
 # <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附录 G：保护 Active Directory 中的 Administrators 组
 
@@ -32,17 +31,17 @@ ms.locfileid: "71408645"
 
 2.  在链接到包含每个域中的成员服务器和工作站的 Ou 的 Gpo 中，应将 BA 组添加到 "**计算机配置 \windows" \ 安全 \ 本地策略 \ 用户权限分配**：  
 
-    -   拒绝从网络访问这台计算机  
+    -   拒绝从网络访问该计算机  
 
-    -   拒绝作为批处理作业登录  
+    -   拒绝以批处理作业登录  
 
-    -   拒绝以服务身份登录  
+    -   拒绝以服务登录  
 
 3.  对于林中每个域中的域控制器 OU，应为 Administrators 组授予以下用户权限：  
 
     -   从网络访问此计算机  
 
-    -   允许本地登录  
+    -   允许在本地登录  
 
     -   允许通过远程桌面服务登录  
 
@@ -271,7 +270,7 @@ ms.locfileid: "71408645"
 
 7.  在 "**程序/脚本**" 字段中，单击 "**浏览**"，找到并选择 "**创建批处理文件**" 部分中创建的批处理文件，然后单击 "**打开**"。  
 
-8.  单击**确定**。  
+8.  单击“确定”。  
 
 9. 单击“常规”选项卡。  
 
@@ -281,7 +280,7 @@ ms.locfileid: "71408645"
 
 12. 选择 **"运行" （无论用户是否已记录 onor** ）而不**存储密码**。 该任务将仅有权访问本地计算机资源。  
 
-13. 单击**确定**。  
+13. 单击“确定”。  
 
 14. 应显示一个对话框，请求用户帐户凭据以运行任务。  
 

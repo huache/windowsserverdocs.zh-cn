@@ -1,7 +1,6 @@
 ---
 ms.assetid: e727a33d-133b-43c9-b6a4-7c00f9cb6000
 title: 查看域模型
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00683b09aff5b3a3b097f7f8b423c51080b86d02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b77f634d8548994d2f9e130faad9ca34aa226327
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408681"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821950"
 ---
 # <a name="reviewing-the-domain-models"></a>查看域模型
 
@@ -30,7 +29,7 @@ ms.locfileid: "71408681"
 
 最好最大程度地减少在林中部署的域数量。 这会降低部署的总体复杂性，因此，降低总拥有成本。 下表列出了与添加地区性域相关的管理成本。  
 
-|开销|深远|  
+|成本|深远|  
 |--------|----------------|  
 |多个服务管理员组的管理|每个域都有自己的服务管理员组，这些组需要单独进行管理。 必须严格控制这些服务管理员组的成员身份。|  
 |在多个域通用组策略设置之间保持一致性|需要在林范围内应用的组策略设置必须分别应用到林中的每个单独域。|  
@@ -38,7 +37,7 @@ ms.locfileid: "71408681"
 |增加了在域之间移动对象的可能性|域数越大，用户需要从一个域移到另一个域的可能性就越大。 这种迁移可能会影响最终用户。|  
 
 > [!NOTE]  
-> Windows Server 细化密码和帐户锁定策略还会影响所选的域设计模型。 在此版本的 Windows Server 2008 之前，你只能将域默认域策略中指定的一个密码和帐户锁定策略应用到域中的所有用户。 因此，如果要为不同的用户组提供不同的密码和帐户锁定设置，则必须创建密码筛选器或部署多个域。 你现在可以使用细化密码策略来指定多个密码策略，并将不同的密码限制和帐户锁定策略应用到单个域中的不同用户组。 有关细化密码和帐户锁定策略的详细信息，请参阅[有关细化密码和帐户锁定策略配置](https://go.microsoft.com/fwlink/?LinkID=91477)的循序渐进指南。  
+> Windows Server 细化密码和帐户锁定策略还会影响所选的域设计模型。 在此版本的 Windows Server 2008 之前，你只能将域默认域策略中指定的一个密码和帐户锁定策略应用到域中的所有用户。 因此，如果您希望不同的用户集使用不同的密码和帐户锁定设置，则必须创建密码筛选器或者部署多个域。 你现在可以使用细化密码策略来指定多个密码策略，并将不同的密码限制和帐户锁定策略应用到单个域中的不同用户组。 有关细化密码和帐户锁定策略的详细信息，请参阅[有关细化密码和帐户锁定策略配置](https://go.microsoft.com/fwlink/?LinkID=91477)的循序渐进指南。  
 
 ## <a name="single-domain-model"></a>单域模型
 

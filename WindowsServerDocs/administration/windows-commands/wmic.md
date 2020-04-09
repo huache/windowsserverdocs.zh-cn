@@ -1,24 +1,20 @@
 ---
 title: wmic
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 wmic 的 Windows 命令主题，可在交互式命令 shell 内显示 WMI 信息。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 76397c72-d06f-4cea-88cf-c7603315a983
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f5096ab82ebbd01cb4f3a7dc0cf0b15e4b9fae8e
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 03ba4ecb4b12b03e010318bf6ca260dec00f28f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781324"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829050"
 ---
 # <a name="wmic"></a>wmic
 
@@ -38,14 +34,14 @@ wmic </parameter>
 
 以下子命令始终可用：
 
-|子命令|描述|
+|子命令|说明|
 |-----------|-----------|
-|类|从 WMIC 的默认别名模式转义以直接访问 WMI 架构中的类。|
-|path|从 WMIC 的默认别名模式进行转义，以直接访问 WMI 架构中的实例。|
-|快捷|显示所有全局开关的当前值。|
+|class|从 WMIC 的默认别名模式转义以直接访问 WMI 架构中的类。|
+|路径|从 WMIC 的默认别名模式进行转义，以直接访问 WMI 架构中的实例。|
+|上下文|显示所有全局开关的当前值。|
 |[quit \| exit]|退出 WMIC 命令行界面。|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要显示所有全局开关的当前值，请键入：
 ```
@@ -75,6 +71,6 @@ AGGREGATE    : ON
 wmic /locale:ms_409
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

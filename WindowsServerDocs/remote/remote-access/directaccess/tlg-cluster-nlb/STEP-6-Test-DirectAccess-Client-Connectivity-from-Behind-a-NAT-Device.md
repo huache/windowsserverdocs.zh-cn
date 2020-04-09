@@ -2,22 +2,18 @@
 title: 步骤6从 NAT 设备后面测试 DirectAccess 客户端连接
 description: 本主题是测试实验室指南的一部分-使用 windows Server 2016 的 Windows NLB 在群集中演示 DirectAccess
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aded2881-99ed-4f18-868b-b765ab926597
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 82e9720bc09593ea7b8d7af4b2102ac3e3ba3e3d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 93c7fba89645a22370ce294c2ce0ec220afc853a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314703"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819170"
 ---
 # <a name="step-6-test-directaccess-client-connectivity-from-behind-a-nat-device"></a>步骤6从 NAT 设备后面测试 DirectAccess 客户端连接
 

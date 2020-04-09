@@ -1,24 +1,20 @@
 ---
 title: waitfor
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 waitfor 的 Windows 命令主题，用于发送或等待系统上的信号。 **Waitfor**用于跨网络同步计算机。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aecea0ad19ee42e61396eb8b8ccd579b9ce2057b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4542fc9d231b8150ab89e07e173d9671d6b7a3f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362598"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829930"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -35,9 +31,9 @@ waitfor [/s <Computer> [/u [<Domain>\]<User> [/p [<Password>]]]] /si <SignalName
 waitfor [/t <Timeout>] <SignalName>
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|       参数       |                                                                                         描述                                                                                          |
+|       参数       |                                                                                         说明                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s \<计算机 >     | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
 | /u [\<域 >\]<User> |                              使用指定用户帐户的凭据运行脚本。 默认情况下， **waitfor**使用当前用户的凭据。                               |
@@ -57,23 +53,23 @@ waitfor [/t <Timeout>] <SignalName>
 -   如果计算机与发送信号的计算机位于同一域中，则它们只能接收信号。
 -   在测试软件生成时，可以使用**waitfor** 。 例如，编译计算机在成功完成编译后，可以将信号发送到运行**waitfor**的几台计算机。 收到信号后，包含**waitfor**的批处理文件可以指示计算机立即开始安装软件或对编译的生成运行测试。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
-若要等到收到 "espresso\build007" 信号，请键入：
+若要等到接收到 espresso\build007 信号，请键入：
 ```
 waitfor espresso\build007
 ```
 默认情况下， **waitfor**无限期地等待信号。
 
-若要在超时前等待10秒钟后收到 "espresso\compile007" 信号，请键入：
+若要在超时前等待10秒钟，让 espresso\compile007 收到信号，请键入：
 ```
 waitfor /t 10 espresso\build007
 ```
-若要手动激活 "espresso\build007" 信号，请键入：
+若要手动激活 espresso\build007 信号，请键入：
 ```
 waitfor /si espresso\build007
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

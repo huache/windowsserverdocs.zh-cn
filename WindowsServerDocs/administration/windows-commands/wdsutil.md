@@ -1,32 +1,28 @@
 ---
 title: wdsutil
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: Wdsutil 的 Windows 命令主题，它是用于管理 Windows 部署服务服务器的命令行实用工具。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3a1965a0-8677-40cc-9495-30ae806808d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0072008c4af32f05c9924cf85c0559cd924cff7c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f57411c1b000355940772003c7ac5343c82838cd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362196"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829432"
 ---
 # <a name="wdsutil"></a>wdsutil
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 wdsutil 是用于管理 Windows 部署服务服务器的命令行实用工具。 若要运行这些命令，请单击 "**开始**"，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。  
-## <a name="commands"></a>命令  
-|Command|描述|  
+## <a name="commands"></a>Commands  
+|Command|说明|  
 |------|--------|  
 |[使用 "添加" 命令](using-the-add-command.md)|添加对象或其预留计算机。|  
 |[使用 AutoaddDevices 命令](using-the-approve-autoadddevices-command.md)|批准等待管理员批准的计算机。|  

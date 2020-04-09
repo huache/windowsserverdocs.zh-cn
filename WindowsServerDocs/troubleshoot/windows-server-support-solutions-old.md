@@ -2,19 +2,18 @@
 title: 适用于 Windows Server 的顶级支持解决方案
 description: 获取适用于 Windows Server 问题的解决方案的链接
 ms.prod: windows-server
-ms.service: na
 manager: alant
 ms.technology: server-general
 ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 61c10f25ac97934f73c4f393e2c91c9b36fc59fd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6bd0d22c7df7344e6c4bfbf8360532ab0f36d117
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950178"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820750"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>适用于 Windows Server 2016 的顶级支持解决方案
 
@@ -31,7 +30,7 @@ Microsoft 会定期为 Windows Server 发布更新和解决方案。 若要确�
 - [Windows 10 版本1607和 Windows Server 2016 的服务堆栈更新：8月8日，2017](https://support.microsoft.com/help/4035631)
 - [升级到 Windows 10 版本1607和 Windows Server 2016 的兼容性更新：8月3日，2017](https://support.microsoft.com/help/4033524)
 - [基于 Windows 的 Azure Vm 不支持就地系统升级](https://support.microsoft.com/help/4014997)
-- [适用于 Windows Server 2016 的升级和转换选项](../get-started/supported-upgrade-paths.md)
+- [Windows Server 2016 的升级和转换选项](../get-started/supported-upgrade-paths.md)
 - [Windows Server 2016 的服务器角色升级和迁移矩阵](../get-started/server-role-upgradeability-table.md)
 - [Windows Server 安装和升级](../get-started/installation-and-upgrade.md)
 - [发行说明： Windows Server 2016 中的重要问题](../get-started/windows-server-2016-ga-release-notes.md)
@@ -52,11 +51,11 @@ Microsoft 会定期为 Windows Server 发布更新和解决方案。 若要确�
 - [Windows Server 2016 的 Exchange Server 支持](https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx)
 - [使用 Ntdsutil.exe 传输或占用 FSMO 角色到域控制器](https://support.microsoft.com/kb/255504)
 - [域控制器部署疑难解答](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
-- [排查 Active Directory 安装向导问题](https://msdn.microsoft.com/library/bb727058.aspx)
+- [Active Directory 安装向导问题的疑难解答](https://msdn.microsoft.com/library/bb727058.aspx)
 - [用于安装和删除 AD DS 的已知问题](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
 
 ## <a name="solutions-for-active-directory-federation-services-ad-fs"></a>Active Directory 联合身份验证服务 (AD FS) 解决方案
-- [如何使用 Azure Active Directory 配置已加入 Windows 域的设备的自动注册](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
+- [如何配置已加入 Windows 域的设备的自动注册 Azure Active Directory](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
 - [设置声明的颁发](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims)
 - [配置 AD FS 以对存储在 LDAP 目录中的用户进行身份验证](../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md)
 - [AD FS 对证书身份验证的备用主机名绑定的支持](../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)

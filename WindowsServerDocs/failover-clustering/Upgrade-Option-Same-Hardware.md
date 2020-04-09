@@ -1,25 +1,26 @@
 ---
 title: 使用相同硬件升级故障转移群集
+description: 本文介绍如何使用相同的硬件升级2节点故障转移群集
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 02/28/2019
-description: 本文介绍如何使用相同的硬件升级2节点故障转移群集
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe93f1d43e0c3a1bc4269b585cb9d021d3461aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2d9866417908b3979a4ee17b25dd0d3a404bb1c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361396"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828180"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>升级相同硬件上的故障转移群集
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
-故障转移群集是一组独立的计算机，这些计算机相互协作以提高应用程序和服务的可用性。 多台群集服务器（称为节点）通过物理电缆和软件连接。 如果其中一个群集节点出现故障，另一个节点便会开始提供服务（此过程称为故障转移）。 用户最少遇到服务中断的情况。
+故障转移群集是一组独立的计算机，这些计算机相互协作以提高应用程序和服务的可用性。 多台群集服务器（称为节点）之间由物理电缆和软件连接。 如果其中一个群集节点出现故障，另外一个节点就会开始提供服务（该过程称为故障转移）。 从而使用户遭遇服务中断的次数降至最低。
 
 本指南介绍使用相同硬件将群集节点升级到 Windows Server 2019 或 Windows Server 2016 的步骤。
 
@@ -37,7 +38,7 @@ ms.locfileid: "71361396"
 
 在下面的示例中，故障转移群集的名称是群集，节点名称是节点1和节点2。
 
-## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>第 1 步：逐出第一个节点并升级到 Windows Server 2016
+## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>步骤1：逐出第一个节点并升级到 Windows Server 2016
 
 1. 在故障转移群集管理器中，通过右键单击节点并选择**暂停**和**排出角色**，将所有资源从节点2排出到节点2。  或者，可以使用 PowerShell 命令[start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)。
 
@@ -61,7 +62,7 @@ ms.locfileid: "71361396"
 
 7.  迁移完所有资源后，关闭节点2（原始群集）并断开存储，以免造成干扰。  将存储连接到节点1。  所有资源都处于连接状态后，请使所有资源联机并确保它们正常运行。
 
-## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>步骤 2：将第二个节点重新生成到 Windows Server 2019
+## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>步骤2：将第二个节点重新生成到 Windows Server 2019
 
 验证所有内容是否正常工作后，可将节点2重建为 Windows Server 2019 并加入群集。
 
@@ -85,7 +86,7 @@ ms.locfileid: "71361396"
 
 5. 通过右键单击节点并选择**暂停**和**排出角色**，将所有资源从节点2排出到节点2。  或者，可以使用 PowerShell 命令[start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)。  确保所有资源均处于联机状态，并且它们按预期方式工作。
 
-## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>步骤 3:重新生成 Windows Server 2019 的第一个节点
+## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>步骤3：重新生成 Windows Server 2019 的第一个节点
 
 1. 从群集中逐出节点1，并以您之前的方式断开存储与节点的连接。
 
@@ -99,7 +100,7 @@ ms.locfileid: "71361396"
 
 现在，你正在运行的 Windows Server 2019 故障转移群集功能完全正常。
 
-## <a name="additional-notes"></a>附加说明
+## <a name="additional-notes"></a>其他说明
 
 - 如前文所述，断开存储可能是必需的，也可能不是必需的。  在本文档中，我们希望注意到错误。  请咨询你的存储供应商。
 - 如果您的起点是 Windows Server 2008 或 2008 R2 群集，则可能需要执行额外的步骤。

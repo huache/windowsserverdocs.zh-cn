@@ -1,30 +1,26 @@
 ---
 title: diskcomp
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 diskcomp 的 Windows 命令主题，用于比较两个软盘的内容。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4f56f534-a356-4daa-8b4f-38e089341e42
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca5ea0f4587b21b2a274c772aab239668b7868b4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e36e644616e25659c1a2a5ca684e975fd06fc19f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377867"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845550"
 ---
 # <a name="diskcomp"></a>diskcomp
 
+比较两个软盘的内容。 如果在没有参数的情况下使用，则**diskcomp**将使用当前驱动器来比较两个磁盘。
 
-
-比较两个软盘的内容。 如果在没有参数的情况下使用，则**diskcomp**将使用当前驱动器来比较两个磁盘。有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
 
 ## <a name="syntax"></a>语法
 
@@ -32,9 +28,9 @@ ms.locfileid: "71377867"
 diskcomp [<Drive1>: [<Drive2>:]]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<Drive1 >|指定包含其中一张软盘的驱动器。|
 |\<Drive2 >|指定包含其他软盘的驱动器。|
@@ -98,7 +94,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   下表说明了每个退出代码。  
 
-  |退出代码|描述|
+  |退出代码|说明|
   |---------|-----------|
   |0|磁盘相同|
   |1|发现差异|
@@ -107,7 +103,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   若要处理**diskcomp**返回的退出代码，可以在批处理程序的**if**命令行中使用 ERRORLEVEL 环境变量。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 如果计算机只有一个软盘驱动器（例如驱动器 A），并且想要比较两个磁盘，请键入：
 ```
@@ -131,7 +127,7 @@ goto exit
 echo ERROR: An irrecoverable error occurred 
 goto exit 
 :break 
-echo "You just pressed CTRL+C" to stop the comparison 
+echo You just pressed CTRL+C to stop the comparison 
 goto exit 
 :no_compare 
 echo Disks are not the same 
@@ -142,6 +138,6 @@ goto exit
 :exit
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

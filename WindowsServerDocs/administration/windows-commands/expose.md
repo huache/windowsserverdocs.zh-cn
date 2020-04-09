@@ -1,24 +1,20 @@
 ---
 title: 让
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9b0a21cf-3bef-4ade-b8f1-ac42f9203947
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 819484364e8375c4d58e4d022681eedeaa7084ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 55cc7a292b81977a346f3f078a3b5623243ea46c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377279"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844800"
 ---
 # <a name="expose"></a>让
 
@@ -34,9 +30,9 @@ ms.locfileid: "71377279"
 expose <ShadowID> {<Drive:> | <Share> | <MountPoint>}
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |ShadowID|指定要公开的卷影副本的卷影副本 ID。|
 |\<驱动器： >|以驱动器号（例如，P：）公开指定的卷影副本。|
@@ -47,13 +43,13 @@ expose <ShadowID> {<Drive:> | <Share> | <MountPoint>}
 
 -   您可以使用现有的别名或环境变量来代替*ShadowID*。 使用**add**而不使用参数查看现有别名。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要将与 VSS_SHADOW_1 环境变量关联的持久影子副本作为驱动器 X 公开，请键入：
 ```
 expose %vss_shadow_1% x:
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

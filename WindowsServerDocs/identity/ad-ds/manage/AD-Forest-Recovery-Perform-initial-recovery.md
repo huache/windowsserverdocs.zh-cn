@@ -1,6 +1,5 @@
 ---
 title: AD 林恢复-执行初始恢复
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: a369347fe889c7f6675d0091d05a6dee93cb4434
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7d592198187d44927f643b45e7a8bb4c2eec2a69
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369073"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823900"
 ---
 # <a name="perform-initial-recovery"></a>执行初始恢复  
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 本部分包括以下步骤：  
 
@@ -53,11 +52,11 @@ ms.locfileid: "71369073"
 
       **HKLM\System\CurrentControlSet\Services\NTDS\Parameters\Repl 执行初始同步**  
   
-      创建数据类型为**REG_DWORD**且值为**0**的条目。 完全恢复林后，可以将此项的值重置为**1**，这需要一个域控制器，该控制器会重新启动并保留操作主机角色，以便成功 AD DS 入站和出站复制与其已知副本合作伙伴在将自身广告为域控制器并开始为客户端提供服务之前。 有关初始同步要求的详细信息，请参阅知识库文章[305476](https://support.microsoft.com/kb/305476)。 
+      创建数据类型为的项**REG_DWORD**和值**0**。 完全恢复林后，可以将此项的值重置为**1**，这需要一个域控制器，该控制器重启并保留操作主机角色，使其能够成功地 AD DS 入站和出站复制与其已知的副本伙伴，然后才会将其自身播发为域控制器并开始为客户端提供服务。 有关初始同步要求的详细信息，请参阅知识库文章[305476](https://support.microsoft.com/kb/305476)。 
   
       仅在还原并验证数据之后以及将此计算机加入到生产网络之前，才继续执行后续步骤。 
   
-4. 如果怀疑林范围的故障与网络入侵或恶意攻击相关，请重置所有管理帐户的帐户密码，包括 Enterprise Admins、Domain Admins、Schema Admins、Server Operators、AccountOperators 组，等等。 在林恢复的下一个阶段安装其他域控制器之前，应先完成重置管理帐户密码。 
+4. 如果怀疑林范围的故障与网络入侵或恶意攻击相关，请重置所有管理帐户的帐户密码，包括 Enterprise Admins、Domain Admins、Schema Admins、Server Operators、Account Operators 组等成员。 在林恢复的下一个阶段安装其他域控制器之前，应先完成重置管理帐户密码。 
 5. 在目录林根级域中的第一个还原 DC 上，获取所有全域性和全林性操作主机角色。 需要企业管理员和架构管理员凭据才能占用林范围的操作主机角色。 
   
      在每个子域中，占用域范围内的操作主机角色。 尽管你可能只是暂时保留已还原 DC 上的操作主机角色，但占用这些角色可确保你在林恢复过程中的哪个 DC 上托管这些角色。 作为恢复后过程的一部分，你可以根据需要重新分发操作主机角色。 有关占用操作主机角色的详细信息，请参阅[占用操作主机角色](AD-forest-recovery-seizing-operations-master-role.md)。 有关在何处放置操作主机角色的建议，请参阅[什么是操作主机？](https://technet.microsoft.com/library/cc779716.aspx)。 
@@ -77,7 +76,7 @@ ms.locfileid: "71369073"
   
      在每个子域中，用目录林根级域中的第一个 DNS 服务器的 IP 地址配置还原的 DC 作为其首选 DNS 服务器。 可以在 LAN 适配器的 TCP/IP 属性中配置此设置。 有关详细信息，请参阅[将 Tcp/ip 配置为使用 DNS](https://technet.microsoft.com/library/cc779282\(WS.10\).aspx)。 
   
-     在 "_msdcs" 和 "域" DNS 区域中，删除在清除元数据后不再存在的 Dc 的 NS 记录。 检查是否已删除清理的 Dc 的 SRV 记录。 若要加快删除 DNS SRV 记录的速度，请运行：  
+     在 "_msdcs" 和 "域" DNS 区域中，删除清除元数据后不再存在的 Dc 的 NS 记录。 检查是否已删除清理的 Dc 的 SRV 记录。 若要加快删除 DNS SRV 记录的速度，请运行：  
   
     ```  
     nltest.exe /dsderegdns:server.domain.tld  
@@ -111,7 +110,7 @@ ms.locfileid: "71369073"
   
      第二个问题是，不存在的用户帐户可能仍会出现在全局地址列表中。 第三个问题是：已不存在的通用组可能仍会出现在用户的访问令牌中。 
   
-     如果你确实还原了作为全局编录的 DC，无论是不小心还是因为这是你信任的孤立备份，我们建议你在执行还原操作后立即禁用全局编录来阻止发生延迟对象。完成. 禁用全局编录标志将导致计算机丢失其所有部分副本（分区），并 relegating 自身为常规 DC 状态。 
+     如果你确实还原了作为全局编录的 DC，无论是不小心还是因为这是你信任的孤立备份，我们建议你在还原操作完成后立即禁用全局编录，以防止发生延迟对象。 禁用全局编录标志将导致计算机丢失其所有部分副本（分区），并 relegating 自身为常规 DC 状态。 
   
 13. 配置 Windows 时间服务。 在目录林根级域中，将 PDC 仿真器配置为从外部时间源同步时间。 有关详细信息，请参阅在[林根域中的 PDC 模拟器上配置 Windows 时间服务](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29)。 
   
@@ -126,7 +125,7 @@ ms.locfileid: "71369073"
 
 - 若要修复名称解析，请根据需要创建 DNS 委托记录并配置 DNS 转发和根提示。 运行**repadmin/replsum**以检查域控制器之间的复制。 
 - 如果还原的 DC 不是直接复制伙伴，则通过在它们之间创建临时连接对象，可以更快地进行复制恢复。 
-- 若要验证元数据清除，请运行**Repadmin/viewlist \\** * 获取林中所有 dc 的列表。 运行**Nltest/DCList：** *< 域\>*  ，获取域中所有 dc 的列表。 
+- 若要验证元数据清除，请运行**Repadmin/viewlist \\** *，获取林中所有 dc 的列表。 运行**Nltest/DCList：** *< 域\>* 以获取域中所有 dc 的列表。 
 - 若要检查 DC 和 DNS 运行状况，请运行 DCDiag/v 报告林中所有 Dc 上的错误。 
 
 ## <a name="add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain"></a>将全局编录添加到目录林根级域中的域控制器

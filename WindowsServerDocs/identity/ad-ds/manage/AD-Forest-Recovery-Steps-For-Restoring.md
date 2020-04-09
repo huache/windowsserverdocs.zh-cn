@@ -1,6 +1,5 @@
 ---
 title: AD 林恢复-用于还原林的步骤
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 07a043c4361f8eaae30b1dea665c604c0df42333
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 537543bedd68bff002054f637d96240a71f75793
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390287"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823400"
 ---
 # <a name="ad-forest-recovery---steps-for-restoring-the-forest"></a>AD 林恢复-用于还原林的步骤
 
->适用于：Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
+>适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
 本部分概述了用于恢复林的推荐路径。 稍后将详细介绍林恢复步骤。  
   
@@ -30,7 +29,7 @@ ms.locfileid: "71390287"
   
 2. [决定如何恢复林](AD-Forest-Recovery-Determine-how-to-Recover.md)  
 
-   确定林恢复是必需的后，请完成准备工作的预备步骤：确定当前林结构，确定每个 DC 执行的功能，确定要为每个域还原哪个 DC，并确保所有可写 Dc处于脱机状态。  
+   确定林恢复是必需的后，请完成准备工作的预备步骤：确定当前林结构，确定每个 DC 执行的功能，确定要为每个域还原哪个 DC，并确保所有可写 Dc 都处于脱机状态。  
 
 3. [执行初始恢复](AD-Forest-Recovery-Perform-initial-recovery.md)  
 

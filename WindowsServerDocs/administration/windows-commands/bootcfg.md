@@ -1,36 +1,36 @@
 ---
 title: bootcfg
-description: 用于**bootcfg**的 Windows 命令主题-配置、查询或更改 boot.ini 文件设置。
-ms.custom: na
+description: 适用于 bootcfg 的 Windows 命令主题，用于配置、查询或更改 Boot.ini 文件设置。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3deb354c-5717-4066-bc79-b9323d559e44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d66296327a2221093e5434f69e15e7c55df1f6b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a977b857242c030515a09a67eb0d284ade7a0beb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379855"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848380"
 ---
 # <a name="bootcfg"></a>bootcfg
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-配置、查询或更改 Boot.ini 文件设置。  
-## <a name="syntax"></a>语法  
+配置、查询或更改 Boot.ini 文件设置。
+
+## <a name="syntax"></a>语法
+
 ```  
 bootcfg <parameter> [arguments...]  
-```  
-## <a name="parameters"></a>Parameters  
-|参数|描述|  
+```
+
+### <a name="parameters"></a>参数
+
+|参数|说明|  
 |-------|--------|  
 |[bootcfg addsw](bootcfg-addsw.md)|为指定的操作系统项添加操作系统加载选项。|  
 |[bootcfg copy](bootcfg-copy.md)|创建现有启动项的副本，您可以将命令行选项添加到该副本中。|  

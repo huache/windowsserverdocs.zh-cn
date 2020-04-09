@@ -1,24 +1,20 @@
 ---
 title: icacls
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 494c87073cfd78c7f5e17c72d4c65bec33a49b98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 59d10b9ed681b7e0af120798dde9f200182d67d3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375486"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842260"
 ---
 # <a name="icacls"></a>icacls
 
@@ -33,9 +29,9 @@ icacls <FileName> [/grant[:r] <Sid>:<Perm>[...]] [/deny <Sid>:<Perm>[...]] [/rem
 icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c] [/l] [/q]]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<文件名 >|指定要为其显示 Dacl 的文件。|
 |\<目录 >|指定要为其显示 Dacl 的目录。|
@@ -141,18 +137,18 @@ icacls c:\windows\* /save aclfile /t
 icacls c:\windows\ /restore aclfile
 ```
 
-若要授予用户 User1 删除和写入名为 "Test1" 的文件的 DAC 权限，请键入：
+若要授予用户 User1 删除和写入名为 Test1 的文件的 DAC 权限，请键入：
 
 ```
 icacls test1 /grant User1:(d,wdac)
 ```
 
-若要向用户授予 SID S-1-1-0 删除和写入 DAC 权限的用户，请在名为 "Test2" 的文件中键入：
+若要向用户授予 SID S-1-1-0 删除和写入 DAC 权限的用户，请在名为 Test2 的文件中键入：
 
 ```
 icacls test2 /grant *S-1-1-0:(d,wdac)
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

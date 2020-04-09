@@ -1,24 +1,20 @@
 ---
 title: 更新并安装设备驱动程序（如果需要）
 description: 了解如何检查和更新 MultiPoint Services 中的设备驱动程序
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 16be3ef9-a05b-4621-a431-5806b567e997
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 766e2175a16cd20a68730870c8980ed9c9204a3c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6d20aa80edeafa4311262a380cfd7aad65ae0315
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394883"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820600"
 ---
 # <a name="update-and-install-device-drivers-if-needed"></a>更新并安装设备驱动程序（如果需要）
 如果使用的是需要驱动程序的 USB 零客户端或外设，此时应安装驱动程序。 最好是**设备管理器**检查是否有任何驱动程序警报，并为这些设备安装驱动程序。  

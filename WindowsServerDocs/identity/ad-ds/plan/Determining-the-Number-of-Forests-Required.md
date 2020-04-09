@@ -1,7 +1,6 @@
 ---
 ms.assetid: 173b72c1-ac83-4f42-abab-cf58f43769f0
 title: 确定所需的林数量
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 21bece55ef64a552ddc641befd94d3ce19e78db6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 237012b2a25f0c28beb3b0716287b4f6a554b625
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408883"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822550"
 ---
 # <a name="determining-the-number-of-forests-required"></a>确定所需的林数量
 
@@ -63,7 +62,7 @@ ms.locfileid: "71408883"
   
 -   克隆的域共享公共安全标识;因此，不能在这些信任关系间建立信任关系，即使其中一个或两个域已重命名也是如此。  
   
-## <a name="in-this-section"></a>本节内容  
+## <a name="in-this-section"></a>本部分内容  
   
 -   [林设计模型](https://technet.microsoft.com/library/cc770439.aspx)  
   

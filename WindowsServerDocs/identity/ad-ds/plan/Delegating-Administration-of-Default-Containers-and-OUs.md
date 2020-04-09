@@ -1,7 +1,6 @@
 ---
 ms.assetid: ac6604b0-7459-4ff3-af1c-4936897f5d14
 title: 委派默认容器和 OU 管理
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 15c6688e32a7ebefbb2dd0fa1e53a4d72baef267
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a8523ee738b991714a9c8673b6faaff7d9003987
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408932"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822650"
 ---
 # <a name="delegating-administration-of-default-containers-and-ous"></a>委派默认容器和 OU 管理
 
@@ -52,7 +51,7 @@ ms.locfileid: "71408932"
   
 |众所周知的用户和组|内置帐户|  
 |--------------------------------|----------------------|  
-|Cert Publishers<br /><br />域控制器<br /><br />Group Policy Creator Owners<br /><br />KRBTGT<br /><br />域来宾<br /><br />管理员<br /><br />Domain Admins<br /><br />架构管理员（仅限林根域）<br /><br />Enterprise Admins （仅限林根域）<br /><br />域用户|管理员<br /><br />Guest<br /><br />Guests<br /><br />Account Operators<br /><br />Administrators<br /><br />Backup Operators<br /><br />传入林信任生成器<br /><br />打印操作员<br /><br />Windows 之前2000兼容访问<br /><br />Server Operators<br /><br />用户|  
+|证书发行者<p>域控制器<p>组策略创建者所有者<p>KRBTGT<p>域来宾<p>管理员<p>Domain Admins<p>架构管理员（仅限林根域）<p>Enterprise Admins （仅限林根域）<p>域用户|管理员<p>来宾<p>Guests<p>Account Operators<p>Administrators<p>Backup Operators<p>传入林信任生成器<p>打印操作员<p>Windows 之前2000兼容访问<p>Server Operators<p>Users|  
   
 ## <a name="domain-controller-ou"></a>域控制器 OU  
 向域中添加域控制器时，会自动将其计算机对象添加到域控制器 OU。 此 OU 应用了一组默认策略。 为了确保这些策略统一应用于所有域控制器，我们建议你不要将域控制器的计算机对象移出此 OU。 如果无法应用默认策略，可能会导致域控制器无法正常工作。  

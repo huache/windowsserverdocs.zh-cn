@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0379abc3-25c7-46ab-9a6b-80a5152365b0
 title: AD FS 中的自定义 Web 主题
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 03e493c1022653e4c258634c2b0f258849876a00
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 69255eeaecd3e5198054242c1ab6dd1d0a58ce33
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358001"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816420"
 ---
 # <a name="custom-web-themes-in-ad-fs"></a>AD FS 中的自定义 Web 主题 
 
-出厂\-\-时提供的主题称为"\-默认主题"。 可以导出并使用该默认主题，以便可以快速启动。 通过修改 .css 文件、导入和应用此新主题，你可以自定义外观和行为，包括布局，然后便可以使用自定义的外观和行为。 使用 .css 文件还会使 Web 设计人员的工作变得更容易。  
+\-box\-\-提供的主题称为 "默认"。 可以导出并使用该默认主题，以便可以快速启动。 通过修改 .css 文件、导入和应用此新主题，你可以自定义外观和行为，包括布局，然后便可以使用自定义的外观和行为。 使用 .css 文件还会使 Web 设计人员的工作变得更容易。  
   
 以下 cmdlet 创建了一个复制默认 Web 主题的自定义 Web 主题。  
   
@@ -35,13 +34,13 @@ ms.locfileid: "71358001"
 若要将 .css 文件应用于新的主题，请使用以下 cmdlet。  
   
 
-    Set-AdfsWebTheme –TargetName custom –StyleSheet @{path=”c:\NewTheme.css”}  
+    Set-AdfsWebTheme –TargetName custom –StyleSheet @{path="c:\NewTheme.css"}  
   
   
 以下 cmdlet 从新的样式表创建自定义 Web 主题。  
   
   
-`New-AdfsWebTheme –Name custom –StyleSheet @{path=”c:\NewTheme.css”} –RTLStyleSheetPath c:\NewRtlTheme.css ` 
+`New-AdfsWebTheme –Name custom –StyleSheet @{path="c:\NewTheme.css"} –RTLStyleSheetPath c:\NewRtlTheme.css ` 
   
   
   

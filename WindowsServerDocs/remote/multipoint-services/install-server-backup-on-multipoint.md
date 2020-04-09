@@ -1,24 +1,20 @@
 ---
 title: 在 MultiPoint 服务器上安装服务器备份
 description: 指导您完成安装备份和恢复工具的步骤
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e4331370-ba07-4529-92ab-db14a41bfc3b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 933a24ee91fa1f5ccbe31ff4cb722a7c3eb54e4b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8fe5ac8b57105d421af431b12c8dc17250b622d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395117"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820330"
 ---
 # <a name="install-server-backup-on-your-multipoint-server"></a>在 MultiPoint 服务器上安装服务器备份
 建议你考虑 MultiPoint 服务器的备份和恢复计划。
@@ -41,7 +37,7 @@ Windows Server 备份的一项重要功能是能够计划自动运行备份。
   
 4.  选择要管理的本地计算机，然后单击 "**下一步**"。  
   
-    这将打开“添加功能向导”。  
+    此时会打开“添加功能向导”。  
   
 5.  在 "**选择功能**" 页上，展开 Windows Server 备份功能，选中**Windows Server 备份**和**命令行工具**的复选框，然后单击 "**下一步**"。  
   

@@ -3,16 +3,15 @@ title: 排查事件 ID 50 错误消息
 description: 描述如何排查事件 ID 50 错误消息
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 202e0604fc492ff72cd1794bc8197a12c1ab9163
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 7ce3551b60450a3720c9350b5c55f396368490c1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654378"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815230"
 ---
 # <a name="troubleshoot-the-event-id-50-error-message"></a>排查事件 ID 50 错误消息
 
@@ -83,7 +82,7 @@ Please try to save this file elsewhere.
 
 **错误代码**
 
-在 "摘要" 部分的示例中，错误代码在第二行中列出。 此行以 "0008：" 开头，其中包含以下行中的最后四个字节：0008： 00 00 00 00 32 00 04 80 在这种情况下，错误代码为0x80040032。 下面的代码是用于错误50的代码，并与所有事件 ID 50 消息相同： IO_LOST_DELAYED_WRITEWARNINGNote 将事件 ID 消息中的十六进制数据转换为状态代码时，请记住，小字节序格式。
+在 "摘要" 部分的示例中，错误代码在第二行中列出。 此行以 "0008：" 开头，其中包含以下行中的最后四个字节：0008： 00 00 00 00 32 00 04 80 在这种情况下，错误代码为0x80040032。 下面的代码是用于错误50的代码，它对于所有事件 ID 50 消息都是相同的： IO_LOST_DELAYED_WRITEWARNINGNote 在将事件 ID 消息中的十六进制数据转换为状态代码时，请记住这些值采用小字节序格式表示。
 
 **目标磁盘**
 

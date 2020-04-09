@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b89d96535512f79c83c601be50327c24dc40787
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 175b5e17f186653d4fdbc7efb505637e915cfe38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376976"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844320"
 ---
 # <a name="fsutil-file"></a>Fsutil 文件
->适用于：Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+>适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 按用户名查找文件（如果启用了磁盘配额），查询为文件分配的范围，设置文件的短名称，设置文件的有效数据长度，为文件设置零数据，或创建新的文件。
 
@@ -42,35 +42,35 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------------|---------------|
 |createnew|使用由零组成的内容创建具有指定名称和大小的文件。|
-|\<filename >|指定文件的完整路径，包括文件名和扩展名，例如 C:\documents\filename.txt。|
-|\<length >|指定文件的有效数据长度。|
+|\<文件名 >|指定文件的完整路径，包括文件名和扩展名，例如 C:\documents\filename.txt。|
+|\<长度 >|指定文件的有效数据长度。|
 |findbysid|在启用磁盘配额的 NTFS 卷上查找属于指定用户的文件。|
-|\<username >|指定用户的用户名或登录名。|
-|\<directory>|指定目录的完整路径，例如 C:\users。|
+|\<用户名 >|指定用户的用户名或登录名。|
+|\<目录 >|指定目录的完整路径，例如 C:\users。|
 |optimizemetadata|这会对给定文件执行元数据的立即压缩。|
 |/A|优化前和优化后分析文件元数据。|
 |queryallocranges|查询 NTFS 卷上的文件的分配范围。 用于确定文件是否具有稀疏区域。|
-|offset = \<offset >|指定范围的开始时间，该范围应设置为零。|
-|length = \<length >|指定范围的长度（以字节为单位）。|
+|offset =\<偏移 >|指定范围的开始时间，该范围应设置为零。|
+|长度 =\<长度 >|指定范围的长度（以字节为单位）。|
 |queryextents|查询文件的范围。|
-|/R|如果 <filename> 是一个重新分析点，请打开它而不是其目标。|
+|/R|如果 <filename> 是重新分析点，请打开它而不是其目标。|
 |\<startingvcn >|指定要查询的第一个 VCN。 如果省略，则从 VCN 0 开始。|
 |\<numvcns >|要查询的 VCNs 的数目。 如果省略或为0，则查询到 EOF。|
-|queryfileid|查询 NTFS 卷上文件的文件 ID。<br /><br />此参数适用于：Windows Server 2008 R2 和 Windows 7。|
-|\<volume >|指定卷作为驱动器名称后跟一个冒号。|
-|queryfilenamebyid|显示 NTFS 卷上指定文件 ID 的随机链接名称。 由于一个文件可以有多个指向该文件的链接名称，因此不能保证将提供哪个文件链接作为文件名的查询结果。<br /><br />此参数适用于：Windows Server 2008 R2 和 Windows 7。|
+|queryfileid|查询 NTFS 卷上文件的文件 ID。<p>此参数适用于： Windows Server 2008 R2 和 Windows 7。|
+|\<卷 >|指定卷作为驱动器名称后跟一个冒号。|
+|queryfilenamebyid|显示 NTFS 卷上指定文件 ID 的随机链接名称。 由于一个文件可以有多个指向该文件的链接名称，因此不能保证将提供哪个文件链接作为文件名的查询结果。<p>此参数适用于： Windows Server 2008 R2 和 Windows 7。|
 |\<fileid >|指定 NTFS 卷上的文件的 ID。|
 |queryoptimizemetadata|查询文件的元数据状态。|
 |queryvaliddata|查询文件的有效数据长度。|
 |/D|显示详细的有效数据信息。|
 |seteof|设置给定文件的 EOF。|
 |setshortname|为 NTFS 卷上的文件设置短名称（8.3 字符长度的文件名）。|
-|\<shortname >|指定文件的短名称。|
+|\<短名称 >|指定文件的短名称。|
 |setvaliddata|为 NTFS 卷上的文件设置有效的数据长度。|
 |\<datalength >|指定文件的长度（以字节为单位）。|
 |setzerodata|将该文件的范围（由*偏移*和*长度*指定）设置为零，这将清空该文件。 如果该文件是稀疏文件，则退回基础分配单元。|
@@ -87,7 +87,7 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 
     -   在性能问题时创建大型文件。 这可以避免在文件创建或扩展时用零填充文件所花费的时间。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 若要在驱动器 C 上查找 scottb 拥有的文件，请键入：
 
 ```
@@ -136,8 +136,8 @@ fsutil file setvaliddata c:\testfile.txt 4096
 fsutil file setzerodata offset=100 length=150 c:\temp\sample.txt  
 ```
 
-#### <a name="additional-references"></a>其他参考
-[命令行语法项](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>其他参考
+- [命令行语法项](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

@@ -1,24 +1,22 @@
 ---
 ms.assetid: eca5bbf0-088e-4753-bf49-4d6c1125f689
 title: 为 Windows Server 2008 Active Directory 站点拓扑设计查找其他资源
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 1b94197e850b0bf0865c9281281ad063102c29eb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49709ca40c515c8fdb7df62598e9a9dc766029c8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408828"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822450"
 ---
-# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>为 Windows Server 2008 Active Directory 站点拓扑设计查找其他资源
-
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+
+# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>查找其他 Resou # rces for Windows Server 2008 Active Directory 站点拓扑设计
 
 你可以在 Windows Server 2003 和 Windows Server 2008 技术中心网站上找到有关 Active Directory 域服务（AD DS）的以下文档：  
   

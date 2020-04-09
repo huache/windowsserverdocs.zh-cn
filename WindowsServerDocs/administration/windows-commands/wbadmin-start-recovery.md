@@ -1,24 +1,20 @@
 ---
 title: wbadmin 开始恢复
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 wbadmin 启动恢复的 Windows 命令主题，它根据你指定的参数运行恢复操作。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52381316-a0fa-459f-b6a6-01e31fb21612
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: edb287573dc76619502faf58018f48c464140629
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b5a65e67e7a34ca5263c85c1038820e0a4fc1ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362348"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829610"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin 开始恢复
 
@@ -48,9 +44,9 @@ wbadmin start recovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-版本|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入**wbadmin get 版本**。|
 |-items|指定要恢复的卷、应用程序、文件或文件夹的逗号分隔列表。</br>-如果 **-itemtype**为**volume**，则只能通过提供卷驱动器号、卷装入点或基于 GUID 的卷名来指定单个卷。</br>-如果 **-itemtype**为**App**，则只能指定一个应用程序。 若要恢复，应用程序必须已注册到 Windows Server 备份。 你还可以使用值**ADIFM**来恢复 Active Directory 安装。 有关详细信息，请参阅中的备注。</br>-如果 **-itemtype**为**File**，则可以指定文件或文件夹，但这些文件或文件夹应属于相同的卷，并且它们应该位于相同的父文件夹下。|
@@ -73,7 +69,7 @@ wbadmin start recovery
 >     [!NOTE]
 >     Before using **wbadmin** to perform an install from media operation, you should consider using the **ntdsutil** command because **ntdsutil** only copies the minimum amount of data needed, and it uses a more secure data transport method.
 
-## <a name="BKMK_Examples"></a>示例
+## <a name="examples"></a><a name=BKMK_Examples></a>示例
 
 若要从2013年3月31日开始恢复备份，请在 9:00 am：中键入：
 ```
@@ -97,9 +93,9 @@ wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)
 -   [Backup](wbadmin.md)
 -   [WBFileRecovery](https://technet.microsoft.com/library/jj902457.aspx) cmdlet
 -   [WBHyperVRecovery](https://technet.microsoft.com/library/jj902463.aspx) cmdlet

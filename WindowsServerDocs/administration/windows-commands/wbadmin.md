@@ -1,24 +1,20 @@
 ---
 title: wbadmin
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 wbadmin 的 Windows 命令主题，可用于在命令提示符下备份和还原操作系统、卷、文件、文件夹和应用程序。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b0b3f32-d21f-4861-84bb-b2eadbf1e7b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a0fe9b999e788af1316ca0dbbf50b84e80cb08e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ca9bdc54cd77f11239d0a61cf052e7b12b02b22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362471"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829470"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -32,7 +28,7 @@ ms.locfileid: "71362471"
 
 ## <a name="subcommands"></a>个子
 
-|命令|描述|
+|命令|说明|
 |----------|-----------|
 |[Wbadmin enable backup](wbadmin-enable-backup.md)|配置并启用定期计划的备份。|
 |[Wbadmin disable backup](wbadmin-disable-backup.md)|禁用日常备份。|
@@ -50,7 +46,7 @@ ms.locfileid: "71362471"
 |[Wbadmin restore catalog](wbadmin-restore-catalog.md)|在本地计算机上的备份目录已损坏的情况下，从指定的存储位置恢复备份目录。|
 |[Wbadmin delete catalog](wbadmin-delete-catalog.md)|删除本地计算机上的备份目录。 仅当此计算机上的备份目录已损坏，并且你没有将备份存储在可用于还原目录的其他位置时，才使用此子命令。|
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
 -   [备份和恢复](https://go.microsoft.com/fwlink/?LinkID=195054)
 -   [Windows PowerShell 中的 Windows Server 备份 Cmdlet](https://technet.microsoft.com/library/jj902428.aspx)

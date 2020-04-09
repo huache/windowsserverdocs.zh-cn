@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1ea2e1be-874f-4df3-bc9a-eb215002da91
 title: 为用户证书身份验证配置 AD FS 支持
-description: ''
 author: jenfieldmsft
 ms.author: billmath
 manager: samueld
@@ -9,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6c8a3b30a337c164227bf344b5704cc7e782461a
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 5f2416e45fad8ca47cd756526dc6a554b3a952b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517512"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817070"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>为用户证书身份验证配置 AD FS
 
@@ -27,7 +26,7 @@ ms.locfileid: "77517512"
 1) 使用[本文](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)中所述的一种模式确定要启用 AD FS 用户证书身份验证的模式
 2) 确保你的用户证书信任链安装 & 受所有 AD FS 和 WAP 服务器信任，包括任何中间证书颁发机构。 通常，这是通过 AD FS/WAP 服务器上的 GPO 完成的
 3)  确保用户证书的信任链的根证书位于 NTAuth 存储区中 Active Directory
-4) 如果在备用证书身份验证模式中使用 AD FS，请确保 AD FS 和 WAP 服务器的 SSL 证书包含前缀为 "certauth" 的 AD FS 主机名（例如 "certauth.fs.contoso.com"），并允许到此主机名的流量通过防火墙
+4) 如果在备用证书身份验证模式中使用 AD FS，请确保 AD FS 和 WAP 服务器的 SSL 证书包含前缀为 "certauth" 的 AD FS 主机名（例如 "certauth.fs.contoso.com"），并允许通过防火墙对此主机名进行通信
 5) 如果使用 extranet 的证书身份验证，请确保从 internet 访问证书中指定的列表中至少有一个 AIA 和至少一个 CDP 或 OCSP 位置。
 6) 此外，对于 Exchange ActiveSync 客户端，Azure AD 对于 Exchange ActiveSync 客户端，客户端证书必须在 "使用者可选名称" 字段的主体名称或 RFC822 名称值中具有用户可路由电子邮件地址。 （Azure Active Directory 将 RFC822 值映射到目录中的 "代理地址" 属性。）
 

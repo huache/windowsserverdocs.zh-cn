@@ -1,24 +1,20 @@
 ---
 title: ipconfig
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 15071c2c-4815-4893-93b2-ab30232e312e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bfe3476dd90016291881ca8cee2b66283772bce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1c93b75d6518746df7ef936c7059bd03fcf96ab6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375382"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842070"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -32,9 +28,9 @@ ms.locfileid: "71375382"
 ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [/renew6[<Adapter>]] [/release6 [<Adapter>]] [/flushdns] [/displaydns] [/registerdns] [/showclassid <Adapter>] [/setclassid <Adapter> [<ClassID>]]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/all|显示所有适配器的完整 TCP/IP 配置。 适配器可表示物理接口（例如已安装的网络适配器）或逻辑接口（如拨号连接）。|
 |/allcompartments|显示所有隔离舱的完整 TCP/IP 配置。|
@@ -47,12 +43,12 @@ ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [
 |/renew6 [\<适配器 >]|续订所有适配器的 DHCPv6 配置（如果未指定适配器），或为特定适配器续订 DHCPv6 配置（如果包含*适配器*参数）。 此参数仅在配置为自动获取 IPv6 地址的适配器的计算机上可用。 若要指定适配器名称，请键入在不带参数的情况下使用**ipconfig**时显示的适配器名称。|
 |/setclassid \<适配器 > [<ClassID>]|配置指定适配器的 DHCP 类 ID。 若要设置所有适配器的 DHCP 类 ID，请使用星号（ **&#42;** ）通配符代替*适配器*。 此参数仅在配置为自动获取 IP 地址的适配器的计算机上可用。 如果未指定 DHCP 类 ID，则删除当前类 ID。|
 |/showclassid \<适配器 >|显示指定适配器的 DHCP 类 ID。 若要查看所有适配器的 DHCP 类 ID，请使用星号（ **&#42;** ）通配符代替*适配器*。 此参数仅在配置为自动获取 IP 地址的适配器的计算机上可用。|
-|/?|在命令提示符下显示帮助。|
+|/?|在命令提示符处显示帮助。|
 
 ## <a name="remarks"></a>备注
 
 - 在配置为自动获取 IP 地址的计算机上，此命令最有用。 这样，用户便可以确定哪些 TCP/IP 配置值已由 DHCP 配置、自动专用 IP 寻址（APIPA）或备用配置。
-- 如果为*适配器*提供的名称包含空格，请使用引号将适配器名称括起来（例如： **"** <em>适配器名称</em> **"** ）。
+- 如果为*适配器*提供的名称包含空格，请使用引号将适配器名称括起来（例如： * * * *<em>适配器名称</em>* * * *）。
 - 对于适配器名称， **ipconfig**支持使用星号（\*）通配符来指定名称以指定字符串开头的适配器，或使用包含指定字符串的适配器的名称。 例如，**本地\*** 匹配所有以字符串 Local 开头的适配器， **\*Con\*** 匹配包含该字符串 Con 的所有适配器。
 
 ## <a name="examples"></a>示例
@@ -67,7 +63,7 @@ ipconfig /all
 ```
 若要仅为本地区域连接适配器续订 DHCP 分配的 IP 地址配置，请键入：
 ```
-ipconfig /renew "Local Area Connection"
+ipconfig /renew Local Area Connection
 ```
 若要在排除 DNS 名称解析问题疑难解答时刷新 DNS 解析程序缓存，请键入：
 ```
@@ -79,9 +75,9 @@ ipconfig /showclassid Local*
 ```
 若要设置要测试的本地连接适配器的 DHCP 类 ID，请键入：
 ```
-ipconfig /setclassid "Local Area Connection" TEST
+ipconfig /setclassid Local Area Connection TEST
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

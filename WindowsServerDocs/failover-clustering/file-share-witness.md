@@ -1,30 +1,31 @@
 ---
 title: 在 Windows Server 2019 中部署文件共享见证
+description: 文件共享见证服务器允许使用文件共享在群集仲裁中投票。 本主题介绍文件共享见证服务器和新功能，包括使用作为文件共享见证连接到路由器的 USB 驱动器。
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/24/2019
-description: 文件共享见证服务器允许使用文件共享在群集仲裁中投票。 本主题介绍文件共享见证服务器和新功能，包括使用作为文件共享见证连接到路由器的 USB 驱动器。
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f0a0c5b48f7c382367e4b1100ff649fe73d3be9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 63e016b8e00482529e69aaa12727f854afd51e41
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369759"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827670"
 ---
 # <a name="deploy-a-file-share-witness"></a>部署文件共享见证
 
-> 适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 文件共享见证是故障转移群集在群集仲裁中用作投票的 SMB 共享。 本主题概述了 Windows Server 2019 中的技术和新功能，包括使用连接到路由器的 USB 驱动器作为文件共享见证。
 
 文件共享见证服务器在以下情况下很方便：  
 
 - 由于并非群集中的所有服务器都具有可靠的 Internet 连接，因此无法使用云见证
-- 无法使用磁盘见证，因为没有可用于磁盘见证的任何共享驱动器。 这可能是存储空间直通群集、SQL Server Always On 可用性组（AG）、Exchange 数据库可用性组（DAG）等。这些群集类型都不使用共享磁盘。
+- 无法使用磁盘见证，因为没有可用于磁盘见证的任何共享驱动器。 这可能是存储空间直通群集、SQL Server Always On 可用性组（AG）、Exchange 数据库可用性组（DAG）等。 这些群集类型都不使用共享磁盘。
 
 ## <a name="file-share-witness-requirements"></a>文件共享见证要求
 

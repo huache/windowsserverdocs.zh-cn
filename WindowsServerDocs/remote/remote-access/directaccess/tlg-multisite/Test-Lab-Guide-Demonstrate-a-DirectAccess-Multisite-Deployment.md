@@ -2,22 +2,18 @@
 title: 测试实验室指南-演示 DirectAccess 多站点部署
 description: 本主题是测试实验室指南-演示适用于 Windows Server 2016 的 DirectAccess 多站点部署的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c98106c-67cc-406a-810e-f2e09f7e2c5e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1980923d0ed29caa60efa012342ef52c93970dfe
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c915cf9ad5059e0069f68caa6bc7605d6c3fcfab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314504"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861500"
 ---
 # <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>测试实验室指南：演示 DirectAccess 多站点部署
 

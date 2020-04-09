@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5728847d-dcef-4694-9080-d63bfb1fe24b
 title: AD FS 中的访问控制策略
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7ae66fd47953017652ed1e753279e344e0a6c478
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 7355ff9ed49a5e4ee8bca3a3d266a0ec1ecc0780
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949413"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814890"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Windows Server 2012 R2 和 Windows Server 2012 中的访问控制策略 AD FS
 
@@ -66,7 +65,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 ## <a name="enabling-client-access-policy"></a>启用客户端访问策略  
  若要在 Windows Server 2012 R2 的 AD FS 中启用客户端访问策略，必须更新 Microsoft Office 365 标识平台信赖方信任。 选择以下示例方案之一，以配置最符合组织需求的**Microsoft Office 365 标识平台**信赖方信任上的声明规则。  
 
-###  <a name="scenario1"></a>方案1：阻止对 Office 365 的所有外部访问  
+###  <a name="scenario-1-block-all-external-access-to-office-365"></a><a name="scenario1"></a>方案1：阻止对 Office 365 的所有外部访问  
  此客户端访问策略方案允许从所有内部客户端进行访问，并基于外部客户端的 IP 地址阻止所有外部客户端。 你可以使用以下过程将正确的颁发授权规则添加到所选方案的 Office 365 信赖方信任中。  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365"></a>创建规则以阻止对 Office 365 的所有外部访问  
@@ -81,7 +80,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 5.  在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "如果在所需范围之外有任何 IP 声明，拒绝"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法（将上面的值替换为有效的 ip 表达式）：  
 `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
-6.  单击**完成**。 验证新规则是否出现在 "颁发授权规则" 列表中，然后再转到 "默认**允许访问所有用户**" 规则（"拒绝" 规则将优先，即使它在列表的前面显示）。  如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：  </br>
+6.  单击 **“完成”** 。 验证新规则是否出现在 "颁发授权规则" 列表中，然后再转到 "默认**允许访问所有用户**" 规则（"拒绝" 规则将优先，即使它在列表的前面显示）。  如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：  </br>
 
     `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
 
@@ -89,7 +88,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 
      ![颁发身份验证规则](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
 
-###  <a name="scenario2"></a>方案2：阻止对 Office 365 的所有外部访问（Exchange ActiveSync 除外）  
+###  <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a><a name="scenario2"></a>方案2：阻止对 Office 365 的所有外部访问（Exchange ActiveSync 除外）  
  下面的示例允许从包括 Outlook 在内的内部客户端访问所有的 Office 365 应用程序，包括 Exchange Online。 它阻止从位于企业网络外部的客户端进行访问，如客户端 IP 地址所示，智能手机等 Exchange ActiveSync 客户端除外。  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-exchange-activesync"></a>创建规则以阻止对 Office 365 的所有外部访问（Exchange ActiveSync 除外）  
@@ -106,7 +105,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 
     `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
-6.  单击**完成**。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
+6.  单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
 
 7.  接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。  
 
@@ -119,7 +118,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 ~~~
 
-10. 单击**完成**。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
+10. 单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
 
 11. 接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。  
 
@@ -131,7 +130,7 @@ AD FS Windows 10 域加入和登录所需的终结点
    NOT EXISTS([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
    ```  
 
-14. 单击**完成**。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
+14. 单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
 
 15. 接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。  
 
@@ -140,12 +139,12 @@ AD FS Windows 10 域加入和登录所需的终结点
 17. 在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "拒绝具有 ipoutsiderange 的用户和应用程序失败"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法：  
 
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
-18. 单击**完成**。 验证新规则显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前，并显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前。  </br>如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：</br></br>      `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
+18. 单击 **“完成”** 。 验证新规则显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前，并显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前。  </br>如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：</br></br>      `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
 19. 若要保存新规则，请在 "**编辑声明规则**" 对话框中，单击 "确定"。 生成的列表应如下所示。  
 
     ![颁发授权规则](media/Access-Control-Policies-W2K12/clientaccess2.png )  
 
-###  <a name="scenario3"></a>方案3：阻止对 Office 365 的所有外部访问（基于浏览器的应用程序除外）  
+###  <a name="scenario-3-block-all-external-access-to-office-365-except-browser-based-applications"></a><a name="scenario3"></a>方案3：阻止对 Office 365 的所有外部访问（基于浏览器的应用程序除外）  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-browser-based-applications"></a>创建规则以阻止对 Office 365 的所有外部访问（基于浏览器的应用程序除外）  
 
@@ -159,7 +158,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 5.  在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "如果在所需范围外有任何 IP 声明，请颁发 ipoutsiderange 声明"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法（将上面的值替换为有效的 ip 表达式）：  </br>
 `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
-6.  单击**完成**。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
+6.  单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
 
 7.  接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。  
 
@@ -172,7 +171,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
 ~~~
 
-10. 单击**完成**。 验证新规则是否出现在 "颁发授权规则" 列表中，然后再转到 "默认**允许访问所有用户**" 规则（"拒绝" 规则将优先，即使它在列表的前面显示）。  </br></br> 如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：  
+10. 单击 **“完成”** 。 验证新规则是否出现在 "颁发授权规则" 列表中，然后再转到 "默认**允许访问所有用户**" 规则（"拒绝" 规则将优先，即使它在列表的前面显示）。  </br></br> 如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：  
 
    `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
 
@@ -180,7 +179,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 
     ![颁发](media/Access-Control-Policies-W2K12/clientaccess3.png)  
 
-###  <a name="scenario4"></a>方案4：阻止对 Office 365 的所有外部访问（指定的 Active Directory 组除外）  
+###  <a name="scenario-4-block-all-external-access-to-office-365-except-for-designated-active-directory-groups"></a><a name="scenario4"></a>方案4：阻止对 Office 365 的所有外部访问（指定的 Active Directory 组除外）  
  以下示例启用了基于 IP 地址的内部客户端的访问。 它阻止从公司网络外部的客户端进行访问，这些客户端具有外部客户端 IP 地址（指定 Active Directory 组中的个人除外）。使用以下步骤，通过声明规则向导将正确的颁发授权规则添加到**Microsoft Office 365 标识平台**信赖方信任：  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-for-designated-active-directory-groups"></a>创建规则以阻止对 Office 365 的所有外部访问，指定 Active Directory 组除外  
@@ -200,7 +199,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 `c1:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 ~~~
 
-6. 单击**完成**。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
+6. 单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
 
 7. 接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。  
 
@@ -210,7 +209,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 
     `NOT EXISTS([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
 
-10. 单击**完成**。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
+10. 单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。  
 
 11. 接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。  
 
@@ -220,7 +219,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 
    `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 
-14. 单击**完成**。 验证新规则显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前，并显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前。  </br></br>如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：  
+14. 单击 **“完成”** 。 验证新规则显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前，并显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前。  </br></br>如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：  
 
    `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
 
@@ -228,7 +227,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 
      ![颁发](media/Access-Control-Policies-W2K12/clientaccess4.png)  
 
-##  <a name="buildingip"></a>构建 IP 地址范围表达式  
+##  <a name="building-the-ip-address-range-expression"></a><a name="buildingip"></a>构建 IP 地址范围表达式  
  从当前由 Exchange Online 设置的 HTTP 标头中填充了 x ms 转发的客户端 ip 声明，这会在将身份验证请求传递到 AD FS 时填充标头。 声明的值可以是下列值之一：  
 
 > [!NOTE]
@@ -240,7 +239,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 > - 企业网络上的客户端的 IP 地址将显示为组织的出站代理或网关的外部接口 IP 地址。  
 >   -   通过 VPN 或 Microsoft DirectAccess （DA）连接到公司网络的客户端可以显示为内部企业客户端，也可以作为外部客户端出现，具体取决于 VPN 或 DA 的配置。  
 
--   一个或多个 IP 地址：当 Exchange Online 无法确定正在连接的客户端的 IP 地址时，它将基于 x 转发的标头的值设置值，该标头可以包含在基于 HTTP 的请求中，并且受多个客户端、负载均衡器以及市场上的代理。  
+-   一个或多个 IP 地址：当 Exchange Online 无法确定正在连接的客户端的 IP 地址时，它将基于 x 转发的标头的值设置值，这是一个可包含在基于 HTTP 的请求中的非标准标头，由许多客户端、负载平衡器和市场上的代理提供支持。  
 
 > [!NOTE]
 > 1. 多个 IP 地址（表示通过请求的每个代理的客户端 IP 地址和地址）将用逗号分隔。  
@@ -255,13 +254,13 @@ AD FS Windows 10 域加入和登录所需的终结点
 
   首先，将匹配单个 IP 地址的基本模式如下： \b # # #\\. # # #\\. # # #\\. # # # \b  
 
-  扩展此项，我们可以将两个不同的 IP 地址与 OR 表达式匹配，如下所示： \b # # #\\. # # #\\. # # #\\&#124;. # # # \b \b # # #\\. #\\# # \b  
+  扩展此项，我们可以将两个不同的 IP 地址与 OR 表达式匹配，如下所示： \b # # #\\. # # #\\. # # #\\&#124;. # # # \b \b # # #\\. #\\# # \b\\  
 
-  因此，仅匹配两个地址（如192.168.1.1 或10.0.0.1）的示例为： \b192\\. 168\\.1\\.1 \ b&#124;\b10\\.0\\  
+  因此，仅匹配两个地址（如192.168.1.1 或10.0.0.1）的示例为： \b192\\. 168\\.1\\.1 \ b&#124;\b10\\.0\\\\  
 
   这为你提供了可用于输入任意数量的地址的方法。 如果需要允许的地址范围，例如192.168.1.1 –192.168.1.25，则必须按字符： \b192\\. 168\\\\进行匹配。（[1-9]&#124;1 [0-9]&#124;2 [0-5]） \b  
 
-  请注意以下事项：  
+  请注意下列事项：  
 
 - IP 地址被视为字符串而不是数字。  
 
@@ -307,7 +306,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 -   一个或多个 IP 地址  
 
-    -   如果 Exchange Online 无法确定正在连接的客户端的 IP 地址，它将基于 x 转发的标头的值设置值，该标头可以包含在基于 HTTP 的请求中，并且受多个客户端、负载均衡器和市场上的代理。  
+    -   如果 Exchange Online 无法确定正在连接的客户端的 IP 地址，它将基于 x 转发的标头的值设置值，这是一个可包含在基于 HTTP 的请求中的非标准标头，由市场上许多客户端、负载均衡器和代理支持。  
 
     -   指示客户端 IP 地址的多个 IP 地址和传递请求的每个代理的地址将用逗号分隔。  
 

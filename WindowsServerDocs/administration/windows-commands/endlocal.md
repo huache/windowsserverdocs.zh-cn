@@ -1,24 +1,20 @@
 ---
 title: endlocal
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 765fae3c-0c0a-4639-99a4-cf613489b949
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 16d2b7b445a2220a10f88f21029948ed10ee96e4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4958c5419ed4f6374f7c6ecf09bdf67f61134d93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377575"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845110"
 ---
 # <a name="endlocal"></a>endlocal
 
@@ -34,9 +30,9 @@ ms.locfileid: "71377575"
 endlocal
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/?|在命令提示符下显示帮助。|
 
@@ -49,7 +45,7 @@ endlocal
 > [!NOTE]
 > 有关启用和禁用命令扩展的详细信息，请参阅[Cmd](cmd.md)。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 可以在批处理文件中本地化环境变量。 例如，以下程序启动网络上的 superapp 批处理程序，将输出定向到某个文件，并在记事本中显示该文件：
 ```
@@ -61,6 +57,6 @@ endlocal
 start notepad c:\superapp.out
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

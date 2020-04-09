@@ -1,24 +1,20 @@
 ---
 title: wbadmin start systemstaterecovery
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 wbadmin start systemstaterecovery 的 Windows 命令主题，它对指定的位置以及从备份执行系统状态恢复。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 208b1be9-3452-4aba-bb49-46bc587fca96
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ae534eed26629be264b698869edc57232e2b571
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 581ad6fe3591e549c3f89e4c95d2f8ab0cde059c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362220"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829490"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -59,9 +55,9 @@ wbadmin start systemstaterecovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-版本|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入**wbadmin get 版本**。|
 |-showsummary|报告上次系统状态恢复的摘要（在完成操作所需的重新启动后）。 此参数不能与任何其他参数一起使用。|
@@ -72,7 +68,7 @@ wbadmin start systemstaterecovery
 |-autoReboot|指定在系统状态恢复操作结束时重新启动系统。 此参数仅对恢复到原始位置有效。 如果需要在执行恢复操作后执行步骤，则不建议使用此参数。|
 |-quiet|对用户运行无提示的子命令。|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 - 若要在 9:00 A.M. 为03/31/2013 的备份执行系统状态恢复，请键入：  
   ```
@@ -83,8 +79,8 @@ wbadmin start systemstaterecovery
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)
 -   [Backup](wbadmin.md)
 -   [WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx) cmdlet

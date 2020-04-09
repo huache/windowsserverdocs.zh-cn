@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
 title: 事件 ID 2088-复制成功时出现 DNS 查找失败
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d51cbcc93a8decbcb72a1e91854a09345507511d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f84fd7be45995e9e0b318b42c8b4152af244a9da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368910"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823050"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件 ID 2088：DNS 查找失败但复制成功
 
@@ -54,7 +53,7 @@ ms.locfileid: "71368910"
 
 用户操作： 
 
-1) 如果源域控制器不再运行，或者已使用其他计算机名称或 NTDSDSA 对象 GUID 重新安装了其操作系统，请使用 MSKB 一文中所述的步骤删除源域控制器的元数据216498。 
+1) 如果源域控制器不再运行，或者已使用其他计算机名称或 NTDSDSA 对象 GUID 重新安装了其操作系统，请使用 MSKB 文章216498中所述的步骤，删除与 ntdsutil.exe 的源域控制器的元数据。 
 
 2) 确认源域控制器正在运行 Active Directory 并且可在网络上访问，方法是键入 "net view \\&lt;源 DC 名称&gt;" 或 "ping &lt;源 DC 名称&gt;"。 
 

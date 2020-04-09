@@ -1,7 +1,6 @@
 ---
 ms.assetid: bd64a766-5362-4f29-b963-5465c2bb79e7
 title: 规划操作主机角色放置
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: eb17ed55ba7d7ba23d21162fd41f4022821948fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 990f93d44189a6061653d5e190a176b049a280c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402530"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822100"
 ---
 # <a name="planning-operations-master-role-placement"></a>规划操作主机角色放置
 
@@ -23,7 +22,7 @@ ms.locfileid: "71402530"
 Active Directory 域服务（AD DS）支持对目录数据进行多主机复制，这意味着任何域控制器都可以接受目录更改并将更改复制到所有其他域控制器。 但是，某些更改（如架构修改）对于以多主机方式执行是不切实际的。 出于此原因，某些域控制器（称为操作主机）包含负责接受特定更改请求的角色。  
   
 > [!NOTE]  
-> 操作主机角色持有者必须能够将一些信息写入 Active Directory 数据库。 由于只读域控制器（RODC）上 Active Directory 数据库的只读特性， **rodc 不能充当操作主机角色持有**者。  
+> 操作主机角色所有者必须能够向 Active Directory 数据库写入某些信息。 由于只读域控制器（RODC）上 Active Directory 数据库的只读特性， **rodc 不能充当操作主机角色持有**者。  
   
 每个域中都存在三个操作主机角色（也称为灵活单主机操作或 FSMO）：  
   
@@ -52,11 +51,11 @@ Active Directory 域服务（AD DS）支持对目录数据进行多主机复制�
 
 PDC 模拟器处理客户端密码更改。 只有一个域控制器充当林中每个域中的 PDC 仿真器。  
   
-即使所有域控制器都升级到 Windows 2000、Windows Server 2003 和 Windows Server 2008，并且域在 Windows 2000 本机功能级别运行，PDC 仿真器也会接收执行的密码更改的优先复制由域中的其他域控制器。 如果最近更改了密码，则需要将该更改复制到域中的每个域控制器。 如果由于密码不正确，登录身份验证在另一个域控制器上失败，则该域控制器会将身份验证请求转发给 PDC 模拟器，然后决定是接受还是拒绝登录尝试。  
+即使所有域控制器都已升级到 Windows 2000、Windows Server 2003 和 Windows Server 2008，并且域在 Windows 2000 本机功能级别运行，PDC 仿真器也会接收域中其他域控制器执行的密码更改的首选复制。 如果最近更改了密码，则需要将该更改复制到域中的每个域控制器。 如果由于密码不正确，登录身份验证在另一个域控制器上失败，则该域控制器会将身份验证请求转发给 PDC 模拟器，然后决定是接受还是拒绝登录尝试。  
   
 如果需要，请将 PDC 仿真器放置在包含大量用户的域中，以便进行密码转发操作。 此外，请确保位置正确连接到其他位置，以最大程度地减少复制延迟。  
   
-要使工作表帮助你记录有关你计划在何处放置 PDC 模拟器的信息，以及每个位置中每个域的用户数的信息，请参阅 Windows Server 2003 部署工具包的作业助手（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）、下载作业_Aids_Designing_and_Deploying_Directory_and_Security_Services，并打开域控制器布局（DSSTOPO_4）。  
+要使工作表帮助你记录有关你计划在其中放置 PDC 模拟器的位置以及每个位置中每个域的用户数的信息，请参阅 Windows Server 2003 部署工具包的作业助手（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)），下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip 并打开域控制器布局（DSSTOPO_4）。  
   
 你需要参考有关在部署区域性域时需要放置 PDC 模拟器的位置的信息。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](https://technet.microsoft.com/library/cc755118.aspx)。  
   
@@ -83,7 +82,7 @@ PDC 模拟器处理客户端密码更改。 只有一个域控制器充当林中
 - 站点 C 和 D 中的域控制器无法添加或删除目录、DNS 或自定义应用程序分区。  
 - 站点 C 和 D 中的域控制器无法进行架构更改。  
   
-要使工作表帮助你规划操作主机角色放置，请参阅[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，并打开域控制器位置（DSSTOPO_4）。  
+要使工作表帮助你规划操作主机角色放置，请参阅[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip 并打开域控制器布局（DSSTOPO_4 .doc）。  
   
 创建目录林根级域和区域域时，需要引用此信息。 有关部署目录林根级域的详细信息，请参阅部署[部署 Windows Server 2008 林根级域](https://technet.microsoft.com/library/cc731174.aspx)。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](https://technet.microsoft.com/library/cc755118.aspx)。  
 

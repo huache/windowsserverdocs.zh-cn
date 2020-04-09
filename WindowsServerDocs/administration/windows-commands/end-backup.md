@@ -1,24 +1,20 @@
 ---
 title: 结束备份
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8ac1f283-6ecf-4523-8e96-95d435dd4f7f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 331b8249a4d30da883da830d6db802c3327cc25b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a4d3ef3298fa690d425c6f0660f3be6ea2701c6f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377594"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845200"
 ---
 # <a name="end-backup"></a>结束备份
 
@@ -37,6 +33,6 @@ end backup
 
 -   应将此命令用于所有完整备份。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

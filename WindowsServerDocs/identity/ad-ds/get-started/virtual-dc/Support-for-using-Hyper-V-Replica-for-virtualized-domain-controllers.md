@@ -1,7 +1,6 @@
 ---
 ms.assetid: 45a65504-70b5-46ea-b2e0-db45263fabaa
 title: 支持将 Hyper-V 副本用于虚拟化域控制器
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 92324ef7c0fab81e80974a1f05eeec4833f09875
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d882fc5a8e519c461e17a7a82c8abfc6c16fbe9c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390428"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824500"
 ---
 # <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>支持将 Hyper-V 副本用于虚拟化域控制器
 
@@ -64,7 +63,7 @@ Windows Server 2012 Hyper-v 引入了 VM-生成 id （VMGenID）。 VMGenID 提�
 |-|-|  
 |计划的故障转移|非计划的故障转移|  
 |支持|支持|  
-|测试用例：<br /><br />-DC1 和 DC2 正在运行 Windows Server 2012。<br /><br />-DC2 已关闭，并在 DC2-Rec 上执行故障转移。故障转移可以为计划的或非计划的。<br /><br />-在 DC2 开始后，它将检查其数据库中的 VMGenID 值是否与 Hyper-v 副本服务器保存的虚拟机驱动程序中的值相同。<br /><br />-因此，DC2 记录触发了虚拟化安全措施;换句话说，它会重置其 InvocationID，丢弃其 RID 池，并在其假定为操作主机角色之前设置初始同步要求。 有关初始同步要求的详细信息，请参阅 。<br /><br />-DC2 将 VMGenID 的新值保存在其数据库中，并在新 InvocationID 的上下文中提交任何后续更新。<br /><br />-由于 InvocationID 重置，DC1 将聚合到 DC2-Rec 引入的所有 AD 更改上，即使它是及时回滚的，这意味着在故障转移后，在 DC2 记录上执行的任何 AD 更新将安全地聚合起来|对于计划的故障转移，测试用例相同，但存在下列例外：<br /><br />-在发生故障转移事件之前，在 DC2 上收到但尚未由 AD 复制到复制伙伴的 AD 更新将丢失。<br /><br />-在由 AD 向 DC1 复制的恢复点之后，在 DC2 上收到的 AD 更新将从 DC1 复制回 DC2-Rec。|  
+|测试用例：<p>-DC1 和 DC2 正在运行 Windows Server 2012。<p>-DC2 已关闭，并在 DC2-Rec 上执行故障转移。故障转移可以是计划的或非计划的。<p>-在 DC2 开始后，它将检查其数据库中的 VMGenID 值是否与 Hyper-v 副本服务器保存的虚拟机驱动程序中的值相同。<p>-因此，DC2 记录触发了虚拟化安全措施;换句话说，它会重置其 InvocationID，丢弃其 RID 池，并在其假定为操作主机角色之前设置初始同步要求。 有关初始同步要求的详细信息，请参阅 。<p>-DC2 将 VMGenID 的新值保存在其数据库中，并在新 InvocationID 的上下文中提交任何后续更新。<p>-由于 InvocationID 重置，DC1 将聚合到 DC2-Rec 引入的所有 AD 更改上，即使它是及时回滚的，这意味着在故障转移后，在 DC2 记录上执行的任何 AD 更新将安全地聚合起来|对于计划的故障转移，测试用例相同，但存在下列例外：<p>-在发生故障转移事件之前，在 DC2 上收到但尚未由 AD 复制到复制伙伴的 AD 更新将丢失。<p>-在由 AD 向 DC1 复制的恢复点之后，在 DC2 上收到的 AD 更新将从 DC1 复制回 DC2-Rec。|  
   
 ### <a name="windows-server-2008-r2-and-earlier-versions"></a>Windows Server 2008 R2 及较早版本
 
@@ -73,5 +72,5 @@ Windows Server 2012 Hyper-v 引入了 VM-生成 id （VMGenID）。 VMGenID 提�
 |||  
 |-|-|  
 |计划的故障转移|非计划的故障转移|  
-|支持但不推荐，因为运行这些版本的 Windows Server 的 Dc 不支持 VMGenID 或使用关联的虚拟化安全措施。 这使它们面临 USN 回滚的风险。 有关详细信息，请参阅 [USN 和 USN 回滚](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10))。|不支持**注意：** 不存在 USN 回滚风险时将支持非计划的故障转移，例如林中的单个域控制器（不推荐的配置）。|  
-|测试用例：<br /><br />-DC1 和 DC2 正在运行 Windows Server 2008 R2。<br /><br />-DC2 已关闭，并在 DC2-Rec 上执行计划的故障转移。完成关闭操作之前，将 DC2 上的所有数据都复制到 DC2-Rec。<br /><br />-在 DC2 开始后，它会使用与 DC2 相同的 invocationID 恢复与 DC1 的复制。|不可用|  
+|支持，但不建议这样做，因为运行这些版本的 Windows Server 的 DC 不支持 VMGenID 或使用关联的虚拟化安全措施。 这使它们面临 USN 回滚的风险。 有关详细信息，请参阅 [USN 和 USN 回滚](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10))。|不受支持的**注意：** 支持非计划的故障转移，其中 USN 回滚不是风险，例如林中的单个 DC （不推荐的配置）。|  
+|测试用例：<p>-DC1 和 DC2 正在运行 Windows Server 2008 R2。<p>-DC2 已关闭，并在 DC2-Rec 上执行计划的故障转移。在关闭完成之前，DC2 上的所有数据都将复制到 DC2 记录。<p>-在 DC2 开始后，它会使用与 DC2 相同的 invocationID 恢复与 DC1 的复制。|不可用|  

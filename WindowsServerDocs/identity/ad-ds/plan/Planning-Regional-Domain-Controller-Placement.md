@@ -1,7 +1,6 @@
 ---
 ms.assetid: eb600904-24b8-4488-a278-c1c971dc2f2d
 title: 规划区域域控制器放置
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2508476f35462516f32877365cb15be919b5b6df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb1d83d5afca92de85c4de8b3e9125e119250f66
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408737"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822110"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>规划区域域控制器放置
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-若要确保成本效益，请计划尽可能少地放置区域域控制器。 首先，请查看[收集网络信息](../../ad-ds/plan/Collecting-Network-Information.md)时使用的 "地理位置和通信链接" （DSSTOPO_1）工作表，以确定位置是否为集线器。  
+若要确保成本效益，请计划尽可能少地放置区域域控制器。 首先，查看[收集网络信息](../../ad-ds/plan/Collecting-Network-Information.md)时使用的 "地理位置和通信链接" （DSSTOPO_1 .doc）工作表，以确定位置是否为集线器。  
   
 规划为每个中心位置中表示的每个域放置区域域控制器。 将区域域控制器置于所有中心位置之后，请评估是否需要将区域域控制器置于附属位置。 从附属位置消除不必要的区域性域控制器可减少维护远程服务器基础结构所需的支持成本。  
   
@@ -32,7 +31,7 @@ ms.locfileid: "71408737"
   
 仅将可写区域域控制器添加到可保证其物理安全的位置。  
   
-在物理安全性不足的位置上，建议使用部署只读域控制器（RODC）。 除帐户密码之外，RODC 保留可写域控制器包含的所有 Active Directory 对象和属性。 但是，不能对存储在 RODC 上的数据库进行更改。 必须在可写域控制器上进行更改，然后将其复制回 RODC。  
+在物理安全性不足的位置上，建议使用部署只读域控制器（RODC）。 除帐户密码之外，RODC 保存了可写域控制器所保留的所有 Active Directory 对象和属性。 但是，不能对存储在 RODC 上的数据库进行更改。 更改必须在可写域控制器上进行，然后复制回 RODC。  
   
 若要对客户端登录和本地文件服务器的访问进行身份验证，大多数组织都将区域域控制器放置在给定位置的所有区域。 但是，在评估业务位置是否要求客户端具有本地身份验证，或者客户端可以依赖于跨广域网（WAN）链接进行身份验证和查询时，必须考虑许多因素。 下图显示了如何确定是否将域控制器置于附属位置。  
   
@@ -42,15 +41,15 @@ ms.locfileid: "71408737"
 
 由于各种原因，需要对域控制器进行持续管理。 仅将区域域控制器放置在包含可管理域控制器的人员的位置，或确保可以远程管理域控制器。  
   
-在通常不太安全的分支机构环境中，以及对信息技术知识很少的人员而言，部署 RODC 通常是推荐的解决方案。 RODC 的本地管理权限可以委派给任何域用户，而无需授予该用户对域或其他域控制器的任何用户权限。 这允许本地分支用户登录到 RODC，并在服务器上执行维护工作（如升级驱动程序）。 但是，分支用户无法登录到任何其他域控制器或执行域中的任何其他管理任务。 通过这种方式，可以将分支用户委派到有效地管理分支机构中的 RODC，而不会影响域或林的其余部分的安全性。  
+在通常不太安全的分支机构环境中，以及对信息技术知识很少的人员而言，部署 RODC 通常是推荐的解决方案。 RODC 的本地管理权限可以委派给任何域用户，而无需授予该用户对域或其他域控制器的任何用户权限。 这允许本地分支用户登录到 RODC 并在服务器上执行维护工作（例如升级驱动程序）。 但是，分支用户不能登录到任何其他域控制器或在域中执行任何其他管理任务。 通过这种方式，可以将分支用户委派到有效地管理分支机构中的 RODC，而不会影响域或林的其余部分的安全性。  
   
 ## <a name="wan-link-availability"></a>WAN 链接可用性
 
-如果位置不包含可对用户进行身份验证的域控制器，则频繁发生服务中断的 WAN 链接可能会给用户带来极大的生产力损失。 如果 WAN 链路可用性不是 100%，并且远程站点不能容忍服务中断，请将区域域控制器置于用户要求能够在 WAN 链接关闭时登录或 exchange 服务器访问的位置。  
+如果位置不包含可对用户进行身份验证的域控制器，则频繁发生服务中断的 WAN 链接可能会给用户带来极大的生产力损失。 如果 WAN 链路可用性不是100%，并且远程站点不能容忍服务中断，请将区域域控制器置于用户要求能够在 WAN 链接关闭时登录或 exchange 服务器访问的位置。  
   
 ## <a name="authentication-availability"></a>身份验证可用性
 
-某些组织（例如银行）要求用户随时进行身份验证。 将区域域控制器放置在 WAN 链接可用性不是 100% 的位置，但用户需要始终进行身份验证。  
+某些组织（例如银行）要求用户随时进行身份验证。 将区域域控制器放置在 WAN 链接可用性不是100% 的位置，但用户需要始终进行身份验证。  
   
 ## <a name="logon-performance-over-wan-links"></a>通过 WAN 链接的登录性能
 
@@ -80,6 +79,6 @@ ms.locfileid: "71408737"
   
 如果降低维护域控制器的成本比网络流量更重要，则可以集中处理该域的域控制器，不要将任何区域域控制器放置在该位置，也不要考虑在该位置放置 Rodc。  
   
-要使工作表可以帮助你记录区域域控制器的位置以及每个位置中每个域的用户数，请参阅[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services，打开 "域控制器布局" （DSSTOPO_4）。  
+要使工作表帮助你记录区域域控制器的位置以及每个位置中每个域的用户数，请参阅[Windows Server 2003 部署工具包的作业帮助](https://go.microsoft.com/fwlink/?LinkID=102558)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "域控制器布局" （DSSTOPO_4 .doc）。  
   
 你需要参考有关在部署区域域时需要放置区域域控制器的位置的信息。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](https://technet.microsoft.com/library/cc755118.aspx)。  

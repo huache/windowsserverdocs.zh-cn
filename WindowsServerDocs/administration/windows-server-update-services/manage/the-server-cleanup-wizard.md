@@ -2,26 +2,23 @@
 title: 服务器清理向导
 description: Windows Server Update Service （WSUS）主题-如何使用服务器清理向导来管理磁盘空间
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c351797-2716-4442-a668-60d5b4e77751
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e285e59a27b6bf0ef1bf3b1ab0f78a96efa60c87
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 12049e2bba28f2381e6e80db07768b4e180861d6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361535"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828530"
 ---
 # <a name="the-server-cleanup-wizard"></a>服务器清理向导
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 "服务器清理向导" 已集成到用户界面，可用于帮助你管理磁盘空间。 此向导可执行以下操作：
 
@@ -51,7 +48,7 @@ ms.locfileid: "71361535"
   > [!IMPORTANT]
   >  如果使用 "服务器清理向导" 删除不必要的内容，则还会删除从 Microsoft 更新目录站点下载的所有专用更新文件。 运行 "服务器清理向导" 之后，必须重新导入这些文件。 
 
-如果使用自动批准规则批准更新，则这些更新可能仍处于 "已批准" 状态，并且不会被服务器清理向导删除。 若要删除处于 "已批准" 状态的自动批准的更新，WSUS 管理员至少必须将 "被取代的更新" 的审批状态手动设置为 "未批准"，以便它们可由服务器清理向导赤纬。 "服务器清理向导" 将确保更新更新，并确保在将更新标记为 "已拒绝" 之前，不会根据需要向客户端系统报告该更新。
+如果使用自动批准规则批准更新，则这些更新可能仍处于已批准状态，并且不会被服务器清理向导删除。 若要删除处于 "已批准" 状态的自动批准的更新，WSUS 管理员至少必须将 "未批准的更新" 的审批状态手动设置为 "未批准"，以便它们可以由服务器清理向导赤纬。 "服务器清理向导" 将确保更新更新，并确保在将更新标记为 "已拒绝" 之前，任何客户端系统仍不会报告该更新。
 
 
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: c32606b4-2ee2-4df3-a704-8ac6723e188f
 title: DNS 和 AD DS
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 82c96ac3f146510c5590aabea75a60ca0f5f90cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0eaddb6e94011a14b352b813cf508062116001f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402682"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822720"
 ---
 # <a name="dns-and-ad-ds"></a>DNS 和 AD DS
 
@@ -29,7 +28,7 @@ AD DS 可以轻松地将 Active Directory 命名空间集成到现有的 DNS 命
 > [!NOTE]  
 > 如果实现了一个不连续的命名空间，其中 AD DS 域名不同于客户端使用的主 DNS 后缀，则与 DNS 的 AD DS 集成更为复杂。 有关详细信息，请参阅非[连续命名空间](../../ad-ds/plan/../../ad-ds/plan/Disjoint-Namespace.md)。  
   
-## <a name="in-this-section"></a>本节内容  
+## <a name="in-this-section"></a>本部分内容  
   
 - [域控制器位置](../../ad-ds/plan/Domain-Controller-Location.md)  
 - [Active Directory 集成 DNS 区域](../../ad-ds/plan/Active-Directory-Integrated-DNS-Zones.md)  

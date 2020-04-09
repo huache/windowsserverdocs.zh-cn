@@ -1,20 +1,20 @@
 ---
 ms.assetid: 289cbd10-e7ec-4f2e-8dd1-eb5692565578
 title: 故障转移群集主题的更改历史记录
+description: Windows Server 2016 故障转移群集文档中的新主题和更新主题
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
-manager: daveba
+manager: lizross
 ms.author: jgerend
 ms.date: 01/07/2020
-description: Windows Server 2016 故障转移群集文档中的新主题和更新主题
-ms.openlocfilehash: b29a1dd979dc5ab14684a83e549ce3e6b3c273f1
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 73767eb8411523a93f3a4fe2e04106c81cc39f9b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953044"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827900"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>故障转移群集主题的更改历史记录
 
@@ -24,59 +24,59 @@ ms.locfileid: "75953044"
 
 > 如果要查找 Windows Server 2016 的更新历史记录，请参阅 [Windows 10 和 Windows Server 2016 更新历史记录](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)。
 
-## <a name="january-2020"></a>2020 年 1 月
+## <a name="january-2020"></a>2020年1月
 
-|新的或已更改的主题                                    |描述 |
+|新的或已更改的主题                                    |说明 |
 |--------------------------------------------------------|------------|
-|[群集事件](system-events.md)| “新建”     |
+|[群集事件](system-events.md)| 新建     |
 
 ## <a name="march-2019"></a>2019 年 3 月
 
-|新的或已更改的主题                                    |描述 |
+|新的或已更改的主题                                    |说明 |
 |--------------------------------------------------------|------------|
-|[群集关联](cluster-affinity.md)| “新建”     |
+|[群集关联](cluster-affinity.md)| 新建     |
 
 ## <a name="february-2019"></a>2019 年 2 月
 
-|新的或已更改的主题                                    |描述 |
+|新的或已更改的主题                                    |说明 |
 |--------------------------------------------------------|------------|
-| [在同一硬件上升级故障转移群集](upgrade-option-same-hardware.md)| “新建” |
-|[部署双节点文件服务器](deploy-two-node-clustered-file-server.md)| “新建” |
+| [在同一硬件上升级故障转移群集](upgrade-option-same-hardware.md)| 新建 |
+|[部署双节点文件服务器](deploy-two-node-clustered-file-server.md)| 新建 |
 
-## <a name="january-2019"></a>2019 年 1 月
+## <a name="january-2019"></a>2019年1月
 
-|新的或已更改的主题                                    |描述 |
+|新的或已更改的主题                                    |说明 |
 |--------------------------------------------------------|------------|
-|[部署文件共享见证](file-share-witness.md)    | “新建”        |
-|[群集域迁移](cluster-domain-migration.md) | “新建”        |
+|[部署文件共享见证](file-share-witness.md)    | 新建        |
+|[群集域迁移](cluster-domain-migration.md) | 新建        |
 
 ## <a name="november-2018"></a>2018 年 11 月
 
-|新的或已更改的主题|描述|
+|新的或已更改的主题|说明|
 |---|---|
 |[在 Active Directory 中配置群集帐户](configure-ad-accounts.md)|从[以前版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)的库迁移|
 
 ## <a name="october-2018"></a>2018 年 10 月
 
-|新的或已更改的主题|描述|
+|新的或已更改的主题|说明|
 |---|---|
 |[群集的新增功能](whats-new-in-failover-clustering.md)| Windows Server 2019 更新|
 
-## <a name="june-2018"></a>2018 年 6 月
+## <a name="june-2018"></a>2018年6月
 
-|新的或已更改的主题|描述|
+|新的或已更改的主题|说明|
 |---|---|
 |[群集集](../storage/storage-spaces/cluster-sets.md)| 新主题|
 
 ## <a name="may-2018"></a>2018 年 5 月
 
-|新的或已更改的主题|描述|
+|新的或已更改的主题|说明|
 |---|---|
 |[配置和管理仲裁](manage-cluster-quorum.md) | 已从[以前的版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)库迁移。 |
 
 ## <a name="april-2018"></a>2018 年 4 月
 
-|新的或已更改的主题|描述|
+|新的或已更改的主题|说明|
 |---|---|
 |[使用 Windows 错误报告排查故障转移群集问题](troubleshooting-using-WER-reports.md)| 新主题。 |
 |[横向扩展应用程序数据文件服务器](sofs-overview.md)|已从[以前的版本](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)库迁移。|
@@ -88,13 +88,13 @@ ms.locfileid: "75953044"
 
 ## <a name="june-2017"></a>2017 年 6 月
 
-|新的或已更改的主题|描述|
+|新的或已更改的主题|说明|
 |---|---|
 |[群集感知更新高级选项](cluster-aware-updating-options.md)|添加了有关使用包含空格的运行配置文件路径的信息。|
 
 ## <a name="april-2017"></a>2017 年 4 月
 
-|新的或已更改的主题|描述|
+|新的或已更改的主题|说明|
 |---|---|
 |[群集感知更新概述](cluster-aware-updating.md)|新主题。|
 |[群集感知更新要求和最佳做法](cluster-aware-updating-requirements.md)|新主题。|
@@ -105,12 +105,12 @@ ms.locfileid: "75953044"
 
 ## <a name="march-2017"></a>2017 年 3 月
 
-|新的或已更改的主题|描述|
+|新的或已更改的主题|说明|
 |---|---|
 |[为故障转移群集部署云见证](deploy-cloud-witness.md)| 更新了屏幕截图，以匹配 Microsoft Azure 的更改。|
 
 ## <a name="february-2017"></a>2017 年 2 月
 
-|新的或已更改的主题|描述|
+|新的或已更改的主题|说明|
 |---|---|
 |[群集操作系统滚动升级](Cluster-Operating-System-Rolling-Upgrade.md)|删除了不必要的警告说明并添加了链接。|

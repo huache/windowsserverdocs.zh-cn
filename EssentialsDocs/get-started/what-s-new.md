@@ -1,23 +1,19 @@
 ---
 title: Windows Server 2016 Essentials 中的新增功能
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1d5176a69136e9bad36e22472b8fadbd6d0e9e79
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 420d3b043959b8b1201aad7a5b3210fd9bd6a0da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310308"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817750"
 ---
 # <a name="whats-new-in-windows-server-2016-essentials"></a>Windows Server 2016 Essentials 中的新增功能
 
@@ -27,7 +23,7 @@ ms.locfileid: "80310308"
 
 ## <a name="integration-with-azure-site-recovery-services"></a>[与 Azure Site Recovery Services 的集成](azure-site-recovery-services-integration.md)
 
-**它**的作用-如果受保护的虚拟机失败，或者运行受保护虚拟机的主机服务器发生故障，则使用 Azure Site Recovery 服务进行故障转移会保持业务连续性，直到本地虚拟机或主机服务器已修复并可用。 
+当受保护的虚拟机失败，或者运行受保护虚拟机的主机服务器发生故障时， --&reg;，Azure Site Recovery 服务的故障**转移会保持**业务连续性，直到本地虚拟机或主机服务器已修复并可用。 
 
 **它的工作原理**-Azure Site Recovery 服务在 Microsoft Azure 中提供，可将虚拟机（VM）实时复制到 Azure 中的备份保管库。 如果你的服务器或站点由于硬件或其他故障而停机，则可以使用 Azure Site Recovery 服务进行故障转移，以便将存储在备份保管库中的 VM 映像预配为 Azure 中正在运行的 VM。 与 Azure 虚拟网络相结合，先前连接到本地服务器的客户端电脑将以透明方式连接到在 Azure 中运行的服务器。     
                                                                                                                                                                                                                                                                                                                
@@ -52,4 +48,4 @@ ms.locfileid: "80310308"
 <a name="see-also"></a>另请参阅
 --------
 
-[Windows Server Essentials 入门](get-started.md)
+[Windows Server Essentials &copy;的入门](get-started.md)&reg;

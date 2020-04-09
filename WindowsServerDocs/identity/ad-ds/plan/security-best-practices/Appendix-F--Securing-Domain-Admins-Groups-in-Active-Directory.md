@@ -1,7 +1,6 @@
 ---
 ms.assetid: 017b88a6-f29b-4787-99b6-b5c8eaf8c3df
 title: 附录 F-保护 Active Directory 中的域管理员组
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4f453aa9f076b0272821849840106dae0c52fbbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1df7403b7e50fa50894bb4dbaa0cac9c6f42727
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408698"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821500"
 ---
 # <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>附录 F：保护 Active Directory 中的 Domain Admins 组
 
@@ -32,11 +31,11 @@ ms.locfileid: "71408698"
 
 2.  在链接到包含每个域中成员服务器和工作站的 Ou 的 Gpo 中，DA 组应添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
-    -   拒绝从网络访问这台计算机  
+    -   拒绝从网络访问该计算机  
 
-    -   拒绝作为批处理作业登录  
+    -   拒绝以批处理作业登录  
 
-    -   拒绝以服务身份登录  
+    -   拒绝以服务登录  
 
     -   拒绝本地登录  
 
@@ -215,7 +214,7 @@ ms.locfileid: "71408698"
 
 7.  在 "**程序/脚本**" 下，单击 "**浏览**"，找到并选择 "**创建批处理文件**" 部分中创建的批处理文件，然后单击 "**打开**"。  
 
-8.  单击**确定**。  
+8.  单击“确定”。  
 
 9. 单击“常规”选项卡。  
 
@@ -225,7 +224,7 @@ ms.locfileid: "71408698"
 
 12. 选择 **"不管用户是否登录都要运行"** ，并选择 "不**存储密码**"。 该任务将仅有权访问本地计算机资源。  
 
-13. 单击**确定**。  
+13. 单击“确定”。  
 
 14. 应显示一个对话框，请求用户帐户凭据以运行任务。  
 

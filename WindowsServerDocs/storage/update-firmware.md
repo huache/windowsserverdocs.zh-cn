@@ -3,20 +3,20 @@ ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
 title: 更新驱动器固件
 ms.prod: windows-server
 ms.author: toklima
-ms.manager: dmoss
+manager: dmoss
 ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 2f0530101bb7d597d2d95c26648aad65d62b69ca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 55a4fc94440b763c48735ffe44099da702857489
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365870"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820870"
 ---
 # <a name="updating-drive-firmware"></a>更新驱动器固件
->适用于：Windows Server 2019、Windows Server 2016、Windows 10
+>适用于： Windows Server 2019、Windows Server 2016、Windows 10
 
 更新驱动器固件历来是一项可能需要停机的繁重任务，这正是我们要对存储空间、Windows Server 以及 Windows 10 版本 1703 和更高版本进行改进的原因。 如果你有支持 Windows 中包含的新固件更新机制的驱动器，则可以在无需停机的情况下更新生产中驱动器的驱动器固件。 但是，如果你打算更新生产驱动器的固件，请确保阅读我们的关于如何在使用此强大的新功能时最大限度减少风险的提示。
 
@@ -30,11 +30,11 @@ ms.locfileid: "71365870"
 有关你的硬件是否支持 Windows 更新驱动器固件的信息，请联系你的解决方案供应商。
 以下是指向各种要求的链接：
 
--   SATANo__t [-在](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) **[If 实现 @ 固件下载 & 激活**部分
+-   SATA：[Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) - 在 **[如果已实施\] 固件下载和激活**部分
     
--   块No__t [-在](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) **[If 实现 @ 固件下载 & 激活**部分
+-   SAS：[Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) - 在 **[如果已实施\] 固件下载和激活**部分
 
--   NVMe[ControllerDrive](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) -在**5.7**和**5.8**节中。
+-   NVMe：[Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) - 在部分 **5.7** 和 **5.8**。
 
 ## <a name="powershell-cmdlets"></a>PowerShell cmdlet
 
@@ -43,7 +43,7 @@ ms.locfileid: "71365870"
 -   Get-StorageFirmwareInformation
 -   Update-StorageFirmware
 
-第一个 cmdlet 为你提供有关设备的功能、固件映像和修订的详细信息。 在这种情况下，计算机仅包含单个带 1 个固件插槽的 SATA SSD。 以下是一个示例：
+第一个 cmdlet 为你提供有关设备的功能、固件映像和修订的详细信息。 在这种情况下，计算机仅包含单个带 1 个固件插槽的 SATA SSD。 下面是一个示例：
 
    ```powershell
    Get-PhysicalDisk | Get-StorageFirmwareInformation
@@ -166,7 +166,7 @@ $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponen
 
 若要查看操作中的运行状况服务并详细了解其推出机制，请参阅此视频： https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
-## <a name="frequently-asked-questions"></a>常见问题解答
+## <a name="frequently-asked-questions"></a>常见问题
 
 另请参阅[驱动器固件更新疑难解答](troubleshoot-firmware-update.md)。
 
@@ -195,7 +195,7 @@ cmdlet 也可以在群集驱动器上执行其功能，但请记住，运行状�
 
 ### <a name="what-happens-if-the-update-fails"></a>更新失败怎么办
 
-更新可能因多种原因而失败，其中一些原因如下：1）驱动器不支持 Windows 更新其固件的正确命令。 在这种情况下，新的固件映像永远不会激活并且驱动器继续使用旧映像运行。 2) 无法将映像下载到或应用于此驱动器（版本不匹配、映像损坏...）。 在这种情况下，激活命令无法激活驱动器。 同样地，旧的固件映像将继续运行。
+更新失败可能是各种原因导致的，其中一些是：1) 驱动器不支持 Windows 用于更新其固件的正确命令。 在这种情况下，新的固件映像永远不会激活并且驱动器继续使用旧映像运行。 2) 无法将映像下载到或应用于此驱动器（版本不匹配、映像损坏...）。 在这种情况下，激活命令无法激活驱动器。 同样地，旧的固件映像将继续运行。
 
 如果固件更新后驱动器根本没有响应，你很可能是遇到了驱动器固件本身的 bug。 在投入生产之前，请在实验室环境中测试所有固件更新。 唯一的补救措施可能是更换驱动器。
 

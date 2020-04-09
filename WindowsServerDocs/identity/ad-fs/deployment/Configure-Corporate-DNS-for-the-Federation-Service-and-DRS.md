@@ -1,7 +1,6 @@
 ---
 ms.assetid: aca4a4fa-b12c-4eed-a499-f9aedb7d2fd6
 title: 为联合身份验证服务和 DRS 配置企业 DNS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,19 +8,19 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9f0b04f9dc050117fdefc630759c86d2b1bb1ecc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e3f2b36b7949e4bbde78942006e985f41abf9df
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408440"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814261"
 ---
 # <a name="configure-corporate-dns-for-the-federation-service-and-drs"></a>为联合身份验证服务和 DRS 配置企业 DNS
   
 ## <a name="step-6-add-a-host-a-and-alias-cname-resource-record-to-corporate-dns-for-the-federation-service-and-drs"></a>步骤6：将主机 \(\) 和别名 \(CNAME\) 资源记录添加到联合身份验证服务和 DRS 的企业 DNS  
 你必须为你在前面步骤中配置的联合身份验证服务和设备注册服务，将以下资源记录添加到公司域名系统 \(DNS\)。  
   
-|条目|在任务栏的搜索框中键入|地址|  
+|条目|类型|Address|  
 |---------|--------|-----------|  
 |联合身份验证\_服务\_名称|主机 \(\)|AD FS 服务器场前面配置的 AD FS 服务器的 IP 地址或负载均衡器的 IP 地址|  
 |enterpriseregistration|别名 \(CNAME\)|联合\_server\_name.contoso.com|  
@@ -38,7 +37,7 @@ ms.locfileid: "71408440"
   
 3.  在 "**名称**" 框中，键入要用于 AD FS 场的名称。  
   
-4.  在 **IP 地址**框中，键入联合身份验证服务器的 IP 地址。 单击“添加主机”。  
+4.  在 **IP 地址**框中，键入联合身份验证服务器的 IP 地址。 单击 **“添加主机”** 。  
   
 5.  右键\-单击 "**域\_名称**" 节点，然后单击 "**新建别名 \(CNAME\)** "。  
   

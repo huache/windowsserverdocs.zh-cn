@@ -1,6 +1,5 @@
 ---
 title: TLS （Schannel SSP）
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: ebd3c40c-b4c0-4f6d-a00c-f90eda4691df
@@ -8,16 +7,16 @@ manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 05/16/2018
-ms.openlocfilehash: e103e985592e6aed150ccd3e1a87e56f19621dbe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3547c77e8c58bcbb219a7b017c3186f198007805
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403387"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820160"
 ---
 # <a name="tls-schannel-ssp-changes-in-windows-10-and-windows-server-2016"></a>TLS （Schannel SSP）在 Windows 10 和 Windows Server 2016 中的更改
 
->适用于：Windows Server （半年频道）、Windows Server 2016 和 Windows 10
+>适用于：Windows Server（半年频道）、Windows Server 2016 和 Windows 10
 
 ## <a name="cipher-suite-changes"></a>密码套件更改
 
@@ -27,16 +26,16 @@ Windows 10 版本1511和 Windows Server 2016 添加了对使用移动设备管�
 
 添加了对以下密码套件的支持：
 
-- Windows 10 版本1507和 Windows Server 2016 中的 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 （RFC 5289）
-- Windows 10 版本1507和 Windows Server 2016 中的 TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 （RFC 5289）
+- Windows 10 中的 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 （RFC 5289）、版本1507和 Windows Server 2016
+- Windows 10 中的 TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 （RFC 5289）、版本1507和 Windows Server 2016
 
 以下密码套件的 DisabledByDefault 更改：
 
-- Windows 10 版本1703中的 TLS_DHE_DSS_WITH_AES_256_CBC_SHA256 （RFC 5246）
-- Windows 10 版本1703中的 TLS_DHE_DSS_WITH_AES_128_CBC_SHA256 （RFC 5246）
-- Windows 10 版本1703中的 TLS_DHE_DSS_WITH_AES_256_CBC_SHA （RFC 5246）
-- Windows 10 版本1703中的 TLS_DHE_DSS_WITH_AES_128_CBC_SHA （RFC 5246）
-- Windows 10 版本1703中的 TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA （RFC 5246）
+- Windows 10 中的 TLS_DHE_DSS_WITH_AES_256_CBC_SHA256 （RFC 5246），版本1703
+- Windows 10 中的 TLS_DHE_DSS_WITH_AES_128_CBC_SHA256 （RFC 5246），版本1703
+- Windows 10 中的 TLS_DHE_DSS_WITH_AES_256_CBC_SHA （RFC 5246），版本1703
+- Windows 10 中的 TLS_DHE_DSS_WITH_AES_128_CBC_SHA （RFC 5246），版本1703
+- Windows 10 中的 TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA （RFC 5246），版本1703
 - Windows 10 版本1709中的 TLS_RSA_WITH_RC4_128_SHA
 - Windows 10 版本1709中的 TLS_RSA_WITH_RC4_128_MD5
 
@@ -56,7 +55,7 @@ Windows 10 版本1507和 Windows Server 2016 添加了 Diffie-hellman 密钥大�
 
 ### <a name="sch_use_strong_crypto-option-changes"></a>SCH_USE_STRONG_CRYPTO 选项更改
 
-对于 Windows 10，版本1507和 Windows Server 2016， [SCH_USE_STRONG_CRYPTO](https://msdn.microsoft.com/library/windows/desktop/aa379810.aspx)选项现在禁用 NULL、MD5、DES 和导出密码。
+通过 Windows 10 版本1507和 Windows Server 2016， [SCH_USE_STRONG_CRYPTO](https://msdn.microsoft.com/library/windows/desktop/aa379810.aspx)选项现在禁用 NULL、MD5、DES 和导出密码。
 
 ## <a name="elliptical-curve-changes"></a>椭圆曲线更改
 
@@ -97,22 +96,22 @@ Windows 10 版本1607和 Windows Server 2016 添加了对 PSK 密钥交换算法
 
 添加了对以下 PSK 密码套件的支持：
 
-- Windows 10 版本1607和 Windows Server 2016 中的 TLS_PSK_WITH_AES_128_CBC_SHA256 （RFC 5487）
-- Windows 10 版本1607和 Windows Server 2016 中的 TLS_PSK_WITH_AES_256_CBC_SHA384 （RFC 5487）
-- Windows 10 版本1607和 Windows Server 2016 中的 TLS_PSK_WITH_NULL_SHA256 （RFC 5487）
-- Windows 10 版本1607和 Windows Server 2016 中的 TLS_PSK_WITH_NULL_SHA384 （RFC 5487）
-- Windows 10 版本1607和 Windows Server 2016 中的 TLS_PSK_WITH_AES_128_GCM_SHA256 （RFC 5487）
-- Windows 10 版本1607和 Windows Server 2016 中的 TLS_PSK_WITH_AES_256_GCM_SHA384 （RFC 5487）
+- Windows 10 中的 TLS_PSK_WITH_AES_128_CBC_SHA256 （RFC 5487）、版本1607和 Windows Server 2016
+- Windows 10 中的 TLS_PSK_WITH_AES_256_CBC_SHA384 （RFC 5487）、版本1607和 Windows Server 2016
+- Windows 10 中的 TLS_PSK_WITH_NULL_SHA256 （RFC 5487）、版本1607和 Windows Server 2016
+- Windows 10 中的 TLS_PSK_WITH_NULL_SHA384 （RFC 5487）、版本1607和 Windows Server 2016
+- Windows 10 中的 TLS_PSK_WITH_AES_128_GCM_SHA256 （RFC 5487）、版本1607和 Windows Server 2016
+- Windows 10 中的 TLS_PSK_WITH_AES_256_GCM_SHA384 （RFC 5487）、版本1607和 Windows Server 2016
 
 ## <a name="session-resumption-without-server-side-state-server-side-performance-improvements"></a>无服务器端状态服务器端性能改进的会话恢复
 
-与 Windows Server 2012 相比，windows 10 版本1507和 Windows Server 2016 提供每秒更多 30% 的会话摘要。
+与 Windows Server 2012 相比，windows 10 版本1507和 Windows Server 2016 提供每秒更多30% 的会话摘要。
 
 ## <a name="session-hash-and-extended-master-secret-extension"></a>会话哈希和扩展的主密钥扩展
 
-Windows 10 版本1507和 Windows Server 2016 添加了 RFC 7627 支持：传输层安全性（TLS）会话哈希和扩展的主密钥扩展。
+Windows 10 版本1507和 Windows Server 2016 增加了对 RFC 7627：传输层安全性（TLS）会话哈希和扩展主密钥扩展的支持。
 
-由于此更改，Windows 10 和 Windows Server 2016 需要第三方[CNG SSL 提供程序](https://msdn.microsoft.com/library/windows/desktop/ff468652.aspx)更新以支持 NCRYPT_SSL_INTERFACE_VERSION_3，并描述此新接口。
+由于此更改，Windows 10 和 Windows Server 2016 需要第三方[CNG SSL 提供程序](https://msdn.microsoft.com/library/windows/desktop/ff468652.aspx)更新来支持 NCRYPT_SSL_INTERFACE_VERSION_3，并描述此新接口。
 
 
 ## <a name="ssl-support"></a>SSL 支持
@@ -123,11 +122,11 @@ Windows 10 版本1507和 Windows Server 2016 添加了 RFC 7627 支持：传输�
 
 ## <a name="changes-to-windows-tls-adherence-to-tls-12-requirements-for-connections-with-non-compliant-tls-clients"></a>对 Windows TLS 的更改遵循与不符合 TLS 客户端的连接的 TLS 1.2 要求
 
-在 TLS 1.2 中，客户端使用["signature_algorithms" 扩展](https://tools.ietf.org/html/rfc5246#section-7.4.1.4.1)向服务器指示可以在数字签名中使用的签名/哈希算法对（即服务器证书和服务器密钥交换）。 TLS 1.2 RFC 还要求服务器证书消息 "signature_algorithms" 扩展：
+在 TLS 1.2 中，客户端使用["signature_algorithms" 扩展](https://tools.ietf.org/html/rfc5246#section-7.4.1.4.1)向服务器指示哪些签名/哈希算法对可用于数字签名（即服务器证书和服务器密钥交换）。 TLS 1.2 RFC 还要求服务器证书消息服从 "signature_algorithms" 扩展：
 
 "如果客户端提供了" signature_algorithms "扩展，则服务器提供的所有证书必须由该扩展中显示的哈希/签名算法对签名。"
 
-在实际操作中，某些第三方 TLS 客户端不符合 TLS 1.2 RFC，并且不能包含它们愿意接受到 "signature_algorithms" 扩展中的所有签名和哈希算法对，也不能完全省略扩展（后者指示该客户端仅支持具有 RSA、DSA 或 ECDSA 的 SHA1 的服务器。
+在实践中，某些第三方 TLS 客户端不符合 TLS 1.2 RFC，并且未能包含它们愿意在 "signature_algorithms" 扩展中接受的所有签名和哈希算法对，也不能完全省略扩展（后者向服务器指示，客户端仅支持与 RSA、DSA 或 ECDSA 的 SHA1）。
 
 TLS 服务器的每个终结点通常只配置一个证书，这意味着服务器无法始终提供满足客户端要求的证书。
 

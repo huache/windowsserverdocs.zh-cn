@@ -1,7 +1,6 @@
 ---
 ms.assetid: ea015cbc-dea9-4c72-a9d8-d6c826d07608
 title: 附录 H-保护本地管理员帐户和组
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7e0cff62851250009d8af6ec7d87ec8191dcaec0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c5cb76ff137912893c5bc0322d5b79bee2203fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408634"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821460"
 ---
 # <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>附录 H：保护本地管理员帐户和组
 
@@ -32,11 +31,11 @@ ms.locfileid: "71408634"
 -   配置 Gpo 以限制域的管理员帐户在加入域的系统上的使用  
     -   在你创建的一个或多个 Gpo 并链接到每个域中的工作站和成员服务器 Ou，将管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
-        -   拒绝从网络访问这台计算机  
+        -   拒绝从网络访问该计算机  
 
-        -   拒绝作为批处理作业登录  
+        -   拒绝以批处理作业登录  
 
-        -   拒绝以服务身份登录  
+        -   拒绝以服务登录  
 
         -   拒绝通过远程桌面服务登录  
 
@@ -83,7 +82,7 @@ ms.locfileid: "71408634"
 
         ![保护本地管理帐户和组](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_105.png)  
 
-    3.  单击**确定**。  
+    3.  单击“确定”。  
 
         > [!IMPORTANT]  
         > 当你将管理员帐户添加到这些设置时，你将指定你是通过标记帐户的方式配置本地管理员帐户还是域管理员帐户。 例如，若要将 AZURE-TAILSPINTOYS 域的管理员帐户添加到这些拒绝权限，请浏览到 AZURE-TAILSPINTOYS 域的管理员帐户，该帐户将显示为 TAILSPINTOYS\Administrator。 如果在组策略对象编辑器中的 "用户权限" 设置中键入**管理员**，则会限制应用 GPO 的每台计算机上的本地管理员帐户，如前文所述。  
@@ -96,7 +95,7 @@ ms.locfileid: "71408634"
 
         ![保护本地管理帐户和组](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_106.png)  
 
-    3.  单击**确定**。  
+    3.  单击“确定”。  
 
         > [!IMPORTANT]  
         > 当你将管理员帐户添加到这些设置时，你将指定你是通过标记帐户的方式配置本地管理员帐户还是域管理员帐户。 例如，若要将 AZURE-TAILSPINTOYS 域的管理员帐户添加到这些拒绝权限，请浏览到 AZURE-TAILSPINTOYS 域的管理员帐户，该帐户将显示为 TAILSPINTOYS\Administrator。 如果在组策略对象编辑器中的 "用户权限" 设置中键入**管理员**，则会限制应用 GPO 的每台计算机上的本地管理员帐户，如前文所述。  
@@ -109,7 +108,7 @@ ms.locfileid: "71408634"
 
         ![保护本地管理帐户和组](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_107.png)  
 
-    3.  单击**确定**。  
+    3.  单击“确定”。  
 
         > [!IMPORTANT]  
         > 当你将管理员帐户添加到这些设置时，你将指定你是通过标记帐户的方式配置本地管理员帐户还是域管理员帐户。 例如，若要将 AZURE-TAILSPINTOYS 域的管理员帐户添加到这些拒绝权限，请浏览到 AZURE-TAILSPINTOYS 域的管理员帐户，该帐户将显示为 TAILSPINTOYS\Administrator。 如果在组策略对象编辑器中的 "用户权限" 设置中键入**管理员**，则会限制应用 GPO 的每台计算机上的本地管理员帐户，如前文所述。  
@@ -191,7 +190,7 @@ ms.locfileid: "71408634"
 
 7.  在 "**程序/脚本**" 字段中，单击 "**浏览**"，找到并选择 "**创建批处理文件**" 部分中创建的批处理文件，然后单击 "**打开**"。  
 
-8.  单击**确定**。  
+8.  单击“确定”。  
 
 9. 单击“常规”选项卡。  
 
@@ -201,7 +200,7 @@ ms.locfileid: "71408634"
 
 12. 选择 **"运行用户是否登录"，或者 "** 不**存储密码**"。 该任务将仅有权访问本地计算机资源。  
 
-13. 单击**确定**。  
+13. 单击“确定”。  
 
 14. 应显示一个对话框，请求用户帐户凭据以运行任务。  
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 341614c6-72c2-444f-8b92-d2663aab7070
 title: 虚拟化域控制器体系结构
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e8673b9e66a0aa3b6bea89b91ae5022efb26c65c
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: fa8645198374d91911f8ec7dc15f04bea4865e38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323149"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824440"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>虚拟化域控制器体系结构
 
@@ -26,7 +25,7 @@ ms.locfileid: "79323149"
   
 -   [虚拟化域控制器安全还原体系结构](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)  
   
-## <a name="BKMK_CloneArch"></a>虚拟化域控制器克隆体系结构  
+## <a name="virtualized-domain-controller-cloning-architecture"></a><a name="BKMK_CloneArch"></a>虚拟化域控制器克隆体系结构  
   
 ### <a name="overview"></a>概述  
 虚拟化域控制器克隆依赖于虚拟机监控程序平台以显示名为 **VM 生成 ID** 的标识符，用于检测虚拟机的创建。 在域控制器升级期间，AD DS 最初将此标识符的值存储在其数据库 (NTDS.DIT) 中。 虚拟机启动时，将比较虚拟机中 VM 生成 ID 的当前值和数据库中的值。 如果两个值不同，则域控制器重置调用 ID 并弃用 RID 池，从而阻止重复使用 USN 或消除创建重复安全主体的可能性。 然后，此域控制器将在[克隆详细处理](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails)的步骤 3 中标注的位置上查找 DCCloneConfig.xml 文件。 如果找到 DCCloneConfig.xml 文件，则可以确定正将其部署为克隆，因此它通过使用从源媒体复制过来的现有 NTDS.DIT 和 SYSVOL 内容进行重新升级，从而启动克隆以将其本身设置为额外的域控制器。  
@@ -35,7 +34,7 @@ ms.locfileid: "79323149"
   
 如果在支持 VM 生成 ID 的虚拟机监控程序上部署克隆媒体，但未提供 DCCloneConfig.xml 文件，则当 DC 检测到其 DIT 和新 VM 的 DIT 之间的 VM 生成 ID 发生更改时，它将触发安全措施，以阻止重复使用 USN 并避免重复 SID。 但是，将不会启动克隆，因此辅助 DC 将在与源域控制器相同的标识下继续运行。 为了避免环境中出现任何不一致，应及早从网络中删除此辅助 DC。 有关如何在确保更新获取已复制出站的同时回收此辅助 DC 的详细信息，请参阅 Microsoft 知识库文章 [2742970](https://support.microsoft.com/kb/2742970)。  
   
-### <a name="BKMK_CloneProcessDetails"></a>克隆详细处理  
+### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>克隆详细处理  
 下图显示了初始克隆操作和克隆重试操作的体系结构。 稍后，本主题将对这些过程进行详细说明。  
   
 **初始克隆操作**  
@@ -142,7 +141,7 @@ ms.locfileid: "79323149"
   
 26. 来宾将重新启动。 现在这是一个正常的、正在进行播发的域控制器。  
   
-## <a name="BKMK_SafeRestoreArch"></a>虚拟化域控制器安全还原体系结构  
+## <a name="virtualized-domain-controller-safe-restore-architecture"></a><a name="BKMK_SafeRestoreArch"></a>虚拟化域控制器安全还原体系结构  
   
 ### <a name="overview"></a>概述  
 AD DS 依赖于虚拟机监控程序平台以显示名为 **VM 生成 ID** 的标识符，来检测虚拟机的快照还原。 在域控制器升级期间，AD DS 最初将此标识符的值存储在其数据库 (NTDS.DIT) 中。 当管理员从之前的快照还原虚拟机时，将比较虚拟机中 VM 生成 ID 的当前值和数据库中的值。 如果两个值不同，则域控制器重置调用 ID 并弃用 RID 池，从而阻止重复使用 USN 或消除创建重复安全主体的可能性。 安全还原可能在以下两种应用场景中发生：  

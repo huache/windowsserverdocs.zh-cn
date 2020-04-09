@@ -1,28 +1,22 @@
 ---
 title: chkntfs
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: Chkntfs 的 Windows 命令主题，在计算机启动时显示或修改自动磁盘检查。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93eca810-8699-4716-8e9d-aecd54f704be
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f940fe81f0e7e01495e071931059b2375b78bb22
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb04022964b3c315c1003a9746f6551fc281dba3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379336"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847770"
 ---
 # <a name="chkntfs"></a>chkntfs
-
-
 
 在计算机启动时显示或修改自动磁盘检查。 如果使用时没有选项， **chkntfs**将显示指定卷的文件系统。 如果计划运行自动文件检查，则**chkntfs**会显示指定的卷是否已更新，或是否计划在下次启动计算机时进行检查。
 
@@ -41,18 +35,18 @@ chkntfs [/x <Volume> [...]]
 chkntfs [/c <Volume> [...]]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<Volume > [...]|指定在计算机启动时要检查的一个或多个卷。 有效的卷包括驱动器号（后跟冒号）、装入点或卷名。|
 |/d|还原所有**chkntfs**默认设置，但自动文件检查的倒计时时间除外。 默认情况下，当计算机启动时，所有卷都处于选中状态，并且**chkdsk**在那些更新的计算机上运行。|
-|/t [： \<Time >]|将 Autochk 初始倒计时时间更改为指定的时间量（以秒为单位）。 如果未输入时间，则 **/t**将显示当前倒计时时间。|
+|/t [：\<时间 >]|将 Autochk 初始倒计时时间更改为指定的时间量（以秒为单位）。 如果未输入时间，则 **/t**将显示当前倒计时时间。|
 |/x \<Volume > [...]|指定在计算机启动时要排除的一个或多个卷，即使卷被标记为需要**chkdsk**。|
 |/c \<Volume > [...]|在计算机启动时计划要检查的一个或多个卷，并在那些已更新的卷上运行**chkdsk** 。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要显示驱动器 C 的文件系统类型，请键入：
 ```
@@ -95,6 +89,6 @@ chkntfs /x c: d: e:
 chkntfs /c d:
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

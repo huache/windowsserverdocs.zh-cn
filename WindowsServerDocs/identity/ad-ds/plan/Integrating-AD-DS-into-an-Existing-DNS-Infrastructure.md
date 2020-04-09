@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4981b32f-741e-4afc-8734-26a8533ac530
 title: 将 AD DS 集成到现有的 DNS 基础结构
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f4bb480be4696f15f0a63c20ab47042264584d2c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf069102f409247832204546f3e1c15de7238bd3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402561"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822270"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>将 AD DS 集成到现有的 DNS 基础结构
 
@@ -31,7 +30,7 @@ ms.locfileid: "71402561"
   
 -   配置每个地区性域的域控制器，以便托管与其 Active Directory 域相对应的 DNS 区域。  
   
--   配置包含 Active Directory 林范围定位器记录（即 _msdcs）的区域。*林名称*zone），以使用林范围的 DNS 应用程序目录分区复制到林中的每个 dns 服务器。  
+-   配置包含 Active Directory 林范围定位器记录（即 _msdcs 的区域。*林名称*zone），以使用林范围的 DNS 应用程序目录分区复制到林中的每个 dns 服务器。  
   
     > [!NOTE]  
     > 在 Active Directory 域服务安装向导安装 DNS 服务器服务时（建议选择此选项），将自动执行前面的所有任务。 有关详细信息，请参阅[部署 Windows Server 2008 林根级域](https://technet.microsoft.com/library/cc731174.aspx)。  
@@ -44,9 +43,9 @@ ms.locfileid: "71402561"
 ## <a name="creating-the-dns-client-configuration"></a>创建 DNS 客户端配置  
 若要在客户端计算机上配置 DNS，AD DS 所有者的 DNS 必须指定计算机命名方案以及客户端将如何查找 DNS 服务器。 下表列出了这些设计元素的建议配置。  
   
-|Design 元素|配置|  
+|设计元素|配置|  
 |------------------|-----------------|  
-|计算机命名|使用默认命名。 当 Windows 2000、Windows XP、Windows Server 2003、Windows Server 2008 或基于 Windows Vista 的计算机加入域时，计算机会将一个完全限定的域名（FQDN）分配给一个完全限定的域名（FQDN），该域名包含计算机的主机名和活动的名称。Directory 域。|  
+|计算机命名|使用默认命名。 当 Windows 2000、Windows XP、Windows Server 2003、Windows Server 2008 或基于 Windows Vista 的计算机加入域时，计算机会将一个完全限定的域名（FQDN）分配给一个完全限定的域名（FQDN），该域名包含计算机的主机名和 Active Directory 域的名称。|  
 |客户端解析程序配置|将客户端计算机配置为指向网络上的任何 DNS 服务器。|  
   
 > [!NOTE]  

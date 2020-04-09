@@ -1,7 +1,6 @@
 ---
 ms.assetid: d92731f1-e4d8-4223-9b07-ca1f40bb0e1f
 title: 不连续的命名空间
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5abe67c89ce4c2f4b5056f6197242b5db8db340e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b21e849bb69068f66b1b80c6b1a3afbdef91459f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408850"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822530"
 ---
 # <a name="disjoint-namespace"></a>不连续的命名空间
 
@@ -27,7 +26,7 @@ ms.locfileid: "71408850"
 ## <a name="support-for-disjoint-namespaces"></a>支持非连续命名空间  
 域成员计算机（包括域控制器）可以在非连续命名空间中运行。 域成员计算机可以在不连续的 DNS 命名空间中注册其主机（A）资源记录和 IP 版本6（IPv6）主机（AAAA）资源记录。 当域成员计算机以这种方式注册其资源记录时，域控制器将继续在 DNS 区域中注册与 Active Directory 域名相同的全局和特定于站点的服务（SRV）资源记录。  
   
-例如，假设名为 na.corp.fabrikam.com 的域 Active Directory 控制器使用主 DNS 后缀 corp.fabrikam.com 在 corp.fabrikam.com DNS 区域中注册主机（A）和 IPv6 主机（AAAA）资源记录。 域控制器继续注册 _msdcs 和 na.corp.fabrikam.com DNS 区域中的全局和特定于站点的服务（SRV）资源记录，这使得服务位置成为可能。  
+例如，假设名为 na.corp.fabrikam.com 的域 Active Directory 控制器使用主 DNS 后缀 corp.fabrikam.com 在 corp.fabrikam.com DNS 区域中注册主机（A）和 IPv6 主机（AAAA）资源记录。 域控制器继续在 _msdcs 的 DNS 区域中注册全局和特定于站点的服务（SRV）资源记录，这使得服务位置成为可能。  
   
 > [!IMPORTANT]  
 > 尽管 Windows 操作系统可能支持非连续命名空间，但编写的应用程序假定主 DNS 后缀与 Active Directory 域后缀在此类环境中不起作用。 出于此原因，在部署非连续命名空间之前，应仔细测试所有应用程序及其相应的操作系统。  
@@ -94,7 +93,7 @@ ms.locfileid: "71408850"
   
     -   如果要委派权限来修改从属管理员的 Spn，请参阅委派权限以修改 Spn （[https://go.microsoft.com/fwlink/?LinkId=106639](https://go.microsoft.com/fwlink/?LinkId=106639)）。  
   
--   如果在具有非连续命名空间中配置的域控制器的部署中将轻型目录访问协议（LDAP）与安全套接字层（SSL）（称为 LDAPS）一起使用，则必须使用适当的 Active Directory 域名和配置 LDAPS 证书时的主 DNS 后缀。  
+-   如果将轻型目录访问协议（LDAP）通过安全套接字层（SSL）（称为 LDAPS）与 CA 一起使用，并且该部署中具有在不连续的命名空间中配置的域控制器，则必须在配置 LDAPS 证书时使用相应的 Active Directory 域名和主 DNS 后缀。  
   
     有关域控制器证书要求的详细信息，请参阅 Microsoft 知识库中的文章321051（[https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307)）。  
   

@@ -1,24 +1,20 @@
 ---
 title: wbadmin 获取项
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于 wbadmin get items 的 Windows 命令主题，其中列出了特定备份中包含的项。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 27d08ce3-6e06-4260-b264-fc1bde132d09
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c3cc532381321655bbd3d5549b3c9b1896b9280
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 781057bb450ab4b692c793f67d807e008efcf5d8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362410"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829750"
 ---
 # <a name="wbadmin-get-items"></a>wbadmin 获取项
 
@@ -39,15 +35,15 @@ wbadmin get items
 [-machine:<BackupMachineName>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-版本|以 MM/DD/YYYY-HH： MM 格式指定备份的版本。 如果不知道版本信息，请键入**wbadmin get 版本**。|
 |-backupTarget|指定包含要查看其详细信息的备份的存储位置。 用于列出存储在该目标位置的备份。 备份目标位置可以是本地连接的磁盘驱动器或远程共享文件夹。 如果在创建备份的同一台计算机上运行**wbadmin get items**，则不需要此参数。 但是，若要获取有关从另一台计算机创建的备份的信息，需要使用此参数。|
-|-计算机|指定要获取其备份详细信息的计算机的名称。 当多台计算机备份到同一位置时，此方法非常有用。 当指定 **-backupTarget**时，应使用。|
+|-计算机|指定要获取其备份详细信息的计算机的名称。 当多台计算机备份到同一位置时，此参数很有用。 当指定 **-backupTarget**时，应使用。|
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要列出在2013年3月31日上午9:00 运行的备份中的项目，请键入：
 ```
@@ -58,8 +54,8 @@ wbadmin get items -version:03/31/2013-09:00
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)
 -   [Backup](wbadmin.md)
 -   [WBBackupSet](https://technet.microsoft.com/library/jj902473.aspx) cmdlet

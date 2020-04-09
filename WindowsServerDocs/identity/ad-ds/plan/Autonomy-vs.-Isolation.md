@@ -1,7 +1,6 @@
 ---
 ms.assetid: ef63d40c-a262-4a18-938d-b95c10680c0b
-title: 独立性与相互
-description: ''
+title: 自主性与隔离性
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c3430ae9320ed2d39768d91f768adb3f9ab1c716
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d836804f1de84ed9d10a978876db9cbecc23123
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402649"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822830"
 ---
-# <a name="autonomy-vs-isolation"></a>独立性与相互
+# <a name="autonomy-vs-isolation"></a>自主性与隔离性
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -70,7 +69,7 @@ ms.locfileid: "71402649"
 ### <a name="service-autonomy"></a>服务自治  
 服务独立性涉及到管理基础结构的功能，而无需独占控制;例如，当组要对基础结构进行更改时（例如添加或删除域、修改域名系统（DNS）命名空间或修改架构），无需林所有者的批准。  
   
-对于希望能够控制 AD DS 的服务级别的组（根据需要添加和删除域控制器）或需要能够安装启用目录的应用程序的组，在组织内可能需要服务自治需要架构扩展。  
+对于希望能够控制 AD DS 的服务级别的组（根据需要添加和删除域控制器）或需要能够安装启用目录的应用程序（需要架构扩展）的组来说，服务自治可能是必需的。  
   
 ## <a name="limited-connectivity"></a>受限连接  
 如果组织中的组拥有的网络由限制或限制网络之间的连接的设备（如防火墙和网络地址转换（NAT）设备）分隔，则这可能会影响林设计。 确定林设计要求时，请务必记下网络连接受限的位置。 需要使用此信息来做出有关林设计的决策。  

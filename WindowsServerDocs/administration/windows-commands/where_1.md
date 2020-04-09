@@ -1,26 +1,22 @@
 ---
-title: （其中
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: 其中
+description: 的 Windows 命令主题，其中显示与给定搜索模式匹配的文件的位置。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0b3486a5-896b-4d92-84b8-e463a0b76487
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: abebe5799075653d2ace1af4eadbdd5d477d97a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1b32424622e8a893023aad9365b6aec4a91764fa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362159"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829330"
 ---
-# <a name="where"></a>（其中
+# <a name="where"></a>其中
 
 
 
@@ -34,9 +30,9 @@ ms.locfileid: "71362159"
 where [/r <Dir>] [/q] [/f] [/t] [$<ENV>:|<Path>:]<Pattern>[ ...] 
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/r \<Dir >|指示从指定目录开始的递归搜索。|
 |/q|返回退出代码（**0**表示成功， **1**表示失败），而不显示匹配文件的列表。|
@@ -50,7 +46,7 @@ where [/r <Dir>] [/q] [/f] [/t] [$<ENV>:|<Path>:]<Pattern>[ ...]
 -   如果不指定文件扩展名，则默认情况下，PATHEXT 环境变量中列出的扩展名将追加到该模式。
 -   **其中**，可以运行递归搜索，显示文件信息（如日期或大小），并接受环境变量来代替本地计算机上的路径。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要在当前计算机及其子目录的驱动器 C 中查找名为 Test 的所有文件，请键入：
 ```
@@ -65,6 +61,6 @@ where $public:*.*
 where /r \\computer1\c notepad.*
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

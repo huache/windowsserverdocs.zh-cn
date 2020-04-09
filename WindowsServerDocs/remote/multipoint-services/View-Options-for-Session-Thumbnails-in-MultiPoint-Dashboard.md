@@ -1,24 +1,20 @@
 ---
 title: 查看 MultiPoint 仪表板中会话缩略图的选项
 description: 了解如何自定义 MultiPoint Services 的视图选项
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 288a6504-418c-4489-acc6-930410c47cdb
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 9b6fa08a6f3215140a528dab0fb55bac23c60ccc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 87e60a048b3933bac988014717d66e8784676ca8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394796"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820430"
 ---
 # <a name="view-options-for-session-thumbnails-in-multipoint-dashboard"></a>查看 MultiPoint 仪表板中会话缩略图的选项
 在 MultiPoint 服务系统上查看每个活动桌面的缩略图图像可以轻松监视个人桌面上的用户活动。 默认情况下，桌面的图像显示在 "**主**文件夹" 选项卡上的 "MultiPoint 仪表板" 中。  
@@ -56,5 +52,5 @@ ms.locfileid: "71394796"
 >[!NOTE] 
 > 右键单击一个或多个缩略图，以获取可在活动或非活动会话中执行的其他操作，如“注销选定用户”。 请参阅[注销用户会话](Log-Off-User-Sessions.md)了解详细信息。
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [使用 MultiPoint 仪表板管理用户桌面](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)

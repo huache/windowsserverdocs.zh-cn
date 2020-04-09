@@ -1,7 +1,6 @@
 ---
 ms.assetid: e6da5984-d99d-4c34-9c11-4a18cd413f06
 title: 在现有域中安装副本 Windows Server 2012 域控制器（级别 200）
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5e72c18d3aa49774cf73d5365748e7bf20764b22
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 12068e5a062358463cf208f777144091e1de8257
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390845"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825200"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>在现有域中安装副本 Windows Server 2012 域控制器（级别 200）
 
@@ -28,22 +27,22 @@ ms.locfileid: "71390845"
   
 -   [部署](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_Dep)  
   
-## <a name="BKMK_Workflow"></a>升级和副本工作流  
+## <a name="upgrade-and-replica-workflow"></a><a name="BKMK_Workflow"></a>升级和副本工作流  
 下图阐述了以下情况中的 Active Directory 域服务配置进程：你之前已安装 AD DS 角色，并且已使用服务器管理器启动 Active Directory 域服务配置向导以在现有域中创建新域控制器。  
   
 ![安装副本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/adds_forestupgrade.png)  
   
-## <a name="BKMK_PS"></a>升级和副本 Windows PowerShell  
+## <a name="upgrade-and-replica-windows-powershell"></a><a name="BKMK_PS"></a>升级和副本 Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment Cmdlet**|参数（需要**加粗**参数。 *斜体*参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。）|  
-|Install-AddsDomainController|-Skipprechecks 不可<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-SiteName*<br /><br />*-ADPrepCredential*<br /><br />-ApplicationPartitionsToReplicate<br /><br />*-AllowDomainControllerReinstall*<br /><br />-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-Force<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />-NoDnsOnNetwork<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />-SiteName<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-UseExistingAccount*<br /><br />*-Whatif*|  
+|Install-AddsDomainController|-SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>*-SiteName*<p>*-ADPrepCredential*<p>-ApplicationPartitionsToReplicate<p>*-AllowDomainControllerReinstall*<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>-CriticalReplicationOnly<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-Force<p>*-InstallationMediaPath*<p>*-InstallDNS*<p>*-LogPath*<p>-MoveInfrastructureOperationMasterRoleIfNecessary<p>-NoDnsOnNetwork<p>*-NoGlobalCatalog*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>-SkipAutoConfigureDNS<p>-SiteName<p>*-SystemKey*<p>*-SYSVOLPath*<p>*-UseExistingAccount*<p>*-Whatif*|  
   
 > [!NOTE]  
 > 仅在你尚未作为 Enterprise Admins 和 Schema Admins 组（如果你要升级该林）或者 Domain Admins 组（如果你要将新 DC 添加到现有域）的成员登录时，需要 **-credential** 参数。  
   
-## <a name="BKMK_Dep"></a>部署  
+## <a name="deployment"></a><a name="BKMK_Dep"></a>部署  
   
 ### <a name="deployment-configuration"></a>部署配置  
 ![安装副本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDeployConfig.png)  
@@ -249,7 +248,7 @@ Install-ADDSDomainController `
   
 ![安装副本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSWhatIf.png)  
   
-### <a name="prerequisites-check"></a>先决条件检查  
+### <a name="prerequisites-check"></a>必备组件检查  
 ![安装副本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrereqCheck.png)  
   
 “先决条件检查” 是 AD DS 域配置中的新功能。 此新阶段验证域和林是否能够支持新的 Windows Server 2012 域控制器。  
@@ -306,7 +305,7 @@ Install-addsdomaincontroller
   
 ![安装副本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeProgress.png)  
   
-若要使用 Windows PowerShell 远程配置域控制器, 请将**install-addsdomaincontroller** cmdlet 包装在**调用-command** cmdlet*内*。 这需要使用大括号。  
+若要使用 Windows PowerShell 远程配置域控制器，请将**install-addsdomaincontroller** cmdlet 包装在**调用-command** cmdlet*内*。 这需要使用大括号。  
   
 ```  
 invoke-command {install-addsdomaincontroller "domainname <domain> -credential (get-credential)} -computername <dc name>  
@@ -317,7 +316,7 @@ invoke-command {install-addsdomaincontroller "domainname <domain> -credential (g
 ![安装副本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeExample.gif)  
   
 > [!NOTE]  
-> 有关安装和 Adprep 进程的工作原理的详细信息，请参阅 [Troubleshooting Domain Controller Deployment](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
+> 有关安装和 Adprep 进程的工作原理的详细信息，请参阅[域控制器部署疑难解答](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)。  
   
 ### <a name="results"></a>结果  
 ![安装副本](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_ForestSignOff.png)  

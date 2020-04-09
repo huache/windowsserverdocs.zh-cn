@@ -1,7 +1,6 @@
 ---
 ms.assetid: 35de490f-c506-4b73-840c-b239b72decc2
 title: 配置基于设备的条件性访问本地
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,29 +8,29 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0eb0271dd27791e6f59e896e43bf79b15b89e730
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 19e139df53cd1c076f8d5597c1c68b8ffe2cfe91
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949456"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817170"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>使用已注册的设备配置本地条件性访问
 
 
 以下文档将指导你完成安装和配置已注册设备的本地条件性访问。
 
-![条件访问](media/Using-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![条件性访问](media/Using-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
 ## <a name="infrastructure-pre-requisites"></a>基础结构先决条件
 在开始使用本地条件访问之前，需要以下每个必备项。 
 
-|要求|描述
+|要求|说明
 |-----|-----
 |使用 Azure AD Premium 的 Azure AD 订阅 | 启用设备回写以实现本地条件访问-[免费试用版](https://azure.microsoft.com/trial/get-started-active-directory/)  
 |Intune 订阅|仅适用于设备符合性方案的 MDM 集成的要求-[免费试用版](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)
 |Azure AD Connect|2015年11月版或更高版本。  [在此处](https://www.microsoft.com/download/details.aspx?id=47594)获取最新版本。  
-|WIN ENT LTSB 2016 Finnish 64 Bits|AD FS 的版本10586或更高版本  
+|Windows Server 2016|AD FS 的版本10586或更高版本  
 |Windows Server 2016 Active Directory 架构|需要架构级别85或更高版本。
 |Windows Server 2016 域控制器|仅适用于企业密钥信任部署，这是必需的。  可在[此处](https://aka.ms/whfbdocs)找到其他信息。  
 |Windows 10 客户端|仅 Windows 10 域加入和 Microsoft Passport for Work 方案需要将生成10586或更高版本加入以上域  
@@ -45,7 +44,7 @@ ms.locfileid: "75949456"
     - 仅 AD FS 加入到的林需要此字段
 
 > [!NOTE]
-> 如果在升级到 Windows Server 2016 中的架构版本（85版或更高版本）之前安装 Azure AD Connect，则需要重新运行 Azure AD Connect 安装并刷新本地 AD 架构，以确保配置 KeyCredentialLink。
+> 如果在升级到 Windows Server 2016 中的架构版本（85版或更高版本）之前安装 Azure AD Connect，则需要重新运行 Azure AD Connect 安装并刷新本地 AD 架构，以确保配置 KeyCredentialLink 的同步规则。
 
 ### <a name="verify-your-schema-level"></a>验证你的架构级别
 若要验证架构级别，请执行以下操作：
@@ -54,7 +53,7 @@ ms.locfileid: "75949456"
 2.  使用 ADSIEdit，右键单击 "CN = Schema，CN = Configuration，DC =<domain>，DC =<com>，然后选择" 属性 "。  Relpace 域和 com 部分，其中包含林信息。
 3.  在 "属性编辑器" 下，找到 "objectVersion" 属性，它将告知你版本。  
 
-![ADSI 编辑器](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
+![ADSI 编辑](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
 
 你还可以使用以下 PowerShell cmdlet （将对象替换为架构命名上下文信息）：
 
@@ -166,7 +165,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
  
 
 
-- CN=RegisteredDevices,DC=&lt;domain&gt; 上类型 ms-DS-DeviceContainer 的对象        
+- CN=RegisteredDevices,DC=&lt;domain&gt; 上类型 ms-DS-DeviceContainer 的对象          
     - AD FS 服务帐户的读取访问权限   
     - Azure AD Connect 同步 AD 连接器帐户的读取/写入访问权限</br></br>
 
@@ -210,7 +209,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 ### <a name="automatic-mdm-enrollment"></a>自动 MDM 注册   
 若要启用已注册设备的自动 MDM 注册，以便可以在访问控制策略中使用 isCompliant 声明，请按照此处的步骤操作[。](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)  
 
-## <a name="troubleshooting"></a>“疑难解答”  
+## <a name="troubleshooting"></a>故障排除  
 1.  如果在 `Initialize-ADDeviceRegistration` 上出现错误，指出某个对象已存在于错误状态，例如 "未找到 drs 服务对象，但未提供所有必需的属性"，则可能之前已执行 Azure AD Connect powershell 命令，并且 AD DS 中具有部分配置。  尝试手动删除 " **CN = Device Registration Configuration，CN = Services，cn = Configuration，DC =&lt;域&gt;** 中的对象，然后重试。  
 2.  对于已加入域的 Windows 10 客户端  
     1. 若要验证设备身份验证是否正常工作，请以测试用户帐户的身份登录到加入域的客户端。 若要快速触发预配，请至少锁定并解锁桌面。   
@@ -224,5 +223,5 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 ### <a name="related-articles"></a>相关文章  
 * [保护对 Office 365 和其他连接到 Azure Active Directory 的应用的访问](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)  
 * [Office 365 服务的条件性访问设备策略](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-device-policies/)  
-* [使用 Azure Active Directory Device Registration 设置本地条件性访问](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)  
-* [Connect domain-joined devices to Azure AD for Windows 10 experiences（体验 Windows 10 时会已加入域的设备连接到 Azure AD）](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  
+* [使用 Azure Active Directory 设备注册设置本地条件性访问](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)  
+* [将已加入域的设备连接到 Windows 10 体验 Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  

@@ -1,7 +1,6 @@
 ---
 ms.assetid: a7ef2fba-b05c-4be2-93b2-b9456244c3ad
 title: 监视 Active Directory 遭到破坏的迹象
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e51b7ea151db1ca5d53a8cacef3b042e345175de
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1d00ab702ab6b4ff4307f96f9e266a1cb3420197
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949635"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821140"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>监视 Active Directory 遭到破坏的迹象
 
->适用于︰ Windows Server 2016，Windows Server 2012 R2、 Windows Server 2012
+>适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 *定律5：永久警惕是安全的价格。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
   
@@ -101,7 +100,7 @@ Windows 中有数十种用户权限（例如，作为批处理作业登录并作
 
 从 Windows Vista 和 Windows Server 2008 开始，Microsoft 通过在每个主审核类别下创建子类别，改进了事件日志类别选择的方式。 子类别允许审核比使用主要类别更精细。 通过使用子类别，可以仅启用特定主类别的部分，并跳过生成不使用的事件。 可以针对“成功”、“失败”或“成功和失败”事件启用每种审核策略子类别。  
   
-若要列出所有可用的审核子类别，请在组策略对象中查看高级审核策略容器，或在运行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008，Windows 8 的任何计算机上的命令提示符处键入以下命令：Windows 7 或 Windows Vista：  
+若要列出所有可用的审核子类别，请在组策略对象中查看高级审核策略容器，或在运行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008、Windows 8、Windows 7 或 Windows Vista 的任何计算机上的命令提示符下键入以下命令：  
   
 `auditpol /list /subcategory:*`
   
@@ -213,7 +212,7 @@ Windows 中有数十种用户权限（例如，作为批处理作业登录并作
 ##### <a name="other-logonlogoff-events"></a>其他登录/注销事件  
 此子类别报告其他登录和注销相关事件，例如远程桌面服务会话断开连接和重新连接，使用 RunAs 在不同帐户下运行进程，以及锁定和解锁工作站。  
   
-##### <a name="logoff"></a>在用户界面中，  
+##### <a name="logoff"></a>Logoff  
 此子类别报告用户何时从系统注销。 这些事件在访问的计算机上发生。 对于交互式登录，这些事件的生成发生在登录到的计算机上。 如果发生网络登录以访问共享，则这些事件会在承载访问资源的计算机上生成。 如果此设置配置为 "**无审核**"，则很难或不可能确定哪些用户访问或尝试访问组织计算机。  
   
 ##### <a name="account-lockout"></a>帐户锁定  
@@ -248,10 +247,10 @@ Windows 中有数十种用户权限（例如，作为批处理作业登录并作
 #### <a name="privilege-use"></a>权限使用  
   
 ##### <a name="sensitive-privilege-use"></a>敏感权限使用  
-此子类别报告用户帐户或服务使用敏感权限的时间。 敏感权限包括以下用户权限：作为操作系统的一部分进行操作、备份文件和目录、创建令牌对象、调试程序、使计算机和用户帐户可以被信任以进行委派、生成安全审核身份验证后模拟客户端、加载和卸载设备驱动程序、管理审核和安全日志、修改固件环境值、替换进程级令牌、还原文件和目录以及获取文件或其他对象的所有权。 审核此子类别将产生大量事件。  
+此子类别报告用户帐户或服务使用敏感权限的时间。 敏感权限包括以下用户权限：作为操作系统的一部分进行操作，备份文件和目录，创建令牌对象，创建令牌对象，调试程序，使计算机和用户帐户能够被信任以进行委派、生成安全审核、在身份验证后模拟客户端、加载和卸载设备驱动程序、管理审核和安全日志、修改固件环境值、替换进程级令牌，还原文件和目录，并获得文件或其他对象的所有权。 审核此子类别将产生大量事件。  
   
 ##### <a name="nonsensitive-privilege-use"></a>Nonsensitive 权限使用  
-当用户帐户或服务使用 nonsensitive 权限时，此子类别将进行报告。 Nonsensitive 权限包括以下用户权限：作为受信任的调用方访问凭据管理器、从网络访问此计算机、将工作站添加到域、调整进程的内存配额、允许在本地登录，允许通过远程登录桌面服务，绕过遍历检查，更改系统时间，创建页面文件，创建全局对象，创建永久共享对象，创建符号链接，拒绝从网络访问此计算机、拒绝作为批处理作业登录、拒绝作为服务登录、拒绝本地登录，拒绝通过远程桌面服务登录，从远程系统强制关机，增加进程工作集，提高计划优先级，锁定内存中的页，作为批处理作业登录、作为服务登录、修改对象标签、执行卷维护任务、配置单一进程、配置文件系统性能、从扩展坞中取出计算机、关闭系统并同步目录服务数据。 审核此子类别将创建大量事件。  
+当用户帐户或服务使用 nonsensitive 权限时，此子类别将进行报告。 Nonsensitive 权限包括以下用户权限：作为受信任的调用方访问凭据管理器、从网络访问此计算机、将工作站添加到域、调整进程的内存配额、允许本地登录、允许通过远程桌面服务登录、绕过遍历检查、更改系统时间、创建页面文件、创建全局对象、创建永久共享对象、创建符号链接，拒绝从网络访问此计算机、拒绝作为批处理作业登录、拒绝作为服务登录、拒绝本地登录、拒绝远程桌面服务通过远程系统登录、从远程系统中强制关机、增加进程工作集、提高计划优先级、锁定内存页、以批处理作业的身份登录、修改对象标签、执行卷维护任务、配置单个进程、配置文件系统性能、从扩展坞中取出计算机、关闭系统并同步目录服务数据。 审核此子类别将创建大量事件。  
   
 ##### <a name="other-privilege-use-events"></a>其他权限使用事件  
 当前未使用此安全策略设置。  
@@ -293,7 +292,7 @@ Windows 中有数十种用户权限（例如，作为批处理作业登录并作
 ##### <a name="other-object-access-events"></a>其他对象访问事件  
 此子类别报告其他与对象访问相关的事件，例如任务计划程序作业和 COM + 对象。  
   
-#### <a name="system"></a>“系统”  
+#### <a name="system"></a>System  
   
 ##### <a name="security-state-change"></a>安全状态更改  
 此子类别报告系统的安全状态更改，例如安全子系统启动和停止的时间。  

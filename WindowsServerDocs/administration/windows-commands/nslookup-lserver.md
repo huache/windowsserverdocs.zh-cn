@@ -1,24 +1,20 @@
 ---
 title: nslookup lserver
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aee5ea0b-bb17-4c14-bde7-2f7a91f2f22b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 347ad6e380f8d8163c4954771c9e985271b2d549
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d0d8619101d2e7b1f7fb6d6ed99d801c7c264f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373076"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838630"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 
@@ -29,9 +25,9 @@ ms.locfileid: "71373076"
 ```
 lserver <DNSDomain> 
 ```
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|    参数    |                      描述                      |
+|    参数    |                      说明                      |
 |-----------------|-------------------------------------------------------|
 |   <DNSDomain>   | 为默认服务器指定新的 DNS 域。  |
 | {help &#124; ？} | 显示**nslookup**子命令的简短摘要。 |
@@ -39,5 +35,5 @@ lserver <DNSDomain>
 ## <a name="remarks"></a>备注
 - **Lserver**命令使用初始服务器来查找有关指定 DNS 域的信息。 这与**服务器**命令不同，后者使用当前的默认服务器。
   ## <a name="additional-references"></a>其他参考
-  [命令行语法键](command-line-syntax-key.md)
+  - [命令行语法键](command-line-syntax-key.md)
   [nslookup 服务器](nslookup-server.md)

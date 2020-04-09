@@ -1,20 +1,20 @@
 ---
 title: 群集感知更新概述
+description: 群集感知更新（CAU）在运行 Windows Server 的群集上自动执行软件更新安装。
 ms.topic: article
 ms.prod: windows-server
-ms.manager: dongill
+manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
-description: 群集感知更新（CAU）在运行 Windows Server 的群集上自动执行软件更新安装。
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: e96223e0b4b44e87ade9dc8eb875f9aa7104f451
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a2b6ad06b8a003f9cbf020956994b08cb8cf194
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361252"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827990"
 ---
 # <a name="cluster-aware-updating-overview"></a>群集感知更新概述
 
@@ -25,7 +25,7 @@ ms.locfileid: "71361252"
 > [!NOTE]
 > 更新[存储空间直通](../storage/storage-spaces/storage-spaces-direct-overview.md)群集时，建议使用群集感知更新。
   
-## <a name="BKMK_OVER"></a>功能说明  
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>功能描述  
 群集感知更新是一项自动化功能，使你能够在[故障转移群集](failover-clustering-overview.md)中更新服务器，在更新过程中的可用性极少或无损失。 在更新运行期间，群集感知更新以透明方式执行以下任务：  
 
 1. 将群集的每个节点置于节点维护模式下。
@@ -38,7 +38,7 @@ ms.locfileid: "71361252"
 
 对于群集中的许多群集角色，自动更新过程将触发计划的故障转移。 对连接的客户端而言，这可能导致暂时性服务中断。 但是，对于连续可用的工作负荷（例如具有实时迁移的\-Hyper-v 或具有 SMB 透明故障转移的文件服务器），群集感知更新可以在不影响服务可用性的情况下协调群集更新。    
   
-## <a name="practical-applications"></a>实际应用程序  
+## <a name="practical-applications"></a>实际应用  
   
 -   CAU 可减少群集服务中的服务中断，降低对手动更新解决方法的需求，并使最终\-对管理员来说更可靠地\-结束群集更新过程。 当 CAU 功能与连续可用的群集工作负荷（例如连续可用的文件服务器 \(具有 SMB 透明故障转移的文件服务器工作负载\) 或 Hyper-v\-V）结合使用时，可以在不影响客户端服务可用性的情况下执行群集更新。  
   
@@ -115,9 +115,9 @@ CAU 可在所有版本的 Windows Server 上使用，包括服务器核心安装
   
 ##### <a name="to-start-cluster-aware-updating-from-server-manager"></a>从服务器管理器启动群集感知更新  
   
-1.  启动“服务器管理器”。  
+1.  启动服务器管理器。  
   
-2.  执行下列操作之一：  
+2.  执行以下操作之一：  
   
     -   在 "**工具**" 菜单上，单击 "**群集\-感知更新**"。  
   
@@ -126,7 +126,7 @@ CAU 可在所有版本的 Windows Server 上使用，包括服务器核心安装
 ## <a name="see-also"></a>另请参阅  
 以下链接提供了有关使用群集感知更新的详细信息。  
   
--   [群集\-感知更新的要求和最佳做法](cluster-aware-updating.md)  
+-   [群集感知更新的要求和最佳做法\-  
   
 -   [群集\-感知更新：常见问题](cluster-aware-updating-faq.md)  
   

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0f21951c-b1bf-43bb-a329-bbb40c58c876
 title: 复制错误 1753：端点映射程序中没有更多可用的端点
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 64b479663dfc930ec9a6d2055b4c9ad5755b30fc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e63d177abd0a6880c1825b821d265c8fa233a22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389968"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823160"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>复制错误 1753：端点映射程序中没有更多可用的端点
 
 >适用于：Windows Server
 
-本文介绍了由于 Win32 错误 1753 Active Directory 操作失败的症状、原因和解决步骤："终结点映射器中没有更多可用的终结点。"
+本文介绍了 Active Directory 操作失败的症状、原因和解决步骤，Win32 错误1753： "终结点映射器中没有更多可用的终结点。"
 
-DCDIAG 报告连接测试、Active Directory 复制测试或 KnowsOfRoleHolders 测试失败，出现错误1753："终结点映射器中没有更多可用的终结点。"
+DCDIAG 报告连接测试、Active Directory 复制测试或 KnowsOfRoleHolders 测试失败，出现错误1753： "终结点映射器中没有更多可用的终结点。"
 
 ```
 Testing server: <site><DC Name>
@@ -90,18 +89,18 @@ Active Directory 站点和服务中的 "**检查复制拓扑**" 命令返回 "�
 
 右键单击源 DC 中的连接对象，然后选择 "**检查复制拓扑**失败"，并显示 "终结点映射程序中没有更多可用的终结点"。 屏幕错误消息如下所示：
 
-对话框标题文本："检查复制拓扑" 对话框消息文本：尝试联系域控制器时出现以下错误：端点映射程序中未提供更多端点。
+对话框标题文本：检查复制拓扑对话框消息文本：尝试联系域控制器期间出现以下错误：终结点映射器中没有更多可用的终结点。
 
 Active Directory 站点和服务中的 "**立即复制**" 命令返回 "终结点映射器中没有更多可用的终结点"。
 右键单击源 DC 中的连接对象并选择 "复制"**现在**会失败，并出现 "终结点映射程序中没有更多可用的终结点"。
 屏幕错误消息如下所示：
 
-对话框标题文本：立即复制对话框消息文本：尝试将命名上下文 \<% directory 分区名称% > 从域控制器 \<Source DC > 同步到域控制器时出现以下错误 \<Destination DC >：
+对话框标题文本：立即复制对话框消息文本：尝试同步命名上下文时出现以下错误 \<% directory 分区名称% > 从域控制器 \<源 DC > 到域控制器 \<目标 DC >：
 
 端点映射程序中未提供更多端点。
 操作不会继续
 
-在事件查看器的目录服务日志中记录 NTDS KCC、NTDS General 或2146893022状态的 ActiveDirectory_DomainService 事件。
+在事件查看器的目录服务日志中记录 NTDS KCC、NTDS General 或 Microsoft-Windows ActiveDirectory_DomainService 事件，状态为-2146893022。
 
 Active Directory 通常引用-2146893022 状态的事件包括但不限于：
 
@@ -150,13 +149,13 @@ Active Directory 通常引用-2146893022 状态的事件包括但不限于：
 
 验证连接到目标 RPC 服务器（源 DC）的 RPC 客户端（目标 DC）
 
-公用 Active Directory 林中的所有 Dc 都注册 _msdcs 中的域控制器 CNAME 记录。 \<forest 根域 > DNS 区域，无论它们在林中驻留的域是什么。 DC CNAME 记录派生自每个域控制器的 "NTDS 设置" 对象的 objectGUID 属性。
+公用 Active Directory 林中的所有 Dc 都注册 _msdcs 中的域控制器 CNAME 记录。 \<目录林根级域 > DNS 区域，而不考虑它们在林中驻留的域。 DC CNAME 记录派生自每个域控制器的 "NTDS 设置" 对象的 objectGUID 属性。
 
 执行基于复制的操作时，目标 DC 会向 DNS 查询源 Dc CNAME 记录。 CNAME 记录包含源 DC 完全限定的计算机名称，此名称用于通过 DNS 客户端缓存查找、主机/LMHost 文件查找、在 DNS 中托管 A/AAAA 记录或 WINS 来派生源 Dc IP 地址。
 
 在 DNS、WINS、主机和 LMHOST 文件中，陈旧的 NTDS 设置对象和错误的名称到 IP 的映射可能会导致 RPC 客户端（目标 DC）连接到错误的 RPC 服务器（源 DC）。 而且，错误的名称到 IP 映射可能会导致 RPC 客户端（目标 DC）连接到甚至没有相关 RPC 服务器应用程序的计算机（在本例中为 Active Directory 角色）。 （示例： DC2 的陈旧主机记录包含 DC3 的 IP 地址或成员计算机）。
 
-验证 Active Directory 目标 Dc 副本中存在的源 DC 的 objectGUID 与 Active Directory 的源 dc 副本中存储的源 DC objectGUID 匹配。 如果存在差异，请使用 "ntds 设置" 对象上的 repadmin/showobjmeta，以查看哪一个对应于源 DC 的上次升级（提示：针对 NTDS 设置对象的日期戳进行比较。源 Dc dcpromo 日志文件。 可能需要使用 DCPROMO 的最后修改/创建日期。日志文件本身）。 如果对象 Guid 不完全相同，则目标 DC 可能会为源 DC 提供陈旧的 NTDS 设置对象，其 CNAME 记录将引用具有错误名称的主机记录到 IP 映射。
+验证 Active Directory 目标 Dc 副本中存在的源 DC 的 objectGUID 与 Active Directory 的源 dc 副本中存储的源 DC objectGUID 匹配。 如果存在差异，请使用 ntds 设置对象上的 repadmin/showobjmeta，以查看哪一个对应于源 DC 的上次升级（提示：将 NTDS 设置对象的日期戳与源 dc dcpromo 文件中的上次升级日期进行比较。 可能需要使用 DCPROMO 的最后修改/创建日期。日志文件本身）。 如果对象 Guid 不完全相同，则目标 DC 可能会为源 DC 提供陈旧的 NTDS 设置对象，其 CNAME 记录将引用具有错误名称的主机记录到 IP 映射。
 
 在目标 DC 上，运行 IPCONFIG/ALL 以确定目标 DC 用于名称解析的 DNS 服务器：
 
@@ -196,7 +195,7 @@ NSLOOKUP -type=hostname <fully qualified computer name of source DC> <secondary 
 * 验证服务器应用程序（Active Directory et al）是否已向 RPC 服务器上的终结点映射器注册（源 DC）
 * Active Directory 混合使用众所周知的动态注册端口。 此表列出了 Active Directory 域控制器使用的知名端口和协议。
 
-| RPC 服务器应用程序 | Port | TCP | UDP |
+| RPC 服务器应用程序 | 端口 | TCP | UDP |
 | --- | --- | --- | --- |
 | DNS 服务器 | 53 | X | X |
 | Kerberos | 88 | X | X |
@@ -289,17 +288,17 @@ F# SRC    DEST    Operation
 
 在第**10**帧，目标 dc 通过端口135查询源 dc 终结点映射器 Active Directory 复制服务类 UUID E351 。
 
-在帧**11**中，源 DC （在本例中为尚未托管 DC 角色的成员计算机）未注册 E351 。复制服务与其本地 EPM 响应的 UUID 使用符号错误 EP_S_NOT_REGISTERED 进行响应，此错误映射到十进制错误1753，十六进制错误0x6d9，友好错误 "终结点映射器中没有更多可用的终结点"。
+在帧**11**中，源 DC （在本例中为尚未托管 DC 角色的成员计算机）未注册 E351 。复制服务的 UUID （其本地 EPM）使用符号错误1753进行响应，EP_S_NOT_REGISTERED 映射到十进制错误、十六进制错误0x6d9 和友好错误 "终结点映射器中没有更多可用的终结点"。
 
 稍后，IP 地址为 MayberryDC 的成员计算机在 contoso.com 域中升级为副本 ""。 同样，**立即复制**命令用于触发复制，但这次操作失败，出现屏幕错误 "目标主体名称不正确"。 向其网络适配器分配了 IP 地址的计算机： x. x. x. x. x. x. x. x. x. x. x. x. x。复制服务 UUID 与其本地 EPM 一起提供，但它不拥有 DC2 的名称或安全标识，因此无法解密 DC1 发出的 Kerberos 请求，因此请求现在失败并出现错误 "目标主体名称不正确"。 错误映射为十进制错误-2146893022/十六进制错误0x80090322。
 
 此类无效的主机到 IP 映射可能是由于主机/lmhost 文件中的过时条目、在 DNS 中托管 A/AAAA 注册或 WINS 导致的。
 
-小结此示例失败，因为在此情况下，主机文件中的主机到 IP 映射无效，导致目标 DC 解析为未运行 Active Directory 域服务服务（甚至出于此目的而安装）的 "源" DCSPN 尚未注册，并且源 DC 返回了错误1753。 在第二种情况下，无效的主机到 IP 映射（在主机文件中再次）导致目标 DC 连接到已注册了 E351 的 DC 。复制 SPN，但该源的主机名和安全标识与预期的源 DC 不同，因此尝试失败并出现错误-2146893022：目标主体名称不正确。
+摘要：此示例失败，因为在此情况下，主机文件中的主机到 IP 映射无效，导致目标 DC 解析为未运行 Active Directory 域服务服务（甚至出于此目的而安装）的 "源" DC，因此复制 SPN 尚未注册，并且源 DC 返回错误1753。 在第二种情况下，无效的主机到 IP 映射（在主机文件中再次）导致目标 DC 连接到已注册了 E351 的 DC 。复制 SPN，但该源的主机名和安全标识与预期的源 DC 不同，因此尝试失败并出现错误-2146893022：目标主体名称不正确。
 
 ## <a name="related-topics"></a>相关主题
 
-* [Troubleshooting Active Directory 操作失败，并出现错误1753：终结点映射器中没有更多可用的终结点。 ](https://support.microsoft.com/kb/2089874)
+* [排查 Active Directory 操作失败并出现错误1753：终结点映射器中没有更多可用的终结点。](https://support.microsoft.com/kb/2089874)
 * [知识库文章839880使用产品 CD 中的 Windows Server 2003 支持工具排查 RPC 终结点映射程序错误](https://support.microsoft.com/kb/839880)
 * [知识库文章 832017 Windows Server 系统的服务概述和网络端口要求](https://support.microsoft.com/kb/832017/)
 * [知识库文章224196将 Active Directory 复制流量和客户端 RPC 流量限制到特定端口](https://support.microsoft.com/kb/224196/)

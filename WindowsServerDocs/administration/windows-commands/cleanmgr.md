@@ -1,6 +1,6 @@
 ---
 title: cleanmgr
-description: 了解如何使用命令行选项来配置磁盘清理工具（Cleanmgr.exe）以自动清除某些文件。
+description: 了解如何使用命令行选项来配置磁盘清理工具 (Cleanmgr.exe) 以自动清除某些文件。
 ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 0646922f409d4ea8abb85c927a329013e32016de
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9abde0cb0db910cd500df94f98c76e6c370cba2a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947588"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847710"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -29,9 +29,9 @@ ms.locfileid: "75947588"
 cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/VERYLOWDISK]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|      参数      |    描述     |
+|      参数      |    说明     |
 | ------------------- | ------------------ |
 |  /d \<驱动器号 >          | 指定想要磁盘清理清理的驱动器。<br>**注意：** /D 选项不能与/sagerun： n 一起使用。 |
 | /sageset： n | 显示 "磁盘清理设置" 对话框，并创建用于存储所选设置的注册表项。 `n` 值（存储在注册表中）允许您指定要运行的 "磁盘清理" 任务。 `n` 值可以是从0到65535的任何整数值。 若要在使用/sageset 选项时具有所有可用选项，请指定安装 Windows 的驱动器。  |
@@ -41,7 +41,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 | /VERYLOWDISK | 用默认设置运行，不提示用户。 |
 | /?           | 显示帮助。 |
 
-## <a name="options"></a>“选项”
+## <a name="options"></a>Options
 
 可以通过使用/sageset 和/sagerun 为磁盘清理指定的文件选项包括：
 
