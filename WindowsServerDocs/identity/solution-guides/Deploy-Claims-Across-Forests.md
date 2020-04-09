@@ -1,7 +1,6 @@
 ---
 ms.assetid: ceb9ce18-5a94-4166-9edd-2685b81fc15f
 title: 跨林部署声明
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 21ddcbd3b71a8d623950f1600b654e04ecc41f1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 99af1022870c891c75bb2008f57e8d8e171961ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357567"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861230"
 ---
 # <a name="deploy-claims-across-forests"></a>跨林部署声明
 
@@ -49,7 +48,7 @@ ms.locfileid: "71357567"
   
 -   [声明转换规则语言](Claims-Transformation-Rules-Language.md)  
   
-## <a name="BKMK_NEW"></a>此方案中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的角色和功能  
 下表列出了作为本方案组成部分的角色和功能，并描述了它们如何为本方案提供支持。  
   
 |角色/功能|如何支持本方案|  

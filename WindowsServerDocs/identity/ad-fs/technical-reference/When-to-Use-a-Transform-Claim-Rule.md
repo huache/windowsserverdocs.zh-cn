@@ -1,7 +1,6 @@
 ---
 ms.assetid: 77aa61bf-9c04-4889-a5d2-6f45bc1b8bd2
 title: 何时使用转换声明规则
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b7cdf68783db1b6b775209e4e42dc6b6ccf0e1b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2b69156d1e2825f4287112735493ebc5cc8469d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385416"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853780"
 ---
 # <a name="when-to-use-a-transform-claim-rule"></a>何时使用转换声明规则
 如果需要将传入声明类型映射到传出声明类型，然后应用一项操作，该操作会根据传入声明中的值确定应发生的输出，则可以在 Active Directory 联合身份验证服务 \(AD FS\) 中使用此规则。 使用此规则时，将根据你在此规则中配置的任一选项传递或转换与以下规则逻辑匹配的声明，如下表所述。  
@@ -79,10 +78,10 @@ ms.locfileid: "71385416"
 如果传出声明必须根据多个传入声明的内容构造，则必须改为使用自定义规则。 如果传出声明的声明值必须基于传入声明的值，但是还包括其他内容，那么，也必须在该上下文中使用自定义规则。 有关详细信息，请参阅 [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md)。  
   
 ### <a name="examples-of-how-to-construct-a-transform-rule-syntax"></a>有关如何构造转换规则语法的示例  
-使用声明规则语言语法转换声明时，可以将已转换声明的属性设置为新的文本值。 例如，下面的规则将角色声明的值从“Administrators”更改为“root”，同时保持相同的声明类型：  
+使用声明规则语言语法转换声明时，可以将已转换声明的属性设置为新的文本值。 例如，下面的规则将角色声明的值从 "Administrators" 更改为 "root"，同时保持相同的声明类型：  
   
 ```  
-c:[type == “https://schemas.microsoft.com/ws/2008/06/identity/claims/role”, value == “Administrators”]  => issue(type = c.type, value = “root”);  
+c:[type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/role", value == "Administrators"]  => issue(type = c.type, value = "root");  
 ```  
   
 正则表达式也可用于声明转换。 例如，下面的规则将域中的 windows 用户名声明中的域\\用户格式设置为 FABRIKAM：  
@@ -94,10 +93,10 @@ c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] => issu
 ### <a name="best-practices-for-creating-custom-rules"></a>创建自定义规则的最佳做法  
 可以向使用基本筛选功能选定的声明有选择性地应用声明转换。 可以为用于筛选的每个声明属性分配值，并提供以下说明：  
   
-|声明属性|描述|  
+|声明属性|说明|  
 |------------------|---------------|  
 |Type、Value、ValueType|为这些属性分配值的频率最高。 必须为生成的已转换声明至少指定类型和值。|  
-|颁发者|虽然声明规则语言允许设置声明的发出方，但通常不建议这样做。 声明的发出方在令牌中不会序列化。 收到令牌时，所有声明的 Issuer 属性都将设置为已对该令牌签名的联合服务器的标识符。 因此，在规则中设置声明的发出方对令牌的内容没有任何影响，而且一旦在令牌中打包该声明，该设置便会丢失。 唯一需要设置声明发出方的情况为：它在声明提供程序规则集中设置为某个特定值，而信赖方规则集使用引用此特定值的规则创作。 如果声明规则中的 Issuer 属性未显式设置为某个值，声明发出引擎会将其设置为“本地机构”。|  
+|Issuer|虽然声明规则语言允许设置声明的发出方，但通常不建议这样做。 声明的发出方在令牌中不会序列化。 收到令牌时，所有声明的 Issuer 属性都将设置为已对该令牌签名的联合服务器的标识符。 因此，在规则中设置声明的发出方对令牌的内容没有任何影响，而且一旦在令牌中打包该声明，该设置便会丢失。 唯一需要设置声明发出方的情况为：它在声明提供程序规则集中设置为某个特定值，而信赖方规则集使用引用此特定值的规则创作。 如果未将颁发者属性显式设置为声明规则中的某个值，声明发出引擎会将其设置为 "本地颁发机构"。|  
 |OriginalIssuer|与 Issuer 相同的是，OriginalIssuer 通常不应显式分配一个值。 与 Issuer 不同的是，OriginalIssuer 属性在令牌中会被序列化，但令牌使用者所希望的是，如果设置，它将包含最初发出声明的联合服务器的标识符。|  
 |属性|如前一部分所述，声明的属性包不会保存在令牌中，因此，应该在后续的本地策略要引用属性中存储的信息时，才对属性分配值。|  
   

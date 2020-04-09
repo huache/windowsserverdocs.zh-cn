@@ -1,24 +1,20 @@
 ---
 title: 确定软件限制策略的“允许-拒绝”列表和应用程序清单
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ddea6daeb2150bd9fd3131a8457a6a4b408cfc3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7609ebb0fdcb6d429cd40d99399eaaedb732df08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357656"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855090"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>确定软件限制策略的“允许-拒绝”列表和应用程序清单
 
@@ -38,7 +34,7 @@ ms.locfileid: "71357656"
 -   [使用软件限制策略来帮助保护你的计算机免受电子邮件病毒侵害](use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus.md)
 
 ### <a name="what-default-rule-to-choose-allow-or-deny"></a>要选择的默认规则：允许或拒绝
-软件限制策略可采用以下两种模式之一进行部署：允许列表或拒绝列表。 您可以创建一个策略，用于标识允许在您的环境中运行的每个应用程序;策略中的默认规则受到限制，并且会阻止你未明确允许运行的所有应用程序。 或者，你可以创建一个策略来识别每个无法运行的应用程序;默认规则是 "无限制"，只限制显式列出的应用程序。
+软件限制策略可采用以下两种模式之一进行部署：默认规则：允许列表或拒绝列表。 您可以创建一个策略，用于标识允许在您的环境中运行的每个应用程序;策略中的默认规则受到限制，并且会阻止你未明确允许运行的所有应用程序。 或者，你可以创建一个策略来识别每个无法运行的应用程序;默认规则是 "无限制"，只限制显式列出的应用程序。
 
 > [!IMPORTANT]
 > 对于你的组织而言，"拒绝列表" 模式可能是针对应用程序控制的高维护策略。 创建和维护阻止所有恶意软件和其他有问题的应用程序的不断演变的列表将非常耗时且容易出错。
@@ -52,9 +48,9 @@ ms.locfileid: "71357656"
 
 2.  若要启用高级日志记录功能并将路径设置为要写入日志文件的位置，请创建以下注册表值。
 
-    **"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
+    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
 
-    字符串值：*NameLogFile 的 NameLogFile 路径*
+    字符串值： *NameLogFile 到 NameLogFile 的路径*
 
     由于 SRP 在运行时对所有应用程序进行评估，因此每次运行该应用程序时，都会将一个条目写入日志文件*NameLogFile* 。
 

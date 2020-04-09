@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7d230527-f4fe-4572-8838-0b354ee0b06b
 title: 添加声明说明
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ff50ac8d41a5bbde282b1d5b93c85610f841b5ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c5293dc6070c9483054ce1dd827a20ec377573b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407783"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859710"
 ---
 # <a name="add-a-claim-description"></a>添加声明说明
 
@@ -25,7 +24,7 @@ ms.locfileid: "71407783"
 
 你可以使用以下过程添加声明。
 
-本地计算机上的 **Administrators** 中的成员身份或等效身份是完成这些过程所需的最低要求。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。
 
 ## <a name="to-add-a-claim-description"></a>添加声明说明
 
@@ -50,10 +49,10 @@ ms.locfileid: "71407783"
 - To publish this claim to make partners aware that this server can issue this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can send**.
 ~~~
 
-8. 单击 **“确定”** 。
+8. 单击“确定”。
 
 ![添加声明说明](media/Add-a-Claim-Description/claimdesc2.png)
 
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 

@@ -2,22 +2,18 @@
 title: 步骤1规划 DirectAccess 基础结构
 description: 本主题是将 DirectAccess 添加到 Windows Server 2016 现有远程访问（VPN）部署的指南的一部分
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 726a8dce5dce9ef0c87eee64cea86d979219079c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: be4d7028f1922152b2779e82a7c78d9b3a5b753a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309226"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859550"
 ---
 # <a name="step-1-plan-directaccess-infrastructure"></a>步骤1规划 DirectAccess 基础结构
 

@@ -1,19 +1,19 @@
 ---
 title: 创建受防护的 Windows VM 模板磁盘
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 9c8b84e8-1f5a-47a1-83ca-b1dbd801cb0b
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 04fdd52544b69d2c41abcbee00dd00b31bf5f21c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 766ea9688b7f08914ca68a960cc21393963bd0e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949788"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856770"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>创建受防护的 Windows VM 模板磁盘
 
@@ -85,7 +85,7 @@ ms.locfileid: "75949788"
     > 模板磁盘只能用于安全防护的 VM 预配过程。
     > 尝试使用模板磁盘启动常规（非屏蔽） VM 可能会导致停止错误（蓝屏）并且不受支持。
 
-9. 在 "**摘要**" 页上，将显示有关磁盘模板、用于对 VSC 进行签名的证书和证书颁发者的信息。 单击 **“关闭”** 以退出向导。
+9. 在 "**摘要**" 页上，将显示有关磁盘模板、用于对 VSC 进行签名的证书和证书颁发者的信息。 单击 **“关闭”** 退出向导。
 
 如果使用 VMM，请按照本主题的其余部分中的步骤将模板磁盘合并到 VMM 中的受防护的 VM 模板。 
 
@@ -113,7 +113,7 @@ ms.locfileid: "75949788"
 
 ## <a name="create-the-shielded-vm-template-in-vmm-using-the-prepared-template-disk"></a>使用准备好的模板磁盘在 VMM 中创建受防护的 VM 模板
 
-使用 VMM 库中的已准备好的模板磁盘，你可以为受防护的 Vm 创建 VM 模板。 受防护的 vm 的 VM 模板略有不同于传统的 VM 模板，因为某些设置是固定的（已启用第2代 VM、UEFI 和安全启动等），而其他设置不可用（租户自定义仅限于少数几个选择 VM 的属性）. 若要创建 VM 模板，请执行以下步骤：
+使用 VMM 库中的已准备好的模板磁盘，你可以为受防护的 Vm 创建 VM 模板。 受防护的 vm 的 VM 模板略有不同于传统的 VM 模板，因为某些设置是固定的（已启用第2代 VM、UEFI 和安全启动等），而其他设置则不可用（租户自定义仅限于少数，选择 VM 的属性）。 若要创建 VM 模板，请执行以下步骤：
 
 1. 在 "**库**" 工作区中，单击顶部 "主文件夹" 选项卡上的 "**创建 VM 模板**"。
 

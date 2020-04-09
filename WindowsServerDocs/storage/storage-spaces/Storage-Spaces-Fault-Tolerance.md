@@ -2,7 +2,7 @@
 title: 存储空间直通中的容错和存储效率
 ms.prod: windows-server
 ms.author: cosmosdarwin
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
@@ -10,12 +10,12 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: 存储空间直通中的复原选项（包括镜像和奇偶校验）的讨论。
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e60a715ffa0097f3f5c615792da3aa0a291d6bd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b64592bf3cf5659410dcbbeb4c190d2d6a85485a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950046"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859010"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>存储空间直通中的容错和存储效率
 
@@ -37,18 +37,18 @@ ms.locfileid: "75950046"
 
 在 Windows Server 2016 中，存储空间提供两类镜像：“双向”和“三向”。
 
-### <a name="two-way-mirror"></a>双向镜像
+### <a name="two-way-mirror"></a>“双向镜像”
 
-双向镜像为所有数据编写两个副本。 存储效率为 50%，即若要写入 1 TB 的数据，需要至少 2 TB 的物理存储容量。 同样地，需要至少两个[硬件“容错域”](../../failover-clustering/fault-domains.md)，对存储空间直通而言，这意味着两台服务器。
+双向镜像为所有数据编写两个副本。 存储效率为 50%，即若要编写 1 TB 的数据，需要至少 2 TB 的物理存储容量。 同样地，需要至少两个[硬件“容错域”](../../failover-clustering/fault-domains.md)，对存储空间直通而言，这意味着两台服务器。
 
 ![双向镜像](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
 
    >[!WARNING]
    > 如果你有两个以上的服务器，我们建议改用三向镜像。
 
-### <a name="three-way-mirror"></a>三向镜像
+### <a name="three-way-mirror"></a>“三向镜像”
 
-三向镜像为所有数据编写三个副本。 存储效率为 33.3%，即若要写入 1 TB 的数据，需要至少 3 TB 的物理存储容量。 同样地，需要至少三个硬件容错域，对存储空间直通而言，这意味着三台服务器。
+三向镜像为所有数据编写三个副本。 存储效率为 33.3%，即若要编写 1 TB 的数据，需要至少 3 TB 的物理存储容量。 同样地，需要至少三个硬件容错域，对存储空间直通而言，这意味着三台服务器。
 
 三向镜像可以安全容忍[一次至少出现两个硬件（驱动器或服务器）问题](#examples)。 例如，如果你在另一个驱动器或服务器突然发生故障时重新启动一个服务器，则所有数据都将保持安全且可连续访问。
 
@@ -69,9 +69,9 @@ ms.locfileid: "75950046"
    >[!WARNING]
    > 我们不鼓励使用单奇偶校验，因为它一次只能安全地写入 一个硬件故障：如果你在另一个驱动器或服务器突然发生故障时重新启动一个服务器，则将遇到停机。 如果仅拥有三台服务器，我们建议使用三向镜像。 如果拥有四台或更多服务器，请参阅接下来的部分。
 
-### <a name="dual-parity"></a>双奇偶校验
+### <a name="dual-parity"></a>双重奇偶校验
 
-双奇偶校验实现 Reed-Solomon 错误更正代码，保留两个按位奇偶校验符号，因此提供与三向镜像提供的相同容错（即最多同时两个失败），但存储效率更高。 这最像 RAID-6。 若要使用双奇偶校验，需要至少四个硬件容错域，对存储空间直通而言，这意味着四台服务器。 在该范围内，存储效率为 50%，即若要写入 2 TB 的数据，需要至少 4 TB 的物理存储容量。
+双奇偶校验实现 Reed-Solomon 错误更正代码，保留两个按位奇偶校验符号，因此提供与三向镜像提供的相同容错（即最多同时两个失败），但存储效率更高。 这最像 RAID-6。 若要使用双奇偶校验，需要至少四个硬件容错域，对存储空间直通而言，这意味着四台服务器。 在该范围内，存储效率为 50%，即若要编写 2 TB 的数据，需要至少 4 TB 的物理存储容量。
 
 ![双奇偶校验](media/Storage-Spaces-Fault-Tolerance/dual-parity-180px.png)
 
@@ -89,7 +89,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 ![本地重建代码](media/Storage-Spaces-Fault-Tolerance/local-reconstruction-codes-180px.png)
 
-我们推荐这篇由我们的 [Claus Joergensen](https://twitter.com/clausjor) 编写的深入但非常易读的操作实例[本地重建代码如何处理各种失败方案，并且它们为什么具有吸引力](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)。
+我们推荐这篇由我们的 [Claus Joergensen](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/) 编写的深入但非常易读的操作实例[本地重建代码如何处理各种失败方案，并且它们为什么具有吸引力](https://twitter.com/clausjor)。
 
 ## <a name="mirror-accelerated-parity"></a>镜像加速奇偶校验
 
@@ -102,7 +102,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 > [!IMPORTANT]
 > 我们建议对大多数性能敏感的工作负载使用镜像。 若要了解有关根据工作负荷平衡性能和容量的详细信息，请参阅[计划卷](plan-volumes.md#choosing-the-resiliency-type)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a><a name="summary"></a>小结
 
 本部分总结了存储空间直通可用的复原类型、使用每种类型的最低范围要求、每种类型可容忍的失败数以及相应的存储效率。
 
@@ -110,19 +110,19 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 |    复原          |    失败容差       |    存储效率      |
 |------------------------|----------------------------|----------------------------|
-|    双向镜像      |    1                       |    50.0%                   |
-|    三向镜像    |    2                       |    33.3%                   |
-|    双奇偶校验         |    2                       |    50.0% - 80.0%           |
-|    混合               |    2                       |    33.3% - 80.0%           |
+|    “双向镜像”      |    1                       |    50.0%                   |
+|    “三向镜像”    |    2                       |    33.3%                   |
+|    双重奇偶校验         |    2                       |    50.0% - 80.0%           |
+|    Mixed               |    2                       |    33.3% - 80.0%           |
 
 ### <a name="minimum-scale-requirements"></a>最小范围要求
 
 |    复原          |    所需的最小故障域数   |
 |------------------------|-------------------------------------|
-|    双向镜像      |    2                                |
-|    三向镜像    |    3                                |
-|    双奇偶校验         |    4                                |
-|    混合               |    4                                |
+|    “双向镜像”      |    2                                |
+|    “三向镜像”    |    3                                |
+|    双重奇偶校验         |    4                                |
+|    Mixed               |    4                                |
 
    >[!TIP]
    > 除非使用[机箱或机架容错](../../failover-clustering/fault-domains.md)，否则容错域数量指的是服务器数量。 每台服务器中的驱动器数量不会影响可使用的复原类型，前提是达到存储空间直通的最低要求。 
@@ -171,7 +171,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 |    15                 |    RS 6+2           |    75.0%        |
 |    16                 |    LRC (12, 2, 1)   |    80.0%        |
 
-## <a name="examples"></a>示例
+## <a name="examples"></a><a name="examples"></a>示例
 
 除非只拥有两台服务器，否则我们建议使用三向镜像和/或双奇偶校验，因为它们提供更好的容错。 特别是它们可确保所有数据的安全并可一直访问，即使在两个容错域（对存储空间直通而言，这意味着两台服务器）受到同时产生的失败影响时也是如此。
 
@@ -205,7 +205,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 ![容错示例 7 和 8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>Usage
+## <a name="usage"></a>用法
 
 查看[在存储空间直通中创建卷](create-volumes.md)。
 

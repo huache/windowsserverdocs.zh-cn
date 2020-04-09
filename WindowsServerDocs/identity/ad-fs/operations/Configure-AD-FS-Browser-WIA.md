@@ -6,19 +6,18 @@ ms.author: billmath
 manager: femila
 ms.date: 03/20/2020
 ms.topic: article
-ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 47ef535c7e761f9de8331b80508703421feb68e9
-ms.sourcegitcommit: 5197a87e659589bcc8d2a32069803ae736b02892
+ms.openlocfilehash: b0c64d90fcbeaf2aa03312b9707bcfa43379271f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376254"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859930"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>通过 AD FS 将浏览器配置为使用 Windows 集成身份验证（WIA）
 
-默认情况下，在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务（AD FS）中启用 Windows 集成身份验证（WIA），以便在组织的内部网络（intranet）内发生身份验证请求，这些请求使用用于身份验证的浏览器。
+默认情况下，在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务（AD FS）中启用 Windows 集成身份验证（WIA），以便在组织的内部网络（intranet）内针对使用浏览器进行身份验证的任何应用程序进行身份验证请求。
 
 AD FS 2016 现在提供了一个改进的默认设置，使边缘浏览器可以执行 WIA，同时也不会错误地捕获 Windows Phone：
 

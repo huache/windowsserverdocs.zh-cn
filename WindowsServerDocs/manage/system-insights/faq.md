@@ -1,58 +1,53 @@
 ---
-title: 系统 Insights 常见问题
-description: 系统 Insights 常见问题
-ms.custom: na
+title: 系统见解常见问题解答
+description: 系统见解常见问题解答
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: 13767e1336d1ff729d1fbbe6cae3ed57d68cefc4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d6ddd682def579796089266065be7d39ce361d1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851058"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856250"
 ---
-# <a name="system-insights-faq"></a>系统 Insights 常见问题
+# <a name="system-insights-faq"></a>系统见解常见问题解答
 
 >适用于：Windows Server 2019
 
-## <a name="how-can-you-use-system-insights-with-azure-monitor-or-system-center-operations-manager"></a>如何使用 Azure Monitor 或 System Center Operations Manager 使用系统 Insights？
+## <a name="how-can-you-use-system-insights-with-azure-monitor-or-system-center-operations-manager"></a>如何将系统见解用于 Azure Monitor 或 System Center Operations Manager？
 
-[Azure Monitor](https://azure.microsoft.com/services/monitor/)并[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)对你的部署可帮助您管理您的基础结构提供的操作信息。 系统的见解，与此相反，是 Windows Server 功能，引入了本地的预测分析功能。 在一起，系统 Insights 和 Azure Monitor 或 SCOM 可帮助跨设备的总体呈现预测：
+[Azure Monitor](https://azure.microsoft.com/services/monitor/)和[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)提供跨部署的操作信息，以帮助你管理基础结构。 与此相反，系统见解是一项 Windows Server 功能，它介绍了本地预测分析功能。 同时，系统见解和 Azure Monitor 或 SCOM 可帮助在整个设备中显示预测：
 
- Azure 监视器或 SCOM 可以键关闭创建的系统的见解，事件系统 Insights 输出到事件日志的每个预测的结果。 对一系列 Windows 服务器，您可以在服务器实例组中具有这些预测的统一的视图，它们可能会出现这些特定于计算机的预测。 
+ Azure Monitor 或 SCOM 可以关闭由系统见解创建的事件，因为系统见解会将每个预测的结果输出到事件日志。 它们可在一组 Windows server 中显示这些特定于计算机的预测，使你能够在一组服务器实例中统一查看这些预测。 
  
- 请参阅针对每个预测的通道和事件 Id[此处](https://docs.microsoft.com/windows-server/manage/system-insights/managing-capabilities#retrieving-capability-results)。
+ 请参阅[此处](https://docs.microsoft.com/windows-server/manage/system-insights/managing-capabilities#retrieving-capability-results)每个预测的通道和事件 id。
 
-## <a name="how-does-system-insights-relate-to-windows-ml"></a>系统 Insights 关联 Windows 机器学习？
+## <a name="how-does-system-insights-relate-to-windows-ml"></a>系统见解如何与 Windows ML 关联？
 
-[Windows 机器学习](https://docs.microsoft.com/windows/uwp/machine-learning/)是一个平台，使开发人员能够导入和预先定型的机器学习模型评分 Windows 设备上。 这些模型利用硬件加速，并可以本地评分。 
+[WINDOWS ML](https://docs.microsoft.com/windows/uwp/machine-learning/)是一种平台，使开发人员能够在 Windows 设备上导入和评分预先训练的机器学习模型。 这些模型受益于硬件加速，可在本地进行评分。 
 
-系统 Insights 是一项功能提供了完整的管理体验，包括 PowerShell 和 Windows Admin Center 集成以及本地预测功能的 Windows Server 2019。 
+系统见解是 Windows Server 2019 中的一项功能，它提供本地预测功能，同时提供完整的管理体验，包括 PowerShell 和 Windows 管理中心集成。 
 
-## <a name="can-i-use-system-insights-for-my-cluster"></a>可以为群集使用系统 Insights？ 
+## <a name="can-i-use-system-insights-for-my-cluster"></a>是否可以对群集使用系统见解？ 
 
-是。 系统 Insights 可以独立运行每个单独的故障转移群集节点，和系统 Insights 预测使用情况的默认行为中，跨本地存储、 卷、 CPU 和网络。 **此外可以将群集存储预测**，因此存储预测功能预测为群集的卷和存储使用情况。 
+可以。 系统见解可以独立运行在每个故障转移群集节点上，并且可以在本地存储、卷、CPU 和网络之间独立使用系统 Insights 预测的默认行为。 **你还可以启用群集存储的预测**，以便预测群集卷和存储的使用情况。 
 
-你可以在 Windows Admin Center 或 PowerShell 中，这些设置和管理提供了有关此功能的更多详细的信息[此处](https://blogs.technet.microsoft.com/filecab/2018/10/03/using-system-insights-to-forecast-clustered-storage-usage/)。
+你可以在 Windows 管理中心或 PowerShell 中管理这些设置，[此处](https://blogs.technet.microsoft.com/filecab/2018/10/03/using-system-insights-to-forecast-clustered-storage-usage/)提供了有关此功能的更多详细信息。
  
 
-## <a name="how-expensive-is-it-to-run-the-default-capabilities"></a>代价是其运行的默认功能？
+## <a name="how-expensive-is-it-to-run-the-default-capabilities"></a>运行默认功能的成本是多少？
 
-每个默认功能是成本较低来运行。 每个功能需要较长时间运行收集更多数据，但它们通常应在几秒内完成。 
+每个默认功能的运行成本都很低。 收集更多数据时，每个功能运行所需的时间更长，但通常只需几秒钟即可完成。 
 
-## <a name="see-also"></a>请参阅
-若要了解有关系统 Insights 的详细信息，请参阅以下资源：
+## <a name="see-also"></a>另请参阅
+若要了解有关系统见解的详细信息，请使用以下资源：
 
-- [系统 Insights 概述](overview.md)
+- [系统见解概述](overview.md)
 - [了解功能](understanding-capabilities.md)
 - [管理功能](managing-capabilities.md)
 - [添加和开发功能](adding-and-developing-capabilities.md)

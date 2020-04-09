@@ -1,7 +1,6 @@
 ---
 ms.assetid: 299e4fb9-8f1a-4275-ad7d-dad4f1594657
 title: 演练-使用 iOS 设备 Workplace Join
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5214165c2843461a2da8b574ad28f92b0e0bc64d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b1d2a5f5c32d55e482f5f53a04668b34fc9aece
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407499"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815990"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>操作实例：使用 iOS 设备加入工作区
 
@@ -41,17 +40,17 @@ ms.locfileid: "71407499"
 
    -   **当本地 drs 为配置的 Drs 时**：打开 Apple Safari 并导航到 iOS 设备的设备注册服务（DRS）无线配置文件终结点，`https://adf1s.contoso.com/enrollmentserver/otaprofile`
 
-   将此 URL 传播给用户的方式有很多。 其中一种建议的方式是在 AD FS 中的自定义应用程序访问被拒消息中发布此 URL。 后面的部分中介绍了此方式： [创建应用程序访问策略和自定义访问被拒消息](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
+   将此 URL 传播给用户的方式有很多。 建议的方法之一是在 AD FS 中，将此 URL 发布在自定义的应用程序访问被拒绝消息中。 后面的部分中介绍了此方式： [创建应用程序访问策略和自定义访问被拒消息](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
 
 2. 使用公司域帐户登录到网页： <strong>roberth@contoso.com</strong>和 password： <strong>P@ssword</strong>。
 
-3. 系统会提示你安装配置文件。 在“安装配置文件” 屏幕上，单击“安装”。
+3. 系统会提示你安装配置文件。 在“安装配置文件”屏幕上，单击“安装”。
 
 4. 当系统提示确认安装配置文件时，请单击“立即安装”。
 
 5. 如果你的设备需要一个 PIN 来解锁，系统会提示你输入 PIN。
 
-6. 当你看到“配置文件已安装” 屏幕时，表示配置文件安装已完成。 单击**完成**。
+6. 当你看到“配置文件已安装”屏幕时，表示配置文件安装已完成。 单击 **“完成”** 。
 
    返回到 Safari。 显示一条消息，通知你可以关闭或退出 Safari。
 

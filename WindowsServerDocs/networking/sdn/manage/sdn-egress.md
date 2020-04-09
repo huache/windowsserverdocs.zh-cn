@@ -1,20 +1,19 @@
 ---
 title: 虚拟网络中的出口计量
 description: 云网络盈利的一个基本方面是网络带宽出口。 例如，Microsoft Azure 业务模型中的出站数据传输。 根据在给定计费周期内通过 Internet 从 Azure 数据中心移出的数据总量对出站数据收费。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
-ms.assetid: ''
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: 5425a562264addd3b2fc416f659f8ba79d6d99d6
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a5d530d5cd1b42206bd6881ee902496713573793
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317489"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854430"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>虚拟网络中的出口计量
 

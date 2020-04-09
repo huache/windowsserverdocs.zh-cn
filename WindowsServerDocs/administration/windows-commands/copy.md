@@ -1,28 +1,22 @@
 ---
-title: copy
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: 复制
+description: 用于复制的 Windows 命令主题，它将一个或多个文件从一个位置复制到另一个位置。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 102fd6b59516b04b8986ee47b52f521be73f04de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f1ba088f62dec574a23406683bf5ae3d13c1e86
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379040"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847140"
 ---
-# <a name="copy"></a>copy
-
-
+# <a name="copy"></a>复制
 
 将一个或多个文件从一个位置复制到另一个位置。
 
@@ -34,9 +28,9 @@ ms.locfileid: "71379040"
 copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a | /b] [+ ...]] [<Destination> [/a | /b]]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/d|允许复制的加密文件作为解密文件保存在目标位置。|
 |/v|验证是否已正确写入新文件。|
@@ -46,8 +40,8 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
 |/z|在可重启模式下复制网络文件。|
 |/a|指示 ASCII 文本文件。|
 |/b|指示二进制文件。|
-|\<Source >|必需。 指定要从中复制文件或文件集的位置。 *源*可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
-|\<Destination >|必需。 指定您要将一个或一组文件复制到的位置。 *目标*可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
+|\<源 >|必需。 指定要从中复制文件或文件集的位置。 *源*可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
+|\<目标 >|必需。 指定您要将一个或一组文件复制到的位置。 *目标*可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -68,7 +62,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
 
     **/B**的影响取决于它在命令行字符串中的位置。 如果**跟随** *Source*，则**复制**将复制整个文件，包括任何文件尾字符（CTRL + Z）。
 
-    当 Destination 跟随*Destination*时， **copy**不会添加文件尾字符（CTRL + Z）。
+    当 **/b** Destination 跟随*Destination*时， **copy**不会添加文件尾字符（CTRL + Z）。
 -   使用 **/v**
 
     如果无法验证写入操作，则会显示错误消息。 尽管**复制**时很少出现记录错误，但你可以使用 **/v**来验证是否已正确记录关键数据。 **/V**命令行选项还会减慢**复制**命令，因为必须检查磁盘上记录的每个扇区。
@@ -112,7 +106,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
     若要复制目录的所有文件和子目录，请使用**xcopy**命令。
 -   可从恢复控制台获取带有不同参数的**复制**命令。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要将名为 Memo 的文件复制到当前驱动器中的 Letter，并确保文件尾字符（CTRL + Z）位于复制文件的末尾，请键入：
 ```
@@ -153,6 +147,6 @@ copy *.txt + *.ref *.doc
 copy *.txt + *.ref Combined.doc
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

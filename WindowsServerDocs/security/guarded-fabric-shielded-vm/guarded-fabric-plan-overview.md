@@ -1,22 +1,22 @@
 ---
 title: 规划受保护的构造和受防护的 Vm
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: a754b78c-048d-4be9-a846-cf41ff0bcbc4
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: f0ace5a081569cbe1ecb86c63fd88635035cf908
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b35b74b4f82360f65bfdd7bc9addf58b914627d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403561"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856520"
 ---
 # <a name="planning-a-guarded-fabric"></a>规划受保护的构造
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 以下主题介绍了如何规划受保护的构造和受防护的虚拟机（Vm）：
 

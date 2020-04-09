@@ -1,7 +1,6 @@
 ---
 ms.assetid: dc24adb7-385d-4a92-ab81-78ba73df0118
 title: 联合服务器代理的证书要求
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: dab77c3e3226e89eb3ac9b74e7db9b6df8f181bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc32288d01d7e1386f146716f45f0e49ced3d48e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408149"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858120"
 ---
 # <a name="certificate-requirements-for-federation-server-proxies"></a>联合服务器代理的证书要求
 
@@ -22,7 +21,7 @@ ms.locfileid: "71408149"
   
 联合服务器代理通常公开给 Internet 上未包括在企业公钥基础结构 \(PKI\)中的计算机。 因此，请使用由公共 \(第三方\-方\) 证书颁发机构 \(CA\)（例如 VeriSign）颁发的服务器身份验证证书。  
   
-如果你具有联合服务器代理场，则所有联合服务器代理计算机都必须使用相同的服务器身份验证证书。 有关详细信息，请参阅 [何时创建联合服务器代理场](When-to-Create-a-Federation-Server-Proxy-Farm.md)。  
+如果你具有联合服务器代理场，则所有联合服务器代理计算机都必须使用相同的服务器身份验证证书。 有关详细信息，请参阅 [When to Create a Federation Server Proxy Farm](When-to-Create-a-Federation-Server-Proxy-Farm.md)。  
   
 务必确保服务器身份验证证书中的使用者名称与中 AD FS 管理 "\-中指定的" 联合身份验证服务名称 "值匹配。 若要查找此值，请打开\-中的 "对齐"，\-右键单击 "**服务**"，单击 "**编辑联合身份验证服务属性**"，然后在 "**联合身份验证服务名称**" 文本框中找到该值。  
   

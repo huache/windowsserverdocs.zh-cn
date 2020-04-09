@@ -1,24 +1,20 @@
 ---
 title: logman 创建跟踪
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1b4dfecd-6f56-4c51-b622-c2054b4aabd7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 39e54cc10827a473bc19304c91dd6cd7afbf008c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b415bba125c9ae85f1bba9d5580c28c5c7af9b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374526"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840850"
 ---
 # <a name="logman-create-trace"></a>logman 创建跟踪
 
@@ -30,9 +26,9 @@ ms.locfileid: "71374526"
 ```  
 logman create trace <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>参数  
+### <a name="parameters"></a>参数  
 
-|                         参数                          |                                                                                                                                                                                                                                                                                                                                描述                                                                                                                                                                                                                                                                                                                                |
+|                         参数                          |                                                                                                                                                                                                                                                                                                                                说明                                                                                                                                                                                                                                                                                                                                |
 |------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                             /?                             |                                                                                                                                                                                                                                                                                                                     显示区分上下文的帮助。                                                                                                                                                                                                                                                                                                                      |
 |                     -s <computer name>                     |                                                                                                                                                                                                                                                                                                           在指定的远程计算机上执行命令。                                                                                                                                                                                                                                                                                                           |
@@ -63,14 +59,14 @@ logman create trace <[-n] <name>> [options]
 |                           -[-] ul                           |                                                                                                                                                                                                                                                                                                                 在用户模式下运行事件跟踪会话。                                                                                                                                                                                                                                                                                                                 |
 |                        -bs.1770 <value>                         |                                                                                                                                                                                                                                                                                                           指定事件跟踪会话缓冲区大小（kb）。                                                                                                                                                                                                                                                                                                            |
 |                       -nb <min max>                        |                                                                                                                                                                                                                                                                                                           指定事件跟踪会话缓冲区的数量。                                                                                                                                                                                                                                                                                                            |
-| -mode < globalsequence&#124;localsequence&#124;pagedmemory > | 指定事件跟踪会话记录器模式。<br /><br />**Globalsequence**指定事件跟踪器将序列号添加到它接收的每个事件，而不考虑哪个跟踪会话收到了该事件。<br /><br />**Localsequence**指定事件跟踪器为在特定跟踪会话中接收的事件添加序列号。 使用**localsequence**选项时，重复的序列号在所有会话中都可能存在，但在每个跟踪会话中是唯一的。<br /><br />**Pagedmemory**指定事件跟踪器使用分页内存而不是默认的非分页内存池来实现其内部缓冲区分配。 |
+| -mode < globalsequence&#124;localsequence&#124;pagedmemory > | 指定事件跟踪会话记录器模式。<p>**Globalsequence**指定事件跟踪器将序列号添加到它接收的每个事件，而不考虑哪个跟踪会话收到了该事件。<p>**Localsequence**指定事件跟踪器为在特定跟踪会话中接收的事件添加序列号。 使用**localsequence**选项时，重复的序列号在所有会话中都可能存在，但在每个跟踪会话中是唯一的。<p>**Pagedmemory**指定事件跟踪器使用分页内存而不是默认的非分页内存池来实现其内部缓冲区分配。 |
 
 ## <a name="remarks"></a>备注  
 其中列出了 [-]，额外-会对选项求反。  
-## <a name="BKMK_examples"></a>示例  
+## <a name="examples"></a><a name=BKMK_examples></a>示例  
 下面的示例创建一个名为 trace_log 的事件跟踪数据收集器，该收集器使用不小于16且不超过256个缓冲区，每个缓冲区大小为64kb，并将结果输出到位置 c:\logfile。  
 ```  
 logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile  
 ```  
-#### <a name="additional-references"></a>其他参考  
+## <a name="additional-references"></a>其他参考  
 [logman](logman.md)  

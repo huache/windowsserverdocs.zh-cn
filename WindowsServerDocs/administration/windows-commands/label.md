@@ -1,26 +1,22 @@
 ---
-title: label
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: 标签
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bbae8bdd-97d4-4566-9118-7c95aa07645f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e66a2d9a7d28462b287084e3f8b129ffc03800bd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7ccb86e2167682e1048161f2d5f5386a8b5cf6ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374789"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841170"
 ---
-# <a name="label"></a>label
+# <a name="label"></a>标签
 
 
 
@@ -34,13 +30,13 @@ ms.locfileid: "71374789"
 label [/mp] [<Volume>] [<Label>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/mp|指定应将卷视为装入点或卷名。|
-|\<Volume >|指定驱动器号（后跟冒号）、装入点或卷名。 如果指定了卷名称，则不需要 **/mp**参数。|
-|\<Label >|指定卷的标签。|
+|\<卷 >|指定驱动器号（后跟冒号）、装入点或卷名。 如果指定了卷名称，则不需要 **/mp**参数。|
+|\<标签 >|指定卷的标签。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -59,7 +55,7 @@ label [/mp] [<Volume>] [<Label>]
   ```  
   按 Y 删除标签，或按 N 以保留标签。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要在驱动器 A 中为包含7月销售信息的磁盘添加标签，请键入：
 ```
@@ -82,6 +78,6 @@ label a:sales-july
    ```  
 3. 按 Y 删除当前标签。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

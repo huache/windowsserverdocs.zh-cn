@@ -1,24 +1,20 @@
 ---
 title: 在工作站上启动或关闭应用程序
 description: 了解如何在 MultiPoint Services 中使用应用程序
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: efede045-c20b-4541-9db0-dc96848b987a
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: dbf926cd934a14334785a400763d58fcea581973
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1725a4bed34541b6b6737bbe45b0898a32202a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389657"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853690"
 ---
 # <a name="launch-or-close-applications-on-a-station"></a>在工作站上启动或关闭应用程序
 作为 MultiPoint 仪表板用户，你可以打开或关闭用户桌面、选定桌面或所有桌面上的应用程序。  
@@ -47,6 +43,6 @@ ms.locfileid: "71389657"
   
 3.  选择要关闭的应用程序、文件夹、文档或 Internet 资源的名称，然后单击“关闭应用程序”。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [管理用户桌面](manage-user-desktops-using-multipoint-dashboard.md)  
   

@@ -1,7 +1,6 @@
 ---
 ms.assetid: a0f7bb11-47a5-47ff-a70c-9e6353382b39
 title: 使用条件访问控制管理风险
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e73cf77e9590496f0ff3f881fd8ac4556450b5f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 719c8ad0b39ccb4e252243e64385b12f8dbe6a28
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357749"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816220"
 ---
 # <a name="manage-risk-with-conditional-access-control"></a>使用条件访问控制管理风险
 
@@ -25,7 +24,7 @@ ms.locfileid: "71357749"
 
 -   [使用条件性访问控制管理风险](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
 
-## <a name="BKMK_1"></a>关键概念-AD FS 中的条件访问控制
+## <a name="key-concepts---conditional-access-control-in-ad-fs"></a><a name="BKMK_1"></a>关键概念-AD FS 中的条件访问控制
 AD FS 的总体功能是颁发一个包含声明集的访问令牌。 有关 AD FS 接受的声明，然后发出问题的决策由声明规则控制。
 
 AD FS 中的访问控制是使用颁发授权声明规则实施的，这些规则用于发出允许或拒绝声明，这些声明将确定是否允许某个用户或用户组访问 AD FS 保护的资源。 只能在信赖方信任上设置授权规则。
@@ -36,7 +35,7 @@ AD FS 中的访问控制是使用颁发授权声明规则实施的，这些规�
 |允许具有此传入声明的用户访问|如果传入声明类型等于*指定的声明类型*并且值等于*指定的声明值*，则发出值等于 *“允许”* 的声明|
 |拒绝具有此传入声明的用户访问|如果传入声明类型等于 *指定的声明类型* 并且值等于 *指定的声明值*，则发出值等于 *“拒绝”* 的声明|
 
-有关这些规则选项和逻辑的详细信息，请参阅 [When to Use an Authorization Claim Rule](https://technet.microsoft.com/library/ee913560.aspx)。
+有关这些规则选项和逻辑的详细信息，请参阅[何时使用授权声明规则](https://technet.microsoft.com/library/ee913560.aspx)。
 
 在 Windows Server 2012 R2 的 AD FS 中，使用多种因素（包括用户、设备、位置和身份验证数据）增强了访问控制。 这是通过提高授权声明规则所用的声明类型的多样性来实现的。  换句话说，在 Windows Server 2012 R2 的 AD FS 中，你可以基于用户标识或组成员身份、网络位置、设备（它是否已加入工作区）强制实施条件性访问控制。有关详细信息，请参阅[从任何设备加入工作区以实现 SSO 和无缝第二重身份验证](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)，以及身份验证状态（是否执行多重身份验证（MFA））。
 
@@ -54,10 +53,10 @@ Windows Server 2012 R2 的 AD FS 中的条件访问控制具有以下优势：
 
 下表包括 Windows Server 2012 R2 中 AD FS 可用来实现条件访问控制的所有声明类型。
 
-|声明类型|描述|
+|声明类型|说明|
 |--------------|---------------|
 |电子邮件地址|用户的电子邮件地址。|
-|给定名称|用户的给定名称。|
+|名字|用户的给定名称。|
 |名称|用户的唯一名称。|
 |UPN|用户的用户主体名称 (UPN)。|
 |公用名|用户的公用名。|
@@ -95,7 +94,7 @@ Windows Server 2012 R2 的 AD FS 中的条件访问控制具有以下优势：
 |授权密钥标识符|为已颁发证书签名的证书的授权密钥标识符扩展。|
 |基本约束|证书的基本约束之一。|
 |增强型密钥用法|描述证书的增强密钥用法之一。|
-|颁发者|颁发 X.509 证书的证书颁发机构名称。|
+|Issuer|颁发此 X.509 证书的证书颁发机构的名称。|
 |颁发者名称|证书颁发者的可分辨名称。|
 |密钥用法|证书的密钥用法之一。|
 |不晚于|以本地时间表示的证书有效截止日期。|
@@ -119,7 +118,7 @@ Windows Server 2012 R2 的 AD FS 中的条件访问控制具有以下优势：
 |更新密码 URL|用于显示更新密码服务的 Web 地址。|
 |身份验证方法引用|用于指示用户身份验证所用的所有身份验证方法。|
 
-## <a name="BKMK_2"></a>使用条件性访问控制管理风险
+## <a name="managing-risk-with-conditional-access-control"></a><a name="BKMK_2"></a>使用条件性访问控制管理风险
 你可以使用提供的设置，通过实施条件访问控制以多种方法来管理风险。
 
 ### <a name="common-scenarios"></a>常见方案

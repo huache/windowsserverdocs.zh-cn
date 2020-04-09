@@ -1,26 +1,20 @@
 ---
 title: 通过 Azure 流量管理器在 Azure 中部署高可用性跨地理 AD FS 部署 |Microsoft Docs
-description: 在本文档中，你将了解如何在 Azure 中部署 AD FS 以实现高可用性。
-keywords: 带有 Azure 流量管理器的 Ad fs、包含 Azure 流量管理器的 adfs、地理位置、多数据中心、地理数据中心、多地理数据中心、在 azure 中部署 AD FS、部署 adfs、部署 AD fs、azure ad fs、在 azure 中部署 adfs，在 azure 中部署 AD FS，adfs AD FS azure，azure，azure，AD FS Azure，iaas，ADFS，将 adfs 移到 azure
+description: 如何在 Azure 中部署 AD FS 以实现高可用性。
 services: active-directory
-documentationcenter: ''
 author: anandyadavmsft
 manager: mtillman
-editor: ''
+ms.prod: windows-server
 ms.assetid: a14bc870-9fad-45ed-acd5-a90ccd432e54
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: anandy;billmath
-ms.openlocfilehash: d98eb126513d707bce7abe3e901c8bf584d2319c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9bfb59fadd2cf6b07d3c47ab69f0fe67974706a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868017"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855200"
 ---
 # <a name="high-availability-cross-geographic-ad-fs-deployment-in-azure-with-azure-traffic-manager"></a>通过 Azure 流量管理器在 Azure 中跨地理位置 AD FS 部署的高可用性
 [Azure 中的 AD FS 部署](how-to-connect-fed-azure-adfs.md)提供了有关如何在 azure 中为组织部署简单的 AD FS 基础结构的分步指南。 本文提供了使用[Azure 流量管理器](https://docs.microsoft.com/azure/traffic-manager/)在 azure 中创建 AD FS 跨地域部署的后续步骤。 Azure 流量管理器通过使用一系列可用于满足基础结构不同需求的路由方法，帮助创建在地理上分散高可用性和高性能的 AD FS 基础结构。
@@ -41,7 +35,7 @@ ms.locfileid: "70868017"
 * **网络安全组：** 作为存储帐户，在某个区域中创建的网络安全组不能在另一个地理区域中使用。 因此，需要为新地理区域中的 INT 和外围网络子网创建类似于第一个地理区域中的新网络安全组。
 * **公共 IP 地址的 DNS 标签：** Azure 流量管理器只能通过 DNS 标签引用终结点。 因此，需要为外部负载均衡器的公共 IP 地址创建 DNS 标签。
 * **Azure 流量管理器：** Microsoft Azure 流量管理器允许你控制将用户流量分发到在世界各地不同数据中心运行的服务终结点。 Azure 流量管理器在 DNS 级别工作。 它使用 DNS 响应将最终用户流量定向到全球分布的终结点。 然后，客户端直接连接到这些终结点。 对于性能、加权和优先级的不同路由选项，可以轻松选择最适合组织需求的路由选项。 
-* **在两个区域之间的 v-net 到 V 的网络连接：** 不需要在虚拟网络本身之间建立连接。 由于每个虚拟网络都有权访问域控制器，并且它本身具有 AD FS 和 WAP 服务器，因此它们可以在不同区域的虚拟网络之间进行任何连接。 
+* **在两个区域之间的 v-net 到 v 的网络连接：** 不需要在虚拟网络本身之间建立连接。 由于每个虚拟网络都有权访问域控制器，并且它本身具有 AD FS 和 WAP 服务器，因此它们可以在不同区域的虚拟网络之间进行任何连接。 
 
 ## <a name="steps-to-integrate-azure-traffic-manager"></a>集成 Azure 流量管理器的步骤
 ### <a name="deploy-ad-fs-in-the-new-geographical-region"></a>在新的地理区域部署 AD FS
@@ -71,7 +65,7 @@ ms.locfileid: "70868017"
    
    对于不同的输入，请遵循以下指导原则：
    
-   **类型：** 选择 "Azure 终结点"，因为我们将指向 Azure 公共 IP 地址。
+   **键入：** 选择 "Azure 终结点"，因为我们将指向 Azure 公共 IP 地址。
    
    **名称：** 创建要与终结点关联的名称。 这不是 DNS 名称，与 DNS 记录无关。
    

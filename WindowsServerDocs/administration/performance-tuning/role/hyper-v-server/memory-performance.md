@@ -4,15 +4,15 @@ description: 性能优化 Hyper-v 中的内存注意事项
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 88827176e8a425e9bf68fdc170a4a114346562f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5f683b85657b8dd263e93380b71c646ad677950c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385095"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851720"
 ---
 # <a name="hyper-v-memory-performance"></a>Hyper-v 内存性能
 
@@ -41,7 +41,7 @@ ms.locfileid: "71385095"
 
 Windows Server 2016 中的 hyper-v 监视根分区的管理操作系统的运行时运行状况以确定可以安全地分配给子分区的内存量，同时仍可确保根分区的高性能和可靠性。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [Hyper-V 术语](terminology.md)
 

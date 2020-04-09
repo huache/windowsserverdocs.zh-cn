@@ -1,29 +1,25 @@
 ---
 title: 将 Windows Small Business Server 2011 Essentials 迁移到 Windows Server Essentials
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 32fc90d8-31c5-4c7e-9fe3-483cf3c35f78
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 974182caa4d486dd162acc424aa9b85a9614aaa0
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 190d49fe3a33c5391f199cb013d661cc519b1ca3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639881"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852500"
 ---
 # <a name="migrate-windows-small-business-server-2011-essentials-to-windows-server-essentials"></a>将 Windows Small Business Server 2011 Essentials 迁移到 Windows Server Essentials
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本指南介绍如何将现有的 Windows Small Business Server 2011 Essentials 域迁移到 Windows Server® 2012 Essentials，然后迁移设置和数据。 本指南还介绍了在完成迁移后如何从 Windows Server Essentials 网络中删除现有的服务器。  
+本指南介绍如何将现有的 Windows Small Business Server 2011 Essentials 域迁移到 Windows Server&reg; 2012 Essentials，然后迁移设置和数据。 本指南还介绍了在完成迁移后如何从 Windows Server Essentials 网络中删除现有的服务器。  
   
 > [!NOTE]
 >  为了避免迁移过程中出现问题，Windows Server Essentials 产品开发团队强烈建议你在开始迁移之前先阅读本文档。  

@@ -1,29 +1,25 @@
 ---
 title: 从 Windows Server Essentials 转换到 Windows Server 2012 Standard
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0d7ed80f61dcfa313f867afda5689b2c64b1406a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: aace7849244bb65ec0042971e6ec899f554a62d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318705"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852300"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>从 Windows Server Essentials 转换到 Windows Server 2012 Standard
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
- Windows Server® 2012 Essentials 最多支持25个用户和50个设备。 当你的业务需求超过限制时，你可以执行从 Windows Server Essentials 到 Windows Server 2012 Standard 的就地许可转换，以保持许可证合规。  
+ Windows Server&reg; 2012 Essentials 最多支持25个用户和50个设备。 当你的业务需求超过限制时，你可以执行从 Windows Server Essentials 到 Windows Server 2012 Standard 的就地许可转换，以保持许可证合规。  
   
 ## <a name="how-the-transition-affects-user-and-device-limits"></a>转换如何影响用户和设备限制  
  过渡到 Windows Server 2012 Standard 后，用户帐户和设备限制将被删除，但 Windows Server Essentials 独有的功能（如仪表板、远程 Web 访问和客户端计算机备份）仍然可用。 但是，由于这些功能在技术上的限制，最多只能支持 75 个用户帐户和 75 台设备。 如果需要添加超过75个用户帐户或设备，则应关闭 Windows Server Essentials 功能并使用 Windows Server 2012 标准本机工具来管理用户帐户和设备。  

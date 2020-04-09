@@ -1,7 +1,6 @@
 ---
 ms.assetid: 20d183f0-ef94-44bb-9dfc-ed93799dd1a6
 title: 何时使用自定义声明规则
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c784c4b6dbfee7034dd9302dc87fc74b896763f5
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 41e7ea7c2bc627f2fce198e5c7227148e8b03d88
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950146"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853820"
 ---
 # <a name="when-to-use-a-custom-claim-rule"></a>何时使用自定义声明规则
 你可以使用声明规则语言在 Active Directory 联合身份验证服务 \(AD FS\) 中编写自定义声明规则，该语言是声明颁发引擎用来以编程方式生成、转换、传递和筛选声明的框架。 通过使用自定义规则，可以创建逻辑比标准规则模板更复杂的规则。 在以下情况下可考虑使用自定义规则：  
@@ -39,7 +38,7 @@ ms.locfileid: "75950146"
   
 声明规则语言基于规则。 它包含条件部分和执行部分。 你可以使用声明规则语言语法来枚举、添加、删除或修改声明，以满足组织的需求。 有关其中每个部分的工作原理的详细信息，请参阅[声明规则语言的角色](The-Role-of-the-Claim-Rule-Language.md)。  
   
-以下各节提供声明规则的基本简介。 它们还提供有关何时使用自定义声明规则的详细信息。  
+以下部分提供声明规则的基本简介。 它们还提供有关何时使用自定义声明规则的详细信息。  
   
 ## <a name="about-claim-rules"></a>关于声明规则  
 声明规则表示使用传入声明的业务逻辑的实例、向其应用条件 \(如果 x，然后使用 y\) 并基于条件参数生成传出声明。  
@@ -47,7 +46,7 @@ ms.locfileid: "75950146"
 > [!IMPORTANT]  
 > -   在 AD FS 管理 "\-中的" 管理 "管理单元中，只能使用声明规则模板创建声明规则  
 > -   声明规则处理来自声明提供程序的传入声明 \(例如 Active Directory 或另一个联合身份验证服务\) 或来自声明提供程序信任上的接受转换规则的输出。  
-> -   声明规则由声明发出引擎按给定规则集内的时间顺序处理。 通过为规则设置优先级，可以进一步优化或筛选由给定规则集内以前的规则生成的声明。  
+> -   声明规则由声明颁发引擎按给定规则集内的时间顺序处理。 通过为规则设置优先级，可以进一步优化或筛选由给定规则集内以前的规则生成的声明。  
 > -   声明规则模板始终要求你指定传入声明类型。 但是，你可以使用单个规则处理声明类型相同的多个声明值。  
   
 有关声明规则和声明规则集的更多详细信息，请参阅[声明规则的角色](The-Role-of-Claim-Rules.md)。 有关如何处理规则的详细信息，请参阅[声明引擎的角色](The-Role-of-the-Claims-Engine.md)。 有关如何处理声明规则集的详细信息，请参阅[声明管道的角色](The-Role-of-the-Claims-Pipeline.md)。  
@@ -70,12 +69,12 @@ ms.locfileid: "75950146"
 ## <a name="using-the-claim-rule-language"></a>使用声明规则语言  
   
 ### <a name="example-how-to-combine-first-and-last-names-based-on-a-users-name-attribute-values"></a>示例：如何基于用户的名称属性值组合名字和姓氏  
-下面的规则语法根据给定属性存储中的属性值组合名字和姓氏。 策略引擎对每个条件的匹配项应用笛卡尔乘积。 例如，名字 {“Frank”, “Alan”} 和姓氏 {“Miller”, “Shen”} 的输出为 {“Frank Miller”, “Frank Shen”, “Alan Miller”, “Alan Shen”}：  
+下面的规则语法根据给定属性存储中的属性值组合名字和姓氏。 策略引擎对每个条件的匹配项应用笛卡尔乘积。 例如，名字 {"Frank"，"Alan"} 和姓氏 {"莎莎"，"Shen"} 的输出为 {"Frank 莎莎"，"Frank Shen"，"Alan 莎莎"，"Alan Shen"}：  
   
 ```  
 c1:[type == "http://exampleschema/firstname" ]  
 &&  c2:[type == "http://exampleschema/lastname",]   
-=> issue(type = "http://exampleschema/name", value = c1.value + “  “ + c2.value);  
+=> issue(type = "http://exampleschema/name", value = c1.value + "  " + c2.value);  
 ```  
   
 ### <a name="example-how-to-issue-a-manager-claim-based-on-whether-users-have-direct-reports"></a>例如：如何基于用户是否有直接报告发出管理人员声明  
@@ -83,7 +82,7 @@ c1:[type == "http://exampleschema/firstname" ]
   
 ```  
 c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] => add(store = "SQL Store", types = ("http://schemas.xmlsoap.org/claims/Reports"), query = "SELECT Reports FROM dbo.DirectReports WHERE UserName = {0}", param = c.value );  
-count([type == “http://schemas.xmlsoap.org/claims/Reports“] ) > 0 => issue(= "http://schemas.xmlsoap.org/claims/ismanager", value = "true");  
+count([type == "http://schemas.xmlsoap.org/claims/Reports"] ) > 0 => issue(= "http://schemas.xmlsoap.org/claims/ismanager", value = "true");  
 ```  
   
 ### <a name="example-how-to-issue-a-ppid-claim-based-on-an-ldap-attribute"></a>例如：如何基于 LDAP 属性发出 PPID 声明  

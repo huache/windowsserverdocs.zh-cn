@@ -1,7 +1,6 @@
 ---
 ms.assetid: 01988844-df02-4952-8535-c87aefd8a38a
 title: Deploy Automatic File Classification (Demonstration Steps)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7b8d613653bc2effdae155d34a1a94a820bae3aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc89e97aacab3b764df7314beeab701df846048a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357586"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861250"
 ---
 # <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
@@ -24,7 +23,7 @@ ms.locfileid: "71357586"
   
 -   用于在一组文件中搜索字符串 "Contoso 机密" 的内容分类规则。 如果在某个文件中找到该字符串，则在该文件上将“影响”资源属性设置为“高”。  
   
--   可在一组文件中搜索正则表达式的内容分类规则，该正则表达式在文件中至少匹配 10 次身份证号。 如果找到该模式，则将该文件归类为具有个人身份信息，并且 "个人身份信息" 资源属性设置为 "高"。  
+-   可在一组文件中搜索正则表达式的内容分类规则，该正则表达式在文件中至少匹配 10 次身份证号。 如果找到该模式，则将该文件归类为具有个人身份信息，并且“个人身份信息”资源属性将设置为“高”。  
   
 **本文档中**  
   
@@ -37,9 +36,9 @@ ms.locfileid: "71357586"
 -   [步骤4：验证是否已对文件进行分类](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
-## <a name="BKMK_Step1"></a>步骤1：创建资源属性定义  
+## <a name="step-1-create-resource-property-definitions"></a><a name="BKMK_Step1"></a>步骤1：创建资源属性定义  
 启用“影响”和“个人身份信息”资源属性，以便文件分类基础结构可以使用这些资源属性来标记已在网络共享文件夹上扫描的文件。  
   
 [使用 Windows PowerShell 执行此步骤](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
@@ -58,14 +57,14 @@ ms.locfileid: "71357586"
   
 ![解决方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=Impact_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'   
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'  
 ```  
   
-## <a name="BKMK_Step2"></a>步骤2：创建字符串内容分类规则  
+## <a name="step-2-create-a-string-content-classification-rule"></a><a name="BKMK_Step2"></a>步骤2：创建字符串内容分类规则  
 字符串内容的分类规则将扫描某个文件以查找特定字符串。 如果找到该字符串，则可以配置资源属性的值。 在此示例中，我们将扫描网络共享文件夹上的每个文件，并查找字符串 "Contoso 机密"。 如果找到该字符串，则将关联的文件都归类为具有高业务影响。  
   
 [使用 Windows PowerShell 执行此步骤](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
@@ -86,7 +85,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 7.  在“规则名称”框中的“常规”选项卡上，键入规则名称，如 **Contoso Confidential**。  
   
-8.  在“作用域” 选项卡上，单击“添加”，然后选择应该包括在该规则中的文件夹，如 D:\Finance Documents。  
+8.  在“作用域”选项卡上，单击“添加”，然后选择应该包括在该规则中的文件夹，如 D:\Finance Documents。  
   
     > [!NOTE]  
     > 还可以选择用于作用域的动态命名空间。 有关分类规则的动态命名空间的详细信息，请参阅[Windows Server 2012 中的文件服务器资源管理器的新增功能 \[重定向\]](assetId:///d53c603e-6217-4b98-8508-e8e492d16083)。  
@@ -95,7 +94,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
     -   在“选择用于将属性分配给文件的方法”框中，请确保“内容分类器”处于选中状态。  
   
-    -   在“选择要分配给文件的属性” 框中，单击“影响”。  
+    -   在“选择要分配给文件的属性”框中，单击“影响”。  
   
     -   在“指定一个值”框中，单击“高”。  
   
@@ -103,13 +102,13 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 11. 在“表达式类型”列中，选择“字符串”。  
   
-12. 在“表达式” 列中，键入 **Contoso Confidential**，然后单击“确定”。  
+12. 在“表达式”列中，键入 **Contoso Confidential**，然后单击“确定”。  
   
 13. 在“评估类型”选项卡上，选中“重新评估现有属性值”复选框，再单击“覆盖现有值”，然后单击“确定”。  
   
 ![解决方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 $date = Get-Date  
@@ -118,7 +117,7 @@ Set-FsrmClassification -Continuous -schedule $AutomaticClassificationScheduledTa
 New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -PropertyValue "3000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("StringEx=Min=1;Expr=Contoso Confidential") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step3"></a>步骤3：创建正则表达式内容分类规则  
+## <a name="step-3-create-a-regular-expression-content-classification-rule"></a><a name="BKMK_Step3"></a>步骤3：创建正则表达式内容分类规则  
 正则表达式分类规则将扫描某个文件以查找与正则表达式匹配的模式。 若找到与该正则表达式匹配的字符串，则可以配置资源属性的值。 在此示例中，我们将扫描网络共享文件夹上的每个文件，并查找与身份证号的模式 (XXX XX XXXX) 匹配的字符串。 如果找到该模式，则将关联的文件归类为具有个人身份信息。  
   
 [使用 Windows PowerShell 执行此步骤](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
@@ -141,13 +140,13 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
     -   在“选择用于将属性分配给文件的方法”框中，请确保“内容分类器”处于选中状态。  
   
-    -   在“选择要分配给文件的属性” 框中，单击“个人身份信息”。  
+    -   在“选择要分配给文件的属性”框中，单击“个人身份信息”。  
   
     -   在“指定一个值”框中，单击“高”。  
   
 8.  在“参数”标题下，单击“配置”。  
   
-9. 在“表达式类型” 列中，选择“正则表达式”。  
+9. 在“表达式类型”列中，选择“正则表达式”。  
   
 10. 在 "**表达式**" 列中，键入 **^ （？！000）（[0-7] \d{2}| 7 （[0-7] \d | 7 [012]））（[-]？）(?!00） \d\d\3 （？！0000） \d{4}$**  
   
@@ -157,13 +156,13 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
 ![解决方案指南](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("RegularExpressionEx=Min=10;Expr=^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step4"></a>步骤4：验证文件是否已正确分类  
+## <a name="step-4-verify-that-the-files-are-classified-correctly"></a><a name="BKMK_Step4"></a>步骤4：验证文件是否已正确分类  
 通过查看分类规则中指定的文件夹中已创建的文件的属性，可以验证文件是否已正确分类。  
   
 #### <a name="to-verify-that-the-files-are-classified-correctly"></a>验证文件是否已正确分类  
@@ -182,9 +181,9 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
 3.  右键单击该文件夹中的文件，然后单击“属性”。  
   
-4.  单击“分类” 选项卡，并验证文件是否已正确分类。  
+4.  单击“分类”选项卡，并验证文件是否已正确分类。  
   
-## <a name="BKMK_Links"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
   
 -   [方案：使用分类深入了解你的数据](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   

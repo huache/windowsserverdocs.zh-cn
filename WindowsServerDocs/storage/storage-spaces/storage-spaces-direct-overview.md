@@ -2,7 +2,7 @@
 title: 存储空间直通概述
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
@@ -10,18 +10,18 @@ ms.date: 06/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: 概述存储空间直通，这是 Windows Server 的一项功能，它使你能够使用内部存储将服务器加入软件定义的存储解决方案。
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e47adcebf7da87e9d3c96812f5d7d90ca00601b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b032d286398b3c1719d290ca83da8bbc9c6b9f85
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402836"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859130"
 ---
 # <a name="storage-spaces-direct-overview"></a>存储空间直通概述
 
 >适用于： Windows Server 2019、Windows Server 2016
 
-存储空间直通使用具有本地连接驱动器的行业标准服务器来创建高度可用、高度可扩展的软件定义存储，其成本仅占传统 SAN 或 NAS 阵列的一小部分。 它的聚合或超聚合体系结构大大简化了采购和部署，同时提供了缓存、存储层和擦除编码等功能，以及最新的硬件创新，如 RDMA 网络和 NVMe 驱动器，提供无与伦比的效率和性能。
+存储空间直通使用具有本地连接驱动器的行业标准服务器来创建高度可用、高度可扩展的软件定义存储，其成本仅占传统 SAN 或 NAS 阵列的一小部分。 它的聚合或超聚合体系结构大大简化了采购和部署，同时还提供了缓存、存储层和擦除编码等功能，以及最新的硬件创新（例如 RDMA 联网和 NVMe 驱动器），提供了无与伦比的效率和性能。
 
 存储空间直通包含在 Windows Server 2019 Datacenter、Windows Server 2016 Datacenter 和[Windows Server 有问必答 Preview 内部版本](https://insider.windows.com/for-business-getting-started-server/)中。 
 
@@ -29,7 +29,7 @@ ms.locfileid: "71402836"
 
 |       |       |
 |   -   |   -   |
-| **了解**<br><ul><li>概述（你目前位于此位置）</li><li>[了解缓存](understand-the-cache.md)</li><li>[容错和存储效率](storage-spaces-fault-tolerance.md)<li>[驱动器对称注意事项](drive-symmetry-considerations.md)</li><li>[了解并监视存储重新同步](understand-storage-resync.md)</li><li>[了解群集和池仲裁](understand-quorum.md)</li><li>[群集集](cluster-sets.md)</li> | **规划**<br><ul><li>[硬件要求](storage-spaces-direct-hardware-requirements.md)</li><li>[使用 CSV 内存中读取缓存](csv-cache.md)</li><li>[选择驱动器](choosing-drives.md)</li><li>[规划卷](plan-volumes.md)</li><li>[使用来宾 VM 群集](storage-spaces-direct-in-vm.md)</li><li>[灾难恢复](storage-spaces-direct-disaster-recovery.md)</li> |
+| **了解**<br><ul><li>概述（你目前位于此位置）</li><li>[了解缓存](understand-the-cache.md)</li><li>[容错和存储效率](storage-spaces-fault-tolerance.md)<li>[驱动器对称注意事项](drive-symmetry-considerations.md)</li><li>[了解并监视存储重新同步](understand-storage-resync.md)</li><li>[了解群集和池仲裁](understand-quorum.md)</li><li>[群集集](cluster-sets.md)</li> | **计划**<br><ul><li>[硬件要求](storage-spaces-direct-hardware-requirements.md)</li><li>[使用 CSV 内存中读取缓存](csv-cache.md)</li><li>[选择驱动器](choosing-drives.md)</li><li>[规划卷](plan-volumes.md)</li><li>[使用来宾 VM 群集](storage-spaces-direct-in-vm.md)</li><li>[灾难恢复](storage-spaces-direct-disaster-recovery.md)</li> |
 | **部署**<br><ul><li>[部署存储空间直通](deploy-storage-spaces-direct.md)</li><li>[创建卷](create-volumes.md)</li><li>[嵌套复原](nested-resiliency.md)</li><li>[配置仲裁](../../failover-clustering/manage-cluster-quorum.md)</li><li>[将存储空间直通群集升级为 Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[了解和部署永久性内存](deploy-pmem.md)</li> | **管理**<br><ul><li>[使用 Windows Admin Center 管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[添加服务器或驱动器](add-nodes.md)</li><li>[使服务器脱机以进行维护](maintain-servers.md)</li><li>[删除服务器](remove-servers.md)</li><li>[扩展卷](resize-volumes.md)</li><li>[删除卷](delete-volumes.md)</li><li>[更新驱动器固件](../update-firmware.md)</li><li>[性能历史记录](performance-history.md)</li><li>[分隔卷的分配](delimit-volume-allocation.md)</li><li>[在超聚合群集上使用 Azure Monitor](configure-azure-monitor.md)</li> |
 | **疑难解答**<br><ul><li>[故障排除方案](troubleshooting-storage-spaces.md)</li><li>[运行状况和运行状态故障排除](storage-spaces-states.md)</li><li>[通过存储空间直通收集诊断数据](data-collection.md)</li><li>[存储类内存运行状况管理](Storage-class-memory-health.md)</li> | **最新博客文章**<br><ul><li>[13700000 IOPS 与存储空间直通：超聚合基础结构的新行业记录](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[Windows Server 2019 中的超聚合基础结构-立即开始倒计时时钟！](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[Windows Server 峰会发布五大大广告](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10000存储空间直通分类和计数 .。。](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li> |
 
@@ -120,12 +120,12 @@ ms.locfileid: "71402836"
 
 | 名称 | 图形或命令行？ | 支付还是包含？ |
 |-----------------|----------------------------|-------------------|
-| [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | 绘图    | 已包含 |
-| 服务器管理器 & 故障转移群集管理器                                 | 绘图    | 已包含 |
-| Windows PowerShell                                                        | 命令行 | 已包含 |
-| [System Center Virtual Machine Manager （SCVMM）](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager （SCOM）](https://www.microsoft.com/download/details.aspx?id=54700) | 绘图    | 付费     |
+| [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | 绘图    | 已包括 |
+| 服务器管理器 & 故障转移群集管理器                                 | 绘图    | 已包括 |
+| Windows PowerShell                                                        | 命令行 | 已包括 |
+| [System Center Virtual Machine Manager （SCVMM）](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager （SCOM）](https://www.microsoft.com/download/details.aspx?id=54700) | 绘图    | Paid     |
 
-## <a name="get-started"></a>立即开始行动
+## <a name="get-started"></a>入门
 
 [在 Microsoft Azure 中](https://blogs.technet.microsoft.com/filecab/2016/05/05/s2dazuretp5/)试用存储空间直通，或者从 [Windows Server 评估](https://go.microsoft.com/fwlink/?linkid=842602) 中下载 Windows Server 的 180 天许可证评估副本。
 

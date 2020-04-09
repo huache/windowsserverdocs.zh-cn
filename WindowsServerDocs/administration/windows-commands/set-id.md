@@ -1,26 +1,22 @@
 ---
-title: 设置 id
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: 设置 ID
+description: Diskpart 集 ID 的 Windows 命令主题，它更改具有焦点的分区的分区类型字段。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5793d7ad-827e-4285-b2c6-ae60eeb0e886
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b48cc701716412c4a79cedddb4458c57ba25ad5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2c1a7eabac68ab2615b66c51c509e32c8d246096
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384074"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834530"
 ---
-# <a name="set-id"></a>设置 id
+# <a name="set-id"></a>设置 ID
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -37,14 +33,14 @@ Diskpart Set ID 命令将更改具有焦点的分区的 "分区类型" 字段。
 set id={ <byte> | <GUID> } [override] [noerr]  
 ```  
   
-## <a name="parameters"></a>参数  
+### <a name="parameters"></a>参数  
   
-| 参数 |                                                                                                                                                                                                                                                                                                                                                                   描述                                                                                                                                                                                                                                                                                                                                                                   |
+| 参数 |                                                                                                                                                                                                                                                                                                                                                                   说明                                                                                                                                                                                                                                                                                                                                                                   |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  <byte>   |                                                                                                                                                                                                       对于主启动记录 \(MBR\) 磁盘，以十六进制格式为分区指定 "类型" 字段的新值。 除了指定 LDM 分区的类型0x42 以外，可以使用此参数指定任何分区类型字节。 请注意，在指定十六进制分区类型时，将省略前导0x。                                                                                                                                                                                                       |
-|  <GUID>   | 对于 GUID 分区表 \(gpt\) 磁盘，为分区的类型字段指定新的 GUID 值。 可识别的 Guid 包括：<br /><br />-EFI 系统分区： c12a7328\-f81f\-11d2\-ba4b\-00a0c93ec93b<br />-基本数据分区： ebd0a0a2\-b9e5\-4433\-87c0\-68b6b72699c7<br /><br />任何分区类型 GUID 都可与此参数一起指定，如下所示：<br /><br />-Microsoft 保留分区： e3c9e316\-0b5c\-4db8\-817d\-f92df00215ae<br />-动态磁盘上的 LDM 元数据分区： 5808c8aa\-7e8f\-42e0\-85d2\-e1e90434cfb3<br />-动态磁盘上的 LDM 数据分区： af9b60a0\-1431\-4f62\-bc68\-3311714a69ad<br />-Cluster metadata partition： db97dba9\-0840\-4bae\-97f0\-ffb9a327c7e1 |
-| 忽略  |                                                                强制在更改分区类型前卸除卷上的文件系统。 当你运行 "**设置 id** " 命令时，DiskPart 尝试锁定并卸除卷上的文件系统。 如果未指定**override** ，并且对锁定文件系统的调用失败 \(例如，因为存在打开的句柄\)，则操作将失败。 指定**替代**后，即使对锁定文件系统的调用失败，也会强制卸载，并且卷的任何打开的句柄都将变为无效。<br /><br />此命令仅适用于 Windows 7 和 Windows Server 2008 R2。                                                                 |
-|   noerr   |                                                                                                                                                                                                                                                                    仅用于脚本编写。 遇到错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。                                                                                                                                                                                                                                                                    |
+|  <GUID>   | 对于 GUID 分区表 \(gpt\) 磁盘，为分区的类型字段指定新的 GUID 值。 可识别的 Guid 包括：<p>-EFI 系统分区： c12a7328\-f81f\-11d2\-ba4b\-00a0c93ec93b<br />-基本数据分区： ebd0a0a2\-b9e5\-4433\-87c0\-68b6b72699c7<p>任何分区类型 GUID 都可与此参数一起指定，如下所示：<p>-Microsoft 保留分区： e3c9e316\-0b5c\-4db8\-817d\-f92df00215ae<br />-动态磁盘上的 LDM 元数据分区： 5808c8aa\-7e8f\-42e0\-85d2\-e1e90434cfb3<br />-动态磁盘上的 LDM 数据分区： af9b60a0\-1431\-4f62\-bc68\-3311714a69ad<br />-Cluster metadata partition： db97dba9\-0840\-4bae\-97f0\-ffb9a327c7e1 |
+| override  |                                                                强制在更改分区类型前卸除卷上的文件系统。 当你运行 "**设置 id** " 命令时，DiskPart 尝试锁定并卸除卷上的文件系统。 如果未指定**override** ，并且对锁定文件系统的调用失败 \(例如，因为存在打开的句柄\)，则操作将失败。 指定**替代**后，即使对锁定文件系统的调用失败，也会强制卸载，并且卷的任何打开的句柄都将变为无效。<p>此命令仅适用于 Windows 7 和 Windows Server 2008 R2。                                                                 |
+|   noerr   |                                                                                                                                                                                                                                                                    仅用于脚本编写。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。                                                                                                                                                                                                                                                                    |
   
 ## <a name="remarks"></a>备注  
   
@@ -52,7 +48,7 @@ set id={ <byte> | <GUID> } [override] [noerr]
   
 -   此命令不适用于动态磁盘或 Microsoft 保留分区。  
   
-## <a name="BKMK_examples"></a>示例  
+## <a name="examples"></a><a name=BKMK_examples></a>示例  
 若要将 "类型" 字段设置为0x07 并强制卸除文件系统，请键入：  
   
 ```  
@@ -65,8 +61,8 @@ set id=0x07 override
 set id=ebd0a0a2-b9e5-4433-87c0-68b6b72699c7  
 ```  
   
-#### <a name="additional-references"></a>其他参考  
-[命令行语法项](command-line-syntax-key.md)  
+## <a name="additional-references"></a>其他参考  
+- [命令行语法项](command-line-syntax-key.md)  
   
 
   

@@ -1,28 +1,24 @@
 ---
 title: 传输层安全协议
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de510bb0-a9f6-4bbe-8f8a-8dd7473bbae8
 author: justinha
 ms.author: justinha
-manager: brianlic-msft
+manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: aca2db3ae5bf424dd0f855d24c1ef771039c8b14
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3884d80d1d2f5465e5f3daf708af57b35fab6bd8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403376"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853600"
 ---
 # <a name="transport-layer-security-protocol"></a>传输层安全协议
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows 10
+>适用于: Windows Server (半年频道)、Windows Server 2016、Windows 10
 
 适用于 IT 专业人员的本主题介绍了传输层安全性（TLS）协议的工作原理，并提供了指向适用于 TLS 1.0、TLS 1.1 和 TLS 1.2 的 IETF Rfc 的链接。
 
@@ -45,7 +41,7 @@ Schannel SSP 无需修改即可实现 TLS 和 SSL 协议。 SSL 协议是专有�
 
 -   TLS 记录协议
 
--   TLS 握手协议：\- 更改密码规范协议 \- 警报协议
+-   TLS 握手协议： \- 更改密码规范协议 \- 警报协议
 
 -   加密计算
 
@@ -59,7 +55,7 @@ Schannel SSP 无需修改即可实现 TLS 和 SSL 协议。 SSL 协议是专有�
 
 [RFC 2246-TLS 协议版本1。0](http://tools.ietf.org/html/rfc2246)
 
-## <a name="BKMK_SessionResumption"></a>TLS 会话恢复
+## <a name="tls-session-resumption"></a><a name="BKMK_SessionResumption"></a>TLS 会话恢复
 Schannel SSP 在 Windows Server 2012 R2 中引入，它实现了 TLS 会话恢复的服务器端部分。 Windows 8 中添加了 RFC 5077 的客户端实现。
 
 将 TLS 连接到服务器的设备经常需要重新连接。 TLS 会话恢复降低了建立 TLS 连接的成本，因为恢复涉及到一种简化的 TLS 握手。 这会允许一组 TLS 服务器恢复彼此的 TLS 会话，从而促进更多恢复尝试。 此修改为支持 RFC 5077 的任何 TLS 客户端（包括 Windows Phone 和 Windows RT 设备）提供了以下节约：
@@ -72,12 +68,12 @@ Schannel SSP 在 Windows Server 2012 R2 中引入，它实现了 TLS 会话恢�
 
 有关无状态 TLS 会话恢复的信息，请参阅 IETF 文档 [RFC 5077](http://www.ietf.org/rfc/rfc5077)。
 
-## <a name="BKMK_AppProtocolNego"></a>应用程序协议协商
+## <a name="application-protocol-negotiation"></a><a name="BKMK_AppProtocolNego"></a>应用程序协议协商
  Windows Server 2012 R2 和 Windows 8.1 引入了支持客户端 TLS 应用程序协议协商的支持。 应用程序可以在 HTTP 2.0 标准开发中利用协议，并且用户可以使用运行 SPDY 协议的应用来访问联机服务如 Google 和 Twitter。
 
 有关应用程序协议协商的工作原理的信息，请参阅[传输层安全性 (TLS) 应用程序层协议协商扩展](http://tools.ietf.org/search/draft-ietf-tls-applayerprotoneg-05)。
 
-## <a name="BKMK_SNI"></a>TLS 支持服务器名称指示扩展
+## <a name="tls-support-for-server-name-indication-extensions"></a><a name="BKMK_SNI"></a>TLS 支持服务器名称指示扩展
 服务器名称指示符 (SNI) 功能扩展了 SSL 和 TLS 协议，以便在单台服务器上运行大量虚拟映像时正确标识服务器。 在虚拟托管方案中，多个域（每个域都有其自己的可能不同证书）托管在一个服务器上。 在这种情况下，服务器无法事先知道要将哪个证书发送到客户端。 SNI 允许客户端在协议前面通知目标域，这允许服务器正确选择正确的证书。
 
 此附加功能：

@@ -1,40 +1,36 @@
 ---
 title: bitsadmin gethttpmethod
-description: Windows 命令主题 for **bitsadmin gethttpmethod** -获取要使用的 HTTP 谓词。
-ms.custom: na
+description: 适用于**bitsadmin gethttpmethod**的 Windows 命令主题，用于获取用于作业的 HTTP 谓词。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 8b5b933d402ff5b621cc6073a54f34b5d3095533
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b5f131c8502545e3c4ea4107167d6da56c68d8c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381559"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850650"
 ---
 # <a name="bitsadmin-gethttpmethod"></a>bitsadmin gethttpmethod
 
-获取要使用的 HTTP 谓词。
+获取要用于作业的 HTTP 谓词。
 
 ## <a name="syntax"></a>语法
 
 ```
-bitsadmin /GetHttpMethod <Job>
+bitsadmin /gethttpmethod <Job>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|作业|该作业的显示名称或 GUID|
+| 参数 | 说明 |
+| -------------- | -------------- |
+| 作业 | 作业的显示名称或 GUID。 |
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

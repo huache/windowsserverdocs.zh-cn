@@ -2,21 +2,19 @@
 title: Windows Server 2016 上的 Hyper-v 中的新增功能
 description: 概述 Hyper-v 中的新功能
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 09/21/2017
-ms.openlocfilehash: 195d78ff8de75ca9e3a88d4300bb2f52cd45632f
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 5fc82d8eea78ad5605dceb6a21e8d543f9d9c88e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322299"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857960"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 中的新增功能
 

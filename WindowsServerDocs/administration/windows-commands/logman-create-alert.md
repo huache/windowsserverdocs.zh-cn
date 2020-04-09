@@ -1,24 +1,20 @@
 ---
 title: logman 创建警报
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93e6fc2b-5bf5-413b-84b4-be8b9dd3a57d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9420c486d4c6161c2c5724384f0d916448164a2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7568d4a2164cb9c387f59ff581ab739e7bb1f3e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374585"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840940"
 ---
 # <a name="logman-create-alert"></a>logman 创建警报
 
@@ -30,9 +26,9 @@ ms.locfileid: "71374585"
 ```  
 logman create alert <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>参数  
+### <a name="parameters"></a>参数  
 
-|                 参数                  |                                                                               描述                                                                               |
+|                 参数                  |                                                                               说明                                                                               |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                     /?                     |                                                                    显示区分上下文的帮助。                                                                     |
 |             -s <computer name>             |                                                          在指定的远程计算机上执行命令。                                                          |
@@ -62,12 +58,12 @@ logman create alert <[-n] <name>> [options]
 
 ## <a name="remarks"></a>备注  
 其中列出了 [-]，额外-会对选项求反。  
-## <a name="BKMK_examples"></a>示例  
+## <a name="examples"></a><a name=BKMK_examples></a>示例  
 以下命令将创建一个名为 new_alert 的警报，当处理器（_Total）计数器组中的性能计数器% Processor time 超过计数器值50时，将触发该警报。  
 ```  
-logman create alert new_alert -th "\Processor(_Total)\% Processor time>50"  
+logman create alert new_alert -th \Processor(_Total)\% Processor time>50  
 ```  
 > [!NOTE]
 > 定义的阈值基于计数器收集的值，因此在此示例中，50的值等于50% 的处理器时间。  
-> #### <a name="additional-references"></a>其他参考  
+> ## <a name="additional-references"></a>其他参考  
 > [logman](logman.md)  

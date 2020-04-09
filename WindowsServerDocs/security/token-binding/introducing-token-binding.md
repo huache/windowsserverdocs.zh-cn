@@ -1,6 +1,5 @@
 ---
 title: 标记绑定简介
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 4623a48c-cefd-4a27-9173-2af58ac212f2
@@ -8,16 +7,16 @@ manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 11/09/2016
-ms.openlocfilehash: 52ba35808b34eb07ecd6ac92819e9dc7a693b15b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d067db04fe881193143104ce9f75a0c9932907e7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403323"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855890"
 ---
 # <a name="introducing-token-binding"></a>标记绑定简介
 
->适用于：Windows Server 2016 和 Windows 10
+>适用于： Windows Server 2016 和 Windows 10
 
 令牌绑定协议允许应用程序和服务以加密方式将其安全令牌绑定到 TLS 层，以减轻令牌被盗和重播攻击。 长时间生存期、唯一可识别的 TLS [RFC5246] 绑定可以跨多个 TLS 会话和连接。
 
@@ -30,7 +29,7 @@ ms.locfileid: "71403323"
     - 令牌绑定协议已更新[[草稿-tokbind]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-protocol/01/)
     - 添加了用于令牌绑定协商的 TLS 扩展[[popov-tokbind]](https://tools.ietf.org/html/draft-popov-tokbind-negotiation-00)
     - WinInet & HTTP。SYS 支持通过 HTTP 更新的令牌绑定[[草稿-ietf-tokbind]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-https/02/)
-- Windows 10 版本1507，其中包含服务更新[KB4034668](https://support.microsoft.com/kb/KB4034668)，windows 10，版本1511，含服务更新[KB4034660](https://support.microsoft.com/kb/KB4034660)，windows 10，版本1607，windows Server 2016 with 服务更新[KB4034658](https://support.microsoft.com/kb/KB4034658)支持令牌绑定协议版本0.10 –默认启用
+- Windows 10 版本1507，其中包含服务更新[KB4034668](https://support.microsoft.com/kb/KB4034668)、windows 10、版本1511（带有服务更新[KB4034660](https://support.microsoft.com/kb/KB4034660)）、windows 10、版本1607和 Windows Server 2016 with 维护更新[KB4034658](https://support.microsoft.com/kb/KB4034658)支持令牌绑定协议版本0.10 –默认情况下启用
     - 令牌绑定协议已更新[[草稿-tokbind]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-protocol/10/)
     - 添加了用于令牌绑定协商的 TLS 扩展[[tokbind-05]](https://tools.ietf.org/html/draft-ietf-tokbind-negotiation-05)
     - WinInet & HTTP。SYS 支持通过 HTTP 更新的令牌绑定[[草稿-ietf-tokbind]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-https/06/)

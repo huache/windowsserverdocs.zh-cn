@@ -2,21 +2,19 @@
 title: 为无故障转移群集的实时迁移设置主机
 description: 提供有关在非群集环境中设置实时迁移的说明
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 3f0c13ba44eb498635b9b0c049b2921776049840
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 2c2f671bf59e95de2604c91944fab3d65f82410e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591067"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860880"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>为无故障转移群集的实时迁移设置主机
 
@@ -52,12 +50,12 @@ ms.locfileid: "72591067"
 
 -  **网络首选项**：允许通过任何可用网络进行实时迁移流量，或将流量隔离到特定网络？ 我们建议将迁移流量隔离到受信任的专用网络上，这是最佳安全做法，因为实时迁移流在网络上发送时未进行加密设置。 可通过物理上隔离的网络或通过另一个受信任的网络技术（如 VLAN）来实现网络隔离。
 
-## <a name="BKMK_Step1"></a>步骤1：配置约束委派（可选）
+## <a name="step-1-configure-constrained-delegation-optional"></a><a name="BKMK_Step1"></a>步骤1：配置约束委派（可选）
 如果已决定使用 Kerberos 对实时迁移流量进行身份验证，请使用域管理员组成员的帐户配置约束委派。
 
 ### <a name="use-the-users-and-computers-snap-in-to-configure-constrained-delegation"></a>使用 "用户和计算机" 管理单元配置约束委派
 
-1.  打开“Active Directory 用户和计算机”管理单元。 （在服务器管理器中，如果未选择服务器，请选择该服务器，单击 "**工具**"  >> **Active Directory 用户和计算机**"。
+1.  打开“Active Directory 用户和计算机”管理单元。 （在服务器管理器中，如果未选择服务器，请选择该服务器，单击 "**工具**" >> **Active Directory 用户和计算机**"。
 
 2.  从**Active Directory 用户和计算机**"中的导航窗格中，选择域，然后双击"**计算机**"文件夹。
 
@@ -67,7 +65,7 @@ ms.locfileid: "72591067"
 
 5.  在 "委派" 选项卡上，选择 "**仅信任此计算机来委派指定的服务"** ，然后选择 "**使用任何身份验证协议**"。
 
-6.  单击**添加**。
+6.  单击 **“添加”** 。
 
 7.  从 "**添加服务**" 中，单击 "**用户或计算机**"。
 
@@ -79,7 +77,7 @@ ms.locfileid: "72591067"
 
     -   要迁移虚拟机，选择 **“Microsoft 虚拟系统迁移服务”** 。
 
-10. 在“属性”对话框的 **“委派”** 选项卡上，确定上一步选定的服务列在目标计算机可以为其提供委派证书的服务中。 单击**确定**。
+10. 在“属性”对话框的 **“委派”** 选项卡上，确定上一步选定的服务列在目标计算机可以为其提供委派证书的服务中。 单击“确定”。
 
 11. 从 **“Computers”** 文件夹中选择目标服务器的计算机帐户，然后重复执行该程序。 在 **“选择用户或计算机”** 对话框，确保指定源服务器的名称。
 
@@ -88,29 +86,29 @@ ms.locfileid: "72591067"
   -  这些更改将复制到运行 Hyper-v 的服务器所登录的域控制器。
   -  域控制器发出新的 Kerberos 票证。
 
-## <a name="BKMK_Step2"></a>步骤2：设置用于实时迁移的源计算机和目标计算机
+## <a name="step-2-set-up-the-source-and-destination-computers-for-live-migration"></a><a name="BKMK_Step2"></a>步骤2：设置用于实时迁移的源计算机和目标计算机
 此步骤包括选择用于身份验证和网络的选项。 作为安全方面的最佳做法，我们建议你选择用于实时迁移流量的特定网络，如上文所述。 此步骤还说明了如何选择 "性能" 选项。
 
 ### <a name="use-hyper-v-manager-to-set-up-the-source-and-destination-computers-for-live-migration"></a>使用 Hyper-v 管理器设置用于实时迁移的源计算机和目标计算机
 
-1.  打开 Hyper-V 管理器。 （从服务器管理器中，单击 "**工具**"  >>**hyper-v 管理器**"。）
+1.  打开 Hyper-V 管理器。 （从服务器管理器中，单击 "**工具**" >>**hyper-v 管理器**"。）
 
 2.  在导航窗格中，选择其中一个服务器。 （如果未列出此项，请右键单击 " **Hyper-v 管理器**"，单击 "**连接到服务器**"，键入服务器名称，然后单击 **"确定"** 。 重复此步骤以添加更多服务器。）
 
-3.  在 "**操作**" 窗格中，单击 " **hyper-v 设置**"  >> "**实时迁移**"。
+3.  在 "**操作**" 窗格中，单击 " **hyper-v 设置**" >>"**实时迁移**"。
 
 4.  在 **“实时迁移”** 面板中，勾选 **“启用内向和外向实时迁移”** 。
 
 5.  如果不想使用默认值2，请在 "**同时实时迁移**" 下指定其他数字。
 
-6.  在 **“内向实时迁移”** 下面，如果打算使用特定网络连接来运行实时迁移流量，则单击 **“添加”** ，键入 IP 地址信息。 另外，单击 **“使用任何可用网络进行实时迁移”** 。 单击**确定**。
+6.  在 **“内向实时迁移”** 下面，如果打算使用特定网络连接来运行实时迁移流量，则单击 **“添加”** ，键入 IP 地址信息。 另外，单击 **“使用任何可用网络进行实时迁移”** 。 单击“确定”。
 
 7.  若要选择 Kerberos 和性能选项，请展开 "**实时迁移**"，然后选择 "**高级功能**"。
 
     - 如果已配置约束委派，请在 "**身份验证协议**" 下选择 " **Kerberos**"。
     - 在 "**性能选项**" 下，查看详细信息并选择其他选项（如果适用于你的环境）。
 
-8. 单击**确定**。
+8. 单击“确定”。
 
 9. 选择 "Hyper-v 管理器" 中的其他服务器，然后重复上述步骤。
 
@@ -139,11 +137,11 @@ PS C:\> Set-VMHost -VirtualMachineMigrationPerformanceOption SMB
 
 下表介绍了性能选项的工作方式。
 
-|选项|描述|
+|选项|说明|
 |----------|---------------|
     |TCP/IP|通过 TCP/IP 连接将虚拟机的内存复制到目标服务器。|
     |压缩|在通过 TCP/IP 连接将虚拟机复制到目标服务器之前压缩该虚拟机的内存内容。 **注意：** 这是**默认**设置。|
-    |SMB|通过 SMB 3.0 连接将虚拟机的内存复制到目标服务器。<br /><br />-当源服务器和目标服务器上的网络适配器启用了远程直接内存访问（RDMA）功能时，将使用 SMB 直通。<br />-在识别到正确的 SMB 多通道配置后，SMB 多通道将自动检测并使用多个连接。<br /><br />有关详细信息，请参阅[通过 SMB 直通优化文件服务器的性能](https://technet.microsoft.com/library/jj134210(WS.11).aspx)。|
+    |SMB|通过 SMB 3.0 连接将虚拟机的内存复制到目标服务器。<p>-当源服务器和目标服务器上的网络适配器启用了远程直接内存访问（RDMA）功能时，将使用 SMB 直通。<br />-在识别到正确的 SMB 多通道配置后，SMB 多通道将自动检测并使用多个连接。<p>有关详细信息，请参阅[通过 SMB 直通优化文件服务器的性能](https://technet.microsoft.com/library/jj134210(WS.11).aspx)。|
 
  ## <a name="next-steps"></a>后续步骤
 

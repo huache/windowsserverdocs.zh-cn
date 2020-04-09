@@ -1,22 +1,22 @@
 ---
 title: 初始化 HGS
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 07c40b1da829239dda5210dde0dabe485f659ae0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 42f76dabbe150f229027909f8b58b843f31ae4e1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403584"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856590"
 ---
 # <a name="initialize-the-host-guardian-service-hgs"></a>初始化主机保护者服务（HGS）
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 初始化 HGS 时，将指定 HGS 用于测量受保护主机的运行状况的模式。 有两个互相排斥的选项。 有关所选模式的背景信息，请参阅[托管商的受保护的构造和受防护的 VM 规划指南](guarded-fabric-planning-for-hosters.md)。
 

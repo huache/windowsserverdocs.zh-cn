@@ -2,24 +2,22 @@
 title: 规划 Windows Server 中的 Hyper-v 网络
 description: 介绍 Hyper-v 中的基本网络所需的内容，并提供指向说明的链接
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f09bc82d0dd47d3393dd05dcf03913db11e4c335
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3127c9579493ad8b317667b61de88304fd14f6cf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392503"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860760"
 ---
 # <a name="plan-for-hyper-v-networking-in-windows-server"></a>规划 Windows Server 中的 Hyper-v 网络
 
->适用于：Microsoft Hyper-V Server 2016、Windows Server 2016、Microsoft Hyper-V Server 2019、Windows Server 2019
+>适用于： Microsoft Hyper-V Server 2016、Windows Server 2016、Microsoft Hyper-V Server 2019、Windows Server 2019
   
 有关 Hyper-v 中的网络的基本理解有助于规划虚拟机的网络。 本文还介绍了使用实时迁移和将 Hyper-v 与其他服务器功能和角色配合使用时的一些网络注意事项。  
   

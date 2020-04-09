@@ -1,7 +1,6 @@
 ---
 ms.assetid: 9831b421-8fb7-4e15-ac27-c013cbca6d05
 title: 联合服务器的证书要求
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,23 +8,23 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7eeff82ef3311f18c8252c44c96310fcf3c18217
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9154e168fa03b08177dd0125fcbc1707d8e5594f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359180"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853210"
 ---
 # <a name="certificate-requirements-for-federation-servers"></a>联合服务器的证书要求
 
 在 AD FS\) 设计的任何 Active Directory 联合身份验证服务 \(中，必须使用各种证书来保护通信，并促进 Internet 客户端与联合服务器之间的用户身份验证。 每个联合服务器必须具有服务通信证书和令牌\-签名证书，然后才能参与 AD FS 通信。 下表描述了与联合服务器关联的证书类型。  
   
-|证书类型|描述|  
+|证书类型|说明|  
 |--------------------|---------------|  
-|令牌\-签名证书|令牌\-签名证书是一个 X509 证书。 联合服务器使用关联的公共\/私钥对，对它们产生的所有安全令牌进行数字签名。 这包括已发布的联合元数据和项目分辨率请求的签名。<br /><br />可以在中的 "AD FS 管理" 管理单元\-中配置多个令牌\-签名证书，以允许在一个证书即将过期时使用证书滚动更新。 默认情况下，列表中的所有证书都已发布，但只有主令牌\-签名证书，AD FS 才能对令牌进行实际签名。 你选择的所有证书都必须具有相应的私钥。<br /><br />有关详细信息，请参阅 [Token-Signing Certificates](Token-Signing-Certificates.md) 和 [Add a Token-Signing Certificate](../../ad-fs/deployment/Add-a-Token-Signing-Certificate.md)。|  
-|服务通信证书|联合服务器使用服务器身份验证证书（也称为服务通信） Windows Communication Foundation \(WCF\) 消息安全性。 默认情况下，此证书与联合服务器作为安全套接字层 \(SSL\) 证书的证书在 Internet Information Services \(IIS\)中使用。 **注意：** 中的 AD FS 管理 "管理单元\-是指作为服务通信证书的联合服务器的服务器身份验证证书。<br /><br />有关详细信息，请参阅[服务通信证书](Service-Communications-Certificates.md)和[设置服务通信证书](../../ad-fs/deployment/Set-a-Service-Communications-Certificate.md)。<br /><br />由于服务通信证书必须受客户端计算机信任，因此我们建议你使用由受信任的证书颁发机构签名的证书 \(CA\)。 你选择的所有证书都必须具有相应的私钥。|  
-|安全套接字层 \(SSL\) 证书|联合服务器使用 SSL 证书来保护与 Web 客户端以及与联合服务器代理的 SSL 通信的 Web 服务通信。<br /><br />由于 SSL 证书必须受客户端计算机信任，因此我们建议你使用由受信任的 CA 签名的证书。 你选择的所有证书都必须具有相应的私钥。|  
-|令牌\-解密证书|此证书用于解密此联合服务器收到的令牌。<br /><br />你可以有多个解密证书。 这样，资源联合服务器就可以在将新证书设置为主解密证书后，能够解密使用较旧的证书颁发的令牌。 所有证书都可以用于解密，但是在联合元数据中，只实际发布\-解密证书的主要令牌。 你选择的所有证书都必须具有相应的私钥。<br /><br />有关详细信息，请参阅[添加令牌解密证书](../../ad-fs/deployment/Add-a-Token-Decrypting-Certificate.md)。|  
+|令牌\-签名证书|令牌\-签名证书是一个 X509 证书。 联合服务器使用关联的公共\/私钥对，对它们产生的所有安全令牌进行数字签名。 这包括已发布的联合元数据和项目分辨率请求的签名。<p>可以在中的 "AD FS 管理" 管理单元\-中配置多个令牌\-签名证书，以允许在一个证书即将过期时使用证书滚动更新。 默认情况下，列表中的所有证书都已发布，但只有主令牌\-签名证书，AD FS 才能对令牌进行实际签名。 你选择的所有证书都必须具有相应的私钥。<p>有关详细信息，请参阅[令牌签名证书](Token-Signing-Certificates.md)和[添加令牌签名证书](../../ad-fs/deployment/Add-a-Token-Signing-Certificate.md)。|  
+|服务通信证书|联合服务器使用服务器身份验证证书（也称为服务通信） Windows Communication Foundation \(WCF\) 消息安全性。 默认情况下，此证书与联合服务器作为安全套接字层 \(SSL\) 证书的证书在 Internet Information Services \(IIS\)中使用。 **注意：** 中的 AD FS 管理 "管理单元\-是指作为服务通信证书的联合服务器的服务器身份验证证书。<p>有关详细信息，请参阅[服务通信证书](Service-Communications-Certificates.md)和[设置服务通信证书](../../ad-fs/deployment/Set-a-Service-Communications-Certificate.md)。<p>由于服务通信证书必须受客户端计算机信任，因此我们建议你使用由受信任的证书颁发机构签名的证书 \(CA\)。 你选择的所有证书都必须具有相应的私钥。|  
+|安全套接字层 \(SSL\) 证书|联合服务器使用 SSL 证书来保护与 Web 客户端以及与联合服务器代理的 SSL 通信的 Web 服务通信。<p>由于 SSL 证书必须受客户端计算机信任，因此我们建议你使用由受信任的 CA 签名的证书。 你选择的所有证书都必须具有相应的私钥。|  
+|令牌\-解密证书|此证书用于解密此联合服务器收到的令牌。<p>你可以有多个解密证书。 这样，资源联合服务器就可以在将新证书设置为主解密证书后，能够解密使用较旧的证书颁发的令牌。 所有证书都可以用于解密，但是在联合元数据中，只实际发布\-解密证书的主要令牌。 你选择的所有证书都必须具有相应的私钥。<p>有关详细信息，请参阅[添加令牌解密证书](../../ad-fs/deployment/Add-a-Token-Decrypting-Certificate.md)。|  
   
 你可以通过 Microsoft 管理控制台 \(MMC\) snap\-在中为 IIS 请求和安装 SSL 证书或服务通信证书。 有关使用 SSL 证书的更多常规信息，请参阅 iis [7.0：在 iis 7.0 中配置安全套接字层](https://go.microsoft.com/fwlink/?LinkID=108544)和[iis 7.0：在 Iis 中配置服务器证书 7.0](https://go.microsoft.com/fwlink/?LinkID=108545) 。  
   

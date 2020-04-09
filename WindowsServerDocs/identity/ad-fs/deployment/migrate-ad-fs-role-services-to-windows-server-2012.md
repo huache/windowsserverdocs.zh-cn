@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cdb5523ade5c3c7572656d62d1b4f744683ec96e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36d37eb2cc886d9831b995aa8cfdda16765994b8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408277"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857510"
 ---
 # <a name="migrate-active-directory-federation-services-role-services-to-windows-server-2012"></a>将 Active Directory 联合身份验证服务角色服务迁移到 Windows Server 2012
 
@@ -70,10 +70,10 @@ ms.locfileid: "71408277"
 |AD FS 1.0 随 Windows Server 2003 R2 一起安装的声明感知代理）|不支持迁移|  
 |随 Windows Server 2008 或 Windows Server 2008 R2 一起安装的 AD FS 1.1 联合服务器|不支持迁移|  
 |随 Windows Server 2008 或 Windows Server 2008 R2 一起安装的 AD FS 1.1 联合服务器代理|不支持迁移|  
-|AD FS 1.1 随 Windows Server 2008 或 Windows Server 2008 R2 一起安装的基于 Windows 令牌的代理|支持在同一服务器上进行迁移，但迁移 AD FS 基于 Windows 令牌的代理仅适用于随 Windows Server 2008 或 Windows Server 2008 R2 一起安装的 AD FS 1.1 联合身份验证服务。 有关详细信息，请参阅：<br /><br /> [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)<br /><br /> [与 AD FS 1.x 进行互操作](Interoperating-with-AD-FS-1.x.md)|  
-|AD FS 1.1 随 Windows Server 2008 或 Windows Server 2008 R2 一起安装的声明感知代理|支持在同一台服务器上迁移。 已迁移 AD FS 1.1 声明感知 web 代理将与以下内容一起运行：<br /><br /> 随 Windows Server 2008 或 Windows Server 2008 R2 一起安装的 AD FS 1.1 联合身份验证服务<br /><br /> Windows Server 2008 或 Windows Server 2008 R2 上安装的 AD FS 2.0 联合身份验证服务<br /><br /> 随 Windows Server 2012 一起安装 AD FS 联合身份验证服务<br /><br /> 有关详细信息，请参阅：<br /><br /> [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)<br /><br /> [与 AD FS 1.x 进行互操作](Interoperating-with-AD-FS-1.x.md)|  
-|Windows Server 2008 或 Windows Server 2008 R2 上安装的 AD FS 2.0 联合服务器|支持在同一台服务器上迁移。 有关详细信息，请参阅：<br /><br /> [准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-ad-fs-fed-server.md)<br /><br /> [迁移 AD FS 2.0 联合服务器](migrate-the-ad-fs-fed-server.md)|  
-|Windows Server 2008 或 Windows Server 2008 R2 上安装的 AD FS 2.0 联合服务器代理|支持在同一台服务器上迁移。  有关详细信息，请参阅：<br /><br /> [准备迁移 AD FS 2.0 联合服务器代理](prepare-to-migrate-ad-fs-fed-proxy.md)<br /><br /> [迁移 AD FS 2.0 联合服务器代理](migrate-the-ad-fs-2-fed-server-proxy.md)|  
+|AD FS 1.1 随 Windows Server 2008 或 Windows Server 2008 R2 一起安装的基于 Windows 令牌的代理|支持在同一服务器上进行迁移，但迁移 AD FS 基于 Windows 令牌的代理仅适用于随 Windows Server 2008 或 Windows Server 2008 R2 一起安装的 AD FS 1.1 联合身份验证服务。 有关详细信息，请参阅：<p> [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)<p> [与 AD FS 1.x 进行互操作](Interoperating-with-AD-FS-1.x.md)|  
+|AD FS 1.1 随 Windows Server 2008 或 Windows Server 2008 R2 一起安装的声明感知代理|支持在同一台服务器上迁移。 已迁移 AD FS 1.1 声明感知 web 代理将与以下内容一起运行：<p> 随 Windows Server 2008 或 Windows Server 2008 R2 一起安装的 AD FS 1.1 联合身份验证服务<p> Windows Server 2008 或 Windows Server 2008 R2 上安装的 AD FS 2.0 联合身份验证服务<p> 随 Windows Server 2012 一起安装 AD FS 联合身份验证服务<p> 有关详细信息，请参阅：<p> [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)<p> [与 AD FS 1.x 进行互操作](Interoperating-with-AD-FS-1.x.md)|  
+|Windows Server 2008 或 Windows Server 2008 R2 上安装的 AD FS 2.0 联合服务器|支持在同一台服务器上迁移。 有关详细信息，请参阅：<p> [准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-ad-fs-fed-server.md)<p> [迁移 AD FS 2.0 联合服务器](migrate-the-ad-fs-fed-server.md)|  
+|Windows Server 2008 或 Windows Server 2008 R2 上安装的 AD FS 2.0 联合服务器代理|支持在同一台服务器上迁移。  有关详细信息，请参阅：<p> [准备迁移 AD FS 2.0 联合服务器代理](prepare-to-migrate-ad-fs-fed-proxy.md)<p> [迁移 AD FS 2.0 联合服务器代理](migrate-the-ad-fs-2-fed-server-proxy.md)|  
   
 ## <a name="see-also"></a>另请参阅  
  [准备迁移 AD FS 2.0 联合服务器](prepare-to-migrate-ad-fs-fed-server.md)   

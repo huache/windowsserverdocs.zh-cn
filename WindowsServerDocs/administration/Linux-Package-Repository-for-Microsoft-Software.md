@@ -1,9 +1,7 @@
 ---
 title: 适用于 Microsoft 产品的 Linux 软件存储库
 description: 本文档介绍了如何使用和安装适用于 Microsoft 产品的 Linux 软件包。
-ms.custom: na
 ms.prod: windows-server
-ms.service: na
 manager: szark
 ms.technology: compute
 ms.topic: article
@@ -11,12 +9,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: e32c11dac1d887ba0ae0192bb658f71ece77a42c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b57a1e7243f989a4529a666880572a9ceaa57644
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947245"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852060"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>适用于 Microsoft 产品的 Linux 软件存储库
 
@@ -30,7 +28,7 @@ Microsoft 的 Linux 软件存储库由多个子存储库组成：
  - mssql server-这些存储库包含 Linux 上的 Microsoft SQL Server 的包-另请参阅： [Linux 上的 SQL Server](https://www.microsoft.com/sql-server/sql-server-vnext-including-Linux)。
 
 > [!Note]
-> Linux 软件存储库中的包受包中的许可条款的约束。 使用程序包之前请阅读这些许可条款。 安装和使用程序包即表示接受这些条款。 如果不同意许可条款，则不要使用程序包。
+> Linux 软件存储库中的包受包中的许可条款的约束。 使用包之前，请阅读许可条款。 安装和使用此包即表示你接受这些条款。 如果不同意许可条款，请不要使用包。
 
 
 ## <a name="configuring-the-repositories"></a>配置存储库
@@ -63,19 +61,19 @@ Microsoft 的 Linux 软件存储库由多个子存储库组成：
 
  - Ubuntu 18.04 （Bionic）
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
         sudo apt-get update
 
  - Ubuntu 18.10 （宇宙射线）
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.10/prod
         sudo apt-get update
 
  - Ubuntu 19.04 （Disco）
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/19.04/prod
         sudo apt-get update
 
@@ -95,7 +93,7 @@ Microsoft 的 Linux 软件存储库由多个子存储库组成：
  - 公钥 ID： Microsoft （Release 签名） <gpgsecurity@microsoft.com>
  - 公钥指纹： `BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
 
-### <a name="examples"></a>例如：
+### <a name="examples"></a>示例：
 
  - RHEL/CentOS 7
 

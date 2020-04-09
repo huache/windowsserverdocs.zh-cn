@@ -8,12 +8,12 @@ ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a5b2e750bd7a0103382f6d91c515f4e283a112cb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1e962948feaf6bb37beeb3c241d3ae3369be77dc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312662"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860700"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>使用 Windows PowerShell 部署 DHCP
 
@@ -207,7 +207,7 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 |网络连接绑定|以太网|
 |DNS 服务器设置|DC1.corp.contoso.com|
 |首选 DNS 服务器 IP 地址|10.0.0.2|
-|作用域值<br /><br />1. 范围名称<br />2. 起始 IP 地址<br />3. 结束 IP 地址<br />4. 子网掩码<br />5. 默认网关（可选）<br />6. 租约期限|1. 主子网<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6 8 天|
+|作用域值<p>1. 范围名称<br />2. 起始 IP 地址<br />3. 结束 IP 地址<br />4. 子网掩码<br />5. 默认网关（可选）<br />6. 租约期限|1. 主子网<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6 8 天|
 |IPv6 DHCP 服务器操作模式|未启用|
 
 ## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>在测试实验室中使用本指南

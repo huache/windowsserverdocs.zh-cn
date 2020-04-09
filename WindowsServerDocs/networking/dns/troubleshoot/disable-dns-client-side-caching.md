@@ -2,18 +2,17 @@
 title: 在 DNS 客户端上禁用 DNS 客户端缓存
 description: 本文介绍如何在 DNS 客户端上禁用 DNS 客户端缓存。
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 51a9dbfd05402a9d018aec3bfea8a5c89e9e5d5e
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 09af41a544cacb0fd0977847b7bc2e6b0d8a59f7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265839"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860070"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>在 DNS 客户端上禁用 DNS 客户端缓存
 
@@ -52,7 +51,7 @@ ipconfig /displaydns
 ## <a name="using-the-registry-to-control-the-caching-time"></a>使用注册表控制缓存时间
 
 > [!IMPORTANT]  
-> 请认真遵循本部分所述的步骤。 如果注册表修改不正确，可能会发生严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
+> 请认真遵循本部分所述的步骤。 如果不正确地修改注册表，可能会出现严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
 
 正或负响应缓存的时间长度取决于以下注册表项中的条目值：
 

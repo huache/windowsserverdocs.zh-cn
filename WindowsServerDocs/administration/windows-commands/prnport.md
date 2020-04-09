@@ -1,24 +1,20 @@
 ---
 title: prnport
 description: 了解如何创建、删除和列出打印机端口。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a0ec638-a21e-4a34-be5c-bd0f7ca89ffe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9c162cef2a3ae2f3de1e891691572130ae68f93
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17f81b127927a41e60c290535032876def109989
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372551"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837220"
 ---
 # <a name="prnport"></a>prnport
 
@@ -34,12 +30,12 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 [-i <SNMPIndex>] [-y <CommunityName>] -2{e | -d}
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|          参数           |                                                                                                                                                                                                                                                                                                     描述                                                                                                                                                                                                                                                                                                      |
+|          参数           |                                                                                                                                                                                                                                                                                                     说明                                                                                                                                                                                                                                                                                                      |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              -a              |                                                                                                                                                                                                                                                                                       创建标准 TCP/IP 打印机端口。                                                                                                                                                                                                                                                                                        |
-|              -d.ddd...e              |                                                                                                                                                                                                                                                                                       删除标准 TCP/IP 打印机端口。                                                                                                                                                                                                                                                                                        |
+|              -d              |                                                                                                                                                                                                                                                                                       删除标准 TCP/IP 打印机端口。                                                                                                                                                                                                                                                                                        |
 |              -l              |                                                                                                                                                                                                                                                             列出计算机上指定了 **-s**参数的所有标准 tcp/ip 打印机端口。                                                                                                                                                                                                                                                             |
 |              -g              |                                                                                                                                                                                                                                                                            显示标准 TCP/IP 打印机端口的配置。                                                                                                                                                                                                                                                                             |
 |              -t              |                                                                                                                                                                                                                                                                           配置标准 TCP/IP 打印机端口的端口设置。                                                                                                                                                                                                                                                                           |
@@ -64,7 +60,7 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 -   如果提供的信息包含空格，请使用引号将文本括起来（例如 `"computer Name"`）。
 -   TCP 原始协议比 lpr 协议在 Windows 上是更高的性能协议。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 若要在服务器 \\\Server1 上显示所有标准 TCP/IP 打印端口，请键入：
 ```
 cscript prnport -l -s Server1
@@ -86,6 +82,6 @@ cscript prnport -t -s Server1 -r IP_10.2.3.4 -me -y public -i 1 -n 9100
 cscript prnport -a -r IP_10.2.3.4 -h 10.2.3.4
 ```
 
-#### <a name="additional-references"></a>其他参考
-[命令行语法键](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他参考
+- [命令行语法键](command-line-syntax-key.md)
 [打印命令参考](print-command-reference.md)

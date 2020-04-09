@@ -1,6 +1,5 @@
 ---
 title: 声明规则语言的角色
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,15 +8,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: ff4c43bb8dc5582716638f0a3f6e4f6a8022aece
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 742e0ce781225303c623461439f8d4460fec97c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407371"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860100"
 ---
 # <a name="the-role-of-the-claim-rule-language"></a>声明规则语言的角色
-Active Directory 联合身份验证服务（AD FS）声明规则语言充当传入和传出声明行为的管理构建基块，而声明引擎充当声明规则语言中的逻辑处理引擎，定义自定义规则。 有关所有规则如何由声明引擎处理的详细信息，请参阅[声明引擎的角色](The-Role-of-the-Claims-Engine.md)。  
+Active Directory 联合身份验证服务（AD FS）声明规则语言充当传入和传出声明行为的管理构建基块，而声明引擎充当声明规则语言中定义自定义规则的逻辑的处理引擎。 有关所有规则如何由声明引擎处理的详细信息，请参阅[声明引擎的角色](The-Role-of-the-Claims-Engine.md)。  
 
 ## <a name="creating-custom-claim-rules-using-the-claim-rule-language"></a>使用声明规则语言创建自定义声明规则  
 AD FS 为管理员提供了定义自定义规则的选项，这些规则可用于使用声明规则语言确定标识声明的行为。 可以使用本主题中的声明规则语言语法示例创建一个自定义规则，用于枚举、添加、删除和修改声明以满足组织的需求。 可以通过在“使用自定义声明发送声明”规则模板中输入声明规则语言语法，来构建自定义规则。  
@@ -75,7 +74,7 @@ AD FS 还提供了一组预定义的声明颁发和声明验收规则模板，�
 
 |                                                                                                                   条件说明                                                                                                                    |                                        条件语法示例                                        |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| 此规则具有一个条件，用于检查两个输入声明，每个都具有指定的声明类型 ("<http://test/name>" 和 "<http://test/email>")。 如果两个匹配声明位于输入声明中，则规则会将名称声明复制到输出声明集。 | ``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );``` |
+| 此规则具有一个条件，用于检查两个输入声明，每个声明都具有指定的声明类型（"<http://test/name>" 和 "<http://test/email>"）。 如果两个匹配声明位于输入声明中，则规则会将名称声明复制到输出声明集。 | ``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );``` |
 
 #### <a name="regular--condition-examples"></a>常规条件示例  
 下表提供了一个基于表达式的正则表达式的示例。  
@@ -116,8 +115,8 @@ AD FS 还提供了一组预定义的声明颁发和声明验收规则模板，�
 
 |发出语句类型|发出语句说明|发出语句语法示例|  
 |---------------------------|----------------------------------|-------------------------------------|  
-|一般|只要用户具有指定声明类型和值，以下规则便始终发出相同声明：|```c: [type  == "http://test/employee", value  == "true"] => issue (type = "http://test/role", value = "employee");```|  
-|一般|以下规则将一种声明类型转换为另一种。 请注意，与条件“c”相匹配的声明的值在发出语句中使用。|```c: [type  == "http://test/group" ] => issue (type  = "http://test/role", value  = c.Value );```|  
+|正常|只要用户具有指定声明类型和值，以下规则便始终发出相同声明：|```c: [type  == "http://test/employee", value  == "true"] => issue (type = "http://test/role", value = "employee");```|  
+|正常|以下规则将一种声明类型转换为另一种。 请注意，与条件“c”相匹配的声明的值在发出语句中使用。|```c: [type  == "http://test/group" ] => issue (type  = "http://test/role", value  = c.Value );```|  
 |属性存储|以下规则使用传入声明的值查询 Active Directory 属性存储：|```c: [Type  == "http://test/name" ] => issue (store  = "Enterprise AD Attribute Store", types  =  ("http://test/email" ), query  = ";mail;{0}", param  = c.Value )```|  
 |属性存储|以下规则使用传入声明的值查询以前配置的结构化查询语言（SQL）属性存储：|```c: [type  == "http://test/name"] => issue (store  = "Custom SQL store", types  =  ("http://test/email","http://test/displayname" ), query  = "SELECT mail, displayname FROM users WHERE name ={0}", param  = c.value );```|  
 

@@ -2,22 +2,18 @@
 title: 步骤1实现单一服务器远程访问部署
 description: 本主题是指南使用 Windows Server 2016 中的 "使用 OTP 身份验证部署远程访问" 指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0f4d665-d44e-4348-a89f-5f9191bd96fd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d2c326c3783fee589e5551351a8b93d413c4120c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b5142902d89887d12a1a200b797dcf2c5fe02353
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313657"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858230"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>步骤1实现单一服务器远程访问部署
 

@@ -2,22 +2,18 @@
 title: 设置入口点域控制器疑难解答
 description: 本主题是在 Windows Server 2016 中的多站点部署中部署多台远程访问服务器指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b12dd0e8-1d80-4d4b-bb45-586f19d17ef0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fbbba17567109363a9b9fd0963258744f8853f5f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8bec7bd14dba051a1151869f8dc6c4251c941208
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313785"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858270"
 ---
 # <a name="troubleshooting-setting-the-entry-point-domain-controller"></a>设置入口点域控制器疑难解答
 

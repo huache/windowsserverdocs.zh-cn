@@ -1,24 +1,20 @@
 ---
 title: 隐私和安全注意事项
 description: 提供有关 MultiPoint 服务的隐私和安全见解
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 00eb89e5-aaf5-450e-94d8-3ef759dc5e26
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 5dffc99342cba3b4c5d43585745dedfd002a7c89
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b9b17919ca27a114c11aa903266d6450b28d634
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389500"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853350"
 ---
 # <a name="privacy-and-security-considerations"></a>隐私和安全注意事项
 由于 MultiPoint 服务系统被设计为在共享计算机环境中使用，你应考虑到以下隐私和安全计算问题。  
@@ -31,6 +27,6 @@ ms.locfileid: "71389500"
   
 由于系统有潜在的大量用户，并且可以轻松访问工作站硬件设备和电缆，共享的计算机资源（例如 MultiPoint 服务系统）可能容易受到安全威胁 恶意用户可能尝试在 MultiPoint 服务工作站集线器上插入击键记录器或类似的设备。 如果发现有不能识别的设备连接到 MultiPoint 服务系统上的任何端口，则将其视为可疑设备并遵循组织的安全升级指南。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [管理用户文件](Manage-User-Files.md)  
 [管理 MultiPoint Services 系统](Managing-Your-MultiPoint-Services-System.md)

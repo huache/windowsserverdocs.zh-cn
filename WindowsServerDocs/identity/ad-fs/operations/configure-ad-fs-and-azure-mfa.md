@@ -1,7 +1,6 @@
 ---
 ms.assetid: 24c4b9bb-928a-4118-acf1-5eb06c6b08e5
 title: 配置 AD FS 2016 和 Azure MFA
-description: ''
 ms.author: billmath
 author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b658644d1ba7cec1b02a2a51331cd7b7152efc77
-ms.sourcegitcommit: 75e611fd5de8b8aa03fc26c2a3d5dbf8211b8ce3
+ms.openlocfilehash: d519b47d048068ad53e4f11a6b64621ab5f232b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77145492"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855310"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>将 Azure MFA 配置为具有 AD FS 的身份验证提供程序
 
@@ -56,7 +55,7 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 
 ### <a name="azure-mfa-as-additional-authentication-to-office-365"></a>Azure MFA 作为 Office 365 的附加身份验证
 
-以前，如果你希望将 Azure MFA 作为 Office 365 或其他信赖方 AD FS 的附加身份验证方法，则最好的做法是将 Azure AD 配置为执行复合 MFA，其中主要身份验证在 AD FS 本地执行，而 MFA 为 triggered Azure AD。 现在，可以使用 Azure MFA 作为 AD FS 中的其他身份验证，前提是将 domain SupportsMfa 设置设置为 $True。  
+以前，如果你希望将 Azure MFA 作为 Office 365 或其他信赖方 AD FS 的附加身份验证方法，则最好的做法是将 Azure AD 配置为执行复合 MFA，其中主要身份验证在 AD FS 本地执行，而 MFA 由 Azure AD 触发。 现在，可以使用 Azure MFA 作为 AD FS 中的其他身份验证，前提是将 domain SupportsMfa 设置设置为 $True。  
 
 如上所述，还应通过自定义的 AD FS 错误页提示尚未注册的任何 AD FS 用户（配置了 MFA 验证信息），以访问[https://aka.ms/mfasetup](https://aka.ms/mfasetup)来配置验证信息，然后重新尝试登录 AD FS。  
 

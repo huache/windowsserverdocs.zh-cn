@@ -1,24 +1,20 @@
 ---
 title: 在 MultiPoint 服务中设置 USB 零客户端连接工作站
 description: 了解如何在 MultiPoint Services 中创建 USB 零客户端工作站
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d2908865-6be3-474d-88f1-995f40bb61d0
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 80a73065024e5c40f1ebf8efd64022ee6d48fbe8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 688b4908cd52dd53ba88f0a35cabccb58c289ba1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395070"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855640"
 ---
 # <a name="set-up-a-usb-zero-client-connected-station-in-multipoint-services"></a>在 MultiPoint 服务中设置 USB 零客户端连接工作站
 当使用 USB 零客户端创建 MultiPoint 服务工作站时，每个工作站的监视器将连接到 USB 零客户端上的视频端口，如下图所示。 有关此类和其他工作站类型的详细信息，请参阅[MultiPoint 工作站](MultiPoint-services-Stations.md)。

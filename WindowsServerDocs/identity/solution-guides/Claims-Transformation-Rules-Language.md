@@ -1,7 +1,6 @@
 ---
 ms.assetid: e831f781-3c45-4d44-b411-160d121d1324
 title: 声明转换规则语言
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 200d592bc68562856bbdee623e70d73d41457c15
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f391c3f8ef2bb5b12f0dd15db55df4f861c05f9b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357577"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861270"
 ---
 # <a name="claims-transformation-rules-language"></a>声明转换规则语言
 
@@ -24,7 +23,7 @@ ms.locfileid: "71357577"
   
 跨林信任上的转换策略的 Windows PowerShell cmdlet 具有设置常见方案中所需的简单策略的选项。 这些 cmdlet 将用户输入转换为声明转换规则语言中的策略和规则，然后以规定的格式将其存储在 Active Directory 中。 有关用于声明转换的 cmdlet 的详细信息，请参阅[适用于动态访问控制的 AD DS cmdlet](https://go.microsoft.com/fwlink/?LinkId=243150)。  
   
-根据对 Active Directory 林中的跨林信任的声明配置和要求，声明转换策略可能必须比用于活动的 Windows PowerShell cmdlet 支持的策略更复杂文件夹. 若要有效地创作此类策略，必须了解声明转换规则语言语法和语义。 Active Directory 中的声明转换规则语言（"语言"）是[Active Directory 联合身份验证服务](https://go.microsoft.com/fwlink/?LinkId=243982)用于类似用途的语言子集，并且它具有非常类似的语法和语义。 但允许的操作较少，并且其他语法限制会置于语言的 Active Directory 版本中。  
+根据对 Active Directory 林中的跨林信任的声明配置和要求，声明转换策略可能比用于 Active Directory 的 Windows PowerShell cmdlet 支持的策略更复杂。 若要有效地创作此类策略，必须了解声明转换规则语言语法和语义。 Active Directory 中的声明转换规则语言（"语言"）是[Active Directory 联合身份验证服务](https://go.microsoft.com/fwlink/?LinkId=243982)用于类似用途的语言子集，并且它具有非常类似的语法和语义。 但允许的操作较少，并且其他语法限制会置于语言的 Active Directory 版本中。  
   
 本主题简要介绍了中的声明转换规则语言的语法和语义，以及在创作策略时应考虑的注意事项 Active Directory。 它提供了几组示例规则来帮助您入门，并举例说明了如何在编写规则时破译错误消息。  
   
@@ -295,10 +294,10 @@ Active Directory 具有以下功能来防止错误配置输入林的声明：
   
    此示例在语法和语义上是正确的。 然而，使用 "boolean" 作为字符串值会导致混淆，应避免此问题。 如前文所述，应尽可能避免使用语言终端作为声明值。  
   
-## <a name="BKMK_LT"></a>语言终端  
+## <a name="language-terminals"></a><a name="BKMK_LT"></a>语言终端  
 下表列出了在声明转换规则语言中使用的一组完整的终端字符串和关联的语言终端。 这些定义使用不区分大小写的 UTF-16 字符串。  
   
-|字符串|终端|  
+|String|终端|  
 |----------|------------|  
 |"= >"|隐含|  
 |";"|之间|  
@@ -314,9 +313,9 @@ Active Directory 具有以下功能来防止错误配置输入林的声明：
 |"=~"|REGEXP_MATCH|  
 |"!~"|REGEXP_NOT_MATCH|  
 |"="|将|  
-|"& &"|和|  
+|"& &"|AND|  
 |本期|问题|  
-|类别|类型|  
+|类别|TYPE|  
 |负值|负值|  
 |valuetype|VALUE_TYPE|  
 |提及|提及|  
@@ -324,7 +323,7 @@ Active Directory 具有以下功能来防止错误配置输入林的声明：
 |"\\" [^\\"\n] *\\" "|STRING|  
 |uint64|UINT64_TYPE|  
 |int64|INT64_TYPE|  
-|类似|STRING_TYPE|  
+|"string"|STRING_TYPE|  
 |变量|BOOLEAN_TYPE|  
   
 ## <a name="language-syntax"></a>语言语法  

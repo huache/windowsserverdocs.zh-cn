@@ -2,20 +2,19 @@
 title: 避免暂停虚拟机
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 930f927c-e414-4a36-9786-028941e886e4
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 406b24edd4a7e87e32058006590ac7cd37206568
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56c147f6bd2423cdbe2c8847efb43d8601e12ddf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366448"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857740"
 ---
 # <a name="avoid-pausing-a-virtual-machine"></a>避免暂停虚拟机
 
@@ -27,7 +26,7 @@ ms.locfileid: "71366448"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|配置|  
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
@@ -59,7 +58,7 @@ ms.locfileid: "71366448"
   
 #### <a name="use-windows-powershell-to-resume-the-virtual-machine"></a>使用 Windows PowerShell 恢复虚拟机  
   
-在获取主机上的所有虚拟机后，可以通过使用筛选和管道在一个命令中执行此操作。 键入：  
+在获取主机上的所有虚拟机后，可以通过使用筛选和管道在一个命令中执行此操作。 类型：  
   
 ```  
 get-vm | where state -eq 'paused' | resume-vm  

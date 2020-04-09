@@ -2,20 +2,19 @@
 title: Windows 7 应配置为建议的内存量
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: d77d648c-6e26-43fa-be0a-6eb4b28f9cb4
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 3ce8d31b13664f09c97755399503de1c12ef070a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 742132228f2dae5b1b5b0d604b62142890cf9c3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364519"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854150"
 ---
 # <a name="windows-7-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 7 应配置为建议的内存量
 
@@ -27,7 +26,7 @@ ms.locfileid: "71364519"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|配置|  
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。

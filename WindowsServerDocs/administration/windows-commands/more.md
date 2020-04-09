@@ -1,26 +1,22 @@
 ---
-title: more
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: 详细信息
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: d505f99511d8702f11ac0c70edba3d62c8cf7996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c627e003e71cb2265c717669e082d48564dd483
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373915"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839420"
 ---
-# <a name="more"></a>more
+# <a name="more"></a>详细信息
 
 
 
@@ -36,9 +32,9 @@ more [[/c] [/p] [/s] [/t<N>] [+<N>]] < [<Drive>:][<Path>]<FileName>
 more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|           参数            |                               描述                               |
+|           参数            |                               说明                               |
 |--------------------------------|-------------------------------------------------------------------------|
 |           \<命令 >           |      指定要显示其输出的命令。      |
 |               /c               |               在显示页面之前清除屏幕。               |
@@ -54,7 +50,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 
 -   在 "**更多**" 提示符下（`-- More --`）接受以下子命令。 
 
-    | 密钥 | Action |
+    | Key | 操作 |
     | --- | ------ |
     | 空格键 | 显示下一页。 |
     | 进入 | 显示下一行。 |
@@ -68,7 +64,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 -   使用重定向字符（ **<** ）时，必须指定一个文件名作为源。 使用管道（ **\|** ）时，可以使用类似于**dir**、 **sort**和**type**的命令。
 -   可从恢复控制台获取**更多**命令（具有不同的参数）。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要查看名为 "客户端" 的文件的第一个屏幕，请键入以下命令之一：
 ```
@@ -114,6 +110,6 @@ type clients.new | more /c /s
   ```  
   键入要跳过的行数，然后按 ENTER。 **更多**跳过指定的行数，并显示下一屏信息。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

@@ -1,24 +1,20 @@
 ---
 title: prompt
 description: 了解如何自定义命令提示符。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3d98e965-02eb-46ad-9d0a-5dc44830373e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 2df80d3af6344644a68b1b2d01ba48fbf41f1581
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6662cb7fb00b7d21311fef2ca127ba89591a00b2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372017"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837130"
 ---
 # <a name="prompt"></a>prompt
 
@@ -34,9 +30,9 @@ ms.locfileid: "71372017"
 prompt [<Text>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<文本 >|指定要包括在命令提示符中的文本和信息。|
 |/?|在命令提示符下显示帮助。|
@@ -47,7 +43,7 @@ prompt [<Text>]
 
 下表列出了可以包含的字符组合，而不是*文本*参数中的一个或多个字符串。 此列表包括对每个字符组合添加到命令提示符的文本或信息的简短说明。  
 
-| 字符 |                                 描述                                 |
+| 字符 |                                 说明                                 |
 |-----------|-----------------------------------------------------------------------------|
 |    $q     |                               = （等号）                                |
 |    $$     |                               $ （美元符号）                               |
@@ -65,18 +61,18 @@ prompt [<Text>]
 |    $a     |                                & （与号）                                |
 |    $c     |                            （（左括号）                             |
 |    $f     |                            ）（右括号）                            |
-|    $s     |                                    空间                                    |
+|    $s     |                                    space                                    |
 
 启用命令扩展（即默认值）时， **prompt**命令支持以下格式字符：  
 
-|字符|描述|
+|字符|说明|
 |---------|-----------|
 |$+|零个或多个加号（ **+** ）个字符，具体取决于**pushd**目录堆栈的深度（每个推送级别一个字符）。|
 |$m|与当前驱动器号关联的远程名称; 如果当前驱动器不是网络驱动器，则为空字符串。|
 
 如果在 text 参数中包含 **$p**字符，则在输入每个命令后，将读取磁盘（以确定当前驱动器和路径）。 这可能需要额外的时间，特别是对于软盘驱动器。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 
 若要设置带有当前时间和日期的两行命令提示符，并在第一行上设置大于号，请键入：
 ```
@@ -96,6 +92,6 @@ prompt --$g
 prompt $p$g
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

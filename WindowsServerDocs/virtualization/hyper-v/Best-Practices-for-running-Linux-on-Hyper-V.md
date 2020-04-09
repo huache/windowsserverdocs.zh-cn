@@ -2,25 +2,23 @@
 title: 在 Hyper-v 上运行 Linux 的最佳实践
 description: 提供在虚拟机上运行 Linux 的建议
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 3/1/2019
-ms.openlocfilehash: 3488bbc1e295a68befc7044b83379bd65a5f28df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7baf71af401b8318ccd136fe12d6eb810cf9434e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365566"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853300"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>在 Hyper-v 上运行 Linux 的最佳实践
 
->适用于：Windows Server 2019, Windows Server 2016, Hyper-v Server 2016, Windows Server 2012 R2, Hyper-v server 2012 R2, Windows Server 2012, Hyper-v Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7.1, Windows 7
+>适用于： Windows Server 2019，Windows Server 2016，Hyper-v Server 2016，Windows Server 2012 R2，Hyper-v server 2012 R2，Windows Server 2012，Hyper-v Server 2012，Windows Server 2008 R2，Windows 10，Windows 8.1，Windows 8，Windows 7.1，Windows 7
 
 本主题包含在 Hyper-v 上运行 Linux 虚拟机的建议列表。
 
@@ -51,7 +49,7 @@ PS > New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes 127GB -Dynamic -BlockSizeBytes
 
 由于第2代虚拟机中不存在 PIT 计时器，因此到 PxE TFTP 服务器的网络连接可能会提前终止，并阻止加载服务器从服务器读取 Grub 配置和加载内核。
 
-在 RHEL 1.x 上，可以使用旧版 grub v 0.97 EFI 引导程序，而不是 grub2，如下所述： [https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
+在 RHEL 1.x 上，可以使用旧版 grub v 0.97 EFI 引导加载，而不是 grub2，如下所述[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html) ：
 
 在 RHEL 1.x 以外的 Linux 分发版上，可以遵循类似的步骤配置 grub v 0.97，以便从 PxE 服务器加载 Linux 内核。
 
@@ -74,7 +72,7 @@ Set-VMComPort -VMName <Name> -Number 2 -Path \\.\pipe\dbg1
 
 ## <a name="use-hyper-v-specific-network-adapters-not-the-legacy-network-adapter"></a>使用 Hyper-v 特定的网络适配器，而不是旧的网络适配器
 
-配置并使用虚拟以太网适配器，该适配器是一种具有增强性能的 Hyper-v 特定网卡。 如果旧网络适配器和 Hyper-v 特定网络适配器均连接到虚拟机，则**ifconfig**的输出中的网络名称可能会显示随机值（如 **_tmp12000801310**）。 若要避免此问题，请在 Linux 虚拟机中使用 Hyper-v 特定的网络适配器时，删除所有旧版网络适配器。
+配置并使用虚拟以太网适配器，该适配器是一种具有增强性能的 Hyper-v 特定网卡。 如果旧网络适配器和 Hyper-v 特定网络适配器均连接到虚拟机，则**ifconfig**的输出中的网络名称可能会显示随机值，例如 **_tmp12000801310**。 若要避免此问题，请在 Linux 虚拟机中使用 Hyper-v 特定的网络适配器时，删除所有旧版网络适配器。
 
 ## <a name="use-io-scheduler-noop-for-better-disk-io-performance"></a>使用 i/o 计划程序 NOOP 获得更好的磁盘 i/o 性能
 
@@ -94,7 +92,7 @@ Hyper-v 允许压缩虚拟磁盘（VHDX）文件，而不考虑磁盘上可能�
 
 调整 VHD 或 VHDX 大小后，管理员应使用诸如 fdisk 或 parted 的实用工具来更新分区、卷和文件系统结构，以反映磁盘大小的变化。 收缩或扩展包含 GUID 分区表（GPT）的 VHD 或 VHDX 的大小会在分区管理工具用于检查分区布局时产生警告，并会警告管理员修复第一个和第二个 GPT 标头。 此手动步骤可以安全地执行，而不会丢失数据。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 * [Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 

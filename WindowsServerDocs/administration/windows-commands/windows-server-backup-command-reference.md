@@ -1,24 +1,20 @@
 ---
 title: Windows Server 备份命令参考
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于备份命令参考的 Windows 命令主题。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03de0a65-21f0-4dd7-a3ae-251c98bbf6eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c05a44d3390e110fbaf276dfb9b40c1f0adc1dd5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ca6a2e17c68e362d8b3d26f67ab3b7e4c7bf86d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362046"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829201"
 ---
 # <a name="windows-server-backup-command-reference"></a>Windows Server 备份命令参考
 
@@ -30,7 +26,7 @@ ms.locfileid: "71362046"
 
 必须从提升的命令提示符运行**wbadmin** 。 （若要打开提升的命令提示符，请单击 "**开始**"，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
 
-|命令|描述|
+|命令|说明|
 |----------|-----------|
 |[Wbadmin enable backup](wbadmin-enable-backup.md)|配置并启用每日备份计划。|
 |[Wbadmin disable backup](wbadmin-disable-backup.md)|禁用日常备份。|

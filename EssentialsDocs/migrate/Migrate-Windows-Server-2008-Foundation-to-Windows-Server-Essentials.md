@@ -1,29 +1,25 @@
 ---
 title: 将 Windows Server 2008 Foundation 迁移到 Windows Server Essentials
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f22fc0a4-cb82-4e60-afe6-2d03145745e7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1d6fe336692e5775a6a7b98f3a50bda1958058a7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 52763340ae2df60f37757dc2fb1344fb891c8f7a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318956"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852540"
 ---
 # <a name="migrate-windows-server-2008-foundation-to-windows-server-essentials"></a>将 Windows Server 2008 Foundation 迁移到 Windows Server Essentials
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本指南介绍如何将现有的 Windows Server 2008 Foundation 域迁移到新硬件上的 Windows Server® 2012 Essentials，然后迁移设置和数据。 本指南还介绍了在完成迁移后如何从 Windows Server Essentials 网络中删除现有的服务器。  
+本指南介绍如何将现有的 Windows Server 2008 Foundation 域迁移到新硬件上的 Windows Server&reg; 2012 Essentials，然后迁移设置和数据。 本指南还介绍了在完成迁移后如何从 Windows Server Essentials 网络中删除现有的服务器。  
   
 > [!NOTE]
 >  为了避免迁移过程中出现问题，Windows Server Essentials 产品开发团队强烈建议你在开始迁移之前先阅读本文档。  

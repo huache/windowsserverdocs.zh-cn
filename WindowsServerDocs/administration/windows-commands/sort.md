@@ -1,28 +1,22 @@
 ---
 title: sort
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 用于排序的 Windows 命令主题，它读取输入、对数据进行排序，并将结果写入屏幕、文件或其他设备。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 77116469-4790-4442-8a21-9fa73b65ef9f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65b091a6de4f20ce94389ed39f4fe645c72b3560
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 853a9d5dc0928eec78199c8e0d0fe1715ea64808
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383950"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834080"
 ---
 # <a name="sort"></a>sort
-
-
 
 读取输入、对数据进行排序，并将结果写入屏幕、文件或其他设备。
 
@@ -34,9 +28,9 @@ ms.locfileid: "71383950"
 sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:][<Path1>]<FileName1>] [/t [<Drive2>:][<Path2>]] [/o [<Drive3>:][<Path3>]<FileName3>]
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/r|反转排序顺序（即，从 Z 到 A，从9到0）。|
 |/+\<N >|指定每次比较时**排序**将开始的字符位置号。 *N*可以是任何有效的整数。|
@@ -60,7 +54,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
     如果输入和输出都是文件，则默认的最大内存大小为可用主内存的90%，否则为主内存的45%。 默认设置通常提供最佳性能。
 -   使用 **/l**命令行选项
 
-    目前，默认区域设置的唯一替代项是 "C" 区域设置，它比自然语言排序更快（根据字符的二进制编码对字符进行排序）。
+    目前，默认区域设置的唯一替代项是 C 区域设置，它比自然语言排序更快（根据字符的二进制编码对字符进行排序）。
 -   使用带有**sort**命令的重定向符号
 
     可以使用管道符号（ **|** ）将输入数据从另一个命令定向到**sort**命令，或将已排序的输出定向到另一个命令。 您可以使用重定向符号（ **<** 或 **>** ）来指定输入和输出文件。 它可以更快、更高效地指定输入文件（在命令语法中由*FileName1*定义），然后使用 **/o**参数指定输出文件。
@@ -77,7 +71,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
     如果排序满足最大内存大小（默认情况下，或由 **/m**参数指定），则会在单个传递中执行排序。 否则，排序是以两个单独的排序和合并传递来执行的，并且两个传递的内存量相等。 执行两个传递后，部分排序的数据存储在磁盘上的一个临时文件中。 如果内存不足，无法在两次传递中执行排序，则会发出运行时错误。 如果使用 **/m**命令行选项来指定比真正可用的内存更多的内存，则可能会导致性能下降或运行时错误。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 **对文件进行排序**
 
@@ -87,9 +81,9 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
 **对命令的输出进行排序**
 
-若要在大型文件中搜索文本 "Maillist"，并对搜索结果进行排序，请使用竖线（|）将**find**命令的输出定向到**sort**命令，如下所示：
+若要在名为 Maillist 的大型文件中搜索文本，并对搜索结果进行排序，请使用竖线（|）将**find**命令的输出定向到**sort**命令，如下所示：
 
-`find "Jones" maillist.txt | sort`
+`find Jones maillist.txt | sort`
 
 此命令生成包含指定文本的行的已排序列表。
 
@@ -101,6 +95,6 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
 然后键入要排序的文本，并在每行末尾按 ENTER。 键入完文本后，按 CTRL + Z，然后按 ENTER。 **Sort**命令显示您键入的文本，并按字母顺序排序。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

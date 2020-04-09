@@ -1,7 +1,6 @@
 ---
 ms.assetid: f0464182-56a2-4bfa-a8c8-7e39c1bd62d3
 title: 使用 WID 和代理的联合服务器场
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,19 +8,19 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a123afaebba002b8ee4fb98d5cee5aded286a96
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 523e076ad9593f09ac2f9db5c45fa8c2e82f05bb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359130"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853100"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>使用 WID 和代理的联合服务器场
 
 此 Active Directory 联合身份验证服务 \(AD FS\) 的部署拓扑与 Windows 内部数据库 \(WID\) 拓扑的联合服务器场相同，但它将代理计算机添加到外围网络以支持外部用户。 这些代理将来自企业网络外部的客户端身份验证请求重定向到联合服务器场。 在以前版本的 AD FS 中，这些代理被称为联合服务器代理。  
   
 > [!IMPORTANT]  
-> 在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务 \(AD FS\) 中，联合服务器代理的角色由称为 Web 应用程序代理的新远程访问角色服务处理。 若要使你的 AD FS 可以从企业网络外部进行访问（这是在早期版本的 AD FS 中部署联合服务器代理的目的，如 AD FS 2.0 和 Windows Server 2012 中的 AD FS），可以部署一个或多个 web 应用程序代理D FS 在 Windows Server 2012 R2 中。  
+> 在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务 \(AD FS\) 中，联合服务器代理的角色由称为 Web 应用程序代理的新远程访问角色服务处理。 若要使你的 AD FS 可以从企业网络外部进行访问（这是在旧版 AD FS 中部署联合服务器代理的目的，如 AD FS 2.0 和 Windows Server 2012 中的 AD FS），可以在 Windows Server 2012 R2 中为 AD FS 部署一个或多个 web 应用程序代理。  
 >   
 > 在 AD FS 的上下文中，Web 应用程序代理充当 AD FS 联合服务器代理。 除此之外，Web 应用程序代理为企业网络内部的 Web 应用程序提供反向代理功能，使任意设备上的用户都能够从企业网络外部访问这些 Web 应用程序。 有关 Web 应用程序代理角色服务的详细信息，请参阅“Web 应用程序代理概述”。  
 >   

@@ -4,15 +4,15 @@ description: 针对 Windows Server 16 上的容器的性能优化建议
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: DavSo; Ericam; YaShi
+ms.author: davso; ericam; yashi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: 890632c9e8adf221e56ffa91331e5371a3fcdf86
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a4508e28e54562748422b198f703e23326d15720
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384937"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851630"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Windows Server 容器的性能优化
 
@@ -35,7 +35,7 @@ Hyper-V 容器提供的额外隔离在很大程度上是通过容器和容器主
 
 Windows Server 容器和 Hyper-V 容器提供了针对 Server Core 的支持，以及针对 Windows Server 2016 中提供的新安装选项的支持：[Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server)。 
 
-Nano Server 是针对私有云和数据中心进行优化的远程管理的服务器操作系统。 类似于 Windows Server 的“服务器核心”模式，但显著变小了，无本地登录功能，且仅支持 64 位应用程序、工具和代理。 它所需的磁盘空间更少，并且启动速度更快。
+Nano Server 是针对私有云和数据中心进行优化的远程管理的服务器操作系统。 它类似于服务器核心模式中的 Windows Server，但显著变小，无本地登录功能，且仅支持 64 位应用程序、工具和代理。 它所需的磁盘空间更少，并且启动速度更快。
 
 ## <a name="container-start-up-time"></a>容器启动时间
 在容器提供最大优势的诸多方案中，容器启动时间是一项关键指标。 正因为如此，了解如何最大限度地优化容器启动时间至关重要。 以下是一些需要了解的优化权衡，可以提高启动时间。

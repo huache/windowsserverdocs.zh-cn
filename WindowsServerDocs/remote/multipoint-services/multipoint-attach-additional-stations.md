@@ -1,24 +1,20 @@
 ---
 title: 将其他工作站附加到 MultiPoint 服务器
 description: 将更多工作站添加到 MultiPoint 服务部署
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d78ebf4e-0968-4014-9a42-9f75cc50cb52
 author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 45340f02b120b1431b1f58a58ed03ea40e17a14c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f82cfb982d36e9d66ff5f951f65030f2f1d77539
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394745"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858730"
 ---
 # <a name="attach-additional-stations-to-multipoint-services"></a>将其他工作站附加到 MultiPoint 服务
 在 MultiPoint 服务环境中，用户使用工作站连接到 MultiPoint 服务并完成其工作。 工作站是用于连接到运行 Multipoint 服务的计算机的用户终结点。  

@@ -1,24 +1,20 @@
 ---
 title: 配置其他 LSA 保护
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 038e7c2b-c032-491f-8727-6f3f01116ef9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 40e489089fc0c15c3e6ebf7b654377f4d6f7e482
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: 1c923cfe39892ba105c437cf73843c2f6d07e49b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829632"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857070"
 ---
 # <a name="configuring-additional-lsa-protection"></a>配置其他 LSA 保护
 
@@ -75,7 +71,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 2.  将该注册表项的值设置为 **AuditLevel=dword:00000008**.。
 
-3.  重新启动计算机。
+3.  重启计算机。
 
 分析事件 3065 和事件 3066 的结果。
 
@@ -98,15 +94,15 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 2.  创建一个新的组策略对象 (GPO)，该对象在域级别链接，或者链接到你的计算机帐户所在的组织单位。 你也可以选择已部署的 GPO。
 
-3.  右键单击该 GPO，然后单击“编辑”打开组策略管理编辑器 。
+3.  右键单击该 GPO，然后单击“编辑”打开组策略管理编辑器。
 
 4.  依次展开“计算机配置”、“首选项”和“Windows 设置”。
 
-5.  右键单击 **“注册表”** ，指向 **“新建”** ，然后单击 **“注册表项”** 。 此时将出现“新建注册表属性”对话框 。
+5.  右键单击“注册表”，指向“新建”，然后单击“注册表项”。 此时将出现“新建注册表属性”对话框。
 
 6.  在 **“配置单元”** 列表中单击 **HKEY_LOCAL_MACHINE.**
 
-7.  在 **“注册表项路径”** 列表中浏览到 **SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**。
+7.  在“注册表项路径”列表中浏览到“**SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**”。
 
 8.  在 **“值名称”** 框中键入 **AuditLevel**。
 
@@ -114,12 +110,12 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 10. 在 **值数据** 框中，键入 **00000008**。
 
-11. 单击**确定**。
+11. 单击“确定”。
 
 > [!NOTE]
 > 要使该 GPO 生效，必须将 GPO 更改复制到域中的所有域控制器。
 
-若要在多台计算机上选择加入附加 LSA 保护，可以通过修改 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa 来使用组策略的注册表客户端扩展。 有关如何执行此操作的步骤，请参阅本主题的 [如何配置凭据的附加 LSA 保护](#BKMK_HowToConfigure) 。
+若要在多台计算机上选择加入附加 LSA 保护，可以通过修改 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa 来使用组策略的注册表客户端扩展。 有关此操作的执行步骤，请参阅本主题中的[如何配置凭据的附加 LSA 保护](#BKMK_HowToConfigure)。
 
 ### <a name="after-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>选择加入之后：如何识别 lsass.exe 加载的插件和驱动程序
 可以使用事件日志来识别 LSA 保护模式下无法加载的 LSA 插件和驱动程序。 启用 LSA 受保护进程后，系统将生成事件日志，标识无法在 LSA 下加载的所有插件和驱动程序。
@@ -134,7 +130,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 共享区域通常是运用某些编程技术的后果，这些技术允许实例数据与使用相同安全上下文的其他进程交互。 这可能会造成安全漏洞。
 
-## <a name="BKMK_HowToConfigure"></a>如何配置凭据的附加 LSA 保护
+## <a name="how-to-configure-additional-lsa-protection-of-credentials"></a><a name="BKMK_HowToConfigure"></a>如何配置凭据的附加 LSA 保护
 在运行 Windows 8.1 的设备（有或没有安全启动或 UEFI）上，可以通过执行本部分中所述的过程来进行配置。 对于运行 Windows RT 8.1 的设备，lsass.exe 保护始终处于启用状态，并且不能关闭。
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>在使用或不使用安全启动和 UEFI 的基于 x86 或基于 x64 的设备上
@@ -150,7 +146,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 2.  将该注册表项的值设置为："RunAsPPL"=dword:00000001。
 
-3.  重新启动计算机。
+3.  重启计算机。
 
 ##### <a name="to-enable-lsa-protection-using-group-policy"></a>使用组策略启用 LSA 保护的步骤
 
@@ -158,23 +154,23 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 2.  创建一个新 GPO，该 GPO 在域级别链接，或者链接到你的计算机帐户所在的组织单位。 你也可以选择已部署的 GPO。
 
-3.  右键单击该 GPO，然后单击“编辑”打开组策略管理编辑器 。
+3.  右键单击该 GPO，然后单击“编辑”打开组策略管理编辑器。
 
 4.  依次展开“计算机配置”、“首选项”和“Windows 设置”。
 
-5.  右键单击 **“注册表”** ，指向 **“新建”** ，然后单击 **“注册表项”** 。 此时将出现“新建注册表属性”对话框 。
+5.  右键单击“注册表”，指向“新建”，然后单击“注册表项”。 此时将出现“新建注册表属性”对话框。
 
-6.  在“配置单元” 列表中，单击 **HKEY_LOCAL_MACHINE**。
+6.  在“配置单元”列表中单击“**HKEY_LOCAL_MACHINE**”。
 
 7.  在“注册表项路径” 列表中，浏览到 **SYSTEM\CurrentControlSet\Control\Lsa**。
 
-8.  在“值名称” 框中，键入 **RunAsPPL**。
+8.  在“值名称”框中，键入 **RunAsPPL**。
 
 9. 在“值类型”框中，单击“REG_DWORD”。
 
-10. 在“值数据” 框中，键入 **00000001**。
+10. 在“值数据”框中，键入 **00000001**。
 
-11. 单击**确定**。
+11. 单击“确定”。
 
 ##### <a name="to-disable-lsa-protection"></a>禁用 LSA 保护的步骤
 

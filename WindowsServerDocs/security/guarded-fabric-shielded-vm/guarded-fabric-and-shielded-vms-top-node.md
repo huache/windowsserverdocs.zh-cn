@@ -1,26 +1,25 @@
 ---
-title: 受保护的结构和受防护的虚拟机
-ms.custom: na
+title: 受保护的构造和受防护的 VM
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 5c7ada81-2d97-41d4-87cf-1a7ccf06cd20
 manager: dongill
 author: rpsqrd
-ms.author: justinha
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: f23d0be0d860695b014f57fd55d8e321e81a70ca
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9e76b3081438ae38c6b83b7cdd179d47b1e21a70
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950330"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856910"
 ---
-# <a name="guarded-fabric-and-shielded-vms"></a>受保护的结构和受防护的虚拟机
+# <a name="guarded-fabric-and-shielded-vms"></a>受保护的构造和受防护的 VM
 
 >适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
-提供托管环境的最重要目标之一是保证在环境中运行的虚拟机的安全性。 作为云服务商或企业私有云管理员，你可以使用受保护的构造为 VM 提供更安全的环境。 受保护的结构包括一项主机保护者服务 (HGS)（通常是由三个节点组成的群集）、一个或多个被保护的主机以及一组受防护的虚拟机 (VM)。
+提供托管环境的最重要目标之一是保证在环境中运行的虚拟机的安全性。 作为云服务商或企业私有云管理员，你可以使用受保护的构造为 VM 提供更安全的环境。 受保护的结构包括一项主机保护者服务 (HGS)（通常是由三个节点组成的群集）、一个或多个受保护的主机以及一组受防护的虚拟机 (VM)。
 
 > [!IMPORTANT]
 > 在生产环境中部署受防护的虚拟机之前，请确保已安装最新的累积更新。

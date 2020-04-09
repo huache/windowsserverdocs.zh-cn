@@ -2,20 +2,19 @@
 title: 应使用建议的内存量配置 Windows 10
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 0c810b82-b06a-4382-b598-5c642e8534be
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: a2722f9ecdfbab037de67ef77af7cec2eed4f0b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e38ca9d00ad502fc2ae3f2784a9e3f1a159d13a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364575"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854980"
 ---
 # <a name="windows-10-should-be-configured-with-the-recommended-amount-of-memory"></a>应使用建议的内存量配置 Windows 10
 
@@ -27,7 +26,7 @@ ms.locfileid: "71364575"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|配置|  
   
 以下各节提供了有关特定问题的详细信息。 斜体指示在最佳做法分析器工具中显示的特定问题的 UI 文本。  

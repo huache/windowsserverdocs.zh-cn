@@ -5,18 +5,18 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: RoopeshB, NedPyle
+ms.author: roopeshb, nedpyle
 ms.date: 10/16/2017
-ms.openlocfilehash: 07e5005c1bc38e791e847c8965cbc9a6c0ac96f4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9bee396532c3319e43d10012e098533495cf0b03
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355179"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851850"
 ---
 # <a name="performance-tuning-nfs-file-servers"></a>性能优化 NFS 文件服务器
 
-## <a href="" id="servicesnfs"></a>NFS 服务模型
+## <a name="services-for-nfs-model"></a><a href="" id="servicesnfs"></a>NFS 服务模型
 
 
 以下各节提供有关用于客户端-服务器通信的 Microsoft 服务网络文件系统（NFS）模型的信息。 由于 NFS v2 和 NFS v3 仍是最广泛部署的协议版本，因此除 MaxConcurrentConnectionsPerIp 之外的所有注册表项都仅适用于 NFS v2 和 NFS v3。

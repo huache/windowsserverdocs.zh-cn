@@ -1,6 +1,5 @@
 ---
 title: Active Directory 联合身份验证服务和证书密钥规范属性信息
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 51c9828cfe494c68422f4985e5b17113020c8414
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3ddc427d84a79d831c61cad8087dbfa1d3fb564
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407424"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860240"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS 和 certificate KeySpec 属性信息
 密钥规范（"KeySpec"）是与证书和密钥关联的属性。 它指定与证书关联的私钥是否可用于签名和/或加密。   

@@ -2,24 +2,23 @@
 title: 使存储空间直通服务器脱机以进行维护
 ms.prod: windows-server
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
-Keywords: 存储空间直通, S2D, 维护
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 20439a06c255a73f20a297f765e6ed11abfde6f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2ccf8d809354f96277701cd365966ba5e914f64b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402823"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857530"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>使存储空间直通服务器脱机以进行维护
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 本主题提供有关如何正确重启或关闭带有[存储空间直通](storage-spaces-direct-overview.md)的服务器的指南。
 
@@ -83,7 +82,7 @@ Suspend-ClusterNode -Drain
 
 服务器完成清空后，它将在故障转移群集管理器和 PowerShell 中显示为**暂停**。
 
-![已暂停](media/maintain-servers/paused.png)
+![暂停](media/maintain-servers/paused.png)
 
 现在，你可以像往常一样（例如，通过使用 Restart-Computer 或 Stop-Computer PowerShell cmdlet）安全重启或关机。
 
@@ -155,7 +154,7 @@ MyVolume2    Mirror                InService         Warning      True          
 MyVolume3    Mirror                InService         Warning      True           1 TB
 ```
 
-作业完成后，使用 `Get-VirtualDisk` cmdlet 再次验证卷是否显示**正常**。 下面是一些示例输出：
+作业完成后，使用  **cmdlet 再次验证卷是否显示**正常`Get-VirtualDisk`。 下面是一些示例输出：
 
 ```
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
@@ -181,10 +180,10 @@ MyVolume3    Mirror                OK                Healthy      True          
 
    请花几分钟时间。  请确保存储池处于正常状态。
 9. 使虚拟磁盘恢复联机。
-10. 通过运行**VirtualDisk** cmdlet 来监视虚拟磁盘的状态 。
+10. 通过运行**VirtualDisk** cmdlet 来监视虚拟磁盘的状态**Get-Volume** 。
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
 - [群集感知更新（CAU）](https://technet.microsoft.com/library/hh831694.aspx)

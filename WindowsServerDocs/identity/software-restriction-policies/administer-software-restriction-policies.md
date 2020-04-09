@@ -1,24 +1,20 @@
 ---
 title: 管理软件限制策略
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cc22093-67d1-47b6-9ddd-4569b6761ce9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c75c7813041870f79ed95250857a5c7d1576c7dc
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 88e745b6951ab27f22cc412ee63f792d30775d14
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322979"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855110"
 ---
 # <a name="administer-software-restriction-policies"></a>管理软件限制策略
 
@@ -53,7 +49,7 @@ ms.locfileid: "79322979"
 
 -   [使用软件限制策略来帮助保护你的计算机免受电子邮件病毒侵害](use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus.md)
 
-## <a name="BKMK_Open_SRP"></a>打开软件限制策略
+## <a name="to-open-software-restriction-policies"></a><a name="BKMK_Open_SRP"></a>打开软件限制策略
 
 -   [对于本地计算机](#BKMK_1)
 
@@ -63,7 +59,7 @@ ms.locfileid: "79322979"
 
 -   [对于站点，你位于域控制器或安装了远程服务器管理工具的工作站上](#BKMK_4)
 
-### <a name="BKMK_1"></a>对于本地计算机
+### <a name="for-your-local-computer"></a><a name="BKMK_1"></a>对于本地计算机
 
 1.  打开“本地安全设置”。
 
@@ -76,7 +72,7 @@ ms.locfileid: "79322979"
 > [!NOTE]
 > 若要执行此过程，您必须是本地计算机上“Administrators”组的成员或者必须被委派了适当的授权。
 
-### <a name="BKMK_2"></a>对于域、站点或组织单位，并且位于加入到域中的成员服务器或工作站上
+### <a name="for-a-domain-site-or-organizational-unit-and-you-are-on-a-member-server-or-on-a-workstation-that-is-joined-to-a-domain"></a><a name="BKMK_2"></a>对于域、站点或组织单位，并且位于加入到域中的成员服务器或工作站上
 
 1.  打开 Microsoft 管理控制台 (MMC)。
 
@@ -101,7 +97,7 @@ ms.locfileid: "79322979"
 > [!NOTE]
 > 若要执行此过程，您必须是 Domain Admins 组的成员。
 
-### <a name="BKMK_3"></a>对于域或组织单位，并且位于安装了远程服务器管理工具的域控制器或工作站上
+### <a name="for-a-domain-or-organizational-unit-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_3"></a>对于域或组织单位，并且位于安装了远程服务器管理工具的域控制器或工作站上
 
 1.  打开组策略管理控制台。
 
@@ -120,7 +116,7 @@ ms.locfileid: "79322979"
 > [!NOTE]
 > 若要执行此过程，您必须是 Domain Admins 组的成员。
 
-### <a name="BKMK_4"></a>对于站点，你位于域控制器或安装了远程服务器管理工具的工作站上
+### <a name="for-a-site-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_4"></a>对于站点，你位于域控制器或安装了远程服务器管理工具的工作站上
 
 1.  打开组策略管理控制台。
 
@@ -145,7 +141,7 @@ ms.locfileid: "79322979"
 > -   若要设置应用于计算机的策略设置，而不考虑哪些用户登录到计算机，请单击 "**计算机配置**"。
 > -   若要设置应用于用户的策略设置，而不考虑登录到的计算机，请单击 "**用户配置**"。
 
-## <a name="BKMK_Create_SRP"></a>创建新的软件限制策略
+## <a name="to-create-new-software-restriction-policies"></a><a name="BKMK_Create_SRP"></a>创建新的软件限制策略
 
 1.  打开“软件限制策略”。
 
@@ -158,7 +154,7 @@ ms.locfileid: "79322979"
 >     -   如果要为加入到域的计算机创建新的软件限制策略，则域管理员组的成员可以执行此过程。
 > -   如果已经为组策略对象 (GPO) 创建了软件限制策略，则“操作”菜单上不会显示“新建软件限制策略”命令。 若要删除已应用到 GPO 的软件限制策略，请在控制台树中，右键单击“软件限制策略”，然后单击“删除软件限制策略”。 删除 GPO 的软件限制策略时，还会删除该 GPO 的所有软件限制策略规则。 在删除软件限制策略后，可为该 GPO 创建新的软件限制策略。
 
-## <a name="BKMK_Add_Del"></a>添加或删除指定的文件类型
+## <a name="to-add-or-delete-a-designated-file-type"></a><a name="BKMK_Add_Del"></a>添加或删除指定的文件类型
 
 1.  打开“软件限制策略”。
 
@@ -178,7 +174,7 @@ ms.locfileid: "79322979"
 > -   可能需要为组策略对象 (GPO) 创建新的软件限制策略设置（如果尚未这样做）。
 > -   指定文件类型的列表由 GPO 的计算机配置和用户配置的所有规则共享。
 
-## <a name="BKMK_Prevent_Admin"></a>防止软件限制策略应用于本地管理员
+## <a name="to-prevent-software-restriction-policies-from-applying-to-local-administrators"></a><a name="BKMK_Prevent_Admin"></a>防止软件限制策略应用于本地管理员
 
 1.  打开“软件限制策略”。
 
@@ -192,7 +188,7 @@ ms.locfileid: "79322979"
 > -   如果用户成为组织中计算机上的本地 Administrators 组成员的情况很常见，则你可能不需要启用此选项。
 > -   如果要为本地计算机定义软件限制策略设置，请使用此过程来防止向本地管理员应用软件限制策略。 如果要为你的网络定义软件限制策略设置，请通过组策略根据安全组中的成员身份筛选用户策略设置。
 
-## <a name="BKMK_Sec_Lvl"></a>更改软件限制策略的默认安全级别
+## <a name="to-change-the-default-security-level-of-software-restriction-policies"></a><a name="BKMK_Sec_Lvl"></a>更改软件限制策略的默认安全级别
 
 1.  打开“软件限制策略”。
 
@@ -210,7 +206,7 @@ ms.locfileid: "79322979"
 > -   创建软件限制策略规则以指定默认安全级别的例外。 当默认安全级别设置为“不受限”时，规则可以指定不允许运行的软件。 当默认安全级别设置为“不允许”时，规则可以指定允许运行的软件。
 > -   在安装时，针对系统上所有文件的软件限制策略默认安全级别设置为“不受限”。
 
-## <a name="BKMK_Apply_SRP_DLLs"></a>将软件限制策略应用于 Dll
+## <a name="to-apply-software-restriction-policies-to-dlls"></a><a name="BKMK_Apply_SRP_DLLs"></a>将软件限制策略应用于 Dll
 
 1.  打开“软件限制策略”。
 

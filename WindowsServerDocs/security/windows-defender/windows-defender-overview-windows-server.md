@@ -1,28 +1,24 @@
 ---
 title: Windows Server 的 windows Defender 概述
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-defender
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 751efb33-a08e-4e90-9208-6f2bc319e029
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 238f7b2eeb9ce8364784a9222ccef77be8edd1de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0eb88a0ad80de1060971b6de5e0c5ba313ce0fad
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403247"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855060"
 ---
 # <a name="windows-defender-antivirus-for-windows-server"></a>适用于 Windows Server 的 windows Defender 防病毒
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 Windows Server 2016 现在包含 Windows Defender 防病毒。 Windows Defender AV 是一种恶意软件防护，可立即主动保护 Windows Server 2016 免受已知的恶意软件的攻击，并且可以通过 Windows 更新定期更新反恶意软件定义。
 

@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: f9fb3cf46afb7e96c13fb623bc8f4fe67c1f3694
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 70c881cc02f31614160920766d32d73a3a939315
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376815"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844060"
 ---
 # <a name="fsutil-sparse"></a>Fsutil 稀疏
->适用于：Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+>适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 管理稀疏文件。
 
@@ -32,9 +32,9 @@ fsutil sparse [setflag] <FileName>
 fsutil sparse [setrange] <FileName> <BeginningOffset> <Length>
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|     参数     |                                                    描述                                                    |
+|     参数     |                                                    说明                                                    |
 |-------------------|-------------------------------------------------------------------------------------------------------------------|
 |     queryflag     |                                                  查询稀疏。                                                  |
 |    queryrange     |                        扫描文件并搜索可能包含非零数据的范围。                        |
@@ -54,15 +54,15 @@ fsutil sparse [setrange] <FileName> <BeginningOffset> <Length>
 
 -   如果文件是稀疏文件或压缩文件，NTFS 可能会释放文件中的磁盘空间。 这会将字节范围设置为零，而不会扩展文件大小。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 若要将名为 test.txt 的文件中的文件作为稀疏目录标记，请键入：
 
 ```
 fsutil sparse setflag c:\temp\sample.txt 
 ```
 
-#### <a name="additional-references"></a>其他参考
-[命令行语法项](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>其他参考
+- [命令行语法项](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

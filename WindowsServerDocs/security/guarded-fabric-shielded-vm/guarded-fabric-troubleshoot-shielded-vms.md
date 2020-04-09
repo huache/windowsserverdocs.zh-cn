@@ -1,22 +1,22 @@
 ---
 title: 排查受防护的 Vm
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 10/3/2018
-ms.openlocfilehash: b0d4338d20238eb528c19221151f380cc154a2db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c80663256a2e3404666b739c0a81cd06ec3caced
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386375"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856370"
 ---
 # <a name="troubleshoot-shielded-vms"></a>排查受防护的 Vm
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 从 Windows Server 版本1803开始，为完全防护的 Vm 重新启用了虚拟机连接（VMConnect）增强会话模式和 PS Direct。 虚拟化管理员仍需要 VM 来宾凭据才能访问 VM，但这使得主机的网络配置断开时，主机可以更轻松地对受防护的 VM 进行故障排除。
 

@@ -1,24 +1,20 @@
 ---
 title: Scwcmd
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 188ae881-c7d4-4a7a-b967-8fdc79f5f345
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fae9476f94af5faa6e942239e7d91cf589bb1776
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 014bb8b26f6eebaefa3a9997a71fbaaf543a75dc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384265"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835040"
 ---
 # <a name="scwcmd"></a>Scwcmd
 
@@ -40,9 +36,9 @@ ms.locfileid: "71384265"
 scwcmd <command> [<subcommand>]
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|命令|描述|
+|命令|说明|
 |----------|-----------|
 |/analyze|确定计算机是否符合策略。</br>请参阅[Scwcmd：分析](scwcmd-analyze.md)语法和选项。|
 |/configure|将 SCW 生成的安全策略应用到计算机。</br>请参阅[Scwcmd： configure](scwcmd-configure.md) for 句法 and options。|
@@ -52,6 +48,6 @@ scwcmd <command> [<subcommand>]
 |/view|使用指定的 .xsl 转换呈现 .xml 文件。</br>有关语法和选项，请参阅[Scwcmd： view](scwcmd-view.md) 。|
 |/?|在命令提示符下显示帮助。|
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

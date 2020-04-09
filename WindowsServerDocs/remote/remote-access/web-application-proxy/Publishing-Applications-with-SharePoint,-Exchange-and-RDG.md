@@ -1,7 +1,6 @@
 ---
 ms.assetid: 61ed00fd-51c7-4728-91fa-8501de9d8f28
 title: 使用 SharePoint、Exchange 和 RDG 发布应用程序
-description: ''
 author: billmath
 manager: mtillman
 ms.author: billmath
@@ -9,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 3852baf866dae20d1d1d08219841295aa976c626
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 18851463b82afc1dc34615e6faaa14622c80224a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79319931"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818680"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>使用 SharePoint、Exchange 和 RDG 发布应用程序
 
@@ -27,7 +26,7 @@ ms.locfileid: "79319931"
 > [!NOTE]
 > 此信息按原样提供。  远程桌面服务支持并建议使用[Azure 应用代理来提供对本地应用程序的安全远程访问](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)。
 
-## <a name="BKMK_6.1"></a>发布 SharePoint 服务器
+## <a name="publish-sharepoint-server"></a><a name="BKMK_6.1"></a>发布 SharePoint 服务器
 当 SharePoint 站点配置为基于声明的身份验证或集成 Windows 身份验证时，您可以通过 Web 应用程序代理发布 SharePoint 站点。 如果要使用 Active Directory 联合身份验证服务（AD FS）进行预身份验证，则必须使用某个向导配置信赖方。
 
 -   如果 SharePoint 站点使用基于声明的身份验证，则必须使用添加信赖方信任向导来配置用于身份验证的信赖方信任。
@@ -40,7 +39,7 @@ ms.locfileid: "79319931"
 
 如果使用备用访问映射 (AAM) 或主机命名的站点集来配置 SharePoint 站点，则可以使用不同的外部 URL 和后端服务器 URL 来发布应用程序。 但是，如果未使用 AAM 或主机命名的站点集配置 SharePoint 站点，则必须使用相同的外部 URL 和后端服务器 URL。
 
-## <a name="BKMK_6.2"></a>发布 Exchange Server
+## <a name="publish-exchange-server"></a><a name="BKMK_6.2"></a>发布 Exchange Server
 下表描述了可通过 Web 应用程序代理发布的 Exchange 服务，以及支持这些服务的预身份验证：
 
 
@@ -48,7 +47,7 @@ ms.locfileid: "79319931"
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    Outlook Web App     | -使用非基于声明的身份验证 AD FS<br />-传递<br />-AD FS 对本地 Exchange 2013 Service Pak 1 （SP1）使用基于声明的身份验证 |                                                                  有关详细信息，请参阅： [对 Outlook Web App 和 EAC 使用 AD FS 基于声明的身份验证](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Exchange 控制面板 |                                                                               传递                                                                               |                                                                                                                                                                                                                                                                                    |
-|    Outlook Anywhere    |                                                                               传递                                                                               | 必须为 Outlook Anywhere 发布三个 URL，以使其正常工作：<br /><br />-自动发现 URL。<br />-Exchange 服务器的外部主机名;即，配置为供客户端连接到的 URL。<br />-Exchange Server 的内部 FQDN。 |
+|    Outlook Anywhere    |                                                                               传递                                                                               | 必须为 Outlook Anywhere 发布三个 URL，以使其正常工作：<p>-自动发现 URL。<br />-Exchange 服务器的外部主机名;即，配置为供客户端连接到的 URL。<br />-Exchange Server 的内部 FQDN。 |
 |  Exchange ActiveSync   |                                                     传递<br/> 使用 HTTP 基本授权协议的 AD FS                                                      |                                                                                                                                                                                                                                                                                    |
 
 若要使用集成 Windows 身份验证发布 Outlook Web App，必须使用“添加非基于声明的信赖方信任向导”为应用程序配置信赖方信任。
@@ -162,7 +161,7 @@ ms.locfileid: "79319931"
 
             有关 RDP 的详细信息，请参阅[配置 TS 网关 OTP 方案](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731249(v=ws.10))。
 
-## <a name="BKMK_Links"></a>另请参阅
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅
 
 - [规划使用 Web 应用程序代理发布应用程序](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383650(v=ws.11))
 

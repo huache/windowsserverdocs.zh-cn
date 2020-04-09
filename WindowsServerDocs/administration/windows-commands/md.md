@@ -1,24 +1,20 @@
 ---
 title: Md
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82162d00-cc34-4776-9e55-4b4836dbd6a9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3751b185677bfee9d0519b9a617bea1df063c1e7
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: e2fad89fe4b7e8425064301f6020fefaa5705b25
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259072"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839580"
 ---
 # <a name="md"></a>Md
 
@@ -38,19 +34,19 @@ md [<Drive>:]<Path>
 mkdir [<Drive>:]<Path>
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<驱动器 >：|指定要在其上创建新目录的驱动器。|
-|\<路径 >|必须的。 指定新目录的名称和位置。 任何单个路径的最大长度由文件系统确定。|
+|\<路径 >|必需。 指定新目录的名称和位置。 任何单个路径的最大长度由文件系统确定。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
 
 默认情况下启用的命令扩展允许你使用单个**md**命令在指定路径中创建中间目录。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要在当前目录中创建名为 Directory1 的目录，请键入：
 ```
@@ -67,8 +63,8 @@ md \Taxes\Property
 md \Taxes\Property\Current
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 
 [Cmd](cmd.md)

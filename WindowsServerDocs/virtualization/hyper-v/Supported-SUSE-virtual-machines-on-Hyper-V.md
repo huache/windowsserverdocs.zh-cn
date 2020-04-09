@@ -2,29 +2,27 @@
 title: Hyper-v 上支持的 SUSE 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 45517c1d381ba55c819b09b53ae563092e161b1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c5daa73e2e0c59a262565237d979d2e1e544ae4f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366735"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858000"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 SUSE 虚拟机
 
->适用于：Windows Server 2016，Hyper-v Server 2016，Windows Server 2012 R2，Hyper-v Server 2012 R2，Windows Server 2012，Hyper-v Server 2012，Windows Server 2008 R2，Windows 10，Windows 8.1，Windows 8，Windows 7.1，Windows 7
+>适用于： Windows Server 2016，Hyper-v Server 2016，Windows Server 2012 R2，Hyper-v Server 2012 R2，Windows Server 2012，Hyper-v Server 2012，Windows Server 2008 R2，Windows 10，Windows 8.1，Windows 8，Windows 7.1，Windows 7
 
 下面是一个功能分布图，它指示每个版本中的功能。 表后面列出了每个分发的已知问题和解决方法。
 
-适用于 Hyper-v 的内置 SUSE Linux Enterprise Service 驱动程序已通过 SUSE 认证。 可在此公告中查看示例配置：[SUSE 是认证公告](https://www.suse.com/nbswebapp/yesBulletin.jsp?bulletinNumber=144176)。
+适用于 Hyper-v 的内置 SUSE Linux Enterprise Service 驱动程序已通过 SUSE 认证。 可在此公告中查看示例配置： [SUSE 是证书公告](https://www.suse.com/nbswebapp/yesBulletin.jsp?bulletinNumber=144176)。
 
 ## <a name="table-legend"></a>表图例
 
@@ -36,7 +34,7 @@ ms.locfileid: "71366735"
 
 SLES12 + 仅限64位。
 
-|**功能**|**Windows Server 操作系统版本**|**SLES 15**|**SLES 12 SP3/SP4**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
+|**具有**|**Windows Server 操作系统版本**|**SLES 15**|**SLES 12 SP3/SP4**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
 |-|-|-|-|-|-|-|-|
 |**可用性**||内置|内置|内置|内置|内置|内置|
 |**[转储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -49,7 +47,7 @@ SLES12 + 仅限64位。
 |vRSS|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|||
 |TCP 分段和校验和卸载|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |SR-IOV|2019、2016|&#10004;|&#10004;|&#10004;||||
-|**[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||||||||
+|**[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||||||||
 |VHDX 调整大小|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |虚拟光纤通道|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |实时虚拟机备份|2019、2016、2012 R2|&#10004;备注2、3、8|&#10004;备注2、3、8|&#10004;备注2、3、8|&#10004;备注2、3、8|&#10004;备注2、3、8|&#10004;备注2、3、8|
@@ -74,7 +72,7 @@ SLES12 + 仅限64位。
 |使用 UEFI 启动|2019、2016、2012 R2|&#10004;备注9|&#10004;备注9|&#10004;备注9|&#10004;备注9|&#10004;备注9||
 |安全启动|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|||
 
-## <a name="BKMK_notes"></a>本票
+## <a name="notes"></a><a name="BKMK_notes"></a>本票
 
 1. 如果为虚拟机上的特定 Hyper-v 特定网络适配器配置了**网络管理器**，则静态 IP 注入可能不起作用。 若要确保静态 IP 注入正常运行，请确保网络管理器已完全关闭，或已通过其**ifcfg-eth0-ethX**文件在特定网络适配器上关闭网络管理器。
 
@@ -86,7 +84,7 @@ SLES12 + 仅限64位。
 
    * 启动内存和最小内存应等于或大于分发供应商建议的内存量。
 
-   * 通常会消耗系统中的全部可用内存的应用程序，仅消耗最多 80% 的可用 RAM。
+   * 通常会消耗系统中的全部可用内存的应用程序，仅消耗最多80% 的可用 RAM。
 
 5. 动态内存支持仅适用于64位虚拟机。
 
@@ -103,7 +101,7 @@ SLES12 + 仅限64位。
 
    ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 * [Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx)
 

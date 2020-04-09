@@ -1,7 +1,6 @@
 ---
 ms.assetid: ec26705c-4446-4226-b9b4-b775b642f0f4
 title: 联合服务器代理放置位置
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 73e68d03e4f2f76dbaf4a497da551640476d0438
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: beef5fb1cc52b5ed3f4c4eafd1fde6a9523c9260
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407826"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858450"
 ---
 # <a name="where-to-place-a-federation-server-proxy"></a>联合服务器代理放置位置
 
@@ -34,7 +33,7 @@ ms.locfileid: "71407826"
   
 服务器发布规则用于确定服务器发布的工作原理，即筛选通过 ISA 服务器计算机的所有传入和传出请求。 服务器发布规则将传入客户端请求映射到 ISA 服务器计算机后的相应服务器。 有关如何配置 ISA 服务器以发布服务器的信息，请参阅[创建安全的 Web 发布规则](https://go.microsoft.com/fwlink/?LinkId=75182)。  
   
-在 AD FS 的联合世界中，这些客户端请求通常会向特定的 URL，例如，联合身份验证服务器的标识符 URL，如 http:\//fs.fabrikam.com 。 因为这些客户端请求来自 Internet，所以面向\-Internet 的防火墙服务器必须配置为发布外围网络中部署的每个联合服务器代理的联合服务器标识符 URL。  
+在 AD FS 的联合世界中，通常会向特定 URL 发出这些客户端请求，例如 http：\//fs.fabrikam.com 的联合服务器标识符 URL。 因为这些客户端请求来自 Internet，所以面向\-Internet 的防火墙服务器必须配置为发布外围网络中部署的每个联合服务器代理的联合服务器标识符 URL。  
   
 ### <a name="configuring-isa-server-to-allow-ssl"></a>配置 ISA 服务器为允许使用 SSL  
 为了便于安全 AD FS 通信，必须配置 ISA 服务器以允许安全套接字层 \(SSL\) 以下各项之间的通信：  

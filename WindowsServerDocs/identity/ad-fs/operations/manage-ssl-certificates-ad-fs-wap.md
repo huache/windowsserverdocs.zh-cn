@@ -9,12 +9,12 @@ ms.date: 10/02/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 230fdaac28f4766c33e62362ca4c7e4d20f22c8e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b832756e123bee0223738ee804ac3a4db2371e84
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357739"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855290"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>在 Windows Server 2016 中管理 AD FS 和 WAP 中的 SSL 证书
 
@@ -38,7 +38,7 @@ ms.locfileid: "71357739"
 
 ## <a name="replacing-the-ssl-certificate-for-ad-fs"></a>替换 AD FS 的 SSL 证书
 > [!NOTE]
-> AD FS SSL 证书与 AD FS 管理 "管理单元中找到的 AD FS 服务通信证书不同。 若要更改 AD FS SSL 证书，你将需要使用 PowerShell。
+> AD FS SSL 证书与 AD FS 管理管理单元中的 AD FS 服务通信证书不同。 若要更改 AD FS SSL 证书，你将需要使用 PowerShell。
 
 首先，确定 AD FS 服务器正在运行的证书绑定模式：默认证书身份验证绑定或备用客户端 TLS 绑定模式。
 
@@ -46,7 +46,7 @@ ms.locfileid: "71357739"
 默认情况下，AD FS 在端口443上执行设备证书身份验证，在端口49443上执行用户证书身份验证（或不是443的可配置端口）。
 在此模式下，请使用 powershell cmdlet Set-adfssslcertificate 来管理 SSL 证书。
 
-按以下步骤操作：
+请遵循以下步骤进行配置：
 
 1. 首先，需要获取新证书。 通常通过将证书签名请求（CSR）提交给第三方公用证书提供程序来完成此操作。 有多种方法可以生成 CSR，包括从 Windows 7 或更高版本的电脑。 你的供应商应具有此相关文档。
 
@@ -66,7 +66,7 @@ Set-AdfsSslCertificate -Thumbprint '<thumbprint of new cert>'
 dir Cert:\LocalMachine\My\
 ```
 
-#### <a name="additional-notes"></a>其他说明
+#### <a name="additional-notes"></a>附加说明
 
 * Set-adfssslcertificate cmdlet 是多节点 cmdlet;这意味着只需要从主节点运行，并且将更新场中的所有节点。 这是服务器2016中的新增项。 在服务器 2012 R2 上，必须在每个服务器上运行 Set-adfssslcertificate。
 * Set-adfssslcertificate cmdlet 只能在主服务器上运行。 主服务器必须运行服务器2016，并且场行为级别应提升为2016。
@@ -77,7 +77,7 @@ dir Cert:\LocalMachine\My\
 当在备用客户端 TLS 绑定模式下配置时，AD FS 会在不同的主机名上，对端口443和端口443上的用户证书身份验证执行设备证书身份验证。 用户证书主机名 AD FS 是以 "certauth" 预先挂起的主机名，例如 "certauth.fs.contoso.com"。
 在此模式下，请使用 powershell cmdlet AdfsAlternateTlsClientBinding 来管理 SSL 证书。 这不仅会管理替代的客户端 TLS 绑定，还会管理 AD FS 设置 SSL 证书的所有其他绑定。
 
-按以下步骤操作：
+请遵循以下步骤进行配置：
 
 1. 首先，需要获取新证书。 通常通过将证书签名请求（CSR）提交给第三方公用证书提供程序来完成此操作。 有多种方法可以生成 CSR，包括从 Windows 7 或更高版本的电脑。 你的供应商应具有此相关文档。
 
@@ -97,7 +97,7 @@ Set-AdfsAlternateTlsClientBinding -Thumbprint '<thumbprint of new cert>'
 dir Cert:\LocalMachine\My\
 ```
 
-#### <a name="additional-notes"></a>其他说明
+#### <a name="additional-notes"></a>附加说明
 
 * AdfsAlternateTlsClientBinding cmdlet 是多节点 cmdlet;这意味着只需要从主节点运行，并且将更新场中的所有节点。
 * AdfsAlternateTlsClientBinding cmdlet 只能在主服务器上运行。 主服务器必须运行服务器2016，并且场行为级别应提升为2016。

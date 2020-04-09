@@ -1,6 +1,5 @@
 ---
 title: 升级到 Windows Server 2016 中的 AD FS SQL Server
-description: ''
 author: billmath
 manager: mtillman
 ms.date: 04/11/2018
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: dd843724faf1c7a8101def84091484a5e7f7900f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e9488357eecb4a2093d6989e4ebfcc195ce68567
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408239"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854000"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>升级到 Windows Server 2016 中的 AD FS SQL Server
 
@@ -33,7 +32,7 @@ Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。
 
 -   管理员可以向现有 Windows Server 2012 R2 场中添加新的 Windows Server 2016 联合服务器。  因此，场处于 "混合模式"，并运行 Windows Server 2012 R2 场行为级别。  若要确保整个场中的行为一致，不能在此模式下配置或使用新的 Windows Server 2016 功能。  
 
--   在所有 Windows Server 2012 R2 联合服务器都从混合模式场中删除后，如果是 WID 场，则会将一个新的 Windows 服务2016联合服务器升级为主节点的角色，然后，管理员可以从 Win 引发 FBLdows Server 2012 R2 到 Windows Server 2016。  因此，可以配置并使用任何新 AD FS Windows Server 2016 功能。  
+-   在所有 Windows Server 2012 R2 联合服务器都从混合模式场中删除后，如果是 WID 场，则会将新的 Windows 服务2016联合服务器之一提升为主节点的角色，然后，管理员可以将 FBL 从 Windows Server 2012 R2 提升到 Windows Server 2016。  因此，可以配置并使用任何新 AD FS Windows Server 2016 功能。  
 
 -   作为混合场功能的结果，希望升级到 Windows Server 2016 的 Windows Server 2012 R2 组织 AD FS 不需要部署全新的场，而是导出和导入配置数据。  相反，他们可以在 Windows Server 2016 节点处于联机状态时将其添加到现有场，而只会产生 FBL 引发的相对短暂的停机时间。  
 

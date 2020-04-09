@@ -2,20 +2,19 @@
 title: 避免使用其扇区大小小于存储虚拟硬盘文件的物理存储扇区大小的虚拟硬盘
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: b7cf994e-bf4b-4b1b-bad6-ecf7d46d105e
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 944fdce68a2f0b8e9c122f5f9134f0e07de18bbd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f7ea02ab83d3d896d2ad3681526133e23725b819
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366415"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857700"
 ---
 # <a name="avoid-using-virtual-hard-disks-with-a-sector-size-less-than-the-sector-size-of-the-physical-storage-that-stores-the-virtual-hard-disk-file"></a>避免使用其扇区大小小于存储虚拟硬盘文件的物理存储扇区大小的虚拟硬盘
 
@@ -27,7 +26,7 @@ ms.locfileid: "71366415"
 |-|-|  
 |**经营** <br />**主板**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  

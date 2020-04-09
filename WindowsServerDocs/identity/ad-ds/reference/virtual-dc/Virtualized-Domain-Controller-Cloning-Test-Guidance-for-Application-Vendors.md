@@ -1,7 +1,6 @@
 ---
 ms.assetid: fde99b44-cb9f-49bf-b888-edaeabe6b88d
 title: 适用于应用程序供应商的虚拟化域控制器克隆测试指南
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4926fabe255f964b6d39e6c39c5e794a37423111
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 7273c59022edf4b03276a9e26c8291849ef93b40
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517462"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853990"
 ---
 # <a name="virtualized-domain-controller-cloning-test-guidance-for-application-vendors"></a>适用于应用程序供应商的虚拟化域控制器克隆测试指南
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主题说明了应用程序供应商应该考虑哪些因素，以帮助确保在虚拟化域控制器（DC）克隆过程完成后，应用程序可以继续按预期方式工作。 它涵盖了需要进行额外测试的应用程序供应商和方案感兴趣的克隆过程的各个方面。 如果应用程序供应商验证其应用程序是否在已克隆的虚拟化域控制器上运行，则建议在本主题底部的社区内容中列出该应用程序的名称，以及指向组织的网站，用户可以在其中了解有关验证的详细信息。
+本主题说明了应用程序供应商应该考虑哪些因素，以帮助确保在虚拟化域控制器（DC）克隆过程完成后，应用程序可以继续按预期方式工作。 它涵盖了需要进行额外测试的应用程序供应商和方案感兴趣的克隆过程的各个方面。 如果应用程序供应商验证其应用程序是否在已克隆的虚拟化域控制器上运行，则鼓励用户在本主题底部的社区内容中列出应用程序的名称，并提供一个链接，用户可以在其中了解有关验证的详细信息。
 
 ## <a name="overview-of-virtualized-dc-cloning"></a>虚拟化 DC 克隆概述
 [Active Directory 域服务（AD DS）虚拟化（级别100）](https://docs.microsoft.com/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100)和[虚拟化域控制器技术参考（级别300）](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-)简介中详细介绍了虚拟化域控制器克隆过程。 从应用程序供应商的角度来看，在评估克隆对应用程序的影响时，需要考虑以下事项：

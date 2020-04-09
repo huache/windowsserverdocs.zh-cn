@@ -1,24 +1,20 @@
 ---
 title: 使用访问控制列表（Acl）管理数据中心网络流量流
 description: 本主题介绍如何配置访问控制列表（Acl），以便在虚拟子网上使用数据中心防火墙和 Acl 管理数据流量流。 通过创建应用于虚拟子网或网络接口的 Acl 来启用和配置数据中心防火墙。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a7ac5af-85e9-4440-a631-6a3a38e9015d
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/27/2018
-ms.openlocfilehash: 1f18ad9ddb0ea1a7575f6fcb26189f36f818ada2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2b8a3af119ac11f3bcfd704bb4f43f12c989dbf6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317487"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854410"
 ---
 # <a name="use-access-control-lists-acls-to-manage-datacenter-network-traffic-flow"></a>使用访问控制列表（Acl）管理数据中心网络流量流
 

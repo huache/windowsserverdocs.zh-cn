@@ -1,24 +1,20 @@
 ---
 title: 设置自动登录工作站
 description: 了解如何为 MultiPoint 服务工作站配置自动登录
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7a326085-7438-41de-9874-59aca393fa4a
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: d1b082cb9115951676685ec71e0b0ba54f698ec7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cd6de249e8bca7bebb03ec3c0947f8cdf7b395ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389385"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855630"
 ---
 # <a name="set-up-a-station-for-automatic-logon"></a>设置自动登录工作站
 自动登录使每个工作站在运行 MultiPoint 服务的计算机启动时自动登录，并显示桌面。 管理用户可为单个工作站或所有工作站设置此功能。  
@@ -33,7 +29,7 @@ ms.locfileid: "71389385"
   
 5.  输入用户帐户的密码，然后重新输入密码进行确认。  
   
-6.  单击 **“确定”** 。 页面将关闭。 帐户名称将显示在 "**自动登录**" 列中。  
+6.  单击“确定”。 页面将关闭。 帐户名称将显示在 "**自动登录**" 列中。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [管理用户工作站](Manage-User-Stations.md)

@@ -1,28 +1,22 @@
 ---
-title: 设置
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+title: set
+description: 用于设置的 Windows 命令主题，其中显示、设置或删除 CMD。EXE 环境变量。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5fdd60d6-addf-4574-8c92-8aa53fa73d76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12dce38bf8ad050c65a7a8c0fca4a71267cca93f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7477caa47ef8f728b2ebe99fe0bbf961888b846e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384101"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834390"
 ---
-# <a name="set"></a>设置
-
-
+# <a name="set"></a>set
 
 显示、设置或删除 CMD。EXE 环境变量。 如果不使用参数，则**set 将**显示当前环境变量设置。
 
@@ -36,9 +30,9 @@ set [/p] <Variable>=[<PromptString>]
 set /a <Variable>=<Expression>
 ```
 
-## <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<变量 >|指定要设置或修改的环境变量。|
 |\<字符串 >|指定与指定的环境变量关联的字符串。|
@@ -55,7 +49,7 @@ set /a <Variable>=<Expression>
   启用命令扩展（默认设置）并使用值运行**set**时，将显示以该值开头的所有变量。
 - 使用特殊字符
 
-  字符 **<** 、 **>** 、 **|** 、 **&** 、 **^** 是特殊的命令行界面字符，在*字符串*中使用时，它们前面必须加上转义符（ **^** ）或括在引号中（例如 **"StringContaining & Symbol"** ）。 如果使用引号将包含一个特殊字符的字符串括起来，则会将引号设置为环境变量值的一部分。
+  字符 **<** 、 **>** 、 **|** 、 **&** 、 **^** 是特殊的命令行界面字符，在*字符串*中使用时，它们前面必须加上转义符（ **^** ）或括在引号中（例如**StringContaining & Symbol**）。 如果使用引号将包含一个特殊字符的字符串括起来，则会将引号设置为环境变量值的一部分。
 - 使用环境变量
 
   使用环境变量控制某些批处理文件和程序的行为，并控制 Windows 和 MS-DOS 子系统的显示和工作方式。 **Set**命令通常在 autoexec.bat 文件中用于设置环境变量。
@@ -74,15 +68,15 @@ set /a <Variable>=<Expression>
   |        运算符         | 执行的操作  |
   |-------------------------|----------------------|
   |           ( )           |       分组       |
-  |          ! ~ -          |        一元         |
+  |          ！ ~ -          |        一元         |
   |         \*/%          |      算术      |
   |           + -           |      算术      |
-  |          < < > >          |    逻辑移位     |
+  |          << >>          |    逻辑移位     |
   |            &            |     位与      |
-  |            ^            | 位异或 |
+  |            ^            | 按位“异或” |
   |                         |                      |
   | = \*=/=% = + =-= & = ^ = |      = < < = > > =       |
-  |            ，            | 表达式分隔符 |
+  |            ,            | 表达式分隔符 |
 
   如果使用逻辑（ **&&** 或 **||** ）或取模（ **%** ）运算符，请将表达式字符串用引号引起来。 表达式中的任何非数值字符串都被视为环境变量名称，它们的值在处理前转换为数字。 如果指定未在当前环境中定义的环境变量名称，则会分配零值，从而使你可以使用环境变量值执行算术运算，而无需使用% 来检索值。
 
@@ -105,7 +99,7 @@ set /a <Variable>=<Expression>
 
   可从恢复控制台获取带有不同参数的**set**命令。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name=BKMK_examples></a>示例
 
 若要设置名为 TEST ^ 1 的环境变量，请键入：
 ```
@@ -115,11 +109,11 @@ set testVar=test^^1
 > [!NOTE]
 > **Set**命令将跟在等号（=）后的所有内容都分配给变量的值。 如果键入：
 > ```
-> set testVar="test^1"
+> set testVar=test^1
 > ```
 > 将得到以下结果：
 > ```
-> testVar="test^1"
+> testVar=test^1
 > ```
 > 若要设置名为 TEST & 1 的环境变量，请键入：
 > ```
@@ -151,6 +145,6 @@ set p
 > [!NOTE]
 > 此命令需要命令扩展，这些扩展在默认情况下是启用的。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

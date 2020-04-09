@@ -2,22 +2,18 @@
 title: 在企业中部署远程访问
 description: 本主题介绍适用于企业的 Windows Server 2016 中的 DirectAccess 方案。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: aebdbd02ebe256872b52e794c755e0d590b175a5
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6d0a9248865dca4afb3db9609b284048155f9eef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308469"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857430"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>在企业中部署远程访问
 
@@ -67,8 +63,8 @@ ms.locfileid: "80308469"
   
 |角色/功能|如何支持本方案|  
 |---------|-----------------|  
-|远程访问服务器角色|该角色可使用服务器管理器控制台加以安装和卸载。 本角色包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务（以前是网络策略和访问服务 (NPAS) 服务器角色项下的角色服务）。 远程访问角色由以下两个组件组成：<br /><br />1. DirectAccess 和路由和远程访问服务（RRAS） VPN-DirectAccess 和 VPN 在远程访问管理控制台中一起进行管理。<br />2. RRAS 路由-RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<br /><br />远程访问服务器角色取决于以下服务器功能：<br /><br />-Internet Information Services （IIS）-配置网络位置服务器和默认 web 探测需要此功能。<br />-组策略管理控制台功能-DirectAccess 需要使用功能来创建和管理 Active Directory 中的组策略对象（Gpo），并且必须安装为服务器角色所需的功能。|  
-|远程访问管理工具功能|此功能的安装如下所述：<br /><br />-在安装远程访问角色时，它默认安装在远程访问服务器上，并支持远程管理控制台用户界面。<br />-可选择将它安装在不运行远程访问服务器角色的服务器上。 在这种情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<br /><br />远程访问管理工具功能包括以下各项：<br /><br />1. 远程访问 GUI 和命令行工具<br />2. 适用于 Windows PowerShell 的远程访问模块<br /><br />依赖项包括：<br /><br />1. 组策略管理控制台<br />2. RAS 连接管理器管理工具包（CMAK）<br />3. Windows PowerShell 3。0<br />4. 图形管理工具和基础结构|  
+|远程访问服务器角色|该角色可使用服务器管理器控制台加以安装和卸载。 本角色包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务（以前是网络策略和访问服务 (NPAS) 服务器角色项下的角色服务）。 远程访问角色由以下两个组件组成：<p>1. DirectAccess 和路由和远程访问服务（RRAS） VPN-DirectAccess 和 VPN 在远程访问管理控制台中一起进行管理。<br />2. RRAS 路由-RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<p>远程访问服务器角色取决于以下服务器功能：<p>-Internet Information Services （IIS）-配置网络位置服务器和默认 web 探测需要此功能。<br />-组策略管理控制台功能-DirectAccess 需要使用功能来创建和管理 Active Directory 中的组策略对象（Gpo），并且必须安装为服务器角色所需的功能。|  
+|远程访问管理工具功能|此功能的安装如下所述：<p>-在安装远程访问角色时，它默认安装在远程访问服务器上，并支持远程管理控制台用户界面。<br />-可选择将它安装在不运行远程访问服务器角色的服务器上。 在这种情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<p>远程访问管理工具功能包括以下各项：<p>1. 远程访问 GUI 和命令行工具<br />2. 适用于 Windows PowerShell 的远程访问模块<p>依赖项包括：<p>1. 组策略管理控制台<br />2. RAS 连接管理器管理工具包（CMAK）<br />3. Windows PowerShell 3。0<br />4. 图形管理工具和基础结构|  
 |Windows NLB|此功能可让多台远程访问服务器的负载平衡。|  
   
 

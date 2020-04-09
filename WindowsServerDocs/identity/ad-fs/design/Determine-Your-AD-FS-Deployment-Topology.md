@@ -1,7 +1,6 @@
 ---
 ms.assetid: f67b0bc9-e5af-4891-9da0-d9be539af42d
 title: 确定 AD FS 部署拓扑
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b9128dded44e83acc63cef6785a1949e614cf6a7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0336c54357745217c30e14afc0824f97d476b45d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408117"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855150"
 ---
 # <a name="determine-your-ad-fs-deployment-topology"></a>确定 AD FS 部署拓扑
 
@@ -22,7 +21,7 @@ ms.locfileid: "71408117"
   
 在阅读本部署拓扑主题之前，我们建议你先按照下表中显示的顺序完成任务。  
   
-|建议的任务|描述|参考|  
+|建议的任务|说明|参考|  
 |--------------------|---------------|-------------|  
 |查看如何存储 AD FS 数据并将其复制到联合服务器场中的其他联合服务器。|了解存储在 AD FS 配置数据库中的基础数据的用途以及针对其使用的复制方法。 本主题介绍了配置数据库的概念，并描述了这两种数据库类型： Windows Internal Database \(WID\) 和 Microsoft SQL Server。|[AD FS 配置数据库的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)|  
 |选择将在你的组织中部署的 AD FS 配置数据库的类型。|查看与使用 WID 或 SQL Server 作为 AD FS 配置数据库相关联的各种优势和限制，以及它们所支持的各种应用程序方案。|[AD FS 部署拓扑注意事项](AD-FS-Deployment-Topology-Considerations.md)|  

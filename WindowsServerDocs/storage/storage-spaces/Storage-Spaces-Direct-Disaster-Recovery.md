@@ -1,23 +1,24 @@
 ---
 title: 超聚合基础结构的灾难恢复方案
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 03/29/2018
 description: 本文介绍当今可用于灾难恢复 Microsoft HCI 的方案（存储空间直通）
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e6372ec7b4759f672c13f4bd822172afaf3faf3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5f3159e0c215d898848df71c6488cd491b7ded38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393749"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859160"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>存储空间直通的灾难恢复
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
 本主题提供有关如何为灾难恢复配置超聚合基础结构（HCI）的方案。
 
@@ -45,10 +46,10 @@ ms.locfileid: "71393749"
 
 部署存储副本时，请注意以下事项。 
 
-1.  配置复制在故障转移群集之外完成。 
-2.  选择复制方法将取决于您的网络延迟和 RPO 要求。 同步会在低延迟网络上复制数据，并具有崩溃一致性，以确保在发生故障时不会丢失数据。 异步在延迟较长的网络上复制数据，但每个站点在出现故障时可能没有相同的副本。 
-3.  发生灾难时，群集之间的故障转移不是自动进行的，需要通过存储副本 PowerShell cmdlet 手动协调。 在上图中，Clustera.contoso.com 是主副本，而 ClusterB 是辅助数据库。 如果 Clustera.contoso.com 发生故障，则需要手动将 ClusterB 设置为 "主要"，然后才能使资源启动。 Clustera.contoso.com 备份后，需要将其设为辅助副本。 同步所有数据后，进行更改，并将角色交换回其最初设置的方式。
-4.  由于存储副本仅复制数据，因此需要在副本伙伴故障转移群集管理器内创建利用此数据的新虚拟机或 Scale Out 文件服务器（SOFS）。
+1.    配置复制在故障转移群集之外完成。 
+2.    选择复制方法将取决于您的网络延迟和 RPO 要求。 同步会在低延迟网络上复制数据，并具有崩溃一致性，以确保在发生故障时不会丢失数据。 异步在延迟较长的网络上复制数据，但每个站点在出现故障时可能没有相同的副本。 
+3.    发生灾难时，群集之间的故障转移不是自动进行的，需要通过存储副本 PowerShell cmdlet 手动协调。 在上图中，Clustera.contoso.com 是主副本，而 ClusterB 是辅助数据库。 如果 Clustera.contoso.com 发生故障，则需要手动将 ClusterB 设置为 "主要"，然后才能使资源启动。 Clustera.contoso.com 备份后，需要将其设为辅助副本。 同步所有数据后，进行更改，并将角色交换回其最初设置的方式。
+4.    由于存储副本仅复制数据，因此需要在副本伙伴故障转移群集管理器内创建利用此数据的新虚拟机或 Scale Out 文件服务器（SOFS）。
 
 如果在群集上运行虚拟机或 SOFS，则可以使用存储副本。 通过使用 PowerShell 脚本，可手动或自动将资源置于副本 HCI 中。
 
@@ -60,14 +61,14 @@ ms.locfileid: "71393749"
 
 使用 Hyper-v 副本时，Hyper-v 将执行复制。 首次启用虚拟机以进行复制时，你希望将初始副本发送到相应的副本群集有三个选择。
 
-1.  通过网络发送初始副本
-2.  将初始副本发送到外部媒体，以便可以将其手动复制到服务器上
-3.  使用已在副本主机上创建的现有虚拟机
+1.    通过网络发送初始副本
+2.    将初始副本发送到外部媒体，以便可以将其手动复制到服务器上
+3.    使用已在副本主机上创建的现有虚拟机
 
 其他选项适用于你希望此初始复制应发生的时间。
 
-1.  立即开始复制
-2.  计划初始复制发生的时间。 
+1.    立即开始复制
+2.    计划初始复制发生的时间。 
 
 你需要的其他注意事项包括：
 
@@ -78,9 +79,9 @@ ms.locfileid: "71393749"
 
 当 HCI 参与 Hyper-v 副本时，必须在每个群集中创建[Hyper-v 副本代理](https://blogs.technet.microsoft.com/virtualization/2012/03/27/why-is-the-hyper-v-replica-broker-required/)资源。 此资源执行以下几项操作：
 
-1.  为要连接到的 Hyper-v 副本的每个群集提供单个命名空间。
-2.  确定副本（或扩展副本）首次接收副本时将驻留在哪个群集中的哪个节点。
-3.  在虚拟机移动到另一个节点时，跟踪哪个节点拥有副本（或扩展副本）。 它需要跟踪此操作，以便在复制发生时，可以将信息发送到正确的节点。
+1.    为要连接到的 Hyper-v 副本的每个群集提供单个命名空间。
+2.    确定副本（或扩展副本）首次接收副本时将驻留在哪个群集中的哪个节点。
+3.    在虚拟机移动到另一个节点时，跟踪哪个节点拥有副本（或扩展副本）。 它需要跟踪此操作，以便在复制发生时，可以将信息发送到正确的节点。
 
 ## <a name="backup-and-restore"></a>备份和还原
 
@@ -102,13 +103,13 @@ ms.locfileid: "71393749"
 
 若要通过授权还原运行，可以完成以下步骤。
 
-1.  运行 WBADMIN。EXE，以获取要安装的最新版本的备份，并确保系统状态是可以还原的组件之一。
+1.    运行 WBADMIN。EXE，以获取要安装的最新版本的备份，并确保系统状态是可以还原的组件之一。
 
     ```powershell
     Wbadmin get versions
     ```
 
-2.  确定版本备份中是否有作为组件的群集注册表信息。 要在步骤3中使用的版本和应用程序/组件，需要在此命令中使用几项。 例如，对于版本，假设备份是在2018年1月3日，：04am，这是需要还原的备份。
+2.    确定版本备份中是否有作为组件的群集注册表信息。 要在步骤3中使用的版本和应用程序/组件，需要在此命令中使用几项。 例如，对于版本，假设备份是在2018年1月3日，：04am，这是需要还原的备份。
 
     ```powershell
     wbadmin get items -backuptarget:\\backupserver\location
@@ -122,7 +123,7 @@ ms.locfileid: "71393749"
 
 还原完成后，此节点必须是要首先启动群集服务的节点，然后形成群集。 然后，需要启动所有其他节点并加入群集。
 
-## <a name="summary"></a>总结 
+## <a name="summary"></a>摘要 
 
 若要实现这一点，超聚合灾难恢复是应该认真规划的内容。 有几种方案可以最符合您的需求，并且应该经过全面测试。 要注意的一项是，如果你熟悉以前的故障转移群集，则 stretch 群集是多年来非常流行的选项。 超聚合解决方案有一些设计更改，但它基于复原能力。 如果在超聚合群集中丢失两个节点，则整个群集将会关闭。 就如此，在超聚合环境中，不支持延伸方案。
 

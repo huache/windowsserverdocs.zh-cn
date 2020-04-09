@@ -2,18 +2,18 @@
 title: 镜像加速奇偶校验
 ms.prod: windows-server
 ms.author: gawatu
-ms.manager: masriniv
+manager: masriniv
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: 2721f1c744c5c03d8e4bce0508fd23fa5237f95f
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 752073e4f12db3b994261a70a9306d45b9a00d77
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591098"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861510"
 ---
 # <a name="mirror-accelerated-parity"></a>镜像加速奇偶校验
 
@@ -23,7 +23,7 @@ ms.locfileid: "72591098"
 
 ![Mirror-Accelerated-Parity-Volume](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume.png)
 
-## <a name="background"></a>后台
+## <a name="background"></a>背景
 
 镜像和奇偶校验复原方案具有截然不同的存储和性能特征：
 - 镜像复原允许用户实现快速写入性能，但复制每个副本的数据不会节省空间。 
@@ -53,17 +53,17 @@ ReFS 会主动在镜像与奇偶校验之间实时旋转数据。 这样，便�
 
     - **1a.** 如果传入写入修改镜像中的现有数据，ReFS 将就地修改该数据。
     - **1b.** 如果传入写入是新写入，并且 ReFS 可以在镜像中成功找到足够多的可用空间，以供此写入使用，则 ReFS 将写入镜像。
-    ![Write 到镜像 ](media/mirror-accelerated-parity/Write-to-Mirror.png)
+    ![写入镜像](media/mirror-accelerated-parity/Write-to-Mirror.png)
 
 2. **写入镜像，从奇偶校验重新分配：**
 
     如果传入写入修改了处于奇偶校验的数据，并且 ReFS 可以在镜像中成功找到足够的可用空间来为传入写入提供服务，ReFS 将首先使奇偶校验中以前的数据失效，然后写入镜像。 此失效是一项低成本的快速元数据操作，有助于显著提高写入奇偶校验的性能。
-    ![Reallocated 写入 ](media/mirror-accelerated-parity/Reallocated-Write.png)
+    ![重新分配-写入](media/mirror-accelerated-parity/Reallocated-Write.png)
 
 3. **写入奇偶校验：**
     
     如果 ReFS 在镜像中无法成功找到足够多的可用空间，则 ReFS 会将新数据写入奇偶校验，或直接修改奇偶校验中的现有数据。 下面的“性能优化”部分提供有助于最大限度减少写入奇偶校验的指导。
-    ![Write 到奇偶校验 ](media/mirror-accelerated-parity/Write-to-Parity.png)
+    ![写入奇偶校验](media/mirror-accelerated-parity/Write-to-Parity.png)
 
 **读取**：ReFS 将从包含相关数据的层直接读取。 如果使用 HDD 构造奇偶校验，则存储空间直通中的缓存将对此数据进行缓存，以加快未来读取。 
 

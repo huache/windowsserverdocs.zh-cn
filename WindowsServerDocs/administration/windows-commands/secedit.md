@@ -1,24 +1,20 @@
 ---
 title: secedit
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 58ed57ed-08e3-403d-a363-0620b358637a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5598f830ad4cef8d45c99594da12cbcdd84e7eef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e80217c201cde4dc1df58c0e8976fbe1422511fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371110"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834840"
 ---
 # <a name="secedit"></a>secedit
 
@@ -38,9 +34,9 @@ secedit
 [/validate <configuration file name>]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |[Secedit:analyze](secedit-analyze.md)|允许你针对存储在数据库中的基线设置分析当前系统设置。  分析结果存储在数据库的一个独立区域中，可以在 "安全配置和分析" 管理单元中查看。|
 |[Secedit:configure](secedit-configure.md)|允许你配置存储在数据库中的安全设置的系统。|
@@ -56,7 +52,7 @@ secedit
 当使用安全模板管理单元创建安全模板并运行 "安全配置和分析" 管理单元时，将创建以下文件：
 
 
-|           文件           |                                                                                                                                                                                                                                                               描述                                                                                                                                                                                                                                                                |
+|           文件           |                                                                                                                                                                                                                                                               说明                                                                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        Scesrv.dll        |                                                                                                                             **位置**：%windir%\security\logs</br>**创建者**：操作系统</br>**文件类型**：文本</br>**刷新频率**：在 secedit/analyze、/configure、/export 或/import 运行时被覆盖。</br>**Content**：包含按策略类型分组的分析结果。                                                                                                                             |
 | *用户选择的名称*。 sdb |                                                                                    **位置**：% windir%\*用户帐户<em>\Documents\Security\Database</br><em>*创建*的 </em>：运行 "安全配置和分析" 管理单元</br></em>*文件类型*<em>：专用</br></em>*刷新速率*<em>：每当创建新安全模板时更新。</br></em>*内容*\*：本地安全策略和用户创建的安全模板。                                                                                    |
@@ -66,7 +62,7 @@ secedit
 > [!NOTE]
 > Microsoft 管理控制台（MMC）和 "安全配置和分析" 管理单元在 "服务器核心" 上不可用。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
 有关如何使用此命令的示例，请参阅任何子命令文件中的 "示例" 部分。
--   [命令行语法项](command-line-syntax-key.md)
+-   - [命令行语法项](command-line-syntax-key.md)

@@ -1,21 +1,21 @@
 ---
-title: 主机计算网络 (HCN) 方案
-description: ''
+title: 主机计算网络（HCN）方案
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 91cdafa9699cd213156d872090034dd4ea67108e
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 2fdf0d13a0a362681a27106356fbe295532ed970
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031526"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859830"
 ---
 # <a name="common-scenarios"></a>常见方案
 
->适用于：Windows Server (半年频道), Windows Server 2019
+>适用于： Windows Server （半年频道）、Windows Server 2019
 
-## <a name="scenario-hcn"></a>方案：HCN 
+## <a name="scenario-hcn"></a>方案： HCN 
 
 
 ### <a name="create-an-hcn"></a>创建 HCN
@@ -96,9 +96,9 @@ void CreateHcnNetwork()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -189,11 +189,11 @@ void CreateHcnNetwork()
 ```
 
 
-## <a name="scenario-hcn-endpoint"></a>方案：HCN 终结点
+## <a name="scenario-hcn-endpoint"></a>方案： HCN 终结点
 
 ### <a name="create-an-hcn-endpoint"></a>创建 HCN 终结点
 
-此示例演示如何使用主机计算网络服务 API 创建主机计算网络终结点, 并将其热添加到虚拟机或容器。
+此示例演示如何使用主机计算网络服务 API 创建主机计算网络终结点，并将其热添加到虚拟机或容器。
 
 ```C++
 using unique_hcn_endpoint = wil::unique_any< 
@@ -222,7 +222,7 @@ void CreateAndHotAddEndpoint()
             "Suffix" : "net.home",
             "ServerList" : "10.0.0.10",
         }
-    })”;
+    })";
     GUID endpointGuid;  
     HRESULT result = CoCreateGuid(&endpointGuid);
 
@@ -381,11 +381,11 @@ void CreateAndHotAddEndpoint()
 ```
 
 
-## <a name="scenario-hcn-namespace"></a>方案：HCN 命名空间
+## <a name="scenario-hcn-namespace"></a>方案： HCN 命名空间
 
 ### <a name="create-an-hcn-namespace"></a>创建 HCN 命名空间
 
-此示例演示如何使用主机计算网络服务 API 在主机上创建主机计算网络命名空间, 该命名空间可用于连接终结点和容器。
+此示例演示如何使用主机计算网络服务 API 在主机上创建主机计算网络命名空间，该命名空间可用于连接终结点和容器。
 
 ```C++
 using unique_hcn_namespace = wil::unique_any< 
@@ -424,9 +424,9 @@ void CreateHcnNamespace()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -564,11 +564,11 @@ void CreateHcnNamespace()
 ```
 
 
-## <a name="scenario-hcn-load-balancer"></a>方案：HCN 负载均衡器
+## <a name="scenario-hcn-load-balancer"></a>方案： HCN 负载均衡器
 
 ### <a name="create-an-hcn-load-balancer"></a>创建 HCN 负载均衡器
 
-此示例演示如何使用主机计算网络服务 API 在主机上创建主机计算网络负载均衡器, 该负载均衡器可用于在计算之间负载平衡终结点。
+此示例演示如何使用主机计算网络服务 API 在主机上创建主机计算网络负载均衡器，该负载均衡器可用于在计算之间负载平衡终结点。
 
 ```C++
 using unique_hcn_loadbalancer = wil::unique_any< 
@@ -620,9 +620,9 @@ void CreateHcnLoadBalancer()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -761,11 +761,11 @@ void CreateHcnLoadBalancer()
 ```
 
 
-## <a name="scenario-hcn-notifications"></a>方案：HCN 通知
+## <a name="scenario-hcn-notifications"></a>方案： HCN 通知
 
 ### <a name="register-and-unregister-service-wide-notifications"></a>注册和注销服务范围通知
 
-此示例演示如何使用主机计算网络服务 API 来注册和注销服务范围通知。 这使得调用方可以在发生服务范围的操作 (如新的网络创建事件) 时接收通知 (通过在注册过程中指定的回调函数)。
+此示例演示如何使用主机计算网络服务 API 来注册和注销服务范围通知。 这使得调用方可以在发生服务范围的操作（如新的网络创建事件）时接收通知（通过在注册过程中指定的回调函数）。
 
 ```C++
 using unique_hcn_callback = wil::unique_any< 

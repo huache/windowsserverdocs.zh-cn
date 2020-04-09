@@ -1,24 +1,20 @@
 ---
 title: prncnfg
 description: 了解如何使用 prncfg 命令配置打印机。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 38a4e8fa-3122-495b-a125-35b926bc6415
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5cbbf82e832c50d168e0bef06b2b7c3022dd90e8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3db99c06232e4ed6b3ad5df4ee189d38bffb14c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372137"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837320"
 ---
 # <a name="prncnfg"></a>prncnfg
 
@@ -31,8 +27,8 @@ ms.locfileid: "71372137"
 cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <NewprinterName>] [-u <UserName>] [-w <Password>] [-r <PortName>] [-l <Location>] [-h <Sharename>] [-m <Comment>] [-f <SeparatorFileName>] [-y <Datatype>] [-st <starttime>] [-ut <Untiltime>] [-i <DefaultPriority>] [-o <Priority>] [<+|->shared] [<+|->direct] [<+|->hidden] [<+|->published] [<+|->rawonly] [<+|->queued] [<+|->enablebidi] [<+|->keepprintedjobs] [<+|->workoffline] [<+|->enabledevq] [<+|->docompletefirst]
 ```
 
-## <a name="parameters"></a>参数
-|参数|描述|
+### <a name="parameters"></a>参数
+|参数|说明|
 |-------|--------|
 |-g|显示有关打印机的配置信息。|
 |-t|配置打印机。|
@@ -71,7 +67,7 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
     ```
 -   如果提供的信息包含空格，请使用引号将文本括起来（例如 `"computer Name"`）。
 
-## <a name="BKMK_examples"></a>示例
+## <a name="examples"></a><a name="BKMK_examples"></a>示例
 若要使用名为 HRServer 的远程计算机承载的打印队列显示名为 colorprinter_2 打印机的配置信息，请键入：
 ```
 cscript prncnfg -g -S HRServer -P colorprinter_2 
@@ -87,6 +83,6 @@ cscript prncnfg -t -S HRServer -P colorprinter_2 +keepprintedjobs
 cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3" 
 ```
 
-#### <a name="additional-references"></a>其他参考
-[命令行语法键](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他参考
+- [命令行语法键](command-line-syntax-key.md)
 [打印命令参考](print-command-reference.md)

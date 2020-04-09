@@ -1,22 +1,22 @@
 ---
 title: 选择是在自己的新林中还是在现有堡垒林中安装 HGS
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 28c7eceefa4747a35d1b989df4a2c5e43a8d6a42
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 52376a4e193b8021dc58214003e9b7579b096a79
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386792"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856880"
 ---
 # <a name="choose-whether-to-install-hgs-in-its-own-dedicated-forest-or-in-an-existing-bastion-forest"></a>选择是在其自己的专用林中还是在现有堡垒林中安装 HGS
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 
 HGS 的 Active Directory 林是敏感的，因为其管理员有权访问控制受防护的 Vm 的密钥。 默认安装将设置一个专用于 HGS 的新林，并配置其他依赖项。 建议使用此选项，因为环境是独立的，并且在创建时被认为是安全的。 

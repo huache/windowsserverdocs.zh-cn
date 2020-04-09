@@ -1,23 +1,19 @@
 ---
 title: 从现有客户端计算机备份还原完整系统
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b9629f41c4e8eb707b19914a297d9d8b88c6aead
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 37e4d45f6bd34d77fbbf3cbabcd66a776b624c19
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310657"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852640"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>从现有客户端计算机备份还原完整系统
 
@@ -91,7 +87,7 @@ ms.locfileid: "80310657"
  不支持备份独立磁盘的冗余阵列 (RAID) 和动态磁盘。  
   
 ##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a>系统还原环境是如何工作的？  
- 随 Windows Server® 2012 Essentials 一起提供的系统还原介质将在计算机上安装 Windows 预安装环境（Windows PE）。 Windows PE 会替换 MS-DOS 环境并包含 Windows 的核心程序文件。 在 Windows Server Essentials 中，有两种支持的系统还原方法：使用客户端还原服务，该服务使用网络并且不依赖于媒体，或使用 USB 闪存驱动器。  
+ 随 Windows Server&reg; 2012 Essentials 一起提供的系统还原介质将在计算机上安装 Windows 预安装环境（Windows PE）。 Windows PE 会替换 MS-DOS 环境并包含 Windows 的核心程序文件。 在 Windows Server Essentials 中，有两种支持的系统还原方法：使用客户端还原服务，该服务使用网络并且不依赖于媒体，或使用 USB 闪存驱动器。  
   
 > [!NOTE]
 >  Windows PE 不支持无线连接。 因此，要还原的计算机必须物理连接到小型企业网络。  

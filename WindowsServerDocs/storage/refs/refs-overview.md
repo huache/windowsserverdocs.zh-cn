@@ -2,21 +2,21 @@
 title: 复原文件系统 (ReFS) 概述
 ms.prod: windows-server
 ms.author: gawatu
-ms.manager: mchad
+manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/17/2019
-ms.openlocfilehash: 91fdd5aa696c170cacc8903a65e996beb71c4b8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d32ef6bc4ce169ff73f9ab147783ac0607617f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403015"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857540"
 ---
 # <a name="resilient-file-system-refs-overview"></a>复原文件系统 (ReFS) 概述
 
->适用于：Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server （半年频道）
+>适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server （半年频道）
 
 该复原文件系统 (ReFS) 是 Microsoft 的最新文件系统，可最大程度提升数据可用性、跨各种工作负载高效扩展到大数据集，并通过损坏复原提供数据完整性。 它旨在解决存储方案的扩展集问题以及为将来的革新打造基础。
 
@@ -56,7 +56,7 @@ ReFS 引入了一项新功能，可以准确地检测到损坏并且还能够在
     - [块克隆](./block-cloning.md) - 块克隆可加快复制操作的速度，并且能够实现快速、低影响的 VM 检查点合并操作。
     - 稀疏 VDL - 稀疏 VDL 允许 ReFS 将文件快速清零，从而将创建固定 VHD 所需的时间从几十分钟减少到仅仅几秒钟。
 
-- **可变簇大小** - ReFS 支持 4K 和 64K 的簇大小 4K 是针对大多数部署的建议的簇大小，但 64K 簇适合于大型的、顺序 IO 工作负载。
+- **可变群集大小** - ReFS 支持 4K 和 64K 的群集大小。 4K 是针对大多数部署的建议的群集大小，但 64K 群集适合于大型的、顺序 IO 工作负载。
 
 ### <a name="scalability"></a>可伸缩性
 
@@ -64,7 +64,7 @@ ReFS 设计为支持非常大的数据集（数百万 TB 字节），而不会�
 
 ## <a name="supported-deployments"></a>支持的部署
 
-Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于特别需要 ReFS 提供的可用性、复原能力和/或规模的客户，Microsoft 支持在下使用 ReFS以下配置和方案。 
+Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于特别需要 ReFS 提供的可用性、复原能力和/或规模的客户，Microsoft 支持在以下配置和方案下使用 ReFS。 
 
 > [!NOTE]
 > 所有 ReFS 支持的配置必须使用[Windows Server 目录](https://www.WindowsServerCatalog.com)认证硬件，并满足应用程序要求。
@@ -129,7 +129,7 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 | 更改通知 | 是 | 是 |
 | 交接点 | 是 | 是 |
 | 装入点 | 是 | 是 |
-| 重分析点 | 是 | 是 |
+| 重新分析点 | 是 | 是 |
 | 卷快照 | 是 | 是 |
 | 文件 ID | 是 | 是 |
 | Oplock | 是 | 是 |
@@ -145,28 +145,28 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 
 | 功能       | ReFS                                        | NTFS |
 |---------------------------|------------------|-----------------------|
-| 块克隆 | 是 | 否 |
-| 稀疏 VDL | 是 | 否 |
-| 镜像加速奇偶校验| 是（在存储空间直通上） | 否 |
+| 块克隆 | 是 | 是 |
+| 稀疏 VDL | 是 | 是 |
+| 镜像加速奇偶校验| 是（在存储空间直通上） | 是 |
 
 #### <a name="the-following-features-are-unavailable-on-refs-at-this-time"></a>目前 ReFS 上未提供以下功能：
 
 | 功能       | ReFS                                        | NTFS |
 |---------------------------|------------------|-----------------------|
-| 文件系统压缩 | 否 | 是 |
-| 文件系统加密 | 否 | 是 |
-| 事务 | 否 | 是 |
-| 硬链接 | 否 | 是 |
-| 对象 ID | 否 | 是 |
-| 卸载数据传输（ODX） | 否 | 是 |
-| 短名称 | 否 | 是 |
-| 扩展属性 | 否 | 是 |
-| 磁盘配额 | 否 | 是 |
-| 可引导 | 否 | 是 |
-| 页面文件支持 | 否 | 是 |
-| 在可移动媒体上受支持 | 否 | 是 |
+| 文件系统压缩 | 是 | 是 |
+| 文件系统加密 | 是 | 是 |
+| 事务 | 是 | 是 |
+| 硬链接 | 是 | 是 |
+| 对象 ID | 是 | 是 |
+| 卸载数据传输（ODX） | 是 | 是 |
+| 短名称 | 是 | 是 |
+| 扩展属性 | 是 | 是 |
+| 磁盘配额 | 是 | 是 |
+| 可引导 | 是 | 是 |
+| 页面文件支持 | 是 | 是 |
+| 在可移动媒体上受支持 | 是 | 是 |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [ReFS 和 NTFS 的群集大小建议](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
 - [存储空间直通概述](../storage-spaces/storage-spaces-direct-overview.md)

@@ -1,23 +1,23 @@
 ---
 title: 创建受防护的 Linux VM 模板磁盘
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 66d5f70f747a6209f2856afde58b6f486ea597f8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1a6325a5d8e931f1e62c83ba4013d94760e39f86
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386715"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856790"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>创建受防护的 Linux VM 模板磁盘
 
-> 适用于：Windows Server 2019、Windows Server （半年频道）、 
+> 适用于： Windows Server 2019、Windows Server （半年频道）、 
 
 本主题介绍如何为可用于实例化一个或多个租户 Vm 的 Linux 受防护 Vm 准备模板磁盘。
 
@@ -72,7 +72,7 @@ ms.locfileid: "71386715"
 5.  使用 Hyper-v 管理器配置虚拟化服务器上的[外部交换机](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines)，以便 Linux VM 可以访问 Internet 以获取更新。
 
 6.  接下来，创建新的虚拟机以在上安装 Linux 操作系统。
-    在 "操作" 窗格中，单击 "**新建** > "**虚拟机**以打开向导。
+    在 "操作" 窗格中，单击 "**新建**" > "**虚拟机**" 以打开向导。
     为 VM 提供一个友好名称，如 "模板化 Linux"，然后单击 "**下一步**"。
 
 7.  在向导的第二页上，选择 "**第2代**"，以确保使用基于 UEFI 的固件配置文件设置 VM。
@@ -169,7 +169,7 @@ ms.locfileid: "71386715"
 证书属性 | 必需的值
 ---------------------|---------------
 密钥算法 | RSA
-最小密钥大小 | 2048位
+最小密钥大小 | 2048 位
 签名算法 | SHA256 （建议）
 密钥用法 | 数字签名
 
@@ -187,7 +187,7 @@ New-SelfSignedCertificate -Subject "CN=Linux Shielded VM Template Disk Signing C
 ### <a name="process-the-disk-with-the-template-disk-wizard-cmdlet"></a>用模板磁盘向导 cmdlet 处理磁盘
 
 将模板磁盘和证书复制到运行 Windows Server 版本1709的计算机，然后运行以下命令以启动签名过程。
-你向 `-Path` 参数提供的 VHDX 会被更新的模板磁盘覆盖，因此请确保在运行该命令之前进行复制。
+你向 `-Path` 参数提供的 VHDX 将被更新的模板磁盘覆盖，因此请确保在运行该命令之前进行复制。
 
 > [!IMPORTANT]
 > Windows Server 2016 或 Windows 10 上的可用远程服务器管理工具无法用于准备 Linux 受防护的 VM 模板磁盘。

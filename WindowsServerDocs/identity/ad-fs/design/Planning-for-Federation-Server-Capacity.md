@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7013fc21-9ced-4f9d-9588-cb04d6d60924
 title: 联合服务器容量规划
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 418bc5d53a2bd11afa8563b07bbff76c89495715
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5801196921c1f7632725dfddb2a5c8c2bf4ae2b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407971"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858620"
 ---
 # <a name="planning-for-federation-server-capacity"></a>联合服务器容量规划
 
@@ -47,7 +46,7 @@ AD FS 配置数据库的大小通常被视为较小，数据库大小往往不�
 > [!NOTE]  
 > 在由 AD FS 产品团队执行的测试中，使用配置有专用 SQL Server 的联合服务器场来存储 AD FS 配置数据库，SQL Server 倾向上的总体负载为 low。 在一个使用四个\-联合身份验证\-服务器场配置为使用单个 SQL Server 的测试中，尽管将联合服务器置于目标利用率之外，但 CPU 使用率不会超过10%。  
   
-## <a name="bk_estimatefs"></a>估计组织的联合服务器的数目  
+## <a name="estimate-the-number-of-federation-servers-for-your-organization"></a><a name="bk_estimatefs"></a>估计组织的联合服务器的数目  
 为简化联合服务器的硬件规划过程，AD FS 产品团队开发了 AD FS 容量规划大小调整电子表格。 此 Excel 电子表格包含计算器\-例如功能，这些功能将采用你为组织中的用户提供的预期使用情况数据，并为 AD FS 生产环境返回推荐的最佳数量的联合服务器。  
   
 > [!NOTE]  

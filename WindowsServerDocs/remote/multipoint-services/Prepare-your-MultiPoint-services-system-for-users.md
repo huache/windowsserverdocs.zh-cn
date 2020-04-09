@@ -1,24 +1,20 @@
 ---
 title: 为用户准备 Windows MultiPoint 服务系统
 description: 用于在 MultiPoint Services 中规划用户管理的导航主题
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e392f423-a64b-4825-91ab-334058721c4d
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 2323e23c91e4e4bdfa98654ccf3ab32b2eb36e53
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b9bfb245277439ce28c2993534abd817d45eee8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405022"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853360"
 ---
 # <a name="prepare-your-multipoint-services-system-for-users"></a>为用户准备 MultiPoint 服务系统
 安装和配置 MultiPoint 服务并执行任何其他配置和硬件设置后，就可以向用户授予对系统的访问权限。 你将需要计划和创建用户帐户。 在某些环境中，还需要将工作站配置为自动登录，并为共享用户帐户允许多个会话。 并且需要决定如何为用户设置文件共享。 本部分介绍了所有这些主题。  

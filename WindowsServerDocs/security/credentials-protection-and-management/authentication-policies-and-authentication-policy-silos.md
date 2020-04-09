@@ -1,24 +1,20 @@
 ---
 title: 身份验证策略和身份验证策略接收器
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7eb0e640-033d-49b5-ab44-3959395ad567
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 6b0b841930df246bd784d990916b6029f12a1f96
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 48171657b42ec8b6ba09aa6a35a2f898d6775d07
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403813"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857080"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>身份验证策略和身份验证策略接收器
 
@@ -34,18 +30,18 @@ Windows Server 2012 R2 中引入的功能允许您创建身份验证策略接收
 
 使用这些功能，你可以为高价值主机限制高价值帐户的使用。 例如，你可以创建新的林管理员接收器，它包含企业管理员、架构管理员以及域管理员。 然后可以使用身份验证策略配置该接收器，使得来自域控制器和域管理员控制台之外系统的基于密码和智能卡的身份验证都会失败。
 
-有关配置身份验证策略接收器和身份验证策略的信息，请参阅 [How to Configure Protected Accounts](how-to-configure-protected-accounts.md)。
+有关配置身份验证策略接收器和身份验证策略的信息，请参阅[如何配置受保护的帐户](how-to-configure-protected-accounts.md)。
 
 ### <a name="about-authentication-policy-silos"></a>关于身份验证策略接收器
 身份验证策略接收器将控制哪些帐户通过接收器进行限制，并定义了要应用于成员的身份验证策略。 你可以根据自己组织的要求来创建接收器。 接收器是用于用户、计算机和服务的 Active Directory 对象，如下表中的架构定义。
 
 **身份验证策略接收器的 Active Directory 架构**
 
-|显示名称|描述|
+|显示名称|说明|
 |--------|--------|
 |身份验证策略接收器|此类的实例为已分配的用户、计算机和服务定义身份验证策略及相关行为。|
 |身份验证策略接收器|此类的容器可以包含身份验证策略接收器对象。|
-|强制执行的身份验证策略接收器|指定是否强制执行身份验证策略接收器。<br /><br />如果不强制执行，则策略在默认情况下处于审核模式。 将生成可指示潜在成功和失败的事件，但不会将保护应用到系统。|
+|强制执行的身份验证策略接收器|指定是否强制执行身份验证策略接收器。<p>如果不强制执行，则策略在默认情况下处于审核模式。 将生成可指示潜在成功和失败的事件，但不会将保护应用到系统。|
 |已分配的身份验证策略接收器反向链接|此属性为 msDS-AssignedAuthNPolicySilo 的反向链接。|
 |身份验证策略接收器成员|指定将哪些主体分配到 AuthNPolicySilo。|
 |身份验证策略接收器成员反向链接|此属性为 msDS-AuthNPolicySiloMembers 的反向链接。|
@@ -55,7 +51,7 @@ Windows Server 2012 R2 中引入的功能允许您创建身份验证策略接收
 ### <a name="about-authentication-policies"></a>关于身份验证策略
 身份验证策略为帐户类型定义 Kerberos 协议票证授予票证 (TGT) 生存期属性和身份验证访问控制条件。 此策略在称为身份验证策略接收器的 AD DS 容器上构建，并对该容器进行控制。
 
-身份验证策略控制以下各项：
+身份验证策略对以下内容进行控制：
 
 -   帐户的 TGT 生存期（它设置为不可续订）。
 
@@ -88,18 +84,18 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 用于用户、计算机和服务的 Active Directory 对象的策略由下表中的架构定义。
 
-|类型|显示名称|描述|
+|类型|显示名称|说明|
 |----|--------|--------|
 |策略|身份验证策略|此类的实例为已分配的主体定义身份验证策略行为。|
 |策略|身份验证策略|此类的容器可包含身份验证策略对象。|
-|策略|强制执行的身份验证策略|指定是否强制执行身份验证策略。<br /><br />若未强制执行，该策略在默认情况下将处于审核模式，并且将生成可指示潜在成功和失败的事件，但未将保护应用到系统。|
+|策略|强制执行的身份验证策略|指定是否强制执行身份验证策略。<p>若未强制执行，该策略在默认情况下将处于审核模式，并且将生成可指示潜在成功和失败的事件，但未将保护应用到系统。|
 |策略|已分配的身份验证策略反向链接|此属性为 msDS-AssignedAuthNPolicy 的反向链接。|
 |策略|已分配的身份验证策略|指定应将哪些 AuthNPolicy 应用到此主体。|
-|“用户”|用户身份验证策略|指定应将哪些 AuthNPolicy 应用到分配给此接收器对象的用户。|
-|“用户”|用户身份验证策略反向链接|此属性为 msDS-UserAuthNPolicy 的反向链接。|
-|“用户”|ms-DS-User-Allowed-To-Authenticate-To|此属性用于确定允许对用户帐户下运行的服务进行身份验证的主体集。|
-|“用户”|ms-DS-User-Allowed-To-Authenticate-From|此属性用于确定用户帐户有权登录的设备组。|
-|“用户”|用户 TGT 生存期|指定分配给用户的 Kerberos TGT 的最长存在时间（用秒数表示）。 不可续订得出的 TGT。|
+|用户|用户身份验证策略|指定应将哪些 AuthNPolicy 应用到分配给此接收器对象的用户。|
+|用户|用户身份验证策略反向链接|此属性为 msDS-UserAuthNPolicy 的反向链接。|
+|用户|ms-DS-User-Allowed-To-Authenticate-To|此属性用于确定允许对用户帐户下运行的服务进行身份验证的主体集。|
+|用户|ms-DS-User-Allowed-To-Authenticate-From|此属性用于确定用户帐户有权登录的设备组。|
+|用户|用户 TGT 生存期|指定分配给用户的 Kerberos TGT 的最长存在时间（用秒数表示）。 不可续订得出的 TGT。|
 |计算机|计算机身份验证策略|指定应将哪些 AuthNPolicy 应用到分配给此接收器对象的计算机。|
 |计算机|计算机身份验证策略反向链接|此属性是 msDS ComputerAuthNPolicy 的反向链接。|
 |计算机|ms-DS-Computer-Allowed-To-Authenticate-To|此属性用于确定允许对计算机帐户下运行的服务进行身份验证的主体集。|
@@ -133,7 +129,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 -   通过使用身份验证策略和接收器，可以对默认设置为 4 小时的 Kerberos TGT 生存期进行配置，并且可通过 Active Directory 管理中心对其进行访问。 这意味着超过 4 小时后，用户必须重新进行身份验证。
 
-有关该组安全的详细信息，请参阅 [How the Protected Users group works](protected-users-security-group.md#BKMK_HowItWorks)。
+有关此安全组的详细信息，请参阅[受保护用户组的工作原理](protected-users-security-group.md#BKMK_HowItWorks)。
 
 **接收器和身份验证策略**
 
@@ -143,7 +139,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 -   [Kerberos 身份验证中的更改](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) （Windows Server 2008 R2 和 Windows 7）
 
-### <a name="BKMK_HowKerbUsed"></a>如何将 Kerberos 协议与身份验证策略接收器和策略一起使用
+### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>如何将 Kerberos 协议与身份验证策略接收器和策略一起使用
 在域帐户可链接到身份验证策略接收器且用户进行登录时，安全帐户管理器将添加身份验证策略接收器的声明类型（将接收器作为值包含在其中）。 帐户上的此声明提供对目标接收器的访问权限。
 
 如果强制执行身份验证策略，并且在域控制器上收到对域帐户的身份验证服务请求，则域控制器将返回已配置生存期的不可续订的 TGT（除非域 TGT 生存期较短）。
@@ -161,7 +157,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 > [!NOTE]
 > 域帐户必须可直接链接到该策略，或者可以通过接收器成员身份间接链接到该策略。
 
-当身份验证策略处于审核模式，并且域控制器收到票证授予服务请求时，域控制器将根据请求的票证特权属性证书检查是否允许身份验证（PAC）数据，并在出现故障时记录警告消息。 PAC 包含各种类型的授权数据，其中包括用户所属的组、用户所具有的权限以及适用于用户的策略类型。 此信息用于生成用户的访问令牌。 如果它是允许对用户、设备或服务进行身份验证的强制执行的身份验证策略，则域控制器将根据请求的票证 PAC 数据检查是否允许身份验证。 若失败，则域控制器将返回一条错误消息并记录事件。
+当身份验证策略处于审核模式，并且域控制器收到票证授予服务请求时，域控制器将根据请求的票证特权属性证书（PAC）数据检查是否允许身份验证，并在失败时记录一条警告消息。 PAC 包含各种类型的授权数据，其中包括用户所属的组、用户所具有的权限以及适用于用户的策略类型。 此信息用于生成用户的访问令牌。 如果它是允许对用户、设备或服务进行身份验证的强制执行的身份验证策略，则域控制器将根据请求的票证 PAC 数据检查是否允许身份验证。 若失败，则域控制器将返回一条错误消息并记录事件。
 
 > [!NOTE]
 > 域帐户必须可直接链接到已审核的身份验证策略，或者可以通过接收器成员身份间接链接，该策略允许对用户、设备或服务进行身份验证。
@@ -170,7 +166,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 通过使用 Active Directory 管理控制台或 Windows PowerShell，可以为每个接收器配置身份验证策略。 有关详细信息，请参阅[如何配置受保护的帐户](how-to-configure-protected-accounts.md)。
 
-### <a name="BKMK_HowRestrictingSignOn"></a>限制用户登录的工作原理
+### <a name="how-restricting-a-user-sign-in-works"></a><a name="BKMK_HowRestrictingSignOn"></a>限制用户登录的工作原理
 由于这些身份验证策略可应用到帐户，因此它还将应用于服务使用的帐户。 若要对特定主机限制服务密码的使用情况，则该设置十分有用。 例如，在允许主机从 Active Directory 域服务检索密码的情况下，将配置组托管服务帐户。 但是，可从任意主机中使用该密码进行初始身份验证。 通过应用访问控制条件，可借助将密码限制到可检索密码的主机集来以实现另一层保护。
 
 当以系统、网络服务或其他本地服务身份运行的服务连接到网络服务时，它们将使用主机的计算机帐户。 计算机帐户不能受限制。 因此，即使服务使用不适用于 Windows 主机的计算机帐户，也无法对其进行限制。
@@ -204,7 +200,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 3.  域控制器使用受保护的回复 (AS-REP) 进行回复，并且身份验证将继续进行。
 
-### <a name="BKMK_HowRestrictingServiceTicket"></a>限制服务票证颁发的工作原理
+### <a name="how-restricting-service-ticket-issuance-works"></a><a name="BKMK_HowRestrictingServiceTicket"></a>限制服务票证颁发的工作原理
 如果不允许使用某帐户，并且具有 TGT 的用户尝试连接到该服务（例如，打开需要对服务的服务主体名称（SPN）所标识的服务进行身份验证的应用程序），将发生以下序列：
 
 1.  为了从 SPN 连接到 SPN1，Windows 将向请求到 SPN1 的服务票证的域控制器发送 TGS-REQ。
@@ -215,7 +211,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 4.  域控制器拒绝该请求。
 
-如果允许帐户满足身份验证策略设置的访问控制条件，并且具有 TGT 的用户尝试连接到该服务（例如，打开需要对服务进行身份验证的应用程序，由服务的 SPN 标识），将发生以下序列：
+如果允许帐户满足身份验证策略设置的访问控制条件，并且具有 TGT 的用户尝试连接到该服务（例如，通过打开需要对服务的 SPN 进行身份验证的应用程序），则会发生以下序列：
 
 1.  为了连接到 SPN1，Windows 将向请求到 SPN1 的服务票证的域控制器发送 TGS-REQ。
 
@@ -225,22 +221,22 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 4.  域控制器将使用票证授予服务回复 (TGS-REP) 来回复请求。
 
-## <a name="BKMK_ErrorandEvents"></a>关联的错误和信息事件消息
+## <a name="associated-error-and-informational-event-messages"></a><a name="BKMK_ErrorandEvents"></a>关联的错误和信息事件消息
 下表描述了一些事件，它们与受保护用户安全组和应用到身份验证策略接收器的身份验证策略相关联。
 
 这些事件记录在位于“Microsoft\Windows\Authentication”的应用程序和服务日志中。
 
-有关使用这些事件的排除故障步骤，请参阅 [Troubleshoot Authentication Policies](how-to-configure-protected-accounts.md#troubleshoot-authentication-policies) 和 [Troubleshoot events related to Protected Users](how-to-configure-protected-accounts.md#troubleshoot-events-related-to-protected-users)。
+有关使用这些事件的疑难解答步骤，请参阅[解决关于身份验证策略的问题](how-to-configure-protected-accounts.md#troubleshoot-authentication-policies)和[对受保护用户的相关事件进行疑难解答](how-to-configure-protected-accounts.md#troubleshoot-events-related-to-protected-users)。
 
-|事件 ID 和日志|描述|
+|事件 ID 和日志|说明|
 |----------|--------|
-|101<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：NTLM 登录出现故障，因为已配置身份验证策略。<br /><br />在域控制器中记录了一个事件，以指示 NTLM 身份验证失败，原因在于需要访问控制限制，但无法将这些限制应用到 NTLM。<br /><br />显示帐户、设备、策略和接收器的名称。|
-|105<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制出现故障，原因在于未允许来自特定设备的身份验证。<br /><br />在域控制器中记录了一个事件，以指示 Kerberos TGT 受到拒绝，原因在于设备不满足强制执行的访问控制限制。<br /><br />显示帐户、设备、策略和接收器的名称以及 TGT 生存期。|
-|305<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制可能出现故障，原因在于未允许来自特定设备的身份验证。<br /><br />在审核模式下，信息事件将记录在域控制器中，以确定是否会因为设备不满足访问控制限制而拒绝 Kerberos TGT。<br /><br />显示帐户、设备、策略和接收器的名称以及 TGT 生存期。|
-|106<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制出现故障，原因在于未允许用户或设备对服务器进行身份验证。<br /><br />在域控制器中记录了一个事件，以指示 Kerberos 服务票证受到拒绝，原因在于用户和/或设备不满足强制执行的访问控制限制。<br /><br />显示设备、策略和接收器的名称。|
-|306<br /><br />**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制可能会出现故障，原因在于未允许用户或设备对服务器进行身份验证。<br /><br />在审核模式下，信息事件将记录在域控制器中，以指示 Kerberos 服务票证将被拒绝，原因在于用户和/或设备不满足访问控制限制。<br /><br />显示设备、策略和接收器的名称。|
+|101<p>**AuthenticationPolicyFailures-DomainController**|原因：NTLM 登录出现故障，因为已配置身份验证策略。<p>在域控制器中记录了一个事件，以指示 NTLM 身份验证失败，原因在于需要访问控制限制，但无法将这些限制应用到 NTLM。<p>显示帐户、设备、策略和接收器的名称。|
+|105<p>**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制出现故障，原因在于未允许来自特定设备的身份验证。<p>在域控制器中记录了一个事件，以指示 Kerberos TGT 受到拒绝，原因在于设备不满足强制执行的访问控制限制。<p>显示帐户、设备、策略和接收器的名称以及 TGT 生存期。|
+|305<p>**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制可能出现故障，原因在于未允许来自特定设备的身份验证。<p>在审核模式下，信息事件将记录在域控制器中，以确定是否会因为设备不满足访问控制限制而拒绝 Kerberos TGT。<p>显示帐户、设备、策略和接收器的名称以及 TGT 生存期。|
+|106<p>**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制出现故障，原因在于未允许用户或设备对服务器进行身份验证。<p>在域控制器中记录了一个事件，以指示 Kerberos 服务票证受到拒绝，原因在于用户和/或设备不满足强制执行的访问控制限制。<p>显示设备、策略和接收器的名称。|
+|306<p>**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制可能会出现故障，原因在于未允许用户或设备对服务器进行身份验证。<p>在审核模式下，信息事件将记录在域控制器中，以指示 Kerberos 服务票证将被拒绝，原因在于用户和/或设备不满足访问控制限制。<p>显示设备、策略和接收器的名称。|
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 [如何配置受保护的帐户](how-to-configure-protected-accounts.md)
 
 [凭据保护和管理](credentials-protection-and-management.md)

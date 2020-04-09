@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22f53391-8c6a-4873-a1f4-08b4760ea621
 title: 声明的角色
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 851a70bbed606530ca8292f65bc4f776eae77fae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2477152231489e309fc48fd57d38e09a9bf658eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407344"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860170"
 ---
 # <a name="the-role-of-claims"></a>声明的角色
 在基于声明\-的标识模型中，声明在联合身份验证过程中扮演 pivotal 角色，它们是确定所有基于 Web\-的身份验证和授权请求结果的关键组件。 此模型支持组织以一种标准化方法跨安全和企业界限安全地投影数字标识和权限或 *声明*。  
@@ -25,7 +24,7 @@ ms.locfileid: "71407344"
 ### <a name="how-claims-are-sourced"></a>如何获取声明来源  
 Active Directory 联合身份验证服务 \(AD FS\) 中的联合身份验证服务定义哪些声明在联合伙伴之间交换。 但是，在它可以执行此操作前必须首先借助检索到的或计算的值填充或获取声明来源。 每个声明值表示用户、组或实体的值，并且以下列两种方式之一获取来源：  
   
-1.  从属性存储中检索构成声明的值时，例如，从 Active Directory 用户帐户的特性中检索销售部门的属性值时。 有关详细信息，请参阅 [The Role of Attribute Stores](The-Role-of-Attribute-Stores.md)。  
+1.  从属性存储中检索构成声明的值时，例如，从 Active Directory 用户帐户的特性中检索销售部门的属性值时。 有关详细信息，请参阅[属性存储的角色](The-Role-of-Attribute-Stores.md)。  
   
 2.  在传入声明的值转换为另一个基于在规则中表示逻辑的值时。 例如，当具有域管理员值的传入声明作为传出声明发送之前，转换为管理员的新值时。 有关详细信息，请参阅[声明规则的角色](The-Role-of-Claim-Rules.md)。  
   
@@ -45,15 +44,15 @@ Active Directory 联合身份验证服务 \(AD FS\) 中的联合身份验证服�
 有关详细信息，请参阅[声明管道的角色](The-Role-of-the-Claims-Pipeline.md)  
   
 ### <a name="how-claims-are-issued"></a>声明颁发的方式  
-在编写声明规则时，声明规则的传入声明源根据是在声明提供方信任还是信赖方信任上编写规则而不同。 在为声明提供方信任编写声明规则时，传入声明是从受信任声明提供方发送到联合身份验证服务的声明。 在为信赖方信任编写规则时，传入声明是由适用的声明提供方信任的声明规则输出的声明。 有关传入声明和传出声明的详细信息，请参阅 [The Role of the Claims Pipeline](The-Role-of-the-Claims-Pipeline.md) 和 [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md)。  
+在编写声明规则时，声明规则的传入声明源根据是在声明提供方信任还是信赖方信任上编写规则而不同。 在为声明提供方信任编写声明规则时，传入声明是从受信任声明提供方发送到联合身份验证服务的声明。 在为信赖方信任编写规则时，传入声明是由适用的声明提供方信任的声明规则输出的声明。 有关传入声明和传出声明的详细信息，请参阅[声明管道的角色](The-Role-of-the-Claims-Pipeline.md)和[声明引擎的角色](The-Role-of-the-Claims-Engine.md)。  
   
 ## <a name="what-are-claim-types"></a>什么是声明类型？  
 声明类型为声明值提供上下文。 它通常表示为 \(URI\)的统一资源标识符。 AD FS 可以支持任何声明类型，并在默认情况下使用下表中的声明类型进行配置。  
   
-|名称|描述|URI|  
+|名称|说明|URI|  
 |--------|---------------|-------|  
 |电子邮件地址\-|用户的电子邮件地址\-|http：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/\/声明\/emailaddress|  
-|给定名称|用户的给定名称|http：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/\/声明\/givenname|  
+|名字|用户的给定名称|http：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/\/声明\/givenname|  
 |名称|用户的唯一的名称|http：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/标识\/声明\/名称|  
 |UPN|用户主体名称 \(UPN\) 用户|http：\/\/schemas.xmlsoap.org\/ws\/2005\/05\/标识\/声明\/upn|  
 |公用名|用户的公用名|http：\/\/schemas.xmlsoap.org\/声明\/CommonName|  
@@ -78,7 +77,7 @@ Active Directory 联合身份验证服务 \(AD FS\) 中的联合身份验证服�
   
 将发布到联合元数据的声明说明集合存储在 AD FS 配置数据库中。 这些声明说明用于联合身份验证服务的各个组件。  
   
-每个声明说明包括声明类型 URI、名称、发布状态和描述。 您可以使用中的 "AD FS 管理" 管理单元\-中的 "**声明说明**" 节点管理声明说明集合。 您可以使用中的 snap\-修改声明说明的发布状态。 提供了下列设置：  
+每个声明说明包括声明类型 URI、名称、发布状态和描述。 您可以使用中的 "AD FS 管理" 管理单元\-中的 "**声明说明**" 节点管理声明说明集合。 您可以使用中的 snap\-修改声明说明的发布状态。 可用设置如下：  
   
 -   **在联合元数据中发布此声明作为此联合身份验证服务可以接受**\(发布为已接受的声明类型\)-指示此联合身份验证服务将接受的声明类型。  
   

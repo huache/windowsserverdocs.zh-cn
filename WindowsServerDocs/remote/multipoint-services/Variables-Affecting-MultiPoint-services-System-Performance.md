@@ -1,31 +1,27 @@
 ---
 title: 影响 MultiPoint Services 系统性能的变量
 description: MultiPoint Services 的性能信息
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f3e8875-1b5e-4789-b16c-d06d6e31f38e
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: cba973e3b0a89c26f886a67154c27831adb2c8cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 44f268c958ed32e527b66cebe1a10d33652eb9b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394825"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858910"
 ---
 # <a name="variables-affecting-multipoint-services-system-performance"></a>影响 MultiPoint Services 系统性能的变量
 有很多变量会影响 MultiPoint 服务系统的整体性能。 在设计系统时，可能需要考虑这些情况。  
   
 ## <a name="usage"></a>用法  
   
--   **应用程序**同时运行的应用程序的类型和数量（特别是图形\-密集型或内存密集型应用程序）将影响系统的整体性能。 有关详细信息，请参阅[应用程序和 Internet 内容](hardware-and-performance-recommendations.md#applications-and-internet-content)。  
+-   **应用程序**同时运行的应用程序的类型和数量（尤其是图形\-繁重或内存密集型应用程序将影响系统的整体性能。 有关详细信息，请参阅[应用程序和 Internet 内容](hardware-and-performance-recommendations.md#applications-and-internet-content)。  
   
 -   **Internet 使用**考虑用户是否将查看使用全运动视频的多媒体内容或网页。 如果有太多用户同时查看，此类型的内容可能会重载系统。  
   

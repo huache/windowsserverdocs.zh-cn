@@ -1,33 +1,29 @@
 ---
 title: 设备运行状况证明
-H1: na
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
 ms.technology: techgroup-security
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
+ms.author: brianlic
 ms.date: 10/12/2016
-ms.openlocfilehash: 888992366f8a722c4834f23e08a393c829b47a26
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 2e810a2a20e7c5bdc404077760e259468cecd24e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544624"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857030"
 ---
 # <a name="device-health-attestation"></a>设备运行状况证明
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 设备运行状况证明 (DHA) 在 Windows 10 版本 1507 中引入，它包括以下方面：
 
--   根据[开放移动联盟 (OMA) 标准](http://openmobilealliance.org/)与 Windows 10 移动设备管理 (MDM) 框架集成。
+-    根据[开放移动联盟 (OMA) 标准](http://openmobilealliance.org/)与 Windows 10 移动设备管理 (MDM) 框架集成。
 
--   支持装有设置为固件或离散格式的受信任模块平台 (TPM) 的设备。
+-    支持装有设置为固件或离散格式的受信任模块平台 (TPM) 的设备。
 
--   使企业能够将组织的安全栏提升到受监视和已证明安全的硬件，对操作成本只有极小影响或无影响。
+-    使企业能够将组织的安全栏提升到受监视和已证明安全的硬件，对操作成本只有极小影响或无影响。
 
 从 Windows Server 2016 开始，现在可以运行 DHA 服务作为组织内的服务器角色。 使用本主题以了解如何安装和配置设备运行状况证明服务器角色。
 
@@ -35,8 +31,8 @@ ms.locfileid: "68544624"
 
 可以使用 DHA 来评估设备运行状况：
   
--   支持 TPM 1.2 或 2.0 的 Windows 10 和 Windows 10 移动设备。  
--   通过使用可访问 Internet 的 Active Directory 来管理的本地设备、通过使用无法访问 Internet 的 Active Directory 来管理的设备、通过 Azure Active Directory 管理的设备，或同时使用 Active Directory 和 Azure Active Directory 的混合部署。
+-    支持 TPM 1.2 或 2.0 的 Windows 10 和 Windows 10 移动设备。  
+-    通过使用可访问 Internet 的 Active Directory 来管理的本地设备、通过使用无法访问 Internet 的 Active Directory 来管理的设备、通过 Azure Active Directory 管理的设备，或同时使用 Active Directory 和 Azure Active Directory 的混合部署。
 
 
 ### <a name="dha-service"></a>DHA 服务
@@ -51,8 +47,8 @@ DHA 服务为设备验证 TPM 和 PCR 日志，然后发布 DHA 报表。 Micros
 
 DHA 服务与 MDM 解决方案相集成，并提供以下功能： 
 
--   将其从设备收到的信息（通过现有的设备管理通信渠道）与 DHA 报表相组合
--   基于已证明的硬件和受保护的数据，作出更安全且更受信任的安全决策
+-    将其从设备收到的信息（通过现有的设备管理通信渠道）与 DHA 报表相组合
+-    基于已证明的硬件和受保护的数据，作出更安全且更受信任的安全决策
 
 以下示例演示了如何使用 DHA 来帮助提升组织资产的安全保护栏。
 
@@ -71,9 +67,9 @@ DHA 服务与 MDM 解决方案相集成，并提供以下功能：
 
 DHA 云服务提供以下功能：
 
--   查看从注册了 MDM 解决方案的设备接收的 TCG 和PCR 设备引导日志。 
--   创建一个能够抵御篡改和防篡改的报表（DHA 报表），用于描述设备基于由设备 TPM 芯片收集和保护的数据的启动方式。 
--   在受保护的通信通道中，将 DHA 报表传递到请求报表的 MDM 服务器。
+-    查看从注册了 MDM 解决方案的设备接收的 TCG 和PCR 设备引导日志。 
+-    创建一个能够抵御篡改和防篡改的报表（DHA 报表），用于描述设备基于由设备 TPM 芯片收集和保护的数据的启动方式。 
+-    在受保护的通信通道中，将 DHA 报表传递到请求报表的 MDM 服务器。
 
 #### <a name="dha-on-premises-service"></a>DHA 本地服务
 
@@ -98,7 +94,7 @@ DHA 本地服务提供由 DHA 云服务提供的所有功能。  它还使客户
 
 Microsoft 在 .cab 存档可公开访问的存档中为已批准的 TPM 制造商发布受信任的根和中间 CA 聚合包（如果可用）。 需要下载源，验证其完整性，并将其安装在运行设备运行状况证明的服务器上。
 
-示例存档是[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)。
+[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)存档的示例。
 
 #### <a name="aikcert-validation-mode"></a>AIKCert 验证模式
 
@@ -115,7 +111,7 @@ AIKCert 验证模式为有权访问 Internet 的运行环境进行了优化。 �
 - 运行 Windows Server 2016 的服务器。
 - 带有在清除/就绪状态运行最新 Windows Insider 内部版本的 TPM（1.2 或 2.0）的一个（或多个） Windows 10 客户端设备。
 - 确定是要在 EKCert 还是在 AIKCert 验证模式下运行。
-- 以下证书:
+- 以下证书：
   - **DHA SSL 证书**链接到企业信任的根的 x.509 SSL 证书，具有可导出的私钥。 此证书保护传输中的 DHA 数据通信，包括服务器到服务器（DHA 服务和 MDM 服务器）和服务器到客户端（DHA 服务和 Windows 10 设备）的通信。
   - **DHA 签名证书**链接到企业信任的根的 x.509 证书，具有可导出的私钥。 DHA 服务使用此证书进行数字签名。 
   - **DHA 加密证书**链接到企业信任的根的 x.509 证书，具有可导出的私钥。 DHA 服务还使用此证书进行加密。 
@@ -131,23 +127,23 @@ AIKCert 验证模式为有权访问 Internet 的运行环境进行了优化。 �
 
 在安装 Windows Server 2016 后，设备会重新启动，并打开服务器管理器。 如果服务器管理器未自动启动，单击“**开始**”，然后单击“**服务器管理器**”。
 
-1.  单击“**添加角色和功能**”。
-2.  在“开始之前”  页上，单击“下一步” 。
-3.  在 **“选择安装类型”** 页面上，单击 **“基于角色或基于功能的安装”** ，然后单击 **“下一步”** 。
-4.  在**选择目标服务器**页上，单击“**从服务器池中选择服务器**”，选择服务器，然后单击“**下一步**”。
-5.  在**选择服务器角色**页上，选择“**设备运行状况证明**”复选框。
-6.  单击“**添加功能**”来安装其他所需的角色服务和功能。
-7.  单击“下一步” 。
-8.  在“选择功能”页上，单击“下一步”。
-9.  在“Web 服务器角色 (IIS)”  页面上，单击“下一步” 。
-10. 在**选择角色服务**页上，单击“**下一步**”。
-11. 在**设备运行状况证明服务**页上，单击“**下一步**”。
-12. 在 **“确认安装选择”** 页上，单击 **“安装”** 。
-13. 安装完成后，单击“**关闭**”。
+1.    单击“**添加角色和功能**”。
+2.    在 **“开始之前”** 页上，单击 **“下一步”** 。
+3.    在 **“选择安装类型”** 页面上，单击 **“基于角色或基于功能的安装”** ，然后单击 **“下一步”** 。
+4.    在**选择目标服务器**页上，单击“**从服务器池中选择服务器**”，选择服务器，然后单击“**下一步**”。
+5.    在**选择服务器角色**页上，选择“**设备运行状况证明**”复选框。
+6.    单击“**添加功能**”来安装其他所需的角色服务和功能。
+7.    单击 **“下一步”** 。
+8.    在 **“选择功能”** 页上，单击 **“下一步”** 。
+9.    在 **“Web 服务器角色(IIS)”** 页上，单击 **“下一步”** 。
+10.    在 **“选择角色服务”** 页上，单击 **“下一步”** 。
+11.    在**设备运行状况证明服务**页上，单击“**下一步**”。
+12.    在 **“确认安装选择”** 页上，单击 **“安装”** 。
+13.    安装完成后，单击“**关闭**”。
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>安装签名和加密证书
 
-使用以下 Windows PowerShell 脚本来安装签名和加密证书。 有关指纹的详细信息, 请参阅[如何:检索证书](https://msdn.microsoft.com/library/ms734695.aspx)的指纹。
+使用以下 Windows PowerShell 脚本来安装签名和加密证书。 有关指纹的详细信息，请参阅[如何：检索证书的指纹](https://msdn.microsoft.com/library/ms734695.aspx)。
 
 ```
 $key = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -like "<thumbprint>"}
@@ -165,9 +161,9 @@ icacls $keypath /grant <username>`:R
 
 #### <a name="download-the-trusted-tpm-roots-certificate-package"></a>下载受信任的 TPM 根证书包
 
-在安装证书包之前, 您可以从[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)下载最新的受信任的 TPM 根列表。
+在安装证书包之前，可以从[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)下载最新的受信任的 TPM 根列表。
 
-> **重要说明：** 安装包之前, 请验证它是否已由 Microsoft 进行数字签名。
+> **重要提示：** 安装包之前，验证它是否由 Microsoft 进行数字签名。
 
 #### <a name="extract-the-trusted-certificate-package"></a>提取受信任的证书包
 通过运行以下命令提取受信任的证书包。
@@ -180,7 +176,7 @@ expand -F:* .\TrustedTpm.cab .\TrustedTpm
 
 为任何 TPM 供应商信任链删除组织不信任的文件夹。
 
-> **注意：** 如果使用 AIK 证书模式, 则需要 Microsoft 文件夹来验证 Microsoft 颁发的 AIK 证书。
+> **注意：** 使用 AIK 证书模式时，需要 Microsoft 文件夹来验证 Microsoft 所发布的 AIK 证书。
 
 #### <a name="install-the-trusted-certificate-package"></a>安装受信任的证书包
 通过从 .cab 文件运行安装程序脚本来安装受信任的证书包。
@@ -238,7 +234,7 @@ Get-DHASActiveSigningCertificate
 Set-DHASActiveSigningCertificate -Thumbprint "<hex>" -Force
 ```
 
-> **注意：** 此证书必须部署在**LocalMachine\My**证书存储中运行 DHA 服务的服务器上。 当设置活动签名证书时，现有的活动签名证书会移动到非活动的签名证书列表。
+> **注意：** 此证书必须在 **LocalMachine\My** 证书存储中运行 DHA 服务的服务器上部署。 当设置活动签名证书时，现有的活动签名证书会移动到非活动的签名证书列表。
 
 ### <a name="list-the-inactive-signing-certificates"></a>列出非活动签名证书
 ```
@@ -251,7 +247,7 @@ Remove-DHASInactiveSigningCertificates -Force
 Remove-DHASInactiveSigningCertificates  -Thumbprint "<hex>" -Force
 ```
 
-> **注意：** 服务中每次只能存在*一个*不活动的证书 (属于任何类型)。 一旦不再需要，证书应从非活动证书列表中删除。
+> **注意：** 仅*一个*非活动的证书（任何类型）可能在任何时候存在于该服务中。 一旦不再需要，证书应从非活动证书列表中删除。
 
 ### <a name="get-the-active-encryption-certificate"></a>获取活动加密证书
 

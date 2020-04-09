@@ -1,187 +1,186 @@
 ---
-title: 驱动器存储空间直通的对称性的注意事项
+title: 存储空间直通的驱动对称注意事项
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
-Keywords: 存储空间直通
 ms.localizationpriority: medium
-ms.openlocfilehash: 629e49a0c1919286d8e4f418b3e99d69e720f4fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b06d69c020ea38a2fb9f23df2cfd9cd4191ae315
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866878"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857550"
 ---
-# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>驱动器存储空间直通的对称性的注意事项 
+# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>存储空间直通的驱动对称注意事项 
 
-> 适用于：Windows Server 2019、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server 2016
 
-[存储空间直通](storage-spaces-direct-overview.md)每台服务器具有完全相同的驱动器时效果最佳。
+如果每个服务器都具有完全相同的驱动器，则[存储空间直通](storage-spaces-direct-overview.md)的效果最佳。
 
-实际上，我们识别这并不总是可行：存储空间直通旨在根据你的组织的需求的增长运行年和缩放。 现在，可能会购买硬盘驱动器; spacious 3 TB下一年，它可能是不可能以查找与如此之小。 因此，支持一定量的混合和匹配。
+事实上，我们认识到这并不总是可行：存储空间直通设计为多年来运行，并随着组织需求的增长而扩展。 现在，你可以购买 spacious 3 TB 硬盘驱动器;明年，找不到小型的。 因此，支持一定数量的混合和匹配。
 
-本主题说明约束，并提供示例的支持和不受支持的配置。
+本主题介绍了这些限制，并提供了支持和不支持的配置的示例。
 
 ## <a name="constraints"></a>约束
 
-### <a name="type"></a>在任务栏的搜索框中键入
+### <a name="type"></a>类型
 
-所有服务器都应都具有相同[类型的驱动器](choosing-drives.md#drive-types)。
+所有服务器都应具有相同[的驱动器类型](choosing-drives.md#drive-types)。
 
-例如，如果一台服务器具有 NVMe，它们应*所有*具有 NVMe。
+例如，如果一台服务器有 NVMe，则它们*都应有 nvme* 。
 
 ### <a name="number"></a>编号
 
-所有服务器应都具有相同数量的每个类型的驱动器。
+所有服务器都应具有相同数量的每个类型的驱动器。
 
-例如，如果一台服务器具有六个 SSD，它们应*所有*有六个 SSD。
-
-   > [!NOTE]
-   > 是可行的不同暂时在故障期间或者在添加或删除驱动器的驱动器数。
-
-### <a name="model"></a>型号
-
-我们建议使用相同的模型和固件版本，只要有可能的驱动器。 如果不能请仔细选择尽可能类似的驱动器。 我们建议不要具有明显不同的性能或耐用性特征的相同类型的混合和匹配的驱动器 （除非其中一个是缓存和另一个是容量） 因为存储空间直通将 IO 均匀地分布和不区分基础模型上.
+例如，如果一台服务器有六个 SSD，则它们*都应有六*个 ssd。
 
    > [!NOTE]
-   > 则可以暂时对混合和匹配类似 SATA 和 SAS 驱动器。
+   > 在出现故障时或者在添加或删除驱动器时，驱动器数量会暂时不同。
+
+### <a name="model"></a>模型
+
+建议尽可能使用相同型号和固件版本的驱动器。 如果无法做到这一点，请仔细选择尽可能相似的驱动器。 我们防止混合和匹配的驱动器具有急剧不同的性能或耐用性特征（除非它是缓存，另一种是容量），因为存储空间直通平均分配 IO，而不会基于模型进行区分。
+
+   > [!NOTE]
+   > 可以混合搭配搭配使用类似的 SATA 和 SAS 驱动器。
 
 ### <a name="size"></a>大小
 
-我们建议使用相同的大小只要有可能的驱动器。 使用不同大小的容量驱动器可能会导致一些不可用的容量，并使用不同大小的缓存驱动器可能无法提高缓存性能。 有关详细信息请参阅下一步。
+建议尽可能使用大小相同的驱动器。 使用不同大小的容量驱动器可能会导致某些容量不可用，使用不同大小的缓存驱动器可能不会提高缓存性能。 有关详细信息，请参阅下一节。
 
    > [!WARNING]
-   > 在服务器之间的不同容量的驱动器大小可能会导致闲置容量。
+   > 不同服务器上的容量驱动器大小可能会导致闲置的容量。
 
-## <a name="understand-capacity-imbalance"></a>了解： 容量不平衡
+## <a name="understand-capacity-imbalance"></a>了解：容量不平衡
 
-存储空间直通是可靠的容量不平衡到跨驱动器和服务器。 即使不均衡非常严重，所有内容将继续工作。 但是，具体取决于若干因素中的每台服务器不可用的容量可能不可用。
+对于跨服务器和跨服务器的容量不平衡，存储空间直通是可靠的。 即使不平衡很严重，所有内容仍将继续工作。 但是，根据多个因素，每个服务器中不可用的容量可能不可用。
 
-若要查看发生此问题，请考虑下面的简化的示意图。 每个彩色的框表示镜像数据的一个副本。 例如，对应的框标记为 A、 A，和 ' 的相同数据的三个副本。 若要遵循服务器容错功能，这些副本*必须*存储在不同的服务器。
+若要查看发生此问题的原因，请考虑下面的简化图。 每个彩色框表示一个镜像数据副本。 例如，标记为、"" 和 "" 的框是相同数据的三个副本。 为了服从服务器容错，这些副本*必须*存储在不同的服务器中。
 
-### <a name="stranded-capacity"></a>闲置的容量
+### <a name="stranded-capacity"></a>闲置容量
 
-绘制，服务器 1 (10 TB) 和服务器 2 (10 TB) 已满。 服务器 3 具有较大的驱动器，因此其总容量为更大 (15 TB)。 但是，为服务器 3 上存储更多的三向镜像数据可能需要服务器 1 和服务器 2 上的副本，已完整。 不能使用服务器 3 上的剩余 5 TB 容量 – 这 *"闲置"* 容量。
+正如绘图，服务器1（10 TB）和服务器2（10 TB）已满。 服务器3具有更大的驱动器，因此它的总容量大于（15 TB）。 但是，若要在服务器3上存储更多的三向镜像数据，则还需要服务器1和服务器2上的副本（已满）。 不能使用服务器3上剩余的 5 TB 容量–它是 *"闲置的"* 容量。
 
-![三向镜像，三个服务器闲置容量](media/drive-symmetry-considerations/Size-Asymmetry-3N-Stranded.png)
+![三向镜像，三台服务器，闲置容量](media/drive-symmetry-considerations/Size-Asymmetry-3N-Stranded.png)
 
-### <a name="optimal-placement"></a>最佳位置
+### <a name="optimal-placement"></a>最佳放置
 
-相反，使用 10 TB，10 TB，10 TB 和 15 TB 的容量和三向镜像复原则的四个服务器它*是*可以有效地将副本放在使用所有可用容量，作为绘制一种方法。 只要可能，存储空间直通的分配器将查找并使用最佳位置，从而使任何闲置的容量。
+相反，对于4个 10 TB 的服务器、10 tb、10 TB 以及 15 TB 的容量和三向镜像复原 *，可以使用*所绘制的所有可用容量来有效地放置副本。 只要有可能，存储空间直通分配器将查找并使用最佳位置，而不会留下闲置的容量。
 
-![三向镜像、 四个服务器、 没有闲置的容量](media/drive-symmetry-considerations/Size-Asymmetry-4N-No-Stranded.png)
+![三向镜像，四个服务器，无闲置容量](media/drive-symmetry-considerations/Size-Asymmetry-4N-No-Stranded.png)
 
-闲置的容量是否会影响的服务器、 复原能力、 容量不平衡和其他因素的严重级别数。 **最明智的一般规则是假定的每个服务器中可用的唯一容量保证可用。**
+服务器的数量、复原能力、容量不平衡的严重性以及其他因素将影响是否存在闲置的容量。 **最明智的一般规则是假设只有每个服务器中的可用容量保证可用。**
 
-## <a name="understand-cache-imbalance"></a>了解： 缓存不平衡
+## <a name="understand-cache-imbalance"></a>了解：缓存不平衡
 
-存储空间直通是稳定地缓存不平衡跨驱动器和服务器。 即使不均衡非常严重，所有内容将继续工作。 此外，存储空间直通始终使用最充分地所有可用的缓存。
+存储空间直通可以可靠地跨驱动器和跨服务器缓存不平衡。 即使不平衡很严重，所有内容仍将继续工作。 而且，存储空间直通始终使用所有可用缓存。
 
-但是，使用不同大小的缓存驱动器可能无法提高缓存性能统一或以可预测方式： 仅对 IO[驱动器绑定](understand-the-cache.md#server-side-architecture)使用更大的缓存驱动器可能会看到改进的性能。 存储空间直通将 IO 均匀地分布到绑定并不会区分根据缓存容量的比率。
+但是，使用不同大小的缓存驱动器可能不会以统一或可预测的方式提高缓存性能：只有 IO 才能驱动使用较大缓存驱动器的[绑定](understand-the-cache.md#server-side-architecture)，这可能会提高性能。 存储空间直通跨绑定平均分配 IO，并且不会根据缓存到容量的比率进行区分。
 
 ![缓存不平衡](media/drive-symmetry-considerations/Cache-Asymmetry.png)
 
    > [!TIP]
-   > 请参阅[了解缓存](understand-the-cache.md)若要了解有关缓存绑定的详细信息。
+   > 请参阅[了解缓存](understand-the-cache.md)了解有关缓存绑定的详细信息。
 
-## <a name="example-configurations"></a>配置示例
+## <a name="example-configurations"></a>示例配置
 
-下面是一些支持和不受支持的配置：
+下面是一些受支持和不支持的配置：
 
-### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-models-between-servers"></a>![受支持](media/drive-symmetry-considerations/supported.png) 支持： 服务器之间的不同模型
+### <a name="supported-supported-different-models-between-servers"></a>![受支持](media/drive-symmetry-considerations/supported.png) 支持：服务器之间的不同模型
 
-前两个服务器使用 NVMe 模型"X"，而第三个服务器使用 NVMe 模型"Z"，这是非常相似。
+前两台服务器使用 NVMe 模型 "X"，但第三个服务器使用 NVMe 模型 "Z"，这一点非常类似。
 
-| 服务器 1                    | 服务器 2                    | 服务器 3                    |
+| 服务器 1                    | 服务器2                    | 服务器3                    |
 |-----------------------------|-----------------------------|-----------------------------|
-| 2x NVMe 模型 X （缓存）    | 2x NVMe 模型 X （缓存）    | 2x NVMe 模型 Z （缓存）    |
-| 10 倍的 SSD 模型 Y （容量） | 10 倍的 SSD 模型 Y （容量） | 10 倍的 SSD 模型 Y （容量） |
+| 2 x NVMe 型号 X （缓存）    | 2 x NVMe 型号 X （缓存）    | 2 x NVMe 模型 Z （缓存）    |
+| 10 x SSD 型号 Y （容量） | 10 x SSD 型号 Y （容量） | 10 x SSD 型号 Y （容量） |
 
-支持此功能。
+这是受支持的。
 
-### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-models-within-server"></a>![受支持](media/drive-symmetry-considerations/supported.png) 支持： 服务器内不同的模型
+### <a name="supported-supported-different-models-within-server"></a>![受支持](media/drive-symmetry-considerations/supported.png) 支持的：服务器中的不同模型
 
-每个服务器使用 HDD 模型"Y"和"Z"，这非常类似一些不同的组合。 每个服务器都有 10 个总 HDD。
+每台服务器都使用某种不同的 HDD 型号 "Y" 和 "Z"，这种模式非常相似。 每台服务器都有10个硬盘。
 
-| 服务器 1                   | 服务器 2                   | 服务器 3                   |
+| 服务器 1                   | 服务器2                   | 服务器3                   |
 |----------------------------|----------------------------|----------------------------|
-| 2 个 SSD 模型 X （缓存）    | 2 个 SSD 模型 X （缓存）    | 2 个 SSD 模型 X （缓存）    |
-| 每周 7 天 HDD 模型 Y （容量） | 5 倍 HDD 模型 Y （容量） | 1 个 HDD 模型 Y （容量） |
-| 3 倍 HDD 模型 Z （容量） | 5 倍 HDD 模型 Z （容量） | 9 x HDD 模型 Z （容量） |
+| 2 x SSD 模型 X （缓存）    | 2 x SSD 模型 X （缓存）    | 2 x SSD 模型 X （缓存）    |
+| 7 x HDD 型号 Y （容量） | 5 x HDD 型号 Y （容量） | 1 x HDD 型号 Y （容量） |
+| 3 x HDD 型号 Z （容量） | 5 x HDD 型号 Z （容量） | 9 x HDD 型号 Z （容量） |
 
-支持此功能。
+这是受支持的。
 
-### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-sizes-across-servers"></a>![受支持](media/drive-symmetry-considerations/supported.png) 支持： 在服务器之间的不同大小
+### <a name="supported-supported-different-sizes-across-servers"></a>![受支持](media/drive-symmetry-considerations/supported.png) 支持：跨服务器大小不同
 
-前两个服务器使用 4 TB HDD，而第三个服务器使用非常类似 6 TB HDD。
+前两台服务器使用 4 TB HDD，但第三个服务器使用非常相似的 6 TB HDD。
 
-| 服务器 1                | 服务器 2                | 服务器 3                |
+| 服务器 1                | 服务器2                | 服务器3                |
 |-------------------------|-------------------------|-------------------------|
 | 2 x 800 GB NVMe （缓存） | 2 x 800 GB NVMe （缓存） | 2 x 800 GB NVMe （缓存） |
-| 4 × 4 TB HDD （容量） | 4 × 4 TB HDD （容量） | 4 x 6 TB HDD （容量） |
+| 4 x 4 TB HDD （容量） | 4 x 4 TB HDD （容量） | 4 x 6 TB HDD （容量） |
 
-支持此功能，尽管它会导致闲置容量。
+这是受支持的，但这会导致闲置的容量。
 
-### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-sizes-within-server"></a>![受支持](media/drive-symmetry-considerations/supported.png) 支持： 服务器内的不同大小
+### <a name="supported-supported-different-sizes-within-server"></a>![受支持](media/drive-symmetry-considerations/supported.png) 支持：服务器内的大小不同
 
-每个服务器使用 1.2 TB 而非常类似 1.6 TB SSD 的一些不同组合。 每个服务器都有 4 个总 SSD。
+每台服务器使用 1.2 TB 和非常类似的 1.6 TB SSD 的混合。 每个服务器都有4个 SSD。
 
-| 服务器 1                 | 服务器 2                 | 服务器 3                 |
+| 服务器 1                 | 服务器2                 | 服务器3                 |
 |--------------------------|--------------------------|--------------------------|
 | 3 x 1.2 TB SSD （缓存）   | 2 x 1.2 TB SSD （缓存）   | 4 x 1.2 TB SSD （缓存）   |
 | 1 x 1.6 TB SSD （缓存）   | 2 x 1.6 TB SSD （缓存）   | -                        |
 | 20 x 4 TB HDD （容量） | 20 x 4 TB HDD （容量） | 20 x 4 TB HDD （容量） |
 
-支持此功能。
+这是受支持的。
 
-### <a name="unsupportedmediadrive-symmetry-considerationsunsupportedpng-not-supported-different-types-of-drives-across-servers"></a>![不受支持](media/drive-symmetry-considerations/unsupported.png) 不支持： 不同类型的跨服务器的驱动器
+### <a name="unsupported-not-supported-different-types-of-drives-across-servers"></a>![不支持](media/drive-symmetry-considerations/unsupported.png) 不受支持：跨服务器的不同类型的驱动器
 
-服务器 1 具有 NVMe 但却不可行。
+服务器1具有 NVMe，但其他服务器不存在。
 
-| 服务器 1            | 服务器 2            | 服务器 3            |
+| 服务器 1            | 服务器2            | 服务器3            |
 |---------------------|---------------------|---------------------|
 | 6 x NVMe （缓存）    | -                   | -                   |
 | -                   | 6 x SSD （缓存）     | 6 x SSD （缓存）     |
 | 18 x HDD （容量） | 18 x HDD （容量） | 18 x HDD （容量） |
 
-不支持此功能。 驱动器类型应为每个服务器中相同。
+这不受支持。 每个服务器中的驱动器类型应相同。
 
-### <a name="unsupportedmediadrive-symmetry-considerationsunsupportedpng-not-supported-different-number-of-each-type-across-servers"></a>![不受支持](media/drive-symmetry-considerations/unsupported.png) 不支持： 不同数量的服务器上每个类型
+### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![不支持](media/drive-symmetry-considerations/unsupported.png) 不受支持：跨服务器的每种类型的数量不同
 
-服务器 3 具有比其他更多驱动器。
+服务器3具有比其他驱动器更多的驱动器。
 
-| 服务器 1            | 服务器 2            | 服务器 3            |
+| 服务器 1            | 服务器2            | 服务器3            |
 |---------------------|---------------------|---------------------|
 | 2 x NVMe （缓存）    | 2 x NVMe （缓存）    | 4 x NVMe （缓存）    |
 | 10 x HDD （容量） | 10 x HDD （容量） | 20 x HDD （容量） |
 
-不支持此功能。 每个类型的驱动器数应在每个服务器中相同。
+这不受支持。 每个服务器中的每个类型的驱动器数目应相同。
 
-### <a name="unsupportedmediadrive-symmetry-considerationsunsupportedpng-not-supported-only-hdd-drives"></a>![不受支持](media/drive-symmetry-considerations/unsupported.png) 不支持： 仅 HDD 驱动器
+### <a name="unsupported-not-supported-only-hdd-drives"></a>![不支持](media/drive-symmetry-considerations/unsupported.png) 不支持：仅 HDD 驱动器
 
-所有服务器都具有仅 HDD 驱动器的连接。
+所有服务器仅连接了 HDD 驱动器。
 
-|服务器 1|服务器 2|服务器 3|
+|服务器 1|服务器2|服务器3|
 |-|-|-| 
 |18 x HDD （容量） |18 x HDD （容量）|18 x HDD （容量）|
 
-不支持此功能。 您需要添加至少两个缓存或的驱动器 （NvME SSD） 附加到每台服务器。
+这不受支持。 需要添加至少两个连接到每台服务器的缓存驱动器（NvME 或 SSD）。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
-概括来说，在群集中的每个服务器应具有相同类型的驱动器和相同数量的每种类型。 它支持混合和匹配驱动器型号和驱动器大小根据需要使用上面的注意事项。
+概括而言，群集中的每个服务器都应具有相同类型的驱动器和每种类型的相同编号。 支持根据需要混合搭配驱动器模型和驱动器大小，并提供上述注意事项。
 
 | 约束                               |               |
 |------------------------------------------|---------------|
-| 相同类型的驱动器中的每个服务器     | **必填**  |
-| 相同数量的每个服务器中每个类型 | **必填**  |
-| 中的每个服务器的相同驱动器模型        | 推荐   |
-| 在每个服务器中是相同的驱动器大小         | 推荐   |
+| 每个服务器中的相同类型的驱动器     | **必填**  |
+| 每个服务器中的每个类型都具有相同的数目 | **必填**  |
+| 每个服务器中的相同驱动器型号        | 推荐   |
+| 每个服务器中的相同驱动器大小         | 推荐   |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [存储空间直通的硬件要求](storage-spaces-direct-hardware-requirements.md)
+- [存储空间直通硬件要求](storage-spaces-direct-hardware-requirements.md)
 - [存储空间直通概述](storage-spaces-direct-overview.md)

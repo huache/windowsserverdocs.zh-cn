@@ -1,24 +1,20 @@
 ---
 title: Windows 身份验证中的凭据进程
 description: Windows Server 安全
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 48c60816-fb8b-447c-9c8e-800c2e05b14f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 051cb88620065ed675f377f3369860f7b04460bd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2de8383ce6a946dfdd80cfc027478c495037169b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402300"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857580"
 ---
 # <a name="credentials-processes-in-windows-authentication"></a>Windows 身份验证中的凭据进程
 
@@ -30,7 +26,7 @@ Windows 凭据管理是操作系统从服务或用户接收凭据的过程，并
 
 默认情况下，将根据本地计算机上的安全帐户管理器（SAM）数据库或通过 Winlogon 服务在加入域的计算机上 Active Directory 验证 Windows 凭据。 凭据是通过登录用户界面上的用户输入收集的，也可以通过应用程序编程接口（API）以编程方式通过向身份验证目标提供。
 
-本地安全信息存储在**HKEY_LOCAL_MACHINE\SECURITY**下的注册表中。 存储的信息包括策略设置、默认安全值和帐户信息，如缓存的登录凭据。 SAM 数据库的副本也存储在此处，尽管它是写保护的。
+本地安全信息存储在注册表中**HKEY_LOCAL_MACHINE \security**下。 存储的信息包括策略设置、默认安全值和帐户信息，如缓存的登录凭据。 SAM 数据库的副本也存储在此处，尽管它是写保护的。
 
 下图显示了所需的组件和凭据通过系统对用户或进程进行身份验证以进行成功登录的路径。
 
@@ -40,18 +36,18 @@ Windows 凭据管理是操作系统从服务或用户接收凭据的过程，并
 
 **所有系统的身份验证组件**
 
-|组件|描述|
+|组件|说明|
 |-------|--------|
 |用户登录|Winlogon 是负责管理安全用户交互的可执行文件。 Winlogon 服务通过 Secur32.dll 将用户操作在安全桌面上收集的凭据（登录 UI）传递给本地安全机构（LSA）来启动 Windows 操作系统的登录过程。|
-|应用程序登录|不需要交互式登录的应用程序或服务登录。 用户使用 Secur32.dll 在用户模式下运行的大多数进程，而在启动时启动的进程（如服务）使用 Ksecdd 在内核模式下运行。<br /><br />有关用户模式和内核模式的详细信息，请参阅本主题中的应用程序和用户模式或服务和内核模式。|
+|应用程序登录|不需要交互式登录的应用程序或服务登录。 用户使用 Secur32.dll 在用户模式下运行的大多数进程，而在启动时启动的进程（如服务）使用 Ksecdd 在内核模式下运行。<p>有关用户模式和内核模式的详细信息，请参阅本主题中的应用程序和用户模式或服务和内核模式。|
 |Secur32.dll|构成身份验证过程基础的多身份验证提供程序。|
 |Lsasrv.dll|LSA 服务器服务，它强制实施安全策略，并充当 LSA 的安全包管理器。 LSA 包含 Negotiate 函数，该函数在确定要成功的协议后选择 NTLM 或 Kerberos 协议。|
 |安全支持提供程序|一组可单独调用一个或多个身份验证协议的提供程序。 默认的提供程序集可以随每个版本的 Windows 操作系统一起更改，并可以编写自定义的提供程序。|
-|Netlogon.dll|Net Logon 服务执行的服务如下所示：<br /><br />-维护计算机的安全通道（不要与 Schannel 混淆）到域控制器。<br />-通过安全通道将用户的凭据传递到域控制器，并为用户返回域安全标识符（Sid）和用户权限。<br />-在域名系统（DNS）中发布服务资源记录，并使用 DNS 将名称解析为域控制器的 Internet 协议（IP）地址。<br />-根据远程过程调用（RPC）实现复制协议，以便同步主域控制器（Pdc）和备份域控制器（Bdc）。|
+|Netlogon.dll|Net Logon 服务执行的服务如下所示：<p>-维护计算机的安全通道（不要与 Schannel 混淆）到域控制器。<br />-通过安全通道将用户的凭据传递到域控制器，并为用户返回域安全标识符（Sid）和用户权限。<br />-在域名系统（DNS）中发布服务资源记录，并使用 DNS 将名称解析为域控制器的 Internet 协议（IP）地址。<br />-根据远程过程调用（RPC）实现复制协议，以便同步主域控制器（Pdc）和备份域控制器（Bdc）。|
 |Samsrv|安全帐户管理器（SAM），它存储本地安全帐户，强制实施本地存储的策略并支持 Api。|
 |注册表|注册表包含 SAM 数据库的副本、本地安全策略设置、默认安全值和仅可用于系统的帐户信息。|
 
-本主题包含以下各节:
+本主题包含以下各节：
 
 -   [用户登录凭据输入](#BKMK_CrentialInputForUserLogon)
 
@@ -69,7 +65,7 @@ Windows 凭据管理是操作系统从服务或用户接收凭据的过程，并
 
 -   [Windows 身份验证中的证书](#BKMK_CertificatesInWindowsAuthentication)
 
-## <a name="BKMK_CrentialInputForUserLogon"></a>用户登录凭据输入
+## <a name="credential-input-for-user-logon"></a><a name="BKMK_CrentialInputForUserLogon"></a>用户登录凭据输入
 在 Windows Server 2008 和 Windows Vista 中，图形标识和身份验证（GINA）体系结构已替换为凭据提供程序模型，这使得可以通过使用登录磁贴来枚举不同的登录类型。 下面描述了这两种模型。
 
 **图形标识和身份验证体系结构**
@@ -132,24 +128,24 @@ SSO 提供程序用于以下方案：
 
 -   凭据提供程序会枚举磁贴以响应用户请求，以更改其密码或其他专用信息（如 PIN）。 通常，当前登录的用户是默认磁贴;但是，如果有多个用户登录，则会显示多个磁贴。
 
--   凭据提供程序基于要在远程计算机上用于身份验证的序列化凭据来枚举磁贴。 凭据 UI 使用的访问接口实例不是登录 UI，无法解锁工作站或更改密码。 因此，在凭据 UI 实例之间的提供程序中无法维护状态信息。 此结构为每台远程计算机登录生成一个磁贴，假设凭据已正确序列化。 此方案还用于用户帐户控制（UAC），通过在允许可能影响计算机操作的操作之前提示用户提供权限或管理员密码，可以帮助防止对计算机进行未经授权的更改或者，它可能会更改影响计算机其他用户的设置。
+-   凭据提供程序基于要在远程计算机上用于身份验证的序列化凭据来枚举磁贴。 凭据 UI 使用的访问接口实例不是登录 UI，无法解锁工作站或更改密码。 因此，在凭据 UI 实例之间的提供程序中无法维护状态信息。 此结构为每台远程计算机登录生成一个磁贴，假设凭据已正确序列化。 此方案还在用户帐户控制（UAC）中使用，这有助于防止对计算机进行未经授权的更改，方法是在允许可能影响计算机操作或可能更改影响计算机其他用户的设置的操作之前，提示用户提供权限或管理员密码。
 
 下图显示了本主题开头 "**适用**于" 列表中指定的操作系统的凭据过程。
 
 ![此图显示了本主题开头的 "适用于 * * 的列表" 中指定的操作系统的凭据过程](../media/credentials-processes-in-windows-authentication/AuthN_CredMan_CredProv.gif)
 
-## <a name="BKMK_CredentialInputForApplicationAndServiceLogon"></a>应用程序和服务登录的凭据输入
+## <a name="credential-input-for-application-and-service-logon"></a><a name="BKMK_CredentialInputForApplicationAndServiceLogon"></a>应用程序和服务登录的凭据输入
 Windows 身份验证设计用于管理不需要用户交互的应用程序或服务的凭据。 用户模式下的应用程序在其有权访问的系统资源方面受到限制，而服务可以对系统内存和外部设备进行不受限制的访问。
 
-系统服务和传输级应用程序通过 Windows 中的安全支持提供程序接口（SSPI）访问安全支持提供程序（SSP），这提供了用于枚举系统上可用的安全包的功能，并选择打包，并使用该包获取经过身份验证的连接。
+系统服务和传输级应用程序通过 Windows 中的安全支持提供程序接口（SSPI）访问安全支持提供程序（SSP），这提供了用于枚举系统上可用的安全包、选择包以及使用该包获取经过身份验证的连接的功能。
 
 当客户端/服务器连接经过身份验证时：
 
--   连接的客户端上的应用程序使用 SSPI 函数 `InitializeSecurityContext (General)` 将凭据发送到服务器。
+-   连接的客户端上的应用程序 `InitializeSecurityContext (General)`使用 SSPI 函数将凭据发送到服务器。
 
--   连接服务器端上的应用程序会用 SSPI 函数 `AcceptSecurityContext (General)` 进行响应。
+-   连接的服务器端上的应用程序 `AcceptSecurityContext (General)`中的 SSPI 函数进行响应。
 
--   如果已将所有必需的身份验证消息交换为成功或身份验证失败，则会重复 `InitializeSecurityContext (General)` 和 `AcceptSecurityContext (General)`。
+-   SSPI 函数 `InitializeSecurityContext (General)` 和 `AcceptSecurityContext (General)` 会重复，直到所有必要的身份验证消息都已交换到成功或身份验证失败。
 
 -   对连接进行身份验证后，服务器上的 LSA 将使用客户端提供的信息来构建包含访问令牌的安全上下文。
 
@@ -157,15 +153,15 @@ Windows 身份验证设计用于管理不需要用户交互的应用程序或服
 
 **应用程序和用户模式**
 
-Windows 中的用户模式由两个系统组成，这两个系统可以将 i/o 请求传递到相应的内核模式驱动程序：环境系统，它运行为多种不同类型的操作系统编写的应用程序，以及运行的整数系统代表环境系统的特定于系统的函数。
+Windows 中的用户模式由两个系统组成，这两个系统可以将 i/o 请求传递到相应的内核模式驱动程序：环境系统，该系统运行为多种不同类型的操作系统编写的应用程序，以及一个整型系统，它代表环境系统运行特定于系统的函数。
 
-整型系统代表环境系统管理操作系统 system'specific 功能，包括安全系统进程（LSA）、工作站服务和服务器服务。 安全系统进程处理安全令牌，授予或拒绝基于资源权限访问用户帐户的权限，处理登录请求并启动登录身份验证，并确定操作系统需要审核。
+整型系统代表环境系统管理操作系统 system'specific 功能，包括安全系统进程（LSA）、工作站服务和服务器服务。 安全系统进程处理安全令牌，根据资源权限授予或拒绝访问用户帐户的权限，处理登录请求并启动登录身份验证，并确定操作系统需要审核的系统资源。
 
 应用程序可以在用户模式下运行，在此模式下，应用程序可以作为任何主体运行，包括在本地系统（系统）的安全上下文中。 应用程序也可以在内核模式下运行，应用程序可在本地系统（系统）的安全上下文中运行。
 
-SSPI 是通过 Secur32.dll 模块提供的，它是一个用于获取用于身份验证、消息完整性和消息隐私的集成安全服务的 API。 它在应用程序级别协议和安全协议之间提供了一个抽象层。 因为不同的应用程序需要不同的方式来标识或验证用户，以及在网络上传输数据时加密数据的不同方法，所以 SSPI 提供一种方法来访问包含不同身份验证的动态链接库（Dll）。和加密函数。 这些 Dll 称为安全支持提供程序（Ssp）。
+SSPI 是通过 Secur32.dll 模块提供的，它是一个用于获取用于身份验证、消息完整性和消息隐私的集成安全服务的 API。 它在应用程序级别协议和安全协议之间提供了一个抽象层。 因为不同的应用程序需要不同的方式来标识或验证用户，以及在数据跨网络传输时加密数据的不同方法，所以 SSPI 提供一种方法来访问包含不同身份验证和加密功能的动态链接库（Dll）。 这些 Dll 称为安全支持提供程序（Ssp）。
 
-Windows Server 2008 R2 和 Windows 7 中引入了托管服务帐户和虚拟帐户，以便提供关键应用程序（例如 Microsoft SQL Server 和 Internet Information Services （IIS）），同时隔离其自己的域帐户，同时无需管理员手动管理这些帐户的服务主体名称（SPN）和凭据。 有关这些功能及其在身份验证中的角色的详细信息，请参阅[适用于 windows 7 和 Windows Server 2008 R2 的托管服务帐户文档](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx)和[组托管服务帐户概述](../group-managed-service-accounts/group-managed-service-accounts-overview.md)。
+Windows Server 2008 R2 和 Windows 7 中引入了托管服务帐户和虚拟帐户，以提供重要的应用程序（例如 Microsoft SQL Server 和 Internet Information Services （IIS）），并隔离其自己的域帐户，同时无需管理员手动管理这些帐户的服务主体名称（SPN）和凭据。 有关这些功能及其在身份验证中的角色的详细信息，请参阅[适用于 windows 7 和 Windows Server 2008 R2 的托管服务帐户文档](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx)和[组托管服务帐户概述](../group-managed-service-accounts/group-managed-service-accounts-overview.md)。
 
 **服务和内核模式**
 
@@ -180,7 +176,7 @@ Windows Server 2008 R2 和 Windows 7 中引入了托管服务帐户和虚拟帐�
 
 内核模式对计算机的硬件和系统资源具有完全访问权限。 内核模式阻止用户模式服务和应用程序访问其无权访问的操作系统的关键区域。
 
-## <a name="BKMK_LSA"></a>本地安全机构
+## <a name="local-security-authority"></a><a name="BKMK_LSA"></a>本地安全机构
 本地安全机构（LSA）是一个受保护的系统进程，用于对用户进行身份验证并将用户登录到本地计算机。 此外，LSA 还维护有关计算机上的本地安全的所有方面（这些方面统称为本地安全策略）的信息，并且提供了用于在名称和安全标识符（Sid）之间进行转换的各种服务。 安全系统进程 "本地安全机构服务器服务（LSASS）" 跟踪安全策略以及计算机系统上的有效帐户。
 
 LSA 根据以下两个实体中的哪一个颁发用户帐户来验证用户的标识：
@@ -235,7 +231,7 @@ LSASS 可以采用多种形式来存储凭据，包括：
 
 有关这些其他保护的详细信息，请参阅[配置其他 LSA 保护](../credentials-protection-and-management/configuring-additional-lsa-protection.md)。
 
-## <a name="BKMK_CachedCredentialsAndValidation"></a>缓存的凭据和验证
+## <a name="cached-credentials-and-validation"></a><a name="BKMK_CachedCredentialsAndValidation"></a>缓存的凭据和验证
 验证机制依赖于在登录时显示凭据。 但是，当计算机从域控制器断开连接，并且用户正在提供域凭据时，Windows 将在验证机制中使用缓存凭据的进程。
 
 用户每次登录到域时，Windows 将缓存提供的凭据，并将其存储在操作系统注册表的安全配置单元中。
@@ -243,7 +239,7 @@ LSASS 可以采用多种形式来存储凭据，包括：
 使用缓存的凭据，用户无需连接到域中的域控制器即可登录域成员。
 
 
-## <a name="BKMK_CredentialStorageAndValidation"></a>凭据存储和验证
+## <a name="credential-storage-and-validation"></a><a name="BKMK_CredentialStorageAndValidation"></a>凭据存储和验证
 并非始终需要使用一组凭据来访问不同的资源。 例如，管理员可能希望在访问远程服务器时使用管理而不是用户凭据。 同样，如果用户访问外部资源（例如银行帐户），则该用户只能使用其域凭据以外的凭据。 以下各节介绍了当前版本的 Windows 操作系统与 Windows Vista 和 Windows XP 操作系统之间的凭据管理之间的差异。
 
 ### <a name="remote-logon-credential-processes"></a>远程登录凭据进程
@@ -259,7 +255,7 @@ LSASS 可以采用多种形式来存储凭据，包括：
 有关 ARSO 的详细信息，请参阅[Winlogon 自动重新启动登录&#40;ARSO&#41;](winlogon-automatic-restart-sign-on-arso.md)。
 
 ### <a name="stored-user-names-and-passwords-in-windows-vista-and-windows-xp"></a>Windows Vista 和 Windows XP 中存储的用户名和密码
-在 Windows Server 2008、Windows Server 2003、Windows Vista 和 Windows XP 中，"控制面板" 中 "**存储的用户名和密码**" 简化了多组登录凭据的管理和使用，包括与智能卡一起使用的 x.509 证书和Windows Live 凭据（现在称为 Microsoft 帐户）。 凭据-用户配置文件的一部分存储在需要的时间。 此操作可通过确保密码是否泄露来提高每个资源的安全性，而不会危及所有安全性。
+在 Windows Server 2008、Windows Server 2003、Windows Vista 和 Windows XP 中，"控制面板" 中 "**存储的用户名和密码**" 简化了多组登录凭据的管理和使用，其中包括用于智能卡和 Windows Live 凭据（现在称为 Microsoft 帐户）的 x.509 证书。 凭据-用户配置文件的一部分存储在需要的时间。 此操作可通过确保密码是否泄露来提高每个资源的安全性，而不会危及所有安全性。
 
 用户登录并尝试访问其他受密码保护的资源（例如服务器上的共享），并且如果用户的默认登录凭据不足以获取访问权限，则会查询**存储的用户名和密码**。 如果在**存储的用户名和密码**中保存了具有正确登录信息的备用凭据，则将使用这些凭据获取访问权限。 否则，系统会提示用户提供新凭据，然后在登录会话期间或在后续会话期间，这些凭据可供重复使用。
 
@@ -269,7 +265,7 @@ LSASS 可以采用多种形式来存储凭据，包括：
 
 -   **存储的用户名和密码**仅存储 NTLM、Kerberos 协议、Microsoft 帐户（以前称为 WINDOWS Live ID）和安全套接字层（SSL）身份验证的凭据。 某些版本的 Internet Explorer 维护其自己的缓存以进行基本身份验证。
 
-在 \Documents 和 Settings\Username\Application Data\Microsoft\Credentials 目录中，这些凭据会成为用户本地配置文件的加密部分。 因此，如果用户的网络策略支持漫游用户配置文件，则这些凭据可与用户漫游。 但是，如果用户在两台不同的计算机上具有**存储用户名和密码**的副本，并更改与其中一台计算机上的资源关联的凭据，则更改不会传播到**存储的用户名和密码**在第二台计算机上。
+在 \Documents 和 Settings\Username\Application Data\Microsoft\Credentials 目录中，这些凭据会成为用户本地配置文件的加密部分。 因此，如果用户的网络策略支持漫游用户配置文件，则这些凭据可与用户漫游。 但是，如果用户在两台不同的计算机上具有**存储用户名和密码**的副本，并更改与其中一台计算机上的资源关联的凭据，则更改不会传播到第二台计算机上**存储的用户名和密码**。
 
 ### <a name="windows-vault-and-credential-manager"></a>Windows Vault 和凭据管理器
 在 Windows Server 2008 R2 和 Windows 7 中引入了 "凭据管理器" 作为存储和管理用户名和密码的控制面板功能。 通过凭据管理器，用户可以存储与安全 Windows 保管库中的其他系统和网站相关的凭据。 某些版本的 Internet Explorer 使用此功能向网站进行身份验证。
@@ -280,21 +276,21 @@ LSASS 可以采用多种形式来存储凭据，包括：
 
 下次使用该服务时，凭据管理器会自动提供 Windows Vault 中存储的凭据。 如果未接受凭据，将提示用户提供正确的访问信息。 如果使用新凭据授予访问权限，则凭据管理器会使用新凭据覆盖以前的凭据，然后将新凭据存储在 Windows 保管库中。
 
-## <a name="BKMK_SAM"></a>安全帐户管理器数据库
+## <a name="security-accounts-manager-database"></a><a name="BKMK_SAM"></a>安全帐户管理器数据库
 安全帐户管理器（SAM）是存储本地用户帐户和组的数据库。 它存在于每个 Windows 操作系统中;但是，在计算机加入域时，Active Directory 管理 Active Directory 域中的域帐户。
 
-例如，运行 Windows 操作系统的客户端计算机通过与域控制器通信来加入网络域，即使没有用户登录也是如此。 若要启动通信，计算机必须在域中具有活动帐户。 在接受来自计算机的通信之前，域控制器上的 LSA 会对计算机的标识进行身份验证，然后构造计算机的安全上下文，就像它对人为安全主体的情况一样。 此安全上下文定义特定计算机或网络上的用户、服务或计算机上的用户或服务的标识和功能。 例如，安全上下文中包含的访问令牌定义了可访问的资源（例如文件共享或打印机），以及该主体（用户、计算机或修改）可以执行的操作（如 "读取"、"写入" 或 "修改"）。资源.
+例如，运行 Windows 操作系统的客户端计算机通过与域控制器通信来加入网络域，即使没有用户登录也是如此。 若要启动通信，计算机必须在域中具有活动帐户。 在接受来自计算机的通信之前，域控制器上的 LSA 会对计算机的标识进行身份验证，然后构造计算机的安全上下文，就像它对人为安全主体的情况一样。 此安全上下文定义特定计算机或网络上的用户、服务或计算机上的用户或服务的标识和功能。 例如，安全上下文中包含的访问令牌定义了可访问的资源（例如文件共享或打印机），以及该主体（用户、计算机或修改）可以执行的操作（例如，该资源上的用户、计算机或服务）。
 
 用户或计算机的安全上下文可能不同于一台计算机，例如当用户登录到服务器或工作站而不是用户自己的主工作站时。 它也可能与一个会话不同，例如当管理员修改用户的权限时。 此外，当用户或计算机在网络中或作为 Active Directory 域的一部分运行时，安全上下文通常是不同的。
 
-## <a name="BKMK_LocalDomainsAndTrustedDomains"></a>本地域和受信任域
+## <a name="local-domains-and-trusted-domains"></a><a name="BKMK_LocalDomainsAndTrustedDomains"></a>本地域和受信任域
 如果两个域之间存在信任，则每个域的身份验证机制依赖于来自其他域的身份验证的有效性。 信任通过验证传入身份验证请求是否来自受信任的颁发机构（可信域）来提供对资源域（信任域）中共享资源的受控访问权限。 通过这种方式，信任充当桥，只允许验证的身份验证请求在域之间传输。
 
 特定信任通过身份验证请求的方式取决于其配置方式。 信任关系可以是单向的，即提供从受信任域到信任域中资源的访问权限，或通过提供从每个域到其他域中资源的访问权限来实现双向关系。 信任也是不可传递的，在这种情况下，信任关系仅存在于两个信任伙伴域之间或可传递，在这种情况下，信任会自动扩展到任何合作伙伴信任的其他域。
 
 有关与身份验证有关的域和林信任关系的信息，请参阅[委派的身份验证和信任关系](https://technet.microsoft.com/library/dn169022.aspx)。
 
-## <a name="BKMK_CertificatesInWindowsAuthentication"></a>Windows 身份验证中的证书
+## <a name="certificates-in-windows-authentication"></a><a name="BKMK_CertificatesInWindowsAuthentication"></a>Windows 身份验证中的证书
 公钥基础结构（PKI）是软件、加密技术、过程和服务的组合，使组织可以保护其通信和业务事务。 PKI 用于保护通信和业务事务的能力基于经过身份验证的用户与可信资源之间的数字证书交换。
 
 数字证书是一种电子文档，其中包含有关其所属实体、其颁发者、唯一序列号或一些其他唯一标识、颁发和到期日期以及数字指纹的信息。
@@ -320,11 +316,11 @@ Windows 8 中引入了虚拟智能卡技术。 它将智能卡的证书存储在
 
 **远程和无线身份验证**
 
-远程和无线网络身份验证是使用证书进行身份验证的另一种技术。 Internet 身份验证服务（IAS）和虚拟专用网络服务器使用可扩展的身份验证协议-传输层安全性（EAP-TLS）、受保护的可扩展身份验证协议（PEAP）或 Internet 协议安全性（IPsec）来针对多种类型的网络访问（包括虚拟专用网络（VPN）和无线连接）执行基于证书的身份验证。
+远程和无线网络身份验证是使用证书进行身份验证的另一种技术。 Internet 身份验证服务（IAS）和虚拟专用网络服务器使用可扩展的身份验证协议-传输层安全性（EAP-TLS）、受保护的可扩展身份验证协议（PEAP）或 Internet 协议安全性（IPsec）为多种类型的网络访问（包括虚拟专用网络（VPN）和无线连接）执行基于证书的身份验证。
 
 有关网络中基于证书的身份验证的信息，请参阅[网络访问身份验证和证书](https://technet.microsoft.com/library/cc759575(WS.10).aspx)。
 
-## <a name="BKMK_SeeAlso"></a>另请参阅
+## <a name="see-also"></a><a name="BKMK_SeeAlso"></a>另请参阅
 [Windows 身份验证概念](https://docs.microsoft.com/windows-server/security/windows-authentication/windows-authentication-concepts)
 
 

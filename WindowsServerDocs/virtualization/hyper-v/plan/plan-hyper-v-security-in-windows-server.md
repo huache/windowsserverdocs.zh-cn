@@ -2,26 +2,23 @@
 title: 规划 Windows Server 中的 Hyper-v 安全
 description: 提供 Hyper-v 主机和虚拟机的安全注意事项列表
 ms.prod: windows-server
-ms.service: na
-ms.suite: na
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 115db481-b57e-41c3-8354-504f4bc6113a
 manager: dongill
 author: larsiwer
-ms.author: kathyDav
+ms.author: kathydav
 ms.date: 08/03/2018
-ms.openlocfilehash: 8fd86ae500fff1e6b8c27b0d34d1dcbeeade9f81
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 794f36b688c4c65da8b3925a98c91aea8cf74bde
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392958"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852880"
 ---
 # <a name="plan-for-hyper-v-security-in-windows-server"></a>规划 Windows Server 中的 Hyper-v 安全
 
->适用于：Windows Server 2016，Microsoft Hyper-V Server 2016，Windows Server 2019，Microsoft Hyper-V 服务器2019
+>适用于： Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 保护 Hyper-v 主机操作系统、虚拟机、配置文件和虚拟机数据。 使用以下建议做法列表作为清单来帮助你保护 Hyper-v 环境。
 

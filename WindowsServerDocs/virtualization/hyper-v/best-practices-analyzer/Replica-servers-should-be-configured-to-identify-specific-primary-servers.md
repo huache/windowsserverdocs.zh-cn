@@ -2,20 +2,19 @@
 title: 应将副本服务器配置为标识有权发送复制流量的特定主服务器
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 0aeb1f4b-2e75-430b-9557-fe64738c4992
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 567b20d00d2f245ae7e9577d9d200dca116a9b4d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 649af22f615f2f36baceb1fa23b79c54b038f9c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364745"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861830"
 ---
 # <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>应将副本服务器配置为标识有权发送复制流量的特定主服务器
 
@@ -27,7 +26,7 @@ ms.locfileid: "71364745"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|警告|  
+|**对应**|警告|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  
@@ -59,7 +58,7 @@ ms.locfileid: "71364745"
   
     -   指定一个专用位置以仅存储该服务器的文件。  
   
-7.  单击**确定**。  
+7.  单击“确定”。  
   
 8.  为每个主服务器重复上述步骤。  
   

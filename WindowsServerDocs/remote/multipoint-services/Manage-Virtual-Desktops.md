@@ -1,24 +1,20 @@
 ---
 title: 管理虚拟桌面
 description: 了解如何在 MultiPoint Services 中管理虚拟桌面（VDI）
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fa9ac0ed-47cb-4811-91ff-4fcb62d7858b
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 45bb3e98779bc27913c7e675a9c9db7e575d9d72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 114fde42ca36f9451680066056251bafbe944e56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389587"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853460"
 ---
 # <a name="manage-virtual-desktops"></a>管理虚拟桌面
 使用单机 VDI，你可以将每个*本地*MultiPoint services 工作站配置为连接到与工作站位于同一 MultiPoint 服务计算机上的 hyper-v 虚拟机（VM）中运行的 Windows 10 企业来宾操作系统。 可以使用无法安装在 Windows Server 版本中的应用程序自定义这些虚拟桌面工作站。  
@@ -56,11 +52,11 @@ ms.locfileid: "71389587"
 ## <a name="import-a-virtual-desktop-template"></a>导入虚拟桌面模板  
 如果你在另一台 MultiPoint Server 上创建了一个虚拟桌面模板，则可以通过以下步骤导入该模板。  
 
-1.  打开 MultiPoint Manager，然后单击“虚拟桌面”选项卡。  
+1.    打开 MultiPoint Manager，然后单击“虚拟桌面”选项卡。  
   
-2.  在“VDI 任务”下，单击“导入虚拟桌面模板”。  
+2.    在“VDI 任务”下，单击“导入虚拟桌面模板”。  
   
-3.  定位到该模板，并找到已导入的模板的路径和前缀。  
+3.    定位到该模板，并找到已导入的模板的路径和前缀。  
   
 ## <a name="customize-the-virtual-desktop-template"></a>自定义虚拟桌面模板  
 创建虚拟桌面模板后，你可以使用应用程序和软件更新对其进行自定义，并配置系统设置。   
@@ -76,18 +72,18 @@ ms.locfileid: "71389587"
     > [!NOTE]  
     > 如果 MultiPoint Services 系统未以工作站模式运行，则重启系统，然后完成此过程。  
   
-2.  在左侧的 "\-" 窗格中选择 "虚拟桌面" 模板。 其名称为 <prefix –t>。  
+2.  在左窗格中选择虚拟桌面模板。 其名称为 <prefix –t>。  
   
 3.  在“模板任务”下，单击“创建虚拟桌面工作站”，然后单击“确定”。  
   
     虚拟桌面工作站创建过程需要几分钟时间才能完成。  
   
     > [!NOTE]  
-    > 如果任何本地工作站当前已连接到基于会话\-虚拟桌面，则必须注销这些工作站，才能将其连接到新创建的虚拟桌面工作站之一。  
+    > 如果任意本地工作站当前已连接到基于会话的虚拟桌面，必须注销这些工作站，这样它们才能连接到其中一个新建的虚拟桌面工作站。  
   
 ### <a name="validate-the-newly-created-customized-virtual-station-desktops"></a>验证新建的自定义虚拟工作站桌面  
   
-你可以使用本地管理员帐户或域帐户登录到一个或多个虚拟桌面工作站来验证自定义的虚拟工作站桌面，然后验证基于虚拟机\-的虚拟桌面是否正常工作。  
+可以通过使用本地管理员帐户或域帐户登录到一个或多个虚拟桌面工作站，验证你的自定义虚拟工作站桌面，然后再验证基于 VM 的新虚拟桌面是否正常工作。  
   
 ## <a name="disable-virtual-desktops"></a>禁用虚拟桌面  
   

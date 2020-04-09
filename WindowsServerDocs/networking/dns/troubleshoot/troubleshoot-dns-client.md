@@ -2,18 +2,17 @@
 title: DNS 客户端疑难解答
 description: 本文介绍如何从客户端对 DNS 问题进行故障排除。
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: dd34fae73cdcb20a896750e20d4a28f8777a378a
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: ffc772bafa0027d516194b2741e7680065c0db4b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265769"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860060"
 ---
 # <a name="troubleshooting-dns-clients"></a>DNS 客户端疑难解答
 

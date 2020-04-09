@@ -1,24 +1,20 @@
 ---
 title: 共享文件
 description: 了解如何使用共享文件夹和网络在 MultiPoint Services 中共享文件
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5e138e01-39e3-4d60-ad3c-5a33b1e0b076
 author: lizap
 manager: dongill
 ms.date: 08/04/2016
 ms.author: elizapo
-ms.openlocfilehash: f050691603ed0989ab3b0ea3aac34a5fd74e1fbd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db2707803a6be2db83ac574e7b50c8698d6bd0b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394988"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855610"
 ---
 # <a name="share-files"></a>共享文件
 你可以通过在 Windows 资源管理器中的公用文件夹中存储内容来与其他 MultiPoint 服务用户共享该内容。 MultiPoint 服务系统上的所有用户都可以访问存储在 MultiPoint 服务系统中 Windows 资源管理器的公用文件夹中的所有内容。  
@@ -45,7 +41,7 @@ ms.locfileid: "71394988"
   
 5.  选择特定用户，或单击“所有人”。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [管理用户文件](Manage-User-Files.md)  
 [保存和共享 U 盘上的文件](Save-and-Share-Files-on-a-USB-Flash-Drive.md)  
 [使文件保持私有](Keep-Files-Private.md) 

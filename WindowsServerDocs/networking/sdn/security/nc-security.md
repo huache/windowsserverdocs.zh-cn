@@ -1,20 +1,20 @@
 ---
 title: 网络控制器安全
 description: 你可以使用本主题来了解如何配置网络控制器与其他软件和设备之间所有通信的安全性。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 196a124533b98c6945186ee827494b206028d2c8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 64bcf94c2e439d7999e96de939962a3a14d1246d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317402"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854360"
 ---
 # <a name="secure-the-network-controller"></a>保护网络控制器
 

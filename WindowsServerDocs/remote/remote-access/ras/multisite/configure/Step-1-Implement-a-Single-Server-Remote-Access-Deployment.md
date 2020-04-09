@@ -2,22 +2,18 @@
 title: 步骤1实现单一服务器远程访问部署
 description: 本主题是在 Windows Server 2016 中的多站点部署中部署多台远程访问服务器指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f9086c4f-f950-44a9-93f1-7d03aecdaa60
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6b767a98a78aa73a1fc14ec229cb91a22a38bf81
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: adb4c544414ade99a82acec5a95abe8037a2d404
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314005"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858370"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>步骤1实现单一服务器远程访问部署
 

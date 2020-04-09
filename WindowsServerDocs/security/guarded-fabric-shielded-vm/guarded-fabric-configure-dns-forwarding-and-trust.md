@@ -1,18 +1,18 @@
 ---
 title: 配置 DNS 转发和域信任
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 5d8ffe82065caeee27c5d13f5243f13addc6c325
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6d6ad10dacf9c667069ecd43f38473a3f20bc781
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386736"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856850"
 ---
 # <a name="configure-dns-forwarding-in-the-hgs-domain-and-a-one-way-trust-with-the-fabric-domain"></a>使用 fabric 域在 HGS 域和单向信任中配置 DNS 转发
 
@@ -31,7 +31,7 @@ ms.locfileid: "71386736"
 
 2.  若要创建单向林信任，请在提升的命令提示符下运行以下命令：
 
-    将 `bastion.local` 替换为 HGS 域的名称，并将 `fabrikam.com` 替换为构造域的名称。 为 fabric 域的管理员提供密码。
+    将 `bastion.local` 替换为 HGS 域的名称，并将 `fabrikam.com` 替换为 fabric 域的名称。 为 fabric 域的管理员提供密码。
 
         netdom trust bastion.local /domain:fabrikam.com /userD:fabrikam.com\Administrator /passwordD:<password> /add
 

@@ -1,27 +1,23 @@
 ---
 title: 部署 MultiPoint 服务
 description: MultiPoint 服务部署过程概述
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 842b7b743624aa1e4b168b1be8e94f6d405d07e3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6dff10519a951e002facc200beeb987546f5ee2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395685"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859740"
 ---
 # <a name="deploying-multipoint-services"></a>部署 MultiPoint 服务
-本指南介绍了如何部署运行 MultiPoint 服务的服务器和设置 MultiPoint 工作站、安装和配置系统、设置用户帐户，以及执行一些基本的管理任务，例如打开磁盘保护和设置备份。开始使用系统之前。  
+本指南介绍在开始使用系统之前，如何部署运行 MultiPoint 服务的服务器并设置 MultiPoint 工作站、安装和配置系统、设置用户帐户，以及执行一些基本的管理任务，例如打开磁盘保护和设置备份。  
   
 > [!NOTE]  
 > 有关其他支持，请参阅 MultiPoint 服务帮助，可通过单击任何 MultiPoint 管理器或 MultiPoint 仪表板屏幕上的 "帮助" 图标或 F1 打开。  
@@ -43,7 +39,7 @@ ms.locfileid: "71395685"
   
     开始使用服务器之前，请执行一些基本的服务器管理任务。 启用磁盘保护;安装服务器备份;若要省电，请配置睡眠设置;为域部署配置组策略和注册表。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 - [MultiPoint Services](MultiPoint-Services.md)
 -   [MultiPoint 服务论坛](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)  

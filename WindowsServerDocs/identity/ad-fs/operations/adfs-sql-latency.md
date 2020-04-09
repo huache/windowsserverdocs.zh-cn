@@ -8,12 +8,12 @@ ms.date: 06/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e5e90119066285ae8e04b392a13ab1a38488f5ee
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: b0881bff3455b471b0e51e960e1b0e522508a8b3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265749"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854860"
 ---
 # <a name="fine-tuning-sql-and-addressing-latency-issues-with-ad-fs"></a>利用 AD FS 微调 SQL 和解决延迟问题
 在[AD FS 2016](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294)的更新中，我们引入了以下改进以减少跨数据库延迟。 即将推出的 AD FS 2019 更新将包括这些改进。
@@ -53,7 +53,7 @@ AD FS 为 SQL 更改注册回调，并且在发生更改时，ADFS 会收到通�
  
 其他支持的可配置值： 
 
-   - **maxRelyingPartyEntries** -AD FS 将保留在内存中的信赖方条目的最大数量。 OAuth 应用程序权限缓存也使用此值。 如果有比 RPs 更多的应用程序权限，并且所有这些权限都将存储在内存中，则此值应为应用程序权限的数目。 默认值为 1000。
+   - **maxRelyingPartyEntries** -AD FS 将保留在内存中的信赖方条目的最大数量。 OAuth 应用程序权限缓存也使用此值。 如果有比 RPs 更多的应用程序权限，并且所有这些权限都将存储在内存中，则此值应为应用程序权限的数目。 默认值为1000。
    - **maxIdentityProviderEntries** -这是 AD FS 将保留在内存中的声明提供程序条目的最大数量。 默认值为 200。 
    - **maxClientEntries** -这是 AD FS 将保留在内存中的 OAuth 客户端条目的最大数量。 默认值为 500。 
    - **maxClaimDescriptorEntries** -AD FS 将保留在内存中的声明描述符条目的最大数目。 默认值为 500。 

@@ -1,25 +1,20 @@
 ---
 title: 规划软件定义的网络基础结构
 description: 本主题提供有关如何规划软件定义的网络（SDN）基础结构部署的信息。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: virtual-network
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 83f94d3770c475fca7f5d4b8cc2f5a5ade1a20d7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1542ff2c81ec0b6b4bc598dd5039578a67d0fc3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317466"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854400"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>规划软件定义的网络基础结构
 
@@ -238,7 +233,7 @@ Hyper-v 主机和存储主机中使用的网络接口卡（Nic）需要特定功
 
 Host|硬件要求|软件要求|  
 --------|-------------------------|-------------------------  
-|物理 Hyper-v 主机|4核 2.66 GHz CPU<br /><br />32 GB RAM<br /><br />300 GB 磁盘空间<br /><br />1 Gb/秒（或更快）物理网络适配器|操作系统： Windows Server 2016<br /><br />Hyper-v 角色已安装|  
+|物理 Hyper-v 主机|4核 2.66 GHz CPU<p>32 GB RAM<p>300 GB 磁盘空间<p>1 Gb/秒（或更快）物理网络适配器|操作系统： Windows Server 2016<p>Hyper-v 角色已安装|  
 
 
 **SDN 基础结构虚拟机角色要求**  
@@ -247,8 +242,8 @@ Host|硬件要求|软件要求|
 --------|---------------------|-----------------------|---------------------  
 |网络控制器（三节点）|4个 vcpu|4 GB 分钟（建议 8 GB）|OS 驱动器为 75 GB  
 |SLB/MUX （三节点）|8个 vcpu|建议 8 GB|OS 驱动器为 75 GB  
-|RAS 网关<br /><br />（三个节点网关的单个池，两个活动，一个被动）|8个 vcpu|建议 8 GB|OS 驱动器为 75 GB  
-|用于 SLB/MUX 对等互连的 RAS 网关 BGP 路由器<br /><br />（或者使用 ToR 交换机作为 BGP 路由器）|2个 vcpu|2 GB|OS 驱动器为 75 GB|  
+|RAS 网关<p>（三个节点网关的单个池，两个活动，一个被动）|8个 vcpu|建议 8 GB|OS 驱动器为 75 GB  
+|用于 SLB/MUX 对等互连的 RAS 网关 BGP 路由器<p>（或者使用 ToR 交换机作为 BGP 路由器）|2个 vcpu|2 GB|OS 驱动器为 75 GB|  
 
 
 如果使用 VMM 进行部署，则 VMM 和其他非 SDN 基础结构需要额外的基础结构虚拟机资源。 有关其他信息，请参阅[System Center Technical Preview 的最低硬件建议。](https://technet.microsoft.com/library/dn997303.aspx)  

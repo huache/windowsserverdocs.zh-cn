@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22347a94-aeea-44b4-85fb-af2c968f432a
 title: 使用中心审核策略部署安全审核（示范步骤）
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ecbaa33d83d7b37f376a426571c0d2df89c7695d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9ad3f069eaea6917d29f56a00c6ecde035ecb01d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407113"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861190"
 ---
 # <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>使用中心审核策略部署安全审核（示范步骤）
 
@@ -23,13 +22,13 @@ ms.locfileid: "71407113"
 在这种情况下，你将使用在 "[部署中心访问&#40;策略"&#41;演示步骤](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)中创建的 "财务策略"，对 "财务文档" 文件夹中的文件进行审核访问。 如果未授权访问该文件夹的用户尝试访问它，那么将事件查看器中捕获这一活动。   
  下列步骤是测试本应用场景所必需的。  
   
-|任务|描述|  
+|任务|说明|  
 |--------|---------------|  
 |[配置全局对象访问](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_1)|在这一步中，你在域控制器上配置全局对象访问策略。|  
 |[更新组策略设置](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_2)|登录到文件服务器并应用“组策略”更新。|  
 |[验证是否已应用全局对象访问策略](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_3)|在事件查看器中查看相关事件。 这些事件应包括国家和文档类型的元数据。|  
   
-## <a name="BKMK_1"></a>配置全局对象访问策略  
+## <a name="configure-global-object-access-policy"></a><a name="BKMK_1"></a>配置全局对象访问策略  
 在这一步中，你在域控制器上配置全局对象访问策略。  
   
 #### <a name="to-configure-a-global-object-access-policy"></a>配置全局对象访问策略的步骤  
@@ -65,7 +64,7 @@ ms.locfileid: "71407113"
   
 15. 在导航窗格中，单击 **“对象访问”** ，并在结果窗格中，双击 **“审核句柄操作”** 。 单击 **配置下列审核事件**、 **成功**、和 **失败**，单击 **确定**，然后关闭可变访问 GPO。  
   
-## <a name="BKMK_2"></a>更新组策略设置  
+## <a name="update-group-policy-settings"></a><a name="BKMK_2"></a>更新组策略设置  
 在这一步中，你在创建审核策略之后更新“组策略”设置。  
   
 #### <a name="to-update-group-policy-settings"></a>更新组策略设置的步骤  
@@ -75,11 +74,11 @@ ms.locfileid: "71407113"
 2. 按下 Windows 键+R，然后键入 **cmd** 打开“命令提示符”窗口。  
   
    > [!NOTE]  
-   > 如果出现了“用户帐户控制”对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”。  
+   > 如果出现了 **“用户帐户控制”** 对话框，请确认其中显示的操作为所需的操作，然后单击 **“是”** 。  
   
 3. 键入 **gpupdate /force**，然后按回车。  
   
-## <a name="BKMK_3"></a>验证是否已应用全局对象访问策略  
+## <a name="verify-that-the-global-object-access-policy-has-been-applied"></a><a name="BKMK_3"></a>验证是否已应用全局对象访问策略  
 应用组策略设置之后，你可以验证是否正确应用审核策略设置。  
   
 #### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>验证是否应用全局对象访问策略的步骤  
@@ -91,7 +90,7 @@ ms.locfileid: "71407113"
 > [!IMPORTANT]  
 > 资源所在的计算机上会生成一个新的登录事件，以接受了有效访问检查的用户的名义。 为用户登录活动分析安全审核日志的时候，为了区分因有效访问生成的登录事件与因交互网络用户登录生成的登录事件，必须包含“模拟级别”的信息。 当登录事件是因有效访问生成的，“模拟级别”将会是“标识”。 网络交互用户的登录往往生成一个“模拟级别”=“模拟”或“委派”的登录事件。  
   
-## <a name="BKMK_Links"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
   
 -   [方案：文件访问审核](Scenario--File-Access-Auditing.md)  
   

@@ -1,6 +1,5 @@
 ---
 title: 受保护的结构部署快速入门
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: e060e052-39a0-4154-90bb-b97cc6dde68e
@@ -9,12 +8,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: e2b8400fc7b7f0e01e000fcb2f6472bdb4059ac8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c0e29abf14ff1dded12e7e20a0c0a74f80a91d8e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949802"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856740"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>受保护的结构部署快速入门
 
@@ -105,9 +104,9 @@ Hyper-v 主机需要运行 Windows Server 2016 Datacenter edition 或更高版�
 
 对于 TPM 模式，需要执行以下三项操作： 
 
-1.  来自每个 Hyper-v 主机上的 TPM 2.0 的_公共认可密钥_（或_EKpub_）。 若要捕获 EKpub，请使用 `Get-PlatformIdentifier`。 
-2.  _硬件基准_。 如果每个 Hyper-v 主机都是相同的，则需要使用单个基线。 如果不是这样，则需要为每个硬件类别都有一个。 基线采用可信计算组日志文件的形式，或 TCGlog。 TCGlog 包含主机在 UEFI 固件中通过内核进行的所有操作，最高可为主机完全启动的位置。 若要捕获硬件基准，请安装 Hyper-v 角色和主机保护者 Hyper-v 支持功能并使用 `Get-HgsAttestationBaselinePolicy`。 
-3.  _代码完整性策略_。 如果每个 Hyper-v 主机都是相同的，则需要使用单个 CI 策略。 如果不是这样，则需要为每个硬件类别都有一个。 Windows Server 2016 和 Windows 10 都具有新形式的 CI 策略强制，称为 "_虚拟机监控程序-强制代码完整性" （要求 hvci）_ 。 要求 HVCI 提供强强制，并确保仅允许主机运行受信任的管理员允许其运行的二进制文件。 这些说明包装在添加到 HGS 的 CI 策略中。 在允许运行受防护的 Vm 之前，HGS 会测量每个主机的 CI 策略。 若要捕获 CI 策略，请使用 `New-CIPolicy`。 然后，必须使用 `ConvertFrom-CIPolicy`将策略转换为其二进制格式。
+1.    来自每个 Hyper-v 主机上的 TPM 2.0 的_公共认可密钥_（或_EKpub_）。 若要捕获 EKpub，请使用 `Get-PlatformIdentifier`。 
+2.    _硬件基准_。 如果每个 Hyper-v 主机都是相同的，则需要使用单个基线。 如果不是这样，则需要为每个硬件类别都有一个。 基线采用可信计算组日志文件的形式，或 TCGlog。 TCGlog 包含主机在 UEFI 固件中通过内核进行的所有操作，最高可为主机完全启动的位置。 若要捕获硬件基准，请安装 Hyper-v 角色和主机保护者 Hyper-v 支持功能并使用 `Get-HgsAttestationBaselinePolicy`。 
+3.    _代码完整性策略_。 如果每个 Hyper-v 主机都是相同的，则需要使用单个 CI 策略。 如果不是这样，则需要为每个硬件类别都有一个。 Windows Server 2016 和 Windows 10 都具有新形式的 CI 策略强制，称为 "_虚拟机监控程序-强制代码完整性" （要求 hvci）_ 。 要求 HVCI 提供强强制，并确保仅允许主机运行受信任的管理员允许其运行的二进制文件。 这些说明包装在添加到 HGS 的 CI 策略中。 在允许运行受防护的 Vm 之前，HGS 会测量每个主机的 CI 策略。 若要捕获 CI 策略，请使用 `New-CIPolicy`。 然后，必须使用 `ConvertFrom-CIPolicy`将策略转换为其二进制格式。
 
 ![提取标识、基线和 CI 策略](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 

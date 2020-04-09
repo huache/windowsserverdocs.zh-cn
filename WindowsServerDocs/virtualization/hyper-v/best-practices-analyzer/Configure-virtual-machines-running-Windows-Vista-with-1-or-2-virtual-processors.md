@@ -2,20 +2,19 @@
 title: 配置运行具有1个或2个虚拟处理器的 Windows Vista 的虚拟机
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: e562bce3-fd68-42c9-821c-12022ae4746c
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f0fd83122ce148cfa97147a352ebef4f7cc443cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0319039dfc26d59b1045ffc60f52e56eb900ff76
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364930"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862020"
 ---
 # <a name="configure-virtual-machines-running-windows-vista-with-1-or-2-virtual-processors"></a>配置运行具有1个或2个虚拟处理器的 Windows Vista 的虚拟机
 
@@ -27,7 +26,7 @@ ms.locfileid: "71364930"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|配置|  
+|**对应**|配置|  
 |**类别**|错误|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。  

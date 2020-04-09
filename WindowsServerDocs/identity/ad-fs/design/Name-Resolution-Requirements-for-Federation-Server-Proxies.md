@@ -1,7 +1,6 @@
 ---
 ms.assetid: c28c60ff-693d-49ee-a75b-58f24866217b
 title: 联合服务器代理的名称解析要求
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 51176101b471ec940e2b43a95e1a1a8d37b394f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47c5bd23d3ba82c3df81c71951c2a50db0fe99d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408062"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853040"
 ---
 # <a name="name-resolution-requirements-for-federation-server-proxies"></a>联合服务器代理的名称解析要求
 
@@ -38,7 +37,7 @@ ms.locfileid: "71408062"
 有关使用 NLB 配置群集 IP 地址或群集 FQDN 的详细信息，请参阅[指定群集参数](https://go.microsoft.com/fwlink/?LinkId=75282)。  
   
 ### <a name="1-configure-the-hosts-file-on-the-federation-server-proxy"></a>1.配置联合服务器代理上的主机文件  
-由于外围网络中的 DNS 已配置为将对 fs.fabrikam.com 的所有请求解析到帐户联合服务器代理，因此帐户伙伴联合服务器代理在其本地主机文件中有一个条目，以将 fs.fabrikam.com 解析为实际帐户联合服务器的 IP 地址 \(或连接到公司网络的联合服务器场\) 的群集 DNS 名称。 这样一来，帐户联合服务器代理就可以将主机名 fs.fabrikam.com 解析到帐户联合服务器，而不是解析到自身（如果它尝试使用外围 DNS 查找 fs.fabrikam.com，就会出现这种情况），以便联合身份验证服务器代理可以与联合服务器通信。  
+由于外围网络中的 DNS 已配置为将对 fs.fabrikam.com 的所有请求解析到帐户联合服务器代理，因此帐户伙伴联合服务器代理在其本地主机文件中有一个条目，以将 fs.fabrikam.com 解析为实际帐户联合服务器的 IP 地址 \(或连接到公司网络的联合服务器场\) 的群集 DNS 名称。 这样一来，帐户联合服务器代理就可以将主机名 fs.fabrikam.com 解析到帐户联合服务器，而不是解析到自身（如果它尝试使用外围 DNS 查找 fs.fabrikam.com，则会出现这种情况），以便联合服务器代理可以与联合服务器通信。  
   
 ### <a name="2-configure-perimeter-dns"></a>2.配置外围 DNS  
 由于客户端计算机仅定向到单个 AD FS 主机名（无论它们位于 intranet 上还是在 Internet 上），因此 Internet 上使用外围 DNS 服务器的客户端计算机必须将帐户联合服务器的 FQDN 解析 \(fs.fabrikam.com\) 到外围网络上的帐户联合服务器代理的 IP 地址。 这样，当客户端尝试解析 fs.fabrikam.com 时，它可以将客户端转发到帐户联合服务器代理，外围 DNS 包含一个受限的 corp.fabrikam.com DNS 区域，该区域包含一个主机 \(\) 资源记录用于 fs \(fs.fabrikam.com\)，以及外围网络上的帐户联合服务器代理的 IP 地址。  
@@ -59,7 +58,7 @@ ms.locfileid: "71408062"
 ### <a name="1-configure-perimeter-dns"></a>1.配置外围 DNS  
 对于此方案，因为假设你要将控制的 Internet DNS 区域配置为解析针对特定终结点 URL 发出的请求 \(即，fs.fabrikam.com\) 到外围网络中的联合服务器代理，你还必须在外围 DNS 中将该区域配置为将这些请求转发到企业网络中的联合服务器。  
   
-因此，当客户端尝试解析 fs.fabrikam.com 时，可以将其转发到帐户联合服务器，外围 DNS 配置有一个主机 \(\) 资源记录用于 fs \(fs.fabrikam.com\)，以及企业网络上的帐户联合服务器的 IP 地址。 这样一来，帐户联合服务器代理就可以将主机名 fs.fabrikam.com 解析到帐户联合服务器，而不是解析到自身（如果它尝试使用 Internet DNS 查找 fs.fabrikam.com，就会出现这种情况），以便联合服务器代理可以与联合服务器通信。  
+因此，当客户端尝试解析 fs.fabrikam.com 时，可以将其转发到帐户联合服务器，外围 DNS 配置有一个主机 \(\) 资源记录用于 fs \(fs.fabrikam.com\)，以及企业网络上的帐户联合服务器的 IP 地址。 这样一来，帐户联合服务器代理就可以将主机名 fs.fabrikam.com 解析到帐户联合服务器，而不是解析到自身（如果它尝试使用 Internet DNS 查找 fs.fabrikam.com，则会出现这种情况），以便联合服务器代理可以与联合服务器通信。  
   
 ### <a name="2-configure-internet-dns"></a>2.配置 Internet DNS  
 若要在此方案中成功进行名称解析，必须由所控制的 Internet DNS 区域解析 Internet 上的客户端计算机针对 fs.fabrikam.com 发出的所有请求。 因此，你必须将 Internet DNS 区域配置为将 fs.fabrikam.com 的客户端请求转发到外围网络中帐户联合服务器代理的 IP 地址。  

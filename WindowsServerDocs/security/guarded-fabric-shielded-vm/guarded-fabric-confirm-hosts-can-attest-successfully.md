@@ -1,19 +1,19 @@
 ---
 title: 确认受保护的主机可以证明
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7485796b-b840-4678-9b33-89e9710fbbc7
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 2bab2b653127ae13d27dea76225ada91b3ee8ecc
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: aa2075bda71c6713fa76577b685315118199e63b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940700"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856780"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>确认受保护的主机可以证明
 
@@ -31,7 +31,7 @@ ms.locfileid: "71940700"
 
 3. 配置主机的密钥保护和证明 Url：
 
-    - **通过 Windows powershell**：你可以通过在提升的 Windows powershell 控制台中执行以下命令来配置密钥保护和证明 url。 对于 &lt;FQDN&gt;，请使用 HGS 群集的完全限定的域名（FQDN）（例如，HgsServer），或要求 HGS 管理员在 HGS 服务器上运行 cmdlet 以检索 url。
+    - **通过 Windows powershell**：你可以通过在提升的 Windows powershell 控制台中执行以下命令来配置密钥保护和证明 url。 对于 &lt;FQDN&gt;，请使用 HGS 群集的完全限定的域名（FQDN）（例如，HgsServer），或要求 HGS 管理员在 HGS 服务器上运行**Get-HgsServer** cmdlet 以检索 url。
 
         ```PowerShell
         Set-HgsClientConfiguration -AttestationServerUrl 'http://<FQDN>/Attestation' -KeyProtectionServerUrl 'http://<FQDN>/KeyProtection'

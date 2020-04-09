@@ -2,20 +2,19 @@
 title: 应配置使用虚拟光纤通道适配器配置的虚拟机以实现基于光纤通道的存储的高可用性
 description: 此最佳做法分析器规则文本的联机版本。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 73127bdd-8086-4268-a93c-2fdf1623e91b
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: b4c50ac70b51ab6a2e5cb8247b309070d85932a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e04b52fc98fd79024970ed525e902132d97701e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364559"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855000"
 ---
 # <a name="virtual-machines-configured-with-a-virtual-fibre-channel-adapter-should-be-configured-for-high-availability-to-the-fibre-channel-based-storage"></a>应配置使用虚拟光纤通道适配器配置的虚拟机以实现基于光纤通道的存储的高可用性
 
@@ -27,7 +26,7 @@ ms.locfileid: "71364559"
 |-|-|  
 |**操作系统**|Windows Server 2016|  
 |**产品/功能**|Hyper-V|  
-|**Severity**|信息|  
+|**对应**|信息|  
 |**类别**|配置|  
   
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。

@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: ed7d7ca4f41784f2ae12220eb2e30077e2467175
-ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
+ms.openlocfilehash: 1a320a53ccda78ea19c8dc7b8e22c2bb2c1d236b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79518742"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854110"
 ---
 # <a name="storage-quality-of-service"></a>存储服务质量
 
@@ -31,10 +31,10 @@ ms.locfileid: "79518742"
 
 本文档概述了你的业务如何从新的存储 QoS 功能中获益。 它假定你已具备 Windows Server、Windows Server 故障转移群集、横向扩展文件服务器、Hyper-V 和 Windows PowerShell 的工作知识。
 
-## <a name="BKMK_Overview"></a>叙述  
+## <a name="overview"></a><a name="BKMK_Overview"></a>叙述  
 本部分介绍使用存储 QoS 的要求、使用存储 QoS 的软件定义的解决方案的概述，以及与存储 QoS 相关的术语列表。  
 
-### <a name="BKMK_Requirements"></a>存储 QoS 要求  
+### <a name="storage-qos-requirements"></a><a name="BKMK_Requirements"></a>存储 QoS 要求  
 存储 QoS 支持两种部署方案：  
 
 -   **使用横向扩展文件服务器的 Hyper-V** 此方案需要以下两项：  
@@ -55,7 +55,7 @@ ms.locfileid: "79518742"
 
 需要故障转移群集。 所有服务器必须运行同一版本的 Windows Server 2016。  
 
-### <a name="BKMK_SolutionOverview"></a>在软件定义的存储解决方案中使用存储 QoS  
+### <a name="using-storage-qos-in-a-software-defined-storage-solution"></a><a name="BKMK_SolutionOverview"></a>在软件定义的存储解决方案中使用存储 QoS  
 存储服务质量被构建在由横向扩展文件服务器和 Hyper-V 提供的 Microsoft 软件定义的存储解决方案中。 横向扩展文件服务器使用 SMB3协议向 Hyper-V 服务器公开文件共享。 新的策略管理器已被添加到文件服务器群集，它提供中央存储性能监视。  
 
 ![横向扩展文件服务器和存储 QoS](media/overview-Clustering_SOFSStorageQoS.png)  
@@ -66,11 +66,11 @@ ms.locfileid: "79518742"
 
 当存在由虚拟机对存储 QoS 策略或性能需求进行的更改时，策略管理器将通知 Hyper-V 服务器调整其行为。 此反馈循环确保所有虚拟机 VHD 根据定义的存储 QoS 策略一致地执行。  
 
-### <a name="BKMK_Glossary"></a>词汇表  
+### <a name="glossary"></a><a name="BKMK_Glossary"></a>词汇表  
 
 |术语|说明|  
 |--------|---------------|  
-|规范化 IOPs|所有的存储使用情况以“规范化 IOPs”测量。  这是每秒的存储输入/输出操作数。  任何 8 KB 或更小的 IO 被视为一个规范化 IO。  任何大于 8 KB 的 IO 被视为多个规范化 IO。 例如，一个 256 KB 的请求被视为 32 个规范化 IOPs。<br /><br />Windows Server 2016 包括指定用于规范化 IO 的大小的功能。  在存储群集上，可以指定规范化大小，并使其在规范化计算群集范围内生效。  默认值仍为 8 KB。|  
+|规范化 IOPs|所有的存储使用情况以“规范化 IOPs”测量。  这是每秒的存储输入/输出操作数。  任何 8 KB 或更小的 IO 被视为一个规范化 IO。  任何大于 8 KB 的 IO 被视为多个规范化 IO。 例如，一个 256 KB 的请求被视为 32 个规范化 IOPs。<p>Windows Server 2016 包括指定用于规范化 IO 的大小的功能。  在存储群集上，可以指定规范化大小，并使其在规范化计算群集范围内生效。  默认值仍为 8 KB。|  
 |流|由 Hyper-V 服务器打开到 VHD 或 VHDX 文件的每个文件句柄均可视为一个“流”。 如果一个虚拟机连接了两个虚拟硬盘，则该虚拟机的每个文件的文件服务器群集均有一个流。 如果 VHDX 与多个虚拟机共享，则它的每个虚拟机均有一个流。|  
 |InitiatorName|针对每个流的横向扩展文件服务器报告的虚拟机的名称。|  
 |InitiatorID|与虚拟机 ID 匹配的标识符。  这可始终用于对单个流虚拟机进行唯一标识，即使该虚拟机具有相同的 InitiatorName。|  
@@ -81,10 +81,10 @@ ms.locfileid: "79518742"
 |聚合 |一种策略类型，其中指定的MinimumIOPS 和 MaximumIOPS 以及带宽在由策略分配的所有流之间共享。 所有 VHD 分配的该存储系统上的策略均具有单个 I/O 带宽的分配，以供其全部共享。|  
 |专用|一种策略类型，其中对指定的最小和最大 IOPS 以及带宽进行管理，以供单个 VHD/VHDx 使用。|  
 
-## <a name="BKMK_SetUpQoS"></a>如何设置存储 QoS 和监视基本性能  
+## <a name="how-to-set-up-storage-qos-and-monitor-basic-performance"></a><a name="BKMK_SetUpQoS"></a>如何设置存储 QoS 和监视基本性能  
 本部分介绍如何启用新的存储 QoS 功能以及如何在未应用自定义策略的情况下监视存储性能。  
 
-### <a name="BKMK_SetupStorageQoSonStorageCluster"></a>在存储群集上设置存储 QoS  
+### <a name="set-up-storage-qos-on-a-storage-cluster"></a><a name="BKMK_SetupStorageQoSonStorageCluster"></a>在存储群集上设置存储 QoS  
 本部分介绍如何在新的或现有的故障转移群集以及运行 Windows Server 2016 的横向扩展文件服务器上启用存储 QoS。  
 
 #### <a name="set-up-storage-qos-on-a-new-installation"></a>在新的安装上设置存储 QoS  
@@ -107,7 +107,7 @@ Name                   State      OwnerGroup        ResourceType
 Storage Qos Resource   Online     Cluster Group     Storage QoS Policy Manager  
 ```  
 
-### <a name="BKMK_SetupStorageQoSonComputeCluster"></a>在计算群集上设置存储 QoS  
+### <a name="set-up-storage-qos-on-a-compute-cluster"></a><a name="BKMK_SetupStorageQoSonComputeCluster"></a>在计算群集上设置存储 QoS  
 Windows Server 2016 中的 Hyper-V 角色具有对存储 QoS 的内置支持并默认启用。  
 
 #### <a name="install-remote-administration-tools-to-manage-storage-qos-policies-from-remote-computers"></a>安装远程管理工具以管理来自远程计算机的存储 QoS 策略  
@@ -289,7 +289,7 @@ MaximumIops    : 0
 MinimumIops    : 781  
 ```  
 
-## <a name="BKMK_CreateQoSPolicies"></a>如何创建和监视存储 QoS 策略  
+## <a name="how-to-create-and-monitor-storage-qos-policies"></a><a name="BKMK_CreateQoSPolicies"></a>如何创建和监视存储 QoS 策略  
 本部分介绍如何创建存储 QoS 策略、如何向虚拟机应用这些策略以及在应用策略后如何监视存储群集。  
 
 ### <a name="create-storage-qos-policies"></a>创建存储 QoS 策略  
@@ -531,10 +531,10 @@ WinOltp1      7e2f3e73-1ae4-4710-8219-0769a4aba072        1500         250      
 WinOltp1      7e2f3e73-1ae4-4710-8219-0769a4aba072        6000        1000            4507  
 ```  
 
-## <a name="BKMK_KnownIssues"></a>如何识别和解决常见问题  
+## <a name="how-to-identify-and-address-common-issues"></a><a name="BKMK_KnownIssues"></a>如何识别和解决常见问题  
 本部分介绍如何查找具有无效存储 QoS 策略的虚拟机、如何重新创建匹配的策略、如何从虚拟机删除策略以及如何标识不符合存储 QoS 策略要求的虚拟机。  
 
-### <a name="BKMK_FindingVMsWithInvalidPolicies"></a>标识具有无效策略的虚拟机  
+### <a name="identify-virtual-machines-with-invalid-policies"></a><a name="BKMK_FindingVMsWithInvalidPolicies"></a>标识具有无效策略的虚拟机  
 
 将策略从虚拟机删除前，如果策略已从文件服务器删除，则如果未应用任何策略，虚拟机将继续运行。  
 
@@ -578,7 +578,7 @@ WinOltp1      UnknownPolicyId           0           0            4926 UnknownPol
 WinOltp1      UnknownPolicyId           0           0               0 UnknownPolicyId BOO...  
 ```  
 
-#### <a name="BKMK_RecreateMatchingPolicy"></a>重新创建匹配的存储 QoS 策略  
+#### <a name="recreate-a-matching-storage-qos-policy"></a><a name="BKMK_RecreateMatchingPolicy"></a>重新创建匹配的存储 QoS 策略  
 如果无意中删除了策略，则可以使用旧的 PolicyId 创建一个新策略。  首先，获取所需的 PolicyId  
 
 ```PowerShell
@@ -629,7 +629,7 @@ TR20-VMM          Ok          33         666              10     Ok BOOT.VHDX
 WinOltp1          Ok          25         500               0     Ok 9914.0.AMD64FRE.WINMA...  
 ```  
 
-#### <a name="BKMK_RemovePolicyFromVM"></a>删除存储 QoS 策略  
+#### <a name="remove-storage-qos-policies"></a><a name="BKMK_RemovePolicyFromVM"></a>删除存储 QoS 策略  
 
 如果策略是有意删除的，或如果随 VM 导入了你并不需要的策略，则它可能会被删除。  
 
@@ -667,7 +667,7 @@ WinOltp1                0           0            1811     Ok IOMETER.VHDX
 WinOltp1                0           0               0     Ok BOOT.VHDX  
 ```  
 
-### <a name="BKMK_VMsThatDoNotMeetStorageQoSPoilicies"></a>查找不符合存储 QoS 策略的虚拟机  
+### <a name="find-virtual-machines-that-are-not-meeting-storage-qos-policies"></a><a name="BKMK_VMsThatDoNotMeetStorageQoSPoilicies"></a>查找不符合存储 QoS 策略的虚拟机  
 **InsufficientThroughput** 状态将分配到以下任何流：  
 
 -   具有由策略设置的指定的最小 IOPs；且  
@@ -729,7 +729,7 @@ MaximumIops        : 20000
 MinimumIops        : 15000  
 ```  
 
-## <a name="BKMK_Health"></a>使用存储 QoS 监视运行状况  
+## <a name="monitor-health-using-storage-qos"></a><a name="BKMK_Health"></a>使用存储 QoS 监视运行状况  
 新的运行状况服务简化了存储群集的监视，你在一个位置即可检查任意节点中是否存在可操作事件。 本部分介绍如何使用 `debug-storagesubsystem` cmdlet 监视你的存储群集的运行状况。  
 
 ### <a name="view-storage-status-with-debug-storagesubsystem"></a>使用 Debug-StorageSubSystem 查看存储状态  
@@ -823,7 +823,7 @@ while ($true)
 
 如果你具有达到策略最大值的流，且将该策略的值更改为更高或更低，然后使用 PowerShell cmdlets 立即确定流的延迟/IOPS/带宽，则需要最多 5 分钟才能看到流上的策略更改所产生的全部效果。  新的限制将在几秒内生效，但是 **Get-StorgeQoSFlow PowerShell cmdlet** 通过使用 5 分钟的滑动窗口来使用每个计数器的平均值。  否则，如果它显示当前值，且你在行中多次运行 PowerShell cmdlet，则你将会看到完全不同的值，因为 IOPS 和延迟的值从一秒到另一秒波动很大。
 
-### <a name="BKMK_Updates"></a>Windows Server 2016 中新增了哪些功能
+### <a name="what-new-functionality-was-added-in-windows-server-2016"></a><a name="BKMK_Updates"></a>Windows Server 2016 中新增了哪些功能
 
 Windows Server 2016 中已重命名存储 QoS 策略类型名称。  **多实例**策略类型被重命名为**专用**，而**单实例**被重命名为**聚合**。 专用策略的管理行为也被修改 - 具有应用于同一**专用**策略的同一虚拟机内的 VHD/VHDX 文件将不会共享 I/O 分配。  
 

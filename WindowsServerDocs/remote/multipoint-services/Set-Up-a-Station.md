@@ -1,31 +1,27 @@
 ---
 title: 设置工作站
 description: 了解如何在 MultiPoint Services 中设置工作站
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dce05b6c-795e-43b2-9920-026550b873c5
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 95a332a3d15e82047b46cc19f168f945cdb334d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c3d40346402131e64c437da12f1ff89b4eb3f8f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389453"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853940"
 ---
 # <a name="set-up-a-station"></a>设置工作站
 MultiPoint 服务工作站通常包括工作站集线器、鼠标、键盘和视频显示器。 本主题描述如何将硬件设备连接到工作站集线器，以创建 MultiPoint 服务工作站。  
   
 工作站集线器是一种将外围设备连接到 MultiPoint 服务系统中的计算机的硬件设备。 MultiPoint 服务支持两种类型的工作站集线器：  
   
--   **USB 集线器：** 符合通用串行总线2.0 或更高规格的通用多端口 USB 扩展集线器。 此类集线器通常有两个、四个或更多个 USB 端口，可以将多个 USB 设备连接到计算机上的单个 USB 端口。 USB 集线器通常是由外部供电或总线供电的独立设备。 作为工作站集线器配合 MultiPoint 服务使用时，建议使用带有四个或更多端口的集线器。  
+-   **USB 集线器：** 一种符合通用串行总线 2.0 或更高规格的通用多端口 USB 扩展集线器。 此类集线器通常有两个、四个或更多个 USB 端口，可以将多个 USB 设备连接到计算机上的单个 USB 端口。 USB 集线器通常是由外部供电或总线供电的独立设备。 作为工作站集线器配合 MultiPoint 服务使用时，建议使用带有四个或更多端口的集线器。  
   
     > [!IMPORTANT]  
     > 如果你打算将键盘和鼠标以外的 USB 设备连接到集线器，为达到最佳性能，建议使用外部供电的集线器。  
@@ -81,7 +77,7 @@ MultiPoint 服务工作站通常包括工作站集线器、鼠标、键盘和视
   
 7.  MultiPoint 服务启动。 如果系统提示，请按照新工作站的视频显示器上显示的说明*将设备关联*到新的工作站。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 [结束用户会话](End-a-User-Session.md)  
 [重启或关闭](Restart-or-Shut-Down.md)  
 [管理工作站硬件](Manage-Station-Hardware.md)  

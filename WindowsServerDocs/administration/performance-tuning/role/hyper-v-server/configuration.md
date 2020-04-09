@@ -4,15 +4,15 @@ description: 用于性能优化的 hyper-v 配置注意事项
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f21115265ca7d2788fc0be078860048602d82c0f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3c4fa32b97761ad05c88722ef090f96fff21cf3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370160"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851790"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V 配置
 
@@ -34,7 +34,7 @@ ms.locfileid: "71370160"
 
 -   **存储**
 
-    存储硬件应具有足够的 i/o 带宽和容量，以满足物理服务器托管的虚拟机当前和未来的需要。 选择存储控制器和磁盘并选择 RAID 配置时，请考虑以下要求。 在不同的物理磁盘上放置具有大量磁盘密集型工作负荷的虚拟机可能会提高整体性能。 例如，如果有四个虚拟机共享单个磁盘并主动使用，则每个虚拟机只能产生该磁盘的 25% 的带宽。
+    存储硬件应具有足够的 i/o 带宽和容量，以满足物理服务器托管的虚拟机当前和未来的需要。 选择存储控制器和磁盘并选择 RAID 配置时，请考虑以下要求。 在不同的物理磁盘上放置具有大量磁盘密集型工作负荷的虚拟机可能会提高整体性能。 例如，如果有四个虚拟机共享单个磁盘并主动使用，则每个虚拟机只能产生该磁盘的25% 的带宽。
 
 ## <a name="power-plan-considerations"></a>电源计划注意事项
 
@@ -76,18 +76,18 @@ Hyper-v 发布性能计数器以帮助描述虚拟化服务器的行为，并报
 
 应始终使用 Hyper-v 虚拟机监控程序逻辑处理器性能计数器来度量物理系统的 CPU 使用情况。 根和子分区中的任务管理器和性能监视器报表的 CPU 使用率计数器不反映实际的物理 CPU 使用情况。 使用下列性能计数器来监视性能：
 
-- **Hyper-v 虚拟机监控程序逻辑处理器（\*） \\% 总运行时间**逻辑处理器的非空闲时间总计
+- **Hyper-v 虚拟机监控程序逻辑处理器（\*）\\% 总运行时间**逻辑处理器的非空闲时间总计
 
-- **Hyper-v 虚拟机监控程序逻辑处理器（\*） \\% 来宾运行时间**在来宾内或主机内运行周期所用的时间
+- **Hyper-v 虚拟机监控程序逻辑处理器（\*）\\% Guest 运行时间**在来宾内或主机内运行周期所用的时间
 
-- **Hyper-v 虚拟机监控程序逻辑处理器（\*） \\% 监控程序运行时间**在虚拟机监控程序中运行所用的时间
+- **Hyper-v 虚拟机监控程序逻辑处理器（\*）\\% 监控程序运行时间**在虚拟机监控程序中运行所用的时间
 
-- **Hyper-v 虚拟机监控程序根虚拟处理器（\*）\\\\** * 测量根分区的 CPU 使用率
+- **Hyper-v 虚拟机监控程序根虚拟处理器（\*）\\\\** * 度量根分区的 CPU 使用情况
 
-- **Hyper-v 虚拟机监控程序虚拟处理器（\*）\\\\** * 测量来宾分区的 CPU 使用情况
+- **Hyper-v 虚拟机监控程序虚拟处理器（\*）\\\\** * 度量来宾分区的 CPU 使用情况
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [Hyper-V 术语](terminology.md)
 

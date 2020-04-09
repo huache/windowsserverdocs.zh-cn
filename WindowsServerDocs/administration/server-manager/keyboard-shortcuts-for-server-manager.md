@@ -1,39 +1,35 @@
 ---
 title: 服务器管理器的键盘快捷方式
 description: 服务器管理器
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 96a2a8be-cbeb-4799-9034-284ea057915c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a78a9eb0923a067fe2a8f1c9faee38b9d7f8b944
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8135f453f633f8193fa56d80ae05cd9601435c87
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383172"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851510"
 ---
 # <a name="keyboard-shortcuts-for-server-manager"></a>服务器管理器的键盘快捷方式
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 由于从 Windows Server 2012 开始完全重新设计了服务器管理器，因此，在 Windows Server 2008 R2 或 Windows Server 2008 的服务器管理器控制台中工作的键盘快捷方式不一定是相同的命令。 本主题介绍 Windows Server 2012 和更新版本的 Windows Server 中服务器管理器的新键盘快捷方式和访问键。
 
 对于没有键盘快捷方式或访问键的命令，可在其控件组位于焦点时，按 **Tab** 键在控件组中逐一移动进行访问。
 
-## <a name="access-keys"></a>访问键
+## <a name="access-keys"></a>访问密钥
 **服务器管理器中的活动控件区域**
 
 **欢迎磁贴**
 
-|控件组|访问键|
+|控件组|访问密钥|
 |---------|-------|
 |欢迎磁贴-快速入门选项卡|**Alt + Q**|
 |“欢迎”磁贴 - “最近更新”选项卡|**Alt + W**|
@@ -42,20 +38,20 @@ ms.locfileid: "71383172"
 
 **角色和组缩略图**
 
-|控件组|访问键|
+|控件组|访问密钥|
 |---------|-------|
 |“角色和服务器组”磁贴|**Alt + R**|
 
 **控制台标头控件**
 
-|控件组|访问键|
+|控件组|访问密钥|
 |---------|-------|
 |地址栏中的后退按钮|**Alt+向左键**或 **Backspace**|
 |地址栏中的 "前进" 按钮|**Alt + 向右键**|
 |刷新|**F5**|
 |通知区域，打开 "任务详细信息" 对话框|**Alt + N**|
 |“管理”菜单|**Alt + M**|
-|“查看”菜单|**Alt + V**|
+|“视图”菜单|**Alt + V**|
 |帮助菜单|**Alt + H**|
 |打开服务器管理器帮助|**按**|
 |放大|**Ctrl + 加号（+）**|
@@ -64,7 +60,7 @@ ms.locfileid: "71383172"
 
 **角色、组或本地服务器页面上的磁贴**
 
-|控件组|访问键|
+|控件组|访问密钥|
 |---------|-------|
 |“本地服务器”页面“属性”磁贴|**Alt + P**|
 |角色、组或本地服务器页面“事件”磁贴|**Alt + E**|
@@ -76,12 +72,12 @@ ms.locfileid: "71383172"
 
 **在 "本地服务器属性" 磁贴中导航**
 
-|控件组|访问键|
+|控件组|访问密钥|
 |---------|-------|
-|计算机名称|**Alt + C**|
+|计算机名|**Alt + C**|
 |上次安装更新的时间|**Alt + L**|
 |域或工作组|**Alt + D**|
-|Windows 更新|**Alt + W**|
+|Windows Update|**Alt + W**|
 |上次检查更新的时间|**Alt + S**|
 |远程管理|**Alt + R**|
 |Windows 防火墙|**Alt + F**|
@@ -95,7 +91,7 @@ ms.locfileid: "71383172"
 
 **在事件、服务、BPA、性能以及角色和功能磁贴中导航**
 
-|控件组|访问键|
+|控件组|访问密钥|
 |---------|-------|
 |“任务”菜单|**Alt + T**|
 |筛选器控件|**Alt + F**|

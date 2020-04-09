@@ -2,17 +2,17 @@
 title: 存储空间直通的嵌套复原
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dansimp
+manager: dansimp
 ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: ea1c4b2c249759634e00f6a1ac2caa34f8085ae1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac4edccf0c1f8882dd2544b2544c3d8555bbc716
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402870"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857340"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>存储空间直通的嵌套复原
 
@@ -20,14 +20,14 @@ ms.locfileid: "71402870"
 
 嵌套复原是 Windows Server 2019 中[存储空间直通](storage-spaces-direct-overview.md)的一项新功能，它使两个服务器的群集能够同时承受多个硬件故障，而不会丢失存储可用性，因此用户、应用和虚拟机将继续运行而不中断。 本主题介绍了它的工作原理，提供了入门的分步说明，并回答了常见问题。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
-### <a name="green-checkmark-iconmedianested-resiliencysupportedpng-consider-nested-resiliency-if"></a>![绿色复选标记图标。](media/nested-resiliency/supported.png) 如果有以下情况，请考虑嵌套复原：
+### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![绿色复选标记图标。](media/nested-resiliency/supported.png) 如果有以下情况，请考虑嵌套复原：
 
 - 群集运行 Windows Server 2019;与
 - 群集正好有2个服务器节点
 
-### <a name="red-x-iconmedianested-resiliencyunsupportedpng-you-cant-use-nested-resiliency-if"></a>![红色 X 图标。](media/nested-resiliency/unsupported.png) 以下情况不能使用嵌套复原：
+### <a name="red-x-icon-you-cant-use-nested-resiliency-if"></a>![红色 X 图标。](media/nested-resiliency/unsupported.png) 以下情况不能使用嵌套复原：
 
 - 群集运行 Windows Server 2016;或
 - 群集有3个或更多服务器节点
@@ -151,7 +151,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 | 服务器停机，前30分钟   | 缓存读取和写入，完全性能 | 否（临时）               |
 | 前30分钟后          | 仅缓存读取，性能受到影响   | 是（在缓存写入容量驱动器后）                           |
 
-## <a name="frequently-asked-questions"></a>常见问题解答
+## <a name="frequently-asked-questions"></a>常见问题
 
 ### <a name="can-i-convert-an-existing-volume-between-two-way-mirror-and-nested-resiliency"></a>能否在双向镜像和嵌套复原之间转换现有卷？
 
@@ -171,11 +171,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>嵌套复原是否会改变驱动器更换的工作方式？
 
-不相同。
+No。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>嵌套复原是否会改变服务器节点替换的工作方式？
 
-不相同。 若要替换服务器节点及其驱动器，请遵循以下顺序：
+No。 若要替换服务器节点及其驱动器，请遵循以下顺序：
 
 1. 停用传出服务器中的驱动器
 2. 将新服务器及其驱动器添加到群集

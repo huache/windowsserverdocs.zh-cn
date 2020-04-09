@@ -1,27 +1,23 @@
 ---
 title: 步骤 1：为 Windows Server Essentials 迁移准备源服务器。
 description: 描述如何使用 Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cb0cffdda0e0f1528887d3c94a1905a99c5c55c3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b673f9987aa3617b6f3f5298223372dc9edfe646
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318786"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852380"
 ---
-# <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>步骤 1：为 Windows Server Essentials 迁移准备源服务器。
-
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+
+# <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>步骤 1：为 Windows Server Essentials 迁移准备源服务器。
 
 本主题介绍如何备份源服务器、评估源服务器系统运行状况、安装最新的 Service Pack 和修补程序，以及验证网络配置。  
 

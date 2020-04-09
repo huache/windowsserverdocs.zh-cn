@@ -4,15 +4,15 @@ description: PowerShell 模块创作注意事项
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: JasonSh
+ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 8945339e7a7950d3cd722ab2af629b45e7f6dd5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 25b202e56286b7c26c3150642a656eb31a120808
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370357"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851930"
 ---
 # <a name="powershell-module-authoring-considerations"></a>PowerShell 模块创作注意事项
 
@@ -28,10 +28,10 @@ ms.locfileid: "71370357"
 
 ### <a name="guidelines"></a>指南
 
-* 在模块清单中，不要在 `AliasesToExport`、`CmdletsToExport` 和 `FunctionsToExport` 条目中使用通配符。
+* 在模块清单中，不要在 `AliasesToExport`、`CmdletsToExport`和 `FunctionsToExport` 项中使用通配符。
 
-* 如果该模块未导出特定类型的命令，则通过指定 `@()` 在清单中显式指定此项。
-缺少或 `$null` 条目等效于指定通配符 `*`。
+* 如果该模块未导出特定类型的命令，则通过指定 `@()`在清单中显式指定此项。
+缺少或 `$null` 项等效于指定通配符 `*`。
 
 应尽量避免以下情况：
 

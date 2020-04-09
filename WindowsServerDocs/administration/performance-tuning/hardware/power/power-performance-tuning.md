@@ -4,15 +4,15 @@ description: Windows Server 平衡电源计划的处理器电源管理（PPM）�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f1d5e2f3f17c40f262b8cea98c04e3347790ba8
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 1457328a151c87d2d4cb41c4ee91b4759f4fb8e2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001822"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851990"
 ---
 # <a name="power-and-performance-tuning"></a>电源和性能优化
 
@@ -100,7 +100,7 @@ Intel Turbo 提升和 AMD Turbo 核心技术是允许处理器在最有用的情
 > [!Note]
 > 仅 Intel Westmere 和更高版本的处理器支持 EPB 注册。
 
-对于 Intel Nehalem 和 AMD 处理器，默认情况下，在基于 P 状态的平台上禁用 Turbo。 但是，如果系统支持协作处理器性能控制（CPPC），这是操作系统与硬件（在 ACPI 5.0 中定义）之间的一种新的替代模式，则在 Windows 操作系统会动态请求硬件，以提供可能的最高性能级别。
+对于 Intel Nehalem 和 AMD 处理器，默认情况下，在基于 P 状态的平台上禁用 Turbo。 但是，如果系统支持协作处理器性能控制（CPPC）（这是操作系统和硬件（在 ACPI 5.0 中定义）的一种新的替代模式，则在 Windows 操作系统动态请求硬件以提供可能的最高性能级别的情况下，可以使用 Turbo。
 
 若要启用或禁用 Turbo 提升功能，必须由管理员或所选电源计划的默认参数设置来配置处理器性能提升模式参数。 处理器性能提升模式包含5个允许的值，如表5所示。
 
@@ -191,7 +191,7 @@ Powercfg.exe /setactive scheme_current
 
 如果你的服务器具有特定的核心休止要求，则可以通过使用 Windows Server 2016 中的**处理器性能核心休止最大**核心数参数或**处理器性能核心休止最小**核心参数来控制可用于寄存的内核数。
 
-核心停车场并非始终适合的一种情况是：有一个或多个活动线程关联到 NUMA 节点中的一小部分 Cpu （即大于1个 CPU，但低于节点上的整个 Cpu 集）。 当核心休止算法将核心提取到 unpark （假设发生了工作负荷强度增加）时，它可能不会始终选取活动关联子集（或多个子集）中的核心来进行 unpark，因此可能最终不会出现 unparking 的核心超载.
+核心停车场并非始终适合的一种情况是：有一个或多个活动线程关联到 NUMA 节点中的一小部分 Cpu （即大于1个 CPU，但低于节点上的整个 Cpu 集）。 当核心休止算法将核心提取到 unpark （假设发生了工作负荷强度增加）时，它可能不会始终选取活动关联子集（或多个子集）中的核心来进行 unpark，因此可能最终不会使用 unparking 的核心。
 
 这些参数的值是介于0–100范围内的百分比。 **处理器性能核心 "停车最大核心**数" 参数控制可随时离开（可用于运行线程）的内核的最大百分比，而 "**处理器性能" 核心 "停车最小内核**数" 参数控制可离开的内核的最小百分比。 若要关闭核心停车，请使用以下命令将**处理器性能核心休止最小核心**参数设置为100%：
 

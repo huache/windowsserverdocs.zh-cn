@@ -1,24 +1,20 @@
 ---
 title: openfiles
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c3be561d-a11f-4bf1-9835-8e4e96fe98ec
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38b1d27b86551c6d4cd9e6b1ad87bfc0e8dd221d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f684acc48fbb279ced8ce1dfb3a930ff15f3bf13
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372499"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837820"
 ---
 # <a name="openfiles"></a>openfiles
 
@@ -31,7 +27,7 @@ ms.locfileid: "71372499"
 -   [openfiles/query](#BKMK_query)
 -   [openfiles/local](#BKMK_local)
 
-## <a name="BKMK_disconnect"></a>openfiles/disconnect
+## <a name="openfiles-disconnect"></a><a name=BKMK_disconnect></a>openfiles/disconnect
 
 允许管理员断开通过共享文件夹远程打开的文件和文件夹。
 
@@ -41,9 +37,9 @@ ms.locfileid: "71372499"
 openfiles /disconnect [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/id <OpenFileID>] | [/a <AccessedBy>] | [/o {read | write | read/write}]} [/op <OpenFile>]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|            参数             |                                                                                                                                 描述                                                                                                                                  |
+|            参数             |                                                                                                                                 说明                                                                                                                                  |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           /s \<系统 >           | 指定要连接到的远程系统（按名称或 IP 地址）。 不要使用反斜杠。 如果不使用 **/s**选项，则默认情况下会在本地计算机上执行命令。 此参数适用于命令中指定的所有文件和文件夹。 |
 |    /u [\<域 >\]<UserName>     |                                                          使用指定用户帐户的权限执行命令。 如果不使用 **/u**选项，则默认情况下会使用系统权限。                                                           |
@@ -60,7 +56,7 @@ openfiles /disconnect [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]]
 ```
 openfiles /disconnect /id 26843578
 ```
-要断开用户 "hiropln" 访问的所有打开的文件和目录的连接，请键入：
+若要断开用户 hiropln 访问的所有打开的文件和目录，请键入：
 ```
 openfiles /disconnect /a hiropln
 ```
@@ -68,16 +64,16 @@ openfiles /disconnect /a hiropln
 ```
 openfiles /disconnect /o read/write
 ```
-若要断开目录与打开的文件名 "C:\TestShare\"的连接，而不考虑访问该目录的用户，请键入：
+若要将目录与打开的文件名\, C:\TestShare 断开连接，而不考虑访问它的用户，请键入：
 ```
-openfiles /disconnect /a * /op "c:\testshare\"
+openfiles /disconnect /a * /op c:\testshare\
 ```
-要断开用户 "hiropln" 正在访问的远程计算机 "srvmain" 上所有打开的文件的连接，请键入：
+要断开用户 hiropln 正在访问的远程计算机 srvmain 上所有打开的文件的连接，请键入：
 ```
 openfiles /disconnect /s srvmain /u maindom\hiropln /id *
 ```
 
-## <a name="BKMK_query"></a>openfiles/query
+## <a name="openfiles-query"></a><a name=BKMK_query></a>openfiles/query
 
 查询并显示所有打开的文件。
 
@@ -87,9 +83,9 @@ openfiles /disconnect /s srvmain /u maindom\hiropln /id *
 openfiles /query [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] [/fo {TABLE | LIST | CSV}] [/nh] [/v]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|          参数           |                                                                                                                                 描述                                                                                                                                  |
+|          参数           |                                                                                                                                 说明                                                                                                                                  |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         /s \<系统 >         | 指定要连接到的远程系统（按名称或 IP 地址）。 不要使用反斜杠。 如果不使用 **/s**选项，则默认情况下会在本地计算机上执行命令。 此参数适用于命令中指定的所有文件和文件夹。 |
 |  /u [\<域 >\]<UserName>   |                                                          使用指定用户帐户的权限执行命令。 如果不使用 **/u**选项，则默认情况下会使用系统权限。                                                           |
@@ -113,7 +109,7 @@ openfiles /query /fo table /nh
 ```
 openfiles /query /fo list /v
 ```
-若要通过使用 "maindom" 域上用户 "hiropln" 的凭据在远程系统 "srvmain" 上查询和显示所有打开的文件，请键入：
+若要使用 maindom 域上用户 hiropln 的凭据查询并显示远程系统 srvmain 上所有打开的文件，请键入：
 ```
 openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 ```
@@ -121,7 +117,7 @@ openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 > [!NOTE]
 > 在此示例中，在命令行上提供密码。 若要防止显示密码，请忽略 **/p**选项。 系统将提示你输入密码，该密码不会回显到屏幕。
 
-## <a name="BKMK_local"></a>openfiles/local
+## <a name="openfiles-local"></a><a name=BKMK_local></a>openfiles/local
 
 启用或禁用系统 "维护对象列表" 全局标志。 如果在没有参数的情况下使用，则**openfiles/local**将显示 "维护对象列表" 全局标志的当前状态。
 
@@ -131,9 +127,9 @@ openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 openfiles /local [on | off]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |[打开 \|]|启用或禁用系统 "维护对象列表" 全局标志，该标志跟踪本地文件句柄。|
 |/?|在命令提示符下显示帮助。|
@@ -167,6 +163,6 @@ SUCCESS: The system global flag 'maintain objects list' is enabled.
 openfiles /local off
 ```
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

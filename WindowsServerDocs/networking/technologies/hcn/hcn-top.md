@@ -1,34 +1,35 @@
 ---
-title: Vm 和容器的主机计算网络 (HCN) 服务 API
-description: 主机计算网络 (HCN) 服务 API 是一种面向公众的 Win32 API, 它提供平台级别的访问权限来管理虚拟网络、虚拟网络终结点和关联的策略。 这两者共同为在 Windows 主机上运行的虚拟机 (Vm) 和容器提供连接和安全性。
+title: Vm 和容器的主机计算网络（HCN）服务 API
+description: 主机计算网络（HCN）服务 API 是一种面向公众的 Win32 API，它提供平台级别的访问权限来管理虚拟网络、虚拟网络终结点和关联的策略。 这两者共同为在 Windows 主机上运行的虚拟机（Vm）和容器提供连接和安全性。
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: e30a778d661fa7c6d2e248234218eb25fba007a1
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 4afde574802bd63db8ea8ca8db9f5daf1a53dc93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031556"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859840"
 ---
-# <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>Vm 和容器的主机计算网络 (HCN) 服务 API
+# <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>Vm 和容器的主机计算网络（HCN）服务 API
 
->适用于：Windows Server (半年频道), Windows Server 2019
+>适用于： Windows Server （半年频道）、Windows Server 2019
 
-主机计算网络 (HCN) 服务 API 是一种面向公众的 Win32 API, 它提供平台级别的访问权限来管理虚拟网络、虚拟网络终结点和关联的策略。 这两者共同为在 Windows 主机上运行的虚拟机 (Vm) 和容器提供连接和安全性。 
+主机计算网络（HCN）服务 API 是一种面向公众的 Win32 API，它提供平台级别的访问权限来管理虚拟网络、虚拟网络终结点和关联的策略。 这两者共同为在 Windows 主机上运行的虚拟机（Vm）和容器提供连接和安全性。 
 
 开发人员使用 HCN service API 在其应用程序工作流中管理 Vm 和容器的网络。 HCN API 旨在为开发人员提供最佳体验。 最终用户不会直接与这些 Api 进行交互。  
 
 ## <a name="features-of-the-hcn-service-api"></a>HCN 服务 API 的功能
--   作为由主机网络服务 (HNS) 在 OnCore/VM 上托管的 C API 实现。
+-    作为由主机网络服务（HNS）在 OnCore/VM 上托管的 C API 实现。
 
--   提供创建、修改、删除和枚举 HCN 对象 (如网络、终结点、命名空间和策略) 的功能。 操作对对象 (例如网络句柄) 执行处理, 并使用 RPC 上下文句柄来实现这些句柄。
+-    提供创建、修改、删除和枚举 HCN 对象（如网络、终结点、命名空间和策略）的功能。 操作对对象（例如网络句柄）执行处理，并使用 RPC 上下文句柄来实现这些句柄。
 
--   基于架构。 API 的大多数函数将输入和输出参数定义为字符串, 其中包含作为 JSON 文档的函数调用的参数。 JSON 文档基于强类型和版本化的架构, 这些架构是公共文档的一部分。 
+-    基于架构。 API 的大多数函数将输入和输出参数定义为字符串，其中包含作为 JSON 文档的函数调用的参数。 JSON 文档基于强类型和版本化的架构，这些架构是公共文档的一部分。 
 
--   提供了订阅/回调 API, 使客户端能够注册服务范围事件的通知, 例如网络创建和删除。
+-    提供了订阅/回调 API，使客户端能够注册服务范围事件的通知，例如网络创建和删除。
 
--   HCN API 在 Desktop Bridge 中工作 (也称为 Centennial) 在系统服务中运行的应用。 API 通过从调用方检索用户令牌来检查 ACL。
+-    HCN API 在 Desktop Bridge 中工作（也称为 Centennial）在系统服务中运行的应用。 API 通过从调用方检索用户令牌来检查 ACL。
 
 >[!TIP]
 >HCN service API 在后台任务和非前台窗口中受支持。 
@@ -36,30 +37,30 @@ ms.locfileid: "70031556"
 ## <a name="terminology-host-vs-compute"></a>术语：主机与计算
 主机计算服务允许调用方在一台物理计算机上创建和管理虚拟机和容器。 其命名为遵循行业术语。 
 
-- **主机**广泛用于虚拟化行业, 可引用提供虚拟化资源的操作系统。
+- **主机**广泛用于虚拟化行业，可引用提供虚拟化资源的操作系统。
 
 - **计算**用于指比虚拟机更广泛的虚拟化方法。 主机计算网络服务允许调用方在一台物理计算机上为虚拟机和容器创建和管理网络。
 
 ## <a name="schema-based-configuration-documents"></a>基于架构的配置文档
-基于定义完善的架构的配置文档是虚拟化空间中的一种既定行业标准。 大多数虚拟化解决方案 (例如 Docker 和 Kubernetes) 都提供基于配置文档的 Api。 多个行业计划, 加入了 Microsoft, 推动了用于定义和验证这些架构的生态系统, 如[OpenAPI](https://www.openapis.org/)。  这些计划还推动了用于容器的架构的特定架构定义的标准化, 如[开放容器计划 (OCI)](https://www.opencontainers.org/)。
+基于定义完善的架构的配置文档是虚拟化空间中的一种既定行业标准。 大多数虚拟化解决方案（例如 Docker 和 Kubernetes）都提供基于配置文档的 Api。 多个行业计划，加入了 Microsoft，推动了用于定义和验证这些架构的生态系统，如[OpenAPI](https://www.openapis.org/)。  这些计划还推动了用于容器的架构的特定架构定义的标准化，如[开放容器计划（OCI）](https://www.opencontainers.org/)。
 
-用于创作配置文档的语言是[JSON](https://tools.ietf.org/html/rfc8259), 你可以将其与结合使用:
--   定义文档的对象模型的架构定义
--   验证 JSON 文档是否符合架构
--   在这些架构的调用方使用的编程语言中, 从这些架构的本机表示形式自动转换为 
+用于创作配置文档的语言是[JSON](https://tools.ietf.org/html/rfc8259)，你可以将其与结合使用：
+-    定义文档的对象模型的架构定义
+-    验证 JSON 文档是否符合架构
+-    在这些架构的调用方使用的编程语言中，从这些架构的本机表示形式自动转换为 
 
-常用架构定义是[OpenAPI](https://www.openapis.org/)和[JSON 架构](http://json-schema.org/), 可让你在文档中指定属性的详细定义, 例如:
--   属性的有效值集, 例如 0-100, 表示百分比。
--   枚举的定义, 表示为属性的一组有效字符串。
--   字符串预期格式的正则表达式。 
+常用架构定义是[OpenAPI](https://www.openapis.org/)和[JSON 架构](http://json-schema.org/)，可让你在文档中指定属性的详细定义，例如：
+-    属性的有效值集，例如0-100，表示百分比。
+-    枚举的定义，表示为属性的一组有效字符串。
+-    字符串预期格式的正则表达式。 
 
-作为记录 HCN Api 的一部分, 我们计划将 JSON 文档的架构发布为 OpenAPI 规范。 根据此规范, 架构的特定于语言的表示形式可允许使用客户端使用的编程语言中的架构对象进行类型安全的使用。 
+作为记录 HCN Api 的一部分，我们计划将 JSON 文档的架构发布为 OpenAPI 规范。 根据此规范，架构的特定于语言的表示形式可允许使用客户端使用的编程语言中的架构对象进行类型安全的使用。 
 
 ### <a name="example"></a>示例 
 
 下面是在 VM 的配置文档中表示 SCSI 控制器的对象的此工作流的示例。 
 
-在 Windows 源代码中, 使用火星文件定义架构: onecore/vm/dv/net/hns/schema/mars/Schema/HCN
+在 Windows 源代码中，使用火星文件定义架构： onecore/vm/dv/net/hns/schema/mars/Schema/HCN
 
 ```
 enum IpamType
@@ -114,9 +115,9 @@ class Route
 ```
 
 >[!TIP]
->[NewIn ("2.0") 批注是架构定义的版本控制支持的一部分。
+>[NewIn （"2.0"）批注是架构定义的版本控制支持的一部分。
 
-在此内部定义中, 将生成架构的 OpenAPI 规范:
+在此内部定义中，将生成架构的 OpenAPI 规范：
 
 ```
 { 
@@ -223,18 +224,18 @@ class Route
 } 
 ```
 
-您可以使用诸如[Swagger](https://swagger.io/)这样的工具来生成客户端使用的架构编程语言的特定于语言的表示形式。 Swagger 支持多种语言C#, 如、中转、Javascript 和 Python。
+您可以使用诸如[Swagger](https://swagger.io/)这样的工具来生成客户端使用的架构编程语言的特定于语言的表示形式。 Swagger 支持多种语言C#，如、中转、Javascript 和 Python。
 
 - 为顶级 IPAM & 子网对象[生成C#的代码的示例](example-c-sharp.md)。
 
-- 为顶级 IPAM & 子网对象生成的 "[开始代码" 示例](example-go.md)。 中转由 Docker 和 Kubernetes 使用, 后者是主机计算网络服务 Api 的两个使用者。 "开始" 为封送与 JSON 文档之间的中转类型提供内置支持。
+- 为顶级 IPAM & 子网对象生成的 "[开始代码" 示例](example-go.md)。 中转由 Docker 和 Kubernetes 使用，后者是主机计算网络服务 Api 的两个使用者。 "开始" 为封送与 JSON 文档之间的中转类型提供内置支持。
 
-除了代码生成和验证外, 还可以使用工具简化 JSON 文档的工作, 即[Visual Studio Code](https://code.visualstudio.com/Docs/languages/json)。
+除了代码生成和验证外，还可以使用工具简化 JSON 文档的工作，即[Visual Studio Code](https://code.visualstudio.com/Docs/languages/json)。
 
 ### <a name="top-level-objects-defined-in-the-hcnschemasmars-file"></a>在 HCN 中定义的顶级对象。架构 mars 文件
-如前文所述, 你可以在以下文件中查找 HCN Api 使用的文档的文档架构: onecore/vm/dv/net/hns/schema/mars/Schema
+如前文所述，你可以在以下文件中查找 HCN Api 使用的文档的文档架构： onecore/vm/dv/net/hns/schema/mars/Schema
 
-顶层对象包括:
+顶层对象包括：
 - [HostComputeNetwork](hcn-scenarios.md#scenario-hcn)
 - [HostComputeEndpoint](hcn-scenarios.md#scenario-hcn-endpoint)
 - [HostComputeNamespace](hcn-scenarios.md#scenario-hcn-namespace)

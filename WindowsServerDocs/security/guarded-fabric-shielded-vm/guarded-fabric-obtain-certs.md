@@ -1,23 +1,23 @@
 ---
 title: 获取 HGS 证书
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: e8f4a3696ec5096281ba1ffd130aa97004530cc1
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: da1ae4bacd5a6b2e38b22930aacf06f65b16bb29
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940737"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856530"
 ---
 # <a name="obtain-certificates-for-hgs"></a>获取 HGS 证书
 
->适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016
+>适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 部署 HGS 时，系统将要求你提供签名和加密证书，这些证书用于保护启动受防护的 VM 所需的敏感信息。
 这些证书永远不会离开 HGS，并且仅在运行它们的主机已证实其运行正常时用于解密受防护的 VM 密钥。
@@ -37,8 +37,8 @@ ms.locfileid: "71940737"
 ------------------------------|----------------
 加密提供程序               | 任何密钥存储提供程序（KSP）。 **不**支持旧的加密服务提供程序（csp）。
 密钥算法                 | RSA
-最小密钥大小              | 2048位
-签名算法           | 建议：SHA256
+最小密钥大小              | 2048 位
+签名算法           | 建议： SHA256
 密钥用法                     | 数字签名*和*数据加密
 增强型密钥用法            | 服务器身份验证
 密钥续订策略            | 用相同的密钥续订。 续订包含不同密钥的 HGS 证书会阻止受防护的 Vm 启动。
@@ -74,14 +74,14 @@ Remove-Item $encCert.PSPath
 
 ## <a name="request-an-ssl-certificate"></a>请求一个 SSL 证书
 
-在 Hyper-v 主机和 HGS 之间传输的所有密钥和敏感信息都在消息级别进行加密，也就是说，信息是通过名为 HGS 或 Hyper-v 的密钥进行加密的，这是为了防止别人探查网络流量和偷窃密钥到 Vm。
+在 Hyper-v 主机和 HGS 之间传输的所有密钥和敏感信息都在消息级别进行加密，也就是说，信息是通过名为 HGS 或 Hyper-v 的密钥进行加密的，这是为了防止别人探查网络流量，并偷窃 Vm 的密钥。
 但是，如果你具有相容性 reqiurements，或者只是想要对 Hyper-v 与 HGS 之间的所有通信进行加密，则可以使用 SSL 证书配置 HGS，该证书将加密传输级别的所有数据。
 
 Hyper-v 主机和 HGS 节点都需要信任你提供的 SSL 证书，因此建议你从企业证书颁发机构申请 SSL 证书。 请求证书时，请务必指定以下各项：
 
 SSL 证书属性 | 必需的值
 -------------------------|---------------
-使用者名称             | HGS 群集的名称（称为分布式网络名称或虚拟计算机对象 FQDN）。 这将是提供给 `Initialize-HgsServer` 和你的 HGS 域名的 HGS 服务名称的串联。
+使用者名称             | HGS 群集的名称（称为分布式网络名称或虚拟计算机对象 FQDN）。 这将是提供给 `Initialize-HgsServer` 的 HGS 服务名称与你的 HGS 域名的串联。
 使用者可选名称 | 如果要使用不同的 DNS 名称来访问 HGS 群集（例如，如果它位于负载均衡器后面），请确保在证书请求的 SAN 字段中包含这些 DNS 名称。
 
 在[配置第一个 hgs 节点](guarded-fabric-initialize-hgs.md)时，会介绍用于指定此证书的选项。

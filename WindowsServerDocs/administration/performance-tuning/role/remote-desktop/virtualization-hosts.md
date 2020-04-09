@@ -4,19 +4,19 @@ description: 远程桌面虚拟化主机的性能优化
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS; denisgun
+ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 1b66f6404df5debee2a4c52ffc9166c8eabb9f81
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2a0db4d890a01df13c44a9bb7adfbd13bebbdde0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947120"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851700"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>性能优化远程桌面虚拟化主机
 
-远程桌面虚拟化主机（RD 虚拟化主机）是一项角色服务，支持虚拟桌面基础结构（VDI）方案，使多个用户能够在运行 Windows Server 的服务器上托管的虚拟机中运行基于 Windows 的应用程序，以及Hyper-v。
+远程桌面虚拟化主机（RD 虚拟化主机）是一项角色服务，它支持虚拟桌面基础结构（VDI）方案，使多个用户能够在运行 Windows Server 和 Hyper-v 的服务器上托管的虚拟机中运行基于 Windows 的应用程序。
 
 Windows Server 支持两种类型的虚拟桌面：个人虚拟机和共用虚拟机。
 
@@ -63,13 +63,13 @@ Enable-DedupVolume <volume> -UsageType HyperV
 
 ## <a name="performance-optimizations"></a>性能优化
 
-### <a name="dynamic-memory"></a>Dynamic Memory
+### <a name="dynamic-memory"></a>动态内存
 
 通过平衡内存在运行的虚拟机之间的分布情况，动态内存可以更有效地利用运行 Hyper-v 的服务器的内存资源。 可以在虚拟机之间动态分配内存，以响应其变化的工作负荷。
 
 动态内存使你可以使用已有的资源增加虚拟机密度，而不会影响性能或可伸缩性。 这样可以更高效地使用昂贵的服务器硬件资源，从而可以更轻松地管理和降低成本。
 
-在运行 Windows 8 及更高版本且具有跨多个逻辑处理器的虚拟处理器的来宾操作系统上，请考虑运行与动态内存的操作，以帮助最大程度地减少内存使用量并禁用动态内存来提高性能对于计算机拓扑感知的应用程序。 此类应用程序可以利用拓扑信息来做出计划和内存分配决策。
+在运行 Windows 8 及更高版本并且具有跨多个逻辑处理器的虚拟处理器的来宾操作系统上，请考虑运行与动态内存的操作，以帮助最大程度地减少内存使用量并禁用动态内存以提高计算机拓扑感知的应用程序的性能。 此类应用程序可以利用拓扑信息来做出计划和内存分配决策。
 
 ### <a name="tiered-storage"></a>分层存储
 
@@ -93,7 +93,7 @@ Windows Server 2012 和更高版本中的故障转移群集提供群集共享卷
 
 在进行广泛的部署之前，应正确评估每个特定服务。 下面是需要考虑的一些初始事项：
 
-| 服务                                      | 为什么？                                                                                                                                                                                                      |
+| 服务                                      | 为什么?                                                                                                                                                                                                      |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 自动更新                                  | 通过重新创建虚拟桌面模板来更新共用虚拟机。                                                                                                                          |
 | 脱机文件                                | 虚拟桌面始终处于联机状态，并且已从网络上查看。                                                                                                                         |

@@ -1,24 +1,20 @@
 ---
 title: 选择
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9eeb40c0-4258-46e2-8dbc-94f63497e771
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7dc3bc8775f971968f096ba4344348e77c112cfa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f9ad7051978f4b509f54bf783f71943b65617bc7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384107"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834650"
 ---
 # <a name="select"></a>选择
 
@@ -35,9 +31,9 @@ select volume
 select vdisk
 ```
 
-## <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |[选择磁盘](select-disk.md)|将焦点移到磁盘。|
 |[选择分区](select-partition.md)|将焦点移到分区。|
@@ -49,7 +45,7 @@ select vdisk
 -   如果选择了包含相应分区的卷，则会自动选择该分区。
 -   如果使用相应的卷选择了分区，则会自动选择该卷。
 
-#### <a name="additional-references"></a>其他参考
+## <a name="additional-references"></a>其他参考
 
-[命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 

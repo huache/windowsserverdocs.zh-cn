@@ -1,7 +1,6 @@
 ---
 ms.assetid: 2c76e81a-c2eb-439f-a89f-7d3d70790244
 title: Deploy Encryption of Office Files (Demonstration Steps)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 05da1b7df2e3242c9b68bd7858c824f91e81a563
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 12b0e99651454930ee42a007dd34d1cafdb2e7fb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407103"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861220"
 ---
 # <a name="deploy-encryption-of-office-files-demonstration-steps"></a>Deploy Encryption of Office Files (Demonstration Steps)
 
@@ -24,16 +23,16 @@ Contoso 的财务部门具有多个存储其文档的文件服务器。 这些�
   
 在此方案中，你将执行以下步骤：  
   
-|任务|描述|  
+|任务|说明|  
 |--------|---------------|  
-|[启用资源属性](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md#BKMK_1.1)|启用“影响” 和“个人身份信息” 资源属性。|  
+|[启用资源属性](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md#BKMK_1.1)|启用“影响”和“个人身份信息”资源属性。|  
 |[创建分类规则](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md#BKMK_2)|创建以下分类规则：“HBI 分类规则” 和“PII 分类规则”。|  
 |[使用文件管理任务通过 AD RMS 自动保护文档](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md#BKMK_3)|创建文件管理任务，该任务自动使用 AD RMS 来保护具有高个人身份信息 (PII) 的文档。 只有 FinanceAdmin 组的成员才有权访问包含高 PII 的文档。|  
 |[查看结果](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md#BKMK_4)|检查文档的分类，并在更改文档内容时观察它们如何更改。 还要验证文档如何通过 AD RMS 获取保护。|  
 |[验证 AD RMS 保护](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md#BKMK_5)|验证是否已使用 AD RMS 保护文档。|  
 |||  
   
-## <a name="BKMK_1.1"></a>步骤1：启用资源属性  
+## <a name="step-1-enable-resource-properties"></a><a name="BKMK_1.1"></a>步骤1：启用资源属性  
   
 #### <a name="to-enable-resource-properties"></a>启用资源属性  
   
@@ -49,19 +48,19 @@ Contoso 的财务部门具有多个存储其文档的文件服务器。 这些�
   
 6. 若要发布“全局资源列表”中的资源属性，请在左窗格中单击“资源属性列表”，然后双击“全局资源属性列表”。  
   
-7. 单击“添加”，然后向下滚动到“影响”并单击它以将其添加到该列表。 对于“个人身份信息”，请执行相同的步骤。 单击“确定” 两次以完成操作。  
+7. 单击“添加”，然后向下滚动到“影响”并单击它以将其添加到该列表。 对于“个人身份信息”，请执行相同的步骤。 单击“确定”两次以完成操作。  
   
 ![解决方案指南](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Set-ADResourceProperty -Enabled:$true -Identity:"CN=Impact_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com"  
 Set-ADResourceProperty -Enabled:$true -Identity:"CN=PII_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com" 
 ```  
   
-## <a name="BKMK_2"></a>步骤2：创建分类规则  
-此步骤介绍如何创建“高影响” 分类规则。 此规则将搜索文档的内容，如果找到字符串 "Contoso 机密"，则会将此文档归类为具有高业务影响。 此分类将覆盖之前分配的低业务影响的分类。  
+## <a name="step-2-create-classification-rules"></a><a name="BKMK_2"></a>步骤2：创建分类规则  
+此步骤介绍如何创建“高影响”分类规则。 此规则将搜索文档的内容，如果找到字符串 "Contoso 机密"，则会将此文档归类为具有高业务影响。 此分类将覆盖之前分配的低业务影响的分类。  
   
 你还将创建“高 PII”规则。 此规则将搜索文档的内容，并且如果找到身份证号，则它将此文档归类为具有高 PII 的文档。  
   
@@ -75,7 +74,7 @@ Set-ADResourceProperty -Enabled:$true -Identity:"CN=PII_MS,CN=Resource Propertie
   
 4. 在“文件服务器资源管理器”的左窗格中，展开“分类管理”，然后选择“分类规则”。  
   
-5. 在“操作” 窗格中，单击“配置分类计划”。 在“自动分类”选项卡上，选择“启用固定日程安排”，选择“星期几”，然后选中“允许对新文件进行连续分类”复选框。 单击**确定**。  
+5. 在“操作”窗格中，单击“配置分类计划”。 在“自动分类”选项卡上，选择“启用固定日程安排”，选择“星期几”，然后选中“允许对新文件进行连续分类”复选框。 单击“确定”。  
   
 6. 在“操作”窗格中，单击“创建分类规则”。 此操作将打开“创建分类规则”对话框。  
   
@@ -83,21 +82,21 @@ Set-ADResourceProperty -Enabled:$true -Identity:"CN=PII_MS,CN=Resource Propertie
   
 8. 在 "**说明**" 框中，键入**根据是否存在字符串 "Contoso 机密" 来确定文档是否具有高业务影响**  
   
-9. 在“作用域” 选项卡上，单击“设置文件夹管理属性”，选择“文件夹用途”，单击“添加”，再单击“浏览”以浏览到作为路径的 D:\Finance Documents，单击“确定”，然后选择名为“组文件” 的属性值，最后单击“关闭”。 在设置管理属性之后，在“规则作用域” 选项卡上选择“组文件”。  
+9. 在“作用域”选项卡上，单击“设置文件夹管理属性”，选择“文件夹用途”，单击“添加”，再单击“浏览”以浏览到作为路径的 D:\Finance Documents，单击“确定”，然后选择名为“组文件”的属性值，最后单击“关闭”。 在设置管理属性之后，在“规则作用域”选项卡上选择“组文件”。  
   
 10. 单击 "**分类**" 选项卡。 在 "**选择用于将属性分配给文件的方法**" 下，从下拉列表中选择 "**内容分类器**"。  
   
 11. 在“选择要分配给文件的属性”下，从下拉列表中选择“影响”。  
   
-12. 在“指定一个值”下，从下拉列表中选择“高” 。  
+12. 在“指定一个值”下，从下拉列表中选择“高”。  
   
-13. 在“参数” 下单击“配置”。  在“分类参数” 对话框中，在“表达式类型” 列表中选择“字符串”。 在“表达式” 框中，键入： **Contoso 机密**，然后单击“确定”。  
+13. 在“参数”下单击“配置”。  在“分类参数”对话框中，在“表达式类型”列表中选择“字符串”。 在“表达式” 框中，键入： **Contoso 机密**，然后单击“确定”。  
   
 14. 单击 "**评估类型**" 选项卡。 单击 "**重新评估现有属性值**"，单击 "**覆盖**现有值"，然后单击 **"确定"** 完成操作。  
   
 ![解决方案指南](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Update-FSRMClassificationPropertyDefinition  
@@ -117,19 +116,19 @@ New-FSRMClassificationRule -Name "High Business Impact" -Property "Impact_MS" -D
   
 4. 在“文件服务器资源管理器”的左窗格中，展开“分类管理”，然后选择“分类规则”。  
   
-5. 在“操作” 窗格中，单击“配置分类计划”。 在“自动分类”选项卡上，选择“启用固定日程安排”，选择“星期几”，然后选中“允许对新文件进行连续分类”复选框。 单击“确定”。  
+5. 在“操作”窗格中，单击“配置分类计划”。 在“自动分类”选项卡上，选择“启用固定日程安排”，选择“星期几”，然后选中“允许对新文件进行连续分类”复选框。 单击“确定”。  
   
-6. 在“规则名称” 框中，键入 **高 PII**。 在“描述” 框中，键入 **根据是否存在身份证号来确定文档是否为高 PII 的文档。**  
+6. 在“规则名称”框中，键入**高 PII**。 在“描述”框中，键入**根据是否存在身份证号来确定文档是否为高 PII 的文档。**  
   
-7. 单击“作用域” 选项卡，然后选中“组文件” 复选框。  
+7. 单击“作用域”选项卡，然后选中“组文件”复选框。  
   
 8. 单击 "**分类**" 选项卡。 在 "**选择用于将属性分配给文件的方法**" 下，从下拉列表中选择 "**内容分类器**"。  
   
 9. 在“选择要分配给文件的属性”下，从下拉列表中选择“个人身份信息”。  
   
-10. 在“指定一个值”下，从下拉列表中选择“高” 。  
+10. 在“指定一个值”下，从下拉列表中选择“高”。  
   
-11. 在“参数” 下单击“配置”。   
+11. 在“参数”下单击“配置”。   
     在 "**分类参数**" 窗口的 "**表达式类型**" 列表中，选择 "**正则表达式**"。 在 "**表达式**" 框中，粘贴剪贴板中的文本： **^ （？！000）（[0-7] \d{2}| 7 （[0-7] \d | 7 [012]））（[-]？）(?!00） \d\d\3 （？！0000） \d{4}$** ，然后单击 **"确定"** 。  
   
     > [!NOTE]  
@@ -139,7 +138,7 @@ New-FSRMClassificationRule -Name "High Business Impact" -Property "Impact_MS" -D
   
 ![解决方案指南](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 New-FSRMClassificationRule -Name "High PII" -Description "Determines if the document has a high PII based on the presence of a Social Security Number." -Property "PII_MS" -PropertyValue "5000" -Namespace @("D:\Finance Documents") -ClassificationMechanism "Content Classifier" -Parameters @("RegularExpressionEx=Min=1;Expr=^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$") -ReevaluateProperty Overwrite  
@@ -151,7 +150,7 @@ New-FSRMClassificationRule -Name "High PII" -Description "Determines if the docu
   
 -   高 PII  
   
-## <a name="BKMK_3"></a>步骤3：使用文件管理任务通过 AD RMS 自动保护文档  
+## <a name="step-3-use-file-management-tasks-to-automatically-protect-documents-with-ad-rms"></a><a name="BKMK_3"></a>步骤3：使用文件管理任务通过 AD RMS 自动保护文档  
 现在，你已创建规则以根据内容自动对文档进行分类，下一步是创建文件管理任务，该任务使用 AD RMS 基于其分类自动保护某些文档。 在此步骤中，你将创建可自动保护任何高 PII 文档的文件管理任务。 只有 FinanceAdmin 组的成员才有权访问包含高 PII 的文档。  
   
 #### <a name="to-protect-documents-with-ad-rms"></a>使用 AD RMS 保护文档  
@@ -160,23 +159,23 @@ New-FSRMClassificationRule -Name "High PII" -Description "Determines if the docu
   
 2. 打开文件服务器资源管理器。 若要打开文件服务器资源管理器，请单击“开始”，然后键入“文件服务器资源管理器”，最后单击“文件服务器资源管理器”。  
   
-3. 在左窗格中，选择“文件管理任务”。 在“操作” 窗格中，选择“创建文件管理任务”。  
+3. 在左窗格中，选择“文件管理任务”。 在“操作”窗格中，选择“创建文件管理任务”。  
   
-4. 在“任务名称:” 字段中，键入 **高 PII**。 在“描述”字段中，键入**高 PII 文档的自动 RMS 保护**。  
+4. 在“任务名称:”字段中，键入**高 PII**。 在“描述”字段中，键入**高 PII 文档的自动 RMS 保护**。  
   
-5. 单击“作用域” 选项卡，然后选中“组文件” 复选框。  
+5. 单击“作用域”选项卡，然后选中“组文件”复选框。  
   
 6. 单击 "**操作**" 选项卡。在 "**类型**" 下，选择 " **RMS 加密**"。 单击“浏览”以选择模板，然后选择“仅限 Contoso 财务管理员”模板。  
   
-7. 单击“条件”选项卡，然后单击“添加”。 在“属性”下，选择“个人身份信息”。 在“运营商”下，选择“等于”。 在“值”下，选择“高”。 单击**确定**。  
+7. 单击“条件”选项卡，然后单击“添加”。 在“属性”下，选择“个人身份信息”。 在“运营商”下，选择“等于”。 在“值”下，选择“高”。 单击“确定”。  
   
 8. 单击 "**计划**" 选项卡。在 "**计划**" 部分中，单击 "**每周**"，然后选择 "**星期日**"。 通过每周运行一次该任务，可确保你捕获由于服务中断或其他破坏性事件而错过的任何文档。  
   
-9. 在“连续运行” 部分中，选择“持续在新文件上运行任务”，然后单击“确定”。 现在，应该具有一个名为“高 PII”的文件管理任务。  
+9. 在“连续运行”部分中，选择“持续在新文件上运行任务”，然后单击“确定”。 现在，应该具有一个名为“高 PII”的文件管理任务。  
   
 ![解决方案指南](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 $fmjRmsEncryption = New-FSRMFmjAction -Type 'Rms' -RmsTemplate 'Contoso Finance Admin Only'  
@@ -186,7 +185,7 @@ $schedule = New-FsrmScheduledTask -Time $date -Weekly @('Sunday')
 $fmj1=New-FSRMFileManagementJob -Name "High PII" -Description "Automatic RMS protection for high PII documents" -Namespace @('D:\Finance Documents') -Action $fmjRmsEncryption -Schedule $schedule -Continuous -Condition @($fmjCondition1)  
 ```  
   
-## <a name="BKMK_4"></a>步骤4：查看结果  
+## <a name="step-4-view-the-results"></a><a name="BKMK_4"></a>步骤4：查看结果  
 现在来看一看新的自动分类并 AD RMS 操作中的保护规则。 在本步骤中，你将检查文档的分类，并在更改文档内容时观察它们如何更改。  
   
 #### <a name="to-view-the-results"></a>查看结果  
@@ -195,7 +194,7 @@ $fmj1=New-FSRMFileManagementJob -Name "High PII" -Description "Automatic RMS pro
   
 2. 在 Windows 资源管理器中，导航到 D:\Finance Documents。  
   
-3. 右键单击“财务备注”文档，单击“属性”。单击“分类” 选项卡，请注意，“影响”属性当前没有任何值。 单击“取消”。  
+3. 右键单击“财务备注”文档，单击“属性”。单击“分类”选项卡，请注意，“影响”属性当前没有任何值。 单击“取消”。  
   
 4. 右键单击“‘请求批准聘用’文档”，然后选择“属性”。  
   
@@ -203,9 +202,9 @@ $fmj1=New-FSRMFileManagementJob -Name "High PII" -Description "Automatic RMS pro
   
 6. 切换到 CLIENT1。 注销任何已登录的用户，然后以 Contoso\MReid 的身份登录<strong>pass@word1</strong>。  
   
-7. 从桌面上，打开“财务文档” 共享文件夹。  
+7. 从桌面上，打开“财务文档”共享文件夹。  
   
-8. 打开“财务备注”文档。 在接近文档底部处，会看到 **机密**一词。 将其修改为： **Contoso 机密**。 保存该文档并将其关闭。  
+8. 打开“财务备注”文档。 在接近文档底部处，会看到**机密**一词。 将其修改为： **Contoso 机密**。 保存该文档并将其关闭。  
   
 9. 打开“请求批准聘用”文档。 在“身份证号:” 部分中，键入：777-77-7777。 保存该文档并将其关闭。  
   
@@ -220,7 +219,7 @@ $fmj1=New-FSRMFileManagementJob -Name "High PII" -Description "Automatic RMS pro
   
 13. . 单击 "**分类**" 选项卡。请注意，"**个人身份信息**" 属性现已设置为 "**高**"。 单击“取消”。  
   
-## <a name="BKMK_5"></a>步骤5：验证 AD RMS 的保护  
+## <a name="step-5-verify-protection-with-ad-rms"></a><a name="BKMK_5"></a>步骤5：验证 AD RMS 的保护  
   
 #### <a name="to-verify-that-the-document-is-protected"></a>验证文档是否受保护  
   

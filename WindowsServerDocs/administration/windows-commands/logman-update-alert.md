@@ -1,24 +1,20 @@
 ---
 title: logman 更新警报
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ede94a76-931c-40ed-9fda-6766bed8ff72 britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc32e3de6078489e59fe24c97f02fb440e86628d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13bd7fbef96b75d9308b1e2c8475389d10bbb921
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374388"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840600"
 ---
 # <a name="logman-update-alert"></a>logman 更新警报
 
@@ -30,9 +26,9 @@ ms.locfileid: "71374388"
 ```  
 logman update alert <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>参数  
+### <a name="parameters"></a>参数  
 
-|                 参数                  |                                                                               描述                                                                               |
+|                 参数                  |                                                                               说明                                                                               |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                     /?                     |                                                                    显示区分上下文的帮助。                                                                     |
 |             -s <computer name>             |                                                          在指定的远程计算机上执行命令。                                                          |
@@ -62,11 +58,11 @@ logman update alert <[-n] <name>> [options]
 
 ## <a name="remarks"></a>备注  
 其中列出了 [-]，额外-会对选项求反。  
-## <a name="BKMK_examples"></a>示例  
+## <a name="examples"></a><a name=BKMK_examples></a>示例  
 下面的示例将更新现有的数据收集器 new_alert，并将 "处理器（_Total）" 计数器组中 "计数器% Processor time" 的阈值设置为40%。  
 ```  
-logman update alert new_alert -th "\Processor(_Total)\% Processor time>40"  
+logman update alert new_alert -th \Processor(_Total)\% Processor time>40  
 ```  
-#### <a name="additional-references"></a>其他参考  
+## <a name="additional-references"></a>其他参考  
 [logman](logman.md)  
 [logman 创建警报](logman-create-alert.md)  

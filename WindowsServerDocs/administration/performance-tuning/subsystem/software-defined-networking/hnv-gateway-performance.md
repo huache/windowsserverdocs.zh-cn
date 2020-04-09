@@ -4,19 +4,19 @@ description: 有关软件定义的网络的 HNV 网关性能优化指南
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: grcusanz; AnPaul
+ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 907b160b143af18a8ede3a9a7975fa8b22753118
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 98b8a50873cf69e96131f98d5d94c386cb30a13d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383503"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851620"
 ---
 # <a name="hnv-gateway-performance-tuning-in-software-defined-networks"></a>软件定义的网络中的 HNV 网关性能优化
 
-除了 Windows Server 网关虚拟机（Vm）的配置参数外，本主题还为运行 Hyper-v 和托管 Windows Server 网关虚拟机的服务器提供硬件规范和配置建议. 若要从 Windows Server 网关 Vm 提取最佳性能，应遵循这些指导原则。
+除了 Windows Server 网关虚拟机（Vm）的配置参数外，本主题还为运行 Hyper-v 和托管 Windows Server 网关虚拟机的服务器提供硬件规范和配置建议。 若要从 Windows Server 网关 Vm 提取最佳性能，应遵循这些指导原则。
 下列部分包含部署 Windows Server 网关时需满足的硬件和配置要求。
 1. 有关 Hyper-V 硬件的建议
 2. Hyper-V 主机配置
@@ -26,9 +26,9 @@ ms.locfileid: "71383503"
 
 下面是运行 Windows Server 2016 和 Hyper-v 的每台服务器的最低建议硬件配置。
 
-| 服务器组件               | 规格                                                                                                                                                                                                                                                                   |
+| 服务器组件               | 规范                                                                                                                                                                                                                                                                   |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 中心处理单元 (CPU)  | 非统一内存体系结构（NUMA）节点：2 <br> 如果主机上有多个 Windows Server 网关 Vm，为了获得最佳性能，每个网关 VM 应具有对一个 NUMA 节点的完全访问权限。 它应该与主机物理适配器使用的 NUMA 节点不同。 |
+| 中心处理单元 (CPU)  | 非一致性内存体系结构（NUMA）节点：2 <br> 如果主机上有多个 Windows Server 网关 Vm，为了获得最佳性能，每个网关 VM 应具有对一个 NUMA 节点的完全访问权限。 它应该与主机物理适配器使用的 NUMA 节点不同。 |
 | 每个 NUMA 节点的核心数            | 2                                                                                                                                                                                                                                                                               |
 | 超线程                | 已禁用。 超线程不能提高 Windows Server 网关的性能。                                                                                                                                                                                           |
 | 随机存取内存 (RAM)     | 48 GB。                                                                                                                                                                                                                                                                           |
@@ -59,13 +59,13 @@ Write-Host ("Total Number of Logical Processors: ", $lps)
 >[!Note]
 > 若要运行以下 Windows PowerShell 命令，你必须是管理员组的成员。
 
-| 配置项目                          | Windows Powershell 配置                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 配置项                          | Windows Powershell 配置                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 交换机嵌入式组合                     | 创建具有多个网络适配器的 vswitch 时，它会自动为这些适配器启用交换机嵌入组合。 <br> ```New-VMSwitch -Name TeamedvSwitch -NetAdapterName "NIC 1","NIC 2"``` <br> Windows Server 2016 中的 SDN 不支持通过 LBFO 的传统组合。 交换机嵌入组合允许你将同一组 Nic 用于虚拟流量和 RDMA 流量。 基于 LBFO 的 NIC 组合不支持此操作。                                                        |
 | 物理 NIC 上的中断裁决       | 使用默认设置。 若要检查配置，可以使用以下 Windows PowerShell 命令： ```Get-NetAdapterAdvancedProperty```                                                                                                                                                                                                                                                                                                                                                                    |
-| 物理 NIC 上的接收缓冲区大小       | 可以通过运行命令 ```Get-NetAdapterAdvancedProperty``` 来验证物理 Nic 是否支持此参数的配置。 如果它们不支持此参数，则该命令的输出将不包含属性 "接收缓冲区"。 如果 NIC 确实支持此参数，你可以使用以下 Windows PowerShell 命令设置接收缓冲区大小： <br>```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Receive Buffers" –DisplayValue 3000``` <br>                          |
-| 物理 NIC 上的发送缓冲区大小          | 可以通过运行命令 ```Get-NetAdapterAdvancedProperty``` 来验证物理 Nic 是否支持此参数的配置。 如果 Nic 不支持此参数，该命令的输出将不包含属性 "发送缓冲区"。 如果 NIC 确实支持此参数，你可以使用以下 Windows PowerShell 命令设置发送缓冲区大小： <br> ```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Transmit Buffers" –DisplayValue 3000``` <br>                           |
-| 物理 NIC 上的接收方缩放 (RSS) | 可以通过运行 Windows PowerShell 命令 Get-netadapterrss 来验证物理 Nic 是否已启用 RSS。 你可以使用以下 Windows PowerShell 命令来启用和配置网络适配器上的 RSS： <br> ```Enable-NetAdapterRss "NIC1","NIC2"```<br> ```Set-NetAdapterRss "NIC1","NIC2" –NumberOfReceiveQueues 16 -MaxProcessors``` <br> 注意：如果启用 VMMQ 或 VMQ，则不需要在物理网络适配器上启用 RSS。 你可以在主机虚拟网络适配器上启用它。 |
+| 物理 NIC 上的接收缓冲区大小       | 可以通过运行命令 ```Get-NetAdapterAdvancedProperty```来验证物理 Nic 是否支持此参数的配置。 如果它们不支持此参数，则该命令的输出将不包含属性 "接收缓冲区"。 如果 NIC 确实支持此参数，你可以使用以下 Windows PowerShell 命令设置接收缓冲区大小： <br>```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Receive Buffers" –DisplayValue 3000``` <br>                          |
+| 物理 NIC 上的发送缓冲区大小          | 可以通过运行命令 ```Get-NetAdapterAdvancedProperty```来验证物理 Nic 是否支持此参数的配置。 如果 Nic 不支持此参数，该命令的输出将不包含属性 "发送缓冲区"。 如果 NIC 确实支持此参数，你可以使用以下 Windows PowerShell 命令设置发送缓冲区大小： <br> ```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Transmit Buffers" –DisplayValue 3000``` <br>                           |
+| 物理 NIC 上的接收方缩放 (RSS) | 可以通过运行 Windows PowerShell 命令 Get-NetAdapterRss，来验证物理 NIC 是否已启用 RSS。 你可以使用以下 Windows PowerShell 命令来启用和配置网络适配器上的 RSS： <br> ```Enable-NetAdapterRss "NIC1","NIC2"```<br> ```Set-NetAdapterRss "NIC1","NIC2" –NumberOfReceiveQueues 16 -MaxProcessors``` <br> 注意：如果启用了 VMMQ 或 VMQ，则不需要在物理网络适配器上启用 RSS。 你可以在主机虚拟网络适配器上启用它。 |
 | VMMQ                                        | 若要为 VM 启用 VMMQ，请运行以下命令： <br> ```Set-VmNetworkAdapter -VMName <gateway vm name>,-VrssEnabled $true -VmmqEnabled $true``` <br> 注意：并非所有网络适配器都支持 VMMQ。 目前，它在 Chelsio T5 和 T6、Mellanox CX-3 和 CX-4 以及 QLogic 45xxx 系列上受支持                                                                                                                                                                                                                                      |
 | NIC 组上的虚拟机队列 (VMQ) | 你可以使用以下 Windows PowerShell 命令在集团队上启用 VMQ： <br>```Enable-NetAdapterVmq``` <br> 注意：仅当 HW 不支持 VMMQ 时，才应启用此功能。 如果支持，则应启用 VMMQ 以提高性能。                                                                                                                                                                                                                                                               |
 >[!Note]
@@ -76,10 +76,10 @@ Write-Host ("Total Number of Logical Processors: ", $lps)
 在这两个 Hyper-v 主机上，你可以配置多个配置为带有 Windows Server 网关的网关的 Vm。 在 Hyper-V 主机上，可以使用虚拟交换机管理器创建一个与 NIC 组绑定的 Hyper-V 虚拟交换机。 请注意，为了获得最佳性能，应在 Hyper-v 主机上部署单个网关 VM。
 以下是每个 Windows Server 网关 VM 的建议配置。
 
-| 配置项目                 | Windows Powershell 配置                                                                                                                                                                                                                                                                                                                                                               |
+| 配置项                 | Windows Powershell 配置                                                                                                                                                                                                                                                                                                                                                               |
 |------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 内存                             | 8 GB                                                                                                                                                                                                                                                                                                                                                                                           |
-| 虚拟网络适配器数 | 3个 Nic，具体用途如下：1表示管理操作系统使用的管理，1个外部网络提供对外部网络的访问权限，1表示仅提供对内部网络的访问。                                                                                                                                                            |
+| 虚拟网络适配器数 | 3个具有以下特定用途的 Nic：1表示管理操作系统使用的管理，1个外部网络提供对外部网络的访问，1表示仅提供对内部网络的访问。                                                                                                                                                            |
 | Receive Side Scaling (RSS)         | 你可以保留管理 NIC 的默认 RSS 设置。 以下示例配置适用于具有 8 个虚拟处理器的 VM。 对于外部和内部 Nic，可以使用以下 Windows PowerShell 命令，通过将 BaseProcNumber 设置为0，并将 MaxRssProcessors 设置为8来启用 RSS： <br> ```Set-NetAdapterRss "Internal","External" –BaseProcNumber 0 –MaxProcessorNumber 8``` <br> |
 | 发送端缓冲区                   | 你可以保留管理 NIC 的默认发送端缓冲区设置。 对于内部和外部 Nic，可以使用以下 Windows PowerShell 命令来配置包含 32 MB RAM 的发送端缓冲区： <br> ```Set-NetAdapterAdvancedProperty "Internal","External" –DisplayName "Send Buffer Size" –DisplayValue "32MB"``` <br>                                                       |
 | 接收端缓冲区                | 你可以保留管理 NIC 的默认接收端缓冲区设置。 对于内部和外部 Nic，可以使用以下 Windows PowerShell 命令，通过 16 MB 的 RAM 配置接收端缓冲区： <br> ```Set-NetAdapterAdvancedProperty "Internal","External" –DisplayName "Receive Buffer Size" –DisplayValue "16MB"``` <br>                                            |

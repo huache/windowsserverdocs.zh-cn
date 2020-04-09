@@ -1,24 +1,20 @@
 ---
 title: 用户访问日志记录入门
 desctription: Describes the User Access Logging feature and how to start using it.
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-user-access-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f69a1fe4f3c17123f91ade3b6aebdb5f7bab9982
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: b36253b8dfa10ac8156fdc5526d02aa98ebdc740
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001782"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851400"
 ---
 # <a name="get-started-with-user-access-logging"></a>用户访问日志记录入门
 
@@ -31,7 +27,7 @@ ms.locfileid: "77001782"
 > [!NOTE]  
 > UAL 支持 [Microsoft 评估与计划工具包](https://go.microsoft.com/fwlink/?LinkID=111000)。  
   
-## <a name="BKMK_APP"></a>实用应用程序  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
 UAL 聚合登录到本地数据库的唯一客户端设备和用户请求事件。 然后，这些记录可用于（通过服务器管理员执行的查询）按服务器角色、用户、设备、本地服务器和日期检索数目和实例。  此外，UAL 已扩展为允许非 Microsoft 软件开发人员检测由 Windows Server 聚合的 UAL 事件。  
   
 UAL 可以执行以下任务：  
@@ -92,7 +88,7 @@ UAL 可以支持以下服务器角色和服务：
 > [!IMPORTANT]  
 > 不建议在直接连接到 Internet 的服务器（如可访问 Internet 的地址空间中的 Web 服务器），或在极高性能是服务器主要功能的应用场景下（如在 HPC 工作负荷环境中）使用 UAL。 UAL 主要用于小型、中型和企业内部网方案，其中应有高容量，但并不像为定期提供面向 Internet 的流量的部署那么高。  
   
-## <a name="BKMK_NEW"></a>重要功能  
+## <a name="important-functionality"></a><a name="BKMK_NEW"></a>重要功能  
 下表描述 UAL 的关键功能及其可能值。  
   
 |功能|值|  
@@ -128,7 +124,7 @@ UAL 可以支持以下服务器角色和服务：
 |**RoleName**|提供 UAL 数据的角色、组件或子产品的名称。 这还与 ProductName 和 RoleGUID 关联。|  
 |**TenantIdentifier**|随附 UAL 数据的已安装角色或产品的租户客户端的唯一 GUID（如适用）。|  
   
-## <a name="BKMK_SOFT"></a>软件要求  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>软件要求  
 在 Windows Server 2012 之后，可以在运行 Windows Server 版本的任何计算机上使用 UAL。  
   
 ## <a name="see-also"></a>另请参阅  

@@ -2,20 +2,18 @@
 title: 使用离散设备分配部署图形设备
 description: 了解如何使用 DDA 在 Windows Server 中部署图形设备
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
 ms.date: 08/21/2019
-ms.openlocfilehash: 5466cecf9f11a53dc6e205f36d50d7b27b310ea1
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 07f0ba19aaf998bb7b2fe8cf4ef1ba6cf8cae322
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923880"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860910"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>使用离散设备分配部署图形设备
 
@@ -87,7 +85,7 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
-## <a name="whats-next"></a>后续操作
+## <a name="whats-next"></a>后续步骤
 成功将设备装载到 VM 后，现在可以开始该 VM，并像平常一样与设备交互（如果在裸机系统上运行）。  这意味着你现在可以在 VM 中安装硬件供应商的驱动程序，并且应用程序将能够看到该硬件存在。  可以通过打开来宾 VM 中的设备管理器来验证此项，并看到硬件现在显示。
 
 ## <a name="removing-a-device-and-returning-it-to-the-host"></a>删除设备并将其返回到主机
@@ -133,7 +131,7 @@ Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
 Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 ```
 
-## <a name="troubleshooting"></a>“疑难解答”
+## <a name="troubleshooting"></a>故障排除
 
 如果已将 GPU 传递到 VM，但远程桌面或应用程序未识别 GPU，请检查是否存在以下常见问题：
 
@@ -141,4 +139,4 @@ Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 - 确保设备在 VM 内分配了足够的 MMIO 空间。 若要了解详细信息，请参阅[MMIO Space](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md#mmio-space)。
 - 请确保正在使用供应商支持在此配置中使用的 GPU。 例如，某些供应商在传递到 VM 后，阻止其使用者卡工作。
 - 请确保正在运行的应用程序支持在 VM 内运行，并且该应用程序支持 GPU 及其相关的驱动程序。 某些应用程序具有 Gpu 和环境的允许列表。
-- 如果你使用的是来宾上的远程桌面会话主机角色或 Windows Multipoint 服务，则需要确保将特定组策略条目设置为允许使用默认 GPU。 使用应用于来宾的组策略对象（或来宾上的本地组策略编辑器），导航到以下组策略项： **Windows 组件** > 的**计算机配置** > **管理员模板** > **远程桌面服务** > **远程桌面会话主机** > **远程会话环境** > **对所有远程桌面服务会话使用硬件默认图形适配器**。 将此值设置为 "已启用"，然后在应用策略后重新启动 VM。
+- 如果你使用的是来宾上的远程桌面会话主机角色或 Windows Multipoint 服务，则需要确保将特定组策略条目设置为允许使用默认 GPU。 使用应用于来宾的组策略对象（或来宾上的本地组策略编辑器），导航到以下组策略项： > **Windows 组件 > Windows 组件** **远程桌面服务 > 远程桌面会话主机** ** >  > ** 远程桌面服务**远程会话环境**的**计算机配置** ** > ，** **为所有会话使用硬件默认图形适配器**。 将此值设置为 "已启用"，然后在应用策略后重新启动 VM。

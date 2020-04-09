@@ -1,20 +1,20 @@
 ---
 title: 部署网络控制器的要求
 description: 为网络控制器部署准备你的数据中心，这需要一个或多个计算机或 vm 以及一个计算机或 VM。 部署网络控制器之前，必须配置安全组、日志文件位置（如果需要）和动态 DNS 注册。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: a16d82e4db1e92a5dd20f6b4feb88f0619d50cc4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: da9164eea4ab7e2fb38864fb69c47252448b77b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317513"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854420"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>部署网络控制器的要求
 

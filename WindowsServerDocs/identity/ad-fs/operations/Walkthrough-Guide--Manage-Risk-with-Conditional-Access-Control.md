@@ -1,7 +1,6 @@
 ---
 ms.assetid: 3a840b63-78b7-4e62-af7b-497026bfdb93
 title: 演练指南-使用条件性访问控制管理风险
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: aefcd597a580de526a758c6d026c6c91d02d10c8
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 2ce45d3952b6f848635ed601f7ff251fcda3982c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323039"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857640"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>操作实例指南：使用条件访问控制管理风险
 
@@ -34,7 +33,7 @@ ms.locfileid: "79323039"
 
 -   [步骤4：验证条件访问控制机制](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_4)
 
-## <a name="BKMK_1"></a>步骤1：设置实验室环境
+## <a name="step-1-setting-up-the-lab-environment"></a><a name="BKMK_1"></a>步骤1：设置实验室环境
 若要完成本操作实例，需要一个包括以下组件的环境：
 
 -   具有测试用户和组帐户的 Active Directory 域，在 Windows Server 2008、Windows Server 2008 R2 或 Windows Server 2012 上运行，其架构升级到 Windows server 2012 R2 或 Windows Server 2012 R2 上运行的 Active Directory 域
@@ -52,7 +51,7 @@ ms.locfileid: "79323039"
 
 有关如何设置此环境的说明，请参阅[在 Windows Server 2012 R2 中设置 AD FS 的实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)。
 
-## <a name="BKMK_2"></a>步骤2：验证默认 AD FS 访问控制机制
+## <a name="step-2-verify-the-default-ad-fs-access-control-mechanism"></a><a name="BKMK_2"></a>步骤2：验证默认 AD FS 访问控制机制
 在此步骤中，你将验证默认的 AD FS 访问控制机制，在此过程中，用户将被重定向到 AD FS 登录页，提供有效的凭据，然后被授予应用程序的访问权限。 可以使用**Robert Hatley** AD 帐户和**claimapp**示例应用程序，该应用程序是在[为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中配置的。
 
 #### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>验证默认 AD FS 访问控制机制的步骤
@@ -65,7 +64,7 @@ ms.locfileid: "79323039"
 
     系统将授予你对应用程序的访问权限。
 
-## <a name="BKMK_3"></a>步骤3：基于用户数据配置条件访问控制策略
+## <a name="step-3-configure-conditional-access-control-policy-based-on-user-data"></a><a name="BKMK_3"></a>步骤3：基于用户数据配置条件访问控制策略
 在此步骤中，你将基于用户组成员身份数据设置一个访问控制策略。 换而言之，你将在联合服务器上，为代表示例应用程序 (**claimapp**) 的信赖方信任配置“颁发授权规则”。 根据此规则的逻辑， **Robert Hatley** AD 用户将发出访问此应用程序所需的声明，因为该用户属于**财务**组。 已在为[Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)中将**Robert Hatley**帐户添加到**财务**组。
 
 可以通过 AD FS 管理控制台或 Windows PowerShell 完成此任务。
@@ -113,7 +112,7 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 > [!NOTE]
 > 确保将 <group_SID> 替换为 AD **Finance** 组的 SID 值。
 
-## <a name="BKMK_4"></a>步骤4：验证条件访问控制机制
+## <a name="step-4-verify-conditional-access-control-mechanism"></a><a name="BKMK_4"></a>步骤4：验证条件访问控制机制
 在此步骤中，你将验证前一步骤中设置的条件访问控制策略。 可以使用以下过程来验证 **Robert Hatley** AD 用户是否因属于 **Finance** 组而可以访问你的示例应用程序，以及不属于 **Finance** 组的 AD 用户是否无法访问示例应用程序。
 
 1.  在客户端计算机上，打开浏览器窗口，然后导航到示例应用程序： **https://webserv1.contoso.com/claimapp**

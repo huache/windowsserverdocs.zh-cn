@@ -2,19 +2,19 @@
 title: 导出和导入虚拟机
 description: 演示如何使用 Hyper-v 管理器或 Windows PowerShell 导出和导入虚拟机。
 ms.prod: windows-server
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.technology: compute-hyper-v
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: 6e130ee8a040cd5b56908d77d91bf196a60de6f7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1e9cd8710a53c1e5d9d97e464c32dbf7f17d29a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392975"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860890"
 ---
 >适用于： Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
@@ -58,7 +58,7 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 1. 从 Hyper-v 管理器的 "**操作**" 菜单中，单击 "**导入虚拟机**"。
 
-2. 单击**下一步**。
+2. 单击 **“下一步”** 。
 
 3. 选择包含导出文件的文件夹，然后单击 "**下一步**"。
 
@@ -80,7 +80,7 @@ Export-VM -Name \<vm name\> -Path \<path\>
 Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' 
 ```
 
-#### <a name="restore"></a>还原
+#### <a name="restore"></a>Restore
 
 若要导入虚拟机为虚拟机文件指定自己的路径，请运行如下所示的命令，并将示例替换为值：
 

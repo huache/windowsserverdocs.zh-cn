@@ -1,24 +1,20 @@
 ---
 title: logman 创建 cfg
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bfc87093-3ff5-4e19-aa93-d185fb8e2239
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a9dffb308c9c5b73777aa2a2b4dd6e0204699ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 51ae4b64665577aa4795527371764401ce1fe9a1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374589"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840880"
 ---
 # <a name="logman-create-cfg"></a>logman 创建 cfg
 
@@ -30,9 +26,9 @@ ms.locfileid: "71374589"
 ```  
 logman create cfg <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>参数  
+### <a name="parameters"></a>参数  
 
-|                    参数                     |                                                                               描述                                                                               |
+|                    参数                     |                                                                               说明                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                        /?                        |                                                                    显示区分上下文的帮助。                                                                     |
 |                -s <computer name>                |                                                          在指定的远程计算机上执行命令。                                                          |
@@ -61,14 +57,14 @@ logman create cfg <[-n] <name>> [options]
 
 ## <a name="remarks"></a>备注  
 其中列出了 [-]，额外-会对选项求反。  
-## <a name="BKMK_examples"></a>示例  
+## <a name="examples"></a><a name=BKMK_examples></a>示例  
 以下命令使用注册表项 HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\Currentverion\\创建名为 cfg_log 的配置数据收集器。  
 ```  
-logman create cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\"  
+logman create cfg cfg_log -reg HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\  
 ```  
 以下命令将创建一个名为 cfg_log 的配置数据收集器，该收集器记录数据库列中 root\wmi 的所有 WMI 对象 MSNdis_Vendordriverversion。  
 ```  
-logman create cfg cfg_log -mgt "root\wmi:select * FROM MSNdis_Vendordriverversion"  
+logman create cfg cfg_log -mgt root\wmi:select * FROM MSNdis_Vendordriverversion  
 ```  
-#### <a name="additional-references"></a>其他参考  
+## <a name="additional-references"></a>其他参考  
 [logman](logman.md)  

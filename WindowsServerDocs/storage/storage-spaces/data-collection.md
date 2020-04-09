@@ -1,21 +1,18 @@
 ---
 title: 通过存储空间直通收集诊断数据
 description: 了解存储空间直通的数据收集工具，并提供有关如何运行和使用它们的特定示例。
-keywords: 存储空间，数据收集，故障排除，事件通道，SDDCDiagnosticInfo
-ms.assetid: ''
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 10/24/2018
-ms.localizationpriority: ''
-ms.openlocfilehash: 0d64e6188b24b5a1ec45242c3d99366fdde5a623
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 75a74017f48b357dd029b062a7ce06775836bd0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465211"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858960"
 ---
 # <a name="collect-diagnostic-data-with-storage-spaces-direct"></a>通过存储空间直通收集诊断数据
 

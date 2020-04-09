@@ -1,24 +1,20 @@
 ---
 title: prnqctl
 description: 打印测试页、暂停或恢复打印机。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8df9dfa7-984c-4276-bb7d-e7675e7c399e jpjofre
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 189b344dc0c4f587ba7a6382c481304242e22c74
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d07d8caa0568b26f5edc16258085a59ecdafcf4e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372041"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837200"
 ---
 # <a name="prnqctl"></a>prnqctl
 
@@ -31,9 +27,9 @@ ms.locfileid: "71372041"
 cscript Prnqctl {-z | -m | -e | -x | -?} [-s <ServerName>]   
 [-p <printerName>] [-u <UserName>] [-w <Password>]  
 ```  
-## <a name="parameters"></a>参数  
+### <a name="parameters"></a>参数  
 
-|参数|描述|  
+|参数|说明|  
 |-------|--------|  
 |-z|暂停在指定了 **-p**参数的打印机上打印。|  
 |-m|在指定了 **-p**参数的打印机上恢复打印。|  
@@ -51,7 +47,7 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <ServerName>]
   ```  
 - 如果提供的信息包含空格，请使用引号将文本括起来（例如 `"computer Name"`）。  
 
-## <a name="BKMK_examples"></a>示例  
+## <a name="examples"></a><a name="BKMK_examples"></a>示例  
 若要在 \\\Server1 计算机共享的 Laserprinter1 打印机上打印测试页，请键入：  
 ```  
 cscript Prnqctl -e -s Server1 -p Laserprinter1  
@@ -65,6 +61,6 @@ cscript Prnqctl -z -p Laserprinter1
 cscript Prnqctl -x -p Laserprinter1  
 ```  
 
-#### <a name="additional-references"></a>其他参考  
-[命令行语法项](command-line-syntax-key.md)  
+## <a name="additional-references"></a>其他参考  
+- [命令行语法项](command-line-syntax-key.md)  
 [打印命令参考](print-command-reference.md)  

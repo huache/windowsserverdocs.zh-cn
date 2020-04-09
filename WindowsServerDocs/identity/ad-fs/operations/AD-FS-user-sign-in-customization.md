@@ -1,7 +1,6 @@
 ---
 ms.assetid: 61b6c115-1082-45d5-b0b1-ed24d06fcdce
 title: AD FS 用户登录自定义
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 141501f240da7ccd1eaa1ebd44c6f2bca561cf18
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 265dc24ccdaf261d6c58cb1fa77ea93d71b4007b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358496"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858080"
 ---
 # <a name="ad-fs-user-sign-in-customization"></a>AD FS 用户登录自定义
 
@@ -33,7 +32,7 @@ AD FS 提供了许多选项，管理员可以根据其公司需求自定义和�
 
 
 
-主题|描述|
+主题|说明|
 -----|-----|
 [Windows Server 2016 中的 AD FS 自定义](AD-FS-Customization-in-Windows-Server-2016.md)|Windows Server 2016 中的 AD FS 的新自定义选项|
 [更改公司名称](Change-the-company-name-on-the-AD-FS-sign-in-page.md)|在登录页上显示公司名称的步骤|

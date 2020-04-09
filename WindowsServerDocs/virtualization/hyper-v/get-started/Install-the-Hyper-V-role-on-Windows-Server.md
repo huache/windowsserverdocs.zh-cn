@@ -2,25 +2,23 @@
 title: 在 Windows Server 上安装 Hyper-v 角色
 description: 提供有关使用服务器管理器或 Windows PowerShell 安装 Hyper-v 的说明
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/02/2016
-ms.openlocfilehash: 2687a907852e2a81f03b147df1425cd01b34fb76
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4d8f2343f0935ea7185890319a3e33564750572
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392808"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860820"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>在 Windows Server 上安装 Hyper-v 角色
 
->适用于：Windows Server 2016、Windows Server 2019
+>适用于： Windows Server 2016、Windows Server 2019
   
 若要创建和运行虚拟机，请在 Windows Server 上安装 Hyper-v 角色，方法是使用服务器管理器或在 Windows PowerShell 中使用**add-windowsfeature** cmdlet。 对于 Windows 10，请参阅[在 windows 10 上安装 hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
 
@@ -36,7 +34,7 @@ ms.locfileid: "71392808"
   
 1. 在“服务器管理器”中的“管理”菜单上，单击“添加角色和功能”。  
   
-2. 在 **“开始之前”** 页面上，确定目标服务器和网络环境已为要安装的角色和功能做好准备。 单击“下一步”。  
+2. 在 **“开始之前”** 页面上，确定目标服务器和网络环境已为要安装的角色和功能做好准备。 单击 **“下一步”** 。  
   
 3. 在“选择安装类型”页上，选择“基于角色或功能的安装”，然后单击“下一步”。  
   
@@ -64,7 +62,7 @@ ms.locfileid: "71392808"
     Install-WindowsFeature -Name Hyper-V -ComputerName <computer_name> -IncludeManagementTools -Restart  
     ```  
   
-    如果以本地方式连接到服务器，请运行命令，但不 `-ComputerName <computer_name>`。  
+    如果以本地方式连接到服务器，请在不 `-ComputerName <computer_name>`的情况下运行该命令。  
   
 4. 服务器重新启动后，你可以看到已安装了 Hyper-v 角色，并通过运行以下命令来查看安装了哪些其他角色和功能：  
   
@@ -72,11 +70,11 @@ ms.locfileid: "71392808"
     Get-WindowsFeature -ComputerName <computer_name>  
     ```  
   
-    如果以本地方式连接到服务器，请运行命令，但不 `-ComputerName <computer_name>`。  
+    如果以本地方式连接到服务器，请在不 `-ComputerName <computer_name>`的情况下运行该命令。  
   
 > [!NOTE]  
-> 如果在运行 Windows Server 2016 的服务器核心安装选项的服务器上安装此角色，并使用参数 `-IncludeManagementTools`，则只会安装 Windows PowerShell 的 Hyper-v 模块。 你可以在另一台计算机上使用 GUI 管理工具 Hyper-v 管理器来远程管理在服务器核心安装上运行的 Hyper-v 主机。 有关远程连接的说明，请参阅[通过 Hyper-v 管理器远程管理 hyper-v 主机](../Manage/Remotely-manage-Hyper-V-hosts.md)。  
+> 如果在运行 Windows Server 2016 的服务器核心安装选项的服务器上安装此角色并使用参数 `-IncludeManagementTools`，则只会安装 Windows PowerShell 的 Hyper-v 模块。 你可以在另一台计算机上使用 GUI 管理工具 Hyper-v 管理器来远程管理在服务器核心安装上运行的 Hyper-v 主机。 有关远程连接的说明，请参阅[通过 Hyper-v 管理器远程管理 hyper-v 主机](../Manage/Remotely-manage-Hyper-V-hosts.md)。  
   
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
   
 - [Add-windowsfeature](https://docs.microsoft.com/powershell/module/Microsoft.Windows.ServerManager.Migration/Install-WindowsFeature)  
