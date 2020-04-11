@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setpeercachingflags
-description: 适用于 bitsadmin setpeercachingflags 的 Windows 命令主题，用于设置标志，这些标志确定是否可以缓存作业的文件并将其提供给对等方以及作业是否可以从对等方下载内容。
+description: 适用于**bitsadmin setpeercachingflags**的 Windows 命令主题，用于设置标志，这些标志确定是否可以缓存作业的文件并将其提供给对等方以及作业是否可以从对等方下载内容。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d19e4d14b47e4aa96e9ad9d4367e872350ad4d43
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1b4a7807975fb46440301e30b1fdbd01784d7c85
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849240"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122779"
 ---
 # <a name="bitsadmin-setpeercachingflags"></a>bitsadmin setpeercachingflags
 
@@ -23,21 +23,22 @@ ms.locfileid: "80849240"
 ## <a name="syntax"></a>语法
 
 ```
-bitsadmin /SetPeerCachingFlags <Job> <value> 
+bitsadmin /setpeercachingflags <job> <value>
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
-|---------|-----------|
-|作业|该作业的显示名称或 GUID|
-|值|该值是一个无符号整数，它对二进制表示形式中的位进行了以下解释。</br>1-作业可以从对等方下载内容。</br>2-作业的文件可以缓存并提供给对等方。|
+| 参数 | 说明 |
+| --------- | ----------- |
+| 作业 | 作业的显示名称或 GUID。 |
+| 值 | 无符号整数，其中包括：<ul><li>**1.** 作业可以从对等方下载内容。</li><li>**2.** 该作业的文件可以缓存并提供给对等方。</li></ul> |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例设置名为*myJob*的作业的标志，它允许其从对等方下载内容。
+下面的示例设置名为*myDownloadJob*的作业的标志，使其能够从对等方下载内容。
+
 ```
-C:\>bitsadmin / SetPeerCachingFlags myJob 1 
+C:\>bitsadmin /setpeercachingflags myDownloadJob 1
 ```
 
 ## <a name="additional-references"></a>其他参考
