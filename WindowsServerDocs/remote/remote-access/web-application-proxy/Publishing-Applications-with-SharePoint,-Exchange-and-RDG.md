@@ -8,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 18851463b82afc1dc34615e6faaa14622c80224a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f859d40ed04cc25285212968e6cd186cffe760ae
+ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818680"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81119251"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>使用 SharePoint、Exchange 和 RDG 发布应用程序
 
@@ -112,7 +112,7 @@ ms.locfileid: "80818680"
 5.  如果外部和内部 FQDN 不同，则不应在 RDWeb 发布规则上禁用请求标头转换。 可以通过在 Web 应用程序代理服务器上运行以下 PowerShell 脚本来完成此操作，但默认情况下应启用此脚本：
 
     ```PowerShell
-    Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableTranslateUrlInRequestHeaders:$false
+    Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableTranslateUrlInRequestHeaders:$true
     ```
 
 6.  在 RDG 发布的应用程序上禁用 Web 应用程序代理中的 HttpOnly cookie 属性。 若要允许 RDG ActiveX 控件访问 Web 应用程序代理的身份验证 cookie，必须禁用 Web 应用程序代理 cookie 上的 HttpOnly 属性。

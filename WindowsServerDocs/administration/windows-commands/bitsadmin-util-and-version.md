@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util 和版本
-description: 用于显示 BITS 服务版本的 bitsadmin util 和 version 的 Windows 命令主题。
+description: 用于显示 BITS 服务版本的**bitsadmin util 和 version**的 Windows 命令主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,37 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 087cc1033166ab93e7496caaa7335433cafd6249
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2c2518eb7a8f15d9a592ed9a77dd67a6f8d8afac
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848830"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122471"
 ---
 # <a name="bitsadmin-util-and-version"></a>bitsadmin util 和版本
 
 显示 BITS 服务的版本（例如，2.0）。
 
-**BITSAdmin 1.5 及更早版本**：不支持。
+> [!NOTE]
+> BITS 1.5 和更早版本不支持此命令。
 
 ## <a name="syntax"></a>语法
 
 ```
-bitsadmin /Util /Version [/Verbose]
+bitsadmin /util /version [/verbose]
 ```
 
-## <a name="remarks"></a>备注
+### <a name="parameters"></a>参数
 
-**详细**开关执行以下操作：
--   显示每个与 BITS 相关的 DLL 的文件版本
--   验证是否可以启动 BITS 服务
--   显示位组策略值（仅适用于 Windows Vista）
+| 参数 | 说明 |
+| --------- | ----------- |
+| /verbose | 使用此开关可以显示每个与 BITS 相关的 DLL 的文件版本，并验证 BITS 服务是否可以启动。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 下面的示例是 BITS 服务的版本。
+
 ```
-C:\>bitsadmin /Util /Version
+C:\>bitsadmin /util /version
 ```
 
 ## <a name="additional-references"></a>其他参考

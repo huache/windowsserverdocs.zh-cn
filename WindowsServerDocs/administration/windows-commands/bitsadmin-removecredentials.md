@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55ff7e2a813c7cc6b60e04d55ef63804a2aed796
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1dbb25f0b0a19358b83a610c4684a3eb647c8232
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849840"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123099"
 ---
 # <a name="bitsadmin-removecredentials"></a>bitsadmin removecredentials
 
@@ -35,14 +35,14 @@ bitsadmin /removecredentials <job> <target> <scheme>
 | -------------- | -------------- |
 | 作业 | 作业的显示名称或 GUID。 |
 | target | 使用**服务器**或**代理**。 |
-| 方案 (scheme) | 使用以下项之一：<ul><li>**空白.** 身份验证方案，在此方案中，用户名和密码以明文形式发送到服务器或代理。</li><li>**摘要.** 质询-响应身份验证方案，该方案将服务器指定的数据字符串用于质询。</li><li>**NTLM.** 质询-响应身份验证方案，该方案使用用户的凭据在 Windows 网络环境中进行身份验证。</li><li>**协商（也称为简单和受保护的协商协议）。** 质询-响应身份验证方案，该方案与服务器或代理协商以确定要用于身份验证的方案。 例如，Kerberos 协议和 NTLM。</li><li>**通行证.** Microsoft 提供的一种集中式身份验证服务，可为成员站点提供单一登录。</li></ul> |
+| 方案 (scheme) | 使用以下项之一：<ul><li>**BASIC.。** 身份验证方案，在此方案中，用户名和密码以明文形式发送到服务器或代理。</li><li>**摘要.** 质询-响应身份验证方案，该方案将服务器指定的数据字符串用于质询。</li><li>**NTLM.** 质询-响应身份验证方案，该方案使用用户的凭据在 Windows 网络环境中进行身份验证。</li><li>**协商（也称为简单和受保护的协商协议）。** 质询-响应身份验证方案，该方案与服务器或代理协商以确定要用于身份验证的方案。 例如，Kerberos 协议和 NTLM。</li><li>**通行证.** Microsoft 提供的一种集中式身份验证服务，可为成员站点提供单一登录。</li></ul> |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 下面的示例从名为*myDownloadJob*的作业中删除凭据。
 
 ```
-C:\>bitsadmin /removecredentials myDownloadJob server basic
+C:\>bitsadmin /removecredentials myDownloadJob SERVER BASIC
 ```
 
 ## <a name="additional-references"></a>其他参考

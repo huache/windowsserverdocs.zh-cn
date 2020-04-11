@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setreplyfilename
-description: 适用于 bitsadmin setreplyfilename 的 Windows 命令主题，用于指定包含服务器回复的文件的路径。
+description: 适用于**bitsadmin setreplyfilename**的 Windows 命令主题，它指定包含服务器上传-答复的文件的路径。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,39 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd45174a7deac89cc943fb19d544e372c0198139
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6c476073cb22ff66bcefc75a45fcd0526cdf3d25
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849180"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122737"
 ---
 # <a name="bitsadmin-setreplyfilename"></a>bitsadmin setreplyfilename
 
-指定包含服务器答复的文件的路径。
+指定包含服务器上传答复的文件的路径。
 
-**BITS 1.2 及更早版本**：不支持。
+> [!NOTE]
+> BITS 1.2 和更早版本不支持此命令。
 
 ## <a name="syntax"></a>语法
 
 ```
-bitsadmin /SetReplyFileName <Job> <Path>
+bitsadmin /setreplyfilename <job> <file_path>
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
-|---------|-----------|
-|作业|该作业的显示名称或 GUID|
-|Path|服务器答复位置|
+| 参数 | 说明 |
+| -------------- | -------------- |
+| 作业 | 作业的显示名称或 GUID。 |
+| file_path | 要放置服务器上传的位置-回复。 |
 
-## <a name="remarks"></a>备注
+## <a name="examples"></a>示例
 
-仅对上传-答复作业有效。
+下面的示例设置名为*myDownloadJob*的作业的上传答复文件名文件路径。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
-
-下面的示例设置 pathfor 名为*myDownloadJob*的作业的答复文件名。
 ```
-C:\>bitsadmin /SetReplyFileName myDownloadJob c:\reply
+C:\>bitsadmin /setreplyfilename myDownloadJob c:\upload-reply
 ```
 
 ## <a name="additional-references"></a>其他参考

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setminretrydelay
-description: 适用于 bitsadmin setminretrydelay 的 Windows 命令主题，它设置在尝试传输文件之前，BITS 等待的最短时间长度（以秒为单位）。
+description: 适用于**bitsadmin setminretrydelay**的 Windows 命令主题，它设置在尝试传输文件之前，BITS 等待的最短时间长度（以秒为单位）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb2fe4c6d0e4f90c6ec49fa1da63404393d4f634
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ddae9a62a49ca07bb03649f131a0a1ebad8ee3fe
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849360"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122881"
 ---
 # <a name="bitsadmin-setminretrydelay"></a>bitsadmin setminretrydelay
 
@@ -23,21 +23,22 @@ ms.locfileid: "80849360"
 ## <a name="syntax"></a>语法
 
 ```
-bitsadmin /SetMinRetryDelay <Job> <RetryDelay>
+bitsadmin /setminretrydelay <job> <retrydelay>
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
-|---------|-----------|
-|作业|该作业的显示名称或 GUID|
-|RetryDelay|以秒表示的数字。|
+| 参数 | 说明 |
+| --------- | ----------- |
+| 作业 | 作业的显示名称或 GUID。 |
+| retrydelay | 传输过程中出错后，BITS 等待的最小时间长度（以秒为单位）。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 下面的示例将名为*myDownloadJob*的作业的最小重试延迟设置为35秒。
+
 ```
-C:\>bitsadmin /SetMinRetryDelay myDownloadJob 35
+C:\>bitsadmin /setminretrydelay myDownloadJob 35
 ```
 
 ## <a name="additional-references"></a>其他参考
