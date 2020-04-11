@@ -1,24 +1,20 @@
 ---
 title: 远程桌面服务 - 保护数据存储
 description: 有关在 RDS 中使用用户配置文件磁盘 (UPD) 安全存储数据的规划信息。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 37b7f68e-7c3a-4190-a52f-99ae96885fae
 author: lizap
 ms.author: elizapo
 ms.date: 11/21/2016
 manager: dongill
-ms.openlocfilehash: 8b7fa596f88f5cb361e0c681ffec3bcc72403d03
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 934aab380f9e58f4fe9567921623279a1893af4b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403922"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860290"
 ---
 # <a name="remote-desktop-services---secure-data-storage-with-upds"></a>远程桌面服务 - 使用 UPD 保护数据存储
 

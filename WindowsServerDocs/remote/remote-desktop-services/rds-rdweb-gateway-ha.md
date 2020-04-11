@@ -1,23 +1,19 @@
 ---
 title: 向 RD Web 和网关 Web 前端添加高可用性
 description: 提供在 RDS 部署中安装 RD Web 和网关服务器的步骤。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: 5838480847e5f86a03f264a0ece1f8d4097597cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e98bbda5460311dd379eab6f5a5bde0ec3845d5c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387234"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860280"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>向 RD Web 和网关 Web 前端添加高可用性
 
@@ -32,7 +28,7 @@ ms.locfileid: "71387234"
 
 设置用于充当附加 RD Web 和 RD 网关的服务器，这可以是物理服务器，也可以是 VM。 此操作包括将服务器加入域并启用远程管理。
 
-## <a name="step-1-configure-the-new-server-to-be-part-of-the-rds-environment"></a>第 1 步：将新服务器配置为 RDS 环境的一部分
+## <a name="step-1-configure-the-new-server-to-be-part-of-the-rds-environment"></a>步骤 1：将新服务器配置为 RDS 环境的一部分
 
 1. 使用远程桌面连接客户端连接到 Azure 门户中的 RDMS 服务器。
 2. 向服务器管理器添加新的 RD Web 和网关服务器：
@@ -99,7 +95,7 @@ ms.locfileid: "71387234"
     3.  选择“公共”作为“方案”。  
     4.  在“公共 IP 地址”下选择“选择公共 IP 地址”，然后选择现有的公共 IP 地址，或者创建新的 IP 地址。  
     5.  选择相应的“订阅”、“资源组”和“位置”    。
-    6.  单击“创建”  。  
+    6.  单击“**创建**”。  
 2. 创建[探测](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/) 用于监视处于活动状态的服务器：  
     1.  在 Azure 门户中，选择“浏览” > “负载均衡器”，然后选择在上一步创建的负载均衡器。  
     2.  选择“所有设置”   >   “探测” >   “添加”。  

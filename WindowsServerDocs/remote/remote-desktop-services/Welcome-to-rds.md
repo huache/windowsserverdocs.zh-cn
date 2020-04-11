@@ -1,25 +1,21 @@
 ---
 title: 欢迎使用 Windows Server 2016 中的远程桌面服务
 description: 提供远程桌面服务的概述
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 02/22/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 46a04905d5247ae940ca900297171d1112cf936b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 70979eae2ad9f54ab895572f97d9b5968cff31d9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404206"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854680"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>欢迎使用远程桌面服务 
 
@@ -46,7 +42,7 @@ RDS 提供部署灵活性、高成本效益和可扩展性 - 各种部署选项�
 ## <a name="next-steps"></a>后续步骤
 
 以下后续步骤可帮助你更好地了解 RDS，甚至可帮助你开始部署自己的环境：
--   了解各种 Windows 和 Windows Server 版本中的 RDS [支持的配置](rds-supported-config.md)
--   [规划和设计](rds-plan-and-design.md)一个 RDS 环境来满足各种要求，例如高可用性和多重身份验证。
--   查看最适合所需环境的[远程桌面服务体系结构模型](desktop-hosting-logical-architecture.md)。
--   开始[使用 ARM 和 Azure 市场部署 RDS 环境](rds-in-azure.md)。
+-    了解各种 Windows 和 Windows Server 版本中的 RDS [支持的配置](rds-supported-config.md)
+-    [规划和设计](rds-plan-and-design.md)一个 RDS 环境来满足各种要求，例如高可用性和多重身份验证。
+-    查看最适合所需环境的[远程桌面服务体系结构模型](desktop-hosting-logical-architecture.md)。
+-    开始[使用 ARM 和 Azure 市场部署 RDS 环境](rds-in-azure.md)。

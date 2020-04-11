@@ -1,23 +1,19 @@
 ---
 title: 使用 Azure Site Recovery 启用 RDS 的灾难恢复
 description: 了解如何使用 Azure Site Recovery 启用 RDS 的灾难恢复。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 38aea3dfced6ec67ae8418f697d78fa7e3c72420
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0c7af18be4aa767009f1dd0b82f145ffe6874768
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403987"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861400"
 ---
 # <a name="enable-disaster-recovery-of-rds-using-azure-site-recovery"></a>使用 Azure Site Recovery 启用 RDS 的灾难恢复
 

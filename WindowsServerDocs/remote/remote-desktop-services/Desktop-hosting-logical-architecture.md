@@ -1,24 +1,20 @@
 ---
 title: 远程桌面服务体系结构
 description: RDS 体系结构关系图
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 02/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7cd46cadf5ed5424e50556ee0c91a80804108113
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 441b0b24fd4b4dc18d3afd65283bbf7ff2417048
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323669"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818431"
 ---
 # <a name="remote-desktop-services-architecture"></a>远程桌面服务体系结构
 
@@ -32,8 +28,8 @@ ms.locfileid: "79323669"
 ## <a name="standard-rds-deployment-architectures"></a>标准 RDS 部署体系结构
 
 远程桌面服务有两个标准体系结构：
--   基本部署 – 这包含创建完全有效的 RDS 环境所需的最小服务器数量
--   高度可用部署 – 这包含所有必要组件，以保证 RDS 环境具有最高的正常运行时间
+-    基本部署 – 这包含创建完全有效的 RDS 环境所需的最小服务器数量
+-    高度可用部署 – 这包含所有必要组件，以保证 RDS 环境具有最高的正常运行时间
 
 ### <a name="basic-deployment"></a>基本部署
 

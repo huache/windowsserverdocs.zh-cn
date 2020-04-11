@@ -1,24 +1,20 @@
 ---
 title: 使用客户端访问许可证 (CAL) 许可 RDS 部署
 description: 远程桌面服务中的客户端授权的概述。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5be6546b-df16-4475-bcba-aa75aabef3e3
 author: lizap
 ms.author: elizapo
 ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: 391f9e7569abd3c3496bfcc9b52d3ddf8abdebbb
-ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
+ms.openlocfilehash: 295536afc77d0559fd7d2d4a22f555231a1aab75
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77173430"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858070"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>使用客户端访问许可证 (CAL) 许可 RDS 部署
 

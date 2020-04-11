@@ -1,24 +1,20 @@
 ---
 title: 管理 RDS 集合中的用户
 description: 了解如何管理远程桌面服务中的用户。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2727e1ab-69b8-46f3-9f6d-2540324fe596
 author: christianmontoya
 ms.author: chrimo
 ms.date: 03/27/2018
 manager: scottman
-ms.openlocfilehash: 870a6360f685c2de31485135202b0f1415c90d85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 430c38f98dd9aec3034e023d737952e3015622eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403852"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858680"
 ---
 # <a name="manage-users-in-your-rds-collection"></a>管理 RDS 集合中的用户
 
@@ -26,8 +22,8 @@ ms.locfileid: "71403852"
 
 管理员可以直接管理哪些用户有权访问特定的集合。 这样，便可以创建一个包含信息工作者所用的标准应用程序的集合，然后创建一个包含工程师所用的图形密集型建模应用程序的独立集合。 管理远程桌面服务 (RDS) 部署中的用户访问权限需要执行两个主要步骤：
 
-1.  [在 Active Directory 中创建用户和组](#create-your-users-and-groups-in-active-directory)
-2.  [将用户和组分配到集合](#assign-users-and-groups-to-collections)
+1.    [在 Active Directory 中创建用户和组](#create-your-users-and-groups-in-active-directory)
+2.    [将用户和组分配到集合](#assign-users-and-groups-to-collections)
 
 
 ## <a name="create-your-users-and-groups-in-active-directory"></a>在 Active Directory 中创建用户和组

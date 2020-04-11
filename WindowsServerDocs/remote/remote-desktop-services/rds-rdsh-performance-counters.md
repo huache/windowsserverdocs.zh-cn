@@ -5,17 +5,16 @@ ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 07/11/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b222104abd5b0b964bac748c3be15049075191d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c33e5c6309c41e39aeda3a2bdff1a0caf72b2675
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950419"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860330"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>使用性能计数器来诊断远程桌面会话主机上的应用性能问题
 
@@ -84,13 +83,13 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 |计数器的类型|实例名|报告的延迟（毫秒）|
 |---------------|-------------|-------------------|
-|每个进程的用户输入延迟|1:4232 <Calculator.exe>|  200|
-|每个进程的用户输入延迟|2:1000 <Calculator.exe>|  16|
-|每个进程的用户输入延迟|1:2000 <Calculator.exe>|  32|
+|每个进程的用户输入延迟|1:4232 <Calculator.exe>|    200|
+|每个进程的用户输入延迟|2:1000 <Calculator.exe>|    16|
+|每个进程的用户输入延迟|1:2000 <Calculator.exe>|    32|
 |每个会话的用户输入延迟|1|    200|
 |每个会话的用户输入延迟|2|    16|
-|每个会话的用户输入延迟|平均值|  108|
-|每个会话的用户输入延迟|最大值|  200|
+|每个会话的用户输入延迟|平均值|     108|
+|每个会话的用户输入延迟|最大值|     200|
 
 ## <a name="counters-used-in-an-overloaded-system"></a>重载系统中使用的计数器
 

@@ -8,12 +8,12 @@ ms.assetid: 8cb9b59f-0255-4261-b49a-562c5ea50ee0
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fe2318ad7feb732b86bcd69317bff20146923b64
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 061d7252d5a7bbe09d3dca245d9b77ed20a4dedf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312241"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854760"
 ---
 # <a name="netsh-command-syntax-contexts-and-formatting"></a>Netsh 命令语法、上下文和格式设置
 
@@ -133,7 +133,7 @@ Netsh 是命令行脚本实用工具，可让你以本地或远程方式显示�
 
 **netsh**\[ **-a**&nbsp;*AliasFile*\] \[ **-c**&nbsp;*Context* \] \[ **-r**&nbsp;*RemoteComputer*\] \[ **-u** \[ *DomainName\\* \] *UserName* \] \[ **-p**&nbsp;*Password* | \*\] \[{*NetshCommand* |  **-f**&nbsp;*ScriptFile*}\]
 
-#### <a name="parameters"></a>参数
+##### <a name="parameters"></a>参数
 
 **`-a`**
 

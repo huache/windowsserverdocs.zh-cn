@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: f2940e5ad75fab90f717284eabafd555573cab35
-ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
+ms.openlocfilehash: ce4c35f0b65d0461e9dc2e23404d2637aecff415
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973851"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827100"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Windows Server 2016 Standard 和 Datacenter 版本的比较
 
@@ -23,7 +23,7 @@ ms.locfileid: "71973851"
   
 ## <a name="locks-and-limits"></a>锁定和限制
 
-| 锁定和限制 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
+| 锁定和限制 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
 | ------------------- |---------- | --------------------------- |  
 | 最大用户数 | 基于 CAL   | 基于 CAL     |
 | 最大 SMB 连接数 | 16,777,216      | 16,777,216          |
@@ -41,7 +41,7 @@ ms.locfileid: "71973851"
 
 ## <a name="server-roles"></a>服务器角色
 
-| 可用的 Windows Server 角色     | 角色服务 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |  
+| 可用的 Windows Server 角色     | 角色服务 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |  
 | -------------------                | ----------    | ----------                   | ---------------------------    |  
 | Active Directory 证书服务|              | 是                          | 是                            |
 | Active Directory 域服务    |               | 是                          | 是                            |
@@ -57,34 +57,34 @@ ms.locfileid: "71973851"
 | 文件和存储服务|重复数据删除|是|是|
 | 文件和存储服务|DFS 命名空间|是|是|
 | 文件和存储服务|DFS 复制|是|是|
-| 文件和存储服务|文件服务器资源管理器|是|是|
+| 文件和存储服务|File Server Resource Manager|是|是|
 | 文件和存储服务|文件服务器 VSS 代理服务|是|是|
-| 文件和存储服务|iSCSI 目标服务器|是|是|
+| 文件和存储服务|iSCSI Target Server|是|是|
 | 文件和存储服务|iSCSI 目标存储提供程序|是|是|
 | 文件和存储服务|NFS 服务器|是|是|
 | 文件和存储服务|工作文件夹|是|是|
 | 文件和存储服务|存储服务|是|是|
 | 主机保护者服务| |是|是|
 | Hyper-V| |是|是；包括受防护的虚拟机|
-| MultiPoint 服务| |是|是|
+| MultiPoint Services| |是|是|
 | 网络控制器| |否| <strong>是</strong> |
-| 网络策略和访问服务| |是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
+| Network Policy and Access Services| |是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
 | 打印和文档服务| |是|是|
 | 远程访问| |是|是|
 | 远程桌面服务| |是|是|
 | 批量激活服务| |是|是|
 | Web 服务 (IIS)| |是|是|
 | Windows 部署服务| |是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
-| Windows Server Essentials 体验| |是|是|
-| Windows Server 更新服务| |是|是|
+| Windows Server Essentials 体验| |是|是|
+| Windows Server Update Services| |是|是|
 
 ## <a name="features"></a>功能
 
-|Windows Server 功能可以使用服务器管理器（或 PowerShell）安装|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
+|Windows Server 功能可以使用服务器管理器（或 PowerShell）安装|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
 |-------------------|----------|---------------------------|  
 |.NET Framework 3.5|是|是|
 |.NET Framework 4.6|是|是|
-|后台智能传输服务 (BITS)|是|是|
+|后台智能传送服务 (BITS)|是|是|
 |BitLocker 驱动器加密|是|是|
 |BitLocker 网络解锁|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
 |BranchCache|是|是|
@@ -107,9 +107,9 @@ ms.locfileid: "71973851"
 |消息队列|是|是|
 |多路径 I/O|是|是|
 |多点连接器|是|是|
-|网络负载平衡|是|是|
+|Network Load Balancing|是|是|
 |对等名称解析协议|是|是|
-|高质量 Windows 音频视频体验|是|是|
+|优质 Windows 音频视频体验|是|是|
 |RAS 连接管理器管理工具包|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
 |远程协助|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
 |远程差分压缩|是|是|
@@ -127,14 +127,14 @@ ms.locfileid: "71973851"
 |TFTP 客户端|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
 |用于结构管理的 VM 防护工具|是|是|
 |WebDAV 重定向程序|是|是|
-|Windows Biometric Framework|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
+|Windows 生物识别框架|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
 |Windows Defender 功能|已安装|已安装|
 |Windows Identity Foundation 3.5|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
 |Windows 内部数据库|是|是|
 |Windows PowerShell|已安装|已安装|
 |Windows Process Activation Service|是|是|
 |Windows Search 服务|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
-|Windows Server 备份|是|是|
+|Windows Server Backup|是|是|
 |Windows Server 迁移工具|是|是|
 |基于 Windows 标准的存储管理|是|是|
 |Windows TIFF IFilter|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
@@ -144,15 +144,15 @@ ms.locfileid: "71973851"
 |WoW64 支持|已安装|已安装|
 |XPS 查看器|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
 
-|通常可用的功能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
+|通常可用的功能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
 |-------------------|----------|---------------------------|  
 |最佳做法分析器|是|是|
 |直接访问|是|是|
 |动态内存（虚拟化）|是|是|
 |热添加/替换 RAM|是|是|
 |Microsoft 管理控制台|是|是|
-|最精简的服务器界面|是|是|
-|网络负载平衡|是|是|
+|最小服务器界面|是|是|
+|Network Load Balancing|是|是|
 |Windows PowerShell|是|是|
 |服务器核心安装选项|是|是|
 |Nano Server 安装选项|是|是|
@@ -161,10 +161,10 @@ ms.locfileid: "71973851"
 | 软件定义的网络 | 否 | <strong>是</strong> |
 |存储副本 | 否 | <strong>是</strong> |
 |存储空间|是|是|
-|存储空间直通|否| <strong>是</strong> |
+|Storage Spaces Direct|否| <strong>是</strong> |
 |批量激活服务|是|是|
 |VSS（卷影复制服务）集成|是|是|
-|Windows Server 更新服务|是|是|
+|Windows Server Update Services|是|是|
 |Windows 系统资源管理器|是|是|
 |服务器许可证日志记录|是|是|
 |继承激活|托管于数据中心时作为来宾| 可以是主机或来宾 |

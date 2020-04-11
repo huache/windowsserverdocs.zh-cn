@@ -1,24 +1,20 @@
 ---
 title: 创建远程桌面服务集合
 description: 了解如何将 RDSH 和 RemoteApp 程序添加到 RDS 部署中。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/22/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 92af2b4e9fb174f1aa815256148ee8d5c7c7181a
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 6a842c7984dc63fe40c05300f6cfbb6718846525
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812257"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852950"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>创建供桌面和应用运行的远程桌面服务集合
 
@@ -45,7 +41,7 @@ ms.locfileid: "72812257"
 3.  选择创建的 RD 会话主机服务器（例如，Contoso-Shr1）。  
 4.  接受默认“用户组”  。  
 5.  输入为该集合的用户配置文件磁盘创建的文件共享的位置（例如，\Contoso-Cb1\UserDisksr  ）。   
-6.  单击“创建”  。 创建集合后，单击“关闭”  。  
+6.  单击“**创建**”。 创建集合后，单击“关闭”  。  
 
 
 ## <a name="create-a-personal-desktop-session-collection"></a>创建个人桌面会话集合

@@ -1,12 +1,8 @@
 ---
 title: Windows 应用商店客户端入门
 description: 适用于 Windows 应用商店的远程桌面客户端的基本设置步骤。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
@@ -14,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 13fbe22ef33ea7861ae4c8677792b5758f37ad0f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64362c6f6da77ee15a95ddcbaf33c6cb9ecd5cf4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387614"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861430"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Windows 应用商店客户端入门
 
@@ -202,7 +198,7 @@ ms.locfileid: "71387614"
 | 鼠标指针 | 右键单击          | 2 指点击                                                          |
 | 鼠标指针 | 右键单击并拖动 | 2 指双击并按住，然后拖动                               |
 | 鼠标指针 | 鼠标滚轮          | 2 指点击并按住，然后上下拖动                           |
-| 鼠标指针 | Zoom                 | 使用 2 个手指收缩放大或分开手指缩小。 |
+| 鼠标指针 | 缩放                 | 使用 2 个手指收缩放大或分开手指缩小。 |
 
 > [!TIP]
 > 欢迎提出问题和意见。 但是，请不要使用本文末尾的评论功能来请求获取故障排除帮助。 而是转到[远程桌面客户端论坛](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)并启动一个新线程。 有功能建议？ 请通过[反馈中心](feedback-hub://?tabid=2&contextid=605)告诉我们。

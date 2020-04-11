@@ -2,24 +2,21 @@
 title: Windows Server Update Services (WSUS) 入门
 description: Windows Server Update Service (WSUS) 主题 - 服务器角色及其实际应用程序的概述
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09ec5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
-ms.openlocfilehash: 89247f91f616233fc6e4967a0457ff34fac221da
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3bb365c627840d4152b0dc450e24dd83d82103ca
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361655"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828625"
 ---
-# <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)
+# <a name="windows-server-update-services-wsus"></a>Windows 服务器更新服务 (WSUS)
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -28,7 +25,7 @@ Windows Server Update Service (WSUS) 启用信息技术管理员部署最新的 
 ## <a name="wsus-server-role-description"></a>WSUS 服务器角色描述
 WSUS 服务器提供了通过管理控制台管理和分发更新时可以使用的功能。 WSUS 服务器还可以作为组织内其他 WSUS 服务器的更新源。 充当更新源的 WSUS 服务器称为上游服务器。 在 WSUS 实现中，网络中必须至少有一台 WSUS 服务器能够连接到 Microsoft 更新来获取可用的更新信息。 作为管理员，你可以根据网络安全和配置来决定多少其他 WSUS 服务器直接连接到 Microsoft 更新。
 
-### <a name="practical-applications"></a>实际应用程序
+### <a name="practical-applications"></a>实际的应用程序
 更新管理是控制在生产环境中部署和维护中期软件版本的过程。 它帮助你维护操作效率，解决安全漏洞问题以及维持你的生产环境的稳定性。 如果你的组织无法确定和维持其操作系统和应用软件中已知的信任级别，则可能存在许多安全漏洞，一旦被利用，则会引发收入和知识产权损失。 最大限度降低这种威胁需要你拥有正确配置的系统、使用最新软件和安装推荐的软件更新。
 
 WSUS 为你的企业增加价值的核心方案：
@@ -37,7 +34,7 @@ WSUS 为你的企业增加价值的核心方案：
 
 -   更新管理自动化
 
-### <a name="new-and-changed-functionality"></a>新增功能和更改的功能
+### <a name="new-and-changed-functionality"></a>新功能和更改的功能
 
 > [!NOTE]
 > 若要从支持 WSUS 3.2 的任意 Windows Server 版本升级到 Windows Server 2012 R2，首先需要卸载 WSUS 3.2。

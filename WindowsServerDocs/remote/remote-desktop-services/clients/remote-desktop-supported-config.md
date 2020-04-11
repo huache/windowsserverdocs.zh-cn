@@ -1,12 +1,8 @@
 ---
 title: 远程桌面客户端 - 支持的配置
 description: 了解可以使用远程桌面客户端访问哪些电脑
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bb932dad-6f74-484f-8f7b-dd957b615d44
 author: lizap
@@ -14,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dc8eb68aebc904640aa4adc3e75cdeda34e97b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1480a2a14a1c3fc23c4e5122e366741d37d9091f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387652"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856010"
 ---
 # <a name="remote-desktop-client---supported-configuration"></a>远程桌面客户端 - 支持的配置
 
@@ -29,11 +25,11 @@ ms.locfileid: "71387652"
 - Windows 10 企业版
 - Windows 8 企业版
 - Windows 8 专业版
-- Windows 7 专业版
-- Windows 7 企业版
-- Windows 7 旗舰版
-- Windows 7 旗舰版
-- Windows Server 2008
+- Windows 7 专业版
+- Windows 7 企业版
+- Windows 7 旗舰版
+- Windows 7 旗舰版
+- Windows 2008 Server
 - Windows Server 2008 R2
 - Windows Server 2012
 - Windows Server 2012 R2
@@ -45,7 +41,7 @@ ms.locfileid: "71387652"
 
 以下计算机可以运行远程桌面网关：
 
-- Windows Server 2008
+- Windows 2008 Server
 - Windows Server 2008 R2
 - Windows Server 2012
 - Windows Server 2012 R2

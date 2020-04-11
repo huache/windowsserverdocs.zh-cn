@@ -1,24 +1,20 @@
 ---
 title: 托管应用和桌面的隐私设置
 description: 有关使用托管应用和桌面时远程系统的隐私设置的信息。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: davidbel
 manager: daveba
 ms.author: davidbel
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 277e099e94d3121f31f5eb98fbca61b84eea1163
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 996f084b86b0a363b0903476598d9edb086b9985
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387624"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859480"
 ---
 # <a name="privacy-settings-for-managed-apps-and-desktops"></a>托管应用和桌面的隐私设置
 

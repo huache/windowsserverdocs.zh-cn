@@ -1,23 +1,19 @@
 ---
 title: 通过添加 RD 会话主机场横向扩展 RDS 部署
 description: 将第二个 RD 会话主机添加到 RDS 环境。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: da0dbd4332cd05d580c2b1f4dc5eb0734b36b13e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61d5569c44d7c7ea300b85bf635fccf86275423d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403884"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859050"
 ---
 # <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>通过添加 RD 会话主机场横向扩展远程桌面服务部署
 

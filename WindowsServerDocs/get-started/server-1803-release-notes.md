@@ -1,26 +1,22 @@
 ---
 title: 发行说明 - Windows Server 版本 1803 中的重要问题
 description: 在安装 Windows Server 版本 1803 之前了解任何已知问题、限制或所需的其他信息
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 05/07/2018
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a250f83a4f46966666556ba3d078d2faf3ea8e06
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a511c9888f27fe97fdeaf65cde022e5c2aa999d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391456"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826080"
 ---
-# <a name="release-notes-important-issues-in-windows-server-version-1803"></a>发行说明:Windows Server 版本 1803 中的重要问题
+# <a name="release-notes-important-issues-in-windows-server-version-1803"></a>发行说明：Windows Server 版本 1803 中的重要问题
 
 >适用于：Windows Server 半年频道
 

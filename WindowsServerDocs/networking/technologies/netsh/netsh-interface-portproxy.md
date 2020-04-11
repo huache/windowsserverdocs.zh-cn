@@ -4,17 +4,16 @@ description: 使用 netsh interface portproxy 命令作为 IPv4 和 IPv6 网络�
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.assetid: ''
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 645786484881af3a0f6d9503e1f3fcde32a2cdfe
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e9c4cff4d1424c244857cf75be41d445b299f1f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316730"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853740"
 ---
 # <a name="netsh-interface-portproxy-commands"></a>Netsh interface portproxy 命令
 
@@ -81,7 +80,7 @@ Portproxy 服务器侦听发送到特定端口和 IPv4 地址的消息，并映�
 add v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName}] [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName}] [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 
 |                    |                                                                                                                                                                                                   |
@@ -102,7 +101,7 @@ Portproxy 服务器侦听发送到特定端口和 IPv4 地址的消息，并映�
 add v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -122,7 +121,7 @@ Portproxy 服务器侦听发送到特定端口和 IPv6 地址的消息，并映�
 add v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -142,7 +141,7 @@ Portproxy 服务器侦听发送到特定端口和 IPv6 地址的消息，并映�
 add v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -162,7 +161,7 @@ Portproxy 服务器从服务器侦听的 IPv4 端口和地址列表中删除 IPv
 delete v4tov4 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
@@ -180,7 +179,7 @@ Portproxy 服务器从服务器侦听的 IPv4 地址列表中删除 IPv4 端口�
 delete v4tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
@@ -198,7 +197,7 @@ Portproxy 服务器从服务器侦听的 IPv6 地址列表中删除 IPv6 端口�
 delete v6tov4 listenport= {Integer | ServiceName} [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
@@ -216,7 +215,7 @@ Portproxy 服务器从服务器侦听的 IPv6 地址列表中删除 IPv6 地址�
 delete v6tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
@@ -242,7 +241,7 @@ delete v6tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv6Address
 set v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -262,7 +261,7 @@ set v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 set v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -282,7 +281,7 @@ set v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address |
 set v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -302,7 +301,7 @@ set v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 set v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>参数
+#### <a name="parameters"></a>参数
 
 |                    |                                                                                                                                                                                                    |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

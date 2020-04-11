@@ -1,24 +1,19 @@
 ---
 title: 常见远程桌面连接故障排除
 description: 排查远程桌面连接出现的“没有注册类”错误。
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
 manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b934a585b3058cc2eec642cdb1234c8c9a015544
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 03c3c8daa8dc4bea0e03ed285a98401f91cdf1cb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323339"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857210"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>常见远程桌面连接故障排除
 

@@ -2,29 +2,27 @@
 title: 针对 Nano Server 进行开发
 description: PowerShell 远程处理和 CIM 会话
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 57079470-a1c1-4fdc-af15-1950d3381860
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cf21d9db4221fd6bd76cfd5c362bb9f168d1ce9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5933b031260a69bf986d7ca2f7abd832055421fa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360319"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827080"
 ---
 # <a name="developing-for-nano-server"></a>针对 Nano Server 进行开发
 
 >适用于：Windows Server 2016
 
 > [!IMPORTANT]
-> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解这意味着什么。 
+> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解其含义。 
 
 这些主题说明了 Nano Server 上 PowerShell 的重要差异，还提供了开发自己的 PowerShell cmdlet 以用于 Nano Server 的相关指导。
 
@@ -40,14 +38,14 @@ ms.locfileid: "71360319"
   
 若要将 Nano Server 添加到受信任的主机列表，请在提升的 Windows PowerShell 提示符下运行此命令：  
   
-`Set-Item WSMan:\localhost\Client\TrustedHosts "<IP address of Nano Server>"`  
+`Set-Item WSMan:\localhost\Client\TrustedHosts <IP address of Nano Server>`  
   
 若要启动远程 Windows PowerShell 会话，请启动提升的本地 Windows PowerShell 会话，然后运行以下命令：  
   
   
 ```  
-$ip = "\<IP address of Nano Server>"  
-$user = "$ip\Administrator"  
+$ip = \<IP address of Nano Server>  
+$user = $ip\Administrator  
 Enter-PSSession -ComputerName $ip -Credential $user  
 ```  
   
@@ -66,7 +64,7 @@ Enter-PSSession -ComputerName $ip -Credential $user
   
   
 ```  
-$ip = "<IP address of the Nano Server\>"  
+$ip = <IP address of the Nano Server\>  
 $ip\Administrator  
 $cim = New-CimSession -Credential $user -ComputerName $ip  
 ```  
@@ -77,7 +75,7 @@ $cim = New-CimSession -Credential $user -ComputerName $ip
   
 ```  
 Get-CimInstance -CimSession $cim -ClassName Win32_ComputerSystem | Format-List *  
-Get-CimInstance -CimSession $Cim -Query "SELECT * from Win32_Process WHERE name LIKE 'p%'"  
+Get-CimInstance -CimSession $Cim -Query SELECT * from Win32_Process WHERE name LIKE 'p%'  
 ```  
   
   

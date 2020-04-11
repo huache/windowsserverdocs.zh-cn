@@ -1,12 +1,8 @@
 ---
 title: 适用于 IT 管理员的 Windows Server 技术内容 - Windows Server
 description: 获取当前版本和以前版本的 Windows Server 技术文章以及适用于 IT 专业人员的产品评估。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/17/2018
 ms.assetid: 0c3dc323-8beb-4d7d-a2e0-12bda848ddcb
@@ -14,12 +10,12 @@ author: lizap
 ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 5430dfa2facfb7412077931637f5e95e35f0d934
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5133e474882531e05cd8b6a3e69ca9c90a1c101a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392472"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859720"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - 当前版本和以前版本的 IT 管理员内容
 

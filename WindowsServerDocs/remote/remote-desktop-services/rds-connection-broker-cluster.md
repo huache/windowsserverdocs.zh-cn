@@ -1,23 +1,19 @@
 ---
 title: 添加 RD 连接代理服务器用于在 RDS 中配置高可用性
 description: 了解如何将 RD 连接代理添加到 RDS 部署以实现高可用性。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 511f852568aa4cc7498e3a0b8deacea83db22c08
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6a9fa0d6834f63c9935518e4b2c26320a04082
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404053"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852960"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>添加 RD 连接代理服务器以部署和配置高可用性
 
@@ -31,7 +27,7 @@ ms.locfileid: "71404053"
 
 设置连接代理的数据库。 可以在本地环境中使用 [Azure SQL 数据库](https://azure.microsoft.com/documentation/articles/sql-database-get-started/#create-a-new-aure-sql-database)实例或 SQL Server。 下面讨论如何使用 Azure SQL，但这些步骤也适用于 SQL Server。 需要找到该数据库的连接字符串，并确保已安装适当的 ODBC 驱动程序。
 
-## <a name="step-1-configure-the-database-for-the-connection-broker"></a>第 1 步：配置连接代理的数据库
+## <a name="step-1-configure-the-database-for-the-connection-broker"></a>步骤 1：配置连接代理的数据库
 
 1. 找到所创建的数据库的连接字符串 - 稍后在配置连接代理本身时（步骤 3），需要使用该连接字符串来识别所需 ODBC 驱动程序的版本，因此，请将该字符串保存到可方便参考的位置。 下面说明了如何查找 Azure SQL 的连接字符串：  
     1. 在 Azure 门户中，单击“浏览”>“资源组”，然后单击部署的资源组。    
@@ -114,7 +110,7 @@ ms.locfileid: "71404053"
 
 1. 将新的 RD 连接代理服务器添加到服务器管理器：
    1. 在服务器管理器中，单击“管理”>“添加服务器”。 
-   2. 单击“立即查找”。 
+   2. 单击“立即查找”  。
    3. 单击新建的 RD 连接代理服务器（例如 Contoso-Cb2），然后单击“确定”。 
 2. 对 RD 连接代理进行高可用性配置：
    1. 在服务器管理器中，单击“远程桌面服务”>“概述”。 

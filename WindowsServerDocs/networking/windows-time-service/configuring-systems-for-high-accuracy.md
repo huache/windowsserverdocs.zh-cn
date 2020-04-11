@@ -2,18 +2,18 @@
 ms.assetid: ''
 title: 配置系统以实现高精度
 description: Windows 10 和 Windows Server 2016 中的时间同步已大幅改善。  在合理的操作条件下，可将系统配置为维持 1ms（毫秒）的精度或更高的精度（相对于 UTC）。
-author: eross-msft
+author: dcuomo
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 8cdded0eb0dc663d352011fb1a6765a2ed358764
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 25472e4ba4837bd68c9b6914e22c2219c91d3ac0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315035"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861650"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>配置系统以实现高精度
 >适用于：Windows Server 2016 和 Windows 10 版本 1607 或更高版本
