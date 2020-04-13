@@ -7,15 +7,14 @@ ms.sitesec: library
 author: mikeblodge
 ms.author: mikeblodge
 ms.date: 07/11/2018
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 19e4abf1573b8d3ee99b8e8828c1674f24d27695
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de9233e31c5530abd207a1bbba0e1e16a07d1561
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391501"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826120"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>将 Windows Server 2008/2008 R2 特殊化映像上传至 Azure 
 
@@ -86,26 +85,26 @@ Login-AzureRmAccount
 > [!IMPORTANT]
 > 不要使用 Azure 中预定义的用户映像。
 
-1.  创建一个新的[资源组](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate)。 
-2.  在该资源组内创建新的[存储 Blob](https://docs.microsoft.com/rest/api/storageservices/put-blob)。
-3.  在存储 Blob 内创建[容器](https://docs.microsoft.com/rest/api/storageservices/create-container)。
-4.  从属性中复制 Blob 存储的 URL。
-5.  使用上面提供的脚本将映像上传至新的存储 Blob。
-6.  为 VHD 创建[磁盘](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。   
-     a. 转到“磁盘”，单击“添加”  。  
-     b. 输入磁盘的名称。 选择要使用的订阅，设置区域，然后选择帐户类型。   
+1.    创建一个新的[资源组](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate)。 
+2.    在该资源组内创建新的[存储 Blob](https://docs.microsoft.com/rest/api/storageservices/put-blob)。
+3.    在存储 Blob 内创建[容器](https://docs.microsoft.com/rest/api/storageservices/create-container)。
+4.    从属性中复制 Blob 存储的 URL。
+5.    使用上面提供的脚本将映像上传至新的存储 Blob。
+6.    为 VHD 创建[磁盘](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。   
+     a.    转到“磁盘”，单击“添加”  。  
+     b.    输入磁盘的名称。 选择要使用的订阅，设置区域，然后选择帐户类型。   
      c. 对于“源类型”，请选择“存储”。 浏览到使用脚本创建的 Blob VHD 的位置。  
      d. 选择操作系统类型 Windows 和大小（默认值：1023）。   
-     e. 单击“创建”  。   
+     e. 单击“**创建**”。   
 
-7.  转到“已创建的磁盘”，单击“创建 VM”  。   
-     a. 将 VM 命名。   
-     b. 选择在步骤 5 创建的现有组，在该组中，你已经上传了磁盘。   
-     c. 为 VM 选取大小和 SKU 计划。   
-     d. 在设置页上选择一个网络接口。 确保该网络接口已指定以下规则：
+7.    转到“已创建的磁盘”，单击“创建 VM”  。   
+     a.    将 VM 命名。   
+     b.    选择在步骤 5 创建的现有组，在该组中，你已经上传了磁盘。   
+     c.    为 VM 选取大小和 SKU 计划。   
+     d.    在设置页上选择一个网络接口。 确保该网络接口已指定以下规则：
  
-        PORT:3389 Protocol: TCP Action: Allow Priority: 1000 Name: ‘RDP-Rule'.   
-     e. 单击“创建”  。
+        PORT:3389 Protocol:TCP Action:Allow Priority:1000 Name:'RDP-Rule'.   
+     e.    单击“**创建**”。
 
 
 
