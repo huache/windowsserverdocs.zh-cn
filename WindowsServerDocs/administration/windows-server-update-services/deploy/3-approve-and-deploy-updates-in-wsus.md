@@ -2,7 +2,6 @@
 title: 步骤 3 - 在 WSUS 中批准和部署更新
 description: Windows Server Update Service (WSUS) 主题 - 在 WSUS 中批准和部署更新是部署 WSUS 的四步流程中的第三步
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 8d728ff9-170f-47e6-aefe-52be93315a75
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7731cc84f946bfab7f53a3446ed90d1be92cae75
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: d8758c4f957d2d9abb156652a568b23634cb1bf0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639796"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828850"
 ---
 # <a name="step-3-approve-and-deploy-updates-in-wsus"></a>步骤 3:在 WSUS 中批准和部署更新
 
@@ -29,7 +28,7 @@ ms.locfileid: "80639796"
 |[3.2.配置自动审批规则](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|配置 WSUS 以自动为所选组审批更新的安装以及如何审批对现有更新的修订。|
 |[3.3.使用 WSUS 报告查看安装的更新](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|使用 WSUS 报告功能，查看安装的更新、收到那些更新的计算机及其他详细信息。|
 
-## <a name="31-approve-and-deploy-wsus-updates"></a><a name="BKM_3.1."></a>3.1. 批准和部署 WSUS 更新
+## <a name="31-approve-and-deploy-wsus-updates"></a><a name=BKM_3.1.></a>3.1. 批准和部署 WSUS 更新
 使用以下过程批准和部署更新。
 
 #### <a name="to-approve-and-deploy-wsus-updates"></a>批准和部署 WSUS 更新的步骤
@@ -48,7 +47,7 @@ ms.locfileid: "80639796"
 
 7.  此时 **“批准进度”** 窗口出现，它显示了影响批准更新的任务进度。 完成批准进度时，单击 **“关闭”** 。
 
-## <a name="32-configure-auto-approval-rules"></a><a name="BKM_3.2.a."></a>3.2. 配置自动审批规则
+## <a name="32-configure-auto-approval-rules"></a><a name=BKM_3.2.a.></a>3.2. 配置自动审批规则
 自动审批使你可以指定如何自动为所选组审批更新的安装以及如何审批对现有更新的修订。
 
 #### <a name="to-configure-automatic-approvals"></a>配置自动审批
@@ -69,11 +68,11 @@ ms.locfileid: "80639796"
 
 5.  在“步骤 2：编辑属性”  中，单击列出的每个选项，然后为每个选项选择合适的选项。
 
-6.  在“步骤 3：指定名称”  中，为你的规则键入名称，然后单击“确定”  。
+6.  在“步骤 3：  指定名称”中，为你的规则键入名称，然后单击“确定”  。
 
 7.  单击“确定”  以关闭“自动审批”对话框。
 
-## <a name="33-review-installed-updates-with-wsus-reports"></a><a name="BKM_3.3."></a>3.3. 使用 WSUS 报告查看安装的更新
+## <a name="33-review-installed-updates-with-wsus-reports"></a><a name=BKM_3.3.></a>3.3. 使用 WSUS 报告查看安装的更新
 你批准更新后 24 小时，可使用 WSUS 报告功能来确定是否将更新部署到测试计算机组中。 若要检查更新的状态，你可按以下方式使用 WSUS 报告功能。
 
 #### <a name="to-review-updates"></a>查看更新的步骤
