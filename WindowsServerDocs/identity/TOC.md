@@ -268,6 +268,7 @@
 #### [保护 AD FS 的最佳做法](ad-fs/deployment/Best-Practices-Securing-AD-FS.md)
 #### [规划基于设备的本地条件访问](ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 #### [AD FS 和 WAP 所需的更新](ad-fs/deployment/Updates-for-Active-Directory-Federation-Services-AD-FS.md)
+#### [在没有域管理员权限的情况下创建 AD FS 场](ad-fs/deployment/Install-AD-FS-Delegated-Admin.md)
 #### [使用 SQL Server 复制设置地理冗余](ad-fs/deployment/Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md)
 #### [为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 #### [使用 WID 数据库升级到 Windows Server 2016 中的 AD FS](ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server.md)
