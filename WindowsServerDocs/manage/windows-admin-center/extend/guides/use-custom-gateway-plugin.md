@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 829cbf6df8cc2738bf4066b36210b860595774ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5bcaaa452a2b42a54cbc3b1d8f9a296504054e34
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385226"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269224"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>在工具扩展中使用自定义的网关插件
 
@@ -63,7 +63,7 @@ export class PluginService {
 
 根据需要更改对功能名称 ```Sample Uno``` 和 ```Sample%20Uno```。
 
-[!WARNING]
+> [!WARNING]
 > 建议使用内置 ```this.appContextService.node``` 来调用在自定义网关插件中定义的任何 API。 这将确保在网关插件中需要凭据，以使其正确处理。
 
 ### <a name="modify-modulets"></a>修改 module

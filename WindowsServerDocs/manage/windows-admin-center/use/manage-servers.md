@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: ddc8eea67cde9d6677836af1201e169c911e77e0
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cbcb5c2357a60d6d12551a7d08055cacecd515b7
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950484"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269234"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>通过 Windows 管理中心管理服务器
 
@@ -23,7 +23,7 @@ ms.locfileid: "75950484"
 > 不熟悉 Windows Admin Center？
 > [下载或详细了解 Windows 管理中心](../overview.md)。
 
-## <a name="managing-windows-server-machines"></a>管理 Windows Server 机器
+## <a name="managing-windows-server-machines"></a>管理 Windows Server 计算机
 
 你可以将运行 Windows Server 2012 或更高版本的单独服务器添加到 Windows 管理中心，以使用一组全面的工具（包括证书、设备、事件、进程、角色和功能、更新、虚拟机等）来管理服务器。
 
@@ -47,22 +47,22 @@ ms.locfileid: "75950484"
 
 以下工具可用于服务器连接：
 
-| 工具 | 描述 |
+| 工具 | 说明 |
 | ---- | ----------- |
 | [概述](#overview) | 查看服务器详细信息和控制服务器状态 |
 | [Active Directory](#active-directory-preview) | 管理 Active Directory |
-| [备份](#backup) | 查看和配置 Azure 备份 |  
+| [Backup](#backup) | 查看和配置 Azure 备份 |  
 | [证书](#certificates) | 查看和修改证书 |
 | [容器](#containers) | 查看容器 |
 | [设备](#devices) | 查看和修改设备 |
-| [DHCP](#dhcp) | 查看和管理 DHCP 服务器配置 |
+| [台](#dhcp) | 查看和管理 DHCP 服务器配置 |
 | [DNS](#dns) | 查看和管理 DNS 服务器配置 |
-| [事件](#events) | 查看活动 |
+| [事件](#events) | 查看事件 |
 | [文件](#files) | 浏览文件和文件夹 |
-| [防火墙](#firewall) | 查看和修改防火墙规则 |
+| [Firewall](#firewall) | 查看和修改防火墙规则 |
 | [安装的应用](#installed-apps) | 查看和删除已安装的应用 |
 | [本地用户和组](#local-users-and-groups) | 查看和修改本地用户和组 |
-| [网络](#network) | 查看和修改网络设备 |
+| [网桥](#network) | 查看和修改网络设备 |
 | [数据包监视](https://aka.ms/wac1908) | 监视网络数据包 |
 | [性能监视器](https://aka.ms/perfmon-blog) | 查看性能计数器和报告 |
 | [PowerShell](#powershell) | 通过 PowerShell 与服务器交互 |
@@ -121,7 +121,7 @@ ms.locfileid: "75950484"
 
 [**查看 Active Directory 的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D)。
 
-## <a name="backup"></a>“备份”
+## <a name="backup"></a>备份
 
 利用**备份**，你可以通过将服务器直接备份到 Microsoft Azure 来保护 Windows server 免受损坏、攻击或灾难的影响。
 [了解有关 Azure 备份的详细信息。](https://aka.ms/windows-admin-center-backup)
@@ -162,7 +162,7 @@ ms.locfileid: "75950484"
 
 [**查看容器的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BContainers%5D)。
 
-## <a name="devices"></a>“设备”
+## <a name="devices"></a>设备
 
 使用**设备**，你可以管理计算机或服务器上的连接设备。
 
@@ -204,7 +204,7 @@ ms.locfileid: "75950484"
 
 [**查看 DHCP 的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D)。
 
-## <a name="events"></a>事件
+## <a name="events"></a>Events
 
 **事件**可用于管理计算机或服务器上的事件日志。
 
@@ -219,7 +219,7 @@ ms.locfileid: "75950484"
 
 [**查看事件的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BEvents%5D)。
 
-## <a name="files"></a>文件
+## <a name="files"></a>Files
 
 **文件**可用于管理计算机或服务器上的文件和文件夹。
 
@@ -235,6 +235,7 @@ ms.locfileid: "75950484"
 - 上传文件或文件夹
 - 重命名文件或文件夹
 - 提取 zip 文件
+- 复制和移动文件和文件夹
 - 查看文件或文件夹属性
 - 添加、编辑或删除文件共享
 - 修改文件共享上的用户和组权限
@@ -284,7 +285,7 @@ ms.locfileid: "75950484"
 
 [**查看本地用户和组的反馈和建议的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BLocal%20users%20and%20Groups%5D)
 
-## <a name="network"></a>“网络”
+## <a name="network"></a>网络
 
 **网络**允许您管理计算机或服务器上的网络设备和设置。
 
@@ -388,7 +389,7 @@ PowerShell 支持以下功能：
 
 [**查看计划任务的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BScheduled%20Tasks%5D)。
 
-## <a name="services"></a>“服务”
+## <a name="services"></a>服务
 
 **服务**允许你在计算机或服务器上管理服务。
 
@@ -400,11 +401,12 @@ PowerShell 支持以下功能：
 - 查看服务的详细信息
 - 启动服务
 - 暂停服务
+- 重新启动服务
 - 编辑服务的属性
 
 [**查看服务的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BServices%5D)。
 
-## <a name="settings"></a>“设置”
+## <a name="settings"></a>设置
 
 **设置**是用于管理计算机或服务器上的设置的中心位置。
 
@@ -432,7 +434,7 @@ PowerShell 支持以下功能：
 - 创建、附加和分离虚拟硬盘（VHD）
 - 使磁盘脱机
 - 格式化卷
-- 重设卷大小
+- 调整卷的大小
 - 编辑卷属性
 - 删除卷
 - 安装配额管理

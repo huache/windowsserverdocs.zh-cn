@@ -8,18 +8,18 @@ ms.author: jol
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: d761ba61ae5680373c334889799e82e5d092a0d4
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f51070abfeed3a790055b12f733fc61be383472c
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950099"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269254"
 ---
 # <a name="enabling-the-extension-discovery-banner"></a>启用扩展发现横幅
 
 >适用于：Windows Admin Center、Windows Admin Center 预览版
 
-Windows 管理中心预览1903中提供的一项新功能是扩展发现横幅。 此功能允许扩展声明服务器硬件制造商和它所支持的模型，并且当用户连接到其扩展插件可用的服务器或群集时，将显示一条通知横幅以便轻松安装该扩展。 扩展开发人员将能够更好地了解其扩展，用户可以轻松地发现其服务器的更多管理功能。
+Windows 管理中心预览版1903版中引入了扩展发现横幅功能。 此功能允许扩展声明服务器硬件制造商和它所支持的模型，并且当用户连接到其扩展插件可用的服务器或群集时，将显示一条通知横幅以便轻松安装该扩展。 扩展开发人员将能够更好地了解其扩展，用户可以轻松地发现其服务器的更多管理功能。
 
 ![扩展发现横幅](../../media/extend-guides-extension-discovery-banner/extension-discovery-banner.png)
 
