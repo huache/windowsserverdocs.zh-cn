@@ -1,19 +1,18 @@
 ---
 ms.assetid: 5f733510-c96e-4d3a-85d2-4407de95926e
 title: 使用 AD FS 预身份验证发布应用程序
-description: ''
-author: kgremban
-manager: femila
+ms.author: kgremban
+author: eross-msft
 ms.date: 07/13/2016
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: bd5c4c97e01942e7c5ab8ed1aba3fcf92030ac59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 97bfae42c873ecf7196138920a21d96714239da9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404264"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818700"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>使用 AD FS 预身份验证发布应用程序
 
@@ -70,9 +69,9 @@ ms.locfileid: "71404264"
 > 配置外部 URL 和后端服务器 URL 时，请确保输入完全限定的域名 (FQDN) 而不是 IP 地址。  
   
 > [!NOTE]  
-> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
-## <a name="BKMK_1.1"></a>为 Web 浏览器客户端发布基于声明的应用程序  
+## <a name="publish-a-claims-based-application-for-web-browser-clients"></a><a name="BKMK_1.1"></a>为 Web 浏览器客户端发布基于声明的应用程序  
 若要发布使用声明进行身份验证的应用程序，必须向联合身份验证服务添加该应用程序的信赖方信任。  
   
 在发布基于声明的应用程序以及从浏览器访问应用程序时，要执行的常规身份验证流如下：  
@@ -130,7 +129,7 @@ ms.locfileid: "71404264"
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Add-WebApplicationProxyApplication  
@@ -142,7 +141,7 @@ Add-WebApplicationProxyApplication
     -ADFSRelyingPartyName 'SP_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.2"></a>为 Web 浏览器客户端发布基于集成 Windows 身份验证的应用程序  
+## <a name="publish-an-integrated-windows-authenticated-based-application-for-web-browser-clients"></a><a name="BKMK_1.2"></a>为 Web 浏览器客户端发布基于集成 Windows 身份验证的应用程序  
 Web 应用程序代理可用于发布使用集成 Windows 身份验证的应用程序;也就是说，Web 应用程序代理根据需要执行预身份验证，然后可对使用集成 Windows 身份验证的已发布应用程序执行 SSO。 若要发布使用集成 Windows 身份验证的应用程序，必须向联合身份验证服务添加该应用程序的非声明感知信赖方信任。  
   
 若要允许 Web 应用程序代理执行单一登录（SSO），并使用 Kerberos 约束委派执行凭据委派，必须将 Web 应用程序代理服务器加入域。 请参阅[计划 Active Directory](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD)。  
@@ -204,7 +203,7 @@ Web 应用程序代理可用于发布使用集成 Windows 身份验证的应用�
         > [!NOTE]  
         > Web 应用程序代理可以将主机名转换为 Url，但无法转换路径名。 因此，你可以输入不同的主机名，但必须输入相同的路径名。 例如，你可以输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://app-server/app1/的后端服务器 URL。 但是，不能输入 https://apps.contoso.com/app1/ 的外部 URL 和 https://apps.contoso.com/internal-app1/的后端服务器 URL。  
   
-    -   在“后端服务器 SPN” 框中输入后端服务器的服务主体名称，例如 HTTP/owa.contoso.com。  
+    -   在“后端服务器 SPN”框中输入后端服务器的服务主体名称，例如 HTTP/owa.contoso.com。  
   
 7.  在“确认” 页面上复查设置，然后单击“发布”。 你可以复制 PowerShell 命令来设置其他发布的应用程序。  
   
@@ -212,7 +211,7 @@ Web 应用程序代理可用于发布使用集成 Windows 身份验证的应用�
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 ```  
 Add-WebApplicationProxyApplication  
@@ -225,7 +224,7 @@ Add-WebApplicationProxyApplication
     -ADFSRelyingPartyName 'Non-Claims_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.3"></a>发布使用 OFBA 的应用程序  
+## <a name="publish-an-application-that-uses-ms-ofba"></a><a name="BKMK_1.3"></a>发布使用 OFBA 的应用程序  
 Web 应用程序代理支持从访问后端服务器上的文档和数据的 Microsoft Office 客户端（如 Microsoft Word）进行访问。 这些应用程序与标准浏览器之间的唯一差别在于，重定向到 STS 不是通过常规 HTTP 重定向完成的，而是使用在中指定的特殊 OFBA 标头： [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx)。 后端应用程序可以是声明或 IWA。   
 若要为使用 OFBA 的客户端发布应用程序，必须将该应用程序的信赖方信任添加到联合身份验证服务。 根据具体的应用程序，你可以使用基于声明的身份验证或集成 Windows 身份验证。 因此，必须根据应用程序添加相关的信赖方信任。  
   
@@ -312,7 +311,7 @@ HTTP Basic 是许多协议使用的授权协议，可通过 Exchange 邮箱连�
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell 等效命令</em>***  
   
-下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 此 Windows PowerShell 脚本为所有设备启用预身份验证，而不只是加入工作区的设备。  
   
@@ -339,7 +338,7 @@ Add-WebApplicationProxyApplication
      -ADFSRelyingPartyName 'EAS_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.4"></a>发布使用 OAuth2 的应用程序，如 Microsoft Store 应用  
+## <a name="publish-an-application-that-uses-oauth2-such-as-a-microsoft-store-app"></a><a name="BKMK_1.4"></a>发布使用 OAuth2 的应用程序，如 Microsoft Store 应用  
 若要为 Microsoft Store 应用发布应用程序，必须将应用程序的信赖方信任添加到联合身份验证服务。  
   
 若要允许 Web 应用程序代理执行单一登录（SSO），并使用 Kerberos 约束委派执行凭据委派，必须将 Web 应用程序代理服务器加入域。 请参阅[计划 Active Directory](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD)。  
@@ -347,7 +346,7 @@ Add-WebApplicationProxyApplication
 > [!NOTE]  
 > Web 应用程序代理仅支持为使用 OAuth 2.0 协议的 Microsoft Store 应用发布。  
   
-在 AD FS 管理控制台中，必须确保 OAuth 终结点启用了代理。 若要检查是否为 OAuth 终结点启用了代理，请打开 AD FS 管理控制台，展开“服务”，单击“终结点”，在“终结点” 列表中找到 OAuth 终结点，并确保“已启用代理” 列中的值为“是”。  
+在 AD FS 管理控制台中，必须确保 OAuth 终结点启用了代理。 若要检查是否为 OAuth 终结点启用了代理，请打开 AD FS 管理控制台，展开“服务”，单击“终结点”，在“终结点”列表中找到 OAuth 终结点，并确保“已启用代理”列中的值为“是”。  
   
 下面介绍了使用 Microsoft Store 应用的客户端的身份验证流：  
   
@@ -418,7 +417,7 @@ Add-WebApplicationProxyApplication
   
 8.  在“结果”页面上，确保已成功发布该应用程序，然后单击“关闭”。  
   
-在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
+每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
   
 若要为 fs.contoso.com 的联合服务器地址设置 OAuth 身份验证 URL，并将 URL 路径设置为/adfs/oauth2/：  
   
@@ -439,7 +438,7 @@ Add-WebApplicationProxyApplication
     -UseOAuthAuthentication  
 ```  
   
-## <a name="BKMK_Links"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
   
 -   [Web 应用程序代理疑难解答](https://technet.microsoft.com/library/dn770156.aspx)  
   
