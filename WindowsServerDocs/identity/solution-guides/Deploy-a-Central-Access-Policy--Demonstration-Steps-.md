@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8738c03d-6ae8-49a7-8b0c-bef7eab81057
 title: 部署中央访问策略（示范步骤）
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 09b7edcd843dfe65d7e2391612f029cf18b633ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5f4d94facc57cf2b71d6d546b4a2b60253ff58fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357497"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861200"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>部署中央访问策略（示范步骤）
 
@@ -24,47 +23,47 @@ ms.locfileid: "71357497"
 
 中心访问策略的部署包括以下阶段：  
 
-|阶段|描述  
+|阶段|说明  
 |---------|---------------  
-|[计划：确定需要策略和部署所需的配置](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.2)|标识所需的策略和部署所需的配置。 
+|[计划：确定部署所需的策略和配置的需要](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.2)|标识所需的策略和部署所需的配置。 
 |[实现：配置组件和策略](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.3)|配置组件和策略。  
 |[部署中心访问策略](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.4)|部署策略。  
 |[维护：更改和暂存策略](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.5)|策略更改和过渡。 
 
-## <a name="BKMK_1.1"></a>设置测试环境  
-在开始之前，需要设置实验室以测试该方案。 [附录 B：设置测试环境](Appendix-B--Setting-Up-the-Test-Environment.md)中详细说明了设置实验室的步骤。  
+## <a name="set-up-a-test-environment"></a><a name="BKMK_1.1"></a>设置测试环境  
+在开始之前，需要设置实验室以测试该方案。 [附录 B 中详细说明了设置实验室的步骤：](Appendix-B--Setting-Up-the-Test-Environment.md)设置测试环境。  
 
-## <a name="BKMK_1.2"></a>计划：确定需要策略和部署所需的配置  
+## <a name="plan-identify-the-need-for-policy-and-the-configuration-required-for-deployment"></a><a name="BKMK_1.2"></a>计划标识对策略的需求和部署所需的配置。  
 本部分提供了一系列高级步骤，可帮助你规划部署。  
 
 ||步骤|示例|  
 |-|--------|-----------|  
 |1.1|业务确定需要采用中心访问策略|为了保护存储在文件服务器的财务信息，将结合使用财务部门安全操作与中心信息安全性来指定对中心访问策略的需求。|  
 |1.2|表示访问策略|只有财务部门的成员才可以读取财务文档。 财务部门的成员只应访问自己国家/地区的文档。 应当只有财务管理员才具有写入访问的权限。 允许为 FinanceException 组的成员设置例外。 该组具有读取访问权限。|  
-|1.3|Express Windows Server 2012 构造中的访问策略|目标：<br /><br />-资源。部门包含财务<br /><br />访问规则：<br /><br />-允许读取用户。国家/地区 = 国家/地区和用户。部门 = Resource。<br />-允许完全控制用户。 MemberOf （FinanceAdmin）<br /><br />例外：<br /><br />允许读取 memberOf(FinanceException)|  
-|1.4|确定策略所需的文件属性|使用以下属性标记文件：<br /><br />-部门<br />-国家/地区|  
-|1.5|确定策略所需的声明类型和组|声明类型：<br /><br />-国家/地区<br />-部门<br /><br />用户组：<br /><br />-FinanceAdmin<br />-FinanceException|  
+|1.3|Express Windows Server 2012 构造中的访问策略|目标：<p>-资源。部门包含财务<p>访问规则：<p>-允许读取用户。国家/地区 = 国家/地区和用户。部门 = Resource。<br />-允许完全控制用户。 MemberOf （FinanceAdmin）<p>例外：<p>允许读取 memberOf(FinanceException)|  
+|1.4|确定策略所需的文件属性|使用以下属性标记文件：<p>-部门<br />-国家/地区|  
+|1.5|确定策略所需的声明类型和组|声明类型：<p>-国家/地区<br />-部门<p>用户组：<p>-FinanceAdmin<br />-FinanceException|  
 |1.6|确定应用此策略的服务器|将此策略应用于所有财务文件服务器。|  
 
-## <a name="BKMK_1.3"></a>实现：配置组件和策略  
+## <a name="implement-configure-the-components-and-policy"></a><a name="BKMK_1.3"></a>实施配置组件和策略  
 本部分提供了有关为财务文档部署中心访问策略的示例。  
 
 |否|步骤|示例|  
 |------|--------|-----------|  
-|2.1|创建声明类型|创建以下声明类型：<br /><br />-部门<br />-国家/地区|  
-|2.2|创建资源属性|创建并启用下列资源属性：<br /><br />-部门<br />-国家/地区|  
+|2.1|创建声明类型|创建以下声明类型：<p>-部门<br />-国家/地区|  
+|2.2|创建资源属性|创建并启用下列资源属性：<p>-部门<br />-国家/地区|  
 |2.3|配置中心访问规则|创建财务文档规则，该规则包含前一部分中所确定的策略。|  
 |2.4|配置中心访问策略 (CAP)|创建一个称为“财务策略”的 CAP，并向该 CAP 添加财务文档规则。|  
 |2.5|将文件服务器作为中心访问策略的目标|将财务策略 CAP 发布到文件服务器。|  
 |2.6|为声明、复合身份验证和 Kerberos 保护启用 KDC 支持。|针对 contoso.com 的声明、复合身份验证和 Kerberos 保护启用 KDC 支持。|  
 
-在以下过程中，你将创建两个声明类型：国家/地区和部门。  
+在以下步骤中，可创建两个声明类型：国家/地区和部门。  
 
 #### <a name="to-create-claim-types"></a>创建声明类型  
 
 1. 在 Hyper-v 管理器中打开 Server DC1，并以 contoso\administrator 的身份登录，并<strong>pass@word1</strong>密码。  
 
-2. 打开 Active Directory 管理中心。  
+2. 打开“Active Directory 管理中心”。  
 
 3. 单击“树视图”图标，展开“动态访问控制”，然后选择“声明类型”。  
 
@@ -73,7 +72,7 @@ ms.locfileid: "71357497"
    > [!TIP]  
    > 还可以从“任务”窗格中打开“创建声明类型:”窗口。 在“任务”窗格上，单击“新建”，然后单击“声明类型”。  
 
-4. 在“源属性”列表中，向下滚动列表属性，然后单击“部门”。 这应该使用“部门”来填充“显示名称”。 单击**确定**。  
+4. 在“源属性”列表中，向下滚动列表属性，然后单击“部门”。 这应该使用“部门”来填充“显示名称”。 单击 **“确定”** 。  
 
 5. 在“任务”窗格中，单击“新建”，然后单击“声明类型”。  
 
@@ -117,7 +116,7 @@ ms.locfileid: "71357497"
 
 6.  在 Active Directory 管理中心导航窗格上的“资源属性”列表中，现在将存在两个已启用的资源属性：  
 
-    -   国家/地区  
+    -   Country  
 
     -   部门  
 
@@ -147,7 +146,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 
 或者，通过 Windows Server 2012 构造表达规则：  
 
-目标： Resource 包含财务  
+目标：Resource.Department 包含财务部门  
 
 访问规则：  
 
@@ -171,7 +170,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 5. 在“权限”部分中，选择“使用下列权限作为当前权限”，单击“编辑”，然后在“权限的高级安全设置”对话框中，单击“添加”。  
 
    > [!NOTE]  
-   > 在暂存期间，可使用“使用下列权限作为建议的权限”选项来创建策略。 有关如何执行此操作的详细信息，请参阅本主题中的维护：更改和暂存策略部分。  
+   > 在暂存期间，可使用“使用下列权限作为建议的权限”选项来创建策略。 有关如何执行此操作的详细信息，请参阅本主题中的“维护：更改并暂存该策略”部分。  
 
 6. 在“权限的权限条目”对话框中，单击“选择主体”，键入“经过身份验证的用户”，然后单击“确定”。  
 
@@ -206,7 +205,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 
 > [!IMPORTANT]  
-> 在上述 cmdlet 示例中，将在创建时确定 FinanceAdmin 组和用户组的安全标识符 (SID)，并且它们在示例中会有所不同。 例如，需要将所提供的 FinanceAdmins 组的 SID 值 (S-1-5-21-1787166779-1215870801-2157059049-1113) 替换为要在部署中创建的 FinanceAdmin 组的实际 SID 值。 可以使用 Windows PowerShell 查找此组的 SID 值，将该值分配给变量，然后在此处使用该变量。 有关详细信息，请参阅[Windows PowerShell 提示：使用 sid](https://go.microsoft.com/fwlink/?LinkId=253545)。  
+> 在上述 cmdlet 示例中，将在创建时确定 FinanceAdmin 组和用户组的安全标识符 (SID)，并且它们在示例中会有所不同。 例如，需要将所提供的 FinanceAdmins 组的 SID 值 (S-1-5-21-1787166779-1215870801-2157059049-1113) 替换为要在部署中创建的 FinanceAdmin 组的实际 SID 值。 可以使用 Windows PowerShell 查找此组的 SID 值，将该值分配给变量，然后在此处使用该变量。 有关详细信息，请参阅 Windows PowerShell 提示 [：使用 Sid](https://go.microsoft.com/fwlink/?LinkId=253545)。  
 
 现在应具有中心访问规则，该规则允许用户在同一国家/地区及同一部门中访问文档。 该规则允许 FinanceAdmin 组编辑文档，并且它还允许 FinanceException 组读取文档。 该规则仅适用于被归类为“财务”的文档。  
 
@@ -245,7 +244,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
     > [!TIP]  
     > 在生产环境中，应创建要在其中应用此策略的文件服务器组织单位 (OU)，并将所有文件服务器都添加到该 OU。 然后可以创建组策略，并将此 OU 添加到此策略。  
 
-2.  在此步骤中，你将编辑已在测试环境中的[生成域控制器](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)部分创建的组策略对象，以包含你所创建的中心访问策略。 在组策略管理编辑器中，导航到域中的组织单位（此示例中的 contoso.com）：**组策略管理**、**林： contoso.com**、**域**、 **contoso.com**、 **contoso**、 **FileServerOU**。  
+2.  在此步骤中，你将编辑已在测试环境中的[生成域控制器](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)部分创建的组策略对象，以包含你所创建的中心访问策略。 在组策略管理编辑器中，导航至域（在本例中为 contoso.com）中的组织单位并将其选中：“组策略管理”、“林: contoso.com”、“域”、“contoso.com”、“Contoso”、“FileServerOU”。  
 
 3.  右键单击“FlexibleAccessGPO”，然后单击“编辑”。  
 
@@ -281,7 +280,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 6.  打开命令提示符并键入 `gpupdate /force`。  
 
-## <a name="BKMK_1.4"></a>部署中心访问策略  
+## <a name="deploy-the-central-access-policy"></a><a name="BKMK_1.4"></a>部署中心访问策略  
 
 ||步骤|示例|  
 |-|--------|-----------|  
@@ -318,7 +317,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 8. 单击“更改”，从下拉菜单中选择“财务策略”，然后单击“应用”。 你可以在此策略中查看列出的“财务文档规则”。 通过展开项，来查看在 Active Directory 中创建规则时所设置的所有权限。  
 
-9. 单击“确定”返回到 Windows 资源管理器。  
+9. 单击“确定” 返回到 Windows 资源管理器。  
 
 在下一步骤中，请确保访问权限已正确配置。  用户帐户需要设置相应的“部门”属性（使用 Active Directory 管理中心来设置该属性）。 查看新策略有效结果的最简单方法是使用 Windows 资源管理器中的“有效访问”选项卡。 “有效访问”选项卡将显示给定用户帐户的访问权限。  
 
@@ -340,11 +339,11 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
     请注意“有效访问”窗口中名为“访问限制”的最后一列。 此列告诉您哪些关口影响了人员的权限。 在此案例中，共享和 NTFS 权限将允许所有用户进行完全控制。 但是，中心访问策略将根据之前配置的规则来限制访问权限。  
 
-## <a name="BKMK_1.5"></a>维护：更改和暂存策略  
+## <a name="maintain-change-and-stage-the-policy"></a><a name="BKMK_1.5"></a>实现更改并暂存策略  
 
 ||||  
 |-|-|-|  
-|编号|步骤|示例|  
+|数量|步骤|示例|  
 |4.1|为客户端配置设备声明|设置组策略设置以启用设备声明|  
 |4.2|启用设备的声明。|启用设备的国家/地区声明类型。|  
 |4.3|将暂存策略添加到要修改的现有中心访问规则。|修改财务文档规则改以添加暂存策略。|  
@@ -366,7 +365,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 3. 单击“树视图”，展开“动态访问控制”，双击“声明类型”，然后双击“国家/地区”声明。  
 
-4. 在“可为以下类发出此类声明”中，选中“计算机”复选框。 单击**确定**。   
+4. 在“可为以下类发出此类声明”中，选中“计算机”复选框。 单击 **“确定”** 。   
    现在应同时选中“用户”和“计算机”复选框。 现在，除了可以与用户一起使用外，国家/地区声明还可以与设备一起使用。  
 
 下一步是创建暂存策略规则。 通过使用暂存策略，可在启用新策略项之前监视它的效果。 在以下步骤中，将创建一个暂存策略项，并监视在共享文件夹上的效果。  
@@ -375,7 +374,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 1. 在 Hyper-v 管理器中打开 Server DC1，并以 contoso\Administrator 的身份登录，并<strong>pass@word1</strong>密码。  
 
-2. 打开 Active Directory 管理中心。  
+2. 打开“Active Directory 管理中心”。  
 
 3. 单击“树视图”，展开“动态访问控制”，并选择“中心访问规则”。  
 
@@ -388,10 +387,10 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 7. 再次单击“添加条件”，并添加以下条件：  
    [**And**]   
-    [“设备”] [“国家/地区”] [“任何”] [“资源”[] [“国家/地区”]  
+    [“设备”] [“国家/地区”] [“任何”] [“资源”] [“国家/地区”]  
 
 8. 再次单击“添加条件”，并添加以下条件：  
-   与   
+   [“和”]   
     [**用户**][**组**][**Any 的成员**][**值**]\(**FinanceException**）  
 
 9. 若要设置 FinanceException 组，请单击“添加项”，并在“选择用户、计算机、服务的帐户或组”窗口中，键入“FinanceException”。  
@@ -433,7 +432,7 @@ Set-ADCentralAccessRule
 
 5. 通过桌面上的快捷方式打开“事件查看器”。 展开“Windows 日志”，然后选择“安全”。 在 "**中心访问策略暂存**" 任务类别下打开**事件 ID 为 4818**的条目。 你将看到 EValle 已具有访问权限；但是，根据暂存策略，将拒绝授予用户访问权限。  
 
-## <a name="next-steps"></a>后续步骤  
+## <a name="next-steps"></a>다음 단계  
 如果存在中心服务器管理系统（如 System Center Operations Manager），则你还可以配置监视事件。 这使管理员能够在强制执行中心访问策略之前监视这些策略的效果。  
 
 
