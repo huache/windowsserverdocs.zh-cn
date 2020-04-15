@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d8f6bf0df67b76028945403352bd135e6641a5a
-ms.sourcegitcommit: ab3967d71dcbb962079af194875de58e7c32c4e2
+ms.openlocfilehash: e8e6e5a29c75c117f6faa3c1d1b3f288582d81a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967417"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855880"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>部署文件夹重定向和脱机文件
 
@@ -30,7 +30,7 @@ ms.locfileid: "76967417"
 
 ### <a name="hardware-requirements"></a>硬件要求
 
-文件夹重定向需要基于 x64 或 x86 的计算机；Windows® RT 不支持文件夹重定向。
+文件夹重定向需要基于 x64 或 x86 的计算机；Windows&reg; RT 不支持文件夹重定向。
 
 ### <a name="software-requirements"></a>软件要求
 
@@ -99,7 +99,7 @@ ms.locfileid: "76967417"
 | System     | 完全控制        |    此文件夹、子文件夹和文件     |
 | Administrators     | 完全控制       | 仅此文件夹        |
 | 创建者/所有者     |   完全控制      |   仅子文件夹和文件      |
-| 需要将数据放在共享上的用户（文件夹重定向用户）的安全组     |   列出文件夹/读取数据（高级权限）  <br /><br />创建文件夹/附加数据（高级权限）  <br /><br />读取属性（高级权限）  <br /><br />读取扩展属性（高级权限）  <br /><br />读取权限（高级权限）       |  仅此文件夹       |
+| 需要将数据放在共享上的用户（文件夹重定向用户）的安全组     |   列出文件夹/读取数据（高级权限）  <p>创建文件夹/附加数据（高级权限）  <p>读取属性（高级权限）  <p>读取扩展属性（高级权限）  <p>读取权限（高级权限）       |  仅此文件夹       |
 | 其他组和帐户     |  无（删除）       |         |
 
 ## <a name="step-3-create-a-gpo-for-folder-redirection"></a>步骤 3:为文件夹重定向创建 GPO

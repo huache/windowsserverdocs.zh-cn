@@ -2,28 +2,26 @@
 title: Nano Server 快速入门
 description: 快速在物理计算机或虚拟机上部署基本 Nano Server 的步骤
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/05/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de589d9da1c7d4fc9eb116e6ea1f6a326d1ad7c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7729b853f2e54c7f99d428fcb821a68d7a22aef0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391719"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826810"
 ---
 # <a name="nano-server-quick-start"></a>Nano Server 快速入门
 
 >适用于：Windows Server 2016
 
 > [!IMPORTANT]
-> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解这意味着什么。 
+> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解其含义。 
 
 按照本部分中的步骤，使用 DHCP 获取 IP 地址，快速启动 Nano Server 的基本部署。 可以在虚拟机上运行 Nano Server VHD 或在物理计算机上启动；步骤会稍有不同。
 
@@ -53,7 +51,7 @@ ms.locfileid: "71391719"
   
    -   **Computer_name** 指定正在创建的 Nano Server 虚拟机的计算机名称。  
   
-   示例  ：`New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1`  
+   **示例：** `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1`  
   
    此示例将从装载为 f:\\ 的 ISO 创建一个 VHD。 在创建 VHD 时，它将使用在其中运行 New-NanoServerImage 的同一目录中一个名为 Base 的文件夹；它会将 VHD（称为 Nano.vhd）放置于从其中运行此命令的名为 Nano1 的文件夹中。 计算机名称将是 Nano1。 生成的 VHD 将包含 Windows Server 2016 Standard，并将适用于 Hyper-V 虚拟机部署。 如果需要第 1 代虚拟机，可以通过为 -TargetPath 指定一个 **.vhd** 扩展名来创建 VHD 映像。 如果需要第 2 代虚拟机，可以通过为 -TargetPath 指定 **.vhdx** 扩展名来创建 VHDX 映像。 还可以通过为 -TargetPath 指定 **.wim** 扩展名直接生成 WIM 文件。  
   

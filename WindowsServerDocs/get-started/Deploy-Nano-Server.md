@@ -2,22 +2,20 @@
 title: 部署 Nano Server
 description: 介绍如何创建和部署自定义映像、包、驱动程序、域、角色、功能
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0276b70f3899fe1f3e56aebd87ea087ea91fee
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 9eceb92c239ce222f9f1498dfdeb8a21220af86f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465481"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827110"
 ---
 # <a name="deploy-nano-server"></a>部署 Nano Server
 
@@ -57,7 +55,7 @@ Nano Server 映像生成器创建 VHD、VHDX 或 ISO格式的自定义 Nano Serv
 
 如果对以上任何内容不熟悉，请查看本主题的其余部分和其他 Nano Server 主题，以便准备好向工具提供其所需的信息。
 
-## <a name="BKMK_CreateImage"></a>创建自定义 Nano Server 映像  
+## <a name="creating-a-custom-nano-server-image"></a><a name=BKMK_CreateImage></a>创建自定义 Nano Server 映像  
 对于 Windows Server 2016，Nano Server 分布在物理介质上，可在其中找到 **NanoServer** 文件夹；其中包含一个 .wim 映像和一个名为 **Packages** 的子文件夹。 这些包文件是你用于将服务器角色和功能添加到 VHD 映像的文件，之后将启动到该映像。  
 
 也可使用 PackageManagement (OneGet) PowerShell 模块的 NanoServerPackage 提供程序查找和安装这些包。 请参阅本主题的“联机安装角色和功能”部分。  
@@ -185,7 +183,7 @@ WinPE 启动后，使用 Diskpart.exe 准备目标计算机的硬盘驱动器。
 > [!WARNING]  
 > 这些命令将删除硬盘驱动器上的所有数据。  
 
-Diskpart.exe Select disk 0 Clean Convert GPT Create partition efi size=100 Format quick FS=FAT32 label="System" Assign letter="s" Create partition msr size=128 Create partition primary Format quick FS=NTFS label="NanoServer" Assign letter="n" List volume Exit   
+**Diskpart.exe Select disk 0 Clean Convert GPT Create partition efi size=100 Format quick FS=FAT32 label=System Assign letter=s Create partition msr size=128 Create partition primary Format quick FS=NTFS label=NanoServer Assign letter=n List volume Exit**  
 
 应用 Nano Server 映像（调整 .wim 文件的路径）：  
 
@@ -200,10 +198,10 @@ Dism.exe /apply-image /imagefile:.\NanoServer.wim /index:1 /applydir:n:\ Bcdboot
  连接到 Nano Server 后，可通过将文件的相对和绝对路径传递到 psEdit 命令编辑驻留在本地计算机上的文件，例如：   
 `psEdit C:\Windows\Logs\DISM\dism.log` 或 `psEdit .\myScript.ps1`  
 
-通过使用 `Enter-PSSession -ComputerName "192.168.0.100" -Credential ~\Administrator` 启动远程会话，编辑驻留在远程 Nano Server 上的文件，然后将文件的相对和绝对路径传递到 psEdit 命令，如下所示：   
+通过使用 `Enter-PSSession -ComputerName 192.168.0.100 -Credential ~\Administrator` 启动远程会话，编辑驻留在远程 Nano Server 上的文件，然后将文件的相对和绝对路径传递到 psEdit 命令，如下所示：   
 `psEdit C:\Windows\Logs\DISM\dism.log`  
 
-## <a name="BKMK_online"></a>联机安装角色和功能  
+## <a name="installing-roles-and-features-online"></a><a name=BKMK_online></a>联机安装角色和功能  
 > [!NOTE]
 > 如果从媒体或联机存储库安装可选 Nano Server 程序包，这将不包括最近的安全修补程序。 为避免可选程序包和基本操作系统之间的版本不匹配，应在安装任意可选程序包后立即安装[最新的累计更新](https://technet.microsoft.com/windows-server-docs/get-started/update-nano-server)，**然后**再重启服务器。
 
@@ -219,7 +217,7 @@ Import-PackageProvider NanoServerPackage
 >如果你在运行 Install-PackageProvider 时遇到了错误，请检查你是否已安装了[最新累积更新](https://technet.microsoft.com/windows-server-docs/get-started/update-nano-server)（[KB3206632](https://support.microsoft.com/kb/3206632) 或更高版本），或者按以下方式使用 Save-Module： 
 
 ```powershell
-Save-Module -Path "$Env:ProgramFiles\WindowsPowerShell\Modules\" -Name NanoServerPackage -MinimumVersion 1.0.1.0
+Save-Module -Path $Env:ProgramFiles\WindowsPowerShell\Modules\ -Name NanoServerPackage -MinimumVersion 1.0.1.0
 Import-PackageProvider NanoServerPackage
 ```
 
@@ -273,13 +271,13 @@ Find-NanoServerPackage
 
 以下是通过管道将程序包搜索结果传送到安装 cmdlet 的一些示例：  
 
-`Find-NanoServerPackage *dcb* | Install-NanoServerPackage` 查找所有名称中包含“dcb”的程序包，然后安装它们。
+`Find-NanoServerPackage *dcb* | Install-NanoServerPackage` 查找所有名称中包含 dcb 的程序包，然后安装它们。
 
-`Find-Package *nanoserver-compute-* | Install-Package` 查找名称中包含“nanoserver-compute-”的程序包，然后安装它们。
+`Find-Package *nanoserver-compute-* | Install-Package` 查找名称中包含 nanoserver-compute- 的程序包，然后安装它们。
 
-`Find-NanoServerPackage -Name *nanoserver-compute* | Install-NanoServerPackage -ToVhd C:\MyNanoVhd.vhd` 查找名称中包含“compute”的程序包，然后将其安装到脱机映像。
+`Find-NanoServerPackage -Name *nanoserver-compute* | Install-NanoServerPackage -ToVhd C:\MyNanoVhd.vhd` 查找名称中包含 compute 的程序包，然后将其安装到脱机映像。
 
-`Find-Package -ProviderName NanoserverPackage *nanoserver-compute-* | Install-Package -ToVhd C:\MyNanoVhd.vhd` 对所有名称中包含“nanoserver-compute-”的程序包执行相同操作。
+`Find-Package -ProviderName NanoserverPackage *nanoserver-compute-* | Install-Package -ToVhd C:\MyNanoVhd.vhd` 对所有名称中包含 nanoserver-compute- 的程序包执行相同操作。
 
 ### <a name="downloading-nano-server-packages"></a>下载 Nano Server 程序包  
 
@@ -313,19 +311,19 @@ Find-NanoServerPackage
 
 
 ```  
-<?xml version="1.0" encoding="utf-8"?>
-    <unattend xmlns="urn:schemas-microsoft-com:unattend">  
+<?xml version=1.0 encoding=utf-8?>
+    <unattend xmlns=urn:schemas-microsoft-com:unattend>  
     <servicing>  
-        <package action="install">  
-            <assemblyIdentity name="Microsoft-NanoServer-IIS-Feature-Package" version="10.0.14393.0" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" />  
-            <source location="c:\packages\Microsoft-NanoServer-IIS-Package.cab" />  
+        <package action=install>  
+            <assemblyIdentity name=Microsoft-NanoServer-IIS-Feature-Package version=10.0.14393.0 processorArchitecture=amd64 publicKeyToken=31bf3856ad364e35 language=neutral />  
+            <source location=c:\packages\Microsoft-NanoServer-IIS-Package.cab />  
         </package>  
-        <package action="install">  
-            <assemblyIdentity name="Microsoft-NanoServer-IIS-Feature-Package" version="10.0.14393.0" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="en-US" />  
-            <source location="c:\packages\en-us\Microsoft-NanoServer-IIS-Package_en-us.cab" />  
+        <package action=install>  
+            <assemblyIdentity name=Microsoft-NanoServer-IIS-Feature-Package version=10.0.14393.0 processorArchitecture=amd64 publicKeyToken=31bf3856ad364e35 language=en-US />  
+            <source location=c:\packages\en-us\Microsoft-NanoServer-IIS-Package_en-us.cab />  
         </package>  
     </servicing>  
-    <cpi:offlineImage cpi:source="" xmlns:cpi="urn:schemas-microsoft-com:cpi" />  
+    <cpi:offlineImage cpi:source= xmlns:cpi=urn:schemas-microsoft-com:cpi />  
 </unattend>  
 ```  
 
@@ -342,7 +340,7 @@ Find-NanoServerPackage
 
 5. 请确定程序包及其关联的语言包已正确安装，方法是运行：  
 
-    dism /online /get-packages  
+   **dism /online /get-packages**  
 
    应会看到“程序包标识符:Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~en-US~10.0.10586.0”列出两次，一次用于发行类型：语言包”，一次用于“发布类型:功能包”。  
 
@@ -360,7 +358,7 @@ New-NanoServerImage 提供加入域的两种方法；两者都依赖于脱机域
 
 `New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\JoinDomHarvest.vhdx -ComputerName JoinDomHarvest -DomainName Contoso`  
 
-当此 cmdlet 完成时，应会在 Active Directory 计算机列表中找到名为“JoinDomHarvest”的计算机。  
+当此 cmdlet 完成时，应会在 Active Directory 计算机列表中找到名为 JoinDomHarvest 的计算机。  
 
 还可在未加入域的计算机上使用此 cmdlet。 若要执行此操作，从任何加入域的计算机获取 Blob，然后自行将此 Blob 提供给 cmdlet。 请注意，当从另一计算机获取这种 Blob 时，该 Blob 已包含该计算机名，因此如果尝试添加 -ComputerName  参数，将会发生错误。  
 
@@ -436,13 +434,13 @@ Nano Server 提供包括一组用于各种网络适配器和存储控制器的�
 ### <a name="running-custom-commands-after-the-first-boot"></a>第一次启动后运行自定义命令
 若要运行自定义命令作为 setupcomplete.cmd 的一部分，请使用 -SetupCompleteCommand 参数来传递命令数组：
 
-`New-NanoServerImage -DeploymentType Host -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -SetupCompleteCommand @("echo foo", "echo bar")`
+`New-NanoServerImage -DeploymentType Host -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -SetupCompleteCommand @(echo foo, echo bar)`
 
 
 ### <a name="running-custom-powershell-scripts-as-part-of-image-creation"></a>运行自定义 PowerShell 脚本作为映像创建的一部分
 若要运行自定义 PowerShell 脚本作为映像创建流程的一部分，请使用 -OfflineScriptPath 参数将路径数组传递到 .ps1 脚本。 如果这些脚本带实参，则使用 -OfflineScriptArgument 将附加实参的哈希表传递到这些脚本。
 
-`New-NanoServerImage -DeploymentType Host -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -OfflineScriptPath C:\MyScripts\custom.ps1 -OfflineScriptArgument @{Param1="Value1"; Param2="Value2"}`
+`New-NanoServerImage -DeploymentType Host -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -OfflineScriptPath C:\MyScripts\custom.ps1 -OfflineScriptArgument @{Param1=Value1; Param2=Value2}`
 
 
 ### <a name="support-for-development-scenarios"></a>对开发方案的支持
@@ -488,7 +486,7 @@ Windows Server 应用 (WSA) 安装程序为 Nano Server 提供可靠的安装选
 
 接下来，包使用者应执行以下步骤：
 
-1. 运行 [Import-Certificate](https://technet.microsoft.com/library/hh848630)  PowerShell cmdlet 将上面步骤 4 中的发布者证书导入到 Nano Server，certStoreLocation 的位置为“Cert:\LocalMachine\TrustedPeople”。 例如：`Import-Certificate -FilePath ".\xyz.cer" -CertStoreLocation "Cert:\LocalMachine\TrustedPeople"`
+1. 运行 [*Import-Certificate*](https://technet.microsoft.com/library/hh848630) PowerShell cmdlet 将上面步骤 4 中的发布者证书导入到 Nano Server，certStoreLocation 的位置为 Cert:\LocalMachine\TrustedPeople。 例如：`Import-Certificate -FilePath .\xyz.cer -CertStoreLocation Cert:\LocalMachine\TrustedPeople`
 2. 通过运行 [**Add-AppxPackage**](https://technet.microsoft.com/library/mt575516(v=wps.620).aspx) PowerShell cmdlet 在 Nano Server 上安装 WSA 包，从而将该应用安装在 Nano Server 上。 例如：`Add-AppxPackage wsaSample.appx`
 
 #### <a name="additional-resources-for-creating-apps"></a>用于创建应用的其他资源
@@ -522,7 +520,7 @@ PnP 和文件系统筛选器驱动程序包必须遵循通用驱动程序要求�
 --------------------------------------------------  
 
 
-## <a name="BKMK_JoinDomain"></a>将 Nano Server 加入域  
+## <a name="joining-nano-server-to-a-domain"></a><a name=BKMK_JoinDomain></a>将 Nano Server 加入域  
 
 ### <a name="to-add-nano-server-to-a-domain-online"></a>将 Nano Server 联机添加到域  
 
@@ -530,26 +528,26 @@ PnP 和文件系统筛选器驱动程序包必须遵循通用驱动程序要求�
 
     `djoin.exe /provision /domain <domain-name> /machine <machine-name> /savefile .\odjblob`  
 
-    这会将数据 Blob 保存到名为“odjblob”的文件中。  
+    这会将数据 Blob 保存到名为 odjblob 的文件中。  
 
-2.  使用以下命令将“odjblob”文件复制到 Nano Server 计算机：  
+2.  使用以下命令将 odjblob 文件复制到 Nano Server 计算机：  
 
     net use z: \\\\\<ip address of Nano Server>\c$   
 
     > [!NOTE]  
     > 如果 net use 命令失败，可能需要调整 Windows 防火墙规则。 要执行此操作，首先打开提升的命令提示符，启动 Windows PowerShell，然后使用以下命令通过 Windows PowerShell 远程处理连接到 Nano Server 计算机：  
     >   
-    > `Set-Item WSMan:\localhost\Client\TrustedHosts "<IP address of Nano Server>"`  
+    > `Set-Item WSMan:\localhost\Client\TrustedHosts <IP address of Nano Server>`  
     >   
-    > `$ip = "<ip address of Nano Server>"`  
+    > `$ip = <ip address of Nano Server>`  
     >   
     > `Enter-PSSession -ComputerName $ip -Credential $ip\Administrator`  
     >   
     > 出现提示时，提供管理员密码，然后运行以下命令以设置防火墙规则：  
     >   
-    > netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=yes   
+    > **netsh advfirewall firewall set rule group=File and Printer Sharing new enable=yes**  
     >   
-    > 使用 `Exit-PSSession` 退出 Windows PowerShell，然后重试 net use 命令。 如果成功，则继续将“odjblob”文件内容复制到 Nano Server。  
+    > 使用 `Exit-PSSession` 退出 Windows PowerShell，然后重试 net use 命令。 如果成功，则继续将 odjblob 文件内容复制到 Nano Server。  
 
     md z:\Temp   
 
@@ -557,9 +555,9 @@ PnP 和文件系统筛选器驱动程序包必须遵循通用驱动程序要求�
 
 3.  检查想要 Nano Server 加入的域以确保已配置 DNS。 此外，还需验证域的名称解析或域控制器是否按预期工作。 要执行此操作，打开提升的命令提示符，启动 Windows PowerShell，然后使用以下命令通过 Windows PowerShell 远程处理连接到 Nano Server 计算机：  
 
-    `Set-Item WSMan:\localhost\Client\TrustedHosts "<IP address of Nano Server>"`  
+    `Set-Item WSMan:\localhost\Client\TrustedHosts <IP address of Nano Server>`  
 
-    `$ip = "<ip address of Nano Server>"`  
+    `$ip = <ip address of Nano Server>`  
 
     `Enter-PSSession -ComputerName $ip -Credential $ip\Administrator`  
 
@@ -577,7 +575,7 @@ PnP 和文件系统筛选器驱动程序包必须遵循通用驱动程序要求�
 
 6.  将 Nano Server 加入到域后，将域用户帐户添加到 Nano Server 上的管理员组。
 
-7. 为安全起见，请使用以下命令将 Nano Server 从受信任的主机列表中删除：`Set-Item WSMan:\localhost\client\TrustedHosts ""` 
+7. 为安全起见，请使用以下命令将 Nano Server 从受信任的主机列表中删除：`Set-Item WSMan:\localhost\client\TrustedHosts ` 
 
 一步加入域的备用方法   
 
@@ -585,7 +583,7 @@ PnP 和文件系统筛选器驱动程序包必须遵循通用驱动程序要求�
 
 `djoin.exe /provision /domain <domain-name> /machine <machine-name> /savefile .\odjblob`  
 
-打开文件“odjblob”（可能在记事本中），然后将其内容复制并粘贴到下面的 Unattend.xml 文件的 \<AccountData> 部分。  
+打开文件 odjblob（可能在记事本中），然后将其内容复制并粘贴到下面的 Unattend.xml 文件的 \<AccountData> 部分。  
 
 将 unattend.xml 文件放入 C:\NanoServer 文件夹，然后使用以下命令装载 VHD 并在 `offlineServicing` 部分应用设置：  
 
@@ -593,7 +591,7 @@ dism\dism /Mount-ImagemediaFile:.\NanoServer.vhd /Index:1 /MountDir:.\mountdir
 
 dism\dismmedia:.\mountdir /Apply-Unattend:.\unattend.xml   
 
-创建“Panther”文件夹（Windows 系统使用该文件夹在安装过程中存储文件；如感兴趣，请参阅 [Windows 7、Windows Server 2008 R2 和 Windows Vista 安装日志文件位置](https://support.microsoft.com/kb/927521)，将 Unattend.xml 文件复制到该文件夹，然后使用以下命令卸载 VHD：  
+创建 Panther 文件夹（Windows 系统使用该文件夹在安装过程中存储文件；如感兴趣，请参阅 [Windows 7、Windows Server 2008 R2 和 Windows Vista 安装日志文件位置](https://support.microsoft.com/kb/927521)，将 Unattend.xml 文件复制到该文件夹，然后使用以下命令卸载 VHD：  
 
 md.\mountdir\windows\panther   
 
@@ -639,11 +637,11 @@ Hyper-V 在 Nano Server 上的工作方式和在服务器核心模式下的 Wind
 
 CredSSP   
 
-首先参阅本主题的“使用 Windows PowerShell 远程处理”部分以启用和测试 CredSSP。 然后，可在管理计算机上使用 Hyper-V 管理器，并选择选项“以其他用户身份连接”。 Hyper-V 管理器将使用 CredSSP。 即使使用的是当前帐户，也须执行此操作。  
+首先参阅本主题的“使用 Windows PowerShell 远程处理”部分以启用和测试 CredSSP。 然后，可在管理计算机上使用 Hyper-V 管理器，并选择“以其他用户身份连接”选项。 Hyper-V 管理器将使用 CredSSP。 即使使用的是当前帐户，也须执行此操作。  
 
 Hyper-V 的 Windows PowerShell cmdlet 可使用 CimSession 或 Credential 参数，两者都可使用 CredSSP。  
 
-### <a name="BKMK_Failover"></a>使用 Nano Server 上的故障转移群集  
+### <a name="using-failover-clustering-on-nano-server"></a><a name=BKMK_Failover></a>使用 Nano Server 上的故障转移群集  
 故障转移群集在 Nano Server 上的工作方式和在服务器核心模式下的 Windows Server 上的工作方式相同，但请记住以下注意事项：  
 
 -   必须使用故障转移群集管理器或 Windows PowerShell 远程管理群集。  
@@ -674,31 +672,31 @@ Hyper-V 的 Windows PowerShell cmdlet 可使用 CimSession 或 Credential 参数
 
 可在 [Microsoft.FailoverClusters.PowerShell](https://technet.microsoft.com/library/ee461009.aspx) 找到用于故障转移群集的其他 cmdlet。  
 
-### <a name="BKMK_DNS"></a>在 Nano Server 上使用 DNS 服务器  
+### <a name="using-dns-server-on-nano-server"></a><a name=BKMK_DNS></a>在 Nano Server 上使用 DNS 服务器  
 若要为 Nano Server 提供 DNS 服务器角色，请将 Microsoft-NanoServer-DNS-Package 添加到映像（请参阅本主题的“创建自定义 Nano Server 映像”部分。 Nano Server 开始运行后，请连接它并从提升的 Windows PowerShell 控制台运行此命令以启用该功能：  
 
 `Enable-WindowsOptionalFeature -Online -FeatureName DNS-Server-Full-Role`  
 
-### <a name="BKMK_IIS"></a>使用 Nano Server 上的 IIS  
+### <a name="using-iis-on-nano-server"></a><a name=BKMK_IIS></a>使用 Nano Server 上的 IIS  
 有关使用 Internet 信息服务 (IIS) 角色的步骤，请参阅 [Nano Server 上的 IIS](IIS-on-Nano-Server.md)。 
 
 ### <a name="using-mpio-on-nano-server"></a>使用 Nano Server 上的 MPIO
 有关使用 MPIO 的步骤，请参阅 [Nano Server 上的 MPIO](MPIO-on-Nano-Server.md) 
 
-### <a name="BKMK_SSH"></a>使用 Nano Server 上的 SSH
+### <a name="using-ssh-on-nano-server"></a><a name=BKMK_SSH></a>使用 Nano Server 上的 SSH
 若要了解如何通过 OpenSSH 项目安装和使用 Nano Server 上的 SSH，请参阅 [Win32-OpenSSH wiki](https://github.com/PowerShell/Win32-OpenSSH/wiki)。
 
 ## <a name="appendix-sample-unattendxml-file-that-joins-nano-server-to-a-domain"></a>附录：用于将 Nano Server 加入到域的 Unattend.xml 文件的示例  
 
 > [!NOTE]  
-> 将“odjblob”粘贴到无人参与文件中后，请务必删除“odjblob”内容中的尾部空格。  
+> 将 odjblob 粘贴到无人参与文件中后，请务必删除 odjblob 内容中的尾部空格。  
 
 ```  
 <?xml version='1.0' encoding='utf-8'?>  
-<unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="https://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
+<unattend xmlns=urn:schemas-microsoft-com:unattend xmlns:wcm=https://schemas.microsoft.com/WMIConfig/2002/State xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance>  
 
-  <settings pass="offlineServicing">  
-    <component name="Microsoft-Windows-UnattendedJoin" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">  
+  <settings pass=offlineServicing>  
+    <component name=Microsoft-Windows-UnattendedJoin processorArchitecture=amd64 publicKeyToken=31bf3856ad364e35 language=neutral versionScope=nonSxS>  
         <OfflineIdentification>                
            <Provisioning>    
              <AccountData> AAAAAAARUABLEABLEABAoAAAAAAAMABSUABLEABLEABAwAAAAAAAAABbMAAdYABc8ABYkABLAABbMAAEAAAAMAAA0ABY4ABZ8ABbIABa0AAcIABY4ABb8ABZUABAsAAAAAAAQAAZoABNUABOYABZYAANQABMoAAOEAAMIAAOkAANoAAMAAAXwAAJAAAAYAAA0ABY4ABZ8ABbIABa0AAcIABY4ABb8ABZUABLEAALMABLQABU0AATMABXAAAAAAAKdf/mhfXoAAUAAAQAAAAb8ABLQABbMABcMABb4ABc8ABAIAAAAAAb8ABLQABbMABcMABb4ABc8ABLQABb0ABZIAAGAAAAsAAR4ABTQABUAAAAAAACAAAQwABZMAAZcAAUgABVcAAegAARcABKkABVIAASwAAY4ABbcABW8ABQoAAT0ABN8AAO8ABekAAJMAAVkAAZUABckABXEABJUAAQ8AAJ4AAIsABZMABdoAAOsABIsABKkABQEABUEABIwABKoAAaAABXgABNwAAegAAAkAAAAABAMABLIABdIABc8ABY4AADAAAA4AAZ4ABbQABcAAAAAAACAAkKBW0ID8nJDWYAHnBAXE77j7BAEWEkl+lKB98XC2G0/9+Wd1DJQW4IYAkKBAADhAnKBWEwhiDAAAM2zzDCEAM6IAAAgAAAAAAAQAAAAAAAAAAAABwzzAAA  
@@ -708,8 +706,8 @@ Hyper-V 的 Windows PowerShell cmdlet 可使用 CimSession 或 Credential 参数
     </component>  
   </settings>  
 
-  <settings pass="oobeSystem">  
-    <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">  
+  <settings pass=oobeSystem>  
+    <component name=Microsoft-Windows-Shell-Setup processorArchitecture=amd64 publicKeyToken=31bf3856ad364e35 language=neutral versionScope=nonSxS>  
       <UserAccounts>  
         <AdministratorPassword>  
            <Value>Tuva</Value>  
@@ -720,8 +718,8 @@ Hyper-V 的 Windows PowerShell cmdlet 可使用 CimSession 或 Credential 参数
     </component>  
   </settings>  
 
-  <settings pass="specialize">  
-    <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">  
+  <settings pass=specialize>  
+    <component name=Microsoft-Windows-Shell-Setup processorArchitecture=amd64 publicKeyToken=31bf3856ad364e35 language=neutral versionScope=nonSxS>  
       <RegisteredOwner>My Team</RegisteredOwner>  
       <RegisteredOrganization>My Corporation</RegisteredOrganization>  
     </component>  

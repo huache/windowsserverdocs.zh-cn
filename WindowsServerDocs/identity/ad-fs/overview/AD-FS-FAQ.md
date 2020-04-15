@@ -7,15 +7,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 04/17/2019
 ms.topic: article
-ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 48d93f515a5f3e5f8ce2c3ff9a1b40f300ca57ed
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: a1041bdc189238c7da32896e6f867f730e392d24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265739"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814427"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 的常见问题解答 (FAQ)
 
@@ -232,14 +231,14 @@ AD FS 的 userinfo 终结点始终返回 OpenID 标准中指定的使用者声�
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>为什么我会看到关于将 AD FS 服务帐户添加到企业密钥管理员组失败的警告？
 仅当域中存在具有 FSMO PDC 角色的 Windows 2016 域控制器时，才创建此组。 若要解决此错误，可以手动创建组，并在将服务帐户添加为组成员之后，按照以下步骤提供所需的权限。
-1.  打开“Active Directory 用户和计算机”  。
-2.  在导航窗格中，右键单击你的域名，然后单击“属性”   。
-3.  单击“安全性”  （如果没有“安全性”选项卡，请从“视图”菜单中打开“高级功能”）。
-4.  单击“高级”  。 单击“添加”  。 单击“选择主体”  。
-5.  此时将出现“选择用户、计算机、服务帐户或组”对话框。  在“输入要选择的对象名称”文本框中，键入“密钥管理组”。  单击“确定”。
-6.  在“应用于”列表框中，选择“子级用户对象”  。
-7.  使用滚动条滚动到页面底部，然后单击“全部清除”  。
-8.  在“属性”部分中，选择“读取 msDS-KeyCredentialLink”和“写入 msDS-KeyCredentialLink”    。
+1.    打开“Active Directory 用户和计算机”  。
+2.    在导航窗格中，右键单击你的域名，然后单击“属性”   。
+3.    单击“安全性”  （如果没有“安全性”选项卡，请从“视图”菜单中打开“高级功能”）。
+4.    单击“高级”  。 单击“添加”  。 单击“选择主体”  。
+5.    此时将出现“选择用户、计算机、服务帐户或组”对话框。  在“输入要选择的对象名称”文本框中，键入“密钥管理组”。  单击“确定”。
+6.    在“应用于”列表框中，选择“子级用户对象”  。
+7.    使用滚动条滚动到页面底部，然后单击“全部清除”  。
+8.    在“属性”部分中，选择“读取 msDS-KeyCredentialLink”和“写入 msDS-KeyCredentialLink”    。
 
 ### <a name="why-does-modern-authentication-from-android-devices-fail-if-the-server-does-not-send-all-the-intermediate-certificates-in-the-chain-with-the-ssl-cert"></a>如果服务器未发送与 SSL 证书链中的所有中间证书，Android 设备的新式验证为何会失败？
 

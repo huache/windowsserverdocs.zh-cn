@@ -1,30 +1,56 @@
 ---
 title: MacOS 客户端中的新增功能
 description: 了解适用于 Mac 的远程桌面客户端的最新更改
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/06/2020
+ms.date: 04/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2a9966da7046a14fb1d9d4562f0ef9b1a09a45
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: c378d8c4a87b6aa0cf4f6b4f30f3bd5524dbb7a9
+ms.sourcegitcommit: f95d0e6904b103fc30dcae13e9199e138c287e2b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919859"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80980849"
 ---
 # <a name="whats-new-in-the-macos-client"></a>MacOS 客户端中的新增功能
 
 我们会定期更新[适用于 macOS 的远程桌面客户端](remote-desktop-mac.md)添加新功能并修复问题。 可在下面找到最新更新。
 
 如果遇到任何问题，可以随时通过导航到“帮助” > “报告问题”来联系我们   。
+
+## <a name="updates-for-version-1039"></a>针对版本 10.3.9 的更新
+
+*发布日期：2020/4/6*
+
+在此版本中，我们进行了一些更改，以提高与 [Windows 虚拟桌面服务](https://azure.microsoft.com/services/virtual-desktop/)的互操作性。 此外，我们还提供了以下更新：
+
+- Control+Option+Delete 现在会触发 Ctrl+Alt+Del 序列（以前需要按 Fn 键）。
+- 修复了浅色模式的键盘模式通知配色方案。
+- 解决了使用 GatewayAccessToken RDP 文件属性启动的连接不工作的情况。
+
+>[!NOTE]
+>这是将与 macOS 10.12 兼容的最新版本。
+
+## <a name="updates-for-version-1038"></a>针对版本 10.3.8 的更新
+
+*发布日期：2020/2/12*
+
+这是我们 2020 年的第一个版本！
+
+通过此更新，在使用键盘进行输入时，可以在 Scancode (Ctrl+Command+K) 与 Unicode (Ctrl+Command+U) 模式之间进行切换。 Unicode 模式允许使用 Mac 键盘上的 Option 键来键入扩展字符。 例如，在美式 Mac 键盘上，Option+2 将输入商标 (&trade;) 符号。 在 Unicode 模式下还可以输入带重音符号的字符。 例如，在美式 Mac 键盘上，同时按下 Option+E 和“A”键将在远程会话中输入字符“á”。
+
+此版本中的其他更新包括：
+
+- 清理了工作区刷新体验和 UI。
+- 解决了导致远程会话在“正在检查状态”消息出现时在登录屏幕上停止响应的智能卡重定向问题。
+- 减少了基于剪贴板的文件复制和粘贴所用临时文件的创建时间。
+- 现在，当你退出应用时，将会自动删除用于剪贴板文件复制和粘贴的临时文件，而不是依赖于 macOS 来删除它们。
+- 现在，电脑书签操作呈现在缩略图的右上角。
+- 进行了修复，解决了通过故障遥测报告的问题。
 
 ## <a name="updates-for-version-1037"></a>针对版本 10.3.7 的更新
 

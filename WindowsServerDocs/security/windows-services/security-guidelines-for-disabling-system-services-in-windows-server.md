@@ -1,21 +1,19 @@
 ---
 title: Windows Server 2016 中的系统服务的安全指导原则
 description: 有关在带有桌面体验的 Windows Server 2016 中禁用服务的安全准则
-ms.custom: na
 ms.prod: windows-server
 ms.technology: techgroup-security
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 1711eb94b622775feaf02f6bada596fe03b08ea9
-ms.sourcegitcommit: b8e120fc574450e9eee13e7315424137a43e6a6c
+ms.openlocfilehash: f7bb6f73fb2d898c3e5170dda96fef5aea611a88
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74044810"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855050"
 ---
 # <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>有关在带有桌面体验的 Windows Server 2016 中禁用系统服务的指南
 
@@ -23,7 +21,7 @@ ms.locfileid: "74044810"
 
 Windows 操作系统包含许多提供重要功能的系统服务。 不同的服务具有不同的默认启动策略：有些服务默认会自动启动，有些服务按需启动（手动），还有一些服务默认已禁用，只有在显式启用之后才能运行。 这些默认设置是为每个服务精心选择的，目的是为典型的客户找到性能、功能与安全性之间的平衡。
 
-但是，某些企业客户可能偏向于对其 Windows 电脑和服务器采用注重于安全的配置，这种配置可将受攻击面减至绝对最小。因此，这些客户可能想要完全禁用其特定环境中不需要的所有服务。 对于这些客户，Microsoft® 将提供随附的指南，说明可以出于此目的安全禁用哪些服务。
+但是，某些企业客户可能偏向于对其 Windows 电脑和服务器采用注重于安全的配置，这种配置可将受攻击面减至绝对最小。因此，这些客户可能想要完全禁用其特定环境中不需要的所有服务。 对于这些客户，Microsoft&reg; 将提供随附的指南，说明可以出于此目的安全禁用哪些服务。
 
 本指南仅适用于带有桌面体验的 Windows Server 2016（除非用作最终用户的桌面替代版本）。 从 Windows Server 2019 开始，默认会配置这些指导原则。 系统上每个服务的分类如下：
 
@@ -209,7 +207,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **服务说明** |   自动设置系统时区。
 |   **服务名称**    |   tzautoupdate
 |   **安装**    |   仅用于桌面体验
-|   **StartType**   |   Disabled
+|   **StartType**   |   禁用
 |   **建议**  |   已禁用
 |   **备注**    |   
 |||         
@@ -366,7 +364,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **服务说明** |   维护更新的网络中计算机列表，并将此列表提供给指定为浏览器的计算机。 如果此服务已停止，则不会更新或维护此列表。 如果此服务已禁用，显式依赖它的任何服务将无法启动。
 |   **服务名称**    |   浏览器
 |   **安装**    |   始终安装
-|   **StartType**   |   Disabled
+|   **StartType**   |   禁用
 |   **建议**  |   已禁用
 |   **备注**    |   
 |||         
@@ -1108,7 +1106,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **服务说明** |   管理 App-V 用户和虚拟应用程序
 |   **服务名称**    |   AppVClient
 |   **安装**    |   仅用于桌面体验
-|   **StartType**   |   Disabled
+|   **StartType**   |   禁用
 |   **建议**  |   已禁用
 |   **备注**    |   
 |||         
@@ -1180,7 +1178,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **安装**    |   始终安装
 |   **StartType**   |   Manual
 |   **建议**  |   不要禁用
-|   **备注**    |   如果没有此服务，存储管理 API 将会失败。 示例："Get-WmiObject -class MSFT_Disk -Namespace Root\Microsoft\Windows\Storage"。
+|   **备注**    |   如果没有此服务，存储管理 API 将会失败。 例如："Get-WmiObject -class MSFT_Disk -Namespace Root\Microsoft\Windows\Storage"。
 |||         
 
 
@@ -1192,7 +1190,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **服务说明** |   提供通过 net.tcp 协议共享 TCP 端口的功能。
 |   **服务名称**    |   NetTcpPortSharing
 |   **安装**    |   始终安装
-|   **StartType**   |   Disabled
+|   **StartType**   |   禁用
 |   **建议**  |   已禁用
 |   **备注**    |   
 |||         
@@ -1318,7 +1316,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **服务说明** |   脱机文件服务对脱机文件缓存执行维护活动，响应用户登录和注销事件，实现公共 API 的内部功能，并将所需的事件分发到想要了解脱机文件活动和缓存状态更改的用户。
 |   **服务名称**    |   CscService
 |   **安装**    |   仅用于桌面体验
-|   **StartType**   |   Disabled
+|   **StartType**   |   禁用
 |   **建议**  |   已禁用
 |   **备注**    |   
 |||         
@@ -1409,12 +1407,12 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 
 
 
-## <a name="power"></a>电源            
+## <a name="power"></a>强力            
 
 | | |           
 |---|---|       
 |   **服务说明** |   管理电源策略和电源策略通知传送。
-|   **服务名称**    |   电源
+|   **服务名称**    |   强力
 |   **安装**    |   始终安装
 |   **StartType**   |   自动
 |   **建议**  | 无指导   
@@ -1479,7 +1477,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 
 
 
-##  <a name="quality-windows-audio-video-experience"></a>高质量 Windows 音频视频体验      
+##  <a name="quality-windows-audio-video-experience"></a>优质 Windows 音频视频体验      
 
 | | |           
 |---|---|   
@@ -1640,7 +1638,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **服务说明** |   为局域网和广域网环境中的企业提供路由服务。
 |   **服务名称**    |   RemoteAccess
 |   **安装**    |   始终安装
-|   **StartType**   |   Disabled
+|   **StartType**   |   禁用
 |   **建议**  |   已禁用
 |   **备注**    |   已禁用
 |||         
@@ -1741,7 +1739,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **备注**    |
 |||
 
-## <a name="server"></a>Server           
+## <a name="server"></a>Server (服务器)           
 
 | | |           
 |---|---|   
@@ -1776,7 +1774,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **服务说明** |   管理对此计算机读取的智能卡的访问。 如果此服务已停止，则此计算机无法读取智能卡。 如果此服务已禁用，显式依赖它的任何服务将无法启动。
 |   **服务名称**    |   SCardSvr
 |   **安装**    |   始终安装
-|   **StartType**   |   Disabled
+|   **StartType**   |   禁用
 |   **建议**  |   已禁用
 |   **备注**    |   
 |||         
@@ -2168,7 +2166,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **服务说明** |   提供应用程序和 OS 设置漫游的支持
 |   **服务名称**    |   UevAgentService
 |   **安装**    |   仅用于桌面体验
-|   **StartType**   |   Disabled
+|   **StartType**   |   禁用
 |   **建议**  |   已禁用
 |   **备注**    |   
 |||         
@@ -2587,7 +2585,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 |   **服务说明** |   提供文件、电子邮件和其他内容的内容索引、属性缓存和搜索结果。
 |   **服务名称**    |   WSearch
 |   **安装**    |   仅用于桌面体验
-|   **StartType**   |   Disabled
+|   **StartType**   |   禁用
 |   **建议**  |   已禁用
 |   **备注**    |   
 |||         

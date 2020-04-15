@@ -1,17 +1,17 @@
 ---
-title: DFS 复制：常见问题 (FAQ)
+title: DFS 复制 - 常见问题 (FAQ)
 ms.date: 06/18/2014
 ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: e92ada07140b88ef4178a5aecdb263b825380c2d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1e11f6c596d7e5eb0bdf379adcf47d21e74e9f6b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950285"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815620"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 复制：常见问题 (FAQ)
 
@@ -74,7 +74,7 @@ DFS 复制与运行 Windows Server 操作系统的服务器上的 NFS 互操作�
 
 不可以，不支持在运行 Windows Server 2003 或更低版本的计算机上使用 Windows 备份 (Ntbackup.exe) 对运行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 的计算机上的复制文件夹中的内容进行复制。
 
-若要备份存储在复制文件夹中的文件，请使用 Windows Server 备份或 Microsoft® System Center Data Protection Manager。 有关 Windows Server 2008 R2 和 Windows Server 2008 中的备份和恢复功能的信息，请参阅[备份和恢复](https://technet.microsoft.com/library/Cc754097)。 有关详细信息，请参阅 [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261) (https://go.microsoft.com/fwlink/?LinkId=182261) 。
+若要备份存储在复制文件夹中的文件，请使用 Windows Server 备份或 Microsoft&reg; System Center Data Protection Manager。 有关 Windows Server 2008 R2 和 Windows Server 2008 中的备份和恢复功能的信息，请参阅[备份和恢复](https://technet.microsoft.com/library/Cc754097)。 有关详细信息，请参阅 [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261) (https://go.microsoft.com/fwlink/?LinkId=182261) 。
 
 ### <a name="do-file-system-policies-impact-dfs-replication"></a>文件系统策略是否会影响 DFS 复制？
 
@@ -129,7 +129,7 @@ DFS 复制与运行 Windows Server 操作系统的服务器上的 NFS 互操作�
 
 ### <a name="what-are-the-benefits-of-using-dfs-replication-instead-of-windows-sharepoint-services"></a>使用 DFS 复制而不使用 Windows SharePoint Services 的好处有哪些？
 
-Windows® SharePoint® Services 以文件签出功能的形式提供了密切的一致性，而 DFS 复制不具有此功能。 如果你担心多个人编辑同一个文件，建议使用 Windows SharePoint Services。 Windows Server 2003 R2 中提供了 Windows SharePoint Services 2.0 Service Pack 2。 Windows SharePoint Services 可以从 Microsoft 网站下载；Windows Server 的较新版本中不包含此功能。 但如果要跨多个站点复制数据，并且用户不会同时编辑相同的文件，建议使用 DFS 复制，以获取更大的带宽并简化管理。
+Windows&reg; SharePoint&reg; Services 以文件签出功能的形式提供了密切的一致性，而 DFS 复制不具有此功能。 如果你担心多个人编辑同一个文件，建议使用 Windows SharePoint Services。 Windows Server 2003 R2 中提供了 Windows SharePoint Services 2.0 Service Pack 2。 Windows SharePoint Services 可以从 Microsoft 网站下载；Windows Server 的较新版本中不包含此功能。 但如果要跨多个站点复制数据，并且用户不会同时编辑相同的文件，建议使用 DFS 复制，以获取更大的带宽并简化管理。
 
 ## <a name="limitations-and-requirements"></a>限制和要求
 
@@ -152,7 +152,7 @@ Windows® SharePoint® Services 以文件签出功能的形式提供了密切的
 
 ### <a name="can-i-use-dfs-replication-in-a-workgroup"></a>是否可以在工作组中使用 DFS 复制？
 
-不能。 DFS 复制依赖于 Active Directory® Domain Services 进行配置。 它仅在域中有效。
+不能。 DFS 复制依赖于 Active Directory&reg; Domain Services 进行配置。 它仅在域中有效。
 
 ### <a name="can-more-than-one-folder-be-replicated-on-a-single-server"></a>是否可以在单个服务器上复制多个文件夹？
 
@@ -343,7 +343,7 @@ Windows Server 2008 中的 DFS 复制包含了多个性能增强功能，如[分
 
 ### <a name="how-does-dfs-replication-performance-compare-with-frs"></a>DFS 复制性能与 FRS 相比如何？
 
-DFS 复制的速度比 FRS 快得多，尤其是在对大型文件进行少量更改，且已启用 RDC 的情况下。 例如，启用 RDC 时，对 2 MB 的 PowerPoint® 演示文稿进行少量更改只会通过网络发送 60 KB，传输的字节数节省了 97%。
+DFS 复制的速度比 FRS 快得多，尤其是在对大型文件进行少量更改，且已启用 RDC 的情况下。 例如，启用 RDC 时，对 2 MB 的 PowerPoint&reg; 演示文稿进行少量更改只会通过网络发送 60 KB，传输的字节数节省了 97%。
 
 RDC 不适用于小于 64 KB 的文件，并且对不争用网络带宽的高速 LAN 可能没多大益处。 可以使用 DFS 管理基于每个连接禁用 RDC。
 
@@ -424,7 +424,7 @@ Windows Server Standard Edition 不支持跨文件 RDC。 但是，如果升级�
 <tr class="header">
 <th>操作系统版本</th>
 <th>Standard Edition</th>
-<th>Enterprise Edition</th>
+<th>企业版</th>
 <th>Datacenter Edition</th>
 </tr>
 </thead>

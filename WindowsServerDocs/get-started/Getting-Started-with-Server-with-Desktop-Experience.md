@@ -1,25 +1,21 @@
 ---
 title: 安装具有桌面体验的服务器
-description: '说明如何获取和安装具有桌面体验安装的服务器 '
-ms.custom: na
+description: 说明如何获取和安装具有桌面体验安装的服务器
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 01/18/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b38b8a0-4dfc-4130-be00-fc58bba99595
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d92ae9e0013d622c1e0a6b8b6a1662dc82360f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18c454d9ef4deb8c9ea681a486e85f356ad5c9cd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391790"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826940"
 ---
 # <a name="install-server-with-desktop-experience"></a>安装具有桌面体验的服务器
 > 适用于：Windows Server 2016
@@ -33,7 +29,7 @@ ms.locfileid: "71391790"
 >
 > 与某些之前版本的 Windows Server 不同，安装后无法在服务器核心和具有桌面体验的服务器之间转换。 如果安装具有桌面体验的服务器，但后来决定使用服务器核心，则应重新安装。
 
-**用户界面：** 标准图形用户界面（“服务器图形 Shell”）。 服务器图形 Shell 包括新的 Windows 10 shell。 默认情况下，此选项会安装的特定 Windows 功能是 User-Interfaces-Infra、Server-GUI-Shell、Server-GUI-Mgmt-Infra、InkAndHandwritingServices、ServerMediaFoundation 和桌面体验。 此版本的服务器管理器中会显示这些功能，但不支持对其进行卸载，且这些功能不适用于将来版本。
+**用户界面：** 标准图形用户界面（服务器图形 Shell）。 服务器图形 Shell 包括新的 Windows 10 shell。 默认情况下，此选项会安装的特定 Windows 功能是 User-Interfaces-Infra、Server-GUI-Shell、Server-GUI-Mgmt-Infra、InkAndHandwritingServices、ServerMediaFoundation 和桌面体验。 此版本的服务器管理器中会显示这些功能，但不支持对其进行卸载，且这些功能不适用于将来版本。
 
 **在本地安装、配置、卸载服务器角色：** 使用服务器管理器或 Windows PowerShell 进行
 
@@ -77,7 +73,7 @@ ms.locfileid: "71391790"
 |Windows Server 2012 Standard|Windows Server 2016 Standard 或 Datacenter|
 |Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Standard|Windows Server 2016 Standard 或 Datacenter|
-|Windows Server 2012 R2 Datacenter|Windows Server 2016 Datacenter|
+|Windows Server 2012 R2 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Essentials|Windows Server 2016 Essentials|
 |Windows Storage Server 2012 Standard|Windows Storage Server 2016 Standard|
 |Windows Storage Server 2012 Workgroup|Windows Storage Server 2016 Workgroup|
@@ -93,19 +89,19 @@ ms.locfileid: "71391790"
 
 |服务器角色|是否可从 Windows Server 2012 R2 升级？|是否可从 Windows Server 2012 升级？|是否支持迁移？|是否无需停机就可完成迁移？|  
 |-------------------|----------|--------------|--------------|----------|  
-|Active Directory 证书服务| 是|    是|    是|    否|
-|Active Directory 域服务|  是|    是|    是|    是|
-|Active Directory 联合身份验证服务|  否| 否| 是|    否（需要将新节点添加到场中）|
-|Active Directory 轻型目录服务|   是|    是|    是|    是|
-|Active Directory 权限管理服务|   是|    是|    是|    否|
-|故障转移群集|是，[群集操作系统滚动升级](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)过程包括节点暂停排出、逐出、升级到 Windows Server 2016 以及重新加入原始群集。 是，当群集删除服务器以进行升级，并随后再将服务器添加到不同的群集时。|而非服务器是群集的一部分时。 是，当群集删除服务器以进行升级，并随后再将服务器添加到不同的群集时。  |是|否，对于 Windows Server 2012 故障转移群集而言。 是，对于具有 Hyper-V VM 的 Windows Server 2012 R2 故障转移群集或运行横向扩展文件服务器角色的 Windows Server 2012 R2 故障转移群集。 请参阅[群集操作系统滚动升级](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)。|
-|文件和存储服务| 是|    是|    因子功能而不同|  否|
-|打印和传真服务|    否| 否| 是 (Printbrm.exe)| 否|
-|远程桌面服务|   是，对于所有子角色，但不支持混合模式场|   是，对于所有子角色，但不支持混合模式场|   是|    否|
-|Web 服务器 (IIS)|  是|    是|    是|    否|
-|Windows Server Essentials 体验|  是|    N/A - 新功能|  是|    否|
-|Windows Server 更新服务|    是|    是|    是|    否|
-|工作文件夹|  是|    是|    是|    是，使用[群集操作系统滚动升级](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)从 WS 2012 R2 群集进行操作时。|
+|Active Directory 证书服务|    是|    是|    是|    否|
+|Active Directory 域服务|    是|    是|    是|    是|
+|Active Directory 联合身份验证服务|    否|    否|    是|    否（需要将新节点添加到场中）|
+|Active Directory 轻型目录服务|    是|    是|    是|    是|
+|Active Directory 权限管理服务|    是|    是|    是|    否|
+|故障转移群集|是，[群集操作系统滚动升级](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)过程包括节点暂停排出、逐出、升级到 Windows Server 2016 以及重新加入原始群集。 是，当群集删除服务器以进行升级，并随后再将服务器添加到不同的群集时。|而非服务器是群集的一部分时。 是，当群集删除服务器以进行升级，并随后再将服务器添加到不同的群集时。    |是|否，对于 Windows Server 2012 故障转移群集而言。 是，对于具有 Hyper-V VM 的 Windows Server 2012 R2 故障转移群集或运行横向扩展文件服务器角色的 Windows Server 2012 R2 故障转移群集。 请参阅[群集操作系统滚动升级](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)。|
+|文件和存储服务|    是|    是|    因子功能而不同|    否|
+|打印和传真服务|    否|    否|    是 (Printbrm.exe)|    否|
+|远程桌面服务|    是，对于所有子角色，但不支持混合模式场|    是，对于所有子角色，但不支持混合模式场|    是|    否|
+|Web 服务器 (IIS)|    是|    是|    是|    否|
+|Windows Server Essentials 体验|    是|    N/A - 新功能|    是|    否|
+|Windows Server Update Services|    是|    是|    是|    否|
+|工作文件夹|    是|    是|    是|    是，使用[群集操作系统滚动升级](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)从 WS 2012 R2 群集进行操作时。|
 
 > [!IMPORTANT]  
 > 完成安装后，如果已安装所需的所有服务器角色和功能，则可以使用 Windows 更新或其他更新方法立即检查并安装 Windows Server 2016 可用的更新。

@@ -1,25 +1,21 @@
 ---
 title: 系统要求
 description: 每个安装选项的干净安装中存储、CPU、网络、内存、RAM 的最低要求是什么。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 10/17/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a8b42d7-9fe5-4efe-9ea1-ace2131fe068
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e8b0c04137ff3b11cdaa7aba3c7899ca6300848
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cd4666f9ac0677ce8893041ae4e937cca41e8164
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947744"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826490"
 ---
 # <a name="system-requirements"></a>系统要求
 
@@ -35,12 +31,12 @@ ms.locfileid: "75947744"
 
 
 ## <a name="review-system-requirements"></a>查看操作系统要求  
-以下是 Windows Server 2016 预计的系统要求。 如果计算机未满足“最低”要求，将无法正确安装本产品。 实际要求将因系统配置和所安装应用程序及功能而异。
+以下是 Windows Server 2016 预计的系统要求。 如果计算机未达到最低要求，将无法正确安装本产品。 实际要求将因系统配置和所安装应用程序及功能而异。
 
 除非另有指定，否则最低系统要求适用于所有安装选项（服务器核心、带桌面体验的服务器和 Nano Server）以及标准版和数据中心版。  
 
 > [!IMPORTANT]  
-> 因为可能的部署方案多种多样，所以确定“推荐的”系统要求有些不切实际，只是大体适用而已。 请针对要部署的每个服务器角色查阅相关文档，以便获得特定服务器角色的资源需求的更多详细信息。 要获得最佳结果，请安排测试部署来确定特定部署方案的相应系统要求。  
+> 因为可能的部署方案多种多样，所以确定推荐的系统要求有些不切实际，只是大体适用而已。 请针对要部署的每个服务器角色查阅相关文档，以便获得特定服务器角色的资源需求的更多详细信息。 要获得最佳结果，请安排测试部署来确定特定部署方案的相应系统要求。  
 
 
 ## <a name="processor"></a>处理器  

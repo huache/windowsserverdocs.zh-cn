@@ -2,7 +2,6 @@
 title: 规划 WSUS 部署
 description: Windows Server Update Service (WSUS) 主题 - 概述了部署规划流程，并提供了相关主题的链接
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 8d284c51bfa1e04a38c32adf5dce2b6f5d948b0a
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 68825c6bc4d24bca41c04a238fbf4d6291a6625b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639934"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828190"
 ---
 # <a name="plan-your-wsus-deployment"></a>规划 WSUS 部署
 
@@ -41,7 +40,7 @@ ms.locfileid: "80639934"
 
 -   启用 WSUS 角色的服务器硬件要求与硬件要求相关。 WSUS 的最低硬件需求是：
 
-    -   **处理器：** 1.4 千兆赫 (GHz) x64 处理器（建议使用 2Ghz 或以上）
+    -   **处理器：** 1.4 千兆赫 (GHz) x64 处理器（推荐使用 2Ghz 或以上）
 
     -   **内存：** 除了服务器和所有其他服务或软件需要的内存量之外，WSUS 还需要额外的 2 GB RAM。
 
@@ -436,7 +435,7 @@ WSUS 可让你按语言、产品和类别来过滤更新同步。 在 WSUS 服�
 ### <a name="installation"></a>安装
 更新通常由新版本且早已存在于准备更新的计算机中的文件组成。 在二进制级，这些现有的文件可能与更新的版本有很大不同。 快速安装文件功能识别不同版本之间的精确字节，并创建和分配仅限于那些差异的更新，然后将现有文件与更新的字节合并在一起。
 
-有时候该功能被称为“增量交付”，因为它仅下载文件的两个版本之间的增量（差异）。 快速安装文件比分配给客户端计算机的更新要大，因为快速安装文件含有每份要更新的文件的所有潜在版本。
+有时候该功能被称为增量交付，因为它仅下载文件的两个版本之间的增量（差异）。 快速安装文件比分配给客户端计算机的更新要大，因为快速安装文件含有每份要更新的文件的所有潜在版本。
 
 可以使用快速安装文件限制在本地网络上消耗的带宽，因为 WSUS 仅传输适用于特定版本的更新组件的增量。 但是，这会在你的 WSUS 服务器、任何上游 WSUS 服务器与 Microsoft 更新之间形成额外带宽成本，并且需要更多的本地磁盘空间。 默认情况下，WSUS 并不使用快速安装文件。
 

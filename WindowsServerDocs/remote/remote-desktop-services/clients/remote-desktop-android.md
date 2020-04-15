@@ -1,12 +1,8 @@
 ---
 title: Android 客户端入门
 description: 有关 Android 客户端的常规信息。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
@@ -14,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ef08107c816aebf6563e57e5e76b12b793d472
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: a9cb49f2570b297c81f41412ad041215090538d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323419"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856230"
 ---
 # <a name="get-started-with-the-android-client"></a>Android 客户端入门
 
@@ -72,7 +68,7 @@ ms.locfileid: "79323419"
 想要删除连接？ 同样，点击“更多选项”菜单 ( **...** )，然后点击“删除”。  
 
 >[!TIP]
-> 如果收到关于错误密码的 0xf07 错误（“我们无法连接到远程电脑，因为与用户帐户关联的密码已过期”），请更改密码并重试。
+> 如果收到关于错误密码的 0xf07 错误（我们无法连接到远程电脑，因为与用户帐户关联的密码已过期），请更改密码并重试。
 
 ### <a name="add-remote-resources"></a>添加远程资源
 
@@ -103,7 +99,7 @@ ms.locfileid: "79323419"
 
 1. 点击“应用”  以启动应用菜单。
 2. 点击“小组件”  。
-3. 轻扫小组件，查找带有以下说明的图标：“固定远程桌面”。
+3. 轻扫小组件，查找带有“固定远程桌面”说明的固定远程桌面。
 4. 点击并按住远程桌面小组件，将其移动到主屏幕。
 5. 释放图标时，将看到保存的远程桌面。 选择要保存到主屏幕的连接。
 
@@ -223,7 +219,7 @@ ms.locfileid: "79323419"
 |---------------|----------------------|-------------------------------------------------------------------------|
 | 直接触摸  | 左键单击           | 单指点击                                                     |
 | 直接触摸  | 右键单击          | 单指点击并按住，然后松开                              |
-| 鼠标指针 | Zoom                 | 双指捏合即可缩小，双指分开即可放大。 |
+| 鼠标指针 | 缩放                 | 双指捏合即可缩小，双指分开即可放大。 |
 | 鼠标指针 | 左键单击           | 单指点击                                                     |
 | 鼠标指针 | 左键单击并拖动  | 单指双击并按住，然后拖动                          |
 | 鼠标指针 | 右键单击          | 双指点击                                                    |

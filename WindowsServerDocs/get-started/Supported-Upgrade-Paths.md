@@ -1,31 +1,27 @@
 ---
 title: 适用于 Windows Server 2016 的升级和转换选项
 description: 介绍了 Windows Server 2016 的所有受支持的升级路径。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 01/18/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 74aa1da3-7076-4a1f-ad5b-9e17bd46dba2
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2484363db661620844993d52914700cb8b6cdf56
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 05e891d4170458018577b39bc83e952bf18d420e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391593"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826500"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>适用于 Windows Server 2016 的升级和转换选项
 
 >适用于：Windows Server 2019、Windows Server 2016
 
-本主题包括有关使用多种方法从以前的操作系统升级到 Windows Server® 2016 的信息。
+本主题包括有关使用多种方法从以前的操作系统升级到 Windows Server&reg; 2016 的信息。
 
 根据着手的操作系统以及采用的途径的不同，过渡到 Windows Server 2016 的过程可能会有很大的不同。 我们会使用以下术语来区分不同的操作，进行全新的 Windows Server 2016 部署时可能会涉及到其中的任何一项操作。
 
@@ -35,9 +31,9 @@ ms.locfileid: "71391593"
 
 - **群集操作系统滚动升级**是 Windows Server 2016 中的新增功能，管理员利用此功能可以将群集节点的操作系统从 Windows Server 2012 R2 升级到 Windows Server 2016，而无需停止 Hyper-v 或横向扩展文件服务器工作负荷。 利用此功能可以避免出现可能影响服务级别协议的故障时间。 [群集操作系统滚动升级](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) 中对这一新增功能进行了更详细地讨论。
 
-- **许可证转换**在某些操作系统发行版中，可以使用简单的命令和相应的许可证密钥，通过一个步骤将发行版的特定版本转换成同一发行版的另一个版本。 我们称之为“许可证转换”。 例如，如果正在运行 Windows Server 2016 Standard，可以将其转换为 Windows Server 2016 Datacenter。
+- **许可证转换**在某些操作系统发行版中，可以使用简单的命令和相应的许可证密钥，通过一个步骤将发行版的特定版本转换成同一发行版的另一个版本。 我们称之为许可证转换。 例如，如果正在运行 Windows Server 2016 Standard，可以将其转换为 Windows Server 2016 Datacenter。
 
-- **升级**表示从现有的操作系统发行版过渡到更新的发行版，同时使用相同的硬件。 （这有时称为“就地”升级。）例如，如果服务器正在运行 Windows Server 2012 或 Windows Server 2012 R2，可以升级到 Windows Server 2016。 可以从操作系统评估版升级到零售版，从早期的零售版升级到较新版本，在某些情况下，还可以从操作系统批量授权版升级到普通零售版。
+- **升级**表示从现有的操作系统发行版过渡到更新的发行版，同时使用相同的硬件。 （这有时称为就地升级。）例如，如果服务器正在运行 Windows Server 2012 或 Windows Server 2012 R2，可以升级到 Windows Server 2016。 可以从操作系统评估版升级到零售版，从早期的零售版升级到较新版本，在某些情况下，还可以从操作系统批量授权版升级到普通零售版。
 
 > [!IMPORTANT]  
 > 升级最适合用于虚拟机，其中进行成功升级不需要特定 OEM 硬件驱动程序。  
@@ -70,7 +66,7 @@ ms.locfileid: "71391593"
 |Windows Server 2012 Standard|Windows Server 2016 Standard 或 Datacenter|
 |Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Standard|Windows Server 2016 Standard 或 Datacenter|
-|Windows Server 2012 R2 Datacenter|Windows Server 2016 Datacenter|
+|Windows Server 2012 R2 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Essentials|Windows Server 2016 Essentials|
 |Windows Storage Server 2012 Standard|Windows Storage Server 2016 Standard|
 |Windows Storage Server 2012 Workgroup|Windows Storage Server 2016 Workgroup|
@@ -91,21 +87,21 @@ ms.locfileid: "71391593"
 
 在尝试从评估版转换为零售版之前，请验证你的服务器是否确实在运行评估版。 为此，请执行下列两项操作之一：
 
-- 在提升的命令提示符下运行 **slmgr.vbs /dlv**；评估版将在输出中包括“EVAL”。
+- 在提升的命令提示符下运行 **slmgr.vbs /dlv**；评估版将在输出中包括 EVAL。
 
 - 从“开始”屏幕中，打开**控制面板**。 打开“系统和安全”  ，然后打开“系统”  。 在**系统**页的 Windows 激活区域中查看 Windows 激活状态。 单击 Windows 激活中的**查看详细信息**以了解有关 Windows 激活状态的详细信息。
 
 如果你已经激活 Windows，则桌面会显示评估期的剩余时间。
 
-如果服务器运行的是零售版而不是评估版，请参阅本主题的“将以前的 Windows Server 零售版升级到 Windows Server 2016”部分，了解升级到 Windows Server 2016 的说明。
+如果服务器运行的是零售版而非评估版，请参阅本主题中的“将以前的零售版 Windows Server 升级到 Windows Server 2016”部分，以获取升级到 Windows Server 2016 的说明。
 
 对于 **Windows Server 2016 Essentials**：可以通过在命令 **slmgr.vbs** 中输入零售批量许可证或 OEM 密钥来转换为完整的零售版本。
 
 如果服务器正在运行 Windows Server 2016 Standard 或 Windows Server 2016 Datacenter 评估版，可以将其转换为零售版，如下所示：
 
-1.  如果服务器是**域控制器**，无法将其转换为零售版。 在这种情况下，在运行零售版的服务器上安装另一个域控制器，并从运行评估版的域控制器上删除 AD DS。 有关详细信息，请参阅[将域控制器升级到 Windows Server 2012 R2 和 Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx)。
-2.  阅读许可条款。
-3.  在提升的命令提示符下使用命令 **DISM /online /Get-CurrentEdition**确定当前的版本名称。 记录版本 ID（版本名称的缩写格式）， 然后运行 **DISM /online /Set-Edition:\<edition ID\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**，同时提供版本 ID 和零售产品密钥。 服务器将重启两次。
+1.    如果服务器是**域控制器**，无法将其转换为零售版。 在这种情况下，在运行零售版的服务器上安装另一个域控制器，并从运行评估版的域控制器上删除 AD DS。 有关详细信息，请参阅[将域控制器升级到 Windows Server 2012 R2 和 Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx)。
+2.    阅读许可条款。
+3.    在提升的命令提示符下使用命令 **DISM /online /Get-CurrentEdition**确定当前的版本名称。 记录版本 ID（版本名称的缩写格式）， 然后运行 **DISM /online /Set-Edition:\<edition ID\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**，同时提供版本 ID 和零售产品密钥。 服务器将重启两次。
 
 对于 Windows Server 2016 Standard 的评估版，还可以使用这一相同命令和相应的产品密钥通过一个步骤转换为 Windows Server 2016 Datacenter 零售版。
 
@@ -114,8 +110,8 @@ ms.locfileid: "71391593"
 
 ## <a name="converting-a-current-retail-edition-to-a-different-current-retail-edition"></a>将当前零售版转换为其他某个当前零售版
 
-在安装 Windows Server 2016 后，随时可以运行“Setup”来修复安装（有时称为“就地修复”）或在某些情况下，转换为另一版本。
-可以运行“Setup”以在任何版本的 Windows Server 2016 上执行“就地修复”；结果将是开始使用的同一版本。
+在安装 Windows Server 2016 后，随时可以运行“Setup”来修复安装（有时称为就地修复），或在某些情况下转换为另一版本。
+可以运行安装程序在任何版本的 Windows Server 2016 上执行就地修复；结果将是开始时使用的同一版本。
 
 例如，对于 Windows Server 2016 Standard，可按如下所述将系统转换为 Windows Server 2016 Datacenter：在提升的命令提示符下使用命令 **DISM /online /Get-CurrentEdition**确定当前的版本名称。 对于 Windows Server 2016 Standard，此参数为 `ServerStandard`。 运行命令 **DISM /online /Get-TargetEditions** 以获取可升级到的版本的 ID。 记下此版本 ID（版本名称的缩写格式）。 然后运行 **DISM /online /Set-Edition:\<edition ID\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**，同时提供目标的版本 ID 及其零售产品密钥。 服务器将重启两次。
 

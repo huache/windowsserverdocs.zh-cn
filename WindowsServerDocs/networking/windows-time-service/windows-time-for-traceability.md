@@ -1,20 +1,19 @@
 ---
-ms.assetid: ''
 title: Windows 时间实现可追溯性
 description: 许多行业的法规都要求系统可追溯到 UTC。  这意味着可以根据 UTC 证明系统的偏移量。
-author: eross-msft
+author: dcuomo
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: e7f7a68d61729813583255d64afbf172475969e3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 30952c7a15109ccdd8bcbb09d7c8dda44f716d5d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314934"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859810"
 ---
 # <a name="windows-time-for-traceability"></a>Windows 时间实现可追溯性
 >适用于：Windows Server 2016 版本 1709 或更高版本，以及 Windows 10 版本 1703 或更高版本
@@ -103,7 +102,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 命令  还可以使用以下命令查询此信息
 
 标识对等
-`w32tm.exe /query /peers` 
+`w32tm.exe /query /peers`
 
 # <a name="260"></a>[260](#tab/260)
 
@@ -126,7 +125,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |||
 |---|---|
 |事件描述 |已调整系统时钟频率 |
-|详细信息 |当时钟处于紧密同步状态时，W32time 会持续修改系统时钟频率。 我们希望捕获对时钟频率做出的“相当重要的”调整，而无需过度运行事件日志。 |
+|详细信息 |当时钟处于紧密同步状态时，W32time 会持续修改系统时钟频率。 我们希望在不会过度运行事件日志的情况下捕获已对时钟频率做出的“相当重要的”调整。 |
 |限制机制  |不会记录低于 TimeAdjustmentAuditThreshold（最小值 = 128 PPM，默认值 = 800 PPM）的所有时钟调整。<br><br>在当前粒度下，2 PPM 的时钟频率变化会导致出现 120 µsec/sec 的时钟准确度变化。<br><br>在同步系统上，大部分调整都低于此级别。 如果要细化跟踪信息，则可以向下调整此设置或使用 PerfCounters，也可以同时执行这两个操作。 |
 
 # <a name="263"></a>[263](#tab/263)

@@ -1,23 +1,19 @@
 ---
 title: 了解桌面托管环境
 description: 使用 Azure IaaS 进行 RDS 部署的概述。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 08/01/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 1bd672c52c892430339bb6c17c6324bf4d6d79a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8fdebcad1370e06c19752944e85363c714f1fbcd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387808"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854690"
 ---
 # <a name="understanding-the-desktop-hosting-environment"></a>了解桌面托管环境
 
@@ -72,7 +68,7 @@ Azure Active Directory 应用程序代理是 Azure Active Directory 的付费 SK
   
 对于小型租户，可以通过将文件服务器与运行 RD 连接代理的虚拟机以及租户环境中单个虚拟机上的 RD 授权角色相结合来降低成本。  
   
-其他信息  
+附加信息  
 [文件和存储服务概述](https://technet.microsoft.com/library/hh831487.aspx)  
 [如何将数据磁盘附加到虚拟机](http://www.windowsazure.com/manage/windows/how-to-guides/attach-a-disk/)  
   

@@ -1,28 +1,24 @@
 ---
 title: 受支持的远程桌面 RDP 文件设置
 description: 了解远程桌面的 RDP 文件设置
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
-author: btaintor
-manager: dongill
+author: heidilohr
+manager: lizross
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a596bcd29fdb80f8b2b0fa86ee808755dd09f43
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 6af7559f1d74f2af38579ee357507bd1207f63b2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125089"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855910"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>受支持的远程桌面 RDP 文件设置
 
-下表包含可与 Windows 和 HTML 客户端配合使用的受支持 RDP 文件设置的列表。 平台列中的“x”表示支持该设置。 但是，此列表不是 Windows 和 HTML5 客户端所支持的设置的完整列表。 我们将继续更新此表，以包含更多受支持的 Windows 和 HTML5 客户端以及 macOS、iOS 和 Android 客户端的 RDP 设置。
+下表包含可与 Windows 和 HTML 客户端配合使用的受支持 RDP 文件设置的列表。 平台列中的“x”指示该设置受支持。 但是，此列表不是 Windows 和 HTML5 客户端所支持的设置的完整列表。 我们将继续更新此表，以包含更多受支持的 Windows 和 HTML5 客户端以及 macOS、iOS 和 Android 客户端的 RDP 设置。
 
 请参阅[此文档](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409)，详细了解如何使用 PowerShell 为主机池自定义 RDP 属性。
 

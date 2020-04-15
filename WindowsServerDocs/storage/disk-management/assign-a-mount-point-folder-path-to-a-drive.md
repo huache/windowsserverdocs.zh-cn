@@ -1,7 +1,6 @@
 ---
 title: 为驱动器分配装入点文件夹路径。
 description: 本文介绍如何为驱动器分配装入点文件夹路径（而不是驱动器号）。
-keywords: 虚拟化, 安全性, 恶意软件
 ms.date: 06/07/2019
 ms.prod: windows-server
 ms.technology: storage
@@ -9,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1255eadd50adb0eaaf44774e150d69f6dad8adae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2fda216b57fbf036ce20c40b4c8b38d44404f3c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386048"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815530"
 ---
 # <a name="assign-a-mount-point-folder-path-to-a-drive"></a>为驱动器分配装入点文件夹路径
 
@@ -40,22 +39,22 @@ ms.locfileid: "71386048"
 
 2.  在 **DISKPART** 提示符下，键入 `list volume`，并记下要为其分配路径的卷编号。
 
-3.  在 **DISKPART** 提示符下，键入 `select volume <volumenumber>`。 
+3.  在 DISKPART  提示符下，键入 `select volume <volumenumber>`。 
 
 4. 选择要为其分配路径的简单卷 *volumenumber*。
 
-5.  在 **DISKPART** 提示符下，键入 `assign [mount=<path>]`。
+5.  在 DISKPART  提示符下，键入 `assign [mount=<path>]`。
 
 #### <a name="to-remove-a-mount-point-folder-path-to-a-drive"></a>删除驱动器的装入点文件夹路径
 
 -   若要删除装入点文件夹路径，请单击路径，然后单击“删除”  。
 
-| 值 | 描述 |
+| 值 | 说明 |
 | --- | --- |
 | **list volume** | 显示所有磁盘上的基本卷和动态卷的列表。 |
 | **select volume**        | 选择指定的卷（其中 <em>volumenumber</em> 是卷编号），并赋予其焦点。 如果未指定卷，则 **select** 命令会列出具有焦点的当前卷。 可以通过编号、驱动器号或装入点文件夹路径来指定卷。 在基本磁盘上，如果选择卷，则还会赋予相应的分区焦点。|
 | **assign** | <ul><li> 将驱动器号或装入点文件夹路径分配给具有焦点的卷。 如果未指定驱动器号或装入点文件夹路径，则将分配下一个可用的驱动器号。 如果驱动器号或装入点文件夹路径已被占用，则会出错。</li>  <li>使用 **assign** 命令可以更改与可移动驱动器相关联的驱动器号。</li> <li> 无法将驱动器号分配给引导卷或包含分页文件的卷。 此外，不能将驱动器号分配给原始设备制造商 (OEM) 分区、EFI 系统分区或基本数据分区以外的其他任何 GPT 分区。</li></ul> |
-| **mount=** <em>路径</em> | 指定安装的驱动器所位于的现有空 NTFS 文件夹。  |
+| **mount=** <em>path</em> | 指定安装的驱动器所位于的现有空 NTFS 文件夹。  |
 
 ## <a name="additional-considerations"></a>其他注意事项
 

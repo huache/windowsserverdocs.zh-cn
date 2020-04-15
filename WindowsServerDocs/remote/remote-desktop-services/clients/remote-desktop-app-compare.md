@@ -1,25 +1,21 @@
 ---
-title: 远程桌面 - 比较客户端
-description: 了解不同 RD 客户端在支持的特性和功能方面的比较。
-ms.custom: na
+title: 远程桌面 - 比较客户端应用
+description: 了解不同 RD 应用在支持的特性和功能方面的比较。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/28/2020
+ms.date: 04/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c91ac951db27915d9313f7f98e5e2cfc56b726
-ms.sourcegitcommit: 78c00944b6990702d28bdcc4a9215927ca901bfb
+ms.openlocfilehash: 8c41d2691f22e7feb89518a02736f3607940a2f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80440372"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856220"
 ---
 # <a name="compare-the-clients"></a>比较客户端
 
@@ -35,7 +31,7 @@ ms.locfileid: "80440372"
 
 ### <a name="input-redirection"></a>输入重定向
 
-| 重定向 | Windows 收件箱</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows Store | Android | iOS | macOS | Web 客户端    |
+| 重定向 | Windows 收件箱</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows 应用商店 | Android | iOS | macOS | Web 客户端    |
 |-------------|---------------------------|-----------------------------|---------------|---------|-----|-------|---------------|
 | Keyboard    | X                         | X                           | X             | X       | X   | X     | X             |
 | 鼠标       | X                         | X                           | X             | X       | X\* | X     | X             |
@@ -57,11 +53,11 @@ ms.locfileid: "80440372"
 
 | 重定向         | Windows 收件箱</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows 应用商店 | Android | iOS         | macOS                           | Web 客户端    |
 |---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
-| 相机             | X                         | X                           |               |         |             | X                               |               |
-| 剪贴板           | X                         | X                           | X             | 文本    | 文本、映像 | X                               | 文本          |
-| 本地驱动器/存储 | X                         | X                           |               | X       |             | X                               |               |
+| 相机             | X                         | X                           |               |         |   X         | X                               |               |
+| 剪贴板           | X                         | X                           | X             | 文本    | 文本、图像 | X                               | 文本          |
+| 本地驱动器/存储 | X                         | X                           |               | X       |   X        | X                               |               |
 | 位置            | X                         | X                           |               |         |             |                                 |               |
-| 麦克风         | X                         | X                           | X             |         |             | X                               |               |
+| 麦克风         | X                         | X                           | X             |         |  X          | X                               |               |
 | 打印机            | X                         | X                           |               |         |             | X（仅 CUPS）                   | PDF 打印     |
 | 扫描仪            | X                         | X                           |               |         |             |                                 |               |
 | Smart Cards         | X                         | X                           |               |         |             | X（不支持 Windows 登录） |               |

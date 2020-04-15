@@ -2,21 +2,18 @@
 title: 每月 Delta 更新 ISV 支持（无 WSUS）
 description: Windows Server Update Service (WSUS) 主题 - 独立软件供应商 (ISV) 如何临时使用每月 Delta 更新而非 WSUS Express 更新交付来减小包大小
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: 4607827d73c34f50f721a2774fa498eb95f9dbb8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ccddd3bfd55ae340dc5273905bb475e7d2cb98a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361727"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828740"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>每月 Delta 更新 ISV 支持（无 WSUS）
 
@@ -43,7 +40,7 @@ Windows 10 更新下载可能会很大，因为每个包都包含以前发布的
 
 |                    | 每月 **Delta** 更新                                                                                                                                                                                                       | 每月**累积**更新                                                                                                                                                                                             |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **范围**          | **仅包含该月的新修补程序**的单一更新                                                                                                                                                                           | 包含该月和所有以前月份的所有新修补程序的单一更新                                                                                                                                                   |
+| **Scope**          | **仅包含该月的新修补程序**的单一更新                                                                                                                                                                           | 包含该月和所有以前月份的所有新修补程序的单一更新                                                                                                                                                   |
 | **应用程序**    | 只有应用了上个月的更新时才能应用（“累积”或 Delta）                                                                                                                                           | 任何时候都可以应用                                                                                                                                                                                                |
 | **交付**       | **仅发布到 Windows 更新目录**，可以从中下载该更新以用于其他工具或流程。 不提供给连接到 Windows 更新的电脑                                                         | 发布到 Windows 更新（所有使用者电脑都将安装它）、WSUS 和 Windows 更新目录                                                                                                                |
 

@@ -8,18 +8,18 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ea5cd954dde6d4fa8fcaa7874f75cb9588115ab1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ff800fc2a0885cec39ca104607d7207f0bd8ce0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402128"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815600"
 ---
-# <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>使用 Robocopy 预先植入文件以执行 DFS 复制
+# <a name="use-robocopy-to-pre-seed-files-for-dfs-replication"></a>使用 Robocopy 预先植入文件以执行 DFS 复制
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-本主题说明如何使用命令行工具“Robocopy.exe”，以在为 Windows Server 中的分布式文件系统 (DFS) 复制（也称为 DFSR 或 DFS）设置复制时预先植入文件  。 通过在设置 DFS 复制、添加新的复制伙伴或替换服务器之前预先植入文件，可以在 Windows Server 2012 R2 中加速初始同步并启用 DFS 复制数据库的克隆。 Robocopy 方法是几种预先植入方法之一；有关概述，请参阅[步骤 1：预先植入文件以执行 DFS 复制](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>)。
+本主题说明如何使用命令行工具 **Robocopy.exe**，以在为 Windows Server 中的分布式文件系统 (DFS) 复制（也称为 DFSR 或 DFS）设置复制时预先植入文件。 通过在设置 DFS 复制、添加新的复制伙伴或替换服务器之前预先植入文件，可以在 Windows Server 2012 R2 中加速初始同步并启用 DFS 复制数据库的克隆。 Robocopy 方法是几种预先植入方法之一；有关概述，请参阅[步骤 1：预先植入文件以执行 DFS 复制](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>)。
 
 Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程序。 此实用程序提供了丰富的选项，其中包括复制安全性、备份 API 支持、重试功能和日志记录。 更高版本包括多线程和非缓冲 I/O 支持。
 
@@ -49,7 +49,7 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
 
 ## <a name="step-1-download-and-install-the-latest-version-of-robocopy"></a>步骤 1：下载并安装最新版本的 Robocopy
 
-在使用 Robocopy 预先植入文件之前，应下载并安装最新版本的 Robocopy.exe  。 这可确保 DFS 复制不会由于 Robocopy 出厂版本中的问题而跳过文件。
+在使用 Robocopy 预先植入文件之前，应下载并安装最新版本的 **Robocopy.exe**。 这可确保 DFS 复制不会由于 Robocopy 出厂版本中的问题而跳过文件。
 
 最新兼容的 Robocopy 版本的源取决于服务器上运行的 Windows Server 的版本。 有关下载适用于 Windows Server 2008 R2 或 Windows Server 2008 的使用最新版本 Robocopy 的修补程序信息，请参阅[适用于 Windows Server 2008 和 Windows Server 2008 R2 中分布式文件系统 (DFS) 技术的当前可用修补程序列表](https://support.microsoft.com/help/968429/list-of-currently-available-hotfixes-for-distributed-file-system-dfs-t)。
 
@@ -75,7 +75,7 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
 
 |锁的源|说明|缓解|
 |---|---|---|
-|用户远程打开共享上的文件。|员工连接到标准文件服务器并编辑文档、多媒体内容或其他文件。 有时称为传统主文件夹或共享数据工作负载。|仅在非高峰、非工作时间执行 Robocopy 操作。 这会最大程度地减少预先植入期间 Robocopy 必须跳过的文件数。<br><br>请考虑在将通过使用 Windows PowerShell Grant-SmbShareAccess 和“Close-SmbSession”cmdlet 进行复制的文件共享上临时设置只读访问权限   。 如果将公共组（如“每个人”或“经过身份验证的用户”）的权限设置为“读取”，则标准用户可能不会打开使用独占锁定的文件（如果在文件打开时其应用程序检测到只读访问权限）。<br><br>可能还需要考虑为进入该服务器的 SMB 端口 445 设置临时防火墙规则，以阻止访问文件或使用“Block-SmbShareAccess”cmdlet  。 但是，这两种方法都会导致用户操作发生严重中断。|
+|用户远程打开共享上的文件。|员工连接到标准文件服务器并编辑文档、多媒体内容或其他文件。 有时称为传统主文件夹或共享数据工作负载。|仅在非高峰、非工作时间执行 Robocopy 操作。 这会最大程度地减少 Robocopy 在预先植入期间必须跳过的文件数。<br><br>请考虑在将通过使用 Windows PowerShell Grant-SmbShareAccess 和“Close-SmbSession”cmdlet 进行复制的文件共享上临时设置只读访问权限   。 如果将公共组（如“每个人”或“经过身份验证的用户”）的权限设置为“读取”，则标准用户可能不会打开使用独占锁定的文件（如果在文件打开时其应用程序检测到只读访问权限）。<br><br>可能还需要考虑为进入该服务器的 SMB 端口 445 设置临时防火墙规则，以阻止访问文件或使用“Block-SmbShareAccess”cmdlet  。 但是，这两种方法都会导致用户操作发生严重中断。|
 |应用程序在本地打开文件。|在文件服务器上运行的应用程序工作负载有时会锁定文件。|临时禁用或卸载当前锁定文件的应用程序。 可以使用进程监视器或进程资源管理器来确定哪些应用程序正在锁定文件。 若要下载进程监视器或进程资源管理器，请访问[进程监视器](https://docs.microsoft.com/sysinternals/downloads/procmon)和[进程资源管理器](https://docs.microsoft.com/sysinternals/downloads/process-explorer)页。|
 
 ## <a name="step-3-copy-the-replicated-files-to-the-destination-server"></a>步骤 3:将复制的文件复制到目标服务器
@@ -85,7 +85,7 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
 >[!NOTE]
 >可以在源计算机或目标计算机上运行 Robocopy。 以下过程介绍了如何在目标服务器（通常运行较新的操作系统）上运行 Robocopy，以便充分利用较新的操作系统可能提供的任何其他 Robocopy 功能。
 
-### <a name="preseed-the-replicated-files-onto-the-destination-server-with-robocopy"></a>通过 Robocopy 将复制的文件预先植入到目标服务器
+### <a name="pre-seed-the-replicated-files-onto-the-destination-server-with-robocopy"></a>通过 Robocopy 将复制的文件预先植入到目标服务器
 
 1. 使用同时为源服务器和目标服务器上本地管理员组的成员的帐户登录到目标服务器。
 
@@ -117,7 +117,7 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
     例如，以下命令将文件从源复制文件夹 E:\\RF01 复制到目标服务器上的数据驱动器 D：
     
     ```PowerShell
-    robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\preseedsrv02.log
+    robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\pre-seedsrv02.log
     ```
     
     >[!NOTE]
@@ -132,4 +132,4 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
 
 ## <a name="next-step"></a>下一步
 
-完成初始复制并使用 Robocopy 解决尽可能多的跳过文件的问题后，需使用 Windows PowerShell 中的“Get-DfsrFileHash”cmdlet 或“Dfsrdiag”命令通过比较源服务器和目标服务器上的文件哈希来验证预先植入的文件   。 有关详细说明，请参阅[步骤 2：验证预先植入的文件以执行 DFS 复制](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>)。
+完成初始复制并使用 Robocopy 解决尽可能多的跳过文件的问题后，需使用 Windows PowerShell 中的 **Get-DfsrFileHash** cmdlet 或 **Dfsrdiag** 命令通过比较源服务器和目标服务器上的文件哈希来验证预先植入的文件。 有关详细说明，请参阅[步骤 2：验证预先植入的文件以执行 DFS 复制](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>)。

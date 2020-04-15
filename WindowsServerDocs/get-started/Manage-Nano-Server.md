@@ -2,29 +2,27 @@
 title: 管理 Nano Server
 description: 更新, 服务包, 网络跟踪, 性能监视
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 132f4e1966b332cd6bb6e21402984db7ceed4497
-ms.sourcegitcommit: d599eea5203f95609fb21801196252d5dd9f2669
+ms.openlocfilehash: 0b41113f302dad1c9917001bf137da28ef431d38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005223"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826780"
 ---
 # <a name="manage-nano-server"></a>管理 Nano Server
 
 >适用于：Windows Server 2016
 
 > [!IMPORTANT]
-> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解这意味着什么。   
+> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解其含义。   
 
 Nano Server 进行远程管理。 其不具备本地登录功能，亦不支持终端服务。 但是，有多种选项来远程管理 Nano Server，包括 Windows PowerShell、Windows Management Instrumentation (WMI)、Windows 远程管理和紧急管理服务 (EMS)。  
 
@@ -45,14 +43,14 @@ Nano Server 进行远程管理。 其不具备本地登录功能，亦不支持�
   
 若要将 Nano Server 添加到受信任的主机列表，请在提升的 Windows PowerShell 提示符下运行此命令：  
   
-`Set-Item WSMan:\localhost\Client\TrustedHosts "<IP address of Nano Server>"`  
+`Set-Item WSMan:\localhost\Client\TrustedHosts <IP address of Nano Server>`  
   
 若要启动远程 Windows PowerShell 会话，请启动提升的本地 Windows PowerShell 会话，然后运行以下命令：  
   
   
 ```  
-$ip = "<IP address of Nano Server>"  
-$user = "$ip\Administrator"  
+$ip = <IP address of Nano Server>  
+$user = $ip\Administrator  
 Enter-PSSession -ComputerName $ip -Credential $user  
 ```  
   
@@ -71,7 +69,7 @@ Enter-PSSession -ComputerName $ip -Credential $user
   
   
 ```  
-$ip = "<IP address of the Nano Server\>"  
+$ip = <IP address of the Nano Server\>  
 $user = $ip\Administrator  
 $cim = New-CimSession -Credential $user -ComputerName $ip  
 ```  
@@ -82,7 +80,7 @@ $cim = New-CimSession -Credential $user -ComputerName $ip
   
 ```  
 Get-CimInstance -CimSession $cim -ClassName Win32_ComputerSystem | Format-List *  
-Get-CimInstance -CimSession $Cim -Query "SELECT * from Win32_Process WHERE name LIKE 'p%'"  
+Get-CimInstance -CimSession $Cim -Query SELECT * from Win32_Process WHERE name LIKE 'p%'  
 ```  
   
   
@@ -91,7 +89,7 @@ Get-CimInstance -CimSession $Cim -Query "SELECT * from Win32_Process WHERE name 
   
 ```
 winrm quickconfig
-winrm set winrm/config/client @{TrustedHosts="<ip address of Nano Server>"}
+winrm set winrm/config/client @{TrustedHosts=<ip address of Nano Server>}
 chcp 65001
 ```
   
@@ -126,7 +124,7 @@ Stop-NetEventSession [-Name]
   
 1.  下载服务包（从关联的知识库文章或从 [Microsoft 更新目录](https://catalog.update.microsoft.com/v7/site/home.aspx)）。 将其保存到本地目录或网络共享，例如：C:\ServicingPackages  
 2.  创建将在其中保存提取的服务包的文件夹。  示例：c:\KB3157663_expanded  
-3.  打开 Windows PowerShell 控制台，然后使用 `Expand` 命令指定到服务包的 .msu 文件的路径，包括 `-f:*` 参数和将服务包提取到的路径。  例如：`Expand "C:\ServicingPackages\Windows10.0-KB3157663-x64.msu" -f:* "C:\KB3157663_expanded"`  
+3.  打开 Windows PowerShell 控制台，然后使用 `Expand` 命令指定到服务包的 .msu 文件的路径，包括 `-f:*` 参数和将服务包提取到的路径。  例如：`Expand C:\ServicingPackages\Windows10.0-KB3157663-x64.msu -f:* C:\KB3157663_expanded`  
   
     展开的文件应如下所示：  
 C:>dir C:\KB3157663_expanded   
@@ -158,7 +156,7 @@ C:>dir C:\KB3157663_expanded
 ```  
 $sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
 
-$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=0";OnlineScan=$true}  
+$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria=IsInstalled=0;OnlineScan=$true}  
 ```  
 **注意：**  
 如果没有更新可用，则此命令将返回以下错误：  
@@ -171,7 +169,7 @@ At line:1 char:16
 
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 
-    + CategoryInfo          : NotSpecified: (MSFT_WUOperatio...-5b842a3dd45d")  
+    + CategoryInfo          : NotSpecified: (MSFT_WUOperatio...-5b842a3dd45d)  
 
    :CimInstance) [Invoke-CimMethod], CimException  
 
@@ -201,11 +199,11 @@ Windows Defender 将阻止安装更新。 若要解决此问题，卸载 Windows
 ```  
 $sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
 
-$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=1";OnlineScan=$true}  
+$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria=IsInstalled=1;OnlineScan=$true}  
 ```  
 
 **注意：**  
-这些命令将列出已安装的内容，但不会在输出中专门引用“安装”。 如果需要包括“安装”的输出，例如对于报表，则可以运行  
+这些命令将列出已安装的内容，但不会在输出中专门指示已安装的内容。 如果需要包括“安装”的输出，例如对于报表，则可以运行  
 ```PowerShell
 Get-WindowsPackage -Online
 ```
@@ -244,7 +242,7 @@ wpr.exe -providers
 
 可以按照感兴趣的事件类型筛选输出。 例如：
 ```
-PS C:\> wpr.exe -providers | select-string "Storage"
+PS C:\> wpr.exe -providers | select-string Storage
 
        595f33ea-d4af-4f4d-b4dd-9dacdd17fc6e                              : Microsoft-Windows-StorageManagement-WSP-Host
        595f7f52-c90a-4026-a125-8eb5e083f15e                              : Microsoft-Windows-StorageSpaces-Driver
@@ -258,21 +256,21 @@ PS C:\> wpr.exe -providers | select-string "Storage"
 
 创建并启动跟踪，同时指定存储事件的文件名。
 ```
-PS C:\> New-EtwTraceSession -Name "ExampleTrace" -LocalFilePath c:\etrace.etl
+PS C:\> New-EtwTraceSession -Name ExampleTrace -LocalFilePath c:\etrace.etl
 ```
 
 将提供程序 GUID 添加到跟踪。 将 ```wpr.exe -providers``` 用于进行 GUID 转换的提供程序名称。 
 ```
-PS C:\> wpr.exe -providers | select-string "Kernel-Memory"
+PS C:\> wpr.exe -providers | select-string Kernel-Memory
 
        d1d93ef7-e1f2-4f45-9943-03d245fe6c00                              : Microsoft-Windows-Kernel-Memory
 
-PS C:\> Add-EtwTraceProvider -Guid "{d1d93ef7-e1f2-4f45-9943-03d245fe6c00}" -SessionName "ExampleTrace"
+PS C:\> Add-EtwTraceProvider -Guid {d1d93ef7-e1f2-4f45-9943-03d245fe6c00} -SessionName ExampleTrace
 ```
 
 删除跟踪，此操作可以停止跟踪会话，同时将事件刷新到相关联的日志文件。
 ```
-PS C:\> Remove-EtwTraceSession -Name "ExampleTrace"
+PS C:\> Remove-EtwTraceSession -Name ExampleTrace
 
 PS C:\> dir .\etrace.etl
 
@@ -330,12 +328,12 @@ Copyright (c) 2015 Microsoft Corporation. All rights reserved.
 
 首先，创建新的自动记录器配置。
 ```
-PS C:\> New-AutologgerConfig -Name "BootPnpLog" -LocalFilePath c:\bootpnp.etl 
+PS C:\> New-AutologgerConfig -Name BootPnpLog -LocalFilePath c:\bootpnp.etl 
 ```
 
 向其添加 ETW 提供程序。 此示例使用内核即插即用提供程序。 再次调用 ```Add-EtwTraceProvider```，同时指定相同的自动记录器名称，但指定不同的 GUID，以启用多个来源的启动跟踪收集。
 ```
-Add-EtwTraceProvider -Guid "{9c205a39-1250-487d-abd7-e831c6290539}" -AutologgerName BootPnpLog
+Add-EtwTraceProvider -Guid {9c205a39-1250-487d-abd7-e831c6290539} -AutologgerName BootPnpLog
 ```
 
 这不会立即开始 ETW 会话，而是将会话配置为在下次启动时开始。 重新启动后，具有自动记录器配置名称的新的 ETW 会话自动开始，同时会启用添加的跟踪提供程序。 Nano Server 启动后，将记录的事件刷新到关联的跟踪文件后，以下命令将停止跟踪会话：
@@ -355,7 +353,7 @@ PS C:\> Remove-AutologgerConfig -Name BootPnpLog
 
 查询可用的计数器 - 可以筛选输出以轻松找到感兴趣的计数器。
 ```
-PS C:\> typeperf.exe -q | Select-String "UDPv6"
+PS C:\> typeperf.exe -q | Select-String UDPv6
 
 \UDPv6\Datagrams/sec
 \UDPv6\Datagrams Received/sec
@@ -366,14 +364,14 @@ PS C:\> typeperf.exe -q | Select-String "UDPv6"
 
 选项允许指定收集计数器值的次数和时间间隔。 在下面的示例中，每隔 3 秒收集 5 次处理器空闲时间。
 ```
-PS C:\> typeperf.exe "\Processor Information(0,0)\% Idle Time" -si 3 -sc 5
+PS C:\> typeperf.exe \Processor Information(0,0)\% Idle Time -si 3 -sc 5
 
-"(PDH-CSV 4.0)","\\ns-g2\Processor Information(0,0)\% Idle Time"
-"09/15/2016 09:20:56.002","99.982990"
-"09/15/2016 09:20:59.002","99.469634"
-"09/15/2016 09:21:02.003","99.990081"
-"09/15/2016 09:21:05.003","99.990454"
-"09/15/2016 09:21:08.003","99.998577"
+(PDH-CSV 4.0),\\ns-g2\Processor Information(0,0)\% Idle Time
+09/15/2016 09:20:56.002,99.982990
+09/15/2016 09:20:59.002,99.469634
+09/15/2016 09:21:02.003,99.990081
+09/15/2016 09:21:05.003,99.990454
+09/15/2016 09:21:08.003,99.998577
 Exiting, please wait...
 The command completed successfully.
 ```

@@ -8,18 +8,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: 5dbbdc19707f2eadfa3b2c919af95b58645de441
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07479bc5bd2fdf661db8a30e3a9f20c7cce0513e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391375"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825990"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 中的新增功能
 
 >适用于：Windows Server（半年频道）
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;若要了解 Windows 中的最新功能，请参阅 [Windows Server 中的新增功能](whats-new-in-windows-server.md)。 本部分的内容介绍 Windows Server 版本 1709 中的新增功能和更改的功能。 此处列出的新功能和更改在你使用此版本时最可能具有最大影响力。 另请参阅 [Windows Server 版本 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
+<img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;若要了解 Windows 中的最新功能，请参阅 [Windows Server 中的新增功能](whats-new-in-windows-server.md)。 本部分的内容介绍 Windows Server 版本 1709 中的新增功能和更改的功能。 此处列出的新功能和更改在你使用此版本时最可能具有最大影响力。 另请参阅 [Windows Server 版本 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
 
 > [!IMPORTANT]
 > 从 2019 年 4 月 9 日开始，Windows Server 版本 1709 不再接受支持。

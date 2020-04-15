@@ -1,24 +1,20 @@
 ---
 title: 将远程桌面虚拟化主机升级到 Windows Server 2016
 description: 本文介绍如何将现有的远程桌面服务部署升级到 Windows Server 2016。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 08/01/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5aed8ba7-f541-4416-b01c-4d3b1712e2b1
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 319074987ae161e2b567c15e9e56cce0e2106a1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7bbf5f6a81a18303d4f9f4b02a1b8dead3c9a53a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403783"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857110"
 ---
 # <a name="upgrading-your-remote-desktop-virtualization-host-to-windows-server-2016"></a>将远程桌面虚拟化主机升级到 Windows Server 2016
 

@@ -1,31 +1,27 @@
 ---
 title: 远程桌面服务 - 规划海报
 description: 提供规划、部署和运行远程桌面服务的概述
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 author: lizap
 manager: dongill
 ms.date: 11/06/2018
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a8c6d5fa-399b-4823-8f10-affec1bbfe65
 ms.localizationpriority: medium
-ms.openlocfilehash: d549909dd5edd472caed4ee6afe4146fcc7bc83e
-ms.sourcegitcommit: 69c218aa6dcaf23193e06a4bbc00d7294a098627
+ms.openlocfilehash: 068599b63a000566db86f29a93bfa91a4b4cd72e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73713655"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858160"
 ---
 # <a name="remote-desktop-services---planning-poster"></a>远程桌面服务 - 规划海报
 
 ## <a name="windows-virtual-desktop"></a>Windows 虚拟桌面
 
-你可能已听到我们谈论过远程桌面的“现代基础结构”。 也许你听到我们使用了“RDmi”一词。 需要知道的短语是“Windows 虚拟桌面”。 有关详细信息，请参阅我们的 [Windows 虚拟桌面文档页](https://docs.microsoft.com/azure/virtual-desktop/)。
+你可能已听到我们谈论过远程桌面的“现代基础结构”。 也许你听到我们使用了“RDmi”一词。 你需要知道的短语是“Windows 虚拟桌面”。 有关详细信息，请参阅我们的 [Windows 虚拟桌面文档页](https://docs.microsoft.com/azure/virtual-desktop/)。
 
 远程桌面服务团队制作了海报，帮助你规划、构建并运行 Windows 虚拟桌面环境。
 

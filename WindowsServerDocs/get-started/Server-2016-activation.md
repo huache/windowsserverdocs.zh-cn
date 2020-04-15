@@ -1,25 +1,21 @@
 ---
 title: Microsoft 服务器激活
 description: 如何激活 Windows Server 2016。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 09/19/2018
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99f7daa4-30ce-4d13-be65-0a45d5cc7a54
 author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 1354d89ba2c9169b302dca10ae52bad34ef80b43
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: fd9ea63785e8de313d2177113a466fa67c17410b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947767"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826640"
 ---
 # <a name="windows-server-2016-activation"></a>Windows Server 2016 激活
 
@@ -37,9 +33,9 @@ KMS 主机不必是专用服务器，KMS 可与其他服务共用一台主机。
 
 |产品密钥组|KMS 可以托管于|由此 KMS 主机激活的 Windows 版本|  
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|  
-|适用于 Windows Server 2016 的批量许可证|Windows Server 2012<br /><br />Windows Server 2012 R2<br /><br />Windows Server 2016<br /><br />|Windows Server 半年频道 <br><br>Windows Server 2016（所有版本）<br /><br />Windows 10 LTSB（2015 和 2016）<br /><br />Windows 10 专业版<br /><br />Windows 10 企业版<br /><br />Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br>Windows Server 2012 R2（所有版本）<br /><br />Windows 8.1 专业版<br /><br />Windows 8.1 企业版<br /><br />Windows Server 2012（所有版本）<br /><br />Windows Server 2008 R2（所有版本）<br /><br />Windows Server 2008（所有版本）<br /><br />Windows 7 专业版<br /><br />Windows 7 企业版| 
-|适用于 Windows 10 的批量许可证|Windows 7<br /><br />Windows 8.1<br /><br /> Windows 10|Windows 10 专业版<br /><br /> Windows 10 专业版 N<br /><br /> Windows 10 企业版<br /><br /> Windows 10 企业版 N<br /><br /> Windows 10 教育版<br /><br /> Windows 10 教育版 N<br /><br /> Windows 10 企业版 LTSB (2015)<br /><br /> Windows 10 企业版 LTSB N (2015)<br /><br /> Windows 10 专业工作站版<br><br>Windows 8.1 专业版<br /><br /> Windows 8.1 企业版<br /><br /> Windows 7 专业版<br /><br /> Windows 7 企业版<br /><br />|  
-|“适用于 Windows 10 的 Windows Server 2012 R2”批量许可证|Windows Server 2008 R2<br /><br /> Windows Server 2012 Standard<br /><br /> Windows Server 2012 Datacenter<br /><br /> Windows Server 2012 R2 Standard<br /><br />Windows Server 2012 R2 Datacenter|Windows 10 专业版<br /><br /> Windows 10 企业版<br /><br />Windows 10 企业版 LTSB (2015)<br><br>Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br> Windows Server 2012 R2（所有版本）<br /><br /> Windows 8.1 专业版<br /><br /> Windows 8.1 企业版<br /><br /> Windows Server 2012（所有版本）<br /><br /> Windows Server 2008 R2（所有版本）<br /><br />Windows Server 2008（所有版本）<br /><br /> Windows 7 专业版<br /><br /> Windows 7 企业版|
+|适用于 Windows Server 2016 的批量许可证|Windows Server 2012<p>Windows Server 2012 R2<p>Windows Server 2016<p>|Windows Server 半年频道 <br><br>Windows Server 2016（所有版本）<p>Windows 10 LTSB（2015 和 2016）<p>Windows 10 专业版<p>Windows 10 企业版<p>Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br>Windows Server 2012 R2（所有版本）<p>Windows 8.1 专业版<p>Windows 8.1 企业版<p>Windows Server 2012（所有版本）<p>Windows Server 2008 R2（所有版本）<p>Windows Server 2008（所有版本）<p>Windows 7 专业版<p>Windows 7 企业版| 
+|适用于 Windows 10 的批量许可证|Windows 7<p>Windows 8.1<p> Windows 10|Windows 10 专业版<p> Windows 10 专业版 N<p> Windows 10 企业版<p> Windows 10 企业版 N<p> Windows 10 教育版<p> Windows 10 教育版 N<p> Windows 10 企业版 LTSB (2015)<p> Windows 10 企业版 LTSB N (2015)<p> Windows 10 专业工作站版<br><br>Windows 8.1 专业版<p> Windows 8.1 企业版<p> Windows 7 专业版<p> Windows 7 企业版<p>|  
+|“适用于 Windows 10 的 Windows Server 2012 R2”批量许可证|Windows Server 2008 R2<p> Windows Server 2012 Standard<p> Windows Server 2012 Datacenter<p> Windows Server 2012 R2 Standard<p>Windows Server 2012 R2 Datacenter|Windows 10 专业版<p> Windows 10 企业版<p>Windows 10 企业版 LTSB (2015)<br><br>Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br> Windows Server 2012 R2（所有版本）<p> Windows 8.1 专业版<p> Windows 8.1 企业版<p> Windows Server 2012（所有版本）<p> Windows Server 2008 R2（所有版本）<p>Windows Server 2008（所有版本）<p> Windows 7 专业版<p> Windows 7 企业版|
 
 > [!NOTE]  
 > 你可能需要安装这些更新中的一个或多个，具体取决于 KMS 服务器运行的操作系统以及你想要激活的操作系统。

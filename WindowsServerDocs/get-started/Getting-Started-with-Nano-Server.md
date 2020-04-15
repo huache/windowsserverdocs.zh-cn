@@ -2,22 +2,20 @@
 title: 安装 Nano Server
 description: 干净安装、升级、迁移和评估 Nano Server
 ms.prod: windows-server
-ms.service: na
 manager: dougkim
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 09f031c19c8f6d1105d47b9f22d52db30e9c57ef
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 68de1697c8655075041cd9e598ccd2bbc2e6237b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822150"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826980"
 ---
 # <a name="install-nano-server"></a>安装 Nano Server
 
@@ -30,7 +28,7 @@ Windows Server 2016 提供了新的安装选项：Nano Server。 Nano Server �
 
 Nano Server 非常适合于多种方案：  
   
--   作为 Hyper-V 虚拟机的“计算”主机，无论是否在群集中  
+-   作为 Hyper-V 虚拟机的计算主机，无论是否在群集中  
   
 -   作为横向扩展文件服务器的存储主机。  
   
@@ -42,7 +40,7 @@ Nano Server 非常适合于多种方案：
   
 ## <a name="important-differences-in-nano-server"></a>Nano Server 中的重要差异
 
-因为 Nano Server 经过优化，是轻量操作系统（运行基于容器和微服务的“云-本机”应用程序）或者敏捷且经济高效的数据中心主机（空间占用显著减少），因此 Nano Server 与“服务器核心”或“具有桌面体验安装的服务器”安装间存在重要差异：
+因为 Nano Server 经过优化，是轻量操作系统（运行基于容器和微服务的云-本机应用程序）或者敏捷且经济高效的数据中心主机（空间占用显著减少），因此 Nano Server 与“服务器核心”或“具有桌面体验安装的服务器”安装间存在重要差异：
 
 - Nano Server 无外设；没有任何本地登录功能或图形用户界面。
 - 仅支持 64 位应用程序、工具和代理。
@@ -58,7 +56,7 @@ Nano Server 非常适合于多种方案：
 - 仅在 Current Branch for Business (CBB) 模型上支持 Nano Server -- 目前不存在 Long Term Servicing Branch (LTSB) 版本的 Nano Server。 有关详细信息，请参阅下列各子节。
 
 ### <a name="current-branch-for-business"></a>Current Branch for Business
-Nano Server 拥有一个更活跃的模型，称为 Current Branch for Business (CBB)，通过快速开发周期对以“云节奏”移动的客户提供支持。 在此模型中，Nano Server 的功能更新发布每年会有两到三次。 这种模型要求生产中部署和运行的 Nano Server 具有[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)。 若要维持支持，管理员不得滞后两次以上的 CBB 发布。 但是，这些版本不会自动更新现有部署；管理员在方便时手动安装新的 CBB 版本。 更多信息，请参阅 [Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)（新的 Windows Server 2016 Current Branch for Business 服务选项）。
+Nano Server 拥有一个更活跃的模型，称为 Current Branch for Business (CBB)，通过快速开发周期对以云节奏移动的客户提供支持。 在此模型中，Nano Server 的功能更新发布每年会有两到三次。 这种模型要求生产中部署和运行的 Nano Server 具有[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)。 若要维持支持，管理员不得滞后两次以上的 CBB 发布。 但是，这些版本不会自动更新现有部署；管理员在方便时手动安装新的 CBB 版本。 更多信息，请参阅 [Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)（新的 Windows Server 2016 Current Branch for Business 服务选项）。
 
 “服务器核心”和“具有桌面体验的服务器”安装选项仍然以 [Long Term Servicing Branch (LTSB) 模型](https://support.microsoft.com/lifecycle#gp%2Fgp_msl_policy)为服务基础，包含 5 年的主流支持和 5 年的扩展支持。
 
@@ -74,7 +72,7 @@ Nano Server 拥有一个更活跃的模型，称为 Current Branch for Business 
 - 如果已经熟悉 Nano Server 的基础知识，开头为[部署 Nano Server](Deploy-Nano-Server.md) 的较为详细的主题提供有关进行自定义映像、使用域、联机与脱机安装服务器角色的程序包和其他功能等的一套完整说明。
 
 > [!IMPORTANT]  
-> 完成安装后，如果已安装所需的所有服务器角色和功能，则可以立即检查并安装 Windows Server 2016 可用的更新。 有关 Nano Server，请参阅[管理 Nano Server](Manage-Nano-Server.md) 的“管理 Nano Server 中的更新”部分。
+> 完成安装后，如果已安装所需的所有服务器角色和功能，则可以立即检查并安装 Windows Server 2016 可用的更新。 对于 Nano Server，请参阅[管理 Nano Server](Manage-Nano-Server.md) 的“管理 Nano Server 中的更新”部分。
 
 ### <a name="upgrade"></a>升级
 由于 Nano Server 是 Windows Server 2016 的新增功能，所以还没有从旧操作系统版本到 Nano Server 的升级路径。

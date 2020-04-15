@@ -2,21 +2,18 @@
 title: Express 更新交付 ISV 支持
 description: Windows Server Update Service (WSUS) 主题 - 独立软件供应商 (ISV) 如何使用 WSUS 配置 Express 更新交付
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 13568bb320a3d70bfd6a70d2b9731b460be6f346
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 60d01ef425ed96160cd76afdd7c27c081c778add
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948494"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828770"
 ---
 # <a name="express-update-delivery-isv-support"></a>Express 更新交付 ISV 支持
 
@@ -58,11 +55,11 @@ ISV 可以使用 WSUS 和 WU 客户端来支持 Express 更新交付。 Microsof
    - ISV 客户端代理确定要批准哪些更新，以及何时下载和安装更新
    - WU 客户端确定要下载的字节范围并发起下载请求
 
-### <a name="BKMK_1"></a>步骤 1：配置 WSUS
+### <a name="step-1-configure-wsus"></a><a name=BKMK_1></a>步骤 1：配置 WSUS
 
 WSUS 充当 Windows 更新的接口，并管理描述了需要下载的 Express 包的所有元数据。 如果需要进行部署，请参阅 [**Windows Server Update Services 3.0 SP2 概述**](https://technet.microsoft.com/library/dd939931(v=ws.10).aspx)。 部署 WSUS 后，需要考虑的主要事项为是否将更新内容存储在 WSUS 服务器本地。 配置 WSUS 时，我们建议不要将更新存储在本地。 这假设你的环境中已有定向这些包的部署的软件。 有关如何配置 WSUS 本地存储的详细信息，请参阅[**决定在何处存储更新**](https://technet.microsoft.com/library/cc720494(v=ws.10).aspx)。
 
-### <a name="BKMK_2"></a>步骤 2：指定和填充 ISV 文件缓存 
+### <a name="step-2-specify-and-populate-the-isv-file-cache"></a><a name=BKMK_2></a>步骤 2：指定和填充 ISV 文件缓存 
 
 #### <a name="specify-the-isv-file-cache"></a>指定 ISV 文件缓存
 
@@ -85,7 +82,7 @@ WSUS 充当 Windows 更新的接口，并管理描述了需要下载的 Express 
 > [!IMPORTANT]
 > ISV 文件缓存需要以下各项：                                                          
 > - 根据 RFC，服务器必须符合 HTTP 1.1：<http://www.w3.org/Protocols/rfc2616/rfc2616.html>                                                                                                                                                                
-> 具体而言，Web 服务器需要支持                                                                                                                                                                                                                                       [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 和 [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) 请求<br>                                                                                                                                                                                                                                                                                                  - 部分范围请求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - Keep-alive<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - 不要使用“Transfer-Encoding:chunked”                                                                                                 
+> 具体而言，Web 服务器需要支持                                                                                                                                                                                                                                       [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 和 [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) 请求<br>                                                                                                                                                                                                                                                                                                  - 部分范围请求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - Keep-alive<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - 不要使用 Transfer-Encoding:chunked                                                                                                 
 
 #### <a name="populate-the-isv-file-cache"></a>填充 ISV 文件缓存
 
@@ -105,7 +102,7 @@ WSUS 充当 Windows 更新的接口，并管理描述了需要下载的 Express 
 
      让 HTTP 服务器（或 localhost）将 **HTTP GET** 请求（它们引用 MU 文件夹路径和文件名）重定向到 ISV 文件位置。
 
-### <a name="BKMK_3"></a>步骤 3：设置 ISV 客户端代理来定向 WU 客户端操作
+### <a name="step-3-set-up-an-isv-client-agent-to-direct-wu-client-operations"></a><a name=BKMK_3></a>步骤 3：设置 ISV 客户端代理来定向 WU 客户端操作
 
 ISV 客户端代理使用以下建议的工作流来安排已批准更新的下载和安装：
 

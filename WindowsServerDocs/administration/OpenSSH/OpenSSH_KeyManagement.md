@@ -1,17 +1,16 @@
 ---
 ms.date: 09/27/2018
 ms.topic: conceptual
-keywords: OpenSSH, SSH, SSHD, 安装, 设置
 contributor: maertendMSFT
-author: maertendMSFT
+author: maertendmsft
 title: 适用于 Windows 的 OpenSSH 服务器配置
-ms.product: w10
-ms.openlocfilehash: 5b2fbc974223a6e4e611f92ce2a0c32bc77eca5d
-ms.sourcegitcommit: d46f3a1b238ab773900089b0de7279326789a327
+ms.product: windows-server
+ms.openlocfilehash: defb8875ca73c0d08fb0fa0764ed3ddf9003e09c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78214918"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852040"
 ---
 # <a name="openssh-key-management"></a>OpenSSH 密钥管理
 
@@ -25,7 +24,7 @@ OpenSSH 提供了工具来帮助支持此用途，具体如下：
 * __ssh-agent__ 和 __ssh-add__，用于安全地存储私钥
 * __scp__ 和 __sftp__，在首次使用服务器时安全地复制公钥文件
 
-本文档概述了如何在 Windows 上使用这些工具开始使用 SSH 进行密钥身份验证。 如果你不熟悉 SSH 密钥管理，我们强烈建议你查看 [NIST 文档 IR 7966](http://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.7966.pdf)，标题为“使用安全 Shell (SSH) 的交互和自动化访问管理的安全性”。
+本文档概述了如何在 Windows 上使用这些工具开始使用 SSH 进行密钥身份验证。 如果你不熟悉 SSH 密钥管理，我们强烈建议你查看 [NIST 文档 IR 7966](http://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.7966.pdf)，标题为“使用安全外壳 (SSH) 的交互和自动化访问管理的安全性”。
 
 ## <a name="about-key-pairs"></a>关于密钥对
 

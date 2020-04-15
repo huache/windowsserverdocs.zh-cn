@@ -1,18 +1,18 @@
 ---
 title: Windows Server 升级概述 | Microsoft Docs
 description: 了解一些常规的 Windows Server 升级信息，以及在实际执行升级之前应考虑的事项。
-ms.prod: windows server
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/10/2019
-ms.openlocfilehash: 6f57e52657ca3c80c92d56c54ea87e43aabd1e99
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.openlocfilehash: 1ac4cbe8b9bda4ac2de2c7ad7ec27b1534c0de72
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71124787"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854230"
 ---
 # <a name="overview-about-windows-server-upgrades"></a>Windows Server 升级概述
 
@@ -42,3 +42,4 @@ ms.locfileid: "71124787"
 通常，Windows Server 可以通过至少一个（有时甚至是两个）版本进行升级。 例如，可以将 Windows Server 2012 R2 和 Windows Server 2016 就地升级到 Windows Server 2019。
 
 还可以从操作系统的评估版本升级到零售版本，从旧的零售版本升级到较新版本，或者在某些情况下，从操作系统的批量许可版本升级到普通零售版本。 有关就地升级以外的升级选项的详细信息，请参阅 [Windows Server 的升级和转换选项](../get-started/supported-upgrade-paths.md)。
+""'

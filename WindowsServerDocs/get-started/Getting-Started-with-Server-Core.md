@@ -4,19 +4,18 @@ description: 如何在 Windows Server 2019、Windows Server 2016 或 Windows Ser
 ms.prod: windows-server
 ms.date: 05/21/2019
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: e6264a59a837003e49e82529750cfb153cc37b92
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13d36c233094511216483f0fb37dc6a004212a50
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360338"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826970"
 ---
 # <a name="install-server-core"></a>安装服务器核心
 
@@ -25,17 +24,17 @@ ms.locfileid: "71360338"
 首次安装 Windows Server 时，你可以使用以下安装选项：
 
 >[!NOTE]
-> 在以下列表中，不带“桌面体验”的版本是服务器核心安装选项
+> 在以下列表中，不带“桌面体验”的版本是”服务器核心”安装选项
 
--   Windows Server Standard
--   带桌面体验的 Windows Server Standard
--   Windows Server Datacenter
--   带桌面体验的 Windows Server Datacenter
+-    Windows Server Standard
+-    带桌面体验的 Windows Server Standard
+-    Windows Server Datacenter
+-    带桌面体验的 Windows Server Datacenter
 
 安装 Windows Server（半年频道）时，你可以使用以下安装选项：
 
--   Windows Server Standard 
--   Windows Server Datacenter
+-    Windows Server Standard 
+-    Windows Server Datacenter
 
 “服务器核心”选项可减少所需的磁盘空间和潜在的攻击面，因此我们建议选择服务器核心安装，除非你有特殊需求要用到“带桌面体验的服务器”选项中包含的附加用户界面元素和图形管理工具。 如果确实感觉到需要额外的用户界面元素，请参阅[安装带桌面体验的服务器](Getting-Started-with-Server-with-Desktop-Experience.md)。 
 
