@@ -2,22 +2,18 @@
 title: 部署带有 OTP 身份验证的远程访问
 description: 本主题是指南使用 Windows Server 2016 中的 "使用 OTP 身份验证部署远程访问" 指南的一部分。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5b86cbe970c60f0684f3f6e5198fa91bbb9745b1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 47a92db6c451b2e1e9bb44393ab987f242cc0ef5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313684"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858250"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>部署带有 OTP 身份验证的远程访问
 
@@ -28,8 +24,8 @@ ms.locfileid: "80313684"
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>方案描述  
 在此方案中，已将启用 DirectAccess 的远程访问服务器配置为使用两个\-系数一次性密码 \(OTP\) 身份验证，以及标准 Active Directory 凭据进行身份验证。  
   
-## <a name="prerequisites"></a>先决条件  
-在开始部署此方案之前，请查看此列表以了解重要要求：  
+## <a name="prerequisites"></a>系统必备  
+开始部署此方案前，请查看此列表了解重要要求：  
   
 -   部署 OTP 之前，必须先部署[具有高级设置的单个 DirectAccess 服务器](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。  
   
@@ -39,7 +35,7 @@ ms.locfileid: "80313684"
   
 -   必须部署公钥基础结构。  
   
-    有关详细信息，请参阅： [测试实验室指南微型模块：用于 Windows Server 2012 的基本 PKI。](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
+    有关详细信息，请参阅：[测试实验室指南微型模块：Windows Server 2012 的基本 PKI。](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
   
 -   不支持在 DirectAccess 管理控制台或 Windows PowerShell cmdlet 之外更改策略。  
   
@@ -52,7 +48,7 @@ OTP 身份验证方案包含许多步骤：
   
 3.  [配置具有 OTP 身份验证的 DirectAccess](/configure/Configure-RA-with-OTP-Authentication.md)。 OTP 部署包含多个配置步骤，包括准备用于 OTP 身份验证的基础结构，配置 OTP 服务器，在远程访问服务器上配置 OTP 设置，以及更新 DirectAccess 客户端设置。  
   
-4.  [对 OTP 部署进行故障排除](/troubleshoot/Troubleshoot-an-OTP-Deployment.md). 此故障排除部分介绍了使用 OTP 身份验证部署远程访问时可能出现的一些最常见的错误。  
+4.  [对 OTP 部署进行故障排除]\((/troubleshoot/Troubleshoot-an-OTP-Deployment.md). 此故障排除部分介绍了使用 OTP 身份验证部署远程访问时可能出现的一些最常见的错误。  
   
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
 提高安全性-使用 OTP 增加了 DirectAccess 部署的安全性。 用户需要 OTP 凭据才能访问内部网络。 用户通过 Windows 10 或 Windows 8 客户端计算机上的网络连接中可用的工作区连接提供 OTP 凭据，或在运行 Windows 7 的客户端计算机上使用 DirectAccess 连接助手 \(DCA\)。 OTP 身份验证过程包括以下步骤：  
@@ -74,8 +70,8 @@ OTP 身份验证方案包含许多步骤：
   
 |角色\/功能|如何支持本方案|  
 |---------|-----------------|  
-|*远程访问管理角色*|该角色可使用服务器管理器控制台加以安装和卸载。 此角色包括 DirectAccess （以前是 Windows Server 2008 R2 中的一项功能）以及路由和远程访问服务（以前是网络策略和访问服务 \(NPAS\) 服务器角色下的角色服务）。 远程访问角色由以下两个组件组成：<br /><br />1. DirectAccess 和路由和远程访问服务 \(RRAS\) VPN-DirectAccess 和 VPN 在远程访问管理控制台中一起进行管理。<br />2. RRAS 路由-RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<br /><br />远程访问角色取决于以下服务器功能：<br /><br />-Internet Information Services \(IIS\) Web 服务器-需要此功能来配置网络位置服务器、使用 OTP 身份验证和配置默认 Web 探测。<br />-Windows 内部数据库-用于远程访问服务器上的本地记帐。|  
-|远程访问管理工具功能|此功能的安装如下所述：<br /><br />-在安装远程访问角色时，它默认安装在远程访问服务器上，并支持远程管理控制台用户界面。<br />-可选择将它安装在不运行远程访问服务器角色的服务器上。 在这种情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<br /><br />远程访问管理工具功能包括以下各项：<br /><br />-远程访问 GUI 和命令行工具<br />-适用于 Windows PowerShell 的远程访问模块<br /><br />依赖项包括：<br /><br />-组策略管理控制台<br />-RAS 连接管理器管理工具包 \(CMAK\)<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|  
+|*远程访问管理角色*|该角色可使用服务器管理器控制台加以安装和卸载。 此角色包括 DirectAccess （以前是 Windows Server 2008 R2 中的一项功能）以及路由和远程访问服务（以前是网络策略和访问服务 \(NPAS\) 服务器角色下的角色服务）。 远程访问角色由以下两个组件组成：<p>1.\(RRAS\) 的 DirectAccess 和路由和远程访问服务在远程访问管理控制台中一起进行管理。<br />2.RRAS 路由-RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<p>远程访问角色取决于以下服务器功能：<p>-Internet Information Services \(IIS\) Web 服务器-需要此功能来配置网络位置服务器、使用 OTP 身份验证和配置默认 Web 探测。<br />-Windows 内部数据库-用于远程访问服务器上的本地记帐。|  
+|远程访问管理工具功能|此功能的安装如下所述：<p>-在安装远程访问角色时，它默认安装在远程访问服务器上，并支持远程管理控制台用户界面。<br />-可选择将它安装在不运行远程访问服务器角色的服务器上。 在这种情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<p>远程访问管理工具功能包括以下各项：<p>-远程访问 GUI 和命令行工具<br />-适用于 Windows PowerShell 的远程访问模块<p>依赖项包括：<p>-组策略管理控制台<br />-RAS 连接管理器管理工具包 \(CMAK\)<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬件要求  
 本方案的硬件要求包括以下各项：  
@@ -103,7 +99,7 @@ OTP 身份验证方案包含许多步骤：
   
     4.  客户端\-端要求-对于 Windows 10 和 Windows 8 客户端计算机，使用网络连接助手 \(NCA\) 服务来检测是否需要 OTP 凭据。 如果是，DirectAccess 媒体管理器会提示输入凭据。  NCA 包含在操作系统中，无需安装或部署。 对于 Windows 7 客户端计算机，DirectAccess 连接助手 \(DCA\) 2.0 是必需的。 可从 [Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=29039)下载该服务。  
   
-    5.  注意以下各项：  
+    5.  请注意以下事项：  
   
         1.  OTP 身份验证可与智能卡和受信任的平台模块并行使用 \(TPM\)基于 \-的身份验证。 在远程访问管理控制台中启用 OTP 身份验证的同时还将启用智能卡身份验证。  
   
@@ -113,7 +109,7 @@ OTP 身份验证方案包含许多步骤：
   
         4.  在远程访问多站点部署中，OTP 设置是通用的，并是所有入口点的标识。 如果为 OTP 配置多台 RADIUS 或颁发证书机构服务器，则由每台远程访问服务器根据可用性和可伸缩性对这些服务器进行排序。  
   
-        5.  在远程访问多\-林环境中配置 OTP 时，OTP Ca 只能来自资源林，并且应跨林信任配置证书注册。 有关更多信息，请参阅 [AD CS：Windows Server 2008 R2 上的跨林证书注册](https://technet.microsoft.com/library/ff955842.aspx)。  
+        5.  在远程访问多\-林环境中配置 OTP 时，OTP Ca 只能来自资源林，并且应跨林信任配置证书注册。 有关详细信息，请参阅 [AD CS：Windows Server 2008 R2](https://technet.microsoft.com/library/ff955842.aspx)的跨林证书注册。  
   
         6.  使用 KEY FOB OTP 令牌的用户应在 DirectAccess OTP 对话框中插入 PIN，后跟令牌 \(没有任何分隔符\)。 使用 PIN PAD OTP 的用户应仅在对话的令牌代码当中插入 PIN。  
   
