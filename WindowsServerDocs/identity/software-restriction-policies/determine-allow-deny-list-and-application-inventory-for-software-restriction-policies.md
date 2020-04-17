@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7609ebb0fdcb6d429cd40d99399eaaedb732df08
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c0fdb5c1d7c4b03610a173c6cd0575d39646a7d0
+ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855090"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81524902"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>确定软件限制策略的“允许-拒绝”列表和应用程序清单
 
@@ -48,9 +48,9 @@ ms.locfileid: "80855090"
 
 2.  若要启用高级日志记录功能并将路径设置为要写入日志文件的位置，请创建以下注册表值。
 
-    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
+    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers"**
 
-    字符串值： *NameLogFile 到 NameLogFile 的路径*
+    字符串值： *LogFileName 到 LogFileName 的路径*
 
     由于 SRP 在运行时对所有应用程序进行评估，因此每次运行该应用程序时，都会将一个条目写入日志文件*NameLogFile* 。
 
@@ -69,5 +69,4 @@ ms.locfileid: "80855090"
     写入日志文件的输出示例：
 
 **explorer （PID = 4728） identifiedC： \ Windows\system32\onenote.exe As 无限制 usingpath rule，Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}**   SRP 检查并设置为 "阻止" 的所有应用程序和相关代码将记录在日志文件中，然后可以使用该日志文件来确定应将哪些可执行文件视为允许列表。
-
 
