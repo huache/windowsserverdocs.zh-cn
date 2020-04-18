@@ -4,16 +4,16 @@ description: 关于 Windows Server 的版本信息
 ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
-ms.date: 11/12/2019
+ms.date: 04/14/2020
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: 19911ceb52587a0897e7fde34bd4b95d375c13a8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 455b5609c1409d7c01e464c51025042d3b0090c8
+ms.sourcegitcommit: 719b2ee1fe08429cb7929a201dd2816e861ec534
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825840"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81385311"
 ---
 # <a name="windows-server-release-information"></a>Windows Server 版本信息
 
@@ -28,8 +28,11 @@ Microsoft 已更新其服务模型。 半年频道每年发布两次功能更新
 | Windows Server 版本 1909（半年频道）（Datacenter Core、Standard Core） | 1909  | 18363.418.191007-0143 | 2019/11/12 | 2021/05/11 | 查看说明 |
 | Windows Server 版本 1903（半年频道）（Datacenter Core、Standard Core） | 1903  | 18362.30.190401-1528 | 2019/5/21 | 2020/12/08 | 查看说明 |
 |Windows Server 2019（长期服务频道）（Datacenter、Essentials、Standard）|1809|17763.107.1010129-1455|2018/11/13|2024/01/09|2029/01/09|
-|Windows Server 版本 1809（半年频道）（Datacenter Core、Standard Core）|1809|17763.107.1010129-1455|2018/11/13|2020/5/12|查看说明|
+|Windows Server 版本 1809（半年频道）（Datacenter Core、Standard Core）|1809|17763.107.1010129-1455|2018/11/13|2020/11/10|查看说明|
 | Windows Server 2016（长期服务频道）| 1607 | 14393.0 | 2016/10/15 |2022/01/11| 2027/01/11|
 
-> [!NOTE]
+> [!IMPORTANT]
+> 由于公共健康危机仍在持续，Windows Server 版本1809 的服务结束时间已延迟。 有关详细信息，请参阅[我们的支持文章](https://support.microsoft.com/help/4557164)。
+
+>[!NOTE]
 > Windows Server 1803 及更高版本受[现代生命周期策略](https://support.microsoft.com/help/30881)的约束。 请参阅 [Windows 生命周期常见问题解答](https://support.microsoft.com/help/18581/lifecycle-faq-windows-products)和[服务渠道的比较](../get-started-19/servicing-channels-19.md)，详细了解服务要求和其他重要信息。
