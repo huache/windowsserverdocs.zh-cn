@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd94e997deaaf358c72793e6ff35d51a9ab3df6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 76665d91cc1e2997a837721ffbc51b0513dd7c1a
+ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80826181"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81524932"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>用于排查 DNS 相关激活问题的指南
 
@@ -23,7 +23,7 @@ ms.locfileid: "80826181"
    - Windows Server 2012 R2
    - Windows Server 2012
    - Windows Server 2008 R2
-   - Windows 2008 Server
+   - Windows Server 2008
    - Windows 10
    - Windows 8.1
    - Windows 8
@@ -241,7 +241,7 @@ allow-update { any; };
 - DNS 系统（例如 Active Directory 域服务 (AD DS) DNS）分配的计算机域（适用于已加入域的计算机）。
 - 动态主机配置协议 (DHCP) 分配的计算机域（适用于工作组计算机）。 根据征求意见文档 (RFC) 2132 中的定义，此域名由代码值为 15 的选项定义。
 
-默认情况下，KMS 主机将其 SRV 记录注册到 DNS 区域中，该区域对应于 KMS 主机的域。 例如，假定 KMS 主机加入 contoso.com 域。 在这种情况下，KMS 主机会将其 _vmlcs SRV 记录注册到 contoso.com DNS 区域。 因此，记录会将服务标识为 VLMCS._TCP.CONTOSO.COM。
+默认情况下，KMS 主机将其 SRV 记录注册到 DNS 区域中，该区域对应于 KMS 主机的域。 例如，假定 KMS 主机加入 contoso.com 域。 在这种情况下，KMS 主机会将其 _vmlcs SRV 记录注册到 contoso.com DNS 区域。 因此，记录会将服务标识为 _VLMCS._TCP.CONTOSO.COM。
 
 如果 KMS 主机和 KMS 客户端使用不同的 DNS 区域，则必须将 KMS 主机配置为自动在多个 DNS 域中发布其 SRV 记录。 要实现这一点，请执行下列操作：
 

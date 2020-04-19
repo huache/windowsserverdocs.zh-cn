@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/24/2020
+ms.date: 04/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 34f5fdb5a2826173edf471fd65248008761863dd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861410"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81279693"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -26,8 +26,27 @@ ms.locfileid: "80861410"
 
 |用户组 |版本  |
 |-----------|---------|
-|公用     |1.2.790  |
-|Insider    |1.2.790  |
+|Public     |1.2.790  |
+|预览体验成员    |1.2.940  |
+
+## <a name="updates-for-version-12940"></a>针对版本 1.2.940 的更新
+
+*发布日期：2020/04/14*
+
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZU)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZV)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tM6I)
+
+- 已为桌面连接添加了新的显示设置选项（右键单击“连接中心”上的桌面图标时提供）。
+  - 现在有三个显示配置选项：  “所有显示器”、  “单个显示器”和“选择显示器”  。
+  - 现在，仅当选择了某个显示配置时，才显示可用设置。
+  - 在“选择显示器”模式下，有一个新的“最大化到当前显示器”  选项，可用于在不重新连接的情况下动态更改用于会话的显示器。 启用后，将会话最大化会导致在会话窗口所在的所有显示器上全屏显示该会话。
+  - 对于“所有显示器”和“选择显示器”模式，我们已添加了一个新的“开窗时使用单个显示器”  选项。 此选项在你退出全屏模式时会自动将会话切换到单个显示器，并在你将窗口最大化时自动返回到多个显示器。
+- 我们已将新的“显示设置”  组添加到系统菜单中，该菜单在你右键单击开窗桌面会话的标题栏时显示。 这将允许你在会话过程中动态更改某些设置。 例如，可以更改“在开窗时使用单个显示器模式”  和“最大化到当前显示器”  设置。
+- 退出全屏模式时，会话窗口将返回到你首次进入全屏模式时它所在的原始位置。
+- 从“关于”页重置用户数据现在会在完成后重定向到“连接中心”，而不是关闭客户端。
+- 解决了选项卡导航和屏幕阅读器存在的某些辅助功能问题。
+- 修复了在不同缩放系数的显示器之间拖动桌面会话窗口时的闪烁和收缩问题。
+- 修复了重定向相机时出现的错误。
+- 修复了多个崩溃问题以提高可靠性。
 
 ## <a name="updates-for-version-12790"></a>针对版本 1.2.790 的更新
 
