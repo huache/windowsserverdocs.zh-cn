@@ -1,24 +1,20 @@
 ---
 title: nfsadmin
-description: '适用于 * * * * 的 Windows 命令主题 '
-ms.custom: na
+description: 适用于 * * * * 的 Windows 命令主题
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7375b2cf-c6b8-45b5-abf6-6c10e462defd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2658cf610e4328d382b9224f4230d68a022d1cc3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6134ac7737cd761e752082b336e851dead23bd14
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373230"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838980"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -53,8 +49,8 @@ ms.locfileid: "71373230"
   
 **nfsadmin 客户端**`[`*computerName*`] [`\-u*用户名*`[`\-p *Password*`]]` config*选项*`[...]`  
   
-## <a name="description"></a>描述  
-**Nfsadmin**命令\-行实用程序在运行 Microsoft Services For 网络文件系统 \(nfs\)的本地或远程计算机上管理 nfs 服务器或客户端 nfs 服务器。 如果使用不具备所需权限的帐户登录，则可以指定帐户的用户名和密码。 **Nfsadmin**执行的操作取决于提供的命令参数。  
+## <a name="description"></a>说明  
+**Nfsadmin**命令\-行实用程序在运行 Microsoft Services For 网络文件系统 \(nfs\)的本地或远程计算机上管理 nfs 服务器或客户端 nfs 服务器。 如果以没有所需权限的帐户身份登录，可以指定具有所需权限的帐户的用户名和密码。 **Nfsadmin**执行的操作取决于提供的命令参数。  
   
 除了服务\-特定的命令参数和选项外， **nfsadmin**还接受以下内容：  
   
@@ -109,7 +105,7 @@ ms.locfileid: "71373230"
 **fsize\=** \=*大小*  
 将*size*设置为审核文件的最大大小（mb）。 默认的最大大小为 7 MB。  
   
-**|\-\]\[** **\+|\-** **\]\[** **\+** **|\-** **\]** \[ **\+|** **\-** **\]\[\+** |\-\] **\+** \[ **\=** \[ **\+** | **\-** \] **\[\+|** **\-\]**  
+**审核\=** \[ **\+** | **\-** \]**mount** \[ **\+** | **\-\]\[** \+ **|\-\]** \[**写入**\+|\- **\-** **\]** \[**create**\+| **\-\]\[** \+ **|** \- **\]\[** \+| **\-\]** **\-** **all** **read** **\-** **delete** **\-** **\+**  
 指定要记录的事件。 若要开始记录事件，请在事件名称之前键入一个加号 \( **\+** \);若要停止记录事件，请在事件名称之前键入减号 \( **\-** \)。 如果省略符号，则采用加号。 不要将**所有**事件与任何其他事件名称一起使用。  
   
 **lockperiod\=** <em>秒</em>  
@@ -199,7 +195,7 @@ DWOrd obcaseinsensitive
 指定 NFS 客户端的常规设置。 必须至少提供以下选项之一和**config**命令参数：  
   
 **fileaccess\=** <em>模式</em>  
--   指定在网络文件系统 \(NFS\) 服务器上创建的文件的默认权限模式。 *Mode*参数由0到 7 \(包含的三位数组成\) 表示授予用户、组和其他 \(分别\)的默认权限。 数字转换为 UNIX\-样式权限，如下所示： 0\=无，1\=x，2\=w，3\=wx，4\=r，5\=rx，6\=rw，7\=rwx。 例如， **fileaccess\=750**向所有者授予 rwx 权限，对组具有 rx 权限，对其他用户不具有访问权限。  
+-   指定在网络文件系统 \(NFS\) 服务器上创建的文件的默认权限模式。 *Mode*参数由0到 7 \(包含的三位数组成\) 表示授予用户、组和其他 \(分别\)的默认权限。 数字转换为 UNIX\-样式权限，如下所示：0\=无，1\=x，2\=w，3\=wx，4\=r，5\=rx，6\=rw，7\=rwx。 例如， **fileaccess\=750**向所有者授予 rwx 权限，对组具有 rx 权限，对其他用户不具有访问权限。  
   
 **mapsvr\=** <em>服务器</em>  
 将*服务器*设置为 NFS 客户端的用户名映射服务器。 尽管此选项仍可与以前版本的兼容性一起使用，但你应改为使用**sfuadmin**实用程序。  
@@ -236,7 +232,7 @@ DWOrd obcaseinsensitive
 -   **wsize**  
   
 **fileaccess\=** <em>模式</em>  
-指定在网络文件系统 \(NFS\) 服务器上创建的文件的默认权限模式。 *Mode*参数由0到 7 \(包含的三位数组成\) 表示授予用户、组和其他 \(分别\)的默认权限。 数字转换为 UNIX\-样式权限，如下所示： 0\=无，1\=x，2\=w，3\=wx，4\=r，5\=rx，6\=rw，7\=rwx。 例如， **fileaccess\=750**向所有者授予 rwx 权限，对组具有 rx 权限，对其他用户不具有访问权限。  
+指定在网络文件系统 \(NFS\) 服务器上创建的文件的默认权限模式。 *Mode*参数由0到 7 \(包含的三位数组成\) 表示授予用户、组和其他 \(分别\)的默认权限。 数字转换为 UNIX\-样式权限，如下所示：0\=无，1\=x，2\=w，3\=wx，4\=r，5\=rx，6\=rw，7\=rwx。 例如， **fileaccess\=750**向所有者授予 rwx 权限，对组具有 rx 权限，对其他用户不具有访问权限。  
   
 如果未指定命令选项或参数，则**nfsadmin 客户端**将显示当前的 NFS 客户端配置设置。  
   
