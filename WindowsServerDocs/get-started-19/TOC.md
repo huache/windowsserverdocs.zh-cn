@@ -12,7 +12,7 @@
 ## [服务器核心应用兼容性按需功能 (FOD)](install-fod-19.md)
 ## [标准 | Datacenter Edition 比较](editions-comparison-19.md)
 ## 删除的功能
-### [Windows Server 中删除或计划替换的功能](removed-features.md)
+### [Windows Server 中已删除或计划取代的功能](removed-features.md)
 ### [从 Windows Server 2019 起已删除或计划替换的功能](removed-features-19.md)
 ### [从 Windows Server 版本 1903 起已删除或计划替换的功能](removed-features-1903.md)
 ## [Windows Server 版本信息](../get-started/windows-server-release-info.md)

@@ -18,7 +18,7 @@
 #### [运行 Linux 的最佳做法](hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md)
 #### [运行 FreeBSD 的最佳做法](hyper-v/Best-practices-for-running-FreeBSD-on-Hyper-V.md)
 ### [按世代和来宾的功能兼容性](hyper-v/Hyper-V-feature-compatibility-by-generation-and-guest.md)
-### [开始行动](hyper-v/get-started/Get-started-with-Hyper-V-on-Windows.md)
+### [入门](hyper-v/get-started/Get-started-with-Hyper-V-on-Windows.md)
 #### [安装 Hyper-V](hyper-v/get-started/Install-the-Hyper-V-role-on-Windows-Server.md)
 #### [创建虚拟交换机](hyper-v/get-started/create-a-virtual-switch-for-Hyper-V-virtual-machines.md)
 #### [创建虚拟机](hyper-v/get-started/create-a-virtual-machine-in-Hyper-V.md)

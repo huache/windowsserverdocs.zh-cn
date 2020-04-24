@@ -9,10 +9,10 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
 ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77520721"
 ---
 # <a name="windows-server-2016-improvements"></a>Windows Server 2016 改进功能
@@ -321,7 +321,7 @@ MaxAllowedPhaseOffset 位于使用“全局配置”设置的 System\Windows Tim
 ### <a name="event-logging"></a>事件日志记录
 若要获取全部情况，你还需要事件日志信息。 通过收集系统事件日志并筛选 Time-Server、Microsoft-Windows-Kernel-Boot 和 Microsoft-Windows-Kernel-General，你可能能够发现是否存在更改了时间的其他影响因素，例如，第三方。 排除外部干扰可能需要这些日志。 组策略会影响写入日志的事件日志。 有关详细信息，请参阅上述有关“使用组策略”部分。
 
-### <a name="W32Logging"></a>W32time 调试日志记录
+### <a name="w32time-debug-logging"></a><a name="W32Logging"></a>W32time 调试日志记录
 若要启用 w32tm 进行审核，可使用以下命令启用日志记录，该日志记录可显示时钟的定期更新并指示源时钟。 重启服务以启用新的日志记录。 
 
 有关详细信息，请参阅[如何启用 Windows 时间服务中的调试日志记录](https://support.microsoft.com/kb/816043)。

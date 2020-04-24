@@ -9,17 +9,17 @@ ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a5835cd601b2eb327c8605d70bf075e6c8e8414
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71962993"
 ---
 # <a name="rebuild-the-tokensdat-file"></a>重新生成 Tokens.dat 文件
 
 解决 Windows 激活问题时，可能需要重新生成 Tokens.dat 文件。 本文详细介绍如何完成此操作。
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 
 若要重新生成 Tokens.dat 文件，请执行以下步骤：
 

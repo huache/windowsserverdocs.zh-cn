@@ -1,5 +1,5 @@
 ---
-title: 遥控器
+title: 远程
 description: 有关利用远程访问和服务器管理的指南
 ms.prod: windows-server
 layout: LandingPage
@@ -10,13 +10,13 @@ ms.author: coreyp
 manager: dougkim
 ms.localizationpriority: high
 ms.openlocfilehash: 659f40f2e6e33378ef9828a746f72c43edaf0859
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71395867"
 ---
-# <a name="remote"></a>遥控器
+# <a name="remote"></a>远程
 
 >[!TIP]
 > 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)了解具体信息。

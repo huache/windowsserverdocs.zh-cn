@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 6bd97802fbef342520e92a857a1a53acf3e8d7a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385940"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>将 MBR 磁盘转换为 GPT 磁盘
@@ -47,9 +47,9 @@ ms.locfileid: "71385940"
 
 3. 键入 `diskpart`。 如果该磁盘未包含任何分区或卷，请跳到步骤 6。
 
-4.  在 **DISKPART** 提示符下，键入 `list disk`。 请记下要转换的磁盘编号。
+4.  在 DISKPART  提示符下，键入 `list disk`。 请记下要转换的磁盘编号。
 
-5.  在 **DISKPART** 提示符下，键入 `select disk <disknumber>`。
+5.  在 DISKPART  提示符下，键入 `select disk <disknumber>`。
 
 6.  在 DISKPART  提示符下，键入 `clean`。
 
@@ -58,10 +58,10 @@ ms.locfileid: "71385940"
 
 7.  在 DISKPART  提示符下，键入 `convert gpt`。
 
-| 值  | 描述  |
+| 值  | 说明  |
 | ----- | ---- |
 | **list disk** | 显示磁盘列表和有关磁盘的信息，例如磁盘大小、可用空间量、磁盘是基本磁盘还是动态磁盘，以及磁盘是使用主启动记录 (MBR) 还是 GUID 分区表 (GPT) 分区样式。 用星号 (*) 标记的磁盘具有焦点。 |
-| select disk  *disknumber* | 选择指定的磁盘（其中 *disknumber* 是磁盘编号），并赋予其焦点。 |
+| **select disk** *disknumber* | 选择指定的磁盘（其中 *disknumber* 是磁盘编号），并赋予其焦点。 |
 | **clean** | 从具有焦点的磁盘中删除所有分区或卷。  |
 | **convert gpt**| 将具有主启动记录 (MBR) 分区样式的空基本磁盘转换为具有 GUID 分区表 (GPT) 分区样式的基本磁盘。 |
 

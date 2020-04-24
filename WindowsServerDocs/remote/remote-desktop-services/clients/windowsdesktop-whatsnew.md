@@ -10,10 +10,10 @@ ms.author: helohr
 ms.date: 04/14/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81279693"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
@@ -26,8 +26,8 @@ ms.locfileid: "81279693"
 
 |用户组 |版本  |
 |-----------|---------|
-|Public     |1.2.790  |
-|预览体验成员    |1.2.940  |
+|公用     |1.2.790  |
+|Insider    |1.2.940  |
 
 ## <a name="updates-for-version-12940"></a>针对版本 1.2.940 的更新
 

@@ -9,20 +9,20 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 6db73f963766e480f8ec478657354a51bcb1f456
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385818"
 ---
 # <a name="move-disks-to-another-computer"></a>将磁盘移到另一台计算机
 
-> 适用于  ：Windows 10、Windows 8.1、Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **适用于：** Windows 10、Windows 8.1、Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 本部分介绍了将磁盘移到另一台计算机需要采取的步骤，及其关联时需注意的事项。 尝试将磁盘从一台计算机移到另一台计算机之前，你可能需要打印此过程或记下这些步骤。
 
 > [!NOTE]
-> 至少必须是 **Backup Operators** 或 **Administrators** 组的成员才能完成这些步骤。
+> 至少必须是“备份操作员”  或“管理员”  组的成员才能完成这些步骤。
 
 ## <a name="verify-volume-health"></a>验证卷的运行状况
 

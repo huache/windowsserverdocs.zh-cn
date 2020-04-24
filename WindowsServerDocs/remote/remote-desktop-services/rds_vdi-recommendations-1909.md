@@ -10,10 +10,10 @@ author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
 ms.openlocfilehash: 44aa465773674625fa392a644ffb188140138bde
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77519592"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>针对虚拟桌面基础结构 (VDI) 角色优化 Windows 10 版本 1909
@@ -101,7 +101,7 @@ VDI 环境通过网络向计算机用户提供完整的桌面会话（包括应�
 
 ### <a name="to-sysprep-or-not-sysprep"></a>运行或者不运行 Sysprep
 
-Windows 10 具有一个名为[系统准备工具](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)（通常简写为“Sysprep”）的内置功能。 使用 Sysprep 工具可以准备一个自定义的 Windows 10 映像供复制。 Sysprep 进程确保生成的操作系统具有独特性，可在生产环境中正常运行。
+Windows 10 有一项名为[系统准备工具](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)（通常简写为“Sysprep”）的内置功能。 使用 Sysprep 工具可以准备一个自定义的 Windows 10 映像供复制。 Sysprep 进程确保生成的操作系统具有独特性，可在生产环境中正常运行。
 
 运行或者不运行 Sysprep 都有适当的理由。 使用 VDI 时，你可能希望能够自定义默认用户配置文件，后续用户在使用此映像登录时，可将此配置文件用作模板。 你可能已经安装了所需的应用，同时希望能够控制每个应用的设置。
 

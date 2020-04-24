@@ -9,10 +9,10 @@ ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: b0707f8aa7a09fdd18c2107e375ad06d3909955e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71356898"
 ---
 # <a name="windows-admin-center-case-studies"></a>Windows Admin Center 案例研究
@@ -138,7 +138,7 @@ Inside Technologies 将 Windows Admin Center 部署在一台服务器上来管�
 
 Inside Technologies 使用 Windows Admin Center 来远程管理客户，同时集成了 Azure Activity Directory，并且因为使用了多重身份验证而提高了安全性。  Windows Admin Center 上的仪表板改进了每台服务器上每个角色状态的可见性，使用 PowerShell 可以轻松管理到最细微的细节。  相对于为每个服务器角色使用不同的控制台，Inside Technologies 管理服务器所用的时间有所减少。
 
-## <a id="secureguard-copa-data"></a>SecureGUARD / COPA-DATA
+## <a name="secureguard--copa-data"></a><a id="secureguard-copa-data"></a>SecureGUARD / COPA-DATA
 
 [SecureGUARD GmbH](http://www.secureguard.at/) 利用一系列产品和自定义工程服务帮助公司解决安全和云基础结构中复杂的 IT 问题。 SecureGUARD 构建 IT 安全设备和基于 Microsoft Windows Server 的设备，最近还在为云基础结构构建机架级融合设备。 SecureGUARD 是应用程序开发和数据中心的 Microsoft 金牌合作伙伴。
  

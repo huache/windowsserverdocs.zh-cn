@@ -9,10 +9,10 @@ ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 7a4dacd611741942e874e831fd9598aeda5e97b3
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81269274"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>为 Windows Admin Center 准备环境
@@ -87,7 +87,7 @@ Microsoft Hyper-V Server 2016 现在可以使用 Windows Admin Center 进行管�
 3. 启用文件服务器角色
 4. 启用 PowerShell 的 Hyper-V 模块
 
-### <a name="step-1-install-windows-management-framework-51"></a>第 1 步：安装 Windows Management Framework 5.1
+### <a name="step-1-install-windows-management-framework-51"></a>步骤 1：安装 Windows Management Framework 5.1
 
 默认情况下，Microsoft Hyper-V Server 2012 R2 中未包含 Windows Admin Center 需要的 PowerShell 功能。 要使用 Windows Admin Center 管理 Microsoft Hyper-V Server 2012 R2，将需要安装 WMF 5.1 或更高版本。
 

@@ -1,5 +1,5 @@
 ---
-title: 文件夹重定向、脱机文件和漫游用户策略文件概述
+title: 文件夹重定向、脱机文件和漫游用户配置文件概述
 description: 文件夹重定向、脱机文件和漫游用户策略文件技术的概述。
 ms.prod: windows-server
 ms.topic: article
@@ -9,13 +9,13 @@ ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a7c37638e25fc0d16447ab57bf369255dab9c859
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75950249"
 ---
-# <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>文件夹重定向、脱机文件和漫游用户策略文件概述
+# <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>文件夹重定向、脱机文件和漫游用户配置文件概述
 
 >适用于：Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2
 
@@ -112,7 +112,7 @@ ms.locfileid: "75950249"
     1. 如果该计算机是用户的主计算机之一，则 Windows 应用“漫游用户策略文件”和“文件夹重定向”设置。
     2. 如果该计算机不是用户的主计算机之一，则 Windows 加载该用户缓存的本地配置文件（如果存在），或创建新的本地配置文件。 Windows 还根据之前应用的组策略设置（保留在本地“文件夹重定向”配置中）指定的删除操作删除任何现有的重定向文件夹。
 
-有关详细信息，请参阅[为文件夹重定向以及漫游用户配置文件部署主计算机](deploy-primary-computers.md)。
+有关详细信息，请参阅 [Deploy Primary Computers for Folder Redirection and Roaming User Profiles](deploy-primary-computers.md)。
 
 ## <a name="hardware-requirements"></a>硬件要求
 

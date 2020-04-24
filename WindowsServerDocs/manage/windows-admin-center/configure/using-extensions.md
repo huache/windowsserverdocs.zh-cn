@@ -8,10 +8,10 @@ ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 2b8a9f5ebab22891b8b97c9c56bba3837cbb9371
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81269294"
 ---
 # <a name="install-and-manage-extensions"></a>安装和管理扩展
@@ -36,7 +36,7 @@ Windows Admin Center 支持多个源，你可以一次从多个源查看和管�
 1. 单击右上角的“设置”按钮，  然后在左窗格中单击“扩展”。 
 2. 在右窗格中，单击“源”  选项卡。
 3. 单击“添加”按钮以添加另一源。  对于 NuGet 源，请输入 NuGet V2 源 URL。 NuGet 源提供者或管理员应该能够提供 URL 信息。 对于文件共享，请输入在其中存储扩展包文件 (.nupkg) 的文件共享的完整路径。
-4. 单击**添加**。 如果网关必须在提升模式下运行才能进行此更改，则会显示 UAC 提升提示。 仅当在桌面模式下运行 Windows Admin Center 时才会显示此提示。
+4. 单击 **“添加”** 。 如果网关必须在提升模式下运行才能进行此更改，则会显示 UAC 提升提示。 仅当在桌面模式下运行 Windows Admin Center 时才会显示此提示。
 
 “可用扩展”列表会显示所有已注册源提供的扩展。  可以使用“包源”列来查看每个扩展来自哪个源。 
 

@@ -7,10 +7,10 @@ author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
 ms.openlocfilehash: 76665d91cc1e2997a837721ffbc51b0513dd7c1a
-ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81524932"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>用于排查 DNS 相关激活问题的指南
@@ -23,7 +23,7 @@ ms.locfileid: "81524932"
    - Windows Server 2012 R2
    - Windows Server 2012
    - Windows Server 2008 R2
-   - Windows Server 2008
+   - Windows 2008 Server
    - Windows 10
    - Windows 8.1
    - Windows 8

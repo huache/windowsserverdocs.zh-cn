@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 5c6efb0697af663b32ce6f0e27634c3962eca492
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71402109"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>将 GPT 磁盘转换为 MBR 磁盘
@@ -56,7 +56,7 @@ ms.locfileid: "71402109"
 
 7.  在 DISKPART  提示符下，键入 `convert mbr`。
 
-|                值                  |      描述   |
+|                值                  |      说明   |
 | ------------------------------------- | -----------------  |
 |  <strong>list disk</strong>  | 显示磁盘列表和有关磁盘的信息，例如磁盘大小、可用空间量、磁盘是基本磁盘还是动态磁盘，以及磁盘是使用主启动记录 (MBR) 还是 GUID 分区表 (GPT) 分区样式。 用星号 (\*) 标记的磁盘具有焦点。 |
 | <strong>select disk</strong> |                                                                                                          选择指定的磁盘（其中 <em>disknumber</em> 是磁盘编号），并赋予其焦点。                                                                                                           |

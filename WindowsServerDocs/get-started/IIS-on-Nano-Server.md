@@ -11,10 +11,10 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: d2522dc94c0d3b68c75e14fec19466529256aad0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80826860"
 ---
 # <a name="iis-on-nano-server"></a>Nano Server 上的 IIS
@@ -240,7 +240,7 @@ PS C:\> $sm.ApplicationPools.Add(DemoAppPool)
     $sm.CommitChanges()  
     ```  
 
-    还可以使用此语法将服务器名称指示 (SNI) 和特定主机名配合使用：`$sm.Sites[Default Web Site].Bindings.Add(*:443: www.foo.bar.com, $hash, My, Sni.`  
+    还可以使用此语法将服务器名称指示 (SNI) 和特定主机名配合使用：`$sm.Sites[Default Web Site].Bindings.Add(*:443:www.foo.bar.com, $hash, My, Sni.`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>附录 1：IIS 子功能列表
 

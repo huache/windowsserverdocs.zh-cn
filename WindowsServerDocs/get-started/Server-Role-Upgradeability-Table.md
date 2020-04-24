@@ -11,10 +11,10 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e1b783c43eb435e61c7caaccaf842a0137b5eec
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80826520"
 ---
 # <a name="server-role-upgrade-and-migration-matrix-for-windows-server-2016"></a>用于 Windows Server 2016 的服务器角色升级和迁移矩阵
