@@ -9,10 +9,10 @@ ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c2614c0180b32a0215454f2d725d6a962986ef1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71394404"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>禁用个别重定向文件夹上的脱机文件
@@ -52,7 +52,7 @@ ms.locfileid: "71394404"
 
 以下一个或多个 Windows PowerShell cmdlet 与[禁用个别重定向文件夹上的脱机文件](#disabling-offline-files-on-individual-redirected-folders)中所述过程的功能相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
 
-此示例将在 contoso.com 域的 MyOu 组织单位中创建名为“脱机文件设置”的新 GPO（LDAP 的可分辨名称为“ou=MyOU,dc=contoso,dc=com”）* ***  。 然后，它将禁用视频重定向文件夹的脱机文件。
+此示例将在 contoso.com 域的 MyOu 组织单位中创建名为“脱机文件设置”的新 GPO（LDAP 的可分辨名称为“ou=MyOU,dc=contoso,dc=com”）    。 然后，它将禁用视频重定向文件夹的脱机文件。
 
 ```PowerShell
 New-GPO -Name "Offline Files Settings" | New-Gplink -Target "ou=MyOu,dc=contoso,dc=com" -LinkEnabled Yes

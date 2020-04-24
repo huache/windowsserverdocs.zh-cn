@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77517532"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 要求
@@ -38,7 +38,7 @@ ms.locfileid: "77517532"
   
 -   [权限要求](ad-fs-requirements.md#BKMK_13)  
   
-## <a name="BKMK_1"></a>证书要求  
+## <a name="certificate-requirements"></a><a name="BKMK_1"></a>证书要求  
   
 ### <a name="ssl-certificates"></a>SSL 证书
 
@@ -90,7 +90,7 @@ Web 应用程序代理上的 SSL 证书必须满足以下要求
 ### <a name="user-certificates"></a>用户证书
 - 将 x509 用户证书身份验证用于 AD FS 时，所有用户证书必须链接到 AD FS 和 Web 应用程序代理服务器信任的根证书颁发机构。
 
-## <a name="BKMK_2"></a>硬件要求  
+## <a name="hardware-requirements"></a><a name="BKMK_2"></a>硬件要求  
 AD FS 和 Web 应用程序代理硬件要求（物理要求或虚拟要求）都根据 CPU 而定，因此，你应调整场的大小以提供处理容量。  
 - 使用 [AD FS 2016 容量计划电子表格](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)确定所需的 AD FS 和 Web 应用程序代理服务器的数量。
 
@@ -106,7 +106,7 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
 
 如果将 SQL Server 用于 AD FS 配置数据库，请根据最基本的 SQL Server 建议调整 SQL Server 的大小。  AD FS 数据库非常小，并且 AD FS 不会对数据库实例进行大量的处理负载。  但 AD FS 确实会在身份验证过程中多次连接到数据库，因此网络连接应是可靠的。  遗憾的是，AD FS 配置数据库不支持 SQL Azure。
   
-## <a name="BKMK_3"></a>代理要求  
+## <a name="proxy-requirements"></a><a name="BKMK_3"></a>代理要求  
   
 -   对于 Extranet 访问，必须部署属于远程访问服务器角色的 Web 应用程序代理角色服务。 
 
@@ -116,7 +116,7 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
   
 -   不能在同一台计算机上安装联合服务器和 Web 应用程序代理角色服务。  
   
-## <a name="BKMK_4"></a>AD DS 要求  
+## <a name="ad-ds-requirements"></a><a name="BKMK_4"></a>AD DS 要求  
 **域控制器要求**  
   
 - AD FS 需要运行 Windows Server 2008 或更高版本的域控制器。
@@ -165,7 +165,7 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
   
 -   AD FS 服务帐户必须具有读取包含对 AD FS 服务进行用户身份验证的每个域中用户属性的权限。  
   
-## <a name="BKMK_5"></a>配置数据库要求  
+## <a name="configuration-database-requirements"></a><a name="BKMK_5"></a>配置数据库要求  
 本部分介绍分别使用 Windows 内部数据库 (WID) 或 SQL Server 数据库作为数据库的 AD FS 场的要求和限制：  
   
 **WID**  
@@ -188,7 +188,7 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
 
 - SQL Server 场支持 SAML 项目解析和令牌重放检测。  
   
-## <a name="BKMK_6"></a>浏览器要求  
+## <a name="browser-requirements"></a><a name="BKMK_6"></a>浏览器要求  
 通过浏览器或浏览器控件执行 AD FS 身份验证时，浏览器必须符合遵守以下要求：  
   
 - 必须启用 JavaScript  
@@ -200,13 +200,13 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
 - 对于用户证书和设备证书身份验证，浏览器必须支持 SSL 客户端证书身份验证  
 
 - 若要使用 Windows 集成身份验证进行无缝登录，必须在本地 Intranet 区域或受信任的站点区域中配置联合身份验证服务名称（例如 https:\/\/fs.contoso.com）。
-  ## <a name="BKMK_7"></a>网络要求  
+  ## <a name="network-requirements"></a><a name="BKMK_7"></a>网络要求  
  
 **防火墙要求**  
   
 位于 Web 应用程序代理和联合服务器场之间的防火墙以及客户端和 Web 应用程序代理之间的防火墙都必须启用 TCP 端口 443 入站。  
   
-此外，如果需要客户端用户证书身份验证（使用 X509 用户证书的 clientTLS 身份验证），并且未启用端口 443 上的 certauth 终结点，则 AD FS 2016 要求在客户端和 Web 应用程序代理之间的防火墙上启用 TCP 端口 49443 入站。 无需在 Web 应用程序代理和联合服务器之间的防火墙上执行此操作。 
+此外，如果需要客户端用户证书身份验证\(使用 X509 用户证书的 clientTLS 身份验证\)，并且未启用端口 443 上的 certauth 终结点，则 AD FS 2016 要求在客户端和 Web 应用程序代理之间的防火墙上启用 TCP 端口 49443 入站。 无需在 Web 应用程序代理和联合服务器之间的防火墙上执行此操作。 
 
 有关混合端口要求的其他信息，请参阅 [混合标识端口和协议](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports)。 
 
@@ -220,7 +220,7 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
   
 -   DMZ 中的每个 Web 应用程序代理服务器都必须能够将 AD FS 服务名称解析为多个或单个 AD FS 服务器的负载均衡器。 可使用 DMZ 网络中的备用 DNS 服务器或使用 HOSTS 文件更改本地服务器分辨率来实现这一操作。  
   
--   对于 Windows 集成身份验证，必须将 DNS A 记录（而不是 CNAME）用作联合身份验证服务名称。  
+-   对于 Windows 集成身份验证，必须将 DNS A 记录\(而不是 CNAME\)用作联合身份验证服务名称。  
 
 -   对于端口 443 上的用户证书身份验证，必须在 DNS 中配置“certauth.\<federation service name\>”才能解析为联合服务器或 Web 应用程序代理。
 
@@ -237,7 +237,7 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
 - 不建议使用 DNS 轮循机制作为负载均衡的方法。 使用这种类型的负载均衡不提供使用运行状况探测从负载均衡器中删除节点的自动化方法。 
 - 不建议在负载均衡器中使用基于 IP 的会话相关性或停滞会话对到 AD FS 的流量进行身份验证。 使用邮件客户端的旧身份验证协议连接到 Office 365 邮件服务 (Exchange Online) 时，这可能会导致某些节点重载。 
 
-## <a name="BKMK_13"></a>权限要求  
+## <a name="permissions-requirements"></a><a name="BKMK_13"></a>权限要求  
 执行 AD FS 的安装和初始配置的管理员必须具有 AD FS 服务器上的本地管理员权限。  如果本地管理员无权在 Active Directory 中创建对象，则他们必须先具有域管理员身份才能创建所需的 AD 对象，然后使用 AdminConfiguration 参数配置 AD FS 场。  
   
   
