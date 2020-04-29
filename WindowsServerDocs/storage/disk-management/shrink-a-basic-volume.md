@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 2baf24ed656ef06d44dff93180701d25e6852500
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385858"
 ---
 # <a name="shrink-a-basic-volume"></a>压缩基本卷
@@ -53,13 +53,13 @@ ms.locfileid: "71385858"
 
 4.  在 DISKPART  提示符下，键入 `shrink [desired=<desiredsize>] [minimum=<minimumsize>]`。 如果可能，将选择的卷压缩为 desiredsize  兆字节 (MB)，如果 desiredsize  太大，则压缩为 minimumsize  。
 
-| 值             | 描述 |
+| 值             | 说明 |
 | ---               | ----------- |
 | **list volume** | 显示所有磁盘上的基本卷和动态卷的列表。 |
-| **select volume** | 选择指定的卷（其中 <em>volumenumber</em> 是卷编号），并赋予其焦点。 如果未指定卷，则 **select** 命令会列出具有焦点的当前卷。 可以通过编号、驱动器号或装入点路径指定卷。 在基本磁盘上，如果选择卷，则还会赋予相应的分区焦点。 |
+| **select volume** | 选择指定的卷（其中 <em>volumenumber</em> 是卷编号），并赋予其焦点。 如果未指定卷，则 select  命令会列出具有焦点的当前卷。 可以通过编号、驱动器号或装入点路径指定卷。 在基本磁盘上，如果选择卷，则还会赋予相应的分区焦点。 |
 | **shrink** | 压缩具有焦点的卷以创建未分配空间。 不会丢失任何数据。 如果分区包含不可移动的文件（如页面文件或影子副本存储区域），则卷将压缩到不可移动的文件所在位置。 |
-| **desired=** <em>desiredsize</em> | 要恢复到当前分区中的兆字节空间量。 |
-| **minimum=** <em>minimumsize</em> | 要恢复到当前分区中的最小兆字节空间量。 如果未指定所需大小或最小大小，则该命令将回收可能的最大空间。 |
+| desired=  desiredsize | 要恢复到当前分区中的兆字节空间量。 |
+| minimum=  minimumsize | 要恢复到当前分区中的最小兆字节空间量。 如果未指定所需大小或最小大小，则该命令将回收可能的最大空间。 |
 
 ## <a name="additional-considerations"></a>其他注意事项
 

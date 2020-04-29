@@ -7,18 +7,33 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/02/2020
+ms.date: 04/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 540630ce4baa8246d654b0d50f203623705286c5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fd9e353c18293d22b18c6ffb6a57ad97a819a4a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859730"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650044"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Windows 应用商店客户端中的新增功能
 
 我们会定期更新 [Microsoft Store 客户端](windows.md)，添加新功能并修复问题。 可在下面找到最新更新。
+
+## <a name="updates-for-version-1011215"></a>针对版本 10.1.1215 的更新
+
+*发布日期：2020 年 4 月 20 日*
+
+- 更新了 Windows 虚拟桌面的用户代理字符串。
+
+## <a name="updates-for-version-1011195"></a>针对版本 10.1.1195 的更新
+
+*发布日期：2020 年 3 月 6 日*
+
+- 现在，即使应用已最小化或在后台运行，会话中的音频也可以继续播放。
+- 修复了在本地电脑和远程电脑之间切换键（CAPS LOCK、Num Lock 等）不同步的问题。
+- 64 位设备上的性能改进。
+- 修复了在应用挂起时发生崩溃的问题。
 
 ## <a name="updates-for-version-1011107"></a>针对版本 10.1.1107 的更新
 

@@ -32,7 +32,7 @@ sections:
             html: <p>对存储硬件进行虚拟化，使你能够基于超聚合群集中的服务器中分布的虚拟驱动器池创建卷。</p>
             image:
               src: ../media/i-store.svg
-            title: 存储空间直通
+            title: Storage Spaces Direct
           - href: ../failover-clustering/failover-clustering-overview.md
             html: <p>将多个服务器组合在一起，以便工作负荷（例如虚拟机）可以在群集中的任何服务器上运行，实现负载均衡以及正常在服务器之间进行故障转移。</p>
             image:
@@ -43,8 +43,23 @@ sections:
             image:
               src: ../media/i-network.svg
             title: 软件定义的网络
+          - href: ../manage/windows-admin-center/overview.md
+            html: <p>管理群集和其他 Windows 服务器。</p>
+            image:
+              src: ../media/i-admin-center.svg
+            title: Windows Admin Center
+          - href: ../azure-hybrid-services.md
+            html: <p>将群集连接到 Azure 混合服务以执行站点恢复、监视等操作。</p>
+            image:
+              src: ../media/i-microsoft-azure.svg
+            title: 连接到 Azure 混合服务
+          - href: ../azure-stack-hci
+            html: <p>将 Windows Server 2019 虚拟化和群集技术与所选的合作伙伴提供的经过验证的硬件解决方案进行配对，帮助你避免在对软件定义的数据中心进行调整时凭猜测行事。</p>
+            image:
+              src: ../media/i-azure-stack.svg
+            title: Azure Stack HCI
           - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
-            html: <p>将 Windows Server 虚拟化和群集技术与你选择的合作伙伴提供的经过验证的硬件解决方案进行配对，帮助你避免在对软件定义的数据中心进行调整时凭猜测行事。</p>
+            html: <p>将 Windows Server 2016 虚拟化和群集技术与所选的合作伙伴提供的经过验证的硬件解决方案进行配对，帮助你避免在对软件定义的数据中心进行调整时凭猜测行事。</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
             title: Windows Server 软件定义的 (WSSD)

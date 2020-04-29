@@ -9,12 +9,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: c33e5c6309c41e39aeda3a2bdff1a0caf72b2675
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a424a28be835fa2a941187b110907fff76e6f220
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860330"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650060"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>使用性能计数器来诊断远程桌面会话主机上的应用性能问题
 
@@ -22,8 +22,8 @@ ms.locfileid: "80860330"
 
 最难以诊断的问题之一是应用程序性能 — 应用程序运行缓慢或没有响应。 传统上，通过收集 CPU、内存、磁盘输入/输出和其他指标来启动诊断，然后使用 Windows Performance Analyzer 等工具来尝试找出问题的原因。 遗憾的是，在大多数情况下，此数据无法帮助你确定根本原因，因为资源消耗计数器具有频繁且较大的变化。 这样就难以读取数据并将其与报告的问题相关联。 为了帮助你快速解决应用性能问题，我们添加了可测量用户输入流的一些新性能计数器（可通过 [Windows 预览体验计划](https://insider.windows.com)[下载](#download-windows-server-insider-software)）。
 
->[!NOTE]
->“用户输入延迟”计数器仅与以下操作系统版本兼容：
+> [!NOTE]
+> “用户输入延迟”计数器仅与以下操作系统版本兼容：
 > - Windows Server 2019 或更高版本
 > - Windows 10 版本 1809 或更高版本
 
@@ -33,7 +33,7 @@ ms.locfileid: "80860330"
 
 ![远程桌面 - 用户输入从用户远程桌面客户端流向应用程序](./media/rds-user-input.png)
 
-“用户输入延迟”计数器可测量正在排队的输入和被[传统消息循环](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop)中的应用提取的输入之间的最大增量（在一个时间间隔内），如下面的流程图中所示：
+“用户输入延迟”计数器可测量正在排队的输入和被[传统消息循环](https://docs.microsoft.com/windows/win32/winmsg/about-messages-and-message-queues#message-loop)中的应用提取的输入之间的最大增量（在一个时间间隔内），如下面的流程图中所示：
 
 ![远程桌面 - 用户输入延迟性能计数器流](./media/rds-user-input-delay.png)
 
@@ -41,9 +41,9 @@ ms.locfileid: "80860330"
 
 例如，在下表中，用户输入延迟在此时间间隔内会被报告为 1000 毫秒。 计数器报告该时间间隔内最慢的用户输入延迟，因为用户对“慢”的感知由体验到的最慢输入时间（最大值），而不是所有总输入的平均速度确定。
 
-|数量| 0 | 1 | 2 |
-|------|---|---|---|
-|延迟 |16 毫秒| 20 毫秒| 1,000 毫秒|
+| 数量 |   0   |   1   |    2     |
+| ------ | ----- | ----- | -------- |
+| 延迟  | 16 毫秒 | 20 毫秒 | 1,000 毫秒 |
 
 ## <a name="enable-and-use-the-new-performance-counters"></a>启用和使用新性能计数器
 
@@ -53,7 +53,7 @@ ms.locfileid: "80860330"
 reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCounter" /t REG_DWORD /d 0x1 /f
 ```
 
->[!NOTE]
+> [!NOTE]
 > 如果使用的是 Windows 10 版本 1809 或更高版本或 Windows Server 2019 或更高版本，则无需启用注册表项。
 
 接下来，重新启动该服务器。 然后打开性能监视器并选择加号 (+)，如以下屏幕截图中所示。
@@ -68,12 +68,12 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 如果选择“每个进程的用户输入延迟”  ，你将看到采用 ```SessionID:ProcessID <Process Image>``` 格式的“选定对象的实例”  （换而言之，进程）。
 
-例如，如果计算器应用正在[会话 ID 1](https://msdn.microsoft.com/library/ms524326.aspx) 中运行，你将看到 ```1:4232 <Calculator.exe>```。
+例如，如果计算器应用正在[会话 ID 1](https://docs.microsoft.com/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)) 中运行，你将看到 ```1:4232 <Calculator.exe>```。
 
 > [!NOTE]
 > 并非包含所有进程。 不会看到以系统身份运行的任何进程。
 
-添加该计数器后，就会立即开始报告用户输入延迟。 请注意，最大规模默认设置为 100（毫秒）。 
+添加该计数器后，就会立即开始报告用户输入延迟。 请注意，最大规模默认设置为 100（毫秒）。
 
 ![远程桌面 - 性能监视器中每个进程的用户输入延迟的活动示例](./media/rds-sample-user-input-delay-perfmon.png)
 
@@ -81,15 +81,15 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 此表显示了这些实例的可视示例。 （可以通过切换到报表图表类型来获取 Perfmon 中的相同信息。）
 
-|计数器的类型|实例名|报告的延迟（毫秒）|
-|---------------|-------------|-------------------|
-|每个进程的用户输入延迟|1:4232 <Calculator.exe>|    200|
-|每个进程的用户输入延迟|2:1000 <Calculator.exe>|    16|
-|每个进程的用户输入延迟|1:2000 <Calculator.exe>|    32|
-|每个会话的用户输入延迟|1|    200|
-|每个会话的用户输入延迟|2|    16|
-|每个会话的用户输入延迟|平均值|     108|
-|每个会话的用户输入延迟|最大值|     200|
+| 计数器的类型 | 实例名 | 报告的延迟（毫秒） |
+| --------------- | ------------- | ------------------- |
+| 每个进程的用户输入延迟 | 1:4232 <Calculator.exe> |    200 |
+| 每个进程的用户输入延迟 | 2:1000 <Calculator.exe> |     16 |
+| 每个进程的用户输入延迟 | 1:2000 <Calculator.exe> |     32 |
+| 每个会话的用户输入延迟 | 1 |    200 |
+| 每个会话的用户输入延迟 | 2 |     16 |
+| 每个会话的用户输入延迟 | 平均值 |     108 |
+| 每个会话的用户输入延迟 | 最大值 |     200 |
 
 ## <a name="counters-used-in-an-overloaded-system"></a>重载系统中使用的计数器
 
@@ -120,8 +120,8 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 "LagCounterInterval"=dword:00005000
 ```
 
->[!NOTE]
->如果使用的是 Windows 10 版本 1809 或更高版本或 Windows Server 2019 或更高版本，则无需设置 LagCounterInterval 即可修复性能计数器。
+> [!NOTE]
+> 如果使用的是 Windows 10 版本 1809 或更高版本或 Windows Server 2019 或更高版本，则无需设置 LagCounterInterval 即可修复性能计数器。
 
 我们还在同一注册表项下添加了几个可能会有所帮助的项：
 
@@ -135,11 +135,11 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>将新计数器与非 Microsoft 工具结合使用
 
-监视工具可以通过使用 [Perfmon API](https://msdn.microsoft.com/library/windows/desktop/aa371903.aspx) 来使用此计数器。
+监视工具可以通过[使用性能计数器](https://docs.microsoft.com/windows/win32/perfctrs/using-performance-counters)来使用此计数器。
 
 ## <a name="download-windows-server-insider-software"></a>下载 Windows Server Insider 软件
 
-已注册预览体验成员可以直接导航到 [Windows Server Insider 预览版下载页](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)以获取最新 Insider 软件下载。  若要了解如何注册为预览体验成员，请参阅[服务器入门](https://insider.windows.com/en-us/for-business-getting-started-server/)。
+已注册预览体验成员可以直接导航到 [Windows Server Insider 预览版下载页](https://microsoft.com/en-us/software-download/windowsinsiderpreviewserver)以获取最新 Insider 软件下载。  若要了解如何注册为预览体验成员，请参阅[服务器入门](https://insider.windows.com/en-us/for-business-getting-started-server/)。
 
 ## <a name="share-your-feedback"></a>分享反馈
 
