@@ -8,16 +8,16 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 5c9e8b7e1e11deaa82fbec6f451b4f194609c299
+ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322919"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605547"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知问题
 
-> 适用于： Windows 管理中心、Windows 管理中心预览
+> 适用于：Windows Admin Center、Windows Admin Center 预览版
 
 如果遇到此页中未列出的问题，请[告诉我们](https://aka.ms/WACfeedback)。
 
@@ -29,7 +29,7 @@ ms.locfileid: "79322919"
 
 ## <a name="general"></a>常规
 
-- 如果你已在**Windows Server 2016**上将 windows 管理中心作为网关安装，则该服务可能会因包含 ```Faulting application name: sme.exe``` 和 ```Faulting module name: WsmSvc.dll```的事件日志中的错误而崩溃。 这是由 Windows Server 2019 中已修复的 bug 引起的。 Windows Server 2016 的修补程序包含在 2 2019 月的累积更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
+- 如果你已在**Windows Server 2016**上将 windows 管理中心作为网关安装，则该服务可能会崩溃，并在包含```Faulting application name: sme.exe```和```Faulting module name: WsmSvc.dll```的事件日志中出现错误。 这是由 Windows Server 2019 中已修复的 bug 引起的。 Windows Server 2016 的修补程序包含在 2 2019 月的累积更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
 - 如果已将 Windows 管理中心作为网关安装，且连接列表似乎已损坏，请执行以下步骤：
 
@@ -53,7 +53,7 @@ ms.locfileid: "79322919"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试解决此问题，方法是将网关 https://login.microsoftonline.com、 https://login.live.com和 URL 添加为客户端浏览器上的 "受信任的站点" 和 "弹出窗口阻止程序" 设置的 "允许的站点"。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
+- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试解决此问题，方法是将https://login.microsoftonline.com、 https://login.live.com和网关的 URL 添加为客户端浏览器的 "受信任的站点" 和 "允许的站点" 弹出窗口阻止程序设置。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -67,11 +67,11 @@ ms.locfileid: "79322919"
 
 未用 Mozilla Firefox 对 Windows Admin Center 进行测试，但大多数功能应该会正常工作。
 
-- Windows 10 安装： Mozilla Firefox 具有自己的证书存储区，因此必须将 ```Windows Admin Center Client``` 证书导入到 Firefox，才能在 Windows 10 上使用 Windows 管理中心。
+- Windows 10 安装： Mozilla Firefox 具有自己的证书存储区，因此必须将```Windows Admin Center Client```证书导入到 Firefox，才能在 windows 10 上使用 windows 管理中心。
 
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>使用代理服务时的 WebSocket 兼容性
 
-Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSocket 协议，使用代理服务时通常不支持该协议。 [预览版](https://blogs.technet.microsoft.com/applicationproxyblog/2018/03/28/limited-websocket-support-now-in-public-preview/)内的 Azure AD 应用程序代理兼容性中提供了 WebSocket 支持，我们正在寻求有关兼容性的反馈。
+Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSocket 协议，使用代理服务时通常不支持该协议。 
 
 ## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>支持2016之前的 Windows Server 版本（2012 R2，2012，2008 R2）
 
@@ -82,7 +82,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 如果未安装，可以[下载并安装 WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
 
-## <a name="role-based-access-control-rbac"></a>基于角色的访问控制（RBAC）
+## <a name="role-based-access-control-rbac"></a>基于角色的访问控制 (RBAC)
 
 - 在配置为使用 Windows Defender 应用程序控制（WDAC，以前称为“代码完整性”）的计算机上，RBAC 部署将不会成功 [16568455]
 
@@ -96,15 +96,15 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 - 无法将 .PFX 加密证书导入到当前用户存储。 [11818622]
 
-### <a name="events"></a>Events
+### <a name="events"></a>事件
 
 - [使用代理服务时的 WebSocket 兼容性](#websocket-compatibility-when-using-a-proxy-service)会影响事件。
 
 - 导出大日志文件时，你可能会遇到一个引用“数据包大小”的错误。
 
-  - 若要解决此问题，请在网关计算机上的提升的命令提示符中使用以下命令： ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - 若要解决此问题，请在网关计算机上的权限提升的命令提示符中使用以下命令：```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
-### <a name="files"></a>Files
+### <a name="files"></a>文件
 
 - 仍不支持上载或下载大文件。 （\~100mb 限制）[12524234]
 
@@ -128,9 +128,9 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 - 在管理 Windows Server 2012 时，"远程桌面" 工具可能无法连接。 [20258278]
 
-- 使用远程桌面连接到未加入域的计算机时，必须以 ```MACHINENAME\USERNAME``` 格式输入帐户。
+- 使用远程桌面连接到未加入域的计算机时，你必须以格式输入你的```MACHINENAME\USERNAME```帐户。
 
-- 某些配置可以通过组策略阻止 Windows 管理中心的远程桌面客户端。 如果遇到这种情况，请在 ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections``` 下启用 ```Allow users to connect remotely by using Remote Desktop Services```
+- 某些配置可以通过组策略阻止 Windows 管理中心的远程桌面客户端。 如果遇到这种情况， ```Allow users to connect remotely by using Remote Desktop Services```请在```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
 - 远程桌面受[websocket 兼容性影响。](#websocket-compatibility-when-using-a-proxy-service)
 
@@ -215,15 +215,15 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 ### <a name="azure-file-sync-permissions"></a>Azure 文件同步权限
 
-Azure 文件同步需要 Azure 中的权限，但 Windows 管理中心未在版本1910之前提供。 如果使用早于 Windows 管理中心版本1910的版本向 Azure 注册了 Windows 管理中心网关，则需要更新 Azure Active Directory 应用程序，以获取在最新版本的中使用 Azure 文件同步的正确权限Windows 管理中心。 其他权限允许 Azure 文件同步按本文中所述执行存储帐户访问的自动配置：[确保 Azure 文件同步有权访问存储帐户](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
+Azure 文件同步需要 Azure 中的权限，但 Windows 管理中心未在版本1910之前提供。 如果使用早于 Windows 管理中心版本1910的版本向 Azure 注册了 Windows 管理中心网关，则需要更新 Azure Active Directory 应用程序，以获取最新版本的 Windows 管理中心中的 Azure 文件同步的正确权限。 其他权限允许 Azure 文件同步按本文中所述执行存储帐户访问的自动配置：[确保 Azure 文件同步有权访问存储帐户](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
 
 若要更新 Azure Active Directory 应用，可以执行以下两项操作之一
-1. 请在**azure** > **注销** > "**设置**"，然后再次向 azure 注册 Windows 管理中心，确保你选择创建新的 Azure Active Directory 应用程序。 
-2. 中转到 Azure Active Directory 应用程序，并手动添加向 Windows 管理中心注册的现有 Azure Active Directory 应用所需的权限。 为此，请**在 azure 中**中转到**azure** > 视图 > **设置**。 从 Azure 中的 "**应用注册**" 边栏选项卡中转到 " **API 权限**"，选择 "**添加权限**"。 向下滚动以选择**Azure Active Directory 关系图**，选择 "**委托的权限**"，展开 "**目录**"，然后选择 " **AccessAsUser**"。 单击 "**添加权限**"，将更新保存到应用中。
+1. 请参阅 "**azure** > **注销**"**设置** > ，然后再次向 azure 注册 Windows 管理中心，确保你选择创建新的 Azure Active Directory 应用程序。 
+2. 中转到 Azure Active Directory 应用程序，并手动添加向 Windows 管理中心注册的现有 Azure Active Directory 应用所需的权限。 为此，请**在 azure 中**中转到 "**设置** > " "**azure** > 视图"。 从 Azure 中的 "**应用注册**" 边栏选项卡中转到 " **API 权限**"，选择 "**添加权限**"。 向下滚动以选择**Azure Active Directory 关系图**，选择 "**委托的权限**"，展开 "**目录**"，然后选择 " **AccessAsUser**"。 单击 "**添加权限**"，将更新保存到应用中。
 
 ### <a name="options-for-setting-up-azure-management-services"></a>用于设置 Azure 管理服务的选项
 
-Azure 管理服务（包括 Azure Monitor、Azure 更新管理和 Azure 安全中心）为本地服务器使用同一代理： Microsoft Monitoring Agent。 Azure 更新管理包含一组受支持的受支持区域，需要将 Log Analytics 工作区链接到 Azure 自动化帐户。 由于此限制，如果想要在 Windows 管理中心中设置多个服务，则必须首先设置 Azure 更新管理，然后设置 Azure 安全中心或 Azure Monitor。 如果已配置任何使用 Microsoft Monitoring Agent 的 Azure 管理服务，然后尝试使用 Windows 管理中心设置 Azure 更新管理，Windows 管理中心将仅允许你配置 Azure 更新管理如果现有链接到 Microsoft Monitoring Agent 的资源支持 Azure 更新管理。 如果不是这种情况，则有两个选择：
+Azure 管理服务（包括 Azure Monitor、Azure 更新管理和 Azure 安全中心）为本地服务器使用同一代理： Microsoft Monitoring Agent。 Azure 更新管理包含一组受支持的受支持区域，需要将 Log Analytics 工作区链接到 Azure 自动化帐户。 由于此限制，如果想要在 Windows 管理中心中设置多个服务，则必须首先设置 Azure 更新管理，然后设置 Azure 安全中心或 Azure Monitor。 如果已配置任何使用 Microsoft Monitoring Agent 的 Azure 管理服务，然后尝试使用 Windows 管理中心设置 Azure 更新管理，则在链接到 Microsoft Monitoring Agent 的现有资源支持 Azure 更新管理时，Windows 管理中心将仅允许配置 Azure 更新管理。 如果不是这种情况，则有两个选择：
 
 1. 请通过 "控制面板" > Microsoft Monitoring Agent[断开服务器与现有 Azure 管理解决方案](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)（例如 Azure Monitor 或 Azure 安全中心）的连接。 然后在 Windows 管理中心中设置 Azure 更新管理。 之后，你可以返回到通过 Windows 管理中心设置其他 Azure 管理解决方案，而不会出现问题。
 2. 你可以[手动设置 azure 更新管理所需的 azure 资源](https://docs.microsoft.com/azure/automation/automation-update-management)，然后[手动更新 Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) （位于 Windows 管理中心之外）以添加与你要使用的更新管理解决方案相对应的新工作区。
