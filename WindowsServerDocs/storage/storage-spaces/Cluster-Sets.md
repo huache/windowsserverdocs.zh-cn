@@ -9,16 +9,16 @@ ms.author: johnmar
 ms.date: 01/30/2019
 description: 本文介绍群集集方案
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c7ddef1831a82f7fc068ec4241bb1a72bd888bd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 484b6a1e658cd5c0583747194fa42494e54c3301
+ms.sourcegitcommit: 4824f3b307e5b8b9bf5be7bc948f7aba9cf7063f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861040"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82579929"
 ---
 # <a name="cluster-sets"></a>群集集
 
-> 适用于： Windows Server 2019
+> 适用于：Windows Server Standard 2012 R2
 
 群集集是 Windows Server 2019 发行版中新的云扩展技术，它按数量级增加单个软件定义数据中心（SDDC）云中群集节点计数。 群集集是多个故障转移群集的松耦合分组：计算、存储或超聚合。 群集集技术允许跨群集集内的成员群集和统一存储命名空间中的虚拟机流畅性，以支持虚拟机流畅性。
 
@@ -101,13 +101,15 @@ ms.locfileid: "80861040"
 
 以下注意事项适用于基础结构 SOFS 角色：
 
-1.    在一个故障转移群集上，最多只能有一个 SOFS 群集角色。 基础结构 SOFS 角色是通过将 " **-基础结构**" 交换机参数指定给**ClusterScaleOutFileServerRole** cmdlet 创建的。  例如：
+1. 在一个故障转移群集上，最多只能有一个 SOFS 群集角色。 基础结构 SOFS 角色是通过将 "**-基础结构**" 交换机参数指定给**ClusterScaleOutFileServerRole** cmdlet 创建的。  例如：
 
-        ClusterScaleoutFileServerRole-Name "my_infra_sofs_name"-基础结构
+    ```PowerShell
+    Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
+    ```
 
-2.    在故障转移过程中创建的每个 CSV 卷都将使用基于 CSV 卷名的自动生成的名称来触发创建 SMB 共享。 管理员不能直接创建或修改 SOFS 角色下的 SMB 共享，而不是通过 CSV 卷创建/修改操作。
+2. 在故障转移过程中创建的每个 CSV 卷都将使用基于 CSV 卷名的自动生成的名称来触发创建 SMB 共享。 管理员不能直接创建或修改 SOFS 角色下的 SMB 共享，而不是通过 CSV 卷创建/修改操作。
 
-3.    在超聚合配置中，一种基础结构 SOFS 允许 SMB 客户端（Hyper-v 主机）与基础结构 SOFS SMB 服务器进行通信，以确保持续可用性（CA）。 此超聚合 SMB 环回 CA 是通过访问其虚拟磁盘（VHDx）文件的虚拟机实现的，其中，在客户端和服务器之间转发所属的虚拟机标识。 与之前一样，此标识转发使 ACL 的 VHDx 文件与标准的超聚合群集配置类似。
+3. 在超聚合配置中，一种基础结构 SOFS 允许 SMB 客户端（Hyper-v 主机）与基础结构 SOFS SMB 服务器进行通信，以确保持续可用性（CA）。 此超聚合 SMB 环回 CA 是通过访问其虚拟磁盘（VHDx）文件的虚拟机实现的，其中，在客户端和服务器之间转发所属的虚拟机标识。 与之前一样，此标识转发使 ACL 的 VHDx 文件与标准的超聚合群集配置类似。
 
 创建群集集后，群集集命名空间将依赖于每个成员群集上的基础结构 SOFS，此外还会在管理群集中 SOFS 基础结构。
 
@@ -138,49 +140,69 @@ ms.locfileid: "80861040"
 
 2. 创建所有群集后，使用以下命令创建群集集主机。
 
-        New-ClusterSet -Name CSMASTER -NamespaceRoot SOFS-CLUSTERSET -CimSession SET-CLUSTER
+    ```PowerShell
+    New-ClusterSet -Name CSMASTER -NamespaceRoot SOFS-CLUSTERSET -CimSession SET-CLUSTER
+    ```
 
 3. 若要将群集服务器添加到群集集，可以使用以下方法。
 
-        Add-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER1
-        Add-ClusterSetMember -ClusterName CLUSTER2 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER2
+    ```PowerShell
+    Add-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER1
+    Add-ClusterSetMember -ClusterName CLUSTER2 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER2
+    ```
 
    > [!NOTE]
    > 如果使用的是静态 IP 地址方案，则必须在**ClusterSet**命令中包含 *-StaticAddress x* . x. x. x. x. x. x. x. x。
 
 4. 一旦你创建了群集集的群集成员，你就可以列出节点集及其属性。  枚举群集集中的所有成员群集：
 
-        Get-ClusterSetMember -CimSession CSMASTER
+    ```PowerShell
+    Get-ClusterSetMember -CimSession CSMASTER
+    ```
 
 5. 枚举群集集中的所有成员群集（包括管理群集节点）：
 
-        Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterNode
+    ```PowerShell
+    Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterNode
+    ```
 
 6. 列出成员群集中的所有节点：
 
-        Get-ClusterSetNode -CimSession CSMASTER
+    ```PowerShell
+    Get-ClusterSetNode -CimSession CSMASTER
+    ```
 
 7. 列出整个群集集中的所有资源组：
 
-        Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
+    ```PowerShell
+    Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
+    ```
 
 8. 若要验证群集集创建过程创建了一个 SMB 共享（标识为 Volume1，还是在每个群集成员的 CSV 卷的基础结构 SOFS 上将 CSV 文件夹的名称标为 ScopeName，则为这两者）：
 
-        Get-SmbShare -CimSession CSMASTER
+    ```PowerShell
+    Get-SmbShare -CimSession CSMASTER
+    ```
 
 8. 群集集具有可收集以供查看的调试日志。  可以为所有成员和管理群集收集群集集和群集调试日志。
 
-        Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
+    ```PowerShell
+    Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
+    ```
 
 9. 在所有群集集成员之间配置 Kerberos[约束委派](https://techcommunity.microsoft.com/t5/virtualization/live-migration-via-constrained-delegation-with-kerberos-in/ba-p/382334)。
 
 10. 在群集集中的每个节点上，将跨群集虚拟机的实时迁移身份验证类型配置为 Kerberos。
 
-        foreach($h in $hosts){ Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos -ComputerName $h }
+    ```PowerShell
+    foreach($h in $hosts){ Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos -ComputerName $h }
+    ```
 
 11. 将管理群集添加到群集集中每个节点上的本地管理员组中。
 
-        foreach($h in $hosts){ Invoke-Command -ComputerName $h -ScriptBlock {Net localgroup administrators /add <management_cluster_name>$} }
+    ```PowerShell
+    foreach($h in $hosts){ Invoke-Command -ComputerName $h -ScriptBlock {Net localgroup administrators /add <management_cluster_name>$} }
+    ```
 
 ## <a name="creating-new-virtual-machines-and-adding-to-cluster-sets"></a>创建新虚拟机并将其添加到群集集
 
@@ -198,43 +220,53 @@ ms.locfileid: "80861040"
 - 设置用于1的虚拟处理器
 - 检查以确保至少有10% 的 CPU 可用于虚拟机
 
-   ```PowerShell
-   # Identify the optimal node to create a new virtual machine
-   $memoryinMB=4096
-   $vpcount = 1
-   $targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10
-   $secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
-   $cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```PowerShell
+# Identify the optimal node to create a new virtual machine
+$memoryinMB=4096
+$vpcount = 1
+$targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10
+$secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
+$cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
 
-   # Deploy the virtual machine on the optimal node
-   Invoke-Command -ComputerName $targetnode.name -scriptblock { param([String]$storagepath); New-VM CSVM1 -MemoryStartupBytes 3072MB -path $storagepath -NewVHDPath CSVM.vhdx -NewVHDSizeBytes 4194304 } -ArgumentList @("\\SOFS-CLUSTER1\VOLUME1") -Credential $cred | Out-Null
-   
-   Start-VM CSVM1 -ComputerName $targetnode.name | Out-Null
-   Get-VM CSVM1 -ComputerName $targetnode.name | fl State, ComputerName
-   ```
+# Deploy the virtual machine on the optimal node
+Invoke-Command -ComputerName $targetnode.name -scriptblock { param([String]$storagepath); New-VM CSVM1 -MemoryStartupBytes 3072MB -path $storagepath -NewVHDPath CSVM.vhdx -NewVHDSizeBytes 4194304 } -ArgumentList @("\\SOFS-CLUSTER1\VOLUME1") -Credential $cred | Out-Null
+
+Start-VM CSVM1 -ComputerName $targetnode.name | Out-Null
+Get-VM CSVM1 -ComputerName $targetnode.name | fl State, ComputerName
+```
 
 完成后，系统会向你提供有关虚拟机及其放置位置的信息。  在上面的示例中，它将显示为：
 
-        State         : Running
-        ComputerName  : 1-S2D2
+```
+State         : Running
+ComputerName  : 1-S2D2
+```
 
 如果没有足够的内存、cpu 或磁盘空间来添加虚拟机，您将收到以下错误：
 
-      Get-ClusterSetOptimalNodeForVM : A cluster node is not available for this operation.  
+```
+Get-ClusterSetOptimalNodeForVM : A cluster node is not available for this operation.  
+```
 
 创建虚拟机后，该虚拟机将显示在指定的特定节点上的 Hyper-v 管理器中。  若要将它作为群集集的虚拟机和群集添加到群集中，请执行以下命令。  
 
-        Register-ClusterSetVM -CimSession CSMASTER -MemberName $targetnode.Member -VMName CSVM1
+```PowerShell
+Register-ClusterSetVM -CimSession CSMASTER -MemberName $targetnode.Member -VMName CSVM1
+```
 
 完成后，输出将为：
 
-         Id  VMName  State  MemberName  PSComputerName
-         --  ------  -----  ----------  --------------
-          1  CSVM1      On  CLUSTER1    CSMASTER
+```
+Id  VMName  State  MemberName  PSComputerName
+--  ------  -----  ----------  --------------
+1  CSVM1      On  CLUSTER1    CSMASTER
+```
 
 如果已使用现有虚拟机添加了群集，则还需要向群集集注册虚拟机，以便一次注册所有虚拟机，使用以下命令：
 
-        Get-ClusterSetMember -name CLUSTER3 -CimSession CSMASTER | Register-ClusterSetVM -RegisterAll -CimSession CSMASTER
+```PowerShell
+Get-ClusterSetMember -Name CLUSTER3 -CimSession CSMASTER | Register-ClusterSetVM -RegisterAll -CimSession CSMASTER
+```
 
 但是，此过程并未完成，因为需要将虚拟机的路径添加到群集集命名空间中。
 
@@ -242,12 +274,16 @@ ms.locfileid: "80861040"
 
 在此示例中，使用 ClusterSetMember 将 CLUSTER3 添加到群集集，并将基础结构横向扩展文件服务器为 SOFS-CLUSTER3。  若要移动虚拟机配置和存储，命令为：
 
-        Move-VMStorage -DestinationStoragePath \\SOFS-CLUSTER3\Volume1 -Name MYVM
+```PowerShell
+Move-VMStorage -DestinationStoragePath \\SOFS-CLUSTER3\Volume1 -Name MYVM
+```
 
 完成后，你会收到一条警告：
 
-        WARNING: There were issues updating the virtual machine configuration that may prevent the virtual machine from running.  For more information view the report file below.
-        WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualMachineConfiguration '' on date at time.htm.
+```
+WARNING: There were issues updating the virtual machine configuration that may prevent the virtual machine from running.  For more information view the report file below.
+WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualMachineConfiguration '' on date at time.htm.
+```
 
 此警告可以忽略，因为警告为 "未检测到虚拟机角色存储配置中的任何更改"。  警告的原因是实际的物理位置不更改;仅配置路径。 
 
@@ -261,13 +297,17 @@ ms.locfileid: "80861040"
 
 对于群集集，无需执行这些步骤，只需执行一个命令。  首先，应使用以下命令将所有网络设置为可用于迁移：
 
-    Set-VMHost -UseAnyNetworkForMigration $true
+```PowerShell
+Set-VMHost -UseAnyNetworkForMigration $true
+```
 
 例如，我想要将群集集的虚拟机从 CLUSTER1 移动到 CLUSTER3 上的 CL3。  单个命令为：
 
-        Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
+```PowerShell
+Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
+```
 
-请注意，这不会移动虚拟机存储或配置文件。  这并不是必需的，因为虚拟机的路径保持 \\SOFS-CLUSTER1\VOLUME1。  向群集集注册虚拟机后，该虚拟机将具有基础结构文件服务器共享路径，并且不需要将驱动器和虚拟机与虚拟机位于同一台计算机上。
+请注意，这不会移动虚拟机存储或配置文件。  这并不是必需的，因为虚拟机的路径保留\\ \\为 SOFS-CLUSTER1\VOLUME1。  向群集集注册虚拟机后，该虚拟机将具有基础结构文件服务器共享路径，并且不需要将驱动器和虚拟机与虚拟机位于同一台计算机上。
 
 ## <a name="creating-availability-sets-fault-domains"></a>创建可用性集容错域
 
@@ -279,39 +319,49 @@ ms.locfileid: "80861040"
 
 若要创建容错域，请执行以下命令：
 
-        New-ClusterSetFaultDomain -Name FD1 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER1,CLUSTER2 -Description "This is my first fault domain"
+```PowerShell
+New-ClusterSetFaultDomain -Name FD1 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER1,CLUSTER2 -Description "This is my first fault domain"
 
-        New-ClusterSetFaultDomain -Name FD2 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER3,CLUSTER4 -Description "This is my second fault domain"
+New-ClusterSetFaultDomain -Name FD2 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER3,CLUSTER4 -Description "This is my second fault domain"
+```
 
 若要确保已成功创建它们，可以运行 ClusterSetFaultDomain 并显示其输出。
 
-        PS C:\> Get-ClusterSetFaultDomain -CimSession CSMASTER -FdName FD1 | fl *
+```PowerShell
+PS C:\> Get-ClusterSetFaultDomain -CimSession CSMASTER -FdName FD1 | fl *
 
-        PSShowComputerName    : True
-        FaultDomainType       : Logical
-        ClusterName           : {CLUSTER1, CLUSTER2}
-        Description           : This is my first fault domain
-        FDName                : FD1
-        Id                    : 1
-        PSComputerName        : CSMASTER
+PSShowComputerName    : True
+FaultDomainType       : Logical
+ClusterName           : {CLUSTER1, CLUSTER2}
+Description           : This is my first fault domain
+FDName                : FD1
+Id                    : 1
+PSComputerName        : CSMASTER
+```
 
 现在，已创建了容错域，需要创建可用性集。
 
-        New-ClusterSetAvailabilitySet -Name CSMASTER-AS -FdType Logical -CimSession CSMASTER -ParticipantName FD1,FD2
+```PowerShell
+New-ClusterSetAvailabilitySet -Name CSMASTER-AS -FdType Logical -CimSession CSMASTER -ParticipantName FD1,FD2
+```
 
 若要验证是否已创建，请使用：
 
-        Get-ClusterSetAvailabilitySet -AvailabilitySetName CSMASTER-AS -CimSession CSMASTER
+```PowerShell
+Get-ClusterSetAvailabilitySet -AvailabilitySetName CSMASTER-AS -CimSession CSMASTER
+```
 
 创建新虚拟机时，需要在确定最佳节点时使用-AvailabilitySet 参数。  这样就会如下所示：
 
-        # Identify the optimal node to create a new virtual machine
-        $memoryinMB=4096
-        $vpcount = 1
-        $av = Get-ClusterSetAvailabilitySet -Name CSMASTER-AS -CimSession CSMASTER
-        $targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10 -AvailabilitySet $av
-        $secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
-        $cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```PowerShell
+# Identify the optimal node to create a new virtual machine
+$memoryinMB=4096
+$vpcount = 1
+$av = Get-ClusterSetAvailabilitySet -Name CSMASTER-AS -CimSession CSMASTER
+$targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10 -AvailabilitySet $av
+$secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
+$cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```
 
 由于各种生命周期，从群集集中删除群集。 有时需要从群集集中删除群集。 作为最佳做法，所有群集集的虚拟机都应移出群集。 这可以通过使用**ClusterSetVM**和**VMStorage**命令来完成。
 
@@ -322,7 +372,9 @@ ms.locfileid: "80861040"
 
 例如，从群集集中删除 CLUSTER1 群集的命令将是：
 
-        Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
+```PowerShell
+Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
+```
 
 ## <a name="frequently-asked-questions-faq"></a>常见问题 (FAQ)
 
@@ -356,7 +408,7 @@ ms.locfileid: "80861040"
 **答案：** 不能，请注意，目前尚不支持逻辑容错域中的跨群集故障转移。 
 
 **问题：** 群集集中的群集是否可以跨多个站点（或 DNS 域）？ <br> 
-**解答：** 这是未经过测试的方案，不会立即计划生产支持。 如果此方案对你和你计划使用该方案非常重要，请让 Microsoft 知道这种情况。
+**答案：** 这是未经测试的方案，不会立即计划生产支持。 如果此方案对你和你计划使用该方案非常重要，请让 Microsoft 知道这种情况。
 
 **问题：** 群集集是否可与 IPv6 一起使用？ <br>
 **答案：** 群集集与故障转移群集一样，都支持 IPv4 和 IPv6。
