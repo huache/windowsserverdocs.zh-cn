@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 4c13a3ecbcc6ade1455c10dde5f6a89e0303e161
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9389d1565462572a5617856f0f2531580b069745
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857630"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650077"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>使用 WID 数据库升级到 Windows Server 2016 中的 AD FS
 
@@ -56,6 +56,9 @@ ms.locfileid: "80857630"
 > [!NOTE]
 > 必须先删除所有 Windows Server 2016 或 2012 R2 节点，然后才能移到 Windows Server 2019 FBL 中的 AD FS。 你不能只是将 Windows Server 2016 或 2012 R2 OS 升级到 Windows Server 2019，并使其成为一个2019节点。 需要将其删除，并将其替换为新的2019节点。
 
+> [!NOTE]
+> 如果在 AD FS 中配置了 AlwaysOnAvailability 组或合并复制，请在升级前删除所有 ADFS 数据库的所有复制，并将所有节点指向主 SQL 数据库。 执行此工作后，按所述执行场升级。 升级后，将 AlwaysOnAvailability 组或合并复制添加到新的数据库。
+
 ##### <a name="to-upgrade-your-ad-fs-farm-to-windows-server-2019-farm-behavior-level"></a>将 AD FS 场升级到 Windows Server 2019 场行为级别
 
 1. 使用服务器管理器在 Windows Server 2019 上安装 Active Directory 联合身份验证服务角色
@@ -88,11 +91,11 @@ Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN}
 
 ![升级](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)
 
-7. 如果要将 AD FS 2012 R2 场升级到2016或2019，场升级要求 AD 架构至少为级别85。  若要使用 Windows Server 2016 安装介质升级架构，请打开命令提示符并导航到 support\adprep directory。 运行以下内容： `adprep /forestprep`
+7. 如果要将 AD FS 2012 R2 场升级到2016或2019，场升级要求 AD 架构至少为级别85。  若要使用 Windows Server 2016 安装介质升级架构，请打开命令提示符并导航到 support\adprep directory。 运行以下内容：`adprep /forestprep`
 
 ![升级](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
 
-完成运行后 `adprep/domainprep`
+完成运行后`adprep/domainprep`
 
 > [!NOTE]
 > 在运行下一步骤之前，请通过从 "设置" 运行 Windows 更新确保 Windows Server 处于最新状态。 继续这一过程，直到不需要进一步更新。
@@ -119,7 +122,7 @@ Invoke-AdfsFarmBehaviorLevelRaise
 
 ![升级](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
 
-11. 同样，你可以使用 PowerShell cmdlet： `Get-AdfsFarmInformation` 向你显示当前 FBL。
+11. 同样，可以使用 PowerShell cmdlet： `Get-AdfsFarmInformation`显示当前的 FBL。
 
 ![升级](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
 
@@ -151,7 +154,7 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 
 
 > [!NOTE] 
-> 如果执行了具有混合证书信任的 Windows Hello 企业版，则 AD FS 2019 中存在已知的 PRT 问题。 你可能会在 ADFS 管理事件日志中遇到此错误：接收到无效的 Oauth 请求。 禁止客户端 'NAME' 访问作用域为 'ugs' 的资源。 若要修正此错误，请执行以下操作： 
+> 如果执行了具有混合证书信任的 Windows Hello 企业版，则 AD FS 2019 中存在已知的 PRT 问题。 可能会在 ADFS 管理事件日志中遇到此错误：收到的 Oauth 请求无效。 禁止客户端 'NAME' 访问作用域为 'ugs' 的资源。 若要修正此错误，请执行以下操作： 
 > 1. 启动 AD FS 管理控制台。 浏览到“服务”>“作用域说明”
 > 2. 右键单击“作用域说明”，选择“添加作用域说明”
 > 3. 在名称下键入“ugs”，然后单击“应用”>“确定”
@@ -159,5 +162,5 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 > 5. 执行“Get-AdfsApplicationPermission”命令。 查找 ScopeNames :{openid, aza}，其中包含 ClientRoleIdentifier。 记下 ObjectIdentifier。
 > 6. 执行“Set-AdfsApplicationPermission -TargetIdentifier <步骤 5 中的 ObjectIdentifier> -AddScope 'ugs'”命令
 > 7. 重启 ADFS 服务。
-> 8. 在客户端上：重新启动客户端。 系统会提示用户预配 WHFB。
+> 8. 在客户端上执行以下操作：重启客户端。 系统会提示用户预配 WHFB。
 > 9. 如果未弹出预配窗口，则需收集 NGC 跟踪日志并进行进一步的故障排除。

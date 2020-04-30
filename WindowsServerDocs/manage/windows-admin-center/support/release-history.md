@@ -7,18 +7,19 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
 ms.prod: windows-server
-ms.openlocfilehash: 5f6777939b907a0d50d134c5507efec5f03e3286
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3976761836e4bbec2a3d06d56220066a595046b4
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75952739"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650100"
 ---
 # <a name="windows-admin-center-release-history"></a>Windows 管理中心版本历史记录
 
 下面列出了最新发布的功能：
 
-- 版本 [1910](https://aka.ms/wac1910) 是最新的正式版，它引入了多项全新 Azure 混合服务，并将以前在预览版中提供的功能添加到了正式版频道。
+- 版本[1910.2](https://aka.ms/wac1910.2)是最新的 GA 版本，其中包括平台的可访问性和大量 bug 修复的更新
+- 版本[1910](https://aka.ms/wac1910)引入了几个新的 Azure 混合服务，并将以前在预览版中的功能引入了 GA 通道。
 - 版本 [1909](https://aka.ms/wac1909) 引入了 Azure VM 特定的连接类型，并统一了传统故障转移群集和 HCI 群集的连接类型。
 - 版本 [1908](https://aka.ms/wac1908) 添加了视觉对象更新、Packetmon、FlowLog 审核、群集的 Azure Monitor 载入以及对基于 HTTPS 的 WinRM（端口 5986）的支持。
 - 版本 [1907](https://aka.ms/wac1907) 添加了 Azure 成本估算链接，并改进了虚拟机的导入/导出和标记功能。

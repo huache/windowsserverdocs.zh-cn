@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 90f5b670744b812769164a7a2c70fc673fe4089f
-ms.sourcegitcommit: 3cb84bc0bd4be0f9333b7c85cda858c38730cb3a
+ms.openlocfilehash: 010ab340dc71d199119f1bd51fbc22e3ad449040
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79432446"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650083"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Windows Admin Center 的扩展
 
@@ -30,7 +30,7 @@ Windows Admin Center 扩展使用 HTML5、CSS、Angular、TypeScript 和 jQuery 
 - **与 Windows Admin Center 工具集成：** 将你的产品和服务与 Windows Admin Center 中的服务器和群集管理工具集成，向客户提供统一、无缝的端到端监视、管理、疑难解答体验。
 - **利用平台安全、标识和管理功能：** 利用 Windows 管理中心平台功能满足当今 IT 组织的复杂要求，为你的产品和服务启用 Azure Active Directory （AAD）支持、多重身份验证、基于角色的访问控制（RBAC）、日志记录和审核。
 - **使用最新的 Web 技术开发：** 使用现代的 Web 技术（包括 HTML5、CSS、Angular、TypeScript 和 jQuery）以及 Windows Admin Center SDK 中包含的丰富、强大的 UI 控件来快速构建出色的用户体验。
-- **扩大产品推广：** 通过向我们快速增长的客户群推广产品，加入新的 Windows Admin Center 生态系统，利用今年晚些时候 Windows Server 2019 的启动动力。
+- **扩展产品推广：** 成为 Windows 管理中心生态系统的一部分，并将其扩展到我们的扩展客户群。
 
 ## <a name="start-developing-with-the-windows-admin-center-sdk"></a>开始通过 Windows 管理中心 SDK 进行开发
 
@@ -42,7 +42,7 @@ Windows 管理中心开发的入门非常简单！  可在 SDK 文档中找到[�
 
 请参阅下列主题，了解有关 SDK 的详细信息并开始：
 
-- [了解扩展的工作方式](understand-extensions.md)
+- [了解扩展的工作原理](understand-extensions.md)
 - [开发扩展](developing-extensions.md)
 - [指南](guides.md)
 - [发布扩展](publish-extensions.md)
@@ -58,7 +58,7 @@ BiitOps 更改扩展插件为 Windows Server 物理/虚拟机上的硬件、软�
 
 ### <a name="dataon"></a>DataON
 
-DataON 必须扩展使监视、管理和端到端深入了解 DataON 的超聚合基础结构和基于 Windows Server 的存储系统。 必须扩展添加了唯一值，如历史数据报告、磁盘映射、系统警报和类似 SAN 的呼叫 home service、通过无缝地补充 Windows 管理中心服务器和超聚合基础结构管理功能统一体验。 [了解有关 DataON 的 MUST 扩展及其开发体验的详细信息](case-studies/dataon.md)。
+DataON 必须扩展使监视、管理和端到端深入了解 DataON 的超聚合基础结构和基于 Windows Server 的存储系统。 必须扩展添加了唯一值，如历史数据报表、磁盘映射、系统警报和类似 SAN 的调用主服务，通过无缝统一的体验来补充 Windows 管理中心服务器和超聚合基础结构管理功能。 [了解有关 DataON 的 MUST 扩展及其开发体验的详细信息](case-studies/dataon.md)。
 
 ![DataON MUST 扩展](../media/extensibility-overview/dataon-must-extension.png)
 
@@ -76,7 +76,7 @@ DataON 必须扩展使监视、管理和端到端深入了解 DataON 的超聚�
 
 ### <a name="pure-storage"></a>Pure Storage
 
-纯粹的存储提供企业的、所有闪存的数据存储解决方案，可提供以数据为中心的体系结构，从而加快你的业务的竞争优势。 适用于 Windows 管理中心的纯粹存储扩展提供了单窗格视图，使用户能够执行监视任务、查看实时性能度量值，以及通过单一 UI 管理存储卷和发起程序接触. [了解有关纯扩展和开发体验的详细信息](case-studies/purestorage.md)。
+纯粹的存储提供企业的、所有闪存的数据存储解决方案，可提供以数据为中心的体系结构，从而加快你的业务的竞争优势。 Windows 管理中心的纯粹存储扩展提供了单窗格视图，其中提供了纯粹的 FlashArray 产品，使用户能够执行监视任务、查看实时性能指标以及通过单一 UI 体验来管理存储卷和发起方。 [了解有关纯扩展和开发体验的详细信息](case-studies/purestorage.md)。
 
 ![纯粹的存储扩展](../media/extensibility-overview/purestorage-extension.png)
 

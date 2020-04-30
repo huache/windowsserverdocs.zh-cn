@@ -1,5 +1,5 @@
 ---
-title: 使用 OAuth 和 ADAL 构建单一页面 web 应用程序.JS 与 AD FS 2016 或更高版本
+title: 使用 OAuth 和 ADAL 构建单一页面 web 应用程序。.JS 与 AD FS 2016 或更高版本
 description: 本演练提供有关使用 ADAL for JavaScript 针对 AngularJS 进行身份 AD FS 验证的说明，以保护基于的单页面应用程序
 author: billmath
 ms.author: billmath
@@ -8,18 +8,18 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f7e68558945fcd26d5e8ab405f39e86266beeea8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f62b6ad288e2733083d535260f0b3f5ffb5b50bf
+ms.sourcegitcommit: f829a48b9b0c7b9ed6e181b37be828230c80fb8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853860"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173618"
 ---
-# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL 构建单一页面 web 应用程序.JS 与 AD FS 2016 或更高版本
+# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL 构建单一页面 web 应用程序。.JS 与 AD FS 2016 或更高版本
 
 本演练提供了使用 ADAL for JavaScript 对 AD FS 进行身份验证的说明，该应用程序用于保护使用 ASP.NET Web API 后端实现的基于 AngularJS 的单页面应用程序。
 
-在此方案中，当用户登录时，JavaScript 前端使用[适用于 javascript 的 Active Directory 身份验证库（ADAL）.JS）](https://github.com/AzureAD/azure-activedirectory-library-for-js)和隐式授权授予从 Azure AD 获取 ID 令牌（id_token）。 该令牌已缓存，客户端在调用其 Web API 后端（使用 OWIN 中间件进行保护）时，会将该令牌作为持有者令牌附加到请求。
+在此方案中，当用户登录时，JavaScript 前端使用 [JavaScript (ADAL.JS) 的 Active Directory 身份验证库](https://github.com/AzureAD/azure-activedirectory-library-for-js)和隐式授权授予从 Azure AD 获取一个 ID 令牌 (id_token)。 该令牌随后被缓存，当客户端调用使用 OWIN 中间件进行保护的 Web API 后端时，客户端将该令牌作为持有者令牌附加到请求。
 
 >[!IMPORTANT]
 >你可以在此处生成的示例仅供教育之用。 这些说明适用于公开模型所需元素的最简单的最小实现。 该示例可能不包括错误处理和其他相关功能的所有方面。
@@ -59,7 +59,7 @@ ms.locfileid: "80853860"
 ## <a name="clone-or-download-this-repository"></a>克隆或下载此存储库
 我们将使用创建的用于将 Azure AD 集成到 AngularJS 单页面应用的示例应用程序，并将其修改为通过使用 AD FS 来保护后端资源。
 
-从 shell 或命令行执行以下操作：
+在 shell 或命令行中：
 
     git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
 
@@ -77,7 +77,7 @@ ms.locfileid: "80853860"
 **Startup.Auth.cs** -包含用于持有者身份验证 Active Directory 联合身份验证服务的 WebAPI 配置。
 
 ## <a name="registering-the-public-client-in-ad-fs"></a>在 AD FS 中注册公共客户端
-在此示例中，WebAPI 配置为侦听 https://localhost:44326/。 应用程序组**web 浏览器访问 web 应用程序**可用于配置隐式授予流应用程序。
+在此示例中，将 WebAPI 配置为侦听https://localhost:44326/。 应用程序组**web 浏览器访问 web 应用程序**可用于配置隐式授予流应用程序。
 
 1. 打开 AD FS 管理控制台，然后单击 "**添加应用程序组**"。 在 "**添加应用程序组" 向导**中，输入应用程序的名称，"说明"，然后从 "**客户端-服务器应用程序**" 部分选择 " **web 浏览器访问 web 应用程序**模板"，如下所示
 
@@ -108,11 +108,11 @@ ms.locfileid: "80853860"
             //cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not work for localhost.
         },
         $httpProvider
-        );
+    );
 
 |配置|说明|
 |--------|--------|
-|实例|STS URL，例如 https://fs.contoso.com/|
+|实例|STS URL，例如https://fs.contoso.com/|
 |tenant|将其保留为 "adfs"|
 |clientID|这是你在为单一页面应用程序配置公共客户端时指定的客户端 ID|
 
@@ -123,28 +123,29 @@ ms.locfileid: "80853860"
 
 取消
 
-                app.UseWindowsAzureActiveDirectoryBearerAuthentication(
-    new WindowsAzureActiveDirectoryBearerAuthenticationOptions
-    {
-    Audience = ConfigurationManager.AppSettings["ida:Audience"],
-    Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
-    });
+    app.UseWindowsAzureActiveDirectoryBearerAuthentication(
+        new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+        {
+            Audience = ConfigurationManager.AppSettings["ida:Audience"],
+            Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
+        }
+    );
 
 并添加：
 
     app.UseActiveDirectoryFederationServicesBearerAuthentication(
-    new ActiveDirectoryFederationServicesBearerAuthenticationOptions
-    {
-    MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
-    TokenValidationParameters = new TokenValidationParameters()
-    {
-    ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
-    ValidIssuer = ConfigurationManager.AppSettings["ida:Issuer"]
-    }
-    }
+        new ActiveDirectoryFederationServicesBearerAuthenticationOptions
+        {
+            MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
+            TokenValidationParameters = new TokenValidationParameters()
+            {
+                ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
+                ValidIssuer = ConfigurationManager.AppSettings["ida:Issuer"]
+            }
+        }
     );
 
-|参数|说明|
+|参数|描述|
 |--------|--------|
 |ValidAudience|这会在令牌中配置要检查的 "受众" 的值。|
 |ValidIssuer|这会在令牌中配置要检查的 "颁发者" 的值|
@@ -152,31 +153,32 @@ ms.locfileid: "80853860"
 
 ## <a name="add-application-configuration-for-ad-fs"></a>为 AD FS 添加应用程序配置
 更改 appsettings，如下所示：
-
+```xml
     <appSettings>
-    <add key="ida:Audience" value="https://localhost:44326/" />
-    <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
-    <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
-      </appSettings>
+        <add key="ida:Audience" value="https://localhost:44326/" />
+        <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
+        <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
+    </appSettings>
+    ```
 
-## <a name="running-the-solution"></a>运行解决方案
-清理解决方案，重新生成并运行解决方案。 若要查看详细跟踪，请启动 Fiddler 并启用 HTTPS 解密。
+## Running the solution
+Clean the solution, rebuild the solution and run it. If you want to see detailed traces, launch Fiddler and enable HTTPS decryption.
 
-浏览器（使用 Chrome 浏览器）将加载 SPA，并将显示以下屏幕：
+The browser (use Chrome browser) will load the SPA and you will be presented with the following screen:
 
-![注册客户端](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
+![Register the client](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 
-单击 "登录"。  ToDo 列表将触发身份验证流，而 ADAL JS 会将身份验证定向到 AD FS
+Click on Login.  The ToDo List will trigger the authentication flow and ADAL JS will direct the authentication to AD FS
 
 ![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
-在 Fiddler 中，可以看到令牌作为 URL 的一部分返回到 # 片段。
+In Fiddler you can see the token being returned as part of the URL in the # fragment.
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.PNG)
 
-现在，你将可以调用后端 API 来为已登录用户添加 ToDo 列表项：
+You will be able to now call the backend API to add ToDo List items for the logged-in user:
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## <a name="next-steps"></a>后续步骤
-[AD FS 开发](../../ad-fs/AD-FS-Development.md)  
+## Next Steps
+[AD FS Development](../../ad-fs/AD-FS-Development.md)  

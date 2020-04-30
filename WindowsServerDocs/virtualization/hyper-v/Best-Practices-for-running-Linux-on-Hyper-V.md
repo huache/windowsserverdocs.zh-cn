@@ -8,13 +8,13 @@ ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
-ms.date: 3/1/2019
-ms.openlocfilehash: 7baf71af401b8318ccd136fe12d6eb810cf9434e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.date: 04/15/2020
+ms.openlocfilehash: d8861369abe24ea0d34dce209a5d98e854c4c95d
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853300"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82072233"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>在 Hyper-v 上运行 Linux 的最佳实践
 
@@ -49,7 +49,7 @@ PS > New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes 127GB -Dynamic -BlockSizeBytes
 
 由于第2代虚拟机中不存在 PIT 计时器，因此到 PxE TFTP 服务器的网络连接可能会提前终止，并阻止加载服务器从服务器读取 Grub 配置和加载内核。
 
-在 RHEL 1.x 上，可以使用旧版 grub v 0.97 EFI 引导加载，而不是 grub2，如下所述[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html) ：
+在 RHEL 1.x 上，可以使用旧版 grub v 0.97 EFI 引导加载，而不是 grub2，如下所述：[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
 
 在 RHEL 1.x 以外的 Linux 分发版上，可以遵循类似的步骤配置 grub v 0.97，以便从 PxE 服务器加载 Linux 内核。
 
@@ -74,13 +74,15 @@ Set-VMComPort -VMName <Name> -Number 2 -Path \\.\pipe\dbg1
 
 配置并使用虚拟以太网适配器，该适配器是一种具有增强性能的 Hyper-v 特定网卡。 如果旧网络适配器和 Hyper-v 特定网络适配器均连接到虚拟机，则**ifconfig**的输出中的网络名称可能会显示随机值，例如 **_tmp12000801310**。 若要避免此问题，请在 Linux 虚拟机中使用 Hyper-v 特定的网络适配器时，删除所有旧版网络适配器。
 
-## <a name="use-io-scheduler-noop-for-better-disk-io-performance"></a>使用 i/o 计划程序 NOOP 获得更好的磁盘 i/o 性能
+## <a name="use-io-scheduler-noopnone-for-better-disk-io-performance"></a>使用 i/o 计划程序 noop/none 提高磁盘 i/o 性能
 
-Linux 内核具有四个不同的 i/o 计划程序，用不同的算法对请求重新排序。 NOOP 是一个先进先出队列，该队列通过虚拟机监控程序做出的计划决策。 在 Hyper-v 上运行 Linux 虚拟机时，建议使用 NOOP 作为计划程序。 若要更改特定设备的计划程序，请在启动加载程序的配置（例如/etc/grub.conf）中，将**电梯 = noop**添加到内核参数，然后重新启动。
+Linux 内核提供两组磁盘 i/o 计划程序来重新排序请求。  一个集用于较早的 "blk" 子系统，另一个集用于较新的 "blk" 子系统。 在这两种情况下，对于目前的固态磁盘，建议使用将计划决策传递到基础 Hyper-v 虚拟机监控程序的计划程序。 对于使用 "blk" 子系统的 Linux 内核，这是 "noop" 计划程序。 对于使用 "blk-mq" 子系统的 Linux 内核，这是 "无" 计划程序。
+
+对于特定的磁盘，可在此文件系统位置查看可用的计划程序：/sys/class/block/`<diskname>`/queue/scheduler，当前所选计划程序位于方括号中。 您可以通过写入此文件系统位置来更改计划程序。 必须将更改添加到初始化脚本，才能在重新启动后保持。 有关详细信息，请参阅 Linux 发行版文档。
 
 ## <a name="numa"></a>NUMA
 
-早于2.6.37 的 Linux 内核版本不支持具有更大 VM 大小的 Hyper-v 上的 NUMA。 此问题主要影响使用上游 Red Hat 2.6.32 内核的旧发行版，并已修复 Red Hat Enterprise Linux （RHEL）6.6 （2.6.32-504）。 运行早于2.6.37 的自定义内核的系统或 2.6.32-504 之前的基于 RHEL 的内核必须在中的内核命令行上设置启动参数 `numa=off`。 有关详细信息，请参阅[Red HAT KB 436883](https://access.redhat.com/solutions/436883)。
+低于 2.6.37 的 Linux 内核版本不支持具有更大 VM 大小的 Hyper-V 上的 NUMA。 此问题主要影响使用上游 Red Hat 2.6.32 内核的旧分发版，在 Red Hat Enterprise Linux (RHEL) 6.6 (kernel-2.6.32-504) 中已解决。 运行版本低于 2.6.37 的自定义内核的系统，或者版本低于 2.6.32-504 的基于 RHEL 的内核必须在 grub.conf 中的内核命令行上设置启动参数 `numa=off`。 有关详细信息，请参阅 [Red Hat KB 436883](https://access.redhat.com/solutions/436883)。
 
 ## <a name="reserve-more-memory-for-kdump"></a>为 kdump 保留更多内存
 
@@ -92,13 +94,13 @@ Hyper-v 允许压缩虚拟磁盘（VHDX）文件，而不考虑磁盘上可能�
 
 调整 VHD 或 VHDX 大小后，管理员应使用诸如 fdisk 或 parted 的实用工具来更新分区、卷和文件系统结构，以反映磁盘大小的变化。 收缩或扩展包含 GUID 分区表（GPT）的 VHD 或 VHDX 的大小会在分区管理工具用于检查分区布局时产生警告，并会警告管理员修复第一个和第二个 GPT 标头。 此手动步骤可以安全地执行，而不会丢失数据。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
 * [在 Hyper-v 上运行 FreeBSD 的最佳做法](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
 
-* [部署 Hyper-v 群集](https://technet.microsoft.com/library/jj863389.aspx)
+* [部署 Hyper-V 群集](https://technet.microsoft.com/library/jj863389.aspx)
 
 * [创建适用于 Azure 的 Linux 映像](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
 

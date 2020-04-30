@@ -7,52 +7,49 @@ manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 49709ca40c515c8fdb7df62598e9a9dc766029c8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b328bfcb5977e5c7117590b173dbb967214bf10d
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822450"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81624215"
 ---
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>查找其他 Resou # rces for Windows Server 2008 Active Directory 站点拓扑设计
 
-你可以在 Windows Server 2003 和 Windows Server 2008 技术中心网站上找到有关 Active Directory 域服务（AD DS）的以下文档：  
-  
--   有关查找域控制器的过程的详细信息，请参阅 Active Directory 收集（[https://go.microsoft.com/fwlink/?LinkID=88626](https://go.microsoft.com/fwlink/?LinkID=88626)）。  
-  
--   有关设计和部署打印服务器的详细信息，请参阅设计和部署打印服务器（[https://go.microsoft.com/fwlink/?LinkId=107041](https://go.microsoft.com/fwlink/?LinkId=107041)）。  
-  
--   有关跨越树和 Active Directory 复制拓扑的详细信息，请参阅 Active Directory 复制拓扑技术参考（[https://go.microsoft.com/fwlink/?LinkId=44137](https://go.microsoft.com/fwlink/?LinkId=44137)）。  
-  
--   若要详细了解如何使用 Adlb 和管理具有100或更多分支站点的环境，请参阅为分支机构规划和部署 Active Directory 域服务（[https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)）。  
-  
--   有关安装网络监视器的信息，请参阅监视网络流量（[https://go.microsoft.com/fwlink/?LinkId=107058](https://go.microsoft.com/fwlink/?LinkId=107058)）。  
-  
--   有关帮助您记录 Windows Server 2008 AD DS 站点拓扑设计的工作表，请参阅 Windows Server 2003 部署工具包的作业帮助（[https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)）。  
-  
--   有关域间快捷方式信任的详细信息，请参阅了解何时创建快捷方式信任（[https://go.microsoft.com/fwlink/?LinkId=107061](https://go.microsoft.com/fwlink/?LinkId=107061)）。  
-  
--   有关部署目录林根级域的详细信息，请参阅[部署 Windows Server 2008 林根级域](https://technet.microsoft.com/library/cc731174.aspx)。  
-  
--   有关保护域控制器的详细信息，请参阅保护 Windows Server Active Directory 安装（[https://go.microsoft.com/fwlink/?LinkId=28521](https://go.microsoft.com/fwlink/?LinkId=28521)）的最佳实践指南。  
-  
--   有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](https://technet.microsoft.com/library/cc755118.aspx)。  
-  
--   有关通用组缓存的工作原理的详细信息，请参阅全局编录工作原理（[https://go.microsoft.com/fwlink/?LinkId=107063](https://go.microsoft.com/fwlink/?LinkId=107063)）。  
-  
--   有关如何创建站点对象的详细信息，请参阅创建站点（[https://go.microsoft.com/fwlink/?LinkId=107067](https://go.microsoft.com/fwlink/?LinkId=107067)）。  
-  
--   有关如何创建子网对象的详细信息，请参阅创建子网（[https://go.microsoft.com/fwlink/?LinkId=107068](https://go.microsoft.com/fwlink/?LinkId=107068)）。  
-  
--   有关如何使用 "Active Directory 站点和服务" 管理单元来禁用 "**桥接所有站点链接**" 设置的详细信息，请参阅启用或禁用站点链接桥（[https://go.microsoft.com/fwlink/?LinkId=107073](https://go.microsoft.com/fwlink/?LinkId=107073)）。  
-  
--   有关通过防火墙管理复制的信息，请参阅按防火墙分段的网络中的 Active Directory （[https://go.microsoft.com/fwlink/?LinkId=37928](https://go.microsoft.com/fwlink/?LinkId=37928)）。  
-  
--   有关只读域控制器（RODC）功能的详细信息，请参阅 AD DS：只读域控制器（[https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616)）。  
-  
--   有关如何部署 RODC 的详细信息，请参阅只读域控制器的循序渐进指南（[https://go.microsoft.com/fwlink/?LinkID=92728](https://go.microsoft.com/fwlink/?LinkID=92728)）。  
-  
+你可以在 Windows Server 2003 和 Windows Server 2008 技术网站上找到有关 Active Directory 域服务（AD DS）的以下文档：
 
+- 有关查找域控制器的过程的详细信息，请参阅[Active Directory 集合](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))。
 
+- 有关设计和部署打印服务器的详细信息，请参阅[设计和部署打印服务器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10))。
+
+- 有关跨越树和 Active Directory 复制拓扑的详细信息，请参阅[Active Directory 复制拓扑技术参考](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc755326(v=ws.10))。
+
+- 若要详细了解如何使用 Adlb 和管理具有100或更多分支站点的环境，请参阅[使用 Windows Server 2008 Rodc 查看桥头服务器的负载平衡改进](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd735927(v%3dws.10))。
+
+- 有关安装网络监视器的信息，请参阅[监视网络流量](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc783075(v=ws.10))。
+
+- 有关帮助您记录 Windows Server 2008 AD DS 站点拓扑设计的工作表，请参阅[Windows server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)。
+
+- 有关域间快捷方式信任的详细信息，请参阅[了解何时创建快捷方式信任](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754538(v=ws.11))。
+
+- 有关部署目录林根级域的详细信息，请参阅[部署 Windows Server 2008 林根级域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。
+
+- 有关保护域控制器的详细信息，请参阅[Active Directory：设计注意事项和最佳实践](https://social.technet.microsoft.com/wiki/contents/articles/52587.active-directory-design-considerations-and-best-practices.aspx)。
+
+- 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
+
+- 有关通用组缓存工作原理的详细信息，请参阅[全局编录的工作](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10))原理。
+
+- 有关如何创建站点对象的详细信息，请参阅[创建站点](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772304(v=ws.11))。
+
+- 有关如何创建子网对象的详细信息，请参阅[创建子网](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770372(v=ws.11))。
+
+- 有关如何使用 "Active Directory 站点和服务" 管理单元来禁用 "**桥接所有站点链接**" 设置的详细信息，请参阅[启用或禁用站点链接桥](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10))。
+
+- 有关通过防火墙管理复制的信息，请参阅[通过防火墙分段的网络中的 Active Directory](https://microsoft.com/download/details.aspx?familyid=c2ef3846-43f0-4caf-9767-a9166368434e)。
+
+- 有关只读域控制器（RODC）功能的详细信息，请参阅[AD DS：只读域控制器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732801(v=ws.10))。
+
+- 有关如何部署 RODC 的详细信息，请参阅[只读域控制器循序渐进指南](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772234(v=ws.10))。

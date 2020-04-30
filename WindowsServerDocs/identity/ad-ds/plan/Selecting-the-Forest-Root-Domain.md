@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: abc02bec101b39a66a78da871f838d2585d89377
-ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
+ms.openlocfilehash: 1abf845ce69b395bf46a0f155db2c683c359207c
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81524922"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81623875"
 ---
 # <a name="selecting-the-forest-root-domain"></a>选择林根域
 
@@ -68,7 +68,7 @@ ms.locfileid: "81524922"
 建议你使用在 Active Directory 命名空间中向 Internet 颁发机构注册的 DNS 名称。 只有注册的名称才能保证是全局唯一的。 如果以后的其他组织注册了相同的 DNS 域名（或者，如果你的组织与使用相同 DNS 名称的另一家公司进行合并、获取或获取此域名），这两个基础结构将无法相互交互。
 
 > [!CAUTION]
-> 不要使用单标签 DNS 名称。 有关详细信息，请参阅（[使用单标签 DNS 名称配置的 Active Directory 域的部署和操作](https://go.microsoft.com/fwlink/?LinkId=106631)）。 此外，我们不建议使用未注册的后缀，如 local。
+> 不要使用单标签 DNS 名称。 有关详细信息，请参阅[使用单标签 DNS 名称配置的 Active Directory 域的部署和操作](https://support.microsoft.com/help/300684/)。 此外，我们不建议使用未注册的后缀，如 local。
 
 ### <a name="selecting-a-prefix"></a>选择前缀
 
@@ -78,14 +78,14 @@ ms.locfileid: "81524922"
 
 下表列出了为已注册的 DNS 名称选择前缀的规则。
 
-|规则|说明|
-|--------|---------------|
-|选择不可能过时的前缀。|避免将来可能会更改的名称，如产品线或操作系统。 建议使用一般名称，如 corp 或 ds。|
-|选择仅包含 Internet 标准字符的前缀。|A-z、a-z、0-9 和（-），但并不完全是数字。|
-|前缀中包含15个或更少的字符。|如果选择的前缀长度不超过15个字符，则 NetBIOS 名称与前缀相同。|
+| 规则     | 说明 |
+| -------- | --------------- |
+| 选择不可能过时的前缀。 | 避免将来可能会更改的名称，如产品线或操作系统。 建议使用一般名称，如 corp 或 ds。|
+| 选择仅包含 Internet 标准字符的前缀。 | A-z、a-z、0-9 和（-），但并不完全是数字。 |
+| 前缀中包含15个或更少的字符。 | 如果选择的前缀长度不超过15个字符，则 NetBIOS 名称与前缀相同。 |
 
 Active Directory DNS 所有者与组织的 DNS 所有者合作，以获取将用于 Active Directory 命名空间的名称的所有权，这一点非常重要。 有关设计 DNS 基础结构以支持 AD DS 的详细信息，请参阅[创建 Dns 基础结构设计](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)。
 
 ## <a name="documenting-the-forest-root-domain-name"></a>记录目录林根域名
 
-记录为林根域选择的 DNS 前缀和后缀。 此时，确定哪个域将成为林根。 您可以将目录林根域名信息添加到您创建的 "域计划" 工作表中，以便记录新域和升级域的计划以及域名。 若要打开它，请从[Windows Server 2003 部署工具包的作业帮助](https://www.microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "域计划" （DSSLOGI_5 .doc）。
+记录为林根域选择的 DNS 前缀和后缀。 此时，确定哪个域将成为林根。 您可以将目录林根域名信息添加到您创建的 "域计划" 工作表中，以便记录新域和升级域的计划以及域名。 若要打开它，请从[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "域计划" （DSSLOGI_5 .doc）。

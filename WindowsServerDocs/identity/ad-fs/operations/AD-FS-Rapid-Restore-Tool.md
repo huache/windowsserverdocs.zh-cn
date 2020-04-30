@@ -4,16 +4,16 @@ title: AD FS 快速还原工具
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 07/02/2019
+ms.date: 04/24/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 506734812689a42ec17768652ac715f5c7e24401
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dde9d60278a32ae4e6ba0baf35bc11ce631d4e02
+ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858100"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82192594"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS 快速还原工具
 
@@ -54,7 +54,7 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 ```
 
 >[!NOTE] 
->如果使用的是 Windows 集成数据库（WID），则需要在主 AD FS 服务器上运行此工具。  你可以使用 `Get-AdfsSyncProperties` PowerShell cmdlet 来确定你所在的服务器是否是主服务器。
+>如果使用的是 Windows 集成数据库（WID），则需要在主 AD FS 服务器上运行此工具。  你可以使用`Get-AdfsSyncProperties` PowerShell cmdlet 来确定你所在的服务器是否是主服务器。
 
 ### <a name="system-requirements"></a>系统要求
 
@@ -78,19 +78,19 @@ Cmdlet 采用以下参数：
 
 - **BackupDKM** -备份 Active Directory 包含默认配置（自动生成的令牌签名和解密证书）中 AD FS 密钥的 DKM 容器。 这将使用 AD 工具 "ldifde" 导出 AD 容器及其所有子树。
 
-- -**StorageType &lt;string&gt;** -用户要使用的存储的类型。 "文件系统" 表示用户要将其存储在本地或网络 "Azure" 中，表示用户要在执行备份时将其存储在 Azure 存储容器中，请选择 "文件系统" 或云中的备份位置。 要使用 Azure，应将 Azure 存储凭据传递给 cmdlet。 存储凭据包含帐户名和密钥。 除此之外，还必须传入容器名称。 如果该容器不存在，则在备份过程中创建它。 对于要使用的文件系统，必须指定存储路径。 在该目录中，将为每个备份创建一个新目录。 创建的每个目录都将包含备份的文件。 
+- -**StorageType &lt;string&gt; ** -用户要使用的存储类型。 "文件系统" 表示用户要将其存储在本地或网络 "Azure" 中，表示用户要在执行备份时将其存储在 Azure 存储容器中，请选择 "文件系统" 或云中的备份位置。 要使用 Azure，应将 Azure 存储凭据传递给 cmdlet。 存储凭据包含帐户名和密钥。 除此之外，还必须传入容器名称。 如果该容器不存在，则在备份过程中创建它。 对于要使用的文件系统，必须指定存储路径。 在该目录中，将为每个备份创建一个新目录。 创建的每个目录都将包含备份的文件。 
 
-- **EncryptionPassword &lt;字符串&gt;** -用于在存储之前加密所有已备份文件的密码
+- **EncryptionPassword &lt;字符串&gt; ** -用于在存储之前加密所有已备份文件的密码
 
-- **AzureConnectionCredentials &lt;pscredential&gt;** -Azure 存储帐户的帐户名称和密钥
+- **AzureConnectionCredentials &lt;pscredential&gt; ** -Azure 存储帐户的帐户名称和密钥
 
-- **New-azurestoragecontainer &lt;字符串&gt;** -将在 Azure 中存储备份的存储容器
+- **New-azurestoragecontainer &lt;string&gt; ** -将在 Azure 中存储备份的存储容器
 
-- **存储路径 &lt;字符串&gt;** -备份的存储位置
+- **存储路径&lt;string&gt; ** -将存储备份的位置
 
-- **ServiceAccountCredential &lt;pscredential&gt;** -指定用于当前正在运行的 AD FS 服务的服务帐户。 仅当用户想要备份 DKM 而不是域管理员或无权访问容器的内容时，才需要此参数。 
+- **ServiceAccountCredential &lt;pscredential&gt; ** -指定当前正在运行的 AD FS 服务所使用的服务帐户。 仅当用户想要备份 DKM 而不是域管理员或无权访问容器的内容时，才需要此参数。 
 
-- **BackupComment &lt;string []&gt;** -有关将在还原期间显示的备份的信息性字符串，类似于 hyper-v 检查点命名的概念。 默认值为空字符串
+- **BackupComment &lt;string []&gt; ** -有关将在还原期间显示的备份的信息性字符串，类似于 hyper-v 检查点命名的概念。 默认值为空字符串
 
  
 ## <a name="backup-examples"></a>备份示例
@@ -123,7 +123,7 @@ Backup-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testE
 ## <a name="restore-from-backup"></a>从备份还原
 若要将使用 Backup-ADFS 创建的配置应用到新的 AD FS 安装，请使用 Restore-ADFS cmdlet。
 
-此 cmdlet 使用 cmdlet 创建新的 AD FS 场 `Install-AdfsFarm` 并还原 AD FS 配置、数据库、证书等。 如果服务器上尚未安装 AD FS 角色，则该 cmdlet 将安装它。  该 cmdlet 检查现有备份的还原位置，并提示用户根据所采用的日期/时间以及用户可能已附加到备份的任何备份注释来选择适当的备份。 如果有多个 AD FS 配置具有不同的联合身份验证服务名称，则系统会提示用户首先选择适当的 AD FS 配置。
+此 cmdlet 使用 cmdlet `Install-AdfsFarm`创建新的 AD FS 场，并还原 AD FS 配置、数据库、证书等。 如果服务器上尚未安装 AD FS 角色，则该 cmdlet 将安装它。  该 cmdlet 检查现有备份的还原位置，并提示用户根据所采用的日期/时间以及用户可能已附加到备份的任何备份注释来选择适当的备份。 如果有多个 AD FS 配置具有不同的联合身份验证服务名称，则系统会提示用户首先选择适当的 AD FS 配置。
 用户必须是本地管理员和域管理员才能运行此 cmdlet。
 
 
@@ -136,28 +136,28 @@ Cmdlet 采用以下参数：
 
 ### <a name="detailed-description"></a>详细说明
 
-- **StorageType &lt;string&gt;** -用户要使用的存储的类型。
+- **StorageType &lt;string&gt; ** -用户要使用的存储类型。
  "文件系统" 指示用户要将其存储在本地或网络 "Azure" 中，表示用户要将其存储在 Azure 存储容器中
 
-- **DecryptionPassword &lt;字符串&gt;** -用于加密所有已备份文件的密码 
+- **DecryptionPassword &lt;字符串&gt; ** -用于加密所有已备份文件的密码 
 
-- **AzureConnectionCredentials &lt;pscredential&gt;** -Azure 存储帐户的帐户名称和密钥
+- **AzureConnectionCredentials &lt;pscredential&gt; ** -Azure 存储帐户的帐户名称和密钥
 
-- **New-azurestoragecontainer &lt;字符串&gt;** -将在 Azure 中存储备份的存储容器
+- **New-azurestoragecontainer &lt;string&gt; ** -将在 Azure 中存储备份的存储容器
 
-- **存储路径 &lt;字符串&gt;** -备份的存储位置
+- **存储路径&lt;string&gt; ** -将存储备份的位置
 
-- **ADFSName &lt; string &gt;** -已备份并将还原的联合的名称。 如果未提供此项并且只有一个联合身份验证服务名称，则将使用。 如果有多个备份到该位置的联合身份验证服务，则会提示用户选择一个已备份的联合身份验证服务。
+- **ADFSName &lt;字符串&gt; ** -已备份并将还原的联合的名称。 如果未提供此项并且只有一个联合身份验证服务名称，则将使用。 如果有多个备份到该位置的联合身份验证服务，则会提示用户选择一个已备份的联合身份验证服务。
 
-- **ServiceAccountCredential &lt; pscredential &gt;** -指定将用于要还原的新 AD FS 服务的服务帐户 
+- **ServiceAccountCredential &lt; pscredential &gt; ** -指定将用于要还原的新 AD FS 服务的服务帐户 
 
-- **GroupServiceAccountIdentifier &lt;string&gt;** -用户要用于要还原的新 AD FS 服务的 GMSA。 默认情况下，如果未提供任何一个，则会在 GMSA 时使用备份的帐户名称，否则，系统会提示用户将其置于服务帐户中
+- **GroupServiceAccountIdentifier &lt;string&gt; ** -用户要用于要还原的新 AD FS 服务的 GMSA。 默认情况下，如果未提供任何一个，则会在 GMSA 时使用备份的帐户名称，否则，系统会提示用户将其置于服务帐户中
 
-- **DBConnectionString &lt;字符串&gt;** -如果用户想要使用不同的数据库进行还原，则应在 wid 中传递 SQL 连接字符串或为 wid 键入。
+- **DBConnectionString &lt;字符串&gt; ** -如果用户想要使用不同的数据库进行还原，则应在 wid 中传递 SQL 连接字符串或为 wid 键入。
 
-- **强制 &lt;bool&gt;** -跳过该工具在选择备份后可能会出现的提示
+- **强制&lt;执行&gt;布尔**-跳过工具在选择备份后可能会出现的提示
 
-- **RestoreDKM &lt;bool&gt;** -若要转到新广告并最初备份 dkm，应设置 AD 的 dkm 容器。
+- **RestoreDKM &lt;bool&gt; ** -若要转到新的 ad 并且最初备份 dkm，应设置为 ad 的 dkm 容器。
 
 ## <a name="restore-examples"></a>还原示例
 
@@ -219,10 +219,21 @@ RngCryptoServiceProvider 用于生成 AES 和 Rfc2898DeriveBytes 类使用的 sa
 
 ## <a name="version-release-history"></a>版本发行历史记录
 
+### <a name="version-10823"></a>版本1.0.82。3
+版本：2020年4月
+
+**已修复的问题：**
+
+
+- 添加了对基于 CNG 的证书的支持
+
+
 ### <a name="version-10820"></a>版本1.0.82。0
 版本：2019年7月
 
 **已修复的问题：**
+
+
 - AD FS 包含 LDAP 转义字符的服务帐户名称的 Bug 修复
 
 

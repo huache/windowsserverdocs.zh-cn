@@ -1,5 +1,5 @@
 ---
-title: 用 AD FS 2019 风险评估模型生成插件
+title: 使用 AD FS 2019 风险评估模型构建插件
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -7,14 +7,14 @@ ms.date: 04/16/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: af7a565fb5b3745531497ed9119976418eb6dcd7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6433513f525572254e4aaef65e2bfc992a7c5280
+ms.sourcegitcommit: 41dc7f487d282895a242e788049285363dd19eeb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857520"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82169172"
 ---
-# <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>用 AD FS 2019 风险评估模型生成插件
+# <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>使用 AD FS 2019 风险评估模型构建插件
 
 现在，你可以生成自己的插件来阻止或将风险评分分配给不同阶段的身份验证请求–请求接收、预身份验证和后身份验证。 这可以通过使用 AD FS 2019 引入的新风险评估模型来完成。 
 
@@ -24,7 +24,7 @@ ms.locfileid: "80857520"
 
 该模型允许在 AD FS 身份验证管道的三个阶段（如下所示）中的任意一阶段插件代码
 
-![模型](media/ad-fs-risk-assessment-model/risk1.png)
+![model](media/ad-fs-risk-assessment-model/risk1.png)
 
 1.    **请求已收到阶段**–当 AD FS 接收身份验证请求，即用户输入凭据之前，允许生成插件来允许或阻止请求。 你可以在此阶段使用可用的请求上下文（例如，客户端 IP、Http 方法、代理服务器 DNS 等）来执行风险评估。 例如，你可以生成一个插件来从请求上下文中读取 IP，并在 IP 位于风险 Ip 的预定义列表中时阻止身份验证请求。 
 
@@ -61,36 +61,36 @@ ms.locfileid: "80857520"
 
    >{!注意] 如果你有 AD FS 场，你可以在任何或所有 AD FS 服务器上创建文件。 任何文件均可用于将有风险的 Ip 导入 AD FS。 下面将详细讨论导入过程，请在下面的[AD FS 中注册插件 dll](#register-the-plug-in-dll-with-ad-fs) 。 
 
-3. 使用 Visual Studio 打开项目 `ThreatDetectionModule.sln`
+3. 使用 Visual Studio `ThreatDetectionModule.sln`打开项目
 
-4. 从 "解决方案资源管理器" 中删除 `Microsoft.IdentityServer.dll`，如下所示：</br>
+4. 从 " `Microsoft.IdentityServer.dll`解决方案资源管理器" 中删除，如下所示：</br>
    ![model](media/ad-fs-risk-assessment-model/risk2.png)
 
-5. 添加对 AD FS 的 `Microsoft.IdentityServer.dll` 的引用，如下所示
+5. 向 AD FS 添加对`Microsoft.IdentityServer.dll`的引用，如下所示
 
    a.    在**解决方案资源管理器**中右键单击 "**引用**"，然后选择 "**添加引用 ...** "</br> 
-   ![模型](media/ad-fs-risk-assessment-model/risk3.png)
+   ![模式](media/ad-fs-risk-assessment-model/risk3.png)
    
-   b.    在 "**引用管理器**" 窗口中选择 "**浏览**"。 在 "**选择要引用的文件 ...** " 对话框中，从 AD FS 安装文件夹中选择 `Microsoft.IdentityServer.dll` （在 my case **C:\Windows\ADFS**中），然后单击 "**添加**"。
+   b.    在 "**引用管理器**" 窗口中选择 "**浏览**"。 在 "**选择要引用的文件 ...** " 对话框中， `Microsoft.IdentityServer.dll`选择 AD FS 安装文件夹（在 my case **C:\Windows\ADFS**中），然后单击 "**添加**"。
    
    >[!NOTE]
-   >在我的示例中，我在 AD FS 服务器本身上构建了插件。 如果你的开发环境在不同的服务器上，请将 `Microsoft.IdentityServer.dll` 从 AD FS 服务器上的 AD FS 安装文件夹复制到你的开发框。</br> 
+   >在我的示例中，我在 AD FS 服务器本身上构建了插件。 如果你的开发环境在不同的服务器上，请`Microsoft.IdentityServer.dll`将 AD FS server 上的 AD FS 安装文件夹中的复制到你的开发框。</br> 
    
-   ![模型](media/ad-fs-risk-assessment-model/risk4.png)
+   ![model](media/ad-fs-risk-assessment-model/risk4.png)
    
-   c.    确保选中 `Microsoft.IdentityServer.dll` 复选框后，在 "**引用管理器**" 窗口中单击 **"确定"**</br>
+   c.    确保`Microsoft.IdentityServer.dll`选中复选框后，在 "**引用管理器**" 窗口上单击 **"确定"**</br>
    ![model](media/ad-fs-risk-assessment-model/risk5.png)
  
-6. 现在，所有类和引用都已准备就绪，可用于生成。   不过，由于此项目的输出是一个 dll，因此必须将其安装到 AD FS 服务器的**全局程序集缓存**（GAC）中，并且需要首先对该 dll 进行签名。 可按如下所示执行此操作：
+6. 现在，所有类和引用都已准备就绪，可用于生成。   不过，由于此项目的输出是一个 dll，因此必须将其安装到 AD FS 服务器的**全局程序集缓存**（GAC）中，并且需要首先对该 dll 进行签名。 可以按以下步骤来完成：
 
    a.    **右键单击**项目名称 ThreatDetectionModule。 在菜单中单击 "**属性**"。</br>
    ![model](media/ad-fs-risk-assessment-model/risk6.png)
    
-   b.    在 "**属性**" 页上，单击左侧的 "**签名**"，然后选中标记为 **"为程序集签名"** 的复选框。 从 "**选择强名称密钥文件**：" 下拉菜单中，选择 " **< 新建 ...">**</br>
+   b.    在 "**属性**" 页上，单击左侧的 "**签名**"，然后选中标记为 **"为程序集签名"** 的复选框。 从 "**选择强名称密钥文件**：" 下拉菜单中，选择 " **<新建 ..." >**</br>
    ![model](media/ad-fs-risk-assessment-model/risk7.png)
 
-   c.    在 "**创建强名称密钥" 对话框**中，为密钥键入名称（可选择任何名称），取消选中 "**使用密码保护密钥文件**" 复选框。 然后，单击 **“确定”** 。
-   ![model](media/ad-fs-risk-assessment-model/risk8.png)</br>
+   c.    在 "**创建强名称密钥" 对话框**中，为密钥键入名称（可选择任何名称），取消选中 "**使用密码保护密钥文件**" 复选框。 然后，单击 **“确定”**。</br>
+   ![model](media/ad-fs-risk-assessment-model/risk8.png)
  
    d.    保存项目，如下所示</br>
    ![model](media/ad-fs-risk-assessment-model/risk9.png)
@@ -102,26 +102,26 @@ ms.locfileid: "80857520"
    ![model](media/ad-fs-risk-assessment-model/risk11.png)
 
 
-插件（dll）现在可供使用，并且位于项目文件夹的 **\bin\Debug**文件夹（在本例中为**C:\extensions\ThreatDetectionModule\bin\Debug\ThreatDetectionModule.dll**）。 
+插件（dll）现在可供使用，并且位于项目文件夹的**\bin\Debug**文件夹（在本例中为**C:\extensions\ThreatDetectionModule\bin\Debug\ThreatDetectionModule.dll**）。 
 
 下一步是将此 dll 注册到 AD FS，因此它将以 AD FS 身份验证过程运行。 
 
 ### <a name="register-the-plug-in-dll-with-ad-fs"></a>将插件 dll 注册到 AD FS
 
-我们需要在 AD FS 服务器上使用 `Register-AdfsThreatDetectionModule` PowerShell 命令在 AD FS 中注册该 dll，但在注册之前，我们需要获取公钥令牌。 此公钥标记是在创建密钥时创建的，并使用该密钥对 dll 进行签名。 若要了解 dll 的公钥标记是什么，可以使用**sn.exe** ，如下所示
+我们需要在 AD FS 服务器上使用`Register-AdfsThreatDetectionModule` PowerShell 命令在 AD FS 中注册该 dll，但在注册之前，我们需要获取公钥标记。 此公钥标记是在创建密钥时创建的，并使用该密钥对 dll 进行签名。 若要了解 dll 的公钥标记是什么，可以使用**sn.exe** ，如下所示
 
-1. 将 **\bin\Debug**文件夹中的 dll 文件复制到另一个位置（在本例中将其复制到**C:\extensions**）
+1. 将**\bin\Debug**文件夹中的 dll 文件复制到另一个位置（在本例中将其复制到**C:\extensions**）
 
-2. 启动 Visual Studio 的**开发人员命令提示**，然后前往包含**sn.exe**的目录（在本例中，目录为**C:\Program Files （X86） \Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**） ![型号](media/ad-fs-risk-assessment-model/risk12.png)
+2. 启动 Visual Studio 的**开发人员命令提示**，然后前往包含**sn.exe**的目录（在本例中，目录为**C:\Program Files （x86） \Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**） ![model](media/ad-fs-risk-assessment-model/risk12.png)
 
-3. 用 **-T**参数和文件的位置（在我的示例中 `SN -T "C:\extensions\ThreatDetectionModule.dll"`） ![模型运行**SN**命令](media/ad-fs-risk-assessment-model/risk13.png)</br>
+3. 用 **-T**参数和文件（在我的示例`SN -T "C:\extensions\ThreatDetectionModule.dll"`中） ![模型的位置运行**SN**命令](media/ad-fs-risk-assessment-model/risk13.png)</br>
    此命令将为你提供公钥令牌（对于我，**公钥标记是 714697626ef96b35**）
 
 4. 将 dll 添加到 AD FS 服务器的**全局程序集缓存**中我们最好的做法是为项目创建正确的安装程序，并使用安装程序将文件添加到 GAC 中。 另一种解决方案是在开发计算机上使用**gacutil.exe** （有关**gacutil.exe** [可用的](https://docs.microsoft.com/dotnet/framework/tools/gacutil-exe-gac-tool)详细信息）。  由于我的 visual studio 与 AD FS 位于同一服务器上，因此我将使用**gacutil.exe** ，如下所示
 
    a.    在 Visual Studio 开发人员命令提示上，并中转到包含**gacutil.exe**的目录（在本例中，目录为**C:\Program Files （x86） \Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**）
 
-   b.    运行**gacutil.exe**命令（在本例中 `Gacutil /IF C:\extensions\ThreatDetectionModule.dll`） ![模型](media/ad-fs-risk-assessment-model/risk14.png)
+   b.    运行**gacutil.exe**命令（在我的示例`Gacutil /IF C:\extensions\ThreatDetectionModule.dll`中![为）模型](media/ad-fs-risk-assessment-model/risk14.png)
  
    >[!NOTE]
    >如果你有 AD FS 场，则需要在服务器场中的每个 AD FS 服务器上执行以上。 
@@ -156,7 +156,7 @@ ms.locfileid: "80857520"
 1. 打开我们之前创建的**authconfig**文件（在**C:\extensions**位置的情况下），并添加要阻止的**Extranet ip** 。 每个 IP 都应在单独的行上，并且末尾不应有空格</br>
    ![model](media/ad-fs-risk-assessment-model/risk18.png)
  
-2. 保存并关闭文件
+2. 保存并关闭该文件
 
 3. 通过运行以下 PowerShell 命令，在 AD FS 中导入已更新的文件 
 
@@ -174,7 +174,7 @@ ms.locfileid: "80857520"
    在本演示中，我将使用[AD FS 帮助声明 X 光工具](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest)来启动请求。 如果要使用 X 光工具，请按照说明进行操作 
 
    输入 "联合服务器实例" 和 "命中**测试身份验证**" 按钮。</br> 
-   ![模型](media/ad-fs-risk-assessment-model/risk15.png) 
+   ![模式](media/ad-fs-risk-assessment-model/risk15.png) 
 
 5. 身份验证被阻止，如下所示。</br>
    ![model](media/ad-fs-risk-assessment-model/risk16.png)
@@ -183,7 +183,7 @@ ms.locfileid: "80857520"
 
 ## <a name="plug-in-code-walkthrough"></a>插件代码演练
 
-使用 Visual Studio 打开项目 `ThreatDetectionModule.sln`，然后在屏幕右侧的 "**解决方案资源管理器**" 中打开**UserRiskAnalyzer.cs**主文件</br>
+使用 Visual Studio `ThreatDetectionModule.sln`打开项目，然后在屏幕右侧的 "**解决方案资源管理器**" 中打开主文件**UserRiskAnalyzer.cs**</br>
 ![model](media/ad-fs-risk-assessment-model/risk17.png)
  
 文件包含用于实现抽象类[ThreatDetectionModule](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule?view=adfs-2019)和 interface [IRequestReceivedThreatDetectionModule](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule?view=adfs-2019)的主类 UserRiskAnalyzer，用于从请求上下文读取 ip、将获得的 IP 与从 AD FS DB 加载的 ip 进行比较，以及在有 ip 匹配时阻止请求。 让我们更详细地了解这些类型
@@ -207,16 +207,16 @@ public abstract class ThreatDetectionModule
 ```
 类包括以下方法和属性。
 
-|方法 |类型|Definition|
+|方法 |类型|定义|
 |-----|-----|-----| 
-|[OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) |导致|当插件加载到其管道中时 AD FS 调用| 
-|[OnAuthenticationPipelineUnload](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload?view=adfs-2019) |导致|当从其管道中卸载插件时 AD FS 调用| 
-|[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)| 导致|在配置更新时由 AD FS 调用 |
-|**知识产权** |**Type** |**定义**|
-|[VendorName](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|String |获取拥有插件的供应商的名称|
-|[ModuleIdentifier](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|String |获取插件的标识符|
+|[OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) |Void|当插件加载到其管道中时 AD FS 调用| 
+|[OnAuthenticationPipelineUnload](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload?view=adfs-2019) |Void|当从其管道中卸载插件时 AD FS 调用| 
+|[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)| Void|在配置更新时由 AD FS 调用 |
+|**属性** |类型  |**定义**|
+|[VendorName](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|字符串 |获取拥有插件的供应商的名称|
+|[ModuleIdentifier](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|字符串 |获取插件的标识符|
 
-在我们的示例插件中，使用[OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019)和[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)方法从 AD FS DB 读取预定义的 ip。 将插件注册到 AD FS 时，将调用[OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) ，而当使用 `Import-AdfsThreatDetectionModuleConfiguration` cmdlet 导入 .csv 时调用[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019) 。 
+在我们的示例插件中，使用[OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019)和[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)方法从 AD FS DB 读取预定义的 ip。 将插件注册到 AD FS 时，将调用[OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) ，而[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)当使用`Import-AdfsThreatDetectionModuleConfiguration` Cmdlet 导入 .csv 时调用 OnConfigurationUpdate。 
 
 #### <a name="irequestreceivedthreatdetectionmodule-interface"></a>IRequestReceivedThreatDetectionModule 接口
 
@@ -258,7 +258,7 @@ IList<Claim> additionalClams
 );
 }
 ```
-接口包括[EvaluatePreAuthentication](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule.evaluatepreauthentication?view=adfs-2019)方法，该方法允许你使用[RequestContext RequestContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)、 [SecurityContext SecurityContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)、 [ProtocolContext ProtocolContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019)和[<Claim> IList](https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2)中传递的信息来编写预身份验证风险评估逻辑。 
+接口包含[EvaluatePreAuthentication](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule.evaluatepreauthentication?view=adfs-2019)方法，该方法允许你使用[RequestContext RequestContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)、 [SecurityContext SecurityContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)、 [ProtocolContext ProtocolContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019)和[<Claim> IList additionalClams](https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2)输入参数中传递的信息来编写预身份验证风险评估逻辑。 
 
 >[!NOTE]
 >有关每个上下文类型传递的属性列表，请访问[RequestContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)、 [SecurityContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)和[ProtocolContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019)类定义。 
@@ -285,7 +285,7 @@ IList<Claim> additionalClams
 }
 ```
 
-接口包含[EvaluatePostAuthentication](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule.evaluatepostauthentication?view=adfs-2019)方法，该方法允许你使用[RequestContext RequestContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)、 [SecurityContext SecurityContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)、 [ProtocolContext ProtocolContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019)和 IList 中传递的信息[<Claim> additionalClams](https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2)输入参数来编写你的身份验证后风险评估逻辑。 
+接口包含[EvaluatePostAuthentication](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule.evaluatepostauthentication?view=adfs-2019)方法，该方法允许你使用[RequestContext RequestContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)、 [SecurityContext SecurityContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)、 [ProtocolContext ProtocolContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019)和[<Claim> IList additionalClams](https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2)输入参数中传递的信息来编写你的身份验证后风险评估逻辑。 
 
 >[!NOTE]
 > 有关随每个上下文类型一起传递的属性的完整列表，请参阅[RequestContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019)、 [SecurityContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)和[ProtocolContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019)类定义。 
@@ -297,7 +297,7 @@ IList<Claim> additionalClams
 >[!NOTE]
 >若要运行插件，main 类（在本例中为 UserRiskAnalyzer）需要派生[ThreatDetectionModule](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule?view=adfs-2019)抽象类，并且应至少实现上述三个接口中的一个。 注册 dll 后，AD FS 会检查要实现的接口并在管道中的适当阶段调用它们。
 
-### <a name="faqs"></a>常见问题
+### <a name="faqs"></a>常见问题解答
 
 **为什么应生成这些插件？**</br>
 **答：** 这些插件不仅为你提供额外的功能来保护你的环境免受攻击（例如密码喷涂攻击），而且还能灵活地根据你的需求构建你自己的风险评估逻辑。 
@@ -310,3 +310,9 @@ IList<Claim> additionalClams
 
 **为什么不能 AD FS 建议有风险的 Ip、用户等的列表？**</br>
 **答：** 虽然目前不可用，但我们正在努力构建智能，以在可插接式风险评估模型中提出有风险的 Ip、用户等。 我们将很快共享启动日期。 
+
+**还有哪些可用的示例插件？**</br>
+**答：** 下面的示例插件可用：
+|名称|说明| 
+|-----|-----|
+|[风险用户插件](https://github.com/microsoft/adfs-sample-block-user-on-adfs-marked-risky-by-AzureAD-IdentityProtection)|基于 Azure AD Identity Protection 确定的用户风险级别，阻止身份验证或强制执行 MFA 的示例插件。| 
