@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 5c9e8b7e1e11deaa82fbec6f451b4f194609c299
-ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
+ms.openlocfilehash: d7dc3455c5d7c6b00940008ceea646436b40bed0
+ms.sourcegitcommit: e51dd9dabec82c59e805e7a04c27e56c83773857
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605547"
+ms.locfileid: "82613729"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知问题
 
@@ -28,6 +28,8 @@ ms.locfileid: "82605547"
 - 不支持使用低于1024的端口。 在服务模式下，你可以选择配置端口80以重定向到指定的端口。
 
 ## <a name="general"></a>常规
+
+- 在 Windows 管理中心的1910.2 版本中，你可能无法连接到特定硬件上的 Hyper-v 服务器。 如果已阻止此问题，[请下载以前的版本](https://aka.ms/wacprevious)。 
 
 - 如果你已在**Windows Server 2016**上将 windows 管理中心作为网关安装，则该服务可能会崩溃，并在包含```Faulting application name: sme.exe```和```Faulting module name: WsmSvc.dll```的事件日志中出现错误。 这是由 Windows Server 2019 中已修复的 bug 引起的。 Windows Server 2016 的修补程序包含在 2 2019 月的累积更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
