@@ -9,22 +9,22 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e39b36a6c3126429bc47d5b89d104612cab5db96
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a9dd84898e3c0cbf8d6ae2fc63c94504be691a31
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844280"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725479"
 ---
 # <a name="fsutil-objectid"></a>Fsutil objectid
->适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 管理对象标识符（Oid），这是分布式链接跟踪（DLT）客户端服务和文件复制服务（FRS）用于跟踪其他对象（如文件、目录和链接）的内部对象。 对象标识符在大多数程序中是不可见的，不应进行修改。
 
 > [!CAUTION]
 > 不要删除、设置或以其他方式修改对象标识符。 删除或设置对象标识符可能会导致文件的某些部分丢失数据，最多可包含整个数据量。 此外，可能会导致分布式链接跟踪（DLT）客户端服务和文件复制服务（FRS）出现不利的行为。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -37,17 +37,17 @@ fsutil objectid [set] <ObjectID> <BirthVolumeID> <BirthObjectID> <DomainID> <Fil
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------------|---------------|
-|创建|如果指定的文件尚不具有对象标识符，则创建一个。 如果文件已有对象标识符，则此子命令等效于**query**子命令。|
-|删除|删除对象标识符。|
+|create|如果指定的文件尚不具有对象标识符，则创建一个。 如果文件已有对象标识符，则此子命令等效于**query**子命令。|
+|“删除”|删除对象标识符。|
 |query|查询对象标识符。|
 |set|设置对象标识符。|
-|\<ObjectID >|设置特定于文件的16字节十六进制标识符，该标识符在卷内保证是唯一的。 分布式链接跟踪（DLT）客户端服务和文件复制服务（FRS）使用该对象标识符来标识文件。|
-|\<BirthVolumeID >|指示文件首次获得对象标识符时所在的卷。 此值是 DLT 客户端服务使用的16字节十六进制标识符。|
-|\<BirthObjectID >|指示文件的原始对象标识符（移动文件时*ObjectID*可能会更改）。 此值是 DLT 客户端服务使用的16字节十六进制标识符。|
-|\<DomainID >|16字节的十六进制域标识符。 当前未使用此值，必须将其设置为全零。|
-|\<文件名 >|指定文件的完整路径，包括文件名和扩展名，例如 C:\documents\filename.txt。|
+|\<ObjectID>|设置特定于文件的16字节十六进制标识符，该标识符在卷内保证是唯一的。 分布式链接跟踪（DLT）客户端服务和文件复制服务（FRS）使用该对象标识符来标识文件。|
+|\<BirthVolumeID>|指示文件首次获得对象标识符时所在的卷。 此值是 DLT 客户端服务使用的16字节十六进制标识符。|
+|\<BirthObjectID>|指示文件的原始对象标识符（移动文件时*ObjectID*可能会更改）。 此值是 DLT 客户端服务使用的16字节十六进制标识符。|
+|\<DomainID>|16字节的十六进制域标识符。 当前未使用此值，必须将其设置为全零。|
+|\<文件名>|指定文件的完整路径，包括文件名和扩展名，例如 C:\documents\filename.txt。|
 
 ## <a name="remarks"></a>备注
 

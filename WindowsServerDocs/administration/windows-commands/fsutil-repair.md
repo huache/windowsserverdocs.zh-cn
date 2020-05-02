@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 6de102daed2bedfeb41da16e06b7db483af70da0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1a7931314f7064a62e45d2319e48d58162ab0e11
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844190"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725468"
 ---
 # <a name="fsutil-repair"></a>Fsutil repair
->适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 管理和监视 NTFS 自修复修复操作。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -36,18 +36,18 @@ fsutil repair [wait][<WaitType>] <VolumePath>
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------------|---------------|
 |列举|枚举卷损坏日志的条目。|
-|\<volumepath >|指定卷作为驱动器名称后跟一个冒号。|
-|\<LogName >|$Corrupt-卷中已确认的损坏集。<br />$Verify-卷中一组潜在的未验证损坏。|
+|\<volumepath>|指定卷作为驱动器名称后跟一个冒号。|
+|\<LogName>|$Corrupt-卷中已确认的损坏集。<br />$Verify-卷中一组潜在的未验证损坏。|
 |造成|启动 NTFS 自修复。|
-|\<FileReference >|指定 NTFS 特定于卷的文件 ID （文件参考编号）。 文件引用包含文件的段号。|
+|\<FileReference>|指定 NTFS 特定于卷的文件 ID （文件参考编号）。 文件引用包含文件的段号。|
 |query|查询 NTFS 卷的自愈状态。|
 |set|设置卷的自愈状态。|
-|\<标志 >|指定设置卷的自愈状态时要使用的修复方法。<p>**Flags**参数可设置为三个值：<p>-   **0x01**：启用常规修复。<br />-   **0x09**：在不修复的情况下警告潜在的数据丢失。<br />-   **0x00**：禁用 NTFS 自修复修复操作。|
+|\<标志>|指定设置卷的自愈状态时要使用的修复方法。<p>**Flags**参数可设置为三个值：<p>-   **0x01**：启用常规修复。<br />-   **0x09**：在不修复的情况下警告潜在的数据丢失。<br />-   **0x00**：禁用 NTFS 自修复修复操作。|
 |state|查询系统或给定卷的损坏状态。|
-|再|等待修复完成。 如果 NTFS 检测到它在其上执行修复的卷上存在问题，则此选项允许系统等待修复完成，然后再运行挂起的任何脚本。|
+|wait|等待修复完成。 如果 NTFS 检测到它在其上执行修复的卷上存在问题，则此选项允许系统等待修复完成，然后再运行挂起的任何脚本。|
 |[WaitType {0&#124;1}]|指示是等待当前修复完成，还是等待所有修复完成。 *WaitType*可以设置为以下值：<p>-   **0**：等待所有修复完成。 （默认值）<br />-   **1**：等待当前修复完成。|
 
 ## <a name="remarks"></a>备注

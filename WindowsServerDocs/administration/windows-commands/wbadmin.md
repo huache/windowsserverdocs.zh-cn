@@ -1,6 +1,6 @@
 ---
 title: wbadmin
-description: 用于 wbadmin 的 Windows 命令主题，可用于在命令提示符下备份和还原操作系统、卷、文件、文件夹和应用程序。
+description: 用于 wbadmin 的参考主题，可用于在命令提示符下备份和还原操作系统、卷、文件、文件夹和应用程序。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ca9bdc54cd77f11239d0a61cf052e7b12b02b22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 94f07d17d46dad4e5301ba3ea6be94b10f26a3af
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829470"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725838"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -28,7 +28,7 @@ ms.locfileid: "80829470"
 
 ## <a name="subcommands"></a>个子
 
-|命令|说明|
+|子命令|描述|
 |----------|-----------|
 |[Wbadmin enable backup](wbadmin-enable-backup.md)|配置并启用定期计划的备份。|
 |[Wbadmin disable backup](wbadmin-disable-backup.md)|禁用日常备份。|

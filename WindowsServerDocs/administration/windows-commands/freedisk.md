@@ -1,6 +1,6 @@
 ---
 title: freedisk
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d652aa89c689a97bf2ecc67383bc2fd464a3054
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 102d829535eb6028b2a062234f280fd32ea48943
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844440"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725557"
 ---
 # <a name="freedisk"></a>freedisk
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 在继续执行安装过程之前，检查是否有指定数量的可用磁盘空间。
 
@@ -28,19 +28,19 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
 ```
 ### <a name="parameters"></a>参数
 
-|       参数       |                                                                                         说明                                                                                          |
+|       参数       |                                                                                         描述                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     /s <computer>     | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
+|     /s<computer>     | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
 | /u [<Domain>\\]<User> |                                            用指定用户帐户的权限运行脚本。 默认值为 "系统权限"。                                            |
 |    /p [<Password>]    |                                                           指定在 **/u**中指定的用户帐户的密码。                                                            |
-|      /d <Drive>       |                              指定要找出可用空间可用性的驱动器。 您必须指定远程计算机的 <Drive>。                               |
-|        <Value>        |                                     检查特定的可用磁盘空间量。 可以指定 <Value>字节、KB、MB、GB、TB、PB、EB、ZB 或 YB。                                      |
+|      /d<Drive>       |                              指定要找出可用空间可用性的驱动器。 您必须为<Drive>远程计算机指定。                               |
+|        <Value>        |                                     检查特定的可用磁盘空间量。 你可指定 <Value>字节、KB、MB、GB、TB、PB、EB、ZB 或 YB。                                      |
 
 ## <a name="remarks"></a>备注
 - 仅当使用 **/s**时，才能使用 **/s**、 **/u**和 **/p**命令行选项。 必须使用 **/p** with **/u**来提供用户的密码。
 - 对于无人参与的安装，可以在安装批处理文件中使用**freedisk**来检查必备空间可用空间，然后再继续安装。
 - 在批处理文件中使用**freedisk**时，如果有足够的空间，则返回**0** ; 如果空间不足，则返回**1** 。
-  ## <a name="examples"></a><a name=BKMK_examples></a>示例
+  ## <a name="examples"></a>示例
   若要确定驱动器 C：上是否有至少 50 MB 的可用空间，请键入：
   ```
   freedisk 50mb 

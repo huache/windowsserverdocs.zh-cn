@@ -1,6 +1,6 @@
 ---
 title: wbadmin start systemstaterecovery
-description: 用于 wbadmin start systemstaterecovery 的 Windows 命令主题，它对指定的位置以及从备份执行系统状态恢复。
+description: Wbadmin start systemstaterecovery 的参考主题，它对你指定的位置和备份执行系统状态恢复。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 581ad6fe3591e549c3f89e4c95d2f8ab0cde059c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fa111934f93bf7fea5aade1f39b4fc6a014d6c9e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829490"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725875"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -27,7 +27,7 @@ ms.locfileid: "80829490"
 
 若要使用此子命令执行系统状态恢复，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。 （若要打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -57,9 +57,9 @@ wbadmin start systemstaterecovery
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|-版本|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入**wbadmin get 版本**。|
+|-version|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入**wbadmin get 版本**。|
 |-showsummary|报告上次系统状态恢复的摘要（在完成操作所需的重新启动后）。 此参数不能与任何其他参数一起使用。|
 |-backupTarget|指定包含要恢复的备份或备份的存储位置。 当存储位置不同于通常存储此计算机的备份的位置时，此参数非常有用。|
 |-计算机|指定要恢复的计算机的名称。 当多台计算机备份到同一位置时，此参数非常有用。 当指定 **-backupTarget**参数时，应使用。|
@@ -68,13 +68,13 @@ wbadmin start systemstaterecovery
 |-autoReboot|指定在系统状态恢复操作结束时重新启动系统。 此参数仅对恢复到原始位置有效。 如果需要在执行恢复操作后执行步骤，则不建议使用此参数。|
 |-quiet|对用户运行无提示的子命令。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 - 若要在 9:00 A.M. 为03/31/2013 的备份执行系统状态恢复，请键入：  
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- 在 9:00 A.M. 从04/30/2013 执行备份的系统状态恢复。 存储在共享资源 \\\\servername\share for server01，请键入：  
+- 在 9:00 A.M. 从04/30/2013 执行备份的系统状态恢复。 这是存储在 server01 的共享\\ \\资源 servername\share 上，请键入：  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```

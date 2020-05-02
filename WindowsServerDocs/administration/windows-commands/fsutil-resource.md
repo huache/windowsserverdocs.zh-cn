@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 2013173978838764b2ff83a8b7cbc35adc485264
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 678f3f98a96f44c146b73e9b6081884f8547373c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844090"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725446"
 ---
 # <a name="fsutil-resource"></a>Fsutil 资源
->适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7，Windows 2008，Windows Vista
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7，Windows 2008，Windows Vista
 
 创建辅助事务资源管理器，启动或停止事务资源管理器，或显示有关事务性资源管理器的信息并修改以下行为：
 
@@ -28,8 +28,6 @@ ms.locfileid: "80844090"
 -   指定的事务资源管理器更喜欢一致性一致性
 
 -   正在运行的事务性资源管理器的特征
-
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
 
 ## <a name="syntax"></a>语法
 
@@ -46,9 +44,9 @@ fsutil resource [stop] <RmRootPathname>
 
 #### <a name="parameters"></a>参数
 
-|        参数        |                                                                                                                                                                                                                                        说明                                                                                                                                                                                                                                         |
+|        参数        |                                                                                                                                                                                                                                        描述                                                                                                                                                                                                                                         |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         创建          |                                                                                                                                                                                                                    创建辅助事务资源管理器。                                                                                                                                                                                                                     |
+|         create          |                                                                                                                                                                                                                    创建辅助事务资源管理器。                                                                                                                                                                                                                     |
 |    <RmRootPathname>     |                                                                                                                                                                                                        指定事务资源管理器根目录的完整路径。                                                                                                                                                                                                         |
 |          info           |                                                                                                                                                                                                            显示指定的事务性资源管理器的信息。                                                                                                                                                                                                            |
 |      setautoreset       | 指定默认的事务资源管理器是否将在下一次装入时清除事务元数据。<p>-将**setautoreset**参数设置为**true** ，以指定事务资源管理器在默认情况下将在下一次装入时清除事务元数据。<br />-将**setautoreset**参数设置为**false** ，以指定事务资源管理器默认情况下不会清除下一次装入时的事务元数据。 |
@@ -56,14 +54,14 @@ fsutil resource [stop] <RmRootPathname>
 |      setavailable       |                                                                                                                                                                                                 指定事务资源管理器优先于可用性。                                                                                                                                                                                                 |
 |      setconsistent      |                                                                                                                                                                                                 指定事务资源管理器将优先于可用性。                                                                                                                                                                                                 |
 |         setlog          |                                                                                                                                                                                                  更改已在运行的事务性资源管理器的特性。                                                                                                                                                                                                  |
-|         年          |                                                                                                  指定事务资源管理器日志可增长的量。<p>可按如下所示指定增长参数：<p>-使用以下格式的容器数：_容器_**容器**<br />-使用_格式：百分比百分比_**percent**                                                                                                   |
+|         growth          |                                                                                                  指定事务资源管理器日志可增长的量。<p>可按如下所示指定增长参数：<p>-使用以下格式的容器数：_容器_**容器**<br />-使用_格式：百分比百分比_**percent**                                                                                                   |
 |      <containers>       |                                                                                                                                                                                                      指定事务性资源管理器使用的数据对象。                                                                                                                                                                                                       |
 |        maxextent        |                                                                                                                                                                                                指定指定的事务资源管理器的最大容器数。                                                                                                                                                                                                |
 |        minextent        |                                                                                                                                                                                                指定指定的事务资源管理器的最小容器数。                                                                                                                                                                                                |
-|  模式 {完全&#124;撤消}  |                                                                                                                                                                                        指定是记录所有事务（ **full**）还是只记录回滚事件（**undo**）。                                                                                                                                                                                         |
+|  mode {full&#124;undo}  |                                                                                                                                                                                        指定是记录所有事务（ **full**）还是只记录回滚事件（**undo**）。                                                                                                                                                                                         |
 |         重命名          |                                                                                                                                                                                                                  更改事务资源管理器的 GUID。                                                                                                                                                                                                                  |
-|         shrink          |                                                                                                                                                                                              指定事务资源管理器日志可自动减少的百分比。                                                                                                                                                                                              |
-|          size           |                                                                                                                                                                                              指定事务资源管理器的大小，以指定数目的*容器*。                                                                                                                                                                                               |
+|         缩减          |                                                                                                                                                                                              指定事务资源管理器日志可自动减少的百分比。                                                                                                                                                                                              |
+|          大小           |                                                                                                                                                                                              指定事务资源管理器的大小，以指定数目的*容器*。                                                                                                                                                                                               |
 |          start          |                                                                                                                                                                                                                    启动指定的事务资源管理器。                                                                                                                                                                                                                    |
 |          stop           |                                                                                                                                                                                                                    停止指定的事务资源管理器。                                                                                                                                                                                                                     |
 

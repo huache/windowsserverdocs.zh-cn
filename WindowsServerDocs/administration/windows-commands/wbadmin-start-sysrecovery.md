@@ -1,6 +1,6 @@
 ---
 title: wbadmin start sysrecovery
-description: 用于 wbadmin start sysrecovery 的 Windows 命令主题，它使用指定的参数执行系统恢复（裸机恢复）。
+description: Wbadmin start sysrecovery 的参考主题，它使用指定的参数执行系统恢复（裸机恢复）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e0f1f79f35678b5c4a50022adf3413f3de217a7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ba3d826b0312091f00ef01d2efe9ee63572fade1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829590"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725897"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -26,8 +26,6 @@ ms.locfileid: "80829590"
 > 此子命令只能从 Windows 恢复环境运行，并且默认情况下不会在**Wbadmin**的使用文本中列出。 有关详细信息，请参阅[Windows 恢复环境（WINDOWS RE）概述](https://technet.microsoft.com/library/hh825173.aspx)。
 
 若要使用此子命令执行系统恢复，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。
-
-有关如何使用此子命令的示例，请参阅[示例](#BKMK_examples)。
 
 ## <a name="syntax"></a>语法
 
@@ -45,9 +43,9 @@ wbadmin start sysrecovery
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|-版本|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入**wbadmin get 版本**。|
+|-version|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入**wbadmin get 版本**。|
 |-backupTarget|指定包含要恢复的备份的存储位置。 当存储位置不同于通常存储此计算机的备份的位置时，此参数非常有用。|
 |-计算机|指定要恢复的计算机的名称。 当多台计算机备份到同一位置时，此参数非常有用。 当指定 **-backupTarget**参数时，应使用。|
 |-restoreAllVolumes|恢复所选备份中的所有卷。 如果未指定此参数，则仅恢复关键卷（包含系统状态和操作系统组件的卷）。 当你需要在系统恢复过程中恢复非关键卷时，此参数非常有用。|
@@ -56,13 +54,13 @@ wbadmin start sysrecovery
 |-skipBadClusterCheck|跳过检查恢复磁盘是否有损坏的群集信息。 如果要还原到备用服务器或硬件，则建议不要使用此参数。 你可以随时在恢复磁盘上手动运行**chkdsk/b**来检查是否有坏群集，然后相应地更新文件系统信息。</br>警告：在运行**Chkdsk**之前，在恢复的系统上报告的坏簇可能不准确。|
 |-quiet|运行命令时不提示用户。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要开始从备份中恢复在 9:00 2013 年3月31日（位于驱动器 d：）上运行的信息，请键入：
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-若要开始从备份中恢复在 9:00 2013 年4月30日运行的备份中的信息，请在共享文件夹中 \\\\servername\shared：对于 server01，键入：
+若要开始从备份中恢复运行的信息，请参阅 9:00 2013 年4月30日，位于共享文件夹\\ \\servername\shared：对于 server01，请键入：
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

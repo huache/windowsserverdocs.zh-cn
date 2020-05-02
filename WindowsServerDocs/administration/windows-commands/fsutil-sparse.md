@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 70c881cc02f31614160920766d32d73a3a939315
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3d0df4e8e8dc16818273393062989ef7c0455c51
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844060"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725454"
 ---
 # <a name="fsutil-sparse"></a>Fsutil 稀疏
->适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 管理稀疏文件。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -34,7 +34,7 @@ fsutil sparse [setrange] <FileName> <BeginningOffset> <Length>
 
 ### <a name="parameters"></a>参数
 
-|     参数     |                                                    说明                                                    |
+|     参数     |                                                    描述                                                    |
 |-------------------|-------------------------------------------------------------------------------------------------------------------|
 |     queryflag     |                                                  查询稀疏。                                                  |
 |    queryrange     |                        扫描文件并搜索可能包含非零数据的范围。                        |

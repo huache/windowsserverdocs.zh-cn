@@ -1,6 +1,6 @@
 ---
 title: 展开 vdisk
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 272714372a35f7f205b5a2e70cb2f2669b3a0634
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c2380045de45397888777f58e3420c75bb6915ae
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844890"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725696"
 ---
 # <a name="expand-vdisk"></a>展开 vdisk
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 将虚拟硬盘（VHD）扩展到指定的大小。
 > [!NOTE]
@@ -29,13 +29,13 @@ ms.locfileid: "80844890"
 > ```
 > ### <a name="parameters"></a>参数
 > 
-> |  参数  |                      说明                      |
+> |  参数  |                      描述                      |
 > |-------------|-------------------------------------------------------|
 > | 最大值 =<n> | 指定 VHD 的新大小（以兆字节（MB）为单位）。 |
 > 
 > ## <a name="remarks"></a>备注
 > - 必须选择并分离 VHD，此操作才能成功。 使用 "**选择 vdisk** " 命令选择卷并将焦点移动到该卷。
->   ## <a name="examples"></a><a name=BKMK_Examples></a>示例
+>   ## <a name="examples"></a>示例
 >   若要将所选 VHD 扩展到 20 GB，请键入：
 >   ```
 >   expand vdisk maximum=20000

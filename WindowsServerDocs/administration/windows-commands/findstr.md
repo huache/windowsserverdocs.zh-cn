@@ -1,6 +1,6 @@
 ---
 title: findstr
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbdc1b741b5934f53340bda773909fb5035e449b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 97cc58d2b87190c43137e8b193f0217fb98c006c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844630"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725604"
 ---
 # <a name="findstr"></a>findstr
 
@@ -30,7 +30,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |/b|如果文本模式位于行的开头，则匹配它。|
 |/e|如果文本模式位于行尾，则匹配它。|
@@ -45,14 +45,14 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 |/o|打印每个匹配行前的字符偏移量。|
 |/p|跳过包含不可打印字符的文件。|
 |/off [line]|不会跳过设置了脱机属性的文件。|
-|/f：\<文件 >|从指定的文件中获取文件列表。|
-|/c：\<字符串 >|使用指定的文本作为文本搜索字符串。|
-|/g：\<文件 >|从指定的文件中获取搜索字符串。|
-|/d：\<DirList >|搜索指定的目录列表。 必须用分号（;) 分隔每个目录，例如 `dir1;dir2;dir3`。|
-|/a：\<ColorAttribute >|指定带有两个十六进制数字的颜色属性。 有关其他信息，请键入 `color /?`。|
-|\<字符串 >|指定要在*FileName*中搜索的文本。 必需。|
-|[\<驱动器 >：][<Path>]<FileName>[...]|指定要搜索的位置和文件。 至少需要一个文件名。|
-|/?|在命令提示符处显示帮助。|
+|/f：\<File>|从指定的文件中获取文件列表。|
+|/c：\<String>|使用指定的文本作为文本搜索字符串。|
+|/g：\<File>|从指定的文件中获取搜索字符串。|
+|/d：\<DirList>|搜索指定的目录列表。 每个目录必须用分号（;) （例如`dir1;dir2;dir3`）分隔。|
+|/a：\<ColorAttribute>|指定带有两个十六进制数字的颜色属性。 有关`color /?`其他信息，请键入。|
+|\<字符串>|指定要在*FileName*中搜索的文本。 必需。|
+|[\<驱动器>：][<Path>]<FileName>[ ...]|指定要搜索的位置和文件。 至少需要一个文件名。|
+|/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
 
@@ -71,8 +71,8 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
   |[^ class]|反向类：不在集中的任何一个字符|
   |[x-y]|范围：指定范围内的任何字符|
   |\x|Escape：元字符 x 的文字用法|
-  |\\< 字符串|字位置：单词的开头|
-  |字符串\>|字位置：单词的结尾|
+  |\\<字符串|字位置：单词的开头|
+  |string\>|字位置：单词的结尾|
 
   正则表达式语法中的特殊字符在一起使用时，其功能最高。 例如，使用下面的通配符（.）和重复（*）字符与任何字符串匹配的组合：
 

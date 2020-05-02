@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 56e27c386451c561de8f62e523e2d1e59a8ce84c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b7af3859cd16b89587a86e3436d5c832620c4e22
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844300"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725496"
 ---
 # <a name="fsutil-fsinfo"></a>Fsutil fsinfo
->适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 列出所有驱动器、查询驱动器类型、查询卷信息、查询特定于 NTFS 的卷信息或查询文件系统统计信息。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -35,13 +35,13 @@ fsutil fsinfo [volumeinfo] <RootPath>
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------------|---------------|
 |驱动器|列出计算机中的所有驱动器。|
 |drivetype|查询驱动器并列出其类型，如 cd-rom 驱动器。|
 |ntfsinfo|列出指定卷的 NTFS 特定卷信息，如扇区数、群集总数、可用群集以及 MFT 区的开头和结尾。|
 |sectorinfo|列出有关硬件的扇区大小和对齐方式的信息。|
-|统计|列出指定卷的文件系统统计信息，如元数据、日志文件和 MFT 读取和写入。|
+|statistics|列出指定卷的文件系统统计信息，如元数据、日志文件和 MFT 读取和写入。|
 |volumeinfo|列出指定卷的信息，例如文件系统、卷是否支持区分大小写的文件名、文件名中的 unicode 或磁盘配额，或是 DirectAccess （DAX）卷。|
 |< "VolumePath" >|指定驱动器号（后跟冒号）。|
 |< "RootPathname" >|指定根驱动器的驱动器号（后跟冒号）。|
@@ -154,7 +154,7 @@ LogFileWriteBytes :    180936704
 ```
 
 ## <a name="additional-references"></a>其他参考
-- [命令行语法键](command-line-syntax-key.md)
+- [命令行语法密钥](command-line-syntax-key.md)
 [Fsutil](Fsutil.md)
 
 

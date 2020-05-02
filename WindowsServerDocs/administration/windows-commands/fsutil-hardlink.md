@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 210196471123e9fc2456a2ee84b1949f9f883d90
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 860e843063db141c31cccdab5c3f5ffaa3a8aa7d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844290"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725506"
 ---
 # <a name="fsutil-hardlink"></a>Fsutil 硬链接
->适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 在现有文件和新文件之间创建硬链接。
 
@@ -30,12 +30,12 @@ fsutil hardlink list <Filename>
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------------|---------------|
-|创建|在现有文件和新文件之间建立 NTFS 硬链接。 （NTFS 硬链接类似于 POSIX 硬链接。）|
-|\<NewFileName >|指定要为其创建硬链接的文件。|
-|\<ExistingFileName >|指定要从其创建硬链接的文件。|
-|“选择设备” 列表|列出*hardlinks。*<p>此参数适用于： Windows Server 2008 R2 和 Windows 7。|
+|create|在现有文件和新文件之间建立 NTFS 硬链接。 （NTFS 硬链接类似于 POSIX 硬链接。）|
+|\<NewFileName>|指定要为其创建硬链接的文件。|
+|\<ExistingFileName>|指定要从其创建硬链接的文件。|
+|list|列出*hardlinks。*<p>此参数适用于： Windows Server 2008 R2 和 Windows 7。|
 
 ## <a name="remarks"></a>备注
 

@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b819f15e473738996484283bceac439f482a13d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05c203ef610dda0443ddc845245a4072e617f7a6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844150"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725430"
 ---
 # <a name="fsutil-reparsepoint"></a>Fsutil reparsepoint
->适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7，Windows 2008，Windows Vista
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7，Windows 2008，Windows Vista
 
 查询或删除重新分析点。  **Fsutil reparsepoint**命令通常由支持专业人员使用。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -32,10 +32,10 @@ fsutil reparsepoint [delete] <FileName>
 
 ### <a name="parameters"></a>参数
 
-| 参数  |                                                                说明                                                                |
+| 参数  |                                                                描述                                                                |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 |   query    |            检索与指定句柄标识的文件或目录关联的重新分析点数据。             |
-|   删除   | 从文件或目录中删除由指定句柄标识的重新分析点，但不删除文件或目录。 |
+|   “删除”   | 从文件或目录中删除由指定句柄标识的重新分析点，但不删除文件或目录。 |
 | <FileName> |             指定文件的完整路径，包括文件名和扩展名，例如 C:\documents\filename.txt。             |
 
 ## <a name="remarks"></a>备注

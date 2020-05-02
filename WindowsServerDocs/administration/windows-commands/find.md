@@ -1,6 +1,6 @@
 ---
 title: find
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82b966db4117e9273ae6aed8d30baec76362de2f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3cd731ef64912644965ef6bb96d060a46f0a6067
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844690"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725627"
 ---
 # <a name="find"></a>find
 
@@ -22,7 +22,7 @@ ms.locfileid: "80844690"
 
 搜索文件中的文本字符串，并显示包含指定字符串的文本行。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -32,15 +32,15 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
 
 ### <a name="parameters"></a>参数
 
-|           参数           |                                              说明                                               |
+|           参数           |                                              描述                                               |
 |-------------------------------|--------------------------------------------------------------------------------------------------------|
-|              /v               |                    显示不包含指定 \<字符串 > 的所有行。                     |
-|              /c               |              计算包含指定 \<字符串 > 的行并显示总计。              |
+|              /v               |                    显示不包含指定\<字符串的所有行>。                     |
+|              /c               |              对包含指定\<字符串>的行进行计数并显示总计。              |
 |              /n               |                            每行的前面都有文件的行号。                             |
 |              /i               |                            指定搜索不区分大小写。                            |
 |         [/off [line]]          |                        不会跳过设置了脱机属性的文件。                        |
-|          \<字符串 >          | 必需。 指定要搜索的字符组（用引号引起来）。 |
-| [\<驱动器 >：][<Path>]<FileName> |        指定要在其中搜索指定字符串的文件的位置和名称。        |
+|          \<字符串>          | 必需。 指定要搜索的字符组（用引号引起来）。 |
+| [\<驱动器>：][<Path>]<FileName> |        指定要在其中搜索指定字符串的文件的位置和名称。        |
 |              /?               |                                  在命令提示符下显示帮助。                                  |
 
 ## <a name="remarks"></a>备注
@@ -58,7 +58,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
     可以按任意顺序键入**find**命令的参数和命令行选项。
 -   使用通配符
 
-    不能在使用 " **&#42;** **查找**" 命令指定的文件名或扩展名中使用通配符（和 **？** ）。 若要在使用通配符指定的一组文件中搜索字符串，可以在**for**命令中使用 "**查找**" 命令。
+    使用 "**查找**" 命令指定的文件名或扩展名不能使用通配符（**&#42;** 和 **？**）。 若要在使用通配符指定的一组文件中搜索字符串，可以在**for**命令中使用 "**查找**" 命令。
 -   将 **/v**或 **/n**与 **/c**一起使用
 
     如果在同一命令行中使用 **/c**和 **/v** ， **find**将显示不包含指定字符串的行的计数。 如果在同一命令行中指定 **/c**和 **/n** ， **find**将忽略 **/n**。
@@ -66,7 +66,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
 
     "**查找**" 命令无法识别回车符。 使用 "**查找**" 在包含回车符的文件中搜索文本时，必须将搜索字符串限制为可在回车符之间找到的文本（即，不太可能会被回车符中断的字符串）。 例如，如果字词和文件之间发生回车符，则 "**查找**" 不会报告该字符串的匹配项。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要显示 Pencil.ad 中包含字符串 "Sharpener" 的所有行，请键入：
 ```
