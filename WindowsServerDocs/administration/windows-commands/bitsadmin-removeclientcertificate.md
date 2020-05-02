@@ -1,6 +1,6 @@
 ---
 title: bitsadmin removeclientcertificate
-description: 适用于**bitsadmin removeclientcertificate**的 Windows 命令主题，用于从作业中删除客户端证书。
+description: Bitsadmin removeclientcertificate 命令的参考主题，它将客户端证书从作业中删除。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 312226b73b91385436e15c4afbb49df161258768
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 513830f6048f78aa528fa22cb590571e718452c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123100"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717068"
 ---
 # <a name="bitsadmin-removeclientcertificate"></a>bitsadmin removeclientcertificate
 
@@ -28,18 +28,20 @@ bitsadmin /removeclientcertificate <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
 ## <a name="examples"></a>示例
 
-下面的示例从名为*myDownloadJob*的作业中删除客户端证书。
+若要从名为*myDownloadJob*的作业中删除客户端证书：
 
 ```
-C:\>bitsadmin /removeclientcertificate myDownloadJob 
+bitsadmin /removeclientcertificate myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

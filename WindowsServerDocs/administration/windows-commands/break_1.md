@@ -1,6 +1,6 @@
 ---
 title: break
-description: 适用于 break_1 的 Windows 命令主题，用于设置或清除对 MS-DOS 系统的扩展 CTRL + C 检查。
+description: Break 命令的参考主题。 此命令已不再使用。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 809a9321b8b4f8b2d201582f767da132076826d4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 301c526903c95dec90c4883a54713eee20f516d2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848360"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82708785"
 ---
 # <a name="break"></a>break
 
-设置或清除对 MS-DOS 系统的扩展 CTRL + C 检查。 如果在没有参数的情况下使用，则**break**将显示当前设置。
+> [!IMPORTANT]
+> 此命令已不再使用。 包括该命令仅用于保持与现有 MS-DOS 文件的兼容性，但由于该命令的功能是自动的，因此在命令行上不起作用。
 
-> [!NOTE]
-> 此命令已不再使用。 包括此功能的目的仅在于保持与现有 MS-DOS 文件的兼容性，而由于此功能是自动的，因此它对命令行没有任何影响。
+设置或清除对 MS-DOS 系统的扩展 CTRL + C 检查。 如果在没有参数的情况下使用，则**break**将显示现有设置值。
+
+如果命令扩展已在 Windows 平台上启用并运行，则在批处理文件中插入**break**命令将进入硬编码的断点，前提是调试器正在调试该断点。
 
 ## <a name="syntax"></a>语法
 
@@ -29,10 +31,8 @@ ms.locfileid: "80848360"
 break=[on|off]
 ```
 
-## <a name="remarks"></a>备注
-
-如果命令扩展已在 Windows 平台上启用并运行，则在批处理文件中插入**break**命令将进入硬编码的断点，前提是调试器正在调试该断点。
-
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+  
+- [break 命令](break.md)

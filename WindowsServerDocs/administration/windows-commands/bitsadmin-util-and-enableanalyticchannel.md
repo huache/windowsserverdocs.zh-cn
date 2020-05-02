@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util 和 enableanalyticchannel
-description: Windows 命令主题，适用于**bitsadmin util 和 enableanalyticchannel**，这将启用或禁用 BITS 客户端分析通道。
+description: 用于启用或禁用 BITS 客户端分析通道的 bitsadmin util 和 enableanalyticchannel 命令的参考主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8ff1f835415979036fdc0f8aa637fe693e57d46
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: c1f5c8c924d1011928aca6ec1bcebd4d71abb015
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122687"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707764"
 ---
 # <a name="bitsadmin-util-and-enableanalyticchannel"></a>bitsadmin util 和 enableanalyticchannel
 
@@ -26,18 +26,22 @@ ms.locfileid: "81122687"
 bitsadmin /util /enableanalyticchannel TRUE|FALSE
 ```
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ---------- |
 | TRUE 或 FALSE | **如果为 TRUE，则**为指定文件启用内容验证，而**FALSE**则禁用。 |
 
 ## <a name="examples"></a>示例
 
-下面的示例启用 BITS 客户端分析通道。
+启用或禁用 BITS 客户端分析通道。
 
 ```
-C:\>bitsadmin /util / enableanalyticchannel TRUE
+bitsadmin /util / enableanalyticchannel TRUE
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin util 命令](bitsadmin-util.md)
+
+- [bitsadmin 命令](bitsadmin.md)

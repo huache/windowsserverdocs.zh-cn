@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util 和 repairservice
-description: Windows 命令主题，适用于**bitsadmin util 和 repairservice**，用于修复各种版本的 BITS 服务中的已知问题。
+description: Bitsadmin util 和 repairservice 命令的参考主题，该主题修复了不同版本的 BITS 服务中的已知问题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 164a402e7cbfc0a9223a97f4246eac84f0797aed
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 0104a3f2ace972821151bf5083f9b0795e427ff1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122519"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707657"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util 和 repairservice
 
@@ -31,7 +31,7 @@ bitsadmin /util /repairservice [/force]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /force | 可选。 删除并重新创建该服务。|
 
@@ -40,12 +40,16 @@ bitsadmin /util /repairservice [/force]
 
 ## <a name="examples"></a>示例
 
-以下示例修复 BITS 服务配置。
+修复 BITS 服务配置：
 
 ```
-C:\>bitsadmin /util /repairservice
+bitsadmin /util /repairservice
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin util 命令](bitsadmin-util.md)
+
+- [bitsadmin 命令](bitsadmin.md)

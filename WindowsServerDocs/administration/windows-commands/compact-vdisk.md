@@ -1,6 +1,6 @@
 ---
 title: compact vdisk
-description: Windows 命令主题 forcompact vdisk，它可减少动态扩展虚拟硬盘（VHD）文件的物理大小。
+description: Compact vdisk 命令的参考主题，它可减少动态扩展虚拟硬盘（VHD）文件的物理大小。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,45 +9,45 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9691be21c188fbc2c3b2e782acde127270decf56
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c4ae5c653645c9f6f3ef97501a59932682c24be3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847420"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82711142"
 ---
 # <a name="compact-vdisk"></a>compact vdisk
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 减小动态扩展虚拟硬盘（VHD）文件的物理大小。 此参数非常有用，因为在添加文件时动态扩展 Vhd 大小增加，但在删除文件时，其大小不会自动减小。
 
-> [!NOTE]
-> 此命令仅适用于 Windows 7 和 Windows Server 2008 R2。
-
 ## <a name="syntax"></a>语法
+
 ```
 compact vdisk
 ```
 
-## <a name="remarks"></a>备注
+### <a name="remarks"></a>备注
 
-- 若要成功执行此操作，必须选择动态扩展的 VHD。 使用 "**选择 vdisk** " 命令选择 VHD 并将焦点移动到该 VHD。
+- 若要成功执行此操作，必须选择动态扩展的 VHD。 使用 "[选择 vdisk" 命令](select-vdisk.md)选择 VHD 并将焦点移动到该 VHD。
 
-- 只能压缩已分离或附加为只读的已动态扩展 Vhd。
-
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
-若要压缩动态扩展的 VHD，请键入：
-```
-compact vdisk
-```
+- 只能使用分离或附加为只读的压缩动态扩展 Vhd。
 
 ## <a name="additional-references"></a>其他参考
-- - [命令行语法项](command-line-syntax-key.md)
-- [附加 vdisk](attach-vdisk.md)
-- [详细信息 vdisk](detail-vdisk.md)
-- [分离 vdisk](detach-vdisk.md)
-- [展开 vdisk](expand-vdisk.md)
-- [Merge vdisk](merge-vdisk.md)
-- [选择 vdisk](select-vdisk.md)
-- [list_1](list_1.md)
+
+- [命令行语法项](command-line-syntax-key.md)
+
+- [附加 vdisk 命令](attach-vdisk.md)
+
+- [detail vdisk 命令](detail-vdisk.md)
+
+- [分离 vdisk 命令](detach-vdisk.md)
+
+- [展开 vdisk 命令](expand-vdisk.md)
+
+- [Merge vdisk 命令](merge-vdisk.md)
+
+- [选择 vdisk 命令](select-vdisk.md)
+
+- [list 命令](list.md)

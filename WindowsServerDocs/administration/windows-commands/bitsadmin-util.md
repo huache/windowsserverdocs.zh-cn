@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util
-description: 适用于**bitsadmin util**的 Windows 命令主题，其中列出了 util 开关。
+description: Bitsadmin util 命令的参考主题，其中列出了 Util 开关。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0982bd02001bc6168f13255a7e785905f617db3f
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 0fa7e8f67dd1c7c77ac489b38aa967e55f0e3506
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122572"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707579"
 ---
 # <a name="bitsadmin-util"></a>bitsadmin util
 
-> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+
+列出 **/util**开关。
 
 列出**util**开关。
 
@@ -34,7 +36,7 @@ bitsadmin /util /version
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | [bitsadmin util 和 help](bitsadmin-util-and-help.md) | 显示/Util 开关的命令行用法。 还可以指定/？。 |
 | [bitsadmin util 和 getieproxy](bitsadmin-util-and-getieproxy.md) | 检索给定服务帐户的代理使用情况。 |
@@ -45,3 +47,5 @@ bitsadmin /util /version
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

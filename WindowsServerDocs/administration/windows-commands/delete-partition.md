@@ -1,6 +1,6 @@
 ---
 title: delete partition
-description: 用于删除分区的 Windows 命令主题，用于删除具有焦点的分区。
+description: 删除分区的参考主题，用于删除具有焦点的分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a24c18cf98f2899fbb57f1f5f2d2776824d637b7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 259abdfc6e3ba8db22d5582bff08d7a4bc8b807b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846570"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716731"
 ---
 # <a name="delete-partition"></a>delete partition
 
@@ -28,7 +28,7 @@ delete partition [noerr] [override]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |override|允许 DiskPart 删除任何类型的分区。 通常，DiskPart 只允许删除已知的数据分区。|
 |noerr|仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。|
@@ -40,7 +40,7 @@ delete partition [noerr] [override]
 > -   不能删除系统分区、启动分区或任何包含活动页面文件或故障转储信息的分区。
 > -   必须选择分区，此操作才能成功。 使用 "**选择分区**" 命令可选择分区，并将焦点移动到该分区。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要删除具有焦点的分区，请键入：
 ```

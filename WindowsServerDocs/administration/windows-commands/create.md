@@ -1,6 +1,6 @@
 ---
-title: 创建
-description: 用于创建的 Windows 命令主题，可在磁盘上创建分区，在一个或多个磁盘上创建卷，或在虚拟硬盘（VHD）上创建分区。
+title: create
+description: 用于创建的参考主题，可在磁盘上创建分区，在一个或多个磁盘上创建卷，或在虚拟硬盘（VHD）上创建分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76ff641757de78a10980b10a1ba4921dd2a57f0c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8d1e0f11a2e7011792da9c9d81d592fcfd7aa307
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846840"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716849"
 ---
-# <a name="create"></a>创建
+# <a name="create"></a>create
 
 在磁盘上创建分区，在一个或多个磁盘上创建卷，或在虚拟硬盘（VHD）上创建分区。
 

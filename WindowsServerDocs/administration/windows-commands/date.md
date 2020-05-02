@@ -1,6 +1,6 @@
 ---
 title: date
-description: 日期的 Windows 命令主题，用于显示或设置系统日期。 如果不使用参数，则
+description: Date 的参考主题，用于显示或设置系统日期。 如果不使用参数，则
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f9e32240eb27d651e324becefd72e9b1a545215
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d7bcdb35579ac86b4ec7f9c7c639cf905f6a05fa
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846740"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716802"
 ---
 # <a name="date"></a>date
 
 显示或设置系统日期。 如果在没有参数的情况下使用， **date**将显示当前系统日期设置，并提示你输入新日期。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -30,10 +30,10 @@ date [/t | <Month-Day-Year>]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<月-每年 >|设置指定的日期，其中*month*为月份（一位或两位数字）， *day*为日（一位或两位数字），*年份*为年（两位或四位数字）。|
-|/t|显示当前日期，而不提示您输入新日期。|
+|\<月份-每年>|设置指定的日期，其中*month*为月份（一位或两位数字）， *day*为日（一位或两位数字），*年份*为年（两位或四位数字）。|
+|/t |显示当前日期，而不提示您输入新日期。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -44,7 +44,7 @@ date [/t | <Month-Day-Year>]
 -   有效的*日期*值为1到31。
 -   有效的*年份*值为00到99或1980到2099。 如果使用两个数字，则值80到99对应于年份1980到1999。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 如果启用了命令扩展，若要显示当前系统日期，请键入：
 ```

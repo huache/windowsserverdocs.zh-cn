@@ -1,6 +1,6 @@
 ---
 title: defrag
-description: 用于 defrag 的 Windows 命令主题，用于在本地卷上查找和合并碎片文件以提高系统性能。
+description: 用于 defrag 的参考主题，用于在本地卷上查找和合并碎片文件以提高系统性能。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8723afc936fa1ea311e275a58a85b20988f92a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 47a19ec697da29b1eff152de8fc5930516d5b806
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846710"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716771"
 ---
 # <a name="defrag"></a>defrag
 
->适用于： Windows 10、Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows 10、Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 查找并合并本地卷上的零碎文件以提高系统性能。
 
@@ -33,7 +33,7 @@ defrag <volume> [/<Parameter>]*
 ```
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |`<volume>`|指定要进行碎片整理或分析的卷的驱动器号或装入点路径。|
 |A|在指定的卷上执行分析。|
@@ -61,15 +61,15 @@ defrag <volume> [/<Parameter>]*
   -   不能对 cdROMs 进行碎片整理。
   -   不能对**NTFS**、 **ReFS**、 **Fat**或**Fat32**以外的文件系统卷进行碎片整理。
 - 使用 Windows Server 2008 R2、Windows Server 2008 和 Windows Vista，您可以计划对卷进行碎片整理。 但是，不能计划在驻留于 SSD 上的虚拟硬盘（VHD）上对固态驱动器（SSD）或卷进行碎片整理。
-- 若要执行此过程，您必须是本地计算机上“Administrators”组的成员或者必须被委派了适当的授权。 如果计算机已加入某个域，则“Domain Admins”组的成员也许能够执行此过程。 作为最佳安全方案，请考虑使用**运行方式**来执行此过程。
+- 若要执行该过程，你必须是本地计算机上 Administrators 组的成员，或你必须已被委派适当的权限。 如果计算机已加入域，则 Domain Admins 组的成员也许能够执行该过程。 作为最佳安全方案，请考虑使用**运行方式**来执行此过程。
 - 卷必须至少具有15% 的可用空间，**碎片整理**才能完整地对其进行碎片整理。 **defrag**使用此空间作为文件片段的排序区域。 如果卷的可用空间小于15%，则**defrag**只对其进行部分碎片整理。 若要增加卷上的可用空间，请删除不需要的文件或将其移到另一个磁盘上。
 - 当**碎片整理**正在分析卷并对其进行碎片整理时，它会显示闪烁的光标。 当**defrag**完成分析并对卷进行碎片整理时，它会显示分析报告、碎片整理报告或两个报告，然后退出到命令提示符。
 - 默认情况下，如果未指定 **/a**或 **/v**参数，则**defrag**将显示分析和碎片整理报告的摘要。
-- 您可以通过键入 **>** <em>filename .txt</em>将报告发送给文本文件，其中*filename .txt*是您指定的文件名称。 例如：`defrag volume /v > FileName.txt`
+- 您可以通过键入**>** <em>filename .txt</em>将报告发送到文本文件，其中*filename .txt*是您指定的文件名称。 例如： `defrag volume /v > FileName.txt`
 - 若要中断碎片整理进程，请在命令行上按**CTRL + C**。
 - 运行**defrag**命令和磁盘碎片整理程序是相互排斥的。 如果使用磁盘碎片整理程序对卷进行碎片整理，并在命令行中运行**defrag**命令，则**defrag**命令将失败。 相反，如果运行**defrag**命令并打开磁盘碎片整理程序，磁盘碎片整理程序中的碎片整理选项将不可用。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 若要在提供进度和详细输出时对驱动器 C 上的卷进行碎片整理，请键入：
 ```
 defrag C: /U /V

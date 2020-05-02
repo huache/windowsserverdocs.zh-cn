@@ -1,6 +1,6 @@
 ---
 title: 新命名空间
-description: 用于创建和配置新命名空间的 Windows 命令主题。
+description: 用于创建和配置新命名空间的新命名空间的参考主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f616c33525d033827d52925e07764761e7c7b44
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e7bc6b365da274fc62df3bb24375c07b97c8e4bc
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830630"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82710537"
 ---
 # <a name="new-namespace"></a>新命名空间
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 创建并配置新的命名空间。 当你只安装了传输服务器角色服务时，应使用此选项。 如果同时安装了 "部署服务器" 角色服务和 "传输服务器" 角色服务（这是默认设置），请使用[MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)。 请注意，在使用此选项之前，必须注册该内容提供程序。
 ## <a name="syntax"></a>语法
@@ -34,16 +34,16 @@ wdsutil [Options] /New-Namespace [/Server:<Server name>]
          [/Clients:<Number of clients>]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |[/Server：<Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
-|/FriendlyName：<Friendly name>|指定命名空间的好记名称。|
+|友好<Friendly name>|指定命名空间的好记名称。|
 |/Description<Description>]|设置命名空间的说明。|
-|/Namespace：<Namespace name>|指定命名空间的名称。 请注意，这不是友好名称，并且必须是唯一的。<p>-   **部署服务器角色服务**：此选项的语法为/NAMESPACE： WDS：<Image group>/<Image name>/<Index>。 例如： **WDS： ImageGroup1/install/1**<br />-   **传输服务器角色服务**：此值应与在服务器上创建命名空间时提供的名称匹配。|
+|名称<Namespace name>|指定命名空间的名称。 请注意，这不是友好名称，并且必须是唯一的。<p>-   **部署服务器角色服务**：此选项的语法为/NAMESPACE： WDS：<Image group>/<Image name>/<Index>。 例如： **WDS： ImageGroup1/install/1**<br />-   **传输服务器角色服务**：此值应与在服务器上创建命名空间时提供的名称匹配。|
 |/ContentProvider：<Name>]|指定将为命名空间提供内容的内容提供程序的名称。|
 |[/ConfigString：<Configuration string>]|指定内容提供商的配置字符串。|
-|/Namespacetype： {自动广播&#124; ScheduledCast}|指定传输的设置。 使用以下选项指定设置：<p>-[/time： <time>]-使用以下格式设置传输应该开始的时间： YYYY/MM/DD： hh： MM。 此选项仅适用于计划强制转换传输。<br />-[/Clients： <Number of clients>]-设置在传输开始之前要等待的最少客户端数。 此选项仅适用于计划强制转换传输。|
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+|/Namespacetype： {自动广播 &#124; ScheduledCast}|指定传输的设置。 使用以下选项指定设置：<p>-[/time： <time>]-使用以下格式设置传输应该开始的时间： YYYY/MM/DD： hh： MM。 此选项仅适用于计划强制转换传输。<br />-[/Clients： <Number of clients>]-设置在传输开始之前要等待的最少客户端数。 此选项仅适用于计划强制转换传输。|
+## <a name="examples"></a>示例
 若要创建自动转换命名空间，请键入：
 ```
 wdsutil /New-Namespace /FriendlyName:Custom AutoCast Namespace /Namespace:Custom Auto 1 /ContentProvider:MyContentProvider /Namespacetype:AutoCast
@@ -54,7 +54,7 @@ wdsutil /New-Namespace /Server:MyWDSServer /FriendlyName:Custom Scheduled Namesp
 /Namespacetype:ScheduledCast /time:2006/11/20:17:00 /Clients:20
 ```
 ## <a name="additional-references"></a>其他参考
-- [命令行语法键](command-line-syntax-key.md)
-[使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md)
-[使用删除命名空间命令](using-the-remove-namespace-command.md)
+- [Command-Line Syntax Key](command-line-syntax-key.md)使用
+[AllNamespaces 命令](using-the-get-allnamespaces-command.md)
+的命令行语法键[使用删除命名空间命令](using-the-remove-namespace-command.md)
 [子命令：启动-命名空间](subcommand-start-namespace.md)

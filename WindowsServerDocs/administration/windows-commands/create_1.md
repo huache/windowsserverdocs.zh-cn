@@ -1,6 +1,6 @@
 ---
-title: 创建
-description: 用于创建的 Windows 命令主题，该主题使用当前上下文和选项设置启动卷影复制创建过程。
+title: create
+description: Create 的参考主题，它使用当前上下文和选项设置启动卷影复制创建过程。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d29285517ca678a15828079c95663fc4d501eaf
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cfddbebd5744d8cd222d67e46690ce8b5d2e0fde
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846830"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716839"
 ---
-# <a name="create"></a>创建
+# <a name="create"></a>create
 
 使用当前上下文和选项设置启动卷影复制创建过程。 卷影副本集中至少需要一个卷。
 

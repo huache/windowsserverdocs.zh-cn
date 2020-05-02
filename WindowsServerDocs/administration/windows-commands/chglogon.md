@@ -1,6 +1,6 @@
 ---
 title: chglogon
-description: 适用于 chglogon 的 Windows 命令主题，用于启用或禁用从 rd 会话主机服务器上的客户端会话登录，或显示当前登录状态。
+description: Chglogon 命令的参考主题，可用于在远程桌面会话主机服务器上启用或禁用客户端会话登录，或显示当前登录状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,26 @@ ms.date: 10/16/2017
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 82b51aaaaa741ef31c7a9ef1569a183a852a30ee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f232439e51f2d32f1ef4834a3bba7f4428cce093
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847910"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82714550"
 ---
 # <a name="chglogon"></a>chglogon
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-启用或禁用从 rd 会话主机服务器上的客户端会话登录，或显示当前登录状态。
+启用或禁用远程桌面会话主机服务器上的客户端会话登录，或显示当前登录状态。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，“终端服务”被重命名为“远程桌面服务”。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
-
-## <a name="remarks"></a>备注
-此命令与 "**更改登录**" 命令相同。
+> 此命令已替换为**change log 命令**。 有关详细信息，包括语法和参数详细信息，请参阅[change logon 命令](change-logon.md)。
 
 ## <a name="additional-references"></a>其他参考
-- [change logon](change-logon.md)
-- - [命令行语法项](command-line-syntax-key.md)
+
+- [命令行语法项](command-line-syntax-key.md)
+
+- [更改登录命令](change-logon.md)
+
 - [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

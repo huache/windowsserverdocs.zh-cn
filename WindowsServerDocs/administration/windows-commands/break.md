@@ -1,6 +1,6 @@
 ---
 title: break
-description: 用于中断的 Windows 命令主题，它将具有焦点的镜像卷分成两个简单卷。
+description: Break 命令的参考主题，它将具有焦点的镜像卷分成两个简单卷。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,13 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef9156940212de9ca8518dd481ef47f13411dd53
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b39e405d57992f03a28536725e3138e21cfdbdf1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848370"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82708836"
 ---
 # <a name="break"></a>break
 
 将选中的镜像卷分为两个简单卷。
-

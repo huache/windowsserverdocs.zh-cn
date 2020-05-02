@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 对等节点和列表
-description: '**Bitsadmin 对等机**和**列表**的 Windows 命令主题，其中列出了所有对等方。'
+title: bitsadmin peers 和 list
+description: Bitsadmin 对等机和 list 命令的参考主题，其中列出了所有对等方。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a38f3ed825f6629c196d5ebac1e967f4fa06a940
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a6c1f8fbcb6ca40c86a1d589ba7217392b9875cf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849930"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717144"
 ---
-# <a name="bitsadmin-peers-and-list"></a>bitsadmin 对等节点和列表
+# <a name="bitsadmin-peers-and-list"></a>bitsadmin peers 和 list
 
 列出所有对等方。
 
@@ -26,14 +26,18 @@ ms.locfileid: "80849930"
 bitsadmin /peers /list
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例列出了所有对等方。
+列出所有对等方：
 
 ```
-C:\>bitsadmin /peers /list
+bitsadmin /peers /list
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)
+
+- [bitsadmin 对等节点命令](bitsadmin-peers.md)

@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 传输
-description: 用于传输一个或多个文件的**bitsadmin 传输**的 Windows 命令主题。
+title: bitsadmin transfer
+description: 用于传输一个或多个文件的 bitsadmin 传输命令的参考主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9402f1b4907ffbe4a1085a04392349e1177092d7
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 9c7011f3ef3e85d7453e63d9a9c2e4a89a52cddf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122677"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707748"
 ---
-# <a name="bitsadmin-transfer"></a>bitsadmin 传输
+# <a name="bitsadmin-transfer"></a>bitsadmin transfer
 
-传输一个或多个文件。
+传输一个或多个文件。 默认情况下，BITSAdmin 服务创建一个按**正常**优先级运行的下载作业，并在传输完成之前或发生严重错误之前，用进度信息更新命令窗口。
+
+如果作业成功传输所有文件并在发生严重错误时取消作业，则该服务将完成该作业。 如果该服务无法将文件添加到作业中，或者为*类型*或*job_priority*指定了无效的值，则该服务不会创建作业。 若要传输多个文件，请指定`<RemoteFileName>-<LocalFileName>`多个对。 对必须以空格分隔。
+
+> [!NOTE]
+> 如果发生暂时性错误，BITSAdmin 命令将继续运行。 若要结束命令，请按 CTRL + C。
 
 ## <a name="syntax"></a>语法
 
@@ -38,23 +43,16 @@ bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags
 | remotefilename | 文件传输到服务器后的名称。 |
 | localfilename | 位于本地的文件的名称。 |
 
-## <a name="remarks"></a>备注
-
-默认情况下，BITSAdmin 服务创建一个按**正常**优先级运行的下载作业，并在传输完成之前或发生严重错误之前，用进度信息更新命令窗口。
-
-如果作业成功传输所有文件并在发生严重错误时取消作业，则该服务将完成该作业。 如果该服务无法将文件添加到作业中，或者为*类型*或*job_priority*指定了无效的值，则该服务不会创建作业。 若要传输多个文件，请指定多个 `<RemoteFileName>-<LocalFileName>` 对。 对必须以空格分隔。
-
-> [!NOTE]
-> 如果发生暂时性错误，BITSAdmin 命令将继续运行。 若要结束命令，请按 CTRL + C。
-
 ## <a name="examples"></a>示例
 
-下面的示例启动一个名为*myDownloadJob*的传输作业。
+若要启动名为*myDownloadJob*的传输作业：
 
 ```
-C:\>bitsadmin /transfer myDownloadJob http://prodserver/audio.wma c:\downloads\audio.wma
+bitsadmin /transfer myDownloadJob http://prodserver/audio.wma c:\downloads\audio.wma
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

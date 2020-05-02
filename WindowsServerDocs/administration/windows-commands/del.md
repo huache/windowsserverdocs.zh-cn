@@ -1,6 +1,6 @@
 ---
 title: del
-description: 删除一个或多个文件的 del 的 Windows 命令主题。
+description: Del 的参考主题，用于删除一个或多个文件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7069ee50a810296d31e1a034b24955299918020a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 703597ae422518a5b401b656ace0b4cd73418be8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846660"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716744"
 ---
 # <a name="del"></a>del
 
 删除一个或多个文件。 此命令与**erase**命令相同。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -31,14 +31,14 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<名称 >|指定一个或多个文件或目录的列表。 通配符可用于删除多个文件。 如果指定了目录，则会删除该目录中的所有文件。|
+|\<名称>|指定一个或多个文件或目录的列表。 通配符可用于删除多个文件。 如果指定了目录，则会删除该目录中的所有文件。|
 |/p|删除指定文件之前提示确认。|
 |/f|强制删除只读文件。|
 |/s|删除当前目录和所有子目录中的指定文件。 显示要删除的文件的名称。|
 |/q|指定安静模式。 不会提示您确认删除。|
-|/a [：]\<特性 >|基于以下文件属性删除文件：</br>**r**只读文件</br>**h**隐藏文件</br>**我**不是内容索引文件</br>**s**系统文件</br>准备好存档**的文件**</br>**l**重新分析点</br>-前缀表示 "not"|
+|/a [：]\<特性>|基于以下文件属性删除文件：</br>**r**只读文件</br>**h**隐藏文件</br>**我**不是内容索引文件</br>**s**系统文件</br>准备好存档**的文件**</br>**l**重新分析点</br>-前缀表示 "not"|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -56,7 +56,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
   ```
   del \work
   ```  
-- 您可以使用通配符（ **&#42;** 和 **？** ）一次删除多个文件。 但是，若要避免无意中删除文件，应谨慎使用**del**命令。 例如，如果键入以下命令：  
+- 您可以使用通配符（**&#42;** 和 **？**）一次删除多个文件。 但是，若要避免无意中删除文件，应谨慎使用**del**命令。 例如，如果键入以下命令：  
   ```
   del *.*
   ```  
@@ -71,7 +71,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 -   可从恢复控制台获取带有不同参数的**del**命令。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要删除驱动器 C 上名为 Test 的文件夹中的所有文件，请键入下列内容之一：
 ```
