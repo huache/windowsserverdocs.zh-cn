@@ -1,6 +1,6 @@
 ---
 title: ftp mdelete_1
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b64fa691a9ac890aad0e8d8dc93bd73e53478fc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f578a50207439f9bfb21c2607f0aa60a20fad292
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842720"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725030"
 ---
 # <a name="ftp-mdelete_1"></a>ftp： mdelete_1
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 删除远程计算机上的文件。   
 ## <a name="syntax"></a>语法  
@@ -27,11 +27,11 @@ mdelete <remoteFile>[ ]
 ```  
 #### <a name="parameters"></a>参数  
 
-|  参数   |             说明              |
+|  参数   |             描述              |
 |--------------|--------------------------------------|
 | <remoteFile> | 指定要删除的远程文件。 |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例  
+## <a name="examples"></a>示例  
 删除远程文件 **.exe**和 **.exe**。  
 ```  
 mdelete a.exe b.exe  

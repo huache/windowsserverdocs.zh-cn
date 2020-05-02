@@ -1,6 +1,6 @@
 ---
 title: 列出写入者
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e12c4f36c3fd840b7b37b12d9f4171429e5a52d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ef7fa0bd6e9857e22994178849e49afeb3305a2a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841110"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724486"
 ---
 # <a name="list-writers"></a>列出写入者
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841110"
 
 列出系统上的编写器。 如果在没有参数的情况下使用，则默认情况下， **list**显示**列表元数据**的输出。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -32,13 +32,13 @@ list writers [metadata | detailed | status]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |metadata|列出编写器的标识和状态，并显示元数据（如组件详细信息和排除的文件）。 这是默认参数。|
 |详情|列出的**数据与元数据**相同，但**详细**信息包括所有组件的完整文件列表。|
 |status|仅列出已注册编写器的标识和状态。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要仅列出编写器的标识和状态，请键入：
 ```

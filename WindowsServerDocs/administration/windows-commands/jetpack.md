@@ -1,6 +1,6 @@
 ---
 title: jetpack
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 008e9dd4d41fe270d775b1c44d799dd16429046f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ec29a1fd48fdba72f07fe5d00de7730d93434105
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841970"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724790"
 ---
 # <a name="jetpack"></a>jetpack
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 压缩 Windows Internet 名称服务（WINS）或动态主机配置协议（DHCP）数据库。 Microsoft 建议您在 WINS 数据库接近 30 MB 时将其压缩。 
 
@@ -28,13 +28,13 @@ jetpack.EXE <database name> <temp database name>
 ```
 
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |<database name>|指定原始数据库文件。|
 |<temp database name>|指定临时数据库文件。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 压缩 WINS 数据库：
 ```
 cd %SYSTEMROOT%\SYSTEM32\WINS

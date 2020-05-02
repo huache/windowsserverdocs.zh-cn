@@ -1,6 +1,6 @@
 ---
 title: ftp
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6406093be682dbd74b92f1ca11f363e5eb9babee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8fa956124e0c227d048d4c6eec844154187d5861
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842750"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725057"
 ---
 # <a name="ftp"></a>ftp
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 在运行文件传输协议（ftp）服务器服务的计算机之间传输文件。 可以通过处理 ASCII 文本文件，以交互方式或以批处理模式使用**ftp** 。 
 ## <a name="syntax"></a>语法
@@ -27,20 +27,20 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<FileName>] [-a] [-A] [-x:<SendBuffer>] [-r:<Re
 ```
 #### <a name="parameters"></a>参数
 
-|     参数     |                                                                                                                                                      说明                                                                                                                                                      |
+|     参数     |                                                                                                                                                      描述                                                                                                                                                      |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        -v         |                                                                                                                                    禁止显示远程服务器响应。                                                                                                                                     |
 |        -d         |                                                                                                               启用调试，并显示在 FTP 客户端和 FTP 服务器之间传递的所有命令。                                                                                                                |
-|        -i         |                                                                                                                            在多个文件传输过程中禁用交互式提示。                                                                                                                             |
+|        -o         |                                                                                                                            在多个文件传输过程中禁用交互式提示。                                                                                                                             |
 |        -n         |                                                                                                                                    在初始连接时禁止自动登录。                                                                                                                                     |
 |        -g         |                                         禁用文件名组合。  **Glob**允许将星号（\*）和问号（？）用作本地文件和路径名称中的通配符字符。 有关详细信息，请参阅 "[其他参考](ftp.md#BKMK_additionalRef)"。                                          |
-|   -s：<FileName>   | 指定包含**ftp**命令的文本文件。 这些命令将在**ftp**启动后自动运行。 此参数不允许有空格。 使用此参数，而不是重定向（ **<** ）。 **注意：** 在 Windows 8 和 Windows Server 2012 或更高版本的操作系统中，必须用 UTF-8 编写文本文件。 |
+|   些<FileName>   | 指定包含**ftp**命令的文本文件。 这些命令将在**ftp**启动后自动运行。 此参数不允许有空格。 使用此参数，而不是**<** 重定向（）。 **注意：** 在 Windows 8 和 Windows Server 2012 或更高版本的操作系统中，必须用 UTF-8 编写文本文件。 |
 |        -a         |                                                                                                                 指定在绑定 ftp 数据连接时可以使用任何本地接口。                                                                                                                  |
 |        -A         |                                                                                                                                        以匿名方式登录到 ftp 服务器。                                                                                                                                         |
-|  -x：<SendBuffer>  |                                                                                                                                     覆盖默认 SO_SNDBUF 大小为8192。                                                                                                                                     |
-|  -r：<RecvBuffer>  |                                                                                                                                     覆盖默认 SO_RCVBUF 大小为8192。                                                                                                                                     |
-| -b：<AsyncBuffers> |                                                                                                                                    替代的默认异步缓冲区计数为3。                                                                                                                                     |
-| -w：<WindowsSize>  |                                                                                                                   指定传输缓冲区的大小。 默认窗口大小为4096个字节。                                                                                                                   |
+|  x-blade<SendBuffer>  |                                                                                                                                     覆盖默认 SO_SNDBUF 大小为8192。                                                                                                                                     |
+|  迅驰<RecvBuffer>  |                                                                                                                                     覆盖默认 SO_RCVBUF 大小为8192。                                                                                                                                     |
+| b<AsyncBuffers> |                                                                                                                                    替代的默认异步缓冲区计数为3。                                                                                                                                     |
+| 水平<WindowsSize>  |                                                                                                                   指定传输缓冲区的大小。 默认窗口大小为4096个字节。                                                                                                                   |
 |        -?         |                                                                                                                                         在命令提示符下显示帮助。                                                                                                                                          |
 |      <host>       |                                                                    指定要连接的 ftp 服务器的计算机名称、IP 地址或 IPv6 地址。 如果指定，主机名或地址必须是行中的最后一个参数。                                                                    |
 
@@ -50,7 +50,7 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<FileName>] [-a] [-A] [-x:<SendBuffer>] [-r:<Re
 - 仅当**Internet 协议（tcp/ip）** 协议安装为网络连接中的网络适配器属性中的组件时，此命令才可用。
 - **ftp**可以交互方式使用。 启动后， **ftp**将创建一个可在其中使用**ftp**命令的子环境。 可以通过键入**quit**命令返回到命令提示符。 当**ftp**子环境正在运行时， **ftp >** 命令提示符下会指示它。 有关详细信息，请参阅**ftp**命令。
 - **ftp**支持在安装 ipv6 协议时使用 ipv6。 有关详细信息，请参阅 "[其他参考](ftp.md#BKMK_additionalRef)"。
-  ## <a name="examples"></a><a name=BKMK_Examples></a>示例
+  ## <a name="examples"></a>示例
   若要登录到名为 ftp.example.microsoft.com 的 ftp 服务器，请键入：
   ```
   ftp ftp.example.microsoft.com

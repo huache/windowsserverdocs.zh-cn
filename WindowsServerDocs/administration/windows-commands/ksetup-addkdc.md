@@ -1,6 +1,6 @@
 ---
 title: ksetup： addkdc
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bb31cbc8ba7920c4ba609f86202e2e62a705078
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 76d592e4f1c32305d6f939a66a6ad42cd582b032
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841830"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724763"
 ---
 # <a name="ksetupaddkdc"></a>ksetup： addkdc
 
 
 
-添加给定 Kerberos 领域的密钥发行中心（KDC）地址。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+添加给定 Kerberos 领域的密钥发行中心（KDC）地址。
 
 ## <a name="syntax"></a>语法
 
@@ -30,10 +30,10 @@ ksetup /addkdc <RealmName> [<KDCName>]
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<RealmName >|领域名称被声明为大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，它将作为默认领域列出。 这是你尝试添加其他 KDC 的领域。|
-|\<KDCName >|KDC 名称被声明为不区分大小写的完全限定域名，如 mitkdc.microsoft.com。 如果省略了 KDC 名称，DNS 将定位 Kdc。|
+|\<RealmName>|领域名称被声明为大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，它将作为默认领域列出。 这是你尝试添加其他 KDC 的领域。|
+|\<KDCName>|KDC 名称被声明为不区分大小写的完全限定域名，如 mitkdc.microsoft.com。 如果省略了 KDC 名称，DNS 将定位 Kdc。|
 
 ## <a name="remarks"></a>备注
 
@@ -43,13 +43,13 @@ ksetup /addkdc <RealmName> [<KDCName>]
 
 若要验证计算机的默认领域名称，或者要验证此命令是否按预期运行，请在命令提示符下运行**ksetup** ，并验证所添加 KDC 的输出。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 配置非 Windows KDC 服务器和工作站应使用的领域：
 ```
 ksetup /addkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-在与前一个命令相同的计算机的命令行上运行 Ksetup 工具，将本地计算机帐户密码设置为 p@sswrd1%。 然后重新启动计算机。
+在与前一个命令相同的计算机的命令行上运行 Ksetup 工具，将本地计算机帐户密码设置为p@sswrd1%。 然后重启计算机。
 ```
 Ksetup /setcomputerpassword p@sswrd1%
 ```

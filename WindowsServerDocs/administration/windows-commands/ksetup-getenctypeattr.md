@@ -1,6 +1,6 @@
 ---
 title: ksetup： getenctypeattr
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60de138ac73140c69e9a863083e01a51c0e13ca3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8363113d4fbb310d98b40d852b36a00f20320e6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841530"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724637"
 ---
 # <a name="ksetupgetenctypeattr"></a>ksetup： getenctypeattr
 
 
 
-检索域的加密类型属性。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+检索域的加密类型属性。
 
 ## <a name="syntax"></a>语法
 
@@ -30,9 +30,9 @@ ksetup /getenctypeattr <DomainName>
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<DomainName >|要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。|
+|\<DomainName>|要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。|
 
 ## <a name="remarks"></a>备注
 
@@ -40,9 +40,9 @@ ksetup /getenctypeattr <DomainName>
 
 如果命令成功或失败，则会在成功或失败完成时显示一条状态消息。
 
-若要设置要连接到并使用的域，请运行**ksetup/domain \<DomainName >** 命令。
+若要设置要连接到并使用的域，请运行**ksetup/Domain \<DomainName>** 命令。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 验证域的 "加密类型" 属性：
 ```

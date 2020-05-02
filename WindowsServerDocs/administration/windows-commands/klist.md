@@ -1,6 +1,6 @@
 ---
 title: klist
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b693e4496f4fc1275e1f2b364900564ce86e97cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f83a46f158cd83aa8393630aa0138271e8868575
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841960"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724757"
 ---
 # <a name="klist"></a>klist
 
 
 
-显示当前缓存的 Kerberos 票证的列表。 此信息适用于 Windows Server 2012。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+显示当前缓存的 Kerberos 票证的列表。 此信息适用于 Windows Server 2012。
 
 ## <a name="syntax"></a>语法
 
@@ -30,13 +30,13 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |-lh|表示以十六进制表示的用户本地唯一标识符（LUID）的高部分。 如果不存在-lh 或– li，则该命令默认为当前登录的用户的 LUID。|
 |-li|表示以十六进制表示的用户本地唯一标识符（LUID）的低部分。 如果不存在-lh 或– li，则该命令默认为当前登录的用户的 LUID。|
 |赛|列出当前缓存的票证授予票证（Tgt）和指定的登录会话的服务票证。 这是默认选项。|
 |tgt|显示初始 Kerberos TGT。|
-|清除|允许您删除指定登录会话的所有票证。|
+|清空|允许您删除指定登录会话的所有票证。|
 |会话|显示此计算机上的登录会话的列表。|
 |kcd_cache|显示 Kerberos 约束委派缓存信息。|
 |get|允许您向由服务主体名称（SPN）指定的目标计算机请求票证。|
@@ -70,7 +70,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
     列出了当前缓存的票证的初始 Kerberos TGT 和以下属性：  
     -   LogonID：以十六进制形式标识
     -   ServiceName： krbtgt
-    -   TargetName \<SPN >： krbtgt
+    -   TargetName \<SPN>： krbtgt
     -   DomainName：颁发 TGT 的域的名称
     -   TargetDomainName：将 TGT 颁发到的域
     -   AltTargetDomainName：将 TGT 颁发到的域
@@ -93,7 +93,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 
     允许您显示 Kerberos 约束委派缓存信息。  
     -   LogonID：如果指定，将按给定的值显示登录会话的缓存信息。 如果未指定，则显示当前用户的登录会话的缓存信息。
--   **获取**
+-   **get**
 
     允许你向 SPN 指定的目标请求票证。  
     -   LogonID：如果已指定，则通过使用登录会话通过给定的值请求票证。 如果未指定，则使用当前用户的登录会话请求票证。
@@ -114,7 +114,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 **其他注意事项**
 -   Klist 在 Windows Server 2012 和 Windows 8 中可用，无需特殊安装。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 1. 当你在处理目标服务器的票证授予服务（TGS）请求时诊断事件 ID 27 时，该帐户没有合适的密钥来生成 Kerberos 票证。 你可以使用 Klist 来查询 Kerberos 票证缓存，以确定是否缺少任何票证、目标服务器或帐户是否出错，或者是否不支持加密类型。  
    ```

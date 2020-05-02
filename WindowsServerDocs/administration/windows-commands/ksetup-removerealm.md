@@ -1,6 +1,6 @@
 ---
 title: ksetup： removerealm
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1465ce08c0cf45de828683324b29fb2df8d0e893
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb7bf4663594a6c164d6495a9ba4cd81942afb79
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841450"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724605"
 ---
 # <a name="ksetupremoverealm"></a>ksetup： removerealm
 
 
 
-从注册表中删除指定领域的所有信息。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+从注册表中删除指定领域的所有信息。
 
 ## <a name="syntax"></a>语法
 
@@ -30,17 +30,17 @@ ksetup /removerealm <RealmName>
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<RealmName >|领域名称被声明为大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，它将作为默认领域列出。|
+|\<RealmName>|领域名称被声明为大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，它将作为默认领域列出。|
 
 ## <a name="remarks"></a>备注
 
-领域名称存储在注册表中的两个位置： **HKEY_LOCAL_MACHINE \system\controlset001**和 **\CurrentControlSet\Control\Lsa\Kerberos**。
+领域名称存储在注册表中的两个位置： **HKEY_LOCAL_MACHINE \system\controlset001**和**\CurrentControlSet\Control\Lsa\Kerberos**。
 
 你无法从域控制器中删除默认领域名称，因为这会重置其 DNS 信息，删除它可能会使域控制器不可用。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 在本地计算机上错误地将领域名称设置为 "CORP"。CONTOSO.图标
 ```

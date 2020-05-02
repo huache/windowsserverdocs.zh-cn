@@ -1,6 +1,6 @@
 ---
 title: ksetup： dumpstate
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 46f827d26d867392db4cbef92cf5be496aee8d74
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 27a7e3154b9dfa663b88b04857ea7650995613c6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841510"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724644"
 ---
 # <a name="ksetupdumpstate"></a>ksetup： dumpstate
 
 
 
-显示计算机上定义的所有领域的领域设置的当前状态。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+显示计算机上定义的所有领域的领域设置的当前状态。
 
 ## <a name="syntax"></a>语法
 
@@ -45,7 +45,7 @@ ksetup /dumpstate
 
 **Ksetup**生成与**Ksetup/dumpstate**相同的输出。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 查找计算机上的大多数 Kerberos 领域配置：
 ```

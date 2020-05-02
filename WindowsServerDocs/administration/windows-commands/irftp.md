@@ -1,6 +1,6 @@
 ---
 title: irftp
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 28cf722a5e630cb05b0348ebf2d4f582217b5497
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 34f912878b97bd00fb1c4ea539c7ea4c1423ea59
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841980"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724817"
 ---
 # <a name="irftp"></a>irftp
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 通过红外链接发送文件。    
 ## <a name="syntax"></a>语法  
@@ -27,7 +27,7 @@ irftp [<Drive>:\] [[<path>] <FileName>] [/h][/s]
 ```  
 
 #### <a name="parameters"></a>参数  
-|参数|说明|  
+|参数|描述|  
 |-------|--------|  
 |驱动器：\|指定包含要通过红外链接发送的文件的驱动器。|  
 |通道名字|指定要通过红外链接发送的文件或文件集的位置和名称。 如果指定一组文件，则必须指定每个文件的完整路径。|  
@@ -38,7 +38,7 @@ irftp [<Drive>:\] [[<path>] <FileName>] [/h][/s]
 -   使用此命令之前，验证要通过红外链接进行通信的设备是否已启用红外线功能并正常工作，以及是否在设备之间建立了红外链接。  
 -   如果在没有参数的情况下使用或与 **/s**一起使用，则**irftp**将打开 "**无线链接**" 对话框，你可以在其中选择要发送的文件，而无需使用命令行。  
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例  
+## <a name="examples"></a>示例  
 通过红外链接发送 Example .txt。  
 ```  
 irftp c:\example.txt  

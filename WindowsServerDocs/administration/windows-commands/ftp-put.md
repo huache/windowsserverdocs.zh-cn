@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: ecd579a313fe1cad1b8a5b4a622aaaec2d6a6d63
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d86ba8418f4c43c26f3745a9f70e676ca790c640
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843130"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725170"
 ---
 # <a name="ftp-put"></a>ftp： put
 
-> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 使用当前文件传输类型将本地文件复制到远程计算机。
 ## <a name="syntax"></a>语法
@@ -27,7 +27,7 @@ put <LocalFile> [<remoteFile>]
 ```
 #### <a name="parameters"></a>参数
 
-|    参数     |                    说明                    |
+|    参数     |                    描述                    |
 |------------------|---------------------------------------------------|
 |   `<LocalFile>`  |         指定要复制的本地文件。         |
 | `[<remoteFile>]` | 指定要在远程计算机上使用的名称。 |
@@ -35,7 +35,7 @@ put <LocalFile> [<remoteFile>]
 ## <a name="remarks"></a>备注
 - **Put**命令与**send**命令完全相同。
 - 如果未指定*remoteFile* ，则会为该文件提供*LocalFile*名称。
-  ## <a name="examples"></a><a name="BKMK_Examples"></a>示例
+  ## <a name="examples"></a>示例
   复制本地文件**test.txt** ，并在远程计算机上将其命名为**test1。**
   ```
   put test.txt test1.txt

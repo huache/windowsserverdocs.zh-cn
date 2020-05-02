@@ -1,6 +1,6 @@
 ---
-title: 导入
-description: 适用于 * * * * 的 Windows 命令主题
+title: 进口
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 07fdd03c73c454e92218a4c6983eac7f29b50883
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72cbd6195de64a6a0a7f2c258e19b2d5eb1378b1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842170"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724857"
 ---
-# <a name="import"></a>导入
+# <a name="import"></a>进口
 
 
 
 将已加载的元数据文件中的可传送影子副本导入到系统中。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -35,7 +35,7 @@ import
 -   可传送的卷影副本不会立即存储在系统中。 它们的详细信息存储在备份组件文档 XML 文件中，该文件是 DiskShadow 自动请求并保存在工作目录中的 .cab 元数据文件中。 您可以使用 "**设置元数据**" 命令来更改此文件的路径和名称。
 -   在可以使用**import**之前，必须使用**load Metadata**命令加载 DiskShadow 元数据文件。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 下面是一个示例 DiskShadow 脚本，演示如何使用**import**命令：
 ```

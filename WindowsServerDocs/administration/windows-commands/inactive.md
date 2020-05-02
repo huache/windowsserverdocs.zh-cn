@@ -1,6 +1,6 @@
 ---
-title: inactive
-description: 适用于 * * * * 的 Windows 命令主题
+title: 非活跃
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38a4f731bef9515a387b0343eaf4cb06142e6620
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4f1c0e0cd5ebbf92638a221852bc3133116f4911
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842120"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724836"
 ---
-# <a name="inactive"></a>inactive
+# <a name="inactive"></a>非活跃
 
 
 
@@ -35,7 +35,7 @@ inactive
 > -   将系统分区或启动分区标记为非活动后，计算机将从 BIOS 中指定的下一个选项启动，如 CD-ROM 驱动器或预启动执行环境（PXE）。
 > -   必须选择一个活动系统分区或启动分区，此操作才能成功。 使用 "**选择分区**" 命令选择活动分区，并将焦点移动到该分区。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 ```
 inactive

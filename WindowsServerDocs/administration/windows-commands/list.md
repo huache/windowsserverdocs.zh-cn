@@ -1,52 +1,56 @@
 ---
-title: “选择设备” 列表
-description: 适用于 * * * * 的 Windows 命令主题
+title: list
+description: List 命令的参考主题，该主题显示磁盘中的分区的列表、磁盘中的卷或虚拟硬盘（Vhd）的列表。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 57b6c8d0-872e-4dba-9715-1db8ab892e98
+ms.assetid: 69b105a1-9710-4a06-8102-38cc9e475ca5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d60c42b868a1e9a26e3168e4b489573f9f87e179
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 53914468ddee4a8930fc05c677c94be700a89021
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841100"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724490"
 ---
-# <a name="list"></a>“选择设备” 列表
+# <a name="list"></a>list
 
-
-
-列出系统上的编写器、卷影副本或当前注册的卷影复制提供程序。 如果在没有参数的情况下使用，则**列表**将在命令提示符下显示帮助。
-
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+显示磁盘中的分区、磁盘中的卷或虚拟硬盘（Vhd）的列表。
 
 ## <a name="syntax"></a>语法
 
 ```
-list writers [metadata | detailed | status]
-list shadows {all | set <SetID> | id <ShadowID>}
-list providers
+list { disk | partition | volume | vdisk }
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|写入器|列出编写器。 请参阅列出语法和参数的[编写](list-writers.md)器。|
-|影|列出持久的和现有的非持久影副本。 有关语法和参数，请参阅[列出阴影](list-shadows.md)。|
-|提供程序|列出当前已注册的卷影复制提供程序。 请参阅[列出提供程序](list-providers.md)的语法和参数。|
+|disk|显示磁盘及其相关信息的列表，如磁盘的大小、可用空间、磁盘是基本磁盘还是动态磁盘，以及该磁盘使用的分区形式是主启动记录 (MBR) 还是 GUID 分区表 (GPT)。|
+|partition|显示当前磁盘的分区表中列出的分区。|
+|卷|显示所有磁盘上的基本卷和动态卷的列表。|
+|vdisk|显示附加和/或所选 Vhd 的列表。 此命令列出分离的 Vhd （如果当前已选中）;但是，在附加 VHD 之前，磁盘类型设置为 "未知"。 用星号（*）标记的 VHD 具有焦点。</br>注意：此命令仅适用于 Windows 7 和 Windows Server 2008 R2。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="remarks"></a>备注
 
-若要列出所有卷影副本，请键入：
+-   在动态磁盘上列出分区时，分区可能不与磁盘上的动态卷相对应。 出现这种不一致的原因是动态磁盘在分区表中包含用于系统卷或启动卷的项（如果磁盘上有的话）。 它们还包含占用磁盘剩余部分的分区，以便保留空间供动态卷使用。
+-   用星号（*）标记的对象具有焦点。
+-   列出磁盘时，如果磁盘缺失，则其磁盘号以 M 为前缀。例如，第一个缺失磁盘的编号为 M0。
+
+## <a name="examples"></a>示例
+
 ```
-list shadows all
+list disk
+list partition
+list volume
+list vdisk
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+

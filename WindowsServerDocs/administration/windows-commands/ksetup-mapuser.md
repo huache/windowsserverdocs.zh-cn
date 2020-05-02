@@ -1,6 +1,6 @@
 ---
 title: ksetup： mapuser
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f61c67fa21eccb77601b78aed51791259d609c5e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: daa1b8d2c6d0ce2801191b953a533a63bcd8f4ab
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841480"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724618"
 ---
 # <a name="ksetupmapuser"></a>ksetup： mapuser
 
 
 
-将 Kerberos 主体的名称映射到帐户。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+将 Kerberos 主体的名称映射到帐户。
 
 ## <a name="syntax"></a>语法
 
@@ -30,10 +30,10 @@ ksetup /mapuser <Principal> <Account>
 
 #### <a name="parameters"></a>参数
 
-|  参数   |                                                   说明                                                   |
+|  参数   |                                                   描述                                                   |
 |--------------|-----------------------------------------------------------------------------------------------------------------|
-| \<主体 > |              任何主体的完全限定的域名;例如，mike@corp.CONTOSO.COM。              |
-|  \<帐户 >  | 此计算机上存在的任何帐户或安全组名称，如来宾、域用户或管理员。 |
+| \<主体> |              任何主体的完全限定的域名;例如， mike@corp.CONTOSO.COM。              |
+|  \<帐户>  | 此计算机上存在的任何帐户或安全组名称，如来宾、域用户或管理员。 |
 
 ## <a name="remarks"></a>备注
 
@@ -47,7 +47,7 @@ ksetup /mapuser <Principal> <Account>
 
 每当对外部密钥发行中心（KDC）和领域配置进行更改时，都需要重新启动更改了设置的计算机。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 将你的 Kerberos 领域中的 Mike Danseglio 的帐户映射到此计算机上的来宾帐户，向他授予内置来宾帐户成员的所有权限，而无需对此计算机进行身份验证：
 ```

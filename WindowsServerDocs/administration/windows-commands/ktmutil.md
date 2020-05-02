@@ -1,6 +1,6 @@
 ---
 title: ktmutil
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e65312ea4bb3169b90c2550b8b945919b86587f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 47b447165ee54e6839bb6338801c6703d818caa8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841190"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724526"
 ---
 # <a name="ktmutil"></a>ktmutil
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841190"
 
 启动内核事务管理器实用工具。 如果不使用参数，则**ktmutil**显示可用的子命令。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -41,7 +41,7 @@ ktmutil forget
 
 ## <a name="remarks"></a>备注
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要强制提交 GUID 为311a9209-03f4-11dc-918f-00188b8f707b 的 Indoubt 事务，请键入：
 ```

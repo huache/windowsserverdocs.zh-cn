@@ -1,6 +1,6 @@
 ---
 title: goto
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 928a9031a7f86261789676257afe95ffc3be8a99
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd61575b8b31ed47463db464f4aad0a048e755b2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842560"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725008"
 ---
 # <a name="goto"></a>goto
 
@@ -22,7 +22,7 @@ ms.locfileid: "80842560"
 
 将 cmd.exe 定向到批处理程序中带标签的行。 在批处理程序中， **goto**将命令处理定向到由标签标识的行。 找到标签后，处理将从下一行开始的命令开始。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -32,9 +32,9 @@ goto <Label>
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<标签 >|指定一个文本字符串，该字符串用作批处理程序中的标签。|
+|\<标签>|指定一个文本字符串，该字符串用作批处理程序中的标签。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -58,7 +58,7 @@ goto <Label>
 
     可以将**goto**与其他命令结合使用来执行条件操作。 有关对条件运算使用**goto**的详细信息，请参阅[If](if.md)命令参考。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 以下批处理程序将驱动器 A 中的磁盘格式化为系统磁盘。 如果操作成功， **goto**命令会将处理定向到 **：结束**标签：
 ```

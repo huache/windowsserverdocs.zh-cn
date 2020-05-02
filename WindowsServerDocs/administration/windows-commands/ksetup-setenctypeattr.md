@@ -1,6 +1,6 @@
 ---
 title: ksetup： setenctypeattr
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78450202b33f76ab7b0a374fe4559f0a25e709b5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4cb7380a5fc65734902c6eed0b4b941eda6f6f5a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841340"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724563"
 ---
 # <a name="ksetupsetenctypeattr"></a>ksetup： setenctypeattr
 
 
 
-设置域的加密类型属性。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+设置域的加密类型属性。
 
 ## <a name="syntax"></a>语法
 
@@ -30,9 +30,9 @@ ksetup /setenctypeattr <Domain name> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 |
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<DomainName >|要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。|
+|\<DomainName>|要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。|
 |加密类型|必须是以下受支持的加密类型之一：</br>-DES-CBC-CRC</br>-DES-CBC-MD5</br>-RC4-HMAC-MD5</br>-AES128--HMAC--SHA1-96</br>-AES256--HMAC--SHA1-96|
 
 ## <a name="remarks"></a>备注
@@ -43,9 +43,9 @@ ksetup /setenctypeattr <Domain name> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 |
 
 如果此命令成功或失败，将显示一条状态消息。
 
-若要设置要连接到并使用的域，请运行**ksetup/domain \<DomainName >** 命令。
+若要设置要连接到并使用的域，请运行**ksetup/Domain \<DomainName>** 命令。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 确定在此计算机上设置的当前加密类型：
 ```

@@ -1,6 +1,6 @@
 ---
 title: ftp 接收
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7fec409741e00bb3e6f61808630e5141ce4ec78f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5ece259f2d48e18f6a789d51b1df7089490f2fa1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842960"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725119"
 ---
 # <a name="ftp-recv"></a>ftp：接收
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 使用当前文件传输类型将远程文件复制到本地计算机。   
 ## <a name="syntax"></a>语法  
@@ -27,7 +27,7 @@ recv <remoteFile> [<LocalFile>]
 ```  
 #### <a name="parameters"></a>参数  
 
-|   参数   |                   说明                    |
+|   参数   |                   描述                    |
 |---------------|--------------------------------------------------|
 | <remoteFile>  |        指定要复制的远程文件。        |
 | [<LocalFile>] | 指定要在本地计算机上使用的名称。 |
@@ -35,7 +35,7 @@ recv <remoteFile> [<LocalFile>]
 ## <a name="remarks"></a>备注  
 - **接收**命令与**get**命令完全相同。  
 - 如果未指定*LocalFile* ，则会为该文件提供*remoteFile*名称。  
-  ## <a name="examples"></a><a name=BKMK_Examples></a>示例  
+  ## <a name="examples"></a>示例  
   使用当前文件传输类型将**test.txt**复制到本地计算机。  
   ```  
   recv test.txt  
