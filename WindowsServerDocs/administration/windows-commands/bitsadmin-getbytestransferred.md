@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getbytestransferred
-description: 适用于**bitsadmin getbytestransferred**的 Windows 命令主题，它检索为指定作业传输的字节数。
+description: Bitsadmin getbytestransferred 命令的参考主题，它检索为指定作业传输的字节数。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 957b3e60bf8a5e41b3964f4d762633472606654d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7c333926ed46dd2e66e0e2507f838f721a73c192
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850770"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718148"
 ---
 # <a name="bitsadmin-getbytestransferred"></a>bitsadmin getbytestransferred
 
@@ -28,18 +28,20 @@ bitsadmin /getbytestransferred <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-以下示例检索为名为*myDownloadJob*的作业传输的字节数。
+若要检索为名为*myDownloadJob*的作业传输的字节数，请执行以下操作：
 
 ```
-C:\>bitsadmin /getbytestransferred myDownloadJob
+bitsadmin /getbytestransferred myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

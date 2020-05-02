@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifyflags
-description: 适用于**bitsadmin getnotifyflags**的 Windows 命令主题，它检索指定作业的通知标志。
+description: Bitsadmin getnotifyflags 命令的参考主题，它检索指定作业的通知标志。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3138baea05f793cfb587d3f8fb669d446daea6b5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 36e4c3584b2e3be9c9985756aeaec08b40e74b0c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850580"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717767"
 ---
 # <a name="bitsadmin-getnotifyflags"></a>bitsadmin getnotifyflags
 
-检索指定的作业的通知标志。
+检索指定作业的通知标志。
 
 ## <a name="syntax"></a>语法
 
@@ -28,29 +28,31 @@ bitsadmin /getnotifyflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
 ## <a name="remarks"></a>备注
 
 作业可以包含以下一个或多个通知标志：
 
-| Flag | 说明 |
+| 标志 | 描述 |
 | ----- | ----- |
 | 0x001 | 生成该作业中的所有文件都已都转移时发生的事件。 |
 | 为 0x002 | 生成一个事件时发生错误。 |
 | 0x004 | 禁用通知。 |
 | 0x008 | 生成在修改作业或使传输进度事件。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例检索名为的作业的通知标志 *myDownloadJob*。
+若要检索名为*myDownloadJob*的作业的通知标志：
 
 ```
-C:\>bitsadmin /getnotifyflags myDownloadJob
+bitsadmin /getnotifyflags myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

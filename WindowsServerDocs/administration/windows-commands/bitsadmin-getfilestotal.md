@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getfilestotal
-description: 用于**bitsadmin getfilestotal**的 Windows 命令主题，它检索指定作业中的文件数。
+description: Bitsadmin getfilestotal 命令的参考主题，它检索指定作业中的文件数。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bad42a8bef57ca4c4a1411a12f20979e4a95d178
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5cf3b33c15bb18c8a141408f82fdd72a6e710817
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850680"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717979"
 ---
 # <a name="bitsadmin-getfilestotal"></a>bitsadmin getfilestotal
 
@@ -28,18 +28,20 @@ bitsadmin /getfilestotal <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例检索名为作业中包含的文件数 *myDownloadJob*。
+若要检索包含在名为*myDownloadJob*的作业中的文件数：
 
 ```
-C:\>bitsadmin /getfilestotal myDownloadJob
+bitsadmin /getfilestotal myDownloadJob
 ```
 
 ## <a name="see-also"></a>另请参阅
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

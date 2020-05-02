@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getbytestotal
-description: 用于**bitsadmin getbytestotal**的 Windows 命令主题，它检索指定作业的大小。
+description: Bitsadmin getbytestotal 命令的参考主题，它检索指定作业的大小。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84e3e0311ead0eb79f9247d4f06844ece5f20fa2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f844e1d3689c42a2c533921797d15dbb946b551e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850780"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718152"
 ---
 # <a name="bitsadmin-getbytestotal"></a>bitsadmin getbytestotal
 
@@ -28,18 +28,20 @@ bitsadmin /getbytestotal <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例检索名为的作业的大小 *myDownloadJob*。
+若要检索名为*myDownloadJob*的作业的大小：
 
 ```
-C:\>bitsadmin /getbytestotal myDownloadJob
+bitsadmin /getbytestotal myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

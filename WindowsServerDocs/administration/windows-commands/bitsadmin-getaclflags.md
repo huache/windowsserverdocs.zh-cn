@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getaclflags
-description: 用于**bitsadmin getaclflags**的 Windows 命令主题，它检索访问控制列表（ACL）传播标志。
+description: Bitsadmin getaclflags 命令的参考主题，它检索访问控制列表（ACL）传播标志。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d53018e2fa5c659c8cf4b0ec985beda848a8c1af
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a9ca541b488c3c83e7a64a138bae0914001778e3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850790"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718177"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
@@ -28,13 +28,13 @@ bitsadmin /getaclflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
-## <a name="remarks"></a>备注
+### <a name="remarks"></a>备注
 
-将显示一个或多个以下的标志值︰
+返回以下一个或多个标志值：
 
 - **o** -将所有者信息复制到文件。
 
@@ -44,14 +44,16 @@ bitsadmin /getaclflags <job>
 
 - **s** -使用文件复制系统访问控制列表（SACL）信息。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例检索名为的作业的访问控制列表传播标志 *myDownloadJob*。
+若要检索名为*myDownloadJob*的作业的访问控制列表传播标志：
 
 ```
-C:\>bitsadmin /getaclflags myDownloadJob
+bitsadmin /getaclflags myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifycmdline
-description: 适用于**bitsadmin getnotifycmdline**的 Windows 命令主题，它检索在作业完成传输数据时运行的命令行命令。
+description: Bitsadmin getnotifycmdline 命令的参考主题，它检索在作业完成传输数据时运行的命令行命令。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24b49b3fa0c2dafb999d8cb9c6e0c13ae68bf6f4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4d4c47c4a1b9ea06fd804c8f2c48e9ac0ce1b319
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850590"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717796"
 ---
 # <a name="bitsadmin-getnotifycmdline"></a>bitsadmin getnotifycmdline
 
-检索在作业完成传输数据时要执行的命令行命令。
+检索在指定的作业完成数据传输之后要运行的命令行命令。
 
 > [!NOTE]
 > BITS 1.2 和更早版本不支持此命令。
@@ -31,18 +31,20 @@ bitsadmin /getnotifycmdline <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例检索时的作业名为服务使用的命令行命令 *myDownloadJob* 完成。
+在名为*myDownloadJob*的作业完成时检索服务使用的命令行命令。
 
 ```
-C:\>bitsadmin /getnotifycmdline myDownloadJob
+bitsadmin /getnotifycmdline myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getfilestransferred
-description: 适用于**bitsadmin getfilestransferred**的 Windows 命令主题，用于检索为指定作业传输的文件数。
+description: Bitsadmin getfilestransferred 命令的参考主题，它检索为指定作业传输的文件数。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 053b67f5f85066d202b446b31eb1b1698fd735b9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ed11739029338ecce5fc4efbe1918873a7f37f62
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850670"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717916"
 ---
 # <a name="bitsadmin-getfilestransferred"></a>bitsadmin getfilestransferred
 
@@ -28,18 +28,20 @@ bitsadmin /getfilestransferred <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例检索名为作业中传输的文件数 *myDownloadJob*。
+若要检索在名为*myDownloadJob*的作业中传输的文件数：
 
 ```
-C:\>bitsadmin /getfilestransferred myDownloadJob
+bitsadmin /getfilestransferred myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

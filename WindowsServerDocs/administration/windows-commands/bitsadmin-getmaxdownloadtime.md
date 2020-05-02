@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getmaxdownloadtime
-description: 用于**bitsadmin getmaxdownloadtime**的 Windows 命令主题，它检索下载超时值（秒）。
+description: Bitsadmin getmaxdownloadtime 命令的参考主题，它检索下载超时（以秒为单位）。
 ms.prod: windows-servemr
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b6e4a45da76d5ba39edae151454ad7f28a74085
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c63acee7629267ed10df11fb8cf4eeb0c911e118
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850630"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717869"
 ---
 # <a name="bitsadmin-getmaxdownloadtime"></a>bitsadmin getmaxdownloadtime
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 以秒为单位检索下载超时。
 
@@ -30,18 +30,20 @@ bitsadmin /getmaxdownloadtime <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例获取名为的作业的最大下载时间 *myDownloadJob* 以秒为单位。
+若要获取名为*myDownloadJob*的作业的最大下载时间（以秒为单位）：
 
 ```
-C:\>bitsadmin /getmaxdownloadtime myDownloadJob
+bitsadmin /getmaxdownloadtime myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

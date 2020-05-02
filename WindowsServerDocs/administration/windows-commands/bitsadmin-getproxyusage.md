@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getproxyusage
-description: 适用于**bitsadmin getproxyusage**的 Windows 命令主题，它检索指定作业的代理使用情况设置。
+description: Bitsadmin getproxyusage 命令的参考主题，它检索指定作业的代理使用情况设置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01c9bb9a1d413fa847482f652e18eed30ad76109
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 13a3f216b1ed3c77dbbefee37d73a657525daa36
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850510"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717649"
 ---
 # <a name="bitsadmin-getproxyusage"></a>bitsadmin getproxyusage
 
@@ -28,13 +28,13 @@ bitsadmin /getproxyusage <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
-## <a name="remarks"></a>备注
+#### <a name="output"></a>输出
 
-代理使用值包括：
+返回的代理使用值可以是：
 
 - **预配置**-使用所有者的 Internet Explorer 默认值。
 
@@ -44,14 +44,16 @@ bitsadmin /getproxyusage <job>
 
 - 自动**检测-自动**检测代理设置。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例检索名为*myDownloadJob*的作业的代理使用情况。
+若要检索名为*myDownloadJob*的作业的代理用法：
 
 ```
-C:\>bitsadmin /getproxyusage myDownloadJob
+bitsadmin /getproxyusage myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)
