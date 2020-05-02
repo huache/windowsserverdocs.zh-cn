@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 235497b09f44f9077b7f622f7f2b68a0bc49af86
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 21ce37795af3080245633938e96f891f7a485d53
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836040"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722420"
 ---
 # <a name="ren"></a>ren
 
 重命名文件或目录。 此命令与 "**重命名**" 命令相同。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -31,17 +31,17 @@ rename [<Drive>:][<Path>]<FileName1> <FileName2>
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|[\<驱动器 >：][\<路径 >]\<FileName1 >|指定要重命名的文件或文件集的位置和名称。 *FileName1*可以包含通配符（ **&#42;** 和 **？** ）。|
-|\<FileName2 >|指定文件的新名称。 您可以使用通配符来指定多个文件的新名称。|
+|[\<驱动器>：][\<路径>]\<FileName1>|指定要重命名的文件或文件集的位置和名称。 *FileName1*可以包含通配符（**&#42;** 和 **？**）。|
+|\<FileName2>|指定文件的新名称。 您可以使用通配符来指定多个文件的新名称。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
 
 - 在重命名文件时，不能指定新的驱动器或路径。
 - 不能使用**ren**命令在驱动器之间重命名文件，或将文件移动到不同的目录。
-- 可以在 FileName 参数中使用 **&#42;** 通配符（和 **？** ） *FileName* 。 *FileName2*中由通配符表示的字符将与*FileName1*中的相应字符相同。
+- 可以在*FileName*参数中使用通配符（**&#42;** 和 **？**）。 *FileName2*中由通配符表示的字符将与*FileName1*中的相应字符相同。
 - *FileName2*必须是唯一的文件名。 如果*FileName2*与现有文件名相匹配，则**ren**会显示以下消息：  
   ```
   Duplicate file name or file not found

@@ -1,6 +1,6 @@
 ---
 title: rd
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 298e6b291a6aa08701b6d54a11470b0cc4bea486
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cb169a44f9613b237af71321f9619d9ea93a6912
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836710"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722637"
 ---
 # <a name="rd"></a>rd
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836710"
 
 删除目录。 此命令与**rmdir**命令相同。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -33,9 +33,9 @@ rmdir [<Drive>:]<Path> [/s [/q]]
 
 ### <a name="parameters"></a>参数
 
-|     参数     |                                                                 说明                                                                  |
+|     参数     |                                                                 描述                                                                  |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<驱动器 >：]<Path> |                      指定要删除的目录的位置和名称。 *路径*是必需的。                       |
+| [\<驱动器>：]<Path> |                      指定要删除的目录的位置和名称。 *路径*是必需的。                       |
 |        /s         |                     删除目录树（指定的目录及其所有子目录，包括所有文件）。                      |
 |        /q         | 指定安静模式。 删除目录树时不提示进行确认。 （请注意， **/q**仅在指定 **/s**时才起作用。） |
 |        /?         |                                                     在命令提示符下显示帮助。                                                     |
@@ -47,7 +47,7 @@ rmdir [<Drive>:]<Path> [/s [/q]]
     `The directory is not empty`
 
     使用**dir/a**命令列出所有文件（包括隐藏文件和系统文件）。 然后，使用带有 **-h**的**attrib**命令删除隐藏的文件属性，使用- **s**删除系统文件属性，或使用 **-h-s**删除隐藏文件和系统文件属性。 删除隐藏属性和文件属性后，可以删除这些文件。
--   如果在*路径*开头插入反斜杠（\)，*路径*将从根目录开始（无论当前目录如何）。
+-   如果插入反斜杠（\)在*路径*的开头，*路径*将从根目录开始，而不考虑当前目录）。
 -   你无法使用**rd**删除当前目录。 如果尝试删除当前目录，将显示以下错误消息：
 
     `The process cannot access the file because it is being used by another process.`
@@ -55,7 +55,7 @@ rmdir [<Drive>:]<Path> [/s [/q]]
     如果收到此错误消息，则必须更改为其他目录（而不是当前目录的子目录），然后使用**rd** （如有必要，请指定*路径*）。
 -   可从恢复控制台获取带有不同参数的**rd**命令。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 不能删除当前正在使用的目录。 必须更改为不在当前目录中的目录。 例如，要更改为父目录，请键入：
 ```

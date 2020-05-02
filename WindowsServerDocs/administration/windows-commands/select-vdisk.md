@@ -1,6 +1,6 @@
 ---
 title: 选择 vdisk
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65e186413bebbf467cd4c2033d274badd1fbea80
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 68f60f8f43a33d498c40daa3b9994887f12037bb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834740"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721996"
 ---
 # <a name="select-vdisk"></a>选择 vdisk
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-选择指定的虚拟硬盘 \(VHD\) 并将焦点转移到该虚拟硬盘。  
+选择指定的虚拟硬盘\(VHD\) ，并将焦点移到它上面。  
   
 > [!NOTE]  
 > 此命令仅适用于 Windows 7 和 Windows Server 2008 R2。  
@@ -33,12 +33,12 @@ select vdisk file=<full path> [noerr]
   
 ### <a name="parameters"></a>参数  
   
-|参数|说明|  
+|参数|描述|  
 |-------|--------|  
 |文件\=<full path>|指定现有 VHD 文件的完整路径和文件名。|  
 |noerr|仅用于脚本编写。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。|  
   
-## <a name="examples"></a><a name=BKMK_examples></a>示例  
+## <a name="examples"></a>示例  
 若要将焦点转移到名为 "Test" 的 VHD，请键入：  
   
 ```  

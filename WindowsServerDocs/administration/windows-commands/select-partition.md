@@ -1,6 +1,6 @@
 ---
 title: select partition
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 97145d73cbbe1bdc9b27e545b047b78fe89e4984
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 55b06f247c8e9f183a2971278a8f16ac237e9cfe
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834800"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722014"
 ---
 # <a name="select-partition"></a>select partition
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 选择指定分区并将焦点移到该分区。 此命令还可用于显示当前在所选磁盘中有焦点的分区。  
   
@@ -32,9 +32,9 @@ select partition=<n>
   
 ### <a name="parameters"></a>参数  
   
-|   参数    |                                                                                    说明                                                                                    |
+|   参数    |                                                                                    描述                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 分区\=<n> | 要接收焦点的分区号。 通过使用 DiskPart 中的 "**列出分区**" 命令，你可以查看当前所选磁盘上的所有分区的编号。 |
+| 依据\=<n> | 要接收焦点的分区号。 通过使用 DiskPart 中的 "**列出分区**" 命令，你可以查看当前所选磁盘上的所有分区的编号。 |
   
 ## <a name="remarks"></a>备注  
   
@@ -46,7 +46,7 @@ select partition=<n>
   
 -   如果使用相应的卷选择了分区，则会自动选择该卷。  
   
-## <a name="examples"></a><a name=BKMK_examples></a>示例  
+## <a name="examples"></a>示例  
 若要将焦点移动到第3分区，请键入：  
   
 ```  

@@ -1,6 +1,6 @@
 ---
 title: Sc 查询
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38d83fa07e9f85f3a5a4b86388bbed41fcf326d1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6a6b4555790a8f9bb1149531251e724189177975
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835280"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722180"
 ---
 # <a name="sc-query"></a>Sc 查询
 
@@ -22,7 +22,7 @@ ms.locfileid: "80835280"
 
 获取并显示有关指定服务、驱动程序、服务类型或驱动程序类型的信息。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -32,16 +32,16 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
 
 ### <a name="parameters"></a>参数
 
-|       参数        |                                                                                                                          说明                                                                                                                          |
+|       参数        |                                                                                                                          描述                                                                                                                          |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     \<ServerName >      |                       指定服务所在的远程服务器的名称。 名称必须使用通用命名约定（UNC）格式（例如 \\\\myserver）。 若要在本地运行 SC.EXE，请省略此参数。                        |
-|     \<ServiceName >     |                                      指定**getkeyname**操作返回的服务名称。 此**查询**参数不与其他**查询**参数一起使用（ *ServerName*除外）。                                      |
+|     \<ServerName>      |                       指定服务所在的远程服务器的名称。 名称必须使用通用命名约定（UNC）格式（例如， \\ \\myserver）。 若要在本地运行 SC.EXE，请省略此参数。                        |
+|     \<ServiceName>     |                                      指定**getkeyname**操作返回的服务名称。 此**查询**参数不与其他**查询**参数一起使用（ *ServerName*除外）。                                      |
 |     type = {driver      |                                                                                                                            服务                                                                                                                            |
 |       type = {自有       |                                                                                                                             共享                                                                                                                             |
-|     state = {active     |                                                                                                                           inactive                                                                                                                            |
-| bufsize = \<BufferSize > |                     指定枚举缓冲区的大小（以字节为单位）。 默认缓冲区大小为1024个字节。 当查询生成的显示超过1024个字节时，应增加枚举缓冲区的大小。                      |
-|   ri = \<ResumeIndex >   | 指定枚举开始或恢复的索引号。 默认值为**0** （零）。 当查询返回的详细信息超过默认缓冲区可显示的信息时，请将此参数与**bufsize =** 参数一起使用。 |
-|  group = \<组名 >   |                                                                             指定要枚举的服务组。 默认情况下，会枚举所有组（* * group = * *）。                                                                              |
+|     state = {active     |                                                                                                                           非活跃                                                                                                                            |
+| bufsize = \<BufferSize> |                     指定枚举缓冲区的大小（以字节为单位）。 默认缓冲区大小为1024个字节。 当查询生成的显示超过1024个字节时，应增加枚举缓冲区的大小。                      |
+|   ri = \<ResumeIndex>   | 指定枚举开始或恢复的索引号。 默认值为**0** （零）。 当查询返回的详细信息超过默认缓冲区可显示的信息时，请将此参数与**bufsize =** 参数一起使用。 |
+|  组 = \<组组>   |                                                                             指定要枚举的服务组。 默认情况下，会枚举所有组（* * group = * *）。                                                                              |
 |           /?           |                                                                                                             在命令提示符下显示帮助。                                                                                                              |
 
 ## <a name="remarks"></a>备注
@@ -58,7 +58,7 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
   sc query bufsize= 1822 ri= 79
   ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要仅显示活动服务的信息，请键入以下命令之一：
 ```

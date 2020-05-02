@@ -1,6 +1,6 @@
 ---
 title: schtasks
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b50ca62aea7a46f9246fb8d5089c0ef41aa1316
-ms.sourcegitcommit: d669d4af166b9018bcf18dc79cb621a5fee80042
+ms.openlocfilehash: a723025846a0e1725c72d5880d1ecc97579e1a69
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82037166"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722171"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -340,7 +340,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc daily [/mo {1 - 365}] [/st <HH
 
 #### <a name="to-schedule-a-task-that-runs-every-day"></a>计划每日运行的任务
 
-以下示例计划 MyApp 程序每天凌晨8:00 运行一次。 2002年12月31日之前。 由于它省略了 **/mo**参数，因此默认间隔为1，用于每天运行命令。
+计划 MyApp 程序每天的凌晨8:00 运行一次。 2002年12月31日之前。 由于它省略了 **/mo**参数，因此默认间隔为1，用于每天运行命令。
 
 在此示例中，因为本地计算机系统在 **"控制面板**" 的 "**区域和语言选项**" 中设置为 "**英语（英国）** " 选项，所以结束日期的格式为 DD/MM/YYYY （31/12/2002）
 ```
@@ -349,7 +349,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc daily /st 08:00 /ed 31/12/
 
 #### <a name="to-schedule-a-task-that-runs-every-12-days"></a>计划每12天运行一次的任务
 
-下面的示例将 MyApp 程序计划为每隔12天在下午1:00 运行。 （13:00）从2002年12月31日开始。 该命令使用 **/mo**参数指定两（2）天的间隔，并使用 **/sd**和 **/st**参数指定日期和时间。
+计划 MyApp 程序每隔12天在下午1:00 运行。 （13:00）从2002年12月31日开始。 该命令使用 **/mo**参数指定两（2）天的间隔，并使用 **/sd**和 **/st**参数指定日期和时间。
 
 在此示例中，由于 "**控制面板**" 的 "**区域和语言选项**" 中的 "系统" 设置为 "**英语（津巴布韦）** " 选项，因此结束日期的格式为 MM/DD/YYYY （12/31/2002）
 ```

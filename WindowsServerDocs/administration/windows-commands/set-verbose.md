@@ -1,6 +1,6 @@
 ---
 title: 设置详细
-description: 设置详细的 Windows 命令主题，它指定在创建卷影副本期间是否提供详细输出。
+description: Set verbose 的参考主题，指定在创建卷影副本期间是否提供详细输出。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f06400259004095fcc4ec81b2ed3cb25678a4b7d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: db31192037e57ee471d04480e0c9333b39e44980
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834460"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721895"
 ---
 # <a name="set-verbose"></a>设置详细
 
@@ -28,7 +28,7 @@ set verbose {on | off}
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |-----------|-------------|
 |    {on    |    off}     |
 

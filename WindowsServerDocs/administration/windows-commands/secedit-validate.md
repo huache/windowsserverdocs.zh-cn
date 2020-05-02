@@ -1,6 +1,6 @@
 ---
 title: secedit：验证
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b9425f7a1fb821f4ecbaa7c1689c3baabbff6223
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3043a4af6c2ac4a6c58b973cca5abd066109eac5
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834870"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722036"
 ---
 # <a name="seceditvalidate"></a>secedit：验证
 
 
 
-验证存储在安全模板（.inf 文件）中的安全设置。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+验证存储在安全模板（.inf 文件）中的安全设置。
 
 ## <a name="syntax"></a>语法
 
@@ -31,9 +31,9 @@ Secedit /validate <configuration file name>
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|配置文件名称|必需。</br>指定将验证的安全模板的路径和文件名。|
+|配置文件名|必需。</br>指定将验证的安全模板的路径和文件名。|
 
 ## <a name="remarks"></a>备注
 
@@ -43,9 +43,9 @@ Secedit /validate <configuration file name>
 
 日志文件将不会更新。
 
-在 Windows Server 2008 中，`Secedit /refreshpolicy` 已替换为 `gpupdate`。 有关如何刷新安全设置的信息，请参阅[Gpupdate](gpupdate.md)。
+在 Windows Server 2008 中`Secedit /refreshpolicy` ，已替换为`gpupdate`。 有关如何刷新安全设置的信息，请参阅[Gpupdate](gpupdate.md)。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 对安全模板执行回滚后，你想要验证回退 inf 文件 secRBKcontoso 是否有效。
 ```

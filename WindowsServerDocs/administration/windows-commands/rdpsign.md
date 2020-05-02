@@ -9,22 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c9df46ab09b758cbd86334d5b418c876c41f0eff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4245ea533238d31457563f4d3521fdb09ff1f255
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836670"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722630"
 ---
 # <a name="rdpsign"></a>rdpsign
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 使您能够对远程桌面协议（.rdp）文件进行数字签名。
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，“终端服务”被重命名为“远程桌面服务”。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
 
 ## <a name="syntax"></a>语法
 ```
@@ -33,11 +33,11 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|/sha1 \<哈希 >|指定指纹，该指纹是证书存储中包含的签名证书的安全哈希算法1（SHA1）哈希。 在 Windows Server 2012 R2 及更早版本中使用。|
-|/sha256 \<哈希 >|指定指纹，该指纹是证书存储中包含的签名证书的安全哈希算法256（SHA256）哈希。 替换 Windows Server 2016 和更高版本中的/sha1。|
-|/q|安静模式。 如果命令成功，则没有输出，如果该命令失败，则输出最小。|
+|/sha1 \<哈希>|指定指纹，该指纹是证书存储中包含的签名证书的安全哈希算法1（SHA1）哈希。 在 Windows Server 2012 R2 及更早版本中使用。|
+|/sha256 \<哈希>|指定指纹，该指纹是证书存储中包含的签名证书的安全哈希算法256（SHA256）哈希。 替换 Windows Server 2016 和更高版本中的/sha1。|
+|/q|静默模式。 如果命令成功，则没有输出，如果该命令失败，则输出最小。|
 |/v|详细模式。 显示所有警告、消息和状态。|
 |/l|测试签名和输出结果，而不实际替换任何输入文件。|
 |/?|在命令提示符下显示帮助。|

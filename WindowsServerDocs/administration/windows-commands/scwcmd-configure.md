@@ -1,6 +1,6 @@
 ---
 title: Scwcmd 配置
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac4333628c33b60daabbb6cff55575d6ec8cd5f6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6ffaff594a8927b3fcdfc871ec380fd5f134ce90
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835180"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722151"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: configure
 
-> 适用于：Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server 2012 R2、Windows Server 2012
 
 将安全配置向导（SCW）生成的安全策略应用到计算机。 此命令行工具还接受计算机名称的列表作为输入。
 
@@ -30,22 +30,22 @@ scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<Compute
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|/m：\<ComputerName >|指定要配置的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m**参数，则还必须指定 **/p**参数。|
-|/ou：\<OuName >|指定 Active Directory 域服务中组织单位（OU）的完全限定的域名（FQDN）。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将根据给定的策略进行分析。|
-|/p：\<策略 >|指定要用于执行配置的 .xml 策略文件的路径和文件名。|
-|/i：\<ComputerList >|指定 .xml 文件的路径和文件名，该文件包含计算机的列表及其预期的策略文件。 .Xml 文件中的所有计算机都将根据其相应的策略文件进行配置。 示例 .xml 文件为%windir%\security\SampleMachineList.xml。|
-|/u：\<用户名 >|指定在配置远程计算机时要使用的备用用户凭据。 默认值为已登录的用户。|
-|/pw：\<密码 >|指定在配置远程计算机时要使用的备用用户凭据。 默认值为登录用户的密码。|
-|/t：\<线程 >|指定在配置过程中应保持的同时未完成配置操作的数量（DefaultValue = 40，MinValue = 1，|
+|/m：\<ComputerName>|指定要配置的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m**参数，则还必须指定 **/p**参数。|
+|/ou：\<OuName>|指定 Active Directory 域服务中组织单位（OU）的完全限定的域名（FQDN）。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将根据给定的策略进行分析。|
+|/p：\<策略>|指定要用于执行配置的 .xml 策略文件的路径和文件名。|
+|/i：\<ComputerList>|指定 .xml 文件的路径和文件名，该文件包含计算机的列表及其预期的策略文件。 .Xml 文件中的所有计算机都将根据其相应的策略文件进行配置。 示例 .xml 文件为%windir%\security\SampleMachineList.xml。|
+|/u：\<UserName>|指定在配置远程计算机时要使用的备用用户凭据。 默认值为已登录的用户。|
+|/pw：\<密码>|指定在配置远程计算机时要使用的备用用户凭据。 默认值为登录用户的密码。|
+|/t：\<线程>|指定在配置过程中应保持的同时未完成配置操作的数量（DefaultValue = 40，MinValue = 1，|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
 
 Scwcmd 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 若要针对文件 webpolicy 配置安全策略，请键入：
 ```

@@ -1,6 +1,6 @@
 ---
 title: set_2
-description: 适用于 set_2 的 Windows 命令主题，用于设置用于创建卷影副本的上下文、选项、详细模式和元数据文件。
+description: Set_2 的参考主题，用于设置用于创建卷影副本的上下文、选项、详细模式和元数据文件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa467625997824a11b2303572a063d591f59bdd6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 655f379dd8c2d633aad0cbb470b17c6ccb90c4f7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834380"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721872"
 ---
 # <a name="set_2"></a>set_2
 
@@ -32,11 +32,11 @@ set metadata <MetaData.cab>
 
 ## <a name="set-sub-commands"></a>设置子命令
 
-|子命令|说明|
+|子命令|描述|
 |-----------|-----------|
 |上下文|设置用于创建卷影副本的上下文。 请参阅设置语法和参数的[上下文](set-context.md)。|
 |选项|设置创建卷影副本的选项。 有关语法和参数，请参阅[Set 选项](set-option.md)。|
-|详细|打开或关闭详细输出模式。 请参阅[设置详细](set-verbose.md)的语法和参数。|
+|verbose|打开或关闭详细输出模式。 请参阅[设置详细](set-verbose.md)的语法和参数。|
 |metadata|设置阴影创建元数据文件的名称和位置。 请参阅设置语法和参数的[元数据](set-metadata.md)。|
 |/?|在命令提示符下显示帮助。|
 

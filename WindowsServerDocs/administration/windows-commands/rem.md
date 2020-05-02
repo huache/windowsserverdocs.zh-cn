@@ -1,6 +1,6 @@
 ---
 title: rem
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94428e6d5ec6fdb482a5d0d15bd1120e45ffea80
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d115548f15ff45087a771458062da8a3ef919eb3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836110"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722456"
 ---
 # <a name="rem"></a>rem
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836110"
 
 在批处理文件或配置中记录注释（备注）。系统. 如果未指定任何注释，则**rem**将增加垂直间距。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -32,20 +32,20 @@ rem [<Comment>]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<注释 >|指定要包含为注释的字符串。|
+|\<注释>|指定要包含为注释的字符串。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
 
 -   **Rem**命令不在屏幕上显示注释。 你必须在批处理或配置中使用**echo on**命令。SYS 文件，用于在屏幕上显示注释。
--   不能在批处理文件注释中使用重定向字符（ **<** 或 **>** ）或管道（ **|** ）。
+-   不能在批处理文件注释中**<** 使用**>** 重定向字符（**|** 或）或竖线（）。
 -   尽管可以使用不带注释的**rem**来向批处理文件添加垂直间距，但也可以使用空行。 处理批处理程序时，将忽略空白行。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例演示一个批处理文件，该文件使用备注和垂直间距：
+若要显示使用注释和垂直间距的批处理文件，请执行以下操作：
 ```
 @echo off
 rem  This batch program formats and checks new disks.

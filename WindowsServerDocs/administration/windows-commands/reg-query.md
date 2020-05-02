@@ -1,6 +1,6 @@
 ---
 title: reg 查询
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf21933e1ce9928048f0f07ed502dfcab75d1783
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea66a7d96435309a3b30b67f45bc68200f30dd2f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836390"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722530"
 ---
 # <a name="reg-query"></a>reg 查询
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836390"
 
 返回位于注册表中指定子项下的子子项和条目的列表。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -34,30 +34,30 @@ reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] 
 
 |参数|说明|
 |---------|-----------|
-|\<KeyName >|指定子项的完整路径。 若要指定远程计算机，请包含计算机名称（格式 \\\\ComputerName\) 作为*KeyName*的一部分。 省略 \\\\ComputerName \ 会使操作默认为本地计算机。 *KeyName*必须包含有效的根密钥。 本地计算机的有效根密钥为： HKLM、HKCU、HKCR、HKU 开头和 HKCC。 如果指定了远程计算机，则有效的根密钥为： HKLM 和 HKU 开头。|
-|/v \<ValueName >|指定要查询的注册表值名称。 如果省略，则返回*KeyName*的所有值名称。 如果也使用了 **/f**选项，则此参数的*ValueName*是可选的。|
+|\<KeyName>|指定子项的完整路径。 若要指定远程计算机，请将计算机名称（采用 ComputerName \\ \\\)格式的计算机名称）包括*在内。* 省略\\ \\ComputerName \ 会使操作默认为本地计算机。 *KeyName*必须包含有效的根密钥。 本地计算机的有效根密钥为： HKLM、HKCU、HKCR、HKU 开头和 HKCC。 如果指定了远程计算机，则有效的根密钥为： HKLM 和 HKU 开头。|
+|/v \<ValueName>|指定要查询的注册表值名称。 如果省略，则返回*KeyName*的所有值名称。 如果也使用了 **/f**选项，则此参数的*ValueName*是可选的。|
 |/ve|为空值名称运行查询。|
 |/s|指定以递归方式查询所有子项和值名称。|
-|/se \<分隔符 >|指定要在值名称类型 REG_MULTI_SZ 中搜索的单个值分隔符。 如果未指定*Separator* ，则使用 **\ 0** 。|
-|/f \<数据 >|指定要搜索的数据或模式。 如果字符串包含空格，请使用双引号。 如果未指定，则使用通配符 **&#42;** （）作为搜索模式。|
+|/se \<分隔符>|指定要在值名称类型 REG_MULTI_SZ 中搜索的单个值分隔符。 如果未指定*Separator* ，则使用**\ 0** 。|
+|/f \<数据>|指定要搜索的数据或模式。 如果字符串包含空格，请使用双引号。 如果未指定，则使用通配符（**&#42;**）作为搜索模式。|
 |遇到|指定仅在项名称中搜索。|
 |/d|指定仅搜索数据。|
 |/c|指定查询区分大小写。 默认情况下，查询不区分大小写。|
 |/e|指定仅返回完全匹配项。 默认情况下，将返回所有匹配项。|
-|/t \<类型 >|指定要搜索的注册表类型。 有效类型为： REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE。 如果未指定，则搜索所有类型。|
+|/t \<类型>|指定要搜索的注册表类型。 有效类型为： REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE。 如果未指定，则搜索所有类型。|
 |/z|指定在搜索结果中包含注册表类型的等价数值。|
 |/?|在命令提示符下显示**reg 查询**的帮助。|
 
-## <a name="remarks-optional-section"></a>备注 \<可选部分 >
+## <a name="remarks-optional-section"></a>备注\<可选部分>
 
 下表列出了**reg query**操作的返回值。
 
-|值|说明|
+|值|描述|
 |-----|-----------|
 |0|成功|
 |1|失败|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要在 HKLM\Software\Microsoft\ResKit 项中显示 name 值版本的值，请键入：
 ```
@@ -67,7 +67,7 @@ REG QUERY HKLM\Software\Microsoft\ResKit /v Version
 ```
 REG QUERY \\ABC\HKLM\Software\Microsoft\ResKit\Nt\Setup /s
 ```
-若要使用 **#** 作为分隔符显示类型 REG_MULTI_SZ 的所有子项和值，请键入：
+若要使用**#** 作为分隔符显示 REG_MULTI_SZ 类型的所有子项和值，请键入：
 ```
 REG QUERY HKLM\Software\Microsoft\ResKit\Nt\Setup /se #
 ```
