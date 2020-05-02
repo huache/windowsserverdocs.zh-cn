@@ -1,6 +1,6 @@
 ---
-title: 详细
-description: 适用于详细的 Windows 命令主题，显示指定命令的详细输出。
+title: verbose
+description: 详细的参考主题，用于显示指定命令的详细输出。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f67a4fe99a5051e8844e6386d87911946a808c1e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3563673d1f80167e469d98a664a6f96ca49815a1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832840"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721373"
 ---
-# <a name="verbose"></a>详细
+# <a name="verbose"></a>verbose
 
 显示指定命令的详细输出。 可以将 **/verbose**与运行的任何其他 WDSUTIL 命令一起使用。 请注意，必须在**WDSUTIL**之后直接指定 **/verbose**和 **/progress** 。
 

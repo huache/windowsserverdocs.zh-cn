@@ -1,6 +1,6 @@
 ---
 title: tpmvscmgr
-description: 适用于 tpmvscmgr 的 Windows 命令主题，它是一个命令行工具，可让具有管理凭据的用户在计算机上创建和删除 TPM 虚拟智能卡。
+description: Tpmvscmgr 的参考主题，它是一个命令行工具，可让具有管理凭据的用户在计算机上创建和删除 TPM 虚拟智能卡。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4411e0ec3c75cd768b2fe32ad26b17331328e3ca
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ab0419060121033571eeba643cc0e2d42b45c743
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832730"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721298"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
-使用 Tpmvscmgr 命令行工具，具有管理凭据的用户可以在计算机上创建和删除 TPM 虚拟智能卡。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+使用 Tpmvscmgr 命令行工具，具有管理凭据的用户可以在计算机上创建和删除 TPM 虚拟智能卡。
 
 ## <a name="syntax"></a>语法
 
@@ -33,7 +33,7 @@ Tpmvscmgr destroy [/instance <instance ID>] [/?]
 
 Create 命令在用户的系统上设置新的虚拟智能卡。 如果需要删除，它将返回新创建的卡片的实例 ID，以便以后引用。 实例 ID 的格式为**ROOT\SMARTCARDREADER\000n** ，其中**n**从0开始，每次创建新的虚拟智能卡时增加1。
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |/name|必需。 指示新虚拟智能卡的名称。|
 |/AdminKey|指示在用户忘记密码时可用于重置卡的 PIN 的所需管理员密钥。</br>**默认值**指定010203040506070801020304050607080102030405060708的默认值。</br>**提示符**提示用户输入管理员密钥的值。</br>**随机**为不返回给用户的卡的管理员密钥产生随机设置。 这会创建可能无法通过使用智能卡管理工具进行管理的卡。 如果随机生成，则必须输入48的十六进制字符。|
@@ -50,7 +50,7 @@ Create 命令在用户的系统上设置新的虚拟智能卡。 如果需要删
 > [!WARNING]
 > 删除虚拟智能卡后，将无法恢复。
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |/instance|指定要删除的虚拟智能卡的实例 ID。 创建卡时，instanceID 作为 Tpmvscmgr 的输出生成。 /Instance 参数是销毁命令的必填字段。|
 |/?|显示此命令的帮助。|
@@ -61,7 +61,7 @@ Create 命令在用户的系统上设置新的虚拟智能卡。 如果需要删
 
 对于字母数字输入，允许使用完整的127字符 ASCII 集。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 以下命令显示了如何创建一个虚拟智能卡，以后可以通过从另一台计算机启动的智能卡管理工具管理该智能卡。
 ```
@@ -79,7 +79,7 @@ tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey RANDOM /PIN P
 ```
 tpmvscmgr.exe destroy /instance <instance ID> 
 ```
-其中 \<实例 ID > 是用户创建卡时在屏幕上打印的值。 具体而言，对于创建的第一个卡，实例 ID 为 ROOT\SMARTCARDREADER\0000。
+其中\<实例 ID> 是用户创建卡时在屏幕上打印的值。 具体而言，对于创建的第一个卡，实例 ID 为 ROOT\SMARTCARDREADER\0000。
 
 ## <a name="additional-references"></a>其他参考
 

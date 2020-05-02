@@ -1,6 +1,6 @@
 ---
 title: 禁用-服务器
-description: 用于禁用服务器的 Windows 命令主题，该主题禁用 Windows 部署服务服务器的所有服务。
+description: 禁用-服务器的参考主题，禁用 Windows 部署服务服务器的所有服务。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba8c42f8b951baa4679adc44c69bf28cb2af2629
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5df5c7e2f18cdda2aeeea22c209881077c681f03
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831630"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720974"
 ---
 # <a name="disable-server"></a>禁用-服务器
 
@@ -28,11 +28,11 @@ WDSUTIL [Options] /Disable-Server [/Server:<Server name>]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|[/Server：\<Server name >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server：\<Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要禁用服务器，请运行下列操作之一：
 ```

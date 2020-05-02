@@ -1,6 +1,6 @@
 ---
 title: sysocmgr
-description: 适用于 sysocmgr 的 windows 命令主题，该主题已被弃用，并且在将来的 Windows 版本中不保证受支持。
+description: Sysocmgr 的参考主题，它已不推荐使用，不保证在未来的 Windows 版本中受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8f410d99fa1296cdf2577d57368fda58cbdfd04
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 513bcab45b16f82e7f3dac0d77587a8db9d1c327
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833590"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721588"
 ---
 # <a name="sysocmgr"></a>sysocmgr
 

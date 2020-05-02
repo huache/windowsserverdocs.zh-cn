@@ -1,6 +1,6 @@
 ---
 title: tsdiscon
-description: Tsdiscon 的 Windows 命令主题，用于断开会话与远程桌面会话主机服务器的连接。
+description: Tsdiscon 的参考主题，用于断开会话与远程桌面会话主机服务器的连接。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b008fa920290043b64e7421e91a545123634f1e7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e2a97d1b157445fd43acce5a80f3d793ed5ae5af
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832510"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721265"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 断开会话与远程桌面会话主机服务器的连接。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，“终端服务”被重命名为“远程桌面服务”。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
 
 ## <a name="syntax"></a>语法
 ```
@@ -34,11 +34,11 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|\<SessionId >|指定要断开连接的会话的 ID。|
-|\<SessionName >|指定要断开连接的会话的名称。|
-|/server：\<ServerName >|指定包含要断开连接的会话的终端服务器。 否则，使用当前的 rd 会话主机服务器。|
+|\<SessionId>|指定要断开连接的会话的 ID。|
+|\<SessionName>|指定要断开连接的会话的名称。|
+|/server：\<ServerName>|指定包含要断开连接的会话的终端服务器。 否则，使用当前的 rd 会话主机服务器。|
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
 
@@ -49,7 +49,7 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 -   仅当从远程服务器使用**tsdiscon**时， **/server**参数才是必需的。
 -   无法断开控制台会话的连接。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 - 若要断开当前会话，请键入：
   ```
   tsdiscon

@@ -1,6 +1,6 @@
 ---
 title: set
-description: 用于设置的 Windows 命令主题，用于设置 Windows 部署服务服务器、预留计算机、映像、映像组和传输服务器的属性和属性。
+description: Set 的参考主题，用于设置 Windows 部署服务服务器、预留计算机、映像、映像组和传输服务器的属性和属性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e47a90137a94d4ada149135ee0b593e0ade0ae3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd406a04fdb704ec8e2ee1e9aa3548c130e1089c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833050"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721416"
 ---
 # <a name="set"></a>set
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 设置 Windows 部署服务服务器、预留计算机、映像、映像组和传输服务器的属性和属性。
 
 ## <a name="subcommands"></a>个子
-|命令|说明|
+|子命令|描述|
 |-------|--------|
 |[子命令：设置-设备](subcommand-set-device.md)|更改预留计算机的属性。 预留计算机是已链接到 active directory 域服务器（AD DS）中的计算机帐户对象的计算机。 预留客户端也称为已知计算机。|
 |[子命令：设置-图像](subcommand-set-image.md)|更改现有映像的属性。|

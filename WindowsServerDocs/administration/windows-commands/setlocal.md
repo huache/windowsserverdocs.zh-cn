@@ -1,6 +1,6 @@
 ---
 title: setlocal
-description: 用于 setlocal 的 Windows 命令主题，可在批处理文件中启动环境变量的本地化。
+description: Setlocal 的参考主题，用于开始批处理文件中的环境变量的本地化。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24ed41289bb517d41db11fd3ebc41e5751b7afd9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: def4e8c58399af498e3c097f53e526fbedf9de0d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834360"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721864"
 ---
 # <a name="setlocal"></a>setlocal
 
 开始批处理文件中的环境变量的本地化。 在遇到匹配的**endlocal**命令或到达批处理文件的末尾之前，本地化将继续。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -28,9 +28,9 @@ ms.locfileid: "80834360"
 setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabledelayedexpansion]
 ```
 
-## <a name="arguments"></a>参数
+## <a name="arguments"></a>自变量
 
-|Argument|说明|
+|参数|描述|
 |--------|-----------|
 |enableextensions|在遇到匹配的**endlocal**命令之前启用命令扩展，而不考虑在运行**setlocal**命令之前的设置。|
 |disableextensions|在遇到匹配的**endlocal**命令之前禁用命令扩展，而不考虑在运行**setlocal**命令之前的设置。|
@@ -57,9 +57,9 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     verify other 2>nul
     if errorlevel 1 echo Unable to enable extensions
     ```  
-    由于**cmd**在禁用命令扩展时未设置 ERRORLEVEL 变量，因此当你将 ERRORLEVEL 变量与无效参数一起使用时， **verify**命令会将其初始化为非零值。 此外，如果将**setlocal**命令与参数 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **DISABLEDELAYEDEXPANSION**} 一起使用，并且它未将 ERRORLEVEL 变量设置为**1**，则命令扩展不可用。
+    由于**cmd**在禁用命令扩展时未设置 ERRORLEVEL 变量，因此当你将 ERRORLEVEL 变量与无效参数一起使用时， **verify**命令会将其初始化为非零值。 此外，如果你将**setlocal**命令与参数 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **disabledelayedexpansion**} 一起使用，并且它未将 ERRORLEVEL 变量设置为**1**，则命令扩展不可用。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 可以在批处理文件中本地化环境变量，如下面的示例脚本所示：
 ```

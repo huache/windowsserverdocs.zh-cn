@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b6efff57a512a2e0519b3294c51c073f1f44d8d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e27b260bdaa8896ad3cf0ad58294467bbb63e1c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832830"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721365"
 ---
 # <a name="time"></a>time
 
@@ -22,7 +22,7 @@ ms.locfileid: "80832830"
 
 显示或设置系统时间。 如果在没有参数的情况下使用， **time**将显示当前系统时间，并提示您输入新时间。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -32,10 +32,10 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<HH > [：\<MM > [：\<SS > [.\<NN >]]] [am\|pm]|将系统时间设置为指定的新时间，其中， *HH*是小时（必需）， *MM*以分钟为单位， *SS*以秒为单位。 *NN*可用于指定百分之几秒。 如果未指定**am**或**pm** ，则默认情况下， **time**使用24小时格式。|
-|/t|显示当前时间，而不提示您输入新时间。|
+|\<HH> [：\<MM> [：\<SS> [。\<NN>]]] [上午\|am]|将系统时间设置为指定的新时间，其中， *HH*是小时（必需）， *MM*以分钟为单位， *SS*以秒为单位。 *NN*可用于指定百分之几秒。 如果未指定**am**或**pm** ，则默认情况下， **time**使用24小时格式。|
+|/t |显示当前时间，而不提示您输入新时间。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注

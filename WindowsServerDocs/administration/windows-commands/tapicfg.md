@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: e57826b0997f2cde1dc437ea171d93eb6fc8dd15
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 694c32d9bbb8a873f34132e90c7201d3c9fe5132
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833450"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721556"
 ---
 # <a name="tapicfg"></a>tapicfg
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 创建、删除或显示 TAPI 应用程序目录分区，或设置默认的 TAPI 应用程序目录分区。 TAPI 3.1 客户端可以将此应用程序目录分区中的信息与目录服务定位器服务一起使用来查找和通信 TAPI 目录。你还可以使用**tapicfg**来创建或删除服务连接点，使 tapi 客户端能够在域中有效地查找 tapi 应用程序目录分区。 有关详细信息，请参阅 "备注"。 若要查看命令语法，请单击命令。 
 -   [tapicfg 安装](#BKMK_install)
@@ -36,10 +36,10 @@ ms.locfileid: "80833450"
 tapicfg install /directory:<PartitionName> [/server:<DCName>] [/forcedefault]
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|安装/目录：\<PartitionName >|必需。 指定要创建的 TAPI 应用程序目录分区的 DNS 名称。 此名称必须是完全限定的域名。|
-|/server： \<DCName >|指定在其上创建 TAPI 应用程序目录分区的域控制器的 DNS 名称。 如果未指定域控制器名称，则使用本地计算机的名称。|
+|安装/目录：\<PartitionName>|必需。 指定要创建的 TAPI 应用程序目录分区的 DNS 名称。 此名称必须是完全限定的域名。|
+|/server： \<DCName>|指定在其上创建 TAPI 应用程序目录分区的域控制器的 DNS 名称。 如果未指定域控制器名称，则使用本地计算机的名称。|
 |/forcedefault|指定此目录是域的默认 TAPI 应用程序目录分区。 一个域中可以有多个 TAPI 应用程序目录分区。<p>如果此目录是在域中创建的第一个 TAPI 应用程序目录分区，则无论是否使用 **/forcedefault**选项，它都将自动设置为默认值。|
 |/?|在命令提示符下显示帮助。|
 
@@ -51,9 +51,9 @@ tapicfg install /directory:<PartitionName> [/server:<DCName>] [/forcedefault]
 tapicfg remove /directory:<PartitionName>
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|删除/目录：\<PartitionName >|必需。 指定要删除的 TAPI 应用程序目录分区的 DNS 名称。 请注意，此名称必须是完全限定的域名。|
+|删除/目录：\<PartitionName>|必需。 指定要删除的 TAPI 应用程序目录分区的 DNS 名称。 请注意，此名称必须是完全限定的域名。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="tapicfg-publishscp"></a><a name="BKMK_publishscp"></a>tapicfg publishscp
@@ -64,10 +64,10 @@ tapicfg remove /directory:<PartitionName>
 tapicfg publishscp /directory:<PartitionName> [/domain:<DomainName>] [/forcedefault]
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|publishscp/目录：\<PartitionName >|必需。 指定服务连接点将发布的 TAPI 应用程序目录分区的 DNS 名称。|
-|/domain：\<DomainName >|指定在其中创建服务连接点的域的 DNS 名称。 如果未指定域名，则使用本地域的名称。|
+|publishscp/目录：\<PartitionName>|必需。 指定服务连接点将发布的 TAPI 应用程序目录分区的 DNS 名称。|
+|/domain：\<DomainName>|指定在其中创建服务连接点的域的 DNS 名称。 如果未指定域名，则使用本地域的名称。|
 |/forcedefault|指定此目录是域的默认 TAPI 应用程序目录分区。 一个域中可以有多个 TAPI 应用程序目录分区。|
 |/?|在命令提示符下显示帮助。|
 
@@ -79,10 +79,10 @@ tapicfg publishscp /directory:<PartitionName> [/domain:<DomainName>] [/forcedefa
 tapicfg removescp /directory:<PartitionName> [/domain:<DomainName>]
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|removescp/目录：\<PartitionName >|必需。 指定为其删除服务连接点的 TAPI 应用程序目录分区的 DNS 名称。|
-|/domain： \<DomainName >|指定从中删除服务连接点的域的 DNS 名称。 如果未指定域名，则使用本地域的名称。|
+|removescp/目录：\<PartitionName>|必需。 指定为其删除服务连接点的 TAPI 应用程序目录分区的 DNS 名称。|
+|/domain： \<DomainName>|指定从中删除服务连接点的域的 DNS 名称。 如果未指定域名，则使用本地域的名称。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="tapicfg-show"></a><a name="BKMK_show"></a>tapicfg show
@@ -93,10 +93,10 @@ tapicfg removescp /directory:<PartitionName> [/domain:<DomainName>]
 tapicfg show [/defaultonly][ /domain:<DomainName>]
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |/defaultonly|显示域中默认 TAPI 应用程序目录分区的名称和位置。|
-|/domain： \<DomainName >|指定显示 TAPI 应用程序目录分区的域的 DNS 名称。 如果未指定域名，则使用本地域的名称。|
+|/domain： \<DomainName>|指定显示 TAPI 应用程序目录分区的域的 DNS 名称。 如果未指定域名，则使用本地域的名称。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="tapicfg-makedefault"></a><a name="BKMK_makedefault"></a>tapicfg makedefault
@@ -107,9 +107,9 @@ tapicfg show [/defaultonly][ /domain:<DomainName>]
 tapicfg makedefault /directory:<PartitionName> [/domain:<DomainName>]  
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|makedefault/目录：\<PartitionName >|必需。 将 TAPI 应用程序目录分区的 DNS 名称指定为域的默认分区。 请注意，此名称必须是完全限定的域名。 指定为其设置了 TAPI 应用程序目录分区的域的 DNS 名称。 如果未指定域名，则使用本地域的名称。|
+|makedefault/目录：\<PartitionName>|必需。 将 TAPI 应用程序目录分区的 DNS 名称指定为域的默认分区。 请注意，此名称必须是完全限定的域名。 指定为其设置了 TAPI 应用程序目录分区的域的 DNS 名称。 如果未指定域名，则使用本地域的名称。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注

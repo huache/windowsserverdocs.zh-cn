@@ -1,6 +1,6 @@
 ---
 title: tracert
-description: 用于 tracert 的 Windows 命令主题，通过将 Internet 控制消息协议（ICMP）回送请求或 ICMPv6 消息发送到目标，并递增增加生存时间（TTL）字段值，确定到达目标的路径。
+description: Tracert 的参考主题，通过将 Internet 控制消息协议（ICMP）回送请求或 ICMPv6 消息发送到目标，以递增递增的生存时间（TTL）字段值，确定到达目标的路径。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4485763aecf46aa91664c6a6a42c437be518f02
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3c6479d6f8cc46ac3c7fb1bd48647563e39b028f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832640"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721294"
 ---
 # <a name="tracert"></a>tracert
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 通过将 Internet 控制消息协议（ICMP）回送请求或 ICMPv6 消息发送到目标，以递增递增的生存时间（TTL）字段值，确定目标的路径。 显示的路径为源主机与目标之间路径中的路由器的 near/端路由器接口列表。 近/侧接口是最接近路径中发送主机的路由器接口。 在没有参数的情况下使用，tracert 显示帮助。   
 
@@ -27,17 +27,17 @@ ms.locfileid: "80832640"
 tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr>] [/4][/6] <TargetName>  
 ```  
 #### <a name="parameters"></a>参数  
-|参数|说明|  
+|参数|描述|  
 |-------|--------|  
 |/d|防止**tracert**尝试将中间路由器的 IP 地址解析为其名称。 这可以加速显示**tracert**结果。|  
-|/h \<MaximumHops >|指定路径中要搜索目标的最大跃点数（目标）。 默认值为30个跃点。|  
-|/j \<Hostlist >|指定回显请求消息使用 IP 标头中的 "松散源路由" 选项，其中包含*Hostlist*中指定的中间目标集。 使用松散源路由时，可通过一个或多个路由器分隔连续的中间目标。 主机列表中的最大地址或名称数为9。 *Hostlist*是一系列由空格分隔的 IP 地址（采用点分十进制表示法）。 仅在跟踪 IPv4 地址时使用此参数。|  
-|/w \<超时 >|指定等待超过 ICMP 时间的时间量，或与要接收的给定回响请求消息相对应的回显回复消息的时间（以毫秒为单位）。 如果在超时时间内未收到，则显示星号（*）。 默认超时值为4000（4秒）。|  
+|/h \<MaximumHops>|指定路径中要搜索目标的最大跃点数（目标）。 默认值为30个跃点。|  
+|/j \<Hostlist>|指定回显请求消息使用 IP 标头中的 "松散源路由" 选项，其中包含*Hostlist*中指定的中间目标集。 使用松散源路由时，可通过一个或多个路由器分隔连续的中间目标。 主机列表中的最大地址或名称数为9。 *Hostlist*是一系列由空格分隔的 IP 地址（采用点分十进制表示法）。 仅在跟踪 IPv4 地址时使用此参数。|  
+|/w \<超时>|指定等待超过 ICMP 时间的时间量，或与要接收的给定回响请求消息相对应的回显回复消息的时间（以毫秒为单位）。 如果在超时时间内未收到，则显示星号（*）。 默认超时值为4000（4秒）。|  
 |/R|指定使用目标作为中间目标并测试反向路由，使用 IPv6 路由扩展标头向本地主机发送回显请求消息。|  
-|/S \<Srcaddr >|指定要在回响请求消息中使用的源地址。 仅在跟踪 IPv6 地址时使用此参数。|  
+|/S \<Srcaddr>|指定要在回响请求消息中使用的源地址。 仅在跟踪 IPv6 地址时使用此参数。|  
 |/4|指定 tracert 只能对此跟踪使用 IPv4。|  
 |/6|指定 tracert 只能对此跟踪使用 IPv6。|  
-|\<TargetName >|指定目标，由 IP 地址或主机名标识。|  
+|\<TargetName>|指定目标，由 IP 地址或主机名标识。|  
 |/?|在命令提示符下显示帮助。|  
 
 ## <a name="remarks"></a>备注  
@@ -45,7 +45,7 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 -   若要跟踪路径并为每个路由器和路径中的链接提供网络延迟和数据包丢失，请使用**pathping**命令。  
 -   仅当 Internet 协议（TCP/IP）协议安装为网络连接中的网络适配器属性中的组件时，此命令才可用。  
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例  
+## <a name="examples"></a>示例  
 若要跟踪名为 corp7.microsoft.com 的主机的路径，请键入：  
 ```  
 tracert corp7.microsoft.com  

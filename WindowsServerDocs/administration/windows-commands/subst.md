@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43cbc57aba29ea0b9150dccdfc566a93017a09a5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62ba0de33e69998e7d3e343b1e53c1de7e630e10
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833640"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721613"
 ---
 # <a name="subst"></a>subst
 
@@ -22,7 +22,7 @@ ms.locfileid: "80833640"
 
 将路径与驱动器号关联。 如果在没有参数的情况下使用，则**subst**显示有效虚拟驱动器的名称。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -33,10 +33,10 @@ subst <Drive1>: /d
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<Drive1 >：|指定要为其分配路径的虚拟驱动器。|
-|[\<Drive2 >：]\<路径 >|指定要分配给虚拟驱动器的物理驱动器和路径。|
+|\<Drive1>：|指定要为其分配路径的虚拟驱动器。|
+|[\<Drive2>：]\<路径>|指定要分配给虚拟驱动器的物理驱动器和路径。|
 |/d|删除替代的（虚拟）驱动器。|
 |/?|在命令提示符下显示帮助。|
 

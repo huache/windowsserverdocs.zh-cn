@@ -1,6 +1,6 @@
 ---
 title: tsecimp
-description: 用于 tsecimp 的 Windows 命令主题，它将分配信息从可扩展标记语言（XML）文件导入到 TAPI 服务器安全文件（Tsec.ini）。
+description: Tsecimp 的参考主题，它将分配信息从可扩展标记语言（XML）文件导入到 TAPI 服务器安全文件（Tsec.ini）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30a097bcd25e981f72a421b81b80b595343404ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: afd38f7081a9b4674eb6cac26f52849794b8d5e6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832500"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721246"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -29,11 +29,11 @@ tsecimp /d
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|/f \<文件名 >|必需。 指定 XML 文件的名称，该文件包含要导入的分配信息。|
+|/f \<Filename>|必需。 指定 XML 文件的名称，该文件包含要导入的分配信息。|
 |/v|验证 XML 文件的结构而无须将该信息导入 Tsec.ini 文件。|
-|/u|检查每个用户是否为 XML 文件中指定的域成员。 使用该参数的计算机必须连接到网络。 如果您正在处理大量的用户分配信息，该参数可能会导致性能的显著下降。|
+|/U|检查每个用户是否为 XML 文件中指定的域成员。 使用该参数的计算机必须连接到网络。 如果您正在处理大量的用户分配信息，该参数可能会导致性能的显著下降。|
 |/d|显示已安装电话服务提供程序的列表。 对于每个电话服务提供程序，均会列出关联的线路设备，以及与每个线路设备关联的地址和用户。|
 |/?|在命令提示符下显示帮助。|
 

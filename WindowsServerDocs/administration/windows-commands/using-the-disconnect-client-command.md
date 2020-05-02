@@ -1,6 +1,6 @@
 ---
 title: 断开连接-客户端
-description: 用于断开客户端的 Windows 命令主题，该主题断开客户端与多播传输或命名空间的连接。
+description: 断开连接-客户端的参考主题，用于断开客户端与多播传输或命名空间的连接。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ba40a7e885cfa3e42065b939d3ddb21ead2f866
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 541e2e0acfa51d7b63cf6cfb27ff42874760e37d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831600"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720948"
 ---
 # <a name="disconnect-client"></a>断开连接-客户端
 
@@ -28,13 +28,13 @@ WDSUTIL /Disconnect-Client /ClientId:<Client ID> [/Server:<Server name>] [/Force
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|/ClientId：\<客户端 ID >|指定要断开连接的客户端的 ID。 若要查看客户端的 ID，请键入**WDSUTIL/get-multicasttransmission/show：** client。|
-|[/Server：\<Server name >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
+|/ClientId：\<客户端 ID>|指定要断开连接的客户端的 ID。 若要查看客户端的 ID，请键入**WDSUTIL/get-multicasttransmission/show：** client。|
+|[/Server：\<Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
 |/Force|完全停止安装，不使用回退方法。 请注意，Wdsmcast.exe 不支持任何回退机制。 如果未使用此选项，则默认行为如下所示：</br>-如果你使用的是 Windows 部署服务客户端，客户端将使用单播继续安装。</br>-如果使用的不是 Windows 部署服务客户端，则安装将失败。</br>重要提示：应慎用此选项，因为安装将失败，并且计算机可能处于不可用状态。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要断开客户端连接，请键入：
 ```

@@ -1,6 +1,6 @@
 ---
 title: telnet 状态
-description: Windows 命令主题，适用于 telnet 状态，其中显示状态信息。
+description: Telnet 状态的参考主题，其中显示状态信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f2a790f2e17871275c4fa96c9b1b7e85cdbc150
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 54c75af3705c6f1b0ae4410265e8d869a3c8419b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832970"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721467"
 ---
 # <a name="telnet-status"></a>telnet：状态
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示状态信息。   
 
@@ -27,8 +27,8 @@ ms.locfileid: "80832970"
 st[atus]  
 ```  
 #### <a name="parameters"></a>参数  
-无  
-## <a name="examples"></a><a name=BKMK_Examples></a>示例  
+none  
+## <a name="examples"></a>示例  
 显示状态信息。  
 ```  
 st  

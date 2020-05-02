@@ -1,6 +1,6 @@
 ---
-title: tree
-description: 用于树的 Windows 命令主题，用于显示路径的目录结构，或以图形方式显示驱动器中磁盘的目录结构。
+title: 树
+description: 树的参考主题，用于显示路径的目录结构，或以图形方式显示驱动器中磁盘的目录结构。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14b9a4dfd5c84b55a32dbc3f6fd7e8a2cc00c7ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 94b0429dadc3965c7e41ad5aa881fc902988ec9b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832670"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721276"
 ---
-# <a name="tree"></a>tree
+# <a name="tree"></a>树
 
 以图形方式显示驱动器路径或磁盘的目录结构。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -30,10 +30,10 @@ tree [<Drive>:][<Path>] [/f] [/a]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<驱动器 >：|指定包含要显示其目录结构的磁盘的驱动器。|
-|\<路径 >|指定要显示其目录结构的目录。|
+|\<驱动器>：|指定包含要显示其目录结构的磁盘的驱动器。|
+|\<路径>|指定要显示其目录结构的目录。|
 |/f|显示每个目录中的文件的名称。|
 |/a|指定**树**将使用文本字符而不是图形字符来显示链接子目录的行。|
 |/?|在命令提示符下显示帮助。|
@@ -42,7 +42,7 @@ tree [<Drive>:][<Path>] [/f] [/a]
 
 **树**显示的结构取决于你在命令提示符处指定的参数。 如果未指定驱动器或路径，**树**将显示从当前驱动器的当前目录开始的树状结构。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要显示当前驱动器中磁盘上所有子目录的名称，请键入：
 ```
