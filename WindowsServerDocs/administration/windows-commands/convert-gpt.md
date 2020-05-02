@@ -1,6 +1,6 @@
 ---
 title: convert gpt
-description: 用于转换 gpt 的 Windows 命令主题，该主题将具有主启动记录（MBR）分区形式的空白基本磁盘转换为具有 GUID 分区表（GPT）分区形式的基本磁盘。
+description: 转换 gpt 命令的参考主题，它将具有主启动记录（MBR）分区形式的空白基本磁盘转换为具有 GUID 分区表（GPT）分区形式的基本磁盘。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c1ffe61245f7752ccc81d21d513fa00acd7b68b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25b28473716037235a70e05835e23790f93164a1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847280"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720767"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
-将具有主启动记录 (MBR) 分区形式的空白基本磁盘转换为具有 GUID 分区表 (GPT) 分区形式的基本磁盘。
+将具有主启动记录 (MBR) 分区形式的空白基本磁盘转换为具有 GUID 分区表 (GPT) 分区形式的基本磁盘。 必须选择基本 MBR 磁盘，此操作才能成功。 使用 "[选择磁盘" 命令](select-disk.md)选择基本磁盘，并将焦点移动到该磁盘。
 
-有关如何使用此命令的说明，请参阅[将主启动记录磁盘更改为 GUID 分区表磁盘](https://go.microsoft.com/fwlink/?LinkId=207049)（ https://go.microsoft.com/fwlink/?LinkId=207049)。
+> [!IMPORTANT]
+> 若要将磁盘转换成基本磁盘，该磁盘必须为空。 转换磁盘之前，请备份数据，然后删除全部分区或卷。 转换为 GPT 所需的最小磁盘大小为 128 mb。
+
+> [!NOTE]
+> 有关如何使用此命令的说明，请参阅[将主启动记录磁盘更改为 GUID 分区表磁盘](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725671(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 
@@ -30,20 +34,14 @@ convert gpt [noerr]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
-|---------|-----------|
-|noerr|仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。|
+| 参数 | 描述 |
+| --------- | ----------- |
+| noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
-## <a name="remarks"></a>备注
-
-> [!IMPORTANT]
-> 磁盘必须为空，才能将其转换为 GPT 磁盘。 转换磁盘之前，请备份数据，然后删除全部分区或卷。
-> -   转换为 GPT 所需的最小磁盘大小为 128 mb。
-> -   必须选择基本 MBR 磁盘，此操作才能成功。 使用 "**选择磁盘**" 命令选择基本磁盘，并将焦点移动到该磁盘。
-
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要将基本光盘从 MBR 分区形式转换为 GPT 分区形式，请键入：
+
 ```
 convert gpt
 ```
@@ -52,3 +50,4 @@ convert gpt
 
 - [命令行语法项](command-line-syntax-key.md)
 
+- [转换命令](convert.md)

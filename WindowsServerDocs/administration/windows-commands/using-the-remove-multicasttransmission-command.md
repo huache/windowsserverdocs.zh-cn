@@ -1,6 +1,6 @@
 ---
 title: MulticastTransmission
-description: 用于 MulticastTransmission 的 Windows 命令主题，用于禁用映像的多播传输。
+description: MulticastTransmission 的参考主题，用于禁用映像的多播传输。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36bb666b841c4c0c33f12c5ca766e619afc176ef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 41dea341216979d6ed7298f11c16458e4d3f2f50
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830330"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720341"
 ---
 # <a name="using-the-remove-multicasttransmission-command"></a>使用 MulticastTransmission 命令
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 禁用映像的多播传输。 除非指定 **/force**，否则现有的客户端将完成映像传输，但不允许新客户端加入。
 
@@ -44,16 +44,16 @@ wdsutil [Options] /remove-MulticastTransmissiomedia:<Image name>
         [/Filename:<File name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-媒体：<Image name>|指定映像的名称。|
+许可证<Image name>|指定映像的名称。|
 |[/Server：<Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
-媒体： {安装&#124;启动}|指定映像类型。 请注意，必须将此选项设置为 "为 Windows Server 2008**安装**"。|
+媒体： {Install&#124;Boot}|指定映像类型。 请注意，必须将此选项设置为 "为 Windows Server 2008**安装**"。|
 |/Architecture： {x86 &#124; ia64 &#124; x64}|指定与要启动的传输关联的启动映像的体系结构。 由于不同体系结构中的启动映像可能具有相同的映像名称，因此应指定体系结构以确保使用正确的传输。|
 |\mediaGroup：<Image group name>]|指定包含图像的映像组。 如果未指定映像组名称，并且服务器上只存在一个映像组，则使用该映像组。 如果服务器上存在多个映像组，则必须使用此选项来指定映像组名称。|
 |[/Filename：<File name>]|指定文件名。 如果无法按名称唯一地标识源映像，则必须使用此选项指定文件名。|
 |/force|删除传输并终止所有客户端。 除非指定了 **/force**选项的值，否则现有的客户端可以完成映像传输，而新客户端将无法加入。|
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 若要停止命名空间（当前客户端将完成传输，但新客户端将无法加入），请键入：
 ```
 wdsutil /remove-MulticastTransmissiomedia:Vista with Office
@@ -70,8 +70,8 @@ wdsutil /remove-MulticastTransmission /Server:MyWDSServer
 /Filename:install.wim /force
 ```
 ## <a name="additional-references"></a>其他参考
-- 使用[AllMulticastTransmissions 命令](using-the-get-allmulticasttransmissions-command.md) [
-使用 MulticastTransmission 命令的](using-the-get-multicasttransmission-command.md)[命令行语法键](command-line-syntax-key.md)
-
-[使用命令](using-the-new-multicasttransmission-command.md)
+- [Command-Line Syntax Key](command-line-syntax-key.md)
+使用[AllMulticastTransmissions 命令](using-the-get-allmulticasttransmissions-command.md)
+的命令行语法键使用[MulticastTransmission 命令](using-the-get-multicasttransmission-command.md)
+，使用[MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)
 [子命令： start-MulticastTransmission](subcommand-start-multicasttransmission.md)

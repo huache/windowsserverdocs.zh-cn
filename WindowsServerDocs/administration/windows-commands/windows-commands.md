@@ -1,6 +1,6 @@
 ---
 title: Windows 命令
-description: Windows 命令
+description: 参考
 ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 9d68e2becbf9c6522be7e1ff6e6742d44f3a8247
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7baec3bbe532bbcedb8c17628fd88d2c8eac34c6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829230"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720735"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -26,40 +26,40 @@ ms.locfileid: "80829230"
 
 [A](#a) |
 [B](#b) | 
-[C](#c) | 
-[D](#d) | 
-[E](#e) | 
-[F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[I](#i) |
+[M](#m)[D](#d) | 
+[V](#v)[C](#c) |
 [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[ | 
+[W](#w)[F](#f) | 
+[S](#s)[E](#e) | 
+[R](#r)[G](#g) | 
+[U](#u)[H](#h) | 
+[X](#x) [I](#i) | 
+[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H I J | 
+K L M | 
+N | 
+O | 
+P | 
+Q R S T U V W X | | 
  | 
  | 
-](#m) | 
-[ | 
-](#o) | 
-[ | 
-](#p) | 
-[ | 
  | 
  | 
-](#q) [S](#s) [T](#t) [U](#u) [V](#v) [X](#x) | [W](#w) [N](#n) [R](#r)Y |Z
+ | 
+ | 
+ | 
+Y |Z
 
 ## <a name="prerequisites"></a>先决条件
 
 本主题中包含的信息适用于：
 
--   Windows Server 2019
+-   Windows Server Standard 2012 R2
 -   Windows Server（半年频道）
 -   Windows Server 2016
 -   Windows Server 2012 R2
 -   Windows Server 2012 
 -   Windows Server 2008 R2
--   Windows Server 2008
+-   Windows 2008 Server
 -   Windows 10
 -   Windows 8.1
 
@@ -76,7 +76,7 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
 >你还可以下载和安装 powershell [Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，即 powershell 的开源版本。 
 
 > [!CAUTION]
-> 错误编辑注册表可能会严重损坏您的系统。 在对注册表进行以下更改之前，应备份计算机上任何有价值的数据。
+> 不正确地编辑注册表可能会对系统造成严重损坏。 在对注册表进行以下更改之前，应备份计算机上任何有价值的数据。
 
 > [!NOTE]
 > 若要在计算机或用户登录会话上的命令行界面中启用或禁用文件和目录名完成，请运行**regedit.exe**并设置以下**reg_DWOrd 值**：
@@ -91,28 +91,28 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
 
 [A](#a) |
 [B](#b) | 
-[C](#c) | 
-[D](#d) | 
-[E](#e) | 
-[F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[I](#i) |
+[M](#m)[D](#d) | 
+[V](#v)[C](#c) |
 [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[ | 
+[W](#w)[F](#f) | 
+[S](#s)[E](#e) | 
+[R](#r)[G](#g) | 
+[U](#u)[H](#h) | 
+[X](#x) [I](#i) | 
+[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H I J | 
+K L M | 
+N | 
+O | 
+P | 
+Q R S T U V W X | | 
  | 
  | 
-](#m) | 
-[ | 
-](#o) | 
-[ | 
-](#p) | 
-[ | 
  | 
  | 
-](#q) [S](#s) [T](#t) [U](#u) [V](#v) [X](#x) | [W](#w) [N](#n) [R](#r)Y |Z
+ | 
+ | 
+ | 
+Y |Z
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -361,10 +361,10 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
 - [logman](logman.md)
   -   [logman create](logman-create.md)
   -   [logman query](logman-query.md)
-  -   [logman start & 124;stop](logman-start-stop.md)
+  -   [logman 开始 &124;stop](logman-start-stop.md)
   -   [logman delete](logman-delete.md)
   -   [logman update](logman-update.md)
-  -   [logman import & 124;先导](logman-import-export.md)
+  -   [logman import &124;先导](logman-import-export.md)
 - [logoff](logoff.md)
 - [lpq](lpq.md)
 - [lpr](lpr.md)
@@ -589,7 +589,7 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
 -   [verifier](verifier.md)
 -   [verify](verify_1.md)
 -   [vol](vol.md)
--   [vssadmin](vssadmin.md)- 
+-   [list](vssadmin.md)- 
 
 ### <a name="w"></a>W
 - [waitfor](waitfor.md)

@@ -1,6 +1,6 @@
 ---
 title: 编辑
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4dfffefbe113bc5df242a00357c769aaa9c1c787
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c77941d39118554b6b59e436e63d67a4a1f7c8cb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845220"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720864"
 ---
 # <a name="edit"></a>编辑
 
@@ -22,7 +22,7 @@ ms.locfileid: "80845220"
 
 启动 MS-DOS 编辑器，它创建并更改 ASCII 文本文件。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -32,14 +32,14 @@ edit [/b] [/h] [/r] [/s] [/<NNN>] [[<Drive>:][<Path>]<FileName> [<FileName2> [..
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|[\<驱动器 >：][<Path>]<FileName> [<FileName2> [...]]|指定一个或多个 ASCII 文本文件的位置和名称。 如果文件不存在，MS-DOS 编辑器会创建它。 如果该文件存在，MS-DOS 编辑器会将其打开，并在屏幕上显示其内容。 *文件名*可以包含通配符（ **&#42;** 和 **？** ）。 用空格分隔多个文件名。|
+|[\<驱动器>：][<Path>]<FileName> [<FileName2> [...]]|指定一个或多个 ASCII 文本文件的位置和名称。 如果文件不存在，MS-DOS 编辑器会创建它。 如果该文件存在，MS-DOS 编辑器会将其打开，并在屏幕上显示其内容。 *文件名*可以包含通配符（**&#42;** 和 **？**）。 用空格分隔多个文件名。|
 |/b|强制单色模式，以便 MS-DOS 编辑器以黑白显示。|
 |/h|显示当前监视器可能具有的最大行数。|
 |/r|在只读模式下加载文件。|
 |/s|强制使用短文件名。|
-|\<NNN >|加载二进制文件，将行换行为*NNN*个字符。|
+|\<NNN>|加载二进制文件，将行换行为*NNN*个字符。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -47,7 +47,7 @@ edit [/b] [/h] [/r] [/s] [/<NNN>] [[<Drive>:][<Path>]<FileName> [<FileName2> [..
 -   有关更多帮助，请打开 MS-DOS 编辑器，然后按 F1 键。
 -   默认情况下，某些监视器不支持显示快捷键。 如果监视器未显示快捷键，请使用 **/b**。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要打开 MS-DOS 编辑器，请键入：
 ```

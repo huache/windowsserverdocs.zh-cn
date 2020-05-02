@@ -1,6 +1,6 @@
 ---
 title: AllServers
-description: 用于 AllServers 的 Windows 命令主题，它检索所有 Windows 部署服务服务器的相关信息。
+description: AllServers 的参考主题，它检索所有 Windows 部署服务服务器的相关信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b400d5a2be69e8e89a05b233cc2e8f29bec848f6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b623b5e95e2a57147b7d9d191d42556191dd8e4d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831210"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719985"
 ---
 # <a name="get-allservers"></a>AllServers
 
@@ -31,13 +31,13 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 
 ### <a name="parameters"></a>参数
 
-|   参数   |                                                                                                                 说明                                                                                                                  |
+|   参数   |                                                                                                                 描述                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /Show： {Config |                                                                                                                    图像                                                                                                                    |
 |  [/Detailed]  | 与 **/show： Images**或 **/show： All**结合使用时，将返回每个映像中的所有映像元数据。 如果未指定 **/Detailed**选项，则默认行为是返回映像名称、说明和文件名。 |
 | [/Forest： {Yes |                                                                                                                     No}]                                                                                                                     |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要查看有关所有服务器的信息，请键入：
 ```

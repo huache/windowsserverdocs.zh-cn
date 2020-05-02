@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: aa6692dbb8af1ec832650971c6723c060fc2cd56
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 18088bcedd077d5c8052bca91c648e2719304a78
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844010"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720095"
 ---
 # <a name="fsutil-transaction"></a>Fsutil transaction
->适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7，Windows 2008，Windows Vista
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7，Windows 2008，Windows Vista
 
 管理 NTFS 事务。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -35,13 +35,13 @@ fsutil transaction [rollback] <GUID>
 
 #### <a name="parameters"></a>参数
 
-| 参数  |                                                                                                                                                     说明                                                                                                                                                     |
+| 参数  |                                                                                                                                                     描述                                                                                                                                                     |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   立即   |                                                                                                                      标记成功的隐式或显式指定的事务的结束。                                                                                                                      |
+|   提交 (commit)   |                                                                                                                      标记成功的隐式或显式指定的事务的结束。                                                                                                                      |
 |   <GUID>   |                                                                                                                               指定表示事务的 GUID 值。                                                                                                                               |
 |  fileinfo  |                                                                                                                              显示指定文件的事务信息。                                                                                                                               |
 | <Filename> |                                                                                                                                         指定完整路径和文件名。                                                                                                                                          |
-|    “选择设备” 列表    |                                                                                                                                 显示当前正在运行的事务的列表。                                                                                                                                  |
+|    list    |                                                                                                                                 显示当前正在运行的事务的列表。                                                                                                                                  |
 |   query    | 显示指定事务的信息。<p>-如果指定了**fsutil transaction Query Files** ，将仅为指定的事务显示文件信息。<br />-如果指定了**fsutil transaction Query all** ，则将显示该事务的所有信息。 |
 |  回滚  |                                                                                                                                将指定的事务回滚到开始处。                                                                                                                                 |
 

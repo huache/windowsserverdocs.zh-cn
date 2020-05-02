@@ -7,21 +7,22 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 3b47e1abf3805b7e6e3dc180d5d937ddb2723fa4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a03dc5d646d24c9f24f979df36fb3fe1eafe631
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827540"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720546"
 ---
 # <a name="health-service-reports"></a>运行状况服务报表
-> 适用于： Windows Server 2019、Windows Server 2016
+
+> 适用于：Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-reports"></a>什么是报表  
 
 运行状况服务减少了从存储空间直通群集获取实时性能和容量信息所需的工作量。 一个新的 cmdlet 提供了一个特选的基本指标列表，它们使用内置逻辑来检测群集成员身份，以动态方式跨节点进行收集和聚合。 所有值均仅是实时和时间点形式的。  
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的用法
+## <a name="usage-in-powershell"></a>PowerShell 中的用法
 
 使用此 cmdlet 可获取整个存储空间直通群集的指标：
 
@@ -43,14 +44,13 @@ Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>
 Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 ```
 
-## <a name="usage-in-net-and-c"></a>.NET 和中的用法C#
+## <a name="usage-in-net-and-c"></a>.NET 和 C 中的用法#
 
 ### <a name="connect"></a>连接
 
 若要查询运行状况服务，需要建立与群集的**CimSession** 。 为此，你将需要一些仅适用于完整 .NET 的功能，这意味着你无法直接从 web 或移动应用程序中执行此操作。 这些代码示例将使用 C\#，这是此数据访问层最简单的选择。
 
-``` 
-...
+```
 using System.Security;
 using Microsoft.Management.Infrastructure;
 
@@ -79,7 +79,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 建立**CimSession**后，可以在群集上查询 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
 
-你需要获取多个相关对象的实例，然后才能获取错误或度量值。 首先， **MSFT\_StorageSubSystem** ，它代表群集上的存储空间直通。 使用它，可以获取群集中的每个**msft\_StorageNode** ，每个**msft\_卷**，数据卷。 最后，还需要**MSFT\_StorageHealth**，运行状况服务本身。
+你需要获取多个相关对象的实例，然后才能获取错误或度量值。 首先， **MSFT\_StorageSubSystem** ，它代表群集上存储空间直通。 使用它可以获取群集中的每个**msft\_StorageNode** ，以及每个**msft\_卷**和数据卷。 最后，您还需要**MSFT\_StorageHealth**，这运行状况服务本身。
 
 ```
 CimInstance Cluster;
@@ -112,7 +112,6 @@ public void DiscoverObjects(CimSession Session)
 可以访问[存储管理 API 类](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)中所述的所有相同属性。
 
 ```
-...
 using System.Diagnostics;
 
 foreach (CimInstance Node in Nodes)
@@ -208,11 +207,11 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 度量值的每个示例都是一个 "报表"，其中包含与各个度量值相对应的多个 "记录"。
 
-对于完整的架构，请在*storagewmi*中检查**msft\_StorageHealthReport**和**msft\_HealthRecord**类。
+对于完整的架构，请在*storagewmi*中检查**Msft\_StorageHealthReport**和**msft\_HealthRecord**类。
 
 每个指标仅有三个属性，每个表。
 
-| **知识产权** | **示例**       |
+| **属性** | **示例**       |
 | -------------|-------------------|
 | 名称         | IOLatencyAverage  |
 | 值        | 0.00021           |
@@ -220,13 +219,13 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 单位 = {0，1，2，3，4}，其中 0 = "字节"，1 = "BytesPerSecond"，2 = "CountPerSecond"，3 = "秒"，或 4 = "百分比"。
 
-## <a name="coverage"></a>涵盖范围广
+## <a name="coverage"></a>覆盖率
 
 下面是适用于 Windows Server 2016 中每个作用域的指标。
 
 ### <a name="msft_storagesubsystem"></a>MSFT_StorageSubSystem
 
-| **名称**                        | **计算** |
+| **名称**                        | **单位** |
 |---------------------------------|-----------|
 | CPUUsage                        | 4         |
 | CapacityPhysicalPooledAvailable | 0         |
@@ -250,7 +249,7 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 ### <a name="msft_storagenode"></a>MSFT_StorageNode
 
-| **名称**            | **计算** |
+| **名称**            | **单位** |
 |---------------------|-----------|
 | CPUUsage            | 4         |
 | IOLatencyAverage    | 3         |
@@ -267,7 +266,7 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 ### <a name="msft_volume"></a>MSFT_Volume
 
-| **名称**            | **计算** |
+| **名称**            | **单位** |
 |---------------------|-----------|
 | CapacityAvailable   | 0         |
 | CapacityTotal       | 0         |
@@ -281,6 +280,6 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [Windows Server 2016 中的运行状况服务](health-service-overview.md)
+- [Windows Server 2016 运行状况服务](health-service-overview.md)

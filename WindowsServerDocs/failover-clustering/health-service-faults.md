@@ -7,15 +7,16 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 913a596a46720718a165295345cb02e3e2baa1de
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fe2f98c89d97325c1f59dc6ba292831e0ffa5ff
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827560"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720565"
 ---
 # <a name="health-service-faults"></a>运行状况服务故障
-> 适用于： Windows Server 2019、Windows Server 2016
+
+> 适用于：Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-faults"></a>什么是故障
 
@@ -23,7 +24,7 @@ ms.locfileid: "80827560"
 
 每个故障都包含五个重要字段：  
 
--   Severity
+-   严重性
 -   问题的描述
 -   用于解决问题的建议后续步骤
 -   故障实体的标识信息
@@ -46,7 +47,7 @@ Location: Seattle DC, Rack B07, Node 4, Slot 11
 
 运行状况服务可以评估发生错误的实体之间的潜在因果关系，以确定并合并导致相同基本问题的错误。 通过识别作用链，可降低报告的繁琐性。 例如，如果服务器停机，则该服务器中的任何驱动器都应该不会连接。 因此，根本原因（在本例中为服务器）将只引发一次错误。  
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的用法
+## <a name="usage-in-powershell"></a>PowerShell 中的用法
 
 若要查看 PowerShell 中的任何当前错误，请运行以下 cmdlet：
 
@@ -69,14 +70,13 @@ Get-FileShare -Name <Name> | Debug-FileShare
 
 这会返回仅影响特定卷或文件共享的任何错误。 大多数情况下，这些故障与容量规划、数据复原或功能（例如存储服务质量或存储副本）相关。 
 
-## <a name="usage-in-net-and-c"></a>.NET 和中的用法C#
+## <a name="usage-in-net-and-c"></a>.NET 和 C 中的用法#
 
 ### <a name="connect"></a>连接
 
 若要查询运行状况服务，需要建立与群集的**CimSession** 。 为此，你将需要一些仅适用于完整 .NET 的功能，这意味着你无法直接从 web 或移动应用程序中执行此操作。 这些代码示例将使用 C\#，这是此数据访问层最简单的选择。
 
-``` 
-...
+```
 using System.Security;
 using Microsoft.Management.Infrastructure;
 
@@ -105,7 +105,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 建立**CimSession**后，可以在群集上查询 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
 
-你需要获取多个相关对象的实例，然后才能获取错误或度量值。 首先， **MSFT\_StorageSubSystem** ，它代表群集上的存储空间直通。 使用它，可以获取群集中的每个**msft\_StorageNode** ，每个**msft\_卷**，数据卷。 最后，还需要**MSFT\_StorageHealth**，运行状况服务本身。
+你需要获取多个相关对象的实例，然后才能获取错误或度量值。 首先， **MSFT\_StorageSubSystem** ，它代表群集上存储空间直通。 使用它可以获取群集中的每个**msft\_StorageNode** ，以及每个**msft\_卷**和数据卷。 最后，您还需要**MSFT\_StorageHealth**，这运行状况服务本身。
 
 ```
 CimInstance Cluster;
@@ -138,7 +138,6 @@ public void DiscoverObjects(CimSession Session)
 可以访问[存储管理 API 类](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)中所述的所有相同属性。
 
 ```
-...
 using System.Diagnostics;
 
 foreach (CimInstance Node in Nodes)
@@ -286,7 +285,7 @@ class FaultsObserver : IObserver
 
 此表显示了错误对象的几个关键属性。 对于完整的架构，请在*storagewmi*中检查**MSFT\_StorageDiagnoseResult**类。
 
-| **知识产权**              | **示例**                                                     |
+| **属性**              | **示例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | FaultType （正常）                      |
@@ -312,7 +311,7 @@ class FaultsObserver : IObserver
 
 请注意**ChangeType**，它指示是否正在创建、删除或更新错误，以及**FaultId**。 事件还包含受影响的错误的所有属性。
 
-| **知识产权**              | **示例**                                                     |
+| **属性**              | **示例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
@@ -325,7 +324,7 @@ class FaultsObserver : IObserver
 
 **ChangeType**ChangeType = {0，1，2} = {"创建"，"删除"，"更新"}。
 
-## <a name="coverage"></a>涵盖范围广
+## <a name="coverage"></a>覆盖率
 
 在 Windows Server 2016 中，运行状况服务提供以下故障范围：  
 
@@ -379,7 +378,7 @@ class FaultsObserver : IObserver
 * RecommendedAction： *"还原数据的复原能力"。*
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksdetached"></a>FaultType： FaultType. VirtualDisks
-* 严重性：严重
+* 严重性：关键
 * 原因： *"卷不可访问。某些数据可能丢失。 "*
 * RecommendedAction： *"检查所有存储设备的物理和/或网络连接。可能需要从备份还原。*
 
@@ -390,7 +389,7 @@ class FaultsObserver : IObserver
 * 原因： *"存储池没有建议的最低预留容量。这可能会限制在出现驱动器故障时还原数据复原的能力。 "*
 * RecommendedAction： *"将额外容量添加到存储池，或释放容量。建议的最小保留保留因部署而异，但大约为2个驱动器的容量。 "*
 
-### <a name="volume-capacity-2sup1sup"></a>**卷容量（2）** <sup>1</sup>
+### <a name="volume-capacity-2sup1sup"></a>**卷容量（2）**<sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType： FaultType. 容量
 * 严重性：警告
@@ -398,31 +397,31 @@ class FaultsObserver : IObserver
 * RecommendedAction： *"扩展卷或将工作负荷迁移到其他卷"。*
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType： FaultType. 容量
-* 严重性：严重
+* 严重性：关键
 * 原因： *"卷的可用空间不足。"*
 * RecommendedAction： *"扩展卷或将工作负荷迁移到其他卷"。*
 
 ### <a name="server-3"></a>**服务器（3）**
 
 #### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultType： FaultType. 关闭
-* 严重性：严重
+* 严重性：关键
 * 原因： *"无法访问服务器。"*
 * RecommendedAction： *"启动或替换服务器"。*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultType： FaultType （独立）
-* 严重性：严重
+* 严重性：关键
 * 原因： *"由于连接问题，服务器与群集隔离。"*
 * RecommendedAction： *"如果隔离仍然存在，请检查网络或将工作负荷迁移到其他节点。"*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultType： FaultType （已隔离）
-* 严重性：严重
+* 严重性：关键
 * 原因： *"由于重复失败，服务器已由群集隔离。"*
 * RecommendedAction： *"替换服务器或修复网络"。*
 
 ### <a name="cluster-1"></a>**群集（1）**
 
 #### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultType： FaultType. ClusterQuorumWitness. 错误
-* 严重性：严重
+* 严重性：关键
 * 原因： *"群集出现故障，导致服务中断"。*
 * RecommendedAction： *"检查见证服务器资源，并根据需要重新启动。启动或替换失败的服务器。 "*
 
@@ -497,7 +496,7 @@ class FaultsObserver : IObserver
 * 原因： *"已取消固件回滚，因为有太多物理磁盘未能通过固件更新尝试。"*
 * RecommendedAction： *"解决固件问题后重新启动固件推出"。*
 
-### <a name="storage-qos-3sup2sup"></a>**存储 QoS （3）** <sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**存储 QoS （3）**<sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType： FaultType. StorQos. InsufficientThroughput
 * 严重性：警告
@@ -520,6 +519,6 @@ class FaultsObserver : IObserver
 >[!NOTE]
 > 存储机箱组件（如风扇、电源和传感器）的运行状况派生自 SCSI 机箱服务 (SES)。 如果你的供应商不提供此信息，运行状况服务不能对其进行显示。  
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [Windows Server 2016 中的运行状况服务](health-service-overview.md)
+- [Windows Server 2016 运行状况服务](health-service-overview.md)

@@ -9,20 +9,20 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 717c287995be2ab56bd49f2f24d46001f77e0e68
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a12647908811066293772ab1e9354a0d67874d88
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843900"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720051"
 ---
 # <a name="fsutil"></a>Fsutil
 
->适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 执行与文件分配表（FAT）和 NTFS 文件系统相关的任务，例如管理重新分析点、管理稀疏文件或卸除卷。 如果不使用参数，则**Fsutil**将显示受支持的子命令的列表。 
 
-> [!Note] 
+> [!NOTE] 
 > 您必须以管理员或 Administrators 组成员的身份登录才能使用 Fsutil。 Fsutil 命令功能非常强大，只应由全面了解 Windows 操作系统的高级用户使用。
 >
 >必须先启用适用于 Linux 的 Windows 子系统，然后才能运行**Fsutil**。 以管理员身份在 PowerShell 中运行以下命令以启用此可选功能：
@@ -34,7 +34,7 @@ ms.locfileid: "80843900"
 
 ### <a name="parameters"></a>参数
 
-|命令 |说明|
+|子命令 |描述|
 |---|---|
 |[Fsutil 8dot3name](fsutil-8dot3name.md) | 例如，查询或更改系统上的短名称行为的设置会生成8.3 个字符长度的文件名。 删除目录中的所有文件的短名称。 如果从目录中的文件中去除短名称，则扫描目录并标识可能会受到影响的注册表项。|
 |[Fsutil 行为](fsutil-behavior.md) |查询或设置卷行为。|
@@ -54,5 +54,5 @@ ms.locfileid: "80843900"
 |[Fsutil volume](fsutil-volume.md)|管理卷。 卸载卷，查询以查看磁盘上可用空间量，或查找正在使用指定群集的文件。|
 |[Fsutil wim](fsutil-wim.md)|提供用于发现和管理支持 WIM 的文件的函数。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 - [命令行语法项](command-line-syntax-key.md)

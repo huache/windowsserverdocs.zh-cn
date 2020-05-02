@@ -8,22 +8,22 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/07/2019
 description: 本文介绍故障转移群集相关性和 antiAffinity 级别
-ms.openlocfilehash: c9910cac602802b753391fad1009fb7f1fa3d2f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0c2209680f3c34ac8376d5662620595aff92c0b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828280"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720607"
 ---
 # <a name="cluster-affinity"></a>群集关联
 
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
-故障转移群集可以拥有多个可在节点间移动和运行的角色。  有时某些角色（例如虚拟机、资源组等）不应在同一个节点上运行。  这可能是由于资源消耗、内存使用情况等引起的。 例如，有两个虚拟机占用大量内存和 CPU，如果这两个虚拟机运行在同一节点上，则一个或两个虚拟机可能会影响性能。  本文将介绍群集 antiaffinity 级别以及如何使用它们。
+故障转移群集可以拥有多个可在节点间移动和运行的角色。 有时某些角色（例如虚拟机、资源组等）不应在同一个节点上运行。  这可能是由于资源消耗、内存使用情况等引起的。 例如，有两个虚拟机占用大量内存和 CPU，如果这两个虚拟机运行在同一节点上，则一个或两个虚拟机可能会影响性能。  本文将介绍群集 antiaffinity 级别以及如何使用它们。
 
 ## <a name="what-is-affinity-and-antiaffinity"></a>什么是相关性和 AntiAffinity？
 
-相关性是您设置的一种规则，用于在两个或多个角色（i、e、虚拟机、资源组等）之间建立关系，以便将它们保持在一起。  AntiAffinity 是相同的，但用于尝试将指定的角色彼此分开。  故障转移群集使用 AntiAffinity 作为其角色。  更具体地说，是对角色定义的[AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames)参数，使其不会在同一节点上运行。  
+相关性是您设置的一种规则，用于在两个或多个角色（i、e、虚拟机、资源组等）之间建立关系，以便将它们保持在一起。  AntiAffinity 是相同的，但用于尝试将指定的角色彼此分开。 故障转移群集使用 AntiAffinity 作为其角色。  更具体地说，是对角色定义的[AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames)参数，使其不会在同一节点上运行。  
 
 ## <a name="antiaffinityclassnames"></a>AntiAffinityClassnames
 
@@ -87,7 +87,4 @@ AntiAffinityClassName 参数是一个 "软" 块。  也就是说，它会尝试�
 - 请记住，在双节点方案和 ClusterEnforcedAntiAffinity 中，如果一个节点关闭，则这两个组将无法运行。  
 
 - 对组使用首选所有者可与三个或更多节点群集中的 AntiAffinity 结合使用。
-- AntiAffinityClassNames 和 ClusterEnforcedAntiAffinity 设置仅在资源回收后发生。 I.E. 可以设置这些组，但如果在设置时两个组在同一节点上处于联机状态，则它们都将继续保持联机状态。
-
-
-
+- AntiAffinityClassNames 和 ClusterEnforcedAntiAffinity 设置仅在资源回收后发生。 亦. 可以设置这些组，但如果在设置时两个组在同一节点上处于联机状态，则它们都将继续保持联机状态。

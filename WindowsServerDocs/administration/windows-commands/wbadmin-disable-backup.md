@@ -1,6 +1,6 @@
 ---
 title: wbadmin 禁用备份
-description: 用于 wbadmin 的 Windows 命令主题禁用备份，这会停止运行现有的计划每日备份。
+description: Wbadmin 禁用备份的参考主题，它停止运行现有的计划每日备份。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2fb3d22fc3857cce191ee11381ae6e7e6ac1175
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b38460b5b8408d73c857cf7314805f33adfa3108
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829850"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720191"
 ---
 # <a name="wbadmin-disable-backup"></a>wbadmin 禁用备份
 
@@ -33,7 +33,7 @@ wbadmin disable backup
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |-quiet|对用户运行无提示的子命令。|
 

@@ -8,16 +8,16 @@ manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 0d4b648a54e1937aedfe3fd087977c5733110787
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 926c9c862d77c9fe082274a44af57e3b8339a655
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827330"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720497"
 ---
 # <a name="whats-new-in-failover-clustering"></a>故障转移群集中的新增功能
 
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
 本主题介绍 Windows Server 2019 和 Windows Server 2016 的故障转移群集中的新增功能和更改的功能。
 
@@ -29,58 +29,63 @@ ms.locfileid: "80827330"
     利用群集集，可以在群集集中的群集之间移动联机虚拟机（实时迁移）。
 
     有关详细信息，请参阅[群集集](../storage/storage-spaces/cluster-sets.md)。
-                
-- **Azure 感知群集**                
-                
-    故障转移群集现在会自动检测到 Azure IaaS 虚拟机中 runn 的符合，并对配置进行优化，以便为 Azure 计划内维护事件提供主动故障转移和日志记录，以实现最高级别的可用性。 还可以通过无需使用群集名称的动态网络名称配置负载均衡器来简化部署。
-                
-- **C uste mig-15) 中的跨 dom**
-                
-    故障转移群集现在可以动态地从一个 Active Directory 域移到另一个域，从而简化了域合并，并允许硬件合作伙伴创建群集，并稍后联接到客户的域。    
-- **USB 见证**                
 
-    你现在可以使用连接到网络交换机的 si p USB 驱动器作为见证服务器，以确定群集的仲裁。 这会扩展文件共享见证，以支持任何 SMB2 兼容设备。
-                
-- **Cluster infras ruct re prov 无法**
-                
-    现在，CSV 缓存已通过 d faul 启用以 oost 虚拟机性能。 MSDTC 现在支持群集共享卷，以允许在存储空间直通上部署 MSDTC 工作负载，例如 SQL Server。 增强型逻辑可利用自我修复检测分区节点，以恢复节点的群集成员身份。 增强型群集网络路由检测和自我修复。
-                
+- **Azure 感知群集**
+  
+    故障转移群集现在会自动检测到它们在 Azure IaaS 虚拟机中运行的时间，并对配置进行优化，以便为 Azure 计划内维护事件提供主动故障转移和日志记录，以实现最高级别的可用性。 还可以通过无需使用群集名称的动态网络名称配置负载均衡器来简化部署。
+
+- **跨域群集迁移**
+
+    故障转移群集现在可以动态地从一个 Active Directory 域移到另一个域，从而简化了域合并，并允许硬件伙伴创建群集并稍后联接到客户的域。
+
+- **USB 见证**
+
+    你现在可以使用连接到网络交换机的简单 USB 驱动器，作为确定群集仲裁的见证服务器。 这会扩展文件共享见证，以支持任何 SMB2 兼容设备。
+
+- **群集基础结构改进**
+
+    默认情况下，CSV 缓存已启用以提高虚拟机性能。 MSDTC 现在支持群集共享卷，以允许在存储空间直通上部署 MSDTC 工作负载，例如 SQL Server。 增强型逻辑可利用自我修复检测分区节点，以恢复节点的群集成员身份。 增强型群集网络路由检测和自我修复。
+
 - **群集感知更新支持存储空间直通**
 
     现在集成了群集感知更新 (CAU)，并可感知存储空间直通，验证并确保了每个节点上数据重新同步完成。 群集感知更新会检查更新以在必要时智能地重新启动。 这样就可以协调群集中所有服务器的重新启动，以便进行计划内维护。
 
-- **文件共享见证增强功能**在以下情况下，我们启用了文件共享见证的使用： 
-  - 由于远程位置不存在或极其糟糕的 Internet 访问，因此无法使用云见证。 
-  - 磁盘见证缺少共享驱动器。 这可能是存储空间直通超聚合配置、SQL Server Always On 可用性组（AG）或 * Exchange 数据库可用性组（DAG），它们都不使用共享磁盘。 
-  - 由于群集在 DMZ 后面，缺少域控制器连接。 
+- **文件共享见证增强**
+
+    在以下情况下，我们启用了文件共享见证的使用：
+  - 由于远程位置不存在或极其糟糕的 Internet 访问，因此无法使用云见证。
+  - 磁盘见证缺少共享驱动器。 这可能是存储空间直通超聚合配置、SQL Server Always On 可用性组（AG）或 * Exchange 数据库可用性组（DAG），它们都不使用共享磁盘。
+  - 由于群集在 DMZ 后面，缺少域控制器连接。
   - 没有 Active Directory 群集名称对象（CNO）的工作组或跨域群集。 有关这些增强功能的详细信息，请参阅以下文章中的 & 管理博客：故障转移群集文件共享见证和 DFS。
-    
+
     现在，我们还显式阻止使用 DFS 命名空间共享作为位置。 向 DFS 共享添加文件共享见证会导致群集出现稳定性问题，且从未支持此配置。 我们添加了逻辑来检测某个共享是否使用 DFS 命名空间，如果检测到 DFS 命名空间，故障转移群集管理器会阻止创建见证服务器，并显示有关不受支持的错误消息。
+
 - **群集强化**
 
     通过群集共享卷和存储空间直通的服务器消息块 (SMB) 进行群集内通信现在可利用证书来提供最安全的平台。 这样，故障转移群集就可以不依赖于 NTLM 而运行，并实现了安全基线。
+
 - **故障转移群集不再使用 NTLM 身份验证**
 
-    故障转移群集不再使用 NTLM 身份验证。 相反，使用 Kerberos 和基于证书的身份验证。 用户或部署工具不需要进行任何更改即可利用此安全增强功能。 它还允许在禁用了 NTLM 的环境中部署故障转移群集。 
-
+    故障转移群集不再使用 NTLM 身份验证。 相反，使用 Kerberos 和基于证书的身份验证。 用户或部署工具不需要进行任何更改即可利用此安全增强功能。 它还允许在禁用了 NTLM 的环境中部署故障转移群集。
 
 ## <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 中的新增功能
 
 ### <a name="cluster-operating-system-rolling-upgrade"></a><a name="BKMK_RollingUpgrade"></a>群集操作系统滚动升级
 
-群集操作系统滚动升级允许管理员将群集节点的操作系统从 Windows Server 2012 R2 升级到较新版本，而无需停止 Hyper-v 或横向扩展文件服务器工作负荷。 使用此功能可以避免服务级别协议 (SLA) 的停机时间损失。 
+群集操作系统滚动升级允许管理员将群集节点的操作系统从 Windows Server 2012 R2 升级到较新版本，而无需停止 Hyper-v 或横向扩展文件服务器工作负荷。 使用此功能可以避免服务级别协议 (SLA) 的停机时间损失。
 
 **这一更改增添了什么价值？**  
 
-将 Hyper-v 或横向扩展文件服务器群集从 Windows Server 2012 R2 升级到 Windows Server 2016 不再需要停机。 在群集中的所有节点都运行 Windows Server 2016 之前，群集将继续在 Windows Server 2012 R2 级别上工作。 使用 Windows PowerShell cmdlt `Update-ClusterFunctionalLevel`将群集功能级别升级到 Windows Server 2016。 
+将 Hyper-v 或横向扩展文件服务器群集从 Windows Server 2012 R2 升级到 Windows Server 2016 不再需要停机。 在群集中的所有节点都运行 Windows Server 2016 之前，群集将继续在 Windows Server 2012 R2 级别上工作。 使用 Windows PowerShell cmdlt `Update-ClusterFunctionalLevel`将群集功能级别升级到 windows Server 2016。
 
 > [!WARNING]  
-> -   更新群集功能级别后，无法返回到 Windows Server 2012 R2 群集功能级别。 
-> -   在运行 `Update-ClusterFunctionalLevel` cmdlet 之前，该进程是可逆的，可以添加 Windows Server 2012 R2 节点并删除 Windows Server 2016 节点。 
+> - 更新群集功能级别后，无法返回到 Windows Server 2012 R2 群集功能级别。
+>
+> - 在`Update-ClusterFunctionalLevel`运行 cmdlet 之前，该过程是可逆的，可以添加 windows Server 2012 R2 节点，并且可以删除 windows server 2016 节点。
 
 **工作原理的不同之处是什么？**  
 
-Hyper-v 或横向扩展文件服务器故障转移群集现在可以轻松升级，无需任何停机时间，也无需使用运行 Windows Server 2016 操作系统的节点构建新群集。 将群集迁移到 Windows Server 2012 R2 涉及到使现有群集脱机并为每个节点重新安装新操作系统，然后使群集重新联机。 旧进程很繁琐，需要停机。 但是，在 Windows Server 2016 中，群集在任何时候都无需脱机。 
+Hyper-v 或横向扩展文件服务器故障转移群集现在可以轻松升级，无需任何停机时间，也无需使用运行 Windows Server 2016 操作系统的节点构建新群集。 将群集迁移到 Windows Server 2012 R2 涉及到使现有群集脱机并为每个节点重新安装新操作系统，然后使群集重新联机。 旧进程很繁琐，需要停机。 但是，在 Windows Server 2016 中，群集在任何时候都无需脱机。
 
 对于群集中的每个节点，分阶段升级的群集操作系统如下：  
 -   节点已暂停，并已将其上运行的所有虚拟机排出。 
@@ -125,8 +130,8 @@ Hyper-v 或横向扩展文件服务器故障转移群集现在可以轻松升级
 
 有关详细信息，请参阅 [Windows Server 2016 中的存储副本](../storage/storage-replica/storage-replica-overview.md)。 
 
+### <a name="cloud-witness"></a><a name="BKMK_CloudWitness"></a>云见证
 
-### <a name="cloud-witness"></a><a name="BKMK_CloudWitness"></a>云见证  
 云见证是 Windows Server 2016 中一种新型的故障转移群集仲裁见证，它将 Microsoft Azure 作为仲裁点。 与其他仲裁见证一样，云见证获取投票，并可以参与仲裁计算。 可以使用“配置群集仲裁向导”将云见证配置为仲裁见证。 
 
 **这一更改增添了什么价值？**  
@@ -147,7 +152,8 @@ Hyper-v 或横向扩展文件服务器故障转移群集现在可以轻松升级
 
 此功能是 Windows Server 2016 的新增功能。 
 
-### <a name="virtual-machine-resiliency"></a><a name="BKMK_VMs"></a>虚拟机复原  
+### <a name="virtual-machine-resiliency"></a><a name="BKMK_VMs"></a>虚拟机复原
+
 **计算复原能力**Windows Server 2016 包括增加的虚拟机计算弹性，有助于减少计算群集中的群集内通信问题，如下所示： 
 
 -   **可用于虚拟机的复原选项：** 你现在可以配置虚拟机复原选项，这些选项定义了在暂时性故障期间虚拟机的行为：  
@@ -166,17 +172,20 @@ Hyper-v 或横向扩展文件服务器故障转移群集现在可以轻松升级
 
 在 Windows Server 2016 中，虚拟机存储复原功能也适用于来宾群集。 
 
-### <a name="diagnostic-improvements-in-failover-clustering"></a><a name="BKMK_Diagnostics"></a>故障转移群集中的诊断改进  
+### <a name="diagnostic-improvements-in-failover-clustering"></a><a name="BKMK_Diagnostics"></a>故障转移群集中的诊断改进
+
 为了帮助诊断故障转移群集的问题，Windows Server 2016 包括以下各项：  
 
--   群集日志文件（如时区信息和 DiagnosticVerbose 日志）的几项增强功能，可更轻松地排查故障转移群集问题。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-群集日志](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx)。 
+- 群集日志文件（如时区信息和 DiagnosticVerbose 日志）的几项增强功能，可更轻松地排查故障转移群集问题。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-群集日志](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx)。 
 
--   新的转储类型为**活动内存转储**，它会筛选出分配给虚拟机的大部分内存页面，从而使内存的更小、更易于保存或复制。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-活动转储](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx)。 
+- 新的转储类型为**活动内存转储**，它会筛选出分配给虚拟机的大部分内存页面，从而使内存的更小、更易于保存或复制。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-活动转储](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx)。 
 
-### <a name="site-aware-failover-clusters"></a><a name="BKMK_SiteAware"></a>站点感知故障转移群集  
+### <a name="site-aware-failover-clusters"></a><a name="BKMK_SiteAware"></a>站点感知故障转移群集
+
 Windows Server 2016 包括站点感知故障转移群集，这些群集基于其物理位置（站点）启用延伸群集中的组节点。 群集站点感知改进了群集生命周期内的关键操作，例如故障转移行为、位置策略、节点之间的检测信号和仲裁行为。 有关详细信息，请参阅[Windows Server 2016 中的站点感知故障转移群集](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx)。 
 
-### <a name="workgroup-and-multi-domain-clusters"></a><a name="BKMK_multidomainclusters"></a>工作组和多域群集  
+### <a name="workgroup-and-multi-domain-clusters"></a><a name="BKMK_multidomainclusters"></a>工作组和多域群集
+
 在 Windows Server 2012 R2 和早期版本中，只能在联接到同一个域的成员节点之间创建群集。 Windows Server 2016 打破了这些障碍，并引入了创建故障转移群集的功能，且无需 Active Directory 依赖项。 你现在可以在以下配置中创建故障转移群集：  
 
 -   **单域群集。** 将所有节点加入到同一个域的群集。 
@@ -185,18 +194,23 @@ Windows Server 2016 包括站点感知故障转移群集，这些群集基于其
 
 -   **工作组群集。** 节点是成员服务器/工作组的群集（未加入域）。 
 
-有关详细信息，请参阅[Windows Server 2016 中的工作组和多域群集](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)  
+有关详细信息，请参阅[Windows Server 2016 中的工作组和多域群集](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)
+
 ### <a name="virtual-machine-load-balancing"></a><a name="BKMK_VMLoadBalancing"></a>虚拟机负载平衡  
+
 虚拟机负载平衡是故障转移群集中的一项新功能，用于简化群集中各个节点上的虚拟机的无缝负载平衡。 基于节点上的虚拟机内存和 CPU 使用率标识过度提交的节点。 然后，将虚拟机从已过度提交的节点移动（实时迁移）到具有可用带宽的节点（如果适用）。 可以优化平衡的做法，以确保群集的最佳性能和利用率。 默认情况下，在 Windows Server 2016 Technical Preview 中启用负载平衡。 但是，启用 SCVMM 动态优化后，将禁用负载平衡。 
 
-### <a name="virtual-machine-start-order"></a><a name="BKMK_VMStartOrder"></a>虚拟机启动顺序  
+### <a name="virtual-machine-start-order"></a><a name="BKMK_VMStartOrder"></a>虚拟机启动顺序
+
 虚拟机启动顺序是故障转移群集中的一项新功能，用于为群集中的虚拟机（和所有组）引入开始订单业务流程。 现在可将虚拟机分组为层，并且可以在不同的层之间创建启动顺序依赖关系。 这可确保先启动最重要的虚拟机（如域控制器或实用工具虚拟机）。 虚拟机在依赖的虚拟机也已启动之前，不会启动。 
 
-### <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a><a name="BKMK_SMBMultiChannel"></a>简化的 SMB 多通道和多 NIC 群集网络  
+### <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a><a name="BKMK_SMBMultiChannel"></a>简化的 SMB 多通道和多 NIC 群集网络
+
 故障转移群集网络不再限制为每个子网/网络单个 NIC。 使用简化的 SMB 多通道和多 NIC 群集网络，网络配置是自动的，子网上的每个 NIC 都可用于群集和工作负载流量。 此增强功能使客户能够最大程度地提高 Hyper-v、SQL Server 故障转移群集实例和其他 SMB 工作负载的网络吞吐量。 
 
 有关详细信息，请参阅[简化的 SMB 多通道和多 NIC 群集网络](smb-multichannel.md)。
 
-## <a name="see-also"></a>另请参阅  
+## <a name="see-also"></a>另请参阅
+
 * [存储](../storage/storage.md)  
 * [Windows Server 2016 中的存储的新增功能](../storage/whats-new-in-storage.md)  

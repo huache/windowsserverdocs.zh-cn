@@ -1,6 +1,6 @@
 ---
 title: ver
-description: 适用于 ver 的 Windows 命令主题，用于显示操作系统版本号。
+description: Ver 的参考主题，其中显示了操作系统的版本号。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0d0676dcfa6546e4bbf74c4c58a24f51744d00f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7050dddda6cc27c50980f2e44f40e1f682c1d375
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830190"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720315"
 ---
 # <a name="ver"></a>ver
 
@@ -24,7 +24,7 @@ ms.locfileid: "80830190"
 
 此命令在 Windows 命令提示符（Cmd.exe）中受支持，但在 PowerShell 中不受支持。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -34,11 +34,11 @@ ver
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要从命令行界面（cmd.exe）获取操作系统的版本号，请键入：
 

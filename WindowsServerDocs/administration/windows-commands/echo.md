@@ -1,6 +1,6 @@
 ---
 title: echo
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e6e9c3c79cc8006efba0c97a574e3d6d94a6f7e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05b42e4df38c3eafd3dcf3a92ced7b7b2c088e2b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845240"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720869"
 ---
 # <a name="echo"></a>echo
 
@@ -33,10 +33,10 @@ echo [on | off]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|[打开 \|]|打开或关闭命令回显功能。 默认情况下，命令回显处于启用状态。|
-|\<消息 >|指定要在屏幕上显示的文本。|
+|[关闭\|时]|打开或关闭命令回显功能。 默认情况下，命令回显处于启用状态。|
+|\<消息>|指定要在屏幕上显示的文本。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -45,7 +45,7 @@ echo [on | off]
 -   关闭**回响**后，命令提示符将不会显示在命令提示符窗口中。 若要显示命令提示符，请**在上键入 echo。**
 -   如果在批处理文件中使用，**回显开启**和**关闭**会影响命令提示符下的设置。
 -   若要防止在批处理文件中回显特定命令，请在命令前面插入一个 at 符号（@）。 若要防止在批处理文件中回显所有命令，请在文件开头包含**回响 off**命令。
--   若要在使用**echo**时显示管道（ **|** ）或重定向字符（ **<** 或 **>** ），请在管道或重定向字符之前立即使用插入符号（^）（例如， **^|** 、 **^>** 或 **^<** ）。 若要显示插入符号，请连续键入两个插入符号（ **^^** ）。
+-   若要在使用**echo**时显示管道（**|**）**<** 或**>** 重定向字符（或），请使用紧靠在管道或重定向字符之前的插入符号（^） **^|**（ **^>** 例如， **^<**、或）。 若要显示插入符号，请连续键入两个**^^** 插入符号（）。
 
 ## <a name="examples"></a>示例
 

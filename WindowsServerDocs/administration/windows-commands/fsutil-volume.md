@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 587ff48bd0af80667f9a336323641b87be808b1d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e332db921eeb64f890149d143fc13b6e27fe4aa
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843930"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720066"
 ---
 # <a name="fsutil-volume"></a>Fsutil volume
->适用于： Windows Server （半年频道），Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
 
 卸载卷，或查询硬盘驱动器，确定硬盘驱动器上当前可用的可用空间量，或使用特定群集的文件。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -36,17 +36,17 @@ fsutil volume [querycluster] <VolumePath> <Cluster> [<Cluster>] … …
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------------|---------------|
 |allocationreport|显示有关在给定卷上如何使用存储的信息。|
-|\<VolumePath >|指定驱动器号（后跟冒号）。|
+|\<VolumePath>|指定驱动器号（后跟冒号）。|
 |diskfree|查询硬盘驱动器以确定其上的可用空间量。|
 |卸载|卸载卷。|
 |filelayout|显示给定文件的 NTFS 元数据。|
-|\<fileid >|指定文件 id。|
-|“选择设备” 列表|列出系统上的所有卷。|
+|\<fileid>|指定文件 id。|
+|list|列出系统上的所有卷。|
 |querycluster|查找使用指定群集的文件。 可以指定包含**querycluster**参数的多个群集。<p>此参数适用于： Windows Server 2008 R2 和 Windows 7。|
-|\<群集 >|指定逻辑群集号（LCN）。|
+|\<群集>|指定逻辑群集号（LCN）。|
 
 ## <a name="examples"></a><a name="BKMK_examples"></a>示例
 若要显示分配的群集报告，请键入：

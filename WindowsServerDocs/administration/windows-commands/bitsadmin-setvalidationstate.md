@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setvalidationstate
-description: 适用于**bitsadmin setvalidationstate**的 Windows 命令主题，用于设置作业中给定文件的内容验证状态。
+description: Bitsadmin setvalidationstate 命令的参考主题，用于设置作业中给定文件的内容验证状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6bec42ae926050cd21df594a38f1c441a40a527f
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: e3f22dc09eb1f70ce3c1ebd80fd6ba721e864377
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122710"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720456"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>bitsadmin setvalidationstate
 
@@ -28,7 +28,7 @@ bitsadmin /setvalidationstate <job> <file_index> <TRUE|FALSE>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ---------- |
 | 作业 | 作业的显示名称或 GUID。 |
 | file_index | 从0开始。 |
@@ -36,12 +36,14 @@ bitsadmin /setvalidationstate <job> <file_index> <TRUE|FALSE>
 
 ## <a name="examples"></a>示例
 
-下面的示例将名为*myDownloadJob*的作业的文件2的内容验证状态设置为 TRUE。
+若要将名为*myDownloadJob*的作业的文件2的内容验证状态设置为 TRUE：
 
 ```
-C:\>bitsadmin /setvalidationstate myDownloadJob 2 TRUE
+bitsadmin /setvalidationstate myDownloadJob 2 TRUE
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

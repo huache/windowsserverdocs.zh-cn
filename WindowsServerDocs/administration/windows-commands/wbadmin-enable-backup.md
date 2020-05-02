@@ -1,6 +1,6 @@
 ---
 title: wbadmin 启用备份
-description: 用于 wbadmin 的 Windows 命令主题启用备份，它创建并启用每日备份计划或修改现有备份计划。
+description: 用于 wbadmin enable backup 的参考主题，它创建并启用每日备份计划或修改现有备份计划。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4c5abdec29ed519a2894a26814711e32e3b8672
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a44cfca936e5349e1757d66a4b7b6a8195b44228
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829790"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720182"
 ---
 # <a name="wbadmin-enable-backup"></a>wbadmin 启用备份
 
@@ -23,8 +23,6 @@ ms.locfileid: "80829790"
 创建并启用每日备份计划或修改现有备份计划。 如果未指定参数，则将显示当前计划的备份设置。
 
 若要配置或修改每日备份计划，您必须是**Administrators**组或**backup Operators**组的成员。 此外，必须在提升的命令提示符下运行**wbadmin** 。 （若要打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
-
-有关如何使用此子命令的示例，请参阅[示例](#BKMK_examples)。
 
 ## <a name="syntax"></a>语法
 
@@ -76,15 +74,15 @@ wbadmin enable backup
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|-addtarget|对于 Windows Server 2008，指定备份的存储位置。 要求您将备份的目标指定为磁盘标识符（请参见 "备注"）。 磁盘在使用之前已经过格式化，并永久删除该磁盘上的任何现有数据。</br>对于 Windows Server 2008 R2 及更高版本，指定备份的存储位置。 要求你将位置指定为远程共享文件夹的磁盘、卷或通用命名约定（UNC）路径（\\\\\<servername >\<共享 >\)。 默认情况下，备份将保存在： \\\\<servername>\<共享名 > \WindowsImageBackup\<ComputerBackedUp >\. 如果指定磁盘，则会在使用之前对磁盘进行格式化，并永久删除该磁盘上的任何现有数据。 如果指定共享文件夹，则不能添加更多位置。 一次只能将一个共享文件夹指定为存储位置。</br>重要提示：如果将备份保存到远程共享文件夹，则在使用同一文件夹再次备份同一台计算机时，将覆盖该备份。 另外，如果备份操作失败，则最终可能得不到任何备份，这是因为原有备份已被覆盖，而新备份却不可用。 可以通过在远程共享文件夹中创建子文件夹来组织您的备份，避免出现这种情况。 如果执行此操作，子文件夹将需要两倍于父文件夹的空间。</br>只能在单个命令中指定一个位置。 可以通过再次运行命令来添加多个卷和磁盘备份存储位置。|
+|-addtarget|对于 Windows Server 2008，指定备份的存储位置。 要求您将备份的目标指定为磁盘标识符（请参见 "备注"）。 磁盘在使用之前已经过格式化，并永久删除该磁盘上的任何现有数据。</br>对于 Windows Server 2008 R2 及更高版本，指定备份的存储位置。 要求将位置指定为远程\\\\\<共享文件夹（servername>\<共享名>\)的磁盘、卷或通用命名约定（UNC）路径。 默认情况下，将在以下位置保存备份\\ \\ <servername> \<：共享名\<> \windowsimagebackup ComputerBackedUp>\. 如果指定磁盘，则会在使用之前对磁盘进行格式化，并永久删除该磁盘上的任何现有数据。 如果指定共享文件夹，则不能添加更多位置。 一次只能将一个共享文件夹指定为存储位置。</br>重要提示：如果将备份保存到远程共享文件夹，则在使用同一文件夹再次备份同一台计算机时，将覆盖该备份。 另外，如果备份操作失败，则最终可能得不到任何备份，这是因为原有备份已被覆盖，而新备份却不可用。 可以通过在远程共享文件夹中创建子文件夹来组织您的备份，避免出现这种情况。 如果执行此操作，子文件夹将需要两倍于父文件夹的空间。</br>只能在单个命令中指定一个位置。 可以通过再次运行命令来添加多个卷和磁盘备份存储位置。|
 |-removetarget|指定要从现有备份计划中删除的存储位置。 要求将位置指定为磁盘标识符（请参阅 "备注"）。|
 |-schedule|指定创建备份的时间，格式为 HH： MM，用逗号分隔。|
-|-include|对于 Windows Server 2008，指定要包含在备份中的卷驱动器号、卷装入点或基于 GUID 的卷名的逗号分隔列表。</br>对于 Windows Server 2008 R2and，请指定要包含在备份中的项的逗号分隔列表。 可以包含多个文件、文件夹或卷。 可以使用卷驱动器号、卷装入点或基于 GUID 的卷名称指定卷路径。 如果使用基于 GUID 的卷名，则应使用反斜杠（\)）终止它。 指定文件路径时，可以在文件名中使用通配符（*）。|
-|-nonRecurseInclude|对于 Windows Server 2008 R2 及更高版本，指定要包含在备份中的非递归、以逗号分隔的项列表。 可以包含多个文件、文件夹或卷。 可以使用卷驱动器号、卷装入点或基于 GUID 的卷名称指定卷路径。 如果使用基于 GUID 的卷名，则应使用反斜杠（\)）终止它。 指定文件路径时，可以在文件名中使用通配符（*）。 仅当使用-backupTarget 参数时才应使用。|
-|-exclude|对于 Windows Server 2008 R2 及更高版本，指定要从备份中排除的以逗号分隔的项列表。 可以排除文件、文件夹或卷。 可以使用卷驱动器号、卷装入点或基于 GUID 的卷名称指定卷路径。 如果使用基于 GUID 的卷名，则应使用反斜杠（\)）终止它。 指定文件路径时，可以在文件名中使用通配符（*）。|
-|-nonRecurseExclude|对于 Windows Server 2008 R2 及更高版本，指定要从备份中排除的非递归、以逗号分隔的项列表。 可以排除文件、文件夹或卷。 可以使用卷驱动器号、卷装入点或基于 GUID 的卷名称指定卷路径。 如果使用基于 GUID 的卷名，则应使用反斜杠（\)）终止它。 指定文件路径时，可以在文件名中使用通配符（*）。|
+|-include|对于 Windows Server 2008，指定要包含在备份中的卷驱动器号、卷装入点或基于 GUID 的卷名的逗号分隔列表。</br>对于 Windows Server 2008 R2and，请指定要包含在备份中的项的逗号分隔列表。 可以包含多个文件、文件夹或卷。 可以使用卷驱动器号、卷装入点或基于 GUID 的卷名称指定卷路径。 如果使用基于 GUID 的卷名，则应使用反斜杠（\)。 指定文件路径时，可以在文件名中使用通配符（*）。|
+|-nonRecurseInclude|对于 Windows Server 2008 R2 及更高版本，指定要包含在备份中的非递归、以逗号分隔的项列表。 可以包含多个文件、文件夹或卷。 可以使用卷驱动器号、卷装入点或基于 GUID 的卷名称指定卷路径。 如果使用基于 GUID 的卷名，则应使用反斜杠（\)。 指定文件路径时，可以在文件名中使用通配符（*）。 仅当使用-backupTarget 参数时才应使用。|
+|-exclude|对于 Windows Server 2008 R2 及更高版本，指定要从备份中排除的以逗号分隔的项列表。 可以排除文件、文件夹或卷。 可以使用卷驱动器号、卷装入点或基于 GUID 的卷名称指定卷路径。 如果使用基于 GUID 的卷名，则应使用反斜杠（\)。 指定文件路径时，可以在文件名中使用通配符（*）。|
+|-nonRecurseExclude|对于 Windows Server 2008 R2 及更高版本，指定要从备份中排除的非递归、以逗号分隔的项列表。 可以排除文件、文件夹或卷。 可以使用卷驱动器号、卷装入点或基于 GUID 的卷名称指定卷路径。 如果使用基于 GUID 的卷名，则应使用反斜杠（\)。 指定文件路径时，可以在文件名中使用通配符（*）。|
 |-hyperv|指定要包含在备份中的以逗号分隔的组件列表。 标识符可以是组件名称或组件 GUID （带有或不带大括号）。|
 |-systemState|对于 Windows 7 和 Windows Server 2008 R2 及更高版本，将创建一个包含系统状态的备份以及使用 **-include**参数指定的任何其他项。 系统状态包含启动文件（Boot.ini、NDTLDR、NTDetect.com）、Windows 注册表（包括 COM 设置、SYSVOL （组策略和登录脚本） Active Directory 和 NTDS）。域控制器上的 DIT 以及证书服务（如果安装了证书服务）。 如果服务器已安装 Web 服务器角色，则将包括 IIS 元目录。 如果该服务器是群集的一部分，则还会包含群集服务信息。|
 |-allCritical|指定备份中包含所有关键卷（包含操作系统状态的卷）。 如果要为完全系统或系统状态恢复创建备份，此参数非常有用。 仅当指定了-backupTarget 时才应使用它，否则命令将失败。 可以与 **-include**选项一起使用。</br>提示：关键卷备份的目标卷可以是本地驱动器，但不能是备份中包含的任何卷。|
@@ -99,26 +97,26 @@ wbadmin enable backup
 
 若要查看磁盘的磁盘标识符值，请键入 " **wbadmin 获取磁盘**"。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 下面的示例演示如何在不同的备份方案中使用**wbadmin enable backup**命令：
 
 方案 #1
-- 计划磁盘驱动器的备份 e：、d:\mountpoint 和 \\\\？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+- 计划磁盘驱动器的备份 e：、d:\mountpoint 和\\ \\？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 - 将文件保存到磁盘 DiskID
-- 每天凌晨9:00 运行备份 和 6:00 P。M
+- 每天凌晨9:00 运行备份 到下午 6:00
   ```
   wbadmin enable backup -addtarget:DiskID -schedule:09:00,18:00 -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
   ```
   方案 #2
-- 将文件夹 d:\documents 的备份安排到网络位置 \\\\backupshare\backup1
+- 将文件夹 d:\documents 的备份安排到网络位置\\ \\backupshare\backup1
 - 使用备份管理员 Aaren Ekelund （aekel）的网络凭据，该用户是域 CONTOSOEAST 的成员，用于验证对网络共享的访问。 Aaren 的密码是 *$ 3hM9 ^ 5lp*。
 - 每天凌晨12:00 运行备份 和 7:00 P。M
   ```
   wbadmin enable backup –addtarget:\\backupshare\backup1 –include: d:\documents –user:CONTOSOEAST\aekel –password:$3hM9^5lp –schedule:00:00,19:00
   ```
   方案 #3
-- 将卷 t：和文件夹 d:\documents 的备份安排到驱动器 h：，但是排除文件夹 d:\documents\~tmp
+- 将卷 t：和文件夹 d:\documents 的备份计划到驱动器 h：，但排除文件夹 d:\documents\~tmp
 - 使用卷影复制服务执行完整备份。
 - 每天凌晨1:00 运行备份
   ```

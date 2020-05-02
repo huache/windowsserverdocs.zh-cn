@@ -1,6 +1,6 @@
 ---
 title: DriverGroupPackage
-description: DriverGroupPackage 的 Windows 命令主题，用于从服务器上的驱动程序组中删除驱动程序包。
+description: DriverGroupPackage 的参考主题，用于从服务器上的驱动程序组中删除驱动程序包。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9dd30f430bd91bf2680cd1138270526bce965f9d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c63c6ef0ed9af49506d80a715f23111bfd62070f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830460"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720402"
 ---
 # <a name="remove-drivergrouppackage"></a>DriverGroupPackage
 
@@ -30,13 +30,13 @@ WDSUTIL /Remove-DriverGroupPackage /DriverGroup:<Group Name> [/Server:<Server Na
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|[/Server：\<Server name >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。|
-|[/DriverPackage：\<名称 >]|指定要删除的驱动程序包的名称。|
-|[/PackageId：\<ID >]|指定要删除的驱动程序包的 Windows 部署服务 ID。 如果无法按名称唯一地标识驱动程序包，则必须指定此选项。|
+|[/Server：\<Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。|
+|[/DriverPackage：\<Name>]|指定要删除的驱动程序包的名称。|
+|[/PackageId：\<ID>]|指定要删除的驱动程序包的 Windows 部署服务 ID。 如果无法按名称唯一地标识驱动程序包，则必须指定此选项。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 ```
 WDSUTIL /Remove-DriverGroupPackage /DriverGroup:PrinterDrivers /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318}

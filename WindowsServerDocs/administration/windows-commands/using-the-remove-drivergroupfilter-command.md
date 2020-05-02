@@ -1,6 +1,6 @@
 ---
 title: DriverGroupFilter
-description: DriverGroupFilter 的 Windows 命令主题，用于从服务器上的驱动程序组中删除筛选规则。
+description: DriverGroupFilter 的参考主题，用于从服务器上的驱动程序组中删除筛选规则。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08914b66c37d327ddef2a50d2f98adcfdbb88ffe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd6fcbc8f87539ac687927b9e58ed15edb524ef6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830490"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720413"
 ---
 # <a name="remove-drivergroupfilter"></a>DriverGroupFilter
 
@@ -30,13 +30,13 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server nam
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|/DriverGroup：\<组名称 >|指定驱动程序组的名称。|
-|[/Server：\<Server name >]|指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。|
-|[/FilterType：\<FilterType >]|指定要从组中删除的筛选器的类型。 \<FilterType > 可以是以下项之一：</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Manufacturer**</br>**Uuid**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
+|/DriverGroup：\<组名>|指定驱动程序组的名称。|
+|[/Server：\<Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。|
+|[/FilterType：\<FilterType>]|指定要从组中删除的筛选器的类型。 \<FilterType> 可以是以下项之一：</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**制造商**</br>**Uuid**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要删除筛选器，请键入下列内容之一：
 ```

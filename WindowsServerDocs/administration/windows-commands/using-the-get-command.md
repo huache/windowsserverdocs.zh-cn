@@ -1,6 +1,6 @@
 ---
 title: get
-description: 用于 get 的 Windows 命令主题，它检索有关指定的对象的属性或属性。
+description: Get 的参考主题，它检索有关指定对象的属性或属性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: be532dcb57faf4ec2a86a34c3ab59c921c5b8d0c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 981ed8978df3d53505e6da5296dbb25cce38bb71
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831140"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719975"
 ---
 # <a name="get"></a>get
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 检索有关指定的对象的属性或属性。
 
 ## <a name="subcommands"></a>个子
-|命令|说明|
+|子命令|描述|
 |-------|--------|
 |[使用 AllDevices 命令](using-the-get-alldevices-command.md)|显示有关所有预留计算机的信息。|
 |[使用 AllImageGroups 命令](using-the-get-allimagegroups-command.md)|显示有关所有映像组的信息。|

@@ -1,6 +1,6 @@
 ---
 title: get-ImageFile
-description: Get-ImageFile 的 Windows 命令主题，它检索有关 Windows 映像（.wim）文件中包含的映像的信息。
+description: 获取-ImageFile 的参考主题，它检索有关 Windows 映像（.wim）文件中包含的映像的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef1cf2b9eec6739690d286c32d26dd84b07e348c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4f60be17f13e1436a0e895991c72d5ccb7130782
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830990"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719907"
 ---
 # <a name="get-imagefile"></a>get-ImageFile
 
@@ -28,12 +28,12 @@ WDSUTIL [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|/ImageFile：\<WIM 文件路径 >|指定 .wim 文件的完整路径和文件名。|
+|/ImageFile：\<WIM 文件路径>|指定 .wim 文件的完整路径和文件名。|
 |[/Detailed]|返回每个映像中的所有图像元数据。 如果未使用此选项，则默认行为是只返回映像名称、说明和文件名。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要查看有关映像的信息，请键入：
 ```

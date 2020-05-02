@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnoprogresstimeout
-description: 适用于**bitsadmin setnoprogresstimeout**的 Windows 命令主题，用于设置服务在发生暂时性错误后尝试传输文件的时间长度（以秒为单位）。
+description: Bitsadmin setnoprogresstimeout 命令的参考主题，它设置服务在发生暂时性错误后尝试传输文件的时间长度（以秒为单位）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8adff95b0dbae68634db2e248d4493549c5ac85d
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 398882cf795e98dc0bbc0fb81006d3406fded707
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122888"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720108"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
@@ -28,12 +28,12 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 | timeoutvalue | 在第一个错误后 BITS 等待传输文件的时间长度（以秒为单位）。 |
 
-## <a name="remarks"></a>备注
+### <a name="remarks"></a>备注
 
 - 作业遇到第一个暂时性错误时，"无进度" 超时间隔就会开始。
 
@@ -43,12 +43,14 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 
 ## <a name="examples"></a>示例
 
-下面的示例将名为*myDownloadJob*的作业的 "无进度" 超时值设置为20秒。
+若要将名为*myDownloadJob*的作业的 "无进度" 超时值设置为20秒，请执行以下操作：
 
 ```
-C:\>bitsadmin /setnoprogresstimeout myDownloadJob 20
+bitsadmin /setnoprogresstimeout myDownloadJob 20
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

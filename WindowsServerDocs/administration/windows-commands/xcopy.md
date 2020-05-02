@@ -1,6 +1,6 @@
 ---
 title: xcopy
-description: 适用于 xcopy 的 Windows 命令主题，w hich 复制文件和目录，包括子目录。
+description: Xcopy 的参考主题，用于复制文件和目录，包括子目录。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: 660ef69a5f1df99c3b959a588984719c9d4dea6b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d0ee0a9f87eacefad619e82aa28f5fcf8419ed09
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828920"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720625"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -30,11 +30,11 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<源 >|必需。 指定要复制的文件的位置和名称。 此参数必须包含驱动器或路径。|
-|[\<目标 >]|指定要复制的文件的目标。 此参数可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
-|/w|显示以下消息，并在开始复制文件之前等待你的响应：</br>**按任意键开始复制文件**|
+|\<源>|必需。 指定要复制的文件的位置和名称。 此参数必须包含驱动器或路径。|
+|[\<目标>]|指定要复制的文件的目标。 此参数可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
+|/W|显示以下消息，并在开始复制文件之前等待你的响应：</br>**按任意键开始复制文件**|
 |/p|提示您确认是否要创建每个目标文件。|
 |/c|忽略错误。|
 |/v|在将每个文件写入目标文件时对其进行验证，以确保目标文件与源文件完全相同。|
@@ -43,11 +43,11 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/l|显示要复制的文件的列表。|
 |/g|如果目标不支持加密，则创建已解密的*目标*文件。|
 |/d [： MM-DD]|仅复制在指定日期或指定日期之后更改的源文件。 如果不包括*MM DD*值，则**xcopy**会复制比现有*目标*文件新的所有*源文件*。 使用此命令行选项，可以更新已更改的文件。|
-|/u|*仅* *从源*副本复制文件。|
+|/U|*仅**从源*副本复制文件。|
 |/i|如果*源*是一个目录或包含通配符并且*目标*不存在，则**xcopy**假设*destination*指定目录名称并创建一个新目录。 然后， **xcopy**将所有指定的文件复制到新目录中。 默认情况下， **xcopy**会提示您指定*目标*是文件还是目录。|
 |/s|复制目录和子目录，除非它们为空。 如果省略 **/s**，则**xcopy**在单个目录中工作。|
 |/e|复制所有子目录（即使它们为空）。 使用 **/e**和 **/s**和 **/t**命令行选项。|
-|/t|仅复制子目录结构（即树），而不复制文件。 若要复制空目录，必须包含 **/e**命令行选项。|
+|/t |仅复制子目录结构（即树），而不复制文件。 若要复制空目录，必须包含 **/e**命令行选项。|
 |遇到|复制文件并在*目标*文件上保留只读属性（如果存在于*源文件*上）。 默认情况下， **xcopy**会删除只读属性。|
 |/r|复制只读文件。|
 |/h|复制具有隐藏文件和系统文件属性的文件。 默认情况下， **xcopy**不复制隐藏文件或系统文件|
@@ -56,7 +56,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/n|使用 NTFS 短文件名或目录名称创建副本。 如果将文件或目录从 NTFS 卷复制到 FAT 卷，或在*目标*文件系统上需要 FAT 文件系统命名约定（即8.3 个字符），则需要 **/n** 。 *目标*文件系统可以是 FAT 或 NTFS。|
 |/o|复制文件所有权和随机访问控制列表（DACL）信息。|
 |/x|复制文件审核设置和系统访问控制列表（SACL）信息（暗含 **/o**）。|
-|/exclude： FileName1 [+ [FileName2] [+ [FileName3] （\)]|指定文件的列表。 至少必须指定一个文件。 每个文件都包含搜索字符串，每个字符串在文件中的单独一行上。</br>如果任意字符串与要复制的文件的绝对路径的任何部分匹配，则将不复制该文件。 例如，如果指定字符串**obj** ，将排除目录**obj**下的所有文件或扩展名为 **.obj**的所有文件。|
+|/exclude： FileName1 [+ [FileName2] [+ [FileName3] （ \)]|指定文件的列表。 至少必须指定一个文件。 每个文件都包含搜索字符串，每个字符串在文件中的单独一行上。</br>如果任意字符串与要复制的文件的绝对路径的任何部分匹配，则将不复制该文件。 例如，如果指定字符串**obj** ，将排除目录**obj**下的所有文件或扩展名为 **.obj**的所有文件。|
 |/y|禁止提示您确认是否要覆盖现有目标文件。|
 |/-y|提示确认是否要覆盖现有目标文件。|
 |/z|在可重启模式下通过网络复制。|
@@ -88,7 +88,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 - 指定*目标*是否为文件或目录
 
-  如果*Destination*不包含现有目录且不以反斜杠（\)结尾，将显示以下消息：
+  如果*Destination*不包含现有目录且不以反斜杠结尾（\)，将显示以下消息：
   
   ```
   Does <Destination> specify a file name or directory name on the target(F = file, D = directory)?
@@ -109,7 +109,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
   若要处理**xcopy**返回的退出代码，请在批处理程序的**if**命令行中使用**ErrorLevel**参数。 有关使用**if**处理退出代码的批处理程序的示例，请参阅 "[其他参考](#additional-references)"。 下表列出了每个退出代码和说明。  
 
-  |退出代码|说明|
+  |退出代码|描述|
   |---------|-----------|
   |0|复制文件时没有错误。|
   |1|找不到要复制的文件。|
@@ -151,7 +151,7 @@ xcopy \rawdata \reports /d:12-29-1993 /l > xcopy.out
 
 文件 xcopy 列出每个要复制的文件。
 
-**6.** 若要将 \Customer 目录和所有子目录复制到 \\网络驱动器 H：上的 Public\Address 的目录中 \\，请保留只读属性，并且在 H：上创建新文件时，请键入：
+**6.** 若要将 \Customer 目录和所有子目录复制到网络\\ \\驱动器 H：上的目录 Public\Address，请保留只读属性，并且在 H：上创建新文件时，请键入：
 
 ```
 xcopy \customer h:\public\address /s /e /k /p
@@ -204,7 +204,7 @@ rem  .\d2\toc.yml
 rem  3 File(s) copied
 ```
 
-在前面的示例中，此特定的源参数值 **。\\toc\*** 复制相同的3个文件，即使删除了两个路径字符 **\\** 也是如此。 但是，如果从 source 参数中删除星号通配符，则不会复制任何文件，只需将其作为 **\\docker-compose.override.yml**。
+在前面的示例中，此特定的源参数值 **。\\即使\*** 删除了两个**路径字符\\ ，** docker-compose.override.yml 也会复制相同的3个文件。 但是，如果从 source 参数中删除星号通配符，则不会复制任何文件 **。\\docker-compose.override.yml**。
 
 ## <a name="additional-references"></a>其他参考
 

@@ -1,6 +1,6 @@
 ---
 title: waitfor
-description: 用于 waitfor 的 Windows 命令主题，用于发送或等待系统上的信号。 **Waitfor**用于跨网络同步计算机。
+description: Waitfor 的参考主题，用于发送或等待系统上的信号。 **Waitfor**用于跨网络同步计算机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4542fc9d231b8150ab89e07e173d9671d6b7a3f3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1264fa3bffde303577bd56a0f1f68a6d7b2d98c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829930"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720221"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -22,7 +22,7 @@ ms.locfileid: "80829930"
 
 发送或等待系统上的信号。 **Waitfor**用于跨网络同步计算机。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -33,14 +33,14 @@ waitfor [/t <Timeout>] <SignalName>
 
 ### <a name="parameters"></a>参数
 
-|       参数       |                                                                                         说明                                                                                          |
+|       参数       |                                                                                         描述                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<计算机 >     | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
-| /u [\<域 >\]<User> |                              使用指定用户帐户的凭据运行脚本。 默认情况下， **waitfor**使用当前用户的凭据。                               |
-|   /p [\<密码 >]    |                                                    指定在 **/u**参数中指定的用户帐户的密码。                                                     |
+|    /s \<计算机>     | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
+| /u [\<域>\]<User> |                              使用指定用户帐户的凭据运行脚本。 默认情况下， **waitfor**使用当前用户的凭据。                               |
+|   /p [\<Password>]    |                                                    指定在 **/u**参数中指定的用户帐户的密码。                                                     |
 |          /si          |                                                                        通过网络发送指定的信号。                                                                        |
-|     /t \<超时 >     |                                              指定等待信号的秒数。 默认情况下， **waitfor**无限期等待。                                               |
-|     \<SignalName >     |                                                指定**waitfor**等待或发送的信号。 *SignalName*不区分大小写。                                                 |
+|     /t \<超时>     |                                              指定等待信号的秒数。 默认情况下， **waitfor**无限期等待。                                               |
+|     \<SignalName>     |                                                指定**waitfor**等待或发送的信号。 *SignalName*不区分大小写。                                                 |
 |          /?           |                                                                             在命令提示符下显示帮助。                                                                             |
 
 ## <a name="remarks"></a>备注
@@ -53,7 +53,7 @@ waitfor [/t <Timeout>] <SignalName>
 -   如果计算机与发送信号的计算机位于同一域中，则它们只能接收信号。
 -   在测试软件生成时，可以使用**waitfor** 。 例如，编译计算机在成功完成编译后，可以将信号发送到运行**waitfor**的几台计算机。 收到信号后，包含**waitfor**的批处理文件可以指示计算机立即开始安装软件或对编译的生成运行测试。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要等到接收到 espresso\build007 信号，请键入：
 ```

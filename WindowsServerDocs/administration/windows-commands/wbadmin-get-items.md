@@ -1,6 +1,6 @@
 ---
 title: wbadmin 获取项
-description: 用于 wbadmin get items 的 Windows 命令主题，其中列出了特定备份中包含的项。
+description: Wbadmin get items 的参考主题，其中列出了特定备份中包含的项。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 781057bb450ab4b692c793f67d807e008efcf5d8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d6305c9036b611f879608386dbf71398e993ea03
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829750"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720166"
 ---
 # <a name="wbadmin-get-items"></a>wbadmin 获取项
 
@@ -23,8 +23,6 @@ ms.locfileid: "80829750"
 列出特定备份中包含的项。
 
 若要使用此子命令，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。 （若要打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
-
-有关如何使用此子命令的示例，请参阅[示例](#BKMK_examples)。
 
 ## <a name="syntax"></a>语法
 
@@ -37,19 +35,19 @@ wbadmin get items
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|-版本|以 MM/DD/YYYY-HH： MM 格式指定备份的版本。 如果不知道版本信息，请键入**wbadmin get 版本**。|
+|-version|以 MM/DD/YYYY-HH： MM 格式指定备份的版本。 如果不知道版本信息，请键入**wbadmin get 版本**。|
 |-backupTarget|指定包含要查看其详细信息的备份的存储位置。 用于列出存储在该目标位置的备份。 备份目标位置可以是本地连接的磁盘驱动器或远程共享文件夹。 如果在创建备份的同一台计算机上运行**wbadmin get items**，则不需要此参数。 但是，若要获取有关从另一台计算机创建的备份的信息，需要使用此参数。|
 |-计算机|指定要获取其备份详细信息的计算机的名称。 当多台计算机备份到同一位置时，此参数很有用。 当指定 **-backupTarget**时，应使用。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要列出在2013年3月31日上午9:00 运行的备份中的项目，请键入：
 ```
 wbadmin get items -version:03/31/2013-09:00
 ```
-列出在2013年4月30日上午9:00 的 server01 备份中运行的项目。 并且存储在 \\\\servername\share 上，请键入：
+列出在2013年4月30日上午9:00 的 server01 备份中运行的项目。 并将其\\ \\存储在 servername\share 上，键入：
 ```
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
