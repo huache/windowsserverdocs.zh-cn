@@ -1,6 +1,6 @@
 ---
 title: bitsadmin sethelpertoken
-description: 适用于**bitsadmin sethelpertoken**的 Windows 命令主题，它将当前命令提示符的主要令牌（或任意本地用户帐户的令牌，如果指定）设置为 BITS 传输作业的帮助令牌。
+description: Bitsadmin sethelpertoken 命令的参考主题，它将当前命令提示符的主要令牌（或任意本地用户帐户的令牌，如果指定）设置为 BITS 传输作业的帮助令牌。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: ba4b9a4ed1b59d1b1aeda30353317739b7fdfa9e
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: b125f95e262c2fd78f20266e3e2b6c80cea5a789
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122985"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719395"
 ---
 # <a name="bitsadmin-sethelpertoken"></a>bitsadmin sethelpertoken
 
@@ -30,11 +30,13 @@ bitsadmin /sethelpertoken <job> [<user_name@domain> <password>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 | `<username@domain>` `<password>` | 可选。 要使用令牌的本地用户帐户凭据。 |
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 缓存和 setexpirationtime
-description: 用于设置缓存过期时间的**bitsadmin cache 和 setexpirationtime**的 Windows 命令主题。
+title: bitsadmin cache 和 setexpirationtime
+description: 用于设置缓存过期时间的 bitsadmin cache 和 setexpirationtime 命令的参考主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf283a0a8b94fd55c591609e3dcd1d127a2be81a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 84679eadc750637fb720a458d9663219dc1492a4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850880"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718311"
 ---
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-# <a name="bitsadmin-cache-and-setexpirationtime"></a>bitsadmin 缓存和 setexpirationtime
+# <a name="bitsadmin-cache-and-setexpirationtime"></a>bitsadmin cache 和 setexpirationtime
 
 设置缓存过期时间。
 
@@ -30,18 +30,20 @@ bitsadmin /cache /setexpirationtime secs
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
 | secs | 缓存过期前等待的秒数。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例在60秒内将缓存过期。
+若要将缓存设置为在60秒后过期：
 
 ```
-C:\>bitsadmin /cache / setexpirationtime 60
+bitsadmin /cache / setexpirationtime 60
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 缓存命令](bitsadmin-cache.md)

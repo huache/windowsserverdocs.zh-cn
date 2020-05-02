@@ -1,6 +1,6 @@
 ---
 title: diskperf
-description: 适用于 diskperf 的 Windows 命令主题，可用于在运行 Windows 2000 的计算机上远程启用或禁用物理或逻辑磁盘性能计数器。
+description: Diskperf 的参考主题，可用于在运行 Windows 2000 的计算机上远程启用或禁用物理或逻辑磁盘性能计数器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b07471c051d57d0279e4fd8b38afdc4acdc4069
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c8f505d924ee1de311f2f2736ff65be844c3f2ea
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845460"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719449"
 ---
 # <a name="diskperf"></a>diskperf
 
@@ -28,15 +28,15 @@ ms.locfileid: "80845460"
 diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 ```
 
-## <a name="options"></a>Options
+## <a name="options"></a>选项
 
-|选项|说明|
+|选项|描述|
 |------|-----------|
 |-?|显示上下文相关的帮助。|
-|-Y|计算机重新启动时，启动所有磁盘性能计数器。|
+|-y|计算机重新启动时，启动所有磁盘性能计数器。|
 |-YD|计算机重新启动时，为物理驱动器启用磁盘性能计数器。|
 |-YV|计算机重新启动时，为逻辑驱动器或存储卷启用磁盘性能计数器。|
 |-N|在计算机重新启动时禁用所有磁盘性能计数器。|
 |-ND|计算机重新启动时，禁用物理驱动器的磁盘性能计数器。|
 |-NV|计算机重新启动时，禁用逻辑驱动器或存储卷的磁盘性能计数器。|
-|\\\\ *\<computername >*|指定要在其中启用或禁用磁盘性能计数器的计算机的名称。|
+|\\\\*\<computername>*|指定要在其中启用或禁用磁盘性能计数器的计算机的名称。|

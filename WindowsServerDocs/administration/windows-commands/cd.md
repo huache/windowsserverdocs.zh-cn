@@ -1,6 +1,6 @@
 ---
-title: cd
-description: 用于 cd 的 Windows 命令主题，其中显示了或更改当前目录的名称。
+title: CD
+description: Cd 命令的参考主题，其中显示了或更改当前目录的名称。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,75 +9,89 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d62f529ab6c45957f0fdea24358a2f13151adb6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7c9ee57590cf165ba46f394cab06817c7c13f0a9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848220"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719660"
 ---
-# <a name="cd"></a>cd
+# <a name="cd"></a>CD
 
-显示或更改当前目录的名称。 如果仅用于驱动器号（例如 `cd C:`）， **cd**将显示指定驱动器中当前目录的名称。 如果在没有参数的情况下使用， **cd**将显示当前驱动器和目录。
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+
+显示当前目录的名称或更改当前目录。 如果仅用于驱动器号（例如`cd C:`）， **cd**将显示指定驱动器中当前目录的名称。 如果在没有参数的情况下使用， **cd**将显示当前驱动器和目录。
 
 > [!NOTE]
-> 此命令与**chdir**命令相同。
-
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+> 此命令与[chdir 命令](chdir.md)相同。
 
 ## <a name="syntax"></a>语法
 
 ```
-cd [/d] [<Drive>:][<Path>]
+cd [/d] [<drive>:][<path>]
 cd [..]
-chdir [/d] [<Drive>:][<Path>]
+chdir [/d] [<drive>:][<path>]
 chdir [..]
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
-|---------|-----------|
-|/d|更改当前驱动器以及驱动器的当前目录。|
-|\<驱动器 >：|指定要显示或更改的驱动器（如果不同于当前驱动器）。|
-|\<路径 >|指定要显示或更改的目录的路径。|
-|[..]|指定要更改为父文件夹。|
-|/?|在命令提示符下显示帮助。|
+| 参数 | 描述 |
+| --------- | ----------- |
+| /d | 更改当前驱动器以及驱动器的当前目录。 |
+| `<drive>:` | 指定要显示或更改的驱动器（如果不同于当前驱动器）。 |
+| `<path>` | 指定要显示或更改的目录的路径。 |
+| [..] | 指定要更改为父文件夹。 |
+| /? | 在命令提示符下显示帮助。 |
 
 ## <a name="remarks"></a>备注
 
 如果启用了命令扩展，则以下条件适用于**cd**命令：
-- 当前目录字符串被转换为使用与磁盘上的名称相同的大小写。 例如，如果磁盘上出现这种情况，`cd C:\TEMP` 会将当前目录设置为 C：\Temp。
-- 空格不被视为分隔符，因此*路径*可以包含空格而无需用引号引起来。 例如：  
+
+- 当前目录字符串被转换为使用与磁盘上的名称相同的大小写。 例如，如果`cd c:\temp`磁盘上出现这种情况，则会将当前目录设置为 C：\Temp。
+
+- 空格不被视为分隔符，因此`<path>`可以包含空格而无需用引号引起来。 例如：
+
   ```
   cd username\programs\start menu
-  ```  
+  ```
+
   相当于：  
+  
   ```
-  cd username\programs\start menu
-  ```  
-  但如果禁用了扩展，则需要引号。
+  cd "username\programs\start menu"
+  ```
 
-若要禁用命令扩展，请键入：
-```
-cmd /e:off
-```
+  如果禁用了扩展，则需要引号。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+- 若要禁用命令扩展，请键入：
 
-根目录是驱动器的目录层次结构的顶部。 若要返回到根目录，请键入：
+  ```
+  cmd /e:off
+  ```
+
+## <a name="examples"></a>示例
+
+若要返回根目录，请查看驱动器的目录层次结构顶部：
+
 ```
 cd\
 ```
-若要更改与你所在的驱动器不同的驱动器上的默认目录，请键入：
+
+若要更改与你所在的驱动器不同的驱动器上的默认目录，请执行以下操作：
+
 ```
-cd [<Drive>:\[<Directory>]]
+cd [<drive>:[<directory>]]
 ```
+
 若要验证对目录所做的更改，请键入：
+
 ```
-cd [<Drive>:]
+cd [<drive>:]
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [chdir 命令](chdir.md)

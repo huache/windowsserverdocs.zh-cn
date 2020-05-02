@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestDCs
-description: 适用于 dfsdiag TestDCs 的 Windows 命令主题，用于检查指定域中的域控制器的配置。
+description: Dfsdiag TestDCs 的参考主题，用于检查指定域中的域控制器的配置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 092ce3710eb6d209f596683bd4ad054dadd11aa3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6ac7fe1a7bae6a7b3dab9004b6212b7d93774ade
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846311"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719597"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 通过在指定域中的每个域控制器上执行以下测试来检查域控制器的配置：  
   
@@ -36,15 +36,15 @@ dfsdiag /TestDCs [/Domain:<Domain name>]
   
 #### <a name="parameters"></a>参数  
   
-|参数|说明|  
+|参数|描述|  
 |-------|--------|  
-|/Domain：`<domain_name>`|要检查的域。|  
+|域名`<domain_name>`|要检查的域。|  
   
 ## <a name="remarks"></a>备注  
 
 /Domain 是一个可选参数。 默认值为本地主机联接到的本地域。  
   
-## <a name="examples"></a><a name=BKMK_Examples></a>示例  
+## <a name="examples"></a>示例  
 若要验证 Contoso.com 域中的域控制器的配置，请键入：  
   
 ```  

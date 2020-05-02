@@ -1,6 +1,6 @@
 ---
 title: detail volume
-description: "\"详细信息\" 卷的 Windows 命令主题，其中显示当前卷所在的磁盘。"
+description: 详细信息卷的参考主题，其中显示了当前卷所在的磁盘。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f0441beba769066c593e77b55b9266918e5f778
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2958c82b1dfc3b99d0e15690ef9857e7d83b244f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846312"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719621"
 ---
 # <a name="detail-volume"></a>detail volume
 
@@ -31,7 +31,7 @@ detail volume
 -   必须选择卷，此操作才能成功。 使用 "**选择音量**" 命令选择卷并将焦点移动到该卷。
 -   卷详细信息不适用于只读卷，如 DVD-ROM 驱动器或 CD-ROM 驱动器。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要查看当前卷所在的所有磁盘，请键入：
 ```

@@ -1,6 +1,6 @@
 ---
 title: auditpol 集
-description: 适用于**auditpol set**的 Windows 命令主题，用于设置每用户审核策略、系统审核策略或审核选项。
+description: 用于设置每用户审核策略、系统审核策略或审核选项的 auditpol set 命令的参考主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0773a0a9ae9237b39293bae80001616d00630436
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 73868d6044d8742d4d9e0ce76e0668402f230f86
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851140"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718891"
 ---
 # <a name="auditpol-set"></a>auditpol 集
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 设置每用户审核策略、系统审核策略或审核选项。
+
+若要对*每个用户*和*系统*策略执行*set*操作，您必须对安全描述符中的该对象集具有 "**写入**" 或 "**完全控制**" 权限。 如果有 "**管理审核和安全日志**（SeSecurityPrivilege）" 用户权限，还可以执行 "*设置*操作"。 但是，此权限允许执行整体*集*操作所不需要的其他访问权限。
 
 ## <a name="syntax"></a>语法
 
@@ -36,7 +38,7 @@ auditpol /set
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /user | 为其设置类别或子类别指定的每用户审核策略的安全主体。 必须指定 "类别" 或 "子类别" 选项，作为安全标识符（SID）或名称。 |
 | /include | 用/user 指定;指示用户的每用户策略将导致生成审核，即使系统审核策略未指定审核也是如此。 此设置是默认设置，如果/include 和/exclude 参数均未显式指定，则会自动应用此设置。 |
@@ -49,11 +51,7 @@ auditpol /set
 | /sd | 设置用于委托审核策略访问的安全描述符。 安全描述符必须使用安全描述符定义语言（SDDL）来指定。 安全描述符必须具有自由访问控制列表（DACL）。 |
 | /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>备注
-
-对于 "每用户策略" 和 "系统策略" 的所有设置操作，您必须对安全描述符中的该对象设置具有 "写入" 或 "完全控制" 权限。 还可以通过拥有 "**管理审核和安全日志**（SeSecurityPrivilege）" 用户权限来执行设置操作。 但是，此权限允许执行 set 操作所不需要的其他访问权限。
-
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要为用户 mikedan 的详细跟踪类别下的所有子类别设置每用户审核策略，以便审核所有用户的成功尝试，请键入：
 
@@ -97,3 +95,5 @@ auditpol /set /option:CrashOnAuditFail /value:enable
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [auditpol 命令](auditpol.md)

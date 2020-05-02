@@ -1,6 +1,6 @@
 ---
 title: diskraid
-description: 适用于 diskraid 的 Windows 命令主题，它是一种命令行工具，可用于配置和管理独立（或廉价）磁盘（RAID）存储子系统冗余阵列。
+description: Diskraid 的参考主题，它是一种命令行工具，可用于配置和管理独立（或廉价）磁盘（RAID）存储子系统冗余阵列。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea71fc67420700527a3a14494c947aed7a2ec747
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25a6a0315b74e948fd23ac1257072ac583f311d0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845400"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719433"
 ---
 # <a name="diskraid"></a>diskraid
 
@@ -42,16 +42,16 @@ RAID 是一种用于标准化和分类容错磁盘系统的方法。 RAID 等级
 -   [仔细](#BKMK_8)
 -   [取消](#BKMK_9)
 -   [exit](#BKMK_10)
--   [extend](#BKMK_11)
+-   [扩展](#BKMK_11)
 -   [flushcache](#BKMK_12)
 -   [help](#BKMK_13)
 -   [importtarget](#BKMK_14)
 -   [初始](#BKMK_15)
 -   [invalidatecache](#BKMK_16)
 -   [lbpolicy](#BKMK_18)
--   [成员列表](#BKMK_19)
+-   [list](#BKMK_19)
 -   [id](#BKMK_20)
--   [注销](#BKMK_21)
+-   [logout](#BKMK_21)
 -   [维护](#BKMK_22)
 -   [name](#BKMK_23)
 -   [断开](#BKMK_24)
@@ -60,10 +60,10 @@ RAID 是一种用于标准化和分类容错磁盘系统的方法。 RAID 等级
 -   [reenumerate](#BKMK_27)
 -   [刷新](#BKMK_28)
 -   [rem](#BKMK_29)
--   [删除](#BKMK_30)
+-   [remove](#BKMK_30)
 -   [replace](#BKMK_31)
 -   [reset](#BKMK_32)
--   [单击](#BKMK_33)
+-   [select](#BKMK_33)
 -   [setflag](#BKMK_34)
 -   [shrink](#BKMK_shrink)
 -   [转入](#BKMK_35)
@@ -89,7 +89,7 @@ add tpgroup tportal=n [noerr]
 > [!CAUTION]
 > 要添加为 plex 的 LUN 上的所有数据都将被删除。
 
-**tpgroup 门户 =** <em>n</em>
+**tpgroup 门户 =**<em>n</em>
 
 指定要添加到当前选定的 iSCSI 目标门户组的 iSCSI 目标门户编号。
 
@@ -139,7 +139,7 @@ associate targets [add] <n>[,<n> [,…]]
 
 #### <a name="example"></a>示例
 
-下面的示例演示如何将端口关联到使用 VDS 1.1 提供程序的 LUN 并将其添加到其中：
+显示如何将端口关联并添加到使用 VDS 1.1 提供程序的 LUN：
 ```
 DISKRAID> SEL LUN 5
 LUN 5 is now the selected LUN.
@@ -171,17 +171,17 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 
 **清除**
 
-清除指定的标志。 **All**关键字清除所有 automagic 标志。
+清除指定标志。 **All**关键字清除所有 automagic 标志。
 
 **应用**
 
 将当前标志应用于所选的 LUN。
 
-\<标志 >
+\<标志>
 
 标志由三个字母组成的缩写词标识。
 
-|Flag|说明|
+|标志|描述|
 |----|-----------|
 |FCR|需要快速崩溃恢复|
 |FTL|容错|
@@ -267,7 +267,7 @@ chap target remember secret=[<secret>] initiator=<initiatorname>
 
 指定要使用的机密。 如果为空，则将清除密钥。
 
-**靶**
+**目标**
 
 指定当前所选子系统中要与机密关联的目标。 当在发起方上设置机密并将其退出时，这是可选的，指示该机密将用于还没有关联密钥的所有目标。
 
@@ -297,7 +297,7 @@ create tpgroup [noerr]
 
 创建一个简单的 LUN。
 
-**条纹**
+**带状线 (stripe)**
 
 创建条带化 LUN。
 
@@ -313,7 +313,7 @@ create tpgroup [noerr]
 
 使用当前有效的*automagic*提示创建 LUN。 有关详细信息，请参阅**automagic**子命令。
 
-**大小**=
+**规格**=
 
 指定 LUN 总大小（mb）。 如果未指定**size =** 参数，则创建的 LUN 将是所有指定驱动器允许的最大大小。
 
@@ -327,7 +327,7 @@ create tpgroup [noerr]
 -   **Tb** 。
 -   **Pb 级**。
 
-**驱动器**=
+**着**=
 
 指定用于创建 LUN 的驱动器的*drive_number* 。 如果未指定**size =** 参数，则创建的 LUN 是所有指定驱动器允许的最大大小。 如果指定**size =** 参数，则提供程序将从指定的驱动器列表中选择驱动器以创建 LUN。 如果可能，提供程序将尝试按指定顺序使用驱动器。
 
@@ -343,7 +343,7 @@ create tpgroup [noerr]
 -   **Tb** 。
 -   **Pb 级**。
 
-**靶**
+**目标**
 
 在当前选定的子系统上创建新的 iSCSI 目标。
 
@@ -390,7 +390,7 @@ delete tpgroup [noerr]
 
 指定在删除 LUN 之前，将清理与 LUN 关联的本地系统上的磁盘。
 
-**靶**
+**目标**
 
 如果没有与目标关联的 Lun，则删除当前选定的 iSCSI 目标。
 
@@ -454,7 +454,7 @@ Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 列出有关当前所选 iSCSI 目标门户的详细信息。
 
-**靶**
+**目标**
 
 列出有关当前所选 iSCSI 目标的详细信息。
 
@@ -555,7 +555,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 **驱动器 =**
 
-指定在创建 LUN 时要使用的驱动器的 \<drive_number >。 如果未指定**size =** 参数，则创建的 LUN 是所有指定驱动器允许的最大大小。 提供程序按尽可能指定的顺序使用驱动器。
+指定创建\<LUN 时要使用的驱动器的 drive_number>。 如果未指定**size =** 参数，则创建的 LUN 是所有指定驱动器允许的最大大小。 提供程序按尽可能指定的顺序使用驱动器。
 
 **noerr**
 
@@ -563,7 +563,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 #### <a name="remarks"></a>备注
 
-必须指定*大小*或 \<驱动器 > 参数。 它们也可以一起使用。
+必须指定*大小*或\<驱动器> 参数。 它们也可以一起使用。
 
 ### <a name="flushcache"></a><a name=BKMK_12></a>flushcache
 
@@ -636,7 +636,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 
 **type**
 
-指定负载平衡策略。 如果未指定类型，则必须指定**path**参数。 类型可以是以下类型之一：
+指定负载平衡策略。 如果未指定类型，则必须指定**path**参数。 Type 可以是下列类型之一：
 
 **故障转移**：使用包含其他路径的主路径作为备份路径。
 
@@ -654,7 +654,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 
 **路径**
 
-指定路径是**主**路径还是具有特定的 \<权重 >。 未指定的任何路径将隐式设置为备份。 列出的任何路径都必须是当前选定的 LUN 路径之一。
+指定路径是**主**路径还是具有特定\<权重>。 未指定的任何路径将隐式设置为备份。 列出的任何路径都必须是当前选定的 LUN 路径之一。
 
 ### <a name="list"></a><a name=BKMK_19></a>成员列表
 
@@ -680,7 +680,7 @@ List {hbaports | iadapters | iportals | providers | subsystems | controllers | p
 
 列出有关当前所选发起程序适配器中的所有 iSCSI 发起程序门户的摘要信息。 当前选定的发起程序门户标有星号（*）。
 
-**providers**
+**接口**
 
 列出有关 VDS 已知的每个提供程序的摘要信息。 当前选定的提供程序以星号（*）标记。
 
@@ -750,7 +750,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 指定指定发起程序适配器中用于登录的可选发起程序门户。
 
-\<标志 >
+\<标志>
 
 由三个字母缩写词标识：
 
@@ -762,7 +762,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 **EDD**：启用数据摘要
 
-### <a name="logout"></a><a name=BKMK_21></a>注销
+### <a name="logout"></a><a name=BKMK_21></a>logout
 
 将指定的 iSCSI 发起程序适配器记录在当前选定的 iSCSI 目标外。
 
@@ -790,11 +790,11 @@ maintenance <object operation> [count=<iteration>]
 
 ##### <a name="parameters"></a>参数
 
-\<对象 >
+\<对象>
 
 指定要对其执行操作的对象的类型。 *对象*类型可以是**子系统**、**控制器**、**端口、驱动器**或**LUN**。
 
-\<操作 >
+\<操作>
 
 指定要执行的维护操作。 *操作*类型可以是**spinup**、 **spindown**、**闪烁**、**嘟嘟声**或**ping**。 必须指定一个*操作*。
 
@@ -814,7 +814,7 @@ name {subsystem | lun | target} [<name>]
 
 #### <a name="parameter"></a>参数
 
-\<名称 >
+\<名称>
 
 指定子系统、LUN 或目标的名称。 名称的长度必须小于64个字符。 如果未提供任何名称，则会删除现有名称（如果有）。
 
@@ -830,9 +830,9 @@ offline <object>
 
 #### <a name="parameter"></a>参数
 
-\<对象 >
+\<对象>
 
-指定要对其执行此操作的对象的类型。 \<对象 >
+指定要对其执行此操作的对象的类型。 \<对象>
 
 类型可以是**子系统**、**控制器**、**驱动器**、 **LUN**或**门户**。
 
@@ -848,9 +848,9 @@ online <object>
 
 #### <a name="parameter"></a>参数
 
-\<对象 >
+\<对象>
 
-指定要对其执行此操作的对象的类型。 \<对象 >
+指定要对其执行此操作的对象的类型。 \<对象>
 
 类型可以是**hbaport**、**子系统**、**控制器**、**驱动器**、 **LUN**或**门户**。
 
@@ -916,7 +916,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 #### <a name="parameter"></a>参数
 
-**tpgroup 门户 =** \<门户 >
+**tpgroup 门户 =** \<门户>
 
 指定要删除的 iSCSI 目标门户。
 
@@ -938,7 +938,7 @@ replace drive=<drive_number>
 
 **驱动器 =**
 
-指定要替换的驱动器的 \<drive_number >。
+指定要\<替换的驱动器 drive_number>。
 
 #### <a name="remarks"></a>备注
 
@@ -976,61 +976,61 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 ##### <a name="parameters"></a>参数
 
-**对象**
+**object**
 
-指定要选择的对象的类型。 > 类型的 \<对象可以是**提供程序**、**子系统**、**控制器**、**驱动器**或**LUN**。
+指定要选择的对象的类型。 \<对象> 类型可以是**提供程序**、**子系统**、**控制器**、**驱动器**或**LUN**。
 
-**hbaport** [\<n >]
+**hbaport** [\<n>]
 
 将焦点设置到指定的本地 HBA 端口。 如果未指定 HBA 端口，则该命令将显示当前所选 HBA 端口（如果有）。 指定无效的 HBA 端口索引将导致未处于焦点的 HBA 端口。 选择 HBA 端口会取消选择任何所选的发起程序适配器和发起程序门户。
 
-**iadapter** [\<n >]
+**iadapter** [\<n>]
 
 将焦点设置到指定的本地 iSCSI 发起程序适配器。 如果未指定发起程序适配器，则该命令将显示当前所选的发起程序适配器（如果有）。 指定无效的发起程序适配器索引会导致不存在焦点发起程序适配器。 选择发起程序适配器会取消选择任何所选 HBA 端口和发起程序门户。
 
-**iportal** [\<n >]
+**iportal** [\<n>]
 
 将焦点设置到所选 iSCSI 发起程序适配器中指定的本地 iSCSI 发起程序门户。 如果未指定发起程序门户，则该命令将显示当前所选的发起程序门户（如果有）。 指定无效的发起方门户索引会导致所选的发起方门户。
 
-**provider** [\<n >]
+**provider** [\<n>]
 
 将焦点设置到指定的提供程序。 如果未指定提供程序，则该命令将显示当前所选的提供程序（如果有）。 指定无效的提供程序索引将导致没有关注的提供程序。
 
-**子系统**[\<n >]
+**子系统**[\<n>]
 
 将焦点设置到指定的子系统。 如果未指定子系统，则该命令将显示具有焦点的子系统（如果有）。 指定无效的子系统索引将导致没有关注的子系统。 选择子系统将隐式选择其关联的提供程序。
 
-**控制器**[\<n >]
+**控制器**[\<n>]
 
 将焦点设置到当前所选子系统中的指定控制器。 如果未指定控制器，则该命令将显示当前所选的控制器（如果有）。 指定无效的控制器索引将导致焦点控制器不存在。 选择控制器会取消选择任何所选控制器端口、驱动器、Lun、目标门户、目标和目标门户组。
 
-**端口**[\<n >]
+**端口**[\<n>]
 
 将焦点设置到当前所选控制器中的指定控制器端口上。 如果未指定端口，则该命令将显示当前所选端口（如果有）。 指定无效的端口索引将导致所选端口无效。
 
-**驱动器**[\<n >]
+**驱动器**[\<n>]
 
 将焦点设置到当前所选子系统中的指定驱动器或物理主轴。 如果未指定驱动器，则该命令将显示当前所选驱动器（如果有）。 指定无效的驱动器索引将导致没有聚焦的驱动器。 选择驱动器将取消选择任何选定的控制器、控制器端口、Lun、目标门户、目标和目标门户组。
 
-**lun** [\<n >]
+**lun** [\<n>]
 
 将焦点设置到当前所选子系统中的指定 LUN。 如果未指定 LUN，则该命令将显示当前所选的 LUN （如果有）。 指定无效的 LUN 索引将导致选定的 LUN。 选择 LUN 会取消选择任何所选的控制器、控制器端口、驱动器、目标门户、目标和目标门户组。
 
-**门户**[\<n >]
+**门户**[\<n>]
 
 将焦点设置到当前所选子系统中的指定 iSCSI 目标门户。 如果未指定目标门户，则该命令将显示当前所选的目标门户（如果有）。 指定无效的目标门户索引将导致选定的目标门户。 选择目标门户会取消选择任何控制器、控制器端口、驱动器、Lun、目标和目标门户组。
 
-**target** [\<n >]
+**target** [\<n>]
 
 将焦点设置到当前所选子系统中的指定 iSCSI 目标。 如果未指定目标，则该命令将显示当前选择的目标（如果有）。 指定无效的目标索引将导致选定的目标无效。 选择目标会取消选择任何控制器、控制器端口、驱动器、Lun、目标门户和目标门户组。
 
-**tpgroup** [\<n >]
+**tpgroup** [\<n>]
 
 在当前选定的 iSCSI 目标内将焦点设置到指定的 iSCSI 目标门户组。 如果未指定目标门户组，则该命令将显示当前所选的目标门户组（如果有）。 指定无效的目标门户组索引将导致未处于焦点的目标门户组。
 
-[\<n >]
+[\<n>]
 
-指定 > 选择 \<对象号。 如果指定的 <object number> 无效，则会清除指定类型的对象的任何现有选择。 如果未指定 <object number>，则显示当前的对象。
+指定> \<要选择的对象编号。 如果指定<object number>的无效，则会清除指定类型的对象的任何现有选择。 如果未<object number>指定，则显示当前的对象。
 
 ### <a name="setflag"></a><a name=BKMK_34></a>setflag
 
@@ -1111,7 +1111,7 @@ unmask LUN {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [
 > [!IMPORTANT]
 > 在运行 "取消屏蔽全部" 命令之前，必须先注销目标。
 
-**内容**
+**无**
 
 指定 LUN 不应可供任何主机访问。
 
@@ -1159,7 +1159,7 @@ diskraid /s <script.txt>
 ```
 diskraid
 ```
-按 Enter。 将显示以下内容：
+按 Enter。 会显示以下内容：
 ```
 Microsoft Diskraid version 5.2.xxxx
 Copyright (©) 2003 Microsoft Corporation
@@ -1169,7 +1169,7 @@ On computer: COMPUTER_NAME
 ```
 select subsystem 0
 ```
-按 Enter。 将显示类似于以下内容的输出：
+按 Enter。 显示了类似下面的输出：
 ```
 Subsystem 0 is now the selected subsystem.
 

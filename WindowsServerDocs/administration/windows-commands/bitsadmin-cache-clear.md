@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 缓存并清除
-description: Windows 命令主题，适用于**bitsadmin 缓存和清除**，这会清除本地缓存。
+title: bitsadmin cache 和 clear
+description: Bitsadmin 缓存的参考主题和用于清除本地缓存的清除命令。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2625268bf2bedc28e0ed5d1bda151c8802ef8d24
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6195bfc28c59fe7609f4a8164fa080ff7f7b977d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850850"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718277"
 ---
-# <a name="bitsadmin-cache-and-clear"></a>bitsadmin 缓存并清除
+# <a name="bitsadmin-cache-and-clear"></a>bitsadmin cache 和 clear
 
 清除本地缓存。
 
@@ -26,14 +26,16 @@ ms.locfileid: "80850850"
 bitsadmin /cache /clear
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例将清除本地缓存。
+清除本地缓存：
 
 ```
-C:\>bitsadmin /cache /clear
+bitsadmin /cache /clear
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 缓存命令](bitsadmin-cache.md)

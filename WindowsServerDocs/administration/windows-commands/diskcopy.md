@@ -1,6 +1,6 @@
 ---
 title: diskcopy
-description: 用于 diskcopy 的 Windows 命令主题，它将源驱动器中软盘的内容复制到目标驱动器中已格式化或未格式化的软盘。
+description: 用于 diskcopy 的参考主题，该主题将源驱动器中软盘的内容复制到目标驱动器中已格式化或未格式化的软盘。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 675694503cab207f05fd6b48e0d17c23196f85d0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b5c9186a539a58ed0d3362ba83d7a3bcedcaabad
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845540"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719471"
 ---
 # <a name="diskcopy"></a>diskcopy
 
 将源驱动器中软盘的内容复制到目标驱动器中已格式化或未格式化的软盘。 如果在没有参数的情况下使用，则**diskcopy**使用源磁盘和目标磁盘的当前驱动器。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 > [!NOTE]
 > 此命令不包含在 Windows 10 中。
@@ -33,10 +33,10 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<Drive1 >|指定包含源磁盘的驱动器。|
-|\<Drive2 >|指定包含目标磁盘的驱动器。|
+|\<Drive1>|指定包含源磁盘的驱动器。|
+|\<Drive2>|指定包含目标磁盘的驱动器。|
 |/v|验证是否已正确复制信息。 此选项会降低复制过程的速度。|
 |/?|在命令提示符下显示帮助。|
 
@@ -83,7 +83,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
     The following table explains each exit code.
     
-    |退出代码|说明|
+    |退出代码|描述|
     |---------|-----------|
     |0|复制操作成功|
     |1|出现非致命读/写错误|
@@ -92,7 +92,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
     To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要将驱动器 B 中的磁盘复制到驱动器 A 中的磁盘，请键入：
 ```

@@ -1,6 +1,6 @@
 ---
 title: dfsrmig
-description: 适用于 dfsrmig 的 Windows 命令主题，用于将 SYSvol 复制从文件复制服务（FRS）迁移到分布式文件系统（DFS）复制，提供有关迁移进度的信息，并修改 active directory 域服务（AD DS）对象以支持迁移。
+description: Dfsrmig 的参考主题：用于将 SYSvol 复制从文件复制服务（FRS）迁移到分布式文件系统（DFS）复制、提供有关迁移进度的信息以及修改 active directory 域服务（AD DS）对象以支持迁移。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d688832169cf216e628fe761f85d708a78103d89
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7a5cac54a1ad96994059f3131b81702136b26aad
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846160"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719539"
 ---
 # <a name="dfsrmig"></a>dfsrmig
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 将 SYSvol 复制从文件复制服务（FRS）迁移到分布式文件系统（DFS）复制，提供有关迁移进度的信息，并修改 active directory 域服务（AD DS）对象以支持迁移。
 
-有关如何使用此命令的示例，请参阅本文档后面的 "[示例](#BKMK_examples)" 一节。
+
 
 ## <a name="syntax"></a>语法
 
@@ -33,7 +33,7 @@ dfsrmig [/SetGlobalState <state> | /GetGlobalState | /GetMigrationState | /creat
 
 ### <a name="parameters"></a>参数
 
-|参数 |说明 | |-----_ |------ | |/SetGlobalState <state> |将域的所需全局迁移状态设置为与*状态*指定的值对应的状态。<p>若要继续进行迁移或回滚进程，请使用此命令来遍历有效状态。 使用此选项，可以通过在 PDC 模拟器的 AD DS 中设置全局迁移状态来启动和控制迁移过程。 如果 PDC 模拟器不可用，则此命令将失败。<p>只能将全局迁移状态设置为稳定状态。 因此，*状态*的有效值为**0** （表示开始状态）、 **1**表示已准备状态、 **2**表示重定向状态和**3**表示已消除状态。<p>迁移到已删除状态的操作是不可逆的，不能从该状态回滚，因此，仅当你完全 committd 使用 SYSvol 复制的 DFS 复制时，才将值**3**用于*状态*。 ||/GetGlobalState |在 PDC 模拟器上运行时，从 AD DS 数据库的本地副本中检索域的当前全局迁移状态。<p>使用此选项可确认设置了正确的全局迁移状态。 只有稳定的迁移状态可以是全局迁移状态，因此， **dfsrmig**命令与 **/GetGlobalState**选项一起报告的结果对应于可通过 **/SetGlobalState**选项设置的状态。<p>只应在 PDC 模拟器上运行带有 **/GetGlobalState**选项的**dfsrmig**命令。 active directory 复制将全局状态复制到域中的其他域控制器，但是，如果在 PDC 模拟器以外的域控制器上使用 **/GetGlobalState**选项运行**dfsrmig**命令，复制延迟会导致不一致。 若要检查 PDC 模拟器以外的域控制器的本地迁移状态，请改用 **/GetMigrationState**选项。 | |/GetMigrationState |检索域中所有域控制器的当前本地迁移状态，并确定这些本地状态是否与当前全局迁移状态匹配。<p>使用此选项确定所有域控制器是否已达到全局迁移状态。 当你使用 **/GetMigrationState**选项时， **dsfrmig**命令的输出指示是否已完成到当前全局状态的迁移，并且它会列出尚未达到当前全局迁移状态的任何域控制器的本地迁移状态。 域控制器的本地迁移状态可能包括尚未达到当前全局迁移状态的域控制器的转换状态。 | |/createGlobalObjects |在 DFS 复制使用的 AD DS 中创建全局对象和设置。<p>不需要在正常的迁移过程中使用此选项，因为 DFS 复制服务会在从启动状态迁移到已准备状态时自动创建这些 AD DS 对象和设置。 使用此选项可以在下列情况下手动创建这些对象和设置：<p>-  在**迁移过程中升级新的只读域控制器**。 在从开始状态迁移到已准备状态时，DFS 复制服务会自动为 DFS 复制创建 AD DS 对象和设置。 如果新的只读域控制器在此转换后升级到域中，但在迁移到已消除状态之前，不会在 AD DS 中创建对应于新激活的只读域控制器的对象，从而导致复制和迁移失败。<br />-在这种情况下，你可以运行**dfsrmig**命令配合 **/createGlobalObjects**选项，以在尚未包含这些对象的任何只读域控制器上手动创建这些对象。 运行此命令不会影响已经具有 DFS 复制服务的对象和设置的域控制器。<p>- **DFS 复制服务的全局设置缺失或已被删除**。 如果特定域控制器缺少这些设置，则从启动状态到已准备状态的迁移将停止，以准备域控制器的转换状态。 在这种情况下，可以将**dfsrmig**命令与 **/createGlobalObjects**选项一起使用，以手动创建设置。 **注意：** 由于只读域控制器的 DFS 复制服务的全局 AD DS 设置是在 PDC 模拟器上创建的，因此，在只读域控制器上的 DFS 复制服务可以使用这些设置之前，这些设置需要从 PDC 仿真器复制到只读域控制器。 由于活动 i 复制延迟，此复制可能需要一段时间。 | |/deleteRoNtfrsMember [< read_only_domain_controller_name >] |删除与指定的只读域控制器对应的 FRS 复制的全局 AD DS 设置，如果未为*read_only_domain_controller_name*指定任何值，则删除所有只读域控制器的 frs 复制的全局 AD DS 设置。<p>不需要在正常的迁移过程中使用此选项，因为在从重定向状态到已删除状态的迁移过程中，DFS 复制服务会自动删除这些 AD DS 设置。 由于只读域控制器无法从 AD DS 中删除这些设置，因此 PDC 模拟器会执行此操作，并且更改最终会在 active directory 复制适用延迟后复制到只读域控制器。<p>仅当在只读域控制器上自动删除失败时，将使用此选项手动删除 AD DS 设置，并在从重定向状态到已消除状态的迁移过程中禁止显示长 ime 的只读域控制器。 | |/deleteRoDfsrMember [< read_only_domain_controller_name >] |删除与指定的只读域控制器对应的 DFS 复制的全局 AD DS 设置，或删除所有只读域控制器的 DFS 复制的全局 AD DS 设置（如果没有为*read_only_domain_controller_name*指定值）。<p>使用此选项，仅当在只读域控制器上自动删除失败时，并且在将迁移从已准备状态回滚到启动状态时，会长时间停止只读域控制器时，才手动删除 AD DS 设置。 | |/? |在命令提示符下显示帮助。 等效于不带任何选项的情况下运行**dfsrmig** 。 |
+|参数 |说明 | |-----_ |------ | |/SetGlobalState <state> |将域的所需全局迁移状态设置为与*状态*指定的值对应的状态。<p>若要继续进行迁移或回滚进程，请使用此命令来遍历有效状态。 使用此选项，可以通过在 PDC 模拟器的 AD DS 中设置全局迁移状态来启动和控制迁移过程。 如果 PDC 模拟器不可用，则此命令将失败。<p>只能将全局迁移状态设置为稳定状态。 因此，*状态*的有效值为**0** （表示开始状态）、 **1**表示已准备状态、 **2**表示重定向状态和**3**表示已消除状态。<p>迁移到已删除状态的操作是不可逆的，不能从该状态回滚，因此，仅当你完全 committd 使用 SYSvol 复制的 DFS 复制时，才将值**3**用于*状态*。 ||/GetGlobalState |在 PDC 模拟器上运行时，从 AD DS 数据库的本地副本中检索域的当前全局迁移状态。<p>使用此选项可确认设置了正确的全局迁移状态。 只有稳定的迁移状态可以是全局迁移状态，因此， **dfsrmig**命令与 **/GetGlobalState**选项一起报告的结果对应于可通过 **/SetGlobalState**选项设置的状态。<p>只应在 PDC 模拟器上运行带有 **/GetGlobalState**选项的**dfsrmig**命令。 active directory 复制将全局状态复制到域中的其他域控制器，但是，如果在 PDC 模拟器以外的域控制器上使用 **/GetGlobalState**选项运行**dfsrmig**命令，复制延迟会导致不一致。 若要检查 PDC 模拟器以外的域控制器的本地迁移状态，请改用 **/GetMigrationState**选项。 | |/GetMigrationState |检索域中所有域控制器的当前本地迁移状态，并确定这些本地状态是否与当前全局迁移状态匹配。<p>使用此选项确定所有域控制器是否已达到全局迁移状态。 当你使用 **/GetMigrationState**选项时， **dsfrmig**命令的输出指示是否已完成到当前全局状态的迁移，并且它会列出尚未达到当前全局迁移状态的任何域控制器的本地迁移状态。 域控制器的本地迁移状态可能包括尚未达到当前全局迁移状态的域控制器的转换状态。 | |/createGlobalObjects |在 DFS 复制使用的 AD DS 中创建全局对象和设置。<p>不需要在正常的迁移过程中使用此选项，因为 DFS 复制服务会在从启动状态迁移到已准备状态时自动创建这些 AD DS 对象和设置。 使用此选项可以在下列情况下手动创建这些对象和设置：<p>-  **迁移期间会升级新的只读域控制器**。 在从开始状态迁移到已准备状态时，DFS 复制服务会自动为 DFS 复制创建 AD DS 对象和设置。 如果新的只读域控制器在此转换后升级到域中，但在迁移到已消除状态之前，不会在 AD DS 中创建对应于新激活的只读域控制器的对象，从而导致复制和迁移失败。<br />-在这种情况下，你可以运行**dfsrmig**命令配合 **/createGlobalObjects**选项，以在尚未包含这些对象的任何只读域控制器上手动创建这些对象。 运行此命令不会影响已经具有 DFS 复制服务的对象和设置的域控制器。<p>- **DFS 复制服务的全局设置缺失或已被删除**。 如果特定域控制器缺少这些设置，则从启动状态到已准备状态的迁移将停止，以准备域控制器的转换状态。 在这种情况下，可以将**dfsrmig**命令与 **/createGlobalObjects**选项一起使用，以手动创建设置。 **注意：** 由于只读域控制器的 DFS 复制服务的全局 AD DS 设置是在 PDC 模拟器上创建的，因此，在只读域控制器上的 DFS 复制服务可以使用这些设置之前，这些设置需要从 PDC 仿真器复制到只读域控制器。 由于活动 i 复制延迟，此复制可能需要一段时间。 | |/deleteRoNtfrsMember [<read_only_domain_controller_name>] |删除与指定的只读域控制器对应的 FRS 复制的全局 AD DS 设置，如果未为*read_only_domain_controller_name*指定任何值，则删除所有只读域控制器的 frs 复制的全局 AD DS 设置。<p>不需要在正常的迁移过程中使用此选项，因为在从重定向状态到已删除状态的迁移过程中，DFS 复制服务会自动删除这些 AD DS 设置。 由于只读域控制器无法从 AD DS 中删除这些设置，因此 PDC 模拟器会执行此操作，并且更改最终会在 active directory 复制适用延迟后复制到只读域控制器。<p>仅当在只读域控制器上自动删除失败时，将使用此选项手动删除 AD DS 设置，并在从重定向状态到已消除状态的迁移过程中禁止显示长 ime 的只读域控制器。 | |/deleteRoDfsrMember [<read_only_domain_controller_name>] |删除与指定的只读域控制器对应的 DFS 复制的全局 AD DS 设置，或删除所有只读域控制器的 DFS 复制的全局 AD DS 设置（如果没有为*read_only_domain_controller_name*指定值）。<p>使用此选项，仅当在只读域控制器上自动删除失败时，并且在将迁移从已准备状态回滚到启动状态时，会长时间停止只读域控制器时，才手动删除 AD DS 设置。 | | /? |在命令提示符下显示帮助。 等效于不带任何选项的情况下运行**dfsrmig** 。 |
 
 ## <a name="remarks"></a>备注
 - dfsrmig 是 DFS 复制服务的迁移工具，与 DFS 复制服务一起安装。
@@ -42,7 +42,7 @@ dfsrmig [/SetGlobalState <state> | /GetGlobalState | /GetMigrationState | /creat
 - 你可以在任何域控制器上运行**dfsrmig**命令，但创建或操作 AD DS 对象的操作仅允许在可读写功能的域控制器上（不是在只读域控制器上）。
 - 如果运行不带任何选项的**dfsrmig** ，将在命令提示符下显示帮助。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 若要将全局迁移状态设置为 "已准备好（**1**）" 并启动到准备状态的迁移或回滚，请键入：
  ```
  dfsrmig /SetGlobalState 1

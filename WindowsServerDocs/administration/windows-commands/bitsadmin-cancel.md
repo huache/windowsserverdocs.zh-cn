@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cancel
-description: 用于**bitsadmin cancel**的 Windows 命令主题，它会从传输队列中删除作业并删除与该作业关联的所有临时文件。
+description: Bitsadmin cancel 命令的参考主题，此命令从传输队列中删除作业并删除与该作业关联的所有临时文件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c2bdeef824bc269671cc5ae926fb77cd5726c58
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 95fefbc4a9731c2ccbac22adc27f8231a7f36138
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850830"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718255"
 ---
 # <a name="bitsadmin-cancel"></a>bitsadmin cancel
 
@@ -28,18 +28,20 @@ bitsadmin /cancel <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| 作业 | 作业的显示名称或 GUID。 |
+| 作业 (job) | 作业的显示名称或 GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例移除 *myDownloadJob* 从传输队列的作业。
+从传输队列中删除*myDownloadJob*作业：
 
 ```
-C:\>bitsadmin /cancel myDownloadJob
+bitsadmin /cancel myDownloadJob
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 命令](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: add
-description: 用于 "**添加**" 的 Windows 命令主题，它将卷添加到要进行卷影复制的卷集中，或将别名添加到别名环境。
+description: 添加命令的参考主题，它将卷添加到要进行卷影复制的卷集，或将别名添加到别名环境。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9895082cc10223fd08cff6916c20c3af5613e947
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9b621a3061c4e3366085c5cc44f91f26dd33d4e3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851340"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719009"
 ---
 # <a name="add"></a>add
 
@@ -23,25 +23,23 @@ ms.locfileid: "80851340"
 > [!NOTE]
 > 在创建卷影副本之前，不会将别名添加到别名环境中。 应立即使用 "**添加别名**" 添加所需的别名。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
-
 ## <a name="syntax"></a>语法
 
 ```
-add 
-add volume <Volume> [provider <ProviderID>] 
-add alias <AliasName> <AliasValue>
+add
+add volume <volume> [provider <providerid>]
+add alias <aliasname> <aliasvalue>
 ```
 
-## <a name="add-subcommands"></a>添加子命令
+### <a name="parameters"></a>参数
 
-| 命令 | 说明 |
+| 参数 | 描述 |
 | ---------- | ----------- |
-| 卷 | 将卷添加到卷影副本集，这是要进行卷影复制的卷集。 有关语法和参数，请参阅[Add volume](add-volume.md) 。 |
-| Alias — 别名 | 向别名环境添加给定的名称和值。 请参阅为语法和参数[添加别名](add-alias.md)。 |
-| `/?` | 在命令行中显示帮助。 |
+| 卷 | 将卷添加到卷影副本集，这是要进行卷影复制的卷集。 有关语法和参数，请参阅[add volume](add-volume.md) 。 |
+| alias | 向别名环境添加给定的名称和值。 请参阅为语法和参数[添加别名](add-alias.md)。 |
+| /? | 在命令行中显示帮助。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要显示添加的卷和当前在环境中的别名，请键入：
 

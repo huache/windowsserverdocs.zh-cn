@@ -1,6 +1,6 @@
 ---
 title: dfsdiag
-description: 适用于 dfsdiag 的 Windows 命令主题，它提供 DFS 命名空间的诊断信息。
+description: Dfsdiag 的参考主题，它提供 DFS 命名空间的诊断信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c895dabbbafbe8ea253920d3bc6de17f42918e6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2d5a9b147994628ccad6a723311decbccbe82ec6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846190"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719544"
 ---
 # <a name="dfsdiag"></a>dfsdiag
 
@@ -29,7 +29,7 @@ dfsdiag [ /TestDCs [/Domain:<Domain name>]| /TestSites </Machine:<server name>| 
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |[Dfsdiag TestDCs](dfsdiag-testdcs.md)|检查域控制器配置。|
 |[Dfsdiag TestSites](dfsdiag-testsites.md)|检查站点关联。|

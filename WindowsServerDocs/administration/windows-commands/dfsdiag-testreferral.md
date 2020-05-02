@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestReferral
-description: 适用于 dfsdiag TestReferral 的 Windows 命令主题，用于检查分布式文件系统（DFS）引用。
+description: Dfsdiag TestReferral 的参考主题，用于检查分布式文件系统（DFS）引用。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d5c0a75d557d816ac9e19a1e22b3273195b93f53
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6b4c616181d367a8a95efe6484f74af0ff88cc5f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846241"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719571"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag TestReferral
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 通过执行以下测试检查分布式文件系统（DFS）引用：
 
@@ -40,12 +40,12 @@ dfsdiag /TestReferral /DFSpath:<DFS path for getting referrals> [/Full]
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------|--------|
-| /DFSpath：<path for getting referrals>|此 DFS 路径可以是以下项之一：<p>-   \(空白\)：测试受信任的域。<br />\\域 \\-   ：域控制器的引用。<br />-   \\\\域\\SYSvol： SYSvol 引用。<br />\\NETLOGON 中的 -   \\\\域名： NETLOGON 引用。<br />-   \\\\<Domain or server>\\<Namespace Root>：命名空间根路径引用。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>： DFS 文件夹 \(链接\) 引用。|
-|/Full|仅适用于域和根引用。 验证注册表和 active directory 域服务之间的站点关联信息的一致性 \(AD DS\)。|
+| /DFSpath:<path for getting referrals>|此 DFS 路径可以是以下项之一：<p>-   \(空\)：测试受信任的域。<br />-   \\\\域：域控制器的引用。<br />-   \\\\域\\SYSvol： SYSvol 引用。<br />-   \\\\Netlogon 中\\的域名： netlogon 引用。<br />-   \\\\<Domain or server>\\<Namespace Root>：命名空间根路径引用。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>： DFS 文件夹\(链接\)引用。|
+|/Full|仅适用于域和根引用。 验证注册表和 active directory 域服务\(AD DS\)之间的站点关联信息一致性。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 ```
 dfsdiag /TestReferral /DFSpath:\\Contoso.com\MyNamespace

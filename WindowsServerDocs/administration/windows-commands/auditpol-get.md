@@ -1,6 +1,6 @@
 ---
 title: auditpol 获取
-description: 用于**auditpol get**的 Windows 命令主题，它检索系统策略、每用户策略、审核选项和审核安全描述符对象。
+description: 用于检索系统策略、每用户策略、审核选项和审核安全描述符对象的 auditpol get 命令的参考主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe2b1bd060f128e39fa1c687ec963c964798fe1b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 859ea9e2e42af0fe7f34f4e378166685f8316b9e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851190"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719139"
 ---
 # <a name="auditpol-get"></a>auditpol 获取
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server，2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 检索系统策略、每个用户的策略、审核选项和审核安全描述符对象。
+
+若要对*每个用户*和*系统*策略执行*get*操作，您必须对安全描述符中的该对象集具有 "**读取**" 权限。 如果有 "**管理审核和安全日志**（SeSecurityPrivilege）" 用户权限，还可以执行 "*获取*操作"。 但是，此权限允许执行整体*get*操作所不需要的其他访问权限。
 
 ## <a name="syntax"></a>语法
 
 ```
-auditpol /get 
+auditpol /get
 [/user[:<username>|<{sid}>]]
 [/category:*|<name>|<{guid}>[,:<name|<{guid}> ]]
 [/subcategory:*|<name>|<{guid}>[,:<name|<{guid}> ]]
@@ -36,7 +38,7 @@ auditpol /get
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /user | 显示要为其查询每用户审核策略的安全主体。 必须指定/category 或/subcategory 参数。 用户可以指定为安全标识符（SID）或名称。 如果未指定用户帐户，则查询系统审核策略。 |
 | /category | 由全局唯一标识符（GUID）或名称指定的一个或多个审核类别。 可以使用星号（*）指示应查询所有审核类别。 |
@@ -46,12 +48,11 @@ auditpol /get
 | /r | 以逗号分隔值（CSV）格式显示输出。 |
 | /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>备注
+### <a name="remarks"></a>备注
 
 所有类别和子类别都可以通过用引号（"）括起来的 GUID 或名称来指定。 可以通过 SID 或名称指定用户。
-对于 "每用户策略" 和 "系统策略" 的所有 "获取" 操作，你必须对安全描述符中的该对象集具有 "读取" 权限。 还可以通过拥有 "**管理审核和安全日志**（SeSecurityPrivilege）" 用户权限来执行 get 操作。 但是，此权限允许执行 get 操作所不需要的其他访问权限。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要检索来宾帐户的每用户审核策略并显示系统、详细跟踪和对象访问类别的输出，请键入：
 
@@ -60,7 +61,7 @@ auditpol /get /user:{S-1-5-21-1443922412-3030960370-963420232-51} /category:Syst
 ```
 
 > [!NOTE]
-> 此命令在两种情况下很有用。 监视特定用户帐户是否有可疑活动时，可以使用/get 命令，通过使用包含策略启用其他审核来检索特定类别中的结果。 或者，如果某个帐户的审核设置记录了大量但多余的事件，则可以使用/get 命令筛选出该帐户的无关事件，其中包含排除策略。 若要查看所有类别的列表，请使用 auditpol/list/category 命令。
+> 此命令在两种情况下很有用。 1）监视特定用户帐户是否有可疑活动时，可以使用`/get`命令来通过使用包含策略来启用其他审核来检索特定类别中的结果。 2）如果帐户的审核设置正在记录大量但多余的事件，则可以使用`/get`命令筛选出该帐户的无关事件，其中包含排除策略。 若要查看所有类别的列表，请`auditpol /list /category`使用命令。
 
 若要检索类别和特定子类别的每用户审核策略，以在来宾帐户的系统类别下报告该子类别的非独占和独占设置，请键入：
 
@@ -105,4 +106,7 @@ auditpol /get /option:CrashOnAuditFail /r
 ```
 
 ## <a name="additional-references"></a>其他参考
+
 - [命令行语法项](command-line-syntax-key.md)
+
+- [auditpol 命令](auditpol.md)

@@ -1,6 +1,6 @@
 ---
 title: 活动
-description: "\"**活动**\" 的 \"Windows 命令\" 主题（在基本磁盘上）会将焦点标记为 \"活动\"。"
+description: 基本磁盘上的活动命令的参考主题将焦点标记为活动分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42f2e0d367344355e8f9a570f37cfbdc5dfc4590
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 997c57b93434738c87396812c9b5e5b12d7a8e89
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851370"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719018"
 ---
 # <a name="active"></a>活动
 
-在基本磁盘上，将选中的分区标记为活动的。
+在基本磁盘上，将选中的分区标记为活动的。 只能将分区标记为活动分区。 必须选择分区，此操作才能成功。 使用 "**选择分区**" 命令可选择分区，并将焦点移动到该分区。
 
 > [!CAUTION]
-> DiskPart 只验证分区是否能够包含操作系统启动文件。 DiskPart 不检查分区内容。 如果错误地将某个分区标记为活动，并且它不包含操作系统启动文件，则您的计算机可能无法启动。
+> DiskPart 仅通知基本输入/输出系统（BIOS）或可扩展固件接口（EFI）分区或卷是有效的系统分区或系统卷，并且可以包含操作系统启动文件。 DiskPart 不检查分区内容。 如果错误地将某个分区标记为活动，并且它不包含操作系统启动文件，则您的计算机可能无法启动。
 
 ## <a name="syntax"></a>语法
 
 ```
 active
-```- 
+```
 
-## Remarks
+## <a name="examples"></a>示例
 
--   This informs the basic input/output system (BIOS) or Extensible Firmware Interface (EFI) that the partition or volume is a valid system partition or system volume.
-
--   Only partitions can be marked as active.
-
--   A partition must be selected for this operation to succeed. Use the **select partition** command to select a partition and shift the focus to it.
-
-## <a name=BKMK_examples></a>Examples
-
-To mark the partition with focus as the active partition, type:
+若要将具有焦点的分区标记为活动分区，请键入：
 
 ```
-活动
+active
 ```
-## Additional References
 
-- [Command-Line Syntax Key](command-line-syntax-key.md)
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)
+
+- [选择分区命令](select-partition.md)

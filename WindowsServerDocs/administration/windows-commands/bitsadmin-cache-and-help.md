@@ -1,6 +1,6 @@
 ---
-title: bitsadmin 缓存和帮助
-description: Windows 命令主题，适用于**bitsadmin 缓存和帮助**，其中显示了**缓存**交换机的命令行用法。
+title: bitsadmin cache 和 help
+description: Bitsadmin cache 和 help 命令的参考主题，其中显示了**缓存**交换机的命令行用法。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c636210d9c4631bd82028e681274e67d16a81931
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79d8dd2ce5af1e1160692f13974c56842fb163cd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850910"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718352"
 ---
-# <a name="bitsadmin-cache-and-help"></a>bitsadmin 缓存和帮助
+# <a name="bitsadmin-cache-and-help"></a>bitsadmin cache 和 help
 
 显示**缓存**开关的命令行用法。
 
@@ -26,9 +26,9 @@ ms.locfileid: "80850910"
 bitsadmin /cache /help
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
-以下命令显示**缓存**开关的命令行帮助。
+显示**缓存**开关的命令行帮助。
 
 ```
 bitsadmin /cache /help
@@ -37,3 +37,5 @@ bitsadmin /cache /help
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [bitsadmin 缓存命令](bitsadmin-cache.md)

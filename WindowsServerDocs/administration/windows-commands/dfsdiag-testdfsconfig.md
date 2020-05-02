@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestDFSConfig
-description: 适用于 dfsdiag TestDFSConfig 的 Windows 命令主题，用于检查分布式文件系统（DFS）命名空间的配置。
+description: Dfsdiag TestDFSConfig 的参考主题，用于检查分布式文件系统（DFS）命名空间的配置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffb75ba26b4ed90dbf5c8bfda80f4a81f986e46a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 057b0662fddb7148837be16380d190cdb37382c5
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846330"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719590"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 通过执行以下操作检查分布式文件系统（DFS）命名空间的配置：  
   
@@ -42,11 +42,11 @@ dfsdiag /TestDFSConfig /DFSRoot:<namespace>
   
 #### <a name="parameters"></a>参数  
   
-|       参数       |               说明               |
+|       参数       |               描述               |
 |-----------------------|-----------------------------------------|
-| /DFSRoot：`<namespace>` | 要诊断的命名空间（DFS 根目录）。 |
+| /DFSRoot:`<namespace>` | 要诊断的命名空间（DFS 根目录）。 |
   
-## <a name="examples"></a><a name=BKMK_Examples></a>示例  
+## <a name="examples"></a>示例  
   
 ```  
 dfsdiag /TestDFSConfig /DFSRoot:\\Contoso.com\MyNamespace  

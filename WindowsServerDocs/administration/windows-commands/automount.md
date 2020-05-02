@@ -1,6 +1,6 @@
 ---
 title: automount
-description: Windows 命令的自动**装载**功能，启用或禁用自动装载功能。
+description: 用于启用或禁用自动装载功能的自动装载命令的参考主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,57 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2eccc44add6c0e0a5735282a216c07da7a0038ee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a3ff8782b2110dd1b8039477c0b748dc4ab8f44
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851090"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718728"
 ---
 # <a name="automount"></a>automount
 
-启用或禁用自动装载功能。 如果启用（默认设置），则在将新的基本卷或动态卷添加到系统中时，Windows 会自动为其安装文件系统，然后将驱动器号分配给该卷。
+适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+
+- [命令行语法项](command-line-syntax-key.md)
+
+> [!IMPORTANT]
+> 在存储区域网络（SAN）配置中，禁用自动装载会阻止 Windows 自动将驱动器号装入或分配给系统可以看到的任何新基本卷。
+
+## <a name="syntax"></a>语法
+
+自动装载 [{enable | disable | 推移}] [noerr]
+
+### <a name="parameters"></a>参数
+
+| 参数 | 描述 |
+| --------- | ----------- |
+| enable | 使 Windows 能够自动挂载添加到系统的新基本卷和动态卷，并为其分配驱动器号。 |
+| disable | 阻止 Windows 自动安装添加到系统中的任何新基本卷和动态卷。<p>**注意**：禁用自动装载可能导致故障转移群集无法通过验证配置向导的存储部分。 |
+| scrub | 删除不再位于系统中的卷的卷装入点目录和注册表设置。 该操作防止自动装入已经位于系统中的卷，并防止在其重新添加到系统时给定以前的卷装入点。 |
+| noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
+
+## <a name="examples"></a>示例
+
+若要查看是否已启用自动装载功能，请在 diskpart 命令中键入以下命令：
+
+```
+automount
+```
+
+若要启用自动装载功能，请键入：
+
+```
+automount enable
+```
+
+若要禁用自动装载功能，请键入：
+
+```
+automount disable
+```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [使用文件系统](https://go.microsoft.com/fwlink/?LinkId=4509)
+- [diskpart 命令](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc770877(v%3dws.11))

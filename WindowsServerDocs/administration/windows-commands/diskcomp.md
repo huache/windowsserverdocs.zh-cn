@@ -1,6 +1,6 @@
 ---
 title: diskcomp
-description: 适用于 diskcomp 的 Windows 命令主题，用于比较两个软盘的内容。
+description: Diskcomp 的参考主题，它比较两个软盘的内容。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e36e644616e25659c1a2a5ca684e975fd06fc19f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e1b15e9b6669a22ac95693e635bae1642c307e09
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845550"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719487"
 ---
 # <a name="diskcomp"></a>diskcomp
 
 比较两个软盘的内容。 如果在没有参数的情况下使用，则**diskcomp**将使用当前驱动器来比较两个磁盘。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
 
 ## <a name="syntax"></a>语法
 
@@ -30,10 +29,10 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|\<Drive1 >|指定包含其中一张软盘的驱动器。|
-|\<Drive2 >|指定包含其他软盘的驱动器。|
+|\<Drive1>|指定包含其中一张软盘的驱动器。|
+|\<Drive2>|指定包含其他软盘的驱动器。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -94,7 +93,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   下表说明了每个退出代码。  
 
-  |退出代码|说明|
+  |退出代码|描述|
   |---------|-----------|
   |0|磁盘相同|
   |1|发现差异|
@@ -103,7 +102,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   若要处理**diskcomp**返回的退出代码，可以在批处理程序的**if**命令行中使用 ERRORLEVEL 环境变量。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 如果计算机只有一个软盘驱动器（例如驱动器 A），并且想要比较两个磁盘，请键入：
 ```
@@ -111,7 +110,7 @@ diskcomp a: a:
 ```
 **Diskcomp**会根据需要提示插入每个磁盘。
 
-下面的示例说明如何在**if**命令行中使用 ERRORLEVEL 环境变量的批处理程序中处理**diskcomp**退出代码：
+为了说明如何**处理在 diskcomp 命令行**上使用 ERRORLEVEL 环境变量的批处理程序中的**diskcomp**退出代码：
 ```
 rem Checkout.bat compares the disks in drive A and B 
 echo off 
