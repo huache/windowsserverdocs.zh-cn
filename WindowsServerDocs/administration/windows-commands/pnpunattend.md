@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c4836665946b39acdacf4c204c6e79fc2d8507bd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 569b879caf29aac6d1592d822072f35021cec9d3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837530"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723306"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
-审核计算机上的设备驱动程序，执行无人参与的驱动程序安装，或者在不安装的情况下搜索驱动程序，还可以在命令行中报告结果。 使用此命令为特定硬件设备指定特定驱动程序的安装。 请参阅备注。
+审核计算机上的设备驱动程序，执行无人参与的驱动程序安装，或者在不安装的情况下搜索驱动程序，还可以在命令行中报告结果。 使用此命令为特定硬件设备指定特定驱动程序的安装。 请参阅“备注”。
 
 ## <a name="syntax"></a>语法
 
@@ -28,9 +28,9 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|auditSystem|指定联机驱动程序安装。</br>必需，但在运行**pnpunattend**时，无论是 **/help**还是 **/？** 参数。|
+|auditSystem|指定联机驱动程序安装。</br>必需，但在运行**pnpunattend**时，无论是 **/help**还是 **/？** 个参数。|
 |/s|可选。 指定在不安装的情况下搜索驱动程序。|
 |/L|可选。 指定在命令提示符中显示此命令的日志信息。|
 |/?|可选。 在命令提示符下显示此命令的帮助。|
@@ -43,12 +43,12 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 2. 下载并提取设备的驱动程序包。 将包含操作系统版本 INF 文件的子文件夹的内容复制到所创建的视频文件夹中的所有子文件夹。 例如，将视频驱动程序文件复制到 C:\Drivers\Video。
 3. 将系统环境路径变量添加到步骤1中创建的文件夹。例如， **C:\Drivers\Video**。
 4. 创建以下注册表项，然后为创建的**DriverPaths**键将**值数据**设置为**1**。
-5. 对于 Windows®7导航注册表路径： **HKEY_LOCAL_Machine \Software\microsoft\windows NT\CurrentVersion\\** ，然后创建密钥： **UnattendSettings\PnPUnattend\DriverPaths\\**
-6. 对于 Windows Vista，导航到注册表路径： **HK_LM \Software\microsoft\windows NT\CurrentVersion\\** ，然后创建密钥 = **\UnattendSettings\PnPUnattend\DriverPaths**。
+5. 对于 Windows®7导航注册表路径： **HKEY_LOCAL_Machine \software\microsoft\windows NT\CurrentVersion\\**，然后创建密钥： **UnattendSettings\PnPUnattend\DriverPaths\\ **
+6. 对于 Windows Vista，导航到注册表路径： **HK_LM \software\microsoft\windows NT\CurrentVersion\\**，然后创建密钥 = **\UnattendSettings\PnPUnattend\DriverPaths**。
 
 ## <a name="examples"></a>示例
 
-下面的示例命令演示了如何使用**PNPUnattend**来审核计算机的可能的驱动程序更新，然后将发现报告给命令提示符。
+To 命令显示了如何使用**PNPUnattend**审核计算机的可能的驱动程序更新，然后将发现报告给命令提示符。
 
 ```
 pnpunattend auditsystem /s /l 

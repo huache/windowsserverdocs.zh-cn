@@ -1,6 +1,6 @@
 ---
 title: manage-bde 保护程序
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,25 +9,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 1a2e2c851ec9bc93ec434a35f14c6f92ec831876
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e01049a5fb3dc419e219fe4ec8b11dcdc790f919
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839950"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724111"
 ---
 # <a name="manage-bde-protectors"></a>manage-bde：保护程序
 
->适用于：Windows Server（半年频道）、Windows Server 2016
+> 适用于：Windows Server（半年频道）、Windows Server 2016
 
-管理用于 BitLocker 加密密钥的保护方法。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+管理用于 BitLocker 加密密钥的保护方法。
 ## <a name="syntax"></a>语法
 ```
 manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup}] <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 #### <a name="parameters"></a>参数
 
-|   参数   |                                                                                                                                                                                           说明                                                                                                                                                                                            |
+|   参数   |                                                                                                                                                                                           描述                                                                                                                                                                                            |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     -get      |                                                                                                                                            显示在驱动器上启用的所有密钥保护方法，并提供其类型和标识符（ID）。                                                                                                                                             |
 |     -添加      |                                                                                                                                   添加使用其他[add 参数](manage-bde-protectors.md#BKMK_addprotectors)指定的密钥保护方法。                                                                                                                                    |
@@ -50,7 +50,7 @@ manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <Nume
 [{-?|/?}] [{-help|-h}]
 ```
 
-|          参数           |                                                                                                                                                                                   说明                                                                                                                                                                                   |
+|          参数           |                                                                                                                                                                                   描述                                                                                                                                                                                   |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           <Drive>            |                                                                                                                                                                 表示驱动器号后跟一个冒号。                                                                                                                                                                  |
 |      -ms-fve-recoverypassword       |                                                                                                                                    添加数字密码保护程序。 你还可以使用 **-rp**作为此命令的缩写形式。                                                                                                                                     |
@@ -78,13 +78,13 @@ manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|ce
 [-id <KeyProtectorID>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
-|       参数        |                                                                              说明                                                                               |
+|       参数        |                                                                              描述                                                                               |
 |------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        <Drive>         |                                                             表示驱动器号后跟一个冒号。                                                             |
 |         -type          |                               标识要删除的密钥保护程序。 你还可以使用 **-t**作为此命令的缩写形式。                               |
 |    ms-fve-recoverypassword    |                                                 指定应删除任何恢复密码密钥保护程序。                                                 |
 |      externalkey       |                                        指定应删除与驱动器关联的任何外部密钥保护程序。                                         |
-|      证书       |                                       指定应删除与驱动器关联的任何证书密钥保护程序。                                       |
+|      证书 (certificate)       |                                       指定应删除与驱动器关联的任何证书密钥保护程序。                                       |
 |          tpm           |                                        指定应删除与驱动器关联的任何仅 TPM 密钥保护程序。                                         |
 |    tpmandstartupkey    |                                指定应删除与驱动器关联的任何基于 TPM 和启动密钥保护程序的密钥保护程序。                                |
 |       tpmandpin        |                                    指定应删除与驱动器关联的任何基于 TPM 和 PIN 的密钥保护程序。                                    |
@@ -103,7 +103,7 @@ manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|ce
 manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
-|   参数   |                                                                                                                                                                                                                   说明                                                                                                                                                                                                                    |
+|   参数   |                                                                                                                                                                                                                   描述                                                                                                                                                                                                                    |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    <Drive>    |                                                                                                                                                                                                  表示驱动器号后跟一个冒号。                                                                                                                                                                                                  |
 |  RebootCount  | 从 Windows 8 开始，指定对操作系统卷的保护已挂起，并将在重新启动 Windows 后恢复 RebootCount 参数中指定的次数。 指定0则无限期挂起保护。 如果未指定此参数，则重新启动 Windows 时，BitLocker 保护将自动恢复。 还可以使用 **-rc**作为此命令的缩写形式。 |
@@ -112,24 +112,24 @@ manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-comp
 |   -? 或 /?    |                                                                                                                                                                                                    在命令提示符下显示 brief help。                                                                                                                                                                                                    |
 |  -help 或-h  |                                                                                                                                                                                                  在命令提示符下显示完整的帮助。                                                                                                                                                                                                   |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
-以下示例演示了如何使用 **-保护程序**命令将证书文件标识的证书密钥保护程序添加到驱动器 E。
+## <a name="examples"></a>示例
+为了说明如何使用 **-保护程序**命令将证书文件标识的证书密钥保护程序添加到驱动器 E。
 ```
 manage-bde  -protectors  -add E: -certificate  -cf c:\File Folder\Filename.cer
 ```
-下面的示例演示如何使用 **-保护程序**命令将由域和用户名标识的**adaccountorgroup**密钥保护程序添加到驱动器 E。
+为了说明如何使用 **-保护程序**命令将由域和用户名标识的**adaccountorgroup**密钥保护程序添加到驱动器 E。
 ```
 manage-bde  -protectors  -add E: -sid DOMAIN\user
 ```
-以下示例说明了如何使用**保护**程序命令禁用保护，直到计算机重新启动3次。
+为了说明如何使用**保护**程序命令禁用保护，直到计算机重新启动3次。
 ```
 manage-bde  -protectors  -disable C: -rc 3
 ```
-下面的示例演示如何使用 **-保护程序**命令删除驱动器 C 上的所有基于 TPM 和启动密钥的保护程序。
+介绍如何使用 **-保护程序**命令删除驱动器 C 上的所有基于 TPM 和启动密钥的保护程序。
 ```
 manage-bde  -protectors -delete C: -type tpmandstartupkey
 ```
-下面的示例演示如何使用 **-保护程序**命令将驱动器 C 的所有恢复信息备份到 AD DS。
+为了说明如何使用 **-保护程序**命令将驱动器 C 的所有恢复信息备份到 AD DS。
 ```
 manage-bde  -protectors  -adbackup C:
 ```

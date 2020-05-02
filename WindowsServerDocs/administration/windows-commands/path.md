@@ -1,5 +1,5 @@
 ---
-title: 路径
+title: path
 description: 了解如何设置 PATH 环境变量。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb77cac3871dcf4a411638409de68d038a317d24
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 52d4a99d21574f9cae3120201dcd4db0cd9a2202
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837710"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723376"
 ---
-# <a name="path"></a>路径
+# <a name="path"></a>path
 
 
 
 设置 PATH 环境变量（用于搜索可执行文件的目录集）中的命令路径。 如果在没有参数的情况下使用，则**path**显示当前命令路径。
 
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -33,10 +33,10 @@ path ;
 
 ### <a name="parameters"></a>参数
 
-|     参数     |                                                                                                     说明                                                                                                      |
+|     参数     |                                                                                                     描述                                                                                                      |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<驱动器 >：]<Path> |                                                                            指定要在命令路径中设置的驱动器和目录。                                                                             |
-|         ；         | 分隔命令路径中的目录。 如果在没有其他参数的情况下使用，**则为;** 将从 PATH 环境变量中清除现有命令路径，并指示 cmd.exe 仅在当前目录中进行搜索。 |
+| [\<驱动器>：]<Path> |                                                                            指定要在命令路径中设置的驱动器和目录。                                                                             |
+|         ;         | 分隔命令路径中的目录。 如果在没有其他参数的情况下使用，**则为;** 将从 PATH 环境变量中清除现有命令路径，并指示 cmd.exe 仅在当前目录中进行搜索。 |
 |      通道       |                                                         将命令路径追加到 PATH 环境变量中列出的现有目录集。                                                         |
 |        /?         |                                                                                         在命令提示符下显示帮助。                                                                                         |
 

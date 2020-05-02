@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c9e03b45d889bcac87bd3e533ab69c7a07be74ee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 70d10267e6b5f77c9cc32ea29f222e730b1182d1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837550"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723313"
 ---
 # <a name="ping"></a>ping
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 **Ping**命令通过发送 Internet 控制消息协议（ICMP）回显请求消息来验证与另一台 tcp/ip 计算机的 IP 级连接。 将显示相应的回响回复消息以及往返时间。 ping 是用于排查连接性、可访问性和名称解析的主要 TCP/IP 命令。 使用不带参数的**ping**显示帮助。
 
@@ -30,12 +30,12 @@ ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] 
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|/t|指定 ping 继续向目标发送回显请求消息，直到中断。 若要中断和显示统计信息，请按 CTRL + break。 若要中断和退出**ping**，请按 CTRL + C。|
+|/t |指定 ping 继续向目标发送回显请求消息，直到中断。 若要中断和显示统计信息，请按 CTRL + break。 若要中断和退出**ping**，请按 CTRL + C。|
 |/a|指定对目标 IP 地址执行反向名称解析。 如果此操作成功，则 ping 将显示相应的主机名。|
 |/n \<计数\>|指定发送的回送请求消息数。 默认值为 4。|
-|/l \<大小\>|指定发送的回响请求消息中的数据字段的长度（以字节为单位）。 默认值为32。 最大大小为65527。|
+|/l \<Size\>|指定发送的回响请求消息中的数据字段的长度（以字节为单位）。 默认值为 32。 最大大小为65527。|
 |/f|指定发送回显请求消息时，将 IP 标头中的 "不分段" 标志设置为1（仅在 IPv4 上提供）。 指向目标的路径中的路由器无法对 echo 请求消息进行分段。 此参数可用于排查路径最大传输单元（PMTU）问题。|
 |/I \<TTL\>|指定发送的回响请求消息的 IP 标头中的 TTL 字段的值。 默认值为主机的默认 TTL 值。 最大*TTL*为255。|
 |/v \<TOS\>|指定发送的回响请求消息的 IP 标头中的服务类型（TOS）字段的值（仅在 IPv4 上提供）。 默认值为 0。 *TOS*指定为介于0到255之间的十进制值。|
@@ -56,9 +56,9 @@ ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] 
 -   可以使用**ping**测试计算机的计算机名和 IP 地址。 如果成功完成 IP 地址的 ping 操作，但不对计算机名称进行 ping 操作，则可能存在名称解析问题。 在这种情况下，可通过使用域名系统（DNS）查询或通过 NetBIOS 名称解析技术，确保你指定的计算机名可以通过本地主机文件解析。
 -   仅当 Internet 协议（TCP/IP）协议安装为网络连接中的网络适配器属性中的组件时，此命令才可用。
 
-## <a name="examples"></a><a name="BKMK_Examples"></a>示例
+## <a name="examples"></a>示例
 
-下面的示例演示了**ping**命令输出：
+显示**ping**命令输出：
 
 ```
 C:\>ping example.microsoft.com       

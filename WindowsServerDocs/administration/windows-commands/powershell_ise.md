@@ -1,6 +1,6 @@
 ---
 title: PowerShell_ise
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6ae96dcd40c894e0a528c06b461173f626fb2d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fb143c3d365b47f66aee5c64bfdc7dc26e5794f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837390"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723283"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -61,7 +61,7 @@ Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项
 
 ## <a name="additional-references"></a>其他参考
 
-[about_PowerShell_Ise .exe](https://go.microsoft.com/fwlink/?LinkId=256512)
-[About_PowerShell .Exe](https://go.microsoft.com/fwlink/?LinkID=113439)
-[Windows Powershell](https://go.microsoft.com/fwlink/?LinkID=107116)
-[通过 windows powershell 编写脚本的](https://technet.microsoft.com/scriptcenter/dd742419)另请参阅
+[about_PowerShell_Ise.exe](https://go.microsoft.com/fwlink/?LinkId=256512)
+[通过 windows powershell](https://technet.microsoft.com/scriptcenter/dd742419) about_PowerShell_Ise .exe[about_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)
+[Windows powershell](https://go.microsoft.com/fwlink/?LinkID=107116)
+脚本的另请参阅

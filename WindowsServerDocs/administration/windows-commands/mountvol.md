@@ -1,6 +1,6 @@
 ---
 title: mountvol
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 34a98a273274f7982bfdd970710c04178fed4f5a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ca3e4320499161194f87ceaca4f693ff997f3ba2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839380"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723926"
 ---
 # <a name="mountvol"></a>mountvol
 
 
 
 创建、删除或列出卷装入点。
-
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
 
 ## <a name="syntax"></a>语法
 
@@ -38,10 +36,10 @@ mountvol <Drive>: /s
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|[\<驱动器 >：]<Path>|指定装入点将驻留的现有 NTFS 目录。|
-|\<VolumeName >|指定作为装入点目标的卷名称。 卷名使用以下语法，其中*GUID*是全局唯一标识符：</br>`\\\\?\Volume\{GUID}\`</br>需要括号 {}。|
+|[\<驱动器>：]<Path>|指定装入点将驻留的现有 NTFS 目录。|
+|\<VolumeName>|指定作为装入点目标的卷名称。 卷名使用以下语法，其中*GUID*是全局唯一标识符：</br>`\\\\?\Volume\{GUID}\`</br>需要括号 {}。|
 |/d|从指定的文件夹中删除卷装入点。|
 |/l|列出指定文件夹的已装入卷名。|
 |/p|从指定的目录中删除卷装入点，卸载基本卷，并使基本卷脱机，使其不可装入。 如果其他进程正在使用该卷，则**mountvol**会在卸载卷之前关闭任何打开的句柄。|
@@ -55,9 +53,9 @@ mountvol <Drive>: /s
 
 -   **Mountvol**允许你链接卷，而无需驱动器号。
 -   使用 **/p**卸载的卷在卷列表中列出为 "未装入"，直到创建了卷装入点。 如果卷有多个装入点，请使用 **/d**在使用 **/p**之前删除其他装入点。 可以通过分配卷装入点，使基本卷再次可装入。
--   如果你需要扩展卷空间而不重新格式化或更换硬盘驱动器，则可以将装入路径添加到另一个卷。 使用一个具有多个装载路径的卷的好处是，你可以使用单个驱动器号（例如 `C:`）访问所有本地卷。 您无需记住哪个卷与哪个驱动器号相对应，不过您仍可以装入本地卷并为它们分配驱动器号。
+-   如果你需要扩展卷空间而不重新格式化或更换硬盘驱动器，则可以将装入路径添加到另一个卷。 使用一个具有多个装载路径的卷的好处是，你可以使用单个驱动器号（例如`C:`）访问所有本地卷。 您无需记住哪个卷与哪个驱动器号相对应，不过您仍可以装入本地卷并为它们分配驱动器号。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要创建装入点，请键入：
 ```

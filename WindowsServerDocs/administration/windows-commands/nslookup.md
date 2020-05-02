@@ -1,6 +1,6 @@
 ---
 title: nslookup
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15062d81992ee1b6e55d47cb9e49822350e4f2bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 35f790a3a537959501afe7c3173317f22b934ec6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838090"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723489"
 ---
 # <a name="nslookup"></a>nslookup
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示可用于诊断域名系统（DNS）基础结构的信息。 使用此工具之前，应熟悉 DNS 的工作原理。 只有安装了 TCP/IP 协议，才能使用 nslookup 命令行工具。
 ## <a name="syntax"></a>语法
@@ -55,7 +55,7 @@ nslookup /view <FileName>
 
 ### <a name="parameters"></a>参数
 
-|                       参数                       |                                                                                                         说明                                                                                                         |
+|                       参数                       |                                                                                                         描述                                                                                                         |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   [nslookup exit 命令](nslookup-exit-command.md)   |                                                                                                     退出**nslookup**。                                                                                                     |
 | [nslookup finger 命令](nslookup-finger-command.md) |                                                                                  与当前计算机上的 finger 服务器连接。                                                                                   |
@@ -96,13 +96,13 @@ nslookup /view <FileName>
   -   若要将内置命令视为计算机名称，请在该命令前面加上转义符（\\）。
   -   无法识别的命令被解释为计算机名。
 - 如果查找请求失败， **nslookup**将打印一条错误消息。 下表列出了可能的错误消息。
-  |**错误消息**|**描述**|
+  |**错误消息**|**说明**|
   |-----------|----------|
   |`timed out`|服务器在一段时间内未响应请求，并且有一定次数的重试。 你可以设置超时时间和**设置超时**子命令。 可以用**set retry**子命令设置重试次数。|
   |`No response from server`|服务器计算机上没有运行任何 DNS 名称服务器。|
   |`No records`|DNS 名称服务器没有计算机的当前查询类型的资源记录，但计算机名称有效。 查询类型是通过**set querytype**命令指定的。|
   |`Nonexistent domain`|计算机或 DNS 域名不存在。|
-  |`Connection refused`<p>\- 或 -<p>`Network is unreachable`|无法连接到 DNS 名称服务器或 finger 服务器。 此错误通常发生在**ls**和**finger**请求上。|
+  |`Connection refused`<p>-或-<p>`Network is unreachable`|无法连接到 DNS 名称服务器或 finger 服务器。 此错误通常发生在**ls**和**finger**请求上。|
   |`Server failure`|DNS 名称服务器在其数据库中发现内部不一致，无法返回有效的答案。|
   |`Refused`|DNS 名称服务器拒绝为请求服务。|
   |`format error`|DNS 名称服务器发现请求数据包的格式不正确。 这可能表示**nslookup**中存在错误。|

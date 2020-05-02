@@ -1,6 +1,6 @@
 ---
 title: 联机卷
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 476dd893e7899a2bd58336546a7881934f415f92
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb2ee396e4fa8a2e61001df0d979d85dabe1aa32
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837840"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723423"
 ---
 # <a name="online-volume"></a>联机卷
 
@@ -36,7 +36,7 @@ online volume [noerr]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |noerr|仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。|
 
@@ -45,7 +45,7 @@ online volume [noerr]
 -   此命令对已失败、发生故障或处于失败冗余状态的卷进行操作。
 -   若要成功执行此命令，必须选择卷。 使用 "**选择音量**" 命令选择卷并将焦点移动到该卷。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要将焦点置于联机状态，请键入：
 ```

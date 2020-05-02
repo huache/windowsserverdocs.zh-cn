@@ -1,6 +1,6 @@
 ---
 title: manage-bde autounlock
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3786700a809a672c00ee77c444c133b04e71e863
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1cc467c4afcfa2df344e9190a341a9aad086c1ea
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840250"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724217"
 ---
 # <a name="manage-bde-autounlock"></a>manage-bde： autounlock
 
 
 
-管理受 BitLocker 保护的数据驱动器的自动解锁。 有关如何使用此命令的示例，请参阅[示例](#BKMK_Examples)。
+管理受 BitLocker 保护的数据驱动器的自动解锁。
 
 ## <a name="syntax"></a>语法
 
@@ -31,20 +31,20 @@ manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <Drive> [-computername
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |-enable|启用数据驱动器自动解锁。|
 |-disable|禁用数据驱动器自动解锁。|
 |-clearallkeys|删除操作系统驱动器上的所有存储的外部密钥。|
-|\<驱动器 >|表示驱动器号后跟一个冒号。|
+|\<驱动器>|表示驱动器号后跟一个冒号。|
 |-computername|指定 Manage-bde.exe 将用于修改另一台计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。|
-|\<名称 >|表示要修改 BitLocker 保护的计算机的名称。 接受的值包括计算机的 NetBIOS 名称和计算机的 IP 地址。|
+|\<Name>|表示要修改 BitLocker 保护的计算机的名称。 接受的值包括计算机的 NetBIOS 名称和计算机的 IP 地址。|
 |-? 或 /?|在命令提示符下显示 brief Help。|
 |-help 或-h|在命令提示符下显示完整的帮助。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
-下面的示例演示如何使用 **-autounlock**命令启用数据驱动器 E 的自动解锁。
+为了说明如何使用 **-autounlock**命令启用数据驱动器 E 的自动解锁。
 ```
 manage-bde –autounlock -enable E:
 ```

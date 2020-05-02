@@ -1,6 +1,6 @@
 ---
 title: msinfo32
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a77cf9ae4c5f054e66839ff5b5b057e031b36ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0db8a4549ac26ef61d4aa8f435a01d3224501a77
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839110"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723848"
 ---
 # <a name="msinfo32"></a>msinfo32
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 打开 "系统信息" 工具，以显示本地计算机上的硬件、系统组件和软件环境的综合视图。 
 ## <a name="syntax"></a>语法
@@ -27,7 +27,7 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/show
 ```
 #### <a name="parameters"></a>参数
 
-|    参数    |                                                                                                                                 说明                                                                                                                                  |
+|    参数    |                                                                                                                                 描述                                                                                                                                  |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     <path>      | 指定要以*C:\Folder1\File1.XXX*格式打开的文件，其中*C*是驱动器号， *Folder1*是文件夹， *File1*是文件名， *XXX*是文件扩展名。<p>此文件可以是 **.nfo**、 **.xml**、 **.txt**或 **.cab**文件。 |
 | <computerName>  |                                                                             指定目标或本地计算机的名称。 这可以是 UNC 名称、IP 地址或完整的计算机名称。                                                                              |
@@ -43,7 +43,7 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/show
 
 ## <a name="remarks"></a>备注
 某些系统信息类别包含大量数据。 可以使用**start/wait**命令优化这些类别的报告性能。 有关详细信息，请参阅[系统信息](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)。
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 若要列出可用的类别 Id，请键入：
 ```
 msinfo32 /showcategories

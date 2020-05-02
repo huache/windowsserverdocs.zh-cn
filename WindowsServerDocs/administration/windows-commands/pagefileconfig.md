@@ -1,6 +1,6 @@
 ---
 title: pagefileconfig
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbb802e1e8ca66ed98a1aba3dee5ace90f8b06d3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cee18dad2a1ec0aa92e34beca540579d2a568708
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837790"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723380"
 ---
 # <a name="pagefileconfig"></a>pagefileconfig
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 pagefileconfig 已被弃用，且在未来版本的 Windows 中不能保证受支持。  
 此工具包含在 Windows Server 2003 中。 有关详细信息，请参阅[pagefileconfig](https://technet.microsoft.com/library/cc772827.aspx)。  

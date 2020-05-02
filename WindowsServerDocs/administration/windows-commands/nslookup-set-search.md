@@ -1,6 +1,6 @@
 ---
 title: nslookup set search
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9972919eae1be21d5dd30820d64dd1576b935666
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2e3f5bce42d3614b535b2dfb00c4c9ea9cac2346
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838300"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723568"
 ---
 # <a name="nslookup-set-search"></a>nslookup set search
 
@@ -30,7 +30,7 @@ set [no]search
 
 ### <a name="parameters"></a>参数
 
-|  参数   |                                                                          说明                                                                          |
+|  参数   |                                                                          描述                                                                          |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **nosearch** |                            停止将 DNS 域搜索列表中的域名系统（DNS）域名追加到该请求。                            |
 |  **寻找**  | 向请求追加 DNS 域搜索列表中的域名系统（DNS）域名，直到接收到答案。 默认语法为 "**搜索**"。 |

@@ -1,6 +1,6 @@
 ---
 title: perfmon
-description: 适用于 perfmon 的 Windows 命令主题
+description: Perfmon 的参考主题
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/25/2018
-ms.openlocfilehash: 7a832416b5b00292a6249f3824644db1b727cfb2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5742b51ffd4fca16c1054e373636afbe39968c96
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837600"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723326"
 ---
 # <a name="perfmon"></a>perfmon
 
@@ -28,7 +28,7 @@ perfmon </res|report|rel|sys>
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |/res|开始资源视图。|
 |/report|启动系统诊断数据收集器集，并显示结果报表。|

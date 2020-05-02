@@ -1,6 +1,6 @@
 ---
 title: pause
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 135d074a71c7153cc1665ad7b543bdba56ed66e8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89e76c4f45f59c32ef879fb518a1a92c973f5cdf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837680"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723356"
 ---
 # <a name="pause"></a>pause
 
@@ -24,7 +24,7 @@ ms.locfileid: "80837680"
 ```
 Press any key to continue . . .
 ```
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 
@@ -34,7 +34,7 @@ pause
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |/?|在命令提示符下显示帮助。|
 
@@ -51,7 +51,7 @@ pause
   如果按 "Y" （对于 "是"）来响应此消息，批处理程序将结束并控制返回到操作系统。
 - 可以在可能不希望处理的批处理文件的一部分之前插入**pause**命令。 当**暂停暂停**批处理程序的处理时，可以按 CTRL + C，然后按 Y 停止批处理程序。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要创建一个批处理程序来提示用户更改其中一个驱动器中的磁盘，请键入：
 ```

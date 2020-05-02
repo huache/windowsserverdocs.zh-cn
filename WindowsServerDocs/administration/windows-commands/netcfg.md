@@ -1,6 +1,6 @@
 ---
 title: netcfg
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4895928ffdd5d923d370f82e699d69f42c0f81a5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a5945da45ee01fd5bf5f89a7835c4bae0b5534c4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838930"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723807"
 ---
 # <a name="netcfg"></a>netcfg
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 安装 Windows 预安装环境（WinPE），这是用于部署工作站的 Windows 轻型版本。
 ## <a name="syntax"></a>语法
@@ -26,7 +26,7 @@ ms.locfileid: "80838930"
 netcfg [/v] [/e] [/winpe] [/l ] /c /i
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |/v|**在详细（详细）** 模式下运行|
 |/e|在安装和卸载过程中使用服务**环境**变量|
@@ -38,7 +38,7 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 |/b|显示**绑定路径**，后跟包含路径名称的字符串。|
 |/?|在命令提示符下显示**帮助**。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>示例
+## <a name="examples"></a>示例
 
 使用 c:\oemdir\example.inf 安装协议*示例*：
 ```

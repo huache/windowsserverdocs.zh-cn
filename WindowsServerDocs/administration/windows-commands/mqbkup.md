@@ -1,6 +1,6 @@
 ---
 title: mqbkup
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ff6fc2f483bceb99b970cd0c48f56985ecd485b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25bc5a0b5da0c78ccc68cf7b8fc70a5b4ec11a1f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839350"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723906"
 ---
 # <a name="mqbkup"></a>mqbkup
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 将 MSMQ 消息文件和注册表设置备份到存储设备，并还原以前存储的消息和设置。   
 备份和还原操作都将停止本地 MSMQ 服务。 如果已预先启动 MSMQ 服务，则实用工具将在备份或还原操作结束时尝试重新启动 MSMQ 服务。 如果服务在运行此实用工具之前已停止，则不会尝试重新启动该服务。  
@@ -28,13 +28,13 @@ ms.locfileid: "80839350"
 mqbkup {/b | /r} <folder path_to_storage_device>  
 ```  
 #### <a name="parameters"></a>参数  
-|参数|说明|  
+|参数|描述|  
 |-------|--------|  
 |/b|指定备份操作|  
 |/r|指定还原操作|  
-|\_设备 path_to_storage < 文件夹 >|指定 MSMQ 消息文件和注册表设置的存储路径|  
+|<文件夹 path_to_storage\_设备>|指定 MSMQ 消息文件和注册表设置的存储路径|  
 |/?|在命令提示符下显示帮助。|  
-## <a name="examples"></a><a name=BKMK_Examples></a>示例  
+## <a name="examples"></a>示例  
 若要备份所有 MSMQ 消息文件和注册表设置，并将它们存储在 C：驱动器上的*Msmqbkup*文件夹中。  
 ```  
 mqbkup /b c:\msmqbkup  

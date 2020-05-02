@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b66b5edd2fa068923650f578d13f30631a8602ad
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a1638f8d0d62b730578cb21fac5a74e58ad06b74
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837470"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723289"
 ---
 # <a name="popd"></a>popd
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 将当前目录更改为**pushd**命令最近存储的目录。
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 ## <a name="syntax"></a>语法
 ```
@@ -29,7 +29,7 @@ popd
 ```
 
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |/?|在命令提示符下显示帮助。|
 
@@ -40,7 +40,7 @@ popd
 -   启用命令扩展后， **popd**命令将删除**pushd**创建的任何驱动器号 assignations。
 
 ## <a name="examples"></a><a name="BKMK_examples"></a>示例
-下面的示例演示如何在批处理程序中使用**pushd**命令和**popd**命令，以更改运行批处理程序的目录，然后将其更改回：
+若要演示如何在批处理程序中使用**pushd**命令和**popd**命令，以更改运行批处理程序的目录，然后将其更改回：
 
 ```
 @echo off

@@ -1,6 +1,6 @@
 ---
 title: 联机磁盘
-description: 适用于 * * * * 的 Windows 命令主题
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c61d852ba71329c3d7345d74fd352a6c19436cec
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 110a73a46712e3cbe5b5ff22b7e4343afb103966
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837890"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723416"
 ---
 # <a name="online-disk"></a>联机磁盘
 
@@ -28,7 +28,7 @@ ms.locfileid: "80837890"
 > [!IMPORTANT]
 > 如果在只读磁盘上使用此命令，则此命令将失败。
 
-有关如何使用此命令的说明，请参阅[重新激活丢失或脱机的动态磁盘](https://go.microsoft.com/fwlink/?LinkId=207046)（ https://go.microsoft.com/fwlink/?LinkId=207046)。
+有关如何使用此命令的说明，请参阅[重新激活丢失或脱机的动态磁盘](https://go.microsoft.com/fwlink/?LinkId=207046)（https://go.microsoft.com/fwlink/?LinkId=207046)。
 
 ## <a name="syntax"></a>语法
 
@@ -38,7 +38,7 @@ online disk [noerr]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |noerr|仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。|
 
@@ -51,7 +51,7 @@ online disk [noerr]
 -   如果选定磁盘的组包含镜像卷或 RAID-5 卷，此命令还会重新同步这些卷。
 -   必须选择磁盘才能使此命令成功。 使用 "**选择磁盘**" 命令选择磁盘，并将焦点移动到该磁盘。
 
-## <a name="examples"></a><a name=BKMK_examples></a>示例
+## <a name="examples"></a>示例
 
 若要使具有焦点的磁盘联机，请键入：
 ```

@@ -1,6 +1,6 @@
 ---
-title: logoff
-description: 适用于 * * * * 的 Windows 命令主题
+title: 注销
+description: '* * * * 的参考主题'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,22 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1661a9dd6cc89ea05980fd9085aa8fa67b8fe2c0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 86acf174bfdebdeab6db7476713dd2d91f21b1a0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840410"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724267"
 ---
-# <a name="logoff"></a>logoff
+# <a name="logoff"></a>注销
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 从远程桌面会话主机（rd 会话主机）服务器上的会话中注销用户，并从服务器中删除该会话。
-有关如何使用此命令的示例，请参阅[示例](#BKMK_examples)。
+
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，“终端服务”被重命名为“远程桌面服务”。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
+> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
 
 ## <a name="syntax"></a>语法
 ```
@@ -32,7 +32,7 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
 ```
 ### <a name="parameters"></a>参数
 
-|      参数       |                                                                             说明                                                                              |
+|      参数       |                                                                             描述                                                                              |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    <SessionName>     |                                                                  指定会话的名称。                                                                  |
 |     <SessionID>      |                                                 指定标识服务器会话的数字 ID。                                                 |
@@ -46,7 +46,7 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
 - 如果未指定 <*SessionID*> 或 <*SessionName*>，则**注销**将从当前会话注销用户。 如果指定 <*SessionName*>，则它必须是活动的。
 - 注销用户时，所有进程都将结束，并且将从服务器中删除该会话。
 - 不能从控制台会话中注销用户。
-  ## <a name="examples"></a><a name=BKMK_examples></a>示例
+  ## <a name="examples"></a>示例
 - 若要从当前会话中注销用户，请键入：
   ```
   logoff
