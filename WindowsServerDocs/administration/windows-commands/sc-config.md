@@ -1,6 +1,6 @@
 ---
-title: Sc config
-description: '* * * * 的参考主题'
+title: Sc.exe config
+description: 了解如何使用 sc.exe 实用程序更改服务配置
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,30 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 45a94b3eea78552b61535542d85793bbaffd3df2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8f1d6b284b9bfe5a520f89c03dd0dedc263a5faf
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722219"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850088"
 ---
-# <a name="sc-config"></a>Sc config
-
-
+# <a name="scexe-config"></a>Sc.exe config
 
 修改注册表和服务控制管理器数据库中服务项的值。
-
-
 
 ## <a name="syntax"></a>语法
 
 ```
-sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys | rec | adapt | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto}] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
+sc.exe [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys | rec | adapt | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto}] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<ServerName>|指定服务所在的远程服务器的名称。 名称必须使用通用命名约定（UNC）格式（例如， \\ \\myserver）。 若要在本地运行 SC.EXE，请省略此参数。|
 |\<ServiceName>|指定**getkeyname**操作返回的服务名称。|
@@ -57,7 +53,7 @@ sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys 
 
 若要指定 NEWSERVICE 服务的二进制路径，请键入：
 ```
-sc config NewService binpath= ntsd -d c:\windows\system32\NewServ.exe
+sc.exe config NewService binpath= ntsd -d c:\windows\system32\NewServ.exe
 ```
 
 ## <a name="additional-references"></a>其他参考

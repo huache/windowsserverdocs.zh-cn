@@ -1,6 +1,6 @@
 ---
-title: Sc 查询
-description: '* * * * 的参考主题'
+title: Sc.exe 查询
+description: 了解如何使用 sc.exe 实用程序获取有关服务、驱动程序、服务类型或驱动程序类型的信息
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,30 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a6b4555790a8f9bb1149531251e724189177975
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 86aabbbc42c965b72f317a3bfaa99acc99c46f3b
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722180"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850038"
 ---
-# <a name="sc-query"></a>Sc 查询
-
-
+# <a name="scexe-query"></a>Sc.exe 查询
 
 获取并显示有关指定服务、驱动程序、服务类型或驱动程序类型的信息。
-
-
 
 ## <a name="syntax"></a>语法
 
 ```
-sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
+sc.exe [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
 ```
 
 ### <a name="parameters"></a>参数
 
-|       参数        |                                                                                                                          描述                                                                                                                          |
+|       参数        |                                                                                                                          说明                                                                                                                          |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     \<ServerName>      |                       指定服务所在的远程服务器的名称。 名称必须使用通用命名约定（UNC）格式（例如， \\ \\myserver）。 若要在本地运行 SC.EXE，请省略此参数。                        |
 |     \<ServiceName>     |                                      指定**getkeyname**操作返回的服务名称。 此**查询**参数不与其他**查询**参数一起使用（ *ServerName*除外）。                                      |
@@ -55,43 +51,43 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
   ```  
   若要显示剩余的**查询**信息，请重新运行**查询**，将**bufsize =** 设置为字节数，并将**ri =** 设置为指定索引。 例如，在命令提示符下键入以下内容，将显示剩余的输出：  
   ```
-  sc query bufsize= 1822 ri= 79
+  sc.exe query bufsize= 1822 ri= 79
   ```
 
 ## <a name="examples"></a>示例
 
 若要仅显示活动服务的信息，请键入以下命令之一：
 ```
-sc query
-sc query type= service
+sc.exe query
+sc.exe query type= service
 ```
 若要显示活动服务的信息，并指定缓冲区大小（2000字节），请键入：
 ```
-sc query type= all bufsize= 2000
+sc.exe query type= all bufsize= 2000
 ```
 若要显示 WUAUSERV 服务的信息，请键入：
 ```
-sc query wuauserv
+sc.exe query wuauserv
 ```
 若要显示所有服务的信息（活动和非活动），请键入：
 ```
-sc query state= all
+sc.exe query state= all
 ```
 若要显示所有服务的信息（活动和非活动），请从第56行开始，键入：
 ```
-sc query state= all ri= 56
+sc.exe query state= all ri= 56
 ```
 若要显示交互式服务的信息，请键入：
 ```
-sc query type= service type= interact
+sc.exe query type= service type= interact
 ```
 若要仅显示驱动程序的信息，请键入：
 ```
-sc query type= driver
+sc.exe query type= driver
 ```
 若要显示网络驱动程序接口规范（NDIS）组中的驱动程序的信息，请键入：
 ```
-sc query type= driver group= ndis
+sc.exe query type= driver group= ndis
 ```
 
 ## <a name="additional-references"></a>其他参考

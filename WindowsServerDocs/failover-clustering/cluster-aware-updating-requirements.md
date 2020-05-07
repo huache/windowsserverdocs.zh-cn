@@ -36,7 +36,7 @@ CAU 需要安装故障转移群集功能和故障转移群集工具。 故障转
 |-----------------------|-----------------------|-------------------------|  
 |故障转移群集功能|在所有群集节点上必需|在所有群集节点上必需|  
 |故障转移群集工具|在所有群集节点上必需|-远程\-更新计算机上需要<br />-需要在所有群集节点上运行[save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet|  
-|CAU 群集角色|必选|不是必需|  
+|CAU 群集角色|必需|不需要|  
 
 ## <a name="obtain-an-administrator-account"></a>获取管理员帐户  
 以下管理员要求是使用 CAU 功能所必需的。  
@@ -71,10 +71,10 @@ CAU 需要安装故障转移群集功能和故障转移群集工具。 故障转
 
 |要求|默认状态|自我\-更新模式|远程\-更新模式|  
 |---------------|---|-----------------------|-------------------------|  
-|[启用防火墙规则以允许自动重新启动](#BKMK_FW)|禁用|如果防火墙正在使用中，则在所有群集节点上都是必需的|如果防火墙正在使用中，则在所有群集节点上都是必需的|  
-|[启用 Windows 管理规范](#BKMK_WMI)|已启用|在所有群集节点上必需|在所有群集节点上必需|  
-|[启用 Windows PowerShell 3.0 或 4.0 和 Windows PowerShell 远程处理](#BKMK_PS)|已启用|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预\-更新和更新\-运行期间的更新后脚本<br />-使用群集感知更新窗口或[测试\-test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|  
-|[安装 .NET Framework 4.6 或4。5](#BKMK_NET)|已启用|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预\-更新和更新\-运行期间的更新后脚本<br />-使用群集感知更新窗口或[测试\-test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|  
+|[启用防火墙规则以允许自动重新启动](#BKMK_FW)|已禁用|如果防火墙正在使用中，则在所有群集节点上都是必需的|如果防火墙正在使用中，则在所有群集节点上都是必需的|  
+|[启用 Windows 管理规范](#BKMK_WMI)|Enabled|在所有群集节点上必需|在所有群集节点上必需|  
+|[启用 Windows PowerShell 3.0 或 4.0 和 Windows PowerShell 远程处理](#BKMK_PS)|Enabled|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预\-更新和更新\-运行期间的更新后脚本<br />-使用群集感知更新窗口或[测试\-test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|  
+|[安装 .NET Framework 4.6 或4。5](#BKMK_NET)|Enabled|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预\-更新和更新\-运行期间的更新后脚本<br />-使用群集感知更新窗口或[测试\-test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|  
 
 ### <a name="enable-a-firewall-rule-to-allow-automatic-restarts"></a><a name="BKMK_FW"></a>启用防火墙规则以允许自动重新启动  
 若要在应用\(更新后允许自动重新启动\)，如果在群集节点上使用 Windows 防火墙或非\-Microsoft 防火墙，则必须在每个允许以下流量的节点上启用防火墙规则：  
@@ -231,7 +231,7 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 下表列出了群集更新准备情况测试、一些常见问题和解决步骤。  
 
 
-|                                                      测试                                                      |                                                                                                                                               可能的问题和影响                                                                                                                                               |                                                                                                                                                                                         解决步骤                                                                                                                                                                                         |
+|                                                      测试                                                      |                                                                                                                                               可能的问题和影响                                                                                                                                               |                                                                                                                                                                                         解决方法步骤                                                                                                                                                                                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                     故障转移群集必须可用                                     |                                                                                       无法解析该故障转移群集名称，或者无法访问一个或多个群集节点。 BPA 无法运行群集准备情况测试。                                                                                        |                                                                   -检查在 BPA 运行过程中指定的群集名称的拼写是否正确。<br />-确保群集的所有节点都处于联机状态且正在运行。<br />-检查验证配置向导是否可以在故障转移群集上成功运行。                                                                    |
 |                    通过 WMI 的远程管理，必须启用故障转移群集节点                    |                                                一个或多个故障转移群集节点未通过使用 Windows Management Instrumentation \(WMI\)启用远程管理。 如果未对远程管理配置节点，则 CAU 无法更新群集节点。                                                 |                                                                                                  确保通过 WMI 的远程管理启用所有故障转移群集节点。 有关详细信息，请参阅本主题中的[配置用于远程管理的节点](#BKMK_NODE_CONFIG)。                                                                                                   |
@@ -253,6 +253,6 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 |                   所有故障转移群集节点应使用相同的 Windows PowerShell 脚本                   |                                                     并非所有 CAU 群集角色的可能所有者节点都使用指定 Windows PowerShell 更新前\-和更新后\-脚本的相同副本。 自我\-更新运行可能会失败或显示意外的行为。                                                     |                                                                                                                                   确保所有 CAU 群集角色的可能所有者节点都使用相同的 PowerShell 预\-更新和后期\-更新脚本。                                                                                                                                   |
 |         为更新运行指定的 WarnAfter 设置应小于 StopAfter 设置         |                                                                           指定的 CAU 更新运行超时值可以使警告超时无效。 在警告事件日志生成之前，可能会取消更新运行。                                                                            |                                                                                                                                      在更新运行选项中，配置小于“StopAfter”**** 选项值的“WarnAfter”**** 选项值。                                                                                                                                       |
 
-## <a name="see-also"></a>请参阅  
+## <a name="see-also"></a>另请参阅  
 
 -   [群集感知更新概述](cluster-aware-updating.md)

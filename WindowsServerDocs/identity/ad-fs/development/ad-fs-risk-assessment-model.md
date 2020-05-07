@@ -3,16 +3,16 @@ title: 使用 AD FS 2019 风险评估模型构建插件
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/16/2019
+ms.date: 05/05/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6433513f525572254e4aaef65e2bfc992a7c5280
-ms.sourcegitcommit: 41dc7f487d282895a242e788049285363dd19eeb
+ms.openlocfilehash: c9795ea1b945d5da773b8d257434f216d842799d
+ms.sourcegitcommit: f0f447193a0bd14d9a623aaead80329b95bf1f47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82169172"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82842836"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>使用 AD FS 2019 风险评估模型构建插件
 
@@ -212,9 +212,9 @@ public abstract class ThreatDetectionModule
 |[OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) |Void|当插件加载到其管道中时 AD FS 调用| 
 |[OnAuthenticationPipelineUnload](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload?view=adfs-2019) |Void|当从其管道中卸载插件时 AD FS 调用| 
 |[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)| Void|在配置更新时由 AD FS 调用 |
-|**属性** |类型  |**定义**|
-|[VendorName](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|字符串 |获取拥有插件的供应商的名称|
-|[ModuleIdentifier](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|字符串 |获取插件的标识符|
+|**属性** |**类型** |**定义**|
+|[VendorName](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|String |获取拥有插件的供应商的名称|
+|[ModuleIdentifier](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|String |获取插件的标识符|
 
 在我们的示例插件中，使用[OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019)和[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)方法从 AD FS DB 读取预定义的 ip。 将插件注册到 AD FS 时，将调用[OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) ，而[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)当使用`Import-AdfsThreatDetectionModuleConfiguration` Cmdlet 导入 .csv 时调用 OnConfigurationUpdate。 
 
@@ -313,6 +313,7 @@ IList<Claim> additionalClams
 
 **还有哪些可用的示例插件？**</br>
 **答：** 下面的示例插件可用：
+
 |名称|说明| 
 |-----|-----|
 |[风险用户插件](https://github.com/microsoft/adfs-sample-block-user-on-adfs-marked-risky-by-AzureAD-IdentityProtection)|基于 Azure AD Identity Protection 确定的用户风险级别，阻止身份验证或强制执行 MFA 的示例插件。| 

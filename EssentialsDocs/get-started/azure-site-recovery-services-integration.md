@@ -8,14 +8,14 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 29db78fdf38a6fab23d9a5ec5539c0606e2fbbaa
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b947ca49a82c18fd7a6c1da71b1e4b43ea741b41
+ms.sourcegitcommit: f247065941508b913c31828944978d3e721e2110
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814480"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82876412"
 ---
-# <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery 服务集成
+# <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery 服务集成 
 
 >适用于： Windows Server 2016 Essentials
 
@@ -39,7 +39,7 @@ ms.locfileid: "80814480"
 
 ### <a name="enabling-guest-virtual-machines-for-protection"></a>启用来宾虚拟机以进行保护
 
-在 Azure 恢复窗口中选择虚拟机后，可以单击仪表板右侧的 "**启用到 azure 的复制**"，准备虚拟机，并将其复制到 azure &trade;：
+在 Azure 恢复窗口中选择虚拟机后，可以单击仪表板右侧的 "**启用到 azure 的复制**" 来准备并将虚拟机&trade;映像复制到 azure：
 
 ![显示 "启用到 Azure 的复制" 对话框的屏幕截图。 添加主机时，会显示一个进度栏。](media/azure-site-recovery-5.PNG)
 
