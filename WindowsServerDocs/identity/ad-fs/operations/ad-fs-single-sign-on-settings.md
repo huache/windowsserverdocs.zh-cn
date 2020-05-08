@@ -8,12 +8,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bad6ad9a95618239825366187c8083c1fe77ae94
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cdd35ccc7800616f7803937738c942e68bf04c00
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860080"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903436"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS 单一登录设置
 
@@ -153,13 +153,13 @@ c:[Type == "https://schemas.microsoft.com/2014/03/psso"]
 
   <tr align="center">
     <th></th>
-    <th>否</th>
-    <th>否，但 KMSI</th>
     <th>是</th>
+    <th>否，但 KMSI</th>
+    <th>YES</th>
     <th></th>
-    <th>否</th>
-    <th>否，但 KMSI</th>
     <th>是</th>
+    <th>否，但 KMSI</th>
+    <th>YES</th>
   </tr>
  <tr align="center">
     <td>SSO =&gt;设置刷新令牌 =&gt;</td>
@@ -201,6 +201,10 @@ c:[Type == "https://schemas.microsoft.com/2014/03/psso"]
 如果
  - [x] 管理员已启用 KMSI 功能 [和]
  - [x] 用户单击窗体登录页上的 "KMSI" 复选框
+ 
+  
+仅当更新的刷新令牌的有效性比上一个令牌的有效性长时，ADFS 才发出新的刷新令牌。 令牌的最长生存期为84天，但 AD FS 会使令牌在14天滑动窗口中保持有效。 如果刷新令牌的有效期为8小时（这是正常的 SSO 时间），则不会发出新的刷新令牌。 
+ 
  
 **好了解：** <br>
 未同步**LastPasswordChangeTimestamp**属性的联合用户将发出会话 cookie，并且**最大期限值为12小时的**刷新令牌。<br>
