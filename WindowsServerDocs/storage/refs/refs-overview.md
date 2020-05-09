@@ -7,12 +7,12 @@ ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/17/2019
-ms.openlocfilehash: 8d32ef6bc4ce169ff73f9ab147783ac0607617f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: daa766b63cd99b86abb5a9fad791061c21aba766
+ms.sourcegitcommit: be4f67ae8e40a0bf1086881ba8963c69d7ea889f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857540"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82986023"
 ---
 # <a name="resilient-file-system-refs-overview"></a>复原文件系统 (ReFS) 概述
 
@@ -20,7 +20,7 @@ ms.locfileid: "80857540"
 
 该复原文件系统 (ReFS) 是 Microsoft 的最新文件系统，可最大程度提升数据可用性、跨各种工作负载高效扩展到大数据集，并通过损坏复原提供数据完整性。 它旨在解决存储方案的扩展集问题以及为将来的革新打造基础。
 
-## <a name="key-benefits"></a>主要优势
+## <a name="key-benefits"></a>主要优点
 
 ### <a name="resiliency"></a>复原
 
@@ -35,7 +35,7 @@ ReFS 引入了一项新功能，可以准确地检测到损坏并且还能够在
 
 除了提供复原能力改进之外，ReFS 还针对对性能极其敏感和虚拟化的工作负载引入新功能。 实时层优化、块克隆和稀疏 VDL 都是不断发展的 ReFS 功能的绝佳示例，它们专为支持各种动态工作负载而设计：
 
-- **[镜像加速奇偶校验](./mirror-accelerated-parity.md)** -镜像加速奇偶校验为数据提供高性能和容量高效的存储。 
+- **[镜像加速奇偶校验](./mirror-accelerated-parity.md)** - 镜像加速奇偶校验既可以提供高性能，也可为你的数据提供高效的容量存储。 
 
     - 为了提供高性能和高效的容量存储，ReFS 会将卷划分为两个逻辑存储组，称为层。 这些层可具有自己的驱动器和复原类型，这使得能够针对性能或容量对每个层进行优化。 某些示例配置包括： 
     
@@ -92,7 +92,7 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 - 应用程序引入了自己的复原和可用性软件解决方案，可以利用完整性流、块克隆以及扩展和支持大量数据集的功能。 
 
 > [!NOTE]
-> 基本磁盘包括通过 BusTypes SATA、SAS、NVME 或 RAID 的本地非可移动直接连接。 
+> 基本磁盘包括通过 BusTypes SATA、SAS、NVME 或 RAID 的本地非可移动直接连接。 基本磁盘不包含存储空间。
 
 ### <a name="backup-target"></a>备份目标
 
@@ -110,7 +110,7 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 |----------------|------------------------------------------------|-----------------------|
 | 最大文件名称长度 | 255 个 Unicode 字符  | 255 个 Unicode 字符               |
 | 最大路径名称长度 |32K Unicode 字符 | 32K Unicode 字符                |
-| 最大文件大小 | 35 PB （pb）  | 256 TB               |
+| 文件大小上限 | 35 PB （pb）  | 256 TB               |
 | 最大卷大小 | 35 PB                           | 256 TB                |
 
 ### <a name="functionality"></a>功能
@@ -121,7 +121,7 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 |---------------------------|------------------|-----------------------|
 | BitLocker 加密 | 是 | 是 |
 | 重复数据删除 | 是<sup>1</sup> | 是 |
-| 群集共享卷 (CSV) 支持 | 是<sup>2</sup> | 是 |
+| 群集共享卷 (CSV) 支持 | Yes<sup>2</sup> | 是 |
 | 软链接 | 是 | 是 |
 | 故障转移群集支持 | 是 | 是 |
 | 访问控制列表 | 是 | 是 |
@@ -129,10 +129,10 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 | 更改通知 | 是 | 是 |
 | 交接点 | 是 | 是 |
 | 装入点 | 是 | 是 |
-| 重新分析点 | 是 | 是 |
+| 重分析点 | 是 | 是 |
 | 卷快照 | 是 | 是 |
 | 文件 ID | 是 | 是 |
-| Oplock | 是 | 是 |
+| Oplocks | 是 | 是 |
 | 稀疏文件 | 是 | 是 |
 | 命名流 | 是 | 是 |
 | 精简预配 | 是<sup>3</sup> | 是 |
@@ -145,28 +145,28 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 
 | 功能       | ReFS                                        | NTFS |
 |---------------------------|------------------|-----------------------|
-| 块克隆 | 是 | 是 |
-| 稀疏 VDL | 是 | 是 |
-| 镜像加速奇偶校验| 是（在存储空间直通上） | 是 |
+| 块克隆 | 是 | 否 |
+| 稀疏 VDL | 是 | 否 |
+| 镜像加速奇偶校验| 是（在存储空间直通上） | 否 |
 
 #### <a name="the-following-features-are-unavailable-on-refs-at-this-time"></a>目前 ReFS 上未提供以下功能：
 
 | 功能       | ReFS                                        | NTFS |
 |---------------------------|------------------|-----------------------|
-| 文件系统压缩 | 是 | 是 |
-| 文件系统加密 | 是 | 是 |
-| 事务 | 是 | 是 |
-| 硬链接 | 是 | 是 |
-| 对象 ID | 是 | 是 |
-| 卸载数据传输（ODX） | 是 | 是 |
-| 短名称 | 是 | 是 |
-| 扩展属性 | 是 | 是 |
-| 磁盘配额 | 是 | 是 |
-| 可引导 | 是 | 是 |
-| 页面文件支持 | 是 | 是 |
-| 在可移动媒体上受支持 | 是 | 是 |
+| 文件系统压缩 | 否 | 是 |
+| 文件系统加密 | 否 | 是 |
+| 事务 | 否 | 是 |
+| 硬链接 | 否 | 是 |
+| 对象 ID | 否 | 是 |
+| 卸载数据传输（ODX） | 否 | 是 |
+| 短名称 | 否 | 是 |
+| 扩展的属性 | 否 | 是 |
+| 磁盘配额 | 否 | 是 |
+| 可引导 | 否 | 是 |
+| 页面文件支持 | 否 | 是 |
+| 在可移动媒体上受支持 | 否 | 是 |
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [ReFS 和 NTFS 的群集大小建议](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
 - [存储空间直通概述](../storage-spaces/storage-spaces-direct-overview.md)

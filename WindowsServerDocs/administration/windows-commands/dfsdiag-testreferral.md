@@ -1,6 +1,6 @@
 ---
-title: dfsdiag TestReferral
-description: Dfsdiag TestReferral 的参考主题，用于检查分布式文件系统（DFS）引用。
+title: dfsdiag testreferral
+description: Dfsdiag testreferral 命令的参考主题，用于检查分布式文件系统（DFS）引用。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,54 +9,58 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b4c616181d367a8a95efe6484f74af0ff88cc5f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 23abcd738170d5f53e12ae83c41d632d2d7ac738
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719571"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992927"
 ---
-# <a name="dfsdiag-testreferral"></a>dfsdiag TestReferral
+# <a name="dfsdiag-testreferral"></a>dfsdiag testreferral
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 通过执行以下测试检查分布式文件系统（DFS）引用：
 
-- 使用不带参数的 DFSpath 参数时，此命令将验证引用列表是否包含所有受信任的域。
+- 如果使用不带参数的**DFSpath*** 参数，则该命令将验证引用列表是否包含所有受信任的域。
 
-- 指定域时，该命令将执行域控制器（dfsdiag/testdcs）的运行状况检查，并测试本地主机的站点关联和域缓存。
+- 如果指定域，则该命令将执行域控制器（`dfsdiag /testdcs`）的运行状况检查，并测试本地主机的站点关联和域缓存。
 
-- 指定域和 \SYSvol 或 \NETLOGON 时，除了执行指定域相同的健康检查以外，命令还会检查 SYSvol 或 NETLOGON 引用的生存时间（\TTL）是否与默认值900秒匹配。
+- 如果指定域和 \SYSvol 或 \NETLOGON，则该命令将执行相同的域控制器运行状况检查，并检查 SYSvol 或 NETLOGON 引用的**生存时间（TTL）** 是否与默认值900秒匹配。
 
-- 当指定命名空间根时，除了执行指定域相同的运行状况检查外，此命令还执行 DFS 配置检查（dfsdiag/TestDFSConfig）和命名空间完整性检查（dfsdiag/TestDFSIntegrity）。
+- 如果指定命名空间根，则该命令将执行相同的域控制器运行状况检查，以及执行 DFS 配置检查（`dfsdiag /testdfsconfig`）和命名空间完整性检查（`dfsdiag /testdfsintegrity`）。
 
-- 指定一个 DFS 文件夹（链接）时，除了执行与指定命名空间根时相同的健康检查外，此命令还将验证文件夹目标（dfsdiag/testsites）的站点配置，并验证本地主机的站点关联。
+- 如果指定 DFS 文件夹（链接），该命令将执行相同的命名空间根运行状况检查，并验证文件夹目标（dfsdiag/testsites）的站点配置并验证本地主机的站点关联。
 
 ## <a name="syntax"></a>语法
 
 ```
-dfsdiag /TestReferral /DFSpath:<DFS path for getting referrals> [/Full]
+dfsdiag /testreferral /DFSpath:<DFS path to get referrals> [/full]
 ```
 
-#### <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
-|-------|--------|
-| /DFSpath:<path for getting referrals>|此 DFS 路径可以是以下项之一：<p>-   \(空\)：测试受信任的域。<br />-   \\\\域：域控制器的引用。<br />-   \\\\域\\SYSvol： SYSvol 引用。<br />-   \\\\Netlogon 中\\的域名： netlogon 引用。<br />-   \\\\<Domain or server>\\<Namespace Root>：命名空间根路径引用。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>： DFS 文件夹\(链接\)引用。|
-|/Full|仅适用于域和根引用。 验证注册表和 active directory 域服务\(AD DS\)之间的站点关联信息一致性。|
+| 参数 | 说明 |
+| --------- | ----------- |
+| /DFSpath:`<path to get referrals>` | 可以是以下值之一：<ul><li>**空白：** 仅测试受信任的域。</li><li>`\\Domain:`仅测试域控制器的引用。</li><li>`\\Domain\SYSvol:`仅测试 SYSvol 引用。</li><li>`\\Domain\NETLOGON:`仅测试 NETLOGON 引用。</li><li>`\\<domain or server>\<namespace root>:`仅测试命名空间根引用。</li><li>`\\<domain or server>\<namespace root>\<DFS folder>:`仅测试 DFS 文件夹（链接）引用。</li></ul> |
+| /full | 仅适用于域和根引用。 验证注册表和 active directory 域服务（AD DS）之间的站点关联信息一致性。 |
 
 ## <a name="examples"></a>示例
 
-```
-dfsdiag /TestReferral /DFSpath:\\Contoso.com\MyNamespace
-```
+若要检查*com\MyNamespace*中的分布式文件系统（DFS）引用，请键入：
 
 ```
-dfsdiag /TestReferral /DFSpath:
+dfsdiag /testreferral /DFSpath:\\contoso.com\MyNamespace
+```
+
+若要检查所有受信任域中的分布式文件系统（DFS）引用，请键入：
+
+```
+dfsdiag /testreferral /DFSpath:
 ```
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 
-
+- [dfsdiag 命令](dfsdiag.md)

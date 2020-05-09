@@ -1,6 +1,6 @@
 ---
 title: dfsutil
-description: Dfsutil 的参考主题，用于管理 DFS 命名空间、服务器和客户端。 dfsutil 命令使用原始分布式文件系统术语，其中包含已更新的 DFS 命名空间术语，作为对大多数命令的说明。
+description: Dfsutil 命令的参考主题，用于管理 DFS 命名空间、服务器和客户端。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 999eef79227d4531ba724c9cac40127297ea38a0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d6905d90ee42958e47dfed4869520000a4fd3ddf
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719512"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992624"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -22,14 +22,11 @@ ms.locfileid: "82719512"
 
 Dfsutil 命令管理 DFS 命名空间、服务器和客户端。
 
->[!NOTE]
->**DFS 命名空间 PowerShell 模块**为某些 Dfsutil 参数提供替换，而其他一些则仍要求你使用 Dfsutil。 有关更新的 PowerShell 等效项的详细信息，请参阅[DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps)。
+## <a name="functionality-available-in-powershell"></a>PowerShell 中的可用功能
 
-## <a name="parameters-available-in-powershell"></a>PowerShell 中的可用参数
+[DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps) PowerShell 模块为以下 dfsutil 参数提供等效功能。
 
-可以通过 PowerShell 使用以下参数：
-
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | root | 显示、创建、删除、导入、导出命名空间根目录。 |
 | 链接 | 显示、创建、删除或移动文件夹（链接）。 |
@@ -38,11 +35,11 @@ Dfsutil 命令管理 DFS 命名空间、服务器和客户端。
 | server | 显示或修改命名空间配置。 |
 | 域 | 显示域中基于域的所有命名空间。 |
 
-## <a name="parameters-only-available-in-dfsutil"></a>仅在 dfsutil 中提供参数
+## <a name="functionality-available-only-in-dfsutil"></a>仅在 dfsutil 中可用的功能
 
-只能从 dfsutil 使用以下参数。
+以下功能仅作为 dfsutil 参数提供：
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 客户端 | 显示或修改客户端信息或注册表项。 |
 | 斜 | 执行诊断或查看 dfsdirs/dfspath。 |

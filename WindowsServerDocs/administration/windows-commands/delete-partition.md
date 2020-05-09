@@ -1,6 +1,6 @@
 ---
 title: delete partition
-description: 删除分区的参考主题，用于删除具有焦点的分区。
+description: 删除分区命令的参考主题，该命令删除具有焦点的分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 259abdfc6e3ba8db22d5582bff08d7a4bc8b807b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 13c79b826480171af578334942af8f73b77d796b
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716731"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993115"
 ---
 # <a name="delete-partition"></a>delete partition
 
-删除具有焦点的分区。
+删除具有焦点的分区。 在开始之前，必须选择分区，此操作才能成功。 使用 "[选择分区](select-partition.md)" 命令可选择分区，并将焦点移动到该分区。
+
+> [!WARNING]
+> 删除动态磁盘上的分区可能会删除该磁盘上的所有动态卷、销毁任何数据并使磁盘处于损坏状态。
+>
+> 不能删除系统分区、启动分区或任何包含活动页面文件或故障转储信息的分区。
 
 ## <a name="syntax"></a>语法
 
@@ -28,21 +33,21 @@ delete partition [noerr] [override]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|override|允许 DiskPart 删除任何类型的分区。 通常，DiskPart 只允许删除已知的数据分区。|
-|noerr|仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。|
+| 参数 | 说明 |
+| --------- | ----------- |
+| noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
+| override | 允许 DiskPart 删除任何类型的分区。 通常，DiskPart 只允许删除已知的数据分区。 |
 
-## <a name="remarks"></a>备注
+#### <a name="remarks"></a>备注
 
-> [!CAUTION]
-> 删除动态磁盘上的分区可能会删除该磁盘上的所有动态卷，因而会销毁所有数据，并使磁盘处于损坏状态。 若要删除动态卷，请始终改用**delete volume**命令。 可以从动态磁盘中删除分区，但不应创建分区。 例如，可以删除动态 GPT 磁盘上的未识别的 GUID 分区表 (GPT) 分区。 删除此类分区不会导致生成的可用空间可用。 此命令旨在允许在不能使用 DiskPart 中的**clean**命令的紧急情况下，reclame 损坏的脱机动态磁盘上的空间。
-> -   不能删除系统分区、启动分区或任何包含活动页面文件或故障转储信息的分区。
-> -   必须选择分区，此操作才能成功。 使用 "**选择分区**" 命令可选择分区，并将焦点移动到该分区。
+- 若要删除动态卷，请始终改用[delete volume](delete-volume.md)命令。
+
+- 可以从动态磁盘中删除分区，但不应创建分区。 例如，可以在动态 GPT 磁盘上删除无法识别的 GUID 分区表（GPT）分区。 删除此类分区不会导致生成的可用空间可用。 相反，此命令旨在允许您在不能使用 DiskPart 中的[clean](clean.md)命令的紧急情况下回收损坏的脱机动态磁盘上的空间。
 
 ## <a name="examples"></a>示例
 
 若要删除具有焦点的分区，请键入：
+
 ```
 delete partition
 ```
@@ -51,3 +56,10 @@ delete partition
 
 - [命令行语法项](command-line-syntax-key.md)
 
+- [select partition](select-partition.md)
+
+- [删除命令](delete.md)
+
+- [删除卷命令](delete-volume.md)
+
+- [清除命令](clean.md)

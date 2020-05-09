@@ -9,29 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8fa956124e0c227d048d4c6eec844154187d5861
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4878377225f9c58e40256a3d151d0d8f3761afca
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725057"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993342"
 ---
 # <a name="ftp"></a>ftp
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-在运行文件传输协议（ftp）服务器服务的计算机之间传输文件。 可以通过处理 ASCII 文本文件，以交互方式或以批处理模式使用**ftp** 。 
+在运行文件传输协议（ftp）服务器服务的计算机之间传输文件。 可以通过处理 ASCII 文本文件，以交互方式或以批处理模式使用**ftp** 。
 ## <a name="syntax"></a>语法
 ```
 ftp [-v] [-d] [-i] [-n] [-g] [-s:<FileName>] [-a] [-A] [-x:<SendBuffer>] [-r:<RecvBuffer>] [-b:<AsyncBuffers>][-w:<WindowsSize>]  [-?] [<Host>]
 ```
 #### <a name="parameters"></a>参数
 
-|     参数     |                                                                                                                                                      描述                                                                                                                                                      |
+|     参数     |                                                                                                                                                      说明                                                                                                                                                      |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        -v         |                                                                                                                                    禁止显示远程服务器响应。                                                                                                                                     |
 |        -d         |                                                                                                               启用调试，并显示在 FTP 客户端和 FTP 服务器之间传递的所有命令。                                                                                                                |
-|        -o         |                                                                                                                            在多个文件传输过程中禁用交互式提示。                                                                                                                             |
+|        -i         |                                                                                                                            在多个文件传输过程中禁用交互式提示。                                                                                                                             |
 |        -n         |                                                                                                                                    在初始连接时禁止自动登录。                                                                                                                                     |
 |        -g         |                                         禁用文件名组合。  **Glob**允许将星号（\*）和问号（？）用作本地文件和路径名称中的通配符字符。 有关详细信息，请参阅 "[其他参考](ftp.md#BKMK_additionalRef)"。                                          |
 |   些<FileName>   | 指定包含**ftp**命令的文本文件。 这些命令将在**ftp**启动后自动运行。 此参数不允许有空格。 使用此参数，而不是**<** 重定向（）。 **注意：** 在 Windows 8 和 Windows Server 2012 或更高版本的操作系统中，必须用 UTF-8 编写文本文件。 |
