@@ -8,23 +8,23 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 06/21/2019
-ms.openlocfilehash: f9a0ee9cb78a89b20140e40a2bd3ae42da56c84f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f1c25cc88c577ccb1bc0e8cc690114471e86b6ba
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856930"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203395"
 ---
->适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
-
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>为受 TPM 信任的证明添加主机信息
+
+> 适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 对于 TPM 模式，构造管理员捕获三种类型的主机信息，其中每个信息需要添加到 HGS 配置中：
 
 - 每个 Hyper-v 主机的 TPM 标识符（EKpub）
 - 代码完整性策略，Hyper-v 主机允许的二进制文件的列表
 - TPM 基线（启动度量值），表示在相同的硬件类上运行的一组 Hyper-v 主机
-    
+
 Af er：构造管理员捕获信息，将其添加到 HGS 配置中，如以下过程中所述。
 
 1. 获取包含 EKpub 信息的 XML 文件，并将其复制到 HGS 服务器。 每个主机将有一个 XML 文件。 然后，在 HGS 服务器上已提升权限的 Windows PowerShell 控制台中运行以下命令。 为每个 XML 文件重复此命令。
@@ -46,7 +46,7 @@ Af er：构造管理员捕获信息，将其添加到 HGS 配置中，如以下�
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'
        ```
-    
+
     > [!NOTE]
     > If you're using a signed code integrity policy, register an unsigned copy of the same policy with HGS.
     > The signature on code integrity policies is used to control updates to the policy, but is not measured into the host TPM and therefore cannot be attested to by HGS.
@@ -59,7 +59,7 @@ Af er：构造管理员捕获信息，将其添加到 HGS 配置中，如以下�
 
 这将完成为 TPM 模式配置 HGS 群集的过程。 构造管理员可能需要在为主机完成配置之前，先从 HGS 提供两个 Url。 若要获取这些 Url，请在 HGS 服务器上运行[HgsServer](https://docs.microsoft.com/powershell/module/hgsserver/get-hgsserver?view=win10-ps)。
 
-## <a name="next-step"></a>下一步
+## <a name="next-step"></a>后续步骤
 
 > [!div class="nextstepaction"]
 > [确认证明](guarded-fabric-confirm-hosts-can-attest-successfully.md)

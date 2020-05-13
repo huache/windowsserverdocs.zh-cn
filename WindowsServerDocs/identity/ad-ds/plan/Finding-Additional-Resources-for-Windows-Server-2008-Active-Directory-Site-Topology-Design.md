@@ -7,16 +7,16 @@ manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: b328bfcb5977e5c7117590b173dbb967214bf10d
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: c9f1256849d561c1cb3e454b2826628095c45c07
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624215"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235250"
 ---
-> 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>为 Windows Server 2008 Active Directory 站点拓扑设计查找其他资源
 
-# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>查找其他 Resou # rces for Windows Server 2008 Active Directory 站点拓扑设计
+> 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 你可以在 Windows Server 2003 和 Windows Server 2008 技术网站上找到有关 Active Directory 域服务（AD DS）的以下文档：
 

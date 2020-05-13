@@ -9,16 +9,16 @@ ms.technology: compute-hyper-v
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: 1e9cd8710a53c1e5d9d97e464c32dbf7f17d29a7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f1b321c04ad0b7541f21b444499b13fd2b4e4a6d
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860890"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203559"
 ---
->适用于： Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
-
 # <a name="export-and-import-virtual-machines"></a>导出和导入虚拟机
+
+> 适用于： Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 本文介绍如何导出和导入虚拟机，这是移动或复制虚拟机的一种快速方法。 本文还讨论了执行导出或导入时要执行的一些选择。
 
@@ -38,7 +38,7 @@ ms.locfileid: "80860890"
 
 ### <a name="using-powershell"></a>使用 PowerShell
 
-在替换 \<vm 名称\> 和 \<\>路径后，以管理员身份打开会话并运行如下所示的命令：
+在替换 \< vm 名称和路径后，以管理员身份打开会话并运行如下所示的命令 \> \< \> ：
 
 ```powershell
 Export-VM -Name \<vm name\> -Path \<path\>
@@ -46,7 +46,7 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 有关详细信息，请参阅[Export-VM](https://docs.microsoft.com/powershell/module/hyper-v/export-vm)。
 
-## <a name="import-a-virtual-machine"></a>导入虚拟机 
+## <a name="import-a-virtual-machine"></a>导入虚拟机
 
 导入虚拟机会向 Hyper-V 主机注册该虚拟机。 你可以导入回主机或新主机。 如果要导入到同一主机，则无需先导出虚拟机，因为 Hyper-v 会尝试通过可用文件重新创建虚拟机。 导入虚拟机会注册虚拟机，使其可在 Hyper-v 主机上使用。
 
@@ -58,7 +58,7 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 1. 从 Hyper-v 管理器的 "**操作**" 菜单中，单击 "**导入虚拟机**"。
 
-2. 单击 **“下一步”** 。
+2. 单击“下一步”  。
 
 3. 选择包含导出文件的文件夹，然后单击 "**下一步**"。
 
@@ -66,21 +66,21 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 5. 选择导入类型，然后单击 "**下一步**"。 （有关说明，请参阅下面的[导入类型](#import-types)。）
 
-6. 单击 **“完成”** 。
+6. 单击“完成”  。
 
 ### <a name="import-using-powershell"></a>使用 PowerShell 导入
 
-按照所需导入类型的示例，使用**导入 VM** cmdlet。 有关类型的说明，请参阅下面的[导入类型](#import-types)。 
+按照所需导入类型的示例，使用**导入 VM** cmdlet。 有关类型的说明，请参阅下面的[导入类型](#import-types)。
 
 #### <a name="register-in-place"></a>就地注册
 
 此类导入使用导入时存储它们的文件，并保留虚拟机的 ID。 以下命令显示了导入文件的示例。 使用自己的值运行类似的命令。
 
 ```powershell
-Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' 
+Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx'
 ```
 
-#### <a name="restore"></a>Restore
+#### <a name="restore"></a>还原
 
 若要导入虚拟机为虚拟机文件指定自己的路径，请运行如下所示的命令，并将示例替换为值：
 

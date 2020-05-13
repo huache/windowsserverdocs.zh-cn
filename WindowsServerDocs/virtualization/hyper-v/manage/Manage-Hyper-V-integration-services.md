@@ -9,16 +9,16 @@ ms.date: 12/20/2016
 ms.topic: article
 ms.prod: windows-server
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 2c5e2d67b391cd53a6995957da5dab108a34e1a9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4237da8ee393953a8eb2a2b577c2df201f96a7be
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820710"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235063"
 ---
->适用于： Windows 10，Windows Server 2012，Windows Server 2012R2，Windows Server 2016，Windows Server 2019
-
 # <a name="manage-hyper-v-integration-services"></a>管理 Hyper-v Integration Services
+
+> 适用于： Windows 10，Windows Server 2012，Windows Server 2012R2，Windows Server 2016，Windows Server 2019
 
 Hyper-v Integration Services 通过与 Hyper-v 主机进行双向通信来增强虚拟机性能并提供便利功能。 其中许多服务都是很便利（如来宾文件复制），而其他服务则对虚拟机的功能很重要，例如合成设备驱动程序。 这组服务和驱动程序有时称为 "集成组件"。 可以控制每个给定虚拟机的个别便利服务是否正常运行。 驱动程序组件不应被手动提供服务。
 
@@ -30,9 +30,9 @@ Hyper-v Integration Services 通过与 Hyper-v 主机进行双向通信来增强
 ## <a name="turn-an-integration-service-on-or-off-using-hyper-v-manager"></a>使用 Hyper-v 管理器打开或关闭集成服务
 
 1. 在中心窗格中，右键单击虚拟机，然后单击 "**设置**"。
-  
+
 2. 从 "**设置**" 窗口的左窗格中的 "**管理**" 下，单击 " **Integration Services**"。
-  
+
 "Integration Services" 窗格列出了 Hyper-v 主机上可用的所有集成服务，以及该主机是否已启用虚拟机以使用它们。
 
 ### <a name="turn-an-integration-service-on-or-off-using-powershell"></a>使用 PowerShell 启用或禁用集成服务
@@ -42,7 +42,7 @@ Hyper-v Integration Services 通过与 Hyper-v 主机进行双向通信来增强
 下面的示例演示如何为名为 "demovm" 的虚拟机启用和禁用来宾文件复制集成服务。
 
 1. 获取正在运行的 integration services 的列表：
-  
+
     ``` PowerShell
     Get-VMIntegrationService -VMName "DemoVM"
     ```
@@ -69,15 +69,15 @@ Hyper-v Integration Services 通过与 Hyper-v 主机进行双向通信来增强
 1. 验证是否已启用来宾服务接口：
 
    ```
-   Get-VMIntegrationService -VMName "DemoVM" 
-   ``` 
+   Get-VMIntegrationService -VMName "DemoVM"
+   ```
 
 1. 禁用来宾服务接口：
 
     ```
     Disable-VMIntegrationService -VMName "DemoVM" -Name "Guest Service Interface"
     ```
-   
+
 ## <a name="checking-the-guests-integration-services-version"></a>检查来宾的 integration services 版本
 某些功能可能无法正常工作，或者如果来宾的集成服务不是最新的，则不能正常工作。 若要获取 Windows 的版本信息，请登录到来宾操作系统，打开命令提示符，并运行以下命令：
 
@@ -97,11 +97,11 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 ### <a name="use-windows-services-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>使用 Windows 服务在 Windows 来宾中启动或停止集成服务
 
-1. 通过以管理员身份运行 ```services.msc``` 或双击控制面板中的 "服务" 图标，打开 "服务管理器"。
+1. 通过 ```services.msc``` 以管理员身份运行或通过双击 "控制面板" 中的 "服务" 图标来打开服务管理器。
 
-    ![显示 "Windows 服务" 窗格的屏幕截图](media/HVServices.png) 
+    ![显示 "Windows 服务" 窗格的屏幕截图](media/HVServices.png)
 
-1. 查找以 "Hyper-v" 开头的服务。 
+1. 查找以 "Hyper-v" 开头的服务。
 
 1. 右键单击要启动或停止的服务。 单击所需的操作。
 
@@ -113,7 +113,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     Get-Service -Name vm*
     ```
 
-1.  输出应如下所示：
+1.  该输出应与以下类似：
 
     ```PowerShell
     Status   Name               DisplayName
@@ -134,7 +134,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     Stop-Service -Name vmicvmsession
     ```
 
-## <a name="start-and-stop-an-integration-service-from-a-linux-guest"></a>从 Linux 来宾启动和停止集成服务 
+## <a name="start-and-stop-an-integration-service-from-a-linux-guest"></a>从 Linux 来宾启动和停止集成服务
 
 Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 驱动程序名为**hv_utils**。
 
@@ -142,10 +142,10 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
    ``` BASH
    lsmod | grep hv_utils
-   ``` 
-  
-2. 输出应如下所示：  
-  
+   ```
+
+2. 该输出应与以下类似：
+
     ``` BASH
     Module                  Size   Used by
     hv_utils               20480   0
@@ -153,13 +153,13 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
     ```
 
 3. 若要查看所需的守护程序是否正在运行，请使用此命令。
-  
+
     ``` BASH
     ps -ef | grep hv
     ```
-  
-4. 输出应如下所示： 
-  
+
+4. 该输出应与以下类似：
+
     ```BASH
     root       236     2  0 Jul11 ?        00:00:00 [hv_vmbus_con]
     root       237     2  0 Jul11 ?        00:00:00 [hv_vmbus_ctl]
@@ -168,7 +168,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
     root      1286     1  0 Jul11 ?        00:01:11 /usr/lib/linux-tools/3.13.0-32-generic/hv_kvp_daemon
     root      9333     1  0 Oct12 ?        00:00:00 /usr/lib/linux-tools/3.13.0-32-generic/hv_kvp_daemon
     root      9365     1  0 Oct12 ?        00:00:00 /usr/lib/linux-tools/3.13.0-32-generic/hv_vss_daemon
-    scooley  43774 43755  0 21:20 pts/0    00:00:00 grep --color=auto hv          
+    scooley  43774 43755  0 21:20 pts/0    00:00:00 grep --color=auto hv
     ```
 
 5. 若要查看哪些守护程序可用，请运行：
@@ -176,28 +176,28 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
     ``` BASH
     compgen -c hv_
     ```
-  
-6. 输出应如下所示：
-  
+
+6. 该输出应与以下类似：
+
     ``` BASH
     hv_vss_daemon
     hv_get_dhcp_info
     hv_get_dns_info
     hv_set_ifconfig
     hv_kvp_daemon
-    hv_fcopy_daemon     
+    hv_fcopy_daemon
     ```
-  
-   可能列出的 Integration services 守护程序包括以下各项。 如果缺少任何这些程序，可能不会在您的系统上受支持，或者它们可能未安装。 查找详细信息，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](https://technet.microsoft.com/library/dn531030.aspx)。  
+
+   可能列出的 Integration services 守护程序包括以下各项。 如果缺少任何这些程序，可能不会在您的系统上受支持，或者它们可能未安装。 查找详细信息，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](https://technet.microsoft.com/library/dn531030.aspx)。
    - **hv_vss_daemon**：创建实时 Linux 虚拟机备份需要此守护程序。
    - **hv_kvp_daemon**：此守护程序允许设置和查询内部和外部密钥值对。
-   - **hv_fcopy_daemon**：此后台程序在主机和来宾之间实现文件复制服务。  
+   - **hv_fcopy_daemon**：此后台程序在主机和来宾之间实现文件复制服务。
 
 ### <a name="examples"></a>示例
 
-这些示例演示了如何停止和启动 KVP 守护程序，名为 `hv_kvp_daemon`。
+这些示例演示了如何停止和启动 KVP 守护程序（名为） `hv_kvp_daemon` 。
 
-1. 使用进程 ID \(PID\) 停止守护程序的进程。 若要查找 PID，请查看输出的第二列，或使用 `pidof`。 Hyper-v 守护程序作为根运行，所以需要根权限。
+1. 使用进程 ID \( PID \) 停止守护程序的进程。 若要查找 PID，请查看输出的第二列，或使用 `pidof` 。 Hyper-v 守护程序作为根运行，所以需要根权限。
 
     ``` BASH
     sudo kill -15 `pidof hv_kvp_daemon`
@@ -213,9 +213,9 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
     ``` BASH
     sudo hv_kvp_daemon
-    ``` 
+    ```
 
-1. 若要验证是否使用新的进程 ID 列出了 `hv_kvp_daemon` 进程，请运行：
+1. 若要 `hv_kvp_daemon` 使用新的进程 ID 验证进程是否已列出，请运行：
 
     ```
     ps -ef | hv
@@ -230,40 +230,40 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 > [!NOTE]
 > Windows 10/Windows Server 2016/2019 上的 Hyper-v 不附带 vmguest.iso 映像文件，因为不再需要此文件。
 
-| 来宾  | 更新机制 | 注意 |
+| 来宾  | 更新机制 | 注释 |
 |:---------|:---------|:---------|
-| Windows 10 | Windows Update | |
-| Windows 8.1 | Windows Update | |
-| Windows 8 | Windows Update | 需要数据交换集成服务。* |
-| Windows 7 | Windows Update | 需要数据交换集成服务。* |
-| Windows Vista (SP 2) | Windows Update | 需要数据交换集成服务。* |
+| Windows 10 | Windows 更新 | |
+| Windows 8.1 | Windows 更新 | |
+| Windows 8 | Windows 更新 | 需要“数据交换”集成服务。* |
+| Windows 7 | Windows 更新 | 需要“数据交换”集成服务。* |
+| Windows Vista (SP 2) | Windows 更新 | 需要“数据交换”集成服务。* |
 | - | | |
-| Windows Server 2016 | Windows Update | |
-| Windows Server 半年频道 | Windows Update | |
-| Windows Server 2012 R2 | Windows Update | |
-| Windows Server 2012 | Windows Update | 需要数据交换集成服务。* |
-| Windows Server 2008 R2 (SP 1) | Windows Update | 需要数据交换集成服务。* |
-| Windows Server 2008 (SP 2) | Windows Update | 仅在 Windows Server 2016 中提供扩展支持（[阅读详细信息](https://support.microsoft.com/lifecycle?p1=12925)）。 |
-| Windows Home Server 2011 | Windows Update | 在 Windows Server 2016 中将不受支持（[阅读详细信息](https://support.microsoft.com/lifecycle?p1=15820)）。 |
-| Windows Small Business Server 2011 | Windows Update | 非主要支持（[阅读更多](https://support.microsoft.com/lifecycle?p1=15817)）。 |
+| Windows Server 2016 | Windows 更新 | |
+| Windows Server 半年频道 | Windows 更新 | |
+| Windows Server 2012 R2 | Windows 更新 | |
+| Windows Server 2012 | Windows 更新 | 需要“数据交换”集成服务。* |
+| Windows Server 2008 R2 (SP 1) | Windows 更新 | 需要“数据交换”集成服务。* |
+| Windows Server 2008 (SP 2) | Windows 更新 | 仅在 Windows Server 2016 中提供扩展支持（[阅读详细信息](https://support.microsoft.com/lifecycle?p1=12925)）。 |
+| Windows Home Server 2011 | Windows 更新 | 在 Windows Server 2016 中将不受支持（[阅读详细信息](https://support.microsoft.com/lifecycle?p1=15820)）。 |
+| Windows Small Business Server 2011 | Windows 更新 | 不受主流支持（[阅读更多](https://support.microsoft.com/lifecycle?p1=15817)）。 |
 | - | | |
 | Linux 来宾 | 程序包管理器 | Linux 集成服务内置于发行版中，但可能有可选的更新可用。 ******** |
 
-\* 如果无法启用数据交换集成服务，这些来宾的集成服务将从[下载中心](https://support.microsoft.com/kb/3071740)作为 cabinet （cab）文件提供。 此[博客文章](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)提供了应用 cab 的说明。
+\*如果无法启用数据交换集成服务，这些来宾的集成服务将从[下载中心](https://support.microsoft.com/kb/3071740)作为 cabinet （cab）文件提供。 此[博客文章](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)提供了应用 cab 的说明。
 
 **对于在 Windows 8.1/Windows Server 2012R2 主机上运行的虚拟机：**
 
-| 来宾  | 更新机制 | 注意 |
+| 来宾  | 更新机制 | 注释 |
 |:---------|:---------|:---------|
-| Windows 10 | Windows Update | |
+| Windows 10 | Windows 更新 | |
 | Windows 8.1 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows 8 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Vista (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows XP（SP 2、SP 3） | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | - | | |
-| Windows Server 2016 | Windows Update | |
-| Windows Server 半年频道 | Windows Update | |
+| Windows Server 2016 | Windows 更新 | |
+| Windows Server 半年频道 | Windows 更新 | |
 | Windows Server 2012 R2 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Server 2012 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows Server 2008 R2 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
@@ -278,7 +278,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
 **对于在 Windows 8/Windows Server 2012 主机上运行的虚拟机：**
 
-| 来宾  | 更新机制 | 注意 |
+| 来宾  | 更新机制 | 注释 |
 |:---------|:---------|:---------|
 | Windows 8.1 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows 8 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
@@ -302,16 +302,16 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 ## <a name="install-or-update-integration-services"></a>安装或更新 integration services
 
 > [!NOTE]
-> 对于早于 Windows Server 2016 和 Windows 10 的主机，你将需要在来宾操作系统中**手动安装或更新**integration services。 
+> 对于早于 Windows Server 2016 和 Windows 10 的主机，你将需要在来宾操作系统中**手动安装或更新**integration services。
 
 手动安装或更新 integration services 的过程：
 
-1.  打开 Hyper-V 管理器。 在服务器管理器的 "工具" 菜单中，单击 " **Hyper-v 管理器**"。  
-  
-2.  连接到虚拟机。 右键单击该虚拟机，然后单击 "**连接**"。  
-  
-3.  在“虚拟机连接”的“操作”菜单中，单击“插入集成服务安装盘”。 该操作将在虚拟 DVD 驱动器中加载安装盘。 根据来宾操作系统的不同，您可能需要手动启动安装。  
-  
+1.  打开 Hyper-V 管理器。 在服务器管理器的 "工具" 菜单中，单击 " **Hyper-v 管理器**"。
+
+2.  连接到虚拟机。 右键单击该虚拟机，然后单击 "**连接**"。
+
+3.  在“虚拟机连接”的“操作”菜单中，单击“插入集成服务安装盘”****。 该操作将在虚拟 DVD 驱动器中加载安装盘。 根据来宾操作系统的不同，您可能需要手动启动安装。
+
 4.  安装完成后，所有集成服务均可使用。
 
 > [!NOTE]

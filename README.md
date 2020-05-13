@@ -27,12 +27,12 @@
 
 ## <a name="markdown-info"></a>Markdown 信息
 
-有关如何在 Docs.microsoft.com 上使用 Markdown 的信息，请参阅[文档 Markdown 参考](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master)。 此内容的可公开访问的版本如下：[公用文档 markdown 参考](https://docs.microsoft.com/contribute/how-to-write-use-markdown)。
+有关如何在 Docs.microsoft.com 上使用 Markdown 的信息，请参阅[文档 Markdown 参考](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master)。 此内容的可公开访问的版本如下：[公用文档 markdown 参考](https://docs.microsoft.com/contribute/markdown-reference)。
 
-## <a name="license"></a>许可证
+## <a name="license"></a>许可
 
 请参阅 [LICENSE](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/LICENSE)、[LICENSE-CODE](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/LICENSE-CODE) 和 [ThirdPartyNotices](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/ThirdPartyNotices) 了解所有许可信息。
 
 ## <a name="code-of-conduct"></a>行为准则
 
-此项目采用了 [Microsoft 开放源代码行为准则](https://opensource.microsoft.com/codeofconduct/)。 有关详细信息，请参阅[行为准则常见问题解答](https://opensource.microsoft.com/codeofconduct/faq/)，或如果有任何其他问题或意见，请与 [opencode@microsoft.com](mailto:opencode@microsoft.com) 联系。
+本项目采用 [Microsoft 开源行为准则](https://opensource.microsoft.com/codeofconduct/)。 有关详细信息，请参阅[行为准则常见问题](https://opensource.microsoft.com/codeofconduct/faq/)；若有其他任何问题或意见，请联系 [opencode@microsoft.com](mailto:opencode@microsoft.com)。

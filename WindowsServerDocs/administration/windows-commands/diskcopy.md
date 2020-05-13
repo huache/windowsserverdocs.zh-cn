@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: b8fd482d7c2e5933f269320df2bff75f65195bc2
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 99d1007a7c6f154b621e43d674d06f25b2911f00
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992526"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235175"
 ---
 # <a name="diskcopy"></a>diskcopy
 
@@ -93,7 +93,9 @@ diskcopy b: a:
 
 若要使用软盘驱动器 A 将软盘复制到另一张软盘，请先切换到 C 驱动器，然后键入：
 
-diskcopy a： a：
+```
+diskcopy a: a:
+```
 
 ## <a name="additional-references"></a>其他参考
 
