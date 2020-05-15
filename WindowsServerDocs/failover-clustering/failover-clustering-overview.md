@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: b646890ebc8b8e64d84e6d448ce4acb393422009
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 5b0193f18fe94f391f1bbbc41280c16e4a1bcd0c
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827710"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203493"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server 中的故障转移群集
 
@@ -32,7 +32,7 @@ ms.locfileid: "80827710"
 | **了解**                                                               |  **规划**                          |  **部署**       |
 | -------------                                                                |  --------------                        | --------------------- |
 | [故障转移群集中的新增功能](whats-new-in-failover-clustering.md)    | [规划故障转移群集硬件要求和存储选项](clustering-requirements.md)  | [创建故障转移群集](create-failover-cluster.md) |
-| [横向扩展应用程序数据文件服务器](sofs-overview.md)               | [使用群集共享卷 (CSV)](failover-cluster-csvs.md) | [部署双节点文件服务器](../storage/storage-spaces/storage-spaces-direct-in-vm.md) |
+| [横向扩展应用程序数据文件服务器](sofs-overview.md)               | [使用群集共享卷 (CSV)](failover-cluster-csvs.md) | [部署双节点文件服务器](deploy-two-node-clustered-file-server.md) |
 |  [群集和池仲裁](../storage/storage-spaces/understand-quorum.md)   |  [使用带存储空间直通的来宾虚拟机群集](../storage/storage-spaces/storage-spaces-direct-in-vm.md)       | [在 Active Directory 域服务中预留群集计算机对象](prestage-cluster-adds.md) |
 | [群集和池仲裁](fault-domains.md)                                 |                                 | [在 Active Directory 中配置群集帐户](configure-ad-accounts.md) |
 | [简化的 SMB 多通道和多 NIC 群集网络](smb-multichannel.md) |                       | [管理仲裁和见证](manage-cluster-quorum.md) |
