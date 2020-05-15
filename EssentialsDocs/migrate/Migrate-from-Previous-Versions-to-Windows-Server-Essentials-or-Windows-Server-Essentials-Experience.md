@@ -8,18 +8,18 @@ ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 55b31785de6e17232a717d534fcb21a24d9052bd
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5c73714dff2d89201ac93704105038c604f12e06
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318897"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404572"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>从早期版本迁移到 Windows Server Essentials 或 Windows Server Essentials 体验
 
->适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>适用于： Windows Server 2012 R2 Essentials
 
-本指南介绍如何从以前版本的 Windows Small Business Server 和 Windows Server Essentials （包括 Windows Server Essentials、Windows Small Business Server 2011 Standard、Windows Small Business Server 2011 Essentials、WindowsWindows server Essentials 或 windows server 2012 R2 （安装了 Windows Server Essentials Experience 角色）到 Windows server Essentials 或 Windows Server R2 的 Small Business Server 2008 和 Windows Small Business Server 2003）。  
+本指南介绍了如何从以前版本的 Windows Small Business Server 和 Windows Server Essentials （包括 Windows Server Essentials、Windows Small Business Server 2011 Standard、Windows Small Business server 2011 Essentials、Windows Small business Server 2008 和 Windows Small Business Server 2003）迁移到 Windows Server Essentials 或装有 Windows Server Essentials 体验角色的 Windows Server 2012 R2。  
   
  **对于具有最多25个用户和50设备的环境**，你可以按照本指南中的步骤从早期版本的 windows SBS 迁移到 Windows Server Essentials。  
   
@@ -56,17 +56,17 @@ ms.locfileid: "80318897"
   
 ###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>在源服务器上以管理员身份打开 "命令提示符" 窗口  
   
-1.  单击 **“开始”** 。  
+1.  单击“启动”  。  
   
-2.  在搜索框中，键入“cmd”。  
+2.  在搜索框中，键入“cmd”****。  
   
-3.  在结果列表中，右键单击“cmd”，然后单击“以管理员身份运行”。  
+3.  在结果列表中，右键单击“cmd”****，然后单击“以管理员身份运行”****。  
   
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>在目标服务器上以管理员身份打开命令提示符窗口的步骤  
   
-1.  在“开始”屏幕的搜索框中，键入 **cmd**。  
+1.  在“开始”**** 屏幕的搜索框中，键入 **cmd**。  
   
-2.  在结果列表中，右键单击“cmd”，然后单击“以管理员身份运行”。  
+2.  在结果列表中，右键单击“cmd”****，然后单击“以管理员身份运行”****。  
   
 ## <a name="see-also"></a>另请参阅  
   

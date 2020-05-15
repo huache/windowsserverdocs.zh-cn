@@ -8,16 +8,16 @@ ms.assetid: e6ba701d-7183-4c26-960e-44cc280bf3e6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e32033dafe48f5b5eac063af638c14267e82e62f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 43ec26b2a1ae4616363494a5e911c0464eacdab7
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852310"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404497"
 ---
 # <a name="step-8-run-the-windows-server-essentials-best-practices-analyzer"></a>步骤 8：运行 Windows Server Essentials 最佳做法分析器
 
->适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
 完成将设置和数据迁移到 Windows Server Essentials 后，应在目标服务器上运行 Windows Server Essentials 最佳做法分析器（BPA）。 BPA 检查正在运行 Windows Server Essentials 的服务器，并提供一份描述问题的报告，并提供解决这些问题的建议。 建议由适用于 Windows Server Essentials 的产品支持组织开发。  
   
@@ -25,11 +25,11 @@ ms.locfileid: "80852310"
   
 1.  以管理员身份登录到目标服务器，然后打开服务器管理器。  
   
-2.  在服务器管理器中，单击“Windows Server Essentials 体验”选项卡。  
+2.  在服务器管理器中，单击“Windows Server Essentials 体验”**** 选项卡。  
   
-3.  在详细信息窗格中，选择“最佳做法分析器”。  
+3.  在详细信息窗格中，选择“最佳做法分析器”****。  
   
-4.  单击“任务”，然后单击“启动 BPA 扫描”。  
+4.  单击“任务”****，然后单击“启动 BPA 扫描”****。  
   
 5.  查看每个 BPA 消息，并按照说明来解决问题（如有必要）。  
   

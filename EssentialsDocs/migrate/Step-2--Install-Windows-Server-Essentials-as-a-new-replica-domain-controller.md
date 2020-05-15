@@ -8,16 +8,16 @@ ms.assetid: c7ccfc34-63fd-436b-a1cd-e05810f60bfe
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 932ff1010ebe0be3b560375ac46b0372f86e3dc2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5d86f5ae25c67ffb9e0f00fc5d373e6a095df98
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852370"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404556"
 ---
 # <a name="step-2-install-windows-server-essentials-as-a-new-replica-domain-controller"></a>步骤 2：将 Windows Server Essentials 安装为新副本域控制器
 
->适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
 本部分介绍如何将 Windows Server Essentials 和 Windows Server 2012 R2 Standard （已启用 Windows Server Essentials Experience 角色）安装为域控制器。  
   
@@ -54,7 +54,7 @@ ms.locfileid: "80852370"
   
     1.  打开“仪表板”。  
   
-    2.  单击“用户”选项卡，并验证是否列出了 Active Directory 中的用户帐户。  
+    2.  单击“用户”**** 选项卡，并验证是否列出了 Active Directory 中的用户帐户。  
   
 ### <a name="transfer-the-operations-master-roles"></a>传送操作主机角色  
  操作主机（也称为灵活单主机操作或 FSMO）角色必须在目标服务器上安装 Windows Server Essentials 21 天内从源服务器传输到目标服务器。  
@@ -75,19 +75,19 @@ ms.locfileid: "80852370"
   
     3.  键入 **connection**，然后按 ENTER。  
   
-    4.  键入**connect to server** *< servername\>* （其中 *< ServerName\>* 是目标服务器的名称），然后按 enter。  
+    4.  键入**connect to server** *<servername \> * （其中 *<ServerName \> *是目标服务器的名称），然后按 enter。  
   
     5.  在命令提示符处键入 **q**，然后按 ENTER。  
   
-        1.  键入 **transfer PDC**，按 ENTER，然后在“角色传送确认”对话框中单击“是”。  
+        1.  键入 **transfer PDC**，按 ENTER，然后在“角色传送确认”**** 对话框中单击“是”****。  
   
-        2.  键入 **transfer infrastructure master**，按 ENTER，然后在“角色传送确认”对话框中单击“是”。  
+        2.  键入 **transfer infrastructure master**，按 ENTER，然后在“角色传送确认”**** 对话框中单击“是”****。  
   
-        3.  键入 **transfer naming master**，按 ENTER，然后在“角色传送确认”对话框中单击“是”。  
+        3.  键入 **transfer naming master**，按 ENTER，然后在“角色传送确认”**** 对话框中单击“是”****。  
   
-        4.  键入 **transfer RID master**，按 ENTER，然后在“角色传送确认”对话框中单击“是”。  
+        4.  键入 **transfer RID master**，按 ENTER，然后在“角色传送确认”**** 对话框中单击“是”****。  
   
-        5.  键入 **transfer schema master**，按 ENTER，然后在“角色传送确认”对话框中单击“是”。  
+        5.  键入 **transfer schema master**，按 ENTER，然后在“角色传送确认”**** 对话框中单击“是”****。  
   
     6.  键入 **q**，然后一直按 ENTER，直到返回命令提示符为止。  
   

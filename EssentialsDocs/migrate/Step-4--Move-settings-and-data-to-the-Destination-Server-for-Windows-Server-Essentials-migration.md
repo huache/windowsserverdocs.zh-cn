@@ -8,16 +8,16 @@ ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e19f3a8333cc08568f8d437da2e35a6c64920df1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd3ba0b54e24a5fcafb72c970f05224c3606ff3a
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852350"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404529"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>步骤 4：将设置和数据移到目标服务器以进行 Windows Server Essentials 迁移
 
->适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
 本节提供从源服务器迁移数据和设置的相关信息。 将设置和数据移到目标服务器，如下所示：：  
   
@@ -36,9 +36,9 @@ ms.locfileid: "80852350"
   
 -   使源服务器上的共享文件夹对所有用户只读，以便在将文件复制到目标服务器时，不会在硬盘驱动器上发生写入操作。  
   
--   “客户端计算机备份”文件夹不能迁移到目标服务器。 在服务器迁移之前，确保所有客户端计算机正常运行。 完成服务器迁移后，建议配置和启动客户端计算机备份，以确保对所有重要客户端计算机的数据进行备份。  
+-   “客户端计算机备份”**** 文件夹不能迁移到目标服务器。 在服务器迁移之前，确保所有客户端计算机正常运行。 完成服务器迁移后，建议配置和启动客户端计算机备份，以确保对所有重要客户端计算机的数据进行备份。  
   
--   由于 Windows Server Essentials 中的文件夹结构和备份元数据更改，因此无法将 "**文件历史记录备份**" 文件夹直接迁移到目标服务器。 但是，可以为特定计算机上的特定用户迁移“文件历史记录备份”文件夹。 若要执行此操作，应在用于该用户和计算机的“文件历史记录备份”文件夹中找到“数据”文件夹，然后将该“数据”文件夹复制到目标服务器上的“文件历史记录备份”文件夹中。  
+-   由于 Windows Server Essentials 中的文件夹结构和备份元数据更改，因此无法将 "**文件历史记录备份**" 文件夹直接迁移到目标服务器。 但是，可以为特定计算机上的特定用户迁移“文件历史记录备份”**** 文件夹。 若要执行此操作，应在用于该用户和计算机的“文件历史记录备份”**** 文件夹中找到“数据”**** 文件夹，然后将该“数据”**** 文件夹复制到目标服务器上的“文件历史记录备份”**** 文件夹中。  
   
 #### <a name="to-copy-data-from-the-source-server-to-the-destination-server"></a>将数据从源服务器复制到目标服务器  
   
@@ -50,15 +50,15 @@ ms.locfileid: "80852350"
   
     其中：  
   
-   - \<SourceServerName\> 为源服务器的名称  
+   - \<SourceServerName \> 是源服务器的名称  
   
-   - \<Sharedsourcefoldername&gt\> 是源服务器上共享文件夹的名称  
+   - \<Sharedsourcefoldername&gt \> 是源服务器上共享文件夹的名称  
   
-   - \<Pathofthedestination&gt\> 是要将文件夹移动到的绝对路径  
+   - \<Pathofthedestination&gt \> 是要将文件夹移动到的绝对路径  
   
-   - \<Shareddestinationfoldername&gt\> 是将数据复制到的目标服务器上的文件夹  
+   - \<Shareddestinationfoldername&gt \> 是将数据复制到的目标服务器上的文件夹  
   
-     例如  `robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`。  
+     例如，`robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`。  
   
 3. 如果使用 Windows PowerShell，则键入以下命令，然后按 Enter 键。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "80852350"
   
 1. 在目标服务器上，打开仪表板。  
   
-2. 在仪表板“主页”页面上，单击“设置”，单击“设置随处访问”，然后选择“单击以配置随处访问”选项。  
+2. 在仪表板“主页”**** 页面上，单击“设置”****，单击“设置随处访问”****，然后选择“单击以配置随处访问”**** 选项。  
   
 3. 此时会出现“设置随处访问”向导。 完成向导中的说明，配置你的路由器名和域名。  
   
@@ -92,15 +92,15 @@ ms.locfileid: "80852350"
   
 1.  打开 Windows Server Essentials 仪表板。  
   
-2.  在导航栏中，单击“用户”。  
+2.  在导航栏中，单击“用户”****。  
   
-3.  在用户帐户列表中，右键单击用户帐户，然后单击“查看帐户属性”。  
+3.  在用户帐户列表中，右键单击用户帐户，然后单击“查看帐户属性”****。  
   
-4.  单击“随处访问”选项卡，然后单击“允许远程 Web 访问和访问 Web 服务应用程序”。  
+4.  单击“随处访问”**** 选项卡，然后单击“允许远程 Web 访问和访问 Web 服务应用程序”****。  
   
-5.  依次单击“共享文件夹”、“计算机”、“主页链接”，然后单击“应用”。  
+5.  依次单击“共享文件夹”****、“计算机”****、“主页链接”****，然后单击“应用”****。  
   
-6.  单击“计算机访问”选项卡，然后单击要允许访问的计算机的名称。  
+6.  单击“计算机访问”**** 选项卡，然后单击要允许访问的计算机的名称。  
   
 7.  为每个用户帐户重复步骤 3、4、5 和 6。  
   

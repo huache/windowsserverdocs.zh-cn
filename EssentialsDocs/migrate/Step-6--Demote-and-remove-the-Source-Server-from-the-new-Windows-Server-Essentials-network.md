@@ -8,24 +8,24 @@ ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b1b7836e976ef35aec66e206ec8b1de0e2150d62
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 406010234528a094bfb36a606072f98c043c397a
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852330"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404510"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>步骤 6：从新的 Windows Server Essentials 网络中降级和删除源服务器
 
->适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
 完成 Windows Server Essentials 的安装并完成迁移后，必须执行以下任务：  
   
-1.  [删除 Active Directory 的证书服务](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_ADCS)  
+1.  [删除 Active Directory 证书服务](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_ADCS)  
   
 2.  [断开直接连接到源服务器的打印机的连接](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_PhysicallyDisconnect)  
   
-3.  [降级源服务器](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_DemoteTheSourceServer)  
+3.  [对源服务器进行降级](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_DemoteTheSourceServer)  
   
 4.  [删除源服务器并重新调整其用途](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)  
   
@@ -38,23 +38,23 @@ ms.locfileid: "80852330"
   
 1.  以域管理员身份登录到目标服务器。  
   
-2.  依次单击“开始”、“管理工具”和“服务器管理器”。  
+2.  依次单击“开始”****、“管理工具”**** 和“服务器管理器”****。  
   
-3.  在“用户帐户控制”对话框中单击“继续”。  
+3.  在“用户帐户控制”**** 对话框中单击“继续”****。  
   
-4.  在“角色摘要”部分中，单击“删除角色”。  
+4.  在“角色摘要”**** 部分中，单击“删除角色”****。  
   
-5.  在删除角色向导中，单击“下一步”。  
+5.  在删除角色向导中，单击“下一步”****。  
   
-6.  清除“Active Directory 证书服务”复选框，然后单击“下一步”。  
+6.  清除“Active Directory 证书服务”**** 复选框，然后单击“下一步”****。  
   
-7.  在“确认删除选项”页上，查看信息，然后单击“删除”。  
-  
-    > [!NOTE]
-    >  如果正在运行 Internet Information Services (IIS)，则在继续下一步之前，系统会提示你停止该服务。 单击“确定”。  
+7.  在“确认删除选项”**** 页上，查看信息，然后单击“删除”****。  
   
     > [!NOTE]
-    >  首先，可能需要删除“证书颁发机构 Web 注册”（如果已安装）。  
+    >  如果正在运行 Internet Information Services (IIS)，则在继续下一步之前，系统会提示你停止该服务。 单击 **“确定”** 。  
+  
+    > [!NOTE]
+    >  首先，可能需要删除“证书颁发机构 Web 注册”****（如果已安装）。  
   
 8.  删除角色向导完成后，请重新启动服务器以完成卸载过程。  
   
@@ -78,7 +78,7 @@ ms.locfileid: "80852330"
   
 3. 在命令提示符下，键入 **gpupdate /force**，然后按 Enter。  
   
-4. 该过程可能需要注销并重新登录才能完成。 单击“是”以确认。  
+4. 该过程可能需要注销并重新登录才能完成。 单击“是”**** 以确认。  
   
    如果要从 Windows Server Essentials 或其早期版本进行迁移，若要降级服务器，请参阅[删除 Active Directory 域服务](https://technet.microsoft.com/library/hh472163.aspx)。 在将源服务器添加为工作组的成员并断开它到网络的连接之后，必须将它从目标服务器上的 AD DS 中删除。  
   
@@ -86,13 +86,13 @@ ms.locfileid: "80852330"
   
 #### <a name="to-remove-the-source-server-from-active-directory"></a>从 Active Directory 中删除源服务器  
   
-1.  在目标服务器上，打开“Active Directory 用户和计算机”。  
+1.  在目标服务器上，打开“Active Directory 用户和计算机”****。  
   
-2.  在“Active Directory 用户和计算机”导航窗格中，展开域名，然后再展开“计算机”。  
+2.  在“Active Directory 用户和计算机”**** 导航窗格中，展开域名，然后再展开“计算机”****。  
   
-3.  如果源服务器仍存在于服务器列表中，则右键单击源服务器名称，再单击“删除”，然后单击“是”。  
+3.  如果源服务器仍存在于服务器列表中，则右键单击源服务器名称，再单击“删除”****，然后单击“是”****。  
   
-4.  验证源服务器是否未列出，然后关闭“Active Directory 用户和计算机”。  
+4.  验证源服务器是否未列出，然后关闭“Active Directory 用户和计算机”****。  
   
 ##  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a>删除源服务器并重新调整其用途  
  关闭源服务器并断开它到网络的连接。 我们建议你至少在一周的时间内不要重新格式化源服务器，以确保所有必要的数据都迁移到目标服务器。 在验证所有数据已迁移之后，如有必要，你可以在网络上将此服务器作为辅助服务器进行重新安装，以用于其他任务。  
