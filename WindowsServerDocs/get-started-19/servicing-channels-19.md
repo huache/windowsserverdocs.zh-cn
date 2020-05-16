@@ -8,16 +8,16 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: a10cb3b27e3434ab818b41e051edb38ab77626db
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0190fc05a7bf82e35339d93accae3a998babe166
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827130"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433131"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 服务频道：LTSC 和 SAC
 
->适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 目前为 Windows Server 客户提供的两种主要版本频道为长期服务频道和半年频道。
 
@@ -27,7 +27,7 @@ ms.locfileid: "80827130"
 
 这是你已熟悉的版本模型（以前称为“Long-Term Servicing *Branch*”），其中 Windows Server 的全新主要版本每 2-3 年发布一次。 用户有权享受 5 年的主流支持和 5 年的延长支持。 该频道适用于需要更长时间服务选项和功能稳定性的系统。 新的半年频道版本不会影响 Windows Server 2016 和 Windows Server 早期版本的部署工作。 长期服务频道将持续接受安全和非安全更新，但不会接受新特性和新功能。
 
-> [!Note]  
+> [!Note]
 > **当前的 LTSC 产品是 Windows Server 2019**。 如果你想坚持使用此频道，则应该安装（或继续使用）Windows Server 2019，你可以通过 Server Core 安装选项或带桌面体验的服务器安装选项进行安装。
 
 ## <a name="semi-annual-channel"></a>半年频道
@@ -38,7 +38,7 @@ ms.locfileid: "80827130"
 
 可使用[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，也可以通过 Azure 市场或其他云/托管服务提供商及 Visual Studio 订阅等会员计划为批量授权的客户提供半年频道。
 
-> [!Note]  
+> [!Note]
 > **当前的半年频道版本是 Windows Server 版本 1903**。 如果你要将服务器置于此频道，则应该安装 Windows Server 版本 1903，该版本可以在 Server Core 模式下安装或作为容器中运行的 Nano Server 来安装。 不支持从长期服务频道版本就地升级，因为它们处于**不同的发行频道**中。 半年频道发行版不是更新 – 它是半年频道中的下一个 Windows Server 发行版。
 
 在该模型中，Windows Server 版本通过发布的年份和月份进行标识：例如，2017 年 9 月发布的版本标识为**版本 1709**。 以半年频道发布的 Windows Server 每年发布两次新版本。 每个版本的支持周期为 18 个月。
@@ -48,7 +48,7 @@ ms.locfileid: "80827130"
 以下是需考虑的主要区别：
 
 - 是否需要快速创新？ 是否需要提前访问最新的 Windows Server 功能？ 是否需要支持快速节奏混合应用程序、dev-ops 和 Hyper-V 结构？ 如果需要，应该考虑安装 **Windows Server 版本 1903**，**加入半年频道**。 如本主题中所述，每年你将收到两个新版本，每个版本的主流生产支持期为 18 个月。 可通过批量许可、Azure 或 Visual Studio 订阅服务获取新版本。 目前，如果你打算在生产环境中运行产品，半年频道中的版本需要批量许可和软件保障。
-- 是否需要稳定性和可预测性？ 是否需要在物理服务器上运行虚拟机和传统工作负载？ 如果需要，应该考虑**将服务器置于长期服务频道**。 当前的 LTSC 版本为 **Windows Server 2019**。 如本主题中所述，你有权每 2 至 3 年接收新版本，每个版本享受 5 年的主流支持和 5 年的延长支持。 LTSC 版本在所有发布机制中均有提供。 无论使用何种许可模型，所有人均可使用 LTSC 版本。 
+- 是否需要稳定性和可预测性？ 是否需要在物理服务器上运行虚拟机和传统工作负载？ 如果需要，应该考虑**将服务器置于长期服务频道**。 当前的 LTSC 版本为 **Windows Server 2019**。 如本主题中所述，你有权每 2 至 3 年接收新版本，每个版本享受 5 年的主流支持和 5 年的延长支持。 LTSC 版本在所有发布机制中均有提供。 无论使用何种许可模型，所有人均可使用 LTSC 版本。
 
 下表总结了不同频道之间的主要差异：
 
@@ -84,13 +84,13 @@ IT 专业人员可以使用多种工具维护 Windows Server。 每个选项都�
 
 半年频道版本应作为干净安装产品进行安装。
 
-- 批量许可服务中心 (VLSC)：享受[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)的批量许可客户可以转到[批量许可服务中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)并单击“登录”来获取此版本  。 然后，单击“下载和密钥”并搜索此版本  。 
+- 批量许可服务中心 (VLSC)：享受[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)的批量许可客户可以转到[批量许可服务中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)并单击“登录”来获取此版本  。 然后，单击“下载和密钥”并搜索此版本  。
 
 - 半年频道版本也会在 [Microsoft Azure](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview) 中提供。
 
 - Visual Studio 订阅：Visual Studio 订阅者可以从 [Visual Studio 订阅者下载页](https://my.visualstudio.com/downloads?pid=2347)下载半年频道版本。 如果你还不是订阅者，请转到 [Visual Studio 订阅](https://www.visualstudio.com/subscriptions/)进行注册，然后访问上方所述的 [Visual Studio 订阅者下载页](https://my.visualstudio.com/downloads?pid=2347)。 通过 Visual Studio 订阅获得的版本仅用于开发和测试。
 
-- 通过 Windows 预览体验计划获取预览版本：测试较早版本的 Windows Server 对 Microsoft 及其客户都有帮助，因为他们有机会在发布之前发现可能出现的问题。 此外，这还为客户提供了一个直接影响产品功能的独特机会。   
+- 通过 Windows 预览体验计划获取预览版本：测试较早版本的 Windows Server 对 Microsoft 及其客户都有帮助，因为他们有机会在发布之前发现可能出现的问题。 此外，这还为客户提供了一个直接影响产品功能的独特机会。
 Microsoft 依赖于在开发过程中接收反馈，从而可以尽快做出调整。 提前测试和反馈对于快速发布模型至关重要。 若要参与 Windows 预览体验计划，请参阅 [Windows 预览体验计划服务器版文档](https://docs.microsoft.com/windows-insider/at-work/)。
 
 ## <a name="activating-semi-annual-channel-releases"></a>激活半年频道版本
@@ -114,15 +114,15 @@ Nano Server 在半年频道中作为容器操作系统提供。 有关详细信�
 
 一般而言，长期服务频道版本（如 Windows Server 2019）是在发布新版半年频道（如 Windows Server 版本 1809）的同时发布的。 这会略微增大确定服务器是否运行半年频道版本的难度。 不要查看内部版本号，而必须查看产品名称：半年频道版本使用 Windows Server Standard 或 Windows Server Datacenter 产品名称且不带版本号，而长期服务渠道版本包括版本号，例如 Windows Server 2019 Datacenter。
 
->[!Note]  
+> [!Note]
 > 以下指南旨在帮助识别并区分 LTSC 和 SAC，且仅用于生命周期和常规清单目的，  而不用于应用程序兼容性或用于表示特定的 API 图面。  应用开发人员应使用其它指南，以在系统生命周期内添加组件、API 和功能之前或之时确保它们的兼容性。 [操作系统版本](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)对于开发人员来说更好入手。
 
-打开 Powershell，并使用 Get-ItemProperty Cmdlet 或 Get-ComputerInfo Cmdlet 检查注册表中的相应属性。  结合属性和内部版本号，即可确认品牌年度（如 2019 年）中是否存在 LTSC 或 SAC。  LTSC 拥有内部版本号，但 SAC 没有。  该命令还会返回版本发布时的 ReleaseId 或 WindowsVersion（如版本 1809），同时提示本次安装的是 Server Core 还是带桌面体验的服务器。 
+打开 Powershell，并使用 Get-ItemProperty Cmdlet 或 Get-ComputerInfo Cmdlet 检查注册表中的相应属性。  结合属性和内部版本号，即可确认品牌年度（如 2019 年）中是否存在 LTSC 或 SAC。  LTSC 拥有内部版本号，但 SAC 没有。  该命令还会返回版本发布时的 ReleaseId 或 WindowsVersion（如版本 1809），同时提示本次安装的是 Server Core 还是带桌面体验的服务器。
 
 **带桌面体验的 Windows Server 2019 Datacenter Edition (LTSC) 示例：**
 
 ````PowerShell
-Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows NT\CurrentVersion | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
+Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion" | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
 ````
 
 ````
@@ -137,7 +137,7 @@ CurrentBuild              : 17763
 **Windows Server 版本 1809 (SAC) Standard Edition Server Core 示例：**
 
 ````PowerShell
-Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows NT\CurrentVersion | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
+Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion" | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
 ````
 
 ````
