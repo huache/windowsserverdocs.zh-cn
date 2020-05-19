@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0b7fef9c74ba5da1b94772cb5f6ff3d717a5359
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3804cfdf49d97f9b889129802e0d2c51730e3c86
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855970"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903473"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS OpenID Connect/OAuth 流和应用程序方案
 适用于 AD FS 2016 及更高版本
@@ -62,7 +62,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |参数|必需/可选|说明| 
 |-----|-----|-----|
 |client_id|必需的|AD FS 分配给应用的应用程序（客户端）ID。| 
-|response_type|必需的|必须包含用于 OpenID Connect 登录的  `id_token`。 它还可能包含 response_type  `token`。 使用此处的令牌可让应用立即从授权终结点接收访问令牌，而无需向令牌终结点发出第二次请求。| 
+|response_type|必需的|必须包含用于 OpenID Connect 登录的  `id_token` 。 它还可能包含 response_type  `token`。 使用此处的令牌可让应用立即从授权终结点接收访问令牌，而无需向令牌终结点发出第二次请求。| 
 |redirect_uri|必需的|应用的 redirect_uri，你的应用可在其中发送和接收身份验证响应。 它必须与你在 AD FS 中配置的其中一个 redirect_uris 完全匹配。| 
 |nonce|必需的|包含在请求中的值，由应用生成，这些值将作为声明包含在生成的 id_token 中。 然后，应用可以验证此值，以减少令牌重播攻击。 该值通常是随机的唯一字符串，可用于标识请求的来源。 仅在请求 id_token 时是必需的。|
 |scope|可选|范围的空格分隔列表。 对于 OpenID Connect，它必须包含范围  `openid`。|
@@ -70,7 +70,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |response_mode|可选| 指定应该用于将生成的令牌发送回应用的方法。 默认为 `fragment`。| 
 |state|可选|请求中包含的值，也会在令牌响应中返回。 它可以是你所需任何内容的字符串。 随机生成的唯一值通常用于防止跨站点请求伪造攻击。 state 还用于在身份验证请求出现之前，在应用中编码有关用户状态的信息，例如他们所在的页面或视图。| 
 |prompt|可选|指示需要的用户交互类型。 此时唯一有效的值是 login 和 none。</br>- `prompt=login` 将强制用户在该请求上输入其凭据，取消单一登录。 </br>- `prompt=none` 则相反，它会确保用户不会看到任何交互式提示。 如果请求无法通过单一登录静默完成，AD FS 将返回 interaction_required 错误。| 
-|login_hint|可选|如果事先知道用户的用户名，可用于预先填充用户登录页面的用户名/电子邮件地址字段。 通常，应用会在重新身份验证期间使用此参数，已使用  `upn` 声明从 `id_token` 中提取了上一次登录的用户名。| 
+|login_hint|可选|如果事先知道用户的用户名，可用于预先填充用户登录页面的用户名/电子邮件地址字段。 通常，应用会在重新身份验证期间使用此参数，已使用  `upn`  声明从 `id_token` 中提取了上一次登录的用户名。| 
 |domain_hint|可选|如果包含，它将跳过用户在登录页面上经历的基于域的发现过程，从而使用户体验稍微更简单。| 
 
 此时，系统会要求用户输入其凭据并完成身份验证。 用户进行身份验证后，AD FS 授权终结点将使用 response_mode 参数中指定的方法，将响应返回到指示 redirect_uri 处的应用。  
@@ -143,10 +143,10 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |prompt|可选|指示需要的用户交互类型。 此时唯一有效的值是 login 和 none。</br>- `prompt=login` 将强制用户在该请求上输入其凭据，取消单一登录。 </br>- `prompt=none` 则相反，它会确保用户不会看到任何交互式提示。 如果请求无法通过单一登录静默完成，AD FS 将返回 interaction_required 错误。|
 |login_hint|可选|如果事先知道用户的用户名，可用于预先填充用户登录页的用户名/电子邮件地址字段。 通常，应用会在重新身份验证期间使用此参数，已使用  `upn` 声明从 `id_token` 中提取了上一次登录的用户名。|
 |domain_hint|可选|如果包含，它将跳过用户在登录页面上经历的基于域的发现过程，从而使用户体验稍微更简单。|
-|code_challenge_method|可选|用于对 code_challenge 参数的 code_verifier 进行编码的方法。 可以是以下其中一个值： </br>- plain </br>- S256 </br>如果排除了  `code_challenge`，则假定 code_challenge 为纯文本。 AD FS 支持纯文本和 S256。 有关详细信息，请参阅  [PKCE RFC](https://tools.ietf.org/html/rfc7636)。|
-|code_challenge|可选| 用于通过来自本机客户端的代码交换证明密钥 (PKCE) 来保护授权代码授予。 如果包含  `code_challenge_method`，则是必需的。 有关详细信息，请参阅  [PKCE RFC](https://tools.ietf.org/html/rfc7636)|
+|code_challenge_method|可选|用于对 code_challenge 参数的 code_verifier 进行编码的方法。 可以是以下其中一个值： </br>- plain </br>- S256 </br>如果排除了  `code_challenge` ，则假定 code_challenge 为纯文本。 AD FS 支持纯文本和 S256。 有关详细信息，请参阅  [PKCE RFC](https://tools.ietf.org/html/rfc7636)。|
+|code_challenge|可选| 用于通过来自本机客户端的代码交换证明密钥 (PKCE) 来保护授权代码授予。 如果包含  `code_challenge_method` ，则是必需的。 有关详细信息，请参阅  [PKCE RFC](https://tools.ietf.org/html/rfc7636)|
 
-此时，系统会要求用户输入其凭据并完成身份验证。 用户进行身份验证后，AD FS 将使用  `response_mode` 参数中指定的方法，将响应返回到指示  `redirect_uri` 处的应用。  
+此时，系统会要求用户输入其凭据并完成身份验证。 用户进行身份验证后，AD FS 将使用  `redirect_uri` 参数中指定的方法，将响应返回到指示  `response_mode`  处的应用。  
  
 ### <a name="successful-response"></a>成功的响应 
  
@@ -166,7 +166,7 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 
 ### <a name="request-an-access-token"></a>请求访问令牌 
  
-现在，你已获得 `authorization_code` 并已获得用户授予的权限，你可以将  `access_token` 的代码兑换到所需的资源。 通过向 /token 终结点发送 POST 请求来实现此目的：  
+现在，你已获得 `authorization_code` 并已获得用户授予的权限，你可以将  `access_token`  的代码兑换到所需的资源。 通过向 /token 终结点发送 POST 请求来实现此目的：  
  
 ```
 // Line breaks for legibility only 
@@ -185,7 +185,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |参数|必需/可选|说明|
 |-----|-----|-----| 
 |client_id|必需的|AD FS 分配给应用的应用程序（客户端）ID。| 
-|grant_type|必需的|必须是授权代码流的  `authorization_code`。| 
+|grant_type|必需的|必须是授权代码流的  `authorization_code` 。| 
 |code|必需的|在流的第一个阶段获取的 `authorization_code`。| 
 |redirect_uri|必需的|用于获取 `authorization_code` 的相同 `redirect_uri` 值。| 
 |client_secret|对于 Web 应用是必需的|在 AD FS 中注册应用时创建的应用程序机密。 不应在本机应用中使用应用程序机密，因为 client_secrets 无法可靠地存储在设备上。 Web 应用和 Web API 是必需的，它们能够将 client_secret 安全地存储在服务器端。 在发送客户端机密之前，必须对其进行 URL 编码。 这些应用还可以通过对 JWT 进行签名并将其添加为 client_assertion 参数来使用基于密钥的身份验证。| 
@@ -224,13 +224,13 @@ Host: https://webapi.com
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q... 
  ```
 
-### <a name="refresh-the-access-token"></a>刷新访问令牌 
- 
+### <a name="refresh-token-grant-flow"></a>刷新令牌授予流
+ 
 access_token 生存期较短，必须在过期后刷新，才能继续访问资源。 为此，可以将另一个 POST 请求提交到   `/token` 终结点，这一次提供 refresh_token 而不是代码。 对于客户端已经收到访问令牌的所有权限，刷新令牌都有效。 
  
 刷新令牌没有指定的生存期。 通常，刷新令牌的生存期相对较长。 但是，在某些情况下，刷新令牌会过期、被吊销，或缺少执行所需操作的足够权限。 你的应用程序需要正确地预期到令牌颁发终结点返回的错误并对其进行处理。  
  
-尽管刷新令牌在用于获取新的访问令牌时不会被吊销，但你应丢弃旧的刷新令牌。 OAuth 2.0 规范指出：“授权服务器可能会发出一个新的刷新令牌，在这种情况下，客户端必须放弃旧的刷新令牌并将其替换为新的刷新令牌。 在向客户端发出新的刷新令牌后，授权服务器可能会吊销旧的刷新令牌。” 
+尽管刷新令牌在用于获取新的访问令牌时不会被吊销，但你应丢弃旧的刷新令牌。 按照 OAuth 2.0 规范指示：“授权服务器可能会发出一个新的刷新令牌，在这种情况下，客户端必须放弃旧的刷新令牌并将其替换为新的刷新令牌。 在向客户端发出新的刷新令牌后，授权服务器可能会吊销旧的刷新令牌。” 当新的刷新令牌生存期长于旧的刷新令牌生存期时，AD FS 会颁发刷新令牌。  若要查看 AD FS 刷新令牌生存期的其他信息，请访问 [AD FS 单一登录设置](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings)。
  
 ```
 // Line breaks for legibility only 
@@ -249,7 +249,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |参数|必需/可选|说明| 
 |-----|-----|-----|
 |client_id|必需的|AD FS 分配给应用的应用程序（客户端）ID。| 
-|grant_type|必需的|必须是授权代码流的此阶段的  `refresh_token`。| 
+|grant_type|必需的|必须是授权代码流的此阶段的  `refresh_token` 。| 
 |resource|可选|Web API 的 URL。</br>注意：如果使用 MSAL 客户端库，则不会发送资源参数。 而是将资源 URL 作为范围参数的一部分发送：`scope = [resource url]//[scope values e.g., openid]`</br>如果未在此处或范围中传递资源，则 ADFS 将使用默认资源 urn:microsoft:userinfo。 不能自定义 userinfo 资源策略，如 MFA、Issuance 或授权策略。|
 |scope|可选|范围的空格分隔列表。| 
 |refresh_token|必需的|在流的第二个阶段获取的 refresh_token。| 
