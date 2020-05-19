@@ -5,16 +5,16 @@ description: AD FS 的常见问题解答
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/17/2019
+ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a1041bdc189238c7da32896e6f867f730e392d24
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b1b6f7d38c4474ba3f69c4eac0c4569375185eb8
+ms.sourcegitcommit: 6d3f8780b67aa7865a9372cf2c1e10c79ebea8b1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80814427"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82587666"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 的常见问题解答 (FAQ)
 
@@ -72,6 +72,9 @@ AD FS 支持多个多林配置，并依赖基础 AD DS 信任网络以在多个�
 
 >[!NOTE]  
 >如果将选择性身份验证与双向信任配置一起使用，请确保为调用方用户授予目标服务帐户的“允许身份验证”权限。 
+
+### <a name="does-ad-fs-extranet-smart-lockout-support-ipv6"></a>AD FS Extranet 智能锁定是否支持 IPv6？
+支持，会对熟悉/未知的位置考虑 IPv6 地址。
 
 
 ## <a name="design"></a>设计
@@ -231,26 +234,26 @@ AD FS 的 userinfo 终结点始终返回 OpenID 标准中指定的使用者声�
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>为什么我会看到关于将 AD FS 服务帐户添加到企业密钥管理员组失败的警告？
 仅当域中存在具有 FSMO PDC 角色的 Windows 2016 域控制器时，才创建此组。 若要解决此错误，可以手动创建组，并在将服务帐户添加为组成员之后，按照以下步骤提供所需的权限。
-1.    打开“Active Directory 用户和计算机”  。
-2.    在导航窗格中，右键单击你的域名，然后单击“属性”   。
-3.    单击“安全性”  （如果没有“安全性”选项卡，请从“视图”菜单中打开“高级功能”）。
-4.    单击“高级”  。 单击“添加”  。 单击“选择主体”  。
+1.    打开“Active Directory 用户和计算机” 。
+2.    在导航窗格中，右键单击你的域名，然后单击“属性” 。
+3.    单击“安全性”（如果没有“安全性”选项卡，请从“视图”菜单中打开“高级功能”）。
+4.    单击“高级”。 单击“添加”。 单击“选择主体”。
 5.    此时将出现“选择用户、计算机、服务帐户或组”对话框。  在“输入要选择的对象名称”文本框中，键入“密钥管理组”。  单击“确定”。
-6.    在“应用于”列表框中，选择“子级用户对象”  。
-7.    使用滚动条滚动到页面底部，然后单击“全部清除”  。
-8.    在“属性”部分中，选择“读取 msDS-KeyCredentialLink”和“写入 msDS-KeyCredentialLink”    。
+6.    在“应用于”列表框中，选择“子级用户对象”。
+7.    使用滚动条滚动到页面底部，然后单击“全部清除”。
+8.    在“属性”部分中，选择“读取 msDS-KeyCredentialLink”和“写入 msDS-KeyCredentialLink”  。
 
 ### <a name="why-does-modern-authentication-from-android-devices-fail-if-the-server-does-not-send-all-the-intermediate-certificates-in-the-chain-with-the-ssl-cert"></a>如果服务器未发送与 SSL 证书链中的所有中间证书，Android 设备的新式验证为何会失败？
 
-对于使用 Android ADAL 库失败的应用，联合用户可能会遇到 Azure AD 身份验证。 应用尝试显示登录页面时，会收到 AuthenticationException  。 在 Chrome 中，AD FS 登录页面可能被称为“不安全”。
+对于使用 Android ADAL 库失败的应用，联合用户可能会遇到 Azure AD 身份验证。 应用尝试显示登录页面时，会收到 AuthenticationException。 在 Chrome 中，AD FS 登录页面可能被称为“不安全”。
 
-Android（适用于所有版本和所有设备）不支持从证书的 authorityInformationAccess 字段中下载其他证书  。 Chrome 浏览器也是如此。 如果未从 AD FS 传递整个证书链，任何缺少中间证书的服务器身份验证证书都将导致此错误。
+Android（适用于所有版本和所有设备）不支持从证书的 authorityInformationAccess 字段中下载其他证书。 Chrome 浏览器也是如此。 如果未从 AD FS 传递整个证书链，任何缺少中间证书的服务器身份验证证书都将导致此错误。
 
 解决此问题的一种恰当解决方案是将 AD FS 和 WAP 服务器配置为发送必要的中间证书以及 SSL 证书。
 
-从一台计算机导出 SSL 证书，并将其导入到 AD FS 和 WAP 服务器的计算机个人存储中时，请确保导出私钥，并选择“个人信息交换 - PKCS #12”  。
+从一台计算机导出 SSL 证书，并将其导入到 AD FS 和 WAP 服务器的计算机个人存储中时，请确保导出私钥，并选择“个人信息交换 - PKCS #12”。
 
-重要的是，应选中“在证书路径中包含所有证书(如果可能)”和“导出所有扩展属性”复选框   。  
+重要的是，应选中“在证书路径中包含所有证书(如果可能)”和“导出所有扩展属性”复选框 。  
 
 在 Windows 服务器上运行 certlm.msc，然后将 *.PFX 导入到计算机的个人证书存储中。 这将导致服务器将整个证书链传递到 ADAL 库。
 
@@ -310,3 +313,11 @@ ADFS 和 Web 应用程序服务器支持不在终结点上执行 SSL 终止的�
 
 ### <a name="can-i-estimate-the-size-of-the-adfsartifactstore-before-enabling-esl"></a>在启用 ESL 之前，是否可以估算 ADFSArtifactStore 的大小？
 启用 ESL 后，AD FS 会跟踪 ADFSArtifactStore 数据库中用户的帐户活动和已知位置。 此数据库相对于所跟踪的用户数和已知位置进行缩放。 当计划启用 ESL 时，你可以估算 ADFSArtifactStore 数据库的大小，以每 100,000 个用户最多 1GB 的速率增长。 如果 AD FS 场使用 Windows 内部数据库 (WID)，则数据库文件的默认位置为 C:\Windows\WID\Data。 若要防止填充此驱动器，请在启用 ESL 之前确保至少有 5GB 的可用存储空间。 除了磁盘存储，还应在启用 ESL 后为 500,000 及以下的用户群体增加最多 1GB 的RAM，从而计划增加总进程内存。
+
+### <a name="i-am-seeing-event-570-active-directory-trust-enumeration-was-unable-to-enumerate-one-of-more-domains-due-to-the-following-error-enumeration-will-continue-but-the-active-directory-identifier-list-may-not-be-correct-validate-that-all-expected-active-directory-identifiers-are-present-by-running-get-adfsdirectoryproperties-on-ad-fs-2019-what-is-the-mitigation-for-this-event"></a>我在 AD FS 2019 上看到事件 570（Active Directory 信任枚举由于以下错误而无法枚举一个或多个域。 枚举将继续，但 Active Directory 标识符列表可能不正确。 通过运行 Get-ADFSDirectoryProperties，验证所有预期的 Active Directory 标识符是否都存在）。 此事件的缓解措施是什么？
+当 AD FS 尝试枚举受信任林链中的所有林并跨所有林连接时，如果林不受信任，就会发生此事件。 例如，如果 AD FS 林 A 和林 B 受信任，且林 B 和林 C 受信任，那么 AD FS 会枚举所有这三个林，并尝试查找林 A 和 C 之间的信任。如果出现故障的林中的用户应通过 AD FS 进行身份验证，请在 AD FS 林和出现故障的林之间建立信任。 如果出现故障的林中的用户不得通过 AD FS 进行身份验证，应忽略此错误。
+
+### <a name="i-am-seeing-an-event-id-364-microsoftidentityserverauthenticationfailedexception-msis5015-authentication-of-the-presented-token-failed-token-binding-claim-in-token-must-match-the-binding-provided-by-the-channel-what-should-i-do-to-resolve-this"></a>我看到“事件 ID 364:Microsoft.IdentityServer.AuthenticationFailedException:MSIS5015:当前令牌的身份验证失败。 令牌中的令牌绑定声明必须与通道提供的绑定一致。” 我应该怎么做才能解决这个问题？
+在 AD FS 2016 中，令牌绑定会自动启用，并引发代理和联合身份验证方案的多个已知问题，从而导致此错误。 若要解决此问题，请运行以下 Powershell 命令，并删除令牌绑定支持。
+
+`Set-AdfsProperties -IgnoreTokenBinding $true`

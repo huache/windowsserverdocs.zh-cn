@@ -8,14 +8,14 @@ ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 1d6a7daa3966488c951117b083411587d13be56b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: beacd246639b5586c071a24bdd7b09c6aceeadab
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857100"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203389"
 ---
-# <a name="virtual-machine-sizing-guidance"></a>虚拟机大小调整指南
+# <a name="virtual-machine-sizing-guidelines"></a>虚拟机大小调整指南
 
 不管是在远程桌面服务上还是在 Windows 虚拟桌面上运行虚拟机，不同类型的工作负荷需要的会话主机虚拟机 (VM) 配置是不同的。 若要尽可能完善体验，请根据用户需求缩放部署。
 

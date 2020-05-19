@@ -7,21 +7,44 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/03/2020
+ms.date: 05/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e33ef5f187672d948b6734a9ae7f68b54b7608
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0943379b8f251d1548a0aa920a95931dc39a0624
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854650"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903452"
 ---
 # <a name="whats-new-in-the-ios-client"></a>iOS 客户端中的新增功能
 
 我们会定期更新[适用于 iOS 的远程桌面客户端](remote-desktop-ios.md)，添加新功能并修复问题。 可在此页上找到最新更新。
 
->[!IMPORTANT]
->我们致力于将此应用打造为适用于 iOS 的最佳远程桌面客户端，因此我们非常重视你的反馈。 你可以通过  “帮助” > “报告问题”  来报告任何问题。
+## <a name="how-to-report-issues"></a>如何报告问题
+
+我们致力于将适用于 iOS 的远程桌面客户端打造成最好的，因此我们非常重视你的反馈。 你可以通过“帮助” > “报告问题”来报告任何问题。
+
+## <a name="updates-for-version-1007"></a>版本 10.0.7 的更新
+
+发布日期：2020 年 4 月 29 日
+
+此更新中新增了按名称或上次连接时间对（iPhone 上提供的）电脑列表视图进行排序的功能。
+
+## <a name="updates-for-version-1006"></a>版本 10.0.6 的更新
+
+发布日期：2020 年 3 月 31 日
+
+现在是时候进行快速更新（包含一些缺陷修复）了。 下面是此版本的新变化：
+
+- 修复了许多 VoiceOver 辅助功能问题。
+- 修复了用户无法使用土耳其语凭据进行连接的问题。
+- 切换器 UI 中显示的会话现在按启动时间排序。
+- 现在，选择 Connection Center 中的“返回”按钮会返回到上一个活动会话。
+- 现在，在从客户端切换到另一个应用时，Swiftpoint 鼠标就会释放。
+- 提高了与 Windows 虚拟桌面服务的互操作性。
+- 修复了错误报告中显示的故障。
+
+非常感谢通过 App Store、应用内反馈和电子邮件发送给我们的所有意见。 另外，特别感谢与我们一同诊断问题的每个人。
 
 ## <a name="updates-for-version-1005"></a>针对版本 10.0.5 的更新
 
@@ -144,4 +167,4 @@ ms.locfileid: "80854650"
 
 ## <a name="how-to-report-issues"></a>如何报告问题
 
-我们致力于尽全力地打造好此应用，因此我们非常重视你的反馈。 你可以通过在客户端中导航到“设置” > “报告问题”将问题报告给我们   。
+我们致力于尽全力地打造好此应用，因此我们非常重视你的反馈。 你可以通过在客户端中导航到“设置” > “报告问题”将问题报告给我们 。

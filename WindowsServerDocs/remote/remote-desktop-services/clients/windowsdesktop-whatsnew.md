@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/14/2020
+ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: de7c685e544fd0bb193f995aeff3a20a29bd6db5
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81279693"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235046"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -26,24 +26,45 @@ ms.locfileid: "81279693"
 
 |用户组 |版本  |
 |-----------|---------|
-|公用     |1.2.790  |
-|Insider    |1.2.940  |
+|公用     |1.2.945  |
+|Insider    |1.2.1009 |
 
-## <a name="updates-for-version-12940"></a>针对版本 1.2.940 的更新
+## <a name="updates-for-version-121009"></a>版本 1.2.1009 的更新
 
-*发布日期：2020/04/14*
+发布日期：2020 年 5 月 12 日
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZU)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZV)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tM6I)
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wseE)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wnf3)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wCIB)
+
+- 新增了“连接信息”对话框，它提供了桌面会话和应用会话的客户端、网络和服务器详细信息。 可以在全屏模式下从连接栏访问此对话框，也可以在窗口化模式下从“系统”菜单访问它。
+- 在窗口化模式下启动的桌面会话现在始终最大化，而不是在最大化窗口时进入全屏。 使用“系统”菜单中的“全屏”选项可以进入全屏。
+- “取消订阅”提示现在显示警告图标，并以项目符号列表的形式显示工作区名称。
+- 向其他错误对话框添加了有助于诊断问题的详细信息部分。
+- 向错误对话框的详细信息部分添加了时间戳。
+- 修复了以下问题：RDP 文件设置“桌面大小 ID”无法正常运行。
+- 修复了以下问题：“调整大小时更新分辨率”显示设置在会话启动后不应用。
+- 修复了“桌面设置”面板中的本地化问题。
+- 修复了在按 tab 键浏览“桌面设置”面板上的控件时的焦点框大小。
+- 修复了导致资源名称难以在高对比度模式下读取的问题。
+- 修复了导致更新通知在操作中心内一天显示多次的问题。
+
+## <a name="updates-for-version-12945"></a>版本 1.2.945 的更新
+
+发布日期：2020 年 4 月 28 日
+
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNM)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNO)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vuSV)
 
 - 已为桌面连接添加了新的显示设置选项（右键单击“连接中心”上的桌面图标时提供）。
-  - 现在有三个显示配置选项：  “所有显示器”、  “单个显示器”和“选择显示器”  。
+  - 现在有三个显示配置选项：“所有显示器”、“单个显示器”和“选择显示器”。
   - 现在，仅当选择了某个显示配置时，才显示可用设置。
-  - 在“选择显示器”模式下，有一个新的“最大化到当前显示器”  选项，可用于在不重新连接的情况下动态更改用于会话的显示器。 启用后，将会话最大化会导致在会话窗口所在的所有显示器上全屏显示该会话。
-  - 对于“所有显示器”和“选择显示器”模式，我们已添加了一个新的“开窗时使用单个显示器”  选项。 此选项在你退出全屏模式时会自动将会话切换到单个显示器，并在你将窗口最大化时自动返回到多个显示器。
-- 我们已将新的“显示设置”  组添加到系统菜单中，该菜单在你右键单击开窗桌面会话的标题栏时显示。 这将允许你在会话过程中动态更改某些设置。 例如，可以更改“在开窗时使用单个显示器模式”  和“最大化到当前显示器”  设置。
+  - 在“选择显示器”模式下，有一个新的“最大化到当前显示器”选项，可用于在不重新连接的情况下动态更改用于会话的显示器。 启用后，将会话最大化会导致在会话窗口所在的所有显示器上全屏显示该会话。
+  - 对于“所有显示器”和“选择显示器”模式，我们已添加了一个新的“开窗时使用单个显示器”选项。 此选项在你退出全屏模式时会自动将会话切换到单个显示器，并在你将窗口最大化时自动返回到多个显示器。
+- 我们已将新的“显示设置”组添加到系统菜单中，该菜单在你右键单击开窗桌面会话的标题栏时显示。 这将允许你在会话过程中动态更改某些设置。 例如，可以更改“在开窗时使用单个显示器模式”和“最大化到当前显示器”设置。
 - 退出全屏模式时，会话窗口将返回到你首次进入全屏模式时它所在的原始位置。
+- 工作区的后台刷新已更改为每 4 小时一次，而不是每 1 小时一次。 现在，在客户端启动后自动执行刷新。
 - 从“关于”页重置用户数据现在会在完成后重定向到“连接中心”，而不是关闭客户端。
+- 桌面连接的“系统”菜单中的项重新进行了排序，“帮助”主题现在指向客户端文档。
 - 解决了选项卡导航和屏幕阅读器存在的某些辅助功能问题。
+- 修复了以下问题：Azure Active Directory 身份验证对话框出现在会话窗口后面。
 - 修复了在不同缩放系数的显示器之间拖动桌面会话窗口时的闪烁和收缩问题。
 - 修复了重定向相机时出现的错误。
 - 修复了多个崩溃问题以提高可靠性。
@@ -81,7 +102,7 @@ ms.locfileid: "81279693"
 
 下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
-- 现在可以选择要用于桌面连接的显示器。 若要更改此设置，请右键单击桌面连接的图标，然后选择“设置”  。
+- 现在可以选择要用于桌面连接的显示器。 若要更改此设置，请右键单击桌面连接的图标，然后选择“设置”。
 - 修复了连接设置未显示正确的可用缩放系数的问题。
 - 修复了“讲述人”无法读取在连接启动时显示的对话框的问题。
 - 修复了在 Azure Active Directory 名称和 Active Directory 名称不匹配时显示错误用户名的问题。

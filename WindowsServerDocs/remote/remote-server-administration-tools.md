@@ -8,12 +8,12 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 510ad2cb1449f161658684eeceec4dbbb7ce6699
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 307da083db2e5cc76c4eda825f0e080d7f026821
+ms.sourcegitcommit: 7288aca86fc76b9ff6177a17027118d1f21707a9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857090"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380690"
 ---
 # <a name="remote-server-administration-tools"></a>远程服务器管理工具
 
@@ -22,7 +22,7 @@ ms.locfileid: "80857090"
 本主题支持适用于 Windows 10 的远程服务器管理工具。
 
 > [!IMPORTANT]
-> 从 Windows 10 2018 年 10 月更新开始，RSAT 作为一组“按需功能”包含在 Windows 10 中  。 有关安装说明，请参阅下面的“何时使用何种 RSAT 版本”  。
+> 从 Windows 10 2018 年 10 月更新开始，RSAT 作为一组“按需功能”包含在 Windows 10 中。 有关安装说明，请参阅下面的“何时使用何种 RSAT 版本”。
 
 RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能。
 
@@ -52,29 +52,29 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
         
 ## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>安装、卸载和关闭/启用 RSAT 工具        
 
-### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-----r-l----ter"></a>使用按需功能 (FoD) 在 Windows 10 2018 年 10 月更新或更高版本上安装特定的 RSAT 工具
+### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>使用按需功能 (FoD) 在 Windows 10 2018 年 10 月更新或更高版本上安装特定的 RSAT 工具。
 
-从 Windows 10 2018 年 10 月更新开始，RSAT 作为一组“按需功能”直接包含在 Windows 10 中  。 现在，不用下载 RSAT 包，只需转到“设置”中的“管理可选功能”，然后单击“添加功能”，即可查看可用的 RSAT 工具列表    。 选择并安装所需的特定 RSAT 工具。 若要查看安装进度，请单击“后退”按钮，在“管理可选功能”页上查看状态   。
+从 Windows 10 2018 年 10 月更新开始，RSAT 作为一组“按需功能”直接包含在 Windows 10 中。 现在，不用下载 RSAT 包，只需转到“设置”中的“管理可选功能”，然后单击“添加功能”，即可查看可用的 RSAT 工具列表  。 选择并安装所需的特定 RSAT 工具。 若要查看安装进度，请单击“后退”按钮，在“管理可选功能”页上查看状态 。
         
-请参阅[由“按需功能”提供的 RSAT 工具列表](https://docs.microsoft.co    /wi    dows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)  。 除了通过图形“设置”应用进行安装以外，还可以使用 [DISM /Add-Capability](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods) 通过命令行或自动化来安装特定的 RSAT 工具   。
+请参阅[由“按需功能”提供的 RSAT 工具列表](https://docs.microsoft.co    /wi    dows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)。 除了通过图形“设置”应用进行安装以外，还可以使用 [DISM /Add-Capability](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods) 通过命令行或自动化来安装特定的 RSAT 工具 。
 
 按需功能的一个好处是，已安装的功能在 Windows 10 版本升级保持不变。        
         
 #### <a name="to-uninstall-specific-rsat-tools-on-windows-10-october-2018-update-or-later-after-installing-with-fod"></a>在 Windows 10 2018 年 10 月更新或更高版本（安装 FoD 后）上卸载特定的 RSAT 工具        
 
-在 Windows 10 上，打开“设置”应用，转到“管理可选功能”，选择并卸载要移除的特定 RSAT 工具   。 请注意，在某些情况下‘需要手动卸载依赖项。 具体来说，如果 RSAT 工具 B 需要 RSAT 工具 A，并且仍旧安装了 RSAT 工具 B，则选择卸载 RSAT 工具 A 将失败。 在这种情况下，请先卸载 RSAT 工具 B，然后卸载 RSAT 工具 A。另请注意，在某些情况下，即使仍安装了该工具，卸载 RSAT 工具也可能会成功。 在这种情况下，重启计算机将完成此工具的移除。
+在 Windows 10 上，打开“设置”应用，转到“管理可选功能”，选择并卸载要移除的特定 RSAT 工具 。 请注意，在某些情况下‘需要手动卸载依赖项。 具体来说，如果 RSAT 工具 B 需要 RSAT 工具 A，并且仍旧安装了 RSAT 工具 B，则选择卸载 RSAT 工具 A 将失败。 在这种情况下，请先卸载 RSAT 工具 B，然后卸载 RSAT 工具 A。另请注意，在某些情况下，即使仍安装了该工具，卸载 RSAT 工具也可能会成功。 在这种情况下，重启计算机将完成此工具的移除。
 
-请参阅[包含依赖项的 RSAT 工具列表](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)。 除了通过图形“设置”应用进行卸载以外，还可以使用 [DISM /Remove-Capability](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods) 通过命令行或自动化来卸载特定的 RSAT 工具  。
+请参阅[包含依赖项的 RSAT 工具列表](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)。 除了通过图形“设置”应用进行卸载以外，还可以使用 [DISM /Remove-Capability](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods) 通过命令行或自动化来卸载特定的 RSAT 工具。
 
 ### <a name="when-to-use-which-rsat-version"></a>何时使用何种 RSAT 版本
 
-如果你的 Windows 10 版本早于 2018 年 10 月更新 (1809)，则将无法使用“按需功能”  。 你需要下载并安装 RSAT 包。
+如果你的 Windows 10 版本早于 2018 年 10 月更新 (1809)，则将无法使用“按需功能”。 你需要下载并安装 RSAT 包。
 
-- 如上所述，直接从 Windows 10 安装 RSAT FOD  ：为管理 Windows Server 2019 或早期版本，在 Windows 10 2018 年 10 月更新 (1809) 或更高版本上安装时。
+- 如上所述，直接从 Windows 10 安装 RSAT FOD：为管理 Windows Server 2019 或早期版本，在 Windows 10 2018 年 10 月更新 (1809) 或更高版本上安装时。
 
-- 如下所述，下载并安装 WS_1803 RSAT 包  ：为管理版本 1803 或版本 1709 的 Windows Server，在 Windows 10 2018 年 4 月更新 (1803) 或更早版本上安装时。
+- 如下所述，下载并安装 WS_1803 RSAT 包：为管理版本 1803 或版本 1709 的 Windows Server，在 Windows 10 2018 年 4 月更新 (1803) 或更早版本上安装时。
 
-- 如下所述，下载并安装 WS2016 RSAT 包  ：为管理 Windows Server 2016 或早期版本，在 Windows 10 2018 年 4 月更新 (1803) 或更早版本上安装时。
+- 如下所述，下载并安装 WS2016 RSAT 包：为管理 Windows Server 2016 或早期版本，在 Windows 10 2018 年 4 月更新 (1803) 或更早版本上安装时。
 
 #### <a name="download-the-rsat-package-to-install-remote-server-administration-tools-for-windows-10"></a><a name="BKMK_installthresh"></a>下载用于安装适用于 Windows 10 远程服务器管理工具的 RSAT 包
 
@@ -91,21 +91,21 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 
 5.  安装需要几分钟才能完成。    
         
-##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-----aft----r-rsat-package-install"></a>卸载适用于 Windows 10 的远程服务器管理工具（在安装 RSAT 包后）
+##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>卸载适用于 Windows 10 的远程服务器管理工具（在 RSAT 包安装后）的具体步骤
         
-1. 在桌面上，依次单击“开始”  、“所有应用”  、“Windows 系统”  和“控制面板”  。
+1. 在桌面上，依次单击“开始” 、“所有应用” 、“Windows 系统” 和“控制面板” 。
 
-2. 在“程序”  下，单击“卸载程序”  。
+2. 在“程序” 下，单击“卸载程序” 。
 
 3. 单击 **“查看已安装的更新”** 。
 
-4. 右键单击“Microsoft Windows 的更新(KB2693643)”  ，然后单击“卸载”  。
+4. 右键单击“Microsoft Windows 的更新(KB2693643)” ，然后单击“卸载” 。
 
 5. 当系统询问你是否确定要卸载更新时，单击 **“是”** 。
    S
-   ##### <a name="to-turn----off-specific-tools-after-rsat-package-in----tall"></a>关闭特定工具（在安装 RSAT 包后）
+   ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>关闭特定工具（在 RSAT 包安装后）
         
-6. 在桌面上，依次单击“开始”  、“所有应用”  、“Windows 系统”  和“控制面板”  。
+6. 在桌面上，依次单击“开始” 、“所有应用” 、“Windows 系统” 和“控制面板” 。
 
 7. 单击 **“程序”** ，然后在 **“程序和功能”** 中单击 **“打开或关闭 Windows 功能”** 。
 
@@ -114,39 +114,39 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 9. 清除要关闭的工具对应的复选框。
 
    > [!NOTE]
-   > 如果关闭服务器管理器，则计算机必须重新启动，并且可从服务器管理器的“工具”菜单中访问的工具必须从“管理工具”文件夹打开   。
+   > 如果关闭服务器管理器，则计算机必须重新启动，并且可从服务器管理器的“工具”菜单中访问的工具必须从“管理工具”文件夹打开 。
         
 10. 关闭完不使用的工具后，单击 **“确定”** 。
 
 ### <a name="run-remote-server-administration-tools"></a>运行远程服务器管理工具
 
 > [!NOTE]
-> 安装适用于 Windows 10 的远程服务器管理工具后，“管理工具”文件夹将显示在“开始”菜单上   。 可以从以下位置访问这些工具。
+> 安装适用于 Windows 10 的远程服务器管理工具后，“管理工具”文件夹将显示在“开始”菜单上 。 可以从以下位置访问这些工具。
 >
-> -   服务器管理器控制台中的“工具”菜单  。
-> -   “控制面板”\“系统和安全”\“管理工具”  。
-> -   从“管理工具”  文件夹保存到桌面的快捷方式（若要创建此快捷方式，请右键单击“控制面板”\“系统和安全”\“管理工具”  链接，然后单击“创建快捷方式”  ）。
+> -   服务器管理器控制台中的“工具”菜单。
+> -   “控制面板”\“系统和安全”\“管理工具”。
+> -   从“管理工具”  文件夹保存到桌面的快捷方式（若要创建此快捷方式，请右键单击“控制面板”\“系统和安全”\“管理工具”  链接，然后单击“创建快捷方式” ）。
 
-无法将作为适用于 Windows 10 的远程服务器管理工具的一部分安装的工具用于管理本地客户端计算机。 不管运行什么工具，必须指定一台或多台远程服务器来运行该工具。 因为大多数工具都与服务器管理器集成，所以可以将要管理的远程服务器添加到服务器管理器的服务器池，然后使用“工具”菜单中的工具管理该服务器  。 有关如何将服务器添加到服务器池并创建服务器的自定义组的详细信息，请参阅 [将服务器添加到服务器管理器](https://go.microsoft.com/fwlink/p/?LinkId=241353) 和 [创建和管理服务器组](https://go.microsoft.com/fwlink/?LinkId=247328)。
+无法将作为适用于 Windows 10 的远程服务器管理工具的一部分安装的工具用于管理本地客户端计算机。 不管运行什么工具，必须指定一台或多台远程服务器来运行该工具。 因为大多数工具都与服务器管理器集成，所以可以将要管理的远程服务器添加到服务器管理器的服务器池，然后使用“工具”菜单中的工具管理该服务器。 有关如何将服务器添加到服务器池并创建服务器的自定义组的详细信息，请参阅 [将服务器添加到服务器管理器](https://go.microsoft.com/fwlink/p/?LinkId=241353) 和 [创建和管理服务器组](https://go.microsoft.com/fwlink/?LinkId=247328)。
 
-在适用于 Windows 10 的远程服务器管理工具中，所有基于 GUI 的服务器管理工具（如 mmc 管理单元和对话框）都可以从服务器管理器控制台的“工具”菜单中进行访问  。 虽然运行适用于 Windows 10 的远程服务器管理工具的计算机运行基于客户端的操作系统，但安装这些工具后，适用于 Windows 10 的远程服务器管理工具中的随附的服务器管理器将在客户端计算机上默认自动打开。 请注意，在客户端计算机上运行的服务器管理器控制台中没有“本地服务器”页  。
+在适用于 Windows 10 的远程服务器管理工具中，所有基于 GUI 的服务器管理工具（如 mmc 管理单元和对话框）都可以从服务器管理器控制台的“工具”菜单中进行访问。 虽然运行适用于 Windows 10 的远程服务器管理工具的计算机运行基于客户端的操作系统，但安装这些工具后，适用于 Windows 10 的远程服务器管理工具中的随附的服务器管理器将在客户端计算机上默认自动打开。 请注意，在客户端计算机上运行的服务器管理器控制台中没有“本地服务器”页。
 
-##### <a name="to-start-server-manager-on-a-clien-----co----puter"></a>在客户端计算机上启动服务器管理器的步骤
+##### <a name="to-start-server-manager-on-a-client-computer"></a>在客户端计算机上启动服务器管理器的步骤
 
-1.  在“开始”  菜单中，单击“所有应用”  ，然后单击“管理工具”  。
+1.  在“开始”  菜单中，单击“所有应用” ，然后单击“管理工具” 。
 
-2.  在“管理工具”  文件夹中，单击“服务器管理器”  。
+2.  在“管理工具”  文件夹中，单击“服务器管理器” 。
 
-虽然未在服务器管理器控制台“工具”菜单中列出，但 Windows PowerShell cmdlet 和命令提示符管理工具也作为远程服务器管理工具的一部分为角色和功能安装  。 例如，如果你使用提升的用户权限（以管理员身份运行）打开 PowerShell 会话并运行 cmdlet `Get-Command -Module RDManagement`，则结果包含一个远程桌面服务 cmdlet 列表。只要 cmdlet 针对的是运行全部或部分远程桌面服务角色的远程服务器，安装远程服务器管理工具后，远程桌面服务 cmdlet 可以在本地计算机上运行。
+虽然未在服务器管理器控制台“工具”菜单中列出，但 Windows PowerShell cmdlet 和命令提示符管理工具也作为远程服务器管理工具的一部分为角色和功能安装。 例如，如果你使用提升的用户权限（以管理员身份运行）打开 PowerShell 会话并运行 cmdlet `Get-Command -Module RDManagement`，则结果包含一个远程桌面服务 cmdlet 列表。只要 cmdlet 针对的是运行全部或部分远程桌面服务角色的远程服务器，安装远程服务器管理工具后，远程桌面服务 cmdlet 可以在本地计算机上运行。
 
 ##### <a name="to-start-windows-powershell-with-elevated-user-rights-run-as-administrator"></a>使用提升的用户权限启动 Windows PowerShell（以管理员身份运行）
 
-1.  在“开始”  菜单中，依次单击“所有应用”  、“Windows 系统”  和“Windows PowerShell”  。
+1.  在“开始”  菜单中，依次单击“所有应用” 、“Windows 系统” 和“Windows PowerShell” 。
 
-2.  若要从桌面以管理员身份运行 Windows PowerShell，请右键单击“Windows PowerShell”快捷方式，然后单击“以管理员身份运行”   。
+2.  若要从桌面以管理员身份运行 Windows PowerShell，请右键单击“Windows PowerShell”快捷方式，然后单击“以管理员身份运行” 。
 
 > [!NOTE]
-> 你还可以启动针对特定服务器的 Windows PowerShell 会话，方法是右键单击服务器管理器中角色或组页中的托管服务器，然后单击“Windows PowerShell”  。
+> 你还可以启动针对特定服务器的 Windows PowerShell 会话，方法是右键单击服务器管理器中角色或组页中的托管服务器，然后单击“Windows PowerShell”。
         
 
 ## <a name="known-issues"></a>已知问题
@@ -163,7 +163,7 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 
 > **影响**：Windows 10 1809（2018 年 10 月更新）上的 RSAT FOD
 > 
-> **解决方法**：若要查看安装进度，请单击“后退”按钮，在“管理可选功能”页上查看状态   。
+> **解决方法**：若要查看安装进度，请单击“后退”按钮，在“管理可选功能”页上查看状态 。
 
 ---
 

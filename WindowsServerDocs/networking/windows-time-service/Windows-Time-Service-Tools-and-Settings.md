@@ -7,12 +7,12 @@ ms.date: 02/24/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 7e7a233d17d8f2e32286a0869b283e450a34bbbc
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2f6ba34381e813247d0838853f688abf13fbd2fa
+ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860140"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605537"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 时间服务工具和设置
 
@@ -27,7 +27,7 @@ ms.locfileid: "80860140"
 >
 > 此外，在运行 Windows XP 或更早版本的较旧计算机上，**Net time /querysntp** 命令会显示网络时间协议 (NTP) 服务器的名称。可以将某台计算机配置为与该 NTP 服务器同步，但仅当计算机的时间客户端配置为 NTP 或 AllSync 时，才可使用该服务器。 该命令已被弃用。  
 
-大多数域成员计算机的时间客户端类型为 NT5DS，这意味着它们会从域层次结构同步时间。 通常情况下，这方面唯一的例外是充当林根域的主域控制器 (PDC) 仿真器操作主机的域控制器。 PDC 仿真器操作主机通常配置为使用外部时间源来同步时间。 若要查看计算机的时间客户端配置（从 Windows Server 2008 和 Windows Vista 开始），请从提升的命令提示符处运行 **W32tm /query /configuration** 命令，然后在命令输出中读取“类型”行。  有关详细信息，请参阅 [Windows 时间服务的工作原理](How-the-Windows-Time-Service-Works.md)。 另外，可以运行 **reg query HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters** 命令，并在命令输出中读取 **NtpServer** 的值。  
+大多数域成员计算机的时间客户端类型为 NT5DS，这意味着它们会从域层次结构同步时间。 通常情况下，这方面唯一的例外是充当林根域的主域控制器 (PDC) 仿真器操作主机的域控制器。 PDC 仿真器操作主机通常配置为使用外部时间源来同步时间。 若要查看计算机的时间客户端配置（从 Windows Server 2008 和 Windows Vista 开始），请从提升的命令提示符处运行 **W32tm /query /configuration** 命令，然后在命令输出中读取“类型”行。 有关详细信息，请参阅 [Windows 时间服务的工作原理](How-the-Windows-Time-Service-Works.md)。 另外，可以运行 **reg query HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters** 命令，并在命令输出中读取 **NtpServer** 的值。  
 
 > [!IMPORTANT]  
 > 在 Windows Server 2016 之前，W32Time 服务并不是为了满足时间敏感型应用程序的需要。 但是，现在可以通过 Windows Server 2016 的更新在域中实现可达到一毫秒准确性的解决方案。 有关详细信息，请参阅 [Windows 2016 精确时间](accurate-time.md)和[用于针对高精度环境配置 Windows 时间服务的支持边界](support-boundary.md)。  
@@ -61,7 +61,7 @@ ms.locfileid: "80860140"
 |**w32tm /ntte \<NT *time epoch*>** |将 Windows NT 系统时间（以 10<sup>-7</sup> 秒为单位，从 1601 年 1 月 1 日 0 点开始进行度量）转换为可读格式。 |
 |**w32tm /ntpte \<NTP *time epoch*>** |将 NTP 时间（以 2<sup>-32</sup> 秒为单位，从 1900 年 1 月 1 日 0 点开始进行度量）转换为可读格式。 |
 |**w32tm /resync [/computer:\<*computer*>] [/nowait] [/rediscover] [/soft]** |告知计算机应该尽快重新同步其时钟，并丢弃所有累积的错误统计信息。<p>**/computer:\<*computer*>** ：指定应重新同步的计算机。 如果未指定，则本地计算机会重新同步。<p>**/nowait**：不等待重新同步，立即返回。 否则，请等待重新同步完成，然后再返回。<p>**/rediscover**：重新检测网络配置并重新发现网络源，然后重新同步。<p>**/soft**：使用现有错误统计信息重新同步。 不实用，为兼容性而提供。 |
-|**w32tm /stripchart /computer:\<*target*> [/period:\<*refresh*>] [/dataonly] [/samples:\<*count*>] [/rdtsc]** |显示此计算机和另一台计算机之间偏移量的带状图。<p>**/computer:\<*target*>** ：将用作偏移量度量基准的计算机。<p>**/period:\<*refresh*>** ：采样间隔时间，以秒为单位。 默认值为 2 秒。<p>**/dataonly**：仅显示数据，不显示图形。<p>**/samples:\<*count*>** ：收集 \<*count*> 个样本，然后停止。 如果未指定，则按 Ctrl+C 后才会停止收集样本  。<br/><br/>**/rdtsc**：对于每个示例，此选项输出逗号分隔的值以及 **RdtscStart**、**RdtscEnd**、**FileTime**、**RoundtripDelay** 和 **NtpOffset** 标头，而不输出文本图形。<br/><ul><li>**RdtscStart**：在生成 NTP 请求之前收集的 [RDTSC（读取时间戳计数器）](https://en.wikipedia.org/wiki/Time_Stamp_Counter)值。</li><li>**RdtscEnd**：在接收和处理 NTP 响应之后收集的 RDTSC 值。</li><li>**FileTime**：NTP 请求中使用的本地 FILETIME 值。</li><li>**RoundtripDelay**：从生成 NTP 请求到处理收到的 NTP 响应之间所用的时间（以秒为单位），根据 NTP 往返计算结果进行计算。</li><li>**NTPOffset**：本地计算机和 NTP 服务器之间的时间偏移量（以秒为单位），根据 NTP 偏移量计算结果进行计算。</li></ul> |
+|**w32tm /stripchart /computer:\<*target*> [/period:\<*refresh*>] [/dataonly] [/samples:\<*count*>] [/rdtsc]** |显示此计算机和另一台计算机之间偏移量的带状图。<p>**/computer:\<*target*>** ：将用作偏移量度量基准的计算机。<p>**/period:\<*refresh*>** ：采样间隔时间，以秒为单位。 默认值为 2 秒。<p>**/dataonly**：仅显示数据，不显示图形。<p>**/samples:\<*count*>** ：收集 \<*count*> 个样本，然后停止。 如果未指定，则按 Ctrl+C 后才会停止收集样本。<br/><br/>**/rdtsc**：对于每个示例，此选项输出逗号分隔的值以及 **RdtscStart**、**RdtscEnd**、**FileTime**、**RoundtripDelay** 和 **NtpOffset** 标头，而不输出文本图形。<br/><ul><li>**RdtscStart**：在生成 NTP 请求之前收集的 [RDTSC（读取时间戳计数器）](https://en.wikipedia.org/wiki/Time_Stamp_Counter)值。</li><li>**RdtscEnd**：在接收和处理 NTP 响应之后收集的 RDTSC 值。</li><li>**FileTime**：NTP 请求中使用的本地 FILETIME 值。</li><li>**RoundtripDelay**：从生成 NTP 请求到处理收到的 NTP 响应之间所用的时间（以秒为单位），根据 NTP 往返计算结果进行计算。</li><li>**NTPOffset**：本地计算机和 NTP 服务器之间的时间偏移量（以秒为单位），根据 NTP 偏移量计算结果进行计算。</li></ul> |
 |**w32tm /config [/computer:\<*target*>] [/update] [/manualpeerlist:\<*peers*>] [/syncfromflags:\<*source*>] [/LocalClockDispersion:\<*seconds*>] [/reliable:(YES\|NO)] [/largephaseoffset:\<*milliseconds*>]** |**/computer:\<*target*>** ：调整 \<*target*> 的配置。 如果未指定，则默认值为本地计算机。<p>**/update**：通知时间服务配置已更改，使更改生效。<p>**/manualpeerlist:\<*peers*>** ：将手动对等列表设置为 \<*peers*>，它是以空格分隔的 DNS 和/或 IP 地址的列表。 指定多个对等方时，此选项必须用引号引起来。<p>**/syncfromflags:\<*source*>** ：设置 NTP 客户端应从哪些源同步。 \<*source*> 应该是这些以逗号分隔的关键字的列表（不区分大小写）：<ul><li>**MANUAL**：包括手动对等列表中的对等方。</li><li>**DOMHIER**：从域层次结构中的域控制器 (DC) 同步。</li></ul>**/LocalClockDispersion:\<*seconds*>** ：配置 W32Time 在无法从已配置的源获取时间时将采用的内部时钟的准确性。<p>**/reliable:(YES\|NO)** ：设置此计算机是否为可靠的时间源。 此设置仅对域控制器有用。<ul><li>**YES**：此计算机是可靠的时间服务。</li><li>**NO**：此计算机不是可靠的时间服务。</li></ul>**/largephaseoffset:\<*milliseconds*>** ：设置 W32Time 将其视为峰值的本地时间和网络时间之间的时间差。 |
 |**w32tm /tz** |显示当前时区设置。 |
 |**w32tm /dumpreg [/subkey:\<*key*>] [/computer:\<*target*>]** |显示与给定注册表项相关联的值。<p>默认项为 **HKLM\System\CurrentControlSet\Services\W32Time**（时间服务的根项）。<p>**/subkey:\<*key*>** ：显示与默认项的子项 <key> 相关联的值。<p>**/computer:\<*target*>** ：查询计算机 \<*target*> 的注册表设置 |
@@ -100,7 +100,7 @@ Windows 将 Windows 时间服务策略信息存储在**计算机配置\管理模
 > [!IMPORTANT]  
 > 某些预设 GPO 设置不同于相应的默认注册表项。 如果你计划使用 GPO 来配置任何 Windows 时间设置，请务必参阅 [Windows 时间服务组策略设置的预设值不同于 Windows Server 2003 中相应的 Windows 时间服务注册表项](https://go.microsoft.com/fwlink/?LinkId=186066)。 该问题适用于 Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2 和 Windows Server 2003。
 
-例如，假设你在“配置 Windows NTP 客户端”  策略中编辑策略设置。
+例如，假设你在“配置 Windows NTP 客户端”策略中编辑策略设置。
 
 所做的更改存储在管理模板中的以下位置：
 
@@ -139,12 +139,12 @@ Windows 将这些设置加载到以下子项下的注册表策略区域中：
 |注册表项 |版本 |说明 |
 | --- | --- | --- |
 |**FileLogEntries** |所有版本 |控制 Windows 时间日志文件中创建的条目数。 默认值为 none，即不记录任何 Windows 时间活动。 有效值为 **0** 到 **300**。 此值不影响由 Windows 时间正常创建的事件日志条目 |
-|**FileLogName** |所有版本 |控制 Windows 时间日志的位置和文件名。 默认值为空白，仅当更改 FileLogEntries 后才可更改此值  。 有效值是 Windows 时间用于创建日志文件的完整路径和文件名。 此值不影响由 Windows 时间正常创建的事件日志条目。 |
-|**FileLogSize** |所有版本 |控制 Windows 时间日志文件的循环日志记录行为。 定义 FileLogEntries 和 FileLogName 后，条目将定义允许日志文件到达的大小（以字节为单位），到达此大小后将用新条目覆盖最旧的日志条目   。 对于此设置，请使用 **1000000** 或更大的值。 此值不影响由 Windows 时间正常创建的事件日志条目。 |
+|**FileLogName** |所有版本 |控制 Windows 时间日志的位置和文件名。 默认值为空白，仅当更改 FileLogEntries 后才可更改此值。 有效值是 Windows 时间用于创建日志文件的完整路径和文件名。 此值不影响由 Windows 时间正常创建的事件日志条目。 |
+|**FileLogSize** |所有版本 |控制 Windows 时间日志文件的循环日志记录行为。 定义 FileLogEntries 和 FileLogName 后，条目将定义允许日志文件到达的大小（以字节为单位），到达此大小后将用新条目覆盖最旧的日志条目 。 对于此设置，请使用 **1000000** 或更大的值。 此值不影响由 Windows 时间正常创建的事件日志条目。 |
 
 ## <a name="configuring-how-windows-time-service-resets-the-computer-clock"></a>配置 Windows 时间服务重置计算机时钟的方式
 
-为了使 W32Time 逐步设置计算机时钟，偏移量必须小于 MaxAllowedPhaseOffset 值，并同时满足以下公式  ：  
+为了使 W32Time 逐步设置计算机时钟，偏移量必须小于 MaxAllowedPhaseOffset 值，并同时满足以下公式：  
 
 - Windows Server 2016 及其更高版本：
 
@@ -156,16 +156,16 @@ Windows 将这些设置加载到以下子项下的注册表策略区域中：
 
 **CurrentTimeOffset** 值以时钟计时周期度量，其中，1 毫秒 = Windows 系统上的 10,000 个时钟计时周期。  
 
-SystemClockRate 和 PhaseCorrectRate 也以时钟计时周期来度量   。 若要获取 SystemClockRate 值，可使用以下命令，并使用公式“秒数 &times; 1,000 &times; 10,000”将其从秒数转换为时钟计时周期数  ：   
+SystemClockRate 和 PhaseCorrectRate 也以时钟计时周期来度量 。 若要获取 SystemClockRate 值，可使用以下命令，并使用公式“秒数 &times; 1,000 &times; 10,000”将其从秒数转换为时钟计时周期数：  
 
 ```cmd
 W32tm /query /status /verbose  
 ClockRate: 0.0156000s  
 ```  
 
-**SystemClockRate** 是指系统上的时钟速率。 使用 156,000 秒作为示例，SystemClockRate 值应为 = 0.0156000 &times; 1,000 &times; 10,000 = 156,000 个时钟计时周期  。  
+**SystemClockRate** 是指系统上的时钟速率。 使用 156,000 秒作为示例，SystemClockRate 值应为 = 0.0156000 &times; 1,000 &times; 10,000 = 156,000 个时钟计时周期。  
 
-MaxAllowedPhaseOffset 也以秒为单位进行度量  。 若要将其转换为时钟计时周期，请计算 **MaxAllowedPhaseOffset** &times; 1,000 &times; 10,000 的积。  
+MaxAllowedPhaseOffset 也以秒为单位进行度量。 若要将其转换为时钟计时周期，请计算 **MaxAllowedPhaseOffset** &times; 1,000 &times; 10,000 的积。  
 
 下面的示例演示如何在使用 Windows Server 2012 R2 或更低版本时应用这些计算。
 
@@ -198,7 +198,7 @@ MaxAllowedPhaseOffset 也以秒为单位进行度量  。 若要将其转换为�
 因此，W32tm 会立即调回时钟。  
 
 > [!NOTE]  
-> 在这种情况下，若要慢慢地调回时钟，还必须在注册表中调整 PhaseCorrectRate 或 UpdateInterval 的值，确保等式结果为“TRUE”    。  
+> 在这种情况下，若要慢慢地调回时钟，还必须在注册表中调整 PhaseCorrectRate 或 UpdateInterval 的值，确保等式结果为“TRUE”  。  
 
 **示例 2：时间相差 3 分钟**
 
@@ -291,7 +291,7 @@ Windows 时间服务将信息存储在以下注册表子项下：
 |**NtpServer** |所有版本 |指定以空格分隔的对等列表，计算机可从该列表中获取时间戳，其中每行包含一个或多个 DNS 名称或 IP 地址。 列出的每个 DNS 名称或 IP 地址必须是唯一的。 连接到域的计算机必须与更可靠的时间源同步，例如美国官方时钟。  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 SymmetricActive：有关此模式的详细信息，请参阅 [Windows 时间服务器：3.3 操作模式](https://go.microsoft.com/fwlink/?LinkId=208012)。</li><li>0x08 Client</li></ul><br />域成员上没有此注册表项的默认值。 独立客户端和服务器的默认值为 time.windows.com,0x1。<p>**注意**<br />有关可用 NTP 服务器的详细信息，请参阅 KB 262680：[Internet 上可用的简单网络时间协议 (SNTP) 时间服务器的列表](https://support.microsoft.com/help/262680/a-list-of-the-simple-network-time-protocol-sntp-time-servers-that-are) |
 |**ServiceDll** |所有版本 |由 W32Time 维护。 它包含 Windows 操作系统使用的保留数据，对此设置的任何更改都可能导致不可预测的结果。 此 DLL 在域成员及独立客户端和服务器上的默认位置为 %windir%\System32\W32Time.dll。 |
 |**ServiceMain** |所有版本 |由 W32Time 维护。 它包含 Windows 操作系统使用的保留数据，对此设置的任何更改都可能导致不可预测的结果。 域成员的默认值为 **SvchostEntry_W32Time**。 独立客户端和服务器的默认值为 **SvchostEntry_W32Time**。 |
-|**Type** |所有版本 |指示要接受其同步的对等方：  <ul><li>**NoSync**。 时间服务不与其他源同步。</li><li>**NTP**： 时间服务从 NtpServer.  注册表项中指定的服务器进行同步。</li><li>**NT5DS**。 时间服务从域层次结构进行同步。  </li><li>**AllSync**。 时间服务使用所有可用的同步机制。  </li></ul>域成员的默认值为 NT5DS  。 独立客户端和服务器的默认值为 NTP  。 |
+|**Type** |所有版本 |指示要接受其同步的对等方：  <ul><li>**NoSync**。 时间服务不与其他源同步。</li><li>**NTP**： 时间服务从 NtpServer.  注册表项中指定的服务器进行同步。</li><li>**NT5DS**。 时间服务从域层次结构进行同步。  </li><li>**AllSync**。 时间服务使用所有可用的同步机制。  </li></ul>域成员的默认值为 NT5DS。 独立客户端和服务器的默认值为 NTP。 |
 
 ### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpclient-subkey-entries"></a><a id="ntpclient"></a>“HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient”子项条目
 
@@ -307,7 +307,7 @@ Windows 时间服务将信息存储在以下注册表子项下：
 |**LargeSampleSkew** |所有版本 |指定用于日志记录的大样本倾斜（以秒为单位）。 为遵守证券交易委员会 (SEC) 规范，应将此设置为 3 秒。 仅当为 0x2 大样本倾斜显式配置了 **EventLogFlags** 时，才会记录此设置的事件。 域成员的默认值为 3。 独立客户端和服务器的默认值为 3。 |
 |**ResolvePeerBackOffMaxTimes** |所有版本 |指定重复尝试查找要与之同步的对等方失败时使等待间隔加倍的最大次数。 如果值为零，则表示等待间隔始终为最小值。 域成员的默认值为 **7**。 独立客户端和服务器的默认值为 **7**。 |
 |**ResolvePeerBackoffMinutes** |所有版本 |指定尝试查找要与之同步的对等方之前等待的初始间隔（以分钟为单位）。 域成员的默认值为 **15**。 独立客户端和服务器的默认值为 **15**。  |
-|**SpecialPollInterval** |所有版本 |指定手动对等的特殊轮询间隔（以秒为单位）。 启用 **SpecialInterval** 0x1 标志后，W32Time 会使用此轮询间隔，而不是由操作系统确定的轮询间隔。 域成员的默认值为 **3,600**。 独立客户端和服务器的默认值为 **604,800**。<br/><br/>版本 1702 的新增功能 **SpecialPollInterval** 包含在 **MinPollInterval** 和 **MaxPollInterval** Config 注册表值中。|
+|**SpecialPollInterval** |所有版本 |指定手动对等的特殊轮询间隔（以秒为单位）。 启用 **SpecialInterval** 0x1 标志后，W32Time 会使用此轮询间隔，而不是由操作系统确定的轮询间隔。 域成员的默认值为 **3,600**。 独立客户端和服务器的默认值为 **604,800**。<br/><br/>内部版本 1703 的新值 SpecialPollInterval 是由 MinPollInterval 和 MaxPollInterval Config 注册表值所包含的。|
 |**SpecialPollTimeRemaining** |所有版本 |由 W32Time 维护。 它包含 Windows 操作系统使用的保留数据。 它指定在计算机重启后 W32Time 重新同步之前的时间（以秒为单位）。 对此设置的任何更改都可能导致不可预测的结果。 域成员及独立客户端和服务器上的默认值均保留为空。 |
 
 ### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver-subkey-entries"></a><a id="ntpserver"></a>“HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer”子项条目
@@ -321,7 +321,7 @@ Windows 时间服务将信息存储在以下注册表子项下：
 
 ## <a name="reference-pre-set-values-for-the-windows-time-service-gpo-settings"></a>参考：适用于 Windows 时间服务 GPO 设置的预设值  
 
-下表列出了与 Windows 时间服务相关联的全局组策略设置以及与每项设置相关联的预设值。 有关每项设置的详细信息，请参阅本文前面部分的[参考：Windows 时间服务注册表项](#reference-windows-time-service-registry-entries)中介绍的相应注册表项。 以下设置包含在名为“全局配置设置”的单个 GPO 中  。  
+下表列出了与 Windows 时间服务相关联的全局组策略设置以及与每项设置相关联的预设值。 有关每项设置的详细信息，请参阅本文前面部分的[参考：Windows 时间服务注册表项](#reference-windows-time-service-registry-entries)中介绍的相应注册表项。 以下设置包含在名为“全局配置设置”的单个 GPO 中。  
 
 ### <a name="pre-set-values-for-global-group-policy-settings"></a>“全局组策略”设置的预设值
 
@@ -345,7 +345,7 @@ Windows 时间服务将信息存储在以下注册表子项下：
 
 ### <a name="pre-set-values-for-configure-windows-ntp-client-settings"></a>“配置 Windows NTP 客户端”设置的预设值
 
-下表列出了“配置 Windows NTP 客户端”GPO 的可用设置，以及与 Windows 时间服务相关联的预设值  。 有关每项设置的详细信息，请参阅本文前面部分的[参考：Windows 时间服务注册表项](#reference-windows-time-service-registry-entries)中介绍的相应注册表项。  
+下表列出了“配置 Windows NTP 客户端”GPO 的可用设置，以及与 Windows 时间服务相关联的预设值。 有关每项设置的详细信息，请参阅本文前面部分的[参考：Windows 时间服务注册表项](#reference-windows-time-service-registry-entries)中介绍的相应注册表项。  
 
 |组策略设置|预设值|  
 |------------------------|-----------------|  
@@ -362,10 +362,10 @@ Windows 时间服务将信息存储在以下注册表子项下：
 Windows 时间遵循 NTP 规范，该规范要求使用 UDP 端口 123 进行所有时间同步通信。 Windows 时间始终保留此端口。 计算机同步其时钟或向另一台计算机提供时间时，这种通信在 UDP 端口 123 上完成。  
 
 > [!NOTE]  
-> 如果计算机是有多个网络适配器的计算机（也称为多宿主  计算机），则无法基于网络适配器选择性地启用 Windows 时间服务。  
+> 如果计算机是有多个网络适配器的计算机（也称为多宿主计算机），则无法基于网络适配器选择性地启用 Windows 时间服务。  
 
 ## <a name="related-information"></a>相关信息  
 
 以下资源包含与此部分相关的其他信息。  
 
-- IETF RFC 数据库中的 RFC 1305   
+- IETF RFC 数据库中的 RFC 1305  
