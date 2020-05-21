@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 8ba413b831c7b11780113ee2ffd3cce598781a44
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: f82aab1b3a3af61afa08a1849392297ca5def2ab
+ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465571"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83551100"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虚拟机监控程序计划程序类型
 
@@ -22,8 +22,8 @@ ms.locfileid: "77465571"
 
 本文介绍了在 Windows Server 2016 中首次引入的虚拟处理器计划逻辑的新模式。 这些模式或计划程序类型确定 Hyper-v 虚拟机监控程序如何分配并管理来宾虚拟处理器上的工作。 Hyper-v 主机管理员可以选择最适合来宾虚拟机（Vm）的虚拟机监控程序计划程序类型，并将 Vm 配置为利用计划逻辑。
 
->[!NOTE]
->若要使用本文档中所述的虚拟机监控程序计划程序功能，需要进行更新。 有关详细信息，请参阅[所需更新](#required-updates)。
+> [!NOTE]
+> 若要使用本文档中所述的虚拟机监控程序计划程序功能，需要进行更新。 有关详细信息，请参阅[所需更新](#required-updates)。
 
 ## <a name="background"></a>背景
 
@@ -31,7 +31,7 @@ ms.locfileid: "77465571"
 
 ### <a name="understanding-smt"></a>了解 SMT
 
-同时多线程处理（SMT）是新式处理器设计中利用的一种技术，它允许独立的独立执行线程共享处理器的资源。 SMT 通常通过并行化计算为大多数工作负荷提供适度的性能提升，但如果在两个线程之间发生争用，共享处理器资源出现。
+同时多线程处理（SMT）是新式处理器设计中利用的一种技术，它允许独立的独立执行线程共享处理器的资源。 SMT 通常通过并行化计算为大多数工作负荷提供适度的性能提升，但如果在共享处理器资源的线程之间发生争用，性能提升甚至可能会降低性能，甚至可能会导致性能下降。
 Intel 和 AMD 均提供支持 SMT 的处理器。 Intel 将其 SMT 的产品/服务称为 Intel 超线程技术或 Intel HT。
 
 在本文中，Hyper-v 的 SMT 说明及其使用方式同样适用于 Intel 和 AMD 系统。
@@ -48,7 +48,7 @@ Intel 和 AMD 均提供支持 SMT 的处理器。 Intel 将其 SMT 的产品/服
 
 * 根分区本身是虚拟机分区，尽管它具有唯一的属性和比来宾虚拟机更高的特权。 根分区提供控制所有来宾虚拟机的管理服务，为来宾提供虚拟设备支持，并管理来宾虚拟机的所有设备 i/o。 Microsoft 强烈建议不要在根分区中运行任何应用程序工作负荷。
 
-* 根分区的每个虚拟处理器（副总裁）映射到基础逻辑处理器（LP）1:1。 主机副总裁始终在同一基础 LP 上运行–不会迁移根分区的 VPs。
+* 根分区的每个虚拟处理器（副总裁）映射到基础逻辑处理器（LP）1:1。 主机副总裁始终运行在同一基础 LP 上–不会迁移根分区的 VPs。
 
 * 默认情况下，主机 VPs 运行的 LPs 还可以运行来宾 VPs。
 
@@ -58,22 +58,18 @@ Intel 和 AMD 均提供支持 SMT 的处理器。 Intel 将其 SMT 的产品/服
 
 从 Windows Server 2016 开始，Hyper-v 虚拟机监控程序支持多个计划程序逻辑模式，确定虚拟机监控程序如何计划底层逻辑处理器上的虚拟处理器。 这些计划程序类型为：
 
-- [经典、公平共享计划程序](#the-classic-scheduler)
-- [核心计划程序](#the-core-scheduler)
-- [根计划程序](#the-root-scheduler)
-
 ### <a name="the-classic-scheduler"></a>经典计划程序
 
 经典计划程序是自其开始后的所有版本 Windows Hyper-v 虚拟机监控程序（包括 Windows Server 2016 Hyper-v）的默认值。 经典计划程序为来宾虚拟处理器提供公平共享的抢先式循环计划模型。
 
-经典计划程序类型最适合大多数传统 Hyper-v 使用–适用于私有云、托管提供程序等。 性能特征非常了解并经过优化，可支持多种虚拟化方案，如 VPs 到 LPs、同时运行多个异类 Vm 和工作负荷、运行更大的高缩放性性能 Vm，支持无限制的 Hyper-v 的全部功能集，等等。
+经典计划程序类型最适合大多数传统 Hyper-v 使用–适用于私有云、托管提供程序等。 性能特征非常了解并经过优化，可支持多种虚拟化方案，如 VPs 到 LPs、同时运行多个异类 Vm 和工作负荷、运行更大的高性能 Vm、支持 Hyper-v 的全部功能（不受限制）等。
 
 ### <a name="the-core-scheduler"></a>核心计划程序
 
 虚拟机监控程序核心计划程序是在 Windows Server 2016 和 Windows 10 版本1607中引入的经典计划程序逻辑的新替代方案。 核心计划程序为来宾工作负荷隔离提供强大的安全边界，降低了在启用 SMT 的虚拟化主机上运行的 Vm 内的工作负荷的性能变化。 核心计划程序允许同时在启用了同一 SMT 的虚拟化主机上同时运行 SMT 和非 SMT 虚拟机。
 
 核心计划程序利用虚拟化主机的 SMT 拓扑，并选择性地向来宾虚拟机公开 SMT 对，并将同一虚拟机中的来宾虚拟处理器组计划到 SMT 逻辑处理器组。 这是以对称方式完成的，因此，如果 LPs 分为两组，则会按两组计划 VPs，而不会在 Vm 之间共享核心。
-如果为未启用 SMT 的虚拟机计划副总裁，该副总裁将在运行时使用整个核心。
+如果为未启用 SMT 的虚拟机计划副总裁，则该副总裁会在运行时使用整个核心。
 
 核心计划程序的总体结果是：
 
@@ -87,11 +83,11 @@ Intel 和 AMD 均提供支持 SMT 的处理器。 Intel 将其 SMT 的产品/服
 
 * 来宾工作负荷隔离的强大安全边界-来宾 VPs 被限制为在底层物理内核对上运行，从而降低了向端通道侦听攻击的漏洞。
 
-默认情况下，将使用核心计划程序，从 Windows Server 2019 开始。 在 Windows Server 2016 上，核心计划程序是可选的，并且必须由 Hyper-v 主机管理员显式启用，而经典计划程序是默认值。
+默认情况下，从 Windows Server 2019 开始使用核心计划程序。 在 Windows Server 2016 上，核心计划程序是可选的，并且必须由 Hyper-v 主机管理员显式启用，而经典计划程序是默认值。
 
 #### <a name="core-scheduler-behavior-with-host-smt-disabled"></a>禁用了主机 SMT 的核心计划程序行为
 
-如果虚拟机监控程序配置为使用核心计划程序类型，但 SMT 功能在虚拟化主机上被禁用或不存在，则虚拟机监控程序将使用经典计划程序行为，而不考虑 "虚拟机监控程序计划程序类型" 设置。
+如果虚拟机监控程序配置为使用核心计划程序类型，但 SMT 功能在虚拟化主机上被禁用或不存在，则虚拟机监控程序将使用经典计划程序行为，而不考虑虚拟机监控程序计划程序类型设置。
 
 ### <a name="the-root-scheduler"></a>根计划程序
 
@@ -101,11 +97,11 @@ Windows 10 版本1803引入了根计划程序。 启用根计划程序类型后�
 
 #### <a name="root-scheduler-use-on-client-systems"></a>根计划程序在客户端系统上使用
 
-从 Windows 10 版本1803开始，默认情况下，仅在客户端系统上使用根计划程序，在这种情况下，可以在支持基于虚拟化的安全和 WDAG 工作负荷隔离的情况下启用虚拟机监控程序，并使用异类内核体系结构。 这是客户端系统唯一支持的虚拟机监控程序计划程序配置。 管理员不应尝试替代 Windows 10 客户端系统上的默认虚拟机监控程序计划程序类型。
+从 Windows 10 版本1803开始，默认情况下，仅在客户端系统上使用根计划程序，在这种情况下，可以启用基于虚拟化的安全和 WDAG 工作负荷隔离的虚拟机监控程序，并使用异类内核体系结构正确操作未来系统。 这是客户端系统唯一支持的虚拟机监控程序计划程序配置。 管理员不应尝试替代 Windows 10 客户端系统上的默认虚拟机监控程序计划程序类型。
 
 #### <a name="virtual-machine-cpu-resource-controls-and-the-root-scheduler"></a>虚拟机 CPU 资源控件和根计划程序
 
-当启用虚拟机监控程序根计划程序时，Hyper-v 提供的虚拟机处理器资源控件不受支持，因为根操作系统的计划程序逻辑是全局管理主机资源，不知道 VM 的特定的配置设置。 Hyper-v 每个虚拟机处理器资源控制（如大写字母、权重和准备金）仅适用于虚拟机监控程序直接控制副总裁计划的情况，例如经典计划和核心计划程序类型。
+当启用虚拟机监控程序根计划程序时，不支持 Hyper-v 提供的虚拟机处理器资源控制，因为根操作系统的计划程序逻辑是全局管理主机资源，不知道 VM 的特定配置设置。 Hyper-v 每个虚拟机处理器资源控制（如大写字母、权重和准备金）仅适用于虚拟机监控程序直接控制副总裁计划的情况，例如经典计划和核心计划程序类型。
 
 #### <a name="root-scheduler-use-on-server-systems"></a>根计划程序在服务器系统上使用
 
@@ -122,11 +118,11 @@ PowerShell 必须用于在来宾虚拟机中启用 SMT;Hyper-v 管理器中没�
 Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 ```
 
-其中 <n> 是来宾 VM 每个核心的 SMT 线程数。  
-请注意，<n> = 0 会将 HwThreadCountPerCore 值设置为与主机的 SMT "每个核心的线程计数" 值匹配。
+其中 <n> ，是来宾 VM 可查看的每个核心的 SMT 线程数。
+请注意， <n> = 0 会将 HwThreadCountPerCore 值设置为与主机的每个核心的 SMT 线程计数值相匹配。
 
->[!NOTE] 
->从 Windows Server 2019 开始，支持设置 HwThreadCountPerCore = 0。
+> [!NOTE]
+> 从 Windows Server 2019 开始，支持设置 HwThreadCountPerCore = 0。
 
 下面是一个从运行在包含2个虚拟处理器和 SMT 的虚拟机中运行的来宾操作系统获取的系统信息的示例。 来宾操作系统检测到属于同一核心的2个逻辑处理器。
 
@@ -136,19 +132,19 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 
 默认情况下，Windows Server 2016 Hyper-v 使用经典虚拟机监控程序计划程序模型。 可以选择将虚拟机监控程序配置为使用核心计划程序，通过限制来宾 VPs 在相应的物理 SMT 对上运行来提高安全性，并支持使用 SMT 计划为其来宾 VPs 使用虚拟机。
 
->[!NOTE]
->Microsoft 建议所有运行 Windows Server 2016 Hyper-v 的客户选择核心计划程序，以确保以最佳方式保护其虚拟化主机免受潜在的恶意来宾 Vm 的侵害。
+> [!NOTE]
+> Microsoft 建议所有运行 Windows Server 2016 Hyper-v 的客户选择核心计划程序，以确保以最佳方式保护其虚拟化主机免受潜在的恶意来宾 Vm 的侵害。
 
 ## <a name="windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler"></a>Windows Server 2019 Hyper-v 默认使用核心计划程序
 
-为了帮助确保以最佳安全配置部署 Hyper-v 主机，Windows Server 2019 Hyper-v 现在会默认使用核心虚拟机监控程序计划程序模型。 主机管理员可以选择将主机配置为使用旧的经典计划程序。 在重写计划程序类型默认设置之前，管理员应仔细阅读、了解并考虑每个计划程序类型对虚拟化主机的安全性和性能的影响。  有关详细信息，请参阅[了解 hyper-v 计划程序类型选择](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection)。
+为了帮助确保以最佳安全配置部署 Hyper-v 主机，Windows Server 2019 Hyper-v 现在默认使用核心虚拟机监控程序计划程序模型。 主机管理员可以选择将主机配置为使用旧的经典计划程序。 在重写计划程序类型默认设置之前，管理员应仔细阅读、了解并考虑每个计划程序类型对虚拟化主机的安全性和性能的影响。  有关详细信息，请参阅[了解 hyper-v 计划程序类型选择](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection)。
 
 ### <a name="required-updates"></a>所需更新
 
->[!NOTE]
->使用本文档中所述的虚拟机监控程序计划程序功能需要以下更新。 这些更新包括支持新的 "hypervisorschedulertype" BCD 选项的更改，这对于主机配置是必需的。
+> [!NOTE]
+> 使用本文档中所述的虚拟机监控程序计划程序功能需要以下更新。 这些更新包括支持新的 `hypervisorschedulertype` BCD 选项的更改，这对于主机配置是必需的。
 
-| 版本 | 发布  | 需要更新 | 知识库文章 |
+| 版本 | Release  | 需要更新 | 知识库文章 |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018.07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018.07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
@@ -161,20 +157,20 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 
 若要选择计划程序类型，请使用管理员权限打开命令提示符：
 
-``` command
-     bcdedit /set hypervisorschedulertype type
+```
+bcdedit /set hypervisorschedulertype type
 ```
 
-其中 `type` 是以下其中之一：
+其中 `type` 是以下项之一：
 
-* Classic
+* 经典
 * 核心
-* 根
+* Root
 
 必须重新启动系统才能使虚拟机监控程序计划程序类型的任何更改生效。
 
->[!NOTE]
->Windows Server Hyper-v 目前不支持虚拟机监控程序根计划程序。 Hyper-v 管理员不应尝试配置根计划程序以用于服务器虚拟化方案。
+> [!NOTE]
+> Windows Server Hyper-v 目前不支持虚拟机监控程序根计划程序。 Hyper-v 管理员不应尝试配置根计划程序以用于服务器虚拟化方案。
 
 ## <a name="determining-the-current-scheduler-type"></a>确定当前计划程序类型
 
@@ -182,13 +178,13 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 
 虚拟机监控程序启动事件 ID 2 表示虚拟机监控程序计划程序类型，其中：
 
-    1 = Classic scheduler, SMT disabled
+- 1 = 经典计划程序，SMT 已禁用
 
-    2 = Classic scheduler
+- 2 = 经典计划程序
 
-    3 = Core scheduler
+- 3 = 核心计划程序
 
-    4 = Root scheduler
+- 4 = 根计划程序
 
 ![显示虚拟机监控程序启动事件 ID 2 详细信息的屏幕截图](media/Hyper-V-CoreScheduler-EventID2-Details.png)
 

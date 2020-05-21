@@ -9,19 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43108fad0e1981bffd110264809acf30c1c12ba1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: eb4a9fa3105247695f1a50e5fc483ce608cd4816
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725013"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433121"
 ---
 # <a name="ftype"></a>ftype
 
 
 
-显示或修改在文件扩展名关联中使用的文件类型。 如果在没有赋值运算符（**=**）的情况下使用，则**ftype**将显示指定文件类型的当前打开的命令字符串。 如果在没有参数的情况下使用，则**ftype**将显示已定义打开命令字符串的文件类型。
+显示或修改在文件扩展名关联中使用的文件类型。 如果在没有赋值运算符（）的情况 **=** 下使用，则**ftype**将显示指定文件类型的当前打开的命令字符串。 如果在没有参数的情况下使用，则**ftype**将显示已定义打开命令字符串的文件类型。
 
+> [!NOTE]
+> 只有 CMD 中支持此命令。EXE 和无法从 PowerShell 中获取。  
+> 尽管可以使用 `cmd /c ftype` 作为解决方法。
 
 
 ## <a name="syntax"></a>语法
@@ -32,7 +35,7 @@ ftype [<FileType>[=[<OpenCommandString>]]]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<类型>|指定要显示或更改的文件类型。|
 |\<OpenCommandString>|指定打开指定文件类型的文件时要使用的 open 命令字符串。|

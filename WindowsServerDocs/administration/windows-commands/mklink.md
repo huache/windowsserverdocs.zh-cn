@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83a607711f0abe51810aa5abf4eb731206d810c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e4bfa1c928b5bc5f4c5a885378f0f1d1c9b99cf5
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723975"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437132"
 ---
 # <a name="mklink"></a>mklink
 创建符号链接。
@@ -29,7 +29,7 @@ mklink [[/d] | [/h] | [/j]] <Link> <Target>
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/d|创建目录符号链接。 默认情况下， **mklink**创建文件符号链接。|
 |/h|创建硬链接，而不是符号链接。|

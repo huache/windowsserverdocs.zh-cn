@@ -1,6 +1,6 @@
 ---
 title: forfiles
-description: '* * * * 的参考主题'
+description: Forfiles 命令的参考主题，用于在一个或一组文件上选择并运行命令。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,87 +8,97 @@ ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.date: 08/21/2018
-ms.openlocfilehash: 21cbc24028af5c4194d36258aecdd5432fb4069f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.date: 05/20/2020
+ms.openlocfilehash: 96ef7d016bd13961a4814ba4cd09095aed4f0e97
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725578"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716842"
 ---
 # <a name="forfiles"></a>forfiles
 
-
-
-选择和执行一个文件或一组文件的命令。 此命令对于批处理很有用。
-
-
+选择并运行一个文件或一组文件的命令。 此命令最常在批处理文件中使用。
 
 ## <a name="syntax"></a>语法
 
 ```
-forfiles [/p <Path>] [/m <SearchMask>] [/s] [/c <Command>] [/d [{+|-}][{<Date>|<Days>}]]
+forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | <days>}]]
 ```
-
 
 ### <a name="parameters"></a>参数
 
-|                     参数                      |                                                                                                                                                                                                                                                                                                    描述                                                                                                                                                                                                                                                                                                     |
-|----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                     /p \<路径>                     |                                                                                                                                                                                                                                                 指定从其开始搜索的路径。 默认情况下，搜索从当前工作目录开始。                                                                                                                                                                                                                                                  |
-|                  /m \<SearchMask>                  |                                                                                                                                                                                                                                                           根据指定的搜索掩码搜索文件。 默认的搜索掩码是** \*。\\ **\*.                                                                                                                                                                                                                                                           |
-|                         /s                         |                                                                                                                                                                                                                                                                   指示**forfiles**命令以递归方式搜索子目录。                                                                                                                                                                                                                                                                    |
-|                  /c \<命令>                   |                                                                                                                                                                                                                                  对每个文件运行指定的命令。 命令字符串应用引号引起来。 默认命令为**cmd/c echo @file **。                                                                                                                                                                                                                                   |
-| /d&nbsp;[{+\|-}] &#8288; [{\<Date>\|&#8288;\<天>}] | 选择在指定时间范围内具有上次修改日期的文件。</br>-选择上次修改日期晚于或等于（**+**）或早于或等于（**-**）指定日期的文件，其中*date*的格式为 MM/DD/YYYY。</br>-选择上次修改日期晚于或等于（**+**）当前日期加上指定的天数，或早于或等于（**-**）当前日期减去指定天数的文件。</br>-*天数*的有效值包括0–32768范围内的任何数字。 如果未指定任何符号， **+** 则默认情况下使用。 |
-|                         /?                         |                                                                                                                                                                                                                                                                                        在命令提示符下显示帮助。                                                                                                                                                                                                                                                                                        |
+| 参数 | 描述 |
+| --------- | ----------- |
+| /P`<pathname>` | 指定从其开始搜索的路径。 默认情况下，搜索从当前工作目录开始。 |
+| 一样`<searchmask>` | 根据指定的搜索掩码搜索文件。 默认的 searchmask 为 `*` 。 |
+| /S | 指示**forfiles**命令以递归方式搜索子目录。 |
+| /C`<command>` | 对每个文件运行指定的命令。 命令字符串应以双引号括起来。 默认命令为 `"cmd /c echo @file"` 。 |
+| /D`[{+\|-}][{<date> | <days>}]` | 选择在指定时间范围内具有最后修改日期的文件：<ul><li>选择上次修改日期晚于或等于（ **+** ）或早于或等于（ **-** ）指定日期的文件，其中*date*的格式为 MM/DD/YYYY。</li><li>选择上次修改日期晚于或等于（ **+** ）当前日期加上指定的天数，或早于或等于（ **-** ）当前日期减去指定天数的文件。</li><li>*天数*的有效值包括0–32768范围内的任何数字。 如果未指定任何符号， **+** 则默认情况下使用。</li></ul> |
+| /? | 在 cmd 窗口中显示帮助文本。 |
 
-## <a name="remarks"></a>备注
+#### <a name="remarks"></a>备注
 
--   **Forfiles**最常在批处理文件中使用。
--   **Forfiles/s**类似于**dir/s**
--   可以在命令字符串中使用由 **/c**命令行选项指定的以下变量。  
+- `forfiles /S`命令类似于 `dir /S` 。
 
-|变量|说明|
-|--------|-----------|
-|@FILE|文件名。|
-|@FNAME|不带扩展名的文件名。|
-|@EXT|文件扩展名。|
-|@PATH|文件的完整路径。|
-|@RELPATH|文件的相对路径。|
-|@ISDIR|如果文件类型为目录，则计算结果为 TRUE。 否则，此变量的计算结果为 FALSE。|
-|@FSIZE|文件大小（以字节为单位）。|
-|@FDATE|文件中上次修改的日期戳。|
-|@FTIME|文件中上次修改的时间戳。|
+- 可以在命令字符串中使用由 **/C**命令行选项指定的以下变量：
 
--   使用**forfiles**，可以运行命令，或将参数传递给多个文件。 例如，你可以对具有 .txt 文件扩展名的树中的所有文件运行**类型**命令。 或者，你可以在驱动器 C 上执行每个批处理文件（* .bat），文件名 Myinput 作为第一个参数。
--   通过**forfiles**，你可以执行以下任一操作：  
-    -   使用 **/d**参数按绝对日期或相对日期选择文件。
-    -   使用@FSIZE和@FDATE等变量生成文件的存档树。
-    -   使用@ISDIR变量来区分目录中的文件。
-    -   在命令行中包含特殊字符（采用 0x*HH*格式（例如，选项卡的0x09）。
--   **Forfiles**的工作原理是在设计为仅处理一个文件的工具上实现 "**递归子目录**" 标志。
+    | 变量 | 说明 |
+    | -------- | ----------- |
+    | @FILE | 文件名。 |
+    | @FNAME | 不带扩展名的文件名。 |
+    | @EXT | 文件扩展名。 |
+    | @PATH | 文件的完整路径。 |
+    | @RELPATH | 文件的相对路径。 |
+    | @ISDIR | 如果文件类型为目录，则计算结果为 TRUE。 否则，此变量的计算结果为 FALSE。 |
+    | @FSIZE | 文件大小（以字节为单位）。 |
+    | @FDATE | 文件中上次修改的日期戳。 |
+    | @FTIME | 文件中上次修改的时间戳。 |
 
-## <a name="examples"></a>示例
+- 使用**forfiles**命令可以在多个文件上运行命令或传递参数。 例如，你可以对具有 .txt 文件扩展名的树中的所有文件运行**类型**命令。 或者，你可以在驱动器 C 上执行每个批处理文件（* .bat），文件名 Myinput 作为第一个参数。
+
+- 此命令可以：
+
+    - 使用 **/d**参数按绝对日期或相对日期选择文件。
+
+    - 使用和等变量生成文件的存档树 @FSIZE @FDATE 。
+
+    - 使用变量来区分目录中的文件 @ISDIR 。
+
+    - 在命令行中包含特殊字符（采用 0x*HH*格式（例如，选项卡的0x09）。
+
+- 此命令的工作方式是 `recurse subdirectories` 在设计为仅处理一个文件的工具上实施标志。
+
+### <a name="examples"></a>示例
 
 若要列出驱动器 C 上的所有批处理文件，请键入：
+
 ```
-forfiles /p c:\ /s /m *.bat /c cmd /c echo @file is a batch file
+forfiles /P c:\ /S /M *.bat /C "cmd /c echo @file is a batch file"
 ```
+
 若要列出驱动器 C 上的所有目录，请键入：
+
 ```
-forfiles /p c:\ /s /m *.* /c cmd /c if @isdir==TRUE echo @file is a directory
+forfiles /P c:\ /S /M *.* /C "cmd /c if @isdir==TRUE echo @file is a directory"
 ```
+
 若要列出当前目录中至少一年的所有文件，请键入：
+
 ```
-forfiles /s /m *.* /d -365 /c cmd /c echo @file is at least one year old.
+forfiles /S /M *.* /D -365 /C "cmd /c echo @file is at least one year old."
 ```
+
 若要为当前目录中早于2007年1月1日的每个文件显示*该文本文件，* 请键入：
+
 ```
-forfiles /s /m *.* /d -01/01/2007 /c cmd /c echo @file is outdated. 
+forfiles /S /M *.* /D -01/01/2007 /C "cmd /c echo @file is outdated."
 ```
+
 若要以列格式列出当前目录中所有文件的文件扩展名，并在扩展之前添加选项卡，请键入：
+
 ```
-forfiles /s /m *.* /c cmd /c echo The extension of @file is 0x09@ext 
+forfiles /S /M *.* /C "cmd /c echo The extension of @file is 0x09@ext"
 ```
 
 ## <a name="additional-references"></a>其他参考

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 569b879caf29aac6d1592d822072f35021cec9d3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d62edde425a00db23f150246df65166234604cef
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723306"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436462"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -28,7 +28,7 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |auditSystem|指定联机驱动程序安装。</br>必需，但在运行**pnpunattend**时，无论是 **/help**还是 **/？** 个参数。|
 |/s|可选。 指定在不安装的情况下搜索驱动程序。|
@@ -43,15 +43,15 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 2. 下载并提取设备的驱动程序包。 将包含操作系统版本 INF 文件的子文件夹的内容复制到所创建的视频文件夹中的所有子文件夹。 例如，将视频驱动程序文件复制到 C:\Drivers\Video。
 3. 将系统环境路径变量添加到步骤1中创建的文件夹。例如， **C:\Drivers\Video**。
 4. 创建以下注册表项，然后为创建的**DriverPaths**键将**值数据**设置为**1**。
-5. 对于 Windows®7导航注册表路径： **HKEY_LOCAL_Machine \software\microsoft\windows NT\CurrentVersion\\**，然后创建密钥： **UnattendSettings\PnPUnattend\DriverPaths\\ **
-6. 对于 Windows Vista，导航到注册表路径： **HK_LM \software\microsoft\windows NT\CurrentVersion\\**，然后创建密钥 = **\UnattendSettings\PnPUnattend\DriverPaths**。
+5. 对于 Windows®7导航注册表路径： **HKEY_LOCAL_Machine \Software\microsoft\windows NT\CurrentVersion \\ **，然后创建密钥： **UnattendSettings\PnPUnattend\DriverPaths \\ **
+6. 对于 Windows Vista，导航到注册表路径： **HK_LM \Software\microsoft\windows NT\CurrentVersion \\ **，然后创建密钥 = **\UnattendSettings\PnPUnattend\DriverPaths**。
 
 ## <a name="examples"></a>示例
 
 To 命令显示了如何使用**PNPUnattend**审核计算机的可能的驱动程序更新，然后将发现报告给命令提示符。
 
 ```
-pnpunattend auditsystem /s /l 
+pnpunattend auditsystem /s /l
 ```
 
 ## <a name="additional-references"></a>其他参考

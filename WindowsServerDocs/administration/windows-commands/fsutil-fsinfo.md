@@ -1,52 +1,52 @@
 ---
-ms.assetid: 7787a72e-a26b-415f-b700-a32806803478
 title: Fsutil fsinfo
+description: 适用于 fsutil fsinfo 命令的参考主题，其中列出了所有驱动器、查询驱动器类型、查询卷信息、查询特定于 NTFS 的卷信息或查询文件系统统计信息。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.technology: storage
-audience: IT Pro
+ms.assetid: 7787a72e-a26b-415f-b700-a32806803478
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b7af3859cd16b89587a86e3436d5c832620c4e22
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 04d64bf0d7d29290cfc5e1ca88a013432322dbc1
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725496"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435821"
 ---
-# <a name="fsutil-fsinfo"></a>Fsutil fsinfo
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8，Windows Server 2008 R2，Windows 7
+# <a name="fsutil-fsinfo"></a>fsutil fsinfo
+
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
 列出所有驱动器、查询驱动器类型、查询卷信息、查询特定于 NTFS 的卷信息或查询文件系统统计信息。
-
-
 
 ## <a name="syntax"></a>语法
 
 ```
 fsutil fsinfo [drives]
-fsutil fsinfo [drivetype] <VolumePath>
-fsutil fsinfo [ntfsinfo] <RootPath>
-fsutil fsinfo [statistics] <VolumePath>
-fsutil fsinfo [volumeinfo] <RootPath>
+fsutil fsinfo [drivetype] <volumepath>
+fsutil fsinfo [ntfsinfo] <rootpath>
+fsutil fsinfo [statistics] <volumepath>
+fsutil fsinfo [volumeinfo] <rootpath>
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
-|-------------|---------------|
-|驱动器|列出计算机中的所有驱动器。|
-|drivetype|查询驱动器并列出其类型，如 cd-rom 驱动器。|
-|ntfsinfo|列出指定卷的 NTFS 特定卷信息，如扇区数、群集总数、可用群集以及 MFT 区的开头和结尾。|
-|sectorinfo|列出有关硬件的扇区大小和对齐方式的信息。|
-|statistics|列出指定卷的文件系统统计信息，如元数据、日志文件和 MFT 读取和写入。|
-|volumeinfo|列出指定卷的信息，例如文件系统、卷是否支持区分大小写的文件名、文件名中的 unicode 或磁盘配额，或是 DirectAccess （DAX）卷。|
-|< "VolumePath" >|指定驱动器号（后跟冒号）。|
-|< "RootPathname" >|指定根驱动器的驱动器号（后跟冒号）。|
+| 参数 | 说明 |
+| --------- |------------ |
+| 驱动器 | 列出计算机中的所有驱动器。 |
+| drivetype | 查询驱动器并列出其类型，如 cd-rom 驱动器。 |
+| ntfsinfo | 列出指定卷的 NTFS 特定卷信息，如扇区数、群集总数、可用群集以及 MFT 区的开头和结尾。 |
+| sectorinfo | 列出有关硬件的扇区大小和对齐方式的信息。 |
+| statistics | 列出指定卷的文件系统统计信息，如元数据、日志文件和 MFT 读取和写入。 |
+| volumeinfo | 列出指定卷的信息，例如文件系统、卷是否支持区分大小写的文件名、文件名中的 unicode 或磁盘配额，或是 DirectAccess （DAX）卷。 |
+| `<volumepath>:` | 指定驱动器号（后跟冒号）。 |
+| `<rootpath>:` | 指定根驱动器的驱动器号（后跟冒号）。 |
 
-## <a name="examples"></a><a name="BKMK_examples"></a>示例
+### <a name="examples"></a>示例
+
 若要列出计算机中的所有驱动器，请键入：
 
 ```
@@ -56,7 +56,7 @@ fsutil fsinfo drives
 类似于以下内容的输出：
 
 ```
-Drives: A:\ C:\ D:\ E:\       
+Drives: A:\ C:\ D:\ E:\
 ```
 
 若要查询驱动器 C 的驱动器类型，请键入：
@@ -86,13 +86,10 @@ fsinfo volumeinfo e:\
 类似于以下内容的输出：
 
 ```
-Volume Name :Volume
+Volume Name : Volume
 Serial Number : 0xd0b634d9
 Max Component Length : 255
 File System Name : NTFS
-.
-.
-.
 Supports Named Streams
 Is DAX Volume
 ```
@@ -107,12 +104,9 @@ fsutil fsinfo ntfsinfo f:
 
 ```
 NTFS Volume Serial Number : 0xe660d46a60d442cb
-Number Sectors :            0x00000000010ea04f
-Total Clusters :            0x000000000021d409
-.
-.
-.
-Mft Zone End   :            0x0000000000004700       
+Number Sectors : 0x00000000010ea04f
+Total Clusters : 0x000000000021d409
+Mft Zone End : 0x0000000000004700
 ```
 
 若要查询文件系统的基本硬件以获取扇区信息，请键入：
@@ -125,11 +119,8 @@ fsinfo sectorinfo d:
 
 ```
 D:\>fsutil fsinfo sectorinfo d:
-LogicalBytesPerSector :                                 4096
-PhysicalBytesPerSectorForAtomicity :                    4096
-.
-.
-.
+LogicalBytesPerSector : 4096
+PhysicalBytesPerSectorForAtomicity : 4096
 Trim Not Supported
 DAX capable
 ```
@@ -143,18 +134,15 @@ fsinfo statistics e:
 类似于以下内容的输出：
 
 ```
-File System Type :     NTFS
-Version :              1
-UserFileReads :        75021
-UserFileReadBytes :    1305244512
-.
-.
-.
-LogFileWriteBytes :    180936704       
+File System Type : NTFS
+Version : 1
+UserFileReads : 75021
+UserFileReadBytes : 1305244512
+LogFileWriteBytes : 180936704
 ```
 
 ## <a name="additional-references"></a>其他参考
-- [命令行语法密钥](command-line-syntax-key.md)
-[Fsutil](Fsutil.md)
 
+- [命令行语法项](command-line-syntax-key.md)
 
+- [fsutil](fsutil.md)

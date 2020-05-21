@@ -41,7 +41,7 @@ ms.locfileid: "82977245"
 
 ## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>使用 SSD 设备创建存储空间直通后，是否可以向存储空间直通池添加旋转磁盘（HDD）？
 
-不是。 默认情况下，如果使用单个设备类型创建池，则它不会配置缓存磁盘，所有磁盘都将用于容量。 可以将 NVME 磁盘添加到配置中，并为缓存配置 NVME 磁盘。
+否。 默认情况下，如果使用单个设备类型创建池，则它不会配置缓存磁盘，所有磁盘都将用于容量。 可以将 NVME 磁盘添加到配置中，并为缓存配置 NVME 磁盘。
 
 ## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>我配置了一个2机架的容错域：机架1有2个容错域，第2个机架有1个容错域。 每台服务器有4个容量 100 GB 设备。 能否使用池中的所有 1200 GB 空间？
 
@@ -57,7 +57,7 @@ ms.locfileid: "82977245"
 
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>是否有计算器显示为缓存、容量和复原而保留的磁盘的准确大小，这使我可以更好地进行规划呢？
 
-可以使用存储空间计算器来帮助进行规划。 可从https://aka.ms/s2dcalc获取。
+可以使用存储空间计算器来帮助进行规划。 可从获取 https://aka.ms/s2dcalc 。
 
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>配置6台服务器和3个机架时，建议的最佳配置是什么？
 

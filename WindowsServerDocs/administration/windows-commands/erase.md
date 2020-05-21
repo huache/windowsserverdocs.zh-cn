@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ec812e9a455cc0060a3f0a6be4d0e7227821a0b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 96e0f97e27de8933de44c437508ef59803765771
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992381"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437122"
 ---
 # <a name="erase"></a>erase
 
@@ -44,7 +44,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 #### <a name="remarks"></a>备注
 
-- 如果使用`erase /p`命令，你将看到以下消息：
+- 如果使用 `erase /p` 命令，你将看到以下消息：
 
     `FileName, Delete (Y/N)?`
 
@@ -52,7 +52,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 - 如果禁用命令扩展， **/s**参数将显示找不到的任何文件的名称，而不是显示要删除的文件的名称。
 
-- 如果在`<names>`参数中指定特定文件夹，则还将删除所有包含的文件。 例如，如果要删除*\work*文件夹中的所有文件，请键入：
+- 如果在参数中指定特定文件夹 `<names>` ，则还将删除所有包含的文件。 例如，如果要删除*\work*文件夹中的所有文件，请键入：
 
   ```
   erase \work
@@ -73,7 +73,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
   > [!NOTE]
   > 在将通配符用于**erase**命令之前，请使用与**dir**命令相同的通配符来列出所有要删除的文件。
 
-## <a name="examples"></a>示例
+### <a name="examples"></a>示例
 
 若要删除驱动器 C 上名为 Test 的文件夹中的所有文件，请键入下列内容之一：
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fb143c3d365b47f66aee5c64bfdc7dc26e5794f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8529e19e30b72c9b9c8f8c30e1ca39c5e8f1f40e
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723283"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436522"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -29,26 +29,26 @@ Windows PowerShell 2.0 中引入了**PowerShell_ISE** ，并大大扩展了 wind
 ## <a name="using-powershell_iseexe"></a>使用 PowerShell_ISE
 
 你可以使用**PowerShell_ISE**来启动和结束 Windows PowerShell 会话，如下所示：
-- 若要启动 Windows PowerShell ISE 会话，请在命令提示符窗口中，在 Windows PowerShell 中，或在 "开始" 菜单中键入：  
+- 若要启动 Windows PowerShell ISE 会话，请在命令提示符窗口中，在 Windows PowerShell 中，或在 "开始" 菜单中键入：
   ```
   PowerShell_Ise
-  ```  
-- 若要在 Windows PowerShell ISE 中打开脚本（ps1）、脚本模块（. hbase-runner.psm1）、模块清单（psd1）、XML 文件或任何其他受支持的文件，请使用以下命令格式：  
+  ```
+- 若要在 Windows PowerShell ISE 中打开脚本（ps1）、脚本模块（. hbase-runner.psm1）、模块清单（psd1）、XML 文件或任何其他受支持的文件，请使用以下命令格式：
   ```
   PowerShell_Ise <FilePath>
-  ```  
-  在 Windows PowerShell 3.0 中，可以使用可选**文件**参数，如下所示：  
+  ```
+  在 Windows PowerShell 3.0 中，可以使用可选**文件**参数，如下所示：
   ```
   PowerShell_Ise -File <FilePath>
-  ```  
-- 若要在不使用 Windows PowerShell 配置文件的情况下启动 Windows PowerShell ISE 会话，请使用**NoProfile**参数。 （ **NoProfile**参数是在 Windows PowerShell 3.0 中引入的。）  
+  ```
+- 若要在不使用 Windows PowerShell 配置文件的情况下启动 Windows PowerShell ISE 会话，请使用**NoProfile**参数。 （ **NoProfile**参数是在 Windows PowerShell 3.0 中引入的。）
   ```
   PowerShell_Ise -NoProfile
-  ```  
-- 若要在命令提示符窗口中查看**PowerShell_ISE .Exe**帮助文件，请使用以下命令格式：  
+  ```
+- 若要在命令提示符窗口中查看**PowerShell_ISE .Exe**帮助文件，请使用以下命令格式：
   ```
   PowerShell_Ise -help, -?, /?
-  ```  
+  ```
   有关**PowerShell_ISE**命令行参数的完整列表，请参阅[about_PowerShell_Ise](https://go.microsoft.com/fwlink/?LinkId=256512)。
 
 ## <a name="start-windows-powershell-ise-in-other-ways"></a>以其他方式启动 Windows PowerShell ISE
@@ -61,7 +61,7 @@ Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项
 
 ## <a name="additional-references"></a>其他参考
 
-[about_PowerShell_Ise.exe](https://go.microsoft.com/fwlink/?LinkId=256512)
-[通过 windows powershell](https://technet.microsoft.com/scriptcenter/dd742419) about_PowerShell_Ise .exe[about_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)
-[Windows powershell](https://go.microsoft.com/fwlink/?LinkID=107116)
-脚本的另请参阅
+[about_PowerShell_Ise .exe](https://go.microsoft.com/fwlink/?LinkId=256512) 
+[about_PowerShell .exe](https://go.microsoft.com/fwlink/?LinkID=113439) 
+[Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116) 
+[通过 Windows PowerShell 编写脚本](https://technet.microsoft.com/scriptcenter/dd742419)另请参阅

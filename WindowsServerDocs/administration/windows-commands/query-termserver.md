@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8a0a4608a16df0336b90ea5df281278ae47a503
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9b3ae6858a70d22b3ad928474648a3b2ee156235
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722701"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436232"
 ---
 # <a name="query-termserver"></a>查询 termserver
 
@@ -29,16 +29,16 @@ ms.locfileid: "82722701"
 > query termserver [<ServerName>] [/domain:<Domain>] [/address] [/continue]
 > ```
 > ### <a name="parameters"></a>参数
-> 
-> |    参数     |                                                                        描述                                                                         |
+>
+> |    参数     |                                                                        说明                                                                         |
 > |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > |   <ServerName>   |                                               指定标识 rd 会话主机服务器的名称。                                               |
 > | /domain<Domain> | 指定要查询终端服务器的域。 如果要查询当前正在工作的域，则无需指定域。 |
 > |     /address     |                                                  显示每个服务器的网络和节点地址。                                                  |
 > |    /continue     |                                              阻止显示每个信息屏幕后暂停。                                               |
 > |        /?        |                                                            在命令提示符下显示帮助。                                                            |
-> 
-> ## <a name="remarks"></a>备注
+>
+>#### <a name="remarks"></a>备注
 > - **query termserver**在网络中搜索所有附加的 Rd 会话主机服务器，并返回以下信息：
 >   - 服务器名称
 >   - 网络（如果使用/address 选项，则使用节点地址）
@@ -60,6 +60,6 @@ ms.locfileid: "82722701"
 >   query termserver Server3 /address
 >   ```
 >   ## <a name="additional-references"></a>其他参考
->   - [命令行语法关键字](command-line-syntax-key.md)
->   [查询](query.md)
+>   - [命令行语法关键字](command-line-syntax-key.md) 
+>   [查询](query.md) 
 >   [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

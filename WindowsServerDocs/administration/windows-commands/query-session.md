@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7a119cda5fad594638211bfcdbdc269fff13d20
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6b0d122beac43abfd826cb406adac4aa277fc72e
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722707"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436272"
 ---
 # <a name="query-session"></a>query session
 
@@ -30,8 +30,8 @@ ms.locfileid: "82722707"
 > query session [<SessionName> | <UserName> | <SessionID>] [/server:<ServerName>] [/mode] [/flow] [/connect] [/counter]
 > ```
 > ### <a name="parameters"></a>参数
-> 
-> |      参数       |                                                      描述                                                      |
+>
+> |      参数       |                                                      说明                                                      |
 > |----------------------|-----------------------------------------------------------------------------------------------------------------------|
 > |    <SessionName>     |                               指定要查询的会话的名称。                               |
 > |      <UserName>      |                           指定要查询其会话的用户的名称。                            |
@@ -42,8 +42,8 @@ ms.locfileid: "82722707"
 > |       /connect       |                                          显示当前连接设置。                                           |
 > |       /counter       | 显示当前计数器信息，包括创建、断开连接和重新连接的会话总数。 |
 > |          /?          |                                         在命令提示符下显示帮助。                                          |
-> 
-> ## <a name="remarks"></a>备注
+>
+>#### <a name="remarks"></a>备注
 > - 用户始终可以查询用户当前登录到的会话。 若要查询其他会话，用户必须具有查询信息特殊访问权限。
 > - 如果未使用 <*SessionName*> 指定会话、<*UserName*> 或 <*SessionID*>，则**查询会话**将显示系统中所有活动会话的相关信息。
 > - 当**查询会话**返回信息时，将在当前会话之前显示大于号（>）。 下面是**查询会话**的示例输出：
@@ -67,6 +67,6 @@ ms.locfileid: "82722707"
 >   query session modeM02
 >   ```
 >   ## <a name="additional-references"></a>其他参考
->   - [命令行语法关键字](command-line-syntax-key.md)
->   [查询](query.md)
+>   - [命令行语法关键字](command-line-syntax-key.md) 
+>   [查询](query.md) 
 >   [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

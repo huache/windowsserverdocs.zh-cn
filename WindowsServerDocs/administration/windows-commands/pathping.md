@@ -9,37 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 05675e4764c4c3e135647a1185da05634ee7264f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8be1897b241871bcb65126b39f201769f82f50bf
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723359"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436812"
 ---
 # <a name="pathping"></a>pathping
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-提供有关源和目标之间的中间跃点网络延迟和网络丢失情况的信息。 **pathping**在一段时间内将多个回显请求消息发送到源和目标之间的每个路由器，然后基于从每个路由器返回的数据包来计算结果。 由于**pathping**显示了任何给定路由器或链接的数据包丢失程度，因此可以确定哪些路由器或子网可能出现网络问题。 
+提供有关源和目标之间的中间跃点网络延迟和网络丢失情况的信息。 **pathping**在一段时间内将多个回显请求消息发送到源和目标之间的每个路由器，然后基于从每个路由器返回的数据包来计算结果。 由于**pathping**显示了任何给定路由器或链接的数据包丢失程度，因此可以确定哪些路由器或子网可能出现网络问题。
 
-**pathping**通过标识路径上的路由器来执行对**tracert**命令的等效操作。 然后，它会将 ping 定期发送到指定时间段内的所有路由器，并基于从每个返回的数字计算统计信息。 在没有参数的情况下使用， **pathping**显示帮助。 
+**pathping**通过标识路径上的路由器来执行对**tracert**命令的等效操作。 然后，它会将 ping 定期发送到指定时间段内的所有路由器，并基于从每个返回的数字计算统计信息。 在没有参数的情况下使用， **pathping**显示帮助。
 
 ## <a name="syntax"></a>语法
 ```
 pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>] [/i <IPaddress>] [/4 <IPv4>] [/6 <IPv6>][<TargetName>]
 ```
 #### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |/n|防止**pathping**尝试将中间路由器的 IP 地址解析为其名称。 这可能会加快**pathping**结果的显示。|
-|/h \<MaximumHops>|指定路径中要搜索目标的最大跃点数（目标）。 默认值为30个跃点。|
-|/g \<Hostlist>|指定回显请求消息使用 IP 标头中的 "松散源路由" 选项，其中包含*Hostlist*中指定的中间目标集。 使用松散源路由时，可通过一个或多个路由器分隔连续的中间目标。 主机列表中的最大地址或名称数为9。 *Hostlist*是一系列由空格分隔的 IP 地址（采用点分十进制表示法）。|
-|/p \<Period>|指定在连续 ping 之间等待的毫秒数。 默认值为250毫秒（1/4 秒）。|
-|/q \<NumQueries>|指定发送到路径中的每个路由器的回显请求消息数。 默认值为100个查询。|
-|/w \<超时>|指定等待每个答复的毫秒数。 默认值为3000毫秒（3秒）。|
-|/i \<IPaddress>|指定源地址。|
-|/4 \<IPv4>|指定 pathping 仅使用 IPv4。|
-|/6 \<IPv6>|指定 pathping 仅使用 IPv6。|
+|/h \< MaximumHops>|指定路径中要搜索目标的最大跃点数（目标）。 默认值为30个跃点。|
+|/g \< Hostlist>|指定回显请求消息使用 IP 标头中的 "松散源路由" 选项，其中包含*Hostlist*中指定的中间目标集。 使用松散源路由时，可通过一个或多个路由器分隔连续的中间目标。 主机列表中的最大地址或名称数为9。 *Hostlist*是一系列由空格分隔的 IP 地址（采用点分十进制表示法）。|
+|/p \< Period>|指定在连续 ping 之间等待的毫秒数。 默认值为250毫秒（1/4 秒）。|
+|/q \< NumQueries>|指定发送到路径中的每个路由器的回显请求消息数。 默认值为100个查询。|
+|/w \< 超时>|指定等待每个答复的毫秒数。 默认值为3000毫秒（3秒）。|
+|/i \< IPaddress>|指定源地址。|
+|/4 \< IPv4>|指定 pathping 仅使用 IPv4。|
+|/6 \< IPv6>|指定 pathping 仅使用 IPv6。|
 |\<TargetName>|指定目标，该目标通过 IP 地址或主机名进行标识。|
 |/?|在命令提示符下显示帮助。|
 
@@ -85,7 +85,7 @@ Trace complete.
 
 在上面的示例报表中，"**此节点/链接**、**丢失/已发送 = Pct** " 和 "**地址**" 列显示172.16.87.218 和192.168.52.1 之间的链接正在删除13% 的数据包。 跃点2和4的路由器还会丢弃发送到它们的数据包，但这种丢失不会影响其转发未处理的流量的能力。
 
-对于在 "**|****地址**" 列中标识为竖线（）的链接，显示的丢失率表示导致在路径上转发的数据包丢失的链接拥塞。 为路由器显示的丢失率（由其 IP 地址标识）表明这些路由器可能超载。
+对于在 "地址" 列中标识为竖线（）的链接，显示的丢失率 **|** 表示导致在路径上转发的数据包丢失的链接拥塞。 **address** 为路由器显示的丢失率（由其 IP 地址标识）表明这些路由器可能超载。
 
 ## <a name="additional-references"></a>其他参考
 -   - [命令行语法项](command-line-syntax-key.md)

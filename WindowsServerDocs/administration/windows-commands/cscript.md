@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfba4b6a1c75183d58664e74da22bb7f8b866739
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 24d5d46a0a994ca44230076786fbd59c00cbdc57
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993162"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437052"
 ---
 # <a name="cscript"></a>cscript
 
@@ -41,16 +41,16 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /e:`<engine>` | 指定用于运行脚本的引擎。 |
 | /h： cscript | 将 cscript.exe 注册为运行脚本的默认脚本宿主。 |
 | /h： wscript.echo | 将 wscript.echo 注册为运行脚本的默认脚本主机。 这是默认设置。 |
-| /i | 指定交互模式，显示警报、脚本错误和输入提示。 这是默认值，与相反`/b`。 |
+| /i | 指定交互模式，显示警报、脚本错误和输入提示。 这是默认值，与相反 `/b` 。 |
 | /作业<identifier> | 运行 .wsf 脚本文件中由*标识符*标识的作业。 |
-| /logo | 指定在运行脚本之前 Windows 脚本宿主横幅显示在控制台中。 这是默认值，与相反`/nologo`。 |
+| /logo | 指定在运行脚本之前 Windows 脚本宿主横幅显示在控制台中。 这是默认值，与相反 `/nologo` 。 |
 | /nologo | 指定在运行脚本之前不显示 Windows 脚本宿主横幅。 |
 | /s | 保存当前用户的当前命令提示符选项。 |
 | /t:<seconds> | 指定脚本可运行的最长时间（秒）。 最多可指定32767秒。 默认值为无时间限制。 |
 | /U | 为从控制台重定向的输入和输出指定 Unicode。 |
 | /x | 启动调试器中的脚本。 |
 | /? | 显示可用的命令参数，并提供使用它们的帮助。 这与键入不带参数的**cscript.exe**和无脚本相同。 |
-| scriptarguments | 指定传递给脚本的参数。 每个脚本参数必须以斜杠（**/**）开头。 |
+| scriptarguments | 指定传递给脚本的参数。 每个脚本参数必须以斜杠（）开头 **/** 。 |
 
 #### <a name="remarks"></a>备注
 

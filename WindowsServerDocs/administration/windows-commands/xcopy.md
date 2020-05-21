@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: d0ee0a9f87eacefad619e82aa28f5fcf8419ed09
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0145de2828c1d33cf1b82f595dd6c00812ace54e
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720625"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436782"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -30,10 +30,10 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<源>|必需。 指定要复制的文件的位置和名称。 此参数必须包含驱动器或路径。|
-|[\<目标>]|指定要复制的文件的目标。 此参数可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
+|[ \< 目标>]|指定要复制的文件的目标。 此参数可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
 |/W|显示以下消息，并在开始复制文件之前等待你的响应：</br>**按任意键开始复制文件**|
 |/p|提示您确认是否要创建每个目标文件。|
 |/c|忽略错误。|
@@ -56,7 +56,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/n|使用 NTFS 短文件名或目录名称创建副本。 如果将文件或目录从 NTFS 卷复制到 FAT 卷，或在*目标*文件系统上需要 FAT 文件系统命名约定（即8.3 个字符），则需要 **/n** 。 *目标*文件系统可以是 FAT 或 NTFS。|
 |/o|复制文件所有权和随机访问控制列表（DACL）信息。|
 |/x|复制文件审核设置和系统访问控制列表（SACL）信息（暗含 **/o**）。|
-|/exclude： FileName1 [+ [FileName2] [+ [FileName3] （ \)]|指定文件的列表。 至少必须指定一个文件。 每个文件都包含搜索字符串，每个字符串在文件中的单独一行上。</br>如果任意字符串与要复制的文件的绝对路径的任何部分匹配，则将不复制该文件。 例如，如果指定字符串**obj** ，将排除目录**obj**下的所有文件或扩展名为 **.obj**的所有文件。|
+|/exclude： FileName1 [+ [FileName2] [+ [FileName3] （ \) ]|指定文件的列表。 至少必须指定一个文件。 每个文件都包含搜索字符串，每个字符串在文件中的单独一行上。</br>如果任意字符串与要复制的文件的绝对路径的任何部分匹配，则将不复制该文件。 例如，如果指定字符串**obj** ，将排除目录**obj**下的所有文件或扩展名为 **.obj**的所有文件。|
 |/y|禁止提示您确认是否要覆盖现有目标文件。|
 |/-y|提示确认是否要覆盖现有目标文件。|
 |/z|在可重启模式下通过网络复制。|
@@ -88,12 +88,12 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 - 指定*目标*是否为文件或目录
 
-  如果*Destination*不包含现有目录且不以反斜杠结尾（\)，将显示以下消息：
-  
+  如果*Destination*不包含现有目录且不以反斜杠结尾（ \) ，将显示以下消息：
+
   ```
   Does <Destination> specify a file name or directory name on the target(F = file, D = directory)?
-  ```  
-  
+  ```
+
 如果要将文件复制到文件中，请按 F。 如果要将文件复制到目录，请按 D。
 
   您可以通过使用 **/i**命令行选项来禁止显示此消息，这会导致**xcopy**假设目标是一个目录（如果源是多个文件或目录）。
@@ -107,9 +107,9 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 - **Xcopy**的退出代码
 
-  若要处理**xcopy**返回的退出代码，请在批处理程序的**if**命令行中使用**ErrorLevel**参数。 有关使用**if**处理退出代码的批处理程序的示例，请参阅 "[其他参考](#additional-references)"。 下表列出了每个退出代码和说明。  
+  若要处理**xcopy**返回的退出代码，请在批处理程序的**if**命令行中使用**ErrorLevel**参数。 有关使用**if**处理退出代码的批处理程序的示例，请参阅 "[其他参考](#additional-references)"。 下表列出了每个退出代码和说明。
 
-  |退出代码|描述|
+  |退出代码|说明|
   |---------|-----------|
   |0|复制文件时没有错误。|
   |1|找不到要复制的文件。|
@@ -122,7 +122,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 **1.** 若要将驱动器 a 中的所有文件和子目录（包括任何空的子目录）复制到驱动器 B，请键入：
 
 ```
-xcopy a: b: /s /e 
+xcopy a: b: /s /e
 ```
 
 **2.** 若要包括上一示例中的任何系统文件或隐藏文件，请添加<strong>/h</strong>命令行选项，如下所示：
@@ -151,7 +151,7 @@ xcopy \rawdata \reports /d:12-29-1993 /l > xcopy.out
 
 文件 xcopy 列出每个要复制的文件。
 
-**6.** 若要将 \Customer 目录和所有子目录复制到网络\\ \\驱动器 H：上的目录 Public\Address，请保留只读属性，并且在 H：上创建新文件时，请键入：
+**6.** 若要将 \Customer 目录和所有子目录复制到 \\ \\ 网络驱动器 H：上的目录 Public\Address，请保留只读属性，并且在 H：上创建新文件时，请键入：
 
 ```
 xcopy \customer h:\public\address /s /e /k /p
@@ -181,7 +181,7 @@ goto exit
 :abort
 echo You pressed CTRL+C to end the copy operation.
 goto exit
-:exit 
+:exit
 ```
 
 若要使用上述批处理程序将 C:\Prgmcode 目录及其子目录中的所有文件复制到驱动器 B，请键入：
@@ -204,7 +204,7 @@ rem  .\d2\toc.yml
 rem  3 File(s) copied
 ```
 
-在前面的示例中，此特定的源参数值 **。\\即使\*** 删除了两个**路径字符\\ ，** docker-compose.override.yml 也会复制相同的3个文件。 但是，如果从 source 参数中删除星号通配符，则不会复制任何文件 **。\\docker-compose.override.yml**。
+在前面的示例中，此特定的源参数值 **。 \\即使 \* **删除了两个**路径 \\ 字符，** docker-compose.override.yml 也会复制相同的3个文件。 但是，如果从 source 参数中删除星号通配符，则不会复制任何文件 **。 \\docker-compose.override.yml**。
 
 ## <a name="additional-references"></a>其他参考
 

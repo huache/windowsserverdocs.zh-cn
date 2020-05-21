@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 03/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e58498a59a9e87fc773428d7e5956ce3285b67
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e32fe419899c0f553f36976ecee95fb3a922f1a6
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720242"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436622"
 ---
 # <a name="vssadmin-resize-shadowstorage"></a>Vssadmin 调整大小 shadowstorage
 
@@ -34,7 +34,7 @@ vssadmin resize shadowstorage /for=<ForVolumeSpec> /on=<OnVolumeSpec> [/maxsize=
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---|---|
 `/for=<ForVolumeSpec>`  | 指定要调整其最大存储空间量的卷。
 `/on=<OnVolumeSpec>` | 指定存储卷。

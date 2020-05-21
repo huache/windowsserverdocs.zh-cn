@@ -9,12 +9,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 8829d6515c92751b85320a7c622a82b32ffb82ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b1316fe2feba674beb915b6ea22b1c0361ae1243
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818870"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433151"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>步骤 7.5： 创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备
 
@@ -27,33 +27,33 @@ ms.locfileid: "80818870"
 
 ## <a name="managed-deployment-using-intune"></a>使用 Intune 的托管部署
 
-本部分所述的所有内容都是使用条件性访问进行 VPN 工作所需的最低要求。 它不涵盖拆分隧道，使用 WIP，创建自定义 Intune 设备配置配置文件以获取 AutoVPN 的工作或 SSO。 将下面的设置集成到你之前在步骤5中创建的 VPN 配置文件[。配置 Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)。  在此示例中，我们将它们集成到[使用 Intune 策略配置 VPN 客户端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)。 
+本部分所述的所有内容都是使用条件性访问进行 VPN 工作所需的最低要求。 它不涵盖拆分隧道，使用 WIP，创建自定义 Intune 设备配置配置文件以获取 AutoVPN 的工作或 SSO。 将下面的设置集成到你之前在步骤5中创建的 VPN 配置文件[。配置 Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)。在此示例中，我们将它们集成到[使用 Intune 策略配置 VPN 客户端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)。 
 
-**先决条件：**
+**先决条件**
 
 已使用 Intune 将 Windows 10 客户端计算机配置为使用 VPN 连接。   
 
 
 **方法**
 
-1. 在 Azure 门户中，选择 " **Intune** > **设备配置**" > **配置文件**，然后选择前面在[使用 Intune 配置 VPN 客户端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)中创建的 vpn 配置文件。
+1. 在 Azure 门户中，选择 " **intune**  >  **设备配置**" "配置  >  **文件**"，然后选择前面在[使用 Intune 配置 VPN 客户端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)中创建的 vpn 配置文件。
     
-2. 在策略编辑器中，选择 "**属性**" > **设置** > **基本 VPN**"。 扩展现有的**EAP Xml**以包含一个筛选器，该筛选器为 VPN 客户端提供从用户的证书存储中检索 AAD 条件访问证书所需的逻辑，而不是让该客户端使用发现的第一个证书。
+2. 在策略编辑器中，选择 "**属性**" "设置" "  >  **Settings**  >  **基本 VPN**"。 扩展现有的**EAP Xml**以包含一个筛选器，该筛选器为 VPN 客户端提供从用户的证书存储中检索 AAD 条件访问证书所需的逻辑，而不是让该客户端使用发现的第一个证书。
 
     >[!NOTE]
     >如果不这样做，VPN 客户端可以检索从本地证书颁发机构颁发的用户证书，导致 VPN 连接失败。
 
     ![Intune 门户](../../media/Always-On-Vpn/intune-eap-xml.png)
 
-3. 找到以 **\</AcceptServerName > 结束\</EapType >** 的部分，并在这两个值之间插入以下字符串，以便为 VPN 客户端提供选择 AAD 条件访问证书的逻辑：
+3. 找到以 " ** \< /AcceptServerName>\<>/EapType** " 结尾的部分，然后在这两个值之间插入以下字符串，以便为 VPN 客户端提供选择 AAD 条件访问证书的逻辑：
 
     ```XML
-    <TLSExtensions xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
+    <TLSExtensions xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
     ```
 
-4. 选择 "**条件性访问**" 边栏选项卡，并将**此 VPN 连接的切换条件性访问** **启用**。
+4. 选择 "**条件性访问**" 边栏选项卡，并将**此 VPN 连接的切换条件性访问****启用**。
    
-   如果启用此设置，则会更改 VPNv2 配置文件 XML 中 **\<>\<启用 > true\</Enabled >** 设置。
+   如果启用此设置，则会更改 VPNv2 配置文件 XML 中** \<>\< 启用>true \< /Enabled>** 设置的 DeviceCompliance。
 
     ![Always On VPN 的条件性访问-属性](../../media/Always-On-Vpn/vpn-conditional-access-azure-ad.png)
 
@@ -67,7 +67,7 @@ ms.locfileid: "80818870"
 
 ## <a name="force-mdm-policy-sync-on-the-client"></a>在客户端上强制执行 MDM 策略同步
 
-如果未在客户端设备上显示 VPN 配置文件，则在 "设置"\\网络 & Internet\\VPN "下，你可以强制 MDM 策略进行同步。
+如果未在客户端设备上显示 VPN 配置文件，则在 "设置 \\ 网络 & Internet VPN" 下， \\ 你可以强制 MDM 策略进行同步。
 
 1. 以**VPN 用户**组成员的身份登录到已加入域的客户端计算机。
 
@@ -75,16 +75,16 @@ ms.locfileid: "80818870"
 
 3. 在左侧导航窗格中，选择 "**访问工作单位或学校**"。
 
-4. 在 "访问工作单位或学校" 下，选择 "**已连接到 < \domain" > MDM**，然后选择 "**信息**"。
+4. 在 "访问工作单位或学校" 下，选择 "**已连接到 < \domain"> MDM**，然后选择 "**信息**"。
 
-5. 选择 "**同步**"，并验证 vpn 配置文件显示在 "设置"\\Network & INTERNET\\vpn "下。
+5. 选择 "**同步**"，并验证 vpn 配置文件显示在 "设置 \\ 网络 & Internet VPN" 下 \\ 。
 
 
 ## <a name="next-steps"></a>后续步骤
 
 你已完成将 VPN 配置文件配置为使用 Azure AD 条件访问。 
 
-|如果你需要…  |然后查看 。  |
+|若希望...  |然后查看 .。。  |
 |---------|---------|
 |了解有关条件性访问如何与 Vpn 一起工作的详细信息  |[VPN 和条件性访问](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)：本页提供有关条件性访问如何与 vpn 一起工作的详细信息。      |
 |了解有关高级 VPN 功能的详细信息  |[高级 VPN 功能](always-on-vpn/deploy/always-on-vpn-adv-options.md#advanced-vpn-features)：本页提供有关以下内容的指导：如何启用 VPN 流量筛选器、如何使用应用程序触发器配置自动 vpn 连接，以及如何将 NPS 配置为仅允许使用 Azure AD 颁发的证书的客户端进行 VPN 连接。        |

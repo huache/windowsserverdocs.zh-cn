@@ -8,18 +8,18 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d61287b82cd6d3b869b1120d3cb21b3c8792bd1e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: cdfcf65f762015ceeaa20b99543ffb772e60d1a6
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312753"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716862"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>管理数据中心桥接（DCB）
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-本主题提供有关如何在运行 Windows Server 2016 或 Windows 10 的计算机上使用 Windows PowerShell 命令在 DCB\-兼容的网络适配器上配置数据中心桥接 \(DCB\) 的说明。
+本主题提供有关如何在 \( \) \- 运行 windows Server 2016 或 windows 10 的计算机上使用 windows POWERSHELL 命令在 DCB 兼容的网络适配器上配置数据中心桥接 DCB 的说明。
 
 ## <a name="install-dcb-in-windows-server-2016-or-windows-10"></a>在 Windows Server 2016 或 Windows 10 中安装 DCB
 
@@ -30,7 +30,7 @@ ms.locfileid: "80312753"
 
 在 Windows Server 2016 之前，所有 DCB 配置都广泛应用于支持 DCB 的所有网络适配器。 
 
-在 Windows Server 2016 中，可以将 DCB 配置应用于全局策略存储，或应用于\)\(单个策略存储。 应用各个策略时，它们会覆盖所有全局策略设置。
+在 Windows Server 2016 中，你可以将 DCB 配置应用于全局策略存储或单个策略存储 \( \) 。 应用各个策略时，它们会覆盖所有全局策略设置。
 
 在执行以下操作之前，系统级别上的流量类、PFC 和应用程序优先级分配的配置不会应用于网络适配器。
 
@@ -109,7 +109,7 @@ DCB 配置包括以下步骤。
     SMB  ETS   30   4Global
       
 
-默认情况下，所有 802.1 p 值都映射到默认的流量类，该流量类的物理链路带宽为100%。 **Get-netqostrafficclass**命令将创建一个新的流量类，其中标记有 802.1 p 优先级值4的任何数据包。 传输选择算法 \(TSA\) 为 ETS，且具有30% 的带宽。
+默认情况下，所有 802.1 p 值都映射到默认的流量类，该流量类的物理链路带宽为100%。 **Get-netqostrafficclass**命令将创建一个新的流量类，其中标记有 802.1 p 优先级值4的任何数据包。 传输选择算法 \( TSA \) 为 ETS，其带宽为30%。
 
 最多可以创建7个新的通信类。 包括默认通信类，系统中最多可以有8个通信类。 但是，支持 DCB 的网络适配器可能不支持硬件中的多个通信类。 如果创建的流量类比网络适配器可容纳的流量类多，并且在该网络适配器上启用 DCB，则微型端口驱动程序会向操作系统报告错误。 错误记录在事件日志中。
 
@@ -144,11 +144,11 @@ DCB 配置包括以下步骤。
 
 创建流量类之后，可以单独更改其设置。 您可以更改的设置包括：
 
-1. 带宽分配 \(-BandwidthPercentage\)
+1. 带宽分配 \( -BandwidthPercentage\)
 
-2. TSA （\-算法\)
+2. TSA （ \- 算法\)
 
-3. 优先级映射 \(优先级\)
+3. 优先级映射 \( -优先级\)
 
 ### <a name="remove-a-traffic-class"></a>删除流量类
 
@@ -175,7 +175,7 @@ DCB 配置包括以下步骤。
 
 上述所有示例均设置全局策略。 下面是有关如何设置和获取每个 NIC 策略的示例。 
 
-"PolicySet" 字段从 Global 更改为 AdapterSpecific。 显示 AdapterSpecific 策略时，还会显示接口索引 \(ifIndex\) 和接口名称 \(ifAlias\)。
+"PolicySet" 字段从 Global 更改为 AdapterSpecific。 显示 AdapterSpecific 策略时， \( 还会显示接口索引 ifIndex \) 和接口名称 \( ifAlias \) 。
 
 ```
 PS C:\> Get-NetQosTrafficClass
@@ -304,13 +304,13 @@ Priority   Enabled    PolicySet        IfIndex IfAlias
 ### <a name="create-qos-policy"></a>创建 QoS 策略
 
 ```
-PS C:\> New-NetQosPolicy -Name "SMB Policy" -PriorityValue8021Action 4
+PS C:\> New-NetQosPolicy -Name "SMB Policy" -SMB -PriorityValue8021Action 4
 
 Name           : SMB Policy
 Owner          : Group Policy (Machine)
 NetworkProfile : All
 Precedence     : 127
-JobObject      :
+Template       : SMB
 PriorityValue  : 4
 
 ```
@@ -381,6 +381,7 @@ Name           : SMB Policy
 Owner          : Group Policy (Machine)
 NetworkProfile : All
 Precedence     : 127
+Template       : SMB
 JobObject      :
 PriorityValue  : 4
 
@@ -476,12 +477,12 @@ Capabilities :                       Hardware     Current
 
 ### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>适用于 DCB 的 windows Server 2016 Windows PowerShell 命令
 
-适用于 Windows Server 2016 的以下主题提供了 Windows PowerShell cmdlet 说明和语法，适用于所有数据中心桥接 \(DCB\) 服务质量 \(QoS\)\-特定的 cmdlet。 其中按 cmdlet 开头处动词的字母顺序列出 cmdlet。
+以下适用于 Windows Server 2016 的主题提供 Windows PowerShell cmdlet 说明和语法，适用于所有数据中心桥接 \( DCB \) Service \( QoS \) \- 特定 cmdlet 的质量。 本参考按 cmdlet 开头动词的字母顺序列出了这些 cmdlet。
 
 - [DcbQoS 模块](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>适用于 DCB 的 windows Server 2012 R2 Windows PowerShell 命令
 
-适用于 Windows Server 2012 R2 的以下主题提供了 Windows PowerShell cmdlet 说明和语法，适用于所有数据中心桥接 \(DCB\) 服务质量 \(QoS\)\-特定的 cmdlet。 其中按 cmdlet 开头处动词的字母顺序列出 cmdlet。
+适用于 Windows Server 2012 R2 的以下主题提供了 Windows PowerShell cmdlet 说明和语法，适用于所有数据中心桥接 \( DCB \) Service \( QoS \) \- 特定的 cmdlet。 本参考按 cmdlet 开头动词的字母顺序列出了这些 cmdlet。
 
-- [Windows PowerShell 中的数据中心桥接（DCB）服务质量（QoS） Cmdlet](https://technet.microsoft.com/library/hh967440.aspx)
+- [Windows PowerShell 中的数据中心桥接 (DCB) 服务质量 (QoS) Cmdlet](https://technet.microsoft.com/library/hh967440.aspx)

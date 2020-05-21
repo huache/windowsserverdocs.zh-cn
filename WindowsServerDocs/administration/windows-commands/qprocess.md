@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 094416a0d7b3adf5c99579ea51b7f343a6dec4f7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4e0ebf422019d6e8023a2a3cc5da2085635c8422
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722730"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436342"
 ---
 # <a name="qprocess"></a>qprocess
 
@@ -29,6 +29,6 @@ ms.locfileid: "82722730"
 此命令与**query process**命令相同。
 
 ## <a name="additional-references"></a>其他参考
-[查询进程](query-process.md)  
-- [命令行语法项](command-line-syntax-key.md)  
-[远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)  
+[查询进程](query-process.md)
+- [命令行语法关键字](command-line-syntax-key.md) 
+[远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

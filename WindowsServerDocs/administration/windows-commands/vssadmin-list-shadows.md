@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bc715b3df9e4f4dd6d2de82be9346edc7d88805e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 38eda178b6c9e34fec1d63ed6c59f01023b859c4
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720265"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436666"
 ---
 # <a name="vssadmin-list-shadows"></a>Vssadmin list shadows
 
@@ -29,10 +29,10 @@ vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---|---|
-|/for =\<ForVolumeSpec>|指定将列出卷影副本的卷。|
-|/shadow =\<ShadowID>|列出 ShadowID 指定的卷影副本。 若要获取卷影副本 ID，请使用**vssadmin list shadows**命令。 键入卷影副本 ID 时，请使用以下格式，其中每个*X*表示十六进制字符：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX）|
+|/for = \< ForVolumeSpec>|指定将列出卷影副本的卷。|
+|/shadow = \< ShadowID>|列出 ShadowID 指定的卷影副本。 若要获取卷影副本 ID，请使用**vssadmin list shadows**命令。 键入卷影副本 ID 时，请使用以下格式，其中每个*X*表示十六进制字符：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX）|
 
 ## <a name="additional-references"></a>其他参考
 

@@ -1,6 +1,6 @@
 ---
 title: eventquery
-description: '* * * * 的参考主题'
+description: Eventquery 命令的参考主题，此命令已被弃用，且在未来版本的 Windows 中不能保证受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,13 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f0e4294354470dcfb3a33191cc36edfa556bb02
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 5031d18311c177c7f745bc771c212727ce700ee3
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992394"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436862"
 ---
 # <a name="eventquery"></a>eventquery
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
-
-eventquery 已被弃用，且在未来版本的 Windows 中不能保证受支持。
-此工具包含在 Windows Server 2003 中。 有关详细信息，请参阅[eventquery](https://technet.microsoft.com/library/cc772995(v=ws.10).aspx)。
+Eventquery 命令已弃用，并且在将来的 Windows 版本中不保证其受支持。

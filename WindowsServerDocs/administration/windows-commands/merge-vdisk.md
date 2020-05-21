@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bfcdde34d2c7dd6146222d04e982aa1ec8009c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cec8eeaa80436dbb34eb055950169b6895efa544
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723994"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437142"
 ---
 # <a name="merge-vdisk"></a>Merge vdisk
 
@@ -28,12 +28,12 @@ ms.locfileid: "82723994"
 > merge vdisk depth=<n>
 > ```
 > #### <a name="parameters"></a>参数
-> 
-> | 参数 |                                                                                    描述                                                                                    |
+>
+> | 参数 |                                                                                    说明                                                                                    |
 > |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | 深度 =<n> | 指示要合并在一起的父 VHD 文件的数目。 例如， **depth = 1**表示差异 VHD 将与差异链的一个级别合并。 |
-> 
-> ## <a name="remarks"></a>备注
+>
+>#### <a name="remarks"></a>备注
 > - 必须选择并分离 VHD，此操作才能成功。 使用 "**选择 vdisk** " 命令选择 VHD 并将焦点移动到该 VHD。
 > - 此参数修改父 VHD。 因此，依赖于父项的其他差异 Vhd 将不再有效。
 >   ## <a name="examples"></a>示例
