@@ -10,14 +10,14 @@ ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.reviewer: deverette
-ms.openlocfilehash: ecaf35f9cfe825d2bb617acbd9554bf1eb0eff1e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9f942d7af5215680cf2707901293161a6208708b
+ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860500"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775353"
 ---
-# <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>步骤 6： 配置 Windows 10 客户端 Always On VPN 连接
+# <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>步骤 6。 配置 Windows 10 客户端 Always On VPN 连接
 
 >适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
@@ -122,7 +122,7 @@ ProfileXML 元素：
 
 4. 单击 "**约束**" 选项卡，然后单击 "**身份验证方法**"。
 
-5. 在 "EAP 类型" 中，单击 " **Microsoft：受保护的 EAP （PEAP）** "，然后单击 "**编辑**"。
+5. 在 "EAP 类型" 中，单击 " **Microsoft：受保护的 EAP （PEAP）**"，然后单击 "**编辑**"。
 
 6. 记录**颁发给**和**颁发者**的证书的值。
 
@@ -154,13 +154,13 @@ ProfileXML 元素：
 
 3.  在详细信息窗格中，单击 "**添加 VPN 连接**"。
 
-4.  在 "VPN 提供程序" 列表中，单击 " **Windows （内置）** "。
+4.  在 "VPN 提供程序" 列表中，单击 " **Windows （内置）**"。
 
 5.  在 "连接名称" 中，键入**Template**。
 
 6.  在 "服务器名称或地址" 中，键入 VPN 服务器的**外部**FQDN （例如， **vpn.contoso.com**）。
 
-7.  单击 **“保存”** 。
+7.  单击“保存” 。
 
 8.  在 "相关设置" 下，单击 "**更改适配器选项**"。
 
@@ -170,7 +170,7 @@ ProfileXML 元素：
 
 11. 在 "数据加密" 中，单击 "**最大强度加密**"。
 
-12. 单击 "**使用可扩展的身份验证协议（EAP）** ";然后，在 "**使用可扩展的身份验证协议（EAP）** " 中，单击 " **Microsoft：受保护的 EAP （PEAP）（已启用加密）** "。
+12. 单击 "**使用可扩展的身份验证协议（EAP）**";然后，在 "**使用可扩展的身份验证协议（EAP）**" 中，单击 " **Microsoft：受保护的 EAP （PEAP）（已启用加密）**"。
 
 13. 单击 "**属性**" 以打开 "受保护的 EAP 属性" 对话框，并完成以下步骤：
 
@@ -185,13 +185,13 @@ ProfileXML 元素：
 
     d.  在 "选择身份验证方法" 中，单击 "**智能卡或其他证书**"，然后单击 "**配置**"。 "智能卡或其他证书属性" 对话框将打开。
 
-    e.  单击 "**在此计算机上使用证书"** 。
+    e.  单击 "**在此计算机上使用证书"**。
 
     f.  在 "连接到这些服务器" 框中，输入你在前面步骤中从 NPS 服务器身份验证设置中检索到的 NPS 服务器的名称。
 
     g.  在 "受信任的根证书颁发机构" 下，选择颁发 NPS 服务器证书的根 CA。
 
-    h.  选择 "**不提示用户授权新服务器或受信任的证书颁发机构**" 复选框。
+    h.如果该值不存在，请单击“添加行”。  选择 "**不提示用户授权新服务器或受信任的证书颁发机构**" 复选框。
 
     i.  单击 **"确定"** 以关闭 "智能卡或其他证书属性" 对话框。
 
@@ -227,7 +227,7 @@ ProfileXML 元素：
 
 3. 运行脚本以在桌面上生成**VPN_Profile .xml**和**VPN_Profile。**
 
-#### <a name="listing-1-understanding-makeprofileps1"></a>列表1。 了解 MakeProfile
+#### <a name="listing-1-understanding-makeprofileps1"></a>列表 1. 了解 MakeProfile
 
 本部分介绍了可用于了解如何创建 VPN 配置文件的示例代码，特别是在 VPNv2 CSP 中配置 ProfileXML 时。
 
@@ -238,7 +238,7 @@ ProfileXML 元素：
 >[!NOTE]
 >若要查看完整的示例脚本，请参阅[MakeProfile Full script](#makeprofileps1-full-script)部分。
 
-##### <a name="parameters"></a>参数
+##### <a name="parameters"></a>parameters
 
 配置以下参数：
 
@@ -263,7 +263,7 @@ ProfileXML 元素：
 
 ```xml
 $TemplateName = 'Template'
-$ProfileName = 'Contoso AlwaysOn VPN'
+$ProfileName = 'Contoso%20AlwaysOn%20VPN'
 $Servers = 'vpn.contoso.com'
 $DnsSuffix = 'corp.contoso.com'
 $DomainName = '.corp.contoso.com'
@@ -700,7 +700,7 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
 ### <a name="create-a-user-group"></a>创建用户组
 
-1.  在 Configuration Manager 控制台中，打开 "资产和符合性\\用户集合"。
+1.  在 Configuration Manager 控制台中，打开 "资产和符合性 \\ 用户集合"。
 
 2.  在 "**主页**" 功能区上的 "**创建**" 组中，单击 "**创建用户集合**"。
 
@@ -708,29 +708,29 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
     a. 在 "**名称**" 中，键入**VPN 用户**。
 
-    b. 单击 "**浏览**"，单击 "**所有用户**"，然后单击 **"确定"** 。
+    b. 单击 "**浏览**"，单击 "**所有用户**"，然后单击 **"确定"**。
 
-    c. 单击 **“下一步”** 。
+    c. 单击“下一步”  。
 
 4.  在 "成员身份规则" 页上，完成以下步骤：
 
     a.  在 "**成员身份规则**" 中，单击 "**添加规则**"，然后单击 "**直接规则**"。 在此示例中，你将向用户集合添加单个用户。 不过，你可以使用查询规则为较大规模的部署动态添加此集合中的用户。
 
-    b.  在“欢迎”页上，单击“下一步”。
+    b.  在“欢迎”**** 页上，单击“下一步”****。
 
-    c.  在 "搜索资源" 页上的 "**值**" 中，键入要添加的用户的名称。 资源名称包括用户的域。 若要包含基于部分匹配的结果，请在搜索条件的任一末尾插入 **%** 字符。 例如，若要查找包含字符串 "lori" 的所有用户，请键入 **% lori%** 。 单击 **“下一步”** 。
+    c.  在 "搜索资源" 页上的 "**值**" 中，键入要添加的用户的名称。 资源名称包括用户的域。 若要包含基于部分匹配的结果，请 **%** 在搜索条件的任一末尾插入字符。 例如，若要查找包含字符串 "lori" 的所有用户，请键入 **% lori%**。 单击 **下一步**。
 
     d.  在 "选择资源" 页上，选择要添加到组的用户，然后单击 "**下一步**"。
 
     e.  在 "摘要" 页上，单击 "**下一步**"。
 
-    f.  在 "完成" 页上，单击 "**关闭**"。
+    f.  在“完成”  页上，单击“关闭” ****。
 
 6.  返回到 "创建用户集合向导" 的 "成员身份规则" 页，然后单击 "**下一步**"。
 
 7.  在 "摘要" 页上，单击 "**下一步**"。
 
-8.  在 "完成" 页上，单击 "**关闭**"。
+8.  在“完成”  页上，单击“关闭” ****。
 
 创建用于接收 VPN 配置文件的用户组后，你可以创建包和程序来部署在[创建 ProfileXML 配置文件](#create-the-profilexml-configuration-files)部分中创建的 Windows PowerShell 配置脚本。
 
@@ -738,7 +738,7 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
 1.  在站点服务器计算机帐户可以访问的网络共享上承载脚本 VPN_Profile ps1。
 
-2.  在 Configuration Manager 控制台中，打开 "**软件库"\\应用程序管理 "\\包**。
+2.  在 Configuration Manager 控制台中，打开 "**软件库" " \\ 应用程序管理 \\ 包**"。
 
 3.  在 "**主页**" 功能区上的 "**创建**" 组中，单击 "**创建包**" 以启动 "创建包和程序向导"。
 
@@ -748,10 +748,10 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
     b. 选中 "**此包包含源文件**" 复选框，然后单击 "**浏览**"。
 
-    c. 在 "设置源文件夹" 对话框中，单击 "**浏览**"，选择包含 VPN_Profile ps1 的文件共享，然后单击 **"确定"** 。
-        请确保选择一个网络路径，而不是本地路径。 换句话说，路径应类似于 *\\的\\vpnscript*，而不是*c：\\vpnscript*。
+    c. 在 "设置源文件夹" 对话框中，单击 "**浏览**"，选择包含 VPN_Profile ps1 的文件共享，然后单击 **"确定"**。
+        请确保选择一个网络路径，而不是本地路径。 换句话说，路径应类似于 " * \\ \\ vpnscript*"，而不是*c： \\ vpnscript*。
 
-1.  单击 **“下一步”** 。
+1.  单击 **下一步**。
 
 2.  在 "程序类型" 页上，单击 "**下一步**"。
 
@@ -763,29 +763,29 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
     c.  在**运行模式**下，单击 "**以管理权限运行**"。
 
-    d.  单击 **“下一步”** 。
+    d.  单击 **下一步**。
 
 4.  在 "要求" 页上，完成以下步骤：
 
-    a.  选择 **"此程序只能在指定的平台上运行"** 。
+    a.  选择 **"此程序只能在指定的平台上运行"**。
 
     b.  选中 "**所有 windows 10 （32位）** " 和 "**所有 windows 10 （64位）** " 复选框。
 
     c.  在**估计的磁盘空间**中，键入**1**。
 
-    d.  在 "**最大允许运行时间（分钟）** " 中，键入**15**。
+    d.  在 "**最大允许运行时间（分钟）**" 中，键入**15**。
 
-    e.  单击 **“下一步”** 。
+    e.  单击 **下一步**。
 
 5.  在 "摘要" 页上，单击 "**下一步**"。
 
-6.  在 "完成" 页上，单击 "**关闭**"。
+6.  在“完成”  页上，单击“关闭” ****。
 
 创建包和程序后，需要将其部署到**VPN 用户**组。
 
 ### <a name="deploy-the-profilexml-configuration-script"></a>部署 ProfileXML 配置脚本
 
-1.  在 Configuration Manager 控制台中，打开 "软件库"\\应用程序管理 "\\包。
+1.  在 Configuration Manager 控制台中，打开 "软件库" " \\ 应用程序管理 \\ 包"。
 
 2.  在 "**包**" 中，单击 " **WINDOWS 10 Always On VPN 配置文件**"。
 
@@ -793,7 +793,7 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
     a.  在 "**高级**" 选项卡上，将**此程序分配到计算机时**，单击 "**一次"，为登录的每个用户单击 "一次**"。
 
-    b.  单击“确定”。
+    b.  单击“确定” 。
 
 4.  右键单击 " **VPN 配置文件脚本**"，然后单击 "**部署**" 以启动 "部署软件向导"。
 
@@ -803,17 +803,17 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
     b.  在 "**集合类型**" 列表（左上方）中，单击 "**用户集合**"。
 
-    c.  单击 " **VPN 用户**"，然后单击 **"确定"** 。
+    c.  单击 " **VPN 用户**"，然后单击 **"确定"**。
 
-    d.  单击 **“下一步”** 。
+    d.  单击 **下一步**。
 
 6.  在 "内容" 页上，完成以下步骤：
 
     a.  单击 "**添加**"，然后单击 "**分发点**"。
 
-    b.  在 "**可用分发点**" 中，选择要将 ProfileXML 配置脚本分发到的分发点，然后单击 **"确定"** 。
+    b.  在 "**可用分发点**" 中，选择要将 ProfileXML 配置脚本分发到的分发点，然后单击 **"确定"**。
 
-    c.  单击 **“下一步”** 。
+    c.  单击“下一步”  。
 
 7.  在 "部署设置" 页上，单击 "**下一步**"。
 
@@ -821,9 +821,9 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
     a.  单击 "**新建**" 以打开 "分配计划" 对话框。
 
-    b.  单击 "**此事件之后立即分配**"，然后单击 **"确定"** 。
+    b.  单击 "**此事件之后立即分配**"，然后单击 **"确定"**。
 
-    c.  单击 **“下一步”** 。
+    c.  单击“下一步”  。
 
 9.  在 "用户体验" 页上，完成以下步骤：
 
@@ -833,7 +833,7 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
 10. 在 "摘要" 页上，单击 "**下一步**"。
 
-11. 在 "完成" 页上，单击 "**关闭**"。
+11. 在“完成”  页上，单击“关闭” ****。
 
 部署 ProfileXML 配置脚本后，使用在生成用户集合时所选的用户帐户登录到 Windows 10 客户端计算机。 验证 VPN 客户端的配置。
 
@@ -842,15 +842,15 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
 ### <a name="verify-the-configuration-of-the-vpn-client"></a>验证 VPN 客户端的配置
 
-1.  在控制面板中的 "**系统\\安全**" 下，单击**Configuration Manager**。 
+1.  在控制面板中的 "**系统 \\ 安全**" 下，单击**Configuration Manager**。 
 
 2.  在 "Configuration Manager 属性" 对话框中的 "**操作**" 选项卡上，完成以下步骤：
 
-    a.  单击 "**计算机策略检索 & 评估周期**"，单击 "**立即运行**"，然后单击 **"确定"** 。
+    a.  单击 "**计算机策略检索 & 评估周期**"，单击 "**立即运行**"，然后单击 **"确定"**。
 
-    b.  单击 "**用户策略检索 & 评估周期**"，单击 "**立即运行**"，然后单击 **"确定"** 。
+    b.  单击 "**用户策略检索 & 评估周期**"，单击 "**立即运行**"，然后单击 **"确定"**。
 
-    c.  单击“确定”。
+    c.  单击“确定” 。
 
 3.  关闭 "控制面板"。
 
@@ -863,13 +863,13 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 >[!NOTE]
 >Intune 现在使用 Azure AD 组。 如果 Azure AD Connect 将 VPN 用户组从本地同步到 Azure AD，并且将用户分配给 VPN 用户组，则可以继续。
 
-创建 VPN 设备配置策略，为添加到组中的所有用户配置 Windows 10 客户端计算机。 由于 Intune 模板提供 VPN 参数，因此请仅将 \<EapHostConfig > \</EapHostConfig > 部分复制到 VPN_ProfileXML 文件。
+创建 VPN 设备配置策略，为添加到组中的所有用户配置 Windows 10 客户端计算机。 由于 Intune 模板提供 VPN 参数，因此请仅复制 \< \< VPN_ProfileXML 文件> 部分的 EapHostConfig>。
 
 ### <a name="create-the-always-on-vpn-configuration-policy"></a>创建 Always On VPN 配置策略
 
-1.    登录 [Azure 门户](https://portal.azure.com/)。
+1.    登录到 [Azure 门户](https://portal.azure.com/)。
 
-2.     > **配置文件**中转到**Intune** > **设备配置**"。
+2.    中转到 " **Intune**  >  **设备配置**" "配置  >  **文件**"。
 
 3.    单击 "**创建配置文件**" 以启动创建配置文件向导。
 
@@ -905,12 +905,12 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
     <EapHostConfig xmlns="https://www.microsoft.com/provisioning/EapHostConfig"><EapMethod><Type xmlns="https://www.microsoft.com/provisioning/EapCommon">25</Type><VendorId xmlns="https://www.microsoft.com/provisioning/EapCommon">0</VendorId><VendorType xmlns="https://www.microsoft.com/provisioning/EapCommon">0</VendorType><AuthorId xmlns="https://www.microsoft.com/provisioning/EapCommon">0</AuthorId></EapMethod><Config xmlns="https://www.microsoft.com/provisioning/EapHostConfig"><Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>25</Type><EapType xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV1"><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames>NPS.contoso.com</ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><FastReconnect>true</FastReconnect><InnerEapOptional>false</InnerEapOptional><Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>13</Type><EapType xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV1"><CredentialsSource><CertificateStore><SimpleCertSelection>true</SimpleCertSelection></CertificateStore></CredentialsSource><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames>NPS.contoso.com</ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><DifferentUsername>false</DifferentUsername><PerformServerValidation xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2">true</PerformServerValidation><AcceptServerName xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2">true</AcceptServerName></EapType></Eap><EnableQuarantineChecks>false</EnableQuarantineChecks><RequireCryptoBinding>false</RequireCryptoBinding><PeapExtensions><PerformServerValidation xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2">true</PerformServerValidation><AcceptServerName xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2">true</AcceptServerName></PeapExtensions></EapType></Eap></Config></EapHostConfig>
     ```
 
-4.  替换 **\<TrustedRootCA > 5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 是示例中的 4b <\/TrustedRootCA >** ，同时在这两个位置中的本地根证书颁发机构的证书指纹。
+4.  将** \<>TrustedRootCA 替换为 5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 是示例中的 4b<\/ TrustedRootCA>** ，其中包含本地根证书颁发机构的证书指纹。
   
     >[!Important]
-    >请不要使用下面 \<TrustedRootCA >\</TrustedRootCA > 部分中的示例指纹。  TrustedRootCA 必须是颁发 RRAS 和 NPS 服务器的服务器身份验证证书的本地根证书颁发机构的证书指纹。 **这不能是云根证书，也不能是中间颁发 CA 证书指纹**。
+    >请不要使用 \< 下面的 TrustedRootCA>\< /TrustedRootCA> 部分中的示例指纹。  TrustedRootCA 必须是颁发 RRAS 和 NPS 服务器的服务器身份验证证书的本地根证书颁发机构的证书指纹。 **这不能是云根证书，也不能是中间颁发 CA 证书指纹**。
 
-5.  使用进行身份验证的已加入域的 NPS 的 FQDN 替换示例 XML 中的 **\<ServerNames\<>/ServerNames >** 。 
+5.  将示例 XML 中的** \< ServerNames>NPS.contoso.com \< /ServerNames>** 替换为发生身份验证的已加入域的 NPS 的 FQDN。 
 
 6.  复制修改后的 XML 字符串，并将其粘贴到 "基本 VPN" 选项卡下的 " **EAP XML** " 框，然后单击 **"确定"**
     使用 EAP Always On VPN 设备配置策略是在 Intune 中创建的。
@@ -920,7 +920,7 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
 若要测试配置策略，请以添加到**ALWAYS ON VPN 用户**组的用户身份登录到 Windows 10 客户端计算机，然后与 Intune 同步。
 
-1.  在 "开始" 菜单上，单击 "**设置**"。
+1.  在“开始”菜单中，单击“设置”****。
 
 2.  在 "设置" 中，单击 "**帐户**"，然后单击 "**访问工作单位或学校**"。
 
@@ -934,7 +934,7 @@ ProfileXML 配置在结构、拼写、配置和有时是字母大小写方面必
 
 已完成部署 Always On VPN。  对于可以配置的其他功能，请参阅下表：
 
-|如果你需要…  |然后查看 。  |
+|若希望...  |然后查看 .。。  |
 |---------|---------|
 |为 VPN 配置条件访问    |[步骤7。可有可无使用 Azure AD 配置 VPN 连接的条件性访问](../../ad-ca-vpn-connectivity-windows10.md)：在此步骤中，你可以使用[Azure Active Directory （Azure AD）条件访问](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)来微调授权 vpn 用户如何访问资源。 使用 Azure AD 虚拟专用网络（VPN）连接的条件性访问，你可以帮助保护 VPN 连接。 条件访问是基于策略的评估引擎，允许你为任何 Active Directory (Azure AD) 连接的应用程序创建访问规则。         |
 |了解有关高级 VPN 功能的详细信息  |[高级 VPN 功能](always-on-vpn-adv-options.md#advanced-vpn-features)：本页提供有关以下内容的指导：如何启用 VPN 流量筛选器、如何使用应用程序触发器配置自动 vpn 连接，以及如何将 NPS 配置为仅允许使用 Azure AD 颁发的证书的客户端进行 VPN 连接。        |
