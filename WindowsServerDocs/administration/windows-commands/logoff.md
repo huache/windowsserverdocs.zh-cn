@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86acf174bfdebdeab6db7476713dd2d91f21b1a0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3daecbc2f4034070a5b805c75a6b647ba168e2c5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724267"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820537"
 ---
 # <a name="logoff"></a>注销
 
@@ -32,7 +32,7 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
 ```
 ### <a name="parameters"></a>参数
 
-|      参数       |                                                                             描述                                                                              |
+|      参数       |                                                                             说明                                                                              |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    <SessionName>     |                                                                  指定会话的名称。                                                                  |
 |     <SessionID>      |                                                 指定标识服务器会话的数字 ID。                                                 |
@@ -61,5 +61,5 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
   ```
 
 ## <a name="additional-references"></a>其他参考
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

@@ -1,6 +1,6 @@
 ---
 title: 列出写入者
-description: '* * * * 的参考主题'
+description: List 编写器命令的参考主题，它列出了系统上的编写器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef7fa0bd6e9857e22994178849e49afeb3305a2a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 85f351ca20332ad67f24c7d66142f7209c0ec425
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724486"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817157"
 ---
 # <a name="list-writers"></a>列出写入者
 
-
-
 列出系统上的编写器。 如果在没有参数的情况下使用，则默认情况下， **list**显示**列表元数据**的输出。
-
-
 
 ## <a name="syntax"></a>语法
 
@@ -32,19 +28,22 @@ list writers [metadata | detailed | status]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|metadata|列出编写器的标识和状态，并显示元数据（如组件详细信息和排除的文件）。 这是默认参数。|
-|详情|列出的**数据与元数据**相同，但**详细**信息包括所有组件的完整文件列表。|
-|status|仅列出已注册编写器的标识和状态。|
+| 参数 | 说明 |
+| --------- | ----------- |
+| metadata | 列出编写器的标识和状态，并显示元数据（如组件详细信息和排除的文件）。 这是默认参数。 |
+| 详情 | 列出与**元数据**相同的信息，但还包括所有组件的完整文件列表。 |
+| 状态 | 仅列出已注册编写器的标识和状态。 |
 
-## <a name="examples"></a>示例
+### <a name="examples"></a>示例
 
 若要仅列出编写器的标识和状态，请键入：
+
 ```
 list writers status
 ```
+
 类似于以下内容的输出：
+
 ```
 Listing writer status ...
 * WRITER System Writer
@@ -57,15 +56,12 @@ Listing writer status ...
         - Writer Failure code: 0x00000000 (S_OK)
         - Writer ID: {4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f}
         - Instance ID: {9e362607-9794-4dd4-a7cd-b3d5de0aad20}
-...
-...
-...
 * WRITER Registry Writer
         - Status: 1 (VSS_WS_STABLE)
         - Writer Failure code: 0x00000000 (S_OK)
         - Writer ID: {afbab4a2-367d-4d15-a586-71dbb18f8485}
         - Instance ID: {e87ba7e3-f8d8-42d8-b2ee-c76ae26b98e8}
-8 writers listed. 
+8 writers listed.
 ```
 
 ## <a name="additional-references"></a>其他参考

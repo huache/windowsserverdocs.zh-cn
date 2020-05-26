@@ -1,42 +1,54 @@
 ---
-title: ftp literal_1
-description: '* * * * 的参考主题'
+title: ftp 文本
+description: Ftp 文本命令的参考主题，它将原义参数发送到远程 ftp 服务器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: fb81aa2d-07fa-4e79-bf44-1fb5526fdf14 vhorne
+ms.assetid: fb81aa2d-07fa-4e79-bf44-1fb5526fdf14
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc4f8aff5a22da93330a12a75e5f368285366216
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5015f2184c9273aae6dbd01b18ee1f540d5b9aa3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725249"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820157"
 ---
-# <a name="ftp-literal_1"></a>ftp： literal_1
+# <a name="ftp-literal"></a>ftp 文本
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012 将原义参数发送到远程 ftp 服务器。 返回单个 ftp 答复代码。   
+> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-## <a name="syntax"></a>语法  
-```  
-literal <Argument> [ ]  
-```  
-#### <a name="parameters"></a>参数  
+将原义参数发送到远程 ftp 服务器。 返回单个 ftp 答复代码。
 
-| 参数  |                    描述                    |
-|------------|---------------------------------------------------|
-| <Argument> | 指定要发送到 ftp 服务器的参数。 |
+> [!NOTE]
+> 此命令与 " [ftp 引号" 命令](ftp-quote.md)相同。
 
-## <a name="remarks"></a>备注  
-**文本**命令与**引号**命令完全相同。  
-## <a name="examples"></a>示例  
-向远程 ftp 服务器发送**quit**命令。  
-```  
-literal quit  
-```  
-## <a name="additional-references"></a>其他参考  
--   [ftp：引用](ftp-quote.md)  
--   - [命令行语法项](command-line-syntax-key.md)  
+## <a name="syntax"></a>语法
+
+```
+literal <argument> [ ]
+```
+
+### <a name="parameters"></a>参数
+
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<argument>` | 指定要发送到 ftp 服务器的参数。 |
+
+### <a name="examples"></a>示例
+
+若要向远程 ftp 服务器发送**quit**命令，请键入：
+
+```
+literal quit
+```
+
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)
+
+- [ftp 引号命令](ftp-quote.md)
+
+- [其他 FTP 指南](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

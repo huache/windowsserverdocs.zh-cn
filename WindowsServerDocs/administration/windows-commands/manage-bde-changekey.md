@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b5f152e4e98387adb7e7780f8458edd409b1a9d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6d50abbe40232987045713c5eadf43607aeb6a81
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724204"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820707"
 ---
 # <a name="manage-bde-changekey"></a>manage-bde： changekey
 
@@ -30,7 +30,7 @@ manage-bde -changekey [<Drive>] [<PathToExternalKeyDirectory>] [-computername <N
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<驱动器>|表示驱动器号后跟一个冒号。|
 |\<PathToExternalKeyDirectory>|表示要保存可用于解锁驱动器的外部启动密钥文件的目录位置。|
@@ -48,5 +48,5 @@ manage-bde -changekey C: E:\
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

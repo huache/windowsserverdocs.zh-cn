@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ffaff594a8927b3fcdfc871ec380fd5f134ce90
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 54f488eea2478c0b38f7ed9bea5ec15c0db3538f
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722151"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820977"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: configure
 
@@ -30,15 +30,15 @@ scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<Compute
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|/m：\<ComputerName>|指定要配置的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m**参数，则还必须指定 **/p**参数。|
-|/ou：\<OuName>|指定 Active Directory 域服务中组织单位（OU）的完全限定的域名（FQDN）。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将根据给定的策略进行分析。|
-|/p：\<策略>|指定要用于执行配置的 .xml 策略文件的路径和文件名。|
-|/i：\<ComputerList>|指定 .xml 文件的路径和文件名，该文件包含计算机的列表及其预期的策略文件。 .Xml 文件中的所有计算机都将根据其相应的策略文件进行配置。 示例 .xml 文件为%windir%\security\SampleMachineList.xml。|
-|/u：\<UserName>|指定在配置远程计算机时要使用的备用用户凭据。 默认值为已登录的用户。|
-|/pw：\<密码>|指定在配置远程计算机时要使用的备用用户凭据。 默认值为登录用户的密码。|
-|/t：\<线程>|指定在配置过程中应保持的同时未完成配置操作的数量（DefaultValue = 40，MinValue = 1，|
+|/m： \< ComputerName>|指定要配置的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m**参数，则还必须指定 **/p**参数。|
+|/ou： \< OuName>|指定 Active Directory 域服务中组织单位（OU）的完全限定的域名（FQDN）。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将根据给定的策略进行分析。|
+|/p： \< 策略>|指定要用于执行配置的 .xml 策略文件的路径和文件名。|
+|/i： \< ComputerList>|指定 .xml 文件的路径和文件名，该文件包含计算机的列表及其预期的策略文件。 .Xml 文件中的所有计算机都将根据其相应的策略文件进行配置。 示例 .xml 文件为%windir%\security\SampleMachineList.xml。|
+|/u： \< UserName>|指定在配置远程计算机时要使用的备用用户凭据。 默认值为已登录的用户。|
+|/pw： \< 密码>|指定在配置远程计算机时要使用的备用用户凭据。 默认值为登录用户的密码。|
+|/t： \< 线程>|指定在配置过程中应保持的同时未完成配置操作的数量（DefaultValue = 40，MinValue = 1，|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -66,4 +66,4 @@ scwcmd configure /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolic
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

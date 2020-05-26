@@ -1,6 +1,6 @@
 ---
-title: ksetup： setrealmflags
-description: '* * * * 的参考主题'
+title: ksetup setrealmflags
+description: Ksetup setrealmflags 命令的参考主题，用于设置指定领域的领域标志。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,65 +9,73 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a32ea03f4f0e76f03c7a0b505563e6bcf972b80
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2de568ae3df522f43d7a84e22d76ee3975d8e209
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724573"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817317"
 ---
-# <a name="ksetupsetrealmflags"></a>ksetup： setrealmflags
-
-
+# <a name="ksetup-setrealmflags"></a>ksetup setrealmflags
 
 设置指定领域的领域标志。
 
 ## <a name="syntax"></a>语法
 
 ```
-ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]
+ksetup /setrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]
 ```
 
-#### <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|\<RealmName>|领域名称被声明为大写的 DNS 名称，例如 CORP。CONTOSO.COM。|
-|领域标志|表示下列标志之一：</br>-SendAddress</br>- TcpSupported</br>-委托</br>- NcSupported</br>-RC4|
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM。 |
 
-## <a name="remarks"></a>备注
+#### <a name="remarks"></a>备注
 
-领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 的计算机可以使用 Kerberos 服务器来管理身份验证，而不是使用运行 Windows Server 操作系统的域，这些系统参与了 Kerberos 领域。 此条目将建立领域的功能。 下表对每个进行了说明。
+- 领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 的计算机可以使用 Kerberos 服务器来管理 Kerberos 领域中的身份验证，而不是使用运行 Windows Server 操作系统的域。 此条目将建立领域的功能，如下所示：
 
-|值|领域标志|描述|
-|-----|----------|-----------|
-|0xF|全部|设置所有领域标志。|
-|0x00|无|未设置领域标志，并且未启用任何其他功能。|
-|0x01|SendAddress|此 IP 地址将包含在票证授予票证中。|
-|0x02|TcpSupported|此领域支持传输控制协议（TCP）和用户数据报协议（UDP）。|
-|0x04|委托|此领域中的每个人都受信任，可用于委派。|
-|0x08|NcSupported|此领域支持名称规范化，这允许 DNS 和领域的命名标准。|
-|0x80|RC4|此领域支持 RC4 加密以启用跨领域信任，这允许使用 TLS。|
+| Value | 领域标志 | 说明 |
+| ----- | ---------- | ----------- |
+| 0xF | 全部 | 设置所有领域标志。 |
+| 0x00 | 无 | 未设置领域标志，并且未启用任何其他功能。 |
+| 0x01 | sendaddress | 此 IP 地址将包含在票证授予票证中。 |
+| 0x02 | tcpsupported | 此领域支持传输控制协议（TCP）和用户数据报协议（UDP）。 |
+| 0x04 | delegate | 此领域中的每个人都受信任，可用于委派。 |
+| 0x08 | ncsupported | 此领域支持名称规范化，这允许 DNS 和领域的命名标准。 |
+| 0x80 | rc4 | 此领域支持 RC4 加密以启用跨领域信任，这允许使用 TLS。 |
 
-领域标志存储在注册表的**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains\\**<em>RealmName</em>中。 默认情况下，注册表中不存在此项。 可以使用[Ksetup： addrealmflags](ksetup-addrealmflags.md)命令填充注册表。
+- 领域标志存储在下的注册表中 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\<realmname>` 。 默认情况下，注册表中不存在此项。 可以使用[ksetup addrealmflags](ksetup-addrealmflags.md)命令填充注册表。
 
-可以通过查看**ksetup**的输出来查看哪些领域标志可用和设置。
+- 可以通过查看**ksetup**或的输出来查看可用的和设置领域标志 `ksetup /dumpstate` 。
 
-## <a name="examples"></a>示例
+### <a name="examples"></a>示例
 
-列出可用的和设置领域 CONTOSO 的领域标志：
+若要列出可用的，并为领域 CONTOSO 设置领域标志，请键入：
+
 ```
 ksetup
 ```
-设置当前未设置的两个标志：
+
+若要设置当前未设置的两个标志，请键入：
+
 ```
 ksetup /setrealmflags CONTOSO ncsupported delegate
 ```
-运行**ksetup**命令，以验证是否已通过查看输出和查找**领域**标志来设置领域标志。
+
+若要验证是否已设置领域标志，请键入， `ksetup` 然后查看输出，查找文本 "**领域标志 =**"。 如果看不到文本，则表示尚未设置该标志。
 
 ## <a name="additional-references"></a>其他参考
 
--   [Ksetup:listrealmflags](ksetup-listrealmflags.md)
--   [Ksetup:addrealmflags](ksetup-addrealmflags.md)
--   [Ksetup:delrealmflags](ksetup-delrealmflags.md)
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
+
+- [ksetup 命令](ksetup.md)
+
+- [ksetup listrealmflags 命令](ksetup-listrealmflags.md)
+
+- [ksetup addrealmflags 命令](ksetup-addrealmflags.md)
+
+- [ksetup delrealmflags 命令](ksetup-delrealmflags.md)
+
+- [ksetup dumpstate 命令](ksetup-dumpstate.md)

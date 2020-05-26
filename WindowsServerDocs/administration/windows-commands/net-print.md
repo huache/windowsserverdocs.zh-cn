@@ -1,6 +1,6 @@
 ---
-title: Net print
-description: '* * * * 的参考主题'
+title: 净打印
+description: Net print 命令的参考主题，其中显示有关指定打印机队列或打印作业的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,28 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f2febdb79f4d0429cfb1cd423188ed9fafc198c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 44b781cb0c3b9fb7def5ee72bcc1242ac83ba4b2
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437252"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820877"
 ---
-# <a name="net-print"></a>Net print
+# <a name="net-print"></a>净打印
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示有关指定打印机队列或指定的打印作业的信息，或控制指定的打印作业。
+
 > [!NOTE]
 > 此命令已在 Windows 7 和 Windows Server 2008 R2 中弃用。 但是，可以使用 prnjobs、Windows Management Instrumentation （WMI）或 Windows PowerShell cmdlet 执行许多相同的任务。 有关详细信息，请参阅[prnjobs](prnjobs.md)、 [Windows Management Instrumentation](https://go.microsoft.com/fwlink/?LinkID=29991) （ https://go.microsoft.com/fwlink/?LinkID=29991) 、 [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) （ https://go.microsoft.com/fwlink/?LinkID=128426) 和[TechNet 脚本中心库](https://go.microsoft.com/fwlink/?LinkId=164635)（） https://go.microsoft.com/fwlink/?LinkId=164635) 。
-> ## <a name="syntax"></a>语法
+
+## <a name="syntax"></a>语法
 > ```
 > Net print {\\<computerName>\<Sharename> |
 > \\<computerName> <JobNumber> [/hold | /release | /delete]} [help]
 > ```
-> ### <a name="parameters"></a>parameters
+> ### <a name="parameters"></a>参数
 >
 > |               参数               |                                                                                                                                                                                                                     说明                                                                                                                                                                                                                      |
 > |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

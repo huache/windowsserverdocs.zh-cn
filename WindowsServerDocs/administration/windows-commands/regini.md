@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 632573f317eafa254f6c434f959a06f2c24f7353
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 33e0dcaa59be3c1748763cce5c9979fe318b271a
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836240"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820147"
 ---
 # <a name="regini"></a>regini
 
@@ -32,11 +32,11 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputWidth][-b] text
 
 |参数 |说明 |
 
-|-m \<\\\\ComputerName >|指定包含要修改的注册表的远程计算机名称。 使用 **\\ComputerName\\** 格式。|
+|-m \< \\ \\ ComputerName>|指定包含要修改的注册表的远程计算机名称。 使用格式** \\ \\ ComputerName**。|
 |---------------------|-|
-|-h \<hivefile hiveroot >|指定要修改的本地注册表配置单元。 必须以**hivefile hiveroot**格式指定 hive 文件的名称和 hive 的根目录。|
-|-i \<n >|指定要用于指示命令输出中的注册表项树结构的缩进级别。 **Regdmp**工具（以二进制格式获取注册表项的当前权限）使用以4的倍数的缩进，因此默认值为**4**。|
-|-o \<outputwidth >|指定命令输出的宽度（以字符为限）。 如果输出将出现在 "命令" 窗口中，则默认值为窗口的宽度。 如果将输出定向到文件，则默认值为**240**个字符。|
+|-h \< hivefile hiveroot>|指定要修改的本地注册表配置单元。 必须以**hivefile hiveroot**格式指定 hive 文件的名称和 hive 的根目录。|
+|-i \< n>|指定要用于指示命令输出中的注册表项树结构的缩进级别。 **Regdmp**工具（以二进制格式获取注册表项的当前权限）使用以4的倍数的缩进，因此默认值为**4**。|
+|-o \< outputwidth>|指定命令输出的宽度（以字符为限）。 如果输出将出现在 "命令" 窗口中，则默认值为窗口的宽度。 如果将输出定向到文件，则默认值为**240**个字符。|
 |-b|指定**regini.exe**输出与以前的**regini.exe**版本向后兼容。 有关详细信息，请参见“备注”部分。|
 |textfiles|指定包含注册表数据的一个或多个文本文件的名称。 可以列出任意数目的 ANSI 或 Unicode 文本文件。|
 
@@ -49,4 +49,4 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputWidth][-b] text
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

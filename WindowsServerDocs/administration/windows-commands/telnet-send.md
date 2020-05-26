@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 432401bbe2050a7954967a73b5ba8abeee5bb1d3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5dd4bf9828c4b71e7b2291dfd5d453c43679e059
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721491"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821067"
 ---
 # <a name="telnet-send"></a>telnet：发送
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-向 telnet 服务器发送 telnet 命令。   
+向 telnet 服务器发送 telnet 命令。
 
-## <a name="syntax"></a>语法  
-```  
-sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]  
-```  
-#### <a name="parameters"></a>参数  
+## <a name="syntax"></a>语法
+```
+sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
+```
+#### <a name="parameters"></a>参数
 
-| 参数 |                     描述                      |
+| 参数 |                     说明                      |
 |-----------|------------------------------------------------------|
 |    ao     |       发送 telnet 命令中止输出。        |
 |    ayt    |       发送 telnet 命令。       |
@@ -39,10 +39,10 @@ sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
 | <string>  | 将键入的任何字符串发送到 telnet 服务器。 |
 |     ?     |     显示与此命令相关联的帮助。      |
 
-## <a name="examples"></a>示例  
-发送到 telnet 服务器。  
-```  
-sen ayt  
-```  
-## <a name="additional-references"></a>其他参考  
--   - [命令行语法项](command-line-syntax-key.md)  
+## <a name="examples"></a>示例
+发送到 telnet 服务器。
+```
+sen ayt
+```
+## <a name="additional-references"></a>其他参考
+- [命令行语法项](command-line-syntax-key.md)

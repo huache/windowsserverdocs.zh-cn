@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dec19003f9a3421cfd2c73ba892f68aebfb8e133
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f3e0b553c324099ed3f80c158a5f14d9a31e4d54
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724097"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820607"
 ---
 # <a name="manage-bde-setidentifier"></a>manage-bde： setidentifier
 
@@ -30,7 +30,7 @@ manage-bde –setidentifier <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<驱动器>|表示驱动器号后跟一个冒号。|
 |-computername|指定 Manage-bde.exe 将用于修改另一台计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。|
@@ -47,6 +47,6 @@ manage-bde –setidentifier C:
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)
 -   [将数据恢复代理与 BitLocker 配合使用](https://technet.microsoft.com/library/dd875560(WS.10).aspx)

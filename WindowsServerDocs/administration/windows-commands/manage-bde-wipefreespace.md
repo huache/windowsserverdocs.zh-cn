@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f1e0f99c226edae467ecb09222b18098ac399ee
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fc252bd0d9d8227badb35bafea96575e37fca243
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724044"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820787"
 ---
 # <a name="manage-bde-wipefreespace"></a>manage-bde： WipeFreeSpace
 
@@ -30,7 +30,7 @@ manage-bde -WipeFreeSpace|-w [<Drive>] [-Cancel] [-computername <Name>] [{-?|/?}
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<驱动器>|表示驱动器号后跟冒号、卷 GUID 路径或装入的卷。|
 |-Cancel|取消正在进行的擦除可用空间。|
@@ -52,5 +52,5 @@ manage-bde -w -Cancel C:
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

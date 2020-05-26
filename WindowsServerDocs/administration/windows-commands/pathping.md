@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 8be1897b241871bcb65126b39f201769f82f50bf
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6943a9762aed0a6c2ac71c73565ab49811a8e307
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436812"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821167"
 ---
 # <a name="pathping"></a>pathping
 
@@ -88,4 +88,4 @@ Trace complete.
 对于在 "地址" 列中标识为竖线（）的链接，显示的丢失率 **|** 表示导致在路径上转发的数据包丢失的链接拥塞。 **address** 为路由器显示的丢失率（由其 IP 地址标识）表明这些路由器可能超载。
 
 ## <a name="additional-references"></a>其他参考
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

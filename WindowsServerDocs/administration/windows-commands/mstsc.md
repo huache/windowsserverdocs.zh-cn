@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3355aa310bb9919b5218052878d94416f577381
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bee9dabe0e9344c7870e53ed34e4c9dd057cfc42
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723834"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820837"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -34,10 +34,10 @@ mstsc.exe /migrate
 
 ### <a name="parameters"></a>参数
 
-|        参数        |                                                         描述                                                         |
+|        参数        |                                                         说明                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   指定用于连接的 .rdp 文件的名称。                                    |
-|  /v： <Server\>[： <端口\>] |                指定远程计算机，还可以选择要连接到的端口号。                 |
+|  /v： <Server \> [： <端口 \> ] |                指定远程计算机，还可以选择要连接到的端口号。                 |
 |         /admin          |                                   将你连接到用于管理服务器的会话。                                   |
 |           /f            |                                    以全屏模式启动远程桌面连接。                                    |
 |       /w<Width>        |                                      指定远程桌面窗口的宽度。                                      |
@@ -63,5 +63,5 @@ mstsc.exe /migrate
     ```
 
 ## <a name="additional-references"></a>其他参考
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

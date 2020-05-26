@@ -8,16 +8,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b9e8d4d2169ef1af5406dc3d6a7deff9828ee501
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4880145d385498e6191937272495ddf8def07ba5
+ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825590"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775337"
 ---
 # <a name="ad-ds-getting-started"></a>AD DS 入门
 
->适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory 存储有关网络上对象的信息，并让管理员和用户可以更容易地使用这些信息。 Active Directory 使用结构化数据存储作为目录信息的逻辑层次组织的基础。  
   

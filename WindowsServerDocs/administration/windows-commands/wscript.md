@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: cf2d23c7d5773662f679a9a20b0aaba118f35548
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9b4727e985070e2e76fd53038d33148003d87ebb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720631"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820887"
 ---
 # <a name="wscript"></a>wscript
 
@@ -30,7 +30,7 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |scriptname|指定脚本文件的路径和文件名。|
 |/b|指定批处理模式，该模式不会显示警报、脚本错误或输入提示。 这与 **/i**相反。|
@@ -39,11 +39,11 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 |/h： cscript|将**cscript.exe**注册为运行脚本的默认脚本宿主。|
 |/h： wscript.echo|将**wscript.echo**注册为运行脚本的默认脚本主机。 当省略 **/h**选项时，这是默认值。|
 |/i|指定交互模式，显示警报、脚本错误和输入提示。</br>这是默认值，**反之亦然。**|
-|/作业：\<标识符>|运行 **.wsf**脚本文件中由*标识符*标识的作业。|
+|/作业： \< 标识符>|运行 **.wsf**脚本文件中由*标识符*标识的作业。|
 |/logo|指定在运行脚本之前 Windows 脚本宿主横幅显示在控制台中。</br>这是默认值，与 **/nologo**相反。|
 |/nologo|指定在运行脚本之前不显示 Windows 脚本宿主横幅。 这与 **/logo**相反。|
 |/s|为当前用户保存当前的命令提示符选项。|
-|/t：\<number>|指定脚本可运行的最长时间（秒）。 最多可指定32767秒。</br>默认值为无时间限制。|
+|/t： \< number>|指定脚本可运行的最长时间（秒）。 最多可指定32767秒。</br>默认值为无时间限制。|
 |/x|启动调试器中的脚本。|
 |ScriptArguments|指定传递给脚本的参数。 每个脚本参数必须以斜杠（/）开头。|
 |/?|在命令提示符下显示帮助。|
@@ -61,4 +61,4 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

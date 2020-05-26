@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1cc467c4afcfa2df344e9190a341a9aad086c1ea
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 929469ad3d4bd8b3a76c3681a5f24424ba6d99df
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724217"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820717"
 ---
 # <a name="manage-bde-autounlock"></a>manage-bde： autounlock
 
@@ -31,7 +31,7 @@ manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <Drive> [-computername
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-enable|启用数据驱动器自动解锁。|
 |-disable|禁用数据驱动器自动解锁。|
@@ -51,5 +51,5 @@ manage-bde –autounlock -enable E:
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

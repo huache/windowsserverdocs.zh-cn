@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c13502145d80693a64b284bf480fabfd03af0db
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 012377013ace07a2b90597c708847062e6923b2f
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724167"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820667"
 ---
 # <a name="manage-bde-keypackage"></a>manage-bde： Ms-fve-keypackage
 
@@ -30,7 +30,7 @@ manage-bde -KeyPackage [<Drive>] [-ID <KeyProtectoryID>] [-path <PathToExternalK
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<驱动器>|表示驱动器号后跟一个冒号。|
 |-ID|使用带有此 ID 值指定的标识符的密钥保护程序创建密钥包。|
@@ -52,5 +52,5 @@ manage-bde -KeyPackage C: -id {84E151C1...7A62067A512} -path f:\Folder
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

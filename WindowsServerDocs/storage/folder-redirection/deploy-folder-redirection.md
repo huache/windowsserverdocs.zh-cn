@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e6e5a29c75c117f6faa3c1d1b3f288582d81a2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4a53f28867904c163346fb7943790ff0659ab006
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855880"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716872"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>部署文件夹重定向和脱机文件
 
@@ -199,6 +199,6 @@ ms.locfileid: "80855880"
 * [文件夹重定向、脱机文件和漫游用户策略文件](folder-redirection-rup-overview.md)
 * [为文件夹重定向以及漫游用户策略文件部署主计算机](deploy-primary-computers.md)
 * [启用高级脱机文件功能](enable-always-offline.md)
-* [Microsoft 关于复制的用户配置文件数据的支持声明](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
+* [Microsoft 关于复制的用户配置文件数据的支持声明](https://docs.microsoft.com/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 * [使用 DISM 旁加载应用](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [对基于 Windows 运行时的应用的打包、部署和查询进行故障排除](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)

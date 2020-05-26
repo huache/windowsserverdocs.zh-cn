@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 017363ff2a60f9348290813c357560fe9fe3ba2a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 13e33329c399a77c1dd9b2e6ff63de6196c30420
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722163"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820987"
 ---
 # <a name="scwcmd-analyze"></a>Scwcmd: analyze
 
@@ -31,16 +31,16 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|/m：\<ComputerName>|指定要分析的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m**参数，则还必须指定 **/p**参数。|
-|/ou：\<OuName>|指定 Active Directory 域服务中组织单位（OU）的完全限定的域名（FQDN）。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将针对给定策略进行分析。|
-|/p：\<策略>|指定要用于执行分析的 .xml 策略文件的路径和文件名。|
-|/i：\<ComputerList>|指定 .xml 文件的路径和文件名，该文件包含计算机的列表及其预期的策略文件。 .Xml 文件中的所有计算机都将针对其相应的策略文件进行分析。 示例 .xml 文件为%windir%\security\SampleMachineList.xml。|
-|/o：\<ResultDir>|指定应在其中保存分析结果文件的路径和目录。 默认为当前目录。|
-|/u：\<UserName>|指定在远程计算机上执行分析时要使用的备用用户凭据。 默认值为已登录的用户。|
-|/pw：\<密码>|指定在远程计算机上执行分析时要使用的备用用户凭据。 默认值为登录用户的密码。|
-|/t：\<线程>|指定在分析过程中应保持的同时未完成的分析操作的数量（DefaultValue = 40，MinValue = 1，同类型 = 1000）。|
+|/m： \< ComputerName>|指定要分析的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m**参数，则还必须指定 **/p**参数。|
+|/ou： \< OuName>|指定 Active Directory 域服务中组织单位（OU）的完全限定的域名（FQDN）。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将针对给定策略进行分析。|
+|/p： \< 策略>|指定要用于执行分析的 .xml 策略文件的路径和文件名。|
+|/i： \< ComputerList>|指定 .xml 文件的路径和文件名，该文件包含计算机的列表及其预期的策略文件。 .Xml 文件中的所有计算机都将针对其相应的策略文件进行分析。 示例 .xml 文件为%windir%\security\SampleMachineList.xml。|
+|/o： \< ResultDir>|指定应在其中保存分析结果文件的路径和目录。 默认为当前目录。|
+|/u： \< UserName>|指定在远程计算机上执行分析时要使用的备用用户凭据。 默认值为已登录的用户。|
+|/pw： \< 密码>|指定在远程计算机上执行分析时要使用的备用用户凭据。 默认值为登录用户的密码。|
+|/t： \< 线程>|指定在分析过程中应保持的同时未完成的分析操作的数量（DefaultValue = 40，MinValue = 1，同类型 = 1000）。|
 |/l|导致记录分析进程。 将为要分析的每台计算机生成一个日志文件。 日志文件将与结果文件存储在同一目录中。 使用 **/o**选项指定结果文件的目录。|
 |/e|如果发现不匹配，请将事件记录到应用程序事件日志中。|
 |/?|在命令提示符下显示帮助。|
@@ -73,4 +73,4 @@ scwcmd analyze /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolicy.
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

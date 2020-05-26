@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd23d15560c7ae1e4e199aa79c3abbe8772ea61b
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1edd4628f8f5b4b88c44e689ac9c1f7277cafad9
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436752"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820077"
 ---
 # <a name="rpcping"></a>rpcping
 
@@ -48,7 +48,7 @@ rpcping [/t <protseq>] [/s <server_addr>] [/e <endpoint>
 |        /O \< 对象 UUID>         |                                                                                                                                                                                                                                                                                                                       如果接口已注册，则指定对象 UUID。                                                                                                                                                                                                                                                                                                                        |
 |        /i \< #_iterations>        |                                                                                                                                                                                                                                                                          指定要进行的调用数。 默认值为 1。 如果指定了多个迭代，则此选项对于测量连接延迟非常有用。                                                                                                                                                                                                                                                                          |
 |    /u \< security_package_id>     | 指定 RPC 将用于进行调用的安全包（安全提供程序）。 安全包被标识为数字或名称。 如果使用数字，则该数字与 RpcBindingSetAuthInfoEx API 中的数字相同。 下面的列表显示了名称和数字。 名称不区分大小写：<p>-Negotiate/9 或 nego、snego 或 Negotiate 之一<br />-NTLM/10 或 NTLM<br />-SChannel/14 或 SChannel<br />-Kerberos/16 或 Kerberos<br />-内核/20 或内核<br />    如果指定此选项，则必须指定除 "无" 之外的身份验证级别。 此选项没有默认值。 如果未指定，则 RPC 不会使用 ping 的安全性。 |
-|        /a \< authn_level>         |                                                                                                                                                               指定要使用的身份验证级别。 可能的值有：<p>-连接<br />-调用<br />-pkt<br />-完整性<br />-隐私<p>如果指定此选项，则还必须指定安全包 ID （/u）。 此选项没有默认值。<p>如果未指定此选项，则 RPC 不会使用 ping 的安全性。                                                                                                                                                               |
+|        /a \< authn_level>         |                                                                                                                                                               指定要使用的身份验证级别。 可能的值包括：<p>-连接<br />-调用<br />-pkt<br />-完整性<br />-隐私<p>如果指定此选项，则还必须指定安全包 ID （/u）。 此选项没有默认值。<p>如果未指定此选项，则 RPC 不会使用 ping 的安全性。                                                                                                                                                               |
 |     /N \< server_princ_name>      |                                                                                                                                                                                                                                                                                 指定服务器主体名称。<p>仅当选择了身份验证级别和安全包时，才能使用此字段。                                                                                                                                                                                                                                                                                  |
 |       /I \< auth_identity>        |                                                         允许您指定替代标识以连接到服务器。 标识采用 "用户"、"域" 和 "密码" 格式。 如果 "用户名"、"域" 或 "密码" 具有可通过 shell 解释的特殊字符，请将该标识用双引号引起来。 你可以指定 **\\** \* 而不是密码，而 RPC 会提示你输入密码，而无需在屏幕上回显密码。 如果未指定此字段，将使用登录用户的标识。<p>仅当选择了身份验证级别和安全包时，才能使用此字段。                                                         |
 |        /C \< 功能>        |                                                                                                                                                                                                                                                                                   指定标志的十六进制位掩码。 仅当选择了身份验证级别和安全包时，才能使用此字段。                                                                                                                                                                                                                                                                                    |
@@ -79,4 +79,4 @@ rpcping /t ncacn_http /s exchange_server /o RpcProxy=front_end_proxy /P username
 ```
 
 ## <a name="additional-references"></a>其他参考
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

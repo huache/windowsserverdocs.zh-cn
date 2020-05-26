@@ -1,6 +1,6 @@
 ---
 title: 列表阴影
-description: '* * * * 的参考主题'
+description: List shadows 命令的参考主题，其中列出了系统上持久的和现有的非持久卷影副本。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,32 +9,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d22fc3bbe644983eaf072a430e565a0d34d1c4dd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9e0261a25c7a70a0c8690d578cadc9e73ff9a62e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724477"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817167"
 ---
 # <a name="list-shadows"></a>列表阴影
-
-
 
 列出系统上持久的和现有的非持久卷影副本。
 
 ## <a name="syntax"></a>语法
 
 ```
-list shadows {all | set <SetID> | id <ShadowID>}
+list shadows {all | set <setID> | id <shadowID>}
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|all|列出所有卷影副本。|
-|设置\<SetID>|列出属于指定卷影副本集 ID 的卷影副本。|
-|id \<ShadowID>|列出具有指定卷影副本 ID 的所有卷影副本。|
+| 参数 | 说明 |
+| ---------- | ---------- |
+| all | 列出所有卷影副本。 |
+| 字符集`<setID>` | 列出属于指定卷影副本集 ID 的卷影副本。 |
+| 识别`<shadowID>` | 列出具有指定卷影副本 ID 的所有卷影副本。 |
 
 ## <a name="additional-references"></a>其他参考
 

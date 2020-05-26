@@ -9,25 +9,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0db8a4549ac26ef61d4aa8f435a01d3224501a77
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 09767502585754bec690b40dd71fabd78540ab50
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723848"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820817"
 ---
 # <a name="msinfo32"></a>msinfo32
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-打开 "系统信息" 工具，以显示本地计算机上的硬件、系统组件和软件环境的综合视图。 
+打开 "系统信息" 工具，以显示本地计算机上的硬件、系统组件和软件环境的综合视图。
 ## <a name="syntax"></a>语法
 ```
 msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/showcategories] [/category <CategoryID>] [/categories {+<CategoryID>(+<CategoryID>)|+all(-<CategoryID>)}]
 ```
 #### <a name="parameters"></a>参数
 
-|    参数    |                                                                                                                                 描述                                                                                                                                  |
+|    参数    |                                                                                                                                 说明                                                                                                                                  |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     <path>      | 指定要以*C:\Folder1\File1.XXX*格式打开的文件，其中*C*是驱动器号， *Folder1*是文件夹， *File1*是文件名， *XXX*是文件扩展名。<p>此文件可以是 **.nfo**、 **.xml**、 **.txt**或 **.cab**文件。 |
 | <computerName>  |                                                                             指定目标或本地计算机的名称。 这可以是 UNC 名称、IP 地址或完整的计算机名称。                                                                              |
@@ -61,5 +61,5 @@ msinfo32 /nfo syssum.nfo /categories +systemsummary
 msinfo32 /nfo conflicts.nfo /categories    +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
 ## <a name="additional-references"></a>其他参考
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 

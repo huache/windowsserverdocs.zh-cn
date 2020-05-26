@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d4214b9105e04f355bd6e09aeb7bc671ae6007d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 45511ee5028779358c77e18c4e1c193dcd86fdfe
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721966"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821057"
 ---
 # <a name="serverceipoptin"></a>serverceipoptin
 
@@ -26,7 +26,7 @@ ms.locfileid: "82721966"
 serverceipoptin [/query] [/enable] [/disable]
 ```
 #### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |/query|验证当前设置。|
 |/enable|启用参与。|
@@ -46,5 +46,5 @@ serverceipoptin /enable
 serverceipoptin /disable
 ```
 ## <a name="additional-references"></a>其他参考
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 

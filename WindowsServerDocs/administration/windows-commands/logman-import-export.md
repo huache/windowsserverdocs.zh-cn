@@ -1,6 +1,6 @@
 ---
-title: logman 导入 |先导
-description: '* * * * 的参考主题'
+title: logman 导入和 logman 导出
+description: 用于从 XML 文件导入数据收集器集或将数据收集器集导出到 XML 文件的 logman 导入和 logman 导出的参考主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,49 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffc2e42f353352f69cf61dfb1f108a7d53cb7c4b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 44a659abc9e364bf10487e93a7937c1cf8d51bbc
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724364"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820567"
 ---
-# <a name="logman-import--export"></a>logman 导入 |先导
+# <a name="logman-import-and-logman-export"></a>logman 导入和 logman 导出
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-从 XML 文件导入数据收集器集，或将数据收集器集导出到 XML 文件。  
+从 XML 文件导入数据收集器集，或将数据收集器集导出到 XML 文件。
 
-## <a name="syntax"></a>语法  
-```  
-logman import <[-n] <name>> <-xml <name>> [options]  
-logman export <[-n] <name>> <-xml <name>> [options]  
-```  
-### <a name="parameters"></a>参数  
+## <a name="syntax"></a>语法
 
-|        参数        |                                                                        描述                                                                        |
-|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-|           -?            |                                                             显示区分上下文的帮助。                                                              |
-|   -s<computer name>    |                                                   在指定的远程计算机上执行命令。                                                   |
-|     -config <value>     |                                                  指定包含命令选项的设置文件。                                                  |
-|       [-n]<name>       |                                                                目标对象的名称。                                                                 |
-|       -xml<name>       |                                                         要导入或导出的 XML 文件的名称。                                                         |
-|          -ets           |                                       直接将命令发送到事件跟踪会话，无需保存或计划。                                        |
-| -[-] u <user [password] > | 要以其身份运行的用户。 \*输入密码将生成密码提示。 在密码提示符下键入密码时，不会显示密码。 |
-|           -y            |                                                      在不提示的情况下回答 "是"。                                                       |
+```
+logman import <[-n] <name>> <-xml <name>> [options]
+logman export <[-n] <name>> <-xml <name>> [options]
+```
 
-## <a name="examples"></a>示例  
-以下命令将 perf_log 计算机中的 XML 文件 c:\windows\ 作为名为 perf_log 的数据收集器集导入 server_1。  
-```  
-logman import perf_log -s server_1 -xml c:\windows\perf_log.xml  
-```  
-## <a name="additional-references"></a>其他参考  
-[logman](logman.md)  
+### <a name="parameters"></a>参数
+
+| 参数 | 说明 |
+| --------- | ----------- |
+| -s`<computer name>` | 在指定的远程计算机上执行命令。 |
+| -config`<value>` | 指定包含命令选项的设置文件。 |
+| [-n]`<name>` | 目标对象的名称。 |
+| -xml`<name>` | 要导入或导出的 XML 文件的名称。 |
+| -ets | 直接向事件跟踪会话发送命令，而无需保存或计划。 |
+| -[-] u`<user [password]>` | 指定要以其身份运行的用户。 输入 `*` 密码将生成密码提示。 如果你在密码提示符处键入密码，密码不会显示。 |
+| -y | 在不提示的情况下回答 "是"。 |
+| /? | 显示区分上下文的帮助。 |
+
+### <a name="examples"></a>示例
+
+若要从计算机*server_1*将 xml 文件 c:\windows\ 作为名为*perf_log*的数据收集器集导入*perf_log* ，请键入：
+
+```
+logman import perf_log -s server_1 -xml c:\windows\perf_log.xml
+```
+
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)
+
+- [logman](logman.md)

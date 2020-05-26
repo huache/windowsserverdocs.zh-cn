@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 7a4dacd611741942e874e831fd9598aeda5e97b3
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7b42db8c0be5e1a447ad0a3b794b07672c164514
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269274"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433141"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>为 Windows Admin Center 准备环境
 
@@ -35,7 +35,7 @@ ms.locfileid: "81269274"
 
 在 PowerShell 中键入 `$PSVersiontable`，以验证是否安装了 WMF 并且版本是否为 5.1 或更高版本。
 
-如果未安装，可以[下载并安装 WMF 5.1](https://docs.microsoft.com/powershell/wmf/setup/install-configure)。
+如果未安装，可以[下载并安装 WMF 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)。
 
 ## <a name="prepare-microsoft-hyper-v-server-2016"></a>准备 Microsoft Hyper-V Server 2016
 
@@ -91,9 +91,9 @@ Microsoft Hyper-V Server 2016 现在可以使用 Windows Admin Center 进行管�
 
 默认情况下，Microsoft Hyper-V Server 2012 R2 中未包含 Windows Admin Center 需要的 PowerShell 功能。 要使用 Windows Admin Center 管理 Microsoft Hyper-V Server 2012 R2，将需要安装 WMF 5.1 或更高版本。
 
-在 PowerShell 中键入 `$PSVersiontable`，以验证是否安装了 WMF 并且版本是否为 5.1 或更高版本。 
+在 PowerShell 中键入 `$PSVersiontable`，以验证是否安装了 WMF 并且版本是否为 5.1 或更高版本。
 
-如果未安装，可以[下载 WMF 5.1](https://docs.microsoft.com/powershell/wmf/setup/install-configure)。
+如果未安装，可以[下载 WMF 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)。
 
 ### <a name="step-2-enable-remote-management"></a>步骤 2：启用远程管理
 

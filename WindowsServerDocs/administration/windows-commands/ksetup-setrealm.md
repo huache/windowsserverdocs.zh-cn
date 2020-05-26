@@ -1,6 +1,6 @@
 ---
-title: ksetup： setrealm
-description: '* * * * 的参考主题'
+title: ksetup setrealm
+description: Ksetup setrealm 命令的参考主题，用于设置 Kerberos 领域的名称。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,46 +9,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 453977ac39dd3a52b4f5a3104995f944e4a48392
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 03b33977f57e187a8bea69be78c1e9c094b9a73e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724549"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817277"
 ---
-# <a name="ksetupsetrealm"></a>ksetup： setrealm
-
-
+# <a name="ksetup-setrealm"></a>ksetup setrealm
 
 设置 Kerberos 领域的名称。
+
+> [!IMPORTANT]
+> 不支持在域控制器上设置 Kerberos 领域。 如果尝试这样做，将导致警告和命令失败。
 
 ## <a name="syntax"></a>语法
 
 ```
-ksetup /setrealm <DNSDomainName>
+ksetup /setrealm <DNSdomainname>
 ```
 
-#### <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|\<DNSDomainName>|DNS 域名的形式可以是完全限定的域名或简单的域名。|
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<DNSdomainname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM。 您可以使用完全限定的域名或名称的简单形式。 如果不使用大写作为 DNS 名称，系统会要求进行验证以继续。 |
 
-## <a name="remarks"></a>备注
+### <a name="examples"></a>示例
 
-应以大写字母形式输入 DNS 域名参数。 否则， **ksetup**命令将要求确认才能继续。
+若要将此计算机的领域设置为特定域名，并将非域控制器的访问权限限制为 CONTOSO Kerberos 领域，请键入：
 
-不支持在域控制器上设置 Kerberos 领域。 尝试这样做将导致警告和命令失败。
-
-## <a name="examples"></a>示例
-
-将此计算机的 "领域" 设置为特定域名，以将非域控制器的访问权限限制为仅限 CONTOSO Kerberos 领域：
 ```
 ksetup /setrealm CONTOSO
 ```
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
--   [Ksetup](ksetup.md)
--   [Ksetup:removerealm](ksetup-removerealm.md)
+- [命令行语法项](command-line-syntax-key.md)
+
+- [ksetup 命令](ksetup.md)
+
+- [ksetup removerealm](ksetup-removerealm.md)

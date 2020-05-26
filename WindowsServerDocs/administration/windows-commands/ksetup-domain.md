@@ -1,6 +1,6 @@
 ---
-title: ksetup：域
-description: '* * * * 的参考主题'
+title: ksetup 域
+description: Ksetup 域命令的参考主题，用于为所有 Kerberos 操作设置域名。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,44 +9,43 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f127eaf33e9ef6d597851c31a4167ceaa3516abb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1d497f2bc76bae8a95b077658c661e0fdc1e93f3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724686"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817797"
 ---
-# <a name="ksetupdomain"></a>ksetup：域
-
-
+# <a name="ksetup-domain"></a>ksetup 域
 
 设置所有 Kerberos 操作的域名。
 
 ## <a name="syntax"></a>语法
 
 ```
-ksetup /domain <DomainName>
+ksetup /domain <domainname>
 ```
 
-#### <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|\<DomainName>|要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 contoso.com 或 contoso。|
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<domainname>` | 要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 contoso.com 或 contoso。|
 
-## <a name="remarks"></a>备注
+### <a name="examples"></a>示例
 
-无。
+若要使用子命令建立与有效域（如 Microsoft）的连接，请 `ksetup /mapuser` 键入：
 
-## <a name="examples"></a>示例
-
-使用/mapuser 子命令建立与有效域（如 Microsoft）的连接：
 ```
 ksetup /mapuser principal@realm domain-user /domain domain-name
 ```
-当连接成功时，你将收到一个新的 TGT，或者将刷新现有 TGT。
+
+成功连接后，会收到新的 TGT，否则将刷新现有的 TGT。
 
 ## <a name="additional-references"></a>其他参考
 
--   [Ksetup](ksetup.md)
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
+
+- [ksetup 命令](ksetup.md)
+
+- [ksetup mapuser 命令](ksetup-mapuser.md)

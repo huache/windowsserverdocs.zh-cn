@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70b40b6fe16ce37f6fe7cb64c09463db8db4b47c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fdbb9fe636bb30be90164d9a2163c495a9c2e704
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718981"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819647"
 ---
 # <a name="arp"></a>arp
 
@@ -30,7 +30,7 @@ arp [/a [<inetaddr>] [/n <ifaceaddr>]] [/g [<inetaddr>] [-n <ifaceaddr>]] [/d <i
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `[/a [<inetaddr>] [/n <ifaceaddr>]` | 显示所有接口的当前 arp 缓存表。 **/N**参数区分大小写。 若要显示特定 IP 地址的 arp 缓存条目，请将**arp/a**与**inetaddr**参数一起使用，其中**inetaddr**是一个 IP 地址。 如果未指定**inetaddr** ，则使用第一个适用的接口。 若要显示特定接口的 arp 缓存表，请结合 **/a**参数使用 **/n ifaceaddr**参数，其中**inetaddr**是分配给接口的 IP 地址。 |
 | `[/g [<inetaddr>] [/n <ifaceaddr>]` | 与 **/a**相同。 |
@@ -54,13 +54,13 @@ arp [/a [<inetaddr>] [/n <ifaceaddr>]] [/g [<inetaddr>] [-n <ifaceaddr>]] [/d <i
 arp /a
 ```
 
-若要为分配了 IP 地址10.0.0.99 的接口显示 arp 缓存表，请键入：
+若要为分配了 IP 地址*10.0.0.99*的接口显示 arp 缓存表，请键入：
 
 ```
 arp /a /n 10.0.0.99
 ```
 
-若要添加将 IP 地址10.0.0.80 解析为物理地址 00-AA-4F-9C 的静态 arp 缓存项，请键入：
+若要添加将 IP 地址*10.0.0.80*解析为物理地址*00-AA-4F-9C*的静态 arp 缓存项，请键入：
 
 ```
 arp /s 10.0.0.80 00-AA-00-4F-2A-9C

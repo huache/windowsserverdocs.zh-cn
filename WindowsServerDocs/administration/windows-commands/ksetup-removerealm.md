@@ -1,6 +1,6 @@
 ---
-title: ksetup： removerealm
-description: '* * * * 的参考主题'
+title: ksetup removerealm
+description: Ksetup removerealm 命令的参考主题，用于从注册表中删除指定领域的所有信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,51 +9,46 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb7bf4663594a6c164d6495a9ba4cd81942afb79
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5da1be77a3b585e566bfd3b051b2fb391b326f32
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724605"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817607"
 ---
-# <a name="ksetupremoverealm"></a>ksetup： removerealm
-
-
+# <a name="ksetup-removerealm"></a>ksetup removerealm
 
 从注册表中删除指定领域的所有信息。
+
+领域名称存储在和下的注册表中 `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001` `\CurrentControlSet\Control\Lsa\Kerberos` 。 默认情况下，注册表中不存在此项。 可以使用[ksetup addrealmflags](ksetup-addrealmflags.md)命令填充注册表。
+
+> [!IMPORTANT]
+> 无法从域控制器中删除默认的领域名称，因为这会重置其 DNS 信息，删除它可能会使域控制器不可用。
 
 ## <a name="syntax"></a>语法
 
 ```
-ksetup /removerealm <RealmName>
+ksetup /removerealm <realmname>
 ```
+### <a name="parameters"></a>参数
 
-#### <a name="parameters"></a>参数
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或**领域 =** 列出。 |
 
-|参数|描述|
-|---------|-----------|
-|\<RealmName>|领域名称被声明为大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，它将作为默认领域列出。|
+### <a name="examples"></a>示例
 
-## <a name="remarks"></a>备注
-
-领域名称存储在注册表中的两个位置： **HKEY_LOCAL_MACHINE \system\controlset001**和**\CurrentControlSet\Control\Lsa\Kerberos**。
-
-你无法从域控制器中删除默认领域名称，因为这会重置其 DNS 信息，删除它可能会使域控制器不可用。
-
-## <a name="examples"></a>示例
-
-在本地计算机上错误地将领域名称设置为 "CORP"。CONTOSO.图标
-```
-ksetup /setrealm CORP.CONTOSO.CON
-```
-从本地计算机中删除该错误领域名：
+删除错误的领域名称（。CON，而不是 .COM），请键入：
 ```
 ksetup /removerealm CORP.CONTOSO.CON
 ```
-通过运行**ksetup**验证删除，并查看输出。
+
+若要验证删除，你可以运行**ksetup**命令并查看输出。
 
 ## <a name="additional-references"></a>其他参考
 
--   [Ksetup](ksetup.md)
--   [Ksetup:setrealm](ksetup-setrealm.md)
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
+
+- [ksetup 命令](ksetup.md)
+
+- [ksetup setrealm 命令](ksetup-setrealm.md)
