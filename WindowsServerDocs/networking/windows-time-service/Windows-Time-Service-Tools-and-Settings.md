@@ -7,12 +7,12 @@ ms.date: 02/24/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 2f6ba34381e813247d0838853f688abf13fbd2fa
-ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
+ms.openlocfilehash: 76ec8a817f0c500380c9bef6fc1ee7eb8dddc105
+ms.sourcegitcommit: 319796ec327530c9656ac103b89bd48cc8d373f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605537"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790560"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows 时间服务工具和设置
 
@@ -87,6 +87,15 @@ W32tm /query /computer:contosoW1 /configuration
 ```
 
 此命令的输出是为 Windows 时间客户端设置的配置参数的列表。
+
+> [!IMPORTANT]  
+> [Windows Server 2016 已改进时间同步算法](https://aka.ms/WS2016Time)以与 RFC 规范保持一致。 因此，如果要将本地 Windows 时间客户端设置为指向多个对等节点，我们强烈建议你准备三个或更多个不同的时间服务器。
+>  
+> 如果只有两个时间服务器，则应指定 UseAsFallbackOnly 标志 (0x2) 以取消其中一项的优先级。 例如，如果要将 ntpserver.contoso.com 的优先级设置为高于 clock.adatum.com，请运行以下命令。
+> ```cmd
+> w32tm /config /manualpeerlist:"ntpserver.contoso.com,0x8 clock.adatum.com,0xa" /syncfromflags:manual /update
+> ```
+> 如需查看指定标志的含义，请参阅[“HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters”子键条目](#parameters)。
 
 ## <a name="using-group-policy-to-configure-the-windows-time-service"></a>使用组策略配置 Windows 时间服务
 

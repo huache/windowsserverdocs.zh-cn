@@ -9,12 +9,12 @@ ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b1b6f7d38c4474ba3f69c4eac0c4569375185eb8
-ms.sourcegitcommit: 6d3f8780b67aa7865a9372cf2c1e10c79ebea8b1
+ms.openlocfilehash: 947c34e6c3a3b9a26a225221bbf29e46343b25df
+ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587666"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83546555"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 的常见问题解答 (FAQ)
 
@@ -85,7 +85,7 @@ AD FS 为第三方 MFA 提供程序提供了可扩展的集成机制。 没有�
 在 [AD FS 的 MFA 提供程序](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)上发布了已通知 Microsoft 的供应商列表。  可能始终存在我们不了解的提供程序，我们将在了解这些提供程序的同时更新列表。
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>AD FS 是否支持第三方代理？
-是的，第三方代理可以放在 Web 应用程序代理的前面，但任何第三方代理都必须支持用于替代 Web 应用程序代理的 [MS-ADFSPIP 协议](https://msdn.microsoft.com/library/dn392811.aspx)。
+是的，第三方代理可以放在 AD FS 的前面，但任何第三方代理都必须支持用于替代 Web 应用程序代理的 [MS-ADFSPIP 协议](https://msdn.microsoft.com/library/dn392811.aspx)。
 
 以下是我们了解的第三方提供程序的列表。  可能始终存在我们不了解的提供程序，我们将在了解这些提供程序的同时更新列表。
 

@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: 295536afc77d0559fd7d2d4a22f555231a1aab75
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a11820b9c75bbcb928da562f3f74e4130e9c8096
+ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858070"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775315"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>使用客户端访问许可证 (CAL) 许可 RDS 部署
 
@@ -24,7 +24,7 @@ ms.locfileid: "80858070"
 
 当用户或设备连接到 RD 会话主机服务器时，RD 会话主机服务器将确定是否需要 RDS CAL。 然后，RD 会话主机服务器从远程桌面许可证服务器请求 RDS CAL。 如果可从许可证服务器获取相应的 RDS CAL，则会将 RDS CAL 颁发给客户端，并且客户端能够连接到 RD 会话主机服务器，并从此处连接到桌面或它们正在尝试使用的应用。
 
-虽然在一个授权宽限期内不需要任何许可证服务器，但在此宽限期过后，客户端必须先具有由许可证服务器颁发的有效 RDS CAL，然后才能登录到 RD 会话主机服务器。
+授权宽限期为 180 天，在此期间不需要许可证服务器。 宽限期结束后，客户端必须拥有一个由许可证服务器颁发的有效的 RDS CAL，然后才能登录到 RD 会话主机服务器。
 
 使用以下信息来了解客户端访问授权在远程桌面服务中的工作方式，以及部署和管理你的许可证：
 
@@ -53,6 +53,8 @@ ms.locfileid: "80858070"
 如果使用每设备模型，则在设备首次连接到 RD 会话主机时，会颁发临时许可证。 该设备第二次连接时，只要激活许可证服务器，并且存在可用 RDS CAL，许可证服务器就会按设备 CAL 颁发永久的 RDS。
 
 如果使用每用户模型，则不会强制执行授权，并向每个用户授予从任意数量的设备连接到 RD 会话主机的许可证。 许可证服务器颁发来自可用的 RDS CAL 池或过度使用的 RDS CAL 池的许可证。 你必须负责确保你的所有用户具有有效的许可证且没有过度使用的 CAL；否则，你违反了远程桌面服务许可条款。
+
+使用基于设备模型的一个示例是，在某个环境中，有两个或多个使用相同计算机来访问 RD 会话主机的轮次。 基于用户的模型最适合用户有自己的专用 Windows 设备来访问 RD 会话主机的环境。
 
 若要确保遵守远程桌面服务许可条款，请跟踪组织中使用的每用户 CAL 的 RDS 数，确保每用户 CAL 有足够的 RDS 安装在所有用户的许可证服务器上。
 
