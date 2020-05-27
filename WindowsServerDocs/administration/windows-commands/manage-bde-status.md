@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1bf42da356d8326f459066fc168bbd38b7765b0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 494fb294e7eb0da1b8a0165182d33e799fe56371
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724079"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820597"
 ---
 # <a name="manage-bde-status"></a>manage-bde：状态
 
@@ -41,7 +41,7 @@ manage-bde -status [<Drive>] [-protectionaserrorlevel] [-computername <Name>] [{
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<驱动器>|表示驱动器号后跟一个冒号。|
 |-protectionaserrorlevel|使 manage-bde 命令行工具在卷受保护时发送返回代码0，并在卷未受保护时返回 1;最常见的批处理脚本用于确定驱动器是否受 BitLocker 保护。 你还可以使用 **-p**作为此命令的缩写形式。|
@@ -59,5 +59,5 @@ manage-bde –status C:
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

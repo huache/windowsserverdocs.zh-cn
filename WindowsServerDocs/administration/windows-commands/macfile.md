@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4384ce8d4f23966aea278e90b9ddddc42da6e77
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bf914e4e7da4f00c547353da4fc8d04ad6828646
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724236"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820517"
 ---
 # <a name="macfile"></a>macfile
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-管理 Macintosh 服务器、卷、目录和文件的文件服务器。 您可以通过在批处理文件中包含一系列命令，然后手动或在预定时间启动它们来自动执行管理任务。 
+管理 Macintosh 服务器、卷、目录和文件的文件服务器。 您可以通过在批处理文件中包含一系列命令，然后手动或在预定时间启动它们来自动执行管理任务。
 -   [修改 Macintosh 可访问卷中的目录](#BKMK_Moddirs)
 -   [联接 Macintosh 文件的数据和资源分叉](#BKMK_Joinforks)
 -   [更改登录消息和限制会话](#BKMK_LogonLimit)
@@ -34,11 +34,11 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 ```
 
 #### <a name="parameters"></a>参数
--   /server：\\ \\ <computerName>指定要在其上更改目录的服务器。 如果省略，则在本地计算机上执行该操作。
--   /path：<directory>必填项。 指定要更改的目录的路径。 该目录必须存在。 **macfile 目录**不创建目录。
--   /owner：<OwnerName>更改目录的所有者。 如果省略，所有者将保持不变。
--   /group：<GroupName>指定或更改与目录关联的 Macintosh 主组。 如果省略，则主组将保持不变。
--   /permissions：<Permissions>为所有者、主要组和世界（everyone）设置目录权限。 11位数字用于设置权限。 Number 1 授予权限和0吊销权限（例如，11111011000）。 如果省略，则权限保持不变。
+-   /server： \\ \\ <computerName> 指定要在其上更改目录的服务器。 如果省略，则在本地计算机上执行该操作。
+-   /path： <directory> 必填项。 指定要更改的目录的路径。 该目录必须存在。 **macfile 目录**不创建目录。
+-   /owner： <OwnerName> 更改目录的所有者。 如果省略，所有者将保持不变。
+-   /group： <GroupName> 指定或更改与目录关联的 Macintosh 主组。 如果省略，则主组将保持不变。
+-   /permissions： <Permissions> 为所有者、主要组和世界（everyone）设置目录权限。 11位数字用于设置权限。 Number 1 授予权限和0吊销权限（例如，11111011000）。 如果省略，则权限保持不变。
     数字的位置确定设置的权限，如下表所述。
 
     |位置|设置权限|
@@ -76,7 +76,7 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 
 #### <a name="parameters"></a>参数
 
-|         参数          |                                                                                                           描述                                                                                                            |
+|         参数          |                                                                                                           说明                                                                                                            |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /server\\\\<computerName> |                                                            指定要在其上联接文件的服务器。 如果省略，则在本地计算机上执行该操作。                                                            |
 |   于是<CreatorName>   |                                      指定文件的创建者。 Macintosh 查找器使用 **/creator**命令行选项来确定创建该文件的应用程序。                                       |
@@ -94,7 +94,7 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\treeapp
 ```
-若要将文件创建者更改为 Microsoft Word 5.1，请在 D:\Word documents\Group 文件中的 server \\\SERverA 上键入：
+若要将文件创建者更改为 Microsoft Word 5.1，请在 D:\Word documents\Group 文件中的 server \\ \SERverA 上键入：
 ```
 macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt
 ```
@@ -107,7 +107,7 @@ macfile server [/server:\\<computerName>] [/maxsessions:{Number | unlimited}] [/
 
 #### <a name="parameters"></a>参数
 
-|               参数                |                                                                                                                                                                           描述                                                                                                                                                                            |
+|               参数                |                                                                                                                                                                           说明                                                                                                                                                                            |
 |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /server\\\\<computerName>       |                                                                                                                        指定要在其上更改参数的服务器。 如果省略，则在本地计算机上执行该操作。                                                                                                                         |
 | /maxsessions： {Number &#124; 无限制} |                                                                                         指定可以同时对 Macintosh 使用文件和打印服务器的用户的最大数量。 如果省略，则服务器的**maxsessions**设置保持不变。                                                                                         |
@@ -132,7 +132,7 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 
 #### <a name="parameters"></a>参数
 
-|              参数               |                                                                                                                                                                       描述                                                                                                                                                                        |
+|              参数               |                                                                                                                                                                       说明                                                                                                                                                                        |
 |--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |          {/add &#124;/set}          |                                                                                                                      在添加或更改 Macintosh 可访问的卷时是必需的。 添加或更改指定的卷。                                                                                                                       |
 |      /server\\\\<computerName>      |                                                                                                             指定要在其上添加、更改或删除卷的服务器。 如果省略，则在本地计算机上执行该操作。                                                                                                              |
@@ -141,7 +141,7 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 |    /readonly： {true &#124; false}     | 指定用户是否可以更改卷中的文件。 若要指定用户不能更改卷中的文件，请键入 true。 键入 false 可指定用户可以更改卷中的文件。 如果在添加卷时省略，则允许对文件进行更改。 如果在更改卷时省略，则卷的**readonly**设置将保持不变。 |
 |  /guestsallowed： {true &#124; false}  |      指定以来宾身份登录的用户是否可以使用该卷。 若要指定来宾可以使用卷，请键入 true。 键入 false 可指定来宾不能使用该卷。 如果在添加卷时省略，来宾可以使用该卷。 如果在更改卷时省略，则卷的**guestsallowed**设置保持不变。       |
 |         /password<Password>         |                                                                               指定访问卷所需的密码。 如果在添加卷时省略，则不会创建密码。 如果在更改卷时省略此密码，则密码将保持不变。                                                                               |
-| /maxusers： {<Number>>&#124;无限制} |                                                 指定可以同时使用卷上的文件的最大用户数。 如果在添加卷时省略，则不限数量的用户可以使用该卷。 如果在更改卷时省略，则**maxusers**值保持不变。                                                 |
+| /maxusers： { <Number>>&#124;无限制} |                                                 指定可以同时使用卷上的文件的最大用户数。 如果在添加卷时省略，则不限数量的用户可以使用该卷。 如果在更改卷时省略，则**maxusers**值保持不变。                                                 |
 |               /remove                |                                                                                                                                删除访问卷时是必需的。 删除指定的卷。                                                                                                                                |
 |                  /?                  |                                                                                                                                                           在命令提示符下显示帮助。                                                                                                                                                           |
 
@@ -157,7 +157,7 @@ macfile volume /add /name:US Marketing Statistics /guestsallowed:false /path:e:\
 ```
 macfile volume /set /name:US Marketing Statistics /readonly:true /password:saturn /maxusers:5
 ```
-若要添加名为横向设计的卷，请\\在服务器 \Magnolia 上使用电子驱动器中的树目录，并指定来宾可以访问该卷，请键入：
+若要添加名为横向设计的卷，请在服务器 \\ \Magnolia 上使用电子驱动器中的树目录，并指定来宾可以访问该卷，请键入：
 ```
 macfile volume /add /server:\\Magnolia /name:Landscape Design /path:e:\trees
 ```
@@ -167,4 +167,4 @@ macfile volume /remove /name:Sales Reports
 ```
 
 ## <a name="additional-references"></a>其他参考
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

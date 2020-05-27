@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: 0145de2828c1d33cf1b82f595dd6c00812ace54e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: eba7092a9a26b25b1fe77b39b8098d117b38981a
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436782"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820997"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -214,4 +214,4 @@ rem  3 File(s) copied
 -   [恶性](attrib.md)
 -   [Diskcopy](diskcopy.md)
 -   [如果](if.md)
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

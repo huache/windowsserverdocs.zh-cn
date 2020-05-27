@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ae331b890d0e4201e8b621e5d84f5025934efa0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 42c92bb55ea451087fd6f506e8c8b58263fccfd3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722086"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821137"
 ---
 # <a name="seceditanalyze"></a>secedit：分析
 
@@ -30,11 +30,11 @@ Secedit /analyze /db <database file name> [/cfg <configuration file name>] [/ove
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|db|必需。</br>指定数据库的路径和文件名，该数据库包含将对其执行分析的存储配置。</br>如果文件名指定的数据库不具有与其关联的安全模板（由配置文件表示），则`/cfg \<configuration file name>`还必须指定命令行选项。|
-|cfg|可选。</br>指定将导入到数据库中进行分析的安全模板的路径和文件名。</br>此/cfg 选项仅在与`/db \<database file name>`参数一起使用时才有效。 如果未指定此项，则对已存储在数据库中的任何配置执行分析。|
-|overwrite|可选。</br>指定/cfg 参数中的安全模板是否应覆盖数据库中存储的任何模板或复合模板，而不是将结果追加到存储的模板。</br>此命令行选项仅在使用`/cfg \<configuration file name>`参数时才有效。 如果未指定此参数，则将/cfg 参数中的模板追加到存储的模板。|
+|db|必需。</br>指定数据库的路径和文件名，该数据库包含将对其执行分析的存储配置。</br>如果文件名指定的数据库不具有与其关联的安全模板（由配置文件表示），则 `/cfg \<configuration file name>` 还必须指定命令行选项。|
+|cfg|可选。</br>指定将导入到数据库中进行分析的安全模板的路径和文件名。</br>此/cfg 选项仅在与参数一起使用时才有效 `/db \<database file name>` 。 如果未指定此项，则对已存储在数据库中的任何配置执行分析。|
+|overwrite|可选。</br>指定/cfg 参数中的安全模板是否应覆盖数据库中存储的任何模板或复合模板，而不是将结果追加到存储的模板。</br>此命令行选项仅在使用参数时才有效 `/cfg \<configuration file name>` 。 如果未指定此参数，则将/cfg 参数中的模板追加到存储的模板。|
 |log|可选。</br>指定要在进程中使用的日志文件的路径和文件名。|
 |quiet|可选。</br>禁止屏幕输出。 你仍可以使用 Microsoft 管理控制台（MMC）的 "安全配置和分析" 管理单元查看分析结果。|
 
@@ -42,9 +42,9 @@ Secedit /analyze /db <database file name> [/cfg <configuration file name>] [/ove
 
 分析结果存储在数据库的一个独立区域中，可以在 MMC 的 "安全配置和分析" 管理单元中查看。
 
-如果未提供日志文件的路径，则使用默认的日志文件（*systemroot*\Documents 和 Settings\*用户帐户<em>\My Documents\Security\Logs\*DatabaseName</em>）。
+如果未提供日志文件的路径，则使用默认的日志文件（*systemroot*\Documents 和 Settings \* 用户帐户<em>\My Documents\Security\Logs \* DatabaseName</em>）。
 
-在 Windows Server 2008 中`Secedit /refreshpolicy` ，已替换为`gpupdate`。 有关如何刷新安全设置的信息，请参阅[Gpupdate](gpupdate.md)。
+在 Windows Server 2008 中，已 `Secedit /refreshpolicy` 替换为 `gpupdate` 。 有关如何刷新安全设置的信息，请参阅[Gpupdate](gpupdate.md)。
 
 ## <a name="examples"></a>示例
 
@@ -60,4 +60,4 @@ Secedit /analyze /db C:\Security\FY11\SecDbContoso.sdb /cfg SecContoso.inf /over
 ## <a name="additional-references"></a>其他参考
 
 -   [Secedit](secedit.md)
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

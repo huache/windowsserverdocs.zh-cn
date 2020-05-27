@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9985a300250029578d65d0d79f69866fcda8b75e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ca75ea9fca34a5803db8f05b37e5aef226b2fb33
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723888"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820797"
 ---
 # <a name="mqtgsvc"></a>mqtgsvc
 
@@ -34,4 +34,4 @@ Mqtgsvc.exe
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

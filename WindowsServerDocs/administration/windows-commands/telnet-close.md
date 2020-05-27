@@ -9,29 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63c36bc2a90c6224dfb2708b4bc693441a92ac30
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 85447c450abc74f266cec746576e35f401b6ae4b
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721527"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821337"
 ---
 # <a name="telnet-close"></a>telnet：关闭
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-关闭当前连接。    
+关闭当前连接。
 
-## <a name="syntax"></a>语法  
-```  
-c[lose]  
-```  
-#### <a name="parameters"></a>参数  
-none  
-## <a name="examples"></a>示例  
-关闭当前连接。  
-```  
-c  
-```  
-## <a name="additional-references"></a>其他参考  
--   - [命令行语法项](command-line-syntax-key.md)  
+## <a name="syntax"></a>语法
+```
+c[lose]
+```
+#### <a name="parameters"></a>参数
+无
+## <a name="examples"></a>示例
+关闭当前连接。
+```
+c
+```
+## <a name="additional-references"></a>其他参考
+- [命令行语法项](command-line-syntax-key.md)

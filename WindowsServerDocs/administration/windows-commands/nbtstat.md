@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c3405818d3ed11d14dee6c2fc8796c024ef253e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f0589fcd094d60fd5c3d9bc8798d273c49fb042b
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723826"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820897"
 ---
 # <a name="nbtstat"></a>nbtstat
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-显示 TCP/IP 上的 NetBIOS （NetBT）协议统计信息、本地计算机和远程计算机的 NetBIOS 名称表以及 NetBIOS 名称缓存。 **nbtstat**允许刷新 NetBIOS 名称缓存和在 Windows Internet 名称服务（WINS）中注册的名称。 在没有参数的情况下使用， **nbtstat**显示帮助。 
+显示 TCP/IP 上的 NetBIOS （NetBT）协议统计信息、本地计算机和远程计算机的 NetBIOS 名称表以及 NetBIOS 名称缓存。 **nbtstat**允许刷新 NetBIOS 名称缓存和在 Windows Internet 名称服务（WINS）中注册的名称。 在没有参数的情况下使用， **nbtstat**显示帮助。
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +30,7 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 #### <a name="parameters"></a>参数
 
-|    参数    |                                                                                                                         描述                                                                                                                         |
+|    参数    |                                                                                                                         说明                                                                                                                         |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /a<remoteName> |    显示远程计算机的 NetBIOS 名称表，其中*remoteName*是远程计算机的 netbios 计算机名称。 NetBIOS 名称表是对应于计算机上运行的 NetBIOS 应用程序的 NetBIOS 名称的列表。     |
 | /A<IPaddress>  |                                                           显示远程计算机的 NetBIOS 名称表，由远程计算机的 IP 地址（采用点分十进制表示法）指定。                                                            |
@@ -50,7 +50,7 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 -   下表描述了**nbtstat**生成的列标题：
 
-    |方位|描述|
+    |方位|说明|
     |------|--------|
     |输入|收到的字节数。|
     |输出|已发送的字节数。|
@@ -59,19 +59,19 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     |本机名称|与连接关联的本地 NetBIOS 名称。|
     |远程主机|与远程计算机关联的名称或 IP 地址。|
     |<03>|NetBIOS 名称的最后一个字节转换为十六进制。 每个 NetBIOS 名称长度为16个字符。 最后一个字节通常具有特殊意义，因为同一名称可能在计算机上出现多次，只是在最后一个字节内有所不同。 例如，<20> 为 ASCII 文本中的一个空格。|
-    |type|名称的类型。 名称可以为唯一名称或组名称。|
+    |类型|名称的类型。 名称可以为唯一名称或组名称。|
     |状态|远程计算机上的 NetBIOS 服务是否正在运行（注册）或重复的计算机名是否已注册了相同的服务（冲突）。|
     |状态|NetBIOS 连接的状态。|
 
 -   下表描述了可能的 NetBIOS 连接状态：
 
-    |状态|描述|
+    |状态|说明|
     |-----|--------|
-    |连续|已建立会话。|
+    |已连接|已建立会话。|
     |相应|已创建连接端点并将其与 IP 地址相关联。|
     |收听|此终结点可用于入站连接。|
     |空闲|此终结点已打开，但无法接收连接。|
-    |Connecting|会话正在连接阶段，正在解析目标的名称到 IP 地址映射。|
+    |连接|会话正在连接阶段，正在解析目标的名称到 IP 地址映射。|
     |接受|当前正在接受入站会话，不久将会连接。|
     |正在|会话正在尝试重新连接（第一次尝试时无法连接）。|
     |出站|会话正在连接阶段，当前正在创建 TCP 连接。|
@@ -126,6 +126,6 @@ nbtstat /S 5
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 
 

@@ -1,6 +1,6 @@
 ---
-title: ksetup： addkpasswd
-description: '* * * * 的参考主题'
+title: ksetup addkpasswd
+description: Ksetup addkpasswd 命令的参考主题，用于为某个领域添加 Kerberos 密码（kpasswd）服务器地址。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,52 +9,50 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c260c711ae87f88be8b9466e73afaf3fe1c83a1e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e0cff2f3d74e6d862bbdd000602a1d03312373d2
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724729"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818067"
 ---
-# <a name="ksetupaddkpasswd"></a>ksetup： addkpasswd
+# <a name="ksetup-addkpasswd"></a>ksetup addkpasswd
 
-
-
-为某个领域添加 Kerberos 密码（Kpasswd）服务器地址。
+为某个领域添加 Kerberos 密码（kpasswd）服务器地址。
 
 ## <a name="syntax"></a>语法
 
 ```
-ksetup /addkpasswd <RealmName> [<KpasswdName>]
+ksetup /addkpasswd <realmname> [<kpasswdname>]
 ```
 
-#### <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-如果工作站将对其进行身份验证的 Kerberos 领域支持 Kerberos 更改密码协议，则可以将运行 Windows 操作系统的客户端计算机配置为使用 Kerberos 密码服务器。 此设置是在领域端配置的。
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或**领域 =** 列出。 |
+| `<kpasswdname>` | 指定 Kerberos 密码服务器。 它被表述为不区分大小写的完全限定的域名，例如 mitkdc.contoso.com。 如果省略了 KDC 名称，则可以使用 DNS 来查找 Kdc。 |
 
-|参数|描述|
-|---------|-----------|
-|\<RealmName>|领域名称被声明为大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或领域 = 列出。|
-|\<KpasswdName>|要用作 Kerberos 密码服务器的 KDC 名称被声明为不区分大小写的完全限定的域名，例如 mitkdc.microsoft.com。 如果省略了 KDC 名称，则可以使用 DNS 来查找 Kdc。|
+#### <a name="remarks"></a>备注
 
-## <a name="remarks"></a>备注
+- 如果工作站将对其进行身份验证的 Kerberos 领域支持 Kerberos 更改密码协议，则可以将运行 Windows 操作系统的客户端计算机配置为使用 Kerberos 密码服务器。
 
-如果工作站将对其进行身份验证的 Kerberos 领域支持 Kerberos 更改密码协议，则可以将运行 Windows 操作系统的客户端计算机配置为使用 Kerberos 密码服务器。
+- 你可以一次添加一个其他 KDC 名称。
 
-运行命令**ksetup**来验证 KDC 名称。 如果**kpasswd =** 未出现在输出中，则表示尚未配置映射。
+### <a name="examples"></a>示例
 
-你可以一次添加一个其他 KDC 名称。
+配置 CORP。CONTOSO.COM 领域若要使用非 Windows KDC 服务器 mitkdc.contoso.com 作为密码服务器，请键入：
 
-## <a name="examples"></a>示例
-
-配置领域，公司。CONTOSO.COM，使其使用非 Windows KDC 服务器 mitkdc.contoso.com，作为密码服务器：
 ```
 ksetup /addkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-这将生成一个非 Windows Kerberos 密码服务器，该服务器控制在其与领域之间进行身份验证的所有密码。
+
+若要验证是否已设置 KDC 名称，请键入， `ksetup` 然后查看输出，查找文本**kpasswd =**。 如果看不到文本，则表示尚未配置映射。
 
 ## <a name="additional-references"></a>其他参考
 
--   [Ksetup](ksetup.md)
--   [Ksetup:delkpasswd](ksetup-delkpasswd.md)
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
+
+- [ksetup 命令](ksetup.md)
+
+- [ksetup delkpasswd 命令](ksetup-delkpasswd.md)

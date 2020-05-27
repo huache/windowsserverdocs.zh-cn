@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 2fcf7d3716ae45c24510b433ab125551a6d04c85
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1db9dd387d7b9cc39c582ce79e5163c83579b613
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718209"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819627"
 ---
 # <a name="bitsadmin-examples"></a>bitsadmin 示例
 
-下面的示例演示如何使用`bitsadmin`工具执行最常见的任务。
+下面的示例演示如何使用 `bitsadmin` 工具执行最常见的任务。
 
 ## <a name="transfer-a-file"></a>传输文件
 
@@ -64,7 +64,7 @@ bitsadmin /resume myDownloadJob
 
 ## <a name="determine-the-progress-of-the-download-job"></a>确定下载作业的进度
 
-**/Info**开关返回作业的状态以及传输的文件和字节数。 当状态显示为`TRANSFERRED`时，表示 BITS 已成功传输作业中的所有文件。 还可以添加 **/verbose**参数以获取作业的完整详细信息，并添加 **/list**或 **/monitor**以获取传输队列中的所有作业。
+**/Info**开关返回作业的状态以及传输的文件和字节数。 当状态显示为时 `TRANSFERRED` ，表示 BITS 已成功传输作业中的所有文件。 还可以添加 **/verbose**参数以获取作业的完整详细信息，并添加 **/list**或 **/monitor**以获取传输队列中的所有作业。
 
 返回作业的状态：
 
@@ -76,13 +76,13 @@ bitsadmin /info myDownloadJob /verbose
 
 ## <a name="complete-the-download-job"></a>完成下载作业
 
-若要在状态更改为`TRANSFERRED`之后完成该作业：
+若要在状态更改为后完成作业 `TRANSFERRED` ：
 
 ```
 bitsadmin /complete myDownloadJob
 ```
 
-必须先运行该`/complete`开关，然后才能使用该作业中的文件。 如果有多个作业使用*myDownloadJob*作为其名称，则必须使用作业的 GUID 来唯一地标识该作业才能完成。
+必须先运行该 `/complete` 开关，然后才能使用该作业中的文件。 如果有多个作业使用*myDownloadJob*作为其名称，则必须使用作业的 GUID 来唯一地标识该作业才能完成。
 
 ## <a name="monitor-jobs-in-the-transfer-queue-using-the-list-switch"></a>使用/list 开关监视传输队列中的作业
 
@@ -142,7 +142,7 @@ RETRY DELAY: 600 NO PROGRESS TIMEOUT: 1209600 ERROR COUNT: 0
 PROXY USAGE: PRECONFIG PROXY LIST: NULL PROXY BYPASS LIST: NULL
 ERROR FILE:    https://downloadsrv/10mb.zip -> c:\10mb.zip
 ERROR CODE:    0x80072ee7 - The server name or address could not be resolved
-ERROR CONTEXT: 0x00000005 - The error occurred while the remote file was being 
+ERROR CONTEXT: 0x00000005 - The error occurred while the remote file was being
 processed.
 DESCRIPTION:
 JOB FILES:

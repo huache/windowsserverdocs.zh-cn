@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 542f65b7d87eacb102f64fb4103e6c684df4faa5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1eabc053e5cb1bdd517cfb02a13e955707ffacf6
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720154"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820507"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get 版本
 
@@ -34,7 +34,7 @@ wbadmin get versions
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-backupTarget|指定包含您要了解其详细信息的备份的存储位置。 用于列出存储在该目标位置的备份。 备份目标位置可以是本地附加的磁盘驱动器、卷、远程共享文件夹、可移动媒体（如 DVD 驱动器或其他光学媒体）。 如果在创建备份的同一台计算机上运行**wbadmin get 版本**，则不需要此参数。 但是，若要获取有关从另一台计算机创建的备份的信息，需要使用此参数。|
 |-计算机|指定您想要备份其详细信息的计算机。 当多台计算机的备份存储在同一位置时使用。 当指定 **-backupTarget**时，应使用。|
@@ -49,13 +49,13 @@ wbadmin get versions
 ```
 wbadmin get versions -backupTarget:h:
 ```
-若要查看在计算机 server01 的远程共享文件夹\\ \\servername\share 中存储的可用备份的列表，请键入：
+若要查看在计算机 server01 的远程共享文件夹 servername\share 中存储的可用备份的列表 \\ \\ ，请键入：
 ```
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Backup](wbadmin.md)
 -   [WBBackupTarget](https://technet.microsoft.com/library/jj902447.aspx) cmdlet

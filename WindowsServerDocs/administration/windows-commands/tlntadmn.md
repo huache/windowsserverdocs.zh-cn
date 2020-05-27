@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee6caac0002cecb9eaecd00f6d3d4a2d23456d72
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 273381fa62f42e9cf084c2b7dbf30ed7211295fb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436962"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821007"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -35,7 +35,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 |                     start                      |                                                                                                                                            启动 telnet 服务器服务。                                                                                                                                             |
 |                      stop                      |                                                                                                                                             停止 telnet 服务器服务                                                                                                                                              |
 |                     pause                      |                                                                                                                          暂停 telnet 服务器服务。 不会接受任何新连接。                                                                                                                          |
-|                    继续                    |                                                                                                                                            恢复 telnet 服务器服务。                                                                                                                                            |
+|                    continue                    |                                                                                                                                            恢复 telnet 服务器服务。                                                                                                                                            |
 |          -s { \< SessionID> &#124; all}          |                                                                                                                                             显示活动的 telnet 会话。                                                                                                                                             |
 |          -k { \< SessionID> &#124; all}          |                                                                                                        结束 telnet 会话。 键入用于结束特定会话的会话 ID，或键入 all 结束所有会话。                                                                                                         |
 |    -m { \< SessionID> &#124; all}<Message>     |                                                   将消息发送到一个或多个会话。 键入用于将消息发送到特定会话的会话 ID，或键入 all 以便向所有会话发送消息。 键入要在引号之间发送的消息。                                                   |
@@ -66,4 +66,4 @@ tlntadmn -s
 
 ## <a name="additional-references"></a>其他参考
 -   [telnet 操作指南](https://technet.microsoft.com/library/cc753164(v=ws.10).aspx)
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

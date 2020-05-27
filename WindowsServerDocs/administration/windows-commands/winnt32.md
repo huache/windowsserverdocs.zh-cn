@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00a45890f9b579c0261a074dace707a9e5c769bb
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 81068055a23147ad6fafa1c9fa27a63174d52574
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436802"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820919"
 ---
 # <a name="winnt32"></a>winnt32
 
@@ -71,5 +71,5 @@ winnt32 [/checkupgradeonly] [/cmd: <CommandLine>] [/cmdcons] [/copydir:{i386|ia6
 使用 **/unattend**命令行选项自动执行已阅读并接受 Windows Server 2003 的 Microsoft 许可协议的安装程序确认。 在使用此命令行选项代表组织之外的其他组织安装 Windows Server 2003 之前，必须确认最终用户（无论是个人还是单个实体）已收到、阅读并接受该产品的 Microsoft 许可协议条款。  Oem 不能在销售给最终用户的计算机上指定此密钥。
 
 ## <a name="additional-references"></a>其他参考
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 

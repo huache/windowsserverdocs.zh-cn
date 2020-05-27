@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 501ab801e76980f7e94e88213dd3aa42ee04d4d7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 235640cacc6c0cca5ee9e820606082afe5d39d41
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722401"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820107"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -39,7 +39,7 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<InputVolume>|标识要修复的 BitLocker 加密驱动器的驱动器号。 驱动器号必须包含冒号;例如： **C：**。|
 |\<OutputVolumeorImage>|标识要在其上存储已修复驱动器的内容的驱动器。 输出驱动器上的所有信息都将被覆盖。|
@@ -76,4 +76,4 @@ repair-bde C: D: -pw
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

@@ -9,29 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54c75af3705c6f1b0ae4410265e8d869a3c8419b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4e27e3c2654833c3eb7cc4b346b1e54a59913115
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721467"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821047"
 ---
 # <a name="telnet-status"></a>telnet：状态
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-显示状态信息。   
+显示状态信息。
 
-## <a name="syntax"></a>语法  
-```  
-st[atus]  
-```  
-#### <a name="parameters"></a>参数  
-none  
-## <a name="examples"></a>示例  
-显示状态信息。  
-```  
-st  
-```  
-## <a name="additional-references"></a>其他参考  
--   - [命令行语法项](command-line-syntax-key.md)  
+## <a name="syntax"></a>语法
+```
+st[atus]
+```
+#### <a name="parameters"></a>参数
+无
+## <a name="examples"></a>示例
+显示状态信息。
+```
+st
+```
+## <a name="additional-references"></a>其他参考
+- [命令行语法项](command-line-syntax-key.md)

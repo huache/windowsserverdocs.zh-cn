@@ -1,6 +1,6 @@
 ---
 title: ksetup
-description: '* * * * 的参考主题'
+description: Ksetup 命令的参考主题，它执行与设置和维护 Kerberos 协议以及密钥发行中心（KDC）相关的任务，以支持 Kerberos 领域。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,84 +9,78 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f3fde0ada4ab8bcbe52eccf22b959f99f91319f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 82b1627a8ddbc9e51ac32825c5a42c3df9effbf7
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724541"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817347"
 ---
 # <a name="ksetup"></a>ksetup
 
+执行与设置和维护 Kerberos 协议以及密钥发行中心（KDC）相关的任务，以支持 Kerberos 领域。 具体而言，此命令用于：
 
+- 更改用于查找 Kerberos 领域的计算机设置。 在非 Microsoft 的基于 Kerberos 的实现中，此信息通常保存在 Krb5.conf 文件中。 在 Windows Server 操作系统中，它保存在注册表中。 您可以使用此工具来修改这些设置。 工作站使用这些设置来查找 Kerberos 领域，并由域控制器用于查找跨领域信任关系的 Kerberos 领域。
 
-执行与设置和维护 Kerberos 协议和密钥发行中心（KDC）相关的任务，以支持 Kerberos 领域，这也不是 Windows 域。 有关如何使用此命令的示例，请参阅每个相关副标题中的 "示例" 部分。
+- 如果计算机不是 Windows 域的成员，则初始化 Kerberos 安全支持提供程序（SSP）用于查找 Kerberos 领域的 KDC 的注册表项。 完成配置后，运行 Windows 操作系统的客户端计算机的用户可以登录到 Kerberos 领域中的帐户。
+
+- 在注册表中搜索用户领域的域名，然后通过查询 DNS 服务器将该名称解析为 IP 地址。 Kerberos 协议可以使用 DNS 来仅使用领域名称查找 Kdc，但必须对其进行特殊配置。
 
 ## <a name="syntax"></a>语法
 
 ```
-ksetup 
-[/setrealm <DNSDomainName>] 
-[/mapuser <Principal> <Account>] 
-[/addkdc <RealmName> <KDCName>] 
-[/delkdc <RealmName> <KDCName>]
-[/addkpasswd <RealmName> <KDCPasswordName>] 
-[/delkpasswd <RealmName> <KDCPasswordName>]
-[/server <ServerName>] 
-[/setcomputerpassword <Password>]
-[/removerealm <RealmName>]  
-[/domain <DomainName>] 
-[/changepassword <OldPassword> <NewPassword>] 
-[/listrealmflags] 
-[/setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]] 
-[/addrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]] 
-[/delrealmflags [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]] 
+ksetup
+[/setrealm <DNSdomainname>]
+[/mapuser <principal> <account>]
+[/addkdc <realmname> <KDCname>]
+[/delkdc <realmname> <KDCname>]
+[/addkpasswd <realmname> <KDCPasswordName>]
+[/delkpasswd <realmname> <KDCPasswordName>]
+[/server <servername>]
+[/setcomputerpassword <password>]
+[/removerealm <realmname>]
+[/domain <domainname>]
+[/changepassword <oldpassword> <newpassword>]
+[/listrealmflags]
+[/setrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]]
+[/addrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]]
+[/delrealmflags [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]]
 [/dumpstate]
-[/addhosttorealmmap] <HostName> <RealmName>]  
-[/delhosttorealmmap] <HostName> <RealmName>]  
-[/setenctypeattr] <DomainName> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | AES128-CTS-HMAC-SHA1-96 | AES256-CTS-HMAC-SHA1-96}
-[/getenctypeattr] <DomainName>
-[/addenctypeattr] <DomainName> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | AES128-CTS-HMAC-SHA1-96 | AES256-CTS-HMAC-SHA1-96}
-[/delenctypeattr] <DomainName>
-
+[/addhosttorealmmap] <hostname> <realmname>]
+[/delhosttorealmmap] <hostname> <realmname>]
+[/setenctypeattr] <domainname> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | AES128-CTS-HMAC-SHA1-96 | AES256-CTS-HMAC-SHA1-96}
+[/getenctypeattr] <domainname>
+[/addenctypeattr] <domainname> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | AES128-CTS-HMAC-SHA1-96 | AES256-CTS-HMAC-SHA1-96}
+[/delenctypeattr] <domainname>
 ```
 
-#### <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|[Ksetup:setrealm](ksetup-setrealm.md)|使此计算机成为 Kerberos 领域的成员。|
-|[Ksetup:mapuser](ksetup-mapuser.md)|将 Kerberos 主体映射到帐户。|
-|[Ksetup:addkdc](ksetup-addkdc.md)|为给定领域定义 KDC 条目。|
-|[Ksetup:delkdc](ksetup-delkdc.md)|删除领域的 KDC 条目。|
-|[Ksetup:addkpasswd](ksetup-addkpasswd.md)|为某个领域添加 Kpasswd 服务器地址。|
-|[Ksetup:delkpasswd](ksetup-delkpasswd.md)|删除领域的 Kpasswd 服务器地址。|
-|[Ksetup:server](ksetup-server.md)|允许您指定要应用更改的 Windows 计算机的名称。|
-|[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|设置计算机的域帐户（或主机主体）的密码。|
-|[Ksetup:removerealm](ksetup-removerealm.md)|从注册表中删除指定领域的所有信息。|
-|[Ksetup:domain](ksetup-domain.md)|允许你指定域（如果\<尚未使用 **/domain**设置 DomainName>）。|
-|[Ksetup:changepassword](ksetup-changepassword.md)|允许你使用 Kpasswd 更改已登录用户的密码。|
-|[Ksetup:listrealmflags](ksetup-listrealmflags.md)|列出**ksetup**可检测的可用领域标志。|
-|[Ksetup:setrealmflags](ksetup-setrealmflags.md)|设置特定领域的领域标志。|
-|[Ksetup:addrealmflags](ksetup-addrealmflags.md)|将其他领域标志添加到领域。|
-|[Ksetup:delrealmflags](ksetup-delrealmflags.md)|删除领域中的领域标志。|
-|[Ksetup:dumpstate](ksetup-dumpstate.md)|分析给定计算机上的 Kerberos 配置。 将主机添加到注册表的领域映射。|
-|[Ksetup:addhosttorealmmap](ksetup-addhosttorealmmap.md)|添加用于将主机映射到 Kerberos 领域的注册表值。|
-|[Ksetup:delhosttorealmmap](ksetup-delhosttorealmmap.md)|删除将主计算机映射到 Kerberos 领域的注册表值。|
-|[Ksetup:setenctypeattr](ksetup-setenctypeattr.md)|设置域的一个或多个加密类型信任属性。|
-|[Ksetup:getenctypeattr](ksetup-getenctypeattr.md)|获取域的加密类型信任属性。|
-|[Ksetup:addenctypeattr](ksetup-addenctypeattr.md)|向域的 "加密类型" 信任属性添加加密类型。|
-|[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|删除域的 "加密类型" 信任属性。|
-|/?|在命令提示符下显示帮助。|
-
-## <a name="remarks"></a>备注
-
-**Ksetup**用于更改用于定位 Kerberos 领域的计算机设置。 在基于非 Microsoft Kerberos 的实现中，此信息通常保存在 Krb5.conf 文件中。 在 Windows Server 操作系统中，它保存在注册表中。 您可以使用此工具来修改这些设置。 工作站使用这些设置来查找 Kerberos 领域，并由域控制器用于查找跨领域信任关系的 Kerberos 领域。
-
-如果计算机运行的是 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2，并且不是 Windows 域的成员，则**Ksetup**将初始化 Kerberos 安全支持提供程序（SSP）用于为 kerberos 领域定位 KDC 的注册表项。 完成配置后，运行 Windows 操作系统的客户端计算机的用户可以登录到 Kerberos 领域中的帐户。
-
-Kerberos 版本5协议是运行 Windows XP Professional、Windows Vista 和 Windows 7 的计算机上网络身份验证的默认值。 Kerberos SSP 会在注册表中搜索用户领域的域名，然后通过查询 DNS 服务器将该名称解析为 IP 地址。 Kerberos 协议可以使用 DNS 来仅使用领域名称查找 Kdc，但必须对其进行特殊配置。
+| 参数 | 说明 |
+| --------- | ----------- |
+| [ksetup setrealm](ksetup-setrealm.md) | 使此计算机成为 Kerberos 领域的成员。 |
+| [ksetup addkdc](ksetup-addkdc.md) | 为给定领域定义 KDC 条目。 |
+| [ksetup delkdc](ksetup-delkdc.md) | 删除领域的 KDC 条目。 |
+| [ksetup addkpasswd](ksetup-addkpasswd.md) | 为某个领域添加 kpasswd 服务器地址。 |
+| [ksetup delkpasswd](ksetup-delkpasswd.md) | 删除领域的 kpasswd 服务器地址。 |
+| [ksetup 服务器](ksetup-server.md) | 允许您指定要应用更改的 Windows 计算机的名称。 |
+| [ksetup setcomputerpassword](ksetup-setcomputerpassword.md) | 设置计算机的域帐户（或主机主体）的密码。 |
+| [ksetup removerealm](ksetup-removerealm.md) | 从注册表中删除指定领域的所有信息。 |
+| [ksetup 域](ksetup-domain.md) | 允许你指定域（如果 `<domainname>` **/domain**参数尚未设置）。 |
+| [ksetup changepassword](ksetup-changepassword.md) | 允许你使用 kpasswd 更改已登录用户的密码。 |
+| [ksetup listrealmflags](ksetup-listrealmflags.md) | 列出**ksetup**可检测的可用领域标志。 |
+| [ksetup setrealmflags](ksetup-setrealmflags.md) | 设置特定领域的领域标志。 |
+| [ksetup addrealmflags](ksetup-addrealmflags.md) | 将其他领域标志添加到领域。 |
+| [ksetup delrealmflags](ksetup-delrealmflags.md) | 删除领域中的领域标志。 |
+| [ksetup dumpstate](ksetup-dumpstate.md) | 分析给定计算机上的 Kerberos 配置。 将主机添加到注册表的领域映射。 |
+| [ksetup addhosttorealmmap](ksetup-addhosttorealmmap.md) | 添加用于将主机映射到 Kerberos 领域的注册表值。 |
+| [ksetup delhosttorealmmap](ksetup-delhosttorealmmap.md) | 删除将主计算机映射到 Kerberos 领域的注册表值。 |
+| [ksetup setenctypeattr](ksetup-setenctypeattr.md) | 设置域的一个或多个加密类型信任属性。 |
+| [ksetup getenctypeattr](ksetup-getenctypeattr.md) | 获取域的加密类型信任属性。 |
+| [ksetup addenctypeattr](ksetup-addenctypeattr.md) | 向域的 "加密类型" 信任属性添加加密类型。 |
+| [ksetup delenctypeattr](ksetup-delenctypeattr.md) | 删除域的 "加密类型" 信任属性。 |
+| /? | 在命令提示符下显示帮助。 |
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

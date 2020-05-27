@@ -1,6 +1,6 @@
 ---
 title: cacls
-description: 用于显示或修改指定文件上的随机访问控制列表（DACL）的 cacls 命令的参考主题。
+description: Cacls 命令的参考主题。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,29 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d827199ea319bd41511f9abadfde8c6e8949976e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8602157bf87e523d6d842d5636031c61b52e8ef4
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82726019"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819247"
 ---
 # <a name="cacls"></a>cacls
 
 >[!IMPORTANT]
-> 此命令已弃用。 请改用[icacls](icacls.md) 。  
+> 此命令已弃用。 请改用[icacls](icacls.md) 。
 
-显示或修改指定文件上的随机访问控制列表（DACL）。  
+显示或修改指定文件上的随机访问控制列表（DACL）。
 
 ## <a name="syntax"></a>语法
 
-```  
-cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user [...]] [/p user:<perm> [...]] [/d user [...]]  
+```
+cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user [...]] [/p user:<perm> [...]] [/d user [...]]
 ```
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<filename>` | 必需。 显示指定文件的 Acl。 |
 | /t  | 更改当前目录和所有子目录中指定文件的 Acl。 |
@@ -63,7 +63,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 
 - 您可以使用通配符（**？** 和 **&#42;**）来指定多个文件。
 
-- 可以指定多个用户。  
+- 可以指定多个用户。
 
 ## <a name="additional-references"></a>其他参考
 

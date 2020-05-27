@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa111934f93bf7fea5aade1f39b4fc6a014d6c9e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: edbd6acefe2ef921b9325de4808753d5929efd1e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725875"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821377"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -57,7 +57,7 @@ wbadmin start systemstaterecovery
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-version|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入**wbadmin get 版本**。|
 |-showsummary|报告上次系统状态恢复的摘要（在完成操作所需的重新启动后）。 此参数不能与任何其他参数一起使用。|
@@ -70,17 +70,17 @@ wbadmin start systemstaterecovery
 
 ## <a name="examples"></a>示例
 
-- 若要在 9:00 A.M. 为03/31/2013 的备份执行系统状态恢复，请键入：  
+- 若要在 9:00 A.M. 为03/31/2013 的备份执行系统状态恢复，请键入：
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
-  ```  
-- 在 9:00 A.M. 从04/30/2013 执行备份的系统状态恢复。 这是存储在 server01 的共享\\ \\资源 servername\share 上，请键入：  
+  ```
+- 在 9:00 A.M. 从04/30/2013 执行备份的系统状态恢复。 这是存储在 server01 的共享资源 \\ \\ servername\share 上，请键入：
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Backup](wbadmin.md)
 -   [WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx) cmdlet

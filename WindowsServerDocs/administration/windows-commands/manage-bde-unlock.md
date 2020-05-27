@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3fd303116e101c8c8503d220ba382d6cdd994ad3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cb1fc1c14a29b8fed515adb0f74ae99ff5d76cf4
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724059"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820737"
 ---
 # <a name="manage-bde-unlock"></a>manage-bde：解除锁定
 
@@ -30,7 +30,7 @@ manage-bde -unlock {-recoverypassword <Password>|-recoverykey <PathToExternalKey
 
 #### <a name="parameters"></a>参数
 
-|参数|值|描述|
+|参数|Value|说明|
 |---------|-----|-----------|
 |-ms-fve-recoverypassword||指定将使用恢复密码来解锁驱动器。缩写：-rp|
 ||\<密码>|表示可用于解锁驱动器的恢复密码。|
@@ -55,5 +55,5 @@ manage-bde –unlock E: -recoverykey F:\Backupkeys\recoverykey.bek
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

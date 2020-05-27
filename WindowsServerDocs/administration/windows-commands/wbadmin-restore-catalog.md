@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de9ce6b64f996e50fb85a8c612104bc6851ebdfd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 82a399284862ef59f417efa0b6f17ab6e8c4cb71
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720143"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820487"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 
@@ -33,7 +33,7 @@ wbadmin restore catalog
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-backupTarget|指定在创建备份后的时间点的系统备份目录的位置。|
 |-计算机|指定要恢复其备份目录的计算机的名称。 当多台计算机的备份存储在同一位置时使用。 当指定 **-backupTarget**时，应使用。|
@@ -49,13 +49,13 @@ wbadmin restore catalog
 ```
 wbadmin restore catalog -backupTarget:d
 ```
-若要从 servername\share 为 server01 的共享文件夹\\ \\中存储的备份还原目录，请键入：
+若要从 servername\share 为 server01 的共享文件夹中存储的备份还原目录 \\ \\ ，请键入：
 ```
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Backup](wbadmin.md)
 -   [WBCatalog](https://technet.microsoft.com/library/jj902437.aspx) cmdlet

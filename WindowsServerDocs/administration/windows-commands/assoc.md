@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f637e1f744ec412899320cfbb368633b222da8d3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 58735201a1a0711db4d0cee9c292363acf5121f3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718952"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819637"
 ---
 # <a name="assoc"></a>assoc
 
 显示或修改文件扩展名关联。 如果在没有参数的情况下使用， **assoc**将显示所有当前文件扩展名关联的列表。
 
 > [!NOTE]
-> 只有 CMD 中支持此命令。EXE 和无法从 PowerShell 中获取。
+> 此命令仅在 cmd.exe 中受支持，不能从 PowerShell 中使用。
 
 ## <a name="syntax"></a>语法
 
@@ -31,7 +31,7 @@ assoc [<.ext>[=[<filetype>]]]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<.ext>` | 指定文件扩展名。 |
 | `<filetype>` | 指定与指定的文件扩展名关联的文件类型。 |
@@ -43,7 +43,7 @@ assoc [<.ext>[=[<filetype>]]]
 
 - 若要查看已定义打开的命令字符串的当前文件类型，请使用**ftype**命令。
 
-- 若要将**assoc**的输出重定向到文本文件，请使用`>`重定向运算符。
+- 若要将**assoc**的输出重定向到文本文件，请使用 `>` 重定向运算符。
 
 ## <a name="examples"></a>示例
 
@@ -56,7 +56,7 @@ assoc .txt
 若要删除文件扩展名 .bak 的文件类型关联，请键入：
 
 ```
-assoc .bak= 
+assoc .bak=
 ```
 
 > [!NOTE]

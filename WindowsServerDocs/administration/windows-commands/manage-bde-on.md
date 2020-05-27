@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55f9dc446b17b8e61655686b9f4b6259b12dafc9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 471bea3946aff39689ad219585d10c2d43f99a93
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724138"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820647"
 ---
 # <a name="manage-bde-on"></a>manage-bde：开启
 
@@ -27,13 +27,13 @@ ms.locfileid: "82724138"
 ```
 manage-bde –on <Drive> {[-recoveryPassword <NumericalPassword>]|[-recoverykey <PathToExternalDirectory>]|[-startupkey <PathToExternalKeyDirectory>]|[-certificate]|
 [-tpmandpin]|[-tpmandpinandstartupkey <PathToExternalKeyDirectory>]|[-tpmandstartupkey <PathToExternalKeyDirectory>]|[-password]|[-ADAccountOrGroup <Domain\Account>]}
-[-UsedSpaceOnly][-encryptionmethod {aes128_diffuser|aes256_diffuser|aes128|aes256}] [-skiphardwaretest] [-discoveryvolumetype <FileSystemType>] [-ForceEncryptionType <type>] [-RemoveVolumeShadowCopies][-computername <Name>] 
+[-UsedSpaceOnly][-encryptionmethod {aes128_diffuser|aes256_diffuser|aes128|aes256}] [-skiphardwaretest] [-discoveryvolumetype <FileSystemType>] [-ForceEncryptionType <type>] [-RemoveVolumeShadowCopies][-computername <Name>]
 [{-?|/?}] [{-help|-h}]
 ```
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<驱动器>|表示驱动器号后跟一个冒号。|
 |-ms-fve-recoverypassword|添加数字密码保护程序。 你还可以使用 **-rp**作为此命令的缩写形式。|
@@ -47,7 +47,7 @@ manage-bde –on <Drive> {[-recoveryPassword <NumericalPassword>]|[-recoverykey 
 |-tpmandstartupkey|添加操作系统驱动器的 TPM 和启动密钥保护程序。 你还可以使用 **-tsk**作为此命令的缩写形式。|
 |-tpmandpinandstartupkey|为操作系统驱动器添加 TPM、PIN 和启动密钥保护程序。 你还可以使用 **-tpsk**作为此命令的缩写形式。|
 |-password|添加数据驱动器的密码密钥保护程序。 你还可以使用 **-pw**作为此命令的缩写形式。|
-|-ADAccountOrGroup|为卷添加基于 SID 的标识保护程序。 如果用户或计算机具有正确的凭据，则该卷将自动解锁。 指定计算机帐户时，将附加**$** 到计算机名称并指定 **– service** ，以指示应在 BitLocker 服务器的内容中而不是用户的情况下进行解锁。 你还可以使用 **-sid**作为此命令的缩写形式。|
+|-ADAccountOrGroup|为卷添加基于 SID 的标识保护程序。 如果用户或计算机具有正确的凭据，则该卷将自动解锁。 指定计算机帐户时，将附加 **$** 到计算机名称并指定 **– service** ，以指示应在 BitLocker 服务器的内容中而不是用户的情况下进行解锁。 你还可以使用 **-sid**作为此命令的缩写形式。|
 |-UsedSpaceOnly|将加密模式设置为仅加密已用空间。 包含已用空间的卷部分将被加密，但可用空间不会被加密。 如果未指定此选项，则卷上的所有已用空间和可用空间都将加密。 你还可以将**用作**此命令的缩写形式。|
 |-encryptionMethod|配置加密算法和密钥大小。 你还可以使用 **-em**作为此命令的缩写形式。|
 |-skiphardwaretest|开始加密而不进行硬件测试。 你还可以使用 **-s**作为此命令的缩写形式。|
@@ -85,5 +85,5 @@ manage-bde –on C: -fet Hardware
 
 ## <a name="additional-references"></a>其他参考
 
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

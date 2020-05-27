@@ -9,32 +9,32 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1dd65c0b4cc9709b54f95a6850c7d118f1d6963f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c1718d1d74849949769d4d8fffbf3d93cc088742
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721451"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821027"
 ---
 # <a name="telnet"></a>telnet
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 与运行 telnet 服务器服务的计算机通信。
- 
+
 ## <a name="syntax"></a>语法
 ```
 telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 | ansi | vtnt}] [<Host> [<Port>]] [/?]
 ```
 #### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |/a|尝试自动登录。 除了使用当前登录的用户的名称外，与/l 选项相同。|
-|/e \<EscapeChar>|用于输入 telnet 客户端提示符的转义符。|
-|/f \<FileName>|用于客户端日志记录的文件名。|
-|/l \<用户名>|指定要在远程计算机上登录的用户名。|
+|/e \< EscapeChar>|用于输入 telnet 客户端提示符的转义符。|
+|/f \< FileName>|用于客户端日志记录的文件名。|
+|/l \< 用户名>|指定要在远程计算机上登录的用户名。|
 |/t {vt100 &#124; vt52 &#124; ansi &#124; vtnt}|指定终端类型。 支持的终端类型为 vt100、vt52、ansi 和 vtnt。|
-|\<主机> [\<端口>]|指定要连接到的远程计算机的主机名或 IP 地址，还可以指定要使用的 TCP 端口（默认为 TCP 端口23）。|
+|\<主机> [ \< 端口>]|指定要连接到的远程计算机的主机名或 IP 地址，还可以指定要使用的 TCP 端口（默认为 TCP 端口23）。|
 |/?|在命令提示符下显示帮助。 或者，可以键入/h。|
 
 ## <a name="remarks"></a>备注
@@ -54,4 +54,4 @@ telnet /f telnetlog.txt telnet.microsoft.com 44
 ## <a name="additional-references"></a>其他参考
 -   [安装 telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)
 -   [telnet 技术参考](https://technet.microsoft.com/library/cc754987(v=ws.10).aspx)
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)

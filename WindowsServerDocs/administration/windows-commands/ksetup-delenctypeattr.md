@@ -1,6 +1,6 @@
 ---
-title: ksetup： delenctypeattr
-description: '* * * * 的参考主题'
+title: ksetup delenctypeattr
+description: Ksetup delenctypeattr 的参考主题，该主题删除域的 "加密类型" 属性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,63 +9,67 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2908cc0a095a6985c11f7885766926b7f0354ab0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b3076a25b619615402a599bd8aaa6ce9d10d4fe0
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724705"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817937"
 ---
-# <a name="ksetupdelenctypeattr"></a>ksetup： delenctypeattr
+# <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 
+删除域的 "加密类型" 属性。 成功或失败完成时，将显示一条状态消息。
 
-
-删除域的 "加密类型" 属性。
+可以通过运行**klist**命令并查看输出来查看 Kerberos 票证授予票证（TGT）和会话密钥的加密类型。 可以通过运行命令来设置要连接和使用的域 `ksetup /domain <domainname>` 。
 
 ## <a name="syntax"></a>语法
 
 ```
-ksetup /delenctypeattr <DomainName> 
+ksetup /delenctypeattr <domainname>
 ```
 
-#### <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|\<DomainName>|要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。|
+| 参数 | 说明 |
+| ----------| ----------- |
+| `<domainname>` | 要与之建立连接的域的名称。 可以使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。 |
 
-## <a name="remarks"></a>备注
+### <a name="examples"></a>示例
 
-若要查看 Kerberos 票证授予票证（TGT）的加密类型和会话密钥，请运行**klist**命令并查看输出。
+若要确定在此计算机上设置的当前加密类型，请键入：
 
-成功或失败完成时，将显示一条状态消息。
-
-若要设置要连接到并使用的域，请运行**ksetup/Domain \<DomainName>** 命令。
-
-## <a name="examples"></a>示例
-
-确定在此计算机上设置的当前加密类型：
 ```
 klist
 ```
-将域设置为 mit.contoso.com：
+
+若要将域设置为 mit.contoso.com，请键入：
+
 ```
 ksetup /domain mit.contoso.com
 ```
-验证域的加密类型属性：
+
+若要验证域的加密类型属性，请键入：
+
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
-删除域 mit.contoso.com 的 "设置加密类型" 属性：
+
+若要删除域 mit.contoso.com 的 "设置加密类型" 属性，请键入：
+
 ```
 ksetup /delenctypeattr mit.contoso.com
 ```
 
 ## <a name="additional-references"></a>其他参考
 
--   [Klist](klist.md)
--   [Ksetup:domain](ksetup-domain.md)
--   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
--   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
--   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
+
+- [klist 命令](klist.md)
+
+- [ksetup 命令](ksetup.md)
+
+- [ksetup 域命令](ksetup-domain.md)
+
+- [ksetup addenctypeattr 命令](ksetup-addenctypeattr.md)
+
+- [ksetup setenctypeattr 命令](ksetup-setenctypeattr.md)

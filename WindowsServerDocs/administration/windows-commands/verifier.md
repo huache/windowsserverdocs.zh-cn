@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d98ebf3f6de9a5fbac33d983ebda581b0c6c385b
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 679681593ba8c94db8462f54cdccf976700debce
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437072"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821407"
 ---
 # <a name="verifier"></a>verifier
 
@@ -49,4 +49,4 @@ verifier /log <LogFileName> [/interval <seconds>]
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="additional-references"></a>其他参考
--   - [命令行语法项](command-line-syntax-key.md)
+- [命令行语法项](command-line-syntax-key.md)
