@@ -1,6 +1,6 @@
 ---
 title: manage-bde 锁
-description: '* * * * 的参考主题'
+description: Manage-bde lock 命令的参考主题，它会锁定受 BitLocker 保护的驱动器，以防止对其进行访问，除非提供了解锁密钥。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,38 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84d883ddbf75c2e605afcbb761a54fcb5b0d7713
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 340dc7eb07eaab2583e8b325042803fd8fc82184
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820727"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222880"
 ---
-# <a name="manage-bde-lock"></a>manage-bde： lock
-
-
+# <a name="manage-bde-lock"></a>manage-bde 锁
 
 锁定受 BitLocker 保护的驱动器，以防止对其进行访问，除非提供了解锁密钥。
 
 ## <a name="syntax"></a>语法
 
 ```
-manage-bde -lock [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde -lock [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 ```
 
-#### <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|说明|
-|---------|-----------|
-|\<驱动器>|表示驱动器号后跟一个冒号。|
-|-computername|指定 Manage-bde.exe 将用于修改另一台计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。|
-|\<Name>|表示要修改 BitLocker 保护的计算机的名称。 接受的值包括计算机的 NetBIOS 名称和计算机的 IP 地址。|
-|-? 或 /?|在命令提示符下显示 brief Help。|
-|-help 或-h|在命令提示符下显示完整的帮助。|
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<drive>` | 表示驱动器号后跟一个冒号。 |
+| -computername | 指定 manage-bde.exe 将用于修改另一台计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
+| `<name>` | 表示要修改 BitLocker 保护的计算机的名称。 接受的值包括计算机的 NetBIOS 名称和计算机的 IP 地址。 |
+| -? 或 /? | 在命令提示符下显示 brief Help。 |
+| -help 或-h | 在命令提示符下显示完整的帮助。 |
 
-## <a name="examples"></a>示例
+### <a name="examples"></a>示例
 
-介绍如何使用 **-lock**命令锁定数据驱动器 D。
+若要锁定数据驱动器 D，请键入：
+
 ```
 manage-bde –lock D:
 ```
@@ -48,4 +47,5 @@ manage-bde –lock D:
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
--   [Manage-bde](manage-bde.md)
+
+- [manage-bde 命令](manage-bde.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d84dd52dd9d2d8ca45dc42df88a59cd4c16b54c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 10d19f6c86d09c698a6871ae0f0e530c5189c0ca
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820477"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222829"
 ---
 # <a name="logman-create-alert"></a>logman 创建警报
 
@@ -77,4 +77,6 @@ logman create alert new_alert -th \Processor(_Total)\% Processor time>50
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman update alert 命令](logman-update-alert.md)
+
+- [logman 命令](logman.md)

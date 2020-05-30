@@ -4,31 +4,31 @@ description: Telnet 集的参考主题，用于设置选项。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 67316b5f-9c6f-43e3-86d5-dcff9ae2ac3e vhorne
+ms.assetid: 67316b5f-9c6f-43e3-86d5-dcff9ae2ac3e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a785a9448860752c79dc1c2369b8dd870409990
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 477c2ee259301af26870339a2c329c2c3502963b
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721485"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222677"
 ---
 # <a name="telnet-set"></a>telnet：设置
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-设置选项。   
+设置选项。
 
-## <a name="syntax"></a>语法  
-```  
-set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] [logging] [mode {console | stream}] [ntlm] [term {ansi | vt100 | vt52 | vtnt}] [?]  
-```  
-#### <a name="parameters"></a>参数  
+## <a name="syntax"></a>语法
+```
+set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] [logging] [mode {console | stream}] [ntlm] [term {ansi | vt100 | vt52 | vtnt}] [?]
+```
+#### <a name="parameters"></a>参数
 
-|                    参数                     |                                                                                                                                              描述                                                                                                                                              |
+|                    参数                     |                                                                                                                                              说明                                                                                                                                              |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                     bsasdel                      |                                                                                                                                 发送**Backspace**作为**删除**。                                                                                                                                  |
 |                       crlf                       |                                                                                                        按下**Enter**键时，发送 CR & LF （0x0D，0x 0A）。 称为 "新行模式"。                                                                                                        |
@@ -42,13 +42,13 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 | 术语 {ansi &#124; vt100 &#124; vt52 &#124; vtnt} |                                                                                                                                        设置终端类型。                                                                                                                                        |
 |                        ?                         |                                                                                                                                    显示此命令的帮助。                                                                                                                                    |
 
-## <a name="remarks"></a>备注  
-1. 您可以使用 "取消**设置**" 命令关闭先前设置的选项。  
-2. 在非英语版本的 telnet 上， **codeset** <option>可用。 **Codeset** <option>将当前的代码集设置为一个选项，该选项可以是以下任意一项： **DEC Kanji** **shift JIS**、 **NEC Kanji****日语 EUC**、jis **78****日本** 应在远程计算机上设置相同的代码集。  
-   ## <a name="examples"></a>示例  
-   设置日志文件并开始记录到本地文件 tnlog  
-   ```  
-   set logfile tnlog.txt  
-   ```  
-   ## <a name="additional-references"></a>其他参考  
-3. - [命令行语法项](command-line-syntax-key.md)  
+## <a name="remarks"></a>备注
+1. 您可以使用 "取消**设置**" 命令关闭先前设置的选项。
+2. 在非英语版本的 telnet 上， **codeset** <option> 可用。 **Codeset** <option>将当前的代码集设置为一个选项，该选项可以是以下任意一项： **SHIFT JIS**、**日语 EUC**、 **Jis 日本汉字** **、** **jis 汉字（78）**、**十进制日文汉字** 应在远程计算机上设置相同的代码集。
+   ## <a name="examples"></a>示例
+   设置日志文件并开始记录到本地文件 tnlog
+   ```
+   set logfile tnlog.txt
+   ```
+   ## <a name="additional-references"></a>其他参考
+3. - [命令行语法项](command-line-syntax-key.md)

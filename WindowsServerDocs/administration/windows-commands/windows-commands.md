@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 7baec3bbe532bbcedb8c17628fd88d2c8eac34c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cfb391c68cfb551ef2179e7210dff3a26d540fde
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720735"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222634"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -24,40 +24,40 @@ ms.locfileid: "82720735"
 
 若要查找有关特定命令的信息，请在下面的 A-z 菜单中，单击命令开头的字母，然后单击命令名称。
 
-[A](#a) |
-[B](#b) | 
-[M](#m)[D](#d) | 
-[V](#v)[C](#c) |
-[J](#j) | 
-[W](#w)[F](#f) | 
-[S](#s)[E](#e) | 
-[R](#r)[G](#g) | 
-[U](#u)[H](#h) | 
-[X](#x) [I](#i) | 
-[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H I J | 
-K L M | 
-N | 
-O | 
-P | 
-Q R S T U V W X | | 
- | 
- | 
- | 
- | 
- | 
- | 
- | 
-Y |Z
+[一个](#a)  |
+[B](#b)  |
+[C](#c)  |
+[D](#d)  |
+[E](#e)  |
+[F](#f)  |
+[G](#g)  |
+[H](#h)  |
+[I](#i)  |
+[J](#j)  |
+[K](#k)  |
+[L](#l)  |
+[M](#m)  |
+[N](#n)  |
+[O](#o)  |
+[P](#p)  |
+[Q](#q)  |
+[R](#r)  |
+[S](#s)  |
+[T](#t)  |
+[U](#u)  |
+[V](#v)  |
+[W](#w)  |
+[X](#x) |Y |Z
 
 ## <a name="prerequisites"></a>先决条件
 
 本主题中包含的信息适用于：
 
--   Windows Server Standard 2012 R2
+-   Windows Server 2019
 -   Windows Server（半年频道）
 -   Windows Server 2016
 -   Windows Server 2012 R2
--   Windows Server 2012 
+-   Windows Server 2012
 -   Windows Server 2008 R2
 -   Windows 2008 Server
 -   Windows 10
@@ -71,48 +71,48 @@ Windows 有两个命令 shell：命令 shell 和[PowerShell](https://docs.micros
 
 PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 PowerShell 命令。 Cmdlet 类似于 Windows 命令，但提供更可扩展的脚本语言。 可以在 Powershell 中运行 Windows 命令和 PowerShell cmdlet，但命令 shell 只能运行 Windows 命令，而不能运行 PowerShell cmdlet。
 
-对于最新的 Windows automation 最新功能，建议使用 PowerShell，而不是 Windows 命令或 windows 脚本宿主来实现 Windows automation。 
+对于最新的 Windows automation 最新功能，建议使用 PowerShell，而不是 Windows 命令或 windows 脚本宿主来实现 Windows automation。
 > [!NOTE]
->你还可以下载和安装 powershell [Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，即 powershell 的开源版本。 
+>你还可以下载和安装 powershell [Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)，即 powershell 的开源版本。
 
 > [!CAUTION]
 > 不正确地编辑注册表可能会对系统造成严重损坏。 在对注册表进行以下更改之前，应备份计算机上任何有价值的数据。
 
 > [!NOTE]
 > 若要在计算机或用户登录会话上的命令行界面中启用或禁用文件和目录名完成，请运行**regedit.exe**并设置以下**reg_DWOrd 值**：
-> 
+>
 > HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
-> 
+>
 > 若要设置**reg_DWOrd**值，请将控制字符的十六进制值用于特定函数（例如， **0 9**为 Tab， **0 08**为 Backspace）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
 
 ## <a name="command-line-reference-a-z"></a>命令行参考 a-z
 
 若要查找有关特定 Windows 命令的信息，请在以下 a-z 菜单中，单击该命令的开头字母，然后单击命令名称。
 
-[A](#a) |
-[B](#b) | 
-[M](#m)[D](#d) | 
-[V](#v)[C](#c) |
-[J](#j) | 
-[W](#w)[F](#f) | 
-[S](#s)[E](#e) | 
-[R](#r)[G](#g) | 
-[U](#u)[H](#h) | 
-[X](#x) [I](#i) | 
-[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H I J | 
-K L M | 
-N | 
-O | 
-P | 
-Q R S T U V W X | | 
- | 
- | 
- | 
- | 
- | 
- | 
- | 
-Y |Z
+[一个](#a)  |
+[B](#b)  |
+[C](#c)  |
+[D](#d)  |
+[E](#e)  |
+[F](#f)  |
+[G](#g)  |
+[H](#h)  |
+[I](#i)  |
+[J](#j)  |
+[K](#k)  |
+[L](#l)  |
+[M](#m)  |
+[N](#n)  |
+[O](#o)  |
+[P](#p)  |
+[Q](#q)  |
+[R](#r)  |
+[S](#s)  |
+[T](#t)  |
+[U](#u)  |
+[V](#v)  |
+[W](#w)  |
+[X](#x) |Y |Z
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -351,14 +351,14 @@ Y |Z
   -   [ksetup： setenctypeattr](ksetup-setenctypeattr.md)
   -   [ksetup： getenctypeattr](ksetup-getenctypeattr.md)
   -   [ksetup： addenctypeattr](ksetup-addenctypeattr.md)
-  -   [ksetup： delenctypeattr](ksetup-delenctypeattr.md) 
+  -   [ksetup： delenctypeattr](ksetup-delenctypeattr.md)
 - [ktmutil](ktmutil.md)
 - [ktpass](ktpass.md)
 
 ### <a name="l"></a>L
 - [label](label.md)
 - [lodctr](lodctr.md)
-- [logman](logman.md)
+- [logman 命令](logman.md)
   -   [logman create](logman-create.md)
   -   [logman query](logman-query.md)
   -   [logman 开始 &124;stop](logman-start-stop.md)
@@ -527,7 +527,7 @@ Y |Z
 - [scwcmd](Scwcmd.md)
   -   [scwcmd：分析](scwcmd-analyze.md)
   -   [scwcmd：配置](scwcmd-configure.md)
-  -   [scwcmd：注册](scwcmd-register.md) 
+  -   [scwcmd：注册](scwcmd-register.md)
   -   [scwcmd： rollback](scwcmd-rollback.md) 
   -   [scwcmd：转换](scwcmd-transform.md) 
   -   [scwcmd： view](scwcmd-view.md) 
@@ -589,7 +589,7 @@ Y |Z
 -   [verifier](verifier.md)
 -   [verify](verify_1.md)
 -   [vol](vol.md)
--   [list](vssadmin.md)- 
+-   [list](vssadmin.md)-
 
 ### <a name="w"></a>W
 - [waitfor](waitfor.md)

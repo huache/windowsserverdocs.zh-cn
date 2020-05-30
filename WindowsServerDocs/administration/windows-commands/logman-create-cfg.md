@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38d6b02351e515230a0041369217ba248ada4793
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 518b0c7bddf1d74522a376aafb7da85abb849ac4
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820457"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222978"
 ---
 # <a name="logman-create-cfg"></a>logman 创建 cfg
 
@@ -78,4 +78,6 @@ logman create cfg cfg_log -mgt root\wmi:select * FROM MSNdis_Vendordriverversion
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman update cfg 命令](logman-update-cfg.md)
+
+- [logman 命令](logman.md)

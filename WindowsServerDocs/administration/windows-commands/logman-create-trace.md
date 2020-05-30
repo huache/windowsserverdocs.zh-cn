@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08a9b0a74c6da894eeadef8aef86f25761d6616e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 015fb7842146e372b36c71fe95a3598bdfa48676
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820447"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222987"
 ---
 # <a name="logman-create-trace"></a>logman 创建跟踪
 
@@ -69,7 +69,7 @@ logman create trace <[-n] <name>> [options]
 
 ### <a name="examples"></a>示例
 
-若要创建名为 trace_log 的事件跟踪数据收集器，请使用不小于16且不超过256的缓冲区，每个缓冲区大小为64kb，将结果放置在 c:\logfile 中，请键入：
+若要创建名为*trace_log*的事件跟踪数据收集器，请使用不小于16且不超过256的缓冲区，每个缓冲区大小为64kb，将结果放置在 c:\logfile 中，请键入：
 
 ```
 logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
@@ -79,4 +79,6 @@ logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman update trace 命令](logman-update-trace.md)
+
+- [logman 命令](logman.md)

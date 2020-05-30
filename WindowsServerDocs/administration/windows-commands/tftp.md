@@ -4,17 +4,17 @@ description: 在远程计算机之间传输文件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef vhorne
+ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb9977d0bc4f45b610d8bf3409c6beeadfaf7ee5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8b3674cbfdbc01811ece57e2f9cbbea3aa31251d
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821017"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223047"
 ---
 # <a name="tftp"></a>tftp
 
@@ -31,11 +31,11 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 |参数|说明|
 |-------|--------|
 |-i|指定二进制图像传输模式（也称为八进制模式）。 在二进制图像模式下，文件以一字节单位传输。 传输二进制文件时，请使用此模式。 如果省略 **-i** ，则文件将在 ASCII 模式下传输。 这是默认传输模式。 此模式将行尾（EOL）字符转换为指定计算机的相应格式。 在传输文本文件时使用此模式。 如果文件传输成功，将显示数据传输速率。|
-|\<主机\>|指定本地或远程计算机。|
+|\<Host\>|指定本地或远程计算机。|
 |put|将本地计算机上的文件*源*传输到远程计算机上的文件*目标*。 由于 tftp 协议不支持用户身份验证，因此用户必须登录到远程计算机上，并且这些文件必须可在远程计算机上写入。|
 |get|将远程计算机上的文件*目标*传输到本地计算机上的文件*源*。|
-|\<数据源\>|指定要传输的文件。|
-|\<目标\>|指定文件传输位置。|
+|\<Source\>|指定要传输的文件。|
+|\<Destination\>|指定文件传输位置。|
 
 ## <a name="remarks"></a>备注
 -   您可以使用 "添加功能向导" 安装 tftp 客户端。
