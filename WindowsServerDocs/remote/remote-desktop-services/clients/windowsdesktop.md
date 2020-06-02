@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/28/2020
+ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 368dc3889c5275512e345c26fcef504c6ceaa8c2
-ms.sourcegitcommit: d06650cfab2972551c3a269b3271596f55c1bd3b
+ms.openlocfilehash: c229eefbc0cc00ed1af940cd986c89e979873d29
+ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726708"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84025498"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows 桌面客户端入门
 
@@ -56,14 +56,28 @@ ms.locfileid: "82726708"
 
 ### <a name="subscribe-to-a-workspace"></a>订阅工作区
 
-1. 在客户端的主页（也称为“连接中心”）中，点击“订阅”。
-2. 出现提示时，请使用用户帐户登录。
-3. 资源将显示在“连接中心”中（按工作区分组）。
-
-可以通过以下方法之一启动资源：
+可通过两种方式订阅工作区。 客户端可尝试发现通过你的工作或学校帐户向你提供的资源，你也可直接指定当客户端无法找到你的资源时用来查找这些资源的 URL。 订阅工作区后，可通过下述方法之一启动资源：
 
 - 访问“连接中心”，然后双击资源以启动它。
 - 还可以访问“开始”菜单并查找带有“工作区”名称的文件夹，或在搜索栏中输入资源名称。
+
+#### <a name="subscribe-with-a-user-account"></a>使用用户帐户进行订阅
+
+1. 在客户端的主页上，点击“订阅”。
+2. 出现提示时，请使用用户帐户登录。
+3. 资源将显示在“连接中心”中（按工作区分组）。
+
+#### <a name="subscribe-with-url"></a>使用 URL 进行订阅
+
+1. 在客户端的主页上，点击“使用 URL 进行订阅”。
+2. 输入工作区 URL 或你的电子邮件地址：
+   - 如果使用工作区 URL，请输入管理员提供给你的 URL。 如果从 Windows 虚拟桌面访问资源，可使用下列 URL 之一：
+     - Windows 虚拟桌面 2019 秋季版：`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
+     - Windows 虚拟桌面 2020 春季版：`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+   - 若要使用电子邮件地址，请输入你的电子邮件地址。 这会指示客户端搜索与你的电子邮件地址关联的 URL，前提是管理员已设置[电子邮件发现](../rds-email-discovery.md)。
+3. 点击“下一步”。
+4. 出现提示时，请使用用户帐户登录。
+5. 资源将显示在“连接中心”中（按工作区分组）。
 
 ### <a name="workspace-details"></a>工作区详细信息
 

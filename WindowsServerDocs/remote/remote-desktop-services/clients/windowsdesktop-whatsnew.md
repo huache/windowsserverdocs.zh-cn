@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/12/2020
+ms.date: 05/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: de7c685e544fd0bb193f995aeff3a20a29bd6db5
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 0d49c49def8b110f42a6d56354c73e5a75b04b7e
+ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235046"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84025508"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -26,15 +26,18 @@ ms.locfileid: "83235046"
 
 |用户组 |版本  |
 |-----------|---------|
-|公用     |1.2.945  |
-|Insider    |1.2.1009 |
+|公用     |1.2.1026 |
+|Insider    |1.2.1026 |
 
-## <a name="updates-for-version-121009"></a>版本 1.2.1009 的更新
+## <a name="updates-for-version-121026"></a>针对版本 1.2.1026 的更新
 
-发布日期：2020 年 5 月 12 日
+*发布日期：2020/05/27*
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wseE)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wnf3)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wCIB)
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
+- 进行订阅时，现可选择帐户而不是键入电子邮件地址。
+- 添加了新的“使用 URL 进行订阅”选项，你可用它来指定你要订阅的工作区的 URL，或在我们无法自动找到你的资源的情况下使用[电子邮件发现](../rds-email-discovery.md)（若可用）。 这与其他远程桌面客户端中的订阅流程很相似。 这可用于直接订阅 WVD 2020 春季版更新工作区。
+- 现支持使用新的 [URI 方案](remote-desktop-uri.md)订阅工作区，该方案可随附电子邮件发送给用户，也可添加到支持网站中。
 - 新增了“连接信息”对话框，它提供了桌面会话和应用会话的客户端、网络和服务器详细信息。 可以在全屏模式下从连接栏访问此对话框，也可以在窗口化模式下从“系统”菜单访问它。
 - 在窗口化模式下启动的桌面会话现在始终最大化，而不是在最大化窗口时进入全屏。 使用“系统”菜单中的“全屏”选项可以进入全屏。
 - “取消订阅”提示现在显示警告图标，并以项目符号列表的形式显示工作区名称。
@@ -49,7 +52,7 @@ ms.locfileid: "83235046"
 
 ## <a name="updates-for-version-12945"></a>版本 1.2.945 的更新
 
-发布日期：2020 年 4 月 28 日
+*发布日期：* 2020 年 4 月 28 日
 
 下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNM)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNO)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vuSV)
 

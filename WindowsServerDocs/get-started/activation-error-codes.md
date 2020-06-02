@@ -7,12 +7,12 @@ ms.technology: server-general
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c50353316db4288f01893125ecd651db63cbb7
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8a550ddd72dcdf8c1967fe4740dc0fe5f2ad93e7
+ms.sourcegitcommit: df94dac422d13566c32e1cdb8c6e7a4e82747947
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826350"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84205628"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>根据 Windows 激活错误代码解决问题
 
@@ -33,7 +33,7 @@ Microsoft 支持和恢复助手 (SaRA) 简化了 Windows KMS 激活的故障排�
 
 此工具将尝试激活 Windows。 如果返回激活错误代码，此工具会显示已知错误代码的目标解决方案。
 
-支持以下错误代码：0xC004F038、0xC004F039、0xC004F041、0xC004F074、0xC004C008。
+支持以下错误代码：0xC004F038、0xC004F039、0xC004F041、0xC004F074、0xC004C008、0x8007007b、0xC004C003、0x8007232B。
 
 ## <a name="summary-of-error-codes"></a>错误代码摘要
 
@@ -99,7 +99,7 @@ Microsoft 支持和恢复助手 (SaRA) 简化了 Windows KMS 激活的故障排�
 
 #### <a name="resolution"></a>解决方法
 
-在提升的命令提示符窗口中运行 **slmgr.vbs**。 为此，请在“开始”  菜单中右键单击“cmd.exe”  ，然后选择“以管理员身份运行”  。  
+在提升的命令提示符窗口中运行 **slmgr.vbs**。 为此，请在“开始”菜单中右键单击“cmd.exe”，然后选择“以管理员身份运行”。  
 
 ### <a name="0x8007007b-dns-name-does-not-exist"></a>0x8007007b DNS 名称不存在
 
@@ -308,9 +308,9 @@ Windows 7 批量版仅获得升级许可。 Microsoft 不支持在未安装合�
   > [!NOTE]
   > 如果在尝试激活时收到错误 0x80072ee2，请改用后续的电话激活方法。
 - 按照这些步骤操作，通过电话激活：
-   1. 运行 slmgr /dti，然后记录安装 ID 的值  。 </li>
+   1. 运行 slmgr /dti，然后记录安装 ID 的值。 </li>
    1. 请联系 [Microsoft 许可证激活中心](https://www.microsoft.com/Licensing/existing-customer/activation-centers)并提供安装 ID 以接收确认 ID。</li>
-   1. 若要通过使用确认 ID 激活，请运行 slmgr /atp &lt;Confirmation ID&gt;  。
+   1. 若要通过使用确认 ID 激活，请运行 slmgr /atp &lt;Confirmation ID&gt;。
 
 ### <a name="0xc004f038-the-count-reported-by-your-key-management-service-kms-is-insufficient"></a>0xC004F038 你的密钥管理服务(KMS)报告的计数不足
 
