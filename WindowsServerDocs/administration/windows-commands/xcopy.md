@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: eba7092a9a26b25b1fe77b39b8098d117b38981a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c55d6ae5ff701555eb9bfb7135ffa28692bd4391
+ms.sourcegitcommit: 4894649cc47dfa535306cc334871f81155198f76
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820997"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84254720"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -32,8 +32,8 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 |参数|说明|
 |---------|-----------|
-|\<源>|必需。 指定要复制的文件的位置和名称。 此参数必须包含驱动器或路径。|
-|[ \< 目标>]|指定要复制的文件的目标。 此参数可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
+|\<Source>|必需。 指定要复制的文件的位置和名称。 此参数必须包含驱动器或路径。|
+|[\<Destination>]|指定要复制的文件的目标。 此参数可以包含驱动器号和冒号、目录名称、文件名或它们的组合。|
 |/W|显示以下消息，并在开始复制文件之前等待你的响应：</br>**按任意键开始复制文件**|
 |/p|提示您确认是否要创建每个目标文件。|
 |/c|忽略错误。|
@@ -192,7 +192,7 @@ copyit c:\prgmcode b:
 
 命令解释器会将 *%1*和**B：** 替换为 *%2*的**C:\Prgmcode** ，**并使用** **/e**和 **/s**命令行选项。 如果**xcopy**遇到错误，批处理程序将读取退出代码，并转到相应**IF ERRORLEVEL**语句中指示的标签，然后显示相应的消息并退出批处理程序。
 
-**9.** 此示例为所有非空目录，加上其名称与星号符号给定的模式相匹配的文件。
+**9.** 此示例复制所有非空目录，并复制其名称与星号符号给定的模式匹配的文件。
 
 ```
 xcopy .\toc*.yml ..\..\Copy-To\ /S /Y
@@ -208,10 +208,10 @@ rem  3 File(s) copied
 
 ## <a name="additional-references"></a>其他参考
 
--   [复制](copy.md)
--   [移动](move.md)
--   [目录](dir.md)
--   [恶性](attrib.md)
--   [Diskcopy](diskcopy.md)
--   [如果](if.md)
+- [复制](copy.md)
+- [移动](move.md)
+- [目录](dir.md)
+- [恶性](attrib.md)
+- [Diskcopy](diskcopy.md)
+- [如果](if.md)
 - [命令行语法项](command-line-syntax-key.md)

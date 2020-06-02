@@ -1,23 +1,26 @@
 ---
-title: 在迁移 mode1 中安装 Windows Server Essentials
+title: 在迁移模式下安装 Windows Server Essentials
 description: 描述如何使用 Windows Server Essentials
-ms.date: 10/03/2016
+ms.date: 04/29/2020
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 977922d8f2af23afc058162e7455ac5099e4325b
-ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
+ms.custom:
+- CI ID 117135
+- CSSTroubleshoot
+ms.openlocfilehash: e1a5efc373b884051b538f3f6cd09fecd34c7e09
+ms.sourcegitcommit: 4894649cc47dfa535306cc334871f81155198f76
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404577"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84254700"
 ---
-# <a name="install-windows-server-essentials-in-migration-mode1"></a>在迁移 mode1 中安装 Windows Server Essentials
+# <a name="install-windows-server-essentials-in-migration-mode"></a>在迁移模式下安装 Windows Server Essentials
 
->适用于： Windows Server 2012 Essentials
+> 适用于： Windows Server 2012 Essentials
 
 你的网络中只能有一台运行 Windows Server Essentials 的服务器，并且该服务器必须是网络的域控制器。  
   
