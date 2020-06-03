@@ -4,16 +4,16 @@ description: 有关存储迁移服务的常见问题，如从一台服务器迁�
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 08/19/2019
+ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a28b25c55b9ad66cd16f3d9e370fec22ec0f2a5d
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 19f114dc663351f1b5d071340acf9c8a3de41617
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125138"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306506"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>存储迁移服务常见问题（FAQ）
 
@@ -38,7 +38,7 @@ ms.locfileid: "77125138"
 
 ## <a name="are-clusters-supported-as-sources-or-destinations"></a>群集是否支持作为源或目标？
 
-在安装累积更新[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)或后续更新后，存储迁移服务支持从和群集迁移到群集。 这包括从源群集迁移到目标群集以及从独立源服务器迁移到目标群集，以实现设备合并。 
+在安装累积更新[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)或后续更新后，存储迁移服务支持从和群集迁移到群集。 这包括从源群集迁移到目标群集以及从独立源服务器迁移到目标群集，以实现设备合并。 但不能将群集迁移到独立服务器。 
 
 ## <a name="do-local-groups-and-local-users-migrate"></a>本地组和本地用户是否迁移？
 
@@ -62,18 +62,18 @@ ms.locfileid: "77125138"
     - CA 超时
     - 并发用户限制
     - 持续可用
-    - 说明           
-    - 加密数据
+    - 描述           
+    - 对数据进行加密
     - 标识远程处理
     - 基础结构
     - 名称
-    - Path
-    - 划分
+    - 路径
+    - 范围内
     - 作用域名称
     - 安全描述符
     - 卷影副本
     - 特殊
-    - 权宜之计
+    - 临时
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>是否可以将多个服务器合并到一个服务器？
 
@@ -99,11 +99,21 @@ Windows Server 2019 中随附的存储迁移服务版本不支持迁移文件的
     
     FileTransferThreadCount
 
-   Windows Server 2019 中的有效范围为1到128。 更改之后，必须在所有参与迁移的计算机上重新启动存储迁移服务代理服务。 使用此设置时要小心;将其设置得更高可能需要额外的核心、存储性能和网络带宽。 如果将它设置得太高，则可能会导致性能下降，而不是默认设置。
+   Windows Server 2019 中的有效范围为1到512。 只要创建新作业，就不需要重新启动服务即可开始使用此设置。 使用此设置时要小心;将其设置得更高可能需要额外的核心、存储性能和网络带宽。 如果将它设置得太高，则可能会导致性能下降，而不是默认设置。
+
+- **更改默认的并行共享线程。** 存储迁移服务代理服务在给定作业中同时从8个共享复制。 可以通过在存储迁移服务 orchestrator 服务器上调整以下注册表 REG_DWORD 值名称，增加同时共享的线程数：
+
+    HKEY_Local_Machine \Software\Microsoft\SMS
+    
+    EndpointFileTransferTaskCount 
+
+   Windows Server 2019 中的有效范围为1到512。 只要创建新作业，就不需要重新启动服务即可开始使用此设置。 使用此设置时要小心;将其设置得更高可能需要额外的核心、存储性能和网络带宽。 如果将它设置得太高，则可能会导致性能下降，而不是默认设置。 
+   
+    FileTransferThreadCount 和 EndpointFileTransferTaskCount 的总和是指存储迁移服务可同时从作业中的一个源节点复制的文件数。 若要添加更多的并行源节点，请创建并运行更多的并发作业。
 
 - **添加内核和内存。**  强烈建议源、orchestrator 和目标计算机至少有两个处理器核心或两个个 vcpu，并且更多可能会显著地有助于清点和传输性能，尤其是在与 FileTransferThreadCount （以上）结合使用时。 当传输的文件大于常用的 Office 格式（千兆字节或更大）时，传输性能将从超过默认2GB 最小值的更多内存中受益。
 
-- **创建多个作业。** 创建具有多个服务器源的作业时，将按串行方式联系每个服务器以进行库存、传输和切换。 这意味着每个服务器必须在另一台服务器启动之前完成其阶段。 若要并行运行多个服务器，只需创建多个作业，每个作业只包含一个服务器。 SMS 最多支持100个同时运行的作业，这意味着单个 orchestrator 可以并行化许多 Windows Server 2019 目标计算机。 如果目标计算机是 Windows Server 2016 或 Windows Server 2012 R2，而不是在目标计算机上运行 SMS 代理服务，则我们不建议运行多个并行作业，orchestrator 必须执行所有传输本身，并可能成为产生. 服务器在单个作业中并行运行的功能是我们计划在更高版本的 SMS 中添加的一项功能。
+- **创建多个作业。** 创建具有多个服务器源的作业时，将按串行方式联系每个服务器以进行库存、传输和切换。 这意味着每个服务器必须在另一台服务器启动之前完成其阶段。 若要并行运行多个服务器，只需创建多个作业，每个作业只包含一个服务器。 SMS 最多支持100个同时运行的作业，这意味着单个 orchestrator 可以并行化许多 Windows Server 2019 目标计算机。 如果目标计算机是 Windows Server 2016 或 Windows Server 2012 R2，而不是在目标计算机上运行 SMS 代理服务，则我们不建议运行多个并行作业，orchestrator 必须执行所有传输本身，并可能成为瓶颈。 服务器在单个作业中并行运行的功能是我们计划在更高版本的 SMS 中添加的一项功能。
 
 - **将 SMB 3 用于 RDMA 网络。** 如果是从 Windows Server 2012 或更高版本的源计算机传输，则 SMB 2.x 支持 SMB Direct 模式和 RDMA 网络。 RDMA 将从主板 Cpu 传输的大多数 CPU 成本转移到内置 NIC 处理器，从而减少延迟和服务器 CPU 利用率。 此外，RDMA 网络（如 ROCE 和 iWARP）通常比典型的 TCP/以太网具有更高的带宽，其中包括25、50和每个接口的100Gb 速度。 使用 SMB 直通通常会将传输速度限制从网络移到存储自身。   
 
@@ -133,12 +143,13 @@ Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移
 存储迁移服务使用默认情况下在隐藏的 c:\programdata\microsoft\storagemigrationservice 文件夹中安装的可扩展存储引擎（ESE）数据库。 此数据库将在添加作业和传输完成时增长，并在迁移数百万个文件后，如果不删除作业，则会占用大量的驱动器空间。 如果数据库需要移动，请执行以下步骤：
 
 1. 停止 orchestrator 计算机上的 "存储迁移服务" 服务。
-2. 取得 `%programdata%/Microsoft/StorageMigrationService` 文件夹的所有权
+2. 取得文件夹的所有权 `%programdata%/Microsoft/StorageMigrationService`
 3. 添加你的用户帐户，以便对该共享及其所有文件和子文件夹拥有完全控制权。
 4. 将文件夹移动到 orchestrator 计算机上的另一个驱动器。
 5. 设置以下注册表 REG_SZ 值：
 
-    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath =*指向不同卷上的新数据库文件夹的路径*。 
+    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath =*指向不同卷上的新数据库文件夹的路径*
+    
 6. 确保系统对该文件夹的所有文件和子文件夹具有 "完全控制"
 7. 删除自己的帐户权限。
 8. 启动 "存储迁移服务" 服务。
@@ -155,7 +166,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移
 
 在传输 CSV 文件中找到的大多数错误都是 Windows 系统错误代码。 您可以通过查看[Win32 错误代码文档](https://docs.microsoft.com/windows/win32/debug/system-error-codes)来了解每个错误的含义。 
 
-## <a name="give-feedback"></a>什么是提供反馈、文件 bug 或获取支持的选项？
+## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a>什么是提供反馈、文件 bug 或获取支持的选项？
 
 提供有关存储迁移服务的反馈：
 

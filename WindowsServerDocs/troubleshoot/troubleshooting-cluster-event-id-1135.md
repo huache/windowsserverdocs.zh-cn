@@ -2,18 +2,16 @@
 title: 排查事件 ID 1135 的群集问题
 description: 描述如何排查事件 ID 1135 的群集服务启动问题。
 ms.date: 05/28/2020
-ms.openlocfilehash: 73357cc5b696a969de82123d3ca2a6fbb36fdc40
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: d59f8b89e89ea7ff42aecd79670465aee8d63524
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150455"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306526"
 ---
 # <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>排查事件 ID 1135 的群集问题
 
 本文将帮助你诊断和解决事件 ID 1135，该事件可能会在故障转移群集环境中的群集服务启动期间记录。
-
-本文介绍如何解决
 
 ## <a name="start-page"></a>起始页
 

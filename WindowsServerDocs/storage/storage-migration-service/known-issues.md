@@ -4,16 +4,16 @@ description: 有关存储迁移服务的已知问题和疑难解答支持，如�
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 02/10/2020
+ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: f8a1e70bba740875e19660d5a729a952c9fae8f2
-ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
+ms.openlocfilehash: 5a4a99434d67c08551d97589f8f2638e1024754d
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2020
-ms.locfileid: "80661068"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306496"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -30,7 +30,7 @@ ms.locfileid: "80661068"
 - 应用程序和服务日志 \ Microsoft \ Windows \ StorageMigrationService
 - 应用程序和服务日志 \ Microsoft \ Windows \ StorageMigrationService-Proxy
 
-如果需要收集这些日志以供脱机查看或发送到 Microsoft 支持部门，则 GitHub 上提供了一个开源 PowerShell 脚本：
+如果需要收集这些日志以供脱机查看或发送到 Microsoft 支持部门，GitHub 上提供了一个开源 PowerShell 脚本：
 
  [存储迁移服务帮助器](https://aka.ms/smslogs) 
 
@@ -40,7 +40,7 @@ ms.locfileid: "80661068"
 
 当使用1809版本的 Windows 管理中心来管理 Windows Server 2019 orchestrator 时，将看不到存储迁移服务的工具选项。 
 
-Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows Server 2019 1809 或更高版本的操作系统。 如果你使用它来管理较早的 Windows Server 操作系统或有问必答预览，则该工具将不会显示。 此行为是设计使然。 
+Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows Server 2019 1809 或更高版本的操作系统。 如果你使用它来管理较早的 Windows Server 操作系统或有问必答预览，则该工具将不会显示。 这是设计的行为。 
 
 若要解决此问题，请使用或升级到 Windows Server 2019 build 1809 或更高版本。
 
@@ -64,11 +64,11 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 
 使用 Windows 管理中心或 PowerShell 下载传输操作仅限错误的 CSV 日志时，收到错误消息：
 
- >   传输日志-请检查防火墙中是否允许进行文件共享。 ：发送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此请求操作在配置的超时（00:01:00）内未收到答复。 分配给此操作的时间可能没有达到一个更长的超时时间。 这可能是因为服务仍然在处理操作或服务无法发送答复消息。 请考虑增加操作超时（通过将通道/代理强制转换为 IContextChannel 并设置 OperationTimeout 属性），并确保服务能够连接到客户端。
+ >   传输日志-请检查防火墙中是否允许进行文件共享。 ：发送到 net.tcp：//localhost： 28940/sms/service/1/transfer 的此请求操作在配置的超时（00:01:00）内未收到答复。 分配给此操作的时间可能是更长超时的一部分。 这可能是由于服务仍在处理该操作或服务无法发送答复消息。 请考虑增加操作超时（通过将通道/代理强制转换为 IContextChannel 并设置 OperationTimeout 属性），并确保服务能够连接到客户端。
 
 此问题是由存储迁移服务允许的默认一分钟超时内无法筛选的传输文件数过多造成的。 
 
-若要解决此问题：
+若要解决此问题，请执行以下操作：
 
 1. 在 orchestrator 计算机上，使用 Notepad.exe 编辑 *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config*文件，将 "sendTimeout" 的默认值从1分钟更改为10分钟
 
@@ -90,7 +90,7 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 7. 右键单击 "WcfOperationTimeoutInMinutes"，然后单击 "修改"。 
 8. 在 "基本数据" 框中，单击 "Decimal"
 9. 在 "数值数据" 框中，键入 "10"，然后单击 "确定"。
-10. 退出注册表编辑器。
+10. 启动注册表编辑器。
 11. 尝试再次下载错误的 CSV 文件。 
 
 我们打算在更高版本的 Windows Server 2019 中更改此行为。  
@@ -136,7 +136,7 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>使用存储迁移服务预先播种数据时，DFSR 哈希不匹配
 
-使用存储迁移服务将文件传输到新目标，然后配置 DFS 复制（DFSR）通过 preseeded 复制或 DFSR 数据库克隆将数据复制到现有的 DFSR 服务器，所有文件都将遇到哈希不匹配，将重新复制。 使用 SMS 传输数据流、安全流、大小和属性后，它们看起来完全匹配。 检查具有 ICACLS 的文件或 DFSR 数据库克隆调试日志会显示以下内容：
+当使用存储迁移服务将文件传输到新目标，然后将 DFS 复制配置为通过 preseeded 复制或 DFS 复制数据库克隆将该数据复制到现有服务器时，所有文件都将遇到哈希不匹配，并重新复制。 使用存储迁移服务传输数据流、安全流、大小和属性后，它们看起来完全匹配。 检查具有 ICACLS 的文件或 DFS 复制数据库克隆调试日志显示：
 
 源文件：
 
@@ -260,7 +260,7 @@ DFSR 调试日志：
     Description:
     02/14/2020-13:18:21.097 [Erro] Failed device discovery stage SystemInfo with error: (0x80005000) Unknown error (0x80005000)   
   
-当你以用户主体名称（UPN）的形式提供迁移凭据（如 "meghan@contoso.com"）时，存储迁移服务中的代码缺陷会导致此错误。 存储迁移服务协调器服务无法正确分析此格式，这导致在域查找中为 KB4512534 和19H1 中的群集迁移支持添加了故障。
+当你以用户主体名称（UPN）的形式提供迁移凭据（例如 ""）时，存储迁移服务中的代码缺陷会导致此错误 meghan@contoso.com 。 存储迁移服务协调器服务无法正确分析此格式，这导致在域查找中为 KB4512534 和19H1 中的群集迁移支持添加了故障。
 
 若要解决此问题，请以 "域 \ 用户" 格式提供凭据，如 "Contoso\Meghan"。
 
@@ -301,9 +301,9 @@ DFSR 调试日志：
 
 此问题由[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新程序解决。
 
-## <a name="uninstalling-a-cumulutative-update-prevents-storage-migration-service-from-starting"></a>卸载 cumulutative 更新将导致存储迁移服务无法启动
+## <a name="uninstalling-a-cumulative-update-prevents-storage-migration-service-from-starting"></a>卸载累积更新会阻止存储迁移服务启动
 
-卸载 Windows Server 累积更新可能会使存储迁移服务无法启动。 若要解决此问题，你可以备份和删除存储迁移服务数据库：
+卸载 Windows Server 累积更新可能会使存储迁移服务无法启动。 若要解决此问题，可以备份和删除存储迁移服务数据库：
 
 1.  打开提升的 cmd 提示符，你是存储迁移服务协调器服务器上的管理员成员，然后运行：
 
@@ -343,11 +343,11 @@ DFSR 调试日志：
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-此问题是由较早版本的 Windows Server 中缺少的 API 导致的。 目前没有办法迁移 Windows Server 2008 和 Windows Server 2003 群集。 在 Windows Server 2008 R2 群集上，你可以执行清单和传输，然后手动更改群集的源文件服务器资源网络名称和 IP 地址，然后更改目标群集的网络名称和 IP 地址以匹配原始源，从而手动执行转换。 
+此问题是由较早版本的 Windows Server 中缺少的 API 导致的。 目前没有办法迁移 Windows Server 2008 和 Windows Server 2003 群集。 你可以在 Windows Server 2008 R2 群集上执行清单和传输，然后手动更改群集的源文件服务器资源网络名称和 IP 地址，然后更改目标群集的网络名称和 IP 地址以匹配原始源，从而手动执行转换。 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>在源计算机上的 "38% 映射网络接口" 上切换挂起使用 DHCP 时 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips"></a>在源计算机上的 "38% 映射网络接口" 上切换挂起使用静态 Ip 时 
 
-当尝试在源计算机上运行 cut 时，将源计算机设置为在一个或多个网络接口上使用新的静态（而非 DHCP） IP 地址时，剪切的会停滞在源 comnputer 上的 "38% 映射网络接口"。你会在 SMS 事件日志中收到以下错误：
+当尝试在源计算机上运行 cut 时，将源计算机设置为在一个或多个网络接口上使用新的静态（而非 DHCP） IP 地址时，剪切的会停滞在源计算机上的 "38% 映射网络接口"。在存储迁移服务事件日志中收到以下错误：
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
@@ -372,9 +372,13 @@ DFSR 调试日志：
 
 检查源计算机时，会显示原始 IP 地址无法更改。 
 
-如果在 Windows 管理中心的 "配置切换" 屏幕上选择了 "使用 DHCP"，则不会出现此问题，只在指定新的静态 IP 地址、子网和网关时才会出现此问题。 
+如果在 Windows 管理中心的 "配置切换" 屏幕上选择了 "使用 DHCP"，则不会出现此问题，这种情况仅在指定新的静态 IP 地址时才会发生。 
 
-此问题由[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新程序解决。
+此问题有两种解决方案： 
+
+1. 此问题已由[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新首次解决。 之前的代码缺陷阻止了静态 IP 地址的所有使用。
+
+2. 如果未在源计算机的网络接口上指定默认网关 IP 地址，则即使使用 KB4537818 更新也会出现此问题。 若要解决此问题，请使用网络连接 applet （NCPA）在网络接口上设置有效的默认 IP 地址。CPL）或 New-netroute Powershell cmdlet。   
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>比预期重新传输性能慢
 
@@ -389,7 +393,7 @@ DFSR 调试日志：
  1. 不迁移数据，也不会在目标上创建任何共享。
  2. Windows 管理中心中显示了红色错误符号，无错误消息
  3. 一个或多个 AD 用户和域本地组已更改其名称和/或 Windows 2000 以前的登录属性
- 4. 你会在 SMS orchestrator 中看到事件3509：
+ 4. 在存储迁移服务协调器上看到事件3509：
  
         Log Name:      Microsoft-Windows-StorageMigrationService/Admin
         Source:        Microsoft-Windows-StorageMigrationService
@@ -415,13 +419,13 @@ DFSR 调试日志：
 
 如果你已经运行了一次或多次传输：
 
- 1. 对 DC 使用以下 AD PowerShell 命令来查找任何已修改的用户或组（更改 SearchBase 以匹配域 dinstringuished 名称）： 
+ 1. 对 DC 使用以下 AD PowerShell 命令来查找任何已修改的用户或组（更改 SearchBase 以匹配域可分辨名称）： 
 
     ```PowerShell
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
     ```
    
- 2. 对于使用其原始名称返回的任何用户，编辑其 "用户登录名（Windows 之前2000）" 以删除存储迁移服务添加的随机字符后缀，使该用户能够登录。
+ 2. 对于使用其原始名称返回的任何用户，编辑其 "用户登录名（Windows 之前2000）" 以删除存储迁移服务添加的随机字符后缀，以便此用户可以登录。
  3. 对于使用其原始名称返回的任何组，编辑其 "组名（Windows 之前2000）" 以删除存储迁移服务添加的随机字符后缀。
  4. 对于其名称现在包含存储迁移服务添加的后缀的任何已禁用的用户或组，你可以删除这些帐户。 你可以确认以后是否添加了用户帐户，因为它们只包含域用户组，并且将创建与存储迁移服务传输开始时间匹配的日期/时间。
  
@@ -479,7 +483,7 @@ DFSR 调试日志：
        at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
        at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
 
-在此阶段，存储迁移服务协调器正在尝试执行远程注册表读取，以确定源计算机配置，但源服务器会拒绝该注册表路径不存在的情况。 这可能是以下原因引起的：
+在此阶段，存储迁移服务协调器正在尝试执行远程注册表读取，以确定源计算机配置，但源服务器会拒绝该注册表路径不存在的情况。 这可能是由于：
 
  - 源计算机上没有运行远程注册表服务。
  - 防火墙不允许从 Orchestrator 远程连接到源服务器。
@@ -488,7 +492,7 @@ DFSR 调试日志：
  
  ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在源计算机上的 "38% 映射网络接口" 上切换挂起 
 
-当尝试对源计算机运行 cut 时，剪切的会停滞在源 comnputer 上的 "38% 映射网络接口"。你会在 SMS 事件日志中收到以下错误：
+当尝试对源计算机运行 cut 时，剪切的会停滞在源计算机上的 "38% 映射网络接口" 阶段。在存储迁移服务事件日志中收到以下错误：
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
