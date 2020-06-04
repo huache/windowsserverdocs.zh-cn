@@ -1,6 +1,6 @@
 ---
 title: mountvol
-description: '* * * * 的参考主题'
+description: Mountvol 命令的参考主题，用于创建、删除或列出卷装入点。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,57 +9,58 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca3e4320499161194f87ceaca4f693ff997f3ba2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e024ed1e0684da4e1450343dfd097b43fde5c8f4
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723926"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354547"
 ---
 # <a name="mountvol"></a>mountvol
 
-
-
-创建、删除或列出卷装入点。
+创建、删除或列出卷装入点。 你还可以链接卷，而无需使用驱动器号。
 
 ## <a name="syntax"></a>语法
 
 ```
-mountvol [<Drive>:]<Path VolumeName>
-mountvol [<Drive>:]<Path> /d
-mountvol [<Drive>:]<Path> /l
-mountvol [<Drive>:]<Path> /p
+mountvol [<drive>:]<path volumename>
+mountvol [<drive>:]<path> /d
+mountvol [<drive>:]<path> /l
+mountvol [<drive>:]<path> /p
 mountvol /r
-mountvol [/n | /e]
-mountvol <Drive>: /s
+mountvol [/n|/e]
+mountvol <drive>: /s
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|[\<驱动器>：]<Path>|指定装入点将驻留的现有 NTFS 目录。|
-|\<VolumeName>|指定作为装入点目标的卷名称。 卷名使用以下语法，其中*GUID*是全局唯一标识符：</br>`\\\\?\Volume\{GUID}\`</br>需要括号 {}。|
-|/d|从指定的文件夹中删除卷装入点。|
-|/l|列出指定文件夹的已装入卷名。|
-|/p|从指定的目录中删除卷装入点，卸载基本卷，并使基本卷脱机，使其不可装入。 如果其他进程正在使用该卷，则**mountvol**会在卸载卷之前关闭任何打开的句柄。|
-|/r|删除不再位于系统中的卷的卷装入点目录和注册表设置，阻止它们被自动装载，并在将其添加回系统后，将其分配给以前的卷装入点。|
-|/n|禁用新基本卷的自动装载。 添加到系统时，不会自动装载新卷。|
-|/e|重新启用新基本卷的自动装载。|
-|/s|将 EFI 系统分区装载到指定驱动器上。|
-|/?|在命令提示符下显示帮助。|
+| 参数 | 说明 |
+| --------- | ----------- |
+| `[<drive>:]<path>` | 指定装入点将驻留的现有 NTFS 目录。 |
+| `<volumename>` | 指定作为装入点目标的卷名称。 卷名使用以下语法，其中*GUID*是全局唯一标识符： `\\?\volume\{GUID}\` 。 需要括号 `{ }` 。 |
+| /d | 从指定的文件夹中删除卷装入点。 |
+| /l | 列出指定文件夹的已装入卷名。 |
+| /p | 从指定的目录中删除卷装入点，卸载基本卷，并使基本卷脱机，使其不可装入。 如果其他进程正在使用该卷，则**mountvol**会在卸载卷之前关闭任何打开的句柄。 |
+| /r | 删除不再位于系统中的卷的卷装入点目录和注册表设置，阻止它们被自动装载，并在将其添加回系统后，将其分配给以前的卷装入点。 |
+| /n | 禁用新基本卷的自动装载。 添加到系统时，不会自动装载新卷。 |
+| /e | 重新启用新基本卷的自动装载。 |
+| /s | 将 EFI 系统分区装载到指定驱动器上。 |
+| /? | 在命令提示符下显示帮助。 |
 
 ## <a name="remarks"></a>备注
 
--   **Mountvol**允许你链接卷，而无需驱动器号。
--   使用 **/p**卸载的卷在卷列表中列出为 "未装入"，直到创建了卷装入点。 如果卷有多个装入点，请使用 **/d**在使用 **/p**之前删除其他装入点。 可以通过分配卷装入点，使基本卷再次可装入。
--   如果你需要扩展卷空间而不重新格式化或更换硬盘驱动器，则可以将装入路径添加到另一个卷。 使用一个具有多个装载路径的卷的好处是，你可以使用单个驱动器号（例如`C:`）访问所有本地卷。 您无需记住哪个卷与哪个驱动器号相对应，不过您仍可以装入本地卷并为它们分配驱动器号。
+- 如果在使用 **/p**参数时卸除卷，则卷列表将在创建卷装入点之前，将卷显示为 "未装入"。
+
+- 如果卷有多个装入点，请使用 **/d**在使用 **/p**之前删除其他装入点。 可以通过分配卷装入点，使基本卷再次可装入。
+
+- 如果你需要扩展卷空间而不重新格式化或更换硬盘驱动器，则可以将装入路径添加到另一个卷。 使用一个具有多个装载路径的卷的好处是，你可以使用单个驱动器号（例如）访问所有本地卷 `C:` 。 你不需要记住哪个卷与哪个驱动器号相对应，但你仍可以装载本地卷并为其分配驱动器号。
 
 ## <a name="examples"></a>示例
 
 若要创建装入点，请键入：
+
 ```
-mountvol \sysmount \\?\Volume\{2eca078d-5cbc-43d3-aff8-7e8511f60d0e}\
+mountvol \sysmount \\?\volume\{2eca078d-5cbc-43d3-aff8-7e8511f60d0e}\
 ```
 
 ## <a name="additional-references"></a>其他参考

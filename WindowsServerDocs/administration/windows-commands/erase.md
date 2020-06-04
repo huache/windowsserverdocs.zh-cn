@@ -9,19 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96e0f97e27de8933de44c437508ef59803765771
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1525f20549b6571975cb622534f8504eb4fa1f79
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437122"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354677"
 ---
 # <a name="erase"></a>erase
 
-删除一个或多个文件。 此命令执行与**del**命令相同的操作。
+删除一个或多个文件。 如果使用 "**清除**" 从磁盘中删除文件，则无法检索该文件。
 
-> [!WARNING]
-> 如果使用 "**清除**" 从磁盘中删除文件，则无法检索该文件。
+> [!NOTE]
+> 此命令与[del 命令](del.md)相同。
+
 
 ## <a name="syntax"></a>语法
 
@@ -97,3 +98,5 @@ erase /a:r *.*
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
+
+- [del 命令](del.md)

@@ -1,6 +1,6 @@
 ---
 title: mkdir
-description: '* * * * 的参考主题'
+description: 用于创建目录或子目录的 mkdir 命令的参考主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,15 +9,58 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3330674fb3f5c89b8e8c43ec589ea7a1fb80af07
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 921e369cb1550bca8e26cc0beada4c1f5c1c3d5b
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723981"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354597"
 ---
 # <a name="mkdir"></a>mkdir
 
+创建目录或子目录。 默认情况下启用的命令扩展允许你使用单个**mkdir**命令在指定路径中创建中间目录。
 
+> [!NOTE]
+> 此命令与[md 命令](md.md)相同。
 
-此命令与**md**命令相同。 请参阅[Md](md.md)了解语法和参数。
+## <a name="syntax"></a>语法
+
+```
+mkdir [<drive>:]<path>
+```
+
+### <a name="parameters"></a>参数
+
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<drive>`: | 指定要在其上创建新目录的驱动器。 |
+| `<path>` | 指定新目录的名称和位置。 任何单个路径的最大长度由文件系统确定。 这是必需参数。 |
+| /? | 在命令提示符下显示帮助。 |
+
+### <a name="examples"></a>示例
+
+若要在当前目录中创建名为*Directory1*的目录，请键入：
+
+```
+mkdir Directory1
+```
+
+若要在启用了命令扩展的情况下在根目录中创建目录树*Taxes\Property\Current* ，请键入：
+
+```
+mkdir \Taxes\Property\Current
+```
+
+如前面的示例所示，若要在根目录中创建目录树*Taxes\Property\Current* ，但禁用了命令扩展，请键入以下命令序列：
+
+```
+mkdir \Taxes
+mkdir \Taxes\Property
+mkdir \Taxes\Property\Current
+```
+
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)
+
+- [md 命令](md.md)
