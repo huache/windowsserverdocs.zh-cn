@@ -8,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: e9488357eecb4a2093d6989e4ebfcc195ce68567
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 090e5c9ffbbaaa6720eb8e938019c08baff681cf
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854000"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333928"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>升级到 Windows Server 2016 中的 AD FS SQL Server
 
@@ -53,12 +53,12 @@ Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。
 1.  使用服务器管理器在 Windows Server 2016 上安装 Active Directory 联合身份验证服务角色  
 
 2.  使用 AD FS 配置向导将新的 Windows Server 2016 服务器加入现有 AD FS 场。  在**欢迎**屏幕上，单击 "**下一步**"。
- ![联接场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)  
+ ![加入场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)  
 3.  在 "**连接到 Active Directory 域服务**" 屏幕上，p) 具有执行联合身份验证服务配置权限的**管理员帐户**，然后单击 "**下一步**"。
 4.  在 "**指定场**" 屏幕上，输入 SQL server 和实例的名称，然后单击 "**下一步**"。
-![联接场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
+![加入场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
 5.  在 "**指定 SSL 证书**" 屏幕上，指定证书，然后单击 "**下一步**"。
-![联接场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png)
+![加入场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png)
 6.  在 "**指定服务帐户**" 屏幕上，指定服务帐户，然后单击 "**下一步**"。
 7.  在 "**查看选项**" 屏幕上，查看选项，然后单击 "**下一步**"。
 8.  在 "**先决条件检查**" 屏幕上，确保所有先决条件检查已通过，然后单击 "**配置**"。
@@ -72,7 +72,7 @@ Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。
 
 1.  在 Windows Server 2012 R2 上 AD FS Server 上服务器管理器使用 "**管理**" 下的 "**删除角色和功能**"。
 ![删除服务器](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png)
-2.  在“开始之前”屏幕上，单击“下一步”。
+2.  在“开始之前”**** 屏幕上，单击“下一步”****。
 3.  在**服务器选择**屏幕上，单击 "**下一步**"。
 4.  在 "**服务器角色**" 屏幕上，删除**Active Directory 联合身份验证服务**旁边的复选标记，然后单击 "**下一步**"。
 ![删除服务器](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove2.png)
@@ -84,7 +84,7 @@ Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。
 在执行此步骤之前，你需要确保已在 Active Directory 环境中运行 forestprep 和域准备操作，并且 Active Directory 具有 Windows Server 2016 架构。  此文档是使用 Windows 2016 域控制器开始的，不需要运行这些文档，因为在安装 AD 时运行这些文档。
 
 >[!NOTE]
->在开始下面的过程之前，请通过从 "设置" 运行 Windows 更新确保 Windows Server 2016 是最新的。  继续这一过程，直到不需要进一步更新。
+>在开始下面的过程之前，请通过从 "设置" 运行 Windows 更新确保 Windows Server 2016 是最新的。  继续这一过程，直到不需要进一步更新。 此外，请确保 ADFS 服务帐户帐户具有对 SQL server 和 ADFS 场中每个服务器的管理权限。
 
 1. 现在，在 Windows Server 2016 服务器上打开 PowerShell 并运行以下内容： **$cred = Get-Credential**并按 enter。
 2. 输入对 SQL Server 拥有管理员权限的凭据。

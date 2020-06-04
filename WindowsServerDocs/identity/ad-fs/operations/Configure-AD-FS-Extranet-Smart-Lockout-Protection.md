@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 843ed0b3ebf25d662d0b90c17f8fe23548829a7e
-ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
+ms.openlocfilehash: 13f25252d60cb0bde67cca1e1aa5106435c3f361
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192595"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333910"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS Extranet 锁定和 Extranet 智能锁定
 
@@ -57,7 +57,7 @@ ESL 仅适用于通过 extranet 使用 Web 应用程序代理或第三方代理�
 支持 IPv4 和 IPv6 地址。
 
 ### <a name="anatomy-of-a-transaction"></a>事务解析
-- **预身份验证检查**：在身份验证请求期间，ESL 将检查所有提供的 ip。 这些 ip 将是网络 IP、转发 IP 和可选的 x 转发的 IP 的组合。 在审核日志中，这些 Ip 在<IpAddress>字段中以 x-e 转发的-客户端 ip （x-e）---e-
+- **预身份验证检查**：在身份验证请求期间，ESL 将检查所有提供的 ip。 这些 ip 将是网络 IP、转发 IP 和可选的 x 转发的 IP 的组合。 在审核日志中，这些 Ip <IpAddress> 在字段中以 x-e 转发的-客户端 ip （x-e）---e-
 
   根据这些 Ip，ADFS 确定请求是来自熟悉还是不熟悉的位置，然后检查各自的 badPwdCount 是否小于设置阈值限制，或者上次**失败**尝试是否比观察时段时间范围长。 如果满足这些条件之一，ADFS 将允许此事务进行进一步的处理和凭据验证。 如果这两个条件都为 false，则在观察窗口通过之前，该帐户已处于锁定状态。 观察窗口通过后，允许用户尝试一次身份验证。 请注意，在2019中，ADFS 会根据 IP 地址是否与熟悉的位置匹配来检查适当的阈值限制。
 - **成功登录**：如果登录成功，则会将请求中的 ip 添加到用户的熟悉位置 IP 列表。  
@@ -144,14 +144,14 @@ ESL 仅适用于通过 extranet 使用 Web 应用程序代理或第三方代理�
 此功能利用了安全审核日志，因此必须在 AD FS 和所有 AD FS 服务器上的本地策略中启用审核。
 
 ### <a name="configuration-instructions"></a>配置说明
-Extranet 智能锁定使用 ADFS 属性**ExtranetLockoutEnabled**。 此属性以前用于控制服务器2012R2 中的 "Extranet 软锁定"。 如果启用了 Extranet 软锁定，若要查看当前属性配置，请` Get-AdfsProperties`运行。
+Extranet 智能锁定使用 ADFS 属性**ExtranetLockoutEnabled**。 此属性以前用于控制服务器2012R2 中的 "Extranet 软锁定"。 如果启用了 Extranet 软锁定，若要查看当前属性配置，请运行 ` Get-AdfsProperties` 。
 
 ### <a name="configuration-recommendations"></a>配置建议
 配置 Extranet 智能锁定时，请遵循设置阈值的最佳方案：  
 
 `ExtranetObservationWindow (new-timespan -Minutes 30)`
 
-`ExtranetLockoutThreshold: – 2x AD Threshold Value`
+`ExtranetLockoutThreshold: Half of AD Threshold Value`
 
 AD 值：20、ExtranetLockoutThreshold：10
 
@@ -251,7 +251,7 @@ AD FS 会将 extranet 锁定事件写入安全审核日志：
 在 "仅日志" 模式下，你可以查看安全审核日志中的锁定事件。 对于找到的任何事件，你可以使用 ADFSAccountActivity cmdlet 检查用户状态，以确定是否从熟悉或不熟悉的 IP 地址进行了锁定，并再次检查该用户的熟悉 IP 地址的列表。
 
 
-|事件 ID|描述|
+|事件 ID|说明|
 |-----|-----|
 |1203|此事件是针对每个错误密码尝试而编写的。 一旦 badPwdCount 达到 ExtranetLockoutThreshold 中指定的值，该帐户将在 ADFS 中被锁定，以在 ExtranetObservationWindow 中指定的持续时间。</br>活动 ID： %1</br>XML： %2|
 |1201|每次锁定用户时都会写入此事件。 </br>活动 ID： %1</br>XML： %2|
