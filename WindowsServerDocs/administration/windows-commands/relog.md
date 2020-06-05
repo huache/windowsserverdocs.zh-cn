@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 0b958cbceff8657a35f080c704bb13b29ef55d78
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 00e3f4e67faa951466c59dc60bab1d75c8b2e80f
+ms.sourcegitcommit: d050f4d82f462572ccf26437be03bf9ec43ed60e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820137"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84436555"
 ---
 # <a name="relog"></a>relog
 
@@ -37,9 +37,9 @@ relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName
 |                                       -cf *FileName*                                       |                                            指定一个文本文件的路径，该文件列出要包含在重新记文件中的性能计数器。 使用此选项可以在输入文件中列出计数器路径，每行一个。 默认设置为 relogged 原始日志文件中的所有计数器。                                            |
 |                                  -f {bin \| csv \| tsv \| SQL}                                  |                                       指定输出文件格式的路径名。 默认格式为**bin**。 对于 SQL 数据库，输出文件指定*DSN！CounterLog*。 您可以使用 ODBC 管理器配置 DSN （数据库系统名称）来指定数据库位置。                                        |
 |                                         -t*值*                                         |                                                                                                           指定 "*N*" 记录中的采样间隔。 包括重新登录文件中的每个第 n 个数据点。 默认值为每个数据点。                                                                                                           |
-| -o {*OutputFile* \| *"SQL： DSN！Counter_Log*}，其中 DSN 是在系统上定义的 ODMC dsn。 |                                                   指定输出文件或将写入计数器的 SQL 数据库的路径名。 <br>注意：对于重新记录的64位和32位版本，需要在 ODBC 数据源中定义 DSN （分别为64位和32位）                                                   |
-|                          -b \< *M* / *D* / *YYYY*> [[*HH*：]*MM*：]*SS*                           |                                                                          指定从输入文件复制第一条记录的开始时间。 日期和时间必须采用以下格式： <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em>**：**<em>MM</em>**：**<em>SS</em>。                                                                          |
-|                          -e \< *M* / *D* / *YYYY*> [[*HH*：]*MM*：]*SS*                           |                                                                           指定从输入文件复制最后一条记录的结束时间。 日期和时间必须采用以下格式： <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em>**：**<em>MM</em>**：**<em>SS</em>。                                                                            |
+| -o {*OutputFile* \| *"SQL： DSN！Counter_Log*}，其中 DSN 是在系统上定义的 ODBC DSN。 |                                                   指定输出文件或将写入计数器的 SQL 数据库的路径名。 <br>注意：对于重新记录的64位和32位版本，需要在 ODBC 数据源中定义一个 DSN （分别为64位和32位）。 使用 "SQL Server" ODBC 驱动程序定义 DSN                                                   |
+|                          -b \<*M*/*D*/*YYYY*> [[*HH*：]*MM*：]*SS*                           |                                                                          指定从输入文件复制第一条记录的开始时间。 日期和时间必须采用以下格式： <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em>**：**<em>MM</em>**：**<em>SS</em>。                                                                          |
+|                          -e \<*M*/*D*/*YYYY*> [[*HH*：]*MM*：]*SS*                           |                                                                           指定从输入文件复制最后一条记录的结束时间。 日期和时间必须采用以下格式： <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em>**：**<em>MM</em>**：**<em>SS</em>。                                                                            |
 |                                -config {*FileName* \| *i*}                                 | 指定包含命令行参数的设置文件的路径名。 在配置文件中使用 *-i*作为可放置在命令行上的输入文件列表的占位符。 但在命令行上，不需要使用*i*。 你还可以使用通配符（如 \* .blg）来指定多个输入文件名。 |
 |                                             -q                                             |                                                                                                                          显示在输入文件中指定的日志文件的性能计数器和时间范围。                                                                                                                           |
 |                                             -y                                             |                                                                                                                                            通过对所有问题回答 "是"，绕过提示。                                                                                                                                             |
@@ -47,16 +47,16 @@ relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName
 
 ## <a name="remarks"></a>备注
 计数器路径格式：
-- 计数器路径的一般格式如下： [ \\ \< computer>] \\ \< 对象> [ \< Parent>\\<实例 # Index>] \\ \< 计数器>]，其中，格式的父对象、实例、索引和计数器组件可能包含有效的名称或通配符。 计算机、父对象、实例和索引组件对于所有计数器都不是必需的。
+- 计数器路径的一般格式如下所示： [ \\ \<computer> ] \\ \<Object> [ \<Parent> \\<实例 # Index>] \\ \<Counter> ]，其中，格式的父对象、实例、索引和计数器组件可能包含有效的名称或通配符。 计算机、父对象、实例和索引组件对于所有计数器都不是必需的。
 - 根据计数器本身，确定要使用的计数器路径。 例如，逻辑磁盘对象有一个实例 <Index> ，因此必须提供 < # index> 或通配符。 因此，可以使用以下格式： **\LogicalDisk （ \* / \* # \* ） \\ \\ ***
-- 相比之下，Process 对象不需要 \<> 实例索引。 因此，可以使用以下格式： **\Process （ \* ） \ID 进程**
+- 相比之下，Process 对象不需要使用实例 \<Index> 。 因此，可以使用以下格式： **\Process （ \* ） \ID 进程**
 - 如果在父名称中指定了通配符，则将返回与指定的实例和计数器字段匹配的指定对象的所有实例。
 - 如果在实例名称中指定了通配符，则如果与指定索引对应的所有实例名称匹配通配符，则将返回指定对象和父对象的所有实例。
 - 如果在计数器名称中指定了通配符，则返回指定对象的所有计数器。
 - 不支持部分计数器路径字符串匹配项（例如，pro *）。
 
 计数器文件：
--   计数器文件是一个文本文件，用于列出现有日志中的一个或多个性能计数器。 将>对象>实例中的日志或 **/q**输出的完整计数器名称复制 \< \\ \< \\ \<>\\ \< 计数器> 格式。 在每行上列出一个计数器路径。
+-   计数器文件是一个文本文件，用于列出现有日志中的一个或多个性能计数器。 以格式从日志或 **/q**输出复制完整计数器名称 \<computer> \\ \<Object> \\ \<Instance> \\ \<Counter> 。 在每行上列出一个计数器路径。
 
 复制计数器：
 -   执行时，重新记录将从输入文件中的每个**记录复制指定**的计数器，并在必要时转换格式。 计数器文件中允许使用通配符路径。
@@ -66,7 +66,7 @@ relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName
 -   您可以指定您的输出日志中包含开始时间（即 **/b**）之前的记录，以提供需要格式化值的计算值的计数器的数据。 输出文件将包含来自输入文件的最后一条记录，其时间戳小于 **/e** （即结束时间）参数。
 使用 **/config**选项：
 -   用于 **/config**选项的设置文件的内容应采用以下格式：
-    -   \<CommandOption>\\ \< 值>，其中 \< CommandOption> 是命令行选项，而 \< 值> 指定其值。
+    -   \<CommandOption>\\\<Value>，其中 \<CommandOption> 是一个命令行选项并 \<Value> 指定其值。
 
 有关将**重新登录纳入**WINDOWS MANAGEMENT INSTRUMENTATION （WMI）脚本的详细信息，请参阅[Microsoft Windows 资源工具包网站](https://go.microsoft.com/fwlink/?LinkId=4665)上的 "脚本编写 WMI"。
 
