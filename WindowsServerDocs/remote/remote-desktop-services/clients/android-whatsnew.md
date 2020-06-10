@@ -7,18 +7,63 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0c5be0c4cf274224d25b62f7553ae49f8219b2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 176c601d98ebc743e455c5f83efe2c10267a38ba
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854670"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306446"
 ---
 # <a name="whats-new-in-the-android-client"></a>Android 客户端中的新增功能
 
 我们会定期更新[适用于 Android 的远程桌面客户端](remote-desktop-android.md)，添加新功能并修复问题。 可在下面找到最新更新。
+
+## <a name="updates-for-version-8180"></a>针对版本 8.1.80 的更新
+
+*发布日期：2020/05/26*
+
+- 更改了客户端图标，使其与当前预览版中的新客户端区分开来。
+- 进行了客户端准备，使其支持将设置和连接过渡到新的客户端。
+
+## <a name="updates-for-version-8179"></a>针对版本 8.1.79 的更新
+
+*发布日期：2020/03/24*
+
+- 解决了条码扫描器不起作用的问题。
+
+## <a name="updates-for-version-8177"></a>针对版本 8.1.77 的更新
+
+*发布日期：2020/02/11*
+
+- 让只使用键盘进行导航的用户更容易访问。
+
+## <a name="updates-for-version-8176"></a>针对版本 8.1.76 的更新
+
+*发布日期：2020/01/09*
+
+- 次要的 bug 修复和改进。
+
+## <a name="updates-for-version-8175"></a>针对版本 8.1.75 的更新
+
+*发布日期：2019/10/31*
+
+- 修复了无法加载某些远程资源馈送 URL 的问题。
+- 让只使用键盘进行导航和使用盲人模式的用户更容易访问。
+
+## <a name="updates-for-version-8174"></a>针对版本 8.1.74 的更新
+
+*发布日期：2019/08/17*
+
+- 修复了连接到发送专利证书的服务器时出现的故障。
+
+## <a name="updates-for-version-8173"></a>针对版本 8.1.73 的更新
+
+*发布日期：2019/06/14*
+
+- 添加了 64 位支持。
+- 解决了 CVE-2019-1108 中描述的安全问题。
 
 ## <a name="updates-for-version-8171"></a>针对版本 8.1.71 的更新
 

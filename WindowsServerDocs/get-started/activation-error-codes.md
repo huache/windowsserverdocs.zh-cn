@@ -7,17 +7,21 @@ ms.technology: server-general
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a550ddd72dcdf8c1967fe4740dc0fe5f2ad93e7
-ms.sourcegitcommit: df94dac422d13566c32e1cdb8c6e7a4e82747947
+ms.custom:
+- CI ID 116803
+- CSSTroubleshoot
+manager: dcscontentpm
+ms.openlocfilehash: fe07636908dffc6bb59c544d512b132e7640bf51
+ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84205628"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84269226"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>根据 Windows 激活错误代码解决问题
 
-> **家庭用户**  
-> 本文主要面向支持专员和 IT 专业人员。 如果你在寻找有关 Windows 激活错误消息的详细信息，请参阅[获取有关 Windows 激活错误的帮助](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors)。  
+> [!NOTE]  
+> 本文主要面向技术支持专员和 IT 专业人员。 如果你在寻找有关 Windows 激活错误消息的详细信息，请参阅[获取有关 Windows 激活错误的帮助](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors)。  
 
 本文提供的故障排除信息有助于你响应错误消息，这些消息是当你尝试使用多次激活密钥 (MAK) 或密钥管理服务 (KMS) 在一台或多台基于 Windows 的计算机上执行批量激活时可能会收到的。 请查看下表中的错误代码，然后选择相应的链接来查看有关该错误代码的详细信息及其解决方法。
 
@@ -28,6 +32,10 @@ ms.locfileid: "84205628"
 若要详细了解旧版 Windows 的批量激活，请参阅 KB 929712： [Volume Activation information for Windows Vista, Windows Server 2008, Windows Server 2008 R2 and Windows 7](https://support.microsoft.com/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi)（Windows Vista、Windows Server 2008、Windows Server 2008 R2 和 Windows 7 的批量激活信息）。
 
 ## <a name="diagnostic-tool"></a>诊断工具
+
+> [!NOTE]  
+> 此工具旨在帮助解决运行企业版、专业版或服务器版 Windows 的计算机上的 Windows 激活问题。
+
 
 Microsoft 支持和恢复助手 (SaRA) 简化了 Windows KMS 激活的故障排除步骤。 从[此处](https://aka.ms/SaRA-WindowsActivation)下载诊断工具。
 
