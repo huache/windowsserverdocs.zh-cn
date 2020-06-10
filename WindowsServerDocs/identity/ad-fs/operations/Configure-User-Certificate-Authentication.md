@@ -8,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5f2416e45fad8ca47cd756526dc6a554b3a952b1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4aa2f219852dc97833365645e7455f8141a0988e
+ms.sourcegitcommit: d23f880e144acf0912831557c70f777d48e3152b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817070"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84632781"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>为用户证书身份验证配置 AD FS
 
@@ -22,23 +22,24 @@ ms.locfileid: "80817070"
 * 用户使用的是预配到移动设备的证书
 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 1) 使用[本文](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)中所述的一种模式确定要启用 AD FS 用户证书身份验证的模式
 2) 确保你的用户证书信任链安装 & 受所有 AD FS 和 WAP 服务器信任，包括任何中间证书颁发机构。 通常，这是通过 AD FS/WAP 服务器上的 GPO 完成的
 3)  确保用户证书的信任链的根证书位于 NTAuth 存储区中 Active Directory
 4) 如果在备用证书身份验证模式中使用 AD FS，请确保 AD FS 和 WAP 服务器的 SSL 证书包含前缀为 "certauth" 的 AD FS 主机名（例如 "certauth.fs.contoso.com"），并允许通过防火墙对此主机名进行通信
 5) 如果使用 extranet 的证书身份验证，请确保从 internet 访问证书中指定的列表中至少有一个 AIA 和至少一个 CDP 或 OCSP 位置。
 6) 此外，对于 Exchange ActiveSync 客户端，Azure AD 对于 Exchange ActiveSync 客户端，客户端证书必须在 "使用者可选名称" 字段的主体名称或 RFC822 名称值中具有用户可路由电子邮件地址。 （Azure Active Directory 将 RFC822 值映射到目录中的 "代理地址" 属性。）
+7) 使用基于智能卡/证书的身份验证时，证书上的使用者可能与 AD 帐户上的 UserPricipalName 不匹配。 在这种情况下，登录失败，出现 "找不到用户"。
 
 
 ## <a name="configure-ad-fs-for-user-certificate-authentication"></a>配置 AD FS 执行用户证书身份验证  
 
-使用 AD FS 管理控制台或 PowerShell cmdlet `Set-AdfsGlobalAuthenticationPolicy`，使用 AD FS 中的 intranet 或 extranet 身份验证方法启用用户证书身份验证。
+使用 AD FS 管理控制台或 PowerShell cmdlet，在 AD FS 中使用 intranet 或 extranet 身份验证方法启用用户证书身份验证 `Set-AdfsGlobalAuthenticationPolicy` 。
 
 如果要为 Azure AD 证书身份验证配置 AD FS，请确保已配置了证书颁发者和序列号所需的[Azure AD 设置](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)和[AD FS 声明规则](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements)
 
 此外，还有一些可选的方面。
-- 如果要使用基于证书字段和扩展的声明以及 EKU （声明类型 https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku)，请在 Active Directory 声明提供方信任上配置其他声明传递规则。  有关可用证书声明的完整列表，请参阅下文。  
+- 如果要使用基于证书字段和扩展的声明以及 EKU （声明类型 https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) ），请在 Active Directory 声明提供方信任上配置其他声明传递规则。  有关可用证书声明的完整列表，请参阅下文。  
 - 如果需要基于证书类型限制访问，则可以在应用程序 AD FS 颁发授权规则中使用证书的其他属性。 常见的情况是 "仅允许 MDM 提供程序预配的证书" 或 "仅允许智能卡证书"
 >[!IMPORTANT]
 > 如果客户使用设备代码流进行身份验证，并使用 Azure AD 以外的其他 IDP （如 AD FS）执行设备身份验证，则将不能对 Azure AD 资源强制实施基于设备的访问（例如，仅允许使用第三方 MDM 服务的托管设备）。 若要在 Azure AD 中保护对公司资源的访问并防止任何数据泄露，客户应配置基于 Azure AD 设备的条件性访问（即 "要求设备标记为投诉" 向 Azure AD 条件性访问授予控制权限）。
@@ -55,7 +56,7 @@ ms.locfileid: "80817070"
 本文档重点介绍在为用户配置证书身份验证 AD FS 时遇到的常见问题。 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>检查是否在所有 AD FS/WAP 服务器中正确配置了证书信任的颁发者
-*常见症状： HTTP 204 "没有来自 https\://certauth.adfs.contoso.com 的内容"*
+*常见症状： HTTP 204 "没有来自 https \: //certauth.adfs.contoso.com 的内容"*
 
 AD FS 使用基础 windows 操作系统来证明用户证书的所有权，并通过执行证书信任链验证来确保它与受信任的颁发者匹配。 若要匹配受信任的颁发者，你将需要确保所有根和中间颁发机构都配置为本地计算机证书颁发机构存储中的受信任颁发者。 若要自动验证此情况，请使用[AD FS 诊断分析器工具](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze)。 该工具将查询所有服务器，并确保正确配置正确的证书。 
 1)  按照上面链接中提供的说明下载并运行该工具
@@ -65,9 +66,9 @@ AD FS 使用基础 windows 操作系统来证明用户证书的所有权，并�
 默认情况下，AD FS 不启用证书身份验证。 有关如何启用证书身份验证的说明，请参阅本文档的开头。 
 
 ### <a name="check-if-certificate-authentication-is-enabled-in-the-ad-fs-authentication-policy"></a>检查是否已在 AD FS Authentication 策略中启用证书身份验证
-默认情况下，AD FS 在端口49443上使用与 AD FS 相同的主机名进行用户证书身份验证（例如 `adfs.contoso.com`）。 你还可以将 AD FS 配置为使用备用 SSL 绑定的端口443（默认 HTTPS 端口）。 但是，在此配置中使用的 URL 是 `certauth.<adfs-farm-name>` （例如 `certauth.contoso.com`）。 有关详细信息，请参阅[此链接](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)。 网络连接最常见的情况是防火墙配置不正确，阻止或干扰用户证书身份验证流量。 通常情况下，出现此问题时，你将看到一个空白屏幕或500服务器错误。 
+默认情况下，AD FS 在端口49443上使用与 AD FS 相同的主机名进行用户证书身份验证（例如 `adfs.contoso.com` ）。 你还可以将 AD FS 配置为使用备用 SSL 绑定的端口443（默认 HTTPS 端口）。 但是，此配置中使用的 URL 为 `certauth.<adfs-farm-name>` （例如 `certauth.contoso.com` ）。 有关详细信息，请参阅[此链接](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)。 网络连接最常见的情况是防火墙配置不正确，阻止或干扰用户证书身份验证流量。 通常情况下，出现此问题时，你将看到一个空白屏幕或500服务器错误。 
 1)  请注意你在中配置的主机名和端口 AD FS
-2)  确保将 AD FS 或 Web 应用程序代理（WAP）前面的任何防火墙配置为允许 AD FS 场的 `hostname:port` 组合。 需要参考网络工程师才能执行此步骤。 
+2)  确保将 AD FS 或 Web 应用程序代理（WAP）前面的任何防火墙配置为允许 `hostname:port` AD FS 场的组合。 需要参考网络工程师才能执行此步骤。 
 
 ### <a name="check-certificate-revocation-list-connectivity"></a>检查证书吊销列表连接
 证书吊销列表（CRL）是编码到用户证书中以执行运行时吊销检查的终结点。 例如，如果包含证书的设备被盗，管理员可以将该证书添加到 "吊销的证书" 列表中。 之前接受此证书的任何终结点将无法进行身份验证。
@@ -77,7 +78,7 @@ AD FS 使用基础 windows 操作系统来证明用户证书的所有权，并�
 2)  在每个 AD FS/WAP 服务器上，确保可通过使用的协议（通常是 HTTPS 或 HTTP）访问 CRL 终结点
 3)  对于高级验证，请在每个 AD FS/WAP 服务器上[启用 CAPI2 事件日志记录](https://blogs.msdn.microsoft.com/benjaminperkins/2013/09/30/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues/)
 4) 检查 CAPI2 操作日志中的事件 ID 41 （验证吊销）
-5) 检查 `‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
+5) 检查`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
 ***提示***：可以通过将 DNS 解析（Windows 上的主机文件）配置为指向特定服务器来更轻松地定位单个 AD FS 或 WAP 服务器。 这允许你启用针对服务器的跟踪。 
 
@@ -86,12 +87,12 @@ AD FS 要求客户端设备（或浏览器）和负载均衡器支持 SNI。 某
 1)  与网络工程师合作，确保 AD FS/WAP 的负载均衡器支持 SNI
 2)  如果无法支持 SNI，AD FS 会按照以下步骤进行操作：
     *   在主 AD FS 服务器上打开提升的命令提示符窗口
-    *   输入 ```Netsh http show sslcert```
+    *   键入```Netsh http show sslcert```
     *   复制联合身份验证服务的 "应用程序 GUID" 和 "证书哈希"
-    *   输入 `netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
+    *   键入`netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
 
 ### <a name="check-if-the-client-device-has-been-provisioned-with-the-certificate-correctly"></a>检查是否已通过证书正确设置了客户端设备
-你可能会注意到某些设备工作正常，但其他设备却不能正常工作。 在这种情况下，这通常是由于未在客户端设备上正确设置用户证书而导致的。 请按照以下步骤操作。 
+你可能会注意到某些设备工作正常，但其他设备却不能正常工作。 在这种情况下，这通常是由于未在客户端设备上正确设置用户证书而导致的。 请按照以下步骤进行操作。 
 1)  如果此问题特定于 Android 设备，最常见的问题是 Android 设备上不完全信任证书链。  请参阅 MDM 供应商，以确保已正确设置证书，并且整个证书链在 Android 设备上完全受信任。 
 2)  如果此问题特定于 Windows 设备，请通过检查已登录用户（而非系统/计算机）的 Windows 证书存储来检查是否正确设置了证书。
 3)  将客户端用户证书导出到 .cer 文件，并运行命令 "certutil-urlfetch-verify certificatefilename"
@@ -107,9 +108,9 @@ AD FS 要求客户端设备（或浏览器）和负载均衡器支持 SNI。 某
 
 有关详细信息，请参阅[此链接](ad-fs-prompt-login.md)。 
 
-### <a name="additional-troubleshooting"></a>其他疑难解答
+### <a name="additional-troubleshooting"></a>更多故障排除方法
 这种情况极少出现
-1)  如果 CRL 列表很长，则尝试下载时可能会超时。 在这种情况下，需要根据 https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows 更新 "MaxFieldLength" 和 "MaxRequestByte"
+1)  如果 CRL 列表很长，则尝试下载时可能会超时。 在这种情况下，需要根据每个https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows
 
 
 
@@ -124,15 +125,15 @@ AD FS 要求客户端设备（或浏览器）和负载均衡器支持 SNI。 某
 |         https://schemas.microsoft.com/2012/12/certificatecontext/field/issuername          |                 CN = entca，DC = domain，DC = contoso，DC = com                  |
 |          https://schemas.microsoft.com/2012/12/certificatecontext/field/notbefore          |                           12/05/2016 20:50:18                            |
 |          https://schemas.microsoft.com/2012/12/certificatecontext/field/notafter           |                           12/05/2017 20:50:18                            |
-|           https://schemas.microsoft.com/2012/12/certificatecontext/field/subject           |   E =user@contoso.com，CN = user，CN = Users，DC = domain，DC = contoso，DC = com   |
-|         https://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname         |   E =user@contoso.com，CN = user，CN = Users，DC = domain，DC = contoso，DC = com   |
+|           https://schemas.microsoft.com/2012/12/certificatecontext/field/subject           |   E = user@contoso.com ，cn = user，cn = Users，dc = domain，DC = contoso，dc = com   |
+|         https://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname         |   E = user@contoso.com ，cn = user，cn = Users，dc = domain，DC = contoso，dc = com   |
 |           https://schemas.microsoft.com/2012/12/certificatecontext/field/rawdata           |                {Base64 编码的数字证书数据}                 |
 |        https://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage         |                             DigitalSignature                             |
 |        https://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage         |                             KeyEncipherment                              |
 |  https://schemas.microsoft.com/2012/12/certificatecontext/extension/subjectkeyidentifier   |                 9D11941EC06FACCCCB1B116B56AA97F3987D620A                 |
 | https://schemas.microsoft.com/2012/12/certificatecontext/extension/authoritykeyidentifier  |    KeyID = d6 13 e3 6b bc e5 d8 15 52 0a fd 36 6a d5 0b 51 f3 0b 25 7f     |
-| https://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename |                                   用户                                   |
-|           https://schemas.microsoft.com/2012/12/certificatecontext/extension/san           | 其他名称： Principal Name =user@contoso.com，RFC822 Name =user@contoso.com |
+| https://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename |                                   User                                   |
+|           https://schemas.microsoft.com/2012/12/certificatecontext/extension/san           | 其他名称： Principal Name = user@contoso.com ，RFC822 name =user@contoso.com |
 |           https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku           |                          1.3.6.1.4.1.311.10.3.4                          |
 
 ## <a name="related-links"></a>相关链接
