@@ -8,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4aa2f219852dc97833365645e7455f8141a0988e
-ms.sourcegitcommit: d23f880e144acf0912831557c70f777d48e3152b
+ms.openlocfilehash: c443d596e8e35f7ccf4aa23b622323122a2778e9
+ms.sourcegitcommit: 76a3b5f66e47e08e8235e2d152185b304d03b68b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632781"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663180"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>为用户证书身份验证配置 AD FS
 
@@ -22,14 +22,14 @@ ms.locfileid: "84632781"
 * 用户使用的是预配到移动设备的证书
 
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 1) 使用[本文](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)中所述的一种模式确定要启用 AD FS 用户证书身份验证的模式
 2) 确保你的用户证书信任链安装 & 受所有 AD FS 和 WAP 服务器信任，包括任何中间证书颁发机构。 通常，这是通过 AD FS/WAP 服务器上的 GPO 完成的
 3)  确保用户证书的信任链的根证书位于 NTAuth 存储区中 Active Directory
 4) 如果在备用证书身份验证模式中使用 AD FS，请确保 AD FS 和 WAP 服务器的 SSL 证书包含前缀为 "certauth" 的 AD FS 主机名（例如 "certauth.fs.contoso.com"），并允许通过防火墙对此主机名进行通信
 5) 如果使用 extranet 的证书身份验证，请确保从 internet 访问证书中指定的列表中至少有一个 AIA 和至少一个 CDP 或 OCSP 位置。
 6) 此外，对于 Exchange ActiveSync 客户端，Azure AD 对于 Exchange ActiveSync 客户端，客户端证书必须在 "使用者可选名称" 字段的主体名称或 RFC822 名称值中具有用户可路由电子邮件地址。 （Azure Active Directory 将 RFC822 值映射到目录中的 "代理地址" 属性。）
-7) 使用基于智能卡/证书的身份验证时，证书上的使用者可能与 AD 帐户上的 UserPricipalName 不匹配。 在这种情况下，登录失败，出现 "找不到用户"。
+7) AD FS 不支持具有智能卡/基于证书的身份验证的用户名提示。 
 
 
 ## <a name="configure-ad-fs-for-user-certificate-authentication"></a>配置 AD FS 执行用户证书身份验证  
