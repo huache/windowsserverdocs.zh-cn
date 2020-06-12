@@ -31,6 +31,8 @@
 ### [将 SYSVOL 复制迁移到 DFS 复制](dfs-replication/migrate-sysvol-to-dfsr.md)
 ### [使用 robocopy 预先植入文件以执行 DFS 复制](dfs-replication/preseed-dfsr-with-robocopy.md)
 ### [DFS 复制：常见问题解答 (FAQ)](dfs-replication/dfsr-faq.md)
+### [如何确定复制文件夹的最低临时区域 DFSR 需求](../troubleshoot/how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder.md)
+### [了解 DFSR 中（缺少）的分布式文件锁定](../troubleshoot/understanding-the-lack-of-distributed-file-locking-in-dfsr.md)
 ## [磁盘管理](disk-management/overview-of-disk-management.md)
 ## [文件服务器和 SMB](file-server/file-server-smb-overview.md)
 ### [SMB 直通](file-server/smb-direct.md)
