@@ -6,12 +6,12 @@ ms.technology: server-general
 ms.date: 1/24/2020
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: e5fdae6e005adf6ea221fb3c2bf3ea09bfbfb03a
-ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
+ms.openlocfilehash: f3012f499e67f73ec9e8ab20b24df122492ea0ea
+ms.sourcegitcommit: fa9a8badf4eb366aeeca7d2905e2cad711ee8dae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81119257"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84714899"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server 组件疑难解答
 
@@ -34,19 +34,19 @@ Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的�
 - [MAK 激活已知问题](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-mak-issues)
 - [用于排查 DNS 相关激活问题的指南](https://docs.microsoft.com/windows-server/get-started/common-troubleshooting-procedures-kms-dns)
 - [重新生成 Tokens.dat 文件](https://docs.microsoft.com/windows-server/get-started/activation-rebuild-tokens-dat-file)
-- [ADBA 客户端疑难解答](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-adba-clients)
+- [排查 ADBA 客户端问题](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-adba-clients)
 
 ## <a name="troubleshoot-startup-and-restart"></a>排查启动和重新启动问题
 
-- [Windows 启动的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
-- [如何确定64位版本的 Windows 的适当页面文件大小](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
+- [Windows 启动高级疑难解答](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
+- [如何确定 64 位版本 Windows 的合适页面文件大小](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
 - [生成内核或完整故障转储](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump)
 - [页面文件简介](https://docs.microsoft.com/windows/client-management/introduction-page-file)
 - [在 Windows 中配置系统故障和恢复选项](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options)
-- [Windows 启动问题的高级故障排除](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
-- [基于 Windows 的计算机冻结的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
-- [针对停止错误或蓝屏错误的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
-- [停止错误7B 或 Inaccessible_Boot_Device 的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
+- [有关 Windows 启动问题的高级疑难解答](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [基于 Windows 的计算机的冻结问题的高级疑难解答](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
+- [停止错误或蓝屏错误的高级疑难解答](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
+- [有关停止错误 7B 或 Inaccessible_Boot_Device 的高级疑难解答](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
 - [针对事件 ID 41 的高级故障排除 "系统已重新启动但未完全关闭"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart)
 - [更新内置 Broadcom 网络适配器驱动程序时出现停止错误](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update)
 
@@ -63,7 +63,7 @@ Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的�
 
 ## <a name="troubleshoot-ad-fs"></a>排查 AD FS
 
-- [疑难解答 AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-overview)
+- [AD FS 疑难解答](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-overview)
 - [AD FS 故障排除-审核事件和日志记录](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-logging)
 - [AD FS 疑难解答-SQL 连接](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-sql)
 - [AD FS 故障排除-声明颁发](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-issuance)
@@ -74,7 +74,7 @@ Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的�
 - [AD FS 故障排除-声明规则](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-rules)
 - [AD FS 故障排除-Windows 集成身份验证](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-iwa)
 - [AD FS 故障排除-Azure AD](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-azure)
-- [AD FS 常见问题](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
+- [AD FS 常见问题解答](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
 - [AD FS 帮助诊断分析器](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-diagnostics-analyzer)
 
 ## <a name="troubleshoot-aovpn"></a>AoVPN 故障排除
@@ -87,7 +87,7 @@ Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的�
 
 ## <a name="troubleshoot-dfsr"></a>DFSR 疑难解答
 
-- [DFS 复制：常见问题（FAQ）](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
+- [DFS 复制：常见问题解答 (FAQ)](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
 
 ## <a name="troubleshoot-directaccess"></a>排查 DirectAccess 问题
 
@@ -108,6 +108,19 @@ Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的�
 
 - [使用 Windows 错误报告排查故障转移群集问题](https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports)
 - [群集感知更新-常见问题](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating-faq)
+- [排查事件 ID 1135 的群集问题](https://docs.microsoft.com/windows-server/troubleshoot/troubleshooting-cluster-event-id-1135)
+- [从活动故障转移群集成员身份中删除节点时遇到问题](https://docs.microsoft.com/windows-server/troubleshoot/problem-nodes-failover-cluster)
+- [正在从 VMWare ESX 上的故障转移群集成员身份中删除的节点](https://docs.microsoft.com/windows-server/troubleshoot/nodes-failover-cluster-vmware)
+- [使用 SQL AlwaysOn 的 IaaS - 调整故障转移群集网络阈值](https://docs.microsoft.com/windows-server/troubleshoot/iaas-sql-failover-cluster)
+
+## <a name="troubleshoot-dhcp"></a>DHCP 故障排除
+
+- [动态主机配置协议（DHCP）故障排除指南](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-dhcp-issue)
+- [DHCP （动态主机配置协议）基础知识](https://docs.microsoft.com/windows-server/troubleshoot/dynamic-host-configuration-protocol-basics)
+- [DHCP 故障排除通用指南](https://docs.microsoft.com/windows-server/troubleshoot/general-guidance-to-troubleshoot-dhcp)
+- [如何在不使用 DHCP 服务器的情况下使用自动 TCP/IP 寻址](https://docs.microsoft.com/windows-server/troubleshoot/how-to-use-automatic-tcpip-addressing-without-a-dh)
+- [排查 DHCP 客户端上的问题](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-problems-on-dhcp-client)
+- [排查 DHCP 服务器上的问题](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-problems-on-dhcp-server)
 
 ## <a name="troubleshoot-fsrm"></a>排查 FSRM 问题
 
@@ -149,12 +162,12 @@ Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的�
 - [存储空间直通-常见问题](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)
 - [存储空间直通运行状况和运行状态](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-states)
 - [通过存储空间直通收集诊断数据](https://docs.microsoft.com/windows-server/storage/storage-spaces/data-collection)
-- [Windows 中的存储类内存（NVDIMM-N）运行状况管理](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
+- [Windows 中的存储类内存 (NVDIMM N) 的运行状况管理](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
 
 ## <a name="troubleshoot-sdn"></a>SDN 疑难解答
 
 - [SDN 疑难解答](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-software-defined-networking)
-- [排查 Windows Server 软件定义网络堆栈问题](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
+- [Windows Server 软件定义的网络堆栈疑难解答](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
 
 ## <a name="troubleshoot-rds-session-connectivity"></a>对 RDS 会话连接进行故障排除
 
@@ -187,7 +200,7 @@ Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的�
 
 ## <a name="troubleshoot-user-profiles"></a>用户配置文件疑难解答
 
-- [对包含事件的用户配置文件进行故障排除](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
+- [利用事件对用户配置文件进行故障排除](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
 
 ## <a name="troubleshoot-vrss"></a>VRSS 疑难解答
 
@@ -199,6 +212,6 @@ Microsoft 定期为 Windows Server 发布这两个更新。 若要确保你的�
 
 ## <a name="troubleshoot-windows-admin-center"></a>排查 Windows Admin Center 问题
 
-- [Windows 管理中心常见的故障排除步骤](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
-- [Windows 管理中心的已知问题](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
-- [Windows 管理中心的常见问题](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)
+- [Windows Admin Center 常见疑难解答步骤](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
+- [Windows Admin Center 已知问题](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
+- [Windows Admin Center 常见问题解答](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)
