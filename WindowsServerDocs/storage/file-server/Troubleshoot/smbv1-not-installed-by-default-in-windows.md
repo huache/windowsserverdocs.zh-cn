@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: fdc90c6e5d6790348fafc12079eec5ac7e387b3f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a1e1a30530f937289770bcef9e71189bf69719ce
+ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815310"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721755"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>默认情况下，windows 10 版本1709、Windows Server 版本1709及更高版本中未安装 SMBv1
 
@@ -30,7 +30,7 @@ SMBv1 在 Windows 10 秋季创意者更新和 Windows Server 版本1709（RS3）
 - Windows 10 企业版和 Windows 10 教育版的就地升级和内幕航班不会自动删除 SMBv1。 管理员必须决定卸载这些托管环境中的 SMBv1。 在 Windows 10 版本1809（RS5）及更高版本中，管理员可以通过打开 "SMB 1.0/CIFS 自动删除" 功能来激活 SMBv1 的自动删除。    
 - 15天后自动删除 SMBv1 的操作是一次性的。 如果管理员重新安装 SMBv1，则不会再进一步尝试卸载它。
 - SMB 版本2.02、2.1、3.0、3.02 和3.1.1 功能仍完全受支持，并且默认情况下作为 SMBv2 二进制文件的一部分包含在内。    
-- 由于计算机浏览器服务依赖于 SMBv1，因此，如果卸载 SMBv1 客户端或服务器，则会卸载该服务。 这意味着，资源管理器 Networkcan 不再通过旧的 NetBIOS 数据报浏览方法显示 Windows 计算机。    
+- 由于计算机浏览器服务依赖于 SMBv1，因此，如果卸载 SMBv1 客户端或服务器，则会卸载该服务。 这意味着，资源管理器网络不能再通过旧的 NetBIOS 数据报浏览方法显示 Windows 计算机。    
 - 在所有版本的 Windows 10 和 Windows Server 2016 中，仍然可以重新安装 SMBv1。    
  
   > [!NOTE]
@@ -108,12 +108,12 @@ Guidance:
 The client has SMB1 disabled or uninstalled. For more information: https://go.microsoft.com/fwlink/?linkid=852747.     
 ```
 
-这些设备不可能运行 Windows。 它们更有可能运行早期版本的 Linux、Samba 或其他类型的第三方软件来提供 SMB 服务。 通常，这些版本的 Linux 和 Samba 将不再受支持。 
+这些设备不可能运行 Windows。它们更有可能运行早期版本的 Linux、Samba 或其他类型的第三方软件来提供 SMB 服务。 通常，这些版本的 Linux 和 Samba 将不再受支持。 
 
 > [!NOTE]
 > Windows 10 版本1709也称为 "秋季创意者更新"。   
 
-## <a name="more-information"></a>详细信息
+## <a name="more-information"></a>更多信息
 
 若要解决此问题，请与仅支持 SMBv1 的产品制造商联系，并请求支持 SMBv 2.02 或更高版本的软件或固件更新。 有关已知供应商的当前列表及其 SMBv1 要求，请参阅以下 Windows 和 Windows Server 存储工程团队博客文章： 
 
@@ -122,7 +122,7 @@ The client has SMB1 disabled or uninstalled. For more information: https://go.mi
 
 如果需要 SMBv1 来提供旧软件行为的应用程序兼容性，例如禁用 oplock 的要求，Windows 将提供一个新的 SMB 共享标志，称为租赁模式。此标志指定共享是否禁用新式 SMB 语义，如租约和 oplock。
 
-可以不使用 oplock 或租约指定共享，以允许旧版应用程序使用 SMBv2 或更高版本。 为此，请将**new-smbshare**或**new-smbshare** PowerShell Cmdlet 与 **-LeasingMode None** 参数一起使用。
+可以不使用 oplock 或租约指定共享，以允许旧版应用程序使用 SMBv2 或更高版本。 为此，请将**new-smbshare**或**new-smbshare** PowerShell Cmdlet 与 **-LeasingMode None**   参数一起使用。
 
 > [!NOTE]
 > 仅应在第三方应用程序所需的共享上使用此选项，以便在供应商声明需要时使用。 不要在横向扩展文件服务器使用的用户数据共享或 CA 共享上指定租用模式。 这是因为删除 oplock 和租约会导致大多数应用程序的不稳定和数据损坏。 租赁模式仅适用于共享模式。 它可供任何客户端操作系统使用。
@@ -133,14 +133,14 @@ The client has SMB1 disabled or uninstalled. For more information: https://go.mi
 
 但是，如果仍需要使用资源管理器网络流入量 home 和 small business 工作组环境来查找基于 Windows 的计算机，则可以在不使用 SMBv1 的基于 Windows 的计算机上执行以下步骤： 
  
-1. 启动 "功能发现提供程序主机" 和 "函数发现资源发布" 服务，然后将它们设置为 "**自动（延迟启动）** "。
+1. 启动 "功能发现提供程序主机" 和 "函数发现资源发布" 服务，然后将它们设置为 "**自动（延迟启动）**"。
 
 2. 打开资源管理器网络时，在出现提示时启用网络发现。    
  
 该子网中具有这些设置的所有 Windows 设备现在将显示在 "网络中进行浏览"。 这将使用 WS 发现协议。 如果在出现 Windows 设备后，其设备仍不显示在此浏览列表中，请联系你的其他供应商和制造商。 可能禁用了此协议，或者它们只支持 SMBv1。
 
 > [!NOTE]
-> 我们建议你映射驱动器和打印机，而不是启用此功能，这仍需要搜索和浏览其设备。 映射的资源更易于定位，需要较少的培训，并且更安全。 如果通过组策略自动提供这些资源，则更是如此。 管理员可以通过使用 IP 地址、Active Directory 域服务（AD DS）、Bonjour、Mdn、uPnP 等方法，使用旧计算机浏览器服务以外的方法配置打印机的位置。
+> 建议你映射驱动器和打印机，而不是启用此功能，这仍需要搜索和浏览其设备。 映射的资源更易于定位，需要较少的培训，并且更安全。 如果通过组策略自动提供这些资源，则更是如此。管理员可以通过使用 IP 地址、Active Directory 域服务（AD DS）、Bonjour、Mdn、uPnP 等方法，使用旧计算机浏览器服务以外的方法配置打印机的位置。
 
 如果你不能使用这些解决方法中的任何一种，或者应用程序制造商无法提供支持的 SMB 版本，你可以按照[如何在 Windows 中检测、启用和禁用 SMBv1、SMBv2 和 SMBv3](detect-enable-and-disable-smbv1-v2-v3.md)中的步骤手动重新启用 SMBv1。
 

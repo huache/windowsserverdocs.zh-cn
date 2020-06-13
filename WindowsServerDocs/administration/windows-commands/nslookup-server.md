@@ -1,6 +1,6 @@
 ---
 title: nslookup server
-description: '* * * * 的参考主题'
+description: Nslookup 服务器命令的参考主题，它将默认服务器更改为指定的域名系统（DNS）域。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9a3f4c7bdbcf8122bb532fafe83b400400d8d6b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1a153bb39e3c7c4114334e7fa16b0f287b8b7fe8
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723685"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721609"
 ---
 # <a name="nslookup-server"></a>nslookup server
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 将默认服务器更改为指定的域名系统（DNS）域。
+
+此命令使用当前默认服务器来查找有关指定 DSN 域的信息。 如果要使用初始服务器查找信息，请使用[nslookup lserver](nslookup-lserver.md)命令。
+
 ## <a name="syntax"></a>语法
+
 ```
-server <DNSDomain>
+server <DNSdomain>
 ```
+
 ### <a name="parameters"></a>参数
 
-|    参数    |                          描述                           |
-|-----------------|----------------------------------------------------------------|
-|   <DNSDomain>   | 必需。 为默认服务器指定新的 DNS 域。 |
-| {help &#124;？} |     显示**nslookup**子命令的简短摘要。      |
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<DNSdomain>` | 指定默认服务器的 DNS 域。 |
+| /? | 在命令提示符下显示帮助。 |
+| /help | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>备注
-- **服务器**命令使用当前的默认服务器来查找有关指定 DNS 域的信息。 这与使用初始服务器的**lserver**命令不同。
-  ## <a name="additional-references"></a>其他参考
-  - [命令行语法 Key](command-line-syntax-key.md)
-  [nslookup lserver](nslookup-lserver.md)
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)
+
+- [nslookup lserver](nslookup-lserver.md)

@@ -1,6 +1,6 @@
 ---
 title: nslookup set search
-description: '* * * * 的参考主题'
+description: Nslookup set search 命令的参考主题，它将 DNS 域搜索列表中的域名系统（DNS）域名追加到请求，直到收到答案。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e3f5bce42d3614b535b2dfb00c4c9ea9cac2346
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c3219434f768a573c9e433c44b6b38bc9dc75f14
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723568"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721422"
 ---
 # <a name="nslookup-set-search"></a>nslookup set search
-
-
 
 向请求追加 DNS 域搜索列表中的域名系统（DNS）域名，直到接收到答案。 这适用于以下情况：集和查找请求至少包含一个句点，但不以尾随句点结束。
 
@@ -30,11 +28,12 @@ set [no]search
 
 ### <a name="parameters"></a>参数
 
-|  参数   |                                                                          描述                                                                          |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **nosearch** |                            停止将 DNS 域搜索列表中的域名系统（DNS）域名追加到该请求。                            |
-|  **寻找**  | 向请求追加 DNS 域搜索列表中的域名系统（DNS）域名，直到接收到答案。 默认语法为 "**搜索**"。 |
-|    {帮助     |                                                                              ?}                                                                               |
+| 参数 | 说明 |
+| --------- | ----------- |
+| nosearch | 停止在请求的 DNS 域搜索列表中追加域名系统（DNS）域名。 |
+| search | 将域名系统（DNS）域名追加到请求的 DNS 域搜索列表中，直到接收到答案。 这是默认值。 |
+| /? | 在命令提示符下显示帮助。 |
+| /help | 在命令提示符下显示帮助。 |
 
 ## <a name="additional-references"></a>其他参考
 

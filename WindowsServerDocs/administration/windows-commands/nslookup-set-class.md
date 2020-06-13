@@ -1,6 +1,6 @@
 ---
 title: nslookup set class
-description: '* * * * 的参考主题'
+description: "\"Nslookup 集类\" 命令的参考主题，它会更改查询类。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1ae3a5336815a5273aafa976b1dcad8b60fac9b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e939be13eedcab557dc6dcbe16f2e83f810c20d5
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723655"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721560"
 ---
 # <a name="nslookup-set-class"></a>nslookup set class
-
-
 
 更改查询类。 类指定信息的协议组。
 
 ## <a name="syntax"></a>语法
 
 ```
-set class=<Class>
+set class=<class>
 ```
 
 ### <a name="parameters"></a>参数
 
-| 参数 |                                                                                                                                    描述                                                                                                                                    |
-|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<Class>  | 默认类为。 下面列出了此命令的有效值。</br>-IN：指定 Internet 类。</br>-混乱：指定混乱的类。</br>-HESIOD：指定 MIT Athena Hesiod 类。</br>-ANY：指定前面列出的任何通配符。 |
-|   {帮助   |                                                                                                                                        ?}                                                                                                                                         |
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<class>` | 有效值包括：<ul><li>**在中：** 指定 Internet 类。 这是默认值。</li><li>**混乱：** 指定混乱的类。</li><li>**HESIOD：** 指定 MIT Athena Hesiod 类。</li><li>**任何：** 指定使用以前列出的任何值。</li></ul> |
+| /? | 在命令提示符下显示帮助。 |
+| /help | 在命令提示符下显示帮助。 |
 
 ## <a name="additional-references"></a>其他参考
 

@@ -1,6 +1,6 @@
 ---
 title: nfsstat
-description: '* * * * 的参考主题'
+description: Nfsstat 命令的参考主题，其中显示有关网络文件系统（NFS）和远程过程调用（RPC）调用的统计信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,25 +9,70 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e2c02fdfeb9923993a1d4471862a6c8487c9d86
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 85eb1184d3eb8ee731cf698a6d805e3f11d878ce
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723756"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721510"
 ---
 # <a name="nfsstat"></a>nfsstat
 
-
-
-你可以使用**nfsstat**来显示或重置对 NFS 服务器的调用计数。
+一个命令行实用程序，显示有关网络文件系统（NFS）和远程过程调用（RPC）调用的统计信息。 在不使用参数的情况下，此命令将显示所有统计数据，而不重置任何内容。
 
 ## <a name="syntax"></a>语法
 
 ```
-nfsstat [-z]
+nfsstat [-c][-s][-n][-r][-z][-m]
 ```
 
-## <a name="description"></a>说明
+### <a name="parameters"></a>参数
 
-当未使用 **-z**选项时， **nfsstat**命令行实用工具将显示对服务器所做的 NFS V2、Nfs v3 和 Mount V3 调用数，因为计数器设置为0（在服务启动时或者计数器使用**nfsstat**重置时）。
+| 参数 | 说明 |
+| --------- | ----------- |
+| -c | 显示客户端发送和拒绝的客户端 NFS 和 RPC 调用。 若要仅显示 NFS 或 RPC 信息，请将此标志与 **-n**或 **-r**参数结合。 |
+| -S | 仅显示服务器端 NFS 和服务器发送和拒绝的 RPC 调用。 若要仅显示 NFS 或 RPC 信息，请将此标志与 **-n**或 **-r**参数结合。 |
+| -m | 显示有关装载选项设置的装载标志、系统内部装载标志以及其他装载信息的信息。 |
+| -n | 显示客户端和服务器的 NFS 信息。 若要仅显示 NFS 客户端或服务器信息，请将此标志与 **-c**或 **-s**参数组合在一起。 |
+| -r | 显示客户端和服务器的 RPC 信息。 若要仅显示 RPC 客户端或服务器信息，请将此标志与 **-c**或 **-s**参数组合在一起。 |
+| -Z | 重置呼叫统计信息。 此标志仅对根用户可用，并可与任何其他参数组合使用，以在显示后重置特定的统计信息集。 |
+
+### <a name="examples"></a>示例
+
+若要显示有关客户端发送和拒绝的 RPC 和 NFS 调用数的信息，请键入：
+
+```
+nfsstat -c
+```
+
+若要显示和打印客户端 NFS 调用相关信息，请键入：
+
+```
+nfsstat -cn
+```
+
+若要显示客户端和服务器的 RPC 调用相关信息，请键入：
+
+```
+nfsstat -r
+```
+
+若要显示有关服务器接收和拒绝的 RPC 和 NFS 调用数的信息，请键入：
+
+```
+nfsstat -s
+```
+
+若要在客户端和服务器上将所有调用相关信息重置为零，请键入：
+
+```
+nfsstat -z
+```
+
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)
+
+- [网络文件系统命令参考服务](services-for-network-file-system-command-reference.md)
+
+- [NFS cmdlet 参考](https://docs.microsoft.com/powershell/module/nfs)

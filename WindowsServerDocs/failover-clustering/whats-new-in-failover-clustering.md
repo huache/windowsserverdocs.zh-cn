@@ -8,12 +8,12 @@ manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 926c9c862d77c9fe082274a44af57e3b8339a655
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cdc9280c4c7129d2e76341bd97b0ae3b8209888f
+ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720497"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721735"
 ---
 # <a name="whats-new-in-failover-clustering"></a>故障转移群集中的新增功能
 
@@ -76,12 +76,12 @@ ms.locfileid: "82720497"
 
 **这一更改增添了什么价值？**  
 
-将 Hyper-v 或横向扩展文件服务器群集从 Windows Server 2012 R2 升级到 Windows Server 2016 不再需要停机。 在群集中的所有节点都运行 Windows Server 2016 之前，群集将继续在 Windows Server 2012 R2 级别上工作。 使用 Windows PowerShell cmdlt `Update-ClusterFunctionalLevel`将群集功能级别升级到 windows Server 2016。
+将 Hyper-v 或横向扩展文件服务器群集从 Windows Server 2012 R2 升级到 Windows Server 2016 不再需要停机。 在群集中的所有节点都运行 Windows Server 2016 之前，群集将继续在 Windows Server 2012 R2 级别上工作。 使用 Windows PowerShell cmdlt 将群集功能级别升级到 Windows Server 2016 `Update-ClusterFunctionalLevel` 。
 
 > [!WARNING]  
 > - 更新群集功能级别后，无法返回到 Windows Server 2012 R2 群集功能级别。
 >
-> - 在`Update-ClusterFunctionalLevel`运行 cmdlet 之前，该过程是可逆的，可以添加 windows Server 2012 R2 节点，并且可以删除 windows server 2016 节点。
+> - 在 `Update-ClusterFunctionalLevel` 运行 cmdlet 之前，该过程是可逆的，可以添加 Windows server 2012 R2 节点，并且可以删除 Windows server 2016 节点。
 
 **工作原理的不同之处是什么？**  
 
@@ -95,7 +95,7 @@ Hyper-v 或横向扩展文件服务器故障转移群集现在可以轻松升级
 -   此时，群集被称为在混合模式下运行，因为群集节点正在运行 Windows Server 2012 R2 或 Windows Server 2016。 
 -   群集功能级别保留在 Windows Server 2012 R2 上。 在此功能级别，Windows Server 2016 中的新功能影响与早期版本的操作系统的兼容性。 
 -   最终，所有节点都将升级到 Windows Server 2016。 
--   然后，使用 Windows PowerShell cmdlet `Update-ClusterFunctionalLevel`将群集功能级别更改为 Windows Server 2016。 此时，你可以利用 Windows Server 2016 功能。 
+-   然后，使用 Windows PowerShell cmdlet 将群集功能级别更改为 Windows Server 2016 `Update-ClusterFunctionalLevel` 。 此时，你可以利用 Windows Server 2016 功能。 
 
 有关详细信息，请参阅[群集操作系统滚动升级](cluster-operating-system-rolling-upgrade.md)。 
 
@@ -176,13 +176,13 @@ Hyper-v 或横向扩展文件服务器故障转移群集现在可以轻松升级
 
 为了帮助诊断故障转移群集的问题，Windows Server 2016 包括以下各项：  
 
-- 群集日志文件（如时区信息和 DiagnosticVerbose 日志）的几项增强功能，可更轻松地排查故障转移群集问题。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-群集日志](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx)。 
+- 对群集日志文件（如时区信息和 DiagnosticVerbose 日志）进行了多项改进，以便更轻松地排查故障转移群集问题。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-群集日志](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372005)。
 
-- 新的转储类型为**活动内存转储**，它会筛选出分配给虚拟机的大部分内存页面，从而使内存的更小、更易于保存或复制。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-活动转储](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx)。 
+- 新的转储类型为**活动内存转储**，它会筛选出分配给虚拟机的大部分内存页面，从而使内存的更小、更易于保存或复制。 有关详细信息，请参阅[Windows Server 2016 故障转移群集故障排除增强-活动转储](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372008)。
 
 ### <a name="site-aware-failover-clusters"></a><a name="BKMK_SiteAware"></a>站点感知故障转移群集
 
-Windows Server 2016 包括站点感知故障转移群集，这些群集基于其物理位置（站点）启用延伸群集中的组节点。 群集站点感知改进了群集生命周期内的关键操作，例如故障转移行为、位置策略、节点之间的检测信号和仲裁行为。 有关详细信息，请参阅[Windows Server 2016 中的站点感知故障转移群集](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx)。 
+Windows Server 2016 包括站点感知故障转移群集，这些群集基于其物理位置（站点）启用延伸群集中的组节点。 群集站点感知改进了群集生命周期内的关键操作，例如故障转移行为、位置策略、节点之间的检测信号和仲裁行为。 有关详细信息，请参阅[Windows Server 2016 中的站点感知故障转移群集](https://techcommunity.microsoft.com/t5/failover-clustering/site-aware-failover-clusters-in-windows-server-2016/ba-p/372060)。
 
 ### <a name="workgroup-and-multi-domain-clusters"></a><a name="BKMK_multidomainclusters"></a>工作组和多域群集
 
@@ -194,7 +194,7 @@ Windows Server 2016 包括站点感知故障转移群集，这些群集基于其
 
 -   **工作组群集。** 节点是成员服务器/工作组的群集（未加入域）。 
 
-有关详细信息，请参阅[Windows Server 2016 中的工作组和多域群集](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)
+有关详细信息，请参阅[Windows Server 2016 中的工作组和多域群集](https://techcommunity.microsoft.com/t5/failover-clustering/workgroup-and-multi-domain-clusters-in-windows-server-2016/ba-p/372059)
 
 ### <a name="virtual-machine-load-balancing"></a><a name="BKMK_VMLoadBalancing"></a>虚拟机负载平衡  
 

@@ -1,6 +1,6 @@
 ---
 title: nslookup set recurse
-description: '* * * * 的参考主题'
+description: Nslookup set 递归命令的参考主题，它会告知域名系统（DNS）名称服务器在指定的服务器上找不到该信息时查询其他服务器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4386bd5738806016b9ec15802faebf3efdcedf0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 082ba3bd926d1f47be5510c2340804b1b92991f1
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723594"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721598"
 ---
 # <a name="nslookup-set-recurse"></a>nslookup set recurse
 
-
-
-告诉域名系统（DNS）名称服务器查询其他服务器（如果没有此信息）。
+如果域名系统（DNS）名称服务器找不到指定服务器上的信息，则通知该服务器查询其他服务器。
 
 ## <a name="syntax"></a>语法
 
@@ -30,11 +28,12 @@ set [no]recurse
 
 ### <a name="parameters"></a>参数
 
-|   参数   |                                                                  描述                                                                  |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| **norecurse** |                停止域名系统（DNS）名称服务器查询其他服务器（如果没有）。                |
-|  **recurse**  | 告诉域名系统（DNS）名称服务器查询其他服务器（如果没有此信息）。 默认语法是**递归**的。 |
-|     {帮助     |                                                                      ?}                                                                       |
+| 参数 | 说明 |
+| ---------- | ---------- |
+| norecurse | 如果域名系统（DNS）名称服务器找不到指定服务器上的信息，则阻止该服务器查询其他服务器。 |
+| recurse | 如果域名系统（DNS）名称服务器找不到指定服务器上的信息，则通知该服务器查询其他服务器。 这是默认值。 |
+| /? | 在命令提示符下显示帮助。 |
+| /help | 在命令提示符下显示帮助。 |
 
 ## <a name="additional-references"></a>其他参考
 

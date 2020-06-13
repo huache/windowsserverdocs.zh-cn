@@ -1,6 +1,6 @@
 ---
 title: nslookup set vc
-description: '* * * * 的参考主题'
+description: Nslookup set vc 命令的参考主题，指定将请求发送到服务器时是否使用虚拟线路。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4cd465ecfbf9da540b8e693a6f0f3938e5752a4
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 49220589de2d2440735e056a8aa3acdd2122a376
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723520"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721200"
 ---
 # <a name="nslookup-set-vc"></a>nslookup set vc
 
-
-
-指定在向服务器发送请求时使用或不使用虚拟线路。
+指定将请求发送到服务器时是否使用虚拟线路。
 
 ## <a name="syntax"></a>语法
 
@@ -30,11 +28,13 @@ set [no]vc
 
 ### <a name="parameters"></a>参数
 
-| 参数 |                                              描述                                               |
-|-----------|--------------------------------------------------------------------------------------------------------|
-| **novc**  | 指定在向服务器发送请求时从不使用虚拟线路。 默认值为**novc**。 |
-|  **vc**   |             指定在向服务器发送请求时始终使用虚拟线路。             |
-|   {帮助   |                                                   ?}                                                   |
+
+| 参数 | 说明 |
+| ---------- | ---------- |
+| novc | 指定在向服务器发送请求时从不使用虚拟线路。 这是默认值。 |
+| vc | 指定在向服务器发送请求时始终使用虚拟线路。 |
+| /? | 在命令提示符下显示帮助。 |
+| /help | 在命令提示符下显示帮助。 |
 
 ## <a name="additional-references"></a>其他参考
 

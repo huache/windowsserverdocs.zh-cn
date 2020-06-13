@@ -1,6 +1,6 @@
 ---
 title: nslookup set debug
-description: '* * * * 的参考主题'
+description: 用于启用和禁用调试模式的 nslookup set 调试命令的参考主题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 92a6f53105c682500d68fa7bf07fdcbacea75f34
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 910dd197fe756e733b61318243130e85b4410eb1
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723632"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721170"
 ---
 # <a name="nslookup-set-debug"></a>nslookup set debug
-
-
 
 启用或禁用调试模式。
 
@@ -30,15 +28,12 @@ set [no]debug
 
 ### <a name="parameters"></a>参数
 
-|  参数  |                         描述                          |
-|-------------|--------------------------------------------------------------|
-| **nodebug** | 关闭调试模式。 默认语法为**nodebug**。 |
-|  **debug.exe**  |                   启用调试模式。                   |
-|  \*\*{帮助  |                            ?}\*\*                            |
-
-## <a name="remarks"></a>备注
-
--   启用调试模式后，将打印有关发送到服务器的数据包的详细信息和生成的答案。
+| 参数 | 说明 |
+| ---------- | ---------- |
+| nodebug | 关闭调试模式。 这是默认值。 |
+| debug | 启用调试模式。 启用调试模式后，可以查看有关发送到服务器的数据包的详细信息和生成的答案。 |
+| /? | 在命令提示符下显示帮助。 |
+| /help | 在命令提示符下显示帮助。 |
 
 ## <a name="additional-references"></a>其他参考
 

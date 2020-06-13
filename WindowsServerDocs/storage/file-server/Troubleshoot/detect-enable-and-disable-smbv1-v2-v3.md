@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: d6c47843dedaf45842f70d1bb408b59d63c03eb4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd2f4c6b6bb17231ac04b3344e9a39df2cad79d0
+ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815500"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84740640"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>如何在 Windows 中检测、启用和禁用 SMBv1、SMBv2 和 SMBv3
 
@@ -35,7 +35,7 @@ ms.locfileid: "80815500"
 - 大 MTU 支持-完全使用 10-gigabye （GB）以太网    
 - 提高了能效-已向服务器打开文件的客户端可以进入睡眠状态    
 
-在 Windows 8、Windows 8.1、Windows 10、Windows Server 2012 和 Windows Server 2016 中，禁用 SMBv3 将停用以下功能（以及前面的列表中所述的 SMBv2 功能）： 
+在 Windows 8、Windows 8.1、Windows 10、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 中，禁用 SMBv3 将停用以下功能（以及前面的列表中所述的 SMBv2 功能）： 
  
 - 透明故障转移-客户端在维护或故障转移过程中重新连接而不中断群集节点    
 - Scale Out –对所有文件群集节点上的共享数据进行并发访问     
@@ -45,7 +45,7 @@ ms.locfileid: "80815500"
 - 目录租用-通过缓存改善分支机构中的应用程序响应时间    
 - 性能优化-优化小型随机读/写 i/o
 
-##  <a name="more-information"></a>详细信息
+##  <a name="more-information"></a>更多信息
 
 Windows Vista 和 Windows Server 2008 中引入了 SMBv2 协议。
 
@@ -57,11 +57,11 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
 
 [SMB 中的新增功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff625695(v=ws.10))  
 
-## <a name="how-to-gracefully-remove-smb-v1-in-windows-81-windows-10-windows-2012-r2-and-windows-server-2016"></a>如何在 Windows 8.1、Windows 10、Windows 2012 R2 和 Windows Server 2016 中正常删除 SMB v1
+## <a name="how-to-gracefully-remove-smb-v1-in-windows-81-windows-10-windows-2012-r2-windows-server-2016-and-windows-server-2019"></a>如何在 Windows 8.1、Windows 10、Windows 2012 R2、Windows Server 2016 和 Windows Server 2019 中正常删除 SMB v1
 
-#### <a name="windows-server-2012-r2--2016-powershell-methods"></a>Windows Server 2012 R2 & 2016： PowerShell 方法
+#### <a name="powershell-methods"></a>PowerShell 方法
 
-##### <a name="smb-v1"></a>SMB v1
+##### <a name="smb-v1-client-and-server"></a>SMB v1 （客户端和服务器）
 
 - 察觉 
 
@@ -75,33 +75,13 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
   Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
-- 可 
+- 启用： 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
-##### <a name="smb-v2v3"></a>SMB v2/v3
-
-- 察觉
-  
-  ```PowerShell
-  Get-SmbServerConfiguration | Select EnableSMB2Protocol
-  ```
-
-- 禁用
-
-  ```PowerShell
-  Set-SmbServerConfiguration -EnableSMB2Protocol $false
-  ```
-
-- 可
-
-  ```PowerShell
-  Set-SmbServerConfiguration -EnableSMB2Protocol $true 
-  ```
-
-#### <a name="windows-server-2012-r2-and-windows-server-2016-server-manager-method-for-disabling-smb"></a>Windows Server 2012 R2 和 Windows Server 2016：用于禁用 SMB 的服务器管理器方法
+#### <a name="windows-server-2012-r2-windows-server-2016-windows-server-2019-server-manager-method-for-disabling-smb"></a>Windows Server 2012 R2、Windows Server 2016、Windows Server 2019：用于禁用 SMB 的服务器管理器方法
 
 ##### <a name="smb-v1"></a>SMB v1
 
@@ -123,13 +103,13 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
   Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-- 可 
+- 启用： 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-##### <a name="smb-v2v3protocol"></a>SMB v2/v3 协议
+##### <a name="smb-v2v3protocol-only-disables-smb-v2v3-server"></a>SMB v2/v3 协议（仅禁用 SMB v2/v3 服务器）
 
 - 察觉 
   
@@ -143,7 +123,7 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
   Set-SmbServerConfiguration –EnableSMB2Protocol $false
   ```
 
-- 可
+- 启用：
 
   ```PowerShell
   Set-SmbServerConfiguration –EnableSMB2Protocol $true
@@ -178,7 +158,7 @@ Windows 8 和 Windows Server 2012 引入了新的**SMBServerConfiguration** Wind
   Set-SmbServerConfiguration -EnableSMB1Protocol $false
   ```
 
-- 可 
+- 启用： 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB1Protocol $true
   ```
@@ -198,7 +178,7 @@ Windows 8 和 Windows Server 2012 引入了新的**SMBServerConfiguration** Wind
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- 可
+- 启用：
   
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true
@@ -206,7 +186,7 @@ Windows 8 和 Windows Server 2012 引入了新的**SMBServerConfiguration** Wind
 
 ### <a name="for-windows-7-windows-server-2008-r2-windows-vista-and-windows-server-2008"></a>适用于 Windows 7、Windows Server 2008 R2、Windows Vista 和 Windows Server 2008
 
-若要在运行 windows 7、Windows Server 2008 R2、Windows Vista 或 Windows Server 2008 的 SMB 服务器上启用或禁用 SMB 协议，请使用 Windows PowerShell 或注册表编辑器。 
+若要在运行 Windows 7、Windows Server 2008 R2、Windows Vista 或 Windows Server 2008 的 SMB 服务器上启用或禁用 SMB 协议，请使用 Windows PowerShell 或注册表编辑器。 
 
 #### <a name="powershell-methods"></a>PowerShell 方法
 
@@ -229,7 +209,7 @@ Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters | ForEa
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 –Force
 ```
 
-可  
+启用：  
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
@@ -250,7 +230,7 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 –Force  
 ```
 
-可
+启用：
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 –Force 
@@ -262,11 +242,11 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 #### <a name="registry-editor"></a>注册表编辑器
 
 > [!IMPORTANT]
-> 请认真遵循本部分所述的步骤。 如果不正确地修改注册表，可能会出现严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
+> 请认真遵循本部分所述的步骤。 如果注册表修改不正确，可能会发生严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
  
 若要在 SMB 服务器上启用或禁用 SMBv1，请配置以下注册表项：
 
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
 
 ```
 Registry entry: SMB1
@@ -277,7 +257,7 @@ Default: 1 = Enabled (No registry key is created)
 
 若要在 SMB 服务器上启用或禁用 SMBv2，请配置以下注册表项： 
 
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
 
 ```
 Registry entry: SMB2
@@ -287,7 +267,7 @@ Default: 1 = Enabled (No registry key is created)
 ```
 
 > [!NOTE]
-> 必须在进行这些更改后重新启动计算机。 
+> 进行这些更改之后，必须重新启动计算机。 
 
 ## <a name="how-to-detect-status-enable-and-disable-smb-protocols-on-the-smb-client"></a>如何在 SMB 客户端上检测状态、启用和禁用 SMB 协议
 
@@ -298,7 +278,7 @@ Default: 1 = Enabled (No registry key is created)
 
 ##### <a name="smb-v1-on-smb-client"></a>SMB v1 （在 SMB 客户端上）
 
-- 检测
+- Detect
   
   ```cmd
   sc.exe qc lanmanworkstation
@@ -311,7 +291,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= disabled
   ```
 
-- 可
+- 启用：
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -334,7 +314,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb20 start= disabled 
   ```
 
-- 可
+- 启用：
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -350,14 +330,14 @@ Default: 1 = Enabled (No registry key is created)
 
 此过程在注册表中配置以下新项：
 
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters** 
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters** 
 
 - 注册表项： **SMB1** 
 - REG_DWORD： **0** = 已禁用   
 
 若要使用组策略进行配置，请执行以下步骤：
  
-1. 打开“组策略管理控制台”。 右键单击应该包含新首选项的组策略对象 (GPO)，然后单击 **“编辑”** 。
+1. 打开“组策略管理控制台”****。 右键单击应该包含新首选项的组策略对象 (GPO)，然后单击 **“编辑”**。
 
 2. 在控制台树中的 "**计算机配置**" 下，展开 "**首选项**" 文件夹，然后展开 " **Windows 设置**" 文件夹。
 
@@ -399,11 +379,11 @@ Default: 1 = Enabled (No registry key is created)
 注册表项： **DependOnService** REG_MULTI_SZ： **"Bowser"、"MRxSmb20"、"NSI"**   
 
 > [!NOTE]
-> 包含的默认 MRxSMB10，它现在作为依赖项删除。
+> 默认已包含的 MRxSMB10，现已删除为依赖项。
 
 若要使用组策略进行配置，请执行以下步骤：
  
-1. 打开“组策略管理控制台”。 右键单击应该包含新首选项的组策略对象 (GPO)，然后单击 **“编辑”** 。
+1. 打开“组策略管理控制台”****。 右键单击应该包含新首选项的组策略对象 (GPO)，然后单击 **“编辑”**。
 
 2. 在控制台树中的 "**计算机配置**" 下，展开 "**首选项**" 文件夹，然后展开 " **Windows 设置**" 文件夹。
 

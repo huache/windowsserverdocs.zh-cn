@@ -1,6 +1,6 @@
 ---
 title: nslookup set all
-description: '* * * * 的参考主题'
+description: Nslookup set all 命令的参考主题，用于输出当前配置设置值。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,34 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 04ffa560f45a0569c063ac35a7aa0e056e8d1a73
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b541f1f68fd3f43a8e4ab05f8e3e4351b7d8bc71
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723661"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721640"
 ---
 # <a name="nslookup-set-all"></a>nslookup set all
 
-
-
-打印配置设置的当前值。
+输出当前配置设置值，包括默认服务器和计算机（主机）。
 
 ## <a name="syntax"></a>语法
 
 ```
-set all 
+set all
 ```
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
-|-----------|-------------|
-|   {帮助   |     ?}      |
-
-## <a name="remarks"></a>备注
-
--   **全部设置**还会打印有关默认服务器和计算机（即主机）的信息。
+| 参数 | 说明 |
+| --------- | ----------- |
+| /? | 在命令提示符下显示帮助。 |
+| /help | 在命令提示符下显示帮助。 |
 
 ## <a name="additional-references"></a>其他参考
 

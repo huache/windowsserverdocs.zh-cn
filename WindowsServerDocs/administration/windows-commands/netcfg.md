@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6910f7e3f3d2f100942897bd9712293f7eb0f4d9
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 5a308441df55873b205972d703ec52f53345beb5
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354257"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721550"
 ---
 # <a name="netcfg"></a>netcfg
 
@@ -40,7 +40,7 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 | /i | 提供组件 ID。 |
 | /s | 提供要显示的组件类型，包括适配器的**\ta**或 net 组件的**n** 。 |
 | /b | 显示绑定路径，后跟包含路径名称的字符串。 |
-| /? | 在命令提示符下显示帮助。 |                                                    |
+| /? | 在命令提示符下显示帮助。 |
 
 ### <a name="examples"></a>示例
 

@@ -1,6 +1,6 @@
 ---
 title: nslookup set root
-description: '* * * * 的参考主题'
+description: Nslookup set root 命令的参考主题，它更改了用于查询的根服务器的名称。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d913669fd4fede06c9983756df1bbf626ca430ac
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1271dbeb0381d01e70380bded82a94ba20163853
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723572"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721450"
 ---
 # <a name="nslookup-set-root"></a>nslookup set root
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 更改用于查询的根服务器的名称。
+
+> [!NOTE]
+> 此命令支持[nslookup 根](nslookup-root.md)命令。
+
 ## <a name="syntax"></a>语法
+
 ```
-set root=<RootServer>
+set root=<rootserver>
 ```
+
 ### <a name="parameters"></a>参数
 
-|    参数    |                                   描述                                    |
-|-----------------|----------------------------------------------------------------------------------|
-|  <RootServer>   | 指定根服务器的新名称。 默认值为 ns.nic.ddn.mil。 |
-| {help &#124;？} |              显示**nslookup**子命令的简短摘要。               |
+| 参数 | 说明 |
+| ---------- | ---------- |
+| `<rootserver>` | 指定根服务器的新名称。 默认值为**ns.nic.ddn.mil**。 |
+| /? | 在命令提示符下显示帮助。 |
+| /help | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>备注
-- **Set root**子命令影响**root**子命令。
-  ## <a name="additional-references"></a>其他参考
-  - [命令行语法密钥](command-line-syntax-key.md)
-  [nslookup 根](nslookup-root.md)
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)
+
+- [nslookup root](nslookup-root.md)

@@ -1,6 +1,6 @@
 ---
 title: nslookup set type
-description: '* * * * 的参考主题'
+description: "\"Nslookup 集类型\" 命令的参考主题，它更改查询的资源记录类型。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,49 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a9ccc7dde40b93db5f331930bc405c98764483d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 793ab40bbc47df09eb71642623e42a6f65c56842
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723536"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721350"
 ---
 # <a name="nslookup-set-type"></a>nslookup set type
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-更改查询的资源记录类型。
+更改查询的资源记录类型。 有关资源记录类型的信息，请参阅[请求注释（Rfc） 1035](https://tools.ietf.org/html/rfc1035)。
+
+> [!NOTE]
+> 此命令与[nslookup set querytype](nslookup-set-querytype.md)命令相同。
+
 ## <a name="syntax"></a>语法
+
 ```
-set type=<ResourceRecordtype>
+set type=<resourcerecordtype>
 ```
+
 ### <a name="parameters"></a>参数
-<ResourceRecordtype>指定 DNS 资源记录类型。 默认资源记录类型是。下表列出了此命令的有效值。
 
-| 值 |                                                   描述                                                   |
-|-------|-----------------------------------------------------------------------------------------------------------------|
-|   A   |                                      指定&#39;s IP 地址的计算机                                      |
-|  ANY  |                                     指定计算机&#39;的 IP 地址。                                      |
-| CNAME |                                    指定别名的规范名称。                                     |
-|  GID  |                                  指定组名称的组标识符。                                  |
-| HINFO |                          指定计算机&#39;的 CPU 和操作系统类型。                           |
-|  MB   |                                        指定邮箱域名。                                         |
-|  MG   |                                         指定邮件组成员。                                          |
-| MINFO |                                   指定邮箱或邮件列表信息。                                   |
-|  MR   |                                     指定邮件重命名域名。                                      |
-|  MX   |                                          指定邮件交换器。                                          |
-|  NS   |                                 指定命名区域的 DNS 名称服务器。                                 |
-|  PTR  | 如果查询是 IP 地址，则指定计算机名;否则，指定指向其他信息的指针。 |
-|  SOA  |                                指定 DNS 区域的授权。                                 |
-|  TXT  |                                         指定文本信息。                                         |
-|  UID  |                                         指定用户标识符。                                          |
-| UINFO |                                         指定用户信息。                                         |
-|  WKS  |                                         描述一个众所周知的服务。                                         |
-| {帮助 |                                                       ?}                                                        |
+| 参数 | 说明 |
+| --------- | ----------- |
+| `<resourcerecordtype>` | 指定 DNS 资源记录类型。 默认资源记录类型**是，但**您可以使用以下任何值：<ul><li>**答：** 指定计算机的 IP 地址。</li><li>**任何：** 指定计算机的 IP 地址。</li><li>**CNAME：** 指定别名的规范名称。</li><li>**GID**指定组名称的组标识符。</li><li>**HINFO：** 指定计算机的 CPU 和操作系统类型。</li><li>**MB：** 指定邮箱域名。</li><li>**MG：** 指定邮件组成员。</li><li>**MINFO：** 指定邮箱或邮件列表信息。</li><li>**MR：** 指定邮件重命名域名。</li><li>**MX：** 指定邮件交换器。</li><li>**NS：** 指定命名区域的 DNS 名称服务器。</li><li>**PTR：** 如果查询是 IP 地址，则指定计算机名;否则，指定指向其他信息的指针。</li><li>**SOA：** 指定 DNS 区域的授权。</li><li>**TXT：** 指定文本信息。</li><li>**UID：** 指定用户标识符。</li><li>**UINFO：** 指定用户信息。</li><li>**WKS：** 描述一个众所周知的服务。</li></ul> |
+| /? | 在命令提示符下显示帮助。 |
+| /help | 在命令提示符下显示帮助。 |
 
-显示<strong>nslookup</strong>子命令的简短摘要。
-## <a name="remarks"></a>备注
-- <strong>Set type</strong>命令执行与<strong>set querytype</strong>命令相同的功能。
-- 有关资源记录类型的详细信息，请参阅请求注释（Rfc）1035。
-  ## <a name="additional-references"></a>其他参考
-  <href = key.md =-命令行语法[键](command-line-syntax-key.md)，请>命令行语法键</a> <href = nslookup =[nslookup set querytype](nslookup-set-querytype.md)>nslookup set querytype 的数据源数据源 = nslookup set。</a>
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)
+
+- [nslookup set type](nslookup-set-querytype.md)
