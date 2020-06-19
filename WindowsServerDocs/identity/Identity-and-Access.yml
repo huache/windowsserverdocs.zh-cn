@@ -1,0 +1,53 @@
+### YamlMime:Landing
+title: 标识和访问文档
+summary: 访问和标识技术在本地以及仅云和混合部署（其中某些应用程序和服务托管在云中，而另一些则托管在本地）中实现了安全的 Active Directory 环境。
+metadata:
+  title: 标识和访问文档
+  description: 访问和标识技术在本地以及仅云和混合部署（其中某些应用程序和服务托管在云中，而另一些则托管在本地）中实现了安全的 Active Directory 环境。
+  ms.topic: landing-page
+  author: billmath
+  ms.author: billmath
+  ms.date: 5/18/2020
+  ms.openlocfilehash: 10723952ab4b146c491f469e6569670ad0f1c5e1
+  ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
+  ms.translationtype: MT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 06/19/2020
+  ms.locfileid: "85095676"
+landingContent:
+- title: 关于身份标识和访问技术
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 新增功能
+      url: ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md
+  - linkListType: overview
+    links:
+    - text: 针对 Active Directory 域服务和 AD DS 的特权访问管理
+      url: https://technet.microsoft.com/library/dn903243.aspx
+    - text: 企业版 Windows 10：使用设备工作的方式
+      url: https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1
+    - text: Active Directory 域服务
+      url: ../identity/ad-ds/Active-Directory-Domain-Services.md
+    - text: Active Directory 联合身份验证服务
+      url: Active-Directory-Federation-Services.md
+- title: 解决方案和方案指南
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: 从任何设备上的任何位置安全访问公司资源
+      url: https://technet.microsoft.com/library/dn550982.aspx
+    - text: 跨公司应用程序从任一设备加入工作区以实现 SSO 和无缝第二重身份验证
+      url: https://technet.microsoft.com/library/dn280945.aspx
+    - text: 使用适用于敏感应用程序的附加多重身份验证管理风险
+      url: https://technet.microsoft.com/library/dn280949.aspx
+    - text: 使用条件访问控制管理风险
+      url: https://technet.microsoft.com/library/dn280937.aspx
+- title: 较早版本的 Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 先前版本的文档
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: 搜索特定信息
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

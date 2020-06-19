@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ae082ebd2b5cf98be891d8f557f9e42d7724d22
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de96280f42f1e3002c4379390367856dcdcb885a
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716094"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070186"
 ---
 # <a name="change-user"></a>change user
 
@@ -33,7 +33,7 @@ change user {/execute | /install | /query}
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | / execute | 使.ini 文件映射到主目录。 这是默认设置。 |
 | /install | 禁用.ini 文件映射到主目录。 所有的.ini 文件读取并写入到系统目录中。 在远程桌面会话主机服务器上安装应用程序时，必须禁用 .ini 文件映射。 |
@@ -50,7 +50,7 @@ change user {/execute | /install | /query}
 
 - 当系统正在运行时，**更改用户/install**，会发生多种情况。 所有创建的注册表项都将在**\SOFTWARE**子项或**\MACHINE**子项中**HKEY_LOCAL_MACHINE \software\microsoft\windows NT\Currentversion\Terminal Server\Install**下隐藏。 子项添加到 **HKEY_CURRENT_USER** 将复制到下方 **\SOFTWARE** 子项，并且子项添加到 **HKEY_LOCAL_MACHINE** 将复制到下方 **\MACHINE** 子项。 如果应用程序使用系统调用（如 GetWindowsdirectory）查询 Windows 目录，则 rd 会话主机服务器会返回 systemroot 目录。 如果使用的系统调用，如 WritePrivateProfileString，添加了任何.ini 文件条目添加到 systemroot 目录下的.ini 文件。
 
-- 当系统返回**更改用户/execute**，并且应用程序尝试读取**HKEY_CURRENT_USER**中不存在的注册表项时，远程桌面服务检查是否存在该密钥的副本是否存在于**\Terminal Server\Install**子项下。 如果是这样，则子项会复制到**HKEY_CURRRENT_USER**下的相应位置。 如果应用程序尝试读取.ini 文件不存在，远程桌面服务会搜索该.ini 文件系统根目录下。 如果.ini 文件系统根目录中，该证书复制到用户的主目录的 \Windows 子目录。 如果应用程序查询 Windows 目录，则 rd 会话主机服务器将返回用户的主目录的 \Windows 子目录。
+- 当系统返回**更改用户/execute**，并且应用程序尝试读取**HKEY_CURRENT_USER**中不存在的注册表项时，远程桌面服务检查是否存在该密钥的副本是否存在于**\Terminal Server\Install**子项下。 如果已存在，则子项被复制到下的适当位置 **HKEY_CURRENT_USER**。 如果应用程序尝试读取.ini 文件不存在，远程桌面服务会搜索该.ini 文件系统根目录下。 如果.ini 文件系统根目录中，该证书复制到用户的主目录的 \Windows 子目录。 如果应用程序查询 Windows 目录，则 rd 会话主机服务器将返回用户的主目录的 \Windows 子目录。
 
 - 当您登录时，远程桌面服务检查其系统.ini 文件是否比您的计算机上的.ini 文件。 如果系统版本较新，您的.ini 文件替换或者合并在一起的较新版本。 这取决于 INISYNC 类型为 bit，0x40，是为此.ini 文件设置。 以前版本的.ini 文件会重命名为 Inifile.ctx。 如果系统注册表值下 **\Terminal Server\Install** 子项的下您版本比新 **HKEY_CURRENT_USER**, ，您则子项的版本被删除并替换为新子项 **\Terminal Server\Install**。
 

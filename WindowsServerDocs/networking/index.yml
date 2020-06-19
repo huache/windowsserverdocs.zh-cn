@@ -1,0 +1,120 @@
+### YamlMime:Landing
+title: 网络完档
+summary: 网络是软件定义的数据中心 (SDDC) 平台的基础部分，Windows Server 2016 提供了新的和改进的软件定义的网络 (SDN) 技术，来帮助你的组织迁移到已完全实现的 SDDC 解决方案。
+metadata:
+  title: 网络完档
+  description: 本主题概述了 Windows Server 2016 中提供的软件定义的网络和网络平台技术。
+  layout: LandingPage
+  ms.technology: networking
+  ms.topic: landing-page
+  manager: dougkim
+  author: AnirbanPaul
+  ms.author: anpaul
+  ms.date: 06/11/2020
+  ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
+  ms.localizationpriority: medium
+  ms.openlocfilehash: 9b419210689e0ca11bfc2c285cd6669d3a883679
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85070996"
+landingContent:
+- title: 关于网络
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Server 支持的网络方案
+      url: windows-server-supported-networking-scenarios.md
+  - linkListType: whats-new
+    links:
+    - text: 网络中的新增功能
+      url: What-s-New-in-Networking.md
+  - linkListType: reference
+    links:
+    - text: Windows Server 库
+      url: /previous-versions/windows/
+    - text: Windows Server 2003/2003 R2 已停用内容
+      url: https://www.microsoft.com/download/details.aspx?id=53314
+- title: 软件定义的网络
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 软件定义的网络 (SDN)
+      url: sdn/index.yml
+    - text: 网络控制器
+      url: sdn/technologies/network-controller/Network-Controller.md
+    - text: 用于 SDN 的软件负载平衡 (SLB)
+      url: sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md
+    - text: 用于 SDN 的 RAS 网关
+      url: sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md
+    - text: 网络功能虚拟化
+      url: sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md
+    - text: 数据中心防火墙概述
+      url: sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md
+  - linkListType: deploy
+    links:
+    - text: 使用脚本部署 SDN 基础结构
+      url: sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md
+- title: 网络技术
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: BranchCache
+      url: branchcache/BranchCache.md
+    - text: 核心网络指南
+      url: core-network-guide/core-network-guide-windows-server.md
+    - text: DirectAccess
+      url: ../remote/remote-access/da-stub.md
+    - text: 域名系统 (DNS)
+      url: dns/dns-top.md
+    - text: 动态主机配置协议 (DHCP)
+      url: technologies/dhcp/dhcp-top.md
+    - text: Hyper-V 网络虚拟化
+      url: sdn/technologies/hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md
+    - text: Hyper-V 虚拟交换机
+      url: ../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md
+    - text: IP 地址管理 (IPAM)
+      url: technologies/ipam/ipam-top.md
+    - text: 网络负载平衡 (NLB)
+      url: technologies/Network-Load-Balancing.md
+- title: 网络技术
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 网络策略服务器
+      url: technologies/nps/nps-top.md
+    - text: Network Shell (Netsh)
+      url: technologies/netsh/netsh.md
+    - text: 网络子系统性能调整
+      url: technologies/network-subsystem/net-sub-performance-top.md
+    - text: NIC 组合
+      url: technologies/nic-teaming/NIC-Teaming.md
+    - text: 服务质量 (QoS) 策略
+      url: technologies/qos/qos-policy-top.md
+    - text: Windows Internet 名称服务 (WINS)
+      url: technologies/wins/wins-top.md
+    - text: 远程访问
+      url: ../remote/remote-access/remote-access.md
+    - text: Windows 容器网络
+      url: /virtualization/windowscontainers/container-networking/architecture
+    - text: 虚拟专用网 (VPN)
+      url: ../remote/remote-access/vpn/vpn-top.md
+  - linkListType: reference
+    links:
+    - text: Windows Server 2016 中的 Web 应用程序代理
+      url: /windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server
+    - text: “远程访问 AlwaysOn VPN”部署指南
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy
+- title: 高性能网络
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 高性能网络
+      url: technologies/hpn/hpn-top.md
+    - text: 聚合网络接口卡 (NIC)
+      url: technologies/conv-nic/cnic-top.md
+    - text: Data Center Bridging (DCB)
+      url: technologies/dcb/dcb-top.md
+    - text: 虚拟接收方缩放 (vRSS)
+      url: technologies/vrss/vrss-top.md

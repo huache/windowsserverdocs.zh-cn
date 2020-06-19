@@ -1,65 +1,60 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Hub
 title: 超融合基础设施文档
+summary: 将软件定义的计算、存储和网络资源合并到单个群集中来提供高性能、经济高效且易于缩放的虚拟化。
+brand: windows
 metadata:
-  document_id: null
   title: 超融合基础设施文档
-  description: 超融合基础设施文档
-  text: 将软件定义的计算、存储和网络资源合并到单个群集中来提供高性能、经济高效且易于缩放的虚拟化
-  keywords: 'Windows Server, Windows Server 2016, hyper-v, sdn, 存储空间直通, wssd'
-  ms.localizationpriority: high
+  description: 将软件定义的计算、存储和网络资源合并到单个群集中来提供高性能、经济高效且易于缩放的虚拟化。
+  ms.service: help
+  ms.topic: hub-page
   author: coreyp-at-msft
   ms.author: coreyp
-  ms.topic: article
-  ms.devlang: na
-sections:
-  - title: null
-  - items:
-      - type: markdown
-        text: 将软件定义的计算、存储和网络资源合并到单个群集中来提供高性能、经济高效且易于缩放的虚拟化。
-  - items:
-      - type: list
-        style: cards
-        className: cardsI
-        columns: 2
-        items:
-          - href: ../virtualization/hyper-v/index.md
-            html: <p>对服务器硬件进行虚拟化，使你能够在超融合群集中的服务器上运行虚拟机</p>
-            image:
-              src: ../media/i-virtualize.svg
-            title: Hyper-V
-          - href: ../storage/storage-spaces/storage-spaces-direct-overview.md
-            html: <p>对存储硬件进行虚拟化，使你能够基于超聚合群集中的服务器中分布的虚拟驱动器池创建卷。</p>
-            image:
-              src: ../media/i-store.svg
-            title: Storage Spaces Direct
-          - href: ../failover-clustering/failover-clustering-overview.md
-            html: <p>将多个服务器组合在一起，以便工作负荷（例如虚拟机）可以在群集中的任何服务器上运行，实现负载均衡以及正常在服务器之间进行故障转移。</p>
-            image:
-              src: ../media/i-cluster.svg
-            title: 故障转移群集
-          - href: 'https://docs.microsoft.com/windows-server/networking/sdn/'
-            html: <p>对网络硬件进行虚拟化，使你能够动态创建和管理对来自基础物理网络的工作负荷进行抽象的网络和策略。</p>
-            image:
-              src: ../media/i-network.svg
-            title: 软件定义的网络
-          - href: ../manage/windows-admin-center/overview.md
-            html: <p>管理群集和其他 Windows 服务器。</p>
-            image:
-              src: ../media/i-admin-center.svg
-            title: Windows Admin Center
-          - href: ../azure-hybrid-services.md
-            html: <p>将群集连接到 Azure 混合服务以执行站点恢复、监视等操作。</p>
-            image:
-              src: ../media/i-microsoft-azure.svg
-            title: 连接到 Azure 混合服务
-          - href: ../azure-stack-hci
-            html: <p>将 Windows Server 2019 虚拟化和群集技术与所选的合作伙伴提供的经过验证的硬件解决方案进行配对，帮助你避免在对软件定义的数据中心进行调整时凭猜测行事。</p>
-            image:
-              src: ../media/i-azure-stack.svg
-            title: Azure Stack HCI
-          - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
-            html: <p>将 Windows Server 2016 虚拟化和群集技术与所选的合作伙伴提供的经过验证的硬件解决方案进行配对，帮助你避免在对软件定义的数据中心进行调整时凭猜测行事。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
-            title: Windows Server 软件定义的 (WSSD)
+  ms.date: 06/10/2020
+  ms.openlocfilehash: 1d2ec270e90423f2405b664f22de7ca85c540498
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85070159"
+productDirectory:
+  items:
+  - title: Hyper-V
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-virtualize.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/
+      text: 对服务器硬件进行虚拟化，使你能够在超融合群集中的服务器上运行虚拟机。
+  - title: Storage Spaces Direct
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-store.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview
+      text: 对存储硬件进行虚拟化，使你能够基于超聚合群集中的服务器中分布的虚拟驱动器池创建卷。
+  - title: 故障转移群集
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-cluster.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview
+      text: 将多个服务器组合在一起，以便工作负荷（例如虚拟机）可以在群集中的任何服务器上运行，实现负载均衡以及正常在服务器之间进行故障转移。
+  - title: 软件定义的网络
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-network.svg
+    links:
+    - url: https://docs.microsoft.com/windows-server/networking/sdn/
+      text: 对网络硬件进行虚拟化，使你能够动态创建和管理对来自基础物理网络的工作负荷进行抽象的网络和策略。
+  - title: Windows Admin Center
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-admin-center.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview
+      text: 对服务器硬件进行虚拟化，使你能够在超融合群集中的服务器上运行虚拟机。
+  - title: 连接到 Azure 混合服务
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-microsoft-azure.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/azure-hybrid-services
+      text: 将群集连接到 Azure 混合服务以执行站点恢复、监视等操作。
+  - title: Azure Stack HCI
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-azure-stack.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/azure-stack-hci
+      text: 将 Windows Server 2019 虚拟化和群集技术与所选的合作伙伴提供的经过验证的硬件解决方案进行配对，帮助你避免在对软件定义的数据中心进行调整时凭猜测行事。
+  - title: Windows Server 软件定义的 (WSSD)
+    imageSrc: https://docs.microsoft.com/media/common/i_data-collection.svg
+    links:
+    - url: https://www.microsoft.com/cloud-platform/software-defined-datacenter
+      text: 将 Windows Server 2016 虚拟化和群集技术与所选的合作伙伴提供的经过验证的硬件解决方案进行配对，帮助你避免在对软件定义的数据中心进行调整时凭猜测行事。
