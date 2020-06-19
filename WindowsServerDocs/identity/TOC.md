@@ -1,4 +1,4 @@
-# [身份标识和访问权限](Identity-and-Access.md)
+# [身份标识和访问权限](Identity-and-Access.yml)
 
 ## [解决方案和方案指南](solution-guides/Solutions-and-Scenario-Guides.md)
 ### [动态访问控制：方案概述](solution-guides/Dynamic-Access-Control--Scenario-Overview.md)

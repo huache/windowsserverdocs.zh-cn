@@ -7,12 +7,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 09e09fa30a38ef5f6046f623e24be0bc7b6ce87e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: abc1a2af7353bd85e0ae7ac55debc36d63d1782f
+ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856750"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942286"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>使用 PowerShell 创建受防护的 VM
 
@@ -42,7 +42,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath "C:\temp\MyTemplateDisk.vhdx" -Vol
 对于要在其中运行受防护 VM 的每个虚拟化结构，你将需要获取构造的 HGS 群集的监护人元数据。
 你的托管提供商应能够为你提供此信息。
 
-如果你在企业环境中并且可以与 HGS 服务器通信，则可以在*http://\<HGSCLUSTERNAME\>/KeyProtection/service/metadata/2014-07/metadata.xml*获取保护者元数据
+如果你在企业环境中，并可以与 HGS 服务器通信，则可以在*Http:// \<HGSCLUSTERNAME\> /KeyProtection/service/metadata/2014-07/* 上获取保护者元数据 metadata.xml
 
 ## <a name="create-shielding-data-pdk-file"></a>创建屏蔽数据（PDK）文件
 
@@ -51,7 +51,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath "C:\temp\MyTemplateDisk.vhdx" -Vol
 完成后，必须将生成的 PDK 文件复制到受保护的构造。
 有关详细信息，请参阅[什么是防护数据，为什么需要这样做？](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary)。
 
-此外，你将需要一个无人参与安装答案文件（适用于 Windows 的 unattend.xml）。 有关要包括在答案文件中的内容的指导，请参阅[创建应答文件](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file)。
+此外，你将需要一个无人参与安装答案文件（适用于 Windows 的 unattend.xml，适用于 Linux）。 有关要包括在答案文件中的内容的指导，请参阅[创建应答文件](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file)。
 
 在安装了受防护的 Vm 的远程服务器管理工具的计算机上运行以下 cmdlet。
 如果要为 Linux VM 创建 PDK，则必须在运行 Windows Server 1709 或更高版本的服务器上执行此操作。
@@ -72,6 +72,10 @@ New-ShieldingDataFile -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Owner $Owner
 ```
     
 ## <a name="provision-shielded-vm-on-a-guarded-host"></a>在受保护的主机上预配受防护的 VM
+在运行 Windows Server 2016 的主机上，你可以监视 VM 是否已关闭以指示预配任务的完成，并在预配失败时查看 Hyper-v 事件日志中的错误信息。
+
+你还可以在创建新的受防护的 VM 之前，每次创建新的模板磁盘。
+
 将模板磁盘文件（ServerOS）和 PDK 文件（contoso）复制到受保护的主机，以便准备好进行部署。
 
 在受保护的主机上，安装受保护的结构工具 PowerShell 模块，其中包含用于简化预配过程的 ShieldedVM cmdlet。 如果受保护的主机可以访问 Internet，请运行以下命令：
@@ -80,7 +84,7 @@ New-ShieldingDataFile -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Owner $Owner
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-你还可以在具有 Internet 访问权限的另一台计算机上下载该模块，并将生成的模块复制到受保护的主机上的 `C:\Program Files\WindowsPowerShell\Modules`。
+你还可以在具有 Internet 访问权限的另一台计算机上下载该模块，并将生成的模块复制到 `C:\Program Files\WindowsPowerShell\Modules` 受保护的主机上。
 
 ```powershell
 Save-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0 -Path C:\temp\
@@ -105,13 +109,13 @@ New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vh
 
 ```
 
-如果模板磁盘包含基于 Linux 的操作系统，请在运行命令时包含 `-Linux` 标志：
+如果模板磁盘包含基于 Linux 的操作系统，请 `-Linux` 在运行命令时包含标志：
 
 ```powershell
 New-ShieldedVM -Name 'MyLinuxVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Wait -Linux
 ```
 
-使用 `Get-Help New-ShieldedVM -Full` 查看帮助内容，以了解有关可传递到 cmdlet 的其他选项的详细信息。
+使用查看帮助内容 `Get-Help New-ShieldedVM -Full` ，了解有关可传递到 cmdlet 的其他选项的详细信息。
 
 VM 完成预配后，将进入特定于 OS 的专用化阶段，之后它将可供使用。
 请确保将 VM 连接到有效的网络，以便可以在运行它（使用 RDP、PowerShell、SSH 或首选管理工具）后连接到该网络。
@@ -126,7 +130,7 @@ Add-ClusterVirtualMachineRole -VMName 'MyShieldedVM' -Cluster <Hyper-V cluster n
 
 受防护的 VM 现在可以在群集中进行实时迁移。
 
-## <a name="next-step"></a>下一步
+## <a name="next-step"></a>后续步骤
 
 > [!div class="nextstepaction"]
 > [使用 VMM 部署防护](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)

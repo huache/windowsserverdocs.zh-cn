@@ -1,4 +1,4 @@
-# [存储](storage.md)
+# [存储](storage.yml)
 ## [存储中的新增功能](whats-new-in-storage.md)
 ## [重复数据删除](data-deduplication/overview.md)
 ### [重复数据删除中的新增功能](data-deduplication/whats-new.md)
