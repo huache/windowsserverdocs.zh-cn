@@ -8,12 +8,12 @@ ms.assetid: cb7f3d7d-4225-409a-9f6b-34a106e8dd24
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6f81041a2a1938add2fd8bfc03aa492d1da266cd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0c0e72f37057d50f7d7164ea84c9c7771fca0de8
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852100"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217567"
 ---
 # <a name="use-shared-folders-in-windows-server-essentials"></a>使用 Windows Server Essentials 中的共享文件夹
 
@@ -28,7 +28,7 @@ ms.locfileid: "80852100"
   
 -   [使用远程 Web 访问](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
   
--   [使用 My Server 应用进行 Windows Phone](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
+-   [使用适用于 Windows Phone 的 My Server 应用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
   
 -   [使用适用于 Windows 8 的 My Server 应用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
   
@@ -39,7 +39,7 @@ ms.locfileid: "80852100"
   
 -   [使用远程 Web 访问](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
   
--   [使用 My Server 应用进行 Windows Phone](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
+-   [使用适用于 Windows Phone 的 My Server 应用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
   
 -   [使用适用于 Windows 8 的 My Server 应用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
   
@@ -52,20 +52,20 @@ ms.locfileid: "80852100"
  有关快速启动板的详细信息，请参阅[快速启动板概述](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)。  
   
 ###  <a name="copy-or-move-shared-files-or-folders-using-the-launchpad"></a><a name="BKMK_Launchpad"></a>使用快速启动板复制或移动共享文件或文件夹  
- 如果你希望使用快速启动板来复制或移动 Windows Server Essentials 上的共享文件，请单击快速启动板中的“共享文件夹”选项卡。  
+ 如果你希望使用快速启动板来复制或移动 Windows Server Essentials 上的共享文件，请单击快速启动板中的“共享文件夹”**** 选项卡。  
   
- 如果你希望将文件或文件夹从“共享文件夹”中的一个位置移动到另一个位置，则可以使用与在计算机上移动文件和文件夹相同的拖放方法。 打开包含要移动的文件或文件夹的文件夹。 然后，在其他窗口中打开要将其移动到的文件夹。 将两个窗口并排置于桌面上，以便你可以同时看到它们的内容，然后从第一个文件夹将文件或文件夹拖动到第二个文件夹。  
+ 如果你希望将文件或文件夹从“共享文件夹”**** 中的一个位置移动到另一个位置，则可以使用与在计算机上移动文件和文件夹相同的拖放方法。 打开包含要移动的文件或文件夹的文件夹。 然后，在其他窗口中打开要将其移动到的文件夹。 将两个窗口并排置于桌面上，以便你可以同时看到它们的内容，然后从第一个文件夹将文件或文件夹拖动到第二个文件夹。  
   
 > [!NOTE]
->  在使用拖放方法时，你可能会注意到，有时是“复制”文件或文件夹，而有时是“移动”文件或文件夹。 如果你在同一个硬盘上存储的两个文件夹之间拖动某个项目，则会移动该项目，这样就不会在同一位置上创建相同文件或文件夹的两个副本。 如果将项目拖动到其他位置（如其他计算机）中的文件夹或 U 盘之类的可移动媒体中，则会复制该项目。  
+>  在使用拖放方法时，你可能会注意到，有时是“复制”**** 文件或文件夹，而有时是“移动”**** 文件或文件夹。 如果你在同一个硬盘上存储的两个文件夹之间拖动某个项目，则会移动该项目，这样就不会在同一位置上创建相同文件或文件夹的两个副本。 如果将项目拖动到其他位置（如其他计算机）中的文件夹或 U 盘之类的可移动媒体中，则会复制该项目。  
   
- 如果你希望将文件或文件夹从“共享文件夹”中的一个位置复制到另一个位置，则可以使用与在计算机上复制文件相同的复制和粘贴方法。 打开包含要复制的文件的文件夹。 右键单击要复制的文件，然后单击“复制”。 右键单击要在其中粘贴已复制文件的文件夹，然后单击“粘贴”。  
+ 如果你希望将文件或文件夹从“共享文件夹”**** 中的一个位置复制到另一个位置，则可以使用与在计算机上复制文件相同的复制和粘贴方法。 打开包含要复制的文件的文件夹。 右键单击要复制的文件，然后单击“复制”****。 右键单击要在其中粘贴已复制文件的文件夹，然后单击“粘贴”****。  
   
 ##  <a name="using-remote-web-access"></a><a name="BKMK_UsingRWA"></a>使用远程 Web 访问  
 
- 通过使用远程 Web 访问网站，可从任意远程计算机访问共享的文件和文件夹。 从服务器网络中的计算机，若要访问远程 Web 访问网站，请打开 Internet 浏览器并键入 https：//< servername\>/remote。 通过使用远程 Web 访问，你可以查看并管理共享文件夹上的文件。 有关分步说明，请参阅[使用远程 Web 访问](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
+ 通过使用远程 Web 访问网站，可从任意远程计算机访问共享的文件和文件夹。 在服务器网络中的计算机上，若要访问远程 Web 访问网站，请打开 Internet 浏览器并键入 https://<servername \> /remote。 通过使用远程 Web 访问，你可以查看并管理共享文件夹上的文件。 有关分步说明，请参阅[使用远程 Web 访问](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
 
- 通过使用远程 Web 访问网站，可从任意远程计算机访问共享的文件和文件夹。 从服务器网络中的计算机，若要访问远程 Web 访问网站，请打开 Internet 浏览器并键入 https：//< servername\>/remote。 通过使用远程 Web 访问，你可以查看并管理共享文件夹上的文件。 有关分步说明，请参阅[使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
+ 通过使用远程 Web 访问网站，可从任意远程计算机访问共享的文件和文件夹。 在服务器网络中的计算机上，若要访问远程 Web 访问网站，请打开 Internet 浏览器并键入 https://<servername \> /remote。 通过使用远程 Web 访问，你可以查看并管理共享文件夹上的文件。 有关分步说明，请参阅[使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
 
   
 > [!NOTE]
@@ -76,12 +76,12 @@ ms.locfileid: "80852100"
  可以使用远程 Web 访问在现有的共享文件夹中创建新文件夹，以对服务器上的文件和文件夹进行重命名、移动或复制以及删除操作。 有关详细信息，请参阅创建、重命名、移动、删除或复制远程 Web 访问中的文件和文件夹部分？主题[使用远程 Web 访问](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
   
 ###  <a name="upload-and-download-files-in-remote-web-access"></a><a name="BKMK_3"></a>在远程 Web 访问上传和下载文件  
- 在远程 Web 访问中的“共享文件夹”选项卡上，你可以上载和下载文件。 有关详细信息，请参阅在远程 Web 访问上传和下载文件部分？主题[使用远程 Web 访问](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
+ 在远程 Web 访问中的“共享文件夹”**** 选项卡上，你可以上载和下载文件。 有关详细信息，请参阅在远程 Web 访问上传和下载文件部分？主题[使用远程 Web 访问](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
 
  可以使用远程 Web 访问在现有的共享文件夹中创建新文件夹，以对服务器上的文件和文件夹进行重命名、移动或复制以及删除操作。 有关详细信息，请参阅创建、重命名、移动、删除或复制远程 Web 访问中的文件和文件夹部分？主题[使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
   
 ###  <a name="upload-and-download-files-in-remote-web-access"></a><a name="BKMK_3"></a>在远程 Web 访问上传和下载文件  
- 在远程 Web 访问中的“共享文件夹”选项卡上，你可以上载和下载文件。 有关详细信息，请参阅在远程 Web 访问上传和下载文件部分？主题[使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
+ 在远程 Web 访问中的“共享文件夹”**** 选项卡上，你可以上载和下载文件。 有关详细信息，请参阅在远程 Web 访问上传和下载文件部分？主题[使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
 
   
 ##  <a name="using-my-server-app-for-windows-phone"></a><a name="BKMK_Phone"></a>使用 My Server 应用进行 Windows Phone  
@@ -90,22 +90,15 @@ ms.locfileid: "80852100"
 ##  <a name="using-my-server-app-for-windows-8"></a><a name="BKMK_App"></a>使用适用于 Windows 8 的 My Server 应用  
  通过使用适用于 Windows 8 的 My Server 应用，可借助 Windows 8 访问共享文件夹。 你可以从 [Windows 8 应用商店](https://windows.microsoft.com/windows-8/apps)下载此应用。  
   
-## <a name="see-also"></a>另请参阅  
+## <a name="see-also"></a>请参阅  
   
 -   [管理服务器文件夹](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md)  
   
 -   [管理服务器存储](../manage/Manage-Server-Storage-in-Windows-Server-Essentials.md)  
-  
 
 -   [连接](Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [远程工作](Work-Remotely-in-Windows-Server-Essentials.md)  
   
 -   [播放数字媒体](Play-Digital-Media-in-Windows-Server-Essentials.md)
-
--   [连接](../use/Get-Connected-in-Windows-Server-Essentials.md)  
-  
--   [远程工作](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
-  
--   [播放数字媒体](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)
 

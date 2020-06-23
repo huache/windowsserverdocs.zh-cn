@@ -8,12 +8,12 @@ ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7ef53e350c999206c074fa0d9633947a32d0f9ac
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fbdc74b8c0d2ce6db619e4d4ad646a92eb859bc3
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852235"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217477"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>解决 Windows Server Essentials 中的文件历史记录问题
 
@@ -43,7 +43,7 @@ ms.locfileid: "80852235"
   
     -   若要删除用户的文件历史记录，请删除具有该用户名的文件历史记录备份子文件夹。  
   
-    -   若要删除计算机的文件历史记录，请删除具有该计算机名的文件历史记录备份子文件夹。 例如，如果用户停用了 < MyComputer01\> 在她开始处理新的便携式计算机后，< MyComputer02\>，则在验证用户已将所有文件和文件夹传输到新的便携式计算机，并且在将来不需要文件历史记录的情况下，你将删除 C:\serverfolders\file history backups 历史记录\\<\>我的帐户 \\<\>。  
+    -   若要删除计算机的文件历史记录，请删除具有该计算机名的文件历史记录备份子文件夹。 例如，如果用户在 \> 开始使用新的便携式计算机之后 <MyComputer01，则 <MyComputer02，则在 \> \\ \> \\ \> 验证用户是否已将所有文件和文件夹传输到新的便携式计算机并在将来不需要文件历史记录的情况下，你可以删除 c:\serverfolders\file history backups 历史记录备份<我的帐户<MyComputer01。  
   
 ### <a name="cannot-apply-file-history-setting-to-a-new-user"></a>无法对新用户应用文件历史记录设置  
  如果你添加了一位新用户，而其用户名与已从 Windows Server Essentials 中删除的用户的用户名完全相同，则当 Windows Server Essentials 尝试创建一个用于存储新用户的文件历史记录的文件夹时，新用户的文件历史记录配置可能会因命名冲突而失败。 若要解决此问题，你可以重命名已删除用户的文件历史记录文件夹。  
@@ -52,9 +52,9 @@ ms.locfileid: "80852235"
   
 1.  以管理员身份登录到服务器。  
   
-2.  在 Windows Server Essentials 仪表板上单击“存储”。  
+2.  在 Windows Server Essentials 仪表板上单击“存储”****。  
   
-3.  在“服务器文件夹”选项卡上，记下文件历史记录备份文件夹的位置。 默认位置为%SystemDrive%\ServerFolders\File History\\。  
+3.  在“服务器文件夹”**** 选项卡上，记下文件历史记录备份文件夹的位置。 默认位置为%SystemDrive%\ServerFolders\File History backup \\ 。  
   
 ##### <a name="to-resolve-file-history-issues-for-a-new-user-with-a-name-conflict"></a>为名称冲突的新用户解决文件历史记录问题  
   
@@ -66,13 +66,7 @@ ms.locfileid: "80852235"
   
      每个已添加到 Windows Server Essentials 的用户帐户的文件历史记录备份文件夹都包含一个子文件夹。 例如，用户 John Smith 的文件历史记录将存储在 File History Backups\JohnSmith 子文件夹中。  
   
-4.  重命名已删除用户的子文件夹，例如 **<*用户名*> _Deleted**"。 如果不再需要该用户的文件历史记录，可删除该文件夹。  
-  
-
-5.  现在可以添加新用户。 有关说明，请参阅添加用户帐户？在 "[管理用户帐户](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)" 中。  
-  
-### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>用户帐户已删除，但用户的文件历史记录仍保留  
- 在某些情况下，网络管理员可以选择从服务器中删除用户或计算机，但保留文件历史记录备份以供将来使用。 当不再需要文件历史记录时，请从服务器上的共享文件夹中删除用户或计算机的文件历史记录备份文件夹。 若要执行此操作，请参阅 [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
+4.  重命名已删除用户的子文件夹，例如， ** < *用户名*>_Deleted**。 如果不再需要该用户的文件历史记录，可删除该文件夹。  
 
 5. 现在可以添加新用户。 有关说明，请参阅添加用户帐户？在 "[管理用户帐户](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)" 中。  
   
@@ -80,12 +74,9 @@ ms.locfileid: "80852235"
  在某些情况下，网络管理员可以选择从服务器中删除用户或计算机，但保留文件历史记录备份以供将来使用。 当不再需要文件历史记录时，请从服务器上的共享文件夹中删除用户或计算机的文件历史记录备份文件夹。 若要执行此操作，请参阅 [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。  
 
   
-## <a name="see-also"></a>另请参阅  
+## <a name="see-also"></a>请参阅  
   
 -   [管理客户端备份](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)  
-  
-
--   [支持 Windows Server Essentials](Support-Windows-Server-Essentials.md)
 
 -   [支持 Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
 

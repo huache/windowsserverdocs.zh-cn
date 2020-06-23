@@ -8,12 +8,12 @@ ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 62f3bf875b03328b0016261bf6aff7a39c4b65bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9fb3628ed519d5faae04787dbb84da37f27d96fb
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852230"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217487"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Windows Server Essentials 远程 Web 访问连接疑难解答
  
@@ -45,9 +45,9 @@ ms.locfileid: "80852230"
   
    若要手动配置路由器，请完成以下任务：  
   
-  - 为 Windows Server Essentials 服务器创建 IP 地址保留。  
+  - 为 Windows Server Essentials 服务器创建 IP 地址预留。  
   
-     在手动将路由器配置为将所需端口转发到 Windows Server Essentials 之前，必须在路由器上为正在运行 Windows Server Essentials 的服务器设置动态主机配置协议 (DHCP) 保留。 此步骤将保证端口所转发到的 IP 地址不会发生变化。  
+     在手动将路由器配置为将所需端口转发到 Windows Server Essentials 之前，必须在路由器上为正在运行 Windows Server Essentials 的服务器设置动态主机配置协议 (DHCP) 预留。 此步骤将保证端口所转发到的 IP 地址不会发生变化。  
   
      有关如何在路由器上手动为服务器设置 DHCP 保留的信息，请参阅制造商的路由器文档。  
   
@@ -67,8 +67,8 @@ ms.locfileid: "80852230"
   
   |IP 地址|协议 (TCP/UDP)|计划|入站筛选器|  
   |----------------|---------------------------|--------------|--------------------|  
-  |192.168.0.100|TCP 80|始终|全部允许|  
-  |192.168.0.100|TCP 443|始终|全部允许|  
+  |192.168.0.100|TCP 80|Always|全部允许|  
+  |192.168.0.100|TCP 443|Always|全部允许|  
   
    手动配置路由器之后，请运行 "打开远程 Web 访问" 向导，确保在 "**入门**" 页上选择 "**跳过路由器设置**" 选项。  
   
@@ -77,7 +77,7 @@ ms.locfileid: "80852230"
 > [!TIP]
 >  请确保你的路由器安装了最新的 BIOS 固件。 通常，你可以从路由器配置网页为路由器更新 BIOS 固件。 有关详细信息，请参阅你的路由器文档。 更新路由器后，请运行“设置随处访问”向导。  
   
-## <a name="see-also"></a>另请参阅  
+## <a name="see-also"></a>请参阅  
   
 -   [使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
@@ -86,9 +86,6 @@ ms.locfileid: "80852230"
 -   [管理随处访问](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
-  
-
--   [支持 Windows Server Essentials](Support-Windows-Server-Essentials.md)
 
 -   [支持 Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
 

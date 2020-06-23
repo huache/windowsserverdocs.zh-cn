@@ -8,12 +8,12 @@ ms.assetid: 68f2b05c-09eb-4cba-8db4-a91353b513c6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ebb4f27201e7cdb8e412bc35b217185616df3cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 313b4fae48a5b70cb16cae0cfb3a7bc048ef97a3
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852250"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217557"
 ---
 # <a name="troubleshoot-anywhere-access-in-windows-server-essentials"></a>Windows Server Essentials 中的随处访问疑难解答
 
@@ -30,13 +30,13 @@ ms.locfileid: "80852250"
   
 1.  登录到服务器，然后打开仪表板。  
   
-2.  单击“设置”，然后单击“随处访问”选项卡。  
+2.  单击“设置”****，然后单击“随处访问”**** 选项卡。  
   
-3.  单击“修复”。 修复随处访问向导将启动。  
+3.  单击“修复”****。 修复随处访问向导将启动。  
   
-4.  单击 **“下一步”** 。 该向导将分析随处访问、标识问题并尝试修复问题。  
+4.  单击“下一步”。 该向导将分析随处访问、标识问题并尝试修复问题。  
   
-5.  如果你在向导完成后收到一个警报，你可以单击“重试”以尝试重新修复问题。 如果你仍收到警报，请检查该警报以获取有关问题和疑难解答步骤的其他信息。  
+5.  如果你在向导完成后收到一个警报，你可以单击“重试”**** 以尝试重新修复问题。 如果你仍收到警报，请检查该警报以获取有关问题和疑难解答步骤的其他信息。  
   
 ### <a name="to-get-more-information-about-an-alert"></a>获取有关警报的详细信息  
   
@@ -48,13 +48,8 @@ ms.locfileid: "80852250"
  如果修复随处访问向导无法修复随处访问，请检查以下疑难解答资源（针对与远程 Web 访问、VPN 和 DirectAccess 相关的问题）：  
   
 
--   [排查远程 Web 访问连接问题](Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
+-   [远程 Web 访问连接疑难解答](Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
   
--   [排查防火墙问题](Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)  
-
--   [排查远程 Web 访问连接问题](../support/Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
-  
--   [排查防火墙问题](../support/Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)  
-
+-   [防火墙疑难解答](Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)
   
 -   查看[Windows Server Essentials 论坛](https://social.technet.microsoft.com/Forums/winserveressentials/threads)，了解 Windows server essentials 社区报告的最新问题。

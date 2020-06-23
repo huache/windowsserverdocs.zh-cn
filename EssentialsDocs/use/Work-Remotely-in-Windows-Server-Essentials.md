@@ -8,12 +8,12 @@ ms.assetid: 8b183f8f-1279-4fdf-a495-c7c801563cb0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ec6b97dd153802ea2ff8b55f6ba58f3208e4abb1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8ba2cca1e346a99cc62d84ede885663fe81dfbd2
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852080"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217527"
 ---
 # <a name="work-remotely-in-windows-server-essentials"></a>在 Windows Server Essentials 中远程工作
 
@@ -24,26 +24,15 @@ ms.locfileid: "80852080"
  以下主题可帮助你远程访问服务器资源：  
   
 
--      [在 Windows Server Essentials 中使用远程 Web 访问](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
+-   [在 Windows Server Essentials 中使用远程 Web 访问](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
      
 -   [使用 VPN 连接到 Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
   
 -   [使用 My Server 应用连接到 Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_App)  
   
--   [使用 My Server 应用进行 Windows Phone](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [使用适用于 Windows Phone 的 My Server 应用](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2)  
   
--   [将 Microsoft Office 365 与 Windows Server Essentials 配合使用](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_O365)  
-
--   [在 Windows Server Essentials 中使用远程 Web 访问](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
-  
--   [使用 VPN 连接到 Windows Server Essentials](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
-  
--   [使用 My Server 应用连接到 Windows Server Essentials](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_App)  
-  
--   [使用 My Server 应用进行 Windows Phone](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2)  
-  
--   [将 Microsoft Office 365 与 Windows Server Essentials 配合使用](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_O365)  
-
+-   [结合使用 Microsoft Office 365 与 Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_O365)  
   
 > [!NOTE]
 >  有关在服务器上配置随处访问的信息，请参阅[管理随处访问](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)。  
@@ -51,8 +40,6 @@ ms.locfileid: "80852080"
 ##  <a name="use-remote-web-access-in-windows-server-essentials"></a><a name="BKMA_RWA"></a>使用 Windows Server Essentials 中的远程 Web 访问  
 
  远程 Web 访问帮助你在离开时与你的 Windows Server Essentials 网络保持连接。 有关详细信息，请参阅主题[使用远程 Web 访问](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
-
- 远程 Web 访问帮助你在离开时与你的 Windows Server Essentials 网络保持连接。 有关详细信息，请参阅主题[使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。  
 
   
 ##  <a name="use-vpn-to-connect-to-windows-server-essentials"></a><a name="BKMK_3"></a>使用 VPN 连接到 Windows Server Essentials  
@@ -62,7 +49,7 @@ ms.locfileid: "80852080"
   
 1.  在客户端计算机上，按 Ctrl+Alt+Delete。  
   
-2.  在登录屏幕上，单击“切换用户”。  
+2.  在登录屏幕上，单击“切换用户”****。  
   
 3.  单击屏幕右下角的“网络登录”图标。  
   
@@ -80,13 +67,13 @@ ms.locfileid: "80852080"
 
   
 ##  <a name="use-the-my-server-app-for-windows-phone"></a><a name="BKMK_2"></a>使用 My Server 应用进行 Windows Phone  
- 适用于 Windows Phone （适用于 Windows Server 2012）的 My Server Windows 应用和用于 Windows Phone 的 My Server 2012 R2 应用（适用于 Windows Server Essentials）旨在帮助你在远程工作时通过智能手机保持无缝连接到你的服务器机构. 这是在配置服务器进行远程访问之后用于访问 Windows Server Essentials 的各种方式之一。  
+ 适用于 Windows Phone 的 My Server Windows 应用（适用于 Windows Server 2012）和适用于 Windows Phone （适用于 Windows Server Essentials）的 My Server 2012 R2 应用旨在帮助你在远程位置工作时通过智能手机保持无缝连接到你的服务器。 这是在配置服务器进行远程访问之后用于访问 Windows Server Essentials 的各种方式之一。  
   
  你可以从 Windows Phone 应用商店下载任一应用：  
   
-- [安装 Windows Phone 的服务器](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)  
+- [安装适用于 Windows Phone 的 My Server](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)  
   
-- [安装 My Server 2012 R2 for Windows Phone](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)  
+- [使用适用于 Windows Phone 的 My Server 2012 R2](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)  
   
   有关 My Server 手机应用的详细信息，请参阅博客文章[适用于 Windows Server Essentials 的 My server 手机应用](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)。 有关 My Server 2012 R2 手机应用的信息，请参阅博客文章 [My Server 2012 R2 Windows 和 Windows Phone 应用](https://blogs.technet.com/b/sbs/archive/2013/11/19/my-server-2012-r2-windows-and-windows-phone-apps.aspx)。  
   
@@ -94,23 +81,14 @@ ms.locfileid: "80852080"
 
  Office 365 是易于使用的支持 Web 的工具集，它使你可以从几乎任意位置和任何设备访问你的电子邮件、重要文档、联系人和日历。 有关详细信息，请参阅[使用 Microsoft Office 365 的快速入门指南](Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)。  
 
- Office 365 是易于使用的支持 Web 的工具集，它使你可以从几乎任意位置和任何设备访问你的电子邮件、重要文档、联系人和日历。 有关详细信息，请参阅[使用 Microsoft Office 365 的快速入门指南](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)。  
-
   
-## <a name="see-also"></a>另请参阅  
+## <a name="see-also"></a>请参阅  
   
 -   [管理随处访问](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
-  
 
 -   [连接](Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [使用共享文件夹](Use-Shared-Folders-in-Windows-Server-Essentials.md)  
   
 -   [播放数字媒体](Play-Digital-Media-in-Windows-Server-Essentials.md)
-
--   [连接](../use/Get-Connected-in-Windows-Server-Essentials.md)  
-  
--   [使用共享文件夹](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)  
-  
--   [播放数字媒体](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)
 

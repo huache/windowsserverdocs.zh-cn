@@ -8,12 +8,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fa7ad24eec7c2732ee1c840aae678e3b0bff768c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 16fc2c8b6029a4793eafd5ca7c51e66d6bc36d80
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852160"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217427"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 日志收集器
 
@@ -30,15 +30,10 @@ ms.locfileid: "80852160"
 >[下载 Windows Server Essentials 日志收集器安装包](https://www.microsoft.com/download/details.aspx?id=34821)。  
   
  若要安装并运行日志收集器，请执行以下主题中的步骤：  
-  
 
-1. [安装日志收集器](Install-the-Windows-Server-Essentials-Log-Collector.md)  
+1. [安装日志收集器](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2. [运行日志收集器](Run-the-Windows-Server-Essentials-Log-Collector.md)  
-
-3. [安装日志收集器](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
-  
-4. [运行日志收集器](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
+2. [运行日志收集器](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
 
 ## <a name="environment-information-collected"></a>已收集的环境信息  
@@ -52,7 +47,7 @@ ms.locfileid: "80852160"
   
 -   绑定到 TCP/IP 的网络适配器  
   
--   区域设置  
+-   Locale  
   
 -   进程  
   
@@ -109,7 +104,7 @@ ms.locfileid: "80852160"
   
 ### <a name="server-logs-and-registry-information"></a>服务器日志和注册表信息  
   
--   服务器产品日志，来自 < ProgramData\>\Microsoft\Windows Server\Logs  
+-   服务器产品日志，来自 <ProgramData \> \Microsoft\Windows Server\Logs  
   
 -   计划任务  
   
@@ -137,9 +132,9 @@ ms.locfileid: "80852160"
   
 ### <a name="network-computer-logs-and-registry-information"></a>网络计算机日志和注册表信息  
   
--   < ProgramData 的网络计算机产品日志\>\Microsoft\Windows Server\Logs  
+-   <ProgramData \Microsoft\Windows Server\Logs 的网络计算机产品日志 \>  
   
--   < ProgramData\>\Microsoft\Windows Server\Data 上的运行状况警报文件  
+-   运行状况警报文件位于 <ProgramData \> \Microsoft\Windows Server\Data  
   
 -   Windows Update 日志  
   
@@ -147,7 +142,7 @@ ms.locfileid: "80852160"
   
 -   计划任务信息  
   
--   \\\ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows Server \ 中的注册表项 \  
+-   \SOFTWARE\Microsoft\Windows 服务器 \ 中的注册表项 \ \\ HKEY_LOCAL_MACHINE \  
   
 ## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>未运行某个版本的 Windows 操作系统的计算机的日志  
  日志收集器不会从未运行某个版本的 Windows 操作系统的计算机收集日志文件。 对于非 Windows 计算机，请将以下日志文件手动复制到要存储日志收集器文件的相同位置。  
@@ -156,14 +151,11 @@ ms.locfileid: "80852160"
   
 -   Library/Logs/Windows Server.log  
   
--   Library/Logs/CrashReporter/快速启动板 < nnn\> （复制所有快速启动板 < nnn\>崩溃文件）  
+-   Library/Logs/CrashReporter/快速启动板 <nnn \> （复制所有快速启动板-<nnn \> . 崩溃文件）  
   
--   Library/Logs/DiagnosticReports/快速启动板 < nnn\> （复制所有快速启动板 < nnn\>崩溃文件）  
+-   Library/Logs/DiagnosticReports/快速启动板 <nnn \> （复制所有快速启动板-<nnn \> . 崩溃文件）  
   
-## <a name="see-also"></a>另请参阅  
-  
-
--   [日志收集器错误疑难解答](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+## <a name="see-also"></a>请参阅  
 
 -   [日志收集器错误疑难解答](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 

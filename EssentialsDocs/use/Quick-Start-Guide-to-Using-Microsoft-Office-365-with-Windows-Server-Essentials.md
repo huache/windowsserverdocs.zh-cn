@@ -8,22 +8,22 @@ ms.assetid: 51a7f1f1-088b-4487-b2c6-4f97aad3004d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 49ffab44c1d385bd149ec048ff0bd4b627529fef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ff8d3c1b467039bf16a7d598a22b84a284807e89
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852130"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217587"
 ---
 # <a name="quick-start-guide-to-using-microsoft-office-365-with-windows-server-essentials"></a>结合使用 Microsoft Office 365 和 Windows Server Essentials 的快速入门指南
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
- Office 365 是易于使用的支持 Web 的工具集，它使你可以从几乎任意位置和任何设备访问你的电子邮件、重要文档、联系人和日历。 这些工具包括 Microsoft Office Web 应用，即你已熟悉的 Microsoft Office 桌面应用程序（例如 Microsoft Word、Microsoft Excel 和 Microsoft PowerPoint）的 Web 版本。 借助 Office Web Apps，你可以使用 Web 浏览器在任何计算机上创建和编辑文档。  
+ Office 365 是易于使用的支持 Web 的工具集，它使你可以从几乎任意位置和任何设备访问你的电子邮件、重要文档、联系人和日历。 这些工具包括 Microsoft Office Web Apps，即你已熟悉的 Microsoft Office 桌面应用程序（例如 Microsoft Word、Microsoft Excel 和 Microsoft PowerPoint）的 Web 版本。 借助 Office Web Apps，你可以使用 Web 浏览器在任何计算机上创建和编辑文档。  
 
  若要快速了解 Office 365，请查看 office [365：](https://onlinehelp.microsoft.com/office365-smallbusinesses/hh534379.aspx) office 365 网站上的用户视频教程。  
 
- 如果你的组织使用 Office 365 web 应用，则可以使用熟悉的工具（如 Windows Server Essentials 快速启动板和 My Server 2012 R2）打开 Office 365 中的应用程序。 （当然，你还可以使用你组织的联机 ID 和网络密码 [直接登录到 Office 365](https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=2&ct=1384059583&rver=6.1.6206.0&wp=MBI_KEY&wreply=https:%2F%2F www.outlook.com%2Fowa%2F&id=260563&whr=students.tamuk.edu&CBCXT=out) 。）  
+ 如果你的组织使用 Office 365 web 应用，则可以使用熟悉的工具（如 Windows Server Essentials 快速启动板和 My Server 2012 R2）打开 Office 365 中的应用程序。 （当然，你还可以使用你组织的联机 ID 和网络密码 [直接登录到 Office 365](https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=2&ct=1384059583&rver=6.1.6206.0&wp=MBI_KEY&wreply=https:%2F%2Fwww.outlook.com%2Fowa%2F&id=260563&whr=students.tamuk.edu&CBCXT=out) 。）  
 
 > [!IMPORTANT]
 >  如果你丢失了用于连接到 Exchange Online 的移动设备，请与管理员联系，以便他们可以在下次打开时从设备中删除敏感数据。  
@@ -42,7 +42,7 @@ ms.locfileid: "80852130"
 
 #### <a name="to-open-office-365-from-the-launchpad"></a>从快速启动板打开 Office 365  
 
-1.  打开快速启动板，单击“Microsoft Office 365”，然后单击“Office 365 主页”。  
+1.  打开快速启动板，单击“Microsoft Office 365” ****，然后单击“Office 365 主页” ****。  
 
 2.  使用你提供的 Microsoft online ID 和你的 Windows 密码登录到 Office 365。  
 
@@ -50,22 +50,22 @@ ms.locfileid: "80852130"
 >  如果尚未将计算机设置为使用 Office 365，请执行 Office 365 门户的 "**从这里开始**" 部分中的步骤。  
 
 ## <a name="work-with-documents-in-your-sharepoint-online-libraries-from-my-server-2012-r2"></a>从 My Server 2012 R2 处理 SharePoint Online 库中的文档  
- 如果你的服务器具有 Windows Server Essentials 操作系统，并且你的管理员从服务器管理 Office 365，则你可以通过使用 "我的2012服务器"，从便携式计算机、移动设备或手机处理 SharePoint Online 库中的文档。R2 应用。 应用是免费的。 你需要先安装它。  
+ 如果你的服务器具有 Windows Server Essentials 操作系统，并且你的管理员从服务器管理 Office 365，则你可以使用 My Server 2012 R2 应用从便携式计算机、移动设备或手机处理 SharePoint Online 库中的文档。 该应用是免费的。 你需要先安装它。  
 
 #### <a name="to-install-my-server-2012-r2"></a>安装 My Server 2012 R2  
 
 -   为便携式计算机、移动设备或 Windows Phone 下载并安装相应的 My Server 2012 R2 应用：  
 
-    |设备类型|下载来源|  
+    |设备类型|从|  
     |-----------------|-------------------|  
-    |基于 Windows 的便携式计算机、电脑或 Surface 设备|[My Server 2012 R2 （适用于 Windows 的应用程序）](https://apps.microsoft.com/windows/app/my-server-2012-r2/67e86695-bda3-4f32-96c4-2e20e56f1cf3)|  
-    | Windows 8 手机或 Windows 8.1 手机|[我的服务器 2012 R2 （Windows Phone 存储）](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)|  
+    |基于 Windows 的便携式计算机、电脑或 Surface 设备|[My Server 2012 R2（Windows 应用）](https://apps.microsoft.com/windows/app/my-server-2012-r2/67e86695-bda3-4f32-96c4-2e20e56f1cf3)|  
+    | Windows 8 手机或 Windows 8.1 手机|[My Server 2012 R2（Windows Phone 应用商店）](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)|  
 
 #### <a name="to-work-with-documents-in-sharepoint-online-libraries-from-my-server-2012-r2"></a>从 My Server 2012 R2 处理 SharePoint Online 库中的文档  
 
 1.  打开 My Server 2012 R2 应用。  
 
-2.  单击“SharePoint Online”。  
+2.  单击“SharePoint Online”****。  
 
     > [!NOTE]
     >  如果未看到 " **SharePoint Online**"，请询问管理员是否已将 Office 365 与服务器集成。  
@@ -80,18 +80,13 @@ ms.locfileid: "80852130"
 ~~~
 
 
-## <a name="see-also"></a>另请参阅  
+## <a name="see-also"></a>请参阅  
 
 -   [快速启动板概述](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)  
 
 -   [管理 Office 365](../manage/Manage-Office-365-in-Windows-Server-Essentials.md)  
 
-
 -   [远程工作](Work-Remotely-in-Windows-Server-Essentials.md)  
 
 -   [使用 Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
--   [远程工作](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
-
--   [使用 Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
 
