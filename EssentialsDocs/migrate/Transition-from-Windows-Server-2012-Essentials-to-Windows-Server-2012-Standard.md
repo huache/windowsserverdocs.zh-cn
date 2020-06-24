@@ -8,18 +8,18 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: aace7849244bb65ec0042971e6ec899f554a62d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 20b38be01d091f5dfeb819712c57c1f87eaf770f
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852300"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256626"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>从 Windows Server Essentials 转换到 Windows Server 2012 Standard
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
- Windows Server&reg; 2012 Essentials 最多支持25个用户和50个设备。 当你的业务需求超过限制时，你可以执行从 Windows Server Essentials 到 Windows Server 2012 Standard 的就地许可转换，以保持许可证合规。  
+ Windows Server &reg; 2012 Essentials 支持最多25个用户和50个设备。 当你的业务需求超过限制时，你可以执行从 Windows Server Essentials 到 Windows Server 2012 Standard 的就地许可转换，以保持许可证合规。  
   
 ## <a name="how-the-transition-affects-user-and-device-limits"></a>转换如何影响用户和设备限制  
  过渡到 Windows Server 2012 Standard 后，用户帐户和设备限制将被删除，但 Windows Server Essentials 独有的功能（如仪表板、远程 Web 访问和客户端计算机备份）仍然可用。 但是，由于这些功能在技术上的限制，最多只能支持 75 个用户帐户和 75 台设备。 如果需要添加超过75个用户帐户或设备，则应关闭 Windows Server Essentials 功能并使用 Windows Server 2012 标准本机工具来管理用户帐户和设备。  
@@ -38,7 +38,7 @@ ms.locfileid: "80852300"
   
     1.  以管理员身份打开命令窗口。  
   
-    2.  运行以下命令：  
+    2.  运行下面的命令：  
   
          **dism/online/set-edition： ServerStandard/geteula： eula 路径**  
   
@@ -62,7 +62,7 @@ ms.locfileid: "80852300"
   
 2. 以管理员身份打开 Windows PowerShell，然后运行如下命令。  
   
-    **dism/online/set-edition： ServerStandard/accepteula/productkey：** *产品密钥*  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *产品密钥*  
   
     其中*产品密钥*是 Windows Server 2012 Standard 副本的产品密钥。  
   
@@ -85,7 +85,7 @@ ms.locfileid: "80852300"
   
 #### <a name="from-the-alert"></a>通过警报运行  
   
-1.  从“仪表板”中打开“警报查看器”。  
+1.  在仪表板中打开“警报查看器”。  
   
 2.  在 "组织" 列表中，选择在转换后报告有关关闭 Windows Server Essentials 功能的信息的警报。  
   
@@ -101,14 +101,10 @@ ms.locfileid: "80852300"
   
    **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**  
   
-## <a name="see-also"></a>另请参阅  
+## <a name="see-also"></a>请参阅  
   
 
 -   [转换到 Windows Server 2012 R2 Standard](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
   
 -   [将服务器数据迁移到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [转换到 Windows Server 2012 R2 Standard](../migrate/Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
-  
--   [将服务器数据迁移到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

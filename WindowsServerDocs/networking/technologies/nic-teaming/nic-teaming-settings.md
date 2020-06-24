@@ -9,12 +9,12 @@ ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 8ae461f8e9236451e9a6b442cafecee4981ed8ce
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 133e44c83032976f08819529508b3990b6e78596
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853710"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256677"
 ---
 # <a name="nic-teaming-settings"></a>NIC 组合设置
 在本主题中，我们将为你概述 NIC 组属性，例如组合和负载平衡模式。 此外，我们还会向你介绍备用适配器设置和主团队接口属性的详细信息。 如果 NIC 组中至少有两个网络适配器，则无需指定备用适配器来实现容错。
@@ -24,7 +24,7 @@ ms.locfileid: "80853710"
 ![NIC 团队属性](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_06_properties.jpg)  
 
 ## <a name="teaming-modes"></a>分组模式 
-分组模式选项是**独立交换**和**交换机依赖**的选项。 交换机相关模式包括**静态组合**和**链接聚合控制协议（LACP）** 。 
+分组模式选项是**独立交换**和**交换机依赖**的选项。 交换机相关模式包括**静态组合**和**链接聚合控制协议（LACP）**。 
 
 >[!TIP]
 >为了获得最佳的 NIC 团队性能，我们建议你使用动态分发的负载平衡模式。  
@@ -70,7 +70,7 @@ ms.locfileid: "80853710"
   
 TCP 端口哈希可创建流量流的最精细分布，从而可在 NIC 团队成员之间独立移动的更小流。 但是，不能对不是 TCP 或 UDP 的通信使用 TCP 端口哈希，也不能将 TCP 和 UDP 端口与堆栈隐藏在一起（例如，使用 IPsec 保护的流量）。 在这些情况下，哈希会自动使用 IP 地址哈希，如果流量不是 IP 流量，则使用 MAC 地址哈希。  
   
-### <a name="hyper-v-port"></a>Hyper-v 端口
+### <a name="hyper-v-port"></a>Hyper-V 端口
   
 [!INCLUDE [hyper-v-port-shortdesc-include](../../includes/hyper-v-port-shortdesc-include.md)]  
   
@@ -78,7 +78,7 @@ TCP 端口哈希可创建流量流的最精细分布，从而可在 NIC 团队�
   
 但是，如果主机只有几个 Vm，则此模式可能不够精细，无法实现合理的分发。 此模式还始终将单个 VM （即来自单个交换机端口的流量）限制为单个接口上可用的带宽。 NIC 组合使用 Hyper-v 虚拟交换机端口作为标识符，而不是使用源 MAC 地址，因为在某些情况下，可能会在一个交换机端口上配置一个 VM 的多个 MAC 地址。  
   
-### <a name="dynamic"></a>Dynamic
+### <a name="dynamic"></a>动态
   
 [!INCLUDE [dynamic-shortdesc-include](../../includes/dynamic-shortdesc-include.md)]
   
@@ -108,7 +108,7 @@ TCP 端口哈希可创建流量流的最精细分布，从而可在 NIC 团队�
   
 如果你使用的是 Vlan，则可以使用此对话框来指定 VLAN 编号。  
   
-无论是否使用 Vlan，都可以为 NIC 组指定 tNIC 名称。  
+无论是否使用 Vlan，都可以指定 NIC 组的 NIC 名称。  
   
 
 

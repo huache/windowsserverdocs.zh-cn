@@ -8,31 +8,29 @@ ms.assetid: c8325f87-fd79-471b-bf70-3f052692c383
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d4f4dbb7063428aee7728071b8e62c5cc019b2af
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0721960c707e14a9c08a029692a9d306e7302b8b
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852490"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256539"
 ---
 # <a name="migrate-windows-small-business-server-2011-standard-to-windows-server-essentials"></a>将 Windows Small Business Server 2011 Standard 迁移到 Windows Server Essentials
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本指南介绍如何将现有的 Windows Small Business Server 2011 Standard 域迁移到新硬件上的 Windows Server&reg; 2012 Essentials，并迁移设置和数据。 本指南还介绍了在完成迁移后如何从 Windows Server Essentials 网络中删除现有的服务器。  
+本指南介绍如何将现有的 Windows Small Business Server 2011 Standard 域迁移到 &reg; 新硬件上的 Windows Server 2012 Essentials，然后迁移设置和数据。 本指南还介绍了在完成迁移后如何从 Windows Server Essentials 网络中删除现有的服务器。  
   
 > [!NOTE]
 >  为了避免迁移过程中出现问题，Windows Server Essentials 产品开发团队强烈建议你在开始迁移之前先阅读本文档。  
 > 
 > [!NOTE]
 > 
->  若要将服务器数据迁移到 Windows Server Essentials 的最新版本，请参阅[迁移到 Windows Server essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。  
-> 
->  若要将服务器数据迁移到 Windows Server Essentials 的最新版本，请参阅[迁移到 Windows Server essentials](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。  
+>  若要将服务器数据迁移到 Windows Server Essentials 的最新版本，请参阅[迁移到 Windows Server essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。   
 
   
 ## <a name="additional-resources"></a>其他资源  
- 有关可帮助指导你完成迁移过程的其他信息、工具和社区资源的链接，请访问 [Windows Small Business Server 迁移](https://go.microsoft.com/fwlink/?LinkId=217520)。  
+ 有关可帮助指导你完成迁移过程的其他信息、工具和社区资源的链接，请参阅[Windows Small Business Server 迁移](https://go.microsoft.com/fwlink/?LinkId=217520)。  
   
 ## <a name="terms-and-definitions"></a>术语和定义  
  **源服务器：** 要从中迁移设置和数据的现有服务器。  
@@ -63,14 +61,14 @@ ms.locfileid: "80852490"
   
 ###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>在源服务器上以管理员身份打开 "命令提示符" 窗口  
   
-1.  单击 **“开始”** 。  
+1.  单击“启动”。  
   
-2.  在搜索框中，键入“cmd”。  
+2.  在搜索框中，键入“cmd”****。  
   
-3.  在结果列表中，右键单击“cmd”，然后单击“以管理员身份运行”。  
+3.  在结果列表中，右键单击“cmd”****，然后单击“以管理员身份运行”****。  
   
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>在目标服务器上以管理员身份打开命令提示符窗口的步骤  
   
-1.  在“开始”屏幕的搜索框中，键入 **cmd**。  
+1.  在“开始”**** 屏幕的搜索框中，键入 **cmd**。  
   
-2.  在结果列表中，右键单击“cmd”，然后单击“以管理员身份运行”。
+2.  在结果列表中，右键单击“cmd”****，然后单击“以管理员身份运行”****。

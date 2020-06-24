@@ -8,18 +8,18 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ddeaedb09346216585b2eb1237ed9340da59756
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4066e003e2b32ddf746b9a37a10ebecfa3c50851
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817970"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267618"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>将 Windows Server Essentials 体验部署为托管服务器
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本文档包含的信息特定于希望在其实验室中安装 Windows Server Essentials 体验角色（在文档的其余部分中称为 Windows Server Essentials）的托管商。打算为客户提供 Windows Server Essentials 体验作为服务。 本文包括以下部分：  
+本文档包含的信息特定于希望在其实验室中部署装有 Windows Server Essentials 体验角色（在文档的其余部分中称为 Windows Server Essentials）的 Microsoft Windows Server 16 的托管商，并打算为其客户提供 Windows Server Essentials 体验作为服务。 此文档包括以下各节：  
   
 
 -   [Windows Server Essentials 体验概述](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_WSEEOverview)  
@@ -36,35 +36,11 @@ ms.locfileid: "80817970"
   
 -   [将数据从 Windows Small Business Server 迁移到 Windows Server Essentials 体验](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Migrate)  
   
--   [使用 Windows PowerShell 执行常见任务](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_PowerShell)  
+-   [通过使用 Windows PowerShell 执行常见任务](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_PowerShell)  
   
--   [Windows Server Essentials 的电子邮件集成](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
+-   [与 Windows Server Essentials 的电子邮件集成](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
   
--   [使用本机工具进行监视和管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
-  
--   [测试方案](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
-  
--   [支持信息](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Support)  
-
--   [Windows Server Essentials 体验概述](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_WSEEOverview)  
-  
--   [托管 Windows Server Essentials 体验的优点](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Benefits)  
-  
--   [支持的部署选项](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedDeployment)  
-  
--   [支持的网络拓扑](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedToplogy)  
-  
--   [自定义 Windows Server Essentials 体验角色的映像](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_CustomizeImage)  
-  
--   [自动部署 Windows Server Essentials 体验](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_AutomateDeployment)  
-  
--   [将数据从 Windows Small Business Server 迁移到 Windows Server Essentials 体验](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Migrate)  
-  
--   [使用 Windows PowerShell 执行常见任务](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_PowerShell)  
-  
--   [Windows Server Essentials 的电子邮件集成](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
-  
--   [使用本机工具进行监视和管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
+-   [通过使用本机工具进行监视和管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
   
 -   [测试方案](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
   
@@ -173,13 +149,13 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
   
  如果将此项设置为 0x1，将会更改一些本地功能的行为。 这些功能更改包括：  
   
-- **客户端备份** 默认情况下将针对新加入的客户端计算机关闭客户端备份。  
+- **客户端备份**默认情况下将针对新加入的客户端计算机关闭客户端备份。  
   
-- **客户端还原服务** 客户端还原服务 will be disabled, and the UI will be hidden from the Dashboard.  
+- **客户端还原服务**将禁用客户端还原服务，并且在仪表板中隐藏该 UI。  
   
 - **文件历史记录**服务器将不会自动管理新创建用户帐户的文件历史记录设置。  
   
-- **服务器备份** 服务器备份 service will be disabled, and the 服务器备份 UI will be hidden from the Dashboard.  
+- **服务器备份**将禁用服务器备份服务，并且在仪表板中隐藏服务器备份 UI。  
   
 - **存储空间**将在仪表板中隐藏用于创建或管理存储空间的 UI。  
   
@@ -195,9 +171,9 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 -   若要了解如何使用 Windows PowerShell 安装 Windows Server Essentials 体验角色，请参阅[安装和配置 Windows Server essentials](https://technet.microsoft.com/library/dn281793.aspx)。  
   
 > [!NOTE]
->  确保主机虚拟机和 Windows Server Essentials 体验的时区设置相同。 否则，可能会遇到一些错误。 其中包括：服务器的初始配置可能不会对证书相关任务成功，证书可能在安装 Windows Server Essentials Experience 角色后的几小时内不起作用，并且设备信息将不会更新能.  
+>  确保主机虚拟机和 Windows Server Essentials 体验的时区设置相同。 否则，可能会遇到一些错误。 其中包括：服务器的初始配置可能不会对证书相关任务成功，证书可能在安装 Windows Server Essentials Experience 角色后的几小时内不起作用，并且设备信息将不会正确更新。  
   
- 在部署之后，使用 Windows PowerShell cmdlet **Get-WssConfigurationStatus** 来验证初始配置是否已成功。 返回的状态应为以下状态之一：“Notstarted”、“FinishedWithWarning”、“Running”、“Finished”、“Failed”或“PendingReboot”。  
+ 在部署之后，使用 Windows PowerShell cmdlet **Get-WssConfigurationStatus** 来验证初始配置是否已成功。 返回的状态应为以下状态之一：“Notstarted” ****、“FinishedWithWarning” ****、“Running” ****、“Finished” ****、“Failed” **** 或“PendingReboot” ****。  
   
  在初始配置期间，将重新启动服务器。 如果你需要防止自动重新启动，在开始初始配置之前，可以使用以下命令添加注册表项：  
   
@@ -206,7 +182,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 ```  
   
- 开始进行初始配置后，可以使用 **Get-WssConfigurationStatus** 检查初始配置状态，当状态为“PendingReboot”时，可以重新启动服务器。  
+ 开始进行初始配置后，可以使用 **Get-WssConfigurationStatus** 检查初始配置状态，当状态为“PendingReboot”**** 时，可以重新启动服务器。  
   
 ##  <a name="migrate-data-from-windows-small-business-server-to-windows-server-essentials-experience"></a><a name="BKMK_Migrate"></a>将数据从 Windows Small Business Server 迁移到 Windows Server Essentials 体验  
  你可以将数据从运行 Windows Small Business Server 2011、Windows Small Business Server 2008、Windows Small Business Server 2003 或 Windows Server Essentials 的服务器迁移到运行 Windows Server Essentials 的服务器。 查看针对本地2migrations 的[迁移到 Windows Server Essentials](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)迁移指南，并根据你的托管环境进行必要的自定义。  
@@ -236,7 +212,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 ### <a name="add-user"></a>添加用户  
  **语法**：  
   
- Add-wssuser [-Name] < string\> [-Password] < securestring\> [-AccessLevel < string\> {User &#124; Administrator}] [-FirstName < string\>] [-LastName < string\>] [-AllowRemoteAccess] [-AllowVpnAccess] [< CommonParameters\>]  
+ Add-wssuser [-Name] <string \> [-Password] <securestring \> [-AccessLevel <string \> {User &#124; Administrator}] [-FirstName <string \> ] [-LastName <string \> ] [-AllowRemoteAccess] [-AllowVpnAccess] [<CommonParameters \> ]  
   
  **示例**：  
   
@@ -247,7 +223,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 ### <a name="add-server-folder"></a>添加服务器文件夹  
  **语法**：  
   
- Add-wssfolder [-Name] < 字符串\> [-Path] < 字符串\> [[-Description] < string\>] [-KeepPermissions] [< CommonParameters\>]  
+ Add-wssfolder [-Name] <string \> [-Path] <string \> [[-Description] <string \> ] [-KeepPermissions] [<CommonParameters \> ]  
   
  **示例**：  
   
@@ -306,14 +282,14 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 -   **稳定性** 有时 Internet 连接在客户端上不稳定。 客户端备份设计为自动恢复，并且在每次备份 40 GB 数据时，客户端备份数据库都会创建一个检查点。 如果你预计 Internet 连接不可靠，则可将此容量值改小。  
   
-    -   若要启用检查点作业，请执行以下操作：在服务器上，将注册表项“HKLM\Software\Microsoft\Windows Server\Backup\GetCheckPointJobs” 设置为 1。  
+    -   若要启用检查点作业，请执行以下操作：在服务器上，将注册表项“HKLM\Software\Microsoft\Windows Server\Backup\GetCheckPointJobs” **** 设置为 1。  
   
-    -   若要更改检查点阈值，请执行以下操作：在客户端上，更改“HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold” 的 40 GB 的默认值。  
+    -   若要更改检查点阈值，请执行以下操作：在客户端上，更改“HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold” **** 的 40 GB 的默认值。  
   
 -   **客户端裸机还原** 因为 Windows 预安装环境不支持 VPN 连接，所以不支持客户端裸机还原。 应按照 [自定义和部署 Windows Server 2012 R2 中的 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)中的步骤来隐藏客户端还原服务任务。  
   
 ##### <a name="file-history"></a>文件历史记录  
- 文件历史记录是 Windows 8.1 和 Windows 8 中的一项功能，用于将配置文件数据（库、桌面、联系人、收藏夹）备份到网络共享。 可以集中管理所有加入到 Windows Server Essentials 网络且运行 Windows 8.1 或 Windows 8 的计算机的文件历史记录设置。 备份数据存储在运行 Windows Server Essentials 的服务器上。 应按照 [自定义和部署 Windows Server 2012 R2 中的 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)中的步骤来隐藏客户端还原服务任务  
+ 文件历史记录是 Windows 8.1 和 Windows 8 中的一项功能，用于将配置文件数据（库、桌面、联系人、收藏夹）备份到网络共享。 可以集中管理所有加入到 Windows Server Essentials 网络且运行 Windows 8.1 或 Windows 8 的计算机的文件历史记录设置。 备份数据存储在运行 Windows Server Essentials 的服务器上。 你应按照在[Windows server 2012 R2 中自定义和部署 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)中的步骤来隐藏客户端还原服务任务  
   
 ### <a name="storage-management"></a>存储管理  
  存储空间允许你将分散的硬盘的物理存储容量集合起来，以动态地增加硬盘，并根据指定的修复能力级别创建数据卷。 可以在主机上或虚拟机上执行此操作。 如果你希望在运行 Windows Server Essentials 的虚拟机中隐藏此功能，请按照 [自定义和部署 Windows Server 2012 R2 中的 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)中的说明进行操作。  
@@ -398,7 +374,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 -   [在 Windows Server 2012 R2 中自定义和部署 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)  
   
-## <a name="see-also"></a>另请参阅  
+## <a name="see-also"></a>请参阅  
   
 -   [Windows Server Essentials 中的新增功能](../get-started/what-s-new.md)  
 

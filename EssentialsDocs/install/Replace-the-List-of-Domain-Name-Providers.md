@@ -8,12 +8,12 @@ ms.assetid: 104d0412-2d77-4cd4-99f7-65a885522850
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e55dc757b93c7e11b29ed4fd579362900e54f909
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5281afa423360779924ff212ff300195fac5695
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819840"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267498"
 ---
 # <a name="replace-the-list-of-domain-name-providers"></a>替换域名提供商列表
 
@@ -22,13 +22,13 @@ ms.locfileid: "80819840"
 可以通过完成以下任务来替换“设置域名”向导中显示的域名提供商列表：  
 
 
--   [创建引用服务文件](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
+-   [创建推荐服务文件](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
 
--   [向引用计算机上的注册表中添加项](Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
+-   [向引用计算机的注册表中添加项](Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
 
--   [创建引用服务文件](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
+-   [创建推荐服务文件](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
 
--   [向引用计算机上的注册表中添加项](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
+-   [向引用计算机的注册表中添加项](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
 
 
 ###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a>创建引用服务文件  
@@ -38,11 +38,11 @@ ms.locfileid: "80819840"
 
 1.  打开推荐服务管理工具。  
 
-2.  单击 **“添加”** 。  
+2.  单击“添加”。  
 
 3.  在“添加域名提供商”对话框中，输入域名提供商的名称。  
 
-4.  添加域名提供商所支持的顶级域。 此操作可通过单击 **“添加”** ，输入顶级域标识符，然后选择所支持的区域来完成。 可以选择 **“所有区域”** 。  
+4.  添加域名提供商所支持的顶级域。 此操作可通过单击 **“添加”**，输入顶级域标识符，然后选择所支持的区域来完成。 可以选择 **“所有区域”**。  
 
 5.  输入对域名提供商的说明。  
 
@@ -56,27 +56,27 @@ ms.locfileid: "80819840"
 
 10. 在添加所有域名提供商后，选择要在其中保存推荐文件的文件夹。 请注意，在选择文件夹时，必须通过 HTTPS 链接访问推荐文件。  
 
-11. 单击 **“在文件系统中生成文件”** 。  
+11. 单击 **“在文件系统中生成文件”**。  
 
 ###  <a name="add-an-entry-to-the-registry-on-the-reference-computer"></a><a name="BKMK_AddRegistry"></a>向引用计算机上的注册表中添加项  
  必须添加注册表项，以指定操作系统可在其中找到推荐服务文件的位置。  
 
 ##### <a name="to-add-a-key-to-the-registry"></a>向注册表添加项  
 
-1.  在引用计算机上，单击 **“开始”** ，输入 **regedit**，然后按 **Enter**。  
+1.  在引用计算机上，单击 **“开始”**，输入 **regedit**，然后按 **Enter**。  
 
-2.  在左侧窗格中，依次展开 **“HKEY_LOCAL_MACHINE”** 、 **“SOFTWARE”** 、 **“Microsoft”** 、 **“Windows Server”** 、 **“Domain Managers”** 和 **“Providers”** 。  
+2.  在左侧窗格中，依次展开 **“HKEY_LOCAL_MACHINE”**、**“SOFTWARE”**、**“Microsoft”**、**“Windows Server”**、**“Domain Managers”** 和 **“Providers”**。  
 
-3.  右键单击 **“E423C85D-6B1F-4583-95E0-449D8263BAC4”** 项，然后单击 **“字符串值”** 。  
+3.  右键单击 **“E423C85D-6B1F-4583-95E0-449D8263BAC4”** 项，然后单击 **“字符串值”**。  
 
 4.  输入 **ReferralServerHttpsUri** 作为字符串的名称，然后按 **Enter**。  
 
-5.  右键单击右侧窗格中的新 **“ReferralServerHttpsUri”** 字符串，然后单击 **“修改”** 。  
+5.  右键单击右侧窗格中的新 **“ReferralServerHttpsUri”** 字符串，然后单击 **“修改”**。  
 
 
-6.  输入用于访问在[创建推荐服务文件](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)中创建的推荐文件的 HTTPS URL，然后单击 **“确定”** 。  
+6.  输入用于访问在[创建推荐服务文件](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)中创建的推荐文件的 HTTPS URL，然后单击 **“确定”**。  
 
-6.  输入用于访问在[创建推荐服务文件](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)中创建的推荐文件的 HTTPS URL，然后单击 **“确定”** 。  
+6.  输入用于访问在[创建推荐服务文件](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)中创建的推荐文件的 HTTPS URL，然后单击 **“确定”**。  
 
 
 ~~~
@@ -85,11 +85,11 @@ ms.locfileid: "80819840"
 ~~~
 
 ###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a>域名状态问题  
- 如果合作伙伴添加域名提供商并使用 Windows Server Essentials SDK 中的应用程序编程接口（API）来为证书设置 Unknown、Failed 和 CertificateRequestNotSubmitted 状态，则客户会收到错误消息和配置结果。 这是因为上述情况会得到例外处理，而不返回状态。  
+ 如果合作伙伴添加域名提供商并使用 Windows Server Essentials SDK 中的应用程序编程接口（API）来为证书设置 Unknown、Failed 和 CertificateRequestNotSubmitted 状态，则客户会收到错误的消息和配置结果。 这是因为上述情况会得到例外处理，而不返回状态。  
 
  下列域状态为失败结果，应作为错误进行报告：  
 
-- Failed  
+- 失败  
 
 - PendingCustomerInterventionRequired  
 
@@ -105,7 +105,7 @@ ms.locfileid: "80819840"
 
 - 就绪  
 
-- 挂起  
+- 挂起的  
 
 - InRenewal  
 
@@ -113,11 +113,6 @@ ms.locfileid: "80819840"
 
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
  [其他自定义](Additional-Customizations.md)   
- [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
+ [准备要部署的映像](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)
-
- [创建和自定义映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他自定义](../install/Additional-Customizations.md)   
- [准备映像以进行部署](../install/Preparing-the-Image-for-Deployment.md)   
- [测试客户体验](../install/Testing-the-Customer-Experience.md)
 

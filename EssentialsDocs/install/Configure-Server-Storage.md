@@ -8,12 +8,12 @@ ms.assetid: ef7ddcdd-3a74-40ca-9487-c3a6fc5155a5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b543e473c545f9446ab33b8f81d5b2e5fa4ed877
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cc76e39e84e78d210287f96353e4e4b68178f63e
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817220"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267428"
 ---
 # <a name="configure-server-storage"></a>配置服务器存储
 
@@ -28,7 +28,7 @@ ms.locfileid: "80817220"
 |服务器级别|磁盘配置|  
 |------------------|------------------------|  
 |条目|-两个物理磁盘<br /><br /> -配置为 RAID 1 镜像集，其中包含以下内容：<br /><br /> -C：卷？ 60 GB<br /><br /> -D：卷？ 1000 GB|  
-|中等|-三个物理磁盘<br /><br /> -配置为 RAID 5 集，其中包含以下内容：<br /><br /> -C：卷？ 60 GB<br /><br /> -D：卷？ 1500 GB|  
+|中型|-三个物理磁盘<br /><br /> -配置为 RAID 5 集，其中包含以下内容：<br /><br /> -C：卷？ 60 GB<br /><br /> -D：卷？ 1500 GB|  
 |高|-5 个或更多物理磁盘总数<br /><br /> -第两个磁盘位于 RAID 1 镜像集内，其中包含 C：卷？ 100 GB<br /><br /> -RAID 5 集中的所有剩余磁盘，其中包含以下内容：<br /><br /> -D：卷？ 1500 GB<br /><br /> -E：卷？ 1500 GB|  
   
  这些建议考虑到已安装的操作系统的大小、服务器使用的数据存储的平均大小，以及在服务器的整个生命周期内预期的数据存储增长情况。 卷可以是单个物理磁盘上的分区，也可以置于单独的物理磁盘上。 由于服务器存储客户的重要数据，因此建议你使用多个物理磁盘并使用硬件 RAID 或存储空间来帮助保护客户的数据。  
@@ -41,15 +41,9 @@ ms.locfileid: "80817220"
   
 ## <a name="see-also"></a>另请参阅  
 
- [入门 Windows Server ESSENTIALS ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [与 Windows Server Essentials ADK 入门](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
  [其他自定义](Additional-Customizations.md)   
- [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
+ [准备要部署的映像](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)
-
- [入门 Windows Server ESSENTIALS ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [创建和自定义映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他自定义](../install/Additional-Customizations.md)   
- [准备映像以进行部署](../install/Preparing-the-Image-for-Deployment.md)   
- [测试客户体验](../install/Testing-the-Customer-Experience.md)
 

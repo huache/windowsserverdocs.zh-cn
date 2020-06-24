@@ -8,12 +8,12 @@ ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c1fd1d21277d32672398d1dd201e2dda24682c2d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 64e982f7932f8ba3ecf83ffe6443391522ad0f12
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820020"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267548"
 ---
 # <a name="install-or-remove-language-packs"></a>安装或删除语言包
 
@@ -32,11 +32,11 @@ ms.locfileid: "80820020"
   
  若要安装语言包，你必须使用以下命令：  
   
- **dism.exe/online/Add-Package/PackagePath： C：\\< cab 文件目录的完整路径\>\lp.cab**  
+ **dism.exe/online/Add-Package/PackagePath： C： \\<cab 文件目录的完整路径 \>\lp.cab**  
   
  例如，以下命令显示了如何添加德语语言包：  
   
- **dism.exe/online/Add-Package/PackagePath： C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
+ **dism.exe /online /Add-Package /PackagePath:C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
   
 > [!IMPORTANT]
 >  还必须为 Windows Server Essentials 应用语言包以完整本地化操作系统。  
@@ -44,21 +44,16 @@ ms.locfileid: "80820020"
 ## <a name="removing-language-packs-from-an-image"></a>从映像中删除语言包  
  你可以使用以下命令删除不再需要包含在映像中的语言包：  
   
- **dism.exe/online/Remove-Package/PackagePath： C：\\< cab 文件目录的完整路径\>\lp.cab**  
+ **dism.exe/online/Remove-Package/PackagePath： C： \\<cab 文件目录的完整路径 \>\lp.cab**  
   
  例如，以下命令显示了如何删除德语语言包：  
   
- **dism.exe/online/Remove-Package/PackagePath： C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
+ **dism.exe /online /Remove-Package /PackagePath:C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
   
 ## <a name="see-also"></a>另请参阅  
 
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
  [其他自定义](Additional-Customizations.md)   
- [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
+ [准备要部署的映像](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)
-
- [创建和自定义映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他自定义](../install/Additional-Customizations.md)   
- [准备映像以进行部署](../install/Preparing-the-Image-for-Deployment.md)   
- [测试客户体验](../install/Testing-the-Customer-Experience.md)
 

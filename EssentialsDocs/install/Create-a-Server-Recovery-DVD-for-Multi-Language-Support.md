@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: b71fc748f7cc8d82420b7a62fe502135036db727
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9cafaf25a18ffe17894e11ff0676e492656e5831
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312116"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256666"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>为多语言支持创建服务器恢复 DVD
 
@@ -66,7 +66,7 @@ ms.locfileid: "80312116"
 > [!NOTE]
 >  验证是否为 Windows Server 2012 安装了语言包。 这可确保你获取相应的品牌。 [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)上提供了 Windows Server 2012 多语言用户界面语言包。 请按照[演练：](https://technet.microsoft.com/library/jj126995.aspx)创建多语言创建多语言 windows 映像创建多语言 windows 映像中的说明创建多语言 windows 映像，然后将 Windows Server Essentials 语言包添加到 install。  
 >   
->  Windows Server Essentials 语言包在 \Language Pack 的语言包媒体中提供\\< CultureName\>。  
+>  Windows Server Essentials 语言包在 \Language Pack<CultureName 的语言包媒体中提供 \\ \> 。  
   
 > [!NOTE]
 >  在版本的 Windows Server 2012 之前，并非所有语言包都可用。  
@@ -106,11 +106,6 @@ ms.locfileid: "80312116"
 
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)   
  [其他自定义](Additional-Customizations.md)   
- [准备映像以进行部署](Preparing-the-Image-for-Deployment.md)   
+ [准备要部署的映像](Preparing-the-Image-for-Deployment.md)   
  [测试客户体验](Testing-the-Customer-Experience.md)
-
- [创建和自定义映像](../install/Creating-and-Customizing-the-Image.md)   
- [其他自定义](../install/Additional-Customizations.md)   
- [准备映像以进行部署](../install/Preparing-the-Image-for-Deployment.md)   
- [测试客户体验](../install/Testing-the-Customer-Experience.md)
 

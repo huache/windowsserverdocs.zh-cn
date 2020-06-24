@@ -7,25 +7,27 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/20/2018
-ms.openlocfilehash: 269be253367ba2bc692a5903e7d519a40f487d8b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17bca691fef0ed9478c8ddb49e0511b0a16ac7b7
+ms.sourcegitcommit: 75e87fef264e30af3dfeb57923d5d82b0c51de5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383336"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85279612"
 ---
 # <a name="what-is-the-server-core-installation-option-in-windows-server"></a>Windows Server 中的服务器核心安装选项是什么？
 
-> 适用于：Windows Server 2019、Windows Server 2016 和 Windows Server （半年频道）
+> 适用于： Windows Server 2019、Windows Server 2016 和 Windows Server （半年频道）
 
-"服务器核心" 选项是在部署 Windows Server Standard 或 Datacenter 版本时可用的最小安装选项。 服务器核心包括大多数但并非全部服务器角色。 服务器核心的磁盘占用量较小，因此，由于基本代码较小，因此攻击面更小。 
+"服务器核心" 选项是在部署 Windows Server Standard 或 Datacenter 版本时可用的最小安装选项。 服务器核心包括大多数但并非全部服务器角色。 服务器核心的磁盘占用量较小，因此，由于基本代码较小，因此攻击面更小。
 
-## <a name="server-core-vs-server-with-desktop-experience"></a>服务器（内核） vs Server 与桌面体验 
-当你安装 Windows Server 时，你只安装所选的服务器角色，这有助于降低 Windows Server 的总体占用量。 但是，具有桌面体验安装选项的服务器仍将安装许多服务和其他组件，这些组件通常不需要用于特定的使用方案。 
+## <a name="server-core-vs-server-with-desktop-experience"></a>服务器（内核） vs Server 与桌面体验
 
-这就是服务器核心的重头戏：服务器核心安装消除了对某些常用服务器角色的支持不是必需的任何服务和其他功能。 例如，Hyper-v 服务器不需要图形用户界面（GUI），因为你可以使用 Windows PowerShell 或从命令行使用 Hyper-v 管理器远程管理 Hyper-v 的所有方面。 
+当你安装 Windows Server 时，你只安装所选的服务器角色，这有助于降低 Windows Server 的总体占用量。 但是，具有桌面体验安装选项的服务器仍将安装许多服务和其他组件，这些组件通常不需要用于特定的使用方案。
+
+这就是服务器核心的重头戏：服务器核心安装消除了对某些常用服务器角色的支持不是必需的任何服务和其他功能。 例如，Hyper-v 服务器不需要图形用户界面（GUI），因为你可以使用 Windows PowerShell 或从命令行使用 Hyper-v 管理器远程管理 Hyper-v 的所有方面。
 
 ## <a name="the-server-core-difference---core-capabilities-without-the-frills"></a>不带基本的服务器核心差异-核心功能
+
 当你在系统上完成服务器核心安装并首次登录时，你会感到惊讶。 具有桌面体验安装选项和服务器核心的服务器之间的主要区别在于，服务器核心不包括以下 GUI shell 包：
 
 - Microsoft-服务器-Shell-包
@@ -41,54 +43,58 @@ ms.locfileid: "71383336"
 - 没有用于设置服务器核心的 OOBE （全新体验）
 - 无音频支持
 
-下表显示了在具有桌面体验的服务器核心与服务器上*本地*可用的应用程序。 **重要提示**:大多数情况下，在下面列出为 "不可用" 的应用程序可以从 Windows 客户端计算机远程运行，并用于管理服务器核心安装。
+下表显示了在具有桌面体验的服务器核心与服务器上*本地*可用的应用程序。 **重要提示**：在大多数情况下，在下面列出为 "不可用" 的应用程序可以从 Windows 客户端计算机远程运行，并用于管理服务器核心安装。
 
 > [!NOTE]
-> 此列表用于快速参考-它不是完整列表。
+> 此列表用于快速参考-它不是完整的列表。
 
 
-| 应用程序                     | 服务器核心     | 服务器（提供桌面体验） |
+| 应用程序                        | 服务器核心     | 服务器（提供桌面体验） |
 |------------------------------------|-----------------|--------------------------------|
-| 命令提示符                     | 有空       | 有空                      |
-| Windows PowerShell/Microsoft .NET | 有空       | 有空                      |
-| Perfmon                        | 不可用  | 有空                      |
-| Windbg （GUI）                         | 受支持       | 受支持                      |
-| Resmon                         | 不可用   | 有空                      |
-| Regedit.exe                            | 有空       | 有空                      |
-| Dism.exe                         | 有空       | 有空                      |
-| Disksnapshot                   | 不可用   | 有空                      |
-| Diskpart.exe                       | 有空       | 有空                      |
-| Diskmgmt.msc                       | 不可用   | 有空                      |
-| Devmgmt.msc                        | 不可用   | 有空                      |
-| 服务器管理器                     | 不可用  | 有空                      |
-| Mmc.exe                            | 不可用   | 有空                      |
-| Eventvwr.msc                           | 不可用  | 有空                      |
-| Wevtutil （事件查询）           | 有空       | 有空                      |
-| Services.msc                       | 不可用   | 有空                      |
-| 控制面板                      | 不可用   | 有空                      |
-| Windows 更新（GUI）                 | 不可用 | 有空                      |
-| Windows 资源管理器                   | 不可用   | 有空                      |
-| 任务栏                            | 不可用   | 有空                      |
-| 任务栏通知              | 不可用   | 有空                      |
-| 任务管理器                            | 有空       | 有空                      |
-| Internet Explorer 或 Microsoft Edge          | 不可用   | 有空                      |
-| 内置帮助系统               | 不可用   | 有空                      |
-| Windows 10 Shell                   | 不可用   | 有空                      |
-| Windows Media Player               | 不可用   | 有空                      |
-| PowerShell                         | 有空       | 有空                      |
-| PowerShell ISE                     | 不可用   | 有空                      |
-| PowerShell 输入法                     | 有空       | 有空                      |
-| Mstsc                          | 不可用   | 有空                      |
-| 远程桌面服务            | 有空       | 有空                      |
-| Hyper-V 管理器                    | 不可用  | 有空                      |
+| 命令提示符                     | 可用       | 可用                      |
+| Windows PowerShell/Microsoft .NET | 可用       | 可用                      |
+| Perfmon.exe                        | 不可用   | 可用                      |
+| Windbg （GUI）                       | 受支持       | 受支持                      |
+| Resmon.exe                         | 不可用   | 可用                      |
+| Regedit                            | 可用       | 可用                      |
+| Fsutil.exe                         | 可用       | 可用                      |
+| Disksnapshot.exe                   | 不可用   | 可用                      |
+| Diskpart.exe                       | 可用       | 可用                      |
+| Diskmgmt.msc                       | 不可用   | 可用                      |
+| Devmgmt.msc                        | 不可用   | 可用                      |
+| 服务器管理器                     | 不可用   | 可用                      |
+| Mmc.exe                            | 不可用   | 可用                      |
+| Eventvwr.msc                           | 不可用   | 可用                      |
+| Wevtutil （事件查询）           | 可用       | 可用                      |
+| Services.msc                       | 不可用   | 可用                      |
+| 控制面板                      | 不可用   | 可用                      |
+| Windows 更新（GUI）               | 不可用   | 可用                      |
+| Windows 资源管理器                   | 不可用   | 可用                      |
+| 任务栏                            | 不可用   | 可用                      |
+| 任务栏通知              | 不可用   | 可用                      |
+| 任务管理器                            | 可用       | 可用                      |
+| Internet Explorer 或 Edge          | 不可用   | 可用                      |
+| 内置帮助系统               | 不可用   | 可用                      |
+| Windows 10 Shell                   | 不可用   | 可用                      |
+| Windows Media Player               | 不可用   | 可用                      |
+| PowerShell                         | 可用       | 可用                      |
+| PowerShell ISE                     | 不可用   | 可用                      |
+| PowerShell 输入法                     | 可用       | 可用                      |
+| Mstsc.exe                          | 不可用   | 可用                      |
+| 远程桌面服务            | 可用       | 可用                      |
+| Hyper-V 管理器                    | 不可用   | 可用                      |
+| 记事本\*                          | 不可用   | 可用                      |
 
 
 有关服务器核心中包含*的内容的*详细信息，请参阅[Windows Server-server core 中包含的角色、角色服务和功能](server-core-roles-and-services.md)。 有关服务器核心中*未*包含的内容的信息，请参阅[不包含在服务器核心中的角色、角色服务和功能](server-core-removed-roles.md)
 
+\*要读取的。本地存储在 Server Core SKU 上的 RTF 文件，用户可以将文件复制到存在 WordPad 的其他 Windows 计算机上。
+
 ## <a name="get-started-using-server-core"></a>开始使用服务器核心
+
 使用以下信息来安装、配置和管理 Windows Server 的服务器核心安装选项。
 
-服务器核心安装： 
+服务器核心安装：
 - [服务器核心中包含的角色、角色服务和功能](server-core-roles-and-services.md)
 - [不在服务器核心中的角色、角色服务和功能](server-core-removed-roles.md)
 - [安装服务器核心安装选项](../../get-started/getting-started-with-server-core.md)

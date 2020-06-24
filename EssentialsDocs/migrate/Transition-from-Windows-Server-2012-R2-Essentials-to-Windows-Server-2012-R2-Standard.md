@@ -8,12 +8,12 @@ ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f7914ff205382ed2c74cb130061f850e2c0675f5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 145d4ef1039093f224e1dc73cb5d8286ddd8e494
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852290"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256477"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>从 Windows Server Essentials 转换到 Windows Server 2012 R2 Standard
 
@@ -39,9 +39,9 @@ Windows Server 2016 是支持云的操作系统，它支持当前的工作负荷
   
     1.  以管理员身份打开命令窗口。  
   
-    2.  运行以下命令：  
+    2.  运行下面的命令：  
   
-         **dism/online/set-edition： ServerStandard/geteula：** *eula path* （其中*EULA path*表示要保存 eula 文件的位置; 例如： c：\ ws8std_eula .rtf）。 请务必使用 .rtf 作为文件后缀名。  
+         **dism /online /set-edition:ServerStandard /geteula:** *eula path* （其中 *eula path* 表示要用于保存 EULA 文件的位置；例如：C:\ws8std_eula.rtf）。 请务必使用 .rtf 作为文件后缀名。  
   
     3.  打开保存该文件的位置，然后双击打开该文件。  
   
@@ -67,10 +67,8 @@ Windows Server 2016 是支持云的操作系统，它支持当前的工作负荷
   
    转换后，Windows Server Essentials 功能将保留在服务器上，最多支持100用户和200设备。  
   
-## <a name="see-also"></a>另请参阅  
+## <a name="see-also"></a>请参阅  
   
 
 -   [将服务器数据迁移到 Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [将服务器数据迁移到 Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
