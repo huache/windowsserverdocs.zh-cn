@@ -1,5 +1,5 @@
 ---
-title: 虚拟网络对等
+title: 虚拟网络对等互连
 manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
@@ -7,14 +7,14 @@ ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: c5955ad8be987ebfd605bb59cfdc43b9011714c4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d4dadcabfb911c7722da493c45db112477eab34c
+ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853580"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345411"
 ---
-# <a name="virtual-network-peering"></a>虚拟网络对等
+# <a name="virtual-network-peering"></a>虚拟网络对等互连
 
 >适用于： Windows Server
 
@@ -24,9 +24,9 @@ ms.locfileid: "80853580"
 
 -   对等互连虚拟网络中虚拟机之间的流量仅通过*专用*IP 地址通过主干基础结构路由。 虚拟网络之间的通信不需要公共 Internet 或网关。
 
--   不同虚拟网络中的资源之间的低延迟、高带宽连接。
+-   不同虚拟网络中资源之间的连接延迟低且带宽高。
 
--   一个虚拟网络中的资源与另一个虚拟网络中的资源进行通信的能力。
+-   一个虚拟网络中的资源可与另一个虚拟网络中的资源通信。
 
 -   创建对等互连时，任一虚拟网络中的资源不会造成停机。
 
@@ -47,15 +47,13 @@ ms.locfileid: "80853580"
 
 - 由于虚拟网络对等互连在两个虚拟网络之间进行，因此不存在跨对等互连的派生的可传递关系。 例如，如果对等 virtualNetworkA 与 virtualNetworkB 和 virtualNetworkB 结合 virtualNetworkC，则 virtualNetworkA 不会获得对等互连 with virtualNetworkC。
 
-  [此处为 image]
-
 ## <a name="connectivity"></a>连接
 
 对等互连虚拟网络后，任一虚拟网络中的资源可以直接与对等互连虚拟网络中的资源进行连接。
 
 -   对等互连虚拟网络中虚拟机之间的网络延迟与单个虚拟网络中的延迟相同。
 
--   网络吞吐量取决于虚拟机允许的带宽。 对等互连中的带宽没有任何其他限制。
+-   网络吞吐量取决于虚拟机允许的带宽。 对等互连的带宽没有任何其他限制。
 
 -   对等互连虚拟网络中虚拟机之间的流量直接通过主干基础结构路由，而不通过网关或公共 Internet 路由。
 
@@ -75,7 +73,7 @@ ms.locfileid: "80853580"
 
 每个虚拟网络无论是否与另一个虚拟网络对等互连，都可以有自己的网关连接到本地网络。 如果对等互连虚拟网络，还可以在对等互连虚拟网络中将网关配置为本地网络的传输点。 在这种情况下，使用远程网关的虚拟网络不能有自己的网关。 一个虚拟网络只能有一个网关，该网关可以是本地网关或远程网关（在对等互连虚拟网络中）。
 
-## <a name="monitor"></a>监视器
+## <a name="monitor"></a>监视
 
 对两个虚拟网络进行对等互连时，必须为对等互连中的每个虚拟网络配置对等互连。
 
@@ -83,7 +81,7 @@ ms.locfileid: "80853580"
 
 -   已**启动：** 创建从第一个虚拟网络到第二个虚拟网络的对等互连时显示的。
 
--   **已连接：** 在创建从第二个虚拟网络到第一个虚拟网络的对等互连后显示。 第一个虚拟网络的对等互连状态从 "已启动" 更改为 "已连接"。 在成功建立虚拟网络对等互连之前，这两个虚拟网络对等机的状态必须为 "已连接"。
+-   **已连接：** 在创建从第二个虚拟网络到第一个虚拟网络的对等互连后显示。 第一个虚拟网络的对等互连状态从“已启动”更改为“已连接”。 在成功建立虚拟网络对等互连之前，这两个虚拟网络对等机的状态必须为 "已连接"。
 
 -   **断开连接：** 当一个虚拟网络与另一个虚拟网络断开连接时显示。
 

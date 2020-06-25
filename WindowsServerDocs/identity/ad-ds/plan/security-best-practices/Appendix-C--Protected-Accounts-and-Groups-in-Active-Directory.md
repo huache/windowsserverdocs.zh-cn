@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3036176127cbb5401c582d81ddb2704d790a209a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 18a293f4ec7d96516bd89396c13562ba68dc471f
+ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821680"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345431"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附录 C：Active Directory 中受保护的帐户和组
 
@@ -35,24 +35,22 @@ ms.locfileid: "80821680"
 | --- | --- | --- | --- |
 |Account Operators|Account Operators|Account Operators|Account Operators|
 |管理员|管理员|管理员|管理员|
-|Administrators|Administrators|Administrators|Administrators|
-|Backup Operators|Backup Operators|Backup Operators|Backup Operators|
-|证书发行者|||
-|Domain Admins|Domain Admins|Domain Admins|Domain Admins|
+|管理员|管理员|管理员|管理员|
+|备份操作员|备份操作员|备份操作员|备份操作员|
+|Cert Publishers|||
+|域管理员|域管理员|域管理员|域管理员|
 |域控制器|域控制器|域控制器|域控制器|
-|Enterprise Admins|Enterprise Admins|Enterprise Admins|Enterprise Admins|
-||||企业密钥管理员|
-||||密钥管理员|
+|企业管理员|企业管理员|企业管理员|企业管理员|
 |Krbtgt|Krbtgt|Krbtgt|Krbtgt|
 |打印操作员|打印操作员|打印操作员|打印操作员|
 |||只读域控制器|只读域控制器|
-|Replicator|Replicator|Replicator|Replicator|
+|复制程序|复制程序|复制程序|复制程序|
 |Schema Admins|Schema Admins|Schema Admins|Schema Admins|
 |Server Operators|Server Operators|Server Operators|Server Operators|
 
 #### <a name="adminsdholder"></a>AdminSDHolder
 
-AdminSDHolder 对象的目的是为域中的受保护帐户和组提供 "模板" 权限。 AdminSDHolder 在每个 Active Directory 域的系统容器中自动创建为对象。 其路径为： **CN = AdminSDHolder，cn = System，DC = < domain_component >，dc = < domain_component >？。**  
+AdminSDHolder 对象的目的是为域中的受保护帐户和组提供 "模板" 权限。 AdminSDHolder 在每个 Active Directory 域的系统容器中自动创建为对象。 其路径为： **CN = AdminSDHolder，cn = System，DC =<domain_component>，dc =<domain_component>？。**  
 
 与管理员组拥有的 Active Directory 域中的大多数对象不同，AdminSDHolder 由域管理员组拥有。 默认情况下，EAs 可以更改任何域的 AdminSDHolder 对象，这与域的 Domain Admins 和 Administrators 组相同。 此外，尽管 AdminSDHolder 的默认所有者是域的 Domain Admins 组，但 Administrators 或 Enterprise Admins 的成员可以获得对象的所有权。  
 
@@ -76,14 +74,14 @@ SDProp 是在域控制器上每60分钟运行一次（默认情况下），该�
 
 ###### <a name="running-sdprop-manually-in-windows-server-2008-or-earlier"></a>在 Windows Server 2008 或更早版本中手动运行 SDProp
 
-可以通过使用 Ldp.exe 或通过运行 LDAP 修改脚本强制 SDProp 运行。 若要使用 Ldp.exe 运行 SDProp，请在更改域中的 AdminSDHolder 对象之后执行以下步骤：  
+您可以使用 Ldp.exe 或通过运行 LDAP 修改脚本强制 SDProp 运行。 若要使用 Ldp.exe 运行 SDProp，请在更改域中的 AdminSDHolder 对象之后执行以下步骤：  
 
-1. 启动**ldp.exe**。  
+1. 启动**Ldp.exe**。  
 2. 单击 "Ldp" 对话框上的 "**连接**"，然后单击 "**连接**"。  
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_9.gif)  
 
-3. 在 "**连接**" 对话框中，键入持有 PDC 模拟器（PDCE）角色的域的域控制器的名称，然后单击 **"确定"** 。  
+3. 在 "**连接**" 对话框中，键入持有 PDC 模拟器（PDCE）角色的域的域控制器的名称，然后单击 **"确定"**。  
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)  
 
@@ -91,7 +89,7 @@ SDProp 是在域控制器上每60分钟运行一次（默认情况下），该�
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)  
 
-5. 在 "**绑定**" 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。 （如果以该用户身份登录，则可以选择 "**绑定为**当前已登录的用户"。）单击 **"确定"** 。  
+5. 在 "**绑定**" 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。 （如果以该用户身份登录，则可以选择 "**绑定为**当前已登录的用户"。）单击 **"确定"**。  
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_12.png)  
 
@@ -114,15 +112,15 @@ SDProp 是在域控制器上每60分钟运行一次（默认情况下），该�
 
 ###### <a name="running-sdprop-manually-in-windows-server-2012-or-windows-server-2008-r2"></a>在 Windows Server 2012 或 Windows Server 2008 R2 中手动运行 SDProp
 
-还可以通过使用 Ldp.exe 或通过运行 LDAP 修改脚本强制 SDProp 运行。 若要使用 Ldp.exe 运行 SDProp，请在更改域中的 AdminSDHolder 对象之后执行以下步骤：  
+还可以通过使用 Ldp.exe 或运行 LDAP 修改脚本来强制 SDProp 运行。 若要使用 Ldp.exe 运行 SDProp，请在更改域中的 AdminSDHolder 对象之后执行以下步骤：  
 
-1. 启动**ldp.exe**。  
+1. 启动**Ldp.exe**。  
 
 2. 在 " **Ldp** " 对话框中，单击 "**连接**"，然后单击 "**连接**"。  
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_16.gif)  
 
-3. 在 "**连接**" 对话框中，键入持有 PDC 模拟器（PDCE）角色的域的域控制器的名称，然后单击 **"确定"** 。  
+3. 在 "**连接**" 对话框中，键入持有 PDC 模拟器（PDCE）角色的域的域控制器的名称，然后单击 **"确定"**。  
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)  
 
@@ -130,7 +128,7 @@ SDProp 是在域控制器上每60分钟运行一次（默认情况下），该�
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)  
 
-5. 在 "**绑定**" 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。 （如果以该用户身份登录，则可以选择 "**绑定为当前已登录的用户**"。）单击 **"确定"** 。  
+5. 在 "**绑定**" 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。 （如果以该用户身份登录，则可以选择 "**绑定为当前已登录的用户**"。）单击 **"确定"**。  
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_19.gif)  
 
