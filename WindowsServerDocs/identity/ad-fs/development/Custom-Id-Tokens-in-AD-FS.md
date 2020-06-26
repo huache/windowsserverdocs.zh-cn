@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: 331e5ff2dbe7f172488543d1d1f5ed0f757cd584
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 9ffc8351c2c5033346f04e3cd4dc6f8ba4914149
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333948"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372204"
 ---
 # <a name="customize-claims-to-be-emitted-in-id_token-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>当使用 OpenID Connect 或 OAuth 与 AD FS 2016 或更高版本时，自定义要在 id_token 中发出的声明
 
@@ -28,7 +28,7 @@ ms.locfileid: "84333948"
 
 ## <a name="what-are-the-restrictions-on-getting-custom-claims-in-id-token"></a>在 ID 令牌中获取自定义声明有哪些限制？
 
-### <a name="scenario-1"></a>场景 1
+### <a name="scenario-1"></a>方案 1
 
 ![限制](media/Custom-Id-Tokens-in-AD-FS/res1.png)
 
@@ -36,11 +36,11 @@ ms.locfileid: "84333948"
 2. 只有公用客户端才能获取 ID 令牌中的自定义声明
 3. 信赖方标识符（Web API 标识符）应与客户端标识符相同
 
-### <a name="scenario-2"></a>场景 2
+### <a name="scenario-2"></a>方案 2
 
 ![限制](media/Custom-Id-Tokens-in-AD-FS/restrict2.png)
 
-在 AD FS 服务器上安装[KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472)
+在 AD FS 服务器上安装[KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472)或更高版本的安全更新
 1. `response_mode`设置为 form_post
 2. 公共和机密客户端都可以在 ID 令牌中获取自定义声明
 3. 将作用域分配 `allatclaims` 到客户端– RP 配对。
@@ -58,16 +58,16 @@ Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient"
 ### <a name="create-and-configure-an-application-group-in-ad-fs-2016-or-later"></a>在 AD FS 2016 或更高版本中创建和配置应用程序组
 
 1. 在 AD FS 管理 "中，右键单击" 应用程序组 "，然后选择"**添加应用程序组**"。
-2. 在应用程序组向导上，为 "输入**ADFSSSO** "，在 "客户端-服务器应用程序" 下，选择**本机应用程序访问 web 应用程序**模板。 单击“下一步”。
+2. 在应用程序组向导上，为 "输入**ADFSSSO** "，在 "客户端-服务器应用程序" 下，选择**本机应用程序访问 web 应用程序**模板。 单击“下一步”****。
 
    ![客户端](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
-3. 复制 "**客户端标识符**" 值。  稍后将在应用程序的 web.config 文件中将其用作 ida： ClientId 的值。
-4. 对于 "**重定向 URI**"，请输入以下内容：  -  **https://localhost:44320/** 。  单击“添加”。 单击“下一步”。
+3. 复制 "**客户端标识符**" 值。  它稍后将用作应用程序 web.config 文件中的 ida： ClientId 的值。
+4. 对于 "**重定向 URI**"，请输入以下内容：  -  **https://localhost:44320/** 。  单击“添加” ****。 单击“下一步”****。
 
    ![客户端](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-5. 在 "**配置 WEB API** " 屏幕上，输入以下**标识符作为标识符**  -  **https://contoso.com/WebApp** 。  单击“添加”。 单击“下一步”。  稍后将在应用程序的 web.config 文件中将此值用于**ida： ResourceID** 。
+5. 在 "**配置 WEB API** " 屏幕上，输入以下**标识符作为标识符**  -  **https://contoso.com/WebApp** 。  单击“添加” ****。 单击“下一步”****。  稍后会将此值用于应用程序 web.config 文件中的**ida： ResourceID** 。
 
    ![客户端](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
@@ -96,7 +96,7 @@ Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient"
 
     ![客户端](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.PNG)
 
-13. 在 "**添加转换声明规则" 向导**屏幕上，在 "**声明规则名称**" 中输入**ForCustomIDToken** ，并在**自定义规则**中输入以下声明规则。 单击“完成” 
+13. 在 "**添加转换声明规则" 向导**屏幕上，在 "**声明规则名称**" 中输入**ForCustomIDToken** ，并在**自定义规则**中输入以下声明规则。 单击“完成”
 
     ```
     x:[]

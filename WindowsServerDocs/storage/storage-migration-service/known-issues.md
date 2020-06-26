@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5a4a99434d67c08551d97589f8f2638e1024754d
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+ms.openlocfilehash: 638f4d122b25c870ed323b94d32b6cefca4be5ff
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306496"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372194"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -70,7 +70,7 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 
 若要解决此问题，请执行以下操作：
 
-1. 在 orchestrator 计算机上，使用 Notepad.exe 编辑 *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config*文件，将 "sendTimeout" 的默认值从1分钟更改为10分钟
+1. 在 orchestrator 计算机上，使用 Notepad.exe 编辑 *% SYSTEMROOT% \SMS\Microsoft.StorageMigration.Service.exe.config*文件，将 "sendTimeout" 的默认值从1分钟更改为10分钟
 
    ```
      <bindings>
@@ -142,11 +142,11 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 
   icacls d:\test\Source：
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher D:AI （A;;FA;;;BA）（A;; 0x1200a9;;;DD）（A;; 0）x1301bf;;;DU）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU
+  icacls d:\test\thatcher.png/save out.txt/t thatcher.png D:AI （A;;FA;;;BA）（A;; 0x1200a9;;;DD）（A;; 0）x1301bf;;;DU）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU
 
 目标文件：
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher D:AI （A;;FA;;;BA）（A;; 0x1301bf;;;DU）（A;; 0x1200a9;;;DD）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU）**S： PAINO_ACCESS_CONTROL**
+  icacls d:\test\thatcher.png/save out.txt/t thatcher.png D:AI （A;;FA;;;BA）（A;; 0x1301bf;;;DU）（A;; 0x1200a9;;;DD）（A; ID; FA;;;BA）（A; ID; FA;;;SY）（A; ID; 0x1200a9;;;BU）**S： PAINO_ACCESS_CONTROL**
 
 DFSR 调试日志：
 
@@ -378,7 +378,7 @@ DFSR 调试日志：
 
 1. 此问题已由[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新首次解决。 之前的代码缺陷阻止了静态 IP 地址的所有使用。
 
-2. 如果未在源计算机的网络接口上指定默认网关 IP 地址，则即使使用 KB4537818 更新也会出现此问题。 若要解决此问题，请使用网络连接 applet （NCPA）在网络接口上设置有效的默认 IP 地址。CPL）或 New-netroute Powershell cmdlet。   
+2. 如果未在源计算机的网络接口上指定默认网关 IP 地址，则即使使用 KB4537818 更新也会出现此问题。 若要解决此问题，请使用网络连接 applet （NCPA.CPL）或 New-netroute Powershell cmdlet 在网络接口上设置有效的默认 IP 地址。   
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>比预期重新传输性能慢
 
@@ -431,7 +431,7 @@ DFSR 调试日志：
  
  如果要将存储迁移服务用于域控制器以进行传输，请确保始终在 Windows 管理中心的 "传输设置" 页上选择 "不传输用户和组"。
  
- ## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>运行清单时出现错误53，"未能清点所有指定的设备" 
+## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>运行清单时出现错误53，"未能清点所有指定的设备" 
 
 尝试运行清单时，会收到：
 
@@ -490,7 +490,7 @@ DFSR 调试日志：
  - 源迁移帐户没有连接到源计算机的远程注册表权限。
  - 源迁移帐户没有源计算机注册表中的读取权限，在 "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" 或 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer" 下
  
- ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在源计算机上的 "38% 映射网络接口" 上切换挂起 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>在源计算机上的 "38% 映射网络接口" 上切换挂起 
 
 当尝试对源计算机运行 cut 时，剪切的会停滞在源计算机上的 "38% 映射网络接口" 阶段。在存储迁移服务事件日志中收到以下错误：
 
@@ -532,6 +532,16 @@ DFSR 调试日志：
 2. 临时禁用应用此冲突策略的 GPO。
 3. 临时创建一个新的 GPO，该 GPO 将此设置设置为 "已禁用"，并应用于源服务器的特定 OU，其优先级高于任何其他 Gpo。
 
-## <a name="see-also"></a>另请参阅
+## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>使用不同域中的凭据时清点或传输失败
+
+当尝试使用存储迁移服务运行清单或传输，并在使用从目标服务器以外的其他域中迁移凭据的情况下，将 Windows Server 定向到该服务时，会收到以下错误 
+
+    The server was unable to process the request due to an internal error
+    
+    04/28/2020-11:31:01.169 [Erro] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+
+此问题是由存储迁移服务中的代码缺陷导致的。 若要解决此问题，请使用源计算机和目标计算机所属的域中的迁移凭据。 例如，如果源计算机和目标计算机属于 "contoso.com" 林中的 "corp.contoso.com" 域，请使用 "corp\myaccount" 执行迁移，而不是 "contoso\myaccount" 凭据。
+
+## <a name="see-also"></a>请参阅
 
 - [存储迁移服务概述](overview.md)
