@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 643a603e89adeb0c1f3c70b0b0cabbf6bcb54731
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 33dad41e01cab4c36ea55bcb84e8033bd358d617
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851900"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471562"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Active Directory 服务器的性能优化
 
@@ -44,12 +44,12 @@ Active Directory 的性能优化侧重于两个目标：
 
 我们建议你关注我们的团队博客[“向目录服务团队提问”](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/bg-p/AskDS)来了解有关管理 ADDS 的最新新闻、指南和最佳做法。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [AD DS 容量计划](capacity-planning-for-active-directory-domain-services.md)
 - [硬件注意事项](hardware-considerations.md)
 - [内存使用情况注意事项](memory-usage-considerations.md)
 - [LDAP 注意事项](ldap-considerations.md)
 - [域控制器的正确放置和站点注意事项](site-definition-considerations.md)
-- [AD DS 性能疑难解答](troubleshoot.md)  
-  
+- [AD DS 性能疑难解答](troubleshoot.md)
+

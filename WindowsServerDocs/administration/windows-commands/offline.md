@@ -1,6 +1,6 @@
 ---
 title: offline
-description: '* * * * 的参考主题'
+description: 脱机命令的参考主题，它使联机磁盘或卷进入脱机状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,32 +9,31 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0be67fbdb84cf2e48e67a617a73e0fb24cc74b67
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f189ba1208e9e9a6769321170d2a9289b10189e8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723430"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472674"
 ---
 # <a name="offline"></a>offline
-
-
 
 使联机磁盘或卷进入脱机状态。
 
 ## <a name="syntax"></a>语法
 
 ```
-Offline disk
-Offline volume
+offline disk
+offline volume
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|[脱机磁盘](offline-disk.md)|使联机磁盘具有焦点，使其进入脱机状态。|
-|[脱机卷](offline-volume.md)|使具有焦点的联机卷进入脱机状态。|
+| 参数 | 说明 |
+| --------- | ----------- |
+| [offline disk](offline-disk.md) | 使联机磁盘具有焦点，使其进入脱机状态。 |
+| [offline volume](offline-volume.md) | 使具有焦点的联机卷进入脱机状态。 |
 
 ## <a name="additional-references"></a>其他参考
 
+- [命令行语法项](command-line-syntax-key.md)

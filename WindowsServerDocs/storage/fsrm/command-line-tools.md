@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 78c054c5b0c3de19d1f3acd825335eab2f140541
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2acce64aa14d60503a5b443b831a03338c204be2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394296"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472813"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>文件服务器资源管理器命令行工具
 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 文件服务器资源管理器安装[文件服务器资源管理器](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager) PowerShell cmdlet，及以下命令行工具：
 
@@ -27,13 +27,13 @@ ms.locfileid: "71394296"
 
 可以使用这些工具管理本地计算机或远程计算机上的存储资源。 有关这些命令行工具的详细信息，请参阅下列参考资料：
 
--   **Dirquota**： <https://go.microsoft.com/fwlink/?LinkId=92741>
--   **Filescrn**： <https://go.microsoft.com/fwlink/?LinkId=92742>
--   **Storrept.exe**： <https://go.microsoft.com/fwlink/?LinkId=92743>
+-   **Dirquota**：<https://go.microsoft.com/fwlink/?LinkId=92741>
+-   **Filescrn**：<https://go.microsoft.com/fwlink/?LinkId=92742>
+-   **Storrept.exe**：<https://go.microsoft.com/fwlink/?LinkId=92743>
 
 
 > [!Note]
-> 若要查看命令语法和可用的命令参数，请运行带有 <strong>/？</strong> 参数的 参数。
+> 若要查看命令语法和可用的命令参数，请运行带有 <strong>/？</strong> 参数的 个参数。
 
 
 ## <a name="remote-management-using-the-command-line-tools"></a>使用命令行工具进行远程管理
@@ -47,16 +47,16 @@ ms.locfileid: "71394296"
 
 <br />
 
-## <a name="additional-considerations"></a>其他注意事项 
+## <a name="additional-considerations"></a>其他注意事项
 
 若要通过命令行工具管理远程资源：
 
 -   必须使用属于本地计算机和远程计算机上的**管理员**组成员的域帐户登录。
--   必须从提升的“命令提示符”窗口运行命令行工具。 若要打开提升的命令提示符窗口，请单击“开始”、指向“所有程序”、单击“附件”、右键单击“命令提示符”，然后单击“以管理员身份运行”。
+-   必须从提升的“命令提示符”窗口运行命令行工具。 若要打开提升的命令提示符窗口，请单击“开始”****、指向“所有程序”****、单击“附件”****、右键单击“命令提示符”****，然后单击“以管理员身份运行”****。
 -   远程计算机必须正在运行 Windows Server，并且必须安装文件服务器资源管理器。
 -   远程计算机上的**远程文件服务器资源管理器管理**例外必须处于启用状态。 通过使用“控制面板”中的 Windows 防火墙启用此例外。
 
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [管理远程存储资源](managing-remote-storage-resources.md)

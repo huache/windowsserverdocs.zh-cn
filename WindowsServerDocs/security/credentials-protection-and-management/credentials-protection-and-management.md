@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c836da8f83510e6547e0e182ac06fd2151dd9c41
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9eb93e46adb0e8a7c956bd8db2795fe06bc04724
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857060"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472944"
 ---
 # <a name="credentials-protection-and-management"></a>凭据保护和管理
 
@@ -58,7 +58,7 @@ ms.locfileid: "80857060"
 
 -   用户
 
--   计算机
+-   Computer
 
 -   托管服务帐户
 
@@ -68,7 +68,7 @@ ms.locfileid: "80857060"
 
 有关如何配置受保护的帐户的详细信息，请参阅[如何配置受保护的帐户](how-to-configure-protected-accounts.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 有关 LSA 和 LSASS 的详细信息，请参阅 [Windows 登录和身份验证的技术概述](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx)。
 
 

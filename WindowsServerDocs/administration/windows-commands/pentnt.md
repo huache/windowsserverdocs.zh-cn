@@ -1,25 +1,30 @@
 ---
 title: pentnt
-description: '* * * * 的参考主题'
+description: Pentnt 命令的参考主题。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: c0455cd4-ad6b-4945-bcc8-ed621a00b530
+ms.assetid: 4911e640-aa7f-4afb-abc2-5eefc7010204
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a9d637df1207aa4b2bcc0e044029d61cfe370dc5
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 99ef498c148e8277e95fb496979e51eedccfb897
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993360"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472483"
 ---
 # <a name="pentnt"></a>pentnt
 
+> 适用于： Windows Server 2003、Windows Server 2003 R2、Windows Server 2003 SP1、Windows Server 2003 with SP2
 
+>[!IMPORTANT]
+> 此命令已弃用。
 
-Pentnt 已被弃用，且在未来版本的 Windows 中不能保证受支持。
+检测 Pentium 芯片中的浮点除法错误（如果存在），禁用浮点硬件，并启用浮点模拟。 有关说明和用法信息，请参阅[pentnt](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755868(v=ws.10))。
 
-此工具包含在 Windows Server 2003 中。 有关详细信息，请参阅[Pentnt](https://technet.microsoft.com/library/cc755868(v=ws.10).aspx)。
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)

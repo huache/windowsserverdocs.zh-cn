@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 31853f1adaed6794138861da0991aa47e79602bc
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 6799e0e3b47d6cc98cbb42407ffbed1a9578675a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070565"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473434"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI 目标服务器的可伸缩性限制
 
@@ -32,7 +32,7 @@ ms.locfileid: "85070565"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>项目</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>注释</p></th>
@@ -89,7 +89,7 @@ ms.locfileid: "85070565"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>项目</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>注释</p></th>
@@ -105,7 +105,7 @@ ms.locfileid: "85070565"
 <tr class="even">
 <td><p>多个活动群集节点</p></td>
 <td><p>支持</p></td>
-<td> 
+<td>
 <p>空值</p></td>
 <td><p>故障转移群集中的每个活动节点都拥有不同的 iSCSI 目标服务器群集实例，其他节点充当可能的所有者节点。</p></td>
 </tr>
@@ -159,7 +159,7 @@ ms.locfileid: "85070565"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>项目</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>注释</p></th>
@@ -240,7 +240,7 @@ ms.locfileid: "85070565"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>项目</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>注释</p></th>
@@ -374,7 +374,7 @@ ms.locfileid: "85070565"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>项目</p></th>
 <th><p>支持限制</p></th>
 <th><p>注释</p></th>
 </tr>
@@ -537,7 +537,7 @@ ISCSI 目标存储提供程序是 Windows Server 2016、Windows Server 2012 R2 �
 
   - CD 或 USB 磁盘与 iPXE
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 以下列表提供了有关 iSCSI 目标服务器和相关技术的附加资源。
 

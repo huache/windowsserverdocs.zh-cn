@@ -1,6 +1,6 @@
 ---
-title: 联机磁盘
-description: '* * * * 的参考主题'
+title: online disk
+description: 联机磁盘命令的参考主题，使脱机磁盘进入联机状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,24 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 110a73a46712e3cbe5b5ff22b7e4343afb103966
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 954e52788f3236cb9b2898a23edae25d5b22deb8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723416"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472675"
 ---
-# <a name="online-disk"></a>联机磁盘
+# <a name="online-disk"></a>online disk
 
+使脱机磁盘进入联机状态。 对于基本磁盘，此命令尝试使所选磁盘和该磁盘上的所有卷联机。 对于动态磁盘，此命令会尝试将未标记为 "外部" 的所有磁盘都置于本地计算机上。 它还尝试使动态磁盘集上的所有卷联机。
 
+如果磁盘组中的动态磁盘处于联机状态，并且它是组中的唯一磁盘，则会重新创建原始组，并将磁盘移到该组。 如果组中有其他磁盘并且它们处于联机状态，则磁盘只会重新添加到组中。 如果选定磁盘的组包含镜像卷或 RAID-5 卷，此命令还会重新同步这些卷。
 
-将当前处于脱机状态的磁盘带入联机状态。
-
-> [!IMPORTANT]
-> 此命令在任何版本的 Windows Vista 中都不可用。
+> [!NOTE]
+> 必须选择磁盘才能使**联机磁盘**命令成功。 使用 "[选择磁盘](select-disk.md)" 命令选择磁盘，并将焦点移动到该磁盘。
 
 > [!IMPORTANT]
 > 如果在只读磁盘上使用此命令，则此命令将失败。
-
-有关如何使用此命令的说明，请参阅[重新激活丢失或脱机的动态磁盘](https://go.microsoft.com/fwlink/?LinkId=207046)（https://go.microsoft.com/fwlink/?LinkId=207046)。
 
 ## <a name="syntax"></a>语法
 
@@ -38,22 +36,16 @@ online disk [noerr]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|noerr|仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。|
+有关使用此命令的说明，请参阅[重新激活丢失或脱机的动态磁盘](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732026(v=ws.11))。
 
-## <a name="remarks"></a>备注
+| 参数 | 说明 |
+|--|--|
+| noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
--   如果在 Windows Vista 中不带参数使用，则此命令将对磁盘组进行操作。 对于基本磁盘，每个组不会有多个磁盘。 对于动态磁盘，该组包括所有非外部动态磁盘。
--   对于基本磁盘，此命令将尝试使所选磁盘和该磁盘上的所有卷联机。
--   对于动态磁盘，此命令会尝试将未标记为 "外部" 的所有磁盘都置于本地计算机上。 它还将尝试使动态磁盘集上的所有卷联机。
--   如果磁盘组中的动态磁盘处于联机状态，并且它是组中的唯一磁盘，则会重新创建原始组，并将磁盘移到该组。 如果组中有其他磁盘并且它们处于联机状态，则磁盘只会重新添加到组中。
--   如果选定磁盘的组包含镜像卷或 RAID-5 卷，此命令还会重新同步这些卷。
--   必须选择磁盘才能使此命令成功。 使用 "**选择磁盘**" 命令选择磁盘，并将焦点移动到该磁盘。
-
-## <a name="examples"></a>示例
+### <a name="examples"></a>示例
 
 若要使具有焦点的磁盘联机，请键入：
+
 ```
 online disk
 ```
@@ -61,4 +53,3 @@ online disk
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
-

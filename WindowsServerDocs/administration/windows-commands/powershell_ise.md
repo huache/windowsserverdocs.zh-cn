@@ -1,6 +1,6 @@
 ---
 title: PowerShell_ise
-description: '* * * * 的参考主题'
+description: PowerShell_ise 命令的参考主题，可启动 Windows PowerShell 集成脚本环境（ISE）会话。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,59 +9,65 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8529e19e30b72c9b9c8f8c30e1ca39c5e8f1f40e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4c1b525c0178b08e34851b800be8ce4791f38913
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436522"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472332"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
-
-
 Windows PowerShell 集成脚本环境（ISE）是一种图形化主机应用程序，使你能够在图形辅助环境中读取、编写、运行、调试和测试脚本与模块。 智能感知、显示命令、代码段、tab 自动补全、语法着色、可视调试和上下文相关帮助等主要功能提供丰富的脚本编写体验。
 
-**PowerShell_ISE**工具启动 Windows PowerShell ISE 会话。 当你使用**PowerShell_ISE**时，可以使用它的可选参数打开 Windows PowerShell ISE 中的文件，或启动没有配置文件或多线程单元的 Windows PowerShell ISE 会话。
+## <a name="using-powershellexe"></a>使用 PowerShell.exe
 
-Windows PowerShell 2.0 中引入了**PowerShell_ISE** ，并大大扩展了 windows powershell 3.0。
+**PowerShell_ISE.exe**工具启动 Windows PowerShell ISE 会话。 使用**PowerShell_ISE.exe**时，可以使用其可选参数打开 Windows PowerShell ISE 中的文件，或启动没有配置文件或多线程单元的 Windows PowerShell ISE 会话。
 
-## <a name="using-powershell_iseexe"></a>使用 PowerShell_ISE
+- 若要在命令提示符窗口、Windows PowerShell 或 "**开始**" 菜单中启动 Windows PowerShell ISE 会话，请键入：
 
-你可以使用**PowerShell_ISE**来启动和结束 Windows PowerShell 会话，如下所示：
-- 若要启动 Windows PowerShell ISE 会话，请在命令提示符窗口中，在 Windows PowerShell 中，或在 "开始" 菜单中键入：
+  ```powershell
+  PowerShell_Ise.exe
   ```
-  PowerShell_Ise
+
+- 若要在 Windows PowerShell ISE 中打开脚本（ps1）、脚本模块（. hbase-runner.psm1）、模块清单（psd1）、XML 文件或任何其他受支持的文件，请键入：
+
+  ```powershell
+  PowerShell_Ise.exe <filepath>
   ```
-- 若要在 Windows PowerShell ISE 中打开脚本（ps1）、脚本模块（. hbase-runner.psm1）、模块清单（psd1）、XML 文件或任何其他受支持的文件，请使用以下命令格式：
-  ```
-  PowerShell_Ise <FilePath>
-  ```
+
   在 Windows PowerShell 3.0 中，可以使用可选**文件**参数，如下所示：
-  ```
-  PowerShell_Ise -File <FilePath>
-  ```
-- 若要在不使用 Windows PowerShell 配置文件的情况下启动 Windows PowerShell ISE 会话，请使用**NoProfile**参数。 （ **NoProfile**参数是在 Windows PowerShell 3.0 中引入的。）
-  ```
-  PowerShell_Ise -NoProfile
-  ```
-- 若要在命令提示符窗口中查看**PowerShell_ISE .Exe**帮助文件，请使用以下命令格式：
-  ```
-  PowerShell_Ise -help, -?, /?
-  ```
-  有关**PowerShell_ISE**命令行参数的完整列表，请参阅[about_PowerShell_Ise](https://go.microsoft.com/fwlink/?LinkId=256512)。
 
-## <a name="start-windows-powershell-ise-in-other-ways"></a>以其他方式启动 Windows PowerShell ISE
+  ```powershell
+  PowerShell_Ise.exe -file <filepath>
+  ```
 
-有关启动 Windows PowerShell ISE 的其他方法的信息，请参阅[启动 Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=135259)。
+- 若要在不使用 Windows PowerShell 配置文件的情况下启动 Windows PowerShell ISE 会话，请使用**NoProfile**参数。 （Windows PowerShell 3.0 中引入了**NoProfile**参数。），请键入：
 
-## <a name="remarks"></a>备注
+  ```powershell
+  PowerShell_Ise.exe -NoProfile
+  ```
 
-Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，因为 Windows PowerShell ISE 需要图形用户界面，所以它不在服务器核心安装上运行。
+- 若要查看 PowerShell_ISE.exe 帮助文件，请键入：
+
+    ```powershell
+    PowerShell_Ise.exe -help
+    PowerShell_Ise.exe -?
+    PowerShell_Ise.exe /?
+    ```
+
+### <a name="remarks"></a>注解
+
+- 有关**PowerShell_ISE.exe**命令行参数的完整列表，请参阅[about_PowerShell_Ise.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)。
+
+- 有关启动 Windows PowerShell 的其他方法的信息，请参阅[启动 Windows powershell](https://docs.microsoft.com/powershell/scripting/windows-powershell/starting-windows-powershell)。
+
+- Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，因为 Windows PowerShell ISE 需要图形用户界面，所以它不在服务器核心安装上运行。
 
 ## <a name="additional-references"></a>其他参考
 
-[about_PowerShell_Ise .exe](https://go.microsoft.com/fwlink/?LinkId=256512) 
-[about_PowerShell .exe](https://go.microsoft.com/fwlink/?LinkID=113439) 
-[Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116) 
-[通过 Windows PowerShell 编写脚本](https://technet.microsoft.com/scriptcenter/dd742419)另请参阅
+- [about_PowerShell_Ise.exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe
+
+- [about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
+
+- [Windows PowerShell](https://docs.microsoft.com/powershell/)

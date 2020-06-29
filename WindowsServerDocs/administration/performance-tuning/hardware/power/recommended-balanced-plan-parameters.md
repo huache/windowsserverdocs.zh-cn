@@ -3,16 +3,16 @@ title: 用于快速响应时间的建议的均衡电源计划参数
 description: 用于快速响应时间的建议的均衡电源计划参数
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 288746b5361c550e167f64886a929c96c81ff8d0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62dc6168e76bf3951443df0f06c47a8684d2df26
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851960"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471582"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>针对需要快速响应时间的工作负荷推荐的均衡电源计划参数
 
@@ -26,7 +26,7 @@ ms.locfileid: "80851960"
 | 处理器性能增加阈值 | 要增加的频率的利用率阈值 | 90 | 60 |
 | 处理器性能降低阈值 | 降低频率的利用率阈值 | 80 | 40 |
 | 处理器性能增加时间 | 频率要增加之前的 PPM 检查窗口数 | 3 | 1 |
-| 处理器性能增加策略 | 频率提高的速度 | Single | 理想时间 |
+| 处理器性能增加策略 | 频率提高的速度 | Single | 理想 |
 
 若要设置建议的值，用户可以在具有管理员的窗口中运行以下命令：
 
@@ -45,9 +45,9 @@ Powercfg -setactive scheme_balanced
 
 ## <a name="specpower--java-workload"></a>SPECpower – JAVA 工作负荷
 
-[SPECpower\_ssj2008](http://spec.org/power_ssj2008/)是最常用的行业标准规范基准，适用于服务器电源和性能特征，用于检查电源影响。 由于它只使用**吞吐量**作为性能指标，因此默认的**均衡**电源计划可提供最佳的电源效率。
+[SPECpower \_ ssj2008](http://spec.org/power_ssj2008/)是最常用的行业标准规范基准，适用于服务器电源和性能特征，用于检查电源影响。 由于它只使用**吞吐量**作为性能指标，因此默认的**均衡**电源计划可提供最佳的电源效率。
 
-建议的参数更改在光上消耗稍微更高的电量（即 < = 20%）加载级别。 但在负载级别较高的情况下，差别会增加，并且在60% 负载级别后开始使用与**高性能**电源计划相同的电源。 若要使用建议的更改参数，用户应在其机架容量规划过程中了解大中型负载级别的功率消耗。
+建议的参数更改在光上消耗稍微更高的电量（即 <= 20%）加载级别。 但在负载级别较高的情况下，差别会增加，并且在60% 负载级别后开始使用与**高性能**电源计划相同的电源。 若要使用建议的更改参数，用户应在其机架容量规划过程中了解大中型负载级别的功率消耗。
 
 ## <a name="geekbench-3"></a>GeekBench 3
 

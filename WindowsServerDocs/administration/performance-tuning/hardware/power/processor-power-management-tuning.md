@@ -3,16 +3,16 @@ title: Windows Server 平衡电源计划的处理器电源管理（PPM）优化
 description: Windows Server 平衡电源计划的处理器电源管理（PPM）优化
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c7319c843609f8bf846dd6ccf4bc2bf91f3b942
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25244ecb653f7a1b8461130bba40901b35945765
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851970"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471612"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Windows Server 平衡电源计划的处理器电源管理（PPM）优化
 
@@ -25,30 +25,29 @@ ms.locfileid: "80851970"
 
 ## <a name="windows-processor-power-tuning-methodology"></a>Windows 处理器电源优化方法
 
-
 ### <a name="tested-workloads"></a>测试的工作负载
 
 选择工作负荷是为了涵盖一组 "典型" Windows Server 工作负荷的最大工作量。 显然，这一集并不代表真实的整个服务器环境。
 
 每个电源策略中的优化都由以下五个工作负荷驱动：
 
--   **IIS Web 服务器工作负荷**
+- **IIS Web 服务器工作负荷**
 
     Microsoft 内部基准测试（称为 Web 基础）用于优化运行 IIS Web 服务器的平台的能源效率。 安装程序包含一个 web 服务器和多个模拟 web 访问流量的客户端。 动态、静态热（内存中）和静态冷（所需的磁盘访问）网页的分布基于生产服务器的统计调查。 若要将服务器的 CPU 内核推送到完全利用率（已测试的频谱的一端），安装程序需要足够的网络和磁盘资源。
 
--   **SQL Server 数据库工作负荷**
+- **SQL Server 数据库工作负荷**
 
     [TPC-E](http://www.tpc.org/tpce/default.asp)基准是用于数据库性能分析的一种流行的基准。 它用于生成针对 PPM 优化优化的 OLTP 工作负荷。 此工作负荷的磁盘 i/o 非常重要，因此，对存储系统和内存大小具有高性能要求。
 
--   **文件服务器工作负荷**
+- **文件服务器工作负荷**
 
     Microsoft 开发的基准测试（称为[FSCT](http://www.snia.org/sites/default/files2/sdc_archives/2009_presentations/tuesday/BartoszNyczkowski-JianYan_FileServerCapacityTool.pdf) ）用于生成 SMB 文件服务器工作负荷。 它在服务器上创建一个大型文件集，并使用许多客户端系统（实际或虚拟化）来生成文件打开、关闭、读取和写入操作。 操作组合基于生产服务器的统计调查。 它强调 CPU、磁盘和网络资源。
 
--   **SPECpower – JAVA 工作负荷**
+- **SPECpower – JAVA 工作负荷**
 
-    [SPECpower\_ssj2008](http://spec.org/power_ssj2008/)是第一个行业标准规范基准，可共同评估电源和性能特征。 它是具有不同 CPU 负载级别的服务器端 Java 工作负荷。 它不需要很多磁盘或网络资源，但它对内存带宽有一定的要求。 几乎所有 CPU 活动都在用户模式下执行;内核模式活动对性能和性能特征的影响不大，但电源管理决策除外。
+    [SPECpower \_ ssj2008](http://spec.org/power_ssj2008/)是第一个行业标准规范基准，可共同评估电源和性能特征。 它是具有不同 CPU 负载级别的服务器端 Java 工作负荷。 它不需要很多磁盘或网络资源，但它对内存带宽有一定的要求。 几乎所有 CPU 活动都在用户模式下执行;内核模式活动对性能和性能特征的影响不大，但电源管理决策除外。
 
--   **应用程序服务器工作负荷**
+- **应用程序服务器工作负荷**
 
     [SAP-SD](http://global.sap.com/campaigns/benchmark/index.epx)基准用于生成应用程序服务器工作负荷。 将使用双层设置，并且数据库和应用程序服务器位于同一服务器主机上。 此工作负荷还利用响应时间作为性能指标，这与其他已测试的工作负载不同。 因此，它用于验证 PPM 参数对响应性的影响。 尽管如此，它并不代表所有延迟敏感的生产工作负荷。
 
@@ -63,7 +62,7 @@ ms.locfileid: "80851970"
 > [!IMPORTANT]
 > 尽管系统可以在其峰值负载下运行，但我们通常会优化较低的负载级别，因为在高性能的负载级别始终运行的服务器将很好地使用**高性能**电源计划，除非能源效率较高。
 
-### <a name="metrics"></a>度量值
+### <a name="metrics"></a>指标
 
 所有测试的基准都使用吞吐量作为性能指标。 响应时间被视为对这些工作负荷的 SLA 要求（SAP 除外，它是主要指标）。 例如，如果平均或最大响应时间小于特定值，则将基准运行视为 "有效"。
 

@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c40faca06668adf6fd29a5e4e753e5790b8104b7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1fef257f860895b20c1ca1a24b6fa50e16f70c8c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851910"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471572"
 ---
-# <a name="hardware-considerations-in-adds-performance-tuning"></a>中的硬件注意事项添加性能优化 
+# <a name="hardware-considerations-in-adds-performance-tuning"></a>中的硬件注意事项添加性能优化
 
 >[!Important]
 > 下面概述了优化 Active Directory 工作负荷的服务器硬件的关键建议和注意事项，详细介绍了 Active Directory 域服务文章的[容量规划](https://go.microsoft.com/fwlink/?LinkId=324566)。 为了更好地理解和影响这些建议，强烈建议读者查看[Active Directory 域服务的容量规划](https://go.microsoft.com/fwlink/?LinkId=324566)。
@@ -25,9 +25,9 @@ Active Directory 将数据库缓存为内存允许的数量。 从内存中获�
 
 -   Active Directory 最佳实践，建议将足够的 RAM 加载到内存中，并容纳操作系统和其他已安装的应用程序，如防病毒、备份软件、监视等。
 
-    -   有关旧平台的限制，请参阅[运行 Windows Server 2003 或 windows 2000 服务器的域控制器上的 lsass.exe 进程的内存使用情况](https://support.microsoft.com/kb/308356)。
+    -   有关旧平台的限制，请参阅[运行 Windows Server 2003 或 windows 2000 服务器的域控制器上的 Lsass.exe 进程的内存使用](https://support.microsoft.com/kb/308356)情况。
 
-    -   使用 "\\长期平均备用缓存生存期" &gt; 30 分钟 "性能计数器。
+    -   使用 "内存 \\ 长期平均备用缓存生存期（秒）" &gt; 性能计数器。
 
 -   将操作系统、日志和数据库放在不同的卷上。 如果缓存的全部或大部分都可以缓存，一旦缓存准备好并处于稳定状态，这就会变得不太相关，并为存储布局提供更大的灵活性。 在无法缓存整个 DIT 的情况下，将操作系统、日志和数据库拆分为不同卷的重要性变得更加重要。
 
@@ -41,13 +41,13 @@ Active Directory 将数据库缓存为内存允许的数量。 从内存中获�
 
 -   分别检查每个卷的磁盘子系统性能。 大多数 Active Directory 方案主要是基于读取的，因此，承载 DIT 的卷上的统计信息最重要。 但是，不要忽略监视驱动器的其余部分，包括操作系统和日志文件驱动器。 若要确定域控制器是否正确配置为避免存储成为性能瓶颈，请参考存储子系统上有关标准存储建议的部分。 在许多环境中，这一理念旨在确保有足够的空间来适应电涌或负载高峰。 这些阈值为警告阈值，其中，用于适应负载突然或峰值的房间会受到限制，客户端响应会降低。 简而言之，超过这些阈值在短期内（5到15分钟，一天的时间）不正确，但使用这些统计信息运行持续时间的系统不会完全缓存数据库，因此可能会因负载过多而被调查。
 
-    -   Database = =&gt; 实例（lsass/NTDSA）\\i/o 数据库读取平均延迟 &lt; 15ms
+    -   Database = = &gt; 实例（lsass/NTDSA） \\ I/o 数据库读取平均延迟 &lt; 15ms
 
-    -   Database = =&gt; 实例（lsass/NTDSA）\\i/o 数据库读取次数/秒 &lt; 10
+    -   Database = = &gt; 实例（lsass/NTDSA） \\ I/o 数据库读取次数/秒 &lt; 10
 
-    -   Database = =&gt; 实例（lsass/NTDSA）\\i/o 日志写入平均延迟 &lt; 10ms
+    -   Database = = &gt; 实例（lsass/NTDSA） \\ I/o 日志写入平均延迟 &lt; 10ms
 
-    -   Database = =&gt; 实例（lsass/NTDSA）\\i/o 日志写入/秒–仅提供信息。
+    -   Database = = &gt; 实例（lsass/NTDSA） \\ I/o 日志写入/秒–仅提供信息。
 
         为了保持数据的一致性，必须将所有更改写入日志。 这里没有正确或不正确的数字，只是度量存储支持的量。
 
@@ -61,7 +61,7 @@ Active Directory 将数据库缓存为内存允许的数量。 从内存中获�
 
 -   添加硬件、优化负载、将客户端定向到其他位置，或从环境中删除负载以减少 CPU 负载。
 
--   使用处理器信息（\_总计）\\% Processor 利用率 &lt; 60% 性能计数器。
+-   使用 "处理器信息（ \_ 总计） \\ % processor 使用率 &lt; 60%" 性能计数器。
 
 ## <a name="avoid-overloading-the-network-adapter"></a>避免将网络适配器重载
 
@@ -69,11 +69,11 @@ Active Directory 将数据库缓存为内存允许的数量。 从内存中获�
 
 -   有关如何优化网络子系统的详细信息，请参阅对[网络子系统的性能优化](../../../../networking/technologies/network-subsystem/net-sub-performance-top.md)。
 
--   使用 "比较 NetworkInterface （\*）"\\发送的字节数/秒，使用 NetworkInterface （\*）\\"当前带宽" 性能计数器。 该比率应小于使用的60%。
+-   使用 "比较 NetworkInterface （ \* ） \\ Bytes Sent/Sec with NetworkInterface （ \* ） \\ Current 带宽" 性能计数器。 该比率应小于使用的60%。
 
-## <a name="see-also"></a>另请参阅
-- [性能优化 Active Directory 服务器](index.md)
+## <a name="additional-references"></a>其他参考
+- [Active Directory 服务器的性能优化](index.md)
 - [LDAP 注意事项](ldap-considerations.md)
 - [域控制器的正确放置和站点注意事项](site-definition-considerations.md)
-- [ADDS 性能疑难解答](troubleshoot.md) 
+- [ADDS 性能疑难解答](troubleshoot.md)
 - [Active Directory 域服务的容量计划](https://go.microsoft.com/fwlink/?LinkId=324566)

@@ -8,16 +8,16 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: 本主题介绍 DFS 命名空间，这是 Windows Server 中的一个角色服务，可用于将不同服务器上的共享文件夹组合到一个或多个逻辑结构的命名空间中。
-ms.openlocfilehash: 07f6ac857164257810b297f9e2b83db4e4bd42be
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fd02f0b65cc57300c673d72c7879a80d48747fa2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858980"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471881"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 命名空间概述
 
-> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008，Windows Server （半年频道）
+> 适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server（半年频道）
 
 DFS 命名空间是 Windows Server 中的一种角色服务，支持你将位于不同服务器的共享文件夹组合到一个或多个逻辑结构的命名空间。 如此可以为用户提供共享文件夹的虚拟视图，其中一条路径可转至位于多个服务器上的文件，具体如下图所示：
 
@@ -26,9 +26,9 @@ DFS 命名空间是 Windows Server 中的一种角色服务，支持你将位于
 以下说明了 DFS 命名空间的组成元素：
 
 - **命名空间服务器** - 命名空间服务器承载命名空间。 命名空间服务器可以是成员服务器或域控制器。
-- **命名空间根路径** - 命名空间根路径是命名空间的起点。 在上图中，根的名称为 Public，命名空间路径 \\\\Contoso\\Public。 此类型命名空间是基于域的命名空间，因为它以域名开头（例如 Contoso），并且其元数据存储在 Active Directory 域服务 (AD DS) 中。 尽管上图中显示单个命名空间服务器，但是基于域的命名空间可以存放在多个命名空间服务器上，以提高命名空间的可用性。
-- **文件夹** - 没有文件夹目标的文件夹将结构和层次结构添加到命名空间，具有文件夹目标的文件夹为用户提供实际内容。 用户浏览命名空间中包含文件夹目标的文件夹时，客户端计算机将收到透明地将客户端计算机重定向到一个文件夹目标的引用。
-- **文件夹目标** - 文件夹目标是共享文件夹或与命名空间中的某个文件夹关联的另一个命名空间的 UNC 路径。 文件夹目标是存储数据和内容的位置。 在上图中，名为 Tools 的文件夹包含两个文件夹目标，一个位于伦敦，一个位于纽约，名为 Training Guides 的文件夹包含一个文件夹目标，位于纽约。 浏览 \\\\Contoso\\公共\\软件\\工具的用户以透明方式重定向到共享文件夹 \\\\LDN-SVR\\工具或 \\\\\\工具，具体取决于用户当前所在的站点。
+- **命名空间根路径** - 命名空间根路径是命名空间的起点。 在上图中，根的名称为 Public，命名空间路径为 \\ \\ Contoso \\ Public。 此类型命名空间是基于域的命名空间，因为它以域名开头（例如 Contoso），并且其元数据存储在 Active Directory 域服务 (AD DS) 中。 尽管上图显示了单个命名空间服务器，但是基于域的命名空间可以存放在多个命名空间服务器上，以提高命名空间的可用性。
+- **文件夹** - 没有文件夹目标的文件夹将结构和层次结构添加到命名空间，具有文件夹目标的文件夹为用户提供实际内容。 用户浏览命名空间中具有文件夹目标的文件夹时，客户端计算机将收到将客户端计算机透明地重定向到一个文件夹目标的引荐。
+- **文件夹目标** - 文件夹目标是共享文件夹或与命名空间中的某个文件夹关联的另一个命名空间的 UNC 路径。 文件夹目标是存储数据和内容的位置。 在上图中，名为 Tools 的文件夹包含两个文件夹目标，一个位于伦敦，一个位于纽约，名为 Training Guides 的文件夹包含一个文件夹目标，位于纽约。 浏览到 \\ \\ Contoso \\ 公共 \\ 软件工具的用户 \\ 以透明方式重定向到共享文件夹 \\ \\ LDN-SVR \\ 工具或 \\ \\ NYC-SVR \\ 工具，具体取决于用户当前所在的站点。
 
 本主题讨论如何安装 DFS、新增功能，以及在哪里可以找到评估和部署信息。
 
@@ -38,9 +38,9 @@ DFS 命名空间是 Windows Server 中的一种角色服务，支持你将位于
 
 运行 DFS 管理或使用 DFS 命名空间没有其他硬件或软件要求。
 
-命名空间服务器是承载命名空间的域控制器或成员服务器。 可以在服务器上承载的命名空间数由命名空间服务器上运行的操作系统决定。
+命名空间服务器是承载命名空间的域控制器或成员服务器。 服务器上可以承载的命名空间数量取决于命名空间服务器上运行的操作系统。
 
-除了单个独立命名空间之外，运行下列操作系统的服务器还可以承载多个基于域的命名空间。 
+除了单个独立命名空间之外，运行下列操作系统的服务器还可以承载多个基于域的命名空间。
 
 - Windows Server 2019
 - Windows Server 2016
@@ -53,13 +53,13 @@ DFS 命名空间是 Windows Server 中的一种角色服务，支持你将位于
 
 - Windows Server 2008 R2 Standard
 
-下表说明在选择承载命名空间的服务器时要考虑的其他因素。
+下表描述了在选择要承载命名空间的服务器时需要考虑的其他因素。
 
 | 承载独立命名空间的服务器 | 承载基于域的命名空间的服务器 |
 | ---                                   |        ---                                |
-| 必须包含承载命名空间的 NTFS 卷。|必须包含承载命名空间的 NTFS 卷。 |
-| 可以是成员服务器或域控制器。|必须是配置了命名空间的域中的成员服务器或域控制器。 （此要求适用于承载给定的基于域的命名空间的每个命名空间服务器。） |
-| 可以通过故障转移群集承载以提高命名空间的可用性。|命名空间不能是故障转移群集中的群集资源。 但是，如果将命名空间配置为仅使用充当故障转移群集中节点的服务器上的本地资源，则可以在该服务器上定位命名空间。 |
+| 必须包含一个 NTFS 卷以承载命名空间。|必须包含一个 NTFS 卷以承载命名空间。 |
+| 可以是成员服务器或域控制器。|必须是命名空间配置时所在域中的成员服务器或域控制器。 （此要求适用于每个承载既定基于域的命名空间的命名空间服务器。） |
+| 可以通过故障转移群集承载以提高命名空间的可用性。|命名空间不得为故障转移群集中的群集资源。 但是，如果将命名空间配置为仅使用充当故障转移群集中节点的服务器上的本地资源，则可以在该服务器上定位命名空间。 |
 
 ## <a name="installing-dfs-namespaces"></a>安装 DFS 命名空间
 
@@ -116,14 +116,14 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 若要了解如何开始使用 Azure 虚拟机，请参阅 [Azure 虚拟机文档](https://docs.microsoft.com/azure/virtual-machines/)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 有关其他相关信息，请参阅以下资源。
 
 | 内容类型        | 参考 |
 | ------------------  | ----------------|
 | **产品评估** | [Windows Server 中 DFS 命名空间和 DFS 复制的新增功能](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
-| **部署**    | [DFS 命名空间可伸缩性注意事项](https://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
+| **部署**    | [DFS 命名空间可扩展性注意事项](https://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
 | **操作**    | [DFS 命名空间：常见问题](https://technet.microsoft.com/library/ee404780.aspx) |
 | **社区资源** | [文件服务和存储 TechNet 论坛](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
 | **协议**        | [Windows Server 中的文件服务协议](https://msdn.microsoft.com/library/cc239318.aspx)（不推荐使用） |

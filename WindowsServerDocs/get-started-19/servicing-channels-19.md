@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 0190fc05a7bf82e35339d93accae3a998babe166
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: a4b8f2f21a7d13c31d6c952a74d3026a750466ce
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433131"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472913"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 服务频道：LTSC 和 SAC
 
@@ -84,7 +84,7 @@ IT 专业人员可以使用多种工具维护 Windows Server。 每个选项都�
 
 半年频道版本应作为干净安装产品进行安装。
 
-- 批量许可服务中心 (VLSC)：享受[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)的批量许可客户可以转到[批量许可服务中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)并单击“登录”来获取此版本  。 然后，单击“下载和密钥”并搜索此版本  。
+- 批量许可服务中心 (VLSC)：享受[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)的批量许可客户可以转到[批量许可服务中心](https://www.microsoft.com/Licensing/servicecenter/default.aspx)并单击“登录”来获取此版本。 然后，单击“下载和密钥”并搜索此版本。
 
 - 半年频道版本也会在 [Microsoft Azure](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview) 中提供。
 
@@ -171,7 +171,7 @@ Name    :     ServerCore.AppCompatibility~~~~0.0.1.0
 State   :     Installed
 ````
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 [Windows Server 半年频道中对 Nano Server 所做的更改](../get-started/nano-in-semi-annual-channel.md)
 

@@ -8,18 +8,18 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c424d19c006cfae6343d577dc08ff3553a5616b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 46b4502bb0408b3fb7afe51234c81695ec54e48b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825870"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473134"
 ---
 # <a name="whats-new-in-windows-server"></a>Windows Server 中的新增功能
 
 > 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
-可以找到其中每个 Windows Server 版本的新增功能。  
+可以找到其中每个 Windows Server 版本的新增功能。
 
 长期服务频道 (LTSC) 版本：
 
@@ -35,7 +35,7 @@ ms.locfileid: "80825870"
 
 Windows Server 半年频道版本以更快的步调提供新的操作系统功能。 新版本每隔六个月推出，接受 18 个月的支持。 请查看 [Windows Server 版本信息](windows-server-release-info.md)和[生命周期支持页](https://support.microsoft.com/lifecycle)来了解支持日期，并始终尽量使用最新版本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [发行说明：Windows Server 2019 中的重要问题](../get-started-19/rel-notes-19.md)
 - [发行说明：Windows Server 2016 中的重要问题](Windows-Server-2016-GA-Release-Notes.md)

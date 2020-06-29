@@ -1,6 +1,6 @@
 ---
 title: 联机
-description: '* * * * 的参考主题'
+description: 联机命令的参考主题，它将脱机磁盘或卷脱机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,32 +9,31 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a0e7582bdaebb5f3e5180d1baace980d3006b2e9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b5983e033755cdc9cd28b2b149fea657a06bd164
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723408"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472603"
 ---
 # <a name="online"></a>联机
-
-
 
 使脱机磁盘或卷处于联机状态。
 
 ## <a name="syntax"></a>语法
 
 ```
-Offline disk
-Offline volume
+online disk
+online volume
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|[脱机磁盘](offline-disk.md)|将焦点移动到联机状态。|
-|[脱机卷](offline-volume.md)|使处于焦点状态的脱机卷进入联机状态。|
+| 参数 | 说明 |
+|--|--|
+| [online disk](online-disk.md) | 将焦点移动到联机状态。 |
+| [online volume](online-volume.md) | 使处于焦点状态的脱机卷进入联机状态。 |
 
 ## <a name="additional-references"></a>其他参考
 
+- [命令行语法项](command-line-syntax-key.md)

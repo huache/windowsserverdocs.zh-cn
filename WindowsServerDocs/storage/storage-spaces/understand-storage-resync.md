@@ -8,26 +8,26 @@ ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1209a3e08922a380ef46d3be6d28ce489b748f22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79e5e1e9daba005a086c16dd1d8e3e3f9a28a8a2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820930"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473414"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>了解并监视存储重新同步
 
->适用于： Windows Server 2019
+>适用于：Windows Server 2019
 
-存储重新同步警报是 Windows Server 2019 中[存储空间直通](storage-spaces-direct-overview.md)的一项新功能，允许运行状况服务在重新同步存储时引发错误。 警报可用于在重新同步发生时通知你，因此你不会意外地将更多服务器关闭（这可能会导致多个容错域受到影响，导致群集停止）。 
+存储重新同步警报是 Windows Server 2019 中[存储空间直通](storage-spaces-direct-overview.md)的一项新功能，允许运行状况服务在重新同步存储时引发错误。 警报可用于在重新同步发生时通知你，因此你不会意外地将更多服务器关闭（这可能会导致多个容错域受到影响，导致群集停止）。
 
 本主题提供了有关使用存储空间直通了解 Windows Server 故障转移群集中的存储重新同步的背景和步骤。
 
 ## <a name="understanding-resync"></a>了解重新同步
 
-让我们从一个简单的示例开始，了解存储如何同步。请记住，任何共享的（仅限本地驱动器）分布式存储解决方案都有这种行为。 正如你将看到的，如果一个服务器节点出现故障，则其驱动器将不会更新，直到它恢复联机状态-任何超聚合体系结构都是如此。 
+让我们从一个简单的示例开始，了解存储如何同步。请记住，任何共享的（仅限本地驱动器）分布式存储解决方案都有这种行为。 正如你将看到的，如果一个服务器节点出现故障，则其驱动器将不会更新，直到它恢复联机状态-任何超聚合体系结构都是如此。
 
-假设我们要存储字符串 "HELLO"。 
+假设我们要存储字符串 "HELLO"。
 
 ![字符串 "hello" 的 ASCII](media/understand-storage-resync/hello.png)
 
@@ -39,7 +39,7 @@ Asssuming 有三向镜像复原，我们有三个此字符串的副本。 现在
 
 ![字符串 "help！" 的 ASCII](media/understand-storage-resync/help.png)
 
-更新字符串后，将成功更新 "复制 #2 和 #3。 但是，仍无法访问复制 #1，因为服务器 #1 暂时关闭（对于维护）。 
+更新字符串后，将成功更新 "复制 #2 和 #3。 但是，仍无法访问复制 #1，因为服务器 #1 暂时关闭（对于维护）。
 
 ![用于复制 #2 和 #2 的 Gif](media/understand-storage-resync/write.gif)
 
@@ -61,7 +61,7 @@ Asssuming 有三向镜像复原，我们有三个此字符串的副本。 现在
 Get-HealthFault
 ```
 
-这是 Windows Server 2019 中的新错误，将在 PowerShell 中、在群集验证报告中显示，并显示在运行状况错误的其他任何位置。 
+这是 Windows Server 2019 中的新错误，将在 PowerShell 中、在群集验证报告中显示，并显示在运行状况错误的其他任何位置。
 
 若要获取更深入的视图，可以在 PowerShell 中查询时序数据库，如下所示：
 
@@ -86,7 +86,7 @@ ClusterNode.Storage.Degraded 01/11/2019 16:26:48     214 GB
 
 ![Windows 管理中心的警报图像](media/understand-storage-resync/alert.png)
 
-警报可用于在重新同步发生时通知你，因此你不会意外地将更多服务器关闭（这可能会导致多个容错域受到影响，导致群集停止）。 
+警报可用于在重新同步发生时通知你，因此你不会意外地将更多服务器关闭（这可能会导致多个容错域受到影响，导致群集停止）。
 
 如果导航到 Windows 管理中心中的 "*服务器*" 页，请单击 "*清单*"，然后选择特定服务器，你可以更详细地了解如何在每个服务器基础上查看此存储重新同步的方式。 如果你导航到你的服务器并查看*存储*图表，你将看到需要在前面带有精确数字的*紫色*行中修复的数据量。 当服务器停机（需要 resynced 更多的数据）时，此数量会增加，并且在服务器恢复联机状态（正在同步数据）时逐渐降低。 当需要修复的数据量为0时，存储已完成重新同步，如果需要，你现在可以随时关闭服务器。 Windows 管理中心中的此体验的屏幕截图如下所示：
 
@@ -111,7 +111,7 @@ Regeneration          00:01:19              Running               50            
 
 此视图的粒度更细，因为列出的存储作业是每个卷的，你可以查看正在运行的作业的列表，你可以跟踪其各个进度。 此 cmdlet 适用于 Windows Server 2016 和2019。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [使服务器脱机以进行维护](maintain-servers.md)
 - [存储空间直通概述](storage-spaces-direct-overview.md)

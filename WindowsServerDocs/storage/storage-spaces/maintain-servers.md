@@ -9,22 +9,22 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ccf8d809354f96277701cd365966ba5e914f64b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a317f358c37f607475890efe773b57ee8efaeb14
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857530"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473474"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>使存储空间直通服务器脱机以进行维护
 
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
 本主题提供有关如何正确重启或关闭带有[存储空间直通](storage-spaces-direct-overview.md)的服务器的指南。
 
 如果具有存储空间直通，使服务器脱机（将其关机）还意味着使在群集中的所有服务器之间共享的存储部分脱机。 执行此操作需要暂停（挂起）你要使其脱机的服务器，将角色移动到群集中的其他服务器，并验证所有数据在群集中的其他服务器上可用，以便数据在整个维护过程中保持安全和可访问。
 
-使其脱机之前，使用以下步骤正确暂停存储空间直通群集中的服务器。 
+使其脱机之前，使用以下步骤正确暂停存储空间直通群集中的服务器。
 
    > [!IMPORTANT]
    > 要在存储空间直通群集上安装更新，请使用群集感知更新 (CAU)，它将自动执行本主题中的步骤，使你无需在安装更新时执行。 有关详细信息，请参阅[群集感知更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)。
@@ -36,7 +36,7 @@ ms.locfileid: "80857530"
 为此，请使用管理员权限打开一个 PowerShell 会话，然后运行以下命令以查看卷状态：
 
 ```PowerShell
-Get-VirtualDisk 
+Get-VirtualDisk
 ```
 
 下面是此输出的执行示例：
@@ -50,7 +50,7 @@ MyVolume3    Mirror                OK                Healthy      True          
 
 验证每个卷（虚拟磁盘）的 **HealthStatus** 属性为 **Healthy**。
 
-要在故障转移群集管理器中执行此操作，请转到**存储** > **磁盘**。
+若要在故障转移群集管理器中执行此操作，请参阅 "**存储**  >  **磁盘**"。
 
 验证每个卷（虚拟磁盘）的**状态**列显示**联机**。
 
@@ -71,7 +71,7 @@ Suspend-ClusterNode -Drain
 
 ![暂停清空](media/maintain-servers/pause-drain.png)
 
-所有虚拟机将开始实时迁移到群集中的其他服务器。 这可能需要几分钟。
+所有虚拟机将开始实时迁移到群集中的其他服务器。 这可能需要几分钟的时间。
 
    > [!NOTE]
    > 正确暂停和清空群集节点时，Windows 将执行自动安全检查，以确保可以安全继续。 如果有不正常的卷，安全检查会停止，并提醒你继续操作不安全。
@@ -82,12 +82,12 @@ Suspend-ClusterNode -Drain
 
 服务器完成清空后，它将在故障转移群集管理器和 PowerShell 中显示为**暂停**。
 
-![暂停](media/maintain-servers/paused.png)
+![已暂停](media/maintain-servers/paused.png)
 
 现在，你可以像往常一样（例如，通过使用 Restart-Computer 或 Stop-Computer PowerShell cmdlet）安全重启或关机。
 
 ```PowerShell
-Get-VirtualDisk 
+Get-VirtualDisk
 
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
 ------------ --------------------- ----------------- ------------ -------------- ----
@@ -143,7 +143,7 @@ Repair True             00:06:52    Running   68              20104802841    221
    > [!WARNING]
    > 在修复作业完成之前，使其他服务器脱机都是不安全的。
 
-在此期间，卷将继续显示为**警告**，这是正常情况。 
+在此期间，卷将继续显示为**警告**，这是正常情况。
 
 例如，如果使用 `Get-VirtualDisk` cmdlet，你可能会看到以下输出：
 ```
@@ -154,7 +154,7 @@ MyVolume2    Mirror                InService         Warning      True          
 MyVolume3    Mirror                InService         Warning      True           1 TB
 ```
 
-作业完成后，使用  **cmdlet 再次验证卷是否显示**正常`Get-VirtualDisk`。 下面是一些示例输出：
+作业完成后，使用 `Get-VirtualDisk` cmdlet 再次验证卷是否显示**正常**。 下面是一些示例输出：
 
 ```
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
@@ -173,17 +173,17 @@ MyVolume3    Mirror                OK                Healthy      True          
 2. 使虚拟磁盘脱机。
 3. 停止群集以使存储池脱机。 运行**停止群集**cmdlet，或使用故障转移群集管理器停止群集。
 4. 在每个节点上的 services.msc 中将群集服务设置为 "**已禁用**"。 这会阻止群集服务在修补后启动。
-5. 将 Windows Server 累积更新和任何所需的服务堆栈更新应用到所有节点。 （您可以同时更新所有节点，而无需在群集关闭后等待）。  
+5. 将 Windows Server 累积更新和任何所需的服务堆栈更新应用到所有节点。 （您可以同时更新所有节点，而无需在群集关闭后等待）。
 6. 重新启动节点，确保一切正常。
 7. 在每个节点上将群集服务重新设置为**自动**。
-8. 启动群集。 运行**启动群集**cmdlet，或使用故障转移群集管理器。 
+8. 启动群集。 运行**启动群集**cmdlet，或使用故障转移群集管理器。
 
    请花几分钟时间。  请确保存储池处于正常状态。
 9. 使虚拟磁盘恢复联机。
 10. 通过运行**VirtualDisk** cmdlet 来监视虚拟磁盘的状态**Get-Volume** 。
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
-- [群集感知更新（CAU）](https://technet.microsoft.com/library/hh831694.aspx)
+- [群集感知更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)

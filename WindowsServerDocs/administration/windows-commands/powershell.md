@@ -1,6 +1,6 @@
 ---
 title: PowerShell
-description: 了解如何从命令提示符中打开 PowerShell 控制台。
+description: PowerShell 命令的参考主题，可从命令提示符中打开 PowerShell 控制台。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,64 +9,63 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b733a187017293e8a33ff307b485380ef8f9b472
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: e38684943c6c0c9a4371803d7e473c14cbef7a91
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436562"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472342"
 ---
 # <a name="powershell"></a>PowerShell
 
 Windows PowerShell 是一种基于任务的命令行 shell 和脚本语言，专为系统管理而设计。 在 .NET Framework 的基础上构建的 Windows PowerShell 可帮助 IT 专业人士和高级用户控制和自动执行 Windows 操作系统以及在 Windows 上运行的应用程序的管理。
 
-**Ngen.exe**命令行工具在命令提示符窗口中启动 Windows PowerShell 会话。 使用**PowerShell**时，可以使用它的可选参数自定义会话。 例如，可以启动使用特定执行策略或排除 Windows PowerShell 配置文件的会话。 否则，该会话与 Windows PowerShell 控制台中启动的任何会话相同。
+## <a name="using-powershellexe"></a>使用 PowerShell.exe
 
-## <a name="using-powershellexe"></a>使用 ngen.exe
-
-您可以使用**ngen.exe**命令行工具在命令提示符窗口中启动 Windows PowerShell 会话。
+**PowerShell.exe**命令行工具在命令提示符窗口中启动 Windows PowerShell 会话。 使用**PowerShell.exe**时，可以使用其可选参数自定义会话。 例如，可以启动使用特定执行策略或排除 Windows PowerShell 配置文件的会话。 否则，该会话与 Windows PowerShell 控制台中启动的任何会话相同。
 
 - 若要在命令提示符窗口中启动 Windows PowerShell 会话，请键入 `PowerShell` 。 将**PS**前缀添加到命令提示符，以指示你处于 Windows PowerShell 会话中。
 
-- 若要使用特定执行策略启动会话，请使用**set-executionpolicy**参数。
+- 若要使用特定执行策略启动会话，请使用**set-executionpolicy**参数，并键入：
 
-    ```
+    ```powershell
     PowerShell.exe -ExecutionPolicy Restricted
     ```
 
-- 若要在不使用 Windows PowerShell 配置文件的情况下启动 Windows PowerShell 会话，请使用**NoProfile**参数。
+- 若要启动 Windows PowerShell 会话而不使用 Windows PowerShell 配置文件，请使用**NoProfile**参数，并键入：
 
-    ```
+    ```powershell
     PowerShell.exe -NoProfile
     ```
 
-- 若要启动会话，请使用**set-executionpolicy**参数。
+- 若要启动会话，请使用**set-executionpolicy**参数，并键入：
 
-    ```
+    ```powershell
     PowerShell.exe -ExecutionPolicy Restricted
     ```
 
-- 若要查看 ngen.exe 帮助文件，请使用以下命令格式。
+- 若要查看 PowerShell.exe 帮助文件，请键入：
 
-    ```
-    PowerShell.exe -help, -?, /?
+    ```powershell
+    PowerShell.exe -help
+    PowerShell.exe -?
+    PowerShell.exe /?
     ```
 
 - 若要在命令提示符窗口中结束 Windows PowerShell 会话，请键入 `exit` 。 典型的命令提示符返回。
 
-有关**ngen.exe**命令行参数的完整列表，请参阅[about_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)。
+### <a name="remarks"></a>注解
 
-## <a name="other-ways-to-start-windows-powershell"></a>启动 Windows PowerShell 的其他方法
+- 有关**PowerShell.exe**命令行参数的完整列表，请参阅[about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)。
 
-有关启动 Windows PowerShell 的其他方法的信息，请参阅[启动 Windows powershell](https://go.microsoft.com/fwlink/?LinkID=135259)。
+- 有关启动 Windows PowerShell 的其他方法的信息，请参阅[启动 Windows powershell](https://docs.microsoft.com/powershell/scripting/windows-powershell/starting-windows-powershell)。
 
-## <a name="remarks"></a>备注
-
-Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，需要图形用户界面的功能（如[Windows PowerShell 集成脚本环境（ISE））](https://technet.microsoft.com/library/hh849182)和[Out](https://go.microsoft.com/fwlink/?LinkID=113364)和[Show Command](https://go.microsoft.com/fwlink/?LinkID=217448) cmdlet 不能在服务器核心安装上运行。
+- Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，需要图形用户界面的功能（如[Windows PowerShell 集成脚本环境（ISE）](https://docs.microsoft.com/previous-versions//hh849182(v=technet.10))和[Out](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)和[Show-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command) Cmdlet）不会在服务器核心安装上运行。
 
 ## <a name="additional-references"></a>其他参考
 
-[About_PowerShell .exe](https://go.microsoft.com/fwlink/?LinkID=113439) 
-[about_PowerShell_Ise .exe](https://go.microsoft.com/fwlink/?LinkId=256512) 
-[Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116) 
-[通过 Windows PowerShell 编写脚本](https://technet.microsoft.com/scriptcenter/dd742419)另请参阅
+- [about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
+
+- [about_PowerShell_Ise.exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)
+
+- [Windows PowerShell](https://docs.microsoft.com/powershell/)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 48171657b42ec8b6ba09aa6a35a2f898d6775d07
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72ad55fad515ea769ea739f037165547b1104889
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857080"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472954"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>身份验证策略和身份验证策略接收器
 
@@ -73,7 +73,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
     使用独立托管的服务帐户、组托管的服务帐户，或者从这两种类型的服务帐户中派生的自定义帐户对象。 策略可设置设备的访问控制条件，这些条件用于将托管服务帐户凭据限制为具有 Active Directory 标识的特定设备。 服务不应是受保护的用户安全组的成员，因为这样所有传入的身份验证都将失败。
 
--   **计算机**
+-   **Computer**
 
     使用计算机帐户对象或从该计算机帐户对象派生的自定义帐户对象。 根据用户和设备属性，策略可以设置对帐户进行身份验证时所需的访问控制条件。 计算机不应是受保护的用户安全组的成员，因为这样所有传入的身份验证将失败。 默认情况下，会拒绝对使用 NTLM 身份验证的尝试。 不应为计算机帐户配置 TGT 生存期。
 
@@ -96,10 +96,10 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 |用户|ms-DS-User-Allowed-To-Authenticate-To|此属性用于确定允许对用户帐户下运行的服务进行身份验证的主体集。|
 |用户|ms-DS-User-Allowed-To-Authenticate-From|此属性用于确定用户帐户有权登录的设备组。|
 |用户|用户 TGT 生存期|指定分配给用户的 Kerberos TGT 的最长存在时间（用秒数表示）。 不可续订得出的 TGT。|
-|计算机|计算机身份验证策略|指定应将哪些 AuthNPolicy 应用到分配给此接收器对象的计算机。|
-|计算机|计算机身份验证策略反向链接|此属性是 msDS ComputerAuthNPolicy 的反向链接。|
-|计算机|ms-DS-Computer-Allowed-To-Authenticate-To|此属性用于确定允许对计算机帐户下运行的服务进行身份验证的主体集。|
-|计算机|计算机 TGT 生存期|指定分配给计算机的 Kerberos TGT 的最长存在时间（用秒数表示）。 建议不要更改此设置。|
+|Computer|计算机身份验证策略|指定应将哪些 AuthNPolicy 应用到分配给此接收器对象的计算机。|
+|Computer|计算机身份验证策略反向链接|此属性是 msDS ComputerAuthNPolicy 的反向链接。|
+|Computer|ms-DS-Computer-Allowed-To-Authenticate-To|此属性用于确定允许对计算机帐户下运行的服务进行身份验证的主体集。|
+|Computer|计算机 TGT 生存期|指定分配给计算机的 Kerberos TGT 的最长存在时间（用秒数表示）。 建议不要更改此设置。|
 |服务|服务身份验证策略|指定应将哪个 AuthNPolicy 应用到分配给此接收器对象的服务。|
 |服务|服务身份验证策略反向链接|此属性是 msDS-ServiceAuthNPolicy 的反向链接。|
 |服务|ms-DS-Service-Allowed-To-Authenticate-To|此属性用于确定允许对服务帐户下运行的服务进行身份验证的主体集。|
@@ -117,7 +117,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 -   [限制服务票证颁发的工作原理](#BKMK_HowRestrictingServiceTicket)
 
-**受保护帐户**
+**受保护的帐户**
 
 受保护的用户安全组在运行 Windows Server 2012 R2 和 Windows 8.1 的设备和主机计算机上，以及在具有运行 Windows Server 2012 R2 的主域控制器的域中的域控制器上触发不可配置的保护。 由于 Windows 所支持的身份验证方法已更改，因此将根据帐户的域功能级别，对受保护用户安全组的成员提供进一步保护。
 
@@ -135,9 +135,9 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 身份验证策略接收器和身份验证策略将利用现有的 Windows 身份验证基础结构。 拒绝使用 NTLM 协议，而使用具有较新加密类型的 Kerberos 协议。 除了为服务和计算机的帐户提供限制，身份验证策略还通过提供一种将可配置限制应用到帐户的方法来补充受保护用户安全组。 在 Kerberos 协议身份验证服务 (AS) 或票证授予服务 (TGS) 交换期间，将强制执行身份验证策略。 有关 Windows 如何使用 Kerberos 协议，以及已进行哪些更改来支持身份验证策略接收器和身份验证策略的详细信息，请参阅：
 
--   [Kerberos 版本5身份验证协议的工作原理](https://technet.microsoft.com/library/cc772815(v=ws.10).aspx)
+-   [Kerberos 版本 5 身份验证协议的工作原理](https://technet.microsoft.com/library/cc772815(v=ws.10).aspx)
 
--   [Kerberos 身份验证中的更改](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) （Windows Server 2008 R2 和 Windows 7）
+-   [Kerberos 身份验证中的更改](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx)（Windows Server 2008 R2 和 Windows 7）
 
 ### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>如何将 Kerberos 协议与身份验证策略接收器和策略一起使用
 在域帐户可链接到身份验证策略接收器且用户进行登录时，安全帐户管理器将添加身份验证策略接收器的声明类型（将接收器作为值包含在其中）。 帐户上的此声明提供对目标接收器的访问权限。
@@ -221,10 +221,10 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 4.  域控制器将使用票证授予服务回复 (TGS-REP) 来回复请求。
 
-## <a name="associated-error-and-informational-event-messages"></a><a name="BKMK_ErrorandEvents"></a>关联的错误和信息事件消息
+## <a name="associated-error-and-informational-event-messages"></a><a name="BKMK_ErrorandEvents"></a>关联的错误消息和信息事件消息
 下表描述了一些事件，它们与受保护用户安全组和应用到身份验证策略接收器的身份验证策略相关联。
 
-这些事件记录在位于“Microsoft\Windows\Authentication”的应用程序和服务日志中。
+这些事件记录在位于“Microsoft\Windows\Authentication”**** 的应用程序和服务日志中。
 
 有关使用这些事件的疑难解答步骤，请参阅[解决关于身份验证策略的问题](how-to-configure-protected-accounts.md#troubleshoot-authentication-policies)和[对受保护用户的相关事件进行疑难解答](how-to-configure-protected-accounts.md#troubleshoot-events-related-to-protected-users)。
 
@@ -236,7 +236,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 |106<p>**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制出现故障，原因在于未允许用户或设备对服务器进行身份验证。<p>在域控制器中记录了一个事件，以指示 Kerberos 服务票证受到拒绝，原因在于用户和/或设备不满足强制执行的访问控制限制。<p>显示设备、策略和接收器的名称。|
 |306<p>**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制可能会出现故障，原因在于未允许用户或设备对服务器进行身份验证。<p>在审核模式下，信息事件将记录在域控制器中，以指示 Kerberos 服务票证将被拒绝，原因在于用户和/或设备不满足访问控制限制。<p>显示设备、策略和接收器的名称。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 [如何配置受保护的帐户](how-to-configure-protected-accounts.md)
 
 [凭据保护和管理](credentials-protection-and-management.md)

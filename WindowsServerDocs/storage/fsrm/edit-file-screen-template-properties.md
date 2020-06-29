@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9e84545be86bdb8fcba09d0ff49ac98b44cd7bdf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb0ab9105aeded58b2ef3de9e5eb86fe823d6b5b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403122"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473524"
 ---
 # <a name="edit-file-screen-template-properties"></a>编辑文件屏蔽模板属性
 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 更改文件屏蔽模板时，可以选择将这些更改扩展至使用原始文件屏蔽模板创建的文件屏蔽。 无论在创建文件屏蔽后对文件屏蔽进行了哪些修改，都可以选择仅修改与原始模板匹配的文件屏蔽或修改从原始模板派生的所有文件屏蔽。 此功能通过提供一个可进行所有更改的中心点，简化了更新文件屏蔽属性的过程。
 
@@ -28,7 +28,7 @@ ms.locfileid: "71403122"
 
 1.  在**文件屏蔽模板**中，选择希望修改的模板。
 
-2.  右键单击 "文件屏蔽" 模板，然后单击 "**编辑模板属性**" （或在 "**操作**" 窗格中的 "**所选文件屏蔽模板**" 下，选择 "**编辑模板属性**"。）这将打开 "**文件屏蔽模板属性**" 对话框。
+2.  右键单击文件屏蔽模板，然后单击**编辑模板属性**（或者在**操作**窗格中，在**所选文件屏蔽模板**下选择**编辑模板属性**。）此操作将打开**文件屏蔽模板属性**对话框。
 
 3.  如果要复制其他模板的属性以用作修改后模板的基础，请从**从模板复制属性**下拉列表中选择模板。 然后单击**复制**。
 
@@ -42,9 +42,9 @@ ms.locfileid: "71403122"
     -   如果希望修改使用原始模板创建的所有现有文件屏蔽，请单击**将模板应用于所有派生的文件屏蔽**。
     -   如果希望保持现有文件屏蔽不变，请单击**不要将模板应用于派生文件屏蔽**。
 
-7.  单击 **“确定”** 。
+7.  单击" **确定**"。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [文件屏蔽管理](file-screening-management.md)
 -   [创建文件屏蔽模板](create-file-screen-template.md)

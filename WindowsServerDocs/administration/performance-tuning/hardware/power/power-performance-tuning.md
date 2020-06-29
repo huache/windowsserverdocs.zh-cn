@@ -1,18 +1,18 @@
 ---
-title: 电源和性能优化
-description: Windows Server 平衡电源计划的处理器电源管理（PPM）优化
+title: Windows Server 电源和性能优化概述
+description: 有关 Windows Server 的处理器电源管理（PPM）优化的概述。
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1457328a151c87d2d4cb41c4ee91b4759f4fb8e2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 67e72967d29fc96fe3f57b714bd8aaf19f406565
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851990"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471652"
 ---
 # <a name="power-and-performance-tuning"></a>电源和性能优化
 
@@ -58,20 +58,20 @@ Windows Server 2016 针对极佳的能源效率进行了优化，对各种客户
 
 ## <a name="diagnosing-energy-efficiency-issues"></a>诊断能源效率问题
 
-**PowerCfg**支持命令行选项，你可以使用它来分析服务器的空闲能源效率。 当使用 **/energy**选项运行 PowerCfg 时，该工具将执行60秒测试来检测潜在的能源效率问题。 该工具将在当前目录中生成一个简单的 HTML 报告。
+**PowerCfg.exe**支持命令行选项，你可以使用该选项分析服务器的空闲能源效率。 使用 **/energy**选项运行 PowerCfg.exe 时，该工具将执行60秒测试，以检测潜在的能源效率问题。 该工具将在当前目录中生成一个简单的 HTML 报告。
 
 > [!Important]
-> 若要确保准确的分析，请在运行**PowerCfg**之前确保所有本地应用都已关闭。 
+> 若要确保准确的分析，请确保在运行**PowerCfg.exe**之前所有本地应用都已关闭。 
 
 缩短计时器滴答速率、缺乏电源管理支持的驱动程序和过多的 CPU 使用率是**powercfg/energy**命令检测到的几个行为问题。 此工具提供了一种简单的方法来识别和修复电源管理问题，在大型数据中心中可能会显著节省成本。
 
-有关 PowerCfg 的详细信息，请参阅[使用 Powercfg 评估系统能源效率](https://msdn.microsoft.com/windows/hardware/gg463250.aspx)。
+有关 PowerCfg.exe 的详细信息，请参阅[使用 PowerCfg 评估系统能源效率](https://msdn.microsoft.com/windows/hardware/gg463250.aspx)。
 
 ## <a name="using-power-plans-in-windows-server"></a>使用 Windows Server 中的电源计划
 
 Windows Server 2016 有三个内置电源计划，旨在满足不同的业务需求。 这些计划为您提供了一种简单的方法，可用于自定义服务器以满足电源或性能目标。 下表介绍了这些计划，并列出了使用每个计划的常见方案，并提供了每个计划的一些实现细节。
 
-| **计划** | **描述** | **常见适用方案** | **实现亮点** |
+| **规划** | **说明** | **常见适用方案** | **实现亮点** |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 平衡（推荐） | 默认设置。 以极小的性能影响提高良好的能源效率。 | 常规计算 | 匹配需求的容量。 节能功能平衡了电源和性能。 |
 | 高性能 | 提高性能，代价是消耗高能耗。 电源和散热限制、运营支出和可靠性注意事项。 | 对处理器性能更改敏感的低延迟应用和应用代码 | 处理器始终处于最高性能状态（包括 "turbo" 频率）。 所有内核都已被离开。 温度输出可能很重要。 |
@@ -118,7 +118,7 @@ Intel Turbo 提升和 AMD Turbo 核心技术是允许处理器在最有用的情
 | 3（有效启用） | 高效 | 高效启用 |
 | 4（高效地） | 高效 | 激进 |
 
- 
+
 以下命令对当前电源计划启用处理器性能提升模式（使用 GUID 别名指定策略）：
 
 ``` syntax
@@ -129,7 +129,7 @@ Powercfg -setactive scheme_current
 > [!Important]
 > 必须运行**setactive**命令来启用新设置。 不需要重新启动服务器。
 
-若要为当前所选计划以外的其他电源计划设置此值，可以使用诸如方案\_MAX （节能）、方案\_MIN （高性能）和方案\_平衡（平衡）来取代当前方案\_的别名。 将以前显示的 setactive 命令中的 "方案的当前方案" 替换为所需的别名，以启用该电源计划。
+若要为当前所选计划以外的其他电源计划设置此值，可以使用 \_ "方案最大值" （节能模式）、"方案 \_ 最小值" （"高性能"）和 "方案 \_ 平衡（平衡）" 等别名 \_ 。 将以前显示的 setactive 命令中的 "方案的当前方案" 替换为所需的别名，以启用该电源计划。
 
 例如，若要在节能模式下调整提升模式并使其成为当前计划，请运行以下命令：
 
@@ -220,7 +220,8 @@ Powercfg -setacvalueindex scheme_current sub_processor DISTRIBUTEUTIL 0
 Powercfg -setactive scheme_current
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
+
 - [服务器硬件性能注意事项](../index.md)
 - [服务器硬件电源注意事项](../power.md)
 - [处理器电源管理优化](processor-power-management-tuning.md)

@@ -8,20 +8,20 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: e2530ff9ecb4bcf69f2f9a3a452f51696b4466d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b1f0fc5343c5228a02369a64bff2de50ab3f863e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815940"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471762"
 ---
 # <a name="system-insights-overview"></a>系统见解概述
 
 >适用于：Windows Server 2019
 
-系统见解是 Windows Server 2019 中的一种新的预测分析功能。 System Insights 预测功能-每个由机器学习模型提供支持的功能-在本地分析 Windows Server 系统数据（如性能计数器和事件），提供对服务器功能的见解，帮助你减少与被动相关的运营费用，从而管理部署中的问题。 
+系统见解是 Windows Server 2019 中的一种新的预测分析功能。 System Insights 预测功能-每个由机器学习模型提供支持的功能-在本地分析 Windows Server 系统数据（如性能计数器和事件），提供对服务器功能的见解，帮助你减少与被动相关的运营费用，从而管理部署中的问题。
 
-在 Windows Server 2019 中，系统见解附带了四项默认功能，重点介绍容量预测，根据以前的使用模式预测计算、网络和存储的未来资源。 系统见解还附带了一个[可扩展的基础结构](adding-and-developing-capabilities.md)，因此，Microsoft 和第三方可以向系统见解添加新的预测功能，而无需更新操作系统。 
+在 Windows Server 2019 中，系统见解附带了四项默认功能，重点介绍容量预测，根据以前的使用模式预测计算、网络和存储的未来资源。 系统见解还附带了一个[可扩展的基础结构](adding-and-developing-capabilities.md)，因此，Microsoft 和第三方可以向系统见解添加新的预测功能，而无需更新操作系统。
 
 你可以通过直观的[Windows 管理中心](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview)扩展或[直接通过 PowerShell](https://aka.ms/SystemInsightsPowerShell)管理系统见解，使用 System Insights 可以根据部署的需求，单独配置每个预测功能。 所有预测结果都将发布到事件日志，这样您就可以使用[Azure Monitor](https://azure.microsoft.com/services/monitor/)或[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)轻松地聚合和查看一组计算机的预测。
 
@@ -30,7 +30,7 @@ ms.locfileid: "80815940"
 ## <a name="local-functionality"></a>本地功能
 系统见解完全在 Windows Server 上以本地方式运行。 使用 Windows Server 2019 中引入的新功能，可在计算机上直接收集、持久保存和分析所有数据，从而无需任何云连接即可实现预测分析功能。
 
-系统数据存储在您的计算机上，这些数据由不需要在云中重新训练的预测功能进行分析。 通过系统见解，你可以将数据保留在计算机上，并且仍可以从预测分析功能中获益。 
+系统数据存储在您的计算机上，这些数据由不需要在云中重新训练的预测功能进行分析。 通过系统见解，你可以将数据保留在计算机上，并且仍可以从预测分析功能中获益。
 
 ## <a name="get-started"></a>入门
 
@@ -60,12 +60,12 @@ Add-WindowsFeature System-Insights -IncludeManagementTools
 ## <a name="provide-feedback"></a>提供反馈
 我们非常乐意听取你的反馈，帮助我们改进此功能。 你可以使用以下通道提交反馈：
 - **反馈中心**：在 Windows 10 中使用反馈中心工具来提交 bug 或反馈。 执行此操作时，请指定：
-    - **类别**：服务器 
+    - **类别**：服务器
     - **子类别**：系统见解
 - **Uservoice**：通过我们的[UserVoice 页面](https://windowsserver.uservoice.com/forums/295071-management-tools)提交功能请求。 与你的同事共享，投票赞成你对你很重要的项目。
-- **电子邮件**：如果你想要私下向功能团队提交反馈，请发送电子邮件到 system-insights-feed@microsoft.com。 请记住，我们仍可能会请求你使用反馈中心或 UserVoice。
+- **电子邮件**：如果你想要私下向功能团队提交反馈，请向发送电子邮件 system-insights-feed@microsoft.com 。 请记住，我们仍可能会请求你使用反馈中心或 UserVoice。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 若要了解有关系统见解的详细信息，请使用以下资源：
 
 - [了解功能](understanding-capabilities.md)

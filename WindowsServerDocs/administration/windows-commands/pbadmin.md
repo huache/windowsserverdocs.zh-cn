@@ -1,6 +1,6 @@
 ---
 title: pbadmin
-description: '* * * * 的参考主题'
+description: Pbadmin 命令的参考主题。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 95308b6098c44cdab7aaae3d8550717e8269fcfc
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 68535895386910a358ee0515dc7f09edb2122be8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993365"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472493"
 ---
 # <a name="pbadmin"></a>pbadmin
 
+> 适用于： Windows Server 2003、Windows Server 2003 R2、Windows Server 2003 SP1、Windows Server 2003 with SP2
 
+>[!IMPORTANT]
+> 此命令已弃用。
 
-Pbadmin 已被弃用，且在未来版本的 Windows 中不能保证受支持。
+管理电话簿。 使用不带参数的 pbadmin 将启动电话簿管理员。 有关说明和用法信息，请参阅[pbadmin](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755767(v=ws.10))。
 
-此工具包含在 Windows Server 2003 中。 有关详细信息，请参阅[Pbadmin](https://technet.microsoft.com/library/cc755767(v=ws.10).aspx)。
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)

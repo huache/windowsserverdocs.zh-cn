@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b06d69c020ea38a2fb9f23df2cfd9cd4191ae315
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5e7a4469a3f72737801a5110e322533df9764e20
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857550"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473584"
 ---
-# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>存储空间直通的驱动对称注意事项 
+# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>存储空间直通的驱动对称注意事项
 
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
 如果每个服务器都具有完全相同的驱动器，则[存储空间直通](storage-spaces-direct-overview.md)的效果最佳。
 
@@ -32,7 +32,7 @@ ms.locfileid: "80857550"
 
 例如，如果一台服务器有 NVMe，则它们*都应有 nvme* 。
 
-### <a name="number"></a>编号
+### <a name="number"></a>Number
 
 所有服务器都应具有相同数量的每个类型的驱动器。
 
@@ -41,7 +41,7 @@ ms.locfileid: "80857550"
    > [!NOTE]
    > 在出现故障时或者在添加或删除驱动器时，驱动器数量会暂时不同。
 
-### <a name="model"></a>模型
+### <a name="model"></a>“模型”
 
 建议尽可能使用相同型号和固件版本的驱动器。 如果无法做到这一点，请仔细选择尽可能相似的驱动器。 我们防止混合和匹配的驱动器具有急剧不同的性能或耐用性特征（除非它是缓存，另一种是容量），因为存储空间直通平均分配 IO，而不会基于模型进行区分。
 
@@ -136,7 +136,7 @@ ms.locfileid: "80857550"
 
 这是受支持的。
 
-### <a name="unsupported-not-supported-different-types-of-drives-across-servers"></a>![不支持](media/drive-symmetry-considerations/unsupported.png) 不受支持：跨服务器的不同类型的驱动器
+### <a name="unsupported-not-supported-different-types-of-drives-across-servers"></a>![不受支持](media/drive-symmetry-considerations/unsupported.png) 不受支持：跨服务器的不同类型的驱动器
 
 服务器1具有 NVMe，但其他服务器不存在。
 
@@ -146,9 +146,9 @@ ms.locfileid: "80857550"
 | -                   | 6 x SSD （缓存）     | 6 x SSD （缓存）     |
 | 18 x HDD （容量） | 18 x HDD （容量） | 18 x HDD （容量） |
 
-这不受支持。 每个服务器中的驱动器类型应相同。
+不支持此操作。 每个服务器中的驱动器类型应相同。
 
-### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![不支持](media/drive-symmetry-considerations/unsupported.png) 不受支持：跨服务器的每种类型的数量不同
+### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![不受支持](media/drive-symmetry-considerations/unsupported.png) 不受支持：跨服务器的每种类型的数量不同
 
 服务器3具有比其他驱动器更多的驱动器。
 
@@ -157,17 +157,17 @@ ms.locfileid: "80857550"
 | 2 x NVMe （缓存）    | 2 x NVMe （缓存）    | 4 x NVMe （缓存）    |
 | 10 x HDD （容量） | 10 x HDD （容量） | 20 x HDD （容量） |
 
-这不受支持。 每个服务器中的每个类型的驱动器数目应相同。
+不支持此操作。 每个服务器中的每个类型的驱动器数目应相同。
 
-### <a name="unsupported-not-supported-only-hdd-drives"></a>![不支持](media/drive-symmetry-considerations/unsupported.png) 不支持：仅 HDD 驱动器
+### <a name="unsupported-not-supported-only-hdd-drives"></a>![不受支持](media/drive-symmetry-considerations/unsupported.png) 不支持：仅 HDD 驱动器
 
 所有服务器仅连接了 HDD 驱动器。
 
 |服务器 1|服务器2|服务器3|
-|-|-|-| 
+|-|-|-|
 |18 x HDD （容量） |18 x HDD （容量）|18 x HDD （容量）|
 
-这不受支持。 需要添加至少两个连接到每台服务器的缓存驱动器（NvME 或 SSD）。
+不支持此操作。 需要添加至少两个连接到每台服务器的缓存驱动器（NvME 或 SSD）。
 
 ## <a name="summary"></a>摘要
 
@@ -175,12 +175,12 @@ ms.locfileid: "80857550"
 
 | 约束                               |               |
 |------------------------------------------|---------------|
-| 每个服务器中的相同类型的驱动器     | **必填**  |
-| 每个服务器中的每个类型都具有相同的数目 | **必填**  |
-| 每个服务器中的相同驱动器型号        | 推荐   |
-| 每个服务器中的相同驱动器大小         | 推荐   |
+| 每个服务器中的相同类型的驱动器     | **必需**  |
+| 每个服务器中的每个类型都具有相同的数目 | **必需**  |
+| 每个服务器中的相同驱动器型号        | 建议   |
+| 每个服务器中的相同驱动器大小         | 建议   |
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [存储空间直通硬件要求](storage-spaces-direct-hardware-requirements.md)
 - [存储空间直通概述](storage-spaces-direct-overview.md)

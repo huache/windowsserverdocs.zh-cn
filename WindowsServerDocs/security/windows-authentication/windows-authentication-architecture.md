@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f2a2b9db60842ba7889116cf35163c579d9131d1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: da4f173a5d91f73c73d3f537f58228890f90b136
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861720"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471672"
 ---
 # <a name="windows-authentication-architecture"></a>Windows 身份验证体系结构
 
@@ -40,7 +40,7 @@ Windows Server 操作系统包括组成 Windows 安全模型的一组安全组�
 
 SSPI 是通用安全服务 API （GSSAPI）的实现。 SSPI 提供一种机制，通过该机制，分布式应用程序可以调用多个安全提供程序之一来获取经过身份验证的连接，而无需了解安全协议的详细信息。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [安全支持提供程序接口体系结构](security-support-provider-interface-architecture.md)
 

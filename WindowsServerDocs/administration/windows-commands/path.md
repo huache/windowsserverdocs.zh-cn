@@ -1,6 +1,6 @@
 ---
-title: path
-description: 了解如何设置 PATH 环境变量。
+title: 路径
+description: 参考主题：在 PATH 环境变量中设置命令路径，指定用于搜索可执行文件（.exe）文件的目录集。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,52 +9,49 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52d4a99d21574f9cae3120201dcd4db0cd9a2202
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6fadeb2108f0e59ee2f45f3cf45338046a345006
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723376"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472563"
 ---
-# <a name="path"></a>path
+# <a name="path"></a>路径
 
-
-
-设置 PATH 环境变量（用于搜索可执行文件的目录集）中的命令路径。 如果在没有参数的情况下使用，则**path**显示当前命令路径。
-
-
+在 PATH 环境变量中设置命令路径，指定用于搜索可执行文件（.exe）文件的目录集。 如果不使用参数，则此命令将显示当前命令路径。
 
 ## <a name="syntax"></a>语法
 
 ```
-path [[<Drive>:]<Path>[;...][;%PATH%]]
+path [[<drive>:]<path>[;...][;%PATH%]]
 path ;
 ```
 
 ### <a name="parameters"></a>参数
 
-|     参数     |                                                                                                     描述                                                                                                      |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<驱动器>：]<Path> |                                                                            指定要在命令路径中设置的驱动器和目录。                                                                             |
-|         ;         | 分隔命令路径中的目录。 如果在没有其他参数的情况下使用，**则为;** 将从 PATH 环境变量中清除现有命令路径，并指示 cmd.exe 仅在当前目录中进行搜索。 |
-|      通道       |                                                         将命令路径追加到 PATH 环境变量中列出的现有目录集。                                                         |
-|        /?         |                                                                                         在命令提示符下显示帮助。                                                                                         |
+| 参数 | 说明 |
+|--|--|
+| `[<drive>:]<path>` | 指定要在命令路径中设置的驱动器和目录。 当前目录始终在命令路径中指定的目录之前搜索。 |
+| ; | 分隔命令路径中的目录。 如果在不使用其他参数的情况下使用，**则为;** 从 PATH 环境变量中清除现有命令路径，并指示 Cmd.exe 仅在当前目录中进行搜索。 |
+| `%PATH%` | 将命令路径追加到 PATH 环境变量中列出的现有目录集。 如果包含此参数，Cmd.exe 会将其替换为 PATH 环境变量中的命令路径值，从而无需在命令提示符下手动输入这些值。 |
+| /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
--   在语法中包含 **% PATH%** 时，cmd.exe 会将其替换为 PATH 环境变量中的命令路径值，从而无需在命令提示符处手动输入这些值。
--   当前目录始终在命令路径中指定的目录之前搜索。
--   目录中的文件可能共享相同的文件名，但扩展名不同。 例如，你可能有一个名为 Accnt.com 的文件，该文件启动一个记帐程序，另一个名为 Accnt 的文件将服务器连接到记帐系统网络。
 
-    Windows 操作系统会按以下优先级顺序使用默认的文件扩展名搜索文件： .exe、.com、.bat 和 .cmd。 若要在同一目录中存在 Accnt.com 时运行 Accnt，必须在命令提示符下包含 .bat 扩展名。
--   如果命令路径中的两个或多个文件具有相同的文件名和扩展名，则**路径**将首先在当前目录中搜索指定的文件名。 然后，它将按照路径环境变量中列出的顺序搜索命令路径中的目录。
--   如果将**path**命令放在 autoexec.bat 文件中，则每次登录到计算机时，Windows 操作系统会自动追加指定的 MS-DOS 子系统搜索路径。 Cmd.exe 不使用 Autoexec.bat 文件。 从快捷方式开始时，Cmd.exe 继承在我的电脑/Properties/Advanced/环境中设置的环境变量。
+- Windows 操作系统使用默认文件扩展名按以下优先级顺序进行搜索： .exe、.com、.bat 和 .cmd。 这意味着，如果你要查找名为的批处理文件，acct.bat 但在同一目录中有一个名为 acct.exe 的应用，则必须在命令提示符下包含 .bat 扩展名。
 
-## <a name="examples"></a><a name="BKMK_examples"></a>示例
+- 如果命令路径中的两个或多个文件具有相同的文件名和扩展名，则此命令将首先在当前目录中搜索指定的文件名。 然后，它将按照路径环境变量中列出的顺序搜索命令路径中的目录。
 
-若要在路径 C:\User\Taxes、B:\User\Invest 和 B:\Bin 中搜索外部命令，请键入：
+- 如果将**path**命令放在 autoexec.bat 文件中，则每次登录到计算机时，Windows 操作系统会自动追加指定的 MS-DOS 子系统搜索路径。 Cmd.exe 不使用 Autoexec.bat 文件。 从快捷方式开始时，Cmd.exe 继承在我的电脑/Properties/Advanced/环境中设置的环境变量。
 
-`path c:\user\taxes;b:\user\invest;b:\bin`
+## <a name="examples"></a>示例
+
+若要在路径*c:\user\taxes*、 *b:\user\invest*和*b:\bin*中搜索外部命令，请键入：
+
+```
+path c:\user\taxes;b:\user\invest;b:\bin
+```
 
 ## <a name="additional-references"></a>其他参考
 

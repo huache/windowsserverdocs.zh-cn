@@ -7,12 +7,12 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 5fe2f98c89d97325c1f59dc6ba292831e0ffa5ff
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de2e9939302c0b9937fb54b4082feeecf6de5295
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720565"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473104"
 ---
 # <a name="health-service-faults"></a>运行状况服务故障
 
@@ -20,61 +20,61 @@ ms.locfileid: "82720565"
 
 ## <a name="what-are-faults"></a>什么是故障
 
-运行状况服务不断监视存储空间直通群集，以检测问题并生成 "故障"。 一个新 cmdlet 显示所有当前错误，使你可以轻松地验证部署的运行状况，而无需依次查看每个实体或功能。 故障的描述非常精确、易于理解，且可操作。  
+运行状况服务不断监视存储空间直通群集，以检测问题并生成 "故障"。 一个新 cmdlet 显示所有当前错误，使你可以轻松地验证部署的运行状况，而无需依次查看每个实体或功能。 故障的描述非常精确、易于理解，且可操作。
 
-每个故障都包含五个重要字段：  
+每个故障都包含五个重要字段：
 
--   严重性
+-   severity
 -   问题的描述
 -   用于解决问题的建议后续步骤
 -   故障实体的标识信息
 -   其物理位置（如果适用）
 
-例如，以下是一个典型的故障：  
+例如，以下是一个典型的故障：
 
 ```
-Severity: MINOR                                         
-Reason: Connectivity has been lost to the physical disk.                           
-Recommendation: Check that the physical disk is working and properly connected.    
-Part: Manufacturer Contoso, Model XYZ9000, Serial 123456789                        
+Severity: MINOR
+Reason: Connectivity has been lost to the physical disk.
+Recommendation: Check that the physical disk is working and properly connected.
+Part: Manufacturer Contoso, Model XYZ9000, Serial 123456789
 Location: Seattle DC, Rack B07, Node 4, Slot 11
 ```
 
  >[!NOTE]
- > 物理位置源自故障域配置。 有关容错域的详细信息，请参阅[Windows Server 2016 中的容错域](fault-domains.md)。 如果未提供此信息，位置字段将不那么有用 - 例如，它可能仅显示插槽编号。  
+ > 物理位置源自故障域配置。 有关容错域的详细信息，请参阅[Windows Server 2016 中的容错域](fault-domains.md)。 如果未提供此信息，位置字段将不那么有用 - 例如，它可能仅显示插槽编号。
 
 ## <a name="root-cause-analysis"></a>根本原因分析
 
-运行状况服务可以评估发生错误的实体之间的潜在因果关系，以确定并合并导致相同基本问题的错误。 通过识别作用链，可降低报告的繁琐性。 例如，如果服务器停机，则该服务器中的任何驱动器都应该不会连接。 因此，根本原因（在本例中为服务器）将只引发一次错误。  
+运行状况服务可以评估发生错误的实体之间的潜在因果关系，以确定并合并导致相同基本问题的错误。 通过识别作用链，可降低报告的繁琐性。 例如，如果服务器停机，则该服务器中的任何驱动器都应该不会连接。 因此，根本原因（在本例中为服务器）将只引发一次错误。
 
 ## <a name="usage-in-powershell"></a>PowerShell 中的用法
 
 若要查看 PowerShell 中的任何当前错误，请运行以下 cmdlet：
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Debug-StorageSubSystem  
+Get-StorageSubSystem Cluster* | Debug-StorageSubSystem
 ```
 
-这会返回影响整体存储空间直通群集的任何故障。 大多数情况下，这些故障与硬件或配置相关。 如果没有故障，此 cmdlet 将不返回任何内容。  
+这会返回影响整体存储空间直通群集的任何故障。 大多数情况下，这些故障与硬件或配置相关。 如果没有故障，此 cmdlet 将不返回任何内容。
 
 >[!NOTE]
 > 在非生产环境中，你可以通过自行触发故障来试验这项功能，例如，删除一个物理磁盘或关闭一个节点。 出现错误后，重新插入物理磁盘或重新启动节点，故障将再次消失。
 
-你还可以查看只影响特定卷或文件共享的错误，这些错误只影响以下 cmdlet：  
+你还可以查看只影响特定卷或文件共享的错误，这些错误只影响以下 cmdlet：
 
 ```PowerShell
-Get-Volume -FileSystemLabel <Label> | Debug-Volume  
+Get-Volume -FileSystemLabel <Label> | Debug-Volume
 
-Get-FileShare -Name <Name> | Debug-FileShare  
+Get-FileShare -Name <Name> | Debug-FileShare
 ```
 
-这会返回仅影响特定卷或文件共享的任何错误。 大多数情况下，这些故障与容量规划、数据复原或功能（例如存储服务质量或存储副本）相关。 
+这会返回仅影响特定卷或文件共享的任何错误。 大多数情况下，这些故障与容量规划、数据复原或功能（例如存储服务质量或存储副本）相关。
 
 ## <a name="usage-in-net-and-c"></a>.NET 和 C 中的用法#
 
 ### <a name="connect"></a>连接
 
-若要查询运行状况服务，需要建立与群集的**CimSession** 。 为此，你将需要一些仅适用于完整 .NET 的功能，这意味着你无法直接从 web 或移动应用程序中执行此操作。 这些代码示例将使用 C\#，这是此数据访问层最简单的选择。
+若要查询运行状况服务，需要建立与群集的**CimSession** 。 为此，你将需要一些仅适用于完整 .NET 的功能，这意味着你无法直接从 web 或移动应用程序中执行此操作。 这些代码示例将使用 C \# ，这是此数据访问层最简单的选择。
 
 ```
 using System.Security;
@@ -105,7 +105,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 建立**CimSession**后，可以在群集上查询 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
 
-你需要获取多个相关对象的实例，然后才能获取错误或度量值。 首先， **MSFT\_StorageSubSystem** ，它代表群集上存储空间直通。 使用它可以获取群集中的每个**msft\_StorageNode** ，以及每个**msft\_卷**和数据卷。 最后，您还需要**MSFT\_StorageHealth**，这运行状况服务本身。
+你需要获取多个相关对象的实例，然后才能获取错误或度量值。 首先， **MSFT \_ StorageSubSystem** ，它代表群集上存储空间直通。 使用它可以获取群集中的每个**msft \_ StorageNode** ，以及每个**msft \_ 卷**和数据卷。 最后，您还需要**MSFT \_ StorageHealth**，这运行状况服务本身。
 
 ```
 CimInstance Cluster;
@@ -153,7 +153,7 @@ foreach (CimInstance Node in Nodes)
 
 下面介绍了 Windows Server 2016 中每个范围内可用的错误的完整列表。
 
-```       
+```
 public void GetFaults(CimSession Session, CimInstance Target)
 {
     // Set Parameters (None)
@@ -176,7 +176,7 @@ public void GetFaults(CimSession Session, CimInstance Target)
 
 构造和保留自己的错误表示可能非常有意义。 例如，此**MyFault**类存储错误的几个关键属性，其中包括**FaultId**，稍后可将其用于关联 update 或 remove 通知，或者在多次检测到相同错误的情况下将其用于删除重复。
 
-```       
+```
 public class MyFault {
     public String FaultId { get; set; }
     public String Reason { get; set; }
@@ -212,9 +212,9 @@ foreach (CimInstance DiagnoseResult in DiagnoseResults)
 
 创建、删除或更新错误时，运行状况服务会生成 WMI 事件。 这对于在不频繁轮询的情况下保持应用程序状态保持同步非常重要，例如，有助于确定何时发送电子邮件警报。 为了订阅这些事件，此示例代码再次使用观察程序设计模式。
 
-首先，订阅**MSFT\_StorageFaultEvent**事件。
+首先，订阅**MSFT \_ StorageFaultEvent**事件。
 
-```      
+```
 public void ListenForFaultEvents()
 {
     IObservable<CimSubscriptionResult> Events = Session.SubscribeAsync(
@@ -222,7 +222,7 @@ public void ListenForFaultEvents()
     // Subscribe the Observer
     FaultsObserver<CimSubscriptionResult> Observer = new FaultsObserver<CimSubscriptionResult>(this);
     IDisposable Disposeable = Events.Subscribe(Observer);
-}   
+}
 ```
 
 接下来，实现将在每次生成新事件时调用**OnNext （）** 方法的观察程序。
@@ -241,7 +241,7 @@ class FaultsObserver : IObserver
 
         if (SubscriptionResult != null)
         {
-            // Unpack            
+            // Unpack
             CimKeyedCollection<CimProperty> Properties = SubscriptionResult.Instance.CimInstanceProperties;
             String ChangeType = Properties["ChangeType"].Value.ToString();
             String FaultId = Properties["FaultId"].Value.ToString();
@@ -283,13 +283,13 @@ class FaultsObserver : IObserver
 
 ### <a name="properties-of-faults"></a>错误属性
 
-此表显示了错误对象的几个关键属性。 对于完整的架构，请在*storagewmi*中检查**MSFT\_StorageDiagnoseResult**类。
+此表显示了错误对象的几个关键属性。 对于完整的架构，请在*storagewmi*中检查**MSFT \_ StorageDiagnoseResult**类。
 
 | **属性**              | **示例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | FaultType （正常）                      |
-| 原因                    | "卷的可用空间不足。"                 |
+| Reason                    | "卷的可用空间不足。"                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N。 123456789                                  |
 | FaultingObjectLocation    | 机架 A06，RU 25，槽11                                        |
@@ -307,7 +307,7 @@ class FaultsObserver : IObserver
 
 ## <a name="properties-of-fault-events"></a>错误事件的属性
 
-此表显示了错误事件的几个关键属性。 对于完整的架构，请在*storagewmi*中检查**MSFT\_StorageFaultEvent**类。
+此表显示了错误事件的几个关键属性。 对于完整的架构，请在*storagewmi*中检查**MSFT \_ StorageFaultEvent**类。
 
 请注意**ChangeType**，它指示是否正在创建、删除或更新错误，以及**FaultId**。 事件还包含受影响的错误的所有属性。
 
@@ -316,7 +316,7 @@ class FaultsObserver : IObserver
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | FaultType （正常）                      |
-| 原因                    | "卷的可用空间不足。"                 |
+| Reason                    | "卷的可用空间不足。"                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N。 123456789                                  |
 | FaultingObjectLocation    | 机架 A06，RU 25，槽11                                        |
@@ -326,7 +326,7 @@ class FaultsObserver : IObserver
 
 ## <a name="coverage"></a>覆盖率
 
-在 Windows Server 2016 中，运行状况服务提供以下故障范围：  
+在 Windows Server 2016 中，运行状况服务提供以下故障范围：
 
 ### <a name="physicaldisk-8"></a>**PhysicalDisk （8）**
 
@@ -513,12 +513,12 @@ class FaultsObserver : IObserver
 * 原因： *"一个或多个存储使用者（通常是虚拟机）正在使用 id 为 {id} 的不存在的策略。"*
 * RecommendedAction： *"重新创建任何缺少的存储 QoS 策略。"*
 
-<sup>1</sup>表示卷已达到80% （次严重性）或90% （主要严重性）。  
-<sup>2</sup>指示卷上的某些 .vhd 未达到其最小 IOPS，超过10% （次）、30% （主要）或50% （严重）滚动时间为24小时。  
+<sup>1</sup>表示卷已达到80% （次严重性）或90% （主要严重性）。
+<sup>2</sup>指示卷上的某些 .vhd 未达到其最小 IOPS，超过10% （次）、30% （主要）或50% （严重）滚动时间为24小时。
 
 >[!NOTE]
-> 存储机箱组件（如风扇、电源和传感器）的运行状况派生自 SCSI 机箱服务 (SES)。 如果你的供应商不提供此信息，运行状况服务不能对其进行显示。  
+> 存储机箱组件（如风扇、电源和传感器）的运行状况派生自 SCSI 机箱服务 (SES)。 如果你的供应商不提供此信息，运行状况服务不能对其进行显示。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 - [Windows Server 2016 运行状况服务](health-service-overview.md)

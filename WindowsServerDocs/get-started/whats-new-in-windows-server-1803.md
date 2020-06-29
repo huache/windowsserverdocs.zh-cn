@@ -8,12 +8,12 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 8b359ac883c24d559e2c3d47db5b68e4f5341338
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c4676ee720780ac7f347d98048c920bd4ce68e59
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826000"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473184"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server 版本 1803 中的新增功能
 
@@ -35,7 +35,7 @@ Windows Server 版本 1709 作为半年频道中的第一版于 2017 年 9 月�
 
 根据遥测和反馈，这些频道已表现出它们非常符合下述常规策略：
 - 半年频道非常适用于现代应用程序和创新方案，如容器和微服务。
-- 长期服务频道是软件定义数据中心和超融合基础设施 (HCI) 等核心基础设施方案的首选版本。 
+- 长期服务频道是软件定义数据中心和超融合基础设施 (HCI) 等核心基础设施方案的首选版本。
 
 半年频道和长期服务频道的具体方案如下：
 
@@ -51,7 +51,7 @@ Windows Server 版本 1709 作为半年频道中的第一版于 2017 年 9 月�
 ## <a name="application-platform-and-containers"></a>应用程序平台和容器
 
 - 优化
-    - 从 Windows Server 版本 1709 开始，Server Core 基本容器映像减少了 30%。 
+    - 从 Windows Server 版本 1709 开始，Server Core 基本容器映像减少了 30%。
     - 应用程序兼容性也有所提升，这有助于实现传统应用程序的容器化。
     - 借助各种修复和优化，容器启动性能和运行时性能也有所提升。
 - 容器网络：添加了 Localhost 和 http 代理支持，并改进了容器的可伸缩性和启动时间。
@@ -70,16 +70,16 @@ Windows Server 版本 1709 作为半年频道中的第一版于 2017 年 9 月�
 
 WSL 使服务器管理员可以使用 Windows Server 上的 Linux 中的现有工具和脚本。 [命令行博客](https://blogs.msdn.microsoft.com/commandline/tag/wsl/)中展示的许多改进现在都是 Windows Server 的一部分，包括后台任务、DriveFS、WSLPath 和更多其他内容。
 
-### <a name="kubernetes"></a>Kubernetes 
+### <a name="kubernetes"></a>Kubernetes
 
-Kubernetes（通常称作 K8s）是用于自动部署、缩放和管理在 [Cloud Native Computing Foundation](https://www.cncf.io) 管理下开发的容器化应用程序的开源系统。 
+Kubernetes（通常称作 K8s）是用于自动部署、缩放和管理在 [Cloud Native Computing Foundation](https://www.cncf.io) 管理下开发的容器化应用程序的开源系统。
 
 使用 Windows Server 版本 1709，用户就能利用 Windows 上的 Kubernetes 网络功能，其中包括：
 - 共享 Pod 分区：基础架构和工作线程 Pod 现在共享一个网络分区（类似于 Linux 命名空间）。
 - 终结点优化：由于分区共享，容器服务需要跟踪至少半数的终结点。
 - 数据路径优化：虚拟筛选平台和主机网络服务的改进实现了基于内核的负载均衡。
 
-伴随着 Windows Server 版本 1803 的发布，更多功能会出现在即将发布的 Kubernetes 里： 
+伴随着 Windows Server 版本 1803 的发布，更多功能会出现在即将发布的 Kubernetes 里：
 - 针对 Kubernetes 协调的 Windows 容器的[存储插件](https://github.com/Microsoft/K8s-Storage-Plugins)。
 - 通过各种计划（例如我们与 [Tigera on Project Calico](https://cloudblogs.microsoft.com/windowsserver/2017/12/07/securing-modernized-apps-and-simplified-networking-on-windows-with-calico/) 支持的合作）推出的云规模网络功能。
 - Windows 平台支持 Hyper-V 隔离的 Pod，允许每个 Pod 使用多个容器。
@@ -90,7 +90,7 @@ Kubernetes（通常称作 K8s）是用于自动部署、缩放和管理在 [Clou
 - 中断 ASP.net 性能计数器的问题已修复。
 - 在容器中运行的服务器接收不到关闭通知的问题已修复。
     - 具体而言，基于 Server Core 和 Nano Server 容器的映像的通知被更改为 CTRL_SHUTDOWN_EVENT。 此外，它扩展了基于 Server Core 容器的映像中的通知，使之影响所有在容器中运行的进程，包括向容器中运行的服务发送服务关闭通知。
-- docker pull 和 docker load 之间的不兼容性已修复。docker pull 和 docker load 具有决定是否需要 BitLocker 保护使固定数据驱动器变可写的策略设置 (FDVDenyWriteAccess)。 
+- docker pull 和 docker load 之间的不兼容性已修复。docker pull 和 docker load 具有决定是否需要 BitLocker 保护使固定数据驱动器变可写的策略设置 (FDVDenyWriteAccess)。
 
 ## <a name="storage"></a>存储
 
@@ -108,7 +108,7 @@ Windows 部署服务 (WDS) 角色中的传输服务器角色已添加到 Server 
 Install-WindowsFeature -Name WDS
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 [Windows Server 版本信息](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
 [Windows 10 版本 1803 IT 专业人员内容中的新增功能](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)

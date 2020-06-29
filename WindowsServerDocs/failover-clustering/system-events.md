@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: eea98579a66f1db7f7ec873bda6a2c934841736f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 24be2b39c8130b97d22ee182c0064986b3378549
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720511"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472974"
 ---
 # <a name="failover-clustering-system-log-events"></a>故障转移群集系统日志事件
 
@@ -185,7 +185,7 @@ ms.locfileid: "82720511"
 
 ### <a name="event-1024-cp_reg_ckpt_restore_failed"></a>事件1024： CP_REG_CKPT_RESTORE_FAILED
 
-无法将群集资源 "%1" 的注册表检查点还原到注册表项 HKEY_LOCAL_MACHINE\\%2。 资源可能无法正常工作。
+无法将群集资源 "%1" 的注册表检查点还原到注册表项 HKEY_LOCAL_MACHINE \\ %2。 资源可能无法正常工作。
 请确保没有其他进程对此注册表子树中的注册表项具有打开的句柄。
 
 ### <a name="event-1034-res_disk_missing"></a>事件1034： RES_DISK_MISSING
@@ -464,7 +464,7 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1234-cluster_event_account_missing_privs"></a>事件1234： CLUSTER_EVENT_ACCOUNT_MISSING_PRIVS
 
-群集服务检测到其服务帐户缺少一个或多个所需的权限。 缺少权限列表是： "%1"，当前未被授予服务帐户。 使用 "qprivs" 来验证群集服务（ClusSvc）的权限。 此外，请在 Active Directory 域服务中检查任何可能已更改默认权限的安全策略或组策略。 键入以下命令，授予群集服务正确运行所需的权限：
+群集服务检测到其服务帐户缺少一个或多个所需的权限。 缺少权限列表是： "%1"，当前未被授予服务帐户。 使用 "sc.exe qprivs clussvc" 验证群集服务（ClusSvc）的权限。 此外，请在 Active Directory 域服务中检查任何可能已更改默认权限的安全策略或组策略。 键入以下命令，授予群集服务正确运行所需的权限：
 
 ```
 sc.exe privs
@@ -600,7 +600,7 @@ IPv6 隧道地址资源 "%1" 联机失败。 与依赖 IP 地址（IPv4）资源
 
 ### <a name="event-1567-service_failed_to_change_log_size"></a>事件1567： SERVICE_FAILED_TO_CHANGE_LOG_SIZE
 
-群集服务更改跟踪日志大小失败。 请验证 ClusterLogSize 设置和 "获取群集\|格式列表\*" PowerShell cmdlet。 同时，使用性能监视器管理单元来验证 FailoverClustering 的事件跟踪会话设置。
+群集服务更改跟踪日志大小失败。 请验证 ClusterLogSize 设置和 "获取群集 \| 格式列表 \* " PowerShell cmdlet。 同时，使用性能监视器管理单元来验证 FailoverClustering 的事件跟踪会话设置。
 
 ### <a name="event-1567-res_vipaddr_address_interface_failed"></a>事件1567： RES_VIPADDR_ADDRESS_INTERFACE_FAILED
 
@@ -608,7 +608,7 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1568-res_cloud_witness_cant_communicate_to_azure"></a>事件1568： RES_CLOUD_WITNESS_CANT_COMMUNICATE_TO_AZURE
 
-云见证资源无法访问 Microsoft Azure 存储服务。<br><br>群集资源： %1 <br>群集节点： %2 
+云见证资源无法访问 Microsoft Azure 存储服务。<br><br>群集资源： %1 <br>群集节点： %2
 
 #### <a name="guidance"></a>指南
 
@@ -620,7 +620,7 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1569-res_cloud_witness_token_expired"></a>事件1569： RES_CLOUD_WITNESS_TOKEN_EXPIRED
 
-云见证资源无法通过 Microsoft Azure 存储服务进行身份验证。 尝试与 Microsoft Azure 存储帐户联系时返回了访问被拒绝错误。 <br><br>群集资源： %1 
+云见证资源无法通过 Microsoft Azure 存储服务进行身份验证。 尝试与 Microsoft Azure 存储帐户联系时返回了访问被拒绝错误。 <br><br>群集资源： %1
 
 #### <a name="guidance"></a>指南
 
@@ -664,11 +664,11 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1606-res_disk_cno_check_failed"></a>事件1606： RES_DISK_CNO_CHECK_FAILED
 
-群集磁盘资源 "%1" 包含受 BitLocker 保护的卷 "%2"，但对于此卷，Active Directory 群集名称帐户（也称为群集名称对象或 CNO）不是卷的 BitLocker 保护程序。 这是受 BitLocker 保护的卷所必需的。 若要更正此错误，请先从群集中删除该磁盘。 接下来，使用 Manage-bde.exe 命令行工具将群集名称添加为 ADAccountOrGroup 保护程序，并为群集名称使用 domain\\ClusterName\$格式。 然后将该磁盘添加回群集。 有关详细信息，请参阅 Manage-bde.exe 的文档
+群集磁盘资源 "%1" 包含受 BitLocker 保护的卷 "%2"，但对于此卷，Active Directory 群集名称帐户（也称为群集名称对象或 CNO）不是卷的 BitLocker 保护程序。 这是受 BitLocker 保护的卷所必需的。 若要更正此错误，请先从群集中删除该磁盘。 接下来，使用 Manage-bde.exe 命令行工具将群集名称添加为 ADAccountOrGroup 保护程序，并将 ClusterName 的格式设置 \\ \$ 为群集名称。 然后将该磁盘添加回群集。 有关详细信息，请参阅文档 Manage-bde.exe
 
 ### <a name="event-1607-res_disk_cno_unlock_failed"></a>事件1607： RES_DISK_CNO_UNLOCK_FAILED
 
-群集磁盘资源 "%1" 无法解锁受 BitLocker 保护的卷 "%2"。 群集名称对象（CNO）未设置为此卷的有效 BitLocker 保护程序。 若要更正此错误，请从群集中删除该磁盘。 然后，使用 Manage-bde.exe 命令行工具将群集名称添加为 ADAccountOrGroup 保护程序，使用 format domain\\ClusterName\$，并将磁盘添加回群集。 有关详细信息，请参阅 Manage-bde.exe 的文档。
+群集磁盘资源 "%1" 无法解锁受 BitLocker 保护的卷 "%2"。 群集名称对象（CNO）未设置为此卷的有效 BitLocker 保护程序。 若要更正此错误，请从群集中删除该磁盘。 然后，使用 Manage-bde.exe 命令行工具将群集名称添加为 ADAccountOrGroup 保护程序，使用 format domain \\ ClusterName \$ ，并将磁盘添加回群集。 有关详细信息，请参阅 Manage-bde.exe 的文档。
 
 ### <a name="event-1608-res_fileserver_leader_failed"></a>事件1608： RES_FILESERVER_LEADER_FAILED
 
@@ -725,7 +725,7 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-1683-res_netname_computer_account_no_dc"></a>事件1683： RES_NETNAME_COMPUTER_ACCOUNT_NO_DC
 
-群集服务无法连接到域中的任何可用域控制器。 这可能会影响依赖于群集网络名称身份验证的功能。<br><br>DC 服务器： %1 
+群集服务无法连接到域中的任何可用域控制器。 这可能会影响依赖于群集网络名称身份验证的功能。<br><br>DC 服务器： %1
 
 #### <a name="guidance"></a>指南
 
@@ -780,7 +780,7 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-4613-nodecleanup_clear_clusdisk_database_failed"></a>事件4613： NODECLEANUP_CLEAR_CLUSDISK_DATABASE_FAILED
 
-群集服务在销毁群集时无法正确清理 ID 为 "%2" 的群集磁盘。 错误代码为 "%1"。 在成功完成清理之前，你可能无法访问该磁盘。 对于手动清理，请在 Windows 注册表中删除\\"HKEY_LOCAL_MACHINE SYSTEM\\CurrentControlSet\\Services\\ClusDisk\\Parameters" 项的 "AttachedDisks" 值。
+群集服务在销毁群集时无法正确清理 ID 为 "%2" 的群集磁盘。 错误代码为 "%1"。 在成功完成清理之前，你可能无法访问该磁盘。 对于手动清理，请 \\ \\ 在 Windows 注册表中删除 "HKEY_LOCAL_MACHINE SYSTEM CurrentControlSet \\ Services \\ ClusDisk \\ Parameters" 项的 "AttachedDisks" 值。
 
 ### <a name="event-4615-nodecleanup_disable_cluster_service_failed"></a>事件4615： NODECLEANUP_DISABLE_CLUSTER_SERVICE_FAILED
 
@@ -1106,7 +1106,7 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-1605-res_disk_spotfix_performed"></a>事件1605： RES_DISK_SPOTFIX_PERFORMED
 
-群集磁盘资源 "%1" 已完成在卷 "%2" 上运行 Chkdsk.exe/spotfix。
+群集磁盘资源 "%1" 已完成 ChkDsk.exe 卷 "%2" 上的/spotfix 运行。
 返回代码为 "%4"。 已将 ChkDsk 的输出记录到文件 "%3"。<br>
 在应用程序事件日志中检查 ChkDsk 的其他信息。
 
@@ -1251,6 +1251,6 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 群集物理磁盘资源 "%1" 删除了软件快照。 群集共享卷 "%2" 上的软件快照已被删除，因为它早于 "%3" 天。 快照 ID 是 "%4"，它是从节点 "%5" （位于 "%6"）创建的。
 备份作业完成后，备份应用程序应删除快照。 此快照超过了快照所需的时间。 向备份应用程序验证备份作业是否成功完成。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [Windows Server 2008 中故障转移群集组件的详细事件信息](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))
