@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa724fc028e245ab404375ba94b074f10078d755
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b9cc96badad864a0d76ef6295c604ff22ca4455f
+ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828760"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84740610"
 ---
 # <a name="deploy-windows-server-update-services"></a>部署 Windows Server Update Services
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server Update Service (WSUS) 启用信息技术管理员部署最新的 Microsoft 产品更新。 WSUS 是可安装以管理和分配更新的 Windows Server 服务器角色。 WSUS 服务器可以作为组织内其他 WSUS 服务器的更新源。 充当更新源的 WSUS 服务器称为上游服务器。  
 

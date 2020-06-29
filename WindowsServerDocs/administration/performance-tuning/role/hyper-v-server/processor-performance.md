@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: fc1d6bdb848ea9662ba9b3d3119f286af3476688
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d165413dfbf89b2debd77806110ca80e9b6af7c8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851750"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471292"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper-v 处理器性能
 
@@ -41,7 +41,7 @@ Windows Server 2016 中的 hyper-v 支持每个虚拟机最多支持240个虚拟
 
 -   查看默认情况下启用的计划任务和服务。
 
--   通过运行 logman 查询，查看默认打开的 ETW 跟踪提供程序 **-ets**
+-   通过运行**logman.exe ets** ，查看默认情况下启用的 ETW 跟踪提供程序
 
 -   改善服务器应用程序以减少定期活动（例如计时器）。
 
@@ -69,7 +69,7 @@ Microsoft SQL Server 是 NUMA 感知应用程序的一个示例。 有关详细�
 
 有关虚拟 NUMA 的详细信息，请参阅[Hyper-v 虚拟 Numa 概述](https://technet.microsoft.com/library/dn282282.aspx)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [Hyper-V 术语](terminology.md)
 

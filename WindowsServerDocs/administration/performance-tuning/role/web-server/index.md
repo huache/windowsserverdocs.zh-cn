@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ec36d87957e5bbe897597e330e766c3193cd30d0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 249500249921d21184dc8cd14993741392927586
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851690"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471202"
 ---
 # <a name="performance-tuning-web-servers"></a>性能优化 Web 服务器
 
@@ -57,7 +57,7 @@ ms.locfileid: "80851690"
 >[!Warning]
 > 某些应用程序（例如增量备份实用程序）依赖此更新信息，没有它就不能正常运行。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 - [IIS 10.0 性能优化](tuning-iis-10.md)
 - [HTTP 1.1/2 优化](http-performance.md)
 

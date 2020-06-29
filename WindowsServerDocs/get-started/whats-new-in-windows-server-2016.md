@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c140c61a5887cc63b2a9d0b468f8d1daf02cd76
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c3eb62d53ef11d5531590e1a6d46cd6cacaf2e4a
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76822710"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094539"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 中的新增功能
 
@@ -59,7 +59,7 @@ Windows Server 2016 提供新的基于 Hyper-V 的受防护的虚拟机，以保
 
 有关使用受防护的虚拟机的详细信息和说明，请参阅 [Shielded VMs and Guarded Fabric Validation Guide for Windows Server 2016 (TPM)](https://aka.ms/shieldedvms)（Windows Server 2016 (TPM) 受防护的 VM 和受保护的构造验证指南）。  
 
-## <a name="identity-and-access"></a>[身份标识和访问权限](../identity/Identity-and-Access.md)  
+## <a name="identity-and-access"></a>[身份标识和访问权限](../identity/Identity-and-Access.yml)  
 身份标识中的新功能提高了组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务托管在云中，其他的则托管在本地。  
 
 ### <a name="active-directory-certificate-services"></a>Active Directory 证书服务  
@@ -74,7 +74,7 @@ Active Directory 联合身份验证服务中的新增功能。 Windows Server 20
 ### <a name="web-application-proxy"></a>Web 应用程序代理  
 Web 应用程序代理的最新版本专注于为更多应用程序实现发布和预身份验证的新功能以及改进的用户体验。 查看新功能的完整列表，其中包括针对丰富的客户端应用（如 Exchange ActiveSync）的预身份验证以及用于更轻松地发布 SharePoint 应用的通配符域。 有关详细信息，请参阅 [Windows Server 2016 中的 Web 应用程序代理](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。  
 
-##  <a name="administration"></a>[管理](../administration/manage-windows-server.md)  
+##  <a name="administration"></a>[管理](../administration/manage-windows-server.yml)  
 管理和自动化部分重点介绍适用于想要运行和管理 Windows Server 2016（包括 Windows PowerShell）的 IT 专业人员的工具和参考信息。
 
 Windows PowerShell 5.1 包含重要的新功能（包括支持使用类进行开发、可扩展其用途的新安全功能），提高其可用性，并允许你更轻松、全面地控制和管理基于 Windows 的环境。 有关详细信息，请参阅 [WMF 5.1 中的新方案和功能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)。
@@ -98,7 +98,7 @@ Windows Server 2016 和 Windows 10 引入了一种新的 PackageManagement 功�
 
 有关详细信息，请参阅 [PowerShell ♥ 蓝队](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)。
 
-## <a name="networking"></a>[网络](../networking/Networking.md)  
+## <a name="networking"></a>[网络](../networking/index.yml)  
 本部分论述了适用于 IT 专业人员的网络产品和功能，可用于设计、部署和维护 Windows Server 2016。  
 
 ### <a name="software-defined-networking"></a>软件定义的网络
@@ -132,7 +132,7 @@ Device Guard 通过创建指定哪些代码可以在服务器上运行的策略�
 控制流防护 (CFG) 是一种平台安全功能，旨在防止内存损坏漏洞。 有关详细信息，请参阅 [Control Flow Guard](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx)（控制流防护）。
 
 
-## <a name="storage"></a>[存储](../storage/storage.md)
+## <a name="storage"></a>[存储](../storage/storage.yml)
 
 Windows Server 2016 中的存储包括软件定义存储以及传统文件服务器的新功能和增强功能。 下面是几个新功能，有关更多增强功能和详细信息，请参阅 [Windows Server 2016 中的存储的新增功能](../storage/whats-new-in-storage.md)。
 

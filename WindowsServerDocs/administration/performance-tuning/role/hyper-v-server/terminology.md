@@ -1,5 +1,5 @@
 ---
-title: Hyper-v 术语
+title: Hyper-V 术语
 description: Hyper-v 术语在 Hyper-v 性能优化中很有用
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
@@ -7,17 +7,17 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 88aaebaac9161849fefe8116a1115eb628bcbf9e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bba2ef96be812c930fbf0c93d3c3c612fa9c9c5a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851760"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471262"
 ---
 # <a name="hyper-v-terminology"></a>Hyper-v 术语
 本部分概述了本性能优化主题中使用的虚拟机技术特定的关键术语：
 
-| 术语        | Definition           |
+| 术语        | 定义           |
 | ------------- |:------------|
 |*子分区* | 根分区创建的任何虚拟机。|
 |*设备虚拟化* | 一种允许在多个使用者之间抽象并共享硬件资源的机制。|
@@ -37,7 +37,7 @@ ms.locfileid: "80851760"
 | *虚拟化堆栈*|根分区中的软件组件的集合，它们协同工作以支持虚拟机。 虚拟化堆栈适用于并且位于虚拟机监控程序之上。 它还提供管理功能。|
 |*VMBus*|基于通道的通信机制，用于在具有多个活动虚拟化分区的系统上进行分区间通信和设备枚举。 VMBus 随 Hyper-V 集成服务一起安装。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [Hyper-V 体系结构](architecture.md)
 

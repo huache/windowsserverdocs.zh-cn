@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 86aef48575388ad76ff22fc6027c5ce2d4b6694a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2ef32b379dcc5d1c2d8217564b639f44d024e5ee
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851890"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471543"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>添加性能优化中的 LDAP 注意事项
 
@@ -47,12 +47,12 @@ ms.locfileid: "80851890"
 
 - 具有较长持续时间的大量查询导致 ATQ LDAP 线程消耗和耗尽。 监视以下性能计数器：
 
-    - **NTDS\\请求延迟**–这取决于请求处理所需的时间。 Active Directory 在120秒后超时请求数（默认值），则大多数运行速度应快得多，并且长时间运行的查询应隐藏在总数字中。 查找此基线中的更改，而不是绝对阈值。
+    - **NTDS \\请求延迟**–这取决于请求处理所需的时间。 Active Directory 在120秒后超时请求数（默认值），则大多数运行速度应快得多，并且长时间运行的查询应隐藏在总数字中。 查找此基线中的更改，而不是绝对阈值。
 
         > [!NOTE]
         > 此处较高的值还可以指示对其他域和 CRL 检查的 "代理" 请求中的延迟。
 
-    - **NTDS\\估计队列延迟**–此情况最好接近0，以获得最佳性能，因为这意味着请求不会花费时间等待维护。
+    - **NTDS \\估计的队列延迟**–理想情况下，这应该接近0，以获得最佳性能，因为这意味着请求不会花费时间等待维护。
 
 可以使用以下一种或多种方法来检测这些方案：
 
@@ -64,7 +64,7 @@ ms.locfileid: "80851890"
 
 -   [Microsoft Server 性能顾问](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor 包
 
--   使用 "（objectClass =\*）" 以外的任何筛选器进行搜索，该筛选器使用祖先索引。
+-   使用除 "（objectClass =）" 之外的任何筛选器 \* 进行搜索，该筛选器使用祖先索引。
 
 ### <a name="other-index-considerations"></a>其他索引注意事项
 
@@ -80,11 +80,11 @@ ms.locfileid: "80851890"
 
 -   需要元组索引以支持词中搜索字符串和最终搜索字符串。 初始搜索字符串不需要元组索引。
 
-    -   初始搜索字符串–（samAccountName = MYPC\*）
+    -   初始搜索字符串–（samAccountName = MYPC \* ）
 
-    -   词中搜索字符串-（samAccountName =\*MYPC\*）
+    -   词中搜索字符串-（samAccountName = \* MYPC \* ）
 
-    -   最终搜索字符串–（samAccountName =\*MYPC $）
+    -   最终搜索字符串–（samAccountName = \* MYPC $）
 
 -   创建索引时，将在生成索引时生成磁盘 i/o。 这是在优先级较低的后台线程上完成的，传入的请求优先于索引生成。 如果已正确执行环境的容量规划，则这应该是透明的。 然而，编写繁重的方案或域控制器存储上的负载未知的环境可能会降低客户端体验，并应在工作时间结束。
 
@@ -98,10 +98,10 @@ ms.locfileid: "80851890"
 
 -   [索引属性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
-- [性能优化 Active Directory 服务器](index.md)
+- [Active Directory 服务器的性能优化](index.md)
 - [硬件注意事项](hardware-considerations.md)
 - [域控制器的正确放置和站点注意事项](site-definition-considerations.md)
-- [ADDS 性能疑难解答](troubleshoot.md) 
+- [ADDS 性能疑难解答](troubleshoot.md)
 - [Active Directory 域服务的容量计划](https://go.microsoft.com/fwlink/?LinkId=324566)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f683b85657b8dd263e93380b71c646ad677950c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b513dd3346d593ec4c823808f540bce68dd472ce
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851720"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471362"
 ---
 # <a name="hyper-v-memory-performance"></a>Hyper-v 内存性能
 
@@ -41,7 +41,7 @@ ms.locfileid: "80851720"
 
 Windows Server 2016 中的 hyper-v 监视根分区的管理操作系统的运行时运行状况以确定可以安全地分配给子分区的内存量，同时仍可确保根分区的高性能和可靠性。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [Hyper-V 术语](terminology.md)
 

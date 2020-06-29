@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
-ms.openlocfilehash: 3bb365c627840d4152b0dc450e24dd83d82103ca
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 07095fbbe16464645564f07434285c76b8cfd4a1
+ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828625"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84740630"
 ---
 # <a name="windows-server-update-services-wsus"></a>Windows 服务器更新服务 (WSUS)
 
->适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server Update Service (WSUS) 启用信息技术管理员部署最新的 Microsoft 产品更新。 你可以使用 WSUS 全面管理通过 Microsoft Update 发布到网络中计算机的更新的分发。 本主题概述了此服务器角色并提供了有关如何部署和维护 WSUS 的详细信息。
 

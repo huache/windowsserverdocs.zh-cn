@@ -1,5 +1,5 @@
 ---
-title: 使用 OAuth 和 ADAL 构建单一页面 web 应用程序。.JS 与 AD FS 2016 或更高版本
+title: 使用 OAuth 和 ADAL.JS 与 AD FS 2016 或更高版本结合使用生成单个页面 web 应用程序
 description: 本演练提供有关使用 ADAL for JavaScript 针对 AngularJS 进行身份 AD FS 验证的说明，以保护基于的单页面应用程序
 author: billmath
 ms.author: billmath
@@ -8,18 +8,18 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f62b6ad288e2733083d535260f0b3f5ffb5b50bf
-ms.sourcegitcommit: f829a48b9b0c7b9ed6e181b37be828230c80fb8a
+ms.openlocfilehash: 09b789937c9ff1dad90c3533616a4ed800204267
+ms.sourcegitcommit: 046123d4f2d24dc00b35ea99adee6f8d322c76bf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82173618"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416290"
 ---
-# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL 构建单一页面 web 应用程序。.JS 与 AD FS 2016 或更高版本
+# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL.JS 与 AD FS 2016 或更高版本结合使用生成单个页面 web 应用程序
 
 本演练提供了使用 ADAL for JavaScript 对 AD FS 进行身份验证的说明，该应用程序用于保护使用 ASP.NET Web API 后端实现的基于 AngularJS 的单页面应用程序。
 
-在此方案中，当用户登录时，JavaScript 前端使用 [JavaScript (ADAL.JS) 的 Active Directory 身份验证库](https://github.com/AzureAD/azure-activedirectory-library-for-js)和隐式授权授予从 Azure AD 获取一个 ID 令牌 (id_token)。 该令牌随后被缓存，当客户端调用使用 OWIN 中间件进行保护的 Web API 后端时，客户端将该令牌作为持有者令牌附加到请求。
+在此方案中，当用户登录时，JavaScript 前端使用 [JavaScript 的 Active Directory 身份验证库 (ADAL.JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js) 和隐式授权从 Azure AD 获取一个 ID 令牌 (id_token)。 该令牌随后被缓存，当客户端调用使用 OWIN 中间件保护的 Web API 后端时，客户端将该令牌作为持有者令牌附加到请求。
 
 >[!IMPORTANT]
 >你可以在此处生成的示例仅供教育之用。 这些说明适用于公开模型所需元素的最简单的最小实现。 该示例可能不包括错误处理和其他相关功能的所有方面。
@@ -66,18 +66,18 @@ ms.locfileid: "82173618"
 ## <a name="about-the-code"></a>关于代码
 包含身份验证逻辑的主要文件如下：
 
-**Node.js** -注入 adal 模块依赖关系，提供 adal 用于驱动协议与 AAD 的交互的应用配置值，并指示在没有以前的身份验证的情况下不应访问哪些路由。
+**App.js**注入 adal 模块依赖关系，提供 adal 用于驱动协议与 AAD 的交互的应用配置值，并指示不应访问的路由，而无需进行以前的身份验证。
 
-**index .html** -包含对 adal 的引用
+**index.html** -包含对 adal.js 的引用
 
-**HomeController**-演示如何利用 ADAL 中的登录（）和注销（）方法。
+**HomeController.js**-演示如何利用 ADAL 中的登录（）和注销（）方法。
 
-**UserDataController** -演示如何从缓存 id_token 提取用户信息。
+**UserDataController.js** -演示如何从缓存的 id_token 中提取用户信息。
 
 **Startup.Auth.cs** -包含用于持有者身份验证 Active Directory 联合身份验证服务的 WebAPI 配置。
 
 ## <a name="registering-the-public-client-in-ad-fs"></a>在 AD FS 中注册公共客户端
-在此示例中，将 WebAPI 配置为侦听https://localhost:44326/。 应用程序组**web 浏览器访问 web 应用程序**可用于配置隐式授予流应用程序。
+在此示例中，将 WebAPI 配置为侦听 https://localhost:44326/ 。 应用程序组**web 浏览器访问 web 应用程序**可用于配置隐式授予流应用程序。
 
 1. 打开 AD FS 管理控制台，然后单击 "**添加应用程序组**"。 在 "**添加应用程序组" 向导**中，输入应用程序的名称，"说明"，然后从 "**客户端-服务器应用程序**" 部分选择 " **web 浏览器访问 web 应用程序**模板"，如下所示
 
@@ -98,7 +98,7 @@ ms.locfileid: "82173618"
 ## <a name="modifying-the-sample"></a>修改示例
 配置 ADAL JS
 
-打开**app.config**文件并将**adalProvider**定义更改为：
+打开**app.js**文件，将**adalProvider.init**定义更改为：
 
     adalProvider.init(
         {
@@ -112,7 +112,7 @@ ms.locfileid: "82173618"
 
 |配置|说明|
 |--------|--------|
-|实例|STS URL，例如https://fs.contoso.com/|
+|instance|STS URL，例如https://fs.contoso.com/|
 |tenant|将其保留为 "adfs"|
 |clientID|这是你在为单一页面应用程序配置公共客户端时指定的客户端 ID|
 
@@ -154,31 +154,31 @@ ms.locfileid: "82173618"
 ## <a name="add-application-configuration-for-ad-fs"></a>为 AD FS 添加应用程序配置
 更改 appsettings，如下所示：
 ```xml
-    <appSettings>
-        <add key="ida:Audience" value="https://localhost:44326/" />
-        <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
-        <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
-    </appSettings>
-    ```
+<appSettings>
+    <add key="ida:Audience" value="https://localhost:44326/" />
+    <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
+    <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
+</appSettings>
+```
 
-## Running the solution
-Clean the solution, rebuild the solution and run it. If you want to see detailed traces, launch Fiddler and enable HTTPS decryption.
+## <a name="running-the-solution"></a>运行解决方案
+清理解决方案，重新生成并运行解决方案。 若要查看详细跟踪，请启动 Fiddler 并启用 HTTPS 解密。
 
-The browser (use Chrome browser) will load the SPA and you will be presented with the following screen:
+浏览器（使用 Chrome 浏览器）将加载 SPA，并将显示以下屏幕：
 
-![Register the client](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
+![注册客户端](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 
-Click on Login.  The ToDo List will trigger the authentication flow and ADAL JS will direct the authentication to AD FS
+单击 "登录"。  ToDo 列表将触发身份验证流，而 ADAL JS 会将身份验证定向到 AD FS
 
-![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![登录](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
-In Fiddler you can see the token being returned as part of the URL in the # fragment.
+在 Fiddler 中，可以看到令牌作为 URL 的一部分返回到 # 片段。
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.PNG)
 
-You will be able to now call the backend API to add ToDo List items for the logged-in user:
+现在，你将可以调用后端 API 来为已登录用户添加 ToDo 列表项：
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## Next Steps
-[AD FS Development](../../ad-fs/AD-FS-Development.md)  
+## <a name="next-steps"></a>后续步骤
+[AD FS 开发](../../ad-fs/AD-FS-Development.md)  

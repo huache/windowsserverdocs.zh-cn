@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 64e433ed379ca322996bcfe2d0ddd513e074b85e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2ee11e40d5fb69141ad5dd5342f8574b22232bbd
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854710"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070477"
 ---
 # <a name="desktop-hosting-service"></a>桌面托管服务
 
@@ -70,7 +70,7 @@ Active Directory 域服务 (AD DS) 提供域和林信息，使租户的用户可
 
 有关详细信息，请参阅以下文章：
 
-* [Windows Server 中的存储](../../storage/storage.md)
+* [Windows Server 中的存储](../../storage/storage.yml)
 * [如何在 Azure 门户中将托管的数据磁盘附加到 Windows VM](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json)
 
 ### <a name="user-profile-disks"></a>用户配置文件磁盘

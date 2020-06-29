@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 83b22c47cb23b02bb9984e03d78fcae93be1ca0a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c77f084e06e71c9aafd658b59ff385af85ef0b9d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851810"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471312"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Hyper-v 存储 i/o 性能
 
@@ -160,7 +160,7 @@ VHD 指向父 VHD 文件。 不写入的任何块写入会导致 VHD 文件中�
 
 ## <a name="block-size-considerations"></a>块大小注意事项
 
-块大小会显著影响性能。 最佳做法是将块大小与使用磁盘的工作负荷的分配模式相匹配。 例如，如果应用程序在 16 MB 的块区中分配，则虚拟硬盘块大小为 16 MB 是最佳的。 只有 VHDX 格式的虚拟硬盘上才能有 &gt;2 MB 的块大小。 对于随机 i/o 工作负荷的分配模式，更大的块大小会显著增加主机上的空间使用率。
+块大小会显著影响性能。 最佳做法是将块大小与使用磁盘的工作负荷的分配模式相匹配。 例如，如果应用程序在 16 MB 的块区中分配，则虚拟硬盘块大小为 16 MB 是最佳的。 &gt;只有 VHDX 格式的虚拟硬盘上才能有 2 MB 的块大小。 对于随机 i/o 工作负荷的分配模式，更大的块大小会显著增加主机上的空间使用率。
 
 ## <a name="sector-size-implications"></a>扇区大小影响
 
@@ -176,7 +176,7 @@ VHD 指向父 VHD 文件。 不写入的任何块写入会导致 VHD 文件中�
 
 -   将 4 KB 缓冲区中的数据修改为包含更新的 512 个字节扇区。
 
--   磁盘会将已更新的 4 KB 缓冲区写入磁盘上的物理扇区。
+-   磁盘将已更新的 4 KB 缓冲区写回到其磁盘上的物理扇区。
 
 此过程称为读修改写入（RMW）。 RMW 进程对总体性能的影响取决于工作负荷。 由于以下原因，RMW 进程会导致虚拟硬盘性能下降：
 
@@ -244,7 +244,7 @@ Windows Server 2012 和更高版本支持大型虚拟机，并且任何大型虚
 
 -   一种更有效的 i/o 完成机制，涉及虚拟处理器间的中断分布，以避免昂贵的 interprocessor 中断。
 
-Windows Server 2012 中引入了几个注册表项，它们位于 HKLM\\System\\CurrentControlSet\\Enum\\VMBUS\\{device id}\\{instance id}\\StorChannel，这允许调整通道数。 它们还将处理 i/o 完成的虚拟处理器与应用程序分配给 i/o 处理器的虚拟 Cpu 对齐。 注册表设置在设备硬件密钥上基于每个适配器进行配置。
+Windows Server 2012 中引入了几个注册表项，它们位于 HKLM \\ 系统 \\ CurrentControlSet \\ Enum \\ VMBUS \\ {device id} \\ {instance id} \\ StorChannel，这允许调整通道数。 它们还将处理 i/o 完成的虚拟处理器与应用程序分配给 i/o 处理器的虚拟 Cpu 对齐。 注册表设置在设备硬件密钥上基于每个适配器进行配置。
 
 -   **ChannelCount （DWORD）** 要使用的通道总数，最大值为16。 它的默认值为上限，即虚拟处理器/16 的数目。
 
@@ -270,7 +270,7 @@ Windows Server 2012 和更高版本中的 hyper-v 支持卸载数据传输（ODX
 
 出于此原因，我们建议在不使用虚拟光纤通道磁盘时，使用附加到 SCSI 控制器的 VHDX 文件。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [Hyper-V 术语](terminology.md)
 

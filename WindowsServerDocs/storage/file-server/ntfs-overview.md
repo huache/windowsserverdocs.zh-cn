@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b98877d0a94ff8033b65bf74d0118e2a5f1ea092
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 450e5a4e800a8631adacb9826db63e747ecce4e1
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71402075"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070528"
 ---
 # <a name="ntfs-overview"></a>NTFS 概述
 
@@ -100,4 +100,4 @@ NTFS 支持长文件名和扩展长度路径，并且具有以下最大值：
 - [NTFS 运行状况和 Chkdsk](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))
 - [具有自修复功能的 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))（在 Windows Server 2008 中引入）
 - [事务性 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v%3dws.10))（在 Windows Server 2008 中引入）
-- [Windows Server 中的存储](../storage.md)
+- [Windows Server 中的存储](../storage.yml)

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b96574dcfc2a4417aa36780d7bd87c2556f61f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 658875f132712d34a2c59967ebd316e8c5edca7c
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75950264"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070553"
 ---
 # <a name="smb-security-enhancements"></a>SMB 安全增强功能
 
@@ -122,5 +122,5 @@ Set-SmbServerConfiguration –EnableSMB1Protocol $false
 下面是一些关于 SMB 和 Windows Server 2012 中相关技术的附加资源。
 
 - [服务器消息块](file-server-smb-overview.md)
-- [Windows Server 中的存储](../storage.md)
+- [Windows Server 中的存储](../storage.yml)
 - [应用程序数据横向扩展文件服务器](../../failover-clustering/sofs-overview.md)

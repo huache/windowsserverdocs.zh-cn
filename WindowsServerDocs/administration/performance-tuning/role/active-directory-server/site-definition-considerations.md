@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: aac7b8f37de2132778bd681d2f2e29ad0ad0810d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19574c859e038374a4cf3fe1e452adae0891e067
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851870"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471482"
 ---
-# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>正确放置域控制器和站点注意事项
+# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>域控制器的正确放置和站点注意事项
 
 正确的站点定义对性能至关重要。 失去站点的客户端可能会遇到身份验证和查询性能不佳的情况。 此外，通过在客户端上引入 IPv6，请求可以来自 IPv4 或 IPv6 地址，Active Directory 需要为 IPv6 正确定义站点。 如果配置了这两个，则操作系统首选 IPv6。
 
@@ -34,7 +34,7 @@ ms.locfileid: "80851870"
 
 ## <a name="optimization-considerations-for-trusts"></a>信任的优化注意事项
 
-在林内的方案中，将根据以下域层次结构来处理信任：总计子域-&gt; 子域-&gt; 林根域-&gt; 子域-&gt; 总计-子域。 这意味着，林根和每个父项的安全通道可能会因为对信任层次结构中的 Dc 传输的身份验证请求进行聚合而过载。 当身份验证还必须传输高度潜在的链接来影响上述流时，这也可能会导致大型地理分散的 Active Directory 延迟。 在林间和下级信任方案中可能会发生重载。 以下建议适用于所有方案：
+在林内的方案中，将根据以下域层次结构处理信任：总计子域-子域- &gt; &gt; 林根域-子域-子域 &gt; &gt; 。 这意味着，林根和每个父项的安全通道可能会因为对信任层次结构中的 Dc 传输的身份验证请求进行聚合而过载。 当身份验证还必须传输高度潜在的链接来影响上述流时，这也可能会导致大型地理分散的 Active Directory 延迟。 在林间和下级信任方案中可能会发生重载。 以下建议适用于所有方案：
 
 -   正确调整 MaxConcurrentAPI 以支持安全通道上的负载。 有关详细信息，请参阅[如何使用 MaxConcurrentApi 设置对 NTLM 身份验证执行性能优化](https://support.microsoft.com/kb/2688798/EN-US)。
 
@@ -67,18 +67,18 @@ ms.locfileid: "80851870"
         > [!NOTE]
         > 对于客户端可以使用的域控制器数量，实际限制为大约50。 它们应该是最适合站点的和最大容量的域控制器。
 
-    
+
     -  考虑将受信任域和信任域中的域控制器放置在同一个物理位置。
 
 对于所有信任方案，凭据将根据身份验证请求中指定的域进行路由。 这也适用于 LookupAccountName 和 LsaLookupNames 的查询（以及其他参数，它们只是最常用的 Api）。 如果为这些 Api 的域参数传递了 NULL 值，则域控制器将尝试查找每个可用受信任域中指定的帐户名称。
 
 -   如果指定了 NULL 域，则禁用检查所有可用的信任。 [如何使用 LsaLookupRestrictIsolatedNameLevel 注册表项限制外部受信任域中的隔离名称的查找](https://support.microsoft.com/kb/818024)
 
--   禁用跨所有可用信任传递具有 NULL 域的身份验证请求。 [如果对 Active Directory 域控制器具有许多外部信任，则 Lsass.exe 进程可能会停止响应](https://support.microsoft.com/kb/923241/EN-US)
+-   禁用跨所有可用信任传递具有 NULL 域的身份验证请求。 [如果对 Active Directory 域控制器具有许多外部信任，Lsass.exe 进程可能会停止响应](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>另请参阅
-- [性能优化 Active Directory 服务器](index.md)
+## <a name="additional-references"></a>其他参考
+- [Active Directory 服务器的性能优化](index.md)
 - [硬件注意事项](hardware-considerations.md)
 - [LDAP 注意事项](ldap-considerations.md)
-- [ADDS 性能疑难解答](troubleshoot.md) 
+- [ADDS 性能疑难解答](troubleshoot.md)
 - [Active Directory 域服务的容量计划](https://go.microsoft.com/fwlink/?LinkId=324566)

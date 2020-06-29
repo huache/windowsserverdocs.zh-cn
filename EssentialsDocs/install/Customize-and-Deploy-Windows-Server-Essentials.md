@@ -8,23 +8,23 @@ ms.assetid: d1c70cf2-0db8-4b75-af46-73620b9e81c8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b336c08fd19e2a16adaacf8ea2d79a8e62040716
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 25528d84e6fa4b1c97b181d71d14bc313a58c2cf
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311948"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471002"
 ---
 # <a name="customize-and-deploy-windows-server-essentials"></a>自定义和部署 Windows Server Essentials
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
-  
- 若要自定义和部署 Windows Server Essentials，请使用 [Windows 评估和部署工具包 (Windows ADK)](https://www.microsoft.com/download/details.aspx?id=39982) 和 [在 Windows Server 2012 R2 中自定义和部署 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)中的信息。  
-  
-## <a name="see-also"></a>另请参阅  
-  
--   [Windows 部署工具技术参考](https://technet.microsoft.com/library/hh825039.aspx)  
-  
--   [Windows ADK 的 windows 部署](https://technet.microsoft.com/library/hh824947.aspx)  
-  
+
+ 若要自定义和部署 Windows Server Essentials，请使用 [Windows 评估和部署工具包 (Windows ADK)](https://www.microsoft.com/download/details.aspx?id=39982) 和 [在 Windows Server 2012 R2 中自定义和部署 Windows Server Essentials](https://technet.microsoft.com/library/dn293241.aspx)中的信息。
+
+## <a name="additional-references"></a>其他参考
+
+-   [Windows 部署工具技术参考](https://technet.microsoft.com/library/hh825039.aspx)
+
+-   [Windows ADK 的 Windows 部署](https://technet.microsoft.com/library/hh824947.aspx)
+
 -   [Windows Server Essentials-评估和部署工具包](Assessment-and-Deployment-Kit-for-Windows-Server-Essentials.md)

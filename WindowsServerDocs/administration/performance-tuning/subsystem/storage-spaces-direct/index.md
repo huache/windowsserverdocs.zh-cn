@@ -8,12 +8,12 @@ ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
 ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: a24bbdb83ec1b08f56989368a4831549c594f6c0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 42d05529aed6f1c5f9c5247a143e256fd52d056a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851600"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471192"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>针对存储空间直通的性能优化
 
@@ -31,12 +31,12 @@ ms.locfileid: "80851600"
 
 请注意，基于 SSD 或 NVMe 设备的缓存默认为只进行写入缓存。 这里的考虑是，由于容量设备为快速设备，将读取内容移到缓存设备的价值不大。 有时候这种考虑也许是多余的，但仍需小心谨慎，因为启用读取缓存可能会不必要地导致缓存设备的耐用性降低，而性能却没有任何提高。 例如：
 
-* **NVme+SSD** 启用读取缓存可以让读取 IO 充分利用 PCIe 连接性和/或 NVMe 设备的更高 IOPS 性能（相对于聚合 SSD 来说）。 <br>考虑到 NVMe 设备相对于连接到 SSD 的 HBA 的带宽能力，这可能  适用于以带宽为导向的方案。 这可能不  适用于以 IOPS 为导向的方案，此类方案在实现性能提高之前就可能会因为 IOPS 的 CPU 成本而导致系统受到限制。
+* **NVme+SSD** 启用读取缓存可以让读取 IO 充分利用 PCIe 连接性和/或 NVMe 设备的更高 IOPS 性能（相对于聚合 SSD 来说）。 <br>考虑到 NVMe 设备相对于连接到 SSD 的 HBA 的带宽能力，这可能适用于以带宽为导向的方案。 这可能不适用于以 IOPS 为导向的方案，此类方案在实现性能提高之前就可能会因为 IOPS 的 CPU 成本而导致系统受到限制。
 * **NVMe+NVMe** 同样，如果缓存 NVMe 的读取能力强于组合的容量 NVMe，也许可以启用读取缓存。 <br>正常情况下，适合在这些配置中启用读取缓存的例子并不常见。
 
 若要查看和更改缓存配置，请使用 [Get-ClusterStorageSpacesDirect](https://technet.microsoft.com/library/mt634616.aspx) 和 [Set-ClusterStorageSpacesDirect](https://technet.microsoft.com/library/mt763265.aspx) cmdlet。 `CacheModeHDD` 和 `CacheModeSSD` 属性定义缓存在所指示类型的容量介质上的运行方式。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [了解存储空间直通](../../../../storage/storage-spaces/understand-storage-spaces-direct.md)
 - [规划存储空间直通](../../../../storage/storage-spaces/plan-storage-spaces-direct.md)
