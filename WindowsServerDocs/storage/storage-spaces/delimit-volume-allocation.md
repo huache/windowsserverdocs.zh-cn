@@ -6,20 +6,20 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: 26454881279e1d33392a827f794788370def2cab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ce3b32bdb0dfb51237f934f23207167a215a0024
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858970"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475604"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>分隔存储空间直通中的卷分配
-> 适用于： Windows Server 2019
+> 适用于：Windows Server 2019
 
 Windows Server 2019 引入了一个选项，用于在存储空间直通中手动分隔卷的分配。 这样做可能会在某些情况下显著增加容错能力，但会带来一些额外的管理注意事项和复杂性。 本主题说明了它的工作原理并提供了 PowerShell 中的示例。
 
    > [!IMPORTANT]
-   > 此功能是 Windows Server 2019 中的新增功能。 它在 Windows Server 2016 中不可用。 
+   > 此功能是 Windows Server 2019 中的新增功能。 它在 Windows Server 2016 中不可用。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -68,13 +68,13 @@ Windows Server 2019 引入了一个选项，用于在存储空间直通中手动
 
 1. 管理员负责界定每个卷的分配，以平衡服务器之间的存储使用率，并使流量的严重程度达到平衡，如 "[最佳做法](#best-practices)" 一节中所述。
 
-2. 通过分隔分配，保留**每个服务器一个容量驱动器的等效值（无最大值）** 。 这比用于常规分配的[已发布建议](plan-volumes.md#choosing-the-size-of-volumes)更多，其中以至于耗光了4个容量驱动器总计。
+2. 通过分隔分配，保留**每个服务器一个容量驱动器的等效值（无最大值）**。 这比用于常规分配的[已发布建议](plan-volumes.md#choosing-the-size-of-volumes)更多，其中以至于耗光了4个容量驱动器总计。
 
 3. 如果服务器发生故障，需要更换，如[删除服务器及其驱动器](remove-servers.md#remove-a-server-and-its-drives)中所述，管理员负责通过添加新的服务器并删除失败的卷来更新受影响的卷的 delimitation-以下示例。
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的用法
+## <a name="usage-in-powershell"></a>PowerShell 中的用法
 
-你可以使用 `New-Volume` cmdlet 在存储空间直通中创建卷。
+可以使用 `New-Volume` cmdlet 在存储空间直通中创建卷。
 
 例如，若要创建常规的三向镜像卷：
 
@@ -86,7 +86,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 创建三向镜像卷并界定其分配：
 
-1. 首先，将群集中的服务器分配给变量 `$Servers`：
+1. 首先，将群集中的服务器分配给变量 `$Servers` ：
 
     ```PowerShell
     $Servers = Get-StorageFaultDomain -Type StorageScaleUnit | Sort FriendlyName
@@ -95,7 +95,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
    > [!TIP]
    > 在存储空间直通中，术语 "存储缩放单位" 指连接到一台服务器的所有原始存储，包括直接连接驱动器和带有驱动器的直接连接的外部机箱。 在此上下文中，它与 "服务器" 相同。
 
-2. 使用新的 `-StorageFaultDomainsToUse` 参数指定要使用的服务器，并通过对 `$Servers`进行索引来指定。 例如，要将分配界定为第一个、第二个、第三个和第四个服务器（索引0、1、2和3）：
+2. 使用新参数指定要使用的服务器 `-StorageFaultDomainsToUse` ，并通过将索引到中 `$Servers` 。 例如，要将分配界定为第一个、第二个、第三个和第四个服务器（索引0、1、2和3）：
 
     ```PowerShell
     New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2,3]
@@ -103,14 +103,14 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 ### <a name="see-a-delimited-allocation"></a>查看分隔分配
 
-若要查看如何分配*MyVolume* ，请使用[附录](#appendix)中的 `Get-VirtualDiskFootprintBySSU.ps1` 脚本：
+若要查看如何分配*MyVolume* ，请使用 `Get-VirtualDiskFootprintBySSU.ps1` [附录](#appendix)中的脚本：
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0      
+MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
 ```
 
 请注意，只有 Server1、Server2、Server3 和服务器4包含*MyVolume*的碎片。
@@ -139,16 +139,16 @@ MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
     Get-StoragePool S2D* | Optimize-StoragePool
     ```
 
-可以通过 `Get-StorageJob`来监视重新平衡的进度。
+你可以通过监视重新平衡的进度 `Get-StorageJob` 。
 
-完成后，验证*MyVolume*是否已通过再次运行 `Get-VirtualDiskFootprintBySSU.ps1` 进行了移动。
+完成后，验证*MyVolume*是否已通过再次运行进行了移动 `Get-VirtualDiskFootprintBySSU.ps1` 。
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0      
+MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 ```
 
 请注意，Server1 不会再包含*MyVolume*的碎片–而是 Server5。
@@ -167,11 +167,11 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 ### <a name="stagger-delimited-allocation-volumes"></a>交错分隔的分配卷
 
-为了最大限度地提高容错能力，请确保每个卷的分配都是唯一的，这意味着它不会与另一个卷共享其*所有*服务器（有一些重叠问题）。 
+为了最大限度地提高容错能力，请确保每个卷的分配都是唯一的，这意味着它不会与另一个卷共享其*所有*服务器（有一些重叠问题）。
 
 例如，在八节点系统上：卷1：服务器1、2、3、4卷2：服务器5、6、7、8卷3：服务器3、4、5、6卷4：服务器1、2、7、8
 
-## <a name="analysis"></a>Analysis
+## <a name="analysis"></a>分析
 
 此部分派生了一个卷处于联机状态且可访问（或等效于处于联机和可访问状态的总体存储的预期小数部分）的数学概率，作为失败次数和群集大小的函数。
 
@@ -194,13 +194,13 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>是否可以分隔某些卷，但不能分隔其他卷？
 
-可以。 无论是否分隔分配，都可以选择每个卷。
+是的。 无论是否分隔分配，都可以选择每个卷。
 
 ### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>分隔分配是否会改变驱动器更换的工作方式？
 
 不会，它与常规分配相同。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
 - [存储空间直通中的容错能力](storage-spaces-fault-tolerance.md)
@@ -209,7 +209,7 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 此脚本可帮助你查看卷的分配方式。
 
-如以上所述，请将其复制/粘贴并另存为 `Get-VirtualDiskFootprintBySSU.ps1`。
+如以上所述，请复制/粘贴并另存为 `Get-VirtualDiskFootprintBySSU.ps1` 。
 
 ```PowerShell
 Function ConvertTo-PrettyCapacity {

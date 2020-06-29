@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b718ceed7a378649c51e1ca64bffaaddf051c292
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc0c155afe62a22c9a39b2c1dd89730246709221
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394058"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475494"
 ---
 # <a name="schedule-a-set-of-reports"></a>计划一组报告
 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 若要定期生成一组报告，可以计划一项*报告任务*。 此项报告任务会指定生成的报告类型和所用的参数；进行报告的卷和文件夹；生成报告的频率及保存报告的文件格式。
 
@@ -47,7 +47,7 @@ ms.locfileid: "71394058"
    -   单击报告标签，然后单击**编辑参数**。
    -   在**报告参数**对话框中，根据需要编辑参数，然后单击**确定**。
 
-   -   若要查看所有已选报告的参数列表，请单击**查看所选报告**。 然后单击 **“关闭”** 。
+   -   若要查看所有已选报告的参数列表，请单击**查看所选报告**。 然后单击 **“关闭”**。
 
 5. 若要指定报告保存的格式，请执行以下操作：
 
@@ -55,8 +55,8 @@ ms.locfileid: "71394058"
 
 6. 若要通过电子邮件将报告副本发送给管理员，请执行以下操作：
 
-   - 选中**发送**选项卡上的**将报告发送至下列管理员**复选框，然后输入需向其发送报告的管理帐户名称。 
-   - 请使用 <em>account@domain</em> 格式，并使用分号隔开多个帐户。
+   - 选中**发送**选项卡上的**将报告发送至下列管理员**复选框，然后输入需向其发送报告的管理帐户名称。
+   - 使用格式 <em>account@domain</em> ，并使用分号分隔多个帐户。
 
 7. 若要计划报告，请执行以下操作：
 
@@ -68,7 +68,7 @@ ms.locfileid: "71394058"
        这些选项将根据所选的间隔时间而发生更改。 例如，可以针对每周报告指定两次报告之间间隔的周数，以及在一周中的哪几天生成报告。
    -   若要根据需要指定生成报告的时间，请在**开始时间**框中键入值或从中选择已提供的值。
    -   若要访问其他计划选项（包括任务的开始日期和结束日期），请单击**高级**。
-   -   单击**确定**以保存计划。
+   -   若要保存计划，请单击 **“确定”**。
    -  若要为任务创建其他计划（或修改现有计划），请单击**计划**选项卡上的**编辑计划**。
 
 8. 单击**确定**以保存报告任务。
@@ -77,7 +77,7 @@ ms.locfileid: "71394058"
 
 此外，可查看报告的当前状态（无论报告是否正在运行）、上次运行时间和运行结果，及下次计划的运行时间。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [存储报告管理](storage-reports-management.md)
 -   [设置文件服务器资源管理器选项](setting-file-server-resource-manager-options.md)

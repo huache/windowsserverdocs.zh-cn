@@ -10,12 +10,12 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: 存储空间直通中的复原选项（包括镜像和奇偶校验）的讨论。
 ms.localizationpriority: medium
-ms.openlocfilehash: b64592bf3cf5659410dcbbeb4c190d2d6a85485a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 540398e78b35d7cd61464e012d0f3ccfa85d7152
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859010"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475484"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>存储空间直通中的容错和存储效率
 
@@ -33,13 +33,13 @@ ms.locfileid: "80859010"
 
 ## <a name="mirroring"></a>镜像
 
-镜像保留所有数据的多个副本，提供容错。 这最像 RAID-1。 如何划分和放置数据很复杂（请参阅[此博客](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/) 了解详细信息），但绝对可以说，任何使用镜像存储的数据都整体编写多次。 每个副本均写入不同的物理硬件（不同服务器中的不同驱动器）中，而这些硬件都认为将独立发生故障。
+镜像功能通过保存所有数据的多个副本来提供容错。 这最像 RAID-1。 如何对数据进行条带化和放置是一项非常重要的操作（请参阅[此博客](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)了解详细信息），但最好是说，使用镜像存储的任何数据都将被完整地多次写入。 每个副本将写入不同的物理硬件（位于不同服务器中的不同驱动器），假设每个硬盘各自都有可能发生故障。
 
 在 Windows Server 2016 中，存储空间提供两类镜像：“双向”和“三向”。
 
 ### <a name="two-way-mirror"></a>“双向镜像”
 
-双向镜像为所有数据编写两个副本。 存储效率为 50%，即若要编写 1 TB 的数据，需要至少 2 TB 的物理存储容量。 同样地，需要至少两个[硬件“容错域”](../../failover-clustering/fault-domains.md)，对存储空间直通而言，这意味着两台服务器。
+双向镜像为所有数据编写两个副本。 存储效率为 50%，即若要写入 1 TB 的数据，需要至少 2 TB 的物理存储容量。 同样地，需要至少两个[硬件“容错域”](../../failover-clustering/fault-domains.md)，对存储空间直通而言，这意味着两台服务器。
 
 ![双向镜像](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
 
@@ -48,15 +48,15 @@ ms.locfileid: "80859010"
 
 ### <a name="three-way-mirror"></a>“三向镜像”
 
-三向镜像为所有数据编写三个副本。 存储效率为 33.3%，即若要编写 1 TB 的数据，需要至少 3 TB 的物理存储容量。 同样地，需要至少三个硬件容错域，对存储空间直通而言，这意味着三台服务器。
+三向镜像为所有数据编写三个副本。 存储效率为 33.3%，即若要写入 1 TB 的数据，需要至少 3 TB 的物理存储容量。 同样地，需要至少三个硬件容错域，对存储空间直通而言，这意味着三台服务器。
 
-三向镜像可以安全容忍[一次至少出现两个硬件（驱动器或服务器）问题](#examples)。 例如，如果你在另一个驱动器或服务器突然发生故障时重新启动一个服务器，则所有数据都将保持安全且可连续访问。
+三向镜像一次可以安全地容忍至少[两个硬件问题（驱动器或服务器）](#examples)。 例如，如果你正在重新启动一台服务器，此时另一个驱动器或服务器突然发生故障，在这种情况下，所有数据将保持安全，可供持续访问。
 
 ![三向镜像](media/Storage-Spaces-Fault-Tolerance/three-way-mirror-180px.png)
 
-## <a name="parity"></a>奇偶校验
+## <a name="parity"></a>Parity
 
-奇偶校验编码通常称为“擦除编码”，使用按位运算提供容错，这会变得[异常复杂](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 奇偶校验的工作方式相比于镜像而言不太明显，并且有很多在线资源（例如第三方的[擦除编码的傻瓜指南](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)）可帮助理解。 这足以说明，它在不影响容错的前提下提供更好的存储效率。
+奇偶校验编码（通常称为 "擦除编码"）通过按位算法提供容错，这可能会产生极[复杂的复杂性](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 奇偶校验的工作方式相比于镜像而言不太明显，并且有很多在线资源（例如第三方的[擦除编码的傻瓜指南](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)）可帮助理解。 这足以说明，它在不影响容错的前提下提供更好的存储效率。
 
 在 Windows Server 2016 中，存储空间提供两类奇偶校验：“单”奇偶校验和“双”奇偶校验，后者在更大范围内使用名为“本地重建代码”的高级技术。
 
@@ -71,7 +71,7 @@ ms.locfileid: "80859010"
 
 ### <a name="dual-parity"></a>双重奇偶校验
 
-双奇偶校验实现 Reed-Solomon 错误更正代码，保留两个按位奇偶校验符号，因此提供与三向镜像提供的相同容错（即最多同时两个失败），但存储效率更高。 这最像 RAID-6。 若要使用双奇偶校验，需要至少四个硬件容错域，对存储空间直通而言，这意味着四台服务器。 在该范围内，存储效率为 50%，即若要编写 2 TB 的数据，需要至少 4 TB 的物理存储容量。
+双奇偶校验实现 Reed-Solomon 错误更正代码，保留两个按位奇偶校验符号，因此提供与三向镜像提供的相同容错（即最多同时两个失败），但存储效率更高。 这最像 RAID-6。 若要使用双奇偶校验，需要至少四个硬件容错域，对存储空间直通而言，这意味着四台服务器。 在该范围内，存储效率为 50%，即若要写入 2 TB 的数据，需要至少 4 TB 的物理存储容量。
 
 ![双奇偶校验](media/Storage-Spaces-Fault-Tolerance/dual-parity-180px.png)
 
@@ -89,7 +89,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 ![本地重建代码](media/Storage-Spaces-Fault-Tolerance/local-reconstruction-codes-180px.png)
 
-我们推荐这篇由我们的 [Claus Joergensen](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/) 编写的深入但非常易读的操作实例[本地重建代码如何处理各种失败方案，并且它们为什么具有吸引力](https://twitter.com/clausjor)。
+我们建议这一深入[了解本地重建代码如何处理各种故障方案，以及](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)我们的[Claus Joergensen](https://twitter.com/clausjor)，这是我们的 eminently。
 
 ## <a name="mirror-accelerated-parity"></a>镜像加速奇偶校验
 
@@ -102,7 +102,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 > [!IMPORTANT]
 > 我们建议对大多数性能敏感的工作负载使用镜像。 若要了解有关根据工作负荷平衡性能和容量的详细信息，请参阅[计划卷](plan-volumes.md#choosing-the-resiliency-type)。
 
-## <a name="summary"></a><a name="summary"></a>小结
+## <a name="summary"></a><a name="summary"></a>摘要
 
 本部分总结了存储空间直通可用的复原类型、使用每种类型的最低范围要求、每种类型可容忍的失败数以及相应的存储效率。
 
@@ -125,7 +125,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 |    Mixed               |    4                                |
 
    >[!TIP]
-   > 除非使用[机箱或机架容错](../../failover-clustering/fault-domains.md)，否则容错域数量指的是服务器数量。 每台服务器中的驱动器数量不会影响可使用的复原类型，前提是达到存储空间直通的最低要求。 
+   > 除非使用[机箱或机架容错](../../failover-clustering/fault-domains.md)，否则容错域数量指的是服务器数量。 每台服务器中的驱动器数量不会影响可使用的复原类型，前提是达到存储空间直通的最低要求。
 
 ### <a name="dual-parity-efficiency-for-hybrid-deployments"></a>混合部署的双奇偶校验效率
 
@@ -205,18 +205,18 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 ![容错示例 7 和 8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>使用情况
 
 查看[在存储空间直通中创建卷](create-volumes.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 以下所有链接均是本主题正文某个位置的内联。
 
 - [Windows Server 2016 中的存储空间直通](storage-spaces-direct-overview.md)
 - [Windows Server 2016 中的容错域感知](../../failover-clustering/fault-domains.md)
-- [Azure 中由 Microsoft Research 进行的擦除编码](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
-- [本地重建代码和加速奇偶校验卷](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
+- [Microsoft Research 开发的 Azure 擦除编码](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
+- [本地重建代码和加快奇偶校验卷](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
 - [存储管理 API 中的卷](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
-- [Microsoft Ignite 2016 的存储效率演示](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
-- [存储空间直通的容量计算器预览版](https://aka.ms/s2dcalc)
+- [Microsoft Ignite 2016 上的存储效率展示](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
+- [存储空间直通的容量计算器预览](https://aka.ms/s2dcalc)

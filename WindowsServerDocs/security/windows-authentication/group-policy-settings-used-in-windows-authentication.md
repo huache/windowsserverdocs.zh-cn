@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7acd7439ec2e0382f1e2c725d66363e6b3a50b40
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5268a5d95dd99bade89015863ea3eadf1b7913a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857570"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475504"
 ---
 # <a name="group-policy-settings-used-in-windows-authentication"></a>Windows 身份验证中使用的组策略设置
 
@@ -39,7 +39,7 @@ ms.locfileid: "80857570"
 
 下表列出了与身份验证相关的策略组，并提供指向可帮助你配置这些策略的文档的链接。
 
-|策略组|Location|说明|
+|策略组|位置|描述|
 |--------|------|--------|
 |**密码策略**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 Settings\Account 策略|密码策略影响密码的特征和行为。 密码策略用于域帐户或本地用户帐户。 它们确定密码设置，如强制和生存期。<p>有关特定设置的信息，请参阅[密码策略](https://technet.microsoft.com/itpro/windows/keep-secure/password-policy)。|
 |**帐户锁定策略**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 Settings\Account 策略|帐户锁定策略选项在失败的登录尝试次数后禁用帐户。 使用这些选项可帮助检测和阻止破解密码的尝试。<p>有关帐户锁定策略选项的信息，请参阅[帐户锁定策略](https://technet.microsoft.com/itpro/windows/keep-secure/account-lockout-policy)。|
@@ -49,10 +49,10 @@ ms.locfileid: "80857570"
 |**安全选项**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 \ 安全选项|与身份验证相关的策略包括：<p>-设备<br />-域控制器<br />-域成员<br />-交互式登录<br />-Microsoft 网络服务器<br />-网络访问<br />-网络安全<br />-恢复控制台<br />-Shutdown<p>|
 |**凭据委派**|计算机配置 \ 管理模板 Templates\System\Credentials 委派|凭据的委托是一种机制，允许在其他系统上使用本地凭据，最值得注意的是域中的成员服务器和域控制器。 这些设置适用于使用凭据安全支持提供程序（凭据 SSP）的应用程序。 远程桌面连接是一个示例。|
 |**KDC**|计算机配置 \ 管理 Templates\System\KDC|这些策略设置会影响密钥发行中心（KDC）（即域控制器上的服务）处理 Kerberos 身份验证请求的方式。|
-|**V5**|计算机配置 \ 管理 Templates\System\Kerberos|这些策略设置会影响如何配置 Kerberos 来处理对声明、Kerberos 保护、复合身份验证、标识代理服务器和其他配置的支持。|
+|**Kerberos**|计算机配置 \ 管理 Templates\System\Kerberos|这些策略设置会影响如何配置 Kerberos 来处理对声明、Kerberos 保护、复合身份验证、标识代理服务器和其他配置的支持。|
 |**登录**|计算机配置\管理模板\系统\登录|这些策略设置控制系统如何提供用户的登录体验。|
 |**Net Logon**|计算机配置 \ 管理 Templates\System\Net 登录|这些策略设置控制系统如何处理网络登录请求，包括域控制器定位器的行为方式。<p>有关域控制器定位程序如何适合复制过程的详细信息，请参阅[了解站点间的复制](https://technet.microsoft.com/library/cc771251.aspx)。|
-|**指标**|计算机配置 \ 管理模板 \Windows 组件 Components\Biometrics|这些策略设置通常允许或拒绝使用生物识别作为身份验证方法。<p>有关生物识别的 Windows 实现的信息，请参阅 Windows Biometric Framework 概述。|
+|**生物识别**|计算机配置 \ 管理模板 \Windows 组件 Components\Biometrics|这些策略设置通常允许或拒绝使用生物识别作为身份验证方法。<p>有关生物识别的 Windows 实现的信息，请参阅 Windows Biometric Framework 概述。|
 |**凭据用户界面**|计算机配置 \ 管理模板 \Windows 组件 Components\Credential 用户界面|这些策略设置控制如何在入口点管理凭据。|
 |**密码同步**|计算机配置 \ 管理模板 \Windows 组件 Components\Password 同步|这些策略设置确定系统如何管理基于 Windows 和 UNIX 的操作系统之间的密码同步。<p>有关详细信息，请参阅[密码同步](https://technet.microsoft.com/library/cc732609.aspx)。|
 |**智能卡**|计算机配置 \ 管理模板 \Windows 组件 Components\Smart 卡|这些策略设置控制系统管理智能卡登录的方式。<p>|
@@ -60,7 +60,7 @@ ms.locfileid: "80857570"
 |**Ctrl + Alt + Del 选项**|计算机配置 \ 管理模板 \Windows 组件 Components\Ctrl + Alt + Del 选项|这些策略设置将影响登录 UI （安全桌面）上功能的外观和可访问性，如任务管理器和计算机的键盘锁定。|
 |**登录**|计算机配置 \ 管理模板 \Windows 组件 Components\Logon|这些策略设置确定用户是否可以在用户登录时运行哪些进程。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 [Windows 身份验证技术概述](windows-authentication-technical-overview.md)
 
 

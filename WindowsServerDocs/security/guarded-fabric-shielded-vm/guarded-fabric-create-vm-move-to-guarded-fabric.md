@@ -9,12 +9,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: a5ca3ab29b83d0cb6cb2d55507471790f65800a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c6753ae5d767f0c71b86fc47c1d8bf9971a2a5cc
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856720"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475524"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>租户的受防护的 Vm-在本地创建新的受防护的 VM 并将其移动到受保护的结构
 
@@ -34,7 +34,7 @@ ms.locfileid: "80856720"
 
     - 功能
 
-        - \\受防护的 VM 工具远程服务器管理工具\\功能管理工具
+        - 远程服务器管理工具 \\ 功能管理工具 \\ 受防护的 VM 工具
 
     > [!NOTE]
     > 此处使用的主机*不*应是受保护的构造中的主机。 这是一个独立的主机，其中的 Vm 在被移动到受保护的构造之前已准备就绪。
@@ -51,9 +51,9 @@ ms.locfileid: "80856720"
 
 4.  若要导入在后面的过程中将需要的监护人密钥，请运行以下命令。
 
-    对于 &lt;路径&gt;&lt;Filename&gt;，请替换在上一步中保存的 XML 文件的路径和文件名，例如： **C：\\temp\\GuardianKey**
+    对于 &lt; &gt; &lt; "路径文件名" &gt; ，请替换在上一步中保存的 XML 文件的路径和文件名，例如： **C： \\ temp \\GuardianKey.xml**
 
-    对于 "&lt;GuardianName"&gt;，指定托管提供程序或企业数据中心的名称，例如 " **HostingProvider1**"。 记录下一个过程的名称。
+    对于 &lt; GuardianName &gt; ，请指定托管提供程序或企业数据中心的名称，例如， **HostingProvider1**。 记录下一个过程的名称。
 
     仅当已设置自签名证书的 HGS 服务器时，才包含 **-AllowUntrustedRoot** 。 （这些证书是 HGS 中密钥保护服务的一部分。）
 
@@ -73,11 +73,11 @@ ms.locfileid: "80856720"
 
 1. 在租户 Hyper-v 主机上，若要创建新的第2代虚拟机，请运行以下命令。
 
-   对于 "&lt;ShieldedVMname"&gt;，为 VM 指定一个名称，例如： **ShieldVM1**
-    
-   对于 "&lt;VHDPath"&gt;，请指定存储 VM VHDX 的位置，例如： **C：\\vm\\ShieldVM1\\ShieldVM1**
-    
-   对于 &lt;nnGB "&gt;，为 VHDX 指定大小，例如： **60GB**
+   对于 &lt; ShieldedVMname &gt; ，请为 VM 指定一个名称，例如： **ShieldVM1**
+
+   对于 &lt; VHDPath &gt; ，指定存储 VM VHDX 的位置，例如： **C： \\ vm \\ ShieldVM1 \\ ShieldVM1**
+
+   对于 &lt; nnGB &gt; ，请指定 VHDX 的大小，例如： **60GB**
 
        New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
 
@@ -87,7 +87,7 @@ ms.locfileid: "80856720"
 
 4. 若要创建新的密钥保护程序（本部分开头部分所述），请运行以下命令。
 
-   对于 &lt;GuardianName&gt;，请使用在前面的过程中指定的名称，例如： **HostingProvider1**
+   对于 &lt; GuardianName &gt; ，请使用在前面的过程中指定的名称，例如： **HostingProvider1**
 
    包含 **-AllowUntrustedRoot**以允许自签名证书。
 
@@ -97,9 +97,9 @@ ms.locfileid: "80856720"
 
        $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
 
-   如果希望多个数据中心能够运行受防护的 VM （例如，灾难恢复站点和公有云提供商），可以向 **-监护人**参数提供监护人列表。 有关详细信息，请参阅 [HgsKeyProtector] （ https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps。
+   如果希望多个数据中心能够运行受防护的 VM （例如，灾难恢复站点和公有云提供商），可以向 **-监护人**参数提供监护人列表。 有关详细信息，请参阅 [HgsKeyProtector] （ https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps 。
 
-5. 若要使用密钥保护程序启用 vTPM，请运行以下命令。 对于 &lt;ShieldedVMname&gt;，请使用前面步骤中使用的相同 VM 名称。
+5. 若要使用密钥保护程序启用 vTPM，请运行以下命令。 对于 &lt; ShieldedVMname &gt; ，请使用在前面的步骤中使用的相同 VM 名称。
 
        $VMName="<ShieldedVMname>"
 
@@ -130,7 +130,7 @@ ms.locfileid: "80856720"
 
     使用 Hyper-v 管理器或 Windows PowerShell 导入受防护的 VM。 若要启动 VM，你必须从 VM 所有者导入 VM 配置文件。 这是因为密钥保护程序和 VM 的虚拟 TPM 存储在配置文件中。 如果 VM 配置为在受保护的构造上运行，则它应能够成功启动。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
-- [受保护的主机和受防护的 Vm 的托管服务提供商配置步骤](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [用于受保护的主机和受防护的 VM 的主机托管服务提供商配置步骤](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受保护的结构和受防护的 VM](guarded-fabric-and-shielded-vms-top-node.md)

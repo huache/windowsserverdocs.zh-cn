@@ -8,16 +8,16 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 664b3cfc1e529fe3591f6477ae0eb0b64e32441a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 24714e7af844116629fa4c0eebf5050f9c150c50
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856730"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475534"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>创建主机密钥并将其添加到 HGS
 
->适用于： Windows Server 2019
+>适用于：Windows Server 2019
 
 
 本主题介绍如何使用主机密钥证明（密钥模式）准备 Hyper-v 主机成为受保护的主机。 你将创建一个主机密钥对（或使用现有证书），并将该密钥的公共一半添加到 HGS。
@@ -29,7 +29,7 @@ ms.locfileid: "80856730"
 
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
-    ``` 
+    ```
 
 3.    自动生成主机密钥，或选择现有证书。 如果你使用的是自定义证书，则它应至少具有一个2048位的 RSA 密钥、客户端身份验证 EKU 和数字签名密钥用法。
 
@@ -37,7 +37,7 @@ ms.locfileid: "80856730"
     Set-HgsClientHostKey
     ```
 
-    或者，如果想要使用自己的证书，也可以指定指纹。 
+    或者，如果想要使用自己的证书，也可以指定指纹。
     如果要在多台计算机上共享证书，或者使用绑定到 TPM 或 HSM 的证书，这会很有用。 下面是创建与 TPM 绑定的证书的示例（该证书可防止其在另一台计算机上盗取并使用私钥，只需 TPM 1.2）：
 
     ```powershell
@@ -59,13 +59,13 @@ ms.locfileid: "80856730"
 
 ```powershell
 Add-HgsAttestationHostKey -Name MyHost01 -Path "C:\temp\MyHost01-HostKey.cer"
-``` 
+```
 
-## <a name="next-step"></a>下一步
+## <a name="next-step"></a>后续步骤
 
 > [!div class="nextstepaction"]
-> [确认主机可以成功证明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [确认主机可成功证明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
-- [为受保护的主机和受防护的 Vm 部署主机保护者服务](guarded-fabric-deploying-hgs-overview.md)
+- [为受保护的主机和受防护的 VM 部署主机保护者服务](guarded-fabric-deploying-hgs-overview.md)

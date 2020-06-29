@@ -9,12 +9,12 @@ ms.assetid: f8f8c569-8b74-4c19-876e-1c7d00cce308
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f86c4fe9222f08b3ef3719080deeb4fbda6edd33
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f745ccd9e5a82aa79fb58798f233bf2662b00a70
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860810"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475634"
 ---
 # <a name="generation-1-virtual-machine-security-settings"></a>第 1 代虚拟机安全设置
 
@@ -26,7 +26,7 @@ ms.locfileid: "80860810"
 
 可以通过选择以下加密支持选项来帮助保护虚拟机的数据和状态。
 
-- 加密状态和虚拟机迁移流量 - 对虚拟机写入磁盘时的保存状态和实时迁移流量进行加密  。
+- 加密状态和虚拟机迁移流量 - 对虚拟机写入磁盘时的保存状态和实时迁移流量进行加密。
 
 若要启用此选项，必须为虚拟机添加密钥存储驱动器。
 
@@ -41,9 +41,9 @@ ms.locfileid: "80860810"
 
 若要了解有关受保护的结构的详细信息，请参阅[安全和保障](../../../security/Security-and-Assurance.md)中的受防护的 VM 简介部分。
 
-可以将密钥存储驱动器添加到虚拟机的某个 IDE 控制器上的空槽中。 要执行此操作，请单击“添加密钥存储驱动器”，将密钥存储驱动器添加到此虚拟机的第一个可用 IDE 控制器槽中  。
+可以将密钥存储驱动器添加到虚拟机的某个 IDE 控制器上的空槽中。 要执行此操作，请单击“添加密钥存储驱动器”，将密钥存储驱动器添加到此虚拟机的第一个可用 IDE 控制器槽中。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [Hyper-V 管理器中的第 2 代虚拟机安全设置](Generation-2-virtual-machine-security-settings-for-hyper-v.md)
 - [安全和保障](../../../security/Security-and-Assurance.md)
