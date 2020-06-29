@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: facc816ef46ebeadb30ccabac9c0b3e6a896264d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1411f312def0da79de4c18d6d652e0223ea27b48
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856960"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474444"
 ---
-# <a name="what39s-new-for-managed-service-accounts"></a>托管&#39;服务帐户的新增功能
+# <a name="what39s-new-for-managed-service-accounts"></a>托管服务帐户的新增功能&#39;
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
@@ -27,7 +27,7 @@ ms.locfileid: "80856960"
 ## <a name="whats-new-for-managed-service-accounts-in-windows-server-2012-and-windows-8"></a><a name="versions"></a>Windows Server 2012 和 Windows 8 中托管服务帐户的新增功能
 下面介绍了 Windows Server 2012 和 Windows 8 中的 MSA 功能更改。
 
-### <a name="group-managed-service-accounts"></a>组托管服务帐户
+### <a name="group-managed-service-accounts"></a>Group Managed Service Accounts
 当在域中为服务器配置域帐户时，客户端计算机可以对服务进行身份验证并连接到该服务。 以前，只有两种帐户类型提供了无需密码管理的身份。 但是，这些帐户类型具有以下一些限制：
 
 -   计算机帐户将仅限于一个域服务器，并且密码由该计算机管理。
@@ -44,10 +44,10 @@ ms.locfileid: "80856960"
 
 在运行 Windows Server 2012 或 Windows 8 的计算机上，可以通过服务控制管理器创建和管理组 MSA，以便可从一台服务器管理服务的众多实例，如通过服务器场部署。 用于管理托管服务帐户的工具和实用程序（如 IIS 应用程序池管理器）可与组托管服务帐户配合使用。 域管理员可以将服务管理委派给服务管理员，或者可以管理托管服务帐户或组托管服务帐户的整个生命周期。 现有客户端计算机将能对任何此类服务进行身份验证，且无需了解进行身份验证的是哪个服务实例。
 
-### <a name="removed-or-deprecated-functionality"></a><a name="interoperability"></a>删除或弃用的功能
+### <a name="removed-or-deprecated-functionality"></a><a name="interoperability"></a>已删除或弃用的功能
 对于 Windows Server 2012，Windows PowerShell cmdlet 默认为管理组托管服务帐户，而不是服务器托管服务帐户。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [组托管服务帐户概述](group-managed-service-accounts-overview.md)
 

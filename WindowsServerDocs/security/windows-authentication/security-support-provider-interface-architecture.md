@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 89e6696c286cae7c3e89346d2044869082cdd8bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2faf67f71d5bb04e23f034e738b64c62a7df4f05
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861730"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475244"
 ---
 # <a name="security-support-provider-interface-architecture"></a>安全支持提供程序接口体系结构
 
@@ -77,7 +77,7 @@ SSPI 是 Windows Server 操作系统中通用安全服务 API （GSSAPI）的实
 
 -   用于域用户和计算机 Active Directory 证书服务的证书请求
 
-位置：%windir%\Windows\System32\kerberos.dll
+位置：% windir% \Windows\System32\kerberos.dll
 
 默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
@@ -85,15 +85,15 @@ SSPI 是 Windows Server 操作系统中通用安全服务 API （GSSAPI）的实
 
 -   [Microsoft Kerberos （Windows）](https://msdn.microsoft.com/library/aa378747(VS.85).aspx)
 
--   [\[KILE\]： Kerberos 协议扩展](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
+-   [\[KILE \] ： Kerberos 协议扩展](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
 
--   [\[MS-SFU\]： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
+-   [\[MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
 
 -   [Kerberos SSP/AP （Windows）](https://msdn.microsoft.com/library/aa377942(VS.85).aspx)
 
 -   适用于 Windows Vista 的[Kerberos 增强功能](https://technet.microsoft.com/library/cc749438(v=ws.10).aspx)
 
--   适用于 Windows 7 的[Kerberos 身份验证的更改](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) 
+-   适用于 Windows 7 的[Kerberos 身份验证的更改](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx)
 
 -   [Kerberos 身份验证技术参考](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx)
 
@@ -110,7 +110,7 @@ NTLM 安全支持提供程序（NTLM SSP）是安全支持提供程序接口（S
 
 -   安全远程过程调用服务或 DCOM 服务
 
-Location：%windir%\Windows\System32\ msv1_0 .dll
+位置：% windir% \Windows\System32\msv1_0.dll
 
 默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
@@ -118,22 +118,22 @@ Location：%windir%\Windows\System32\ msv1_0 .dll
 
 -   [MSV1_0 身份验证包（Windows）](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
 
--   Windows 7 中[NTLM 身份验证的更改](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx) 
+-   Windows 7 中[NTLM 身份验证的更改](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx)
 
--   [Microsoft NTLM （Windows）](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)
+-   [Microsoft NTLM (Windows)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)
 
 -   [审核和限制 NTLM 使用指南](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
 
 ### <a name="digest-security-support-provider"></a><a name="BKMK_DigestSSP"></a>摘要式安全支持提供程序
 摘要式身份验证是一种行业标准，用于轻型目录访问协议（LDAP）和 web 身份验证。 摘要式身份验证通过网络以 MD5 哈希或消息摘要形式传输凭据。
 
-Digest SSP （Wdigest）用于以下内容：
+摘要式 SSP （Wdigest.dll）用于以下内容：
 
 -   Internet Explorer 和 Internet Information Services （IIS）访问
 
 -   LDAP 查询
 
-位置：%windir%\Windows\System32\Digest.dll
+位置：% windir% \Windows\System32\Digest.dll
 
 默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
@@ -141,7 +141,7 @@ Digest SSP （Wdigest）用于以下内容：
 
 -   [Microsoft Digest 身份验证（Windows）](https://msdn.microsoft.com/library/aa378745(VS.85).aspx)
 
--   [\[DPSP\]：摘要式协议扩展](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
+-   [\[DPSP \] ：摘要式协议扩展](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
 ### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>Schannel 安全支持提供程序
 安全通道（Schannel）用于基于 web 的服务器身份验证，例如，当用户尝试访问安全 web 服务器时。
@@ -166,7 +166,7 @@ TLS 协议、SSL 协议、专用通信技术（PCT）协议和数据报传输层
 
 当应用程序显式调用 DTLS 时使用。 有关 Schannel 提供程序使用的 DTLS 和其他协议的详细信息，请参阅[Schannel 安全支持提供程序技术参考](../tls/schannel-security-support-provider-technical-reference.md)。
 
-位置：%windir%\Windows\System32\Schannel.dll
+位置：% windir% \Windows\System32\Schannel.dll
 
 默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
@@ -179,16 +179,16 @@ TLS 协议、SSL 协议、专用通信技术（PCT）协议和数据报传输层
 
 -   [TLS/SSL 技术参考](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)
 
--   [\[TLSP\]：传输层安全性（TLS）配置文件](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
+-   [\[TLSP \] ：传输层安全性（TLS）配置文件](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
 ### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>协商安全支持提供程序
-简单且受保护的 GSS-API 协商机制（SPNEGO）构成协商 SSP 的基础，whichcan 用于协商特定身份验证协议。 当应用程序调用 SSPI 登录到网络时，它可以指定 SSP 来处理请求。 如果应用程序指定 Negotiate SSP，则它会分析请求，并根据客户配置的安全策略选择相应的提供程序来处理请求。
+简单且受保护的 GSS-API 协商机制（SPNEGO）构成协商 SSP 的基础，whichcan 用于协商特定身份验证协议。 当某个应用程序调入 SSPI 以登录到网络时，该应用程序可以指定一个 SSP 来处理请求。 如果应用程序指定 Negotiate SSP，则它会分析请求，并根据客户配置的安全策略选择相应的提供程序来处理请求。
 
 RFC 2478 中指定了 SPNEGO。
 
 在支持的 Windows 操作系统版本中，协商安全支持提供程序在 Kerberos 协议和 NTLM 之间选择。 默认情况下，协商将选择 Kerberos 协议，除非该协议不能由身份验证中涉及的系统之一使用，或调用应用程序没有提供足够的信息来使用 Kerberos 协议。
 
-位置：%windir%\Windows\System32\lsasrv.dll
+位置：% windir% \Windows\System32\lsasrv.dll
 
 默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
@@ -196,20 +196,20 @@ RFC 2478 中指定了 SPNEGO。
 
 -   [Microsoft Negotiate （Windows）](https://msdn.microsoft.com/library/aa378748(VS.85).aspx)
 
--   [\[SPNG\]：简单且受保护的 GSS-API 协商机制（SPNEGO）扩展](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
+-   [\[SPNG \] ：简单且受保护的 GSS-API 协商机制（SPNEGO）扩展](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
 
--   [\[N2HT\]：协商和 Nego2 HTTP 身份验证协议规范](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
+-   [\[N2HT \] ：协商和 NEGO2 HTTP 身份验证协议规范](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
 ### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>凭据安全支持提供程序
 凭据安全服务提供程序（CredSSP）提供启动新终端服务和远程桌面服务会话时的单一登录（SSO）用户体验。 使用 CredSSP，应用程序可以根据客户端的策略，将用户的凭据从客户端计算机（通过使用客户端 SSP）委托给目标服务器（通过服务器端 SSP）。 CredSSP 策略通过使用组策略进行配置，并且默认情况下禁用凭据的委派。
 
-位置：%windir%\Windows\System32\credssp.dll
+位置：% windir% \Windows\System32\credssp.dll
 
 默认情况下，此提供程序包含在本主题开头的 "**适用**于" 列表中指定的版本中。
 
 **凭据 SSP 的其他资源**
 
--   [\[CSSP\]：凭据安全支持提供程序（CredSSP）协议规范](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
+-   [\[CSSP \] ：凭据安全支持提供程序（CredSSP）协议规范](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
 
 -   [用于终端服务登录的凭据安全服务提供程序和 SSO](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
 
@@ -226,18 +226,18 @@ RFC 2478 中指定了 SPNEGO。
 
 -   **客户端计算机和服务器之间的丰富客户端可用性。** 使用操作系统的网络和身份验证组件。
 
-Windows 协商包与 NegoExts SSP 的处理方式与 Kerberos 和 NTLM 的处理方式相同。 NegoExts 在启动时加载到本地系统机构（LSA）中。 当收到基于请求源的身份验证请求时，NegoExts 会在支持的 Ssp 之间进行协商。 它将收集凭据和策略，对其进行加密，并将该信息发送到创建安全令牌的相应 SSP。
+Windows 协商包与 NegoExts SSP 的处理方式与 Kerberos 和 NTLM 的处理方式相同。 在启动时，NegoExts.dll 会加载到本地系统机构（LSA）中。 当收到基于请求源的身份验证请求时，NegoExts 会在支持的 Ssp 之间进行协商。 它将收集凭据和策略，对其进行加密，并将该信息发送到创建安全令牌的相应 SSP。
 
 NegoExts 支持的 Ssp 不是独立的 Ssp，如 Kerberos 和 NTLM。 因此，在 NegoExts SSP 内，如果出于任何原因而导致身份验证方法失败，则将显示或记录身份验证失败消息。 不能重新协商或回退身份验证方法。
 
-位置：%windir%\Windows\System32\negoexts.dll
+位置：% windir% \Windows\System32\negoexts.dll
 
 默认情况下，此提供程序包含在本主题开头的 "**适用于**" 列表中指定的版本中，不包括 windows Server 2008 和 windows Vista。
 
 ### <a name="pku2u-security-support-provider"></a><a name="BKMK_PKU2USSP"></a>PKU2U 安全支持提供程序
 Windows 7 和 Windows Server 2008 R2 中引入了 PKU2U 协议，并将其作为 SSP 实现。 此 SSP 启用对等身份验证，特别是在 Windows 7 中引入了名为 "家庭组" 的媒体和文件共享功能。 此功能允许在非域成员的计算机之间共享。
 
-位置：%windir%\Windows\System32\pku2u.dll
+位置：% windir% \Windows\System32\pku2u.dll
 
 默认情况下，此提供程序包含在本主题开头的 "**适用于**" 列表中指定的版本中，不包括 windows Server 2008 和 windows Vista。
 
@@ -280,7 +280,7 @@ Negotiate 选项可用于允许客户端和服务器尝试查找可接受的协�
 
     -   如果客户端计算机不支持任何列出的协议，则身份验证交换会失败。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 [Windows 身份验证体系结构](https://technet.microsoft.com/library/dn169024(v=ws.10).aspx)
 
 

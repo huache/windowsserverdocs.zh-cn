@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 6795464bfbadd12fc220e941ad2175eb83d0f050
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 71e45622292f7393b19978ec3235492c5065a8a1
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322859"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474024"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>通过 Windows 管理中心管理超聚合基础结构
 
@@ -35,7 +35,7 @@ ms.locfileid: "79322859"
 
 ![超聚合群集仪表板](../media/manage-hyper-converged/hci-dashboard-v1809.png)
 
-## <a name="key-features"></a>关键功能
+## <a name="key-features"></a>主要功能
 
 适用于超聚合基础结构的 Windows 管理中心的亮点包括：
 
@@ -57,7 +57,7 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 
 超聚合基础结构的 Windows 管理中心依赖于发布 Windows Server 2016 后添加的管理 Api。 你需要执行以下两个步骤，然后才能在 Windows Server 2016 群集中管理 Windows 管理中心：
 
-1. 验证群集中的每个服务器是否已[为 Windows server 2016 （KB4103723）](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)或更高版本安装了2018-05 累积更新。 若要下载并安装此更新，请参阅 "**设置**" > **更新 & 安全** > **Windows 更新**，然后选择 "**联机检查 Microsoft 更新中的更新**"。
+1. 验证群集中的每个服务器是否已[为 Windows server 2016 （KB4103723）](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)或更高版本安装了2018-05 累积更新。 若要下载并安装此更新，请参阅 "**设置**" "  >  **更新 & 安全**"  >  **Windows 更新**，然后选择 "**联机检查 Microsoft 更新中的更新**"。
 2. 在群集上以管理员身份运行以下 PowerShell cmdlet：
 
 ```powershell
@@ -76,7 +76,7 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 可以将运行 Windows Server 2016 或2019的超聚合基础结构配置为使用软件定义的网络（SDN），步骤如下：
 
 1. 准备 OS 的 VHD，这是安装在超聚合基础结构主机上的操作系统。 此 VHD 将用于所有 NC/SLB/GW Vm。
-2. 从[https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress)下载 SDN Express 下的所有文件夹和文件。
+2. 从中下载 SDN Express 下的所有文件夹和文件 [https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress) 。
 3. 使用部署控制台准备不同的 VM。 此 VM 应能够访问 SDN 主机。 此外，VM 应已安装 RSAT Hyper-v 工具。
 4. 将已下载的 SDN Express 的所有内容复制到部署控制台 VM。 并共享此**SDNExpress**文件夹。 请确保每个主机都可以访问**SDNExpress**共享文件夹，如配置文件第8行中所定义：
    ```
@@ -87,7 +87,7 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 7. 以管理员权限运行 PowerShell 以部署 SDN：
 
 ```powershell
-    .\SDNExpress.ps1 -ConfigurationDataFile .\your_fabricconfig.PSD1 -verbose 
+    .\SDNExpress.ps1 -ConfigurationDataFile .\your_fabricconfig.PSD1 -verbose
 ```
 
 部署需要大约30到45分钟。
@@ -135,7 +135,7 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 
 ### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 和 Windows Server 2019 的管理是否有差异？
 
-可以。 超聚合基础结构的 Windows 管理中心接收频繁的更新，这些更新可改善 Windows Server 2016 和 Windows Server 2019 的体验。 但是，某些新功能仅适用于 Windows Server 2019 –例如，切换开关以进行重复数据删除和压缩。
+是的。 超聚合基础结构的 Windows 管理中心接收频繁的更新，这些更新可改善 Windows Server 2016 和 Windows Server 2019 的体验。 但是，某些新功能仅适用于 Windows Server 2019 –例如，切换开关以进行重复数据删除和压缩。
 
 ### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>能否使用 Windows 管理中心来管理其他用例（而非超聚合）的存储空间直通，例如聚合横向扩展文件服务器（SoFS）或 Microsoft SQL Server？
 
@@ -161,15 +161,15 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
 
 ### <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center 是否需要 System Center？
 
-No。
+不能。
 
 ### <a name="does-it-require-an-internet-connection"></a>是否需要 Internet 连接？
 
-No。
+否。
 
 尽管 Windows 管理中心提供了与 Microsoft Azure 云强大且方便的集成，但超聚合基础结构的核心管理和监视体验完全在本地。 它可以在没有 Internet 连接的情况下安装和使用。
 
-## <a name="things-to-try"></a>要尝试的功能
+## <a name="things-to-try"></a>要尝试的操作
 
 如果刚开始使用，以下是一些快速教程，可帮助您了解如何组织 Windows 管理中心的超聚合基础结构和工作原理。 请毋庸置疑，在生产环境中小心。 这些视频是使用 Windows 管理中心版本1804和 Windows Server 2019 的内部预览版本记录的。
 
@@ -217,17 +217,17 @@ No。
     </tr>
 </table>
 
-### <a name="create-a-new-virtual-machine"></a>创建新虚拟机
+### <a name="create-a-new-virtual-machine"></a>创建新的虚拟机
 
 1. 单击左侧导航窗格中的 "**虚拟机**" 工具。
 2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡，然后单击 "**新建**" 以创建新的虚拟机。
 3. 输入虚拟机名称，并在第1代和第2代虚拟机之间进行选择。
 4. 然后，Uou 可以选择要最初在其中创建虚拟机的主机，或使用推荐的主机。
-5. 选择虚拟机文件的路径。 从下拉列表中选择一个卷，或者单击 "**浏览**" 以使用文件夹选取器选择一个文件夹。 虚拟机配置文件和虚拟硬盘文件将保存在选定卷或路径的 `\Hyper-V\[virtual machine name]` 路径下的单个文件夹中。
+5. 选择虚拟机文件的路径。 从下拉列表中选择一个卷，或者单击 "**浏览**" 以使用文件夹选取器选择一个文件夹。 虚拟机配置文件和虚拟硬盘文件将保存在 `\Hyper-V\[virtual machine name]` 选定卷或路径的路径下的单个文件夹中。
 6. 选择虚拟处理器数量，无论是要启用嵌套虚拟化、配置内存设置、网络适配器、虚拟硬盘，还是选择要从 .iso 映像文件或网络安装操作系统。
 7. 单击 **“创建”** 创建虚拟机。
 8. 创建虚拟机并将其显示在虚拟机列表中后，可以启动虚拟机。
-9. 启动虚拟机后，可以通过 VMConnect 连接到虚拟机的控制台以安装操作系统。 从列表中选择虚拟机，单击 "**更多** > "**连接**"以下载 .rdp 文件。 在远程桌面连接应用中打开 .rdp 文件。 由于这将连接到虚拟机的控制台，因此需要输入 Hyper-v 主机的管理员凭据。
+9. 启动虚拟机后，可以通过 VMConnect 连接到虚拟机的控制台以安装操作系统。 从列表中选择虚拟机，单击 "**更多**  >  **连接**" 下载 .rdp 文件。 在远程桌面连接应用中打开 .rdp 文件。 由于这将连接到虚拟机的控制台，因此需要输入 Hyper-v 主机的管理员凭据。
 
 [了解有关 Windows 管理中心的虚拟机管理的详细信息](manage-virtual-machines.md)。
 
@@ -238,7 +238,7 @@ No。
 3. 通过单击其名称来选择服务器，以打开 "**服务器**详细信息" 页。
 4. 单击 "**暂停服务器" 进行维护**。 如果能够安全地继续，这会将虚拟机移动到群集中的其他服务器。 发生这种情况时，服务器将产生状态排出。 如果需要，可以在虚拟机上观看虚拟机 **> 清单**"页上，它们的主机服务器在网格中清楚地显示。 所有虚拟机都已移动后，服务器状态将**暂停**。
 5. 单击 "**管理服务器**" 以访问 Windows 管理中心中的所有每服务器管理工具。
-6. 单击 "**重新启动**"，然后单击 **"是"** 。 你将会返回到连接列表。
+6. 单击 "**重新启动**"，然后单击 **"是"**。 你将会返回到连接列表。
 7. 返回到**仪表板**，当服务器关闭时，该服务器将被着色为红色。
 8. 备份后，再次导航**服务器**页面，然后单击 "**从维护中恢复服务器**"，将服务器状态设置回 "简单"。 同时，虚拟机将向后移动–无需用户操作。
 
@@ -284,11 +284,11 @@ No。
 
 - [在 UserVoice 上提交功能请求并为其投票](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
 - [加入 Microsoft 技术社区的 Windows 管理中心论坛](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
-- 推文到 `@servermgmt`
+- 推文`@servermgmt`
 
-### <a name="see-also"></a>另请参阅
+### <a name="additional-references"></a>其他参考
 
-- [Windows Admin Center](../overview.md)
+- [Windows 管理中心](../overview.md)
 - [存储空间直通](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
 - [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
 - [软件定义的网络](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)

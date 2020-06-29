@@ -9,29 +9,29 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0825c531913d134cc5711e3c8668fd6dedc4998f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5c45b68f18fe3126867a9b6608b0911bb3f63b2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856180"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474754"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>规划存储空间直通中的卷
 
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
 本主题提供关于如何规划存储空间直通中的卷以满足工作负载的性能和容量需求（包括选择其文件系统、复原类型和大小）的指南。
 
 ## <a name="review-what-are-volumes"></a>回顾：什么是卷
 
-卷是放置工作负荷所需的文件的位置，例如 Hyper-v 虚拟机的 VHD 或 VHDX 文件。 卷将合并存储池中的驱动器，以引入存储空间直通的容错、可扩展性和性能优势。
+卷是放置工作负荷所需的文件的位置，例如 Hyper-v 虚拟机的 VHD 或 VHDX 文件。 卷将驱动器合并到存储池中，带来存储空间直通的容错、可伸缩性和性能优势。
 
    >[!NOTE]
    > 在存储空间直通的整个文档中，我们使用术语“卷”一起表示卷及其下面的虚拟磁盘，包括诸如群集共享卷 (CSV) 和 ReFS 等其他内置 Windows 功能所提供的功能。 成功规划和部署存储空间直通不必了解这些实现级别的区别。
 
 ![什么是卷](media/plan-volumes/what-are-volumes.png)
 
-群集中的所有服务器可以同时访问所有卷。 创建后，它们将显示在所有服务器上的**C:\ClusterStorage\\** 中。
+群集中的所有服务器可以同时访问所有卷。 创建后，它们将显示在所有服务器上的**C:\ClusterStorage \\ **中。
 
 ![csv 文件夹屏幕截图](media/plan-volumes/csv-folder-screenshot.png)
 
@@ -56,7 +56,7 @@ ms.locfileid: "80856180"
 
 ## <a name="choosing-the-resiliency-type"></a>选择复原类型
 
-存储空间直通中的卷可以提供复原，以防止出现诸如驱动器或服务器故障等硬件问题，并在诸如软件更新等整个服务器维护过程中实现连续可用性。
+存储空间直通中的卷提供复原能力来防范硬件问题（例如驱动器或服务器故障），并在整个服务器维护期间（例如软件更新）实现持续可用性。
 
    > [!NOTE]
    > 你可以选择的复原类型与你已安装的驱动器类型无关。
@@ -75,7 +75,7 @@ ms.locfileid: "80856180"
 
 ### <a name="with-three-servers"></a>已安装三个服务器
 
-如果安装了三个服务器，你应使用三向镜像，以便获得更好的容错和更高的性能。 三向镜像将保留所有数据的三个副本，每个服务器的驱动器上都会保留一个副本。 其存储效率为 33.3%，即若要写入 1 TB 的数据，存储池中需要至少 3 TB 的物理存储容量。 三向镜像可以安全写入 [一次至少出现两个硬件（驱动器或服务器）问题](storage-spaces-fault-tolerance.md#examples)。 如果2个节点不可用，则存储池将失去仲裁，因为2/3 磁盘不可用，虚拟磁盘将被不可。 但是，节点可能会关闭，另一个节点上的一个或多个磁盘可能会失败，并且虚拟磁盘仍将保持联机状态。 例如，如果你在另一个驱动器或服务器突然发生故障时重新启动一个服务器，则所有数据都将保持安全且可连续访问。
+如果安装了三个服务器，你应使用三向镜像，以便获得更好的容错和更高的性能。 三向镜像将保留所有数据的三个副本，每个服务器的驱动器上都会保留一个副本。 其存储效率为 33.3%，即若要写入 1 TB 的数据，存储池中需要至少 3 TB 的物理存储容量。 三向镜像一次可以安全地容忍[至少两个硬件问题（驱动器或服务器）](storage-spaces-fault-tolerance.md#examples)。 如果2个节点不可用，则存储池将失去仲裁，因为2/3 磁盘不可用，虚拟磁盘将被不可。 但是，节点可能会关闭，另一个节点上的一个或多个磁盘可能会失败，并且虚拟磁盘仍将保持联机状态。 例如，如果你正在重新启动一台服务器，此时另一个驱动器或服务器突然发生故障，在这种情况下，所有数据将保持安全，可供持续访问。
 
 ![三向镜像](media/plan-volumes/three-way-mirror.png)
 
@@ -89,7 +89,7 @@ ms.locfileid: "80856180"
 
 要使用的复原类型取决于你的工作负载需求。 下面是一个表，其中汇总了适合每个复原类型的工作负荷，以及每个复原类型的性能和存储效率。
 
-| 复原类型 | 容量效率 | 速度 | 工作负载 |
+| 复原类型 | 容量效率 | Speed | 工作负荷 |
 | ------------------- | ----------------------  | --------- | ------------- |
 | **制作**         | ![存储效率显示33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>三向镜像：33% <br>双向镜像：50%     |![性能显示100%](media/plan-volumes/three-way-mirror-perf.png)<br> 最高性能  | 虚拟化工作负荷<br> 数据库<br>其他高性能工作负荷 |
 | **镜像加速奇偶校验** |![存储效率大约50%](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> 取决于镜像和奇偶校验的比例 | ![性能显示大约20%](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>比镜像慢得多，但最多可达两倍于双重奇偶校验<br> 最适用于大型顺序写入和读取 | 存档和备份<br> 虚拟桌面基础结构     |
@@ -151,7 +151,7 @@ ms.locfileid: "80856180"
 
 我们建议为每个服务器保留相当于一个容量驱动器的容量，最多可保留 4 个驱动器的容量。 你可以自行决定保留更多容量，但此最低容量建议可以保证在任何驱动器发生故障后均能够成功进行即时、就地、并行修复。
 
-![reserve](media/plan-volumes/reserve.png)
+![保留](media/plan-volumes/reserve.png)
 
 例如，如果你安装了 2 个服务器，并且你使用的是 1 TB 的容量驱动器，请留出 2 x 1 = 2 TB 的池作为保留容量。 如果你安装了 3 个服务器和 1TB 的容量驱动器，请留出 3 x 1 = 3 TB 作为保留容量。 如果你安装了 4 个或更多个服务器以及 1TB 的容量驱动器，请留出 4 x 1 = 4 TB 作为保留容量。
 
@@ -195,12 +195,12 @@ ms.locfileid: "80856180"
 
 为简单起见，此示例从头到尾都使用十进制（基数为 10）单位，这意味着 1 TB = 1,000,000,000,000 字节。 但是，Windows 中的存储数量按二进制（基数为 2）单位显示。 例如，在 Windows 中，每个 2 TB 的驱动器都将显示为 1.82 TiB。 同样，128 TB 的存储池将显示为 116.41 TiB。 这是正常情况。
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>使用情况
 
 请参阅[在存储空间直通中创建卷](create-volumes.md)。
 
-### <a name="see-also"></a>另请参阅
+### <a name="additional-references"></a>其他参考
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
-- [为存储空间直通选择驱动器](choosing-drives.md)
+- [选择存储空间直通驱动器](choosing-drives.md)
 - [容错和存储效率](storage-spaces-fault-tolerance.md)

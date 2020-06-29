@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4051bfea26d5c96d02132b50373f56b7b17ce5fb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0b26dca42d64338adeb8d818629e6a5f8b037f30
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857470"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475234"
 ---
 # <a name="windows-authentication-concepts"></a>Windows 身份验证概念
 
@@ -24,7 +24,7 @@ ms.locfileid: "80857470"
 
 身份验证是验证对象或人员身份的过程。 当你对某个对象进行身份验证时，目的就在于验证该对象是否为正版。 当你对某个用户进行身份验证时，其目标是验证该用户是否不是冒名顶替者。
 
-在网络上下文中，身份验证是向网络应用程序或资源证明身份的行为。 通常，使用仅用户知道的密钥（如公钥加密）或共享密钥的加密操作来证明标识。 身份验证交换的服务器端会将签名数据和已知的加密密钥相比较来验证身份验证尝试。
+在网络环境中，身份验证是指证明网络应用程序或资源的身份的动作。 通常，使用仅用户知道的密钥（如公钥加密）或共享密钥的加密操作来证明标识。 身份验证交换的服务器端会将签名数据和已知的加密密钥相比较来验证身份验证尝试。
 
 将加密密钥存储在安全的中心位置中可以确保身份验证过程可伸缩且可维护。 Active Directory 是用于存储标识信息的推荐和默认技术，其中包括用户的凭据的加密密钥。 Active Directory 是默认 NTLM 和 Kerberos 实现所必需的。
 
@@ -54,7 +54,7 @@ ms.locfileid: "80857470"
 ## <a name="credentials"></a>凭据
 Passport 和可能关联的 visas 是用于出差的已接受凭据。 但是，这些凭据可能不允许出差人员输入或访问国家/地区内的所有资源。 例如，参加会议需要其他凭据。 在 Windows 中，可以对凭据进行管理，使帐户持有者可以通过网络访问资源，而无需反复提供凭据。 这种类型的访问权限允许用户一次对用户进行身份验证，以访问他们有权使用的所有应用程序和数据源，而无需输入其他帐户标识符或密码。 Windows 平台通过在操作系统的本地安全机构（LSA）中以本地方式缓存用户凭据，使用户能够通过网络使用单个用户标识（由 Active Directory 维护）。 当用户登录到域时，Windows 身份验证包在对网络资源的凭据进行身份验证时，透明地使用凭据来提供单一登录。 有关凭据的详细信息，请参阅[Windows 身份验证中的凭据处理](credentials-processes-in-windows-authentication.md)。
 
-用于出差的多重身份验证形式可能要求携带和提供多个文档来对其身份进行身份验证，例如 passport 和会议注册信息。 Windows 通过智能卡、虚拟智能卡和生物识别技术实现此窗体或身份验证。 
+用于出差的多重身份验证形式可能要求携带和提供多个文档来对其身份进行身份验证，例如 passport 和会议注册信息。 Windows 通过智能卡、虚拟智能卡和生物识别技术实现此窗体或身份验证。
 
 ## <a name="security-principals-and-accounts"></a>安全主体和帐户
 在 Windows 中，可以启动操作的任何用户、服务、组或计算机都是安全主体。 安全主体具有可在计算机本地或基于域的帐户。 例如，即使没有人为用户登录，Windows 客户端加入域的计算机也可以通过与域控制器通信来加入网络域。 若要启动通信，计算机必须在域中具有活动帐户。 在接受来自计算机的通信之前，域控制器上的本地安全机构会对计算机的标识进行身份验证，然后定义计算机的安全上下文，就像对安全主体而言。 此安全上下文定义特定计算机或网络上的用户、服务、组或计算机上的用户或服务的标识和功能。 例如，它定义了可以访问的资源（例如文件共享或打印机）以及可以由用户、服务或该资源上的计算机执行的操作，如读取、写入或修改。 有关详细信息，请参阅[安全主体](https://technet.microsoft.com/itpro/windows/keep-secure/security-principals)。
@@ -77,7 +77,7 @@ Windows Server 2008 R2 和 Windows 7 中引入了独立托管服务帐户和虚�
 
 -   [服务帐户](https://technet.microsoft.com/itpro/windows/keep-secure/service-accounts)
 
--   [特殊身份](https://technet.microsoft.com/itpro/windows/keep-secure/special-identities)
+-   [特殊标识](https://technet.microsoft.com/itpro/windows/keep-secure/special-identities)
 
 ## <a name="delegated-authentication"></a>委托身份验证
 若要使用旅游类比，国家/地区可能会向官方政府委托的所有成员颁发相同的访问权限，就像这些委托是众所周知的一样。 此委托允许一个成员操作另一个成员的颁发机构。 在 Windows 中，当网络服务接受来自用户的身份验证请求并假定该用户的标识以便启动到第二个网络服务的新连接时，将进行委派的身份验证。 若要支持委派的身份验证，必须建立前端或第一层服务器（如 web 服务器），这些服务器负责处理客户端身份验证请求以及用于存储信息的后端或 n 层服务器（如大型数据库）。 你可以委派权限，以便为组织中的用户设置委派的身份验证，以减少管理员的管理负载。
@@ -103,7 +103,7 @@ Windows Server 2008 R2 和 Windows 7 中引入了独立托管服务帐户和虚�
 
 有关约束委派的详细信息，请参阅[Kerberos 约束委派概述](../kerberos/kerberos-constrained-delegation-overview.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 [Windows 登录和身份验证技术概述](https://technet.microsoft.com/library/dn269029.aspx)
 
 

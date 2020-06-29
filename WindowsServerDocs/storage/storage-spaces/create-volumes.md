@@ -8,16 +8,16 @@ ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
 ms.date: 02/25/2020
-ms.openlocfilehash: fb53ae74e471d590f83e1017662f33bb5a4b7c1d
-ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
+ms.openlocfilehash: 40750acb260335e858a7763c950dfc4ad2cd7979
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77608799"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473824"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>在存储空间直通中创建卷
 
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
 本主题介绍如何使用 Windows 管理中心和 PowerShell 在存储空间直通群集上创建卷。
 
@@ -26,13 +26,13 @@ ms.locfileid: "77608799"
 
 ## <a name="create-a-three-way-mirror-volume"></a>创建三向镜像卷
 
-若要在 Windows 管理中心创建三向镜像卷，请执行以下操作： 
+若要在 Windows 管理中心创建三向镜像卷，请执行以下操作：
 
-1. 在 Windows 管理中心，连接到存储空间直通群集，然后从 "**工具**" 窗格中选择 "**卷**"。
+1. 在 Windows Admin Center 中连接到存储空间直通群集，然后在“工具”窗格中选择“卷”。 
 2. 在 "卷" 页上，选择 "**清单**" 选项卡，然后选择 "**创建卷**"。
 3. 在 "**创建卷**" 窗格中，输入卷的名称，并将**复原**保留为**三向镜像**。
 4. 在**HDD 上**，指定卷的大小。 例如 5 TB （tb）。
-5. 选择 **“创建”** 。
+5. 选择“创建” 。
 
 创建卷可能需要几分钟的时间，具体取决于大小。 右上方的通知将通知你创建卷的时间。 新卷将出现在 "清单" 列表中。
 
@@ -46,12 +46,12 @@ ms.locfileid: "77608799"
 
 使用 Windows 管理中心中的镜像加速奇偶校验创建卷：
 
-1. 在 Windows 管理中心，连接到存储空间直通群集，然后从 "**工具**" 窗格中选择 "**卷**"。
+1. 在 Windows Admin Center 中连接到存储空间直通群集，然后在“工具”窗格中选择“卷”。 
 2. 在 "卷" 页上，选择 "**清单**" 选项卡，然后选择 "**创建卷**"。
 3. 在 "**创建卷**" 窗格中，输入卷的名称。
 4. 在**复原能力**中，选择**镜像加速的奇偶校验**。
 5. 在 "**奇偶校验百分比**" 中，选择奇偶校验百分比。
-6. 选择 **“创建”** 。
+6. 选择“创建” 。
 
 观看有关如何创建镜像加速奇偶校验卷的快速视频。
 
@@ -61,7 +61,7 @@ ms.locfileid: "77608799"
 
 若要在 Windows 管理中心中打开卷并将文件添加到卷，请执行以下操作：
 
-1. 在 Windows 管理中心，连接到存储空间直通群集，然后从 "**工具**" 窗格中选择 "**卷**"。
+1. 在 Windows Admin Center 中连接到存储空间直通群集，然后在“工具”窗格中选择“卷”。 
 2. 在 "卷" 页上，选择 "**清单**" 选项卡。
 2. 在卷列表中，选择要打开的卷的名称。
 
@@ -80,7 +80,7 @@ ms.locfileid: "77608799"
 
 重复数据删除和压缩按卷进行管理。 重复数据删除和压缩使用后处理模型，这意味着在运行之前不会出现节省费用。 在此过程中，它将处理所有文件，甚至包括之前存在的文件。
 
-1. 在 Windows 管理中心，连接到存储空间直通群集，然后从 "**工具**" 窗格中选择 "**卷**"。
+1. 在 Windows Admin Center 中连接到存储空间直通群集，然后在“工具”窗格中选择“卷”。 
 2. 在 "卷" 页上，选择 "**清单**" 选项卡。
 3. 在卷列表中，选择要管理的卷的名称。
 4. 在 "卷详细信息" 页上，单击标记为**重复数据删除和压缩**的开关。
@@ -88,7 +88,7 @@ ms.locfileid: "77608799"
 
     Windows 管理中心使你可以在不同工作负荷的现成配置文件之间进行选择，而不是复杂的设置。 如果你不确定，请使用默认设置。
 
-6. 选择“启用”。
+6. 选择“启用”****。
 
 观看有关如何打开重复数据删除和压缩的快速视频。
 
@@ -122,7 +122,7 @@ New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 -   **ResiliencySettingName**：**镜像**或**奇偶校验**。
 
-在以下示例中， *“Volume2”* 使用三向镜像， *“Volume3”* 使用双奇偶校验（通常称为“擦除编码”）。
+在以下示例中，*“Volume2”* 使用三向镜像，*“Volume3”* 使用双奇偶校验（通常称为“擦除编码”）。
 
 ```PowerShell
 New-Volume -FriendlyName "Volume2" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Mirror
@@ -149,11 +149,11 @@ Get-StorageTier | Select FriendlyName, ResiliencySettingName, PhysicalDiskRedund
 New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 300GB, 700GB
 ```
 
-完成！ 根据需要重复操作以创建多个卷。
+大功告成！ 根据需要重复操作以创建多个卷。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
-- [规划存储空间直通中的卷](plan-volumes.md)
-- [扩展存储空间直通中的卷](resize-volumes.md)
+- [在存储空间直通中规划卷](plan-volumes.md)
+- [在存储空间直通中扩展卷](resize-volumes.md)
 - [删除存储空间直通中的卷](delete-volumes.md)

@@ -8,15 +8,15 @@ ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
 ms.date: 03/10/2020
-ms.openlocfilehash: 4ce41da1da3dc90f698008902170d7cc1541619c
-ms.sourcegitcommit: bb2eb0b12f2a32113899a59aa5644bc6e8cab3d2
+ms.openlocfilehash: 4526bdc87bfbb8cdaf6cc3b0e8f3cd1cd80f4a9d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79089353"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474604"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>扩展存储空间直通中的卷
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
 本主题提供使用 Windows 管理中心调整[存储空间直通](storage-spaces-direct-overview.md)群集上的卷大小的说明。
 
@@ -29,7 +29,7 @@ ms.locfileid: "79089353"
 
 ## <a name="extending-volumes-using-windows-admin-center"></a>使用 Windows 管理中心扩展卷
 
-1. 在 Windows 管理中心，连接到存储空间直通群集，然后从 "**工具**" 窗格中选择 "**卷**"。
+1. 在 Windows Admin Center 中连接到存储空间直通群集，然后在“工具”窗格中选择“卷”。 
 2. 在 "卷" 页上，选择 "**清单**" 选项卡，然后选择要调整大小的卷。
 
     在 "卷详细信息" 页上，指出了卷的存储容量。 还可以直接从仪表板打开 "卷详细信息" 页。 在仪表板上的 "警报" 窗格中，选择警报，该警报将通知你卷的存储容量是否不足，然后选择 "**转向卷**"。
@@ -51,7 +51,7 @@ ms.locfileid: "79089353"
 
 ![SMAPI 中的卷](media/resize-volumes/volumes-in-smapi.png)
 
-若要熟悉它们，请尝试在 PowerShell 中使用相应的名词运行 **Get-** 。
+若要熟悉它们，请尝试在 PowerShell 中使用相应的名词运行 **Get-**。
 
 例如：
 
@@ -64,7 +64,7 @@ Get-VirtualDisk
 例如，下面介绍如何从虚拟磁盘开始一直调整到其卷：
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume 
+Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume
 ```
 
 ### <a name="step-1--resize-the-virtual-disk"></a>第 1 步 - 调整虚拟磁盘的大小
@@ -74,7 +74,7 @@ Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume
 若要进行检查，请运行以下 cmdlet：
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-StorageTier 
+Get-VirtualDisk <FriendlyName> | Get-StorageTier
 ```
 
 如果此 cmdlet 未返回任何内容，则虚拟磁盘未使用存储层。
@@ -129,7 +129,7 @@ $VirtualDisk = Get-VirtualDisk <FriendlyName>
 # Get its partition
 $Partition = $VirtualDisk | Get-Disk | Get-Partition | Where PartitionNumber -Eq 2
 
-# Resize to its maximum supported size 
+# Resize to its maximum supported size
 $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).SizeMax
 ```
 
@@ -142,9 +142,9 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 > [!TIP]
 > 你可以运行 **Get-Volume** 来验证卷是否具有新的大小。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [Windows Server 2016 中的存储空间直通](storage-spaces-direct-overview.md)
-- [规划存储空间直通中的卷](plan-volumes.md)
+- [在存储空间直通中规划卷](plan-volumes.md)
 - [在存储空间直通中创建卷](create-volumes.md)
 - [删除存储空间直通中的卷](delete-volumes.md)

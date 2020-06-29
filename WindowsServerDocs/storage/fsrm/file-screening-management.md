@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ac5032630f960329675f896a303ef197d6a4dbb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 43aed09aead02883f91c168e1cfaf6388aedfa85
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403104"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473974"
 ---
 # <a name="file-screening-management"></a>文件屏蔽管理
 
-> 适用于：Windows Server 2019，Windows Server 2016，Windows Server （半年频道），Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server （半年频道），Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
 
 在文件服务器资源管理器 MMC 管理单元的**文件屏蔽管理**节点上，可以执行以下任务：
 
@@ -25,12 +25,12 @@ ms.locfileid: "71403104"
 -   定义可被应用到新卷或文件夹或可在组织中使用的文件屏蔽模板。
 -   创建可扩展文件屏蔽规则灵活性的文件屏蔽异常。
 
-例如，你可以：
+例如，你能够：
 
 -   确保服务器的个人文件夹中未保存任何音乐文件，但可以允许存储支持法律权利管理或符合公司政策的特定类型的媒体文件。 在相同的情况下，你可能希望为公司副总裁提供特殊权限以允许其在个人文件夹中存储任何类型的文件。
 -   实施屏蔽过程以在可执行文件被保存到共享文件夹时以电子邮件方式通知你（包括保存文件的用户信息和文件的确切位置），这样你就可以采取合适的预防措施。
 
-本部分包括以下主题：
+本节包括下列主题：
 
 -   [定义用于屏蔽的文件组](define-file-groups-for-screening.md)
 -   [创建文件屏蔽](create-file-screen.md)
@@ -41,7 +41,7 @@ ms.locfileid: "71403104"
 > [!Note]
 > 若要设置电子邮件通知和特定的报告功能，必须首先配置文件服务器资源管理器常规选项。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [设置文件服务器资源管理器选项](setting-file-server-resource-manager-options.md)
 

@@ -8,14 +8,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: 6301fc930818dbb190c0c9f997af1524c7f41245
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 22097d69185d88366843acc2bb157204401b468b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856480"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475114"
 ---
-# <a name="deploy-the-host-guardian-service-hgs"></a>部署主机保护者服务（HGS）
+# <a name="deploy-the-host-guardian-service-hgs"></a>部署主机保护者服务 (HGS)
 
 >适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
@@ -28,7 +28,7 @@ ms.locfileid: "80856480"
 - [配置 Https （可选）](guarded-fabric-configure-hgs-https.md)
 - [添加节点](guarded-fabric-configure-additional-hgs-nodes.md)
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
-- [为受保护的主机和受防护的 Vm 部署主机保护者服务](guarded-fabric-deploying-hgs-overview.md)
-- [将成为受保护主机的 Hyper-v 主机的配置步骤](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
+- [为受保护的主机和受防护的 VM 部署主机保护者服务](guarded-fabric-deploying-hgs-overview.md)
+- [用于将成为受保护主机的 Hyper-V 主机的配置步骤](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)

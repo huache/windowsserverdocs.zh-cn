@@ -8,15 +8,15 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d9ebc40b69373dafbebdb87f2abe624a5a7a4375
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fff78ddc831ae9f6cba103d7630da3afec2c87d7
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858950"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474234"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>将存储空间直通与 CSV 内存中读取缓存一起使用
-> 适用于： Windows Server 2016、Windows Server 2019
+> 适用于：Windows Server 2016、Windows Server 2019
 
 本主题介绍如何使用系统内存来提高[存储空间直通](storage-spaces-direct-overview.md)性能。
 
@@ -42,7 +42,7 @@ CSV 内存中读取缓存在 Windows Server 2016 和 Windows Server 2019 中提�
 
 | OS 版本          | 默认 CSV 缓存大小 |
 |---------------------|------------------------|
-| Windows Server 2016 | 0（已禁用）           |
+| Windows Server 2016 | 0（禁用）           |
 | Windows Server 2019 | 1 GiB                   |
 
 若要查看使用 PowerShell 分配的内存量，请运行：
@@ -51,7 +51,7 @@ CSV 内存中读取缓存在 Windows Server 2016 和 Windows Server 2019 中提�
 (Get-Cluster).BlockCacheSize
 ```
 
-返回的值在每个服务器的 mebibytes （MiB）中。 例如，`1024` 表示 1 gibibyte （GiB）。
+返回的值在每个服务器的 mebibytes （MiB）中。 例如， `1024` 表示 1 gibibyte （GiB）。
 
 若要更改分配的内存量，请使用 PowerShell 修改此值。 例如，若要为每台服务器分配2个 GiB，请运行：
 
@@ -69,6 +69,6 @@ Get-ClusterSharedVolume | ForEach {
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)

@@ -7,16 +7,16 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: ac4edccf0c1f8882dd2544b2544c3d8555bbc716
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4faf4ade53074677b34b037c5ba6d551beb8542e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857340"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474904"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>存储空间直通的嵌套复原
 
-> 适用于： Windows Server 2019
+> 适用于：Windows Server 2019
 
 嵌套复原是 Windows Server 2019 中[存储空间直通](storage-spaces-direct-overview.md)的一项新功能，它使两个服务器的群集能够同时承受多个硬件故障，而不会丢失存储可用性，因此用户、应用和虚拟机将继续运行而不中断。 本主题介绍了它的工作原理，提供了入门的分步说明，并回答了常见问题。
 
@@ -73,7 +73,7 @@ Windows Server 2019 中的存储空间直通提供了在软件中实现的两个
   | 4                          | 35.7%      | 34.1%      | 32.6%      |
   | 5                          | 37.7%      | 35.7%      | 33.9%      |
   | 6                          | 39.1%      | 36.8%      | 34.7%      |
-  | 7 +                         | 40.0%      | 37.5%      | 35.3%      |
+  | 7+                         | 40.0%      | 37.5%      | 35.3%      |
 
   > [!NOTE]
   > **如果您感到好奇，以下是完整的数学计算的示例。** 假设两个服务器中的每个服务器都有六个容量驱动器，我们想要创建 1 100 GB 卷，其中包含 10 GB 镜像和 90 GB 的奇偶校验。 服务器本地双向镜像的效率为50.0%，这意味着，每个服务器上存储的数据量为 10 GB （共 10 GB）。 镜像到这两个服务器，其总占用量为 40 GB。 在这种情况下，服务器本地单一奇偶校验为 5/6 = 83.3%，这意味着 90 GB 的奇偶校验数据将在每台服务器上存储 108 GB。 镜像到这两个服务器，其总占用量为 216 GB。 总体需求量为 [（10 GB/50.0%） + （90 GB/83.3%] × 2 = 256 GB，39.1 用于提高总体容量效率。
@@ -82,32 +82,32 @@ Windows Server 2019 中的存储空间直通提供了在软件中实现的两个
 
 ![最佳](media/nested-resiliency/tradeoff.png)
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的用法
+## <a name="usage-in-powershell"></a>PowerShell 中的用法
 
 可以在 PowerShell 中使用熟悉的存储 cmdlet 来创建具有嵌套复原能力的卷。
 
 ### <a name="step-1-create-storage-tier-templates"></a>步骤1：创建存储层模板
 
-首先，使用 `New-StorageTier` cmdlet 创建新的存储层模板。 只需执行此操作一次，然后创建的每个新卷都可以引用这些模板。 指定容量驱动器的 `-MediaType`，还可以指定所选 `-FriendlyName`。 请勿修改其他参数。
+首先，使用 cmdlet 创建新的存储层模板 `New-StorageTier` 。 只需执行此操作一次，然后创建的每个新卷都可以引用这些模板。 指定 `-MediaType` 容量驱动器的，还可以指定所选的 `-FriendlyName` 。 请勿修改其他参数。
 
 如果容量驱动器是硬盘驱动器（HDD），请以管理员身份启动 PowerShell 并运行：
 
-```PowerShell 
+```PowerShell
 # For mirror
 New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedMirror -ResiliencySettingName Mirror -MediaType HDD -NumberOfDataCopies 4
 
 # For parity
-New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk 
-``` 
+New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk
+```
 
-如果容量驱动器是固态硬盘（SSD），请将 `-MediaType` 改为 `SSD`。 请勿修改其他参数。
+如果容量驱动器是固态硬盘（SSD），请将改 `-MediaType` 为 `SSD` 。 请勿修改其他参数。
 
 > [!TIP]
-> 验证是否已成功创建 `Get-StorageTier`的层。
+> 验证已成功创建的层 `Get-StorageTier` 。
 
 ### <a name="step-2-create-volumes"></a>步骤2：创建卷
 
-然后，使用 `New-Volume` cmdlet 创建新卷。
+然后，使用 cmdlet 创建新卷 `New-Volume` 。
 
 #### <a name="nested-two-way-mirror"></a>嵌套双向镜像
 
@@ -119,7 +119,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFrie
 
 #### <a name="nested-mirror-accelerated-parity"></a>嵌套镜像加速奇偶校验
 
-若要使用嵌套的镜像加速奇偶校验，请同时引用 "`NestedMirror`" 和 "`NestedParity`" 层模板并指定两个大小，每个大小对应于卷的每个部分（"首先镜像，奇偶校验"）。 例如，若要创建20% 嵌套双向镜像和80% 嵌套的奇偶校验的 1 500 GB 卷，请运行：
+若要使用嵌套的镜像加速奇偶校验，请同时引用 `NestedMirror` 和 `NestedParity` 层模板，并指定两个大小，每个大小对应于卷的每个部分（首先镜像，奇偶校验秒）。 例如，若要创建20% 嵌套双向镜像和80% 嵌套的奇偶校验的 1 500 GB 卷，请运行：
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFriendlyNames NestedMirror, NestedParity -StorageTierSizes 100GB, 400GB
@@ -159,7 +159,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="can-i-use-nested-resiliency-with-multiple-types-of-capacity-drives"></a>是否可以对多种类型的容量驱动器使用嵌套复原？
 
-是的，只需在上面的[步骤 1](#step-1-create-storage-tier-templates)中指定每个层的 `-MediaType`。 例如，在同一个群集中，NVMe、SSD 和 HDD 都提供缓存，而后两个提供容量：将 `NestedMirror` 层设置为 `-MediaType SSD`，将 `NestedParity` 层设置为 "`-MediaType HDD`"。 在这种情况下，请注意，奇偶校验容量效率取决于 HDD 驱动器的数量，每台服务器至少需要4个驱动器。
+是的，只需 `-MediaType` 在上面的[步骤 1](#step-1-create-storage-tier-templates)中指定每个层的。 例如，在同一个群集中，NVMe、SSD 和 HDD 提供缓存，而后两个提供容量：将 `NestedMirror` 层设置为 `-MediaType SSD` ，并将层设置 `NestedParity` 为 `-MediaType HDD` 。 在这种情况下，请注意，奇偶校验容量效率取决于 HDD 驱动器的数量，每台服务器至少需要4个驱动器。
 
 ### <a name="can-i-use-nested-resiliency-with-3-or-more-servers"></a>是否可以对3个或更多的服务器使用嵌套复原？
 
@@ -171,11 +171,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>嵌套复原是否会改变驱动器更换的工作方式？
 
-No。
+否。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>嵌套复原是否会改变服务器节点替换的工作方式？
 
-No。 若要替换服务器节点及其驱动器，请遵循以下顺序：
+否。 若要替换服务器节点及其驱动器，请遵循以下顺序：
 
 1. 停用传出服务器中的驱动器
 2. 将新服务器及其驱动器添加到群集
@@ -184,7 +184,7 @@ No。 若要替换服务器节点及其驱动器，请遵循以下顺序：
 
 有关详细信息，请参阅[删除服务器](remove-servers.md)主题。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
 - [了解存储空间直通中的容错](storage-spaces-fault-tolerance.md)

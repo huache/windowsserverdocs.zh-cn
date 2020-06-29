@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0765c43333f23fb09c0f69ceca1ff21cfce25874
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fab7dff1efc8b21a3b8fdacdeb9d446d7bc0cc30
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310506"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475304"
 ---
 # <a name="storage-migration-service-overview"></a>存储迁移服务概述
 
@@ -44,8 +44,8 @@ ms.locfileid: "80310506"
 2. 将数据从源服务器**传输（复制）** 到目标服务器。
 3. **剪切到新服务器**（可选）。<br>目标服务器采用源服务器以前的标识，以便应用和用户无需更改任何内容。 <br>源服务器进入维护状态，其中仍包含它们始终包含的相同文件（我们永远不会从源服务器中删除文件），但对用户和应用不可用。 然后，你可以在方便的时候停止服务器。
 
-![屏幕截图，显示可以扫描的服务器](media/migrate/inventory.png)
-**图2：存储迁移服务清点服务器**
+![显示准备扫描的服务器的屏幕截图 ](media/migrate/inventory.png)
+ **图2：存储迁移服务清点服务器**
 
 下面的视频演示如何使用存储迁移服务来获取服务器（如现在不支持的 Windows Server 2008 R2 服务器），并将存储移到较新的服务器。
 
@@ -70,14 +70,14 @@ ms.locfileid: "80310506"
 - 源计算机和目标计算机必须启用以下防火墙规则*入站*（尽管可能已启用这些规则）：
   - 文件和打印机共享 (SMB-In)
   - Netlogon 服务（NP-IN）
-  - Windows Management Instrumentation （DCOM-IN）
+  - Windows Management Instrumentation (DCOM-In)
   - Windows Management Instrumentation (WMI-In)
-  
+
   > [!TIP]
   > 在 Windows Server 2019 计算机上安装存储迁移服务代理服务会自动在该计算机上打开所需的防火墙端口。 为此，请在 Windows 管理中心中连接到目标服务器，然后前往**服务器管理器**（在 Windows 管理中心中） >**角色和功能**"，选择"**存储迁移服务代理**"，然后选择"**安装**"。
 
 
-- 如果计算机属于某个 Active Directory 域服务域，则它们应属于同一林。 如果要在剪切时将源的域名传输到目标，则目标服务器也必须与源服务器位于同一域中。 切换技术跨域运行，但目标的完全限定域名将不同于源 。
+- 如果计算机属于某个 Active Directory 域服务域，则它们应属于同一林。 如果要在剪切时将源的域名传输到目标，则目标服务器也必须与源服务器位于同一域中。 切换技术跨域运行，但目标的完全限定域名将不同于源 .。。
 
 ### <a name="requirements-for-source-servers"></a>源服务器的要求
 
@@ -89,7 +89,7 @@ ms.locfileid: "80310506"
 - Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2
-- Windows Server 2008
+- Windows 2008 Server
 - Windows Server 2003 R2
 - Windows Server 2003
 - Windows Small Business Server 2003 R2
@@ -105,7 +105,7 @@ ms.locfileid: "80310506"
 - Windows Storage Server 2012 R2
 - Windows Storage Server 2016
 
-注意： Windows Small Business Server 和 Windows Server Essentials 是域控制器。 存储迁移服务目前无法从域控制器中剪切，但可以列出和传输文件。   
+注意： Windows Small Business Server 和 Windows Server Essentials 是域控制器。 存储迁移服务目前无法从域控制器中剪切，但可以列出和传输文件。
 
 如果 orchestrator 正在运行 Windows Server 1903 或更高版本，或者协调器运行的 Windows Server 的早期版本安装了[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) ，则可以迁移以下附加源类型：
 
@@ -132,10 +132,10 @@ ms.locfileid: "80310506"
 
 ## <a name="azure-vm-migration"></a>Azure VM 迁移
 
-Windows 管理中心版本1910允许你部署 Azure 虚拟机。 这会将 VM 部署集成到存储迁移服务中。 在部署工作负荷之前，无需在 Azure 门户中构建新的服务器和 Vm，还可能缺少所需的步骤和配置-Windows 管理中心可以部署 Azure VM、配置其存储、将其加入域、安装角色，以及然后设置你的分布式系统。 
+Windows 管理中心版本1910允许你部署 Azure 虚拟机。 这会将 VM 部署集成到存储迁移服务中。 在部署工作负荷之前，无需在 Azure 门户中创建新的服务器和 Vm，并且可能缺少所需的步骤和配置-Windows 管理中心可以部署 Azure VM、配置其存储、将其加入域、安装角色，然后设置你的分布式系统。
 
    以下视频演示了如何使用存储迁移服务迁移到 Azure Vm。
-   > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
+   > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ]
 
 ## <a name="whats-new-in-storage-migration-service"></a>存储迁移服务中的新增功能
 
@@ -149,7 +149,7 @@ Windows 管理中心版本1910添加了部署 Azure 虚拟机的功能。 这会
 - 使用 Azure 文件同步更轻松地将已迁移的共享同步到 Azure 中
 - 迁移到 Azure 等新网络
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [使用存储迁移服务迁移文件服务器](migrate-data.md)
 - [存储迁移服务常见问题（FAQ）](faq.md)

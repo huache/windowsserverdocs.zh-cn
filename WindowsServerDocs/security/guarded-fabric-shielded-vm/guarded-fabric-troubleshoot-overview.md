@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: f55b7a81f57c2f7087f3f236813c3ef3c6508036
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 90803df1ea8ce98ba94b4d1d27ed5678acc33d4d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856380"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474970"
 ---
 # <a name="troubleshooting-a-guarded-fabric"></a>受保护的构造的故障排除
 
@@ -23,7 +23,7 @@ ms.locfileid: "80856380"
 - [受保护主机的疑难解答](guarded-fabric-troubleshoot-hosts.md)
 - [屏蔽 Vm 疑难解答](guarded-fabric-troubleshoot-shielded-vms.md)
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
-- [为受保护的主机和受防护的 Vm 部署主机保护者服务](guarded-fabric-deploying-hgs-overview.md)
+- [为受保护的主机和受防护的 VM 部署主机保护者服务](guarded-fabric-deploying-hgs-overview.md)
 - [管理受保护的构造](guarded-fabric-manage-overview.md)

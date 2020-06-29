@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6b199d8cc520021fcbbe32397997cc483f9c68cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b3513510ef00eec7ea78a3193cf44c25ddb17c7e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403134"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475214"
 ---
 # <a name="create-a-quota"></a>创建配额
 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 可以根据模板或自定义属性创建配额。 以下过程介绍如何创建基于模板的配额（推荐）。 如果需要使用自定义属性创建配额，可以将这些属性另存为模板以待之后重新使用。
 
@@ -32,7 +32,7 @@ ms.locfileid: "71403134"
 
 ## <a name="to-create-a-quota-that-is-based-on-a-template"></a>创建基于模板的配额
 
-1.  在“配额管理”中，单击“配额模板”节点。
+1.  在“配额管理”**** 中，单击“配额模板”**** 节点。
 
 2.  在“结果”窗格中，选择将用作新配额基础的模板。
 
@@ -47,9 +47,9 @@ ms.locfileid: "71403134"
 
 6.  在**从此配额模板派生属性**下，在步骤 2 中用于创建新配额的模板已预选中（或者可以从列表中选择其他模板）。 请注意，模板属性显示在**配额属性摘要**下。
 
-7.  单击“创建”。
+7.  单击**创建**。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [配额管理](quota-management.md)
 -   [创建自动应用配额](create-auto-apply-quota.md)

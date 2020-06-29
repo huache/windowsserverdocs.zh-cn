@@ -8,18 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 433fe53a3d580aafc50b152ec20156436b05481f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 112ec4363177ac6dd560493843c8937bdfbac4de
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402140"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475144"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>使用继承的权限执行基于访问的枚举
 
 > 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
-默认情况下，用于 DFS 文件夹的权限从命名空间服务器的本地文件系统继承。 权限继承自系统驱动器的根目录，并向该域授予 "读取" 权限\\"用户" 组。 因此，即使在启用基于访问的枚举后，命名空间中的所有文件夹仍对所有域用户可见。
+默认情况下，用于 DFS 文件夹的权限从命名空间服务器的本地文件系统继承。 权限继承自系统驱动器的根目录，并向域 \\ 用户组授予读取权限。 因此，即使在启用基于访问的枚举后，命名空间中的所有文件夹仍对所有域用户可见。
 
 ## <a name="advantages-and-limitations-of-inherited-permissions"></a>继承的权限的优点和限制
 
@@ -42,7 +42,7 @@ ms.locfileid: "71402140"
 
 若要限制哪些用户可以查看 DFS 文件夹，你必须执行以下任务之一：
 
--   **为文件夹设置显式权限，禁用继承。** 若要使用 DFS 管理或 **Dfsutil** 命令对包含目标（链接）的文件夹设置显式权限，请参阅[对命名空间启用基于访问的枚举](enable-access-based-enumeration-on-a-namespace.md)。
+-   **对文件夹设置显式权限，同时禁用继承。** 若要使用 DFS 管理或 **Dfsutil** 命令对包含目标（链接）的文件夹设置显式权限，请参阅[对命名空间启用基于访问的枚举](enable-access-based-enumeration-on-a-namespace.md)。
 -   **修改本地文件系统中的父项的继承权限**。 若要修改由包含目标的文件夹继承的权限，如果你已对该文件夹设置显式权限，请从显式权限切换到继承的权限，如以下过程所述。 然后，使用 Windows 资源管理器或 **Icacls** 命令，以修改包含目标的文件夹从其中继承权限的文件夹的权限。
 
 > [!NOTE]
@@ -52,12 +52,12 @@ ms.locfileid: "71402140"
 
 1.  在控制台树中的**命名空间**节点下，找到要控制其可见性的文件夹（包含目标），并右键单击该文件夹，然后单击**属性**。
 
-2.  单击“高级”选项卡。
+2.  单击“高级”**** 选项卡。
 
 3.  单击**使用从本地文件系统继承的权限**，然后在**确认使用继承的权限**对话框中单击**确定**。 执行此操作时将删除对此文件夹显式设置的所有权限，同时从命名空间服务器的本地文件系统中还原继承的 NTFS 权限。
 
 4.  若要更改 DFS 命名空间中的文件夹或命名空间根目录的继承的权限，请使用 Windows 资源管理器或 **ICacls** 命令。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [创建 DFS 命名空间](create-a-dfs-namespace.md)

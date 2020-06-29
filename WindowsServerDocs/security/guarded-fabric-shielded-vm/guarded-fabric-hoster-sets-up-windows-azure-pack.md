@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1d759af575f98d305a67734d0e23680f701f6b72
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4632c218f0638885e3094446704a91c442859d4c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856710"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473964"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>受防护的 VM - 主机托管服务提供商设置 Windows Azure Pack
 
@@ -27,7 +27,7 @@ ms.locfileid: "80856710"
 
 1. 完成托管构造的 System Center 2016-Virtual Machine Manager （VMM）的配置。 这包括设置 VM 模板和 VM 云，该云将通过 Windows Azure Pack 公开：
 
-    [方案-在 VMM 中部署受保护的主机和受防护的虚拟机](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
+    [方案 - 在 VMM 中部署受保护的主机和受防护的虚拟机](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
 
 2. 安装和配置 System Center 2016-Service Provider Foundation （SPF）。 此软件允许 Windows Azure Pack 与 VMM 服务器进行通信：
 
@@ -52,7 +52,7 @@ ms.locfileid: "80856710"
 
 3.  打开 Web 平台安装程序，并在 "**产品**" 选项卡下找到**Windows Azure Pack：门户和 API Express** 。单击 "**添加**"，然后在窗口底部**安装**。
 
-4.  继续执行安装。 安装完成后，会在 web 浏览器中打开配置网站（*https://&lt;wapserver&gt;： 30101/* ）。 在此网站上，提供有关 SQL server 的信息并完成 WAP 的配置。
+4.  继续执行安装。 安装完成后，会在 web 浏览器中打开配置网站（*https:// &lt; wapserver &gt; ： 30101/*）。 在此网站上，提供有关 SQL server 的信息并完成 WAP 的配置。
 
 有关设置 Windows Azure Pack 的帮助，请参阅[安装 Windows Azure Pack 的快速部署](https://technet.microsoft.com/dn296439.aspx)。
 
@@ -63,7 +63,7 @@ ms.locfileid: "80856710"
 
 使用 Windows Azure Pack 之前，此软件应已安装且已针对基础结构进行了配置。
 
-1.  在*https://&lt;wapserver&gt;： 30091*导航到 Windows Azure Pack 管理门户，然后使用你的管理员凭据进行登录。
+1.  在*https:// &lt; wapserver &gt; ： 30091*导航到 Windows Azure Pack 管理门户，然后使用你的管理员凭据进行登录。
 
 2.  在左窗格中，单击 " **VM 云**"。
 
@@ -77,7 +77,7 @@ ms.locfileid: "80856710"
 
 若要允许租户在 WAP 中创建 Vm，必须首先创建租户可以订阅的托管计划。 计划定义租户的允许 VM 云、模板、网络和计费实体。
 
-1. 在门户的下方窗格中，单击 " **+ 新建**&gt;**计划**&gt;**创建计划**"。
+1. 在门户的下方窗格中，单击 " **+ 新建** &gt; **计划** &gt; **创建计划**"。
 
 2. 在向导的第一步中，选择计划的名称。 这是租户在订阅时将看到的名称。
 
@@ -98,7 +98,7 @@ ms.locfileid: "80856710"
 9. 选择要在此计划中应用的配额。 （例如，对 CPU 核心和 RAM 使用量的限制）。 请确保选中 "**允许防护虚拟机**" 复选框。
 
    ![Windows Azure Pack 中的虚拟机云的设置](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-03-virtual-machine-clouds.png)
-    
+
 10. 向下滚动到标题为 "**模板**" 的部分，然后选择要提供给租户的一个或多个模板。 你可以向租户提供防护和无屏蔽的模板，但必须提供受防护的模板，以便为租户提供对 VM 完整性及其机密的端到端保证。
 
 11. 在 "**网络**" 部分中，为你的租户添加一个或多个网络。
@@ -113,7 +113,7 @@ ms.locfileid: "80856710"
 
     此时，已配置 Windows Azure Pack，租户将能够订阅刚创建的计划，并部署受防护的 Vm。 有关租户需要完成的其他步骤，请参阅[租户的受防护的 vm-通过使用 Windows Azure Pack 部署受防护的 vm](guarded-fabric-shielded-vm-windows-azure-pack.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
-- [受保护的主机和受防护的 Vm 的托管服务提供商配置步骤](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [用于受保护的主机和受防护的 VM 的主机托管服务提供商配置步骤](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受保护的结构和受防护的 VM](guarded-fabric-and-shielded-vms-top-node.md)

@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: aa2075bda71c6713fa76577b685315118199e63b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 69ff4bcfb407d01e184abd039be8aa0117372b4a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856780"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475334"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>确认受保护的主机可以证明
 
@@ -31,7 +31,7 @@ ms.locfileid: "80856780"
 
 3. 配置主机的密钥保护和证明 Url：
 
-    - **通过 Windows powershell**：你可以通过在提升的 Windows powershell 控制台中执行以下命令来配置密钥保护和证明 url。 对于 &lt;FQDN&gt;，请使用 HGS 群集的完全限定的域名（FQDN）（例如，HgsServer），或要求 HGS 管理员在 HGS 服务器上运行**Get-HgsServer** cmdlet 以检索 url。
+    - **通过 Windows powershell**：你可以通过在提升的 Windows powershell 控制台中执行以下命令来配置密钥保护和证明 url。 对于 &lt; FQDN &gt; ，请使用 hgs 群集的完全限定的域名（FQDN）（例如，hgs），或要求 hgs 管理员在 hgs 服务器上运行**HgsServer** cmdlet 以检索 url）。
 
         ```PowerShell
         Set-HgsClientConfiguration -AttestationServerUrl 'http://<FQDN>/Attestation' -KeyProtectionServerUrl 'http://<FQDN>/KeyProtection'
@@ -41,8 +41,8 @@ ms.locfileid: "80856780"
 
     - **通过 vmm**：如果你使用的是 System Center 2016-VIRTUAL MACHINE MANAGER （VMM），则可在 VMM 中配置证明和密钥保护 url。 有关详细信息，请参阅在**VMM 中设置受保护的主机**中[配置全局 HGS 设置](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings)。
 
-    >**注意**
-    > - 如果 HGS 管理员在[hgs 服务器上启用了 HTTPS](guarded-fabric-configure-hgs-https.md)，则以 `https://`开始 url。
+    >**说明**
+    > - 如果 HGS 管理员在[hgs 服务器上启用了 HTTPS](guarded-fabric-configure-hgs-https.md)，则将 url 作为开始 `https://` 。
     > - 如果 HGS 管理员在 HGS 服务器上启用了 HTTPS，并使用了自签名证书，则需要将证书导入到每个主机上受信任的根证书颁发机构存储区中。 为此，请在每个主机上运行以下命令：
        ```PowerShell
        Import-Certificate -FilePath "C:\temp\HttpsCertificate.cer" -CertStoreLocation Cert:\LocalMachine\Root
@@ -62,15 +62,15 @@ ms.locfileid: "80856780"
     ```
 
     > [!IMPORTANT]
-    > 如果使用的是 Windows Server 2019 或 Windows 10 1809 版，并且使用的是代码完整性策略，`Get-HgsTrace` 将为**代码完整性策略活动**诊断返回失败。
+    > 如果使用的是 Windows Server 2019 或 Windows 10，版本1809，并且使用代码完整性策略， `Get-HgsTrace` 则会为**代码完整性策略活动**诊断返回失败。
     > 如果这是唯一失败的诊断，则可以安全地忽略此结果。
 
-## <a name="next-step"></a>下一步
+## <a name="next-step"></a>后续步骤
 
 > [!div class="nextstepaction"]
 > [部署受防护的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
-- [部署主机保护者服务（HGS）](guarded-fabric-deploying-hgs-overview.md)
+- [部署主机保护者服务 (HGS)](guarded-fabric-deploying-hgs-overview.md)
 - [部署受防护的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)

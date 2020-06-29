@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ab9b6016d49725b7f25d2ad3c40bd6265ac811a9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0c8adf5f5586bd9f86ed3c4cd42b6172ff3f91e7
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856150"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474694"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>存储空间直通的性能历史记录
 
-> 适用于： Windows Server 2019
+> 适用于：Windows Server 2019
 
 性能历史记录是一项新功能，可让[存储空间直通](storage-spaces-direct-overview.md)管理员通过主机服务器、驱动器、卷、虚拟机等轻松访问历史计算、内存、网络和存储度量。 性能历史记录将自动收集并存储在群集上，最多可达一年。
 
@@ -31,19 +31,19 @@ ms.locfileid: "80856150"
 
 ![Windows 管理中心中的性能历史记录](media/performance-history/perf-history-in-wac.png)
 
-若要以编程方式查询和处理它，请使用 new `Get-ClusterPerf` cmdlet。 请参阅[PowerShell 中的用法](#usage-in-powershell)。
+若要以编程方式查询和处理它，请使用新的 `Get-ClusterPerf` cmdlet。 请参阅[PowerShell 中的用法](#usage-in-powershell)。
 
 ## <a name="whats-collected"></a>收集的内容
 
 为7种类型的对象收集性能历史记录：
 
-![对象的类型](media/performance-history/types-of-object.png)
+![对象类型](media/performance-history/types-of-object.png)
 
-每个对象类型都有许多系列：例如，为每个服务器收集 `ClusterNode.Cpu.Usage`。
+每个对象类型都有许多系列：例如，为 `ClusterNode.Cpu.Usage` 每个服务器收集。
 
 有关为每个对象类型收集的内容以及如何解释它们的详细信息，请参阅以下子主题：
 
-| Object             | 序列                                                                               |
+| Object             | 系列                                                                               |
 |--------------------|--------------------------------------------------------------------------------------|
 | 驱动器             | [为驱动器收集的内容](performance-history-for-drives.md)                     |
 | 网络适配器   | [为网络适配器收集的内容](performance-history-for-network-adapters.md) |
@@ -53,7 +53,7 @@ ms.locfileid: "80856150"
 | 卷            | [为卷收集的内容](performance-history-for-volumes.md)                   |
 | 群集           | [为群集收集的内容](performance-history-for-clusters.md)                 |
 
-许多序列都在对等对象和父对象之间进行聚合：例如，为每个网络适配器单独收集 `NetAdapter.Bandwidth.Inbound`，并聚合到整个服务器上;同样 `ClusterNode.Cpu.Usage` 聚合到整个群集;依此类推。
+许多序列都在对等对象和父对象之间进行聚合：例如， `NetAdapter.Bandwidth.Inbound` 为每个网络适配器单独收集并聚合到整个服务器; 同样，也 `ClusterNode.Cpu.Usage` 会聚合到整个群集; 依此类推。
 
 ## <a name="timeframes"></a>期限
 
@@ -70,12 +70,12 @@ ms.locfileid: "80856150"
 | 时间范围   | 度量频率 | 保留给 |
 |-------------|-----------------------|--------------|
 | `LastHour`  | 每10秒         | 1 小时       |
-| `LastDay`   | 每5分钟       | 25小时     |
-| `LastWeek`  | 每 15 分钟      | 8天       |
-| `LastMonth` | 每1小时          | 35天      |
+| `LastDay`   | 每 5 分钟       | 25 小时     |
+| `LastWeek`  | 每 15 分钟      | 8 天       |
+| `LastMonth` | 每1小时          | 35 天      |
 | `LastYear`  | 每1天           | 400天     |
 
-## <a name="usage-in-powershell"></a>在 PowerShell 中的用法
+## <a name="usage-in-powershell"></a>PowerShell 中的用法
 
 使用 `Get-ClusterPerformanceHistory` cmdlet 可在 PowerShell 中查询和处理性能历史记录。
 
@@ -117,7 +117,7 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 可以通过以下参数指定所需的序列：
 
 
-| 参数                 | 示例                       | 列表                                                                                 |
+| 参数                 | 示例                       | 列出                                                                                 |
 |---------------------------|-------------------------------|--------------------------------------------------------------------------------------|
 | `-PhysicalDiskSeriesName` | `"PhysicalDisk.Iops.Read"`    | [为驱动器收集的内容](performance-history-for-drives.md)                     |
 | `-NetAdapterSeriesName`   | `"NetAdapter.Bandwidth.Outbound"` | [为网络适配器收集的内容](performance-history-for-network-adapters.md) |
@@ -135,18 +135,18 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 ### <a name="specify-the-timeframe"></a>指定时间范围
 
-您可以用 `-TimeFrame` 参数指定所需的历史记录的时间范围。
+可以通过参数指定所需的历史记录的时间范围 `-TimeFrame` 。
 
    > [!TIP]
    > 使用 tab 自动补全来发现可用时间范围。
 
-如果未指定，则返回 `MostRecent` 度量。
+如果未指定，则 `MostRecent` 返回度量值。
 
 ## <a name="how-it-works"></a>工作原理
 
 ### <a name="performance-history-storage"></a>性能历史记录存储
 
-启用存储空间直通之后不久，将创建一个名为 `ClusterPerformanceHistory` 的大约 10 GB 的卷，并在此处预配一个可扩展存储引擎（也称为 Microsoft JET）的实例。 此轻型数据库存储性能历史记录，无需任何管理员参与或管理。
+启用存储空间直通之后不久，将创建一个名为的大约 10 GB 的卷， `ClusterPerformanceHistory` 并在此处预配可扩展存储引擎（也称为 MICROSOFT JET）的实例。 此轻型数据库存储性能历史记录，无需任何管理员参与或管理。
 
 ![性能历史记录存储的卷](media/performance-history/perf-history-volume.png)
 
@@ -158,11 +158,11 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 性能历史记录自动发现群集中任何位置的相关对象（例如虚拟机）并开始流式传输其性能计数器。 计数器进行聚合、同步，并插入到数据库中。 流连续运行，经过优化，可实现最小系统影响。
 
-集合由运行状况服务（高度可用）进行处理：如果运行该节点的节点出现故障，则它将在群集中的另一个节点后面恢复片刻。 性能历史记录可能短暂，但会自动恢复。 可以通过在 PowerShell 中运行 `Get-ClusterResource Health` 来查看运行状况服务及其所有者节点。
+集合由运行状况服务（高度可用）进行处理：如果运行该节点的节点出现故障，则它将在群集中的另一个节点后面恢复片刻。 性能历史记录可能短暂，但会自动恢复。 可以通过在 PowerShell 中运行来查看运行状况服务及其所有者节点 `Get-ClusterResource Health` 。
 
 ### <a name="handling-measurement-gaps"></a>处理测量间隙
 
-当度量值合并到跨越更多时间的更细化系列中[时，会](#timeframes)排除丢失数据的时间段。 例如，如果服务器在30分钟内停机，然后在50% 的 CPU 上运行30分钟，则该小时的 `ClusterNode.Cpu.Usage` 平均将正确地记录为50% （而非25%）。
+当度量值合并到跨越更多时间的更细化系列中[时，会](#timeframes)排除丢失数据的时间段。 例如，如果服务器在30分钟内停机，然后在50% 的 CPU 上运行30分钟，则 `ClusterNode.Cpu.Usage` 该小时的平均时间将正确记录为50% （而非25%）。
 
 ### <a name="extensibility-and-customization"></a>可扩展性和自定义
 
@@ -176,7 +176,7 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 ### <a name="how-do-i-enable-this-feature"></a>如何实现启用此功能？
 
-除非 `Stop-ClusterPerformanceHistory`，否则默认情况下会启用性能历史记录。
+`Stop-ClusterPerformanceHistory`默认情况下，默认情况下启用性能历史记录。
 
 若要重新启用它，请以管理员身份运行以下 PowerShell cmdlet：
 
@@ -199,9 +199,9 @@ Stop-ClusterPerformanceHistory -DeleteHistory
 ```
 
    > [!TIP]
-   > 在初始部署期间，可以通过将 `Enable-ClusterStorageSpacesDirect` 的 `-CollectPerformanceHistory` 参数设置为 `$False`来阻止性能历史记录开始。
+   > 在初始部署期间，可以通过将 `-CollectPerformanceHistory` 的参数设置为来阻止性能历史记录开始 `Enable-ClusterStorageSpacesDirect` `$False` 。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="the-cmdlet-doesnt-work"></a>Cmdlet 不起作用
 
@@ -210,7 +210,7 @@ Stop-ClusterPerformanceHistory -DeleteHistory
    > [!NOTE]
    > 此功能在 Windows Server 2016 或更早版本上不可用。
 
-### <a name="no-data-available"></a>无可用数据 
+### <a name="no-data-available"></a>无可用数据
 
 如果图表显示 "*无可用数据*" （如图所示），以下是解决方法：
 
@@ -224,8 +224,8 @@ Stop-ClusterPerformanceHistory -DeleteHistory
 
 4. 如果问题仍然存在，请以管理员身份打开 PowerShell 并运行 `Get-ClusterPerf` cmdlet。 Cmdlet 包含疑难解答逻辑来识别常见问题，例如，如果缺少 ClusterPerformanceHistory 卷，则提供修正说明。
 
-5. 如果上一步骤中的命令未返回任何内容，则可以尝试通过在 PowerShell 中运行 `Stop-ClusterResource Health ; Start-ClusterResource Health` 来重新启动运行状况服务（收集性能历史记录）。
+5. 如果上一步骤中的命令未返回任何内容，则可以尝试通过在 PowerShell 中运行来重新启动运行状况服务（收集性能历史记录） `Stop-ClusterResource Health ; Start-ClusterResource Health` 。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)

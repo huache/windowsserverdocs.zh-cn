@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9b3cde8a01c40a04df1bc433687029a2e0e7c394
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1802ab4fdabafd0a0344922fd861087c166d4499
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403006"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474214"
 ---
 # <a name="generate-reports-on-demand"></a>按需生成报告
 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 在日常操作中，可以根据需要使用**立即生成报告**选项生成一个或多个报告。 借助这些报告，可以分析服务器上当前磁盘使用情况的各个方面。 收集当前数据以生成报告。
 
@@ -47,15 +47,15 @@ ms.locfileid: "71403006"
    -   单击报告标签，然后单击**编辑参数**。
    -   在**报告参数**对话框中，根据需要编辑参数，然后单击**确定**。
    -  若要查看所有所选报告的参数列表，请单击**查看所选报告**，查看后单击**关闭**。
- 
+
 5. 若要指定报告保存的格式，请执行以下操作：
 
    -  在**报告格式**下，为计划的报告选择一种或多种格式。 默认情况下，报告以“动态 HTML”(DHTML) 格式生成。 此外，可以选择 HTML、XML、CSV 和文本等格式。 可将报告保存至按需报告的默认位置。
 
 6. 若要通过电子邮件将报告副本发送给管理员，请执行以下操作：
 
-   - 选中**发送**选项卡上的**将报告发送至下列管理员**复选框，然后输入需向其发送报告的管理帐户名称。 
-   - 请使用 <em>account@domain</em> 格式，并使用分号隔开多个帐户。
+   - 选中**发送**选项卡上的**将报告发送至下列管理员**复选框，然后输入需向其发送报告的管理帐户名称。
+   - 使用格式 <em>account@domain</em> ，并使用分号分隔多个帐户。
 
 7. 若要收集数据并生成报告，请单击**确定**。 此操作将打开**生成存储报告**对话框。
 
@@ -66,7 +66,7 @@ ms.locfileid: "71403006"
 
    这两个选项都会保存报告，如果已启用通过电子邮件发送报告，则报告会以你所选的格式发送给管理员。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [存储报告管理](storage-reports-management.md)
 -   [设置文件服务器资源管理器选项](setting-file-server-resource-manager-options.md)

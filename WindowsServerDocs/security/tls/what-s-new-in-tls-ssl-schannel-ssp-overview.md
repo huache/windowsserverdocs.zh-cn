@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 105225736d6b883e8451aa599af1937068ebe43d
-ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
+ms.openlocfilehash: fac7e780fc584f0ce4dde8bb87ce37035840a40a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546556"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474874"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS （Schannel SSP）概述
 
@@ -58,7 +58,7 @@ Schannel 是实现 SSL、TLS 和 DTLS Internet 标准身份验证协议的安全
 ### <a name="management-of-trusted-issuers-for-client-authentication"></a><a name="BKMK_TrustedIssuers"></a>客户端身份验证的受信任颁发者的管理
 需要使用 SSL 或 TLS 进行客户端计算机的身份验证时，服务器可以配置为发送受信任证书颁发者的列表。 此列表包含服务器将信任的证书颁发者集合，可提示客户端计算机要选择哪个客户端证书（如果存在多个证书）。 此外，必须根据配置的受信任颁发者列表来验证客户端计算机发送到服务器的证书链。
 
-在 Windows Server 2012 和 Windows 8 之前，使用 Schannel SSP （包括 HTTP.SYS 和 IIS）的应用程序或进程可以提供它们支持的受信任颁发者的列表（通过证书信任列表（CTL）进行客户端身份验证）。
+在 Windows Server 2012 和 Windows 8 之前，使用 Schannel SSP （包括 HTTP.sys 和 IIS）的应用程序或进程可以提供它们支持的受信任颁发者的列表（通过证书信任列表（CTL）进行客户端身份验证）。
 
 在 Windows Server 2012 和 Windows 8 中，对基础身份验证过程进行了更改，以便：
 
@@ -96,7 +96,7 @@ Schannel 是实现 SSL、TLS 和 DTLS Internet 标准身份验证协议的安全
 
 有关使用 PowerShell 提供程序管理证书的信息，请参阅[Windows 中的 AD CS 管理 cmdlet](https://technet.microsoft.com/library/hh848365(v=wps.620).aspx)。
 
-有关使用证书实用工具管理证书的信息，请参阅[certutil](https://technet.microsoft.com/library/cc732443.aspx)。
+有关使用证书实用工具管理证书的信息，请参阅[certutil.exe](https://technet.microsoft.com/library/cc732443.aspx)。
 
 有关为 Schannel 凭据定义的数据（包括应用程序定义的存储）的信息，请参阅[SCHANNEL_CRED 结构（Windows）](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx)。
 
@@ -104,7 +104,7 @@ Schannel 是实现 SSL、TLS 和 DTLS Internet 标准身份验证协议的安全
 
 Schannel 提供程序支持三种客户端身份验证信任模式。 信任模式控制如何执行客户端证书链的验证，它是由 HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel. 下的 REG_DWORD "ClientAuthTrustMode" 控制的系统范围设置。
 
-|Value|信任模式|说明|
+|“值”|信任模式|说明|
 |-----|-------|--------|
 |0|计算机信任（默认值）|需要由受信任颁发者列表中的证书颁发客户端证书。|
 |1|独占根信任|需要客户端证书链接到调用方指定的受信任颁发者存储中包含的根证书。 也必须由受信任颁发者列表中的颁发者颁发证书|
@@ -147,7 +147,7 @@ DTLS 版本 1.0 协议已添加到 Schannel 安全支持提供程序。 DTLS 协
 ### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>已弃用的功能
 在适用于 Windows Server 2012 和 Windows 8 的 Schannel SSP 中，没有不推荐使用的功能或功能。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 -   [私有云安全模型 - 包装程序功能](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
 
 

@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 68967ff920f25c05affc206ed45bad9275e781b6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 38354a6c6e39f58574a64c752bb86800f3fc3039
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394240"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474064"
 ---
 # <a name="create-an-auto-apply-quota"></a>创建自动应用配额
 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 通过使用自动应用配额，可以将配额模板分配至父卷或父文件夹。 然后，文件服务器资源管理器会基于该模板自动生成配额。 可为每个现有子文件夹和将来创建的子文件夹生成配额。
 
@@ -35,12 +35,12 @@ ms.locfileid: "71394240"
 
 5.  在**从此配额模板派生属性**下，从下拉列表中选择要应用的配额模板。 请注意，**配额属性摘要**下会显示每个模板的属性。
 
-6.  单击“创建”。
+6.  单击**创建**。
 
 > [!Note]
 > 选择**配额**节点，然后选择**刷新**，即可验证所有自动生成的配额。 每个子文件夹的单个配额和父卷或父文件夹中的自动应用配额配置文件均会列出。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [配额管理](quota-management.md)
 -   [编辑自动应用配额属性](edit-auto-apply-quota-properties.md)

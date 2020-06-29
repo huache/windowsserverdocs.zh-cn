@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 246df5b13a1dbea614886ab7fe445dd448ae1763
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7f011bc12c26567ed3a0e912dca3c3a8de9bfff9
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402181"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474924"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>对命名空间启用基于访问的枚举
 
@@ -21,12 +21,12 @@ ms.locfileid: "71402181"
 
 基于访问的枚举可隐藏用户无权访问的文件和文件夹。 默认情况下，对于 DFS 命名空间，不启用此功能。 你可以通过使用 DFS 管理对 DFS 文件夹启用基于访问的枚举。 若要控制对文件夹目标中的文件和文件夹进行基于访问的枚举，必须通过使用共享和存储管理，对每个共享文件夹启用基于访问的枚举。
 
-若要在命名空间上启用基于访问权限的枚举，所有命名空间服务器必须运行 Windows Server 2008 或更高版本。 此外，基于域的命名空间必须使用 Windows Server 2008 模式。 有关 Windows Server 2008 模式的要求的信息，请参阅[选择命名空间类型](choose-a-namespace-type.md)。
+若要对命名空间启用基于访问的枚举，所有的命名空间服务器都必须运行的是 Windows Server 2008 或更高版本。 此外，基于域的命名空间必须使用 Windows Server 2008 模式。 有关 Windows Server 2008 模式的要求的信息，请参阅[选择命名空间类型](choose-a-namespace-type.md)。
 
 在某些环境中，启用基于访问的枚举可能会导致服务器上的 CPU 使用率较高，以及对用户的响应时间较长。
 
 > [!NOTE]
-> 如果在现有的基于域的命名空间中将域功能级别升级到 Windows Server 2008，则 DFS 管理将允许你对这些命名空间启用基于访问权限的枚举。 但是，除非你将命名空间迁移到 Windows Server 2008 模式，否则你将无法编辑隐藏任何组或用户的文件夹的权限。 有关详细信息，请参阅[将基于域的命名空间迁移到 Windows Server 2008 模式](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)。
+> 如果在已有基于域的命名空间的情况下将域功能级别升级到 Windows Server 2008，则 DFS 管理将允许你对这些命名空间启用基于访问的枚举。 但是，你将无法编辑对任何组或用户隐藏文件夹的权限，除非你将命名空间迁移到 Windows Server 2008 模式。 有关详细信息，请参阅[将基于域的命名空间迁移到 Windows Server 2008 模式](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)。
 
 
 若要对 DFS 命名空间使用基于访问的枚举，必须执行以下步骤：
@@ -49,11 +49,11 @@ ms.locfileid: "71402181"
 
 ## <a name="to-enable-access-based-enumeration-by-using-a-command-line"></a>使用命令行启用基于访问的枚举
 
-1.  在安装有**分布式文件系统**角色服务或**分布式文件系统工具**功能的服务器上打开命令提示符窗口。
+1.  在安装了 "**分布式文件系统**角色服务" 或 "**分布式文件系统工具**" 功能的服务器上打开 "命令提示符" 窗口。
 
-2.  键入以下命令，其中 *< 命名空间\_root >* 是命名空间的根：
+2.  键入以下命令，其中 *<命名空间 \_ 根>* 是命名空间的根：
 
-    ```  
+    ```
     dfsutil property abe enable \\ <namespace_root>
     ```
 
@@ -66,7 +66,7 @@ ms.locfileid: "71402181"
 
 1.  在控制台树中的**命名空间**节点下，找到要控制其可见性的文件夹（包含目标），右键单击该文件夹，然后单击**属性**。
 
-2.  单击“高级”选项卡。
+2.  单击“高级”**** 选项卡。
 
 3.  单击**设置 DFS 文件夹的显式查看权限**，然后再单击**配置查看权限**。
 
@@ -80,28 +80,28 @@ ms.locfileid: "71402181"
 
 1. 在安装有**分布式文件系统**角色服务或**分布式文件系统工具**功能的服务器上打开命令提示符窗口。
 
-2. 键入以下命令，其中 *&lt;DFSPath&gt;* 是 DFS 文件夹（链接）的路径， *< 域\\帐户 >* 是组或用户帐户的名称，而 *（...）* 替换为其他访问控制项（ace）：
+2. 键入以下命令，其中* &lt; DFSPath &gt; *是 DFS 文件夹（链接）的路径， *<域 \\ 帐户>* 是组或用户帐户的名称，而 *（...）* 替换为其他访问控制项（ace）：
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   例如，若要将现有权限替换为允许 "域管理员" 和 "CONTOSO"\\培训人员组读取（R） \\office\public\training 文件夹的权限，请键入以下命令：
+   例如，若要将现有权限替换为允许 Domain Admins 和 CONTOSO \\ 讲师组读取（R） \\ office\public\training 文件夹的权限，请键入以下命令：
 
    ```
-   dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
+   dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace
    ```
 
 3. 若要从命令提示符执行其他任务，请使用以下命令：
 
 
-| 命令 | 描述 |
+| 命令 | 说明 |
 |---|---|
-|[Dfsutil 属性 sd deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|拒绝组或用户，使其无法查看文件夹。|
-|[Dfsutil 属性 sd reset](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |从文件夹中删除所有权限。|
-|[Dfsutil 属性 sd revoke](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| 从文件夹中删除组或用户 ACE。 |
+|[Dfsutil property sd deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|拒绝组或用户，使其无法查看文件夹。|
+|[Dfsutil property sd reset](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |从文件夹中删除所有权限。|
+|[Dfsutil property sd revoke](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| 从文件夹中删除组或用户 ACE。 |
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [创建 DFS 命名空间](create-a-dfs-namespace.md)
 -   [委派 DFS 命名空间的管理权限](delegate-management-permissions-for-dfs-namespaces.md)

@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c623049c33e02dd99974723d4cd257ca9304219
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19679a6838d583ef93175f5f95aa21e8aeca9b36
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859000"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475254"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>选择存储空间直通驱动器
 
@@ -55,7 +55,7 @@ ms.locfileid: "80859000"
 
 ## <a name="built-in-cache"></a>内置缓存
 
-存储空间直通具有内置服务器端缓存。 这是一个大型、持久且实时的读取和写入缓存。 在部署多种类型的驱动器时，它会被自动配置为使用所有“最快”类型的驱动器。 剩余的驱动器用作容量空间。
+存储空间直通具有内置服务器端缓存。 这是一个大型、持久且实时的读取和写入缓存。 在部署多种类型的驱动器时，它会被自动配置为使用所有“最快”类型的驱动器。 剩余的驱动器用于提供容量。
 
 有关详细信息，请查看[了解存储空间直通中的缓存](understand-the-cache.md)。
 
@@ -86,7 +86,7 @@ ms.locfileid: "80859000"
 
 2. **SSD + HDD**。 如上所述，SSD 可通过对读写操作进行缓存，加快读取和写入的速度。 这提供与 SSD 类似的写入特性，并且对于经常读取数据或最近读取数据，还提供与 SSD 类似的读取特性。
 
-    还有一个附加的、很不寻常的选项：使用具有*全部三种*类型的驱动器。
+    还有一个很不寻常的附加选项：使用*全部三种*类型的驱动器。
 
 3. **NVMe + SSD + HDD。** 如果有所有三种类型的驱动器，NVMe 驱动器会对 SSD 和 HDD 进行缓存。 有吸引力的地方在于，你可以在 SSD 上创建卷以及在 HDD 上创建卷，它们并行位于同一个群集中，并且全都由 NVMe 分配。 前者就像是在“全闪存”部署环境中，而后者就像是在上文所述的“混合”部署环境中。 这在概念上类似具有两个池，主要采用独立的容量管理以及失败和维修周期等。
 
@@ -99,14 +99,14 @@ ms.locfileid: "80859000"
 
 ![用于最大程度地提高容量的部署选项](media/choosing-drives-and-resiliency-types/maximizing-capacity.png)
 
-1. **SSD + HDD**。 这些 SSD 将缓存读取和写入、吸收突发流量并且提供类似 SSD 的写入性能，方法是稍候针对 HDD 提供优化的取消暂存。
+1. **SSD + HDD**。 这些 SSD 将缓存读取和写入、吸收突发流量并且提供类似 SSD 的写入性能，方法是稍后针对 HDD 提供优化的取消暂存。
 
 >[!IMPORTANT]
 >仅支持带有 Hdd 的配置。 不建议将高耐用性 Ssd 缓存到低耐用性 Ssd。
 
-## <a name="sizing-considerations"></a>规模调整注意事项
+## <a name="sizing-considerations"></a>调整大小注意事项
 
-### <a name="cache"></a>高速缓存
+### <a name="cache"></a>缓存
 
 每个服务器都必须具有至少两个缓存驱动器（针对冗余的最低要求）。 我们建议容量驱动器数量是缓存驱动器数量的倍数。 例如，如果你有 4 个缓存驱动器，则使用 8 个容量驱动器（1:2 的比率），这样一来，你所能体验到的性能将比使用 7 个或 9 个容量驱动器更一致。
 
@@ -116,10 +116,10 @@ ms.locfileid: "80859000"
 
 建议将每个服务器的总存储容量限制为约 400 tb。 每个服务器的存储容量越高，在停机或重启后重新同步数据所需的时间就越长，例如在应用软件更新时。 对于 Windows Server 2019，每个存储池的当前最大大小为 4 pb （PB）（4000 TB），对于 Windows Server 2016 为 1 pb。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
 - [了解存储空间直通中的缓存](understand-the-cache.md)
 - [存储空间直通硬件要求](storage-spaces-direct-hardware-requirements.md)
-- [规划存储空间直通中的卷](plan-volumes.md)
+- [在存储空间直通中规划卷](plan-volumes.md)
 - [容错和存储效率](storage-spaces-fault-tolerance.md)

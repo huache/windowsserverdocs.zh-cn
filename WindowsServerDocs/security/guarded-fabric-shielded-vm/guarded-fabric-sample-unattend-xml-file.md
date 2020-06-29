@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: be099a234b7e2e73375d23b19161e59876f71d61
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 526ded03c877613766b8a0b762f1db1a693d2019
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856500"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474994"
 ---
 # <a name="create-os-specialization-answer-file"></a>创建操作系统专用化答案文件
 
@@ -22,7 +22,7 @@ ms.locfileid: "80856500"
 准备部署受防护的 Vm 时，可能需要创建操作系统专用化应答文件。 在 Windows 上，这通常称为 "unattend.xml" 文件。 **ShieldingDataAnswerFile** Windows PowerShell 函数可帮助你执行此操作。 然后，在使用 System Center Virtual Machine Manager （或任何其他结构控制器）通过模板创建受防护的 Vm 时，可以使用应答文件。
 
 有关受防护的 Vm 的无人参与文件的一般准则，请参阅[创建应答文件](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file)。
- 
+
 ## <a name="downloading-the-new-shieldingdataanswerfile-function"></a>下载 ShieldingDataAnswerFile 函数
 
 可以从[PowerShell 库](https://aka.ms/gftools)获取**ShieldingDataAnswerFile**函数。 如果你的计算机具有 Internet 连接，则可以通过以下命令从 PowerShell 安装它：
@@ -31,9 +31,9 @@ ms.locfileid: "80856500"
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-可以将 `unattend.xml` 输出与其他项目一起打包到防护数据中，使其可用于从模板创建受防护的 Vm。
+`unattend.xml`输出可以打包到防护数据和其他项目，以便可以使用它从模板创建受防护的 vm。
 
-以下部分说明了如何对包含各种选项的 `unattend.xml` 文件使用函数参数：
+以下部分说明了如何对 `unattend.xml` 包含各种选项的文件使用函数参数：
 
 - [基本 Windows 应答文件](#basic-windows-answer-file)
 - [带有域加入的 Windows 应答文件](#windows-answer-file-with-domain-join)
@@ -92,7 +92,7 @@ Virtual Machine Manager 通过使用 IP 池向静态 IP 地址提供三个组件
 
 ![将硬件配置为使用静态 IP](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-network-adapter-settings.png)
 
-然后，可以使用 `-StaticIPPool` 参数将静态 IP 元素包含在答案文件中。 然后，应答文件中的参数 `@IPAddr-1@`、`@NextHop-1-1@`和 `@DNSAddr-1-1@` 将替换为在部署时在 Virtual Machine Manager 中指定的实际值。
+然后，可以使用参数将 `-StaticIPPool` 静态 IP 元素包含在答案文件中。 然后， `@IPAddr-1@` `@NextHop-1-1@` 答案文件中的参数、和 `@DNSAddr-1-1@` 将替换为在部署时 Virtual Machine Manager 中指定的实际值。
 
 ```powershell
 $adminCred = Get-Credential -Message "Local administrator account"
@@ -128,7 +128,7 @@ $rootPassword = Read-Host -Prompt "Root password" -AsSecureString
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -RootPassword $rootPassword -RootSshKey '~\.ssh\id_rsa.pub'
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [部署受防护的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受保护的结构和受防护的 VM](guarded-fabric-and-shielded-vms-top-node.md)

@@ -9,12 +9,12 @@ ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 04/15/2020
-ms.openlocfilehash: d8861369abe24ea0d34dce209a5d98e854c4c95d
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 75b471d4083ef1597d5edcc775ea6fc847992483
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82072233"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474464"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>在 Hyper-v 上运行 Linux 的最佳实践
 
@@ -78,7 +78,7 @@ Set-VMComPort -VMName <Name> -Number 2 -Path \\.\pipe\dbg1
 
 Linux 内核提供两组磁盘 i/o 计划程序来重新排序请求。  一个集用于较早的 "blk" 子系统，另一个集用于较新的 "blk" 子系统。 在这两种情况下，对于目前的固态磁盘，建议使用将计划决策传递到基础 Hyper-v 虚拟机监控程序的计划程序。 对于使用 "blk" 子系统的 Linux 内核，这是 "noop" 计划程序。 对于使用 "blk-mq" 子系统的 Linux 内核，这是 "无" 计划程序。
 
-对于特定的磁盘，可在此文件系统位置查看可用的计划程序：/sys/class/block/`<diskname>`/queue/scheduler，当前所选计划程序位于方括号中。 您可以通过写入此文件系统位置来更改计划程序。 必须将更改添加到初始化脚本，才能在重新启动后保持。 有关详细信息，请参阅 Linux 发行版文档。
+对于特定的磁盘，可在此文件系统位置查看可用的计划程序：/sys/class/block/ `<diskname>` /queue/scheduler，当前所选计划程序位于方括号中。 您可以通过写入此文件系统位置来更改计划程序。 必须将更改添加到初始化脚本，才能在重新启动后保持。 有关详细信息，请参阅 Linux 发行版文档。
 
 ## <a name="numa"></a>NUMA
 
@@ -94,7 +94,7 @@ Hyper-v 允许压缩虚拟磁盘（VHDX）文件，而不考虑磁盘上可能�
 
 调整 VHD 或 VHDX 大小后，管理员应使用诸如 fdisk 或 parted 的实用工具来更新分区、卷和文件系统结构，以反映磁盘大小的变化。 收缩或扩展包含 GUID 分区表（GPT）的 VHD 或 VHDX 的大小会在分区管理工具用于检查分区布局时产生警告，并会警告管理员修复第一个和第二个 GPT 标头。 此手动步骤可以安全地执行，而不会丢失数据。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 * [Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 

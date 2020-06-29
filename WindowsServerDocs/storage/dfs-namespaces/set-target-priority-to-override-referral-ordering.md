@@ -8,18 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f0a6496802d2be16e84ef62c41fea6f0ae9f6438
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 401e15c248687c7585cb85172b1d4d57125cdc86
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386118"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475174"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>设置目标优先级以替代引用排序
 
-> 适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
-引用是在用户访问命名空间中包含目标的命名空间根路径或文件夹时，客户端计算机从域控制器或命名空间服务器接收的目标的排序列表。 引用中每个目标根据命名空间根路径或文件夹的排序方法进行排序。 
+引用是在用户访问命名空间中包含目标的命名空间根路径或文件夹时，客户端计算机从域控制器或命名空间服务器接收的目标的排序列表。 引用中每个目标根据命名空间根路径或文件夹的排序方法进行排序。
 
 若要优化目标的排序方式，可为各个目标设置优先级。 例如，可以指定该目标是所有目标中的第一项、所有目标中的最后一项，或成本相等的所有目标中的第一项或最后一项。
 
@@ -27,7 +27,7 @@ ms.locfileid: "71386118"
 
 若要为基于域的命名空间中的根目录目标设置目标优先级，请按照以下过程操作：
 
-1.  单击“开始”、指向“管理工具”，然后单击“DFS 管理”。
+1.  单击“开始”****、指向“管理工具”****，然后单击“DFS 管理”****。
 
 2.  在控制台树中的**命名空间**节点下，单击要为其根目录目标设置优先级的基于域的命名空间。
 
@@ -44,7 +44,7 @@ ms.locfileid: "71386118"
 
 若要为文件夹目标设置目标优先级，请按照以下过程操作：
 
-1.  单击“开始”、指向“管理工具”，然后单击“DFS 管理”。
+1.  单击“开始”****、指向“管理工具”****，然后单击“DFS 管理”****。
 
 2.  在控制台树中的**命名空间**节点下，单击要为其设置优先级的目标的文件夹。
 
@@ -55,7 +55,7 @@ ms.locfileid: "71386118"
 > [!NOTE]
 > 若要使用 Windows PowerShell 设置目标优先级，请将 [Set-DfsnRootTarget](https://technet.microsoft.com/library/jj884266.aspx) 和 [Set-DfsnFolderTarget](https://technet.microsoft.com/library/jj884264.aspx) cmdlet 与 **ReferralPriorityClass** 和 **ReferralPriorityRank** 参数结合使用。 Windows Server 2012 中引入了这些 cmdlet。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [调整 DFS 命名空间](tuning-dfs-namespaces.md)
 -   [委派 DFS 命名空间的管理权限](delegate-management-permissions-for-dfs-namespaces.md)

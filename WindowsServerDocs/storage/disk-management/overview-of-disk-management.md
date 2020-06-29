@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 46ed1256ed9039311939f9de12ea46416443be9c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e200901d8ddd59f0c0bc45b34681f3aa41b44923
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71402142"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474414"
 ---
 # <a name="overview-of-disk-management"></a>磁盘管理概述
 
@@ -29,7 +29,7 @@ ms.locfileid: "71402142"
 ![磁盘管理显示具有三个分区的典型驱动器 - 一个 499 MB 系统分区、一个用于 Windows 的较大 C 驱动器以及另一个用于恢复的 499 MB 分区](media/disk-management.png)
 
 > [!TIP]
->  如果在按照这些步骤操作时出现错误或无法工作，请查看[磁盘管理疑难解答](troubleshooting-disk-management.md)主题。 如果没有用的话，也不要惊慌！ 在 [Microsoft 社区](https://answers.microsoft.com/en-us/windows)网站上有大量信息，试着搜索[文件、文件夹和存储](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)部分，如果仍然需要帮助，请在那里发布问题，Microsoft 或其他社区成员将尝试提供帮助。 如果你有关于如何改进这些主题的反馈，我们很乐意听取你的意见！ 只需回答“此页面是否有用？”  提示，并在此处或本主题底部的公共评论会话中留下任何评论。
+>  如果在按照这些步骤操作时出现错误或无法工作，请查看[磁盘管理疑难解答](troubleshooting-disk-management.md)主题。 如果没有用的话，也不要惊慌！ 在 [Microsoft 社区](https://answers.microsoft.com/en-us/windows)网站上有大量信息，试着搜索[文件、文件夹和存储](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639)部分，如果仍然需要帮助，请在那里发布问题，Microsoft 或其他社区成员将尝试提供帮助。 如果你有关于如何改进这些主题的反馈，我们很乐意听取你的意见！ 只需回答“此页面是否有用？”提示，并在此处或本主题底部的公共评论会话中留下任何评论。
 
 以下是你可能想要执行但在 Windows 中使用其他工具的一些常见任务：
 
@@ -49,7 +49,7 @@ ms.locfileid: "71402142"
 
 尽管磁盘管理可能会将 EFI 系统分区和恢复分区显示为 100% 空闲，但事实上不是。 这些分区通常非常满，其中存储着你的电脑正常运行所需的重要文件。 最好让它们独自完成它们的工作，启动你的电脑，帮助你从问题中恢复过来。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [管理磁盘](manage-disks.md)
 - [管理基本卷](manage-basic-volumes.md)

@@ -8,19 +8,19 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9972ec77b78c6c4efa2d52fffd44d27d71a1afe0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 85cfdbe5e95c9177194a2b6ac7b5d22e1fd9fc0e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856360"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475010"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>受防护的 Vm-准备 VM 防护帮助程序 VHD
 
 >适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
 > [!IMPORTANT]
-> 在开始这些过程之前，请确保已安装最新的 Windows 2016 Server 累积更新，或者使用最新的 Windows 10[远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)。 否则，这些过程将不起作用。 
+> 在开始这些过程之前，请确保已安装最新的 Windows 2016 Server 累积更新，或者使用最新的 Windows 10[远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)。 否则，这些过程将不起作用。
 
 本部分概述了托管服务提供商执行的步骤，支持将现有的 Vm 转换为受防护的 Vm。
 
@@ -59,7 +59,7 @@ ms.locfileid: "80856360"
 
 ![VMM-主机保护者服务设置](../media/Guarded-Fabric-Shielded-VM/guarded-host-vmm-hgs-settings-01.png)
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
-- [受保护的主机和受防护的 Vm 的托管服务提供商配置步骤](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [用于受保护的主机和受防护的 VM 的主机托管服务提供商配置步骤](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [受保护的结构和受防护的 VM](guarded-fabric-and-shielded-vms-top-node.md)

@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6a0fa660db6b03104b585c8ee78a4f20aafe5c88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c496151ed1f38cd1f2c604bd227627a586e582c6
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403150"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473694"
 ---
 # <a name="create-a-file-screen-exception"></a>创建文件屏蔽异常
 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 有时候，你需要允许文件屏蔽异常。 例如，你可能希望阻止来自某文件服务器的视频文件，但又需要允许培训小组保存其计算机相关培训的视频文件。 若要允许访问其他文件屏蔽所阻止的文件，请创建*文件屏蔽异常*。
 
@@ -43,9 +43,9 @@ ms.locfileid: "71403150"
     -   若要查看文件组包含和排除的文件类型，请单击 "文件组" 标签，然后单击 " **编辑**"。
     -   若要新建文件组，请单击**创建**。
 
-5.  单击 **“确定”** 。
+5.  单击" **确定**"。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [文件屏蔽管理](file-screening-management.md)
 -   [定义用于屏蔽的文件组](define-file-groups-for-screening.md)

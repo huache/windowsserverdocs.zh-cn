@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 0f678172d397ff61fd336b7c844d43f77bea7fad
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 59b6aaa22fa89620df2ce6757b2d9f5ffe91c652
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856830"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475344"
 ---
 # <a name="deploy-guarded-hosts"></a>部署受保护的主机
 
@@ -28,16 +28,16 @@ ms.locfileid: "80856830"
 
 **对于主机密钥证明**：
 1. [创建主机密钥](guarded-fabric-create-host-key.md#create-a-host-key)：说明如何设置从 fabric 域到 HGS 域的 DNS 转发器。
-2. [向证明服务添加主机密钥](guarded-fabric-create-host-key.md#add-the-host-key-to-the-attestation-service)：说明如何在 fabric 域中设置一个 Active Directory 安全组，添加受保护的主机作为该组的成员，并向 HGS 管理员提供该组标识符。 
+2. [向证明服务添加主机密钥](guarded-fabric-create-host-key.md#add-the-host-key-to-the-attestation-service)：说明如何在 fabric 域中设置一个 Active Directory 安全组，添加受保护的主机作为该组的成员，并向 HGS 管理员提供该组标识符。
 3. [确认受保护的主机可以证明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
 **对于管理员信任的证明**：
 1. [配置 FABRIC dns](guarded-fabric-configuring-fabric-dns.md)：说明如何设置从 fabric 域到 HGS 域的 DNS 转发器。
-2. [创建安全组](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)：说明如何在 fabric 域中设置一个 Active Directory 安全组，添加受保护的主机作为该组的成员，并向 HGS 管理员提供该组标识符。 
+2. [创建安全组](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)：说明如何在 fabric 域中设置一个 Active Directory 安全组，添加受保护的主机作为该组的成员，并向 HGS 管理员提供该组标识符。
 3. [确认受保护的主机可以证明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [受保护的构造和受防护的 Vm 的部署任务](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)

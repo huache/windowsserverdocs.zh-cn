@@ -10,16 +10,16 @@ author: cosmosdarwin
 description: 如何在 Windows Server 中删除存储空间直通群集中的服务器。
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cfd12094cb8c5e0fdfb19b1eadb1b303e6b5f6e8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0dd888048edc96d6001492e92ba6d519c751bdaa
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856120"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474564"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>删除存储空间直通中的服务器
 
->适用于： Windows Server 2019、Windows Server 2016
+>适用于：Windows Server 2019、Windows Server 2016
 
 本主题介绍如何使用 PowerShell 删除[存储空间直通](storage-spaces-direct-overview.md)中的服务器。
 
@@ -79,6 +79,6 @@ Remove-ClusterNode <Name> -CleanUpDisks
    >[!NOTE]
    > 可以简单地使用较少的服务器，例如在故障或维护期间。 但是，为了使卷恢复到完全正常运行状态，你必须安装上面列出的最小数量的服务器。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)

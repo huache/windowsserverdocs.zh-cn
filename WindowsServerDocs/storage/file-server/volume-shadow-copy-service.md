@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 1ab941e25da7171349bb24762940af3bf886c165
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d90030fe183e5cfcb94866e87793c0419b636433
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77675358"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475444"
 ---
 # <a name="volume-shadow-copy-service"></a>卷影复制服务
 
@@ -52,19 +52,19 @@ VSS 协调为要备份的数据创建一致的卷影副本（也称为快照或�
 
 完整的 VSS 解决方案需要以下所有基本部分：
 
-VSS 服务   Windows 操作系统的一部分，可确保其他组件能够正确地相互通信并协同工作  。
+VSS 服务   Windows 操作系统的一部分，可确保其他组件能够正确地相互通信并协同工作。
 
-VSS 请求程序   请求实际创建卷影副本（或导入或删除卷影副本等其他高级操作）的软件  。 通常，这是备份应用程序。 Windows Server 备份实用程序和 System Center Data Protection Manager 应用程序是 VSS 请求程序。 非 Microsoft® VSS 请求程序几乎包括所有在 Windows 上运行的备份软件。
+VSS 请求程序   请求实际创建卷影副本（或导入或删除卷影副本等其他高级操作）的软件。 通常，这是备份应用程序。 Windows Server 备份实用程序和 System Center Data Protection Manager 应用程序是 VSS 请求程序。 非 Microsoft® VSS 请求程序几乎包括所有在 Windows 上运行的备份软件。
 
-VSS 编写程序   保证我们要备份的数据集保持一致的组件  。 这通常作为业务线应用程序（如 SQL Server® 或 Exchange Server）的一部分提供。 各种 Windows 组件（如注册表）的 VSS 编写程序都包含在 Windows 操作系统中。 许多 Windows 应用程序中都包含非 Microsoft VSS 编写程序，这些编写程序在备份过程中需要确保数据的一致性。
+VSS 编写程序   保证我们要备份的数据集保持一致的组件。 这通常作为业务线应用程序（如 SQL Server® 或 Exchange Server）的一部分提供。 各种 Windows 组件（如注册表）的 VSS 编写程序都包含在 Windows 操作系统中。 许多 Windows 应用程序中都包含非 Microsoft VSS 编写程序，这些编写程序在备份过程中需要确保数据的一致性。
 
-VSS 提供程序   创建和维护卷影副本的组件  。 这可能会在软件或硬件中发生。 Windows 操作系统包括使用写入时复制的 VSS 提供程序。 如果使用存储区域网络 (SAN)，则必须为 SAN 安装 VSS 硬件提供程序（如果已提供）。 硬件提供程序从主机操作系统中卸载创建和维护卷影副本的任务。
+VSS 提供程序   创建和维护卷影副本的组件。 这可能会在软件或硬件中发生。 Windows 操作系统包括使用写入时复制的 VSS 提供程序。 如果使用存储区域网络 (SAN)，则必须为 SAN 安装 VSS 硬件提供程序（如果已提供）。 硬件提供程序从主机操作系统中卸载创建和维护卷影副本的任务。
 
 下图说明了 VSS 服务如何与请求程序、编写程序和提供程序协调以创建卷的卷影副本。
 
 ![](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
 
-图 1   卷影复制服务的架构示意图 
+图 1   卷影复制服务的架构示意图
 
 ### <a name="how-a-shadow-copy-is-created"></a>如何创建卷影副本
 
@@ -72,7 +72,7 @@ VSS 提供程序   创建和维护卷影副本的组件  。 这可能会在�
 
 ![](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
 
-图 2 卷影副本创建过程 
+图 2 卷影副本创建过程
 
 若要创建卷影副本，请求程序、编写程序和提供程序将执行以下操作：
 
@@ -106,11 +106,11 @@ VSS 提供程序   创建和维护卷影副本的组件  。 这可能会在�
 
 硬件或软件卷影复制提供程序使用以下方法之一创建卷影副本：
 
-完整复制   此方法在给定时间点对原始卷进行完整复制（称为“完整复制”或“克隆”）  。 此副本为只读副本。
+完整复制   此方法在给定时间点对原始卷进行完整复制（称为“完整复制”或“克隆”）。 此副本为只读副本。
 
-写入时复制   此方法不复制原始卷  。 相反，它通过复制在给定时间点之后对卷所做的所有更改（已完成的写入 I/O 请求）来进行差异复制。
+写入时复制   此方法不复制原始卷。 相反，它通过复制在给定时间点之后对卷所做的所有更改（已完成的写入 I/O 请求）来进行差异复制。
 
-写入时重定向   此方法不会复制原始卷，也不会在给定时间点后对原始卷进行任何更改  。 相反，它会通过将所有更改重定向到其他卷来进行差异复制。
+写入时重定向   此方法不会复制原始卷，也不会在给定时间点后对原始卷进行任何更改。 相反，它会通过将所有更改重定向到其他卷来进行差异复制。
 
 ## <a name="complete-copy"></a>完整复制
 
@@ -160,7 +160,7 @@ VSS 提供程序   创建和维护卷影副本的组件  。 这可能会在�
 </tbody>
 </table>
 
-表 1   创建卷影副本的写入时复制方法 
+表 1   创建卷影副本的写入时复制方法
 
 写入时复制方法是创建卷影副本的快速方法，因为它只复制对数据所做的更改。 可将差异区域中复制的块与原始卷上更改的数据相结合，将卷还原到进行任何更改之前的状态。 如果有很多更改，则写入时复制方法会变得昂贵。
 
@@ -201,7 +201,7 @@ VSS 提供程序   创建和维护卷影副本的组件  。 这可能会在�
 </tbody>
 </table>
 
-表 2   创建卷影副本的写入时重定向方法 
+表 2   创建卷影副本的写入时重定向方法
 
 与写入时复制方法一样，写入时重定向方法是创建卷影副本的快速方法，因为它只复制对数据所做的更改。 差异区域中复制的块可以与原始卷上未更改的数据相结合，以创建完整、最新的数据副本。 如果有很多读取 I/O 请求，则写入时重定向方法可能会变得昂贵。
 
@@ -311,7 +311,7 @@ LUN 重新同步不同于 LUN 交换。 LUN 交换是自 Windows Server 2003 SP
 
 ![](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
 
-图 3   在两个服务器之间创建和传输卷影副本 
+图 3   在两个服务器之间创建和传输卷影副本
 
 
 > [!NOTE]
@@ -420,11 +420,11 @@ VSS 可用于创建整个卷的卷影副本。 临时文件（如页面文件）
 
 ### <a name="whats-the-maximum-number-of-software-shadow-copies-created-by-the-system-provider-that-i-can-maintain-for-a-volume"></a>对于一个卷，我可以维护的系统提供程序创建的软件卷影副本的最大数量是多少？
 
-每个卷的软件卷影副本的最大数量为 512。 但是，默认情况下，你只能维护共享文件夹的卷影副本功能使用的 64 个卷影副本。 若要更改共享文件夹卷影副本功能的限制，请使用以下注册表项：MaxShadowCopies  。
+每个卷的软件卷影副本的最大数量为 512。 但是，默认情况下，你只能维护共享文件夹的卷影副本功能使用的 64 个卷影副本。 若要更改共享文件夹卷影副本功能的限制，请使用以下注册表项：MaxShadowCopies。
 
 ### <a name="how-can-i-control-the-space-that-is-used-for-shadow-copy-storage-space"></a>如何控制用于卷影副本存储空间的空间？
 
-键入 vssadmin resize shadowstorage 命令  。
+键入 vssadmin resize shadowstorage 命令。
 
 有关详细信息，请参阅 TechNet 上的 [Vssadmin resize shadowstorage](https://go.microsoft.com/fwlink/?linkid=180906) (https://go.microsoft.com/fwlink/?LinkId=180906) 。
 
@@ -445,15 +445,15 @@ Windows 操作系统提供了以下用于处理 VSS 的工具：
 
 DiskShadow 是一个 VSS 请求程序，可用来管理系统上的所有硬件和软件快照。 DiskShadow 包含如下所示的命令：
 
-  - list  ：列出 VSS 编写程序、VSS 提供程序和卷影副本
+  - list：列出 VSS 编写程序、VSS 提供程序和卷影副本
 
-  - create  ：创建新的卷影副本
+  - create：创建新的卷影副本
 
-  - import  ：导入可传输的卷影副本
+  - import：导入可传输的卷影副本
 
-  - expose  ：公开永久性卷影副本（例如驱动器号）
+  - expose：公开永久性卷影副本（例如驱动器号）
 
-  - revert  ：将卷还原到指定的卷影副本
+  - revert：将卷还原到指定的卷影副本
 
 
 此工具适用于 IT 专业人员，但开发人员会发现在测试 VSS 编写程序或 VSS 提供程序时它也很有用。
@@ -466,15 +466,15 @@ VssAdmin 用于创建、删除和列出有关卷影副本的信息。 它还可�
 
 VssAdmin 包含如下所示的命令：
 
-  - create shadow  ：创建新的卷影副本
+  - create shadow：创建新的卷影副本
 
-  - delete shadows  ：删除卷影副本
+  - delete shadows：删除卷影副本
 
-  - list providers  ：列出所有已注册的 VSS 提供程序
+  - list providers：列出所有已注册的 VSS 提供程序
 
-  - list writers  ：列出所有订阅的 VSS 编写程序
+  - list writers：列出所有订阅的 VSS 编写程序
 
-  - resize shadowstorage  ：更改卷影副本存储区域的大小上限
+  - resize shadowstorage：更改卷影副本存储区域的大小上限
 
 
 VssAdmin 只能用于管理由系统软件提供程序创建的卷影副本。
@@ -485,11 +485,11 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 
 以下注册表项可用于 VSS：
 
-  - VssAccessControl 
+  - VssAccessControl
 
-  - MaxShadowCopies 
+  - MaxShadowCopies
 
-  - MinDiffAreaFileSize 
+  - MinDiffAreaFileSize
 
 
 ### <a name="vssaccesscontrol"></a>VssAccessControl
@@ -509,7 +509,7 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 
 有关详细信息，请参阅 MSDN 网站上的以下条目：
 
-[用于备份和还原的注册表项](https://go.microsoft.com/fwlink/?linkid=180909) (https://go.microsoft.com/fwlink/?LinkId=180909) 下的“MaxShadowCopies” 
+[用于备份和还原的注册表项](https://go.microsoft.com/fwlink/?linkid=180909) (https://go.microsoft.com/fwlink/?LinkId=180909) 下的“MaxShadowCopies”
 
 ### <a name="mindiffareafilesize"></a>MinDiffAreaFileSize
 
@@ -517,7 +517,7 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 
 有关详细信息，请参阅 MSDN 网站上的以下条目：
 
-[用于备份和还原的注册表项](https://go.microsoft.com/fwlink/?linkid=180910) (https://go.microsoft.com/fwlink/?LinkId=180910) 下的“MinDiffAreaFileSize” 
+[用于备份和还原的注册表项](https://go.microsoft.com/fwlink/?linkid=180910) (https://go.microsoft.com/fwlink/?LinkId=180910) 下的“MinDiffAreaFileSize”
 
 ### <a name="supported-operating-system-versions"></a>支持的操作系统版本
 
@@ -620,6 +620,6 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 [Windows 开发人员中心中的卷影复制服务](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)

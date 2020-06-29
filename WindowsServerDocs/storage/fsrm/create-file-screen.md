@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e049162e7aff449774928d6a1d25cc1116f9aee9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7827f1e80b1cfe2288bee968cc3c4e3cd428e15
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403156"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474374"
 ---
 # <a name="create-a-file-screen"></a>创建文件屏蔽
 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 新建文件屏蔽的时候，你可以选择保存基于你定义的自定义文件屏蔽属性的文件屏蔽模板。 这种操作的优点在于，文件屏蔽和用于创建文件屏蔽的模板之间保留了链接，因此以后模板的更改可应用于派生自该模板的所有文件屏蔽。 此功能通过提供一个可进行所有更新的中心点，简化存储策略更改的实现。
 
@@ -52,9 +52,9 @@ ms.locfileid: "71403156"
     -   若要保存基于这些自定义属性的模板（推荐），请单击**将自定义属性另存为模板**，然后输入模板名称。 此选项会将模板应用于新文件屏蔽，并且以后可以使用该模板创建其他文件屏蔽。 这将使你以后能通过更新模板来自动更新文件屏蔽。
     -   如果你不希望在保存文件屏蔽的时候保存模板，请单击**保存自定义文件屏蔽，但不创建模板**。
 
-12. 单击 **“确定”** 。
+12. 单击" **确定**"。
 
-## <a name="see-also"></a>请参阅
+## <a name="additional-references"></a>其他参考
 
 -   [文件屏蔽管理](file-screening-management.md)
 -   [定义用于屏蔽的文件组](define-file-groups-for-screening.md)
