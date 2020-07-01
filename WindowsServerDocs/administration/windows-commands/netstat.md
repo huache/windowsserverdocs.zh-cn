@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6eae779216724d82ef7ca05026bcfd9725e6ea35
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 6e9cd59169922bb6d76b6c65f3381e653df97109
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721540"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548841"
 ---
 # <a name="netstat"></a>netstat
 
@@ -28,7 +28,7 @@ ms.locfileid: "84721540"
 ## <a name="syntax"></a>语法
 
 ```
-netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
+netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 ```
 
 ### <a name="parameters"></a>参数
@@ -36,6 +36,7 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 | 参数 | 说明 |
 | --------- | ----------- |
 | -a | 显示所有活动 TCP 连接以及计算机正在侦听的 TCP 和 UDP 端口。 |
+| -b | 显示创建每个连接或侦听端口所涉及的可执行文件。 在某些情况下，众所周知的可执行文件托管多个独立组件，并且在这种情况下，将显示创建连接或侦听端口所涉及的组件序列。 在这种情况下，可执行文件名称位于底部的 []，顶部是它调用的组件，依此类推，直到达到 TCP/IP。 请注意，此选项可能非常耗时且将失败，除非你有足够的权限。
 | -E | 显示以太网统计信息，如发送和接收的字节数和数据包数。 此参数可以与 **-s**组合。 |
 | -n | 显示活动 TCP 连接，但地址和端口号用数字表示，而不会尝试确定名称。 |
 | -o | 显示活动 TCP 连接，并包含每个连接的进程 ID （PID）。 您可以根据 Windows 任务管理器中 "进程" 选项卡上的 PID 查找该应用程序。 此参数可以与 **-a**、 **-n**和 **-p**结合使用。 |

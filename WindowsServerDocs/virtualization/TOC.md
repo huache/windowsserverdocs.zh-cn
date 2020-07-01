@@ -1,4 +1,4 @@
-# [虚拟化](virtualization.md)
+# [虚拟化](virtualization.yml)
 
 ## [受保护的结构和受防护的 VM](../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)
 

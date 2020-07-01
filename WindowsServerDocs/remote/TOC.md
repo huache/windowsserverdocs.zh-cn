@@ -1,4 +1,4 @@
-# [远程](index.md)
+# [远程](index.yml)
 ## [MultiPoint Services](multipoint-services/MultiPoint-Services.md)
 ### [规划 MultiPoint Services 部署](multipoint-services/Planning-a-MultiPoint-Services-Deployment.md)
 #### [引入 MultiPoint Services](multipoint-services/Introducing-MultiPoint-services.md)

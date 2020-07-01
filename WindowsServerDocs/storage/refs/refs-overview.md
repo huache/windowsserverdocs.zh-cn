@@ -6,13 +6,13 @@ manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
-ms.date: 06/17/2019
-ms.openlocfilehash: 7d33f15aafa432cb3f3174087c3b27855b4f35b2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.date: 06/29/2019
+ms.openlocfilehash: 5bcdbc76259d1dfecaaa5266bb952a21bcbc7825
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475134"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548892"
 ---
 # <a name="resilient-file-system-refs-overview"></a>复原文件系统 (ReFS) 概述
 
@@ -106,7 +106,7 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 
 ### <a name="limits"></a>限制
 
-| 功能       | ReFS                                        | NTFS |
+| Feature       | ReFS                                        | NTFS |
 |----------------|------------------------------------------------|-----------------------|
 | 最大文件名称长度 | 255 个 Unicode 字符  | 255 个 Unicode 字符               |
 | 最大路径名称长度 |32K Unicode 字符 | 32K Unicode 字符                |
@@ -172,3 +172,4 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 - [存储空间直通概述](../storage-spaces/storage-spaces-direct-overview.md)
 - [ReFS 块克隆](block-cloning.md)
 - [ReFS 完整性流](integrity-streams.md)
+- [通过 ReFSUtil 排查 ReFS 问题](../../administration/windows-commands/refsutil.md)
