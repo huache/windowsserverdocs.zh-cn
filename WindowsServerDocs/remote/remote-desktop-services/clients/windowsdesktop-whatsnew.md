@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/27/2020
+ms.date: 06/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d49c49def8b110f42a6d56354c73e5a75b04b7e
-ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
+ms.openlocfilehash: 5c3fc20ea42deaa9dd96fd9f7bfabfcb85462bdd
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84025508"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267658"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -26,8 +26,21 @@ ms.locfileid: "84025508"
 
 |用户组 |版本  |
 |-----------|---------|
-|公用     |1.2.1026 |
-|Insider    |1.2.1026 |
+|公用     |1.2.1104 |
+|Insider    |1.2.1104 |
+
+## <a name="updates-for-version-121104"></a>版本 1.2.1104 的更新
+
+*发布日期：2020/06/23*
+
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
+
+- 更新了“订阅”选项的自动发现逻辑，以支持 Windows 虚拟桌面春季 2020更新。 只有春季更新资源的客户不再需要为秋季 2019 版提供许可。
+- 提供最高 400% 的比例因子，从而优化了对高 DPI 设备的支持。
+- 解决了问题：“断开连接”对话框不显示。
+- 解决了问题：命令栏工具提示的显示时间比预期长。
+- 解决了尝试在刷新后立即订阅但发生崩溃的问题。
+- 解决了问题：在某些语言中无法正确分析日期和时间并发生崩溃。
 
 ## <a name="updates-for-version-121026"></a>针对版本 1.2.1026 的更新
 
@@ -76,8 +89,6 @@ ms.locfileid: "84025508"
 
 *发布日期：2020/03/24*
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSh)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSi)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4sllb)
-
 - 已将工作区的“更新”操作重命名为“刷新”，以与其他远程桌面客户端保持一致。
 - 现在可以直接从工作区的上下文菜单刷新工作区。
 - 手动刷新工作区现在可确保更新所有本地内容。
@@ -90,8 +101,6 @@ ms.locfileid: "84025508"
 
 *发布日期：2020/02/25*
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qeak)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7h)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7g)
-
 - 现在，如果 RDP 文件缺少签名或 signscope 属性之一已被修改，那么，连接到 Windows 虚拟桌面将被阻止。
 - 当工作区为空或已删除时，连接中心将不再显示为空。
 - 添加了针对断开连接消息的活动 ID 和错误代码，以改进故障排除。 可以使用 **Ctrl + C** 复制对话框消息。
@@ -102,8 +111,6 @@ ms.locfileid: "84025508"
 ## <a name="updates-for-version-12605"></a>针对版本 1.2.605 的更新
 
 *发布日期：2020/01/29*
-
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
 - 现在可以选择要用于桌面连接的显示器。 若要更改此设置，请右键单击桌面连接的图标，然后选择“设置”。
 - 修复了连接设置未显示正确的可用缩放系数的问题。
@@ -116,8 +123,6 @@ ms.locfileid: "84025508"
 
 *发布日期：2019/12/04*
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
-
 - 你现在可以直接通过客户端顶部命令栏上的“更多选项”按钮访问有关更新的信息。
 - 你现在可以从客户端的命令栏报告反馈。
 - 现在，“反馈”选项仅在反馈中心可用的情况下显示。
@@ -128,8 +133,6 @@ ms.locfileid: "84025508"
 ## <a name="updates-for-version-12431"></a>针对版本 1.2.431 的更新
 
 *发布日期：2019/11/12*
-
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - 客户端的 32 位版和 ARM64 版现已提供！
 - 客户端现在会保存你对连接栏所做的任何更改（例如，其位置、大小和固定状态），并跨会话应用这些更改。
@@ -148,8 +151,6 @@ ms.locfileid: "84025508"
 ## <a name="updates-for-version-12247"></a>针对版本 1.2.247 的更新
 
 *发布日期：2019/09/17*
-
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - 改进了本地化版本的回退语言。 （例如，FR-CA 将以法语正确显示，而不是以英语显示。）
 - 删除订阅时，客户端现在会从凭据管理器中正确删除保存的凭据。

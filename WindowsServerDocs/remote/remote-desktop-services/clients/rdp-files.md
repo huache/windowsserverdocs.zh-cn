@@ -7,18 +7,18 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/08/2020
+ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 745f911367471d3708c57a3c777743a65c5bd4a8
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 4606938a6c01e20c847b3a6c198de8a1c61c59f0
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993354"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094520"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>受支持的远程桌面 RDP 文件设置
 
-下表列出了可用于远程桌面客户端的受支持的 RDP 文件设置。
+下表列出了可用于远程桌面客户端的受支持的 RDP 文件设置。 配置设置时，检查[客户端比较](./remote-desktop-app-compare.md)以查看每个客户端支持的重定向。
 
 此表还突出显示了 Windows 虚拟桌面支持哪些设置作为自定义属性。 可以参阅[这篇文档](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409)，详细了解如何使用 PowerShell 为 Windows 虚拟桌面主机池自定义 RDP 属性。
 
@@ -31,7 +31,7 @@ ms.locfileid: "82993354"
 | username:s:value | 指定用于登录远程计算机的用户帐户的名称。 | 任何有效的用户名。 | | |
 | domain:s:value | 指定用于登录远程计算机的用户帐户所在域的名称。 | 有效的域名（如“CONTOSO”）。 | | |
 | gatewayhostname:s:value | 指定 RD 网关主机名。 | 有效的名称、IPv4 地址或 IPv6 地址。 | | |
-| gatewaycredentialssource:i:value | 指定 RD 网关身份验证方法。 | - 0：要求提供密码 (NTLM)</br>- 1：使用智能卡</br>- 4：允许用户稍后选择 | 0 | |
+| gatewaycredentialssource:i:value | 指定 RD 网关身份验证方法。 | - 0：要求提供密码 (NTLM)</br>- 1：使用智能卡</br>- 2：使用当前已登录的用户的凭据。</br>- 3：提示用户输入其凭据并使用基本身份验证</br>- 4：允许用户稍后选择</br>- 5：使用基于 Cookie 的身份验证 | 0 | |
 | gatewayprofileusagemethod:i:value | 指定是否使用默认 RD 网关设置。 | - 0：使用管理员指定的默认配置文件模式</br>- 1：使用用户指定的显式设置 | 0 | |
 | gatewayusagemethod:i:value | 指定何时将 RD 网关用于连接。 | - 0：不使用 RD 网关</br>- 1：始终使用 RD 网关</br>- 2：在无法与 RD 会话主机建立直接连接的情况下使用 RD 网关</br>- 3：使用默认 RD 网关设置</br>- 4：不使用 RD 网关，对本地地址绕过网关</br>将此属性值设置为 0 或 4 实际上是等效的，但将此属性设置为 4 会启用绕过本地地址的选项。 | 0 | |
 | promptcredentialonce:i:value | 确定是否保存用户的凭据并将其用于 RD 网关和远程计算机。 | - 0：远程会话不使用相同的凭据</br>- 1：远程会话将使用相同的凭据 | 1 | |
@@ -87,7 +87,7 @@ ms.locfileid: "82993354"
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|
 | remoteapplicationcmdline:s:value | RemoteApp 的可选命令行参数。 | 有效命令行参数。 | | |
 | remoteapplicationexpandcmdline:i:value | 确定 RemoteApp 命令行参数中包含的环境变量应该在本地扩展还是远程扩展。 | - 0：应将环境变量扩展为本地计算机的值</br>- 1：应将环境变量扩展为远程计算机的值 | 1 | |
-| remoteapplicationexpandworkingdir | 确定 RemoteApp 工作目录参数中包含的环境变量应该在本地扩展还是远程扩展。 | - 0：应将环境变量扩展为本地计算机的值</br> - 1：应将环境变量扩展为远程计算机的值。</br>RemoteApp 工作目录通过 shell 工作目录参数指定。 | 1 | |
+| remoteapplicationexpandworkingdir:i:value | 确定 RemoteApp 工作目录参数中包含的环境变量应该在本地扩展还是远程扩展。 | - 0：应将环境变量扩展为本地计算机的值</br> - 1：应将环境变量扩展为远程计算机的值。</br>RemoteApp 工作目录通过 shell 工作目录参数指定。 | 1 | |
 | remoteapplicationfile:s:value | 指定 RemoteApp 要在远程计算机上打开的文件。</br>若要打开本地文件，还必须为源驱动器启用驱动器重定向。 | 有效文件路径。 | | |
 | remoteapplicationicon:s:value | 指定在启动 RemoteApp 时要在客户端 UI 中显示的图标文件。 如果未指定文件名，则客户端将使用标准远程桌面图标。 仅支持“.ico”文件。 | 有效文件路径。 | | |
 | remoteapplicationmode:i:value | 确定是否将连接作为 RemoteApp 会话启动。 | - 0：不启动 RemoteApp 会话</br>- 1：启动 RemoteApp 会话 | 1 | |

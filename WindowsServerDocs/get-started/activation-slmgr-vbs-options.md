@@ -12,12 +12,12 @@ appliesto:
 - Windows Server 2012 R2
 - Windows 10
 - Windows 8.1
-ms.openlocfilehash: 25c12322ef648655a301931c9273e8d941ebe62e
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: c0d8019812144cc3e4bd33cfaf2ca2c0c1b7eefa
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235233"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473174"
 ---
 # <a name="slmgrvbs-options-for-obtaining-volume-activation-information"></a>用于获取批量激活信息的 Slmgr.vbs 选项
 
@@ -39,9 +39,9 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 > [!IMPORTANT]
 > 由于 Windows 7 和 Windows Server 2008 R2 中的 WMI 更改，因此 Slmgr.vbs 脚本不适用于跨平台工作。 不支持使用 Slmgr.vbs 从 Windows Vista&reg; 操作系统管理 Windows 7 或 Windows Server 2008 R2 系统。 尝试从 Windows 7 或 Windows Server 2008 R2 中管理较旧系统将生成特定版本不匹配错误。 例如，运行脚本 cscript slmgr.vbs \<vista\_machine\_name\> /dlv 将产生以下输出：
->  
+>
 >> Microsoft (R) Windows Script Host Version 5.8 版权所有 (C) Microsoft Corporation。 保留所有权利。
->>  
+>>
 >> 远程计算机不支持此版本的 SLMgr.vbs
 
 ## <a name="general-slmgrvbs-options"></a>常规 Slmgr.vbs 选项
@@ -57,10 +57,10 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 |选项 |说明 |
 | - | - |
 |\/ipk&nbsp;&lt;ProductKey&gt; |尝试安装 5×5 产品密钥。 确认参数提供的产品密钥有效且适用于已安装的操作系统。<br />如果没有，则返回错误。<br />如果密钥有效且适用，则安装密钥。 如果已安装一个密钥，则静默替换它。<br />若要防止许可证服务中的不稳定性，应重新启动系统或软件保护服务。<br />必须从提升的“命令提示符”窗口下运行此操作，或必须将“标准用户操作”注册表值设置为允许非特权的用户额外访问软件保护服务。 |
-|/ato&nbsp;\[\<Activation&nbsp;ID\>] |对于安装了 KMS 主机密钥或多个激活密钥 (MAK) 的零售版和卷系统，/ato 提示 Windows 尝试联机激活。<br />对于安装了通用批量许可证密钥 (GVLK) 的系统，这提示尝试 KMS 激活。 当运行 /ato 时，已设置为挂起自动 KMS 激活尝试 (/stao) 的系统仍然尝试 KMS 激活 。<br />**注意：** 从 Windows 8（和 Windows Server 2012）开始，/stao 选项已弃用。 请改用 /act-type 选项。<br />参数 \<Activation ID\> 扩展 /ato 支持，以标识在计算机上安装的 Windows 版本 。 指定 \<Activation ID\> 参数隔离与该激活 ID 相关联版本的选项的影响。 运行所有 Slmgr.vbs /dlv 以获取已安装版本的 Windows 的激活 ID。 如果必须支持其他应用程序，请参阅该应用程序提供的指南，以获取进一步说明。<br />KMS 激活不需要提升的权限。 但是，联机激活需要提升，或必须将标准用户操作注册表值设置为允许非特权的用户额外访问软件保护服务。 |
-|\/dli&nbsp;\[<Activation&nbsp;ID\>&nbsp;\|&nbsp;All\] |显示许可证信息。<br />默认情况下， **/dli** 显示已安装的活动 Windows 版本的许可证信息。 指定 \<Activation ID\> 参数可显示与该激活 ID 相关联的指定版本的许可证信息。 将 All 指定为参数将显示所有适用的已安装产品的许可证信息。<br />此操作不需要提升的权限。 |
-|\/dlv&nbsp;\[<Activation&nbsp;ID\>&nbsp;\|&nbsp;All\] |显示详细的许可证信息。<br />默认情况下， **/dlv** 显示已安装操作系统的许可证信息。 指定 \<Activation ID\> 参数可显示与该激活 ID 相关联的指定版本的许可证信息。 指定 All 参数将显示所有适用的已安装产品的许可证信息。<br />此操作不需要提升的权限。 |
-|\/xpr \[\<Activation&nbsp;ID\>] |显示产品的激活到期日期。 默认情况下，因为 MAK 和零售激活是永久性的，所以这指的是当前 Windows 版本，主要用于 KMS 客户端。<br />指定 \<Activation ID\> 参数可显示与该激活 ID 相关联的指定版本的激活到期日期。此操作不需要提升的权限。 |
+|/ato&nbsp;\[\<Activation&nbsp;ID\>] |对于安装了 KMS 主机密钥或多个激活密钥 (MAK) 的零售版和卷系统，/ato 提示 Windows 尝试联机激活。<br />对于安装了通用批量许可证密钥 (GVLK) 的系统，这提示尝试 KMS 激活。 当运行 /ato 时，已设置为挂起自动 KMS 激活尝试 (/stao) 的系统仍然尝试 KMS 激活 。<br />**注意：** 从 Windows 8（和 Windows Server 2012）开始，/stao 选项已弃用。 请改用 /act-type 选项。<br />参数 \<**Activation ID**\> 扩展 /ato 支持，以标识在计算机上安装的 Windows 版本。 指定 \<**Activation ID**\> 参数可隔离该选项对与激活 ID 相关联的版本的影响。 运行所有 Slmgr.vbs /dlv 以获取已安装版本的 Windows 的激活 ID。 如果必须支持其他应用程序，请参阅该应用程序提供的指南，以获取进一步说明。<br />KMS 激活不需要提升的权限。 但是，联机激活需要提升，或必须将标准用户操作注册表值设置为允许非特权的用户额外访问软件保护服务。 |
+|\/dli&nbsp;\[<Activation&nbsp;ID\>&nbsp;\|&nbsp;All\] |显示许可证信息。<br />默认情况下， **/dli** 显示已安装的活动 Windows 版本的许可证信息。 指定 \<**Activation ID**\> 参数可显示与该激活 ID 相关联的指定版本的许可证信息。 将 All 指定为参数将显示所有适用的已安装产品的许可证信息。<br />此操作不需要提升的权限。 |
+|\/dlv&nbsp;\[<Activation&nbsp;ID\>&nbsp;\|&nbsp;All\] |显示详细的许可证信息。<br />默认情况下， **/dlv** 显示已安装操作系统的许可证信息。 指定 \<**Activation ID**\> 参数可显示与该激活 ID 相关联的指定版本的许可证信息。 指定 All 参数将显示所有适用的已安装产品的许可证信息。<br />此操作不需要提升的权限。 |
+|\/xpr \[\<Activation&nbsp;ID\>] |显示产品的激活到期日期。 默认情况下，因为 MAK 和零售激活是永久性的，所以这指的是当前 Windows 版本，主要用于 KMS 客户端。<br />指定 \<**Activation ID**\> 参数可显示与该激活 ID 相关联的指定版本的激活到期日期。此操作不需要提升的权限。 |
 
 ## <a name="advanced-options"></a>高级选项
 
@@ -72,7 +72,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 |\/rearm |此选项将重置激活计时器。 **/rearm** 过程也称为 **sysprep /generalize**。<br />如果 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\SkipRearm 注册表项设为 1，则此操作将不执行任何操作 。 请参阅[批量激活的注册表设置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502532(v=ws.11))详细了解此注册表项。<br />必须在提升的“命令提示符”窗口中运行此操作，或必须将“标准用户操作”注册表值设置为允许非特权的用户额外访问软件保护服务。 |
 |\/rearm-app &lt;Application&nbsp;ID&gt; |重置指定应用的许可状态。 |
 |\/rearm-sku &lt;Application&nbsp;ID&gt; |重置指定 SKU 的许可状态。 |
-|\/upk&nbsp;\[&lt;Application&nbsp;ID&gt;] |此选项卸载当前 Windows 版本的产品密钥。 重新启动后，系统将处于未经许可的状态下，除非安装了新产品密钥。<br />还可以使用 \<Activation ID\> 参数来指定不同的已安装产品。<br />必须从提升的“命令提示符”窗口下运行此操作。 |
+|\/upk&nbsp;\[&lt;Application&nbsp;ID&gt;] |此选项卸载当前 Windows 版本的产品密钥。 重新启动后，系统将处于未经许可的状态下，除非安装了新产品密钥。<br />你还可以使用 \<**Activation ID**\> 参数来指定不同的已安装产品。<br />必须从提升的“命令提示符”窗口下运行此操作。 |
 |\/dti&nbsp;\[\<Activation&nbsp;ID\>] |为脱机激活显示安装 ID。 |
 |\/atp &lt;Confirmation&nbsp;ID&gt; |使用用户提供的确认 ID 激活产品。 |
 
@@ -121,7 +121,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 |\/ao-list |显示可用于本地计算机的所有激活对象。 |
 |\/del-ao &lt;AO_DN&gt;<br />\/del-ao &lt;AO_RDN&gt; |从林中删除指定的激活对象。 |
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 
 - [批量激活技术参考](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502529%28v%3dws.11%29)
 - [批量激活概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612%28v%3dws.11%29)

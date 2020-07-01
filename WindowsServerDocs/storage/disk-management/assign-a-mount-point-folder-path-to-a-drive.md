@@ -1,53 +1,54 @@
 ---
 title: 为驱动器分配装入点文件夹路径。
 description: 本文介绍如何为驱动器分配装入点文件夹路径（而不是驱动器号）。
-ms.date: 06/07/2019
+ms.date: 06/07/2020
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b2fda216b57fbf036ce20c40b4c8b38d44404f3c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 9757f5f5f68eea0fc1d468a8d8e6fd341e2ecc6a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815530"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475434"
 ---
-# <a name="assign-a-mount-point-folder-path-to-a-drive"></a>为驱动器分配装入点文件夹路径
+# <a name="mount-a-drive-in-a-folder"></a>在文件夹中装载驱动器
 
-> **适用于：** Windows 10、Windows 8.1、Windows Server（半年频道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **适用于：** Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-可以使用磁盘管理为驱动器分配装入点文件夹路径（而不是驱动器号）。 装入点文件夹路径仅适用于基本或动态 NTFS 卷上的空文件夹。
+如果需要，可以使用“磁盘管理”在文件夹（而不是驱动器号）中装载（使驱动器可访问）。 这样可使驱动器显示为一个文件夹。 只能在基本或动态 NTFS 卷的空文件夹中装载驱动器。
 
-## <a name="assigning-a-mount-point-folder-path-to-a-drive"></a>为驱动器分配装入点文件夹路径
+## <a name="mounting-a-drive-in-an-empty-folder"></a>将驱动器装载到空文件夹中
 
 > [!NOTE]
-> 至少必须是“备份操作员”或“管理员”组的成员才能完成这些步骤   。
+> 至少必须是“备份操作员”或“管理员”组的成员才能完成这些步骤。
 
-#### <a name="to-assign-a-mount-point-folder-path-to-a-drive-by-using-the-windows-interface"></a>使用 Windows 界面为驱动器分配装入点文件夹路径
+### <a name="to-mount-a-drive-in-an-empty-folder-by-using-the-windows-interface"></a>使用 Windows 界面将驱动器装载到空文件夹中
 
-1.  在磁盘管理器中，右键单击想要为其分配装入点文件夹路径的分区或卷。 
-2. 依次单击“更改驱动器号和路径”、“添加”   。 
-3. 单击“装入以下空白 NTFS 文件夹中”  。
-4. 键入 NTFS 卷上空文件夹的路径，或者单击“浏览”  以找到它。
+1.  在“磁盘管理器”中，右键单击包含要在其中装载驱动器的文件夹的分区或卷。
+2. 依次单击“更改驱动器号和路径”、“添加” 。
+3. 单击“装入以下空白 NTFS 文件夹中”。
+4. 键入 NTFS 卷上空文件夹的路径，或者单击“浏览”以找到它。
 
-#### <a name="to-assign-a-mount-point-folder-path-to-a-drive-using-a-command-line"></a>使用命令行为驱动器分配装入点文件夹路径
+### <a name="to-mount-a-drive-in-an-empty-folder-using-a-command-line"></a>使用命令行在空文件夹中装载驱动器
 
 1.  打开命令提示符并键入 `diskpart`。
 
 2.  在 **DISKPART** 提示符下，键入 `list volume`，并记下要为其分配路径的卷编号。
 
-3.  在 DISKPART  提示符下，键入 `select volume <volumenumber>`。 
+3.  在 **DISKPART** 提示符下，键入 `select volume <volumenumber>`，指定要分配其路径的卷编号。
 
-4. 选择要为其分配路径的简单卷 *volumenumber*。
+5.  在 DISKPART 提示符下，键入 `assign [mount=<path>]`。
 
-5.  在 DISKPART  提示符下，键入 `assign [mount=<path>]`。
+### <a name="to-remove-a-mount-point"></a>删除装载点
 
-#### <a name="to-remove-a-mount-point-folder-path-to-a-drive"></a>删除驱动器的装入点文件夹路径
+若要删除装载点，以禁止通过文件夹访问该驱动器：
 
--   若要删除装入点文件夹路径，请单击路径，然后单击“删除”  。
+1. 选择并按住（或右键单击）装载到文件夹的驱动器，然后选择“更改驱动器号和路径”。
+2. 从列表中选择该文件夹，然后选择“删除”。
 
 | 值 | 说明 |
 | --- | --- |
@@ -61,10 +62,8 @@ ms.locfileid: "80815530"
 -   如果管理的是本地或远程计算机，则可以浏览该计算机上的 NTFS 文件夹。
 -   装入点文件夹路径仅适用于基本或动态 NTFS 卷上的空文件夹。
 -   若要修改装入点文件夹路径，请删除它，然后使用新位置创建新文件夹路径。 无法直接修改装入点文件夹路径。
--   为驱动器分配装入点文件夹路径时，请使用“事件查看器”  检查系统日志中指明装入点文件夹路径故障的任何群集服务错误或警告。 这些错误会在“源”  列中列为“ClusSvc”  ，在“类别”  列中列为“物理磁盘资源”  。
+-   为驱动器分配装入点文件夹路径时，请使用“事件查看器”检查系统日志中指明装入点文件夹路径故障的任何群集服务错误或警告。 这些错误会在“源”列中列为“ClusSvc”，在“类别”列中列为“物理磁盘资源”。
 -   还可以使用 [mountvol](https://go.microsoft.com/fwlink/?linkid=64111) 命令创建已装载的驱动器。
 
-## <a name="see-also"></a>另请参阅
+## <a name="additional-references"></a>其他参考
 -   [命令行语法表示法](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

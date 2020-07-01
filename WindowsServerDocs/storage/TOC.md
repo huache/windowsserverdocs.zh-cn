@@ -104,6 +104,7 @@
 ### [镜像加速奇偶校验](refs/mirror-accelerated-parity.md)
 ### [阻止克隆](refs/block-cloning.md)
 ### [完整性流](refs/integrity-streams.md)
+### [ReFSUtil](../administration/windows-commands/refsutil.md)
 
 ## 存储迁移服务
 ### [概述](storage-migration-service/overview.md)
