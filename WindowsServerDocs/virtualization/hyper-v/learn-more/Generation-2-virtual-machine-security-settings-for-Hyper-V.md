@@ -9,12 +9,12 @@ ms.assetid: 06ab4f5f-6b8e-4058-8108-76785aa93d4c
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 7eb867529d38ab21ee21c19f92c89ed4128b0ea4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1b3c7b636d9c93ff0392f266d1e6e18d36dfd15f
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860800"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548911"
 ---
 # <a name="generation-2-virtual-machine-security-settings-for-hyper-v"></a>Hyper-V 的第 2 代虚拟机安全设置
 
@@ -83,4 +83,4 @@ ms.locfileid: "80860800"
 
 可以在本地运行受防护的虚拟机，而无需设置主机保护者服务。 但如果将其迁移到另一台主机，则可能无法启动它。 必须更新该虚拟机的密钥保护程序，才能授权新主机运行该虚拟机。 有关详细信息，请参阅[受保护的结构和受防护的 VM](https://go.microsoft.com/fwlink/?LinkId=746381)。  
 
-有关 Windows Server 中安全性的详细信息，请参阅[安全和保障](../../../security/Security-and-Assurance.md)。  
+有关 Windows Server 中安全性的详细信息，请参阅[安全和保障](../../../security/Security-and-Assurance.yml)。  

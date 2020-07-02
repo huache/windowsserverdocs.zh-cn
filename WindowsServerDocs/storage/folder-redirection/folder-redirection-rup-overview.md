@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2e8a0816fdd78491c18e196a57a38734e3368e
-ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
+ms.openlocfilehash: 8a2a76c0cdd4433ecdf445bcde01f8af5bae66a7
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85094505"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548872"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>文件夹重定向、脱机文件和漫游用户配置文件概述
 
@@ -135,4 +135,4 @@ ms.locfileid: "85094505"
 | 部署 | [部署文件夹重定向、脱机文件和漫游用户策略文件](deploy-folder-redirection.md)<br>[实施最终用户数据集中管理解决方案：文件夹重定向和脱机文件技术验证和部署](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫游用户数据部署指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[为 Windows 7 计算机配置新增脱机文件功能循序渐进指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用文件夹重定向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[实现文件夹重定向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
 | 工具和设置 | [MSDN 上的脱机文件](https://msdn.microsoft.com/library/cc296092.aspx)<br>[脱机文件组策略参考](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
 | 社区资源 | [文件服务和存储论坛](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[你好，脚本专家！我如何在 Windows 中使用脱机文件功能？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[你好，脚本专家！我如何能启用和禁用脱机文件？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
-| 相关技术|[Windows Server 中的标识和访问](../../identity/identity-and-access.yml)<br>[Windows Server 中的存储](../storage.yml)<br>[远程访问和服务器管理](../../remote/index.md) |
+| 相关技术|[Windows Server 中的标识和访问](../../identity/identity-and-access.yml)<br>[Windows Server 中的存储](../storage.yml)<br>[远程访问和服务器管理](../../remote/index.yml) |

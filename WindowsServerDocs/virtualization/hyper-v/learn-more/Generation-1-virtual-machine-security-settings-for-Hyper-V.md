@@ -9,12 +9,12 @@ ms.assetid: f8f8c569-8b74-4c19-876e-1c7d00cce308
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f745ccd9e5a82aa79fb58798f233bf2662b00a70
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 01a4882ec766673af5ff8f57debb829ace743d77
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475634"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548700"
 ---
 # <a name="generation-1-virtual-machine-security-settings"></a>第 1 代虚拟机安全设置
 
@@ -39,11 +39,11 @@ ms.locfileid: "85475634"
 - 该虚拟机的经授权的受保护结构的一部分，或
 - 拥有一个虚拟机保护者的私钥。
 
-若要了解有关受保护的结构的详细信息，请参阅[安全和保障](../../../security/Security-and-Assurance.md)中的受防护的 VM 简介部分。
+若要了解有关受保护的结构的详细信息，请参阅[安全和保障](../../../security/Security-and-Assurance.yml)中的受防护的 VM 简介部分。
 
 可以将密钥存储驱动器添加到虚拟机的某个 IDE 控制器上的空槽中。 要执行此操作，请单击“添加密钥存储驱动器”，将密钥存储驱动器添加到此虚拟机的第一个可用 IDE 控制器槽中。
 
 ## <a name="additional-references"></a>其他参考
 
 - [Hyper-V 管理器中的第 2 代虚拟机安全设置](Generation-2-virtual-machine-security-settings-for-hyper-v.md)
-- [安全和保障](../../../security/Security-and-Assurance.md)
+- [安全和保障](../../../security/Security-and-Assurance.yml)
