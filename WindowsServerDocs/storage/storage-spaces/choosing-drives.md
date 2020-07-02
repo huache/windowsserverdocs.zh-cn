@@ -7,32 +7,40 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 09/19/2019
+ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 19679a6838d583ef93175f5f95aa21e8aeca9b36
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2ffe34097971f4477f0f536637b49b704678c93e
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475254"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833358"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>选择存储空间直通驱动器
 
->适用于： Windows 2019、Windows Server 2016
+>适用于：Windows Server 2019、Windows Server 2016
 
 本主题提供有关如何选择[存储空间直通](storage-spaces-direct-overview.md)驱动器以满足你的性能和容量要求的指南。
 
 ## <a name="drive-types"></a>驱动器类型
 
-存储空间直通目前适用于三种类型的驱动器：
+存储空间直通当前适用于四种类型的驱动器：
 
 <table>
+    <tr style="border: 0;">
+        <td style="padding: 10px; border: 0; width:70px">
+            <img src="media/understand-the-cache/pmem-100px.png">
+        </td>
+        <td style="padding: 10px; border: 0;" valign="middle">
+            <b>PMem</b>指持久性内存，一种新的低延迟、高性能存储类型。
+        </td>
+    </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
             <img src="media/understand-the-cache/NVMe-100px.png">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>NVMe</b>（非易失性内存 Express）指的是直接位于 PCIe 总线上的固态硬盘。 常见的外形规格是 2.5 英寸 U.2、PCIe 外接卡 (AIC) 和 M.2。 与当今我们支持的任何其他类型的驱动器相比，NVMe 提供更高的 IOPS 和 IO 吞吐量以及更低的延迟。
+            <b>NVMe</b>（非易失性内存 Express）指的是直接位于 PCIe 总线上的固态硬盘。 常见的外形规格是 2.5 英寸 U.2、PCIe 外接卡 (AIC) 和 M.2。 NVMe 提供更高的 IOPS 和 IO 吞吐量，延迟时间比我们目前支持的任何其他类型的驱动器（持久性内存除外）的延迟更高。
         </td>
     </tr>
     <tr style="border: 0;">

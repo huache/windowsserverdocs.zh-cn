@@ -1,5 +1,5 @@
 ---
-title: 存储空间直通的硬件要求
+title: 存储空间直通硬件要求
 ms.prod: windows-server
 description: 测试存储空间直通的最低硬件要求。
 ms.author: eldenc
@@ -7,18 +7,18 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 08/05/2019
+ms.date: 06/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 42022b6e2e3564d1440e2ba1d45f9f98430242c0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e34f74226edb56e8db0290fd5dc83f0c6e54221
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861050"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833320"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>存储空间直通的硬件要求
 
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
 本主题介绍存储空间直通的最低硬件要求。
 
@@ -33,7 +33,7 @@ ms.locfileid: "80861050"
 
 ![显示 SDDC AQs 的 Windows Server 目录的屏幕截图](media/hardware-requirements/sddc-aqs.png)
 
-完全配置的群集（服务器、网络和存储）必须在故障转移群集管理器中的每个向导或在 PowerShell 中通过 `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)传递所有[群集验证测试](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)。
+完全配置的群集（服务器、网络和存储）必须在故障转移群集管理器中，或在 PowerShell 中通过 cmdlet 传递所有[群集验证测试](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) 。
 
 此外，还需要满足以下要求：
 
@@ -58,7 +58,7 @@ ms.locfileid: "80861050"
 - RAID 1 镜像**不**是必需的，但支持启动
 - 建议： 200 GB 的最小大小
 
-## <a name="networking"></a>联网
+## <a name="networking"></a>网络
 
 存储空间直通需要在每个节点之间进行可靠的高带宽、低延迟的网络连接。  
 
@@ -78,15 +78,16 @@ ms.locfileid: "80861050"
 
 ## <a name="drives"></a>驱动器
 
-存储空间直通适用于直接连接的 SATA、SAS 或 NVMe 驱动器，它们在物理上只连接到一台服务器。 有关选择驱动器的更多帮助，请参阅[选择驱动器](choosing-drives.md)主题。
+存储空间直通可以使用直接连接的 SATA、SAS、NVMe 或永久性内存（PMem）驱动器，这些驱动器在物理上只连接到一台服务器。 有关选择驱动器的更多帮助，请参阅[选择驱动器](choosing-drives.md)和[理解和部署永久性内存](deploy-pmem.md)主题。
 
-- 支持 SATA、SAS 和 NVMe （2、2、2和3）驱动器。
+- 支持 SATA、SAS、永久性内存和 NVMe （2、U. 2 和外接卡）驱动器
 - 支持512n、512e 和4K 本机驱动器
 - 固态硬盘必须提供[电源丢失保护](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
 - 每个服务器中相同数量和类型的驱动器–请参阅[驱动对称注意事项](drive-symmetry-considerations.md)
 - 缓存设备必须为 32 GB 或更大
+- 永久性内存设备在块存储模式下使用
 - 当使用永久性内存设备作为缓存设备时，必须使用 NVMe 或 SSD 容量设备（不能使用 Hdd）
-- NVMe 驱动程序是 Microsoft 提供的包含在 Windows 中的驱动程序。 （stornvme）
+- NVMe 驱动程序是 Microsoft 提供的驱动程序，包括在 Windows 中（stornvme.sys）
 - 建议：容量驱动器数是缓存驱动器数的整数倍
 - 建议：缓存驱动器应具有高写入高耐用性：每日至少3个驱动器写入（DWPD）或每天至少 4 tb 写入（TBW）–请参阅[了解每日驱动器写入数（DWPD）、tb 写入量（TBW）和建议存储空间直通的最低要求](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
@@ -129,7 +130,7 @@ ms.locfileid: "80861050"
 
 ### <a name="maximum-capacity"></a>最大容量
 
-| 最                | Windows Server 2019  | Windows Server 2016  |
+| 最                | Windows Server Standard 2012 R2  | Windows Server 2016  |
 | ---                     | ---------            | ---------            |
 | 每台服务器的原始容量 | 400 TB               | 100 TB               |
 | 池容量           | 4 PB （4000 TB）      | 1 PB                 |

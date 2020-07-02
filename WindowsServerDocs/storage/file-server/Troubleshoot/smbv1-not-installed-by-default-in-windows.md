@@ -5,37 +5,42 @@ author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
-ms.date: 12/25/2019
-ms.openlocfilehash: a1e1a30530f937289770bcef9e71189bf69719ce
-ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
+ms.date: 07/01/2020
+ms.openlocfilehash: 18c315a8b3562c25b5fe1c537a8922fc148e444b
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721755"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833283"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>默认情况下，windows 10 版本1709、Windows Server 版本1709及更高版本中未安装 SMBv1
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>“摘要”
 
-在 Windows 10 秋季创意者更新和 Windows Server 版本1709（RS3）及更高版本中，默认情况下不再安装服务器消息块版本1（SMBv1）网络协议。 从2007年开始，SMBv2 和更高版本的协议取代了它。 Microsoft 在2014中公开弃用了 SMBv1 协议。 
+在 Windows 10 秋季创意者更新和 Windows Server 版本1709（RS3）及更高版本中，默认情况下不再安装服务器消息块版本1（SMBv1）网络协议。 从2007开始，SMBv2 和更高版本的协议取代了它。 Microsoft 在2014中公开弃用了 SMBv1 协议。 
 
-SMBv1 在 Windows 10 秋季创意者更新和 Windows Server 版本1709（RS3）中具有以下行为： 
+SMBv1 在1709（RS3）版本中启动的 Windows 10 和 Windows Server 具有以下行为： 
  
 - SMBv1 现在具有可单独卸载的客户端和服务器子功能。    
-- 默认情况下，windows 10 企业版和 Windows 10 教育版在全新安装之后不再包含 SMBv1 客户端或服务器。    
+- 默认情况下，在全新安装后，windows 10 企业版、Windows 10 教育版和 Windows 10 专业版工作站不再包含 SMBv1 客户端或服务器。    
 - Windows Server 2016 在全新安装之后，默认情况下不再包含 SMBv1 客户端或服务器。    
 - 默认情况下，在全新安装后，windows 10 家庭版和 Windows 10 专业版不再包含 SMBv1 服务器。    
 - 默认情况下，在全新安装后，windows 10 家庭版和 Windows 10 专业版仍包含 SMBv1 客户端。 如果 SMBv1 客户端的总时间不超过15天（不包括计算机的关闭状态），则它会自动将其卸载。    
 - Windows 10 家庭版和 Windows 10 专业版的就地升级和内幕航班，最初不会自动删除 SMBv1。 如果 SMBv1 客户端或服务器的总时间不超过15天（不包括计算机关闭的时间），则它们会自动卸载。     
-- Windows 10 企业版和 Windows 10 教育版的就地升级和内幕航班不会自动删除 SMBv1。 管理员必须决定卸载这些托管环境中的 SMBv1。 在 Windows 10 版本1809（RS5）及更高版本中，管理员可以通过打开 "SMB 1.0/CIFS 自动删除" 功能来激活 SMBv1 的自动删除。    
+- Windows 10 企业版、Windows 10 教育版和 Windows 10 专业版的 windows 10 专业版的就地升级和内幕航班不会自动删除 SMBv1。 管理员必须决定卸载这些托管环境中的 SMBv1。 
 - 15天后自动删除 SMBv1 的操作是一次性的。 如果管理员重新安装 SMBv1，则不会再进一步尝试卸载它。
 - SMB 版本2.02、2.1、3.0、3.02 和3.1.1 功能仍完全受支持，并且默认情况下作为 SMBv2 二进制文件的一部分包含在内。    
 - 由于计算机浏览器服务依赖于 SMBv1，因此，如果卸载 SMBv1 客户端或服务器，则会卸载该服务。 这意味着，资源管理器网络不能再通过旧的 NetBIOS 数据报浏览方法显示 Windows 计算机。    
 - 在所有版本的 Windows 10 和 Windows Server 2016 中，仍然可以重新安装 SMBv1。    
- 
+
+从1809版（RS5）开始，SMBv1 在 Windows 10 中具有以下其他行为。 版本1709中的所有其他行为仍适用：
+
+- 默认情况下，在全新安装后，Windows 10 专业版不再包含 SMBv1 客户端。
+- 在 Windows 10 企业版、Windows 10 教育版和 Windows 10 专业版工作站中，管理员可以通过打开 "SMB 1.0/CIFS 自动删除" 功能来激活自动删除 SMBv1。
+
   > [!NOTE]
-  > Windows 10 版本1803（RS4）专业版处理 SMBv1 的方式与 Windows 10、版本1703（RS2）和 Windows 10 版本1607（RS1）相同。 此问题已在 Windows 10 版本1809（RS5）中解决。 你仍可手动卸载 SMBv1。 但是，在以下情况下，Windows 将不会在15天后自动卸载 SMBv1： 
- 
+  > Windows 10 版本1803（RS4） Pro 处理 SMBv1 的方式与 Windows 10，版本1703（RS2）和 Windows 10，版本1607（RS1）相同。 此问题已在 Windows 10 版本1809（RS5）中解决。 你仍可手动卸载 SMBv1。 但是，在以下情况下，Windows 将不会在15天后自动卸载 SMBv1： 
+
 -  执行 Windows 10 版本1803的全新安装。     
 -  将 Windows 10 版本1607或 Windows 10 版本1703升级到 Windows 10 1803 （版本），无需先升级到 Windows 10，版本1709。     
  
@@ -120,7 +125,7 @@ The client has SMB1 disabled or uninstalled. For more information: https://go.mi
 [SMBv1 产品交换所](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/SMB1-Product-Clearinghouse/ba-p/426008) 
 #### <a name="leasing-mode"></a>租赁模式
 
-如果需要 SMBv1 来提供旧软件行为的应用程序兼容性，例如禁用 oplock 的要求，Windows 将提供一个新的 SMB 共享标志，称为租赁模式。此标志指定共享是否禁用新式 SMB 语义，如租约和 oplock。
+如果需要 SMBv1 来提供旧软件行为的应用程序兼容性，例如禁用 oplock 的要求，Windows 将提供一个新的 SMB 共享标志，称为租赁模式。 此标志指定共享是否禁用新式 SMB 语义，如租约和 oplock。
 
 可以不使用 oplock 或租约指定共享，以允许旧版应用程序使用 SMBv2 或更高版本。 为此，请将**new-smbshare**或**new-smbshare** PowerShell Cmdlet 与 **-LeasingMode None**   参数一起使用。
 
