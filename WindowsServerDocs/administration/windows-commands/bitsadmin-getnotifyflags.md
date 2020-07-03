@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifyflags
-description: Bitsadmin getnotifyflags 命令的参考主题，它检索指定作业的通知标志。
+description: 用于检索指定作业的通知标志的 bitsadmin getnotifyflags 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36e4c3584b2e3be9c9985756aeaec08b40e74b0c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0ea97c039f372a2211b1e2a6c640c4499a38dfe4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717767"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926928"
 ---
 # <a name="bitsadmin-getnotifyflags"></a>bitsadmin getnotifyflags
 
@@ -28,7 +28,7 @@ bitsadmin /getnotifyflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
@@ -36,7 +36,7 @@ bitsadmin /getnotifyflags <job>
 
 作业可以包含以下一个或多个通知标志：
 
-| 标志 | 描述 |
+| Flag | 描述 |
 | ----- | ----- |
 | 0x001 | 生成该作业中的所有文件都已都转移时发生的事件。 |
 | 为 0x002 | 生成一个事件时发生错误。 |

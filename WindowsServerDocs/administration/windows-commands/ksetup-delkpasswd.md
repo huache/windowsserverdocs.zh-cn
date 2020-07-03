@@ -1,6 +1,6 @@
 ---
 title: ksetup delkpasswd
-description: Ksetup delkpasswd 命令的参考主题，用于删除领域的 Kerberos 密码服务器（kpasswd）。
+description: Ksetup delkpasswd 命令的参考文章，用于删除领域的 Kerberos 密码服务器（kpasswd）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a84a70158ad707fb36d1ca8a4879a93fe0b7df06
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 05002c860575bce84748adc2fc353f0994d559ab
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817837"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926136"
 ---
 # <a name="ksetup-delkpasswd"></a>ksetup delkpasswd
 

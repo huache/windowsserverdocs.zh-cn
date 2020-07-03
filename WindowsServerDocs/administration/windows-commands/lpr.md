@@ -1,6 +1,6 @@
 ---
 title: lpr
-description: Lpr 命令的参考主题，它将文件发送到运行行打印机后台程序（LPD）服务的计算机或打印机共享设备以便进行打印。
+description: Lpr 命令的参考文章，可将文件发送到运行行打印机后台程序（LPD）服务的计算机或打印机共享设备，以便进行打印。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d11b72ee807869613505052cfb51e80a89a80d70
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 9ea40ef71da7804f01c963049f07e1f6b5395354
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223021"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927118"
 ---
 # <a name="lpr"></a>lpr
 
@@ -44,7 +44,7 @@ lpr [-S <servername>] -P <printername> [-C <bannercontent>] [-J <jobname>] [-o |
 
 ### <a name="examples"></a>示例
 
-若要将*Document .txt*文本文件打印到*10.0.0.45*上的 LPD 主机上的*Laserprinter1* printer queue，请键入：
+若要在*10.0.0.45*上将*Document.txt*文本文件打印到 LPD 主机上的*Laserprinter1* printer queue，请键入：
 
 ```
 lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt

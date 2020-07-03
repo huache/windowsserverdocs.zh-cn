@@ -1,6 +1,6 @@
 ---
 title: bitsadmin suspend
-description: Bitsadmin 挂起命令的参考主题，用于挂起指定的作业。
+description: Bitsadmin 挂起命令的参考文章，用于挂起指定的作业。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8117cf9f4286994847e53dca8065da6821d47c5d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 42257d31dbada2badc12b44b6375702ac41a91ca
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720453"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927473"
 ---
 # <a name="bitsadmin-suspend"></a>bitsadmin suspend
 
@@ -30,7 +30,7 @@ bitsadmin /suspend <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ---------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

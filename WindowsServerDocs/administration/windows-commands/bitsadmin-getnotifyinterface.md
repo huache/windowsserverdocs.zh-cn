@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifyinterface
-description: Bitsadmin getnotifyinterface 命令的参考主题，它确定其他程序是否已为指定作业注册 COM 回调接口。
+description: 用于确定其他程序是否已为指定作业注册 COM 回调接口的 bitsadmin getnotifyinterface 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2158759067010292ca213f97014857354247b9c7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9c86b611eb5f46759c474171085884c5702e07d1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717740"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926902"
 ---
 # <a name="bitsadmin-getnotifyinterface"></a>bitsadmin getnotifyinterface
 
@@ -28,7 +28,7 @@ bitsadmin /getnotifyinterface <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

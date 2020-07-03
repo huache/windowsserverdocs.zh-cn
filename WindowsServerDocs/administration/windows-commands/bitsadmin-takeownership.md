@@ -1,6 +1,6 @@
 ---
 title: bitsadmin takeownership
-description: Bitsadmin takeownership 命令的参考主题，该主题允许具有管理权限的用户取得指定作业的所有权。
+description: Bitsadmin takeownership 命令的参考文章，可让具有管理权限的用户取得指定作业的所有权。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5369cb3fa143ebde77ae8cabf04b9a38eed5b9c5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc406d1d5f7c9553082f85f3315ab7622f6bc7db
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720444"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927465"
 ---
 # <a name="bitsadmin-takeownership"></a>bitsadmin takeownership
 
@@ -28,7 +28,7 @@ bitsadmin /takeownership <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ---------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

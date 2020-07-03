@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getminretrydelay
-description: Bitsadmin getminretrydelay 命令的参考主题，它检索在尝试传输文件之前服务遇到暂时性错误的时间长度（以秒为单位）。
+description: Bitsadmin getminretrydelay 命令的参考文章，用于检索在尝试传输文件之前服务等待的时间长度（以秒为单位）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a50b9d98fe0b873dc58b8e86dc672a8f4157208a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 066eb9a2c967d9d5e92aa8dbad2001a65a682796
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717844"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927014"
 ---
 # <a name="bitsadmin-getminretrydelay"></a>bitsadmin getminretrydelay
 
@@ -28,7 +28,7 @@ bitsadmin /getminretrydelay <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

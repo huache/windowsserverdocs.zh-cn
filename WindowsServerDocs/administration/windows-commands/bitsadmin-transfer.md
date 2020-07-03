@@ -1,6 +1,6 @@
 ---
 title: bitsadmin transfer
-description: 用于传输一个或多个文件的 bitsadmin 传输命令的参考主题。
+description: 用于传输一个或多个文件的 bitsadmin 传输命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c7011f3ef3e85d7453e63d9a9c2e4a89a52cddf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 57de6db53433d0da1a4efd8c212a23183edcbcf9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707748"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927421"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin transfer
 
 传输一个或多个文件。 默认情况下，BITSAdmin 服务创建一个按**正常**优先级运行的下载作业，并在传输完成之前或发生严重错误之前，用进度信息更新命令窗口。
 
-如果作业成功传输所有文件并在发生严重错误时取消作业，则该服务将完成该作业。 如果该服务无法将文件添加到作业中，或者为*类型*或*job_priority*指定了无效的值，则该服务不会创建作业。 若要传输多个文件，请指定`<RemoteFileName>-<LocalFileName>`多个对。 对必须以空格分隔。
+如果作业成功传输所有文件并在发生严重错误时取消作业，则该服务将完成该作业。 如果该服务无法将文件添加到作业中，或者为*类型*或*job_priority*指定了无效的值，则该服务不会创建作业。 若要传输多个文件，请指定多个 `<RemoteFileName>-<LocalFileName>` 对。 对必须以空格分隔。
 
 > [!NOTE]
 > 如果发生暂时性错误，BITSAdmin 命令将继续运行。 若要结束命令，请按 CTRL + C。

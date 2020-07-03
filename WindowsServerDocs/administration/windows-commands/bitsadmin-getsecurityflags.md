@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getsecurityflags
-description: Bitsadmin getsecurityflags 命令的参考主题，它报告传输过程中在服务器证书上执行的 URL 重定向和检查的 HTTP 安全标志。
+description: Bitsadmin getsecurityflags 命令的参考文章，用于报告传输过程中在服务器证书上执行的 URL 重定向和检查的 HTTP 安全标志。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 41b710f9897f24eb4161d9379dc3b1f89b141472
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8613f2bd293bdbf7680aa730ec6fc222ffcfe158
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717543"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926683"
 ---
 # <a name="bitsadmin-getsecurityflags"></a>bitsadmin getsecurityflags
 
@@ -30,7 +30,7 @@ bitsadmin /getsecurityflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util 和 repairservice
-description: Bitsadmin util 和 repairservice 命令的参考主题，该主题修复了不同版本的 BITS 服务中的已知问题。
+description: Bitsadmin util 和 repairservice 命令的参考文章，用于修复各种版本的 BITS 服务中的已知问题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0104a3f2ace972821151bf5083f9b0795e427ff1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cf62a9410765914187b6a60ff5376e8ff5aabe03
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707657"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927344"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util 和 repairservice
 
@@ -31,7 +31,7 @@ bitsadmin /util /repairservice [/force]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /force | 可选。 删除并重新创建该服务。|
 

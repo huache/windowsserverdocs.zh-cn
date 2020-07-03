@@ -1,6 +1,6 @@
 ---
 title: bitsadmin replaceremoteprefix
-description: Bitsadmin replaceremoteprefix 命令的参考主题，可根据需要将作业中所有文件的远程 URL 从*oldprefix*更改为*newprefix*。
+description: Bitsadmin replaceremoteprefix 命令的参考文章，可根据需要将作业中所有文件的远程 URL 从*oldprefix*更改为*newprefix*。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 745d026513413db799e86df3422d5ee19c89274f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e2453ac4c223baa049980578c81d9bc6539baac7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717040"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927978"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
 
@@ -28,7 +28,7 @@ bitsadmin /replaceremoteprefix <job> <oldprefix> <newprefix>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | oldprefix | 现有的 URL 前缀。 |
@@ -36,7 +36,7 @@ bitsadmin /replaceremoteprefix <job> <oldprefix> <newprefix>
 
 ## <a name="examples"></a>示例
 
-若要将名为*myDownloadJob*的作业中的所有文件的远程*http://stageserver* URL *http://prodserver*更改为，则为。
+若要将名为*myDownloadJob*的作业中的所有文件的远程 URL 更改为，则为 *http://stageserver* *http://prodserver* 。
 
 ```
 bitsadmin /replaceremoteprefix myDownloadJob http://stageserver http://prodserver

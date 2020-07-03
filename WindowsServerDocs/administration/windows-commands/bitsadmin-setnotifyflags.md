@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnotifyflags
-description: Bitsadmin setnotifyflags 命令的参考主题，用于设置指定作业的事件通知标志。
+description: 用于为指定作业设置事件通知标志的 bitsadmin setnotifyflags 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00b704bf0943790ef01bbfbdbcbbde4dfd1845c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b4054788bb8c14e4bd9be38296f5c0f933de9462
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717273"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927614"
 ---
 # <a name="bitsadmin-setnotifyflags"></a>bitsadmin setnotifyflags
 
@@ -28,7 +28,7 @@ bitsadmin /setnotifyflags <job> <notifyflags>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | notifyflags | 可以包含以下一个或多个通知标志，其中包括：<ul><li>**1.** 当作业中的所有文件都已传输时生成事件。</li><li>**2.** 发生错误时生成事件。</li><li>**3.** 在所有文件完成传输或发生错误时生成事件。</li><li>**4.** 禁用通知。</li></ul> |

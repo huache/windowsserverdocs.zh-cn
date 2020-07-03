@@ -1,6 +1,6 @@
 ---
 title: secedit： generaterollback
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90d139f14db0052c52967e739131a16f92992353
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1dec7833853d3c0526997f1d3e1bd2113d114cf2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821107"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926172"
 ---
 # <a name="seceditgeneraterollback"></a>secedit： generaterollback
 

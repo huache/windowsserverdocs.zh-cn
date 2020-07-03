@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setdescription
-description: Bitsadmin setdescription 命令的参考主题，用于设置指定作业的说明。
+description: Bitsadmin setdescription 命令的参考文章，用于设置指定作业的说明。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc76da7cbe348461a79984b8061767711e090da7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9c22909193667ff3222576010498d7b2fbcf14c7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719311"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927835"
 ---
 # <a name="bitsadmin-setdescription"></a>bitsadmin setdescription
 
@@ -28,7 +28,7 @@ bitsadmin /setdescription <job> <description>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | description | 用于描述作业的文本。 |

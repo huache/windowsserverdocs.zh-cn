@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util 和 enableanalyticchannel
-description: 用于启用或禁用 BITS 客户端分析通道的 bitsadmin util 和 enableanalyticchannel 命令的参考主题。
+description: Bitsadmin util 和 enableanalyticchannel 命令的参考文章，用于启用或禁用 BITS 客户端分析通道。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1f5c8c924d1011928aca6ec1bcebd4d71abb015
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 515402f42dee54baa662f37718841f70b1cd2882
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707764"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927419"
 ---
 # <a name="bitsadmin-util-and-enableanalyticchannel"></a>bitsadmin util 和 enableanalyticchannel
 
@@ -26,7 +26,7 @@ ms.locfileid: "82707764"
 bitsadmin /util /enableanalyticchannel TRUE|FALSE
 ```
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ---------- |
 | TRUE 或 FALSE | **如果为 TRUE，则**为指定文件启用内容验证，而**FALSE**则禁用。 |
 

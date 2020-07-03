@@ -1,6 +1,6 @@
 ---
-title: logman create 计数器
-description: 用于创建计数器数据收集器的 logman create counter 命令的参考主题。
+title: logman create counter
+description: 用于创建计数器数据收集器的 logman create counter 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63fd94fb32fe27b48460922818d1a7220f7f5d7a
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 80ea79eb8c286a8dbe7c020b4c23ae1483d2cb9b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222970"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927198"
 ---
-# <a name="logman-create-counter"></a>logman create 计数器
+# <a name="logman-create-counter"></a>logman create counter
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gettype
-description: Bitsadmin gettype 命令的参考主题，它检索指定作业的作业类型。
+description: Bitsadmin gettype 命令的参考文章，它检索指定作业的作业类型。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 151f9b8e81229a666111ebcd20f060d84160445a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c7224add1b503d9ec50e84879a47442c12447e5d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717480"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926649"
 ---
 # <a name="bitsadmin-gettype"></a>bitsadmin gettype
 
@@ -28,7 +28,7 @@ bitsadmin /gettype <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
@@ -41,7 +41,7 @@ bitsadmin /gettype <job>
 | 下载 | 作业是一种下载。 |
 | 上载 | 作业是上传。 |
 | 上传-答复 | 作业是上传-答复。 |
-| Unknown | 作业的类型未知。 |
+| 未知 | 作业的类型未知。 |
 
 ## <a name="examples"></a>示例
 

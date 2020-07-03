@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnoprogresstimeout
-description: Bitsadmin setnoprogresstimeout 命令的参考主题，它设置服务在发生暂时性错误后尝试传输文件的时间长度（以秒为单位）。
+description: Bitsadmin setnoprogresstimeout 命令的参考文章，用于设置服务在发生暂时性错误后尝试传输文件的时间长度（以秒为单位）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 398882cf795e98dc0bbc0fb81006d3406fded707
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9bb7ac4cd03148c533aa27f62a1c9770465673a5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720108"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927678"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
@@ -28,7 +28,7 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | timeoutvalue | 在第一个错误后 BITS 等待传输文件的时间长度（以秒为单位）。 |

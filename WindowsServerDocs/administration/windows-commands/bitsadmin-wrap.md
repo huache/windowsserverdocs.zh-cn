@@ -1,6 +1,6 @@
 ---
 title: bitsadmin wrap
-description: Bitsadmin wrap 命令的参考主题，它将超出命令窗口最右边边缘的任意行输出文本包装到下一行。
+description: Bitsadmin wrap 命令的参考文章，可将超出命令窗口最右边边缘的任意行输出文本包装到下一行。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c1c2c78fd3cc78674ef497526ba236ad058fe83
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e47f5e38555eb2464d3febf5f958ce5a6af20452
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707577"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927259"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 
@@ -32,7 +32,7 @@ bitsadmin /wrap <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ---------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

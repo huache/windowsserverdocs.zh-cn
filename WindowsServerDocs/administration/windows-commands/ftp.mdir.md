@@ -1,6 +1,6 @@
 ---
 title: ftp mdir
-description: Ftp mdir 命令的参考主题，其中显示远程目录中的文件和子目录的目录列表。
+description: Ftp mdir 命令的参考文章，其中显示远程目录中的文件和子目录的目录列表。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b192e6de23105fcc696d8369ce0280167a201e20
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5a4d1b00941d350776fd953607a5cc5da433993c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820217"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926150"
 ---
 # <a name="ftp-mdir"></a>ftp mdir
 
@@ -43,7 +43,7 @@ mdir <remotefile>[...] <localfile>
 mdir dir1 dir2 -
 ```
 
-若要在名为*dirlist*的本地文件中保存*dir1*和*dir2*的合并目录列表，请键入：
+若要在名为*dirlist.txt*的本地文件中保存*dir1*和*dir2*的合并目录列表，请键入：
 
 ```
 mdir dir1 dir2 dirlist.txt

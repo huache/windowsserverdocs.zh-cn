@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setcredentials
-description: Bitsadmin setcredentials 命令的参考主题，它将凭据添加到作业。
+description: Bitsadmin setcredentials 命令的参考文章，可将凭据添加到作业。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4fbedcc65931e7d3cfb1719786f423b0d071b411
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e28bf17812335e55db0ae8c5ddd54c418dcb2d66
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719318"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927869"
 ---
 # <a name="bitsadmin-setcredentials"></a>bitsadmin setcredentials
 
@@ -31,7 +31,7 @@ bitsadmin /setcredentials <job> <target> <scheme> <username> <password>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | 目标 | 使用**服务器**或**代理**。 |

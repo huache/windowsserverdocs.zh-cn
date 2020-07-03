@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setvalidationstate
-description: Bitsadmin setvalidationstate 命令的参考主题，用于设置作业中给定文件的内容验证状态。
+description: Bitsadmin setvalidationstate 命令的参考文章，用于设置作业中给定文件的内容验证状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3f22dc09eb1f70ce3c1ebd80fd6ba721e864377
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ae776279b742e3af5af3cf555765007bbf0eb8de
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720456"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927493"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>bitsadmin setvalidationstate
 
@@ -28,7 +28,7 @@ bitsadmin /setvalidationstate <job> <file_index> <TRUE|FALSE>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ---------- |
 | 作业 | 作业的显示名称或 GUID。 |
 | file_index | 从0开始。 |

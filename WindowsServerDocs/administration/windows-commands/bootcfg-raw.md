@@ -1,6 +1,6 @@
 ---
 title: bootcfg raw
-description: Bootcfg raw 命令的参考主题，它将操作系统加载选项（指定为字符串）添加到 Boot.ini 文件的操作系统部分中的操作系统项。
+description: Bootcfg raw 命令的参考文章，它将指定为字符串的操作系统加载选项添加到 Boot.ini 文件的操作系统部分中的操作系统项。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b9127b278a41bb8f1f36f7b45c544bf09f5c4ff7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 74ab3c957623178e54b8a5debcf4aebffc942070
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82708956"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926220"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 
@@ -30,13 +30,13 @@ bootcfg /raw [/s <computer> [/u <domain>\<user> /p <password>]] <osloadoptionsst
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| `/s <computer>` | 指定远程计算机的名称或 IP 地址（请勿使用反斜杠）。 默认值为本地计算机。 |
-| `/u <domain>\<user>`  | 使用`<user>`或`<domain>\<user>`指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
+| `/s <computer>` | 指定远程计算机的名称或 IP 地址（请勿使用反斜杠）。 默认为本地计算机。 |
+| `/u <domain>\<user>`  | 使用或指定的用户的帐户权限运行命令 `<user>` `<domain>\<user>` 。 默认为发出命令的计算机上当前登录用户的权限。 |
 | `/p <password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
-| `<osloadoptionsstring>` | 指定要添加到操作系统项的操作系统加载选项。 这些加载选项将替换与操作系统条目关联的任何现有加载选项。 对于`<osloadoptions>`参数不进行验证。
-| `/id <osentrylinenum>` | 指定 Boot.ini 文件的 [操作系统] 部分中添加了操作系统加载选项的操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。 |
+| `<osloadoptionsstring>` | 指定要添加到操作系统项的操作系统加载选项。 这些加载选项将替换与操作系统条目关联的任何现有加载选项。 对于参数不进行验证 `<osloadoptions>` 。
+| `/id <osentrylinenum>` | 在将操作系统加载选项添加到的 Boot.ini 文件的 "[操作系统]" 部分中指定操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。 |
 | /a | 指定哪些操作系统选项应追加到任何现有的操作系统选项。 |
 | /? | 在命令提示符下显示帮助。 |
 

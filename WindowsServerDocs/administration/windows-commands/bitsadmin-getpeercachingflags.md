@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getpeercachingflags
-description: Bitsadmin getpeercachingflags 命令的参考主题，它检索确定是否可以缓存作业的文件并将其提供给对等方的标志，以及 BITS 能否从对等方下载作业的内容。
+description: Bitsadmin getpeercachingflags 命令的参考文章，它检索确定是否可以缓存作业的文件并为对等方提供服务的标志，以及 BITS 能否从对等方下载作业的内容。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f30eead56958af3cd0fb0d91f6ee2bf9f79fdc4e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ad270fb8003c518c43bae86b066fea5ebc31d008
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717683"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926865"
 ---
 # <a name="bitsadmin-getpeercachingflags"></a>bitsadmin getpeercachingflags
 
@@ -30,7 +30,7 @@ bitsadmin /getpeercachingflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

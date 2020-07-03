@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util 和 getieproxy
-description: Bitsadmin util 和 getieproxy 命令的参考主题，它检索给定服务帐户的代理使用情况。
+description: Bitsadmin util 和 getieproxy 命令的参考文章，它检索给定服务帐户的代理使用情况。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 576f308bc7fb9a4e448638d06621f95eebef0cd0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 15093341ef2dcaca6dd0f5efb4c48d4b9d1934a1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707664"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927408"
 ---
 # <a name="bitsadmin-util-and-getieproxy"></a>bitsadmin util 和 getieproxy
 
@@ -30,7 +30,7 @@ bitsadmin /util /getieproxy <account> [/conn <connectionname>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ---------- |
 | account | 指定要检索其代理设置的服务帐户。 可能的值包括：<ul><li>LOCALSYSTEM</li><li>   NETWORKSERVICE</li><li>LOCALSERVICE.</li></ul> |
 | connectionname | 可选。 与 **/conn**参数一起使用，以指定要使用的调制解调器连接。 如果未指定 **/conn**参数，则 BITS 将使用 LAN 连接。 |

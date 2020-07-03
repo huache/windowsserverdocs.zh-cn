@@ -1,6 +1,6 @@
 ---
 title: ftp ls
-description: Ftp ls 命令的参考主题，它显示远程计算机上的文件和子目录的缩写列表。
+description: Ftp ls 命令的参考文章，其中显示了远程计算机上的文件和子目录的缩略列表。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ae913f001c3ddffce9ff81c9c5c5fd32f436da5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1e4bd476f87487e400751b7173f0c670867de54c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820167"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927199"
 ---
 # <a name="ftp-ls"></a>ftp ls
 
@@ -43,7 +43,7 @@ ls [<remotedirectory>] [<localfile>]
 ls
 ```
 
-若要获取远程计算机上的*dir1*的缩写目录列表，并将其保存到名为*dirlist*的本地文件中，请键入：
+若要获取远程计算机上的*dir1*的缩略目录列表，并将其保存到名为*dirlist.txt*的本地文件中，请键入：
 
 ```
 ls dir1 dirlist.txt

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin
-description: Bitsadmin 命令的参考主题，它是一个命令行工具，用于创建、下载或上传作业并监视其进度。
+description: Bitsadmin 命令的参考文章，它是一个命令行工具，用于创建、下载或上传作业并监视其进度。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94a829ce21c4571188fb5ffeb9a0a1d991637d07
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e9fd70e4e74dc25c32ff3a74be2fc1c66d697367
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710045"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926372"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 10
 
-Bitsadmin 是一个命令行工具，用于创建、下载或上载作业，以及监视其进度。 Bitsadmin 工具使用开关来确定要执行的工作。 可以调用`bitsadmin /?`或`bitsadmin /help`以获取开关列表。
+Bitsadmin 是一个命令行工具，用于创建、下载或上载作业，以及监视其进度。 Bitsadmin 工具使用开关来确定要执行的工作。 可以调用 `bitsadmin /?` 或 `bitsadmin /help` 以获取开关列表。
 
-大多数交换机都需要`<job>`一个参数，该参数将设置为作业的显示名称或 GUID。 作业的显示名称不必是唯一的。 **/Create**和 **/list**开关返回作业的 GUID。
+大多数交换机都需要一个 `<job>` 参数，该参数将设置为作业的显示名称或 GUID。 作业的显示名称不必是唯一的。 **/Create**和 **/list**开关返回作业的 GUID。
 
 默认情况下，你可以访问你自己的作业的信息。 若要访问其他用户的作业信息，你必须拥有管理员权限。 如果作业是在提升的状态下创建的，则必须从提升的窗口中运行**bitsadmin** ;否则，你将拥有该作业的只读访问权限。
 

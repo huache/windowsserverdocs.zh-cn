@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gethttpmethod
-description: Bitsadmin gethttpmethod 命令的参考主题，用于获取用于作业的 HTTP 谓词。
+description: Bitsadmin gethttpmethod 命令的参考文章，用于获取用于作业的 HTTP 谓词。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: a458322a5ace69df74df054a537a7365da9e7329
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3a963eb275c6e635849094906c52fedf90dccd0d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717882"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927024"
 ---
 # <a name="bitsadmin-gethttpmethod"></a>bitsadmin gethttpmethod
 
@@ -27,7 +27,7 @@ bitsadmin /gethttpmethod <Job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

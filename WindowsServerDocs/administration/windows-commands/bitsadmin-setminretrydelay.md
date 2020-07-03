@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setminretrydelay
-description: Bitsadmin setminretrydelay 命令的参考主题，它设置在尝试传输文件之前，在遇到暂时性错误后 BITS 等待的最短时间长度（以秒为单位）。
+description: Bitsadmin setminretrydelay 命令的参考文章，它设置在尝试传输文件之前，在遇到暂时性错误后 BITS 等待的最短时间长度（以秒为单位）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7fc54b4466d8f0bac12bd42ebf6c5e2c66087a15
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a28bdcc90fdeee4d5173272c8670f9d0bff3c0a0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720125"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927686"
 ---
 # <a name="bitsadmin-setminretrydelay"></a>bitsadmin setminretrydelay
 
@@ -28,7 +28,7 @@ bitsadmin /setminretrydelay <job> <retrydelay>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | retrydelay | 传输过程中出错后，BITS 等待的最小时间长度（以秒为单位）。 |

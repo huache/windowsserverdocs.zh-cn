@@ -1,6 +1,6 @@
 ---
 title: bootcfg addsw
-description: Bootcfg addsw 命令的参考主题，它为指定的操作系统条目添加操作系统加载选项。
+description: Bootcfg addsw 命令的参考文章，它为指定的操作系统条目添加操作系统加载选项。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 17abdc1ba28afad173ea6486519277916f08ad3d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f9d54c2cfdf898e1162d804220ae6dbb4a446fc5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82709947"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926355"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 
@@ -32,14 +32,14 @@ bootcfg /addsw [/s <computer> [/u <domain>\<user> /p <password>]] [/mm <maximumr
 
 | 术语 | 定义 |
 | ---- | ---------- |
-| `/s <computer>` | 指定远程计算机的名称或 IP 地址（请勿使用反斜杠）。 默认值为本地计算机。 |
-| `/u <domain>\<user>`  | 使用`<user>`或`<domain>\<user>`指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
+| `/s <computer>` | 指定远程计算机的名称或 IP 地址（请勿使用反斜杠）。 默认为本地计算机。 |
+| `/u <domain>\<user>`  | 使用或指定的用户的帐户权限运行命令 `<user>` `<domain>\<user>` 。 默认为发出命令的计算机上当前登录用户的权限。 |
 | `/p <password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
 | `/mm <maximumram>` | 指定操作系统可以使用的最大 RAM 量（以 mb 为单位）。 该值必须等于或大于 32 Mb。 |
-| /bv | 将 **/basevideo**选项添加到指定`<osentrylinenum>`的，指导操作系统为安装的视频驱动程序使用标准 VGA 模式。 |
-| /so | 将 **/sos**选项添加到指定`<osentrylinenum>`的中，指示操作系统在加载时显示设备驱动程序名称。 |
-| /ng | 将 **/noguiboot**选项添加到指定`<osentrylinenum>`的中，禁用出现在 CTRL + ALT + DEL logon 提示符之前的进度栏。 |
-| `/id <osentrylinenum>` | 指定 Boot.ini 文件的 [操作系统] 部分中添加了操作系统加载选项的操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。 |
+| /bv | 将 **/basevideo**选项添加到指定的 `<osentrylinenum>` ，指导操作系统为安装的视频驱动程序使用标准 VGA 模式。 |
+| /so | 将 **/sos**选项添加到指定的 `<osentrylinenum>` 中，指示操作系统在加载时显示设备驱动程序名称。 |
+| /ng | 将 **/noguiboot**选项添加到指定的 `<osentrylinenum>` 中，禁用出现在 CTRL + ALT + DEL logon 提示符之前的进度栏。 |
+| `/id <osentrylinenum>` | 在将操作系统加载选项添加到的 Boot.ini 文件的 "[操作系统]" 部分中指定操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ## <a name="examples"></a>示例

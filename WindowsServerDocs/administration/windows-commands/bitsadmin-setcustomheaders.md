@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setcustomheaders
-description: Bitsadmin setcustomheaders 命令的参考主题，它将自定义 HTTP 标头添加到 GET 请求。
+description: Bitsadmin setcustomheaders 命令的参考文章，可将自定义 HTTP 标头添加到 GET 请求。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 92728f8d63a22cf9d13d6c02a69359583a9fc5cc
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 74a8c5f4aa464aa9f362a9761c9f1c449fbaad00
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719327"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927848"
 ---
 # <a name="bitsadmin-setcustomheaders"></a>bitsadmin setcustomheaders
 
@@ -28,7 +28,7 @@ bitsadmin /setcustomheaders <job> <header1> <header2> <...>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | `<header1> <header2>`依此类推 | 作业的自定义标头。 |

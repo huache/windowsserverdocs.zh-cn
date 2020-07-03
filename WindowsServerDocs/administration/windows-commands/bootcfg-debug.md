@@ -1,6 +1,6 @@
 ---
 title: bootcfg debug
-description: Bootcfg 调试命令的参考主题，用于为指定的操作系统条目添加或更改调试设置。
+description: "\"Bootcfg 调试\" 命令的参考文章，用于为指定的操作系统条目添加或更改调试设置。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8059aaefd1b23b3e74f4c27ba96e322c44b5cb6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: da4179d85d4e84918e75fb4c8490e229230412eb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82709708"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926319"
 ---
 # <a name="bootcfg-debug"></a>bootcfg debug
 
@@ -33,15 +33,15 @@ bootcfg /debug {on | off | edit}[/s <computer> [/u <domain>\<user> /p <password>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| `{on | off | edit}` | 指定端口调试的值，包括：<ul><li>**基于.** 通过将/debug 选项添加到指定`<osentrylinenum>`的，启用远程调试支持。</li><li>**非.** 通过从指定<osentrylinenum>的中删除/debug 选项来禁用远程调试支持。</li><li>**编辑.** 通过更改与指定<osentrylinenum>的/debug 选项关联的值，允许更改端口和波特率设置。</li></ul> |
-| `/s <computer>` | 指定远程计算机的名称或 IP 地址（请勿使用反斜杠）。 默认值为本地计算机。 |
-| `/u <domain>\<user>`  | 使用`<user>`或`<domain>\<user>`指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
+| `{on | off | edit}` | 指定端口调试的值，包括：<ul><li>**基于.** 通过将/debug 选项添加到指定的，启用远程调试支持 `<osentrylinenum>` 。</li><li>**非.** 通过从指定的中删除/debug 选项来禁用远程调试支持 <osentrylinenum> 。</li><li>**编辑.** 通过更改与指定的/debug 选项关联的值，允许更改端口和波特率设置 <osentrylinenum> 。</li></ul> |
+| `/s <computer>` | 指定远程计算机的名称或 IP 地址（请勿使用反斜杠）。 默认为本地计算机。 |
+| `/u <domain>\<user>`  | 使用或指定的用户的帐户权限运行命令 `<user>` `<domain>\<user>` 。 默认为发出命令的计算机上当前登录用户的权限。 |
 | `/p <password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
 | `/port {COM1 | COM2 | COM3 | COM4}` |  指定用于调试的 COM 端口。 如果禁用调试，请勿使用此参数。 |
 | `/baud {9600 | 19200 | 38400 | 57600 | 115200}` | 指定用于调试的波特率。 如果禁用调试，请勿使用此参数。 |
-| `/id <osentrylinenum>` | 指定 Boot.ini 文件的 [操作系统] 部分中添加了操作系统加载选项的操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。 |
+| `/id <osentrylinenum>` | 在将操作系统加载选项添加到的 Boot.ini 文件的 "[操作系统]" 部分中指定操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ## <a name="examples"></a>示例

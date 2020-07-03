@@ -1,6 +1,6 @@
 ---
 title: bitsadmin resume
-description: Bitsadmin resume 命令的参考主题，用于激活传输队列中的新作业或挂起的作业。
+description: Bitsadmin resume 命令的参考文章，用于激活传输队列中的新作业或挂起的作业。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba4cd57ddeeb3c35ca0871c2953fd409ddb57e73
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cd2a8dcb486c584ef4adaf96a5288a9db32d4553
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716997"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927962"
 ---
 # <a name="bitsadmin-resume"></a>bitsadmin resume
 
@@ -28,7 +28,7 @@ bitsadmin /resume <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
