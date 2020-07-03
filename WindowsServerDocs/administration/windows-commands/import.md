@@ -1,6 +1,6 @@
 ---
 title: 导入 diskshadow
-description: 导入命令的参考主题，该主题从加载的元数据文件中将可传送的卷影副本导入到系统中。
+description: 导入命令的参考文章，其中导入的元数据文件中的可传送卷影副本导入到系统中。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4eaf4afcbe2485a893a3e5335c595b3d9b256b5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: ab1c3c6d324cec939a2529191cbc8ce40165b807
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818507"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924440"
 ---
 # <a name="import-diskshadow"></a>导入（diskshadow）
 

@@ -1,6 +1,6 @@
 ---
 title: merge vdisk
-description: Merge vdisk 命令的参考主题，它将差异虚拟硬盘（VHD）与其对应的父 VHD 合并在一起。
+description: 用于将差异虚拟硬盘（VHD）与相应的父 VHD 合并的 merge vdisk 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ccd288baff691576c15c3e9c686b6708d1c45ee8
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 41201885861b7084fa7b49be8b5bf5a0e7394981
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354617"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925035"
 ---
 # <a name="merge-vdisk"></a>merge vdisk
 

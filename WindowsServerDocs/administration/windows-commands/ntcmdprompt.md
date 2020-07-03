@@ -1,6 +1,6 @@
 ---
 title: ntcmdprompt
-description: Ntcmdprompt 命令的参考主题，运行命令解释器**Cmd.exe**，而不是**Command.com**，运行 "终止" 和 "保持驻留" （TSR）后，或在从 MS-DOS 应用程序中启动命令提示符之后运行。
+description: Ntcmdprompt 命令的参考文章，该命令运行命令解释器**Cmd.exe**，而不是**Command.com**，运行 "终止" 和 "保持驻留" （TSR）后，或在从 MS-DOS 应用程序中启动命令提示符之后运行。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08d5ee1af4c019724a77eda6370e63541e16a72a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a70a8cfdbe6e37bfb8d90bed23e961d100843506
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472772"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925344"
 ---
 # <a name="ntcmdprompt"></a>ntcmdprompt
 
@@ -34,7 +34,7 @@ ntcmdprompt
 | --------- | ----------- |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 当**Command.com**运行时， **Cmd.exe**的某些功能（如命令历史记录的**doskey**显示）将不可用。 如果希望在启动终止和保持驻留（TSR）后或从基于 MS-DOS 的应用程序中启动命令提示符之后运行**Cmd.exe**命令解释器，则可以使用**ntcmdprompt**命令。 但是，请记住，在**Cmd.exe**运行时，TSR 可能不可用。 可以在**配置**文件中包含**ntcmdprompt**命令，也可以在应用程序的程序信息文件（Pif）中包含等效的自定义启动文件。
 

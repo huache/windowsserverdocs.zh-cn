@@ -1,6 +1,6 @@
 ---
 title: ksetup addkpasswd
-description: Ksetup addkpasswd 命令的参考主题，用于为某个领域添加 Kerberos 密码（kpasswd）服务器地址。
+description: Ksetup addkpasswd 命令的参考文章，用于为某个领域添加 Kerberos 密码（kpasswd）服务器地址。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e0cff2f3d74e6d862bbdd000602a1d03312373d2
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2db728684e713df35a39995c8ca95196f0b745ed
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818067"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925557"
 ---
 # <a name="ksetup-addkpasswd"></a>ksetup addkpasswd
 

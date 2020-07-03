@@ -1,6 +1,6 @@
 ---
 title: Diskraid
-description: Diskraid 命令行工具的参考主题，使你能够配置和管理独立（或廉价）磁盘（RAID）存储子系统冗余阵列。
+description: Diskraid 命令行工具的参考文章，使你能够配置和管理独立（或廉价）磁盘（RAID）存储子系统冗余阵列。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffceb9347921536a1bee59f46a4d5ab4800c1e70
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: d0745c708878fa9da6571666b5702b4408976164
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235207"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924763"
 ---
 # <a name="diskraid"></a>Diskraid
 
@@ -190,7 +190,7 @@ create tpgroup [noerr]
 | tpgroup | 在当前选定的目标上创建新的 iSCSI 目标门户组。 |
 | noerr | 仅用于脚本。 遇到错误时，Diskraid 将继续处理命令，就像未发生错误一样。 |
 
-### <a name="delete"></a>删除
+### <a name="delete"></a>delete
 
 删除当前所选的 LUN、iSCSI 目标（只要没有与 iSCSI 目标关联的 Lun）或 iSCSI 目标门户组。
 
@@ -319,7 +319,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 flushcache controller
 ```
 
-### <a name="help"></a>帮助
+### <a name="help"></a>help
 
 显示所有 Diskraid 命令的列表。
 
@@ -625,7 +625,7 @@ select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| 对象 | 指定要选择的对象类型，包括：**提供程序**、**子系统**、**控制器**、**驱动器**或**LUN**。 |
+| 对象 (object) | 指定要选择的对象类型，包括：**提供程序**、**子系统**、**控制器**、**驱动器**或**LUN**。 |
 | hbaport`[<n>]` | 将焦点设置到指定的本地 HBA 端口。 如果未指定 HBA 端口，则该命令将显示当前所选 HBA 端口（如果有）。 指定无效的 HBA 端口索引将导致未处于焦点的 HBA 端口。 选择 HBA 端口会取消选择任何所选的发起程序适配器和发起程序门户。 |
 | iadapter`[<n>]` | 将焦点设置到指定的本地 iSCSI 发起程序适配器。 如果未指定发起程序适配器，则该命令将显示当前所选的发起程序适配器（如果有）。 指定无效的发起程序适配器索引会导致不存在焦点发起程序适配器。 选择发起程序适配器会取消选择任何所选 HBA 端口和发起程序门户。 |
 | iportal`[<n>]` | 将焦点设置到所选 iSCSI 发起程序适配器中指定的本地 iSCSI 发起程序门户。 如果未指定发起程序门户，则该命令将显示当前所选的发起程序门户（如果有）。 指定无效的发起方门户索引会导致所选的发起方门户。 |

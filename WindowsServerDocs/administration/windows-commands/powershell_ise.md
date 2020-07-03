@@ -1,6 +1,6 @@
 ---
 title: PowerShell_ise
-description: PowerShell_ise 命令的参考主题，可启动 Windows PowerShell 集成脚本环境（ISE）会话。
+description: PowerShell_ise 命令的参考文章，可启动 Windows PowerShell 集成脚本环境（ISE）会话。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c1b525c0178b08e34851b800be8ce4791f38913
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3f983ea5b8464748d86264108a2ee8660ca0e3f2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472332"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926059"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -56,7 +56,7 @@ Windows PowerShell 集成脚本环境（ISE）是一种图形化主机应用程�
     PowerShell_Ise.exe /?
     ```
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - 有关**PowerShell_ISE.exe**命令行参数的完整列表，请参阅[about_PowerShell_Ise.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)。
 

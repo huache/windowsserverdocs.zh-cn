@@ -1,6 +1,6 @@
 ---
 title: fsutil sparse
-description: 用于管理稀疏文件的 fsutil sparse 命令的参考主题。
+description: 用于管理稀疏文件的 fsutil sparse 命令的参考文章。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 77545920-2d13-4f35-a4d1-14dbec8340dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e68ac844bb7aa7e22a9df0ddb0c982b3701231d7
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c765b096f1b41b211d3a779d8f838aa56f31aeb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435712"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925213"
 ---
 # <a name="fsutil-sparse"></a>fsutil sparse
 
@@ -57,7 +57,7 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 
 ### <a name="examples"></a>示例
 
-若要将名为*test.txt*的文件中的文件作为*稀疏目录标记*，请键入：
+若要将名为*sample.txt* *的文件作为稀疏目录标记*，请键入：
 
 ```
 fsutil sparse setflag c:\temp\sample.txt

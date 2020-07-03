@@ -1,6 +1,6 @@
 ---
 title: bootcfg
-description: Bootcfg 命令的参考主题，用于配置、查询或更改 Boot.ini 文件设置。
+description: Bootcfg 命令的参考文章，其中配置、查询或更改 Boot.ini 文件设置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aca24cfbf47586ae1d7d4262c232be47a056f7ae
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b4c64ab33e8026606072cbb1d509eb3c787f76c0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82708858"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924948"
 ---
 # <a name="bootcfg"></a>bootcfg
 
@@ -24,13 +24,13 @@ ms.locfileid: "82708858"
 
 ## <a name="syntax"></a>语法
 
-```  
-bootcfg <parameter> [arguments...]  
+```
+bootcfg <parameter> [arguments...]
 ```
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | [bootcfg addsw](bootcfg-addsw.md) | 为指定的操作系统项添加操作系统加载选项。 |
 | [bootcfg copy](bootcfg-copy.md) | 创建现有启动项的副本，您可以将命令行选项添加到该副本中。 |
@@ -39,7 +39,7 @@ bootcfg <parameter> [arguments...]
 | [bootcfg default](bootcfg-default.md) | 指定要指定为默认的操作系统项。 |
 | [bootcfg delete](bootcfg-delete.md) | 删除 Boot.ini 文件的 [操作系统] 部分中的操作系统项。 |
 | [bootcfg ems](bootcfg-ems.md) | 允许用户添加或更改用于将紧急管理服务控制台重定向到远程计算机的设置。 |
-| [bootcfg query](bootcfg-query.md) | 查询并显示 Boot.ini 中的 [启动加载程序] 和 [操作系统] 部分条目。 |
+| [bootcfg query](bootcfg-query.md) | 查询并显示来自 Boot.ini 的 [启动加载器] 和 [操作系统] 部分条目。 |
 | [bootcfg raw](bootcfg-raw.md) | 将指定为字符串的操作系统加载选项添加到 Boot.ini 文件的 [操作系统] 部分中的操作系统项。 |
 | [bootcfg rmsw](bootcfg-rmsw.md) | 删除指定操作系统项的操作系统加载选项。 |
 | [bootcfg timeout](bootcfg-timeout.md) | 更改操作系统超时值。 |

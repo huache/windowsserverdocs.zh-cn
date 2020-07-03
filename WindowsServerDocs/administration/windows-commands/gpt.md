@@ -1,6 +1,6 @@
 ---
 title: gpt
-description: Gpt 命令的参考主题，它将 gpt 属性分配给具有焦点的分区。
+description: Gpt 命令的参考文章，它将 gpt 属性分配给具有焦点的分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1e33b89c1918fcb83dd9d42c155f845805307d9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 40d3536f5a6be0bf520095e3ba61f75b7a2addc7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818797"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924614"
 ---
 # <a name="gpt"></a>gpt
 

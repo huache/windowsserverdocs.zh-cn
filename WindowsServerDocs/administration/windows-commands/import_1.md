@@ -1,6 +1,6 @@
 ---
 title: 导入 diskpart
-description: 导入命令的参考主题，它将外部磁盘组导入到本地计算机的磁盘组。
+description: 用于将外部磁盘组导入到本地计算机的磁盘组中的 "导入" 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6912aa9698d484501cad5f3cdfb5b19955bb4931
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 072c012e5e2cc8d49811fbfa1cff5140b2c745a1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818447"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924424"
 ---
-# <a name="import-diskpart"></a>导入（diskpart）
+# <a name="import-diskpart"></a>import (diskpart)
 
 将外部磁盘组导入到本地计算机的磁盘组。 此命令将导入与具有焦点的磁盘位于同一组中的每个磁盘。
 

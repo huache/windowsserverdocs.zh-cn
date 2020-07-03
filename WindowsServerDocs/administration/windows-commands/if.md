@@ -1,6 +1,6 @@
 ---
 title: if
-description: If 命令的参考主题，它在 batch 程序中执行条件性处理。
+description: 用于在 batch 程序中执行条件处理的 if 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6f73e784d6fb394db258a056f38045b6a545469
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: dd55ebb6ae3562906efdc710f7a067a7e7514e59
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818547"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924472"
 ---
 # <a name="if"></a>if
 
@@ -41,7 +41,7 @@ if defined <variable> <command> [else <expression>]
 | 参数 | 说明 |
 | --------- |------------ |
 | not | 指定仅当条件为 false 时才应执行该命令。 |
-| errorlevel`<number>` | 仅当 Cmd.exe 运行的上一个程序返回等于或大于*数字*的退出代码时，才指定 true 条件。 |
+| errorlevel`<number>` | 仅当由 Cmd.exe 运行的上一个程序返回等于或大于*数字*的退出代码时，才指定 true 条件。 |
 | `<command>` | 如果满足前面的条件，则指定应执行的命令。 |
 | `<string1>==<string2>` | 仅当*string1*和*string2*相同时，才指定 true 条件。 这些值可以是文本字符串或批处理变量（例如 `%1` ）。 不需要将文字字符串括在引号中。 |
 | 处于`<filename>` | 如果指定的文件名存在，则指定 true 条件。 |
@@ -62,7 +62,7 @@ if defined <variable> <command> [else <expression>]
 
   - **% errorlevel%**：展开为 errorlevel 环境变量的当前值的字符串表示形式。 此变量假定尚没有名称为 ERRORLEVEL 的现有环境变量。 如果有，则会改为获取该 ERRORLEVEL 值。
 
-  - **% cmdcmdline%**：将扩展到 cmd.exe 之前传递到 cmd.exe 的原始命令行。 这假设尚不存在名为 CMDCMDLINE 的环境变量。 如果有，则会改为获取该 CMDCMDLINE 值。
+  - **% cmdcmdline%**：扩展到 Cmd.exe 之前传递到 Cmd.exe 的原始命令行。 这假设尚不存在名为 CMDCMDLINE 的环境变量。 如果有，则会改为获取该 CMDCMDLINE 值。
 
   - **% cmdextversion%**：展开为**cmdextversion**的当前值的字符串表示形式。 这假设尚不存在名为 CMDEXTVERSION 的环境变量。 如果有，则会改为获取该 CMDEXTVERSION 值。
 

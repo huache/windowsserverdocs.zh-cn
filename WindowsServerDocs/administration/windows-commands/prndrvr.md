@@ -1,6 +1,6 @@
 ---
 title: prndrvr
-description: Prndrvr 命令的参考主题，用于添加、删除和列出打印机驱动程序。
+description: 用于添加、删除和列出打印机驱动程序的 prndrvr 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62c63819c175f4b3f3770d90da0bd560443ccb77
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4f256d003ac0884b100aedb24bbb55e663444911
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472292"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924209"
 ---
 # <a name="prndrvr"></a>prndrvr
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-添加、删除和列出打印机驱动程序。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prndrvr 文件的完整路径，或将目录更改为相应的文件夹。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr`。
+添加、删除和列出打印机驱动程序。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prndrvr 文件的完整路径，或将目录更改为相应的文件夹。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr`。
 
 使用不带参数的**prndrvr**将显示命令行帮助。
 
@@ -47,7 +47,7 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}] [-e <enviro
 | -i`<filename.inf>` | 指定要安装的驱动程序的完整路径和文件名。 如果未指定文件名，该脚本将使用 Windows 目录的 inf 子目录中的某个收件箱打印机 .inf 文件。<p>如果未指定驱动程序路径，则脚本将在 driver.cab 文件中搜索驱动程序文件。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格，请使用引号将文本括起来（例如，"计算机名称"）。
 

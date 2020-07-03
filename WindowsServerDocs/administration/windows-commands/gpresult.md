@@ -1,6 +1,6 @@
 ---
 title: gpresult
-description: Gpresult 命令的参考主题，其中显示了远程用户和计算机的策略的结果集（RSoP）信息。
+description: 用于显示远程用户和计算机的策略结果集（RSoP）的 gpresult 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e88a75a15168baaf2e49ca08ff20d3a8ffb5620c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b55db74c0c8f9c527ade8412f50ef83ea675a5c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818857"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924638"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -35,7 +35,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| /s`<system>` | 指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认值为本地计算机。 |
+| /s`<system>` | 指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认为本地计算机。 |
 | /u`<username>` | 使用指定用户的凭据运行该命令。 默认用户是登录到发出命令的计算机的用户。 |
 | /p`[<password>]` | 指定在 **/u**参数中提供的用户帐户的密码。 如果省略 **/p** ，则**gpresult**会提示输入密码。 **/P**参数不能与 **/x**或 **/h**一起使用。 |
 | /user`[<targetdomain>\]<targetuser>]` | 指定要显示其 RSoP 数据的远程用户。 |
@@ -63,7 +63,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /scope user /r
 ```
 
-若要将有关组策略的所有可用信息保存到名为*maindom\hiropln*的*文件，请* *p@ssW23* 在计算机*srvmain*上键入：
+若要将有关组策略的所有可用信息保存到名为的文件中*policy.txt*，请*maindom\hiropln* *p@ssW23* 在计算机*srvmain*上键入：
 
 ```
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /z > policy.txt

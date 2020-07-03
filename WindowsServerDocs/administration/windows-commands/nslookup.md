@@ -1,6 +1,6 @@
 ---
 title: nslookup
-description: Nslookup 命令的参考主题，其中显示了可用于诊断域名系统（DNS）基础结构的信息。
+description: Nslookup 命令的参考文章，其中显示了可用于诊断域名系统（DNS）基础结构的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 589b8dd5e1244a5aeb27f33b4985f07b776bc7bd
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 87f973349426016b6d62bd1f018f268d4e873c51
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721150"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925384"
 ---
 # <a name="nslookup"></a>nslookup
 
@@ -42,7 +42,7 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | [nslookup 退出](nslookup-exit-command.md) | 退出 nslookup 命令行工具。 |
 | [nslookup finger](nslookup-finger-command.md) | 与当前计算机上的 finger 服务器连接。 |

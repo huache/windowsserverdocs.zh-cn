@@ -1,6 +1,6 @@
 ---
 title: ftp mput
-description: Ftp mput 命令的参考主题，它使用当前文件传输类型将本地文件复制到远程计算机。
+description: Ftp mput 命令的参考文章，其中使用当前文件传输类型将本地文件复制到远程计算机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5006c1ba19f0e017dea377b47bd0d89a68266382
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 506a4d9a64f1dd9b4b37088a30926190d7675695
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820407"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925800"
 ---
 # <a name="ftp-mput"></a>ftp mput
 
@@ -36,7 +36,7 @@ mput <localfile>[ ]
 
 ### <a name="examples"></a>示例
 
-要使用当前文件传输类型将*Program1*和*program2.c*复制到远程计算机，请键入：
+要使用当前文件传输类型将*Program1.exe*和*Program2.exe*复制到远程计算机，请键入：
 
 ```
 mput Program1.exe Program2.exe

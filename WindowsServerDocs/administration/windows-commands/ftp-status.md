@@ -1,6 +1,6 @@
 ---
-title: ftp 状态
-description: Ftp 状态命令的参考主题，其中显示了 ftp 连接的当前状态。
+title: ftp status
+description: Ftp 状态命令的参考文章，其中显示了 ftp 连接的当前状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1f773bc7ec0e330258eafaf62c13a884fe112bb
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6488a8292f266a6f0ab979957c2833d30509824f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820277"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925675"
 ---
-# <a name="ftp-status"></a>ftp 状态
+# <a name="ftp-status"></a>ftp status
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

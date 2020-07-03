@@ -1,6 +1,6 @@
 ---
 title: pnpunattend
-description: 用于审核计算机上的设备驱动程序以及执行无提示驱动程序安装的 pnpunattend 命令的参考主题。
+description: 用于对计算机上的设备驱动程序进行审核并执行无提示驱动程序安装的 pnpunattend 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 23456ec8f8fda5f84819a7105ee1f46814d2f806
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cb01e2afa763d3e2c906d1b3ac5f194143caf114
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472396"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924240"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 

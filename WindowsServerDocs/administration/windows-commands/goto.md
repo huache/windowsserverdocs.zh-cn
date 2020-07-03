@@ -1,6 +1,6 @@
 ---
 title: goto
-description: Goto 命令的参考主题，它将 cmd.exe 定向到批处理程序中带标签的行。
+description: Goto 命令的参考文章，将 cmd.exe 定向到批处理程序中的标记行。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1eb1b6b275887de535614fa5df4adabe33406a31
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: afc77f7837ddaeb0552052538537285f0d652682
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818967"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924683"
 ---
 # <a name="goto"></a>goto
 
@@ -35,7 +35,7 @@ goto <label>
 
 #### <a name="remarks"></a>备注
 
--  如果启用了命令扩展（默认设置），并使用目标标签为 **： EOF**的**goto**命令，则可以将控制转移到当前批处理脚本文件的末尾，并退出批处理脚本文件而不定义标签。 将此命令与 **： EOF**标签一起使用时，必须在标签之前插入一个冒号。 例如： `goto:EOF` 。
+-  如果启用了命令扩展（默认设置），并使用目标标签为 **： EOF**的**goto**命令，则可以将控制转移到当前批处理脚本文件的末尾，并退出批处理脚本文件而不定义标签。 将此命令与 **： EOF**标签一起使用时，必须在标签之前插入一个冒号。 例如： `goto:EOF`。
 
 - 可以在*标签*参数中使用空格，但不能包含其他分隔符（例如，分号（;)或等号（=）。
 

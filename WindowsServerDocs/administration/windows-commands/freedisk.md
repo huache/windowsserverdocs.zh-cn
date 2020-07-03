@@ -1,6 +1,6 @@
 ---
 title: freedisk
-description: Freedisk 命令的参考主题，用于检查是否有指定数量的可用磁盘空间，然后再继续执行安装过程。
+description: Freedisk 命令的参考文章，用于检查是否有指定数量的可用磁盘空间，然后再继续执行安装过程。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2135bd24e24235de7c687ed58e0603db20c68262
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: d0cfce52c2eaf0917f8169d959b61832bd1779e0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436972"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924746"
 ---
 # <a name="freedisk"></a>freedisk
 
@@ -32,7 +32,7 @@ freedisk [/s <computer> [/u [<domain>\]<user> [/p [<password>]]]] [/d <drive>] [
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| /s`<computer>` | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
+| /s`<computer>` | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
 | /u`[<domain>\]<user>` | 用指定用户帐户的权限运行脚本。 默认值为 "系统权限"。 |
 | /p [ <password> ] | 指定在 **/u**中指定的用户帐户的密码。 |
 | /d`<drive>` | 指定要找出可用空间可用性的驱动器。 您必须 `<drive>` 为远程计算机指定。 |

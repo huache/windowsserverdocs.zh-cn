@@ -1,6 +1,6 @@
 ---
-title: ftp 接收
-description: Ftp 接收命令的参考主题，它使用当前文件传输类型将远程文件复制到本地计算机。
+title: ftp recv
+description: Ftp 接收命令的参考文章，它使用当前文件传输类型将远程文件复制到本地计算机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 011a42d3279a2fa26202d7d886a992956e70f6a1
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 01f9fc1d8e233d8e2c38f606dea12f5d342d5e44
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820327"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925785"
 ---
-# <a name="ftp-recv"></a>ftp 接收
+# <a name="ftp-recv"></a>ftp recv
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
@@ -40,13 +40,13 @@ recv <remotefile> [<localfile>]
 
 ### <a name="examples"></a>示例
 
-若要使用当前文件传输将*test.txt*复制到本地计算机，请键入：
+要使用当前文件传输将*test.txt*复制到本地计算机，请键入：
 
 ```
 recv test.txt
 ```
 
-若要使用当前文件传输将*test.txt*复制到本地*计算机，请*键入：
+要使用当前文件传输*test1.txt*将*test.txt*复制到本地计算机，请键入：
 
 ```
 recv test.txt test1.txt

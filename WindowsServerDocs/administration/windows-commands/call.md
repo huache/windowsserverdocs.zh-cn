@@ -1,6 +1,6 @@
 ---
 title: call
-description: Call 命令的参考主题，它从一个批处理程序调用另一个批处理程序，而不停止父批处理程序。
+description: Call 命令的参考文章，用于从一个批处理程序调用另一个批处理程序，而不停止父批处理程序。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 64c4b89d18ab869a7e6c8b1ee8537c4f808bce8f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e73199b9d5633d5b3f1f7b8afd2bd35eb826bfd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719670"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924830"
 ---
 # <a name="call"></a>call
 
@@ -31,12 +31,12 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| `[<drive>:][<path>]<filename>` | 指定要调用的批处理程序的位置和名称。 参数`<filename>`是必需的，它必须具有 .bat 或 .cmd 扩展名。 |
+| `[<drive>:][<path>]<filename>` | 指定要调用的批处理程序的位置和名称。 `<filename>`参数是必需的，它必须具有 .bat 或 .cmd 扩展名。 |
 | `<batchparameters>` | 指定批处理程序所需的任何命令行信息。 |
 | `:<label>` | 指定您希望批处理程序控件跳转到的标签。 |
-| `<arguments>` | 指定要传递给批处理程序的新实例（从开始）的命令行信息`:<label>`。|
+| `<arguments>` | 指定要传递给批处理程序的新实例（从开始）的命令行信息 `:<label>` 。|
 | /? | 在命令提示符下显示帮助。 |
 
 ## <a name="batch-parameters"></a>批处理参数
@@ -47,7 +47,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 你可以使用以下可选语法作为批处理参数（**% n**）的替换：
 
-| 批处理参数 | 描述 |
+| 批处理参数 | 说明 |
 | --------------- | ----------- |
 | % ~ 1 | 展开 **%1**并删除周围的引号。 |
 | % ~ f1 | 将 **%1**扩展到完全限定的路径。 |
@@ -63,7 +63,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 下表显示了如何将修饰符与复合结果的批处理参数合并：
 
-| 带有修饰符的批处理参数 | 描述 |
+| 带有修饰符的批处理参数 | 说明 |
 | ----------------------------- | ----------- |
 | % ~ sjc-dp1 | 将 **%1**扩展到驱动器号和路径。 |
 | % ~ nx1 | 仅将 **%1**扩展到文件名和扩展名。 |
@@ -78,13 +78,13 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
     批处理参数可以包含可传递给批处理程序的任何信息，包括命令行选项、文件名、批处理参数 **%0**到 **%9**和变量（例如， **% 波特%**）。
 
-- 使用`<label>`参数：
+- 使用 `<label>` 参数：
 
-    通过对**call** `<label>`参数使用 call，可以创建新的批处理文件上下文，并将控制传递给指定标签之后的语句。 第一次遇到批处理文件的末尾时（即，跳转到标签之后），控制将返回到**call**语句之后的语句。 第二次遇到批处理文件的末尾时，批处理脚本将退出。
+    通过对**call**参数使用 call `<label>` ，可以创建新的批处理文件上下文，并将控制传递给指定标签之后的语句。 第一次遇到批处理文件的末尾时（即，跳转到标签之后），控制将返回到**call**语句之后的语句。 第二次遇到批处理文件的末尾时，批处理脚本将退出。
 
 - 使用管道和重定向符号：
 
-    不要将管道`(|)`或重定向符号（`<`或`>`）与**call**一起使用。
+    不要将管道 `(|)` 或重定向符号（ `<` 或 `>` ）与**call**一起使用。
 
 - 进行递归调用
 
@@ -92,17 +92,17 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 - 使用命令扩展
 
-    如果启用了命令扩展， **call**则调用`<label>`接受作为调用的目标。 正确的语法为`call :<label> <arguments>`
+    如果启用了命令扩展，则**调用**接受 `<label>` 作为调用的目标。 正确的语法为`call :<label> <arguments>`
 
 ## <a name="examples"></a>示例
 
-若要从另一个批处理程序运行 checknew 程序，请在父批处理程序中键入以下命令：
+若要从另一个批处理程序运行 checknew.bat 程序，请在父批处理程序中键入以下命令：
 
 ```
 call checknew
 ```
 
-如果父批处理程序接受两个批处理参数并且您希望将这些参数传递给 checknew，请在父批处理程序中键入以下命令：
+如果父批处理程序接受两个批处理参数并且您希望将这些参数传递到 checknew.bat，请在父批处理程序中键入以下命令：
 
 ```
 call checknew %1 %2

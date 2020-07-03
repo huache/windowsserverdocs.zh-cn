@@ -1,6 +1,6 @@
 ---
 title: ftp mkdir
-description: Ftp mkdir 命令的参考主题，它在远程计算机上创建目录。
+description: 用于在远程计算机上创建目录的 ftp mkdir 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98559664b2288ccf495a039e83e92fb7ba555717
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2741733191b76547d8639d925cf4288efb35a530
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820417"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925888"
 ---
 # <a name="ftp-mkdir"></a>ftp mkdir
 

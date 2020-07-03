@@ -1,6 +1,6 @@
 ---
 title: ftp get
-description: Ftp get 命令的参考主题，该主题使用当前文件传输类型将远程文件复制到本地计算机。
+description: Ftp get 命令的参考文章，其中使用当前文件传输类型将远程文件复制到本地计算机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7254cac15afc446695f22ee1a63f2f4573d3565
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: de084813ee837ecea2f0871589218d3262b40bba
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819707"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925921"
 ---
 # <a name="ftp-get"></a>ftp get
 
@@ -40,13 +40,13 @@ get <remotefile> [<localfile>]
 
 ### <a name="examples"></a>示例
 
-若要使用当前文件传输将*test.txt*复制到本地计算机，请键入：
+要使用当前文件传输将*test.txt*复制到本地计算机，请键入：
 
 ```
 get test.txt
 ```
 
-若要使用当前文件传输将*test.txt*复制到本地*计算机，请*键入：
+要使用当前文件传输*test1.txt*将*test.txt*复制到本地计算机，请键入：
 
 ```
 get test.txt test1.txt

@@ -1,6 +1,6 @@
 ---
 title: break
-description: Break 命令的参考主题，它将卷影副本卷与 VSS 解除相关，并使其作为常规卷进行访问。
+description: 用于中断命令的参考文章，此命令将卷影副本卷与 VSS 解除阻止，并使其作为常规卷进行访问。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e8789ab68ecb98d190a79c3f1088aad05b83562
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7f3974f183215a42920f7406a62ab335eb101f56
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707787"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924894"
 ---
 # <a name="break"></a>break
 
@@ -33,7 +33,7 @@ break [writable] <setid>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 编写 | 启用对卷的读/写访问。 |
 | \<setid> | 指定卷影副本集的 ID。 可以在*SetID*参数中使用卷影副本 ID 的别名，该 ID 由**load metadata**命令存储为环境变量。 |

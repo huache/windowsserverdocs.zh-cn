@@ -1,6 +1,6 @@
 ---
 title: ftp mget
-description: Ftp mget 命令的参考主题，它使用当前文件传输类型将远程文件复制到本地计算机。
+description: Ftp mget 命令的参考文章，其中使用当前文件传输类型将远程文件复制到本地计算机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 93d562fcdaec0d6609e7be8b3543cd55bb910238
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7239f31fa0a9b40d9bba4db0c3e1e29df5c03108
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820427"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925898"
 ---
 # <a name="ftp-mget"></a>ftp mget
 
@@ -36,7 +36,7 @@ mget <remotefile>[ ]
 
 ### <a name="examples"></a>示例
 
-若要使用当前文件传输类型将远程文件 *.exe*和*b.* 复制到本地计算机，请键入：
+要使用当前文件传输类型将远程文件*a.exe*和*b.exe*复制到本地计算机，请键入：
 
 ```
 mget a.exe b.exe

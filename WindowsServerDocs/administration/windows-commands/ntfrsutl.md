@@ -1,6 +1,6 @@
 ---
 title: ntfrsutl
-description: Ntfrsutl 命令的参考主题，它转储 NT 文件复制服务（NTFRS）的内部表、线程和内存信息。
+description: Ntfrsutl 命令的参考文章，用于转储 NT 文件复制服务（NTFRS）的内部表、线程和内存信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f931d916888a372d66a1cc06cb7543067b9b9d3b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 56aefc1277f67dc6a06ba4686c26f81592afc2f3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472763"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925337"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 

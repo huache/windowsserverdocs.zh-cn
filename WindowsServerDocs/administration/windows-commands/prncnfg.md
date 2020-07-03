@@ -1,6 +1,6 @@
 ---
 title: prncnfg
-description: Prncnfg 命令的参考主题，它配置或显示有关打印机的配置信息。
+description: Prncnfg 命令的参考文章，它配置或显示有关打印机的配置信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b60faaa5537ebdf8860c9b0471cf879677b80f1d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 11eb66c3e1d4fb457f9655750d92ab90ad9b473b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472302"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924239"
 ---
 # <a name="prncnfg"></a>prncnfg
 
@@ -30,7 +30,7 @@ cscript prncnfg {-g | -t | -x | -?} [-S <Servername>] [-P <Printername>] [-z <ne
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | -g | 显示有关打印机的配置信息。 |
 | -t | 配置打印机。 |

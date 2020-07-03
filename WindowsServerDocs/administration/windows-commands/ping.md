@@ -1,6 +1,6 @@
 ---
 title: ping
-description: Ping 命令的参考主题，用于验证网络连接性。
+description: 用于验证网络连接的 ping 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 1c1bd15d6536c73feb00decb9ad306f327a6464d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b995edf4943cfbaac8bd96cf098d62687c32396f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472443"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924273"
 ---
 # <a name="ping"></a>ping
 
@@ -35,7 +35,7 @@ ping [/t] [/a] [/n <count>] [/l <size>] [/f] [/I <TTL>] [/v <TOS>] [/r <count>] 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | /t  | 指定 ping 继续向目标发送回显请求消息，直到中断。 若要中断和显示统计信息，请按 CTRL + ENTER。 若要中断并退出此命令，请按 CTRL + C。 |
 | /a | 指定对目标 IP 地址执行反向名称解析。 如果此操作成功，则 ping 将显示相应的主机名。 |

@@ -1,6 +1,6 @@
 ---
 title: prnmngr
-description: Prnmngr 命令的参考主题，除了设置和显示默认打印机外，还可以添加、删除和列出打印机或打印机连接。
+description: Prnmngr 命令的参考文章，其中除了设置和显示默认打印机外，还可以添加、删除和列出打印机或打印机连接。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 1ccc04e7e040612d9243fe1e3f5ed67b8131ab9d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 562d25a95fa3ccd556b65d0a29b866557c842c55
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472212"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924172"
 ---
 # <a name="prnmngr"></a>prnmngr
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-除了设置和显示默认打印机外，还可以添加、删除和列出打印机或打印机连接。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prnmngr 文件的完整路径，或将目录更改为相应的文件夹。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr`。
+除了设置和显示默认打印机外，还可以添加、删除和列出打印机或打印机连接。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prnmngr 文件的完整路径，或将目录更改为相应的文件夹。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr`。
 
 ## <a name="syntax"></a>语法
 
@@ -47,7 +47,7 @@ cscript prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <Servername>] [-p <Pri
 | -u `<Username>` -w`<password>` | 指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格，请使用引号将文本括起来（例如，"计算机名称"）。
 

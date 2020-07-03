@@ -1,6 +1,6 @@
 ---
 title: inuse
-description: 正在使用命令的参考主题。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
+description: 正在使用命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b25750c8ad57c3b1a795830b743f679e7fce88b5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 97fb8205c05952326de5e66ff6972e30279930cd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818427"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924378"
 ---
 # <a name="inuse"></a>inuse
 

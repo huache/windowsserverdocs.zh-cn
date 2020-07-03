@@ -1,6 +1,6 @@
 ---
-title: 帮助
-description: Help 命令的参考主题，该主题显示有关指定命令的可用命令或详细帮助信息的列表。
+title: help
+description: "\"帮助\" 命令的参考文章，其中显示了可用命令的列表或有关指定命令的详细帮助信息。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b73ef32b49b834a91f24e943749eb21398c8588
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 562bb725998cb58eb9a4a9ce9078a833bc0e7781
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818657"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924570"
 ---
-# <a name="help"></a>帮助
+# <a name="help"></a>help
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

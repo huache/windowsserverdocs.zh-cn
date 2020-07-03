@@ -1,6 +1,6 @@
 ---
-title: ksetup 服务器
-description: Ksetup 服务器命令的参考主题，此命令允许你指定运行 Windows 操作系统的计算机的名称，因此 ksetup 命令所做的更改将更新目标计算机。
+title: ksetup server
+description: Ksetup 服务器命令的参考文章，可用于为运行 Windows 操作系统的计算机指定名称，因此 ksetup 命令所做的更改将更新目标计算机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e39a3fbef4b99848d2a90c81007c526597c77275
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 99c708c3842d1d2d36783db09d60750bb2703670
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817517"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926092"
 ---
-# <a name="ksetup-server"></a>ksetup 服务器
+# <a name="ksetup-server"></a>ksetup server
 
 允许你为运行 Windows 操作系统的计算机指定名称，因此**ksetup**命令所做的更改将更新目标计算机。
 

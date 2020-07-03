@@ -1,6 +1,6 @@
 ---
-title: ftp 重命名
-description: Ftp 重命名命令的参考主题，用于重命名远程文件。
+title: ftp rename
+description: 用于重命名远程文件的 ftp rename 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8d3ea25e48266db6a4a282f2ea395bd8b8d5fd9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f46caa4394be9edc80da018d88809a0dd6e91862
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820307"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925738"
 ---
-# <a name="ftp-rename"></a>ftp 重命名
+# <a name="ftp-rename"></a>ftp rename
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
@@ -37,7 +37,7 @@ rename <filename> <newfilename>
 
 ### <a name="examples"></a>示例
 
-若要将远程文件*示例 .txt*重命名为*示例 1*，请键入：
+若要将远程文件*example.txt*重命名为*example1.txt*，请键入：
 
 ```
 rename example.txt example1.txt

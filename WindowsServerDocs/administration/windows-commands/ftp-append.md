@@ -1,6 +1,6 @@
 ---
-title: ftp 追加
-description: Ftp append 命令的参考主题，它使用当前文件类型设置将本地文件追加到远程计算机上的文件。
+title: ftp append
+description: 使用 "当前文件类型" 设置将本地文件追加到远程计算机上的文件的 ftp append 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d1b6ab4a6ae0c1654d4335d24f135b2893bdcb7
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f1d1cf36139f00f3d61e400cb38960d2c8551532
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819137"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925163"
 ---
-# <a name="ftp-append"></a>ftp 追加
+# <a name="ftp-append"></a>ftp append
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
@@ -37,13 +37,13 @@ append <localfile> [remotefile]
 
 ### <a name="examples"></a>示例
 
-若要将*file1*附加到远程计算机上的*file2* ，请键入：
+若要在远程计算机上追加*file2.txt* *file1.txt* ，请键入：
 
 ```
 append file1.txt file2.txt
 ```
 
-将本地*file1*附加到远程计算机上名为*file1*的文件中。
+将本地*file1.txt*追加到远程计算机上名为*file1.txt*的文件。
 
 ```
 append file1.txt

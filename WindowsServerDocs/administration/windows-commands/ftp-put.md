@@ -1,6 +1,6 @@
 ---
 title: ftp put
-description: Ftp put 命令的参考主题，它使用当前文件传输类型将本地文件复制到远程计算机。
+description: Ftp put 命令的参考文章，其中使用当前文件传输类型将本地文件复制到远程计算机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: aee76b95ac538868122d5137958723326575eb18
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7b382673be838af739c29ffa294e3d853f0507c2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820367"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925157"
 ---
 # <a name="ftp-put"></a>ftp put
 
@@ -40,13 +40,13 @@ put <localfile> [<remotefile>]
 
 ### <a name="examples"></a>示例
 
-若要复制本地文件*test.txt*并将其命名为*test1* ，请在远程计算机上键入：
+若要复制本地文件*test.txt*并将其命名为在远程计算机上*test1.txt* ，请键入：
 
 ```
 put test.txt test1.txt
 ```
 
-若要将本地文件*program*复制到远程计算机，请键入：
+若要将本地文件*program.exe*复制到远程计算机，请键入：
 
 ```
 put program.exe

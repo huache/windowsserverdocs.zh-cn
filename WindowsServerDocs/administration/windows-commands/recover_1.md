@@ -1,6 +1,6 @@
 ---
 title: recover
-description: '* * * * 的参考主题'
+description: 有关 DiskPart recover 命令的参考文章，该命令刷新磁盘组中所有磁盘的状态，尝试恢复无效磁盘组中的磁盘，并重新同步镜像卷和具有陈旧数据的 RAID-5 卷。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3a77e83f1a7143a82fd626390c7373dc87afdb17
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 19272e09147bb730e07d51d42926c01262bfb433
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722613"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924790"
 ---
 # <a name="recover"></a>recover
 
+刷新磁盘组中所有磁盘的状态，尝试恢复无效磁盘组中的磁盘，并重新同步已过时的镜像卷和 RAID-5 卷。 此命令在失败或失败的磁盘上操作。 它还对失败、失败或处于失败状态的卷进行操作。
+
+此命令对动态磁盘组进行操作。 如果对具有基本磁盘的组使用此命令，则不会返回错误，而不会执行任何操作。
+
+> [!NOTE]
+>  若要成功执行此操作，必须选择磁盘组中的磁盘。 使用 "[选择磁盘" 命令](select-disk.md)选择磁盘，并将焦点移动到该磁盘。
 
 
-刷新磁盘组中所有磁盘的状态，尝试恢复无效磁盘组中的磁盘，并重新同步已过时的镜像卷和 RAID-5 卷。
-
-> [!IMPORTANT]
-> 在任何版本的 Windows Vista 中，此 DiskPart 命令均不可用。
 
 ## <a name="syntax"></a>语法
 
@@ -33,20 +35,14 @@ recover [noerr]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|noerr|仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。|
-
-## <a name="remarks"></a>备注
-
--   此命令对磁盘组进行操作。
--   此命令仅适用于动态磁盘组。 如果对具有基本磁盘的组使用此命令，则不会返回错误，而不会执行任何操作。
--   此命令在失败或失败的磁盘上操作。 它还对失败、失败或处于失败状态的卷进行操作。
--   必须选择磁盘组中的磁盘，才能成功执行此命令。 使用 "**选择磁盘**" 命令选择磁盘，并将焦点移动到该磁盘。
+| 参数 | 说明 |
+|--|--|
+| noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
 ## <a name="examples"></a>示例
 
 若要恢复包含焦点磁盘的磁盘组，请键入：
+
 ```
 recover
 ```
@@ -54,4 +50,3 @@ recover
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
-

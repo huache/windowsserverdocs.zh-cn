@@ -1,6 +1,6 @@
 ---
-title: logman 创建 api
-description: 用于创建 API 跟踪数据收集器的 logman create api 命令的参考主题。
+title: logman create api
+description: 用于创建 API 跟踪数据收集器的 logman create api 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f479fcdf3db4bb5a61b0cd0724220d27c934872f
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 2294cb7ba7ab962dbba33b0e2612b8dee2d72004
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222811"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925438"
 ---
-# <a name="logman-create-api"></a>logman 创建 api
+# <a name="logman-create-api"></a>logman create api
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
@@ -65,19 +65,19 @@ logman create api <[-n] <name>> [options]
 
 ### <a name="examples"></a>示例
 
-若要创建名为 trace_notepad 的 API 跟踪计数器，请对可执行文件 c:\windows\notepad.exe 并将结果放入 c:\notepad.etl 文件中，键入：
+若要创建名为 trace_notepad 的 API 跟踪计数器，c:\windows\notepad.exe 的可执行文件，并将结果放入文件 c:\notepad.etl，请键入：
 
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -o c:\notepad.etl
 ```
 
-若要创建名为 trace_notepad 的 API 跟踪计数器，请在可执行文件 c:\windows\notepad.exe 中，收集模块在 c:\windows\system32\advapi32.dll 中生成的值，键入：
+若要创建名为 trace_notepad 的 API 跟踪计数器，c:\windows\notepad.exe 的可执行文件，请在 c:\windows\system32\advapi32.dll 中收集模块生成的值，请键入：
 
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -mods c:\windows\system32\advapi32.dll
 ```
 
-若要创建名为 trace_notepad 的 API 跟踪计数器，请为可执行文件 c:\windows\notepad.exe （不包括模块 kernel32.dll 生成的 API 调用 TlsGetValue）键入：
+若要创建名为 trace_notepad 的 API 跟踪计数器，则对于可执行文件 c:\windows\notepad.exe （不包括模块 kernel32.dll 生成的 API 调用 TlsGetValue），请键入：
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue
 ```

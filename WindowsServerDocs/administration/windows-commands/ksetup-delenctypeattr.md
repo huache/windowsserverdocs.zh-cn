@@ -1,6 +1,6 @@
 ---
 title: ksetup delenctypeattr
-description: Ksetup delenctypeattr 的参考主题，该主题删除域的 "加密类型" 属性。
+description: 用于删除域的加密类型属性的 ksetup delenctypeattr 的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3076a25b619615402a599bd8aaa6ce9d10d4fe0
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5aabbb99f40d8d22189d6abccc188161b7ee2f5c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817937"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925485"
 ---
 # <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 

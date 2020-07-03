@@ -1,6 +1,6 @@
 ---
 title: fsutil quota
-description: Fsutil quota 命令的参考主题，它管理 NTFS 卷上的磁盘配额，以便更精确地控制基于网络的存储。
+description: Fsutil quota 命令的参考文章，它管理 NTFS 卷上的磁盘配额，以便更精确地控制基于网络的存储。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 21225c11-7c72-4ea2-96bd-e63d4beb3be5
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 54c4f6fe5fd5ae7a43d5057cd5837374f1b94ecd
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: f757f822a903f6b5c6d221e17f87cf1e73d1555f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435808"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925222"
 ---
 # <a name="fsutil-quota"></a>fsutil quota
 

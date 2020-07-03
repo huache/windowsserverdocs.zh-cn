@@ -1,6 +1,6 @@
 ---
 title: helpctr
-description: Helpctr 命令的参考主题。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
+description: Helpctr 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b2dc9d0f5dfbd9ae61e0e4279596f68ccfae0055
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 29d715710f727d0eeaeb56485fad7b33b8e2c105
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818577"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924552"
 ---
 # <a name="helpctr"></a>helpctr
 

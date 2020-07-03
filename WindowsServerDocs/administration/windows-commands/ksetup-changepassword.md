@@ -1,6 +1,6 @@
 ---
 title: ksetup changepassword
-description: Ksetup changepassword 命令的参考主题，它使用密钥发行中心（KDC）密码（kpasswd）值更改登录用户的密码。
+description: Ksetup changepassword 命令的参考文章，此命令使用密钥发行中心（KDC）密码（kpasswd）值更改登录用户的密码。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c1ed9d9b611a7911c4a22c7ca803b480f52f323
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e49a9c0a796357c89efd3c86373c77468670176c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817977"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925503"
 ---
 # <a name="ksetup-changepassword"></a>ksetup changepassword
 

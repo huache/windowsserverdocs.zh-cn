@@ -1,6 +1,6 @@
 ---
 title: find
-description: Find 命令的参考主题，该主题在文件中搜索文本字符串，并在文件中显示指定的文本字符串。
+description: "\"查找\" 命令的参考文章，可搜索文件中的文本字符串，在文件中显示指定的文本字符串。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0273405ce5e5b4958a347cd1eaddee0a38897f0c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8ebebcd29faad50aec84dd464ff0f745d2ddf52c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437002"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925259"
 ---
 # <a name="find"></a>find
 
@@ -63,7 +63,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <string> [[<drive>:][<path>]<filename>[...
 find pencil sharpener pencil.ad
 ```
 
-若要查找文本，"科学家仅标记其书面内容。 这不是最终报表。 " 在*报告 .doc*文件中，键入：
+若要查找文本，"科学家仅标记其书面内容。 这不是最终报表。 " 在*report.doc*文件中，键入：
 
 ```
 find ""The scientists labeled their paper for discussion only. It is not a final report."" report.doc

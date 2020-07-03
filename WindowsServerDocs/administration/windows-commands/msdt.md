@@ -1,6 +1,6 @@
 ---
 title: msdt
-description: 适用于 msdt 命令的参考主题，它在命令行或自动脚本中调用疑难解答包，并启用其他选项，无需用户输入。
+description: 适用于 msdt 命令的参考文章，此命令在命令行或自动脚本中调用疑难解答包，并启用其他选项，无需用户输入。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47eaf859c86a939777ce8878937d36f2c581ab31
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 99ba1320171e4e305209f06fbee617e54c979d30
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354368"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925021"
 ---
 # <a name="msdt"></a>msdt
 
@@ -28,7 +28,7 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /id`<packagename>` | 指定要运行的诊断包。 有关可用包的列表，请参阅[可用的疑难解答包](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)。 |
 | /path`<directory|.diagpkg file|.diagcfg file>` | 指定诊断包的完整路径。 如果指定目录，则该目录必须包含诊断程序包。 不能将 **/path**参数与 * */id * *、 **/dci**或 **/cab**参数一起使用。 |                                                                                   |

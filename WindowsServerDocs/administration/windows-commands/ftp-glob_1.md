@@ -1,6 +1,6 @@
 ---
 title: ftp glob
-description: Ftp glob 命令的参考主题，用于切换允许本地文件名的通配符扩展。
+description: Ftp glob 命令的参考文章，用于切换允许本地文件名的通配符扩展。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 35adf2af74a2bcaf952e7bbb58f550fac968aa6f
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6388fd43ee21d68ac48888ed2e950b2aeca5a5c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819717"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925910"
 ---
 # <a name="ftp-glob"></a>ftp glob
 

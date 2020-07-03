@@ -9,20 +9,22 @@ manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 2249a69f60fe87758c74a58aa13b47124da41361
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 15c9526e4049b218a3fcd7c85bd30dc917629425
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319374"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925945"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>从 Windows 管理中心部署 Azure 虚拟机
 
->适用于： Windows 管理中心、Windows 管理中心预览
+>适用于：Windows Admin Center、Windows Admin Center 预览版
 
-Windows 管理中心版本1910允许你部署 Azure 虚拟机。 这将 VM 部署集成到 Windows 管理中心中心管理的工作负荷，例如[存储迁移服务](../../../storage/storage-migration-service/overview.md)和[存储副本](../../../storage/storage-replica/storage-replica-overview.md)。 在部署工作负荷之前，无需在 Azure 门户中构建新的服务器和 Vm，还可能缺少所需的步骤和配置-Windows 管理中心可以部署 Azure VM、配置其存储、将其加入域、安装角色，以及然后设置你的分布式系统。 你还可以在没有工作负荷的情况下部署新的 Azure Vm。
+Windows 管理中心版本1910允许你部署 Azure 虚拟机。 这将 VM 部署集成到 Windows 管理中心中心管理的工作负荷，例如[存储迁移服务](../../../storage/storage-migration-service/overview.md)和[存储副本](../../../storage/storage-replica/storage-replica-overview.md)。 在部署工作负荷之前，无需在 Azure 门户中创建新的服务器和 Vm，并且可能缺少所需的步骤和配置-Windows 管理中心可以部署 Azure VM、配置其存储、将其加入域、安装角色，然后设置你的分布式系统。 你还可以在没有工作负荷的情况下部署新的 Azure Vm。
 
 Windows 管理中心还管理各种 Azure 服务。 [详细了解 Windows 管理中心提供的 Azure 集成选项](../plan/azure-integration-options.md)。
+
+如果要将虚拟机直接迁移到 Azure，而不是创建新虚拟机，请考虑使用 Azure Migrate。 有关详细信息，请参阅[Azure Migrate 概述](https://go.microsoft.com/fwlink/?linkid=2056064)。
 
 ## <a name="scenarios"></a>方案
 
@@ -36,7 +38,7 @@ Windows 管理中心版本 1910 Azure VM 部署支持以下方案：
 
 若要从 Windows 管理中心中创建新的 Azure VM，需要具备以下要求：
 
-- 一个[Azure 订阅](https://azure.microsoft.com)。
+- 一个 [Azure 订阅](https://azure.microsoft.com)。
 - [使用 Azure 注册的 Windows 管理中心网关](azure-integration.md)
 - 具有创建权限的现有[Azure 资源组](https://docs.microsoft.com/azure/azure-resource-manager/management/overview)。
 - 现有的[Azure 虚拟网络](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)和子网。

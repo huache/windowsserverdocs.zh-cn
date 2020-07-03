@@ -1,6 +1,6 @@
 ---
-title: logman 启动和 logman 停止
-description: 用于启动数据收集器并将开始时间设置为手动的 logman start 和 logman 停止命令的参考主题，或停止数据收集器集并将结束时间设置为手动。
+title: logman start and logman stop
+description: 用于启动数据收集器并将开始时间设置为手动的 logman start 和 logman 停止命令的参考文章，或停止数据收集器集并将结束时间设置为手动。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db0111c4f58f0a28ad76affd3e4d8e24d4a927c2
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: b7b7da9aad31b977c2343e6f784b19dd420c21e6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222917"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925426"
 ---
-# <a name="logman-start-and-logman-stop"></a>logman 启动和 logman 停止
+# <a name="logman-start-and-logman-stop"></a>logman start and logman stop
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

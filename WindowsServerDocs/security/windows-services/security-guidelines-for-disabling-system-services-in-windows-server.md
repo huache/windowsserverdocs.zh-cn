@@ -8,12 +8,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 314b53d41fde81936b70154feeee407e89d2cca3
-ms.sourcegitcommit: c710fea2c0591febfc1bc9a705d59979be6f699b
+ms.openlocfilehash: 71687bc7090eabfaf690dc526cce013798413fdb
+ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83705594"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85586719"
 ---
 # <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>有关在带有桌面体验的 Windows Server 2016 中禁用系统服务的指南
 
@@ -42,7 +42,7 @@ Microsoft 建议客户在带有桌面体验的 Windows Server 2016 中禁用以�
 1. \Microsoft\XblGameSave\XblGameSaveTask
 2. \Microsoft\XblGameSave\XblGameSaveTaskLogon
 
-（还可以通过查看附加的 Microsoft Excel 电子表格，来访问有关本文中详述的所有服务的信息：[有关在带有桌面体验的 Windows Server 2016 中禁用系统服务的指南](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx)）
+还可以通过查看附加的 Microsoft Excel 电子表格来访问有关本文中详述的所有服务的信息：[有关在带有桌面体验的 Windows Server 2016 中禁用系统服务的指南](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx)）
 
 
 ### <a name="disabling-services-not-installed-by-default"></a>禁用非默认安装的服务
@@ -244,7 +244,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 | **安装**   | 仅用于桌面体验
 | **启动类型**   | Manual
 | **建议** | 可以禁用
-| **备注**       | 如果不使用，则可以禁用。 另一种禁用机制： https://technet.microsoft.com/library/dd252791.aspx
+| **备注**       | 如果不使用，则可以禁用。 另一种禁用机制：[禁用蓝牙和红外线发送](https://docs.microsoft.com/previous-versions/tn-archive/dd252791(v=technet.10))
 |||
 
 
@@ -1321,7 +1321,7 @@ Microsoft 建议不要应用策略来禁用非默认安装的服务。
 | **安装**   | 始终安装
 | **启动类型**   | 自动
 | **建议** | 如果不是打印服务器或 DC，则可以禁用
-| **备注**       | 在域控制器上，安装 DC 角色会将一个线程添加到负责执行打印修剪（从 Active Directory 中删除过时的打印队列对象）的后台处理程序服务。  如果后台处理程序服务未在每个站点中的至少一个 DC 上运行，则 AD 无法删除不再存在的旧队列。 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/ )
+| **备注**       | 在域控制器上，安装 DC 角色会将一个线程添加到负责执行打印修剪（从 Active Directory 中删除过时的打印队列对象）的后台处理程序服务。  如果后台处理程序服务未在每个站点中的至少一个 DC 上运行，则 AD 无法删除不再存在的旧队列。 [在性能团队博客中提问](https://techcommunity.microsoft.com/t5/ask-the-performance-team/bg-p/AskPerf)。
 |||
 
 

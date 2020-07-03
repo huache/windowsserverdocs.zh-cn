@@ -1,6 +1,6 @@
 ---
 title: ksetup addhosttorealmmap
-description: Ksetup addhosttorealmmap 命令的参考主题，它在规定的主机和领域之间添加服务主体名称（SPN）映射。
+description: Ksetup addhosttorealmmap 命令的参考文章，它在规定的主机和领域之间添加服务主体名称（SPN）映射。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee2639a5bb071bdd3d6ac3f6373e881c18f3bf9a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 830db84e210b94088e74fd08909f7c47ff84df98
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818107"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925579"
 ---
 # <a name="ksetup-addhosttorealmmap"></a>ksetup addhosttorealmmap
 

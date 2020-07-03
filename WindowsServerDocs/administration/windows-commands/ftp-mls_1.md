@@ -1,6 +1,6 @@
 ---
 title: ftp mls
-description: Ftp mls 命令的参考主题，其中显示远程目录中的文件和子目录的缩写列表。
+description: Ftp mls 命令的参考文章，其中显示远程目录中的文件和子目录的简短列表。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 372c0b9a42fdfb8600083a301b71c37ada43c014
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6c2e87cbf0455fccb99435e0a8b67fd30164e35b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820390"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925851"
 ---
 # <a name="ftp-mls"></a>ftp mls
 
@@ -43,7 +43,7 @@ mls <remotefile>[ ] <localfile>
 mls dir1 dir2 -
 ```
 
-若要在本地文件*dirlist*中保存*dir1*和*dir2*的文件和子目录的缩写列表，请键入：
+若要将*dir1*和*dir2*的文件和子目录的简短列表保存*dirlist.txt*，请键入：
 
 ```
 mls dir1 dir2 dirlist.txt

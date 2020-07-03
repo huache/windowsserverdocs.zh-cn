@@ -1,6 +1,6 @@
 ---
 title: ftp remotehelp
-description: Ftp remotehelp 命令的参考主题，其中显示了有关远程命令的帮助。
+description: Ftp remotehelp 命令的参考文章，其中显示了有关远程命令的帮助。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 659de5487890b50aab9004f650e4584085e7306c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 54d784751291515a022a561ca9600e3e967a9d8e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820317"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925747"
 ---
 # <a name="ftp-remotehelp"></a>ftp remotehelp
 
@@ -52,8 +52,8 @@ remotehelp feat
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [ftp 引号](ftp-quote.md)
+- [ftp quote](ftp-quote.md)
 
-- [ftp 文本](ftp-literal_1.md)
+- [ftp literal](ftp-literal_1.md)
 
 - [其他 FTP 指南](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

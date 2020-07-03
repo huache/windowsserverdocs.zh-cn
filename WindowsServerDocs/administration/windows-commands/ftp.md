@@ -1,6 +1,6 @@
 ---
 title: ftp
-description: Ftp 命令的参考主题，用于在运行文件传输协议（ftp）服务器服务的计算机之间传输文件。
+description: Ftp 命令的参考文章，用于在运行文件传输协议（ftp）服务器服务的计算机之间传输文件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3920306ce05aeb1b1e364c8146c461ea187f6560
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e78148e1e7dc4f402d80bb4ebfbcbdac52249407
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820237"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925618"
 ---
 # <a name="ftp"></a>ftp
 
@@ -65,7 +65,7 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 ftp ftp.example.microsoft.com
 ```
 
-若要登录到名为的 ftp 服务器 `ftp.example.microsoft.com` 并运行名为*resync .txt*的文件中包含的**ftp**命令，请键入：
+若要登录到名为的 ftp 服务器 `ftp.example.microsoft.com` 并运行名为*resync.txt*的文件中包含的**ftp**命令，请键入：
 
 ```
 ftp -s:resync.txt ftp.example.microsoft.com
