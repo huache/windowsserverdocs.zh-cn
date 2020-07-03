@@ -1,6 +1,6 @@
 ---
 title: nslookup ls
-description: Nslookup ls 命令的参考主题，它列出 DNS 域信息。
+description: 用于列出 DNS 域信息的 nslookup ls 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87e30ed5d5b44b805c3b3b004feb5ed252b5a760
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 7c0c0aeb01cdffb1f2b779178f0298e1f120348e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721116"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936576"
 ---
 # <a name="nslookup-ls"></a>nslookup ls
 

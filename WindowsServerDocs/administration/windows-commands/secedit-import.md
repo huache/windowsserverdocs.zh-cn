@@ -1,6 +1,6 @@
 ---
 title: secedit：导入
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d21a6d6f58189346409375df4a0d11ccd69096d4
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0ec5cbfdb4c9561b9af8841a267138dd6149c2c2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821247"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936509"
 ---
 # <a name="seceditimport"></a>secedit：导入
 

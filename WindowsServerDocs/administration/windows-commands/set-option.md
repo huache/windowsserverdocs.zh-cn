@@ -1,6 +1,6 @@
 ---
 title: Set 选项
-description: Set 选项的参考主题，用于设置创建卷影副本的选项。
+description: Set 选项的参考文章，用于设置创建卷影副本的选项。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4aba049e29cd74450467cf28057a2ff4e4a7094
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b7944cd51adffabdc85bc6d419b527b1b643d4a8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721904"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937078"
 ---
 # <a name="set-option"></a>Set 选项
 
@@ -28,7 +28,7 @@ set option {[differential | plex] [transportable] [[rollbackrecover] [txfrecover
 
 ### <a name="parameters"></a>参数
 
-|     参数     |                                                                                                  描述                                                                                                  |
+|     参数     |                                                                                                  说明                                                                                                  |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   [差异   |                                                                                                     丛                                                                                                     |
 |  便携  |                       指定还不导入卷影副本。 稍后可以使用元数据 .cab 文件将卷影副本导入到相同或不同的计算机。                       |

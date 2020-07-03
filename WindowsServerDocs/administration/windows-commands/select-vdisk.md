@@ -1,6 +1,6 @@
 ---
-title: 选择 vdisk
-description: '* * * * 的参考主题'
+title: select vdisk
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23741d9211ebdf98ac198af2ae1c562724a1955b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 734b31d9c9bcf174bf4617418978935bc49ad6da
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821077"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936435"
 ---
-# <a name="select-vdisk"></a>选择 vdisk
+# <a name="select-vdisk"></a>select vdisk
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
@@ -57,9 +57,9 @@ select vdisk file=c:\test\test.vhd
 
 -   [分离 vdisk](detach-vdisk.md)
 
--   [详细信息 vdisk](detail-vdisk.md)
+-   [detail vdisk](detail-vdisk.md)
 
--   [展开 vdisk](expand-vdisk.md)
+-   [expand vdisk](expand-vdisk.md)
 
 -   [Merge vdisk](merge-vdisk.md)
 

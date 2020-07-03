@@ -1,6 +1,6 @@
 ---
 title: TransportServer
-description: TransportServer 的参考主题，可用于启用传输服务器的所有服务。
+description: TransportServer 的参考文章，可用于启用传输服务器的所有服务。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50cc381b1c178628be7d135868027b4f37787cdd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d4cd87b78e7a84255593464fede553bc294138c7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720921"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936276"
 ---
 # <a name="enable-transportserver"></a>TransportServer
 
@@ -27,9 +27,9 @@ ms.locfileid: "82720921"
 wdsutil [Options] /Enable-TransportServer [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
-|[/Server：<Server name>]|指定传输服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定名称，则将使用本地服务器。|
+|[/Server： <Server name> ]|指定传输服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定名称，则将使用本地服务器。|
 ## <a name="examples"></a>示例
 若要在服务器上启用这些服务，请运行下列操作之一：
 ```
@@ -37,9 +37,9 @@ wdsutil /Enable-TransportServer
 wdsutil /verbose /Enable-TransportServer /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>其他参考
-- [Command-Line Syntax Key](command-line-syntax-key.md)
-使用[TransportServer 命令](using-the-disable-transportserver-command.md)
-的命令行语法键[使用 TransportServer 命令](using-the-get-transportserver-command.md)
-[子命令： TransportServer](subcommand-set-transportserver.md)
-[子](subcommand-start-transportserver.md)
-命令： TransportServer 子命令：[stop-TransportServer](subcommand-stop-transportserver.md)
+- [命令行语法关键字](command-line-syntax-key.md) 
+[使用 TransportServer 命令](using-the-disable-transportserver-command.md) 
+[使用 TransportServer 命令](using-the-get-transportserver-command.md) 
+[子命令： set-TransportServer](subcommand-set-transportserver.md) 
+[子命令： TransportServer](subcommand-start-transportserver.md) 
+[子命令： TransportServer](subcommand-stop-transportserver.md)

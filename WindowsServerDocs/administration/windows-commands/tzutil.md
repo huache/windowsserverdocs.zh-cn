@@ -1,6 +1,6 @@
 ---
 title: tzutil
-description: 适用于 tzutil 的参考主题，其中显示 Windows 时区实用程序。
+description: 适用于 tzutil 的参考文章，其中显示 Windows 时区实用程序。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d4a94fa9f776af1ae21ad9057b6f9225691b516
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 99d88057c88a55aaf529d238088f8422c33e9ba7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821297"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937288"
 ---
 # <a name="tzutil"></a>tzutil
 
@@ -31,8 +31,8 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |-------|--------|
 |/?|在命令提示符下显示帮助。|
 |/g|显示当前时区 ID。|
-|/s \< timeZoneID> [_dstoff]|使用指定的时区 ID 设置当前时区。 **_Dstoff**后缀为时区禁用夏令时调整（如果适用）。|
-|/l|列出所有有效的时区 Id 和显示名称。 输出将为：<p>-   \<显示名称><br />-   \<时区 ID>|
+|/s \<timeZoneID> [_dstoff]|使用指定的时区 ID 设置当前时区。 **_Dstoff**后缀为时区禁用夏令时调整（如果适用）。|
+|/l|列出所有有效的时区 Id 和显示名称。 输出将为：<p>-   \<display name><br />-   \<time zone ID>|
 
 ## <a name="remarks"></a>备注
 退出代码为**0**指示已成功完成命令。

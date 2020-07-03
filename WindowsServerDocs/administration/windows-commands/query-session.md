@@ -1,6 +1,6 @@
 ---
 title: query session
-description: 查询会话命令的参考主题，该命令显示有关远程桌面会话主机服务器上的会话的信息。
+description: 查询会话命令的参考文章，其中显示了有关远程桌面会话主机服务器上的会话的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57b8587c0a02067a3472561e08fbfa461c1448b9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 440830af55763fbb3ebee7cdbdca97ca11cde30c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472002"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937046"
 ---
 # <a name="query-session"></a>query session
 
@@ -45,7 +45,7 @@ query session [<sessionname> | <username> | <sessionID>] [/server:<servername>] 
 | /counter | 显示当前计数器信息，包括创建、断开连接和重新连接的会话总数。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 用户始终可以查询用户当前登录到的会话。 若要查询其他会话，用户必须具有特殊访问权限。
 

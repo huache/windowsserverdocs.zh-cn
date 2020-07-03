@@ -1,6 +1,6 @@
 ---
 title: tlntadmn
-description: 用于管理本地或远程计算机（运行 telnet 服务器服务）的 tlntadmn.exe 参考主题。
+description: 用于管理本地或远程计算机（运行 telnet 服务器服务）的 tlntadmn.exe 参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fcade72f7170e94463abb9b473d4c6bd2251f086
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 602f3aa99f9d0e47fbbde1ab5c09b193446d8a7c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222650"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936911"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -30,7 +30,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 
 |                   参数                    |                                                                                                                                                       说明                                                                                                                                                        |
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                \<computerName>                 |                                                                                                                    指定要连接到的服务器的名称。 默认值为本地计算机。                                                                                                                    |
+|                \<computerName>                 |                                                                                                                    指定要连接到的服务器的名称。 默认为本地计算机。                                                                                                                    |
 |         -u \<UserName> -p\<Password>          |                                                指定要管理的远程服务器的管理凭据。 如果要管理未使用管理凭据登录的远程服务器，则此参数是必需的。                                                |
 |                     start                      |                                                                                                                                            启动 telnet 服务器服务。                                                                                                                                             |
 |                      stop                      |                                                                                                                                             停止 telnet 服务器服务                                                                                                                                              |

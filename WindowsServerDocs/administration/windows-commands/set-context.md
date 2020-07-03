@@ -1,6 +1,6 @@
 ---
 title: 设置上下文
-description: 设置上下文的参考主题，用于设置创建卷影副本的上下文。
+description: 设置上下文的参考文章，用于设置创建卷影副本的上下文。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9494cb8a0a6b0e320240d74980049a4e49843ecd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 98fb69f84b15a2444d24e4b6515ff9ff665b9aa7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721935"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937110"
 ---
 # <a name="set-contex"></a>设置上下文
 
@@ -30,7 +30,7 @@ set context {clientaccessible | persistent [nowriters] | volatile [nowriters]}
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |clientaccessible|指定卷影副本可供 Windows 的客户端版本使用。|
 |式|指定卷影副本在程序退出、重置或重新启动时保持不变。|

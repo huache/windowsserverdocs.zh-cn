@@ -1,6 +1,6 @@
 ---
-title: 模拟还原
-description: 适用于模拟还原的参考主题，该主题测试编写器在计算机上的还原会话中参与，而不向编写器发出 PreRestore 或 PostRestore 事件。
+title: simulate restore
+description: 有关模拟还原的参考文章，可测试编写器在计算机上的还原会话中参与，而不向编写器发出 PreRestore 或 PostRestore 事件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bab6c56cddc1d2ac95dc70205b0990b82fbfd12
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7cc247848ef4fac1e3a6537247f640f3533c2bcd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721781"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936353"
 ---
 # <a name="simulate-restore"></a>模拟还原
 

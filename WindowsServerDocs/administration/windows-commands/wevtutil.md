@@ -1,6 +1,6 @@
 ---
 title: wevtutil
-description: Wevtutil 的参考主题，可用于检索有关事件日志和发布者的信息。
+description: Wevtutil 的参考文章，可用于检索有关事件日志和发布者的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22195f3a163e1a4123b51d005b0367cc61411651
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: f87ab51c0e24f9df421d7540e85d05a534635947
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222615"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936638"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -55,7 +55,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 
 ## <a name="options"></a>选项
 
-|       选项       |                                                                                                                                                                                                                                                                 描述                                                                                                                                                                                                                                                                  |
+|       选项       |                                                                                                                                                                                                                                                                 说明                                                                                                                                                                                                                                                                  |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /f\<Format>    |                                                                                                                                                               指定输出应为 XML 格式或文本格式。 如果 \<Format> 为 xml，则输出以 xml 格式显示。 如果 \<Format> 是文本，则显示不带 XML 标记的输出。 默认值为 Text。                                                                                                                                                                |
 |   /e:\<Enabled>    |                                                                                                                                                                                                                                         启用或禁用日志。 \<Enabled>可以为 true 或 false。                                                                                                                                                                                                                                          |
@@ -124,11 +124,11 @@ wevtutil sl /c:config.xml
 ```
 wevtutil gp Microsoft-Windows-Eventlog /ge:true
 ```
-安装 myManifest 清单文件中的发布服务器和日志：
+从 myManifest.xml 清单文件中安装发布服务器和日志：
 ```
 wevtutil im myManifest.xml
 ```
-从 myManifest 清单文件卸载发布服务器和日志：
+从 myManifest.xml 清单文件卸载发布服务器和日志：
 ```
 wevtutil um myManifest.xml
 ```

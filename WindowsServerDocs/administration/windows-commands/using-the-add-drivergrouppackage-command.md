@@ -1,6 +1,6 @@
 ---
 title: DriverGroupPackage
-description: DriverGroupPackage 的参考主题，用于将驱动程序包添加到驱动程序组。
+description: DriverGroupPackage 的参考文章，用于向驱动程序组添加驱动程序包。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4baf4f16740e65c432cc09ca24270ab479346ac2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5782fe849669619bf46426ad698866c05007e426
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721112"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937211"
 ---
 # <a name="add-drivergrouppackage"></a>DriverGroupPackage
 
@@ -28,7 +28,7 @@ wdsutil /add-DriverGroupPackage /DriverGroup:<Group Name> [/Server:<Server Name>
 ```
 ### <a name="parameters"></a>参数
 
-|         参数         |                                                                                                                                               描述                                                                                                                                               |
+|         参数         |                                                                                                                                               说明                                                                                                                                               |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /DriverGroup:<Group Name> |                                                                                                                                 指定驱动程序组的名称。                                                                                                                                 |
 |   服务<Server name>   |                                                                                  指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。                                                                                  |
@@ -44,7 +44,7 @@ wdsutil /add-DriverGroupPackage /DriverGroup:printerdrivers /PackageId:{4D36E972
 wdsutil /add-DriverGroupPackage /DriverGroup:printerdrivers /DriverPackage:XYZ
 ```
 ## <a name="additional-references"></a>其他参考
-- [Command-Line Syntax Key](command-line-syntax-key.md)
-[使用 DriverGroupPackages 命令](using-the-add-drivergrouppackages-command.md)
-的命令行语法键，使用[AllDriverPackages 子](using-the-add-alldriverpackages-subcommand.md)命令通过[DriverPackage 命令](using-the-add-driverpackage-command.md)
-使用
+- [命令行语法关键字](command-line-syntax-key.md) 
+[使用 DriverGroupPackages 命令](using-the-add-drivergrouppackages-command.md) 
+[使用 DriverPackage 命令](using-the-add-driverpackage-command.md) 
+[使用 AllDriverPackages 子命令](using-the-add-alldriverpackages-subcommand.md)

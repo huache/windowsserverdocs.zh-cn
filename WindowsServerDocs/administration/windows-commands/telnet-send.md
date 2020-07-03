@@ -1,6 +1,6 @@
 ---
-title: telnet 发送
-description: Telnet send 的参考主题，它将 telnet 命令发送到 telnet 服务器。
+title: telnet send
+description: 用于 telnet send 的参考文章，可将 telnet 命令发送到 telnet 服务器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36feeff49c3b139de8ec05b075571bae2539ddd1
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 44a0415a3516fcb15cd292c9e4c9c0a4a18e5ad9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222681"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937369"
 ---
 # <a name="telnet-send"></a>telnet：发送
 

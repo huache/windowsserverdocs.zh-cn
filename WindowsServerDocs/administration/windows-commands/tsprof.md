@@ -1,6 +1,6 @@
 ---
 title: tsprof
-description: Tsprof 的参考主题，它将远程桌面服务用户配置信息从一个用户复制到另一个用户。
+description: Tsprof 的参考文章，可将远程桌面服务用户配置信息从一个用户复制到另一个用户。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5a4980455eb2901db949a06f0c6dfec9ecf5793
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b0b030f6f1353a6570883cf44c17e383b929cb3a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721227"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937336"
 ---
 # <a name="tsprof"></a>tsprof
 
@@ -38,14 +38,14 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 ```
 
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |/update|更新域 <*DomainName*> 中 <*用户名*> 的配置文件路径信息，以 <*Profilepath*>。|
-|/domain：\<DomainName>|指定应用操作的域的名称。|
+|/domain\<DomainName>|指定应用操作的域的名称。|
 |/local|仅将操作应用于本地用户帐户。|
-|/profile：\<路径>|指定在 "本地用户和组" 和 "active directory 用户和计算机" 的远程桌面服务扩展中显示的配置文件路径。|
-|\<用户名>|指定要为其更新或查询服务器配置文件路径的用户的名称。|
-|/copy|将用户配置信息从\< *SourceUser*> 复制\<*到 DestinationUser*> 并将\< *DestinationUser*> 的配置文件路径信息\<更新到*Profilepath*>。 \< *SourceUser*> 和\< *DestinationUser*> 必须是本地的，或者必须\<*位于域域名*> 中。|
+|/profile\<path>|指定在 "本地用户和组" 和 "active directory 用户和计算机" 的远程桌面服务扩展中显示的配置文件路径。|
+|\<UserName>|指定要为其更新或查询服务器配置文件路径的用户的名称。|
+|/copy|将用户配置信息从复制 \<*SourceUser*> 到 \<*DestinationUser*> ，并将的配置文件路径信息更新为 \<*DestinationUser*> \<*Profilepath*> 。 \<*SourceUser*>和 \<*DestinationUser*> 必须都是本地的，或者必须在域中 \<*DomainName*> 。|
 |\<Src_usr>|指定要从中复制用户配置信息的用户的名称。|
 |\<Dest_usr>|指定要向其复制用户配置信息的用户的名称。|
 |/q|显示要为其查询服务器配置文件路径的用户的当前配置文件路径。|
@@ -65,5 +65,5 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
     ```
 
 ## <a name="additional-references"></a>其他参考
-- [命令行语法键](command-line-syntax-key.md)
+- [命令行语法关键字](command-line-syntax-key.md) 
 [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

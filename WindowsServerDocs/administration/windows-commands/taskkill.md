@@ -1,6 +1,6 @@
 ---
 title: taskkill
-description: Taskkill 的参考主题，用于结束一个或多个任务或进程。
+description: Taskkill 的参考文章，用于结束一个或多个任务或进程。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 425133f0ec4a9410a83e800f7c252326c9b2f459
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 061fd33e44f207b835987d35a812426899e6dd35
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721551"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936678"
 ---
 # <a name="taskkill"></a>taskkill
 
@@ -32,14 +32,14 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 
 ### <a name="parameters"></a>参数
 
-|         参数         |                                                                                                                                        描述                                                                                                                                        |
+|         参数         |                                                                                                                                        说明                                                                                                                                        |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /s \<计算机>       |                                                                                    指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                                                                     |
-| /u \<域>\\ \<用户名> | 使用*用户名*或*域*\\*用户名*指定的用户的帐户权限运行命令。 只有指定 **/s**时才能指定 **/u** 。 默认值是当前登录到发出命令的计算机的用户的权限。 |
-|      /p \<密码>       |                                                                                                   指定在 **/u**参数中指定的用户帐户的密码。                                                                                                   |
-|       /fi \<filter>       |          应用筛选器以选择一组任务。 可以使用多个筛选器，也可以使用通配符（**\\**\*）来指定所有任务或映像名称。 [有关有效的筛选器名称](#filter-names-operators-and-values)、运算符和值，请参阅下表。           |
-|     /pid \<ProcessID>     |                                                                                                                 指定要终止的进程的进程 ID。                                                                                                                 |
-|     /im \<ImageName>      |                                                                                指定要终止的进程的映像名称。 使用通配符（**\\**\*）指定所有映像名称。                                                                                |
+|      /s\<computer>       |                                                                                    指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认为本地计算机。                                                                                     |
+| /u\<Domain>\\\<UserName> | 使用*用户名*或*域*用户名指定的用户的帐户权限运行命令 \\ *UserName*。 只有指定 **/s**时才能指定 **/u** 。 默认值是当前登录到发出命令的计算机的用户的权限。 |
+|      /p\<Password>       |                                                                                                   指定在 **/u**参数中指定的用户帐户的密码。                                                                                                   |
+|       /fi\<Filter>       |          应用筛选器以选择一组任务。 可以使用多个筛选器，也可以使用通配符（ **\\** \* ）来指定所有任务或映像名称。 [有关有效的筛选器名称](#filter-names-operators-and-values)、运算符和值，请参阅下表。           |
+|     /pid\<ProcessID>     |                                                                                                                 指定要终止的进程的进程 ID。                                                                                                                 |
+|     /im\<ImageName>      |                                                                                指定要终止的进程的映像名称。 使用通配符（ **\\** \* ）指定所有映像名称。                                                                                |
 |            /f             |                                                                    指定强制终止进程。 对于远程进程，此参数将被忽略。所有远程进程都被强制终止。                                                                     |
 |            /t              |                                                                                                          终止指定的进程以及由该进程启动的任何子进程。                                                                                                          |
 
@@ -53,14 +53,14 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 |   SESSION   | eq、ne、gt、lt、ge、le |                                                                会话号                                                                |
 |   CPUtime   | eq、ne、gt、lt、ge、le | 采用<em>HH</em>**：**<em>MM</em>**：**<em>SS</em>格式的 CPU 时间，其中*MM*和*SS*介于0到59之间， *HH*是任意无符号数字 |
 |  MEMUSAGE   | eq、ne、gt、lt、ge、le |                                                              内存使用量（KB）                                                              |
-|  USERNAME   |         eq、ne         |                                               任何有效的用户名（*用户*或*域*\\*用户*）                                               |
+|  USERNAME   |         eq、ne         |                                               任何有效的用户名（*用户*或*域* \\ *用户*）                                               |
 |  服务   |         eq、ne         |                                                                 服务名称                                                                 |
 | SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE |         eq、ne         |                                                                 窗口标题                                                                 |
 |   模块   |         eq、ne         |                                                                   DLL 名称                                                                   |
 
 ## <a name="remarks"></a>备注
 * 指定远程系统时，不支持 SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE 和 STATUS 筛选器。
-* 仅当应用了**\\**筛选器时，才<em>接受 **/im</em> *选项的通配符（）。
+* **\\**仅当应用了筛选器时，才<em>接受 **/im</em> *选项的通配符（）。
 * 不管是否指定了 **/f**选项，远程进程的终止始终都是强制执行的。
 * 向主机名筛选器提供计算机名称将导致关闭并停止所有进程。
 * 您可以使用**tasklist**来确定要终止的进程的进程 ID （PID）。
@@ -73,7 +73,7 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 taskkill /pid 1230 /pid 1241 /pid 1253
 ```
 
-若要强行结束系统启动的进程，请键入：
+若要在系统启动进程 Notepad.exe 强制结束进程，请键入：
 
 ```
 taskkill /f /fi USERNAME eq NT AUTHORITY\SYSTEM /im notepad.exe

@@ -1,6 +1,6 @@
 ---
 title: mqbkup
-description: Mqbkup 命令的参考主题，它将 MSMQ 消息文件和注册表设置备份到存储设备，并还原以前存储的消息和设置。
+description: Mqbkup 命令的参考文章，可将 MSMQ 消息文件和注册表设置备份到存储设备，并还原以前存储的消息和设置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c07dd5f912a70157052017fc17875c00eaedd3b
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 131d80f32a3c3324dad08b876dd4f4f8610b93e2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354418"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936300"
 ---
 # <a name="mqbkup"></a>mqbkup
 

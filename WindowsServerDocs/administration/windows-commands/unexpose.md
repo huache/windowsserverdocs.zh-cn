@@ -1,6 +1,6 @@
 ---
-title: 隐藏
-description: 隐藏的参考主题，它 unexposes 使用公开命令公开的卷影副本。
+title: unexpose
+description: 隐藏的参考文章，其中 unexposes 了使用公开命令公开的卷影副本。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e0caa412e5ff7de149f0a2bd8806f7141c368306
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 02edb1f2c9331a22473123f0327dbc84cb05a865
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721186"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937300"
 ---
-# <a name="unexpose"></a>隐藏
+# <a name="unexpose"></a>unexpose
 
 Unexposes 使用**公开**命令公开的卷影副本。 公开的卷影副本可通过其影子 ID、驱动器号、共享或装入点来指定。
 
@@ -30,12 +30,12 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<ShadowID>|Unexposes 指定的阴影 ID 指定的卷影副本。|
-|\<驱动器： >|Unexposes 与指定驱动器号（例如，drive P）关联的卷影副本。|
-|\<共享>|Unexposes 与指定共享关联的卷影副本（例如， \\ \\*计算机名*\)。|
-|\<装入点>|Unexposes 与指定装入点关联的卷影副本（例如，C:\shadowcopy\)。|
+|\<Drive:>|Unexposes 与指定驱动器号（例如，drive P）关联的卷影副本。|
+|\<Share>|Unexposes 与指定共享关联的卷影副本（例如， \\ \\ *计算机名* \) 。|
+|\<MountPoint>|Unexposes 与指定装入点关联的卷影副本（例如，C:\shadowcopy \) 。|
 
 ## <a name="remarks"></a>备注
 

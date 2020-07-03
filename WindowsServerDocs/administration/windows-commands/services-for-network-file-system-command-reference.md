@@ -1,6 +1,6 @@
 ---
 title: 网络文件系统命令参考服务
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5a5e68bfd455fae9aa1e6fcb2c9cf1bd8005ea5
-ms.sourcegitcommit: d1fc59d53055952f8e55aacebeb29547eef0bca7
+ms.openlocfilehash: bd729c6d363beaf31e7753ba01622b7ed9b395bf
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375217"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937125"
 ---
 # <a name="services-for-network-file-system-command-reference"></a>网络文件系统命令参考服务
 
@@ -25,7 +25,7 @@ ms.locfileid: "83375217"
 | 命令 | 说明 |
 | ------- | ----------- |
 | [mapadmin](mapadmin.md) | 管理用于网络文件系统的 Microsoft 服务用户名映射。 |
-| [装载](mount.md) | 装载网络文件系统（NFS）网络共享。 |
+| [挂](mount.md) | 装载网络文件系统（NFS）网络共享。 |
 | [Nfsadmin](nfsadmin.md) | 管理 NFS 服务器和 NFS 客户端。 |
 | [Nfsshare](nfsshare.md) | 控制网络文件系统（NFS）共享。 |
 | [Nfsstat](nfsstat.md) | 显示或重置对 NFS 服务器进行的调用计数。 |

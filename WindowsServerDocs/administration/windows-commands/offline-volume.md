@@ -1,6 +1,6 @@
 ---
 title: offline volume
-description: 脱机 volume 命令的参考主题，它使联机卷具有焦点到脱机状态。
+description: 脱机 volume 命令的参考文章，该命令会将具有焦点的联机卷置于脱机状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e49a88671285bed69cfbb9c4e7bc950eb100b3e6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9f64a6924b0033b0e7889ccbcab4fb142a4f7c05
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472713"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936735"
 ---
 # <a name="offline-volume"></a>offline volume
 

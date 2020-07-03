@@ -1,6 +1,6 @@
 ---
 title: 设置元数据
-description: 用于设置用于将卷影副本从一台计算机传输到另一台计算机的卷影创建元数据文件的名称和位置的参考主题。
+description: 用于设置用于将卷影副本从一台计算机传输到另一台计算机的卷影创建元数据文件的名称和位置的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 683e54a7efc072d8709d6257771ba6bc5bde206e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 50c9ceebf072db2e7cefada1601accc97b5d0f7f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721906"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937091"
 ---
 # <a name="set-metadata"></a>设置元数据
 
@@ -28,10 +28,10 @@ set metadata [<Drive>:][<Path>]<MetaData.cab>
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|[\<驱动器>：][<Path>]|指定元数据文件的创建位置。|
-|\<MetaData .cab>|指定用于存储卷影创建元数据的 cab 文件的名称。|
+|[\<Drive>:][<Path>]|指定元数据文件的创建位置。|
+|\<MetaData.cab>|指定用于存储卷影创建元数据的 cab 文件的名称。|
 
 ## <a name="additional-references"></a>其他参考
 

@@ -1,6 +1,6 @@
 ---
-title: 注册副本
-description: '* * * * 的参考主题'
+title: reg copy
+description: Reg copy 命令的参考文章，它将注册表项复制到本地或远程计算机上的指定位置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,56 +9,56 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91090faffbb925754a0d4ed610b37464872242db
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e98faa37f1d123c584a3e12ae013c35688c37680
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722585"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937037"
 ---
-# <a name="reg-copy"></a>注册副本
-
-
+# <a name="reg-copy"></a>reg copy
 
 将注册表项复制到本地或远程计算机上的指定位置。
-
-
 
 ## <a name="syntax"></a>语法
 
 ```
-reg copy <KeyName1> <KeyName2> [/s] [/f]
+reg copy <keyname1> <keyname2> [/s] [/f]
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
-|---------|-----------|
-|\<KeyName1>|指定要复制的子项的完整路径。 若要指定远程计算机，请将计算机名称（采用 ComputerName \\ \\\)格式的计算机名称）包括*在内。* 省略\\ \\ComputerName \ 会使操作默认为本地计算机。 *KeyName*必须包含有效的根密钥。 本地计算机的有效根密钥为： HKLM、HKCU、HKCR、HKU 开头和 HKCC。 如果指定了远程计算机，则有效的根密钥为： HKLM 和 HKU 开头。|
-|\<KeyName2>|指定子项目标的完整路径。 若要指定远程计算机，请将计算机名称（采用 ComputerName \\ \\\)格式的计算机名称）包括*在内。* 省略\\ \\ComputerName \ 会使操作默认为本地计算机。 *KeyName*必须包含有效的根密钥。 本地计算机的有效根密钥为： HKLM、HKCU、HKCR、HKU 开头和 HKCC。 如果指定了远程计算机，则有效的根密钥为： HKLM 和 HKU 开头。|
-|/s|复制指定子项下的所有子项和项。|
-|/f|复制子项，而不提示确认。|
-|/?|在命令提示符下显示**reg** copy 的帮助。|
+| 参数 | 说明 |
+|--|--|
+| `<keyname1>` | 指定要添加的子项或项的完整路径。 若要指定远程计算机，请在 keyname 中包含计算机名称（格式 `\\<computername>\` 为）。 *keyname* 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
+| `<keyname2>` | 指定要比较的第二个子键的完整路径。 若要指定远程计算机，请在 keyname 中包含计算机名称（格式 `\\<computername>\` 为）。 *keyname* 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
+| /s | 复制指定子项下的所有子项和项。 |
+| /f | 复制子项，而不提示确认。 |
+| /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>备注
+#### <a name="remarks"></a>备注
 
--   Reg 在复制子项时不要求确认。
--   下表列出了**reg copy**操作的返回值。
+- 此命令在复制子项时不要求确认。
 
-|值|描述|
-|-----|-----------|
-|0|成功|
-|1|失败|
+- **Reg 比较**操作的返回值为：
 
-## <a name="examples"></a>示例
+    | 值 | 描述 |
+    |--|--|
+    | 0 | 成功 |
+    | 1 | 失败 |
+
+### <a name="examples"></a>示例
 
 若要将项 MyApp 下的所有子项和值复制到 key SaveMyApp，请键入：
+
 ```
-REG COPY HKLM\Software\MyCo\MyApp HKLM\Software\MyCo\SaveMyApp /s
+reg copy HKLM\Software\MyCo\MyApp HKLM\Software\MyCo\SaveMyApp /s
 ```
+
 若要将名为天干/地支的计算机上的 MyCo 项下的所有值复制到当前计算机上的键 MyCo1，请键入：
+
 ```
-REG COPY \\ZODIAC\HKLM\Software\MyCo HKLM\Software\MyCo1
+reg copy \\ZODIAC\HKLM\Software\MyCo HKLM\Software\MyCo1
 ```
 
 ## <a name="additional-references"></a>其他参考

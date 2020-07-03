@@ -1,6 +1,6 @@
 ---
 title: 查询进程
-description: Query process 命令的参考主题，其中显示了有关在远程桌面会话主机服务器上运行的进程的信息。
+description: "\"查询处理\" 命令的参考文章，其中显示了有关在远程桌面会话主机服务器上运行的进程的信息。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32f755fe3e275f2f1adccffacaf2a6999d46298a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a11177ad62e83efd9dbe5da844b159b40266837d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472022"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936997"
 ---
 # <a name="query-process"></a>查询进程
 
@@ -54,7 +54,7 @@ query process [*|<processID>|<username>|<sessionname>|/id:<nn>|<programname>] [/
 | /server:`<servername>` | 指定要列出其进程的远程桌面会话主机服务器。 如果未指定，则使用你当前登录到的服务器。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 管理员对所有**查询处理**函数具有完全访问权限。
 
