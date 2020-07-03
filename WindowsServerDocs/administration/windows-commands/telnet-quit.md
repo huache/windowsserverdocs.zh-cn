@@ -1,6 +1,6 @@
 ---
-title: telnet 退出
-description: 用于退出 telnet 的 telnet quit 参考主题。
+title: telnet quit
+description: 用于退出 telnet 的 telnet quit 参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19299c41692a71abc5dcda2d61b29d3d44e40fe9
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 8d6536a4999ffe913d967409e852ed33d009b1dd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222699"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935321"
 ---
 # <a name="telnet-quit"></a>telnet：退出
 

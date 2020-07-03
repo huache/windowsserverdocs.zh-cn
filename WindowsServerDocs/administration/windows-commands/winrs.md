@@ -1,6 +1,6 @@
 ---
 title: winrs
-description: Winrs 的参考主题，可用于远程管理和执行程序。
+description: Winrs 的参考文章，可用于远程管理和执行程序。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d3be185c49ce9f20964005cd9074e4f51fee3d4
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d0213db0a808829ac87a6f79b4d68a3787e706bc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820907"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936126"
 ---
 # <a name="winrs"></a>winrs
 
@@ -29,13 +29,13 @@ winrs [/<parameter>[:<value>]] <command>
 
 |           参数            |                                                                                                                                                                                    说明                                                                                                                                                                                     |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /remote： \< endpoint>       |                                                                                          使用 NetBIOS 名称或标准连接指定目标端点：<p>-   <url>： [ \< 传输>：//] \< 目标> [： \< 端口>]<p>如果未指定，则使用 **/r： localhost** 。                                                                                          |
+|      /remote\<endpoint>       |                                                                                          使用 NetBIOS 名称或标准连接指定目标端点：<p>-   <url>: [\<transport>://]\<target>[:\<port>]<p>如果未指定，则使用 **/r： localhost** 。                                                                                          |
 |          /unencrypted          | 指定不加密到远程 shell 的消息。 这对于故障排除或已使用**ipsec**加密网络流量或强制实施物理安全性很有用。<p>默认情况下，使用 Kerberos 或 NTLM 密钥对消息进行加密。<p>选择 HTTPS 传输时，将忽略此命令行选项。 |
-|     /username： \< 用户名>      |                                                                                在命令行上指定用户名。<p>如果未指定，则该工具将使用协商身份验证或提示输入名称。<p>如果指定了 **/username** ，则还必须指定 **/password** 。                                                                                 |
-|     /password： \< 密码>      |                                                                           指定命令行上的密码。<p>如果未指定 **/password**但 **/username**为，则该工具将提示输入密码。<p>如果指定了 **/password** ，还必须指定 **/username** 。                                                                            |
-|      /timeout： \< 秒>       |                                                                                                                                                                             此选项已弃用。                                                                                                                                                                             |
-|       /目录： \< 路径>       |                                                                                            指定远程 shell 的起始目录。<p>如果未指定，将在由环境变量 **% USERPROFILE%** 定义的用户的主目录中启动远程 shell。                                                                                             |
-| /environment： \< string>=<value> |                                                                          指定在 shell 开始时要设置的单个环境变量，该变量允许更改 shell 的默认环境。<p>此开关的多次出现必须用于指定多个环境变量。                                                                          |
+|     /username\<username>      |                                                                                在命令行上指定用户名。<p>如果未指定，则该工具将使用协商身份验证或提示输入名称。<p>如果指定了 **/username** ，则还必须指定 **/password** 。                                                                                 |
+|     /password\<password>      |                                                                           指定命令行上的密码。<p>如果未指定 **/password**但 **/username**为，则该工具将提示输入密码。<p>如果指定了 **/password** ，还必须指定 **/username** 。                                                                            |
+|      /timeout\<seconds>       |                                                                                                                                                                             此选项已弃用。                                                                                                                                                                             |
+|       /目录\<path>       |                                                                                            指定远程 shell 的起始目录。<p>如果未指定，将在由环境变量 **% USERPROFILE%** 定义的用户的主目录中启动远程 shell。                                                                                             |
+| 环境\<string>=<value> |                                                                          指定在 shell 开始时要设置的单个环境变量，该变量允许更改 shell 的默认环境。<p>此开关的多次出现必须用于指定多个环境变量。                                                                          |
 |            /noecho             |                                                                                                    指定应禁用 echo。 这可能是为了确保不会在本地显示用户对远程提示的答案。<p>默认情况下，echo 处于开启状态。                                                                                                    |
 |           /noprofile           |                                              指定不应加载用户的配置文件。<p>默认情况下，服务器将尝试加载用户配置文件。<p>如果远程用户不是目标系统上的本地管理员，则需要此选项（默认值将导致错误）。                                               |
 |         /allowdelegate         |                                                                                                                  指定用户的凭据可用于访问远程共享，例如，在与目标终结点不同的计算机上找到。                                                                                                                   |

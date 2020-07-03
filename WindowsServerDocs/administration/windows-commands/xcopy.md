@@ -1,6 +1,6 @@
 ---
 title: xcopy
-description: Xcopy 的参考主题，用于复制文件和目录，包括子目录。
+description: Xcopy 的参考文章，用于复制文件和目录，包括子目录。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: c55d6ae5ff701555eb9bfb7135ffa28692bd4391
-ms.sourcegitcommit: 4894649cc47dfa535306cc334871f81155198f76
+ms.openlocfilehash: e33450cd330ac962c111b145d71c2595f926da2c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84254720"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936061"
 ---
 # <a name="xcopy"></a>xcopy
 

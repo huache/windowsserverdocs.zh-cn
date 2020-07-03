@@ -1,6 +1,6 @@
 ---
-title: logman 创建跟踪
-description: 用于创建事件跟踪数据收集器的 logman create trace 命令的参考主题。
+title: logman create trace
+description: 用于创建事件跟踪数据收集器的 logman create trace 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 015fb7842146e372b36c71fe95a3598bdfa48676
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 2e4d824bbdba93f220b744c334381a2751f11476
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222987"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934296"
 ---
-# <a name="logman-create-trace"></a>logman 创建跟踪
+# <a name="logman-create-trace"></a>logman create trace
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

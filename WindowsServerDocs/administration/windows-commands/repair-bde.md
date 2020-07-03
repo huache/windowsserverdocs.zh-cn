@@ -1,6 +1,6 @@
 ---
 title: repair-bde
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 235640cacc6c0cca5ee9e820606082afe5d39d41
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a2ba82708acd9c5830e2dc8a09cd804ade342066
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820107"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935646"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -57,7 +57,7 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 ## <a name="examples"></a>示例
 
-若要尝试修复驱动器 C，并使用存储在驱动器 F 上的恢复密钥文件（RecoveryKey. bek）将该文件的内容写入驱动器 D，并将此尝试的结果写入驱动器 Z 上的日志文件（log .txt）。
+若要尝试修复驱动器 C，并使用驱动器 F 上存储的恢复密钥文件（RecoveryKey. bek）将该文件的内容写入驱动器 D，并将此尝试的结果写入驱动器 Z 上的日志文件（log.txt）。
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```

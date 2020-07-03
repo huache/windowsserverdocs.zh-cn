@@ -1,6 +1,6 @@
 ---
-title: logman 导入和 logman 导出
-description: 用于从 XML 文件导入数据收集器集或将数据收集器集导出到 XML 文件的 logman 导入和 logman 导出的参考主题。
+title: logman import and logman export
+description: 用于从 XML 文件导入数据收集器集或将数据收集器集导出到 XML 文件的 logman 导入和 logman 导出的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ad664548dce51d7631a6d1a02d628af91e1921f
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: d5fbe0139a1c320056e4ba80a845b43755fc0026
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721133"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934388"
 ---
-# <a name="logman-import-and-logman-export"></a>logman 导入和 logman 导出
+# <a name="logman-import-and-logman-export"></a>logman import and logman export
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

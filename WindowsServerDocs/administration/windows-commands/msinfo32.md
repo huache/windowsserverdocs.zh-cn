@@ -1,6 +1,6 @@
 ---
 title: msinfo32
-description: Msinfo32 命令的参考主题，它打开 "系统信息" 工具，以显示本地计算机上的硬件、系统组件和软件环境的综合视图。
+description: 有关 msinfo32 命令的参考文章，它打开 "系统信息" 工具以显示本地计算机上的硬件、系统组件和软件环境的综合视图。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6a97902d9988260a840d236e197d7361bcd3882
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: c6506ba51c768f92a19deb1627f5456231cee3f6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354429"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934867"
 ---
 # <a name="msinfo32"></a>msinfo32
 

@@ -1,6 +1,6 @@
 ---
 title: lpq
-description: Lpq 命令的参考主题，该命令显示运行 Line printer Daemon （LPD）的计算机上打印队列的状态。
+description: Lpq 命令的参考文章，其中显示了运行 Line printer Daemon （LPD）的计算机上打印队列的状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ecce9b1b4255e5e769fe76b0f753226d61fa916
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 373b1af5acbc43cbf52c45667c6feb571f1855a8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222730"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934553"
 ---
 # <a name="lpq"></a>lpq
 

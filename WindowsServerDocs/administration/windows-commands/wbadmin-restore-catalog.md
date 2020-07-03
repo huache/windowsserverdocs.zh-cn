@@ -1,6 +1,6 @@
 ---
 title: wbadmin restore catalog
-description: 用于从指定存储位置为本地计算机恢复备份目录的 wbadmin restore catalog 参考主题。
+description: 用于从指定存储位置为本地计算机恢复备份目录的 wbadmin restore catalog 参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82a399284862ef59f417efa0b6f17ab6e8c4cb71
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2584dde27560b5b8f28fb51b8fb5c2cf92a2d805
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820487"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934310"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 

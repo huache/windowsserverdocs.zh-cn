@@ -1,6 +1,6 @@
 ---
 title: AllDevices
-description: AllDevices 的参考主题，用于显示所有预留计算机的 Windows 部署服务属性。
+description: AllDevices 的参考文章，用于显示所有预留计算机的 Windows 部署服务属性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 26e114be7ecf104687da237636b54b79e4114591
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b5eae53c2dcd39a7f3587f4c3c6bf96d4782ea05
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720905"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935220"
 ---
 # <a name="get-alldevices"></a>AllDevices
 
@@ -27,10 +27,10 @@ ms.locfileid: "82720905"
 wdsutil [Options] /Get-AllDevices [/forest:{Yes | No}] [/ReferralServer:<Server name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/forest： {Yes &#124; No}]|指定 Windows 部署服务应返回整个林中的计算机还是本地域中的计算机。 默认设置为 "**否**"，这意味着只会返回本地域中的计算机。|
-|[/ReferralServer：<Server name>]|仅返回为指定服务器预留的那些计算机。|
+|[/ReferralServer： <Server name> ]|仅返回为指定服务器预留的那些计算机。|
 ## <a name="examples"></a>示例
 若要查看所有计算机，请键入下列内容之一：
 ```
@@ -38,7 +38,7 @@ wdsutil /Get-AllDevices
 wdsutil /verbose /Get-AllDevices /forest:Yes /ReferralServer:MyWDSServer
 ```
 ## <a name="additional-references"></a>其他参考
-- [命令行语法密钥](command-line-syntax-key.md)
-子命令：[使用 "获取设备" 命令](using-the-get-device-command.md)[通过添加设备命令](using-the-add-device-command.md)
-[设置设备](subcommand-set-device.md)
-
+- [命令行语法关键字](command-line-syntax-key.md) 
+[子命令：设置-设备](subcommand-set-device.md) 
+[使用 "添加设备" 命令](using-the-add-device-command.md) 
+[使用获取设备命令](using-the-get-device-command.md)

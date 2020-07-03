@@ -1,6 +1,6 @@
 ---
 title: netsh
-description: Netsh 命令的参考主题，它是一个命令行脚本实用工具，可让你以本地或远程方式显示或修改当前正在运行的计算机的网络配置。
+description: Netsh 命令的参考文章，这是一个命令行脚本实用工具，可让你以本地或远程方式显示或修改当前正在运行的计算机的网络配置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c538dd10f86d252390a4e862e7b97204d1c945c9
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 4d39b891b9a8b6e313121756aa8266c79b5bfaca
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721100"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934786"
 ---
 # <a name="netsh"></a>netsh
 
@@ -45,7 +45,7 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 
 - 如果指定 **-r**后跟另一个命令，则 netsh 会在远程计算机上运行该命令，然后返回到 Cmd.exe 命令提示符。 如果指定 **-r**而不包含其他命令，则 netsh 将以远程模式打开。 此过程类似于在 Netsh 命令提示符下使用 set machine  。 使用 **-r**时，只会为当前 netsh 实例设置目标计算机。 退出并重新输入 netsh 后，目标计算机将重置为本地计算机  。 通过指定存储在 WINS 中的计算机名称、UNC 名称、DNS 服务器要解析的 Internet 名称或 IP 地址，可以在远程计算机上运行 netsh 命令  。
 
-- 如果字符串值包含空格，则必须用引号将字符串值引起来。 例如： `-r "contoso remote device"`
+- 如果字符串值包含空格，则必须用引号将字符串值引起来。 例如 `-r "contoso remote device"`
 
 ## <a name="additional-references"></a>其他参考
 

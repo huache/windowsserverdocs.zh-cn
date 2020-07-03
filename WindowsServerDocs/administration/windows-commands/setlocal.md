@@ -1,6 +1,6 @@
 ---
 title: setlocal
-description: Setlocal 的参考主题，用于开始批处理文件中的环境变量的本地化。
+description: Setlocal 的参考文章，用于开始批处理文件中的环境变量的本地化。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: def4e8c58399af498e3c097f53e526fbedf9de0d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4e990cf931e72bd8f6972db448d24db08c2e5208
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721864"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934615"
 ---
 # <a name="setlocal"></a>setlocal
 
@@ -30,7 +30,7 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 
 ## <a name="arguments"></a>自变量
 
-|参数|描述|
+|参数|说明|
 |--------|-----------|
 |enableextensions|在遇到匹配的**endlocal**命令之前启用命令扩展，而不考虑在运行**setlocal**命令之前的设置。|
 |disableextensions|在遇到匹配的**endlocal**命令之前禁用命令扩展，而不考虑在运行**setlocal**命令之前的设置。|
@@ -45,19 +45,19 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     在脚本或批处理文件外使用**setlocal**时，它不起作用。
 -   更改环境变量
 
-    运行批处理文件时，请使用**setlocal**更改环境变量。 运行**setlocal**后所做的环境更改是批处理文件的本地环境。 Cmd.exe 程序在遇到**endlocal**命令或到达批处理文件的末尾时，将还原以前的设置。
+    运行批处理文件时，请使用**setlocal**更改环境变量。 运行**setlocal**后所做的环境更改是批处理文件的本地环境。 Cmd.exe 程序将在遇到**endlocal**命令或到达批处理文件末尾时还原以前的设置。
 -   嵌套命令
 
     批处理程序中可以有多个**setlocal**或**endlocal**命令（即嵌套的命令）。
 -   在批处理文件中测试命令扩展
 
-    **Setlocal**命令设置 ERRORLEVEL 变量。 如果传递 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **disabledelayedexpansion**}，则 ERRORLEVEL 变量将设置为**0** （零）。 否则，将其设置为**1**。 可以在批处理脚本中使用此信息来确定扩展是否可用，如以下示例中所示：  
+    **Setlocal**命令设置 ERRORLEVEL 变量。 如果传递 {**enableextensions**  |  **disableextensions**} 或 {**enabledelayedexpansion**  |  **disabledelayedexpansion**}，则 ERRORLEVEL 变量将设置为**0** （零）。 否则，将其设置为**1**。 可以在批处理脚本中使用此信息来确定扩展是否可用，如以下示例中所示：
     ```
     setlocal enableextensions
     verify other 2>nul
     if errorlevel 1 echo Unable to enable extensions
-    ```  
-    由于**cmd**在禁用命令扩展时未设置 ERRORLEVEL 变量，因此当你将 ERRORLEVEL 变量与无效参数一起使用时， **verify**命令会将其初始化为非零值。 此外，如果你将**setlocal**命令与参数 {**enableextensions** | **disableextensions**} 或 {**enabledelayedexpansion** | **disabledelayedexpansion**} 一起使用，并且它未将 ERRORLEVEL 变量设置为**1**，则命令扩展不可用。
+    ```
+    由于**cmd**在禁用命令扩展时未设置 ERRORLEVEL 变量，因此当你将 ERRORLEVEL 变量与无效参数一起使用时， **verify**命令会将其初始化为非零值。 此外，如果你将**setlocal**命令与参数 {**enableextensions**  |  **disableextensions**} 或 {**enabledelayedexpansion**  |  **disabledelayedexpansion**} 一起使用，并且它未将 ERRORLEVEL 变量设置为**1**，则命令扩展不可用。
 
 ## <a name="examples"></a>示例
 

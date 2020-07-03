@@ -1,6 +1,6 @@
 ---
-title: 模式
-description: Mode 命令的参考主题，其中显示系统状态、更改系统设置或重新配置端口或设备。
+title: mode
+description: Mode 命令的参考文章，其中显示系统状态、更改系统设置或重新配置端口或设备。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4c895c59bb527b8bfb6973a72d0d4e163cb2ace
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 5794b80f7457b133d3e5b599cb12613469ad58eb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354577"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936055"
 ---
-# <a name="mode"></a>模式
+# <a name="mode"></a>mode
 
 显示系统状态、更改系统设置或重新配置端口或设备。 如果在没有参数的情况下使用，则**mode**显示控制台和可用 COM 设备的所有可控制属性。
 

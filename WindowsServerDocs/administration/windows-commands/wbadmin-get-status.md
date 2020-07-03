@@ -1,6 +1,6 @@
 ---
-title: wbadmin 获取状态
-description: Wbadmin get status 的参考主题，它报告当前正在运行的备份或恢复操作的状态。
+title: wbadmin get status
+description: Wbadmin get status 的参考文章，它报告当前正在运行的备份或恢复操作的状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e41c54b9f916f0032a4976cdfa6d3ca101fb744
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a5f073941fa0d336e513c8de7502a601f1de5711
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821187"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934335"
 ---
-# <a name="wbadmin-get-status"></a>wbadmin 获取状态
+# <a name="wbadmin-get-status"></a>wbadmin get status
 
 
 

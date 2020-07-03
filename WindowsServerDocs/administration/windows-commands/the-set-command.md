@@ -1,6 +1,6 @@
 ---
 title: set
-description: Set 的参考主题，用于设置 Windows 部署服务服务器、预留计算机、映像、映像组和传输服务器的属性和属性。
+description: Set 的参考文章，用于设置 Windows 部署服务服务器、预留计算机、映像、映像组和传输服务器的属性和属性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd406a04fdb704ec8e2ee1e9aa3548c130e1089c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b11c9b349fc1473d1d6ec167528c43ac314b51e9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721416"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934602"
 ---
 # <a name="set"></a>set
 
@@ -23,7 +23,7 @@ ms.locfileid: "82721416"
 设置 Windows 部署服务服务器、预留计算机、映像、映像组和传输服务器的属性和属性。
 
 ## <a name="subcommands"></a>个子
-|子命令|描述|
+|子命令|说明|
 |-------|--------|
 |[子命令：设置-设备](subcommand-set-device.md)|更改预留计算机的属性。 预留计算机是已链接到 active directory 域服务器（AD DS）中的计算机帐户对象的计算机。 预留客户端也称为已知计算机。|
 |[子命令：设置-图像](subcommand-set-image.md)|更改现有映像的属性。|

@@ -1,6 +1,6 @@
 ---
 title: AllNamespaces
-description: AllNamespaces 的参考主题，用于显示有关服务器上所有命名空间的信息。
+description: AllNamespaces 的参考文章，用于显示有关服务器上所有命名空间的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 710918eb11ef7a746716a1a2bff9200cfa1d98c1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de44d659657a8d6df10c0f2ea7b7fb2a670b7f88
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719998"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935056"
 ---
 # <a name="get-allnamespaces"></a>AllNamespaces
 
@@ -33,10 +33,10 @@ wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/d
 ```
 ### <a name="parameters"></a>参数
 
-|         参数         |                                                                               Windows Server 2008                                                                               | Windows Server 2008 R2 |
+|         参数         |                                                                               Windows 2008 Server                                                                               | Windows Server 2008 R2 |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-|  [/Server：<Server name>]  | 指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。 |                        |
-| [/ContentProvider：<name>] |                                                        仅显示指定内容提供程序的命名空间。                                                         |                        |
+|  [/Server： <Server name> ]  | 指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。 |                        |
+| [/ContentProvider： <name> ] |                                                        仅显示指定内容提供程序的命名空间。                                                         |                        |
 |      [/Show：个客户端]      |                            仅支持 Windows Server 2008。 显示有关连接到命名空间的客户端计算机的信息。                             |                        |
 |    [/details：客户端]     |                           仅支持 Windows Server 2008 R2。 显示有关连接到命名空间的客户端计算机的信息。                           |                        |
 |  [/ExcludedeletePending]  |                                                              从列表中排除任何已停用的传输。                                                              |                        |
@@ -47,7 +47,7 @@ wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/d
 wdsutil /Get-AllNamespaces
 ```
 若要查看除已停用的命名空间之外的所有命名空间，请键入：
-- Windows Server 2008
+- Windows 2008 Server
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /Show:Clients /ExcludedeletePending
   ```
@@ -56,7 +56,7 @@ wdsutil /Get-AllNamespaces
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /details:Clients /ExcludedeletePending
   ```
   ## <a name="additional-references"></a>其他参考
-  - [Command-Line Syntax Key](command-line-syntax-key.md)
-  [使用](using-the-new-namespace-command.md)
-  [删除命名空间](using-the-remove-namespace-command.md)
-  命令的命令行语法键使用删除命名空间命令[子命令：起始-命名](subcommand-start-namespace.md)空间
+  - [命令行语法关键字](command-line-syntax-key.md) 
+  [使用新的命名空间命令](using-the-new-namespace-command.md) 
+  [使用移除命名空间命令](using-the-remove-namespace-command.md) 
+  [子命令：起始-命名空间](subcommand-start-namespace.md)

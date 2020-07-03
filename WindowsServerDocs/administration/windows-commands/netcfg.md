@@ -1,6 +1,6 @@
 ---
 title: netcfg
-description: Netcfg 命令的参考主题，它安装了用于部署工作站的 Windows 轻型版本的 Windows 预安装环境（WinPE）。
+description: 用于安装 Windows 预安装环境（WinPE）（一种用于部署工作站的 Windows 轻型版本）的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a308441df55873b205972d703ec52f53345beb5
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 0f9ed2dde5d85be5432fb7b3af8279b2e71e9db0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721550"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934811"
 ---
 # <a name="netcfg"></a>netcfg
 

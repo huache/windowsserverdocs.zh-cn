@@ -1,6 +1,6 @@
 ---
 title: 启动-服务器
-description: 启动服务器的参考主题，它启动多播传输、命名空间、传输服务器或 Windows 部署服务服务器上的所有服务。
+description: 用于启动-server 的参考文章，可启动多播传输、命名空间、传输服务器或 Windows 部署服务服务器上的所有服务。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 199f84f4ca75f45ff9d1964bfe06b9f643663efb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 159adf8431c45684217b29a44eb8588e6c998037
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721411"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934585"
 ---
 # <a name="start-server"></a>启动-服务器
 
@@ -23,7 +23,7 @@ ms.locfileid: "82721411"
 启动多播传输、命名空间、传输服务器或 Windows 部署服务服务器上的所有服务。
 
 ## <a name="subcommands"></a>个子
-|子命令|描述|
+|子命令|说明|
 |-------|--------|
 |[子命令： MulticastTransmission](subcommand-start-multicasttransmission.md)|启动传输。|
 |[子命令：起始-命名空间](subcommand-start-namespace.md)|启动命名空间。|

@@ -1,6 +1,6 @@
 ---
 title: msiexec
-description: Msiexec 命令的参考主题，它提供了用于在命令行上安装、修改和执行 Windows Installer 操作的方法。
+description: Msiexec 命令的参考文章，它提供了从命令行对 Windows Installer 执行安装、修改和执行操作的方法。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f84df28104f581873fe1fd86a3abd6a51532b020
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: aacdc55ac3895efad7dd9499ea1402b538fb8a9b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354337"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934960"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -45,7 +45,7 @@ msiexec.exe [/i][/a][/j{u|m|/g|/t}][/x] <path_to_package>
 
 #### <a name="examples"></a>示例
 
-若要从 C：驱动器安装名为*example*的包，请使用普通安装过程，请键入：
+若要使用正常的安装过程从 C：驱动器安装名为*example.msi*的包，请键入：
 
 ```
 msiexec.exe /i "C:\example.msi"
@@ -81,7 +81,7 @@ msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
 
 #### <a name="examples"></a>示例
 
-若要安装 package *C:\example.msi*，请使用普通安装过程而不使用 UI，请键入：
+若要使用普通安装过程和无 UI 安装包*C:\example.msi*，请键入：
 
 ```
 msiexec.exe /i "C:\example.msi" /qn
@@ -108,7 +108,7 @@ msiexec.exe /i <path_to_package> [/norestart][/promptrestart][/forcerestart]
 
 #### <a name="examples"></a>示例
 
-若要安装 package *C:\example.msi*，请在结束时使用不重启的正常安装过程键入：
+若要安装包*C:\example.msi*，请在结束时使用不重启的正常安装过程，键入：
 
 ```
 msiexec.exe /i "C:\example.msi" /norestart
@@ -231,6 +231,6 @@ msiexec.exe /fa {AAD3D77A-7476-469F-ADF4-04424124E91D}
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [Msiexec 命令行选项](https://docs.microsoft.com/windows/win32/msi/command-line-options)
+- [Msiexec.exe 命令行选项](https://docs.microsoft.com/windows/win32/msi/command-line-options)
 
 - [标准安装程序命令行选项](https://docs.microsoft.com/windows/win32/msi/standard-installer-command-line-options)

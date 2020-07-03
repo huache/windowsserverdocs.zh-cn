@@ -1,6 +1,6 @@
 ---
 title: reg export
-description: '* * * * 的参考主题'
+description: 用于将本地计算机的指定子项、项和值复制到文件中以传输到其他服务器的注册表导出命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,48 +9,45 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b2c697595d5d19c953ef85f7a2e334c6fe05329d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4c0cad839569651823e1c1a2bcca3c17c5550c8a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722565"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934645"
 ---
 # <a name="reg-export"></a>reg export
 
-
-
 将本地计算机的指定子项、项和值复制到文件中，以便传输到其他服务器。
-
-
 
 ## <a name="syntax"></a>语法
 
 ```
-Reg export KeyName FileName [/y]
+reg export <keyname> <filename> [/y]
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
-|---------|-----------|
-|\<KeyName>|指定子项的完整路径。 导出操作仅适用于本地计算机。 KeyName 必须包含有效的根密钥。 有效的根密钥为： HKLM、HKCU、HKCR、HKU 开头和 HKCC。|
-|\<文件名>|指定要在操作过程中创建的文件的名称和路径。 文件必须具有 .reg 扩展名。|
-|/y|用名称*文件名*覆盖任何现有文件，并且不提示确认。|
-|/?|在命令提示符下显示**reg export**的帮助。|
+| 参数 | 说明 |
+|--|--|
+| `<keyname>` | 指定子项的完整路径。 导出操作仅适用于本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
+| `<filename>` | 指定要在操作过程中创建的文件的名称和路径。 文件必须具有 .reg 扩展名。 |
+| /y | 用名称*文件名*覆盖任何现有文件，并且不提示确认。 |
+| /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>备注
+#### <a name="remarks"></a>备注
 
-下表列出了**reg 导出**操作的返回值。
+- **Reg 导出**操作的返回值为：
 
-|值|描述|
-|-----|-----------|
-|0|成功|
-|1|失败|
+    | 值 | 描述 |
+    |--|--|
+    | 0 | 成功 |
+    | 1 | 失败 |
 
-## <a name="examples"></a>示例
+### <a name="examples"></a>示例
 
 若要将项 MyApp 的所有子项和值的内容导出到文件 AppBkUp，请键入：
+
 ```
 reg export HKLM\Software\MyCo\MyApp AppBkUp.reg
 ```

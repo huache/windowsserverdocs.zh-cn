@@ -1,6 +1,6 @@
 ---
 title: telnet
-description: Telnet 的参考主题，它与运行 telnet 服务器服务的计算机通信。
+description: Telnet 的参考文章，它与运行 telnet 服务器服务的计算机通信。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1718d1d74849949769d4d8fffbf3d93cc088742
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a5f588328deb51109ee9139b6e7dfaad8f0166dc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821027"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934225"
 ---
 # <a name="telnet"></a>telnet
 
@@ -30,11 +30,11 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |参数|说明|
 |-------|--------|
 |/a|尝试自动登录。 除了使用当前登录的用户的名称外，与/l 选项相同。|
-|/e \< EscapeChar>|用于输入 telnet 客户端提示符的转义符。|
-|/f \< FileName>|用于客户端日志记录的文件名。|
-|/l \< 用户名>|指定要在远程计算机上登录的用户名。|
+|/e\<EscapeChar>|用于输入 telnet 客户端提示符的转义符。|
+|/f \<FileName>|用于客户端日志记录的文件名。|
+|/l\<UserName>|指定要在远程计算机上登录的用户名。|
 |/t {vt100 &#124; vt52 &#124; ansi &#124; vtnt}|指定终端类型。 支持的终端类型为 vt100、vt52、ansi 和 vtnt。|
-|\<主机> [ \< 端口>]|指定要连接到的远程计算机的主机名或 IP 地址，还可以指定要使用的 TCP 端口（默认为 TCP 端口23）。|
+|\<Host> [\<Port>]|指定要连接到的远程计算机的主机名或 IP 地址，还可以指定要使用的 TCP 端口（默认为 TCP 端口23）。|
 |/?|在命令提示符下显示帮助。 或者，可以键入/h。|
 
 ## <a name="remarks"></a>备注
@@ -46,7 +46,7 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 ```
 telnet telnet.microsoft.com
 ```
-使用 telnet 连接到在 TCP 端口44上的 telnet.microsoft.com 中运行 telnet 服务器服务的计算机，并在名为 telnetlog 的本地文件中记录会话活动
+使用 telnet 连接到在 TCP 端口44上的 telnet.microsoft.com 中运行 telnet 服务器服务的计算机，并在名为 telnetlog.txt 的本地文件中记录会话活动。
 ```
 telnet /f telnetlog.txt telnet.microsoft.com 44
 ```

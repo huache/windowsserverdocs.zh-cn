@@ -1,6 +1,6 @@
 ---
 title: AutoaddDevices
-description: AutoaddDevices 的参考主题，用于显示位于 Windows 部署服务服务器上自动添加数据库中的所有计算机。
+description: AutoaddDevices 的参考文章，其中显示了在 Windows 部署服务服务器上自动添加数据库中的所有计算机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c15836fa81c694aa9295d0a98376f4bef3125243
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f2d470f8443da4612e97a2aa488adef256727382
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719990"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935036"
 ---
 # <a name="get-autoadddevices"></a>AutoaddDevices
 
@@ -27,9 +27,9 @@ ms.locfileid: "82719990"
 wdsutil [Options] /Get-AutoaddDevices [/Server:<Server name>] /Devicetype:{PendingDevices | RejectedDevices | ApprovedDevices}
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
-|[/Server：<Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
 |/Devicetype： {PendingDevices &#124; RejectedDevices &#124; ApprovedDevices}|指定要返回的计算机的类型。<p>-   **PendingDevices**返回数据库中状态为 "挂起" 的所有计算机。<br />-   **RejectedDevices**返回数据库中状态为 "已拒绝" 的所有计算机。<br />-   **ApprovedDevices**返回数据库中状态为 "已批准" 的所有计算机。|
 ## <a name="examples"></a>示例
 若要查看所有批准的计算机，请键入：
@@ -41,7 +41,7 @@ wdsutil /Get-AutoaddDevices /Devicetype:ApprovedDevices
 wdsutil /verbose /Get-AutoaddDevices /Devicetype:RejectedDevices /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>其他参考
-- [Command-Line Syntax Key](command-line-syntax-key.md)使用
-[AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)
-的命令行语法键使用[AutoaddDevices 命令](using-the-approve-autoadddevices-command.md)
-（使用[拒绝-AutoaddDevices 命令](using-the-reject-autoadddevices-command.md)）
+- [命令行语法关键字](command-line-syntax-key.md) 
+[使用 AutoaddDevices 命令](using-the-delete-autoadddevices-command.md) 
+[使用 AutoaddDevices 命令](using-the-approve-autoadddevices-command.md) 
+[使用 AutoaddDevices 命令](using-the-reject-autoadddevices-command.md)

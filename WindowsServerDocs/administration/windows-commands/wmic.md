@@ -1,6 +1,6 @@
 ---
 title: wmic
-description: Wmic 的参考主题，可在交互式命令行界面中显示 WMI 信息。
+description: 适用于 wmic 的参考文章，可在交互式命令行界面中显示 WMI 信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 252ba6b59c29378dd1f5e437de21a2ec4f5ec5c8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c14f877c226bdd376da39cfa6e8f11116d59fe56
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720648"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936111"
 ---
 # <a name="wmic"></a>wmic
 
@@ -34,12 +34,12 @@ wmic </parameter>
 
 以下子命令始终可用：
 
-|子命令|描述|
+|子命令|说明|
 |-----------|-----------|
 |class|从 WMIC 的默认别名模式转义以直接访问 WMI 架构中的类。|
 |path|从 WMIC 的默认别名模式进行转义，以直接访问 WMI 架构中的实例。|
 |上下文|显示所有全局开关的当前值。|
-|[退出\|退出]|退出 WMIC 命令行界面。|
+|[退出 \| 退出]|退出 WMIC 命令行界面。|
 
 ## <a name="examples"></a>示例
 

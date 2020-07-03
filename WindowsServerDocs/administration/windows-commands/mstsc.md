@@ -1,6 +1,6 @@
 ---
 title: mstsc
-description: Mstsc 命令的参考主题，用于创建到远程桌面会话主机服务器或其他远程计算机的连接，编辑现有远程桌面连接（.rdp）配置文件，以及将使用客户端连接管理器创建的旧连接文件迁移到新的 .rdp 连接文件。
+description: Mstsc 命令的参考文章，用于创建到远程桌面会话主机服务器或其他远程计算机的连接，编辑现有远程桌面连接（.rdp）配置文件，以及将使用客户端连接管理器创建的旧连接文件迁移到新的 .rdp 连接文件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6620cc2f954e43a6e68369f9b1f3480c1fc508c
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: cec9ef281c886964163c233022466d8478d65c79
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354347"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934840"
 ---
 # <a name="mstsc"></a>mstsc
 

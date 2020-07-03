@@ -1,6 +1,6 @@
 ---
-title: 净打印
-description: Net print 命令的参考主题。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
+title: net print
+description: Net print 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d8744c3ef4540652b495aea0037e97f433238f2
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: af02ca14156c8a85ee54700983e2af6807752f91
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354307"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934818"
 ---
-# <a name="net-print"></a>净打印
+# <a name="net-print"></a>net print
 
 > [!IMPORTANT]
 > 此命令已弃用。 但是，可以使用[prnjobs 命令](prnjobs.md)、 [Windows Management Instrumentation （WMI）](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page)、 [PRINTMANAGEMENT.MSC in Powershell](https://docs.microsoft.com/powershell/module/printmanagement)或[面向 IT 专业人员的脚本资源](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)来执行许多相同的任务。
@@ -37,7 +37,7 @@ net print {\\<computername>\<sharename> | \\<computername> <jobnumber> [/hold | 
 | `\\<computername>` | 指定（按名称）承载要控制的打印作业的计算机。 如果未指定计算机，则假定为本地计算机。 需要 `<jobnumber>` 参数。 |
 | `<jobnumber>` | 指定要控制的打印作业的编号。 此编号由承载打印作业的打印队列的计算机分配。 计算机将编号分配给打印作业后，该数字不会分配给该计算机所承载的任何队列中的任何其他打印作业。 使用参数时是必需的 `\\<computername>` 。 |
 | `[/hold | /release | /delete]` | 指定要对打印作业执行的操作。 如果指定了作业编号，但未指定任何操作，则会显示有关打印作业的信息。<ul><li>**/hold** -延迟作业，允许其他打印作业绕过它。</li><li>**/release** -释放已延迟的打印作业。</li><li>**/delete** -从打印队列中删除打印作业。</li></ul> |
-| 帮助 | 在命令提示符下显示帮助。 |
+| help | 在命令提示符下显示帮助。 |
 
 #### <a name="remarks"></a>备注
 

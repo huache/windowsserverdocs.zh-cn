@@ -1,6 +1,6 @@
 ---
 title: 更多
-description: "\"更多\" 命令的参考主题，其中一次显示输出的一个屏幕。"
+description: 更多命令的参考文章，其中每次显示一个输出屏幕。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: 042669aa638990375157d08d9e12840ade486165
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: fec0ffbd7f2ce5d1efe1953cb4ab283d33f06ec8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354567"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935732"
 ---
 # <a name="more"></a>更多
 
@@ -49,7 +49,7 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
 
 - 以下子命令在**更多**提示（）上被接受 `-- More --` ，其中包括：
 
-    | 键 | 操作 |
+    | 密钥 | 操作 |
     | --- | ------ |
     | 空格键 | 按**空格键**显示下一屏幕。 |
     | Enter | 按**enter**键，一次显示一行文件。 |

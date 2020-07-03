@@ -1,6 +1,6 @@
 ---
-title: wbadmin 获取项
-description: Wbadmin get items 的参考主题，其中列出了特定备份中包含的项。
+title: wbadmin get items
+description: Wbadmin get items （列出特定备份中包含的项目）的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9987a3628682c47cde53433558ef89c01684ccf5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d69ac0aa200a694b94d8428e4ae333ae21ed20e1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821197"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934366"
 ---
-# <a name="wbadmin-get-items"></a>wbadmin 获取项
+# <a name="wbadmin-get-items"></a>wbadmin get items
 
 
 

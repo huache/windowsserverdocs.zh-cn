@@ -1,6 +1,6 @@
 ---
 title: logman
-description: Logman 命令的参考主题，可用于创建和管理事件跟踪会话和性能日志，并通过命令行支持性能监视器的许多功能。
+description: Logman 命令的参考文章，用于创建和管理事件跟踪会话和性能日志，并通过命令行支持性能监视器的许多功能。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44b5e134440d71eed61ca8e03739abcc962df1f9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 993c96fbbcccd1b2a48303cc5926f25fd7899c4d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820547"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934560"
 ---
 # <a name="logman"></a>logman
 

@@ -1,6 +1,6 @@
 ---
-title: 未设置 telnet
-description: Telnet unset 的参考主题，这会关闭先前设置的选项。
+title: telnet unset
+description: Telnet unset 的参考文章未设置，这会关闭先前设置的选项。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d2ae8c3e96e0416a8b9f5f477778e5e89339842
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 3efbf7d4f2507d16dbe0beb704ab0c80467a56d3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222655"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935291"
 ---
 # <a name="telnet-unset"></a>telnet： unset
 
@@ -34,7 +34,7 @@ u[nset] {bsasdel | crlf | delasbs | escape | localecho | logging | ntlm} [?]
 |delasbs|将**删除**作为**删除**发送。|
 |转义符|删除转义符设置。|
 |localecho|关闭 localecho。|
-|logging|关闭日志记录功能。|
+|日志记录|关闭日志记录功能。|
 |ntlm|关闭 NTLM 身份验证。|
 |?|显示此命令的帮助。|
 ## <a name="examples"></a>示例

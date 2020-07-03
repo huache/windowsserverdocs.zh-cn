@@ -1,6 +1,6 @@
 ---
 title: writer
-description: 编写器的参考主题，用于验证是否包括了写入器或组件，或者排除了备份或还原过程中的编写器或组件。
+description: 编写器的参考文章，用于验证是否包括了写入器或组件，或者从备份或还原过程中排除了写入器或组件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aed202ac774b17041f48df24333565727b110c53
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 16746f2f070b87e0c287f3a49b19a480ba5399c9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720640"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936095"
 ---
 # <a name="writer"></a>writer
 
@@ -31,10 +31,10 @@ writer exclude [<Writer> | <Component>]
 
 ### <a name="parameters"></a>参数
 
-| 参数  |                                                                                      描述                                                                                      |
+| 参数  |                                                                                      说明                                                                                      |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   验证   | 验证指定的编写器或组件是否包含在备份或还原过程中。 如果未包括写入器或组件，备份或还原过程将失败。 |
-|  exclude   |                                                   从备份或还原过程中排除指定的编写器或组件。                                                    |
+|  排除   |                                                   从备份或还原过程中排除指定的编写器或组件。                                                    |
 | [\<Writer> |                                                                                     <Component>]                                                                                      |
 
 ## <a name="examples"></a>示例

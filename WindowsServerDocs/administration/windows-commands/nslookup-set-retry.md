@@ -1,6 +1,6 @@
 ---
 title: nslookup set retry
-description: Nslookup set retry 命令的参考主题，用于设置尝试从指定服务器获取信息的次数。
+description: Nslookup set retry 命令的参考文章，用于设置尝试从指定服务器获取信息的次数。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 268a9f0023c0e7e19e8ed413895f639444fe3b88
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 9ef38be2abfd423bb093ccf2b2ee6d701df28df3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721460"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935707"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 

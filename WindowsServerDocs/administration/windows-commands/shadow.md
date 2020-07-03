@@ -1,6 +1,6 @@
 ---
 title: shadow
-description: 影子的参考主题，使你能够远程控制远程桌面会话主机服务器上其他用户的活动会话。
+description: 影子的参考文章，可用于远程控制远程桌面会话主机服务器上其他用户的活动会话。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1330aef40a4bd5ce9fa6f565b92ade3f8c304895
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f4f7d6483e46708cab31d46b917f16b1eba29a58
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721817"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935881"
 ---
 # <a name="shadow"></a>shadow
 
@@ -30,11 +30,11 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 ```
 
 #### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |\<SessionName>|指定您要远程控制的会话的名称。|
 |\<SessionID>|指定您要远程控制的会话的 ID。 使用**query user**显示会话及其会话 id 的列表。|
-|/server：\<ServerName>|指定包含您要远程控制的会话的 rd 会话主机服务器。 默认情况下，使用当前 rd 会话 Host4 服务器。|
+|/server:\<ServerName>|指定包含您要远程控制的会话的 rd 会话主机服务器。 默认情况下，使用当前 rd 会话 Host4 服务器。|
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
 
@@ -45,7 +45,7 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 -   在开始监视之前，服务器警告用户该会话将被远程控制（除非禁用此警告）。 会话在等待用户响应时，可能会显示为冻结状态数秒钟。 若要为用户和会话配置远程控制，请使用远程桌面服务配置工具或本地用户和组以及 active directory 用户和计算机的远程桌面服务扩展。
 -   会话必须能够支持您要远程控制的会话所使用的视频分辨率，否则，操作将失败。
 -   控制台会话既不能远程控制其他会话，也不能由其他会话远程控制。
--   如果希望终止远程控制（隐藏），请按 CTRL +\* （仅通过使用\*数字键盘）。
+-   如果希望终止远程控制（隐藏），请按 CTRL + \* （仅通过使用 \* 数字键盘）。
 
 ## <a name="examples"></a>示例
 -   若要隐藏会话93，请键入：
@@ -58,5 +58,5 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
     ```
 
 ## <a name="additional-references"></a>其他参考
-- [命令行语法键](command-line-syntax-key.md)
+- [命令行语法关键字](command-line-syntax-key.md) 
 [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

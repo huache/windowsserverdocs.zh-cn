@@ -1,6 +1,6 @@
 ---
 title: nbtstat
-description: Nbtstat 命令的参考主题，它显示 TCP/IP 上的 NetBIOS （NetBT）协议统计信息、本地计算机和远程计算机的 NetBIOS 名称表以及 NetBIOS 名称缓存。
+description: Nbtstat 命令的参考文章，其中显示了 TCP/IP 上的 NetBIOS （NetBT）协议统计信息、本地计算机和远程计算机的 NetBIOS 名称表以及 NetBIOS 名称缓存。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e205013dc5716b76981e0c9bae667d48802dfc74
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: e663559686d95a4aaa123e2d43731a6b613de080
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354317"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934853"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -63,16 +63,16 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | `<03>` | NetBIOS 名称的最后一个字节转换为十六进制。 每个 NetBIOS 名称长度为16个字符。 最后一个字节通常具有特殊意义，因为同一名称可能在计算机上出现多次，只是在最后一个字节内有所不同。 例如， `<20>` 是 ASCII 文本中的空格。 |
     | type | 名称的类型。 名称可以为唯一名称或组名称。 |
     | 状态 | 远程计算机上的 NetBIOS 服务是否正在运行（注册）或重复的计算机名是否已注册了相同的服务（冲突）。 |
-    | 州省/自治区/直辖市 | NetBIOS 连接的状态。 |
+    | 状态 | NetBIOS 连接的状态。 |
 
 - 可能的 NetBIOS 连接状态包括：
 
-    | 州省/自治区/直辖市 | 说明 |
+    | 状态 | 说明 |
     | ------- | ----------- |
     | 已连接 | 已建立会话。 |
     | 收听 | 此终结点可用于入站连接。 |
     | 空闲 | 此终结点已打开，但无法接收连接。 |
-    | 连接 | 会话正在连接阶段，正在解析目标的名称到 IP 地址映射。 |
+    | Connecting | 会话正在连接阶段，正在解析目标的名称到 IP 地址映射。 |
     | 接受 | 当前正在接受入站会话，不久将会连接。 |
     | 正在 | 会话正在尝试重新连接（第一次尝试时无法连接）。 |
     | 出站 | 会话正在连接阶段，当前正在创建 TCP 连接。 |

@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 13f25252d60cb0bde67cca1e1aa5106435c3f361
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 77e3b48874d2b8898b7510ff04ebb133b9358a73
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333910"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935540"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS Extranet 锁定和 Extranet 智能锁定
 
@@ -285,7 +285,7 @@ AD FS 会将 extranet 锁定事件写入安全审核日志：
 答： ESL 可以很好地防止 Exchange Online 或其他旧身份验证暴力破解攻击方案。 旧身份验证的 "活动 ID" 为00000000-0000-0000-0000-000000000000。在这些攻击中，糟糕的执行组件利用 Exchange Online 基本身份验证（也称为传统身份验证），因此客户端 IP 地址显示为 Microsoft。 云中的 Exchange online 服务器代表 Outlook 客户端验证身份验证。 在这些情况下，恶意提交者的 IP 地址将位于 "x-毫秒-转发的客户端 ip" 中，Microsoft Exchange Online server IP 将为 "x-ms-客户端-ip" 值。
 Extranet 智能锁定检查网络 Ip、转发的 Ip、x 转发的客户端 IP 和 x-客户端 ip 值。 如果请求成功，则所有 Ip 都将添加到熟悉的列表。 如果请求传入，并且任何提供的 Ip 不在熟悉的列表中，则该请求将被标记为不熟悉。 熟悉的用户将无法成功登录，同时会阻止来自不熟悉位置的请求。  
 
-* * 问：是否可以在启用 ESL 之前估算 ADFSArtifactStore 的大小？
+**在启用 ESL 之前，是否可以估算 ADFSArtifactStore 的大小？**
 
 答：如果启用了 ESL，AD FS 将跟踪 ADFSArtifactStore 数据库中用户的帐户活动和已知位置。 此数据库相对于所跟踪的用户数和已知位置进行缩放。 当计划启用 ESL 时，你可以估算 ADFSArtifactStore 数据库的大小，以每 100,000 个用户最多 1GB 的速率增长。 如果 AD FS 场使用 Windows 内部数据库（WID），则数据库文件的默认位置为 C:\Windows\WID\Data\。 若要防止填充此驱动器，请在启用 ESL 之前确保至少有 5GB 的可用存储空间。 除了磁盘存储，还应在启用 ESL 后为 500,000 及以下的用户群体增加最多 1GB 的RAM，从而计划增加总进程内存。
 

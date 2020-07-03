@@ -1,6 +1,6 @@
 ---
 title: tsdiscon
-description: Tsdiscon 的参考主题，用于断开会话与远程桌面会话主机服务器的连接。
+description: Tsdiscon 的参考文章，用于断开会话与远程桌面会话主机服务器的连接。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2a97d1b157445fd43acce5a80f3d793ed5ae5af
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 05bf4e05648b0e5dd87657396df763432fab38f0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721265"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934197"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -34,11 +34,11 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |\<SessionId>|指定要断开连接的会话的 ID。|
 |\<SessionName>|指定要断开连接的会话的名称。|
-|/server：\<ServerName>|指定包含要断开连接的会话的终端服务器。 否则，使用当前的 rd 会话主机服务器。|
+|/server:\<ServerName>|指定包含要断开连接的会话的终端服务器。 否则，使用当前的 rd 会话主机服务器。|
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
 
@@ -63,5 +63,5 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   tsdiscon TERM04
   ```
   ## <a name="additional-references"></a>其他参考
-  - [命令行语法键](command-line-syntax-key.md)
+  - [命令行语法关键字](command-line-syntax-key.md) 
   [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

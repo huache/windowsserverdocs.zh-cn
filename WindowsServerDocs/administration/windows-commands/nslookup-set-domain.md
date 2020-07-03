@@ -1,6 +1,6 @@
 ---
 title: nslookup set domain
-description: Nslookup set 域命令的参考主题，它将默认域名系统（DNS）域名更改为指定名称。
+description: "\"Nslookup set 域\" 命令的参考文章，此命令会将默认域名系统（DNS）域名更改为指定名称。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e672bf53e655ef12cadb2a30aaa377b24e49afec
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: eaa12029beab301f955a4c9bed4595831f6ebf12
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721630"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934411"
 ---
 # <a name="nslookup-set-domain"></a>nslookup set domain
 

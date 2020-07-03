@@ -1,6 +1,6 @@
 ---
 title: tpmvscmgr
-description: Tpmvscmgr 的参考主题，它是一个命令行工具，可让具有管理凭据的用户在计算机上创建和删除 TPM 虚拟智能卡。
+description: Tpmvscmgr 的参考文章，它是一个命令行工具，可让具有管理凭据的用户在计算机上创建和删除 TPM 虚拟智能卡。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60c824de891917a2652776ee86b389f04d8eada8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8741c947220ce2a3f6852c7374bf0817323bb632
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821367"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935594"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
@@ -52,7 +52,7 @@ Create 命令在用户的系统上设置新的虚拟智能卡。 如果需要删
 
 |参数|说明|
 |---------|-----------|
-|/instance|指定要删除的虚拟智能卡的实例 ID。 创建卡时，instanceID 作为 Tpmvscmgr 的输出生成。 /Instance 参数是销毁命令的必填字段。|
+|/instance|指定要删除的虚拟智能卡的实例 ID。 当创建卡时，instanceID 作为 Tpmvscmgr.exe 输出生成。 /Instance 参数是销毁命令的必填字段。|
 |/?|显示此命令的帮助。|
 
 ## <a name="remarks"></a>备注
@@ -79,7 +79,7 @@ tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey RANDOM /PIN P
 ```
 tpmvscmgr.exe destroy /instance <instance ID>
 ```
-其中 \< 实例 ID> 是用户创建卡时在屏幕上打印的值。 具体而言，对于创建的第一个卡，实例 ID 为 ROOT\SMARTCARDREADER\0000。
+其中 \<instance ID> ，是用户创建卡时在屏幕上打印的值。 具体而言，对于创建的第一个卡，实例 ID 为 ROOT\SMARTCARDREADER\0000。
 
 ## <a name="additional-references"></a>其他参考
 
