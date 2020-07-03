@@ -1,6 +1,6 @@
 ---
 title: rundll32
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0639206b26ea58c4ec8473c0a736fda3c435021
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c9a0dca06bb3077ec308ae3a9792deb1f72e023b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722239"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932805"
 ---
 # <a name="rundll32"></a>rundll32
 
@@ -32,7 +32,7 @@ Rundll32 <DLLname>
 
 ## <a name="commands"></a>命令
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |[Rundll32.exe printui.dll，PrintUIEntry](rundll32-printui.md)|显示打印机用户界面|
 

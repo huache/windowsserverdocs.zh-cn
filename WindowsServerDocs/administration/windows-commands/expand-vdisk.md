@@ -1,6 +1,6 @@
 ---
-title: 展开 vdisk
-description: Expand vdisk 命令的参考主题，它将虚拟硬盘（VHD）扩展到指定大小。
+title: expand vdisk
+description: 扩展 vdisk 命令的参考文章，可将虚拟硬盘（VHD）扩展到指定大小。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 48973178f35f792b52fa81e5ed59449ca5db2559
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: a7951d4875249e46d850883f7863262774dd9bab
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436182"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932306"
 ---
-# <a name="expand-vdisk"></a>展开 vdisk
+# <a name="expand-vdisk"></a>expand vdisk
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

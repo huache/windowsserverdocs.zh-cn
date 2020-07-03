@@ -1,6 +1,6 @@
 ---
-title: 让
-description: 公开命令的参考主题，它将持久卷影副本公开为驱动器号、共享或装入点。
+title: expose
+description: 公开命令的参考文章，它将持久卷影副本公开为驱动器号、共享或装入点。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d4e8ebf71f6ddcb457460f8174793586e81c73a6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 816aad0ba57a30d9d3a05709941b1915d9a97d03
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437172"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932400"
 ---
-# <a name="expose"></a>让
+# <a name="expose"></a>expose
 
 将永久性卷影副本作为驱动器号、共享或装入点公开。
 

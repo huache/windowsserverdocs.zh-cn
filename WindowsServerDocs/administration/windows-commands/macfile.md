@@ -1,6 +1,6 @@
 ---
 title: macfile
-description: Macfile 命令的参考主题，它管理 Macintosh 服务器、卷、目录和文件的文件服务器。
+description: Macfile 命令的参考文章，其中管理了 Macintosh 服务器、卷、目录和文件的文件服务器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 740044088bef1537b5b41493f46be9275be84874
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 6937e8bbf40ec9ce908be095e5de0e04f793f40e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223012"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933648"
 ---
 # <a name="macfile"></a>macfile
 
@@ -49,7 +49,7 @@ macfile directory[/server:\\<computername>] /path:<directory> [/owner:<ownername
 
 | 位置 | 设置权限 |
 | -------- | --------------- |
-| 第一个 | OwnerSeeFiles |
+| First | OwnerSeeFiles |
 | 秒 | OwnerSeeFolders |
 | 第三个 | OwnerMakechanges |
 | 第四个 | GroupSeeFiles |
@@ -113,7 +113,7 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\tree_app
 ```
 
-若要将文件创建者更改为*Microsoft Word 5.1*，请*在* *D:\Word Documents\Group 文件*中的 server * \\ ServerA*上键入：
+若要将文件创建者更改为*Microsoft Word 5.1*，请在 server * \\ ServerA*上的*D:\Word documents\Group 文件*中为 file *Word.txt*键入：
 
 ```
 macfile forkize /server:\\ServerA /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt

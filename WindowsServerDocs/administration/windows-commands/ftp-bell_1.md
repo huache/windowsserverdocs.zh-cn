@@ -1,6 +1,6 @@
 ---
-title: ftp 电铃
-description: Ftp 电铃命令的参考主题，它会在每个文件传输命令完成后，将声音切换到声音。
+title: ftp bell
+description: Ftp 电铃命令的参考文章，用于在每个文件传输命令完成后，将声音切换到声音。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c445e929c9d3adad2bfa620b522e4befbb7c1cff
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 9481911f9de9eb62baea492964987908daa94ce1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820017"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933300"
 ---
-# <a name="ftp-bell"></a>ftp 电铃
+# <a name="ftp-bell"></a>ftp bell
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

@@ -1,6 +1,6 @@
 ---
 title: get-ImageFile
-description: 获取-ImageFile 的参考主题，它检索有关 Windows 映像（.wim）文件中包含的映像的信息。
+description: 获取-ImageFile 的参考文章，用于检索有关 Windows 映像（.wim）文件中包含的映像的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f60be17f13e1436a0e895991c72d5ccb7130782
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 127b5282b74020f002c7ccc55663fc2571584582
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719907"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932219"
 ---
 # <a name="get-imagefile"></a>get-ImageFile
 
@@ -28,9 +28,9 @@ WDSUTIL [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|/ImageFile：\<WIM 文件路径>|指定 .wim 文件的完整路径和文件名。|
+|像素\<WIM file path>|指定 .wim 文件的完整路径和文件名。|
 |[/Detailed]|返回每个映像中的所有图像元数据。 如果未使用此选项，则默认行为是只返回映像名称、说明和文件名。|
 
 ## <a name="examples"></a>示例

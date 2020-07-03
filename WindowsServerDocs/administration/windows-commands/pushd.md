@@ -1,6 +1,6 @@
 ---
 title: pushd
-description: Pushd 命令的参考主题，它存储了用于 popd 命令的当前目录，然后更改为指定的目录。
+description: Pushd 命令的参考文章，其中存储了用于 popd 命令的当前目录，然后更改为指定的目录。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca15d4279c65164c385ce3dce57d0420ad5aace3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 871834ae1ac29eb53be982831e7ede93d9d309cf
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472132"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933748"
 ---
 # <a name="pushd"></a>pushd
 
@@ -37,7 +37,7 @@ pushd [<path>]
 | `<path>` | 指定要生成当前目录的目录。 此命令支持相对路径。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果启用了命令扩展， **pushd**命令将接受网络路径或本地驱动器号和路径。
 

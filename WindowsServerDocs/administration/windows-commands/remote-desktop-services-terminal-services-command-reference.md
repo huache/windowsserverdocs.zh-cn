@@ -1,6 +1,6 @@
 ---
 title: 远程桌面服务（终端服务）命令参考
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 630b2274e96e446af07f7630d95056b40858209f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 55466409517b63c52f88a7acec3a8f4aba7d258d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722444"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933472"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>远程桌面服务（终端服务）命令参考
 
@@ -23,8 +23,8 @@ ms.locfileid: "82722444"
 下面是远程桌面服务命令行工具的列表。
 > [!NOTE]
 > 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](https://technet.microsoft.com/library/hh831527)。
-> 
-> |                 Command                 |                                                      说明                                                       |
+>
+> |                 命令                 |                                                      说明                                                       |
 > |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 > |           [change](change.md)           | 更改登录、COM 端口映射和安装模式远程桌面会话主机（rd 会话主机）服务器设置。 |
 > |     [change logon](change-logon.md)     |    启用或禁用从 rd 会话主机服务器上的客户端会话登录，或显示当前登录状态。     |
@@ -40,9 +40,9 @@ ms.locfileid: "82722444"
 > |          [qappsrv](qappsrv.md)          |                             显示网络上所有 rd 会话主机服务器的列表。                             |
 > |         [qprocess](qprocess.md)         |                  显示有关在 rd 会话主机服务器上运行的进程的信息。                   |
 > |            [查询](query.md)            |                      显示有关进程、会话和 rd 会话主机服务器的信息。                      |
-> |    [查询进程](query-process.md)    |                  显示有关在 rd 会话主机服务器上运行的进程的信息。                   |
+> |    [query process](query-process.md)    |                  显示有关在 rd 会话主机服务器上运行的进程的信息。                   |
 > |    [query session](query-session.md)    |                           显示有关 rd 会话主机服务器上的会话的信息。                            |
-> | [查询 termserver](query-termserver.md) |                             显示网络上所有 rd 会话主机服务器的列表。                             |
+> | [query termserver](query-termserver.md) |                             显示网络上所有 rd 会话主机服务器的列表。                             |
 > |       [query user](query-user.md)       |                         显示有关 rd 会话主机服务器上的用户会话的信息。                         |
 > |            [quser](quser.md)            |                         显示有关 rd 会话主机服务器上的用户会话的信息。                         |
 > |          [qwinsta](qwinsta.md)          |                           显示有关 rd 会话主机服务器上的会话的信息。                            |

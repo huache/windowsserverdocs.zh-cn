@@ -1,6 +1,6 @@
 ---
 title: tracert
-description: Tracert 的参考主题，通过将 Internet 控制消息协议（ICMP）回送请求或 ICMPv6 消息发送到目标，以递增递增的生存时间（TTL）字段值，确定到达目标的路径。
+description: Tracert 的参考文章，通过将 Internet 控制消息协议（ICMP）回送请求或 ICMPv6 消息发送到目标，以递增递增的生存时间（TTL）字段值，确定到达目标的路径。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6ef48350a0b8a4f67f1e564a9ca16db8b4dd5e6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: adc73fdd646b3a9f7202f286912b5295f0c4e140
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472924"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933736"
 ---
 # <a name="tracert"></a>tracert
 
@@ -44,7 +44,7 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 |\<TargetName>|指定目标，由 IP 地址或主机名标识。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - 此诊断工具通过将具有不同的生存时间（TTL）值的 ICMP 回显请求消息发送到目标来确定要到达目标的路径。 需要沿着路径的每个路由器将 IP 数据包中的 TTL 递减至少1，然后再将其转发。 TTL 实际上是最大链接计数器。 当数据包上的 TTL 达到0时，路由器应将 "ICMP 超时" 消息返回到源计算机。 tracert 通过发送第一个带有 TTL 为1的回显请求消息来确定路径，并在每次后续传输时将 TTL 递增1，直到目标响应或达到最大跃点数。 默认情况下，最大跃点数为30，可以使用 **/h**参数指定。 该路径是通过查看中间路由器返回的 "ICMP 超时" 消息和目标返回的回送答复消息确定的。 但是，某些路由器不会为 TTL 值过期的数据包返回超出时间的消息，而且对 tracert 命令不可见。 在这种情况下，将为该跃点显示一个星号（*）行。
 - 若要跟踪路径并为每个路由器和路径中的链接提供网络延迟和数据包丢失，请使用[**pathping**](pathping.md)命令。

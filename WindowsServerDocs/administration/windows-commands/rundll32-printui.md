@@ -1,6 +1,6 @@
 ---
 title: rundll32.exe printui.dll，PrintUIEntry
-description: Rundll32.exe printui.dll，PrintUIEntry 命令的参考主题，可自动执行许多打印机配置任务。
+description: Rundll32.exe printui.dll，PrintUIEntry 命令的参考文章，可自动执行许多打印机配置任务。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/25/2018
-ms.openlocfilehash: 3644af74918089e837b01c531099c0e61a6eb771
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 04678bcaf13bbdc5f325dc56af39c4e0385bcd06
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223056"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932791"
 ---
 # <a name="rundll32-printuidllprintuientry"></a>rundll32.exe printui.dll，PrintUIEntry
 

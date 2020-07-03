@@ -1,6 +1,6 @@
 ---
-title: ftp 提示符
-description: Ftp prompt 命令的参考主题，用于切换提示模式打开和关闭。
+title: ftp prompt
+description: Ftp prompt 命令的参考文章，用于切换提示模式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57f0e1eead36665c19845944bf22325b1aecebbb
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e0859d3989a054d03421f08f5df7823a690dc85c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820377"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933117"
 ---
-# <a name="ftp-prompt"></a>ftp 提示符
+# <a name="ftp-prompt"></a>ftp prompt
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

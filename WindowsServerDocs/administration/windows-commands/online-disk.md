@@ -1,6 +1,6 @@
 ---
 title: online disk
-description: 联机磁盘命令的参考主题，使脱机磁盘进入联机状态。
+description: 联机磁盘命令的参考文章，该命令使脱机磁盘进入联机状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 954e52788f3236cb9b2898a23edae25d5b22deb8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7313f5b5b8c0594e0706555a203248d760028806
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472675"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933556"
 ---
 # <a name="online-disk"></a>online disk
 

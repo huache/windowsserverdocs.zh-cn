@@ -1,6 +1,6 @@
 ---
-title: wbadmin get 版本
-description: Wbadmin get 版本的参考主题，其中列出了存储在本地计算机或另一台计算机上的可用备份的详细信息。
+title: wbadmin get versions
+description: Wbadmin get 版本参考文章，其中列出了存储在本地计算机或另一台计算机上的可用备份的详细信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1eabc053e5cb1bdd517cfb02a13e955707ffacf6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6729189bb15fd3aeb10172288504e9809b082edb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820507"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932326"
 ---
-# <a name="wbadmin-get-versions"></a>wbadmin get 版本
+# <a name="wbadmin-get-versions"></a>wbadmin get versions
 
 
 

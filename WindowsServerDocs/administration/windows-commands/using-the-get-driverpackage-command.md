@@ -1,6 +1,6 @@
 ---
 title: DriverPackage
-description: DriverPackage 的参考主题，用于显示有关服务器上的驱动程序包的信息。
+description: DriverPackage 的参考文章，用于显示有关服务器上的驱动程序包的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4fc6bc327b46f8219a7c40fa47e85cc94b6fc749
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f0ca307b9f42d0921c896df2fe622c5b0f8a853d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719938"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932252"
 ---
 # <a name="get-driverpackage"></a>DriverPackage
 
@@ -28,11 +28,11 @@ WDSUTIL /Get-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name
 
 ### <a name="parameters"></a>参数
 
-|        参数         |                                                                           描述                                                                            |
+|        参数         |                                                                           说明                                                                            |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server：\<Server name>] |              指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。               |
-| [/DriverPackage：\<Name>] |                                                        指定要显示的驱动程序包的名称。                                                         |
-|    [/PackageId：\<ID>]    | 指定要显示的驱动程序包的 Windows 部署服务 ID。 如果无法按名称唯一地标识驱动程序包，则必须指定 ID。 |
+| [/Server： \<Server name> ] |              指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。               |
+| [/DriverPackage： \<Name> ] |                                                        指定要显示的驱动程序包的名称。                                                         |
+|    [/PackageId： \<ID> ]    | 指定要显示的驱动程序包的 Windows 部署服务 ID。 如果无法按名称唯一地标识驱动程序包，则必须指定 ID。 |
 |     [/Show： {驱动程序     |                                                                              文件                                                                               |
 
 ## <a name="examples"></a>示例

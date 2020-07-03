@@ -1,6 +1,6 @@
 ---
 title: disable
-description: 禁用的参考主题，禁用 Windows 部署服务的所有服务。
+description: 禁用的参考文章，禁用 Windows 部署服务的所有服务。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e4523c75af4f75488f6dc0fad5dbb4ebc2442f7d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 54c8fdd3014ecd7a11039ecdb7771b0517e756e1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720983"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933960"
 ---
 # <a name="disable"></a>disable
 
@@ -23,7 +23,7 @@ ms.locfileid: "82720983"
 禁用 Windows 部署服务的所有服务。
 
 ## <a name="subcommands"></a>个子
-|子命令|描述|
+|子命令|说明|
 |-------|--------|
 |[使用 disable-Server 命令](using-the-disable-server-command.md)|禁用指定服务器（部署服务器）上的所有 Windows 部署服务服务。|
 |[使用 TransportServer 命令](using-the-disable-transportserver-command.md)|禁用指定传输服务器上的所有 Windows 部署服务服务。|

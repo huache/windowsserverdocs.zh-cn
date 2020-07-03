@@ -1,6 +1,6 @@
 ---
 title: 缩减
-description: DiskPart shrink 的参考主题，这会减少所选卷的大小。
+description: 用于 DiskPart shrink 的参考文章，可按指定的量减小所选卷的大小。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 357a2320bf8b26130c9aa148d513edff6f1e85db
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 69405e7eda6b7565e9c8effe6639b6ba4dc9e4c2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721800"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932596"
 ---
 # <a name="shrink"></a>缩减
 
@@ -29,7 +29,7 @@ shrink querymax [noerr]
 ```
 ### <a name="parameters"></a>参数
 
-|  参数  |                                                                                             描述                                                                                              |
+|  参数  |                                                                                             说明                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | desired =<n> |                                                     指定希望该卷大小减少的空间量 (MB)。                                                     |
 | 最小值 =<n> |                                                           指定该卷大小减少的最小空间量 (MB)。                                                           |

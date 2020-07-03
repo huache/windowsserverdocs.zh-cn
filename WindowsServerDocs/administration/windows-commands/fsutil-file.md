@@ -1,6 +1,6 @@
 ---
 title: fsutil file
-description: Fsutil file 命令的参考主题，它按用户名查找文件，查询为文件分配的范围，设置文件的短名称，设置文件的有效数据长度，为文件设置零数据，或创建新的文件。
+description: Fsutil file 命令的参考文章，该命令按用户名查找文件，查询为文件分配的范围，设置文件的短名称，设置文件的有效数据长度，为文件设置零数据，或创建新的文件。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 9f3dc104-dd69-4b03-b824-a29896780164
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e9be8f6d21b89d1017371b9697e1227122826a7d
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6909d381ef5dfebb343e70ad117a1a5b400481fa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435872"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932292"
 ---
 # <a name="fsutil-file"></a>fsutil file
 
@@ -116,13 +116,13 @@ fsutil file queryextents C:\Temp\sample.txt
 fsutil file seteof C:\testfile.txt 1000
 ```
 
-若要将文件的短名称（驱动器 C 上的*longfilename* ）设置为*longfile*，请键入：
+若要设置文件的短名称，请*longfilename.txt*在驱动器 C 上*longfile.txt*，键入：
 
 ```
 fsutil file setshortname c:\longfilename.txt longfile.txt
 ```
 
-若要为 NTFS 卷上名为*testfile.txt*的文件将有效数据长度设置为*4096 字节*，请键入：
+若要将名为*testfile.txt*的文件的有效数据长度设置为*4096 字节*，请键入：
 
 ```
 fsutil file setvaliddata c:\testfile.txt 4096

@@ -1,6 +1,6 @@
 ---
 title: nfsadmin
-description: Nfsadmin 命令的参考主题，它管理 NFS 服务器和 NFS 客户端。
+description: 用于管理 NFS 服务器和 NFS 客户端的 nfsadmin 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c122577758dd28d11d25445ca9dc98ed03024c77
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: ad88594d534c64c0651fcc4e094fef669a02f16c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721530"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932335"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 

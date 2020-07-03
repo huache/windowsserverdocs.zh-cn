@@ -1,6 +1,6 @@
 ---
 title: Scwcmd 视图
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb38d5100eab74573d5f5ffb4ec684b2b19c3bbb
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: cbae5f3d0157424fb9281d47cdf126bf106447c3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820937"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932611"
 ---
 # <a name="scwcmd-view"></a>Scwcmd: view
 
@@ -32,17 +32,17 @@ scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 
 |参数|说明|
 |---------|-----------|
-|/x： \< Xmlfile>|指定要查看的 .xml 文件。 必须指定此参数。|
-|/s： \< Xslfile>|指定作为呈现过程的一部分应用于 .xml 文件的 .xsl 转换。 对于 SCW .xml 文件，此参数是可选的。 当使用**view**命令呈现某个 SCW .xml 文件时，它会自动尝试为指定的 .xml 文件加载正确的默认转换。 如果指定了 .xsl 转换，则必须假定 .xml 文件位于与 .xsl 转换相同的目录中，以写入转换。|
+|上次\<Xmlfile.xml>|指定要查看的 .xml 文件。 必须指定此参数。|
+|/s\<Xslfile.xsl>|指定作为呈现过程的一部分应用于 .xml 文件的 .xsl 转换。 对于 SCW .xml 文件，此参数是可选的。 当使用**view**命令呈现某个 SCW .xml 文件时，它会自动尝试为指定的 .xml 文件加载正确的默认转换。 如果指定了 .xsl 转换，则必须假定 .xml 文件位于与 .xsl 转换相同的目录中，以写入转换。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
 
-Scwcmd 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
+Scwcmd.exe 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
 
 ## <a name="examples"></a>示例
 
-若要使用 Policyview 转换查看 Policyfile，请键入：
+若要使用 Policyview 转换查看 Policyfile.xml，请键入：
 ```
 scwcmd view /x:C:\policies\Policyfile.xml /s:C:\viewers\Policyview.xsl
 ```

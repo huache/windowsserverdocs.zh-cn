@@ -1,6 +1,6 @@
 ---
 title: Scwcmd
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a8c002aa735b188fdd9ad75b0db7dbe06053516
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: bb651c2b527d332f70cd0686a7d57f089bc987ac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821157"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932613"
 ---
 # <a name="scwcmd"></a>Scwcmd
 
 > 适用于： Windows Server 2012 R2、Windows Server 2012
 
-安全配置向导（SCW）附带的 Scwcmd 命令行工具可用于执行以下任务：
+安全配置向导（SCW）附带的 Scwcmd.exe 命令行工具可用于执行以下任务：
 -   使用 SCW 生成的策略配置一台或多台服务器。
 -   使用 SCW 生成的策略分析一个或多个服务器。
 -   以 HTML 格式查看分析结果。

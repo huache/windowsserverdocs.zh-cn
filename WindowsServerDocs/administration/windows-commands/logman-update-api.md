@@ -1,6 +1,6 @@
 ---
-title: logman 更新 api
-description: 用于更新现有 API 跟踪数据收集器的属性的 logman 更新 api 命令的参考主题。
+title: logman update api
+description: 用于更新现有 API 跟踪数据收集器属性的 logman 更新 api 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0087edc7cd96bf2bf7611d9a3975d97384c02949
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 40575772e5f82474c4afbd4809773f47d7e4e075
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222779"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933869"
 ---
-# <a name="logman-update-api"></a>logman 更新 api
+# <a name="logman-update-api"></a>logman update api
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
@@ -65,7 +65,7 @@ logman update api <[-n] <name>> [options]
 
 ### <a name="examples"></a>示例
 
-若要为可执行文件 c:\windows\notepad.exe 更新名为*trace_notepad*的现有 api 跟踪计数器，请使用模块 kernel32.dll 生成的 Api 调用 TlsGetValue，键入：
+若要更新 c:\windows\notepad.exe 的可执行文件*trace_notepad*的现有 api 跟踪计数器，请通过排除模块 kernel32.dll 生成的 Api 调用 TlsGetValue，键入：
 
 ```
 logman update api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue

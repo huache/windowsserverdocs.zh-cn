@@ -1,6 +1,6 @@
 ---
 title: 获取-命名空间
-description: 获取命名空间的参考主题，该主题显示有关自定义命名空间的信息。
+description: 获取命名空间的参考文章，其中显示了有关自定义命名空间的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76980d2add9ee9b7584812c9d366408f8770b681
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a029d56b2aea0a05bb12121cde89a1a731f3e4c5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719744"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932197"
 ---
 # <a name="get-namespace"></a>获取-命名空间
 
@@ -33,10 +33,10 @@ wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/det
 ```
 ### <a name="parameters"></a>参数
 
-|               参数               |                                                                                                                                                                                         描述                                                                                                                                                                                          |
+|               参数               |                                                                                                                                                                                         说明                                                                                                                                                                                          |
 |---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      名称<Namespace name>      | 指定命名空间的名称。 请注意，这不是友好名称，并且必须是唯一的。<p>-Deployment Server：命名空间名称的语法为/Namspace： WDS：<ImageGroup>/<ImageName>/<Index>。 例如： **WDS： ImageGroup1/install/1**<br />-传输服务器：此值应与在服务器上创建命名空间时提供的名称匹配。 |
-|        [/Server：<Server name>]        |                                                                                                             指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。                                                                                                              |
+|      名称<Namespace name>      | 指定命名空间的名称。 请注意，这不是友好名称，并且必须是唯一的。<p>-Deployment Server：命名空间名称的语法为/Namspace： WDS： <ImageGroup> / <ImageName> / <Index> 。 例如： **WDS： ImageGroup1/install/1**<br />-传输服务器：此值应与在服务器上创建命名空间时提供的名称匹配。 |
+|        [/Server： <Server name> ]        |                                                                                                             指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。                                                                                                              |
 | [/Show： Clients] 或 [/details： Clients] |                                                                                                                                                  显示有关连接到指定命名空间的客户端计算机的信息。                                                                                                                                                  |
 
 ## <a name="examples"></a>示例
@@ -48,8 +48,8 @@ wdsutil /Get-Namespace /Namespace:Custom Auto 1
 - Windows Server 2008：`wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /Show:Clients`
 - Windows Server 2008 R2：`wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /details:Clients`
   ## <a name="additional-references"></a>其他参考
-  - [Command-Line Syntax Key](command-line-syntax-key.md)
-  [使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md)
-  的命令行语法键使用[删除命名空间](using-the-remove-namespace-command.md)
-  命令的[新命名空间](using-the-new-namespace-command.md)
-  命令[：起始-命名](subcommand-start-namespace.md)空间
+  - [命令行语法关键字](command-line-syntax-key.md) 
+  [使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md) 
+  [使用新的命名空间命令](using-the-new-namespace-command.md) 
+  [使用移除命名空间命令](using-the-remove-namespace-command.md) 
+  [子命令：起始-命名空间](subcommand-start-namespace.md)

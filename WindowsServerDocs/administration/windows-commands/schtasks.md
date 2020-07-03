@@ -1,6 +1,6 @@
 ---
 title: schtasks
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a723025846a0e1725c72d5880d1ecc97579e1a69
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7f631a0b156d78365f2c2038bec49062a5892214
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722171"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932812"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -32,20 +32,20 @@ ms.locfileid: "82722171"
 
 ## <a name="remarks"></a>备注
 
-- **Schtasks.exe**与**控制面板**中的 "**计划任务**" 执行相同的操作。 可以将这些工具一起使用，并且可以互换使用。
-- **Schtasks**替代了在以前版本的 Windows 中包括的 **.exe。** 尽管 Windows Server 2003 家族仍包含 **.exe** ，但建议使用**schtasks**命令行任务计划工具。
+- **SchTasks.exe**与**控制面板**中的 "**计划任务**" 执行相同的操作。 可以将这些工具一起使用，并且可以互换使用。
+- **Schtasks**替代了 Windows 以前版本中包含的**At.exe**。 尽管 Windows Server 2003 家族仍包含**At.exe** ，但建议使用**schtasks**命令行任务计划工具。
 - **Schtasks**命令中的参数可以按任意顺序出现。 在不使用任何参数的情况下键入**schtasks**会执行查询。
-- 适用于**schtasks**的权限  
+- 适用于**schtasks**的权限
   -   您必须有权运行该命令。 任何用户都可以在本地计算机上计划任务，并可以查看和更改他们计划的任务。 Administrators 组的成员可以计划、查看和更改本地计算机上的所有任务。
   -   若要计划、查看或更改远程计算机上的任务，你必须是远程计算机上 Administrators 组的成员，或者必须使用 **/u**参数提供远程计算机的管理员的凭据。
   -   仅当本地计算机和远程计算机位于同一个域中，或者本地计算机位于远程计算机域信任的域中时，才可以在 **/create**或 **/change**操作中使用 **/u**参数。 否则，远程计算机将无法对指定的用户帐户进行身份验证，并且无法验证该帐户是否为 Administrators 组的成员。
   -   该任务必须具有运行权限。 所需权限因任务而异。 默认情况下，任务使用本地计算机的当前用户的权限运行，或使用 **/u**参数指定的用户权限（如果包括在内）来运行。 若要使用其他用户帐户或系统权限的权限运行任务，请使用 **/ru**参数。
-- 若要验证计划任务是否运行，或找出计划任务未运行的原因，请参阅任务计划程序服务事务日志， *SystemRoot*\SchedLgU.txt。 此日志记录了所有使用该服务的工具（包括**计划任务**和**schtasks.exe**）启动的运行。
-- 在极少数情况下，任务文件会损坏。 损坏的任务不会运行。 尝试对损坏的任务执行操作时， **schtasks.exe**显示以下错误消息：  
+- 若要验证计划任务是否运行，或找出计划任务未运行的原因，请参阅任务计划程序服务事务日志， *SystemRoot*\SchedLgU.txt。 此日志记录了所有使用该服务的工具（包括**计划任务**和**SchTasks.exe**）启动的运行尝试。
+- 在极少数情况下，任务文件会损坏。 损坏的任务不会运行。 尝试对损坏的任务执行操作时， **SchTasks.exe**会显示以下错误消息：
   ```
   ERROR: The data is invalid.
-  ```  
-  你无法恢复损坏的任务。 若要还原系统的任务计划功能，请使用**schtasks.exe**或**计划任务**从系统中删除任务并重新计划。
+  ```
+  你无法恢复损坏的任务。 若要还原系统的任务计划功能，请使用**SchTasks.exe**或**计划任务**从系统中删除任务并重新计划。
 
 ## <a name="schtasks-create"></a><a name=BKMK_create></a>schtasks 创建
 
@@ -82,11 +82,11 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 
 ##### <a name="parameters"></a>参数
 
-##### <a name="sc-scheduletype"></a>/sc \<ScheduleType>
+##### <a name="sc-scheduletype"></a>/sc\<ScheduleType>
 
 指定计划类型。 有效值为分钟、每小时、每天、每周、每月、一次、ONSTART、ONLOGON、ONIDLE。
 
-|计划类型|描述|
+|计划类型|说明|
 |-------------|-----------|
 |分钟、每小时、每日、每周、每月|指定计划的时间单位。|
 |曾经|任务在指定的日期和时间运行一次。|
@@ -94,19 +94,19 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 |ONLOGON|只要用户（任何用户）登录，任务就会运行。 你可以指定一个日期，或在用户下次登录时运行该任务。|
 |ONIDLE|只要系统在指定的时间段内处于空闲状态，该任务就会运行。 您可以指定一个日期，或在系统下一次空闲时运行该任务。|
 
-##### <a name="tn-taskname"></a>/tn \<TaskName>
+##### <a name="tn-taskname"></a>/tn\<TaskName>
 
 指定任务的名称。 系统上的每项任务都必须具有唯一的名称。 名称必须符合文件名规则，并且不得超过238个字符。 使用引号将包含空格的名称括起来。
 
-##### <a name="tr-taskrun"></a>/tr \<k>
+##### <a name="tr-taskrun"></a>/tr\<TaskRun>
 
 指定任务运行的程序或命令。 键入可执行文件、脚本文件或批处理文件的完全限定路径和文件名。 路径名称不能超过262个字符。 如果省略路径，则**schtasks**会假定文件位于*SystemRoot*\System32 目录中。
 
-##### <a name="s-computer"></a>/s \<计算机>
+##### <a name="s-computer"></a>/s\<Computer>
 
-计划指定远程计算机上的任务。 键入远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认值为本地计算机。 **/U**和 **/p**参数仅在使用 **/s**时有效。
+计划指定远程计算机上的任务。 键入远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认为本地计算机。 **/U**和 **/p**参数仅在使用 **/s**时有效。
 
-##### <a name="u-domainuser"></a>/u [\<域>\]<User>
+##### <a name="u-domainuser"></a>形\<Domain>\]<User>
 
 用指定用户帐户的权限运行此命令。 默认值是本地计算机当前用户的权限。 **/U**和 **/p**参数仅对在远程计算机上计划任务有效（**/s**）。
 
@@ -114,95 +114,95 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 
 用户帐户必须是远程计算机上 Administrators 组的成员。 同时，本地计算机必须与远程计算机位于同一域中，或者必须位于远程计算机域信任的域中。
 
-##### <a name="p-password"></a>/p \<密码>
+##### <a name="p-password"></a>/p\<Password>
 
 提供 **/u**参数中指定的用户帐户的密码。 如果你使用 **/u**参数，但省略 **/p**参数或 password 参数，则**schtasks**会提示你输入密码并掩盖你键入的文本。
 
 **/U**和 **/p**参数仅对在远程计算机上计划任务有效（**/s**）。
 
-##### <a name="ru-domainuser--system"></a>/ru {[\<域>\] <User> |主板
+##### <a name="ru-domainuser--system"></a>/ru {[ \<Domain> \] <User> |主板
 
 用指定用户帐户的权限运行任务。 默认情况下，任务使用本地计算机的当前用户的权限运行，或使用 **/u**参数指定的用户的权限（如果包括在内）来运行。 在本地或远程计算机上计划任务时， **/ru**参数是有效的。
 
 
-|       值        |                                                    描述                                                    |
+|       值        |                                                    说明                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------|
-| [\<域>\]<User> |                                       指定另一个用户帐户。                                        |
+| [\<Domain>\]<User> |                                       指定另一个用户帐户。                                        |
 |    系统或     | 指定本地系统帐户，该帐户是操作系统和系统服务使用的一个高特权帐户。 |
 
-##### <a name="rp-password"></a>/rp \<密码>
+##### <a name="rp-password"></a>/rp\<Password>
 
-提供 **/ru**参数中指定的用户帐户的密码。 如果在指定用户帐户时省略此参数，则**schtasks.exe**会提示你输入密码并掩盖你键入的文本。
+提供 **/ru**参数中指定的用户帐户的密码。 如果在指定用户帐户时省略此参数， **SchTasks.exe**会提示输入密码并掩盖键入的文本。
 
-不要将任务的 **/rp**参数用于使用系统帐户凭据（**/ru system**）运行的任务。 系统帐户没有密码，并且**schtasks.exe**不会提示输入密码。
+不要将任务的 **/rp**参数用于使用系统帐户凭据（**/ru system**）运行的任务。 系统帐户没有密码， **SchTasks.exe**不会提示输入密码。
 
-##### <a name="mo-modifier"></a>/mo \<修饰符>
+##### <a name="mo-modifier"></a>/月\<Modifier>
 
 指定任务在其计划类型中的运行频率。 对于每分钟、每小时、每日、每周和每月计划，此参数均有效，但可选。 默认值为 1。
 
-|计划类型|修饰符值|描述|
+|计划类型|修饰符值|说明|
 |-------------|---------------|-----------|
-|MINUTE|1 - 1439|任务每 N> \<分钟运行一次。|
-|工资|1 - 23|任务每 N> \<小时运行一次。|
-|DAILY|1 - 365|任务每 N> \<天运行一次。|
-|两|1 - 52|任务每 N> \<周运行一次。|
+|MINUTE|1 - 1439|任务每分钟运行一次 \<N> 。|
+|工资|1 - 23|任务每小时运行一次 \<N> 。|
+|DAILY|1 - 365|任务每日运行一次 \<N> 。|
+|两|1 - 52|任务每周运行一次 \<N> 。|
 |曾经|无修饰符。|任务运行一次。|
 |ONSTART|无修饰符。|任务在启动时运行。|
 |ONLOGON|无修饰符。|当 **/u**参数指定的用户登录时，该任务将运行。|
 |ONIDLE|无修饰符。|当系统空闲时间为 **/i**参数指定的分钟数（这是与 ONIDLE 一起使用所需的分钟数）后，任务运行。|
-|次|1 - 12|任务每 N> \<个月运行一次。|
+|次|1 - 12|任务每月运行一次 \<N> 。|
 |次|LASTDAY|该任务在每月的最后一天运行。|
-|次|第一个、第二个、第三个、第四个、最后一个|与 **/d**\<Day> 参数一起使用，以便在特定周和天运行任务。 例如，在月份的第三个星期三。|
+|次|第一个、第二个、第三个、第四个、最后一个|与 **/d**参数一起使用， \<Day> 以便在特定的周和天运行任务。 例如，在月份的第三个星期三。|
 
 ##### <a name="d-dayday--"></a>/d Day [，Day ...] |*
 
 指定一周中的某一天（或几天）或一个月中的一天（或几天）。 仅对每周或每月计划有效。
 
 
-| 计划类型 |              修饰符              |     Day 值（/d）      |                                                                                                 描述                                                                                                 |
+| 计划类型 |              修饰符              |     Day 值（/d）      |                                                                                                 说明                                                                                                 |
 |---------------|------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    两     |               1 - 52               | 周一至周日 [，周一至周日 ...] |                                                                                                     \*                                                                                                      |
 |    次    | 第一个、第二个、第三个、第四个、最后一个 |        周一至周日         |                                                                                   对于特定周计划是必需的。                                                                                    |
-|    次    |          无或 {1-12}          |          1 - 31          | 可选且仅在不使用修饰符（**/mo**）参数（特定日期计划）时或在 **/mo**为 1-12 （每个\<> 月计划）时有效。 默认值为 day 1 （每月的第一天）。 |
+|    次    |          无或 {1-12}          |          1 - 31          | 可选且仅在不使用修饰符（**/mo**）参数（特定日期计划）时或在 **/mo**为 1-12 （每 \<N> 月计划）时有效。 默认值为 day 1 （每月的第一天）。 |
 
 ##### <a name="m-monthmonth"></a>/m Month [，Month ...]
 
 指定计划的任务应在一年中的哪个月或几个月运行。 有效值为1月12日和 * （每月）。 **/M**参数仅对每月计划有效。 使用 LASTDAY 修饰符时是必需的。 否则，它是可选的，默认值为 * （每月）。
 
-##### <a name="i-idletime"></a>/i \<IdleTime>
+##### <a name="i-idletime"></a>/i\<IdleTime>
 
 指定在任务启动前计算机处于空闲状态的分钟数。 有效值为从1到999的整数。 此参数仅对 ONIDLE 计划有效，因此是必需的。
 
-##### <a name="st-starttime"></a>/st \<StartTime>
+##### <a name="st-starttime"></a>/st\<StartTime>
 
-指定任务在 HH： MM> 24 小时格式中\<开始（每次启动）的时间。 默认值为本地计算机上的当前时间。 **/St**参数对于分钟、每小时、每天、每周、每月和计划有效。 需要该计划。
+指定任务在一天中的哪一天开始（每次启动）， \<HH:MM> 格式为24小时。 默认值为本地计算机上的当前时间。 **/St**参数对于分钟、每小时、每天、每周、每月和计划有效。 需要该计划。
 
-##### <a name="ri-interval"></a>/ri \<间隔>
+##### <a name="ri-interval"></a>/ri\<Interval>
 
 指定重复间隔，以分钟为单位。 这不适用于计划类型：分钟、小时、ONSTART、ONLOGON 和 ONIDLE。 有效范围为1到599940分钟（599940分钟 = 9999 小时）。 如果指定了/ET 或/DU，则重复间隔默认为10分钟。
 
-##### <a name="et-endtime"></a>/et \<EndTime>
+##### <a name="et-endtime"></a>/et\<EndTime>
 
-指定每分钟或每小时任务计划以\<HH： MM> 24 小时格式结束的时间。 在指定的结束时间之后， **schtasks**不会再次启动任务，直到开始时间重复。 默认情况下，任务计划没有结束时间。 此参数是可选的，仅在每分钟或每小时计划时有效。
-
-有关示例，请参阅：
--   若要计划在非工作时间运行每隔100分钟运行的任务，请**计划一项每** \<N>**分钟**运行一次的任务。
-
-##### <a name="du-duration"></a>/du \<Duration>
-
-指定\<HHHH： MM> 24 小时格式的分钟或小时计划的最大时间长度。 经过指定的时间后， **schtasks**将不会重新启动任务，直到开始时间重复。 默认情况下，任务计划没有最大持续时间。 此参数是可选的，仅在每分钟或每小时计划时有效。
+指定每分钟或每小时任务计划以 \<HH:MM> 24 小时格式结束的时间。 在指定的结束时间之后， **schtasks**不会再次启动任务，直到开始时间重复。 默认情况下，任务计划没有结束时间。 此参数是可选的，仅在每分钟或每小时计划时有效。
 
 有关示例，请参阅：
--   若要计划每3小时运行一次的任务，以便**计划每** \<N>**小时**运行一次的任务。
+-   若要计划在非工作时间100运行的任务，**以计划每** \<N> **分钟**运行一次的任务。
+
+##### <a name="du-duration"></a>/du\<Duration>
+
+以24小时格式指定分钟或每小时计划的最大时间长度 \<HHHH:MM> 。 经过指定的时间后， **schtasks**将不会重新启动任务，直到开始时间重复。 默认情况下，任务计划没有最大持续时间。 此参数是可选的，仅在每分钟或每小时计划时有效。
+
+有关示例，请参阅：
+-   若要计划每隔3小时运行一次的任务，请在中计划每小时运行一次，**以便计划每小时运行一次的任务** \<N> **hours** 。
 
 ##### <a name="k"></a>遇到
 
 停止任务在 **/et**或 **/du**指定的时间运行的程序。 如果不使用 **/k**，则**schtasks**在到达由 **/et**或 **/du**指定的时间后不会重新启动该程序，但如果程序仍在运行，则它不会停止它。 此参数是可选的，仅在每分钟或每小时计划时有效。
 
 有关示例，请参阅：
--   若要计划在非工作时间运行每隔100分钟运行的任务，请**计划一项每** \<N>**分钟**运行一次的任务。
+-   若要计划在非工作时间100运行的任务，**以计划每** \<N> **分钟**运行一次的任务。
 
-##### <a name="sd-startdate"></a>/sd \<开始>
+##### <a name="sd-startdate"></a>/sd\<StartDate>
 
 指定任务计划开始的日期。 默认值为本地计算机上的当前日期。 **/Sd**参数对于所有计划类型有效且可选。
 
@@ -211,13 +211,13 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 下表列出了有效的日期格式。 使用与在本地计算机上的 **"控制面板**" 中 "**区域和语言选项**" 中**选择的格式**最相似的格式。
 
 
-|       值       |                                        描述                                         |
+|       值       |                                        说明                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM>/<DD>/<YYYY> | 用于月份优先格式，例如**英语（美国）** 和**西班牙语（巴拿马）**。 |
 | \<DD>/<MM>/<YYYY> |       用于第一天的格式，如**保加利亚语**和**荷兰语（荷兰）**。        |
 | \<YYYY>/<MM>/<DD> |          用于年份优先格式，如**瑞典语**和**法语（加拿大）**。          |
 
-/ed \<终止>
+/ed\<EndDate>
 
 指定计划的结束日期。 此参数是可选的。 它在一次、ONSTART、ONLOGON 或 ONIDLE 计划中无效。 默认情况下，计划无结束日期。
 
@@ -226,7 +226,7 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 下表列出了有效的日期格式。 使用与在本地计算机上的 **"控制面板**" 中 "**区域和语言选项**" 中**选择的格式**最相似的格式。
 
 
-|       值       |                                        描述                                         |
+|       值       |                                        说明                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM>/<DD>/<YYYY> | 用于月份优先格式，例如**英语（美国）** 和**西班牙语（巴拿马）**。 |
 | \<DD>/<MM>/<YYYY> |       用于第一天的格式，如**保加利亚语**和**荷兰语（荷兰）**。        |
@@ -386,9 +386,9 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/mo {1 - 52}] [/d {<MO
 
 以下命令计划 MyApp 程序每六周在远程计算机上运行。 该命令使用 **/mo**参数来指定间隔。 因为该命令省略了 **/d**参数，所以该任务会在星期一运行。
 
-此命令还使用 **/s**参数来指定远程计算机，并使用 **/u**参数来使用用户的管理员帐户的权限运行命令。 由于省略了 **/p**参数，因此**schtasks.exe**会提示用户输入管理员帐户密码。
+此命令还使用 **/s**参数来指定远程计算机，并使用 **/u**参数来使用用户的管理员帐户的权限运行命令。 由于省略了 **/p**参数， **SchTasks.exe**会提示用户输入管理员帐户密码。
 
-此外，由于命令以远程方式运行，因此命令中的所有路径（包括 MyApp 的路径）都指远程计算机上的路径。
+另外，由于命令以远程方式运行，因此命令中的所有路径（包括要 MyApp.exe 的路径）都指远程计算机上的路径。
 ```
 schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /mo 6 /s Server16 /u Admin01
 ```
@@ -434,7 +434,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 3
 
 该命令使用 **/mo**参数指定每月间隔（每两个月），指定日期指定为 **/d**参数，并使用 **/st**指定时间。 它还使用 **/sd**和 **/ed**参数分别指定开始日期和结束日期。 由于 "**控制面板**" 的 "**区域和语言选项**" 中的 "本地计算机" 设置为 "**英语（南非）** " 选项，因此将以本地格式（YYYY/MM/DD）来指定日期。
 ```
-schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 00:00 /sd 2002/07/01 /ed 2003/06/30 
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 00:00 /sd 2002/07/01 /ed 2003/06/30
 ```
 
 ### <a name="to-schedule-a-task-that-runs-on-a-specific-day-of-the-week"></a><a name=BKMK_spec_day></a>计划任务在一周的特定天运行
@@ -447,7 +447,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/d {<MON - SUN>[,MON -
 
 #### <a name="remarks"></a>备注
 
-周计划中的日期是每周计划的变体。 在每周计划中， **/sc 每周**参数是必需的。 **/Mo** （修饰符）参数是可选的，它指定每次运行任务之间的周数。 **/Mo**的默认值为1（每周）。 **/D**参数是可选的，它将任务计划为在一周的指定日期运行，或在所有日期（\*）运行。 默认值为 "周一（星期一）"。 "每天" 选项（**/d \* **）等效于计划每日任务。
+周计划中的日期是每周计划的变体。 在每周计划中， **/sc 每周**参数是必需的。 **/Mo** （修饰符）参数是可选的，它指定每次运行任务之间的周数。 **/Mo**的默认值为1（每周）。 **/D**参数是可选的，它将任务计划为在一周的指定日期运行，或在所有日期（ \* ）运行。 默认值为 "周一（星期一）"。 "每天" 选项（**/d \* **）等效于计划每日任务。
 
 #### <a name="examples"></a>示例
 
@@ -475,7 +475,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | 
 
 #### <a name="remarks"></a>备注
 
-在此计划类型中， **/sc 月度**参数、 **/mo** （修饰符）参数和 **/d** （day）参数是必需的。 **/Mo** （修饰符）参数指定运行任务的周。 **/D**参数指定一周中的第几天。 （对于此计划类型，只能指定一周中的某一天。）此计划还具有一个可选 **/m** （month）参数，该参数使你可以计划特定月份或每个月\*的任务（）。 **/M**参数的默认值是每月（\*）。
+在此计划类型中， **/sc 月度**参数、 **/mo** （修饰符）参数和 **/d** （day）参数是必需的。 **/Mo** （修饰符）参数指定运行任务的周。 **/D**参数指定一周中的第几天。 （对于此计划类型，只能指定一周中的某一天。）此计划还具有一个可选 **/m** （month）参数，该参数使你可以计划特定月份或每个月的任务（ \* ）。 **/M**参数的默认值是每月（ \* ）。
 
 #### <a name="examples"></a>示例
 
@@ -674,7 +674,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc once /st 14:18 /sd 11/13/2
 ```
 schtasks /create /tn My App /tr myapp.exe /sc weekly /d TUE /ru Admin06
 ```
-在响应中， **schtasks.exe**会提示输入 Admin06 帐户的 "运行身份" 密码，然后显示一条成功消息。
+在响应中， **SchTasks.exe**提示输入 Admin06 帐户的 "运行身份" 密码，然后显示一条成功消息。
 ```
 Please enter the run as password for Admin06: ********
 SUCCESS: The scheduled task My App has successfully been created.
@@ -701,7 +701,7 @@ SUCCESS: The scheduled task My App has successfully been created.
 
 #### <a name="to-run-a-task-only-when-a-particular-user-is-logged-on"></a>仅在特定用户登录时才运行任务
 
-以下命令计划 AdminCheck 程序在每星期五凌晨4:00 的公共计算机上运行，但前提是计算机的管理员登录。
+以下命令计划在每星期五凌晨4:00 在公共计算机上运行 AdminCheck.exe 程序，但前提是计算机的管理员登录。
 
 该命令使用 **/sc**参数来指定每周计划，使用 **/d**参数指定 day，使用 **/st**参数指定开始时间。
 
@@ -734,7 +734,7 @@ schtasks /create /tn Check Admin /tr AdminCheck.exe /sc weekly /d FRI /st 04:00 
 ```
 schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /d 15 /ru System
 ```
-在响应中， **schtasks.exe**显示信息性消息和成功消息。 它不会提示输入密码。
+在响应中， **SchTasks.exe**显示信息性消息和成功消息。 它不会提示输入密码。
 ```
 INFO: The task will be created under user name (NT AUTHORITY\SYSTEM).
 SUCCESS: The Scheduled task My App has successfully been created.
@@ -764,20 +764,20 @@ SUCCESS: The scheduled task My App has successfully been created.
 每个任务仅运行一个程序。 但是，您可以创建运行多个程序的批处理文件，然后计划运行该批处理文件的任务。 下面的过程演示了此方法：
 1. 创建一个批处理文件，用于启动要运行的程序。
 
-   在此示例中，将创建一个批处理文件，该文件启动事件查看器（Eventvwr.msc）和系统监视器（Perfmon）。  
+   在此示例中，将创建一个批处理文件，该文件启动事件查看器（Eventvwr.exe）和系统监视器（Perfmon.exe）。
    - 打开文本编辑器，例如记事本。
-   - 键入每个程序的可执行文件的名称和完全限定路径。 在这种情况下，该文件包含以下语句。  
+   - 键入每个程序的可执行文件的名称和完全限定路径。 在这种情况下，该文件包含以下语句。
      ```
-     C:\Windows\System32\Eventvwr.exe 
+     C:\Windows\System32\Eventvwr.exe
      C:\Windows\System32\Perfmon.exe
-     ```  
-   - 将该文件另存为 MyApps。
-2. 使用**schtasks.exe**创建运行 MyApps 的任务。
+     ```
+   - 将该文件另存为 MyApps.bat。
+2. 使用**Schtasks.exe**创建 MyApps.bat 运行的任务。
 
-   以下命令将创建监视任务，该任务将在每次登录时运行。 它使用 **/tn**参数命名任务，使用 **/Tr**参数运行 MyApps。 它使用 **/sc**参数来指示 OnLogon 计划类型，并使用 **/ru**参数来使用用户的管理员帐户的权限运行该任务。  
+   以下命令将创建监视任务，该任务将在每次登录时运行。 它使用 **/tn**参数命名任务，使用 **/tr**参数 MyApps.bat 运行。 它使用 **/sc**参数来指示 OnLogon 计划类型，并使用 **/ru**参数来使用用户的管理员帐户的权限运行该任务。
    ```
    schtasks /create /tn Monitor /tr C:\MyApps.bat /sc onlogon /ru Reskit\Administrator
-   ```  
+   ```
    此命令的结果是，每当用户登录到计算机时，此任务都会启动事件查看器和系统监视器。
 
 ### <a name="to-schedule-a-task-that-runs-on-a-remote-computer"></a><a name=BKMK_remote></a>计划在远程计算机上运行的任务
@@ -793,7 +793,7 @@ SUCCESS: The scheduled task My App has successfully been created.
 
 以下命令计划 MyApp 程序在 SRV01 远程计算机上每隔10天立即运行一次。 该命令使用 **/s**参数提供远程计算机的名称。 由于本地当前用户是远程计算机的管理员，因此无需使用 **/u**参数（为计划任务提供备用权限）。
 
-请注意，在远程计算机上计划任务时，所有参数都是指远程计算机。 因此， **/tr**参数指定的可执行文件是指远程计算机上 MyApp 的副本。
+请注意，在远程计算机上计划任务时，所有参数都是指远程计算机。 因此， **/tr**参数指定的可执行文件是指远程计算机上 MyApp.exe 的副本。
 ```
 schtasks /create /s SRV01 /tn My App /tr c:\program files\corpapps\myapp.exe /sc daily /mo 10
 ```
@@ -871,7 +871,7 @@ Power Management: Disabled
 -   **Schtasks**不验证程序文件位置或用户帐户密码。 如果没有为用户帐户输入正确的文件位置或正确的密码，则将创建该任务，但该任务不会运行。 此外，如果某个帐户的密码更改或过期，而你不更改任务中保存的密码，则该任务不会运行。
 -   系统帐户没有交互式登录权限。 用户看不到与系统权限一起运行的程序。
 -   每个任务仅运行一个程序。 不过，您可以创建一个批处理文件来启动多个任务，然后计划一个运行该批处理文件的任务。
--   您可以在创建任务后立即对其进行测试。 使用**运行**操作来测试任务，然后检查 SchedLgU 文件（*SystemRoot*\SchedLgU.txt）是否存在错误。
+-   您可以在创建任务后立即对其进行测试。 使用 "**运行**" 操作来测试任务，然后查看 SchedLgU.txt 文件（*SystemRoot*\SchedLgU.txt）以了解是否存在错误。
 
 ## <a name="schtasks-change"></a><a name=BKMK_change></a>schtasks 更改
 
@@ -891,20 +891,20 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 
 |          术语           |                                                                                                                                                                                                                                                                                                                                     定义                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     /tn \<TaskName>     |                                                                                                                                                                                                                                                                                                               标识要更改的任务。 输入任务名称。                                                                                                                                                                                                                                                                                                               |
-|     /s \<计算机>      |                                                                                                                                                                                                                                                                               指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认值为本地计算机。                                                                                                                                                                                                                                                                               |
-|  /u [\<域>\]<User>  |                                                                                                                                                                 用指定用户帐户的权限运行此命令。 默认值是本地计算机当前用户的权限。 指定的用户帐户必须是远程计算机上 Administrators 组的成员。 **/U**和 **/p**参数仅对在远程计算机上更改任务有效（**/s**）。                                                                                                                                                                  |
-|     /p \<密码>      |                                                                                                                                                                                              指定在 **/u**参数中指定的用户帐户的密码。 如果使用 **/u**参数，但省略 **/p**参数或 password 参数，则**schtasks**会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                                                                                                                                                                                               |
-| /ru {[\<域>\]<User> |                                                                                                                                                                                                                                                                                                                                       主板                                                                                                                                                                                                                                                                                                                                       |
-|     /rp \<密码>     |                                                                                                                                                                                                                                                 为现有用户帐户或 **/ru**参数指定的用户帐户指定新密码。 使用本地系统帐户时，将忽略此参数。                                                                                                                                                                                                                                                  |
-|     /tr \<k>      |                                                                                                                                                                                  更改任务运行的程序。 输入可执行文件、脚本文件或批处理文件的完全限定路径和文件名。 如果省略路径，则**schtasks**会假定文件位于\<systemroot> \system32 目录中。 指定的程序将替换任务运行的原始程序。                                                                                                                                                                                  |
-|    /st \<Starttime>     |                                                                                                                                                                                                                                                              使用24小时时间格式 HH： mm 指定任务的开始时间。 例如，14:30 的值相当于 2:30 PM 的12小时制。                                                                                                                                                                                                                                                               |
-|     /ri \<间隔>     |                                                                                                                                                                                                                                                                           指定计划任务的重复间隔，以分钟为单位。 有效范围是 1-599940 （599940分钟 = 9999 小时）。                                                                                                                                                                                                                                                                            |
-|     /et \<EndTime>      |                                                                                                                                                                                                                                                               使用24小时时间格式 HH： mm 指定任务的结束时间。 例如，14:30 的值相当于 2:30 PM 的12小时制。                                                                                                                                                                                                                                                                |
-|     /du \<Duration>     |                                                                                                                                                                                                                                                                                                     指定关闭\<EndTime> 的任务<Duration>，如果指定，则关闭。                                                                                                                                                                                                                                                                                                      |
+|     /tn\<TaskName>     |                                                                                                                                                                                                                                                                                                               标识要更改的任务。 输入任务名称。                                                                                                                                                                                                                                                                                                               |
+|     /s\<Computer>      |                                                                                                                                                                                                                                                                               指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认为本地计算机。                                                                                                                                                                                                                                                                               |
+|  形\<Domain>\]<User>  |                                                                                                                                                                 用指定用户帐户的权限运行此命令。 默认值是本地计算机当前用户的权限。 指定的用户帐户必须是远程计算机上 Administrators 组的成员。 **/U**和 **/p**参数仅对在远程计算机上更改任务有效（**/s**）。                                                                                                                                                                  |
+|     /p\<Password>      |                                                                                                                                                                                              指定在 **/u**参数中指定的用户帐户的密码。 如果使用 **/u**参数，但省略 **/p**参数或 password 参数，则**schtasks**会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                                                                                                                                                                                               |
+| /ru {[\<Domain>\]<User> |                                                                                                                                                                                                                                                                                                                                       主板                                                                                                                                                                                                                                                                                                                                       |
+|     /rp\<Password>     |                                                                                                                                                                                                                                                 为现有用户帐户或 **/ru**参数指定的用户帐户指定新密码。 使用本地系统帐户时，将忽略此参数。                                                                                                                                                                                                                                                  |
+|     /tr\<TaskRun>      |                                                                                                                                                                                  更改任务运行的程序。 输入可执行文件、脚本文件或批处理文件的完全限定路径和文件名。 如果省略路径，则**schtasks**会假定文件位于 \<systemroot> \System32 目录中。 指定的程序将替换任务运行的原始程序。                                                                                                                                                                                  |
+|    /st\<Starttime>     |                                                                                                                                                                                                                                                              使用24小时时间格式 HH： mm 指定任务的开始时间。 例如，14:30 的值相当于 2:30 PM 的12小时制。                                                                                                                                                                                                                                                               |
+|     /ri\<Interval>     |                                                                                                                                                                                                                                                                           指定计划任务的重复间隔，以分钟为单位。 有效范围是 1-599940 （599940分钟 = 9999 小时）。                                                                                                                                                                                                                                                                            |
+|     /et\<EndTime>      |                                                                                                                                                                                                                                                               使用24小时时间格式 HH： mm 指定任务的结束时间。 例如，14:30 的值相当于 2:30 PM 的12小时制。                                                                                                                                                                                                                                                                |
+|     /du\<Duration>     |                                                                                                                                                                                                                                                                                                     指定在 \<EndTime> 或时关闭任务 <Duration> （如果已指定）。                                                                                                                                                                                                                                                                                                      |
 |           遇到            |                                                                                                                                                                   停止任务在 **/et**或 **/du**指定的时间运行的程序。 如果不使用 **/k**，则**schtasks**在到达由 **/et**或 **/du**指定的时间后不会重新启动该程序，但如果程序仍在运行，则它不会停止它。 此参数是可选的，仅在每分钟或每小时计划时有效。                                                                                                                                                                   |
-|    /sd \<开始>     |                                                                                                                                                                                                                                                                                              指定任务应在其上运行的第一个日期。 日期格式为 MM/DD/YYYY。                                                                                                                                                                                                                                                                                               |
-|     /ed \<终止>      |                                                                                                                                                                                                                                                                                                 指定任务应在其上运行的最后日期。 格式为 MM/DD/YYYY。                                                                                                                                                                                                                                                                                                  |
+|    /sd\<StartDate>     |                                                                                                                                                                                                                                                                                              指定任务应在其上运行的第一个日期。 日期格式为 MM/DD/YYYY。                                                                                                                                                                                                                                                                                               |
+|     /ed\<EndDate>      |                                                                                                                                                                                                                                                                                                 指定任务应在其上运行的最后日期。 格式为 MM/DD/YYYY。                                                                                                                                                                                                                                                                                                  |
 |         /ENABLE         |                                                                                                                                                                                                                                                                                                                       指定启用计划任务。                                                                                                                                                                                                                                                                                                                       |
 |        /DISABLE         |                                                                                                                                                                                                                                                                                                                      指定禁用计划任务。                                                                                                                                                                                                                                                                                                                       |
 |           /it           | 指定仅当运行方式用户（运行任务的用户帐户）登录到计算机时才运行计划的任务。</br>此参数不会影响使用系统权限运行的任务，也不会影响已设置交互的属性的任务。 不能使用 change 命令从任务中删除仅交互属性。</br>默认情况下，"运行方式用户" 是计划任务时本地计算机的当前用户，如果使用了一个，则为 " **/u** " 参数指定的帐户。 但是，如果该命令包含 **/ru**参数，则 "以用户身份运行" 是由 **/ru**参数指定的帐户。 |
@@ -924,25 +924,25 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 
 ### <a name="to-change-the-program-that-a-task-runs"></a>更改任务运行的程序
 
-以下命令将病毒检查任务运行的程序从 VirusCheck 更改为 VirusCheck2。 此命令使用 **/tn**参数来标识任务，使用 **/tr**参数为任务指定新程序。 （不能更改任务名称。）
+以下命令将运行病毒检查任务的程序从 VirusCheck.exe 更改为 VirusCheck2.exe。 此命令使用 **/tn**参数来标识任务，使用 **/tr**参数为任务指定新程序。 （不能更改任务名称。）
 ```
 schtasks /change /tn Virus Check /tr C:\VirusCheck2.exe
 ```
-在响应中， **schtasks.exe**显示以下成功消息：
+在响应中， **SchTasks.exe**显示以下成功消息：
 ```
 SUCCESS: The parameters of the scheduled task Virus Check have been changed.
 ```
-此命令的结果是，病毒检查任务现在运行 VirusCheck2。
+此命令的结果是，病毒检查任务现在运行 VirusCheck2.exe。
 
 ### <a name="to-change-the-password-for-a-remote-task"></a>更改远程任务的密码
 
-以下命令更改远程计算机 Svr01 上的 RemindMe 任务的用户帐户密码。 该命令使用 **/tn**参数来标识该任务，使用 **/s**参数来指定远程计算机。 它使用 **/rp**参数指定新密码p@ssWord3。
+以下命令更改远程计算机 Svr01 上的 RemindMe 任务的用户帐户密码。 该命令使用 **/tn**参数来标识该任务，使用 **/s**参数来指定远程计算机。 它使用 **/rp**参数指定新密码 p@ssWord3 。
 
 只要用户帐户的密码过期或更改，就需要执行此过程。 如果任务中保存的密码不再有效，则任务不会运行。
 ```
 schtasks /change /tn RemindMe /s Svr01 /rp p@ssWord3
 ```
-在响应中， **schtasks.exe**显示以下成功消息：
+在响应中， **SchTasks.exe**显示以下成功消息：
 ```
 SUCCESS: The parameters of the scheduled task RemindMe have been changed.
 ```
@@ -950,21 +950,21 @@ SUCCESS: The parameters of the scheduled task RemindMe have been changed.
 
 ### <a name="to-change-the-program-and-user-account-for-a-task"></a>更改任务的程序和用户帐户
 
-下面的命令将更改任务运行的程序，并更改运行任务的用户帐户。 实质上，它对新任务使用旧计划。 此命令更改 ChkNews 任务，该任务将在早上凌晨9:00 启动 Notepad.exe，以改为启动 Internet Explorer。
+下面的命令将更改任务运行的程序，并更改运行任务的用户帐户。 实质上，它对新任务使用旧计划。 此命令更改 ChkNews 任务，该任务在上午9:00 上午开始 Notepad.exe 启动 Internet Explorer。
 
 该命令使用 **/tn**参数来标识该任务。 它使用 **/tr**参数更改任务运行的程序，使用 **/ru**参数更改运行任务的用户帐户。
 
-省略了用于提供用户帐户密码的 **/ru**和 **/rp**参数。 您必须提供帐户的密码，但您可以使用 **/ru**和 **/rp**参数并以明文形式键入密码，或者等待**schtasks.exe**提示您输入密码，然后在 "模糊文本" 中输入密码。
+省略了用于提供用户帐户密码的 **/ru**和 **/rp**参数。 您必须提供帐户的密码，但您可以使用 **/ru**和 **/rp**参数，并以明文形式键入密码，或者等待**SchTasks.exe**提示输入密码，然后以模糊文本输入密码。
 ```
 schtasks /change /tn ChkNews /tr c:\program files\Internet Explorer\iexplore.exe /ru DomainX\Admin01
 ```
-在响应中， **schtasks.exe**请求用户帐户的密码。 它会遮盖您键入的文本，因此密码不可见。
+在 "响应" 中， **SchTasks.exe**请求用户帐户的密码。 它会遮盖您键入的文本，因此密码不可见。
 ```
-Please enter the password for DomainX\Admin01: 
+Please enter the password for DomainX\Admin01:
 ```
 请注意， **/tn**参数会标识任务，而 **/tr**和 **/ru**参数更改任务的属性。 不能使用其他参数来识别任务，也不能更改任务名称。
 
-在响应中， **schtasks.exe**显示以下成功消息：
+在响应中， **SchTasks.exe**显示以下成功消息：
 ```
 SUCCESS: The parameters of the scheduled task ChkNews have been changed.
 ```
@@ -974,14 +974,14 @@ SUCCESS: The parameters of the scheduled task ChkNews have been changed.
 
 以下命令将更改 SecurityScript 任务，使其以系统帐户的权限运行。 它使用 * */ru * * 参数来指示系统帐户。
 ```
-schtasks /change /tn SecurityScript /ru 
+schtasks /change /tn SecurityScript /ru
 ```
-在响应中， **schtasks.exe**显示以下成功消息：
+在响应中， **SchTasks.exe**显示以下成功消息：
 ```
 INFO: The run as user name for the scheduled task SecurityScript will be changed to NT AUTHORITY\SYSTEM.
 SUCCESS: The parameters of the scheduled task SecurityScript have been changed.
 ```
-由于使用系统帐户权限运行的任务不需要密码，因此**schtasks.exe**不会提示输入密码。
+由于使用系统帐户权限运行的任务不需要密码，因此**SchTasks.exe**不会提示输入密码。
 
 ### <a name="to-run-a-program-only-when-i-am-logged-on"></a>仅在登录时运行程序
 
@@ -991,7 +991,7 @@ SUCCESS: The parameters of the scheduled task SecurityScript have been changed.
 ```
 schtasks /change /tn MyApp /it
 ```
-在响应中， **schtasks.exe**显示以下成功消息。
+在响应中， **SchTasks.exe**显示以下成功消息。
 ```
 SUCCESS: The parameters of the scheduled task MyApp have been changed.
 ```
@@ -1010,17 +1010,17 @@ schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 |         术语          |                                                                                                                                                                 定义                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /tn \<TaskName>    |                                                                                                                                                       必需。 标识任务。                                                                                                                                                        |
-|    /s \<计算机>     |                                                                                                           指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认值为本地计算机。                                                                                                           |
-| /u [\<域>\]<User> | 用指定用户帐户的权限运行此命令。 默认情况下，使用本地计算机当前用户的权限运行命令。</br>指定的用户帐户必须是远程计算机上 Administrators 组的成员。 **/U**和 **/p**参数仅在使用 **/s**时有效。 |
-|    /p \<密码>     |                          指定在 **/u**参数中指定的用户帐户的密码。 如果使用 **/u**参数，但省略 **/p**参数或 password 参数，则**schtasks**会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                           |
+|    /tn\<TaskName>    |                                                                                                                                                       必需。 标识任务。                                                                                                                                                        |
+|    /s\<Computer>     |                                                                                                           指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认为本地计算机。                                                                                                           |
+| 形\<Domain>\]<User> | 用指定用户帐户的权限运行此命令。 默认情况下，使用本地计算机当前用户的权限运行命令。</br>指定的用户帐户必须是远程计算机上 Administrators 组的成员。 **/U**和 **/p**参数仅在使用 **/s**时有效。 |
+|    /p\<Password>     |                          指定在 **/u**参数中指定的用户帐户的密码。 如果使用 **/u**参数，但省略 **/p**参数或 password 参数，则**schtasks**会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                           |
 |          /?           |                                                                                                                                                    在命令提示符下显示帮助。                                                                                                                                                     |
 
 ### <a name="remarks"></a>备注
 
--   使用此操作来测试您的任务。 如果任务未运行，请检查任务计划程序服务事务日志、 \<系统根目录> \schedlgu.txt，以了解错误。
+-   使用此操作来测试您的任务。 如果任务未运行，请检查任务计划程序服务事务日志 \<Systemroot>\SchedLgU.txt，以了解错误。
 -   运行任务不会影响任务计划，也不会更改为任务计划的下一个运行时间。
--   若要远程运行任务，则必须在远程计算机上计划任务。 运行该任务时，任务仅在远程计算机上运行。 若要验证某一任务是否正在远程计算机上运行，请使用任务管理器或任务计划程序的\<事务日志，Systemroot> \schedlgu.txt。
+-   若要远程运行任务，则必须在远程计算机上计划任务。 运行该任务时，任务仅在远程计算机上运行。 若要验证任务是否正在远程计算机上运行，请使用任务管理器或任务计划程序事务日志 \<Systemroot>\SchedLgU.txt。
 
 ### <a name="examples"></a>示例
 
@@ -1030,7 +1030,7 @@ schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 ```
 schtasks /run /tn Security Script
 ```
-作为响应， **schtasks.exe**启动与任务相关联的脚本并显示以下消息：
+在响应中， **SchTasks.exe**启动与任务相关联的脚本并显示以下消息：
 ```
 SUCCESS: Attempted to run the scheduled task Security Script.
 ```
@@ -1042,7 +1042,7 @@ SUCCESS: Attempted to run the scheduled task Security Script.
 ```
 schtasks /run /tn Update /s Svr01
 ```
-在这种情况下， **schtasks.exe**显示以下错误消息：
+在这种情况下， **SchTasks.exe**会显示以下错误消息：
 ```
 ERROR: Unable to run the scheduled task Update.
 ```
@@ -1058,7 +1058,7 @@ Verify that the task's Run-as name and password are valid and try again.
 ```
 schtasks /change /tn Update /s Svr01 /ru Administrator /rp PassW@rd3
 ```
-**更改**命令完成后，将重复**运行**命令。 此时，update.exe 程序启动，而**schtasks.exe**将显示以下消息：
+**更改**命令完成后，将重复**运行**命令。 此时，Update.exe 程序启动并**SchTasks.exe**显示以下消息：
 ```
 SUCCESS: Attempted to run the scheduled task Update.
 ```
@@ -1078,25 +1078,25 @@ schtasks /end /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 |         术语          |                                                                                                                                                               定义                                                                                                                                                                |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /tn \<TaskName>    |                                                                                                                                         必需。 标识启动程序的任务。                                                                                                                                         |
-|    /s \<计算机>     |                                                                                                                        指定远程计算机的名称或 IP 地址。 默认值为本地计算机。                                                                                                                        |
-| /u [\<域>\]<User> | 用指定用户帐户的权限运行此命令。 默认情况下，使用本地计算机当前用户的权限运行命令。 指定的用户帐户必须是远程计算机上 Administrators 组的成员。 **/U**和 **/p**参数仅在使用 **/s**时有效。 |
-|    /p \<密码>     |                        指定在 **/u**参数中指定的用户帐户的密码。 如果使用 **/u**参数，但省略 **/p**参数或 password 参数，则**schtasks**会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                         |
+|    /tn\<TaskName>    |                                                                                                                                         必需。 标识启动程序的任务。                                                                                                                                         |
+|    /s\<Computer>     |                                                                                                                        指定远程计算机的名称或 IP 地址。 默认为本地计算机。                                                                                                                        |
+| 形\<Domain>\]<User> | 用指定用户帐户的权限运行此命令。 默认情况下，使用本地计算机当前用户的权限运行命令。 指定的用户帐户必须是远程计算机上 Administrators 组的成员。 **/U**和 **/p**参数仅在使用 **/s**时有效。 |
+|    /p\<Password>     |                        指定在 **/u**参数中指定的用户帐户的密码。 如果使用 **/u**参数，但省略 **/p**参数或 password 参数，则**schtasks**会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                         |
 |          /?           |                                                                                                                                                             显示帮助。                                                                                                                                                              |
 
 ### <a name="remarks"></a>备注
 
-**Schtasks.exe**仅结束由计划任务启动的程序的实例。 若要停止其他进程，请使用 TaskKill。 有关详细信息，请参阅[Taskkill](taskkill.md)。
+**SchTasks.exe**仅结束由计划任务启动的程序的实例。 若要停止其他进程，请使用 TaskKill。 有关详细信息，请参阅[Taskkill](taskkill.md)。
 
 ### <a name="examples"></a>示例
 
 ### <a name="to-end-a-task-on-a-local-computer"></a>在本地计算机上结束任务
 
-以下命令将停止由 My Notepad 任务启动的 Notepad.exe 实例：
+以下命令将停止 My Notepad 任务启动 Notepad.exe 的实例：
 ```
 schtasks /end /tn My Notepad
 ```
-在响应中， **schtasks.exe**停止任务启动的 notepad.exe 实例，并显示以下成功消息：
+作为响应， **SchTasks.exe**会停止任务启动 Notepad.exe 的实例，并显示以下成功消息：
 ```
 SUCCESS: The scheduled task My Notepad has been terminated successfully.
 ```
@@ -1107,7 +1107,7 @@ SUCCESS: The scheduled task My Notepad has been terminated successfully.
 ```
 schtasks /end /tn InternetOn /s Svr01
 ```
-在响应中， **schtasks.exe**停止任务启动的 Internet Explorer 实例，并显示以下成功消息：
+在响应中， **SchTasks.exe**停止任务启动的 Internet Explorer 实例，并显示以下成功消息：
 ```
 SUCCESS: The scheduled task InternetOn has been terminated successfully.
 ```
@@ -1126,11 +1126,11 @@ schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> 
 
 |         术语          |                                                                                                                                                                 定义                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   /tn {\<TaskName>    |                                                                                                                                                                     \*}                                                                                                                                                                     |
+|   tn\<TaskName>    |                                                                                                                                                                     \*}                                                                                                                                                                     |
 |          /f           |                                                                                                                                  禁止显示确认消息。 删除任务但不发出警告。                                                                                                                                  |
-|    /s \<计算机>     |                                                                                                           指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认值为本地计算机。                                                                                                           |
-| /u [\<域>\]<User> | 用指定用户帐户的权限运行此命令。 默认情况下，使用本地计算机当前用户的权限运行命令。</br>指定的用户帐户必须是远程计算机上 Administrators 组的成员。 **/U**和 **/p**参数仅在使用 **/s**时有效。 |
-|    /p \<密码>     |                          指定在 **/u**参数中指定的用户帐户的密码。 如果使用 **/u**参数，但省略 **/p**参数或 password 参数，则**schtasks**会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                           |
+|    /s\<Computer>     |                                                                                                           指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认为本地计算机。                                                                                                           |
+| 形\<Domain>\]<User> | 用指定用户帐户的权限运行此命令。 默认情况下，使用本地计算机当前用户的权限运行命令。</br>指定的用户帐户必须是远程计算机上 Administrators 组的成员。 **/U**和 **/p**参数仅在使用 **/s**时有效。 |
+|    /p\<Password>     |                          指定在 **/u**参数中指定的用户帐户的密码。 如果使用 **/u**参数，但省略 **/p**参数或 password 参数，则**schtasks**会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                           |
 |          /?           |                                                                                                                                                    在命令提示符下显示帮助。                                                                                                                                                     |
 
 ### <a name="remarks"></a>备注
@@ -1146,9 +1146,9 @@ schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> 
 ```
 schtasks /delete /tn Start Mail /s Svr16
 ```
-在响应中， **schtasks.exe**显示以下确认消息。 若要删除任务，请按 Y<strong>。</strong>若要取消命令，请键入**n**：
+在响应中， **SchTasks.exe**显示以下确认消息。 若要删除任务，请按 Y<strong>。</strong>若要取消命令，请键入**n**：
 ```
-WARNING: Are you sure you want to remove the task Start Mail (Y/N )? 
+WARNING: Are you sure you want to remove the task Start Mail (Y/N )?
 SUCCESS: The scheduled task Start Mail was successfully deleted.
 ```
 
@@ -1158,7 +1158,7 @@ SUCCESS: The scheduled task Start Mail was successfully deleted.
 ```
 schtasks /delete /tn * /f
 ```
-在响应中， **schtasks.exe**显示以下成功消息，指示已计划的唯一任务 SecureScript。
+在响应中， **SchTasks.exe**将显示以下成功消息，指示已计划的唯一任务（SecureScript）已被删除。
 
 `SUCCESS: The scheduled task SecureScript was successfully deleted.`
 
@@ -1177,17 +1177,17 @@ schtasks [/query] [/fo {TABLE | LIST | CSV}] [/nh] [/v] [/s <Computer> [/u [<Dom
 |         术语          |                                                                                                                                                                 定义                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /query        |                                                                                                                        操作名称是可选的。 在不使用任何参数的情况下键入**schtasks**会执行查询。                                                                                                                         |
-|      /fo \<格式>    |  指定输出格式。 有效值为表、列表和 CSV                                                                                                                                 |
+|      /fo\<format>    |  指定输出格式。 有效值为表、列表和 CSV                                                                                                                                 |
 |          /nh          |                                                                                                            省略表显示的列标题。 此参数对**表**和**CSV**输出格式有效。                                                                                                             |
 |          /v           |                                                                                                         向显示添加任务的高级属性。</br>使用 **/v**的查询应该设置为**LIST**或**CSV**格式。                                                                                                          |
-|    /s \<计算机>     |                                                                                                           指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认值为本地计算机。                                                                                                           |
-| /u [\<域>\]<User> | 用指定用户帐户的权限运行此命令。 默认情况下，使用本地计算机当前用户的权限运行命令。</br>指定的用户帐户必须是远程计算机上 Administrators 组的成员。 **/U**和 **/p**参数仅在使用 **/s**时有效。 |
-|    /p \<密码>     |                                        指定在 **/u**参数中指定的用户帐户的密码。 如果使用 **/u**，但省略 **/p**或 password 参数，则**schtasks**会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                                         |
+|    /s\<Computer>     |                                                                                                           指定远程计算机的名称或 IP 地址（带有或不带反斜杠）。 默认为本地计算机。                                                                                                           |
+| 形\<Domain>\]<User> | 用指定用户帐户的权限运行此命令。 默认情况下，使用本地计算机当前用户的权限运行命令。</br>指定的用户帐户必须是远程计算机上 Administrators 组的成员。 **/U**和 **/p**参数仅在使用 **/s**时有效。 |
+|    /p\<Password>     |                                        指定在 **/u**参数中指定的用户帐户的密码。 如果使用 **/u**，但省略 **/p**或 password 参数，则**schtasks**会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                                         |
 |          /?           |                                                                                                                                                    在命令提示符下显示帮助。                                                                                                                                                     |
 
 ### <a name="remarks"></a>备注
 
-**Schtasks.exe**仅结束由计划任务启动的程序的实例。 若要停止其他进程，请使用 TaskKill。 有关详细信息，请参阅[Taskkill](taskkill.md)。
+**SchTasks.exe**仅结束由计划任务启动的程序的实例。 若要停止其他进程，请使用 TaskKill。 有关详细信息，请参阅[Taskkill](taskkill.md)。
 
 ### <a name="examples"></a>示例
 
@@ -1198,7 +1198,7 @@ schtasks [/query] [/fo {TABLE | LIST | CSV}] [/nh] [/v] [/s <Computer> [/u [<Dom
 schtasks
 schtasks /query
 ```
-作为响应， **schtasks.exe**以默认的简单表格式显示任务，如下表所示：
+作为响应， **SchTasks.exe**以默认的简单表格式显示任务，如下表所示：
 ```
 TaskName Next Run Time Status
 ========================= ======================== ==============
@@ -1212,7 +1212,7 @@ SecureScript 14:42:00 PM , 2/4/2001
 
 **schtasks/query/fo LIST/v**
 
-作为响应， **schtasks.exe**显示所有任务的详细属性列表。 以下显示的任务列表显示计划在凌晨4:00 运行的任务。 在每个月的最后一个星期五：
+作为响应， **SchTasks.exe**显示所有任务的详细属性列表。 以下显示的任务列表显示计划在凌晨4:00 运行的任务。 在每个月的最后一个星期五：
 ```
 HostName: RESKIT01
 TaskName: SecureScript
@@ -1252,11 +1252,11 @@ Power Mgmt: Stop On Battery Mode: Disabled
 
 以下命令请求为远程计算机计划的任务列表，并将任务添加到本地计算机上以逗号分隔的日志文件中。 可以使用此命令格式收集和跟踪为多台计算机计划的任务。
 
-该命令使用 **/s**参数来识别远程计算机 Reskit16，使用 **/fo**参数指定格式，使用 **/nh**参数来禁止显示列标题。 **>>** 追加符号会将输出重定向到本地计算机 Svr01 上的 p0102 任务日志。 由于此命令在远程计算机上运行，因此本地计算机的路径必须是完全限定的。
+该命令使用 **/s**参数来识别远程计算机 Reskit16，使用 **/fo**参数指定格式，使用 **/nh**参数来禁止显示列标题。 **>>** 追加符号会将输出重定向到本地计算机 Svr01 上的任务日志 p0102.csv。 由于此命令在远程计算机上运行，因此本地计算机的路径必须是完全限定的。
 ```
 schtasks /query /s Reskit16 /fo csv /nh >> \\svr01\data\tasklogs\p0102.csv
 ```
-作为响应， **schtasks.exe**将为 Reskit16 计算机计划的任务添加到本地计算机 Svr01 上的 p0102 文件中。
+在响应中， **SchTasks.exe**将为 Reskit16 计算机计划的任务添加到本地计算机 Svr01 上的 p0102.csv 文件中。
 
 ## <a name="additional-references"></a>其他参考
 

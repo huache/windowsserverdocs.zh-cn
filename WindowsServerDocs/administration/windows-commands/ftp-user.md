@@ -1,6 +1,6 @@
 ---
-title: ftp 用户
-description: Ftp 用户命令的参考主题，用于指定远程计算机的用户。
+title: ftp user
+description: Ftp 用户命令的参考文章，用于指定远程计算机的用户。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0773084ee718db37d6c79009d66d754283f94c8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e6a01cbea0de80bfa78194d5b2d559a894d4ed77
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820257"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932365"
 ---
-# <a name="ftp-user"></a>ftp 用户
+# <a name="ftp-user"></a>ftp user
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

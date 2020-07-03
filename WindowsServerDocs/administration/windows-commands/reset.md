@@ -1,6 +1,6 @@
 ---
 title: reset
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0701324ad1ee94cc645c7519d81fef7357b6a34a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8a412eff7bdf432608a999edb4531074ed5e8f26
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722347"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933092"
 ---
 # <a name="reset"></a>reset
 
 
 
-将 DiskShadow 重置为默认状态。 在分隔复合 DiskShadow 操作（如**创建**、**导入**、**备份**或**还原**）时，**重置**特别有用。
+将 DiskShadow.exe 重置为默认状态。 在分隔复合 DiskShadow 操作（如**创建**、**导入**、**备份**或**还原**）时，**重置**特别有用。
 
 ## <a name="syntax"></a>语法
 

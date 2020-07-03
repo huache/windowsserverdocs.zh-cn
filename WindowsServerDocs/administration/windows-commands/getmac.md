@@ -1,6 +1,6 @@
 ---
 title: getmac
-description: Getmac 命令的参考主题，它返回媒体访问控制（MAC）地址，以及与每个本地或跨网络相关联的网络协议的列表。
+description: Getmac 命令的参考文章，该命令返回媒体访问控制（MAC）地址，以及与每个、本地或跨网络相关联的网络协议列表。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b84218b5506770bbefd5af8c89801547cc658f88
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 345daa310b075f8a094dd8a87e7c1c0d3694ab10
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819077"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932345"
 ---
 # <a name="getmac"></a>getmac
 
@@ -32,7 +32,7 @@ getmac[.exe][/s <computer> [/u <domain\<user> [/p <password>]]][/fo {table | lis
 
 | 参数 | 说明 |
 | --------- |------------ |
-| /s`<computer>` | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。 |
+| /s`<computer>` | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认为本地计算机。 |
 | /u`<domain>\<user>` | 使用*user*或*domain\user*指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
 | /p`<password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
 | /fo {table | list | .csv | 指定用于查询输出的格式。 有效值为**table**、 **list**和**csv**。 输出的默认格式为**table**。 |

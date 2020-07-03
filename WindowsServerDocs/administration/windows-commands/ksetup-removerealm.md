@@ -1,6 +1,6 @@
 ---
 title: ksetup removerealm
-description: Ksetup removerealm 命令的参考主题，用于从注册表中删除指定领域的所有信息。
+description: 用于从注册表中删除指定领域的所有信息的 ksetup removerealm 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5da1be77a3b585e566bfd3b051b2fb391b326f32
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0330f7b5f9121da2fce99985fe116be46eb1c9d9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817607"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933666"
 ---
 # <a name="ksetup-removerealm"></a>ksetup removerealm
 

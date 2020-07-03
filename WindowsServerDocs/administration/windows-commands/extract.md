@@ -1,6 +1,6 @@
 ---
 title: extract
-description: "\"提取\" 命令的参考主题，它从源位置提取文件。"
+description: 用于从源位置提取文件的 "提取" 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbadcc555fc9bb0b02e568b1126a317a9d59d336
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1de26d444f8c8fdc838fc2fe0c662afefe8c172c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437182"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932385"
 ---
 # <a name="extract"></a>extract
 
@@ -34,7 +34,7 @@ extract [/y] /c source destination
 | --------- | ----------- |
 | 程序包 | 如果要提取两个或更多文件，请使用。 |
 | filename | 要从 cab 文件中提取的文件的名称。 可以使用通配符和多个文件名（由空格分隔）。 |
-| 源 | 压缩文件（只有一个文件的文件柜）。 |
+| source | 压缩文件（只有一个文件的文件柜）。 |
 | newname | 用于为提取的文件指定的新文件名。 如果未提供，则使用原始名称。 |
 | /a | 处理所有 cabinet。 从前面提到的第一个 cabinet 开始，遵循 cabinet 链。 |
 | /c | 将源文件复制到目标（从 DMF 磁盘复制）。 |

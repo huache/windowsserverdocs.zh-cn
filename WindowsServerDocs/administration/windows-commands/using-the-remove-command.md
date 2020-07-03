@@ -1,6 +1,6 @@
 ---
 title: remove
-description: 删除的参考主题，它删除各种与驱动程序相关的信息。
+description: 删除的参考文章，用于删除各种与驱动程序相关的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c80b21853b878fbe931c890b0d45acfa9aa188b1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 42d429099c135c1376cc831bf59f3d1aaa27dcef
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720434"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932373"
 ---
 # <a name="remove"></a>remove
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 ## <a name="subcommands"></a>个子
-|Subommand|描述|
+|Subommand|说明|
 |-------|--------|
 |[使用删除图像命令](using-the-remove-image-command.md)|从服务器中删除启动或安装映像。|
 |[使用 ImageGroup 命令](using-the-remove-imagegroup-command.md)|从服务器中删除映像组。|

@@ -1,6 +1,6 @@
 ---
-title: 回到
-description: '* * * * 的参考主题'
+title: revert
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b967904c28661be82909ebcc0aa7cb42c73e418c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8d2d8bfbfa10df9776e849b1450c2fce47c097b7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722326"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933042"
 ---
-# <a name="revert"></a>回到
+# <a name="revert"></a>revert
 
 
 
@@ -30,7 +30,7 @@ revert <ShadowCopyID>
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<ShadowCopyID>|指定卷的卷影副本 ID。|
 

@@ -1,6 +1,6 @@
 ---
 title: Scwcmd 回滚
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 288c5bb14602e895648cfdc1535b734a823b7233
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b329791b16e333e38669258eeeedfa8d65f334db
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820957"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932644"
 ---
 # <a name="scwcmd-rollback"></a>Scwcmd: rollback
 
@@ -32,14 +32,14 @@ scwcmd rollback /m:<ComputerName> [/u:<UserName>] [/pw:<Password>]
 
 |参数|说明|
 |---------|-----------|
-|/m： \< ComputerName>|指定应在其中执行回滚操作的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。|
-|/u： \< UserName>|指定执行远程回滚时要使用的备用用户帐户。 默认值为已登录的用户。|
-|/pw： \< 密码>|指定执行远程回滚时要使用的备用用户凭据。 默认值为已登录的用户。|
+|一样\<ComputerName>|指定应在其中执行回滚操作的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。|
+|/u\<UserName>|指定执行远程回滚时要使用的备用用户帐户。 默认值为已登录的用户。|
+|pw\<Password>|指定执行远程回滚时要使用的备用用户凭据。 默认值为已登录的用户。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
 
-Scwcmd 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
+Scwcmd.exe 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
 
 ## <a name="examples"></a>示例
 

@@ -1,6 +1,6 @@
 ---
 title: shift
-description: 班次的参考主题，它更改批处理文件中批处理参数的位置。
+description: 班次的参考文章，更改批处理文件中批处理参数的位置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 870bda19de3426fd7007020efb2f3db39bf654c8
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: c72f1f2390a1adaa993be2caa7954d72dede51e9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433161"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932581"
 ---
 # <a name="shift"></a>shift
 
@@ -32,7 +32,7 @@ shift [/n <N>]
 
 |参数|说明|
 |---------|-----------|
-|/n \< n>|指定从第*n*个参数开始移位，其中*n*是从0到8的任何值。 需要命令扩展，默认情况下已启用。|
+|/n\<N>|指定从第*n*个参数开始移位，其中*n*是从0到8的任何值。 需要命令扩展，默认情况下已启用。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -45,13 +45,13 @@ shift [/n <N>]
 
 ## <a name="examples"></a>示例
 
-名为 Mycopy 的示例批处理文件中的以下行演示了如何对任意数量的批处理参数使用**shift** 。 在此示例中，Mycopy 将文件列表复制到特定目录。 批处理参数由目录和文件名参数表示。
+示例批处理文件中的以下行称为 Mycopy.bat 演示如何对任意数量的批处理参数使用**shift** 。 在此示例中，Mycopy.bat 将文件列表复制到特定目录。 批处理参数由目录和文件名参数表示。
 ```
-@echo off 
+@echo off
 rem MYCOPY.BAT copies any number of files
 rem to a directory.
 rem The command uses the following syntax:
-rem mycopy dir file1 file2 ... 
+rem mycopy dir file1 file2 ...
 set todir=%1
 :getfile
 shift

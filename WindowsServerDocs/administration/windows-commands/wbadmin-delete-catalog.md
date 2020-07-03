@@ -1,6 +1,6 @@
 ---
-title: wbadmin 删除目录
-description: Wbadmin delete catalog 的参考主题，用于删除存储在本地计算机上的备份目录。
+title: wbadmin delete catalog
+description: 用于 wbadmin delete catalog 的参考文章，用于删除存储在本地计算机上的备份目录。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4903c7ad2996a9f69d20f4711364669b87366527
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: ec2c35fc8a279c604f76c71dc6ed9aeb50a0ffd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821437"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933725"
 ---
-# <a name="wbadmin-delete-catalog"></a>wbadmin 删除目录
+# <a name="wbadmin-delete-catalog"></a>wbadmin delete catalog
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: Scwcmd 转换
-description: '* * * * 的参考主题'
+description: '* * * * 的参考文章'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86c88f0207a53da813f5d4eaed399375bfc5bc02
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b70557b64a4cb68a0435bee9db033c893186dc0c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820947"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932639"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: transform
 
@@ -39,17 +39,17 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 |参数|说明|
 |---------|-----------|
-|/p： \< Policyfile>|指定应应用的 .xml 策略文件的路径和文件名。 必须指定此参数。|
-|/g： \< GPODisplayName>|指定 GPO 的显示名称。 必须指定此参数。|
+|/p\<Policyfile.xml>|指定应应用的 .xml 策略文件的路径和文件名。 必须指定此参数。|
+|/g\<GPODisplayName>|指定 GPO 的显示名称。 必须指定此参数。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
 
-Scwcmd 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
+Scwcmd.exe 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
 
 ## <a name="examples"></a>示例
 
-若要从名为 FileServerPolicy 的文件中创建名为 FileServerSecurity 的 GPO，请键入：
+若要从名为 FileServerPolicy.xml 的文件中创建名为 FileServerSecurity 的 GPO，请键入：
 ```
 scwcmd transform /p:FileServerPolicy.xml /g:FileServerSecurity
 ```

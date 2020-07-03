@@ -1,6 +1,6 @@
 ---
 title: 拒绝-AutoaddDevices
-description: 拒绝-AutoaddDevices 的参考主题，拒绝等待管理审批的计算机。
+description: 拒绝-AutoaddDevices 的参考文章，拒绝等待管理审批的计算机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e377d4e2d4aecea2e0ba3af023af39ab7695c0a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2b678f7a9fc875dfeebf735475db3adfb7ad9ae7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725928"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932421"
 ---
 # <a name="reject-autoadddevices"></a>拒绝-AutoaddDevices
 
@@ -26,9 +26,9 @@ ms.locfileid: "82725928"
 wdsutil [Options] /Reject-AutoaddDevices [/Server:<Server name>] /RequestId:<Request ID or ALL>
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
-|[/Server：<Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
 |/RequestId： &#124; 所有> <请求 ID|指定分配给挂起计算机的请求 ID。 若要拒绝所有待定计算机，请指定**all**。|
 ## <a name="examples"></a>示例
 若要拒绝一台计算机，请键入：
@@ -40,7 +40,7 @@ wdsutil /Reject-AutoaddDevices /RequestId:12
 wdsutil /verbose /Reject-AutoaddDevices /Server:MyWDSServer /RequestId:ALL
 ```
 ## <a name="additional-references"></a>其他参考
-- [使用](command-line-syntax-key.md)
-[AutoaddDevices 命令](using-the-approve-autoadddevices-command.md)
-的命令行语法键使用[AutoaddDevices 命令](using-the-get-autoadddevices-command.md)[的 AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)
-
+- [命令行语法关键字](command-line-syntax-key.md) 
+[使用 AutoaddDevices 命令](using-the-approve-autoadddevices-command.md) 
+[使用 AutoaddDevices 命令](using-the-delete-autoadddevices-command.md) 
+[使用 AutoaddDevices 命令](using-the-get-autoadddevices-command.md)
