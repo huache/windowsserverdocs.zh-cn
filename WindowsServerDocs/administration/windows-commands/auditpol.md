@@ -1,6 +1,6 @@
 ---
 title: auditpol
-description: 用于显示有关和执行函数来操作审核策略的 auditpol 命令的参考主题。
+description: Auditpol 命令的参考文章，其中显示了有关的信息和执行函数来操作审核策略。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89fee7ccd3b6671a6f2633c3b5d15d0cbee261fa
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f3f503b957175ba2a3997202d83c171cf8683032
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718837"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923669"
 ---
 # <a name="auditpol"></a>auditpol
 
@@ -42,7 +42,7 @@ auditpol command [<sub-command><options>]
 
 ### <a name="parameters"></a>参数
 
-| 子命令 | 描述 |
+| 子命令 | 说明 |
 | ----------- | ----------- |
 | /get | 显示当前审核策略。 有关详细信息，请参阅[auditpol get](auditpol-get.md) for 语法和 options。 |
 | /set | 设置审核策略。 有关详细信息，请参阅适用于语法和选项的[auditpol 集](auditpol-set.md)。 |

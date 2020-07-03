@@ -1,6 +1,6 @@
 ---
 title: forfiles
-description: Forfiles 命令的参考主题，用于在一个或一组文件上选择并运行命令。
+description: Forfiles 命令的参考文章，用于在一组文件或一组文件上选择并运行命令。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 96ef7d016bd13961a4814ba4cd09095aed4f0e97
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: 26c443aa05d081fc257dc49d2f2c7f6a9adae865
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716842"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922390"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -28,7 +28,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /P`<pathname>` | 指定从其开始搜索的路径。 默认情况下，搜索从当前工作目录开始。 |
 | 一样`<searchmask>` | 根据指定的搜索掩码搜索文件。 默认的 searchmask 为 `*` 。 |
@@ -55,7 +55,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
     | @FDATE | 文件中上次修改的日期戳。 |
     | @FTIME | 文件中上次修改的时间戳。 |
 
-- 使用**forfiles**命令可以在多个文件上运行命令或传递参数。 例如，你可以对具有 .txt 文件扩展名的树中的所有文件运行**类型**命令。 或者，你可以在驱动器 C 上执行每个批处理文件（* .bat），文件名 Myinput 作为第一个参数。
+- 使用**forfiles**命令可以在多个文件上运行命令或传递参数。 例如，你可以对具有 .txt 文件扩展名的树中的所有文件运行**类型**命令。 或者，你可以在驱动器 C 上执行每个批处理文件（* .bat），文件名 Myinput.txt 为第一个参数。
 
 - 此命令可以：
 

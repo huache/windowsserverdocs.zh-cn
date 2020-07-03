@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache 和 setlimit
-description: Bitsadmin cache 和 setlimit 命令的参考主题，用于设置缓存大小限制。
+description: 用于设置缓存大小限制的 bitsadmin cache 和 setlimit 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4c41102bfb87ff6d48113c4e85a821b821b5b01
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de218990d9176336e779b551bfacc0897df5d114
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718290"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923217"
 ---
 # <a name="bitsadmin-cache-and-setlimit"></a>bitsadmin cache 和 setlimit
 
@@ -28,7 +28,7 @@ bitsadmin /cache /setlimit percent
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | % | 缓存限制定义为总硬盘空间的百分比。 |
 

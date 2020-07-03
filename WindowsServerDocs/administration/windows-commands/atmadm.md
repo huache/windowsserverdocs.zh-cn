@@ -1,6 +1,6 @@
 ---
 title: atmadm
-description: 用于监视异步传输模式（atM）网络上的 atM 呼叫管理器注册的连接和地址的 atmadm 命令的参考主题。
+description: 用于监视异步传输模式（atM）网络上的 atM 呼叫管理器注册的连接和地址的 atmadm 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32dad00e5a4d03c905f95c48e112f512a9dbc2e5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1985634cdbaff0dfe0dcefd53395bc4f62614f2a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718920"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923922"
 ---
 # <a name="atmadm"></a>atmadm
 
@@ -30,7 +30,7 @@ atmadm [/c][/a][/s]
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
 | /c | 显示与此计算机上安装的 atM 网络适配器的所有当前连接的调用信息。 |
 | /a | 显示在此计算机中安装的每个适配器的已注册 atM 网络服务访问点（NSAP）地址。 |
@@ -74,7 +74,7 @@ atmadm [/c][/a][/s]
 
     下表包含**atmadm/c**示例输出中每个元素的说明。
 
-    | 数据类型 | 屏幕显示 | 描述 |
+    | 数据类型 | 屏幕显示 | 说明 |
     | -------- | --------- | -------- |
     | 连接信息 | 输入/输出 | 调用的方向。 **在中**，从另一台设备到 atM 网络适配器。  **Out**是从 atM 网络适配器到另一台设备。 |
     | PMP | 点到 multipoint 调用。 |
@@ -112,7 +112,7 @@ atmadm [/c][/a][/s]
 
     下表包含**atmadm/s**示例输出中每个元素的说明。
 
-    | 调用管理器统计信息 | 描述 |
+    | 调用管理器统计信息 | 说明 |
     | ------------- | -------- |
     | 当前活动的调用 | 此计算机上安装的 atM 适配器上当前处于活动状态的呼叫。 |
     | 成功的传入呼叫总数 | 已成功从该 atM 网络上的其他设备接收调用。 |

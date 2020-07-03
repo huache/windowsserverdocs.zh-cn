@@ -1,6 +1,6 @@
 ---
 title: manage-bde
-description: Manage-bde 命令的参考主题，它打开或关闭 BitLocker，指定解锁机制，更新恢复方法，并解锁受 BitLocker 保护的数据驱动器。
+description: Manage-bde 命令的参考文章，用于打开或关闭 BitLocker，指定解锁机制，更新恢复方法，并解锁受 BitLocker 保护的数据驱动器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84788315a65b32b29a1992580bc6152d15ad02f7
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 480f44c6467587918ad347413315b208c874f8cd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222067"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922124"
 ---
 # <a name="manage-bde"></a>manage-bde
 

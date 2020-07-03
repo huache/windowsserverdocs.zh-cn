@@ -1,6 +1,6 @@
 ---
-title: 属性磁盘
-description: "\"属性\" 磁盘命令的参考主题，其中显示、设置或清除磁盘的属性。"
+title: attributes disk
+description: "\"属性\" 磁盘命令的参考文章，其中显示、设置或清除磁盘的属性。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3d378439b30328e4df48020fa4b3288f7af31c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 02ad39b84afb2487b388d046d6409a682b58615b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718898"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923890"
 ---
-# <a name="attributes-disk"></a>属性磁盘
+# <a name="attributes-disk"></a>attributes disk
 
 显示、设置或清除磁盘的属性。 使用此命令显示磁盘的当前属性时，"启动磁盘" 属性表示用于启动计算机的磁盘。 对于动态镜像，它会显示包含启动卷的启动丛的磁盘。
 
@@ -31,7 +31,7 @@ attributes disk [{set | clear}] [readonly] [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | set | 设置具有焦点的磁盘的指定属性。 |
 | clear | 清除具有焦点的磁盘的指定属性。 |

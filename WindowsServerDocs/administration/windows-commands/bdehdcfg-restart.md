@@ -1,6 +1,6 @@
 ---
-title: bdehdcfg 重新启动
-description: Bdehdcfg restart 命令的参考主题，它告知 bdehdcfg 在驱动器准备结束后应重新启动计算机。
+title: bdehdcfg restart
+description: Bdehdcfg restart 命令的参考文章，它会告知 bdehdcfg 在驱动器准备结束后应重新启动计算机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 684a6a24fe78c0a23ba954981121c7bd99ac56fb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 02d57eaef9b2f6e705a5bb30d7d52a09579d27c9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718627"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923466"
 ---
 # <a name="bdehdcfg-restart"></a>bdehdcfg：重新启动
 

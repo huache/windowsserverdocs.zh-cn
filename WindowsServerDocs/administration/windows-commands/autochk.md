@@ -1,6 +1,6 @@
 ---
 title: autochk
-description: Autochk 命令的参考主题，在计算机启动时或在 Windows Server 开始验证文件系统的逻辑完整性之前，该命令将运行。
+description: 用于在计算机启动时或在 Windows Server 开始验证文件系统的逻辑完整性之前运行的 autochk 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a767e8f6cebee9c946f53e0403198384b7c0b790
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9cfb034f37f85b1e54e0cee2a8a4d128518c775a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718790"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923628"
 ---
 # <a name="autochk"></a>autochk
 
 在计算机启动时以及在 Windows Server 开始验证文件系统的逻辑完整性之前运行。
 
-**Autochk**是仅在 NTFS 磁盘上运行且仅在 Windows Server 启动之前运行的**chkdsk**版本。 不能从命令行直接运行**autochk** 。 而在下列情况下， **autochk**会运行：
+**Autochk.exe**是仅在 NTFS 磁盘上运行且仅在 Windows Server 启动之前运行的**chkdsk**版本。 不能从命令行直接运行**autochk** 。 而在下列情况下， **autochk**会运行：
 
 - 如果尝试在启动卷上运行**chkdsk** 。
 
@@ -35,7 +35,7 @@ ms.locfileid: "82718790"
 >
 > - 可以将**chkntfs**与 **/x**参数一起使用，以防止**autochk**在特定卷或多个卷上运行。
 >
-> - 使用带有 **/t**参数的**chkntfs**命令行工具将 autochk 延迟从0秒更改为最多3天（259200秒）。 不过，长时间延迟意味着计算机在超时或按下某个键以取消**autochk**之前，不会启动。
+> - 使用带有 **/t**参数的**chkntfs.exe**命令行工具将 autochk 延迟从0秒更改为最多3天（259200秒）。 不过，长时间延迟意味着计算机在超时或按下某个键以取消**autochk**之前，不会启动。
 
 ## <a name="additional-references"></a>其他参考
 

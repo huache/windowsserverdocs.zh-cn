@@ -1,6 +1,6 @@
 ---
-title: auditpol 备份
-description: 用于备份系统审核策略设置的引用主题，适用于所有用户的按用户审核策略设置，以及以逗号分隔值（CSV）文本文件的所有审核选项。
+title: auditpol backup
+description: 用于备份系统审核策略设置、所有用户的按用户审核策略设置的引用项目，以及所有审核选项到逗号分隔值（CSV）文本文件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ddc6bbbc379453c86df27674b57f29f7c0960772
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8678dbc80b664e3ab667f197f708fbbdbbe40dc7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719163"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923819"
 ---
-# <a name="auditpol-backup"></a>auditpol 备份
+# <a name="auditpol-backup"></a>auditpol backup
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
@@ -32,14 +32,14 @@ auditpol /backup /file:<filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |-----------|------------- |
 | /file | 指定审核策略将备份到的文件的名称。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ## <a name="examples"></a>示例
 
-若要将所有用户、系统审核策略设置和所有审核选项的每用户审核策略设置备份到名为 auditpolicy 的 CSV 格式的文本文件中，请键入：
+若要将所有用户、系统审核策略设置和所有审核选项的每用户审核策略设置备份到名为 auditpolicy.csv 的 CSV 格式的文本文件中，请键入：
 
 ```
 auditpol /backup /file:C:\auditpolicy.csv
@@ -52,6 +52,6 @@ auditpol /backup /file:C:\auditpolicy.csv
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [auditpol 还原](auditpol-restore.md)
+- [auditpol restore](auditpol-restore.md)
 
 - [auditpol 命令](auditpol.md)

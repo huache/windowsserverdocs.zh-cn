@@ -1,6 +1,6 @@
 ---
 title: manage-bde 保护程序
-description: Manage-bde 保护程序命令的参考主题，用于管理用于 BitLocker 加密密钥的保护方法。
+description: Manage-bde 保护程序命令的参考文章，用于管理用于 BitLocker 加密密钥的保护方法。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 999c92fd9f2bfedad92a9c68c1528ee66836f315
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: d277c070ff0cdee0d93d7a8be11dc13bea5adb95
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222628"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922313"
 ---
 # <a name="manage-bde-protectors"></a>manage-bde 保护程序
 
@@ -40,7 +40,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 | -adbackup | 备份指定的驱动器的所有恢复信息 Active Directory 域服务（AD DS）。 若要仅备份一个恢复密钥以便 AD DS，请附加 **-id**参数，并指定要备份的特定恢复密钥的 id。 |
 | -aadbackup | 备份指定的驱动器的所有恢复信息 Azure Active Directory （Azure AD）。 若要仅备份一个恢复密钥以便 Azure AD，请附加 **-id**参数，并指定要备份的特定恢复密钥的 id。 |
 | `<drive>` | 表示驱动器号后跟一个冒号。 |
-| -computername | 指定 manage-bde.exe 将用于修改另一台计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
+| -computername | 指定 manage-bde.exe 将用于修改其他计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
 | `<name>` | 表示要修改 BitLocker 保护的计算机的名称。 接受的值包括计算机的 NetBIOS 名称和计算机的 IP 地址。 |
 | -? 或 /? | 在命令提示符下显示 brief help。 |
 | -help 或-h | 在命令提示符下显示完整的帮助。 |
@@ -102,7 +102,7 @@ manage-bde -protectors -delete <drive> [-type {recoverypassword|externalkey|cert
 | identity | 指定应删除与驱动器关联的任何标识密钥保护程序。 |
 | -ID | 使用密钥标识符标识要删除的密钥保护程序。 此参数是 **-type**参数的替代选项。 |
 | `<keyprotectorID>` | 标识要删除的驱动器上的单个密钥保护程序。 可以通过使用**manage-bde-保护程序-get**命令显示密钥保护程序 id。 |
-| -computername | 指定 manage-bde.exe 将用于修改另一台计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
+| -computername | 指定 manage-bde.exe 将用于修改其他计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
 | `<name>` | 表示要修改 BitLocker 保护的计算机的名称。 接受的值包括计算机的 NetBIOS 名称和计算机的 IP 地址。 |
 | -? 或 /? | 在命令提示符下显示 brief help。 |
 | -help 或-h | 在命令提示符下显示完整的帮助。 |
@@ -117,7 +117,7 @@ manage-bde -protectors -disable <drive> [-rebootcount <integer 0 - 15>] [-comput
 | --------- | ----------- |
 | `<drive>` | 表示驱动器号后跟一个冒号。 |
 | rebootcount | 指定在重新启动 Windows 后，操作系统卷的保护已挂起，并将在**rebootcount**参数中指定的次数后恢复。 指定**0**则无限期挂起保护。 如果未指定此参数，则在重新启动 Windows 后，BitLocker 保护将自动恢复。 还可以使用 **-rc**作为此命令的缩写形式。 |
-| -computername | 指定 manage-bde.exe 将用于修改另一台计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
+| -computername | 指定 manage-bde.exe 将用于修改其他计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
 | `<name>` | 表示要修改 BitLocker 保护的计算机的名称。 接受的值包括计算机的 NetBIOS 名称和计算机的 IP 地址。 |
 | -? 或 /? | 在命令提示符下显示 brief help。 |
 | -help 或-h | 在命令提示符下显示完整的帮助。 |

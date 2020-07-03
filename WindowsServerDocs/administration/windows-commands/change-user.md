@@ -1,6 +1,6 @@
 ---
 title: change user
-description: 更改用户命令的参考主题，它会更改远程桌面会话主机服务器的安装模式。
+description: 更改用户命令的参考文章，用于更改远程桌面会话主机服务器的安装模式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de96280f42f1e3002c4379390367856dcdcb885a
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 42d6a5575ebf732a91477a425d93b10f3293e89e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070186"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922494"
 ---
 # <a name="change-user"></a>change user
 

@@ -1,6 +1,6 @@
 ---
 title: bcdedit
-description: 用于创建新存储、修改现有存储以及添加启动菜单参数的 bcdedit 命令的参考主题。
+description: 用于创建新存储、修改现有存储以及添加启动菜单参数的 bcdedit 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: df68c2c1b1087f7e32dbe270657a54e072261c46
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2e49ed45875b79dfc4d8bbbdad8a1221000bf2b5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718698"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923515"
 ---
 # <a name="bcdedit"></a>bcdedit
 
-引导配置数据（BCD）文件提供用于描述启动应用程序和启动应用程序设置的存储。 存储区中的对象和元素有效地取代了 Boot.ini。
+引导配置数据（BCD）文件提供用于描述启动应用程序和启动应用程序设置的存储。 存储中的对象和元素有效地替换 Boot.ini。
 
-BCDEdit 是用于管理 BCD 存储的命令行工具。 它可用于多种用途，包括创建新存储、修改现有存储、添加启动菜单参数等等。 BCDEdit 在较早版本的 Windows 上本质上与 Bootcfg 的作用相同，但有两个主要改进：
+BCDEdit 是用于管理 BCD 存储的命令行工具。 它可用于多种用途，包括创建新存储、修改现有存储、添加启动菜单参数等等。 BCDEdit 的作用实质上与早期版本的 Windows Bootcfg.exe 相同，但有两个主要改进：
 
-- 公开比 Bootcfg 更广泛的启动参数。
+- 公开与 Bootcfg.exe 范围更广的启动参数。
 
 - 提高了脚本支持。
 
@@ -43,13 +43,13 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 ### <a name="general-bcdedit-command-line-options"></a>常规 BCDEdit 命令行选项
 
-| 选项 | 描述 |
+| 选项 | 说明 |
 | ------ | ----------- |
-| /? | 显示 BCDEdit 命令的列表。 如果不使用参数运行此命令，则会显示可用命令的摘要。 若要显示特定命令的详细帮助，请运行**bcdedit/？** `<command>`，其中`<command>`是要搜索的命令的名称。 例如， **bcdedit/？ createstore**显示 createstore 命令的详细帮助。 |
+| /? | 显示 BCDEdit 命令的列表。 如果不使用参数运行此命令，则会显示可用命令的摘要。 若要显示特定命令的详细帮助，请运行**bcdedit/？** `<command>`，其中 `<command>` 是要搜索的命令的名称。 例如， **bcdedit/？ createstore**显示 createstore 命令的详细帮助。 |
 
 #### <a name="parameters-that-operate-on-a-store"></a>在存储区上操作的参数
 
-| 选项 | 描述 |
+| 选项 | 说明 |
 | ------ | ----------- |
 | /createstore | 创建新的空启动配置数据存储。 创建的存储不是系统存储区。 |
 | /export | 将系统存储的内容导出到文件。 稍后可以使用此文件来还原系统存储的状态。 此命令仅对系统存储有效。 |
@@ -101,7 +101,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 | 参数 | 说明 |
 | ------ | ----------- |
 | /bootdebug | 启用或禁用指定启动项的启动调试器。 尽管此命令适用于任何启动条目，但它仅对启动应用程序有效。 |
-| /dbgsettings | 指定或显示系统的全局调试器设置。 此命令不 enablepose。 若要设置单个全局调试器设置，请使用**bcdedit/set** `<dbgsettings> <type> <value>`命令。 |
+| /dbgsettings | 指定或显示系统的全局调试器设置。 此命令不 enablepose。 若要设置单个全局调试器设置，请使用**bcdedit/set** `<dbgsettings> <type> <value>` 命令。 |
 | /debug | 启用或禁用指定启动项的内核调试器。 |
 
 ## <a name="additional-references"></a>其他参考

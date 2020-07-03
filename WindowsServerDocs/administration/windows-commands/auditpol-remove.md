@@ -1,6 +1,6 @@
 ---
 title: auditpol remove
-description: 用于删除指定帐户或所有帐户的每用户审核策略的 auditpol remove 命令的参考主题。
+description: 用于删除指定帐户或所有帐户的每用户审核策略的 auditpol remove 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9aedde39d44c7640e6aa2516465e1c8ec7d022c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: aada45bdc128c3122f459813d6f015f58532de18
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719091"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923723"
 ---
 # <a name="auditpol-remove"></a>auditpol remove
 
@@ -33,7 +33,7 @@ auditpol /remove [/user[:<username>|<{SID}>]]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
 | /user | 指定要为其删除每用户审核策略的用户的安全标识符（SID）或用户名。 |
 | /allusers | 删除所有用户的每用户审核策略。 |

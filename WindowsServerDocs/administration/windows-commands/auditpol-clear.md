@@ -1,6 +1,6 @@
 ---
 title: auditpol clear
-description: 针对所有用户删除每用户审核策略、重置（禁用）所有子类别的系统审核策略，并将所有审核选项设置为 "禁用" 的引用主题。
+description: 用于删除所有用户的每用户审核策略、重置（禁用）所有子类别的系统审核策略并将所有审核选项设置为 "禁用" 的引用项目。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3d4765907f1dd614f5d0a61585ea09069652ecb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 797f26ab9e191176808bbce917ca5ac0fa3d73a3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719151"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923798"
 ---
 # <a name="auditpol-clear"></a>auditpol clear
 
@@ -32,7 +32,7 @@ auditpol /clear [/y]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ----------- | --------------- |
 | /y | 禁止提示确认是否应清除所有审核策略设置。 |
 | /? | 在命令提示符下显示帮助。 |

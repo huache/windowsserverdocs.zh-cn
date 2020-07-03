@@ -1,6 +1,6 @@
 ---
 title: assoc
-description: 关联命令的参考主题，其中显示或修改文件扩展名关联。
+description: 关联命令的参考文章，其中显示或修改文件扩展名关联。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 58735201a1a0711db4d0cee9c292363acf5121f3
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6e6d72dce2a3e820b52a33bf11dbf38890278fb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819637"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924044"
 ---
 # <a name="assoc"></a>assoc
 
 显示或修改文件扩展名关联。 如果在没有参数的情况下使用， **assoc**将显示所有当前文件扩展名关联的列表。
 
 > [!NOTE]
-> 此命令仅在 cmd.exe 中受支持，不能从 PowerShell 中使用。
+> 此命令仅在 cmd.exe 中受支持，并且在 PowerShell 中不可用。
 
 ## <a name="syntax"></a>语法
 
@@ -68,7 +68,7 @@ assoc .bak=
 assoc | more
 ```
 
-若要将**assoc**的输出发送到文件 assoc，请键入：
+若要将**assoc**的输出发送到 assoc.txt 的文件，请键入：
 
 ```
 assoc>assoc.txt

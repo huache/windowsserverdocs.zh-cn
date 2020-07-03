@@ -1,6 +1,6 @@
 ---
 title: 干酪
-description: Fondue 命令的参考主题，可通过从 Windows 更新或组策略指定的其他源下载所需文件来启用 Windows 可选功能。
+description: Fondue 命令的参考文章，可通过从 Windows 更新或组策略指定的其他源下载所需文件来启用 Windows 可选功能。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a9e751a5ad46d557aa2317ebe4c144fa6f004fa
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 5d2b7e4b2a8ef3158f5528c43944020274204970
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437202"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922698"
 ---
 # <a name="fondue"></a>干酪
 
@@ -32,8 +32,8 @@ fondue.exe /enable-feature:<feature_name> [/caller-name:<program_name>] [/hide-u
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| /enable-feature`<feature_name>` | 指定要启用的 Windows 可选功能的名称。 每个命令行只能启用一项功能。 若要启用多个功能，请使用每个功能的 fondue。 |
-| /caller-name:`<program_name>` | 从脚本或批处理文件中调用 fondue 时，指定程序或进程的名称。 如果出现错误，则可以使用此选项将程序名称添加到 SQM 报表中。 |
+| /enable-feature`<feature_name>` | 指定要启用的 Windows 可选功能的名称。 每个命令行只能启用一项功能。 若要启用多个功能，请使用每个功能的 fondue.exe。 |
+| /caller-name:`<program_name>` | 指定从脚本或批处理文件中调用 fondue.exe 时的程序或进程的名称。 如果出现错误，则可以使用此选项将程序名称添加到 SQM 报表中。 |
 | /hide-ux:`{all | rebootrequest}` | 使用 "**全部**" 可向用户隐藏所有消息，包括访问 Windows 更新的进度和权限请求。 如果权限是必需的，则操作将失败。<p>使用**rebootrequest**仅隐藏要求重新启动计算机的权限的用户消息。 如果你有控制重新启动请求的脚本，请使用此选项。 |
 
 ### <a name="examples"></a>示例

@@ -1,6 +1,6 @@
 ---
-title: auditpol 列表
-description: Auditpol list 命令的参考主题，其中列出了审核策略类别和子类别，或者列出了为其定义了每用户审核策略的用户。
+title: auditpol list
+description: Auditpol list 命令的参考文章，其中列出了审核策略类别和子类别，或者列出了为其定义了每用户审核策略的用户。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96ee4388c716c066a2e9b55b57dd2e70b4b4f69c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a0ce67b9907fa4c5207d75422dc972d70f5e6eea
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719100"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923718"
 ---
-# <a name="auditpol-list"></a>auditpol 列表
+# <a name="auditpol-list"></a>auditpol list
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
@@ -34,7 +34,7 @@ auditpol /list
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
 | /user | 检索为其定义了每用户审核策略的所有用户。 如果与/v 参数一起使用，则还会显示用户的安全标识符（SID）。 |
 | /category | 显示系统理解的类别名称。 如果与/v 参数一起使用，则还会显示类别全局唯一标识符（GUID）。 |

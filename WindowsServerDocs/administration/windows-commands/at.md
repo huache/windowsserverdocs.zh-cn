@@ -1,6 +1,6 @@
 ---
 title: at
-description: At 命令的参考主题，它计划在指定的时间和日期在计算机上运行命令和程序。
+description: At 命令的参考文章，用于计划在指定的时间和日期在计算机上运行命令和程序。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3aafcf4cbc4a6626a3390fe5ad6a305b90dfaec0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1ead4132b70cc98d9bdd7f478a8e3f18ab6da1aa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718922"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923933"
 ---
 # <a name="at"></a>at
 
@@ -31,7 +31,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `\<computername\>` | 指定远程计算机。 如果省略此参数，则会**在**本地计算机上计划命令和程序。 |
 | `<id>` | 指定分配给计划命令的标识号。 |
@@ -62,7 +62,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     OK      3    Each F     11:59 PM    backup2.bat
     ```
 
-- 如果在此命令中包含标识号（*ID*），则只有单个条目的信息以如下格式显示：  
+- 如果在此命令中包含标识号（*ID*），则只有单个条目的信息以如下格式显示：
 
     ```
     Task ID: 1
@@ -74,7 +74,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 - 在计划命令（特别是具有命令行选项的命令）后，请通过**在**不使用任何命令行选项的情况下键入来检查命令语法是否正确。 如果 "**命令行**" 列中的信息错误，请删除并重新键入该命令。 如果仍然不正确，请使用更少的命令行选项重新键入命令。
 
-- **在**运行时以后台进程的形式计划的命令。 计算机屏幕上不显示输出。 若要将输出重定向到文件，请使用`>`重定向符号。 如果将输出重定向到文件，则需要使用重定向符号前面`^`的转义符号，无论是在命令行中还是在批处理文件**中使用。** 例如，要将输出重定向到*输出 .txt*，请键入：
+- **在**运行时以后台进程的形式计划的命令。 计算机屏幕上不显示输出。 若要将输出重定向到文件，请使用重定向符号 `>` 。 如果将输出重定向到文件，则需要使用 `^` 重定向符号前面的转义符号，无论是在命令行**at**中还是在批处理文件中使用。 例如，若要将输出重定向到*output.txt*，请键入：
 
     ```
     at 14:45 c:\test.bat ^>c:\output.txt
@@ -86,13 +86,13 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 - 计划的命令存储在注册表中。 因此，如果重新启动计划服务，则不会丢失计划任务。
 
-- 不要将重定向的驱动器用于访问网络的计划作业。 计划服务可能无法访问重定向的驱动器，或者，如果在计划任务运行时有其他用户登录，则可能不会出现重定向的驱动器。 相反，请为计划作业使用 UNC 路径。 例如：  
+- 不要将重定向的驱动器用于访问网络的计划作业。 计划服务可能无法访问重定向的驱动器，或者，如果在计划任务运行时有其他用户登录，则可能不会出现重定向的驱动器。 相反，请为计划作业使用 UNC 路径。 例如：
 
     ```
     at 1:00pm my_backup \\server\share
     ```
 
-    不要使用以下语法，其中**x：** 是用户建立的连接：  
+    不要使用以下语法，其中**x：** 是用户建立的连接：
 
     ```
     at 1:00pm my_backup x:
@@ -115,9 +115,9 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
         - **值名称。** atTaskMaxHours
 
-        - **数据类型。** reg_DWOrd 
+        - **数据类型。** reg_DWOrd
 
-        - **基数.** Decimal
+        - **基数.** 小数
 
         - **值数据：** 0. **值数据**字段中的值为**0** ，表示没有限制，也不会停止。 介于1到99之间的值表示小时数。
 
@@ -137,7 +137,7 @@ at \\marketing
 at \\corp 3
 ```
 
-计划在凌晨8:00 的 Corp 服务器上运行 net share 命令。 然后，将列表重定向到维护服务器，在 "报告" 共享目录中，键入 Corp .txt 文件，键入：
+计划在凌晨8:00 的 Corp 服务器上运行 net share 命令。 然后，将列表重定向到维护服务器，在 "报告" 共享目录和 Corp.txt 文件中，键入：
 
 ```
 at \\corp 08:00 cmd /c net share reports=d:\marketing\reports >> \\maintenance\reports\corp.txt

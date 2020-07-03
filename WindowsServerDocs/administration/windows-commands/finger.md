@@ -1,6 +1,6 @@
 ---
 title: finger
-description: Finger 命令的参考主题，其中显示了有关运行 finger 服务或后台程序的指定远程计算机上的用户的信息。
+description: Finger 命令的参考文章，其中显示了有关运行 finger 服务或后台程序的指定远程计算机上的用户的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3403e10a1777bc117659eb052958d3a20668557
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: fd629374b601686e91e5238ae8db060e0b6bf0f8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437232"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922423"
 ---
 # <a name="finger"></a>finger
 

@@ -1,6 +1,6 @@
 ---
 title: set
-description: Set 的参考主题，用于显示、设置或删除 cmd.exe 环境变量。
+description: Set 的参考文章，其中显示、设置或删除 cmd.exe 环境变量。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5de835dd591e1f70acc896772df501d5ddbdf237
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 002ac4624d9ed501fab7816a83c2a0c5fc6a2bce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819387"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922820"
 ---
 # <a name="set"></a>set
 
@@ -34,8 +34,8 @@ set /a <Variable>=<Expression>
 
 |参数|说明|
 |---------|-----------|
-|\<变量>|指定要设置或修改的环境变量。|
-|\<字符串>|指定与指定的环境变量关联的字符串。|
+|\<Variable>|指定要设置或修改的环境变量。|
+|\<String>|指定与指定的环境变量关联的字符串。|
 |/p|将*变量*的值设置为用户输入的输入行。|
 |\<PromptString>|可选。 指定提示用户输入的消息。 此参数与 **/p**命令行选项一起使用。|
 |/a|将*字符串*设置为计算所得的数值表达式。|
@@ -65,7 +65,7 @@ set /a <Variable>=<Expression>
 
   下表按优先顺序列出了 **/a**支持的运算符。
 
-  |        运算符         | 执行的操作  |
+  |        操作员         | 执行的操作  |
   |-------------------------|----------------------|
   |           ( )           |       分组       |
   |          ! ~ -          |        一元         |

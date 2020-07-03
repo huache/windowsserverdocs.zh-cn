@@ -1,6 +1,6 @@
 ---
 title: attributes
-description: "\"属性\" 命令的参考主题，其中显示、设置或清除磁盘或卷的属性。"
+description: "\"属性\" 命令的参考文章，其中显示、设置或清除磁盘或卷的属性。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cbee357c791f0f02e2d4d069e9e2886087119db1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d0d078100188455e737eccedb6955e9634d2c8a6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719161"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923825"
 ---
 # <a name="attributes"></a>attributes
 
@@ -29,10 +29,10 @@ attributes volume
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| [属性磁盘](attributes-disk.md) | 显示、设置或清除磁盘的属性。 |
-| [属性数量](attributes-volume.md) | 显示、设置或清除卷的属性。 |
+| [attributes disk](attributes-disk.md) | 显示、设置或清除磁盘的属性。 |
+| [attributes volume](attributes-volume.md) | 显示、设置或清除卷的属性。 |
 
 ## <a name="additional-references"></a>其他参考
 

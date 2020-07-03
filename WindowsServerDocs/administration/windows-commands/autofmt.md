@@ -1,6 +1,6 @@
 ---
 title: autofmt
-description: Autofmt 命令的参考主题，在 Windows 恢复控制台中调用该命令时，该命令将格式化驱动器或分区。
+description: Autofmt 命令的参考文章，在 Windows 恢复控制台中调用时，该命令将格式化驱动器或分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7b82d940f2d8bd54d023a2a105208d1a18fc4c8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1b6f4ae3fe630ba01d9c789a9f7d73a11a31f456
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718754"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923554"
 ---
 # <a name="autofmt"></a>autofmt
 

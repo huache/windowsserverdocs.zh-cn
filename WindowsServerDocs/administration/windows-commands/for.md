@@ -1,6 +1,6 @@
 ---
 title: 针对
-description: For 命令的参考主题，该主题针对每个文件在一组文件中运行指定的命令。
+description: For 命令的参考文章，用于在一组文件中为每个文件运行指定的命令。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24ef5bc159e67862d419bd2728b14585f8b095d4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 44b6497af626079b05768fd245c1b86693bdfe61
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437012"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922418"
 ---
 # <a name="for"></a>针对
 
@@ -147,7 +147,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
 - **分析字符串：** 可以 `for /f` 通过以下两种方式使用分析逻辑 `<literalstring>` ：双引号（*无*usebackq）或单引号（*带有*usebackq）--例如，（MyString）或（' MyString '）。 `<literalstring>`被视为来自文件的单个行输入。 当 `<literalstring>` 在双引号中进行分析时，命令符号（如 `\ & | > < ^` ）被视为普通字符。
 
-- **分析输出：** 您可以使用 `for /f` 命令来分析命令的输出，方法是在括号之间放置一个反引号 `<command>` 。 它被视为传递给子 Cmd.exe 的命令行。 将输出捕获到内存中，并将其作为文件进行分析。
+- **分析输出：** 您可以使用 `for /f` 命令来分析命令的输出，方法是在括号之间放置一个反引号 `<command>` 。 它被视为传递到子 Cmd.exe 的命令行。 将输出捕获到内存中，并将其作为文件进行分析。
 
 ## <a name="examples"></a>示例
 
@@ -171,7 +171,7 @@ for %f in (*.doc *.txt) do type %f
 for /f eol=; tokens=2,3* delims=, %i in (myfile.txt) do @echo %i %j %k
 ```
 
-此命令分析*myfile.txt*中的每一行。 它将忽略以分号开头的行，并将每一行的第二个和第三个标记传递到**for**正文（标记之间用逗号或空格分隔）。 **For**语句的主体引用 **% i**获取第二个标记， **% j**获取第三个标记，并为 **% k**以获取所有剩余标记。 如果提供的文件名包含空格，请使用引号将文本括起来（例如，文件名）。 若要使用引号，必须使用**usebackq**。 否则，引号被解释为定义要分析的文本字符串。
+此命令分析*myfile.txt*中的每行。 它将忽略以分号开头的行，并将每一行的第二个和第三个标记传递到**for**正文（标记之间用逗号或空格分隔）。 **For**语句的主体引用 **% i**获取第二个标记， **% j**获取第三个标记，并为 **% k**以获取所有剩余标记。 如果提供的文件名包含空格，请使用引号将文本括起来（例如，文件名）。 若要使用引号，必须使用**usebackq**。 否则，引号被解释为定义要分析的文本字符串。
 
 已在**for**语句中显式声明了 **% i** 。 **% j**和 **% k**使用**标记 =** 隐式声明。 您可以使用**标记 =** 来指定最多26个标记，前提是它不会导致将变量声明为大于字母 Z 或 z 的尝试。
 

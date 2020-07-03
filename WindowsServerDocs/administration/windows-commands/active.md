@@ -1,6 +1,6 @@
 ---
 title: 活动
-description: 基本磁盘上的活动命令的参考主题将焦点标记为活动分区。
+description: 基本磁盘上的活动命令参考文章，将焦点标记为活动分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 997c57b93434738c87396812c9b5e5b12d7a8e89
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a5df2f67c087be31190c512be0f6b20d8a1d72cb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719018"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924142"
 ---
 # <a name="active"></a>活动
 

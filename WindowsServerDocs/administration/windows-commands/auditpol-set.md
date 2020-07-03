@@ -1,6 +1,6 @@
 ---
-title: auditpol 集
-description: 用于设置每用户审核策略、系统审核策略或审核选项的 auditpol set 命令的参考主题。
+title: auditpol set
+description: 用于设置每用户审核策略、系统审核策略或审核选项的 auditpol set 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73868d6044d8742d4d9e0ce76e0668402f230f86
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc42168d65116261d57053e0812cbb49e17021d5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718891"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923693"
 ---
-# <a name="auditpol-set"></a>auditpol 集
+# <a name="auditpol-set"></a>auditpol set
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
@@ -38,7 +38,7 @@ auditpol /set
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /user | 为其设置类别或子类别指定的每用户审核策略的安全主体。 必须指定 "类别" 或 "子类别" 选项，作为安全标识符（SID）或名称。 |
 | /include | 用/user 指定;指示用户的每用户策略将导致生成审核，即使系统审核策略未指定审核也是如此。 此设置是默认设置，如果/include 和/exclude 参数均未显式指定，则会自动应用此设置。 |

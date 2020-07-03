@@ -1,6 +1,6 @@
 ---
 title: bcdboot
-description: Bcdboot 命令的参考主题，可快速设置系统分区，或修复位于系统分区上的启动环境。
+description: Bcdboot 命令的参考文章，可快速设置系统分区，或修复位于系统分区上的启动环境。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 67aacb3a575e0cdd08af5372b403916961d223c6
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: def4052e8aaa4f1e32216b5de837706b5cde3d04
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149770"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923504"
 ---
 # <a name="bcdboot"></a>bcdboot
 
@@ -30,7 +30,7 @@ bcdboot <source> [/l] [/s]
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| 源 | 指定用作复制启动环境文件的源的 Windows 目录的位置。 |
+| source | 指定用作复制启动环境文件的源的 Windows 目录的位置。 |
 | /l | 指定区域设置。 默认区域设置为美国英语。 |
 | /s | 指定系统分区的卷号。 默认值为固件标识的系统分区。 |
 

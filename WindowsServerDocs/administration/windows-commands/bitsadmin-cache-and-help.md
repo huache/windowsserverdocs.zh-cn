@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache 和 help
-description: Bitsadmin cache 和 help 命令的参考主题，其中显示了**缓存**交换机的命令行用法。
+description: Bitsadmin cache 和 help 命令的参考文章，其中显示了**缓存**交换机的命令行用法。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79d8dd2ce5af1e1160692f13974c56842fb163cd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 36f8343704d0842497082e9d473250c6ba2cb1c1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718352"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923270"
 ---
 # <a name="bitsadmin-cache-and-help"></a>bitsadmin cache 和 help
 

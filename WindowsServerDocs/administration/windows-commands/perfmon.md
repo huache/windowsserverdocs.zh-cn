@@ -1,6 +1,6 @@
 ---
 title: perfmon
-description: Perfmon 命令的参考主题，它在特定的独立模式下启动 Windows 可靠性和性能监视器。
+description: 用于在特定独立模式下启动 Windows 可靠性和性能监视器的 perfmon 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/25/2018
-ms.openlocfilehash: 96d1589dcd75814c37c2ad295cf60887eb07739c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5beaa1692f3fc4aa66eae81069f0ead5839d22e3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472473"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922836"
 ---
 # <a name="perfmon"></a>perfmon
 

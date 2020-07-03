@@ -1,6 +1,6 @@
 ---
 title: change port
-description: "\"更改端口\" 命令的参考主题，此命令可列出或更改 COM 端口映射，使其与 MS-DOS 应用程序兼容。"
+description: "\"更改端口\" 命令的参考文章，此命令可列出或更改 COM 端口映射，使其与 MS-DOS 应用程序兼容。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8dcf1097ea037aff9269edafea6e640054a697e3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0735c4c21ae8e321da1cfe31c2874f3dcfc540c7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716081"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922505"
 ---
 # <a name="change-port"></a>change port
 
@@ -33,9 +33,9 @@ change port [<portX>=<portY| /d <portX | /query]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |-----------------|----------------------------------------|
-| <portX>=<portY> | 将 COM `<*portX*>`映射到`<*portY*>` |
+| <portX>=<portY> | 将 COM 映射 `<*portX*>` 到`<*portY*>` |
 | /d<portX> | 删除 COM 的映射`<*portX*>` |
 | /query | 显示当前端口映射。 |
 | /? | 在命令提示符下显示帮助。 |
@@ -49,13 +49,13 @@ change port [<portX>=<portY| /d <portX | /query]
 ## <a name="examples"></a>示例
 
 - 若要将 COM12 映射到 COM1 以供基于 MS-DOS 的应用程序使用，请键入：
-  
+
   ```
   change port com12=com1
   ```
 
 - 若要显示当前端口映射，请键入：
-  
+
   ```
   change port /query
   ```

@@ -1,6 +1,6 @@
 ---
 title: automount
-description: 用于启用或禁用自动装载功能的自动装载命令的参考主题。
+description: 用于启用或禁用自动装载功能的自动装载命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a3ff8782b2110dd1b8039477c0b748dc4ab8f44
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 897927c48a1ba2c2023e35ff1f4c93e6c33fb291
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718728"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923544"
 ---
 # <a name="automount"></a>automount
 
@@ -31,7 +31,7 @@ ms.locfileid: "82718728"
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | enable | 使 Windows 能够自动挂载添加到系统的新基本卷和动态卷，并为其分配驱动器号。 |
 | disable | 阻止 Windows 自动安装添加到系统中的任何新基本卷和动态卷。<p>**注意**：禁用自动装载可能导致故障转移群集无法通过验证配置向导的存储部分。 |

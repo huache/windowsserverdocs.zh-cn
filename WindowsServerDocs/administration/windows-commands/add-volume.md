@@ -1,6 +1,6 @@
 ---
-title: 添加卷
-description: 添加卷命令的参考主题，它将卷添加到卷影副本集，这是一组要进行卷影复制的卷。
+title: add volume
+description: "\"添加卷\" 命令的参考文章，将卷添加到卷影副本集，这是要进行卷影复制的卷集。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8cfd3d8f7d9f008e3136d8f694dc00370b8b0f2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3cd80a60fd3215a2234d4eb5be8a62da91e2cba4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719202"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924083"
 ---
-# <a name="add-volume"></a>添加卷
+# <a name="add-volume"></a>add volume
 
 将卷添加到卷影副本集，这是要进行卷影复制的卷集。 创建卷影副本时，环境变量会将别名链接到卷影 ID，因此别名随后可用于脚本编写。
 
@@ -32,14 +32,14 @@ add volume <volume> [provider <providerid>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<volume>` | 指定要添加到卷影副本集的卷。 创建卷影副本至少需要一个卷。 |
 | `[provider \<providerid>]` | 指定用于创建卷影副本的已注册提供程序的提供程序 ID。 如果未指定**提供程序**，则使用默认提供程序。 |
 
 ## <a name="examples"></a>示例
 
-若要查看当前已注册的提供程序列表， `diskshadow>`请在提示符下键入：
+若要查看当前已注册的提供程序列表，请在 `diskshadow>` 提示符下键入：
 
 ```
 list providers

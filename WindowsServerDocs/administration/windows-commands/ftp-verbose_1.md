@@ -1,6 +1,6 @@
 ---
-title: ftp 详细
-description: Ftp 详细命令的参考主题，用于切换详细模式。
+title: ftp verbose
+description: Ftp 详细命令的参考文章，用于切换详细模式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b2fa15d17c872076ac154aaa6051e3243fdc30e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d0a00b03173d49c177c420ab574229d2ddb97e7d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820247"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922627"
 ---
-# <a name="ftp-verbose"></a>ftp 详细
+# <a name="ftp-verbose"></a>ftp verbose
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

@@ -1,6 +1,6 @@
 ---
 title: manage-bde unlock
-description: Manage-bde 解锁命令的参考主题，它使用恢复密码或恢复密钥解锁受 BitLocker 保护的驱动器。
+description: Manage-bde 解锁命令的参考文章，可通过使用恢复密码或恢复密钥解锁受 BitLocker 保护的驱动器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 67d4c0ec78870af45f0b98f2ab04d85b19e92af9
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 1be2bf029a378015cd20f21c236c0d519f2e072a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222158"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922212"
 ---
 # <a name="manage-bde-unlock"></a>manage-bde unlock
 
@@ -39,7 +39,7 @@ manage-bde -unlock {-recoverypassword <password>|-recoverykey <pathtoexternalkey
 | -cf`<pathtocertificatefile>` | 证书文件的路径。 |
 | -ct`<certificatethumbprint>` | 证书指纹，可以选择包含 PIN （-pin）。 |
 | -password | 显示用于解锁卷的密码提示。 你还可以使用 **-pw**作为此命令的缩写形式。 |
-| -computername | 指定 manage-bde.exe 将用于修改另一台计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
+| -computername | 指定 manage-bde.exe 将用于修改其他计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
 | `<name>` | 表示要修改 BitLocker 保护的计算机的名称。 接受的值包括计算机的 NetBIOS 名称和计算机的 IP 地址。 |
 | -? 或 /? | 在命令提示符下显示 brief Help。 |
 | -help 或-h | 在命令提示符下显示完整的帮助。 |

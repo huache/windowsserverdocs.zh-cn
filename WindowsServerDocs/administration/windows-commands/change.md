@@ -1,6 +1,6 @@
 ---
 title: 更改
-description: Change 命令的参考主题，它更改了登录、COM 端口映射和安装模式远程桌面会话主机服务器设置。
+description: 更改命令的参考文章，其中更改了登录、COM 端口映射和安装模式远程桌面会话主机服务器设置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a35bd558898b3991a9e6f847d415a67d70f0d01b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4b1350b39633580dd60bbc0eb07e567029447d5f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82715512"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922450"
 ---
 # <a name="change"></a>更改
 
@@ -35,7 +35,7 @@ ms.locfileid: "82715512"
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | [更改登录命令](change-logon.md) | 启用或禁用远程桌面会话主机服务器上的客户端会话登录，或显示当前登录状态。 |
 | [更改端口命令](change-port.md) | 列出或更改要与 MS-DOS 应用程序兼容的 COM 端口映射。 |

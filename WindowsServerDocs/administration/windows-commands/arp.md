@@ -1,6 +1,6 @@
 ---
 title: arp
-description: Arp 命令的参考主题，用于显示和修改用于存储 IP 地址的地址解析协议（arp）缓存中的条目，以及它们的已解析物理地址。
+description: Arp 命令的参考文章，该命令显示和修改用于存储 IP 地址的地址解析协议（arp）缓存和解析的物理地址中的条目。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdbb9fe636bb30be90164d9a2163c495a9c2e704
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 41f9ebde5faa3eda99402aa86a0aef5e55b42eba
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819647"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924001"
 ---
 # <a name="arp"></a>arp
 

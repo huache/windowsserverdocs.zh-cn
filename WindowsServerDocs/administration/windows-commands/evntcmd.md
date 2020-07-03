@@ -1,6 +1,6 @@
 ---
 title: evntcmd
-description: Evntcmd 命令的参考主题，它基于配置文件中的信息配置将事件转换为陷阱、陷阱目标或两者。
+description: Evntcmd 命令的参考文章，它基于配置文件中的信息配置将事件转换为陷阱、陷阱目标或两者。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e922d7876a8065a0e05e9fa7bf2cf8db45bffd25
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 291b13163f5c5a13442ed6dc80b769d0170df42e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437092"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922782"
 ---
 # <a name="evntcmd"></a>evntcmd
 

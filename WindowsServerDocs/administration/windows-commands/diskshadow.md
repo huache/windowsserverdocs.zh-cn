@@ -1,6 +1,6 @@
 ---
 title: Diskshadow
-description: Diskshadow 命令的参考主题，它是一个公开卷影复制服务（VSS）提供的功能的工具。
+description: Diskshadow 命令的参考文章，它是一个公开卷影复制服务（VSS）提供的功能的工具。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ae3a4ba57d9c29375c560c300a4e4ead807184fc
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 02e2836cd69b1fe85ea4f86da125c95c9ca1e4ea
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235193"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922791"
 ---
 # <a name="diskshadow"></a>Diskshadow
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-Diskshadow 是公开卷影复制服务（VSS）提供的功能的工具。 默认情况下，Diskshadow 使用与 Diskraid 或 Diskpart 类似的交互式命令解释器。 Diskshadow 还包括可编写脚本的模式。
+Diskshadow.exe 是一种工具，用于公开卷影复制服务（VSS）提供的功能。 默认情况下，Diskshadow 使用与 Diskraid 或 Diskpart 类似的交互式命令解释器。 Diskshadow 还包括可编写脚本的模式。
 
 > [!NOTE]
 > 本地 Administrators 组中的成员身份或等效身份是运行 Diskshadow 所需的最低要求。
@@ -33,7 +33,7 @@ Diskshadow 是公开卷影复制服务（VSS）提供的功能的工具。 默�
 diskshadow
 ```
 
-对于脚本模式，请键入以下内容，其中*script*是包含 Diskshadow 命令的脚本文件：
+对于 "脚本模式"，请键入以下内容，其中*script.txt*是包含 Diskshadow 命令的脚本文件：
 
 ```
 diskshadow -s script.txt

@@ -1,6 +1,6 @@
 ---
 title: expand
-description: Expand 命令的参考主题，用于扩展一个或多个压缩文件。
+description: 展开命令的参考文章，用于扩展一个或多个压缩文件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1204f3db338f835b47db03eab3d178544a6acc85
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: aa032953255b3731f500bfb4d78eaca0d772d1d8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819117"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922727"
 ---
 # <a name="expand"></a>expand
 
@@ -39,8 +39,8 @@ expand <source>.cab /f:<files> <destination>
 | 参数 | 说明 |
 | --------- | ----------- |
 | /r | 重命名展开的文件。 |
-| 源 | 指定要展开的文件。 *源*可以包含驱动器号和冒号、目录名称、文件名或它们的组合。 您可以使用通配符（**&#42;** 或 **？**）。 |
-| destination | 指定文件展开的位置。<p>如果*源*包含多个文件并且未指定 **/r**，则*目标*必须是目录。 *目标*可以包含驱动器号和冒号、目录名称、文件名或它们的组合。 目标 `file | path` 规范。 |
+| source | 指定要展开的文件。 *源*可以包含驱动器号和冒号、目录名称、文件名或它们的组合。 您可以使用通配符（**&#42;** 或 **？**）。 |
+| 目标 | 指定文件展开的位置。<p>如果*源*包含多个文件并且未指定 **/r**，则*目标*必须是目录。 *目标*可以包含驱动器号和冒号、目录名称、文件名或它们的组合。 目标 `file | path` 规范。 |
 | /i | 重命名扩展的文件，但忽略目录结构。 |
 | /d | 显示源位置中的文件列表。 不扩展或提取文件。 |
 | /f`<files>` | 指定 cab （.cab）文件中要展开的文件。 您可以使用通配符（**&#42;** 或 **？**）。 |

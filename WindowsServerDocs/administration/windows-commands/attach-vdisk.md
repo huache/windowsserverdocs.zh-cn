@@ -1,6 +1,6 @@
 ---
 title: 附加 vdisk
-description: 附加 vdisk 命令的参考主题，它附加（有时称为装载或曲面）虚拟硬盘（VHD），以使其作为本地硬盘驱动器出现在主计算机上。
+description: 附加 vdisk 命令的参考文章，附加的命令（有时称为装载或曲面）将连接到虚拟硬盘（VHD），以使其作为本地硬盘驱动器出现在主计算机上。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91f988d1f84869874dbd0d6a25dce43ef5138066
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d0d07af390a025a60fabf53635ce156cab7b71d6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718911"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923917"
 ---
 # <a name="attach-vdisk"></a>附加 vdisk
 
@@ -33,10 +33,10 @@ attach vdisk [readonly] { [sd=<SDDL>] | [usefilesd] } [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | readonly | 将 VHD 附加为只读。 任何写入操作都将返回错误。 |
-| `sd=<SDDL string>` | 设置 VHD 上的用户筛选器。 筛选器字符串的格式必须为安全描述符定义语言（SDDL）。 默认情况下，用户筛选器允许访问，就像在物理磁盘上。 SDDL 字符串可能比较复杂，但最简单的形式是，保护访问的安全描述符称为自由访问控制列表（DACL）。 它使用以下格式： `D:<dacl_flags><string_ace1><string_ace2>`.。。`<string_acen>`<p>常见的 DACL 标志包括：<ul><li>**一个**。 允许访问</li><li>**D.** 拒绝访问</li></ul>常见权限包括：<ul><li>**GA**。 所有访问</li><li>**GR** 读取权限</li><li> **GW**。 写入访问权限</li></ul>常见用户帐户包括：<ul><li>**BA**。 内置管理员</li><li>**AU**。 经过身份验证的用户</li><li>**CO**。 创建者所有者</li><li>**WD**。 所有人</li></ul>示例：<ul><li>**D:P：（A;;GR;;;AU**。 向所有经过身份验证的用户提供读取访问权限。</li><li>**D:P：（A;;GA;;;WD**。 为每个人提供完全访问权限。</li></ul> |
+| `sd=<SDDL string>` | 设置 VHD 上的用户筛选器。 筛选器字符串的格式必须为安全描述符定义语言（SDDL）。 默认情况下，用户筛选器允许访问，就像在物理磁盘上。 SDDL 字符串可能比较复杂，但最简单的形式是，保护访问的安全描述符称为自由访问控制列表（DACL）。 它使用以下格式： `D:<dacl_flags><string_ace1><string_ace2>` .。。`<string_acen>`<p>常见的 DACL 标志包括：<ul><li>**一个**。 允许访问</li><li>**D.** 拒绝访问</li></ul>常见权限包括：<ul><li>**GA**。 所有访问</li><li>**GR** 读取权限</li><li> **GW**。 写入访问权限</li></ul>常见用户帐户包括：<ul><li>**BA**。 内置管理员</li><li>**AU**。 经过身份验证的用户</li><li>**CO**。 创建者所有者</li><li>**WD**。 所有人</li></ul>例如：<ul><li>**D:P：（A;;GR;;;AU**。 向所有经过身份验证的用户提供读取访问权限。</li><li>**D:P：（A;;GA;;;WD**。 为每个人提供完全访问权限。</li></ul> |
 | usefilesd | 指定应在 VHD 上使用 .vhd 文件上的安全描述符。 如果未指定**Usefilesd**参数，则 VHD 将不具有明确的安全描述符，除非使用**Sd**参数指定它。 |
 | noerr | 仅用于脚本编写。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
@@ -52,15 +52,15 @@ attach vdisk readonly
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [选择 vdisk](select-vdisk.md)
+- [select vdisk](select-vdisk.md)
 
 - [compact vdisk](compact-vdisk.md)
 
-- [详细信息 vdisk](detail-vdisk.md)
+- [detail vdisk](detail-vdisk.md)
 
-- [分离 vdisk](detach-vdisk.md)
+- [detach vdisk](detach-vdisk.md)
 
-- [展开 vdisk](expand-vdisk.md)
+- [expand vdisk](expand-vdisk.md)
 
 - [merge vdisk](merge-vdisk.md)
 

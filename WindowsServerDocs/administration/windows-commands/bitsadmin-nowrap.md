@@ -1,6 +1,6 @@
 ---
 title: bitsadmin nowrap
-description: Bitsadmin nowrap 命令的参考主题，它截断超出命令窗口最右边边缘的任何输出文本行。
+description: Bitsadmin nowrap 命令的参考文章，它截断超出命令窗口最右边边缘的任何输出文本行。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2aac604ec3e13026e322d7cb7a9364df46266a0c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f8f55faeea79e5f2cf02fde0732ed82ae13e902f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717337"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923028"
 ---
 # <a name="bitsadmin-nowrap"></a>bitsadmin nowrap
 

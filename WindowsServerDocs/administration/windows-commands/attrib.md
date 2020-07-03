@@ -1,6 +1,6 @@
 ---
 title: attrib
-description: Attrib 命令的参考主题，其中显示、设置或删除分配给文件或目录的属性。
+description: Attrib 命令的参考文章，其中显示、设置或删除分配给文件或目录的属性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c525fe1dc5b78032f20358492a1bfde4df909add
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc5d780ffd32976df306e2221987f24ec8553854
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719198"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923909"
 ---
 # <a name="attrib"></a>attrib
 
@@ -28,13 +28,13 @@ attrib [{+|-}r] [{+|-}a] [{+|-}s] [{+|-}h] [{+|-}i] [<drive>:][<path>][<filename
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| `{+|-}r` | 设置（**+**）或清除（**-**）只读文件属性。 |
-| `{+\|-}a` | 设置（**+**）或清除（**-**）存档文件属性。 此属性集用于标记自上次备份以来发生更改的文件。 请注意， **xcopy**命令使用存档属性。 |
-| `{+\|-}s` | 设置（**+**）或清除（**-**）系统文件属性。 如果文件使用此属性集，则必须清除该属性，然后才能更改文件的任何其他属性。 |
-| `{+\|-}h` | 设置（**+**）或清除（**-**）隐藏文件属性。 如果文件使用此属性集，则必须清除该属性，然后才能更改文件的任何其他属性。 |
-| `{+\|-}i` | 设置（**+**）或清除（**-**） "非内容索引文件" 属性。 |
+| `{+|-}r` | 设置（ **+** ）或清除（ **-** ）只读文件属性。 |
+| `{+\|-}a` | 设置（ **+** ）或清除（ **-** ）存档文件属性。 此属性集用于标记自上次备份以来发生更改的文件。 请注意， **xcopy**命令使用存档属性。 |
+| `{+\|-}s` | 设置（ **+** ）或清除（ **-** ）系统文件属性。 如果文件使用此属性集，则必须清除该属性，然后才能更改文件的任何其他属性。 |
+| `{+\|-}h` | 设置（ **+** ）或清除（ **-** ）隐藏文件属性。 如果文件使用此属性集，则必须清除该属性，然后才能更改文件的任何其他属性。 |
+| `{+\|-}i` | 设置（ **+** ）或清除（ **-** ） "非内容索引文件" 属性。 |
 | `[<drive>:][<path>][<filename>]` | 指定要显示或更改属性的目录、文件或文件组的位置和名称。<p>您可以使用 **？** 和 **&#42;** *filename*参数中的通配符，以显示或更改一组文件的属性。 |
 | /s | 将**attrib**和任何命令行选项应用于当前目录及其所有子目录中的匹配文件。 |
 | /d | 将**attrib**和任何命令行选项应用于目录。 |
@@ -49,7 +49,7 @@ attrib [{+|-}r] [{+|-}a] [{+|-}s] [{+|-}h] [{+|-}i] [<drive>:][<path>][<filename
 attrib news86
 ```
 
-若要将只读属性分配给名为 test.txt 的文件，请键入：
+若要将只读属性分配给名为 report.txt 的文件，请键入：
 
 ```
 attrib +r report.txt
