@@ -1,6 +1,6 @@
 ---
 title: clip
-description: Clip 命令的参考主题，该主题将命令行中的命令输出重定向到 Windows 剪贴板。
+description: Clip 命令的参考文章，它将命令行中的命令输出重定向到 Windows 剪贴板。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61c905e3dcce52f3a3d35adeac55fc5df574f664
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3c0e23c18d356740a639af760fc7433db59d012a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712791"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929898"
 ---
 # <a name="clip"></a>clip
 
@@ -29,7 +29,7 @@ clip < <filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<command>` | 指定要将其输出发送到 Windows 剪贴板的命令。 |
 | `<filename>` | 指定要发送到 Windows 剪贴板的内容的文件。 |
@@ -49,7 +49,7 @@ dir | clip
 awk -f generic.awk input.txt | clip
 ```
 
-若要*将名为 readme.txt 的*文件的内容复制到 Windows 剪贴板，请键入：
+若要将名为*readme.txt*的文件的内容复制到 Windows 剪贴板，请键入：
 
 ```
 clip < readme.txt

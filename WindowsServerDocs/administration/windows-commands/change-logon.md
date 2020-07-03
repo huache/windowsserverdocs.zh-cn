@@ -1,6 +1,6 @@
 ---
 title: change logon
-description: Change logon 命令的参考主题，可用于启用或禁用来自客户端会话的登录，或者显示当前登录状态。
+description: 更改登录命令的参考文章，用于启用或禁用来自客户端会话的登录，或者显示当前登录状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a2ebe75f6efa8c3bcfc0018d1f4e6051bb9ebb7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1561434347bc6a56e628f185e0984e33587bd999
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716123"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929124"
 ---
 # <a name="change-logon"></a>change logon
 
@@ -33,7 +33,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /query | 显示当前登录状态，不管是启用还是禁用。 |
 | /enable | 允许来自客户端会话的登录，但不允许来自控制台的登录。 |
@@ -51,7 +51,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 ### <a name="examples"></a>示例
 
 - 若要显示当前登录状态，请键入：
-  
+
   ```
   change logon /query
   ```
@@ -67,7 +67,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
   ```
   change logon /disable
   ```
-  
+
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: create partition logical
-description: Create partition 逻辑命令的参考主题，它在现有扩展分区中创建逻辑分区。
+description: Create partition 逻辑命令的参考文章，它在现有扩展分区中创建逻辑分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99b8c837fe5da295087f9b146bf429d91ebc8693
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 4860f61d23c9ae51732c1fb0e127047c4944d2ed
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993270"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929675"
 ---
 # <a name="create-partition-logical"></a>create partition logical
 
@@ -38,7 +38,7 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
 | 参数 | 说明 |
 | --------- | ----------- |
 | 大小 =`<n>` | 指定逻辑分区的大小（以兆字节（MB）为单位），该值必须小于扩展分区。 如果没有给定大小，则分区会一直继续，直到扩展分区中没有可用空间为止。 |
-| offset =`<n>` | 指定在其中创建分区的偏移量（kb）。 偏移量向上舍入，以完全填充所使用的任何柱面大小。 如果未给出偏移量，则将该分区放置在可以足够容纳它的第一个磁盘区域中。 分区至少与**size =`<n>`** 指定的数字一样长。 如果为逻辑分区指定大小，则它必须小于扩展分区。 |
+| offset =`<n>` | 指定在其中创建分区的偏移量（kb）。 偏移量向上舍入，以完全填充所使用的任何柱面大小。 如果未给出偏移量，则将该分区放置在可以足够容纳它的第一个磁盘区域中。 分区至少与**size = `<n>` **指定的数字一样长。 如果为逻辑分区指定大小，则它必须小于扩展分区。 |
 | align =`<n>` | 将所有卷或分区区与最接近的对齐边界对齐。 通常与硬件 RAID 逻辑单元号（LUN）阵列一起使用以提高性能。 `<n>`从磁盘开始到最接近的对齐边界的千字节（KB）数。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

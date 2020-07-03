@@ -1,6 +1,6 @@
 ---
 title: dfsdiag testsites
-description: Dfsdiag testsites 的参考主题，通过验证充当命名空间服务器或文件夹（链接）目标的服务器是否具有与所有域控制器相同的站点关联来检查 active directory 域服务（AD DS）站点的配置。
+description: Dfsdiag testsites 参考文章，通过验证充当命名空间服务器或文件夹（链接）目标的服务器是否具有与所有域控制器相同的站点关联来检查 active directory 域服务（AD DS）站点的配置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54eb7c7ec44d7cd4872960ca29cd3146b710f472
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 7942b1535957366af9485580d75c9eec17120f4d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992853"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928680"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag testsites
 

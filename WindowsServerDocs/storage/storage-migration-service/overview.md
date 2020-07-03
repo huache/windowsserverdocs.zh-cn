@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: fab7dff1efc8b21a3b8fdacdeb9d446d7bc0cc30
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6ec1093a77b036cada9e54c82234d653362ce4d3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475304"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930105"
 ---
 # <a name="storage-migration-service-overview"></a>存储迁移服务概述
 
@@ -84,7 +84,7 @@ ms.locfileid: "85475304"
 源服务器必须运行以下操作系统之一：
 
 - Windows Server 半年频道
-- Windows Server 2019
+- Windows Server Standard 2012 R2
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
@@ -123,7 +123,7 @@ ms.locfileid: "85475304"
 目标服务器必须运行以下操作系统之一：
 
 - Windows Server 半年频道
-- Windows Server 2019
+- Windows Server Standard 2012 R2
 - Windows Server 2016
 - Windows Server 2012 R2
 
@@ -136,6 +136,8 @@ Windows 管理中心版本1910允许你部署 Azure 虚拟机。 这会将 VM �
 
    以下视频演示了如何使用存储迁移服务迁移到 Azure Vm。
    > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ]
+   
+如果要将虚拟机直接迁移到 Azure，而不迁移到更高版本的操作系统，请考虑使用 Azure Migrate。 有关详细信息，请参阅[Azure Migrate 概述](https://go.microsoft.com/fwlink/?linkid=2056064)。
 
 ## <a name="whats-new-in-storage-migration-service"></a>存储迁移服务中的新增功能
 

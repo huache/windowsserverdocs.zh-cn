@@ -1,6 +1,6 @@
 ---
 title: copy
-description: "\"复制\" 命令的参考主题，它将一个或多个文件从一个位置复制到另一个位置。"
+description: "\"复制\" 命令的参考文章，可将一个或多个文件从一个位置复制到另一个位置。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 909bcdf83c87440dafe2653711c4d7e215f8d66b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6ea742ab8fce296a88c8c9e6a41262c7aef88813
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719300"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928887"
 ---
 # <a name="copy"></a>copy
 
@@ -31,7 +31,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /d | 允许复制的加密文件作为解密文件保存在目标位置。 |
 | /v | 验证是否已正确写入新文件。 |
@@ -65,8 +65,8 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 - 如果无法验证写入操作，将显示一条错误消息。 虽然**copy**命令很少出现记录错误，但你可以使用 **/v**来验证是否已正确记录关键数据。 **/V**命令行选项还会减慢**复制**命令，因为必须检查磁盘上记录的每个扇区。
 
 - 如果在**COPYCMD**环境变量中预设了 **/y** ，可以通过在命令行中使用 **/-y**来重写此设置。 默认情况下，当您替换此设置时，将提示您替换此设置，除非在批处理脚本中执行了**copy**命令。
-  
-- 若要附加文件，请为*目标*指定单个文件，但为*源*指定多个文件（使用*通配符或*+*file2*+*file3*格式）。
+
+- 若要附加文件，请为*目标*指定单个文件，但为*源*指定多个文件（使用*通配符或* + *file2* + *file3*格式）。
 
 - 如果在复制阶段连接丢失（例如，如果服务器脱机中断连接），则可以使用**copy/z**在重新建立连接后继续。 **/Z**选项还显示为每个文件完成的复制操作的百分比。
 
@@ -85,7 +85,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 - 若要复制长度为0字节的文件，或复制所有目录的文件和子目录，请使用[xcopy 命令](xcopy.md)。
 
-- 若要将当前时间和日期分配到文件而不修改文件，请使用以下语法：  
+- 若要将当前时间和日期分配到文件而不修改文件，请使用以下语法：
 
     ```
     copy /b <source> +,,
@@ -95,7 +95,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 ## <a name="examples"></a>示例
 
-若要将名为*memo*的文件复制到当前驱动器中的*letter* ，并确保文件尾字符（CTRL + Z）位于复制文件的末尾，请键入：
+若要将名为*memo.doc*的文件复制到当前驱动器中的*letter.doc* ，并确保文件尾字符（CTRL + Z）位于复制文件的末尾，请键入：
 
 ```
 copy memo.doc letter.doc /a
@@ -125,7 +125,7 @@ copy mar89.rpt + apr89.rpt + may89.rpt Report
 copy report + mar89.rpt + apr89.rpt + may89.rpt
 ```
 
-若要将具有 .txt 文件扩展名的当前目录中的所有文件合并到名为 *.doc*的单个文件中，请键入：
+若要将具有 .txt 文件扩展名的当前目录中的所有文件合并到名为*Combined.doc*的单个文件中，请键入：
 
 ```
 copy *.txt Combined.doc
@@ -140,13 +140,13 @@ copy /b *.exe Combined.exe
 > [!CAUTION]
 > 如果将二进制文件组合在一起，则生成的文件可能无法使用，因为内部格式设置。
 
-- 将具有 .txt 扩展名的每个文件与对应的 ref 文件相结合，可以创建具有相同文件名但扩展名为 .doc 的文件。 "**复制**" 命令将*file1*与*file1*结合起来以形成*file1*，然后，该命令将*file2*与*file2*结合起来以形成*file2*，依此类推。 例如，键入：
+- 将具有 .txt 扩展名的每个文件与对应的 ref 文件相结合，可以创建具有相同文件名但扩展名为 .doc 的文件。 "**复制**" 命令将*file1.txt*与*file1*结合起来以形成*file1.doc*，然后命令将*file2.txt*与*file2*结合起来以形成*file2.doc*，依此类推。 例如，键入：
 
 ```
 copy *.txt + *.ref *.doc
 ```
 
-若要将所有文件与 .txt 扩展名组合在一起，然后将扩展名为. ref 的所有文件合并到一个名为 *.doc*的文件中，请键入：
+若要将所有文件与 .txt 扩展名组合在一起，然后将扩展名为 ref 的所有文件合并成一个名为*Combined.doc*的文件，请键入：
 
 ```
 copy *.txt + *.ref Combined.doc

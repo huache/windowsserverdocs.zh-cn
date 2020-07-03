@@ -1,6 +1,6 @@
 ---
 title: compact
-description: Compact 命令的参考主题，用于显示或更改 NTFS 分区上的文件或目录的压缩。
+description: Compact 命令的参考文章，其中显示或更改 NTFS 分区上的文件或目录的压缩。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52830530fa281025fcfd970b7675b98004e2a918
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c17f7c934ecd4b6988b3ab606059a2acd31b852b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710951"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929000"
 ---
 # <a name="compact"></a>compact
 
@@ -28,11 +28,11 @@ compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /c | 压缩指定的目录或文件。 |
 | /U | Uncompresses 指定的目录或文件。 |
-| /s [：`<dir>`] | 将**compact**命令应用于指定目录的所有子目录（如果指定了 "无"，则为当前目录）。 |
+| /s [： `<dir>` ] | 将**compact**命令应用于指定目录的所有子目录（如果指定了 "无"，则为当前目录）。 |
 | /a | 显示隐藏文件或系统文件。 |
 | /i | 忽略错误。 |
 | /f | 强制对指定目录或文件进行压缩或解压缩。 如果文件是在系统崩溃中断操作中断的情况下进行部分压缩的，则使用 **/f** 。 若要强制完全压缩文件，请使用 **/c**和 **/f**参数，并指定部分压缩的文件。 |
@@ -75,7 +75,7 @@ compact /c /i /s:\
 compact /c /s:\tmp *.bmp
 ```
 
-若要强制对在系统崩溃期间部分压缩的文件*斑马*进行完全压缩，请键入：
+若要强制对在系统崩溃期间部分压缩的文件*zebra.bmp*进行完全压缩，请键入：
 
 ```
 compact /c /f zebra.bmp

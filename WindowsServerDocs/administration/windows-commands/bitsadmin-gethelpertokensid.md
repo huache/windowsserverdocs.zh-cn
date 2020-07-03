@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gethelpertokensid
-description: Bitsadmin gethelpertokensid 命令的参考主题，返回 BITS 传输作业的帮助程序令牌的 SID （如果已设置）。
+description: Bitsadmin gethelpertokensid 命令的参考文章，返回 BITS 传输作业的帮助程序令牌的 SID （如果已设置）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: c45bf86d8a7364289db41fa390f319270a2a8386
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b616b9cc80b21c4c6a72fcca55dcdd893fac2730
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717897"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928195"
 ---
 # <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gethelpertokensid
 
@@ -30,7 +30,7 @@ bitsadmin /gethelpertokensid <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

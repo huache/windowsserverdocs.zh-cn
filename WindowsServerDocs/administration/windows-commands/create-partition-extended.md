@@ -1,6 +1,6 @@
 ---
 title: create partition extended
-description: Create partition 扩展命令的参考主题，它在具有焦点的磁盘上创建扩展分区。
+description: Create partition 扩展命令的参考文章，用于在具有焦点的磁盘上创建扩展分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d2cc591dca276f70b3ddda1827607d5e2953ed2
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 6acc766a6d9e2fd51bc9c6726d5dec2168ec7eef
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993284"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929684"
 ---
 # <a name="create-partition-extended"></a>create partition extended
 

@@ -1,6 +1,6 @@
 ---
 title: dfsdiag testreferral
-description: Dfsdiag testreferral 命令的参考主题，用于检查分布式文件系统（DFS）引用。
+description: 用于检查分布式文件系统（DFS）引用的 dfsdiag testreferral 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23abcd738170d5f53e12ae83c41d632d2d7ac738
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 8ee88e6f9d75dc32bd7fd5dac4c14c72f3bbac02
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992927"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928694"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag testreferral
 
@@ -24,11 +24,11 @@ ms.locfileid: "82992927"
 
 - 如果使用不带参数的**DFSpath*** 参数，则该命令将验证引用列表是否包含所有受信任的域。
 
-- 如果指定域，则该命令将执行域控制器（`dfsdiag /testdcs`）的运行状况检查，并测试本地主机的站点关联和域缓存。
+- 如果指定域，则该命令将执行域控制器（）的运行状况检查 `dfsdiag /testdcs` ，并测试本地主机的站点关联和域缓存。
 
 - 如果指定域和 \SYSvol 或 \NETLOGON，则该命令将执行相同的域控制器运行状况检查，并检查 SYSvol 或 NETLOGON 引用的**生存时间（TTL）** 是否与默认值900秒匹配。
 
-- 如果指定命名空间根，则该命令将执行相同的域控制器运行状况检查，以及执行 DFS 配置检查（`dfsdiag /testdfsconfig`）和命名空间完整性检查（`dfsdiag /testdfsintegrity`）。
+- 如果指定命名空间根，则该命令将执行相同的域控制器运行状况检查，以及执行 DFS 配置检查（ `dfsdiag /testdfsconfig` ）和命名空间完整性检查（ `dfsdiag /testdfsintegrity` ）。
 
 - 如果指定 DFS 文件夹（链接），该命令将执行相同的命名空间根运行状况检查，并验证文件夹目标（dfsdiag/testsites）的站点配置并验证本地主机的站点关联。
 

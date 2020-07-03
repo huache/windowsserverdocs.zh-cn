@@ -1,6 +1,6 @@
 ---
 title: timeout
-description: 超时的参考主题，用于在指定的秒数内暂停命令处理器。
+description: 超时的参考文章，用于在指定的秒数内暂停命令处理器。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed66342c4f0bbe22e9d2dc6440d291941c769cd7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 62ead9473a9034c02fab18f2318ecb5162511922
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721351"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930087"
 ---
 # <a name="timeout"></a>timeout
 
@@ -25,14 +25,14 @@ ms.locfileid: "82721351"
 ## <a name="syntax"></a>语法
 
 ```
-timeout /t <TimeoutInSeconds> [/nobreak] 
+timeout /t <TimeoutInSeconds> [/nobreak]
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|/t \<TimeoutInSeconds>|指定命令处理器继续处理之前要等待的秒数（-1 到99999）。 值-1 会使计算机无限期等待击键。|
+|/t\<TimeoutInSeconds>|指定命令处理器继续处理之前要等待的秒数（-1 到99999）。 值-1 会使计算机无限期等待击键。|
 |/nobreak|指定忽略用户密钥笔划。|
 |/?|在命令提示符下显示帮助。|
 

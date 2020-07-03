@@ -1,6 +1,6 @@
 ---
 title: erase
-description: 擦除命令的参考主题，用于删除一个或多个文件。
+description: 用于删除一个或多个文件的 erase 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1525f20549b6571975cb622534f8504eb4fa1f79
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 0a22c738215671096373a7077fc89ac87fe03597
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354677"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929311"
 ---
 # <a name="erase"></a>erase
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin create
-description: Bitsadmin create 命令的参考主题，用于创建具有给定显示名称的传输作业。
+description: Bitsadmin create 命令的参考文章，用于创建具有给定显示名称的传输作业。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 728027eb4680805c1f9a2afc32d8d37a14239597
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b3e0f8fb7d8396a238cabcbeb375f61cbe526c3f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718219"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928343"
 ---
 # <a name="bitsadmin-create"></a>bitsadmin create
 
@@ -23,7 +23,7 @@ ms.locfileid: "82718219"
 创建给定的显示名的传输作业。
 
 > [!NOTE]
-> BITS 1.2 和更早版本不支持 **/Upload** 和 **/Upload-Reply**参数类型。
+> **/Upload**   BITS 1.2 和更早版本不支持/Upload 和 **/Upload-Reply**参数类型。
 
 ## <a name="syntax"></a>语法
 

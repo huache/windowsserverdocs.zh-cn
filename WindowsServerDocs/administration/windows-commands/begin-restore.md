@@ -1,6 +1,6 @@
 ---
-title: 开始还原
-description: 用于启动还原会话并向所涉及的编写器发出 PreRestore 事件的 "开始还原" 命令的参考主题。
+title: begin restore
+description: 开始 restore 命令的参考文章，用于启动还原会话并向相关编写器发出 PreRestore 事件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98967290bd7f15a518848b53b43e8c9daeb8b860
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6f97c35eb8a98aedecfd2f5a8dc87d4ddc3a3cd6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718502"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928524"
 ---
-# <a name="begin-restore"></a>开始还原
+# <a name="begin-restore"></a>begin restore
 
 > 适用于：Windows Server 2012 R2、Windows Server 2012
 

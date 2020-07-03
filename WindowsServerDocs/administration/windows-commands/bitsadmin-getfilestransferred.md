@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getfilestransferred
-description: Bitsadmin getfilestransferred 命令的参考主题，它检索为指定作业传输的文件数。
+description: Bitsadmin getfilestransferred 命令的参考文章，用于检索为指定作业传输的文件数。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed11739029338ecce5fc4efbe1918873a7f37f62
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 43257dcb8350974bfb258a9970c1a6fec787a226
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717916"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928250"
 ---
 # <a name="bitsadmin-getfilestransferred"></a>bitsadmin getfilestransferred
 
@@ -28,7 +28,7 @@ bitsadmin /getfilestransferred <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

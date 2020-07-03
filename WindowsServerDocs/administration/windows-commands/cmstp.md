@@ -1,6 +1,6 @@
 ---
 title: cmstp
-description: 用于安装或删除连接管理器服务配置文件的 cmstp 的参考主题。
+description: 用于安装或删除连接管理器服务配置文件的 cmstp 的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 11d2ec5b09cfd9440eb22d66578061ddfb157539
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8f7bc7bc4b90dced8074fa685ad79c65747e0ded
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712089"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929812"
 ---
 # <a name="cmstp"></a>cmstp
 
@@ -24,7 +24,7 @@ ms.locfileid: "82712089"
 
 ## <a name="syntax"></a>语法
 
-语法 1-这是在自定义安装应用程序中使用的典型语法。 若要使用此语法，必须从**cmstp**包含该`<serviceprofilefilename>.exe`文件的目录中运行 cmstp。
+语法 1-这是在自定义安装应用程序中使用的典型语法。 若要使用此语法，必须从包含该文件的目录中运行**cmstp** `<serviceprofilefilename>.exe` 。
 
 ```
 <serviceprofilefilename>.exe /q:a /c:cmstp.exe <serviceprofilefilename>.inf [/nf] [/s] [/u]
@@ -36,7 +36,7 @@ cmstp.exe [/nf] [/s] [/u] [drive:][path]serviceprofilefilename.inf
 ```
 
 #### <a name="parameters"></a>参数
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<serviceprofilefilename>.exe` | 按名称指定包含要安装的配置文件的安装包。<p>对于语法1是必需的，但对于语法2是无效的。 |
 | /q： a | 指定在不提示用户的情况下安装配置文件。 安装已成功的验证消息仍将出现。<p>对于语法1是必需的，但对于语法2是无效的。 |

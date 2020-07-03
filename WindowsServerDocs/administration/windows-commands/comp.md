@@ -1,6 +1,6 @@
 ---
 title: comp
-description: 用于比较两个文件的内容或逐字节的文件集的 Reference 主题。
+description: 用于比较每个文件或一组文件的内容的复合命令参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c2939ee2166d961cae8ae0699c130e91117dd8a6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 65008945e2994b9040fcac663185d0526910b8bc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711468"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929714"
 ---
 # <a name="comp"></a>comp
 
@@ -28,7 +28,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<data1>` | 指定要比较的第一个文件或一组文件的位置和名称。 您可以使用通配符（**&#42;** 和 **？**）来指定多个文件。 |
 | `<data2>` | 指定要比较的第二个文件或一组文件的位置和名称。 您可以使用通配符（**&#42;** 和 **？**）来指定多个文件。 |
@@ -81,7 +81,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 
 ## <a name="examples"></a>示例
 
-若要将目录*c:\reports*的内容与备份目录`\\sales\backup\april`进行比较，请键入：
+若要将目录*c:\reports*的内容与备份目录进行比较 `\\sales\backup\april` ，请键入：
 
 ```
 comp c:\reports \\sales\backup\april

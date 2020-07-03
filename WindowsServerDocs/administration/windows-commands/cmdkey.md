@@ -1,6 +1,6 @@
 ---
 title: cmdkey
-description: 用于创建、列出和删除存储的用户名和密码或凭据的 cmdkey 命令的参考主题。
+description: 用于创建、列出和删除存储的用户名和密码或凭据的 cmdkey 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4005707785101fcc1fb0030ffe895668bd65f730
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a7a5446a692719a55575853df6aebc78733135b8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712157"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929831"
 ---
 # <a name="cmdkey"></a>cmdkey
 
@@ -28,17 +28,17 @@ ms.locfileid: "82712157"
 cmdkey [{/add:<targetname>|/generic:<targetname>}] {/smartcard | /user:<username> [/pass:<password>]} [/delete{:<targetname> | /ras}] /list:<targetname>
 ```
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ---------- | ----------- |
-| /add`<targetname>` | 向列表添加用户名和密码。<p>需要的参数`<targetname>`标识此项将与之关联的计算机或域名。 |
-| /常规`<targetname>` | 向列表中添加一般凭据。<p>需要的参数`<targetname>`标识此项将与之关联的计算机或域名。 |
+| /add`<targetname>` | 向列表添加用户名和密码。<p>需要的参数 `<targetname>` 标识此项将与之关联的计算机或域名。 |
+| /常规`<targetname>` | 向列表中添加一般凭据。<p>需要的参数 `<targetname>` 标识此项将与之关联的计算机或域名。 |
 | /smartcard | 从智能卡中检索凭据。 如果在使用此选项时系统上找到了多个智能卡，则**cmdkey**将显示所有可用智能卡的相关信息，然后提示用户指定要使用的智能卡。 |
-| /user`<username>` | 指定要与此条目一起存储的用户或帐户名称。 如果`<username>`未提供，则会请求它。 |
-|/pass`<password>` | 指定要与此项一起存储的密码。 如果`<password>`未提供，则会请求它。 密码在存储后不会显示。 |
-| /delete{:`<targetname>` | ra | 从列表中删除用户名和密码。 如果`<targetname>`指定了，则会删除该条目。 如果`/ras`指定，则删除存储的远程访问条目。 |
-| /list`<targetname>` | 显示存储的用户名和凭据的列表。 如果`<targetname>`未指定，则会列出所有存储的用户名和凭据。 |
+| /user`<username>` | 指定要与此条目一起存储的用户或帐户名称。 如果 `<username>` 未提供，则会请求它。 |
+|/pass`<password>` | 指定要与此项一起存储的密码。 如果 `<password>` 未提供，则会请求它。 密码在存储后不会显示。 |
+| /delete{:`<targetname>` | ra | 从列表中删除用户名和密码。 如果 `<targetname>` 指定了，则会删除该条目。 如果 `/ras` 指定，则删除存储的远程访问条目。 |
+| /list`<targetname>` | 显示存储的用户名和凭据的列表。 如果 `<targetname>` 未指定，则会列出所有存储的用户名和凭据。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ## <a name="examples"></a>示例

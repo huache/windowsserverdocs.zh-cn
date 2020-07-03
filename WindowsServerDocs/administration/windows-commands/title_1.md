@@ -1,6 +1,6 @@
 ---
 title: title
-description: 标题的参考主题，用于为 "命令提示符" 窗口创建标题。
+description: 标题参考文章，用于为 "命令提示符" 窗口创建标题。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a94fe033bfd43d825c5beb7c915937bc4419b18f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 732a0de30b9495e6281248120d2a90f85734ad8b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721339"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930060"
 ---
 # <a name="title"></a>title
 
@@ -30,9 +30,9 @@ title [<String>]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|\<字符串>|指定 "命令提示符" 窗口的标题。|
+|\<String>|指定 "命令提示符" 窗口的标题。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
@@ -42,7 +42,7 @@ title [<String>]
 
 ## <a name="examples"></a>示例
 
-在下面的示例脚本中，命令提示符窗口的标题将更改为在批处理文件执行**复制**命令时更新文件。 执行命令后，将显示文本`Files Updated` ，并且命令提示符窗口的标题将更改回命令提示符。
+在下面的示例脚本中，命令提示符窗口的标题将更改为在批处理文件执行**复制**命令时更新文件。 执行命令后，将 `Files Updated` 显示文本，并且命令提示符窗口的标题将更改回命令提示符。
 ```
 @echo off
 title Updating Files

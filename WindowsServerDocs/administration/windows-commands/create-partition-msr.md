@@ -1,6 +1,6 @@
 ---
 title: create partition msr
-description: Create partition msr 的参考主题，它在 GUID 分区表（gpt）磁盘上创建 Microsoft 保留（MSR）分区。
+description: Create partition msr 的参考文章，在 GUID 分区表（gpt）磁盘上创建 Microsoft 保留（MSR）分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d427e9f96023f8b66f72e3895b30519ab7cd2de1
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 2714c47c467fda9c6ca3451331ab9bc7991d4591
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993263"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929647"
 ---
 # <a name="create-partition-msr"></a>create partition msr
 
@@ -37,7 +37,7 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| 大小 =`<n>` | 分区的大小，以兆字节（MB）为单位。 分区的字节数至少与指定的数字相同`<n>`。 如果未给出分区大小，则分区会一直继续，直至当前区域中没有可用空间为止。 |
+| 大小 =`<n>` | 分区的大小，以兆字节（MB）为单位。 分区的字节数至少与指定的数字相同 `<n>` 。 如果未给出分区大小，则分区会一直继续，直至当前区域中没有可用空间为止。 |
 | offset =`<n>` | 指定在其中创建分区的偏移量（kb）。 偏移量向上舍入，以完全填充所使用的任何扇区大小。 如果未给出偏移量，则将分区放置在能容纳它的第一个磁盘区域中。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

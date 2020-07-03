@@ -1,6 +1,6 @@
 ---
 title: create volume stripe
-description: 创建卷条带化命令的参考主题，它使用两个或更多指定的动态磁盘创建带区卷。
+description: 创建卷条带化命令的参考文章，其中使用两个或更多指定的动态磁盘创建带区卷。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 315d7a08dfcf64ae09501975b5f5bdb72c37754e
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 8cb20a7741d49201b88345374ba1c435e81a77f6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993207"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929526"
 ---
 # <a name="create-volume-stripe"></a>create volume stripe
 
@@ -33,7 +33,7 @@ create volume stripe [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]
 | 参数 | 说明 |
 | --------- |  -----------|
 | 大小 =`<n>` | 该卷将占用的每个磁盘上的磁盘空间量（以 MB 为单位）。 如果没有指定大小，新建卷将占据最小磁盘上的剩余可用空间以及其他磁盘上相同大小的空间。 |
-| 磁盘 =`<n>,<n>[,<n>,...]` | 在其上创建带区卷的动态磁盘。 若要创建一个带区卷，需要至少两个动态磁盘。 每个磁盘上分配的`size=<n>`空间量等于。 |
+| 磁盘 =`<n>,<n>[,<n>,...]` | 在其上创建带区卷的动态磁盘。 若要创建一个带区卷，需要至少两个动态磁盘。 `size=<n>`每个磁盘上分配的空间量等于。 |
 | align =`<n>` | 将所有卷区与最接近的对齐边界对齐。 通常与硬件 RAID 逻辑单元号（LUN）阵列一起使用以提高性能。 `<n>`从磁盘开始到最接近的对齐边界的千字节（KB）数。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

@@ -1,6 +1,6 @@
 ---
 title: ksetup dumpstate
-description: Ksetup dumpstate 命令的参考主题，该主题显示计算机上定义的所有领域的领域设置的当前状态。
+description: Ksetup dumpstate 命令参考文章，其中显示了计算机上定义的所有领域的领域设置当前状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ccb75ac143239d97b823fb7030f9a8020b4b4f6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 86e3761af14da9e1b8f52f4ce6859128fcda7bb7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817737"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929162"
 ---
 # <a name="ksetup-dumpstate"></a>ksetup dumpstate
 

@@ -1,6 +1,6 @@
 ---
 title: ksetup delrealmflags
-description: Ksetup delrealmflags 命令的参考主题，它删除指定领域中的领域标志。
+description: Ksetup delrealmflags 命令的参考文章，用于删除指定领域中的领域标志。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8d983a00683fec0fa1bb9801caabe226a4ffeb9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 9d3c81d1b034f6c53c33271c1c9e61a0fc5d4893
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817827"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929173"
 ---
 # <a name="ksetup-delrealmflags"></a>ksetup delrealmflags
 
@@ -36,10 +36,10 @@ ksetup /delrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 - 领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 的计算机可以使用 Kerberos 服务器来管理 Kerberos 领域中的身份验证，而不是使用运行 Windows Server 操作系统的域。 此条目将建立领域的功能，如下所示：
 
-| Value | 领域标志 | 说明 |
+| 值 | 领域标志 | 说明 |
 | ----- | ---------- | ----------- |
 | 0xF | 全部 | 设置所有领域标志。 |
-| 0x00 | 无 | 未设置领域标志，并且未启用任何其他功能。 |
+| 0x00 | None | 未设置领域标志，并且未启用任何其他功能。 |
 | 0x01 | sendaddress | 此 IP 地址将包含在票证授予票证中。 |
 | 0x02 | tcpsupported | 此领域支持传输控制协议（TCP）和用户数据报协议（UDP）。 |
 | 0x04 | delegate | 此领域中的每个人都受信任，可用于委派。 |

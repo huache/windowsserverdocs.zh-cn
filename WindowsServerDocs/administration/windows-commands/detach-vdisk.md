@@ -1,6 +1,6 @@
 ---
-title: 分离 vdisk
-description: "\"分离 vdisk\" 命令的参考主题，它会停止所选的虚拟硬盘（VHD），使其不会显示为主计算机上的本地硬盘驱动器。"
+title: detach vdisk
+description: "\"分离 vdisk\" 命令的参考文章，用于停止选定的虚拟硬盘（VHD），使其不会显示为主计算机上的本地硬盘驱动器。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 427b27630341589f3ff6dd422667e1247f5b64ec
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: bce18dcf55940ca8529e4bee21af2f09282d0e00
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993082"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928703"
 ---
-# <a name="detach-vdisk"></a>分离 vdisk
+# <a name="detach-vdisk"></a>detach vdisk
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

@@ -1,6 +1,6 @@
 ---
 title: create
-description: Create 命令的参考主题，可在磁盘上创建分区或卷影分区，在一个或多个磁盘上创建卷，或在虚拟硬盘（VHD）上创建卷影分区。
+description: Create 命令的参考文章，用于在磁盘上创建分区或卷影分区，在一个或多个磁盘或虚拟硬盘（VHD）上创建卷。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f371bee591e29a45b1488b2c36112b55ed54d3f8
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 0b5b31f43e58b9e2eddb18f624c1054c9d028f4c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993192"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929532"
 ---
 # <a name="create"></a>create
 

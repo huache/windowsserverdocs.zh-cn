@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getmodificationtime
-description: Bitsadmin getmodificationtime 命令的参考主题，它检索上次修改作业或成功传输数据的时间。
+description: Bitsadmin getmodificationtime 命令的参考文章，用于检索上次修改作业或成功传输数据的时间。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6bab8c317917894a351c03df1efefb17842ecb7d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9055c0ac70bc2360601ecd1b1f91c8ad3908d704
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717841"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928167"
 ---
 # <a name="bitsadmin-getmodificationtime"></a>bitsadmin getmodificationtime
 
@@ -28,7 +28,7 @@ bitsadmin /getmodificationtime <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

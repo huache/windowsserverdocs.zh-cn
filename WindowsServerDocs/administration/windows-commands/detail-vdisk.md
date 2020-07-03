@@ -1,6 +1,6 @@
 ---
-title: 详细信息 vdisk
-description: Detail vdisk 命令的参考主题，其中显示了所选虚拟硬盘（VHD）的属性。
+title: detail vdisk
+description: 详细信息 vdisk 命令的参考文章，其中显示了所选虚拟硬盘（VHD）的属性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe754b5f089900ac97f288bc2cc8c72327a1bc82
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 5d3f061706bef2d4636e9f18ba428e7ddfb90bdd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993027"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929366"
 ---
-# <a name="detail-vdisk"></a>详细信息 vdisk
+# <a name="detail-vdisk"></a>detail vdisk
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
@@ -52,6 +52,6 @@ detail vdisk
 
 - [merge vdisk 命令](merge-vdisk.md)
 
-- [选择 vdisk](select-vdisk.md)
+- [select vdisk](select-vdisk.md)
 
 - [list 命令](list.md)

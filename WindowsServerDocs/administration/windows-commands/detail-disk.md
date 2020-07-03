@@ -1,6 +1,6 @@
 ---
 title: detail disk
-description: 详细信息磁盘命令的参考主题，其中显示了所选磁盘的属性以及该磁盘上的卷。
+description: 详细信息磁盘命令的参考文章，其中显示了所选磁盘的属性以及该磁盘上的卷。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 358d6762f382dc8461c73cbd557a906eb5189c6f
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 5bb5ec5a51f16aecf1b8ee35c78736f1791d3106
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993070"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929469"
 ---
 # <a name="detail-disk"></a>detail disk
 

@@ -1,6 +1,6 @@
 ---
 title: fsutil volume
-description: 适用于 fsutil volume 命令的参考主题，用于卸载卷，或在硬盘驱动器上查询硬盘驱动器，以确定硬盘驱动器上当前可用的可用空间量，或使用特定群集的文件。
+description: 适用于 fsutil volume 命令的参考文章，用于卸载卷，或查询硬盘驱动器以确定硬盘驱动器上当前可用的可用空间量，或使用特定群集的文件。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 0397c204-b3f8-4fd8-b71d-b7efb117766d
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 18671447664c47af48b4ca074aab823fd2b78625
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: aef1012cef33aeb2718dac4681b9119ea1a16590
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436832"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929243"
 ---
 # <a name="fsutil-volume"></a>fsutil volume
 

@@ -1,6 +1,6 @@
 ---
 title: chkdsk
-description: Chkdsk 命令的参考主题，用于检查卷的文件系统和文件系统元数据，以查找逻辑和物理错误。
+description: Chkdsk 命令的参考文章，用于检查卷的文件系统和文件系统元数据，以查找逻辑和物理错误。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 10/09/2019
-ms.openlocfilehash: 4843624337e031f81453def78e4df97bdbfe821e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b98699b7e0925b43c15a602b9c193be9301a14ce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82714408"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929991"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -32,12 +32,12 @@ ms.locfileid: "82714408"
 ## <a name="syntax"></a>语法
 
 ```
-chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]] [/b]  
+chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]] [/b]
 ```
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<volume>` | 指定驱动器号（后跟冒号）、装入点或卷名。 |
 | [ `[<path>]<filename>` | 仅用于文件分配表（FAT）和 FAT32。 指定您希望**chkdsk**检查碎片的文件或文件集的位置和名称。 您可以使用 **？** 和 **&#42;** 通配符来指定多个文件。 |
@@ -47,10 +47,10 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 | /x | 必要时强制首先卸除卷。 驱动器的所有打开的句柄都将失效。 **/x**还包括 **/f**的功能。  |
 | /i | 仅适用于 NTFS。 对索引条目执行更少的经历检查，这会减少运行**chkdsk**所需的时间。 |
 | /c | 仅适用于 NTFS。 不检查文件夹结构内的循环，这会减少运行**chkdsk**所需的时间。  |
-| /l [：`<size>`] | 仅适用于 NTFS。 将日志文件大小更改为你键入的大小。 如果省略 size 参数，则 **/l**显示当前大小。 |
+| /l [： `<size>` ] | 仅适用于 NTFS。 将日志文件大小更改为你键入的大小。 如果省略 size 参数，则 **/l**显示当前大小。 |
 | /b | 仅适用于 NTFS。 清除卷上的坏簇列表，并重新扫描所有已分配和可用的群集以查找错误。 **/b**包括 **/r**的功能。 在将卷镜像到新硬盘驱动器之后，使用此参数。 |
 | /scan | 仅适用于 NTFS。 在卷上运行联机扫描。 |
-| /forceofflinefix | 仅适用于 NTFS （必须与 **/scan**一起使用）。 绕过所有联机修复;所有发现的缺陷都排队等待脱机修复（例如`chkdsk /spotfix`）。 |
+| /forceofflinefix | 仅适用于 NTFS （必须与 **/scan**一起使用）。 绕过所有联机修复;所有发现的缺陷都排队等待脱机修复（例如 `chkdsk /spotfix` ）。 |
 | /perf | 仅适用于 NTFS （必须与 **/scan**一起使用）。 使用更多系统资源尽可能快地完成扫描。 这可能会对系统上运行的其他任务造成负面的性能影响。 |
 | /spotfix | 仅适用于 NTFS。 在卷上运行点修复。 |
 | /sdcleanup | 仅适用于 NTFS。 垃圾收集不需要的安全描述符数据（隐含 **/f**）。 |
@@ -66,12 +66,12 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 - 如果希望**chkdsk**更正磁盘错误，则无法在驱动器上打开文件。 如果文件已打开，则显示以下错误消息：
 
   ```
-  Chkdsk cannot run because the volume is in use by another process. Would you like to schedule this volume to be checked the next time the system restarts? (Y/N)  
+  Chkdsk cannot run because the volume is in use by another process. Would you like to schedule this volume to be checked the next time the system restarts? (Y/N)
   ```
 
 - 如果选择在下次重新启动计算机时检查驱动器，则**chkdsk**会在重新启动计算机时自动检查驱动器并更正错误。 如果驱动器分区是启动分区，则在它检查驱动器后， **chkdsk**会自动重新启动计算机。
 
-- 你还可以使用`chkntfs /c`命令来计划下次重新启动计算机时要检查的卷。 使用`fsutil dirty set`命令设置卷的脏位（指示损坏），以便 Windows 在计算机重新启动时运行**chkdsk** 。
+- 你还可以使用 `chkntfs /c` 命令来计划下次重新启动计算机时要检查的卷。 使用 `fsutil dirty set` 命令设置卷的脏位（指示损坏），以便 Windows 在计算机重新启动时运行**chkdsk** 。
 
 - 你应偶尔在 FAT 和 NTFS 文件系统上使用**chkdsk**来检查磁盘错误。 **Chkdsk**检查磁盘空间和磁盘使用情况，并提供特定于每个文件系统的状态报告。 状态报告显示在文件系统中找到的错误。 如果在活动分区上不使用 **/f**参数运行**chkdsk** ，它可能会报告虚假错误，因为它无法锁定驱动器。
 
@@ -80,17 +80,17 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
   由于 FAT 文件系统上的修复通常会更改磁盘的文件分配表，有时会导致数据丢失，因此， **chkdsk**可能会显示类似于以下内容的确认消息：
 
   ```
-  10 lost allocation units found in 3 chains.  
-  Convert lost chains to files?  
+  10 lost allocation units found in 3 chains.
+  Convert lost chains to files?
   ```
 
-    - 如果按**Y**，Windows 会将根目录中丢失的每个链作为文件保存在格式文件`<nnnn>`中。 **Chkdsk**完成后，可以检查这些文件，查看它们是否包含所需的任何数据。
+    - 如果按**Y**，Windows 会将根目录中丢失的每个链作为文件保存在格式文件中 `<nnnn>` 。 **Chkdsk**完成后，可以检查这些文件，查看它们是否包含所需的任何数据。
 
     - 如果按**N**，Windows 将修复磁盘，但不会保存丢失的分配单元的内容。
 
 - 如果不使用 **/f**参数， **chkdsk**将显示一条消息，指出需要修复文件，但不会修复任何错误。
 
-- 如果在非常`chkdsk /f*`大的磁盘上使用，或在文件数非常大（例如，数百万个文件）的磁盘上使用， `chkdsk /f`则可能需要较长时间才能完成。
+- 如果 `chkdsk /f*` 在非常大的磁盘上使用，或在文件数非常大（例如，数百万个文件）的磁盘上使用，则 `chkdsk /f` 可能需要较长时间才能完成。
 
 - 使用 **/r**参数查找文件系统中的物理磁盘错误，并尝试从任何受影响的磁盘扇区恢复数据。
 
@@ -100,13 +100,13 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 
 - 可从恢复控制台获取带有不同参数的**chkdsk**命令。
 
-- 在不经常重新启动的服务器上，你可能想要使用**chkntfs**或`fsutil dirty query`命令来确定在运行 chkdsk 之前是否已设置卷的已更新位。
+- 在不经常重新启动的服务器上，你可能想要使用**chkntfs**或 `fsutil dirty query` 命令来确定在运行 chkdsk 之前是否已设置卷的已更新位。
 
 ### <a name="understanding-exit-codes"></a>了解退出代码
 
-下表列出了**chkdsk**在完成后报告的退出代码。  
+下表列出了**chkdsk**在完成后报告的退出代码。
 
-  | 退出代码 | 描述 |
+  | 退出代码 | 说明 |
   | --------- | ----------- |
   | 0 | 未发现任何错误。 |
   | 1 | 发现并修复了错误。 |
@@ -118,7 +118,7 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 若要检查驱动器 D 中的磁盘并让 Windows 修复错误，请键入：
 
 ```
-chkdsk d: /f  
+chkdsk d: /f
 ```
 
 如果遇到错误， **chkdsk**将暂停并显示消息。 **Chkdsk**通过显示列出磁盘状态的报告完成。 在**chkdsk**完成之前，无法打开指定驱动器上的任何文件。
@@ -126,7 +126,7 @@ chkdsk d: /f
 若要在当前目录中的非连续块中检查 FAT 磁盘上的所有文件，请键入：
 
 ```
-chkdsk *.*  
+chkdsk *.*
 ```
 
 **Chkdsk**显示状态报告，然后列出与具有非连续块的文件规范匹配的文件。

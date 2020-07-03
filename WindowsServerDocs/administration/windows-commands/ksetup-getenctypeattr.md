@@ -1,6 +1,6 @@
 ---
 title: ksetup getenctypeattr
-description: Ksetup getenctypeattr 命令的参考主题，它检索域的 "加密类型" 属性。
+description: 用于检索域的加密类型属性的 ksetup getenctypeattr 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2acead4ff1179002303c18d4feff262080203a28
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1fa86e8f9a9f2a2e552c7b968c447707b09e7e86
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817697"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929146"
 ---
 # <a name="ksetup-getenctypeattr"></a>ksetup getenctypeattr
 

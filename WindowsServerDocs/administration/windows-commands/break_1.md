@@ -1,6 +1,6 @@
 ---
 title: break
-description: Break 命令的参考主题。 此命令已不再使用。
+description: Break 命令的参考文章。 此命令已不再使用。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 301c526903c95dec90c4883a54713eee20f516d2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 77cf4baa0e0343294e85318015942b39b6d6bfce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82708785"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928486"
 ---
 # <a name="break"></a>break
 
@@ -34,5 +34,5 @@ break=[on|off]
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
-  
+
 - [break 命令](break.md)

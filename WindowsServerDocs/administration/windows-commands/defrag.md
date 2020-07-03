@@ -1,6 +1,6 @@
 ---
 title: defrag
-description: Defrag 命令的参考主题，用于在本地卷上查找并合并零碎文件以提高系统性能。
+description: 用于在本地卷上查找并合并零碎文件以提高系统性能的 defrag 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf3ca6febfa07c7780b959389ff57fe4f3a0018b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c952ff78147d3b4c6097aaf9dd87e55ecc7911ad
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993151"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928792"
 ---
 # <a name="defrag"></a>defrag
 
@@ -61,7 +61,7 @@ defrag <volume> [<parameters>]
 
   - 文件系统锁定的卷。
 
-  - 文件系统标记为脏的卷，指出可能的损坏。<br>必须先运行`chkdsk` ，然后才能对此卷或驱动器进行碎片整理。 你可以使用`fsutil dirty`命令确定卷是否已更新。
+  - 文件系统标记为脏的卷，指出可能的损坏。<br>必须先运行， `chkdsk` 然后才能对此卷或驱动器进行碎片整理。 你可以使用命令确定卷是否已更新 `fsutil dirty` 。
 
   - 网络驱动器。
 
@@ -79,7 +79,7 @@ defrag <volume> [<parameters>]
 
 - 默认情况下，如果未指定 **/a**或 **/v**参数，则**defrag**将显示分析和碎片整理报告的摘要。
 
-- 您可以通过键入**>** <em>filename .txt</em>将报告发送到文本文件，其中*filename .txt*是您指定的文件名称。 例如： `defrag volume /v > FileName.txt`
+- 您可以通过键入 "FileName.txt" 将报告发送到文本文件 **>** <em> </em>，其中*FileName.txt*为指定的文件名。 例如：`defrag volume /v > FileName.txt`
 
 - 若要中断碎片整理进程，请在命令行上按**CTRL + C**。
 
@@ -139,6 +139,6 @@ defrag /c /h /v
 
 - [fsutil](fsutil.md)
 
-- [fsutil 脏](fsutil-dirty.md)
+- [fsutil dirty](fsutil-dirty.md)
 
 - [优化-批量 Powershell](https://docs.microsoft.com/powershell/module/storage/optimize-volume?view=win10-ps)

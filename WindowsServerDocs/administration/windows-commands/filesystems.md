@@ -1,6 +1,6 @@
 ---
 title: filesystems
-description: "\"文件系统\" 命令的参考主题，其中显示了具有焦点的卷的当前文件系统的相关信息，并列出了格式化卷时支持的文件系统。"
+description: "\"文件系统\" 命令的参考文章，其中显示了具有焦点的卷的当前文件系统的相关信息，并列出了格式化卷时支持的文件系统。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c31a8978beecda223bc75b1374ef4ac473bf1c6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 55219ae6a01c260a18592a59785558f3ff87715a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437162"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929291"
 ---
 # <a name="filesystems"></a>filesystems
 

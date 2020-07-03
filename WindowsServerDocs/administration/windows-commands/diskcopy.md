@@ -1,6 +1,6 @@
 ---
 title: diskcopy
-description: Diskcopy 命令的参考主题，它将源驱动器中软盘的内容复制到目标驱动器中已格式化或未格式化的软盘。
+description: 有关 diskcopy 命令的参考文章，可将源驱动器中软盘的内容复制到目标驱动器中已格式化或未格式化的软盘。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 99d1007a7c6f154b621e43d674d06f25b2911f00
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 7b29e81dc1befff8cd90b460b1117207146fa191
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235175"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929342"
 ---
 # <a name="diskcopy"></a>diskcopy
 

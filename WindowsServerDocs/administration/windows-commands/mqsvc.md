@@ -1,6 +1,6 @@
 ---
 title: mqsvc
-description: Mqsvc 命令的参考主题，使在不同时间运行的应用能够跨异类网络和可能临时脱机的系统进行通信。
+description: Mqsvc 命令的参考文章，使在不同时间运行的应用可以跨异类网络和可能临时脱机的系统进行通信。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ae02867c5dba942ac919edadf0d6ab63becf4f0
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: caf2cc4cd67795789ae61c0e8e958f605bb88523
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354327"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928542"
 ---
 # <a name="mqsvc"></a>mqsvc
 

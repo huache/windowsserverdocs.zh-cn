@@ -1,6 +1,6 @@
 ---
-title: 开始备份
-description: 用于启动完整备份会话的开始备份命令的参考主题。
+title: begin backup
+description: 用于启动完整备份会话的开始备份命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ecb5d83170d248089e5293ebb8557e7ae0854fac
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 05c192620d58752c746f77ea04a7d30a88c7181f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718527"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928465"
 ---
-# <a name="begin-backup"></a>开始备份
+# <a name="begin-backup"></a>begin backup
 
 > 适用于：Windows Server 2012 R2、Windows Server 2012
 
@@ -31,5 +31,5 @@ begin backup
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
-  
+
 - [开始 restore 命令](begin-restore.md)

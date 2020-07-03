@@ -1,6 +1,6 @@
 ---
 title: create partition primary
-description: Create partition primary 命令的参考主题，它在基本磁盘上创建一个具有焦点的主分区。
+description: Create partition primary 命令的参考文章，用于在基本磁盘上创建具有焦点的主分区。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac1763d52d8caf90112fb371aeac5e6b501bd2ea
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 9014b69528d4a67ba2c9c11b8ec53cf3a0f569f6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993243"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929627"
 ---
 # <a name="create-partition-primary"></a>create partition primary
 
@@ -38,7 +38,7 @@ create partition primary [size=<n>] [offset=<n>] [id={ <byte> | <guid> }] [align
 | 大小 =`<n>` | 指定分区的大小，以兆字节 (MB) 为单位。 如果未给出分区大小，则分区会一直继续，直至当前区域中没有未分配空间为止。 |
 | offset =`<n>` | 在其中创建分区的偏移量（kb）。 如果未给出偏移量，分区将从最大磁盘区的开头开始，该空间足以容纳它。 |
 | align =`<n>` | 将所有分区区区对齐到最接近的对齐边界。 通常与硬件 RAID 逻辑单元号（LUN）阵列一起使用以提高性能。 `<n>`从磁盘开始到最接近的对齐边界的千字节（KB）数。 |
-| id = { `<byte>  | <guid>` } | 指定分区类型。 此参数仅供原始设备制造商（OEM）使用。 任何分区类型 byte 或 GUID 都可以与此参数一起指定。 DiskPart 不会检查分区类型的有效性，这只是为了确保它是十六进制格式的字节或 GUID。 **警告：** 创建具有此参数的分区可能会导致计算机出现故障或无法启动。 除非你是使用 gpt 磁盘的 OEM 或 IT 专业人员，否则不要使用此参数在 gpt 磁盘上创建分区。 相反，请始终使用[create partition efi](create-partition-efi.md)命令创建 efi 系统分区，使用[create partition Msr](create-partition-msr.md)命令创建 Microsoft 保留分区，并使用 create [partition primary](create-partition-primary.md)命令（不带`id={ <byte>  | <guid>`参数）在 gpt 磁盘上创建主分区。<p>**对于主启动记录（MBR）磁盘**，必须以十六进制格式为分区指定分区类型字节。 如果未指定此参数，则命令将创建类型`0x06`为的分区，该分区指定未安装文件系统。 示例包括：<ul><li>**LDM 数据分区：** 0x42</li><li>**恢复分区：** 0x27</li><li>**可识别的 OEM 分区：** 0x12、0X84、0XDE、0XFE、0xA0</li></ul><p>**对于 GUID 分区表（gpt）磁盘**，可以为要创建的分区指定分区类型 GUID。 可识别的 Guid 包括：<ul><li>**EFI 系统分区：** c12a7328-f81f-11d2-ba4b-00a0c93ec93b</li><li>**Microsoft 保留分区：** e3c9e316-0b5c-4db8-817d-f92df00215ae</li><li>**基本数据分区：** ebd0a0a2-b9e5-4433-87c0-68b6b72699c7</li><li>**LDM 元数据分区（动态磁盘）：** 5808c8aa-7e8f-42e0-85d2-e1e90434cfb3</li><li>**LDM 数据分区（动态磁盘）：** af9b60a0-1431-4f62-bc68-3311714a69ad</li><li>**恢复分区：** de94bba4-06d1-4d40-a16a-bfd50179d6ac<p>如果没有为 gpt 磁盘指定此参数，则该命令将创建一个基本数据分区。</li></ul> |
+| id = { `<byte>  | <guid>` } | 指定分区类型。 此参数仅供原始设备制造商（OEM）使用。 任何分区类型 byte 或 GUID 都可以与此参数一起指定。 DiskPart 不会检查分区类型的有效性，这只是为了确保它是十六进制格式的字节或 GUID。 **警告：** 创建具有此参数的分区可能会导致计算机出现故障或无法启动。 除非你是使用 gpt 磁盘的 OEM 或 IT 专业人员，否则不要使用此参数在 gpt 磁盘上创建分区。 相反，请始终使用[create partition efi](create-partition-efi.md)命令创建 efi 系统分区，使用[create partition Msr](create-partition-msr.md)命令创建 Microsoft 保留分区，并使用 create [partition primary](create-partition-primary.md)命令（不带 `id={ <byte>  | <guid>` 参数）在 gpt 磁盘上创建主分区。<p>**对于主启动记录（MBR）磁盘**，必须以十六进制格式为分区指定分区类型字节。 如果未指定此参数，则命令将创建类型为的分区 `0x06` ，该分区指定未安装文件系统。 示例包括：<ul><li>**LDM 数据分区：** 0x42</li><li>**恢复分区：** 0x27</li><li>**可识别的 OEM 分区：** 0x12、0X84、0XDE、0XFE、0xA0</li></ul><p>**对于 GUID 分区表（gpt）磁盘**，可以为要创建的分区指定分区类型 GUID。 可识别的 Guid 包括：<ul><li>**EFI 系统分区：** c12a7328-f81f-11d2-ba4b-00a0c93ec93b</li><li>**Microsoft 保留分区：** e3c9e316-0b5c-4db8-817d-f92df00215ae</li><li>**基本数据分区：** ebd0a0a2-b9e5-4433-87c0-68b6b72699c7</li><li>**LDM 元数据分区（动态磁盘）：** 5808c8aa-7e8f-42e0-85d2-e1e90434cfb3</li><li>**LDM 数据分区（动态磁盘）：** af9b60a0-1431-4f62-bc68-3311714a69ad</li><li>**恢复分区：** de94bba4-06d1-4d40-a16a-bfd50179d6ac<p>如果没有为 gpt 磁盘指定此参数，则该命令将创建一个基本数据分区。</li></ul> |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有 noerr 参数，则错误会导致 DiskPart 退出并提供一个错误代码。 |
 
 ## <a name="examples"></a>示例

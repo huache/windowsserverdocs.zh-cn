@@ -1,6 +1,6 @@
 ---
 title: chcp
-description: 用于更改活动控制台代码页的 chcp 命令的参考主题。
+description: 用于更改活动控制台代码页的 chcp 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f1291176ed5245b06c68491f0d5cb0ae9b0b600
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a07d439a4738053ea9a76b4ca68fadec2a215ff0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82715331"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930028"
 ---
 # <a name="chcp"></a>chcp
 
@@ -28,7 +28,7 @@ chcp [<nnn>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<nnn>` | 指定代码页。 |
 | /? | 在命令提示符下显示帮助。 |
@@ -37,7 +37,7 @@ chcp [<nnn>]
 
 | 代码页 | 国家/地区或语言 |
 | --------- | -------------------------- |
-| 437 | United States |
+| 437 | 美国 |
 | 850 | 多语言 (拉丁文我) |
 | 852 | 西里尔语 （俄语） |
 | 855 | 西里尔语 （俄语） |

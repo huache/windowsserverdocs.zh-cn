@@ -1,6 +1,6 @@
 ---
 title: cmd
-description: Cmd 命令的参考主题，它启动命令解释器 Cmd.exe 的新实例。
+description: Cmd 命令的参考文章，它启动命令解释器 Cmd.exe 的新实例。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d381dd56d6648f749cd4a19d71422897e4b9b05
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 69176c69434813745f6039b607f2992675df879c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712590"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929867"
 ---
 # <a name="cmd"></a>cmd
 
@@ -28,7 +28,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /c | 执行*字符串*指定的命令，然后停止。 |
 | 遇到 | 执行*string*指定的命令，然后继续。 |
@@ -47,7 +47,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 | `<string>` | 指定要执行的命令。 |
 | /? | 在命令提示符下显示帮助。 |
 
-下表列出了可用作`<b>`和`<f>`的值的有效十六进制数字：
+下表列出了可用作和的值的有效十六进制数字 `<b>` `<f>` ：
 
 | 值 | 颜色 |
 | ----- | ----- |
@@ -55,9 +55,9 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 | 1 | 蓝色 |
 | 2 | 绿色 |
 | 3 | Aqua |
-| 4 | Red |
+| 4 | 红色 |
 | 5 | 紫色 |
-| 6 | Yellow |
+| 6 | 黄色 |
 | 7 | 白色 |
 | 8 | 灰色 |
 | 9 | 浅蓝色 |
@@ -70,7 +70,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
 ## <a name="remarks"></a>备注
 
-- 若要使用的`<string>`多个命令，请用命令分隔符**&&** 分隔它们，并将它们括在引号中。 例如：
+- 若要使用的多个命令 `<string>` ，请用命令分隔符分隔它们， **&&** 并将它们括在引号中。 例如：
 
     ```
     "<command1>&&<command2>&&<command3>"
@@ -90,7 +90,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
     如果未满足上述条件，则将通过检查第一个字符来处理*字符串*，以验证它是否是左引号。 如果第一个字符是左引号，则将其与右引号一起去除。 保留右引号后面的任何文本。
 
-- 如果未指定 **/d** in *string*，cmd.exe 将查找以下注册表子项：
+- 如果未指定 **/d** in *string*，Cmd.exe 将查找以下注册表子项：
 
     - **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\AutoRun\ REG_SZ**
 
@@ -112,7 +112,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
     > [!CAUTION]
     > 不正确地编辑注册表可能会对系统造成严重损坏。 在更改注册表之前，应备份计算机上任何有价值的数据。
 
-    启用命令扩展时，会影响以下命令：  
+    启用命令扩展时，会影响以下命令：
     - **assoc**
 
     - **call**
@@ -151,7 +151,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
 - 如果启用延迟环境变量扩展，则可以使用感叹号字符来替换运行时环境变量的值。
 
-- 默认情况下，不启用文件和目录名称完成。 您可以使用 **/f：**{**on** | **off**} 为**cmd**命令的特定进程启用或禁用文件名称完成。 您可以通过设置以下**REG_DWORD**值为计算机上的**cmd**命令或用户登录会话启用或禁用文件和目录名称完成：
+- 默认情况下，不启用文件和目录名称完成。 您可以使用 **/f：**{**on**off} 为**cmd**命令的特定进程启用或禁用文件名称完成  |  **off**。 您可以通过设置以下**REG_DWORD**值为计算机上的**cmd**命令或用户登录会话启用或禁用文件和目录名称完成：
 
     - **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\CompletionChar\ REG_DWORD**
 
@@ -161,7 +161,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
     - **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\PathCompletionChar\ REG_DWORD**
 
-    若要设置**REG_DWORD**值，请运行 regedit.exe，并对特定函数使用控制字符的十六进制值（例如， **0 × 9**为 TAB， **0 × 08**表示退格符）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
+    若要设置**REG_DWORD**值，请运行 Regedit.exe 并将控制字符的十六进制值用于特定函数（例如， **0 × 9**为 TAB， **0 × 08**表示退格符）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
 
     > [!CAUTION]
     > 不正确地编辑注册表可能会对系统造成严重损坏。 在更改注册表之前，应备份计算机上任何有价值的数据。
