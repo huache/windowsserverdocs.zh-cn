@@ -1,6 +1,6 @@
 ---
-title: ftp 哈希
-description: Ftp 哈希命令的参考主题，用于切换每个已传输数据块的数字符号（#）打印。
+title: ftp hash
+description: Ftp 哈希命令的参考文章，用于切换每个已传输数据块的数字符号（#）打印。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aad92feb49e3ce8ab5bc0865c73983edf25e4a9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 38f53b06b9351c0c5d37c88bc29790767f55a23f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819689"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931296"
 ---
-# <a name="ftp-hash"></a>ftp 哈希
+# <a name="ftp-hash"></a>ftp hash
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

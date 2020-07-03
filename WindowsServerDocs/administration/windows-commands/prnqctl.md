@@ -1,6 +1,6 @@
 ---
 title: prnqctl
-description: Prnqctl 命令的参考主题，用于打印测试页，暂停或恢复打印机。
+description: Prnqctl 命令的参考文章，用于打印测试页面，暂停或恢复打印机。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b8a551e34754771a69af1b41e5da3fd726df1185
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7bcc6a36fb2387a82e25afd41be2d22615565bfe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472192"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931150"
 ---
 # <a name="prnqctl"></a>prnqctl
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-打印测试页、暂停或恢复打印机以及清除打印机队列。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prnqctl 文件的完整路径，或将目录更改为相应的文件夹。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl`。
+打印测试页、暂停或恢复打印机以及清除打印机队列。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prnqctl 文件的完整路径，或将目录更改为相应的文件夹。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl`。
 
 ## <a name="syntax"></a>语法
 
@@ -41,7 +41,7 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <Servername>] [-p <Printername>] [-
 | -u `<Username>` -w`<password>` | 指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格，请使用引号将文本括起来（例如，"计算机名称"）。
 

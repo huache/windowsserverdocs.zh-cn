@@ -1,6 +1,6 @@
 ---
 title: 结束备份
-description: 结束备份命令的参考主题，该主题结束一个完整备份会话，并根据需要发出**BackupComplete**事件和相应的编写器状态。
+description: 结束备份命令的参考文章，用于结束完整备份会话，并根据需要发出**BackupComplete**事件和相应的编写器状态。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d9cb3cbf474b5306a1cac7df4516f0492740591
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 51608d9c9a08dfb5a1884be722ce7aa798f1a5b8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436902"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931846"
 ---
 # <a name="end-backup"></a>结束备份
 

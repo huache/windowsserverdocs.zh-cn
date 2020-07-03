@@ -1,6 +1,6 @@
 ---
 title: echo
-description: Echo 命令的参考主题，用于显示消息或打开或关闭命令回显功能。
+description: 用于显示消息或打开或关闭命令回显功能的 echo 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca2a10a5d52c9d175d453a164f3ab4f47ca0841d
-ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
+ms.openlocfilehash: bc463efef38e07c1ce8b9ebee1ddd7bdfd7d3066
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83855661"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930518"
 ---
 # <a name="echo"></a>echo
 
@@ -104,7 +104,7 @@ echo This directory contains no text files.
 This directory contains no text files.
 ```
 
-如果在运行批处理文件时找到 .txt 文件，则会显示以下输出（在本示例中，假定文件为 .txt、File2 和 File3）：
+如果在运行批处理文件时找到 .txt 文件，则会显示以下输出（在本示例中，假定文件 File1.txt、File2.txt 和 File3.txt 存在）：
 
 ```
 This directory contains the following text files:

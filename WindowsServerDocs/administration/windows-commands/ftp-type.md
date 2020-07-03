@@ -1,6 +1,6 @@
 ---
-title: ftp 类型
-description: Ftp 类型命令的参考主题，用于设置或显示文件传输类型。
+title: ftp type
+description: Ftp 类型命令的参考文章，用于设置或显示文件传输类型。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 02b6d5b4bd7944c9f4126ba4877360de02586cfb
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: ea0b2a319dae65104db8a215e17fa4b579ee6ffa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820267"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931191"
 ---
-# <a name="ftp-type"></a>ftp 类型
+# <a name="ftp-type"></a>ftp type
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

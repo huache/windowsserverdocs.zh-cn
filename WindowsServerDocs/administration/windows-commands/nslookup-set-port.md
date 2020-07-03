@@ -1,6 +1,6 @@
 ---
 title: nslookup set port
-description: Nslookup 设置端口命令的参考主题，它将默认的 TCP/UDP 域名系统（DNS）名称服务器端口更改为指定值。
+description: "\"Nslookup 集端口\" 命令的参考文章，此命令会将默认的 TCP/UDP 域名系统（DNS）名称服务器端口更改为指定值。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2468b1168e6886aca78e09caaa9375dedbb1662
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: e6605a34c6f8ed0b18870ad6ab68af1331c13c14
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721583"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931256"
 ---
 # <a name="nslookup-set-port"></a>nslookup set port
 

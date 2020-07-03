@@ -1,6 +1,6 @@
 ---
 title: 新-捕获映像
-description: 捕获映像的参考主题，它从现有启动映像创建新的捕获映像。
+description: 捕获映像的参考文章，用于根据现有启动映像创建新的捕获映像。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32c895792701630d6cfa849a298dc7a55f18a5a6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ec9da39ccef5efcea1792556ef8335bbf63c5fd6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719709"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932150"
 ---
 # <a name="new-captureimage"></a>新-捕获映像
 
-从现有的启动映像创建新的捕获映像。 捕获映像是启动 Windows 部署服务捕获实用程序（而不是启动安装程序）的启动映像。 将引用计算机（已使用 Sysprep 进行准备）引导到捕获映像时，向导将创建引用计算机的安装映像，并将其保存为 Windows 映像（.wim）文件。 还可以将图像添加到媒体（例如 CD、DVD 或 USB 驱动器），然后从该媒体启动计算机。 创建安装映像之后，可以将该映像添加到服务器中，以进行 PXE 启动部署。 有关详细信息，请参阅创建映像[https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311)（）。
+从现有的启动映像创建新的捕获映像。 捕获映像是启动 Windows 部署服务捕获实用程序（而不是启动安装程序）的启动映像。 将引用计算机（已使用 Sysprep 进行准备）引导到捕获映像时，向导将创建引用计算机的安装映像，并将其保存为 Windows 映像（.wim）文件。 还可以将图像添加到媒体（例如 CD、DVD 或 USB 驱动器），然后从该媒体启动计算机。 创建安装映像之后，可以将该映像添加到服务器中，以进行 PXE 启动部署。 有关详细信息，请参阅创建映像（ [https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311) ）。
 
 ## <a name="syntax"></a>语法
 
@@ -37,13 +37,13 @@ WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
 
 ### <a name="parameters"></a>参数
 
-|        参数         |                                                                                                                                                                                                                         描述                                                                                                                                                                                                                          |
+|        参数         |                                                                                                                                                                                                                         说明                                                                                                                                                                                                                          |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server：\<Server name>] |                                                                                                                                       指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。                                                                                                                                        |
-|   /Image：\<映像名称>   |                                                                                                                                                                                                         指定源启动映像的名称。                                                                                                                                                                                                         |
+| [/Server： \<Server name> ] |                                                                                                                                       指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。                                                                                                                                        |
+|   影像\<Image name>   |                                                                                                                                                                                                         指定源启动映像的名称。                                                                                                                                                                                                         |
 |   /Architecture： {x86    |                                                                                                                                                                                                                             ia64                                                                                                                                                                                                                             |
-| [/Filename： \<Filename>] |                                                                                                                                                                            如果无法按名称唯一地标识映像，则必须使用此选项指定文件名。                                                                                                                                                                            |
-|    /DestinationImage     | 指定目标映像的设置。 使用以下选项指定设置：</br>-/FilePath： \<文件路径和名称> 设置新捕获映像的完整文件路径。</br>-[/Name： \<Name>]-设置图像的显示名称。 如果未指定显示名称，将使用源映像的显示名称。</br>-[/Description： \<Description>]-设置映像的说明。</br>-[/Overwrite： {Yes |
+| [/Filename： \<Filename> ] |                                                                                                                                                                            如果无法按名称唯一地标识映像，则必须使用此选项指定文件名。                                                                                                                                                                            |
+|    /DestinationImage     | 指定目标映像的设置。 使用以下选项指定设置：</br>-/FilePath： \<File path and name> 为新的捕获映像设置完整文件路径。</br>-[/Name： \<Name> ]-设置图像的显示名称。 如果未指定显示名称，将使用源映像的显示名称。</br>-[/Description： \<Description> ]-设置图像的说明。</br>-[/Overwrite： {Yes |
 
 ## <a name="examples"></a>示例
 
@@ -53,7 +53,7 @@ WDSUTIL /New-CaptureImage /Image:WinPE boot image /Architecture:x86 /Destination
 ```
 若要创建捕获映像并应用指定的设置，请键入：
 ```
-WDSUTIL /Verbose /Progress /New-CaptureImage /Server:MyWDSServer /Image:WinPE boot image /Architecture:x64 /Filename:boot.wim 
+WDSUTIL /Verbose /Progress /New-CaptureImage /Server:MyWDSServer /Image:WinPE boot image /Architecture:x64 /Filename:boot.wim
 /DestinationImage /FilePath:\\Server\Share\WinPECapture.wim /Name:New WinPE image /Description:WinPE image with capture utility /Overwrite:No /UnattendFilePath:\\Server\Share\WDSCapture.inf
 ```
 

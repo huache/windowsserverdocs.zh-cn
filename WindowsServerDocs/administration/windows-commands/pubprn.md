@@ -1,6 +1,6 @@
 ---
 title: pubprn
-description: Pubprn 命令的参考主题，它将打印机发布到 Active Directory 域服务。
+description: Pubprn 命令的参考文章，用于将打印机发布到 Active Directory 域服务。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d45291b22978dd3fe2781699eaf616b9d08a4bf
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c73c79450d4feb4d2567f29bfed56364dea9b5a8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472142"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932015"
 ---
 # <a name="pubprn"></a>pubprn
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-将打印机发布到 Active Directory 域服务。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 pubprn 文件的完整路径，或将目录更改为相应的文件夹。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\pubprn`。
+将打印机发布到 Active Directory 域服务。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 pubprn 文件的完整路径，或将目录更改为相应的文件夹。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\pubprn`。
 
 ## <a name="syntax"></a>语法
 
@@ -37,7 +37,7 @@ cscript pubprn {<servername> | <UNCprinterpath>} LDAP://CN=<container>,DC=<conta
 | `LDAP://CN=<Container>,DC=<Container>` | 指定要在其中发布打印机 Active Directory 域服务容器的路径。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格，请使用引号将文本括起来（例如，"计算机名称"）。
 

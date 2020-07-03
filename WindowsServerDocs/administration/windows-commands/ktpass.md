@@ -1,6 +1,6 @@
 ---
 title: ktpass
-description: Ktpass 命令的参考主题，它在 AD DS 中为主机或服务配置服务器主体名称，并生成 keytab 文件，其中包含服务的共享密钥。
+description: Ktpass 命令的参考文章，该命令为 AD DS 中的主机或服务配置服务器主体名称，并生成 keytab 文件，其中包含服务的共享密钥。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 432918343ccee70f0c30d294a349fb721f18f705
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: fbf7b47f4f21a2c964d14dd1200b15ad635d7471
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817227"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931823"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -47,8 +47,8 @@ ktpass
 | 参数 | 说明 |
 | --------- | ------------|
 | /out`<filename>` | 指定要生成的 Kerberos 版本 keytab 文件的名称。 **注意：** 这是传输到未运行 Windows 操作系统的计算机上的 keytab 文件，然后将其替换或合并为你的现有 keytab 文件 */Etc/Krb5.keytab*。 |
-| /princ`<principalname>` | 指定窗体中的主体名称 host/computer.contoso.com@CONTOSO.COM 。 **警告：** 此参数区分大小写。 |
-| /mapuser`<useraccount>` | 将由**princ**参数指定的 Kerberos 主体的名称映射到指定的域帐户。 |
+| /princ `<principalname>` | 指定窗体中的主体名称 host/computer.contoso.com@CONTOSO.COM 。 **警告：** 此参数区分大小写。 |
+| /mapuser `<useraccount>` | 将由**princ**参数指定的 Kerberos 主体的名称映射到指定的域帐户。 |
 | /mapop`{add|set}` | 指定如何设置映射属性。<ul><li>**添加**-添加指定的本地用户名的值。 这是默认设置。</li><li>**Set** -为指定的本地用户名设置仅限数据加密标准（DES）加密的值。</li></ul> |
 | `{-|+}`desonly | 默认情况下，设置为仅 DES 加密。<ul><li>**+** 为仅 DES 加密设置帐户。</li><li>**-** 针对仅 DES 加密的帐户释放限制。 **重要提示：** 默认情况下，Windows 不支持 DES。</li></ul> |
 | /in`<filename>` | 指定要从运行 Windows 操作系统的主计算机读取的 keytab 文件。 |
@@ -61,7 +61,7 @@ ktpass
 | /kvno`<keyversionnum>` | 指定密钥版本号。 默认值为 1。 |
 | /answer`{-|+}` | 设置背景应答模式：<ul><li>**-** 应答自动重置密码提示，**无**。</li><li>**+** 回答 **"是"** 时自动重置密码提示。</li></ul> |
 | /target | 设置要使用的域控制器。 默认情况下，将基于主体名称检测域控制器。 如果域控制器名称未解析，则会出现一个对话框，提示输入有效的域控制器。 |
-| /rawsalt | 强制 ktpass 在生成密钥时使用 rawsalt 算法。 该参数为可选参数。 |
+| /rawsalt | 强制 ktpass 在生成密钥时使用 rawsalt 算法。 此参数是可选的。 |
 | `{-|+}dumpsalt` | 此参数的输出显示了用于生成密钥的 MIT 盐算法。 |
 | `{-|+}setupn` | 除了服务主体名称（SPN）之外，还设置用户主体名称（UPN）。 默认情况下，在 keytab 文件中设置。 |
 | `{-|+}setpass <password>` | 在提供时设置用户的密码。 如果使用了 rndpass，则改为生成随机密码。 |

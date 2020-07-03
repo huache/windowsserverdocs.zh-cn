@@ -1,6 +1,6 @@
 ---
 title: 详细信息
-description: 详细信息命令的参考主题，其中显示有关所选磁盘、分区、卷或虚拟硬盘（VHD）的信息。
+description: 详细信息命令的参考文章，其中显示了有关所选磁盘、分区、卷或虚拟硬盘（VHD）的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b725fc44a19dc2b2bff8d593a6caee8465e03d90
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 37b464fb8815a1652dcac29d07e69fde9fd43576
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992977"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930671"
 ---
 # <a name="detail"></a>详细信息
 

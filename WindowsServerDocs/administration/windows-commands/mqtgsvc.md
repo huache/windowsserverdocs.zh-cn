@@ -1,6 +1,6 @@
 ---
 title: mqtgsvc
-description: Mqtgsvc 命令的参考主题，用于监视传入消息的队列，并以可执行文件或 COM 组件的形式执行操作（当触发器的规则评估为 true 时）。
+description: Mqtgsvc 命令的参考文章，用于监视传入消息的队列，并以可执行文件或 COM 组件的形式执行操作（当触发器的规则评估为 true 时）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70937c4918b2b01425417368bfa347bd02e5bf22
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: cd5222623931bbd940c7ff6e8c6285874c89a385
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354408"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932062"
 ---
 # <a name="mqtgsvc"></a>mqtgsvc
 

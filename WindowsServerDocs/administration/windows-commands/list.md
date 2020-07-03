@@ -1,6 +1,6 @@
 ---
 title: list
-description: List 命令的参考主题，该主题显示磁盘中的分区的列表、磁盘中的卷或虚拟硬盘（Vhd）的列表。
+description: List 命令的参考文章，其中显示磁盘中的分区列表、磁盘中的卷或虚拟硬盘（Vhd）的列表。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 422460fc405326b5802ff1f00827f690d6599b1b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: fda60b0520da00659d0ac8fc9cab483c62e2a6a7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820197"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931716"
 ---
 # <a name="list"></a>list
 

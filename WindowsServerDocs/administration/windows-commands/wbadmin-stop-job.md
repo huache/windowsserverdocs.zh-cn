@@ -1,6 +1,6 @@
 ---
-title: wbadmin 停止作业
-description: Wbadmin 停止作业的参考主题，用于取消当前正在运行的备份或恢复操作。 无法重启已取消的操作，必须从头开始重新运行已取消的备份或恢复操作。
+title: wbadmin stop job
+description: 用于 wbadmin 停止作业的参考文章，用于取消当前正在运行的备份或恢复操作。 无法重启已取消的操作，必须从头开始重新运行已取消的备份或恢复操作。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e6d2be62468102060aad502d47efbb6eae4fca8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2c6961b1fae425d06577fce3a93dca6262dd7127
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821357"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930883"
 ---
-# <a name="wbadmin-stop-job"></a>wbadmin 停止作业
+# <a name="wbadmin-stop-job"></a>wbadmin stop job
 
 
 

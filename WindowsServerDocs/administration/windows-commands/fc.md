@@ -1,6 +1,6 @@
 ---
 title: fc
-description: Fc 命令的参考主题，它比较两个文件或文件集，并显示它们之间的差异。
+description: Fc 命令的参考文章，它比较两个文件或文件集，并显示它们之间的差异。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 146ae51334f40284e15c2a4564de8dd04660bf25
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6d9e12853d2634f7e7bcbd976b6c301f8e02c0dc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437152"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930486"
 ---
 # <a name="fc"></a>fc
 
@@ -48,7 +48,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 
 #### <a name="remarks"></a>备注
 
-- 此命令由 c:\WINDOWS\fc.exe. implemeted 可以在 PowerShell 中使用此命令，但请务必对完整的可执行文件（fc-al）进行拼写检查，因为 "fc" 也是格式自定义的别名。
+- 此命令 implemeted c:\WINDOWS\fc.exe。 可以在 PowerShell 中使用此命令，但请务必对完整的可执行文件（fc.exe）进行拼写检查，因为 "fc" 也是格式自定义的别名。
 
 - 使用**fc**进行 ASCII 比较时， **fc**会按以下顺序显示两个文件之间的差异：
 
@@ -86,7 +86,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 fc /a monthly.rpt sales.rpt
 ```
 
-若要对两个批处理文件进行二进制比较 *，请*键入： *earnings.bat*
+若要对两个批处理文件进行二进制比较（ *profits.bat*和*earnings.bat*），请键入：
 
 ```
 fc /b profits.bat earnings.bat
@@ -102,20 +102,20 @@ fc /b profits.bat earnings.bat
 FC: earnings.bat longer than profits.bat
 ```
 
-如果基本 .bat 和收益文件相同， **fc**将显示以下消息：
+如果 profits.bat 和 earnings.bat 文件相同， **fc**将显示以下消息：
 
 ```
 Comparing files profits.bat and earnings.bat
 FC: no differences encountered
 ```
 
-若要将当前目录中的每个 .bat 文件与文件 *.bat*进行比较，请键入：
+若要将当前目录中的每个 .bat 文件与*new.bat*文件进行比较，请键入：
 
 ```
 fc *.bat new.bat
 ```
 
-若要将驱动器 C 上的文件 *.bat*与驱动器 D 上的 *.bat*文件进行比较，请键入：
+若要将驱动器 C 上的文件*new.bat*与驱动器 D 上的文件*new.bat*进行比较，请键入：
 
 ```
 fc c:new.bat d:*.bat

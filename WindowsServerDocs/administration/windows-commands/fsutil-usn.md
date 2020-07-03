@@ -1,6 +1,6 @@
 ---
 title: fsutil usn
-description: Fsutil usn 命令的参考主题，它管理更新序列号（USN）更改日志。
+description: 用于管理更新序列号（USN）更改日志的 fsutil usn 命令参考文章。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: faad34aa-4ba1-4129-bc1f-08088399e2fa
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: d21de9ecb1d63116ee2d186965f7f47fc3a7235e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: b3f71588c7221f0ba8e3659d9a1a1dd133971ce9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437112"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930474"
 ---
 # <a name="fsutil-usn"></a>fsutil usn
 
@@ -54,7 +54,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 | `<highUSN>` | 指定用于筛选返回的文件的 USN 值范围上限。 |
 | queryjournal | 查询卷的 USN 数据以收集有关当前更改日志、记录和其容量的信息。 |
 | readdata | 读取文件的 USN 数据。 |
-| `<filename>` | 指定文件的完整路径，包括文件名和扩展名（例如： *C:\documents\filename.txt*）。 |
+| `<filename>` | 指定文件的完整路径，包括文件名和扩展名（例如）： *C:\documents\filename.txt*。 |
 | readjournal | 读取 USN 日志中的 USN 记录。 |
 | minver =`<number>` | 要返回的 USN_RECORD 的最低主要版本。 默认值为2。 |
 | maxver =`<number>` | 要返回的 USN_RECORD 的最大主版本。 默认值 = 4。 |

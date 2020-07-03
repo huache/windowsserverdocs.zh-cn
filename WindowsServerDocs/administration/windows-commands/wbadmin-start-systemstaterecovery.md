@@ -1,6 +1,6 @@
 ---
 title: wbadmin start systemstaterecovery
-description: Wbadmin start systemstaterecovery 的参考主题，它对你指定的位置和备份执行系统状态恢复。
+description: 用于从指定的位置执行系统状态恢复的 wbadmin start systemstaterecovery 的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: edbd6acefe2ef921b9325de4808753d5929efd1e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a1645c1612bcc0e10fc6b2526805b169004e4ce1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821377"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930896"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 

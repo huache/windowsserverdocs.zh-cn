@@ -1,6 +1,6 @@
 ---
-title: 列表阴影
-description: List shadows 命令的参考主题，其中列出了系统上持久的和现有的非持久卷影副本。
+title: list shadows
+description: 列出隐藏命令的参考文章，其中列出了系统上持久的和现有的非持久卷影副本。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9e0261a25c7a70a0c8690d578cadc9e73ff9a62e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: fcf1946f5b2424eb7aa13af51bd6ff13c43349c1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817167"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931796"
 ---
-# <a name="list-shadows"></a>列表阴影
+# <a name="list-shadows"></a>list shadows
 
 列出系统上持久的和现有的非持久卷影副本。
 

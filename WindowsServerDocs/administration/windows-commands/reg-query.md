@@ -1,6 +1,6 @@
 ---
-title: reg 查询
-description: '* * * * 的参考主题'
+title: reg query
+description: Reg query 命令的参考文章，它返回位于注册表中指定子项下的子项和条目的列表。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,79 +9,86 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea66a7d96435309a3b30b67f45bc68200f30dd2f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 18b7c5223227e0cf19de22f8bc9886ae798f027f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722530"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931060"
 ---
-# <a name="reg-query"></a>reg 查询
-
-
+# <a name="reg-query"></a>reg query
 
 返回位于注册表中指定子项下的子子项和条目的列表。
-
-
 
 ## <a name="syntax"></a>语法
 
 ```
-reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] [{/k | /d}] [/c] [/e] [/t <Type>] [/z]
+reg query <keyname> [{/v <Valuename> | /ve}] [/s] [/se <separator>] [/f <data>] [{/k | /d}] [/c] [/e] [/t <Type>] [/z]
 ```
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
-|---------|-----------|
-|\<KeyName>|指定子项的完整路径。 若要指定远程计算机，请将计算机名称（采用 ComputerName \\ \\\)格式的计算机名称）包括*在内。* 省略\\ \\ComputerName \ 会使操作默认为本地计算机。 *KeyName*必须包含有效的根密钥。 本地计算机的有效根密钥为： HKLM、HKCU、HKCR、HKU 开头和 HKCC。 如果指定了远程计算机，则有效的根密钥为： HKLM 和 HKU 开头。|
-|/v \<ValueName>|指定要查询的注册表值名称。 如果省略，则返回*KeyName*的所有值名称。 如果也使用了 **/f**选项，则此参数的*ValueName*是可选的。|
-|/ve|为空值名称运行查询。|
-|/s|指定以递归方式查询所有子项和值名称。|
-|/se \<分隔符>|指定要在值名称类型 REG_MULTI_SZ 中搜索的单个值分隔符。 如果未指定*Separator* ，则使用**\ 0** 。|
-|/f \<数据>|指定要搜索的数据或模式。 如果字符串包含空格，请使用双引号。 如果未指定，则使用通配符（**&#42;**）作为搜索模式。|
-|遇到|指定仅在项名称中搜索。|
-|/d|指定仅搜索数据。|
-|/c|指定查询区分大小写。 默认情况下，查询不区分大小写。|
-|/e|指定仅返回完全匹配项。 默认情况下，将返回所有匹配项。|
-|/t \<类型>|指定要搜索的注册表类型。 有效类型为： REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE。 如果未指定，则搜索所有类型。|
-|/z|指定在搜索结果中包含注册表类型的等价数值。|
-|/?|在命令提示符下显示**reg 查询**的帮助。|
+| 参数 | 说明 |
+|--|--|
+| `<keyname>` | 指定子项的完整路径。 若要指定远程计算机，请在 keyname 中包含计算机名称（格式 `\\<computername>\` 为）。 *keyname* 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
+| /v`<Valuename>` | 指定要查询的注册表值名称。 如果省略，则返回*keyname*的所有值名称。 如果也使用了 **/f**选项，则此参数的*Valuename*是可选的。 |
+| /ve | 为空值名称运行查询。 |
+| /s | 指定以递归方式查询所有子项和值名称。 |
+| /se`<separator>` | 指定要在值名称类型**REG_MULTI_SZ**中搜索的单个值分隔符。 如果未指定*separator* ，则使用**\ 0** 。 |
+| /f `<data>` | 指定要搜索的数据或模式。 如果字符串包含空格，请使用双引号。 如果未指定，则使用通配符（**&#42;**）作为搜索模式。 |
+| 遇到 | 指定仅在项名称中搜索。 |
+| /d | 指定仅搜索数据。 |
+| /c | 指定查询区分大小写。 默认情况下，查询不区分大小写。 |
+| /e | 指定仅返回完全匹配项。 默认情况下，将返回所有匹配项。 |
+| /t`<Type>` | 指定要搜索的注册表类型。 有效类型为： **REG_SZ**、 **REG_MULTI_SZ**、 **REG_EXPAND_SZ**、 **REG_DWORD**、 **REG_BINARY**、 **REG_NONE**。 如果未指定，则搜索所有类型。 |
+| /z | 指定在搜索结果中包含注册表类型的等价数值。 |
+| /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks-optional-section"></a>备注\<可选部分>
+#### <a name="remarks"></a>备注
 
-下表列出了**reg query**操作的返回值。
+- **Reg 查询**操作的返回值为：
 
-|值|描述|
-|-----|-----------|
-|0|成功|
-|1|失败|
+    | 值 | 描述 |
+    |--|--|
+    | 0 | 成功 |
+    | 1 | 失败 |
 
-## <a name="examples"></a>示例
+### <a name="examples"></a>示例
 
 若要在 HKLM\Software\Microsoft\ResKit 项中显示 name 值版本的值，请键入：
+
 ```
-REG QUERY HKLM\Software\Microsoft\ResKit /v Version
+reg query HKLM\Software\Microsoft\ResKit /v Version
 ```
+
 若要在名为 ABC 的远程计算机上的 HKLM\Software\Microsoft\ResKit\Nt\Setup 项下显示所有子项和值，请键入：
+
 ```
-REG QUERY \\ABC\HKLM\Software\Microsoft\ResKit\Nt\Setup /s
+reg query \\ABC\HKLM\Software\Microsoft\ResKit\Nt\Setup /s
 ```
-若要使用**#** 作为分隔符显示 REG_MULTI_SZ 类型的所有子项和值，请键入：
+
+若要使用作为分隔符显示 REG_MULTI_SZ 类型的所有子项和值 **#** ，请键入：
+
 ```
-REG QUERY HKLM\Software\Microsoft\ResKit\Nt\Setup /se #
+reg query HKLM\Software\Microsoft\ResKit\Nt\Setup /se #
 ```
+
 若要在数据类型 REG_SZ 的 HKLM 根下显示与系统区分大小写的键、值和数据，请键入：
+
 ```
-REG QUERY HKLM /f SYSTEM /t REG_SZ /c /e
+reg query HKLM /f SYSTEM /t REG_SZ /c /e
 ```
-若要显示与数据类型 REG_BINARY 的 HKCU 根密钥下的数据中的**0F**匹配的键、值和数据。
+
+若要在数据类型 REG_BINARY 的 HKCU 根键下显示与**0F**匹配的键、值和数据，请键入：
+
 ```
-REG QUERY HKCU /f 0F /d /t REG_BINARY
+reg query HKCU /f 0F /d /t REG_BINARY
 ```
+
 若要在 HKLM\SOFTWARE 下显示 null （默认值）的值名称和数据，请键入：
+
 ```
-REG QUERY HKLM\SOFTWARE /ve
+reg query HKLM\SOFTWARE /ve
 ```
 
 ## <a name="additional-references"></a>其他参考

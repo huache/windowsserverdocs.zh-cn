@@ -1,6 +1,6 @@
 ---
 title: tsecimp
-description: Tsecimp 的参考主题，它将分配信息从可扩展标记语言（XML）文件导入到 TAPI 服务器安全文件（Tsec.ini）。
+description: 用于 tsecimp 的参考文章，可将分配信息从可扩展标记语言（XML）文件导入到 TAPI 服务器安全文件（Tsec.ini）。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afd38f7081a9b4674eb6cac26f52849794b8d5e6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d221479e23c737529305a2354e6a5a52b957bd8e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721246"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931482"
 ---
 # <a name="tsecimp"></a>tsecimp
 
-将可扩展标记语言（XML）文件中的分配信息导入到 TAPI 服务器安全文件（Tsec.ini）中。 你还可以使用此命令来显示 TAPI 提供程序和与每个设备关联的线路设备的列表，验证 XML 文件的结构，而无需导入内容以及检查域成员身份。
+将可扩展标记语言（XML）文件中的分配信息导入到 TAPI 服务器安全文件（Tsec.ini）。 你还可以使用此命令来显示 TAPI 提供程序和与每个设备关联的线路设备的列表，验证 XML 文件的结构，而无需导入内容以及检查域成员身份。
 
 ## <a name="syntax"></a>语法
 
@@ -29,7 +29,7 @@ tsecimp /d
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/f \<Filename>|必需。 指定 XML 文件的名称，该文件包含要导入的分配信息。|
 |/v|验证 XML 文件的结构而无须将该信息导入 Tsec.ini 文件。|
@@ -39,7 +39,7 @@ tsecimp /d
 
 ## <a name="remarks"></a>备注
 
--   要导入其分配信息的 XML 文件必须采用如下所述的结构。  
+-   要导入其分配信息的 XML 文件必须采用如下所述的结构。
     -   **UserList**元素
 
         **UserList**是 XML 文件的顶级元素。
@@ -62,16 +62,16 @@ tsecimp /d
         对于每个**Line**元素，可以设置**Remove**特性。 如果设置了该属性，将不再向用户分配该线路设备。 如果未设置该属性，则用户可访问该线路设备。 如果用户无法使用线路设备，则不会提供错误。
 
 ## <a name="examples"></a>示例
-- 下列 XML 代码段示例说明了上述定义元素的正确使用方法。  
-  - 以下代码删除分配给 User1 的所有线路设备。  
+- 下列 XML 代码段示例说明了上述定义元素的正确使用方法。
+  - 以下代码删除分配给 User1 的所有线路设备。
     ```
     <UserList>
       <User NoMerge=1>
         <DomainUser>domain1\user1</DomainUser>
       </User>
     </UserList>
-    ```  
-  - 以下代码将删除分配给 User1 的所有线路设备，然后再分配一个地址为99999的行。 无论先前是否已分配了任何线路设备，都不会再将任何其他线路设备分配给 User1。  
+    ```
+  - 以下代码将删除分配给 User1 的所有线路设备，然后再分配一个地址为99999的行。 无论先前是否已分配了任何线路设备，都不会再将任何其他线路设备分配给 User1。
     ```
     <UserList>
       <User NoMerge=1>
@@ -84,8 +84,8 @@ tsecimp /d
         </LineList>
       </User>
     </UserList>
-    ```  
-  - 下列代码在未删除任何以前分配的线路设备的情况下，为 User1 添加了一个线路设备。  
+    ```
+  - 下列代码在未删除任何以前分配的线路设备的情况下，为 User1 添加了一个线路设备。
     ```
     <UserList>
       <User>
@@ -98,8 +98,8 @@ tsecimp /d
         </LineList>
       </User>
     </UserList>
-    ```  
-  - 下面的代码添加行地址99999并从 User1's 访问中删除线路地址88888。  
+    ```
+  - 下面的代码添加行地址99999并从 User1's 访问中删除线路地址88888。
     ```
     <UserList>
       <User>
@@ -115,8 +115,8 @@ tsecimp /d
         </LineList>
       </User>
     </UserList>
-    ```  
-  - 下面的代码添加永久设备1000并从 User1's 访问中删除行88888。  
+    ```
+  - 下面的代码添加永久设备1000并从 User1's 访问中删除行88888。
     ```
     <UserList>
       <User>
@@ -134,7 +134,7 @@ tsecimp /d
     </UserList>
     ```
 
--   指定了 **/d**命令行选项以显示当前 TAPI 配置后，会显示以下示例输出。 对于每个电话服务提供程序，均会列出关联的线路设备，以及与每个线路设备关联的地址和用户。  
+-   指定了 **/d**命令行选项以显示当前 TAPI 配置后，会显示以下示例输出。 对于每个电话服务提供程序，均会列出关联的线路设备，以及与每个线路设备关联的地址和用户。
     ```
     NDIS Proxy TAPI Service Provider
             Line: WAN Miniport (L2TP)

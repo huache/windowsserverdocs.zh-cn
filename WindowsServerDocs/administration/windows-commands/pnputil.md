@@ -1,6 +1,6 @@
 ---
 title: pnputil
-description: Pnputil 命令的参考主题，它添加驱动程序包、删除驱动程序包，并使用 pnputil.exe 实用程序列出驱动程序存储区中的驱动程序包。
+description: Pnputil 命令的参考文章，其中添加了驱动程序包，删除驱动程序包，并使用 pnputil.exe 实用程序列出了驱动程序存储区中的驱动程序包。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6484a3e55c6e5f3b4cb51119ead5cb488dca0721
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 01b8aee1aa4dfb85b590c9d4abbec471fc437da8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472394"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930236"
 ---
 # <a name="pnputil"></a>pnputil
 

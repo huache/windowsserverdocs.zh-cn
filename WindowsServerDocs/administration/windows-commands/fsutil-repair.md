@@ -1,6 +1,6 @@
 ---
 title: fsutil repair
-description: Fsutil repair 命令的参考主题，用于管理和监视 NTFS 自修复修复操作。
+description: 用于管理和监视 NTFS 自修复修复操作的 fsutil repair 命令的参考文章。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,18 +9,18 @@ ms.technology: storage
 ms.assetid: 62d77150-1d9e-4069-ab4a-299f33024912
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 449bd39b6b2df0e302085b71ef9db87d2020b0f0
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 700e1f713d503565321ab29f5384d74382c64f21
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435752"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931206"
 ---
 # <a name="fsutil-repair"></a>fsutil repair
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
-管理和监视 NTFS 自修复修复操作。 自愈 NTFS 会尝试联机更正 NTFS 文件系统的损坏，而无需运行**chkdsk.exe** 。 有关详细信息，请参阅[自愈 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))。
+管理和监视 NTFS 自修复修复操作。 自愈 NTFS 试图联机更正 NTFS 文件系统的损坏，而无需运行**Chkdsk.exe** 。 有关详细信息，请参阅[自愈 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))。
 
 ## <a name="syntax"></a>语法
 

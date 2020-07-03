@@ -1,6 +1,6 @@
 ---
 title: findstr
-description: Findstr 命令的参考主题，它搜索文件中的文本模式。
+description: Findstr 命令的参考文章，可搜索文件中的文本模式。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f8d353b6d3aee77960b208d89372aee5dca07e3
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: f0cf30f19ef23c1b3275b6b7632b03f0dd8e433a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436113"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931428"
 ---
 # <a name="findstr"></a>findstr
 
@@ -64,7 +64,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 
     接受的元字符包括：
 
-    | 元字符 | Value |
+    | 元字符 | 值 |
     | -------------- | ----- |
     | `.` | **通配符**-任意字符 |
     | `*` | **重复执行**零次或多次出现的上一个字符或类。 |
@@ -99,7 +99,7 @@ findstr hello there x.y
 findstr /c:hello there x.y
 ```
 
-若要在文件 "*建议 .txt*" 中*查找 word 的*所有匹配项（使用初始大写字母 W），请键入：
+若要在文件*proposal.txt*中查找*word 的*所有匹配项（使用初始大写字母 W），请键入：
 
 ```
 findstr Windows proposal.txt
@@ -117,7 +117,7 @@ findstr /s /i Windows *.*
 findstr /b /n /r /c:^ *FOR *.bas
 ```
 
-若要列出要在文本文件中搜索的确切文件，请使用文件*stringlist*中的搜索条件，搜索*filelist*中列出的文件，然后在文件结果中存储结果 *。 out*，请键入：
+若要列出要在文本文件中搜索的确切文件，请使用*stringlist.txt*文件中的搜索条件，搜索*filelist.txt*中列出的文件，然后在文件结果中存储结果 *。 out*，请键入：
 
 ```
 findstr /g:stringlist.txt /f:filelist.txt > results.out

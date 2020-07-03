@@ -1,6 +1,6 @@
 ---
 title: dfsutil
-description: Dfsutil 命令的参考主题，用于管理 DFS 命名空间、服务器和客户端。
+description: 用于管理 DFS 命名空间、服务器和客户端的 dfsutil 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6905d90ee42958e47dfed4869520000a4fd3ddf
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c741635b2566a7bec7775de691105c15591caa62
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992624"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930609"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -45,7 +45,7 @@ Dfsutil 命令管理 DFS 命名空间、服务器和客户端。
 | 斜 | 执行诊断或查看 dfsdirs/dfspath。 |
 | cache | 显示或刷新客户端缓存。 |
 
-有关这些命令的详细信息，请在安装了 DFS 命名空间管理工具的服务器上打开命令提示符，然后键入`dfsutil client /?`、 `dfsutil diag /?`或。 `dfsutil cache /?`
+有关这些命令的详细信息，请在安装了 DFS 命名空间管理工具的服务器上打开命令提示符，然后键入 `dfsutil client /?` 、 `dfsutil diag /?` 或 `dfsutil cache /?` 。
 
 ## <a name="additional-references"></a>其他参考
 

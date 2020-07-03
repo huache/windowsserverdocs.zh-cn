@@ -1,6 +1,6 @@
 ---
 title: wbadmin start systemstatebackup
-description: 用于 wbadmin start systemstatebackup 的参考主题，该主题将创建本地计算机的系统状态备份，并将其存储在指定的位置。
+description: 用于 wbadmin start systemstatebackup 的参考文章，用于创建本地计算机的系统状态备份并将其存储在指定的位置。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5de3531f19312b9d0d7969a63639db6388487bc2
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1e92c508d2c9ca9ae759d81292ec3d511144dbd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821177"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930916"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 

@@ -1,6 +1,6 @@
 ---
 title: quser
-description: Quser 命令的参考主题，该命令显示远程桌面会话主机服务器上的用户会话的相关信息。
+description: Quser 命令的参考文章，其中显示了有关远程桌面会话主机服务器上的用户会话的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e51abe030ca0f473246cdc85fd01d89fddf8b056
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7df52ea8d2b30d9e365d6dc79d53aad9bd0782f9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471922"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931114"
 ---
 # <a name="quser"></a>quser
 
@@ -53,7 +53,7 @@ quser [<username> | <sessionname> | <sessionID>] [/server:<servername>]
 | /server:`<servername>` | 指定要查询的远程桌面会话主机服务器。 否则，将使用当前远程桌面会话主机服务器。 仅当在远程服务器上使用此命令时，才需要此参数。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 若要使用此命令，您必须具有 "完全控制" 权限或 "特殊访问" 权限。
 

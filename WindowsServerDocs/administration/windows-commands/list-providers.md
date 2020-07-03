@@ -1,6 +1,6 @@
 ---
-title: 列出提供程序
-description: List providers 命令的参考主题，其中列出了当前在系统上注册的卷影复制提供程序。
+title: list providers
+description: 列出提供程序命令的参考文章，其中列出了当前在系统上注册的卷影复制提供程序。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98615dfa92c24b91babb55ae3545065834887e5d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 64996c7a85fa7ad20a5ffbb1c22ae3396820b676
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817237"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931802"
 ---
-# <a name="list-providers"></a>列出提供程序
+# <a name="list-providers"></a>list providers
 
 列出当前在系统上注册的卷影复制提供程序。
 

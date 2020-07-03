@@ -1,6 +1,6 @@
 ---
 title: pagefileconfig
-description: Pagefileconfig 命令的参考主题。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
+description: Pagefileconfig 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 562421db96ebb62cc75a1ff04ffe532bc8c63652
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 558ec082dbbf20d9ba58b6256d4ebf49f9faaef4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472573"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932029"
 ---
 # <a name="pagefileconfig"></a>pagefileconfig
 

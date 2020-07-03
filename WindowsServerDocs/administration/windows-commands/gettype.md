@@ -1,6 +1,6 @@
 ---
 title: gettype
-description: 有关 gettype 命令的参考主题。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
+description: 有关 gettype 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1acd3747082d23f9129a766344061af2140692f9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 69c3b20ed0b555e781fcf93dc830075b3150ef88
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818977"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931181"
 ---
 # <a name="gettype"></a>gettype
 

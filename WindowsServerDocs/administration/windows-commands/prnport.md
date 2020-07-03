@@ -1,6 +1,6 @@
 ---
 title: prnport
-description: 用于创建、删除和列出标准 TCP/IP 打印机端口以及显示和更改端口配置的 prnport 命令的参考主题。
+description: 用于创建、删除和列出标准 TCP/IP 打印机端口以及显示和更改端口配置的 prnport 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c209c06c2253e924e5a71753fec0b8ab0ee158d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4b373547050d3d3dfb1d64160959c8dbb9e6f5c5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472202"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931161"
 ---
 # <a name="prnport"></a>prnport
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-除了显示和更改端口配置之外，还可以创建、删除和列出标准 TCP/IP 打印机端口。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prnport 文件的完整路径，或将目录更改为相应的文件夹。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport`。
+除了显示和更改端口配置之外，还可以创建、删除和列出标准 TCP/IP 打印机端口。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prnport 文件的完整路径，或将目录更改为相应的文件夹。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport`。
 
 ## <a name="syntax"></a>语法
 
@@ -50,7 +50,7 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <portname>] [-s <Servername>] 
 | -2`{e|-d}` | 指定是否为 TCP lpr 端口启用双线轴（也称为 respooling）。 双重线轴是必需的，因为 TCP lpr 必须在发送到打印机的控制文件中包含准确的字节计数，但协议无法从本地打印提供程序获取计数。 因此，当文件在后台处理到 TCP lpr 打印队列时，该文件也会在 system32 目录中作为临时文件进行后台处理。 TCP lpr 确定临时文件的大小并将大小发送到运行 LPD 的服务器。 参数**e**启用双重线轴。 参数**d**禁用双重线轴。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格，请使用引号将文本括起来（例如，"计算机名称"）。
 

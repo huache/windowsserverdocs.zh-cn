@@ -1,6 +1,6 @@
 ---
 title: dir
-description: Dir 命令的参考主题，其中显示了目录的文件和子目录的列表。
+description: Dir 命令的参考文章，其中显示了目录的文件和子目录的列表。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6d5b99e905d70d81962f96a303e0bcaae0bd9e9
-ms.sourcegitcommit: 5e10afbd128befb7400a6bcf576f0239cf2ed47f
+ms.openlocfilehash: 2372476e153a6dc37b7d068201a40ba17c11fa54
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84302822"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930820"
 ---
 # <a name="dir"></a>dir
 
@@ -30,7 +30,7 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `[<drive>:][<path>]` | 指定要查看其列表的驱动器和目录。 |
 | `[<filename>]` | 指定要查看其列表的特定文件或文件组。 |
@@ -65,7 +65,7 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 
   - `dir read *.*`列出当前目录中所有扩展名以 "读取" 开头的所有文件。
 
-  星号通配符始终使用短文件名映射，因此可能会收到意外的结果。 例如，以下目录包含两个文件（txt2 和 t97）：
+  星号通配符始终使用短文件名映射，因此可能会收到意外的结果。 例如，以下目录包含两个文件（t.txt2 和 t97.txt）：
 
   ```
   C:\test>dir /x
@@ -80,9 +80,9 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
   11/30/2004  01:16 PM 0 t97.txt
   ```
 
-  您可能希望键入的内容 `dir t97\*` 返回 t97 文件。 但是，键入 `dir t97\*` 将返回这两个文件，因为星号通配符使用其短名称映射*T97B4 ~ 1 .txt*txt2 到 t97。 同样，键入 `del t97\*` 将删除这两个文件。
+  您可能会希望键入的 `dir t97\*` 将返回 t97.txt 的文件。 但是，键入 `dir t97\*` 将返回这两个文件，因为星号通配符与 t.txt2 的文件 t97.txt 使用其短名称映射*T97B4 ~1.TXT*进行。 同样，键入 `del t97\*` 将删除这两个文件。
 
-- 您可以使用问号（？）来替换名称中的单个字符。 例如，键入将 `dir read???.txt` 列出当前目录中所有扩展名为 .txt 的文件（以 read 开头，后跟最多三个字符）。 这包括读取 .txt、Read1、Read12、Read123 和 Readme1，而不是 Readme12 .txt。
+- 您可以使用问号（？）来替换名称中的单个字符。 例如，键入将 `dir read???.txt` 列出当前目录中所有扩展名为 .txt 的文件（以 read 开头，后跟最多三个字符）。 这包括 Read.txt、Read1.txt、Read12.txt、Read123.txt 和 Readme1.txt，但不包括 Readme12.txt。
 
 - 如果对*属性*中的多个值使用 **/a** ，则此命令仅显示具有所有指定属性的文件的名称。 例如，如果将 **/a**与**r**和 **-h**一起用作属性（通过使用 `/a:r-h` 或 `/ar-h` ），则此命令将只显示未隐藏的只读文件的名称。
 
@@ -114,13 +114,13 @@ dir > prn
 
 指定**prn**后，目录列表将发送到连接到 LPT1 端口的打印机。 如果打印机连接到不同的端口，则必须将**prn**替换为正确端口的名称。
 
-还可以通过将**prn**替换为文件名，将**dir**命令的输出重定向到文件。 还可以键入路径。 例如，若要将**目录输出定向**到记录目录中的文件目录，请键入：
+还可以通过将**prn**替换为文件名，将**dir**命令的输出重定向到文件。 还可以键入路径。 例如，若要将**目录输出定向**到 "记录" 目录中的文件 dir.doc，请键入：
 
 ```
 dir > \records\dir.doc
 ```
 
-如果不存在 node.js， **dir**会创建它，除非 "**记录**" 目录不存在。 在这种情况下，将显示以下消息：
+如果 dir.doc 不存在，则**dir**会创建它，除非 "**记录**" 目录不存在。 在这种情况下，将显示以下消息：
 
 ```
 File creation error

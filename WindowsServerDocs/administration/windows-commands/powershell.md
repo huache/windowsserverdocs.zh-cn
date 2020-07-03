@@ -1,6 +1,6 @@
 ---
 title: PowerShell
-description: PowerShell 命令的参考主题，可从命令提示符中打开 PowerShell 控制台。
+description: PowerShell 命令的参考文章，可从命令提示符中打开 PowerShell 控制台。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: e38684943c6c0c9a4371803d7e473c14cbef7a91
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8a252efe57cec1e77bd4d814ced75decb1f2ceb7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472342"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931370"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -54,7 +54,7 @@ Windows PowerShell 是一种基于任务的命令行 shell 和脚本语言，专
 
 - 若要在命令提示符窗口中结束 Windows PowerShell 会话，请键入 `exit` 。 典型的命令提示符返回。
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - 有关**PowerShell.exe**命令行参数的完整列表，请参阅[about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)。
 

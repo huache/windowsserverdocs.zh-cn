@@ -1,6 +1,6 @@
 ---
 title: dispdiag
-description: Dispdiag 命令的参考主题，它将显示信息记录到文件中。
+description: Dispdiag 命令的参考文章，它将显示信息记录到文件中。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ff4e3690ec3b2c9d473f05027d5637eda124d0ba
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: d95a53f60aa7e51450a640d5ec9c5a5e6ccb41a6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235218"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931223"
 ---
 # <a name="dispdiag"></a>dispdiag
 

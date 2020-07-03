@@ -1,6 +1,6 @@
 ---
 title: 初始化-服务器
-description: 用于配置服务器角色之后初始使用的初始化服务器（配置 Windows 部署服务服务器）的参考主题。
+description: 用于 Windows 部署服务配置服务器角色后初始使用的初始化-Server 的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54180923a077c0b423e73588bcbd1c03b0154d08
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 22c93a07e4c2785e8cda497e9698b2031c764a42
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719719"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932163"
 ---
 # <a name="initialize-server"></a>初始化-服务器
 
@@ -26,9 +26,9 @@ ms.locfileid: "82719719"
 wdsutil /Initialize-Server [/Server:<Server name>] /remInst:<Full path> [/Authorize]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
-|[/Server：<Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
 |remInst<Full path>|指定 remoteInstall 文件夹的完整路径和名称。 如果指定的文件夹不存在，则此选项将在命令运行时创建该文件夹。 应始终输入本地路径，即使对于远程计算机也是如此。 例如： **D:\remoteInstall**。|
 |/Authorize|在动态主机控制协议（DHCP）中授权服务器。 仅当启用了 DHCP rogue 检测时，此选项才是必需的，这意味着在提供客户端计算机之前，必须在 DHCP 中授权 Windows 部署服务 PXE 服务器。 请注意，默认情况下禁用 DHCP rogue 检测。|
 ## <a name="examples"></a>示例
@@ -41,11 +41,11 @@ wdsutil /Initialize-Server /remInst:F:\remoteInstall
 wdsutil /verbose /Progress /Initialize-Server /Server:MyWDSServer /remInst:C:\remoteInstall
 ```
 ## <a name="additional-references"></a>其他参考
-- [命令行语法键](command-line-syntax-key.md)
-
-[Using the enable-Server Command](using-the-enable-server-command.md)
-[Using the get-Server Command](using-the-get-server-command.md)使用 get-help
-命令使用 enable[-server 命令](using-the-disable-server-command.md)使用服务器命令[子命令： set-server](subcommand-set-server.md)
-[子命令：启动-服务器](subcommand-start-server.md)
-[子命令：停止-服务器](subcommand-stop-server.md)
-取消[初始化-服务器选项](the-uninitialize-server-option.md)
+- [命令行语法关键字](command-line-syntax-key.md) 
+[使用 disable-Server 命令](using-the-disable-server-command.md) 
+[使用 enable-Server 命令](using-the-enable-server-command.md) 
+[使用 get-Server 命令](using-the-get-server-command.md) 
+[子命令：设置-服务器](subcommand-set-server.md) 
+[子命令：启动-服务器](subcommand-start-server.md) 
+[子命令：停止-服务器](subcommand-stop-server.md) 
+["取消初始化服务器" 选项](the-uninitialize-server-option.md)

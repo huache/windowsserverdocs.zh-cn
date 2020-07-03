@@ -1,6 +1,6 @@
 ---
 title: dnscmd
-description: 用于管理 DNS 服务器的命令行接口的 dnscmd 命令的参考主题。
+description: 用于管理 DNS 服务器的命令行接口的 dnscmd 命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c279513549ba149974933c33044fa861fa89a62
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 47be29e55c4626f5c05498074f10418730c6a6f3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437032"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931306"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -30,7 +30,7 @@ dnscmd <servername> <command> [<command parameters>]
 
 ### <a name="parameters"></a>parameters
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<servername>` | 远程或本地 DNS 服务器的 IP 地址或主机名。 |
 
@@ -46,7 +46,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 #### <a name="parameters"></a>parameters
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ---------- | ----------- |
 | `<servername>` | 指定管理员计划管理的 DNS 服务器，由 IP 地址、完全限定的域名（FQDN）或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<zonename>` | 指定区域的 FQDN。 |
@@ -105,7 +105,7 @@ dnscmd dnssvr1.contoso.com /clearcache
 dnscmd [<servername>] /config <parameter>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -164,7 +164,7 @@ dnscmd [<servername>] /config <parameter>
 dnscmd /config <parameters>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -355,7 +355,7 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 ## <a name="dnscmd-exportsettings-command"></a>dnscmd/exportsettings 命令
 
-创建一个文本文件，该文件列出 DNS 服务器的配置详细信息。 该文本文件的名称为*DnsSettings*。 它位于 `%systemroot%\system32\dns` 服务器的目录中。 你可以使用**dnscmd/exportsettings**创建的文件中的信息来解决配置问题，或者确保配置了多个相同的服务器。
+创建一个文本文件，该文件列出 DNS 服务器的配置详细信息。 文本文件命名为*DnsSettings.txt*。 它位于 `%systemroot%\system32\dns` 服务器的目录中。 你可以使用**dnscmd/exportsettings**创建的文件中的信息来解决配置问题，或者确保配置了多个相同的服务器。
 
 ### <a name="syntax"></a>语法
 

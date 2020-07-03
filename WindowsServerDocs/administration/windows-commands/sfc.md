@@ -1,6 +1,6 @@
 ---
 title: sfc
-description: 用于 sfc 的参考主题，它扫描并验证所有受保护系统文件的完整性并将错误版本替换为正确的版本。
+description: 用于 sfc 的参考文章，用于扫描并验证所有受保护系统文件的完整性并将错误版本替换为正确的版本。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af2167e1e23b0698c17159b1ae6b1970a06219d4
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8f4b0798f9c0e3e1c70ca701de1ea2246bddf7b9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821258"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931616"
 ---
 # <a name="sfc"></a>sfc
 
@@ -34,14 +34,14 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 |/scannow|扫描所有受保护系统文件的完整性，并在可能的情况中修复包含问题的文件。|
 |/verifyonly|扫描所有受保护系统文件的完整性。 不执行任何修复操作。|
 |/scanfile|如果检测到问题，则扫描指定文件的完整性并修复文件（如果可能）。|
-|\<文件>|指定的完整路径和文件名|
+|\<file>|指定的完整路径和文件名|
 |/verifyfile|验证指定文件的完整性。 不执行任何修复操作。|
 |/offwindir|指定脱机修复的脱机 windows 目录的位置。|
 |/offbootdir|指定脱机启动目录的脱机位置|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
--   您必须以 Administrators 组成员的身份登录才能运行**sfc**。
+-   您必须以 Administrators 组成员的身份登录才能运行**sfc.exe**。
 -   如果**sfc**发现某个受保护的文件已被覆盖，则它将从**systemroot\system32\dllcache**文件夹中检索正确的文件版本，并替换错误的文件。
 -   Windows Server 2003、Windows Server 2008 和 Windows Server 2008 R2 上的**sfc**之间存在功能差异：
 -   有关 Windows Server 2003 上的**sfc**的详细信息，请参阅 Microsoft 知识库中的[文章 310747](https://go.microsoft.com/fwlink/?LinkId=227069) 。
@@ -52,7 +52,7 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 ```
 sfc /verifyfile=c:\windows\system32\kernel32.dll
 ```
-若要设置脱机**kernel32.dll**文件的脱机修复，并将脱机启动目录设置为 " **d：** "，并将 "脱机 windows 目录" 设置为 " **d:\windows**"，请键入：
+若要在设置为**d:\windows**的脱机启动**目录和脱机**windows 目录之间设置脱机修复**kernel32.dll**文件，请键入：
 ```
 sfc /scanfile=d:\windows\system32\kernel32.dll /offbootdir=d:\ /offwindir=d:\windows
 ```

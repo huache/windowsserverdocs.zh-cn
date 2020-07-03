@@ -1,6 +1,6 @@
 ---
 title: doskey
-description: Doskey 命令和 Doskey 的参考主题，该主题可回调先前输入的命令行命令、编辑命令行并创建宏。
+description: 有关 doskey 命令和 Doskey.exe 的参考文章，它会回调先前输入的命令行命令、编辑命令行并创建宏。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96a47a40463c5cd6af16ab637f96382228f7d0f8
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4a92c9e1d6ffe1f8d7ace5500179697b2a00df1b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437022"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930557"
 ---
 # <a name="doskey"></a>doskey
 
-调用 Doskey，这会回调先前输入的命令行命令、编辑命令行并创建宏。
+调用 Doskey.exe，这会回调先前输入的命令行命令、编辑命令行并创建宏。
 
 ## <a name="syntax"></a>语法
 
@@ -28,9 +28,9 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| /reinstall | 安装 Doskey 的新副本并清除命令历史记录缓冲区。 |
+| /reinstall | 安装 Doskey.exe 的新副本并清除命令历史记录缓冲区。 |
 | /listsize =`<size>` | 指定历史记录缓冲区中的最大命令数。 |
 | /macros | 显示所有**doskey**宏的列表。 可以将重定向符号（ `>` ）用于 **/macros** ，将列表重定向到文件。 可以缩写 **/macros**到 **/m**。 |
 | /macros： all | 显示所有可执行文件的**doskey**宏。 |
@@ -45,15 +45,15 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 
 #### <a name="remarks"></a>备注
 
-- 某些基于字符的交互式程序（如程序调试器或文件传输程序（FTP））会自动使用 Doskey。 若要使用 Doskey，程序必须是控制台进程并使用缓冲输入。 程序密钥分配将覆盖**doskey**密钥分配。 例如，如果程序对某个函数使用了 F7 键，则不能在弹出窗口中获取**doskey**命令历史记录。
+- 某些基于字符的交互式程序（如程序调试器或文件传输程序（FTP））会自动使用 Doskey.exe。 若要使用 Doskey.exe，程序必须是控制台进程并使用缓冲输入。 程序密钥分配将覆盖**doskey**密钥分配。 例如，如果程序对某个函数使用了 F7 键，则不能在弹出窗口中获取**doskey**命令历史记录。
 
-- 可以使用 Doskey 编辑当前命令行，但不能在程序的命令提示符下使用命令行选项。 必须先运行**doskey**命令行选项，然后再启动程序。 如果您在程序中使用 Doskey，则该程序的密钥分配优先，一些 Doskey 编辑密钥可能不起作用。
+- 您可以使用 Doskey.exe 编辑当前命令行，但不能在程序的命令提示符下使用命令行选项。 必须先运行**doskey**命令行选项，然后再启动程序。 如果您在程序中使用 Doskey.exe，则该程序的密钥分配优先，一些 Doskey.exe 编辑密钥可能不起作用。
 
-- 使用 Doskey，可以为启动或重复的每个程序维护命令历史记录。 你可以在程序的提示中编辑以前的命令，并启动为程序创建的**doskey**宏。 如果退出并重新启动同一个命令提示符窗口中的程序，则可使用上一个程序会话中的命令历史记录。
+- 使用 Doskey.exe，可以为启动或重复的每个程序维护命令历史记录。 你可以在程序的提示中编辑以前的命令，并启动为程序创建的**doskey**宏。 如果退出并重新启动同一个命令提示符窗口中的程序，则可使用上一个程序会话中的命令历史记录。
 
-- 若要重新调用命令，你可以在启动 Doskey 后使用以下任何项：
+- 若要重新调用命令，你可以在开始 Doskey.exe 后使用以下任何项：
 
-  | 键 | 说明 |
+  | 密钥 | 说明 |
   | --- | ----------- |
   | 向上键 | 撤回在显示的命令之前使用的命令。 |
   | 向下键 | 撤回在显示后使用的命令。 |
@@ -72,8 +72,8 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
   | End | 将插入点移动到行的末尾。 |
   | Esc | 清除显示的命令。 |
   | F1 | 将模板中的列中的一个字符复制到命令提示符窗口中的相同列。 （模板是存储所键入的最后一个命令的内存缓冲区。） |
-  | F2 | 按下 F2 后，在模板中向前搜索你键入的下一个键。 Doskey 插入模板中的文本（最多，但不包括指定字符）。 |
-  | F3 | 将模板的其余部分复制到命令行。 Doskey 从模板中的位置开始复制字符，该位置与命令行上的插入点所指示的位置相对应。 |
+  | F2 | 按下 F2 后，在模板中向前搜索你键入的下一个键。 Doskey.exe 插入模板中的文本（直到（但不包括）指定字符。 |
+  | F3 | 将模板的其余部分复制到命令行。 Doskey.exe 从模板中的位置开始复制字符，该位置与命令行上的插入点所指示的位置相对应。 |
   | F4 | 在按 F4 后，删除当前插入点位置中的所有字符，直到下一次出现的字符。 |
   | F5 | 将模板复制到当前命令行中。 |
   | F6 | 将文件尾字符（CTRL + Z）置于当前插入点位置。 |
@@ -83,13 +83,13 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
   | F9 | 将提示您输入历史缓冲区命令编号，然后显示与您指定的号码关联的命令。 按 ENTER 运行该命令。 若要显示所有数字及其关联的命令，请按 F7。 |
   | Alt+F10 | 删除所有宏定义。 |
 
-- 如果按 INSERT 键，则可以在现有文本中间的**doskey**命令行上键入文本，而无需替换文本。 但在按 ENTER 后，Doskey 会将键盘恢复为**替换**模式。 必须再次按 INSERT 才能返回到**插入**模式。
+- 如果按 INSERT 键，则可以在现有文本中间的**doskey**命令行上键入文本，而无需替换文本。 但在按 ENTER 后，Doskey.exe 会将键盘返回到**替换**模式。 必须再次按 INSERT 才能返回到**插入**模式。
 
 - 当使用 INSERT 键从一种模式更改为另一种模式时，插入点会改变形状。
 
-- 如果要自定义 Doskey 如何处理程序和为该程序创建**doskey**宏，可以创建一个批处理程序来修改 Doskey 并启动程序。
+- 如果要自定义 Doskey.exe 如何处理程序并为该程序创建**doskey**宏，则可以创建一个批处理程序，用于修改 Doskey.exe 并启动程序。
 
-- 可以使用 Doskey 创建执行一个或多个命令的宏。 下表列出了可用于在定义宏时控制命令操作的特殊字符。
+- 您可以使用 Doskey.exe 来创建执行一个或多个命令的宏。 下表列出了可用于在定义宏时控制命令操作的特殊字符。
 
   | 字符 | 描述 |
   |---------- | ----------- |
@@ -124,7 +124,7 @@ doskey /macros > macinit
 doskey /macrofile=macinit
 ```
 
-若要创建一个名为 Tmp 的批处理程序，其中包含最近使用过的命令，请键入：
+若要创建一个名为 Tmp.bat 的批处理程序，其中包含最近使用的命令，请键入：
 
 ```
 doskey /history> tmp.bat
@@ -152,7 +152,7 @@ doskey mc=md $1$tcd $1
 mc books
 ```
 
-若要为名为*cluster.exe*的程序创建**doskey**宏，请包括 **/exename** ，如下所示：
+若要为名为*Ftp.exe*的程序创建**doskey**宏，请包括 **/exename** ，如下所示：
 
 ```
 doskey /exename=ftp.exe go=open 172.27.1.100$tmget *.TXT c:\reports$tbye

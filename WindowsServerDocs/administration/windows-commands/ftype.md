@@ -1,6 +1,6 @@
 ---
 title: ftype
-description: Ftype 命令的参考主题，用于显示或修改在文件扩展名关联中使用的文件类型。
+description: Ftype 命令的参考文章，其中显示或修改在文件扩展名关联中使用的文件类型。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1387a9f8cb607d3563a381c757ea237104e6032
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0ab401c4dd4707cf05c69c1746368927c0bfaa83
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820207"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930464"
 ---
 # <a name="ftype"></a>ftype
 
 显示或修改在文件扩展名关联中使用的文件类型。 如果在没有赋值运算符（=）的情况下使用，则此命令将显示指定文件类型的当前打开的命令字符串。 如果在没有参数的情况下使用，则此命令将显示已定义打开命令字符串的文件类型。
 
 > [!NOTE]
-> 此命令仅在 cmd.exe 中受支持，不能从 PowerShell 中使用。
+> 此命令仅在 cmd.exe 中受支持，并且在 PowerShell 中不可用。
 > 尽管可以使用 `cmd /c ftype` 作为解决方法。
 
 ## <a name="syntax"></a>语法
@@ -73,7 +73,7 @@ ftype txtfile
 ftype example=
 ```
 
-若要将 pl 文件扩展名与 PerlScript 文件类型相关联，并启用 PerlScript 文件类型以运行 PERL。EXE，键入以下命令：
+若要将 pl 文件扩展名与 PerlScript 文件类型关联并使 PerlScript 文件类型 PERL.EXE 运行，请键入以下命令：
 
 ```
 assoc .pl=PerlScript

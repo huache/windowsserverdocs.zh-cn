@@ -1,6 +1,6 @@
 ---
-title: 路径
-description: 参考主题：在 PATH 环境变量中设置命令路径，指定用于搜索可执行文件（.exe）文件的目录集。
+title: path
+description: 参考文章：在 PATH 环境变量中设置命令路径，指定用于搜索可执行文件（.exe）文件的目录集。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fadeb2108f0e59ee2f45f3cf45338046a345006
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f324c2b0fc84d2df05f7df93d83799b3ac463d5d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472563"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932025"
 ---
-# <a name="path"></a>路径
+# <a name="path"></a>path
 
 在 PATH 环境变量中设置命令路径，指定用于搜索可执行文件（.exe）文件的目录集。 如果不使用参数，则此命令将显示当前命令路径。
 
@@ -36,7 +36,7 @@ path ;
 | `%PATH%` | 将命令路径追加到 PATH 环境变量中列出的现有目录集。 如果包含此参数，Cmd.exe 会将其替换为 PATH 环境变量中的命令路径值，从而无需在命令提示符下手动输入这些值。 |
 | /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 
 - Windows 操作系统使用默认文件扩展名按以下优先级顺序进行搜索： .exe、.com、.bat 和 .cmd。 这意味着，如果你要查找名为的批处理文件，acct.bat 但在同一目录中有一个名为 acct.exe 的应用，则必须在命令提示符下包含 .bat 扩展名。

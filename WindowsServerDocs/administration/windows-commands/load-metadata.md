@@ -1,6 +1,6 @@
 ---
-title: 加载元数据
-description: 加载元数据命令的参考主题，此命令在导入可传送的卷影副本之前加载元数据 .cab 文件，或者在还原时加载写入器元数据。
+title: load metadata
+description: 加载元数据命令的参考文章，此命令在导入可传送的卷影副本之前加载元数据 .cab 文件，或者在还原时加载写入器元数据。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7dc967476412261e7afc228088566f74ec4208c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 01e782d0214da70f831b81120aff3c5097895036
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820187"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931684"
 ---
 # <a name="load-metadata"></a>加载元数据
 
@@ -31,7 +31,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 | 参数 | 说明 |
 | --------- | ----------- |
 | `[<drive>:][<path>]` | 指定元数据文件的位置。 |
-| metadata .cab | 指定要加载的元数据 .cab 文件。 |
+| metadata.cab | 指定要加载的元数据 .cab 文件。 |
 
 ## <a name="remarks"></a>备注
 
@@ -41,7 +41,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 
 ## <a name="examples"></a>示例
 
-若要从默认位置加载名为元文件的元数据文件，请键入：
+若要从默认位置加载名为 metafile.cab 的元数据文件，请键入：
 
 ```
 load metadata metafile.cab

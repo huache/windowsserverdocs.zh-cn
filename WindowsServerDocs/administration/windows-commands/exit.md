@@ -1,6 +1,6 @@
 ---
 title: exit
-description: Exit 的参考主题，用于退出命令解释器。
+description: 退出命令解释器的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdfec9861e63f7484a9c45c45a22d19873cabbe9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d28f15ba1453b32d8e464fd768a3b7895819d11c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819497"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931455"
 ---
 # <a name="exit"></a>exit
 
@@ -32,7 +32,7 @@ exit [/b] [<exitcode>]
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| /b | 退出当前的批处理脚本，而不是退出 Cmd.exe。 如果从批处理脚本外部执行，则退出 Cmd.exe。 |
+| /b | 退出当前批处理脚本，而不是退出 Cmd.exe。 如果从批处理脚本外部执行，则退出 Cmd.exe。 |
 | `<exitcode>` | 指定数值。 如果指定了 **/b** ，则 ERRORLEVEL 环境变量设置为该数字。 如果要退出命令解释器，则进程退出代码将设置为该数字。 |
 | /? | 在命令提示符下显示帮助。 |
 

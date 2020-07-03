@@ -1,6 +1,6 @@
 ---
 title: qwinsta
-description: Qwinsta 命令的参考主题，其中显示了有关远程桌面会话主机服务器上的会话的信息。
+description: Qwinsta 命令的参考文章，其中显示了有关远程桌面会话主机服务器上的会话的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9122576cc0b972e01a7593fae918aed378297fc8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c9b79495d3fa142fd343b9c521563e093d20fc68
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471872"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932002"
 ---
 # <a name="qwinsta"></a>qwinsta
 
@@ -45,7 +45,7 @@ qwinsta [<sessionname> | <username> | <sessionID>] [/server:<servername>] [/mode
 | /counter | 显示当前计数器信息，包括创建、断开连接和重新连接的会话总数。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 用户始终可以查询用户当前登录到的会话。 若要查询其他会话，用户必须具有特殊访问权限。
 

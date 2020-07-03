@@ -1,6 +1,6 @@
 ---
 title: chkntfs
-description: Chkntfs 命令的参考主题，它在计算机启动时显示或修改自动磁盘检查。
+description: Chkntfs 命令的参考文章，用于在计算机启动时显示或修改自动磁盘检查。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b8e21a7b43538b6296666d813f2b33daa8045f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4d2a19a479ec3b00bda83ecded91f5fbb7941ca0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82713661"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930715"
 ---
 # <a name="chkntfs"></a>chkntfs
 
@@ -35,11 +35,11 @@ chkntfs [/c <volume> [...]]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<volume>` [...] | 指定在计算机启动时要检查的一个或多个卷。 有效的卷包括驱动器号（后跟冒号）、装入点或卷名。 |
 | /d | 还原所有**chkntfs**默认设置，但自动文件检查的倒计时时间除外。 默认情况下，当计算机启动时，所有卷都处于选中状态，并且**chkdsk**在那些更新的计算机上运行。 |
-| /t [`:<time>`] | 将 Autochk 初始倒计时时间更改为指定的时间量（以秒为单位）。 如果未输入时间，则 **/t**将显示当前倒计时时间。 |
+| /t [ `:<time>` ] | 将 Autochk.exe 初始倒计时时间更改为指定的时间量（以秒为单位）。 如果未输入时间，则 **/t**将显示当前倒计时时间。 |
 | /x `<volume>` [...] | 指定在计算机启动时要排除的一个或多个卷，即使卷被标记为需要**chkdsk**。 |
 | /c `<volume>` [...] | 在计算机启动时计划要检查的一个或多个卷，并在那些已更新的卷上运行**chkdsk** 。 |
 | /? | 在命令提示符下显示帮助。 |
@@ -55,20 +55,20 @@ chkntfs c:
 > [!NOTE]
 > 如果计划运行自动文件检查，则将显示其他输出，以指示驱动器是否处于脏状态，或是否已手动计划在下次启动计算机时进行检查。
 
-若要显示 Autochk 初始倒计时时间，请键入：
+若要显示 Autochk.exe 初始倒计时时间，请键入：
 
 ```
 chkntfs /t
 ```
 
-若要将 Autochk 初始倒计时时间更改为30秒，请键入：
+若要将 Autochk.exe 初始倒计时时间更改为30秒，请键入：
 
 ```
 chkntfs /t:30
 ```
 
 > [!NOTE]
-> 虽然您可以将 Autochk 初始倒计时时间设置为零，但这样做将阻止您取消可能需要花费大量时间的自动文件检查。
+> 虽然您可以将 Autochk.exe 初始倒计时时间设置为零，但这样做会使您无法取消可能非常耗时的自动文件检查。
 
 若要排除多个卷的选中状态，必须在单个命令中列出每个卷。 例如，若要排除 D 和 E 卷，请键入：
 

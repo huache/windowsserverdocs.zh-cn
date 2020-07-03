@@ -1,6 +1,6 @@
 ---
 title: extend
-description: "\"扩展\" 命令的参考主题，它将具有焦点的卷或分区及其文件系统扩展到磁盘上的可用（未分配）空间。"
+description: "\"扩展\" 命令的参考文章，它将具有焦点的卷或分区及其文件系统扩展到磁盘上的可用（未分配）空间。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd10e2ad4d6d647f37e1ad113f1516104e66315f
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4749b2ddcd47aa5445d9d77ff86c3473ae37b355
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437192"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931445"
 ---
 # <a name="extend"></a>extend
 
@@ -35,7 +35,7 @@ extend filesystem [noerr]
 | --------- | ----------- |
 | 大小 =`<n>` | 指定要添加到当前卷或分区的空间量（以兆字节（MB）为单位）。 如果没有给定大小，则使用磁盘上可用的所有连续可用空间。 |
 | 磁盘 =`<n>` | 指定扩展卷或分区的磁盘。 如果未指定磁盘，则在当前磁盘上扩展卷或分区。 |
-| 文件系统 | 扩展具有焦点的卷的文件系统。 仅适用于未使用卷进行扩展的文件系统。 |
+| filesystem | 扩展具有焦点的卷的文件系统。 仅适用于未使用卷进行扩展的文件系统。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
 #### <a name="remarks"></a>备注

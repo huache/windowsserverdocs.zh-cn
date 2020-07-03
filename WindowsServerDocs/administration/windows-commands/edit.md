@@ -1,6 +1,6 @@
 ---
 title: 编辑
-description: 用于启动 MS-DOS 编辑器的 "编辑" 命令的参考主题，以便你可以创建和更改 ASCII 文本文件。
+description: 用于启动 MS-DOS 编辑器的 "编辑" 命令的参考文章，以便你可以创建和更改 ASCII 文本文件。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a9f6c78889f466015d60149c27a87dcefe840133
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: a28af13c5f627010dce1321027b8a246560829f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436912"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930489"
 ---
 # <a name="edit"></a>编辑
 
@@ -52,7 +52,7 @@ edit [/b] [/h] [/r] [/s] [/<nnn>] [[<drive>:][<path>]<filename> [<filename2> [..
 edit
 ```
 
-若要在当前目录中创建和编辑名为*newtextfile*的文件，请键入：
+若要在当前目录中创建和编辑名为*newtextfile.txt*的文件，请键入：
 
 ```
 edit newtextfile.txt

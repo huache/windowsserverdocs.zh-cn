@@ -1,6 +1,6 @@
 ---
-title: wbadmin 开始恢复
-description: Wbadmin 开始恢复的参考主题，它根据你指定的参数运行恢复操作。
+title: wbadmin start recovery
+description: 用于 wbadmin 开始恢复的参考文章，可根据你指定的参数运行恢复操作。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec116bb69dd70cb58f6cb71ccf9ccfa04dea2e54
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2a8934d9177d81cd05124175e64746ecdb4a1bc1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725879"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930956"
 ---
-# <a name="wbadmin-start-recovery"></a>wbadmin 开始恢复
+# <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
 根据指定的参数运行恢复操作。
 
@@ -42,7 +42,7 @@ wbadmin start recovery
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-version|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入**wbadmin get 版本**。|
 |-items|指定要恢复的卷、应用程序、文件或文件夹的逗号分隔列表。</br>-如果 **-itemtype**为**volume**，则只能通过提供卷驱动器号、卷装入点或基于 GUID 的卷名来指定单个卷。</br>-如果 **-itemtype**为**App**，则只能指定一个应用程序。 若要恢复，应用程序必须已注册到 Windows Server 备份。 你还可以使用值**ADIFM**来恢复 Active Directory 安装。 有关详细信息，请参阅中的备注。</br>-如果 **-itemtype**为**File**，则可以指定文件或文件夹，但这些文件或文件夹应属于相同的卷，并且它们应该位于相同的父文件夹下。|
@@ -79,12 +79,12 @@ wbadmin start recovery -version:03/31/2013-09:00 -itemType:App -items:Registry -
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:File -items:d:\folder -recursive
 ```
-若要从2013年3月31日开始恢复备份，请在该卷\\ \\上的 9:00 A.M. 执行？\, \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} 类型：
+若要从2013年3月31日开始恢复备份，请在该卷上的 9:00 A.M. 执行 \\ \\ ？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} \, 类型：
 ```
-wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume 
+wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume
 -items:\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 ```
-若要从 server01 的共享文件夹\\ \\servername\share 的 9:00 2013 年4月30日开始恢复备份，请键入：
+若要从 server01 的共享文件夹 servername\share 的 9:00 2013 年4月30日开始恢复备份，请 \\ \\ 键入：
 ```
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

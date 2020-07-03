@@ -1,6 +1,6 @@
 ---
 title: 验证
-description: Verify 的参考主题，它告诉**cmd**是否验证文件已正确写入磁盘。
+description: 用于 "验证" 的参考文章，告诉**cmd**是否验证文件已正确写入磁盘。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7fc35b37d5e0a429e1ecc2ebefc117804a0c645
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1455705d409e0273e85135a183279835e7238d7a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720293"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931316"
 ---
 # <a name="verify"></a>验证
 
@@ -32,9 +32,9 @@ verify [on | off]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|[关闭\|时]|打开或关闭**验证**设置。|
+|[ \| 关闭时]|打开或关闭**验证**设置。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="examples"></a>示例

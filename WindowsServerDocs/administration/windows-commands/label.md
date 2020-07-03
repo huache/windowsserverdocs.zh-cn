@@ -1,6 +1,6 @@
 ---
-title: 标签
-description: "\"标签\" 命令的参考主题，用于创建、更改或删除磁盘的卷标（即名称）。"
+title: label
+description: "\"标签\" 命令的参考文章，其中创建、更改或删除磁盘的卷标（即名称）。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2d09328f79215c497bcb0ea4549b1f6ac227994
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f8c13285c5dc5030e96d7d334bb65d15f04dff86
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817257"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931812"
 ---
-# <a name="label"></a>标签
+# <a name="label"></a>label
 
 创建、更改或删除磁盘的卷标（即名称）。 如果在没有参数的情况下使用，则 "**标签**" 命令将更改当前卷标签或删除现有标签。
 

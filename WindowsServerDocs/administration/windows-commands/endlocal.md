@@ -1,6 +1,6 @@
 ---
 title: endlocal
-description: Endlocal 命令的参考主题，它结束批处理文件中环境更改的本地化，并在运行相应的 setlocal 命令之前将环境变量还原到其值。
+description: Endlocal 命令的参考文章，该命令结束批处理文件中环境更改的本地化，并在运行相应的 setlocal 命令之前将环境变量还原到其值。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 229914ddbfa7361738cad79903630be9e749c795
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: a17ef4b25a0b0bb4d77068aa3bff3d879955aec5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436882"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932118"
 ---
 # <a name="endlocal"></a>endlocal
 

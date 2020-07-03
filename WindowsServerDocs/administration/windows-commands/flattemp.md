@@ -1,6 +1,6 @@
 ---
 title: flattemp
-description: Flattemp 命令的参考主题，可用于启用或禁用平面临时文件夹。
+description: Flattemp 命令的参考文章，用于启用或禁用平面临时文件夹。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a30a3f7eb6ec56a499864116debfbb6c09756d34
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1ec253182ce3071f03ce47e368c6fa87fe58fed0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437222"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932098"
 ---
 # <a name="flattemp"></a>flattemp
 

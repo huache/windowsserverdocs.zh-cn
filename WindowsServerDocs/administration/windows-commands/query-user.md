@@ -1,6 +1,6 @@
 ---
 title: query user
-description: Query user 命令的参考主题，其中显示了有关远程桌面会话主机服务器上的用户会话的信息。
+description: 查询用户命令的参考文章，其中显示了有关远程桌面会话主机服务器上的用户会话的信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7885df2287134cca9935926abd926a077ac8fdb3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8c186e0945612bf7c84637f6b039dcdbac3d68f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471942"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930215"
 ---
 # <a name="query-user"></a>query user
 
@@ -53,7 +53,7 @@ query user [<username> | <sessionname> | <sessionID>] [/server:<servername>]
 | /server:`<servername>` | 指定要查询的远程桌面会话主机服务器。 否则，将使用当前远程桌面会话主机服务器。 仅当在远程服务器上使用此命令时，才需要此参数。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 若要使用此命令，您必须具有 "完全控制" 权限或 "特殊访问" 权限。
 

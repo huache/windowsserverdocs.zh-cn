@@ -1,6 +1,6 @@
 ---
 title: rcp
-description: Rcp 命令的参考主题，用于在计算机之间复制文件。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
+description: 用于在计算机之间复制文件的 rcp 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e06f9751a690e1593a0fb3e30dc31c14c8f960a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 34e58471a3f79e2f8ae6f060ec945bfc43b004c3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471862"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931992"
 ---
 # <a name="rcp"></a>rcp
 

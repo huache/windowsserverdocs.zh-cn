@@ -1,6 +1,6 @@
 ---
 title: pathping
-description: Pathping 命令的参考主题，可在源和目标之间的中间跃点获取网络延迟和网络丢失的相关信息。
+description: Pathping 命令的参考文章，可在源和目标之间的中间跃点获取网络延迟和网络丢失的相关信息。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6f3f90be7be29f1c50e70fa8ec49685ee1843c45
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 887a819c28d546f8c73d07fedbefbe27b65e7a5a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472553"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931392"
 ---
 # <a name="pathping"></a>pathping
 
@@ -49,7 +49,7 @@ pathping [/n] [/h <maximumhops>] [/g <hostlist>] [/p <Period>] [/q <numqueries> 
 | `<targetname>` | 指定目标，该目标通过 IP 地址或主机名进行标识。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 所有参数都区分大小写。
 

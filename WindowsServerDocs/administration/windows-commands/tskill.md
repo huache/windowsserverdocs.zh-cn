@@ -1,6 +1,6 @@
 ---
 title: tskill
-description: Tskill 的参考主题，用于结束在远程桌面会话主机服务器上的会话中运行的进程。
+description: Tskill 的参考文章，用于结束在远程桌面会话主机服务器上的会话中运行的进程。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13bd18a84dccbbeee88c24b9b07208b3174bc558
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 496d5d4e0002ba2c9f8ae6916aafcd08e686ce99
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721241"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931468"
 ---
 # <a name="tskill"></a>tskill
 
@@ -33,12 +33,12 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |\<ProcessID>|指定要结束的进程的 ID。|
 |\<ProcessName>|指定要结束的进程的名称。 此参数可以包含通配符。|
-|/server：\<ServerName>|指定包含要结束的进程的终端服务器。 如果未指定 **/server** ，则使用当前 RD 会话主机服务器。|
-|/id：\<SessionID>|结束在指定的会话中运行的进程。|
+|/server:\<ServerName>|指定包含要结束的进程的终端服务器。 如果未指定 **/server** ，则使用当前 RD 会话主机服务器。|
+|/id\<SessionID>|结束在指定的会话中运行的进程。|
 |/a|结束所有会话中正在运行的进程。|
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
@@ -58,5 +58,5 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
   tskill explorer /id:5
   ```
   ## <a name="additional-references"></a>其他参考
-  - [命令行语法键](command-line-syntax-key.md)
+  - [命令行语法关键字](command-line-syntax-key.md) 
   [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)

@@ -1,6 +1,6 @@
 ---
-title: 列出写入者
-description: List 编写器命令的参考主题，它列出了系统上的编写器。
+title: list writers
+description: 用于列出系统上的编写器的列表编写器命令的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85f351ca20332ad67f24c7d66142f7209c0ec425
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a3b4334d9f1f1a76b390a29a1b9cfd877da91185
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817157"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931773"
 ---
-# <a name="list-writers"></a>列出写入者
+# <a name="list-writers"></a>list writers
 
 列出系统上的编写器。 如果在没有参数的情况下使用，则默认情况下， **list**显示**列表元数据**的输出。
 

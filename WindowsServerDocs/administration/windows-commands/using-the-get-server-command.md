@@ -1,6 +1,6 @@
 ---
 title: 获取服务器
-description: 用于获取服务器的参考主题，该主题从指定的 Windows 部署服务服务器中检索信息。
+description: 用于从指定的 Windows 部署服务服务器中检索信息的获取服务器的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a760371797af8eb95da386a3a5b9dbb0dcf7ba3c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f035462de8966756e4b47ca6ba04b7d30a9cb1c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719741"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932182"
 ---
 # <a name="get-server"></a>获取服务器
 
@@ -27,9 +27,9 @@ ms.locfileid: "82719741"
 wdsutil [Options] /Get-Server [/Server:<Server name>] /Show:{Config | Images | All} [/detailed]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
-|[/Server：<Server name>]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
 |/Show： {Config &#124; &#124; All）|指定要返回的信息的类型。<p>-   **Config**返回配置信息。<br />-   **映像**返回有关映像组、启动映像和安装映像的信息。<br />-   **All**返回配置信息和图像信息。|
 |[/detailed]|可以将此选项与 **/show： Images**或 **/show： all**一起使用，以指示应返回每个图像中的所有图像元数据。 如果未使用 **/detailed**选项，则默认行为是返回映像名称、说明和文件名。|
 ## <a name="examples"></a>示例
@@ -42,11 +42,11 @@ wdsutil /Get-Server /Show:Config
 wdsutil /verbose /Get-Server /Server:MyWDSServer /Show:All /detailed
 ```
 ## <a name="additional-references"></a>其他参考
-- [Command-Line Syntax Key](command-line-syntax-key.md)
-使用[enable](using-the-enable-server-command.md)[Using the disable-Server Command](using-the-disable-server-command.md)
-
-
-
-
-[Using the Initialize-Server Command](using-the-initialize-server-command.md)[Subcommand: start-Server](subcommand-start-server.md)[Subcommand: stop-Server](subcommand-stop-server.md)[The uninitialize-Server Option](the-uninitialize-server-option.md) [Subcommand: set-Server](subcommand-set-server.md)-server 命令的命令行语法键使用 Initialize-server 命令命令行： set-server 子命令：启动-服务器子命令：停止-服务器取消初始化-服务器选项
-
+- [命令行语法关键字](command-line-syntax-key.md) 
+[使用 disable-Server 命令](using-the-disable-server-command.md) 
+[使用 enable-Server 命令](using-the-enable-server-command.md) 
+[使用 Initialize-Server 命令](using-the-initialize-server-command.md) 
+[子命令：设置-服务器](subcommand-set-server.md) 
+[子命令：启动-服务器](subcommand-start-server.md) 
+[子命令：停止-服务器](subcommand-stop-server.md) 
+["取消初始化服务器" 选项](the-uninitialize-server-option.md)

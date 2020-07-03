@@ -1,6 +1,6 @@
 ---
 title: vol
-description: Vol 的参考主题，其中显示了磁盘卷标和序列号（如果存在）。
+description: 用于显示磁盘卷标和序列号（如果存在）的 "卷" 的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa900ade6f434a53ac940d097407aa90509e9141
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: acc2f3ee16604d7b980fa0ddf6e2f42bd1e47435
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720277"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931318"
 ---
 # <a name="vol"></a>vol
 
@@ -30,9 +30,9 @@ vol [<Drive>:]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|\<驱动器>：|指定包含要显示其卷标和序列号的磁盘的驱动器。|
+|\<Drive>:|指定包含要显示其卷标和序列号的磁盘的驱动器。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="additional-references"></a>其他参考

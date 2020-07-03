@@ -1,6 +1,6 @@
 ---
 title: ver
-description: Ver 的参考主题，其中显示了操作系统的版本号。
+description: Ver 的参考文章，其中显示了操作系统的版本号。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7050dddda6cc27c50980f2e44f40e1f682c1d375
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bd9b40fa526c2917b6cdcbc8d54da510eb40bc53
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720315"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931342"
 ---
 # <a name="ver"></a>ver
 
@@ -34,7 +34,7 @@ ver
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/?|在命令提示符下显示帮助。|
 

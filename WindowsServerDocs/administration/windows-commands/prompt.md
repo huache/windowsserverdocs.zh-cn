@@ -1,6 +1,6 @@
 ---
 title: prompt
-description: Prompt 命令的参考主题，可自定义 Cmd.exe 命令提示符。
+description: Prompt 命令的参考文章，可自定义 Cmd.exe 命令提示符。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 91146bd075097e54f6aff2fb204feae6a387848a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 72ed82c316faddba9486649497c8c48f88e6da81
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472152"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931144"
 ---
 # <a name="prompt"></a>prompt
 
@@ -33,7 +33,7 @@ prompt [<text>]
 | `<text>` | 指定要包括在命令提示符中的文本和信息。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 可以包含的字符组合（而不是）*文本*参数中有一个或多个字符串：
 
