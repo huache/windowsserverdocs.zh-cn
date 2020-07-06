@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: 1094072935d463aa57eb6d44d14d008067745f03
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: cb91b884edfbd105bc9e88a9d11b3b96055247c9
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775320"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833330"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -25,7 +25,7 @@ Windows Admin Center 是本地部署的基于浏览器的应用，用于管理 W
 
 ## <a name="download-now"></a>立即下载
 
-从 Microsoft Evaluation Center 下载 [Windows Admin Center](https://www.microsoft.com/evalcenter/evaluate-windows-admin-center)  。 虽然说是“开始评估”，但这是可供生产使用的正式发布版，包含在 Windows 或 Windows Server 许可证中。
+从 Microsoft Evaluation Center 下载 [Windows Admin Center](https://www.microsoft.com/evalcenter/evaluate-windows-admin-center)。 虽然说是“开始评估”，但这是可供生产使用的正式发布版。
 
 有关安装的帮助，请参阅[安装](deploy/install.md)。 有关 Windows Admin Center 入门的提示，请参阅[开始使用](use/get-started.md)。
 
@@ -169,10 +169,10 @@ Windows Admin Center 是本地部署的基于浏览器的应用，用于管理 W
 
 |     |
 | --- |
-| “[Windows Admin Center] 让我们用于管理系统的时间/工作量减少了 75% 以上。”<br> \- Rand Morimoto，Convergent Computing 总裁  |
-| “感谢 [Windows Admin Center]，我们可以从 HTML5 门户正常地远程管理客户，并且与 Azure Active Directory 完全集成，感谢多重身份验证，我们能够提高安全性。”<br/> \- Silvio Di Benedetto，Inside Technologies 创始人兼高级顾问  |
-| “我们已经能够以更有效的方式部署 [Server Core] SKU，进而改善了资源效率、安全性和自动化，同时仍然实现了良好的工作效率，并减少了在只依赖脚本时可能发生的错误。” <br/> \- Guglielmo Mengora，VaiSulWeb 创始人兼首席执行官  |
-| “使用 [Windows Admin Center]，特别是 SMB 市场的客户现在有了易于使用的工具来管理内部基础结构。 这能够最大程度地减少管理工作量，并节省大量时间。 最重要的是：[Windows Admin Center] 没有额外的许可费用！” <br/> \- Helmut Otto，SecureGUARD 管理总监  |
+| “[Windows Admin Center] 让我们用于管理系统的时间/工作量减少了 75% 以上。”<br> \- Rand Morimoto，Convergent Computing 总裁 |
+| “感谢 [Windows Admin Center]，我们可以从 HTML5 门户正常地远程管理客户，并且与 Azure Active Directory 完全集成，感谢多重身份验证，我们能够提高安全性。”<br/> \- Silvio Di Benedetto，Inside Technologies 创始人兼高级顾问 |
+| “我们已经能够以更有效的方式部署 [Server Core] SKU，进而改善了资源效率、安全性和自动化，同时仍然实现了良好的工作效率，并减少了在只依赖脚本时可能发生的错误。” <br/> \- Guglielmo Mengora，VaiSulWeb 创始人兼首席执行官 |
+| “使用 [Windows Admin Center]，特别是 SMB 市场的客户现在有了易于使用的工具来管理内部基础结构。 这能够最大程度地减少管理工作量，并节省大量时间。 最重要的是：[Windows Admin Center] 没有额外的许可费用！” <br/> \- Helmut Otto，SecureGUARD 管理总监 |
 
 [更多了解在生产环境中使用 Windows Admin Center 的公司。](understand/case-studies.md)
 
