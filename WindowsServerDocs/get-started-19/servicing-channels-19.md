@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: a4b8f2f21a7d13c31d6c952a74d3026a750466ce
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2bf56e69d1a28007c35c320d1d5cc73c2ba9fa53
+ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472913"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85586689"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 服务频道：LTSC 和 SAC
 
@@ -25,21 +25,21 @@ ms.locfileid: "85472913"
 
 ## <a name="long-term-servicing-channel-ltsc"></a>长期服务频道 (LTSC)
 
-这是你已熟悉的版本模型（以前称为“Long-Term Servicing *Branch*”），其中 Windows Server 的全新主要版本每 2-3 年发布一次。 用户有权享受 5 年的主流支持和 5 年的延长支持。 该频道适用于需要更长时间服务选项和功能稳定性的系统。 新的半年频道版本不会影响 Windows Server 2016 和 Windows Server 早期版本的部署工作。 长期服务频道将持续接受安全和非安全更新，但不会接受新特性和新功能。
+这是你已熟悉的版本模型（以前称为“Long-Term Servicing *Branch*”），其中 Windows Server 的全新主要版本每 2-3 年发布一次。 用户有权享受 5 年的主流支持和 5 年的延长支持。 该频道适用于需要更长时间服务选项和功能稳定性的系统。 新的半年频道版本不会影响 Windows Server 2019 和 Windows Server 早期版本的部署。 长期服务频道将持续接受安全和非安全更新，但不会接受新特性和新功能。
 
 > [!Note]
 > **当前的 LTSC 产品是 Windows Server 2019**。 如果你想坚持使用此频道，则应该安装（或继续使用）Windows Server 2019，你可以通过 Server Core 安装选项或带桌面体验的服务器安装选项进行安装。
 
 ## <a name="semi-annual-channel"></a>半年频道
 
-半年频道是快速创新客户的最佳选- 这类用户可以在应用程序（特别是基于容器和微服务的应用程序）以及软件定义混合数据中心中更快地利用新操作系统功能。 以半年频道发布的 Windows Server 产品每年发布两次新版本，分别在春季和秋季。 每个以该频道发布的版本自初始版本开始享受 18 个月的支持服务。
+半年频道非常适合需要快速创新的客户。客户加入该频道后便可更快地使用新的操作系统功能，特别是基于容器和微服务的功能。 以半年频道发布的 Windows Server 产品每年发布两次新版本，分别在春季和秋季。 每个以该频道发布的版本自初始版本开始享受 18 个月的支持服务。
 
 半年频道中引入的大部分功能将汇总至 Windows Server 的 Long-Term Servicing Channel 版本。 版本、功能和支持内容可能因版本而异，具体取决于客户反馈。
 
 可使用[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，也可以通过 Azure 市场或其他云/托管服务提供商及 Visual Studio 订阅等会员计划为批量授权的客户提供半年频道。
 
-> [!Note]
-> **当前的半年频道版本是 Windows Server 版本 1903**。 如果你要将服务器置于此频道，则应该安装 Windows Server 版本 1903，该版本可以在 Server Core 模式下安装或作为容器中运行的 Nano Server 来安装。 不支持从长期服务频道版本就地升级，因为它们处于**不同的发行频道**中。 半年频道发行版不是更新 – 它是半年频道中的下一个 Windows Server 发行版。
+> [!Note]  
+> **当前的半年频道版本是 Windows Server 版本 1909**。 如果你要将服务器置于此频道，则应该安装 Windows Server 版本 1909，该版本可以在 Server Core 模式下安装或作为容器中运行的 Nano Server 来安装。 不支持从长期服务频道版本就地升级，因为它们处于**不同的发行频道**中。 半年频道发行版不是更新 – 它是半年频道中的下一个 Windows Server 发行版。
 
 在该模型中，Windows Server 版本通过发布的年份和月份进行标识：例如，2017 年 9 月发布的版本标识为**版本 1709**。 以半年频道发布的 Windows Server 每年发布两次新版本。 每个版本的支持周期为 18 个月。
 
@@ -47,8 +47,8 @@ ms.locfileid: "85472913"
 
 以下是需考虑的主要区别：
 
-- 是否需要快速创新？ 是否需要提前访问最新的 Windows Server 功能？ 是否需要支持快速节奏混合应用程序、dev-ops 和 Hyper-V 结构？ 如果需要，应该考虑安装 **Windows Server 版本 1903**，**加入半年频道**。 如本主题中所述，每年你将收到两个新版本，每个版本的主流生产支持期为 18 个月。 可通过批量许可、Azure 或 Visual Studio 订阅服务获取新版本。 目前，如果你打算在生产环境中运行产品，半年频道中的版本需要批量许可和软件保障。
-- 是否需要稳定性和可预测性？ 是否需要在物理服务器上运行虚拟机和传统工作负载？ 如果需要，应该考虑**将服务器置于长期服务频道**。 当前的 LTSC 版本为 **Windows Server 2019**。 如本主题中所述，你有权每 2 至 3 年接收新版本，每个版本享受 5 年的主流支持和 5 年的延长支持。 LTSC 版本在所有发布机制中均有提供。 无论使用何种许可模型，所有人均可使用 LTSC 版本。
+- 是否需要在 Devops、容器和微服务上增加新技术？ 如果需要，应该考虑安装 Windows Server 版本 1909，加入半年频道 。 如本主题中所述，每年你将收到两个新版本，每个版本的主流生产支持期为 18 个月。 可通过批量许可、Azure 或 Visual Studio 订阅服务获取新版本。 目前，如果你打算在生产环境中运行产品，半年频道中的版本需要批量许可和软件保障。
+- 是否需要稳定性和可预测性？ 是否需要在物理服务器上运行虚拟机和传统工作负载？ 如果需要，应该考虑**将服务器置于长期服务频道**。 当前的 LTSC 版本为 **Windows Server 2019**。 如本主题中所述，你有权每 2 至 3 年接收新版本，每个版本享受 5 年的主流支持和 5 年的延长支持。 LTSC 版本在所有发布机制中均有提供。 无论使用何种许可模型，所有人均可使用 LTSC 版本。 
 
 下表总结了不同频道之间的主要差异：
 
