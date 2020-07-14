@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 978c42b70f1c74a009640f7feda8dee7a82c9cff
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 4eae1c991b3ce418f95b6b47eda485845a336e2f
+ms.sourcegitcommit: 9a72fa784206a4b780d6d1d630ec6f21fecb8db3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269235"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052582"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS 客户端入门
 
@@ -160,8 +160,8 @@ ms.locfileid: "84269235"
 
 | 鼠标模式    | 鼠标操作      | 手势                                                    |
 |---------------|----------------------|------------------------------------------------------------|
-| 直接触控  | 左键单击           | 单指点击                                               |
-| 直接触控  | 右键单击          | 单指点击并按住                                      |
+| 直接触摸  | 左键单击           | 单指点击                                               |
+| 直接触摸  | 右键单击          | 单指点击并按住                                      |
 | 鼠标指针 | 左键单击           | 单指点击                                               |
 | 鼠标指针 | 左键单击并拖动  | 单指点击并按住，然后拖动                   |
 | 鼠标指针 | 右键单击          | 双指点击                                              |
