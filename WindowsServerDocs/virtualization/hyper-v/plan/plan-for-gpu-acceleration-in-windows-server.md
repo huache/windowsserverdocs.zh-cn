@@ -7,13 +7,13 @@ author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
-ms.date: 08/21/2019
-ms.openlocfilehash: 7ca8d29b58dc8682575d9cb8b0f26aa49b257335
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.date: 07/14/2020
+ms.openlocfilehash: c8e0e8798da9cb4a2b3ca317d9632450ade82504
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80307854"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390094"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>在 Windows Server 中规划 GPU 加速
 
@@ -49,19 +49,19 @@ DDA 部署只能加速有限数量的虚拟机，因为每个物理 GPU 最多�
 有关详细信息，请参阅以下主题：
 
 - [规划单独的设备分配部署](plan-for-deploying-devices-using-discrete-device-assignment.md)
-- [使用离散设备分配部署图形设备](../deploy/Deploying-graphics-devices-using-dda.md)
+- [Deploy graphics devices using Discrete Device Assignment](../deploy/Deploying-graphics-devices-using-dda.md)（使用离散设备分配部署图形设备）
 
 ## <a name="remotefx-vgpu"></a>RemoteFX vGPU
 
 > [!NOTE]
-> Windows Server 2016 完全支持 RemoteFX vGPU，但在 Windows Server 2019 中不受支持。
+> 出于安全方面的考虑，从2020年7月14日的安全更新开始，所有版本的 Windows 上都默认禁用 RemoteFX vGPU。 若要了解详细信息，请参阅[KB 4570006](https://support.microsoft.com/help/4570006)。
 
 RemoteFX vGPU 是一种图形虚拟化技术，允许在多个虚拟机之间共享单个物理 GPU。 在 RemoteFX vGPU 部署中，虚拟化的工作负荷运行在 Microsoft 的 RemoteFX 3D 适配器上，用于协调主机和来宾之间的 GPU 处理请求。 RemoteFX vGPU 最适用于不需要专用 GPU 资源的知识工作者和高突发工作负载。 RemoteFX vGPU 只能向 Windows Vm 提供 GPU 加速。
 
 有关详细信息，请参阅以下主题：
 
 - [使用 RemoteFX vGPU 部署图形设备](../deploy/deploy-graphics-devices-using-remotefx-vgpu.md)
-- [支持 RemoteFX 3D 视频适配器（vGPU）](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
+- [RemoteFX 3D 显示适配器 (vGPU) 支持](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
 
 ## <a name="comparing-dda-and-remotefx-vgpu"></a>比较 DDA 和 RemoteFX vGPU
 
@@ -72,12 +72,12 @@ RemoteFX vGPU 是一种图形虚拟化技术，允许在多个虚拟机之间共
 | GPU 资源模型    | 专用或共享                                                                 | 仅专用                                                                      |
 | VM 密度            | 高（多个 Vm 的一个或多个 Gpu）                                                 | Low （一个或多个 Gpu 到一个 VM）                                                    |
 | 应用兼容性     | DX 11.1、OpenGL 4.4、OpenCL 1.1                                                     | 供应商（DX 12、OpenGL、CUDA）提供的所有 GPU 功能                       |
-| AVC444                | 默认为启用                                                                  | 通过组策略提供                                                      |
+| AVC444                | 默认情况下启用                                                                  | 通过组策略提供                                                      |
 | GPU VRAM              | 最多 1 GB 专用 VRAM                                                           | GPU 支持的 VRAM                                                     |
 | 帧速率            | 最高 30 fps                                                                         | 最高 60 fps                                                                         |
 | 来宾中的 GPU 驱动程序   | RemoteFX 3D 适配器显示驱动程序 (Microsoft)                                      | GPU 供应商驱动程序（NVIDIA、AMD、Intel）                                              |
 | 主机操作系统支持       | Windows Server 2016                                                                 | Windows Server 2016;Windows Server 2019                                            |
 | 来宾操作系统支持      | Windows Server 2012 R2;Windows Server 2016;Windows 7 SP1;Windows 8.1;Windows 10 | Windows Server 2012 R2;Windows Server 2016;Windows Server 2019;Windows 10;Linux |
-| 虚拟机监控程序            | Microsoft Hyper-V                                                                   | Microsoft Hyper-V                                                                   |
+| Hypervisor            | Microsoft Hyper-V                                                                   | Microsoft Hyper-V                                                                   |
 | GPU 硬件          | 企业 GPU（如 Nvidia Quadro/GRID 或 AMD FirePro）                         | 企业 GPU（如 Nvidia Quadro/GRID 或 AMD FirePro）                         |
 | 服务器硬件       | 无特殊要求                                                             | 新式服务器，向操作系统公开 IOMMU（通常是 SR-IOV 兼容硬件）              |

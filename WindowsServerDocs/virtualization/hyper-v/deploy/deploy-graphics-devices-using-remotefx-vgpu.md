@@ -7,17 +7,20 @@ author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
-ms.date: 08/21/2019
-ms.openlocfilehash: 4ae185232ec39d92997929f8f916ff49caf26dcf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.date: 07/14/2020
+ms.openlocfilehash: ab16dcdc8ce29f2440207ea5bbc7c421f171ed4a
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310514"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390084"
 ---
 # <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>使用 RemoteFX vGPU 部署图形设备
 
 > 适用于： Windows Server 2016、Microsoft Hyper-V Server 2016
+
+> [!NOTE]
+> 出于安全方面的考虑，从2020年7月14日的安全更新开始，所有版本的 Windows 上都默认禁用 RemoteFX vGPU。 若要了解详细信息，请参阅[KB 4570006](https://support.microsoft.com/help/4570006)。
 
 使用 RemoteFX 的 vGPU 功能可以让多个虚拟机共享物理 GPU。 呈现和计算资源在虚拟机之间动态共享，这使得 RemoteFX vGPU 适用于不需要专用 GPU 资源的高突发负载。 例如，在 VDI 服务中，可以使用 RemoteFX vGPU 将应用呈现成本卸载到 GPU，同时降低 CPU 负载并提高服务可伸缩性。
 
@@ -50,7 +53,7 @@ ms.locfileid: "80310514"
 
 1. 导航到 Hyp​​er-V 管理器中的 Hyper-V 设置。
 2. 选择 "Hyper-v 设置" 中的**物理 gpu** 。
-3. 选择不想使用的 GPU，然后清除“将此 GPU 用于 RemoteFX”。
+3. 选择不想使用的 GPU，然后清除“将此 GPU 用于 RemoteFX”****。
 
 ### <a name="configure-the-remotefx-vgpu-3d-adapter"></a>配置 RemoteFX vGPU 3D 适配器
 
@@ -80,13 +83,13 @@ ms.locfileid: "80310514"
 
 ## <a name="monitor-performance"></a>监视性能
 
-支持 RemoteFX vGPU 的服务的性能和规模由各种因素决定，如系统上的 Gpu 数、总的 GPU 内存、系统内存和内存速度、CPU 内核数和 CPU 时钟频率、存储速度和 NUMA部署.
+支持 RemoteFX vGPU 的服务的性能和规模由各种因素决定，如系统上的 Gpu 数、总的 GPU 内存、系统内存和内存速度、CPU 内核数和 CPU 时钟频率、存储速度和 NUMA 实现。
 
 ### <a name="host-system-memory"></a>主机系统内存
 
 对于使用 vGPU 启用的每个 VM，RemoteFX 在来宾操作系统和主机服务器中都使用系统内存。 虚拟机监控程序保证来宾操作系统的系统内存可用性。 在主机上，每个启用了 vGPU 的虚拟桌面都需要将其系统内存要求播发到虚拟机监控程序。 当启用了 vGPU 的虚拟机启动时，虚拟机监控程序会在主机中保留额外的系统内存。
 
-启用 RemoteFX 的服务器的内存要求是动态的，因为启用了 RemoteFX 的服务器上使用的内存量取决于与启用了 vGPU 的虚拟桌面关联的监视器数量和最大分辨率这些监视器。
+启用 RemoteFX 的服务器的内存要求是动态的，因为启用了 RemoteFX 的服务器上使用的内存量取决于与启用了 vGPU 的虚拟机关联的监视器数量，以及这些监视器的最大分辨率。
 
 ### <a name="host-gpu-video-memory"></a>主机 GPU 视频内存
 
@@ -94,7 +97,7 @@ ms.locfileid: "80310514"
 
 ### <a name="host-cpu"></a>主机 CPU
 
-虚拟机监控程序计划 CPU 上的主机和 Vm。 启用 RemoteFX 的主机上的开销会增加，因为系统会对每个启用了 vGPU 的虚拟机运行附加的进程（rdvgm）。 此过程使用图形设备驱动程序在 GPU 上运行命令。 编解码器还使用 CPU 压缩需要发送回客户端的屏幕数据。
+虚拟机监控程序计划 CPU 上的主机和 Vm。 启用 RemoteFX 的主机上的开销会增加，因为系统会对每个启用了 vGPU 的虚拟机运行额外的进程（rdvgm.exe）。 此过程使用图形设备驱动程序在 GPU 上运行命令。 编解码器还使用 CPU 压缩需要发送回客户端的屏幕数据。
 
 更多虚拟处理器意味着更好的用户体验。 建议为每个启用了 vGPU 的虚拟机分配至少两个虚拟 Cpu。 我们还建议为启用了 vGPU 的虚拟桌面使用 x64 体系结构，因为与 x86 虚拟机相比，x64 虚拟机上的性能更好。
 

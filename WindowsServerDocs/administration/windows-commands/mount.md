@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 505094251ab6b0053cc3d46801ba5f6170201ecd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a81e5d6583eeb6859d5c82065b5bab5fff7c6c9f
+ms.sourcegitcommit: 102a929be3523dbd6523079f0a5738844cef81b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935721"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384637"
 ---
 # <a name="mount"></a>mount
 
@@ -43,8 +43,8 @@ mount [-o <option>[...]] [-u:<username>] [-p:{<password> | *}] {\\<computername>
 | -o casesensitive | 强制服务器上的文件查找区分大小写。 |
 | -o fileaccess =`<mode>` | 指定在 NFS 共享上创建的新文件的默认权限模式。 将*模式*指定为*ogw*形式的三位数字，其中*o*、 *g*和*w*分别表示授予了文件所有者、组和世界的访问权限。 位数必须在0-7 范围内，包括：<ul><li>**0：** 无访问权限</li><li>**1：** x （执行访问）</li><li>**2：** w （写入访问权限）</li><li>**3：** wx （写入和执行访问）</li><li>**4：** r （读取权限）</li><li>**5：** rx （读取和执行访问权限）</li><li>**6：** rw （读取和写入访问权限）</li><li>**7：** rwx （读取、写入和执行访问权限）</li></ul> |
 | -o lang =`{euc-jp|euc-tw|euc-kr|shift-jis|Big5|Ksc5601|Gb2312-80|Ansi)` | 指定要在 NFS 共享上配置的语言编码。 只能在共享上使用一种语言。 此值可以包含以下任何值：<ul><li>**euc-jp：** 日语</li><li>**euc-幼圆：** 中文</li><li>**euc-kr：** 朝鲜语</li><li>shift-jis **：** 日语</li><li>**Big5：** 中文</li><li>**Ksc5601：** 朝鲜语</li><li>**Gb2312-80：** 简体中文</li><li>**Ansi：** ANSI 编码</li></ul> |
-| 形`<username>` | 指定用于装载共享的用户名。 如果*用户名*前面没有反斜杠（* *\** ），则将其视为 UNIX 用户名。 |
-| -p:`<password>` | 用于装载共享的密码。 如果使用星号（**&#42;**），系统会提示输入密码。 |
+| 形`<username>` | 指定用于装载共享的用户名。 如果*用户名*前面没有反斜杠（ **\\** ），则将其视为 UNIX 用户名。 |
+| h-p`<password>` | 用于装载共享的密码。 如果使用星号（**&#42;**），系统会提示输入密码。 |
 | `<computername>` | 指定 NFS 服务器的名称。 |
 | `<sharename>` | 指定文件系统的名称。 |
 | `<devicename>` | 指定设备的驱动器号和名称。 如果使用星号（**&#42;**），则此值表示第一个可用的驱动程序号。 |
