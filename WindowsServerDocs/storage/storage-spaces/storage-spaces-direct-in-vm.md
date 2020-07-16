@@ -7,20 +7,22 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 10/25/2017
+ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 77f82023b8ed5db6f329530bebc3162cb8565856
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 581b80fe07043314e573261a6735f121bc30e2e3
+ms.sourcegitcommit: a5badf6b08ec0b25ec73df4b827c4e40b5ccd974
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474544"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410361"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>在来宾虚拟机群集中使用存储空间直通
 
 > 适用于：Windows Server 2019、Windows Server 2016
 
-可以在物理服务器或虚拟机来宾群集的群集上部署存储空间直通，如本主题中所述。 这种类型的部署在私有或公有云之上跨一组 Vm 提供虚拟共享存储，以便应用程序高可用性解决方案可用于提高应用程序的可用性。
+如本主题中所述，可以在物理服务器或虚拟机来宾群集的群集上部署存储空间直通（有时称为 S2D）。 这种类型的部署在私有或公有云之上跨一组 Vm 提供虚拟共享存储，以便应用程序高可用性解决方案可用于提高应用程序的可用性。
+
+若要改为将 Azure 共享磁盘用于来宾虚拟机，请参阅[Azure 共享磁盘](/azure/virtual-machines/windows/disks-shared)。
 
 ![](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
 
@@ -30,7 +32,7 @@ ms.locfileid: "85474544"
 
 <iframe src="https://channel9.msdn.com/Series/Microsoft-Hybrid-Cloud-Best-Practices-for-IT-Pros/Step-by-Step-Deploy-Windows-Server-2016-Storage-Spaces-Direct-S2D-Cluster-in-Microsoft-Azure/player" width="960" height="540" allowfullscreen></iframe>
 
-## <a name="requirements"></a>要求
+## <a name="requirements-for-guest-clusters"></a>来宾群集的要求
 
 在虚拟化环境中部署存储空间直通时，请注意以下事项。
 
@@ -62,29 +64,29 @@ ms.locfileid: "85474544"
 - 通过运行以下 PowerShell cmdlet，在运行状况服务中禁用自动驱动器更换功能：
 
     ```powershell
-          Get-storagesubsystem clus* | set-storagehealthsetting -name "System.Storage.PhysicalDisk.AutoReplace.Enabled" -value "False"
-          ```
+    Get-storagesubsystem clus* | set-storagehealthsetting -name "System.Storage.PhysicalDisk.AutoReplace.Enabled" -value "False"
+    ```
 
-- To give greater resiliency to possible VHD / VHDX / VMDK storage latency in guest clusters, increase the Storage Spaces I/O timeout value:
+- 为了更好地复原来宾群集中可能的 VHD/VHDX/VMDK 存储延迟，请增加存储空间 i/o 超时值：
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
 
     `dword: 00007530`
 
-    The decimal equivalent of Hexadecimal 7530 is 30000, which is 30 seconds. Note that the default value is 1770 Hexadecimal, or 6000 Decimal, which is 6 seconds.
+    十六进制7530的十进制等效项是30000，即30秒。 请注意，默认值为1770十六进制或 6000 Decimal，即6秒。
 
-## Not supported
+## <a name="not-supported"></a>不支持
 
-- Host level virtual disk snapshot/restore
+- 主机级虚拟磁盘快照/还原
 
-    Instead use traditional guest level backup solutions to backup and restore the data on the Storage Spaces Direct volumes.
+    改为使用传统的来宾级别备份解决方案来备份和还原存储空间直通卷上的数据。
 
-- Host level virtual disk size change
+- 主机级虚拟磁盘大小更改
 
-    The virtual disks exposed through the virtual machine must retain the same size and characteristics. Adding more capacity to the storage pool can be accomplished by adding more virtual disks to each of the virtual machines and adding them to the pool. It's highly recommended to use virtual disks of the same size and characteristics as the current virtual disks.
+    通过虚拟机公开的虚拟磁盘必须保持相同的大小和特性。 可以通过将更多虚拟磁盘添加到每个虚拟机并将其添加到池中，来增加存储池的容量。 强烈建议使用与当前虚拟磁盘大小和特征相同的虚拟磁盘。
 
-## Additional References
+## <a name="additional-references"></a>其他参考
 
-- [Additional Azure Iaas VM templates for deploying Storage Spaces Direct, videos, and step-by-step guides](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126).
+- [用于部署存储空间直通、视频和循序渐进指南的其他 Azure IAAS VM 模板](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 
-- [Additional Storage Spaces Direct Overview](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+- [其他存储空间直通概述](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
