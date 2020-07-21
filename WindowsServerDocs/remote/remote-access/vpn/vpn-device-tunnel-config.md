@@ -9,20 +9,20 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 855eb8d45297f15afceedf6cc11c2175c899ae45
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3cb02bf2ca6aa254a0f1895367abdb90c5c34e6a
+ms.sourcegitcommit: c1a5e46f64f25e1a0e658721130d87661b1d59a3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818790"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86543381"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中配置 VPN 设备隧道
 
 >适用于： Windows 10 版本1709
 
-Always On VPN 使你能够为设备或计算机创建专用 VPN 配置文件。 Always On VPN 连接包括两种类型的隧道： 
+Always On VPN 使你能够为设备或计算机创建专用 VPN 配置文件。 Always On VPN 连接包括两种隧道： 
 
-- _设备隧道_在用户登录到设备之前连接到指定的 VPN 服务器。 预登录连接方案和设备管理目的使用设备隧道。
+- _设备隧道_在用户登录到设备之前连接到指定的 VPN 服务器。 预登录连接方案和设备管理将使用设备隧道。
 
 - _用户隧道_仅在用户登录到设备后进行连接。 用户隧道允许用户通过 VPN 服务器访问组织资源。
 
@@ -30,7 +30,7 @@ Always On VPN 使你能够为设备或计算机创建专用 VPN 配置文件。 
 
 在已加入域、未加入域（工作组）或 Azure AD 联接的设备上支持用户隧道，以允许企业和 BYOD 方案。 它可在所有 Windows 版本中使用，并且平台功能可通过 UWP VPN 插件支持的方式提供给第三方。
 
-只能在运行 Windows 10 企业版或教育版1709或更高版本的已加入域的设备上配置设备隧道。 不支持第三方控制设备隧道。
+只能在运行 Windows 10 企业版或教育版1709或更高版本的已加入域的设备上配置设备隧道。 不支持第三方控制设备隧道。 设备隧道不支持使用名称解析策略表（NRPT）。 设备隧道不支持强制隧道。 您必须将其配置为拆分隧道。
 
 
 ## <a name="device-tunnel-requirements-and-features"></a>设备隧道要求和功能
@@ -100,7 +100,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 可以使用 Windows PowerShell 脚本并使用 Windows Management Instrumentation （WMI）桥来配置设备隧道。 必须在**本地系统**帐户的上下文中配置 Always On VPN 设备隧道。 若要实现此目的，需要使用[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)，这是[Sysinternals](https://docs.microsoft.com/sysinternals/)套件中包含的其中一个[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) 。
 
-有关如何部署每个设备的 `(.\Device)` 与每个用户 `(.\User)` 配置文件的指南，请参阅将[PowerShell 脚本使用 WMI Bridge 提供程序](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
+有关如何部署每个设备 `(.\Device)` 和每个用户配置文件的指南 `(.\User)` ，请参阅将[POWERSHELL 脚本与 WMI 桥接程序结合使用](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
 
 运行以下 Windows PowerShell 命令，以验证是否已成功部署设备配置文件：
 
@@ -108,7 +108,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
   Get-VpnConnection -AllUserConnection
   ```
 
-输出显示设备上部署的设备\-范围内的 VPN 配置文件的列表。
+输出显示在 \- 设备上部署的设备范围 VPN 配置文件的列表。
 
 ### <a name="example-windows-powershell-script"></a>Windows PowerShell 脚本示例
 
@@ -187,4 +187,3 @@ Write-Host "$Message"
 
 >[!IMPORTANT]
 >将设备隧道与 Microsoft RAS 网关结合使用时，你需要将 RRAS 服务器配置为支持 IKEv2 计算机证书身份验证，方法是为 IKEv2 身份验证方法启用 "**允许计算机证书身份验证**"，如[此处](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)所述。 启用此设置后，强烈建议**将 VpnAuthProtocol** PowerShell Cmdlet 与**RootCertificateNameToAccept**可选参数一起使用，以确保 RRAS IKEv2 连接仅适用于链接到显式定义的内部/专用根证书颁发机构的 VPN 客户端证书。 另外，应修改 RRAS 服务器上**受信任的根证书颁发机构**存储，以确保它不包含[本文](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)中所述的公共证书颁发机构。 其他 VPN 网关可能还需要考虑类似的方法。
-
