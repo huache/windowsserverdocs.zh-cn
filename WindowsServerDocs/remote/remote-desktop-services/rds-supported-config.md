@@ -4,17 +4,17 @@ description: 介绍 Windows Server 2016 和 Windows Server 2019 中 RDS 支持�
 ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: elizapo
-ms.date: 10/22/2019
+ms.date: 07/14/2020
 ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: dae6c00bd09e9c10e32932701095244a75f9ca7a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 406112eae884b1e34d54eb18700c3ad28c3f52c6
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860110"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390074"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>远程桌面服务支持的配置
 
@@ -53,7 +53,7 @@ Windows Server 2016 消除了在使用同样运行 Windows Server 2016 的远程
 
 远程桌面服务支持配有 GPU 的系统。 可通过远程连接使用需要 GPU 的应用程序。 此外，还可启用 GPU 加速的呈现和编程，以提升性能和可伸缩性。
 
-远程桌面服务会话主机和单会话客户端操作系统可通过多种方式使用提供给操作系统的物理或虚拟 GPU，例如 [Azure GPU 优化虚拟机大小](/en-us/azure/virtual-machines/windows/sizes-gpu)、可用于物理 RDSH 服务器的 GPU、RemoteFX vGPU（仅限 Windows Server 2016），以及由受支持的虚拟机监控程序提供给 VM 的 GPU。
+远程桌面服务会话主机和单会话客户端操作系统可通过多种方式使用提供给操作系统的物理或虚拟 GPU，例如 [Azure GPU 优化虚拟机大小](/en-us/azure/virtual-machines/windows/sizes-gpu)、可用于物理 RDSH 服务器的 GPU，以及由受支持的虚拟机监控程序提供给 VM 的 GPU。
 
 在确定需求时如需帮助，请参阅[哪种图形虚拟化技术适合你？](rds-graphics-virtualization.md) 有关 DDA 的具体信息，请查看[规划离散设备分配的部署](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)。
 
@@ -65,7 +65,7 @@ GPU 供应商可对 RDSH 场景使用单独的许可方案，也可限制 GPU �
 
 下表显示了不同版本的 RDSH 主机支持的方案。
 
-|功能|Windows Server 2008 R2|Windows Server 2012 R2|Windows Server 2016|Windows Server Standard 2012 R2|
+|功能|Windows Server 2008 R2|Windows Server 2012 R2|Windows Server 2016|Windows Server 2019|
 |---|---|---|---|---|
 |对所有 RDP 会话使用硬件 GPU|否|是|是|是|
 |H.264/AVC 硬件编码（若 GPU 支持）|否|否|是|是|
@@ -87,13 +87,15 @@ GPU 供应商可对 RDSH 场景使用单独的许可方案，也可限制 GPU �
 
 ### <a name="remotefx-3d-video-adapter-vgpu-support"></a>RemoteFX 3D 显示适配器 (vGPU) 支持
 
+> [!NOTE]
+> 出于安全方面的考虑，从 2020 年 7 月 14 日的安全更新开始，所有版本的 Windows 都会默认禁用 RemoteFX vGPU。 要了解详细信息，请参阅 [KB 4570006](https://support.microsoft.com/help/4570006)。
+
 当 VM 以 Hyper-V 来宾的身份在 Windows Server 2012 R2 或 Windows Server 2016 上运行时，远程桌面服务支持 RemoteFX vGPU。 下列来宾操作系统具有 RemoteFX vGPU 支持：
 
 - Windows 7 SP1
 - Windows 8.1
 - Windows 10 1703 或更高版本
 - 仅限单会话部署中的 Windows Server 2016
-- 仅限单会话部署中的 Windows Server 2019
 
 ### <a name="discrete-device-assignment-support"></a>离散设备分配支持
 

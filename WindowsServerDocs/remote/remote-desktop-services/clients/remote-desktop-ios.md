@@ -8,14 +8,14 @@ ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
 manager: lizross
 ms.author: helohr
-date: 06/01/2020
+ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eae1c991b3ce418f95b6b47eda485845a336e2f
-ms.sourcegitcommit: 9a72fa784206a4b780d6d1d630ec6f21fecb8db3
+ms.openlocfilehash: e421795fd3be9e11ddff4cf6b557ebb211e51c53
+ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86052582"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86445711"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS 客户端入门
 
@@ -72,7 +72,10 @@ ms.locfileid: "86052582"
 
 1. 在 Connection Center 屏幕上，依次点击“+”和“添加工作区”。
 2. 在“源 URL”字段中，输入要添加的源的 URL。 该 URL 可以是一个 URL，也可以是电子邮件地址。
-   - 如果使用 URL，请输入管理员提供给你的 URL。 此 URL 通常是 <https://rdweb.wvd.microsoft.com>。
+   - 如果使用 URL，请输入管理员提供给你的 URL。
+      - 此 URL 通常是一个 Windows 虚拟桌面 URL。 使用哪一个取决于所使用的 Windows 虚拟桌面版本。
+        - 如果是 2019 年秋季版，请使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
+        - 如果是 2020 年春季版，请使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
    - 如果使用电子邮件地址，请输入你的电子邮件地址。 输入电子邮件地址会指示客户端搜索与该地址关联的 URL，前提是管理员已采用这种方式配置了服务器。
 3. 点击“下一步”。
 4. 出现提示时，提供你的凭据。
