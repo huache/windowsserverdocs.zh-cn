@@ -8,14 +8,14 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/06/2020
+ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c219a6dbc5922e9d7240b3004c1dd92eb7d057a
-ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
+ms.openlocfilehash: 7be6b7542ca77c80a638df6404aefe77d8d7d19c
+ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82903455"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86445701"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS 客户端入门
 
@@ -50,7 +50,9 @@ ms.locfileid: "82903455"
 
 1. 选择主页上的“添加源”，以连接到服务，并检索资源。
 2. 输入源 URL。 该项可以是 URL 或电子邮件地址：
-   - 如果使用 URL，请输入管理员提供给你的 URL。 此 URL 通常是 <https://rdweb.wvd.microsoft.com>。
+   - 此 URL 通常是一个 Windows 虚拟桌面 URL。 使用哪一个取决于所使用的 Windows 虚拟桌面版本。
+      - 如果是 2019 年秋季版，请使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
+      - 如果是 2020 年春季版，请使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
    - 若要使用电子邮件地址，请输入你的电子邮件地址。 这会指示客户端搜索与你的电子邮件地址关联的 URL，前提是管理员已采用这种方式配置了服务器。
 3. 选择“订阅”。
 4. 出现提示时，请使用用户帐户登录。
@@ -61,17 +63,19 @@ ms.locfileid: "82903455"
 
 ### <a name="export-and-import-connections"></a>导出和导入连接
 
-可以导出远程桌面连接定义并在另一个设备上使用它。 远程桌面保存在单独的 .RDP 文件中。
+可以导出远程桌面连接定义并在另一个设备上使用它。 远程桌面保存在单独的 RDP 文件中。
+
+导出 RDP 文件：
 
 1. 在连接中心中，右键单击远程桌面。
 2. 选择“导出”。
-3. 浏览到要用于保存远程桌面 .RDP 文件的位置。
+3. 浏览到要用于保存远程桌面 RDP 文件的位置。
 4. 选择“确定”。
 
-使用以下步骤可导入远程桌面 .RDP 文件。
+导入 RDP 文件：
 
 1. 在菜单栏中，依次选择“文件” > “导入”。
-2. 浏览到 .RDP 文件。
+2. 浏览到 RDP 文件。
 3. 选择“打开”。
 
 ## <a name="add-a-remote-resource"></a>添加远程资源
@@ -83,7 +87,7 @@ ms.locfileid: "82903455"
 
 若要添加远程资源：
 
-1. 在 Connection Center 中，依次选择“+”和“添加远程资源”。 
+1. 在 Connection Center 中，依次选择“+”和“添加远程资源”。
 2. 输入远程资源信息：
    - **源 URL** - RD Web 访问服务器的 URL。 也可以在此字段输入公司电子邮件帐户 - 这将告知客户端搜索与电子邮件地址关联的 RD Web 访问服务器。
    - **用户名称** - 要用于连接到的 RD Web 访问服务器的用户名。
@@ -128,7 +132,9 @@ ms.locfileid: "82903455"
 
 若要删除分辨率，请依次选择要删除的分辨率和“-”。
 
-显示具有单独的空间 如果在运行 Mac OS X 10.9 并且在 Mavericks 中禁用“显示具有单独的空间 （“系统首选项”>“任务控制 ），则需要使用相同选项在远程桌面客户端中配置此设置。  
+## <a name="displays-have-separate-spaces"></a>显示具有单独的空间
+
+如果正在运行 Mac OS X 10.9 并且已在 Mavericks 中禁用“显示具有单独的空间”（“系统首选项”>“任务控制”），则需要使用相同选项在远程桌面客户端中配置此设置 。
 
 ### <a name="drive-redirection-for-remote-resources"></a>远程资源的驱动器重定向
 
@@ -139,18 +145,18 @@ ms.locfileid: "82903455"
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>在远程会话中使用键盘
 
-Mac 键盘布局与 Windows 键盘布局不同。 
+Mac 键盘布局与 Windows 键盘布局不同。
 
 - Mac 键盘上的 Command 键等于 Windows 键。
-- 若要执行使用 Mac 上的 Command 按钮的操作，需要使用 Windows 中的控制按钮（例如：复制 = Ctrl + C）。
-- 可以通过额外按 FN 键在会话中激活功能键（例如：FN + F1）。
+- 若要执行使用 Mac 上的 Command 按钮的操作，则需要使用 Windows 中的控制按钮（例如：Copy = Ctrl+C）。
+- 可以通过额外按 FN 键在会话中激活功能键（例如：FN+F1）。
 - Mac 键盘上空格键右侧的 Alt 键等于 Windows 中的 Alt Gr/右 Alt 键。
 
 默认情况下，远程会话会使用与客户端运行的操作系统相同的键盘区域设置。 （如果 Mac 运行美国英语操作系统，则也会对远程会话使用该操作系统。）如果未使用操作系统键盘区域设置，请检查远程电脑上的键盘设置并手动更改该设置。 有关键盘和区域设置的更多信息，请参阅[远程桌面客户端常见问题解答](remote-desktop-client-faq.md)。
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>对远程桌面网关可插入身份验证和授权的支持
 
-Windows Server 2012 R2 引入了对新身份验证方法（即远程桌面网关可插入身份验证和授权）的支持，该方法可为自定义身份验证例程提供更高的灵活性。 现在可以通过 Mac 客户端尝试此身份验证模型。 
+Windows Server 2012 R2 引入了对新身份验证方法（即远程桌面网关可插入身份验证和授权）的支持，该方法可为自定义身份验证例程提供更高的灵活性。 现在可以通过 Mac 客户端尝试此身份验证模型。
 
 > [!IMPORTANT]
 > 不支持 Windows 8.1 之前的自定义身份验证和授权模型，尽管上面的文章讨论了它们。
