@@ -7,18 +7,19 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
 ms.prod: windows-server
-ms.openlocfilehash: 3976761836e4bbec2a3d06d56220066a595046b4
-ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
+ms.openlocfilehash: a047965c260198336d3a34386cb5dc72094e7a16
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81650100"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891332"
 ---
 # <a name="windows-admin-center-release-history"></a>Windows 管理中心版本历史记录
 
 下面列出了最新发布的功能：
 
-- 版本[1910.2](https://aka.ms/wac1910.2)是最新的 GA 版本，其中包括平台的可访问性和大量 bug 修复的更新
+- 版本[2007](https://aka.ms/wac2007)是最新的 GA 版本，它包括对新的 Azure Stack HCI 和多个工具的新增功能的支持。
+- 版本[1910.2](https://aka.ms/wac1910.2)包括对平台的可访问性和大量 bug 修复的更新
 - 版本[1910](https://aka.ms/wac1910)引入了几个新的 Azure 混合服务，并将以前在预览版中的功能引入了 GA 通道。
 - 版本 [1909](https://aka.ms/wac1909) 引入了 Azure VM 特定的连接类型，并统一了传统故障转移群集和 HCI 群集的连接类型。
 - 版本 [1908](https://aka.ms/wac1908) 添加了视觉对象更新、Packetmon、FlowLog 审核、群集的 Azure Monitor 载入以及对基于 HTTPS 的 WinRM（端口 5986）的支持。

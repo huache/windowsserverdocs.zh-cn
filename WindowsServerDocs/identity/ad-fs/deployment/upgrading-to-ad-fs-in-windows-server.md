@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 9389d1565462572a5617856f0f2531580b069745
-ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
+ms.openlocfilehash: b6fc6c662630af5658e5f186c958f4ddaffccc42
+ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81650077"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866026"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>使用 WID 数据库升级到 Windows Server 2016 中的 AD FS
 
@@ -122,7 +122,7 @@ Invoke-AdfsFarmBehaviorLevelRaise
 
 ![升级](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
 
-11. 同样，可以使用 PowerShell cmdlet： `Get-AdfsFarmInformation`显示当前的 FBL。
+11. 同样，可以使用 PowerShell cmdlet： `Get-AdfsFarmInformation` 显示当前的 FBL。
 
 ![升级](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
 
@@ -144,6 +144,9 @@ Set-WebApplicationProxyConfiguration -ConnectedServersName WAPServerName1, WAPSe
 ```PowerShell
 Get-WebApplicationProxyConfiguration
 ```
+> [!NOTE]
+> 如果 ConfigurationVersion 是 Windows Server 2016，请跳过下一步。 对于 Windows Server 2016/2019 上的 Web 应用程序代理，这是正确的值。
+
 若要升级 WAP 服务器的 ConfigurationVersion，请运行以下 Powershell 命令。
 
 ```PowerShell

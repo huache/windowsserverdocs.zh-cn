@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: d7dc3455c5d7c6b00940008ceea646436b40bed0
-ms.sourcegitcommit: e51dd9dabec82c59e805e7a04c27e56c83773857
+ms.openlocfilehash: f7e62f05a340a2186a012d7ed99e3ecc46654256
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82613729"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891394"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知问题
 
@@ -31,7 +31,7 @@ ms.locfileid: "82613729"
 
 - 在 Windows 管理中心的1910.2 版本中，你可能无法连接到特定硬件上的 Hyper-v 服务器。 如果已阻止此问题，[请下载以前的版本](https://aka.ms/wacprevious)。 
 
-- 如果你已在**Windows Server 2016**上将 windows 管理中心作为网关安装，则该服务可能会崩溃，并在包含```Faulting application name: sme.exe```和```Faulting module name: WsmSvc.dll```的事件日志中出现错误。 这是由 Windows Server 2019 中已修复的 bug 引起的。 Windows Server 2016 的修补程序包含在 2 2019 月的累积更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
+- 如果你已在**Windows Server 2016**上将 windows 管理中心作为网关安装，则该服务可能会崩溃，并在包含和的事件日志中出现错误 ```Faulting application name: sme.exe``` ```Faulting module name: WsmSvc.dll``` 。 这是由 Windows Server 2019 中已修复的 bug 引起的。 Windows Server 2016 的修补程序包含在 2 2019 月的累积更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
 - 如果已将 Windows 管理中心作为网关安装，且连接列表似乎已损坏，请执行以下步骤：
 
@@ -55,7 +55,7 @@ ms.locfileid: "82613729"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试解决此问题，方法是将https://login.microsoftonline.com、 https://login.live.com和网关的 URL 添加为客户端浏览器的 "受信任的站点" 和 "允许的站点" 弹出窗口阻止程序设置。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
+- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试解决此问题，方法是将 https://login.microsoftonline.com 、 https://login.live.com 和网关的 URL 添加为客户端浏览器的 "受信任的站点" 和 "允许的站点" 弹出窗口阻止程序设置。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -69,7 +69,7 @@ ms.locfileid: "82613729"
 
 未用 Mozilla Firefox 对 Windows Admin Center 进行测试，但大多数功能应该会正常工作。
 
-- Windows 10 安装： Mozilla Firefox 具有自己的证书存储区，因此必须将```Windows Admin Center Client```证书导入到 Firefox，才能在 windows 10 上使用 windows 管理中心。
+- Windows 10 安装： Mozilla Firefox 具有自己的证书存储区，因此必须将证书导入到 ```Windows Admin Center Client``` Firefox，才能在 windows 10 上使用 Windows 管理中心。
 
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>使用代理服务时的 WebSocket 兼容性
 
@@ -108,7 +108,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 ### <a name="files"></a>文件
 
-- 仍不支持上载或下载大文件。 （\~100mb 限制）[12524234]
+- 仍不支持上载或下载大文件。 （ \~ 100mb 限制） [12524234]
 
 ### <a name="powershell"></a>PowerShell
 
@@ -130,9 +130,9 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 - 在管理 Windows Server 2012 时，"远程桌面" 工具可能无法连接。 [20258278]
 
-- 使用远程桌面连接到未加入域的计算机时，你必须以格式输入你的```MACHINENAME\USERNAME```帐户。
+- 使用远程桌面连接到未加入域的计算机时，你必须以格式输入你的帐户 ```MACHINENAME\USERNAME``` 。
 
-- 某些配置可以通过组策略阻止 Windows 管理中心的远程桌面客户端。 如果遇到这种情况， ```Allow users to connect remotely by using Remote Desktop Services```请在```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- 某些配置可以通过组策略阻止 Windows 管理中心的远程桌面客户端。 如果遇到这种情况，请 ```Allow users to connect remotely by using Remote Desktop Services``` 在```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
 - 远程桌面受[websocket 兼容性影响。](#websocket-compatibility-when-using-a-proxy-service)
 
@@ -199,6 +199,82 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
   - 你可能还需要通过 ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` 来更新防火墙以允许从本地子网外部的连接。 有关限制性更强的网络方案，请参阅[本文档](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1)。
 
+## <a name="cluster-deployment"></a>群集部署
+
+### <a name="step-12"></a>步骤1。2
+添加服务器时，当前不支持混合工作组计算机。 用于群集的所有计算机都需要属于同一工作组。 否则，"下一步" 按钮将被禁用，并且将显示以下错误： "无法在不同 Active Directory 域中创建具有服务器的群集。 验证服务器名称是否正确。 将所有服务器移动到相同的域中，然后重试。 "
+
+### <a name="step-14"></a>步骤1。4
+Hyper-v 需要安装在运行 Azure Stack HCI OS 的虚拟机上。 尝试为这些虚拟机启用 Hyper-v 功能将失败，并出现以下错误： 
+
+![Hyper-v 启用错误的屏幕截图](../media/cluster-create-install-hyperv.png)
+
+若要在运行 Azure Stack HCI OS 的虚拟机上安装 Hyper-v，请运行以下命令： 
+
+```PowerShell
+Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v 
+```
+
+### <a name="step-17"></a>步骤1。7
+有时，在安装更新后，服务器的重启时间比预期要长。 Windows 管理中心群集部署向导将定期检查服务器重新启动状态，以了解是否已成功重新启动服务器。 但是，如果用户手动在向导外重新启动服务器，则向导无法以适当的方式捕获服务器状态。 
+
+如果要手动重新启动服务器，请退出当前向导会话。 重新启动服务器后，您可以重新启动该向导。 
+
+### <a name="stretch-cluster-creation"></a>Stretch 群集创建
+建议在创建 stretch 群集时使用已加入域的服务器。 由于 WinRM 限制，尝试将工作组计算机用于 stretch 群集部署时出现网络分段问题。
+
+### <a name="undo-and-start-over"></a>撤消并重新开始
+如果为群集部署重复使用相同的计算机，则在同一组计算机中进行成功的群集部署非常重要。 有关如何清理群集的说明，请参阅[部署超聚合基础结构](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over)页。 
+
+### <a name="credssp"></a>CredSSP
+Windows 管理中心群集部署向导在多个位置使用 CredSSP。 在向导过程中，你会遇到此错误消息（这在验证群集步骤中最常见）：
+
+![群集创建 CredSSP 错误的屏幕截图](../media/cluster-create-credssp-error.jpg)
+
+你可以使用以下步骤来解决问题： 
+
+1. 在所有节点和 Windows 管理中心网关计算机上禁用 CredSSP 设置。 在网关计算机上运行第一个命令，并在群集中的所有节点上运行第二个命令： 
+
+```PowerShell
+Disable-WsmanCredSSP -Role Client
+```
+```PowerShell
+Disable-WsmanCredSSP -Role Server
+```
+2. 在所有节点上修复信任。 在所有节点上运行以下命令： 
+```PowerShell
+Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
+```
+
+3. 使用命令重置组策略传播数据
+```Command Line
+gpupdate /force
+```
+
+4. 重新启动节点。 重新启动后，使用以下命令测试网关计算机和目标节点之间的连接以及节点之间的连接： 
+```PowerShell
+Enter-PSSession -computername <node fqdn>
+```
+
+### <a name="nested-virtualization"></a>嵌套虚拟化
+验证虚拟机上 Azure Stack HCI OS 群集部署时，需要在使用以下 powershell 命令启用角色/功能之前启用嵌套虚拟化：
+
+```PowerShell
+Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true 
+```
+
+  > [!Note]
+  > 要使虚拟交换机组合在虚拟机环境中取得成功，需要在创建虚拟机后不久在该主机上在 PowerShell 中运行以下命令： Get-vm |% {VMNetworkAdapter-VMName $ _。名称-MacAddressSpoofing On-AllowTeaming on} 
+
+如果是使用 Azure Stack HCI OS 部署群集，则还需要额外的要求。 必须为 VM 启动虚拟硬盘预安装 Hyper-v 功能。 为此，请在创建虚拟机之前运行以下命令： 
+
+```PowerShell
+Install-WindowsFeature –VHD <Path to the VHD> -Name Hyper-V, RSAT-Hyper-V-Tools, Hyper-V-PowerShell
+```
+
+### <a name="support-for-rdma"></a>支持 RDMA
+Windows 管理中心版本2007中的群集部署向导不为 RDMA 配置提供支持。   
+
 ## <a name="failover-cluster-manager-solution"></a>故障转移群集管理器解决方案
 
 - 管理群集（是超聚合还是传统？）时可能会遇到**找不到 Shell** 错误。 如果发生这种情况，请重新加载浏览器，或导航到其他工具并返回。 [13882442]
@@ -220,8 +296,8 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 Azure 文件同步需要 Azure 中的权限，但 Windows 管理中心未在版本1910之前提供。 如果使用早于 Windows 管理中心版本1910的版本向 Azure 注册了 Windows 管理中心网关，则需要更新 Azure Active Directory 应用程序，以获取最新版本的 Windows 管理中心中的 Azure 文件同步的正确权限。 其他权限允许 Azure 文件同步按本文中所述执行存储帐户访问的自动配置：[确保 Azure 文件同步有权访问存储帐户](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
 
 若要更新 Azure Active Directory 应用，可以执行以下两项操作之一
-1. 请参阅 "**azure** > **注销**"**设置** > ，然后再次向 azure 注册 Windows 管理中心，确保你选择创建新的 Azure Active Directory 应用程序。 
-2. 中转到 Azure Active Directory 应用程序，并手动添加向 Windows 管理中心注册的现有 Azure Active Directory 应用所需的权限。 为此，请**在 azure 中**中转到 "**设置** > " "**azure** > 视图"。 从 Azure 中的 "**应用注册**" 边栏选项卡中转到 " **API 权限**"，选择 "**添加权限**"。 向下滚动以选择**Azure Active Directory 关系图**，选择 "**委托的权限**"，展开 "**目录**"，然后选择 " **AccessAsUser**"。 单击 "**添加权限**"，将更新保存到应用中。
+1. 请参阅**Settings**  >  "**azure**  >  **注销**" 设置，然后再次向 azure 注册 Windows 管理中心，确保你选择创建新的 Azure Active Directory 应用程序。 
+2. 中转到 Azure Active Directory 应用程序，并手动添加向 Windows 管理中心注册的现有 Azure Active Directory 应用所需的权限。 为此，请**Settings**  >  **Azure**  >  **在 azure 中**中转到 "设置" "azure 视图"。 从 Azure 中的 "**应用注册**" 边栏选项卡中转到 " **API 权限**"，选择 "**添加权限**"。 向下滚动以选择**Azure Active Directory 关系图**，选择 "**委托的权限**"，展开 "**目录**"，然后选择 " **AccessAsUser**"。 单击 "**添加权限**"，将更新保存到应用中。
 
 ### <a name="options-for-setting-up-azure-management-services"></a>用于设置 Azure 管理服务的选项
 
