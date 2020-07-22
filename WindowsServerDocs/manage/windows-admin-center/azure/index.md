@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 05/31/2019
-ms.openlocfilehash: ec01431b320c710eddedc2f9c5e174bea1355b1c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 49b07845003208dc9c0bd3aaab4082a3e7d6a83a
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475694"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891352"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>将 Windows Server 连接到 Azure 混合服务
 
@@ -33,11 +33,11 @@ ms.locfileid: "85475694"
 
 [Windows Admin Center](../overview.md) 中的 Azure 混合服务工具将所有集成的 Azure 服务整合到一个集中式中心，你在其中可以轻松地发现可为本地或混合环境带来价值的所有可用 Azure 服务。
 
-![显示 Azure 混合服务工具的 Windows Admin Center 屏幕截图](../media/azure-services/ahs-discover.png)
+![显示 Azure 混合服务工具的 Windows Admin Center 屏幕截图](../media/azure-services/Azure-Hybrid-Services-Discover.png)
 
 如果在已启用 Azure 服务的情况下连接到服务器，Azure 混合服务工具可充当一片玻璃，供你查看该服务器上的所有已启用服务。 可以在 Windows Admin Center 中轻松访问相关工具，导航到 Azure 门户以便更深入地管理这些 Azure 服务，或者通过手头的文档了解详情。
 
-![显示服务器上已安装的 Azure 服务的 Windows Admin Center 屏幕截图](../media/azure-services/ahs-dayN.png)
+![显示服务器上已安装的 Azure 服务的 Windows Admin Center 屏幕截图](../media/azure-services/Azure-Hybrid-Services-DayN.png)
 
 从 Azure 混合服务工具中可以：
 
