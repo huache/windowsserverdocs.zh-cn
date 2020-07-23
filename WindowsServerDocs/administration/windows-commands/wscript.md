@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: bfa92f7e80bbf89fac615a3cd6ddf7057c0d6a4c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a07ad9b33000b17f5c6f41835a1a36531b3945af
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936070"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958879"
 ---
 # <a name="wscript"></a>wscript
 
@@ -56,7 +56,7 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 -   **/T**参数通过设置计时器防止脚本运行过多。 当时间超过指定值时， **wscript.echo**将中断脚本引擎并结束进程。
 -   Windows 脚本文件通常具有以下文件扩展名之一： **. .wsf**、 **.vbs**、 **.js**。
 -   如果双击扩展名没有关联的脚本文件，将显示 "**打开方式**" 对话框。 选择 " **wscript.echo** " 或 " **cscript**"，然后选择 "**始终使用此程序打开此文件类型**"。 这会将**wscript.exe**或**cscript.exe**作为此文件类型的文件的默认脚本宿主来注册。
--   您可以为各个脚本设置属性。 有关详细信息，请参阅[Windows 脚本主机概述](https://technet.microsoft.com/library/cc738350(v=ws.10).aspx)。
+-   您可以为各个脚本设置属性。 有关详细信息，请参阅[Windows 脚本主机概述](/previous-versions/windows/it-pro/windows-server-2003/cc738350(v=ws.10))。
 -   Windows 脚本宿主可以使用 **.wsf**脚本文件。 每个 **.wsf**文件都可以使用多个脚本引擎，并执行多个作业。
 
 ## <a name="additional-references"></a>其他参考

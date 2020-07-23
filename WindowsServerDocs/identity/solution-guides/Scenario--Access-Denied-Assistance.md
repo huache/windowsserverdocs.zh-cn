@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a6418f7ac317f060adb72f32e231e1577a5f8b92
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2d3f0f7f0fa611ab34145aa35291ff9d07b0b205
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861140"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955949"
 ---
 # <a name="scenario-access-denied-assistance"></a>方案：拒绝访问协助
 
@@ -32,7 +32,7 @@ ms.locfileid: "80861140"
   
 Windows Server 2012 中的 "拒绝访问" 协助为文件服务器管理员提供了相关访问详细信息，以便他们可以确定问题和相应的工具，以便他们能够进行配置更改以满足访问请求。 例如，用户可以按照以下步骤访问一个他们当前没有访问权限的文件：  
   
--   用户尝试读取 \\\financeshares 共享文件夹中的文件，但服务器显示拒绝访问的消息。  
+-   用户试图读取 \financeshares 共享文件夹中的文件 \\ ，但服务器显示拒绝访问的消息。  
   
 -    Windows Server 2012 向用户显示 "拒绝访问" 协助信息，其中包含请求协助的选项。  
   
@@ -40,23 +40,21 @@ Windows Server 2012 中的 "拒绝访问" 协助为文件服务器管理员提�
   
 可以在[“拒绝访问”协助规划](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)中找到关于配置“拒绝访问”协助的规划信息。  
   
-可以在[部署拒绝访问&#40;协助演示步骤&#41;](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md)中找到有关配置 "拒绝访问" 协助的步骤。  
+你可以在[&#41;&#40;演示步骤](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md)中找到有关配置 "拒绝访问" 协助的步骤。  
   
 ## <a name="in-this-scenario"></a>本方案内容  
 本方案是动态访问控制方案的一部分。 有关动态访问控制的其他信息，请参阅：  
   
 -   [动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="practical-applications"></a>实际应用  
+## <a name="practical-applications"></a>实际的应用程序  
 Windows Server 2012 中的 "拒绝访问" 协助使用户能够直接从拒绝访问消息请求对共享文件和文件夹的访问权限，从而有助于实现动态访问控制。  
   
-## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的功能  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>本方案中所含的功能  
 下表列出了本方案的部分功能并说明了支持该方案的工作原理。  
   
 |功能|如何支持本方案|  
 |-----------|---------------------------------|  
-|[文件服务器资源管理器概述](https://technet.microsoft.com/library/hh831701.aspx)|通过使用文件服务器上的文件服务器资源管理器控制台，可以配置“拒绝访问”协助。|  
-|[文件和存储服务概述](https://technet.microsoft.com/library/hh831487.aspx)|文件服务器资源管理器是文件和存储服务的角色服务，并且它包含一组可用于管理你网络上的文件服务器的功能。|  
+|[File Server Resource Manager Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))|通过使用文件服务器上的文件服务器资源管理器控制台，可以配置“拒绝访问”协助。|  
+|[文件和存储服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))|文件服务器资源管理器是文件和存储服务的角色服务，并且它包含一组可用于管理你网络上的文件服务器的功能。|  
   
-
-

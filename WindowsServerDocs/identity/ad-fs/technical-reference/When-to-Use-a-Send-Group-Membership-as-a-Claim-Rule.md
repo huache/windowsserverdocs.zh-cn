@@ -8,15 +8,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 266f46ef30082541d49bf62d933c551f00fa08da
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 43d9e8767c0a179a23d015484b09a0228829870b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853790"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966479"
 ---
 # <a name="when-to-use-a-send-group-membership-as-a-claim-rule"></a>何时使用发送组成员身份作为声明规则
-如果只想为指定 Active Directory 安全组成员的用户发出新的传出声明值，则可以在 Active Directory 联合身份验证服务 \(AD FS\) 中使用此规则。 使用此规则时，你只会为与规则逻辑匹配的指定组发出单个声明，如下表中所述。  
+\( \) 如果希望为仅属于指定 Active Directory 安全组成员的用户发出新的传出声明值，则可以在 Active Directory 联合身份验证服务 AD FS 中使用此规则。 使用此规则时，你只会为与规则逻辑匹配的指定组发出单个声明，如下表中所述。  
   
 |规则选项|规则逻辑|  
 |---------------|--------------|  
@@ -25,11 +25,11 @@ ms.locfileid: "80853790"
 以下部分提供声明规则的基本简介。 它们还提供有关何时使用发送组成员身份作为声明规则的详细信息。  
   
 ## <a name="about-claim-rules"></a>关于声明规则  
-声明规则表示一个业务逻辑实例，该实例将接受传入声明、向其应用条件 \(如果 x then y\) 并基于条件参数生成传出声明。 下面的列表概述了在进一步阅读本主题中的内容之前应了解的有关声明规则的重要提示：  
+声明规则表示将接受传入声明的业务逻辑实例，如果 x 之后为 y，则对其应用条件， \( \) 并基于条件参数生成传出声明。 下面的列表概述了在进一步阅读本主题中的内容之前应了解的有关声明规则的重要提示：  
   
--   在的 AD FS 管理 "管理单元\-中，只能使用声明规则模板创建声明规则  
+-   在 AD FS 管理 "管理单元 \- 中，只能使用声明规则模板创建声明规则  
   
--   声明规则处理来自声明提供程序的传入声明 \(例如 Active Directory 或另一个联合身份验证服务\) 或来自声明提供程序信任上的接受转换规则的输出。  
+-   声明规则直接从声明提供程序 \( （例如 Active Directory 或另一个联合身份验证服务）或在 \) 声明提供方信任的接受转换规则的输出中处理传入声明。  
   
 -   声明规则由声明颁发引擎按给定规则集内的时间顺序处理。 通过为规则设置优先级，可以进一步优化或筛选由给定规则集内以前的规则生成的声明。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "80853790"
 ## <a name="outgoing-claim-value"></a>传出声明值  
 通过使用发送组成员身份作为声明规则模板，你可以发出取决于用户是否为指定组的成员的声明。  
   
-换句话说，此规则模板仅当用户的组安全 ID \(SID\) 与管理员指定的 Active Directory 组相匹配时，才会发出声明。 对 Active Directory 域服务 \(AD DS\) 进行身份验证的所有用户都将具有其所属的每个组的传入组 SID 声明。 默认情况下，Active Directory 声明提供方信任中的接受转换规则通过这些组 SID 声明进行传递。 使用这些组 Sid 作为发出声明的基础比在 AD DS 中查找用户组要快得多。  
+换句话说，此规则模板仅当用户的组安全 ID \( SID \) 与管理员指定的 Active Directory 组匹配时才会发出声明。 对 Active Directory 域服务 AD DS 进行身份验证的所有用户 \( \) 都将具有其所属的每个组的传入组 SID 声明。 默认情况下，Active Directory 声明提供方信任中的接受转换规则通过这些组 SID 声明进行传递。 使用这些组 Sid 作为发出声明的基础比在 AD DS 中查找用户组要快得多。  
   
 使用此规则时，仅根据选择的 Active Directory 组发送单个声明。 例如，可以使用此规则模板创建一个规则，该规则在用户是 Domain Admins 安全组的成员时会发送值为“Admin”的组声明。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "80853790"
 仅当是从声明提供方接收组 SID（这对于除 Active Directory 或 AD DS 之外的任何声明提供方而言都是非常少见的），管理员才应在声明提供方信任的接受转换规则中使用此规则类型。  
   
 ## <a name="how-to-create-this-rule"></a>如何创建此规则  
-你可以使用声明规则语言或使用 "将 LDAP 组成员身份作为声明规则" 模板来创建此规则，AD FS 管理 "管理单元\-中。 此规则模板提供以下配置选项：  
+你可以使用声明规则语言或使用 "AD FS 管理" 管理单元中的 "将 LDAP 组成员身份作为声明规则" 模板来创建此规则 \- 。 此规则模板提供以下配置选项：  
   
 -   指定声明规则名称  
   
@@ -56,11 +56,11 @@ ms.locfileid: "80853790"
   
 -   选择传出声明类型  
   
--   选择传出名称 ID 格式 \(仅当从 "传出声明类型" 字段中选择名称 ID 时才可用\)  
+-   选择 \( 仅当从 "传出声明类型" 字段中选择名称 id 时才可用的传出名称 id 格式\)  
   
 -   指定传出声明值  
   
-有关如何创建此规则的详细信息，请参阅[创建规则以将组成员身份作为声明发送](https://technet.microsoft.com/library/ee913569.aspx)。  
+有关如何创建此规则的详细信息，请参阅[创建规则以将组成员身份作为声明发送](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913569(v=ws.11))。  
   
 ## <a name="using-the-claim-rule-language"></a>使用声明规则语言  
 如果要基于组 SID 之外的传入 SID 发出声明，请使用“转换传入声明”规则模板。 如果管理员要检索用户所属的所有组的名称，请使用“以声明方式发送 LDAP 属性”规则模板，而不是使用 **tokenGroups** 属性。  
@@ -74,6 +74,5 @@ c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", 
 ```  
   
 ## <a name="additional-references"></a>其他参考  
-[创建规则以将 LDAP 属性作为声明发送](https://technet.microsoft.com/library/dd807115.aspx)  
+[创建规则以将 LDAP 属性作为声明发送](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807115(v=ws.11))  
   
-

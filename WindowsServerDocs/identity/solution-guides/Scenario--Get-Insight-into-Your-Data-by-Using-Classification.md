@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a92f8791d5ceef3a8dbba4541588da1d48c4fbff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8438a1581bbd774f9368f89ee37306e0474a528a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861110"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959639"
 ---
-# <a name="scenario-get-insight-into-your-data-by-using-classification"></a>Scenario: Get Insight into Your Data by Using Classification
+# <a name="scenario-get-insight-into-your-data-by-using-classification"></a>方案：使用分类深入了解你的数据
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -32,23 +32,21 @@ ms.locfileid: "80861110"
   
 可以在[自动文件分类规划](assetId:///e3c3bb4b-3034-42b7-b391-8ef5f5851955)中找到关于配置自动文件分类的规划信息。  
   
-可以在[部署自动文件分类&#40;演示步骤&#41;](Deploy-Automatic-File-Classification--Demonstration-Steps-.md)中找到有关如何自动分类文件的步骤。  
+可以在[部署自动文件分类 &#40;演示步骤&#41;](Deploy-Automatic-File-Classification--Demonstration-Steps-.md)中找到有关如何自动分类文件的步骤。  
   
 ## <a name="in-this-scenario"></a>本方案内容  
 本方案是动态访问控制方案的一部分。 有关动态访问控制的其他信息，请参阅：  
   
 -   [动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实际的应用程序  
 Windows Server 2012 中的文件分类基础结构通过使业务数据所有者能够轻松地对数据进行分类和标记，有助于实现动态访问控制。 通过存储在中心访问策略中的分类信息，你可以为企业至关重要的数据类定义访问策略。  
   
-## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的功能  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>本方案中所含的功能  
 下表列出了本方案的部分功能并说明了支持该方案的工作原理。  
   
 |功能|如何支持本方案|  
 |-----------|---------------------------------|  
-|[文件服务器资源管理器概述](https://technet.microsoft.com/library/hh831701.aspx)|文件分类基础结构是包含在文件服务器资源管理器中的功能。|  
-|[文件和存储服务概述](https://technet.microsoft.com/library/hh831487.aspx)|文件服务器资源管理器是包含在文件服务服务器角色中的功能。|  
+|[File Server Resource Manager Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))|文件分类基础结构是包含在文件服务器资源管理器中的功能。|  
+|[文件和存储服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))|文件服务器资源管理器是包含在文件服务服务器角色中的功能。|  
   
-
-

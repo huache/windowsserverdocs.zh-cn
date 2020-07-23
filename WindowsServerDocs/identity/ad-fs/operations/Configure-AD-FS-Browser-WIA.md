@@ -8,12 +8,12 @@ ms.date: 03/20/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0c64d90fcbeaf2aa03312b9707bcfa43379271f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1bcd4268444f49489d3e7a04c55d10cddaf92e00
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859930"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966529"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>通过 AD FS 将浏览器配置为使用 Windows 集成身份验证（WIA）
 
@@ -75,6 +75,6 @@ AD FS 2016 现在提供了一个改进的默认设置，使边缘浏览器可以
 |Windows Rights Management 客户端|Windows Rights Management 客户端|
 
 
-### <a name="additional-links"></a>更多链接
+### <a name="additional-links"></a>其他链接
 
-[Microsoft Edge 文档](https://docs.microsoft.com/microsoft-edge/web-platform/user-agent-string)
+[Microsoft Edge 文档](/microsoft-edge/web-platform/user-agent-string)

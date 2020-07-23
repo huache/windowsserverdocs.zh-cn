@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 37c5688980da50abc4da61dddf77b3dfd83210bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 332795128b992dd1026172efbc65c49c44e7f81f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816970"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959689"
 ---
 # <a name="configure-claim-rules"></a>配置声明规则
 
-在基于声明\-的标识模型中，作为联合身份验证服务 Active Directory 联合身份验证服务（AD FS）的功能是颁发包含一组声明的令牌。 声明规则管理有关 AD FS 问题的声明的决策。 声明规则和所有服务器配置数据均存储在 AD FS 配置数据库中。  
+在基于声明的 \- 标识模型中，Active Directory 联合身份验证服务（AD FS）作为联合身份验证服务的功能是颁发包含一组声明的令牌。 声明规则管理有关 AD FS 问题的声明的决策。 声明规则和所有服务器配置数据均存储在 AD FS 配置数据库中。  
   
 AD FS 根据声明和其他上下文信息的形式向其提供的标识信息进行颁发决策。 从较高层次来看，AD FS 将一组声明作为输入，执行多个转换，然后返回一组不同的声明作为一个规则处理器。 
 
@@ -40,4 +40,4 @@ AD FS 根据声明和其他上下文信息的形式向其提供的标识信息�
 -   [创建规则以使用自定义规则发送声明](../../ad-fs/operations/Create-a-Rule-to-Send-Claims-Using-a-Custom-rule.md)  
 
 ## <a name="see-also"></a>另请参阅  
-[AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 
+[AD FS 操作](../ad-fs-operations.md) 

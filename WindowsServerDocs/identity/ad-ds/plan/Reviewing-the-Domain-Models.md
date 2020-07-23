@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e86fac2a7d8251d6baf4f676d41ee7e9798005ab
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: db49a7e3c99e468e27c390acd58002eb09e72b3e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623916"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959359"
 ---
 # <a name="reviewing-the-domain-models"></a>查看域模型
 
@@ -37,7 +37,7 @@ ms.locfileid: "81623916"
 | 增加了在域之间移动对象的可能性 | 域数越大，用户需要从一个域移到另一个域的可能性就越大。 这种迁移可能会影响最终用户。 |
 
 > [!NOTE]
-> Windows Server 细化密码和帐户锁定策略还会影响所选的域设计模型。 在此版本的 Windows Server 2008 之前，你只能将域默认域策略中指定的一个密码和帐户锁定策略应用到域中的所有用户。 因此，如果您希望不同的用户集使用不同的密码和帐户锁定设置，则必须创建密码筛选器或者部署多个域。 你现在可以使用细化密码策略来指定多个密码策略，并将不同的密码限制和帐户锁定策略应用到单个域中的不同用户组。 有关细化密码和帐户锁定策略的详细信息，请参阅文章[AD DS 细化密码和帐户锁定策略循序渐进指南](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770842(v=ws.10))。
+> Windows Server 细化密码和帐户锁定策略还会影响所选的域设计模型。 在此版本的 Windows Server 2008 之前，你只能将域默认域策略中指定的一个密码和帐户锁定策略应用到域中的所有用户。 因此，如果您希望不同的用户集使用不同的密码和帐户锁定设置，则必须创建密码筛选器或者部署多个域。 你现在可以使用细化密码策略来指定多个密码策略，并将不同的密码限制和帐户锁定策略应用到单个域中的不同用户组。 有关细化密码和帐户锁定策略的详细信息，请参阅文章[AD DS 细化密码和帐户锁定策略循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770842(v=ws.10))。
 
 ## <a name="single-domain-model"></a>单域模型
 

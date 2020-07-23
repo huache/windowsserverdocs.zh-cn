@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 2aefbc144820d0132bd4993d150dec955e22e01d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5769e568d6cee062b354b4d8c7284808968a2b02
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931975"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956309"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -23,7 +23,7 @@ ms.locfileid: "85931975"
 使您能够对远程桌面协议（.rdp）文件进行数字签名。
 
 > [!NOTE]
-> 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 

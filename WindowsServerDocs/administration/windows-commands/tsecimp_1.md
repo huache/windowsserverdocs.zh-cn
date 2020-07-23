@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d221479e23c737529305a2354e6a5a52b957bd8e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c5c3362571df5a3b22dda1b663fcbba749ee6df6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931482"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954889"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -156,4 +156,4 @@ tsecimp /d
 
 - [命令行语法项](command-line-syntax-key.md)
 
-[命令外壳概述](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)
+[命令外壳概述](/previous-versions/windows/it-pro/windows-server-2003/cc737438(v=ws.10))

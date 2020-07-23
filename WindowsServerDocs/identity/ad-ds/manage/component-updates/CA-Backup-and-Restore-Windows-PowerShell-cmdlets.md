@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d1dd406780dc61e1ce52d423ca6148d2a9dd2c3d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 02393a7f34e20b50b60a738ceb0f5f3a2ac17990
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823080"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958639"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>CA 备份和还原 Windows PowerShell cmdlet
 
@@ -32,7 +32,7 @@ Windows Server 2012 中引入了 ADCSAdministration Windows PowerShell 模块。
 -   Restore-CARoleService  
   
 ## <a name="backup-caroleservice"></a>Backup-CARoleService  
-**表 SEQ 表 \\\* 阿拉伯17：备份和还原 Windows PowerShell Cmdlet**  
+**表 SEQ 表 \\ \* 阿拉伯语17：备份和还原 Windows PowerShell cmdlet**  
   
 **ADCSAdministration Cmdlet：备份-Backup-caroleservice**  
   
@@ -79,22 +79,22 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
   
 ![CA 备份和还原](media/CA-Backup-and-Restore-Windows-PowerShell-cmdlets/GTR_ADDS_BackupCARole.gif)  
   
-**表 SEQ 表 \\\* 阿拉伯语18：常见错误**  
+**表 SEQ 表 \\ \* 阿拉伯语18：常见错误**  
   
-|操作|错误|备注|  
+|操作|错误|注释|  
 |----------|---------|-----------|  
-|**Backup-caroleservice C:\ADCSBackup**|Backup-caroleservice：该进程无法访问文件，因为另一个进程正在使用该文件。 （HRESULT 异常：<p>0x80070020|在运行 Backup-caroleservice cmdlet 之前停止 Active Directory 证书服务服务|  
+|**Backup-caroleservice C:\ADCSBackup**|Backup-caroleservice：该进程无法访问文件，因为另一个进程正在使用该文件。 （异常来自 HRESULT：<p>0x80070020|在运行 Backup-caroleservice cmdlet 之前停止 Active Directory 证书服务服务|  
 |**Backup-caroleservice C:\ADCSBackup**|Backup-caroleservice：目录不为空。 （异常来自 HRESULT：0x80070091）|使用-Force 参数覆盖预先存在的密钥|  
 |**Backup-caroleservice C:\ADCSBackup-Password （Read-Host-Prompt "Password："-AsSecureString）-DatabaseOnly**|Backup-caroleservice：无法使用指定的命名参数解析参数集。|-Password 参数仅用于对私钥进行密码保护，因此在不进行备份时无效。|  
 |**Backup-caroleservice C:\ADCSBack15-Password （Read-Host-Prompt "Password："-AsSecureString）-DatabaseOnly**|Backup-caroleservice：无法使用指定的命名参数解析参数集。|-Password 参数仅用于对私钥进行密码保护，因此在不还原私钥时无效|  
 |**Backup-caroleservice C:\ADCSBack14-Password （Read-Host-Prompt "Password："-AsSecureString）**|Backup-caroleservice：系统找不到指定的文件。 （异常来自 HRESULT：0x80070002）|指定的路径不包含有效的数据库备份。  也许路径无效，或者备份是通过-KeysOnly 选项创建的吗？|  
   
 ## <a name="additional-resources"></a>其他资源  
-[Active Directory 证书服务迁移指南](https://technet.microsoft.com/library/ee126170(v=ws.10).aspx)  
+[Active Directory 证书服务迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126170(v=ws.10))  
   
-[备份 CA 数据库和私钥](https://technet.microsoft.com/library/ee126140(v=ws.10).aspx#BKMK_BackUpDB)  
+[备份 CA 数据库和私钥](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126140(v=ws.10)#BKMK_BackUpDB)  
   
-[在目标服务器上还原 CA 数据库和配置](https://technet.microsoft.com/library/ee126140(v=ws.10).aspx#BKMK_RestoreCA)  
+[在目标服务器上还原 CA 数据库和配置](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126140(v=ws.10)#BKMK_RestoreCA)  
   
 ## <a name="try-this-backup-the-ca-in-your-lab-using-windows-powershell"></a>请尝试以下操作：使用 Windows PowerShell 在实验室中备份 CA  
   
@@ -102,5 +102,3 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
   
 2.  暂时保留 CA 的还原。  
   
-
-

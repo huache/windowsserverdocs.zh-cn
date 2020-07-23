@@ -8,16 +8,16 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ddba9668b54e325dae6dfc0cf67d50d3ae5d90be
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3c18e0a6a2e633c0fad0ce8585296afba8ce444c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408195"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966929"
 ---
 # <a name="migrate-the-ad-fs-web-agent"></a>迁移 AD FS web 代理
 
-若要将随 Windows Server 2008 R2 或 Windows Server 2008 一起安装的 AD FS 1.1 基于 Windows 令牌的代理或 AD FS 1.1 声明感知代理迁移到 Windows Server 2012，请对托管任一代理的计算机的操作系统执行就地升级到 Windows Server 2012。 有关详细信息，请参阅[安装 Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx)。 无需进行任何进一步的配置。  
+若要将随 Windows Server 2008 R2 或 Windows Server 2008 一起安装的 AD FS 1.1 基于 Windows 令牌的代理或 AD FS 1.1 声明感知代理迁移到 Windows server 2012，请对承载任一代理的计算机的操作系统进行就地升级。 有关详细信息，请参阅[安装 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))。 无需进一步配置。  
   
 > [!IMPORTANT]
 >  迁移的 AD FS 1.1 基于 Windows 令牌的代理只能与随 Windows Server 2008 R2 或 Windows Server 2008 一起安装的 AD FS 1.1 联合身份验证服务一起使用。 有关详细信息，请参阅 [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md)。  

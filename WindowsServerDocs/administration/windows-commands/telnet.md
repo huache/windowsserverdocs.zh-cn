@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5f588328deb51109ee9139b6e7dfaad8f0166dc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 70c4eb44a654094410432dd9d37d0ad0082f5874
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934225"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958809"
 ---
 # <a name="telnet"></a>telnet
 
@@ -38,7 +38,7 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |/?|在命令提示符下显示帮助。 或者，可以键入/h。|
 
 ## <a name="remarks"></a>备注
--   必须先安装 telnet 客户端软件，然后才能运行此命令。 有关详细信息，请参阅[安装 telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)。
+-   必须先安装 telnet 客户端软件，然后才能运行此命令。 有关详细信息，请参阅[安装 telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))。
 -   你可以运行无参数的 telnet，以进入 telnet 上下文，如 telnet 提示符（**Microsoft telnet>**）所示。 在 telnet 提示符下，可以使用 telnet 命令来管理运行 telnet 客户端的计算机。
 
 ## <a name="examples"></a>示例
@@ -52,6 +52,6 @@ telnet /f telnetlog.txt telnet.microsoft.com 44
 ```
 
 ## <a name="additional-references"></a>其他参考
--   [安装 telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)
--   [telnet 技术参考](https://technet.microsoft.com/library/cc754987(v=ws.10).aspx)
+-   [安装 telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))
+-   [telnet 技术参考](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754987(v=ws.10))
 - [命令行语法项](command-line-syntax-key.md)

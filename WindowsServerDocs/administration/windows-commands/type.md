@@ -1,5 +1,5 @@
 ---
-title: type
+title: 类型
 description: 用于显示文本文件内容的类型的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -8,18 +8,18 @@ ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: f3cf9c784c35f04f9232bb05e79acdbd8ed7a09a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4b79cf89c1363ba35ba6567139e119e0afeec905
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937326"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954854"
 ---
-# <a name="type"></a>type
+# <a name="type"></a>类型
 
 在 Windows 命令行界面中，**键入**"内置命令"，其中显示文本文件的内容。 使用**type**命令查看文本文件，而不进行修改。
 
-在 PowerShell 中，**键入**是**[获取内容](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content)** cmdlet 的内置别名，它还显示文件的内容，但使用不同的语法。
+在 PowerShell 中，**键入**是**[获取内容](/powershell/module/microsoft.powershell.management/get-content)** cmdlet 的内置别名，它还显示文件的内容，但使用不同的语法。
 
 ## <a name="syntax"></a>语法
 

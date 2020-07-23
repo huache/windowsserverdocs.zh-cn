@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1abf845ce69b395bf46a0f155db2c683c359207c
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 451a0b46cd45d0dd28ceb3634da9d847864bd519
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623875"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953769"
 ---
 # <a name="selecting-the-forest-root-domain"></a>选择林根域
 
@@ -25,7 +25,7 @@ ms.locfileid: "81623875"
 
 选择目录林根级域涉及确定域设计中 Active Directory 域之一是否可以充当目录林根级域，或者是否需要部署专用林根域。
 
-有关部署目录林根级域的信息，请参阅[部署 Windows Server 2008 林根域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。
+有关部署目录林根级域的信息，请参阅[部署 Windows Server 2008 林根域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。
 
 ## <a name="choosing-a-regional-or-dedicated-forest-root-domain"></a>选择区域或专用林根域
 
@@ -88,4 +88,4 @@ Active Directory DNS 所有者与组织的 DNS 所有者合作，以获取将用
 
 ## <a name="documenting-the-forest-root-domain-name"></a>记录目录林根域名
 
-记录为林根域选择的 DNS 前缀和后缀。 此时，确定哪个域将成为林根。 您可以将目录林根域名信息添加到您创建的 "域计划" 工作表中，以便记录新域和升级域的计划以及域名。 若要打开它，请从[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "域计划" （DSSLOGI_5 .doc）。
+记录为林根域选择的 DNS 前缀和后缀。 此时，确定哪个域将成为林根。 您可以将目录林根域名信息添加到您创建的 "域计划" 工作表中，以便记录新域和升级域的计划以及域名。 若要打开它，请从[Windows Server 2003 部署工具包的作业助手](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "域计划" （DSSLOGI_5.doc）。

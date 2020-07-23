@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 149e3d3fc4d4eee22fa9330475f0eed9d945f8b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 785a2a7c425e80b8f41e2c567826c34471cce9e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359306"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959809"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>准备将 AD FS 2.0 联合服务器迁移到 Windows Server 2012 R2 上的 AD FS
 
@@ -21,7 +21,7 @@ ms.locfileid: "71359306"
   
 -   [迁移过程概述](prepare-migrate-ad-fs-server-r2.md#migration-process-outline)  
   
--   [Windows Server 2012 R2 中的新 AD FS 功能](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
+-   [Windows Server 2012 R2 中新增的 AD FS 功能](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
   
 -   [Windows Server 2012 R2 中的 AD FS 要求](prepare-migrate-ad-fs-server-r2.md#ad-fs-requirements-in-windows-server-2012-r2)  
   
@@ -86,7 +86,7 @@ ms.locfileid: "71359306"
         -   对于 Intranet 绕过主领域发现。  
         -   创建自定义 Web 主题。  
   
-有关配置 AD FS 登录页外观的详细说明，请参阅 [Customizing the AD FS Sign-in Pages](../operations/AD-FS-Customization-in-Windows-Server-2016.md)。  
+有关配置 AD FS 登录页外观的详细说明，请参阅 [Customizing the AD FS Sign-in Pages](../operations/ad-fs-customization-in-windows-server.md)。  
   
 如果你想要迁移到 Windows Server 2012 R2 的现有 AD FS 场中的网页自定义项，则可使用 Windows Server 2012 R2 中的新自定义功能，将其作为迁移过程的一部分重新创建。  
   
@@ -115,7 +115,7 @@ ms.locfileid: "71359306"
   
 - Windows Server 2008 R2  
   
-- Windows Server 2008  
+- Windows 2008 Server  
   
   如果你计划使用组托管服务帐户（gMSA）作为 AD FS 的服务帐户，则你的环境中必须至少有一个域控制器在 Windows Server 2012 或 Windows Server 2012 R2 操作系统上运行。  
   
@@ -141,12 +141,12 @@ ms.locfileid: "71359306"
 'Exception of type 'System.OutOfMemoryException' was thrown. At E:\dev\ds\security\ADFSv2\Product\Migration\Export-FederationConfiguration.ps1:176 char:21 + $configData = Invoke-Command -ScriptBlock $GetConfig -Argume ...  
 ```  
   
- 之所以引发此错误，是因为 Windows PowerShell 会话默认内存限制太低。 在 Windows PowerShell 2.0 中，会话默认内存为 150MB。 在 Windows PowerShell 3.0 中，会话默认内存为 1024MB。 可以使用以下命令来验证 Windows PowerShell 远程会话内存限制： `Get-Item wsman:localhost\Shell\MaxMemoryPerShellMB`。 可以通过运行以下命令来提高限制：`Set-Item wsman:localhost\Shell\MaxMemoryPerShellMB 512`。  
+ 之所以引发此错误，是因为 Windows PowerShell 会话默认内存限制太低。 在 Windows PowerShell 2.0 中，会话默认内存为 150MB。 在 Windows PowerShell 3.0 中，会话默认内存为 1024MB。 可以使用以下命令来验证 Windows PowerShell 远程会话内存限制： `Get-Item wsman:localhost\Shell\MaxMemoryPerShellMB`。 可以通过运行以下命令来提高限制： `Set-Item wsman:localhost\Shell\MaxMemoryPerShellMB 512`。  
   
 ## <a name="other-migration-tasks-and-considerations"></a>其他迁移任务和注意事项  
  若要成功地将 AD FS 场迁移到 Windows Server 2012 R2，请确保了解以下要点：  
   
--   位于 Windows Server 2012 R2 安装 CD 上的 \support\adfs 文件夹中的迁移脚本要求保留在将旧 AD FS 场迁移到 Windows 时使用的相同联合服务器场名称和服务帐户标识名称Server 2012 R2。  
+-   位于 Windows Server 2012 R2 安装 CD 上的 \support\adfs 文件夹中的迁移脚本要求你保留在将旧 AD FS 场中迁移到 Windows Server 2012 R2 时使用的相同联合服务器场名称和服务帐户标识名称。  
   
 -   如果需要迁移 SQL Server AD FS 场，请注意，迁移过程包括创建一个新的 SQL 数据库实例，到时必须将原始配置数据导入到该实例。  
   
@@ -154,4 +154,4 @@ ms.locfileid: "71359306"
  [将 Active Directory 联合身份验证服务角色服务迁移到 Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
  [迁移 AD FS 联合服务器](migrate-ad-fs-fed-server-r2.md)   
  [迁移 AD FS 联合服务器代理](migrate-fed-server-proxy-r2.md)   
- [验证 AD FS 迁移到 Windows Server 2012 R2](verify-ad-fs-migration.md)
+ [验证到 Windows Server 2012 R2 的 AD FS 迁移](verify-ad-fs-migration.md)

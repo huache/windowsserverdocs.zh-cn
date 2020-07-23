@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9c5293dc6070c9483054ce1dd827a20ec377573b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a022ec618c7255021cd424120330671e007a658a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859710"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962699"
 ---
 # <a name="add-a-claim-description"></a>添加声明说明
 
@@ -24,11 +24,11 @@ ms.locfileid: "80859710"
 
 你可以使用以下过程添加声明。
 
-若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  可在[本地默认组和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中查看有关使用适合的帐户和组成员身份的详细信息。
+若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。  查看有关使用适当帐户和[本地和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中组成员身份的详细信息。
 
 ## <a name="to-add-a-claim-description"></a>添加声明说明
 
-1. 在服务器管理器中，单击 "**工具**"，然后选择 " **AD FS 管理**"。 
+1. 在服务器管理器中，单击“工具”，选择“AD FS 管理”********。 
 
 2. 展开 "**服务**"，然后在右侧单击 "**添加声明说明**"。
    ![添加声明说明](media/Add-a-Claim-Description/claimdesc1.png)
@@ -49,10 +49,10 @@ ms.locfileid: "80859710"
 - To publish this claim to make partners aware that this server can issue this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can send**.
 ~~~
 
-8. 单击“确定”。
+8. 单击 **“确定”** 。
 
 ![添加声明说明](media/Add-a-Claim-Description/claimdesc2.png)
 
 
 ## <a name="see-also"></a>另请参阅  
-[AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md) 
+[AD FS 操作](../ad-fs-operations.md) 

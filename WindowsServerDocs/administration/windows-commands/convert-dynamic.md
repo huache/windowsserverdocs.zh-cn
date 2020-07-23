@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3474da8c1f4a3e58d9e77c36abe4390ec2f5b731
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8c57986bf46dc7d22eeecfb6d7ad085f5e3f7e8c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928970"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958539"
 ---
 # <a name="convert-dynamic"></a>convert dynamic
 
 将基本磁盘转换为动态磁盘。 若要成功执行此操作，必须选择基本磁盘。 使用 "[选择磁盘" 命令](select-disk.md)选择基本磁盘，并将焦点移动到该磁盘。
 
 > [!NOTE]
-> 有关如何使用此命令的说明，请参阅[将动态磁盘改回为基本磁盘](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755238(v=ws.11))。
+> 有关如何使用此命令的说明，请参阅[将动态磁盘改回为基本磁盘](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755238(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 

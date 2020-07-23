@@ -9,12 +9,12 @@ ms.assetid: e4331370-ba07-4529-92ab-db14a41bfc3b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: f8fe5ac8b57105d421af431b12c8dc17250b622d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7aa2c422151247d13dcb1dafd474fb70873f54e1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820330"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966909"
 ---
 # <a name="install-server-backup-on-your-multipoint-server"></a>在 MultiPoint 服务器上安装服务器备份
 建议你考虑 MultiPoint 服务器的备份和恢复计划。
@@ -37,7 +37,7 @@ Windows Server 备份的一项重要功能是能够计划自动运行备份。
   
 4.  选择要管理的本地计算机，然后单击 "**下一步**"。  
   
-    此时会打开“添加功能向导”。  
+    这将打开“添加功能向导”。  
   
 5.  在 "**选择功能**" 页上，展开 Windows Server 备份功能，选中**Windows Server 备份**和**命令行工具**的复选框，然后单击 "**下一步**"。  
   
@@ -56,4 +56,4 @@ Windows Server 备份的一项重要功能是能够计划自动运行备份。
   
 ## <a name="configure-backups-using-windows-server-backup"></a>使用 Windows Server 备份配置备份  
   
--   按照[备份服务器](https://technet.microsoft.com/library/cc753528.aspx)中的指南进行操作。 
+-   按照[备份服务器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753528(v=ws.11))中的指南进行操作。 

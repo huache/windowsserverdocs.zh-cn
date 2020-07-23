@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 95cd9a8f62aa9dd64d46a875a90847a65589b447
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 776903b820c7d7381aff61bb754446b5682f88db
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922331"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958169"
 ---
 # <a name="fsutil-transaction"></a>fsutil transaction
 
@@ -41,7 +41,7 @@ fsutil transaction [rollback] <GUID>
 | fileinfo  | 显示指定文件的事务信息。 |
 | `<filename>` | 指定完整路径和文件名。 |
 | list | 显示当前正在运行的事务的列表。 |
-| 查询 | 显示指定事务的信息。<ul><li>如果 `fsutil transaction query files` 指定了，则仅为指定的事务显示文件信息。</li><li>如果 `fsutil transaction query all` 指定了，则将显示该事务的所有信息。</li></ul> |
+| query | 显示指定事务的信息。<ul><li>如果 `fsutil transaction query files` 指定了，则仅为指定的事务显示文件信息。</li><li>如果 `fsutil transaction query all` 指定了，则将显示该事务的所有信息。</li></ul> |
 | 回滚 | 将指定的事务回滚到开始处。 |
 
 ### <a name="examples"></a>示例
@@ -58,4 +58,4 @@ fsutil transaction fileinfo c:\test.txt
 
 - [fsutil](fsutil.md)
 
-- [事务性 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730726(v=ws.10))
+- [事务性 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v=ws.10))

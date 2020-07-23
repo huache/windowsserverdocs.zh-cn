@@ -9,18 +9,18 @@ ms.technology: storage
 ms.assetid: 62d77150-1d9e-4069-ab4a-299f33024912
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 700e1f713d503565321ab29f5384d74382c64f21
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 664415f7952add6ae4a52f6550d78c11fa2a2978
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931206"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958189"
 ---
 # <a name="fsutil-repair"></a>fsutil repair
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
-管理和监视 NTFS 自修复修复操作。 自愈 NTFS 试图联机更正 NTFS 文件系统的损坏，而无需运行**Chkdsk.exe** 。 有关详细信息，请参阅[自愈 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))。
+管理和监视 NTFS 自修复修复操作。 自愈 NTFS 试图联机更正 NTFS 文件系统的损坏，而无需运行**Chkdsk.exe** 。 有关详细信息，请参阅[自愈 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10))。
 
 ## <a name="syntax"></a>语法
 
@@ -41,7 +41,7 @@ fsutil repair [wait][<waittype>] <volumepath>
 | `<logname>` | 可以是 `$corrupt` 卷中已确认的损坏的集合，或 `$verify` 卷中一组潜在的未验证损坏。 |
 | 造成 | 启动 NTFS 自修复。 |
 | `<filereference>` | 指定 NTFS 特定于卷的文件 ID （文件参考编号）。 文件引用包含文件的段号。 |
-| 查询 | 查询 NTFS 卷的自愈状态。 |
+| query | 查询 NTFS 卷的自愈状态。 |
 | set | 设置卷的自愈状态。 |
 | `<flags>` | 指定设置卷的自愈状态时要使用的修复方法。<p>此参数可设置为三个值：<ul><li>**0x01** -启用常规修复。</li><li>**0x09** -无需修复就可能丢失数据。</li><li>**0x00** -禁用 NTFS 自修复修复操作。</li></ul> |
 | state | 查询系统或给定卷的损坏状态。 |
@@ -74,4 +74,4 @@ fsutil repair set c: 0
 
 - [fsutil](fsutil.md)
 
-- [自修复 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))
+- [自修复 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10))

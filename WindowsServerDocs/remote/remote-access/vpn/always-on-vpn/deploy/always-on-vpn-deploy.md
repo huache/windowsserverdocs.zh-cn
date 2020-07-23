@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 ms.date: 12/20/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: e107ba0d36a1b59d4bc1bb365fb98aa9285677ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bab89611932316d165e805e96f0a6d2d357c0780
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860120"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959178"
 ---
-# <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Always On 适用于 Windows Server 和 Windows 10 的 VPN 部署
+# <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>针对 Windows Server 和 Windows 10 的 Always On VPN 部署
 
 >适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
@@ -65,7 +65,7 @@ Always On VPN 提供了一个用于远程访问的单内聚解决方案，并支
 - 动态主机配置协议（DHCP）。
 - 网络硬件，如以太网布线、防火墙、交换机和集线器。
 - 远程用户可以通过 Always On VPN 连接访问的其他网络资源，如应用程序和文件服务器。
-- Internet 连接或使用 Azure AD 进行 Internet 连接的条件性访问。 有关详细信息，请参阅[Azure Active Directory 中的条件访问](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)。
+- Internet 连接或使用 Azure AD 进行 Internet 连接的条件性访问。 有关详细信息，请参阅[Azure Active Directory 中的条件访问](/azure/active-directory/active-directory-conditional-access-azure-portal)。
 
 ## <a name="next-steps"></a>后续步骤
 

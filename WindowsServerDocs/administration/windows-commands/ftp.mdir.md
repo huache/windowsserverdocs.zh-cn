@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a4d1b00941d350776fd953607a5cc5da433993c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0dc8e5d3eb7ab6f8f2034be03b5fdd65122921ec
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926150"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957199"
 ---
 # <a name="ftp-mdir"></a>ftp mdir
 
@@ -53,4 +53,4 @@ mdir dir1 dir2 dirlist.txt
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [其他 FTP 指南](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指南](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

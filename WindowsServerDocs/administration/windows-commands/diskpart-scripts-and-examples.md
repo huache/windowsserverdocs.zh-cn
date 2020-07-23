@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2715332a8a6adff29f31a4dbd7d3e7a27a4a6f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 64355bd452934909d0600fa791e7a4c2d2066b6f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929327"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958289"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart 脚本和示例
 
@@ -57,8 +57,8 @@ ms.locfileid: "85929327"
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [示例：使用 Windows PE 和 DiskPart 配置基于 UEFI/GPT 的硬盘驱动器分区](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
+- [示例：使用 Windows PE 和 DiskPart 配置基于 UEFI/GPT 的硬盘驱动器分区](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
 
-- [示例：使用 Windows PE 和 DiskPart 配置基于 BIOS/MBR 的硬盘分区](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
+- [示例：使用 Windows PE 和 DiskPart 配置基于 BIOS/MBR 的硬盘分区](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
 
-- [Windows PowerShell 中的存储 Cmdlet](https://docs.microsoft.com/powershell/module/storage/?view=win10-ps)
+- [Windows PowerShell 中的存储 Cmdlet](/powershell/module/storage/?view=win10-ps)

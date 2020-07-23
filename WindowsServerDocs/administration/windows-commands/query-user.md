@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c186e0945612bf7c84637f6b039dcdbac3d68f1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6929f7828f82c50723ae0a8c658ee2c79e1f1499
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930215"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956449"
 ---
 # <a name="query-user"></a>query user
 
@@ -35,7 +35,7 @@ ms.locfileid: "85930215"
 - 用户登录的日期和时间
 
 > [!NOTE]
-> 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 

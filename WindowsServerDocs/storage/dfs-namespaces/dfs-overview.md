@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: 本主题介绍 DFS 命名空间，这是 Windows Server 中的一个角色服务，可用于将不同服务器上的共享文件夹组合到一个或多个逻辑结构的命名空间中。
-ms.openlocfilehash: fd02f0b65cc57300c673d72c7879a80d48747fa2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 57d2d8bb7565677afcd2a031807061ab50b6ff16
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471881"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964089"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 命名空间概述
 
@@ -32,7 +32,7 @@ DFS 命名空间是 Windows Server 中的一种角色服务，支持你将位于
 
 本主题讨论如何安装 DFS、新增功能，以及在哪里可以找到评估和部署信息。
 
-可以使用 DFS 管理、[Windows PowerShell 中的 DFS 命名空间 (DFSN) Cmdlet](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps)、**DfsUtil** 命令或调用 WMI 的脚本来管理命名空间。
+可以使用 DFS 管理、[Windows PowerShell 中的 DFS 命名空间 (DFSN) Cmdlet](/powershell/module/dfsn/?view=win10-ps)、**DfsUtil** 命令或调用 WMI 的脚本来管理命名空间。
 
 ## <a name="server-requirements-and-limits"></a>服务器要求和限制
 
@@ -65,7 +65,7 @@ DFS 命名空间是 Windows Server 中的一种角色服务，支持你将位于
 
 DFS 命名空间和 DFS 复制是文件和存储服务角色中的一部分。 DFS 的管理工具（DFS 管理、Windows PowerShell 的 DFS 命名空间模块及命令行工具）分别安装为远程服务器管理工具的一部分。
 
-使用[Windows 管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)、服务器管理器或 POWERSHELL 安装 DFS 命名空间，如下一节中所述。
+使用[Windows 管理中心](../../manage/windows-admin-center/overview.md)、服务器管理器或 POWERSHELL 安装 DFS 命名空间，如下一节中所述。
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>使用服务器管理器安装 DFS 的步骤
 
@@ -114,7 +114,7 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 - 可以在 Azure 虚拟机中承载基于域的命名空间，包括 Azure Active Directory 的环境。
 
-若要了解如何开始使用 Azure 虚拟机，请参阅 [Azure 虚拟机文档](https://docs.microsoft.com/azure/virtual-machines/)。
+若要了解如何开始使用 Azure 虚拟机，请参阅 [Azure 虚拟机文档](/azure/virtual-machines/)。
 
 ## <a name="additional-references"></a>其他参考
 
@@ -122,10 +122,10 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 | 内容类型        | 参考 |
 | ------------------  | ----------------|
-| **产品评估** | [Windows Server 中 DFS 命名空间和 DFS 复制的新增功能](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
-| **部署**    | [DFS 命名空间可扩展性注意事项](https://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
-| **操作**    | [DFS 命名空间：常见问题](https://technet.microsoft.com/library/ee404780.aspx) |
+| **产品评估** | [Windows Server 中 DFS 命名空间和 DFS 复制的新增功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281957(v=ws.11)) |
+| **部署**    | [DFS 命名空间可扩展性注意事项](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
+| **操作**    | [DFS 命名空间：常见问题](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee404780(v=ws.10)) |
 | **社区资源** | [文件服务和存储 TechNet 论坛](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
-| **协议**        | [Windows Server 中的文件服务协议](https://msdn.microsoft.com/library/cc239318.aspx)（不推荐使用） |
+| **协议**        | [Windows Server 中的文件服务协议](/openspecs/windows_protocols/MS-WINPROTLP/df36f95e-6a6b-48d6-a3ae-35a17674f546)（不推荐使用） |
 | **相关技术** | [故障转移群集](../../failover-clustering/failover-clustering-overview.md)|
 | **支持** | [Windows IT 专业人员支持](https://www.microsoft.com/itpro/windows/support)|

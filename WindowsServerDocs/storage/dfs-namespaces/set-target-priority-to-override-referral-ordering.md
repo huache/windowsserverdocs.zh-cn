@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 401e15c248687c7585cb85172b1d4d57125cdc86
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 77fe5b82b73a0f37ba81dda210f15d6017788822
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475174"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966819"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>设置目标优先级以替代引用排序
 
@@ -53,7 +53,7 @@ ms.locfileid: "85475174"
 4.  在**高级**选项卡上，单击**替代引用排序**，然后单击所需的优先级。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 设置目标优先级，请将 [Set-DfsnRootTarget](https://technet.microsoft.com/library/jj884266.aspx) 和 [Set-DfsnFolderTarget](https://technet.microsoft.com/library/jj884264.aspx) cmdlet 与 **ReferralPriorityClass** 和 **ReferralPriorityRank** 参数结合使用。 Windows Server 2012 中引入了这些 cmdlet。
+> 若要使用 Windows PowerShell 设置目标优先级，请将 [Set-DfsnRootTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) 和 [Set-DfsnFolderTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) cmdlet 与 **ReferralPriorityClass** 和 **ReferralPriorityRank** 参数结合使用。 Windows Server 2012 中引入了这些 cmdlet。
 
 ## <a name="additional-references"></a>其他参考
 

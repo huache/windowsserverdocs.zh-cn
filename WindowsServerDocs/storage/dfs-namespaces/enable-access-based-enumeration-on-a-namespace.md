@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7f011bc12c26567ed3a0e912dca3c3a8de9bfff9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 04b023a931f8d66205a07f05bb8d3e955f8b83ca
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474924"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964069"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>对命名空间启用基于访问的枚举
 
@@ -36,7 +36,7 @@ ms.locfileid: "85474924"
 
 
 > [!WARNING]
-> 如果用户已知 DFS 路径，则基于访问的枚举不会阻止他们获得对文件夹目标的引用。 只有共享权限或文件夹目标（共享文件夹）本身的 NTFS 文件系统权限，才能阻止用户访问该文件夹目标。 DFS 文件夹权限仅用于显示或隐藏 DFS 文件夹，而不用来控制访问权限，这使得读取访问权限是 DFS 文件夹级别的唯一相关权限。 有关详细信息，请参阅[使用继承的权限执行基于访问的枚举](https://technet.microsoft.com/library/dd834874(v=ws.11).aspx)
+> 如果用户已知 DFS 路径，则基于访问的枚举不会阻止他们获得对文件夹目标的引用。 只有共享权限或文件夹目标（共享文件夹）本身的 NTFS 文件系统权限，才能阻止用户访问该文件夹目标。 DFS 文件夹权限仅用于显示或隐藏 DFS 文件夹，而不用来控制访问权限，这使得读取访问权限是 DFS 文件夹级别的唯一相关权限。 有关详细信息，请参阅[使用继承的权限执行基于访问的枚举](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11))
 
 <br />
 你可以使用 Windows 界面或命令行对命名空间启用基于访问的枚举。
@@ -58,7 +58,7 @@ ms.locfileid: "85474924"
     ```
 
 > [!TIP]
-> 若要使用 Windows PowerShell 管理对命令空间的基于访问的枚举，请使用 [Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx)、[Grant-DfsnAccess](https://technet.microsoft.com/library/jj884272.aspx) 和 [Revoke-DfsnAccess](https://technet.microsoft.com/library/jj884273.aspx) cmdlet。 Windows Server 2012 中引入了 DFSN Windows PowerShell 模块。
+> 若要使用 Windows PowerShell 管理对命令空间的基于访问的枚举，请使用 [Set-DfsnRoot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11))、[Grant-DfsnAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11)) 和 [Revoke-DfsnAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11)) cmdlet。 Windows Server 2012 中引入了 DFSN Windows PowerShell 模块。
 
 你可以使用 Windows 界面或命令行控制哪些用户和组可以查看单个 DFS 文件夹。
 
@@ -66,7 +66,7 @@ ms.locfileid: "85474924"
 
 1.  在控制台树中的**命名空间**节点下，找到要控制其可见性的文件夹（包含目标），右键单击该文件夹，然后单击**属性**。
 
-2.  单击“高级”**** 选项卡。
+2.  单击“高级”选项卡。
 
 3.  单击**设置 DFS 文件夹的显式查看权限**，然后再单击**配置查看权限**。
 
@@ -97,13 +97,13 @@ ms.locfileid: "85474924"
 
 | 命令 | 说明 |
 |---|---|
-|[Dfsutil property sd deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|拒绝组或用户，使其无法查看文件夹。|
-|[Dfsutil property sd reset](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |从文件夹中删除所有权限。|
-|[Dfsutil property sd revoke](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| 从文件夹中删除组或用户 ACE。 |
+|[Dfsutil property sd deny](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))|拒绝组或用户，使其无法查看文件夹。|
+|[Dfsutil property sd reset](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11)) |从文件夹中删除所有权限。|
+|[Dfsutil property sd revoke](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))| 从文件夹中删除组或用户 ACE。 |
 
 ## <a name="additional-references"></a>其他参考
 
 -   [创建 DFS 命名空间](create-a-dfs-namespace.md)
 -   [委派 DFS 命名空间的管理权限](delegate-management-permissions-for-dfs-namespaces.md)
--   [安装 DFS](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
+-   [安装 DFS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11))
 -   [对基于访问权限的枚举使用继承权限](using-inherited-permissions-with-access-based-enumeration.md)

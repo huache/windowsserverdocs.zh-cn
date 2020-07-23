@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 602f3aa99f9d0e47fbbde1ab5c09b193446d8a7c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 995b2332f98906a1a5b9cb53f504a87fb831c3e0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936911"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958799"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -65,5 +65,5 @@ tlntadmn -s
 ```
 
 ## <a name="additional-references"></a>其他参考
--   [telnet 操作指南](https://technet.microsoft.com/library/cc753164(v=ws.10).aspx)
+-   [telnet 操作指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753164(v=ws.10))
 - [命令行语法项](command-line-syntax-key.md)

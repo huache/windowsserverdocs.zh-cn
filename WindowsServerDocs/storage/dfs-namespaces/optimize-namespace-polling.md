@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ea867cbb36286297ff3c5274d11c36b5815ab9ac
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4ffcf974bd809d1692e16d632153c213081041c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475454"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961229"
 ---
 # <a name="optimize-namespace-polling"></a>优化命名空间轮询
 
@@ -35,7 +35,7 @@ ms.locfileid: "85475454"
     -   如果命名空间服务器超过 16 个，则选择**优化可伸缩性**。 这会减少主域控制器 (PDC) 模拟器上的负载，但会增加将对命名空间所做的更改复制到所有命名空间服务器所需的时间。 在将更改复制到所有服务器之前，用户可能会得到该命名空间不一致的视图。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 设置命名空间轮询模式，请使用 [Set-DfsnRoot EnableRootScalability](https://technet.microsoft.com/library/jj884281.aspx) cmdlet（在 Windows Server 2012 中引入）。
+> 若要使用 Windows PowerShell 设置命名空间轮询模式，请使用 [Set-DfsnRoot EnableRootScalability](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) cmdlet（在 Windows Server 2012 中引入）。
 
 ## <a name="additional-references"></a>其他参考
 

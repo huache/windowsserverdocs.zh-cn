@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 51ec7423-9a01-4219-868a-25d69cdcc832
 author: jasongerend
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ce046cf3bdce046a86d98228223cc2bc03b7c31
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 73f83a07cb1537af66d59977099b251b6dd12f47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922675"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958219"
 ---
 # <a name="format"></a>格式
 
@@ -23,7 +23,7 @@ ms.locfileid: "85922675"
 格式化磁盘以接受 Windows 文件。 您必须是 Administrators 组的成员才能格式化硬盘驱动器。
 
 > [!NOTE]
-> 你还可以在恢复控制台中使用带有不同参数的**format**命令。 有关恢复控制台的详细信息，请参阅[Windows 恢复环境（WINDOWS RE）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+> 你还可以在恢复控制台中使用带有不同参数的**format**命令。 有关恢复控制台的详细信息，请参阅[Windows 恢复环境（WINDOWS RE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 ## <a name="syntax"></a>语法
 
@@ -118,4 +118,4 @@ format a: /v:DATA
 
 ## <a name="additional-references"></a>其他参考
 
-- [命令行语法项](https://technet.microsoft.com/library/cc771080.aspx)
+- [命令行语法项](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771080(v=ws.11))

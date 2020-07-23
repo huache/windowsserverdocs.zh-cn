@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 905af608bcf5f43ea8883bc62d0344887c89baa7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 28a4773899d0ccd53f6c7facd36898225ca7e007
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855740"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966149"
 ---
 # <a name="software-restriction-policies"></a>软件限制策略
 
@@ -33,7 +33,7 @@ ms.locfileid: "80855740"
 
 有关 SRP 的详细信息，请参阅[软件限制策略技术概述](software-restriction-policies-technical-overview.md)。
 
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实际的应用程序
 管理员可以将软件限制策略用于以下任务：
 
 -   定义什么是受信任代码
@@ -54,10 +54,10 @@ ms.locfileid: "80855740"
 
 -   防止可执行文件在本地计算机、组织单位 (OU)、网站或域中运行。 这适用于未使用软件限制策略解决恶意用户的潜在问题的情况。
 
-## <a name="new-and-changed-functionality"></a><a name="BKMK_NEW"></a>新增功能和更改的功能
+## <a name="new-and-changed-functionality"></a><a name="BKMK_NEW"></a>新功能和更改的功能
 软件限制策略无功能更改。
 
-## <a name="removed-or-deprecated-functionality"></a><a name="BKMK_DEP"></a>删除或弃用的功能
+## <a name="removed-or-deprecated-functionality"></a><a name="BKMK_DEP"></a>已删除或弃用的功能
 软件限制策略无删除或弃用的功能。
 
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>软件要求
@@ -85,14 +85,11 @@ ms.locfileid: "80855740"
 
 |内容类型|参考|
 |--------|-------|
-|**产品评估**|[软件限制策略的应用程序锁定](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-|**规划**|[软件限制策略技术概述](software-restriction-policies-technical-overview.md)（Windows Server 2012）<p>[软件限制策略技术参考](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx) (Windows Server 2003)|
+|**产品评估**|[软件限制策略的应用程序锁定](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|
+|规划|[软件限制策略技术概述](software-restriction-policies-technical-overview.md)（Windows Server 2012）<p>[软件限制策略技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10)) (Windows Server 2003)|
 |**部署**|无资源可用。|
-|**操作**|[管理软件限制策略](administer-software-restriction-policies.md)（Windows Server 2012）<p>[软件限制策略产品帮助](https://technet.microsoft.com/library/cc779607(v=WS.10).aspx) (Windows Server 2003)|
-|**疑难解答**|[排查软件限制策略问题](troubleshoot-software-restriction-policies.md)（Windows Server 2012）<p>[解决软件限制策略问题](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx) (Windows  Server 2003)|
-|**安全性**|[软件限制策略的威胁和对策](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx) (Windows  Server 2008)<p>[软件限制策略的威胁和对策](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx) (Windows Server 2008 R2)|
-|**工具和设置**|[软件限制策略工具和设置](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx) (Windows Server 2003)|
-|**社区资源**|[软件限制策略的应用程序锁定](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-
-
-
+|**操作**|[管理软件限制策略](administer-software-restriction-policies.md)（Windows Server 2012）<p>[软件限制策略产品帮助](/previous-versions/windows/it-pro/windows-server-2003/cc779607(v=ws.10))（Windows Server 2003）|
+|**疑难解答**|[排查软件限制策略问题](troubleshoot-software-restriction-policies.md)（Windows Server 2012）<p>[软件限制策略故障排除](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))（Windows Server 2003）|
+|**安全性**|[软件限制策略的威胁和对策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10)) (Windows  Server 2008)<p>[软件限制策略的威胁和对策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))（Windows Server 2008 R2）|
+|**工具和设置**|[软件限制策略工具和设置](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))（Windows Server 2003）|
+|**社区资源**|[软件限制策略的应用程序锁定](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

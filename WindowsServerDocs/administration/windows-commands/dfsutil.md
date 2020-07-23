@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c741635b2566a7bec7775de691105c15591caa62
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cfb3d221e275a688f5c18a960681257077fb4f7f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930609"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958369"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -24,7 +24,7 @@ Dfsutil 命令管理 DFS 命名空间、服务器和客户端。
 
 ## <a name="functionality-available-in-powershell"></a>PowerShell 中的可用功能
 
-[DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps) PowerShell 模块为以下 dfsutil 参数提供等效功能。
+[DFSN](/powershell/module/dfsn/?view=win10-ps) PowerShell 模块为以下 dfsutil 参数提供等效功能。
 
 | 参数 | 说明 |
 | --------- | ----------- |

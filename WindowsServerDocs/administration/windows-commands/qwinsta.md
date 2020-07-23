@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9b79495d3fa142fd343b9c521563e093d20fc68
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 45590cf9b6fdb5de40e4ab25bd444f847d203670
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932002"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956369"
 ---
 # <a name="qwinsta"></a>qwinsta
 
@@ -23,7 +23,7 @@ ms.locfileid: "85932002"
 显示有关远程桌面会话主机服务器上的会话的信息。 此列表不仅包括有关活动会话的信息，还包括有关服务器运行的其他会话的信息。
 
 > [!NOTE]
-> 此命令与 "[查询会话" 命令](query-session.md)相同。 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 此命令与 "[查询会话" 命令](query-session.md)相同。 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 

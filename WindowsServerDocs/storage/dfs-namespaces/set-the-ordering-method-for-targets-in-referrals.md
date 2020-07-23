@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9b420e311c98477d369c81f10eca274e665dae3a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a993d53611382dcd0007bfecae95da6221cf6016
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475154"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966799"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>为引用中的目标设置排序方法
 
@@ -35,7 +35,7 @@ ms.locfileid: "85475154"
 3.  在**引用**选项卡上，选择排序方法。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 为命名空间根目录引用中的目标设置排序方法，请将 [Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) cmdlet 与以下参数之一结合使用：
+> 若要使用 Windows PowerShell 为命名空间根目录引用中的目标设置排序方法，请将 [Set-DfsnRoot](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) cmdlet 与以下参数之一结合使用：
 >    -   **EnableSiteCosting** 指定**最低成本排序**方法
 >    -   **EnableInsiteReferrals** 指定**排除客户端站点之外的目标**排序方法
 >    -   无论省略哪个参数，都会指定**随机顺序**引用排序方法。
@@ -53,7 +53,7 @@ Windows Server 2012 中引入了 DFSN Windows PowerShell 模块。
 3.  在**引用**选项卡上，选中**排除客户端站点之外的目标**复选框。
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 排除客户端站点之外的文件夹目标，请使用 [Set-DfsnFolder –EnableInsiteReferrals](https://technet.microsoft.com/library/jj884283.aspx) cmdlet。
+> 若要使用 Windows PowerShell 排除客户端站点之外的文件夹目标，请使用 [Set-DfsnFolder –EnableInsiteReferrals](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) cmdlet。
 
 ## <a name="target-referral-ordering-methods"></a>目标引用排序方法
 

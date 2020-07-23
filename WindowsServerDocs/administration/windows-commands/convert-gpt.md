@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d8025e897a8ce7083b938e984f9a11b6c32ed312
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2384ea5a94de64051dc45caecd88e08960b567b0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928953"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958529"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
@@ -24,7 +24,7 @@ ms.locfileid: "85928953"
 > 若要将磁盘转换成基本磁盘，该磁盘必须为空。 转换磁盘之前，请备份数据，然后删除全部分区或卷。 转换为 GPT 所需的最小磁盘大小为 128 mb。
 
 > [!NOTE]
-> 有关如何使用此命令的说明，请参阅[将主启动记录磁盘更改为 GUID 分区表磁盘](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725671(v=ws.11))。
+> 有关如何使用此命令的说明，请参阅[将主启动记录磁盘更改为 GUID 分区表磁盘](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc725671(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 

@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 654cb1b0eea65457d521d201739721ed8c3c0203
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 21b090e8e70f287e9609d28588403e3aa0988ce4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815190"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966299"
 ---
 # <a name="advanced-troubleshooting-server-message-block-smb"></a>高级疑难解答服务器消息块（SMB）
 
@@ -30,7 +30,7 @@ SMB 故障排除可能非常复杂。 本文并不是一个详尽的故障排除
 
 ### <a name="collect-data"></a>收集数据
 
-在解决 SMB 问题之前，建议先在客户端和服务器端收集网络跟踪。 以下准则适用：
+在解决 SMB 问题之前，建议先在客户端和服务器端收集网络跟踪。 以下准则将适用：
 
 - 在 Windows 系统上，可以使用 netshell （netsh）、网络监视器、Message 分析器或 Wireshark 来收集网络跟踪。
 
@@ -49,7 +49,7 @@ SMB 故障排除可能非常复杂。 本文并不是一个详尽的故障排除
 本部分提供使用 netshell 收集网络跟踪的步骤。
 
 > [!NOTE]  
-> Netsh 跟踪创建 ETL 文件。 ETL 文件只能在 Message Analyzer （MA）中打开，并网络监视器3.4 （将分析器设置为网络监视器分析器 \> Windows）。
+> Netsh 跟踪创建 ETL 文件。 ETL 文件只能在 Message Analyzer （MA）中打开，并网络监视器3.4 （将分析器设置为网络监视器的分析程序 \> 窗口）。
 
 1. 在 SMB 服务器和 SMB 客户端上，在驱动器**C**上创建一个**临时**文件夹。然后，运行以下命令：
 
@@ -67,7 +67,7 @@ SMB 故障排除可能非常复杂。 本文并不是一个详尽的故障排除
    Start-NetEventSession trace
    ```
    
-2. 重现此问题。
+2. 重现问题。
 
 3. 通过运行以下命令停止跟踪：
 
@@ -99,17 +99,17 @@ SMB 是使用 TCP/IP 作为网络传输协议的应用程序级协议。 因此�
 
 4. 将减少 TCP 接收窗口。 这可能是因为存储速度缓慢或某些其他问题导致无法从辅助函数驱动程序（AFD） Winsock 缓冲区检索数据。
 
-如果没有明显的 TCP/IP 问题，请查看 SMB 错误。 要实现这一点，请执行下列操作：
+如果没有明显的 TCP/IP 问题，请查看 SMB 错误。 为此，请执行以下步骤：
 
 1. 请始终根据 SMB2 协议规范检查 SMB 错误。 许多 SMB 错误都是良性的（不有害）。 请参阅以下信息，确定在结论错误与以下任何问题相关后，SMB 返回错误的原因：
 
-   - [SMB2 消息语法](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/6eaf6e75-9c23-4eda-be99-c9223c60b181)主题详细说明了每个 SMB 命令及其选项。
+   - [SMB2 消息语法](/openspecs/windows_protocols/ms-smb2/6eaf6e75-9c23-4eda-be99-c9223c60b181)主题详细说明了每个 SMB 命令及其选项。
     
-   - [SMB2 客户端处理](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/df0625a5-6516-4fbe-bf97-01bef451cab2)主题详细说明了 SMB 客户端如何创建请求并响应服务器消息。
+   - [SMB2 客户端处理](/openspecs/windows_protocols/ms-smb2/df0625a5-6516-4fbe-bf97-01bef451cab2)主题详细说明了 SMB 客户端如何创建请求并响应服务器消息。
 
-   - [SMB2 服务器处理](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/e1d08834-42e0-41ca-a833-fc26f5132a6f)主题详细说明了 SMB 服务器如何创建请求并响应客户端请求。
+   - [SMB2 服务器处理](/openspecs/windows_protocols/ms-smb2/e1d08834-42e0-41ca-a833-fc26f5132a6f)主题详细说明了 SMB 服务器如何创建请求并响应客户端请求。
 
-2. 检查 FSCTL\_验证\_协商\_信息（验证协商）命令后是否立即发送 TCP reset 命令。 如果是这样，请参阅以下信息：
+2. 检查在 FSCTL \_ 验证 \_ 协商 \_ 信息（验证协商）命令后是否立即发送 TCP reset 命令。 如果是这样，请参阅以下信息：
 
    - 当客户端或服务器上的验证协商过程失败时，必须终止 SMB 会话（TCP 重置）。
 
@@ -128,7 +128,7 @@ SMB 是使用 TCP/IP 作为网络传输协议的应用程序级协议。 因此�
 
 - 可以通过检查 SMB 命令了解应用程序尝试执行的操作。
 
-将命令和操作与协议规范进行比较以确保一切正常运行。 如果不是，则收集更接近或较低级别的数据，以查找有关根本原因的详细信息。 要实现这一点，请执行下列操作：
+将命令和操作与协议规范进行比较以确保一切正常运行。 如果不是，则收集更接近或较低级别的数据，以查找有关根本原因的详细信息。 为此，请执行以下步骤：
 
 1. 收集标准数据包捕获。
 
@@ -159,33 +159,33 @@ SMB 客户端和 SMB 服务器都有详细的事件日志结构，如以下屏�
 
 此部分列出了与 SMB 相关的系统文件。 若要保持系统文件的更新，请确保已安装最新的[更新汇总](https://support.microsoft.com/help/4498140/windows-10-update-history)。
 
-SMB 客户端二进制文件列在 **% windir%\\system32\\驱动程序**：
+**% Windir% \\ system32 \\ 驱动程序**以下列出的 SMB 客户端二进制文件：
 
-- RDBSS
+- RDBSS.sys
 
-- MRXSMB
+- MRXSMB.sys
 
-- MRXSMB10
+- MRXSMB10.sys
 
-- MRXSMB20
+- MRXSMB20.sys
 
-- MUP
+- MUP.sys
 
-- SMBdirect
+- SMBdirect.sys
 
-**\\驱动程序的% windir%\\system32**下列出的 SMB 服务器二进制文件：
+**% Windir% \\ system32 \\ 驱动程序**以下列出的 SMB 服务器二进制文件：
 
-- SRVNET
+- SRVNET.sys
 
-- SRV .sys
+- SRV.sys
 
-- SRV2
+- SRV2.sys
 
-- SMBdirect
+- SMBdirect.sys
 
-- 低于 **% windir%\\system32**
+- 低于 **% windir% \\ system32**
 
-- srvsvc
+- srvsvc.dll
 
 ![SMB 组件](media/troubleshooting-smb-2.png)
 
@@ -201,4 +201,4 @@ SMB 客户端二进制文件列在 **% windir%\\system32\\驱动程序**：
 
 ## <a name="reference"></a>参考
 
-[Microsoft SMB 协议数据包交换方案](https://docs.microsoft.com/windows/win32/fileio/microsoft-smb-protocol-packet-exchange-scenario)
+[Microsoft SMB 协议数据包交换方案](/windows/win32/fileio/microsoft-smb-protocol-packet-exchange-scenario)

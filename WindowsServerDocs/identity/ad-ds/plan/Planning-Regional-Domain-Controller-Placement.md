@@ -8,18 +8,18 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f5b88afe50e9cb498eacf1bbc872718d50cd64da
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 574c5a4c0d009a34b1d327ac4aef3b9f5210b0bf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623917"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959389"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>规划区域域控制器放置
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-若要确保成本效益，请计划尽可能少地放置区域域控制器。 首先，查看[收集网络信息](../../ad-ds/plan/Collecting-Network-Information.md)时使用的 "地理位置和通信链接" （DSSTOPO_1 .doc）工作表，以确定位置是否为集线器。
+若要确保成本效益，请计划尽可能少地放置区域域控制器。 首先，请查看[收集网络信息](../../ad-ds/plan/Collecting-Network-Information.md)时使用的 "地理位置和通信链接" （DSSTOPO_1.doc）工作表，以确定位置是否为集线器。
 
 规划为每个中心位置中表示的每个域放置区域域控制器。 将区域域控制器置于所有中心位置之后，请评估是否需要将区域域控制器置于附属位置。 从附属位置消除不必要的区域性域控制器可减少维护远程服务器基础结构所需的支持成本。
 
@@ -79,6 +79,6 @@ ms.locfileid: "81623917"
 
 如果降低维护域控制器的成本比网络流量更重要，则可以集中处理该域的域控制器，不要将任何区域域控制器放置在该位置，也不要考虑在该位置放置 Rodc。
 
-要使工作表帮助你记录区域域控制器的位置以及每个位置中每个域的用户数，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "域控制器布局" （DSSTOPO_4 .doc）。
+要使工作表帮助你记录区域域控制器的位置以及每个位置中每个域的用户数，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及打开 "域控制器布局" （DSSTOPO_4.doc）。
 
-你需要参考有关在部署区域域时需要放置区域域控制器的位置的信息。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](https://technet.microsoft.com/library/cc755118.aspx)。
+你需要参考有关在部署区域域时需要放置区域域控制器的位置的信息。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。

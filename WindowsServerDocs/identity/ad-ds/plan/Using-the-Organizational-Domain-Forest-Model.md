@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1788989d3f2e3ceae46b59e393c925e3b5a7b588
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 4216dea74b72d2257db32045ffda1a21ba6a4f43
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623816"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965509"
 ---
 # <a name="using-the-organizational-domain-forest-model"></a>使用组织域林模型
 
@@ -57,4 +57,4 @@ ms.locfileid: "81623816"
 所有域所有者都必须知道，如果将来有任何情况发生变化，则可能需要将组织域移到多个林部署中。
 
 > [!NOTE]
-> 将 Windows Server 2008 Active Directory 域的安全风险降至最低的另一种方法是使用管理员角色分离，这需要在 Active Directory 基础结构中部署只读域控制器（RODC）。 RODC 是 Windows Server 2008 操作系统中的一种新类型的域控制器，它承载 Active Directory 数据库的只读分区。 在发布 Windows Server 2008 之前，域控制器上的任何服务器维护工作都必须由域管理员执行。 在 Windows Server 2008 中，你可以将 RODC 的本地管理权限委派给任何域用户，而无需授予该用户对域或其他域控制器的任何管理权限。 这允许委派的用户登录到 RODC，并在服务器上执行维护工作（如升级驱动程序）。 但是，此委派的用户无法登录到任何其他域控制器或执行域中的任何其他管理任务。 这样，任何受信任的用户都可以被委派有效地管理 RODC 的能力，而不会影响域的其余部分的安全性。 有关 Rodc 的详细信息，请参阅[AD DS：只读域控制器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732801(v=ws.10))。
+> 将 Windows Server 2008 Active Directory 域的安全风险降至最低的另一种方法是使用管理员角色分离，这需要在 Active Directory 基础结构中部署只读域控制器（RODC）。 RODC 是 Windows Server 2008 操作系统中的一种新类型的域控制器，它承载 Active Directory 数据库的只读分区。 在发布 Windows Server 2008 之前，域控制器上的任何服务器维护工作都必须由域管理员执行。 在 Windows Server 2008 中，你可以将 RODC 的本地管理权限委派给任何域用户，而无需授予该用户对域或其他域控制器的任何管理权限。 这允许委派的用户登录到 RODC，并在服务器上执行维护工作（如升级驱动程序）。 但是，此委派的用户无法登录到任何其他域控制器或执行域中的任何其他管理任务。 这样，任何受信任的用户都可以被委派有效地管理 RODC 的能力，而不会影响域的其余部分的安全性。 有关 Rodc 的详细信息，请参阅[AD DS：只读域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。

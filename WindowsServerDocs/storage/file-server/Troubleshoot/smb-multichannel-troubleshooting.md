@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 210bc2057f25dc196fe9d76495c42f76c8b36311
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 662a58fdeb3cda14a0e54c8d0ab7bd0b85387fd7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815340"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960129"
 ---
 # <a name="smb-multichannel-troubleshooting"></a>SMB 多通道故障排除
 
@@ -19,7 +19,7 @@ ms.locfileid: "80815340"
 
 ## <a name="check-the-network-interface-status"></a>检查网络接口状态
 
-请确保 SMB 客户端（MS\_客户端）和 SMB 服务器（MS\_服务器）上的网络接口绑定设置为**True** 。 运行以下命令时 **，对于这**两个网络接口，输出应显示为 "**真**"：
+请确保在 SMB 客户端（MS **True** \_ 客户端）和 SMB 服务器（ms server）上，网络接口的绑定设置为 True \_ 。 运行以下命令时 **，对于这**两个网络接口，输出应显示为 "**真**"：
 
 ```PowerShell
 Get-NetAdapterBinding -ComponentID ms_server,ms_msclient
@@ -51,7 +51,7 @@ Get-SmbClientNetworkInterface
 
 还可以在 "**网络和共享中心**" 窗口中启用 "**文件和打印机共享**"。 为此，请在左侧菜单中选择 "**更改高级共享设置**"，然后为配置文件选择 **"打开文件和打印机共享**"。 此选项启用 "文件和打印机共享" 防火墙规则。
 
-![“更改高级共享设置”，](media/smb-multichannel-troubleshooting-2.png)
+![更改高级共享设置](media/smb-multichannel-troubleshooting-2.png)
 
 ## <a name="capture-client-and-server-sided-traffic-for-troubleshooting"></a>捕获客户端和服务器端流量以进行故障排除
 
@@ -59,23 +59,23 @@ Get-SmbClientNetworkInterface
 
 请确保正在协商*SMBv3 连接，* 并且服务器和客户端之间的任何内容都不会影响方言协商。 SMBv2 及更早版本不支持多通道。
 
-查找网络\_接口\_信息数据包。 SMB 客户端从 SMB 服务器请求适配器列表。 如果未交换这些数据包，多通道将不起作用。
+查找网络 \_ 接口 \_ 信息包。 SMB 客户端从 SMB 服务器请求适配器列表。 如果未交换这些数据包，多通道将不起作用。
 
 服务器通过返回有效网络接口的列表来做出响应。 然后，SMB 客户端将它们添加到多通道的可用适配器列表中。 此时，多通道应启动，至少尝试启动连接。
 
 有关详细信息，请参阅以下文章：
 
-- [查询服务器的网络接口的3.2.4.20.10 应用程序请求](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/147adde4-d936-4597-924a-8caa3429c6b0)
+- [查询服务器的网络接口的3.2.4.20.10 应用程序请求](/openspecs/windows_protocols/ms-smb2/147adde4-d936-4597-924a-8caa3429c6b0)
 
-- [2.2.32.5 NETWORK\_INTERFACE\_INFO Response](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/fcd862d1-1b85-42df-92b1-e103199f531f)
+- [2.2.32.5 网络 \_ 接口 \_ 信息响应](/openspecs/windows_protocols/ms-smb2/fcd862d1-1b85-42df-92b1-e103199f531f)
 
-- [3.2.5.14.11 处理网络接口响应](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/5459722b-1eaa-4ead-b465-284363264cad)
+- [3.2.5.14.11 处理网络接口响应](/openspecs/windows_protocols/ms-smb2/5459722b-1eaa-4ead-b465-284363264cad)
 
 在以下方案中，无法使用适配器：
 
 - 客户端上出现路由问题。 这通常是由于不正确的路由表导致流量超出错误的接口。
 
-- 已设置多通道约束。 有关详细信息，请参阅[SmbMultichannelConstraint](https://docs.microsoft.com/powershell/module/smbshare/new-smbmultichannelconstraint)。
+- 已设置多通道约束。 有关详细信息，请参阅[SmbMultichannelConstraint](/powershell/module/smbshare/new-smbmultichannelconstraint)。
 
 - 某个对象阻止了网络接口请求和响应数据包。
 

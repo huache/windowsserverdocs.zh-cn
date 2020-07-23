@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7f4ca42cc053e943d89f40a71eb24372c0399e5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e751ad4c229faf2e4dbd74ab216ee855023c858a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934236"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956479"
 ---
 # <a name="query-termserver"></a>query termserver
 
@@ -27,7 +27,7 @@ ms.locfileid: "85934236"
 - 网络（如果使用/address 选项，则使用节点地址）
 
 > [!NOTE]
-> 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 

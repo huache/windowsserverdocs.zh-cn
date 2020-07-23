@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: caf2cc4cd67795789ae61c0e8e958f605bb88523
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ea02f1786d029e58b733d217a659b0af203d48e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928542"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956929"
 ---
 # <a name="mqsvc"></a>mqsvc
 
-消息队列技术使在不同时间运行的应用能够跨异构网络和可能临时脱机的系统进行通信。 消息队列提供了有保证的消息送达、高效路由、安全性以及基于优先级的消息传递。 它可以用于实现异步和同步消息传递方案的解决方案。 有关消息队列的详细信息，请参阅[消息队列（MSMQ）](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))。
+消息队列技术使在不同时间运行的应用能够跨异构网络和可能临时脱机的系统进行通信。 消息队列提供了有保证的消息送达、高效路由、安全性以及基于优先级的消息传递。 它可以用于实现异步和同步消息传递方案的解决方案。 有关消息队列的详细信息，请参阅[消息队列（MSMQ）](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))。
 
 ## <a name="syntax"></a>语法
 
@@ -30,4 +30,4 @@ mqsvc.exe
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [MSMQ Powershell 参考](https://docs.microsoft.com/powershell/module/msmq/?view=win10-ps)
+- [MSMQ Powershell 参考](/powershell/module/msmq/?view=win10-ps)

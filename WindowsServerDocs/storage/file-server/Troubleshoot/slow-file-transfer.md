@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: af05daa164b5b2c5eca73eff51d97d4c25ba1ca3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cb575015ea8a8fc6cbc35358103774a931b0b749
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815390"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958859"
 ---
 # <a name="slow-smb-files-transfer-speed"></a>SMB 文件传输速度缓慢
 
@@ -29,7 +29,7 @@ ms.locfileid: "80815390"
     
   - 这种情况通常发生在初始副本被缓存或缓冲的情况下（在内存中或在 RAID 控制器的内存缓存中），并且缓存会耗尽。这会强制将数据直接写入磁盘（写入）。 这是一个速度较慢的进程。
     
-  - 使用存储性能监视器计数器来确定随着时间的推移，存储性能是否会下降。 有关详细信息，请参阅[SMB 文件服务器的性能优化](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/file-server/smb-file-server)。
+  - 使用存储性能监视器计数器来确定随着时间的推移，存储性能是否会下降。 有关详细信息，请参阅[SMB 文件服务器的性能优化](../../../administration/performance-tuning/role/file-server/smb-file-server.md)。
 
 - 使用 RAMMap （SysInternals）可确定内存中 "映射的文件" 的使用是否因可用的内存消耗而停止增长。
 
@@ -37,7 +37,7 @@ ms.locfileid: "80815390"
 
 - 对于 SMBv3 和更高版本，请确保 SMB 多通道已启用且正常工作。
 
-- 在 SMB 客户端上，在 SMB 中启用大型 MTU 并禁用带宽限制。 要执行此操作，请输入命令：  
+- 在 SMB 客户端上，在 SMB 中启用大型 MTU 并禁用带宽限制。 为此，请运行以下命令：  
   
   ```PowerShell
   Set-SmbClientConfiguration -EnableBandwidthThrottling 0 -EnableLargeMtu 1
@@ -65,7 +65,7 @@ ms.locfileid: "80815390"
 
 此问题通常发生在 WAN 连接上。 这种情况很常见，通常是由 Office 应用程序（特别是 Microsoft Excel）访问和读取数据的方式引起的。
 
-建议确保办公室和 SMB 的二进制文件是最新的，然后通过在 SMB 服务器上禁用租约来进行测试。 要实现这一点，请执行下列操作：
+建议确保办公室和 SMB 的二进制文件是最新的，然后通过在 SMB 服务器上禁用租约来进行测试。 为此，请执行以下步骤：
    
 1. 在 Windows 8 和 Windows Server 2012 或更高版本的 Windows 中运行以下 PowerShell 命令：
       
@@ -89,4 +89,4 @@ ms.locfileid: "80815390"
    NET START SERVER
    ```
 
-若要避免此问题，还可以将文件复制到本地文件服务器。 有关详细信息，请参阅[使用 EFS 时 Aving Office 文档在网络服务器上的速度缓慢](https://docs.microsoft.com/office/troubleshoot/office/saving-file-to-network-server-slow)。
+若要避免此问题，还可以将文件复制到本地文件服务器。 有关详细信息，请参阅[使用 EFS 时 Aving Office 文档在网络服务器上的速度缓慢](/office/troubleshoot/office/saving-file-to-network-server-slow)。

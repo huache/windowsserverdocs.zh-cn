@@ -9,15 +9,15 @@ ms.assetid: 16c217ad-700a-48a3-8398-4a7f7e9edb52
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: a0a0e4f50134102bab7c258e47e63bf7d24e60c8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1609ff02c8e1b1480d004104bdc7e37f1240729a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858710"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959269"
 ---
 # <a name="multipoint-services-migration-in-windows-server-2016"></a>Windows Server 2016 中的 MultiPoint Services 迁移
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 可以从以前版本的 Windows Server 2016 MultiPoint 服务迁移到 MultiPoint Services 的 RTM 版本。 以下信息提供了准备信息、迁移和验证步骤。
 
@@ -29,7 +29,7 @@ ms.locfileid: "80858710"
 - 迁移过程不会自动收集或记录 MultiPoint 服务角色上的应用程序的设置。 应为要迁移的任何应用程序创建自定义迁移计划。 在 MultiPoint Services 中使用虚拟桌面功能时也是如此。
 - 本指南不提供有关移动在 MultiPoint server 上的用户或共享文件夹中保存的数据的指南。 这适用于常规工作站和虚拟桌面工作站。
 - 本指南不包含有关如何在源服务器运行多个角色时进行迁移的说明。 如果你的服务器运行多个角色，则需要根据角色迁移指南中提供的信息设计特定于你的服务器环境的自定义迁移过程。
-- 本指南不包含用于迁移远程桌面服务 CAL 的信息。 有关此信息，请参阅[迁移远程桌面服务客户端访问许可证（RDS cal）](https://technet.microsoft.com/library/dd851844.aspx)。
+- 本指南不包含用于迁移远程桌面服务 CAL 的信息。 有关此信息，请参阅[迁移远程桌面服务客户端访问许可证（RDS cal）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))。
 
 ## <a name="supported-migration-scenarios-for-multipoint-services-in-windows-server-2016"></a>Windows Server 2016 中的 MultiPoint Services 支持的迁移方案
 Windows Server 2016 Standard 和 Datacenter 中提供了 MultiPoint 服务角色服务。 本迁移指南介绍如何将 Multipoint 服务角色服务从运行 Windows Server 2016 的源服务器迁移到运行相同版本的目标服务器。

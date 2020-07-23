@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ee2ae5ddf40c6d8b49b9fbd40505f4e8c70fd92c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f00a6419bae1951a7c1597212d3c37676a4db90e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473494"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961249"
 ---
 # <a name="add-namespace-servers-to-a-domain-based-dfs-namespace"></a>将命名空间服务器添加到基于域的 DFS 命名空间
 
@@ -36,12 +36,11 @@ ms.locfileid: "85473494"
 
 
 > [!TIP]
-> 若要使用 Windows PowerShell 添加命名空间服务器，请使用 [New-DfsnRootTarget cmdlet](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnroottarget)。 Windows Server 2012 中引入了 DFSN Windows PowerShell 模块。
+> 若要使用 Windows PowerShell 添加命名空间服务器，请使用 [New-DfsnRootTarget cmdlet](/powershell/module/dfsn/new-dfsnroottarget)。 Windows Server 2012 中引入了 DFSN Windows PowerShell 模块。
 
 ## <a name="additional-references"></a>其他参考
 
 -   [部署 DFS 命名空间](deploying-dfs-namespaces.md)
--   [查看 DFS 命名空间服务器要求](https://technet.microsoft.com/library/cc753448(v=ws.11).aspx)
+-   [查看 DFS 命名空间服务器要求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753448(v=ws.11))
 -   [创建 DFS 命名空间](create-a-dfs-namespace.md)
 -   [委派 DFS 命名空间的管理权限](delegate-management-permissions-for-dfs-namespaces.md)
-

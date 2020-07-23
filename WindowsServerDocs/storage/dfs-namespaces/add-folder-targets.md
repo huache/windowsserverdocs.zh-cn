@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: 2f4e0deb82f16c905f580c13115a5214556d4f5f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e5a81f2967953b985028407d53d6a039fd8990eb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475554"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961269"
 ---
 # <a name="add-folder-targets"></a>添加文件夹目标
 
@@ -34,7 +34,7 @@ ms.locfileid: "85475554"
 4.  如果使用 DFS 复制对文件夹进行复制，则可指定是否向复制组添加新文件夹目标。
 
 > [!TIP]
-> 若要使用 Windows PowerShell 添加文件夹目标，请使用 [New-DfsnFolderTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfoldertarget) cmdlet。 Windows Server 2012 中引入了 DFSN Windows PowerShell 模块。
+> 若要使用 Windows PowerShell 添加文件夹目标，请使用 [New-DfsnFolderTarget](/powershell/module/dfsn/new-dfsnfoldertarget) cmdlet。 Windows Server 2012 中引入了 DFSN Windows PowerShell 模块。
 
 > [!NOTE]
 > 在文件夹层次结构中的相同级别，文件夹可以包含文件夹目标或其他 DFS 文件夹，但是不能同时包含二者。

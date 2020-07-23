@@ -8,12 +8,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 27a99696f575afa61d3e39aff13fb58cc955936b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cc3e96ff0ea98acbfafef5aba37f4e20a103f029
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818780"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959659"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>步骤 7.4： 将条件性访问根证书部署到本地 AD
 
@@ -34,7 +34,7 @@ ms.locfileid: "80818780"
    >[!NOTE]
    >对于未加入到 Active Directory 域的 VPN 服务器的环境，必须手动将云根证书添加到_受信任的根证书颁发机构_存储区。
 
-   | Command | 说明 |
+   | 命令 | 说明 |
    | --- | --- |
    | `certutil -dspublish -f VpnCert.cer RootCA` | 在 " **cn = AIA** " 和 " **Cn = 证书颁发机构**" 容器下创建两个**Microsoft VPN 根 CA 第1代**容器，并发布每个根证书作为**Microsoft vpn 根 ca 第1代**容器的_cACertificate_属性的值。 |
    | `certutil -dspublish -f VpnCert.cer NTAuthCA` | 在 " **cn = AIA** " 和 " **Cn = 证书颁发机构**" 容器下创建一个**cn = NTAuthCertificates**容器，并将每个根证书发布为**CN = NTAuthCertificates**容器的_cACertificate_属性的值。 |
@@ -56,4 +56,4 @@ ms.locfileid: "80818780"
 
 ## <a name="next-steps"></a>后续步骤
 
-[步骤7.5。创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备](vpn-create-oma-dm-based-vpnv2-profiles.md)：在此步骤中，可以使用 Intune 创建基于 oma 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅[VPNV2 CSP 设置](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)了解更多详细信息。
+[步骤7.5。创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备](vpn-create-oma-dm-based-vpnv2-profiles.md)：在此步骤中，可以使用 Intune 创建基于 oma 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅[VPNV2 CSP 设置](/windows/client-management/mdm/vpnv2-csp)了解更多详细信息。

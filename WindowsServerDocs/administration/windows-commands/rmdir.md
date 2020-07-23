@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 35925ab90fea5f3740a8fd7c6a086ff357feb9ba
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e8edd2bc1a46532dc7542cdf03ca7c076da1dbcc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932898"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956189"
 ---
 # <a name="rmdir"></a>rmdir
 
 删除目录。
 
-**Rmdir**命令也可以使用不同的参数从 Windows 恢复控制台运行。 有关详细信息，请参阅[Windows 恢复环境（WinRE）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+**Rmdir**命令也可以使用不同的参数从 Windows 恢复控制台运行。 有关详细信息，请参阅[Windows 恢复环境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 > [!NOTE]
 > 此命令与[rd 命令](rd.md)相同。

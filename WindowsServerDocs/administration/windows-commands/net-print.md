@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af02ca14156c8a85ee54700983e2af6807752f91
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6ac91d2226e9a5394d6f7ea00ab6f268eb99015b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934818"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956799"
 ---
 # <a name="net-print"></a>net print
 
 > [!IMPORTANT]
-> 此命令已弃用。 但是，可以使用[prnjobs 命令](prnjobs.md)、 [Windows Management Instrumentation （WMI）](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page)、 [PRINTMANAGEMENT.MSC in Powershell](https://docs.microsoft.com/powershell/module/printmanagement)或[面向 IT 专业人员的脚本资源](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)来执行许多相同的任务。
+> 此命令已弃用。 但是，可以使用[prnjobs 命令](prnjobs.md)、 [Windows Management Instrumentation （WMI）](/windows/win32/wmisdk/wmi-start-page)、 [PRINTMANAGEMENT.MSC in Powershell](/powershell/module/printmanagement)或[面向 IT 专业人员的脚本资源](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)来执行许多相同的任务。
 
 显示有关指定打印机队列或指定的打印作业的信息，或控制指定的打印作业。
 
@@ -101,8 +101,8 @@ net print \\Production 263 /release
 
 - [prnjobs 命令](prnjobs.md)
 
-- [Windows 管理规范 (WMI)](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page)
+- [Windows Management Instrumentation (WMI)](/windows/win32/wmisdk/wmi-start-page)
 
-- [Powershell 中的 Printmanagement.msc](https://docs.microsoft.com/powershell/module/printmanagement)
+- [Powershell 中的 Printmanagement.msc](/powershell/module/printmanagement)
 
 - [面向 IT 专业人员的脚本资源](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)

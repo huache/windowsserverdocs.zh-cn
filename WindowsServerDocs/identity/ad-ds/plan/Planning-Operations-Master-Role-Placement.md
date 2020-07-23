@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e6142d3facb32a81d8d7c54afe9c2f60fc9eb674
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ad4e89be7eeb6190d27ee0e15e370bcaa1806cb8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623805"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959369"
 ---
 # <a name="planning-operations-master-role-placement"></a>规划操作主机角色放置
 
@@ -55,9 +55,9 @@ PDC 模拟器处理客户端密码更改。 只有一个域控制器充当林中
 
 如果需要，请将 PDC 仿真器放置在包含大量用户的域中，以便进行密码转发操作。 此外，请确保位置正确连接到其他位置，以最大程度地减少复制延迟。
 
-对于一个工作表，以帮助您记录有关计划放置 PDC 模拟器的位置以及每个位置中每个域的用户数的信息，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip 以及打开域控制器布局（DSSTOPO_4 .doc）。
+要使工作表可以帮助您记录有关计划放置 PDC 模拟器的位置以及每个位置中每个域的用户数的信息，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip 和打开域控制器布局（DSSTOPO_4.doc）。
 
-你需要参考有关在部署区域性域时需要放置 PDC 模拟器的位置的信息。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](https://technet.microsoft.com/library/cc755118.aspx)。
+你需要参考有关在部署区域性域时需要放置 PDC 模拟器的位置的信息。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
 
 ## <a name="requirements-for-infrastructure-master-placement"></a>基础结构主机位置的要求
 
@@ -82,9 +82,9 @@ PDC 模拟器处理客户端密码更改。 只有一个域控制器充当林中
 - 站点 C 和 D 中的域控制器无法添加或删除目录、DNS 或自定义应用程序分区。
 - 站点 C 和 D 中的域控制器无法进行架构更改。
 
-要使工作表帮助你规划操作主机角色放置，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip 并打开域控制器布局（DSSTOPO_4 .doc）。
+要使工作表帮助你规划操作主机角色放置，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开域控制器布局（DSSTOPO_4.doc）。
 
-创建目录林根级域和区域域时，需要引用此信息。 有关部署目录林根级域的详细信息，请参阅部署[部署 Windows Server 2008 林根级域](https://technet.microsoft.com/library/cc731174.aspx)。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](https://technet.microsoft.com/library/cc755118.aspx)。
+创建目录林根级域和区域域时，需要引用此信息。 有关部署目录林根级域的详细信息，请参阅部署[部署 Windows Server 2008 林根级域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
 
 ## <a name="next-steps"></a>后续步骤
 

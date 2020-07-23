@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a61c3d9fd8d708a41347f0bcf46aa627e960153c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b169a2ed759d74042ba7ffb77d4da2c5b9b8c234
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928989"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958549"
 ---
 # <a name="convert-basic"></a>convert basic
 
@@ -24,7 +24,7 @@ ms.locfileid: "85928989"
 > 若要将磁盘转换成基本磁盘，该磁盘必须为空。 转换磁盘之前，请备份数据，然后删除全部分区或卷。
 
 > [!NOTE]
-> 有关如何使用此命令的说明，请参阅[将动态磁盘改回为基本磁盘](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755238(v=ws.11))。
+> 有关如何使用此命令的说明，请参阅[将动态磁盘改回为基本磁盘](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755238(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 

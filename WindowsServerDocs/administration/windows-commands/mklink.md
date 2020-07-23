@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb8339f7dcb2f397d6b90105e2ccd9bdc8cc07a5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 22c364a56c804fd71a4b633294491f6b9b084ca0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928538"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956979"
 ---
 # <a name="mklink"></a>mklink
 
@@ -56,4 +56,4 @@ del \MyFile.file
 
 - [rd 命令](rd.md)
 
-- [Windows PowerShell 中的新项](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)
+- [Windows PowerShell 中的新项](/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)

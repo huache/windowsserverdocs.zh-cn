@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b4addd18629bd54cd9d5fc2df5c660c621e735de
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce991a628b63732f645e859a4855a18eacbacd77
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473784"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953729"
 ---
 # <a name="choose-a-namespace-type"></a>选择命名空间类型
 
@@ -30,7 +30,7 @@ ms.locfileid: "85473784"
 -   你需要在域中创建包含 5,000 多个 DFS 文件夹的单个命名空间，但该命名空间不满足基于域的命名空间（Windows Server 2008 模式）的要求，如本主题后面所述。
 
 > [!NOTE]
-> 若要检查命名空间的大小，请在 DFS 管理控制台树中，右键单击该命名空间，单击**属性**，然后在**命名空间属性**对话框中查看命名空间大小。 有关 DFS 命名空间可伸缩性的详细信息，请参阅 Microsoft 网站[文件服务](https://technet.microsoft.com/library/cc771548.aspx)。
+> 若要检查命名空间的大小，请在 DFS 管理控制台树中，右键单击该命名空间，单击**属性**，然后在**命名空间属性**对话框中查看命名空间大小。 有关 DFS 命名空间可伸缩性的详细信息，请参阅 Microsoft 网站[文件服务](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771548(v=ws.10))。
 
 如果你的环境符合以下条件之一，请选择基于域的命名空间：
 
@@ -73,5 +73,3 @@ ms.locfileid: "85473784"
 
 -   [部署 DFS 命名空间](deploying-dfs-namespaces.md)
 -   [将基于域的命名空间迁移到 Windows Server 2008 模式](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)
-
-

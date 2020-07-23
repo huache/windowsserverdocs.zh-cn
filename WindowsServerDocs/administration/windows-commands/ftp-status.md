@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6488a8292f266a6f0ab979957c2833d30509824f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b70794212c9ec3ccd53063d3a2193701aca53dc3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925675"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957389"
 ---
 # <a name="ftp-status"></a>ftp status
 
@@ -40,4 +40,4 @@ status
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [其他 FTP 指南](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指南](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

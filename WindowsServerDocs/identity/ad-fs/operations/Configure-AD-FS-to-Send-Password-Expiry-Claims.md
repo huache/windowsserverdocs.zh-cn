@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 84014df358726cd3d2d90bb68c18f9a051bc6308
-ms.sourcegitcommit: c857cb5eb487a0050352af86c96bbbacfe66962e
+ms.openlocfilehash: 2fd2e86e43b6d230a2c8b873ce8267a4e68ca4ed
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83865458"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962549"
 ---
 # <a name="configure-ad-fs-to-send-password-expiry-claims"></a>配置 AD FS 以发送密码过期声明
 
@@ -35,4 +35,4 @@ c1:[Type == "http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"]
 > 存在14天的窗口，因此仅当密码在14天内到期时才会填充已发送的声明。
 
 ## <a name="see-also"></a>另请参阅
-[AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)
+[AD FS 操作](../ad-fs-operations.md)

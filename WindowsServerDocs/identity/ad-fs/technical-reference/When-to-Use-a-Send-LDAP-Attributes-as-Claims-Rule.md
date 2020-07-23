@@ -8,30 +8,30 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bc7b98a5d65bf03eb11ed57a8a5f9a0ea696df19
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e10f4c4a6883e26a674cc368b0ae46f0fdb0bce0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853770"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966469"
 ---
 # <a name="when-to-use-a-send-ldap-attributes-as-claims-rule"></a>何时使用“以声明方式发送 LDAP 属性”规则
-当你希望颁发包含实际轻型目录访问 \(协议的传出声明时，Active Directory 联合身份验证服务 \(AD FS\) 中使用此规则，然后将声明类型与每个 LDAP 属性相关联。\) 有关属性存储的详细信息，请参阅[属性存储的角色](The-Role-of-Attribute-Stores.md)。  
+\( \) 如果希望颁发包含属性存储中存在的实际轻型目录访问协议 LDAP 属性值的传出声明， \( \) 然后将声明类型与每个 LDAP 属性相关联，则可以在 Active Directory 联合身份验证服务 AD FS 中使用此规则。 有关属性存储的详细信息，请参阅[属性存储的角色](The-Role-of-Attribute-Stores.md)。  
   
 使用此规则时，会为与规则逻辑匹配的每个指定的 LDAP 属性发出声明，如下表中所述。  
   
 |规则选项|规则逻辑|  
 |---------------|--------------|  
-|LDAP 属性到传出声明类型的映射|如果属性存储等于“指定属性存储”，而 LDAP 属性等于“指定值”，则将 LDAP 属性值映射到“指定传出声明”类型并发出声明。|  
+|LDAP 属性到传出声明类型的映射|如果属性存储等于“指定属性存储”**，而 LDAP 属性等于“指定值”**，则将 LDAP 属性值映射到“指定传出声明”** 类型并发出声明。|  
   
 以下部分提供声明规则的基本简介。 它们还提供有关何时将发送 LDAP 属性用作声明规则的详细信息。  
   
 ## <a name="about-claim-rules"></a>关于声明规则  
-声明规则表示一个业务逻辑实例，该实例将接受传入声明、向其应用条件 \(如果 x then y\) 并基于条件参数生成传出声明。 下面的列表概述了在进一步阅读本主题中的内容之前应了解的有关声明规则的重要提示：  
+声明规则表示将接受传入声明的业务逻辑实例，如果 x 之后为 y，则对其应用条件， \( \) 并基于条件参数生成传出声明。 下面的列表概述了在进一步阅读本主题中的内容之前应了解的有关声明规则的重要提示：  
   
--   在的 AD FS 管理 "管理单元\-中，只能使用声明规则模板创建声明规则  
+-   在 AD FS 管理 "管理单元 \- 中，只能使用声明规则模板创建声明规则  
   
--   声明规则处理来自声明提供程序的传入声明 \(例如 Active Directory 或另一个联合身份验证服务\) 或来自声明提供程序信任上的接受转换规则的输出。  
+-   声明规则直接从声明提供程序 \( （例如 Active Directory 或另一个联合身份验证服务）或在 \) 声明提供方信任的接受转换规则的输出中处理传入声明。  
   
 -   声明规则由声明颁发引擎按给定规则集内的时间顺序处理。 通过为规则设置优先级，可以进一步优化或筛选由给定规则集内以前的规则生成的声明。  
   
@@ -40,14 +40,14 @@ ms.locfileid: "80853770"
 有关声明规则和声明规则集的更多详细信息，请参阅[声明规则的角色](The-Role-of-Claim-Rules.md)。 有关如何处理规则的详细信息，请参阅[声明引擎的角色](The-Role-of-the-Claims-Engine.md)。 有关如何处理声明规则集的详细信息，请参阅[声明管道的角色](The-Role-of-the-Claims-Pipeline.md)。  
   
 ## <a name="mapping-of-ldap-attributes-to-outgoing-claim-types"></a>LDAP 属性到传出声明类型的映射  
-使用 "以声明方式发送 LDAP 属性" 规则模板时，可以从 LDAP 属性存储中选择属性，例如 Active Directory 或 Active Directory 域服务 \(AD DS\) 将其值作为声明发送给信赖方。 这实质上是将特定 LDAP 属性从定义的属性存储映射到一组可用于授权的传出声明。  
+使用 "以声明方式发送 LDAP 属性" 规则模板时，可以从 LDAP 属性存储中选择属性，例如 Active Directory 或 Active Directory 域服务 \( AD DS \) 将其值作为声明发送给信赖方。 这实质上是将特定 LDAP 属性从定义的属性存储映射到一组可用于授权的传出声明。  
   
 通过使用此模板，可以从一个规则添加多个属性（将作为多个声明发送）。 例如，可以使用此规则模板创建一个规则，该规则会从 **company** 和 **department** Active Directory 属性查找经过身份验证的用户的属性值，然后将这些值作为两个不同的传出声明发送。  
   
 你还可以使用此规则发送所有用户的组成员身份。 如果要仅发送单个组成员身份，请使用“以声明方式发送组成员身份”规则模板。 有关详细信息，请参阅 [When to Use a Send Group Membership as a Claim Rule](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md)。  
   
 ## <a name="how-to-create-this-rule"></a>如何创建此规则  
-您可以使用声明规则语言或使用 "AD FS 管理" 管理\-单元中的 "以声明方式发送 LDAP 属性" 规则模板来创建此规则。 此规则模板提供以下配置选项：  
+您可以使用声明规则语言或使用 "AD FS 管理" 管理单元中的 "以声明方式发送 LDAP 属性" 规则模板来创建此规则 \- 。 此规则模板提供以下配置选项：  
   
 -   指定声明规则名称  
   
@@ -55,17 +55,17 @@ ms.locfileid: "80853770"
   
 -   LDAP 属性到传出声明类型的映射  
   
-有关如何创建此规则的详细信息，请参阅[创建将 LDAP 属性作为声明发送的规则](https://technet.microsoft.com/library/dd807115.aspx)。  
+有关如何创建此规则的详细信息，请参阅[创建将 LDAP 属性作为声明发送的规则](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807115(v=ws.11))。  
   
 ## <a name="using-the-claim-rule-language"></a>使用声明规则语言  
-如果对 Active Directory、AD DS 或 Active Directory 轻型目录服务 \(AD LDS\) 的查询必须与**samAccountname**之外的 LDAP 属性进行比较，则必须改用自定义规则。 如果输入集中没有 Windows 帐户名称声明，则还必须使用自定义规则指定要用于查询 AD DS 或 AD LDS 的声明。  
+如果对 Active Directory、AD DS 或 Active Directory 轻型目录服务 AD LDS 的查询 \( \) 必须与**SAMACCOUNTNAME**之外的 LDAP 属性进行比较，则必须改用自定义规则。 如果输入集中没有 Windows 帐户名称声明，则还必须使用自定义规则指定要用于查询 AD DS 或 AD LDS 的声明。  
   
 以下示例旨在帮助你了解一些可以用于使用声明规则语言构造自定义规则以便查询和提取属性存储中的数据的各种方法。  
   
 ### <a name="example-how-to-query-an-adlds-attribute-store-and-return-a-specified-value"></a>示例：如何查询 AD LDS 属性存储和返回指定值  
 参数必须用分号分隔。 第一个参数是 LDAP 筛选器。 后续参数是要对任何匹配对象返回的属性。  
   
-下面的示例演示如何按**sAMAccountName**属性查找用户，并使用用户的 mail 属性值发出电子\-邮件地址声明：  
+下面的示例演示如何按**sAMAccountName**属性查找用户，并 \- 使用用户的 mail 属性值发出电子邮件地址声明：  
   
 ```  
 c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]  
@@ -88,7 +88,7 @@ c1:[Type == " http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress
 ```  
   
 ### <a name="example-how-to-query-an-activedirectory-attribute-store-and-return-a-specified-value"></a>示例：如何查询 Active Directory 属性存储和返回指定值  
-Active Directory 查询必须包含域名 \(，其域名\) 为最后一个参数，以便 Active Directory 属性存储可以查询正确的域。 另外，支持相同的语法。  
+Active Directory 查询必须包含 \( 域名 \) 作为最后一个参数，以便 Active Directory 属性存储可以查询正确的域。 另外，支持相同的语法。  
   
 以下示例演示如何按 **sAMAccountName** 属性在其域中查找用户，然后返回 **mail** 属性：  
   
@@ -114,16 +114,16 @@ c:[Type == "http://test/name"]
   
 上面的查询由以下三个部分组成：  
   
--   LDAP 筛选器 — 可指定查询的此部分以检索要对其查询属性的对象。 有关有效 LDAP 查询的常规信息，请参阅 RFC 2254。 当你在查询 Active Directory 属性存储并且未指定 LDAP 筛选器时，将假定 samAccountName\={0} 查询，Active Directory 属性存储需要一个可为 {0}的值提供源的参数。 否则，查询会导致错误。 对于 Active Directory 之外的 LDAP 属性存储，不能省略查询的 LDAP 筛选器部分，否则查询会导致错误。  
+-   LDAP 筛选器 — 可指定查询的此部分以检索要对其查询属性的对象。 有关有效 LDAP 查询的常规信息，请参阅 RFC 2254。 当您在查询 Active Directory 属性存储并且未指定 LDAP 筛选器时，将 \= {0} 假定为 samAccountName 查询，而 Active Directory 属性存储需要一个可以为其提供值的参数 {0} 。 否则，查询会导致错误。 对于 Active Directory 之外的 LDAP 属性存储，不能省略查询的 LDAP 筛选器部分，否则查询会导致错误。  
   
--   属性规范—在查询的此第二部分中，如果使用多个属性值\) 需要超出筛选对象的属性值，则指定\-以逗号分隔的属性 \(。 指定的属性数必须与在查询中定义的声明类型数匹配。  
+-   属性规范—在查询的此第二部分中， \( \- 如果您使用的多个属性值都 \) 需要使用筛选对象，则可以指定以逗号分隔的属性。 指定的属性数必须与在查询中定义的声明类型数匹配。  
   
--   Active Directory 域 — 仅当属性存储为 Active Directory 时才指定查询的最后一部分。 \(查询其他属性存储时不需要此方法。\) 此部分查询用于以 domain\\name 形式指定用户帐户。 Active Directory 属性存储使用域部分来确定要连接到的相应域控制器并运行查询和请求属性。  
+-   Active Directory 域 — 仅当属性存储为 Active Directory 时才指定查询的最后一部分。 \(查询其他属性存储时不需要此方法。 \)查询的此部分用来用域名称指定用户帐户 \\ 。 Active Directory 属性存储使用域部分来确定要连接到的相应域控制器并运行查询和请求属性。  
   
-### <a name="example-how-to-use-two-custom-rules-to-extract-the-manager-e-mail-from-an-attribute-in-activedirectory"></a>示例：如何使用两个自定义规则从 Active Directory 中的属性提取管理器 e\-邮件  
-以下两个自定义规则在一起按下面所示的顺序一起使用时，查询 Active Directory \(规则 1\) 的用户帐户的**manager**属性，然后使用该属性查询经理的用户帐户以查看**邮件**属性 \(规则 2\)。 最后， **mail**属性作为 "ManagerEmail" 声明发出。 在 "摘要" 中，规则1查询 Active Directory 并将查询的结果传递给规则2，后者随后提取经理 e\-邮件值。  
+### <a name="example-how-to-use-two-custom-rules-to-extract-the-manager-e-mail-from-an-attribute-in-activedirectory"></a>示例：如何使用两个自定义规则 \- 从 Active Directory 中的属性提取经理电子邮件  
+以下两个自定义规则在按如下所示的顺序一起使用时，查询 Active Directory "用户帐户规则 1" 的 " **manager** " 属性， \( \) 然后使用该属性查询**邮件**属性规则2的经理的用户帐户 \( \) 。 最后， **mail**属性作为 "ManagerEmail" 声明发出。 总之，规则1查询 Active Directory 并将查询的结果传递给规则2，后者随后提取经理电子 \- 邮件值。  
   
-例如，当这些规则完成运行时，将发出一个声明，其中包含 corp.fabrikam.com 域中的用户的经理\-电子邮件地址。  
+例如，当这些规则完成运行时，将发出一个声明，其中包含 \- corp.fabrikam.com 域中的用户的经理电子邮件地址。  
   
 **规则1**  
   
@@ -144,9 +144,8 @@ param = regexreplace(c1.Value, ".*DC=(?<domain>.+),DC=corp,DC=fabrikam,DC=com", 
 ```  
   
 > [!NOTE]  
-> 仅当用户的经理与此示例中的用户在同一域中 \(corp.fabrikam.com 时，这些规则才有效\)。  
+> 仅当用户的经理与此示例中的用户在同一个域中 corp.fabrikam.com 时，这些规则才有效 \( \) 。  
   
 ## <a name="additional-references"></a>其他参考  
-[创建规则以将 LDAP 属性作为声明发送](https://technet.microsoft.com/library/dd807115.aspx)  
+[创建规则以将 LDAP 属性作为声明发送](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807115(v=ws.11))  
   
-

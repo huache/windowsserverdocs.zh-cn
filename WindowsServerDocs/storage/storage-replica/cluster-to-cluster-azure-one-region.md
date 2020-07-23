@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 00dbf709139ef245b94a3f083ab83a12503131c2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ad806577c1daa46ba77895b6a422c6fdace23c98
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856290"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966809"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>在 Azure 中的同一区域内群集到群集存储副本
 
-> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 可以在 Azure 中的同一区域内将群集配置为群集存储复制。 在下面的示例中，我们使用双节点群集，但群集到群集的存储副本并不局限于双节点群集。 下图是一个双节点存储空间直通群集，可以彼此通信、位于同一个域中以及位于同一区域中。
 
@@ -75,13 +75,13 @@ ms.locfileid: "80856290"
 11. 为每个群集创建内部标准 SKU[负载均衡器](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM)（**azlbr1**，**azlbr2**）。 
    
     提供群集 IP 地址作为负载均衡器的静态专用 IP 地址。
-    - azlbr1 = > 前端 IP：10.3.0.100 （从虚拟网络（**az2az**）子网中获取未使用的 IP 地址）
+    - azlbr1 => 前端 IP：10.3.0.100 （从虚拟网络（**az2az**）子网中获取未使用的 IP 地址）
     - 为每个负载均衡器创建后端池。 添加关联的群集节点。
     - 创建运行状况探测：端口59999
     - 创建负载均衡规则：允许 HA 端口，启用了浮动 IP。 
    
     提供群集 IP 地址作为负载均衡器的静态专用 IP 地址。
-    - azlbr2 = > 前端 IP：10.3.0.101 （从虚拟网络（**az2az**）子网中获取未使用的 IP 地址）
+    - azlbr2 => 前端 IP：10.3.0.101 （从虚拟网络（**az2az**）子网中获取未使用的 IP 地址）
     - 为每个负载均衡器创建后端池。 添加关联的群集节点。
     - 创建运行状况探测：端口59999
     - 创建负载均衡规则：允许 HA 端口，启用了浮动 IP。 
@@ -95,7 +95,7 @@ ms.locfileid: "80856290"
 13. 指示群集侦听端口59999上的运行状况探测消息，并从当前拥有此资源的节点响应。 
     对于每个群集，从群集的任何一个节点运行一次。 
     
-    在我们的示例中，请确保根据你的配置值更改 "ILBIP"。 从任何一个节点**az2az1**/**az2az2**运行以下命令：
+    在我们的示例中，请确保根据你的配置值更改 "ILBIP"。 从任何一个节点**az2az1** / **az2az2**运行以下命令：
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -105,7 +105,7 @@ ms.locfileid: "80856290"
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
-14. 从任何一个节点**az2az3**/**az2az4**运行以下命令。 
+14. 从任何一个节点**az2az3** / **az2az4**运行以下命令。 
 
     ```PowerShell
     $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -132,13 +132,13 @@ ms.locfileid: "80856290"
 
 16. 请先运行[群集验证测试](../../failover-clustering/create-failover-cluster.md#validate-the-configuration)，然后再继续下一步。
 
-17. 启动 Windows PowerShell，并使用 [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) cmdlet 确定是否满足所有存储副本要求。 可以在仅要求模式下使用 cmdlet 进行快速测试，还可以使用长时间运行的性能评估模式。
+17. 启动 Windows PowerShell，并使用 [Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) cmdlet 确定是否满足所有存储副本要求。 可以在仅要求模式下使用 cmdlet 进行快速测试，还可以使用长时间运行的性能评估模式。
 
 18. 配置群集到群集存储副本。
    
     双向向另一个群集授予访问权限：
 
-    在本示例中：
+    在示例中：
 
     ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2
