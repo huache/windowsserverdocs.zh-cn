@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64bfd5ceed29bff5d9ae39e03a99aba2f7a2f39e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2f31e5b0ee1252bf015c964fa76dd2852df3515b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936383"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956119"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -30,7 +30,7 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |/i|显示 "**远程关机" 对话框**。 **/I**选项必须是命令后面的第一个参数。 如果指定为 **/i** ，则忽略所有其他选项。|
 |/l|立即注销当前用户，没有超时期限。 不能将 **/l**与 **/m**或 **/t**一起使用。|
@@ -50,9 +50,9 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 ## <a name="remarks"></a>备注
 
 -   必须为用户分配 "**关闭系统**用户" 权限，以便关闭使用**shutdown**命令的本地或远程管理的计算机。
--   用户必须是 Administrators 组的成员，才能批注本地或远程管理的计算机意外关闭。 如果目标计算机已加入域，则 Domain Admins 组的成员也许能够执行此过程。 有关详情，请参阅：
-    -   [默认本地组](https://technet.microsoft.com/library/cc785098(v=ws.10).aspx)
-    -   [默认组](https://technet.microsoft.com/library/cc756898(v=ws.10).aspx)
+-   用户必须是 Administrators 组的成员，才能批注本地或远程管理的计算机意外关闭。 如果目标计算机已加入域，则 Domain Admins 组的成员也许能够执行此过程。 有关详细信息，请参见:
+    -   [默认本地组](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
+    -   [默认组](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
 -   如果希望一次关闭多台计算机，则可以使用脚本为每台计算机调用 "**关闭**"，也可以使用**shutdown** **/I**来显示 "远程关机" 对话框。
 -   如果指定主要和次要原因代码，则必须先在计划使用原因的每台计算机上定义这些原因代码。 如果目标计算机上未定义原因代码，则关闭事件跟踪程序无法记录正确的原因文本。
 -   请记住，使用**p：** 参数指示关闭已计划。 省略**p：** 指示关闭是不计划的。 如果键入**p：** ，后跟计划外关机的原因代码，则该命令不会执行关闭。 相反，如果省略**p：** 并键入计划关闭的原因代码，则该命令不会执行关闭。

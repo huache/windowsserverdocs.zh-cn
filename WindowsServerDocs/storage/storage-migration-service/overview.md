@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 6ec1093a77b036cada9e54c82234d653362ce4d3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1403e0ecd12c4c15924781d75bd9127874018451
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930105"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953889"
 ---
 # <a name="storage-migration-service-overview"></a>存储迁移服务概述
 
@@ -58,7 +58,7 @@ ms.locfileid: "85930105"
 - 要从其迁移文件和数据的**源服务器**或**故障转移群集**
 - 运行 Windows Server 2019 （群集或独立版）以迁移到的**目标服务器**。 Windows Server 2016 和 Windows Server 2012 R2 也工作正常，但速度低于50%
 - 运行 Windows Server 2019 以管理迁移的**orchestrator 服务器**  <br>如果要仅迁移几个服务器，并且其中一个服务器正在运行 Windows Server 2019，则可以将其用作 orchestrator。 如果要迁移多个服务器，我们建议使用单独的 orchestrator 服务器。
-- **运行[Windows 管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)的 PC 或服务器**运行存储迁移服务用户界面，除非您更愿意使用 PowerShell 来管理迁移。 Windows 管理中心和 Windows Server 2019 版本必须至少为版本1809。
+- **运行[Windows 管理中心](../../manage/windows-admin-center/overview.md)的 PC 或服务器**运行存储迁移服务用户界面，除非您更愿意使用 PowerShell 来管理迁移。 Windows 管理中心和 Windows Server 2019 版本必须至少为版本1809。
 
 强烈建议 orchestrator 和 destination 计算机至少有两个核心或两个个 vcpu，至少有 2 GB 的内存。 对于更多的处理器和内存，清单和传输操作的速度要快得多。
 
@@ -84,7 +84,7 @@ ms.locfileid: "85930105"
 源服务器必须运行以下操作系统之一：
 
 - Windows Server 半年频道
-- Windows Server Standard 2012 R2
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
@@ -123,7 +123,7 @@ ms.locfileid: "85930105"
 目标服务器必须运行以下操作系统之一：
 
 - Windows Server 半年频道
-- Windows Server Standard 2012 R2
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 

@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 934dbc181131d395ea4fdeb79c5f32121746b5e8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a6ee550a0652f5b357a966e4074afdf499fcea34
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475294"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953909"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -384,7 +384,7 @@ DFSR 调试日志：
 
 完成传输后，运行相同数据的后续重新传输后，即使源服务器上存在很少的数据发生更改，传输时间也不会显著提高。
 
-当传输大量文件和嵌套文件夹时，这是预期的行为。 数据的大小不相关。 首先，我们在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)中改进了此行为，并继续优化传输性能。 若要进一步调整性能，请查看[优化清单和传输性能](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
+当传输大量文件和嵌套文件夹时，这是预期的行为。 数据的大小不相关。 首先，我们在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)中改进了此行为，并继续优化传输性能。 若要进一步调整性能，请查看[优化清单和传输性能](./faq.md#optimizing-inventory-and-transfer-performance)。
 
 ## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>数据不会传输，用户在迁移到域控制器或从域控制器中进行重命名
 
