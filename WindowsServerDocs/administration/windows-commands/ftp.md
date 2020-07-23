@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e78148e1e7dc4f402d80bb4ebfbcbdac52249407
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 01d597bf4520fc41fa31f90c643c852ec9f77b2f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925618"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957289"
 ---
 # <a name="ftp"></a>ftp
 
@@ -75,8 +75,8 @@ ftp -s:resync.txt ftp.example.microsoft.com
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [其他 FTP 指南](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指南](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
 
-- [IP 版本6](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738636(v=ws.10))
+- [IP 版本6](/previous-versions/windows/it-pro/windows-server-2003/cc738636(v=ws.10))
 
-- [IPv6 应用程序](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782509(v=ws.10))
+- [IPv6 应用程序](/previous-versions/windows/it-pro/windows-server-2003/cc782509(v=ws.10))

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: fec0ffbd7f2ce5d1efe1953cb4ab283d33f06ec8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ec7f8c29f71389a6b583fda805c32ddf872321b4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935732"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956949"
 ---
 # <a name="more"></a>更多
 
@@ -53,7 +53,7 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
     | --- | ------ |
     | 空格键 | 按**空格键**显示下一屏幕。 |
     | Enter | 按**enter**键，一次显示一行文件。 |
-    | f | 按**F**显示命令行上列出的下一个文件。 |
+    | F | 按**F**显示命令行上列出的下一个文件。 |
     | q | 按**Q**退出**更多**命令。 |
     | = | 显示行号。 |
     | h-p`<n>` | 按**P** *显示下一行*。 |
@@ -110,4 +110,4 @@ more s
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [Windows 恢复环境（WinRE）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+- [Windows 恢复环境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)

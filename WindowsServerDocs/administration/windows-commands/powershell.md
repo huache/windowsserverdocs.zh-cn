@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 8a252efe57cec1e77bd4d814ced75decb1f2ceb7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 765504ef9e21aedc367c55629a96501d8e8bd810
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931370"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956579"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -56,16 +56,16 @@ Windows PowerShell 是一种基于任务的命令行 shell 和脚本语言，专
 
 ### <a name="remarks"></a>备注
 
-- 有关**PowerShell.exe**命令行参数的完整列表，请参阅[about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)。
+- 有关**PowerShell.exe**命令行参数的完整列表，请参阅[about_PowerShell.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe)。
 
-- 有关启动 Windows PowerShell 的其他方法的信息，请参阅[启动 Windows powershell](https://docs.microsoft.com/powershell/scripting/windows-powershell/starting-windows-powershell)。
+- 有关启动 Windows PowerShell 的其他方法的信息，请参阅[启动 Windows powershell](/powershell/scripting/windows-powershell/starting-windows-powershell)。
 
-- Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，需要图形用户界面的功能（如[Windows PowerShell 集成脚本环境（ISE）](https://docs.microsoft.com/previous-versions//hh849182(v=technet.10))和[Out](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)和[Show-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command) Cmdlet）不会在服务器核心安装上运行。
+- Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，需要图形用户界面的功能（如[Windows PowerShell 集成脚本环境（ISE）](/previous-versions//hh849182(v=technet.10))和[Out](/powershell/module/microsoft.powershell.utility/out-gridview)和[Show-Command](/powershell/module/microsoft.powershell.utility/show-command) Cmdlet）不会在服务器核心安装上运行。
 
 ## <a name="additional-references"></a>其他参考
 
-- [about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
+- [about_PowerShell.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
 
-- [about_PowerShell_Ise.exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)
+- [about_PowerShell_Ise.exe](/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)
 
-- [Windows PowerShell](https://docs.microsoft.com/powershell/)
+- [Windows PowerShell](/powershell/)
