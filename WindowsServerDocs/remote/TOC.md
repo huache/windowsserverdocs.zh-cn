@@ -201,9 +201,9 @@
 
 ### [虚拟专用网 (VPN)](remote-access/vpn/vpn-top.md)
 #### [Windows 10 中的 VPN 设备隧道](remote-access/vpn/vpn-device-tunnel-config.md)
-#### [Windows 10 VPN 技术指南](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-guide)
-#### [如何通过 IKEv2 VPN 连接配置 Diffie Hellman 协议](https://docs.microsoft.com/windows/security/identity-protection/vpn/how-to-configure-diffie-hellman-protocol-over-ikev2-vpn-connections)
-#### [如何通过 VPN 和 Wi-Fi 连接使用单一登录 (SSO)](https://docs.microsoft.com/windows/security/identity-protection/vpn/how-to-use-single-sign-on-sso-over-vpn-and-wi-fi-connections)
+#### [Windows 10 VPN 技术指南](/windows/security/identity-protection/vpn/vpn-guide)
+#### [如何通过 IKEv2 VPN 连接配置 Diffie Hellman 协议](/windows/security/identity-protection/vpn/how-to-configure-diffie-hellman-protocol-over-ikev2-vpn-connections)
+#### [如何通过 VPN 和 Wi-Fi 连接使用单一登录 (SSO)](/windows/security/identity-protection/vpn/how-to-use-single-sign-on-sso-over-vpn-and-wi-fi-connections)
 
 
 #### [DirectAccess](remote-access/directaccess/directAccess.md)
@@ -286,4 +286,3 @@
 ### [使用 AD FS 预身份验证发布应用程序](remote-access//web-application-proxy/Publishing-Applications-using-AD-FS-Preauthentication.md)
 ### [使用 SharePoint、Exchange 和 RDG 发布应用程序](remote-access//web-application-proxy/Publishing-Applications-with-SharePoint,-Exchange-and-RDG.md)
 ### [Web 应用程序代理疑难解答](remote-access//web-application-proxy/Troubleshooting-Web-Application-Proxy.md)
-

@@ -275,7 +275,7 @@
 #### [在 Azure 中部署 AD FS](ad-fs/deployment/how-to-connect-fed-azure-adfs.md)
 #### [Azure 中使用 Azure 流量管理器的 AD FS](ad-fs/deployment/active-directory-adfs-in-azure-with-azure-traffic-manager.md)  
 #### [使用 SQL 数据库升级到 Windows Server 2016 中的 AD FS](ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server-SQL.md)
-#### [部署 Azure AD Connect Health 监视云中的本地标识基础结构](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
+#### [部署 Azure AD Connect Health 监视云中的本地标识基础结构](/azure/active-directory/hybrid/whatis-hybrid-identity)
 
 
 #### [Windows Server 2016 和 2012 R2 AD FS 部署指南](ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
@@ -330,8 +330,8 @@
 ##### [部署联合服务器代理](ad-fs/deployment/Deploying-Federation-Server-Proxies.md)
 ###### [清单：设置联合服务器代理](ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)
 ###### [将计算机加入域](ad-fs/deployment/Join-a-computer-to-a-Domain.md)
-###### [在仅为外围网络提供服务的 DNS 区域中为联合服务器代理配置名称解析](ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Only-the-Perimeter-Network.md)
-###### [在为外围网络和 Internet 客户端提供服务的 DNS 区域中为联合服务器代理配置名称解析](ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Both-the-Perimeter-Network-and-Internet-Clients.md)
+###### [在仅为外围网络提供服务的 DNS 区域中为联合服务器代理配置名称解析](./ad-fs/deployment/configure-name-resolution-for-federation-server-proxy-in-dns-zone-serving-only-perimeter-network.md)
+###### [在为外围网络和 Internet 客户端提供服务的 DNS 区域中为联合服务器代理配置名称解析](./ad-fs/deployment/configure-name-resolution-for-federation-server-proxy-in-dns-zone-serving-only-perimeter-network.md)
 ###### [导出服务器身份验证证书的私钥部分](ad-fs/deployment/Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md)
 ###### [将服务器身份验证证书导入到默认网站](ad-fs/deployment/import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)
 ###### [安装联合身份验证服务代理角色服务](ad-fs/deployment/Install-the-Federation-Service-Proxy-Role-Service.md)
@@ -345,7 +345,7 @@
 ###### [手动创建信赖方信任](ad-fs/operations/create-a-Relying-Party-Trust.md)
 ###### [手动创建声明提供方信任](ad-fs/operations/create-a-Claims-Provider-Trust.md)
 ###### [创建规则以发送 AD FS 1.x 兼容声明](ad-fs/operations/create-a-Rule-to-Send-an-AD-FS-1x-compatible-Claim.md)
-#### [部署 Azure AD Connect Health](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health/)
+#### [部署 Azure AD Connect Health](/azure/active-directory/hybrid/whatis-hybrid-identity)
 #### [将 Active Directory 联合身份验证服务角色服务迁移到 Windows Server 2012 R2](ad-fs/deployment/migrate-ad-fs-service-role-to-windows-server-r2.md)
 ##### [准备迁移 AD FS 联合服务](ad-fs/deployment/prepare-migrate-ad-fs-server-r2.md)
 #####[迁移 AD FS 联合服务器](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
