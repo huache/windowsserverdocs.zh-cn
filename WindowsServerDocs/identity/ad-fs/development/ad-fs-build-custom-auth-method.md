@@ -8,20 +8,20 @@ ms.date: 05/23/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 53bbc2bd30f7ede3fc9e4f3580a96514068a7d5f
-ms.sourcegitcommit: d669d4af166b9018bcf18dc79cb621a5fee80042
+ms.openlocfilehash: cde04573b9317a3e597ada3a87042d77e2336255
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82037156"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964499"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>为 Windows Server 中的 AD FS 构建自定义身份验证方法
 
-本演练说明如何为 Windows Server 2012 R2 中的 AD FS 实现自定义身份验证方法。 有关详细信息，请参阅[附加身份验证方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))。
+本演练说明如何为 Windows Server 2012 R2 中的 AD FS 实现自定义身份验证方法。 有关详细信息，请参阅[附加身份验证方法](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))。
 
 
 > [!WARNING]
-> 你可以在此处生成的示例仅&nbsp;供教育之用。 &nbsp;这些说明适用于公开模型所需元素的最简单的最小实现。&nbsp;没有身份验证后端、错误处理或配置数据。 
+> 你可以在此处生成的示例 &nbsp; 仅供教育之用。 &nbsp;这些说明适用于公开模型所需元素的最简单的最小实现。 &nbsp;没有身份验证后端、错误处理或配置数据。 
 > <P></P>
 
 
@@ -41,10 +41,10 @@ ms.locfileid: "82037156"
 <tr class="odd">
 <td><p><strong>引用 dll</strong></p></td>
 <td><p><strong>查找位置</strong></p></td>
-<td><p><strong>需要具备</strong></p></td>
+<td><p><strong>要求</strong></p></td>
 </tr>
 <tr class="even">
-<td><p>IdentityServer。</p></td>
+<td><p>Microsoft.IdentityServer.Web.dll</p></td>
 <td><p>该 dll 位于安装了 AD FS 的 Windows Server 2012 R2 服务器上的%windir%\ADFS 中。</p>
 <p></p>
 <p>必须将此 dll 复制到开发计算机，并在该项目中创建一个显式引用。</p></td>
@@ -56,17 +56,17 @@ ms.locfileid: "82037156"
 
 ## <a name="create-the-provider"></a>创建提供程序
 
-1.  在 Visual Studio 2012 中：选择 "\>文件"\>-"新建-项目 ..."
+1.  在 Visual Studio 2012 中：选择 "文件"-" \> 新建- \> 项目 ..."
 
 2.  选择 "类库"，并确保以 .NET 4.5 为目标。
 
     ![创建提供程序](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "创建提供程序")
 
-3.  在 Windows Server 2012 **Microsoft.IdentityServer.Web.dll** R2 服务器上的% windir%\\ADFS 中创建 IdentityServer 的副本，其中已安装 AD FS，并将其粘贴到你的开发计算机上的项目文件夹中。
+3.  从安装了 AD FS **Microsoft.IdentityServer.Web.dll**的 \\ Windows server 2012 R2 服务器上的% windir% ADFS 复制Microsoft.IdentityServer.Web.dll，并将其粘贴到你的开发计算机上的项目文件夹中。
 
 4.  在**解决方案资源管理器**中，右键单击 "**引用**"，然后单击 "**添加引用 ...** "
 
-5.  浏览到**IdentityServer**的本地副本，然后**添加 ...**
+5.  浏览到**Microsoft.IdentityServer.Web.dll**的本地副本，然后**添加 ...**
 
 6.  单击 **"确定"** 以确认新的引用：
 
@@ -277,7 +277,7 @@ ms.locfileid: "82037156"
 
    你可以一分钟修复此问题，但首先，让我们根据新实现的类型将最后的必需 return 语句添加到初始 MyAdapter 类。  若要执行此操作，请在现有的 IAuthenticationAdapter 实现中将下面的*斜体*项添加到现有的实现：
 
-       类 MyAdapter： IAuthenticationAdapter {public IAuthenticationAdapterMetadata Metadata {//get {return new <instance of IAuthenticationAdapterMetadata derived class>;}    get {return new MyMetadata （）;}    }
+       类 MyAdapter： IAuthenticationAdapter {public IAuthenticationAdapterMetadata Metadata {//get {return new <instance of IAuthenticationAdapterMetadata derived class> ;}    get {return new MyMetadata （）;}    }
 
         public IAdapterPresentation BeginAuthentication(Claim identityClaim, HttpListenerRequest request, IAuthenticationContext authContext)
         {
@@ -341,7 +341,7 @@ ms.locfileid: "82037156"
         //]]>
         </script></div>
 
-14. 然后，选择 "**项目\>-添加组件 ..."资源**文件并将文件命名为**资源**，然后单击 "**添加"：**
+14. 然后，选择 "**项目- \> 添加组件 ..."资源**文件并将文件命名为**资源**，然后单击 "**添加"：**
 
    ![创建提供程序](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "创建提供程序")
 
@@ -359,7 +359,7 @@ ms.locfileid: "82037156"
 
 1.  在解决方案资源管理器中右键单击项目名称，然后单击 "**属性**"。
 
-2.  在 "**签名**" 选项卡上，选中 **"为程序集签名"** ，然后选择** \<"新建 ..."\> **在 "**选择强名称密钥文件**" 下，输入密钥文件名和密码，然后单击 **"确定"**。  然后确保选中 **"为程序集签名"** ，并取消选中 "**延迟签名**"。  "属性**签名**" 页应如下所示：
+2.  在 "**签名**" 选项卡上，选中 "为**程序集签名"** 并 **\<New...\>** 在 "**选择强名称密钥文件**" 下选择：输入密钥文件名和密码，然后单击 **"确定"**。  然后确保选中 **"为程序集签名"** ，并取消选中 "**延迟签名**"。  "属性**签名**" 页应如下所示：
 
     ![生成提供程序](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "生成提供程序")
 
@@ -377,17 +377,17 @@ ms.locfileid: "82037156"
 
 2.  安装 AD FS 角色服务，并使用至少一个节点配置场。
 
-    有关在实验室环境中设置联合服务器的详细步骤，请参阅[Windows server 2012 R2 AD FS 部署指南](https://msdn.microsoft.com/library/dn486820\(v=msdn.10\))。
+    有关在实验室环境中设置联合服务器的详细步骤，请参阅[Windows server 2012 R2 AD FS 部署指南](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))。
 
 3.  将 Gacutil.exe 工具复制到服务器。
 
-    Gacutil.exe 可以在 windows 8 计算机上**的% homedrive\\% Program Files （x86\\） Microsoft\\sdk\\Windows v2.0 a\\bin\\NETFX 4.0 工具\\ **中找到。  你将需要**gacutil.exe**文件本身以及**1033**、 **en-us**和**NETFX 4.0 工具**位置下面的其他本地化资源文件夹。
+    可在 **% homedrive% Program Files （x86）中找到 Gacutil.exe windows 8 计算机上的 \\ \\ \\ \\ \\ bin \\ NETFX 4.0 工具 \\ ** 。  你将需要**gacutil.exe**文件本身以及**1033**、 **en-us**和其他本地化资源文件夹（位于**NETFX 4.0 工具**位置下）。
 
 4.  将提供程序文件（一个或多个强名称签名 .dll 文件）复制到与**gacutil.exe**相同的文件夹位置（该位置只是为了方便）
 
 5.  将 .dll 文件添加到场中每个 AD FS 联合服务器上的 GAC 中：
 
-    示例：使用命令行工具 Gacutil.exe 将 dll 添加到 GAC：`C:\>.\gacutil.exe /if .\<yourdllname>.dll`
+    示例：使用命令行工具 GACutil.exe 向 GAC 添加 dll：`C:\>.\gacutil.exe /if .\<yourdllname>.dll`
 
     查看 GAC 中的生成条目：`C:\>.\gacutil.exe /l <yourassemblyname>`
 
@@ -418,7 +418,7 @@ ms.locfileid: "82037156"
 
     如果在 AD FS 环境中启用了设备注册服务，则还需执行以下操作：`PS C:\>net start drs`
 
-    若要验证注册的提供程序，请使用以下`PS C:\>Get-AdfsAuthenticationProvider`命令：。
+    若要验证注册的提供程序，请使用以下命令： `PS C:\>Get-AdfsAuthenticationProvider` 。
 
     这会将提供程序显示为系统中的某个提供程序。
 
@@ -432,15 +432,15 @@ ms.locfileid: "82037156"
 
 3.  在中心窗格中的 "**多重身份验证**" 下，单击 "**全局设置**" 右侧的 "**编辑**" 链接。
 
-4.  在页面底部的 "**选择其他身份验证方法**" 下，选中提供商的 AdminName 的复选框。 单击“应用”  。
+4.  在页面底部的 "**选择其他身份验证方法**" 下，选中提供商的 AdminName 的复选框。 单击“应用”。
 
-5.  若要提供 "触发器" 来使用适配器调用 MFA，请在 "**位置**" 下检查**Extranet**和**Intranet**，例如。 单击“确定”。  （若要配置每个信赖方的触发器，请参阅下面的 "使用 Windows PowerShell 创建身份验证策略"。）
+5.  若要提供 "触发器" 来使用适配器调用 MFA，请在 "**位置**" 下检查**Extranet**和**Intranet**，例如。 单击“确定”  。 （若要配置每个信赖方的触发器，请参阅下面的 "使用 Windows PowerShell 创建身份验证策略"。）
 
 6.  使用以下命令检查结果：
 
-    第一`Get-AdfsGlobalAuthenticationPolicy`次使用。 你应看到提供程序名称为 AdditionalAuthenticationProvider 值之一。
+    第一次使用 `Get-AdfsGlobalAuthenticationPolicy` 。 你应看到提供程序名称为 AdditionalAuthenticationProvider 值之一。
 
-    然后使用`Get-AdfsAdditionalAuthenticationRule`。 你应看到配置为 "管理员" UI 中策略选择后的 Extranet 和 Intranet 的规则。
+    然后使用 `Get-AdfsAdditionalAuthenticationRule` 。 你应看到配置为 "管理员" UI 中策略选择后的 Extranet 和 Intranet 的规则。
 
 #### <a name="create-the-authentication-policy-using-windows-powershell"></a>使用 Windows PowerShell 创建身份验证策略
 
@@ -477,9 +477,9 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
         1.  或者只需单击**多因素策略**UI 中的 "**主要**" 选项卡即可。
 
-2.  确保为 Extranet 和 Intranet 身份验证方法都同时检查**Forms 身份验证**。  单击“确定”。 
+2.  确保为 Extranet 和 Intranet 身份验证方法都同时检查**Forms 身份验证**。  单击“确定”  。
 
-3.  打开 "IDP 发起的登录" html 页（https://\<fsname\>/adfs/ls/idpinitiatedsignon.htm），并以有效的 AD 用户身份登录到测试环境中。
+3.  打开 "IDP 发起的登录" html 页（https:// \<fsname\> /adfs/ls/idpinitiatedsignon.htm），并在测试环境中以有效 AD 用户身份登录。
 
 4.  输入用于主要身份验证的凭据。
 
@@ -607,9 +607,9 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 3.  在 "**多重身份验证**" 下，单击 "**全局设置**" 右侧的 "**编辑**" 链接。
 
-4.  在 "**选择其他身份验证方法**" 下，选中提供程序的 AdminName 的复选框。 单击“应用”  。
+4.  在 "**选择其他身份验证方法**" 下，选中提供程序的 AdminName 的复选框。 单击“应用”。
 
-5.  若要提供 "触发器" 来使用适配器调用 MFA，请在 "位置" 下检查**Extranet**和**Intranet**，例如。 单击“确定”。 
+5.  若要提供 "触发器" 来使用适配器调用 MFA，请在 "位置" 下检查**Extranet**和**Intranet**，例如。 单击“确定”  。
 
 ### <a name="authenticate-with-mfa-using-your-adapter"></a>使用适配器通过 MFA 进行身份验证
 
@@ -621,9 +621,9 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
         1.  或者只需单击多因素策略 UI 中的 "**主要**" 选项卡即可。
 
-2.  确保为**Extranet**和**Intranet**身份验证方法都同时检查**Forms 身份验证**。  单击“确定”。 
+2.  确保为**Extranet**和**Intranet**身份验证方法都同时检查**Forms 身份验证**。  单击“确定”  。
 
-3.  打开 "IDP 发起的登录" html 页（https://\<fsname\>/adfs/ls/idpinitiatedsignon.htm），并以有效的 AD 用户身份登录到测试环境中。
+3.  打开 "IDP 发起的登录" html 页（https:// \<fsname\> /adfs/ls/idpinitiatedsignon.htm），并在测试环境中以有效 AD 用户身份登录。
 
 4.  输入用于主要身份验证的凭据。
 
@@ -641,6 +641,5 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 #### <a name="other-resources"></a>其他资源
 
-[其他身份验证方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))  
-[使用适用于敏感应用程序的附加多重身份验证管理风险](https://msdn.microsoft.com/library/dn280949\(v=msdn.10\))
-
+[其他身份验证方法](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))  
+[使用适用于敏感应用程序的附加多重身份验证管理风险](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))

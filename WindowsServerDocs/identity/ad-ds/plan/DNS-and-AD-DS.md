@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 817c6ca168e33df1a0c59e151a303c4259313743
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 2afc6f87a321625ae693d1a49c56f260a7d8c305
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624295"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962239"
 ---
 # <a name="dns-and-ad-ds"></a>DNS 和 AD DS
 
@@ -23,12 +23,12 @@ Active Directory 域服务（AD DS）使用域名系统（DNS）名称解析服�
 
 AD DS 可以轻松地将 Active Directory 命名空间集成到现有的 DNS 命名空间中。 Active Directory 集成的 DNS 区域等功能使你可以更轻松地部署 DNS，因为无需设置辅助区域，然后配置区域传输。
 
-有关 DNS 如何支持 AD DS 的信息，请参阅[Active Directory 技术参考的 Dns 支持](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781627(v=ws.10))部分。
+有关 DNS 如何支持 AD DS 的信息，请参阅[Active Directory 技术参考的 Dns 支持](/previous-versions/windows/it-pro/windows-server-2003/cc781627(v=ws.10))部分。
 
 > [!NOTE]
 > 如果实现了一个不连续的命名空间，其中 AD DS 域名不同于客户端使用的主 DNS 后缀，则与 DNS 的 AD DS 集成更为复杂。 有关详细信息，请参阅非[连续命名空间](Disjoint-Namespace.md)。
 
-## <a name="in-this-section"></a>在本节中
+## <a name="in-this-section"></a>本节内容
 
 - [域控制器位置](Domain-Controller-Location.md)
 - [Active Directory 集成 DNS 区域](Active-Directory-Integrated-DNS-Zones.md)

@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6792d565e08a188e1957c67ce419676d4a044d82
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 1aa9b135a29956086db405d0c77c079bcc6491a3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624385"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962369"
 ---
 # <a name="collecting-network-information"></a>收集网络信息
 
@@ -29,9 +29,9 @@ ms.locfileid: "81624385"
 
 创建位置映射后，记录通信链接的类型、其链接速度和每个位置之间可用的带宽。 从网络组中获取广域网络（WAN）拓扑。 有关常见 WAN 线路类型及其带宽的列表，请参阅[创建站点链接设计](../../ad-ds/plan/Creating-a-Site-Link-Design.md)中的 "确定成本" 一节。 稍后你将需要此信息在站点拓扑设计过程中创建站点链接。
 
-带宽是指可以在给定时间内跨信道传输的数据量。 可用带宽是指可供 AD DS 实际使用的带宽量。 你可以从网络组获取可用的带宽信息，或者可以使用协议分析器（如网络监视器）分析每个链接上的流量。 有关安装网络监视器的信息，请参阅[监视网络流量](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc783075(v=ws.10))的文章。
+带宽是指可以在给定时间内跨信道传输的数据量。 可用带宽是指可供 AD DS 实际使用的带宽量。 你可以从网络组获取可用的带宽信息，或者可以使用协议分析器（如网络监视器）分析每个链接上的流量。 有关安装网络监视器的信息，请参阅[监视网络流量](/previous-versions/windows/it-pro/windows-server-2003/cc783075(v=ws.10))的文章。
 
-记录每个位置以及链接到该位置的其他位置。 此外，记录通信链接类型及其可用带宽。 要使工作表可以帮助你列出通信链接和可用带宽，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "地理位置和通信链接" （DSSTOPO_1 .doc）。
+记录每个位置以及链接到该位置的其他位置。 此外，记录通信链接类型及其可用带宽。 要使工作表可以帮助你列出通信链接和可用带宽，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "地理位置和通信链接" （DSSTOPO_1.doc）。
 
 ## <a name="listing-ip-subnets-within-each-location"></a>列出每个位置中的 IP 子网
 
@@ -39,7 +39,7 @@ ms.locfileid: "81624385"
 
 AD DS 通过将工作站的 IP 地址与每个站点相关联的子网进行比较，将工作站与站点相关联。 向域中添加域控制器时，AD DS 还会检查其 IP 地址，并将其放置在最合适的站点中。
 
-要使工作表帮助你列出每个位置中的 IP 子网，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "位置和子网" （DSSTOPO_2）。
+要使工作表帮助你列出每个位置中的 IP 子网，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "位置和子网" （DSSTOPO_2.doc）。
 
 > [!NOTE]
 > 除了 IP 版本4（IPv4）地址以外，Windows Server 还支持 IP 版本6（IPv6）子网前缀。 要使工作表可以帮助你列出 IPv6 子网前缀，请参阅[附录 a：位置和子网前缀](../../ad-ds/plan/Appendix-A--Locations-and-Subnet-Prefixes.md)。
@@ -48,4 +48,4 @@ AD DS 通过将工作站的 IP 地址与每个站点相关联的子网进行比�
 
 位置中所代表的每个地区性域的用户数量是确定区域域控制器和全局编录服务器的位置的因素之一，这是站点拓扑设计过程中的下一步。 例如，计划将区域域控制器放置在包含超过100个区域域用户的位置，以便他们仍可在 WAN 链接失败时登录到域。
 
-记录位置、在每个位置显示的域，以及每个位置中表示的每个域的用户数量。 要使工作表可以帮助你列出每个位置中所表示的域和用户数，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "每个位置中的域和用户" （DSSTOPO_3）。
+记录位置、在每个位置显示的域，以及每个位置中表示的每个域的用户数量。 要使工作表可以帮助你列出每个位置中所代表的域和用户数量，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及打开 "每个位置中的域和用户" （DSSTOPO_3.doc）。

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 265dc24ccdaf261d6c58cb1fa77ea93d71b4007b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c8b332de4053aa64f3294c3cd68c37773742f9f5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858080"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962719"
 ---
 # <a name="ad-fs-user-sign-in-customization"></a>AD FS 用户登录自定义
 
@@ -34,7 +34,7 @@ AD FS 提供了许多选项，管理员可以根据其公司需求自定义和�
 
 主题|说明|
 -----|-----|
-[Windows Server 2016 中的 AD FS 自定义](AD-FS-Customization-in-Windows-Server-2016.md)|Windows Server 2016 中的 AD FS 的新自定义选项|
+[Windows Server 2016 中的 AD FS 自定义](./ad-fs-customization-in-windows-server.md)|Windows Server 2016 中的 AD FS 的新自定义选项|
 [更改公司名称](Change-the-company-name-on-the-AD-FS-sign-in-page.md)|在登录页上显示公司名称的步骤|
 [更改公司徽标](Change-the-company-logo-on-the-AD-FS-sign-in-page.md)|更改登录页上显示的徽标的步骤|
 [更改图例](Change-the-illustration-on-the-AD-FS-sign-in-page.md)|更改登录页面上显示的插图的步骤|
@@ -50,8 +50,4 @@ AD FS 提供了许多选项，管理员可以根据其公司需求自定义和�
 [本地化自定义](Customization-for-Localization.md)|有关本地化注意事项的信息
 [删除 Microsoft 版权](Remove-the-Microsoft-copyright.md)|删除 Microsoft 版权的步骤
 [为身份验证方法自定义显示名称和说明](Customize-the-display-names-and-descriptions-for-authentication-methods.md)|为身份验证方法自定义显示名称和说明的步骤
-[高级自定义](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)|使用 onload 文件的高级自定义选项。
-
-
-
-
+[高级自定义](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)|使用 onload.js 文件的高级自定义选项。

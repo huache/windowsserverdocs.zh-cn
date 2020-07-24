@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 77e3b48874d2b8898b7510ff04ebb133b9358a73
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5cb6246b00d891bd18f30b75b591dd4aaae021f5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935540"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962649"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS Extranet 锁定和 Extranet 智能锁定
 
@@ -212,7 +212,7 @@ AD FS 提供了三个用于管理帐户活动数据的 cmdlet。 这些 cmdlet �
 
 `Get-ADFSAccountActivity user@contoso.com`
 
-  属性:
+  属性：
     - BadPwdCountFamiliar：在从已知位置成功进行身份验证时递增。
     - BadPwdCountUnknown：在未知位置的身份验证失败时递增
     - LastFailedAuthFamiliar：如果身份验证不成功，则将 LastFailedAuthUnknown 设置为不成功的身份验证的时间
@@ -236,7 +236,7 @@ AD FS 提供了三个用于管理帐户活动数据的 cmdlet。 这些 cmdlet �
 ## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>事件日志记录 & AD FS Extranet 锁定的用户活动信息
 
 ### <a name="connect-health"></a>Connect Health
-监视用户帐户活动的建议方法是使用连接运行状况。 连接运行状况生成有关风险 Ip 和错误密码尝试的可下载报告。 “风险 IP”报表中的每个项目都会显示有关失败的 AD FS 登录活动（失败次数超出指定阈值）的聚合信息。 通过可自定义的电子邮件设置，可以将电子邮件通知设置为警报管理员。 有关其他信息和设置说明，请访问[连接运行状况文档](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)。
+监视用户帐户活动的建议方法是使用连接运行状况。 连接运行状况生成有关风险 Ip 和错误密码尝试的可下载报告。 “风险 IP”报表中的每个项目都会显示有关失败的 AD FS 登录活动（失败次数超出指定阈值）的聚合信息。 通过可自定义的电子邮件设置，可以将电子邮件通知设置为警报管理员。 有关其他信息和设置说明，请访问[连接运行状况文档](/azure/active-directory/hybrid/how-to-connect-health-adfs)。
 
 ### <a name="ad-fs-extranet-smart-lockout-events"></a>AD FS Extranet 智能锁定事件。
 
@@ -293,6 +293,6 @@ Extranet 智能锁定检查网络 Ip、转发的 Ip、x 转发的客户端 IP �
 ## <a name="additional-references"></a>其他参考  
 [保护 Active Directory 联合身份验证服务的最佳实践](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
-[Set-adfsproperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
+[Set-adfsproperties](/powershell/module/adfs/set-adfsproperties?view=win10-ps)
 
-[AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)
+[AD FS 操作](../ad-fs-operations.md)

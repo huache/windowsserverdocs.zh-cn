@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: c74e8744c22e2be174c1f1297e0472e5f32e1fe8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cd74468029ff973846ddfd10cce8ba0e26a607e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475404"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961389"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS 上的块克隆
 
@@ -53,12 +53,12 @@ ReFS 上的块克隆将文件数据操作转换为元数据操作。 为了实�
 - 源和目标区域必须在某个群集边界开始和结束。
 - 克隆的区域必须在长度上小于 4GB。
 - 可映射到相同物理区域的最大文件区域数目为 8175。
-- 目标区域不得超过文件的末尾。 如果应用程序希望扩展具有克隆数据的目标，则它必须首先调用 [SetEndOfFile](https://msdn.microsoft.com/library/windows/desktop/aa365531(v=vs.85).aspx)。
+- 目标区域不得超过文件的末尾。 如果应用程序希望扩展具有克隆数据的目标，则它必须首先调用 [SetEndOfFile](/windows/win32/api/fileapi/nf-fileapi-setendoffile)。
 - 如果源和目标区域处于用一个文件中，则它们不得重叠。 （应用程序可通过将块克隆操作拆分为多个不再重叠的块克隆来继续操作。）
 - 源文件和目标文件必须处于相同的 ReFS 卷上。
-- 源文件和目标文件必须具有相同的 [完整性流](https://msdn.microsoft.com/library/windows/desktop/gg258117(v=vs.85).aspx) 设置。
+- 源文件和目标文件必须具有相同的 [完整性流](/windows/win32/fileio/file-attribute-constants) 设置。
 - 如果源文件是稀疏的，则目标文件必须也是稀疏的。
-- 块克隆操作将破坏共享机会锁（也称作 [2 级机会锁](https://msdn.microsoft.com/library/windows/desktop/aa365713(v=vs.85).aspx)）。
+- 块克隆操作将破坏共享机会锁（也称作 [2 级机会锁](/windows/win32/fileio/types-of-opportunistic-locks)）。
 - ReFS 卷必须已使用 Windows Server 2016 进行了格式化；此外，如果正在使用故障转移群集，则在格式化时群集功能级别必须已是 Windows Server 2016 或更高版本。
 
 ## <a name="additional-references"></a>其他参考
@@ -66,5 +66,5 @@ ReFS 上的块克隆将文件数据操作转换为元数据操作。 为了实�
 -   [ReFS 概述](refs-overview.md)
 -   [ReFS 完整性流](integrity-streams.md)
 -   [存储空间直通概述](../storage-spaces/storage-spaces-direct-overview.md)
--   [DUPLICATE_EXTENTS_DATA](https://msdn.microsoft.com/library/windows/desktop/mt590821(v=vs.85).aspx)
--   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](https://msdn.microsoft.com/library/windows/desktop/mt590823(v=vs.85).aspx)
+-   [DUPLICATE_EXTENTS_DATA](/windows/win32/api/winioctl/ns-winioctl-duplicate_extents_data)
+-   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](/windows/win32/api/winioctl/ni-winioctl-fsctl_duplicate_extents_to_file)

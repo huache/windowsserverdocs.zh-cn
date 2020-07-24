@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: 文件服务器资源管理器（FSRM）是一个工具，可用于管理和分类 Windows Server 文件服务器上的数据。
-ms.openlocfilehash: af54f08f8acc491553a4d42c1aabe8ea7e26fadd
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 58b410e51dae3ea102bb1a15f5bb60f00ab702fa
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473934"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964559"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>文件服务器资源管理器 (FSRM) 概述
 
@@ -57,7 +57,7 @@ ms.locfileid: "85473934"
 
 从 Windows Server 版本1803开始，现在可以阻止文件服务器资源管理器服务在服务启动时在卷上创建更改日志（也称为 USN 日志）。 这可以在每个卷上保留少许空间，但会禁用实时文件分类。
 
-有关较旧的新功能，请参阅[文件服务器资源管理器中的新增](https://technet.microsoft.com/library/dn383587.aspx)功能。
+有关较旧的新功能，请参阅[文件服务器资源管理器中的新增](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383587(v=ws.11))功能。
 
 若要防止文件服务器在服务启动时资源管理器在部分或全部卷上创建更改日志，请使用以下步骤：
 
@@ -67,7 +67,7 @@ ms.locfileid: "85473934"
       ```
       fsutil usn deletejournal /d <VolumeName>
       ```
-    例如： `fsutil usn deletejournal /d c:`
+    例如：`fsutil usn deletejournal /d c:`
 
 3. 打开注册表编辑器，例如， `regedit` 在同一个 PowerShell 会话中键入。
 4. 导航到以下注册表项： **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**
@@ -106,4 +106,4 @@ ms.locfileid: "85473934"
 
 ## <a name="additional-references"></a>其他参考
 
-- [动态访问控制](https://technet.microsoft.com/library/dn408191(v=ws.11).aspx)
+- [动态访问控制](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408191(v=ws.11))

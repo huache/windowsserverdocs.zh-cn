@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5f88458c8e3f50853229f6f8f9c74fa4b8feba40
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 929530b8ee7dbb7b0486f3eb80a642cc5fdab20e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624415"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962459"
 ---
 # <a name="ad-ds-design-and-planning"></a>AD DS 设计和规划
 
@@ -29,7 +29,7 @@ ms.locfileid: "81624415"
 
 尽管本指南中所述的策略适用于几乎所有服务器操作系统部署，但已专门针对包含少于100000个用户和少于1000个站点的环境（其网络连接的网络连接最低为每秒28.8 千比特（Kbps））对其进行了测试和验证。 如果你的环境不满足这些条件，请考虑使用在更复杂的环境中部署 AD DS 的咨询公司。
 
-有关测试 AD DS 部署过程的详细信息，请参阅[测试和验证部署过程](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc772722(v=ws.10))一文。
+有关测试 AD DS 部署过程的详细信息，请参阅[测试和验证部署过程](/previous-versions/windows/it-pro/windows-server-2003/cc772722(v=ws.10))一文。
 
 ## <a name="in-this-guide"></a>本指南包含的内容
 

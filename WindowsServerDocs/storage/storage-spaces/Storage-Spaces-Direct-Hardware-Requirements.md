@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 06/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e34f74226edb56e8db0290fd5dc83f0c6e54221
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 108e5a65b78370c40ba02da677e953eb2b122288
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833320"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964579"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>存储空间直通的硬件要求
 
@@ -33,7 +33,7 @@ ms.locfileid: "85833320"
 
 ![显示 SDDC AQs 的 Windows Server 目录的屏幕截图](media/hardware-requirements/sddc-aqs.png)
 
-完全配置的群集（服务器、网络和存储）必须在故障转移群集管理器中，或在 PowerShell 中通过 cmdlet 传递所有[群集验证测试](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) 。
+完全配置的群集（服务器、网络和存储）必须在故障转移群集管理器中，或在 PowerShell 中通过 cmdlet 传递所有[群集验证测试](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10)) `Test-Cluster` [cmdlet](/powershell/module/failoverclusters/test-cluster?view=win10-ps) 。
 
 此外，还需要满足以下要求：
 
@@ -82,14 +82,14 @@ ms.locfileid: "85833320"
 
 - 支持 SATA、SAS、永久性内存和 NVMe （2、U. 2 和外接卡）驱动器
 - 支持512n、512e 和4K 本机驱动器
-- 固态硬盘必须提供[电源丢失保护](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
+- 固态硬盘必须提供[电源丢失保护](https://techcommunity.microsoft.com/t5/storage-at-microsoft/don-t-do-it-consumer-grade-solid-state-drives-ssd-in-storage/ba-p/425914)
 - 每个服务器中相同数量和类型的驱动器–请参阅[驱动对称注意事项](drive-symmetry-considerations.md)
 - 缓存设备必须为 32 GB 或更大
 - 永久性内存设备在块存储模式下使用
 - 当使用永久性内存设备作为缓存设备时，必须使用 NVMe 或 SSD 容量设备（不能使用 Hdd）
 - NVMe 驱动程序是 Microsoft 提供的驱动程序，包括在 Windows 中（stornvme.sys）
 - 建议：容量驱动器数是缓存驱动器数的整数倍
-- 建议：缓存驱动器应具有高写入高耐用性：每日至少3个驱动器写入（DWPD）或每天至少 4 tb 写入（TBW）–请参阅[了解每日驱动器写入数（DWPD）、tb 写入量（TBW）和建议存储空间直通的最低要求](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
+- 建议：缓存驱动器应具有高写入高耐用性：每日至少3个驱动器写入（DWPD）或每天至少 4 tb 写入（TBW）–请参阅[了解每日驱动器写入数（DWPD）、tb 写入量（TBW）和建议存储空间直通的最低要求](https://techcommunity.microsoft.com/t5/storage-at-microsoft/understanding-ssd-endurance-drive-writes-per-day-dwpd-terabytes/ba-p/426024)
 
 下面是如何连接存储空间直通的驱动器：
 
@@ -130,7 +130,7 @@ ms.locfileid: "85833320"
 
 ### <a name="maximum-capacity"></a>最大容量
 
-| 最                | Windows Server Standard 2012 R2  | Windows Server 2016  |
+| 最                | Windows Server 2019  | Windows Server 2016  |
 | ---                     | ---------            | ---------            |
 | 每台服务器的原始容量 | 400 TB               | 100 TB               |
 | 池容量           | 4 PB （4000 TB）      | 1 PB                 |

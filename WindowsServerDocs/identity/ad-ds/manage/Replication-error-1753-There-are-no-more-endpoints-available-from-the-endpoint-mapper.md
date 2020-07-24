@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2e63d177abd0a6880c1825b821d265c8fa233a22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ca7ab368c9e15de15f733070a5bcb06584956500
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823160"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961129"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>复制错误 1753：端点映射程序中没有更多可用的端点
 
@@ -95,16 +95,16 @@ Active Directory 站点和服务中的 "**立即复制**" 命令返回 "终结�
 右键单击源 DC 中的连接对象并选择 "复制"**现在**会失败，并出现 "终结点映射程序中没有更多可用的终结点"。
 屏幕错误消息如下所示：
 
-对话框标题文本：立即复制对话框消息文本：尝试同步命名上下文时出现以下错误 \<% directory 分区名称% > 从域控制器 \<源 DC > 到域控制器 \<目标 DC >：
+对话框标题文本：立即复制对话框消息文本：尝试将命名上下文 \<%directory partition name%> 从域控制器同步 \<Source DC> 到域控制器时出现以下错误 \<Destination DC> ：
 
-端点映射程序中未提供更多端点。
+终结点映射器中没有更多可用的终结点。
 操作不会继续
 
 在事件查看器的目录服务日志中记录 NTDS KCC、NTDS General 或 Microsoft-Windows ActiveDirectory_DomainService 事件，状态为-2146893022。
 
 Active Directory 通常引用-2146893022 状态的事件包括但不限于：
 
-| 事件 ID | 事件来源 | 事件字符串|
+| 事件 ID | 事件源 | 事件字符串|
 | --- | --- | --- |
 | 1655 | NTDS 常规 | Active Directory 尝试与以下全局编录通信，尝试未成功。 |
 | 1925 | NTDS KCC | 尝试为以下可写目录分区建立复制链接失败。 |
@@ -149,7 +149,7 @@ Active Directory 通常引用-2146893022 状态的事件包括但不限于：
 
 验证连接到目标 RPC 服务器（源 DC）的 RPC 客户端（目标 DC）
 
-公用 Active Directory 林中的所有 Dc 都注册 _msdcs 中的域控制器 CNAME 记录。 \<目录林根级域 > DNS 区域，而不考虑它们在林中驻留的域。 DC CNAME 记录派生自每个域控制器的 "NTDS 设置" 对象的 objectGUID 属性。
+公用 Active Directory 林中的所有 Dc 都注册 _msdcs 中的域控制器 CNAME 记录。 \<forest root domain>DNS 区域，而不考虑它们在林中驻留的域。 DC CNAME 记录派生自每个域控制器的 "NTDS 设置" 对象的 objectGUID 属性。
 
 执行基于复制的操作时，目标 DC 会向 DNS 查询源 Dc CNAME 记录。 CNAME 记录包含源 DC 完全限定的计算机名称，此名称用于通过 DNS 客户端缓存查找、主机/LMHost 文件查找、在 DNS 中托管 A/AAAA 记录或 WINS 来派生源 Dc IP 地址。
 
@@ -286,15 +286,15 @@ F# SRC    DEST    Operation
 11 x.x.1.2 x.x.1.1 EPM:Response: ept_map: 0x16C9A0D6 - EP_S_NOT_REGISTERED
 ```
 
-在第**10**帧，目标 dc 通过端口135查询源 dc 终结点映射器 Active Directory 复制服务类 UUID E351 。
+在第**10**帧，目标 dc 通过端口135查询源 dc 终结点映射器 Active Directory 复制服务类 UUID E351 .。。
 
-在帧**11**中，源 DC （在本例中为尚未托管 DC 角色的成员计算机）未注册 E351 。复制服务的 UUID （其本地 EPM）使用符号错误1753进行响应，EP_S_NOT_REGISTERED 映射到十进制错误、十六进制错误0x6d9 和友好错误 "终结点映射器中没有更多可用的终结点"。
+在帧**11**中，源 DC （在本例中为尚未托管 DC 角色的成员计算机）未注册 E351 .。。复制服务的 UUID （其本地 EPM）使用符号错误1753进行响应，EP_S_NOT_REGISTERED 映射到十进制错误、十六进制错误0x6d9 和友好错误 "终结点映射器中没有更多可用的终结点"。
 
 稍后，IP 地址为 MayberryDC 的成员计算机在 contoso.com 域中升级为副本 ""。 同样，**立即复制**命令用于触发复制，但这次操作失败，出现屏幕错误 "目标主体名称不正确"。 向其网络适配器分配了 IP 地址的计算机： x. x. x. x. x. x. x. x. x. x. x. x. x。复制服务 UUID 与其本地 EPM 一起提供，但它不拥有 DC2 的名称或安全标识，因此无法解密 DC1 发出的 Kerberos 请求，因此请求现在失败并出现错误 "目标主体名称不正确"。 错误映射为十进制错误-2146893022/十六进制错误0x80090322。
 
 此类无效的主机到 IP 映射可能是由于主机/lmhost 文件中的过时条目、在 DNS 中托管 A/AAAA 注册或 WINS 导致的。
 
-摘要：此示例失败，因为在此情况下，主机文件中的主机到 IP 映射无效，导致目标 DC 解析为未运行 Active Directory 域服务服务（甚至出于此目的而安装）的 "源" DC，因此复制 SPN 尚未注册，并且源 DC 返回错误1753。 在第二种情况下，无效的主机到 IP 映射（在主机文件中再次）导致目标 DC 连接到已注册了 E351 的 DC 。复制 SPN，但该源的主机名和安全标识与预期的源 DC 不同，因此尝试失败并出现错误-2146893022：目标主体名称不正确。
+摘要：此示例失败，因为在此情况下，主机文件中的主机到 IP 映射无效，导致目标 DC 解析为未运行 Active Directory 域服务服务（甚至出于此目的而安装）的 "源" DC，因此复制 SPN 尚未注册，并且源 DC 返回错误1753。 在第二种情况下，无效的主机到 IP 映射（在主机文件中再次）导致目标 DC 连接到已注册了 E351 的 DC .。。复制 SPN，但该源的主机名和安全标识与预期的源 DC 不同，因此尝试失败并出现错误-2146893022：目标主体名称不正确。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -303,13 +303,13 @@ F# SRC    DEST    Operation
 * [知识库文章 832017 Windows Server 系统的服务概述和网络端口要求](https://support.microsoft.com/kb/832017/)
 * [知识库文章224196将 Active Directory 复制流量和客户端 RPC 流量限制到特定端口](https://support.microsoft.com/kb/224196/)
 * [知识库文章154596如何配置与防火墙一起使用的 RPC 动态端口分配](https://support.microsoft.com/kb/154596)
-* [RPC 的工作方式](https://msdn.microsoft.com/library/aa373935(VS.85).aspx)
-* [服务器如何为连接做好准备](https://msdn.microsoft.com/library/aa373938(VS.85).aspx)
-* [客户端如何建立连接](https://msdn.microsoft.com/library/aa373937(VS.85).aspx)
-* [注册接口](https://msdn.microsoft.com/library/aa375357(VS.85).aspx)
-* [使服务器在网络上可用](https://msdn.microsoft.com/library/aa373974(VS.85).aspx)
-* [注册终结点](https://msdn.microsoft.com/library/aa375255(VS.85).aspx)
-* [侦听客户端调用](https://msdn.microsoft.com/library/aa373966(VS.85).aspx)
-* [客户端如何建立连接](https://msdn.microsoft.com/library/aa373937(VS.85).aspx)
+* [RPC 的工作方式](/windows/win32/rpc/how-rpc-works)
+* [服务器如何为连接做好准备](/windows/win32/rpc/how-the-server-prepares-for-a-connection)
+* [客户端如何建立连接](/windows/win32/rpc/how-the-client-establishes-a-connection)
+* [注册接口](/windows/win32/rpc/registering-the-interface)
+* [使服务器在网络上可用](/windows/win32/rpc/making-the-server-available-on-the-network)
+* [注册终结点](/windows/win32/rpc/registering-endpoints)
+* [侦听客户端调用](/windows/win32/rpc/listening-for-client-calls)
+* [客户端如何建立连接](/windows/win32/rpc/how-the-client-establishes-a-connection)
 * [限制到特定端口的 Active Directory 复制流量和客户端 RPC 流量](https://support.microsoft.com/kb/224196)
-* [AD DS 中的目标 DC 的 SPN](https://msdn.microsoft.com/library/dd207688(PROT.13).aspx)
+* [AD DS 中的目标 DC 的 SPN](/openspecs/windows_protocols/ms-drsr/41efc56e-0007-4e88-bafe-d7af61efd91f)

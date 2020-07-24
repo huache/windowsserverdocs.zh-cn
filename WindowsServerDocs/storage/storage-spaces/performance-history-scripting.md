@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 53a5f2aa403c83d24acde1fc57e793141175d9b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7f3274210ea6c08d63862551570096ab10aa878e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474714"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961809"
 ---
 # <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>通过 PowerShell 编写脚本并存储空间直通性能历史记录
 
@@ -48,7 +48,7 @@ ms.locfileid: "85474714"
 
 管道的输出非常 `Get-ClusterPerf` 适合内置 `Measure-Object` cmdlet，只需指定 `Value` 属性即可。 对于其 `-Maximum` 、 `-Minimum` 和 `-Average` 标志， `Measure-Object` 为我们提供了几乎免费的前三列。 若要进行四分位分析，可以通过管道来 `Where-Object` 统计 `-Gt` （大于）25、50或75的值（大于）。 最后一步是 beautify `Format-Hours` 和 `Format-Percent` helper 函数-当然是可选的。
 
-### <a name="script"></a>脚本
+### <a name="script"></a>Script
 
 脚本如下：
 
@@ -111,7 +111,7 @@ $Output | Sort-Object ClusterNode | Format-Table
 
 如果任何驱动器超过 +3 σ，则 `Write-Host` 为红色; 否则为绿色。
 
-### <a name="script"></a>脚本
+### <a name="script"></a>Script
 
 脚本如下：
 
@@ -219,7 +219,7 @@ Else {
 
 每个服务器的结果都作为 `$Output` ，我们可以将其作为 `Sort-Object` `Select-Object -First 10` 。 请注意， `Invoke-Command` 使用属性修饰结果以 `PsComputerName` 指示它们的来源，我们可以打印这些结果来了解 VM 的运行位置。
 
-### <a name="script"></a>脚本
+### <a name="script"></a>Script
 
 脚本如下：
 
@@ -269,7 +269,7 @@ $Output | Sort-Object RawIopsTotal -Descending | Select-Object -First 10 | Forma
    > [!NOTE]
    > 某些供应商（如 Chelsio）在其*网络适配器*性能计数器中包括远程直接内存访问（RDMA）活动，因此它包含在 `NetAdapter.Bandwidth.Total` 系列中。 其他类（如 Mellanox）可能不会。 如果你的供应商没有，只需 `NetAdapter.Bandwidth.RDMA.Total` 在此脚本的版本中添加该系列。
 
-### <a name="script"></a>脚本
+### <a name="script"></a>Script
 
 脚本如下：
 
@@ -345,7 +345,7 @@ $Output | Sort-Object PsComputerName, InterfaceDescription | Format-Table PsComp
    > [!IMPORTANT]
    > 此估计值是线性的，仅基于最新的14个日常度量值。 存在更复杂且更准确的方法。 请毋庸置疑，不要独自依赖此脚本来确定是否投资扩展存储。 此处仅提供教育目的。
 
-### <a name="script"></a>脚本
+### <a name="script"></a>Script
 
 脚本如下：
 
@@ -453,7 +453,7 @@ $Output | Format-Table
 
 我们 `Invoke-Command` `Get-VM` 在每个服务器上重复我们在上面介绍的技巧。 我们使用 `Measure-Object -Average` 获取每个 VM 每月的平均时间，然后获取 `Sort-Object` `Select-Object -First 10` 我们的排行榜。 （或许是我们*最需要*的列表？）
 
-### <a name="script"></a>脚本
+### <a name="script"></a>Script
 
 脚本如下：
 
@@ -489,6 +489,6 @@ $Output | Sort-Object RawAvgMemoryUsage -Descending | Select-Object -First 10 | 
 
 ## <a name="additional-references"></a>其他参考
 
-- [Windows PowerShell 入门](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell)
+- [Windows PowerShell 入门](/powershell/scripting/getting-started/getting-started-with-windows-powershell)
 - [存储空间直通概述](storage-spaces-direct-overview.md)
 - [性能历史记录](performance-history.md)

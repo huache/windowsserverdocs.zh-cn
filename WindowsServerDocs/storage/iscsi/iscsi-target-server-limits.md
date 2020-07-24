@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 6799e0e3b47d6cc98cbb42407ffbed1a9578675a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7a6d23ebd82afc192a9c306420811860d74cf469
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473434"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961359"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI 目标服务器的可伸缩性限制
 
@@ -32,7 +32,7 @@ ms.locfileid: "85473434"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>项目</p></th>
+<th><p>项</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>注释</p></th>
@@ -89,7 +89,7 @@ ms.locfileid: "85473434"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>项目</p></th>
+<th><p>项</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>注释</p></th>
@@ -159,7 +159,7 @@ ms.locfileid: "85473434"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>项目</p></th>
+<th><p>项</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>注释</p></th>
@@ -240,7 +240,7 @@ ms.locfileid: "85473434"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>项目</p></th>
+<th><p>项</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>注释</p></th>
@@ -374,7 +374,7 @@ ms.locfileid: "85473434"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>项目</p></th>
+<th><p>项</p></th>
 <th><p>支持限制</p></th>
 <th><p>注释</p></th>
 </tr>
@@ -444,7 +444,7 @@ ISCSI 目标存储提供程序是 Windows Server 2016、Windows Server 2012 R2 �
 
 请注意，如果 iSCSI 目标服务器由运行 Windows Server 2012 R2 或更高版本的服务器托管，并且你想要从远程服务器使用 VSS 或 VDS，则远程服务器还必须运行同一版本的 Windows Server 并安装 iSCSI 目标存储提供程序角色服务。 另请注意，在所有版本的 Windows 上，只应安装 iSCSI 目标存储提供程序角色服务的一个版本。
 
-有关 iSCSI 目标存储提供程序的详细信息，请参阅[Iscsi 目标存储（VDS/VSS）提供程序](https://blogs.technet.com/b/filecab/archive/2012/10/08/iscsi-target-storage-vds-vss-provider.aspx)。
+有关 iSCSI 目标存储提供程序的详细信息，请参阅[Iscsi 目标存储（VDS/VSS）提供程序](/powershell/module/iscsi/?view=win10-ps)。
 
 ## <a name="tested-compatibility-with-iscsi-initiators"></a>已测试与 iSCSI 发起程序的兼容性
 
@@ -546,4 +546,3 @@ ISCSI 目标存储提供程序是 Windows Server 2016、Windows Server 2012 R2 �
 - [iSCSI Target Boot Overview](iscsi-boot-overview.md)
 
 - [Windows Server 中的存储](../storage.yml)
-

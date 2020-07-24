@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: e0d92448774b277cff60d9b494cf388458ea32d3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 68f5af7f8fc4cd0214b872d96602cabe1aa32628
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475104"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961369"
 ---
 # <a name="iscsi-target-boot-overview"></a>iSCSI 目标启动概述
 
@@ -48,6 +48,6 @@ iSCSI 目标服务器可以作为“文件和 iSCSI 服务”角色服务的一�
 > 不支持从 iSCSI（Windows iSCSI 目标服务器或第三方目标实现）启动 Nano Server。
 
 ## <a name="additional-references"></a>其他参考
-* [iSCSI 目标服务器](https://technet.microsoft.com/library/hh848272(v=ws.11).aspx)
-* [iSCSI 发起程序 cmdlet](https://technet.microsoft.com/library/hh826099(v=wps.640).aspx)
-* [iSCSI 目标服务器概述](https://technet.microsoft.com/library/jj612803(v=wps.630).aspx)
+* [iSCSI 目标服务器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848272(v=ws.11))
+* [iSCSI 发起程序 cmdlet](/powershell/module/iscsi/?view=win10-ps)
+* [iSCSI 目标服务器概述](/powershell/module/iscsi/?view=win10-ps)

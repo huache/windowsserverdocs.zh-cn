@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 680d0435d77164e101f045b439be6ccb6601dfef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3b9f727107ac9d392b52ab683aca510849fc534a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855730"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964689"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>使用软件限制策略来帮助保护计算机免受电子邮件病毒攻击
 
@@ -22,7 +22,7 @@ ms.locfileid: "80855730"
 
 本主题介绍如何使用软件限制策略（SRP）设置应用程序控制策略，以帮助保护计算机免受 Windows Server 2008 和 Windows Vista 中的电子邮件病毒的攻击。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 软件限制策略 (SRP) 是基于组策略的功能，用于标识在域中的计算机上运行的软件程序，以及控制这些程序的运行能力。 你可以使用软件限制策略创建计算机的高度受限配置，从而仅允许运行专门标识的应用程序。 它们与 Microsoft Active Directory 域服务和组策略集成在一起，但也可以在独立计算机上进行配置。 有关 SRP 的起点，请参阅[软件限制策略](software-restriction-policies.md)。
 
 从 Windows Server 2008 R2 和 Windows 7 开始，可以使用 Windows AppLocker，而不是与 SRP 一起使用，以获得部分应用程序控制策略。 
@@ -31,9 +31,9 @@ ms.locfileid: "80855730"
 
 1.  查看软件限制策略的最佳实践以了解 SRP 的工作方式。
 
-    -   [最佳做法](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
+    -   [最佳实践](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
 
-    -   [软件限制策略的工作方式](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)
+    -   [软件限制策略的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))
 
 2.  打开“软件限制策略”。
 
@@ -62,5 +62,3 @@ ms.locfileid: "80855730"
         -   [防止软件限制策略应用于本地管理员](administer-software-restriction-policies.md#BKMK_Prevent_Admin)
 
 7.  测试策略。
-
-

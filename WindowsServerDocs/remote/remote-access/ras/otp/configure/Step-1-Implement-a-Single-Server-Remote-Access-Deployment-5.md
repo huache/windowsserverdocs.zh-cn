@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: c0f4d665-d44e-4348-a89f-5f9191bd96fd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b5142902d89887d12a1a200b797dcf2c5fe02353
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 98b25098e5af5612a288c3f6a7ad6dacd359ba9c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858230"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961169"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>步骤1实现单一服务器远程访问部署
 
@@ -22,11 +22,9 @@ ms.locfileid: "80858230"
 使用 OTP 部署远程访问的第一个配置步骤是实现高级单一服务器部署，然后计划添加 RADIUS 服务器。  
   
 ## <a name="implement-a-single-server-deployment"></a>实现单一服务器部署  
-使用 OTP 配置远程访问之前，必须按照[使用高级设置部署单个 DirectAccess 服务器](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)中所述配置高级单服务器远程访问部署。  
+使用 OTP 配置远程访问之前，必须按照[使用高级设置部署单个 DirectAccess 服务器](../../../directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings.md)中所述配置高级单服务器远程访问部署。  
   
 ## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
   
 -   [步骤2：配置 RADIUS 服务器](Step-2-Configure-the-RADIUS-Server.md)  
   
-
-

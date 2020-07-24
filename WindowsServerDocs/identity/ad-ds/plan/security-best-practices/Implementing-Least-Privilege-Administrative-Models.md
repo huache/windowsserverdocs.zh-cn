@@ -8,18 +8,18 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8655c7bac977bf94add1531d299e2fa17ef530d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d6a740f0fdc76698114cace8ded8533cebffc5cb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821240"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964029"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>实现最小特权的管理模型
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-以下摘录来自于1999年4月1日发布[的管理员帐户安全规划指南](https://technet.microsoft.com/library/cc162797.aspx)：
+以下摘录来自于1999年4月1日发布[的管理员帐户安全规划指南](/previous-versions/tn-archive/cc162797(v=technet.10))：
 
 > "与安全性相关的大多数培训课程和文档讨论了最低权限原则的实施，但组织很少关注它。 这一原则很简单，并且正确应用它的影响大大提高了您的安全性并降低了您的风险。 该原则规定，所有用户应使用拥有完成当前任务所需的绝对最低权限的用户帐户登录，而不是其他用户帐户。 这样做可以防止恶意代码以及其他攻击。 此原则适用于计算机和这些计算机的用户。   
 > "此原则的一个原因是，它会强制您进行一些内部研究。 例如，你必须确定计算机或用户真正需要的访问权限，然后实施这些权限。 对于许多组织而言，此任务最初可能看起来就像是一笔工作，但是，成功保护网络环境是一个必不可少的步骤。
@@ -92,7 +92,7 @@ ms.locfileid: "80821240"
 
 在你创建的一个或多个 Gpo 并链接到每个域中的工作站和成员服务器 Ou，将管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
-- 拒绝从网络访问该计算机
+- 拒绝通过网络访问该计算机
 - 拒绝以批处理作业登录
 - 拒绝以服务登录
 - 拒绝通过远程桌面服务登录
@@ -108,7 +108,7 @@ ms.locfileid: "80821240"
 
 ### <a name="securing-local-privileged-accounts-and-groups-in-active-directory"></a>在 Active Directory 中保护本地特权帐户和组
 
-*定律6：计算机的安全性只是管理员可信任的。* - [十个不可变定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)  
+*定律6：计算机的安全性只是管理员可信任的。* - [十个不可变定律（版本2.0）](https://www.microsoft.com/en-us/msrc?rtc=1)  
 
 此处提供的信息旨在提供有关在 Active Directory 中保护最高权限内置帐户和组的一般准则。 [附录 D：在 Active Directory 中保护内置管理员帐户](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)的详细分步说明，附录[E：在 Active Directory 中保护企业管理员组](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md)，[附录 F：保护 Active Directory 中的域管理员组](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)，[附录 G：保护 Active Directory 中的管理员组](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md)。  
 
@@ -138,7 +138,7 @@ ms.locfileid: "80821240"
 
 在你创建的一个或多个 Gpo 中，并链接到每个域中的工作站和成员服务器 Ou，将每个域的管理员帐户添加到 "**计算机配置 \windows 设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
-- 拒绝从网络访问该计算机  
+- 拒绝通过网络访问该计算机  
 - 拒绝以批处理作业登录  
 - 拒绝以服务登录  
 - 拒绝通过远程桌面服务登录  
@@ -152,7 +152,7 @@ ms.locfileid: "80821240"
 
 在林中的每个域中，应修改默认域控制器策略或链接到域控制器 OU 的策略，以将每个域的管理员帐户添加到 "**计算机配置 \windows 设置 \ 安全设置 \ 本地策略 \ 用户权限分配**" 中的以下用户权限：  
 
-- 拒绝从网络访问该计算机  
+- 拒绝通过网络访问该计算机  
 - 拒绝以批处理作业登录  
 - 拒绝以服务登录  
 - 拒绝通过远程桌面服务登录  
@@ -176,7 +176,7 @@ ms.locfileid: "80821240"
 
 - 如前文所述，Enterprise Admins 组不应在日常工作中包含任何用户，这可能是目录林根级域的管理员帐户的例外，应按照[附录 D：保护内置管理员帐户的 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述进行保护。  
 - 在链接到包含每个域中成员服务器和工作站的 Ou 的 Gpo 中，EA 组应添加到以下用户权限：  
-   - 拒绝从网络访问该计算机  
+   - 拒绝通过网络访问该计算机  
    - 拒绝以批处理作业登录  
    - 拒绝以服务登录  
    - 拒绝本地登录  
@@ -198,7 +198,7 @@ ms.locfileid: "80821240"
 
 1. 删除 DA 组中的所有成员，并在域的内置管理员帐户可能例外的情况下进行保护，前提是该帐户已受到[以下附录 D：保护内置管理员帐户的 Active Directory 中](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)所述的保护。  
 2. 在链接到包含每个域中成员服务器和工作站的 Ou 的 Gpo 中，应将 DA 组添加到以下用户权限：  
-   - 拒绝从网络访问该计算机  
+   - 拒绝通过网络访问该计算机  
    - 拒绝以批处理作业登录  
    - 拒绝以服务登录  
    - 拒绝本地登录  
@@ -208,7 +208,7 @@ ms.locfileid: "80821240"
 
 3. 如果对 DA 组的属性或成员身份进行任何修改，应将审核配置为发送警报。 这些警报至少应发送给负责 AD DS 管理和事件响应的用户或团队。 还应定义临时填充 DA 组的进程和过程，包括执行组的合法填充时的通知过程。  
 
-#### <a name="securing-administrators-groups-in-active-directory"></a>保护 Active Directory 中的管理员组
+#### <a name="securing-administrators-groups-in-active-directory"></a>保护 Active Directory 中的 Administrators 组
 
 与 EA 和 DA 组一样，管理员（BA）组中的成员身份仅在生成或灾难恢复方案中是必需的。 除了域的本地管理员帐户（[在 Active Directory 中保护内置管理员帐户](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)中所述），管理员组中的用户帐户不应是域的本地管理员帐户。  
 
@@ -218,14 +218,14 @@ ms.locfileid: "80821240"
 
 1. 删除 Administrators 组中的所有成员（如果域为本地管理员帐户，则可能例外），前提是该帐户已受保护，如[附录 D：在 Active Directory 中保护内置管理员帐户](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)。  
 2. 域的 Administrators 组的成员不需要登录到成员服务器或工作站。 在链接到工作站和每个域中的成员服务器 Ou 的一个或多个 Gpo 中，应将管理员组添加到以下用户权限：  
-   - 拒绝从网络访问该计算机  
+   - 拒绝通过网络访问该计算机  
    - 拒绝作为批处理作业登录  
    - 拒绝以服务登录  
    - 这将阻止使用 Administrators 组的成员登录或连接到成员服务器或工作站（除非首先违反了多个控件），其中的凭据可能会被缓存并因此受到损害。 特权帐户绝不能用于登录到不太适用的系统，并强制实施这些控件来防范多种攻击。  
 
 3. 在林的每个域中的域控制器 OU 中，应向 Administrators 组授予以下用户权限（如果它们尚不具有这些权限），这将允许管理员组的成员执行全林性灾难恢复方案所需的功能：  
    - 从网络访问此计算机  
-   - 允许在本地登录  
+   - 允许本地登录  
    - 允许通过远程桌面服务登录  
 
 4. 如果对 Administrators 组的属性或成员身份进行任何修改，应将审核配置为发送警报。 应至少向负责 AD DS 管理的团队成员发送这些警报。 还应将警报发送到安全组的成员，并且应定义过程来修改 Administrators 组的成员身份。 具体而言，这些过程应该包括一个过程，通过该过程，管理员组将被修改时，系统会通知安全团队，以便发送警报时，不会发出警报。 此外，在已完成使用管理员组并已从组中删除所使用的帐户时，过程将通知安全团队。  
@@ -260,7 +260,7 @@ ms.locfileid: "80821240"
 2. IT 环境的组合：如果你的环境主要包含 Windows 系统，或者你已在利用 Active Directory 来管理非 Windows 系统和帐户，则自定义本机解决方案可能会提供满足你的需求的最佳解决方案。 如果你的基础结构包含许多未运行 Windows 且不受 Active Directory 管理的系统，你可能需要考虑将非 Windows 系统与 Active Directory 环境分开管理的选项。  
 3. 解决方案中的特权模式：如果产品依赖于其服务帐户在 Active Directory 中放置在高特权组中，但不提供不需要将过多权限授予 RBAC 软件的选项，则没有真正地降低 Active Directory 攻击面，你只会更改目录中大多数特权组的组合。 除非应用程序供应商可以为服务帐户提供控制，从而最大程度地减少被泄漏和恶意使用的帐户的概率，否则你可能想要考虑其他选项。  
 
-### <a name="privileged-identity-management"></a>特权标识管理
+### <a name="privileged-identity-management"></a>Privileged Identity Management
 
 特权标识管理（PIM）（有时称为特权帐户管理（PAM）或特权凭据管理（PCM））是设计、构造和实现在基础结构中管理特权帐户的方法。 一般而言，PIM 提供了一些机制，通过这些机制，帐户被授予执行生成或中断修复功能所需的临时权限和权限，而不是将特权永久附加到帐户。 是否手动创建 PIM 功能，或者通过部署第三方软件来实现该功能，可以使用以下一个或多个功能：  
   
@@ -279,7 +279,7 @@ ms.locfileid: "80821240"
 
 ### <a name="implementing-robust-authentication-controls"></a>实现可靠的身份验证控制
 
-*定律6：真的有人试图猜测密码。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律6：真的有人试图猜测密码。* - [安全管理的10个永恒定律](/previous-versions//cc722488(v=technet.10))  
 
 传递哈希和其他凭据盗窃攻击不特定于 Windows 操作系统，也不是新的。 第一次传递哈希攻击是在1997中创建的。 然而，在过去，这些攻击需要自定义的工具，其成功被击中或错失，并要求攻击者具有相对较高的技能。 在过去几年里，引入了免费的、易于使用的工具，该工具以本机方式提取凭据，导致凭据被盗攻击的数量呈指数增长。 但是，凭据盗窃攻击不是指凭据被定向并泄露的唯一机制。  
 
@@ -297,7 +297,7 @@ ms.locfileid: "80821240"
 
 实现智能卡或其他基于证书的身份验证机制的另一个好处是能够利用身份验证机制保证来保护 VIP 用户可以访问的敏感数据。 在功能级别设置为 Windows Server 2012 或 Windows Server 2008 R2 的域中提供身份验证机制保障。 启用后，当使用基于证书的登录方法登录时，身份验证机制保证会将管理员指定的全局组成员身份添加到用户的 Kerberos 令牌。  
 
-这样，资源管理员就可以根据用户是否使用基于证书的登录方法登录以及使用的证书类型，来控制对资源（如文件、文件夹和打印机）的访问。 例如，当用户使用智能卡登录时，可以指定用户对网络上资源的访问权限，与用户不使用智能卡（即，当用户通过输入用户名和密码登录时）的访问权限不同而不同。 有关身份验证机制保证的详细信息，请参阅[Windows Server 2008 R2 循序渐进指南中的 AD DS 身份验证机制保证](https://technet.microsoft.com/library/dd378897.aspx)。  
+这样，资源管理员就可以根据用户是否使用基于证书的登录方法登录以及使用的证书类型，来控制对资源（如文件、文件夹和打印机）的访问。 例如，当用户使用智能卡登录时，可以指定用户对网络上资源的访问权限，与用户不使用智能卡（即，当用户通过输入用户名和密码登录时）的访问权限不同而不同。 有关身份验证机制保证的详细信息，请参阅[Windows Server 2008 R2 循序渐进指南中的 AD DS 身份验证机制保证](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378897(v=ws.10))。  
 
 #### <a name="configuring-privileged-account-authentication"></a>配置特权帐户身份验证
 

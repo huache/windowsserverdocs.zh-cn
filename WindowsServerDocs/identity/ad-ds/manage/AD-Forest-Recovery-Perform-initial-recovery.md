@@ -8,18 +8,18 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 7d592198187d44927f643b45e7a8bb4c2eec2a69
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 76357eadf8b88edf58197b9e5f09c213fbbb4990
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823900"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960879"
 ---
 # <a name="perform-initial-recovery"></a>执行初始恢复  
 
 >适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
-本部分包括以下步骤：  
+此部分包括下列步骤：  
 
 - [还原每个域中的第一个可写域控制器](#restore-the-first-writeable-domain-controller-in-each-domain)  
 - [将每个还原的可写域控制器重新连接到网络](#reconnect-each-restored-writeable-domain-controller-to-a-common-network)  
@@ -33,7 +33,7 @@ ms.locfileid: "80823900"
   
 对于恢复的每个域，只从备份还原一个可写 DC。 这是恢复的最重要部分，因为 DC 必须有一个数据库，该数据库未受到导致林失败的任何影响。 在将受信任的备份引入生产环境之前，必须对其进行全面测试，这一点非常重要。 
   
-然后执行以下步骤。 [AD 林恢复-过程](AD-Forest-Recovery-Procedures.md)中提供了执行某些步骤的过程。 
+然后，执行以下步骤。 [AD 林恢复-过程](AD-Forest-Recovery-Procedures.md)中提供了执行某些步骤的过程。 
   
 1. 如果你计划还原物理服务器，请确保目标 DC 的网络电缆未连接，因此未连接到生产网络。 对于虚拟机，你可以删除网络适配器，或使用附加到另一个网络的网络适配器，在该网络上，你可以在与生产网络隔离的情况下测试恢复过程。 
   
@@ -59,7 +59,7 @@ ms.locfileid: "80823900"
 4. 如果怀疑林范围的故障与网络入侵或恶意攻击相关，请重置所有管理帐户的帐户密码，包括 Enterprise Admins、Domain Admins、Schema Admins、Server Operators、Account Operators 组等成员。 在林恢复的下一个阶段安装其他域控制器之前，应先完成重置管理帐户密码。 
 5. 在目录林根级域中的第一个还原 DC 上，获取所有全域性和全林性操作主机角色。 需要企业管理员和架构管理员凭据才能占用林范围的操作主机角色。 
   
-     在每个子域中，占用域范围内的操作主机角色。 尽管你可能只是暂时保留已还原 DC 上的操作主机角色，但占用这些角色可确保你在林恢复过程中的哪个 DC 上托管这些角色。 作为恢复后过程的一部分，你可以根据需要重新分发操作主机角色。 有关占用操作主机角色的详细信息，请参阅[占用操作主机角色](AD-forest-recovery-seizing-operations-master-role.md)。 有关在何处放置操作主机角色的建议，请参阅[什么是操作主机？](https://technet.microsoft.com/library/cc779716.aspx)。 
+     在每个子域中，占用域范围内的操作主机角色。 尽管你可能只是暂时保留已还原 DC 上的操作主机角色，但占用这些角色可确保你在林恢复过程中的哪个 DC 上托管这些角色。 作为恢复后过程的一部分，你可以根据需要重新分发操作主机角色。 有关占用操作主机角色的详细信息，请参阅[占用操作主机角色](AD-forest-recovery-seizing-operations-master-role.md)。 有关在何处放置操作主机角色的建议，请参阅[什么是操作主机？](/previous-versions/windows/it-pro/windows-server-2003/cc779716(v=ws.10))。 
   
 6. 清除不是从备份还原的目录林根级域中所有其他可写 Dc 的元数据（除此第一个 DC 外，域中的所有可写 Dc 除外）。 如果使用 Windows Server 2008 或更高版本附带的 Active Directory 用户和计算机或 Active Directory 站点和服务的版本，或 Windows Vista 或更高版本的 RSAT，则在删除 DC 对象时将自动执行元数据清除。 此外，还会自动删除已删除 DC 的服务器对象和计算机对象。 有关详细信息，请参阅[清除已删除可写 dc 的元数据](AD-Forest-Recovery-Cleaning-Metadata.md)。 
   
@@ -72,9 +72,9 @@ ms.locfileid: "80823900"
     > [!NOTE]
     > 如果还原的 DC 运行 Windows Server 2008，则需要在知识库文章[975654](https://support.microsoft.com/kb/975654)中安装此修补程序，或者暂时将服务器连接到隔离的网络，以便安装 DNS 服务器。 任何其他版本的 Windows Server 都不需要此修补程序。 
   
-     在目录林根级域中，使用其自己的 IP 地址（或环回地址（如127.0.0.1））将还原的 DC 配置为其首选 DNS 服务器。 你可以在局域网（LAN）适配器的 TCP/IP 属性中配置此设置。 这是林中的第一个 DNS 服务器。 有关详细信息，请参阅[将 Tcp/ip 配置为使用 DNS](https://technet.microsoft.com/library/cc779282\(WS.10\).aspx)。 
+     在目录林根级域中，使用其自己的 IP 地址（或环回地址（如127.0.0.1））将还原的 DC 配置为其首选 DNS 服务器。 你可以在局域网（LAN）适配器的 TCP/IP 属性中配置此设置。 这是林中的第一个 DNS 服务器。 有关详细信息，请参阅[将 Tcp/ip 配置为使用 DNS](/previous-versions/windows/it-pro/windows-server-2003/cc779716(v=ws.10))。 
   
-     在每个子域中，用目录林根级域中的第一个 DNS 服务器的 IP 地址配置还原的 DC 作为其首选 DNS 服务器。 可以在 LAN 适配器的 TCP/IP 属性中配置此设置。 有关详细信息，请参阅[将 Tcp/ip 配置为使用 DNS](https://technet.microsoft.com/library/cc779282\(WS.10\).aspx)。 
+     在每个子域中，用目录林根级域中的第一个 DNS 服务器的 IP 地址配置还原的 DC 作为其首选 DNS 服务器。 可以在 LAN 适配器的 TCP/IP 属性中配置此设置。 有关详细信息，请参阅[将 Tcp/ip 配置为使用 DNS](/previous-versions/windows/it-pro/windows-server-2003/cc779716(v=ws.10))。 
   
      在 "_msdcs" 和 "域" DNS 区域中，删除清除元数据后不再存在的 Dc 的 NS 记录。 检查是否已删除清理的 Dc 的 SRV 记录。 若要加快删除 DNS SRV 记录的速度，请运行：  
   
@@ -112,7 +112,7 @@ ms.locfileid: "80823900"
   
      如果你确实还原了作为全局编录的 DC，无论是不小心还是因为这是你信任的孤立备份，我们建议你在还原操作完成后立即禁用全局编录，以防止发生延迟对象。 禁用全局编录标志将导致计算机丢失其所有部分副本（分区），并 relegating 自身为常规 DC 状态。 
   
-13. 配置 Windows 时间服务。 在目录林根级域中，将 PDC 仿真器配置为从外部时间源同步时间。 有关详细信息，请参阅在[林根域中的 PDC 模拟器上配置 Windows 时间服务](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29)。 
+13. 配置 Windows 时间服务。 在目录林根级域中，将 PDC 仿真器配置为从外部时间源同步时间。 有关详细信息，请参阅在[林根域中的 PDC 模拟器上配置 Windows 时间服务](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731191%28v=ws.10%29)。 
   
 ## <a name="reconnect-each-restored-writeable-domain-controller-to-a-common-network"></a>将每个还原的可写域控制器重新连接到公共网络
 
@@ -125,7 +125,7 @@ ms.locfileid: "80823900"
 
 - 若要修复名称解析，请根据需要创建 DNS 委托记录并配置 DNS 转发和根提示。 运行**repadmin/replsum**以检查域控制器之间的复制。 
 - 如果还原的 DC 不是直接复制伙伴，则通过在它们之间创建临时连接对象，可以更快地进行复制恢复。 
-- 若要验证元数据清除，请运行**Repadmin/viewlist \\** *，获取林中所有 dc 的列表。 运行**Nltest/DCList：** *< 域\>* 以获取域中所有 dc 的列表。 
+- 若要验证元数据清除，请运行**Repadmin/viewlist \\ *** 获取林中所有 dc 的列表。 运行**Nltest/DCList：** *<域 \> * ，获取域中所有 dc 的列表。 
 - 若要检查 DC 和 DNS 运行状况，请运行 DCDiag/v 报告林中所有 Dc 上的错误。 
 
 ## <a name="add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain"></a>将全局编录添加到目录林根级域中的域控制器

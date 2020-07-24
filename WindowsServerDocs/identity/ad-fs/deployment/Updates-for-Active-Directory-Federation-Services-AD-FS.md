@@ -8,12 +8,12 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f72a29d97da89b0b6de93b6b573bce4fdf5e35c2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7bc50fc395ee3469b05ee09aadfb1ecb79e3ecf8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855860"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963899"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Active Directory 联合身份验证服务（AD FS）和 Web 应用程序代理（WAP）的必需更新
 
@@ -27,7 +27,7 @@ Windows Server 2016 的更新通过 Windows 更新每月传递，并具有累积
 
 |知识库# |说明|发布日期
 |----- | ----- |-----
-|[4534271](https://support.microsoft.com/help/4534271/windows-10-update-kb4534271) | 解决了在默认情况下，对于 Google Chrome 的80版，默认情况下支持新[SameSite](https://www.chromestatus.com/feature/5088147346030592) cookie 策略的潜在 AD FS 镶边失败。 有关详细信息，请参阅[此处](https://docs.microsoft.com/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications)。 |2020年1月|
+|[4534271](https://support.microsoft.com/help/4534271/windows-10-update-kb4534271) | 解决了在默认情况下，对于 Google Chrome 的80版，默认情况下支持新[SameSite](https://www.chromestatus.com/feature/5088147346030592) cookie 策略的潜在 AD FS 镶边失败。 有关详细信息，请参阅[此处](/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications)。 |2020 年 1 月|
 |[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | 此安全更新解决了 Active Directory 联合身份验证服务（AD FS）中的漏洞，攻击者可能会绕过 extranet 锁定策略。 |2019 年 7 月|
 |[4489889（OS 版本14393.2879）](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | 解决了 Active Directory 联合身份验证服务（AD FS）中的问题，该问题会导致重复的信赖方信任出现在 AD FS 管理控制台中。 当你使用 AD FS 管理控制台创建或查看信赖方信任时，会发生这种情况。</br></br> 解决在 AD FS 2016 上启用 Extranet 智能锁定（ESL）时发生的高 Active Directory 联合身份验证服务（ADFS） Web 应用程序代理（WAP）延迟问题（超过10个000ms）。 此安全更新解决了[CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794)中描述的漏洞。 |2019 年 3 月|
 |[4487006（OS 版本14393.2828）](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | 解决了使用 PowerShell 或 Active Directory 联合身份验证服务（AD FS）管理控制台时导致信赖方信任更新失败的问题。 如果将信赖方信任配置为使用发布多个 PassiveRequestorEndpoint 的联机元数据 URL，则会出现此问题。 错误为 "MSIS7615：信赖方信任中指定的受信任终结点对于该信赖方信任必须是唯一的。"  </br></br>解决了显示因 Azure 密码保护策略而导致外部复杂性密码更改的特定错误消息的问题。 |2019 年 2 月|
@@ -50,7 +50,7 @@ Windows Server 2016 的更新通过 Windows 更新每月传递，并具有累积
 
 |知识库# |说明|发布日期
 |----- | ----- |-----
-|[4534309](https://support.microsoft.com/help/4534309/windows-8-1-kb4534309)| 解决了在默认情况下，对于 Google Chrome 的80版，默认情况下支持新[SameSite](https://www.chromestatus.com/feature/5088147346030592) cookie 策略的潜在 AD FS 镶边失败。 有关详细信息，请参阅[此处](https://docs.microsoft.com/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications)。 |2020年1月
+|[4534309](https://support.microsoft.com/help/4534309/windows-8-1-kb4534309)| 解决了在默认情况下，对于 Google Chrome 的80版，默认情况下支持新[SameSite](https://www.chromestatus.com/feature/5088147346030592) cookie 策略的潜在 AD FS 镶边失败。 有关详细信息，请参阅[此处](/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications)。 |2020 年 1 月
 |[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| 此安全更新解决了 Active Directory 联合身份验证服务（AD FS）中的漏洞，攻击者可能会绕过 extranet 锁定策略。 |2019 年 7 月
 |[4041685](https://support.microsoft.com/kb/4041685)|解决了一个 AD FS 问题：请求标头中的 MSISConext cookie 最终会使标头大小限制溢出，导致无法使用 HTTP 状态代码 400 "错误的请求标头过长" 进行身份验证。</br></br>修复了在身份验证期间，ADFS 无法再忽略 "prompt = login" 的问题。 添加了 "禁用" 选项，用于还原使用非密码身份验证的情况。|10月2017预览版更新汇总
 |[4019217](https://support.microsoft.com/kb/4019217)|使用服务器 2012 R2 AD FS 服务器时，使用令牌代理的工作文件夹客户端不起作用|5月2017预览版更新汇总
@@ -58,7 +58,7 @@ Windows Server 2016 的更新通过 Windows 更新每月传递，并具有累积
 |[4015547](https://support.microsoft.com/kb/4015547)|修复了 AD FS 不对外部用户进行身份验证和 AD FS WAP 随机失败转发请求的问题|2017年4月安全更新
 |[4012216](https://support.microsoft.com/kb/4009970)|MS17-019 此安全更新解决了 Active Directory 联合身份验证服务（ADFS）中的漏洞。 如果攻击者将特制请求发送到 AD FS 服务器，则该漏洞可能导致信息泄露，这使得攻击者能够读取有关目标系统的敏感信息。|2017年3月更新汇总
 |[3179574](https://support.microsoft.com/kb/3179574)|修复了 AD FS extranet 密码更新的问题。 |2016年8月更新汇总
-|[3172614](https://support.microsoft.com/kb/3172614)|引入了 prompt = 登录[支持](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/ad-fs-faq#BKMK_7)，已解决 AD FS 管理控制台和 AlwaysRequireAuthentication 设置问题。 |2016年7月更新汇总
+|[3172614](https://support.microsoft.com/kb/3172614)|引入了 prompt = 登录[支持](../overview/ad-fs-faq.md)，已解决 AD FS 管理控制台和 AlwaysRequireAuthentication 设置问题。 |2016年7月更新汇总
 |[3163306](https://support.microsoft.com/kb/3163306)|Active Directory 联合身份验证服务（AD FS）3.0 无法连接到配置为使用连接字符串中安全套接字层（SSL）端口636或3269的轻型目录访问协议（LDAP）属性存储。 |2016年6月更新汇总
 |[3148533](https://support.microsoft.com/kb/3148533)|在 Windows Server 2012 R2 中通过 ADFS 代理进行的 MFA 回退身份验证失败 |2016 年 5 月
 |[3134787](https://support.microsoft.com/kb/3134787)|AD FS 日志不包含 Windows Server 2012 R2 中帐户锁定方案的客户端 IP 地址 |2016 年 2 月
@@ -90,10 +90,10 @@ Windows Server 2016 的更新通过 Windows 更新每月传递，并具有累积
 ## <a name="updates-for-ad-fs-in-windows-server-2012-ad-fs-21-and-ad-fs-20"></a>Windows Server 2012 中的 AD FS 更新（AD FS 2.1）和 AD FS 2。0
 下面是针对 AD FS 2.0 和2.1 发布的修补程序和更新汇总列表。
 
-|知识库# |说明|发布日期|適用對象：
+|知识库# |说明|发布日期|适用于：
 |----- | ----- |-----|-----
 |[3197878](https://support.microsoft.com/kb/3197878)|在 Windows Server 2012 中通过代理进行身份验证失败（这是修补程序3094446的一般版本）|11月2016质量汇总|AD FS 2。1
-|[3197869](https://support.microsoft.com/kb/3197869)|在 Windows Server 2008 R2 SP1 中通过代理进行的身份验证失败（修补程序3094446的一般版本）|11月2016质量汇总|AD FS 2。0
+|[3197869](https://support.microsoft.com/kb/3197869)|在 Windows Server 2008 R2 SP1 中通过代理进行的身份验证失败（修补程序3094446的一般版本）|11月2016质量汇总|AD FS 2.0
 |[3094446](https://support.microsoft.com/kb/3094446)|在 Windows Server 2012 或 Windows Server 2008 R2 SP1 中通过代理进行身份验证失败|2015 年 9 月|AD FS 2.0 和2。1
 |[3070078](https://support.microsoft.com/kb/3070078)|当你对 Windows Server 2012 中的加密证书进行身份验证时，AD FS 2.1 会引发异常|2015 年 7 月|AD FS 2。1
 |[3062577](https://support.microsoft.com/kb/3062577)|MS15-062： Active Directory 联合身份验证服务中的漏洞可能导致提升权限|2015 年 6 月|AD FS 2.0/2。1
@@ -103,9 +103,9 @@ Windows Server 2016 的更新通过 Windows 更新每月传递，并具有累积
 |[2926658](https://support.microsoft.com/kb/2926658)|如果你没有 SQL 权限，ADFS SQL 场部署将失败|2014 年 10 月|AD FS 2。1
 |[2896713](https://support.microsoft.com/kb/2896713)或[2989956](https://support.microsoft.com/kb/2989956)|更新可用于在 AD FS 服务器上安装安全更新2843638后解决多个问题|2013 年 11 月</br></br>2014 年 9 月|AD FS 2.0/2。1
 |[2877424](https://support.microsoft.com/kb/2877424)|更新使你能够将一个证书用于 AD FS 2.1 场中的多个信赖方信任|2013 年 10 月|AD FS 2。1
-|[2873168](https://support.microsoft.com/kb/2873168)|修复：使用第三方 CSP 和 HSM，然后在 Windows Server 2008 R2 Service Pack 1 上的 AD FS 2.0 的更新汇总3中配置声明提供程序信任时出现错误。|2013年9月|AD FS 2。0
-|[2861090](https://support.microsoft.com/kb/2861090)|加密证书的使用者名称中的逗号会导致 Windows Server 2008 R2 SP1 中出现异常|2013 年 8 月|AD FS 2。0
+|[2873168](https://support.microsoft.com/kb/2873168)|修复：使用第三方 CSP 和 HSM，然后在 Windows Server 2008 R2 Service Pack 1 上的 AD FS 2.0 的更新汇总3中配置声明提供程序信任时出现错误。|2013年9月|AD FS 2.0
+|[2861090](https://support.microsoft.com/kb/2861090)|加密证书的使用者名称中的逗号会导致 Windows Server 2008 R2 SP1 中出现异常|2013 年 8 月|AD FS 2.0
 |[2843639](https://support.microsoft.com/kb/2843639)|安全Active Directory 联合身份验证服务中的漏洞可能导致信息泄露|2013 年 11 月|AD FS 2。1
-|[2843638](https://support.microsoft.com/kb/2843638)|MS13-066： Active Directory 联合身份验证服务2.0：8月13日的安全更新说明，2013|2013 年 8 月|AD FS 2。0
-|[2827748](https://support.microsoft.com/kb/2827748)|Federationmetadata.xml 文件不包含 Windows Server 2012 中的 WS 信任终结点和 WS 联合身份验证终结点的 MEX 终结点信息|2013 年 5 月|AD FS 2。1
-|[2790338](https://support.microsoft.com/kb/2790338)|Active Directory 联合身份验证服务（AD FS）2.0 更新汇总3的说明|2013 年 3 月|AD FS 2。0
+|[2843638](https://support.microsoft.com/kb/2843638)|MS13-066： Active Directory 联合身份验证服务2.0：8月13日的安全更新说明，2013|2013 年 8 月|AD FS 2.0
+|[2827748](https://support.microsoft.com/kb/2827748)|Federationmetadata.xml 文件不包含 Windows Server 2012 中的 WS 信任终结点和 WS-FEDERATION 终结点的 MEX 终结点信息|2013 年 5 月|AD FS 2。1
+|[2790338](https://support.microsoft.com/kb/2790338)|Active Directory 联合身份验证服务（AD FS）2.0 更新汇总3的说明|2013 年 3 月|AD FS 2.0

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: bdda28970ed5e94acaff0fd57ae3dc3d4485dc9a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a78e26b9d633e76fce99c816d700773332e6fdb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821530"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960779"
 ---
 # <a name="appendix-b-privileged-accounts-and-groups-in-active-directory"></a>附录 B：Active Directory 中有权限的帐户和组
 
@@ -35,7 +35,7 @@ ms.locfileid: "80821530"
 
 在组策略对象编辑器的接口中，这些可分配的功能广泛称为用户权限。 但实际上，某些用户权限是以编程方式称为权限，而另一些则是以编程方式称为特权。 表 B-1：用户权限和特权提供了一些最常用的可分配用户权限及其编程常量。 尽管组策略和其他接口是指所有这些接口都是用户权限，但有些接口以编程方式标识为权限，而另一些则定义为特权。  
 
-有关下表中列出的每个用户权限的详细信息，请参阅 Microsoft TechNet 网站上的 Windows Server 2008 R2[威胁和漏洞缓解](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)指南中的 "威胁和漏洞的威胁[和对策指南：用户权限](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)"。 有关适用于 Windows Server 2008 的信息，请参阅 Microsoft TechNet 站点上的[威胁和漏洞缓解](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)文档中的[用户权限](https://technet.microsoft.com/library/dd349804(v=WS.10).aspx)。 在撰写本文档时，尚未发布有关 Windows Server 2012 的相应文档。  
+有关下表中列出的每个用户权限的详细信息，请参阅 Microsoft TechNet 网站上的 Windows Server 2008 R2[威胁和漏洞缓解](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755181(v=ws.10))指南中的 "威胁和漏洞的威胁[和对策指南：用户权限](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125917(v=ws.10))"。 有关适用于 Windows Server 2008 的信息，请参阅 Microsoft TechNet 站点上的[威胁和漏洞缓解](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755181(v=ws.10))文档中的[用户权限](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10))。 在撰写本文档时，尚未发布有关 Windows Server 2012 的相应文档。  
 
 > [!NOTE]  
 > 出于本文档的目的，除非另外指定，否则将使用术语 "权限" 和 "用户权限" 来标识权利和权限。  
@@ -45,56 +45,56 @@ ms.locfileid: "80821530"
 |||  
 |-|-|  
 |**组策略中的用户权限**|**常量名称**|  
-|[作为受信任的调用方访问凭据管理器](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2)|SeTrustedCredManAccessPrivilege|  
-|[从网络访问此计算机](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1)|SeNetworkLogonRight|  
-|[充当操作系统的一部分](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3)|SeTcbPrivilege|  
-|[将工作站添加到域](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4)|SeMachineAccountPrivilege|  
-|[调整进程的内存配额](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|SeIncreaseQuotaPrivilege|  
-|[允许本地登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6)|SeInteractiveLogonRight|  
-|[允许通过终端服务登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7)|SeRemoteInteractiveLogonRight|  
-|[备份文件和目录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8)|SeBackupPrivilege|  
-|[绕过遍历检查](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_9)|SeChangeNotifyPrivilege|  
-|[更改系统时间](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_10)|SeSystemtimePrivilege|  
-|[更改时区](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_11)|SeTimeZonePrivilege|  
-|[创建页面文件](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_12)|SeCreatePagefilePrivilege|  
-|[创建令牌对象](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_13)|SeCreateTokenPrivilege|  
-|[创建全局对象](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_14)|SeCreateGlobalPrivilege|  
-|[创建永久共享对象](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_15)|SeCreatePermanentPrivilege|  
-|[创建符号链接](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_16)|SeCreateSymbolicLinkPrivilege|  
-|[调试程序](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_17)|SeDebugPrivilege|  
-|[拒绝从网络访问此计算机](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18)|SeDenyNetworkLogonRight|  
-|[拒绝作为批处理作业登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18a)|SeDenyBatchLogonRight|  
-|[拒绝作为服务登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19)|SeDenyServiceLogonRight|  
-|[拒绝本地登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_20)|SeDenyInteractiveLogonRight|  
-|[拒绝通过终端服务登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_21)|SeDenyRemoteInteractiveLogonRight|  
-|[使计算机和用户帐户可用于委派](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_22)|SeEnableDelegationPrivilege|  
-|[从远程系统强制关机](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_23)|SeRemoteShutdownPrivilege|  
-|[生成安全审核](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_24)|SeAuditPrivilege|  
-|[身份验证后模拟客户端](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_25)|SeImpersonatePrivilege|  
-|[增加进程工作集](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_26)|SeIncreaseWorkingSetPrivilege|  
-|[提高计划优先级](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27)|SeIncreaseBasePriorityPrivilege|  
-|[加载和卸载设备驱动程序](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28)|SeLoadDriverPrivilege|  
-|[锁定内存页](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29)|SeLockMemoryPrivilege|  
-|[作为批处理作业登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30)|SeBatchLogonRight|  
-|[作为服务登录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_31)|SeServiceLogonRight|  
-|[管理审核和安全日志](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32)|SeSecurityPrivilege|  
-|[修改对象标签](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|SeRelabelPrivilege|  
-|[修改固件环境值](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|SeSystemEnvironmentPrivilege|  
-|[执行卷维护任务](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|SeManageVolumePrivilege|  
-|[分析单一进程](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|SeProfileSingleProcessPrivilege|  
-|[配置系统性能](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37)|SeSystemProfilePrivilege|  
-|[从扩展坞中删除计算机](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38)|SeUndockPrivilege|  
-|[替换进程级令牌](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_39)|SeAssignPrimaryTokenPrivilege|  
-|[还原文件和目录](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_40)|SeRestorePrivilege|  
-|[关闭系统](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_41)|SeShutdownPrivilege|  
-|[同步目录服务数据](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_42)|SeSyncAgentPrivilege|  
-|[获得文件或其他对象的所有权](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_43)|SeTakeOwnershipPrivilege|  
+|[作为受信任呼叫方的访问凭据管理器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_2)|SeTrustedCredManAccessPrivilege|  
+|[从网络访问此计算机](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_1)|SeNetworkLogonRight|  
+|[以操作系统方式操作](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_3)|SeTcbPrivilege|  
+|[将工作站添加到域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_4)|SeMachineAccountPrivilege|  
+|[为进程调整内存配额](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_5)|SeIncreaseQuotaPrivilege|  
+|[允许本地登录](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_6)|SeInteractiveLogonRight|  
+|[允许通过终端服务登录](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_7)|SeRemoteInteractiveLogonRight|  
+|[备份文件和目录](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_8)|SeBackupPrivilege|  
+|[绕过遍历检查](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_9)|SeChangeNotifyPrivilege|  
+|[更改系统时间](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_10)|SeSystemtimePrivilege|  
+|[更改时区](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_11)|SeTimeZonePrivilege|  
+|[创建页面文件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_12)|SeCreatePagefilePrivilege|  
+|[创建令牌对象](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_13)|SeCreateTokenPrivilege|  
+|[创建全局对象](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_14)|SeCreateGlobalPrivilege|  
+|[创建永久共享对象](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_15)|SeCreatePermanentPrivilege|  
+|[创建符号链接](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_16)|SeCreateSymbolicLinkPrivilege|  
+|[调试程序](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_17)|SeDebugPrivilege|  
+|[拒绝通过网络访问该计算机](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_18)|SeDenyNetworkLogonRight|  
+|[拒绝作为批处理作业登录](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_18a)|SeDenyBatchLogonRight|  
+|[拒绝以服务登录](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_19)|SeDenyServiceLogonRight|  
+|[拒绝本地登录](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_20)|SeDenyInteractiveLogonRight|  
+|[拒绝通过终端服务登录](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_21)|SeDenyRemoteInteractiveLogonRight|  
+|[信任计算机和用户帐户可以执行委派](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_22)|SeEnableDelegationPrivilege|  
+|[从远程系统强制关机](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_23)|SeRemoteShutdownPrivilege|  
+|[生成安全审核](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_24)|SeAuditPrivilege|  
+|[在身份验证后模拟客户端](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_25)|SeImpersonatePrivilege|  
+|[增加进程工作集](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_26)|SeIncreaseWorkingSetPrivilege|  
+|[提高日程安排的优先级](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_27)|SeIncreaseBasePriorityPrivilege|  
+|[加载和卸载设备驱动程序](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_28)|SeLoadDriverPrivilege|  
+|[在内存中锁定页面](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_29)|SeLockMemoryPrivilege|  
+|[作为批处理作业登录](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_30)|SeBatchLogonRight|  
+|[作为服务登录](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_31)|SeServiceLogonRight|  
+|[管理审核和安全日志](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_32)|Sesecurityprivilege|  
+|[修改对象标签](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_33)|SeRelabelPrivilege|  
+|[修改固件环境值](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_34)|SeSystemEnvironmentPrivilege|  
+|[执行卷维护任务](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_35)|SeManageVolumePrivilege|  
+|[配置单一进程](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_36)|SeProfileSingleProcessPrivilege|  
+|[配置系统性能](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_37)|SeSystemProfilePrivilege|  
+|[从扩展坞中取出计算机](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_38)|SeUndockPrivilege|  
+|[替换进程级令牌](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_39)|SeAssignPrimaryTokenPrivilege|  
+|[还原文件和目录](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_40)|SeRestorePrivilege|  
+|[关闭系统](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_41)|SeShutdownPrivilege|  
+|[同步目录服务数据](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_42)|SeSyncAgentPrivilege|  
+|[获得文件或其他对象的所有权](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_43)|SeTakeOwnershipPrivilege|  
 
 #### <a name="permissions"></a>权限  
 权限是应用于安全对象（如文件系统、注册表、服务和 Active Directory 对象）的访问控制。 每个安全对象都有一个关联的访问控制列表（ACL），其中包含的访问控制项（Ace）允许或拒绝安全主体（用户、服务、计算机或组）对对象执行各种操作的能力。 例如，Active Directory 中的多个对象的 Acl 包含允许经过身份验证的用户读取有关这些对象的常规信息的 Ace，但不授予它们读取敏感信息或更改对象的能力。
 除每个域的内置来宾帐户之外，每个登录并通过 Active Directory 林中的域控制器或受信任的林中的域控制器进行身份验证的安全主体都在默认情况下已将经过身份验证的用户安全标识符（SID）添加到其访问令牌。 因此，用户、服务或计算机帐户是否尝试读取域中用户对象的常规属性，读取操作成功。  
 
-如果安全主体试图访问某个对象，但该对象的 Ace 未定义，并且包含主体的访问令牌中存在的 SID，则主体将无法访问该对象。 而且，如果对象的 ACL 中的 ACE 包含与用户访问令牌匹配的 SID 的 "拒绝" 条目，则 "拒绝" ACE 通常会替代冲突的 "允许" ACE。 有关 Windows 中的访问控制的详细信息，请参阅 MSDN 网站上的[访问控制](https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx)。  
+如果安全主体试图访问某个对象，但该对象的 Ace 未定义，并且包含主体的访问令牌中存在的 SID，则主体将无法访问该对象。 而且，如果对象的 ACL 中的 ACE 包含与用户访问令牌匹配的 SID 的 "拒绝" 条目，则 "拒绝" ACE 通常会替代冲突的 "允许" ACE。 有关 Windows 中的访问控制的详细信息，请参阅 MSDN 网站上的[访问控制](/windows/win32/secauthz/access-control)。  
 
 在本文档中，权限是指授予或拒绝对安全对象安全主体的功能。 每当用户权限和权限之间发生冲突时，用户权限通常优先。 例如，如果 Active Directory 中的对象已配置有一个 ACL，该 ACL 拒绝管理员对某个对象的所有读取和写入访问权限，那么该域的 Administrators 组成员的用户将无法查看有关该对象的很多信息。 但是，因为向管理员组授予用户权限 "获取文件或其他对象的所有权"，所以用户只需获得相关对象的所有权，然后重写对象的 ACL 即可授予管理员对对象的完全控制权限。  
 
@@ -111,19 +111,19 @@ Active Directory 旨在促进管理委派和分配权限的最低权限原则。
 
 例如，如果将 Microsoft Exchange Server 安装到 Active Directory 林中，则可在域中的内置和用户容器中创建其他帐户和组。 本附录仅介绍了基于本机角色和功能在 Active Directory 中的内置和用户容器中创建的组和帐户。 不包括通过安装企业软件创建的帐户和组。  
 
-#### <a name="enterprise-admins"></a>Enterprise Admins  
+#### <a name="enterprise-admins"></a>企业管理员  
 Enterprise Admins （EA）组位于目录林根级域中，默认情况下，它是林中每个域内内置 Administrators 组的成员。 目录林根级域中的内置管理员帐户是 EA 组中唯一的默认成员。 EAs 被授予了权限，使其能够影响林范围的更改。 这些更改会影响林中的所有域，如添加或删除域、建立林信任或提升林功能级别。 在正确设计和实现的委托模型中，仅在第一次构造林或进行特定林范围的更改（例如建立出站林信任）时才需要 EA 成员身份。  
 
 默认情况下，EA 组位于目录林根级域的 "用户" 容器中，它是一个通用安全组，除非林根域在 Windows 2000 服务器混合模式下运行，在这种情况下，该组为全局安全组。 尽管某些权限直接授予 EA 组，但此组的许多权限实际上是由 EA 组继承的，因为它是林中每个域中 Administrators 组的成员。 Enterprise Admins 对工作站或成员服务器没有默认权限。  
 
-#### <a name="domain-admins"></a>Domain Admins  
+#### <a name="domain-admins"></a>域管理员  
 林中的每个域都有自己的域管理员（DA）组，该组是该域的内置管理员（BA）组的成员，此外还包含加入域的每台计算机上的本地管理员组的成员。 域的 DA 组唯一的默认成员是该域的内置管理员帐户。  
 
 DAs 在其域中具有全部功能，而 EAs 具有全林性的权限。 在正确设计和实现的委派模型中，只需在 "中断玻璃" 方案中需要 DA 成员身份，这种情况下，需要对域中的每台计算机使用具有高级别权限的帐户，或者必须进行某些域范围的更改。 尽管本机 Active Directory 委托机制确实允许在紧急情况下使用 DA 帐户进行委派，但构建有效的委派模型可能会很耗时，许多组织都使用第三方应用程序来加速此过程。  
 
 DA 组是位于域的 "用户" 容器中的全局安全组。 林中的每个域都有一个 DA 组，而一个 DA 组的默认成员是域的内置管理员帐户。 由于域的 DA 组嵌套在域的 BA 组中并且每个已加入域的系统的本地管理员组中，因此，DAs 不仅具有专门授予给域管理员的权限，而且还继承所有已加入域的系统上的域管理员组和本地管理员组的所有权利和权限。  
 
-#### <a name="administrators"></a>Administrators  
+#### <a name="administrators"></a>管理员  
 内置管理员（BA）组是域的内置容器中的域本地组，DAs 和 EAs 嵌套在该域中，这是在目录和域控制器上被授予了许多直接权限和权限的组。 但是，域的 Administrators 组对成员服务器或工作站没有任何特权。 已加入域的计算机的本地 Administrators 组中的成员身份是授予本地权限的位置;讨论了组，默认情况下，只有 DAs 是所有已加入域的计算机的本地管理员组的成员。  
 
 Administrators 组是域的内置容器中的域本地组。 默认情况下，每个域的 BA 组都包含本地域的内置管理员帐户、本地域组和林根域的 EA 组。 Active Directory 和域控制器上的许多用户权限专门授予 Administrators 组，而不是 EAs 或 DAs。 域的 BA 组被授予对大多数目录对象的完全控制权限，并且可以获得目录对象的所有权。 尽管在林和域中向 EA 和 DA 组授予特定于对象的特定权限，但实际上，组中的大部分功能都是从其 BA 组中的成员身份 "继承" 的。  
@@ -150,11 +150,11 @@ Administrators 组是域的内置容器中的域本地组。 默认情况下，�
 |**帐户或组**|**默认容器、组作用域和类型**|**说明和默认用户权限**|  
 |访问控制协助操作员（Windows Server 2012 中的 Active Directory）|内置容器<p>域本地安全组|此组的成员可以远程查询此计算机上的资源的授权属性和权限。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |Account Operators|内置容器<p>域本地安全组|成员可以管理域用户和组帐户。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|管理员帐户|用户容器<p>不是组|用于管理域的内置帐户。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>调整进程的内存配额<p>允许在本地登录<p>允许通过远程桌面服务登录<p>备份文件和目录<p>跳过遍历检查<p>更改系统时间<p>更改时区<p>创建页面文件<p>创建全局对象<p>创建符号链接<p>调试程序<p>信任计算机和用户帐户可以执行委派<p>从远程系统强制关机<p>身份验证后模拟客户端<p>增加进程工作集<p>提高日程安排的优先级<p>装载和卸载设备驱动程序<p>作为批处理作业登录<p>管理审核和安全日志<p>修改固件环境值<p>执行卷维护任务<p>配置单一进程<p>配置系统性能<p>从扩展坞中移除计算机<p>还原文件和目录<p>关闭系统<p>获得文件或其他对象的所有权|  
-|管理员组|内置容器<p>域本地安全组|管理员对域具有完全且无限制的访问权限。<p>**直接用户权限：**<p>从网络访问此计算机<p>调整进程的内存配额<p>允许在本地登录<p>允许通过远程桌面服务登录<p>备份文件和目录<p>跳过遍历检查<p>更改系统时间<p>更改时区<p>创建页面文件<p>创建全局对象<p>创建符号链接<p>调试程序<p>信任计算机和用户帐户可以执行委派<p>从远程系统强制关机<p>身份验证后模拟客户端<p>提高日程安排的优先级<p>装载和卸载设备驱动程序<p>作为批处理作业登录<p>管理审核和安全日志<p>修改固件环境值<p>执行卷维护任务<p>配置单一进程<p>配置系统性能<p>从扩展坞中移除计算机<p>还原文件和目录<p>关闭系统<p>获得文件或其他对象的所有权<p>继承的用户权限：<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|管理员帐户|用户容器<p>不是组|用于管理域的内置帐户。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>调整进程的内存配额<p>允许本地登录<p>允许通过远程桌面服务登录<p>备份文件和目录<p>跳过遍历检查<p>更改系统时间<p>更改时区<p>创建页面文件<p>创建全局对象<p>创建符号链接<p>调试程序<p>信任计算机和用户帐户可以执行委派<p>从远程系统强制关机<p>在身份验证后模拟客户端<p>增加进程工作集<p>提高日程安排的优先级<p>加载和卸载设备驱动程序<p>作为批处理作业登录<p>管理审核和安全日志<p>修改固件环境值<p>执行卷维护任务<p>配置单一进程<p>配置系统性能<p>从扩展坞中取出计算机<p>还原文件和目录<p>关闭系统<p>获得文件或其他对象的所有权|  
+|管理员组|内置容器<p>域本地安全组|管理员对域具有完全且无限制的访问权限。<p>**直接用户权限：**<p>从网络访问此计算机<p>调整进程的内存配额<p>允许本地登录<p>允许通过远程桌面服务登录<p>备份文件和目录<p>跳过遍历检查<p>更改系统时间<p>更改时区<p>创建页面文件<p>创建全局对象<p>创建符号链接<p>调试程序<p>信任计算机和用户帐户可以执行委派<p>从远程系统强制关机<p>在身份验证后模拟客户端<p>提高日程安排的优先级<p>加载和卸载设备驱动程序<p>作为批处理作业登录<p>管理审核和安全日志<p>修改固件环境值<p>执行卷维护任务<p>配置单一进程<p>配置系统性能<p>从扩展坞中取出计算机<p>还原文件和目录<p>关闭系统<p>获得文件或其他对象的所有权<p>继承的用户权限：<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |允许的 RODC 密码复制组|用户容器<p>域本地安全组|此组中的成员可以将其密码复制到域中的所有只读域控制器。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|Backup Operators|内置容器<p>域本地安全组|备份操作员只能出于备份或还原文件的目的覆盖安全限制。<p>**直接用户权限：**<p>允许在本地登录<p>备份文件和目录<p>作为批处理作业登录<p>还原文件和目录<p>关闭系统<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|证书发行者|用户容器<p>域本地安全组|此组的成员允许将证书发布到目录。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|备份操作员|内置容器<p>域本地安全组|备份操作员只能出于备份或还原文件的目的覆盖安全限制。<p>**直接用户权限：**<p>允许本地登录<p>备份文件和目录<p>作为批处理作业登录<p>还原文件和目录<p>关闭系统<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|Cert Publishers|用户容器<p>域本地安全组|此组的成员允许将证书发布到目录。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |证书服务 DCOM 访问|内置容器<p>域本地安全组|如果在域控制器上安装了证书服务（不推荐），此组将授予域用户和域计算机 DCOM 注册访问权限。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |可克隆域控制器（Windows Server 2012AD DS 中的 AD DS）|用户容器<p>全局安全组|此组的成员可以是克隆的域控制器。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |Cryptographic Operators|内置容器<p>域本地安全组|授权成员执行加密操作。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
@@ -165,26 +165,26 @@ Administrators 组是域的内置容器中的域本地组。 默认情况下，�
 |Distributed COM Users|内置容器<p>域本地安全组|此组的成员允许在此计算机上启动、激活和使用分布式 COM 对象。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |DnsAdmins|用户容器<p>域本地安全组|此组的成员具有对 DNS 服务器服务的管理访问权限。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |DnsUpdateProxy|用户容器<p>全局安全组|此组的成员是指允许代表不能执行动态更新的客户端来执行动态更新的 DNS 客户端。 此组的成员通常是 DHCP 服务器。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|Domain Admins|用户容器<p>全局安全组|域的指定管理员;域管理员是每个已加入域的计算机本地管理员组的成员，并且除了域的 Administrators 组外，还会接收授予本地管理员组的权限。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>调整进程的内存配额<p>允许在本地登录<p>允许通过远程桌面服务登录<p>备份文件和目录<p>跳过遍历检查<p>更改系统时间<p>更改时区<p>创建页面文件<p>创建全局对象<p>创建符号链接<p>调试程序<p>信任计算机和用户帐户可以执行委派<p>从远程系统强制关机<p>身份验证后模拟客户端<p>增加进程工作集<p>提高日程安排的优先级<p>装载和卸载设备驱动程序<p>作为批处理作业登录<p>管理审核和安全日志<p>修改固件环境值<p>执行卷维护任务<p>配置单一进程<p>配置系统性能<p>从扩展坞中移除计算机<p>还原文件和目录<p>关闭系统<p>获得文件或其他对象的所有权|  
+|域管理员|用户容器<p>全局安全组|域的指定管理员;域管理员是每个已加入域的计算机本地管理员组的成员，并且除了域的 Administrators 组外，还会接收授予本地管理员组的权限。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>调整进程的内存配额<p>允许本地登录<p>允许通过远程桌面服务登录<p>备份文件和目录<p>跳过遍历检查<p>更改系统时间<p>更改时区<p>创建页面文件<p>创建全局对象<p>创建符号链接<p>调试程序<p>信任计算机和用户帐户可以执行委派<p>从远程系统强制关机<p>在身份验证后模拟客户端<p>增加进程工作集<p>提高日程安排的优先级<p>加载和卸载设备驱动程序<p>作为批处理作业登录<p>管理审核和安全日志<p>修改固件环境值<p>执行卷维护任务<p>配置单一进程<p>配置系统性能<p>从扩展坞中取出计算机<p>还原文件和目录<p>关闭系统<p>获得文件或其他对象的所有权|  
 |域计算机|用户容器<p>全局安全组|加入该域的所有工作站和服务器都是此组的默认成员。<p>**默认直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |域控制器|用户容器<p>全局安全组|域中的所有域控制器。 注意：域控制器不是域计算机组的成员。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |域来宾|用户容器<p>全局安全组|域中的所有来宾<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |域用户|用户容器<p>全局安全组|域中的所有用户<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|Enterprise Admins （仅存在于林根域中）|用户容器<p>通用安全组|企业管理员有权更改林范围的配置设置;Enterprise Admins 是每个域的 Administrators 组的成员，并接收授予该组的权限。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>调整进程的内存配额<p>允许在本地登录<p>允许通过远程桌面服务登录<p>备份文件和目录<p>跳过遍历检查<p>更改系统时间<p>更改时区<p>创建页面文件<p>创建全局对象<p>创建符号链接<p>调试程序<p>信任计算机和用户帐户可以执行委派<p>从远程系统强制关机<p>身份验证后模拟客户端<p>增加进程工作集<p>提高日程安排的优先级<p>装载和卸载设备驱动程序<p>作为批处理作业登录<p>管理审核和安全日志<p>修改固件环境值<p>执行卷维护任务<p>配置单一进程<p>配置系统性能<p>从扩展坞中移除计算机<p>还原文件和目录<p>关闭系统<p>获得文件或其他对象的所有权|  
+|Enterprise Admins （仅存在于林根域中）|用户容器<p>通用安全组|企业管理员有权更改林范围的配置设置;Enterprise Admins 是每个域的 Administrators 组的成员，并接收授予该组的权限。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>调整进程的内存配额<p>允许本地登录<p>允许通过远程桌面服务登录<p>备份文件和目录<p>跳过遍历检查<p>更改系统时间<p>更改时区<p>创建页面文件<p>创建全局对象<p>创建符号链接<p>调试程序<p>信任计算机和用户帐户可以执行委派<p>从远程系统强制关机<p>在身份验证后模拟客户端<p>增加进程工作集<p>提高日程安排的优先级<p>加载和卸载设备驱动程序<p>作为批处理作业登录<p>管理审核和安全日志<p>修改固件环境值<p>执行卷维护任务<p>配置单一进程<p>配置系统性能<p>从扩展坞中取出计算机<p>还原文件和目录<p>关闭系统<p>获得文件或其他对象的所有权|  
 |企业只读域控制器|用户容器<p>通用安全组|此组包含林中所有只读域控制器的帐户。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|Event Log Readers|内置容器<p>域本地安全组|此组的成员可以读取域控制器上的事件日志。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|组策略创建者所有者|用户容器<p>全局安全组|此组的成员可以创建和修改域中的组策略对象。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|事件日志读者|内置容器<p>域本地安全组|此组的成员可以读取域控制器上的事件日志。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|Group Policy Creator Owners|用户容器<p>全局安全组|此组的成员可以创建和修改域中的组策略对象。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |来宾|用户容器<p>不是组|这是未将经过身份验证的用户 SID 添加到其访问令牌的 AD DS 域中的唯一帐户。 因此，此帐户将无法访问配置为向经过身份验证的用户组授予访问权限的任何资源。 此行为并不是域来宾和来宾组的成员，然而，这些组的成员会将 "已验证用户" SID 添加到他们的访问令牌。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>跳过遍历检查<p>增加进程工作集|  
-|Guests|内置容器<p>域本地安全组|默认情况下，来宾与 Users 组的成员具有相同的访问权限，但 Guest 帐户除外，如前文所述，这会进一步限制。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|来宾|内置容器<p>域本地安全组|默认情况下，来宾与 Users 组的成员具有相同的访问权限，但 Guest 帐户除外，如前文所述，这会进一步限制。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |Hyper-v 管理员（Windows Server 2012）|内置容器<p>域本地安全组|此组的成员拥有对 Hyper-v 所有功能的完整且不受限制的访问权限。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |IIS_IUSRS|内置容器<p>域本地安全组|Internet Information Services 使用的内置组。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |传入林信任生成器（仅存在于林根域中）|内置容器<p>域本地安全组|此组的成员可以创建对此林的传入单向信任。 （为企业管理员保留了出站林信任的创建。）<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |Krbtgt|用户容器<p>不是组|Krbtgt 帐户是域中 Kerberos 密钥发行中心的服务帐户。 此帐户有权访问 Active Directory 中存储的所有帐户凭据。 此帐户在默认情况下处于禁用状态，因此不应启用<p>**用户权限：** 不适用|  
 |Network Configuration Operators|内置容器<p>域本地安全组|此组的成员被授予权限，使其可以管理网络功能的配置。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|Performance Log Users|内置容器<p>域本地安全组|此组的成员可以计划性能计数器的日志记录、启用跟踪提供程序，以及在本地收集事件跟踪以及通过远程访问计算机收集事件跟踪。<p>**直接用户权限：**<p>作为批处理作业登录<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|Performance Monitor Users|内置容器<p>域本地安全组|此组的成员可以本地和远程访问性能计数器数据。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|Windows 之前2000兼容访问|内置容器<p>域本地安全组|存在此组是为了与 Windows 2000 服务器之前的操作系统向后兼容，并提供成员读取域中的用户和组信息的能力。<p>**直接用户权限：**<p>从网络访问此计算机<p>跳过遍历检查<p>**继承的用户权限：**<p>将工作站添加到域<p>增加进程工作集|  
-|打印操作员|内置容器<p>域本地安全组|此组的成员可以管理域打印机。<p>**直接用户权限：**<p>允许在本地登录<p>装载和卸载设备驱动程序<p>关闭系统<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|性能日志用户|内置容器<p>域本地安全组|此组的成员可以计划性能计数器的日志记录、启用跟踪提供程序，以及在本地收集事件跟踪以及通过远程访问计算机收集事件跟踪。<p>**直接用户权限：**<p>作为批处理作业登录<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|性能监视器用户|内置容器<p>域本地安全组|此组的成员可以本地和远程访问性能计数器数据。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|Windows 2000 以前版本兼容的访问|内置容器<p>域本地安全组|存在此组是为了与 Windows 2000 服务器之前的操作系统向后兼容，并提供成员读取域中的用户和组信息的能力。<p>**直接用户权限：**<p>从网络访问此计算机<p>跳过遍历检查<p>**继承的用户权限：**<p>将工作站添加到域<p>增加进程工作集|  
+|打印操作员|内置容器<p>域本地安全组|此组的成员可以管理域打印机。<p>**直接用户权限：**<p>允许本地登录<p>加载和卸载设备驱动程序<p>关闭系统<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |RAS 和 IAS 服务器|用户容器<p>域本地安全组|此组中的服务器可以读取域中用户帐户的远程访问属性。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |RDS 终结点服务器（Windows Server 2012）|内置容器<p>域本地安全组|此组中的服务器运行用户 RemoteApp 程序和个人虚拟机在其中运行的虚拟机和主机会话。 此组需要在运行 RD 连接代理的服务器上填充。 在部署中使用的 RD 会话主机服务器和 RD 虚拟化主机服务器需要位于此组中。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |RDS 管理服务器（Windows Server 2012）|内置容器<p>域本地安全组|此组中的服务器可以在运行远程桌面服务的服务器上执行常规管理操作。 此组需要在远程桌面服务部署中的所有服务器上进行填充。 运行 RDS Central Management 服务的服务器必须包含在此组中。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
@@ -192,10 +192,10 @@ Administrators 组是域的内置容器中的域本地组。 默认情况下，�
 |只读域控制器|用户容器<p>全局安全组|此组包含域中的所有只读域控制器。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |Remote Desktop Users|内置容器<p>域本地安全组|此组的成员被授予使用 RDP 远程登录的权限。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |远程管理用户（Windows Server 2012）|内置容器<p>域本地安全组|此组的成员可以通过管理协议（如通过 Windows 远程管理服务的 WS-MANAGEMENT）访问 WMI 资源。 这仅适用于向用户授予访问权限的 WMI 命名空间。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|Replicator|内置容器<p>域本地安全组|支持域中的旧文件复制。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|复制程序|内置容器<p>域本地安全组|支持域中的旧文件复制。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |架构管理员（仅存在于林根域中）|用户容器<p>通用安全组|只有架构管理员才能对 Active Directory 架构进行修改，并且仅当该架构是启用写功能时才可以修改。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|Server Operators|内置容器<p>域本地安全组|此组的成员可以管理域服务器。<p>**直接用户权限：**<p>允许在本地登录<p>备份文件和目录<p>更改系统时间<p>更改时区<p>从远程系统强制关机<p>还原文件和目录<p>关闭系统<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
+|Server Operators|内置容器<p>域本地安全组|此组的成员可以管理域服务器。<p>**直接用户权限：**<p>允许本地登录<p>备份文件和目录<p>更改系统时间<p>更改时区<p>从远程系统强制关机<p>还原文件和目录<p>关闭系统<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |终端服务器许可证服务器|内置容器<p>域本地安全组|此组的成员可以使用有关许可证颁发的信息更新 Active Directory 的用户帐户，以跟踪和报告 TS 每用户 CAL 使用情况<p>**默认直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
-|Users|内置容器<p>域本地安全组|用户有权允许他们读取 Active Directory 中的许多对象和属性，但它们不能更改大多数。 用户被阻止进行意外或有意的系统范围的更改，并可运行大多数应用程序。<p>**直接用户权限：**<p>增加进程工作集<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查|  
+|用户|内置容器<p>域本地安全组|用户有权允许他们读取 Active Directory 中的许多对象和属性，但它们不能更改大多数。 用户被阻止进行意外或有意的系统范围的更改，并可运行大多数应用程序。<p>**直接用户权限：**<p>增加进程工作集<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查|  
 |Windows Authorization Access Group|内置容器<p>域本地安全组|此组的成员有权访问用户对象上的已计算 tokenGroupsGlobalAndUniversal 属性<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  
 |WinRMRemoteWMIUsers_ （Windows Server 2012）|用户容器<p>域本地安全组|此组的成员可以通过管理协议（如通过 Windows 远程管理服务的 WS-MANAGEMENT）访问 WMI 资源。 这仅适用于向用户授予访问权限的 WMI 命名空间。<p>**直接用户权限：** 内容<p>**继承的用户权限：**<p>从网络访问此计算机<p>将工作站添加到域<p>跳过遍历检查<p>增加进程工作集|  

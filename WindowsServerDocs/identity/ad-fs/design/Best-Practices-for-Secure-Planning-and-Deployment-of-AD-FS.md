@@ -1,6 +1,6 @@
 ---
 ms.assetid: 963a3d37-d5f1-4153-b8d5-2537038863cb
-title: AD FS 安全规划和部署的最佳做法
+title: AD FS 安全规划和部署的最佳实践
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bcddb3cc7534f45f0a84e25a6174648f1e3b82af
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 55f68886bc5e782feb76b5005b15622881f42f6a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858410"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964459"
 ---
-# <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>AD FS 安全规划和部署的最佳做法
+# <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>AD FS 安全规划和部署的最佳实践
 
 
 本主题提供了最佳实践信息，以便在设计 Active Directory 联合身份验证服务（AD FS）部署时帮助你规划和评估安全。 本主题是检查和评估对 AD FS 使用的整体安全性的注意事项的起点。 本主题中的信息是为了补充并扩展现有安全规划和其他设计的最佳实践。  
@@ -25,10 +25,10 @@ ms.locfileid: "80858410"
 
 -   **安全 AD FS 为 "第0层" 系统** 
 
-    AD FS 是一种身份验证系统。  因此，应将其视为网络上的其他标识系统之类的 "第0层" 系统。  [Microsoft Docs](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)包含 Active Directory 管理层模型的详细信息。 
+    AD FS 是一种身份验证系统。  因此，应将其视为网络上的其他标识系统之类的 "第0层" 系统。  [Microsoft Docs](../../securing-privileged-access/securing-privileged-access-reference-material.md)包含 Active Directory 管理层模型的详细信息。 
 
 
--   **使用安全配置向导对联合服务器和联合服务器代理计算机应用 AD FS 特定的安全最佳做法**  
+-   **使用安全配置向导对联合服务器和联合服务器代理计算机应用特定于 AD FS 的安全最佳实践**  
   
     安全配置向导（SCW）是一个预安装在所有 Windows Server 2008、Windows Server 2008 R2 和 Windows Server 2012 计算机上的工具。 基于你安装的服务器角色，你可以使用该向导来应用安全最佳实践，从而帮助减少服务器攻击面。  
   
@@ -50,7 +50,7 @@ ms.locfileid: "80858410"
   
     2.  使用 Scwcmd 命令行工具注册相应的角色扩展文件。 请参阅下表获取有关在你的计算机配置的角色中使用此工具的详细信息。  
   
-    3.  检查命令是否已成功完成，方法是检查位于 WindowssecurityMsscwLogs 目录中的 SCWRegister_log .xml 文件。  
+    3.  检查 WindowssecurityMsscwLogs 目录中的 SCWRegister_log.xml 文件，验证命令是否已成功完成。  
   
     你必须在你希望对其应用 AD FS（基于 SCW 安全策略）的每个联合服务器或联合服务器代理计算机上执行所有这些步骤。  
   
@@ -61,22 +61,22 @@ ms.locfileid: "80858410"
     |独立联合服务器|Windows 内部数据库|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
     |加入场的联合服务器|Windows 内部数据库|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
     |加入场的联合服务器|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
-    |联合身份验证服务器代理|不可用|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
+    |联合服务器代理|空值|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
     有关可以用于 AD FS 的数据库的详细信息，请参阅 [AD FS 配置数据库的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
--   **如果安全性是一个非常重要的问题（例如，使用网亭时），请使用令牌重播检测。**  
+-   **在安全性非常重要的情况下（例如使用展台时），使用令牌重放检测。**  
     令牌重播检测是 AD FS 的一项功能，可确保检测到任何尝试重播对联合身份验证服务的令牌请求，并放弃请求。 默认情况下启用了令牌重放检测。 它通过确保永远不会多次使用同一个令牌，而同时适用于 WS 联合身份验证被动配置文件和安全声明标记语言 (SAML) WebSSO 配置文件。  
   
     当联合身份验证服务启动时，它开始构建任何完成的令牌请求的缓存。 针对联合身份验证服务，随着时间推移，并随着后续的令牌请求添加到缓存中，检测任何重播令牌请求的多次尝试的能力将会提升。 如果禁用令牌重放检测并在以后选择将它再次启用，请记住联合身份验证服务将仍然会在一个时间段内接受以前可能已使用的令牌，直到允许重播缓存有足够的时间来重建其内容。 有关详细信息，请参阅 [AD FS 配置数据库的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。  
   
--   **使用令牌加密，尤其是在使用支持 SAML 项目解析时。**  
+-   **请使用令牌加密，尤其当你在使用支持的 SAML 项目解析时。**  
   
     强烈建议令牌加密以提高安全性，并防范可能会针对 AD FS 部署尝试的潜在中间人（MITM）攻击。 使用加密可能会对整体稍有影响，但通常情况下，并不会经常注意到这种影响，并且在许多部署中，更高的安全性优势会超过服务器性能提升所需的任何成本。  
   
-    若要启用令牌加密，请首先向你的信赖方信任添加加密证书。 你可以在创建信赖方信任时配置加密证书，也可以在以后添加。 若要在以后将加密证书添加到现有信赖方信任，可以在使用 AD FS 管理单元时，在信任属性内的 "**加密**" 选项卡上设置要使用的证书。 若要使用 AD FS cmdlet 为现有信任指定证书，请使用**要**或**Set-relyingpartytrust** cmdlet 的 EncryptionCertificate 参数。 若要设置在解密令牌时要使用的联合身份验证服务证书，请使用**get-adfscertificate** cmdlet 并为*certificatetype token-signing*参数指定 "`Token-Encryption`"。 为特定的信赖方信任启用和禁用加密可以通过使用 *Set-RelyingPartyTrust* cmdlet 的 **EncryptClaims** 参数来实现。  
+    若要启用令牌加密，请首先向你的信赖方信任添加加密证书。 你可以在创建信赖方信任时配置加密证书，也可以在以后添加。 若要在以后将加密证书添加到现有信赖方信任，可以在使用 AD FS 管理单元时，在信任属性内的 "**加密**" 选项卡上设置要使用的证书。 若要使用 AD FS cmdlet 为现有信任指定证书，请使用**要**或**Set-relyingpartytrust** cmdlet 的 EncryptionCertificate 参数。 若要设置在解密令牌时要使用的联合身份验证服务证书，请使用**get-adfscertificate** cmdlet 并 `Token-Encryption` 为*certificatetype token-signing*参数指定 ""。 为特定的信赖方信任启用和禁用加密可以通过使用 *Set-RelyingPartyTrust* cmdlet 的 **EncryptClaims** 参数来实现。  
   
--   **利用扩展保护进行身份验证**  
+-   **利用身份验证的扩展保护**  
   
     为了帮助保护你的部署，你可以通过 AD FS 设置和使用针对身份验证的扩展保护功能。 此设置指定联合服务器支持的身份验证的扩展保护级别。  
   
@@ -88,9 +88,9 @@ ms.locfileid: "80858410"
     |-------------------|------------------|----------------------|  
     |要求|服务器完全强化。|强制执行并且始终要求扩展保护。|  
     |允许|服务器部分强化。|在所涉及的系统已修补为支持扩展保护的情况下，强制执行扩展保护。|  
-    |无|服务器易受攻击。|不强制执行扩展保护。|  
+    |None|服务器易受攻击。|不强制执行扩展保护。|  
   
--   **如果使用日志记录和跟踪，请确保任何敏感信息的隐私。**  
+-   **如果你要使用日志记录和跟踪，请确保任何敏感信息的私密性。**  
   
     默认情况下，AD FS 不会直接公开或跟踪作为联合身份验证服务或正常操作的一部分的个人身份信息（PII）。 但是，在 AD FS 中启用事件日志记录和调试跟踪日志记录时，这取决于配置某些声明类型的声明策略，并且其关联的值可能包含可能在 AD FS 事件或跟踪日志中记录的 PII。  
   
@@ -100,7 +100,7 @@ ms.locfileid: "80858410"
   
     -   确保 AD FS 事件日志和跟踪日志文件受访问控制列表（ACL）保护，该列表仅限于那些需要访问它们的受信任管理员。  
   
-    -   不要使用可通过 Web 请求轻松处理的文件扩展名或路径复制或存档日志文件。 例如，.xml 文件扩展名不是安全的选择。 你可以查阅 Internet 信息服务 (IIS) 管理指南，以查看可使用的扩展名列表。  
+    -   不要使用可通过 Web 请求轻松处理的文件扩展名或路径复制或存档日志文件。 例如，.xml 文件扩展名不是安全的选择。 可以参考 Internet 信息服务 (IIS) 管理指南以查看可提供的扩展名的列表。  
   
     -   如果要修改日志文件的路径，请确保为日志文件的位置指定绝对路径，该路径应该在 Web 主机虚拟根 (vroot) 公用目录以外，以防止使用 Web 浏览器的外部方访问它。  
 
@@ -113,32 +113,32 @@ ms.locfileid: "80858410"
      对于 Windows Server 2016 上的 AD FS Extranet 智能锁定，请参阅[AD FS Extranet 智能锁定保护](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md)。  
   
 ## <a name="sql-serverspecific-security-best-practices-for-ad-fs"></a>AD FS 的特定于 SQL 服务器的安全最佳实践  
-以下安全最佳实践特定于使用 Microsoft SQL Server&reg; 或 Windows 内部数据库（WID）（当这些数据库技术用于管理 AD FS 设计和部署中的数据时）。  
+以下安全最佳实践特定于使用 Microsoft SQL Server &reg; 或 Windows 内部数据库（WID）（当这些数据库技术用于管理 AD FS 设计和部署中的数据时）。  
   
 > [!NOTE]  
-> 这些建议旨在扩展但不能替代 SQL Server 产品安全指南。 有关规划安全 SQL Server 安装的详细信息，请参阅安全[SQL 安装的安全注意事项](https://go.microsoft.com/fwlink/?LinkID=139831)（ https://go.microsoft.com/fwlink/?LinkID=139831)。  
+> 这些建议旨在扩展但不能替代 SQL Server 产品安全指南。 有关规划安全 SQL Server 安装的详细信息，请参阅安全[SQL 安装的安全注意事项](https://go.microsoft.com/fwlink/?LinkID=139831)（ https://go.microsoft.com/fwlink/?LinkID=139831) 。  
   
--   **始终在物理上安全的网络环境中的防火墙后面部署 SQL Server。**  
+-   **始终在实际安全的网络环境中在防火墙后部署 SQL Server。**  
   
-    SQL Server 安装应永远不直接公开到 Internet 上。 只有数据中心内的计算机才能访问支持 AD FS 的 SQL server 安装。 有关详细信息，请参阅[安全最佳实践清单](https://go.microsoft.com/fwlink/?LinkID=189229)（ https://go.microsoft.com/fwlink/?LinkID=189229)。  
+    SQL Server 安装应永远不直接公开到 Internet 上。 只有数据中心内的计算机才能访问支持 AD FS 的 SQL server 安装。 有关详细信息，请参阅[安全最佳实践清单](https://go.microsoft.com/fwlink/?LinkID=189229)（ https://go.microsoft.com/fwlink/?LinkID=189229) 。  
   
--   **请在服务帐户下运行 SQL Server，而不是使用内置的默认系统服务帐户。**  
+-   **请在服务帐户下运行 SQL Server 而不是使用内置的默认系统服务帐户。**  
   
     默认情况下，经常将 SQL Server 安装和配置为使用一个受支持的内置系统帐户，例如 LocalSystem 或 NetworkService 帐户。 若要提高 AD FS SQL Server 安装的安全性，只要有可能，请使用单独的服务帐户访问 SQL Server 服务，并通过在 Active Directory 部署中注册此帐户的安全主体名称（SPN）来启用 Kerberos 身份验证。 这样可以使客户端和服务器之间进行相互身份验证。 SQL Server 将使用基于 Windows 的 NTLM 身份验证，而无需单独的服务帐户的 SPN 注册，在 NTLM 身份验证中只有客户端进行身份验证。  
   
--   **最小化 SQL Server 的外围应用。**  
+-   **最小化 SQL Server 的图面区域。**  
   
-    只启用那些必需的 SQL Server 终结点。 默认情况下，SQL Server 提供了一个不能删除的内置 TCP 终结点。 对于 AD FS，你应该为 Kerberos 身份验证启用此 TCP 终结点。 若要查看当前的 TCP 终结点，以查看其他用户定义的 TCP 端口是否已添加到 SQL 安装，可以在 Transact-SQL (T-SQL) 会话中使用“SELECT * FROM sys.tcp_endpoints”查询语句。 有关 SQL Server 终结点配置的详细信息，请参阅[如何：将数据库引擎配置为侦听多个 TCP 端口](https://go.microsoft.com/fwlink/?LinkID=189231)（ https://go.microsoft.com/fwlink/?LinkID=189231)。  
+    只启用那些必需的 SQL Server 终结点。 默认情况下，SQL Server 提供了一个不能删除的内置 TCP 终结点。 对于 AD FS，你应该为 Kerberos 身份验证启用此 TCP 终结点。 若要查看当前的 TCP 终结点，以查看其他用户定义的 TCP 端口是否已添加到 SQL 安装，可以在 Transact-SQL (T-SQL) 会话中使用“SELECT * FROM sys.tcp_endpoints”查询语句。 有关 SQL Server 终结点配置的详细信息，请参阅[如何：将数据库引擎配置为侦听多个 TCP 端口](https://go.microsoft.com/fwlink/?LinkID=189231)（ https://go.microsoft.com/fwlink/?LinkID=189231) 。  
   
 -   **避免使用基于 SQL 的身份验证。**  
   
-    若要避免通过网络以明文形式传输密码或将密码存储在配置设置中，请仅对你的 SQL Server 安装使用 Windows 身份验证。 SQL Server 身份验证是一种传统的身份验证模式。 当你使用 SQL Server 身份验证时，不建议存储结构化查询语言 (SQL) 登录凭据（SQL 用户名和密码）。 有关详细信息，请参阅[身份验证模式](https://go.microsoft.com/fwlink/?LinkID=189232)（ https://go.microsoft.com/fwlink/?LinkID=189232)。  
+    若要避免通过网络以明文形式传输密码或将密码存储在配置设置中，请仅对你的 SQL Server 安装使用 Windows 身份验证。 SQL Server 身份验证是一种传统的身份验证模式。 当你使用 SQL Server 身份验证时，不建议存储结构化查询语言 (SQL) 登录凭据（SQL 用户名和密码）。 有关详细信息，请参阅[身份验证模式](https://go.microsoft.com/fwlink/?LinkID=189232)（ https://go.microsoft.com/fwlink/?LinkID=189232) 。  
   
 -   **仔细评估对 SQL 安装中的其他通道安全性的需要。**  
   
     实际上，即使使用 Kerberos 身份验证，但 SQL Server 安全支持提供程序接口 (SSPI) 并不提供通道级别安全。 但是，对于服务器安全地位于防火墙保护的网络中的安装，可能并不需要加密 SQL 通信。  
   
-    虽然加密是有助于确保安全性的有价值的工具，但不应该将它用于所有数据或连接。 在决定是否要执行加密时，请考虑用户访问数据的方式。 如果用户通过公用网络访问数据，可能会要求数据加密来提高安全性。 但是，如果 AD FS 的 SQL 数据的所有访问涉及到安全的 intranet 配置，则可能不需要加密。 任何加密的使用还应包括密码、密钥和证书的维护策略。  
+    虽然加密是可帮助确保安全性的有力工具，但它并不适用于所有数据或连接。 在决定是否实现加密时，请考虑用户访问数据的方式。 如果用户通过公共网络访问数据，则可能需要使用数据加密以增强安全性。 但是，如果 AD FS 的 SQL 数据的所有访问涉及到安全的 intranet 配置，则可能不需要加密。 任何时候使用加密时还应包括密码、密钥和证书的维护策略。  
   
     如果需要考虑任何 SQL 数据可能会通过网络被看到或被篡改，则使用 Internet 协议安全 (IPsec) 或安全套接字层 (SSL) 来帮助确保 SQL 连接的安全。 但是，这可能会对 SQL Server 性能产生负面影响，在某些情况下这可能会影响或限制 AD FS 的性能。 例如，当来自基于 SQL 的属性存储的属性查找对令牌颁发非常重要时，在令牌颁发中 AD FS 性能可能会降低。 你可以通过强大的外围安全配置更好地消除 SQL 篡改威胁。 例如，用于保护 SQL Server 安装的更好的解决方案是确保它将始终无法访问 Internet 用户和计算机，并且始终只能由数据中心环境中的用户或计算机对它进行访问。  
   

@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 9978fd3e926ade4680ca6563d9d39b0851d893e9
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: d9e0a3855c324ca9b5c7de90d78535024a0a7a9d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070488"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964049"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>有关存储副本的常见问题
 
@@ -35,7 +35,7 @@ ms.locfileid: "85070488"
 
 1. Azure 不支持共享的 VHDX 来宾群集，因此，Windows 故障转移群集虚拟机必须使用 iSCSI 目标来实现经典共享存储永久性磁盘保留群集或存储空间直通。
 2. 有用于基于存储空间直通的存储副本群集的 Azure 资源管理器模板，请在[创建包含存储副本的存储空间直通 SOFS 群集，以实现跨 Azure 区域的灾难恢复](https://aka.ms/azure-storage-replica-cluster)。  
-3. 群集到群集中的 RPC 通信（群集 Api 在群集之间授予访问权限所需）需要为 CNO 配置网络访问。 必须允许 TCP 端口135和 TCP 端口49152以上的动态范围。 参考[在 AZURE IAAS VM 上构建 Windows Server 故障转移群集–第2部分网络和创建](https://blogs.technet.microsoft.com/askcore/2015/06/24/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation/)。  
+3. 群集到群集中的 RPC 通信（群集 Api 在群集之间授予访问权限所需）需要为 CNO 配置网络访问。 必须允许 TCP 端口135和 TCP 端口49152以上的动态范围。 参考[在 AZURE IAAS VM 上构建 Windows Server 故障转移群集–第2部分网络和创建](/archive/blogs/askcore/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation)。  
 4. 可以使用双节点来宾群集，其中每个节点都对存储副本复制的非对称群集使用环回 iSCSI。 但这可能会产生非常差的性能，只应用于极有限的工作负荷或测试。  
 
 ## <a name="how-do-i-see-the-progress-of-replication-during-initial-sync"></a><a name="FAQ2"></a>如何实现在初始同步过程中查看复制进度？  
@@ -112,7 +112,7 @@ Update-SmbMultichannelConnection
 在两个群集间进行复制时，如果配置群集到群集复制，存储副本会完全支持横向扩展文件服务器，包括可以使用存储空间直通。  
 
 ## <a name="is-csv-required-to-replicate-in-a-stretch-cluster-or-between-clusters"></a><a name="FAQ7.5"></a>在 stretch 群集或群集之间复制是否需要 CSV？  
-不需要。 可以使用群集资源（如文件服务器角色）拥有的 CSV 或持久磁盘保留（PDR）进行复制。 
+否。 可以使用群集资源（如文件服务器角色）拥有的 CSV 或持久磁盘保留（PDR）进行复制。 
 
 在两个群集间进行复制时，如果配置群集到群集复制，存储副本会完全支持横向扩展文件服务器，包括可以使用存储空间直通。  
 

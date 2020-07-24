@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: be4d7028f1922152b2779e82a7c78d9b3a5b753a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3042b6782ad8d9e0a03a43c1e21c8fe41583f967
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859550"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963519"
 ---
 # <a name="step-1-plan-directaccess-infrastructure"></a>步骤1规划 DirectAccess 基础结构
 
@@ -38,7 +38,7 @@ ms.locfileid: "80859550"
   
 1. 标识你打算使用的网络适配器拓扑。 可以使用下列任一方法设置远程访问：  
   
-    - 使用两个网络适配器：在边缘有一个连接到 Internet 的网络适配器，另一个网络适配器连接到内部网络，或者在 NAT、防火墙或路由器设备后面，其中一个网络适配器连接到外围网络，另一个网络适配器连接到外围网络，另一个网络适配器连接到内部网络网桥.  
+    - 使用两个网络适配器：在边缘有一个连接到 Internet 的网络适配器，另一个网络适配器连接到内部网络，或者在 NAT、防火墙或路由器设备后面，其中一个网络适配器连接到外围网络，另一个网络适配器连接到内部网络。  
   
     - 在具有一个网络适配器的 NAT 设备后面：远程访问服务器安装在 NAT 设备的后面，并且单个网络适配器连接到内部网络。  
   
@@ -46,16 +46,16 @@ ms.locfileid: "80859550"
   
     DirectAccess 使用 IPv6 和 IPsec 在 DirectAccess 客户端计算机和内部企业网络之间创建安全连接。 但是，DirectAccess 不一定需要连接到 IPv6 Internet 或内部网络上的本机 IPv6 支持。 相反，它会自动配置并使用 IPv6 转换技术在 IPv4 Internet 上（6to4、Teredo、IP-HTTPS）和仅支持 IPv4 的 Intranet 上（NAT64 或 ISATAP）对 IPv6 通信进行隧道传送。 有关这些转换技术的概述，请参阅以下资源：  
   
-    - [IPv6 转换技术](https://technet.microsoft.com/library/bb726951.aspx)  
+    - [IPv6 转换技术](/previous-versions//bb726951(v=technet.10))  
   
-    - [Ip-https 隧道协议规范](https://msdn.microsoft.com/library/dd358571.aspx)  
+    - [IP-HTTPS 隧道协议规范](/openspecs/windows_protocols/ms-iphttps/f1bf1125-49c2-4246-9c75-5d4fc9706b56)  
   
 3. 按下表配置所需的适配器和寻址。 对于使用单个网络适配器的 NAT 设备之后的部署，只使用 "内部网络适配器" 列来配置 IP 地址。  
   
     |IP 地址类型|外部网络适配器|内部网络适配器|路由要求|  
     |-|--------------|--------------------|------------|  
-    |IPv4 Intranet 和 IPv4 Internet|配置下列内容：<br/><br/>-一个具有相应子网掩码的静态公用 IPv4 地址。<br/>-Internet 防火墙或本地 Internet 服务提供商（ISP）路由器的默认网关 IPv4 地址。|配置下列内容：<br/><br/>-具有相应子网掩码的 IPv4 intranet 地址。<br/>-Intranet 命名空间的特定于连接的 DNS 后缀。 还必须在内部接口上配置 DNS 服务器。<br/>-不要在任何 intranet 接口上配置默认网关。|若要配置远程访问服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br/><br/>1. 列出 intranet 上所有位置的 IPv4 地址空间。<br/>2. 使用**route add-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为远程访问服务器的 ipv4 路由表中的静态路由。|  
-    |IPv6 Internet 和 IPv6 Intranet|配置下列内容：<br/><br/>-使用 ISP 提供的自动配置地址配置。<br/>-使用**route print**命令，以确保指向 ISP 路由器的默认 ipv6 路由存在于 IPv6 路由表中。<br/>-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 ISP 路由器的更高首选等级可确保远程访问服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br/><br/>因为远程访问服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，这些数据包筛选器可阻止连接到远程访问服务器面向 Internet 的接口的 IPv6 地址。|配置下列内容：<br/><br/>-如果使用的不是默认首选项级别，请使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled**命令来配置 intranet 接口。 此命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从 netsh 接口显示接口命令的显示中获得 Intranet 接口的 InterfaceIndex。|如果你拥有 IPv6 Intranet，若要配置远程访问服务器以访问所有的 IPv6 位置，请执行以下操作：<br/><br/>1. 列出 intranet 上所有位置的 IPv6 地址空间。<br/>2. 使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为远程访问服务器的 ipv6 路由表中的静态路由。|  
+    |IPv4 Intranet 和 IPv4 Internet|配置以下内容：<br/><br/>-一个具有相应子网掩码的静态公用 IPv4 地址。<br/>-Internet 防火墙或本地 Internet 服务提供商（ISP）路由器的默认网关 IPv4 地址。|配置以下内容：<br/><br/>-具有相应子网掩码的 IPv4 intranet 地址。<br/>-Intranet 命名空间的特定于连接的 DNS 后缀。 还必须在内部接口上配置 DNS 服务器。<br/>-不要在任何 intranet 接口上配置默认网关。|若要配置远程访问服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br/><br/>1. 列出 intranet 上所有位置的 IPv4 地址空间。<br/>2. 使用**route add-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为远程访问服务器的 ipv4 路由表中的静态路由。|  
+    |IPv6 Internet 和 IPv6 Intranet|配置以下内容：<br/><br/>-使用 ISP 提供的自动配置地址配置。<br/>-使用**route print**命令，以确保指向 ISP 路由器的默认 ipv6 路由存在于 IPv6 路由表中。<br/>-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 ISP 路由器的更高首选等级可确保远程访问服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br/><br/>因为远程访问服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，这些数据包筛选器可阻止连接到远程访问服务器面向 Internet 的接口的 IPv6 地址。|配置以下内容：<br/><br/>-如果使用的不是默认首选项级别，请使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled**命令来配置 intranet 接口。 此命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从 netsh 接口显示接口命令的显示中获得 Intranet 接口的 InterfaceIndex。|如果你拥有 IPv6 Intranet，若要配置远程访问服务器以访问所有的 IPv6 位置，请执行以下操作：<br/><br/>1. 列出 intranet 上所有位置的 IPv6 地址空间。<br/>2. 使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为远程访问服务器的 ipv6 路由表中的静态路由。|  
     |IPv6 Internet 和 IPv4 Intranet|远程访问服务器使用 Microsoft 6to4 适配器接口将 IPv6 路由流量转发到 IPv4 Internet 上的 6to4 中继。 可以使用以下命令为 IPv4 Internet 上的 Microsoft 6to4 中继的 IPv4 地址配置远程访问服务器（在企业网络中未部署本机 IPv6 时使用）：netsh interface ipv6 6to4 set relay name=192.88.99.1 state=enabled 命令。|||  
   
     > [!NOTE]
@@ -133,15 +133,15 @@ IPsec 的证书要求包括：在客户端和远程访问服务器之间建立 I
 - 如果稍后你打算配置多站点或群集部署，则证书的名称不应该与远程访问服务器的内部名称相匹配。  
 
     > [!NOTE]  
-    > 确保 IP-HTTPS 和网络位置服务器的证书包含“使用者名称”。 如果该证书不包含“使用者名称”但包含“备用名称”，则远程访问向导将不会接受它。  
+    > 确保 IP-HTTPS 和网络位置服务器的证书包含“使用者名称”****。 如果该证书不包含****“使用者名称”但包含“备用名称”****，则远程访问向导将不会接受它。  
   
 #### <a name="plan-dns-requirements"></a>规划 DNS 要求
 
 在远程访问部署中，以下项将需要 DNS：  
   
-- **Directaccess 客户端请求**： DNS 用于解析来自不位于内部网络上的 DirectAccess 客户端计算机的请求。 DirectAccess 客户端尝试连接到 DirectAccess 网络位置服务器，以确定它们是位于 Internet 上，还是位于企业网络上。如果连接成功，则确定客户端在 Intranet 上且未使用 DirectAccess，并使用客户端计算机的网络适配器上配置的 DNS 服务器解析客户端请求。 如果该连接不成功，则假定客户端在 Internet 上。 DirectAccess 客户端将使用名称解析策略表 (NRPT) 来确定在解析名称请求时使用哪个 DNS 服务器。 你可以指定客户端应使用 DirectAccess DNS64 或备用的内部 DNS 服务器来解析名称。 在执行名称解析时，将由 DirectAccess 客户端使用 NRPT 来确定如何处理请求。 客户端请求 FQDN 或单标签名称，例如 <https://internal>。 如果请求单标签名称，则将追加 DNS 后缀以产生 FQDN。 如果 DNS 查询与 NRPT 中某个条目匹配，并且为该条目指定了 DNS4 或 Intranet DNS 服务器，则将使用指定的服务器发送用于名称解析的 DNS 查询。 如果存在匹配条目，但未指定 DNS 服务器，这表示存在一条免除规则，且将应用普通的名称解析。  
+- **Directaccess 客户端请求**： DNS 用于解析来自不位于内部网络上的 DirectAccess 客户端计算机的请求。 DirectAccess 客户端尝试连接到 DirectAccess 网络位置服务器，以确定它们是位于 Internet 上，还是位于企业网络上。如果连接成功，则确定客户端在 Intranet 上且未使用 DirectAccess，并使用客户端计算机的网络适配器上配置的 DNS 服务器解析客户端请求。 如果该连接不成功，则假定客户端在 Internet 上。 DirectAccess 客户端将使用名称解析策略表 (NRPT) 来确定在解析名称请求时使用哪个 DNS 服务器。 你可以指定客户端应使用 DirectAccess DNS64 或备用的内部 DNS 服务器来解析名称。 在执行名称解析时，将由 DirectAccess 客户端使用 NRPT 来确定如何处理请求。 客户端请求 FQDN 或单标签名称，例如 <https://internal> 。 如果请求单标签名称，则将追加 DNS 后缀以产生 FQDN。 如果 DNS 查询与 NRPT 中某个条目匹配，并且为该条目指定了 DNS4 或 Intranet DNS 服务器，则将使用指定的服务器发送用于名称解析的 DNS 查询。 如果存在匹配条目，但未指定 DNS 服务器，这表示存在一条免除规则，且将应用普通的名称解析。  
   
-    请注意，将新后缀添加远程访问管理控制台中的 NRPT 后，可通过单击“检测”按钮自动发现该后缀对应的默认 DNS 服务器。 自动检测的工作原理如下：  
+    请注意，将新后缀添加远程访问管理控制台中的 NRPT 后，可通过单击****“检测”按钮自动发现该后缀对应的默认 DNS 服务器。 自动检测的工作原理如下：  
   
     1. 如果企业网络基于 IPv4 或者是 IPv4 和 IPv6，则默认地址是远程访问服务器上内部适配器的 DNS64 地址。  
   
@@ -153,7 +153,7 @@ IPsec 的证书要求包括：在客户端和远程访问服务器之间建立 I
   
         1. 一条适用于远程访问服务器的根域或域名，以及对应远程访问服务器上配置的 Intranet DNS 服务器的 IPv6 地址的 DNS 后缀规则。 例如，如果远程访问服务器是 corp.contoso.com 域的成员，则会为 corp.contoso.com DNS 后缀创建一条规则。  
   
-        2. 用于网络位置服务器的 FQDN 的免除规则。 例如，如果 <https://nls.corp.contoso.com>网络位置服务器 URL，则会为 FQDN nls.corp.contoso.com 创建例外规则。  
+        2. 用于网络位置服务器的 FQDN 的免除规则。 例如，如果网络位置服务器 URL 为 <https://nls.corp.contoso.com> ，则会为 FQDN nls.corp.contoso.com 创建例外规则。  
   
         Ip-https**服务器**：远程访问服务器充当 ip-https 侦听器，并使用其服务器证书对 ip-https 客户端进行身份验证。 IP-HTTPS 名称必须可由使用公用 DNS 服务器的 DirectAccess 客户端解析。  
   
@@ -269,11 +269,10 @@ IPsec 的证书要求包括：在客户端和远程访问服务器之间建立 I
 
 如果已意外删除远程访问服务器、客户端或应用程序服务器 GPO，并且没有可用备份，你必须删除配置设置并再次重新配置。 如果有可用的备份，则可以从备份中还原 GPO。  
   
-**远程访问管理**将显示以下错误消息：**找不到 gpo （gpo 名称）** 。 若要删除配置设置，请执行以下步骤：  
+**远程访问管理**将显示以下错误消息：**找不到 gpo （gpo 名称）**。 若要删除配置设置，请执行以下步骤：  
   
 1. 运行 PowerShell cmdlet **Uninstall-remoteaccess**。  
   
 2. 重新打开**远程访问管理**。  
   
-3. 你将看到关于未找到 GPO 的错误消息。 单击“删除配置设置”。 完成操作后，服务器将还原到未配置状态。  
-
+3. 你将看到关于未找到 GPO 的错误消息。 单击“删除配置设置”****。 完成操作后，服务器将还原到未配置状态。  

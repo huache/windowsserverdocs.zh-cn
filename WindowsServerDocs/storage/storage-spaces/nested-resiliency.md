@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 4faf4ade53074677b34b037c5ba6d551beb8542e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6c3e16f0965be5fc7de4bdc7bd751fb1dd193556
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474904"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962199"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>存储空间直通的嵌套复原
 
@@ -56,7 +56,7 @@ Windows Server 2019 中的存储空间直通提供了在软件中实现的两个
 
   ![嵌套双向镜像](media/nested-resiliency/nested-two-way-mirror.png)
 
-- **嵌套的镜像加速的奇偶校验。** 结合了嵌套的双向镜像和嵌套的奇偶校验。 在每个服务器中，大多数数据的本地复原都是通过单一[按位奇偶校验算法](storage-spaces-fault-tolerance.md#parity)提供的，但新的最近写入将使用双向镜像。 然后，在服务器之间通过双向镜像提供所有数据的复原能力。 有关镜像加速奇偶校验工作原理的详细信息，请参阅[镜像加速的奇偶校验](https://docs.microsoft.com/windows-server/storage/refs/mirror-accelerated-parity)。
+- **嵌套的镜像加速的奇偶校验。** 结合了嵌套的双向镜像和嵌套的奇偶校验。 在每个服务器中，大多数数据的本地复原都是通过单一[按位奇偶校验算法](storage-spaces-fault-tolerance.md#parity)提供的，但新的最近写入将使用双向镜像。 然后，在服务器之间通过双向镜像提供所有数据的复原能力。 有关镜像加速奇偶校验工作原理的详细信息，请参阅[镜像加速的奇偶校验](../refs/mirror-accelerated-parity.md)。
 
   ![嵌套镜像加速奇偶校验](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
@@ -127,7 +127,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 ### <a name="step-3-continue-in-windows-admin-center"></a>步骤3：在 Windows 管理中心中继续
 
-使用嵌套复原的卷在[Windows 管理中心](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)中显示，并带有清晰的标签，如以下屏幕截图所示。 一旦创建，就可以使用 Windows 管理中心来管理和监视它们，就像存储空间直通中的其他任何卷一样。
+使用嵌套复原的卷在[Windows 管理中心](../../manage/windows-admin-center/overview.md)中显示，并带有清晰的标签，如以下屏幕截图所示。 一旦创建，就可以使用 Windows 管理中心来管理和监视它们，就像存储空间直通中的其他任何卷一样。
 
 ![](media/nested-resiliency/windows-admin-center.png)
 
@@ -151,7 +151,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 | 服务器停机，前30分钟   | 缓存读取和写入，完全性能 | 否（临时）               |
 | 前30分钟后          | 仅缓存读取，性能受到影响   | 是（在缓存写入容量驱动器后）                           |
 
-## <a name="frequently-asked-questions"></a>常见问题
+## <a name="frequently-asked-questions"></a>常见问题解答
 
 ### <a name="can-i-convert-an-existing-volume-between-two-way-mirror-and-nested-resiliency"></a>能否在双向镜像和嵌套复原之间转换现有卷？
 

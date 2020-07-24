@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: a21a34448248658d2ceffcad07d2a4e6e17b9348
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5b2da1858a7f0a3669accfdb2dda88a23f64edc0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856340"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964249"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>为自定义端口上的基于证书密钥的续订配置证书注册 Web 服务
 
@@ -93,18 +93,18 @@ Ankit Tyagi 支持工程师和 Windows 组
 
 若要安装 CEPCES01 实例，请使用以下方法之一。
 
-**方法1**
+**方法 1**
 
 请参阅以下文章，了解有关为用户名和密码身份验证启用 CEP 和 CES 的分步指导：
 
-[证书注册策略 Web 服务指南](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831625(v=ws.11))
+[证书注册策略 Web 服务指南](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831625(v=ws.11))
 
-[证书注册 Web 服务指南](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11)#configure-a-ca-for-the-certificate-enrollment-web-service)
+[证书注册 Web 服务指南](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11)#configure-a-ca-for-the-certificate-enrollment-web-service)
 
 > [!Note]
 > 如果同时配置了 "用户名" 和 "密码身份验证" 的 CEP 和 CES 实例，请确保未选择 "启用基于密钥的续订" 选项。
 
-**方法2**
+**方法 2**
 
 你可以使用以下 PowerShell cmdlet 来安装 CEP 和 CES 实例：
 
@@ -121,7 +121,7 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Username -SSLCertThum
 此命令通过指定使用用户名和密码进行身份验证来安装证书注册策略 Web 服务（CEP）。 
 
 > [!Note]
-> 在此命令中，\<**SSLCertThumbPrint**\> 是将用于绑定 IIS 的证书的指纹。
+> 在此命令中， \<**SSLCertThumbPrint**\> 是将用于绑定 IIS 的证书的指纹。
 
 ```PowerShell
 Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSLCertThumbprint "sslCertThumbPrint" -AuthenticationType Username
@@ -151,7 +151,7 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Certificate -SSLCertT
 此命令安装证书注册策略 Web 服务（CEP），并指定证书用于身份验证。 
 
 > [!Note]
-> 在此命令中，\<SSLCertThumbPrint\> 是将用于绑定 IIS 的证书的指纹。 
+> 在此命令中， \<SSLCertThumbPrint\> 是将用于绑定 IIS 的证书的指纹。 
 
 基于密钥的续订允许证书客户端使用其现有证书的密钥来续订其证书，以便进行身份验证。 在基于密钥的续订模式下，服务将仅返回为基于密钥的续订设置的证书模板。
 
@@ -189,7 +189,7 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 > [!Note]
 > 无需加入客户端计算机。 在 KBR for dsmapper service 中进行基于证书的身份验证时，此帐户将进入图片。
 
-![新建对象](media/certificate-enrollment-certificate-key-based-renewal-6.png) 
+![新对象](media/certificate-enrollment-certificate-key-based-renewal-6.png) 
  
 ##### <a name="step-2-configure-the-service-account-for-constrained-delegation-s4u2self"></a>步骤2：为约束委派配置服务帐户（S4U2Self）
 
@@ -201,7 +201,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 ```
 
 > [!Note]
-> 在此命令中，\<cepcessvc\> 是服务帐户，< CA1 > 是证书颁发机构。
+> 在此命令中， \<cepcessvc\> 为服务帐户，<CA1.contoso.com >为证书颁发机构。
 
 > [!Important]
 > 我们未在此配置中启用 CA 上的 RENEWALONBEHALOF 标志，因为我们使用约束委派为我们执行同一作业。 这样，我们便可以避免向 CA 的安全性添加服务帐户的权限。
@@ -219,7 +219,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 1. 在域控制器上，打开 "adsiedit"。
 
-2. [连接到配置分区](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/ff730188(v=ws.10))，并导航到 CA 注册服务对象：
+2. [连接到配置分区](/previous-versions/windows/it-pro/windows-server-2003/ff730188(v=ws.10))，并导航到 CA 注册服务对象：
    
    CN = ENTCA，CN = 注册服务，CN = Public Key Services，CN = Services，CN = Configuration，DC = contoso，DC = com
 
@@ -230,15 +230,15 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
    181https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
    ```
    
-   ![ADSI 编辑](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
+   ![ADSI 编辑器](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
 
 #### <a name="configure-the-client-computer"></a>配置客户端计算机
 
-在客户端计算机上，设置注册策略和自动注册策略。 要实现这一点，请执行下列操作：
+在客户端计算机上，设置注册策略和自动注册策略。 为此，请执行以下步骤：
 
-1. 选择 "**开始** > " "**运行**"，然后输入**gpedit.msc**。
+1. 选择 "**启动**  >  **运行**"，然后输入**gpedit.msc**。
 
-2.  > **安全设置**"中转到"**计算机配置**" > **Windows 设置**"，然后单击 "**公钥策略**"。
+2. 中转到 "**计算机配置**  >  " "**Windows 设置**  >  " "**安全设置**"，然后单击 "**公钥策略**"。
 
 3. 启用**证书服务客户端-自动注册策略**以匹配以下屏幕截图中的设置。
    ![证书组策略](media/certificate-enrollment-certificate-key-based-renewal-9.png)
@@ -276,7 +276,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 若要确保自动续订正在运行，请通过使用 mmc 续订具有相同密钥的证书来验证手动续订是否正常工作。 此外，在续订时，还应提示您选择证书。 你可以选择前面注册的证书。 应为提示。
 
-打开计算机的 "个人" 证书存储区，然后添加 "存档的证书" 视图。 为此，请将 "本地计算机帐户" 管理单元添加到 mmc.exe，单击 "**证书（本地计算机）"，单击 "证书（本地计算机）** " **，单击右侧**或 mmc 顶部的 "**操作" 选项卡**，单击 "**查看选项**"，选择 "**存档的证书**"，然后单击 **"确定"** 。
+打开计算机的 "个人" 证书存储区，然后添加 "存档的证书" 视图。 为此，请将 "本地计算机帐户" 管理单元添加到 mmc.exe，通过单击选中 "**证书（本地计算机）** "，单击右侧或 mmc 顶部的 "**操作" 选项卡**中的 "**查看**"，单击 "**查看选项**"，选择 "**存档的证书**"，然后单击 **"确定"**。
 
 ### <a name="method-1"></a>方法 1 
 
@@ -288,7 +288,7 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 ![命令](media/certificate-enrollment-certificate-key-based-renewal-14.png)
 
-### <a name="method-2"></a>Method 2
+### <a name="method-2"></a>方法 2
 
 将客户端计算机上的时间和日期提前到证书模板的续订时间。
 
@@ -303,24 +303,24 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 > [!Note]
 > 前面的屏幕截图是演示自动注册引擎按预期工作的示例，因为 CA 日期仍设置为18。 因此，它会继续颁发证书。 在实际情况下，将不会进行大量的续订。
 
-## <a name="references"></a>参考
+## <a name="references"></a>参考资料
 
-[测试实验室指南：演示基于证书密钥的续订](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj590165(v%3Dws.11))
+[Test Lab Guide: Demonstrating Certificate Key-Based Renewal](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj590165(v%3dws.11))
 
 [证书注册 Web 服务](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/Certificate-Enrollment-Web-Services/ba-p/397385)
 
-[安装-AdcsEnrollmentPolicyWebService](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcsenrollmentpolicywebservice?view=win10-ps)
+[安装-AdcsEnrollmentPolicyWebService](/powershell/module/adcsdeployment/install-adcsenrollmentpolicywebservice?view=win10-ps)
 
-[安装-AdcsEnrollmentWebService](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
+[安装-AdcsEnrollmentWebService](/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
 
 另请参阅
 
 [Windows Server 安全论坛](https://aka.ms/adcsforum)
 
-[Active Directory 证书服务（AD CS）公钥基础结构（PKI）常见问题（FAQ）](https://aka.ms/adcsfaq)
+[Active Directory 证书服务 (AD CS) 公钥基础结构 (PKI) 常见问题 (FAQ)](https://aka.ms/adcsfaq)
 
 [Windows PKI 文档参考和库](https://social.technet.microsoft.com/wiki/contents/articles/987.windows-pki-documentation-reference-and-library.aspx)
 
-[Windows PKI 博客](https://blogs.technet.com/b/pki/)
+[Windows PKI 博客](/archive/blogs/pki/)
 
 [如何在 Web 注册代理页的自定义服务帐户上配置 Kerberos 约束委派（仅限 S4U2Proxy 或 Kerberos）](https://support.microsoft.com/help/4494313/configuring-web-enrollment-proxy-for-s4u2proxy-constrained-delegation)

@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 97d726f8bfbbe664dfdfd6b7000988f009174631
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 88f4f501e0bfd173d91a55ee60f226482139b6b2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824690"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963209"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>虚拟化域控制器部署和配置
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主题讲解：  
+本主题的内容：  
   
 -   [安装注意事项](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md#BKMK_InstallConsiderations)  
   
@@ -61,10 +61,10 @@ ms.locfileid: "80824690"
 |||  
 |-|-|  
 |**虚拟化产品**|**支持虚拟化域控制器和 VMGID**|  
-|**带有 Hyper-v 功能的 Microsoft Windows Server 2012 服务器**|是|  
-|**Microsoft Windows Server 2012 Hyper-v 服务器**|是|  
-|**具有 Hyper-v 客户端功能的 Microsoft Windows 8**|是|  
-|**Windows Server 2008 R2 和 Windows Server 2008**|是|  
+|**具有 Hyper-V 功能的 Microsoft Windows Server 2012 服务器**|是|  
+|**Microsoft Windows Server 2012 Hyper-V 服务器**|是|  
+|**具有 Hyper-V 客户端功能的 Microsoft Windows 8**|是|  
+|**Windows Server 2008 R2 和 Windows Server 2008**|否|  
 |**非 Microsoft 虚拟化解决方案**|联系供应商|  
   
 即使 Microsoft 支持 Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004 和 Virtual Server 2005，它们也无法运行 64 位来宾，无法支持 VM 生成 ID。  
@@ -88,7 +88,7 @@ ms.locfileid: "80824690"
 > [!WARNING]  
 > 虚拟化域控制器安全还原不是系统状态备份和 AD DS 回收站的替代功能。  
 >   
-> 还原快照之后，在快照后源自该域控制器的之前未复制的更改增量将永远丢失。 安全还原将实现自动化的非权威还原， *仅*为了防止意外的域控制器隔离。  
+> 还原快照之后，在快照后源自该域控制器的之前未复制的更改增量将永远丢失。 安全还原将实现自动化的非权威还原，*仅*为了防止意外的域控制器隔离。  
   
 有关 USN 气泡和延迟对象的详细信息，请参阅 [解决失败的 Active Directory 操作，它们带有错误 8606：“提供的属性不足以创建对象”](https://support.microsoft.com/kb/2028495)。  
   
@@ -139,7 +139,7 @@ ms.locfileid: "80824690"
 ### <a name="step-2---verify-the-pdce-fsmo-role"></a>步骤 2 – 验证 PDCE FSMO 角色  
 在尝试克隆 DC 之前，你必须验证托管主域控制器模拟器 FSMO 的域控制器运行 Windows Server 2012。 PDC 模拟器 (PDCE） 是必需的，原因有多种：  
   
-1.  PDCE 将创建特殊的 **可克隆的域控制器** 组，并在域的根上设置其权限以允许域控制器克隆其自身。  
+1.  PDCE 将创建特殊的**可克隆的域控制器**组，并在域的根上设置其权限以允许域控制器克隆其自身。  
   
 2.  克隆域控制器将使用 DRSUAPI RPC 协议直接联系 PDCE，以便为克隆 DC 创建计算机对象。  
   
@@ -152,7 +152,7 @@ ms.locfileid: "80824690"
     >   
     > 因为此 RPC 方法是新方法，所以你的网络分析软件需要更新的分析程序，以囊括现有 UUID E3514235-4B06-11D1-AB04-00C04FC2DCD2 中关于新 Opnum 28 的字段。 否则，你无法分析该流量。  
     >   
-    > 有关详细信息，请参阅 [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](https://msdn.microsoft.com/library/hh554213(v=prot.13).aspx)。  
+    > 有关详细信息，请参阅 [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](/openspecs/windows_protocols/ms-drsr/ef0bfb1d-037b-4626-a6d9-cc7589bc5786)。  
   
 ***也就是说，当使用非完全路由的网络时，虚拟化域控制器克隆需要有权访问 PDCE 的网络段***。 只要你非常小心地更新 AD DS 逻辑站点信息，在克隆后可以将克隆的域控制器移到另一个网络（类似于物理域控制器）。  
   
@@ -161,7 +161,7 @@ ms.locfileid: "80824690"
   
 #### <a name="active-directory-users-and-computers-method"></a>Active Directory 用户和计算机方法  
   
-1.  使用 Dsa.msc 管理单元，右键单击域，然后单击 **操作主机**。 注意在 PDC 选项卡上命名的域控制器，然后关闭对话框。  
+1.  使用 Dsa.msc 管理单元，右键单击域，然后单击**操作主机**。 注意在 PDC 选项卡上命名的域控制器，然后关闭对话框。  
   
 2.  右键单击该 DC 的计算机对象，再单击**属性**，然后验证操作系统信息。  
   
@@ -186,16 +186,16 @@ get-adcomputer(Get-ADDomainController -Discover -Service "PrimaryDC").name -prop
 ![虚拟化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PDCOSInfo.png)  
   
 ### <a name="step-3---authorize-a-source-dc"></a>步骤 3 – 授予源 DC 权限  
-源域控制器必须具有对域 NC 头的控制访问权限 (CAR) **允许 DC 创建其自身的克隆**。 默认情况下，已知组 **可克隆的域控制器** 具有此权限，并且不包含任何成员。 该 FSMO 角色传输到 Windows Server 2012 域控制器后，PDCE 将创建此组。  
+源域控制器必须具有对域 NC 头的控制访问权限 (CAR) **允许 DC 创建其自身的克隆**。 默认情况下，已知组**可克隆的域控制器**具有此权限，并且不包含任何成员。 该 FSMO 角色传输到 Windows Server 2012 域控制器后，PDCE 将创建此组。  
   
 #### <a name="active-directory-administrative-center-method"></a>Active Directory 管理中心方法  
   
 1.  启动 Dsac.exe 并导航到源 DC，然后打开其详细信息页面。  
   
-2.  在 **隶属于** 部分，为该域添加 **可克隆的域控制器** 组。  
+2.  在**隶属于**部分，为该域添加**可克隆的域控制器**组。  
   
 #### <a name="windows-powershell-method"></a>Windows PowerShell 方法  
-你可以结合以下 Active Directory Windows PowerShell 模块 cmdlet **get-adcomputer** 和 **add-adgroupmember**，将域控制器添加到“可克隆的域控制器”组：  
+你可以结合以下 Active Directory Windows PowerShell 模块 cmdlet **get-adcomputer** 和 **add-adgroupmember**，将域控制器添加到“可克隆的域控制器”**** 组：  
   
 ```  
 Get-adcomputer <dc name> | %{add-adgroupmember "cloneable domain controllers" $_.samaccountname}  
@@ -210,11 +210,11 @@ Get-adcomputer <dc name> | %{add-adgroupmember "cloneable domain controllers" $_
   
 ##### <a name="active-directory-administrative-center-method"></a>Active Directory 管理中心方法  
   
-1.  打开 **Active Directory 管理中心**，右键单击域头，单击 **属性**，单击 **扩展** 选项卡，单击 **安全**，然后单击 **高级**。 单击**仅此对象**。  
+1.  打开 **Active Directory 管理中心**，右键单击域头，单击**属性**，单击**扩展**选项卡，单击**安全**，然后单击**高级**。 单击**仅此对象**。  
   
 2.  单击**添加**，在**输入要选择的对象名称**下，键入组名**可克隆的域控制器。**  
   
-3.  在“权限”下，单击 **允许 DC 创建其自身的克隆**，然后单击 **确定**。  
+3.  在“权限”下，单击**允许 DC 创建其自身的克隆**，然后单击**确定**。  
   
 > [!NOTE]  
 > 你还可以删除默认权限，并添加单个域控制器。 但是，执行此操作可能会导致持续不断的维护问题，并且新的管理员不会意识到此自定义。 更改默认设置不会增加安全性，且不建议这样做。  
@@ -239,12 +239,12 @@ cd c:
 此外，在 Windows PowerShell 控制台中运行该示例 [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)，其中控制台将在受影响域中的域控制器上以提升的管理员身份启动。 它将自动设置权限。 该示例位于此模块的附录中。  
   
 ### <a name="step-4---remove-incompatible-applications-or-services-if-not-using-customdccloneallowlistxml"></a>步骤 4 – 删除不兼容的应用程序或服务（如果不使用 CustomDCCloneAllowList.xml）  
-在克隆之前，必须删除任何之前由 Get-ADDCCloningExcludedApplicationList *返回（且未添加到 CustomDCCloneAllowList.xml* ）的程序或服务。 卸载应用程序或服务是建议的方法。  
+在克隆之前，必须删除任何之前由 Get-ADDCCloningExcludedApplicationList*返回（且未添加到 CustomDCCloneAllowList.xml*）的程序或服务。 卸载应用程序或服务是建议的方法。  
   
 > [!WARNING]  
 > 任何未卸载或添加到 CustomDCCloneAllowList.xml 的不兼容程序或服务都会阻止克隆。  
   
-使用 Get-AdComputerServiceAccount cmdlet 在域中查找任何独立的托管服务帐户 (MSA)，并检查此计算机是否正在使用其中任何帐户。 如果已安装任一 MSA，则使用 Uninstall-ADServiceAccount cmdlet 来删除本地已安装的服务帐户。 完成第 6 步中使源域控制器脱机的操作后，在服务器重新联机时，你可以使用 Install-ADServiceAccount 重新添加 MSA。 有关详细信息，请参阅 [Uninstall-adserviceaccount](https://technet.microsoft.com/library/hh852310)。  
+使用 Get-AdComputerServiceAccount cmdlet 在域中查找任何独立的托管服务帐户 (MSA)，并检查此计算机是否正在使用其中任何帐户。 如果已安装任一 MSA，则使用 Uninstall-ADServiceAccount cmdlet 来删除本地已安装的服务帐户。 完成第 6 步中使源域控制器脱机的操作后，在服务器重新联机时，你可以使用 Install-ADServiceAccount 重新添加 MSA。 有关详细信息，请参阅 [Uninstall-adserviceaccount](/openspecs/windows_protocols/ms-drsr/ef0bfb1d-037b-4626-a6d9-cc7589bc5786)。  
   
 > [!IMPORTANT]  
 > 在 Windows Server 2012 中，已将独立 MSA（在 Windows Server 2008 R2 中首次发布）替换为组 MSA。 组 MSA 支持克隆。  
@@ -267,8 +267,8 @@ New-ADDCCloneConfigFile
   
 ||||  
 |-|-|-|  
-|**Active**<p>**Cmdlet**|**形参**|**做出**|  
-|**新-New-addccloneconfigfile**|*<no argument specified>*|在 DSA 工作目录中创建空白 DcCloneConfig.xml 文件（默认位置：%systemroot%\ntds）|  
+|**ActiveDirectory**<p>**Cmdlet**|**参数**|**解释**|  
+|**New-ADDCCloneConfigFile**|*<no argument specified>*|在 DSA 工作目录中创建空白 DcCloneConfig.xml 文件（默认位置：%systemroot%\ntds）|  
 ||-CloneComputerName|指定克隆 DC 计算机名。 字符串数据类型。|  
 ||-Path|指定文件夹以创建 DcCloneConfig.xml。 如果未指定，则将写入 DSA 工作目录（默认位置：%systemroot%\ntds）。 字符串数据类型。|  
 ||-SiteName|指定在克隆的计算机帐户创建过程中要加入的 AD 逻辑站点名称。 字符串数据类型。|  
@@ -329,7 +329,7 @@ Stop-computer 是一个支持在不考虑虚拟化的情况下关闭计算机的
   
 必须复制一台虚拟机的所有磁盘，而不仅仅复制系统驱动器。 如果源域控制器使用差异磁盘，并且你打算将克隆的域控制器移到另一台 Hyper-V 主机上，则你必须导出。  
   
-如果源域控制器仅具有*一个*驱动器，则建议手动复制磁盘。 建议为具有 *多个* 驱动器或其他复杂的虚拟化硬件自定义（如多个 NIC）的 VM 使用导出/导入。  
+如果源域控制器仅具有*一个*驱动器，则建议手动复制磁盘。 建议为具有*多个*驱动器或其他复杂的虚拟化硬件自定义（如多个 NIC）的 VM 使用导出/导入。  
   
 如果手动复制文件，请在复制之前删除任何快照。 如果导出 VM，请在导出之前删除快照，或在导入后从新的 VM 删除它们。  
   
@@ -395,7 +395,7 @@ Get-VMIdeController dc2-sourceclone | Get-VMHardDiskDrive | select-Object {copy-
 > 你无法通过克隆使用 passthru 磁盘，因为它们并不使用虚拟磁盘文件，而是使用实际硬盘。  
   
 > [!NOTE]  
-> 有关管道的更多 Windows PowerShell 操作的详细信息，请参阅 [Windows PowerShell 中的管道系统和管道](https://technet.microsoft.com/library/ee176927.aspx)。  
+> 有关管道的更多 Windows PowerShell 操作的详细信息，请参阅 [Windows PowerShell 中的管道系统和管道](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176927(v=technet.10))。  
   
 #### <a name="exporting-the-vm"></a>导出 VM  
 作为复制磁盘的替代方法，可以将整个 Hyper-V VM 导出为副本。 导出将自动创建一个为 VM 命名的包含所有磁盘和配置信息的文件夹。  
@@ -405,11 +405,11 @@ Get-VMIdeController dc2-sourceclone | Get-VMHardDiskDrive | select-Object {copy-
 ##### <a name="hyper-v-manager-method"></a>Hyper-V 管理器方法  
 若要使用 Hyper-V 管理器导出 VM：  
   
-1.  右键单击源域控制器，然后单击 **导出**。  
+1.  右键单击源域控制器，然后单击**导出**。  
   
 2.  选择一个现有文件夹作为导出容器。  
   
-3.  等待“状态”列停止显示 **正在导出**。  
+3.  等待“状态”列停止显示**正在导出**。  
   
 ##### <a name="windows-powershell-method"></a>Windows PowerShell 方法  
 若要使用 Hyper-V Windows PowerShell 模块导出 VM，请使用 cmdlet：  
@@ -426,7 +426,7 @@ Export-vm
 > Windows Server 2012 Hyper-V 支持新的导出和导入功能，这些功能在此培训范围以外。 请查看 TechNet 获取详细信息。  
   
 #### <a name="exporting-merged-disks-using-hyper-v"></a>使用 Hyper-V 导出合并的磁盘  
-最后一个选项是使用 Hyper-V 中的磁盘合并和转换选项。 这些选项允许你将现有磁盘结构的副本（即使在包括快照 AVHD/AVHDX 文件时）制作为单个新磁盘。 与手动磁盘复制方案一样，此方案主要适用于仅使用单个驱动器（例如 C：\\）的更简单的虚拟机。 其唯一的优点是，与手动复制不同，它不需要你首先删除快照。 此操作一定比仅删除快照和复制磁盘慢。  
+最后一个选项是使用 Hyper-V 中的磁盘合并和转换选项。 这些选项允许你将现有磁盘结构的副本（即使在包括快照 AVHD/AVHDX 文件时）制作为单个新磁盘。 与手动磁盘复制方案一样，此方案主要适用于仅使用单个驱动器（例如 C：）的更简单的虚拟机 \\ 。 其唯一的优点是，与手动复制不同，它不需要你首先删除快照。 此操作一定比仅删除快照和复制磁盘慢。  
   
 ##### <a name="hyper-v-manager-method"></a>Hyper-V 管理器方法  
 使用 Hyper-V 管理器创建合并的磁盘：  
@@ -435,7 +435,7 @@ Export-vm
   
 2.  浏览最低的子磁盘。 例如，如果使用差异磁盘，则子磁盘是最低的子项。 如果虚拟机含有单个快照（或多个快照），则当前选定的快照是最低的子磁盘。  
   
-3.  选择 “合并”选项，以在整个父子结构外创建单一磁盘。  
+3.  选择****“合并”选项，以在整个父子结构外创建单一磁盘。  
   
 4.  选择新的虚拟硬盘并提供路径。 此操作将现有 VHD/VHDX 文件协调为单个新便携式单元，该单元不存在还原以前快照的风险。  
   
@@ -450,7 +450,7 @@ Convert-vm
   
 ![虚拟化 DC 部署](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSConvertVhd.png)  
   
-#### <a name="adding-xml-to-the-offline-system-disk"></a><a name="BKMK_Offline"></a>将 XML 添加到脱机系统磁盘  
+#### <a name="adding-xml-to-the-offline-system-disk"></a><a name="BKMK_Offline"></a>将 XML 添加到脱机系统盘  
 如果你将 Dccloneconfig.xml 复制到运行中的源 DC，则你现在必须将更新的 dccloneconfig.xml 文件复制到脱机复制/导出的系统盘。 具体取决于之前使用 Get-ADDCCloningExcludedApplicationList 检测到的已安装应用程序，你可能还需要将 CustomDCCloneAllowList.xml 文件复制到磁盘。  
   
 以下位置可能包含 DcCloneConfig.xml 文件：  
@@ -565,7 +565,7 @@ dismount-vhd <disk path>
   
 ##### <a name="hyper-v-manager-method"></a>Hyper-V 管理器方法  
   
-1.  创建新的虚拟机  
+1.  新建虚拟机。  
   
 2.  指定 VM 名称、内存和网络。  
   
@@ -592,7 +592,7 @@ New-VM
 如果你打算从同一导出的 VM 创建其他副本，则请根据需要创建足够多的已导出 VM 的副本。 然后对每个副本使用“导入”。  
   
 > [!IMPORTANT]  
-> 请务必使用 **副本** 选项，因为导出保留了源中的所有信息；如果在同一台 Hyper-V 主机服务器上使用 **移动** 或 **就地** 导入服务器，则此操作将导致信息冲突。  
+> 请务必使用**副本**选项，因为导出保留了源中的所有信息；如果在同一台 Hyper-V 主机服务器上使用**移动**或**就地**导入服务器，则此操作将导致信息冲突。  
   
 ##### <a name="hyper-v-manager-method"></a>Hyper-V 管理器方法  
 若要使用 Hyper-V 管理器管理单元进行导入：  
@@ -603,7 +603,7 @@ New-VM
   
 3.  在**选择虚拟机**页面上，单击源计算机。  
   
-4.  在 **选择导入类型** 页面上，单击 **复制虚拟机（创建新的唯一 ID）** ，然后单击 **完成**。  
+4.  在**选择导入类型**页面上，单击**复制虚拟机（创建新的唯一 ID）**，然后单击**完成**。  
   
 5.  如果在同一台 Hyper-V 主机上执行导入，则重命名导入的 VM；它将具有与导出的源域控制器相同的名称。  
   
@@ -646,8 +646,8 @@ Remove-VMSnapshot
 > [!WARNING]
 > 确保导入计算机时，不会将静态 MAC 地址分配给源域控制器。 如果克隆具有静态 MAC 的源计算机，则这些复制的计算机将无法正确发送或接收任何网络流量。 如果出现这种情况，请设置新的唯一静态或动态 MAC 地址。 你可以看到 VM 是否通过该命令使用静态 MAC 地址：  
 > 
-> **VMName**   
->  ***测试-vm* |VMNetworkAdapter |fl \\** *  
+> **VMName-VM**   
+>  ***测试-vm* |VMNetworkAdapter |fl\\***  
   
 ### <a name="step-9---clone-the-new-virtual-machine"></a>步骤 9 – 克隆新的虚拟机  
 （可选）在开始克隆之前，请重启脱机克隆源域控制器。 无论如何，请确保 PDC 模拟器处于联机状态。  
@@ -713,7 +713,7 @@ Start-VM
 >   
 > [使用 BurFlags 注册表项重新预置“文件复制服务”副本集](https://support.microsoft.com/kb/290762)  
 >   
-> [如何强制进行 DFSR 复制的 SYSVOL 的权威和非权威同步（如 FRS 的 "D4/D2"）](https://support.microsoft.com/kb/2218556)  
+> [如何强制进行 DFSR 复制的 SYSVOL 的权威和非权威同步（如 FRS 的“D4/D2”）](https://support.microsoft.com/kb/2218556)  
   
 > [!WARNING]  
 > 请勿在同一个虚拟机监控程序主机上的林或域中运行所有域控制器。 这样将引入单一故障点，每次虚拟机监控程序处于脱机状态时，该单一故障点都会使 AD DS、Exchange、SQL 和其他企业操作失败。 这无异于仅将一个域控制器用于一整个域或林。 多个平台上的多个域控制器有助于提供冗余和容错。  
@@ -808,5 +808,3 @@ Rename-VMSnapshot
 Restore-VMSnapshot  
 ```  
   
-
-

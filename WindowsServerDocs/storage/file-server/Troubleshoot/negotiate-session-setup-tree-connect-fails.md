@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 13124176e530aa7b74d18a38c906bf5297be511e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2bad602f934d844074ee96df06bf9234fdbf943f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815380"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961159"
 ---
 # <a name="negotiate-session-setup-and-tree-connect-failures"></a>协商、会话设置和树连接故障
 
@@ -27,7 +27,7 @@ SMB 服务器从 SMB 客户端接收 SMB 协商请求。 连接超时，在60秒
 
 ## <a name="session-setup-fails"></a>会话安装失败
 
-SMB 服务器从 SMB 客户端\_安装请求接收 SMB 会话，但未能响应。
+SMB 服务器 \_ 从 smb 客户端接收 SMB 会话安装请求，但未能响应。
 
 如果服务器的完全限定的域名（FQDN）或网络基本输入/输出系统（NetBIOS）名称为 "sed" （通用命名约定（UNC）路径），则 Windows 将使用 Kerberos 进行身份验证。
 
@@ -38,7 +38,7 @@ SMB 服务器从 SMB 客户端\_安装请求接收 SMB 会话，但未能响应�
 
 此外，请进行以下检查：
 
-- 查看 SMB 会话中的安全 blob\_安装请求，确保发送正确的凭据。
+- 查看 SMB 会话安装请求中的安全 blob \_ ，以确保发送正确的凭据。
 
 - 尝试禁用 SMB 服务器名称强化（**SmbServerNameHardeningLevel = 0**）。
 
@@ -50,13 +50,13 @@ SMB 服务器从 SMB 客户端\_安装请求接收 SMB 会话，但未能响应�
 
 请确保用户帐户凭据具有对文件夹的共享和 NT 文件系统（NTFS）权限。
 
-常见树连接错误的原因可以在[3.3.5.7 接收 SMB2 树\_连接请求](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87)中找到。 下面是两个常见状态代码的解决方案。
+常见树连接错误的原因可以在[接收 SMB2 树 \_ 连接请求的 3.3.5.7](/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87)中找到。 下面是两个常见状态代码的解决方案。
 
-\[状态\_错误\_网络\_名称\]
+\[状态 \_ 错误的 \_ 网络 \_ 名称\]
 
 请确保该共享存在于服务器上，并且在 SMB 客户端请求中拼写正确。
 
-拒绝 \[状态\_访问\_\]
+\[\_拒绝访问 \_ 状态\]
 
 验证共享所使用的磁盘和文件夹是否存在并且是否可访问。
 
@@ -86,12 +86,12 @@ SMB 服务器从 SMB 客户端\_安装请求接收 SMB 会话，但未能响应�
 
 - Samba 和第三方设备可能不支持加密。 可能需要参考产品文档来了解详细信息。
 
-## <a name="references"></a>参考
+## <a name="references"></a>参考资料
 
 有关详细信息，请参阅以下文章。
 
-[3.3.5.4 接收 SMB2 协商请求](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/b39f253e-4963-40df-8dff-2f9040ebbeb1)
+[3.3.5.4 接收 SMB2 协商请求](/openspecs/windows_protocols/ms-smb2/b39f253e-4963-40df-8dff-2f9040ebbeb1)
 
-[3.3.5.5 接收 SMB2 会话\_安装程序请求](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/e545352b-9f2b-4c5e-9350-db46e4f6755e)
+[3.3.5.5 接收 SMB2 会话 \_ 安装请求](/openspecs/windows_protocols/ms-smb2/e545352b-9f2b-4c5e-9350-db46e4f6755e)
 
-[3.3.5.7 接收 SMB2 树\_连接请求](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87?redirectedfrom=MSDN)
+[3.3.5.7 接收 SMB2 树 \_ 连接请求](/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87)

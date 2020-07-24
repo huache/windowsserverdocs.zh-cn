@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 41fe13a5083a855a597a693f8cd707e3e211966a
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 70dc69812ae6806c58affdd3961c3ec8f9afd0bc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623885"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963539"
 ---
 # <a name="site-functions"></a>站点函数
 
@@ -31,7 +31,7 @@ Active Directory 域服务（AD DS）使用一种多主机的存储和转发的�
 
 通过在同一站点中查找域控制器，客户端可避免通过 WAN 链接进行通信。 如果客户端站点上没有域控制器，则相对于其他连接站点的成本最低的连接的域控制器将播发自己（在 DNS 中注册站点特定的服务（SRV）资源记录），该站点中没有域控制器。 在 DNS 中发布的域控制器是指由站点拓扑定义的最近站点中的域控制器。 此过程可确保每个站点都有一个用于身份验证的首选域控制器。
 
-有关查找域控制器的过程的详细信息，请参阅[Active Directory 集合](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))。
+有关查找域控制器的过程的详细信息，请参阅[Active Directory 集合](/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))。
 
 ## <a name="sysvol-replication"></a>SYSVOL 复制
 SYSVOL 是在域中的每个域控制器上存在的文件系统中的文件夹的集合。 SYSVOL 文件夹为必须在整个域中复制的文件提供默认 Active Directory 位置，包括组策略对象（Gpo）、启动和关闭脚本以及登录和注销脚本。  Windows Server 2008 可以使用文件复制服务（FRS）或分布式文件系统复制（DFSR）将 SYSVOL 文件夹所做的更改从一个域控制器复制到其他域控制器。 FRS 和 DFSR 会根据你在站点拓扑设计期间创建的计划来复制这些更改。
@@ -40,4 +40,4 @@ SYSVOL 是在域中的每个域控制器上存在的文件系统中的文件夹�
 DFSN 使用站点信息将客户端定向到在站点中承载请求的数据的服务器。 如果 DFSN 在客户端所在的站点中找不到数据的副本，则 DFSN 将使用 AD DS 中的站点信息来确定具有 DFSN 共享数据的文件服务器最近的客户端。
 
 ## <a name="service-location"></a>服务定位
-通过在 AD DS 中发布文件和打印服务等服务，你允许 Active Directory 客户端在相同或最近的站点中查找请求的服务。 打印服务使用存储在 AD DS 中的位置属性，使用户无需知道其确切位置即可按位置浏览打印机。 有关设计和部署打印服务器的详细信息，请参阅[设计和部署打印服务器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10))。
+通过在 AD DS 中发布文件和打印服务等服务，你允许 Active Directory 客户端在相同或最近的站点中查找请求的服务。 打印服务使用存储在 AD DS 中的位置属性，使用户无需知道其确切位置即可按位置浏览打印机。 有关设计和部署打印服务器的详细信息，请参阅[设计和部署打印服务器](/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10))。

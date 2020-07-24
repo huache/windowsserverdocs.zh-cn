@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: dd2f4c6b6bb17231ac04b3344e9a39df2cad79d0
-ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
+ms.openlocfilehash: 40ab29a115735e6c37bb7c7449980b94090565f3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740640"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961069"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>如何在 Windows 中检测、启用和禁用 SMBv1、SMBv2 和 SMBv3
 
@@ -53,9 +53,9 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
 
 有关 SMBv2 和 SMBv3 功能的功能的详细信息，请参阅以下文章：
 
-[服务器消息块概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))
+[服务器消息块概述](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v=ws.11))
 
-[SMB 中的新增功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff625695(v=ws.10))  
+[SMB 中的新增功能](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff625695(v=ws.10))  
 
 ## <a name="how-to-gracefully-remove-smb-v1-in-windows-81-windows-10-windows-2012-r2-windows-server-2016-and-windows-server-2019"></a>如何在 Windows 8.1、Windows 10、Windows 2012 R2、Windows Server 2016 和 Windows Server 2019 中正常删除 SMB v1
 
@@ -215,7 +215,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
 ```  
 
-**注意**进行这些更改之后，必须重新启动计算机。 有关详细信息，请参阅[Microsoft 服务器存储](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/)。 
+**注意**进行这些更改之后，必须重新启动计算机。 有关详细信息，请参阅[Microsoft 服务器存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858)。 
 ##### <a name="smb-v2v3-on-smb-server"></a>Smb 服务器上的 SMB v2/v3
 
 察觉  
@@ -298,7 +298,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= auto
   ```
 
-有关详细信息，请参阅[Microsoft 的服务器存储](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/) 
+有关详细信息，请参阅[Microsoft 的服务器存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858) 
 ##### <a name="smb-v2v3-on-smb-client"></a>Smb v2/在 SMB 客户端上
 
 - 察觉
@@ -359,7 +359,7 @@ Default: 1 = Enabled (No registry key is created)
 这将禁用 SMBv1 服务器组件。 此组策略必须应用于域中的所有必要工作站、服务器和域控制器。
 
 > [!NOTE]
-> [WMI 筛选器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc947846(v=ws.10))还可以设置为排除不受支持的操作系统或所选的排除项，例如 Windows XP。
+> [WMI 筛选器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc947846(v=ws.10))还可以设置为排除不受支持的操作系统或所选的排除项，例如 Windows XP。
 
 > [!IMPORTANT]
 > 当你在旧的 Windows XP 或更早版本的 Linux 和第三方系统（不支持 SMBv2 或 SMBv3）的域控制器上进行这些更改时，请小心，要求访问 SYSVOL 或正在禁用 SMB v1 的其他文件共享。     

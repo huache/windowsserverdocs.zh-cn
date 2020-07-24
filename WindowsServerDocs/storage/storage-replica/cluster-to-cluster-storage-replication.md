@@ -9,12 +9,12 @@ ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: 如何使用存储副本将一个群集中的卷复制到另一个运行 Windows Server 的群集。
-ms.openlocfilehash: 21e054d42d0264bb22fbd0e02382ee429958a597
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d99a7ebf933427e8e065f72261816610e62a433d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475664"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961239"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>群集到群集存储复制
 
@@ -172,11 +172,11 @@ ms.locfileid: "85475664"
     > WIndows Server 现在包含基于云（Azure）的见证的选项。 你可以选择此仲裁选项来替代文件共享见证。
 
     > [!WARNING]
-    > 有关仲裁配置的详细信息，请参阅[配置和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**见证服务器配置**部分。 有关 `Set-ClusterQuorum` cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。
+    > 有关仲裁配置的详细信息，请参阅[配置和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**见证服务器配置**部分。 有关 `Set-ClusterQuorum` cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
 
 5.  将 **Redmond** 站点中的一个磁盘添加到群集 CSV。 若要执行此操作，右键单击“**存储**”部分的“**磁盘**”节点中的源磁盘，然后单击“**添加到群集共享卷**”。
 
-6.  使用[配置横向扩展文件服务器](https://technet.microsoft.com/library/hh831718.aspx)中的说明在两个群集上均创建群集横向扩展文件服务器
+6.  使用[配置横向扩展文件服务器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831718(v=ws.11))中的说明在两个群集上均创建群集横向扩展文件服务器
 
 ### <a name="windows-powershell-method"></a>Windows PowerShell 方法
 
@@ -204,9 +204,9 @@ ms.locfileid: "85475664"
     > WIndows Server 现在包含基于云（Azure）的见证的选项。 你可以选择此仲裁选项来替代文件共享见证。
 
     > [!WARNING]
-    > 有关仲裁配置的详细信息，请参阅[配置和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**见证服务器配置**部分。 有关 `Set-ClusterQuorum` cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。
+    > 有关仲裁配置的详细信息，请参阅[配置和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**见证服务器配置**部分。 有关 `Set-ClusterQuorum` cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
 
-4.  使用[配置横向扩展文件服务器](https://technet.microsoft.com/library/hh831718.aspx)中的说明在两个群集上均创建群集横向扩展文件服务器
+4.  使用[配置横向扩展文件服务器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831718(v=ws.11))中的说明在两个群集上均创建群集横向扩展文件服务器
 
 ## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>步骤 3：使用 Windows PowerShell 设置群集到群集复制
 现在使用 Windows PowerShell 设置群集到群集复制。 你可以直接在节点上或从包含 Windows Server 的远程管理计算机执行以下所有步骤远程服务器管理工具
@@ -355,7 +355,7 @@ ms.locfileid: "85475664"
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent
 
-    有关 Windows PowerShell 中的性能计数器的详细信息，请参阅 [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)。
+    有关 Windows PowerShell 中的性能计数器的详细信息，请参阅 [Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter)。
 
 3.  要从一个站点移动复制方向，请使用 **Set-SRPartnership** cmdlet。
 
@@ -384,7 +384,7 @@ ms.locfileid: "85475664"
     ```
 
     > [!NOTE]
-    > 存储副本用于卸除目标卷。 这是设计使然。
+    > 存储副本用于卸除目标卷。 这是设计的结果。
 
 ## <a name="additional-references"></a>其他参考
 

@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: 209567ccd88f4b20f98caecc2a13cc671ef09072
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bbb614886099bf2adc1239a699ef8d904e71be7b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854020"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961779"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>排查 Always On VPN 问题 
 
@@ -28,11 +28,11 @@ ms.locfileid: "80854020"
 
 ### <a name="error-code-800"></a>错误代码：800
 
-- **错误说明。** 未建立远程连接，因为尝试的 VPN 隧道失败。 可能无法访问 VPN 服务器。 如果此连接尝试使用 L2TP/IPsec 隧道，则 IPsec 协商所需的安全参数可能配置不正确。
+- **错误说明。** 未进行远程连接，因为尝试的 VPN 隧道失败。 可能无法访问 VPN 服务器。 如果此连接尝试使用 L2TP/IPsec 隧道，则 IPsec 协商所需的安全参数可能配置不正确。
 
 - **可能的原因。** 如果 VPN 隧道类型为**自动**，并且所有 vpn 隧道的连接尝试失败，则会出现此错误。
 
-- **可能的解决方案：**
+- **可能的解决方法：**
 
     - 如果知道要将哪个隧道用于部署，请在 VPN 客户端将 VPN 类型设置为该特定隧道类型。
 
@@ -40,7 +40,7 @@ ms.locfileid: "80854020"
 
     - 当无法访问 VPN 服务器或隧道连接失败时，也会出现此错误。
 
-- **确保：**
+- **请确保：**
 
     - IKE 端口（UDP 端口500和4500）不会被阻止。
 
@@ -56,7 +56,7 @@ ms.locfileid: "80854020"
 
 ### <a name="error-code-812"></a>错误代码：812
 
-- **错误说明。** 无法连接到 Always On 的 VPN。 由于 RAS/VPN 服务器上配置的策略，连接被阻止。 具体而言，服务器用于验证用户名和密码的身份验证方法可能与连接配置文件中配置的身份验证方法不匹配。 请与 RAS 服务器的管理员联系，并通知此错误。
+- **错误说明。** 无法连接到 Always On 的 VPN。 由于 RAS/VPN 服务器上配置的某个策略，连接被阻止。 具体而言，服务器用于验证用户名和密码的身份验证方法可能与连接配置文件中配置的身份验证方法不匹配。 请与 RAS 服务器的管理员联系，并通知此错误。
 
 - **可能的原因：**
 
@@ -114,11 +114,11 @@ ms.locfileid: "80854020"
 
 客户端计算机上的应用程序日志记录 VPN 连接事件的大多数较高级别的详细信息。
 
-从源 RasClient 查找事件。 所有错误消息都将返回消息末尾的错误代码。 下面详细介绍了一些更常见的错误代码，但[路由和远程访问错误代码](https://msdn.microsoft.com/library/windows/desktop/bb530704.aspx)中提供了完整列表。
+从源 RasClient 查找事件。 所有错误消息都将返回消息末尾的错误代码。 下面详细介绍了一些更常见的错误代码，但[路由和远程访问错误代码](/previous-versions//mt728163(v=technet.10))中提供了完整列表。
 
 ## <a name="nps-logs"></a>NPS 日志
 
-NPS 创建并存储 NPS 记帐日志。 默认情况下，这些文件存储在% SYSTEMROOT%\\\\System32*中，在名为的文件*中\\，其中*xxxx*是创建文件的日期。
+NPS 创建并存储 NPS 记帐日志。 默认情况下，这些文件存储在名为的文件中的% SYSTEMROOT% \\ System32 \\ 日志 \\ 文件中，其中*xxxx*是创建文件的日期。*XXXX*
 
 默认情况下，这些日志采用逗号分隔值格式，但不包括标题行。 标题行为：
 
@@ -128,15 +128,15 @@ ComputerName,ServiceName,Record-Date,Record-Time,Packet-Type,User-Name,Fully-Qua
 
 如果将此标题行粘贴为日志文件的第一行，然后将该文件导入 Microsoft Excel，则这些列将正确标记。
 
-NPS 日志有助于诊断与策略相关的问题。 有关 NPS 日志的详细信息，请参阅[解释 Nps 数据库格式日志文件](https://technet.microsoft.com/library/cc771748.aspx)。
+NPS 日志有助于诊断与策略相关的问题。 有关 NPS 日志的详细信息，请参阅[解释 Nps 数据库格式日志文件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10))。
 
-## <a name="vpn_profileps1-script-issues"></a>VPN_Profile ps1 脚本问题
+## <a name="vpn_profileps1-script-issues"></a>VPN_Profile.ps1 脚本问题
 
-手动运行 VPN_ Profile. ps1 脚本时，最常见的问题包括：
+手动运行 VPN_ Profile.ps1 脚本时，最常见的问题包括：
 
 - 是否使用远程连接工具？  请确保不要使用 RDP 或其他远程连接方法，因为它烂摊子了用户登录检测。
 
-- 用户是否为该本地计算机的管理员？  请确保在运行 VPN_Profile ps1 脚本时，用户具有管理员权限。
+- 用户是否为该本地计算机的管理员？  请确保在运行 VPN_Profile.ps1 脚本时，用户具有管理员权限。
 
 - 是否启用了额外的 PowerShell 安全功能？ 请确保 PowerShell 执行策略未阻止脚本。 在运行脚本之前，您可以考虑关闭受约束的语言模式（如果启用）。 脚本成功完成后，可以激活受约束的语言模式。
 
@@ -146,7 +146,7 @@ NPS 日志有助于诊断与策略相关的问题。 有关 NPS 日志的详细�
 
 1. 模板计算机是否已外部连接？ **Whatismyip**扫描应显示不属于你的公共 IP 地址。
 
-2. 是否可以将远程访问/vpn 服务器名称解析为 IP 地址？ 在 **"控制面板**" > **网络**和**Internet** > **网络连接**"，打开 VPN 配置文件的属性。 "**常规**" 选项卡中的值应可通过 DNS 公开解析。
+2. 是否可以将远程访问/vpn 服务器名称解析为 IP 地址？ 在 "控制面板" 的 **"**  >  **网络**和**Internet**  >  **网络连接**" 中，打开 VPN 配置文件的属性。 "**常规**" 选项卡中的值应可通过 DNS 公开解析。
 
 3. 是否可以通过外部网络访问 VPN 服务器？ 考虑将 Internet 控制消息协议（ICMP）打开到外部接口，并从远程客户端对名称进行 ping 操作。 Ping 成功后，可以删除 ICMP 允许规则。
 
@@ -166,18 +166,18 @@ NPS 日志有助于诊断与策略相关的问题。 有关 NPS 日志的详细�
 
 - **错误说明。** 如果不满足条件访问策略，则会阻止 VPN 连接，但会在用户选择**X**之后连接以关闭消息。  选择 **"确定"** 将导致另一个身份验证尝试，该尝试以其他 "糟糕" 消息结束。 这些事件记录在客户端的 AAD 操作事件日志中。
 
-- **可能的原因**
+- 可能的原因 
 
   - 用户在其个人证书存储区中具有有效的客户端身份验证证书，该证书不是由 Azure AD 颁发的。
 
-  - VPN 配置文件 \<TLSExtensions\> 部分丢失或不包含 **\<EKUName\>AAD 条件访问\</EKUName\>\<EKUOID\>1.3.6.1.4.1.311.87 </EKUOID\>\<EKUName > AAD 条件访问 </EKUName\>\<EKUOID\>1.3.6.1.4.1.311.87 </EKUOID\>** 条目。 \<EKUName > 和 \<EKUOID > 条目告诉 VPN 客户端将证书传递到 VPN 服务器时要从用户的证书存储中检索的证书。 如果不这样做，VPN 客户端将使用用户证书存储区中任何有效的客户端身份验证证书，并且身份验证成功。 
+  - VPN 配置文件 \<TLSExtensions\> 部分丢失或不包含** \<EKUName\> aad 条件访问 \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87</Ekuoid \> \<EKUName> aad 条件访问</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87</ekuoid \> **条目。 \<EKUName>和 \<EKUOID> 条目告诉 vpn 客户端在将证书传递给 vpn 服务器时要从用户的证书存储中检索的证书。 如果不这样做，VPN 客户端将使用用户证书存储区中任何有效的客户端身份验证证书，并且身份验证成功。 
 
   - RADIUS 服务器（NPS）未配置为仅接受包含**AAD 条件访问**OID 的客户端证书。
 
 - **可能的解决方案。** 若要对此循环进行转义，请执行以下操作：
 
   1. 在 Windows PowerShell 中，运行**get-wmiobject** cmdlet 以转储 VPN 配置文件配置。 
-  2. 验证 **\<TLSExtensions >** 、 **\<EKUName >** 和 **\<EKUOID >** 节是否存在，并显示正确的名称和 OID。
+  2. 验证 **\<TLSExtensions>** 、 **\<EKUName>** 和 **\<EKUOID>** 节是否存在，并显示正确的名称和 OID。
       
       ```powershell
       PS C:\> Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\cimv2\mdm\dmmap
@@ -279,7 +279,7 @@ NPS 日志有助于诊断与策略相关的问题。 有关 NPS 日志的详细�
      >[!NOTE]
      >如果用户的个人存储区中存在来自颁发者**CN = MICROSOFT VPN 根 CA 第1代**的证书，但用户通过选择**X**来获取访问权限来关闭糟糕消息，则收集 CAPI2 事件日志以验证用于身份验证的证书是不是从 Microsoft VPN 根 CA 颁发的有效客户端身份验证证书。
 
-  4. 如果用户的个人存储区中存在有效的客户端身份验证证书，则在用户选择**X**并且 **\<TLSExtensions >** 、 **\<EKUName >** 和 **\<EKUOID >** 部分存在并且包含正确的信息时，连接将失败（如有必要）。
+  4. 如果用户的个人存储区中存在有效的客户端身份验证证书，则在用户选择**X**之后连接将失败（应如此），并且如果 **\<TLSExtensions>** 、 **\<EKUName>** 和 **\<EKUOID>** 部分存在并且包含正确的信息。
    
      出现一条错误消息，显示 "找不到可用于可扩展身份验证协议的证书"。
 
@@ -294,4 +294,4 @@ NPS 日志有助于诊断与策略相关的问题。 有关 NPS 日志的详细�
     1. 在 "VPN 连接" 边栏选项卡中，选择证书。
     2. 在 "**主**" 下，选择 "**否**"，然后选择 "**保存**"。
     3. 在 "VPN 连接" 边栏选项卡中，再次选择证书。
-    4. 选择 "**删除**"。
+    4. 选择“删除”。

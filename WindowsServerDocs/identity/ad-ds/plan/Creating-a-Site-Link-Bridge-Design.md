@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 37115e79044c9ddfd55e646fcde868ad6ac7048f
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 244444cc773e3b69ba09a2050ebaefa11ea9edef
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624335"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962279"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>创建站点链接桥设计
 
@@ -26,7 +26,7 @@ ms.locfileid: "81624335"
 - 你的 IP 网络未完全路由。 禁用**桥接所有站点链接**时，所有站点链接都被视为不可传递的，你可以创建和配置站点链接桥对象以建立网络的实际路由行为的模型。
 - 需要控制在 Active Directory 域服务（AD DS）中所做更改的复制流。 通过为站点链接 IP 传输禁用 "**桥接所有站点链接**" 并配置站点链接桥，站点链接桥将成为不相互连接的网络的等效项。 站点链接桥中的所有站点链接都可以进行可传递的路由，但不会在站点链接桥之外路由。
 
-有关如何使用 "Active Directory 站点和服务" 管理单元来禁用 "**桥接所有站点链接**" 设置的详细信息，请参阅文章[启用或禁用站点链接桥](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10))。
+有关如何使用 "Active Directory 站点和服务" 管理单元来禁用 "**桥接所有站点链接**" 设置的详细信息，请参阅文章[启用或禁用站点链接桥](/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10))。
 
 ## <a name="controlling-ad-ds-replication-flow"></a>控制 AD DS 复制流
 

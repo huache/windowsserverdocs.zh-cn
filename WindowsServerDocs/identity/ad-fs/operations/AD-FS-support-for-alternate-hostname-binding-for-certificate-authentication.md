@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e3764977e29413ea1e361fa78cadd040adabcf04
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fd459ac469d052b2c183520cbf434c1ac351c0c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858090"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962749"
 ---
 # <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>AD FS 对证书身份验证的备用主机名绑定的支持
 
@@ -21,7 +21,7 @@ ms.locfileid: "80858090"
   
 对于 Windows Server 2016 中的 AD FS，可以完成此操作。
   
-在 Windows Server 2016 上的 AD FS 中，这已发生更改。 现在我们支持两种模式，第一种模式使用不同端口（443，49443）的相同主机（即 adfs.contoso.com）。 第二个使用相同端口（443）的不同主机（adfs.contoso.com 和 certauth.adfs.contoso.com）。 这将需要一个 SSL 证书，以支持 "certauth >" 作为备用使用者名称的 "<"。 这可以在创建场时或在以后通过 PowerShell 完成。  
+在 Windows Server 2016 上的 AD FS 中，这已发生更改。 现在我们支持两种模式，第一种模式使用不同端口（443，49443）的相同主机（即 adfs.contoso.com）。 第二个使用相同端口（443）的不同主机（adfs.contoso.com 和 certauth.adfs.contoso.com）。 这将需要一个 SSL 证书，以支持 "certauth>" 作为备用使用者名称的 "<"。 这可以在创建场时或在以后通过 PowerShell 完成。  
   
 ## <a name="how-to-configure-alternate-host-name-binding-for-certificate-authentication"></a>如何为证书身份验证配置备用主机名绑定  
 可以通过两种方式为证书身份验证添加备用主机名绑定。 第一种情况是，使用 Windows Server 2016 的 AD FS 设置新的 AD FS 场时，如果该证书包含使用者备用名称（SAN），则它将自动设置为使用上面提到的第二种方法。 也就是说，它会自动设置两个不同的主机（sts.contoso.com 和 certauth.sts.contoso.com 具有相同的端口。 如果证书不包含 SAN，你会看到一条警告，告诉你证书使用者备用名称不支持 certauth. *。 请参阅下面的屏幕截图。 第一个示例显示一个安装，其中证书包含一个 SAN，第二个证书显示未使用的证书。  
@@ -42,4 +42,4 @@ Set-AdfsAlternateTlsClientBinding -Member DC1.contoso.com -Thumbprint '<thumbpri
 
 ## <a name="additional-references"></a>其他参考
 
-* [在 Windows Server 2016 中的 AD FS 和 WAP 中管理 SSL 证书](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+* [在 Windows Server 2016 中管理 AD FS 和 WAP 中的 SSL 证书](./manage-ssl-certificates-ad-fs-wap.md)

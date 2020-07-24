@@ -1,5 +1,5 @@
 ---
-title: 使用共享存储的拉伸群集复制
+title: 使用共享存储拉伸群集复制
 ms.prod: windows-server
 manager: eldenc
 ms.author: nedpyle
@@ -8,18 +8,18 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: e6dbe6ef618f989ed158382ef6c8bd063548d281
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 08b09c9a0684a2938645462875737556d0288c9e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950076"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961039"
 ---
-# <a name="stretch-cluster-replication-using-shared-storage"></a>使用共享存储的拉伸群集复制
+# <a name="stretch-cluster-replication-using-shared-storage"></a>使用共享存储拉伸群集复制
 
->适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+>适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
-在此评估示例中，将在单个拉伸群集中配置这些计算机及其存储，其中两个节点共享一组存储，两个节点共享另一组存储，然后复制保持两组存储在群集中进行镜像，以允许立即故障转移。 这些节点及其存储应位于单独的物理站点（尽管这不是必需）。 将 Hyper-V 和文件服务器群集创建为示例方案具有单独的步骤。  
+在此评估示例中，将在单个拉伸群集中配置这些计算机及其存储，其中两个节点共享一组存储，两个节点共享另一组存储，然后复制保持两组存储在群集中进行镜像，以允许立即故障转移。 这些节点及其存储应位于单独的物理站点（尽管这不是必需的）。 将 Hyper-V 和文件服务器群集创建为示例方案具有单独的步骤。  
 
 > [!IMPORTANT]  
 > 在此评估中，不同站点中的服务器必须能够通过网络与其他服务器通信，但是不具有与其他站点的共享存储的物理连接。 此方案不会利用存储空间直通。  
@@ -36,7 +36,7 @@ ms.locfileid: "75950076"
 
 ![图示显示 Redmond 的两个节点，这两个节点复制了 Bellevue 站点中同一个群集的两个节点](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-**图1： stretch 群集中的存储复制**  
+**图 1：拉伸群集中的存储复制**  
 
 ## <a name="prerequisites"></a>先决条件  
 -   Active Directory 域服务林（无需运行 Windows Server 2016）。  
@@ -98,7 +98,7 @@ ms.locfileid: "75950076"
 8. 配置存储，如下所示：  
 
     > [!IMPORTANT]  
-    > -   必须在每个机箱上创建两个卷：一个用于数据，而另一个用于日志。  
+    > -   必须在每个机箱上创建两个卷：一个用于数据，另一个用于日志。  
     > -   必须将日志和数据磁盘初始化为 GPT，而非 MBR。  
     > -   两个数据卷的大小必须相同。  
     > -   两个日志卷的大小应相同。  
@@ -110,7 +110,7 @@ ms.locfileid: "75950076"
     > - 卷必须使用 NTFS 或 ReFS 格式。
     > - 文件服务器角色仅对运行 Test-SRTopology 是必要的，因为它将打开必要的防火墙端口。  
 
-    -   **对于 JBOD 机箱：**  
+    -   **对于 JBOD 存储设备：**  
 
         1.  确保每组配对的服务器节点只能看到该站点的存储机箱（即非对称存储），且 SAS 连接已正确配置。  
 
@@ -131,10 +131,10 @@ ms.locfileid: "75950076"
 ## <a name="configure-a-hyper-v-failover-cluster-or-a-file-server-for-a-general-use-cluster"></a>为常规使用群集配置 Hyper-V 故障转移群集或文件服务器
 
 安装服务器节点后，下一步是创建以下群集类型之一：  
-*  [Hyper-v 故障转移群集](#BKMK_HyperV)  
-*  [一般使用群集的文件服务器](#BKMK_FileServer)  
+*  [Hyper-V 故障转移群集](#BKMK_HyperV)  
+*  [常规使用群集的文件服务器](#BKMK_FileServer)  
 
-### <a name="BKMK_HyperV"></a>配置 Hyper-v 故障转移群集  
+### <a name="configure-a-hyper-v-failover-cluster"></a><a name="BKMK_HyperV"></a>配置 Hyper-v 故障转移群集  
 
 >[!NOTE]
 > 如果你想要创建文件服务器群集，而非 Hyper-V 群集，请跳过此部分，并转到[为常规使用群集配置文件服务器](#BKMK_FileServer)部分。  
@@ -158,13 +158,13 @@ ms.locfileid: "75950076"
    > WIndows Server 现在包含基于云（Azure）的见证的选项。 你可以选择此仲裁选项来替代文件共享见证。  
 
    > [!WARNING]  
-   > 有关仲裁配置的详细信息，请参阅[在 Windows Server 2012 故障转移群集指南的见证配置中配置和管理仲裁](https://technet.microsoft.com/library/jj612870.aspx)。 有关 `Set-ClusterQuorum` cmdlet 的详细信息，请参阅 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。  
+   > 有关仲裁配置的详细信息，请参阅 [在 Windows Server 2012 故障转移群集指南的见证配置中配置和管理仲裁](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11))。 有关 `Set-ClusterQuorum` cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。  
 
-5. 查看 [在 Windows Server 2012 中的 HYPER-V 群集的网络建议](https://technet.microsoft.com/library/dn550728.aspx)，并确保以最佳方式配置了群集网络。  
+5. 查看 [在 Windows Server 2012 中的 HYPER-V 群集的网络建议](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11))，并确保以最佳方式配置了群集网络。  
 
 6. 将 Redmond 站点中的一个磁盘添加到群集 CSV。 若要执行此操作，右键单击“**存储**”部分的“**磁盘**”节点中的源磁盘，然后单击“**添加到群集共享卷**”。  
 
-7. 使用[部署 Hyper-V 群集](https://technet.microsoft.com/library/jj863389.aspx)指南，按照 **Redmond** 站点中的步骤 7 至 10 仅创建测试虚拟机，以确保在第一个测试站点中共享存储的两个节点内的群集能正常运行。  
+7. 使用[部署 Hyper-V 群集](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))指南，按照 **Redmond** 站点中的步骤 7 至 10 仅创建测试虚拟机，以确保在第一个测试站点中共享存储的两个节点内的群集能正常运行。  
 
 8. 如果要创建两个节点的拉伸群集，则必须在继续之前添加所有存储。 为此，请使用群集节点上的管理权限打开一个 PowerShell 会话，并运行以下命令：`Get-ClusterAvailableDisk -All | Add-ClusterDisk`。
 
@@ -174,10 +174,10 @@ ms.locfileid: "75950076"
 
     例如，对具有 **D:** 和 **E:** 卷的每个计划拉伸群集节点进行验证并运行 30 分钟测试：
    1. 将所有可用的存储移动到 **SR-SRV01**。
-   2. 在故障转移群集管理器的**角色**部分单击**创建空角色**。
+   2. 在故障转移群集管理器的“**角色**”部分单击“**创建空角色**”。
    3. 将联机存储添加到名为**新建角色**的空角色。
    4. 将所有可用的存储移动到 **SR-SRV03**。
-   5. 在故障转移群集管理器的**角色**部分单击**创建空角色**。
+   5. 在故障转移群集管理器的“**角色**”部分单击“**创建空角色**”。
    6. 将空的**新建角色 (2)** 移动到 **SR-SRV03**。
    7. 将联机存储添加到名为**新建角色 (2)** 的空角色。
    8. 现在你已装载了所有具有驱动器字母的存储，并可使用 `Test-SRTopology` 评估群集。
@@ -189,7 +189,7 @@ ms.locfileid: "75950076"
            Test-SRTopology -SourceComputerName SR-SRV01 -SourceVolumeName D: -SourceLogVolumeName E: -DestinationComputerName SR-SRV03 -DestinationVolumeName D: -DestinationLogVolumeName E: -DurationInMinutes 30 -ResultPath c:\temp        
 
       > [!IMPORTANT]
-      > 在评估期间，当在指定源卷上使用无写入 IO 负载的测试服务器时，请考虑添加工作负载，否则 Test-SRTopology 将不会生成有用的报表。 需要使用生产类似的工作负荷进行测试，以便看到真实的数值和建议的日志大小。 或者，只需在测试期间将一些文件复制到源卷或下载并运行 DISKSPD 以生成写入 IO。 例如，D: 卷的十分钟的较低写入 IO 工作负载：   
+      > 在评估期间，当在指定源卷上使用无写入 IO 负载的测试服务器时，请考虑添加工作负载，否则 Test-SRTopology 将不会生成有用的报表。 你应该使用与生产类似的工作负载进行测试，以便看到真实的数值和建议的日志大小。 或者，只需在测试期间将一些文件复制到源卷或下载并运行 DISKSPD 以生成写入 IO。 例如，D: 卷的十分钟的较低写入 IO 工作负荷：   
        `Diskspd.exe -c1g -d600 -W5 -C5 -b4k -t2 -o2 -r -w5 -i100 d:\test.dat`  
 
 10. 检查 **TestSrTopologyReport-< date >.html** 报表以确保满足存储副本要求，并记下初始同步时间预测和日志建议。  
@@ -218,9 +218,9 @@ ms.locfileid: "75950076"
     > [!NOTE]
     > Windows Server 2016 中没有使用故障转移群集管理器配置站点感知的选项。  
 
-14. **（可选）** 配置群集网络和 Active Directory 以用于更快的 DNS 站点故障转移。 可以利用 Hyper-V 软件定义的网络、拉伸的 VLAN、网络抽象设备、降低的 DNS TTL 和其他常用技术。
+14. **（可选）** 配置群集网络和 Active Directory 以实现更快的 DNS 站点故障转移。 可以利用 Hyper-V 软件定义的网络、拉伸的 VLAN、网络抽象设备、降低的 DNS TTL 和其他常用技术。
 
-    有关详细信息，请查看 Microsoft Ignite 会话：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/Events/Ignite/2015/BRK3487)（在 Windows Server vNext 中拉伸故障转移群集和使用存储副本），以及 [Enable Change Notifications between Sites - How and Why?](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)（在站点间启用更改通知 - 操作方法和原因）博客文章。  
+    有关详细信息，请查看 Microsoft Ignite 会话：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/Events/Ignite/2015/BRK3487)（在 Windows Server vNext 中拉伸故障转移群集和使用存储副本），以及 [Enable Change Notifications between Sites - How and Why?](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why)（在站点间启用更改通知 - 操作方法和原因）博客文章。  
 
 15. **（可选）** 配置 VM 复原，以使来宾无需在节点失败时暂停过久。 相反，他们在 10 秒内故障转移到新的复制源存储。  
 
@@ -258,19 +258,19 @@ ms.locfileid: "75950076"
    > [!NOTE]
    > WIndows Server 现在包含基于云（Azure）的见证的选项。 你可以选择此仲裁选项来替代文件共享见证。  
     
-   有关仲裁配置的详细信息，请参阅[在 Windows Server 2012 故障转移群集指南的见证配置中配置和管理仲裁](https://technet.microsoft.com/library/jj612870.aspx)。 有关 `Set-ClusterQuorum` cmdlet 的详细信息，请参阅 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。  
+   有关仲裁配置的详细信息，请参阅 [在 Windows Server 2012 故障转移群集指南的见证配置中配置和管理仲裁](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11))。 有关 `Set-ClusterQuorum` cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。  
 
-4. 查看 [在 Windows Server 2012 中的 HYPER-V 群集的网络建议](https://technet.microsoft.com/library/dn550728.aspx)，并确保以最佳方式配置了群集网络。  
+4. 查看 [在 Windows Server 2012 中的 HYPER-V 群集的网络建议](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11))，并确保以最佳方式配置了群集网络。  
 
 5. 如果要创建两个节点的拉伸群集，则必须在继续之前添加所有存储。 为此，请使用群集节点上的管理权限打开一个 PowerShell 会话，并运行以下命令：`Get-ClusterAvailableDisk -All | Add-ClusterDisk`。
 
    这在 Windows Server 2016 中是按设计行为。
 
-6. 使用[部署 Hyper-V 群集](https://technet.microsoft.com/library/jj863389.aspx)指南，按照 **Redmond** 站点中的步骤 7 至 10 仅创建测试虚拟机，以确保在第一个测试站点中共享存储的两个节点内的群集能正常运行。  
+6. 使用[部署 Hyper-V 群集](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))指南，按照 **Redmond** 站点中的步骤 7 至 10 仅创建测试虚拟机，以确保在第一个测试站点中共享存储的两个节点内的群集能正常运行。  
 
 7. 一旦满足，即删除测试 VM。 向计划源节点添加进一步评估所需的任何真实的测试虚拟机。  
 
-8. 配置拉伸群集站点感知以便服务器 **SR-SRV01** 和 **SR-SRV02** 处于站点 **Redmond** 中，而 **SR-SRV03** 和 **SR-SRV04** 处于站点 **Bellevue** 中，且 **Redmond** 对源存储和虚拟机的节点所有权是首选项：  
+8. 配置 stretch 群集站点感知，使服务器上的**SRV01**和**SRV02**位于站点**Redmond**， **sr SRV03**和**sr-iov**位于 site **Bellevue**中，而**Redmond**为源存储和虚拟机的节点所有权首选：  
 
    ```PowerShell  
    New-ClusterFaultDomain -Name Seattle -Type Site -Description "Primary" -Location "Seattle Datacenter"  
@@ -285,9 +285,9 @@ ms.locfileid: "75950076"
    (Get-Cluster).PreferredSite="Seattle"  
    ```  
 
-9. **（可选）** 配置群集网络和 Active Directory 以用于更快的 DNS 站点故障转移。 可以利用 Hyper-V 软件定义的网络、拉伸的 VLAN、网络抽象设备、降低的 DNS TTL 和其他常用技术。  
+9. **（可选）** 配置群集网络和 Active Directory 以实现更快的 DNS 站点故障转移。 可以利用 Hyper-V 软件定义的网络、拉伸的 VLAN、网络抽象设备、降低的 DNS TTL 和其他常用技术。  
 
-   有关详细信息，请查看 Microsoft Ignite 会话：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/Events/Ignite/2015/BRK3487)（在 Windows Server vNext 中拉伸故障转移群集和使用存储副本），以及 [Enable Change Notifications between Sites - How and Why?](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)（在站点间启用更改通知 - 操作方法和原因）。  
+   有关详细信息，请查看 Microsoft Ignite 会话：[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/Events/Ignite/2015/BRK3487)（在 Windows Server vNext 中拉伸故障转移群集和使用存储副本），以及 [Enable Change Notifications between Sites - How and Why?](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why)（在站点间启用更改通知 - 操作方法和原因）。  
 
 10. **（可选）** 配置 VM 复原，以使来宾无需在节点失败时暂停时间过长。 相反，他们在 10 秒内故障转移到新的复制源存储。  
 
@@ -300,7 +300,7 @@ ms.locfileid: "75950076"
 
 
 
-### <a name="BKMK_FileServer"></a>为常规使用群集配置文件服务器  
+### <a name="configure-a-file-server-for-general-use-cluster"></a><a name="BKMK_FileServer"></a>为常规使用群集配置文件服务器  
 
 >[!NOTE]
 > 如果你已配置了[配置 Hyper-V 故障转移群集](#BKMK_HyperV)中所述的 Hyper-V 故障转移群集，则跳过此部分。  
@@ -320,7 +320,7 @@ ms.locfileid: "75950076"
    >[!NOTE]
    > WIndows Server 现在包含基于云（Azure）的见证的选项。 你可以选择此仲裁选项来替代文件共享见证。                                                                                                                                                                             
    >[!NOTE]
-   >  有关仲裁配置的详细信息，请参阅[在 Windows Server 2012 故障转移群集指南的见证配置中配置和管理仲裁](https://technet.microsoft.com/library/jj612870.aspx)。 有关 Set-ClusterQuorum cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。 
+   >  有关仲裁配置的详细信息，请参阅 [在 Windows Server 2012 故障转移群集指南的见证配置中配置和管理仲裁](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11))。 有关 Set-ClusterQuorum cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。 
 
 5. 如果要创建两个节点的拉伸群集，则必须在继续之前添加所有存储。 为此，请使用群集节点上的管理权限打开一个 PowerShell 会话，并运行以下命令：`Get-ClusterAvailableDisk -All | Add-ClusterDisk`。
 
@@ -330,7 +330,7 @@ ms.locfileid: "75950076"
     >[!NOTE]
     > 在继续下一步骤前，必须在所有节点上都安装文件服务器角色。   |  
 
-7. 在**角色**下，单击**配置角色**。 查看“**开始之前**”，然后单击“**下一步**”。  
+7. 在“**角色**”下，单击“**配置角色**”。 查看“**开始之前**”，然后单击“**下一步**”。  
 
 8. 选择“**文件服务器**”，然后单击“**下一步**”。  
 
@@ -340,7 +340,7 @@ ms.locfileid: "75950076"
 
 11. 选择一个磁盘作为数据卷，然后单击“**下一步**”。  
 
-12. 查看你的设置，然后单击“**下一步**”。 单击**完成**。  
+12. 查看你的设置，然后单击“**下一步**”。 单击“完成” 。  
 
 13. 右键单击你的新文件服务器角色，然后单击“**添加文件共享**”。 继续执行向导以配置共享。  
 
@@ -366,7 +366,7 @@ ms.locfileid: "75950076"
 
 16. （可选）配置群集网络和 Active Directory 以用于更快的 DNS 站点故障转移。 可以利用拉伸的 VLAN、网络抽象设备、降低的 DNS TTL 和其他常用技术。  
 
-有关详细信息，请查看 Microsoft Ignite 会话 [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/events/ignite/2015/brk3487)（在 Windows Server vNext 中拉伸故障转移群集和使用存储副本），以及 [Enable Change Notifications between Sites - How and Why?](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)（在站点间启用更改通知 - 操作方法和原因）。    
+有关详细信息，请查看 Microsoft Ignite 会话 [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/events/ignite/2015/brk3487)（在 Windows Server vNext 中拉伸故障转移群集和使用存储副本），以及 [Enable Change Notifications between Sites - How and Why?](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why)（在站点间启用更改通知 - 操作方法和原因）。    
 
 #### <a name="powershell-method"></a>PowerShell 方法
 
@@ -399,7 +399,7 @@ ms.locfileid: "75950076"
     >[!NOTE]
     > Windows Server 现在包含使用 Azure 的云见证的选项。 你可以选择此仲裁选项来替代文件共享见证。  
 
-   有关仲裁配置的详细信息，请参阅[了解群集和池仲裁](../storage-spaces/understand-quorum.md)。 有关 Set-ClusterQuorum cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)。
+   有关仲裁配置的详细信息，请参阅[了解群集和池仲裁](../storage-spaces/understand-quorum.md)。 有关 Set-ClusterQuorum cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
 
 4.  如果要创建两个节点的拉伸群集，则必须在继续之前添加所有存储。 为此，请使用群集节点上的管理权限打开一个 PowerShell 会话，并运行以下命令：`Get-ClusterAvailableDisk -All | Add-ClusterDisk`。
 
@@ -435,7 +435,7 @@ ms.locfileid: "75950076"
 
 8.  （可选）配置群集网络和 Active Directory 以用于更快的 DNS 站点故障转移。 可以利用拉伸的 VLAN、网络抽象设备、降低的 DNS TTL 和其他常用技术。  
     
-    有关详细信息，请查看 Microsoft Ignite 会话 [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/events/ignite/2015/brk3487)（在 Windows Server vNext 中拉伸故障转移群集和使用存储副本），以及 [Enable Change Notifications between Sites - How and Why?](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)（在站点间启用更改通知 - 操作方法和原因）。
+    有关详细信息，请查看 Microsoft Ignite 会话 [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/events/ignite/2015/brk3487)（在 Windows Server vNext 中拉伸故障转移群集和使用存储副本），以及 [Enable Change Notifications between Sites - How and Why?](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why)（在站点间启用更改通知 - 操作方法和原因）。
 
 ### <a name="configure-a-stretch-cluster"></a>配置拉伸群集  
 现在将使用故障转移群集管理器或 Windows PowerShell 来配置拉伸群集。 你可以直接在群集节点上或从包含 Windows Server 远程服务器管理工具的远程管理计算机执行以下所有步骤。  
@@ -459,7 +459,7 @@ ms.locfileid: "75950076"
 
 6.  如果目标卷不包含来自源服务器的数据的以前副本，则将“**覆盖卷**”值保留为“**覆盖目标卷**”。 如果目标的确包含类似数据，则从近期备份或以前的复制中，选择“**种子目标磁盘**”，然后单击“**下一步**”。  
 
-7.  若计划使用零 RPO 复制，则将**复制模式**值保留为**同步复制**。 如果计划在主站点节点上的更高延迟网络拉伸群集或需要更低的 IO 延迟，则将其更改为“**异步复制**”。  
+7.  若计划使用零 RPO 复制，则将“**复制模式**”值保留为“**同步复制**”。 如果计划在主站点节点上的更高延迟网络拉伸群集或需要更低的 IO 延迟，则将其更改为“**异步复制**”。  
 8.  如果并未计划稍后在复制组中使用写入顺序和额外的磁盘对，则将“**一致性组**”值保留为“**最高性能**”。 如果计划向此复制组添加更多磁盘且需要保证的写入顺序，请选择“**启用写入顺序**”，然后单击“**下一步**”。  
 
 9.  单击“**下一步**”以配置复制和拉伸群集结构。  
@@ -478,7 +478,7 @@ ms.locfileid: "75950076"
 
         1.  在源服务器上，导航到**应用程序和服务 \ Microsoft \ Windows \ StorageReplica \ 管理员**并检查事件 5015、5002、5004、1237、5001 和 2200。  
 
-        2.  在目标服务器上，导航到**应用程序和服务 \ Microsoft \ Windows \ StorageReplica \ 操作**并等待事件 1215。 此事件会显示复制的字节数和所用的时间。 示例  
+        2.  在目标服务器上，导航到**应用程序和服务 \ Microsoft \ Windows \ StorageReplica \ 操作**并等待事件 1215。 此事件会显示复制的字节数和所用的时间。 示例：  
 
             ```  
             Log Name:      Microsoft-Windows-StorageReplica/Operational  
@@ -578,7 +578,7 @@ ms.locfileid: "75950076"
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20  
         ```  
 
-    2.  在目标服务器上，运行以下命令以查看显示合作关系创建的存储副本事件。 此事件会显示复制的字节数和所用的时间。 示例  
+    2.  在目标服务器上，运行以下命令以查看显示合作关系创建的存储副本事件。 此事件会显示复制的字节数和所用的时间。 示例：  
 
             Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | fl  
 
@@ -664,7 +664,7 @@ ms.locfileid: "75950076"
         > 在 Windows Server 2016 中，可能需要使用故障转移群集管理器或 Move-ClusterGroup，在节点重新联机后将目标磁盘手动移回另一个站点。  
 
         > [!NOTE]
-        > 存储副本用于卸除目标卷。 这是设计使然。  
+        > 存储副本用于卸除目标卷。 这是设计的结果。  
 
 4.  若要更改默认的 8 GB 日志大小，请右键单击源和目标日志磁盘，单击 "**复制日志**" 选项卡，然后更改两个磁盘上的大小以进行匹配。  
 
@@ -745,7 +745,7 @@ ms.locfileid: "75950076"
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent  
 
-    有关 Windows PowerShell 中的性能计数器的详细信息，请参阅 [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)。  
+    有关 Windows PowerShell 中的性能计数器的详细信息，请参阅 [Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter)。  
 
 3.  若要更改拉伸群集内的复制源和目标，请使用以下方法：  
 
@@ -768,7 +768,7 @@ ms.locfileid: "75950076"
     3.  执行从一个站点到其他站点的未计划故障转移复制方向：切断一个站点中的两个节点的电源。  
 
         > [!NOTE]  
-        > 存储副本用于卸除目标卷。 这是设计使然。  
+        > 存储副本用于卸除目标卷。 这是设计的结果。  
 
 4.  若要更改默认的 8 GB 日志大小，请在源和目标存储副本组上使用**get-srgroup** 。   例如，若要将所有日志设置为 2 GB：  
 
@@ -792,12 +792,12 @@ ms.locfileid: "75950076"
     > [!NOTE]
     > 如果使用远程管理计算机，则需要向这些 cmdlet 指定群集名称，并提供两个 RG 名称。  
 
-### <a name="related-topics"></a>“相关主题”  
+### <a name="related-topics"></a>相关主题  
 - [存储副本概述](storage-replica-overview.md)  
 - [服务器到服务器存储复制](server-to-server-storage-replication.md)  
 - [群集到群集存储复制](cluster-to-cluster-storage-replication.md)  
 - [存储副本：已知问题](storage-replica-known-issues.md) 
-- [存储副本：常见问题](storage-replica-frequently-asked-questions.md)  
+- [存储副本：常见问题解答](storage-replica-frequently-asked-questions.md)  
 
 ## <a name="see-also"></a>另请参阅  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  

@@ -9,16 +9,16 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 03/26/2020
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: 9873378d62ccc7b53dcc6fc629651df2aa1c6708
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b49c626bd5b8630d375c2984eac96a32b703cd2c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308116"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964099"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>具有存储副本的服务器到服务器存储复制
 
-> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 可以使用存储副本配置两个同步数据的服务器，以便每个服务器都具有相同卷的相同副本。 本主题提供了此服务器到服务器复制配置的一些背景知识，以及如何对其进行设置和管理环境。
 
@@ -33,11 +33,11 @@ ms.locfileid: "80308116"
 * Active Directory 域服务林（无需运行 Windows Server 2016）。  
 * 两台运行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition 的服务器。 如果你运行的是 Windows Server 2019，则可以改为使用标准版，如果你只是复制一个最大为 2 TB 的卷。  
 * 两个使用 SAS JBOD、光纤通道 SAN、iSCSI 目标或本地 SCSI/SATA 存储的存储集。 存储需包含 HDD 和 SSD 媒体的组合。 将每个存储设置为仅对每个服务器可用（没有共享的访问）。  
-* 每个存储集必须允许至少创建两个虚拟磁盘，一个用于复制的数据，另一个用于日志。 物理存储在所有数据磁盘上的扇区大小必须相同。 物理存储在所有日志磁盘上的扇区大小必须相同。  
+* 每组存储必须允许至少创建两个虚拟磁盘，一个用于复制的数据，而另一个用于日志。 物理存储在所有数据磁盘上的扇区大小必须相同。 物理存储在所有日志磁盘上的扇区大小必须相同。  
 * 每个服务器上必须具有至少一个用于同步复制的以太网/TCP 连接，但最好是 RDMA。   
 * 合适的防火墙和路由器规则，以允许所有节点之间的 ICMP、SMB（端口 445 以及用于 SMB 直通的 5445）和 WS-MAN（端口 5985）双向通信。  
 * 服务器间的网络具有足够的带宽，以包含 IO 写入工作负载和平均值为 5 毫秒的往返行程延迟（对于同步复制）。 异步复制没有延迟建议。<br>
-如果要在本地服务器和 Azure Vm 之间进行复制，则必须在本地服务器和 Azure Vm 之间创建网络链接。 为此，请使用[快速路由](#add-azure-vm-expressroute)、[站点到站点 VPN 网关连接](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)，或在 AZURE vm 中安装 VPN 软件，以将其与本地网络连接。
+如果要在本地服务器和 Azure Vm 之间进行复制，则必须在本地服务器和 Azure Vm 之间创建网络链接。 为此，请使用[快速路由](#add-azure-vm-expressroute)、[站点到站点 VPN 网关连接](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)，或在 AZURE vm 中安装 VPN 软件，以将其与本地网络连接。
 * 复制的存储不能位于包含 Windows 操作系统文件夹的驱动器上。
 
 > [!IMPORTANT]
@@ -50,10 +50,10 @@ ms.locfileid: "80308116"
 
 若要将存储副本和 Windows 管理中心一起使用，需要以下各项：
 
-| System                        | 操作系统                                            | 所需的     |
+| System                        | 操作系统                                            | 要求     |
 |-------------------------------|-------------------------------------------------------------|------------------|
-| 两个服务器 <br>（任何本地硬件、Vm 和云 Vm 混合，包括 Azure Vm）| Windows Server 2019、Windows Server 2016 或 Windows Server （半年频道） | 存储副本  |
-| 一台 PC                     | Windows 10                                                  | Windows Admin Center |
+| 两台服务器 <br>（任何本地硬件、Vm 和云 Vm 混合，包括 Azure Vm）| Windows Server 2019、Windows Server 2016 或 Windows Server （半年频道） | 存储副本  |
+| 一台 PC                     | Windows 10                                                  | Windows 管理中心 |
 
 > [!NOTE]
 > 目前不能在服务器上使用 Windows 管理中心来管理存储副本。
@@ -67,7 +67,7 @@ ms.locfileid: "80308116"
 
 ![显示使用构建 5 中的服务器复制构建 9 中的服务器的关系图](media/Server-to-Server-Storage-Replication/Storage_SR_ServertoServer.png)  
 
-**图1：服务器到服务器的复制**  
+**图 1：服务器到服务器复制**  
 
 ## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>步骤1：在计算机上安装和配置 Windows 管理中心
 
@@ -114,11 +114,11 @@ ms.locfileid: "80308116"
     -   **Windows 管理中心方法**
         1. 在 Windows 管理中心中，导航到 "服务器管理器"，然后选择其中一个服务器。
         2. 导航到 "**角色" & 功能**"。
-        3. 选择 "**功能**" > **存储副本**"，然后单击"**安装**"。
+        3. 选择 "**功能**  >  " "**存储副本**"，然后单击 "**安装**"。
         4. 在另一台服务器上重复此操作。
     -   **服务器管理器方法**  
 
-        1.  运行 **ServerManager.exe** 并创建服务器组，添加所有服务器节点。  
+        1.  运行**ServerManager.exe**并创建服务器组，添加所有服务器节点。  
 
         2.  在每个节点上安装**文件服务器**和**存储副本**角色和功能，并对其重启。  
 
@@ -148,29 +148,29 @@ ms.locfileid: "80308116"
     > -   默认情况下，日志卷必须至少为 9 GB，但可以根据日志需求设置为更大或更小。  
     > -   文件服务器角色仅对运行 Test-SRTopology 是必要的，因为它将打开必要的防火墙端口。
     
-    - **对于 JBOD 机箱：**  
+    - **对于 JBOD 存储设备：**  
 
         1.  确保每个服务器只能看到该站点的存储机箱，且 SAS 连接已正确配置。  
 
-        2.  使用 Windows PowerShell 或服务器管理器，按照**在独立服务器上部署存储空间**中提供的[步骤 1 至 3](../storage-spaces/deploy-standalone-storage-spaces.md) 使用存储空间来配置存储。  
+        2.  使用 Windows PowerShell 或服务器管理器，按照[在独立服务器上部署存储空间](../storage-spaces/deploy-standalone-storage-spaces.md)中提供的**步骤 1 至 3** 使用存储空间来配置存储。  
 
     - **对于 iSCSI 存储：**  
 
         1.  确保每个群集都只能看到该站点的存储机箱。 如果使用 iSCSI，则应使用多个网络适配器。    
 
-        2.  使用供应商文档预配存储。 如果使用基于 Windows 的 iSCSI 目标，请查阅 [iSCSI 目标块存储方法](../iscsi/iscsi-target-server.md)。  
+        2.  使用供应商文档配置存储。 如果使用基于 Windows 的 iSCSI 目标，请查阅 [iSCSI 目标块存储方法](../iscsi/iscsi-target-server.md)。  
 
     - **对于 FC SAN 存储：**  
 
         1.  确保每个群集只能看到该站点的存储机箱，且对主机进行了正确的分区。   
 
-        2.  使用供应商文档预配存储。  
+        2.  使用供应商文档配置存储。  
 
     - **对于本地固定磁盘存储：**  
 
         -   确保存储不包含系统卷、页面文件或转储文件。  
 
-        -   使用供应商文档预配存储。  
+        -   使用供应商文档配置存储。  
 
 9. 启动 Windows PowerShell，并使用 **Test-SRTopology** cmdlet 确定是否满足所有存储副本要求。 可以在仅要求模式下使用 cmdlet 以用于快速测试，也可以在长时间运行的性能评估模式下使用。  
 
@@ -183,11 +183,11 @@ ms.locfileid: "80308116"
     ```
 
     > [!IMPORTANT]
-      > 在评估期间，当在指定源卷上使用无写入 IO 负载的测试服务器时，请考虑添加工作负载，否则它将不会生成有用的报表。 你应该使用与生产类似的工作负载进行测试，以便看到真实的数值和建议的日志大小。 或者，只需在测试期间将一些文件复制到源卷或下载并运行 [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) 以生成写入 IO。 例如，D: 卷的十分钟的较低写入 IO 工作负荷：  
+      > 在评估期间，当在指定源卷上使用无写入 IO 负载的测试服务器时，请考虑添加工作负载，否则它将不会生成有用的报表。 你应该使用与生产类似的工作负载进行测试，以便看到真实的数值和建议的日志大小。 或者，只需在测试期间将一些文件复制到源卷或下载并运行[DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223)以生成写入 io。 例如，D: 卷的十分钟的较低写入 IO 工作负荷：  
       >
       > `Diskspd.exe -c1g -d600 -W5 -C5 -b8k -t2 -o2 -r -w5 -i100 -j100 d:\test` 
 
-10. 检查图2中所示的**TestSrTopologyReport**报表，以确保满足存储副本要求。  
+10. 检查图2中所示的**TestSrTopologyReport.html**报表，以确保满足存储副本要求。  
 
     ![显示拓扑报告的屏幕](media/Server-to-Server-Storage-Replication/SRTestSRTopologyReport.png)
 
@@ -197,7 +197,7 @@ ms.locfileid: "80308116"
 ### <a name="using-windows-admin-center"></a>使用 Windows 管理中心
 
 1. 添加源服务器。
-    1. 选择 "**添加**" 按钮。
+    1. 选择“添加”按钮。
     2. 选择 "**添加服务器连接**"。
     3. 键入服务器的名称，然后选择 "**提交**"。
 2. 在 "**所有连接**" 页上，选择源服务器。
@@ -213,7 +213,7 @@ ms.locfileid: "80308116"
     > [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
 
 5. 提供合作关系的详细信息，然后选择 "**创建**" （如图3所示）。 <br>
-   ![新的合作关系屏幕，其中显示了合作详细信息，如 8 GB 日志大小。](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
+   ![新的合作关系屏幕显示了合作关系详细信息，如 8 GB 日志大小。](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
 
     **图3：创建新的合作关系**
 
@@ -299,7 +299,7 @@ ms.locfileid: "80308116"
         ```  
 
         > [!NOTE]
-        > 存储复制卸除目标卷及其驱动器字母或装入点。 这是由设计决定的。  
+        > 存储复制卸除目标卷及其驱动器字母或装入点。 这是设计的结果。  
 
     3.  或者，副本的目标服务器组始终规定要复制的剩余字节数，且可通过 PowerShell 查询。 例如：  
 
@@ -384,7 +384,7 @@ ms.locfileid: "80308116"
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent  
 
-    有关 Windows PowerShell 中的性能计数器的详细信息，请参阅 [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)。  
+    有关 Windows PowerShell 中的性能计数器的详细信息，请参阅 [Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter)。  
 
 3.  要从一个站点移动复制方向，请使用 `Set-SRPartnership` cmdlet。  
 
@@ -442,19 +442,19 @@ ms.locfileid: "80308116"
 
 ## <a name="adding-an-azure-vm-connected-to-your-network-via-expressroute"></a><a name="add-azure-vm-expressroute"></a>添加通过 ExpressRoute 连接到网络的 Azure VM
 
-1. [在 Azure 门户中创建 ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)。<br>在批准 ExpressRoute 后，会向订阅添加一个资源组-导航到 "**资源组**" 以查看此新组。 记下虚拟网络名称。
-显示添加了 ExpressRoute 的资源组的 ![Azure 门户](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
+1. [在 Azure 门户中创建 ExpressRoute](/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)。<br>在批准 ExpressRoute 后，会向订阅添加一个资源组-导航到 "**资源组**" 以查看此新组。 记下虚拟网络名称。
+![显示随 ExpressRoute 一起添加的资源组的 Azure 门户](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
     
     **图4：与 ExpressRoute 关联的资源-记下虚拟网络名称**
-1. [创建新的资源组](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)。
-1. [添加网络安全组](https://docs.microsoft.com/azure/virtual-network/virtual-networks-create-nsg-arm-pportal)。 创建它时，选择与你创建的 ExpressRoute 关联的订阅 ID，并选择你刚创建的资源组。
+1. [创建新的资源组](/azure/azure-resource-manager/resource-group-portal)。
+1. [添加网络安全组](/azure/virtual-network/virtual-networks-create-nsg-arm-pportal)。 创建它时，选择与你创建的 ExpressRoute 关联的订阅 ID，并选择你刚创建的资源组。
 <br><br>将所需的任何入站和出站安全规则添加到网络安全组。 例如，你可能想要允许远程桌面访问 VM。
-1. 使用以下设置[创建 AZURE VM](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal) （如图5所示）：
+1. 使用以下设置[创建 AZURE VM](/azure/virtual-machines/windows/quick-create-portal) （如图5所示）：
     - **公共 IP 地址**：无
     - **虚拟网络**：从添加了 ExpressRoute 的资源组中选择您记下的虚拟网络。
-    - **网络安全组（防火墙）** ：选择之前创建的网络安全组。
-    ![创建显示 ExpressRoute 网络设置的虚拟机](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
-    **图5：选择 expressroute 网络设置时创建 VM**
+    - **网络安全组（防火墙）**：选择之前创建的网络安全组。
+    ![创建显示 ExpressRoute 网络设置的虚拟机 ](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
+     **图5：选择 ExpressRoute 网络设置时创建 VM**
 1. 创建 VM 后，请参阅[步骤2：预配操作系统、功能、角色、存储和网络](#provision-os)。
 
 
@@ -463,5 +463,5 @@ ms.locfileid: "80308116"
 - [使用共享存储拉伸群集复制](stretch-cluster-replication-using-shared-storage.md)  
 - [群集到群集存储复制](cluster-to-cluster-storage-replication.md)
 - [存储副本：已知问题](storage-replica-known-issues.md)  
-- [存储副本：常见问题](storage-replica-frequently-asked-questions.md)
+- [存储副本：常见问题解答](storage-replica-frequently-asked-questions.md)
 - [Windows Server 2016 中的存储空间直通](../storage-spaces/storage-spaces-direct-overview.md)  

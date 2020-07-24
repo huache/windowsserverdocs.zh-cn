@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 18a293f4ec7d96516bd89396c13562ba68dc471f
-ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
+ms.openlocfilehash: cfee6eedd1582c3df960cca1c32fce27c74f82cb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345431"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963229"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附录 C：Active Directory 中受保护的帐户和组
 
@@ -31,7 +31,7 @@ ms.locfileid: "85345431"
 
 #### <a name="protected-accounts-and-groups-in-active-directory-by-operating-system"></a>操作系统 Active Directory 中的受保护帐户和组
 
-| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012、 <br> Windows Server 2008 R2， <br> Windows Server 2008 | Windows Server 2016 |
+| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012、 <br> Windows Server 2008 R2 <br> Windows Server 2008 | Windows Server 2016 |
 | --- | --- | --- | --- |
 |Account Operators|Account Operators|Account Operators|Account Operators|
 |管理员|管理员|管理员|管理员|
@@ -70,7 +70,7 @@ SDProp 是在域控制器上每60分钟运行一次（默认情况下），该�
 
 测试 AdminSDHolder 更改的更好方法是手动运行 SDProp，这会导致任务立即运行，但不会影响计划的执行。 对于运行 Windows Server 2008 和更早版本的域控制器，在运行 Windows Server 2012 或 Windows Server 2008 R2 的域控制器上，手动运行 SDProp 的执行方式略有不同。  
 
-[Microsoft 支持部门文章 251343](https://support.microsoft.com/kb/251343)中提供了在较早版本的操作系统上手动运行 SDProp 的过程，以下是针对较旧和较新操作系统的分步说明。 在任一情况下，都必须连接到 Active Directory 中的 rootDSE 对象，并使用 rootDSE 对象的 null DN 执行修改操作，并将操作的名称指定为要修改的属性。 有关 rootDSE 对象上的可修改操作的详细信息，请参阅 MSDN 网站上的[RootDSE 修改操作](https://msdn.microsoft.com/library/cc223297.aspx)。  
+[Microsoft 支持部门文章 251343](https://support.microsoft.com/kb/251343)中提供了在较早版本的操作系统上手动运行 SDProp 的过程，以下是针对较旧和较新操作系统的分步说明。 在任一情况下，都必须连接到 Active Directory 中的 rootDSE 对象，并使用 rootDSE 对象的 null DN 执行修改操作，并将操作的名称指定为要修改的属性。 有关 rootDSE 对象上的可修改操作的详细信息，请参阅 MSDN 网站上的[RootDSE 修改操作](/openspecs/windows_protocols/ms-adts/fc74972f-b267-4c1a-8716-0f5b48cf52b9)。  
 
 ###### <a name="running-sdprop-manually-in-windows-server-2008-or-earlier"></a>在 Windows Server 2008 或更早版本中手动运行 SDProp
 

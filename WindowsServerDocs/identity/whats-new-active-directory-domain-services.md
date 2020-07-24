@@ -8,26 +8,26 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a82f45772e5e35afffc632de2b40c02c75b5e5e4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b4a896772c477c0d93e5b987a7cbff9a89e07882
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856280"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963459"
 ---
 # <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 的 Active Directory 域服务的新增功能
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
-Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务托管在云中，而其他应用程序和服务托管在本地。 改进包括：  
+Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务托管在云中，而其他应用程序和服务托管在本地。 这些改进包括：  
   
-- [特权访问管理](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
+- [特权访问管理](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
   
-- [通过 Azure Active Directory 联接将云功能扩展到 Windows 10 设备](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
+- [通过 Azure Active Directory 联接将云功能扩展到 Windows 10 设备](/azure/active-directory/devices/overview)
   
-- [将已加入域的设备连接到 Windows 10 体验 Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)
+- [将已加入域的设备连接到 Windows 10 体验 Azure AD](/azure/active-directory/devices/hybrid-azuread-join-plan)
   
-- [在组织中启用 Microsoft Passport for Work](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)
+- [在组织中启用 Microsoft Passport for Work](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
   
 - [文件复制服务（FRS）和 Windows Server 2003 功能级别弃用](ad-ds/active-directory-functional-levels.md)  
   
@@ -52,15 +52,15 @@ Active Directory 域服务（AD DS）中的以下新功能可提高组织保护 
 
 ### <a name="requirements-for-privileged-access-management"></a>特权访问管理的要求
   
-- Microsoft Identity Manager  
+- Microsoft 标识管理器  
   
 - Windows Server 2012 R2 或更高版本的 Active Directory 林功能级别。  
   
-## <a name="azure-ad-join"></a>加入 Azure AD
+## <a name="azure-ad-join"></a>Azure AD 加入
 
 Azure Active Directory 联接增强了企业、商业和 EDU 客户的标识体验-改进了企业和个人设备的功能。  
   
-优势：  
+优点：  
   
 - 公司拥有的 Windows 设备上**的新式设置的可用性**。 氧气服务不再需要个人 Microsoft 帐户：它们现在会关闭用户的现有工作帐户以确保合规性。 氧气 Services 将在加入本地 Windows 域的 Pc 上工作，以及 "加入" 到 Azure AD 租户（"云域"）的电脑和设备。 这些设置包括：  
 
@@ -77,7 +77,7 @@ Azure Active Directory 联接增强了企业、商业和 EDU 客户的标识体�
 - **开发人员体验**使你能够使用共享编程堆栈来构建满足企业和个人上下文需求的应用。  
 - **映像**选项可让你在首次运行体验期间，选择映像并允许用户直接配置公司拥有的设备。  
   
-有关详细信息，请参阅[Azure Active Directory 中的设备管理简介](https://docs.microsoft.com/azure/active-directory/devices/overview)。  
+有关详细信息，请参阅[Azure Active Directory 中的设备管理简介](/azure/active-directory/devices/overview)。  
   
 ## <a name="windows-hello-for-business"></a>Windows Hello 企业版
 
@@ -85,16 +85,16 @@ Windows Hello 企业版是一种基于密钥的身份验证方法，组织和消
   
 用户使用已链接到证书或非对称密钥对的信息，在设备上登录到带有生物识别或 PIN 的日志。 标识提供者（Idp）通过将用户的公钥映射到 IDLocker 来验证用户，并通过一次性密码（OTP）、电话或不同的通知机制提供登录信息。  
   
-有关详细信息，请参阅[Windows Hello 企业版](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)  
+有关详细信息，请参阅[Windows Hello 企业版](/windows/security/identity-protection/hello-for-business/hello-identity-verification)  
   
 ## <a name="deprecation-of-file-replication-service-frs-and-windows-server-2003-functional-levels"></a>文件复制服务（FRS）和 Windows Server 2003 功能级别弃用
 
 尽管在以前的 Windows Server 版本中不推荐使用文件复制服务（FRS）和 Windows Server 2003 功能级别，但这会导致不再支持 Windows Server 2003 操作系统。 因此，应从域中删除任何运行 Windows Server 2003 的域控制器。 应将域和林功能级别至少提升到 Windows Server 2008，以防止将运行早期版本 Windows Server 的域控制器添加到环境中。
 
-在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 对于迁移步骤，你可以执行[以下步骤](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019\(v=ws.10\))，也可以参考[存储团队文件 Cabinet 博客上的一组简化的步骤](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。  
+在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 对于迁移步骤，你可以执行[以下步骤](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640019\(v=ws.10\))，也可以参考[存储团队文件 Cabinet 博客上的一组简化的步骤](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。  
   
 仍支持 Windows Server 2003 域和林功能级别，但组织应将功能级别提升到 Windows Server 2008 （或更高版本，如有可能），以确保 SYSVOL 复制兼容性和将来支持。 此外，更高的功能级别还提供了许多其他的优势和功能。 有关详细信息，请参阅以下资源：  
 
-- [了解 Active Directory 域服务（AD DS）功能级别](ad-ds/active-directory-functional-levels.md)  
-- [提升域功能级别](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104\(v=ws.11\))  
-- [提升林功能级别](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985\(v=ws.11\))  
+- [理解 Active Directory(R) 域服务 (AD DS) 功能级别](ad-ds/active-directory-functional-levels.md)  
+- [提升域功能级别](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc753104\(v=ws.11\))  
+- [提升林功能级别](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730985\(v=ws.11\))  

@@ -7,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f9939662c22e9500235bae014b7fb9064afd911b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6d049175c7d89670f82bb45addc929d57b60b7b0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858110"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960739"
 ---
 # <a name="controlling-access-to-organizational-data-with-active-directory-federation-services"></a>使用 Active Directory 联合身份验证服务控制对组织数据的访问权限
 
@@ -26,11 +26,11 @@ ms.locfileid: "80858110"
 
 ## <a name="ad-fs-and-conditional-access-in-a-hybrid-organization"></a>混合组织中的 AD FS 和条件访问  
 
-AD FS 提供混合方案中条件性访问策略的本地组件。 应将基于 AD FS 的授权规则用于非 Azure AD 资源，如直接与 AD FS 联合的本地应用程序。  云组件由[Azure AD 条件访问](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)提供。  Azure AD Connect 提供连接两个的控制平面。
+AD FS 提供混合方案中条件性访问策略的本地组件。 应将基于 AD FS 的授权规则用于非 Azure AD 资源，如直接与 AD FS 联合的本地应用程序。  云组件由[Azure AD 条件访问](/azure/active-directory/active-directory-conditional-access)提供。  Azure AD Connect 提供连接两个的控制平面。
 
 例如，当你使用 Azure AD 向云资源的条件性访问注册设备时，Azure AD Connect 设备写回功能会使设备注册信息在本地提供，以供 AD FS 策略使用和强制执行。  这样一来，就可以通过一致的方式访问本地和云资源的控制策略。  
 
-![条件性访问](../deployment/media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![条件访问](../deployment/media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
 
 ### <a name="the-evolution-of-client-access-policies-for-office-365"></a>Office 365 的客户端访问策略发展
@@ -48,12 +48,12 @@ AD FS 提供混合方案中条件性访问策略的本地组件。 应将基于 
 
 为了解决这些限制并提供更可靠的方法来使用策略来管理对 Office 365 或其他基于 Azure AD 的资源中的业务数据的访问，Microsoft 引入了 Azure AD 的条件性访问。  可以为特定资源或 Azure AD 中的 Office 365、SaaS 或自定义应用程序中的任何或所有资源配置 Azure AD 条件访问策略。  这些策略会按设备信任、位置和其他因素进行透视。
 
-要了解 Azure AD 条件性访问的详细信息，请参阅[Azure Active Directory 中的条件访问](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)
+要了解 Azure AD 条件性访问的详细信息，请参阅[Azure Active Directory 中的条件访问](/azure/active-directory/active-directory-conditional-access)
 
 启用这些方案的关键更改是[新式身份验证](https://blogs.office.com/2015/11/19/updated-office-365-modern-authentication-public-preview/)，这是一种对用户和设备进行身份验证的新方法，这些方法在 Office 客户端、Skype、Outlook 和浏览器中采用相同的方式。
 
 ## <a name="next-steps"></a>后续步骤
 有关跨云和本地控制访问权限的详细信息，请参阅：
 
-- [Azure Active Directory 中的条件性访问](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)
+- [Azure Active Directory 中的条件访问](/azure/active-directory/active-directory-conditional-access)
 - [AD FS 2016 中的访问控制策略](Access-Control-Policies-in-AD-FS.md)

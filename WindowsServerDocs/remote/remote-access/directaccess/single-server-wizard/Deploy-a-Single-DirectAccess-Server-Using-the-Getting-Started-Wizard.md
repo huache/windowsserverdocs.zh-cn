@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: eb0cf464-0668-40f8-8222-feb6bae6d3d5
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 13b3fdea120a857cc0c8e890bba87c13823c3a38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 141c8ad17bd1c58d2bbe729aeacc88f498c8c619
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819560"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962869"
 ---
 # <a name="deploy-a-single-directaccess-server-using-the-getting-started-wizard"></a>使用入门向导部署单台 DirectAccess 服务器
 
@@ -29,7 +29,7 @@ ms.locfileid: "80819560"
 -   [部署 DirectAccess 的先决条件](../../../remote-access/directaccess/Prerequisites-for-Deploying-DirectAccess.md)  
   
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>方案描述  
-在此方案中，在几个简单的向导步骤中，运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的单台计算机配置为 DirectAccess 服务器，而无需配置基础结构设置，例如作为证书颁发机构（CA）或 Active Directory 安全组。  
+在此方案中，在几个简单的向导步骤中，运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的单台计算机配置为 DirectAccess 服务器，而无需配置基础结构设置，如证书颁发机构（CA）或 Active Directory 安全组。  
   
 > [!NOTE]  
 > 如果想要使用自定义设置配置高级部署，请参阅 [Deploy a Single DirectAccess Server with Advanced Settings](../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)  
@@ -62,7 +62,7 @@ ms.locfileid: "80819560"
   
 -   若要在以后或将来部署多站点，请先[部署具有高级设置的单个 DirectAccess 服务器](../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。  
   
-### <a name="planning-steps"></a>计划步骤  
+### <a name="planning-steps"></a>规划步骤  
 规划分成以下两个阶段：  
   
 1.  规划 DirectAccess 基础结构。 本阶段描述在开始 DirectAccess 部署之前设置网络基础结构所需的规划。 它包括规划网络和服务器拓扑以及 DirectAccess 网络位置服务器。  
@@ -74,7 +74,7 @@ ms.locfileid: "80819560"
 ### <a name="deployment-steps"></a>部署步骤  
 部署分成以下三个阶段：  
   
-1.  配置 DirectAccess 基础结构-此阶段包括配置网络和路由、配置防火墙设置（如果需要）、配置证书、DNS 服务器、Active Directory 和 GPO 设置以及 DirectAccess 网络位置服务.  
+1.  配置 DirectAccess 基础结构-此阶段包括配置网络和路由、配置防火墙设置（如果需要）、配置证书、DNS 服务器、Active Directory 和 GPO 设置以及 DirectAccess 网络位置服务器。  
   
 2.  配置 DirectAccess 服务器设置。 本阶段包括用于配置 DirectAccess 客户端计算机、DirectAccess 服务器、基础结构服务器、管理和应用程序服务器的步骤。  
   
@@ -82,14 +82,14 @@ ms.locfileid: "80819560"
   
 有关详细的部署步骤，请参阅 [Install and Configure Basic DirectAccess](../../../remote-access/directaccess/single-server-wizard/Install-and-Configure-Basic-DirectAccess.md)。  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实际的应用程序  
 部署单一远程访问服务器可提供以下优势：  
   
 -   易于访问。 你可以将运行 Windows 10、Windows 8.1、Windows 8 或 Windows 7 的托管客户端计算机配置为 DirectAccess 客户端。 这些客户端只要位于 Internet 上，就可以随时通过 DirectAccess 访问内部网络资源，无须登录 VPN 连接。 未运行这些操作系统之一的客户端计算机可以通过使用传统 VPN 连接来连接到内部网络。  
   
 -   易于管理。 远程访问管理员可以通过 DirectAccess 远程管理 Internet 上的 DirectAccess 客户端计算机，即使客户端计算机不在企业内部网络中也是如此。 管理服务器可以自动修正不符合公司要求的客户端计算机。 DirectAccess 和 VPN 由同一控制台管理并具有相同的向导集。 此外，可从单个远程访问管理控制台管理一台或多台远程访问服务器  
   
-## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>本方案所包括的角色和功能  
 下表列出了本方案所需的角色和功能：  
   
 |角色/功能|如何支持本方案|  
@@ -116,7 +116,7 @@ ms.locfileid: "80819560"
         > 如果某些或所有客户端计算机运行的是 Windows 7，则必须使用高级安装向导。 本文档中所述的入门安装向导不支持运行 Windows 7 的客户端计算机。 请参阅使用[高级设置部署单个 DirectAccess 服务器](../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)，以获取有关如何将 Windows 7 客户端与 DirectAccess 一起使用的说明。  
   
         > [!NOTE]  
-        > 仅可将以下操作系统用作 DirectAccess 客户端： Windows 10 企业版、Windows 8.1 企业版、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 8 企业版、Windows Server 2008 R2、Windows 7 企业版和Windows 7 旗舰版。  
+        > 仅可将以下操作系统用作 DirectAccess 客户端： Windows 10 企业版、Windows 8.1 企业版、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 8 企业版、Windows Server 2008 R2、Windows 7 企业版和 Windows 7 旗舰版。  
   
 -   基础机构和管理服务器要求：  
   
@@ -146,10 +146,8 @@ ms.locfileid: "80819560"
   
 |内容类型|参考|  
 |--------|-------|  
-|**TechNet 上的远程访问**|[远程访问技术中心](https://technet.microsoft.com/network/bb545655.aspx)|  
-|**工具和设置**|[远程访问 PowerShell cmdlet](https://technet.microsoft.com/library/hh918399.aspx)|  
+|**在 TechNet 上的远程访问**|[Remote Access TechCenter](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn756544(v=ws.11))|  
+|**工具和设置**|[远程访问 PowerShell cmdlet](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn756544(v=ws.11))|  
 |**社区资源**|[DirectAccess Wiki 条目](https://go.microsoft.com/fwlink/?LinkId=236871)|  
-|**相关技术**|[IPv6 的工作原理](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
+|**相关技术**|[IPv6 的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|  
   
-
-

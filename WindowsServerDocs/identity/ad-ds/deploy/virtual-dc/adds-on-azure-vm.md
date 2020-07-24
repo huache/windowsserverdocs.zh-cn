@@ -8,12 +8,12 @@ ms.date: 04/11/2019
 ms.technology: identity-adds
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 536c35077d402370eab7758b8b31cf1916f8ae6f
-ms.sourcegitcommit: 96db7769c3be9d7534bfed942697122ce907a28a
+ms.openlocfilehash: a429ae3fed8694b5d9f05722b9f9d580b6b27ae6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448469"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962979"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>使用 Azure CLI 安装新的 Active Directory 林
 
@@ -22,21 +22,21 @@ AD DS 可以在 Azure 虚拟机（VM）上运行，其方式与在许多本地�
 ## <a name="components"></a>组件
 
 * 要将所有内容放在其中的资源组。
-* 允许 RDP 访问 Vm 的[Azure 虚拟网络](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview.md)、子网、网络安全组和规则。
-* 用于将两个 Active Directory 域服务（AD DS）域控制器置于中的 Azure 虚拟机[可用性集](https://docs.microsoft.com/azure/virtual-machines/windows/regions-and-availability#availability-sets)。
+* 允许 RDP 访问 Vm 的[Azure 虚拟网络](/azure/virtual-network/virtual-networks-overview.md)、子网、网络安全组和规则。
+* 用于将两个 Active Directory 域服务（AD DS）域控制器置于中的 Azure 虚拟机[可用性集](/azure/virtual-machines/windows/regions-and-availability#availability-sets)。
 * 要运行 AD DS 和 DNS 的两个 Azure 虚拟机。
 
 ### <a name="items-that-are-not-covered"></a>未覆盖的项
 
-* 从本地位置[创建站点到站点 VPN 连接](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)
-* [保护 Azure 中的网络流量](https://docs.microsoft.com/azure/security/azure-security-network-security-best-practices.md)
-* [设计站点拓扑](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/designing-the-site-topology)
-* [规划操作主机角色放置](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/planning-operations-master-role-placement)
-* [部署 Azure AD Connect 以将标识同步到 Azure AD](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-express)
+* 从本地位置[创建站点到站点 VPN 连接](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+* [保护 Azure 中的网络流量](/azure/security/azure-security-network-security-best-practices.md)
+* [设计站点拓扑](../../plan/designing-the-site-topology.md)
+* [规划操作主机角色放置](../../plan/planning-operations-master-role-placement.md)
+* [部署 Azure AD Connect 以将标识同步到 Azure AD](/azure/active-directory/hybrid/how-to-connect-install-express)
 
 ## <a name="build-the-test-environment"></a>生成测试环境
 
-我们使用[Azure 门户](https://portal.azure.com)和[Azure CLI](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest)来创建环境。
+我们使用[Azure 门户](https://portal.azure.com)和[Azure CLI](/cli/azure/overview?view=azure-cli-latest)来创建环境。
 
 Azure CLI 用于从命令行或脚本创建和管理 Azure 资源。 本教程详细介绍了如何使用 Azure CLI 部署运行 Windows Server 2019 的虚拟机。 部署完成后，我们将连接到服务器并安装 AD DS。
 
@@ -46,9 +46,9 @@ Azure CLI 用于从命令行或脚本创建和管理 Azure 资源。 本教程�
 
 下面的脚本自动构建两个 Windows Server 2019 Vm 的过程，用于为 Azure 中的新 Active Directory 林生成域控制器。 管理员可以修改以下变量以满足其需求，然后作为一个操作完成。 此脚本将创建所需的资源组、包含远程桌面、虚拟网络和子网和可用性组的流量规则的网络安全组。 然后，每个 Vm 都是使用 20 GB 的数据磁盘生成的，并禁用缓存，以便将 AD DS 安装到。
 
-下面的脚本可以直接从 Azure 门户运行。 如果选择在本地安装并使用 CLI，此快速入门教程要求运行 Azure CLI 2.0.4 版或更高版本。 运行 `az --version` 即可查找版本。 如果需要进行安装或升级，请参阅[安装 Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)。
+下面的脚本可以直接从 Azure 门户运行。 如果选择在本地安装并使用 CLI，此快速入门教程要求运行 Azure CLI 2.0.4 版或更高版本。 运行 `az --version` 即可查找版本。 如果需要进行安装或升级，请参阅[安装 Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)。
 
-| 变量名 | 目的 |
+| 变量名称 | 目的 |
 | :---: | :--- |
 | AdminUsername | 要作为本地管理员在每个 VM 上配置的用户名。 |
 | AdminPassword | 要在每个 VM 上配置为本地管理员密码的明文密码。 |
@@ -155,12 +155,11 @@ az vm create \
 
 ## <a name="dns-and-active-directory"></a>DNS 和 Active Directory
 
-如果在此过程中创建的 Azure 虚拟机将是现有本地 Active Directory 基础结构的扩展，则必须更改虚拟网络上的 DNS 设置，以在部署之前包含本地 DNS 服务器。 若要允许在 Azure 中新建的域控制器解析本地资源并允许进行复制，则必须执行此步骤。 有关 DNS、Azure 和如何配置设置的详细信息，请参阅[使用自己的 dns 服务器的名称解析](https://docs.microsoft.com/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)部分。
+如果在此过程中创建的 Azure 虚拟机将是现有本地 Active Directory 基础结构的扩展，则必须更改虚拟网络上的 DNS 设置，以在部署之前包含本地 DNS 服务器。 若要允许在 Azure 中新建的域控制器解析本地资源并允许进行复制，则必须执行此步骤。 有关 DNS、Azure 和如何配置设置的详细信息，请参阅[使用自己的 dns 服务器的名称解析](/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)部分。
 
-升级 Azure 中的新域控制器后，需要将其设置为虚拟网络的主 DNS 服务器和辅助 DNS 服务器，并且任何本地 DNS 服务器都将降级为三级和更高版本。 有关更改 DNS 服务器的详细信息[，请参阅创建、更改或删除虚拟网络一](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers)文。
+升级 Azure 中的新域控制器后，需要将其设置为虚拟网络的主 DNS 服务器和辅助 DNS 服务器，并且任何本地 DNS 服务器都将降级为三级和更高版本。 有关更改 DNS 服务器的详细信息[，请参阅创建、更改或删除虚拟网络一](/azure/virtual-network/manage-virtual-network#change-dns-servers)文。
 
-有关将本地网络扩展到 Azure 的信息，可参阅[创建站点到站点 VPN 连接](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
-)一文。
+有关将本地网络扩展到 Azure 的信息，可参阅[创建站点到站点 VPN 连接](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)一文。
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>配置 Vm 并安装 Active Directory 域服务
 
@@ -194,7 +193,7 @@ VM 重新启动完成后，使用以前使用的凭据重新登录，但这一�
    > [!NOTE]
    > 升级到域控制器后首次登录的时间可能比平时长，这是正常的。 抓住一杯茶、咖啡、水或其他所选饮料。
 
-[Azure 虚拟网络现在支持 ipv6](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) ，但如果你想要将 vm 设置为首选 IPv4 over ipv6，则有关如何完成此任务的信息，请参阅在[Windows 中为高级用户配置 IPv6](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)的知识库文章。
+[Azure 虚拟网络现在支持 ipv6](/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) ，但如果你想要将 vm 设置为首选 IPv4 over ipv6，则有关如何完成此任务的信息，请参阅在[Windows 中为高级用户配置 IPv6](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)的知识库文章。
 
 ### <a name="configure-the-second-domain-controller"></a>配置第二个域控制器
 
@@ -223,11 +222,11 @@ VM 重新启动完成后，使用以前使用的凭据重新登录，但这一�
 
 VM 重新启动完成后，使用以前使用的凭据重新登录，但这一次是 CONTOSO.com 域的成员
 
-[Azure 虚拟网络现在支持 ipv6](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) ，但如果你想要将 vm 设置为首选 IPv4 over ipv6，则有关如何完成此任务的信息，请参阅在[Windows 中为高级用户配置 IPv6](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)的知识库文章。
+[Azure 虚拟网络现在支持 ipv6](/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) ，但如果你想要将 vm 设置为首选 IPv4 over ipv6，则有关如何完成此任务的信息，请参阅在[Windows 中为高级用户配置 IPv6](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)的知识库文章。
 
 ### <a name="configure-dns"></a>配置 DNS
 
-升级 Azure 中的新域控制器后，需要将其设置为虚拟网络的主 DNS 服务器和辅助 DNS 服务器，并且任何本地 DNS 服务器都将降级为三级和更高版本。 有关更改 DNS 服务器的详细信息[，请参阅创建、更改或删除虚拟网络一](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers)文。
+升级 Azure 中的新域控制器后，需要将其设置为虚拟网络的主 DNS 服务器和辅助 DNS 服务器，并且任何本地 DNS 服务器都将降级为三级和更高版本。 有关更改 DNS 服务器的详细信息[，请参阅创建、更改或删除虚拟网络一](/azure/virtual-network/manage-virtual-network#change-dns-servers)文。
 
 ### <a name="wrap-up"></a>总结
 
@@ -252,9 +251,9 @@ az group delete --name ADonAzureVMs
 ## <a name="next-steps"></a>后续步骤
 
 * [安全地虚拟化 Active Directory 域服务 (AD DS)](../../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)
-* [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-express)
-* [备份和恢复](https://docs.microsoft.com/azure/virtual-machines/windows/backup-recovery)
-* [站点到站点 VPN 连接](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
-* [Monitoring](https://docs.microsoft.com/azure/virtual-machines/windows/monitor)
-* [安全和策略](https://docs.microsoft.com/azure/virtual-machines/windows/security-policy)
-* [维护和更新](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates)
+* [具有 Azure AD Connect](/azure/active-directory/connect/active-directory-aadconnect-get-started-express)
+* [备份和恢复](/azure/virtual-machines/windows/backup-recovery)
+* [站点到站点 VPN 连接](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [Monitoring](/azure/virtual-machines/windows/monitor)
+* [安全和策略](/azure/virtual-machines/windows/security-policy)
+* [维护和更新](/azure/virtual-machines/windows/maintenance-and-updates)

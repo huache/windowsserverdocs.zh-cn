@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: a7e98129c2fb4f2259364c547b426d46f0a24ef3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d9d24f1ce66ca691bfa31479a00b9ecf719abe1e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859460"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961299"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB：文件和打印机共享端口应打开
 
@@ -31,14 +31,14 @@ ms.locfileid: "80859460"
 <tbody>
 <tr class="odd">
 <td><p><strong>操作系统</strong></p></td>
-<td><p>Windows 服务器</p></td>
+<td><p>Windows Server</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>产品/功能</strong></p></td>
 <td><p>文件服务</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>对应</strong></p></td>
+<td><p><strong>严重性</strong></p></td>
 <td><p>错误</p></td>
 </tr>
 <tr class="even">
@@ -56,7 +56,7 @@ ms.locfileid: "80859460"
 
 > *计算机将无法访问此服务器上的共享文件夹和其他基于服务器消息块（SMB）的网络服务。*
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 
 > *启用文件和打印机共享以便通过计算机的防火墙进行通信。*
 
@@ -68,11 +68,10 @@ ms.locfileid: "80859460"
 
 2.  在左窗格中，单击 "**高级设置**"，然后在控制台树中单击 "**入站规则**"。
 
-3.  在 "**入站规则**" 下，找到规则**文件和打印机共享（"NB-会话中"）** 以及 "**文件和打印机共享" （SMB）** 。
+3.  在 "**入站规则**" 下，找到规则**文件和打印机共享（"NB-会话中"）** 以及 "**文件和打印机共享" （SMB）**。
 
-4.  对于每个规则，右键单击规则，然后单击 "**启用规则**"。
+4.  请依次右键单击每个规则，然后单击“启用规则”。
 
 ## <a name="additional-references"></a>其他参考
 
-[了解共享文件夹和 Windows 防火墙](https://technet.microsoft.com/library/cc731402.aspx)（ https://technet.microsoft.com/library/cc731402.aspx)
-
+[了解共享文件夹和 Windows 防火墙](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11))（https://technet.microsoft.com/library/cc731402.aspx)

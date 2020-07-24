@@ -8,22 +8,22 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 800c7fc23c9b126a17e54311fc6df0d3dcf36b4c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 83d13386368ff1d6447231d465e01bcceae61d47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855360"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963759"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>与 AD FS 1.x 进行互操作
 
-有关 Windows Server&reg; 2012 和 AD FS 1 中 Active Directory 联合身份验证服务 \(AD FS\) 之间的互操作性。*x*完成以下一项或多项任务，具体取决于你的组织的需求：  
+对于 \( \) Windows Server 2012 中的 Active Directory 联合身份验证服务 AD FS &reg; 与 AD FS 1*之间的互操作性。x*完成以下一项或多项任务，具体取决于你的组织的需求：  
   
--   规划 Windows Server 2012 和早期版本的 AD FS 中 AD FS 之间的互操作性，并详细了解名称 ID 声明类型。 有关详细信息，请参阅[规划与 AD FS 1.x 的互操作性](https://technet.microsoft.com/library/ff678040.aspx)。  
+-   Windows Server 2012 中的 AD FS 和以前版本的 AD FS 之间的互操作性规划和了解更多有关名称 ID 声明类型。 有关详细信息，请参阅[规划与 AD FS 1.x 的互操作性](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ff678040(v=ws.11))。  
   
 -   如果要从可由 AD FS 1 使用的 Windows Server 2012 中的 AD FS 联合身份验证服务发送声明。*x*联合身份验证服务，请参阅[清单：配置 AD FS 将声明发送到 AD FS 1.x 联合身份验证服务](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Federation-Service.md)。  
   
--   如果要从 Windows Server 2012 中的 AD FS 联合身份验证服务发送声明，则该应用程序可由运行 AD FS 1 的 Web 服务器所承载的应用程序使用。*x*声明\-感知 web 代理，请参阅[清单：配置 AD FS 将声明发送到 AD FS 1.X 声明感知 Web 代理](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md)。  
+-   如果要从 Windows Server 2012 中的 AD FS 联合身份验证服务发送声明，则该应用程序可由运行 AD FS 1 的 Web 服务器所承载的应用程序使用。*x*声明 \- 感知 web 代理，请参阅[清单：配置 AD FS 将声明发送到 AD FS 1.X 声明感知 Web 代理](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md)。  
   
 -   如果将从 AD FS 1 发送声明。*x*联合身份验证服务要由 Windows Server 2012 中的 AD FS 联合身份验证服务使用，请参阅[清单：将 AD FS 配置为使用 AD FS 1.X 中的声明](Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md)。  
   
@@ -33,14 +33,13 @@ ms.locfileid: "80855360"
 |AD FS 1.x 联合身份验证服务设置|Windows Server 2012 设置中的等效 AD FS 联合身份验证服务  
 |----------------------------------------|---------------------------------------------------------------------------------------------------------- 
 |帐户伙伴|声明提供方信任  
-|资源伙伴|依赖方信任 (Relying party trust) 
-|应用程序|依赖方信任 (Relying party trust)  
-|应用程序属性|信赖方信任属性  
-|应用程序 URL|信赖方标识符和\-WS-FEDERATION 被动终结点 URL  
+|资源伙伴|信赖方信任 
+|应用|信赖方信任  
+|Application Properties|信赖方信任属性  
+|应用程序 URL|信赖方标识符和 WS \- 联合身份验证被动终结点 URL  
 |联合身份验证服务 URI|联合身份验证服务标识符  
-|联合身份验证服务终结点 URL|WS\-联合身份验证被动终结点 URL  
+|联合身份验证服务终结点 URL|WS \- 联合身份验证被动终结点 URL  
   
 ## <a name="see-also"></a>另请参阅  
 [AD FS 和 AD FS 1.x 互操作性](https://go.microsoft.com/fwlink/?LinkId=200776)  
   
-

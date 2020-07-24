@@ -1,5 +1,5 @@
 ---
-title: 使用高级设置部署单个 DirectAccess 服务器
+title: Deploy a Single DirectAccess Server with Advanced Settings
 description: 本主题是 "使用 Windows Server 2016 的高级设置部署单个 DirectAccess 服务器" 指南的一部分
 manager: brianlic
 ms.prod: windows-server
@@ -8,14 +8,14 @@ ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7f6a6724a2ab7bb6da48a11d31fb04461912e388
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 199d4ce3ebb3c9cbc6ec1b8574133104b8129312
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859520"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964619"
 ---
-# <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>使用高级设置部署单个 DirectAccess 服务器
+# <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Deploy a Single DirectAccess Server with Advanced Settings
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
@@ -51,7 +51,7 @@ ms.locfileid: "80859520"
 >   
 > -   不支持企业网络中的站点内自动隧道寻址协议 (ISATAP)。 如果你正在使用 ISATAP，应将其删除并使用本机 IPv6。  
   
-### <a name="planning-steps"></a>计划步骤  
+### <a name="planning-steps"></a>规划步骤  
 规划分成以下两个阶段：  
   
 1.  **规划 DirectAccess 基础结构**。 本阶段描述在开始 DirectAccess 部署之前设置网络基础结构所需的规划。 它包括规划网络和服务器拓扑、计划证书、DNS、Active Directory 和组策略对象 (GPO) 配置以及 DirectAccess 网络位置服务器。  
@@ -69,14 +69,14 @@ ms.locfileid: "80859520"
   
 有关详细的部署步骤，请参阅[安装和配置高级 DirectAccess](../../../remote-access/directaccess/single-server-advanced/Install-and-Configure-Advanced-DirectAccess.md)。  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实际的应用程序  
 部署单个 DirectAccess 服务器可提供以下功能：  
   
 -   **轻松访问**。 运行 Windows 10、Windows 8.1、Windows 8 和 Windows 7 的托管客户端计算机可以配置为 DirectAccess 客户端计算机。 这些客户端只要位于 Internet 上，就可以随时通过 DirectAccess 访问内部网络资源，无须登录 VPN 连接。 未运行这些操作系统之一的客户端计算机可以通过 VPN 连接到内部网络。  
   
 -   **易于管理**。 远程访问管理员可以通过 DirectAccess 远程管理 Internet 上的 DirectAccess 客户端计算机，即使客户端计算机不在企业内部网络中也是如此。 管理服务器可以自动修正不符合公司要求的客户端计算机。 DirectAccess 和 VPN 由同一控制台管理并具有相同的向导集。 此外，可从单个远程访问管理控制台管理一台或多台 DirectAccess 服务器  
   
-## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>此方案所需的角色和功能  
+## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>本方案所需的角色和功能  
 下表列出了本方案所需的角色和功能：  
   
 |角色/功能|如何支持本方案|  
@@ -145,9 +145,7 @@ ms.locfileid: "80859520"
 |内容类型|参考|  
 |--------|-------|  
 |**部署**|[Windows Server 中的 DirectAccess 部署路径](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[使用入门向导部署单个 DirectAccess 服务器](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
-|**工具和设置**|[远程访问 PowerShell cmdlet](https://technet.microsoft.com/library/hh918399.aspx)|  
+|**工具和设置**|[远程访问 PowerShell cmdlet](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))|  
 |**社区资源**|[DirectAccess 生存指南](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[DirectAccess Wiki 条目](https://go.microsoft.com/fwlink/?LinkId=236871)|  
-|**相关技术**|[IPv6 的工作原理](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
+|**相关技术**|[IPv6 的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|  
   
-
-

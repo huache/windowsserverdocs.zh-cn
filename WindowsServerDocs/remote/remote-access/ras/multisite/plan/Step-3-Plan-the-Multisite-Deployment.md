@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 97705e3d6f5a4300c32ec98cc59e849862381607
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1d59e97453e4ecc4cd63a85368c6ea9566677029
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858320"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963719"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>步骤3规划多站点部署
 
@@ -75,9 +75,9 @@ ms.locfileid: "80858320"
 3.  对于 "CRL 分发点" 字段，请使用连接到 intranet 的 DirectAccess 客户端可访问的 CRL 分发点。  
   
 ### <a name="322dns-for-the-network-location-server"></a>网络位置服务器的 3.2.2 DNS  
-如果将网络位置服务器托管在远程访问服务器上，则必须为部署中的每个入口点添加网络位置服务器网站的 DNS 条目。 注意以下各项：  
+如果将网络位置服务器托管在远程访问服务器上，则必须为部署中的每个入口点添加网络位置服务器网站的 DNS 条目。 注意以下事项：  
   
--   多站点部署中第一个网络位置服务器证书的使用者名称将用作所有入口点的网络位置服务器 URL，因此使用者名称和网络位置服务器 URL 不能与部署中的第一台远程访问服务器。 它必须是专用于网络位置服务器的 FQDN。  
+-   多站点部署中第一个网络位置服务器证书的使用者名称将用作所有入口点的网络位置服务器 URL，因此使用者名称和网络位置服务器 URL 不能与部署中第一个远程访问服务器的计算机名称相同。 它必须是专用于网络位置服务器的 FQDN。  
   
 -   网络位置服务器流量提供的服务在使用 DNS 的入口点之间均衡，因此，每个入口点都应有一个具有相同 URL 的 DNS 条目，并使用入口点的内部 IP 地址进行配置。  
   
@@ -88,7 +88,7 @@ ms.locfileid: "80858320"
 ## <a name="33-plan-the-ipsec-root-certificate-for-all-remote-access-servers"></a><a name="bkmk_3_3_IPsec"></a>3.3 为所有远程访问服务器规划 IPsec 根证书  
 在多站点部署中规划 IPsec 客户端身份验证时，请注意以下事项：  
   
-1.  如果在设置单个远程访问服务器时选择使用内置 Kerberos 代理进行计算机身份验证，则必须将此设置更改为使用内部 CA 颁发的计算机证书，因为多站点不支持 Kerberos 代理部署.  
+1.  如果在设置单个远程访问服务器时选择使用内置 Kerberos 代理进行计算机身份验证，则必须将该设置更改为使用内部 CA 颁发的计算机证书，因为多站点部署不支持 Kerberos 代理。  
   
 2.  如果你使用的是自签名证书，则必须重新配置单一服务器部署，才能使用内部 CA 颁发的证书。  
   
@@ -103,12 +103,12 @@ ms.locfileid: "80858320"
   
 2.  Windows 10 或 Windows 8 客户端计算机尝试将公共 DNS 中的全局服务器负载均衡器的 FQDN 解析为 IP 地址。 如果已解析的 IP 地址列为入口点的全局服务器负载均衡器 IP 地址，则客户端计算机会自动选择该入口点并连接到其 IP-HTTPS URL （ConnectTo 地址）或其 Teredo 服务器 IP 地址。 请注意，全局服务器负载均衡器的 IP 地址不需要与入口点的 ConnectTo 地址或 Teredo 服务器地址相同，因为客户端计算机从不尝试连接到全局服务器负载均衡器 IP 地址。  
   
-3.  如果客户端计算机位于 web 代理后面（并且无法使用 DNS 解析），或者如果全局服务器负载平衡器 FQDN 未解析为任何已配置的全局服务器负载均衡器 IP 地址，则将使用 HTTPS 探测自动选择一个入口点所有入口点的 ip-https Url。 客户端将连接到首先响应的服务器。  
+3.  如果客户端计算机位于 web 代理后面（并且无法使用 DNS 解析），或全局服务器负载平衡器 FQDN 未解析为任何已配置的全局服务器负载均衡器 IP 地址，则将使用 HTTPS 探测自动选择一个入口点到所有入口点的 ip-https Url。 客户端将连接到首先响应的服务器。  
   
 有关支持远程访问的全局服务器负载平衡设备的列表，请访问[Microsoft 服务器和云平台](https://www.microsoft.com/server-cloud/)上的查找合作伙伴页。  
   
 ## <a name="35-plan-directaccess-client-entry-point-selection"></a><a name="bkmk_3_5_EP_Selection"></a>3.5 计划 DirectAccess 客户端入口点选择  
-配置多站点部署时，默认情况下，为 Windows 10 和 Windows 8 客户端计算机配置连接到部署中的所有入口点所需的信息，并根据选择自动连接到单个入口点算法. 你还可以配置你的部署以允许 Windows 10 和 Windows 8 客户端计算机手动选择它们将连接到的入口点。 如果 Windows 10 或 Windows 8 客户端计算机当前已连接到美国入口点并启用了自动入口点选择美国，则在几分钟后，客户端计算机将尝试连接通过欧洲入口点。 建议使用自动入口点选择;但是，允许手动输入点选择允许最终用户根据当前网络条件连接到不同的入口点。 例如，如果计算机连接到美国入口点，并且与内部网络的连接比预期慢得多。 在这种情况下，最终用户可以手动选择连接到欧洲入口点，以改善与内部网络的连接。  
+配置多站点部署时，默认情况下，为 Windows 10 和 Windows 8 客户端计算机配置连接到部署中的所有入口点所需的信息，并根据选择算法自动连接到单个入口点。 你还可以配置你的部署以允许 Windows 10 和 Windows 8 客户端计算机手动选择它们将连接到的入口点。 如果 Windows 10 或 Windows 8 客户端计算机当前已连接到美国入口点并启用了自动入口点选择美国，则在几分钟后，客户端计算机将尝试通过欧洲入口点进行连接。 建议使用自动入口点选择;但是，允许手动输入点选择允许最终用户根据当前网络条件连接到不同的入口点。 例如，如果计算机连接到美国入口点，并且与内部网络的连接比预期慢得多。 在这种情况下，最终用户可以手动选择连接到欧洲入口点，以改善与内部网络的连接。  
   
 > [!NOTE]  
 > 最终用户手动选择入口点后，客户端计算机将不会恢复为自动入口点选择。 也就是说，如果手动选择的入口点变为不可访问，则最终用户必须恢复到自动入口点选择，或手动选择另一个入口点。  
@@ -158,11 +158,11 @@ ms.locfileid: "80858320"
   
    3. Teredo 前缀（可选）。 仅当在外部适配器上使用两个连续的公用 IPv4 地址配置远程访问服务器时，此前缀才适用。 前缀基于地址对的第一个公用 IPv4 地址。 例如，如果外部地址为：  
   
-      1. www\.xxx. yyy  
+      1. www \. xxx. yyy  
   
-      2. www\.xxx. zzz + 1  
+      2. www \. xxx yyy + 1  
   
-      然后，要配置的 Teredo 前缀为2001：0： WWXX： YYZZ：：/64，其中 WWXX： YYZZ 是 IPv4 address www\.的十六进制表示形式。  
+      然后，要配置的 Teredo 前缀为2001：0： WWXX： YYZZ：：/64，其中 WWXX： YYZZ 是 IPv4 地址 www xxx 的十六进制表示形式。 \.  
   
       请注意，可以使用以下脚本来计算 Teredo 前缀：  
   
@@ -181,12 +181,12 @@ ms.locfileid: "80858320"
    4. 所有上述路由都必须路由到远程访问服务器的内部适配器上的 IPv6 地址（或负载平衡入口点的内部虚拟 IP （VIP）地址）。  
   
 > [!NOTE]  
-> 如果在企业网络中部署了 IPv6，并且通过 DirectAccess 远程执行远程访问服务器管理，则必须将所有其他入口点的 Teredo 和 ip-https 前缀的路由添加到每个远程访问服务器，以便将流量转发到内部网络。  
+> 如果在企业网络中部署了 IPv6，并且通过 DirectAccess 远程执行远程访问服务器管理，则必须将所有其他入口点的 Teredo 和 ip-https 前缀路由添加到每个远程访问服务器，以便将流量转发到内部网络。  
   
 ### <a name="active-directory-site-specific-ipv6-prefixes"></a>Active Directory 特定于站点的 IPv6 前缀  
 当运行 Windows 10 或 Windows 8 的客户端计算机连接到入口点时，客户端计算机会立即与入口点的 Active Directory 站点相关联，并且配置了与入口点关联的 IPv6 前缀。 首选项是为了让客户端计算机使用这些 IPv6 前缀连接到资源，因为在连接到入口点时，它们的优先级较高。  
   
-如果你的组织使用带有特定于站点的 IPv6 前缀的 Active Directory 拓扑（例如，内部资源 FQDN app.corp.com 同时在每个位置使用特定于站点的 IP 地址托管在北美和欧洲），则不会配置此项使用远程访问控制台时，默认情况下不会为每个入口点配置站点特定的 IPv6 前缀。 如果确实要启用此可选方案，则需要将每个入口点配置为连接到特定入口点的客户端计算机应首选的特定 IPv6 前缀。 按如下所示执行此操作：  
+如果你的组织使用带有特定于站点的 IPv6 前缀的 Active Directory 拓扑（例如，内部资源 FQDN app.corp.com 同时在每个位置中使用特定于站点的 IP 地址托管在北美和欧洲），则默认情况下不会使用远程访问控制台进行配置，也不会为每个入口点配置站点特定的 IPv6 前缀。 如果确实要启用此可选方案，则需要将每个入口点配置为连接到特定入口点的客户端计算机应首选的特定 IPv6 前缀。 请按如下所述执行此操作：  
   
 1.  对于 Windows 10 或 Windows 8 客户端计算机使用的每个 GPO，请运行 DAEntryPointTableItem PowerShell cmdlet  
   
@@ -243,7 +243,7 @@ ms.locfileid: "80858320"
     > [!NOTE]  
     > 在同时安装其他 DirectAccess 部署时，请确保没有两个入口点共享相同的客户端前缀。  
     >   
-    > 如果使用入门向导或 cmdlet `Install-RemoteAccess`安装 DirectAccess，远程访问会自动将部署中第一个入口点的客户端前缀设置为 < IPv6 子网的默认值\_前缀 >：1000：：/64。 如果需要，必须更改前缀。  
+    > 如果使用入门向导或 cmdlet 安装 DirectAccess `Install-RemoteAccess` ，远程访问会自动将部署中第一个入口点的客户端前缀设置为 <IPv6 子网 \_ 前缀>：1000::/64 的默认值。 如果需要，必须更改前缀。  
   
 2.  从第一个部署中删除所选的客户端安全组。  
   
@@ -256,7 +256,7 @@ ms.locfileid: "80858320"
   
 完成转换后，可以卸载第一个 DirectAccess 部署。 卸载时，可能会出现以下问题：  
   
--   如果部署配置为仅支持移动计算机上的客户端，则将删除 WMI 筛选器。 如果第二个部署的客户端安全组包括台式计算机，DirectAccess 客户端 GPO 将不会筛选台式计算机，并且可能会导致这些计算机出现问题。 如果需要移动计算机筛选器，请按照[为 GPO 创建 WMI 筛选器](https://technet.microsoft.com/library/cc947846.aspx)上的说明重新创建它。  
+-   如果部署配置为仅支持移动计算机上的客户端，则将删除 WMI 筛选器。 如果第二个部署的客户端安全组包括台式计算机，DirectAccess 客户端 GPO 将不会筛选台式计算机，并且可能会导致这些计算机出现问题。 如果需要移动计算机筛选器，请按照[为 GPO 创建 WMI 筛选器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc947846(v=ws.10))上的说明重新创建它。  
   
 -   如果两个部署最初都是在同一个 Active Directory 域上创建的，则指向 localhost 的 DNS 探测条目将被删除，并且可能会导致客户端连接问题。 例如，客户端可以使用 IP-HTTPS 而不是 Teredo 进行连接，或在 DirectAccess 多站点入口点之间切换。 在这种情况下，必须将以下 DNS 条目添加到企业 DNS 中：  
   
@@ -270,5 +270,3 @@ ms.locfileid: "80858320"
   
   
   
-
-

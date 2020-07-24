@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2589e21c54fa864629f81b5889d0442c6f0de254
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: f18c880dd673b17f53815a57fa2fcc66558dad71
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070557"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961319"
 ---
 # <a name="network-file-system-overview"></a>网络文件系统概述
 
@@ -52,9 +52,9 @@ Windows 支持多个版本的 NFS 客户端和服务器，具体取决于操作�
 |特性/功能|新功能或更新功能|说明|
 |---|---|---|
 |[NFS 版本4。1](#nfs-version-41)|新建|与 NFS 版本3相比，安全性、性能和互操作性更高。|
-|[NFS 基础结构](#nfs-infrastructure)|已更新|提高部署和可管理性，并提高安全性。|
-|[NFS 版本3连续可用性](#nfs-version-3-continuous-availability)|已更新|提高 NFS 版本3客户端的持续可用性。|
-|[部署和可管理性改进](#deployment-and-manageability-improvements)|已更新|使你能够使用新的 Windows PowerShell cmdlet 和新的 WMI 提供程序轻松部署和管理 NFS。|
+|[NFS 基础结构](#nfs-infrastructure)|Updated|提高部署和可管理性，并提高安全性。|
+|[NFS 版本3连续可用性](#nfs-version-3-continuous-availability)|Updated|提高 NFS 版本3客户端的持续可用性。|
+|[部署和可管理性改进](#deployment-and-manageability-improvements)|Updated|使你能够使用新的 Windows PowerShell cmdlet 和新的 WMI 提供程序轻松部署和管理 NFS。|
 
 ## <a name="nfs-version-41"></a>NFS 版本4。1
 
@@ -91,7 +91,7 @@ NFS 版本3客户端可以具有快速、透明的计划内故障转移，并提
 
 部署和管理 NFS 的方式已通过以下方式改进：
 
-- 超过40个新的 Windows PowerShell cmdlet 可让你更轻松地配置和管理 NFS 文件共享。 有关详细信息，请参阅[Windows PowerShell 中的 NFS cmdlet](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)。
+- 超过40个新的 Windows PowerShell cmdlet 可让你更轻松地配置和管理 NFS 文件共享。 有关详细信息，请参阅[Windows PowerShell 中的 NFS cmdlet](/powershell/module/nfs/?view=win10-ps)。
 - 使用本地平面文件映射存储和用于配置标识映射的新 Windows PowerShell cmdlet 改进标识映射。
 - 服务器管理器图形用户界面更易于使用。
 - 新的 WMI 版本2提供程序可用于更轻松地进行管理。
@@ -99,7 +99,7 @@ NFS 版本3客户端可以具有快速、透明的计划内故障转移，并提
 
 ## <a name="server-manager-information"></a>服务器管理器信息
 
-在服务器管理器或更高版本的[Windows 管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)中-使用 "添加角色和功能向导" 添加 "NFS 服务器" 角色服务（在 "文件和 iSCSI 服务" 角色下）。 有关安装功能的详细信息，请参阅 [“安装或卸载角色、角色服务或功能”](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)。 NFS 服务器工具包括用于网络文件系统的服务 MMC 管理单元，用于管理 NFS 服务器和 NFS 客户端组件。 使用管理单元，你可以管理安装在计算机上的 NFS 服务器组件。 NFS 服务器还包含多个 Windows 命令行管理工具：
+在服务器管理器或更高版本的[Windows 管理中心](../../manage/windows-admin-center/overview.md)中-使用 "添加角色和功能向导" 添加 "NFS 服务器" 角色服务（在 "文件和 iSCSI 服务" 角色下）。 有关安装功能的详细信息，请参阅 [“安装或卸载角色、角色服务或功能”](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)。 NFS 服务器工具包括用于网络文件系统的服务 MMC 管理单元，用于管理 NFS 服务器和 NFS 客户端组件。 使用管理单元，你可以管理安装在计算机上的 NFS 服务器组件。 NFS 服务器还包含多个 Windows 命令行管理工具：
 
 - **装载**在本地装载远程 NFS 共享（也称为导出），并将其映射到 Windows 客户端计算机上的本地驱动器号。
 - **Nfsadmin**管理 nfs 服务器和 Nfs 客户端组件的配置设置。
@@ -108,7 +108,7 @@ NFS 版本3客户端可以具有快速、透明的计划内故障转移，并提
 - **Showmount**显示 nfs 服务器导出的已装载文件系统。
 - **卸载**删除 NFS 装载的驱动器。
 
-Windows Server 2012 中的 NFS 为适用于 Windows PowerShell 的 nfs 模块引入了专门用于 NFS 的多个新 cmdlet。 这些 cmdlet 提供了一种简单的方法来自动执行 NFS 管理任务。 有关详细信息，请参阅[Windows PowerShell 中的 NFS cmdlet](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)。
+Windows Server 2012 中的 NFS 为适用于 Windows PowerShell 的 nfs 模块引入了专门用于 NFS 的多个新 cmdlet。 这些 cmdlet 提供了一种简单的方法来自动执行 NFS 管理任务。 有关详细信息，请参阅[Windows PowerShell 中的 NFS cmdlet](/powershell/module/nfs/?view=win10-ps)。
 
 ## <a name="additional-information"></a>其他信息
 
@@ -117,5 +117,5 @@ Windows Server 2012 中的 NFS 为适用于 Windows PowerShell 的 nfs 模块引
 |内容类型|参考|
 |---|---|
 |部署|[部署网络文件系统](deploy-nfs.md)|
-|操作|[Windows PowerShell 中的 NFS cmdlet](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
+|操作|[Windows PowerShell 中的 NFS cmdlet](/powershell/module/nfs/?view=win10-ps)|
 |相关技术|[Windows Server 中的存储](../storage.yml)|

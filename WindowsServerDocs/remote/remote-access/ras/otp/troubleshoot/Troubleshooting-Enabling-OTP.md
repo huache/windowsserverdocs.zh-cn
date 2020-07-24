@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9be7ef4c4d07b522f683a403e46a11e109dbd226
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0ee3e30699c920a252646de67005675bdaeb849d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853640"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964289"
 ---
 # <a name="troubleshooting-enabling-otp"></a>启用 OTP 疑难解答
 
@@ -22,7 +22,7 @@ ms.locfileid: "80853640"
 本主题包含与使用**DAOtpAuthentication** PowerShell Cmdlet 或远程访问管理控制台启用 DirectAccess OTP 身份验证相关的问题的疑难解答信息。
   
 ## <a name="failed-to-enroll-the-otp-signing-certificate"></a>未能注册 OTP 签名证书  
-**收到错误**（服务器事件日志）。 无法使用证书模板 < OTP_signing_template_name 注册 OTP 签名证书 >  
+**收到错误**（服务器事件日志）。 无法使用证书模板 <OTP_signing_template_name 注册 OTP 签名证书>  
   
 **原因**  
   
@@ -45,7 +45,7 @@ ms.locfileid: "80853640"
 2.  如果模板不存在，请根据3.3 计划注册颁发机构证书中所述创建它，如果存在其他匹配的模板，则请重新配置 DirectAccess OTP 和新模板名称。  
   
 ## <a name="failed-to-enable-directaccess-otp-when-webdav-is-installed"></a>安装 WebDAV 后未能启用 DirectAccess OTP  
-**方案**。 尝试在远程访问管理控制台中或通过使用 `Enable-DAOtpAuthentication` PowerShell cmdlet 来应用 DirectAccess OTP 配置时，操作将失败。  
+**方案**。 尝试在远程访问管理控制台中或通过使用 PowerShell cmdlet 应用 DirectAccess OTP 配置时 `Enable-DAOtpAuthentication` ，操作将失败。  
   
 **收到错误**（服务器事件日志）。 无法应用 DirectAccess OTP 设置，因为 WebDAV IIS 扩展正在服务器上运行。 删除 WebDAV 并再次应用这些设置。  
   
@@ -99,7 +99,5 @@ Windows Server 2003 中的 "证书模板" MMC 管理单元不允许你将模板�
   
 **解决方案**  
   
-在 Windows Server 2003 服务器上安装证书模板管理单元，并使用它来配置 OTP 登录模板，请参阅[安装证书模板管理单元](https://technet.microsoft.com/library/cc732445.aspx)。  
+在 Windows Server 2003 服务器上安装证书模板管理单元，并使用它来配置 OTP 登录模板，请参阅[安装证书模板管理单元](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732445(v=ws.11))。  
   
-
-

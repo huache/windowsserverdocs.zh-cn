@@ -6,18 +6,18 @@ ms.technology: web-app-proxy
 ms.topic: article
 ms.author: kgremban
 author: eross-msft
-ms.openlocfilehash: 2fef89dc999166a7dcbb0479c28160b14b95340e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 84c2c735ee3e6b19816acaa8810c297c487f5250
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818630"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961449"
 ---
 # <a name="web-application-proxy-in-windows-server"></a>Windows Server 中的 Web 应用程序代理
 
 >适用于：Windows Server&reg; 2016
 
-**此内容与 Web 应用程序代理的本地版本相关。若要启用对云中的本地应用程序的安全访问，请参阅[Azure AD 应用程序代理内容](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)。**  
+**此内容与 Web 应用程序代理的本地版本相关。若要启用对云中的本地应用程序的安全访问，请参阅[Azure AD 应用程序代理内容](/azure/active-directory/manage-apps/application-proxy)。**  
   
 本部分中的内容介绍了 Windows Server 2016 的 Web 应用程序代理中的新增功能和更改功能。 此处列出的新功能和更改是在使用预览版时最有可能遇到的最大影响。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "80818630"
   
   为了支持 SharePoint 2013 等方案，应用程序的外部 URL 现在可以包含通配符，使你能够从特定域（例如，https：//* .com）中发布多个应用程序。 这将简化 SharePoint 应用程序的发布。  
   
-- HTTP 到 HTTPS 的重定向  
+- HTTP 到 HTTPS 重定向  
   
   为了确保用户可以访问你的应用程序，即使他们忽视在 URL 中键入 HTTPS，Web 应用程序代理现在支持 HTTP 到 HTTPS 的重定向。  
   
@@ -47,7 +47,7 @@ ms.locfileid: "80818630"
   
 - 新的调试日志，以便更好地进行故障排除并改进服务日志，以完成审核记录和改进的错误处理  
   
-  有关故障排除的详细信息，请参阅[Web 应用程序代理疑难解答](https://technet.microsoft.com/library/dn770156.aspx)  
+  有关故障排除的详细信息，请参阅[Web 应用程序代理疑难解答](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))  
   
 - 管理员控制台 UI 改进  
   
@@ -55,11 +55,9 @@ ms.locfileid: "80818630"
   
 ## <a name="see-also"></a>另请参阅  
   
--   [Windows Server 2016 中的新增功能](https://technet.microsoft.com/library/dn765472.aspx)  
+-   [Windows Server 2016 中的新增功能](../../../get-started/whats-new-in-windows-server-2016.md)  
   
 -   [使用 AD FS 预身份验证发布应用程序](../web-application-proxy/Publishing-Applications-using-AD-FS-Preauthentication.md)  
   
--   [Web 应用程序代理疑难解答](https://technet.microsoft.com/library/dn770156.aspx)  
+-   [Web 应用程序代理疑难解答](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))  
   
-
-

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: cf17c7f1349d5b3ee5b3efe0a872dd433ecbfe8d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 694260d58c8dda136318cd21f553a4b6b2fd31e0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819571"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963639"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>步骤2规划高级 DirectAccess 部署
 
@@ -27,7 +27,7 @@ ms.locfileid: "80819571"
 |[2.2 规划 DirectAccess 服务器部署](#22-plan-for-directaccess-server-deployment)|规划如何部署 DirectAccess 服务器。|  
 |[2.3 规划基础结构服务器](#23-plan-infrastructure-servers)|为 DirectAccess 部署规划基础结构服务器，包括 DirectAccess 网络位置服务器、域名系统 (DNS) 服务器和 DirectAccess 管理服务器。|  
 |[2.4 规划应用程序服务器](#24-plan-application-servers)|规划 IPv4 和 IPv6 应用程序服务器，并可以考虑是否需要 DirectAccess 客户端计算机和内部应用程序服务器之间的端到端身份验证。|  
-|[2.5 计划 DirectAccess 和第三方 VPN 客户端](#25-plan-directaccess-and-third-party-vpn-clients)|在使用第三方 VPN 客户端部署 DirectAccess 时，可能需要设置注册表值以使两个远程访问解决方案能够无缝共存。|  
+|[2.5 规划 DirectAccess 和第三方 VPN 客户端](#25-plan-directaccess-and-third-party-vpn-clients)|在使用第三方 VPN 客户端部署 DirectAccess 时，可能需要设置注册表值以使两个远程访问解决方案能够无缝共存。|  
   
 ## <a name="21-plan-for-client-deployment"></a>2.1 规划客户端部署  
 规划客户端部署时，要作出三个决策：  
@@ -46,7 +46,7 @@ ms.locfileid: "80819571"
   
     网络连接助手在客户端计算机上运行，并向最终用户提供有关 DirectAccess 连接的其他信息。 在 DirectAccess 客户端安装向导中，你可以进行下列配置：  
   
-    -   **连接性验证**  
+    -   **连接性验证程序**  
   
         将创建默认 Web 探测，客户端可将其用于验证到内部网络的连接性。 默认名称为：  
   
@@ -54,7 +54,7 @@ ms.locfileid: "80819571"
   
         应在 DNS 中手动注册该名称。 你可以通过 HTTP 或 **ping** 使用其他 Web 地址来创建其他的连接性验证程序。 对于每个连接性验证程序，都必须存在 DNS 条目。  
   
-    -   **咨询台电子邮件地址**  
+    -   **技术支持电子邮件地址**  
   
         如果最终用户遇到 DirectAccess 连接问题，他们可以向 DirectAccess 管理员发送包含诊断信息的电子邮件以解决问题。  
   
@@ -87,7 +87,7 @@ ms.locfileid: "80819571"
   
     远程访问服务器安装向导会自动检测 DirectAccess 服务器上配置的网络适配器。 必须确保已选择正确的适配器。  
   
--   **Ip-https 证书**  
+-   **IP-HTTPS 证书**  
   
     远程访问服务器安装向导会自动检测适合 IP-HTTPS 连接的证书。 你选择的证书的使用者名称必须与 ConnectTo 地址相匹配。 如果你要使用自签名证书，则可以选择使用由远程访问服务器自动创建的证书。  
   
@@ -99,7 +99,7 @@ ms.locfileid: "80819571"
   
     确定 DirectAccess 客户端如何对 DirectAccess 服务器进行身份验证：  
   
-    -   **用户身份验证** 你可以使用户使用 Active Directory 凭据或双重身份验证进行身份验证。 有关使用双重身份验证进行身份验证的详细信息，请参阅[使用 OTP 身份验证部署远程访问](https://technet.microsoft.com/library/hh831379.aspx)。  
+    -   **用户身份验证**。 你可以使用户使用 Active Directory 凭据或双重身份验证进行身份验证。 有关使用双重身份验证进行身份验证的详细信息，请参阅[使用 OTP 身份验证部署远程访问](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))。  
   
     -   **计算机身份验证**。 你可以将计算机身份验证配置为使用证书，或配置为将 DirectAccess 服务器用作代表客户端的 Kerberos 代理。 有关详细信息，请参阅[1.3 计划证书要求](da-adv-plan-s1-infrastructure.md#13-plan-certificate-requirements)。  
   
@@ -134,7 +134,7 @@ DirectAccess 需要三种类型的基础结构服务器：
 ## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 规划 DirectAccess 和第三方 VPN 客户端  
 某些第三方 VPN 客户端不会在网络连接文件夹中创建连接。 这可能会导致 DirectAccess 认为：在建立 VPN 连接且存在到 Intranet 的连接时，它并不具有 Intranet 连接。 当第三方 VPN 客户端通过将其接口定义为网络设备接口规范 (NDIS) 端点类型来对其接口进行注册时，将发生这种情况。 你可以通过在 DirectAccess 客户端上将以下注册表值设置为 1，使这些类型的 VPN 客户端共存：  
   
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces （REG_DWORD）**  
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
   
 某些第三方 VPN 客户端使用拆分隧道配置，这将允许 VPN 客户端计算机直接访问 Internet，而无需将通信通过 VPN 连接发送到 Intranet。  
   
@@ -142,11 +142,9 @@ DirectAccess 需要三种类型的基础结构服务器：
   
 如果 VPN 连接将其默认网关列为空或全为零 (0.0.0.0)，则说明你的 VPN 客户端采用这种方式配置。 默认情况下，DirectAccess 客户端不会识别拆分隧道配置。 若要配置 DirectAccess 客户端以检测这些类型的 VPN 客户端配置并与之共存，请将以下注册表值设置为 1：  
   
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection （REG_DWORD）**  
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection (REG_DWORD)**  
   
 ## <a name="previous-step"></a>上一步  
   
--   [步骤1：规划 DirectAccess 基础结构](da-adv-plan-s1-infrastructure.md)  
+-   [步骤 1：规划 DirectAccess 基础结构](da-adv-plan-s1-infrastructure.md)  
   
-
-

@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c8adf5f5586bd9f86ed3c4cd42b6172ff3f91e7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce984d3a88f46b77773c524e5b75135930e1bb03
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474694"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961789"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>存储空间直通的性能历史记录
 
@@ -27,7 +27,7 @@ ms.locfileid: "85474694"
 
 默认情况下，在 Windows Server 2019 中存储空间直通收集性能历史记录。 无需安装、配置或启动任何内容。 不需要建立 Internet 连接，系统中心不是必需的，不需要外部数据库。
 
-若要以图形方式查看群集的性能历史记录，请使用[Windows 管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)：
+若要以图形方式查看群集的性能历史记录，请使用[Windows 管理中心](../../manage/windows-admin-center/overview.md)：
 
 ![Windows 管理中心中的性能历史记录](media/performance-history/perf-history-in-wac.png)
 
@@ -43,7 +43,7 @@ ms.locfileid: "85474694"
 
 有关为每个对象类型收集的内容以及如何解释它们的详细信息，请参阅以下子主题：
 
-| Object             | 系列                                                                               |
+| 对象             | 系列                                                                               |
 |--------------------|--------------------------------------------------------------------------------------|
 | 驱动器             | [为驱动器收集的内容](performance-history-for-drives.md)                     |
 | 网络适配器   | [为网络适配器收集的内容](performance-history-for-network-adapters.md) |
