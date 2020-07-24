@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad88594d534c64c0651fcc4e094fef669a02f16c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 968c3debfafd552f295591199366c5f6c10fde47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932335"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956769"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -112,4 +112,4 @@ nfsadmin client config
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [NFS cmdlet 参考](https://docs.microsoft.com/powershell/module/nfs)
+- [NFS cmdlet 参考](/powershell/module/nfs)

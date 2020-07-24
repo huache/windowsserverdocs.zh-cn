@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47be29e55c4626f5c05498074f10418730c6a6f3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8c8d865643c12377a3f4b14250f9d3dbead1e2ac
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931306"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958239"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -30,7 +30,7 @@ dnscmd <servername> <command> [<command parameters>]
 
 ### <a name="parameters"></a>parameters
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<servername>` | 远程或本地 DNS 服务器的 IP 地址或主机名。 |
 
@@ -46,7 +46,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 #### <a name="parameters"></a>parameters
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定管理员计划管理的 DNS 服务器，由 IP 地址、完全限定的域名（FQDN）或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<zonename>` | 指定区域的 FQDN。 |
@@ -68,7 +68,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 ### <a name="examples"></a>示例
 
-[示例1：将时间戳的当前时间设置为资源记录](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-1-set-the-current-time-on-a-time-stamp-to-resource-records)
+[示例1：将时间戳的当前时间设置为资源记录](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-1-set-the-current-time-on-a-time-stamp-to-resource-records)
 
 ## <a name="dnscmd-clearcache-command"></a>dnscmd/clearcache 命令
 
@@ -349,9 +349,9 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 #### <a name="examples"></a>示例
 
-- [示例2：显示 DNS 服务器上的完整区域列表](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server)）
+- [示例2：显示 DNS 服务器上的完整区域列表](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server)）
 
-- [示例3：在 DNS 服务器上显示由区域的列表](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server)
+- [示例3：在 DNS 服务器上显示由区域的列表](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server)
 
 ## <a name="dnscmd-exportsettings-command"></a>dnscmd/exportsettings 命令
 
@@ -388,9 +388,9 @@ dnscmd [<servername>] /info [<settings>]
 
 #### <a name="example"></a>示例
 
-- [示例4：显示 DNS 服务器的 IsSlave 设置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-4-display-the-isslave-setting-from-a-dns-server)
+- [示例4：显示 DNS 服务器的 IsSlave 设置](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-4-display-the-isslave-setting-from-a-dns-server)
 
-- [示例5：显示 DNS 服务器的 RecursionTimeout 设置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-5-display-the-recursiontimeout-setting-from-a-dns-server)
+- [示例5：显示 DNS 服务器的 RecursionTimeout 设置](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-5-display-the-recursiontimeout-setting-from-a-dns-server)
 
 ## <a name="dnscmd-ipvalidate-command"></a>dnscmd/ipvalidate 命令
 
@@ -440,7 +440,7 @@ dnscmd [<servername>] /nodedelete <zonename> <nodename> [/tree] [/f]
 
 #### <a name="example"></a>示例
 
-[示例6：从节点中删除记录](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-6-delete-the-records-from-a-node)
+[示例6：从节点中删除记录](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-6-delete-the-records-from-a-node)
 
 ## <a name="dnscmd-recordadd-command"></a>dnscmd/recordadd 命令
 
@@ -463,7 +463,7 @@ dnscmd [<servername>] /recordadd <zonename> <nodename> <rrtype> <rrdata>
 | `<rrdata>` | 指定预期的数据类型。 |
 
 > [!NOTE]
-> 添加记录后，请确保使用正确的数据类型和数据格式。 有关资源记录类型和相应数据类型的列表，请参阅[Dnscmd 示例](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10))。
+> 添加记录后，请确保使用正确的数据类型和数据格式。 有关资源记录类型和相应数据类型的列表，请参阅[Dnscmd 示例](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10))。
 
 #### <a name="examples"></a>示例
 
@@ -621,9 +621,9 @@ dnscmd [<servername>] /statistics [<statid>] [/clear]
 
 #### <a name="examples"></a>示例
 
-- [示例7：](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-7-display-time-statistics-for-a-dns-server)
+- [示例7：](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-7-display-time-statistics-for-a-dns-server)
 
-- [示例8：显示 DNS 服务器的 NbstatMem 统计信息](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-8-display-nbstatmem-statistics-for-a-dns-server)
+- [示例8：显示 DNS 服务器的 NbstatMem 统计信息](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-8-display-nbstatmem-statistics-for-a-dns-server)
 
 ## <a name="dnscmd-unenlistdirectorypartition-command"></a>dnscmd/unenlistdirectorypartition 命令
 
@@ -737,7 +737,7 @@ dnscmd [<servername>] /zonedelete <zonename> [/dsdel] [/f]
 
 #### <a name="examples"></a>示例
 
-- [示例9：从 DNS 服务器中删除区域](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-9-delete-a-zone-from-a-dns-server)
+- [示例9：从 DNS 服务器中删除区域](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-9-delete-a-zone-from-a-dns-server)
 
 ## <a name="dnscmd-zoneexport-command"></a>dnscmd/zoneexport 命令
 
@@ -759,7 +759,7 @@ dnscmd [<servername>] /zoneexport <zonename> <zoneexportfile>
 
 #### <a name="examples"></a>示例
 
-- [示例10：将区域资源记录列表导出到文件](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-10-export-zone-resource-records-list-to-a-file)
+- [示例10：将区域资源记录列表导出到文件](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-10-export-zone-resource-records-list-to-a-file)
 
 ## <a name="dnscmd-zoneinfo"></a>dnscmd/zoneinfo
 
@@ -787,9 +787,9 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 
 #### <a name="examples"></a>示例
 
-- [示例11：显示注册表中的 RefreshInterval 设置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-11-display-refreshinterval-setting-from-the-registry)
+- [示例11：显示注册表中的 RefreshInterval 设置](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-11-display-refreshinterval-setting-from-the-registry)
 
-- [示例12：显示注册表中的老化设置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-12-display-aging-setting-from-the-registry)
+- [示例12：显示注册表中的老化设置](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-12-display-aging-setting-from-the-registry)
 
 ## <a name="dnscmd-zonepause-command"></a>dnscmd/zonepause 命令
 

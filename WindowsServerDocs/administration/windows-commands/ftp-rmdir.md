@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: feaa9d5d2dac1b0ccac3706eb2f8838dc6bd6c07
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3247a5b374a0e9ea541eb04974570c6691045de0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925709"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957409"
 ---
 # <a name="ftp-rmdir"></a>ftp rmdir
 
@@ -46,4 +46,4 @@ rmdir pictures
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [其他 FTP 指南](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指南](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

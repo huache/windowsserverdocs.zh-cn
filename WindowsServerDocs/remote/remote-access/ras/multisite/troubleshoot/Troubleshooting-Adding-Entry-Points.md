@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: dcc1037f-1a65-4497-99e6-0df9aef748a8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9e8f67709e6059b879eab92fdd06609df90cb9a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89d4773e18f6e38999a1c1db1c17a089ee183bbc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858300"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960169"
 ---
 # <a name="troubleshooting-adding-entry-points"></a>添加入口点疑难解答
 
@@ -33,7 +33,7 @@ ms.locfileid: "80858300"
 运行该命令并确保为 *RemoteAccessServer* 参数指定要添加作为入口点的服务器的名称。  
   
 ## <a name="remote-access-is-not-configured"></a>未配置远程访问  
-**接收到错误**。 未在 < server_name > 上配置远程访问。 请指定属于多站点部署的服务器的名称。  
+**接收到错误**。 未在 <server_name> 上配置远程访问。 请指定属于多站点部署的服务器的名称。  
   
 **原因**  
   
@@ -54,11 +54,11 @@ ms.locfileid: "80858300"
   
 **解决方案**  
   
-使用 `Enable-DaMultiSite` cmdlet 启用多站点。 有关详细信息，请参阅[部署多站点远程访问](https://technet.microsoft.com/library/hh831664.aspx)。  
+使用 `Enable-DaMultiSite` cmdlet 启用多站点。 有关详细信息，请参阅[部署多站点远程访问](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831664(v=ws.11))。  
   
 ## <a name="ipv6-prefix-issues"></a>IPv6 前缀问题  
   
--   **问题1**  
+-   **问题 1**  
   
     **接收到错误**。 IPv6 已部署在内部网络中，但未指定客户端 IPv6 前缀。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "80858300"
   
     2.  运行 `Add-DAEntryPoint` cmdlet 并指定 *ClientIPv6Prefix* 参数中的 IP-HTTPS 前缀。  
   
--   **问题2**  
+-   **问题 2**  
   
     **接收到错误**。 其他入口点已在使用客户端 IPv6 前缀。 请指定其他值。  
   
@@ -87,7 +87,7 @@ ms.locfileid: "80858300"
     2.  运行 `Add-DAEntryPoint` cmdlet 并指定 *ClientIPv6Prefix* 参数中的 IP-HTTPS 前缀。  
   
 ## <a name="connectto-address"></a>ConnectTo 地址  
-**接收到错误**。 远程访问服务器上 DirectAccess 客户端连接到的地址（< connect_to_address >）与网络位置服务器地址相同。 请指定其他值。  
+**接收到错误**。 远程访问服务器上 DirectAccess 客户端连接到的地址（<connect_to_address>）与网络位置服务器地址相同。 请指定其他值。  
   
 **原因**  
   
@@ -98,11 +98,11 @@ ConnectTo 地址与网络位置服务器地址相同。
 ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机通过 IP-HTTPS 实现连接。 网络位置服务器地址应当可以通过企业网络解析，但不可以通过 Internet 解析。 确保网络位置服务器地址不同于 ConnectTo 地址。 选择其他地址并重试。  
   
 ## <a name="directaccess-or-vpn-already-installed"></a>DirectAccess 或 VPN 已安装  
-**接收到错误**。 在服务器上检测到 VPN 安装 < server_name >。 请指定其他未安装远程访问的服务器或删除该服务器的 VPN 配置。  
+**接收到错误**。 在服务器上检测到 VPN 安装 <server_name>。 请指定其他未安装远程访问的服务器或删除该服务器的 VPN 配置。  
   
 或  
   
-远程访问已安装在服务器 < server_name > 上。 请指定其他未运行 DirectAccess 的服务器或删除该服务器现有的 DirectAccess 配置。  
+远程访问已安装在服务器 <server_name> 上。 请指定其他未运行 DirectAccess 的服务器或删除该服务器现有的 DirectAccess 配置。  
   
 **原因**  
   
@@ -115,7 +115,7 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
 运行该命令并确保你在 *RemoteAccessServer* 参数中指定的服务器未配置 DirectAccess 或 VPN。  
   
 ## <a name="ipsec-root-certificate"></a>IPsec 根证书  
-**接收到错误**。 在服务器 < server_name > 上找不到配置的 IPsec 根证书。  
+**接收到错误**。 在服务器 <server_name> 上找不到配置的 IPsec 根证书。  
   
 **原因**  
   
@@ -123,7 +123,7 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
   
 **解决方案**  
   
-在远程访问管理控制台的 **“步骤 2 远程访访问服务器”** 中，单击 **“编辑”** ，然后在 **“身份验证”** 页的 **“使用计算机证书”** 中确保所选的证书是有效的。 如果证书有效，请确保其位于你要添加的服务器的受信根 CA 下并重试一次。  
+在远程访问管理控制台的 **“步骤 2 远程访访问服务器”** 中，单击 **“编辑”**，然后在 **“身份验证”** 页的 **“使用计算机证书”** 中确保所选的证书是有效的。 如果证书有效，请确保其位于你要添加的服务器的受信根 CA 下并重试一次。  
   
 > [!NOTE]  
 > 证书必须相同，并有着同样的指纹。  
@@ -133,7 +133,7 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
 ## <a name="mixing-ipv6-and-ipv4-entry-points"></a>同时混有 IPv6 和 IPv4 入口点  
 首次安装 DirectAccess 时，会检查内部网络适配器，以确定网络是仅包含 IPv4 地址（仅限 IPv4 网络）、同时包含 IPv6 和 IPv4 地址还是仅包含 IPv6 地址（仅限 IPv6 网络）。 该信息用于确定部署类型（仅限 IPv4、IPv6+IPv4 或仅限 IPv6）。  
   
--   **问题1**  
+-   **问题 1**  
   
     **收到警告**。 要添加的远程访问服务器配置了 IPv4 和 IPv6 地址。 这是仅限 IPv4 的部署，远程访问将忽略 IPv6 地址。  
   
@@ -145,7 +145,7 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
   
     如果整个内部网络配置为包含 IPv6 和 IPv4 地址，可考虑转换为 IPv6+IPv4 部署，以利用 IPv6 技术。 请参阅[步骤3：规划多站点部署](assetId:///19d49dbf-1786-47bb-ab97-f0458c53d91d)中的 "从纯 IPv4 过渡到 IPv6 + IPv4 公司网络"。  
   
--   **问题2**  
+-   **问题 2**  
   
     **接收到错误**。 此多站点部署中的远程访问服务器的内部网络适配器配置了 IPv4 地址。 你要添加的入口点的内部网络适配器上也必须配置为 IPv4 地址。  
   
@@ -185,9 +185,9 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
   
 ## <a name="domain-issues-with-the-servergponame"></a>ServerGpoName 的域问题  
   
--   **问题1**  
+-   **问题 1**  
   
-    **接收到错误**。 在 ServerGpoName 参数中指定的域 < server_GPO > 不存在。 改为指定域 < domain_name >。  
+    **接收到错误**。 在 ServerGpoName 参数中指定的域 <server_GPO> 不存在。 改为指定域 <domain_name>。  
   
     **原因**  
   
@@ -197,9 +197,9 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
   
     确保你正确键入了域名。 如果域名拼写错误，使用完全限定的域名 (FQDN) 重试一次。  
   
--   **问题2**  
+-   **问题 2**  
   
-    **接收到错误**。 服务器 GPO 必须位于远程访问服务器域中。 在 ServerGpoName 参数中指定域 < domain_name >。  
+    **接收到错误**。 服务器 GPO 必须位于远程访问服务器域中。 在 ServerGpoName 参数中指定域 <domain_name>。  
   
     **原因**  
   
@@ -210,7 +210,7 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
     服务器 GPO 应当位于远程访问服务器所属的域中。 针对服务器 GPO 采用服务器的域名并重试一次。  
   
 ## <a name="split-brain-dns"></a>拆分式 DNS  
-**收到警告**。 DNS 后缀的 NRPT 条目 < DNS_suffix > 包含客户端计算机连接到远程访问服务器时所使用的公共名称。 将名称 < connect_to_address > 作为 NRPT 中的免除项添加。  
+**收到警告**。 DNS 后缀的 NRPT 条目 <DNS_suffix> 包含客户端计算机连接到远程访问服务器时所使用的公共名称。 将名称 <connect_to_address> 作为 NRPT 中的免除项添加。  
   
 **原因**  
   
@@ -222,21 +222,21 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
   
 要免除 NRPT 规则中的地址，请执行以下操作：  
   
-1.  在远程访问管理控制台的 **“步骤 3 基础结构服务器”** 中，单击 **“编辑”** 。  
+1.  在远程访问管理控制台的 **“步骤 3 基础结构服务器”** 中，单击 **“编辑”**。  
   
 2.  在 **“基础结构服务器设置”** 向导的 **“DNS”** 页面上，双击表格，输入新的名称后缀。  
   
-3.  在 **“DNS 服务器地址”** 对话框中的 DNS 后缀中，输入入口点的 ConnectTo 地址，然后单击 **“应用”** 。  
+3.  在 **“DNS 服务器地址”** 对话框中的 DNS 后缀中，输入入口点的 ConnectTo 地址，然后单击 **“应用”**。  
   
 如果你在未指定服务器地址的情况下添加名称后缀，该后缀便会被视为 NRPT 免除条目。  
   
 ## <a name="saving-server-gpo-settings"></a>保存服务器 GPO 设置  
-**接收到错误**。 将远程访问设置保存到 GPO < GPO_name > 时出错。  
+**接收到错误**。 将远程访问设置保存到 GPO <GPO_name> 时出错。  
   
-若要解决此错误，请参阅在[启用多站点疑难解答](https://technet.microsoft.com/library/jj591658.aspx)中保存服务器 GPO 设置。  
+若要解决此错误，请参阅在[启用多站点疑难解答](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj591658(v=ws.11))中保存服务器 GPO 设置。  
   
 ## <a name="gpo-updates-cannot-be-applied"></a>无法应用 GPO 更新  
-**收到警告**。 无法在 < server_name > 上应用 GPO 更新。 进行下次策略刷新后改动才能生效。  
+**收到警告**。 无法在 <server_name> 上应用 GPO 更新。 进行下次策略刷新后改动才能生效。  
   
 **原因**  
   
@@ -246,5 +246,3 @@ ConnectTo 地址应当可以通过 Internet 解析，以允许客户端计算机
   
 要强制执行策略刷新，请在指定的计算机上运行 `gpupdate /force`。  
   
-
-

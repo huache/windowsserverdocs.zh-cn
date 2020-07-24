@@ -9,15 +9,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eb2637a750c85648189842c240fd8c16062a8ba5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ae4bf757e49dde88948812e6d97bc4c8b338c990
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929703"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958419"
 ---
 # <a name="cprofile"></a>cprofile
 
 Cprofile 已被弃用，并且在将来的 Windows 版本中不保证受到支持。
 
-终端服务已更新为远程桌面服务。 有关详细信息，请参阅[欢迎使用远程桌面服务](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/welcome-to-rds)。
+终端服务已更新为远程桌面服务。 有关详细信息，请参阅[欢迎使用远程桌面服务](../../remote/remote-desktop-services/welcome-to-rds.md)。

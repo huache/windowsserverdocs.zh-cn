@@ -10,18 +10,18 @@ ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53626c4cfac17cb11402ada9ce3397c487cd0720
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ad6658c504cc90eedef2c1cb6688c6f12233b3c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389850"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959869"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自动重新启动登录（ARSO）
 
 在 Windows 更新期间，必须执行特定于用户的进程才能完成更新。 这些进程要求用户登录到其设备。 在启动更新后第一次登录时，用户必须等待这些用户特定进程完成，然后才能开始使用其设备。
 
-## <a name="how-does-it-work"></a>如何运作？
+## <a name="how-does-it-work"></a>工作原理如何？
 
 当 Windows 更新启动自动重新启动时，ARSO 将提取当前已登录用户的派生凭据，将其保存到磁盘，并为用户配置自动登录。 Windows 更新以 TCB 权限运行的系统将启动 RPC 调用来执行此操作。
 
@@ -39,7 +39,7 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 > [!NOTE]
 > Windows 更新导致重新启动后，最后一个交互式用户会自动登录，并且会话将被锁定。 这使得即使 Windows 更新重新启动，用户的锁屏应用仍可运行。
 
-![“设置”页面](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-lockscreenapp.png)
+![“设置”页](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-lockscreenapp.png)
 
 ## <a name="policy-1"></a>策略 #1
 
@@ -51,7 +51,7 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 **Intune 策略：**
 
-- 平台Windows 10 和更高版本
+- 平台：Windows 10 及更高版本
 - 配置文件类型：管理模板
 - 路径： \Windows \Windows 登录选项
 
@@ -73,14 +73,14 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 **注册表编辑器：**
 
-| 值名称 | 类型 | Data |
+| 值名称 | 类型 | 数据 |
 | --- | --- | --- |
 | DisableAutomaticRestartSignOn | DWORD | 0（启用 ARSO） |
 |   |   | 1（禁用 ARSO） |
 
 **策略注册表位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
-**类型：** DWORD
+**键入：** DWORD
 
 ![winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-signinpolicy.png)
 
@@ -92,7 +92,7 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 **Intune 策略：**
 
-- 平台Windows 10 和更高版本
+- 平台：Windows 10 及更高版本
 - 配置文件类型：管理模板
 - 路径： \Windows \Windows 登录选项
 
@@ -114,14 +114,14 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 **注册表编辑器**
 
-| 值名称 | 类型 | Data |
+| 值名称 | 类型 | 数据 |
 | --- | --- | --- |
 | AutomaticRestartSignOnConfig | DWORD | 0（启用 ARSO，如果安全） |
 |   |   | 1（启用 ARSO always） |
 
 **策略注册表位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
-**类型：** DWORD
+**键入：** DWORD
 
 ![winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/arso-policy-setting.png)
 
@@ -143,7 +143,7 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 在某些情况下，无法实现用户自动登录。  本部分旨在捕获可能出现此情况的已知情况。
 
-### <a name="user-must-change-password-at-next-login"></a>用户下次登录时必须更改密码
+### <a name="user-must-change-password-at-next-login"></a>用户在下次登录时必须更改密码
 
 如果需要在下一次登录时更改密码，用户登录可以进入 "已阻止" 状态。  在大多数情况下，可以在重新启动之前检测到这种情况，但并非全部（例如，在关机和下次登录之间可以达到密码过期时间）。
 
@@ -172,4 +172,4 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 ## <a name="additional-resources"></a>其他资源
 
-自动登录是在 Windows 中为多个版本提供的一项功能。 它是 Windows 的一项文档功能，甚至包含 Windows [http：/sysinternals/bb963905](https://technet.microsoft.com/sysinternals/bb963905.aspx)等工具。 它允许设备的单个用户自动登录而无需输入凭据。 凭据作为加密的 LSA 机密配置并存储在注册表中。 这对于很多子情况都可能会导致帐户锁定在平台时间和唤醒之间发生，尤其是在这段时间内通常会发生的情况。
+自动登录是在 Windows 中为多个版本提供的一项功能。 它是 Windows 的一项文档功能，甚至包含 Windows [http：/sysinternals/bb963905](/sysinternals/downloads/autologon)等工具。 它允许设备的单个用户自动登录而无需输入凭据。 凭据作为加密的 LSA 机密配置并存储在注册表中。 这对于很多子情况都可能会导致帐户锁定在平台时间和唤醒之间发生，尤其是在这段时间内通常会发生的情况。

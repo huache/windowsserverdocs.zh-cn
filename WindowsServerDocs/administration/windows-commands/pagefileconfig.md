@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 558ec082dbbf20d9ba58b6256d4ebf49f9faaef4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e4a80b0748e18096c954826b1f39b6e07c4c8bf5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932029"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956679"
 ---
 # <a name="pagefileconfig"></a>pagefileconfig
 
@@ -23,7 +23,7 @@ ms.locfileid: "85932029"
 >[!IMPORTANT]
 > 此命令已弃用。
 
-使管理员能够显示和配置系统的分页文件虚拟内存设置。 有关说明和用法信息，请参阅[pagefileconfig](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc772827(v=ws.10))。
+使管理员能够显示和配置系统的分页文件虚拟内存设置。 有关说明和用法信息，请参阅[pagefileconfig](/previous-versions/orphan-topics/ws.10/cc772827(v=ws.10))。
 
 ## <a name="additional-references"></a>其他参考
 

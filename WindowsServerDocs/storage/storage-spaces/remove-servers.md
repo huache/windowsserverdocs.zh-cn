@@ -10,12 +10,12 @@ author: cosmosdarwin
 description: 如何在 Windows Server 中删除存储空间直通群集中的服务器。
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dd888048edc96d6001492e92ba6d519c751bdaa
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4fa3fe64cb5d7448a7e71eb344309ecb9990ebcd
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474564"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960019"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>删除存储空间直通中的服务器
 
@@ -27,7 +27,7 @@ ms.locfileid: "85474564"
 
 如果你打算不久将服务器添加回群集，或者如果你打算通过将其移到另一个服务器来保留其驱动器，则可以从群集中删除服务器，但*不*从存储池中删除其驱动器。 如果你使用故障转移群集管理器删除服务器，那么这是默认行为。
 
-使用 PowerShell 中的 [Remove-ClusterNode](https://technet.microsoft.com/library/hh847251.aspx) cmdlet：
+使用 PowerShell 中的 [Remove-ClusterNode](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11)) cmdlet：
 
 ```PowerShell
 Remove-ClusterNode <Name>
@@ -70,7 +70,7 @@ Remove-ClusterNode <Name> -CleanUpDisks
 
 下表显示了每种复原类型所需的最小故障域数。
 
-|    复原          |    所需的最小故障域数   |
+|    复原能力          |    所需的最小故障域数   |
 |------------------------|-------------------------------------|
 |    “双向镜像”      |    2                                |
 |    “三向镜像”    |    3                                |

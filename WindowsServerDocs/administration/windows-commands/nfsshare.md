@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4901e0c9ee0701261dc6abb8cfd69cc02d4dd02e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9db04752ad7982f78dc72c02108fe706cdf2fa04
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932040"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956759"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -53,4 +53,4 @@ nfsshare {<sharename> | <drive>:<path> | * } /delete
 
 - [网络文件系统命令参考服务](services-for-network-file-system-command-reference.md)
 
-- [NFS cmdlet 参考](https://docs.microsoft.com/powershell/module/nfs)
+- [NFS cmdlet 参考](/powershell/module/nfs)

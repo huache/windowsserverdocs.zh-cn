@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8006bf74c26b26575f7e2aea2e928d5db4985580
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5fb2ef97ea623174ad159021c2907f72314222f0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922858"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956659"
 ---
 # <a name="pentnt"></a>pentnt
 
@@ -23,7 +23,7 @@ ms.locfileid: "85922858"
 >[!IMPORTANT]
 > 此命令已弃用。
 
-检测 Pentium 芯片中的浮点除法错误（如果存在），禁用浮点硬件，并启用浮点模拟。 有关说明和用法信息，请参阅[pentnt](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755868(v=ws.10))。
+检测 Pentium 芯片中的浮点除法错误（如果存在），禁用浮点硬件，并启用浮点模拟。 有关说明和用法信息，请参阅[pentnt](/previous-versions/orphan-topics/ws.10/cc755868(v=ws.10))。
 
 ## <a name="additional-references"></a>其他参考
 

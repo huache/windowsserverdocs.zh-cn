@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 23d05e61-95c3-4e70-aa83-b9a8cae92304
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3908989b02f6388c994664aa8679c9198da4eea7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e59fd85fae3333ec3a5751ba611b615f4af92cb0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309389"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960239"
 ---
 # <a name="directaccess-unsupported-configurations"></a>DirectAccess 不受支持的配置
 
@@ -30,13 +30,13 @@ ms.locfileid: "80309389"
   
 如果你计划部署 DirectAccess，则必须使用在 Windows Server 2003 R2 之前运行操作系统的域控制器，并且你必须使用 DFS-R。  
   
-有关从 FRS 迁移到 DFS 的信息，请参阅[SYSVOL 复制迁移指南： FRS 到 DFS 复制](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx)。  
+有关从 FRS 迁移到 DFS 的信息，请参阅[SYSVOL 复制迁移指南： FRS 到 DFS 复制](../../../storage/dfs-replication/migrate-sysvol-to-dfsr.md)。  
   
 ## <a name="network-access-protection-for-directaccess-clients"></a><a name="bkmk_nap"></a>DirectAccess 客户端的网络访问保护  
 网络访问保护（NAP）用于确定远程客户端计算机在被授予对公司网络的访问权限之前是否符合该策略。 Windows Server 2012 R2 中不推荐使用 NAP，Windows Server 2016 中未包含此项。 出于此原因，不建议启动新的 DirectAccess 部署。 建议为 DirectAccess 客户端的安全提供不同的终结点控制方法。  
   
 ## <a name="multisite-support-for-windows-7-clients"></a><a name="bkmk_multi"></a>针对 Windows 7 客户端的多站点支持  
-在多站点部署中配置 DirectAccess 时，Windows 10&reg;、Windows&reg; 8.1 和 Windows&reg; 8 客户端能够连接到最近的站点。  Windows 7&reg; 的客户端计算机没有相同的功能。 Windows 7 客户端的站点选择在策略配置时设置为特定站点，这些客户端将始终连接到指定的站点，而不考虑其位置。  
+在多站点部署中配置 DirectAccess 时，Windows 10 &reg; 、windows &reg; 8.1 和 windows &reg; 8 客户端能够连接到最近的站点。  Windows 7 &reg; 客户端计算机没有相同的功能。 Windows 7 客户端的站点选择在策略配置时设置为特定站点，这些客户端将始终连接到指定的站点，而不考虑其位置。  
   
 ## <a name="user-based-access-control"></a><a name="bkmk_user"></a>基于用户的访问控制  
 DirectAccess 策略基于计算机，而不是基于用户。 不支持指定 DirectAccess 用户策略来控制对企业网络的访问。  
@@ -45,7 +45,7 @@ DirectAccess 策略基于计算机，而不是基于用户。 不支持指定 Di
 可以使用 DirectAccess 安装向导、远程访问管理控制台或远程访问 Windows PowerShell cmdlet 来配置 DirectAccess。 不支持使用 DirectAccess 安装向导之外的任何方法来配置 DirectAccess，如直接修改 DirectAccess 组策略对象或手动修改服务器或客户端上的默认策略设置。 这些修改可能会导致配置无法使用。  
   
 ## <a name="kerbproxy-authentication"></a><a name="bkmk_kerb"></a>KerbProxy authentication  
-使用入门向导配置 DirectAccess 服务器时，DirectAccess 服务器将自动配置为使用 KerbProxy authentication 进行计算机和用户身份验证。 因此，只应为仅部署了 Windows 10&reg;、Windows 8.1 或 Windows 8 客户端的单站点部署使用入门向导。  
+使用入门向导配置 DirectAccess 服务器时，DirectAccess 服务器将自动配置为使用 KerbProxy authentication 进行计算机和用户身份验证。 因此，只应为仅 &reg; 部署了 windows 10、Windows 8.1 或 windows 8 客户端的单站点部署使用入门向导。  
   
 此外，不应将以下功能与 KerbProxy authentication 一起使用：  
   
@@ -91,5 +91,3 @@ DirectAccess 服务器必须具有对读写域控制器的访问权限，并且�
   
 由于这些要求，不要使用 RODC 部署 DirectAccess。  
   
-
-

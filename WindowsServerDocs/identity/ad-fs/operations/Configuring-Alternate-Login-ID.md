@@ -8,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7e7a881a2e6bae499ed7d4713bd70a804c3412e6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0872131de7ba2a201b0a0e70fb6157b0e2706def
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816960"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958629"
 ---
 # <a name="configuring-alternate-login-id"></a>配置备用登录 ID
 
@@ -24,20 +24,20 @@ ms.locfileid: "80816960"
 >[!NOTE]
 >Microsoft 推荐的最佳做法是将 UPN 与主 SMTP 地址匹配。 本文解决了不能修正 UPN 以匹配的少量客户。
 
-例如，他们可以使用其电子邮件 id 进行登录，并且该 id 可以不同于其 UPN。 这在其 UPN 不可路由的情况下尤其常见。 请考虑使用 UPN jdoe@contoso.local 和电子邮件地址 jdoe@contoso.com的用户 Jane Doe。 Jane 可能甚至不知道 UPN，因为她始终使用其电子邮件 id 进行登录。 使用任何其他登录方法，而不是 UPN 构成备用 ID。 有关如何创建 UPN 的详细信息，请参阅[Azure AD UserPrincipalName 填充](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-userprincipalname)。
+例如，他们可以使用其电子邮件 id 进行登录，并且该 id 可以不同于其 UPN。 这在其 UPN 不可路由的情况下尤其常见。 请考虑使用 UPN jdoe@contoso.local 和电子邮件地址的用户 Jane Doe jdoe@contoso.com 。 Jane 可能甚至不知道 UPN，因为她始终使用其电子邮件 id 进行登录。 使用任何其他登录方法，而不是 UPN 构成备用 ID。 有关如何创建 UPN 的详细信息，请参阅[Azure AD UserPrincipalName 填充](/azure/active-directory/connect/active-directory-aadconnect-userprincipalname)。
 
 Active Directory 联合身份验证服务（AD FS）允许使用 AD FS 的联合应用程序使用备用 ID 登录。 这使管理员可以指定用于登录的默认 UPN 的替代方法。 AD FS 已使用 Active Directory 域服务（AD DS）接受的任意形式的用户标识符支持。 当配置为备用 ID 时，AD FS 允许用户使用配置的备用 ID 值（如电子邮件 ID）登录。使用备用 ID 可以采用 SaaS 提供程序（如 Office 365），而无需修改本地 Upn。 它还使你能够使用使用者预配的标识支持业务线服务应用程序。
 
 ## <a name="alternate-id-in-azure-ad"></a>Azure AD 中的替代 id
 组织可能需要在以下情况下使用备用 ID：
-1. 本地域名称不可路由，例如 Contoso. local，因此默认的用户主体名称是不可路由的（jdoe@contoso.local）。 由于本地应用程序依赖项或公司策略，无法更改现有 UPN。 Azure AD 和 Office 365 要求与 Azure AD 目录关联的所有域后缀可以完全通过 internet 路由。 
+1. 本地域名称不可路由，例如 Contoso. local 和，因此默认的用户主体名称是不可路由的（ jdoe@contoso.local ）。 由于本地应用程序依赖项或公司策略，无法更改现有 UPN。 Azure AD 和 Office 365 要求与 Azure AD 目录关联的所有域后缀可以完全通过 internet 路由。 
 2. 本地 UPN 与用户的电子邮件地址不相同，若要登录到 Office 365，用户使用电子邮件地址和 UPN 不能使用，因为组织受到限制。
    在上述方案中，具有 AD FS 的备用 ID 使用户能够登录到 Azure AD，而无需修改本地 Upn。 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>具有备用登录 ID 的最终用户体验
-最终用户体验根据用于备用登录 id 的身份验证方法而有所不同。 目前有三种方法可以实现使用备用登录 id。  它们具有以下特点：
+最终用户体验根据用于备用登录 id 的身份验证方法而有所不同。 目前有三种方法可以实现使用备用登录 id。  它们分别是：
 
-- **常规身份验证（旧）** -使用基本身份验证协议。
+- **常规身份验证（旧）**-使用基本身份验证协议。
 - **新式身份验证**-基于 ACTIVE DIRECTORY 身份验证库（ADAL）登录到应用程序。 这将启用多因素身份验证（MFA）、基于 SAML 的第三方标识提供程序与 Office 客户端应用程序、智能卡和基于证书的身份验证等登录功能。
 - **混合新式身份验证**-提供新式身份验证的所有优点，并使用户能够使用从云获取的授权令牌访问本地应用程序。
 
@@ -131,7 +131,7 @@ Office 版本1712（build no 8827.2148）和更高版本已更新身份验证逻
 ##### <a name="step-2-update-to-required-windows-version"></a>步骤 2： 更新为所需的 Windows 版本
 Windows 版本1709及更高版本已更新身份验证逻辑来处理备用 id 方案。 为了利用新的逻辑，需要将客户端计算机更新到 Windows 版本1709及更高版本。
 
-##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>步骤 3。 使用组策略为受影响的用户配置注册表
+##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>步骤 3： 使用组策略为受影响的用户配置注册表
 Office 应用程序依赖于目录管理员推送的信息来标识备用 id 环境。 需要将以下注册表项配置为帮助 office 应用程序通过备用 id 对用户进行身份验证，而不显示任何额外的提示
 
 |要添加的 Regkey|Regkey 数据名称、类型和值|Windows 7/8|Windows 10|说明|
@@ -155,7 +155,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>非 Exchange 和 Skype for Business 客户端
 
-|客户端|支持语句|备注|
+|客户端|支持声明|备注|
 | ----- | -----|-----|
 |Microsoft Teams|支持|<li>Microsoft 团队支持 AD FS （SAML-P、WS 送、WS 信任和 OAuth）以及新式身份验证。</li><li> 核心 Microsoft 团队（如渠道、聊天和文件功能）可用于备用登录 ID。</li><li>第一个和第三方应用必须由客户单独调查。 这是因为每个应用程序都有自己的可支持性身份验证协议。</li>|     
 |OneDrive for Business|支持的-客户端注册表项建议 |配置备用 ID 后，会在验证字段中预先填充本地 UPN。 需要将其更改为所使用的备用标识。 建议使用本文中提到的客户端注册表项： Office 2013 和 Lync 2013 会定期提示输入 SharePoint Online、OneDrive 和 Lync Online 的凭据。|
@@ -168,7 +168,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 | ----- |----- | ----- |
 |Outlook|支持，无额外提示|支持</br></br>针对 Exchange Online 的**新式验证**：受支持</br></br>对于 Exchange Online 的**常规身份验证**：支持以下注意事项：</br><li>你必须在已加入域的计算机上，并且已连接到公司网络 </li><li>只能在不允许对邮箱用户进行外部访问的环境中使用备用 ID。 这意味着，如果用户已连接到企业网络、VPN 或通过直接访问计算机连接到其邮箱，则用户只能通过受支持的方式对其邮箱进行身份验证，但在配置 Outlook 配置文件时，你会收到几个额外的提示。| 
 |混合公用文件夹|支持，无额外提示。|针对 Exchange Online 的**新式验证**：受支持</br></br>对于 Exchange Online：不支持**定期身份验证**</br></br><li>如果使用备用 ID，则不能扩展混合公用文件夹，因此目前不应使用常规身份验证方法。|
-|跨界委托|请参阅[配置 Exchange 以支持混合部署中的委派邮箱权限](https://technet.microsoft.com/library/mt784505.aspx)|请参阅[配置 Exchange 以支持混合部署中的委派邮箱权限](https://technet.microsoft.com/library/mt784505.aspx)|
+|跨界委托|请参阅[配置 Exchange 以支持混合部署中的委派邮箱权限](/exchange/hybrid-deployment/set-up-delegated-mailbox-permissions)|请参阅[配置 Exchange 以支持混合部署中的委派邮箱权限](/exchange/hybrid-deployment/set-up-delegated-mailbox-permissions)|
 |存档邮箱访问权限（本地邮箱）|支持，无额外提示|支持-在访问存档时，用户会收到额外的凭据提示，在出现提示时，他们必须提供其备用 ID。| 
 |Outlook Web Access|支持|支持|
 |适用于 Android、IOS 和 Windows Phone 的 Outlook 移动应用|支持|支持|
@@ -194,7 +194,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 -   如果管理员配置的其中一个林已关闭，AD FS 将继续使用已配置的其他林中的备用登录 ID 查找用户帐户。 如果 AD FS server 在搜索的林中查找唯一的用户对象，则用户将成功登录。
 
--   你可能还需要自定义 AD FS 登录页面，以便向最终用户授予有关备用登录 ID 的一些提示。 可以通过添加自定义登录页说明来执行此操作（有关详细信息，请参阅在用户名字段上[自定义 AD FS 登录页](https://technet.microsoft.com/library/dn280950.aspx)或自定义 "使用组织帐户登录" 字符串（有关详细信息，请参阅[AD FS 登录页的高级自定义](https://technet.microsoft.com/library/dn636121.aspx)。
+-   你可能还需要自定义 AD FS 登录页面，以便向最终用户授予有关备用登录 ID 的一些提示。 可以通过添加自定义登录页说明来执行此操作（有关详细信息，请参阅在用户名字段上[自定义 AD FS 登录页](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11))或自定义 "使用组织帐户登录" 字符串（有关详细信息，请参阅[AD FS 登录页的高级自定义](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn636121(v=ws.11))。
 
 -   包含备用登录 ID 值的新声明类型为**http: schemas.microsoft.com/ws/2013/11/alternateloginid**
 
@@ -211,14 +211,12 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 
 
-|                       **错误事例**                        | **对登录体验的影响** |                                                              **引发**                                                              |
+|                       **错误事例**                        | **对登录体验的影响** |                                                              **事件**                                                              |
 |--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| 无法获取 user 对象的 SAMAccountName 值 |          登录失败           |                  事件 ID 364，出现异常消息 MSIS8012：无法为用户找到 samAccountName： "{0}"。                   |
-|        CanonicalName 属性不可访问         |          登录失败           |               用户 "{1}" 的事件 ID 364 的事件 ID 的{0}MSIS8013 格式不正确。                |
-|        在一个林中找到多个用户对象        |          登录失败           | 事件 ID 364，出现异常消息 MSIS8015：在林 "{1}" 中找到具有标识 "{0}" 的多个用户帐户，标识： {2} |
-|   跨多个林找到多个用户对象    |          登录失败           |           事件 ID 364，出现异常消息 MSIS8014：在林中找到多个标识为 "{0}" 的用户帐户： {1}            |
+| 无法获取 user 对象的 SAMAccountName 值 |          登录失败           |                  事件 ID 364，出现异常消息 MSIS8012：找不到用户的 samAccountName： ' {0} '。                   |
+|        CanonicalName 属性不可访问         |          登录失败           |               用户 "" 的异常消息 MSIS8013： CanonicalName： "" 的事件 ID 364 {0} {1} 格式错误。                |
+|        在一个林中找到多个用户对象        |          登录失败           | 事件 ID 364，出现异常消息 MSIS8015： {0} 在林 "" 中找到具有标识 "" 的多个用户帐户 {1} ，标识：{2} |
+|   跨多个林找到多个用户对象    |          登录失败           |           事件 ID 364，出现异常消息 MSIS8014：在林中找到多个标识为 "" 的用户帐户 {0} ：{1}            |
 
 ## <a name="see-also"></a>另请参阅
-[AD FS 操作](../../ad-fs/AD-FS-2016-Operations.md)
-
-
+[AD FS 操作](../ad-fs-operations.md)

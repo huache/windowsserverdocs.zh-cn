@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2372476e153a6dc37b7d068201a40ba17c11fa54
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6abc9e1e760502047c5c740c72b79e302dd19249
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930820"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958309"
 ---
 # <a name="dir"></a>dir
 
 显示目录的文件和子目录的列表。 如果在没有参数的情况下使用，则此命令将显示磁盘的卷标和序列号，后跟磁盘上的目录和文件的列表（包括它们的名称以及上次修改的日期和时间）。 对于文件，此命令将显示名称扩展名和大小（以字节为单位）。 此命令还显示了列出的文件和目录的总数、其累计大小以及磁盘上剩余的可用空间（以字节为单位）。
 
-**Dir**命令也可以使用不同的参数从 Windows 恢复控制台运行。 有关详细信息，请参阅[Windows 恢复环境（WinRE）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+**Dir**命令也可以使用不同的参数从 Windows 恢复控制台运行。 有关详细信息，请参阅[Windows 恢复环境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 ## <a name="syntax"></a>语法
 
@@ -46,7 +46,7 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 | /l | 使用小写显示未排序的目录名称和文件名。 |
 | /n | 显示一种长列表格式，其中的文件名称位于屏幕最右侧。 |
 | /x | 显示为非8dot3 文件名生成的短名称。 显示与 **/n**的显示相同，但短名称插入到长名称之前。 |
-| /c | 在文件大小中显示千位分隔符。 这是默认行为。 使用 **/c**隐藏分隔符。 |
+| /c | 在文件大小中显示千位分隔符。 此选项为默认行为。 使用 **/c**隐藏分隔符。 |
 | /4 | 以四位数字格式显示年。 |
 | /r | 显示文件的备用数据流。 |
 | /? | 在命令提示符下显示帮助。 |

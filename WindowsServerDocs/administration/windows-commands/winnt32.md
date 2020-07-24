@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5cf20abc8322f610106d65c76c3431b9332444a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e1b5844ee9cbdb11629e488e6506ef85b23b537b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936148"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958939"
 ---
 # <a name="winnt32"></a>winnt32
 
@@ -62,14 +62,13 @@ winnt32 [/checkupgradeonly] [/cmd: <CommandLine>] [/cmdcons] [/copydir:{i386|ia6
 |        /?         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              在命令提示符下显示帮助。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ## <a name="remarks"></a>备注
-如果要在客户端计算机上部署 Windows XP，则可以使用 Windows XP 附带的 winnt32.exe 版本。 部署 Windows XP 的另一种方法是使用 winnt32.msi，该方法可通过 Windows Installer 的一组智能技术来运行。 有关客户端部署的详细信息，请参阅 Windows Server 2003 部署工具包，这在[使用 Windows 部署和资源工具包](https://technet.microsoft.com/library/cc779317(v=ws.10).aspx)中进行了介绍。
+如果要在客户端计算机上部署 Windows XP，则可以使用 Windows XP 附带的 winnt32.exe 版本。 部署 Windows XP 的另一种方法是使用 winnt32.msi，该方法可通过 Windows Installer 的一组智能技术来运行。 有关客户端部署的详细信息，请参阅 Windows Server 2003 部署工具包，这在[使用 Windows 部署和资源工具包](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10))中进行了介绍。
 
 在基于 Itanium 的计算机上，可以从可扩展固件接口（EFI）或从 Windows Server 2003 Enterprise、Windows Server 2003 R2 Enterprise、Windows Server 2003 R2 Datacenter 或 Windows Server 2003 Datacenter 中运行**winnt32.exe** 。 另外，在基于 Itanium 体系结构的计算机上， **/cmdcons**和 **/syspart**不可用，并且与升级相关的选项将不可用。
-有关硬件兼容性的详细信息，请参阅[硬件兼容性](https://technet.microsoft.com/library/cc757927(v=ws.10).aspx)。
-有关使用动态更新和安装多个客户端的详细信息，请参阅 Windows Server 2003 部署工具包，这在[使用 Windows 部署和资源工具包](https://technet.microsoft.com/library/cc779317(v=ws.10).aspx)中进行了介绍。
-有关修改启动设置的信息，请参阅 windows Server 2003 的 Windows 部署和资源工具包。 有关详细信息，请参阅[使用 Windows 部署和资源工具包](https://technet.microsoft.com/library/cc779317(v=ws.10).aspx)。
+有关硬件兼容性的详细信息，请参阅[硬件兼容性](/previous-versions/windows/it-pro/windows-server-2003/cc757927(v=ws.10))。
+有关使用动态更新和安装多个客户端的详细信息，请参阅 Windows Server 2003 部署工具包，这在[使用 Windows 部署和资源工具包](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10))中进行了介绍。
+有关修改启动设置的信息，请参阅 windows Server 2003 的 Windows 部署和资源工具包。 有关详细信息，请参阅[使用 Windows 部署和资源工具包](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10))。
 使用 **/unattend**命令行选项自动执行已阅读并接受 Windows Server 2003 的 Microsoft 许可协议的安装程序确认。 在使用此命令行选项代表组织之外的其他组织安装 Windows Server 2003 之前，必须确认最终用户（无论是个人还是单个实体）已收到、阅读并接受该产品的 Microsoft 许可协议条款。  Oem 不能在销售给最终用户的计算机上指定此密钥。
 
 ## <a name="additional-references"></a>其他参考
 - [命令行语法项](command-line-syntax-key.md)
-

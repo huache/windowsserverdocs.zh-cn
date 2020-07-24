@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de084813ee837ecea2f0871589218d3262b40bba
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a998786f5381dd5affc1bae900c0aa3fb33da49a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925921"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957829"
 ---
 # <a name="ftp-get"></a>ftp get
 
@@ -62,4 +62,4 @@ get test.txt test1.txt
 
 - [ftp binary 命令](ftp-binary.md)
 
-- [其他 FTP 指南](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [其他 FTP 指南](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

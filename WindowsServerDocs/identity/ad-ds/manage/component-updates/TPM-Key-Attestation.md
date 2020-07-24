@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: de5a38ff6f811046d06c52a1ca4598f9650b3cfe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ae7106e0c0fc1d9caca58b3a9a435886fc56b6f7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823010"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959939"
 ---
 # <a name="tpm-key-attestation"></a>TPM 密钥证明
 
@@ -28,11 +28,11 @@ ms.locfileid: "80823010"
 尽管自 Windows 8 以来，对受 TPM 保护的密钥的支持已存在，但没有任何机制可以通过加密方式证明证书申请者私钥实际上由受信任的平台模块（TPM）保护。 此更新使 CA 能够执行该证明并在颁发的证书中反映该证明。  
   
 > [!NOTE]  
-> 本文假定读者熟悉证书模板概念（有关参考，请参阅[证书模板](https://technet.microsoft.com/library/cc730705.aspx)）。 它还假设读者熟悉如何配置企业 Ca，使其基于证书模板颁发证书（有关参考，请参阅[核对清单：配置 ca 以颁发和管理证书](https://technet.microsoft.com/library/cc771533.aspx)）。  
+> 本文假定读者熟悉证书模板概念（有关参考，请参阅[证书模板](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))）。 它还假设读者熟悉如何配置企业 Ca，使其基于证书模板颁发证书（有关参考，请参阅[核对清单：配置 ca 以颁发和管理证书](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771533(v=ws.11))）。  
   
 ### <a name="terminology"></a>术语  
   
-|术语|Definition|  
+|术语|定义|  
 |--------|--------------|  
 |EK|认可密钥。 这是 TPM 内包含的非对称密钥（在制造时注入）。 EK 对于每个 TPM 都是唯一的，可以识别它。 不能更改或删除 EK。|  
 |EKpub|引用 EK 的公钥。|  
@@ -83,7 +83,7 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
     请注意，可以选择 TPM 信任模型的组合。 在这种情况下，CA 将接受任何证明方法，并且颁发策略 Oid 将反映所有成功的证明方法。  
   
-2.  **配置证书模板：** 本主题中的[部署详细信息](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails)部分介绍了配置证书模板。 本文不介绍如何将此证书模板分配给企业 CA，或者如何向一组用户提供注册访问权限。 有关详细信息，请参阅[清单：配置 ca 以颁发和管理证书](https://technet.microsoft.com/library/cc771533.aspx)。  
+2.  **配置证书模板：** 本主题中的[部署详细信息](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails)部分介绍了配置证书模板。 本文不介绍如何将此证书模板分配给企业 CA，或者如何向一组用户提供注册访问权限。 有关详细信息，请参阅[清单：配置 ca 以颁发和管理证书](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771533(v=ws.11))。  
   
 3.  **为 TPM 信任模型配置 CA**  
   
@@ -98,14 +98,14 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
     > -   不支持第三方智能卡 Ksp 的 TPM 密钥证明。 必须使用 Microsoft 平台加密提供程序 KSP。  
     > -   TPM 密钥证明仅适用于 RSA 密钥。  
     > -   独立 CA 不支持 TPM 密钥证明。  
-    > -   TPM 密钥证明不支持[非持久证书处理](https://technet.microsoft.com/library/ff934598)。  
+    > -   TPM 密钥证明不支持[非持久证书处理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff934598(v=ws.10))。  
   
 ## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>部署详细信息  
   
 ### <a name="configure-a-certificate-template"></a><a name="BKMK_ConfigCertTemplate"></a>配置证书模板  
 若要配置 TPM 密钥证明的证书模板，请执行以下配置步骤：  
   
-1.  **兼容性**选项卡  
+1.  “兼容性”**** 选项卡  
   
     在 "**兼容性设置**" 部分中：  
   
@@ -115,7 +115,7 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
     ![TPM 密钥证明](media/TPM-Key-Attestation/GTR_ADDS_CompatibilityTab.gif)  
   
-2.  **加密**选项卡  
+2.  “加密”**** 选项卡  
   
     确保为 "**提供程序" 类别**选择 "**密钥存储提供程序**"，并为 "**算法名称**" 选择**RSA** 。 请确保已选中 **"请求必须使用以下提供程序之一"** ，并且在 "**提供程序**" 下选择了 " **Microsoft 平台加密提供程序**" 选项。  
   
@@ -154,7 +154,7 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
     |OID|密钥证明类型|说明|保证级别|  
     |-------|------------------------|---------------|-------------------|  
     |1.3.6.1.4.1.311.21.30|EK|"已验证 EK"：适用于管理员托管的 EK 列表|高|  
-    |1.3.6.1.4.1.311.21.31|认可证书|"EK 证书已验证"：当对 EK 证书链进行验证时|中等|  
+    |1.3.6.1.4.1.311.21.31|认可证书|"EK 证书已验证"：当对 EK 证书链进行验证时|中型|  
     |1.3.6.1.4.1.311.21.32|用户凭据|"在使用后的 EK 可信"：用于用户-证明 EK|低|  
   
     如果已选择 "**包括颁发策略**" （默认配置），则将在已颁发的证书中插入 oid。  
@@ -193,14 +193,14 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
   
         |操作|命令语法|  
         |-------------|------------------|  
-        |添加文件夹位置|certutil-setreg CA\EndorsementKeyListDirectories + "<folder>"|  
-        |删除文件夹位置|certutil-setreg CA\EndorsementKeyListDirectories-"<folder>"|  
+        |添加文件夹位置|certutil.exe-setreg CA\EndorsementKeyListDirectories + " <folder> "|  
+        |删除文件夹位置|certutil.exe-setreg CA\EndorsementKeyListDirectories-" <folder> "|  
   
         EndorsementKeyListDirectories in certutil 命令是如下表中所述的注册表设置。  
   
         |值名称|类型|数据|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|< 允许列表的本地路径或 UNC 路径 ><p>示例：<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|<允许列表的本地路径或 UNC 路径 ><p>示例：<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
   
         HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\\<CA Sanitized Name>  
   
@@ -217,7 +217,7 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
         PS C:>$b=new-item $a.PublicKeyHash -ItemType file  
         ```  
   
-## <a name="troubleshooting"></a>故障排除  
+## <a name="troubleshooting"></a>疑难解答  
   
 ### <a name="key-attestation-fields-are-unavailable-on-a-certificate-template"></a>密钥证明字段在证书模板上不可用  
 如果模板设置不满足证明的要求，则 "密钥证明" 字段不可用。 常见原因如下：  
@@ -275,5 +275,5 @@ TPM 密钥证明是指请求证书以加密方式向 CA 证明证书请求中的
         ```  
   
 ## <a name="see-also"></a>另请参阅  
-[受信任的平台模块技术概述](https://technet.microsoft.com/library/jj131725.aspx)  
+[受信任的平台模块技术概述](/previous-versions/windows/it-pro/windows-8.1-and-8/jj131725(v=ws.11))  
 [外部资源：受信任的平台模块](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)  

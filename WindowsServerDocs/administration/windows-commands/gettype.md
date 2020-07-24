@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69c3b20ed0b555e781fcf93dc830075b3150ef88
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be3b1180549688ec7c75c893700a6614322f99ce
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931181"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957189"
 ---
 # <a name="gettype"></a>gettype
 
 此**gettype**命令已弃用，并且在将来的 Windows 版本中不保证支持。
 
-此工具包含在 Windows Server 2003 中。 有关详细信息，请参阅[gettype](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc773104(v=ws.10))。
+此工具包含在 Windows Server 2003 中。 有关详细信息，请参阅[gettype](/previous-versions/orphan-topics/ws.10/cc773104(v=ws.10))。
 
 ## <a name="additional-references"></a>其他参考
 

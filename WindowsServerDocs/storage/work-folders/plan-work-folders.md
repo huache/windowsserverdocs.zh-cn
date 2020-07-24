@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: 如何计划工作文件夹部署（包括系统要求）和如何准备网络环境。
-ms.openlocfilehash: 1453ff54c2213445f6f443d34d21747eb875412b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 603711676aa5f35047b0623694f3a16922a2b240
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475594"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959999"
 ---
 # <a name="planning-a-work-folders-deployment"></a>计划工作文件夹部署
 
@@ -139,9 +139,9 @@ ms.locfileid: "85475594"
 
 工作文件夹支持使用 Web 应用程序代理、Azure AD 应用程序代理或第三方反向代理解决方案：
 
--  Web 应用程序代理是一项本地反向代理解决方案。 若要了解详细信息，请参阅 [Windows Server 2016 中的 Web 应用程序代理](https://technet.microsoft.com/windows-server-docs/identity/web-application-proxy/web-application-proxy-windows-server)。
+-  Web 应用程序代理是一项本地反向代理解决方案。 若要了解详细信息，请参阅 [Windows Server 2016 中的 Web 应用程序代理](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。
 
--  Azure AD 应用程序代理是一项云反向代理解决方案。 若要了解详细信息，请参阅[如何提供对本地应用程序的安全远程访问](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
+-  Azure AD 应用程序代理是一项云反向代理解决方案。 若要了解详细信息，请参阅[如何提供对本地应用程序的安全远程访问](/azure/active-directory/active-directory-application-proxy-get-started)
 
 ## <a name="additional-design-considerations"></a>其他设计注意事项
  除了了解上述每个组件外，客户在设计时还需要花费时间来考虑要使用的同步服务器数目和运行的共享数目，以及是否利用故障转移群集在这些同步服务器上提供容错
@@ -155,7 +155,7 @@ ms.locfileid: "85475594"
 
 - 负载平衡 – 在大型环境中，将用户数据存储在多个服务器上可以提高服务器性能和运行时间。
 
-  有关工作文件夹服务器调整和性能的信息，请参阅 [有关工作文件夹部署的性能注意事项](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)。
+  有关工作文件夹服务器调整和性能的信息，请参阅 [有关工作文件夹部署的性能注意事项](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。
 
 > [!NOTE]
 >  使用多个同步服务器时，我们建议为用户设置自动服务器发现。 此过程依赖于 AD DS 中每个用户帐户的某个属性的配置。 该属性名为 **msDS-SyncServerURL**，将 Windows Server 2012 R2 域控制器添加到域或者应用 Active Directory 架构更新后，便可以在用户帐户上使用该属性。 应该为每个用户设置此属性，以确保用户连接到正确的同步服务器。 通过使用自动服务器发现，组织可以在 "友好的" URL （例如）后面发布工作文件夹 *https://workfolders.contoso.com* ，而不考虑操作中的同步服务器数。
@@ -255,5 +255,5 @@ ms.locfileid: "85475594"
 
 |内容类型|参考|
 |------------------|----------------|
-|**产品评估**|-   [工作文件夹](work-folders-overview.md)<br />-   [适用于 Windows 7 的工作文件夹](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx)（博客文章）|
-|**部署**|-   [设计工作文件夹实现](plan-work-folders.md)<br />-   [部署工作文件夹](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 应用程序代理（WAP）部署工作文件夹](deploy-work-folders-adfs-overview.md)<br />- [使用 Azure AD 应用程序代理部署工作文件夹](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [工作文件夹部署的性能注意事项](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [适用于 Windows 7 的工作文件夹（64位下载）](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [适用于 Windows 7 的工作文件夹（32位下载）](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作文件夹测试实验室部署](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)（博客文章）|
+|**产品评估**|-   [工作文件夹](work-folders-overview.md)<br />-   [适用于 Windows 7 的工作文件夹](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)（博客文章）|
+|**部署**|-   [设计工作文件夹实现](plan-work-folders.md)<br />-   [部署工作文件夹](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 应用程序代理（WAP）部署工作文件夹](deploy-work-folders-adfs-overview.md)<br />- [使用 Azure AD 应用程序代理部署工作文件夹](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [工作文件夹部署的性能注意事项](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)<br />-   [适用于 Windows 7 的工作文件夹（64位下载）](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [适用于 Windows 7 的工作文件夹（32位下载）](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作文件夹测试实验室部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)（博客文章）|

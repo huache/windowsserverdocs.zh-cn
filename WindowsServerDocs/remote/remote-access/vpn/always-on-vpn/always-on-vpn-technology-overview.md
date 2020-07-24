@@ -8,12 +8,12 @@ ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 570b96d07f414442a00d5f7ec48de80f270f0a76
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e1291b377c408c23493ce5a7a946a343f5e28ead
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861310"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958729"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN 技术概述
 
@@ -76,15 +76,15 @@ IKEv2 是 Internet 工程任务团队请求注释7296中所述的 VPN 隧道协�
 
 NPS 允许您为连接请求身份验证和授权创建和强制实施组织范围的网络访问策略。 使用 NPS 作为远程身份验证拨入用户服务（RADIUS）服务器时，可以在 NPS 中将网络访问服务器（如 VPN 服务器）配置为 RADIUS 客户端。
 
-还可以配置 NPS 用于对连接请求进行授权的网络策略，并且可以配置 RADIUS 记帐，以便 NPS 将记帐信息记录到本地硬盘上或 Microsoft SQL Server 数据库中的日志文件。
+也可以配置有关使用 NPS 对连接请求进行授权的网络策略，并且可以配置 RADIUS 记帐，以便 NPS 将记帐信息记录到本地硬盘上或 Microsoft SQL Server 数据库中的日志文件。
 
-有关详细信息，请参阅[网络策略服务器（NPS）](../../../../networking/technologies/nps/nps-top.md)。
+有关详细信息，请参阅[网络策略服务器 (NPS)](../../../../networking/technologies/nps/nps-top.md)。
 
-## <a name="active-directory-certificate-services"></a>Active Directory Certificate Services
+## <a name="active-directory-certificate-services"></a>Active Directory 证书服务
 
 证书颁发机构（CA）服务器是运行 Active Directory 证书服务的证书颁发机构。 VPN 配置需要基于 Active Directory 的公钥基础结构（PKI）。
 
-组织可以通过将个人、设备或服务的标识绑定到相应的公钥，使用 AD CS 来增强安全性。 AD CS 还包括允许在各种可伸缩环境中管理证书注册及吊销的功能。 有关详细信息，请参阅[Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)和[公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)。
+组织可以通过将个人、设备或服务的标识绑定到相应的公钥，使用 AD CS 来增强安全性。 AD CS 还包括允许在各种可伸缩环境中管理证书注册及吊销的功能。 有关详细信息，请参阅[Active Directory 证书服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))和[公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)。
 
 部署完成期间，你将在 CA 上配置以下证书模板。
 
@@ -108,7 +108,7 @@ NPS 允许您为连接请求身份验证和授权创建和强制实施组织范�
 
 证书模板是企业证书颁发机构 (CA) 中必不可少的一部分。 对于环境而言，它们是证书策略的重要元素，是用于证书注册、使用和管理的一组规则和格式。
 
-有关详细信息，请参阅[证书模板](https://technet.microsoft.com/library/cc730705.aspx)。
+有关详细信息，请参阅[证书模板](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))。
 
 ### <a name="digital-server-certificates"></a>数字服务器证书
 
@@ -161,7 +161,7 @@ Active Directory 用户和计算机中的用户帐户具有 NPS 在授权过程�
 
 Windows 10 VPN 客户端是高度可配置的，并且提供了许多选项。 为了更好地说明此方案使用的特定功能，表1标识了此部署引用的 VPN 功能类别和特定配置。 你将使用本部署稍后部分中讨论的 VPNv2 配置服务提供程序（CSP）来配置这些功能的各个设置。 
 
-表 1。 此部署中讨论的 VPN 功能和配置
+表 1. 此部署中讨论的 VPN 功能和配置
 
 | VPN 功能     |     部署方案配置         |
 |-----------------|-----------------------------------------------|
@@ -182,7 +182,7 @@ Windows 10 VPN 客户端是高度可配置的，并且提供了许多选项。 �
 
 但是，不能直接通过用户界面（UI）（如 Intune 管理控制台）配置某些 CSP 节点。 在这些情况下，必须手动配置开放移动联盟统一资源标识符（OMA-URI）设置。 使用 OMA 设备管理协议（"OMA DM"）配置 OMA-URI，这是大多数新式 Apple、Android 和 Windows 设备支持的通用设备管理规范。 只要它们遵循 OMA 规范，所有 MDM 产品都应以相同的方式与这些操作系统交互。
 
-Windows 10 提供了许多 Csp，但此部署侧重于使用 VPNv2 CSP 来配置 VPN 客户端。 VPNv2 CSP 允许通过唯一 CSP 节点配置 Windows 10 中的每个 VPN 配置文件设置。 VPNv2 CSP 中还包含一个名为*ProfileXML*的节点，它允许您在一个节点中配置所有设置，而不是单独配置。 有关 ProfileXML 的详细信息，请参阅本部署后面的 "ProfileXML 概述" 部分。 有关每个 VPNv2 CSP 节点的详细信息，请参阅[VPNV2 csp](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp)。
+Windows 10 提供了许多 Csp，但此部署侧重于使用 VPNv2 CSP 来配置 VPN 客户端。 VPNv2 CSP 允许通过唯一 CSP 节点配置 Windows 10 中的每个 VPN 配置文件设置。 VPNv2 CSP 中还包含一个名为*ProfileXML*的节点，它允许您在一个节点中配置所有设置，而不是单独配置。 有关 ProfileXML 的详细信息，请参阅本部署后面的 "ProfileXML 概述" 部分。 有关每个 VPNv2 CSP 节点的详细信息，请参阅[VPNV2 csp](/windows/client-management/mdm/vpnv2-csp)。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -196,16 +196,16 @@ Windows 10 提供了许多 Csp，但此部署侧重于使用 VPNv2 CSP 来配置
 
 - [远程访问](../../Remote-Access.md)：本主题概述了 Windows server 2016 中的远程访问服务器角色。
 
-- [Windows 10 VPN 技术指南](https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide)：本指南将指导你完成在企业 VPN 解决方案中针对 Windows 10 客户端做出的决策，以及如何配置你的部署。 本指南引用 VPNv2 配置服务提供程序（CSP），并使用 Microsoft Intune 和适用于 Windows 10 的 VPN 配置文件模板提供移动设备管理（MDM）配置说明。
+- [Windows 10 VPN 技术指南](/windows/access-protection/vpn/vpn-guide)：本指南将指导你完成在企业 VPN 解决方案中针对 Windows 10 客户端做出的决策，以及如何配置你的部署。 本指南引用 VPNv2 配置服务提供程序 (CSP)，并提供使用 Microsoft Intune 和用于 Windows 10 的 VPN 配置文件模板的移动设备管理 (MDM) 配置说明。
 
 - [核心网络指南](../../../../networking/core-network-guide/Core-Network-Guide.md)：本指南提供了有关如何在新林中规划和部署完全正常运行的网络和新的 Active Directory 域所需的核心组件的说明。
 
 - [域名系统（dns）](../../../../networking/dns/dns-top.md)：本主题提供了域名系统（dns）的概述。 在 Windows Server 2016 中，DNS 是可以使用服务器管理器或 Windows PowerShell 命令安装的服务器角色。 如果要安装新的 Active Directory 林和域，则 DNS 会自动安装 Active Directory 作为林和域的全局目录服务器。
 
-- [Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)：本文档提供 Windows Server&reg; 2012 中 Active Directory 证书服务（AD CS）的概述。 AD CS 是允许你构建公钥基础机构 (PKI) 并为你的组织提供公钥加密、数字证书和数字签名功能的服务器角色。
+- [Active Directory 证书服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))：本文档概述了 Windows Server 2012 中的 Active Directory 证书服务（AD CS） &reg; 。 AD CS 是允许你构建公钥基础机构 (PKI) 并为你的组织提供公钥加密、数字证书和数字签名功能的服务器角色。
 
 - [公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)：此 wiki 提供了有关设计公钥基础结构（pki）的指导。 在配置 PKI 和证书颁发机构（CA）层次结构之前，你应该了解你的组织的安全策略和证书实行声明（CPS）。
 
-- [AD CS 循序渐进指南：双层 PKI 层次结构部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：本循序渐进指南介绍了在实验室环境中设置 Active Directory&reg; 证书服务（AD CS）的基本配置所需的步骤。 Windows Server 中的 AD CS&reg; 2008 R2 提供可自定义的服务，用于创建和管理在采用公钥技术的软件安全系统中使用的公钥证书。
+- [AD CS 循序渐进指南：双层 PKI 层次结构部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：本循序渐进指南介绍了 &reg; 在实验室环境中设置 Active Directory 证书服务（AD CS）的基本配置所需的步骤。 Windows Server &reg; 2008 R2 中的 AD CS 提供可自定义的服务，用于创建和管理在采用公钥技术的软件安全系统中使用的公钥证书。
 
 - [网络策略服务器（NPS）](../../../../networking/technologies/nps/nps-top.md)：本主题概述了 Windows server 2016 中的网络策略服务器。 通过网络策略服务器 (NPS)，你可以针对连接请求身份验证和授权创建并实施组织级网络访问策略。

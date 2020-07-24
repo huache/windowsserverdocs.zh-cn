@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: 1ab4c0946c1081019747420448a0217359282bf1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b00eb8a4c282cc8bafa9459b319c5c47f2d8c460
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469722"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960339"
 ---
 # <a name="known-issues-with-storage-replica"></a>存储副本的已知问题
 
@@ -356,7 +356,7 @@ SC config storqosflt start= disabled
 如果 ClusterFunctionalLevel = 9，即为在此节点上实现存储副本所需的 Windows 2016 ClusterFunctionalLevel 版本。
 如果 ClusterFunctionalLevel 是不 9，则需要更新 ClusterFunctionalLevel 才能在此节点上实现存储副本。
 
-若要解决此问题，请通过运行 PowerShell cmdlet 提高群集功能级别： [update-clusterfunctionallevel](https://docs.microsoft.com/powershell/module/failoverclusters/update-clusterfunctionallevel)
+若要解决此问题，请通过运行 PowerShell cmdlet 提高群集功能级别： [update-clusterfunctionallevel](/powershell/module/failoverclusters/update-clusterfunctionallevel)
 
 ## <a name="small-unknown-partition-listed-in-diskmgmt-for-each-replicated-volume"></a>DISKMGMT 中列出的针对每个已复制卷的小未知分区
 
@@ -384,7 +384,7 @@ SC config storqosflt start= disabled
 
 将存储空间直通与 Hdd 一起使用时，不能禁用或避免缓存。 一种解决方法是，如果仅使用 SSD 和 NVME，则可以仅配置性能层和容量层。 如果使用该配置，并且只通过将 SR 日志放在性能层上，只使用其服务在容量层上的数据卷，则可以避免上述高延迟问题。 同样，也可以通过混合速度更快、速度更慢的 Ssd，而不是 NVME。
 
-此解决方法当然并不理想，一些客户可能无法利用它。 存储副本团队正在致力于优化，并提供更新的日志机制，以减少这些人为瓶颈。 此 v1.1 日志首先在 Windows Server 2019 中提供，并在[服务器存储博客](https://blogs.technet.microsoft.com/filecab/2018/12/13/chelsio-rdma-and-storage-replica-perf-on-windows-server-2019-are-💯/)上的中介绍。
+此解决方法当然并不理想，一些客户可能无法利用它。 存储副本团队正在致力于优化，并提供更新的日志机制，以减少这些人为瓶颈。 此 v1.1 日志首先在 Windows Server 2019 中提供，并在[服务器存储博客](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)上的中介绍。
 
 ## <a name="error-could-not-find-file-when-running-test-srtopology-between-two-clusters"></a>在两个群集之间运行 Test-srtopology 时出现 "找不到文件" 错误
 
