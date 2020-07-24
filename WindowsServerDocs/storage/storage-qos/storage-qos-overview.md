@@ -8,22 +8,22 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 1a320a53ccda78ea19c8dc7b8e22c2bb2c1d236b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a65b031a13760c25676bab1f57eb98bd29bac19e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854110"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966459"
 ---
 # <a name="storage-quality-of-service"></a>存储服务质量
 
-> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 通过 Windows Server 2016 中的存储服务质量 (QoS)，可以使用 Hyper-V 和横向扩展文件服务器角色集中监视和管理虚拟机的存储性能。 此功能使用相同的文件服务器群集自动改进多个虚拟机间的存储资源公平度，并允许在标准的 IOPs 单元中配置基于策略的最小和最大性能目标。  
 
 可使用 Windows Server 2016 中的存储 QoS 完成以下操作：  
 
--   **缓解干扰邻居问题。** 默认情况下，存储 QoS 确保单个虚拟机不会使用所有存储资源，因此不会影响其他虚拟机的存储带宽。  
+-   **减轻干扰邻居问题。** 默认情况下，存储 QoS 确保单个虚拟机不会使用所有存储资源，因此不会影响其他虚拟机的存储带宽。  
 
 -   **监视端到端存储性能。** 一旦启动存储在横向扩展文件服务器上的虚拟机后，其性能将被监视。 可从单个位置查看所有运行的虚拟机的性能详细信息和横向扩展文件服务器群集的配置  
 
@@ -31,7 +31,7 @@ ms.locfileid: "80854110"
 
 本文档概述了你的业务如何从新的存储 QoS 功能中获益。 它假定你已具备 Windows Server、Windows Server 故障转移群集、横向扩展文件服务器、Hyper-V 和 Windows PowerShell 的工作知识。
 
-## <a name="overview"></a><a name="BKMK_Overview"></a>叙述  
+## <a name="overview"></a><a name="BKMK_Overview"></a>概述  
 本部分介绍使用存储 QoS 的要求、使用存储 QoS 的软件定义的解决方案的概述，以及与存储 QoS 相关的术语列表。  
 
 ### <a name="storage-qos-requirements"></a><a name="BKMK_Requirements"></a>存储 QoS 要求  
@@ -45,9 +45,9 @@ ms.locfileid: "80854110"
 
     对于存储 QoS，在存储服务器上需要故障转移群集，但是计算群集无需处于故障转移群集中。 所有服务器（用于存储和计算的服务器）都必须运行 Windows Server 2016。  
 
-    如果尚未部署用于评估的横向扩展文件服务器群集，有关使用现有服务器或虚拟机进行构建的分步说明，请参阅 [Windows Server 2012 R2 存储：使用存储空间、SMB 横向扩展和共享 VHDX（物理）的分步说明](https://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx)。  
+    如果尚未部署用于评估的横向扩展文件服务器群集，有关使用现有服务器或虚拟机进行构建的分步说明，请参阅 [Windows Server 2012 R2 存储：使用存储空间、SMB 横向扩展和共享 VHDX（物理）的分步说明](/archive/blogs/josebda/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical)。  
 
--   **使用群集共享卷的 hyper-v。** 此方案需要以下两项：  
+-   **使用群集共享卷的 Hyper-V。** 此方案需要以下两项：  
 
     -   启用了 Hyper-V 角色的计算群集  
 
@@ -60,9 +60,9 @@ ms.locfileid: "80854110"
 
 ![横向扩展文件服务器和存储 QoS](media/overview-Clustering_SOFSStorageQoS.png)  
 
-**图1：在横向扩展文件服务器中的软件定义的存储解决方案中使用存储 QoS**  
+**图 1：在横向扩展文件服务器中的软件定义的存储解决方案中使用存储 QoS**  
 
-当 Hyper-V 服务器启动虚拟机时，它们由策略管理器监视。 策略管理器会传达存储 QoS 策略和 Hyper-V 服务器的任何限制或保留，以对虚拟机的性能进行适当的控制。  
+当 Hyper-V 服务器启动虚拟机时，它们由策略管理器监视。 策略管理器会传达存储 QoS 策略和 Hyper-V 服务器的任何限制或预留，以对虚拟机的性能进行适当的控制。  
 
 当存在由虚拟机对存储 QoS 策略或性能需求进行的更改时，策略管理器将通知 Hyper-V 服务器调整其行为。 此反馈循环确保所有虚拟机 VHD 根据定义的存储 QoS 策略一致地执行。  
 
@@ -71,17 +71,17 @@ ms.locfileid: "80854110"
 |术语|说明|  
 |--------|---------------|  
 |规范化 IOPs|所有的存储使用情况以“规范化 IOPs”测量。  这是每秒的存储输入/输出操作数。  任何 8 KB 或更小的 IO 被视为一个规范化 IO。  任何大于 8 KB 的 IO 被视为多个规范化 IO。 例如，一个 256 KB 的请求被视为 32 个规范化 IOPs。<p>Windows Server 2016 包括指定用于规范化 IO 的大小的功能。  在存储群集上，可以指定规范化大小，并使其在规范化计算群集范围内生效。  默认值仍为 8 KB。|  
-|流|由 Hyper-V 服务器打开到 VHD 或 VHDX 文件的每个文件句柄均可视为一个“流”。 如果一个虚拟机连接了两个虚拟硬盘，则该虚拟机的每个文件的文件服务器群集均有一个流。 如果 VHDX 与多个虚拟机共享，则它的每个虚拟机均有一个流。|  
+|流向|由 Hyper-V 服务器打开到 VHD 或 VHDX 文件的每个文件句柄均可视为一个“流”。 如果一个虚拟机连接了两个虚拟硬盘，则该虚拟机的每个文件的文件服务器群集均有一个流。 如果 VHDX 与多个虚拟机共享，则它的每个虚拟机均有一个流。|  
 |InitiatorName|针对每个流的横向扩展文件服务器报告的虚拟机的名称。|  
 |InitiatorID|与虚拟机 ID 匹配的标识符。  这可始终用于对单个流虚拟机进行唯一标识，即使该虚拟机具有相同的 InitiatorName。|  
 |策略|存储 QoS 策略存储在群集数据库中，并具有以下属性：PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy 和 PolicyType。|  
 |PolicyId|策略的唯一标识符。  默认生成，但可根据需要指定。|  
-|MinimumIOPS|将由策略提供的最小规范化 IOPS。  也称为“保留”。|  
+|MinimumIOPS|将由策略提供的最小规范化 IOPS。  也称为“预留”。|  
 |MaximumIOPS|将由策略限制的最大规范化 IOPS。  也称为“限制”。|  
 |聚合 |一种策略类型，其中指定的MinimumIOPS 和 MaximumIOPS 以及带宽在由策略分配的所有流之间共享。 所有 VHD 分配的该存储系统上的策略均具有单个 I/O 带宽的分配，以供其全部共享。|  
 |专用|一种策略类型，其中对指定的最小和最大 IOPS 以及带宽进行管理，以供单个 VHD/VHDx 使用。|  
 
-## <a name="how-to-set-up-storage-qos-and-monitor-basic-performance"></a><a name="BKMK_SetUpQoS"></a>如何设置存储 QoS 和监视基本性能  
+## <a name="how-to-set-up-storage-qos-and-monitor-basic-performance"></a><a name="BKMK_SetUpQoS"></a>如何设置存储 QoS 并监视基本性能  
 本部分介绍如何启用新的存储 QoS 功能以及如何在未应用自定义策略的情况下监视存储性能。  
 
 ### <a name="set-up-storage-qos-on-a-storage-cluster"></a><a name="BKMK_SetupStorageQoSonStorageCluster"></a>在存储群集上设置存储 QoS  
@@ -95,7 +95,7 @@ ms.locfileid: "80854110"
 
 ![存储 QoS 资源将在群集核心资源中显示](media/overview-Clustering_StorageQoSFCM.png)  
 
-**图2：存储 QoS 资源显示为故障转移群集管理器中的群集核心资源**  
+**图 2：存储 QoS 资源在故障转移群集管理器中作为群集核心资源显示**  
 
 使用以下 PowerShell cmdlet 查看存储 QoS 资源的状态。  
 
@@ -122,12 +122,12 @@ Windows Server 2016 中的 Hyper-V 角色具有对存储 QoS 的内置支持并�
 -   Windows PowerShell：Add-WindowsFeature RSAT-Hyper-V-Tools  
 
 #### <a name="deploy-virtual-machines-to-run-workloads-for-testing"></a>部署运行工作负荷的虚拟机以用于测试  
-你将需要存储在具有相关工作负荷的横向扩展文件服务器上的一些虚拟机。  有关模拟负载并执行某些压力测试的一些技巧，请参阅以下页面以获取推荐的工具 (DiskSpd) 和某些示例使用情况：[DiskSpd、PowerShell 和存储性能：为本地磁盘和 SMB 文件共享测量 IOPs、吞吐量和延迟](https://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)  
+你将需要存储在具有相关工作负荷的横向扩展文件服务器上的一些虚拟机。  有关模拟负载并执行某些压力测试的一些技巧，请参阅以下页面以获取推荐的工具 (DiskSpd) 和某些示例使用情况：[DiskSpd、PowerShell 和存储性能：为本地磁盘和 SMB 文件共享测量 IOPs、吞吐量和延迟](/archive/blogs/josebda/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares)  
 
 本指南中所示的示例方案包括五个虚拟机。 BuildVM1、BuildVM2、BuildVM3 和 BuildVM4 运行从低到中等存储需求的桌面工作负荷。 TestVm1 运行具有高存储需求的联机事务处理基准。  
 
 ### <a name="view-current-storage-performance-metrics"></a>查看当前存储性能指标  
-本部分包括：  
+本节包括：  
 
 -   如何使用 `Get-StorageQosFlow` cmdlet 查询流。  
 
@@ -247,7 +247,7 @@ MinimumIops        : 500
     -   **UnknownPolicyId** - 策略被分配到 Hyper-V 主机上的虚拟机，但在文件服务器中丢失。  此策略应从虚拟机配置中删除，或应在文件服务器群集上创建匹配的策略。  
 
 #### <a name="view-performance-for-a-volume-using-get-storageqosvolume"></a>使用 Get-StorageQosVolume 查看卷的性能  
-除了每个流的性能指标，还将收集每个存储卷级别上的存储性能指标。  这样将易于查看以规范化 IOPs、延迟以及应用到卷的聚合限制和保留表示的平均总利用率。  
+除了每个流的性能指标，还将收集每个存储卷级别上的存储性能指标。  这样将易于查看以规范化 IOPs、延迟以及应用到卷的聚合限制和预留表示的平均总利用率。  
 
 ```PowerShell
 PS C:\> Get-StorageQosVolume | Format-List  
@@ -289,7 +289,7 @@ MaximumIops    : 0
 MinimumIops    : 781  
 ```  
 
-## <a name="how-to-create-and-monitor-storage-qos-policies"></a><a name="BKMK_CreateQoSPolicies"></a>如何创建和监视存储 QoS 策略  
+## <a name="how-to-create-and-monitor-storage-qos-policies"></a><a name="BKMK_CreateQoSPolicies"></a>如何创建并监视存储 QoS 策略  
 本部分介绍如何创建存储 QoS 策略、如何向虚拟机应用这些策略以及在应用策略后如何监视存储群集。  
 
 ### <a name="create-storage-qos-policies"></a>创建存储 QoS 策略  
@@ -386,7 +386,7 @@ IsDeleted                     : False
 ```  
 
 ### <a name="query-for-storage-qos-policies"></a>查询存储 QoS 策略  
-`Get-StorageQosPolicy` 在横向扩展文件服务器上列出所有已配置的策略及其状态。  
+`Get-StorageQosPolicy`列出所有配置的策略及其在横向扩展文件服务器上的状态。  
 
 ```PowerShell
 PS C:\> Get-StorageQosPolicy  
@@ -823,7 +823,7 @@ while ($true)
 
 如果你具有达到策略最大值的流，且将该策略的值更改为更高或更低，然后使用 PowerShell cmdlets 立即确定流的延迟/IOPS/带宽，则需要最多 5 分钟才能看到流上的策略更改所产生的全部效果。  新的限制将在几秒内生效，但是 **Get-StorgeQoSFlow PowerShell cmdlet** 通过使用 5 分钟的滑动窗口来使用每个计数器的平均值。  否则，如果它显示当前值，且你在行中多次运行 PowerShell cmdlet，则你将会看到完全不同的值，因为 IOPS 和延迟的值从一秒到另一秒波动很大。
 
-### <a name="what-new-functionality-was-added-in-windows-server-2016"></a><a name="BKMK_Updates"></a>Windows Server 2016 中新增了哪些功能
+### <a name="what-new-functionality-was-added-in-windows-server-2016"></a><a name="BKMK_Updates"></a>Windows Server 2016 中的新增功能
 
 Windows Server 2016 中已重命名存储 QoS 策略类型名称。  **多实例**策略类型被重命名为**专用**，而**单实例**被重命名为**聚合**。 专用策略的管理行为也被修改 - 具有应用于同一**专用**策略的同一虚拟机内的 VHD/VHDX 文件将不会共享 I/O 分配。  
 
@@ -834,7 +834,7 @@ Windows Server 2016 中新增了两个存储 QoS 功能：
     Windows Server 2016 中的存储 QoS 引入了指定向策略分配的流可使用的最大带宽的功能。  在 **StorageQosPolicy** cmdlet 中指定的参数为 **MaximumIOBandwidth**，且输出表示为字节/秒。  
     如果 **MaximimIops** 和 **MaximumIOBandwidth** 均在策略中设置，则它们都将生效，且流达到的第一个值将限制流的 I/O。  
 
--   **IOPS 规范化可配置**  
+-   **IOPS 规范化是可配置的**  
 
     存储 QoSin 使用 IOPS 规范化。  默认值是使用 8 K 的规范化大小。  Windows Server 2016 中的存储 QoS 引入了为存储群集指定不同规范化大小的功能。  此规范化大小对存储群集上的所有流均生效，且在其更改后立即生效（几秒钟内）。  最小值为 1 KB，最大值为 4 GB（建议不要设置超出 4 MB，因为很少需要超出 4 MB IO）。  
 

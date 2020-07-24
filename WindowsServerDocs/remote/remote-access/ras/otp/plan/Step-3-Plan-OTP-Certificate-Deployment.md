@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 03ae91c0360153789658e0c31cb17980fad32bab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a65ddec97bcdd911d0cf81bfd54e2ddbb286ed54
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855760"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965255"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>步骤3规划 OTP 证书部署
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-在规划 RADIUS 服务器后，你必须规划证书颁发机构（CA）要求，包括将颁发一次性密码（OTP）证书的 CA、OTP 证书模板和远程使用的注册机构证书。访问服务器来对所有 DirectAccess 客户端 OTP 证书请求进行签名。 这些证书的使用方式如下：  
+在规划 RADIUS 服务器后，你必须规划证书颁发机构（CA）要求，包括将颁发一次性密码（OTP）证书的 CA、OTP 证书模板以及远程访问服务器用来对所有 DirectAccess 客户端 OTP 证书请求进行签名的证书颁发机构证书。 这些证书的使用方式如下：  
   
 1.  DirectAccess 客户端请求 OTP 证书，远程访问服务器接收该请求。  
   
@@ -54,7 +54,7 @@ ms.locfileid: "80855760"
 -   有效期应设置为一小时。  
   
     > [!NOTE]  
-    > 在 CA 服务器是 Windows Server 2003 计算机的情况下，必须在另一台计算机上配置模板。 这是因为，在运行 2008/Vista 之前的 Windows 版本时，不能以小时为单位设置**有效期**。 如果用于配置模板的计算机未安装证书服务角色，或者它是一台客户端计算机，则可能需要安装 "证书模板" 管理单元。 有关此主题的详细信息，请单击[此处](https://technet.microsoft.com/library/cc732445.aspx)。  
+    > 在 CA 服务器是 Windows Server 2003 计算机的情况下，必须在另一台计算机上配置模板。 这是因为，在运行 2008/Vista 之前的 Windows 版本时，不能以小时为单位设置**有效期**。 如果用于配置模板的计算机未安装证书服务角色，或者它是一台客户端计算机，则可能需要安装 "证书模板" 管理单元。 有关此主题的详细信息，请单击[此处](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732445(v=ws.11))。  
   
 -   续订期应设置为0。  
   
@@ -73,5 +73,3 @@ ms.locfileid: "80855760"
   
 -   [步骤4：为远程访问服务器规划 OTP](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   
-
-

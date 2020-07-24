@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 9ce9aa052290b82b2f085cb4637fcffbdf7b42ce
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d7f1b5387d82d487e50b217b28367e82617a66ea
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473114"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966249"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>存储迁移服务常见问题（FAQ）
 
@@ -128,7 +128,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持迁移文件的
 
 - **启用高性能处理。** 确保服务器的 BIOS/UEFI 设置启用高性能，例如禁用 C-State、设置 QPI 速度、启用 NUMA 和设置最高内存频率。 确保 Windows Server 中的电源管理设置为高性能。 根据需要重启。 完成迁移后，请不要忘记将这些状态返回到适当的状态。
 
-- **调整硬件**查看[Windows server 2016 的性能调整准则](https://docs.microsoft.com/windows-server/administration/performance-tuning/)，以优化运行 windows server 2019 和 windows server 2016 的 orchestrator 和目标计算机。 [网络子系统性能优化](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics)部分包含特别有用的信息。
+- **调整硬件**查看[Windows server 2016 的性能调整准则](/windows-server/administration/performance-tuning/)，以优化运行 windows server 2019 和 windows server 2016 的 orchestrator 和目标计算机。 [网络子系统性能优化](../../networking/technologies/network-subsystem/net-sub-performance-tuning-nics.md)部分包含特别有用的信息。
 
 - **使用更快的存储。** 尽管很难升级源计算机存储速度，但在源处于读取 IO 性能时，应确保目标存储至少具有更快的速度，因为这样可以确保传输中没有不必要的瓶颈。 如果目标是 VM，请确保至少出于迁移目的，它在虚拟机监控程序主机的最快存储层中运行，例如在闪存层上，或使用镜像的全部闪存或混合空间存储空间直通 HCI 群集。 SMS 迁移完成后，可以将 VM 实时迁移到慢速层或主机上。
 
@@ -164,7 +164,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移
 
 ## <a name="what-do-the-error-numbers-mean-in-the-transfer-csv"></a>在传输 CSV 中，错误号是什么意思？
 
-在传输 CSV 文件中找到的大多数错误都是 Windows 系统错误代码。 您可以通过查看[Win32 错误代码文档](https://docs.microsoft.com/windows/win32/debug/system-error-codes)来了解每个错误的含义。
+在传输 CSV 文件中找到的大多数错误都是 Windows 系统错误代码。 您可以通过查看[Win32 错误代码文档](/windows/win32/debug/system-error-codes)来了解每个错误的含义。
 
 ## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a>什么是提供反馈、文件 bug 或获取支持的选项？
 

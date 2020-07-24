@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4b0240a3-b927-4a1e-b241-5f8f29a9552f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e206ead9d4af53c0ee404eb5077c88fef2b87ba7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e7a32f3da4554462226fd7315708b94a8a61e19
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815840"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965599"
 ---
 # <a name="bgp-windows-powershell-command-reference"></a>BGP Windows PowerShell 命令参考
 
@@ -23,7 +23,7 @@ ms.locfileid: "80815840"
   
 这些 BGP 命令是 Windows Server 2016 的远程访问 Windows PowerShell 命令集的一部分。 本主题将帮助你快速找到要在脚本中使用的 BGP 命令。  
   
-有关所有远程访问命令的详细信息，请参阅[远程访问 cmdlet](https://technet.microsoft.com/library/hh918399.aspx)。  
+有关所有远程访问命令的详细信息，请参阅[远程访问 cmdlet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))。  
   
 ## <a name="bgp-command-reference"></a>BGP 命令参考  
 以下各节提供了每个 BGP 命令的命令名称、用途和语法，以及指向远程访问引用中命令的链接，其中包含有关每个命令的更多详细信息。  
@@ -51,7 +51,7 @@ ms.locfileid: "80815840"
 ### <a name="add-commands"></a><a name="bkmk_add"></a>添加命令  
 下面是 BGP Add 命令。  
   
-[Add-bgpcustomroute](https://technet.microsoft.com/library/dn262684.aspx)  
+[Add-bgpcustomroute](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 向 BGP 路由表添加自定义路由。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "80815840"
 Add-BgpCustomRoute [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-Interface <String[]> ] [-Network <String[]> ] [-PassThru] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Bgp](https://technet.microsoft.com/library/dn262687.aspx)  
+[Bgp](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 添加新的 BGP 对等方。  
   
@@ -67,7 +67,7 @@ Add-BgpCustomRoute [-CimSession <CimSession[]> ] [-InformationAction <System.Man
 Add-BgpPeer [-Name] <String> -LocalIPAddress <IPAddress> -PeerASN <UInt32> -PeerIPAddress <IPAddress> [-CimSession <CimSession[]> ] [-HoldTimeSec <UInt16> ] [-IdleHoldTimeSec <UInt16> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-LocalASN <UInt32> ] [-MaxAllowedPrefix <UInt32> ] [-OperationMode <OperationMode> {Mixed | Server} ] [-PassThru] [-PeeringMode <PeeringMode> {Automatic | Manual} ] [-RouteReflectorClient <Boolean> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Weight <UInt16> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouteAggregate](https://technet.microsoft.com/library/mt463113.aspx)  
+[BgpRouteAggregate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 为特定 BGP 路由添加新的聚合路由。  
   
@@ -75,7 +75,7 @@ Add-BgpPeer [-Name] <String> -LocalIPAddress <IPAddress> -PeerASN <UInt32> -Peer
 Add-BgpRouteAggregate -Prefix <String> [-AttributePolicy <String[]> ] [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-PassThru] [-PreserveASPath <PreserveASPath> ] [-RoutingDomain <String> ] [-SummaryOnly <SummaryOnly> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouter](https://technet.microsoft.com/library/dn262665.aspx)  
+[BgpRouter](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 为指定的租户 ID 添加 BGP 路由器。  
   
@@ -83,7 +83,7 @@ Add-BgpRouteAggregate -Prefix <String> [-AttributePolicy <String[]> ] [-CimSessi
 Add-BgpRouter -BgpIdentifier <IPAddress> -LocalASN <UInt32> [-CimSession <CimSession[]> ] [-ClientToClientReflection <ClientToClientReflection> ] [-ClusterId <UInt32> ] [-CompareMEDAcrossASN <Boolean> ] [-DefaultGatewayRouting <Boolean> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-IPv6Routing <IPv6RoutingState> {Disabled | Enabled} ] [-LocalIPv6Address <IPAddress> ] [-PassThru] [-RouteReflector <RouteReflector> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-TransitRouting <TransitRouting> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRoutingPolicy](https://technet.microsoft.com/library/dn262662.aspx)  
+[BgpRoutingPolicy](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 将 BGP 路由策略添加到策略存储区。  
   
@@ -91,7 +91,7 @@ Add-BgpRouter -BgpIdentifier <IPAddress> -LocalASN <UInt32> [-CimSession <CimSes
 Add-BgpRoutingPolicy [-Name] <String> [-PolicyType] <PolicyType> {Deny | Allow | ModifyAttribute} [-AddCommunity <String[]> ] [-CimSession <CimSession[]> ] [-ClearMED] [-Force] [-IgnorePrefix <String[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-MatchASNRange <UInt32[]> ] [-MatchCommunity <String[]> ] [-MatchNextHop <IPAddress[]> ] [-MatchPrefix <String[]> ] [-NewLocalPref <UInt32]> ] [-NewMED <UInt32]> ] [-NewNextHop <IPAddress> ] [-PassThru] [-RemoveAllCommunities] [-RemoveCommunity <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRoutingPolicyForPeer](https://technet.microsoft.com/library/dn262680.aspx)  
+[BgpRoutingPolicyForPeer](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 将 BGP 路由策略添加到 BGP 对等方。  
   
@@ -102,7 +102,7 @@ Add-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -Pol
 ### <a name="clear-commands"></a><a name="bkmk_clear"></a>清除命令  
 以下是 BGP 的清除命令  
   
-[BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463114.aspx)  
+[BgpRouteFlapDampening](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 清除指定 BGP 路由集的路由摆动抑制信息。  
   
@@ -113,7 +113,7 @@ Clear-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-Information
 ### <a name="disable-and-enable-commands"></a><a name="bkmk_disable"></a>禁用和启用命令  
 以下是 BGP 的禁用和启用命令  
   
-[BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463100.aspx)  
+[BgpRouteFlapDampening](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 为稳定 BGP 路由禁用路由抑制。  
   
@@ -121,7 +121,7 @@ Clear-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-Information
 Disable-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463102.aspx)  
+[BgpRouteFlapDampening](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 为稳定 BGP 路由启用路由抑制。  
   
@@ -132,7 +132,7 @@ Enable-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-Informatio
 ### <a name="get-commands"></a><a name="bkmk_get"></a>获取命令  
 下面是针对 BGP 的 Get 命令。  
   
-[Add-bgpcustomroute](https://technet.microsoft.com/library/dn262664.aspx)  
+[Add-bgpcustomroute](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 获取来自 BGP 路由器的自定义路由信息。  
   
@@ -140,7 +140,7 @@ Enable-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-Informatio
 Get-BgpCustomRoute [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Bgp](https://technet.microsoft.com/library/dn262659.aspx)  
+[Bgp](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 获取 BGP 对等节点的配置信息。  
   
@@ -148,7 +148,7 @@ Get-BgpCustomRoute [-CimSession <CimSession[]> ] [-InformationAction <System.Man
 Get-BgpPeer [[-Name] <String[]> ] [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouteAggregate](https://technet.microsoft.com/library/mt463103.aspx)  
+[BgpRouteAggregate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 获取管理员配置的所有聚合 BGP 路由。  
   
@@ -156,7 +156,7 @@ Get-BgpPeer [[-Name] <String[]> ] [-CimSession <CimSession[]> ] [-InformationAct
 Get-BgpRouteAggregate [-CimSession <CimSession[]> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-Prefix <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463108.aspx)  
+[BgpRouteFlapDampening](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 检索 BGP 路由抑制引擎的配置。  
   
@@ -164,7 +164,7 @@ Get-BgpRouteAggregate [-CimSession <CimSession[]> ] [-InformationAction <ActionP
 Get-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouteInformation](https://technet.microsoft.com/library/dn262667.aspx)  
+[BgpRouteInformation](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 从 BGP 路由表中检索一个或多个网络前缀的 BGP 路由信息。  
   
@@ -172,7 +172,7 @@ Get-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-InformationAction <Act
 Get-BgpRouteInformation [-CimSession <CimSession[]> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-Network <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Type <RouteType> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouter](https://technet.microsoft.com/library/dn262660.aspx)  
+[BgpRouter](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 获取 BGP 路由器的配置信息。  
   
@@ -180,7 +180,7 @@ Get-BgpRouteInformation [-CimSession <CimSession[]> ] [-InformationAction <Actio
 Get-BgpRouter [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String[]> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRoutingPolicy](https://technet.microsoft.com/library/dn262672.aspx)  
+[BgpRoutingPolicy](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 获取 BGP 路由策略的配置信息。  
   
@@ -188,7 +188,7 @@ Get-BgpRouter [-CimSession <CimSession[]> ] [-InformationAction <System.Manageme
 Get-BgpRoutingPolicy [[-Name] <String[]> ] [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PolicyType <PolicyType> {Deny | Allow | ModifyAttribute} ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Get-bgpstatistics](https://technet.microsoft.com/library/dn262685.aspx)  
+[Get-bgpstatistics](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 检索与 BGP 对等互连相关的消息和路由播发统计信息。  
   
@@ -199,9 +199,9 @@ Get-BgpStatistics [-CimSession <CimSession[]> ] [-InformationAction <System.Mana
 ### <a name="install-commands"></a><a name="bkmk_install"></a>安装命令  
 以下是 RAS 网关和 BGP 的安装命令。  
   
-[安装-RemoteAccess](https://technet.microsoft.com/library/hh918408.aspx)  
+[安装-RemoteAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
-为 DirectAccess （DA）执行先决条件检查以确保可以安装它、安装用于远程访问的 DA （包括远程客户端管理）或仅对远程客户端进行管理，安装 VPN （远程访问 VPN 和站点到站点 VPN）和安装 BGP 路由。  
+为 DirectAccess （DA）执行先决条件检查，以确保可以安装它、安装用于远程访问的 DA （包括远程客户端管理）或仅管理远程客户端，安装 VPN （远程访问 VPN 和站点到站点 VPN），并安装 BGP 路由。  
   
 ```  
 Parameter Set: MultiTenant  
@@ -233,7 +233,7 @@ Install-RemoteAccess -VpnType RoutingOnly
 ### <a name="remove-commands"></a><a name="bkmk_remove"></a>删除命令  
 以下是 BGP 的删除命令。  
   
-[Add-bgpcustomroute](https://technet.microsoft.com/library/dn262669.aspx)  
+[Add-bgpcustomroute](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 从 BGP 路由器中删除自定义路由。  
   
@@ -241,7 +241,7 @@ Install-RemoteAccess -VpnType RoutingOnly
 Remove-BgpCustomRoute [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-Interface <String[]> ] [-Network <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Bgp](https://technet.microsoft.com/library/dn262675.aspx)  
+[Bgp](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 从路由器中删除 BGP 对等方。  
   
@@ -249,7 +249,7 @@ Remove-BgpCustomRoute [-CimSession <CimSession[]> ] [-Force] [-InformationAction
 Remove-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouteAggregate](https://technet.microsoft.com/library/mt463110.aspx)  
+[BgpRouteAggregate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 删除指定聚合 BGP 路由的集合。  
   
@@ -257,7 +257,7 @@ Remove-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-Infor
 Remove-BgpRouteAggregate [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-Prefix <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouter](https://technet.microsoft.com/library/dn262678.aspx)  
+[BgpRouter](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 删除 BGP 路由器。  
   
@@ -265,7 +265,7 @@ Remove-BgpRouteAggregate [-CimSession <CimSession[]> ] [-Force] [-InformationAct
 Remove-BgpRouter [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String[]> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRoutingPolicy](https://technet.microsoft.com/library/dn262656.aspx)  
+[BgpRoutingPolicy](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 从策略存储中删除路由策略。  
   
@@ -273,7 +273,7 @@ Remove-BgpRouter [-CimSession <CimSession[]> ] [-Force] [-InformationAction <Sys
 Remove-BgpRoutingPolicy [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRoutingPolicyForPeer](https://technet.microsoft.com/library/dn262681.aspx)  
+[BgpRoutingPolicyForPeer](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 从 BGP 对等节点中删除路由策略。  
   
@@ -285,7 +285,7 @@ Remove-BgpRoutingPolicyForPeer [-CimSession <CimSession[]> ] [-Direction <Policy
 ### <a name="set-commands"></a><a name="bkmk_set"></a>设置命令  
 以下是 BGP 的 Set 命令。  
   
-[Bgp](https://technet.microsoft.com/library/dn262673.aspx)  
+[Bgp](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 更新指定的 BGP 对等节点的配置。  
   
@@ -293,7 +293,7 @@ Remove-BgpRoutingPolicyForPeer [-CimSession <CimSession[]> ] [-Direction <Policy
 Set-BgpPeer [-Name] <String> [-CimSession <CimSession[]> ] [-ClearPrefixLimit] [-Force] [-HoldTimeSec <UInt16> ] [-IdleHoldTimeSec <UInt16> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-LocalASN <UInt32> ] [-LocalIPAddress <IPAddress> ] [-MaxAllowedPrefix <UInt32> ] [-OperationMode <OperationMode> {Mixed | Server} ] [-PassThru] [-PeerASN <UInt32> ] [-PeeringMode <PeeringMode> {Automatic | Manual} ] [-PeerIPAddress <IPAddress> ] [-RouteReflectorClient <Boolean> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Weight <UInt16> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouteAggregate](https://technet.microsoft.com/library/mt463115.aspx)  
+[BgpRouteAggregate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 更新指定聚合 BGP 路由的属性。  
   
@@ -301,7 +301,7 @@ Set-BgpPeer [-Name] <String> [-CimSession <CimSession[]> ] [-ClearPrefixLimit] [
 Set-BgpRouteAggregate -Prefix <String> [-AttributePolicy <String[]> ] [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-PassThru] [-PreserveASPath <PreserveASPath> ] [-RoutingDomain <String> ] [-SummaryOnly <SummaryOnly> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463116.aspx)  
+[BgpRouteFlapDampening](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 配置 BGP 路由抑制引擎。  
   
@@ -309,7 +309,7 @@ Set-BgpRouteAggregate -Prefix <String> [-AttributePolicy <String[]> ] [-CimSessi
 Set-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-HalfLife <UInt32> ] [-HalfLifeUnreachable <UInt32> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-MaxSuppressTime <UInt32> ] [-PassThru] [-ReuseThreshold <UInt32> ] [-RoutingDomain <String> ] [-SuppressThreshold <UInt32> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRouter](https://technet.microsoft.com/library/dn262652.aspx)  
+[BgpRouter](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 为指定的租户 ID 更新本地 BGP 路由器的配置。  
   
@@ -317,7 +317,7 @@ Set-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-HalfLife <UIn
 Set-BgpRouter [-BgpIdentifier <IPAddress> ] [-CimSession <CimSession[]> ] [-ClientToClientReflection <ClientToClientReflection> ] [-ClusterId <UInt32> ] [-CompareMEDAcrossASN <Boolean> ] [-DefaultGatewayRouting <Boolean> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-IPv6Routing <IPv6RoutingState> {Disabled | Enabled} ] [-LocalASN <UInt32> ] [-LocalIPv6Address <IPAddress> ] [-PassThru] [-RouteReflector <RouteReflector> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-TransitRouting <TransitRouting> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRoutingPolicy](https://technet.microsoft.com/library/dn262670.aspx)  
+[BgpRoutingPolicy](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 修改路由策略配置。  
   
@@ -325,7 +325,7 @@ Set-BgpRouter [-BgpIdentifier <IPAddress> ] [-CimSession <CimSession[]> ] [-Clie
 Set-BgpRoutingPolicy [-Name] <String> [-AddCommunity <String[]> ] [-CimSession <CimSession[]> ] [-ClearMED] [-Force] [-IgnorePrefix <String[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-MatchASNRange <UInt32[]> ] [-MatchCommunity <String[]> ] [-MatchNextHop <IPAddress[]> ] [-MatchPrefix <String[]> ] [-NewLocalPref <UInt32]> ] [-NewMED <UInt32]> ] [-NewNextHop <IPAddress> ] [-PassThru] [-PolicyType <PolicyType> {Deny | Allow | ModifyAttribute} ] [-RemoveAllCommunities] [-RemoveCommunity <String[]> ] [-RemovePolicyClause <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[BgpRoutingPolicyForPeer](https://technet.microsoft.com/library/dn262674.aspx)  
+[BgpRoutingPolicyForPeer](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 为 BGP 对等节点修改 BGP 路由策略。  
   
@@ -336,7 +336,7 @@ Set-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -Pol
 ### <a name="start-and-stop-commands"></a><a name="bkmk_start"></a>启动和停止命令  
 以下是 BGP 的启动和停止命令。  
   
-[Bgp](https://technet.microsoft.com/library/dn262683.aspx)  
+[Bgp](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 开始 BGP 对等节点的路由会话。  
   
@@ -344,7 +344,7 @@ Set-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -Pol
 Start-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[停止-Bgp](https://technet.microsoft.com/library/dn262661.aspx)  
+[停止-Bgp](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 停止 BGP 对等节点的路由会话。  
   
@@ -355,7 +355,7 @@ Stop-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-Informa
 ### <a name="uninstall-commands"></a><a name="bkmk_uninstall"></a>卸载命令  
 以下是 RAS 网关和 BGP 的卸载命令。  
   
-[卸载-RemoteAccess](https://technet.microsoft.com/library/hh918390.aspx)  
+[卸载-RemoteAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 卸载计算机的远程访问权限，包括所有远程访问特性和功能（RAS 网关、BGP 等）。  
   
@@ -363,5 +363,3 @@ Stop-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-Informa
 Uninstall-RemoteAccess [-CimSession <CimSession[]> ] [-ComputerName <String> ] [-EntrypointName <String> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-ThrottleLimit <Int32> ] [-VpnType <String> {Vpn | VpnS2S} ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-
-

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 68624e2307e5ddefc6e32160cabfcd140f609966
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8c1b3141b6afa375ad6029b89f55d99f1122e90d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407240"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965489"
 ---
 # <a name="ad-fs-password-attack-protection"></a>AD FS 密码攻击保护
 
@@ -27,7 +27,7 @@ ms.locfileid: "71407240"
 共有两种类型的常见密码攻击。 密码喷涂攻击 & 暴力破解密码攻击。 
 
 ### <a name="password-spray-attack"></a>密码喷涂攻击
-在密码喷涂攻击中，这些不良的执行组件将在多个不同的帐户和服务中尝试使用最常见的密码，以访问他们可以找到的任何受密码保护的资产。 通常，它们涵盖许多不同的组织和标识提供者。 例如，攻击者将使用一个通常可用的工具包来枚举多个组织中的所有用户，然后针对所有这些帐户尝试 "P @ $ $w 0rd" 和 "Password1"。 为了给出这种想法，攻击可能如下所示：
+在密码喷涂攻击中，这些不良的执行组件将在多个不同的帐户和服务中尝试使用最常见的密码，以访问他们可以找到的任何受密码保护的资产。 通常，它们涵盖许多不同的组织和标识提供者。 例如，攻击者将使用一个通常可用的工具包来枚举多个组织中的所有用户，然后针对所有这些帐户尝试 "P@ $ $w 0rd" 和 "Password1"。 为了给出这种想法，攻击可能如下所示：
 
 
 |  目标用户   | 目标密码 |
@@ -37,10 +37,10 @@ ms.locfileid: "71407240"
 | User1@org2.com |    Password1    |
 | User2@org2.com |    Password1    |
 |       …        |        …        |
-| User1@org1.com |    P @ $ $w 0rd     |
-| User2@org1.com |    P @ $ $w 0rd     |
-| User1@org2.com |    P @ $ $w 0rd     |
-| User2@org2.com |    P @ $ $w 0rd     |
+| User1@org1.com |    P@$$w0rd     |
+| User2@org1.com |    P@$$w0rd     |
+| User1@org2.com |    P@$$w0rd     |
+| User2@org2.com |    P@$$w0rd     |
 
 这种攻击模式 evades 大多数检测技术，因为在单个用户或公司的 vantage 点，攻击就好像是隔离的失败登录。
 
@@ -59,16 +59,16 @@ ms.locfileid: "71407240"
 
 
 - 级别1，基线：这些是必须在 AD FS 服务器上配置的基本设置，以确保不良执行组件不能暴力破解攻击联合用户。 
-- 级别2：保护 extranet：这些是必须配置的设置，以确保将 extranet 访问权限配置为使用安全协议、身份验证策略和合适的应用程序。 
-- 第3级：移动到无密码，以进行 extranet 访问：这些是高级设置和指导原则，可让你使用更安全的凭据（而不是容易受到攻击的密码）访问联合资源。 
+- 级别2：保护 extranet：这些是必须配置的设置，以确保 extranet 访问权限配置为使用安全协议、身份验证策略和合适的应用程序。 
+- 级别3，转到无密码以进行 extranet 访问：这些是高级设置和指南，可让你使用更安全的凭据（而不是容易受到攻击的密码）访问联合资源。 
 
-## <a name="level-1-baseline"></a>级别1：Baseline
+## <a name="level-1-baseline"></a>级别1：基线
 
 1. 如果 ADFS 2016，实现[extranet 智能锁定](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md)extranet 智能锁定会跟踪熟悉的位置，并允许有效用户在以前从该位置成功登录。 通过使用 extranet 智能锁定，你可以确保不良的执行组件将无法对用户进行暴力攻击，同时会使合法用户能够高效工作。
     - 如果你不在 AD FS 2016 上，我们强烈建议你[升级](../../ad-fs/deployment/upgrading-to-ad-fs-in-windows-server.md)到 AD FS 2016。 它是 AD FS 2012 R2 的简单升级路径。 如果你在 AD FS 2012 R2 上，则实现[extranet 锁定](../../ad-fs/operations/Configure-AD-FS-Extranet-Soft-Lockout-Protection.md)。 此方法的一个缺点是，如果您采用暴力破解模式，可能会阻止有效用户进行 extranet 访问。 服务器2016上的 AD FS 没有此缺点。
 
 2. 监视 & 阻止可疑 IP 地址 
-    - 如果有 Azure AD Premium，请为 ADFS 实现连接运行状况，并使用其提供的有[风险的 IP 报告](https://docs.microsoft.com/azure/active-directory/connect-health/active-directory-aadconnect-health-adfs#risky-ip-report-public-preview)通知。
+    - 如果有 Azure AD Premium，请为 ADFS 实现连接运行状况，并使用其提供的有[风险的 IP 报告](/azure/active-directory/connect-health/active-directory-aadconnect-health-adfs#risky-ip-report-public-preview)通知。
 
         a. 授权并非适用于所有用户，并且需要25个许可证/ADFS/WAP 服务器，这对于客户来说可能很简单。
 
@@ -82,11 +82,11 @@ ms.locfileid: "71407240"
 
     b. 如果你在 AD FS 2012 R2 或更低版本上，请在 Exchange Online 中直接阻止 IP 地址，并根据需要在防火墙上进行选择。
 
-4. 如果有 Azure AD Premium，请使用[Azure AD 密码保护](https://docs.microsoft.com/azure/active-directory/authentication/concept-password-ban-bad-on-premises)来防止猜出密码进入 Azure AD  
+4. 如果有 Azure AD Premium，请使用[Azure AD 密码保护](/azure/active-directory/authentication/concept-password-ban-bad-on-premises)来防止猜出密码进入 Azure AD  
 
     a. 请注意，如果有猜出的密码，只需1-3 次尝试即可破解密码。 此功能可防止设置这些设置。 
 
-    b. 根据预览统计信息，几乎 20-50% 的新密码被阻止设置。 这意味着，% 的用户很容易破解密码。
+    b. 根据预览统计信息，几乎20-50% 的新密码被阻止设置。 这意味着，% 的用户很容易破解密码。
 
 ## <a name="level-2-protect-your-extranet"></a>级别2：保护 extranet
 
@@ -98,13 +98,13 @@ ms.locfileid: "71407240"
 
 6. 针对所有 extranet 访问启用 MFA。 这为你提供了对任何 extranet 访问的保护。
 
-   a.  如果你有 Azure AD 高级版，请使用[Azure AD 条件性访问策略](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)来控制这种情况。  这比在 AD FS 实现规则要好。  这是因为现代的客户端应用程序会更频繁地强制执行。  这会在 Azure AD 时使用刷新令牌请求新的访问令牌（通常每小时一次）。  
+   a.  如果你有 Azure AD 高级版，请使用[Azure AD 条件性访问策略](/azure/active-directory/conditional-access/overview)来控制这种情况。  这比在 AD FS 实现规则要好。  这是因为现代的客户端应用程序会更频繁地强制执行。  这会在 Azure AD 时使用刷新令牌请求新的访问令牌（通常每小时一次）。  
 
    b.  如果你没有 Azure AD 高级版或在 AD FS 上提供了允许基于 internet 的访问的其他应用，则实现 MFA （也可以是 Azure MFA，也可以是 AD FS 2016），并为所有 extranet 访问执行[全局 MFA 策略](../../ad-fs/operations/configure-authentication-policies.md#to-configure-multi-factor-authentication-globally)。
 
-## <a name="level-3-move-to-password-less-for-extranet-access"></a>级别3：转到不使用 extranet 访问的密码
+## <a name="level-3-move-to-password-less-for-extranet-access"></a>等级3：对于 extranet 访问，转到 "更少密码"
 
-7. 转到 Windows 10 并使用[Hello 企业版](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)。
+7. 转到 Windows 10 并使用[Hello 企业版](/windows/security/identity-protection/hello-for-business/hello-identity-verification)。
 
 8. 对于其他设备，如果在 AD FS 2016 上，你可以将[AZURE MFA OTP](../../ad-fs/operations/configure-ad-fs-and-azure-mfa.md)用作第一个因素，将密码用作第二个因素。 
 
@@ -122,5 +122,5 @@ ms.locfileid: "71407240"
 
 - [升级到 AD FS server 2016](../../ad-fs/deployment/upgrading-to-ad-fs-in-windows-server.md) 
 - [AD FS 2016 中的 Extranet 智能锁定](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md)
-- [配置条件访问策略](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-- [Azure AD 密码保护](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises)
+- [配置条件访问策略](/azure/active-directory/conditional-access/overview)
+- [Azure AD 密码保护](/azure/active-directory/authentication/howto-password-ban-bad-on-premises)

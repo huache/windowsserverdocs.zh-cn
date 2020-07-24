@@ -8,21 +8,21 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1b54052397df275ee04bfce320d9b1e9908628a9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a6c2cbed1be7e1667caee2f0be116ecd0122a992
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853970"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965069"
 ---
 # <a name="ad-fs-deployment"></a>AD FS 部署
 
 
-本文档包含用于部署 Windows Server 2016 AD FS 的所有文档的列表。 这包括以下内容：
+本文档包含用于部署 Windows Server 2016 AD FS 的所有文档的列表。 其中包括：
   
 * [保护 AD FS 的最佳做法](deployment/Best-Practices-Securing-AD-FS.md)
 
-* [部署 Azure AD Connect Health 监视云中的本地标识基础结构](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
+* [部署 Azure AD Connect Health 监视云中的本地标识基础结构](/azure/active-directory/hybrid/whatis-hybrid-identity)
 
 * [规划基于设备的本地条件访问](deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 
@@ -33,9 +33,9 @@ ms.locfileid: "80853970"
 * [为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
   
 
-* [使用 WID 数据库升级到 Windows Server 2016 中的 AD FS](deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)  
+* [使用 WID 数据库升级到 Windows Server 2016 中的 AD FS](./deployment/upgrading-to-ad-fs-in-windows-server.md)  
 
-* [使用 SQL 数据库升级到 Windows Server 2016 中的 AD FS](deployment/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL.md)  
+* [使用 SQL 数据库升级到 Windows Server 2016 中的 AD FS](./deployment/upgrading-to-ad-fs-in-windows-server-sql.md)  
 
 * [在 Azure 中部署 AD FS](deployment/how-to-connect-fed-azure-adfs.md)
 
@@ -44,9 +44,3 @@ ms.locfileid: "80853970"
 * [Windows Server 2016 和 2012 R2 部署指南](deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
 
 * [Windows Server 2012 部署指南](deployment/Windows-Server-2012-AD-FS-Deployment-Guide.md)
-
-
-
-
-
-

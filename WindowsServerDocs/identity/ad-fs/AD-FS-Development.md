@@ -8,17 +8,17 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b4c94553116d7a888ad76fd999f12cecd70e3523
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7ca84e2e08c033e9153d7db3a5f951aa8be1a581
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854090"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965039"
 ---
 # <a name="ad-fs-development"></a>AD FS 开发
 
 
-本文档包含 AD FS 开发的所有文档演练的列表。 这包括以下内容：  
+本文档包含 AD FS 开发的所有文档演练的列表。 其中包括：  
   
  
 - [为 AD FS 构建自定义身份验证方法](../ad-fs/development/ad-fs-build-custom-auth-method.md)
@@ -27,24 +27,18 @@ ms.locfileid: "80854090"
   
 - [使用 OpenID Connect 构建 web 应用程序，AD FS 2016](../ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)  
 
-- [使用 OAuth 和 ADAL 构建单一页面 web 应用程序.JS 与 AD FS 2016](../ad-fs/development/Single-Page-Application-with-AD-FS.md)
+- [使用 OAuth 和 ADAL.JS 与 AD FS 2016 生成单个页面 web 应用程序](../ad-fs/development/Single-Page-Application-with-AD-FS.md)
   
-- [使用 AD FS 2016 的 OAuth 机密客户端生成服务器端应用程序](../ad-fs/development/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016.md)
+- [使用 AD FS 2016 的 OAuth 机密客户端生成服务器端应用程序](./development/enabling-oauth-confidential-clients-with-ad-fs.md)
 
-- [使用 OAuth 作为 AD FS 2016，通过代理创建多层应用程序（OBO）](../ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016.md) 
+- [使用 OAuth 作为 AD FS 2016，通过代理创建多层应用程序（OBO）](./development/ad-fs-on-behalf-of-authentication-in-windows-server.md) 
 
-- [使用 AD FS 2012 R2 或更高版本的 OAuth 公用客户端生成本机客户端应用程序](https://msdn.microsoft.com/library/dn633593.aspx)
+- [使用 AD FS 2012 R2 或更高版本的 OAuth 公用客户端生成本机客户端应用程序](/previous-versions/adfs-windows-server-2012R2/dn633593(v=msdn.10))
 
 - [使用 AD FS 2016 的 OAuth 公共客户端生成本机客户端应用程序](../ad-fs/development/native-client-with-ad-fs.md)
 
-- [使用 OpenID Connect 或 OAuth 与 AD FS 2016 时，自定义要在 id_token 中发出的声明](../ad-fs/development/Customize-Id-Token-AD-FS-2016.md)
+- [使用 OpenID Connect 或 OAuth 与 AD FS 2016 时，自定义要在 id_token 中发出的声明](./development/custom-id-tokens-in-ad-fs.md)
 
 - [标识委托与 AD FS](../ad-fs/development/ad-fs-identity-delegation.md)
 
 - [用于 OpenID Connect 的单一注销 AD FS 2016](../ad-fs/development/ad-fs-logout-openid-connect.md)
-
-
-
-
-
-

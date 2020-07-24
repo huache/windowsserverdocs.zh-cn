@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 661f1b3f227a3e04c1328798a632b10b55df1c20
-ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
+ms.openlocfilehash: a7da23b592f495b45e337520179d414900183a1b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721745"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966609"
 ---
 # <a name="the-role-of-claims"></a>声明的角色
 
@@ -58,7 +58,7 @@ ms.locfileid: "84721745"
 |名称|描述|URI|
 |--------|---------------|-------|
 |电子 \- 邮件地址|用户的电子 \- 邮件地址|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ identity \/ 声明 \/ emailaddress|
-|名字|用户的给定名称|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ identity \/ 声明 \/ givenname|
+|名|用户的给定名称|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ identity \/ 声明 \/ givenname|
 |名称|用户的唯一的名称|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ 标识 \/ 声明 \/ 名称|
 |UPN|用户的用户主体名称 \( UPN \)|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ 标识 \/ 声明 \/ upn|
 |公用名|用户的公用名|http： \/ \/schemas.xmlSoap.org \/ 声明 \/ CommonName|
@@ -90,7 +90,7 @@ ms.locfileid: "84721745"
 
 - **在联合元数据中发布此声明作为此联合身份验证服务可以发送** \( 的声明类型发布方式 \) -指示此联合身份验证服务提供的声明类型。 它们作为联合身份验证服务愿意发送的声明类型而发布给其他服务。 声明提供方发送的实际声明类型通常是此列表的子集。
 
-有关如何设置声明类型的发布状态的详细信息，请参阅 AD FS 部署指南中的[添加声明说明](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/add-a-claim-description)。
+有关如何设置声明类型的发布状态的详细信息，请参阅 AD FS 部署指南中的[添加声明说明](../operations/add-a-claim-description.md)。
 
 ### <a name="when-generating-federation-metadata"></a>在生成联合元数据时
 

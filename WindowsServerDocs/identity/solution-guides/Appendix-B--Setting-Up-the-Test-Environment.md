@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5f529e6b0176b7ad416a728163b4ae9671040bf8
-ms.sourcegitcommit: d1fc59d53055952f8e55aacebeb29547eef0bca7
+ms.openlocfilehash: 30667f68b25bda9ae86212be34466762d825ec0b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "80861280"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966169"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>附录 B：设置测试环境
 
@@ -88,7 +88,7 @@ ms.locfileid: "80861280"
 
 3.  在“创建虚拟网络”**** 下，选择“内部”****。  
 
-4.  单击 **添加**。 将出现“新建虚拟网络”**** 页。  
+4.  单击“添加” 。 将出现“新建虚拟网络”**** 页。  
 
 5.  键入 **ID_AD_Network** 作为新网络的名称。 查看其他属性并对其进行修改（如果需要）。  
 
@@ -163,16 +163,16 @@ ms.locfileid: "80861280"
 4. 使用指示的属性创建以下用户：  
 
 
-   |       User       |  用户名  |     电子邮件地址      | 部门 |      组       | 国家/地区 |
+   |       User       |  用户名  |     电子邮件地址      | 部门 |      Group       | 国家/地区 |
    |------------------|------------|------------------------|------------|------------------|----------------|
-   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  财务   |                  |       美国       |
-   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  财务   |   FinanceAdmin   |       美国       |
+   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finance   |                  |       美国       |
+   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finance   |   FinanceAdmin   |       美国       |
    |   Esther Valle   |   EValle   |   EValle@contoso.com   | 操作 | FinanceException |       美国       |
    |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       美国       |
    |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       美国       |
    |    RMS Server    |    rms     |    rms@contoso.com     |            |                  |                |
 
-   有关创建安全组的详细信息，请参阅 Windows Server 网站上的 [创建新组](https://technet.microsoft.com/library/dd861305.aspx) 。  
+   有关创建安全组的详细信息，请参阅 Windows Server 网站上的 [创建新组](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd861305(v=ws.11)) 。  
 
 ##### <a name="to-create-a-group-policy-object"></a>创建组策略对象  
 
@@ -291,7 +291,7 @@ ms.locfileid: "80861280"
    > [!IMPORTANT]  
    > 若要安装 AD RMS 服务器角色，安装程序帐户（在此案例中为 CONTOSO\Administrator）必须既是要安装 AD RMS 的服务器计算机上本地 Administrators 组的成员，又是 Active Directory 中 Enterprise Admins 组的成员。  
 
-2. 在服务器管理器中，单击“添加角色和功能”****。 随即会出现“添加角色和功能”向导。  
+2. 在服务器管理器中，单击“添加角色和功能”****。 将出现“添加角色和功能向导”。  
 
 3. 在“开始之前”**** 屏幕上，单击“下一步”****。  
 
@@ -381,7 +381,7 @@ ms.locfileid: "80861280"
 >     -   NLTEST /SC_RESET:contoso.com  
 > 2.  在域控制器 (DC1) 上，复制 Active Directory。  
 >   
->     有关强制复制 Active Directory 的步骤的详细信息，请参阅 [Active Directory 复制](https://technet.microsoft.com/library/cc794809(WS.10).aspx)  
+>     有关强制复制 Active Directory 的步骤的详细信息，请参阅 [Active Directory 复制](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794809(v=ws.10))  
 
 也可以选择使用 Windows PowerShell 来安装并配置 AD RMS 服务器角色，而不是使用服务器管理器中的添加角色和功能向导，如以下步骤所示。  
 
@@ -562,7 +562,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 -   将虚拟机连接到 ID_AD_Network。  
 
 > [!IMPORTANT]  
-> 若要将虚拟机加入到域并跨林部署声明类型，则需要这些虚拟机能够解析相关域的 FQDN。 为完成此操作，你可能需要手动在虚拟机上配置 DNS 设置。 有关详细信息，请参阅 [配置服务器核心服务器](https://technet.microsoft.com/library/cc732470%28v=ws.10%29.aspx)。  
+> 若要将虚拟机加入到域并跨林部署声明类型，则需要这些虚拟机能够解析相关域的 FQDN。 为完成此操作，你可能需要手动在虚拟机上配置 DNS 设置。 有关详细信息，请参阅 [配置服务器核心服务器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732470(v=ws.10))。  
 >   
 > 必须对所有虚拟机映像（服务器和客户端）进行重新配置，以使用静态 IP 版本 4 (IPv4) 地址和域名系统 (DNS) 客户端设置。 有关详细信息，请参阅 [为静态 IP 地址配置 DNS 客户端](https://go.microsoft.com/fwlink/?LinkId=150952)。  
 
@@ -747,7 +747,7 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 
 5. 在“权限的权限条目”**** 对话框中，单击“添加条件”****，然后输入以下条件：[**User**] [**Company**] [**Equals**] [**Value**] [**Adatum**]。 权限应为“修改、读取并执行、读取、写入”****。  
 
-6. 单击 **“确定”** 。  
+6. 单击“确定”  。  
 
 7. 单击“确定”**** 三次完成操作，然后返回到 Active Directory 管理中心。  
 
@@ -835,6 +835,3 @@ SRV1 是 SMTP/POP3 邮件服务器。 你需要设置它，以便将发送电子
 7. 单击 "**安全**" 选项卡，单击 "**高级**"，然后单击 "**中心策略**" 选项卡。应会看到 " **AdatumEmployeeAccessRule** " 列。 你可以展开项以查看你在 Active Directory 中创建规则时设置的所有权限。  
 
 8. 单击“确定”**** 返回到 Windows 资源管理器。  
-
-
-

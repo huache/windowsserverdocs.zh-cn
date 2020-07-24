@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 15c02897df0710653a6a3663ce6f8e87bfa416b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3896b411ee8b02a0efde6b46484e043b27ffea77
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471802"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966509"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>启用或禁用引用和客户端故障回复
 
@@ -39,15 +39,15 @@ ms.locfileid: "85471802"
 
 
 > [!TIP]
-> 若要使用 Windows PowerShell 启用或禁用引用，请使用 [Set-DfsnRootTarget –State](https://technet.microsoft.com/library/jj884266.aspx) 或 [Set-DfsnServerConfiguration](https://technet.microsoft.com/library/jj884277.aspx) cmdlet（在 Windows Server 2012 中引入）。
+> 若要使用 Windows PowerShell 启用或禁用引用，请使用 [Set-DfsnRootTarget –State](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11)) 或 [Set-DfsnServerConfiguration](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11)) cmdlet（在 Windows Server 2012 中引入）。
 
 ## <a name="enable-client-failback"></a>启用客户端故障回复
 
-如果目标不可用，可以将客户端配置为在目标恢复后故障回复到该目标。 若要使故障回复正常进行，客户端计算机必须满足以下主题中所列的要求：[查看 DFS 命名空间客户端要求](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)。
+如果目标不可用，可以将客户端配置为在目标恢复后故障回复到该目标。 若要使故障回复正常进行，客户端计算机必须满足以下主题中所列的要求：[查看 DFS 命名空间客户端要求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11))。
 
 
 > [!NOTE]
-> 若要使用 Windows PowerShell 对命名空间根目录启用客户端故障回复，请使用 [Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) cmdlet。 若要对 DFS 文件夹启用客户端故障回复，请使用 [Set-DfsnFolder](https://technet.microsoft.com/library/jj884283.aspx) cmdlet。
+> 若要使用 Windows PowerShell 对命名空间根目录启用客户端故障回复，请使用 [Set-DfsnRoot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) cmdlet。 若要对 DFS 文件夹启用客户端故障回复，请使用 [Set-DfsnFolder](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) cmdlet。
 
 
 ## <a name="to-enable-client-failback-for-a-namespace-root"></a>对命名空间根路径启用客户端故障回复的步骤
@@ -71,5 +71,5 @@ ms.locfileid: "85471802"
 ## <a name="additional-references"></a>其他参考
 
 -   [调整 DFS 命名空间](tuning-dfs-namespaces.md)
--   [查看 DFS 命名空间客户端要求](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
+-   [查看 DFS 命名空间客户端要求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11))
 -   [委派 DFS 命名空间的管理权限](delegate-management-permissions-for-dfs-namespaces.md)

@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9fb1b91ff389f6abacccaa7464276fc8556c11c5
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a28132d87fe0b10ac5ab2969f94cdf8905d731fe
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948918"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966739"
 ---
 # <a name="scenario-web-api-calling-web-api-on-behalf-of-scenario"></a>方案：用于调用 Web api 的 Web API （代表方案） 
 > 适用于： AD FS 2019 及更高版本 
@@ -26,10 +26,10 @@ ms.locfileid: "75948918"
 
 
 - 客户端（Web 应用）-不在下图中表示-调用受保护的 Web API 并在其 "Authorization" Http 标头中提供 JWT 持有者令牌。 
-- 受保护的 Web API 将验证令牌，并使用 MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) 方法请求（从 AD FS）其他令牌，使其自身可以代表用户调用另一个 Web api （名为下游 web api）。 
-- 受保护的 web API 使用此令牌来调用下游 API。 它还可以调用 AcquireTokenSilentlater 来请求其他下游 Api （但仍代表同一个用户）的令牌。 AcquireTokenSilent 在需要时刷新该令牌。  
+- 受保护的 Web API 将验证令牌，并使用 MSAL [AcquireTokenOnBehalfOf](/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_)   方法请求（从 AD FS）其他令牌，使其自身可以代表用户调用另一个 Web api （名为下游 web api）。 
+- 受保护的 Web API 使用此令牌调用下游 API。 它还可以调用 AcquireTokenSilentlater 来请求其他下游 Api （但仍代表同一个用户）的令牌。AcquireTokenSilent 在需要时刷新该令牌。  
  
-     ![概述](media/adfs-msal-web-api-web-api/webapi1.png)
+     ![概览](media/adfs-msal-web-api-web-api/webapi1.png)
  
 为了更好地了解如何在 ADFS 中代表身份验证方案进行配置，我们使用[此处](https://github.com/microsoft/adfs-sample-msal-dotnet-webapi-to-webapi-onbehalfof)提供的示例并演练应用注册和代码配置步骤。  
  
@@ -45,36 +45,36 @@ ms.locfileid: "75948918"
 
   1. 在 AD FS 管理 "中，右键单击"**应用程序组**"，然后选择"**添加应用程序组**"。  
   
-  2. 在应用程序组向导上，为 **"** 输入**WebApiToWebApi** "，在 "**客户端-服务器应用程序**" 下，选择**本机应用程序访问 Web API**模板。 单击?下一步?。
+  2. 在应用程序组向导上，为 **"** 输入**WebApiToWebApi** "，在 "**客户端-服务器应用程序**" 下，选择**本机应用程序访问 Web API**模板。 单击“下一步”。
 
-      ![应用程序注册](media/adfs-msal-web-api-web-api/webapi2.png)
+      ![应用注册](media/adfs-msal-web-api-web-api/webapi2.png)
 
-  3. 复制 "**客户端标识符**" 值。 稍后会将其用作应用程序的**app.config**文件中的**ClientId**值。 为 "**重定向 URI：**  - https://ToDoListClient 输入以下内容。 单击**添加**。 单击?下一步?。 
+  3. 复制 "**客户端标识符**" 值。 稍后会将其用作应用程序**App.config**文件中的**ClientId**值。 对于 "**重定向 URI**"，请输入以下内容：  -  https://ToDoListClient 。 单击“添加” 。 单击“下一步”。 
   
-      ![应用程序注册](media/adfs-msal-web-api-web-api/webapi3.png)
+      ![应用注册](media/adfs-msal-web-api-web-api/webapi3.png)
   
-  4. 在 "配置 Web API" 屏幕上，输入**标识符：** https://localhost:44321/ 。 单击**添加**。 单击?下一步?。 稍后将在应用程序的**app.config** **和 web.config**文件中使用此值。  
+  4. 在 "配置 Web API" 屏幕上，输入**标识符：** https://localhost:44321/ 。 单击“添加” 。 单击“下一步”。 稍后将在应用程序的**App.config**和**Web.Config**文件中使用此值。  
  
-      ![应用程序注册](media/adfs-msal-web-api-web-api/webapi4.png)
+      ![应用注册](media/adfs-msal-web-api-web-api/webapi4.png)
 
   5. 在 "应用访问控制策略" 屏幕上，选择 "**允许每个人**" 并单击 "**下一步**" 
   
-      ![应用程序注册](media/adfs-msal-web-api-web-api/webapi5.png)  
+      ![应用注册](media/adfs-msal-web-api-web-api/webapi5.png)  
 
-  6. 在 "配置应用程序权限" 屏幕上，选择 " **openid** and **user_impersonation**"。 单击?下一步?。  
+  6. 在 "配置应用程序权限" 屏幕上，选择 " **openid** and **user_impersonation**"。 单击“下一步”。  
   
-      ![应用程序注册](media/adfs-msal-web-api-web-api/webapi6.png)  
+      ![应用注册](media/adfs-msal-web-api-web-api/webapi6.png)  
 
   7. 在 "摘要" 屏幕上，单击 "**下一步**"。 
 
   8. 在 "完成" 屏幕上，单击 "**关闭**"。 
 
 
-  9. 在 AD FS 管理 "中，单击"**应用程序组**"，并选择" **WebApiToWebApi**应用程序组 "。 右键单击并选择 **“属性”** 。 
+  9. 在 AD FS 管理 "中，单击"**应用程序组**"，并选择" **WebApiToWebApi**应用程序组 "。 右键单击并选择 **“属性”**。 
   
-      ![应用程序注册](media/adfs-msal-web-api-web-api/webapi7.png)  
+      ![应用注册](media/adfs-msal-web-api-web-api/webapi7.png)  
 
-  10. 在 WebApiToWebApi 属性屏幕上，单击 "**添加应用程序 ...** "。 
+  10. 在 WebApiToWebApi 属性屏幕上，单击 "**添加应用程序 ...**"。 
   
       ![应用注册](media/adfs-msal-web-api-web-api/webapi8.png)
 
@@ -82,7 +82,7 @@ ms.locfileid: "75948918"
   
       ![应用注册](media/adfs-msal-web-api-web-api/webapi9.png)
 
-  12. 在 "服务器应用程序" 屏幕上，添加 "https://localhost:44321/ 作为**客户端标识符**和**重定向 URI**。 
+  12. 在 "服务器应用程序" 屏幕上，添加 https://localhost:44321/ 作为**客户端标识符**和**重定向 URI**。 
   
       ![应用注册](media/adfs-msal-web-api-web-api/webapi10.png)
 
@@ -94,11 +94,11 @@ ms.locfileid: "75948918"
 
   15. 在 "完成" 屏幕上，单击 "**关闭**"。 
 
-  16. 在 AD FS 管理 "中，单击"**应用程序组**"，并选择" **WebApiToWebApi**应用程序组 "。 右键单击并选择 **“属性”** 。 
+  16. 在 AD FS 管理 "中，单击"**应用程序组**"，并选择" **WebApiToWebApi**应用程序组 "。 右键单击并选择 **“属性”**。 
   
       ![应用注册](media/adfs-msal-web-api-web-api/webapi12.png)
 
-  17. 在 WebApiToWebApi 属性屏幕上，单击 "**添加应用程序 ...** "。 
+  17. 在 WebApiToWebApi 属性屏幕上，单击 "**添加应用程序 ...**"。 
   
       ![应用注册](media/adfs-msal-web-api-web-api/webapi13.png)
 
@@ -124,11 +124,11 @@ ms.locfileid: "75948918"
 
   24. 在 WebApiToWebApi 上单击 "确定" – Web API 2 属性屏幕  
 
-  25. 在 WebApiToWebApi 的 "属性" 屏幕上，选择 " **WebApiToWebApi – WEB API** "，然后单击 "**编辑 ...** "。  
+  25. 在 WebApiToWebApi 的 "属性" 屏幕上，选择 " **WebApiToWebApi – WEB API** "，然后单击 "**编辑 ...**"。  
   
       ![应用注册](media/adfs-msal-web-api-web-api/webapi18.png)
 
-  26. 在 "WebApiToWebApi – Web API 属性" 屏幕上，选择 "**颁发转换规则**" 选项卡，然后单击 "**添加规则 ...** "。 
+  26. 在 "WebApiToWebApi – Web API 属性" 屏幕上，选择 "**颁发转换规则**" 选项卡，然后单击 "**添加规则 ...**"。 
   
       ![应用注册](media/adfs-msal-web-api-web-api/webapi19.png)
 
@@ -136,7 +136,7 @@ ms.locfileid: "75948918"
   
       ![应用注册](media/adfs-msal-web-api-web-api/webapi20.png)
 
-  28. 在**声明规则名称：** 字段和**x： [] = > 问题（声明 = x）** 中输入 " **PassAllClaims** "; "自定义规则中的声明规则：" 字段，然后单击 "完成"。  
+  28. 在**声明规则名称：** 字段和**x： [] => 问题（声明 = x）** 中输入 " **PassAllClaims** "; "自定义规则中的声明规则：" 字段，然后单击 "完成"。  
    
       ![应用注册](media/adfs-msal-web-api-web-api/webapi21.png)
 
@@ -147,9 +147,9 @@ ms.locfileid: "75948918"
 
   31. 在 "WebApiToWebApi – Web API 2 属性" 屏幕上，选择 "颁发转换规则" 选项卡，然后单击 "添加规则 ..." 
 
-  32. 在 "添加转换声明规则向导" 上，选择 "使用 dopdown 的自定义规则发送声明"，并单击 "下一步" ![应用注册](media/adfs-msal-web-api-web-api/webapi23.png)
+  32. 在 "添加转换声明规则向导" 上，选择 "使用来自 dopdown 的自定义规则发送声明"，然后单击 "下一 ![ 应用注册"](media/adfs-msal-web-api-web-api/webapi23.png)
 
-  33. 在声明规则名称：字段和**x： [] = > 问题（声明 = x）** 中输入 "PassAllClaims"; "**自定义规则**中的声明规则：" 字段，然后单击 "**完成**"。  
+  33. 在声明规则名称：字段和**x： [] => 问题（声明 = x）** 中输入 "PassAllClaims"; "**自定义规则**中的声明规则：" 字段，然后单击 "**完成**"。  
    
       ![应用注册](media/adfs-msal-web-api-web-api/webapi24.png)
 
@@ -173,7 +173,7 @@ ms.locfileid: "75948918"
       
             ![应用注册](media/adfs-msal-web-api-web-api/webapi25.png)
 
-  4. 在 ToDoListService 下打开 web.config 文件。 修改以下内容： 
+  4. 打开 ToDoListService 下的 Web.config 文件。 修改以下内容： 
        - ida：受众-在上 AD FS 部分的应用注册中输入客户端标识符值 #12
        - ida： ClientId-在上 AD FS 部分的 "应用注册 #12 中输入客户端标识符值。 
        - Ida： ClientSecret-在上述 AD FS 部分中输入从应用注册 #13 复制的共享机密。
@@ -184,7 +184,7 @@ ms.locfileid: "75948918"
   
           ![应用注册](media/adfs-msal-web-api-web-api/webapi26.png) 
 
- 5. 在 WebAPIOBO 下打开 web.config 文件。 修改以下内容： 
+ 5. 打开 WebAPIOBO 下的 Web.config 文件。 修改以下内容： 
        - ida： AdfsMetadataEndpoint-输入 https：//[你的 AD FS 主机名]/federationmetadata/2007-06/federationmetadata.xml 
        - ida：受众-在上 AD FS 部分的应用注册中输入客户端标识符值 #12 
  

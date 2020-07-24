@@ -8,12 +8,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 55a4fc94440b763c48735ffe44099da702857489
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e117b486fd628397bfe36aa897ff64cdd26f98b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820870"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965829"
 ---
 # <a name="updating-drive-firmware"></a>更新驱动器固件
 >适用于： Windows Server 2019、Windows Server 2016、Windows 10
@@ -30,11 +30,11 @@ ms.locfileid: "80820870"
 有关你的硬件是否支持 Windows 更新驱动器固件的信息，请联系你的解决方案供应商。
 以下是指向各种要求的链接：
 
--   SATA：[Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) - 在 **[如果已实施\] 固件下载和激活**部分
+-   SATA：[Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) - 在 **[如果已实施\] 固件下载和激活**部分
     
--   SAS：[Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) - 在 **[如果已实施\] 固件下载和激活**部分
+-   SAS：[Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) - 在 **[如果已实施\] 固件下载和激活**部分
 
--   NVMe：[Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) - 在部分 **5.7** 和 **5.8**。
+-   NVMe：[Device.Storage.ControllerDrive.NVMe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragecontrollerdrivenvme) - 在部分 **5.7** 和 **5.8**。
 
 ## <a name="powershell-cmdlets"></a>PowerShell cmdlet
 
@@ -105,7 +105,7 @@ Measure-Command {$pd | Update-StorageFirmware -ImagePath C:\\Firmware\\J3E16101.
 
 1. 查看固件发行说明并确认更新是否解决了可能会影响环境的问题，而且固件不包含任何对你造成负面影响的已知问题。
 
-2. 在实验室中具有相同驱动器（包括驱动器的修订版本，如果同一驱动器有多个修订版本）的服务器上安装固件，并使用新固件测试负载下的驱动器。 有关执行综合负载测试的信息，请参阅[使用综合工作负载测试存储空间性能](https://technet.microsoft.com/library/dn894707.aspx)。
+2. 在实验室中具有相同驱动器（包括驱动器的修订版本，如果同一驱动器有多个修订版本）的服务器上安装固件，并使用新固件测试负载下的驱动器。 有关执行综合负载测试的信息，请参阅[使用综合工作负载测试存储空间性能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11))。
 
 ## <a name="automated-firmware-updates-with-storage-spaces-direct"></a>使用存储空间直通自动更新固件
 
@@ -164,9 +164,9 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-若要查看操作中的运行状况服务并详细了解其推出机制，请参阅此视频： https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+若要查看操作中的运行状况服务并详细了解其推出机制，请参阅此视频：https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
-## <a name="frequently-asked-questions"></a>常见问题
+## <a name="frequently-asked-questions"></a>常见问题解答
 
 另请参阅[驱动器固件更新疑难解答](troubleshoot-firmware-update.md)。
 

@@ -8,19 +8,19 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 26c1635d4218c7d33377b6b8a90bc96ea4ad37b3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 353546be17f096b692c2429aa65529d302a2df7e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948784"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966849"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS OpenID Connect/OAuth 概念
 适用于 AD FS 2016 及更高版本
  
 ## <a name="modern-authentication-actors"></a>新式身份验证参与者 
 
-|参与者| 描述|
+|Actor| 说明|
 |-----|-----|
 |最终用户|这是需要访问资源的安全主体（用户、应用程序、服务和组）。|  
 |客户端|这是你的 web 应用程序，由其客户端 ID 标识。 客户端通常是最终用户与之交互的参与方，并从授权服务器请求令牌。
@@ -34,7 +34,7 @@ ms.locfileid: "75948784"
 ## <a name="application-types"></a>应用程序类型 
  
 
-|应用程序类型|描述|Role|
+|应用程序类型|说明|角色|
 |-----|-----|-----|
 |本机应用程序|有时称为 "**公共客户端**"，这旨在作为在电脑或设备上运行并与用户交互的客户端应用。|请求授权服务器（AD FS）提供的用于访问资源的用户的令牌。 使用令牌作为 HTTP 标头，将 HTTP 请求发送到受保护的资源。| 
 |服务器应用程序（Web 应用）|在服务器上运行并且用户通常通过浏览器访问的 web 应用程序。 由于它可以维护自己的客户端 "机密" 或凭据，因此有时称为**机密客户端**。 |请求授权服务器（AD FS）提供的用于访问资源的用户的令牌。 请求令牌之前，客户端（Web 应用）需要使用其机密进行身份验证。 | 
@@ -51,18 +51,18 @@ ms.locfileid: "75948784"
 - **access_token**：由授权服务器（AD FS）颁发并供资源使用的 JWT 令牌。 此令牌的 "aud" 或听众声明必须与资源或 Web API 的标识符匹配。  
 - **refresh_token**：这是由 AD FS 颁发的令牌，供客户端在需要刷新 id_token 和 access_token 时使用。 令牌对客户端是不透明的，并且只能由 AD FS 使用。  
 
-## <a name="scopes"></a>范围 
+## <a name="scopes"></a>作用域 
  
 在 AD FS 中注册资源时，可以将作用域配置为允许 AD FS 执行特定操作。 除了配置范围之外，还需要在请求中发送范围值，以便 AD FS 执行该操作。 例如，管理员需要在资源注册过程中将范围配置为 openid，应用程序（客户端）需要将范围 = openid 发送到身份验证请求中的 AD FS 颁发 ID 令牌。 下面提供了 AD FS 中可用范围的详细信息 
  
-- aza-如果对 [代理客户端使用 OAuth 2.0 协议扩展](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) 并且 scope 参数包含作用域 "aza"，则服务器将发出新的主刷新令牌并在响应的 "refresh_token" 字段中设置该令牌，并将 "refresh_token_expires_in" 字段设置为新主刷新令牌的生存期（如果强制执行）。 
-- openid-允许应用程序请求使用 OpenID Connect 授权协议。 
-- logon_cert-logon_cert 范围允许应用程序请求登录证书，这些证书可用于以交互方式登录经过身份验证的用户。 AD FS 服务器忽略响应中的 access_token 参数，而是提供 base64 编码的 CMS 证书链或 CMC 完整 PKI 响应。  [此处](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供了更多详细信息。
-- user_impersonation-user_impersonation 作用域是成功从 AD FS 请求代表访问令牌的必要条件。 有关如何使用此作用域的详细信息，请参阅使用[OAuth 作为 AD FS 2016 的代表构建多层应用程序（OBO）](ad-fs-on-behalf-of-authentication-in-windows-server.md)。 
+- aza-如果对 [代理客户端使用 OAuth 2.0 协议扩展](/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)，   并且 scope 参数包含作用域 "aza"，则服务器将发出新的主刷新令牌并在响应的 refresh_token 字段中设置该令牌，并将 refresh_token_expires_in 字段设置为新主刷新令牌的生存期（如果强制执行）。 
+- openid - 允许应用程序请求使用 OpenID Connect 授权协议。 
+- logon_cert - logon_cert 作用域允许应用程序请求登录证书，这些证书可用于以交互方式登录通过身份验证的用户。 AD FS 服务器忽略响应中的 access_token 参数，改为提供 base64 编码的 CMS 证书链或 CMC 完整 PKI 响应。  [此处](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供了更多详细信息。
+- user_impersonation - user_impersonation 作用域是成功从 AD FS 请求代表访问令牌的必要条件。 有关如何使用此作用域的详细信息，请参阅使用[OAuth 作为 AD FS 2016 的代表构建多层应用程序（OBO）](ad-fs-on-behalf-of-authentication-in-windows-server.md)。 
 - allatclaims – allatclaims 范围允许应用程序在访问令牌中请求要添加到 ID 令牌中的声明。   
-- vpn_cert-vpn_cert 范围允许应用程序请求 VPN 证书，这些证书可用于通过 EAP-TLS 身份验证建立 VPN 连接。 这不再受支持。 
-- 电子邮件-允许应用程序请求已登录用户的电子邮件声明。  
-- 配置文件-允许应用程序请求登录用户的配置文件相关声明。  
+- vpn_cert - vpn_cert 作用域允许应用程序请求 VPN 证书，该证书可用于使用 EAP-TLS 身份验证建立 VPN 连接。 不再支持此作用域。 
+- email - 允许应用程序请求登录用户的电子邮件声明。  
+- profile - 允许应用程序请求登录用户的个人资料相关声明。  
 
 ## <a name="claims"></a>声明 
  
@@ -81,7 +81,7 @@ AD FS 颁发的安全令牌（访问和 ID 令牌）包含有关已进行身份�
  
  2. AD FS 验证身份验证请求中的客户端 ID 和客户端 ID 在 AD FS 中的客户端和资源注册过程中获取的客户端 id。 如果使用机密客户端，则 AD FS 还会验证身份验证请求中提供的客户端密码。 AD FS 还验证客户端的重定向 uri。 
  
- 3. AD FS 标识客户端要通过身份验证请求中传递的资源参数访问的资源。 如果使用 MSAL 客户端库，则不发送 resource 参数。 而是作为作用域参数的一部分发送资源 url：*范围 = [资源 url]//[范围值，openid]* 。 
+ 3. AD FS 标识客户端要通过身份验证请求中传递的资源参数访问的资源。 如果使用 MSAL 客户端库，则不发送 resource 参数。 而是作为作用域参数的一部分发送资源 url：*范围 = [资源 url]//[范围值，openid]*。 
 
     如果未使用资源或作用域参数传递资源，ADFS 将使用默认资源 urn：无法配置策略（例如，MFA、颁发或授权策略）的用户信息。 
  
@@ -140,7 +140,7 @@ AD FS 颁发的安全令牌（访问和 ID 令牌）包含有关已进行身份�
 
 ## <a name="ad-fs-endpoints"></a>AD FS 终结点
 
-|AD FS 终结点|描述|
+|AD FS 终结点|说明|
 |-----|-----|
 |/authorize|AD FS 返回可用于获取访问令牌的授权代码|
 |/token|AD FS 返回可用于访问资源的访问令牌（Web API）|

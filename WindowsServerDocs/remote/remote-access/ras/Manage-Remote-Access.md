@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 19798c5fb29d3b8aea68b29e5a42775970eeca46
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8379818d22d51fe8c4cc983f32d017d3cdee52b6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857442"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965579"
 ---
 # <a name="manage-remote-access"></a>管理远程访问
 
@@ -52,7 +52,7 @@ DirectAccess 远程客户端管理部署方案包括以下规划和配置步骤�
 -   **DirectAccess 客户端**：确定将配置为 DirectAccess 客户端的托管服务器。  
   
 ### <a name="configure-the-deployment"></a>配置部署  
-配置部署包含多个步骤。 这些地方包括：  
+配置部署包含多个步骤。 其中包括：  
   
 1.  **配置基础结构**：配置 DNS 设置，将服务器和客户端计算机加入域（如有必要），并配置 Active Directory 安全组。  
   
@@ -70,19 +70,19 @@ DirectAccess 远程客户端管理部署方案包括以下规划和配置步骤�
   
 7.  **验证部署**：测试客户端，以便确保其能使用 DirectAccess 连接到内部网络和 Internet。  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实际的应用程序  
 部署单一远程访问服务器管理 DirectAccess 客户端可提供以下优势：  
   
 -   **轻松访问**：可将运行 Windows 8 或 windows 7 的托管客户端计算机配置为 DirectAccess 客户端计算机。 这些客户端只要连接到 Internet，就可以随时通过 DirectAccess 访问内部网络资源，而无需登录 VPN 连接。 未运行这些操作系统之一的客户端计算机可以通过 VPN 连接到内部网络。 DirectAccess 和 VPN 由同一控制台管理并使用相同的向导集。  
   
 -   **易于管理**：远程访问管理员可以使用 DirectAccess 远程管理连接到 Internet 的 DirectAccess 客户端计算机，即使客户端计算机不在企业内部网络中也可以。 管理服务器可以自动修正不符合公司要求的客户端计算机。 单个远程访问管理控制台可以管理一个或多个远程访问服务器。  
   
-## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>本方案所包括的角色和功能  
 下表列出了本方案所需的角色和功能：  
   
 |角色或功能|如何支持本方案|  
 |----------|-----------------|  
-|*远程访问角色*|使用服务器管理器控制台或 Windows PowerShell 安装和卸载此角色。 本角色包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务（以前是网络策略和访问服务 (NPAS) 服务器角色下的角色服务）。 远程访问角色由以下两个组件组成：<p>1. DirectAccess 和路由和远程访问服务（RRAS） VPN： DirectAccess 和 VPN 在远程访问管理控制台中进行管理。<br />2. RRAS：在路由和远程访问控制台中管理功能。<p>远程访问服务器角色依赖以下功能：<p>-Web 服务器（IIS）：配置网络位置服务器和默认 Web 探测时需要。<br />-Windows 内部数据库：用于远程访问服务器上的本地记帐。|  
+|*远程访问角色*|使用服务器管理器控制台或 Windows PowerShell 安装和卸载此角色。 此角色包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务（以前是网络策略和访问服务 (NPAS) 服务器角色下的角色服务）。 远程访问角色由以下两个组件组成：<p>1. DirectAccess 和路由和远程访问服务（RRAS） VPN： DirectAccess 和 VPN 在远程访问管理控制台中进行管理。<br />2. RRAS：在路由和远程访问控制台中管理功能。<p>远程访问服务器角色依赖以下功能：<p>-Web 服务器（IIS）：配置网络位置服务器和默认 Web 探测时需要。<br />-Windows 内部数据库：用于远程访问服务器上的本地记帐。|  
 |远程访问管理工具功能|此功能的安装如下所述：<p>-默认情况下，在安装了远程访问角色并且支持远程管理控制台用户界面的远程访问服务器上。<br />-作为不运行远程访问服务器角色的服务器上的选项。 在此情况下，它可用于远程管理远程访问服务器。<p>此功能由下列组件构成：<p>-远程访问 GUI 和命令行工具<br />-适用于 Windows PowerShell 的远程访问模块<p>依赖项包括：<p>-组策略管理控制台<br />-RAS 连接管理器管理工具包（CMAK）<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬件要求  
@@ -90,7 +90,7 @@ DirectAccess 远程客户端管理部署方案包括以下规划和配置步骤�
   
 ### <a name="server-requirements"></a>服务器要求  
   
--   满足 Windows Server 2016 的硬件要求的计算机。 有关详细信息，请参阅 Windows Server 2016[系统要求](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements-and-installation)。  
+-   满足 Windows Server 2016 的硬件要求的计算机。 有关详细信息，请参阅 Windows Server 2016[系统要求](../directaccess/prerequisites-for-deploying-directaccess.md)。  
   
 -   服务器必须至少安装和启用了一个网络适配器。 应该只有一个适配器连接到企业内部网络，也只有一个适配器连接到外部网络 (Internet)。  
   
@@ -129,4 +129,3 @@ DirectAccess 远程客户端管理部署方案包括以下规划和配置步骤�
   
 -   包含配置为 DirectAccess 客户端的的计算机需要 Active Directory 安全组。 计算机不应该包括在多个包括 DirectAccess 客户端的安全组中。 如果客户端包括在多个组中，客户端请求的名称解析不会按预期方式工作。  
   
-

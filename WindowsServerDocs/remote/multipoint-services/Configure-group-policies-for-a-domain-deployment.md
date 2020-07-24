@@ -9,12 +9,12 @@ ms.assetid: 13e5fa90-d330-4155-a6b8-78eb650cbbfa
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: e851d12dad29de8b3498aad220354d31917fadee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9c01bdd45b5aa88a8ce4f8a5876a0f3cbc3c0cc3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80862180"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966309"
 ---
 # <a name="configure-group-policies-for-a-domain-deployment"></a>为域部署配置组策略
 若要确保 MultiPoint 服务的域部署正常工作，请对 MultiPoint 服务系统上的 WMSshell 用户帐户应用以下组策略设置。  
@@ -26,7 +26,7 @@ ms.locfileid: "80862180"
 WMSshell 用户帐户是 MultiPoint 服务用来登录到控制台的系统帐户，在该帐户中创建了实际的工作站。 此帐户不应由 MultiPoint 管理器管理。
   
 > [!NOTE]  
-> 若要了解如何更新组策略，请参阅[本地组策略编辑器](https://technet.microsoft.com/library/dn265982.aspx)。  
+> 若要了解如何更新组策略，请参阅[本地组策略编辑器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265982(v=ws.11))。  
   
 **策略：** 用户配置 > 管理模板 > 控制面板 >**个性化**  
   
@@ -34,15 +34,15 @@ WMSshell 用户帐户是 MultiPoint 服务用来登录到控制台的系统帐�
   
 |设置|值|  
 |-----------|----------|  
-|启用屏幕保护程序|已禁用|  
+|启用屏幕保护|已禁用|  
 |屏幕保护程序超时|已禁用<p>秒： xxx|  
 |密码保护屏幕保护程序|已禁用|  
   
-**策略：** 计算机配置 > Windows 设置 > 安全设置 > 本地策略 > 用户权限分配 >**允许本地登录**  
+**策略：** 计算机配置 >Windows 设置 >安全设置 >本地策略 >用户权限分配 >**允许本地登录**  
   
 |设置|值|  
 |-----------|----------|  
-|允许在本地登录|确保帐户列表包含 WMSshell 帐户。<p>**注意：** 默认情况下，WMSshell 帐户是用户组的成员。 如果用户组在列表中，并且 WMSshell 是用户组的成员，则无需将 WMSshell 帐户添加到列表。|  
+|允许本地登录|确保帐户列表包含 WMSshell 帐户。<p>**注意：** 默认情况下，WMSshell 帐户是用户组的成员。 如果用户组在列表中，并且 WMSshell 是用户组的成员，则无需将 WMSshell 帐户添加到列表。|  
   
 > [!IMPORTANT]  
 > 设置任何组策略时，请确保这些策略不会影响在 MultiPoint 服务器上的自动更新和错误 Windows 错误报告。 这些设置由 "**自动安装更新**" 和 "**自动 Windows 错误报告**设置，这些设置是在 Windows multipoint Server 安装期间选择的，使用"**编辑服务器设置**"在 MultiPoint 管理器中配置，或在" 磁盘保护计划的更新 "中配置。  
@@ -51,7 +51,7 @@ WMSshell 用户帐户是 MultiPoint 服务用来登录到控制台的系统帐�
 对于 MultiPoint 服务的域部署，你应该更新以下注册表子项。  
   
 > [!IMPORTANT]  
-> 错误编辑注册表可能会严重损坏您的系统。 在更改注册表之前，应备份计算机上任何有价值的数据。  
+> 不正确地编辑注册表可能会对系统造成严重损坏。 在更改注册表之前，应备份计算机上任何有价值的数据。  
   
 #### <a name="to-update-registry-subkeys-for-a-domain-deployment-of-multipoint-services"></a>更新 MultiPoint 服务的域部署的注册表子项  
   
@@ -59,13 +59,13 @@ WMSshell 用户帐户是 MultiPoint 服务用来登录到控制台的系统帐�
   
 2.  在左窗格中，找到并选择以下注册表子项：  
   
-    HKEY_USERS\<SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
+    HKEY_USERS \<SIDofWMSshell> \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
   
-    其中，"<SIDofWMSshell>" 是 WMSshell 帐户的安全标识符（SID）。 若要了解如何识别 SID，请参阅[如何将用户名与安全标识符（SID）相关联](https://support.microsoft.com/kb/154599)。  
+    其中 " <SIDofWMSshell> " 是 WMSshell 帐户的安全标识符（SID）。 若要了解如何识别 SID，请参阅[如何将用户名与安全标识符（SID）相关联](https://support.microsoft.com/kb/154599)。  
   
 3.  在右侧的列表中，更新以下子项。  
   
-    |子项|值名称|“数值数据”|  
+    |子项|值名称|值数据|  
     |----------|--------------|--------------|  
     |ScreenSaveActive|REG_SZ|0（零）|  
     |ScreenSaveTimeout|REG_SZ|120|  
@@ -75,6 +75,6 @@ WMSshell 用户帐户是 MultiPoint 服务用来登录到控制台的系统帐�
   
     1.  在左窗格中选择注册表项后，在右窗格中右键单击子项，然后单击 "**修改**"。  
   
-    2.  在 "编辑字符串" 对话框中，在 "**数值数据**" 中键入新值，然后单击 **"确定"** 。  
+    2.  在 "编辑字符串" 对话框中，在 "**数值数据**" 中键入新值，然后单击 **"确定"**。  
   
 4.  完成更新注册表子项后，请重新启动计算机以激活更改。 

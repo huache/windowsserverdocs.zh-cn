@@ -8,12 +8,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e1989630cadd7d63f8ed041174135722d568484f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0790ea13f18383666a090f5c846b2b20bee9aba
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824420"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966269"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 简化管理
 
@@ -32,7 +32,7 @@ AD DS 简化管理是对域部署的重构。
 - Windows PowerShell 的 Active Directory 模块现在包括用于复制拓扑管理、动态访问控制以及其他操作的 cmdlet  
 - Windows Server 2012 林功能级别不实现新功能，只有一部分新 Kerberos 功能需要域功能级别，这使管理员无需频繁地需要相似的域控制器环境  
 - 添加对虚拟化域控制器的完全支持，以包括自动化部署和回滚保护  
-   - 有关虚拟化域控制器的详细信息，请参阅[虚拟&#40;化&#41; &#40;级别 100&#41;Active Directory 域服务简介 AD DS](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
+   - 有关虚拟化域控制器的详细信息，请参阅[Active Directory 域服务 &#40;AD DS&#41; 虚拟化 &#40;级别 100&#41;的简介](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
 
 此外，还有很多管理和维护方面的改进：  
 
@@ -55,7 +55,7 @@ Active Directory 林架构扩展和域准备现在将集成到域控制器配置
   
 Adprep.exe 保留在 DVD 上以用于单独林和域准备。 Windows Server 2012 中包含的工具版本可以向后兼容到 Windows Server 2008 x64 和 Windows Server 2008 R2。 Adprep.exe 还支持远程 forestprep 和 domainprep，就像基于 ADDSDeployment 的域控制器配置工具一样。  
   
-有关 Adprep 和以前的操作系统林准备的信息，请参阅 [运行 Adprep (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd464018(WS.10).aspx)。  
+有关 Adprep 和以前的操作系统林准备的信息，请参阅[运行 Adprep (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))。  
 
 ## <a name="server-manager-ad-ds-integration"></a>服务器管理器 AD DS 集成
 
@@ -81,7 +81,7 @@ Windows Server 2008 R2 引入了 Active Directory 回收站，它可恢复已删
   
 Windows Server 2012 使用 Active Directory 管理中心中的图形界面增强了基于 Windows PowerShell 的现有还原功能。 这样，管理员可以启用回收站并在林的域上下文中找到或还原已删除对象，所有操作均无需直接运行 Windows PowerShell cmdlet。 Active Directory 管理中心和 Active Directory 回收站仍然在内部使用 Windows PowerShell，因此以前的脚本和过程仍然有价值。  
   
-有关 Active Directory 回收站的信息，请参阅 [Active Directory 回收站分步指南 (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd392261(WS.10).aspx)。  
+有关 Active Directory 回收站的信息，请参阅 [Active Directory 回收站分步指南 (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd392261(v=ws.10))。  
   
 ## <a name="active-directory-administrative-center-fine-grained-password-policy"></a>Active Directory 管理中心细化密码策略
 
@@ -91,7 +91,7 @@ Windows Server 2008 引入了细化密码策略，它允许管理员为每个域
   
 Windows Server 2012 对细化密码策略提供了一个图形界面。 Active Directory 管理中心是此新对话框的主页，这将向所有管理员提供简化的 FGPP 管理。  
   
-有关细化密码策略的信息，请参阅 [AD DS 细化密码和帐户锁定策略分步指南 (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx)。  
+有关细化密码策略的信息，请参阅 [AD DS 细化密码和帐户锁定策略分步指南 (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770842(v=ws.10))。  
   
 ## <a name="active-directory-administrative-center-windows-powershell-history-viewer"></a>Active Directory 管理中心 Windows PowerShell 历史记录查看器
 
@@ -107,13 +107,13 @@ Windows Server 2008 R2 引入了 Active Directory 管理中心，它取代了 Wi
   
 Windows Server 2012 将其他 Active Directory 复制 cmdlet 添加到 Active Directory Windows PowerShell 模块。 这些函数允许配置新的或现有的站点、子网、连接、站点链接和网桥。 它们还返回 Active Directory 复制元数据、复制状态、队列和最新版本向量信息。 复制 cmdlet 的引入（结合部署和其他现有 AD DS cmdlet）使单独使用 Windows PowerShell 管理林成为可能。 这将为希望在没有图形界面的情况下设置和管理 Windows Server 2012 的管理员创造新的机会，这将进而减少操作系统的攻击面并降低服务要求。 这在将服务器部署到高安全性网络（例如保密 Internet 协议路由器 (SIPR) 和企业 DMZ）中时尤其重要。  
   
-有关 AD DS 站点拓扑和复制的详细信息，请参阅 [Windows Server 技术参考](https://technet.microsoft.com/library/cc739127(WS.10).aspx)。  
+有关 AD DS 站点拓扑和复制的详细信息，请参阅 [Windows Server 技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10))。  
 
 ## <a name="rid-management-and-issuance-improvements"></a>RID 管理和颁发改进
 
-Windows 2000 Active Directory 引入了 RID 主机，可将相对标识符的池颁发到域控制器，以创建安全信任项（例如用户、组和计算机）的安全标识符。  默认情况下，此全局 RID 控件限制为在域中创建的共 2<sup>30</sup> （或 1,073,741,823）个 SID。 SID 无法返回到池或重新颁发。 随着时间推移，大型域可能开始在 RID 上低效运行，或者事故可能会导致不必要的 RID 消耗并最终耗尽。  
+Windows 2000 Active Directory 引入了 RID 主机，可将相对标识符的池颁发到域控制器，以创建安全信任项（例如用户、组和计算机）的安全标识符。  默认情况下，此全局 RID 控件限制为在域中创建的共 2<sup>30</sup>（或 1,073,741,823）个 SID。 SID 无法返回到池或重新颁发。 随着时间推移，大型域可能开始在 RID 上低效运行，或者事故可能会导致不必要的 RID 消耗并最终耗尽。  
   
-Windows Server 2012 处理了自 1999 年第一批 Active Directory 域创建以来的大量 RID 颁发和管理问题，随着 AD DS 日渐成熟，客户和 Microsoft 客户支持发现了这些问题。 这些地方包括：  
+Windows Server 2012 处理了自 1999 年第一批 Active Directory 域创建以来的大量 RID 颁发和管理问题，随着 AD DS 日渐成熟，客户和 Microsoft 客户支持发现了这些问题。 其中包括：  
 
 - 定期 RID 消耗警告将写入事件日志  
 - 管理员验证 RID 池时的事件日志  
@@ -121,7 +121,7 @@ Windows Server 2012 处理了自 1999 年第一批 Active Directory 域创建以
 - 当全局 RID 空间不足时，将强制执行并记录人工 RID 上限，使管理员可以在全局空间耗尽前采取行动。
 - 全局 RID 空间现在可以增加一位，将大小加倍为 2<sup>31</sup> (2,147,483,648 SID)  
 
-有关 RID 和 RID 主机的详细信息，请查看 [安全标识符的工作原理](https://technet.microsoft.com/library/cc778824(WS.10).aspx)。  
+有关 RID 和 RID 主机的详细信息，请查看[安全标识符的工作原理](/previous-versions/windows/it-pro/windows-server-2003/cc778824(v=ws.10))。  
   
 ## <a name="ad-ds-role-deployment-and-management-architecture"></a>AD DS 角色部署和管理体系结构
 
@@ -176,7 +176,7 @@ Adprep 不再要求在架构主机上运行。 它可从运行 Windows Server 20
 
 根据操作，内置于 ADDSDeployment Windows PowerShell 托管代码的先决条件检查系统在不同模式下工作。 以下表格介绍了每项测试以及使用它的时间，并说明了它的验证原理和对象。 在出现验证失败且错误不足以解决该问题时的情况时，这些表格非常有用。  
   
-这些测试始终作为事件 ID **103** 登录任务类别 **核心**下的 **DirectoryServices-Deployment**操作事件日志通道。  
+这些测试始终作为事件 ID **103** 登录任务类别**核心**下的 **DirectoryServices-Deployment** 操作事件日志通道。  
   
 ### <a name="prerequisite-windows-powershell"></a>先决条件 Windows PowerShell
 
@@ -194,19 +194,19 @@ Adprep 不再要求在架构主机上运行。 它可从运行 Windows Server 20
 
 ||||  
 |-|-|-|  
-|测试名称|协议<p>“已使用”|说明和备注|  
+|测试名称|协议<p>已使用|说明和备注|  
 |VerifyAdminTrusted<p>ForDelegationProvider|LDAP|验证你在现有伙伴域控制器上有“使计算机和用户帐户可以受信任且可以委派”(SeEnableDelegationPrivilege) 权限。 这需要你构造的 tokenGroups 属性的访问权限。<p>在联系 Windows Server 2003 域控制器时不使用。 你必须在升级前手动确认此权限|  
 |VerifyADPrep<p>先决条件（林）|LDAP|使用 rootDSE namingContexts 属性和架构命名上下文 fsmoRoleOwner 属性发现并联系架构主机。 确定 AD DS 安装需要哪些预备操作（forestprep、domainprep 或 rodcprep）。 验证架构 objectVersion 是否和预料的一样以及它是否需要进一步扩展。|  
 |VerifyADPrep<p>先决条件（域和 RODC）|LDAP|使用 rootDSE namingContexts 属性和基础结构容器 fsmoRoleOwner 属性发现并联系基础结构主机。 对于 RODC 安装，此测试发现域命名主机，并确保它处于联机状态。|  
-|CheckGroup<p>成员身份|LDAP、<p>RPC over SMB (LSARPC)|根据操作验证用户是 Domain Admins 还是 Enterprise Admins 组的成员（添加或降级域控制器对应 DA，添加或删除域则对应 EA）|  
+|CheckGroup<p>Membership|LDAP、<p>RPC over SMB (LSARPC)|根据操作验证用户是 Domain Admins 还是 Enterprise Admins 组的成员（添加或降级域控制器对应 DA，添加或删除域则对应 EA）|  
 |CheckForestPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|验证用户是 Schema Admins 和 Enterprise Admins 组的成员，并且在现有域控制器上具有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
 |CheckDomainPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|验证用户是 Domain Admins 组的成员并且在现有域控制器上有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
 |CheckRODCPrep<p>GroupMembership|LDAP、<p>RPC over SMB (LSARPC)|验证用户是 Enterprise Admins 组的成员并且在现有域控制器上有管理审核和安全事件日志 (SesScurityPrivilege) 权限|  
 |VerifyInitSync<p>AfterReboot|LDAP|通过在 rootDSE 属性 becomeSchemaMaster 上设置一个虚拟值，验证架构主机已在其重新启动后至少复制一次|  
 |VerifySFUHotFix<p>已应用|LDAP|验证现有林架构不包含具有 OID 1.2.840.113556.1.4.7000.187.102 的 UID 属性的已知问题 SFU2 扩展<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
-|VerifyExchange<p>SchemaFixed|LDAP、WMI、DCOM、RPC|验证现有林架构是否仍未包含问题 Exchange 2000 扩展 Ms-exch-labeleduri，Ms-exch-labeleduri-Ms-exch-labeleduri，ms-Ms-exch-labeleduri-房子（[https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649)）|  
+|VerifyExchange<p>SchemaFixed|LDAP、WMI、DCOM、RPC|验证现有林架构是否仍未包含问题 Exchange 2000 扩展 Ms-exch-labeleduri，Ms-exch-labeleduri-Ms-exch-labeleduri，和 ms Ms-exch-labeleduri 内部标识符（ [https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649) ）。|  
 |VerifyWin2KSchema<p>一致性|LDAP|验证现有林架构具有一致的（未由第三方错误修改）核心属性和类。|  
 |DCPromo|DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR)|验证命令行语法已传递到升级代码和测试升级。 在新建时，验证林或域尚不存在。|  
 |VerifyOutbound<p>ReplicationEnabled|LDAP、DRSR over SMB、RPC over SMB (LSARPC)|通过针对 NTDS 设置对象的选项属性检查 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004) 来验证指定为复制伙伴的现有域控制器已启用出站复制。|  
 |VerifyMachineAdmin<p>密码|DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR)|验证 DSRM 的安全模式密码集符合域复杂性要求。|  
-|VerifySafeModePassword|*N/A*|验证本地管理员密码集符合计算机安全策略复杂性要求。|  
+|VerifySafeModePassword|*不适用*|验证本地管理员密码集符合计算机安全策略复杂性要求。|  

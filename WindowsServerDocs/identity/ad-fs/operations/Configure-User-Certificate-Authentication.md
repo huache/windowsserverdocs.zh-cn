@@ -8,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c443d596e8e35f7ccf4aa23b622323122a2778e9
-ms.sourcegitcommit: 76a3b5f66e47e08e8235e2d152185b304d03b68b
+ms.openlocfilehash: 6fa77276aa41dc59c3dd5a131b5d8fb8a3dd2e58
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663180"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965449"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>为用户证书身份验证配置 AD FS
 
@@ -36,14 +36,14 @@ ms.locfileid: "84663180"
 
 使用 AD FS 管理控制台或 PowerShell cmdlet，在 AD FS 中使用 intranet 或 extranet 身份验证方法启用用户证书身份验证 `Set-AdfsGlobalAuthenticationPolicy` 。
 
-如果要为 Azure AD 证书身份验证配置 AD FS，请确保已配置了证书颁发者和序列号所需的[Azure AD 设置](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)和[AD FS 声明规则](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements)
+如果要为 Azure AD 证书身份验证配置 AD FS，请确保已配置了证书颁发者和序列号所需的[Azure AD 设置](/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)和[AD FS 声明规则](/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements)
 
 此外，还有一些可选的方面。
 - 如果要使用基于证书字段和扩展的声明以及 EKU （声明类型 https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) ），请在 Active Directory 声明提供方信任上配置其他声明传递规则。  有关可用证书声明的完整列表，请参阅下文。  
 - 如果需要基于证书类型限制访问，则可以在应用程序 AD FS 颁发授权规则中使用证书的其他属性。 常见的情况是 "仅允许 MDM 提供程序预配的证书" 或 "仅允许智能卡证书"
 >[!IMPORTANT]
 > 如果客户使用设备代码流进行身份验证，并使用 Azure AD 以外的其他 IDP （如 AD FS）执行设备身份验证，则将不能对 Azure AD 资源强制实施基于设备的访问（例如，仅允许使用第三方 MDM 服务的托管设备）。 若要在 Azure AD 中保护对公司资源的访问并防止任何数据泄露，客户应配置基于 Azure AD 设备的条件性访问（即 "要求设备标记为投诉" 向 Azure AD 条件性访问授予控制权限）。
-- 在[本文](https://technet.microsoft.com/library/dn786429(v=ws.11).aspx)中，使用 "客户端身份验证的受信任颁发者的管理" 下的指导配置允许的客户端证书证书颁发机构。
+- 在[本文](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn786429(v=ws.11))中，使用 "客户端身份验证的受信任颁发者的管理" 下的指导配置允许的客户端证书证书颁发机构。
 - 你可能想要在执行证书身份验证时，根据最终用户的需求来修改登录页。 常见的情况是将 "使用 X509 证书登录" 更改为最终用户友好的内容
 
 ## <a name="configure-seamless-certificate-authentication-for-chrome-browser-on-windows-desktops"></a>在 Windows 桌面上为 Chrome 浏览器配置无缝证书身份验证
@@ -76,7 +76,7 @@ AD FS 使用基础 windows 操作系统来证明用户证书的所有权，并�
 每个 AD FS 和 WAP 服务器都需要到达 CRL 终结点，以验证提供给它的证书是否仍然有效且未被吊销。 可以通过 HTTPS、HTTP、LDAP 或通过 OCSP （联机证书状态协议）进行 CRL 验证。 如果 AD FS/WAP 服务器无法连接到终结点，则身份验证将失败。 请按照以下步骤进行故障排除。 
 1) 咨询 PKI 工程师，确定用于从 PKI 系统吊销用户证书的 CRL 终结点。 
 2)  在每个 AD FS/WAP 服务器上，确保可通过使用的协议（通常是 HTTPS 或 HTTP）访问 CRL 终结点
-3)  对于高级验证，请在每个 AD FS/WAP 服务器上[启用 CAPI2 事件日志记录](https://blogs.msdn.microsoft.com/benjaminperkins/2013/09/30/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues/)
+3)  对于高级验证，请在每个 AD FS/WAP 服务器上[启用 CAPI2 事件日志记录](/archive/blogs/benjaminperkins/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues)
 4) 检查 CAPI2 操作日志中的事件 ID 41 （验证吊销）
 5) 检查`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
@@ -92,7 +92,7 @@ AD FS 要求客户端设备（或浏览器）和负载均衡器支持 SNI。 某
     *   键入`netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
 
 ### <a name="check-if-the-client-device-has-been-provisioned-with-the-certificate-correctly"></a>检查是否已通过证书正确设置了客户端设备
-你可能会注意到某些设备工作正常，但其他设备却不能正常工作。 在这种情况下，这通常是由于未在客户端设备上正确设置用户证书而导致的。 请按照以下步骤进行操作。 
+你可能会注意到某些设备工作正常，但其他设备却不能正常工作。 在这种情况下，这通常是由于未在客户端设备上正确设置用户证书而导致的。 请遵循以下步骤进行操作。 
 1)  如果此问题特定于 Android 设备，最常见的问题是 Android 设备上不完全信任证书链。  请参阅 MDM 供应商，以确保已正确设置证书，并且整个证书链在 Android 设备上完全受信任。 
 2)  如果此问题特定于 Windows 设备，请通过检查已登录用户（而非系统/计算机）的 Windows 证书存储来检查是否正确设置了证书。
 3)  将客户端用户证书导出到 .cer 文件，并运行命令 "certutil-urlfetch-verify certificatefilename"
@@ -132,10 +132,10 @@ AD FS 要求客户端设备（或浏览器）和负载均衡器支持 SNI。 某
 |        https://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage         |                             KeyEncipherment                              |
 |  https://schemas.microsoft.com/2012/12/certificatecontext/extension/subjectkeyidentifier   |                 9D11941EC06FACCCCB1B116B56AA97F3987D620A                 |
 | https://schemas.microsoft.com/2012/12/certificatecontext/extension/authoritykeyidentifier  |    KeyID = d6 13 e3 6b bc e5 d8 15 52 0a fd 36 6a d5 0b 51 f3 0b 25 7f     |
-| https://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename |                                   User                                   |
+| https://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename |                                   用户                                   |
 |           https://schemas.microsoft.com/2012/12/certificatecontext/extension/san           | 其他名称： Principal Name = user@contoso.com ，RFC822 name =user@contoso.com |
 |           https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku           |                          1.3.6.1.4.1.311.10.3.4                          |
 
 ## <a name="related-links"></a>相关链接
 * [为 AD FS 证书身份验证配置备用主机名绑定](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
-* [在 Azure AD 中配置证书颁发机构](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)
+* [在 Azure AD 中配置证书颁发机构](/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)

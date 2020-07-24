@@ -10,16 +10,16 @@ author: cosmosdarwin
 ms.date: 11/06/2017
 description: 如何将服务器或驱动器添加到存储空间直通群集
 ms.localizationpriority: medium
-ms.openlocfilehash: be79a2d3e0e8c56afc409298518d967c9bc80453
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 773bb3a55de27d049d26fa76659d3a4d8057f0fe
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859120"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966389"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>向存储空间直通添加服务器或驱动器
 
->适用于： Windows Server 2019、Windows Server 2016
+>适用于：Windows Server 2019、Windows Server 2016
 
 本主题介绍如何向存储空间直通添加服务器或驱动器。
 
@@ -31,7 +31,7 @@ ms.locfileid: "80859120"
 
 通过添加服务器，典型的部署很容易实现横向扩展。 只需两个步骤：
 
-1. 使用故障转移群集管理单元或者在 PowerShell 中使用 [Test-Cluster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) cmdlet，运行 **群集验证向导**（以管理员身份运行）。 包括你要添加的新服务器 *\<NewNode>* 。
+1. 使用故障转移群集管理单元或者在 PowerShell 中使用 **Test-Cluster** cmdlet，运行 [群集验证向导](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10))（以管理员身份运行）。 包括要添加的新服务器 *\<NewNode>* 。
 
    ```PowerShell
    Test-Cluster -Node <Node>, <Node>, <Node>, <NewNode> -Include "Storage Spaces Direct", Inventory, Network, "System Configuration"
@@ -40,7 +40,7 @@ ms.locfileid: "80859120"
    由此确认正在运行 Windows Server 2016 Datacenter Edition 的新服务器与现有服务器一样已加入 Active Directory 域服务域，具有全部所需角色和功能，并已正确配置了网络。
 
    >[!IMPORTANT]
-   > 如果你正在重复使用包含不再需要的旧数据或元数据的驱动器，则使用“磁盘管理”或 **Reset-PhysicalDisk** cmdlet 清除它们。 如果检测到旧数据或元数据，则不将这些驱动器放入池中。
+   > 如果你正在重复使用包含不再需要的旧数据或元数据的驱动器，则使用**磁盘管理**或 **Reset-PhysicalDisk** cmdlet 清除它们。 如果检测到旧数据或元数据，则不将这些驱动器放入池中。
 
 2. 在群集上运行以下 cmdlet 以完成服务器添加：
 
@@ -49,7 +49,7 @@ Add-ClusterNode -Name NewNode
 ```
 
    >[!NOTE]
-   > 自动池取决于你只有一个池。 如果你已避开标准配置来创建多个池，则将需要使用 **Add-PhysicalDisk** 自行将新驱动器添加到首选池。
+   > 自动池取决于你只有一个池。 如果你规避了标准配置来创建多个池，则需要使用**PhysicalDisk**将新驱动器添加到首选池。
 
 ### <a name="from-2-to-3-servers-unlocking-three-way-mirroring"></a>从 2 个服务器横向扩展到 3 个服务器：解锁三向镜像
 
@@ -81,7 +81,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 #### <a name="option-3"></a>选项 3
 
-在名为 **Capacity** 的 **StorageTier** 模板上设置 *PhysicalDiskRedundancy = 2*，然后通过引用层创建卷。
+在名为 *Capacity* 的 **StorageTier** 模板上设置 **PhysicalDiskRedundancy = 2**，然后通过引用层创建卷。
 
 ```PowerShell
 Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2 
@@ -150,13 +150,13 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 如果你的部署使用机箱或机架容错，则必须在将它们添加到群集之前指定新服务器的机箱或机架。 这将告知“存储空间直通”如何最好地分发数据以最大化容错能力。
 
-1. 通过打开提升的 PowerShell 会话，然后使用以下命令，其中 *\<NewNode &gt;* 是新的群集节点名称，为节点创建一个临时故障域：
+1. 通过打开提升的 PowerShell 会话，然后使用以下命令（其中， *\<NewNode>* 是新群集节点的名称）为节点创建一个临时容错域：
 
    ```PowerShell
    New-ClusterFaultDomain -Type Node -Name <NewNode> 
    ```
 
-2. 按照 *\<ParentName>* 所指定的位置将此临时故障域移动到新服务器在现实环境中位于的机箱或机架中：
+2. 将此临时容错域移到在现实世界中，新服务器所在的底盘或货架，由 *\<ParentName>* 以下内容指定：
 
    ```PowerShell
    Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
@@ -181,12 +181,12 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 ```
 
-在短时间内，符合条件的驱动器将自动被“存储空间直通”声明并添加到存储池，卷将自动 [跨所有驱动器均匀地重新分发](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)。 此时，你已完成操作并准备[扩展现有卷](resize-volumes.md)或[创建新卷](create-volumes.md)。
+在很短的时间内，符合条件的驱动器将由存储空间直通自动声明，并添加到存储池，卷将自动在[所有驱动器之间平均重新分布](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)。 此时，你已完成操作并准备[扩展现有卷](resize-volumes.md)或[创建新卷](create-volumes.md)。
 
-如果驱动器未出现，可手动扫描检测硬件改动。 使用“**操作**”菜单下的“**设备管理器**”可以完成此操作。 如果它们包含旧数据或元数据，请考虑对其重格式化。 这可以使用“磁盘管理”或 **Reset-PhysicalDisk** cmdlet 来完成。
+如果驱动器未出现，可手动扫描检测硬件改动。 使用“**操作**”菜单下的“**设备管理器**”可以完成此操作。 如果它们包含旧数据或元数据，请考虑对其重格式化。 这可以使用**磁盘管理**或 **Reset-PhysicalDisk** cmdlet 来完成。
 
    >[!NOTE]
-   > 自动池取决于你只有一个池。 如果你已避开标准配置来创建多个池，则将需要使用 **Add-PhysicalDisk** 自行将新驱动器添加到首选池。
+   > 自动池取决于你只有一个池。 如果你规避了标准配置来创建多个池，则需要使用**PhysicalDisk**将新驱动器添加到首选池。
 
 ## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>在添加驱动器或服务器之后优化驱动器使用情况
 
@@ -200,7 +200,7 @@ Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 Get-StorageJob
 ```
 
-可以使用[StoragePool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) cmdlet 手动优化存储池。 下面是一个示例：
+可以使用[StoragePool](/powershell/module/storage/optimize-storagepool?view=win10-ps) cmdlet 手动优化存储池。 下面是一个示例：
 
 ```powershell
 Get-StoragePool <PoolName> | Optimize-StoragePool

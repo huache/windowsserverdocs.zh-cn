@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a22b1a0d776540e8ee2f2c223a1087bd88adaa47
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd8c2d4635071a199bdeff6a2bd518d746d82bc3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821170"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966319"
 ---
 # <a name="maintaining-a-more-secure-environment"></a>维护更安全的环境
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*定律10：技术不是一个万灵丹。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律10：技术不是一个万灵丹。* - [安全管理的10个永恒定律](/previous-versions//cc722488(v=technet.10))  
   
 为关键业务资产创建了一个可管理、安全的环境后，你的关注点应转移到确保安全维护。 虽然你已获得特定的技术控制来提高你的 AD DS 安装的安全性，但仅技术不会保护在与企业的合作关系中不起作用的环境，从而维护安全的可用基础结构。 本部分中的高级建议旨在用作指导原则，不仅可用于开发有效的安全性，还可用于开发有效的生命周期管理。  
   
@@ -59,13 +59,13 @@ Active Directory 中的数据应具有标识的业务所有者，即，作为联
   
 在您的数据分类模型中，您应包括 AD DS 数据的分类，如下所示。  
   
-### <a name="systems"></a>Systems  
+### <a name="systems"></a>系统  
 您不仅应该对数据进行分类，还应对其服务器人口进行分类。 对于每个服务器，您应该知道安装了什么操作系统、服务器提供了哪些常规角色、服务器上运行的应用程序、记录的 IT 所有者以及记录的业务所有者（如果适用）。 对于在服务器上运行的所有数据或应用程序，你应该需要分类，并且应根据所支持的工作负荷的要求以及应用于系统和数据的分类来保护服务器。 你还可以按服务器的工作负荷分类对服务器进行分组，这使你能够快速确定应该最密切监视和最得到配置的服务器。  
   
 ### <a name="applications"></a>应用程序  
 你应按功能（其功能）、用户群（使用应用程序的用户）以及运行它们的操作系统对应用程序进行分类。 你应维护包含版本信息、修补程序状态和任何其他相关信息的记录。 你还应根据前面所述，按其处理的数据类型对应用程序进行分类。  
   
-### <a name="users"></a>Users  
+### <a name="users"></a>用户  
 无论你是将它们称为 "VIP" 用户、关键帐户还是使用其他标签，都应该标记和监视 Active Directory 安装中最可能成为攻击者的帐户。 在大多数组织中，监视所有用户的所有活动是不可行的。 但是，如果您能够在 Active Directory 安装中标识关键帐户，则可以按照本文档前面所述来监视这些帐户的更改。  
   
 审核帐户时，还可以开始为这些帐户生成 "预期行为" 的数据库。 例如，如果你发现给定的执行程序使用其安全的工作站来访问其办公室和家里的关键业务数据，但很少从其他位置进行访问，如果你看到尝试使用他的帐户从未经授权的计算机访问数据或在你知道管理人员当前未找到的地球位置附近，你可以更快速地确定并调查此异常行为。  
@@ -74,5 +74,3 @@ Active Directory 中的数据应具有标识的业务所有者，即，作为联
   
 假设执行人员通常位于芝加哥，并使用安全的工作站来访问其办公桌的关键业务数据，尝试从位于亚特兰大的不安全工作站访问数据时，会触发事件。 如果能够验证主管当前是否在亚特兰大，则可以通过联系 executive 人员或执行人员的助理来确定访问失败是否是由执行程序忘记使用安全工作站访问数据的结果来解决该问题。 通过构造使用[规划折衷](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)中所述方法的程序，您可以开始为 Active Directory 安装中最重要的帐户生成预期行为的数据库，这可能会帮助您更快速地发现和响应攻击。  
   
-
-

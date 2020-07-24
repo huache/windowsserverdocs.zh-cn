@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3c43d26868f39896ec8632397dc0fce1dfe2dd2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9882061aad5ec6620cda5a0a288790d34f25c3f3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408284"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966669"
 ---
 # <a name="migrate-an-ad-fs-20-wid-farm"></a>迁移 AD FS 2.0 WID 场  
 本文档详细介绍了如何将 AD FS 2.0 SQL 场迁移到 Windows Server 2012。
@@ -24,9 +24,9 @@ ms.locfileid: "71408284"
   
 1.  对于 SQL Server 场中的每个服务器，请查看并执行[迁移 SQL Server 场](prepare-to-migrate-a-sql-server-farm.md)中的过程。  
   
-2.  从负载均衡器中删除你的 SQL Server 场中的任何服务器。  
+2.  从负载平衡器中删除你的 SQL Server 场中的任何服务器。  
   
-3.  将 SQL Server 场中此服务器上的操作系统从 Windows Server 2008 R2 或 Windows Server 2008 升级到 Windows Server 2012。 有关详细信息，请参阅[安装 Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx)。  
+3.  将 SQL Server 场中此服务器上的操作系统从 Windows Server 2008 R2 或 Windows Server 2008 升级到 Windows Server 2012。 有关详细信息，请参阅[安装 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))。  
   
 > [!IMPORTANT]
 >  作为操作系统升级的结果，在此服务器上的 AD FS 配置将丢失并且 AD FS 2.0 的服务器角色会被删除。 改为安装 Windows Server 2012 AD FS Server 角色，但未对其进行配置。 你必须手动创建原始 AD FS 配置并还原剩余的 AD FS 设置，以完成联合服务器迁移。  
@@ -52,6 +52,3 @@ ms.locfileid: "71408284"
  [迁移 AD FS 2.0 联合服务器](migrate-the-ad-fs-fed-server.md)   
  [迁移 AD FS 2.0 联合服务器代理](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [迁移 AD FS 1.1 Web 代理](migrate-the-ad-fs-web-agent.md)
-
-
-

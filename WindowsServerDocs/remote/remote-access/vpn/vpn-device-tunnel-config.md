@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb02bf2ca6aa254a0f1895367abdb90c5c34e6a
-ms.sourcegitcommit: c1a5e46f64f25e1a0e658721130d87661b1d59a3
+ms.openlocfilehash: 095e40528d27be4509e3235a0ab4c03e59759f99
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86543381"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966759"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中配置 VPN 设备隧道
 
@@ -98,9 +98,9 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="deployment-and-testing"></a>部署和测试
 
-可以使用 Windows PowerShell 脚本并使用 Windows Management Instrumentation （WMI）桥来配置设备隧道。 必须在**本地系统**帐户的上下文中配置 Always On VPN 设备隧道。 若要实现此目的，需要使用[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)，这是[Sysinternals](https://docs.microsoft.com/sysinternals/)套件中包含的其中一个[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) 。
+可以使用 Windows PowerShell 脚本并使用 Windows Management Instrumentation （WMI）桥来配置设备隧道。 必须在**本地系统**帐户的上下文中配置 Always On VPN 设备隧道。 若要实现此目的，需要使用[PsExec](/sysinternals/downloads/psexec)，这是[Sysinternals](/sysinternals/)套件中包含的其中一个[PsTools](/sysinternals/downloads/pstools) 。
 
-有关如何部署每个设备 `(.\Device)` 和每个用户配置文件的指南 `(.\User)` ，请参阅将[POWERSHELL 脚本与 WMI 桥接程序结合使用](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
+有关如何部署每个设备 `(.\Device)` 和每个用户配置文件的指南 `(.\User)` ，请参阅将[POWERSHELL 脚本与 WMI 桥接程序结合使用](/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
 
 运行以下 Windows PowerShell 命令，以验证是否已成功部署设备配置文件：
 
@@ -173,17 +173,17 @@ Write-Host "$Message"
 
 以下是 VPN 客户端配置资源。
 
-- [如何在 Configuration Manager 中创建 VPN 配置文件](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles)
+- [如何在 Configuration Manager 中创建 VPN 配置文件](/configmgr/protect/deploy-use/create-vpn-profiles)
 - [配置 Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
-- [VPN 配置文件选项](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
+- [VPN 配置文件选项](/windows/access-protection/vpn/vpn-profile-options)
 
 ### <a name="remote-access-server-gateway-resources"></a>远程访问服务器网关资源
 
 以下是远程访问服务器（RAS）网关资源。
 
-- [使用计算机身份验证证书配置 RRAS](https://technet.microsoft.com/library/dd458982.aspx)
-- [IKEv2 VPN 连接疑难解答](https://technet.microsoft.com/library/dd941612.aspx)
-- [配置基于 IKEv2 的远程访问](https://technet.microsoft.com/library/ff687731.aspx)
+- [使用计算机身份验证证书配置 RRAS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd458982(v=ws.11))
+- [IKEv2 VPN 连接疑难解答](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941612(v=ws.10))
+- [配置基于 IKEv2 的远程访问](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff687731(v=ws.10))
 
 >[!IMPORTANT]
->将设备隧道与 Microsoft RAS 网关结合使用时，你需要将 RRAS 服务器配置为支持 IKEv2 计算机证书身份验证，方法是为 IKEv2 身份验证方法启用 "**允许计算机证书身份验证**"，如[此处](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)所述。 启用此设置后，强烈建议**将 VpnAuthProtocol** PowerShell Cmdlet 与**RootCertificateNameToAccept**可选参数一起使用，以确保 RRAS IKEv2 连接仅适用于链接到显式定义的内部/专用根证书颁发机构的 VPN 客户端证书。 另外，应修改 RRAS 服务器上**受信任的根证书颁发机构**存储，以确保它不包含[本文](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)中所述的公共证书颁发机构。 其他 VPN 网关可能还需要考虑类似的方法。
+>将设备隧道与 Microsoft RAS 网关结合使用时，你需要将 RRAS 服务器配置为支持 IKEv2 计算机证书身份验证，方法是为 IKEv2 身份验证方法启用 "**允许计算机证书身份验证**"，如[此处](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ee922682%28v=ws.10%29)所述。 启用此设置后，强烈建议**将 VpnAuthProtocol** PowerShell Cmdlet 与**RootCertificateNameToAccept**可选参数一起使用，以确保 RRAS IKEv2 连接仅适用于链接到显式定义的内部/专用根证书颁发机构的 VPN 客户端证书。 另外，应修改 RRAS 服务器上**受信任的根证书颁发机构**存储，以确保它不包含[本文](/archive/blogs/rrasblog/what-type-of-certificate-to-install-on-the-vpn-server)中所述的公共证书颁发机构。 其他 VPN 网关可能还需要考虑类似的方法。

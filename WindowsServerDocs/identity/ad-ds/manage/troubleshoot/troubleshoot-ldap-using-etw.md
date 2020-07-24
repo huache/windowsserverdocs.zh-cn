@@ -9,16 +9,16 @@ audience: Admin
 ms.author: v-tea
 ms.topic: article
 ms.date: 11/22/2019
-ms.openlocfilehash: f7b7df714dbd02b15555fa20c70c1e995e121a48
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 516304498206523a1ce618da6aa21640e38c9654
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822930"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965649"
 ---
 # <a name="using-etw-to-troubleshoot-ldap-connections"></a>使用 ETW 排查 LDAP 连接问题
 
-[Windows 事件跟踪（ETW）](https://docs.microsoft.com/windows/win32/etw/event-tracing-portal)是一个非常有用的故障排除工具，可用于 Active Directory 域服务（AD DS）。 可以使用 ETW 跟踪 Windows 客户端和 LDAP 服务器之间的轻型目录访问协议（[LDAP](https://docs.microsoft.com/previous-versions/windows/desktop/ldap/lightweight-directory-access-protocol-ldap-api)）通信，包括 AD DS 域控制器。
+[Windows 事件跟踪（ETW）](/windows/win32/etw/event-tracing-portal)是一个非常有用的故障排除工具，可用于 Active Directory 域服务（AD DS）。 可以使用 ETW 跟踪 Windows 客户端和 LDAP 服务器之间的轻型目录访问协议（[LDAP](/previous-versions/windows/desktop/ldap/lightweight-directory-access-protocol-ldap-api)）通信，包括 AD DS 域控制器。
 
 ## <a name="how-to-turn-on-etw-and-start-a-trace"></a>如何打开 ETW 并启动跟踪
 
@@ -26,9 +26,9 @@ ms.locfileid: "80822930"
 
 1. 打开注册表编辑器，并创建以下注册表子项：
 
-   **HKEY\_本地\_计算机\\系统\\CurrentControlSet\\服务\\ldap\\跟踪\\* ProcessName***
+   **HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Services \\ ldap \\ 跟踪 \\ * ProcessName***
 
-   在此子项中， *ProcessName*是要跟踪的进程的完整名称，包括其扩展（例如 "svchost.exe"）。
+   在此子项中， *ProcessName*是要跟踪的进程的完整名称，包括其扩展（例如 "Svchost.exe"）。
 
 1. （**可选**）在此子项下，创建一个名为**PID**的新项。 若要使用此项，请将进程 ID 指定为 DWORD 值。  
 
@@ -44,11 +44,11 @@ ms.locfileid: "80822930"
 
    此命令中的占位符表示以下值。
 
-  - \<*SessionName*> 是用于标记跟踪会话的任意标识符。  
+  - \<*SessionName*>是用于标记跟踪会话的任意标识符。  
   > [!NOTE]  
   > 稍后停止跟踪会话时，必须引用此会话名称。
-  - \<*FileName*> 指定将向其中写入事件的日志文件。
-  - \<*跟踪标志*> 应为[跟踪标志表](#values-for-trace-flags)中列出的一个或多个值。
+  - \<*FileName*>指定将向其写入事件的日志文件。
+  - \<*TraceFlags*>应为[跟踪标志表](#values-for-trace-flags)中列出的一个或多个值。
 
 ## <a name="how-to-end-a-tracing-session-and-turn-off-event-tracing"></a>如何结束跟踪会话并关闭事件跟踪
 
@@ -60,18 +60,18 @@ ms.locfileid: "80822930"
    tracelog.exe -stop <SessionName>
    ```
 
-   在此命令中，\<*SessionName*> 的名称与你在**tracelog**命令中使用的名称相同。
+   在此命令中，与在 \<*SessionName*> **tracelog.exe 开始**命令中使用的名称相同。
 
 **禁用 ETW**
 
-- 在注册表编辑器中，删除**HKEY\_本地\_计算机\\System\\CurrentControlSet\\Services\\ldap\\跟踪\\* ProcessName*** 子项。
+- 在注册表编辑器中，删除**HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ Services \\ ldap \\ 跟踪 \\ * ProcessName*** 子项。
 
 ## <a name="values-for-trace-flags"></a>跟踪标志的值
 
-若要使用标志，请在**tracelog-start**命令的参数中替换 < >*跟踪标志*的标志值。
+若要使用标志，请用**tracelog.exe-start**命令的参数中的 <*跟踪标志*> 占位符替换标志值。
 
 > [!NOTE]  
-> 您可以使用相应的标志值的总和指定多个标志。 例如，若要指定**debug\_搜索**（0x00000001）和**调试\_缓存**（0x00000010）标志，则相应的 \<*跟踪标志*> 值为**0x00000011**。
+> 您可以使用相应的标志值的总和指定多个标志。 例如，若要指定**调试 \_ 搜索**（0X00000001）和**调试 \_ 缓存**（0x00000010）标志，则适当的 \<*TraceFlags*> 值为**0x00000011**。
 
 |标记名称 |标志值 |标志说明 |
 | --- | --- | --- |
@@ -108,11 +108,11 @@ ms.locfileid: "80822930"
 
 ## <a name="example"></a>示例
 
-假设有一个应用程序 App1，该应用程序设置用户帐户的密码。 假设 App1 产生意外错误。 若要使用 ETW 来帮助诊断此问题，请执行以下步骤：
+假设有一个应用程序 App1.exe，该应用程序设置用户帐户的密码。 假设 App1.exe 产生意外错误。 若要使用 ETW 来帮助诊断此问题，请执行以下步骤：
 
 1. 在注册表编辑器中，创建以下注册表项：
 
-   **HKEY\_本地\_计算机\\系统\\CurrentControlSet\\服务\\ldap\\跟踪\\App1**
+   **HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Services \\ ldap \\ 跟踪 \\App1.exe**
 
 1. 若要启动跟踪会话，请打开命令提示符窗口，并运行以下命令：
 
@@ -120,9 +120,9 @@ ms.locfileid: "80822930"
    tracelog.exe -start ldaptrace -guid \#099614a5-5dd7-4788-8bc9-e29f43db28fc -f .\ldap.etl -flag 0x80000
    ```
 
-   此命令启动后，**调试\_绑定**确保 ETW 将跟踪消息写入。\\的 ldap。
+   此命令启动后，**调试 \_ 绑定**可确保 ETW 将跟踪消息写入。 \\ldap .etl。
 
-1. 启动 App1 并重现意外错误。
+1. 开始 App1.exe，并重现意外错误。
 
 1. 若要停止跟踪会话，请在命令提示符下运行以下命令：
 
@@ -130,7 +130,7 @@ ms.locfileid: "80822930"
     tracelog.exe -stop ldaptrace
    ```
 
-1. 若要防止其他用户跟踪应用程序，请删除**HKEY\_本地\_计算机**\\**System**\\**CurrentControlSet**\\**Services**\\**ldap**\\**跟踪**\\**App1**注册表项。
+1. 若要防止其他用户跟踪应用程序，请删除**HKEY \_ LOCAL \_ MACHINE** \\ **System** \\ **CurrentControlSet** \\ **Services** \\ **ldap** \\ **跟踪** \\ **App1.exe**注册表项。
 
 1. 若要查看跟踪日志中的信息，请在命令提示符下运行以下命令：
 
@@ -139,4 +139,4 @@ ms.locfileid: "80822930"
     ```
 
    > [!NOTE]  
-   > 在此命令中， **tracerpt**是[跟踪使用者](https://go.microsoft.com/fwlink/p/?linkid=83876)工具。
+   > 在此命令中， **tracerpt.exe**是[跟踪使用者](https://go.microsoft.com/fwlink/p/?linkid=83876)工具。

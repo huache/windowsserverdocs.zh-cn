@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: cae164de90738996a6c4663dfcbde794b6c2a18e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 447c8fe33a0454179d8c9aacc9c324ac7bcf1f49
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473774"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965819"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 中存储的新增功能
 
@@ -49,7 +49,7 @@ ms.locfileid: "85473774"
 
 ### <a name="windows-admin-center-enhancements"></a>Windows Admin Center 增强
 
-新版 Windows Admin Center 现已推出，其中为 Windows Server 添加了新功能。 有关最新功能的信息，请参阅 [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)。
+新版 Windows Admin Center 现已推出，其中为 Windows Server 添加了新功能。 有关最新功能的信息，请参阅 [Windows Admin Center](../manage/windows-admin-center/overview.md)。
 
 ## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>Windows Server 2019 和 Windows Server （版本1809）中存储的新增功能
 
@@ -83,7 +83,7 @@ Windows Server 2019 中的存储空间直通有很多改进（存储空间直通
 
 - **使用 U 盘作为见证的双服务器群集**
 
-    使用连接到路由器的低成本 USB 闪存驱动器在两个服务器群集中充当见证服务器。 如果服务器关闭然后备份，则 USB 驱动器群集将知道哪个服务器具有最新的数据。 有关详细信息，请参阅[Microsoft 博客上的存储](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/)。
+    使用连接到路由器的低成本 USB 闪存驱动器在两个服务器群集中充当见证服务器。 如果服务器关闭然后备份，则 USB 驱动器群集将知道哪个服务器具有最新的数据。 有关详细信息，请参阅[Microsoft 博客上的存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 - **Windows 管理中心**
 
@@ -95,7 +95,7 @@ Windows Server 2019 中的存储空间直通有很多改进（存储空间直通
 
 - **纵向扩展到每个群集 4 PB**
 
-    实现多 PB 的扩展 – 非常适合介质、备份和存档用例。 在 Windows Server 2019 中，存储空间直通支持每个存储池多达 4 拍字节 (PB) = 4,000 太字节的原始容量。 还增加了相关容量指南：例如，你可以创建两倍多的卷（64 而不是 32），每个都是之前的两倍大（64TB 而不是 32TB）。 将多个群集汇聚到一个[群集集中](storage-spaces/cluster-sets.md)，甚至能在一个存储命名空间内扩大规模。 有关详细信息，请参阅[Microsoft 博客上的存储](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/)。
+    实现多 PB 的扩展 – 非常适合介质、备份和存档用例。 在 Windows Server 2019 中，存储空间直通支持每个存储池多达 4 拍字节 (PB) = 4,000 太字节的原始容量。 还增加了相关容量指南：例如，你可以创建两倍多的卷（64 而不是 32），每个都是之前的两倍大（64TB 而不是 32TB）。 将多个群集汇聚到一个[群集集中](storage-spaces/cluster-sets.md)，甚至能在一个存储命名空间内扩大规模。 有关详细信息，请参阅[Microsoft 博客上的存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 - **镜像加速奇偶校验速度是原来的 2 倍**
 
@@ -166,7 +166,7 @@ Windows Server 版本1803包括阻止文件服务器资源管理器服务在服�
 
 Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。 半年频道是软件保障权益，在18个月的生产中完全受支持，每六个月有新版本。
 
-有关详细信息，请参阅 [Windows Server 半年频道概述](../get-started/semi-annual-channel-overview.md)。
+有关详细信息，请参阅 [Windows Server 半年频道概述](../get-started-19/servicing-channels-19.md)。
 
 ### <a name="storage-replica"></a>存储副本
 
@@ -250,10 +250,10 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 ### <a name="data-deduplication"></a><a name="dedup"></a>重复数据删除
 | 功能 | 新功能或更新功能 | 说明 |
 |---------------|----------------|-------------|
-| [支持大型卷](data-deduplication/whats-new.md#large-volume-support) | 已更新 | 在 Windows Server 2016 之前，必须专门调整卷的大小实现预期改动，大小超过 10 TB 的卷不适合进行重复数据删除。 在 Windows Server 2016 中，重复数据删除支持的卷大小**高达 64 TB**。 |
-| [支持大型文件](data-deduplication/whats-new.md#large-file-support) | 已更新 | 在 Windows Server 2016 之前，大小接近 1 TB 的文件不适合进行重复数据删除。 在 Windows Server 2016 中，完全支持**高达 1 TB**的文件。 |
+| [支持大型卷](data-deduplication/whats-new.md#large-volume-support) | Updated | 在 Windows Server 2016 之前，必须专门调整卷的大小实现预期改动，大小超过 10 TB 的卷不适合进行重复数据删除。 在 Windows Server 2016 中，重复数据删除支持的卷大小**高达 64 TB**。 |
+| [支持大型文件](data-deduplication/whats-new.md#large-file-support) | Updated | 在 Windows Server 2016 之前，大小接近 1 TB 的文件不适合进行重复数据删除。 在 Windows Server 2016 中，完全支持**高达 1 TB**的文件。 |
 | [支持 Nano Server](data-deduplication/whats-new.md#nano-server-support) | 新建 | 重复数据删除在 Windows Server 2016 的新 Nano Server 部署选项中可用且完全受支持。 |
-| [简化的备份支持](data-deduplication/whats-new.md#simple-backup-support) | 新建 | 在 Windows Server 2012 R2 中，通过一系列手动配置步骤支持虚拟化备份应用程序，如 Microsoft 的 [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) 在 Windows Server 2016 中，已针对虚拟化备份应用程序的重复数据删除的无缝部署添加了新的默认使用类型“备份”。 |
+| [简化的备份支持](data-deduplication/whats-new.md#simple-backup-support) | 新建 | 在 Windows Server 2012 R2 中，通过一系列手动配置步骤支持虚拟化备份应用程序，如 Microsoft 的 [Data Protection Manager](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) 在 Windows Server 2016 中，已针对虚拟化备份应用程序的重复数据删除的无缝部署添加了新的默认使用类型“备份”。 |
 | [支持群集操作系统滚动升级](data-deduplication/whats-new.md#cluster-upgrade-support) | 新建 | 重复数据删除完全支持 Windows Server 2016 的新功能[群集操作系统滚动升级](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)。 |
 
 ### <a name="smb-hardening-improvements-for-sysvol-and-netlogon-connections"></a><a name="smb-hardening-improvements"></a>SMB 针对 SYSVOL 和 NETLOGON 连接的强化改进
@@ -268,7 +268,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 > [!NOTE]
 > 这些设置的注册表值默认情况下并不出现，但在被组策略或其他注册表值替代前，强化规则仍然适用。
 
-有关这些安全改进（也称为 UNC 强化）的详细信息，请参阅 Microsoft 知识库文章 [3000483](https://support.microsoft.com/kb/3000483) 和 [MS15-011 & MS15-014：强化组策略](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy)。
+有关这些安全改进（也称为 UNC 强化）的详细信息，请参阅 Microsoft 知识库文章 [3000483](https://support.microsoft.com/kb/3000483) 和 [MS15-011 & MS15-014：强化组策略](https://msrc-blog.microsoft.com/2015/02/10/ms15-011-ms15-014-hardening-group-policy)。
 
 ### <a name="work-folders"></a>工作文件夹
 改进了工作文件夹服务器运行 Windows Server 2016 和工作文件夹客户端时的更改通知。
@@ -297,4 +297,4 @@ ReFS 做了以下改进：
 这些功能是 Windows Server 2016 中的新增功能。
 
 ## <a name="additional-references"></a>其他参考
-* [Windows Server 2016 中的新增功能](../get-started/what-s-new-in-windows-server-2016.md)
+* [Windows Server 2016 中的新增功能](../get-started/whats-new-in-windows-server-2016.md)

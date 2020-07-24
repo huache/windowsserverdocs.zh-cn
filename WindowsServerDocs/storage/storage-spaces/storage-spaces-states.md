@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: e0e763be5691ea7804421ec3ba5ab7882bdb8c3d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 95ccfec436ba4143ea7ec70120878a29289d14f7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474514"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966789"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>排查存储空间问题和运行状况和运行状态存储空间直通
 
@@ -101,7 +101,7 @@ Volume2      Warning      {Degraded, Incomplete} None
 |操作状态    |说明|
 |---------            |---------          |
 |OK    |虚拟磁盘处于正常状态。|
-|欠佳    |数据未均匀写入到各个驱动器。 <br><br>**操作**：通过运行[StoragePool](https://technet.microsoft.com/itpro/powershell/windows/storage/optimize-storagepool) cmdlet 优化存储池中的驱动器使用情况。|
+|欠佳    |数据未均匀写入到各个驱动器。 <br><br>**操作**：通过运行[StoragePool](/powershell/module/storage/optimize-storagepool?view=win10-ps) cmdlet 优化存储池中的驱动器使用情况。|
 
 ### <a name="virtual-disk-health-state-warning"></a>虚拟磁盘运行状况状态：警告
 
@@ -110,8 +110,8 @@ Volume2      Warning      {Degraded, Incomplete} None
 |操作状态    |说明|
 |---------            |---------          |
 |运行中            |Windows 正在修复虚拟磁盘，例如添加或删除驱动器后。 修复完成后，虚拟磁盘应恢复为 "正常" 运行状况状态。|
-|不完整           |虚拟磁盘的复原能力降低，因为一个或多个驱动器出现故障或丢失。 但是，缺失的驱动器包含数据的最新副本。<br><br> **操作**： <br>1. 重新连接任何缺失的驱动器、更换任何故障的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br>2. 如果使用的不是存储空间直通，请使用[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk) cmdlet 修复虚拟磁盘。<br> 如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。|
-|已降级             |虚拟磁盘的复原能力会降低，因为一个或多个驱动器出现故障或丢失，并且这些驱动器上有过时的数据副本。 <br><br>**操作**： <br> 1. 重新连接任何缺失的驱动器、更换任何故障的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br> 2. 如果使用的不是存储空间直通，请使用[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk) cmdlet 修复虚拟磁盘。 <br>如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。|
+|不完整           |虚拟磁盘的复原能力降低，因为一个或多个驱动器出现故障或丢失。 但是，缺失的驱动器包含数据的最新副本。<br><br> **操作**： <br>1. 重新连接任何缺失的驱动器、更换任何故障的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br>2. 如果使用的不是存储空间直通，请使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) cmdlet 修复虚拟磁盘。<br> 如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。|
+|已降级             |虚拟磁盘的复原能力会降低，因为一个或多个驱动器出现故障或丢失，并且这些驱动器上有过时的数据副本。 <br><br>**操作**： <br> 1. 重新连接任何缺失的驱动器、更换任何故障的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br> 2. 如果使用的不是存储空间直通，请使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) cmdlet 修复虚拟磁盘。 <br>如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。|
 
 ### <a name="virtual-disk-health-state-unhealthy"></a>虚拟磁盘运行状况状态：不正常
 
@@ -128,9 +128,9 @@ Volume2      Warning      {Degraded, Incomplete} None
 |操作状态    |分离原因 |说明|
 |---------            |---------       |--------   |
 |已分离             |按策略            |管理员使虚拟磁盘脱机，或将虚拟磁盘设置为需要手动连接，在这种情况下，每次 Windows 重新启动时，都必须手动附加虚拟磁盘。<br><br>**操作**：使虚拟磁盘恢复联机。 若要在虚拟磁盘位于群集存储池时执行此操作，请在故障转移群集管理器选择 "**存储**  >  **池**  >  " "**虚拟磁盘**" 中，选择显示**脱机**状态的虚拟磁盘，然后选择 "**联机**"。 <br><br>若要在不在群集中时使虚拟磁盘重新联机，请以管理员身份打开 PowerShell 会话，然后尝试使用以下命令：<br><br> <code>Get-VirtualDisk \| Where-Object -Filter { $_.OperationalStatus -eq "Detached" } \| Connect-VirtualDisk</code><br><br>若要在 Windows 重新启动后自动附加所有非群集虚拟磁盘，请以管理员身份打开 PowerShell 会话，然后使用以下命令：<br><br> <code>Get-VirtualDisk \| Set-VirtualDisk -ismanualattach $false</code>|
-|            |多数磁盘不正常 |此虚拟磁盘使用的驱动器太多，已丢失或具有陈旧数据。   <br><br>**操作**： <br> 1. 重新连接任何缺失的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br> 2. 所有驱动器和服务器都处于联机状态后，请更换任何出现故障的驱动器。 有关详细信息，请参阅[运行状况服务](../../failover-clustering/health-service-overview.md)。 <br>如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。<br>3. 如果未使用存储空间直通，请使用[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk) cmdlet 修复虚拟磁盘。  <br><br>如果有多个磁盘发生故障，超过了你的数据的副本，并且未在故障之间修复虚拟磁盘，则虚拟磁盘上的所有数据都将永久丢失。 在这种情况下，请删除虚拟磁盘、创建新的虚拟磁盘，然后从备份还原。|
-|                     |不完整 |没有足够的驱动器来读取虚拟磁盘。    <br><br>**操作**： <br> 1. 重新连接任何缺失的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br> 2. 所有驱动器和服务器都处于联机状态后，请更换任何出现故障的驱动器。 有关详细信息，请参阅[运行状况服务](../../failover-clustering/health-service-overview.md)。 <br>如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。<br>3. 如果未使用存储空间直通，请使用[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk) cmdlet 修复虚拟磁盘。<br><br>如果有多个磁盘发生故障，超过了你的数据的副本，并且未在故障之间修复虚拟磁盘，则虚拟磁盘上的所有数据都将永久丢失。 在这种情况下，请删除虚拟磁盘、创建新的虚拟磁盘，然后从备份还原。|
-| |超时|附加虚拟磁盘花费了太长时间 <br><br> **操作：** 不应经常发生这种情况，因此你可能会尝试查看条件是否按时间传递。 或者，可以尝试使用[VirtualDisk](https://docs.microsoft.com/powershell/module/storage/disconnect-virtualdisk?view=win10-ps) cmdlet 断开虚拟磁盘的连接，然后使用[VirtualDisk](https://docs.microsoft.com/powershell/module/storage/connect-virtualdisk?view=win10-ps) cmdlet 将其重新连接。 |
+|            |多数磁盘不正常 |此虚拟磁盘使用的驱动器太多，已丢失或具有陈旧数据。   <br><br>**操作**： <br> 1. 重新连接任何缺失的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br> 2. 所有驱动器和服务器都处于联机状态后，请更换任何出现故障的驱动器。 有关详细信息，请参阅[运行状况服务](../../failover-clustering/health-service-overview.md)。 <br>如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。<br>3. 如果未使用存储空间直通，请使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) cmdlet 修复虚拟磁盘。  <br><br>如果有多个磁盘发生故障，超过了你的数据的副本，并且未在故障之间修复虚拟磁盘，则虚拟磁盘上的所有数据都将永久丢失。 在这种情况下，请删除虚拟磁盘、创建新的虚拟磁盘，然后从备份还原。|
+|                     |不完整 |没有足够的驱动器来读取虚拟磁盘。    <br><br>**操作**： <br> 1. 重新连接任何缺失的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br> 2. 所有驱动器和服务器都处于联机状态后，请更换任何出现故障的驱动器。 有关详细信息，请参阅[运行状况服务](../../failover-clustering/health-service-overview.md)。 <br>如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。<br>3. 如果未使用存储空间直通，请使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) cmdlet 修复虚拟磁盘。<br><br>如果有多个磁盘发生故障，超过了你的数据的副本，并且未在故障之间修复虚拟磁盘，则虚拟磁盘上的所有数据都将永久丢失。 在这种情况下，请删除虚拟磁盘、创建新的虚拟磁盘，然后从备份还原。|
+| |超时|附加虚拟磁盘花费了太长时间 <br><br> **操作：** 不应经常发生这种情况，因此你可能会尝试查看条件是否按时间传递。 或者，可以尝试使用[VirtualDisk](/powershell/module/storage/disconnect-virtualdisk?view=win10-ps) cmdlet 断开虚拟磁盘的连接，然后使用[VirtualDisk](/powershell/module/storage/connect-virtualdisk?view=win10-ps) cmdlet 将其重新连接。 |
 
 ## <a name="drive-physical-disk-states"></a>驱动器（物理磁盘）状态
 
@@ -141,7 +141,7 @@ Volume2      Warning      {Degraded, Incomplete} None
 |操作状态    |说明|
 |---------            |---------          |
 |OK|驱动器正常。|
-|运行中|驱动器正在执行某些内部保养操作。 操作完成后，驱动器应返回到 *"正常"* 运行状况状态。|
+|服务中|驱动器正在执行某些内部保养操作。 操作完成后，驱动器应返回到 *"正常"* 运行状况状态。|
 
 ### <a name="drive-health-state-warning"></a>驱动器运行状况状态：警告
 
@@ -152,11 +152,11 @@ Volume2      Warning      {Degraded, Incomplete} None
 |通信断开|驱动器丢失。 如果使用存储空间直通，则可能是由于服务器已关闭。<br><br>**操作**：如果使用存储空间直通，请将所有服务器恢复联机状态。 如果未解决此问题，请重新连接驱动器，将其替换，或尝试通过使用 Windows 错误报告 >[物理磁盘](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-timed-out)的故障排除中所述的步骤获取详细的诊断信息。|
 |从池中删除|存储空间正在从其存储池中删除驱动器。 <br><br> 这是一种暂时性的状态。 删除完成后，如果驱动器仍连接到系统，驱动器将转换为原始池中的另一操作状态（通常为正常）。|
 |启动维护模式|在管理员将驱动器置于维护模式后，存储空间正在将驱动器置于维护模式。 这是一种临时状态-驱动器即将处于*维护模式*状态。|
-|维护中模式|管理员将驱动器置于维护模式，从而停止从驱动器进行的读取和写入操作。 这通常在更新驱动器固件或测试失败时执行。<br><br>**操作**：要使驱动器退出维护模式，请使用[StorageMaintenanceMode](https://technet.microsoft.com/itpro/powershell/windows/storage/disable-storagemaintenancemode) cmdlet。|
+|维护中模式|管理员将驱动器置于维护模式，从而停止从驱动器进行的读取和写入操作。 这通常在更新驱动器固件或测试失败时执行。<br><br>**操作**：要使驱动器退出维护模式，请使用[StorageMaintenanceMode](/powershell/module/storage/disable-storagemaintenancemode?view=win10-ps) cmdlet。|
 |停止维护模式|管理员将驱动器退出维护模式，并且存储空间正在使驱动器恢复联机。 这是一种临时状态-驱动器应很快处于另一状态 *-理想状态*。|
 |预测性故障|驱动器报告它接近故障。<br><br>**操作**：更换驱动器。|
-|IO 错误|访问驱动器时发生暂时性错误。<br><br>**操作**： <br>1. 如果驱动器未转换回**正常**状态，可以尝试使用[PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/reset-physicaldisk) cmdlet 来擦除驱动器。 <br> 2. 使用[VirtualDisk](https://docs.microsoft.com/powershell/module/storage/repair-virtualdisk)还原受影响的虚拟磁盘的复原能力。 <br>3. 如果此情况持续出现，请更换驱动器。|
-|暂时性错误|驱动器出现暂时性错误。 这通常意味着驱动器无响应，但这也可能意味着存储空间保护分区未正确地从驱动器中删除。 <br><br>**操作**： <br>1. 如果驱动器未转换回**正常**状态，可以尝试使用[PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/reset-physicaldisk) cmdlet 来擦除驱动器。 <br> 2. 使用[VirtualDisk](https://docs.microsoft.com/powershell/module/storage/repair-virtualdisk)还原受影响的虚拟磁盘的复原能力。 <br>3. 如果出现这种情况，请更换驱动器，或尝试通过使用 Windows 错误报告 >[物理磁盘无法联机](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)时进行故障排除中的步骤来获取有关此驱动器的详细诊断信息。|
+|IO 错误|访问驱动器时发生暂时性错误。<br><br>**操作**： <br>1. 如果驱动器未转换回**正常**状态，可以尝试使用[PhysicalDisk](/powershell/module/storage/reset-physicaldisk) cmdlet 来擦除驱动器。 <br> 2. 使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk)还原受影响的虚拟磁盘的复原能力。 <br>3. 如果此情况持续出现，请更换驱动器。|
+|暂时性错误|驱动器出现暂时性错误。 这通常意味着驱动器无响应，但这也可能意味着存储空间保护分区未正确地从驱动器中删除。 <br><br>**操作**： <br>1. 如果驱动器未转换回**正常**状态，可以尝试使用[PhysicalDisk](/powershell/module/storage/reset-physicaldisk) cmdlet 来擦除驱动器。 <br> 2. 使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk)还原受影响的虚拟磁盘的复原能力。 <br>3. 如果出现这种情况，请更换驱动器，或尝试通过使用 Windows 错误报告 >[物理磁盘无法联机](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)时进行故障排除中的步骤来获取有关此驱动器的详细诊断信息。|
 |异常延迟|驱动器的执行速度慢，如存储空间直通中的运行状况服务。<br><br>**操作**：如果这种情况持续发生，请更换驱动器，使其不会作为一个整体降低存储空间的性能。
 
 ### <a name="drive-health-state-unhealthy"></a>驱动器运行状况：不正常
@@ -165,10 +165,10 @@ Volume2      Warning      {Degraded, Incomplete} None
 
 |操作状态    |说明|
 |---------            |---------          |
-|不可用|存储空间不能使用此驱动器。 有关详细信息，请参阅[存储空间直通硬件要求](storage-spaces-direct-hardware-requirements.md);如果使用的不是存储空间直通，请参阅[存储空间概述](https://technet.microsoft.com/library/hh831739(v=ws.11).aspx#Requirements)。|
-|拆分|已从池中分离驱动器。<br><br>**操作**：重置驱动器，清除驱动器中的所有数据，并将其作为空驱动器添加回池。 为此，请以管理员身份打开 PowerShell 会话，运行[PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk) cmdlet，然后运行[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)。 <br><br>若要获取有关此驱动器的详细诊断信息，请按照使用 Windows 错误报告 >[物理磁盘无法联机](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)中的步骤进行故障排除。|
-|已过时的元数据|存储空间在驱动器上找到旧的元数据。<br><br>**操作**：此为临时状态。 如果驱动器未转换回正常，则可以运行[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)来启动对受影响的虚拟磁盘的修复操作。 如果这不能解决问题，你可以用[PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk) cmdlet 重置驱动器，从驱动器中擦除所有数据，然后运行[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)。|
-|无法识别的元数据|存储空间在驱动器上发现无法识别的元数据，这通常意味着驱动器上有来自不同池中的元数据。<br><br>**操作**：若要擦除驱动器并将其添加到当前池，请重置驱动器。 若要重置驱动器，请以管理员身份打开 PowerShell 会话，运行[PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk) cmdlet，然后运行[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)。|
+|不可用|存储空间不能使用此驱动器。 有关详细信息，请参阅[存储空间直通硬件要求](storage-spaces-direct-hardware-requirements.md);如果使用的不是存储空间直通，请参阅[存储空间概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831739(v=ws.11)#Requirements)。|
+|拆分|已从池中分离驱动器。<br><br>**操作**：重置驱动器，清除驱动器中的所有数据，并将其作为空驱动器添加回池。 为此，请以管理员身份打开 PowerShell 会话，运行[PhysicalDisk](/powershell/module/storage/reset-physicaldisk?view=win10-ps) cmdlet，然后运行[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps)。 <br><br>若要获取有关此驱动器的详细诊断信息，请按照使用 Windows 错误报告 >[物理磁盘无法联机](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)中的步骤进行故障排除。|
+|已过时的元数据|存储空间在驱动器上找到旧的元数据。<br><br>**操作**：此为临时状态。 如果驱动器未转换回正常，则可以运行[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps)来启动对受影响的虚拟磁盘的修复操作。 如果这不能解决问题，你可以用[PhysicalDisk](/powershell/module/storage/reset-physicaldisk?view=win10-ps) cmdlet 重置驱动器，从驱动器中擦除所有数据，然后运行[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps)。|
+|无法识别的元数据|存储空间在驱动器上发现无法识别的元数据，这通常意味着驱动器上有来自不同池中的元数据。<br><br>**操作**：若要擦除驱动器并将其添加到当前池，请重置驱动器。 若要重置驱动器，请以管理员身份打开 PowerShell 会话，运行[PhysicalDisk](/powershell/module/storage/reset-physicaldisk?view=win10-ps) cmdlet，然后运行[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps)。|
 |介质故障|驱动器出现故障，不再可供存储空间使用。<br><br>**操作**：更换驱动器。 <br><br>若要获取有关此驱动器的详细诊断信息，请按照使用 Windows 错误报告 >[物理磁盘无法联机](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)中的步骤进行故障排除。|
 |设备硬件故障|此驱动器上出现硬件故障。 <br><br>**操作**：更换驱动器。|
 |正在更新固件|Windows 正在更新驱动器上的固件。 这是一种暂时性的状态，其持续时间通常小于一分钟，在此期间，池中的其他驱动器会处理所有读取和写入操作。 有关详细信息，请参阅[更新驱动器固件](../update-firmware.md)。|
@@ -196,12 +196,12 @@ Generic Physical Disk SSD        119990648832   False In a Pool
 
 |Reason|说明|
 |---|---|
-|在池中|驱动器已属于一个存储池。 <br><br>驱动器一次只能属于一个存储池。 若要在另一个存储池中使用此驱动器，请首先从其现有池中删除该驱动器，这会告诉存储空间将驱动器上的数据移到池中的其他驱动器上。 如果驱动器已从其池断开连接，但未通知存储空间，则重置驱动器。 <br><br>若要安全地从存储池中删除驱动器，请使用[PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/remove-physicaldisk)，或服务器管理器 >**文件和存储服务**  >  **存储池**，>**物理磁盘**，右键单击该驱动器，然后选择 "**删除磁盘**"。<br><br>若要重置驱动器，请使用[PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)。|
+|在池中|驱动器已属于一个存储池。 <br><br>驱动器一次只能属于一个存储池。 若要在另一个存储池中使用此驱动器，请首先从其现有池中删除该驱动器，这会告诉存储空间将驱动器上的数据移到池中的其他驱动器上。 如果驱动器已从其池断开连接，但未通知存储空间，则重置驱动器。 <br><br>若要安全地从存储池中删除驱动器，请使用[PhysicalDisk](/powershell/module/storage/remove-physicaldisk?view=win10-ps)，或服务器管理器 >**文件和存储服务**  >  **存储池**，>**物理磁盘**，右键单击该驱动器，然后选择 "**删除磁盘**"。<br><br>若要重置驱动器，请使用[PhysicalDisk](/powershell/module/storage/reset-physicaldisk?view=win10-ps)。|
 |不正常|该驱动器不处于正常状态，可能需要更换。|
 |可移动媒体|该驱动器分类为可移动驱动器。 <br><br>存储空间不支持被 Windows 识别为可移动的媒体，如蓝光驱动器。 尽管许多固定驱动器都位于可移动插槽中，但通常情况下，由 Windows 作为可移动*分类*的媒体不适用于存储空间。|
 |已由群集使用|该驱动器当前已由故障转移群集使用。|
 |Offline|驱动器已脱机。 <br><br>若要使所有脱机驱动器联机并设置为读/写，请以管理员身份打开 PowerShell 会话，并使用以下脚本：<br><br><code>Get-Disk \| Where-Object -Property OperationalStatus -EQ "Offline" \| Set-Disk -IsOffline $false</code><br><br><code>Get-Disk \| Where-Object -Property IsReadOnly -EQ $true \| Set-Disk -IsReadOnly $false</code>|
-|容量不足|这通常发生在分区占用驱动器上的可用空间时。 <br><br>**操作**：删除驱动器上的所有卷，并清除驱动器上的所有数据。 实现此目的的一种方法是使用[明文](https://docs.microsoft.com/powershell/module/storage/clear-disk?view=win10-ps)PowerShell cmdlet。|
+|容量不足|这通常发生在分区占用驱动器上的可用空间时。 <br><br>**操作**：删除驱动器上的所有卷，并清除驱动器上的所有数据。 实现此目的的一种方法是使用[明文](/powershell/module/storage/clear-disk?view=win10-ps)PowerShell cmdlet。|
 |正在验证|[运行状况服务](../../failover-clustering/health-service-overview.md#supported-components-document)正在检查驱动器上的驱动器或固件是否已被服务器管理员使用。|
 |验证失败|[运行状况服务](../../failover-clustering/health-service-overview.md#supported-components-document)无法检查驱动器上的驱动器或固件是否已被服务器管理员使用。|
 |固件不合规|物理驱动器上的固件不在服务器管理员使用[运行状况服务](../../failover-clustering/health-service-overview.md#supported-components-document)指定的已批准固件修订列表中。 |

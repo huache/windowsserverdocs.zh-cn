@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 2d6ad863-02a5-49b0-9aff-d189e78b2b80
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1722b750405ea1188d18fab6282d82434f5334ef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9c0d5adbf2096bbfcf4ea3aaa8b4e735e6594dcc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858170"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965239"
 ---
 # <a name="step-2-plan-the-radius-server-deployment"></a>步骤2规划 RADIUS 服务器部署
 
@@ -36,9 +36,7 @@ ms.locfileid: "80858170"
   
 -   部署 RADIUS 服务器时，需要为 RADIUS 流量配置共享机密和端口号。 记下这些详细信息;当你配置远程访问服务器时，它们是必需的。  
   
-你可以在[测试实验室指南：使用 otp 身份验证和 RSA Securid 演示 DirectAccess](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/tlg-otp-securid/test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid)中查看使用 RSA securid 服务器设置 OTP 身份验证的示例测试实验室指南。  
+你可以在[测试实验室指南：使用 otp 身份验证和 RSA Securid 演示 DirectAccess](../../../directaccess/tlg-otp-securid/test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid.md)中查看使用 RSA securid 服务器设置 OTP 身份验证的示例测试实验室指南。  
   
   
   
-
-

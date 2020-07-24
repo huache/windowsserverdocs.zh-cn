@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cf069102f409247832204546f3e1c15de7238bd3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3aeac10b8c92c151fe57bcb935e685f7f1a2bfa2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822270"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965519"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>将 AD DS 集成到现有的 DNS 基础结构
 
@@ -33,7 +33,7 @@ ms.locfileid: "80822270"
 -   配置包含 Active Directory 林范围定位器记录（即 _msdcs 的区域。*林名称*zone），以使用林范围的 DNS 应用程序目录分区复制到林中的每个 dns 服务器。  
   
     > [!NOTE]  
-    > 在 Active Directory 域服务安装向导安装 DNS 服务器服务时（建议选择此选项），将自动执行前面的所有任务。 有关详细信息，请参阅[部署 Windows Server 2008 林根级域](https://technet.microsoft.com/library/cc731174.aspx)。  
+    > 在 Active Directory 域服务安装向导安装 DNS 服务器服务时（建议选择此选项），将自动执行前面的所有任务。 有关详细信息，请参阅[部署 Windows Server 2008 林根级域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。  
   
     > [!NOTE]  
     > AD DS 使用全林性定位器记录，使复制伙伴能够彼此查找，并使客户端能够查找全局编录服务器。 AD DS 在 _msdcs 中存储全林性定位器记录。*林名称*区域。 由于区域中的信息必须广泛使用，此区域将通过林范围的 DNS 应用程序目录分区复制到林中的所有 DNS 服务器。  
@@ -61,5 +61,3 @@ ms.locfileid: "80822270"
   
 如果要在连接到运行 Windows 2000、Windows Server 2003 或 Windows Server 2008 的服务器时利用 Kerberos 身份验证，则必须确保客户端使用主名称连接到服务器。  
   
-
-

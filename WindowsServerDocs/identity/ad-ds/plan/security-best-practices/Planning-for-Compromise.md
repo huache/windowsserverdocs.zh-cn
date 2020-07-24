@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5dcbea1ae0bd84ed517644d7c4fde03852bef304
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72265f5cb2ff0e1f80d4cca6d789cb2951066557
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821110"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966549"
 ---
 # <a name="planning-for-compromise"></a>规划泄露
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*定律一：无人相信可能发生的任何错误，直到发生这种情况。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律一：无人相信可能发生的任何错误，直到发生这种情况。* - [安全管理的10个永恒定律](/previous-versions//cc722488(v=technet.10))  
   
 在许多组织中，灾难恢复计划侧重于从导致计算服务丢失的区域灾难或故障中恢复。 但是，在使用受到攻击的客户时，我们经常会发现，在灾难恢复计划中，从有意的折衷中恢复是不存在的。 当安全漏洞导致了利用逻辑边界（如销毁所有 Active Directory 域或所有服务器）而不是物理边界（如销毁数据中心）的知识产权或故意销毁时，尤其如此。 尽管组织可能具有定义初始活动的事件响应计划，但在发现安全漏洞时，这些计划通常会忽略影响整个计算基础结构的折衷的步骤。  
   
@@ -34,7 +34,7 @@ ms.locfileid: "80821110"
 Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：规划 Active Directory 林恢复](https://www.microsoft.com/download/details.aspx?id=16506)。 您可能能够防止您的新环境受到完全损害，但即使您不能，您也可以使用这些工具来恢复和重新获得对您的环境的控制。  
   
 ## <a name="rethinking-the-approach"></a>反思方法  
-*定律数八：防御网络的难点与复杂性是直接成比例的。*[安全管理  - 10 永恒定律](https://technet.microsoft.com/library/cc722488.aspx)  
+*定律数八：防御网络的难点与复杂性是直接成比例的。* - [安全管理的10个永恒定律](/previous-versions//cc722488(v=technet.10))  
   
 通常情况下，如果攻击者已获得对计算机的系统、管理员、根或等效访问权限（无论操作系统如何），就不能再将该计算机视为可信计算机，无论对系统进行了多少努力。 Active Directory 没有任何区别。 如果攻击者已获取 Active Directory 中的域控制器或高特权帐户的特权访问权限，除非您记录了攻击者所做的每项修改或已知的良好备份，否则您永远都不能将该目录还原到完全信任的状态。  
   
@@ -107,7 +107,7 @@ Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：�
   
 然而，维护 SID 历史记录在某些环境中已经过验证，因为使用当前和历史 Sid 填充用户的访问令牌可能会导致令牌膨胀。 令牌膨胀的问题是，必须存储在用户的访问令牌中的 Sid 数使用或超过令牌中的可用空间量。  
   
-尽管令牌大小可以提高到有限的范围，但令牌膨胀的终极解决方案是减少与用户帐户关联的 Sid 数，无论是通过合理化组成员身份、删除 SID 历史记录还是同时使用二者。 有关令牌膨胀的详细信息，请参阅[MaxTokenSize 和 Kerberos 令牌膨胀](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)。  
+尽管令牌大小可以提高到有限的范围，但令牌膨胀的终极解决方案是减少与用户帐户关联的 Sid 数，无论是通过合理化组成员身份、删除 SID 历史记录还是同时使用二者。 有关令牌膨胀的详细信息，请参阅[MaxTokenSize 和 Kerberos 令牌膨胀](/archive/blogs/shanecothran/maxtokensize-and-kerberos-token-bloat)。  
   
 使用 SID 历史记录，而不是从旧环境（特别是组成员身份和 SID 历史记录可能会受到威胁的应用程序）迁移用户，而不是在新林中携带 SID 历史记录。 在新林中创建用户帐户时，可以使用元目录应用程序将帐户映射到旧林中的相应帐户。  
   
@@ -143,7 +143,7 @@ Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：�
   
 例如，你可以定义一个策略，要求执行官和其他 Vip 使用安全工作站来访问敏感数据和系统，从而使他们能够使用其他设备来访问不太敏感的数据。 这是用户要记住的一个简单原则，但你可以实现一些后端控制，以帮助强制实施此方法。  
 
-如果用户使用智能卡登录到安全系统，则可以使用[身份验证机制保证](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)来允许用户访问敏感数据，并且可以使用 IPsec 和用户权限限制来控制可从中连接到敏感数据存储库的系统。 您可以使用[Microsoft 数据分类工具包](https://www.microsoft.com/download/details.aspx?id=27123)构建强大的文件分类基础结构，还可以实现[动态访问控制](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)，以根据访问尝试的特征限制对数据的访问，将业务规则转换为技术控制。  
+如果用户使用智能卡登录到安全系统，则可以使用[身份验证机制保证](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10))来允许用户访问敏感数据，并且可以使用 IPsec 和用户权限限制来控制可从中连接到敏感数据存储库的系统。 您可以使用[Microsoft 数据分类工具包](https://www.microsoft.com/download/details.aspx?id=27123)构建强大的文件分类基础结构，还可以实现[动态访问控制](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10))，以根据访问尝试的特征限制对数据的访问，将业务规则转换为技术控制。  
   
 从用户的角度来看，从安全系统访问敏感数据 "简单"，然后尝试从不安全系统中执行此操作 "不是"。 但是，从监视和管理你的环境的角度来看，你将帮助你在用户访问敏感数据和系统的方式中创建可识别模式，使你能够更轻松地检测异常的访问尝试。  
   

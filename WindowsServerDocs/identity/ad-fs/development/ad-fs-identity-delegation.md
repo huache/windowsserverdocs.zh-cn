@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c36de1c3565be7f0f0e6c6203a21345f3d227e96
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2162937498a5c16ce33b67ba5e478d2a6bb1a687
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857320"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964979"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>具有 AD FS 的标识委托方案
 
@@ -26,7 +26,7 @@ ms.locfileid: "80857320"
 
 下图显示了一个典型的标识委托方案，其中 Fabrikam 员工访问 Contoso.com 应用程序中公开的资源。
 
-![身份](media/ad-fs-identity-delegation/id1.png)
+![标识](media/ad-fs-identity-delegation/id1.png)
 
 参与此方案的虚构用户包括：
 
@@ -57,7 +57,7 @@ ms.locfileid: "80857320"
 Fabrikam.com 管理员可以使用三个选项，Frank：
 
 
-1. 购买并安装 STS 产品，如 Active Directory&reg; 联合身份验证服务（AD FS）。
+1. 购买并安装 STS 产品，如 Active Directory &reg; 联合身份验证服务（AD FS）。
 2. 订阅云 STS 产品，如 LiveID STS。
 3. 使用 WIF 生成自定义 STS。
 
@@ -99,9 +99,9 @@ if ( claimsPrincipal != null )
     bootstrapToken = claimsIdentity.BootstrapToken;
 }
 ```
-WIF 提供了一个[CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx)方法，该方法创建一个指定类型的通道，该通道使用指定的安全令牌作为 ActAs 元素来补充令牌颁发请求。 可以将启动令牌传递给此方法，然后在返回的通道上调用必要的服务方法。 在此示例方案中，Frank 的标识已[将执行组件属性设置](https://msdn.microsoft.com/library/microsoft.identitymodel.claims.iclaimsidentity.actor.aspx)为 "web1's 标识"。
+WIF 提供了一个[CreateChannelActingAs](/previous-versions/windows-identity-foundation/ee733863(v=msdn.10))方法，该方法创建一个指定类型的通道，该通道使用指定的安全令牌作为 ActAs 元素来补充令牌颁发请求。 可以将启动令牌传递给此方法，然后在返回的通道上调用必要的服务方法。 在此示例方案中，Frank 的标识已[将执行组件属性设置](/previous-versions/windows-identity-foundation/ee766706(v=msdn.10))为 "web1's 标识"。
 
-下面的代码片段演示了如何通过[CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx)调用 Web 服务，然后在返回的通道上调用服务的一种 ComputeResponse 方法：
+下面的代码片段演示了如何通过[CreateChannelActingAs](/previous-versions/windows-identity-foundation/ee733863(v=msdn.10))调用 Web 服务，然后在返回的通道上调用服务的一种 ComputeResponse 方法：
 
 ```
 // Get the channel factory to the backend service from the application state

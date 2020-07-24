@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cde839feda47d55415b2b6cc1026a7a3e6515a44
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 54a2ef82d5eccabaf8be0971ca0324498e75bb78
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823090"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966409"
 ---
 # <a name="directory-services-component-updates"></a>目录服务组件更新
 
@@ -26,7 +26,7 @@ ms.locfileid: "80823090"
   
 本课介绍了 Windows Server 2012 R2 中的目录服务组件更新。  
   
-## <a name="what-you-will-learn"></a>你将学习的内容  
+## <a name="what-you-will-learn"></a>学习内容  
 说明以下新的目录服务组件更新：  
   
 -   说明以下新的目录服务组件更新：  
@@ -269,11 +269,11 @@ Log Record Bytes Generated: 0
   
 ### <a name="to-enable-the-stats-control-in-ldp"></a><a name="BKMK_EnableStats"></a>启用 LDP 中的统计信息控件  
   
-1.  打开 LDP.EXE，然后连接并绑定到域控制器。  
+1.  打开 LDP.exe，然后连接并绑定到域控制器。  
   
 2.  在 "**选项**" 菜单上，单击 "**控件**"。  
   
-3.  在 "控件" 对话框中，展开 "**加载预定义**的" 下拉菜单，单击 "**搜索统计**信息"，然后单击 **"确定"** 。  
+3.  在 "控件" 对话框中，展开 "**加载预定义**的" 下拉菜单，单击 "**搜索统计**信息"，然后单击 **"确定"**。  
   
     ![目录服务更新](media/Directory-Services-component-updates/GTR_ADDS_Controls.gif)  
   
@@ -281,14 +281,14 @@ Log Record Bytes Generated: 0
   
 5.  在 "搜索" 对话框中，选择 "**选项**" 按钮。  
   
-6.  确保在 "搜索选项" 对话框中选中了 "**扩展**" 复选框，然后选择 **"确定"** 。  
+6.  确保在 "搜索选项" 对话框中选中了 "**扩展**" 复选框，然后选择 **"确定"**。  
   
     ![目录服务更新](media/Directory-Services-component-updates/GTR_ADDS_SearchOptions.gif)  
   
 ### <a name="try-this-use-ldp-to-return-query-statistics"></a>尝试此操作：使用 LDP 返回查询统计信息  
 在域控制器上或在已加入域的客户端或安装了 AD DS 工具的服务器上执行以下。  对 Windows Server 2012 DC 和 Windows Server 2012 R2 DC 执行以下操作。  
   
-1.  查看["创建更有效的 MICROSOFT AD 应用程序"](https://msdn.microsoft.com/library/ms808539.aspx)一文，并根据需要向后参考。  
+1.  查看["创建更有效的 MICROSOFT AD 应用程序"](/previous-versions/ms808539(v=msdn.10))一文，并根据需要向后参考。  
   
 2.  使用 LDP，启用搜索统计信息（请参阅[以在 LDP 中启用统计信息控件](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_EnableStats)）  
   
@@ -299,15 +299,15 @@ Log Record Bytes Generated: 0
 5.  尝试构造一个需要很长时间才能完成的搜索（你可能想要增加**时间限制**选项，使搜索不会超时）。  
   
 ### <a name="additional-resources"></a>其他资源  
-[什么是 Active Directory 搜索？](https://technet.microsoft.com/library/cc783845(v=ws.10).aspx)  
+[什么是 Active Directory 搜索？](/previous-versions/windows/it-pro/windows-server-2003/cc783845(v=ws.10))  
   
-[Active Directory 搜索的工作方式](https://technet.microsoft.com/library/cc755809(v=WS.10).aspx)  
+[Active Directory 搜索的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10))  
   
-[创建更有效的 Microsoft Active Directory 应用程序](https://msdn.microsoft.com/library/ms808539.aspx)  
+[创建更有效的 Microsoft Active Directory 应用程序](/previous-versions/ms808539(v=msdn.10))  
   
 [951581](https://support.microsoft.com/kb/951581) LDAP 查询执行速度比 AD 或 LDS/ADAM 目录服务中的预期慢，并且可能会记录事件 ID 1644  
   
-## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>1644事件改进  
+## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>1644 事件改进  
   
 ### <a name="overview"></a>概述  
 此更新向事件 ID 1644 添加了更多 LDAP 搜索结果统计信息，以帮助进行故障排除。  此外，还有一个新的注册表值，可用于根据基于时间的阈值启用日志记录。  这些改进已在 Windows Server 2012 和 Windows Server 2008 R2 SP1 中通过 KB [2800945](https://support.microsoft.com/kb/2800945)提供，并可用于 windows SERVER 2008 SP2。  
@@ -367,11 +367,11 @@ Windows Registry Editor Version 5.00
 ```  
   
 #### <a name="comparison-of-the-old-and-new-event-id-1644"></a>旧的和新的事件 ID 1644 的比较  
-原来  
+OLD  
   
 ![目录服务更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012.gif)  
   
-新增内容  
+新增功能  
   
 ![目录服务更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012R2.gif)  
   
@@ -402,7 +402,5 @@ AD 复制使用 RPC 进行复制传输。 默认情况下，RPC 使用8K 传输�
 > 没有可配置的设置来修改此行为。  
   
 ### <a name="additional-resources"></a>其他资源  
-[Active Directory 复制模型的工作方式](https://technet.microsoft.com/library/cc772726(v=WS.10).aspx)  
+[Active Directory 复制模型的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc772726(v=ws.10))  
   
-
-

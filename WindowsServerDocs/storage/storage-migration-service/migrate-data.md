@@ -8,12 +8,12 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e012706eeb9d483f19eff6f4ba2e1f57e0c0852d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cd8c41e67baf0ffa0399e62ad2a697e4efa1433f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475324"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965179"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>使用存储迁移服务迁移服务器
 
@@ -23,7 +23,7 @@ ms.locfileid: "85475324"
 
 在开始之前，请安装存储迁移服务，并确保所需的防火墙端口已打开。
 
-1. 检查[存储迁移服务要求](overview.md#requirements)，并在你的电脑或管理服务器上安装[Windows 管理中心](../../manage/windows-admin-center/understand/windows-admin-center.md)（如果尚未安装）。 如果迁移已加入域的源计算机，则必须在与源计算机连接的域或林所在的服务器上安装和运行存储迁移服务。
+1. 检查[存储迁移服务要求](overview.md#requirements)，并在你的电脑或管理服务器上安装[Windows 管理中心](../../manage/windows-admin-center/overview.md)（如果尚未安装）。 如果迁移已加入域的源计算机，则必须在与源计算机连接的域或林所在的服务器上安装和运行存储迁移服务。
 2. 在 Windows 管理中心，连接到运行 Windows Server 2019 的 orchestrator 服务器。 <br>这是你将在其上安装存储迁移服务并用于管理迁移的服务器。 如果只迁移一个服务器，则可以使用目标服务器，只要该服务器运行的是 Windows Server 2019。 建议为任何多服务器迁移使用单独的业务流程服务器。
 3. 中转到**服务器管理器**（在 Windows 管理中心中） >**存储迁移服务**，并选择 "**安装**" 以安装存储迁移服务及其必需组件（如图1所示）。
     ![存储迁移服务页的屏幕截图，其中显示了 "安装" 按钮 ](media/migrate/install.png) **图1：安装存储迁移服务**
@@ -43,7 +43,7 @@ ms.locfileid: "85475324"
 
 在此步骤中，你将指定要迁移的服务器，并对其进行扫描以收集有关其文件和配置的信息。
 
-1. 选择 "**新建作业**"，为作业命名，然后选择是否迁移使用 Samba 的 Windows 服务器和群集或 Linux 服务器。 然后选择“确定”。****
+1. 选择 "**新建作业**"，为作业命名，然后选择是否迁移使用 Samba 的 Windows 服务器和群集或 Linux 服务器。 然后选择“确定”。
 2. 在 "**输入凭据**" 页上，键入在要从中进行迁移的服务器上工作的管理员凭据，然后选择 "**下一步**"。 <br>如果要从 Linux 服务器进行迁移，请改为在**Samba 凭据**和**Linux 凭据**页面上输入凭据，包括 SSH 密码或私钥。
 
 3. 选择 "**添加设备**"，键入源服务器名称或群集文件服务器的名称，然后选择 **"确定"**。 <br>对于要清点的任何其他服务器，请重复此步骤。
@@ -95,7 +95,7 @@ ms.locfileid: "85475324"
 - **请考虑在**不接管源服务器标识的情况下完成迁移。
 - **再次传输**，仅复制自上次传输以来已更新的文件。
 
-如果你的目标是将文件与 Azure 同步，则可以在传输文件之后或在切换到目标服务器之后，使用 Azure 文件同步设置目标服务器（请参阅[规划 Azure 文件同步部署](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)）。
+如果你的目标是将文件与 Azure 同步，则可以在传输文件之后或在切换到目标服务器之后，使用 Azure 文件同步设置目标服务器（请参阅[规划 Azure 文件同步部署](/azure/storage/files/storage-sync-files-planning)）。
 
 ## <a name="step-3-cut-over-to-the-new-servers"></a>步骤3：剪切到新服务器
 
@@ -109,7 +109,7 @@ ms.locfileid: "85475324"
 3. 在 "**配置**切换" 页上，指定目标上的哪个网络适配器应接管源上每个适配器的设置。 这会在转换过程中将 IP 地址从源移动到目标，从而为源服务器提供新的 DHCP 或静态 IP 地址。 您可以选择跳过所有网络迁移或某些接口。
 4. 指定在转换后，要用于源服务器的 IP 地址将其地址移至目标。 你可以使用 DHCP 或静态地址。 如果使用静态地址，则新的子网必须与旧子网相同，否则转换将失败。
     ![显示源服务器及其 IP 地址和计算机名称的屏幕截图，它们将在切换后替换为 ](media/migrate/cutover.png) **图形4：源服务器及其网络配置将如何移动到目标**
-5. 指定在目标服务器接管源服务器的名称后如何重命名该源服务器。 你可以自行使用随机生成的名称或类型。 然后，选择“下一步”****。
+5. 指定在目标服务器接管源服务器的名称后如何重命名该源服务器。 你可以自行使用随机生成的名称或类型。 然后选择“下一步”。
 6. 在 "调整切换**设置**" 页上选择 "**下一步**"。
 7. 在 "**验证源和目标设备**" 页上选择 "**验证**"，然后选择 "**下一步**"。
 8. 如果已准备好执行转换，请选择 "**开始**转换"。 <br>用户和应用程序在移动地址和名称时可能会遇到中断，并且服务器每次都重新启动几次，但不受迁移的影响。 切换所花费的时间取决于服务器重新启动的速度，以及 Active Directory 和 DNS 复制时间。
@@ -118,4 +118,4 @@ ms.locfileid: "85475324"
 
 - [存储迁移服务概述](overview.md)
 - [存储迁移服务常见问题（FAQ）](faq.md)
-- [规划 Azure 文件同步部署](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)
+- [规划 Azure 文件同步部署](/azure/storage/files/storage-sync-files-planning)

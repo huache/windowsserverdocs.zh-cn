@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6d0a9248865dca4afb3db9609b284048155f9eef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0cf216cb785d01ed08bb3a4490b25d4c4549b1c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857430"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965589"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>在企业中部署远程访问
 
@@ -27,11 +27,11 @@ ms.locfileid: "80857430"
   
 ## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>在开始部署之前，请参阅不受支持的配置、已知问题和先决条件的列表  
   
--   [DirectAccess 不受支持的配置](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-unsupported-configurations)  
+-   [DirectAccess 不受支持的配置](../directaccess/directaccess-unsupported-configurations.md)  
   
--   [DirectAccess 的已知问题](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-known-issues)  
+-   [DirectAccess 的已知问题](../directaccess/directaccess-known-issues.md)  
   
--   [部署 DirectAccess 的先决条件）先决条件](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/prerequisites-for-deploying-directaccess)  
+-   [部署 DirectAccess 的先决条件）先决条件](../directaccess/prerequisites-for-deploying-directaccess.md)  
   
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>方案描述  
 远程访问具有一系列企业功能，包括部署用 Windows 网络负载平衡 (NLB) 或外部负载平衡器平衡的群集负载中的多台远程访问服务器、使用处于不同地理位置的远程访问服务器设置多站点部署以及使用一次性密码 (OTP) 部署带有双因素客户端身份验证的 DirectAccess。  
@@ -47,7 +47,7 @@ ms.locfileid: "80857430"
   
 -   [在多林环境中部署远程访问](multi-forest/Deploy-Remote-Access-in-a-Multi-Forest-Environment.md)  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>实用应用程序  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>实际的应用程序  
 远程访问企业方案具有以下优势：  
   
 -   **提高了可用性**。 在群集中部署多台远程访问服务器可提供可伸缩性并增加吞吐量和用户数量的容量。 平衡群集的负载可实现高可用性。 如果群集中的服务器出现故障，远程用户可继续通过群集中的其他服务器访问企业内部网络。 故障是透明的，因为客户端使用虚拟的 IP (VIP) 地址连接到群集。  
@@ -56,9 +56,9 @@ ms.locfileid: "80857430"
   
 -   **成本效率**。 远程访问多站点部署可让企业在与客户端位置相应的多个站点中部署远程访问服务器。 不管在哪里，这可为远程客户端提供可预见的访问体验，并通过将 Internet 上的客户端流量路由到最近的远程访问服务器，降低成本和减少 Intranet 带宽。  
   
--   **安全**。 使用一次性密码（OTP）而不是标准 Active Directory 密码来部署强客户端身份验证可提高安全性。  
+-   **安全性**。 使用一次性密码（OTP）而不是标准 Active Directory 密码来部署强客户端身份验证可提高安全性。  
   
-## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的角色和功能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>本方案所包括的角色和功能  
 下表列出了本企业方案所需的角色和功能。  
   
 |角色/功能|如何支持本方案|  
@@ -69,5 +69,3 @@ ms.locfileid: "80857430"
   
 
   
-
-

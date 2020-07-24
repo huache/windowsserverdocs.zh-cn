@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d22897111588393efc148e6f24affeb243ee9e88
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f3850454f9e2e426ce2d00112adf90f0d2530d8f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855330"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964739"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>规划基于设备的条件性访问本地
 
@@ -24,33 +24,33 @@ ms.locfileid: "80855330"
 
 AD FS 在混合方案中提供条件访问策略的本地组件。  向云资源的条件性访问注册设备时，Azure AD Connect 设备写回功能会使设备注册信息在本地提供，以供 AD FS 策略使用和实施 Azure AD。  这样一来，就可以通过一致的方式访问本地和云资源的控制策略。  
 
-![条件性访问](media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![条件访问](media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
 ### <a name="types-of-registered-devices"></a>已注册设备的类型  
 有三种类型的已注册设备，它们都表示为 Azure AD 中的设备对象，并可用于在本地 AD FS 的条件性访问。  
 
-| |添加工作或学校帐户  |加入 Azure AD  |Windows 10 域加入    
+| |添加工作或学校帐户  |Azure AD 加入  |Windows 10 域加入    
 | --- | --- |--- | --- |
 |说明    |  用户以交互方式将其工作或学校帐户添加到其 BYOD 设备。  **注意：** 添加工作或学校帐户是 Windows 8/8.1 中 Workplace Join 的替代项       | 用户将其 Windows 10 工作设备加入 Azure AD。|已加入 Windows 10 域的设备会自动注册 Azure AD。|           
 |用户如何登录到设备     |  不以工作或学校帐户登录到 Windows。  使用 Microsoft 帐户登录。       |   以注册设备的（工作或学校帐户）登录到 Windows。      |     使用 AD 帐户登录。|      
 |如何管理设备    |      MDM 策略（附加 Intune 注册）   | MDM 策略（附加 Intune 注册）        |   组策略，Configuration Manager |
-|Azure AD 信任类型|已加入工作区|Azure AD 联接|域  |     
+|Azure AD 信任类型|已加入工作区|已加入 Azure AD|加入域  |     
 |W10 设置位置    | 设置 > 帐户 > 帐户 > 添加工作或学校帐户        | 有关 > 联接 > 系统 > 的设置 Azure AD       |   有关 > 加入域的系统 > 设置 > |       
-|还适用于 iOS 和 Android 设备？   |    是     |       是  |   是   |   
+|还适用于 iOS 和 Android 设备？   |    是     |       否  |   否   |   
 
   
 
 有关注册设备的不同方法的详细信息，另请参阅：  
-* [在工作区中使用 Windows 10 设备](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices/)  
+* [在工作区中使用 Windows 10 设备](/azure/active-directory/devices/overview)  
 * [设置 Windows 10 设备的工作](https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/)  
-[将 Windows 10 移动版加入到 Azure Active Directory](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)  
+[将 Windows 10 移动版加入到 Azure Active Directory](/windows/client-management/join-windows-10-mobile-to-azure-active-directory)  
 
 ### <a name="how-windows-10-user-and-device-sign-on-is-different-from-previous-versions"></a>Windows 10 用户和设备登录与以前的版本有何不同  
 对于 Windows 10 和 AD FS 2016，你应该了解设备注册和身份验证的一些新方面（特别是在以前版本中非常熟悉设备注册和 "工作区加入"）。  
 
 首先，在 windows 10 和 Windows Server 2016 中的 AD FS 中，设备注册和身份验证不再仅基于 X509 用户证书。  提供了一个新的、更可靠的协议，提供更好的安全性和更无缝的用户体验。  主要区别在于，对于 Windows 10 域加入和 Azure AD 联接，存在 X509 计算机证书和称为 PRT 的新凭据。  可在[此处](https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/)和[此处](https://jairocadena.com/2016/02/01/azure-ad-join-what-happens-behind-the-scenes/)阅读所有相关内容。  
 
-其次，Windows 10 和 AD FS 2016 支持使用 Microsoft Passport for Work 的用户身份验证，可在[此处](https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/)和[此处](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)阅读。  
+其次，Windows 10 和 AD FS 2016 支持使用 Microsoft Passport for Work 的用户身份验证，可在[此处](https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/)和[此处](/windows/security/identity-protection/hello-for-business/hello-identity-verification)阅读。  
 
 AD FS 2016 基于 PRT 和 Passport 凭据提供无缝设备和用户 SSO。  使用本文档中的步骤，您可以启用这些功能并查看它们的工作方式。  
 

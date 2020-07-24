@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c402e5519bc0e5c37cb6d3818c8def40d98d49e5
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 6743a5fb902509d24f8f30d42b919e65fa40ccc0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624255"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965689"
 ---
 # <a name="disjoint-namespace"></a>不连续的命名空间
 
@@ -77,7 +77,7 @@ ms.locfileid: "81624255"
 - 若要优化名称解析，必须执行手动步骤来修改和维护组策略以配置具有备用主 DNS 后缀的成员计算机。
 
 > [!NOTE]
-> Windows Internet 名称服务（WINS）可用于通过解析单标签名称来抵消此缺点。 有关 WINS 的详细信息，请参阅[Wins 技术参考](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10))。
+> Windows Internet 名称服务（WINS）可用于通过解析单标签名称来抵消此缺点。 有关 WINS 的详细信息，请参阅[Wins 技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10))。
 
 - 如果你的环境需要多个主 DNS 后缀，则必须相应地为林中的所有 Active Directory 域配置 DNS 后缀搜索顺序。
 
@@ -85,7 +85,7 @@ ms.locfileid: "81624255"
 
 - 您必须仔细测试所有应用程序的兼容性问题。
 
-有关可用于解决这些缺点的步骤的详细信息，请参阅[创建非连续命名空间](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10))。
+有关可用于解决这些缺点的步骤的详细信息，请参阅[创建非连续命名空间](/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10))。
 
 ### <a name="planning-a-namespace-transition"></a>规划命名空间转换
 
@@ -93,11 +93,11 @@ ms.locfileid: "81624255"
 
 - 命名空间更改后，手动配置的服务主体名称（Spn）可能不再与 DNS 名称匹配。 这可能会导致身份验证失败。
 
-    有关详细信息，请参阅[由于 Spn 设置不当，服务登录失败](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10))。
+    有关详细信息，请参阅[由于 Spn 设置不当，服务登录失败](/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10))。
 
     - 如果你将基于 Windows Server 2003 的计算机用于约束委派，则这些计算机可能需要其他配置来更改 Spn。 有关详细信息，请参阅 Microsoft 知识库中的文章936628，在[运行 Windows Server 2003 （404）的计算机上尝试配置约束委派时，SPN 不会出现在可委派给帐户的服务列表中](https://support.microsoft.com/help/936628)。
 
-    - 如果要委派权限来修改从属管理员的 Spn，请参阅[委派权限以修改 spn](https://technet.microsoft.com/library/cc772895(WS.10).aspx)。
+    - 如果要委派权限来修改从属管理员的 Spn，请参阅[委派权限以修改 spn](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770439(v=ws.10))。
 
 - 如果将轻型目录访问协议（LDAP）通过安全套接字层（SSL）（称为 LDAPS）与 CA 一起使用，并且该部署中具有在不连续的命名空间中配置的域控制器，则必须在配置 LDAPS 证书时使用相应的 Active Directory 域名和主 DNS 后缀。
 

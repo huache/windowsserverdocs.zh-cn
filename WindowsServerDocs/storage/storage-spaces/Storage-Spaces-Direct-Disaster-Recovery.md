@@ -9,16 +9,16 @@ ms.author: johnmar
 ms.date: 03/29/2018
 description: 本文介绍当今可用于灾难恢复 Microsoft HCI 的方案（存储空间直通）
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3159e0c215d898848df71c6488cd491b7ded38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5c9c36e90f9bfae053197b6a36201748cb7e88d7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859160"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966449"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>存储空间直通的灾难恢复
 
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
 本主题提供有关如何为灾难恢复配置超聚合基础结构（HCI）的方案。
 
@@ -55,7 +55,7 @@ ms.locfileid: "80859160"
 
 ## <a name="hyper-v-replica"></a>Hyper-V 副本
 
-[Hyper-v 副本](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica)为超聚合基础结构上的灾难恢复提供了虚拟机级别复制。 Hyper-v 副本可以执行的操作是：获取虚拟机，并将其复制到辅助站点或 Azure （副本）。 然后，在辅助站点中，Hyper-v 副本可以将虚拟机复制到第三个（扩展副本）。
+[Hyper-v 副本](../../virtualization/hyper-v/manage/set-up-hyper-v-replica.md)为超聚合基础结构上的灾难恢复提供了虚拟机级别复制。 Hyper-v 副本可以执行的操作是：获取虚拟机，并将其复制到辅助站点或 Azure （副本）。 然后，在辅助站点中，Hyper-v 副本可以将虚拟机复制到第三个（扩展副本）。
 
 ![Hyper-v 复制关系图](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure2.png)
 
@@ -77,7 +77,7 @@ ms.locfileid: "80859160"
 - 希望卷影复制服务（VSS）复制增量卷影副本的频率。
 - 复制更改的频率（30秒、5分钟、15分钟）。
 
-当 HCI 参与 Hyper-v 副本时，必须在每个群集中创建[Hyper-v 副本代理](https://blogs.technet.microsoft.com/virtualization/2012/03/27/why-is-the-hyper-v-replica-broker-required/)资源。 此资源执行以下几项操作：
+当 HCI 参与 Hyper-v 副本时，必须在每个群集中创建[Hyper-v 副本代理](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization)资源。 此资源执行以下几项操作：
 
 1.    为要连接到的 Hyper-v 副本的每个群集提供单个命名空间。
 2.    确定副本（或扩展副本）首次接收副本时将驻留在哪个群集中的哪个节点。
@@ -91,7 +91,7 @@ ms.locfileid: "80859160"
 
 ### <a name="non-authoritative"></a>非权威
 
-非权威还原可以使用 Windows NT 备份来完成，这等同于群集节点本身的完全还原。 如果只需还原群集节点（和群集注册表数据库）和所有当前群集信息，则需使用非权威还原。 可以通过 Windows NT 备份接口或命令行 WBADMIN 完成非权威还原.EXE.
+非权威还原可以使用 Windows NT 备份来完成，这等同于群集节点本身的完全还原。 如果只需还原群集节点（和群集注册表数据库）和所有当前群集信息，则需使用非权威还原。 可以通过 Windows NT 备份接口或命令行 WBADMIN.EXE 来执行非权威还原。
 
 还原节点后，让它加入群集。 发生的情况是，它将会出现在现有的正在运行的群集上，并将其所有信息更新为当前存在的内容。
 
@@ -103,7 +103,7 @@ ms.locfileid: "80859160"
 
 若要通过授权还原运行，可以完成以下步骤。
 
-1.    运行 WBADMIN。EXE，以获取要安装的最新版本的备份，并确保系统状态是可以还原的组件之一。
+1.    从管理命令提示符运行 WBADMIN.EXE 以获取要安装的最新版本的备份，并确保系统状态是可以还原的组件之一。
 
     ```powershell
     Wbadmin get versions
@@ -126,5 +126,3 @@ ms.locfileid: "80859160"
 ## <a name="summary"></a>摘要 
 
 若要实现这一点，超聚合灾难恢复是应该认真规划的内容。 有几种方案可以最符合您的需求，并且应该经过全面测试。 要注意的一项是，如果你熟悉以前的故障转移群集，则 stretch 群集是多年来非常流行的选项。 超聚合解决方案有一些设计更改，但它基于复原能力。 如果在超聚合群集中丢失两个节点，则整个群集将会关闭。 就如此，在超聚合环境中，不支持延伸方案。
-
-

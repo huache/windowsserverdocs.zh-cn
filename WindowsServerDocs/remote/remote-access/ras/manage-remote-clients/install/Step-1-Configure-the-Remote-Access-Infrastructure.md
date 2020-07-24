@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d4588304ee3635c20f6b79817dfb54b0fa315357
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 075d34a80abef25136f272ec530d693694e04799
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859200"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965459"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>步骤1配置远程访问基础结构
 
@@ -36,10 +36,10 @@ ms.locfileid: "80859200"
 |配置网络位置服务器|配置网络位置服务器，包括安装网络位置服务器网站证书。|  
   
 > [!NOTE]  
-> 此主题包括示例 Windows PowerShell cmdlet，你可以使用这些 cmdlet 自动实现所述的一些功能。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
+> 此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [使用 cmdlet](https://go.microsoft.com/fwlink/p/?linkid=230693)。  
   
 ## <a name="configure-server-network-settings"></a><a name="BKMK_ConfigNetworkSettings"></a>配置服务器网络设置  
-根据你决定将远程访问服务器放置在边缘还是位于网络地址转换（NAT）设备后面，以下网络接口地址设置是使用 IPv4 和 IPv6 的环境中的单个服务器部署所必需的。 可使用“Windows 网络和共享中心”中的“更改适配器设置”配置所有 IP 地址。  
+根据你决定将远程访问服务器放置在边缘还是位于网络地址转换（NAT）设备后面，以下网络接口地址设置是使用 IPv4 和 IPv6 的环境中的单个服务器部署所必需的。 可使用****“Windows 网络和共享中心”中的****“更改适配器设置”配置所有 IP 地址。  
   
 **边缘拓扑**：  
   
@@ -52,11 +52,11 @@ ms.locfileid: "80859200"
   
 -   单个内部静态 IPv4 或 IPv6 地址。  
   
-在**NAT 设备后面（两个网络适配器）** ：  
+在**NAT 设备后面（两个网络适配器）**：  
   
 需要一个面向内部网络的静态 IPv4 或 IPv6 地址。  
   
-在**NAT 设备后面（一个网络适配器）** ：  
+在**NAT 设备后面（一个网络适配器）**：  
   
 需要单个静态 IPv4 或 IPv6 地址。  
   
@@ -74,7 +74,7 @@ ms.locfileid: "80859200"
   
     要在此命令中使用的 IPsec 策略的名称是**DaServerToInfra**和**DaServerToCorp**。  
   
-## <a name="configure-routing-in-the-corporate-network"></a><a name="BKMK_ConfigRouting"></a>在企业网络中配置路由  
+## <a name="configure-routing-in-the-corporate-network"></a><a name="BKMK_ConfigRouting"></a>配置企业网络中的路由  
 在企业网络中配置路由，如下所示：  
   
 -   在组织中部署本机 IPv6 时，添加一个路由，以便内部网络上的路由器通过远程访问服务器将 IPv6 通信路由回来。  
@@ -120,50 +120,50 @@ ms.locfileid: "80859200"
   
 -   所有 IPv4 或 IPv6 通信的 ICMP  
   
-## <a name="configure-cas-and-certificates"></a><a name="BKMK_ConfigCAs"></a>配置 Ca 和证书  
+## <a name="configure-cas-and-certificates"></a><a name="BKMK_ConfigCAs"></a>配置 CA 和证书  
 使用 Windows Server 2012 中的远程访问，可以选择是使用证书进行计算机身份验证，还是使用使用用户名和密码的内置 Kerberos 身份验证。 还必须在远程访问服务器上配置 ip-https 证书。 本部分介绍如何配置这些证书。  
   
-有关设置公钥基础结构（PKI）的信息，请参阅[Active Directory 证书服务](https://technet.microsoft.com/library/cc770357.aspx)。  
+有关设置公钥基础结构（PKI）的信息，请参阅[Active Directory 证书服务](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770357(v=ws.10))。  
   
 ### <a name="configure-ipsec-authentication"></a><a name="BKMK_ConfigIPsec"></a>配置 IPsec 身份验证  
 远程访问服务器和所有 DirectAccess 客户端上都需要一个证书，以便这些客户端可以使用 IPsec 身份验证。 证书必须由内部证书颁发机构（CA）颁发。 远程访问服务器和 DirectAccess 客户端必须信任颁发根证书和中间证书的 CA。  
   
 ##### <a name="to-configure-ipsec-authentication"></a>配置 IPsec 身份验证  
   
-1.  在内部 CA 上，决定是使用默认计算机证书模板，还是创建新的证书模板（如[创建证书模板](https://technet.microsoft.com/library/cc731705.aspx)中所述）。  
+1.  在内部 CA 上，决定是使用默认计算机证书模板，还是创建新的证书模板（如[创建证书模板](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731705(v=ws.10))中所述）。  
   
     > [!NOTE]  
     > 如果创建新模板，则必须将其配置为使用客户端身份验证。  
   
-2.  如果需要，请部署证书模板。 有关详细信息，请参阅[部署证书模板](https://technet.microsoft.com/library/cc770794.aspx)。  
+2.  如果需要，请部署证书模板。 有关详细信息，请参阅[部署证书模板](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770794(v=ws.10))。  
   
 3.  如果需要，为自动注册配置模板。  
   
-4.  如果需要，配置证书自动注册。 有关详细信息，请参阅[配置证书自动注册](https://technet.microsoft.com/library/cc731522.aspx)。  
+4.  如果需要，配置证书自动注册。 有关详细信息，请参阅[配置证书自动注册](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731522(v=ws.11))。  
   
 ### <a name="configure-certificate-templates"></a><a name="BKMK_ConfigCertTemp"></a>配置证书模板  
 当你使用内部 CA 颁发证书时，必须为 IP-HTTPS 证书和网络位置服务器网站证书配置证书模板。  
   
 ##### <a name="to-configure-a-certificate-template"></a>配置证书模板的步骤  
   
-1.  在内部 CA 中，根据 [创建证书模板](https://technet.microsoft.com/library/cc731705.aspx)中所述创建一个证书模板。  
+1.  在内部 CA 中，根据 [创建证书模板](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731705(v=ws.10))中所述创建一个证书模板。  
   
-2.  根据 [部署证书模板](https://technet.microsoft.com/library/cc770794.aspx)中所述部署该证书模板。  
+2.  根据 [部署证书模板](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770794(v=ws.10))中所述部署该证书模板。  
   
 准备好模板之后，可以使用它们来配置证书。 有关详细信息，请参阅以下过程：  
   
--   [配置 ip-https 证书](#BKMK_IPHTTPS)  
+-   [配置 IP-HTTPS 证书](#BKMK_IPHTTPS)  
   
 -   [配置网络位置服务器](#BKMK_ConfigNLS)  
   
-### <a name="configure-the-ip-https-certificate"></a><a name="BKMK_IPHTTPS"></a>配置 ip-https 证书  
+### <a name="configure-the-ip-https-certificate"></a><a name="BKMK_IPHTTPS"></a>配置 IP-HTTPS 证书  
 远程访问需要使用 IP-HTTPS 证书对到远程访问服务器的 IP-HTTPS 连接进行身份验证。 有三个 IP-HTTPS 证书的证书选项：  
   
--   **公布**  
+-   **公共**  
   
     由第三方提供。  
   
--   **专有**  
+-   专用  
   
     此证书基于你在[配置证书模板](assetId:///6a5ec5c1-d653-47b1-a567-cc485004e7bc#ConfigCertTemp)中创建的证书模板。 它需要可从可公开解析的 FQDN 访问的证书吊销列表（CRL）分发点。  
   
@@ -184,7 +184,7 @@ ms.locfileid: "80859200"
   
 -   对于 "**增强型密钥用法**" 字段，请使用服务器身份验证对象标识符（OID）。  
   
--   对于“CRL 分发点”字段，请指定已连接到 Internet 的 DirectAccess 客户端可访问的 CRL 分发点。  
+-   对于“CRL 分发点”**** 字段，请指定已连接到 Internet 的 DirectAccess 客户端可访问的 CRL 分发点。  
   
 -   IP-HTTPS 证书必须包含私钥。  
   
@@ -196,29 +196,29 @@ ms.locfileid: "80859200"
   
 1.  在远程访问服务器上：在 "**开始**" 屏幕上，键入**mmc.exe**，然后按 enter。  
   
-2.  在 MMC 控制台中的“文件”菜单上，单击“添加/删除管理单元”。  
+2.  在 MMC 控制台的“文件”菜单上，单击“添加/删除管理单元”。  
   
-3.  在“添加或删除管理单元”对话框中，依次单击“证书”、“添加”、“计算机帐户”、“下一步”、“本地计算机”和“完成”，然后单击“确定”。  
+3.  在****“添加或删除管理单元”对话框中，依次单击****“证书”、****“添加”、****“计算机帐户”、****“下一步”、****“本地计算机”和****“完成”，然后单击****“确定”。  
   
-4.  在证书管理单元的控制台树中，依次打开“证书(本地计算机)\个人\证书”。  
+4.  在证书管理单元的控制台树中，依次打开****“证书(本地计算机)\个人\证书”。  
   
 5.  右键单击 "**证书**"，指向 "**所有任务**"，单击 "**申请新证书**"，然后单击两次 "**下一步**"。  
   
 6.  在 "**申请证书**" 页上，选中在配置证书模板中创建的证书模板的复选框，并根据需要单击 "**注册此证书需要详细信息**"。  
   
-7.  在“证书属性”对话框的“使用者”选项卡上，在“使用者名称”区域的“类型”中选择“公用名”。  
+7.  在****“证书属性”对话框的****“使用者”选项卡上，在****“使用者名称”区域的****“类型”中选择****“公用名”。  
   
 8.  在 "**值**" 中，指定远程访问服务器面向外部的适配器的 IPv4 地址，或 ip-https URL 的 FQDN，然后单击 "**添加**"。  
   
-9. 在“备用名称”区域的“类型”中，选择“DNS”。  
+9. 在****“备用名称”区域的****“类型”中，选择****“DNS”。  
   
 10. 在 "**值**" 中，指定远程访问服务器面向外部的适配器的 IPv4 地址，或 ip-https URL 的 FQDN，然后单击 "**添加**"。  
   
-11. 在“常规”选项卡的“友好名称”中，输入一个有助于标识证书的名称。  
+11. 在****“常规”选项卡的****“友好名称”中，输入一个有助于标识证书的名称。  
   
-12. 在“扩展”选项卡上，单击“扩展密钥用法”旁边的箭头，并确保“服务器身份验证”出现在“已选选项”列表中。  
+12. 在“扩展”**** 选项卡上，单击“扩展密钥用法”**** 旁边的箭头，并确保“服务器身份验证”出现在“已选选项”**** 列表中。  
   
-13. 依次单击“确定”、“注册”和“完成”。  
+13. 依次单击****“确定”、****“注册”和****“完成”。  
   
 14. 在 "证书" 管理单元的详细信息窗格中，验证是否已将新证书注册到服务器身份验证的预期目的。  
   
@@ -229,19 +229,19 @@ ms.locfileid: "80859200"
   
 1.  在 "内部网络 DNS 服务器：" 的 "**开始**" 屏幕上，键入**dnsmgmt.msc**，然后按 enter。  
   
-2.  在“DNS 管理器”控制台的左窗格中，展开域的前向查找区域。 右键单击该域，然后单击 "**新建主机（A 或 AAAA）** "。  
+2.  在****“DNS 管理器”控制台的左窗格中，展开域的前向查找区域。 右键单击该域，然后单击 "**新建主机（A 或 AAAA）**"。  
   
-3.  在 "**新建主机**" 对话框的 "**名称（如果为空则使用父域名称）** " 框中，输入网络位置服务器网站的 DNS 名称（这是 DirectAccess 客户端用于连接到网络位置服务器的名称）。 在 " **IP 地址**" 框中，输入网络位置服务器的 IPv4 地址，然后单击 "**添加主机**"，然后单击 **"确定"** 。  
+3.  在 "**新建主机**" 对话框的 "**名称（如果为空则使用父域名称）** " 框中，输入网络位置服务器网站的 DNS 名称（这是 DirectAccess 客户端用于连接到网络位置服务器的名称）。 在 " **IP 地址**" 框中，输入网络位置服务器的 IPv4 地址，然后单击 "**添加主机**"，然后单击 **"确定"**。  
   
-4.  在 "**新建主机**" 对话框的 "**名称（如果为空则使用父域名称）** " 框中，输入 web 探测的 DNS 名称（默认 web 探测的名称为 directaccess-webprobehost）。 在“IP 地址”框中，输入 Web 探测的 IPv4 地址，然后单击“添加主机”。  
+4.  在 "**新建主机**" 对话框的 "**名称（如果为空则使用父域名称）** " 框中，输入 web 探测的 DNS 名称（默认 web 探测的名称为 directaccess-webprobehost）。 在****“IP 地址”框中，输入 Web 探测的 IPv4 地址，然后单击“添加主机”****。  
   
-5.  为 directaccess-corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在 " **DNS** " 对话框中，单击 **"确定"** 。  
+5.  为 directaccess corpconnectivityhost 和任何手动创建的连接性验证程序重复此过程。 在 " **DNS** " 对话框中，单击 **"确定"**。  
   
-6.  单击 **“完成”** 。  
+6.  单击“完成”。  
   
 ![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
+下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -250,7 +250,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 还必须为以下内容配置 DNS 条目：  
   
--   **Ip-https 服务器**  
+-   **IP-HTTPS 服务器**  
   
     DirectAccess 客户端必须能够从 Internet 解析远程访问服务器的 DNS 名称。  
   
@@ -273,47 +273,47 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 #### <a name="to-join-the-remote-access-server-to-a-domain"></a>将远程访问服务器加入域  
   
-1.  在服务器管理器中，单击 **“本地服务器”** 。 在详细信息窗格中，单击“计算机名”旁边的链接。  
+1.  在服务器管理器中，单击 **“本地服务器”**。 在详细信息窗格中，单击“计算机名”旁边的链接****。  
   
-2.  在“系统属性” 对话框中，单击“计算机名” 选项卡，然后单击“更改”。  
+2.  在“系统属性”**** 对话框中，单击“计算机名”**** 选项卡，然后单击“更改”****。  
   
-3.  如果在将服务器加入域时还要更改计算机名，请在 "**计算机名**" 框中键入计算机的名称。 在 "**隶属**于" 下，单击 "**域**"，然后键入要将服务器加入的域的名称（例如，corp.contoso.com），然后单击 **"确定"** 。  
+3.  如果在将服务器加入域时还要更改计算机名，请在 "**计算机名**" 框中键入计算机的名称。 在 "**隶属**于" 下，单击 "**域**"，然后键入要将服务器加入的域的名称（例如，corp.contoso.com），然后单击 **"确定"**。  
   
-4.  当系统提示你输入用户名和密码时，请输入有权将计算机加入域的用户的用户名和密码，然后单击 **"确定"** 。  
+4.  当系统提示你输入用户名和密码时，请输入有权将计算机加入域的用户的用户名和密码，然后单击 **"确定"**。  
   
-5.  当你看到欢迎你进入域的对话框时，请单击“确定”。  
+5.  当你看到欢迎你进入域的对话框时，请单击“确定”****。  
   
-6.  当系统提示你必须重新启动计算机时，请单击“确定”。  
+6.  当系统提示你必须重新启动计算机时，请单击“确定”****。  
   
-7.  在 **“系统属性”** 对话框中，单击 **“关闭”** 。  
+7.  在 **“系统属性”** 对话框中，单击 **“关闭”**。  
   
-8.  当系统提示你重新启动计算机时，请单击“立即重新启动”。  
+8.  当系统提示你重新启动计算机时，请单击“立即重新启动”****。  
   
 #### <a name="to-join-client-computers-to-the-domain"></a>将客户端计算机加入域  
   
-1.  在 "**开始**" 屏幕上，键入 "**资源管理器**"，然后按 enter。  
+1.  在 "**开始**" 屏幕上，键入**explorer.exe**，然后按 enter。  
   
-2.  右键单击计算机图标，然后单击“属性”。  
+2.  右键单击计算机图标，然后单击“属性”****。  
   
-3.  在“系统”页上，单击“高级系统设置”。  
+3.  在****“系统”页上，单击****“高级系统设置”。  
   
-4.  在 **“系统属性”** 对话框中的 **“计算机名”** 选项卡上，单击 **“更改”** 。  
+4.  在 **“系统属性”** 对话框中的 **“计算机名”** 选项卡上，单击 **“更改”**。  
   
-5.  如果在将服务器加入域时还要更改计算机名，请在 "**计算机名**" 框中键入计算机的名称。 在“隶属于”下面单击“域”，键入服务器要加入到的域的名称（例如 corp.contoso.com），然后单击“确定”。  
+5.  如果在将服务器加入域时还要更改计算机名，请在 "**计算机名**" 框中键入计算机的名称。 在“隶属于”下面单击“域”，键入服务器要加入到的域的名称（例如 corp.contoso.com），然后单击“确定”************。  
   
-6.  当系统提示你输入用户名和密码时，请输入有权将计算机加入域的用户的用户名和密码，然后单击 **"确定"** 。  
+6.  当系统提示你输入用户名和密码时，请输入有权将计算机加入域的用户的用户名和密码，然后单击 **"确定"**。  
   
-7.  当你看到欢迎你进入域的对话框时，请单击“确定”。  
+7.  当你看到欢迎你进入域的对话框时，请单击“确定”****。  
   
-8.  当系统提示你必须重新启动计算机时，请单击“确定”。  
+8.  当系统提示你必须重新启动计算机时，请单击“确定”****。  
   
 9. 在 "**系统属性**" 对话框中，单击 "关闭"。  
   
-10. 出现提示时单击“立即重新启动”。  
+10. 出现提示时单击“立即重新启动”****。  
   
 ![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell 等效命令</em>***  
   
-下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
+下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
 > [!NOTE]  
 > 输入以下命令后，必须提供域凭据。  
@@ -323,12 +323,12 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="configure-gpos"></a><a name="BKMK_ConfigGPOs"></a>配置 Gpo  
+## <a name="configure-gpos"></a><a name="BKMK_ConfigGPOs"></a>配置 GPO  
 若要部署远程访问，需要至少两个组策略的对象。 一个组策略对象包含远程访问服务器的设置，另一个包含 DirectAccess 客户端计算机的设置。 配置远程访问时，向导将自动创建所需的组策略对象。 但是，如果你的组织强制使用命名约定，或者你没有创建或编辑组策略对象所需的权限，则必须在配置远程访问之前创建它们。  
   
-若要创建组策略对象，请参阅[创建和编辑组策略对象](https://technet.microsoft.com/library/cc754740.aspx)。  
+若要创建组策略对象，请参阅[创建和编辑组策略对象](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754740(v=ws.11))。  
   
-管理员可以手动将 DirectAccess 组策略对象链接到组织单位（OU）。 请考虑以下事项：  
+管理员可以手动将 DirectAccess 组策略对象链接到组织单位（OU）。 请考虑下列各项：  
   
 1.  在配置 DirectAccess 之前，请将已创建的 Gpo 链接到各自的 Ou。  
   
@@ -342,7 +342,7 @@ Restart-Computer
   
 6.  如果之前未通过运行 DirectAccess 安装向导链接 OU，则在配置完成后，管理员可以将 DirectAccess Gpo 链接到所需的 Ou，并删除指向域的链接。  
   
-    有关详细信息，请参阅[链接组策略对象](https://technet.microsoft.com/library/cc732979.aspx)。  
+    有关详细信息，请参阅[链接组策略对象](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732979(v=ws.11))。  
   
 > [!NOTE]  
 > 如果组策略对象手动创建，则在 DirectAccess 配置过程中可能无法使用组策略对象。 可能没有将组策略对象复制到最接近管理计算机的域控制器。 管理员可以等待复制完成，或强制进行复制。  
@@ -354,21 +354,21 @@ Restart-Computer
   
 1.  在 "**开始**" 屏幕上，键入**dsa.msc**，然后按 enter。  
   
-2.  在“Active Directory 用户和计算机”控制台的左窗格中，展开将包含安全组的域，右键单击“用户”，指向“新建”，然后单击“组”。  
+2.  在****“Active Directory 用户和计算机”控制台的左窗格中，展开将包含安全组的域，右键单击****“用户”，指向****“新建”，然后单击****“组”。  
   
-3.  在“新建对象 – 组”对话框中的“组名”下，输入该安全组的名称。  
+3.  在****“新建对象 – 组”对话框中的****“组名”下，输入该安全组的名称。  
   
-4.  在“组范围”下单击“全局”，并在“组类型”下单击“安全”，然后单击“确定”。  
+4.  在****“组范围”下单击****“全局”，并在****“组类型”下单击“安全”****，然后单击“确定”****。  
   
 5.  双击 "DirectAccess 客户端计算机" 安全组，然后在 "**属性**" 对话框中，单击 "**成员**" 选项卡。  
   
-6.  在 **“成员”** 选项卡上，单击 **“添加”** 。  
+6.  在“成员”**** 选项卡上，单击“添加”****。  
   
-7.  在“选择用户、联系人、计算机或服务帐户”对话框中，选择你希望为 DirectAccess 启用的客户端计算机，然后单击“确定”。  
+7.  在****“选择用户、联系人、计算机或服务帐户”对话框中，选择你希望为 DirectAccess 启用的客户端计算机，然后单击****“确定”。  
   
 ![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell 等效命令**  
   
-下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。  
+下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
@@ -383,7 +383,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 对于网络位置服务器证书而言，存在两种证书选择：  
   
--   **专有**  
+-   专用  
   
     > [!NOTE]  
     > 此证书基于你在[配置证书模板](assetId:///6a5ec5c1-d653-47b1-a567-cc485004e7bc#ConfigCertTemp)中创建的证书模板。  
@@ -403,27 +403,27 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 1.  在将托管网络位置服务器网站的服务器上：在 "**开始**" 屏幕上，键入**mmc.exe**，然后按 enter。  
   
-2.  在 MMC 控制台中的“文件”菜单上，单击“添加/删除管理单元”。  
+2.  在 MMC 控制台的“文件”菜单上，单击“添加/删除管理单元”。  
   
-3.  在“添加或删除管理单元”对话框中，依次单击“证书”、“添加”、“计算机帐户”、“下一步”、“本地计算机”和“完成”，然后单击“确定”。  
+3.  在****“添加或删除管理单元”对话框中，依次单击****“证书”、****“添加”、****“计算机帐户”、****“下一步”、****“本地计算机”和****“完成”，然后单击****“确定”。  
   
-4.  在证书管理单元的控制台树中，依次打开“证书(本地计算机)\个人\证书”。  
+4.  在证书管理单元的控制台树中，依次打开****“证书(本地计算机)\个人\证书”。  
   
 5.  右键单击 "**证书**"，指向 "**所有任务**"，单击 "**申请新证书**"，然后单击 "**下一步**" 两次。  
   
 6.  在 "**申请证书**" 页上，选中在配置证书模板中创建的证书模板的复选框，并根据需要单击 "**注册此证书需要详细信息**"。  
   
-7.  在“证书属性”对话框的“使用者”选项卡上，在“使用者名称”区域的“类型”中选择“公用名”。  
+7.  在****“证书属性”对话框的****“使用者”选项卡上，在****“使用者名称”区域的****“类型”中选择****“公用名”。  
   
-8.  在“值”中，输入网络位置服务器网站的 FQDN，然后单击“添加”。  
+8.  在****“值”中，输入网络位置服务器网站的 FQDN，然后单击****“添加”。  
   
-9. 在“备用名称”区域的“类型”中，选择“DNS”。  
+9. 在****“备用名称”区域的****“类型”中，选择****“DNS”。  
   
-10. 在“值”中，输入网络位置服务器网站的 FQDN，然后单击“添加”。  
+10. 在****“值”中，输入网络位置服务器网站的 FQDN，然后单击****“添加”。  
   
-11. 在“常规”选项卡的“友好名称”中，输入一个有助于标识证书的名称。  
+11. 在****“常规”选项卡的****“友好名称”中，输入一个有助于标识证书的名称。  
   
-12. 依次单击“确定”、“注册”和“完成”。  
+12. 依次单击****“确定”、****“注册”和****“完成”。  
   
 13. 在 "证书" 管理单元的详细信息窗格中，验证是否已为 "服务器身份验证" 的预期目的注册了新证书。  
   
@@ -441,9 +441,9 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
     可以通过以下服务器访问 CRL 分发点：  
   
-    -   使用基于 HTTP 的 URL 的 Web 服务器，例如： https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
+    -   使用基于 HTTP 的 URL 的 Web 服务器，例如：https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
   
-    -   通过通用命名约定（UNC）路径（例如 \\\crl.corp.contoso.com\crld\corp-APP1-CA.crl）访问的文件服务器  
+    -   通过通用命名约定（UNC）路径（例如 \Crl.corp.contoso.com\crld\corp-APP1-CA.crl）访问的文件服务器 \\  
   
     如果内部 CRL 分发点只能通过 IPv6 访问，则必须配置具有高级安全性的 Windows 防火墙连接安全规则。 此豁免 IPsec 保护从 intranet 的 IPv6 地址空间到 CRL 分发点的 IPv6 地址。  
   
@@ -451,5 +451,4 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
   
--   [步骤2：配置远程访问服务器](Step-2-Configure-the-Remote-Access-Server.md)
-
+-   [步骤 2：配置远程访问服务器](Step-2-Configure-the-Remote-Access-Server.md)

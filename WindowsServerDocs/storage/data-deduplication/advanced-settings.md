@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 1d0677cec134ddeb4c706d0f1231f2c26b39967e
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: b45e8723066f040268ee174b15af09569af2ff01
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322639"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965389"
 ---
 # <a name="advanced-data-deduplication-settings"></a>高级重复数据删除设置
 
@@ -21,15 +21,15 @@ ms.locfileid: "79322639"
 
 本文档介绍如何修改高级[重复数据删除](overview.md)设置。 对于[建议的工作负荷](install-enable.md#enable-dedup-candidate-workloads)，需具有足够的默认设置。 修改这些设置的主要原因是提升其他类型的工作负荷的重复数据删除性能。
 
-## <a id="modifying-job-schedules"></a>修改重复数据删除作业计划
-[默认重复数据删除作业计划](understand.md#job-info)设计为可以在建议的工作负荷中很好地工作并尽可能不产生干扰（不包括为备份[使用类型**启用的**优先级优化](understand.md#usage-type-backup)作业）。 当工作负荷具有较大资源需求时，则可能确保作业仅在空闲时间运行，或者减少或增加允许重复数据删除作业使用的系统资源量。
+## <a name="modifying-data-deduplication-job-schedules"></a><a id="modifying-job-schedules"></a>修改重复数据删除作业计划
+[默认重复数据删除作业计划](understand.md#job-info)设计为可以在建议的工作负荷中很好地工作并尽可能不产生干扰（不包括为[**备份**使用类型](understand.md#usage-type-backup)启用的*优先级优化*作业）。 当工作负荷具有较大资源需求时，则可能确保作业仅在空闲时间运行，或者减少或增加允许重复数据删除作业使用的系统资源量。
 
-### <a id="modifying-job-schedules-change-schedule"></a>更改重复数据删除计划
+### <a name="changing-a-data-deduplication-schedule"></a><a id="modifying-job-schedules-change-schedule"></a>更改重复数据删除计划
 重复数据删除作业通过 Windows 任务计划程序进行计划，且可以在路径 Microsoft\Windows\Deduplication 下查看并编辑。 重复数据删除包括可轻松执行计划的几个 cmdlet。
-* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) 显示当前的计划作业。
-* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx) 创建新的计划作业。
-* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx) 修改现有的计划作业。
-* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx) 删除计划作业。
+* [`Get-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))显示当前计划的作业。
+* [`New-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))创建新的计划作业。
+* [`Set-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))修改现有的计划作业。
+* [`Remove-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))删除计划的作业。
 
 在重复数据删除作业运行时对其进行更改的最常见的原因是确保作业在空闲时间运行。 以下分步示例演示如何为*晴天*方案（在周末和工作日晚上 7:00 以后空闲的超聚合 Hyper-V 主机）修改重复数据删除计划。 若要更改计划，在管理员上下文中运行以下 PowerShell cmdlet。
 
@@ -51,7 +51,7 @@ ms.locfileid: "79322639"
     ```
 
     >[!NOTE]  
-    > 为 *提供的* 的`System.Datetime`日期`-Start`部分不相关（只要它处于过去），但*时间*部分指定作业应该启动的时间。
+    > 为 `-Start` 提供的 `System.Datetime` 的*日期*部分不相关（只要它处于过去），但*时间*部分指定作业应该启动的时间。
 4. 使用高优先级以及系统上所有可用的 CPU 和内存创建在星期六早上 7:00 开始运行的每周垃圾回收作业。
     ```PowerShell
     New-DedupSchedule -Name "WeeklyGarbageCollection" -Type GarbageCollection -DurationHours 23 -Memory 100 -Cores 100 -Priority High -Days @(6) -Start (Get-Date "2016-08-13 07:00:00")
@@ -62,15 +62,15 @@ ms.locfileid: "79322639"
     New-DedupSchedule -Name "WeeklyIntegrityScrubbing" -Type Scrubbing -DurationHours 23 -Memory 100 -Cores 100 -Priority High -Days @(0) -Start (Get-Date "2016-08-14 07:00:00")
     ```
 
-### <a id="modifying-job-schedules-available-settings"></a>可用的作业范围设置
+### <a name="available-job-wide-settings"></a><a id="modifying-job-schedules-available-settings"></a>可用的作业范围设置
 你可以为新的或计划的重复数据删除作业切换以下设置：
 
 <table>
     <thead>
         <tr>
             <th style="min-width:125px">参数名称</th>
-            <th>Definition</th>
-            <th>可接受的值</th>
+            <th>定义</th>
+            <th>接受的值</th>
             <th>为什么想要设置此值？</th>
         </tr>
     </thead>
@@ -80,15 +80,15 @@ ms.locfileid: "79322639"
             <td>应计划的作业类型</td>
             <td>
                 <ul>
-                    <li>优化</li>
+                    <li>Optimization</li>
                     <li>GarbageCollection</li>
-                    <li>推移</li>
+                    <li>清理</li>
                 </ul>
             </td>
             <td>需要该值，因为它是你想要计划的作业类型。 任务计划后，该值无法更改。</td>
         </tr>
         <tr>
-            <td>Priority</td>
+            <td>优先级</td>
             <td>计划作业的系统优先级</td>
             <td>
                 <ul>
@@ -114,7 +114,7 @@ ms.locfileid: "79322639"
             <td>计划的作业必须至少运行一天。</td>
         </tr>
         <tr>
-            <td>内核数</td>
+            <td>核心数</td>
             <td>系统上作业应使用的核心数的百分比</td>
             <td>整数 0-100（表示百分比）</td>
             <td>控制作业对系统上的计算资源具有的影响级别</td>
@@ -123,10 +123,10 @@ ms.locfileid: "79322639"
             <td>DurationHours</td>
             <td>允许作业应运行的最大小时数</td>
             <td>正整数</td>
-            <td>阻止作业在非空闲时间工作负荷&#39;</td>
+            <td>若要防止作业在非空闲时间的工作负荷中运行&#39;</td>
         </tr>
         <tr>
-            <td>已启用</td>
+            <td>Enabled</td>
             <td>作业是否将运行</td>
             <td>True/false</td>
             <td>在不删除作业的情况下将其禁用</td>
@@ -141,7 +141,7 @@ ms.locfileid: "79322639"
             <td>InputOutputThrottle</td>
             <td>指定适用于作业的输入/输出限制量。</td>
             <td>整数 0-100（表示百分比）</td>
-            <td>限制确保作业&#39;不会干扰其他 i/o 密集型进程。</td>
+            <td>限制确保作业不会影响其他 i/o 密集型进程&#39;。</td>
         </tr>
         <tr>
             <td>内存</td>
@@ -152,7 +152,7 @@ ms.locfileid: "79322639"
         <tr>
             <td>名称</td>
             <td>计划作业的名称</td>
-            <td>String</td>
+            <td>字符串</td>
             <td>作业必须具有唯一的可识别名称。</td>
         </tr>
         <tr>
@@ -162,10 +162,10 @@ ms.locfileid: "79322639"
             <td>你想要手动还原位于坏的磁盘区域的文件。</td>
         </tr>
         <tr>
-            <td>Start</td>
+            <td>开始</td>
             <td>指定作业应开始的时间</td>
             <td><code>System.DateTime</code></td>
-            <td>提供给<em>开始</em><code>System.Datetime</code> 的&#39;<em>日期</em>部分不相关（只要它在过去），但时间部分指定作业应该启动的<em>时间</em>。</td>
+            <td>提供的要启动的<em>日期</em>部分 <code>System.Datetime</code> 不相关（只要它&#39;过去的中），但时间部分指定作业应该启动的<em>时间</em>。 <em>Start</em></td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -176,12 +176,12 @@ ms.locfileid: "79322639"
     </tbody>
 </table>
 
-## <a id="modifying-volume-settings"></a>修改重复数据删除卷范围设置
-### <a id="modifying-volume-settings-how-to-toggle"></a>切换音量设置
+## <a name="modifying-data-deduplication-volume-wide-settings"></a><a id="modifying-volume-settings"></a>修改重复数据删除卷范围设置
+### <a name="toggling-volume-settings"></a><a id="modifying-volume-settings-how-to-toggle"></a>切换卷设置
 你可以通过在为卷启用删除重复时所选的[使用类型](understand.md#usage-type)为重复数据删除设置卷范围的默认设置。 重复数据删除包括使编辑卷范围的设置易于操作的 cmdlet：
 
-* [`Get-DedupVolume`](https://technet.microsoft.com/library/hh848448.aspx)
-* [`Set-DedupVolume`](https://technet.microsoft.com/library/hh848438.aspx)
+* [`Get-DedupVolume`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))
+* [`Set-DedupVolume`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))
 
 从所选的使用类型修改卷设置的主要原因是为特定文件提升读取性能（例如多媒体或其他已被压缩的文件类型）或微调重复数据删除以便为你的特定工作负荷实现更好的优化。 以下示例演示了如何为工作负荷修改重复数据删除卷设置，该工作负荷最接近类似于一般用途的文件服务器工作负荷，但使用频繁更改的大型文件。
 
@@ -195,22 +195,22 @@ ms.locfileid: "79322639"
     Set-DedupVolume -Volume C:\ClusterStorage\Volume1 -OptimizePartialFiles
     ```
 
-### <a id="modifying-volume-settings-available-settings"></a>可用的卷范围设置
+### <a name="available-volume-wide-settings"></a><a id="modifying-volume-settings-available-settings"></a>可用的卷范围设置
 <table>
     <thead>
         <tr>
-            <th style="min-width:125px">设置名称</th>
-            <th>Definition</th>
-            <th>可接受的值</th>
+            <th style="min-width:125px">设置名</th>
+            <th>定义</th>
+            <th>接受的值</th>
             <th>为什么想要修改此值？</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>区块在复制到区块存储的热点区域前被引用的次数。 热点部分的值是所谓的 &quot;热&quot; 块区的值，经常会使用多个访问路径来改善访问时间。</td>
+            <td>区块在复制到区块存储的热点区域前被引用的次数。 热点部分的值是所谓的、 &quot; &quot; 经常被引用的热区块具有多个访问路径来改善访问时间。</td>
             <td>正整数</td>
-            <td>修改此数量的主要原因是为具有高重复的卷增加节约率。 通常，建议设置默认值（100），&#39;不应修改此值。</td>
+            <td>修改此数量的主要原因是为具有高重复的卷增加节约率。 通常情况下，建议使用默认值（100），而&#39;不应修改此设置。</td>
         </tr>
         <tr>
             <td>ExcludeFileType</td>
@@ -228,7 +228,7 @@ ms.locfileid: "79322639"
             <td>InputOutputScale</td>
             <td>为重复数据删除指定 IO 并行化级别（IO 队列）以供其在后处理作业期间的卷上使用。</td>
             <td>正整数的范围是 1-36</td>
-            <td>修改该值的主要原因是通过限制允许重复数据删除在卷上使用的 IO 队列数来减少对高 IO 工作负荷性能的影响。 请注意，修改此设置的默认值可能会导致&#39;重复数据删除后处理作业的运行速度缓慢。</td>
+            <td>修改该值的主要原因是通过限制允许重复数据删除在卷上使用的 IO 队列数来减少对高 IO 工作负荷性能的影响。 请注意，修改此设置的默认值可能导致重复数据删除&#39;的后处理作业运行缓慢。</td>
         </tr>
         <tr>
             <td>MinimumFileAgeDays</td>
@@ -246,19 +246,19 @@ ms.locfileid: "79322639"
             <td>NoCompress</td>
             <td>将区块置入区块存储前是否需要压缩</td>
             <td>True/False</td>
-            <td>某些类型的文件，尤其是多媒体文件和已压缩的文件类型，其压缩效果可能不好。 此设置允许你关闭卷上对所有文件的压缩。 如果你正在优化包含许多已压缩的文件的数据集，则此设置是理想之选。</td>
+            <td>某些类型的文件，尤其是多媒体文件和已被压缩的文件类型，其压缩效果可能不好。 此设置允许你关闭卷上对所有文件的压缩。 如果你正在优化包含许多已压缩的文件的数据集，则此设置是理想之选。</td>
         </tr>
         <tr>
             <td>NoCompressionFileType</td>
             <td>区块被置入区块存储前不应被压缩的文件类型。</td>
             <td>文件扩展数组</td>
-            <td>某些类型的文件，尤其是多媒体文件和已压缩的文件类型，其压缩效果可能不好。 此设置允许对这些文件关闭压缩，以节省 CPU 资源。</td>
+            <td>某些类型的文件，尤其是多媒体文件和已被压缩的文件类型，其压缩效果可能不好。 此设置允许对这些文件关闭压缩，以节省 CPU 资源。</td>
         </tr>
         <tr>
             <td>OptimizeInUseFiles</td>
             <td>启用时，对其具有活动句柄的文件将被视为符合策略可进行优化。</td>
             <td>True/false</td>
-            <td>如果你的工作负荷使文件在较长时间处于打开状态，则启用此设置。 如果未启用此设置，则当工作负荷有一个打开的句柄时，将永远不会优化文件，即使&#39;它只是偶尔在末尾追加数据。</td>
+            <td>如果你的工作负荷使文件在较长时间处于打开状态，则启用此设置。 如果未启用此设置，则当工作负荷有一个打开的句柄时，将永远不会优化文件，即使该文件&#39;仅偶尔在末尾追加数据。</td>
         </tr>
         <tr>
             <td>OptimizePartialFiles</td>
@@ -275,8 +275,8 @@ ms.locfileid: "79322639"
     </tbody>
 </table>
 
-## <a id="modifying-dedup-system-settings"></a>修改重复数据删除系统范围的设置
-重复数据删除具有其他系统范围设置，它可通过[注册表](https://technet.microsoft.com/library/cc755256(v=ws.11).aspx)配置。 这些设置适用于在系统上运行的所有作业和卷。 无论何时对注册表进行编辑，都必须格外小心。
+## <a name="modifying-data-deduplication-system-wide-settings"></a><a id="modifying-dedup-system-settings"></a>修改重复数据删除系统范围设置
+重复数据删除具有其他系统范围设置，它可通过[注册表](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755256(v=ws.11))配置。 这些设置适用于在系统上运行的所有作业和卷。 无论何时对注册表进行编辑，都必须格外小心。
 
 例如，你可能想要禁用完整垃圾回收。 有关此设置为什么对你的方案有用的详细信息，请参阅[常见问题](#faq-why-disable-full-gc)。 若要使用 PowerShell 编辑注册表：
 
@@ -291,13 +291,13 @@ ms.locfileid: "79322639"
     Set-ItemProperty -Path HKLM:\System\CurrentControlSet\Services\ddpsvc\Settings -Name DeepGCInterval -Type DWord -Value 0xFFFFFFFF
     ```
 
-### <a id="modifying-dedup-system-settings-available-settings"></a>可用系统范围内的设置
+### <a name="available-system-wide-settings"></a><a id="modifying-dedup-system-settings-available-settings"></a>可用的系统范围设置
 <table>
     <thead>
         <tr>
-            <th style="min-width:125px">设置名称</th>
-            <th>Definition</th>
-            <th>可接受的值</th>
+            <th style="min-width:125px">设置名</th>
+            <th>定义</th>
+            <th>接受的值</th>
             <th>为什么想要更改此设置？</th>
         </tr>
     </thead>
@@ -310,15 +310,15 @@ ms.locfileid: "79322639"
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>此设置配置常规垃圾回收作业变为<a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">完整垃圾回收作业</a>的时间间隔。 如果设置为 n，则意味着每 n<sup></sup> 个作业均为完整的垃圾回收作业。 请注意，对于具有<a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">备份用途类型</a>的卷，完整的垃圾回收始终处于禁用状态（与注册表值无关）。 如果备份卷上需要完全垃圾回收，则可以使用 <code>Start-DedupJob -Type GarbageCollection -Full</code>。</td>
+            <td>此设置配置常规垃圾回收作业变为<a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">完整垃圾回收作业</a>的时间间隔。 如果设置为 n，则意味着每 n<sup></sup> 个作业均为完整的垃圾回收作业。 请注意，对于具有<a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">备份用途类型</a>的卷，完整的垃圾回收始终处于禁用状态（与注册表值无关）。 <code>Start-DedupJob -Type GarbageCollection -Full</code>如果备份卷上需要完全垃圾回收，则可以使用。</td>
             <td>整数（-1 表示禁用）</td>
             <td>请参阅<a href="advanced-settings.md#faq-why-disable-full-gc" data-raw-source="[this frequently asked question](advanced-settings.md#faq-why-disable-full-gc)">此常见问题</a></td>
         </tr>
     </tbody>
 </table>
 
-## <a id="faq"></a>常见问题
-<a id="faq-use-responsibly"></a>**我更改了重复数据删除设置，现在作业速度缓慢或未完成，或者工作负荷性能降低。为什么?**  
+## <a name="frequently-asked-questions"></a><a id="faq"></a>常见问题解答
+<a id="faq-use-responsibly"></a>**我更改了重复数据删除设置，现在作业缓慢或无法完成，或者我的工作负荷性能已降低。为什么？**  
 这些设置为你提供了控制重复数据删除如何运行的许多权限。 负责任地使用它们，并[监视性能](run.md#monitoring-dedup)。
 
 <a id="faq-running-dedup-jobs-manually"></a>**我现在想要运行一个重复数据删除作业，但是我不想创建新的计划-我能执行此操作吗？**  

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cdedcbd5b9491b57ee31170b781dc821853d058f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3442ada27e8e01b72561850f724d7e28d740f43b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815130"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964959"
 ---
 # <a name="ad-fs-operations"></a>AD FS 操作
 
@@ -22,7 +22,7 @@ ms.locfileid: "80815130"
 本文档包含 AD FS 的所有文档操作的列表。 
 
 ## <a name="service-configuration"></a>服务配置
-- [在 AD FS 和 WAP 2016 中更新 SSL 证书](../ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+- [在 AD FS 和 WAP 2016 中更新 SSL 证书](./operations/manage-ssl-certificates-ad-fs-wap.md)
 - [AD FS 快速还原工具](../ad-fs/operations/AD-FS-Rapid-Restore-Tool.md)
 - [在 AD FS 中配置证书身份验证的备用主机名绑定](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 - [添加属性存储](../ad-fs/operations/Add-an-Attribute-Store.md)
@@ -35,7 +35,7 @@ ms.locfileid: "80815130"
 ## <a name="authentication-configuration"></a>身份验证配置
 ### <a name="strong-authentication-mfa--password-less"></a>强身份验证（MFA） & 不小于密码
 - [在 AD FS （2019或更高版本）中将外部身份验证提供程序配置为主要](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
-- [配置 AD FS （2016或更高版本）和 Azure MFA](../ad-fs/operations/Configure-AD-FS-2016-and-Azure-MFA.md)
+- [配置 AD FS （2016或更高版本）和 Azure MFA](./operations/configure-ad-fs-and-azure-mfa.md)
 - [为 AD FS 配置其他身份验证方法](../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
 ### <a name="lockout-protection"></a>锁定保护
@@ -71,7 +71,7 @@ ms.locfileid: "80815130"
 - [将 AD FS 配置为使用聚合的联合身份验证提供程序（例如 InCommon）](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 
 ## <a name="sign-in-experience-configuration"></a>登录体验配置
-- [配置 AD FS 2016 单一登录设置](../ad-fs/operations/AD-FS-2016-Single-Sign-On-Settings.md)
+- [配置 AD FS 2016 单一登录设置](./operations/ad-fs-single-sign-on-settings.md)
 - [配置 AD FS 分页登录](../ad-fs/operations/AD-FS-paginated-sign-in.md)
 - [配置 AD FS 用户登录自定义](../ad-fs/operations/AD-FS-user-sign-in-customization.md)
 - [配置 AD FS 以发送密码过期声明](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
@@ -84,9 +84,7 @@ ms.locfileid: "80815130"
 - [设置 AD FS 实验室环境](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
 - [演练指南：利用适用于敏感应用程序的附加多重身份验证管理风险](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [操作实例指南：使用条件访问控制管理风险](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-- [演练：使用 Windows 设备 Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-- [演练：使用 iOS 设备 Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+- [演练：使用 Windows 设备加入工作区](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [演练：使用 iOS 设备加入工作区](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
   
-
-

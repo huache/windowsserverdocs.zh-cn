@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: aabb48643c58019339b96e9a4c54df8e1d66893c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 065ef1af6d125b0c78669c11ffa28d7e4c9632d8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823240"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966329"
 ---
 # <a name="managing-rid-issuance"></a>管理 RID 颁发
 
@@ -23,9 +23,9 @@ ms.locfileid: "80823240"
   
 -   [管理 RID 颁发](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Manage)  
   
--   [消除 RID 颁发问题](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Tshoot)  
+-   [解决 RID 颁发问题](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Tshoot)  
   
-有关详细信息，请参阅[AskDS 博客](https://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)。  
+有关详细信息，请参阅[AskDS 博客](/archive/blogs/askds/managing-rid-issuance-in-windows-server-2012)。  
   
 ## <a name="managing-rid-issuance"></a><a name="BKMK_Manage"></a>管理 RID 颁发  
 默认情况下，一个域具有大约十亿个安全主体（例如用户、组和计算机）的容量。 当然，没有哪个域具有这么多经常使用的对象。 但是，Microsoft 客户支持发现了如下案例：  
@@ -105,11 +105,11 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
   
 2.  运行 LDP.exe  
   
-3.  单击“连接”菜单并为端口 389 上的 Windows Server 2012 RID 主机单击“连接”，然后以域管理员身份单击“绑定”。  
+3.  单击“连接”**** 菜单并为端口 389 上的 Windows Server 2012 RID 主机单击“连接”****，然后以域管理员身份单击“绑定”****。  
   
-4.  单击“浏览”菜单并单击“修改”。  
+4.  单击“浏览”**** 菜单并单击“修改”****。  
   
-5.  确保“DN”为空。  
+5.  确保“DN”**** 为空。  
   
 6.  在 "**编辑项属性**" 中键入：  
   
@@ -117,15 +117,15 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
     SidCompatibilityVersion  
     ```  
   
-7.  在“值”中，键入：  
+7.  在“值”**** 中，键入：  
   
     ```  
     1  
     ```  
   
-8.  确保在“操作”中选中“添加”并单击“输入”。 这将更新“条目列表”。  
+8.  确保在“操作”**** 中选中“添加”**** 并单击“输入”****。 这将更新“条目列表”****。  
   
-9. 选择“同步”和“已扩展”选项，然后单击“运行”。  
+9. 选择“同步”**** 和“已扩展”**** 选项，然后单击“运行”****。  
   
     ![RID 颁发](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModify.png)  
   
@@ -151,9 +151,9 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
   
 -   对于带有解锁的 31 位 RID 空间的域，触发点是 2<sup>31</sup>-1 * 0.90 = 1,932,735,282 个 RID（或剩余 214,748,365 个 RID）。  
   
-触发时，RID 主机在对象上将 Active Directory 属性“msDS-RIDPoolAllocationEnabled”（常用名“ms-DS-RID-Pool-Allocation-Enabled”）设置为 FALSE：  
+触发时，RID 主机在对象上将 Active Directory 属性“msDS-RIDPoolAllocationEnabled”****（常用名“ms-DS-RID-Pool-Allocation-Enabled”****）设置为 FALSE：  
   
-CN = RID Manager $，CN = System，DC = *<domain>*  
+CN = RID Manager $，CN = System，DC =*<domain>*  
   
 这将写入 16657 事件并防止继续将 RID 颁发到所有域控制器。 域控制器继续消耗任何已颁发给它们的未完成的 RID 池。  
   
@@ -166,11 +166,11 @@ CN = RID Manager $，CN = System，DC = *<domain>*
   
 2.  运行 LDP.exe。  
   
-3.  单击“连接”菜单并为端口 389 上的 Windows Server 2012 RID 主机单击“连接”，然后以域管理员身份单击“绑定”。  
+3.  单击“连接”**** 菜单并为端口 389 上的 Windows Server 2012 RID 主机单击“连接”**，然后以域管理员身份单击“绑定”****。  
   
-4.  单击“视图”菜单并单击“树”，然后为“基 DN”选择 RID 主机自己的域命名上下文。 单击 **“确定”** 。  
+4.  单击“视图”**** 菜单并单击“树”****，然后为“基 DN”**** 选择 RID 主机自己的域命名上下文。 单击“确定”。  
   
-5.  在导航窗格中，向下钻取“CN=System”容器并单击“CN=RID Manager$”对象。 右键单击它并单击“修改”。  
+5.  在导航窗格中，向下钻取“CN=System”**** 容器并单击“CN=RID Manager$”**** 对象。 右键单击它并单击“修改”****。  
   
 6.  在编辑条目属性中，键入：  
   
@@ -178,15 +178,15 @@ CN = RID Manager $，CN = System，DC = *<domain>*
     MsDS-RidPoolAllocationEnabled  
     ```  
   
-7.  在“值”中，键入（采用大写）：  
+7.  在“值”**** 中，键入（采用大写）：  
   
     ```  
     TRUE  
     ```  
   
-8.  在“操作”中选择“替换”并单击“输入”。 这将更新“条目列表”。  
+8.  在“操作”**** 中选择“替换”**** 并单击“输入”****。 这将更新“条目列表”****。  
   
-9. 启用“同步”和“已扩展”选项，然后单击“运行”：  
+9. 启用“同步”**** 和“已扩展”**** 选项，然后单击“运行”****：  
   
     ![RID 颁发](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeiling.png)  
   
@@ -210,7 +210,7 @@ CN = RID Manager $，CN = System，DC = *<domain>*
 ### <a name="rid-fixes-for-earlier-versions-of-windows-server"></a>早期版本 Windows Server 的 RID 修补程序  
 上述所有修补程序和更改均已发布 Windows Server 2008 R2 修补程序。 当前没有已计划或进行中的 Windows Server 2008 修补程序。  
   
-## <a name="troubleshooting-rid-issuance"></a><a name="BKMK_Tshoot"></a>消除 RID 颁发问题  
+## <a name="troubleshooting-rid-issuance"></a><a name="BKMK_Tshoot"></a>解决 RID 颁发问题  
   
 ### <a name="introduction-to-troubleshooting"></a>疑难解答简介  
 RID 颁发疑难解答需要逻辑和线性方法。 除非你正在仔细监视事件日志中 RID 触发的警告和错误，否则你对第一个问题的指示很可能是帐户创建失败。 解决 RID 颁发问题的关键是了解该症状何时符合预期或何时不符合预期；许多 RID 颁发问题可能仅影响一个域控制器，而且与组件改进无关。 下面的这个简图有助于使这些决策更清晰：  
@@ -219,7 +219,7 @@ RID 颁发疑难解答需要逻辑和线性方法。 除非你正在仔细监视
   
 ### <a name="troubleshooting-options"></a>疑难解答选项  
   
-#### <a name="logging-options"></a>“日志记录选项”  
+#### <a name="logging-options"></a>日志记录选项  
 RID 颁发中的所有日志记录均发生在系统事件日志中的源 Directory-Services-SAM 下。 默认情况下，日志记录处于启用状态并配置为最大详细级别。 如果未针对 Windows Server 2012 中的新组件更改记录任何条目，请将该问题视为典型（即旧，早于 Windows Server 2012） RID 颁发问题，此问题在 Windows 2008 R2 或更早的操作系统中出现。  
   
 #### <a name="utilities-and-commands-for-troubleshooting"></a>用于疑难解答的实用工具和命令  
@@ -243,11 +243,11 @@ RID 颁发中的所有日志记录均发生在系统事件日志中的源 Direct
   
 3.  返回的错误是否专门提及 RID，但除此之外并不具体？ 例如，“Windows 无法创建对象，因为目录服务无法分配相对标识符。”  
   
-    1.  检查域控制器上的系统事件日志中是否2012有[Rid 池请求](https://technet.microsoft.com/library/ee406152(WS.10).aspx)中详细信息（16642、16643、16644、16645、16656）。  
+    1.  检查域控制器上的系统事件日志中是否2012有[Rid 池请求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee406152(v=ws.10))中详细信息（16642、16643、16644、16645、16656）。  
   
     2.  检查域控制器和 RID 主机上的系统事件中新的块指示事件，它们在本主题下文中有详细说明（16655、16656、16657）。  
   
-    3.  使用 Repadmin.exe 验证 Active Directory 复制运行状况，使用“Dcdiag.exe /test:ridmanager /v”验证 RID 主机可用性。 如果这些测试不能获得确定的结果，请在域控制器和 RID 主机之间启用双向网络捕获。  
+    3.  使用 Repadmin.exe 验证 Active Directory 复制运行状况，使用“Dcdiag.exe /test:ridmanager /v”**** 验证 RID 主机可用性。 如果这些测试不能获得确定的结果，请在域控制器和 RID 主机之间启用双向网络捕获。  
   
 ### <a name="troubleshooting-specific-problems"></a>有关特定问题的疑难解答  
 Windows Server 2012 域控制器上的系统事件日志中记录以下新消息。 自动 AD 运行状况跟踪系统（例如 System Center Operations Manager）应当监视这些事件；全部都值得注意，有些可指示关键的域问题。  
@@ -255,53 +255,51 @@ Windows Server 2012 域控制器上的系统事件日志中记录以下新消息
 |||  
 |-|-|  
 |事件 ID|16653|  
-|源|Directory-Services-SAM|  
-|Severity|警告|  
+|Source|Directory-Services-SAM|  
+|严重性|警告|  
 |Message|管理员所配置的帐户标识符 (RID) 的池大小大于支持的最大值。 当域控制器是 RID 主机时，将使用 %1 的最大值。<p>有关详细信息，请参阅 [RID 块大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize)。|  
 |注释和解析|RID 块大小的最大值现在是十进制的 15000（十六进制的 3A98）。 域控制器无法请求多于 15,000 个 RID。 在每次启动时记录此事件，直到将该值设置为等于或小于此最大值。|  
   
 |||  
 |-|-|  
 |事件 ID|16654|  
-|源|Directory-Services-SAM|  
-|Severity|信息|  
-|Message|帐户标识符 (RID) 池已失效。 在以下预期情况下，可能会出现该问题：<p>1. 从备份还原域控制器。<p>2. 从快照还原在虚拟机上运行的域控制器。<p>3. 管理员已手动使池失效。<p>有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=226247。|  
+|Source|Directory-Services-SAM|  
+|严重性|信息|  
+|Message|帐户标识符 (RID) 池已失效。 在以下预期情况下，可能会出现该问题：<p>1. 从备份还原域控制器。<p>2. 从快照还原在虚拟机上运行的域控制器。<p>3. 管理员已手动使池失效。<p>有关更多信息，请参见 https://go.microsoft.com/fwlink/?LinkId=226247 。|  
 |注释和解析|如果此事件是意外，请联系所有域管理员并确定他们中谁执行了该操作。 目录服务事件记录还包含有关何时执行这些步骤之一的详细信息。|  
   
 |||  
 |-|-|  
 |事件 ID|16655|  
-|源|Directory-Services-SAM|  
-|Severity|信息|  
+|Source|Directory-Services-SAM|  
+|严重性|信息|  
 |Message|帐户标识符 (RID) 的全局最大值已增加为 %1。|  
 |注释和解析|如果此事件是意外，请联系所有域管理员并确定他们中谁执行了该操作。 此事件说明总体 RID 池大小的增加超过 2<sup>30</sup> 的默认值，而且不会自动发生；仅通过管理操作发生。|  
   
 |||  
 |-|-|  
 |事件 ID|16656|  
-|源|Directory-Services-SAM|  
-|Severity|警告|  
+|Source|Directory-Services-SAM|  
+|严重性|警告|  
 |Message|帐户标识符 (RID) 的全局最大值已增加为 %1。|  
-|注释和解析|需要执行的操作！ 帐户标识符 (RID) 池已分配到此域控制器。 池值指示此域已使用了总可用帐户标识符中相当大的一部分。<p>当域达到以下阈值时，将会激活保护机制：剩余可用帐户标识符总计： %1。  保护机制将阻止帐户创建，直到你在 RID 主机域控制器上手动重新启用帐户标识符分配。<p>有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=228610。|  
+|注释和解析|需要执行的操作！ 帐户标识符 (RID) 池已分配到此域控制器。 池值指示此域已使用了总可用帐户标识符中相当大的一部分。<p>当域达到以下阈值时，将会激活保护机制：剩余可用帐户标识符总计： %1。  保护机制将阻止帐户创建，直到你在 RID 主机域控制器上手动重新启用帐户标识符分配。<p>有关更多信息，请参见 https://go.microsoft.com/fwlink/?LinkId=228610 。|  
   
 |||  
 |-|-|  
 |事件 ID|16657|  
-|源|Directory-Services-SAM|  
-|Severity|错误|  
-|Message|需要执行的操作！ 此域已使用了总可用帐户标识符 (RID) 中相当大的一部分。 已激活保护机制，因为剩余的可用帐户标识符总数小于： X% [人工上限参数]。<p>保护机制阻止帐户创建，直到你在 RID 主机域控制器上手动重新启用帐户标识符分配。<p>在重新启用帐户创建之前执行特定的诊断非常重要，这可以确保此域不会以异常高的速率消耗帐户标识符。 任何标识的问题应该在重新启用帐户创建之前解决。<p>如果未能诊断并修复导致异常高的帐户标识符消耗率的任何基本问题，可能会导致域中的帐户标识符耗尽，然后帐户创建将在此域中永久性地处于禁用状态。<p>有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=228610。|  
+|Source|Directory-Services-SAM|  
+|严重性|错误|  
+|消息|需要执行的操作！ 此域已使用了总可用帐户标识符 (RID) 中相当大的一部分。 已激活保护机制，因为剩余的可用帐户标识符总数小于： X% [人工上限参数]。<p>保护机制阻止帐户创建，直到你在 RID 主机域控制器上手动重新启用帐户标识符分配。<p>在重新启用帐户创建之前执行特定的诊断非常重要，这可以确保此域不会以异常高的速率消耗帐户标识符。 任何标识的问题应该在重新启用帐户创建之前解决。<p>如果未能诊断并修复导致异常高的帐户标识符消耗率的任何基本问题，可能会导致域中的帐户标识符耗尽，然后帐户创建将在此域中永久性地处于禁用状态。<p>有关更多信息，请参见 https://go.microsoft.com/fwlink/?LinkId=228610 。|  
 |注释和解析|联系所有域管理员并通知他们此域中无法再创建任何安全主体，直到重写此保护为止。 有关如何重写保护以及增加总体 RID 池（可能执行）的详细信息，请参阅[全局 RID 空间大小解锁](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock)。|  
   
 |||  
 |-|-|  
 |事件 ID|16658|  
-|源|Directory-Services-SAM|  
-|Severity|警告|  
-|Message|此事件是对可用帐户标识符 (RID) 剩余总量的定期更新。 剩余的帐户标识符数大约为： %1。<p>随着帐户的创建，将使用帐户标识符，当它们耗尽时，域中不可创建新帐户。<p>有关详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=228745。|  
+|Source|Directory-Services-SAM|  
+|严重性|警告|  
+|Message|此事件是对可用帐户标识符 (RID) 剩余总量的定期更新。 剩余的帐户标识符数大约为： %1。<p>随着帐户的创建，将使用帐户标识符，当它们耗尽时，域中不可创建新帐户。<p>有关更多信息，请参见 https://go.microsoft.com/fwlink/?LinkId=228745 。|  
 |注释和解析|联系所有域管理员并通知他们 RID 消耗已越过重要里程碑；通过查看安全信任项创建模式来确定这是否为预期的行为。 此事件非常罕见，因为它意味着已分配至少约 1 亿个 RID。|  
   
 ## <a name="see-also"></a>另请参阅  
-[在 Windows Server 2012 中管理 RID 颁发](https://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)  
+[在 Windows Server 2012 中管理 RID 颁发](/archive/blogs/askds/managing-rid-issuance-in-windows-server-2012)  
   
-
-

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dc6cba306a36589d8b585b23ecb43e7d16b7d201
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5ca29f1eef61bd11b2ceede4f335c029412e7331
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823070"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966399"
 ---
 # <a name="command-line-process-auditing"></a>命令行进程审核
 
@@ -38,9 +38,9 @@ ms.locfileid: "80823070"
   
 ![命令行审核](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)  
   
-**图 SEQ 图 \\\* 阿拉伯16事件4688**  
+**图 SEQ 图 \\ \* 阿拉伯16事件4688**  
   
-在 REF _Ref366427278 \h 图16中查看更新的事件 ID 4688。  在此更新之前，将不会记录**处理命令行**的任何信息。  由于这种附加日志记录，我们现在可以看到，不仅已启动 wscript.echo 进程，还可以使用它来执行 VB 脚本。  
+在 REF _Ref366427278 \h 图16中查看更新的事件 ID 4688。  在此更新之前，将不会记录**处理命令行**的任何信息。  由于这种附加日志记录，我们现在可以看到，不仅 wscript.exe 进程已启动，而且还用于执行 VB 脚本。  
   
 ## <a name="configuration"></a>配置  
 若要查看此更新的效果，你将需要启用两个策略设置。  
@@ -48,7 +48,7 @@ ms.locfileid: "80823070"
 ### <a name="you-must-have-audit-process-creation-auditing-enabled-to-see-event-id-4688"></a>您必须启用审核过程创建审核才能看到事件 ID 4688。  
 若要启用审核过程创建策略，请编辑以下组策略：  
   
-**策略位置：** > 策略 > Windows 设置的计算机配置 > 安全设置 > 高级审核配置 > 详细跟踪  
+**策略位置：**> 策略 > Windows 设置的计算机配置 > 安全设置 > 高级审核配置 > 详细跟踪  
   
 **策略名称：** 审核进程创建  
   
@@ -65,14 +65,14 @@ ms.locfileid: "80823070"
 **默认值：** 未配置  
   
 ### <a name="in-order-to-see-the-additions-to-event-id-4688-you-must-enable-the-new-policy-setting-include-command-line-in-process-creation-events"></a>若要查看对事件 ID 4688 的添加操作，必须启用新策略设置：在进程创建事件中包括命令行  
-**表 SEQ 表 \\\* 阿拉伯19命令行进程策略设置**  
+**表 SEQ 表 \\ \* 阿拉伯语19命令行进程策略设置**  
   
 |策略配置|详细信息|  
 |------------------------|-----------|  
 |**Path**|管理 Templates\System\Audit 进程创建|  
-|**将**|**在进程创建事件中包含命令行**|  
+|**设置**|**在进程创建事件中包含命令行**|  
 |**默认设置**|未配置（未启用）|  
-|**支持：**|?|  
+|**在以下设备上受支持：**|?|  
 |**描述**|此策略设置确定在创建新进程时安全审核事件中记录的信息。<p>仅当启用了审核过程创建策略时，此设置才适用。 如果启用此策略设置，则在应用此策略设置的工作站和服务器上，将在安全事件日志中以纯文本形式记录每个进程的命令行信息，作为审核过程创建事件4688的一部分。<p>如果禁用或未配置此策略设置，则将不会在审核过程创建事件中包括进程的命令行信息。<p>默认：未配置<p>注意：如果启用此策略设置，则具有 "读取安全事件" 权限的任何用户都可以读取任何成功创建的进程的命令行参数。 命令行参数可能包含敏感信息或私有信息，如密码或用户数据。|  
   
 ![命令行审核](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)  
@@ -90,20 +90,20 @@ ms.locfileid: "80823070"
   
 2.  右键单击“默认域策略”，然后单击“编辑”。  
   
-3.  双击 "计算机配置"，双击 "策略"，然后双击 "Windows 设置"。  
+3.  依次双击 “计算机配置”、 “策略”和 “Windows 设置”。  
   
 4.  双击 "安全设置"，双击 "本地策略"，然后单击 "安全选项"。  
   
 5.  双击“审核: 强制审核策略子类别设置(Windows Vista 或更高版本)替代审核策略类别设置”，然后单击“定义此策略设置”。  
   
-6.  单击 "已启用"，然后单击 "确定"。  
+6.  单击 “启用”，然后单击 “确定”。  
   
 ## <a name="additional-resources"></a>其他资源  
-[审核进程创建](https://technet.microsoft.com/library/dd941613(v=WS.10).aspx)  
+[审核进程创建](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941613(v=ws.10))  
   
-[高级安全审核策略循序渐进指南](https://technet.microsoft.com/library/dd408940(v=WS.10).aspx)  
+[高级安全审核策略循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd408940(v=ws.10))  
   
-[AppLocker：常见问题](https://technet.microsoft.com/library/ee619725(v=ws.10).aspx)  
+[AppLocker：常见问题](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee619725(v=ws.10))  
   
 ## <a name="try-this-explore-command-line-process-auditing"></a>请尝试执行以下操作：浏览命令行进程审核  
   
@@ -122,5 +122,3 @@ ms.locfileid: "80823070"
   
 4.  执行与之前相同的脚本并观察事件  
   
-
-

@@ -1,5 +1,5 @@
 ---
-title: RAS 网关
+title: RDS 网关
 description: 本主题面向信息技术（IT）专业人员，提供有关 RAS 网关的概述信息，包括 Windows Server 2016 中的 RAS 网关部署模式和功能。
 manager: dougkim
 ms.prod: windows-server
@@ -9,14 +9,14 @@ ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
 ms.author: lizross
 author: eross-msft
 ms.date: 05/23/2018
-ms.openlocfilehash: 762ba98a57db1411098c6ae6a8394e9a9b063181
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 28f0dabe56ef91068b96cfa1701dbf4b8cceef53
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308517"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965939"
 ---
-# <a name="ras-gateway"></a>RAS 网关
+# <a name="ras-gateway"></a>RDS 网关
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
@@ -47,7 +47,7 @@ RAS 网关是一种软件路由器和网关，可在单租户模式或多租户�
  
 本主题面向信息技术（IT）专业人员，提供有关 RAS 网关的概述信息，包括 RAS 网关部署模式和功能。 
   
-本主题包含以下各节。  
+本主题包含以下各节：  
   
   
 -   [RAS 网关部署模式](#bkmk_modes)  
@@ -85,7 +85,7 @@ Hyper-v 网络虚拟化提供了部署独立于基础物理网络的虚拟机（
   
 在 Windows Server 2016 中，RAS 网关可以在物理网络与 VM 网络资源之间路由网络流量，而不管资源位于何处。 可以使用 RAS 网关在位于同一物理位置或多个不同物理位置的物理网络与虚拟网络之间路由网络流量。  
   
-例如，如果你的物理网络和虚拟网络位于同一个物理位置，则可以部署一个运行 Hyper-v 的计算机，该计算机配置有 RAS 网关 VM 来充当转发网关，并在虚拟和物理之间路由流量广域网.  
+例如，如果你的物理网络和虚拟网络位于同一个物理位置，则可以部署一个运行 Hyper-v 的计算机，该计算机配置有 RAS 网关 VM 来充当转发网关，并在虚拟网络与物理网络之间路由流量。  
   
 在另一个示例中，如果你的虚拟网络位于云中，则你的 CSP 可以部署 RAS 网关，以便你可以在 VPN 服务器与 CSP 的 RAS 网关之间创建虚拟专用网络（VPN）站点到站点连接;建立此链接后，可以通过 VPN 连接连接到云中的虚拟资源。  
   
@@ -105,13 +105,13 @@ RAS 网关部署在运行 Hyper-v 且配置了一个 VM 的专用计算机上。
 ## <a name="ras-gateway-features"></a><a name="bkmk_features"></a>RAS 网关功能  
 RAS 网关包含以下功能。  
   
--   **站点到站点 VPN**。 此 RAS 网关功能允许你使用站点到站点 VPN 连接在 Internet 上的不同物理位置连接两个网络。 如果你有一个总部和多个分支机构，则可以在每个位置部署一个边缘 RAS 网关，并创建站点到站点连接，以提供位置之间的网络流量。 对于在数据中心托管许多租户的 Csp，RAS 网关提供多租户网关解决方案，使租户能够通过站点到站点 VPN 连接访问和管理其资源，并允许网络流量在数据中心及其物理网络中的虚拟资源。  
+-   **站点到站点 VPN**。 此 RAS 网关功能允许你使用站点到站点 VPN 连接在 Internet 上的不同物理位置连接两个网络。 如果你有一个总部和多个分支机构，则可以在每个位置部署一个边缘 RAS 网关，并创建站点到站点连接，以提供位置之间的网络流量。 对于在其数据中心托管多个租户的 Csp，RAS 网关提供多租户网关解决方案，使租户能够通过站点到站点 VPN 连接访问和管理其资源，这允许你的数据中心中的虚拟资源与物理网络之间的网络流量。  
   
 -   **点到站点 VPN**。 此 RAS 网关功能允许组织员工或管理员从远程位置连接到组织的网络。 对于 RAS 网关的单租户部署，远程员工可以使用 VPN 连接来连接到你的组织网络。 通过此连接，用户可以使用内部网络资源，如 intranet 网站和文件服务器。 对于多租户部署，租户网络管理员可以使用点到站点 VPN 连接来访问 CSP 数据中心的虚拟网络资源。  
   
--   **动态路由边界网关协议（BGP）** 。 BGP 可减少对在路由器上进行手动路由配置的需要，因为它是一种动态路由协议，可自动了解使用站点到站点 VPN 连接进行连接的站点之间的路由。 如果你的组织有多个使用启用了 BGP 的路由器（如 RAS 网关）连接的站点，则在发生网络中断或故障时，BGP 允许路由器自动计算并使用有效的路由。 有关详细信息，请参阅[RFC 4271](https://tools.ietf.org/html/rfc4271)。  
+-   **动态路由边界网关协议（BGP）**。 BGP 可减少对在路由器上进行手动路由配置的需要，因为它是一种动态路由协议，可自动了解使用站点到站点 VPN 连接进行连接的站点之间的路由。 如果你的组织有多个使用启用了 BGP 的路由器（如 RAS 网关）连接的站点，则在发生网络中断或故障时，BGP 允许路由器自动计算并使用有效的路由。 有关详细信息，请参阅[RFC 4271](https://tools.ietf.org/html/rfc4271)。  
   
--   **网络地址转换（NAT）** 。 通过网络地址转换（NAT），可以通过单个公共 IP 地址的单一界面与公共 Internet 建立连接。 专用网络上的计算机使用专用的不可路由地址。 NAT 将专用地址映射到公共地址。 此 RAS 网关功能允许具有单租户部署的组织员工使用网关后访问 Internet 资源。 对于 Csp，此功能允许租户 Vm 上运行的应用程序访问 Internet。 例如，配置为 Web 服务器的租户 VM 可以联系外部财务资源来处理信用卡交易。  
+-   **网络地址转换（NAT）**。 通过网络地址转换（NAT），可以通过单个公共 IP 地址的单一界面与公共 Internet 建立连接。 专用网络上的计算机使用专用的不可路由地址。 NAT 将专用地址映射到公共地址。 此 RAS 网关功能允许具有单租户部署的组织员工使用网关后访问 Internet 资源。 对于 Csp，此功能允许租户 Vm 上运行的应用程序访问 Internet。 例如，配置为 Web 服务器的租户 VM 可以联系外部财务资源来处理信用卡交易。  
 
   
 ## <a name="ras-gateway-deployment-scenarios"></a><a name="bkmk_deploy"></a>RAS 网关部署方案  
@@ -124,9 +124,9 @@ RAS 网关包含以下功能。
 ## <a name="ras-gateway-management-tools"></a><a name="bkmk_manage"></a>RAS 网关管理工具  
 以下是 RAS 网关的管理工具。  
   
--   在 Windows Server 2016 中，若要部署 RAS 网关路由器，必须使用 Windows PowerShell 命令。 有关详细信息，请参阅适用于 Windows Server 2016 和 Windows 10 的[远程访问 cmdlet](https://docs.microsoft.com/powershell/module/remoteaccess) 。  
+-   在 Windows Server 2016 中，若要部署 RAS 网关路由器，必须使用 Windows PowerShell 命令。 有关详细信息，请参阅适用于 Windows Server 2016 和 Windows 10 的[远程访问 cmdlet](/powershell/module/remoteaccess) 。  
   
--   在 System Center 2012 R2 Virtual Machine Manager （VMM）中，RAS 网关名为 "Windows Server 网关"。 VMM 软件界面中提供一组有限的边界网关协议（BGP）配置选项，包括**本地 BGP IP 地址**和**自治系统编号（ASN）** 、 **BGP 对等 ip 地址列表**和**ASN 值**。 但是，你可以使用远程访问 Windows PowerShell BGP 命令来配置 Windows Server 网关的所有其他功能。 有关详细信息，请参阅[Virtual Machine Manager （VMM）](https://technet.microsoft.com/system-center-docs/vmm/vmm)和 windows Server 2016 和 windows 10 的[远程访问 cmdlet](https://technet.microsoft.com/library/hh918399.aspx) 。  
+-   在 System Center 2012 R2 Virtual Machine Manager （VMM）中，RAS 网关名为 "Windows Server 网关"。 VMM 软件界面中提供一组有限的边界网关协议（BGP）配置选项，包括**本地 BGP IP 地址**和**自治系统编号（ASN）**、 **BGP 对等 ip 地址列表**和**ASN 值**。 但是，你可以使用远程访问 Windows PowerShell BGP 命令来配置 Windows Server 网关的所有其他功能。 有关详细信息，请参阅[Virtual Machine Manager （VMM）](/system-center/vmm/overview?view=sc-vmm-2019)和 windows Server 2016 和 windows 10 的[远程访问 cmdlet](/system-center/vmm/overview?view=sc-vmm-2019) 。  
   
 ## <a name="related-topics"></a>相关主题
 - [RAS 网关高可用性](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  

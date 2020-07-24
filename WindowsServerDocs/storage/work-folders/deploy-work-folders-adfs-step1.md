@@ -8,12 +8,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
-ms.openlocfilehash: 0920d091d6e8b5f3db9bf945a966fdd577918179
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b8e9d6885184e2b40a87cae0dc8b8b82f4983fb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365795"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965799"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤 1，设置 AD FS
 
@@ -23,16 +23,16 @@ ms.locfileid: "71365795"
   
 -   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：概述](deploy-work-folders-adfs-overview.md)  
   
--   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤2、AD FS 配置后工作](deploy-work-folders-adfs-step2.md)  
+-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤 2，AD FS 后期配置工作](deploy-work-folders-adfs-step2.md)  
   
--   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤3、设置工作文件夹](deploy-work-folders-adfs-step3.md)  
+-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤 3，设置工作文件夹](deploy-work-folders-adfs-step3.md)  
   
--   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤4、设置 Web 应用程序代理](deploy-work-folders-adfs-step4.md)  
+-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤 4，设置 Web 应用程序代理](deploy-work-folders-adfs-step4.md)  
   
--   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤5、设置客户端](deploy-work-folders-adfs-step5.md)  
+-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹：步骤 5，设置客户端](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
->   本部分中所述的说明适用于 Windows Server 2019 或 Windows Server 2016 环境。 如果你使用的是 Windows Server 2012 R2，请遵循 [Windows Server 2012 R2 说明](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx)。
+>   本部分中所述的说明适用于 Windows Server 2019 或 Windows Server 2016 环境。 如果你使用的是 Windows Server 2012 R2，请遵循 [Windows Server 2012 R2 说明](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11))。
 
 若要设置 AD FS 以用于工作文件夹，请使用以下过程。  
   
@@ -50,14 +50,14 @@ ms.locfileid: "71365795"
 对于测试环境，你将使用由提供的脚本之一创建的自签名证书。  
   
 > [!NOTE]  
-> AD FS 不支持下一代加密技术 (CNG) 证书，这意味着你无法通过使用 Windows PowerShell cmdlet New-SelfSignedCertificate 创建自签名证书。 但是，你可以使用[使用 AD FS 和 Web 应用程序代理部署工作文件夹](https://blogs.technet.microsoft.com/filecab/2014/03/03/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap)博客文章中的 makecert.ps1 脚本。 此脚本会创建适用于 AD FS 的自签名证书并提示创建证书所需的 SAN 名称。  
+> AD FS 不支持下一代加密技术 (CNG) 证书，这意味着你无法通过使用 Windows PowerShell cmdlet New-SelfSignedCertificate 创建自签名证书。 但是，你可以使用[使用 AD FS 和 Web 应用程序代理部署工作文件夹](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap/ba-p/425318)博客文章中的 makecert.ps1 脚本。 此脚本会创建适用于 AD FS 的自签名证书并提示创建证书所需的 SAN 名称。  
   
 接下来，请执行以下部分中所述的预安装工作。  
   
 ### <a name="create-an-ad-fs-self-signed-certificate"></a>创建 AD FS 自签名证书  
 若要创建 AD FS 自签名证书，请执行以下步骤：  
   
-1.  下载[使用 AD FS 和 Web 应用程序代理部署工作文件夹](https://blogs.technet.microsoft.com/filecab/2014/03/03/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap)博客文章中提供的脚本，然后将文件 makecert.ps1 复制到 AD FS 计算机。  
+1.  下载[使用 AD FS 和 Web 应用程序代理部署工作文件夹](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap/ba-p/425318)博客文章中提供的脚本，然后将文件 makecert.ps1 复制到 AD FS 计算机。  
   
 2.  使用管理员权限打开 Windows PowerShell 窗口。  
   
@@ -113,7 +113,7 @@ Workplace Join 需要 enterpriseregistration SAN。
   
 2.  在**服务器角色**页面上，选择 **Active Directory 联合身份验证服务**角色，然后单击**下一步**。  
   
-3.  在 **Active Directory 联合身份验证服务 (AD FS)** 页面上，你将看到一条消息，这条消息指出无法在同一台计算机上将 Web 应用程序代理角色作为 AD FS 安装。 单击**下一步**。  
+3.  在 **Active Directory 联合身份验证服务 (AD FS)** 页面上，你将看到一条消息，这条消息指出无法在同一台计算机上将 Web 应用程序代理角色作为 AD FS 安装。 单击“下一步”。  
   
 4.  在“确认”页上，单击**安装**。  
   
@@ -138,16 +138,16 @@ Add-WindowsFeature ADFS-Federation –IncludeManagementTools
   
 4.  在**指定服务属性**页面上，输入用于 AD FS 通信的 SSL 证书使用者名称。 在测试示例中，此为 **blueadfs.contoso.com**。  
   
-5.  输入联合身份验证服务名称。 在测试示例中，此为 **blueadfs.contoso.com**。 单击**下一步**。  
+5.  输入联合身份验证服务名称。 在测试示例中，此为 **blueadfs.contoso.com**。 单击“下一步”。  
   
     > [!NOTE]  
     > 联合身份验证服务名称不得使用环境中现有服务器的名称。 一旦使用现有服务器的名称，AD FS 安装将失败，并且必须重启。  
   
-6.  在**指定服务帐户**页面上，输入你想要用于托管服务帐户的名称。 对于测试示例，请选择**创建组托管服务帐户**，并在**帐户名称**中输入 **ADFSService**。 单击**下一步**。  
+6.  在**指定服务帐户**页面上，输入你想要用于托管服务帐户的名称。 对于测试示例，请选择**创建组托管服务帐户**，并在**帐户名称**中输入 **ADFSService**。 单击“下一步”。  
   
-7.  在**指定配置数据库**页面上，选择**使用 Windows 内部数据库在此服务器上创建数据库**，然后单击**下一步**。  
+7.  在 "**指定配置数据库**" 页上，选择 "**使用 Windows 内部数据库在此服务器上创建数据库**"，然后单击 "**下一步**"。  
   
-8.  **查看选项**页面会显示所选选项的概述。 单击**下一步**。  
+8.  **查看选项**页面会显示所选选项的概述。 单击“下一步”。  
   
 9. **先决条件检查**页面会指示所有先决条件是否都成功通过检查。 如果没有任何问题，请单击**配置**。  
   
@@ -187,4 +187,3 @@ Install-ADFSFarm -CertificateThumbprint $thumbprint -FederationServiceDisplayNam
 ## <a name="see-also"></a>另请参阅  
 [工作文件夹概述](Work-Folders-Overview.md)  
   
-

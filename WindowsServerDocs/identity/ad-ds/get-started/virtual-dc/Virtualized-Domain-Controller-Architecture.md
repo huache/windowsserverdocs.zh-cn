@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: fa8645198374d91911f8ec7dc15f04bea4865e38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 864f6c8a103ce753e328426b4205c5e1c64e0bcb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824440"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966039"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>虚拟化域控制器体系结构
 
@@ -32,7 +32,7 @@ ms.locfileid: "80824440"
   
 在混合环境中（某些虚拟机监控程序支持 VM 生成 ID 而其他虚拟机监控程序不支持），可能会在不支持 VM 生成 ID 的虚拟机监控程序上意外地部署克隆媒体。 DCCloneConfig.xml 文件的存在表明了要克隆 DC 的管理意图。 因此，如果在启动期间找到了 DCCloneConfig.xml 文件，但主机未提供 VM 生成 ID，则克隆 DC 将启动进入目录服务还原模式 (DSRM)，以防对环境的其余部分造成任何影响。 随后，可将克隆媒体移动到支持 VM 生成 ID 的虚拟机监控程序，然后可以重试克隆。  
   
-如果在支持 VM 生成 ID 的虚拟机监控程序上部署克隆媒体，但未提供 DCCloneConfig.xml 文件，则当 DC 检测到其 DIT 和新 VM 的 DIT 之间的 VM 生成 ID 发生更改时，它将触发安全措施，以阻止重复使用 USN 并避免重复 SID。 但是，将不会启动克隆，因此辅助 DC 将在与源域控制器相同的标识下继续运行。 为了避免环境中出现任何不一致，应及早从网络中删除此辅助 DC。 有关如何在确保更新获取已复制出站的同时回收此辅助 DC 的详细信息，请参阅 Microsoft 知识库文章 [2742970](https://support.microsoft.com/kb/2742970)。  
+如果在支持 VM 生成 ID 的虚拟机监控程序上部署克隆媒体，但未提供 DCCloneConfig.xml 文件，则当 DC 检测到其 DIT 和新 VM 的 DIT 之间的 VM 生成 ID 发生更改时，它将触发安全措施，以阻止重复使用 USN 并避免重复 SID。 但是，将不会启动克隆，因此辅助 DC 将在与源域控制器相同的标识下继续运行。 为了避免环境中出现任何不一致，应及早从网络中删除此辅助 DC。 有关如何在确保更新获取已复制出站的同时回收此辅助 DC 的详细信息，请参阅 Microsoft 知识库文章[2742970](https://support.microsoft.com/kb/2742970)。  
   
 ### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>克隆详细处理  
 下图显示了初始克隆操作和克隆重试操作的体系结构。 稍后，本主题将对这些过程进行详细说明。  
@@ -111,7 +111,7 @@ ms.locfileid: "80824440"
   
 15. 来宾强制与另一个域控制器进行 NT5DS (Windows NTP) 时间同步（在默认 Windows 时间服务层次结构中，这意味着使用 PDCE）。 来宾与 PDCE 取得联系。 刷新所有现有 Kerberos 票证。  
   
-16. 来宾将 DFSR 或 NTFRS 服务配置为自动运行。 来宾将删除所有现有的 DFSR 和 NTFRS 数据库文件（默认值： c:\windows\ntfrs 和 c:\system volume information\dfsr\\ *< database_GUID >* ），以便在下一次启动服务时强制执行 SYSVOL 的非权威同步。 来宾将不会删除 SYSVOL 的文件内容，以便在稍后同步启动时预植入 SYSVOL。  
+16. 来宾将 DFSR 或 NTFRS 服务配置为自动运行。 来宾将删除所有现有的 DFSR 和 NTFRS 数据库文件（默认值： c:\windows\ntfrs 和 c:\system volume information\dfsr \\ *<database_GUID>*），以便在下次启动该服务时强制执行 SYSVOL 的非权威同步。 来宾将不会删除 SYSVOL 的文件内容，以便在稍后同步启动时预植入 SYSVOL。  
   
 17. 已重命名来宾。 来宾上的 DS 角色服务器服务开始进行 AD DS 配置（升级），将现有的 NTDS.DIT 数据库文件用作源，而不是同普通升级一样使用 c:\windows\system32 中包含的模板数据库作为源。  
   
@@ -179,7 +179,7 @@ AD DS 依赖于虚拟机监控程序平台以显示名为 **VM 生成 ID** 的�
 > [!NOTE]  
 > 简化了之前的插图以解释这些概念。  
   
-1.  在时间 T1，虚拟机监控程序管理员拍摄虚拟 DC1 的快照。 此时 DC1 的 USN 值（实际上为 **highestCommittedUsn**）为 100，InvocationId（在之前的图中表示为 ID）值为 A（实际上它是 GUID）。 SavedVMGID 值是 DC 的 DIT 文件中的 VM 生成 ID（根据 DC 的计算机对象存储在名为 **msDS-GenerationId**的属性中）。 VMGID 是虚拟机驱动程序中可用的 VM 生成 ID 的当前值。 该值由虚拟机监控程序提供。  
+1.  在时间 T1，虚拟机监控程序管理员拍摄虚拟 DC1 的快照。 此时 DC1 的 USN 值（实际上为 **highestCommittedUsn**）为 100，InvocationId（在之前的图中表示为 ID）值为 A（实际上它是 GUID）。 SavedVMGID 值是 DC 的 DIT 文件中的 VM 生成 ID（根据 DC 的计算机对象存储在名为 **msDS-GenerationId** 的属性中）。 VMGID 是虚拟机驱动程序中可用的 VM 生成 ID 的当前值。 该值由虚拟机监控程序提供。  
   
 2.  在稍后的时间 T2，100 位用户将添加到此 DC（将用户视为可能会在时间 T1 和 T2 之间在此 DC 上执行的更新的示例；实际上，这些更新可能是用户创建、组创建、密码更新、属性更新等的组合）。 在此示例中，每个更新使用一个唯一的 USN（但在实际中一个用户创建可能会使用多个 USN）。 在提交这些更新之前，DC1 将检查其数据库中的 VM 生成 ID 值 （savedVMGID） 是否与驱动程序中可用的当前值 (VMGID) 相同。 因为还没有发生回滚，所以它们是相同的，因此将提交更新且 USN 将上移至 200，这指示下一个更新可以使用 USN 201。 InvocationId、savedVMGID 和 VMGID 中没有发生任何更改。 在下一个复制周期，这些更新将复制到 DC2。 DC2 将此处所述的高水印（和**UptoDatenessVector**）更新为 DC1 （A） @USN = 200。 也就是说，通过 USN 200，DC2 可感知来自 InvocationId A 上下文中的 DC1 的所有更新。  
   
@@ -191,10 +191,8 @@ AD DS 依赖于虚拟机监控程序平台以显示名为 **VM 生成 ID** 的�
   
 -   如果使用 FRS，则来宾将停止 NTFRS 服务并设置 D2 BURFLAGS 注册表值。 然后，它将启动 NTFRS 服务（该服务非权威地复制入站），并尽可能重新使用现有未改变的 SYSVOL 数据。  
   
--   如果使用 DFSR，来宾将停止 DFSR 服务并删除 DFSR 数据库文件（默认位置：%systemroot%\system volume information\dfsr\\ *<database GUID>* ）。 然后，它将启动 DFSR 服务（该服务非权威地复制入站），并尽可能重新使用现有未改变的 SYSVOL 数据。  
+-   如果使用 DFSR，来宾将停止 DFSR 服务并删除 DFSR 数据库文件（默认位置：%systemroot%\system volume information\dfsr \\ *<database GUID>* ）。 然后，它将启动 DFSR 服务（该服务非权威地复制入站），并尽可能重新使用现有未改变的 SYSVOL 数据。  
   
 > [!NOTE]  
-> -   如果虚拟机监控程序未提供用于比较的 VM 生成 ID，则虚拟机监控程序将无法支持虚拟化安全措施，而且来宾将如同运行 Windows Server 2008 R2 或更早版本的虚拟化域控制器一样运行。 如果存在使用 USN 开始复制的尝试（这些 USN 未超过伙伴 DC 见到的最后一个最高 USN），则来宾将实现 USN 回滚隔离保护。 有关 USN 回滚隔离保护的详细信息，请参阅 [USN 和 USN 回滚](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx)  
+> -   如果虚拟机监控程序未提供用于比较的 VM 生成 ID，则虚拟机监控程序将无法支持虚拟化安全措施，而且来宾将如同运行 Windows Server 2008 R2 或更早版本的虚拟化域控制器一样运行。 如果存在使用 USN 开始复制的尝试（这些 USN 未超过伙伴 DC 见到的最后一个最高 USN），则来宾将实现 USN 回滚隔离保护。 有关 USN 回滚隔离保护的详细信息，请参阅 [USN 和 USN 回滚](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))  
   
-
-

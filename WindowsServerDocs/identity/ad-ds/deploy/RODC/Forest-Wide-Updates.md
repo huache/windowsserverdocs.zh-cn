@@ -8,12 +8,12 @@ ms.date: 10/29/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: aa054a024e59e93fabe2089c2fdb2e53f26ab4b9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c299ac7ecaa080ab476a5ce2d14a40f7b8f2207d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825040"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965709"
 ---
 # <a name="forest-wide-updates"></a>林范围更新
 
@@ -21,49 +21,49 @@ ms.locfileid: "80825040"
 
 你可以查看以下更改集，以帮助了解并准备 Windows Server 2019 中的 adprep/forestprep 执行的架构更新。
 
-从 Windows Server 2012 开始，在 AD DS 安装过程中，将根据需要自动运行 Adprep 命令。 它们还可以在 AD DS 安装之前单独运行。 有关详细信息，请参阅[运行 Adprep.exe](https://technet.microsoft.com/library/dd464018(v=ws.10).aspx)。
+从 Windows Server 2012 开始，在 AD DS 安装过程中，将根据需要自动运行 Adprep 命令。 它们还可以在 AD DS 安装之前单独运行。 有关详细信息，请参阅[运行 Adprep.exe](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))。
 
-有关如何解释访问控制项（ACE）字符串的详细信息，请参阅[ACE 字符串](https://msdn.microsoft.com/library/aa374928(VS.85).aspx)。 有关如何解释安全 ID （SID）字符串的详细信息，请参阅[SID 字符串](https://msdn.microsoft.com/library/aa379602(VS.85).aspx)。
+有关如何解释访问控制项（ACE）字符串的详细信息，请参阅[ACE 字符串](/windows/win32/secauthz/ace-strings)。 有关如何解释安全 ID （SID）字符串的详细信息，请参阅[SID 字符串](/windows/win32/secauthz/sid-strings)。
 
 ## <a name="windows-server-2016-forest-wide-updates"></a>Windows Server 2016：林范围更新
 
 在 Windows Server 136-142 2016 中的**forestprep**命令执行的操作完成后，Cn = 都，Cn = FORESTUPDATES，Cn = CONFIGURATION，DC = ForestRootDomain 对象的**修订**属性将设置为**16**。
 
-|操作编号和 GUID|说明|Attributes|权限|
+|操作编号和 GUID|说明|特性|权限|
 |-----------------------------|---------------|--------------|---------------|
-|**操作 136**： {328092FB-16E7-4453-9AB8-7592DB56E9C4}|向 gMSA 帐户授予 "CN = Send，CN = Extended" 权限。|不可用|不可用|
-|**操作 137**： {3A1C887F-DF0A-489F-B3F2-2D0409095F6E}|向 gMSA 帐户授予 "CN = Receive，CN = Extended"。|不可用|不可用|
-|**操作 138**： {232E831F-F988-4444-8E3E-8A352E2FD411}|向 gMSA 帐户授予 "CN = Personal，CN = Extended" 权限。|不可用|不可用|
-|**操作 139**： {DDDDCF0C-BEC9-4A5A-AE86-3CFE6CC6E110}|向 gMSA 帐户授予 "CN = 公有信息，CN = Extended" 权限。|不可用|不可用|
-|**操作 140**： {A0A45AAC-5550-42DF-BB6A-3CC5C46B52F2}|向 gMSA 帐户授予 "CN = 已验证-SPN，CN = Extended" 权限。|不可用|不可用|
-|**操作 141**： {3E7645F3-3EA5-4567-B35A-87630449C70C}|向 gMSA 帐户授予 "CN = 允许身份验证，CN = Extended" 权限。|不可用|不可用|
-|**操作 142**： {E634067B-E2C4-4D79-B6E8-73C619324D5E}|向 gMSA 帐户授予 "CN = GatewayAccess，CN = Extended 权限"。|不可用|不可用|
+|**操作 136**： {328092FB-16E7-4453-9AB8-7592DB56E9C4}|向 gMSA 帐户授予 "CN = Send，CN = Extended" 权限。|空值|空值|
+|**操作 137**： {3A1C887F-DF0A-489F-B3F2-2D0409095F6E}|向 gMSA 帐户授予 "CN = Receive，CN = Extended"。|空值|空值|
+|**操作 138**： {232E831F-F988-4444-8E3E-8A352E2FD411}|向 gMSA 帐户授予 "CN = Personal，CN = Extended" 权限。|空值|空值|
+|**操作 139**： {DDDDCF0C-BEC9-4A5A-AE86-3CFE6CC6E110}|向 gMSA 帐户授予 "CN = 公有信息，CN = Extended" 权限。|空值|空值|
+|**操作 140**： {A0A45AAC-5550-42DF-BB6A-3CC5C46B52F2}|向 gMSA 帐户授予 "CN = 已验证-SPN，CN = Extended" 权限。|空值|空值|
+|**操作 141**： {3E7645F3-3EA5-4567-B35A-87630449C70C}|向 gMSA 帐户授予 "CN = 允许身份验证，CN = Extended" 权限。|空值|空值|
+|**操作 142**： {E634067B-E2C4-4D79-B6E8-73C619324D5E}|向 gMSA 帐户授予 "CN = GatewayAccess，CN = Extended 权限"。|空值|空值|
 
 ## <a name="windows-server-2012-r2-forest-wide-updates"></a>Windows Server 2012 R2：林范围更新
 
 在 Windows Server 2012 R2 （操作131-135）中的**forestprep**命令执行的操作完成后，Cn = 都，Cn = FORESTUPDATES，Cn = CONFIGURATION，DC = ForestRootDomain 对象的**修订**属性设置为**15**。
 
-|操作编号和 GUID|说明|Attributes|权限|
+|操作编号和 GUID|说明|特性|权限|
 |-----------------------------|---------------|--------------|---------------|
 |**操作 131**： {b83818c1-01a6-4f39-91b7-a3bb581c3ae3}|在配置分区中创建了新的身份验证策略配置容器对象 CN = 身份验证策略配置，CN = Services。|-objectClass：容器<br />-displayName：身份验证策略配置<br />-description：包含身份验证策略的配置。<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 132**： {bbbb9db0-4009-4368-8c40-6674e980d3c3}|在配置分区中创建了新的身份验证策略对象 CN = 身份验证 Policy，CN = 身份验证 Policy Configuration，CN = Services。|-objectClass： Msds-authnpolicies<br />-displayName：身份验证策略<br />-description：包含身份验证策略对象。<br />-showInAdvancedViewOnly： True|（A;;RPWPCRCCDCLCLOLORCWOWDSDDTDTSW;;;中文<br />（A;;RPWPCRCCDCLCLORCWOWDSDDTSW;;;SY<br />（A;;RPLCLORC;;;AU|
 |**操作 133**： {f754861c-3692-4a7b-b2c2-d0fa28ed0b0b}|在配置分区中创建了新的身份验证策略接收器对象 CN = 身份验证接收器，CN = 身份验证 Policy Configuration，CN = Services。|-objectClass： Msds-authnpolicysilos<br />-displayName：身份验证策略接收器<br />-description：包含身份验证策略接收器对象。<br />-showInAdvancedViewOnly： True|（A;;RPWPCRCCDCLCLOLORCWOWDSDDTDTSW;;;中文<br />（A;;RPWPCRCCDCLCLORCWOWDSDDTSW;;;SY<br />（A;;RPLCLORC;;;AU|
 |**操作 134**： {d32f499f-3026-4af0-a5bd-13fe5a331bd2}|在配置分区中创建了新的身份验证接收器声明类型对象 CN = ad：//ext/AuthenticationSilo，CN = 声明类型，CN = 声明配置，CN = Services。|-objectClass：预 ClaimType<br />-displayname： AuthenticationSilo<br />-name： ad://ext/AuthenticationSilo<br />-Enabled： True<br />-ClaimIsValueSpaceRestricted： True<br />-ClaimIsSingleValued： True<br />-ClaimSourceType：构造<br />-ClaimValueType：3<br />-ClaimTypeAppliesToClass： CN = User，CN = Schema，% ws<br />-ClaimTypeAppliesToClass： CN = Computer，CN = Schema，% ws<br />-ClaimTypeAppliesToClass： CN = ms-DS 托管-服务-帐户，CN = Schema，% ws<br />-ClaimTypeAppliesToClass： CN = ms-DS 组托管服务-帐户，CN = Schema，% ws|（A;;RPWPCRCCDCLCLORCWOWDSDDTSW;;;中文<br />（A;;RPWPCRCCDCLCLORCWOWDSDDTSW;;;SY<br />（A;;RPLCLORC;;;AU|
-|**操作 135**： {38618886-98ee-4e42-8cf1-d9a2cd9edf8b}|将新身份验证接收器声明类型的 ClaimIsValueSpaceRestricted 特性设置为 false|-ClaimIsValueSpaceRestricted： False|不可用|
+|**操作 135**： {38618886-98ee-4e42-8cf1-d9a2cd9edf8b}|将新身份验证接收器声明类型的 ClaimIsValueSpaceRestricted 特性设置为 false|-ClaimIsValueSpaceRestricted： False|空值|
 
 ## <a name="windows-server-2012-forest-wide-updates"></a>Windows Server 2012：林范围更新
 
 在 Windows Server 2012 （操作84-130）中的**forestprep**命令执行的操作完成后，Cn = 都，Cn = FORESTUPDATES，Cn = CONFIGURATION，DC = ForestRootDomain 对象的**修订**属性设置为**11**。
   
-|操作编号和 GUID|说明|Attributes|权限|
+|操作编号和 GUID|说明|特性|权限|
 |-----------------------------|---------------|--------------|---------------|
 |**操作 84**： {4664e973-cb20-4def-b3d5-559d6fe123e0}|在配置分区中创建了新的容器 CN = 声明配置，CN = Services。|-objectClass：容器|（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 85**： {2972d92d-a07a-44ac-9cb0-bf243356f345}|在配置分区中创建了新的对象 CN = 声明类型，CN = 声明配置，CN = Services。|-objectClass： ClaimTypes<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCDCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 86**： {09a49cb3-6c54-4b83-ab20-8370838ba149}|在配置分区中创建了新的对象 CN = 资源属性，CN = 声明配置，CN = Services。|-objectClass： ResourceProperties<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCDCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 87**： {77283e65-ce02-4dc3-8c1e-bf99b22527c2}|在配置分区中创建了新的容器 CN = 资源属性列表，CN = 声明配置，CN = Services。|-objectClass：容器<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCDCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
-|**操作 88**： {0afb7f53-96bd-404b-a659-89e65c269420}|在架构分区中创建了一个新的对象 CN = Sam-域。|不可用|在对象上创建了以下访问控制项（ACE）来向主体本身授予写入属性：<p>OACIIO;WP; ea1b7b93-5e48-46d5-bc6c-4df4fda78a35; bf967a86-0de6-11d0-a285-00aa003049e2; PS）|
-|**操作 89**： {c7f717ef-fdbe-4b4b-8dfc-fa8b839fbcfa}|在架构分区中创建了一个新的对象 CN = Domain DNS。|不可用|在对象上创建了以下访问控制项（ACE）来向主体本身授予写入属性：<p>OACIIO;WP; ea1b7b93-5e48-46d5-bc6c-4df4fda78a35; bf967a86-0de6-11d0-a285-00aa003049e2; PS）|
-|**操作 90**： {00232167-f3a4-43c6-b503-9acb7a81b01c}|回调函数以升级显示说明符。|不可用|不可用|
+|**操作 88**： {0afb7f53-96bd-404b-a659-89e65c269420}|在架构分区中创建了一个新的对象 CN = Sam-域。|空值|在对象上创建了以下访问控制项（ACE）来向主体本身授予写入属性：<p>OACIIO;WP; ea1b7b93-5e48-46d5-bc6c-4df4fda78a35; bf967a86-0de6-11d0-a285-00aa003049e2; PS）|
+|**操作 89**： {c7f717ef-fdbe-4b4b-8dfc-fa8b839fbcfa}|在架构分区中创建了一个新的对象 CN = Domain DNS。|空值|在对象上创建了以下访问控制项（ACE）来向主体本身授予写入属性：<p>OACIIO;WP; ea1b7b93-5e48-46d5-bc6c-4df4fda78a35; bf967a86-0de6-11d0-a285-00aa003049e2; PS）|
+|**操作 90**： {00232167-f3a4-43c6-b503-9acb7a81b01c}|回调函数以升级显示说明符。|空值|空值|
 |**操作 91**： {73a9515b-511c-44d2-822b-444a33d3bd33}|在配置分区中创建了新的容器 CN = Microsoft SPP，CN = Services。|-objectClass：容器<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 92**： {e0c60003-2ed7-4fd3-8659-7655a7e79397}|在配置分区中创建了新的激活对象容器 CN = 激活对象，CN = Microsoft SPP，CN = Services。|-objectClass： msSPP-ActivationObjectsContainer<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 93**： {ed0c8cca-80ab-4b6b-ac5a-59b1d317e11f}|在配置分区中创建了新的中心访问策略容器 CN = Central Access 策略，CN = 声明配置，CN = Services。|-objectClass： msAuthz-CentralAccessPolicies<br />-showInAdvancedViewOnly： True|（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCDCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
@@ -91,7 +91,7 @@ ms.locfileid: "80825040"
 |**操作 115**： {2aea2dc6-d1d3-4f0c-9994-66c1da21de0f}|在配置分区中创建了新的不可变资源属性对象 CN = Immutable_MS，CN = 资源 Properties，CN = 声明配置，CN = Services。|-objectClass： ResourceProperty<br />-description：永恒属性指定是否应允许用户删除资源或更改其内容。<br />-displayname：不可变<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-YesNo，CN = Value Types，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 116**： {ae78240c-43b9-499e-ae65-2b6e0f0e202a}|在配置分区中创建了新的知识产权资源属性对象 CN = IntellectualProperty_MS，CN = 资源 Properties，CN = 声明配置，CN = Services。|-objectClass： ResourceProperty<br />-description：知识产权（IP）属性指定资源是否包含 IP，如果有，则指定。<br />-displayname：知识产权<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-SinglevaluedChoice，CN = Value Types，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 117**： {261b5bba-3438-4d5c-a3e9-7b871e5f57f0}|在配置分区中创建了新的 "部门资源属性对象 CN = Department_MS，CN = 资源属性，CN = 声明配置，CN = Services"。|-objectClass： ResourceProperty<br />-description： "部门" 属性指定资源所属部门的名称。<br />-displayname：部门<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-SinglevaluedChoice，CN = Value Types，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
-|**操作 118**： {3fb79c05-8ea1-438c-8c7a-81f213aa61c2}|在配置分区中创建了新的影响资源属性对象 CN = Impact_MS，CN = 资源 Properties，CN = 声明配置，CN = Services。|-objectClass： ResourceProperty<br />-description：影响属性指定了对不适当的访问或资源丢失的组织影响程度。<br />-displayname：影响<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-OrderedList，CN = Value Types，CN = 声明配置，CN = Services，CN = Configuration，CN = < 目录林根级域<br />-ClaimPossibleValues：高业务影响（HBI）-3000，中等业务影响（MBI）-2000，低业务影响（LBI）-1000 >|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
+|**操作 118**： {3fb79c05-8ea1-438c-8c7a-81f213aa61c2}|在配置分区中创建了新的影响资源属性对象 CN = Impact_MS，CN = 资源 Properties，CN = 声明配置，CN = Services。|-objectClass： ResourceProperty<br />-description：影响属性指定了对不适当的访问或资源丢失的组织影响程度。<br />-displayname：影响<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-OrderedList，CN = Value Types，CN = 声明配置，CN = Services，CN = Configuration，CN =<目录林根级域<br />-ClaimPossibleValues：高业务影响（HBI）-3000，中等业务影响（MBI）-2000，低业务影响（LBI）-1000>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 119**： {0b2be39a-d463-4c23-8290-32186759d3b1}|在配置分区中创建了新的个人使用资源属性对象 CN = PersonalUse_MS，CN = 资源 Properties，CN = 声明配置，CN = Services。|-objectClass： ResourceProperty<br />-description：个人使用属性指定文件是否用于个人用途（而不是业务相关）。<br />-displayname：个人使用<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-YesNo，CN = Value Types，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 120**： {f0842b44-bc03-46a1-a860-006e8527fccd}|在配置分区中创建了新的项目资源属性对象 CN = Project_MS，CN = 资源 Properties，CN = 声明配置，CN = Services。|-objectClass： ResourceProperty<br />-description：项目属性指定与资源相关的一个或多个项目的名称。<br />-displayname：项目<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-MultivaluedChoice，CN = Value Types，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 121**： {93efec15-4dd9-4850-bc86-a1f2c8e2ebb9}|在配置分区中创建了新的保留期资源属性对象 CN = RetentionPeriod_MS，CN = 资源属性，CN = 声明配置，CN = Services。|-objectClass： ResourceProperty<br />-description： "保持期" 属性指定应保留文件的最长时间。<br />-displayname：保留期<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-SinglevaluedChoice，CN = Value Types，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
@@ -99,7 +99,7 @@ ms.locfileid: "80825040"
 |**操作 123**： {1e269508-f862-4c4a-b01f-420d26c4ff8c}|在配置分区中创建了新的公司资源属性对象 CN = Company_MS，CN = 资源 Properties，CN = 声明配置，CN = Services。|-objectClass： ResourceProperty<br />-description： "公司" 属性指定资源所属的公司。<br />-displayname： Company<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： True<br />-ValueTypeReference： CN = MS-SinglevaluedChoice，CN = Value Types，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
 |**操作 125**： {e1ab17ed-5efb-4691-ad2d-0424592C5755}**注意：** 已删除操作124。|在配置分区中创建了新的文件夹使用资源属性对象 CN = FolderUsage_MS，CN = 资源属性，CN = 声明配置，CN = Services。|-objectClass： ResourceProperty<br />-description： "文件夹使用情况" 属性指定文件夹的用途以及其中存储的文件类型。<br />-displayname：文件夹使用情况<br />-Enabled： False<br />-IsUsedAsResourceSecurityAttribute： False<br />-AppliestoResourceTypes： MS-DS-容器<br />-ValueTypeReference： CN = MS-MultivaluedChoice，CN = Value Types，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY| 
 |**操作 126**： {0e848bd4-7c70-48f2-b8fc-00fbaa82e360}|在配置分区中创建了新的全局资源属性列表配置对象 CN = 全局资源属性列表，CN = 资源属性列表，CN = 声明配置，CN = Services。|-objectClass： ResourcePropertyList<br />-description：这是全局的 "开箱即用" 资源属性列表，其中包含可由应用程序使用的所有资源属性。<br />-showInAdvancedViewOnly： True<br />-MembersOfResourcePropertyList： CN = PII_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = ProtectedHealthInformation_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = RequiredClearance_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Confidentiality_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Compliancy_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Discoverability_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Immutable_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = IntellectualProperty_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Department_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Impact_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = PersonalUse_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Project_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = RetentionPeriod_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = RetentionStartDate_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = Company_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain><br />-MembersOfResourcePropertyList： CN = FolderUsage_MS，CN = Resource Properties，CN = 声明配置，CN = Services，CN = Configuration，CN =<forest root domain>|（D;;SDDT;;;WD<br />（A;;RPLCLORC;;;AU<br />（A;;RPWPCRLCLOCCRCWDWOSW;;;中文<br />（A;;RPWPCRLCLOCCDCRCWDWOSDDTSW;;;SY|
-|**操作 127**： {016f23f7-077d-41fa-a356-de7cfdb01797}|回调函数以升级显示说明符。|不可用|不可用|
-|**操作 128**： {49c140db-2de3-44c2-a99a-bab2e6d2ba81}|已更新了文件夹使用资源属性对象 CN = FolderUsage_MS，CN = Resource Properties，CN = 声明配置，CN = Services 在配置分区中的字符串。|-description： "文件夹使用情况" 属性指定文件夹的用途以及其中存储的文件类型。|不可用|
-|**操作 129**： {e0b11c80-62c5-47f7-ad0d-3734a71b8312}|添加了 ACE 来向 Principal = Sam-域对象授予主体自我写入属性和读取属性。|不可用|OACIOI;RPWP;3f78c3e5-f79a-46bd-a0b8-9d18116ddc79;;PS|
-|**操作 130**： {2ada1a2d-b02f-4731-b4fe-59f955e24f71}|添加了 ACE 来授予主体自行写入属性并读取 CN = Domain-DNS 对象上的属性。|不可用|OACIOI;RPWP;3f78c3e5-f79a-46bd-a0b8-9d18116ddc79;;PS|
+|**操作 127**： {016f23f7-077d-41fa-a356-de7cfdb01797}|回调函数以升级显示说明符。|空值|空值|
+|**操作 128**： {49c140db-2de3-44c2-a99a-bab2e6d2ba81}|已更新了文件夹使用资源属性对象 CN = FolderUsage_MS，CN = Resource Properties，CN = 声明配置，CN = Services 在配置分区中的字符串。|-description： "文件夹使用情况" 属性指定文件夹的用途以及其中存储的文件类型。|空值|
+|**操作 129**： {e0b11c80-62c5-47f7-ad0d-3734a71b8312}|添加了 ACE 来向 Principal = Sam-域对象授予主体自我写入属性和读取属性。|空值|OACIOI;RPWP;3f78c3e5-f79a-46bd-a0b8-9d18116ddc79;;PS|
+|**操作 130**： {2ada1a2d-b02f-4731-b4fe-59f955e24f71}|添加了 ACE 来授予主体自行写入属性并读取 CN = Domain-DNS 对象上的属性。|空值|OACIOI;RPWP;3f78c3e5-f79a-46bd-a0b8-9d18116ddc79;;PS|

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c2141e4fad564579fd687b2dfc7e4a12e1634acb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fefb0681af818e06ad29d7c9fdf6b690cd993cd2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823480"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965759"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附录 I：为 Active Directory 中受保护的帐户和组创建管理帐户
 
@@ -26,7 +26,7 @@ ms.locfileid: "80823480"
 > [!NOTE]  
 > 本附录中描述的过程提供了一种方法来管理 Active Directory 中的高特权组。 您可以根据需要修改这些过程，添加其他限制，或者省略此处所述的某些限制。  
   
-## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>为 Active Directory 中的受保护帐户和组创建管理帐户
+## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>为 Active Directory 中受保护的帐户和组创建管理帐户
 
 创建可用于管理特权组的成员身份的帐户，而无需授予管理帐户过多的权限和权限，这包括下面的分步说明中描述的四个常规活动：  
   
@@ -38,7 +38,7 @@ ms.locfileid: "80823480"
   
 4.  在每个域中的 AdminSDHolder 对象上配置权限，以允许管理帐户更改域中特权组的成员身份。  
   
-在生产环境中实施这些过程之前，应全面测试所有这些过程并根据环境需要对其进行修改。 还应验证所有设置是否按预期工作（本附录中提供了一些测试过程），并且应测试灾难恢复方案，在此方案中，管理帐户不能用于填充受保护的组以进行恢复。 有关备份和还原 Active Directory 的详细信息，请参阅[AD DS 备份和恢复循序渐进指南](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)。  
+在生产环境中实施这些过程之前，应全面测试所有这些过程并根据环境需要对其进行修改。 还应验证所有设置是否按预期工作（本附录中提供了一些测试过程），并且应测试灾难恢复方案，在此方案中，管理帐户不能用于填充受保护的组以进行恢复。 有关备份和还原 Active Directory 的详细信息，请参阅[AD DS 备份和恢复循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771290(v=ws.10))。  
   
 > [!NOTE]  
 > 通过实施此附录中所述的步骤，你将创建可管理每个域中所有受保护组的成员身份的帐户，而不仅是最高特权 Active Directory 组（如 EAs、DAs 和 BAs）。 有关 Active Directory 中的受保护组的详细信息，请参阅[附录 C： Active Directory 中的受保护帐户和组](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)。  
@@ -55,7 +55,7 @@ ms.locfileid: "80823480"
   
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_115.png)  
   
-2.  在 "**新建对象-组**" 对话框中，输入组的名称。 如果计划使用此组来 "激活" 林中的所有管理帐户，请将其设为通用安全组。 如果你有单域林，或者计划在每个域中创建组，则可以创建一个全局安全组。 单击 “确定”以创建组。  
+2.  在 "**新建对象-组**" 对话框中，输入组的名称。 如果计划使用此组来 "激活" 林中的所有管理帐户，请将其设为通用安全组。 如果你有单域林，或者计划在每个域中创建组，则可以创建一个全局安全组。 单击****“确定”以创建组。  
   
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_116.png)  
   
@@ -80,15 +80,15 @@ ms.locfileid: "80823480"
   
 7.  在 "**安全**" 选项卡上，删除不允许访问此组的组。 例如，如果不想让经过身份验证的用户能够读取组的 "名称" 和 "常规" 属性，则可以删除该 ACE。 你还可以删除 Ace，如用于帐户操作员和 Windows 2000 以前的 Windows Server 兼容访问的 Ace。 但是，您应该保留一组最小的对象权限。 保留以下 Ace 不变：  
   
-    -   解压  
+    -   SELF  
   
     -   SYSTEM  
   
-    -   Domain Admins  
+    -   域管理员  
   
-    -   Enterprise Admins  
+    -   企业管理员  
   
-    -   Administrators  
+    -   管理员  
   
     -   Windows 授权访问组（如果适用）  
   
@@ -132,9 +132,9 @@ ms.locfileid: "80823480"
 
 7. 右键单击刚创建的用户对象，然后单击 "**属性**"。  
 
-8. 单击 "**帐户**" 选项卡。  
+8. 单击“帐户”选项卡  。  
 
-9. 在 "**帐户选项**" 字段中，选择 "**敏感帐户，不能被委派**" 标志，选择 "**此帐户支持 kerberos aes 128 位加密**" 和/或 "**此帐户支持 kerberos aes 256 加密**标志"，然后单击 **"确定"** 。  
+9. 在 "**帐户选项**" 字段中，选择 "**敏感帐户，不能被委派**" 标志，选择 "**此帐户支持 kerberos aes 128 位加密**" 和/或 "**此帐户支持 kerberos aes 256 加密**标志"，然后单击 **"确定"**。  
 
    ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_124.png)  
 
@@ -181,11 +181,11 @@ ms.locfileid: "80823480"
 
 17. 单击 **“隶属于”** 选项卡。  
 
-18. 单击 **“添加”** 。  
+18. 单击“添加” 。  
 
 19. 在 "**选择用户、联系人、计算机**" 对话框中，键入 "**拒绝的 RODC 密码复制组**"，然后单击 "**检查名称**"。 在对象选取器中为组的名称加下划线后，单击 **"确定"** ，然后验证该帐户是否为以下屏幕截图中显示的两个组的成员。 不要将该帐户添加到任何受保护的组。  
 
-20. 单击“确定”。  
+20. 单击“确定”  。  
 
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
 
@@ -258,12 +258,12 @@ SIEM 解决方案从涉及的安全源（例如，事件日志、应用程序数
   
    ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_137.gif)  
   
-3. 当提示批准提升时，单击 **"是"** 。  
+3. 当提示批准提升时，单击 **"是"**。  
   
    ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_138.gif)  
   
    > [!NOTE]  
-   > 有关 Windows 中的提升和用户帐户控制（UAC）的详细信息，请参阅 TechNet 网站上的[UAC 进程和交互](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx)。  
+   > 有关 Windows 中的提升和用户帐户控制（UAC）的详细信息，请参阅 TechNet 网站上的[UAC 进程和交互](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd835561(v=ws.10))。  
   
 4. 在命令提示符下，键入（替换域特定信息） **Dsacls [域中 AdminSDHolder 对象的可分辨名称]/g [管理帐户 UPN]： RPWP; member**。  
   
@@ -277,7 +277,7 @@ SIEM 解决方案从涉及的安全源（例如，事件日志、应用程序数
   
    - /G 指示正在配置 grant ACE  
   
-   - PIM001@tailspintoys.msft 是将向其授予 Ace 的安全主体的用户主体名称（UPN）  
+   - PIM001@tailspintoys.msft要向其授予 Ace 的安全主体的用户主体名称（UPN）  
   
    - RPWP 授予 "读取属性" 和 "写入属性" 权限  
   
@@ -295,7 +295,7 @@ SIEM 解决方案从涉及的安全源（例如，事件日志、应用程序数
   
    ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_140.gif)  
   
-7. **为管理帐户选择 "允许 ACE"** ，然后单击 "**编辑**"。 验证该帐户是否已被授予对 DA 组的 "**读取成员**" 和 "**写入成员**" 权限，然后单击 **"确定"** 。  
+7. **为管理帐户选择 "允许 ACE"** ，然后单击 "**编辑**"。 验证该帐户是否已被授予对 DA 组的 "**读取成员**" 和 "**写入成员**" 权限，然后单击 **"确定"**。  
   
 8. 在 "**高级安全设置**" 对话框中单击 **"确定"** ，然后再次单击 **"确定"** 以关闭 DA 组的 "属性" 对话框。  
   
@@ -332,7 +332,7 @@ SIEM 解决方案从涉及的安全源（例如，事件日志、应用程序数
   
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_145.gif)  
   
-5.  在 "**新密码**" 和 "**确认密码**" 字段中为该帐户键入一个新密码，然后单击 **"确定"** 。  
+5.  在 "**新密码**" 和 "**确认密码**" 字段中为该帐户键入一个新密码，然后单击 **"确定"**。  
   
     ![创建管理帐户](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_146.gif)  
   

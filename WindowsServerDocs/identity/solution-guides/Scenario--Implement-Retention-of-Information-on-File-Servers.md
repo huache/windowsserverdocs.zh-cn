@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2f6b55d8a98a0f4fb0c286e16d752a18e61dce1a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 80653fe6d2956b08ee142b2f594648885a250b59
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861100"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964849"
 ---
-# <a name="scenario-implement-retention-of-information-on-file-servers"></a>Scenario: Implement Retention of Information on File Servers
+# <a name="scenario-implement-retention-of-information-on-file-servers"></a>方案：实现文件服务器上信息的保留
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -26,7 +26,7 @@ ms.locfileid: "80861100"
   
 可以在[文件服务器信息保留方案](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)中查找有关配置保留的计划信息。  
   
-你可以在[部署实现有关文件服务器&#40;的信息的演示步骤&#41;](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md)中找到用于对文件进行法律封存分类和配置保留期的步骤。  
+可以在部署中找到用于对文件进行法律封存分类的步骤，以及在部署中配置保留期， [&#40;演示步骤&#41;](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md)。  
   
 > [!NOTE]  
 > 本方案仅讨论如何手动将文档归类为合法保留。 但是，在 Windows Server 2012 中，可以自动将文档归类为合法保留。 实现此目的的一个方法是创建 Windows PowerShell 分类器，它可以将文件所有者和合法保留下的用户帐户列表进行比较。 如果文件所有者是用户帐户列表的一部分，则将该文件归类为合法保留。  
@@ -36,14 +36,12 @@ ms.locfileid: "80861100"
   
 -   [动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>此方案中包含的功能  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>本方案中所含的功能  
 下表列出了本方案的部分功能并说明了支持该方案的工作原理。  
   
 |功能|如何支持本方案|  
 |-----------|---------------------------------|  
-|[文件服务器资源管理器概述](https://technet.microsoft.com/library/hh831701.aspx)|文件分类基础结构是包含在文件服务器资源管理器中的功能。|  
-|[文件和存储服务概述](https://technet.microsoft.com/library/hh831487.aspx)|文件服务器资源管理器是包含在文件服务服务器角色中的功能。|  
+|[File Server Resource Manager Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))|文件分类基础结构是包含在文件服务器资源管理器中的功能。|  
+|[文件和存储服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))|文件服务器资源管理器是包含在文件服务服务器角色中的功能。|  
   
   
-
-

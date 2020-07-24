@@ -8,18 +8,18 @@ ms.date: 06/18/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 24e5290bcb34860a150c8bb015c3b383c00e34b4
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 1b156701090acc79a63afab26653f42044a23741
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623785"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966539"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>保护域控制器免受攻击
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*定律三：如果攻击者对您的计算机具有不受限制的物理访问，就不是您的计算机了。* - [十个不可变定律（版本2.0）](https://technet.microsoft.com/security/hh278941.aspx)
+*定律三：如果攻击者对您的计算机具有不受限制的物理访问，就不是您的计算机了。* - [十个不可变定律（版本2.0）](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 域控制器提供了 AD DS 数据库的物理存储，还提供了允许企业有效管理其服务器、工作站、用户和应用程序的服务和数据。 如果恶意用户获取了对域控制器的特权访问，则该用户可以修改、损坏或销毁 AD DS 数据库，并通过扩展 Active Directory 管理的所有系统和帐户。
 
@@ -53,7 +53,7 @@ ms.locfileid: "81623785"
 
 ### <a name="remote-locations-with-limited-space-and-security"></a>空间和安全性有限的远程位置
 
-如果你的基础结构包含只能安装单个物理服务器的位置，则应在远程位置安装能够运行虚拟化工作负载的服务器，并且应将 BitLocker 驱动器加密配置为保护服务器中的所有卷。 服务器上的一个虚拟机应运行 RODC，而其他服务器则作为主机上的独立虚拟机运行。 [只读域控制器规划和部署指南](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771744(v=ws.10))中提供了有关部署 RODC 的规划的信息。 有关部署和保护虚拟化域控制器的详细信息，请参阅[在 hyper-v 中运行域控制器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))。 有关强化 Hyper-v、委派虚拟机管理和保护虚拟机的更多详细指南，请参阅 Microsoft 网站上的[Hyper-v 安全指南](https://www.microsoft.com/download/details.aspx?id=16650)解决方案加速器。
+如果你的基础结构包含只能安装单个物理服务器的位置，则应在远程位置安装能够运行虚拟化工作负载的服务器，并且应将 BitLocker 驱动器加密配置为保护服务器中的所有卷。 服务器上的一个虚拟机应运行 RODC，而其他服务器则作为主机上的独立虚拟机运行。 [只读域控制器规划和部署指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771744(v=ws.10))中提供了有关部署 RODC 的规划的信息。 有关部署和保护虚拟化域控制器的详细信息，请参阅[在 hyper-v 中运行域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd363553(v=ws.10))。 有关强化 Hyper-v、委派虚拟机管理和保护虚拟机的更多详细指南，请参阅 Microsoft 网站上的[Hyper-v 安全指南](https://www.microsoft.com/download/details.aspx?id=16650)解决方案加速器。
 
 ## <a name="domain-controller-operating-systems"></a>域控制器操作系统
 

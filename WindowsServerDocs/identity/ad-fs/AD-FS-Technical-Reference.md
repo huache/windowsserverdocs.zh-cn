@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 54d97a0dc9e4c752f4b5141fba015edc4ed4d8b4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 405d0b6e814212df858cadb615f3251fd2168632
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854140"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965029"
 ---
 # <a name="ad-fs-technical-reference"></a>AD FS 技术参考
 
@@ -29,7 +29,4 @@ ms.locfileid: "80854140"
 > 可以在 Microsoft TechNet Wiki 上的 [AD FS 2.0 内容导航图](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx) 页面中找到更多的 AD FS 2.0 设计内容。 此页面由 AD FS 2.0 社区的成员管理，并定期由 AD FS 产品团队进行监视。
 
 ## <a name="see-also"></a>另请参阅
-[Active Directory 联合身份验证服务概述](AD-FS-2016-Overview.md)
-
-
-
+[Active Directory 联合身份验证服务概述](./ad-fs-overview.md)

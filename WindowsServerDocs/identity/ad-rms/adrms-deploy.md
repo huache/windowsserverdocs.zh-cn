@@ -6,23 +6,23 @@ ms.author: esaggese
 ms.date: 05/30/2019
 ms.prod: windows-server
 ms.topic: article
-ms.openlocfilehash: 88af85f8e670b9c23b503e0f79af2ce8f10d045e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cb27477f71dbded1f1171fde613f55f6267fc2cb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854850"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965469"
 ---
 # <a name="upgrading-ad-rms-to-windows-server-2016"></a>将 AD RMS 升级到 Windows Server 2016
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
 Active Directory Rights Management Services （AD RMS）是一种 Microsoft 服务，用于保护敏感文档和电子邮件。 与传统的保护方法（如防火墙和 Acl）不同的是，无论文件的位置或传输方式如何，AD RMS 加密和保护都是永久性的。 
 
 本文档提供有关从 Windows Server 2012 2012 SQL Server R2 迁移到 Windows Server 2016 和 SQL Server 2016 的指南。 同一过程可用于从 AD RMS 的旧但受支持的版本中迁移。
 请注意，Active Directory Rights Management Services 不再处于活动状态，并且对于最新功能，客户应考虑迁移到[Azure 信息保护](https://azure.microsoft.com/services/information-protection/)，这提供了更全面的功能，同时提供了更完整的设备和应用程序支持。 
 
-有关从 AD RMS 迁移到 Azure 信息保护的信息，而无需重新保护内容，请参阅[Azure 信息保护迁移文档](https://docs.microsoft.com/azure/information-protection/migrate-from-ad-rms-to-azure-rms)。
+有关从 AD RMS 迁移到 Azure 信息保护的信息，而无需重新保护内容，请参阅[Azure 信息保护迁移文档](/azure/information-protection/migrate-from-ad-rms-to-azure-rms)。
 
 ## <a name="about-the-environment-used-in-this-guide"></a>关于本指南中使用的环境
 
@@ -51,7 +51,7 @@ CNAME 用于帮助确保 Windows Server 2016 安装程序将获取适当的数�
 
 1.  用域管理员凭据登录到 Windows Server 2012 R2 域控制器。
 
-2.  打开“服务器管理器”。
+2.  打开服务器管理器。
 
 3.  单击 "**工具**"，然后选择 " **DNS** " 打开 dns 管理器。
 
@@ -61,9 +61,9 @@ CNAME 用于帮助确保 Windows Server 2016 安装程序将获取适当的数�
 
 6.  对于 "别名"，请输入逻辑名称，使其有别于可能存在的其他名称（例如 SQLADRMS 或 SQLADFS）
 
-7.  输入名称后，为目标主机提供 FQDN，这将是新的 SQL Server 2016 服务器。 例如. SQL2016.contoso.com）
+7.  输入名称后，为目标主机提供 FQDN，这将是新的 SQL Server 2016 服务器。 （例如： SQL2016.contoso.com）
 
-8.  输入所有信息后，单击 **"确定"** 。
+8.  输入所有信息后，单击 **"确定"**。
 
 ##### <a name="backup-the-ad-rms-and-adfs-databases"></a>备份 AD RMS 和 ADFS 数据库
 
@@ -83,7 +83,7 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 3.  在 "**连接到服务器**" 窗口中，确认承载 AD RMS 数据库的服务器在 "**服务器名称**" 框中，然后单击 "**连接**"。
 
-4.  展开 "**数据库**"。 右键单击相应的数据库（**drm**和**Adfs**），指向 "**任务**"，然后选择 "**备份**"。
+4.  展开“数据库”。 右键单击相应的数据库（**drm**和**Adfs**），指向 "**任务**"，然后选择 "**备份**"。
 
 5.  对于剩余的数据库，重复步骤4。
 
@@ -107,11 +107,11 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 5.  展开 "**安全性**"，然后右键单击 "**登录名**"，然后从显示的上下文菜单中选择 "**新建登录名**"。
 
-6.  窗口出现后，请在 "**登录名**" 字段中的域管理员帐户中输入（例如 Contoso\\ContosoAdmin）
+6.  窗口出现后，请在 "**登录名**" 字段中的域管理员帐户中输入（例如 Contoso \\ ContosoAdmin）
 
 7.  从左侧导航窗格中，选择 "**服务器角色**"。
 
-8.  然后，在服务器角色下将**sysadmin**的复选框标记为，并单击 **"确定"** 。
+8.  然后，在服务器角色下将**sysadmin**的复选框标记为，并单击 **"确定"**。
 
 9.  重新启动**SQL Server 管理**。
 
@@ -129,7 +129,7 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 3.  在 "**源**" 下选择 "**设备**"，然后浏览到在前面的步骤中存储数据库文件的位置。
 
-4.  选择文件后，单击 **"确定"** 。
+4.  选择文件后，单击 **"确定"**。
 
 5.  请确保已添加所有数据库文件，并单击 **"确定"** 完成该过程。
 
@@ -159,9 +159,9 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 7.  单击 "**输入密码**" 以打开 "证书密码" 对话框。
 
-8.  在 "密码" 字段中输入证书的密码，然后单击 **"确定"** 。
+8.  在 "密码" 字段中输入证书的密码，然后单击 **"确定"**。
 
-9.  单击 **“下一步”** 。
+9.  单击“下一步”。
 
 10. 在 "AD FS 服务器" 页上，输入新 AD FS 服务器的名称或 IP 地址，然后单击 "**添加**"。
 
@@ -179,11 +179,11 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 2.  打开管理员 PowerShell 会话。
 
-3.  输入以下命令： **\$凭据 = Get-Credential**
+3.  输入以下命令： ** \$ 凭据 = Get-Credential**
 
 4.  将显示一个窗口，要求提供凭据，请输入域管理员凭据。
 
-5.  然后输入以下命令： **AdfsFarmBehaviorLevelRaise-Credential \$凭据**
+5.  然后输入以下命令： **AdfsFarmBehaviorLevelRaise-Credential \$ **凭据
 
 6.  此时将显示一条提示，询问**你是否要继续此操作？** 然后输入**以**接受提示。
 
@@ -199,9 +199,9 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 2.  键入以下命令，然后按**enter**： **import-module AdRmsAdmin**
 
-3.  键入以下命令，然后按**enter**： **New-psdrive-Name AdrmsCluster-PsProvider AdRmsAdmin-Root https://localhost**
+3.  键入以下命令，然后按**enter**： **New-psdrive-Name AdrmsCluster-PsProvider AdRmsAdmin-Root https://localhost **
 
-4.  键入以下命令，然后按**enter**： **Set-itemproperty-Path AdrmsCluster：\\-Name IsLoggingEnabled-Value \$true**
+4.  键入以下命令并按**enter**： **Set-itemproperty-Path AdrmsCluster： \\ -Name IsLoggingEnabled-Value \$ true**
 
 如果使用 MDE 日志记录进行故障排除，则建议在解决问题后禁用它。
 
@@ -211,9 +211,9 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 2.  键入以下命令，然后按**enter**： **import-module AdRmsAdmin**
 
-3.  键入以下命令，然后按**enter**： **New-psdrive-Name AdrmsCluster-PsProvider AdRmsAdmin-Root https://localhost**
+3.  键入以下命令，然后按**enter**： **New-psdrive-Name AdrmsCluster-PsProvider AdRmsAdmin-Root https://localhost **
 
-4.  键入以下命令，然后按**enter**： **Set-itemproperty-Path AdrmsCluster：\\-Name IsLoggingEnabled-Value \$false**
+4.  键入以下命令并按**enter**： **Set-itemproperty-Path AdrmsCluster： \\ -Name IsLoggingEnabled-Value \$ false**
 
 ### <a name="upgrading-ad-rms-to-windows-server-2016"></a>将 AD RMS 升级到 Windows Server 2016
 
@@ -241,7 +241,7 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 5.  单击第二行中的 "列表"，然后从下拉**列表**中选择 " **DefaultInstance** "。
 
-6.  在 "**配置数据库名称**" 下，选择下拉菜单，然后选择显示的 "drm" 配置。 再单击 **“下一步”** 。
+6.  在 "**配置数据库名称**" 下，选择下拉菜单，然后选择显示的 "drm" 配置。 。
 
 7.  在 "**数据库信息**" 页上，在提供的字段中输入群集密钥密码。 完成后，单击 "**下一步**"。
 
@@ -251,7 +251,7 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 10. 在 "**选择服务器身份验证证书**" 页上，选择导入的 SSL 证书，然后单击 "**下一步**"。
 
-11. 单击“安装”以开始安装。
+11. 单击“安装”**** 以开始安装。
 
 12. 配置完成后，需要注销并重新登录，以便管理 AD RMS。
 
@@ -277,15 +277,15 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 4.  在 "选择服务器角色" 屏幕上，选择 " **Web 应用程序代理**"，单击 "**添加功能**"，然后单击 "**下一步**"。
 
-5.  在 "确认安装选择" 屏幕上，单击 "**安装**"。
+5.  在“确认安装选择”  屏幕上，单击“安装” ****。
 
 6.  安装完成后，单击 "**关闭**"。
 
-7.  现在可以配置服务器。 为此，请在 Web 应用程序代理服务器上打开远程访问管理控制台。 打开 "**开始**" 菜单，键入 " **ramgmtui.exe**"，然后选择该应用程序。
+7.  现在可以配置服务器。 为此，请在 Web 应用程序代理服务器上打开远程访问管理控制台。 打开 "**开始**" 菜单，键入**RAMgmtUI.exe**，然后选择该应用程序。
 
-8.  在导航窗格中，单击 **“Web 应用程序代理”** 。
+8.  在导航窗格中，单击 **“Web 应用程序代理”**。
 
-9.  在远程访问管理控制台中，单击 "**运行 Web 应用程序代理配置向导"** 。 进入向导后，单击 "**下一步**"。
+9.  在远程访问管理控制台中，单击 "**运行 Web 应用程序代理配置向导"**。 进入向导后，单击 "**下一步**"。
 
 10. 在 "联合服务器" 屏幕上，输入 AD FS 服务器的完全限定的域名（例如 adfs.contoso.com），然后在 AD FS 服务器上为管理员输入凭据。
 
@@ -351,7 +351,7 @@ Web 应用程序代理服务器上提供详细的日志记录信息。 你可以
 
 5.  单击第二行中的 "列表"，然后从下拉**列表**中选择 " **DefaultInstance** "。
 
-6.  在 "**配置数据库名称**" 下，选择下拉菜单，然后选择显示的 "drm" 配置。 再单击 **“下一步”** 。
+6.  在 "**配置数据库名称**" 下，选择下拉菜单，然后选择显示的 "drm" 配置。 。
 
 7.  在 "**数据库信息**" 页上，在提供的字段中输入群集密钥密码。 完成后，单击 "**下一步**"。
 
@@ -361,7 +361,7 @@ Web 应用程序代理服务器上提供详细的日志记录信息。 你可以
 
 10. 在 "**选择服务器身份验证证书**" 页上，选择导入的 SSL 证书，然后单击 "**下一步**"。
 
-11. 单击“安装”以开始安装。
+11. 单击“安装”**** 以开始安装。
 
 12. 配置完成后，需要注销并重新登录，以便管理 AD RMS。
 
@@ -409,15 +409,15 @@ Web 应用程序代理服务器上提供详细的日志记录信息。 你可以
 
 4.  在 "选择服务器角色" 屏幕上，选择 " **Web 应用程序代理**"，单击 "**添加功能**"，然后单击 "**下一步**"。
 
-5.  在 "确认安装选择" 屏幕上，单击 "**安装**"。
+5.  在“确认安装选择”  屏幕上，单击“安装” ****。
 
 6.  安装完成后，单击 "**关闭**"。
 
-7.  现在可以配置服务器。 为此，请在 Web 应用程序代理服务器上打开远程访问管理控制台。 打开 "**开始**" 菜单，键入 " **ramgmtui.exe**"，然后选择该应用程序。
+7.  现在可以配置服务器。 为此，请在 Web 应用程序代理服务器上打开远程访问管理控制台。 打开 "**开始**" 菜单，键入**RAMgmtUI.exe**，然后选择该应用程序。
 
-8.  在导航窗格中，单击 **“Web 应用程序代理”** 。
+8.  在导航窗格中，单击 **“Web 应用程序代理”**。
 
-9.  在远程访问管理控制台中，单击 "**运行 Web 应用程序代理配置向导"** 。 进入向导后，单击 "**下一步**"。
+9.  在远程访问管理控制台中，单击 "**运行 Web 应用程序代理配置向导"**。 进入向导后，单击 "**下一步**"。
 
 10. 在 "联合服务器" 屏幕上，输入 AD FS 服务器的完全限定的域名（例如 adfs.contoso.com），然后在 AD FS 服务器上为管理员输入凭据。
 
@@ -465,27 +465,27 @@ Web 应用程序代理服务器上提供详细的日志记录信息。 你可以
 
 15. 单击 "**下一步**"，然后选择**选择仲裁见证**的选项，然后再次单击 "**下一步**"。
 
-16. 在 "**选择仲裁见证**" 页上，选择 "**配置文件共享见证**" 选项。 再单击 **“下一步”** 。
+16. 在 "**选择仲裁见证**" 页上，选择 "**配置文件共享见证**" 选项。 。
 
-17. 选择 "**浏览**"，然后在 "文件共享路径" 对话框中找到要使用的文件共享的路径。 单击 **“下一步”** 。
+17. 选择 "**浏览**"，然后在 "文件共享路径" 对话框中找到要使用的文件共享的路径。 单击“下一步”。
 
-18. 在 "确认" 页上，单击 "**下一步**"。
+18. 在“确认”页上，单击 **“下一步”**。
 
-19. 在 "摘要" 页上，单击 "**完成**"。
+19. 在 “概要” 页上，单击 **“完成”**。
 
 20. 现在，请打开 "**开始**" 菜单，搜索**SQL Server 配置管理器**。
 
 21. 右键单击 SQL Server 名称，然后选择 "**属性**"。
 
-22. 在 "属性" 对话框中，选择 " **AlwaysOn 高可用性**" 选项卡。选中 "**启用 AlwaysOn 可用性组**" 复选框。 单击“确定”。 **注意：请在两个 SQL server 2016 服务器上执行此操作。**
+22. 在 "属性" 对话框中，选择 " **AlwaysOn 高可用性**" 选项卡。选中 "**启用 AlwaysOn 可用性组**" 复选框。 单击“确定”  。 **注意：请在两个 SQL server 2016 服务器上执行此操作。**
 
-23. 然后重新启动 SQL Server 服务。
+23. 然后重启 SQL Server 服务。
 
 24. 现在，请打开 "**开始**" 菜单，搜索 " **SQL Server Management Studio** "，然后从左侧导航窗格中，右键单击 "**可用性组**"，然后单击 "**新建可用性组向导**"，然后单击 "**下一步**"。
 
-25. 在 "**指定可用性组名称**" 页中，选择组名称（例如 SQLAvailabilityGroup2016）。 再单击 **“下一步”** 。
+25. 在 "**指定可用性组名称**" 页中，选择组名称（例如 SQLAvailabilityGroup2016）。 。
 
-26. 在 "**选择数据库**" 部分下，指定数据库。 然后单击“下一步”。 **注意：某些数据库可能需要再次备份或置于完全恢复模式**。
+26. 在 "**选择数据库**" 部分下，指定数据库。 然后，单击“下一步”。 **注意：某些数据库可能需要再次备份或置于完全恢复模式**。
 
 27. 在 "**指定副本**" 页上，单击 "**添加副本**" 按钮，然后选择其他 2016 SQL Server。
 

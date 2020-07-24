@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a3673bb8-43dc-44e2-9e10-caf09bae2aa9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5b03096a1b099f59e95d1a20028922a1817d534f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0ae7ab1a20aa045bf6f2f5acdfd150bea6076163
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815800"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966859"
 ---
 # <a name="directaccess"></a>DirectAccess
 
@@ -23,4 +23,4 @@ ms.locfileid: "80815800"
 
 通过 DirectAccess，远程用户可以连接到组织网络资源，而无需进行传统的虚拟专用网络（VPN）连接。 
 
-DirectAccess 文档现在位于[远程访问](https://docs.microsoft.com/windows-server/remote/)下 Windows Server 2016 目录的[远程访问和服务器管理](https://docs.microsoft.com/windows-server/remote/remote-access/remote-access)部分中。 有关详细信息，请参阅 [DirectAccess](directaccess/DirectAccess.md)。
+DirectAccess 文档现在位于[远程访问](./remote-access.md)下 Windows Server 2016 目录的[远程访问和服务器管理](../index.yml)部分中。 有关详细信息，请参阅 [DirectAccess](directaccess/DirectAccess.md)。
