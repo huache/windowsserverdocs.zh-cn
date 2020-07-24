@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57de6db53433d0da1a4efd8c212a23183edcbcf9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6b2d03fb379c879f445a30dd0f3daf762fed23c7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927421"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955429"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin transfer
 
@@ -36,10 +36,10 @@ bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags
 | 参数 | 说明 |
 | --------- | ----------- |
 | name | 作业的名称。 此命令不能是 GUID。 |
-| type | 可选。 设置作业的类型，包括：<ul><li>**下载.** 默认值。 为下载作业选择此类型。</li><li>**上.** 为上载作业选择此类型。</li></ul> |
+| 类型 | 可选。 设置作业的类型，包括：<ul><li>**下载.** 默认值。 为下载作业选择此类型。</li><li>**上.** 为上载作业选择此类型。</li></ul> |
 | priority | 可选。 设置作业的优先级，包括：<ul><li>FOREGROUND</li><li>HIGH</li><li>NORMAL</li><li>LOW</li></ul> |
 | ACLflags | 可选。 指示你希望在要下载的文件中维护所有者和 ACL 信息。 指定一个或多个值，包括：<ul><li>**o** -将所有者信息复制到文件。</li><li>**g** -复制组信息和文件。</li><li>**d** -使用文件复制随机访问控制列表（DACL）信息。</li><li>**s** -使用文件复制系统访问控制列表（SACL）信息。</li></ul> |
-| /DYNAMIC | 使用[**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](https://docs.microsoft.com/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id)配置作业，放宽服务器端要求。 |
+| /DYNAMIC | 使用[**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id)配置作业，放宽服务器端要求。 |
 | remotefilename | 文件传输到服务器后的名称。 |
 | localfilename | 位于本地的文件的名称。 |
 

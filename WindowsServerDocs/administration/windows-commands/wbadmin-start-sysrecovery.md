@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f7e23a82afba85ea8a670c636e0f700cb7def2e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a3d7be286e124af9e31c8607827a97f967b907ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930922"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954499"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -23,7 +23,7 @@ ms.locfileid: "85930922"
 使用指定的参数执行系统恢复（裸机恢复）。
 
 > [!NOTE]
-> 此子命令只能从 Windows 恢复环境运行，并且默认情况下不会在**Wbadmin**的使用文本中列出。 有关详细信息，请参阅[Windows 恢复环境（WINDOWS RE）概述](https://technet.microsoft.com/library/hh825173.aspx)。
+> 此子命令只能从 Windows 恢复环境运行，并且默认情况下不会在**Wbadmin**的使用文本中列出。 有关详细信息，请参阅[Windows 恢复环境（WINDOWS RE）概述](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10))。
 
 若要使用此子命令执行系统恢复，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。
 
@@ -69,4 +69,4 @@ wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\s
 
 - [命令行语法项](command-line-syntax-key.md)
 -   [Backup](wbadmin.md)
--   [WBBareMetalRecovery](https://technet.microsoft.com/library/jj902461.aspx) cmdlet
+-   [WBBareMetalRecovery](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10)) cmdlet

@@ -9,12 +9,12 @@ manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
 description: 如何在 Windows Server 上安装重复数据删除，如何确定工作负荷是否适合进行重复数据删除，以及如何在卷上启用重复数据删除。
-ms.openlocfilehash: 36c9894fd8916643340134698f36af3bd50c34d8
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 82c55c12e7b5d5f60be7569ee2d7885daa6b6339
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322419"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953619"
 ---
 # <a name="install-and-enable-data-deduplication"></a>安装和启用重复数据删除
 > 适用于 Windows Server（半年频道）、Windows Server 2016
@@ -24,17 +24,17 @@ ms.locfileid: "79322419"
 > [!Note]  
 > 如果你打算在故障转移群集中运行重复数据删除，则群集中的每个节点必须安装重复数据删除服务器角色。
 
-## <a id="install-dedup"></a>安装重复数据删除
+## <a name="install-data-deduplication"></a><a id="install-dedup"></a>安装重复数据删除
 > [!Important]  
 > [KB4025334](https://support.microsoft.com/kb/4025334) 包含重复数据删除的累积的修补程序（包括重要的可靠性修补程序），我们强烈建议在将重复数据删除与 Windows Server 2016 配合使用时安装该修补程序。
 
-### <a id="install-dedup-via-server-manager"></a>使用服务器管理器安装重复数据删除
+### <a name="install-data-deduplication-by-using-server-manager"></a><a id="install-dedup-via-server-manager"></a>使用服务器管理器安装重复数据删除
 1. 从“添加角色和功能”向导，选择“**服务器角色**”，然后选择“**重复数据删除**”。  
 ![通过服务器管理器安装重复数据删除：从服务器角色中选择重复数据删除](media/install-dedup-via-server-manager-1.png)
-2. 单击 **“下一步”** 直到 **“安装”** 按钮处于活跃状态，然后单击 **“安装”** 。  
+2. 单击 **“下一步”** 直到 **“安装”** 按钮处于活跃状态，然后单击 **“安装”**。  
 ![通过服务器管理器安装重复数据删除：单击 "安装"](media/install-dedup-via-server-manager-2.png)
 
-### <a id="install-dedup-via-powershell"></a>使用 PowerShell 安装重复数据删除
+### <a name="install-data-deduplication-by-using-powershell"></a><a id="install-dedup-via-powershell"></a>使用 PowerShell 安装重复数据删除
 要安装重复数据删除，请以管理员身份运行以下 PowerShell 命令：  
 `Install-WindowsFeature -Name FS-Data-Deduplication`
 
@@ -55,26 +55,26 @@ ms.locfileid: "79322419"
     dism /online /enable-feature /featurename:dedup-core /all
     ```
 
-## <a id="enable-dedup"></a>启用重复数据删除
-### <a id="enable-dedup-candidate-workloads"></a>确定哪些工作负荷是重复数据删除的候选项
+## <a name="enable-data-deduplication"></a><a id="enable-dedup"></a>启用重复数据删除
+### <a name="determine-which-workloads-are-candidates-for-data-deduplication"></a><a id="enable-dedup-candidate-workloads"></a>确定哪些工作负荷是进行重复数据删除的候选项
 通过减少冗余数据占用的磁盘空间量，重复数据删除可以有效地将服务器应用程序的数据使用成本降至最低。 在启用重复数据删除之前，请务必了解你的工作负荷特征，以确保获取存储的最佳性能。 有两类工作负荷需要考虑：
 
 * *建议的工作负荷* - 已证实具有高度受益于重复数据删除的数据集并且具有与重复数据删除的后续处理模型兼容的资源消耗模式。 对于这些工作负荷，建议始终[启用重复数据删除](install-enable.md#enable-dedup-lights-on)：
     * 一般用途文件服务器 (GPFS) 提供共享服务，如团队共享、用户主页文件夹、工作文件夹和软件开发共享。
     * 虚拟桌面基础结构 (VDI) 服务器。
-    * 虚拟化备份应用程序，如 [Microsoft Data Protection Manager (DPM)](https://technet.microsoft.com/library/hh758173.aspx)。
+    * 虚拟化备份应用程序，如[Microsoft Data Protection Manager （DPM）](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12))。
 * 可能受益于重复数据删除但并非始终适合进行重复数据删除的工作负荷。 例如，以下工作负荷可以很好地使用重复数据删除，但你应该首先评估重复数据删除的好处：
     * 一般用途 Hyper-V 主机
     * SQL Server
     * 业务线 (LOB) 服务器
 
-### <a id="enable-dedup-evaluating-sometimes-workloads"></a>评估重复数据删除的工作负荷
+### <a name="evaluate-workloads-for-data-deduplication"></a><a id="enable-dedup-evaluating-sometimes-workloads"></a>评估要进行重复数据删除的工作负荷
 > [!Important]  
 > 如果当前运行的是建议的工作负荷，则可以跳过此部分并转到工作负荷的[启用重复数据删除](install-enable.md#enable-dedup-lights-on)。
 
 要确定工作负荷是否适用于重复数据删除，请回答以下问题。 如果你对某个工作负荷不确定，请考虑针对工作负荷在测试数据集上执行重复数据删除试验部署，以查看执行情况如何。
 
-1. **工作负荷的数据集是否有足够的重复项来受益于启用重复数据删除？**  
+1. **我的工作负荷数据集是否具有足够的重复数据可从启用重复数据删除中受益？**  
     在针对工作负荷启用重复数据删除之前，通过使用重复数据删除节省评估工具（即 DDPEval）调查工作负荷的数据集重复程度如何。 在安装重复数据删除后，可以在 `C:\Windows\System32\DDPEval.exe` 处找到此工具。 DDPEval 可以针对直接连接的卷（包括本地驱动器或群集共享卷）和映射或未映射的网络共享评估优化的可能性。  
     &nbsp;   
     运行 DDPEval.exe 会返回一个输出，类似以下所示：  
@@ -103,31 +103,31 @@ ms.locfileid: "79322419"
     > [!Note]  
     > 这些问题主要适用于由传统旋转存储介质组成的存储工作负荷（也称为硬盘驱动器或 HDD）。 所有闪存存储基础结构（也称为固态磁盘驱动器或 SSD）不太受随机 I/O 模式影响，因为闪存介质的属性之一就是对介质上所有位置的访问时间相同。 因此，针对所有闪存介质上存储的工作负荷数据集执行读取操作时，重复数据删除不会引入与传统旋转存储介质相同的延迟时间。
 
-3. **我的工作负荷在服务器上的资源需求是什么？**  
+3. **服务器上我的工作负荷的资源要求有哪些？**  
     由于重复数据删除使用后处理模型，重复数据删除需要定期具有足够的系统资源，才能完成其[优化和其他作业](understand.md#job-info)。 这意味着有空闲时间的工作负荷（如在夜间或周末情况下）都是重复数据删除的绝佳候选项，而工作负荷可能不会全天候运行。 没有空闲时间的工作负荷仍可能是重复数据删除的良好候选项（如果工作负荷在服务器上不具有高资源要求）。
 
-### <a id="enable-dedup-lights-on"></a>启用重复数据删除
+### <a name="enable-data-deduplication"></a><a id="enable-dedup-lights-on"></a>启用重复数据删除
 在启用重复数据删除之前，必须选择最类似于你的工作负荷的“[使用类型](understand.md#usage-type)”。 重复数据删除包含三种使用类型。
 
 * [默认](understand.md#usage-type-default) - 优化专门用于一般用途文件服务器
 * [HYPER-V](understand.md#usage-type-hyperv) -优化专门用于 VDI 服务器
-* [备份](understand.md#usage-type-backup) - 优化专门用于虚拟备份应用程序，如 [Microsoft DPM](https://technet.microsoft.com/library/hh758173.aspx)
+* [备份](understand.md#usage-type-backup) - 优化专门用于虚拟备份应用程序，如 [Microsoft DPM](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12))
 
-#### <a id="enable-dedup-via-server-manager"></a>使用服务器管理器启用重复数据删除
-1. 选择“服务器管理器”中的“**文件和存储服务**”。  
-![单击 "文件和存储服务"](media/enable-dedup-via-server-manager-1.PNG)
+#### <a name="enable-data-deduplication-by-using-server-manager"></a><a id="enable-dedup-via-server-manager"></a>使用服务器管理器启用重复数据删除
+1. 在服务器管理器中选择 "**文件和存储服务**"。  
+![单击“文件和存储服务”](media/enable-dedup-via-server-manager-1.PNG)
 2. 从“**文件和存储服务**”中选择“**卷**”。  
-![单击卷](media/enable-dedup-via-server-manager-2.png)
+![单击“卷”](media/enable-dedup-via-server-manager-2.png)
 3. 右键单击所需的卷，并选择“**配置重复数据删除**”。  
-![单击 "配置重复数据删除"](media/enable-dedup-via-server-manager-3.png)
+![单击“配置重复数据删除”](media/enable-dedup-via-server-manager-3.png)
 4. 从下拉框中选择所需的“**使用类型**”，然后选择“**确定**”。  
-![从下拉菜单中选择所需的 "使用类型"](media/enable-dedup-via-server-manager-4.png)
+![从下拉框中选择所需的“使用类型”](media/enable-dedup-via-server-manager-4.png)
 5. 如果运行的是建议的工作负荷，则操作完成。 对于其他工作负荷，请查看“[其他注意事项](#enable-dedup-sometimes-considerations)”。
 
 > [!Note]  
 > 有关排除文件扩展或文件夹以及选择重复数据删除计划（包括为何想要执行此操作）的详细信息，可在[配置重复数据删除](advanced-settings.md)中找到。
 
-#### <a id="enable-dedup-via-powershell"></a>使用 PowerShell 启用重复数据删除
+#### <a name="enable-data-deduplication-by-using-powershell"></a><a id="enable-dedup-via-powershell"></a>使用 PowerShell 启用重复数据删除
 1. 在管理员上下文中，运行以下 PowerShell 命令：  
     ```PowerShell
     Enable-DedupVolume -Volume <Volume-Path> -UsageType <Selected-Usage-Type>
@@ -136,9 +136,9 @@ ms.locfileid: "79322419"
 2. 如果运行的是建议的工作负荷，则操作完成。 对于其他工作负荷，请查看“[其他注意事项](#enable-dedup-sometimes-considerations)”。
 
 > [!Note]  
-> 通过向 CIM 会话追加 [ 参数可远程运行重复数据删除 PowerShell cmdlet（包括 `Enable-DedupVolume`](https://technet.microsoft.com/library/hh848441.aspx)`-CimSession`）。 这特别适用于针对 Nano Server 实例远程运行重复数据删除 PowerShell cmdlet。 要创建新的 CIM 会话，请运行 [`New-CimSession`](https://technet.microsoft.com/library/jj590760.aspx)。
+> 重复数据删除 PowerShell cmdlet （包括 [`Enable-DedupVolume`](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) ）可以通过 `-CimSession` 将参数追加到 CIM 会话来远程运行。 这特别适用于针对 Nano Server 实例远程运行重复数据删除 PowerShell cmdlet。 若要创建新的 CIM 会话，请运行 [`New-CimSession`](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) 。
 
-#### <a id="enable-dedup-sometimes-considerations"></a>其他注意事项
+#### <a name="other-considerations"></a><a id="enable-dedup-sometimes-considerations"></a>其他注意事项
 > [!Important]  
 > 如果你运行的是建议的工作负荷，则可以跳过此部分。
 
@@ -146,15 +146,15 @@ ms.locfileid: "79322419"
 * 如果你的工作负荷在服务器上具有高资源要求，应将重复数据删除作业[安排在工作负荷的预期空闲时间段内运行](advanced-settings.md#modifying-job-schedules-change-schedule)。 在超聚合主机上运行重复数据删除时这一点特别重要，因为在预期工作时间内运行重复数据删除会影响虚拟机。
 * 如果你的工作负荷没有高资源要求，或者更重要的是优化作业完成而不是为工作负荷请求提供服务，[可以调整内存、CPU 和重复数据删除作业优先级](advanced-settings.md#modifying-job-schedules)。
 
-## <a id="faq"></a>常见问题（FAQ）
+## <a name="frequently-asked-questions-faq"></a><a id="faq"></a>常见问题 (FAQ)
 **我想在 X 工作负荷的数据集上运行重复数据删除。此功能是否受支持？**  
 除了[已知不与重复数据删除互操作](interop.md)的工作负荷，针对任何工作负荷，我们完全支持重复数据删除的数据完整性。 Microsoft 还支持建议的工作负荷以实现更佳性能。 其他工作负荷的性能极大取决于它们正在你的服务器上执行哪些操作。 你必须确定重复数据删除对你的工作负荷具有哪些性能影响，并且确定这对于此工作负荷来说是否可以接受。
 
-**删除了重复数据的卷的卷大小要求是什么？**  
+**已删除重复的卷的卷大小调整要求有哪些？**  
 在 Windows Server 2012 和 Windows Server 2012 R2 中，卷必须进行仔细大小调整，以确保重复数据删除可以与卷上的改动保持一致。 这通常意味着高改动工作负荷的删除重复卷的平均最大大小为 1-2 TB，且绝对最大建议大小为 10 TB。 在 Windows Server 2016 中，已取消这些限制。 有关详细信息，请参阅[重复数据删除中的新增功能](whats-new.md#large-volume-support)。
 
 **是否需要修改建议的工作负荷的计划或其他重复数据删除设置？**  
-不需要，提供的“[用法类型](understand.md#usage-type)”是为建议的工作负荷提供合理的默认值而创建的。
+不能，为建议的工作负荷提供合理的默认值而创建提供的[使用类型](understand.md#usage-type)。
 
 **重复数据删除的内存要求有哪些？**  
 对于每 1 TB 的逻辑数据，重复数据删除应至少具备 300 MB + 50 MB 内存。 例如，如果要优化 10 TB 卷，需要分配最少 800 MB 内存进行重复数据删除 (`300 MB + 50 MB * 10 = 300 MB + 500 MB = 800 MB`)。 尽管重复数据删除可以优化较低内存量的卷，而此类约束资源会降低重复数据删除作业的速度。

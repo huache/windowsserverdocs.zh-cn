@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f983ea5b8464748d86264108a2ee8660ca0e3f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 24fc3c6dca5ba3fea872f625b2ef81f1c78f59fb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926059"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956569"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -58,16 +58,12 @@ Windows PowerShell 集成脚本环境（ISE）是一种图形化主机应用程�
 
 ### <a name="remarks"></a>备注
 
-- 有关**PowerShell_ISE.exe**命令行参数的完整列表，请参阅[about_PowerShell_Ise.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)。
+- 有关**PowerShell_ISE.exe**命令行参数的完整列表，请参阅[about_PowerShell_Ise.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)。
 
-- 有关启动 Windows PowerShell 的其他方法的信息，请参阅[启动 Windows powershell](https://docs.microsoft.com/powershell/scripting/windows-powershell/starting-windows-powershell)。
+- 有关启动 Windows PowerShell 的其他方法的信息，请参阅[启动 Windows powershell](/powershell/scripting/windows-powershell/starting-windows-powershell)。
 
 - Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，因为 Windows PowerShell ISE 需要图形用户界面，所以它不在服务器核心安装上运行。
 
 ## <a name="additional-references"></a>其他参考
 
-- [about_PowerShell_Ise.exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe
-
-- [about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
-
-- [Windows PowerShell](https://docs.microsoft.com/powershell/)
+- [about_PowerShell_Ise.exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe)

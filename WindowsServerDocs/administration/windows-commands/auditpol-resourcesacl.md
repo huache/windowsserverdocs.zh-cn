@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1c33a82b34c803961abff6ee5a9693990a0ca00
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4558d18b065cd668294952131b494342d600aee0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923700"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955489"
 ---
 # <a name="auditpol-resourcesacl"></a>auditpol resourceSACL
 
@@ -44,14 +44,14 @@ auditpol /resourceSACL
 | /view | 列出资源 SACL 中的全局对象访问审核条目。 用户和资源类型是可选的。 |
 | /? | 在命令提示符下显示帮助。 |
 
-### <a name="arguments"></a>自变量
+### <a name="arguments"></a>参数
 
 | 参数 | 说明 |
 | -------- | ----------- |
 | /type | 正在为其配置对象访问审核的资源。 支持的、区分大小写的参数值是*文件*（对于目录和文件）和*密钥*（对于注册表项）。 |
 | /success | 指定成功审核。 |
 | /failure | 指定失败的审核。 |
-| /user | 使用以下形式之一指定用户：<ul><li> DomainName\Account （如 DOM\Administrators）</li><li>StandaloneServer\Group 帐户（请参阅[LookupAccountName 函数](https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-lookupaccountnamea)）</li><li>{S-1-x-x x-x}（x 以十进制表示，整个 SID 必须括在大括号中）。 例如： {S-1-5-21-5624481-130208933-164394174-1001}<p>**注意：** 如果使用 SID 格式，则不执行检查来验证此帐户是否存在。</li></ul> |
+| /user | 使用以下形式之一指定用户：<ul><li> DomainName\Account （如 DOM\Administrators）</li><li>StandaloneServer\Group 帐户（请参阅[LookupAccountName 函数](/windows/win32/api/winbase/nf-winbase-lookupaccountnamea)）</li><li>{S-1-x-x x-x}（x 以十进制表示，整个 SID 必须括在大括号中）。 例如： {S-1-5-21-5624481-130208933-164394174-1001}<p>**注意：** 如果使用 SID 格式，则不执行检查来验证此帐户是否存在。</li></ul> |
 | /access | 指定可以通过指定的权限掩码：<p>一般访问权限，包括：<ul><li>GA-一般全部</li><li>GR-通用读取</li><li>GW-泛型写入</li><li>GX-泛型执行</li></ul><p>文件的访问权限，包括：<ul><li>FA-文件所有访问权限</li><li>FR-文件一般读取</li><li>FW-文件一般写入</li><li>FX-文件一般执行</li></ul><p>注册表项的访问权限，包括：<ul><li>KA-密钥所有访问权限</li><li>KR-读取密钥</li><li>KW-密钥写入</li><li>KX-KEY EXECUTE</li></ul><p>例如： `/access:FRFW` 启用审核事件以便进行读写操作。<p>表示访问掩码的十六进制值（如0x1200a9）<p>当使用不属于安全描述符定义语言（SDDL）标准的特定于资源的位掩码时，这非常有用。 如果省略，则使用完全访问权限。 |
 
 ## <a name="examples"></a>示例

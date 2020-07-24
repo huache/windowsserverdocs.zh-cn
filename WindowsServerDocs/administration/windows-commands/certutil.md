@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a2cea23d96c4cb438a2acac6d14c1bd37c67b56
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 159a3d2eb54d6a3040c4a22864a1c90e16bf2247
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922640"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955329"
 ---
 # <a name="certutil"></a>certutil
 
@@ -1993,7 +1993,7 @@ certutil -? -v
 | -dc DCName | 以特定的域控制器为目标。 |
 | -限制 restrictionlist | 以逗号分隔的限制列表。 每个限制都包含列名称、关系运算符和常量整数、字符串或日期。 一个列名前面可能有一个加号或减号，用来指示排序顺序。 例如，`requestID = 47`、`+requestername >= a, requestername` 或 `-requestername > DOMAIN, Disposition = 21` |
 | -out columnlist | 逗号分隔的列列表。 |
-| -p 密码 | Password |
+| -p 密码 | 密码 |
 | -protectto SAMnameandSIDlist | 以逗号分隔的 SAM 名称/SID 列表。 |
 | -csp 提供程序 | 提供程序 |
 | -t 超时 | URL 提取超时（毫秒）。 |
@@ -2005,7 +2005,7 @@ certutil -? -v
 
 - [用于从命令行管理 Active Directory 证书服务（AD CS）的 Certutil 示例](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
 
-- [用于管理证书的 Certutil 任务](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
+- [用于管理证书的 Certutil 任务](/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
 
 - [使用 certutil.exe 命令行工具演练的二进制请求导出](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
 

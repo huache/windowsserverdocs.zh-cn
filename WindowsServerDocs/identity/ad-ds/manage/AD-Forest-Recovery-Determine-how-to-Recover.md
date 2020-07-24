@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fea55dc5551198f7bc06afb2ec38077398b9cf77
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fbb1f0f0f1b21c626f344bb01b793211586c7cf3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824050"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953969"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>确定如何恢复林
 
@@ -44,19 +44,19 @@ ms.locfileid: "80824050"
 > 从 Windows Server 2008 开始，不支持在新硬件或相同硬件上将系统状态备份还原到新安装的 Windows Server。 如果在同一硬件上重新安装了 Windows Server，如本指南后面的建议，则可以按以下顺序还原域控制器：
 >
 > 1. 执行完整服务器还原，以便还原操作系统以及所有文件和应用程序。
-> 2. 使用 wbadmin 执行系统状态还原，以将 SYSVOL 标记为权威。
+> 2. 使用 wbadmin.exe 执行系统状态还原，以将 SYSVOL 标记为权威。
 >
 > 有关详细信息，请参阅 Microsoft 知识库文章[249694](https://support.microsoft.com/kb/249694)。
 
 如果出现故障的时间未知，请进一步进行调查，确定保存林的最后一个安全状态的备份。 这种方法不太理想。 因此，我们强烈建议您每日保存有关 AD DS 的运行状况状态的详细日志，以便在林范围内发生故障时，可以确定故障的大致时间。 还应保留备份的本地副本以实现更快的恢复。
 
-如果启用了 Active Directory 回收站，则备份生存期等于**deletedObjectLifetime**值或**tombstoneLifetime**值（以较小者为准）。 有关详细信息，请参阅[Active Directory 回收站循序渐进指南](https://go.microsoft.com/fwlink/?LinkId=178657)（ https://go.microsoft.com/fwlink/?LinkId=178657)。
+如果启用了 Active Directory 回收站，则备份生存期等于**deletedObjectLifetime**值或**tombstoneLifetime**值（以较小者为准）。 有关详细信息，请参阅[Active Directory 回收站循序渐进指南](https://go.microsoft.com/fwlink/?LinkId=178657)（ https://go.microsoft.com/fwlink/?LinkId=178657) 。
 
-作为替代方法，还可以使用 Active Directory 数据库装载工具（Dsamain.exe）和轻型目录访问协议（LDAP）工具（如 Ldp.exe 或 Active Directory 用户和计算机）识别哪个备份具有林的最新安全状态。 Windows Server 2008 和更高版本的 Windows Server 操作系统中包含的 Active Directory 数据库装载工具公开作为 LDAP 服务器存储在备份或快照中的 Active Directory 数据。 然后，可以使用 LDAP 工具来浏览数据。 此方法的优点是不需要重新启动目录服务还原模式（DSRM）中的任何 DC 来检查 AD DS 备份的内容。
+作为替代方法，你还可以使用 Active Directory 数据库装载工具（Dsamain.exe）和轻型目录访问协议（LDAP）工具（如 Ldp.exe 或 Active Directory 用户和计算机）来确定哪个备份具有林的最新安全状态。 Windows Server 2008 和更高版本的 Windows Server 操作系统中包含的 Active Directory 数据库装载工具公开作为 LDAP 服务器存储在备份或快照中的 Active Directory 数据。 然后，可以使用 LDAP 工具来浏览数据。 此方法的优点是不需要重新启动目录服务还原模式（DSRM）中的任何 DC 来检查 AD DS 备份的内容。
 
-有关使用 Active Directory 数据库装载工具的详细信息，请参阅[Active Directory 数据库装载工具循序渐进指南](https://technet.microsoft.com/library/cc753609\(WS.10\).aspx)。
+有关使用 Active Directory 数据库装载工具的详细信息，请参阅[Active Directory 数据库装载工具循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
 
-你还可以使用**ntdsutil snapshot**命令创建 Active Directory 数据库的快照。 通过计划定期创建快照的任务，您可以在一段时间内获取 Active Directory 数据库的其他副本。 你可以使用这些副本来更好地识别林范围的故障发生的时间，然后选择要还原的最佳备份。 若要创建快照，请使用 Windows Server 2008 附带的**ntdsutil**版本或适用于 windows Vista 或更高版本的远程服务器管理工具（RSAT）。 目标 DC 可以运行任何版本的 Windows Server。 有关使用**ntdsutil snapshot**命令的详细信息，请参阅[snapshot](https://technet.microsoft.com/library/cc731620\(WS.10\).aspx)。
+你还可以使用**ntdsutil snapshot**命令创建 Active Directory 数据库的快照。 通过计划定期创建快照的任务，您可以在一段时间内获取 Active Directory 数据库的其他副本。 你可以使用这些副本来更好地识别林范围的故障发生的时间，然后选择要还原的最佳备份。 若要创建快照，请使用 Windows Server 2008 附带的**ntdsutil**版本或适用于 windows Vista 或更高版本的远程服务器管理工具（RSAT）。 目标 DC 可以运行任何版本的 Windows Server。 有关使用**ntdsutil snapshot**命令的详细信息，请参阅[snapshot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
 
 ## <a name="determining-which-domain-controllers-to-restore"></a>确定要还原的域控制器
 
@@ -81,7 +81,7 @@ ms.locfileid: "80824050"
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-维护处理或还原包含 Active Directory 的备份文件时的安全过程。 林恢复的紧急性会无意中导致忽视的安全最佳做法。 有关详细信息，请参阅[关于保护 Active Directory 安装和日常操作的最佳实践指南](https://technet.microsoft.com/library/bb727066.aspx)中标题为 "建立域控制器备份和还原策略" 的部分：第 II 部分。
+维护处理或还原包含 Active Directory 的备份文件时的安全过程。 林恢复的紧急性会无意中导致忽视的安全最佳做法。 有关详细信息，请参阅[关于保护 Active Directory 安装和日常操作的最佳实践指南](/previous-versions/windows/it-pro/windows-2000-server/bb727066(v=technet.10))中标题为 "建立域控制器备份和还原策略" 的部分：第 II 部分。
 
 ## <a name="identify-the-current-forest-structure-and-dc-functions"></a>标识当前林结构和 DC 函数
 
@@ -89,15 +89,15 @@ ms.locfileid: "80824050"
 
 准备一个表，其中显示域中每个 DC 的功能，如以下示例中所示。 这将帮助你在恢复后恢复到林的预故障配置。
 
-|DC 名称|操作系统|FSMO|GC|RODC|备份|DNS|服务器核心|VM|VM-GenID|  
+|DC 名称|操作系统|FSMO|GC|RODC|Backup|DNS|服务器核心|VM|VM-GenID|  
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
-|DC_1|Windows Server 2012|架构主机，域命名主机|是|是|是|是|是|是|是|  
-|DC_2|Windows Server 2012|无|是|是|是|是|是|是|是|  
-|DC_3|Windows Server 2012|结构主机|是|是|是|是|是|是|是|  
-|DC_4|Windows Server 2012|PDC 模拟器，RID 主机|是|是|是|是|是|是|是|  
-|DC_5|Windows Server 2012|无|是|是|是|是|是|是|是|  
-|RODC_1|Windows Server 2008 R2|无|是|是|是|是|是|是|是|  
-|RODC_2|Windows Server 2008|无|是|是|是|是|是|是|是|  
+|DC_1|Windows Server 2012|架构主机，域命名主机|是|No|是|No|否|是|是|  
+|DC_2|Windows Server 2012|None|是|No|是|是|No|是|是|  
+|DC_3|Windows Server 2012|结构主机|否|否|否|是|是|是|是|  
+|DC_4|Windows Server 2012|PDC 模拟器，RID 主机|是|No|否|否|否|是|No|  
+|DC_5|Windows Server 2012|None|否|否|是|是|No|是|是|  
+|RODC_1|Windows Server 2008 R2|None|是|是|是|是|是|是|No|  
+|RODC_2|Windows Server 2008|None|是|是|No|是|是|是|No|  
 
 对于林中的每个域，标识包含该域的 Active Directory 数据库的受信任备份的单个可写 DC。 选择用于还原 DC 的备份时，请务必小心。 如果失败的日期和原因大约是已知的，则一般建议使用在该日期之前数天内进行的备份。
   

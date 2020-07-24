@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e0c581a29db92cfb73e4225c72e7e1c2bad4ca68
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: b97a9cb50743972a85826d10aba89f9e6fffb5a6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465273"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954459"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>管理 AD FS 的 SSL/TLS 协议和密码套件
 以下文档介绍了如何禁用和启用 AD FS 使用的某些 TLS/SSL 协议和密码套件
@@ -30,11 +30,11 @@ Schannel 是实现 SSL、TLS 和 DTLS Internet 标准身份验证协议的安全
 - 批量加密
 - 消息验证
 
-AD FS 使用 Schannel 执行其安全的通信交互。  目前 AD FS 支持 Schannel 支持的所有协议和密码套件。
+AD FS 使用 Schannel.dll 执行其安全的通信交互。  目前 AD FS 支持 Schannel.dll 支持的所有协议和密码套件。
 
 ## <a name="managing-the-tlsssl-protocols-and-cipher-suites"></a>管理 TLS/SSL 协议和密码套件
 > [!IMPORTANT]
-> 本部分包含说明如何修改注册表的步骤。 但是，如果修改注册表不当，可能会出现严重问题。 因此，务必仔细遵照这些步骤进行操作。 
+> 本部分包含说明如何修改注册表的步骤。 但是，如果注册表修改不正确，可能会发生严重问题。 因此，请确保认真遵循这些步骤。 
 > 
 > 请注意，更改 SCHANNEL 的默认安全设置可能会中断或阻止特定客户端和服务器之间的通信。  如果需要安全通信，并且它们没有协议来协商与通信，则会发生这种情况。
 > 
@@ -87,7 +87,7 @@ Write-Host 'SSL 2.0 has been disabled.'
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 客户端]"Enabled" = dword：00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 客户端]"DisabledByDefault" = dword：00000000 
 
-### <a name="disable-ssl-30"></a>禁用 SSL 3。0
+### <a name="disable-ssl-30"></a>禁用 SSL 3.0
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 服务器]"Enabled" = dword：00000000
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 服务器]"DisabledByDefault" = dword：00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ 客户端]"Enabled" = dword：00000000
@@ -124,7 +124,7 @@ Write-Host 'SSL 2.0 has been disabled.'
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 客户端]"Enabled" = dword：00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 客户端]"DisabledByDefault" = dword：00000000 
 
-### <a name="disable-tls-10"></a>禁用 TLS 1。0
+### <a name="disable-tls-10"></a>禁用 TLS 1.0
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Server]"Enabled" = dword：00000000
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Server]"DisabledByDefault" = dword：00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ 客户端]"Enabled" = dword：00000000
@@ -184,17 +184,17 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 使用以下注册表项及其值来启用和禁用 TLS 1.2。
 
-### <a name="enable-tls-12"></a>启用 TLS 1。2
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server]"DisabledByDefault" = dword：00000000 
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 客户端]"Enabled" = dword：00000001
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 客户端]"DisabledByDefault" = dword：00000000
+### <a name="enable-tls-12"></a>启用 TLS 1.2
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "Enabled"=dword:00000001
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "Enabled"=dword:00000001
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000
 
-### <a name="disable-tls-12"></a>禁用 TLS 1。2
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server]"DisabledByDefault" = dword：00000001
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 客户端]"Enabled" = dword：00000000
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ 客户端]"DisabledByDefault" = dword：00000001
+### <a name="disable-tls-12"></a>禁用 TLS 1.2
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "Enabled"=dword:00000000
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000001
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "Enabled"=dword:00000000
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000001
 
 ### <a name="using-powershell-to-disable-tls-12"></a>使用 PowerShell 禁用 TLS 1。2
 
@@ -256,20 +256,20 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 若要启用密码套件，请将其字符串值添加到函数多字符串值键。  例如，如果想要启用 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521，则将其添加到字符串。
 
-有关支持的密码套件的完整列表，请参阅[TLS/SSL （SCHANNEL SSP）中的密码套件](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)。  本文档提供默认情况下启用的套件的表以及支持但默认情况下未启用的套件。  若要确定密码套件的优先级，请参阅[优先级 Schannel 密码套件](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)。
+有关支持的密码套件的完整列表，请参阅[TLS/SSL （SCHANNEL SSP）中的密码套件](/windows/win32/secauthn/cipher-suites-in-schannel)。  本文档提供默认情况下启用的套件的表以及支持但默认情况下未启用的套件。  若要确定密码套件的优先级，请参阅[优先级 Schannel 密码套件](/windows/win32/secauthn/prioritizing-schannel-cipher-suites)。
 
 ## <a name="enabling-strong-authentication-for-net-applications"></a>为 .NET 应用程序启用强身份验证
 .NET Framework 3.5/4.0/4.5. x 应用程序可以通过启用 SchUseStrongCrypto 注册表项来将默认协议切换到 TLS 1.2。  此注册表项将强制 .NET 应用程序使用 TLS 1.2。
 
 > [!IMPORTANT]
-> 对于 Windows Server 2016 和 Windows Server 2012 R2 上的 AD FS，需要使用 .NET Framework 4.0/4.5. x 密钥： HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\\。NETFramework\v4.0.30319
+> 对于 Windows Server 2016 和 Windows Server 2012 R2 上的 AD FS，需要使用 .NET Framework 4.0/4.5. x 键： HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft \\ 。NETFramework\v4.0.30319
 
 
 对于 .NET Framework 3.5，请使用以下注册表项：
 
-[HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\Microsoft\\。NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword：00000001
+[HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\Microsoft \\ 。NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword：00000001
 
-对于 .NET Framework 4.0/4.5. x，请使用以下注册表项： HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\\。NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword：00000001
+对于 .NET Framework 4.0/4.5. x，请使用以下注册表项： HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft \\ 。NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword：00000001
 
 ![强身份验证](media/Managing-SSL-Protocols-in-AD-FS/strongauth.png)
 
@@ -280,7 +280,7 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 ## <a name="additional-information"></a>其他信息
 
-- [TLS/SSL （Schannel SSP）中的密码套件](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)
-- [Windows 8.1 中的 TLS 密码套件](https://msdn.microsoft.com/library/windows/desktop/mt767781.aspx)
-- [排定 Schannel 密码套件的优先级](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)
-- [密码和其他神秘 tongues](https://blogs.technet.microsoft.com/askds/2015/12/08/speaking-in-ciphers-and-other-enigmatic-tonguesupdate/)
+- [TLS/SSL （Schannel SSP）中的密码套件](/windows/win32/secauthn/cipher-suites-in-schannel)
+- [Windows 8.1 中的 TLS 密码套件](/windows/win32/secauthn/tls-cipher-suites-in-windows-8-1)
+- [排定 Schannel 密码套件的优先级](/windows/win32/secauthn/prioritizing-schannel-cipher-suites)
+- [密码和其他神秘 tongues](/archive/blogs/askds/speaking-in-ciphers-and-other-enigmatic-tonguesupdate)

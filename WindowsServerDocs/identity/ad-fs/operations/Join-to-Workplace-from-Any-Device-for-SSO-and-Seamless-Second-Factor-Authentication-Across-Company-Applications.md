@@ -8,12 +8,12 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 82c94adadb9241e2b7cd8d75ea1693957aaffc61
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea421bb274ec7f6a6b1ba5be03391dd92fb10b33
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816260"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955050"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>跨公司应用程序从任一设备加入工作区以实现 SSO 和无缝第二重身份验证
 
@@ -33,7 +33,7 @@ ms.locfileid: "80816260"
 ### <a name="azure-active-directory-device-registration-service"></a><a name="BKMK_DRS"></a>Azure Active Directory 设备注册服务
 Azure Active Directory 设备注册服务使“工作区加入”成为可能。 当通过“工作区加入”加入设备时，该服务会在 Active Directory 中配置设备对象，然后在本地设备上设置用于表示设备标识的键。 此设备标识随后可以与访问控制规则一起用于在云中和本地托管的应用程序。
 
-有关更多详细信息，请参阅[Azure Active Directory 中的设备管理简介](https://docs.microsoft.com/azure/active-directory/device-management-introduction)。
+有关更多详细信息，请参阅[Azure Active Directory 中的设备管理简介](/azure/active-directory/device-management-introduction)。
 
 ### <a name="workplace-join-as-a-seamless-second-factor-authentication"></a>工作区加入作为无缝第二重身份验证
 公司可以管理与信息访问相关的风险并推动治理和合规性的建设，同时授予消费型电子设备访问公司资源的权限。 设备上的工作区加入为管理员提供了以下功能：
@@ -49,18 +49,15 @@ Azure Active Directory 设备注册服务使“工作区加入”成为可能。
 作为此解决方案的一部分，你将了解如何在支持的设备上使用“工作区加入”，以及体验对公司资源的单一登录。
 
 > [!NOTE]
-> 若要支持 Windows 8.1、iOS 6.0+ 和 Android 4.0+ 设备，必须配置 Azure Active Directory 设备注册配置以及设备对象回写，请参阅 [使用 Azure Active Directory 设备注册服务进行本地条件访问的分步指南](https://msdn.microsoft.com/library/azure/dn788908.aspx)
+> 若要支持 Windows 8.1、iOS 6.0+ 和 Android 4.0+ 设备，必须配置 Azure Active Directory 设备注册配置以及设备对象回写，请参阅[使用 Azure Active Directory 设备注册服务进行本地条件访问的分步指南](/previous-versions/azure/dn788908(v=azure.100))
 
 此解决方案指南将指导你完成以下操作实例的步骤：
 
-1.  [演练：使用 Windows 设备 Workplace Join](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+1.  [演练：使用 Windows 设备加入工作区](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
-2.  [演练：使用 iOS 设备 Workplace Join](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+2.  [演练：使用 iOS 设备加入工作区](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-3.  [演练：使用 Android 设备 Workplace Join](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
+3.  [演练：使用 Android 设备加入工作区](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
 ## <a name="see-also"></a>另请参阅
 [使用设备注册服务配置联合服务器](../deployment/configure-a-federation-server-with-device-registration-service.md)
-
-
-

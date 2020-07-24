@@ -9,12 +9,12 @@ ms.author: johnmar
 ms.date: 01/30/2019
 description: 本文介绍群集集方案
 ms.localizationpriority: medium
-ms.openlocfilehash: 64aeda27d5554e3f348a77b0ae785ddcf05dee00
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 06cf798a5adfeee1279f564df63c431a77affd18
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436612"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955029"
 ---
 # <a name="cluster-sets"></a>群集集
 
@@ -287,7 +287,7 @@ WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualM
 
 此警告可以忽略，因为警告为 "未检测到虚拟机角色存储配置中的任何更改"。 警告的原因是实际的物理位置不更改;仅配置路径。
 
-有关 VMStorage 的详细信息，请查看此[链接](https://docs.microsoft.com/powershell/module/hyper-v/move-vmstorage?view=win10-ps)。
+有关 VMStorage 的详细信息，请查看此[链接](/powershell/module/hyper-v/move-vmstorage?view=win10-ps)。
 
 在不同群集集群集之间实时迁移虚拟机与过去不同。 在非群集集方案中，步骤如下：
 
@@ -376,10 +376,10 @@ $cred = new-object -typename System.Management.Automation.PSCredential ("<domain
 Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
 ```
 
-## <a name="frequently-asked-questions-faq"></a>常见问题解答 (FAQ)
+## <a name="frequently-asked-questions-faq"></a>常见问题 (FAQ)
 
 **问题：** 在我的群集集中，我是否局限于只使用超聚合群集？ <br>
-**答案：** 不。 可以将存储空间直通与传统分类混合使用。
+**答：** 否。 可以将存储空间直通与传统分类混合使用。
 
 **问题：** 可以通过 System Center Virtual Machine Manager 来管理群集集吗？ <br>
 **答案：** System Center Virtual Machine Manager 当前不支持群集集 <br><br> **问题：** Windows Server 2012 R2 或2016群集是否可以在同一群集集中共存？ <br>
@@ -420,13 +420,13 @@ Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
 **答案：** 在 Windows Server 2019 中，群集集经过测试并支持最多64个群集节点。 但是，群集集体系结构可扩展到更大的限制，并且不是对限制的硬编码。 如果你和你计划使用它的规模是否更大，请让 Microsoft 知道。
 
 **问题：** 群集集中的所有存储空间直通群集是否构成单个存储池？ <br>
-**答案：** 不。 存储空间直通技术仍在单个群集内运行，而不是在群集集中的成员群集上运行。
+**答：** 否。 存储空间直通技术仍在单个群集内运行，而不是在群集集中的成员群集上运行。
 
 **问题：** 群集集命名空间是否具有高可用性？ <br>
 **答案：** 是的，群集集命名空间是通过在管理群集上运行的连续可用（CA）引用 SOFS 命名空间服务器提供的。 Microsoft 建议从成员群集中有足够数量的虚拟机，使其能够应对本地化的群集范围内的故障。 但是，若要考虑不可预见的灾难性故障（例如，管理群集中的所有虚拟机同时关闭），则在每个群集集节点上，甚至在重新启动时也会永久缓存引用信息。
 
 **问题：** 群集集基于命名空间的存储访问是否会减缓群集集中的存储性能？ <br>
-**答案：** 不。 群集集命名空间在群集集中提供覆盖引用命名空间-在概念上类似于分布式文件系统命名空间（DFSN）。 与 DFSN 不同，所有群集集命名空间引用元数据都是自动填充的，在所有节点上自动更新，而无需管理员干预，因此在存储访问路径中几乎不会产生性能开销。
+**答：** 否。 群集集命名空间在群集集中提供覆盖引用命名空间-在概念上类似于分布式文件系统命名空间（DFSN）。 与 DFSN 不同，所有群集集命名空间引用元数据都是自动填充的，在所有节点上自动更新，而无需管理员干预，因此在存储访问路径中几乎不会产生性能开销。
 
 **问题：** 如何备份群集集元数据？ <br>
 **答案：** 本指南与故障转移群集的指南相同。 系统状态备份也会备份群集状态。 通过 Windows Server 备份，您可以只还原节点的群集数据库（由于有大量的自修复逻辑，此操作永远不需要）或执行权威还原，以便在所有节点上回滚整个群集数据库。 对于群集集，Microsoft 建议在成员群集上首先执行此类权威还原，然后在需要时执行管理群集。

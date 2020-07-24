@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 03/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e32fe419899c0f553f36976ecee95fb3a922f1a6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8b723fd3768561da7d636dd1724bd0c75ee2ee85
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436622"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954699"
 ---
 # <a name="vssadmin-resize-shadowstorage"></a>Vssadmin 调整大小 shadowstorage
 
@@ -21,7 +21,7 @@ ms.locfileid: "83436622"
 
 调整可用于卷影副本存储的最大存储空间量。
 
-可以使用**MinDiffAreaFileSize**注册表值指定可用于卷影副本存储的最小存储空间量。 有关详细信息，请参阅[MinDiffAreaFileSize](https://docs.microsoft.com/windows/win32/backup/registry-keys-for-backup-and-restore#mindiffareafilesize)。
+可以使用**MinDiffAreaFileSize**注册表值指定可用于卷影副本存储的最小存储空间量。 有关详细信息，请参阅[MinDiffAreaFileSize](/windows/win32/backup/registry-keys-for-backup-and-restore#mindiffareafilesize)。
 
 > [!WARNING]
 > 调整存储关联的大小可能会导致卷影副本消失。
@@ -50,5 +50,5 @@ vssadmin Resize ShadowStorage /For=C: /On=C: /MaxSize=20%
 
 ## <a name="additional-references"></a>其他参考
 
-* [命令行语法关键字](https://docs.microsoft.com/windows-server/administration/windows-commands/command-line-syntax-key)
+* [命令行语法关键字](./command-line-syntax-key.md)
 * [List](vssadmin.md)

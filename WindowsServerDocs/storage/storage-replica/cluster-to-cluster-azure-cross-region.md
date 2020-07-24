@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: ee4f508cf0a65b59c3253d6865c649cc9652c569
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8a1d98fd6c36876aebaf2f9abe4bed29f5485e8a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856300"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955539"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Azure 中跨区域群集到群集存储副本
 
-> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 可以为 Azure 中的跨区域应用程序配置群集以群集存储副本。 在下面的示例中，我们使用双节点群集，但群集到群集的存储副本并不局限于双节点群集。 下图是一个双节点存储空间直通群集，可以相互通信，位于同一个域中，并且是跨区域。
 
@@ -54,11 +54,11 @@ ms.locfileid: "80856300"
       - 创建域（contoso.com）
       - 使用管理员权限创建用户（contosoadmin）
 
-   使用可用性集中的虚拟网络（**AZ2AZ**）和网络安全组 **（AZ2AZ** **-NSG**）在资源组（**sr-iov-AZ2AZ**）中创建两个虚拟机（**az2az1**， **az2az2**）。 在创建过程中将标准公共 IP 地址分配给每个虚拟机。
+   使用可用性集中的虚拟网络（**AZ2AZ**）和网络安全组 **（AZ2AZ****-NSG**）在资源组（**sr-iov-AZ2AZ**）中创建两个虚拟机（**az2az1**， **az2az2**）。 在创建过程中将标准公共 IP 地址分配给每个虚拟机。
       - 向每台计算机添加至少两个托管磁盘
       - 安装故障转移群集和存储副本功能
 
-   使用可用性集中的虚拟网络（**AZCROSS**）和网络安全组 **（AZCROSS-** **NSG**）在资源组（**sr-iov-AZCROSS**）中创建两个虚拟机（**azcross1**， **azcross2**）。 在创建过程中将标准公共 IP 地址分配给每个虚拟机
+   使用可用性集中的虚拟网络（**AZCROSS**）和网络安全组 **（AZCROSS-****NSG**）在资源组（**sr-iov-AZCROSS**）中创建两个虚拟机（**azcross1**， **azcross2**）。 在创建过程中将标准公共 IP 地址分配给每个虚拟机
       - 向每台计算机添加至少两个托管磁盘
       - 安装故障转移群集和存储副本功能
 
@@ -92,13 +92,13 @@ ms.locfileid: "80856300"
 8. 为每个群集创建内部标准 SKU[负载均衡器](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM)（**azlbr1**， **azlbazcross**）。
 
    提供群集 IP 地址作为负载均衡器的静态专用 IP 地址。
-      - azlbr1 = > 前端 IP：10.3.0.100 （从虚拟网络（**az2az**）子网中获取未使用的 IP 地址）
+      - azlbr1 => 前端 IP：10.3.0.100 （从虚拟网络（**az2az**）子网中获取未使用的 IP 地址）
       - 为每个负载均衡器创建后端池。 添加关联的群集节点。
       - 创建运行状况探测：端口59999
       - 创建负载均衡规则：允许 HA 端口，启用了浮动 IP。
 
    提供群集 IP 地址作为负载均衡器的静态专用 IP 地址。 
-      - azlbazcross = > 前端 IP：10.0.0.10 （从虚拟网络（**azcross**）子网中获取未使用的 IP 地址）
+      - azlbazcross => 前端 IP：10.0.0.10 （从虚拟网络（**azcross**）子网中获取未使用的 IP 地址）
       - 为每个负载均衡器创建后端池。 添加关联的群集节点。
       - 创建运行状况探测：端口59999
       - 创建负载均衡规则：允许 HA 端口，启用了浮动 IP。 
@@ -127,7 +127,7 @@ ms.locfileid: "80856300"
 
     对于每个群集，从群集的任何一个节点运行一次。 
     
-    在我们的示例中，请确保根据你的配置值更改 "ILBIP"。 从任何一个节点**az2az1**/**az2az2**运行以下命令
+    在我们的示例中，请确保根据你的配置值更改 "ILBIP"。 从任何一个节点**az2az1** / **az2az2**运行以下命令
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -137,7 +137,7 @@ ms.locfileid: "80856300"
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```
 
-12. 从任何一个节点**azcross1**/**azcross2**运行以下命令
+12. 从任何一个节点**azcross1** / **azcross2**运行以下命令
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
@@ -165,7 +165,7 @@ ms.locfileid: "80856300"
 
 14. 在继续下一步之前运行[群集验证测试](../../failover-clustering/create-failover-cluster.md#validate-the-configuration)
 
-15. 启动 Windows PowerShell，并使用 [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) cmdlet 确定是否满足所有存储副本要求。 可以在仅要求模式下使用 cmdlet 以用于快速测试，也可以在长时间运行的性能评估模式下使用。
+15. 启动 Windows PowerShell，并使用 [Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) cmdlet 确定是否满足所有存储副本要求。 可以在仅要求模式下使用 cmdlet 以用于快速测试，也可以在长时间运行的性能评估模式下使用。
  
 16. 配置群集到群集存储副本。
     双向向另一个群集授予访问权限：
@@ -189,7 +189,7 @@ ms.locfileid: "80856300"
       - 卷位置：-c:\ClusterStorage\DataDiskCross
       - 日志位置：-g：
 
-运行命令：
+运行以下命令：
 
 ```powershell
 PowerShell

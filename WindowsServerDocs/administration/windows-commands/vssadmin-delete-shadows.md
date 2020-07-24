@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b52701f831502c16487dbbaf0cd61d839c046c68
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 84135624377f589417c7524c40375ed8470d3269
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436702"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954790"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin 删除阴影
 
@@ -31,10 +31,10 @@ vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID
 
 |参数|说明|
 |---|---|
-|/for = \< ForVolumeSpec>|指定将删除的卷影副本。|
+|/for =\<ForVolumeSpec>|指定将删除的卷影副本。|
 |/oldest|仅删除最旧的卷影副本。|
 |/all|删除指定卷的所有卷影副本。|
-|/shadow = \< ShadowID>|删除由 ShadowID 指定的卷影副本。 若要获取卷影副本 ID，请使用**vssadmin list shadows**命令。 输入卷影副本 ID 时，请使用以下格式，其中每个*X*表示十六进制字符：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX）|
+|/shadow =\<ShadowID>|删除由 ShadowID 指定的卷影副本。 若要获取卷影副本 ID，请使用**vssadmin list shadows**命令。 输入卷影副本 ID 时，请使用以下格式，其中每个*X*表示十六进制字符：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX）|
 |/quiet|指定命令在运行时不显示消息。|
 
 ## <a name="remarks"></a>备注
@@ -51,6 +51,6 @@ vssadmin delete shadows /for=c: /oldest
 
 ## <a name="additional-references"></a>其他参考
 
-* [命令行语法关键字](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
+* [命令行语法关键字](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
 * [List](vssadmin.md)
 * [Vssadmin list shadows](vssadmin-list-shadows.md)

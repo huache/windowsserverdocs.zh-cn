@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a8934d9177d81cd05124175e64746ecdb4a1bc1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 684e768979f54b772bffcb997b6ad44291dde8af
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930956"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954569"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
@@ -93,7 +93,7 @@ wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\shar
 
 -   [命令行语法项](command-line-syntax-key.md)
 -   [Backup](wbadmin.md)
--   [WBFileRecovery](https://technet.microsoft.com/library/jj902457.aspx) cmdlet
--   [WBHyperVRecovery](https://technet.microsoft.com/library/jj902463.aspx) cmdlet
--   [WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx) cmdlet
--   [WBVolumeRecovery](https://technet.microsoft.com/library/jj902470.aspx) cmdlet
+-   [WBFileRecovery](/powershell/module/windowserverbackup/?view=winserver2012r2-ps) cmdlet
+-   [WBHyperVRecovery](/powershell/module/windowserverbackup/?view=winserver2012r2-ps) cmdlet
+-   [WBSystemStateRecovery](/powershell/module/windowserverbackup/?view=winserver2012r2-ps) cmdlet
+-   [WBVolumeRecovery](/powershell/module/windowserverbackup/?view=winserver2012r2-ps) cmdlet

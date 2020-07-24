@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: eaad015d0097d9b65a4aba8a5846c7782b6966d1
-ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
+ms.openlocfilehash: 5db03a2d275dc4a02295c588bd0789fa757b8503
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866036"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956210"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>在 Azure 中部署 Active Directory 联合身份验证服务
 AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 与 Azure AD 或 O365 联合可让用户使用本地凭据进行身份验证，并访问云中的所有资源。 这样，就必须建立高可用性的 AD FS 基础结构来确保能够访问本地和云中的资源。 在 Azure 中部署 AD FS 有助于以最少量的工作实现所需的高可用性。
@@ -232,7 +232,7 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 **7.2.安装 Web 应用程序代理角色**
 
 在确保 Web 应用程序代理服务器能够访问 ILB 后面的 AD FS 服务器之后，接下来可以安装 Web 应用程序代理服务器。 不需要将 Web 应用程序代理服务器加入域。 通过选择“远程访问”角色，将 Web 应用程序代理角色安装在两个 Web 应用程序代理服务器上。 服务器管理器将引导完成 WAP 安装。
-有关如何部署 WAP 的详细信息，请阅读 [Install and Configure the Web Application Proxy Server](https://technet.microsoft.com/library/dn383662.aspx)（安装和配置 Web 应用程序代理服务器）。
+有关如何部署 WAP 的详细信息，请阅读 [Install and Configure the Web Application Proxy Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383662(v=ws.11))（安装和配置 Web 应用程序代理服务器）。
 
 ### <a name="8--deploying-the-internet-facing-public-load-balancer"></a>8. 部署面向 Internet 的（公共）负载均衡器
 **8.1。创建面向 Internet 的（公共）负载均衡器**
@@ -364,6 +364,6 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 * [AD FS and Web Application Proxy Links](https://aka.ms/ADFSLinks) 
 
 ## <a name="next-steps"></a>后续步骤
-* [将本地标识与 Azure Active Directory 集成](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)
+* [将本地标识与 Azure Active Directory 集成](/azure/active-directory/hybrid/whatis-hybrid-identity)
 * [Configuring and managing your AD FS using Azure AD Connect（使用 Azure AD Connect 配置和管理 AD FS）](/azure/active-directory/hybrid/how-to-connect-fed-whatis)
 * [使用 Azure 流量管理器在 Azure 中部署高可用性跨地域 AD FS](active-directory-adfs-in-azure-with-azure-traffic-manager.md)

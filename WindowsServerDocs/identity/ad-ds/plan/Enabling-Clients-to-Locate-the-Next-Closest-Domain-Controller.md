@@ -8,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 75e31a435e8d8411fbe4db242e6d31fd7676fe4e
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ce946fb0fe581a66f4a4e29cf8491f00294b5bcb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624245"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953579"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>启用客户端查找下一个最近的域控制器
 
-> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 如果你有运行 Windows Server 2008 或更高版本的域控制器，则可以通过启用 "**尝试下一个最近的站点**" 组策略设置，使运行 windows Vista 或更高版本或 Windows Server 2008 或更高版本的客户端计算机更有效地查找域控制器。 此设置可帮助简化网络流量，尤其是在具有很多分支机构和站点的大型企业中，此设置可改善域控制器定位器（DC 定位符）。
 
@@ -31,7 +31,7 @@ ms.locfileid: "81624245"
 - 如果同一站点中没有可用的域控制器，请尝试在域中查找任何域控制器。
 
 > [!NOTE]
-> 这是在早期版本的 Active Directory 中使用 DC 定位符的算法。 有关详细信息，请参阅文章[DNS 支持 Active Directory 的工作原理](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10))。
+> 这是在早期版本的 Active Directory 中使用 DC 定位符的算法。 有关详细信息，请参阅文章[DNS 支持 Active Directory 的工作原理](/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10))。
 
 如果启用 "**尝试下一个最近的站点**" 设置，DC 定位符将使用以下算法查找域控制器：
 
@@ -54,4 +54,4 @@ ms.locfileid: "81624245"
 > [!NOTE]
 > "**尝试下一个最近的站点**" 设置与自动站点覆盖协调工作。 例如，如果下一个最近的站点没有域控制器，DC 定位程序将尝试查找为该站点执行自动站点覆盖的域控制器。
 
-若要应用 "**尝试下一个最近的站点**" 设置，你可以创建一个组策略对象（GPO），并将其链接到你的组织的适当对象，也可以修改默认域策略，使其影响域中运行 windows Vista 或更高版本以及 windows Server 2008 或更高版本的所有客户端。 有关如何设置 "**尝试下一个最近的站点**" 设置的详细信息，请参阅[使客户端能够在下一个最近的站点中找到域控制器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772592(v=ws.10))。
+若要应用 "**尝试下一个最近的站点**" 设置，你可以创建一个组策略对象（GPO），并将其链接到你的组织的适当对象，也可以修改默认域策略，使其影响域中运行 windows Vista 或更高版本以及 windows Server 2008 或更高版本的所有客户端。 有关如何设置 "**尝试下一个最近的站点**" 设置的详细信息，请参阅[使客户端能够在下一个最近的站点中找到域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772592(v=ws.10))。

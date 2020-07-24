@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b6f4ae3fe630ba01d9c789a9f7d73a11a31f456
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b4c4eb9454016b816cd4ca1670fab942c4240366
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923554"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955849"
 ---
 # <a name="autofmt"></a>autofmt
 
@@ -27,6 +27,6 @@ ms.locfileid: "85923554"
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [Windows 恢复环境（WinRE）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+- [Windows 恢复环境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
 
 - [如何使用 Windows 恢复环境 (WinRE) 来解决常见的启动问题](https://support.microsoft.com/help/4026030/how-to-use-windows-recovery-environment-winre-to-troubleshoot-common-s)

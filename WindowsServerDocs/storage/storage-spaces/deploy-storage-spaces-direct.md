@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: 逐步说明使用 Windows Server 中的存储空间直通将软件定义的存储部署为超聚合基础结构或聚合（也称为非聚合）基础结构。
 ms.localizationpriority: medium
-ms.openlocfilehash: 50bcdc175610d6e5c5264f9cb62c7d99d2990ac0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c18d3edc57ab04c9f9487bc39b52325fa1eb0ba9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472824"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955109"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署存储空间直通
 
@@ -102,7 +102,7 @@ ms.locfileid: "85472824"
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force
 ```
 
-如果你的存储管理员帐户不是 Domain Admins 组的成员，请将你的存储管理员帐户添加到每个节点上的本地管理员组，或者，添加你的存储管理员组。 你可以使用以下命令（或编写 Windows PowerShell 函数来执行此操作-请参阅[使用 PowerShell 将域用户添加到本地组](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)，了解详细信息）：
+如果你的存储管理员帐户不是 Domain Admins 组的成员，请将你的存储管理员帐户添加到每个节点上的本地管理员组，或者，添加你的存储管理员组。 你可以使用以下命令（或编写 Windows PowerShell 函数来执行此操作-请参阅[使用 PowerShell 将域用户添加到本地组](https://devblogs.microsoft.com/scripting/use-powershell-to-add-domain-users-to-a-local-group/)，了解详细信息）：
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -119,7 +119,7 @@ Net localgroup Administrators <Domain\Account> /add
 - RSAT-Clustering-PowerShell
 - Hyper-V-PowerShell
 
-若要通过 PowerShell 安装，请使用[add-windowsfeature](https://docs.microsoft.com/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature) cmdlet。 可以在单个服务器上使用它，如下所示：
+若要通过 PowerShell 安装，请使用[add-windowsfeature](/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature) cmdlet。 可以在单个服务器上使用它，如下所示：
 
 ```PowerShell
 Install-WindowsFeature -Name "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "RSAT-Clustering-PowerShell", "Hyper-V-PowerShell", "FS-FileServer"
@@ -384,7 +384,7 @@ CD $ScriptFolder
 
 ## <a name="next-steps"></a>后续步骤
 
-部署群集文件服务器后，我们建议在引入任何实际工作负荷之前，使用综合工作负荷测试解决方案的性能。 这样，你就可以在添加工作负荷复杂性之前，确认解决方案是否正在正常运行，并解决所有延迟问题。 有关详细信息，请参阅[使用综合工作负荷测试存储空间性能](https://technet.microsoft.com/library/dn894707.aspx)。
+部署群集文件服务器后，我们建议在引入任何实际工作负荷之前，使用综合工作负荷测试解决方案的性能。 这样，你就可以在添加工作负荷复杂性之前，确认解决方案是否正在正常运行，并解决所有延迟问题。 有关详细信息，请参阅[使用综合工作负荷测试存储空间性能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11))。
 
 ## <a name="additional-references"></a>其他参考
 
@@ -393,4 +393,4 @@ CD $ScriptFolder
 -   [在存储空间直通中规划卷](plan-volumes.md)
 -   [存储空间容错](storage-spaces-fault-tolerance.md)
 -   [存储空间直通硬件要求](Storage-Spaces-Direct-Hardware-Requirements.md)
--   [要不要连接到 RDMA，这才是问题所在](https://blogs.technet.microsoft.com/filecab/2017/03/27/to-rdma-or-not-to-rdma-that-is-the-question/)（TechNet 博客）
+-   [要不要连接到 RDMA，这才是问题所在](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)（TechNet 博客）

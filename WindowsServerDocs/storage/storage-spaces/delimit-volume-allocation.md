@@ -6,12 +6,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: ce3b32bdb0dfb51237f934f23207167a215a0024
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ccce763b437b461d33dd72cb3d656b825746e6da
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475604"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953840"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>分隔存储空间直通中的卷分配
 > 适用于：Windows Server 2019
@@ -37,7 +37,7 @@ Windows Server 2019 引入了一个选项，用于在存储空间直通中手动
 
 ### <a name="review-regular-allocation"></a>查看：常规分配
 
-通过常规的三向镜像，卷划分为多个较小的 "碎片"，复制三次，并均匀地分布在群集中每个服务器上的每个驱动器上。 有关更多详细信息，请阅读[此深入探讨博客](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)。
+通过常规的三向镜像，卷划分为多个较小的 "碎片"，复制三次，并均匀地分布在群集中每个服务器上的每个驱动器上。 有关更多详细信息，请阅读[此深入探讨博客](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)。
 
 ![此图显示了将卷划分为三个碎片堆栈，并跨每个服务器平均分布。](media/delimit-volume-allocation/regular-allocation.png)
 
@@ -153,7 +153,7 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 请注意，Server1 不会再包含*MyVolume*的碎片–而是 Server5。
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳实践
 
 下面是使用带分隔符的卷分配时应遵循的最佳做法：
 
@@ -190,7 +190,7 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 如果一次发生了三次或更多故障，但至少一半的服务器和驱动器仍处于开启状态，则带分隔分配的卷可能会保持联机并可访问，具体取决于哪些服务器发生故障。
 
-## <a name="frequently-asked-questions"></a>常见问题
+## <a name="frequently-asked-questions"></a>常见问题解答
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>是否可以分隔某些卷，但不能分隔其他卷？
 

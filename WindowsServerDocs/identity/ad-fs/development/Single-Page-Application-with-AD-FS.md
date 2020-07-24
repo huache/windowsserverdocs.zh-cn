@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 09b789937c9ff1dad90c3533616a4ed800204267
-ms.sourcegitcommit: 046123d4f2d24dc00b35ea99adee6f8d322c76bf
+ms.openlocfilehash: 1bd5d95739bc1c975f5f0c4d7efb8dc6f91e0412
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85416290"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954399"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL.JS 与 AD FS 2016 或更高版本结合使用生成单个页面 web 应用程序
 
@@ -38,7 +38,7 @@ ms.locfileid: "85416290"
 如果 ADAL 看到用于身份验证的触发器，它将使用应用程序提供的信息，并将身份验证定向到 AD FS STS。  在 AD FS 中注册为公用客户端的单页面应用程序将自动配置为隐式授权流。 授权请求导致 ID 令牌通过 #fragment 返回给应用程序。 对后端 WebAPI 的进一步调用将此 ID 令牌作为标头中的持有者令牌，以获取对 WebAPI 的访问权限。
 
 ## <a name="setting-up-the-development-box"></a>设置开发框
-本演练使用 Visual Studio 2015。 项目使用 ADAL JS 库。 若要了解 ADAL，请阅读[Active Directory 身份验证库 .net。](https://msdn.microsoft.com/library/azure/mt417579.aspx)
+本演练使用 Visual Studio 2015。 项目使用 ADAL JS 库。 若要了解 ADAL，请阅读[Active Directory 身份验证库 .net。](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
 
 ## <a name="setting-up-the-environment"></a>设置环境
 对于本演练，我们将使用的基本设置：
@@ -59,7 +59,7 @@ ms.locfileid: "85416290"
 ## <a name="clone-or-download-this-repository"></a>克隆或下载此存储库
 我们将使用创建的用于将 Azure AD 集成到 AngularJS 单页面应用的示例应用程序，并将其修改为通过使用 AD FS 来保护后端资源。
 
-在 shell 或命令行中：
+从 shell 或命令行：
 
     git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
 

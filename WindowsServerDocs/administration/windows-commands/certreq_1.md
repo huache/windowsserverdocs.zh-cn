@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22fc496eddc17f4e6a1a5f02321c921009f9fd95
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5d51cc178ee5b689071336b0dabd1e8d3565bcd2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924817"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955359"
 ---
 # <a name="certreq"></a>certreq
 
@@ -103,7 +103,7 @@ INF 文件的此区域对于任何新的证书请求模板都是必需的，并�
 
 | 键<sup>1</sup> | 说明 | 值<sup>2</sup> | 示例 |
 | --- | ---------- | ----- | ------- |
-| 使用者 | 几个应用依赖证书中的主题信息。 建议为此项指定一个值。 如果未在此处设置主题，建议你将使用者名称作为使用者备用名称证书扩展的一部分。 | 相对可分辨名称字符串值 | Subject = CN = computer1 Subject = John Smith，CN = Users，DC = Contoso，DC = com |
+| 主题 | 几个应用依赖证书中的主题信息。 建议为此项指定一个值。 如果未在此处设置主题，建议你将使用者名称作为使用者备用名称证书扩展的一部分。 | 相对可分辨名称字符串值 | Subject = CN = computer1 Subject = John Smith，CN = Users，DC = Contoso，DC = com |
 | Exportable | 如果设置为 TRUE，则可以连同证书一起导出私钥。 若要确保安全级别较高，私钥应是不可导出的;但是，在某些情况下，如果多台计算机或用户必须共享相同的私钥，则可能需要该参数。 | `true | false` | `Exportable = TRUE`. CNG 密钥可以区分此和纯文本导出。 CAPI1 密钥不能。 |
 | ExportableEncrypted | 指定私钥是否应设置为可导出。 | `true | false` | `ExportableEncrypted = true`<p>**提示：** 并非所有公共密钥大小和算法都适用于所有哈希算法。 指定的 CSP 还必须支持指定的哈希算法。 若要查看受支持的哈希算法的列表，可以运行以下命令：`certutil -oid 1 | findstr pwszCNGAlgid | findstr /v CryptOIDInfo` |
 | HashAlgorithm | 要用于此请求的哈希算法。 | `Sha256, sha384, sha512, sha1, md5, md4, md2` | `HashAlgorithm = sha1`. 若要查看支持的哈希算法的列表，请使用： certutil-oid 1 | findstr pwszCNGAlgid | findstr/v CryptOIDInfo|
@@ -124,7 +124,7 @@ INF 文件的此区域对于任何新的证书请求模板都是必需的，并�
 | RenewalCert | 如果需要续订在生成证书请求的系统上存在的证书，则必须将其证书哈希指定为此密钥的值。 | 在其中创建证书请求的计算机上可用的任何证书的证书哈希。 如果你不知道证书哈希，请使用 "证书" MMC 管理单元，并查看应续订的证书。 打开证书属性并查看证书的 `Thumbprint` 属性。 证书续订需要 `PKCS#7` 或 `CMC` 请求格式。 | `RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D` |
 | RequesterName | 发出请求以代表其他用户请求进行注册。该请求还必须使用注册代理证书进行签名，否则 CA 将拒绝该请求。 使用 `-cert` 选项来指定注册代理证书。 如果设置为或，则可以为证书请求指定请求者名称 `RequestType` `PKCS#7` `CMC` 。 如果 `RequestType` 设置为，则 `PKCS#10` 将忽略此键。 `Requestername`只能设置为请求的一部分。 不能 `Requestername` 在挂起的请求中操作。 | `Domain\User` | `Requestername = Contoso\BSmith` |
 | RequestType | 确定用于生成和发送证书请求的标准。 | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul>**提示：** 此选项表示自签名或自行颁发的证书。 它不会生成请求，而是生成新证书，然后安装证书。 自签名为默认值。 使用– cert 选项指定一个签名证书，以创建自签名证书（不是自签名证书）。 | `RequestType = CMC` |
-| SecurityDescriptor | 包含与安全对象关联的安全信息。 对于大多数安全对象，可以在创建对象的函数调用中指定对象的安全描述符。基于[安全描述符定义语言](https://msdn.microsoft.com/library/aa379567(v=vs.85).aspx)的字符串。<p>**提示：** 这仅适用于计算机上下文非智能卡密钥。 | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
+| SecurityDescriptor | 包含与安全对象关联的安全信息。 对于大多数安全对象，可以在创建对象的函数调用中指定对象的安全描述符。基于[安全描述符定义语言](/windows/win32/secauthz/security-descriptor-definition-language)的字符串。<p>**提示：** 这仅适用于计算机上下文非智能卡密钥。 | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
 | 内容： alternatesignaturealgorithm | 指定并检索一个布尔值，该值指示 PKCS # 10 请求或证书签名的签名算法对象标识符（OID）是离散的还是组合的。 | `true | false` | `AlternateSignatureAlgorithm = false`<p>对于 RSA 签名， `false` 指示 `Pkcs1 v1.5` ，而 `true` 指示 `v2.1` 签名。 |
 | 无提示 | 默认情况下，此选项允许 CSP 访问交互式用户桌面并向用户请求诸如智能卡 PIN 之类的信息。 如果将此项设置为 TRUE，则 CSP 不得与桌面交互，将阻止向用户显示任何用户界面。 | `true | false` | `Silent = true` |
 | SMIME | 如果将此参数设置为 TRUE，则会将具有对象标识符值 "1.2.840.113549.1.9.15" 的扩展添加到请求中。 对象标识符的数量取决于安装的操作系统版本和 CSP 功能，这是指安全多用途 Internet 邮件扩展（S/MIME）应用程序（如 Outlook）可以使用的对称加密算法。 | `true | false` | `SMIME = true` |
@@ -132,7 +132,7 @@ INF 文件的此区域对于任何新的证书请求模板都是必需的，并�
 | KeyProtection | 指定一个值，该值指示在使用之前私钥的保护方式。 | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | 指定一个布尔值，该值指示是否在请求中包含默认扩展和属性。 默认值由它们的对象标识符（Oid）表示。 | `true | false` | `SuppressDefaults = true` |
 | FriendlyName | 新证书的友好名称。 | Text | `FriendlyName = Server1` |
-| ValidityPeriodUnits | 指定要用于 ValidityPeriod 的单位数。 注意：仅当时才使用 `request type=cert` 。 | Numeric | `ValidityPeriodUnits = 3` |
+| ValidityPeriodUnits | 指定要用于 ValidityPeriod 的单位数。 注意：仅当时才使用 `request type=cert` 。 | 数值 | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod 必须是美国英语复数时间段。 注意：仅当请求类型 = cert 时才使用此类型。 | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup>等号（=）左侧的参数
@@ -248,7 +248,7 @@ certreq -policy certsrv.req policy.inf newcertsrv.req
 
 #### <a name="examples"></a>示例
 
-查找[Capolicy.inf 语法](https://docs.microsoft.com/windows-server/networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file)中的策略 .inf 文件的示例。
+查找[Capolicy.inf 语法](../../networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file.md)中的策略 .inf 文件的示例。
 
 ### <a name="certreq--sign"></a>certreq-sign
 
@@ -311,7 +311,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 | -crl | 将输出中的证书吊销列表（Crl）包括到由指定的 base64 编码的 PKCS #7 文件 `certchainfileout` 或由指定的 base64 编码文件中 `requestfileout` 。 |
 | -rpc | 指示 Active Directory 证书服务（AD CS）使用远程过程调用（RPC）服务器连接而不是分布式 COM。 |
 | -adminforcemachine | 使用密钥服务或模拟从本地系统上下文提交请求。 要求调用此选项的用户是本地管理员的成员。 |
-| -renewonbehalfof | 代表签名证书中标识的使用者提交续订。 这会在调用[ICertRequest：： Submit 方法](https://docs.microsoft.com/windows/win32/api/certcli/nf-certcli-icertrequest-submit)时设置 CR_IN_ROBO |
+| -renewonbehalfof | 代表签名证书中标识的使用者提交续订。 这会在调用[ICertRequest：： Submit 方法](/windows/win32/api/certcli/nf-certcli-icertrequest-submit)时设置 CR_IN_ROBO |
 | -f | 强制覆盖现有文件。 这也会绕过缓存模板和策略。 |
 | -q | 使用静默模式;禁止显示所有交互式提示。 |
 | -unicode | 将标准输出重定向到另一个命令（在从 Windows PowerShell 脚本中调用此命令时）时，写入 Unicode 输出。 |
@@ -335,9 +335,9 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 - [如何向安全的 LDAP 证书添加使用者可选名称](https://support.microsoft.com/help/931351/how-to-add-a-subject-alternative-name-to-a-secure-ldap-certificate)
 
-- [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831348(v=ws.11))
+- [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831348(v=ws.11))
 
-- [附录3： Certreq.exe 语法](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10))
+- [附录3： Certreq.exe 语法](/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10))
 
 - [如何手动创建 web 服务器 SSL 证书](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 

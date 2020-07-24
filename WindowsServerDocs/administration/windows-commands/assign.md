@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8bfcb43b2e42ca65d767f0683bf13dc971073c27
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 41c6194b68414be65fcf6b93b662e25ae80e0309
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923993"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955499"
 ---
 # <a name="assign"></a>assign
 
@@ -38,7 +38,7 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 | 参数 | 说明 |
 | --------- | ----------- |
 | `letter=<d>` | 要分配给卷的驱动器号。 |
-| `mount=<path>` | 要分配给卷的装入点路径。 有关如何使用此命令的说明，请参阅[向驱动器分配装入点文件夹路径](https://docs.microsoft.com/windows-server/storage/disk-management/assign-a-mount-point-folder-path-to-a-drive)。 |
+| `mount=<path>` | 要分配给卷的装入点路径。 有关如何使用此命令的说明，请参阅[向驱动器分配装入点文件夹路径](../../storage/disk-management/assign-a-mount-point-folder-path-to-a-drive.md)。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
 ## <a name="examples"></a>示例

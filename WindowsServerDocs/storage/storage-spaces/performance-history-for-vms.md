@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 418ab095f5f0af35f3aa176614ad73f48d727a35
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6077e72ba36c0ef2d0d34da4768aaf9fa5137fbe
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474684"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955219"
 ---
 # <a name="performance-history-for-virtual-machines"></a>虚拟机的性能历史记录
 
@@ -65,7 +65,7 @@ ms.locfileid: "85474684"
 
 ## <a name="usage-in-powershell"></a>PowerShell 中的用法
 
-使用[GET VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm) cmdlet：
+使用[GET VM](/powershell/module/hyper-v/get-vm) cmdlet：
 
 ```PowerShell
 Get-VM <Name> | Get-ClusterPerf

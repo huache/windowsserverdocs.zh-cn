@@ -10,12 +10,12 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: 存储空间直通中的复原选项（包括镜像和奇偶校验）的讨论。
 ms.localizationpriority: medium
-ms.openlocfilehash: 540398e78b35d7cd61464e012d0f3ccfa85d7152
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 517b5484bc02e377f40df84422a1910014c9b830
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475484"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955389"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>存储空间直通中的容错和存储效率
 
@@ -33,7 +33,7 @@ ms.locfileid: "85475484"
 
 ## <a name="mirroring"></a>镜像
 
-镜像功能通过保存所有数据的多个副本来提供容错。 这最像 RAID-1。 如何对数据进行条带化和放置是一项非常重要的操作（请参阅[此博客](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)了解详细信息），但最好是说，使用镜像存储的任何数据都将被完整地多次写入。 每个副本将写入不同的物理硬件（位于不同服务器中的不同驱动器），假设每个硬盘各自都有可能发生故障。
+镜像功能通过保存所有数据的多个副本来提供容错。 这最像 RAID-1。 如何对数据进行条带化和放置是一项非常重要的操作（请参阅[此博客](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)了解详细信息），但最好是说，使用镜像存储的任何数据都将被完整地多次写入。 每个副本将写入不同的物理硬件（位于不同服务器中的不同驱动器），假设每个硬盘各自都有可能发生故障。
 
 在 Windows Server 2016 中，存储空间提供两类镜像：“双向”和“三向”。
 
@@ -89,11 +89,11 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 ![本地重建代码](media/Storage-Spaces-Fault-Tolerance/local-reconstruction-codes-180px.png)
 
-我们建议这一深入[了解本地重建代码如何处理各种故障方案，以及](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)我们的[Claus Joergensen](https://twitter.com/clausjor)，这是我们的 eminently。
+我们建议这一深入[了解本地重建代码如何处理各种故障方案，以及](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)我们的[Claus Joergensen](https://twitter.com/clausjor)，这是我们的 eminently。
 
 ## <a name="mirror-accelerated-parity"></a>镜像加速奇偶校验
 
-从 Windows Server 2016 开始，一个存储空间直通卷可以一部分是镜像，另一部分是奇偶校验。 写入首先在镜像部分中进行，稍后逐渐移到奇偶校验部分。 实际上，这是[使用镜像加速擦除编码](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)。
+从 Windows Server 2016 开始，一个存储空间直通卷可以一部分是镜像，另一部分是奇偶校验。 写入首先在镜像部分中进行，稍后逐渐移到奇偶校验部分。 实际上，这是[使用镜像加速擦除编码](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 若要混合三向镜像和双奇偶校验，需要至少四个容错域，这意味着四台服务器。
 
@@ -108,7 +108,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 ### <a name="resiliency-types"></a>复原类型
 
-|    复原          |    失败容差       |    存储效率      |
+|    复原能力          |    失败容差       |    存储效率      |
 |------------------------|----------------------------|----------------------------|
 |    “双向镜像”      |    1                       |    50.0%                   |
 |    “三向镜像”    |    2                       |    33.3%                   |
@@ -117,7 +117,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 ### <a name="minimum-scale-requirements"></a>最小范围要求
 
-|    复原          |    所需的最小故障域数   |
+|    复原能力          |    所需的最小故障域数   |
 |------------------------|-------------------------------------|
 |    “双向镜像”      |    2                                |
 |    “三向镜像”    |    3                                |
@@ -131,7 +131,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 此表显示包含硬盘驱动器 (HDD) 和固态硬盘 (SSD) 的混合部署在每个范围的双奇偶校验和本地重建代码的存储效率。
 
-|    容错域      |    布局           |    效率   |
+|    容错域      |    Layout           |    效率   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -153,7 +153,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 此表显示仅包含固态硬盘 (SSD) 的全闪存部署在每个范围的双奇偶校验和本地重建代码的存储效率。 奇偶校验布局在全闪存配置中可使用较大的大小，并实现更好的存储效率。
 
-|    容错域      |    布局           |    效率   |
+|    容错域      |    Layout           |    效率   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -205,7 +205,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 ![容错示例 7 和 8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>使用情况
+## <a name="usage"></a>用法
 
 查看[在存储空间直通中创建卷](create-volumes.md)。
 
@@ -216,7 +216,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 - [Windows Server 2016 中的存储空间直通](storage-spaces-direct-overview.md)
 - [Windows Server 2016 中的容错域感知](../../failover-clustering/fault-domains.md)
 - [Microsoft Research 开发的 Azure 擦除编码](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
-- [本地重建代码和加快奇偶校验卷](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [存储管理 API 中的卷](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [本地重建代码和加快奇偶校验卷](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
+- [存储管理 API 中的卷](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
 - [Microsoft Ignite 2016 上的存储效率展示](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
 - [存储空间直通的容量计算器预览](https://aka.ms/s2dcalc)

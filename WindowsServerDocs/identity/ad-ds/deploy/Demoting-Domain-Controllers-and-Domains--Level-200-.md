@@ -8,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b8c5502f50b065e8c75d0167328868ac129dfad1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7fc5b8b2f29c0eee2f11f2b581e6ccdd56635236
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825426"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954289"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>降级域控制器和域
 
@@ -47,11 +47,11 @@ ms.locfileid: "80825426"
 
 服务器管理器提供两个接口以删除 Active Directory 域服务角色：  
   
-* 主仪表板上的“管理” 菜单，使用“删除角色和功能”  
+* 主仪表板上的“管理”**** 菜单，使用“删除角色和功能”****  
 
    ![服务器管理器-删除角色和功能](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Manage.png)  
 
-* 单击导航窗格上的“AD DS”或“所有服务器”。 向下滚动到“角色和功能”部分。 右键单击“角色和功能”列表中的“Active Directory 域服务”并单击“删除角色或功能”。 此接口跳过“服务器选择”页面。  
+* 单击导航窗格上的“AD DS”**** 或“所有服务器”****。 向下滚动到“角色和功能”**** 部分。 右键单击“角色和功能”**** 列表中的“Active Directory 域服务”**** 并单击“删除角色或功能”****。 此接口跳过“服务器选择”**** 页面。  
 
    ![服务器管理器-所有服务器-删除角色和功能](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection.png)  
 
@@ -61,13 +61,13 @@ ServerManager cmdlet **Uninstall 和 Uninstall**会阻止你删除 AD DS**角色
 
 ![删除角色和功能向导选择目标服务器](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection2.png)  
 
-“服务器选择”对话框使你可以从之前添加到池的服务器中选择一个（只要它可访问）。 运行服务器管理器的本地服务器始终自动可用。  
+“服务器选择”**** 对话框使你可以从之前添加到池的服务器中选择一个（只要它可访问）。 运行服务器管理器的本地服务器始终自动可用。  
 
 ### <a name="server-roles-and-features"></a>服务器角色和功能
 
 ![删除角色和功能向导-选择要删除的角色](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerRoles.png)  
 
-如果服务器当前是域控制器，清除“Active Directory 域服务”复选框以降级域控制器，此操作不删除 AD DS 角色，而是切换到提供降级功能的“验证结果”对话框。 否则，它会像任何其他角色功能一样删除二进制文件。  
+如果服务器当前是域控制器，清除“Active Directory 域服务”**** 复选框以降级域控制器，此操作不删除 AD DS 角色，而是切换到提供降级功能的“验证结果”**** 对话框。 否则，它会像任何其他角色功能一样删除二进制文件。  
 
 * 如果你希望立即再次升级域控制器，不要删除任何其他 AD DS 相关的角色或功能（例如 DNS、GPMC 或 RSAT 工具）。 删除其他角色和功能将增加重新升级的时间，因为当你重新安装角色时，服务器管理器会重新安装这些功能。  
 * 如果你希望永久降级域控制器，根据你自己的判断删除不需要的 AD DS 角色和功能。 这需要清除这些角色和功能对应的复选框。  
@@ -78,7 +78,7 @@ ServerManager cmdlet **Uninstall 和 Uninstall**会阻止你删除 AD DS**角色
    * AD DS 和 AD LDS 工具功能  
    * Active Directory 管理中心功能  
    * AD DS 管理单元和命令行工具功能  
-   * DNS Server  
+   * DNS 服务器  
    * 组策略管理控制台  
   
 等效的 ADDSDeployment 和 ServerManager Windows PowerShell cmdlet 如下：  
@@ -96,7 +96,7 @@ Uninstall-windowsfeature
 
 ![Active Directory 域服务配置向导-凭据选择](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Credentials.png)  
 
-你可在“凭据” 页上配置降级选项。 从以下列表提供执行降级所需的凭据：  
+你可在“凭据”**** 页上配置降级选项。 从以下列表提供执行降级所需的凭据：  
 
 * 降级其他域控制器需要 Domain Admin 凭据。 选择 **"强制删除此域控制器**" 将降级域控制器，且不会从 Active Directory 删除域控制器对象的元数据。  
 
@@ -107,7 +107,7 @@ Uninstall-windowsfeature
 
    ![Active Directory 域服务配置向导-凭据强制删除](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ForceDemote.png)  
   
-* 降级域中的最后一个域控制器需要 Enterprise Admins 组的成员身份，因为这将删除域本身（如果是林中的最后一个域，这将删除林）。 服务器管理器将通知当前域控制器是否是域中的最后一个域控制器。 选中“域中最后一个域控制器”复选框以确认该域控制器是域中最后一个域控制器。  
+* 降级域中的最后一个域控制器需要 Enterprise Admins 组的成员身份，因为这将删除域本身（如果是林中的最后一个域，这将删除林）。 服务器管理器将通知当前域控制器是否是域中的最后一个域控制器。 选中“域中最后一个域控制器”**** 复选框以确认该域控制器是域中最后一个域控制器。  
 
 等效 ADDSDeployment Windows PowerShell 参数是：  
 
@@ -121,10 +121,10 @@ Uninstall-windowsfeature
 
 ![Active Directory 域服务配置向导-凭据 FSMO 角色影响](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Warnings.png)  
 
-“警告” 页面向你警示删除此域控制器可能出现的后果。 若要继续，则必须选中“继续删除”。
+“警告”**** 页面向你警示删除此域控制器可能出现的后果。 若要继续，则必须选中“继续删除”****。
 
 > [!WARNING]  
-> 如果你之前选中了“凭据” 页面上的“强制删除此域控制器” ，那么 **警告** 页面将显示此域控制器托管的所有灵活单主机操作角色。 你 *必须* 在降级此服务器后 *立即* 从另一个域控制器占用这些角色。 有关占用 FSMO 角色的详细信息，请参阅 [占用操作主机角色](https://technet.microsoft.com/library/cc816779(WS.10).aspx)。
+> 如果你之前选中了“凭据”**** 页面上的“强制删除此域控制器”****，那么**警告**页面将显示此域控制器托管的所有灵活单主机操作角色。 你*必须*在降级此服务器后*立即*从另一个域控制器占用这些角色。 有关占用 FSMO 角色的详细信息，请参阅 [占用操作主机角色](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816779(v=ws.10))。
 
 此页面没有等效的 ADDSDeployment Windows PowerShell 参数。
 
@@ -132,11 +132,11 @@ Uninstall-windowsfeature
 
 ![Active Directory 域服务配置向导-凭据删除 DNS 和应用程序分区](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ReviewOptions.png)  
 
-根据之前选择“凭据”页面上的“域中的最后一个域控制器”，将出现“删除选项”页。 此页面使你可以配置其他删除选项。 选择 "**忽略区域的最后一个 DNS 服务器**"、"**删除应用程序分区**" 和 "**删除 DNS 委派**" 以启用 "**下一步**" 按钮。
+根据之前选择“凭据”**** 页面上的“域中的最后一个域控制器”****，将出现“删除选项”**** 页。 此页面使你可以配置其他删除选项。 选择 "**忽略区域的最后一个 DNS 服务器**"、"**删除应用程序分区**" 和 "**删除 DNS 委派**" 以启用 "**下一步**" 按钮。
 
 该选项仅在适用于此域控制器时出现。 例如，如果此服务器没有 DNS 委派，则该复选框将不会显示。
 
-单击“更改”指定备用 DNS 管理凭据。 单击“查看分区”以查看向导在降级期间删除的其他分区。 默认情况下，仅有的其他分区是域 DNS 和林 DNS 区域。 所有其他分区都是非 Windows 分区。
+单击“更改”**** 指定备用 DNS 管理凭据。 单击“查看分区”**** 以查看向导在降级期间删除的其他分区。 默认情况下，仅有的其他分区是域 DNS 和林 DNS 区域。 所有其他分区都是非 Windows 分区。
 
 等效的 ADDSDeployment cmdlet 参数是：  
 
@@ -157,8 +157,8 @@ Uninstall-windowsfeature
 
 **LocalAdministratorPassword** 参数是特殊参数：
 
-* 如果 *未指定* 为参数，则 cmdlet 将提示你输入并确认掩蔽的密码。 以交互方式运行 cmdlet 时，这是首选用法。
-* 如果 *已使用值*指定，那么该值必须是一个安全字符串。 以交互方式运行 cmdlet 时，这不是首选用法。
+* 如果*未指定*为参数，则 cmdlet 将提示你输入并确认掩蔽的密码。 以交互方式运行 cmdlet 时，这是首选用法。
+* 如果*已使用值*指定，那么该值必须是一个安全字符串。 以交互方式运行 cmdlet 时，这不是首选用法。
 
 例如，你可以通过使用**读取主机**cmdlet 来提示用户输入安全字符串来手动提示输入密码。
 
@@ -182,9 +182,9 @@ Uninstall-windowsfeature
 
 ![Active Directory 域服务配置向导-查看选项](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Confirmation.png)
 
-“确认” 页面将显示计划的降级；该页面不会列出降级配置选项。 这是向导在降级开始前显示的最后一个页面。 “查看脚本”按钮将创建一个 Windows PowerShell 降级脚本。
+“确认”**** 页面将显示计划的降级；该页面不会列出降级配置选项。 这是向导在降级开始前显示的最后一个页面。 “查看脚本”按钮将创建一个 Windows PowerShell 降级脚本。
 
-单击“降级”以运行以下 AD DS 部署 cmdlet：
+单击“降级”**** 以运行以下 AD DS 部署 cmdlet：
 
 ```
 Uninstall-ADDSDomainController
@@ -202,7 +202,7 @@ Uninstall-ADDSDomainController
 
 ![Active Directory 域服务配置向导-正在降级](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Demotion.png)  
 
-当“降级”页面显示时，域控制器配置将开始，且无法暂停或取消。 详细的操作在此页面上显示并将写入日志：  
+当“降级”**** 页面显示时，域控制器配置将开始，且无法暂停或取消。 详细的操作在此页面上显示并将写入日志：  
 
 * %systemroot%\debug\dcpromo.log
 * %systemroot%\debug\dcpromoui.log
@@ -220,11 +220,11 @@ Uninstall-ADDSDomainController
 
 ![PowerShell 卸载-Install-addsdomaincontroller Force 示例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallFinished.png)
 
-以下是在所需的 **-forceremoval** 和 **-demoteoperationmasterrole**参数最少的情况下强制降级的示例。 无需 **-credential** 参数，因为用户以 Enterprise Admins 组成员身份登录：
+以下是在所需的 **-forceremoval** 和 **-demoteoperationmasterrole** 参数最少的情况下强制降级的示例。 无需 **-credential** 参数，因为用户以 Enterprise Admins 组成员身份登录：
 
 ![PowerShell 卸载-Install-addsdomaincontroller 示例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallExampleForce.png)
 
-以下是删除域中最后一个域控制器的示例，并带有最少的所需参数“-lastdomaincontrollerindomain” 和“-removeapplicationpartitions”。
+以下是删除域中最后一个域控制器的示例，并带有最少的所需参数“-lastdomaincontrollerindomain”**** 和“-removeapplicationpartitions”****。
 
 ![PowerShell Install-addsdomaincontroller-LastDomainControllerInDomain 示例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallExampleLastDC.png)
 
@@ -239,4 +239,4 @@ Uninstall-ADDSDomainController
 
 ![删除 AD DS 后，你将被注销警告](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_DemoteSignoff.png)
 
-“结果” 页面显示升级是成功还是失败以及任何重要的管理信息。 域控制器将在 10 秒后自动重新启动。
+“结果”**** 页面显示升级是成功还是失败以及任何重要的管理信息。 域控制器将在 10 秒后自动重新启动。

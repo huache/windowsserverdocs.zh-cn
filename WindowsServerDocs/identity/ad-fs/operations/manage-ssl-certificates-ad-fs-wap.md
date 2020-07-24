@@ -9,12 +9,12 @@ ms.date: 10/02/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b832756e123bee0223738ee804ac3a4db2371e84
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a982df8ce7d1f335a1c2242f277b1983573c9ee1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855290"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954200"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>在 Windows Server 2016 中管理 AD FS 和 WAP 中的 SSL 证书
 
@@ -23,18 +23,18 @@ ms.locfileid: "80855290"
 本文介绍如何将新的 SSL 证书部署到 AD FS 和 WAP 服务器。
 
 >[!NOTE]
->替换 AD FS 场的 SSL 证书的建议方法是使用 Azure AD Connect。  有关详细信息，请参阅[更新 Active Directory 联合身份验证服务（AD FS）场的 SSL 证书](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectfed-ssl-update)
+>替换 AD FS 场的 SSL 证书的建议方法是使用 Azure AD Connect。  有关详细信息，请参阅[更新 Active Directory 联合身份验证服务（AD FS）场的 SSL 证书](/azure/active-directory/connect/active-directory-aadconnectfed-ssl-update)
 
 ## <a name="obtaining-your-ssl-certificates"></a>获取 SSL 证书
 对于生产 AD FS 场，建议使用公开信任的 SSL 证书。 通常通过向第三方公用证书提供程序提交证书签名请求（CSR）来获取。 有多种方法可以生成 CSR，包括从 Windows 7 或更高版本的电脑。 你的供应商应具有此相关文档。
 
-- 请确保证书符合[AD FS 和 Web 应用程序代理 SSL 证书要求](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)
+- 请确保证书符合[AD FS 和 Web 应用程序代理 SSL 证书要求](../overview/ad-fs-requirements.md#BKMK_1)
 
 ### <a name="how-many-certificates-are-needed"></a>需要多少个证书
-建议你在所有 AD FS 和 Web 应用程序代理服务器上使用公用 SSL 证书。 有关详细要求，请参阅文档[AD FS 和 Web 应用程序代理 SSL 证书要求](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)
+建议你在所有 AD FS 和 Web 应用程序代理服务器上使用公用 SSL 证书。 有关详细要求，请参阅文档[AD FS 和 Web 应用程序代理 SSL 证书要求](../overview/ad-fs-requirements.md#BKMK_1)
 
 ### <a name="ssl-certificate-requirements"></a>SSL 证书要求
-对于包括命名、信任根和扩展的要求，请参阅文档[AD FS 和 Web 应用程序代理 SSL 证书要求](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)
+对于包括命名、信任根和扩展的要求，请参阅文档[AD FS 和 Web 应用程序代理 SSL 证书要求](../overview/ad-fs-requirements.md#BKMK_1)
 
 ## <a name="replacing-the-ssl-certificate-for-ad-fs"></a>替换 AD FS 的 SSL 证书
 > [!NOTE]
@@ -50,7 +50,7 @@ ms.locfileid: "80855290"
 
 1. 首先，需要获取新证书。 通常通过将证书签名请求（CSR）提交给第三方公用证书提供程序来完成此操作。 有多种方法可以生成 CSR，包括从 Windows 7 或更高版本的电脑。 你的供应商应具有此相关文档。
 
-    * 请确保证书符合[AD FS 和 Web 应用程序代理 SSL 证书要求](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)
+    * 请确保证书符合[AD FS 和 Web 应用程序代理 SSL 证书要求](../overview/ad-fs-requirements.md#BKMK_1)
 
 1. 获取证书提供程序的响应后，将其导入到每个 AD FS 和 Web 应用程序代理服务器上的本地计算机存储中。
 
@@ -66,7 +66,7 @@ Set-AdfsSslCertificate -Thumbprint '<thumbprint of new cert>'
 dir Cert:\LocalMachine\My\
 ```
 
-#### <a name="additional-notes"></a>附加说明
+#### <a name="additional-notes"></a>其他说明
 
 * Set-adfssslcertificate cmdlet 是多节点 cmdlet;这意味着只需要从主节点运行，并且将更新场中的所有节点。 这是服务器2016中的新增项。 在服务器 2012 R2 上，必须在每个服务器上运行 Set-adfssslcertificate。
 * Set-adfssslcertificate cmdlet 只能在主服务器上运行。 主服务器必须运行服务器2016，并且场行为级别应提升为2016。
@@ -81,7 +81,7 @@ dir Cert:\LocalMachine\My\
 
 1. 首先，需要获取新证书。 通常通过将证书签名请求（CSR）提交给第三方公用证书提供程序来完成此操作。 有多种方法可以生成 CSR，包括从 Windows 7 或更高版本的电脑。 你的供应商应具有此相关文档。
 
-    * 请确保证书符合[AD FS 和 Web 应用程序代理 SSL 证书要求](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)
+    * 请确保证书符合[AD FS 和 Web 应用程序代理 SSL 证书要求](../overview/ad-fs-requirements.md#BKMK_1)
 
 1. 获取证书提供程序的响应后，将其导入到每个 AD FS 和 Web 应用程序代理服务器上的本地计算机存储中。
 
@@ -97,7 +97,7 @@ Set-AdfsAlternateTlsClientBinding -Thumbprint '<thumbprint of new cert>'
 dir Cert:\LocalMachine\My\
 ```
 
-#### <a name="additional-notes"></a>附加说明
+#### <a name="additional-notes"></a>其他说明
 
 * AdfsAlternateTlsClientBinding cmdlet 是多节点 cmdlet;这意味着只需要从主节点运行，并且将更新场中的所有节点。
 * AdfsAlternateTlsClientBinding cmdlet 只能在主服务器上运行。 主服务器必须运行服务器2016，并且场行为级别应提升为2016。

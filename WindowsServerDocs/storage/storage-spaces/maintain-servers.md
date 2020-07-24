@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: a317f358c37f607475890efe773b57ee8efaeb14
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8dba155f8b8d7312a823dedc72d23268d7d13fbf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473474"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955909"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>使存储空间直通服务器脱机以进行维护
 
@@ -27,7 +27,7 @@ ms.locfileid: "85473474"
 使其脱机之前，使用以下步骤正确暂停存储空间直通群集中的服务器。
 
    > [!IMPORTANT]
-   > 要在存储空间直通群集上安装更新，请使用群集感知更新 (CAU)，它将自动执行本主题中的步骤，使你无需在安装更新时执行。 有关详细信息，请参阅[群集感知更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)。
+   > 要在存储空间直通群集上安装更新，请使用群集感知更新 (CAU)，它将自动执行本主题中的步骤，使你无需在安装更新时执行。 有关详细信息，请参阅[群集感知更新 (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11))。
 
 ## <a name="verifying-its-safe-to-take-the-server-offline"></a>验证使服务器脱机是否安全
 
@@ -186,4 +186,4 @@ MyVolume3    Mirror                OK                Healthy      True          
 ## <a name="additional-references"></a>其他参考
 
 - [存储空间直通概述](storage-spaces-direct-overview.md)
-- [群集感知更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)
+- [群集感知更新 (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11))

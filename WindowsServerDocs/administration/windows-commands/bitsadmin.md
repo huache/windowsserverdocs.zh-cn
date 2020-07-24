@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9fd70e4e74dc25c32ff3a74be2fc1c66d697367
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 51a64b059dd9d07dd6bd0ecccb1cd99382bdfaa5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926372"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955369"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
@@ -26,7 +26,7 @@ Bitsadmin 是一个命令行工具，用于创建、下载或上载作业，以�
 
 默认情况下，你可以访问你自己的作业的信息。 若要访问其他用户的作业信息，你必须拥有管理员权限。 如果作业是在提升的状态下创建的，则必须从提升的窗口中运行**bitsadmin** ;否则，你将拥有该作业的只读访问权限。
 
-许多开关对应于[BITS 接口](https://docs.microsoft.com/windows/win32/bits/bits-interfaces)中的方法。 有关可能与使用开关相关的其他详细信息，请参阅相应的方法。
+许多开关对应于[BITS 接口](/windows/win32/bits/bits-interfaces)中的方法。 有关可能与使用开关相关的其他详细信息，请参阅相应的方法。
 
 使用以下开关创建作业、设置和检索作业的属性，以及监视作业的状态。 有关演示如何使用其中一些开关执行任务的示例，请参阅[bitsadmin 示例](bitsadmin-examples.md)。
 

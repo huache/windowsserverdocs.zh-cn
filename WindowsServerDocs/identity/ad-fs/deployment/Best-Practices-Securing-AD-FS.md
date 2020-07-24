@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8206ddc43eab7a220a9f0f988c294c627bc8c977
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e49939615b02058e543974e3799b5c51b323353c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853020"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953991"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>保护 Active Directory 联合身份验证服务的最佳实践
 
@@ -41,12 +41,12 @@ ms.locfileid: "80853020"
 > 端口808（Windows Server 2012R2）或端口1501（Windows Server 2016 +）是 Net.tcp 端口 AD FS 用于本地 WCF 终结点，以将配置数据传输到服务进程和 Powershell。 可以通过运行 Set-adfsproperties | 来查看此端口选择 NetTcpPort。 这是一个本地端口，无需在防火墙中打开，但会在端口扫描中显示。 
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect 和联合服务器/WAP
-下表描述了 Azure AD Connect 服务器和联合/WAP 服务器之间通信所需的端口和协议。  
+此表描述了 Azure AD Connect 服务器与 联合服务器/WAP 服务器之间通信所需的端口和协议。  
 
 协议 |端口 |说明
 --------- | --------- |---------
-HTTP|80（TCP/UDP）|用于下载 Crl （证书吊销列表）以验证 SSL 证书。
-HTTPS|443（TCP/UDP）|用于与 Azure AD 同步。
+HTTP|80 (TCP/UDP)|用于下载 CRL（证书吊销列表）以验证 SSL 证书。
+HTTPS|443 (TCP/UDP)|用来与 Azure AD 同步。
 WinRM|5985| WinRM 侦听器
 
 ### <a name="wap-and-federation-servers"></a>WAP 和联合服务器
@@ -54,17 +54,17 @@ WinRM|5985| WinRM 侦听器
 
 协议 |端口 |说明
 --------- | --------- |---------
-HTTPS|443（TCP/UDP）|用于身份验证。
+HTTPS|443 (TCP/UDP)|用于身份验证。
 
 ### <a name="wap-and-users"></a>WAP 和用户
-下表描述了用户与 WAP 服务器之间通信所需的端口和协议。
+此表描述了用户与 WAP 服务器之间通信所需的端口和协议。
 
 协议 |端口 |说明
 --------- | --------- |--------- |
-HTTPS|443（TCP/UDP）|用于设备身份验证。
-TCP|49443（TCP）|用于证书身份验证。
+HTTPS|443 (TCP/UDP)|用于设备身份验证。
+TCP|49443 (TCP)|用于证书身份验证。
 
-有关混合部署所需的端口和协议的其他信息，请参阅[此处](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-ports)的文档。
+有关混合部署所需的端口和协议的其他信息，请参阅[此处](/azure/active-directory/hybrid/reference-connect-ports)的文档。
 
 有关 Azure AD 和 Office 365 部署所需的端口和协议的详细信息，请参阅[此处](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)的文档。
 
@@ -76,7 +76,7 @@ TCP|49443（TCP）|用于证书身份验证。
 仅对 Azure AD 和 Office 365 方案部署 AD FS 和 WAP 的组织可以进一步限制在代理上启用的 AD FS 终结点数，以实现更小的攻击面。
 下面是在这些情况下，必须在代理上启用的终结点列表：
 
-|终结点|用途
+|端点|目的
 |-----|-----
 |/adfs/ls|基于浏览器的身份验证流和当前版本的 Microsoft Office 将此终结点用于 Azure AD 和 Office 365 身份验证
 |/adfs/services/trust/2005/usernamemixed|用于与 Office 2013 以前版本的 Office 客户端进行的 Exchange Online 2015 更新。  更高版本的客户端使用被动 \adfs\ls 终结点。
@@ -111,10 +111,10 @@ TCP|49443（TCP）|用于证书身份验证。
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>若要验证设置，可以执行以下操作：
 1.    在 Web 应用程序代理计算机上，启动一个提升的命令窗口。
 2.    导航到 ADFS 目录，网址为%WINDIR%\adfs\config。
-3.    将拥塞控制设置从其默认值更改为 "<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />"。
+3.    将拥塞控制设置从其默认值更改为 " <congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" /> "。
 4.    保存并关闭该文件。
 5.    通过运行 "net stop adfssrv" 和 "net start adfssrv" 来重新启动 AD FS 服务。
-有关参考，可在[此处](https://msdn.microsoft.com/library/azure/dn528859.aspx )找到有关此功能的指南。
+有关参考，可在[此处](/previous-versions/azure/azure-services/dn528859(v=azure.100))找到有关此功能的指南。
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>在代理中检查标准 HTTP 请求
 代理还对所有流量执行以下标准检查：
@@ -128,7 +128,7 @@ TCP|49443（TCP）|用于证书身份验证。
 
 Azure AD 客户监视和保持当前基础结构的推荐方式是通过 Azure AD Connect Health AD FS Azure AD Premium 的一项功能。  Azure AD Connect Health 包括 AD FS 或 WAP 计算机是否缺少专门用于 AD FS 和 WAP 的重要更新之一时触发的监视器和警报。
 
-有关为 AD FS 安装 Azure AD Connect Health 的信息，请参阅[此处](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health-agent-install/)。
+有关为 AD FS 安装 Azure AD Connect Health 的信息，请参阅[此处](/azure/active-directory/hybrid/how-to-connect-health-agent-install)。
 
 ## <a name="additional-security-configurations"></a>其他安全配置
 可以根据需要配置以下附加功能，为默认部署中提供的这些功能提供额外的保护。
@@ -140,11 +140,11 @@ Azure AD 客户监视和保持当前基础结构的推荐方式是通过 Azure A
 
     PS:\>Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow ( new-timespan -Minutes 30 )
 
-[此处](https://technet.microsoft.com/library/dn486806.aspx )提供了此功能的公开文档以供参考。 
+[此处](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486806(v=ws.11))提供了此功能的公开文档以供参考。 
 
 ### <a name="disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet"></a>在代理上禁用 WS-TRUST Windows 终结点，即从 extranet
 
-WS-TRUST Windows 终结点（ */adfs/services/trust/2005/windowstransport*和 */adfs/services/trust/13/windowstransport*）仅适用于使用 HTTPS 上的 WIA 绑定的面向 intranet 的终结点。 向 extranet 公开它们可能会允许对这些终结点的请求绕过锁定保护。 应在代理上禁用这些终结点（即从 extranet 禁用），以使用以下 PowerShell 命令保护 AD 帐户锁定。 在代理上禁用这些终结点不会影响已知的最终用户。
+WS-TRUST Windows 终结点（*/adfs/services/trust/2005/windowstransport*和 */adfs/services/trust/13/windowstransport*）仅适用于使用 HTTPS 上的 WIA 绑定的面向 intranet 的终结点。 向 extranet 公开它们可能会允许对这些终结点的请求绕过锁定保护。 应在代理上禁用这些终结点（即从 extranet 禁用），以使用以下 PowerShell 命令保护 AD 帐户锁定。 在代理上禁用这些终结点不会影响已知的最终用户。
 
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/2005/windowstransport -Proxy $false
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/windowstransport -Proxy $false
@@ -155,7 +155,7 @@ AD FS 能够区分源自本地企业网络的请求的访问策略，以及通�
 ### <a name="require-multi-factor-authentication-mfa"></a>需要多重身份验证（MFA）
 AD FS 可以配置为要求强身份验证（例如多重身份验证），专用于通过代理传入的请求、单个应用程序以及对 Azure AD/Office 365 和本地资源的条件访问。  MFA 支持的方法包括 Microsoft Azure MFA 和第三方提供程序。  系统将提示用户提供附加信息（例如包含一段时间代码的短信文本），AD FS 与提供程序的特定插件结合使用以允许访问。  
 
-支持的外部 MFA 提供程序包括[此](https://technet.microsoft.com/library/dn758113.aspx)页中列出的那些提供程序以及 HDI Global。
+支持的外部 MFA 提供程序包括[此](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn758113(v=ws.11))页中列出的那些提供程序以及 HDI Global。
 
 ### <a name="hardware-security-module-hsm"></a>硬件安全模块 (HSM)
 在默认配置中，AD FS 用来对令牌进行签名的密钥永远不会将联合服务器保留在 intranet 上。  它们永远不会出现在 DMZ 或代理计算机上。  可以选择提供其他保护，可以在附加到 AD FS 的硬件安全模块中保护这些密钥。  Microsoft 不会生成 HSM 产品，但是有几个在市场上支持 AD FS。  若要实现此建议，请按照供应商指南创建用于签名和加密的 X509 证书，然后使用 AD FS 安装 powershell commandlet，指定自定义证书，如下所示：
@@ -165,9 +165,6 @@ AD FS 可以配置为要求强身份验证（例如多重身份验证），专�
 其中：
 
 
-- `CertificateThumbprint` 是你的 SSL 证书
-- `SigningCertificateThumbprint` 是你的签名证书（带有 HSM 保护的密钥）
-- `DecryptionCertificateThumbprint` 是加密证书（带有 HSM 保护的密钥）
-
-
-
+- `CertificateThumbprint`是你的 SSL 证书
+- `SigningCertificateThumbprint`签名证书（带有 HSM 保护的密钥）
+- `DecryptionCertificateThumbprint`是加密证书（带有 HSM 保护的密钥）

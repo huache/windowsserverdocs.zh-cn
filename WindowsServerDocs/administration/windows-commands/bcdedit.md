@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: 2e49ed45875b79dfc4d8bbbdad8a1221000bf2b5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 59d6a4eafe2eb3383cfeed9e1cbcb9d3e10fe376
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923515"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955809"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -27,7 +27,7 @@ BCDEdit 是用于管理 BCD 存储的命令行工具。 它可用于多种用途
 - 提高了脚本支持。
 
 > [!NOTE]
-> 使用 BCDEdit 修改 BCD 需要管理权限。
+> 需要管理权限才能使用 BCDEdit 来修改 BCD。
 
 BCDEdit 是编辑 Windows Vista 和更新版本的 Windows 的启动配置的主要工具。 该工具与 Windows Vista 分发一起包含在 %WINDIR%\System32 文件夹中。
 
@@ -106,7 +106,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 ## <a name="additional-references"></a>其他参考
 
-有关如何使用 BCDEdit 的示例，请参阅[Bcdedit Options 参考](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference)文章。
+有关如何使用 BCDEdit 的示例，请参阅[Bcdedit Options 参考](/windows-hardware/drivers/devtest/bcd-boot-options-reference)文章。
 
 ## <a name="additional-references"></a>其他参考
 

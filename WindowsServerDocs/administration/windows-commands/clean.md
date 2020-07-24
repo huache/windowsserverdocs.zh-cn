@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a30e1f765959ed60efa662301f95defc21d6587
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 39029c82dffe004d65b1279e5baafc14fbcc8257
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929909"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955669"
 ---
 # <a name="clean"></a>clean
 
@@ -23,7 +23,7 @@ ms.locfileid: "85929909"
 从具有焦点的磁盘中删除所有分区或卷格式。
 
 >[!NOTE]
-> 有关此命令的 PowerShell 版本，请参阅[明文命令](https://docs.microsoft.com/powershell/module/storage/clear-disk)。
+> 有关此命令的 PowerShell 版本，请参阅[明文命令](/powershell/module/storage/clear-disk)。
 
 ## <a name="syntax"></a>语法
 
@@ -55,6 +55,6 @@ clean
 
 ## <a name="additional-references"></a>其他参考
 
-- [清除磁盘命令](https://docs.microsoft.com/powershell/module/storage/clear-disk)
+- [清除磁盘命令](/powershell/module/storage/clear-disk)
 
 - [命令行语法项](command-line-syntax-key.md)
