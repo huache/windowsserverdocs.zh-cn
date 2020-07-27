@@ -8,12 +8,12 @@ ms.date: 04/10/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: dc6a9fa0d6834f63c9935518e4b2c26320a04082
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6e7e70b8adfcba78e50757be671d38f4d62c99db
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852960"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958699"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>添加 RD 连接代理服务器以部署和配置高可用性
 
@@ -25,7 +25,7 @@ ms.locfileid: "80852960"
 
 设置一个服务器充当另一个 RD 连接代理 - 可以是物理服务器或 VM。
 
-设置连接代理的数据库。 可以在本地环境中使用 [Azure SQL 数据库](https://azure.microsoft.com/documentation/articles/sql-database-get-started/#create-a-new-aure-sql-database)实例或 SQL Server。 下面讨论如何使用 Azure SQL，但这些步骤也适用于 SQL Server。 需要找到该数据库的连接字符串，并确保已安装适当的 ODBC 驱动程序。
+设置连接代理的数据库。 可以在本地环境中使用 [Azure SQL 数据库](/azure/azure-sql/database/single-database-create-quickstart#create-a-new-aure-sql-database)实例或 SQL Server。 下面讨论如何使用 Azure SQL，但这些步骤也适用于 SQL Server。 需要找到该数据库的连接字符串，并确保已安装适当的 ODBC 驱动程序。
 
 ## <a name="step-1-configure-the-database-for-the-connection-broker"></a>步骤 1：配置连接代理的数据库
 
@@ -70,7 +70,7 @@ ms.locfileid: "80852960"
       4. 为“IP 地址分配”选择“静态”，并输入当前未使用的**专用 IP 地址**（例如 10.0.0.32）。     
       5. 选择适当的**订阅**、包含所有资源的**资源组**，以及适当的**位置**。   
       6. 选择“创建”。    
-2. 创建一个[探测](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/)用于监视哪些服务器处于活动状态：   
+2. 创建一个[探测](/azure/load-balancer/load-balancer-custom-probe-overview)用于监视哪些服务器处于活动状态：   
       1. 在 Azure 门户中，单击“浏览”>“负载均衡器”，然后单击刚刚创建的负载均衡器（例如 CBLB）。  单击“设置”  。   
       2. 单击“探测”>“添加”。    
       3. 输入探测的名称（例如 **RDP**），选择“TCP”作为**协议**，输入 **3389** 作为**端口**，然后单击“确定”。     
@@ -83,7 +83,7 @@ ms.locfileid: "80852960"
       1. 在“设置”中单击“负载均衡规则”，然后单击“添加”。      
       2. 输入名称（例如 RDP），为“协议”选择“TCP”作为协议，为“端口”和“后端端口”输入 **3389**，然后单击“确定”。        
 5. 添加负载均衡器的 DNS 记录：   
-      1. 连接到 RDMS 服务器虚拟机（例如 Contoso-CB1）。 有关连接到 VM 的步骤，请查看[准备 RD 连接代理 VM](Prepare-the-RD-Connection-Broker-VM-for-Remote-Desktop.md) 一文。   
+      1. 连接到 RDMS 服务器虚拟机（例如 Contoso-CB1）。 有关连接到 VM 的步骤，请查看[准备 RD 连接代理 VM](./rds-prepare-vms.md) 一文。   
       2. 在服务器管理器中，单击“工具”>“DNS”。    
       3. 在左侧窗格中展开“DNS”，单击 DNS 计算机，单击“正向查找区域”，然后单击你的域名（例如 Contoso.com）。   （可能需要花费几秒钟时间来处理对 DNS 服务器发出的信息查询。）  
       4. 单击“操作”>“新建主机(A 或 AAAA)”。    
@@ -124,4 +124,3 @@ ms.locfileid: "80852960"
    3. 完成向导的每个页面，直到进入“服务器选择”，然后选择新建的 RD 连接代理服务器（例如 Contoso-CB2）。
    4. 完成向导并接受默认值。
 4. 在 RD 连接代理服务器和客户端上配置受信任的证书。
-

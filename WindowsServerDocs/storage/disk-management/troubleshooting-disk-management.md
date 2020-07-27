@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7eeb462d31391a228ec0e89afb09673ef14b51cf
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 359b4bed3090463bfb92431e06e325d981568248
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323439"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961019"
 ---
 # <a name="troubleshooting-disk-management"></a>磁盘管理疑难解答
 
@@ -119,7 +119,7 @@ ms.locfileid: "79323439"
 若要使处于脱机状态并且名称仍然为“磁盘 \#”（非“丢失”）的磁盘恢复联机状态，请尝试以下一个或多个步骤： 
 
 1. 在“磁盘管理”中，选中并按住（或右键单击）此磁盘，然后单击“重新激活磁盘”以使磁盘恢复联机状态  。 如果磁盘状态仍为“脱机”  ，请检查电缆和磁盘控制器，并确保物理磁盘正常。 解决任何问题，并再次尝试重新激活磁盘。 如果磁盘重新激活成功，则磁盘上的任何卷应该会自动恢复为“正常”  状态。
-2. 在“事件查看器”中，检查事件日志中是否有任何与磁盘相关的错误，如“无完好的配置副本”。 如果事件日志包含此错误，请与 [Microsoft 产品支持服务](https://msdn.microsoft.com/library/aa263468(v=vs.60).aspx)联系。
+2. 在“事件查看器”中，检查事件日志中是否有任何与磁盘相关的错误，如“无完好的配置副本”。 如果事件日志包含此错误，请与 [Microsoft 产品支持服务](/previous-versions/visualstudio/visual-basic-6/aa263468(v=vs.60))联系。
 
 3. 请尝试将磁盘移到另一台计算机中。 如果可以在另一台计算机上使磁盘变为“联机”  状态，则问题很可能是由于磁盘未变为“联机”  状态的所在计算机的配置造成的。
 

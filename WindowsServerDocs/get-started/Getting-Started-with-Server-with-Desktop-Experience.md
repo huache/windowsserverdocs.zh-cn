@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c454d9ef4deb8c9ea681a486e85f356ad5c9cd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a1ac967743dcb9e38cb36e5c16f7e3dd6ec0c7d2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826940"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953549"
 ---
 # <a name="install-server-with-desktop-experience"></a>安装具有桌面体验的服务器
 > 适用于：Windows Server 2016
@@ -60,7 +60,7 @@ ms.locfileid: "80826940"
 
 - 不支持从 32 位到 64 位体系结构的就地升级。 所有版本的 Windows Server 2016 都仅有 64 位。
 - 不支持从一种语言到另一种语言的就地升级。
-- 如果服务器是域控制器，请参阅[将域控制器升级到 Windows Server 2012 R2 和 Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx) 以获取重要信息。
+- 如果服务器是域控制器，请参阅[将域控制器升级到 Windows Server 2012 R2 和 Windows Server 2012](../identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012.md) 以获取重要信息。
 - 不支持从 Windows Server 2016 的预发布版本（预览版）升级。 为 Windows Server 2016 执行干净安装。
 - 不支持从“服务器核心安装”切换到“带桌面安装的服务器”的升级（反之亦然）。
 
@@ -83,9 +83,9 @@ ms.locfileid: "80826940"
 有关迁移到 Windows Server 2016 的许多其他选项（例如在批量许可版本、评估版本和其他版本之间进行许可转换），请参阅[升级选项](Supported-Upgrade-Paths.md)以了解详细信息。
 
 ### <a name="migration"></a>迁移
-**迁移**意味着通过在一组不同的硬件或虚拟机上执行全新安装，然后将旧服务器的工作负荷转移到新服务器，从而将现有的操作系统移动到 Windows Server 2016。 根据所安装服务器角色的不同，迁移过程可能会有相当大的不同，有关详细信息，请参阅 [Windows Server Installation, Upgrade, and Migration](https://technet.microsoft.com/windowsserver/dn458795)（Windows Server 安装、升级和迁移）。
+**迁移**意味着通过在一组不同的硬件或虚拟机上执行全新安装，然后将旧服务器的工作负荷转移到新服务器，从而将现有的操作系统移动到 Windows Server 2016。 根据所安装服务器角色的不同，迁移过程可能会有相当大的不同，有关详细信息，请参阅 [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md)（Windows Server 安装、升级和迁移）。
 
-迁移能力因服务器角色不同而异。 以下网格介绍了专门针对移动到 Windows Server 2016 的服务器角色升级和迁移选项。 有关单个角色的迁移指南，请访问[在 Windows Server 中迁移角色和功能](https://technet.microsoft.com/windowsserver/jj554790.aspx)。 有关安装和升级的详细信息，请参阅 [Windows Server Installation, Upgrade, and Migration](https://technet.microsoft.com/windowsserver/dn458795)（Windows Server 安装、升级和迁移）。
+迁移能力因服务器角色不同而异。 以下网格介绍了专门针对移动到 Windows Server 2016 的服务器角色升级和迁移选项。 有关单个角色的迁移指南，请访问[在 Windows Server 中迁移角色和功能](./migrate-roles-and-features.md)。 有关安装和升级的详细信息，请参阅 [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md)（Windows Server 安装、升级和迁移）。
 
 |服务器角色|是否可从 Windows Server 2012 R2 升级？|是否可从 Windows Server 2012 升级？|是否支持迁移？|是否无需停机就可完成迁移？|  
 |-------------------|----------|--------------|--------------|----------|  
@@ -94,14 +94,14 @@ ms.locfileid: "80826940"
 |Active Directory 联合身份验证服务|    否|    否|    是|    否（需要将新节点添加到场中）|
 |Active Directory 轻型目录服务|    是|    是|    是|    是|
 |Active Directory 权限管理服务|    是|    是|    是|    否|
-|故障转移群集|是，[群集操作系统滚动升级](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)过程包括节点暂停排出、逐出、升级到 Windows Server 2016 以及重新加入原始群集。 是，当群集删除服务器以进行升级，并随后再将服务器添加到不同的群集时。|而非服务器是群集的一部分时。 是，当群集删除服务器以进行升级，并随后再将服务器添加到不同的群集时。    |是|否，对于 Windows Server 2012 故障转移群集而言。 是，对于具有 Hyper-V VM 的 Windows Server 2012 R2 故障转移群集或运行横向扩展文件服务器角色的 Windows Server 2012 R2 故障转移群集。 请参阅[群集操作系统滚动升级](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)。|
+|故障转移群集|是，[群集操作系统滚动升级](../failover-clustering/cluster-operating-system-rolling-upgrade.md)过程包括节点暂停排出、逐出、升级到 Windows Server 2016 以及重新加入原始群集。 是，当群集删除服务器以进行升级，并随后再将服务器添加到不同的群集时。|而非服务器是群集的一部分时。 是，当群集删除服务器以进行升级，并随后再将服务器添加到不同的群集时。    |是|否，对于 Windows Server 2012 故障转移群集而言。 是，对于具有 Hyper-V VM 的 Windows Server 2012 R2 故障转移群集或运行横向扩展文件服务器角色的 Windows Server 2012 R2 故障转移群集。 请参阅[群集操作系统滚动升级](../failover-clustering/cluster-operating-system-rolling-upgrade.md)。|
 |文件和存储服务|    是|    是|    因子功能而不同|    否|
 |打印和传真服务|    否|    否|    是 (Printbrm.exe)|    否|
 |远程桌面服务|    是，对于所有子角色，但不支持混合模式场|    是，对于所有子角色，但不支持混合模式场|    是|    否|
 |Web 服务器 (IIS)|    是|    是|    是|    否|
 |Windows Server Essentials 体验|    是|    N/A - 新功能|    是|    否|
 |Windows Server Update Services|    是|    是|    是|    否|
-|工作文件夹|    是|    是|    是|    是，使用[群集操作系统滚动升级](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)从 WS 2012 R2 群集进行操作时。|
+|工作文件夹|    是|    是|    是|    是，使用[群集操作系统滚动升级](../failover-clustering/cluster-operating-system-rolling-upgrade.md)从 WS 2012 R2 群集进行操作时。|
 
 > [!IMPORTANT]  
 > 完成安装后，如果已安装所需的所有服务器角色和功能，则可以使用 Windows 更新或其他更新方法立即检查并安装 Windows Server 2016 可用的更新。

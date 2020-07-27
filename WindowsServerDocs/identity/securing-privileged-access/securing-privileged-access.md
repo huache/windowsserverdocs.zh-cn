@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 806a2aced95421bd469ba885d4a81c219ae1b651
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 4165561524dcb8572dbafc3904638fcb4513d06d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548831"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964720"
 ---
 # <a name="securing-privileged-access"></a>保护特权访问
 
@@ -62,11 +62,11 @@ ms.locfileid: "85548831"
 
 Microsoft 建议的路线图分为 3 个阶段：
 
-* [第 1 阶段：头 30 天](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-1-quick-wins-with-minimal-operational-complexity)
+* [第 1 阶段：头 30 天](#phase-1-quick-wins-with-minimal-operational-complexity)
    * 快速见效且具有意义深远的正面影响。
-* [第 2 阶段：90 天](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-2-significant-incremental-improvements)
+* [第 2 阶段：90 天](#phase-2-significant-incremental-improvements)
    * 显著的增量改进。
-* [第 3 阶段：持续维护](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-3-security-improvement-and-sustainment)
+* [第 3 阶段：持续维护](#phase-3-security-improvement-and-sustainment)
    * 安全改进和支持。
 
 路线图基于我们应对这些攻击和解决方案实施的经验，优先计划最有效和最快速的实现方案。 

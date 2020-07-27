@@ -9,18 +9,18 @@ author: lizap
 ms.author: elizapo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a511c9888f27fe97fdeaf65cde022e5c2aa999d4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7dc63afba827e2a58ba28d2c4398f1ba80d7e7b5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826080"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962489"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1803"></a>发行说明：Windows Server 版本 1803 中的重要问题
 
 >适用于：Windows Server 半年频道
 
-这些发行说明汇总了 Windows Server 操作系统中最关键的问题，包括避免或解决已知问题的方法。 若要了解此版本中的新增功能，请参阅 [Windows Server 版本 1803 中的新增功能](whats-new-in-windows-server-1803.md)。 如果你对运行 Windows Server 版本 1803 容器感兴趣，请查看[关于 Windows 容器](https://docs.microsoft.com/virtualization/windowscontainers/about/)。 
+这些发行说明汇总了 Windows Server 操作系统中最关键的问题，包括避免或解决已知问题的方法。 若要了解此版本中的新增功能，请参阅 [Windows Server 版本 1803 中的新增功能](whats-new-in-windows-server-1803.md)。 如果你对运行 Windows Server 版本 1803 容器感兴趣，请查看[关于 Windows 容器](/virtualization/windowscontainers/about/)。 
 
 除非另有指定，否则，每个所报告的问题均适用于 Windows Server 版本 1803 的所有版本和安装选项。  
 
@@ -33,4 +33,4 @@ ms.locfileid: "80826080"
 
 如果需要基础结构角色，请使用长期服务频道版本：Windows Server 2016（现已推出）或 [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview)（今年晚些时候推出）。
 
-我们正在致力于为超融合基础设施构建最佳平台，并会根据客户的反馈继续开发新的功能和改进现有功能。 感谢各位帮助我们建立了 [10,000 多个存储空间直通群集](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum)！ 我们期待在今年晚些时候分享更多信息。
+我们正在致力于为超融合基础设施构建最佳平台，并会根据客户的反馈继续开发新的功能和改进现有功能。 感谢各位帮助我们建立了 [10,000 多个存储空间直通群集](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185)！ 我们期待在今年晚些时候分享更多信息。

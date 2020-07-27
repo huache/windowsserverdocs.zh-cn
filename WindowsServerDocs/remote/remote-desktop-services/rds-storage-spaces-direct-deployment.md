@@ -9,12 +9,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 2386a231edf80fa611daf71c171bc0de3a7b497e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 14e63969d64a25ca0c7fb9b3efd5e966b64fa376
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855540"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961199"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>在 Azure 中为 UPD 存储部署双节点存储空间直通横向扩展文件服务器
 
@@ -47,7 +47,7 @@ ms.locfileid: "80855540"
 
 1. 创建一个 [Microsoft Azure 订阅](https://azure.microsoft.com)。
 2. 登录 [Azure 门户](https://ms.portal.azure.com)。
-3. 在 Azure 资源管理器中创建一个 [Azure 存储帐户](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)。 在新资源组中创建一个，并使用以下配置：
+3. 在 Azure 资源管理器中创建一个 [Azure 存储帐户](/azure/storage/common/storage-account-create#create-a-storage-account)。 在新资源组中创建一个，并使用以下配置：
    - 部署模型：资源管理器
    - 存储帐户类型：常规用途
    - 性能层：高级
@@ -56,7 +56,7 @@ ms.locfileid: "80855540"
    - 使用 Azure 快速入门模板进行部署：
       - [使用新的 AD 林创建 Azure VM](https://azure.microsoft.com/documentation/templates/active-directory-new-domain/)
       - [使用 2 个域控制器创建新的 AD 域](https://azure.microsoft.com/documentation/templates/active-directory-new-domain-ha-2-dc/)（实现高可用性）
-   - 使用以下配置手动[部署林](https://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/)：
+   - 使用以下配置手动[部署林](../../identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md)：
       - 在与存储帐户相同的资源组中创建虚拟网络。
       - 建议大小：DS2（如果域控制器将托管更多域对象，则增加大小）
       - 使用自动生成的 VNet。
@@ -76,12 +76,12 @@ ms.locfileid: "80855540"
    2. 创建第二个节点。 重复上述步骤并进行以下更改：
       - 名称：my-fsn2
       - 高可用性 - 选择上面创建的可用性集。  
-7. 根据用户需求向群集节点 VM [附加数据磁盘](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-attach-disk-portal/)（如上表所示）。 创建数据磁盘并将其附加到 VM 后，将“主机缓存”设置为“无”   。
+7. 根据用户需求向群集节点 VM [附加数据磁盘](/azure/virtual-machines/windows/attach-managed-disk-portal)（如上表所示）。 创建数据磁盘并将其附加到 VM 后，将“主机缓存”设置为“无”   。
 8. 将所有 VM 的 IP 地址均设置为“静态”  。 
    1. 在资源组中，选择一个 VM，然后单击“网络接口”（在“设置”下）   。 选择列出的网络接口，然后单击“IP 配置”  。 选择列出的 IP 配置，选择“静态”，然后单击“保存”   。
    2. 记下域控制器（我们的示例中为 my-dc）专用 IP 地址 (10.x.x.x)。
 9. 将群集节点 VM 的 NIC 上的主 DNS 服务器地址设置为 my-dc 服务器。 选择 VM，然后单击“网络接口”>“DNS 服务器”>“自定义 DNS”  。 输入上面记下的专用 IP 地址，然后单击“保存”  。
-10. 创建一个 [Azure 存储帐户作为云见证](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)。 （如果使用链接的说明，请在浏览到“使用故障转移群集管理器 GUI 配置云见证”时停止 - 我们将在下面执行该步骤。）
+10. 创建一个 [Azure 存储帐户作为云见证](../../failover-clustering/deploy-cloud-witness.md)。 （如果使用链接的说明，请在浏览到“使用故障转移群集管理器 GUI 配置云见证”时停止 - 我们将在下面执行该步骤。）
 11. 设置存储空间直通文件服务器。 连接到节点 VM，然后运行以下 Windows PowerShell cmdlet。
     1. 在两个文件服务器群集节点 VM 上安装故障转移群集功能和文件服务器功能：
 

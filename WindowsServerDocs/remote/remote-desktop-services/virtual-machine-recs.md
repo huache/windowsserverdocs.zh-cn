@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: beacd246639b5586c071a24bdd7b09c6aceeadab
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 644799ba9c6ebde4943b678199c678da376e05ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203389"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963139"
 ---
 # <a name="virtual-machine-sizing-guidelines"></a>虚拟机大小调整指南
 
@@ -40,9 +40,9 @@ ms.locfileid: "83203389"
 
 对于需要服务级别协议 (SLA) 的生产工作负荷，建议使用 OS 磁盘中的高级 SSD 存储。 如需更多详细信息，请参阅[虚拟机的 SLA](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/)。
 
-对于经常使用图形密集型程序进行视频渲染、3D 设计和模拟的用户来说，图形处理单元 (GPU) 是一个不错的选择。 若要详细了解图形加速，请参阅[选择图形渲染技术](rds-graphics-virtualization.md)。 Azure 有多个图形加速部署选项和多种可用的 GPU VM 大小。 请在 [GPU 优化虚拟机大小](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu)中了解详细信息。
+对于经常使用图形密集型程序进行视频渲染、3D 设计和模拟的用户来说，图形处理单元 (GPU) 是一个不错的选择。 若要详细了解图形加速，请参阅[选择图形渲染技术](rds-graphics-virtualization.md)。 Azure 有多个图形加速部署选项和多种可用的 GPU VM 大小。 请在 [GPU 优化虚拟机大小](/azure/virtual-machines/windows/sizes-gpu)中了解详细信息。
 
-[B 系列可突增 VM](https://docs.microsoft.com/azure/virtual-machines/windows/b-series-burstable) 适用于并非始终需要最高 CPU 性能的用户。 若要详细了解 VM 类型和大小，请参阅 [Azure 中 Windows 虚拟机的大小](https://docs.microsoft.com/azure/virtual-machines/windows/sizes)，并请查看[我们的虚拟机系列页](https://azure.microsoft.com/pricing/details/virtual-machines/series/)上的定价信息。
+[B 系列可突增 VM](/azure/virtual-machines/windows/b-series-burstable) 适用于并非始终需要最高 CPU 性能的用户。 若要详细了解 VM 类型和大小，请参阅 [Azure 中 Windows 虚拟机的大小](/azure/virtual-machines/windows/sizes)，并请查看[我们的虚拟机系列页](https://azure.microsoft.com/pricing/details/virtual-machines/series/)上的定价信息。
 
 ## <a name="test-your-workload"></a>测试工作负荷
 

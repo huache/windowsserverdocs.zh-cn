@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 05/21/2019
 ms.localizationpriority: high
-ms.openlocfilehash: ba1d6156ad3ba20e5f166a3c0eb9a36aa1ffe516
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e94bb064b94c657d5e931363e2dc0a1c54ecf5e1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825950"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956069"
 ---
 # <a name="whats-new-in-windows-server-version-1809"></a>Windows Server 版本 1809 中的新增功能
 
@@ -23,7 +23,7 @@ ms.locfileid: "80825950"
 
 ## <a name="container-networking-with-kubernetes"></a>支持 Kubernetes 的容器网络
 
-Windows Server 2019 中[支持 Kubernetes 的容器网络](https://docs.microsoft.com/windows-server/networking/sdn/technologies/containers/container-networking-overview)通过增强平台网络复原和容器网络插件支持极大地提高了 Windows 上 Kubernetes 的可用性。 此外，客户可在 Kubernetes 网络安全性的基础上部署工作负荷来保护使用嵌入工具的 Linux 和 Windows 服务。
+Windows Server 2019 中[支持 Kubernetes 的容器网络](../networking/sdn/technologies/containers/container-networking-overview.md)通过增强平台网络复原和容器网络插件支持极大地提高了 Windows 上 Kubernetes 的可用性。 此外，客户可在 Kubernetes 网络安全性的基础上部署工作负荷来保护使用嵌入工具的 Linux 和 Windows 服务。
 
 ## <a name="group-managed-service-accounts-for-containers"></a>适用于容器的组托管服务帐户
 
@@ -40,13 +40,12 @@ Windows Server 版本 1809 针对使用组托管服务帐户 (gMSA) 来访问网
 * HTTP/2
 * Kubernetes 支持
 * Windows 上的 Linux 容器
-* [低额外延迟后台传输 (LEDBAT)](https://blogs.technet.microsoft.com/networking/2018/07/25/ledbat/)
+* [低额外延迟后台传输 (LEDBAT)](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)
 * 虚拟工作负荷的网络性能提升
-* [Server Core 应用兼容性按需功能 (FOD)](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
+* [Server Core 应用兼容性按需功能 (FOD)](../get-started-19/install-fod-19.md)
 * [存储迁移服务 (SMS)](../storage/whats-new-in-storage.md#storage-spaces-direct)
 * 存储副本
 * 系统见解 
 * Windows Defender 高级威胁防护 (ATP)
 * Windows Defender ATP 攻击防护
-* [Windows 时间服务](https://docs.microsoft.com/windows-server/networking/windows-time-service/insider-preview)
-
+* [Windows 时间服务](../networking/windows-time-service/insider-preview.md)

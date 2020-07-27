@@ -9,12 +9,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a424a28be835fa2a941187b110907fff76e6f220
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7e08e4aa0cd1298502c59a1a8275293910345d6a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81650060"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966189"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>使用性能计数器来诊断远程桌面会话主机上的应用性能问题
 
@@ -33,7 +33,7 @@ ms.locfileid: "81650060"
 
 ![远程桌面 - 用户输入从用户远程桌面客户端流向应用程序](./media/rds-user-input.png)
 
-“用户输入延迟”计数器可测量正在排队的输入和被[传统消息循环](https://docs.microsoft.com/windows/win32/winmsg/about-messages-and-message-queues#message-loop)中的应用提取的输入之间的最大增量（在一个时间间隔内），如下面的流程图中所示：
+“用户输入延迟”计数器可测量正在排队的输入和被[传统消息循环](/windows/win32/winmsg/about-messages-and-message-queues#message-loop)中的应用提取的输入之间的最大增量（在一个时间间隔内），如下面的流程图中所示：
 
 ![远程桌面 - 用户输入延迟性能计数器流](./media/rds-user-input-delay.png)
 
@@ -68,7 +68,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 如果选择“每个进程的用户输入延迟”  ，你将看到采用 ```SessionID:ProcessID <Process Image>``` 格式的“选定对象的实例”  （换而言之，进程）。
 
-例如，如果计算器应用正在[会话 ID 1](https://docs.microsoft.com/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)) 中运行，你将看到 ```1:4232 <Calculator.exe>```。
+例如，如果计算器应用正在[会话 ID 1](/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)) 中运行，你将看到 ```1:4232 <Calculator.exe>```。
 
 > [!NOTE]
 > 并非包含所有进程。 不会看到以系统身份运行的任何进程。
@@ -135,7 +135,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>将新计数器与非 Microsoft 工具结合使用
 
-监视工具可以通过[使用性能计数器](https://docs.microsoft.com/windows/win32/perfctrs/using-performance-counters)来使用此计数器。
+监视工具可以通过[使用性能计数器](/windows/win32/perfctrs/using-performance-counters)来使用此计数器。
 
 ## <a name="download-windows-server-insider-software"></a>下载 Windows Server Insider 软件
 

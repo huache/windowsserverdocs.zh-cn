@@ -8,12 +8,12 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 8feed2adb606edfb6068d7fe10c18baf142077ac
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 514dd9be3f7f634cf021a8a154f4b64c9018743e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76822340"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961629"
 ---
 # <a name="deploying-roaming-user-profiles"></a>部署漫游用户策略文件
 
@@ -54,7 +54,7 @@ ms.locfileid: "76822340"
     - 如果文件共享使用 DFS 复制与另一台服务器复制内容，则用户必须只能够访问源服务器，以防止用户在不同服务器上进行互相冲突的编辑。
     - 如果文件共享已群集化，则在文件共享上禁用连续可用性，以免出现性能问题。
 - 若要使用漫游用户策略文件中的主计算机支持，还需满足其他客户端计算机和 Active Directory 架构要求。 有关详细信息，请参阅[为文件夹重定向以及漫游用户策略文件部署主计算机](deploy-primary-computers.md)。
-- 如果用户使用多台电脑、远程桌面会话主机或虚拟桌面基础结构 (VDI) 服务器，则用户的“开始”菜单的布局不会在 Windows 10、Windows Server 2019 或 Windows Server 2016 上漫游。 作为一种解决方法，可以如本主题中所述指定“开始”布局。 或者还可以使用用户配置文件磁盘，它在与远程桌面会话主机服务器或 VDI 服务器一起使用时可正确地漫游“开始”菜单设置。 有关详细信息，请参阅[使用 Windows Server 2012 中的用户配置文件磁盘实现更轻松的用户数据管理](https://blogs.technet.microsoft.com/enterprisemobility/2012/11/13/easier-user-data-management-with-user-profile-disks-in-windows-server-2012/)。
+- 如果用户使用多台电脑、远程桌面会话主机或虚拟桌面基础结构 (VDI) 服务器，则用户的“开始”菜单的布局不会在 Windows 10、Windows Server 2019 或 Windows Server 2016 上漫游。 作为一种解决方法，可以如本主题中所述指定“开始”布局。 或者还可以使用用户配置文件磁盘，它在与远程桌面会话主机服务器或 VDI 服务器一起使用时可正确地漫游“开始”菜单设置。 有关详细信息，请参阅[使用 Windows Server 2012 中的用户配置文件磁盘实现更轻松的用户数据管理](https://techcommunity.microsoft.com/t5/microsoft-security-and/easier-user-data-management-with-user-profile-disks-in-windows/ba-p/247555)。
 
 ### <a name="considerations-when-using-roaming-user-profiles-on-multiple-versions-of-windows"></a>在多个版本的 Windows 中使用漫游用户配置文件时的注意事项
 
@@ -168,7 +168,7 @@ ms.locfileid: "76822340"
     由于 [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016) 中所做的安全更改，因此此步骤是必需的。
 
 >[!IMPORTANT]
->由于 [MS16-072A](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016) 中所做的安全更改，现在必须向“经过身份验证的用户组”委派对 GPO 的读取权限 - 否则，GPO 将不会应用于用户；或者，如果已应用 GPO，则会删除 GPO，并将用户配置文件重定向回本地电脑。 有关详细信息，请参阅[部署组策略安全更新 MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/)。
+>由于 [MS16-072A](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016) 中所做的安全更改，现在必须向“经过身份验证的用户组”委派对 GPO 的读取权限 - 否则，GPO 将不会应用于用户；或者，如果已应用 GPO，则会删除 GPO，并将用户配置文件重定向回本地电脑。 有关详细信息，请参阅[部署组策略安全更新 MS16-072](/archive/blogs/askds/deploying-group-policy-security-update-ms16-072-kb3163622)。
 
 ## <a name="step-5-optionally-set-up-roaming-user-profiles-on-user-accounts"></a>步骤 5：（可选）在用户帐户上设置漫游用户配置文件
 
@@ -185,12 +185,12 @@ ms.locfileid: "76822340"
     
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
     
-    若要指定强制漫游用户策略文件，请指定指向之前创建的 NTuser.man 文件的路径，例如 `fs1.corp.contoso.comUser Profiles$default`。 有关详细信息，请参阅[创建强制用户配置文件](https://docs.microsoft.com/windows/client-management/mandatory-user-profile)。
+    若要指定强制漫游用户策略文件，请指定指向之前创建的 NTuser.man 文件的路径，例如 `fs1.corp.contoso.comUser Profiles$default`。 有关详细信息，请参阅[创建强制用户配置文件](/windows/client-management/mandatory-user-profile)。
 4. 选择“确定”  。
 
 > [!NOTE]
 > 默认情况下，在使用漫游用户配置文件时，允许部署所有基于 Windows ® 运行时的（Windows 应用商店）应用。 但是，在使用特殊配置文件时，默认情况下将不部署应用。 特殊配置文件是在用户注销后放弃所做更改的用户配置文件：
-> <br><br>若要删除对特殊配置文件的应用部署的限制，请启用 **Allow deployment operations in special profiles** 策略设置（位于计算机配置\策略\管理模板\Windows 组件\应用程序包部署中）。 但在此情况下，已部署的应用将在计算机上存储一些数据，这些数据可能会累积，例如一台计算机有数百位用户的情况。 若要清理应用，请查找或开发一种使用 [CleanupPackageForUserAsync](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.cleanuppackageforuserasync.aspx) API 的工具，来清理在计算机上不再有配置文件的用户的应用包。
+> <br><br>若要删除对特殊配置文件的应用部署的限制，请启用 **Allow deployment operations in special profiles** 策略设置（位于计算机配置\策略\管理模板\Windows 组件\应用程序包部署中）。 但在此情况下，已部署的应用将在计算机上存储一些数据，这些数据可能会累积，例如一台计算机有数百位用户的情况。 若要清理应用，请查找或开发一种使用 [CleanupPackageForUserAsync](/uwp/api/Windows.Management.Deployment.PackageManager?view=winrt-19041#windows_management_deployment_packagemanager_cleanuppackageforuserasync_system_string_system_string_) API 的工具，来清理在计算机上不再有配置文件的用户的应用包。
 > <br><br>有关 Windows 应用商店应用的其他背景信息，请参阅 [管理客户端对 Windows 应用商店的访问](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh832040(v=ws.11)>)。
 
 ## <a name="step-6-optionally-set-up-roaming-user-profiles-on-computers"></a>步骤 6：（可选）在计算机上设置漫游用户配置文件
@@ -216,7 +216,7 @@ ms.locfileid: "76822340"
 
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
 
-    若要指定强制漫游用户策略文件（这是用户无法进行永久性更改的预配置配置文件，将在用户注销后重置已进行的更改），请指定指向之前创建的 NTuser.man 文件的路径，例如 `\\fs1.corp.contoso.com\User Profiles$\default`。 有关详细信息，请参阅 [创建强制用户配置文件](https://docs.microsoft.com/windows/client-management/mandatory-user-profile)。
+    若要指定强制漫游用户策略文件（这是用户无法进行永久性更改的预配置配置文件，将在用户注销后重置已进行的更改），请指定指向之前创建的 NTuser.man 文件的路径，例如 `\\fs1.corp.contoso.com\User Profiles$\default`。 有关详细信息，请参阅 [创建强制用户配置文件](/windows/client-management/mandatory-user-profile)。
 8. 选择“确定”  。
 
 ## <a name="step-7-optionally-specify-a-start-layout-for-windows-10-pcs"></a>步骤 7：（可选）为 Windows 10 电脑指定“开始”布局
@@ -226,9 +226,9 @@ ms.locfileid: "76822340"
 若要指定“开始”布局，请执行以下操作：
 
 1. 将 Windows 10 电脑更新到 Windows 10 版本 1607（也称为周年更新）或更新版本，并安装 2017 年 3 月 14 日累积更新 ([KB4013429](https://support.microsoft.com/kb/4013429)) 或更新版本。
-2. 创建完全或部分“开始”菜单布局 XML 文件。 为此，请参阅[自定义和导出“开始”布局](https://docs.microsoft.com/windows/configuration/customize-and-export-start-layout)。
+2. 创建完全或部分“开始”菜单布局 XML 文件。 为此，请参阅[自定义和导出“开始”布局](/windows/configuration/customize-and-export-start-layout)。
     * 如果指定完全“开始”布局，用户将无法自定义“开始”菜单的任何部分  。 如果指定部分“开始”布局，用户可以自定义除指定的磁贴组以外的所有内容  。 但是，对于部分“开始”布局，用户对“开始”菜单的自定义设置将不会漫游到其他电脑。
-3. 使用组策略将自定义的“开始”布局应用于为漫游用户策略文件创建的 GPO。 为此，请参阅[使用组策略以在域中应用自定义的“开始”布局](https://docs.microsoft.com/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment)。
+3. 使用组策略将自定义的“开始”布局应用于为漫游用户策略文件创建的 GPO。 为此，请参阅[使用组策略以在域中应用自定义的“开始”布局](/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment)。
 4. 使用组策略在 Windows 10 电脑上设置以下注册表值。 为此，请参阅[配置注册表项](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)。
 
 | **操作**   | **Update**                  |
@@ -240,9 +240,9 @@ ms.locfileid: "76822340"
 | “数值数据”   | 1（或 0 以禁用）   |
 | 基本         | 十进制                  |
 
-5. （可选）启用首次登录优化，使用户能够更快登录。 为此，请参阅[应用策略以改进登录时间](https://docs.microsoft.com/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time)。
+5. （可选）启用首次登录优化，使用户能够更快登录。 为此，请参阅[应用策略以改进登录时间](/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time)。
 6. （可选）通过从用于部署客户端电脑的 Windows 10 基本映像删除不必要的应用，进一步缩短登录时间。 Windows Server 2019 和 Windows Server 2016 没有任何预配的应用，因此可以跳过服务器映像的此步骤。
-    - 若要删除应用，请使用 [Windows PowerShell 中的 Remove-AppxProvisionedPackage ](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps)cmdlet 来卸载以下应用程序。 如果电脑已部署，则可以使用 [Remove-AppxPackage ](https://docs.microsoft.com/powershell/module/appx/remove-appxpackage?view=win10-ps) 为删除这些应用编写脚本。
+    - 若要删除应用，请使用 [Windows PowerShell 中的 Remove-AppxProvisionedPackage ](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps)cmdlet 来卸载以下应用程序。 如果电脑已部署，则可以使用 [Remove-AppxPackage ](/powershell/module/appx/remove-appxpackage?view=win10-ps) 为删除这些应用编写脚本。
     
       - Microsoft.windowscommunicationsapps\_8wekyb3d8bbwe
       - Microsoft.BingWeather\_8wekyb3d8bbwe
@@ -328,7 +328,7 @@ ms.locfileid: "76822340"
      > [!NOTE] 
      > 导入 StartLayout 会修改默认用户配置文件。 导入后创建的所有用户配置文件都将获得导入的开始布局。
  
-- IT 管理员可以选择通过组策略管理“开始”的布局。 使用组策略可提供集中式的管理解决方案，用于向用户应用标准化的“开始”布局。 有两种模式可使用组策略进行“开始”管理。 完全锁定和部分锁定。 完全锁定方案可阻止用户对“开始”布局进行任何更改。 部分锁定方案可允许用户对特定的“开始”区域进行更改。 有关详细信息，请参阅[自定义和导出“开始”布局](https://docs.microsoft.com/windows/configuration/customize-and-export-start-layout)。
+- IT 管理员可以选择通过组策略管理“开始”的布局。 使用组策略可提供集中式的管理解决方案，用于向用户应用标准化的“开始”布局。 有两种模式可使用组策略进行“开始”管理。 完全锁定和部分锁定。 完全锁定方案可阻止用户对“开始”布局进行任何更改。 部分锁定方案可允许用户对特定的“开始”区域进行更改。 有关详细信息，请参阅[自定义和导出“开始”布局](/windows/configuration/customize-and-export-start-layout)。
         
    > [!NOTE]
    > 在部分锁定方案中进行的用户更改在升级过程中仍将丢失。
@@ -359,6 +359,6 @@ ms.locfileid: "76822340"
 - [部署文件夹重定向、脱机文件和漫游用户策略文件](deploy-folder-redirection.md)
 - [为文件夹重定向以及漫游用户策略文件部署主计算机](deploy-primary-computers.md)
 - [实现用户状态管理](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784645(v=ws.10)>)
-- [Microsoft 关于复制的用户配置文件数据的支持声明](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
+- [Microsoft 关于复制的用户配置文件数据的支持声明](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 - [使用 DISM 旁加载应用](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
-- [对基于 Windows 运行时的应用的打包、部署和查询进行故障排除](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)
+- [对基于 Windows 运行时的应用的打包、部署和查询进行故障排除](/windows/win32/appxpkg/troubleshooting)

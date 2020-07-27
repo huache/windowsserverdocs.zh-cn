@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 33c1aa654e4c660b4fe2f3305bfaf78b5191220a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 538ea2d6e0f038a98b64a197bd49ed5719fe15ac
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "70119203"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959569"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>在 Windows Server 中迁移角色和功能
 
@@ -40,10 +40,10 @@ ms.locfileid: "70119203"
 
 下面是 Windows Server 2016 的迁移指南。 请注意，在许多情况下，也可使用 Windows Server 2012 R2 迁移指南。
 
-- [远程桌面服务](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/migrate-rds-role-services)
+- [远程桌面服务](../remote/remote-desktop-services/migrate-rds-role-services.md)
 - [Web 服务器 (IIS)](https://www.iis.net/downloads/microsoft/web-deploy)
-- [Windows Server Update Services](https://technet.microsoft.com/library/hh852339.aspx)
-- [MultiPoint Services](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/multipoint-services/multipoint-services-migrate)
+- [Windows Server Update Services](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852339(v=ws.11))
+- [MultiPoint Services](../remote/multipoint-services/multipoint-services-migrate.md)
 
 若要将文件服务器迁移到 Windows Server 2019 或 Windows Server 2016，建议使用[存储迁移服务](../storage/storage-migration-service/overview.md)。
 
@@ -51,17 +51,17 @@ ms.locfileid: "70119203"
 
 按照这些指南中的步骤将角色和功能从运行 Windows Server 2003、Windows Server 2008、Windows Server 2008 R2、Windows Server 2012 或 Windows Server 2012 R2 的服务器迁移到 Windows Server 2012 R2。 Windows Server 2012 R2 中的 Windows Server 迁移工具支持跨子网迁移。
 
-- [安装、使用和删除 Windows Server 迁移工具](https://technet.microsoft.com/library/jj134202.aspx)
-- [适用于 Windows Server 2012 R2 的 Active Directory 证书服务迁移指南](https://technet.microsoft.com/library/dn486797.aspx)
-- [将 Active Directory 联合身份验证服务角色服务迁移到 Windows Server 2012 R2](https://technet.microsoft.com/library/dn486815.aspx)
-- [Active Directory Rights Management Services 迁移和升级指南](https://technet.microsoft.com/library/cc754277.aspx)
-- [将文件和存储服务迁移到 Windows Server 2012 R2](https://technet.microsoft.com/library/dn479292.aspx)
-- [将 Hyper-V 从 Windows Server 2012 迁移到 Windows Server 2012 R2](https://technet.microsoft.com/library/dn486799.aspx)
-- [将网络策略服务器迁移到 Windows Server 2012](https://technet.microsoft.com/library/hh831652)
-- [将远程桌面服务迁移到 Windows Server 2012 R2](https://technet.microsoft.com/library/dn479239.aspx)
-- [将 Windows Server Update Services 迁移到 Windows Server 2012 R2](https://technet.microsoft.com/library/hh852339.aspx)
-- [将群集角色迁移到 Windows Server 2012 R2](https://technet.microsoft.com/library/dn530779.aspx)
-- [将 DHCP 服务器迁移到 Windows Server 2012 R2](https://technet.microsoft.com/library/dn495425.aspx)
+- [安装、使用和删除 Windows Server 迁移工具](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134202(v=ws.11))
+- [适用于 Windows Server 2012 R2 的 Active Directory 证书服务迁移指南](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486797(v=ws.11))
+- [将 Active Directory 联合身份验证服务角色服务迁移到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486815(v=ws.11))
+- [Active Directory Rights Management Services 迁移和升级指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754277(v=ws.10))
+- [将文件和存储服务迁移到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn479292(v=ws.11))
+- [将 Hyper-V 从 Windows Server 2012 迁移到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486799(v=ws.11))
+- [将网络策略服务器迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831652(v=ws.11))
+- [将远程桌面服务迁移到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn479239(v=ws.11))
+- [将 Windows Server Update Services 迁移到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852339(v=ws.11))
+- [将群集角色迁移到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn530779(v=ws.11))
+- [将 DHCP 服务器迁移到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn495425(v=ws.11))
 
 现已提供 Windows Server 2012 R2 和 Windows Server 2012 迁移指南的电子书。 有关详细信息，以及如何下载本电子书，请参阅 [Microsoft 技术电子图书库](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#MigrateRoles)。
 
@@ -69,40 +69,40 @@ ms.locfileid: "70119203"
 
 按照这些指南中的步骤将角色和功能从运行 Windows Server 2003、Windows Server 2008、Windows Server 2008 R2 或 Windows Server 2012 的服务器迁移到 Windows Server 2012。 Windows Server 2012 中的 Windows Server 迁移工具支持跨子网迁移。
 
-- [安装、使用和删除 Windows Server 迁移工具](https://technet.microsoft.com/library/jj134202)
-- [将 Active Directory 联合身份验证服务角色服务迁移到 Windows Server 2012](https://technet.microsoft.com/library/jj647765)
-- [将健康注册机构迁移到 Windows Server 2012](https://technet.microsoft.com/library/hh831513)
-- [将 Hyper-V 从 Windows Server 2008 R2 迁移到 Windows Server 2012](https://technet.microsoft.com/library/jj574113)
-- [将 IP 配置迁移到 Windows Server 2012](https://technet.microsoft.com/library/jj574133)
-- [将网络策略服务器迁移到 Windows Server 2012](https://technet.microsoft.com/library/hh831652)
-- [将打印和文档服务迁移到 Windows Server 2012](https://technet.microsoft.com/library/jj134150)
-- [将远程访问迁移到 Windows Server 2012](https://technet.microsoft.com/library/hh831423)
-- [将 Windows Server Update Services 迁移到 Windows Server 2012](https://technet.microsoft.com/library/hh852339)
-- [将 Active Directory 域控制器升级到 Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx)
-- [将群集服务和应用程序迁移到 Windows Server 2012](https://technet.microsoft.com/library/dn486790.aspx)
+- [安装、使用和删除 Windows Server 迁移工具](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134202(v=ws.11))
+- [将 Active Directory 联合身份验证服务角色服务迁移到 Windows Server 2012](../identity/ad-fs/deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
+- [将健康注册机构迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831513(v=ws.11))
+- [将 Hyper-V 从 Windows Server 2008 R2 迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574113(v=ws.11))
+- [将 IP 配置迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574133(v=ws.11))
+- [将网络策略服务器迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831652(v=ws.11))
+- [将打印和文档服务迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134150(v=ws.11))
+- [将远程访问迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831423(v=ws.11))
+- [将 Windows Server Update Services 迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852339(v=ws.11))
+- [将 Active Directory 域控制器升级到 Windows Server 2012](../identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012.md)
+- [将群集服务和应用程序迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486790(v=ws.11))
  
 
-有关其他迁移资源，请访问[将角色和功能迁移到 Windows Server 2012](https://technet.microsoft.com/library/jj134039)。
+有关其他迁移资源，请访问[将角色和功能迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134039(v=ws.11))。
 
 ## <a name="windows-server-2008-r2"></a>Windows Server 2008 R2
 
 按照这些指南中的步骤将角色和功能从运行 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 的服务器迁移到 Windows Server 2008 R2。 Windows Server 2008 R2 中的 Windows Server 迁移工具不支持跨子网迁移。
 
-- [Windows Server 迁移工具的安装、访问和删除](https://technet.microsoft.com/library/dd379545)
-- [Active Directory 证书服务迁移指南](https://technet.microsoft.com/library/ee126170)
-- [Active Directory 域服务和域名系统 (DNS) 服务器迁移指南](https://technet.microsoft.com/library/dd379558)
-- [BranchCache 迁移指南](https://technet.microsoft.com/library/dd548365)
-- [动态主机配置协议 (DHCP) 服务器迁移指南](https://technet.microsoft.com/library/dd379535)
-- [文件服务迁移指南](https://technet.microsoft.com/library/dd379487)
-- [HRA 迁移指南](https://technet.microsoft.com/library/ee791829)
-- [Hyper-V 迁移指南](https://technet.microsoft.com/library/ee849855)
-- [IP 配置迁移指南](https://technet.microsoft.com/library/dd379537)
-- [本地用户和组迁移指南](https://technet.microsoft.com/library/dd379531)
-- [NPS 迁移指南](https://technet.microsoft.com/library/ee791849)
-- [打印服务迁移指南](https://technet.microsoft.com/library/dd379488)
-- [远程桌面服务迁移指南](https://technet.microsoft.com/library/ff849223)
-- [RRAS 迁移指南](https://technet.microsoft.com/library/ee822825)
-- [Windows Server 迁移常见任务和信息](https://technet.microsoft.com/library/ff400258)
-- [Windows Server Update Services 3.0 SP2 迁移指南](https://technet.microsoft.com/library/ee822826)
+- [Windows Server 迁移工具的安装、访问和删除](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379545(v=ws.10))
+- [Active Directory 证书服务迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126170(v=ws.10))
+- [Active Directory 域服务和域名系统 (DNS) 服务器迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379558(v=ws.10))
+- [BranchCache 迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548365(v=ws.10))
+- [动态主机配置协议 (DHCP) 服务器迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379535(v=ws.10))
+- [文件服务迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379487(v=ws.10))
+- [HRA 迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee791829(v=ws.10))
+- [Hyper-V 迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee849855(v=ws.10))
+- [IP 配置迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379537(v=ws.10))
+- [本地用户和组迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379531(v=ws.10))
+- [NPS 迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee791849(v=ws.10))
+- [打印服务迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379488(v=ws.10))
+- [远程桌面服务迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff849223(v=ws.10))
+- [RRAS 迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822825(v=ws.10))
+- [Windows Server 迁移常见任务和信息](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff400258(v=ws.10))
+- [Windows Server Update Services 3.0 SP2 迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822826(v=ws.10))
  
-有关其他迁移资源，请访问[将角色和功能迁移到 Windows Server 2008 R2](https://technet.microsoft.com/library/dd365353)。
+有关其他迁移资源，请访问[将角色和功能迁移到 Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd365353(v=ws.10))。

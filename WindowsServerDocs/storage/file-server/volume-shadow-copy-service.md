@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d90030fe183e5cfcb94866e87793c0419b636433
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9948fab77ab4869c27fd63e623315bd1b3e9ff47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475444"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966689"
 ---
 # <a name="volume-shadow-copy-service"></a>卷影复制服务
 
@@ -247,7 +247,7 @@ Windows 操作系统包含一组 VSS 编写程序，这些编写程序负责枚�
 
 有关这些编写程序的详细信息，请参阅以下 Microsoft Docs 网页：
 
-- [内置 VSS 编写程序](https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
+- [内置 VSS 编写程序](/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
 
 
 ## <a name="how-shadow-copies-are-used"></a>如何使用卷影副本
@@ -375,7 +375,7 @@ VSS 可用于创建整个卷的卷影副本。 临时文件（如页面文件）
 > <UL>
 > <LI>它无法删除在 Windows Server 上使用以前版本功能创建的卷影副本中的文件。<BR><BR>
 > <LI>它无法删除共享文件夹的卷影副本中的文件。<BR><BR>
-> <LI>它可以删除使用 <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a> 实用程序创建的卷影副本中的文件，但不能删除使用 <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a> 实用程序创建的卷影副本中的文件。<BR><BR>
+> <LI>它可以删除使用 <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](../../administration/windows-commands/diskshadow.md)">Diskshadow</a> 实用程序创建的卷影副本中的文件，但不能删除使用 <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](../../administration/windows-commands/vssadmin.md)">Vssadmin</a> 实用程序创建的卷影副本中的文件。<BR><BR>
 > <LI>系统会尽力从卷影副本中删除文件。 这意味着不能保证它们被删除。<BR><BR></LI></UL>
 
 
@@ -622,4 +622,4 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 
 ## <a name="additional-references"></a>其他参考
 
-[Windows 开发人员中心中的卷影复制服务](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)
+[Windows 开发人员中心中的卷影复制服务](/windows/desktop/vss/volume-shadow-copy-service-overview)

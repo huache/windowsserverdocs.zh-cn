@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
-ms.openlocfilehash: 914e6f4507e0fd997a31866b10e3c48e0cd4cbd7
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4ecd290a910ddbb1aba85b26764fb86e30731172
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857260"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963349"
 ---
 # <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>远程桌面服务 VDI 支持的 Windows 10 安全配置
 
@@ -29,9 +29,9 @@ Windows 10 和 Windows Server 2016 提供操作系统中内置的保护层来进
 
 |  VDI 集合类型               |  托管共用 |  托管个人 |  非托管共用                                     |  非托管个人                                    |
 |-------------------------------------|------------------|--------------------|--------------------------------------------------------|--------------------------------------------------------|
-| [Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)                    | 是              | 是                | 是                                                    | 是                                                    |
-| [Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)                        | 是              | 是                | 是                                                    | 是                                                    |
-| [Remote Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)             | 否               | 否                 | 否                                                     | 否                                                     |
+| [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard)                    | 是              | 是                | 是                                                    | 是                                                    |
+| [Device Guard](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)                        | 是              | 是                | 是                                                    | 是                                                    |
+| [Remote Credential Guard](/windows/security/identity-protection/remote-credential-guard)             | 否               | 否                 | 否                                                     | 否                                                     |
 | [受防护的 VM 和加密支持的 VM](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md) | 否               | 否                 | 加密支持的采用其他配置的 VM | 加密支持的采用其他配置的 VM |
 
 ## <a name="remote-credential-guard"></a>Remote Credential Guard：
@@ -47,4 +47,3 @@ Windows 10 和 Windows Server 2016 提供操作系统中内置的保护层来进
 若要利用加密支持的 VM：
 - 请在远程桌面服务集合创建过程以外使用非托管集合和预配技术来预配虚拟机。 
 - 不支持用户配置文件磁盘，因为它们依赖于差异磁盘 
-

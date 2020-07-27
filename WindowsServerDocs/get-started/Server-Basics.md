@@ -9,19 +9,19 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 094e4ffdee8480886700a4967ef2281008aad965
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bc38c21435ba3340f5ffb1aab9d274ec9da1620c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826540"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964059"
 ---
 # <a name="get-started-with-windows-server-2016"></a>Windows Server 2016 入门
 
 >适用于：Windows Server 2016
 
 > [!TIP]
-> 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)了解具体信息。
+> 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](/search/index?dataSource=previousVersions&search=Windows Server)了解具体信息。
 
 ![显示了已勾选的框的图标](../media/landing-icons/getstarted.png)此集合包含详细的信息，可帮助确定你是否准备好移动到 Windows Server 2016。 一旦检查了移动到 Windows Server 2016 的系统要求、升级选项和其他信息，你就可以返回到主 [Windows Server 2016](Windows-Server-2016.md) 集线器，并开始在路径下安装满足你需要的最佳版本和安装选项。 
 
@@ -52,5 +52,3 @@ SQL 是否可在 Windows Server 2016 上运行？ 运行 Exchange 需要哪些�
 
 ## <a name="server-activation-guide"></a>[服务器激活指南](Server-2016-activation.md)
 关于使用 Windows Server 2016 激活 Windows Server 2016 本身和其他操作系统的基本信息。
-
-

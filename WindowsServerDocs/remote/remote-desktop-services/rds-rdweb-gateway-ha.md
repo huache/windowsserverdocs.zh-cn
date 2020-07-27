@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: e98bbda5460311dd379eab6f5a5bde0ec3845d5c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c34d0bd2654d36e447053348392b4b9a6957e60f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860280"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960189"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>向 RD Web 和网关 Web 前端添加高可用性
 
@@ -96,7 +96,7 @@ ms.locfileid: "80860280"
     4.  在“公共 IP 地址”下选择“选择公共 IP 地址”，然后选择现有的公共 IP 地址，或者创建新的 IP 地址。  
     5.  选择相应的“订阅”、“资源组”和“位置”    。
     6.  单击“**创建**”。  
-2. 创建[探测](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/) 用于监视处于活动状态的服务器：  
+2. 创建[探测](/azure/load-balancer/load-balancer-custom-probe-overview) 用于监视处于活动状态的服务器：  
     1.  在 Azure 门户中，选择“浏览” > “负载均衡器”，然后选择在上一步创建的负载均衡器。  
     2.  选择“所有设置”   >   “探测” >   “添加”。  
     3.  为探测输入名称，例如，**HTTPS**。 选择“TCP”作为“协议”，为“端口”输入 **443**，然后单击“确定     。   

@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: c46ad24c62510b4a100a89b5c10a8f52c1a66151
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 179feca4870e62f81ed71fabb7b8fd1cb418d391
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857350"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962179"
 ---
 # <a name="remote-desktop-services---multi-factor-authentication"></a>远程桌面服务 - 多重身份验证
 
@@ -27,4 +27,4 @@ ms.locfileid: "80857350"
 - 连接到 RD 网关以进行安全的远程访问时，收到短信或移动应用程序 MFA 质询
 - 正确验证身份并连接到他们的资源！
 
-有关配置过程的更多详细信息，请查看[使用网络策略服务器 (NPS) 扩展和 Azure AD 集成远程桌面网关基础结构](https://docs.microsoft.com/azure/multi-factor-authentication/nps-extension-remote-desktop-gateway)。
+有关配置过程的更多详细信息，请查看[使用网络策略服务器 (NPS) 扩展和 Azure AD 集成远程桌面网关基础结构](/azure/multi-factor-authentication/nps-extension-remote-desktop-gateway)。

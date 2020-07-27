@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c2614c0180b32a0215454f2d725d6a962986ef1f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0219c669a52d961cc98d6b0ee16bcbcfbbb78417
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394404"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961569"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>禁用个别重定向文件夹上的脱机文件
 
@@ -22,7 +22,7 @@ ms.locfileid: "71394404"
 本主题介绍如何通过使用文件夹重定向在重定向到网络共享的个别文件夹上禁用脱机文件缓存。 通过执行此操作，可以本地指定要从缓存中排除的文件夹，从而减少同步脱机文件所需的脱机文件缓存大小和时间。
 
 >[!NOTE]
->此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [Windows PowerShell 基础知识](https://docs.microsoft.com/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6)。
+>此主题将介绍一些 Windows PowerShell cmdlet 示例，你可以使用它们来自动执行所述的一些步骤。 有关详细信息，请参阅 [Windows PowerShell 基础知识](/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6)。
 
 ## <a name="prerequisites"></a>必备条件
 

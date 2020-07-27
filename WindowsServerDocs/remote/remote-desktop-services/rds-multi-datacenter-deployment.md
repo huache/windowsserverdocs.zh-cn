@@ -9,12 +9,12 @@ author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 5c0f5d6937a79f36df264597400fe71af3f3779b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 18ed49472a00790a1c713016c4da9a056066a88a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855590"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953709"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>为灾难恢复创建异地冗余、多数据中心的 RDS 部署
 
@@ -52,7 +52,7 @@ ms.locfileid: "80855590"
 2. RG A 中的高可用 Active Directory 部署。可以使用[“使用 2 个域控制器新建 AD 域”模板](https://azure.microsoft.com/resources/templates/active-directory-new-domain-ha-2-dc/)来创建部署。
 3. RG A 中的高可用 RDS 部署。使用[利用现有 Active Directory 的 RDS 场部署](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)模板创建基本 RDS 部署，然后按照[远程桌面服务 - 高可用性](rds-plan-high-availability.md)中的信息配置其他 RDS 组件，以实现高可用性。
 4. RG B 中的 VNet - 确保使用的地址空间与 RG A 中的部署不重叠。
-5. 两个资源组之间的 [VNet 到 VNet 连接](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps)。
+5. 两个资源组之间的 [VNet 到 VNet 连接](/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps)。
 6. RG B 中的可用性集中的两个 AD 虚拟机 - 确保 VM 名称与 RG A 中的 AD VM 不同。在单个可用性集中部署两个 Windows Server 2016 VM，安装 Active Directory 域服务角色，然后将它们提升至步骤 1 中创建的域中的域控制器。
 7. RG B 中的第二个高可用 RDS 部署。 
    1. 再次使用[利用现有 Active Directory 的 RDS 场部署](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)模板，但这次进行以下更改。 （若要自定义该模板，请在库中选择它，单击“部署到 Azure”，然后单击“编辑模板”   。）
@@ -81,7 +81,7 @@ ms.locfileid: "80855590"
 
 若要在两个部署上都启用 UPD，请执行以下操作：
 
-1. 运行 [Set-RDSessionCollectionConfiguration cmdlet](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) 为主（主动）部署启用用户配置文件磁盘 - 提供源卷（在部署步骤中的步骤 7 中创建）上文件共享的路径。
+1. 运行 [Set-RDSessionCollectionConfiguration cmdlet](/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) 为主（主动）部署启用用户配置文件磁盘 - 提供源卷（在部署步骤中的步骤 7 中创建）上文件共享的路径。
 2. 反转存储副本方向，使目标卷变成源卷（这将装载卷并使其可供辅助部署访问）。 可以运行 **Set-SRPartnership** cmdlet 来执行此操作。 例如：
 
    ```powershell
@@ -160,4 +160,4 @@ RG B 现在是主动主部署。 若要切换回 RG A 作为主部署，请执�
 
 可以将 Azure 流量管理器与本地终结点结合使用，但它需要 Azure 订阅。 或者，对于提供给最终用户的 DNS，为它们提供一条 CNAME 记录，该记录直接将用户定向到主部署。 进行故障转移时，可修改该 DNS CNAME 记录以重定向到辅助部署。 通过这种方式，最终用户只需使用一个 URL，就像使用 Azure 流量管理器一样将用户定向到合适的部署。 
 
-如果对创建本地到 Azure 站点模型感兴趣，请考虑使用 [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)。
+如果对创建本地到 Azure 站点模型感兴趣，请考虑使用 [Azure Site Recovery](/azure/site-recovery/site-recovery-overview)。

@@ -9,12 +9,12 @@ ms.assetid: 9b25b939-1e2c-4bed-a8d3-2a8e8e46b53d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 4879ae58c24596d64d24b6bece54d4c35837f00f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6535cb9cc6ad77d4ea5e5e33c2d28e03fd447968
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826760"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963571"
 ---
 # <a name="powershell-on-nano-server"></a>Nano Server 上的 PowerShell
 
@@ -127,5 +127,4 @@ At line:1 char:1
 
 可以使用 Windows PowerShell Desired State Configuration (DSC) 将 Nano Server 作为目标节点来管理。 目前，仅可以在请求模式下管理使用 DSC 运行 Nano Server 的节点。 并非所有 DSC 功能都与 Nano Server 正常运行。
 
-有关完整的详细信息，请参阅[使用 Nano Server 上的 DSC](https://docs.microsoft.com/powershell/scripting/dsc/getting-started/nanodsc)。
-
+有关完整的详细信息，请参阅[使用 Nano Server 上的 DSC](/powershell/scripting/dsc/getting-started/nanodsc)。

@@ -10,18 +10,18 @@ ms.date: 11/06/2018
 ms.topic: article
 ms.assetid: a8c6d5fa-399b-4823-8f10-affec1bbfe65
 ms.localizationpriority: medium
-ms.openlocfilehash: 068599b63a000566db86f29a93bfa91a4b4cd72e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0e6700cd02d040caaee0588106b27185e5427ee5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858160"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959519"
 ---
 # <a name="remote-desktop-services---planning-poster"></a>远程桌面服务 - 规划海报
 
 ## <a name="windows-virtual-desktop"></a>Windows 虚拟桌面
 
-你可能已听到我们谈论过远程桌面的“现代基础结构”。 也许你听到我们使用了“RDmi”一词。 你需要知道的短语是“Windows 虚拟桌面”。 有关详细信息，请参阅我们的 [Windows 虚拟桌面文档页](https://docs.microsoft.com/azure/virtual-desktop/)。
+你可能已听到我们谈论过远程桌面的“现代基础结构”。 也许你听到我们使用了“RDmi”一词。 你需要知道的短语是“Windows 虚拟桌面”。 有关详细信息，请参阅我们的 [Windows 虚拟桌面文档页](/azure/virtual-desktop/)。
 
 远程桌面服务团队制作了海报，帮助你规划、构建并运行 Windows 虚拟桌面环境。
 

@@ -8,12 +8,12 @@ ms.date: 08/01/2016
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 8fdebcad1370e06c19752944e85363c714f1fbcd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 29d7417ff82be77efeb02d16093c88c53777d1fa
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854690"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118635"
 ---
 # <a name="understanding-the-desktop-hosting-environment"></a>了解桌面托管环境
 
@@ -46,20 +46,20 @@ ms.locfileid: "80854690"
     
 其他信息：  
 [Azure Active Directory 域服务文档](https://azure.microsoft.com/documentation/services/active-directory-ds/)  
-[在 Azure 虚拟网络中安装新的 Active Directory 林](https://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/)  
-[使用 Azure 门户创建具有站点到站点 VPN 连接的资源管理器 VNet](https://azure.microsoft.com/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)  
+[在 Azure 虚拟网络中安装新的 Active Directory 林](../../identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md)  
+[使用 Azure 门户创建具有站点到站点 VPN 连接的资源管理器 VNet](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)  
   
 ## <a name="azure-sql-database"></a>Azure SQL 数据库  
 Azure SQL 数据库允许主机托管服务提供商扩展其远程桌面服务部署，而无需部署和维护一个完整的 SQL Server Always-On 群集。 远程桌面连接代理使用 Azure SQL 数据库来存储部署信息，例如当前用户连接到最终主机服务器的映射。 类似于其他 Azure 服务，Azure SQL DB 遵循消耗模型，该模型适用于任何规模的部署。   
   
 其他信息：  
-[什么是 SQL 数据库？](https://azure.microsoft.com/documentation/articles/sql-database-technical-overview/)  
+[什么是 SQL 数据库？](/azure/azure-sql/database/sql-database-paas-overview)  
   
 ## <a name="azure-active-directory-application-proxy"></a>Azure Active Directory 应用程序代理  
 Azure Active Directory 应用程序代理是 Azure Active Directory 的付费 SKU 中提供的一项服务，这些 SKU 使用户能够通过 Azure 自身的反向代理服务连接到内部应用程序。 这样，RD Web 和 RD 网关终结点可以隐藏在虚拟网络内，而无需通过公共 IP 地址向 Internet 公开。 这进一步允许主机托管服务提供商减少租户环境中的虚拟机数，同时仍保持完整部署。
   
 其他信息：  
-[启用 Azure AD 应用程序代理](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-enable/)  
+[启用 Azure AD 应用程序代理](/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)  
     
 ## <a name="file-server"></a>文件服务器  
 文件服务器使用服务器消息块 (SMB) 3.0 协议提供共享文件夹。 使用这些共享文件夹可以创建和存储用户配置文件磁盘文件 (.vhdx) 来备份数据，并让用户在租户的虚拟网络中与其他用户共享数据。
@@ -69,11 +69,9 @@ Azure Active Directory 应用程序代理是 Azure Active Directory 的付费 SK
 对于小型租户，可以通过将文件服务器与运行 RD 连接代理的虚拟机以及租户环境中单个虚拟机上的 RD 授权角色相结合来降低成本。  
   
 附加信息  
-[文件和存储服务概述](https://technet.microsoft.com/library/hh831487.aspx)  
-[如何将数据磁盘附加到虚拟机](http://www.windowsazure.com/manage/windows/how-to-guides/attach-a-disk/)  
+[文件和存储服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))  
+[如何将数据磁盘附加到虚拟机](https://www.windowsazure.com/manage/windows/how-to-guides/attach-a-disk/)  
   
 ### <a name="user-profile-disks"></a>用户配置文件磁盘  
 使用用户配置文件磁盘，用户在登录到一个集合中的 RD 会话主机服务器上的会话后可以保存个人设置和文件，然后在登录到该集合中另一个 RD 会话主机服务器时可访问相同的设置和文件。 当用户首次登录时，租户的文件服务器上会创建一个用户配置文件磁盘，该磁盘装载到用户连接到的 RD 会话主机服务器。 以后每次登录时，该用户配置文件磁盘将装载到相应的 RD 会话主机服务器，而每次注销时都会卸载。 只能由该用户访问配置文件磁盘的内容。  
   
-
-

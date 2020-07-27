@@ -9,21 +9,21 @@ ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8bbe4dcf9161686367f7807d522b79bcf99e32
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4b8a674d61379c0a645cc379ab9f9eafa3cc19b1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826400"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960689"
 ---
 # <a name="updating-nano-server"></a>更新 Nano Server
 
 > [!IMPORTANT]
 > 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解其含义。 
 
-Nano Server 提供各种保持最新状态的方法。 与其他的 Windows Server 安装选项相比，Nano Server 遵循与 Windows 10 维护模型类似的更积极的维护模型。 这些定期版本称为 Current Branch for Business (CBB) 版本  。 此方法支持想要更快地创新并以快速开发生命周期的云节奏前进的客户。 有关 CBB 的详细信息，请访问 [Windows Server 博客](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)。
+Nano Server 提供各种保持最新状态的方法。 与其他的 Windows Server 安装选项相比，Nano Server 遵循与 Windows 10 维护模型类似的更积极的维护模型。 这些定期版本称为 Current Branch for Business (CBB) 版本  。 此方法支持想要更快地创新并以快速开发生命周期的云节奏前进的客户。 有关 CBB 的详细信息，请访问 [Windows Server 博客](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)。
 
-在这些 CBB 版本之间，Nano Server 通过一系列累积更新保持最新版本   。 例如，Nano Server 的第一个累积更新与 [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120) 一起在 2016 年 9 月 26 日发布。 由于发布此更新和后续累积更新的原因，我们提供在 Nano Server 上安装这些更新的各种选项。 在本文中，我们使用 KB3192366 更新作为示例，介绍如何获取累积更新并将它们应用到 Nano Server。 有关累积更新模型的详细信息，请参阅 [Microsoft 更新博客](https://blogs.technet.microsoft.com/mu/2016/10/25/patching-with-windows-server-2016/)。
+在这些 CBB 版本之间，Nano Server 通过一系列累积更新保持最新版本   。 例如，Nano Server 的第一个累积更新与 [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120) 一起在 2016 年 9 月 26 日发布。 由于发布此更新和后续累积更新的原因，我们提供在 Nano Server 上安装这些更新的各种选项。 在本文中，我们使用 KB3192366 更新作为示例，介绍如何获取累积更新并将它们应用到 Nano Server。 有关累积更新模型的详细信息，请参阅 [Microsoft 更新博客](/archive/blogs/mu/patching-with-windows-server-2016)。
 
 > [!NOTE]
 > 如果从媒体或联机存储库安装可选 Nano Server 程序包，这将不包括最近的安全修补程序。 为避免可选程序包和基本操作系统之间的版本不匹配，应在安装任意可选程序包后立即安装最新的累计更新，**然后**再重启服务器。
@@ -154,10 +154,10 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
    
 ## <a name="additional-options"></a>其他选项
 其他更新 Nano Server 的方法可能与上述选项重合或对其加以补充。 此类选项包括使用 Windows Server Update Services (WSUS)、System Center Virtual Machine Manager (VMM)、任务计划程序或非 Microsoft 解决方案。
-- 通过设置以下注册表项[配置 WSUS 的 Windows 更新](https://msdn.microsoft.com/library/dd939844(v=ws.10).aspx)：
+- 通过设置以下注册表项[配置 WSUS 的 Windows 更新](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939844(v=ws.10))：
   - WUServer
   - WUStatusServer（通常使用与 WUServer 相同的值）
   - UseWUServer
   - AUOptions
-- [在 VMM 中管理结构更新](https://technet.microsoft.com/library/gg675084(v=sc.12).aspx)
-- [注册计划的任务](https://technet.microsoft.com/library/jj649811.aspx)
+- [在 VMM 中管理结构更新](/previous-versions/system-center/system-center-2012-R2/gg675084(v=sc.12))
+- [注册计划的任务](/previous-versions/system-center/system-center-2012-R2/gg675084(v=sc.12))

@@ -11,12 +11,12 @@ ms.custom:
 - CI ID 116803
 - CSSTroubleshoot
 manager: dcscontentpm
-ms.openlocfilehash: fe07636908dffc6bb59c544d512b132e7640bf51
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 6a38dad3362b2fa6c95c48cf613577941ffcc82c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269226"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963570"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>根据 Windows 激活错误代码解决问题
 
@@ -25,7 +25,7 @@ ms.locfileid: "84269226"
 
 本文提供的故障排除信息有助于你响应错误消息，这些消息是当你尝试使用多次激活密钥 (MAK) 或密钥管理服务 (KMS) 在一台或多台基于 Windows 的计算机上执行批量激活时可能会收到的。 请查看下表中的错误代码，然后选择相应的链接来查看有关该错误代码的详细信息及其解决方法。
 
-有关批量激活的详细信息，请参阅[规划批量激活](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client)。
+有关批量激活的详细信息，请参阅[规划批量激活](/windows/deployment/volume-activation/plan-for-volume-activation-client)。
 
 有关 Windows 当前版本和最新版本的批量激活的详细信息，请参阅[批量激活 [客户端]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10)。
 

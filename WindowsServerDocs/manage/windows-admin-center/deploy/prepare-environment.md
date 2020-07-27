@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 7b42db8c0be5e1a447ad0a3b794b07672c164514
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: a37c7e8765ba6f83fc1ebe20aaba3dfb8bc29a3d
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433141"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891342"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>为 Windows Admin Center 准备环境
 
@@ -63,7 +63,7 @@ ms.locfileid: "83433141"
 1. 在“工具”菜单中，单击“角色和功能”   。
 2. 在“角色和功能”中，查找“文件和存储服务”，并选择“文件和 iSCSI 服务”和“文件服务器”     ：
 
-![“角色和功能”的屏幕截图，其中显示所选“文件和 iSCSI 服务”角色](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![“角色和功能”的屏幕截图，其中显示所选“文件和 iSCSI 服务”角色](../media/prepare-environment/prepare-your-environment-image-1.png)
 
 ### <a name="step-3-enable-hyper-v-module-for-powershell"></a>**步骤 3：** 启用 PowerShell 的 Hyper-V 模块
 
@@ -72,7 +72,7 @@ ms.locfileid: "83433141"
 1. 在“工具”菜单中，单击“角色和功能”   。
 2. 在“角色和功能”中，查找“远程服务器管理工具”，并选中“角色管理工具”和“PowerShell 的 Hyper-V 模块”     ：
 
-![“角色和功能”的屏幕截图，其中显示所选“Hyper-V”角色](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![“角色和功能”的屏幕截图，其中显示所选“Hyper-V”角色](../media/prepare-environment/prepare-your-environment-image-2.png)
 
 Microsoft Hyper-V Server 2016 现在可以使用 Windows Admin Center 进行管理。
 
@@ -111,7 +111,7 @@ Microsoft Hyper-V Server 2016 现在可以使用 Windows Admin Center 进行管�
 1. 在“工具”菜单中，单击“角色和功能”   。
 2. 在“角色和功能”中，查找“文件和存储服务”，并选中“文件和 iSCSI 服务”和“文件服务器”     ：
 
-![“角色和功能”的屏幕截图，其中显示所选“文件和 iSCSI 服务”角色](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![“角色和功能”的屏幕截图，其中显示所选“文件和 iSCSI 服务”角色](../media/prepare-environment/prepare-your-environment-image-1.png)
 
 ### <a name="step-4-enable-hyper-v-module-for-powershell"></a>步骤 4：启用 PowerShell 的 Hyper-V 模块
 
@@ -120,7 +120,7 @@ Microsoft Hyper-V Server 2016 现在可以使用 Windows Admin Center 进行管�
 1. 在“工具”菜单中，单击“角色和功能”   。
 2. 在“角色和功能”中，查找“远程服务器管理工具”，并选中“角色管理工具”和“PowerShell 的 Hyper-V 模块”     ：
 
-![“角色和功能”的屏幕截图，其中显示了所选的 Hyper-V 远程服务器管理工具](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![“角色和功能”的屏幕截图，其中显示了所选的 Hyper-V 远程服务器管理工具](../media/prepare-environment/prepare-your-environment-image-2.png)
 
 Microsoft Hyper-V Server 2012 R2 现在可以使用 Windows Admin Center 进行管理。
 

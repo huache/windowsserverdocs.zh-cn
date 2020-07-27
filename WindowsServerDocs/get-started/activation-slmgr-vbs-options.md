@@ -12,12 +12,12 @@ appliesto:
 - Windows Server 2012 R2
 - Windows 10
 - Windows 8.1
-ms.openlocfilehash: c0d8019812144cc3e4bd33cfaf2ca2c0c1b7eefa
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0de9d7496266afba4b76e5b837dc68e4f9745518
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473174"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962729"
 ---
 # <a name="slmgrvbs-options-for-obtaining-volume-activation-information"></a>用于获取批量激活信息的 Slmgr.vbs 选项
 
@@ -35,7 +35,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 ## <a name="using-slmgr-on-remote-computers"></a>在远程计算机上使用 Slmgr
 
-若要管理远程客户端，请使用批量激活管理工具 (VAMT) 版本 1.2 或更高版本，或创建意识到平台之间差异的自定义 WMI 脚本。 有关批量激活的 WMI 属性和方法的详细信息，请参阅[批量激活的 WMI 属性和方法](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502536(v=ws.11))。
+若要管理远程客户端，请使用批量激活管理工具 (VAMT) 版本 1.2 或更高版本，或创建意识到平台之间差异的自定义 WMI 脚本。 有关批量激活的 WMI 属性和方法的详细信息，请参阅[批量激活的 WMI 属性和方法](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502536(v=ws.11))。
 
 > [!IMPORTANT]
 > 由于 Windows 7 和 Windows Server 2008 R2 中的 WMI 更改，因此 Slmgr.vbs 脚本不适用于跨平台工作。 不支持使用 Slmgr.vbs 从 Windows Vista&reg; 操作系统管理 Windows 7 或 Windows Server 2008 R2 系统。 尝试从 Windows 7 或 Windows Server 2008 R2 中管理较旧系统将生成特定版本不匹配错误。 例如，运行脚本 cscript slmgr.vbs \<vista\_machine\_name\> /dlv 将产生以下输出：
@@ -69,7 +69,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 |\/cpky |某些服务操作要求产品密钥在全新体验 (OOBE) 操作期间在注册表中可用。 **/cpky** 选项从注册表中删除产品密钥以防止恶意代码盗用此密钥。<br />对于部署密钥的零售安装，最佳做法建议运行此选项。 因为此选项是这些密钥的默认行为，因此 MAK 和 KMS 主机密钥不需要此选项。 此选项仅是默认行为不是从注册表中清除该密钥的其他密钥类型所必需的。<br />必须在提升的“命令提示符”窗口中运行此操作。 |
 |\/ilc&nbsp;&lt;license_file&gt; |此选项安装所需的参数指定的许可证文件。 这些许可证可以作为疑难解答措施安装以支持基于令牌的激活，或者作为上架应用程序的手动安装的一部分安装。<br />在此过程中，不会验证许可证：许可证验证超出 Slmgr.vbs 的范围。 相反，在运行时验证由软件保护服务处理。<br />必须从提升的“命令提示符”窗口下运行此操作，或必须将“标准用户操作”注册表值设置为允许非特权的用户额外访问软件保护服务。 |
 |\/rilc |此选项重新安装存储在 %SystemRoot%\system32\oem 和 %SystemRoot%\System32\spp\tokens 中的所有许可证。 这些许可证是在安装过程中存储的“已知正确”副本。<br />将替换受信任应用商店中的任何匹配许可证。 任何其他许可证（例如，受信任的颁发机构 (TA) 颁发许可证 (IL)、应用程序的许可证）不会受到影响。<br />必须在提升的“命令提示符”窗口中运行此操作，或必须将“标准用户操作”注册表值设置为允许非特权的用户额外访问软件保护服务。 |
-|\/rearm |此选项将重置激活计时器。 **/rearm** 过程也称为 **sysprep /generalize**。<br />如果 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\SkipRearm 注册表项设为 1，则此操作将不执行任何操作 。 请参阅[批量激活的注册表设置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502532(v=ws.11))详细了解此注册表项。<br />必须在提升的“命令提示符”窗口中运行此操作，或必须将“标准用户操作”注册表值设置为允许非特权的用户额外访问软件保护服务。 |
+|\/rearm |此选项将重置激活计时器。 **/rearm** 过程也称为 **sysprep /generalize**。<br />如果 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\SkipRearm 注册表项设为 1，则此操作将不执行任何操作 。 请参阅[批量激活的注册表设置](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502532(v=ws.11))详细了解此注册表项。<br />必须在提升的“命令提示符”窗口中运行此操作，或必须将“标准用户操作”注册表值设置为允许非特权的用户额外访问软件保护服务。 |
 |\/rearm-app &lt;Application&nbsp;ID&gt; |重置指定应用的许可状态。 |
 |\/rearm-sku &lt;Application&nbsp;ID&gt; |重置指定 SKU 的许可状态。 |
 |\/upk&nbsp;\[&lt;Application&nbsp;ID&gt;] |此选项卸载当前 Windows 版本的产品密钥。 重新启动后，系统将处于未经许可的状态下，除非安装了新产品密钥。<br />你还可以使用 \<**Activation ID**\> 参数来指定不同的已安装产品。<br />必须从提升的“命令提示符”窗口下运行此操作。 |
@@ -123,6 +123,5 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 ## <a name="additional-references"></a>其他参考
 
-- [批量激活技术参考](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502529%28v%3dws.11%29)
-- [批量激活概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612%28v%3dws.11%29)
-
+- [批量激活技术参考](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502529%28v%3dws.11%29)
+- [批量激活概述](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831612%28v%3dws.11%29)

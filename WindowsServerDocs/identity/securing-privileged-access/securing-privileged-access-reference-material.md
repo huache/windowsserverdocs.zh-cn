@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 00335fb2ca7a54031430c6c606fb6ffa23a8f7a2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 08a315dc362d7de872f47ca702c4401eb327245a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855130"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966179"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 管理层模型
 
@@ -133,7 +133,7 @@ ms.locfileid: "80855130"
 
 可以通过许多方式引入控制关系，包括文件系统等对象上的安全访问控制列表 (ACL)、计算机上本地管理员组中的成员身份或作为系统运行的计算机上安装的代理（能够运行任意代码和脚本）。
 
-一个经常被忽视的示例是通过登录被公开，这会通过向其他系统公开某一系统的管理凭据来创建控制关系。 这是发生凭据被盗攻击（如传递哈希）危害如此之大的根本原因。 当管理员使用第 0 层凭据登录到标准用户桌面时，它们会向此桌面公开相应凭据，使 AD 对其进行控制并针对 AD 创建特权提升路径。 有关这些攻击的详细信息，请参阅[此页面](https://technet.microsoft.com/security/dn785092)。
+一个经常被忽视的示例是通过登录被公开，这会通过向其他系统公开某一系统的管理凭据来创建控制关系。 这是发生凭据被盗攻击（如传递哈希）危害如此之大的根本原因。 当管理员使用第 0 层凭据登录到标准用户桌面时，它们会向此桌面公开相应凭据，使 AD 对其进行控制并针对 AD 创建特权提升路径。 有关这些攻击的详细信息，请参阅[此页面](/previous-versions/dn785092(v=msdn.10))。
 
 由于大量资产依赖于标识系统（如 Active Directory），应将 Active Directory 和域控制器依赖的系统数量降至最低。
 
@@ -464,7 +464,7 @@ ms.locfileid: "80855130"
 > [!NOTE]
 > 这种方法非常适用于管理 Active Directory，但许多应用程序并不适合由使用标准信任的外部林中的帐户进行管理。
 
-下图显示了一个 ESAE 林（用于管理第 0 层资产）和 PRIV 林（配置为与 Microsoft 标识管理器的特权访问管理功能结合使用）。 有关部署 MIM PAM 实例的详细信息，请参阅 [Active Directory 域服务 (AD DS) 的特权标识管理](https://technet.microsoft.com/library/mt150258.aspx)文章。
+下图显示了一个 ESAE 林（用于管理第 0 层资产）和 PRIV 林（配置为与 Microsoft 标识管理器的特权访问管理功能结合使用）。 有关部署 MIM PAM 实例的详细信息，请参阅 [Active Directory 域服务 (AD DS) 的特权标识管理](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)文章。
 
 ![ESAE 林（用于管理第 0 层资产）和 PRIV 林（配置为与 Microsoft Identity Manager 的 Privileged Access Management 功能结合使用）图](../media/securing-privileged-access-reference-material/PAW_RM_Fig14.JPG)
 
@@ -509,12 +509,12 @@ ms.locfileid: "80855130"
    - “全卷加密”可防止计算机实体丢失（如远程使用的管理笔记本电脑）。
 
       > [!NOTE]
-      > 有关详细信息，请参阅 [BitLocker](https://technet.microsoft.com/library/dn641993.aspx)。
+      > 有关详细信息，请参阅 [BitLocker](/previous-versions/windows/it-pro/windows-8.1-and-8/dn641993(v=ws.11))。
 
    - “USB 限制”可提供针对物理感染媒介的保护。
 
       > [!NOTE]
-      > 有关详细信息，请参阅[控制可移动设备和介质的读取或写入权限](https://technet.microsoft.com/library/cc730808(v=ws.10).aspx)。
+      > 有关详细信息，请参阅[控制可移动设备和介质的读取或写入权限](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730808(v=ws.10))。
 
    - “网络隔离”可防止网络攻击和管理员的无意操作。 主机防火墙应阻止除明确需要的连接以外的所有传入连接，并阻止所有出站 Internet 访问。
 
@@ -608,7 +608,7 @@ ms.locfileid: "80855130"
 - (-) 表示凭据未公开。
 - (v) 表示凭据已公开。
 
-对于未出现在此表中的管理应用程序，可以从审核登录事件的登录类型字段中确定登录类型。 有关详细信息，请参阅[审核登录事件](https://technet.microsoft.com/library/cc787567(v=ws.10).aspx)。
+对于未出现在此表中的管理应用程序，可以从审核登录事件的登录类型字段中确定登录类型。 有关详细信息，请参阅[审核登录事件](/previous-versions/windows/it-pro/windows-server-2003/cc787567(v=ws.10))。
 
 在基于 Windows 的计算机中，以多个登录类型之一处理所有身份验证，无论使用何种身份验证协议或身份验证程序。 此表包含最常见的登录类型以及相对于凭据被盗的属性：
 
@@ -631,4 +631,4 @@ ms.locfileid: "80855130"
 - **示例**列出登录类型使用的常见情形。
 
 > [!NOTE]
-> 有关登录类型的详细信息，请参阅 [SECURITY_LOGON_TYPE 枚举](https://technet.microsoft.com/library/aa380129(VS.85).aspx)。
+> 有关登录类型的详细信息，请参阅 [SECURITY_LOGON_TYPE 枚举](/windows/win32/api/ntsecapi/ne-ntsecapi-security_logon_type)。

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c64914e840c4e8a84603144fd499e091f0cb46c
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 9e9aecc439235d9396d764420711109552d89f32
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070544"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965159"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>使用 Windows Server 中的 SMB 3 协议的文件共享概述
 
@@ -57,13 +57,13 @@ ms.locfileid: "85070544"
 | --------- | --------- | --------- |
 | SMB 加密     |   已更新      | 使用高级加密标准-Galois/计数器模式 (AES-GCM) 的 SMB 3.1.1 加密比使用 AES-CCM 的 SMB 签名或之前的 SMB 加密更快。   |
 | 目录缓存 | “新建” | SMB 3.1.1 包括目录缓存的增强功能。 Windows 客户端现在可以缓存更大的目录，大约 50 万个条目。 Windows 客户端将尝试使用 1 MB 缓冲区进行目录查询，以减少往返并提高性能。 |
-| 预身份验证完整性 | “新建” |  在 SMB 3.1.1 中，预身份验证完整性提供改进的防护，可防止中间人攻击者篡改 SMB 的连接建立和身份验证消息。 有关详细信息，请参阅 [Windows 10 中的 SMB 3.1.1 预身份验证完整性](https://docs.microsoft.com/archive/blogs/openspecification/smb-3-1-1-pre-authentication-integrity-in-windows-10)。 |
+| 预身份验证完整性 | “新建” |  在 SMB 3.1.1 中，预身份验证完整性提供改进的防护，可防止中间人攻击者篡改 SMB 的连接建立和身份验证消息。 有关详细信息，请参阅 [Windows 10 中的 SMB 3.1.1 预身份验证完整性](/archive/blogs/openspecification/smb-3-1-1-pre-authentication-integrity-in-windows-10)。 |
 | SMB 加密改进 | “新建” | SMB 3.1.1 提供一种用于协商每个连接的加密算法的机制，以及 AES-128-CCM 和 AES-128-GCM 选项。 AES-128-GCM 是新的 Windows 版本的默认选项，而较旧的版本将继续使用 AES-128-CCM。 |
 | 滚动群集升级支持 | “新建” | 通过让 SMB 在升级过程中支持用于群集的 SMB 的不同最高版本，启用[滚动群集升级](../../failover-clustering/cluster-operating-system-rolling-upgrade.md)。 有关让 SMB 使用协议的不同版本（方言）进行通信的详细信息，请参阅博客文章[控制 SMB 方言](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-smb-dialects/ba-p/860024)。 |
 | Windows 10 中的 SMB 直通客户端支持 | “新建” | Windows 10 企业版、Windows 10 教育版和 Windows 10 专业工作站版现已添加 SMB 直通客户端支持。 |
-| 对 FileNormalizedNameInformation API 调用的本机支持 | “新建” | 添加了对查询文件的规范化名称的本机支持。 有关详细信息，请参阅 [FileNormalizedNameInformation](https://docs.microsoft.com/openspecs/windows_protocols/ms-fscc/20bcadba-808c-4880-b757-4af93e41edf6)。 |
+| 对 FileNormalizedNameInformation API 调用的本机支持 | “新建” | 添加了对查询文件的规范化名称的本机支持。 有关详细信息，请参阅 [FileNormalizedNameInformation](/openspecs/windows_protocols/ms-fscc/20bcadba-808c-4880-b757-4af93e41edf6)。 |
 
-有关更多详细信息，请参阅博客文章 [Windows Server 2016 技术预览版 2 中 SMB 3.1.1 的新增功能](https://docs.microsoft.com/archive/blogs/josebda/whats-new-in-smb-3-1-1-in-the-windows-server-2016-technical-preview-2)。
+有关更多详细信息，请参阅博客文章 [Windows Server 2016 技术预览版 2 中 SMB 3.1.1 的新增功能](/archive/blogs/josebda/whats-new-in-smb-3-1-1-in-the-windows-server-2016-technical-preview-2)。
 
 ## <a name="features-added-in-smb-302-with-windows-server-2012-r2-and-windows-81"></a>Windows Server 2012 R2 和 Windows 8.1 的 SMB 3.02 中添加的功能
 
@@ -72,7 +72,7 @@ ms.locfileid: "85070544"
 | 自动重新平衡横向扩展文件服务器客户端     |   “新建”      | 改进了横向扩展文件服务器的可伸缩性和可管理性。 将按照每个文件共享（而不是每个服务器）跟踪 SMB 客户端连接，然后将客户端重定向到群集节点，并让用户最方便地访问文件共享使用的卷。 这样便会减少文件服务器节点之间的重定向流量，从而提高效率。 在建立初始连接后以及在重新配置群集存储时，将重定向客户端。    |
 | WAN 的性能   | 已更新  | 当使用文件资源管理器将远程计算机上某个位置的远程副本复制到同一服务器上的另一副本时，Windows 8.1 和 Windows 10 通过 SMB 支持提供改进的 CopyFile SRV_COPYCHUNK。 将仅通过网络复制少量元数据（每 16MiB 传输 1/2KiB 的文件数据）。 这样可以显著提高性能。 这是 SMB 的 OS 级别和文件资源管理器级别的区别。 |
 | SMB 直通     |   已更新      | 托管包含小规模 I/O 的工作负载（例如，虚拟机中的联机事务处理 (OLTP) 数据库）时，通过提高效率来优化小规模 I/O 工作负载的性能。 使用较高速度的网络接口（例如 40 Gbps 以太网和 56 Gbps InfiniBand）时，这些改进是很明显的。  |
-| SMB 带宽限制 | “新建” | 现在可以使用 [Set-SmbBandwidthLimit](https://docs.microsoft.com/powershell/module/smbshare/set-smbbandwidthlimit) 来设置三种类别的宽带限制：VirtualMachine（基于 SMB 的 Hyper-V 流量）、LiveMigration（基于 SMB 的 Hyper-V 实时迁移流量）或 Default（所有其他类型的 SMB 流量）。
+| SMB 带宽限制 | “新建” | 现在可以使用 [Set-SmbBandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit) 来设置三种类别的宽带限制：VirtualMachine（基于 SMB 的 Hyper-V 流量）、LiveMigration（基于 SMB 的 Hyper-V 实时迁移流量）或 Default（所有其他类型的 SMB 流量）。
 
 有关 Windows Server 2012 R2 中新增和更改的 SMB 功能的详细信息，请参阅 [Windows Server 中 SMB 的新增功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)。
 
@@ -90,7 +90,7 @@ ms.locfileid: "85070544"
 | SMB 加密     |   “新建”      | 提供 SMB 数据的端对端加密并防止数据在未受信任网络中遭受窃听。 无需新部署成本，且无需 Internet 协议安全性 (IPsec)、专用硬件或 WAN 加速器。 它可按共享配置，也可针对整个文件服务器配置，并且可针对数据遍历未受信任网络的各种方案启用。 |
 | SMB 目录租用     |  “新建” | 缩短分支机构的应用程序响应时间。 使用目录租用后，缩短了从客户端到服务器的往返时间，因为是从保留时间较长的目录缓存中检索元数据。 缓存一致性得到保持，因为在服务器上的目录信息更改时将通知客户端。 目录租用适用于主文件夹（读/写，无共享）和发布（只读，带共享）。    |
 | WAN 的性能   | “新建”   | 目录操作锁定 (oplock) 和 oplock 租用已在 SMB 3.0 中引入。 对于典型办公/客户端工作负载，会显示 oplock/租用以减少约 15% 的网络往返。<br><br>在 SMB 3 中，SMB 的 Windows 实现已经过优化，以改善客户端的缓存性能以及提高吞吐量的能力。<br><br>SMB 3 改进了 CopyFile() API 和相关工具（例如 Robocopy），以显著增加通过网络推送的数据。 |
-| 安全方言协商 | “新建” | 有助于防止中间人降级方言协商的企图。 目的是防止窃听者降级客户端和服务器之间的初始协商方言和功能。 有关详细信息，请参阅 [SMB3 安全方言协商](https://docs.microsoft.com/archive/blogs/openspecification/smb3-secure-dialect-negotiation)。 请注意，此功能已由 SMB 3.1.1 中 [Windows 10 中的 SMB 3.1.1 预身份验证完整性](https://docs.microsoft.com/archive/blogs/openspecification/smb-3-1-1-pre-authentication-integrity-in-windows-10)功能取代。 |
+| 安全方言协商 | “新建” | 有助于防止中间人降级方言协商的企图。 目的是防止窃听者降级客户端和服务器之间的初始协商方言和功能。 有关详细信息，请参阅 [SMB3 安全方言协商](/archive/blogs/openspecification/smb3-secure-dialect-negotiation)。 请注意，此功能已由 SMB 3.1.1 中 [Windows 10 中的 SMB 3.1.1 预身份验证完整性](/archive/blogs/openspecification/smb-3-1-1-pre-authentication-integrity-in-windows-10)功能取代。 |
 
 
 ## <a name="hardware-requirements"></a>硬件要求

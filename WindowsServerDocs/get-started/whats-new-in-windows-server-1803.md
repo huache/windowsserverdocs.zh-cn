@@ -8,12 +8,12 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: c4676ee720780ac7f347d98048c920bd4ce68e59
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 73d0d62aac3771c4150a133950085170f7f51cb5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473184"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961139"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server 版本 1803 中的新增功能
 
@@ -27,7 +27,7 @@ Project Honolulu 现称为 **Windows Admin Center**。
 <br>&nbsp;
 > [!video https://www.youtube.com/embed/WCWxAp27ERk?autoplay=false]
 
-[Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview) 整合了有关本地和远程服务器管理的各个方面。 Windows Admin Center 是本地部署的基于浏览器的管理体验，不需要 Internet 连接，可让你全面控制 Windows Server 部署的各个方面。
+[Windows Admin Center](../manage/windows-admin-center/overview.md) 整合了有关本地和远程服务器管理的各个方面。 Windows Admin Center 是本地部署的基于浏览器的管理体验，不需要 Internet 连接，可让你全面控制 Windows Server 部署的各个方面。
 
 ## <a name="windows-server-release-strategy"></a>Windows Server 发布策略
 
@@ -59,7 +59,7 @@ Windows Server 版本 1709 作为半年频道中的第一版于 2017 年 9 月�
 
 ### <a name="server-core-container-image"></a>Server Core 容器映像
 
-应用程序兼容性更好的较小 Server Core 容器现已推出。 详细信息请在[此处](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/)获取。
+应用程序兼容性更好的较小 Server Core 容器现已推出。 详细信息请在[此处](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization)获取。
 
 - 已删除未使用的可选功能和角色。 有关详细信息，请参阅 [Server Core 容器不存在的角色、角色服务和功能](../administration/server-core/server-core-container-removed-roles.md)。
     - 下载文件大小降低到 1.58 GB，比 Windows Server 版本 1709 降低了 30%。
@@ -68,7 +68,7 @@ Windows Server 版本 1709 作为半年频道中的第一版于 2017 年 9 月�
 
 ### <a name="windows-subsystem-for-linux-wsl"></a>适用于 Linux 的 Windows 子系统 (WSL)
 
-WSL 使服务器管理员可以使用 Windows Server 上的 Linux 中的现有工具和脚本。 [命令行博客](https://blogs.msdn.microsoft.com/commandline/tag/wsl/)中展示的许多改进现在都是 Windows Server 的一部分，包括后台任务、DriveFS、WSLPath 和更多其他内容。
+WSL 使服务器管理员可以使用 Windows Server 上的 Linux 中的现有工具和脚本。 [命令行博客](https://devblogs.microsoft.com/commandline/tag/wsl/)中展示的许多改进现在都是 Windows Server 的一部分，包括后台任务、DriveFS、WSLPath 和更多其他内容。
 
 ### <a name="kubernetes"></a>Kubernetes
 
@@ -94,7 +94,7 @@ Kubernetes（通常称作 K8s）是用于自动部署、缩放和管理在 [Clou
 
 ## <a name="storage"></a>存储
 
-借助此版本，可以阻止“文件服务器资源管理器服务”启动时在所有卷上创建变更日志（也称为 USN 日志）。 这可以节省每个卷的空间，但会禁用实时文件分类。 有关详细信息，请参阅[文件服务器资源管理器概述](https://docs.microsoft.com/windows-server/storage/fsrm/fsrm-overview)。
+借助此版本，可以阻止“文件服务器资源管理器服务”启动时在所有卷上创建变更日志（也称为 USN 日志）。 这可以节省每个卷的空间，但会禁用实时文件分类。 有关详细信息，请参阅[文件服务器资源管理器概述](../storage/fsrm/fsrm-overview.md)。
 
 ## <a name="features-added-to-server-core"></a>添加到 Server Core 的功能
 
@@ -110,5 +110,5 @@ Install-WindowsFeature -Name WDS
 
 ## <a name="additional-references"></a>其他参考
 
-[Windows Server 版本信息](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
-[Windows 10 版本 1803 IT 专业人员内容中的新增功能](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)
+[Windows Server 版本信息](./windows-server-release-info.md)<br>
+[Windows 10 版本 1803 IT 专业人员内容中的新增功能](/windows/whats-new/whats-new-windows-10-version-1803)

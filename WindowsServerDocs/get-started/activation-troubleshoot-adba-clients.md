@@ -8,19 +8,19 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e31cfa892019e4f3bbcd3b67dbb42751cc58dd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d56b2d002b0403971dc50fab639f77bddf1f8809
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963033"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959879"
 ---
 # <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>例如：针对基于 Active Directory 的激活 (ADBA) 客户端无法激活的问题进行排查
 
 > [!NOTE]
 > 本文最初于 2018 年 3 月 26 日作为 TechNet 博客发布。
 
-大家好！ 我是 Mike Kammer，我在 Microsoft 担任平台 PFE 已经两年多了。 我最近帮助一位客户在其环境中部署了 Windows Server 2016。 我们还利用此机会将其激活方法从 KMS 服务器迁移到[基于 Active Directory 的激活](https://docs.microsoft.com/previous-versions/windows/hh852637(v=win.10))。
+大家好！ 我是 Mike Kammer，我在 Microsoft 担任平台 PFE 已经两年多了。 我最近帮助一位客户在其环境中部署了 Windows Server 2016。 我们还利用此机会将其激活方法从 KMS 服务器迁移到[基于 Active Directory 的激活](/previous-versions/windows/hh852637(v=win.10))。
 
 作为进行所有更改的正确过程，我们首先在客户的测试环境中进行迁移。 我们按照 Charity Shelbourne 的一篇优秀的博客文章[基于 Active Directory 的激活与密钥管理服务](https://techcommunity.microsoft.com/t5/Core-Infrastructure-and-Security/Active-Directory-Based-Activation-vs-Key-Management-Services/ba-p/256016)中的说明开始部署。 测试环境中的域控制器均运行 Windows Server 2012 R2，因此我们不需要准备林。 我们将角色安装在 Windows Server 2012 R2 域控制器上，并选择了基于 Active Directory 的激活作为批量激活方法。 我们安装了 KMS 密钥，并将其命名为“KMS AD Activation ( ** LAB)”。 我们很大程度上都是按照该博客文章逐步操作。
 
@@ -70,7 +70,7 @@ ms.locfileid: "71963033"
 
 因此我知道 DNS 是正常的。 Active Directory 正确配置为 KMS 激活源。 我的物理服务器已正确激活。 只是 VM 会出现问题吗？ 顺便提一下，有趣的是，我的客户告诉我，另一个部门的某个人也决定构建十几台 Windows Server 2016 虚拟机。 因此，我认为我还要再处理十几台无法激活的服务器。 但情况并非如此！ 这些服务器已正常激活。
 
-我重新查看 slmgr 命令，想方设法激活这些棘手的服务器  。 这次，我将使用 /ipk 开关，这将允许我安装产品密钥  。 我转到[此站点](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867(v=ws.11))以获取标准版本的 Windows Server 2016 的相应密钥。 我的一些服务器是数据中心，但我首先需要解决这一个的问题。
+我重新查看 slmgr 命令，想方设法激活这些棘手的服务器  。 这次，我将使用 /ipk 开关，这将允许我安装产品密钥  。 我转到[此站点](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj612867(v=ws.11))以获取标准版本的 Windows Server 2016 的相应密钥。 我的一些服务器是数据中心，但我首先需要解决这一个的问题。
 
 ![显示 KMS 客户端安装密钥列表的图像](./media/032618_1700_Troubleshoo9.png)
 

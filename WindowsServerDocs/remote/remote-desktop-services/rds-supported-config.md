@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 406112eae884b1e34d54eb18700c3ad28c3f52c6
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 1285a63b3b283914a439817886cd84c4b93b59c8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390074"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965679"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>远程桌面服务支持的配置
 
@@ -137,4 +137,4 @@ Windows Server 2016 和 Windows Server 2019 RDS 支持两种主要的 SSO 体验
 
 ## <a name="using-remote-desktop-services-with-application-proxy-services"></a>将远程桌面服务与应用程序代理服务配合使用
 
-可将远程桌面服务（Web 客户端除外）与 [Azure AD 应用程序代理](https://docs.microsoft.com/azure/active-directory/application-proxy-publish-remote-desktop)配合使用。 远程桌面服务不支持使用 Windows Server 2016 及更低版本中包含的 [Web 应用程序代理](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server)。
+可将远程桌面服务（Web 客户端除外）与 [Azure AD 应用程序代理](/azure/active-directory/application-proxy-publish-remote-desktop)配合使用。 远程桌面服务不支持使用 Windows Server 2016 及更低版本中包含的 [Web 应用程序代理](../remote-access/web-application-proxy/web-application-proxy-windows-server.md)。

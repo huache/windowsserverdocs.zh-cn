@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 88806c7302474b111b700376c75b9b09f4da9236
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2e4628e9ec7b5d75b88bb07282e2183a2f16fff2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853000"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959149"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>将远程桌面服务部署迁移到 Windows Server 2016
 
@@ -22,7 +22,7 @@ ms.locfileid: "80853000"
 
 支持将远程桌面服务部署从运行 Windows Server 2016 的源服务器迁移到运行 Windows Server 2016 的目标服务器。 换而言之，无法直接就地将 Windows Server 2012 R2 中的 RDS 迁移到 Windows Server 2016。 对于大多数 RDS 组件，首先需要升级到 Windows Server 2016，然后再迁移数据和许可证。 只有 RD Web、RD 网关和授权服务器组件支持直接迁移。
 
-有关升级过程和要求的详细信息，请参阅[将远程桌面服务部署升级到 Windows Server 2016](upgrade-to-rds-2016.md)。
+有关升级过程和要求的详细信息，请参阅[将远程桌面服务部署升级到 Windows Server 2016](./upgrade-to-rds.md)。
 
 使用以下步骤迁移远程桌面服务部署：
 
@@ -45,11 +45,11 @@ ms.locfileid: "80853000"
 这是第一个，也是最重要的迁移步骤：将 RD 连接代理迁移到运行 Windows Server 2016 的目标服务器。
 
 > [!IMPORTANT]
-> 必须配置远程桌面连接代理（RD 连接代理）源服务器，使之具有进行迁移所需的高可用性。 有关详细信息，请参阅[部署远程桌面连接代理群集](Deploy-a-Remote-Desktop-Connection-Broker-cluster.md)。
+> 必须配置远程桌面连接代理（RD 连接代理）源服务器，使之具有进行迁移所需的高可用性。 有关详细信息，请参阅[部署远程桌面连接代理群集](./rds-connection-broker-cluster.md)。
 
 1. 如果高可用性设置中包含多个 RD 连接代理服务器，请只保留当前处于活动状态的 RD 连接代理服务器，删除所有其他 RD 连接代理服务器。
 
-2. 将部署中余下的 RD 连接代理服务器[升级](upgrade-to-rds-2016.md)到 Windows Server 2016。
+2. 将部署中余下的 RD 连接代理服务器[升级](./upgrade-to-rds.md)到 Windows Server 2016。
 
 3. 将 Windows Server 2016 RD 连接代理服务器添加到高可用性部署中。
 
@@ -63,7 +63,7 @@ ms.locfileid: "80853000"
 > [!IMPORTANT]
 > 只能在成功完成前一步骤[迁移 RD 连接服务器代理](#migrate-rdconnection-broker-servers)之后迁移会话集合。
 
-1. 将 Windows Server 2012 R2 中的[会话集合升级](Upgrade-to-RDSH-2016.md)到 Windows Server 2016。
+1. 将 Windows Server 2012 R2 中的[会话集合升级](./upgrade-to-rdsh.md)到 Windows Server 2016。
 
 2. 将运行 Windows Server 2016 的新 RD 会话主机服务器添加到该会话集合中。
 
@@ -81,7 +81,7 @@ ms.locfileid: "80853000"
 > [!IMPORTANT]
 > 只能在成功完成前一步骤[迁移 RD 连接代理服务器](#migrate-rdconnection-broker-servers)之后迁移虚拟机集合。
 
-1. 将运行 Windows Server 2012 R2 的服务器中的[虚拟桌面集合升级](Upgrade-to-RDVH-2016.md)到 Windows Server 2016。
+1. 将运行 Windows Server 2012 R2 的服务器中的[虚拟桌面集合升级](./upgrade-to-rdvh.md)到 Windows Server 2016。
 
 2. 将新的 Windows Server 2016 RD 虚拟化主机服务器添加到虚拟桌面集合中。
 

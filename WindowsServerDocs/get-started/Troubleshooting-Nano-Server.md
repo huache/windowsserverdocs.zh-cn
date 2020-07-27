@@ -10,12 +10,12 @@ ms.assetid: e427c66f-9571-4b8c-b65d-e7370d91544d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: f134680792eda33343bb6743708b37cf4f9e5faa
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ce71c2d11343be62d47f8957fa9414915fcc7847
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826450"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964409"
 ---
 # <a name="troubleshooting-nano-server"></a>Nano Server 疑难解答
 
@@ -45,7 +45,7 @@ Nano Server 包括一个恢复控制台，可以确保即使网络错误配置�
 > 恢复控制台仅支持基本的键盘功能。 不支持键盘指示灯、10 键部分和键盘布局切换（例如大写锁定和数字锁定）。 仅支持英语键盘和字符集。
 
 ## <a name="accessing-nano-server-over-a-serial-port-with-emergency-management-services"></a>通过串行端口利用紧急管理服务访问 Nano Server  
-利用紧急管理服务 (EMS) 可以执行基本疑难解答，获取网络状态和通过串行端口使用终端仿真程序打开控制台会话（包括 CMD/PowerShell）。 这样即无需使用键盘和监视器对服务器进行疑难解答。 有关 EMS 的详细信息，请参阅[紧急管理服务技术参考](https://technet.microsoft.com/library/cc784411(v=ws.10).aspx)。
+利用紧急管理服务 (EMS) 可以执行基本疑难解答，获取网络状态和通过串行端口使用终端仿真程序打开控制台会话（包括 CMD/PowerShell）。 这样即无需使用键盘和监视器对服务器进行疑难解答。 有关 EMS 的详细信息，请参阅[紧急管理服务技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc784411(v=ws.10))。
 
 若要在 Nano Server 映像上启用 EMS，以备以后需要时使用，请运行此 cmdlet：  
   
@@ -54,7 +54,7 @@ Nano Server 包括一个恢复控制台，可以确保即使网络错误配置�
 此示例 cmdlet 可在串行端口上 3 上启用 EMS，且波特率为 9600 bps。 如果不包含这些参数，默认值为端口 1 和 115200 bps。 若要将此 cmdlet 用于 VHDX 媒体，请务必包括 Hyper-V 功能和相应的 Windows PowerShell 模块。
 
 ## <a name="kernel-debugging"></a>内核调试  
-可以使用多种方法将 Nano Server 映像配置为支持内核调试。 若要结合使用内核调试与 VHDX 映像，请务必包括 Hyper-V 功能和相应的 Windows PowerShell 模块。 有关远程内核调试的信息，通常请参阅[通过网络电缆手动设置内核模式调试](https://msdn.microsoft.com/library/windows/hardware/hh439346%28v=vs.85%29.aspx) 和[使用 WinDbg 远程调试](https://msdn.microsoft.com/library/windows/hardware/hh451173%28v=vs.85%29.aspx)。  
+可以使用多种方法将 Nano Server 映像配置为支持内核调试。 若要结合使用内核调试与 VHDX 映像，请务必包括 Hyper-V 功能和相应的 Windows PowerShell 模块。 有关远程内核调试的信息，通常请参阅[通过网络电缆手动设置内核模式调试](/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection) 和[使用 WinDbg 远程调试](/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)。  
   
 ### <a name="debugging-using-a-serial-port"></a>使用串行端口进行调试  
 使用此示例 cmdlet 来启用要使用串行端口进行调试的映像：  

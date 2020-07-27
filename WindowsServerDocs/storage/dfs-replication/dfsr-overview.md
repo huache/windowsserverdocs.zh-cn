@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 8164032ff4071facb33c1df0edf44dcc86a6d918
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 380c8ba0e91db47c3313542b2d294a516f7a9466
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475414"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961179"
 ---
 # <a name="dfs-replication-overview"></a>DFS 复制概述
 
@@ -50,18 +50,18 @@ DFS 复制使用一种称为远程差分压缩 (RDC) 的压缩算法。 RDC 检�
 
 在 Azure 中的虚拟机上使用 DFS 复制已使用 Windows Server 进行了测试；但是，有一些必须遵循的限制和要求。
 
-- 使用快照或已保存状态还原运行 DFS 复制的服务器以便复制 SYSVOL 文件夹之外的任何内容会导致 DFS 复制失败，这需要特殊的数据库恢复步骤。 同样，不要导出、克隆或复制虚拟机。 有关详细信息，请参阅 Microsoft 知识库中的文章 [2517913](https://support.microsoft.com/kb/2517913) 以及 [安全地虚拟化 DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/)。
+- 使用快照或已保存状态还原运行 DFS 复制的服务器以便复制 SYSVOL 文件夹之外的任何内容会导致 DFS 复制失败，这需要特殊的数据库恢复步骤。 同样，不要导出、克隆或复制虚拟机。 有关详细信息，请参阅 Microsoft 知识库中的文章 [2517913](https://support.microsoft.com/kb/2517913) 以及 [安全地虚拟化 DFSR](https://techcommunity.microsoft.com/t5/storage-at-microsoft/safely-virtualizing-dfsr/ba-p/424671)。
 - 在虚拟机中承载的已复制文件夹中备份数据时，必须从来宾虚拟机中使用备份软件。
 - DFS 复制需要访问物理或虚拟化域控制器 - 它不能直接与 Azure AD 通信。
-- DFS 复制需要在本地复制组成员与 Azure VM 中托管的任何成员之间建立 VPN 连接。 还需配置本地路由器（例如 Forefront 威胁管理网关），允许 RPC 终结点映射程序（端口 135）和随机分配的端口（介于 49152 与 65535 之间）通过 VPN 连接进行传递。 可以使用 Set-DfsrMachineConfiguration cmdlet 或 Dfsrdiag 命令行工具指定静态端口而不是随机端口。 有关如何为 DFS 复制指定静态端口的详细信息，请参阅 [Set-DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration)。 有关为管理 Windows Server 而打开的相关端口的信息，请参阅 Microsoft 知识库中的文章 [832017](https://support.microsoft.com/kb/832017) 。
+- DFS 复制需要在本地复制组成员与 Azure VM 中托管的任何成员之间建立 VPN 连接。 还需配置本地路由器（例如 Forefront 威胁管理网关），允许 RPC 终结点映射程序（端口 135）和随机分配的端口（介于 49152 与 65535 之间）通过 VPN 连接进行传递。 可以使用 Set-DfsrMachineConfiguration cmdlet 或 Dfsrdiag 命令行工具指定静态端口而不是随机端口。 有关如何为 DFS 复制指定静态端口的详细信息，请参阅 [Set-DfsrServiceConfiguration](/powershell/module/dfsr/set-dfsrserviceconfiguration)。 有关为管理 Windows Server 而打开的相关端口的信息，请参阅 Microsoft 知识库中的文章 [832017](https://support.microsoft.com/kb/832017) 。
 
-若要了解如何开始使用 Azure 虚拟机，请访问 [Microsoft Azure 网站](https://docs.microsoft.com/azure/virtual-machines/)。
+若要了解如何开始使用 Azure 虚拟机，请访问 [Microsoft Azure 网站](/azure/virtual-machines/)。
 
 ## <a name="installing-dfs-replication"></a>安装 DFS 复制
 
 DFS 复制是文件和存储服务角色的一部分。 DFS 的管理工具（DFS 管理、Windows PowerShell 的 DFS 复制模块及命令行工具）分别安装为远程服务器管理工具的一部分。
 
-使用 [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)、服务器管理器或 PowerShell 安装 DFS 复制，具体如后续部分所述。
+使用 [Windows Admin Center](../../manage/windows-admin-center/overview.md)、服务器管理器或 PowerShell 安装 DFS 复制，具体如后续部分所述。
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>使用服务器管理器安装 DFS 的步骤
 
@@ -104,9 +104,9 @@ Install-WindowsFeature "FS-DFS-Replication", "RSAT-DFS-Mgmt-Con"
 
 ## <a name="additional-references"></a>其他参考
 
-- [DFS 命名空间和 DFS 复制概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v%3dws.11))
-- [清单：部署 DFS 复制](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772201(v%3dws.11))
-- [清单：管理 DFS 复制](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755035(v%3dws.11))
-- [部署 DFS 复制](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770925(v%3dws.11))
-- [管理 DFS 复制](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770925(v%3dws.11))
-- [对 DFS 复制进行故障排除](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732802(v%3dws.11))
+- [DFS 命名空间和 DFS 复制概述](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj127250(v%3dws.11))
+- [清单：部署 DFS 复制](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772201(v%3dws.11))
+- [清单：管理 DFS 复制](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755035(v%3dws.11))
+- [部署 DFS 复制](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770925(v%3dws.11))
+- [管理 DFS 复制](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770925(v%3dws.11))
+- [对 DFS 复制进行故障排除](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732802(v%3dws.11))

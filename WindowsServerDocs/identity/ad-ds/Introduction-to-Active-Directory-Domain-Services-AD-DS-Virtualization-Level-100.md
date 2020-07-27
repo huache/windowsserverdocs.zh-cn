@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 03/22/2019
 ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: 25a5c2222f50b37bff2bcfe41184d6d9fa35995c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b9009e4688665e972531b1d38a5ecc92fa990556
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77465501"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955619"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>安全地虚拟化 Active Directory 域服务 (AD DS)
 
@@ -32,7 +32,7 @@ AD DS 复制使用每个域控制器上的 InvocationID 和 USN 来确定需要�
 
 ![检测到 USN 回滚时的事件序列](../media/Introduction-to-Active-Directory-Domain-Services--AD-DS--Virtualization--Level-100-/ADDS_Exampleofhowreplicationcanbecomeinconsistent.png)
 
-例如，应用在域控制器感知之外的快照，虚拟机 (VM) 轻松地让虚拟机监控程序管理员回滚域控制器的 USN（其逻辑时钟）。 有关 USN 和 USN 回滚的详细信息，包括演示未检测到的 USN 回滚实例的另一个图，请参阅 [USN 和 USN 回滚](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx#usn_and_usn_rollback)。
+例如，应用在域控制器感知之外的快照，虚拟机 (VM) 轻松地让虚拟机监控程序管理员回滚域控制器的 USN（其逻辑时钟）。 有关 USN 和 USN 回滚的详细信息，包括演示未检测到的 USN 回滚实例的另一个图，请参阅 [USN 和 USN 回滚](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10)#usn_and_usn_rollback)。
 
 从 Windows Server 2012 开始，如果虚拟机通过虚拟机快照应用程序及时回滚，则托管在虚拟机监控程序平台（显示称为虚拟机生成 ID 的标识符）的 AD DS 虚拟域控制器可以检测和采取必要的安全措施保护 AD DS 环境。 因为虚拟机生成 ID 设计使用虚拟机监控程序供应商独立机制在来宾虚拟机地址空间中显示此标识符，所以安全虚拟化体验对支持虚拟机生成 ID 的任何虚拟机监控程序来说始终可用。 如果虚拟机已及时回滚，则此标识符可以通过在虚拟机内运行的服务和应用程序进行采样加以检测。
 
@@ -127,7 +127,7 @@ Value: 0x4
 
 评估此域控制器是否存在有效的系统状态备份。 如果在错误还原回滚域控制器之前创建了有效的系统状态备份，并且备份包含域控制器上所做的最新更改，请从最新备份还原系统状态。
 
-还可以使用快照作为备份来源。 还可以使用[当没有合适的系统状态数据备份可用时还原虚拟域控制器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553%28v%3dws.10%29#restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available)部分中的步骤来设置数据库，为其自己提供一个新的调用 ID
+还可以使用快照作为备份来源。 还可以使用[当没有合适的系统状态数据备份可用时还原虚拟域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd363553%28v%3dws.10%29#restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available)部分中的步骤来设置数据库，为其自己提供一个新的调用 ID
 
 ## <a name="next-steps"></a>后续步骤
 

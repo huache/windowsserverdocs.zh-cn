@@ -10,12 +10,12 @@ ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 68de1697c8655075041cd9e598ccd2bbc2e6237b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4002126ee6d9919c0a7fbfb3c068587c9acbecef
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826980"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953679"
 ---
 # <a name="install-nano-server"></a>安装 Nano Server
 
@@ -45,18 +45,18 @@ Nano Server 非常适合于多种方案：
 - Nano Server 无外设；没有任何本地登录功能或图形用户界面。
 - 仅支持 64 位应用程序、工具和代理。
 - Nano Server 无法充当 Active Directory 域控制器。
-- 不支持组策略。 但是，可以使用[所需状态配置](https://msdn.microsoft.com/powershell/dsc/nanoDsc)大规模应用设置。
+- 不支持组策略。 但是，可以使用[所需状态配置](/previous-versions//dn387184(v=vs.85))大规模应用设置。
 - 不能将 Nano Server 配置为使用代理服务器访问 Internet。
 - 不支持 NIC 组合（特别是负载平衡和故障转移或 LBFO）。 但支持开关嵌入组合 (SET)。
 - 不支持 Microsoft Endpoint Configuration Manager 和 System Center Data Protection Manager。
 - 不支持最佳做法分析器 (BPA) cmdlet 以及 BPA 与服务器管理器的集成。
 - Nano Server 不支持虚拟主机总线适配器 (HBA)。
-- Nano Server 不需要使用产品密钥激活。 Nano Server 充当 Hyper-V 主机时不支持[自动虚拟机激活](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx) (AVMA)。 通过将[密钥管理服务](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) (KMS) 与通用批量许可证密钥配合使用，或者使用[基于 Active Directory 的激活](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx)，可以激活 Nano Server 主机上运行的虚拟机。
+- Nano Server 不需要使用产品密钥激活。 Nano Server 充当 Hyper-V 主机时不支持[自动虚拟机激活](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)) (AVMA)。 通过将[密钥管理服务](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867(v=ws.11)) (KMS) 与通用批量许可证密钥配合使用，或者使用[基于 Active Directory 的激活](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502534(v=ws.11))，可以激活 Nano Server 主机上运行的虚拟机。
 - 随 Nano Server 附带提供的 Windows PowerShell 版本具有重要差异。 有关详细信息，请参阅 [Nano Server上的 PowerShell](PowerShell-on-Nano-Server.md)。
 - 仅在 Current Branch for Business (CBB) 模型上支持 Nano Server -- 目前不存在 Long Term Servicing Branch (LTSB) 版本的 Nano Server。 有关详细信息，请参阅下列各子节。
 
 ### <a name="current-branch-for-business"></a>Current Branch for Business
-Nano Server 拥有一个更活跃的模型，称为 Current Branch for Business (CBB)，通过快速开发周期对以云节奏移动的客户提供支持。 在此模型中，Nano Server 的功能更新发布每年会有两到三次。 这种模型要求生产中部署和运行的 Nano Server 具有[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)。 若要维持支持，管理员不得滞后两次以上的 CBB 发布。 但是，这些版本不会自动更新现有部署；管理员在方便时手动安装新的 CBB 版本。 更多信息，请参阅 [Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)（新的 Windows Server 2016 Current Branch for Business 服务选项）。
+Nano Server 拥有一个更活跃的模型，称为 Current Branch for Business (CBB)，通过快速开发周期对以云节奏移动的客户提供支持。 在此模型中，Nano Server 的功能更新发布每年会有两到三次。 这种模型要求生产中部署和运行的 Nano Server 具有[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)。 若要维持支持，管理员不得滞后两次以上的 CBB 发布。 但是，这些版本不会自动更新现有部署；管理员在方便时手动安装新的 CBB 版本。 更多信息，请参阅 [Windows Server 2016 new Current Branch for Business servicing option](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)（新的 Windows Server 2016 Current Branch for Business 服务选项）。
 
 “服务器核心”和“具有桌面体验的服务器”安装选项仍然以 [Long Term Servicing Branch (LTSB) 模型](https://support.microsoft.com/lifecycle#gp%2Fgp_msl_policy)为服务基础，包含 5 年的主流支持和 5 年的扩展支持。
 

@@ -7,12 +7,12 @@ ms.author: helohr
 ms.date: 10/26/2017
 ms.topic: article
 author: Heidilohr
-ms.openlocfilehash: ea7e1505f705c87e58145e7a306ed355ab3acf7f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ec07fe6c93f1f2c3350af7a9bd0bc2be0a384b93
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71387048"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963239"
 ---
 # <a name="customize-the-rds-title-work-resources-using-powershell-on-windows-server"></a>使用 Windows Server 上的 PowerShell 自定义 RDS 标题“工作资源”
 
@@ -42,4 +42,4 @@ ms.locfileid: "71387048"
     Set-RDWorkspace -Name "Contoso RemoteApps" -ConnectionBroker (Get-RDConnectionBrokerHighAvailability).ActiveManagementServer
 ```
 
-有关 Set-RDWorkspace cmdlet 的详细信息，请参阅 [Set-RDSWorkspace](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdworkspace?view=win10-ps) 参考。
+有关 Set-RDWorkspace cmdlet 的详细信息，请参阅 [Set-RDSWorkspace](/powershell/module/remotedesktop/set-rdworkspace?view=win10-ps) 参考。

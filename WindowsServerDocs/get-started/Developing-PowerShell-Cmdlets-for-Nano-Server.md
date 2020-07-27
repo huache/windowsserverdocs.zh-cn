@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3965e453483b3515e4957ecfaba39cf9a0b8104f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b792b6734da2fe643862529c0de41e8763117c83
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827070"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961979"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>开发 Nano Server 的 PowerShell Cmdlet
 
@@ -123,7 +123,7 @@ PowerShell 支持多种 cmdlet 实现类型，你使用的类型决定其创建�
 * %windir%\system32\WindowsPowerShell\v1.0\Modules   
 * %ProgramFiles%\WindowsPowerShell\Modules   
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
-* \<产品安装位置 >   
+* \<your product installation location>   
     
   检查这些位置以获取详细信息：  
   * CIM cmdlet 具有.cdxml 文件扩展名。  
@@ -136,7 +136,7 @@ PowerShell 支持多种 cmdlet 实现类型，你使用的类型决定其创建�
 ### <a name="building-c-for-nano-server"></a>生成适用于 Nano Server 的 C++  
 若要使 C++ DLL 在 Nano Server 上运行，请将其编译为适用于 Nano Server 而非某特定版本。  
   
-有关在 Nano Server 上开发 C++ 的先决条件和操作示例，请参阅 [Developing Native Apps on Nano Server](https://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx)（在 Nano Server 上开发本机应用）。  
+有关在 Nano Server 上开发 C++ 的先决条件和操作示例，请参阅 [Developing Native Apps on Nano Server](/archive/blogs/nanoserver/developing-native-apps-on-nano-server)（在 Nano Server 上开发本机应用）。  
   
   
 ## <a name="porting-net-cmdlets"></a>移植 .NET cmdlet  
@@ -176,7 +176,7 @@ PowerShell Core SDK 模块包括以下 cmdlet：
 ### <a name="pinvoke"></a>PInvoke  
 在 Nano Server 使用的 Core CLR 中，kernel32.dll 和 advapi32.dll 等基础 DLL 已拆分为多个 API 集，因此需确保 PInvoke 引用了正确的 API。 任何不兼容性将表现为运行时错误。  
   
-有关 Nano Server 上支持的本机 API 的列表，请参阅 [Nano 服务器 API](https://msdn.microsoft.com/library/mt588480(v=vs.85).aspx)。  
+有关 Nano Server 上支持的本机 API 的列表，请参阅 [Nano 服务器 API](/previous-versions/windows/desktop/legacy/mt588480(v=vs.85))。  
   
 ### <a name="building-c-for-nano-server"></a>生成适用于 Nano Server 的 C#  
   
@@ -240,7 +240,7 @@ $result.RemoteAddress = 1.1.1.1
   
 ### <a name="migrating-from-wmi-net-to-mi-net"></a>从 WMI .NET 迁移到 MI .NET  
   
-由于不支持 [WMI .NET](https://msdn.microsoft.com/library/mt481551(v=vs.110).aspx)，因此必须将所有使用旧版 API 的 cmdlet 迁移到受支持的 WMI API:[MI.NET](https://msdn.microsoft.com/library/dn387184(v=vs.85).aspx) 中。 可通过 C# 或 CimCmdlets 模块中的 cmdlet 直接访问 MI .NET。   
+由于不支持 [WMI .NET](/dotnet/api/?view=netframework-4.7.1)，因此必须将所有使用旧版 API 的 cmdlet 迁移到受支持的 WMI API:[MI.NET](/previous-versions//dn387184(v=vs.85)) 中。 可通过 C# 或 CimCmdlets 模块中的 cmdlet 直接访问 MI .NET。   
   
 ### <a name="cimcmdlets-module"></a>CimCmdlets 模块  
   
@@ -251,5 +251,3 @@ Nano Server 上不支持 WMI v1 cmdlet（例如，Get-WmiObject）。 但是，�
 WMI .NET 包装 WMIv1 接口，而 MI .NET 包装 WMIv2 (CIM) 接口。 暴露的类可能不同，但基本操作非常相似。 枚举或获取对象实例，并在其上调用操作来完成任务。   
   
   
-
-

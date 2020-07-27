@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 04d52dff-e61b-4633-9908-be8600abc2ba
 author: ChristianMontoya
 manager: scottman
-ms.openlocfilehash: 85d5b1e1c4367cc961ae8ea628f46f224d8dae5c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 43c280996334ea3b371c54f86b1cd4f86072124b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857250"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963309"
 ---
 # <a name="whats-new-in-remote-desktop-services"></a>远程桌面服务中的新增功能
 
@@ -28,22 +28,22 @@ Windows Server 2016 构建在 Windows 10 的相同基础之上，它不仅提供
 ## <a name="azure-sql-database---the-new-database-for-your-highly-available-environment"></a>Azure SQL 数据库 - 适用于高可用性环境的新数据库
 RD 连接代理能够在共享的 SQL 数据库（例如 Azure SQL 数据库）中存储所有部署信息（例如连接状态和用户/主机映射）。 可以丢弃 SQL Server Always On 可用性组部署手册，只需获取 Azure SQL 数据库的连接字符串，然后即可开始使用高可用性环境。
 
-其他信息：[将 Azure SQL 数据库用于远程桌面连接代理高可用性环境](https://blogs.technet.microsoft.com/enterprisemobility/2016/05/03/new-windows-server-2016-capability-use-azure-sql-db-for-your-remote-desktop-connection-broker-high-availability-environment/)
+其他信息：[将 Azure SQL 数据库用于远程桌面连接代理高可用性环境](https://techcommunity.microsoft.com/t5/microsoft-security-and/new-windows-server-2016-capability-use-azure-sql-db-for-your/ba-p/249787)
 
 ## <a name="graphics---solving-graphics-needs-across-various-scenarios"></a>图形 - 解决不同方案中的图形需求
 得益于 Hyper-V 的离散设备分配，现在你可以直接将主机上的 GPU 映射到 VM，供 GPU 消耗型应用程序使用。 RemoteFX vGPU 也已获得改进，包括支持 OpenGL 4.4、OpenCL 1.1、4K 分辨率和 Windows Server 虚拟机。
 
-其他信息：[离散设备分配](https://blogs.technet.microsoft.com/virtualization/2015/11/)
+其他信息：[离散设备分配](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization)
 
 ## <a name="rd-connection-broker---improved-connection-handling-during-logon-storms"></a>RD 连接代理 - 改进了登录风暴期间的连接处理
 由于连接处理已得到改进，RD 连接代理现在能够处理 10,000 个以上的并发登录请求（有时，在“登录风暴”期间会出现这么多的请求）。 改进的 RD 连接代理还可以快速将服务器添加回到环境中，从而简化了部署的维护。
 
-其他信息：[改进的远程桌面连接代理性能](https://blogs.technet.microsoft.com/enterprisemobility/2015/12/15/improved-remote-desktop-connection-broker-performance-with-windows-server-2016-and-windows-server-2012-r2-hotfix-kb3091411/)
+其他信息：[改进的远程桌面连接代理性能](https://techcommunity.microsoft.com/t5/microsoft-security-and/improved-remote-desktop-connection-broker-performance-with/ba-p/249559)
 
 ## <a name="rdp-10---new-capabilities-built-into-the-protocol"></a>RDP 10 - 协议中内置的新功能
 RDP 10 现在使用 H.264/AVC 444 编解码器，可以适当地对视频和文本进行优化。 此版本还支持笔的远程控制。 使用这些功能可使远程会话变得更像是本地会话。  
 
-其他信息：[Windows 10 和 Windows Server 2016 中的 RDP 10 AVC/H.264 改进](https://blogs.technet.microsoft.com/enterprisemobility/2016/01/11/remote-desktop-protocol-rdp-10-avch-264-improvements-in-windows-10-and-windows-server-2016-technical-preview/)
+其他信息：[Windows 10 和 Windows Server 2016 中的 RDP 10 AVC/H.264 改进](https://techcommunity.microsoft.com/t5/microsoft-security-and/remote-desktop-protocol-rdp-10-avc-h-264-improvements-in-windows/ba-p/249588)
 
 ## <a name="personal-session-desktops---providing-individual-desktops-to-any-end-user"></a>个人会话桌面 - 为任何最终用户提供单独的桌面
 个人会话桌面是在云中托管自己的个人桌面的新方式。 管理特权和专用会话主机消除了在托管环境中让用户随心管理桌面的复杂性。

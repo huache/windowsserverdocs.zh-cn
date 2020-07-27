@@ -9,12 +9,12 @@ ms.author: mikeblodge
 ms.date: 07/11/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: de9233e31c5530abd207a1bbba0e1e16a07d1561
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f8f8cc63740c6823a01e0c86b387d57b54a06419
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826120"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960289"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>将 Windows Server 2008/2008 R2 特殊化映像上传至 Azure 
 
@@ -85,12 +85,12 @@ Login-AzureRmAccount
 > [!IMPORTANT]
 > 不要使用 Azure 中预定义的用户映像。
 
-1.    创建一个新的[资源组](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate)。 
-2.    在该资源组内创建新的[存储 Blob](https://docs.microsoft.com/rest/api/storageservices/put-blob)。
-3.    在存储 Blob 内创建[容器](https://docs.microsoft.com/rest/api/storageservices/create-container)。
+1.    创建一个新的[资源组](/rest/api/resources/resourcegroups/createorupdate)。 
+2.    在该资源组内创建新的[存储 Blob](/rest/api/storageservices/put-blob)。
+3.    在存储 Blob 内创建[容器](/rest/api/storageservices/create-container)。
 4.    从属性中复制 Blob 存储的 URL。
 5.    使用上面提供的脚本将映像上传至新的存储 Blob。
-6.    为 VHD 创建[磁盘](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。   
+6.    为 VHD 创建[磁盘](/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。   
      a.    转到“磁盘”，单击“添加”  。  
      b.    输入磁盘的名称。 选择要使用的订阅，设置区域，然后选择帐户类型。   
      c. 对于“源类型”，请选择“存储”。 浏览到使用脚本创建的 Blob VHD 的位置。  
@@ -105,7 +105,3 @@ Login-AzureRmAccount
  
         PORT:3389 Protocol:TCP Action:Allow Priority:1000 Name:'RDP-Rule'.   
      e.    单击“**创建**”。
-
-
-
-

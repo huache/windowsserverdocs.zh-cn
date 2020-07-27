@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 01b06c2869469ee65e23df2b1f5ca35fb266d234
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: a0a6cefcfb69050721a8b82b5f0f770fa518a551
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548730"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961759"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 中的新增功能
 
@@ -33,7 +33,7 @@ ms.locfileid: "85548730"
 ### <a name="hyper-v"></a>Hyper-V  
 -   [Windows Server 2016 上的 Hyper-V 中的新增功能](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md)。 本主题介绍了 Windows Server 2016 中的 Hyper-V 角色、运行在 Windows 10 上的客户端 Hyper-V 和 Microsoft Hyper-V Server 2016 中的新增和更改的功能。  
 
--   [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome)：Windows Server 2016 容器支持增加了性能改进，简化了网络管理，并在 Windows 10 上支持 Windows 容器。 有关容器的某些其他信息，请参阅[容器：Docker、Windows 和趋势](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)。  
+-   [Windows 容器](/virtualization/windowscontainers/)：Windows Server 2016 容器支持增加了性能改进，简化了网络管理，并在 Windows 10 上支持 Windows 容器。 有关容器的某些其他信息，请参阅[容器：Docker、Windows 和趋势](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)。  
 
 ### <a name="nano-server"></a>Nano Server  
 [Nano Server](getting-started-with-nano-server.md) 的新增功能。 Nano Server 具有一个已更新的模块，用于构建 Nano Server 映像，包括物理主机和来宾虚拟机功能的更大分离度，以及对不同 Windows Server 版本的支持。   
@@ -77,7 +77,7 @@ Web 应用程序代理的最新版本专注于为更多应用程序实现发布�
 ##  <a name="administration"></a>[管理](../administration/manage-windows-server.yml)  
 管理和自动化部分重点介绍适用于想要运行和管理 Windows Server 2016（包括 Windows PowerShell）的 IT 专业人员的工具和参考信息。
 
-Windows PowerShell 5.1 包含重要的新功能（包括支持使用类进行开发、可扩展其用途的新安全功能），提高其可用性，并允许你更轻松、全面地控制和管理基于 Windows 的环境。 有关详细信息，请参阅 [WMF 5.1 中的新方案和功能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)。
+Windows PowerShell 5.1 包含重要的新功能（包括支持使用类进行开发、可扩展其用途的新安全功能），提高其可用性，并允许你更轻松、全面地控制和管理基于 Windows 的环境。 有关详细信息，请参阅 [WMF 5.1 中的新方案和功能](/powershell/wmf/5.1/scenarios-features)。
 
 Windows Server 2016 的新增功能包括：在 Nano Server 上本地运行 PowerShell.exe（不再仅限于远程），新增“本地用户和组”cmdlet 来替换 GUI，添加了 PowerShell 调试支持，并添加了对 Nano Server 中安全日志记录和脚本以及 JEA 的支持。
 
@@ -86,7 +86,7 @@ Windows Server 2016 的新增功能包括：在 Nano Server 上本地运行 Powe
 ### <a name="powershell-desired-state-configuration-dsc-in-windows-management-framework-wmf-5"></a>Windows Management Framework (WMF) 5 中的 PowerShell 期望状态配置 (DSC)
 Windows Management Framework 5 包括对 Windows PowerShell 期望状态配置 (DSC)、Windows 远程管理 (WinRM) 和 Windows 管理规范 (WMI) 的更新。
 
-有关测试 Windows Management Framework 5 的 DSC 功能的详细信息，请参阅[验证 PowerShell DSC 的功能](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)中所论述的一系列博客文章。 若要下载，请参阅 [Windows Management Framework 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)。
+有关测试 Windows Management Framework 5 的 DSC 功能的详细信息，请参阅[验证 PowerShell DSC 的功能](https://devblogs.microsoft.com/powershell/validate-features-of-powershell-dsc/)中所论述的一系列博客文章。 若要下载，请参阅 [Windows Management Framework 5.1](/powershell/scripting/wmf/setup/install-configure)。
 
 ### <a name="packagemanagement-unified-package-management-for-software-discovery-installation-and-inventory"></a>用于软件发现、安装和清单的 PackageManagement 统一包管理
 Windows Server 2016 和 Windows 10 引入了一种新的 PackageManagement 功能（以前称为 OneGet），该功能可以允许 IT 专业人员或开发人员使软件发现、安装、清单 (SDII) 在本地或远程自动进行，无论安装程序技术为何，也不管软件位于何处。 
@@ -96,7 +96,7 @@ Windows Server 2016 和 Windows 10 引入了一种新的 PackageManagement 功�
 ### <a name="powershell-enhancements-to-assist-digital-forensics-and-help-reduce-security-breaches"></a>有助于数字取证和减少安全漏洞的 PowerShell 增强功能
 为了帮助负责调查受损系统的团队（有时称为“蓝队”），我们已添加其他 PowerShell 日志记录和其他数字取证功能，并且已添加有助于在脚本中减少漏洞的功能，例如受限的 PowerShell 和安全 CodeGeneration API。
 
-有关详细信息，请参阅 [PowerShell ♥ 蓝队](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)。
+有关详细信息，请参阅 [PowerShell ♥ 蓝队](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)。
 
 ## <a name="networking"></a>[网络](../networking/index.yml)  
 本部分论述了适用于 IT 专业人员的网络产品和功能，可用于设计、部署和维护 Windows Server 2016。  
@@ -116,20 +116,20 @@ Windows Server 2016 和 Windows 10 引入了一种新的 PackageManagement 功�
 Windows Server 2016 中的 Just Enough Administration 是一种安全技术，可使能由 Windows PowerShell 管理的任何内容均可进行委派管理。 功能包括对在网络标识下运行、通过 PowerShell Direct 连接、安全地复制文件到 JEA 终结点或从 JEA 终结点安全地复制文件及配置 PowerShell 控制台来在 JEA 上下文中默认启动的支持。 有关详细信息，请参阅 [GitHub 上的 JEA](https://aka.ms/JEA)。
 
 ### <a name="credential-guard"></a>Credential Guard
-凭据保护使用基于虚拟化的安全性来隔离密钥，以便只有特权系统软件可以访问它们。 请查看[使用 Credential Guard 保护派生的域凭据](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)。
+凭据保护使用基于虚拟化的安全性来隔离密钥，以便只有特权系统软件可以访问它们。 请查看[使用 Credential Guard 保护派生的域凭据](/windows/security/identity-protection/credential-guard/credential-guard)。
 
 ###  <a name="remote-credential-guard"></a>远程 Credential Guard
-Credential Guard 包括对 RDP 会话的支持，以便用户凭据能够保留在客户端上，且不会在服务器端暴露。 它还提供远程桌面的单一登录体验。 请参阅[使用 Windows Defender Credential Guard 保护派生的域凭据](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard)。   
+Credential Guard 包括对 RDP 会话的支持，以便用户凭据能够保留在客户端上，且不会在服务器端暴露。 它还提供远程桌面的单一登录体验。 请参阅[使用 Windows Defender Credential Guard 保护派生的域凭据](/windows/access-protection/credential-guard/credential-guard)。   
 
 ### <a name="device-guard-code-integrity"></a>Device Guard（代码完整性）
-Device Guard 通过创建指定哪些代码可以在服务器上运行的策略提供内核模式代码完整性 (KMCI) 和用户模式代码完整性 (UMCI)。 请参阅 [Windows Defender Device Guard 简介：基于虚拟化的安全性和代码完整性策略](https://docs.microsoft.com/windows/device-security/device-guard/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)。
+Device Guard 通过创建指定哪些代码可以在服务器上运行的策略提供内核模式代码完整性 (KMCI) 和用户模式代码完整性 (UMCI)。 请参阅 [Windows Defender Device Guard 简介：基于虚拟化的安全性和代码完整性策略](/windows/device-security/device-guard/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)。
 
 
 ### <a name="windows-defender"></a>Windows Defender  
 [Windows Server 2016 的 Windows Defender 概述](../security/windows-defender/windows-defender-overview-windows-server.md)。 默认情况下，Windows Server Antimalware 已在 Windows Server 2016 中安装并处于启用状态，但是 Windows Server Antimalware 的用户界面尚未安装。 但是，Windows Server Antimalware 会在没有用户界面的情况下更新反恶意软件定义并保护计算机。 如果需要 Windows Server Antimalware 的用户界面，则可以使用“添加角色和功能向导”在操作系统安装之后安装它。
 
 ### <a name="control-flow-guard"></a>控制流防护
-控制流防护 (CFG) 是一种平台安全功能，旨在防止内存损坏漏洞。 有关详细信息，请参阅 [Control Flow Guard](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx)（控制流防护）。
+控制流防护 (CFG) 是一种平台安全功能，旨在防止内存损坏漏洞。 有关详细信息，请参阅 [Control Flow Guard](/windows/win32/secbp/control-flow-guard)（控制流防护）。
 
 
 ## <a name="storage"></a>[存储](../storage/storage.yml)
@@ -191,9 +191,9 @@ Windows Server 2016 中的 IIS 10.0 Web 服务器提供的新增功能包括：
 ### <a name="distributed-transaction-coordinator-msdtc"></a>分布式事务处理协调器 (MSDTC)
 Microsoft Windows 10 和 Windows Server 2016 中添加了三个新功能：
 
-- 资源管理器可以使用资源管理器重新加入的新界面，以在数据库由于错误重启后确定未决事务的结果。 有关详细信息，请参阅 [IResourceManagerRejoinable::Rejoin](https://msdn.microsoft.com/library/mt203799(v=vs.85).aspx)。
+- 资源管理器可以使用资源管理器重新加入的新界面，以在数据库由于错误重启后确定未决事务的结果。 有关详细信息，请参阅 [IResourceManagerRejoinable::Rejoin](/previous-versions/windows/desktop/mt203799(v=vs.85))。
 
-- DSN 名称限制从 256 字节扩大到 3072 字节。 有关详细信息，请参阅 [IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx)、[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx) 或 [IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx)。
+- DSN 名称限制从 256 字节扩大到 3072 字节。 有关详细信息，请参阅 [IDtcToXaHelperFactory::Create](/previous-versions/windows/desktop/ms686861(v=vs.85))、[IDtcToXaHelperSinglePipe::XARMCreate](/previous-versions/windows/desktop/ms679248(v=vs.85)) 或 [IDtcToXaMapper::RequestNewResourceManager](/previous-versions/windows/desktop/ms680310(v=vs.85))。
 
 - 利用改进的跟踪功能，可以设置注册表项以在跟踪日志文件名中包括映像文件路径，以便能够告知要检查的跟踪日志文件。 有关为 MSDTC 配置跟踪的详细信息，请参阅[如何在基于 Windows 的计算机上为 MS DTC 启用诊断跟踪](https://support.microsoft.com/kb/926099)。
 

@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e600b41e4a485084bd0622c2be0753d0b11c0c
-ms.sourcegitcommit: 6d7a394edefba684f7b6983c65026679c1b7a485
+ms.openlocfilehash: 0ab2a0eb7c9d29f8d42bd004aad27f9084e38641
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776709"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962479"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>用于排查 DNS 相关激活问题的指南
 
@@ -64,7 +64,7 @@ ms.locfileid: "84776709"
 
 KMS 激活要求配置客户端激活时所使用的 KMS 主机。 如果环境中没有配置的 KMS 主机，请使用适当的 KMS 主机密钥安装并激活一个。 在网络上配置用于托管 KMS 软件的计算机以后，请发布域名系统 (DNS) 设置。
 
-若要了解 KMS 主机配置过程，请参阅[使用密钥管理服务进行激活](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt)和[安装和配置 VAMT](https://docs.microsoft.com/windows/deployment/volume-activation/install-configure-vamt)。
+若要了解 KMS 主机配置过程，请参阅[使用密钥管理服务进行激活](/windows/deployment/volume-activation/activate-using-key-management-service-vamt)和[安装和配置 VAMT](/windows/deployment/volume-activation/install-configure-vamt)。
 
 [返回到过程列表。](#list)
 
@@ -78,7 +78,7 @@ KMS 激活要求配置客户端激活时所使用的 KMS 主机。 如果环境�
    ping <DNS_Server_IP_address>
    ```
    > [!NOTE]
-   > 如果此命令的输出不包含“来自...的回复”短语，则表明存在网络问题或 DNS 问题，必须解决该问题后才能使用本文中的其他过程。 若要详细了解在不能 ping DNS 服务器的情况下如何排查 TCP/IP 问题，请参阅[针对 TCP/IP 问题的高级故障排除](https://docs.microsoft.com/windows/client-management/troubleshoot-tcpip)。
+   > 如果此命令的输出不包含“来自...的回复”短语，则表明存在网络问题或 DNS 问题，必须解决该问题后才能使用本文中的其他过程。 若要详细了解在不能 ping DNS 服务器的情况下如何排查 TCP/IP 问题，请参阅[针对 TCP/IP 问题的高级故障排除](/windows/client-management/troubleshoot-tcpip)。
 
 [返回到过程列表。](#list)
 
@@ -159,7 +159,7 @@ KMS 激活要求配置客户端激活时所使用的 KMS 主机。 如果环境�
       1. 验证 KMS 主机的 IP 地址、主机名、端口和域。
       1. 如果这些 **_vlmcs** 条目存在且包含预期的 KMS 主机名，请转到[手动为 KMS 客户端分配 KMS 主机](#manually-assign-a-kms-host-to-a-kms-client)。
       > [!NOTE]
-      > 即使 [**nslookup**](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) 命令找到了 KMS 主机，也并不意味着 DNS 客户端能够找到 KMS 主机。 如果 **nslookup** 命令找到了 KMS 主机，但你仍然不能使用 KMS 主机进行激活，请检查其他 DNS 设置，例如主 DNS 后缀以及 DNS 后缀的搜索列表。
+      > 即使 [**nslookup**](../administration/windows-commands/nslookup.md) 命令找到了 KMS 主机，也并不意味着 DNS 客户端能够找到 KMS 主机。 如果 **nslookup** 命令找到了 KMS 主机，但你仍然不能使用 KMS 主机进行激活，请检查其他 DNS 设置，例如主 DNS 后缀以及 DNS 后缀的搜索列表。
 1. 验证主 DNS 后缀的搜索列表是否包含与 KMS 主机相关联的 DNS 域后缀。 如果搜索列表不包含该信息，请转到[将 KMS 主机配置为在多个 DNS 域中发布](#configure-the-kms-host-to-publish-in-multiple-dns-domains)过程。
 
 [返回到过程列表。](#list)

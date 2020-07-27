@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 44b98b485b69720a1459f052b68d15617954bffe
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 42116323dce36b071b2af20ff46330a8d39c13ed
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75949828"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963059"
 ---
 # <a name="remote-desktop-services-roles"></a>远程桌面服务角色
 
@@ -38,7 +38,7 @@ ms.locfileid: "75949828"
 有关详细信息，请参阅以下文章：
 
 * [远程桌面服务 - 保护数据存储](rds-plan-secure-data-storage.md)
-* [上传通用 VHD 并使用它在 Azure 中创建新 VM](https://docs.microsoft.com/azure/virtual-machines/windows/upload-generalized-managed?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json)
+* [上传通用 VHD 并使用它在 Azure 中创建新 VM](/azure/virtual-machines/windows/upload-generalized-managed?toc=/azure/virtual-machines/windows/toc.json)
 * [更新 RDSH 集合（ARM 模板）](https://azure.microsoft.com/resources/templates/rds-update-rdsh-collection/)
 
 ## <a name="remote-desktop-connection-broker"></a>远程桌面连接代理

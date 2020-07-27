@@ -10,16 +10,16 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9ea63785e8de313d2177113a466fa67c17410b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d95d02dc9aa4adb2f64e88d2307efd0143225bba
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826640"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959039"
 ---
 # <a name="windows-server-2016-activation"></a>Windows Server 2016 激活
 
-以下信息概括介绍执行涉及 Windows Server 2016 的密钥管理服务 (KMS) 激活时需要关注的初步规划注意事项。 有关所涉及操作系统早于此处所列操作系统的 KMS 激活的信息，请参阅[步骤 1：查看并选择激活方法](https://technet.microsoft.com/library/jj134256(WS.11).aspx)。
+以下信息概括介绍执行涉及 Windows Server 2016 的密钥管理服务 (KMS) 激活时需要关注的初步规划注意事项。 有关所涉及操作系统早于此处所列操作系统的 KMS 激活的信息，请参阅[步骤 1：查看并选择激活方法](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134256(v=ws.11))。
 
 KMS 使用客户端 - 服务器模式激活客户端。 KMS 客户端连接到一台 KMS 服务器（称为 KMS 主机）进行激活。 KMS 主机必须位于本地网络。
 

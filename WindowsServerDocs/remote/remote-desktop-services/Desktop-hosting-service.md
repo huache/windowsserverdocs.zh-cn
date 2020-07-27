@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 2ee11e40d5fb69141ad5dd5342f8574b22232bbd
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 57e9e25881d948ec705dc51d8e61377e0beb78a8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070477"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960389"
 ---
 # <a name="desktop-hosting-service"></a>桌面托管服务
 
@@ -41,9 +41,9 @@ Active Directory 域服务 (AD DS) 提供域和林信息，使租户的用户可
 
 有关详细信息，请参阅以下文章：
 
-* [Azure Active Directory 域服务文档](https://docs.microsoft.com/azure/active-directory-domain-services/)
-* [Windows Server 2012 R2 的桌面托管参考体系结构指南](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
-* [在 Azure 门户中创建站点到站点连接](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [Azure Active Directory 域服务文档](/azure/active-directory-domain-services/)
+* [Windows Server 2012 R2 的桌面托管参考体系结构指南](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [在 Azure 门户中创建站点到站点连接](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
 
 ## <a name="sql-database"></a>SQL 数据库
 
@@ -56,8 +56,8 @@ Active Directory 域服务 (AD DS) 提供域和林信息，使租户的用户可
 
 有关如何设置高可用性 SQL 数据库基础结构的详细信息，请参阅以下文章：
 
-* [什么是 Azure SQL 数据库服务？](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
-* [创建和配置可用性组 (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017)。
+* [什么是 Azure SQL 数据库服务？](/azure/sql-database/sql-database-technical-overview)
+* [创建和配置可用性组 (SQL Server)](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017)。
 * [添加 RD 连接代理服务器以部署和配置高可用性](rds-connection-broker-cluster.md)。
 
 ## <a name="file-server"></a>文件服务器
@@ -71,7 +71,7 @@ Active Directory 域服务 (AD DS) 提供域和林信息，使租户的用户可
 有关详细信息，请参阅以下文章：
 
 * [Windows Server 中的存储](../../storage/storage.yml)
-* [如何在 Azure 门户中将托管的数据磁盘附加到 Windows VM](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json)
+* [如何在 Azure 门户中将托管的数据磁盘附加到 Windows VM](/azure/virtual-machines/windows/attach-managed-disk-portal?toc=/azure/virtual-machines/windows/classic/toc.json)
 
 ### <a name="user-profile-disks"></a>用户配置文件磁盘
 

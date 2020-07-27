@@ -10,12 +10,12 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 5f7a8f08ff10102fbc04b6f8272320bd3b77785d
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b6a9a5c08e24f5c7bb7ac50ac1c72386ef8a6d0f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825490"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963049"
 ---
 # <a name="forest-and-domain-functional-levels"></a>林和域功能级别
 
@@ -27,7 +27,7 @@ ms.locfileid: "80825490"
 
 随着 Windows 2003 生存期的结束，Windows 2003 域控制器 (DC) 需更新到 Windows Server 2008、2008R2、2012、2012R2、2016 或 2019。 因此，应从域中删除任何运行 Windows Server 2003 的域控制器。
 
-在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 有关迁移步骤，可以参阅 [TechNet 上的过程](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可参阅[存储团队文件柜博客上的简化步骤集](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。
+在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 有关迁移步骤，可以参阅 [TechNet 上的过程](../../storage/dfs-replication/migrate-sysvol-to-dfsr.md)，也可参阅[存储团队文件柜博客上的简化步骤集](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 ## <a name="windows-server-2019"></a>Windows Server Standard 2012 R2
 
@@ -45,7 +45,7 @@ ms.locfileid: "80825490"
 ### <a name="windows-server-2016-forest-functional-level-features"></a>Windows Server 2016 林功能级别功能
 
 * 提供 Windows Server 2012R2 林功能级别可用的所有功能，以及下列功能：
-   * [使用 Microsoft 标识管理器 (MIM) 的特权访问管理 (PAM)](https://docs.microsoft.com/windows-server/identity/whats-new-active-directory-domain-services#a-namebkmkpamaprivileged-access-management)
+   * [使用 Microsoft 标识管理器 (MIM) 的特权访问管理 (PAM)](../whats-new-active-directory-domain-services.md#privileged-access-management)
 
 ### <a name="windows-server-2016-domain-functional-level-features"></a>Windows Server 2016 域功能级别功能
 
@@ -54,7 +54,7 @@ ms.locfileid: "80825490"
    * 当用户只能使用特定的加入域的设备时，DC 支持为其启用网络 NTLM。
    * 成功使用 PKInit Freshness Extension进行身份验证的 Kerberos 客户端会获取新的公钥标识 SID。
 
-    有关详细信息，请参阅 [Kerberos 身份验证的新增功能](https://docs.microsoft.com/windows-server/security/kerberos/whats-new-in-kerberos-authentication)和[凭据保护的新增功能](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/whats-new-in-credential-protection)
+    有关详细信息，请参阅 [Kerberos 身份验证的新增功能](../../security/kerberos/whats-new-in-kerberos-authentication.md)和[凭据保护的新增功能](../../security/credentials-protection-and-management/whats-new-in-credential-protection.md)
 
 ## <a name="windows-server-2012r2"></a>Windows Server 2012R2
 
@@ -97,7 +97,7 @@ ms.locfileid: "80825490"
 ### <a name="windows-server-2012-domain-functional-level-features"></a>Windows Server 2012 域功能级别功能
 
 * 所有默认的 Active Directory 功能、所有来自 Windows Server 2008R2 域功能级别的功能，以及下列功能：
-   * KDC 对声明、复合身份验证和 Kerberos 保护的支持 KDC 管理模板策略的两个设置（“始终提供声明”和“拒绝未保护身份验证请求”）需要 Windows Server 2012 域功能级别。 有关详细信息，请参阅 [Kerberos 身份验证的新增功能](https://technet.microsoft.com/library/hh831747.aspx)
+   * KDC 对声明、复合身份验证和 Kerberos 保护的支持 KDC 管理模板策略的两个设置（“始终提供声明”和“拒绝未保护身份验证请求”）需要 Windows Server 2012 域功能级别。 有关详细信息，请参阅 [Kerberos 身份验证的新增功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))
 
 ## <a name="windows-server-2008r2"></a>Windows Server 2008R2
 
@@ -146,7 +146,7 @@ ms.locfileid: "80825490"
 
   * 在 Windows Server 2008 模式下运行的基于域的 DFS 命名空间，支持基于访问的枚举和增强的可伸缩性。 在 Windows Server 2008 模式下的基于域的命名空间还要求林使用 Windows Server 2003 林功能级别。 有关详细信息，请参阅 [Choose a Namespace Type](https://go.microsoft.com/fwlink/?LinkId=180400)（选择命名空间类型）。
   * 针对 Kerberos 协议的高级加密标准（AES 128 和 AES 256）支持。 若要使用 AES 来颁发 TGT，域功能级别必须为 Windows Server 2008 或更高版本，且域密码需要更改。 
-    * 有关详细信息，请参阅 [Kerberos Enhancements](https://technet.microsoft.com/library/cc749438(ws.10).aspx)（Kerberos 增强功能）。
+    * 有关详细信息，请参阅 [Kerberos Enhancements](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10))（Kerberos 增强功能）。
 
       > [!NOTE]
       >如果已将域功能级别提升到 Windows Server 2008 或更高版本，但此时域控制器已复制 DFL 更改但尚未刷新 krbtgt 密码，则可能会在域控制器上出现身份验证错误。 在这种情况下，在域控制器上重启 KDC 服务会触发内存对新 krbtgt 密码的刷新，解决相关的身份验证错误。
@@ -226,5 +226,5 @@ ms.locfileid: "80825490"
 
 ## <a name="next-steps"></a>后续步骤
 
-* [提升域功能级别](https://technet.microsoft.com/library/cc753104.aspx)  
-* [提升林功能级别](https://technet.microsoft.com/library/cc730985.aspx)
+* [提升域功能级别](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))  
+* [提升林功能级别](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985(v=ws.11))

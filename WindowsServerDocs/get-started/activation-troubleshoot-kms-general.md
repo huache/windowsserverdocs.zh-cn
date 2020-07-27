@@ -8,16 +8,16 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: dc84edaebda64d3ae359e17b683411ac479c9397
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a089e0efb54af86f97595d8863926525a8416fea
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473214"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960459"
 ---
 # <a name="guidelines-for-troubleshooting-the-key-management-service-kms"></a>密钥管理服务 (KMS) 故障排除指南
 
-在部署过程中，许多企业客户安装了密钥管理服务 (KMS)，用于在其环境中激活 Windows。 这是一种用于安装 KMS 主机的简单过程，经过此过程后，KMS 客户端可发现主机并尝试自行激活主机。 但如果该过程不起作用，会发生什么情况？ 接下来要如何操作？ 本文介绍完成问题排查所需的资源。 有关事件日志条目和 Slmgr.vbs 脚本的详细信息，请参阅 [Volume Activation Technical Reference](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502529(v=ws.11))（批量激活技术参考）。
+在部署过程中，许多企业客户安装了密钥管理服务 (KMS)，用于在其环境中激活 Windows。 这是一种用于安装 KMS 主机的简单过程，经过此过程后，KMS 客户端可发现主机并尝试自行激活主机。 但如果该过程不起作用，会发生什么情况？ 接下来要如何操作？ 本文介绍完成问题排查所需的资源。 有关事件日志条目和 Slmgr.vbs 脚本的详细信息，请参阅 [Volume Activation Technical Reference](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502529(v=ws.11))（批量激活技术参考）。
 
 ## <a name="kms-overview"></a>KMS 概述
 
@@ -50,7 +50,7 @@ KMS 主机上需要检查两个区域。 首先，检查主机软件许可服务
 
   无论环境中存在多少个有效系统，计数都不会增大到 50 以上。 这是因为计数设置为仅缓存 KMS 客户端返回的最大许可策略的两倍。 现在的最大策略由 Windows 客户端操作系统设置，这需要来自 KMS 主机的 25 或更大计数，才能自行激活。 因此，KMS 主机上的最大计数是 2 x 25 或 50。 请注意，在仅包含 Windows Server KMS 客户端的环境中，KMS 主机上的最大计数为 10。 这是因为 Windows Server 版本的阈值为 5（2 x 5，或 10）。
 
-  一个与计数相关的常见问题是：环境中具有已激活的 KMS 主机和足够的客户端，但计数不会增大到 1 以上。 核心问题在于，部署的客户端映像未正确配置 (sysprep /generalize)，并且系统不具有唯一的客户端计算机 ID (CMID)。 有关详细信息，请参阅 [KMS 客户端](#kms-client)和[在将基于 Windows Vista 或 Windows 7 的新客户端计算机添加到网络时，KMS 当前计数不会增加](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista)。 我们的一名支持上报工程师通过 [KMS Host Client Count not Increasing Due to Duplicate CMID’S](https://blogs.technet.microsoft.com/askcore/2009/10/16/kms-host-client-count-not-increasing-due-to-duplicate-cmids/)（由于CMID 重复导致 KMS 主机客户端计数没有增加）也发布了有关此问题的博客文章。
+  一个与计数相关的常见问题是：环境中具有已激活的 KMS 主机和足够的客户端，但计数不会增大到 1 以上。 核心问题在于，部署的客户端映像未正确配置 (sysprep /generalize)，并且系统不具有唯一的客户端计算机 ID (CMID)。 有关详细信息，请参阅 [KMS 客户端](#kms-client)和[在将基于 Windows Vista 或 Windows 7 的新客户端计算机添加到网络时，KMS 当前计数不会增加](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista)。 我们的一名支持上报工程师通过 [KMS Host Client Count not Increasing Due to Duplicate CMID’S](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)（由于CMID 重复导致 KMS 主机客户端计数没有增加）也发布了有关此问题的博客文章。
 
   计数可能不会增加的另一个原因是，环境中的 KMS 主机过多，而计数在所有这些主机中分布。
 - 侦听端口。 与 KMS 的通信使用匿名 RPC。 默认情况下，客户端使用 1688 TCP 端口来连接到 KMS 主机。 请确保此端口在 KMS 客户端与 KMS 主机之间打开。 可更改或配置 KMS 主机上的端口。 在通信过程中，KMS 主机会向 KMS 客户端发送端口标识。 如果更改 KMS 客户端上的端口，则在客户端与主机联系时会覆盖端口标识。
@@ -98,7 +98,7 @@ KMS 客户端记录两个对应事件，即事件 ID 12288 和事件 ID 12289。
 以下列表包括最重要的故障排除字段。 要查找的内容可能有所不同，具体取决于要解决的问题。
 
 - “名称”。 此值是 KMS 客户端系统上安装的 Windows 版本。 使用它可验证尝试激活的 Windows 版本是否可使用 KMS。 例如，我们的技术支持遇到了以下情况：客户尝试在不使用批量激活的 Windows 版本（例如 Windows Vista Ultimate）上安装 KMS 客户端安装密钥。
-- “说明”。 此值显示已安装的密钥。 VOLUME_KMSCLIENT 指示已安装 KMS 客户端安装密钥（或 GVLK）（批量许可媒体的默认配置），并且此系统自动尝试使用 KMS 主机进行激活。 如果此处显示其他值（如 MAK），则必须重新安装 GVLK，才能将此系统配置为 KMS 客户端。 可以使用 slmgr.vbs /ipk &lt;GVLK&gt;（如 [KMS 客户端安装密钥](kmsclientkeys.md)中所述）或使用批量激活管理工具 (VAMT) 来手动安装密钥。 有关如何获取和使用 VAMT 的信息，请参阅[批量激活管理工具 (VAMT) 技术参考](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-management-tool)。
+- “说明”。 此值显示已安装的密钥。 VOLUME_KMSCLIENT 指示已安装 KMS 客户端安装密钥（或 GVLK）（批量许可媒体的默认配置），并且此系统自动尝试使用 KMS 主机进行激活。 如果此处显示其他值（如 MAK），则必须重新安装 GVLK，才能将此系统配置为 KMS 客户端。 可以使用 slmgr.vbs /ipk &lt;GVLK&gt;（如 [KMS 客户端安装密钥](kmsclientkeys.md)中所述）或使用批量激活管理工具 (VAMT) 来手动安装密钥。 有关如何获取和使用 VAMT 的信息，请参阅[批量激活管理工具 (VAMT) 技术参考](/windows/deployment/volume-activation/volume-activation-management-tool)。
 - 部分产品密钥。 作为“名称”字段，你可以使用此信息来确定此计算机上是否已安装正确的 KMS 客户端安装密钥（换言之，密钥与 KMS 客户端上安装的操作系统是否匹配）。 默认情况下，正确的密钥存在于使用批量许可服务中心 (VLSC) 门户中的媒体生成的系统上。 在某些情况下，客户可以使用多次激活密钥 (MAK) 激活，直到环境中具有足够多的系统来支持 KMS 激活为止。 必须在这些系统上安装 KMS 客户端安装密钥，才能将系统从 MAK 转换为 KMS。 使用 VAMT 安装此密钥，并确保应用正确的密钥。
 - 许可证状态。 此值显示 KMS 客户端系统的状态。 对于使用 KMS 激活的系统，此值应为“已获许可”。 任何其他值都可能表示存在问题。 例如，如果 KMS 主机运行正常且 KMS 客户端未激活（例如，保持“宽限期”状态），则表明某些原因可能阻止了客户端到达主机系统，例如防火墙问题、网络中断或类似的原因。
 - 客户端计算机 ID (CMID)。 每个 KMS 客户端应具有唯一的 CMID。 如 [KMS 主机](#kms-host)部分所述，一个与计数相关的常见问题是：环境中具有已激活的 KMS 主机和足够的客户端，但计数不会增加到 1 以上。 有关详细信息，请参阅[在将基于 Windows Vista 或 Windows 7 的新客户端计算机添加到网络时，KMS 当前计数不会增加](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista)。
@@ -134,6 +134,4 @@ KMS 客户端成功激活或重新激活时，客户端会记录两个事件：�
 - 来自 KMS 主机的事件日志（密钥管理服务日志）和来自 KMS 客户端系统的事件日志（应用程序日志）
 
 ## <a name="additional-references"></a>其他参考
-- [询问核心团队：#激活](https://blogs.technet.microsoft.com/askcore/tag/Activation/)
-
-
+- [询问核心团队：#激活](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)

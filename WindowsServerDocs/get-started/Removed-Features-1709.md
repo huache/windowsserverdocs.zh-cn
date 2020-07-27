@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a74f3c6ec629df7d1cc40199091e84989606a50e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 98632ee7147c3041b0f13d0a0e90bf8115268d36
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826680"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959469"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>从 Windows Server 版本 1709 开始已删除或计划取代的功能
 
@@ -55,14 +55,13 @@ Windows Server 版本 1709 包含 Windows Server 2016 中存在的相同功能�
 
 
 ### <a name="iis-digest-authentication"></a>IIS 摘要式身份验证
-已计划替换此身份验证方法。 你应该开始使用其他身份验证方法，如客户端证书映射（请参阅[配置一对一客户端证书映射](https://docs.microsoft.com/iis/manage/configuring-security/configuring-one-to-one-client-certificate-mappings)）或 Windows 身份验证（请参阅[应用程序设置](https://docs.microsoft.com/iis-administration/configuration/appsettings.json)）。
+已计划替换此身份验证方法。 你应该开始使用其他身份验证方法，如客户端证书映射（请参阅[配置一对一客户端证书映射](/iis/manage/configuring-security/configuring-one-to-one-client-certificate-mappings)）或 Windows 身份验证（请参阅[应用程序设置](/iis-administration/configuration/appsettings.json)）。
 
 ### <a name="internet-storage-name-service-isns"></a>Internet 存储名称服务 (iSNS)
-正在考虑替换 iSNS。 服务器消息块 (SMB) 特性提供与其他特性基本相同的功能。 有关此特性的背景信息，请参阅[服务器消息块概述](https://technet.microsoft.com/library/hh831795(v=ws.11).aspx)。
+正在考虑替换 iSNS。 服务器消息块 (SMB) 特性提供与其他特性基本相同的功能。 有关此特性的背景信息，请参阅[服务器消息块概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))。
 
 ### <a name="rsaaes-encryption-for-iis"></a>适用于 IIS 的 RSA/AES 加密 
-我们正在考虑替换此加密方法，因为现已推出优异的加密 API：下一代 (CNG) 方法。 若要了解有关 CNG 加密的详细信息，请参阅[关于 CNG](https://msdn.microsoft.com/library/windows/desktop/aa375276(v=vs.85).aspx)。
+我们正在考虑替换此加密方法，因为现已推出优异的加密 API：下一代 (CNG) 方法。 若要了解有关 CNG 加密的详细信息，请参阅[关于 CNG](/windows/win32/seccng/about-cng)。
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0
-此早期版本的 Windows PowerShell 已被一些较新的版本所取代。 为了获得最佳功能和性能，请迁移到 Windows PowerShell 5.0 或更高版本。 请参阅 [PowerShell 文档](https://docs.microsoft.com/powershell/index?view=powershell-5.1)以获取大量信息。
-
+此早期版本的 Windows PowerShell 已被一些较新的版本所取代。 为了获得最佳功能和性能，请迁移到 Windows PowerShell 5.0 或更高版本。 请参阅 [PowerShell 文档](/powershell/index?view=powershell-5.1)以获取大量信息。

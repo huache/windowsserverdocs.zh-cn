@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: b0f62d6f-0915-44ca-afef-be44a922e20e
 author: lizap
 manager: dongill
-ms.openlocfilehash: fa17c472e3311e4e34ac7b2176d0045886463274
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 9eba68e3dfce817208763ed11c4a7af68bb60be3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80818460"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966519"
 ---
 # <a name="create-virtual-machines-for-remote-desktop"></a>为远程桌面创建虚拟机
 
@@ -24,9 +24,9 @@ ms.locfileid: "80818460"
   
 对于此基本部署示例，将创建最少 3 台虚拟机。 一个虚拟机将托管远程桌面 (RD) 连接代理和许可证服务器角色服务，以及用于部署的文件共享。 第二个虚拟机将托管 RD 网关和 Web 访问角色服务。  第三个虚拟机托管 RD 会话主机角色服务。 对于非常小的部署，可以通过使用 AAD 应用代理来消除部署中的所有公共终结点，并将所有角色服务组合到单个 VM 上，从而降低 VM 成本。 对于大型部署，可以在单个虚拟机上安装各种角色服务，以便更好地进行缩放。  
   
-本部分概述了在 [Microsoft Azure 市场](https://azure.microsoft.com/marketplace/) 中基于 Windows Server 映像为每个角色部署虚拟机的必要步骤。 如果需要从需要 PowerShell 的自定义映像创建虚拟机，请查看[使用资源管理器和 PowerShell 创建 Windows VM](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-ps-create/)。 然后返回此处附加文件共享的 Azure 数据磁盘，并为部署输入外部 URL。  
+本部分概述了在 [Microsoft Azure 市场](https://azure.microsoft.com/marketplace/) 中基于 Windows Server 映像为每个角色部署虚拟机的必要步骤。 如果需要从需要 PowerShell 的自定义映像创建虚拟机，请查看[使用资源管理器和 PowerShell 创建 Windows VM](/azure/virtual-machines/windows/quick-create-powershell)。 然后返回此处附加文件共享的 Azure 数据磁盘，并为部署输入外部 URL。  
   
-1. [创建 Windows 虚拟机](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-hero-tutorial/)以托管 RD 连接代理、RD 许可证服务器和文件服务器。  
+1. [创建 Windows 虚拟机](/azure/virtual-machines/windows/quick-create-portal)以托管 RD 连接代理、RD 许可证服务器和文件服务器。  
   
    出于本文讨论的目的，我们使用以下命名约定：  
    - RD 连接代理、许可证服务器和文件服务器：   
@@ -79,4 +79,3 @@ ms.locfileid: "80818460"
 5. 为部署输入外部 URL/DNS 名称，以便从外部访问它：  
    1.  在 Azure 门户中，单击“浏览”>“资源组”  ，单击部署的资源组，然后单击为 RD Web 访问和 RD 网关创建的公共 IP 地址。  
    2.  单击“配置”  ，输入 DNS 名称标签（如 contoso)，然后单击“保存”  。 此 DNS 名称标签 (contoso.westus.cloudapp.azure.com) 是将用于连接到 RD Web 访问和 RD 网关服务器的 DNS 名称。  
-

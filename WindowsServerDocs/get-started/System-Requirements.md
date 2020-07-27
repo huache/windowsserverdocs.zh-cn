@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: cd4666f9ac0677ce8893041ae4e937cca41e8164
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: fe2d47622d776b722f0d2d91d027e5f3fd0163c5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826490"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964219"
 ---
 # <a name="system-requirements"></a>系统要求
 
@@ -49,7 +49,7 @@ ms.locfileid: "80826490"
 - 支持 CMPXCHG16b、LAHF/SAHF 和 PrefetchW  
 - 支持二级地址转换（EPT 或 NPT）  
 
-[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) 是可用于确认 CPU 具有这些功能中的哪种功能的工具。
+[Coreinfo](/sysinternals/downloads/coreinfo) 是可用于确认 CPU 具有这些功能中的哪种功能的工具。
 
 ## <a name="ram"></a>RAM  
 以下是本产品对 RAM 的预计要求：  
@@ -121,7 +121,7 @@ ms.locfileid: "80826490"
 有关将 Windows Server 2016 安装为 Nano Server 的详细步骤，请参阅[安装 Nano Server](Getting-Started-with-Nano-Server.md)。
 
 ## <a name="additional-resources"></a>其他资源
-- [Windows 处理器要求](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
-- [Windows Server 2016 Standard 和 Datacenter 版本的比较](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
+- [Windows 处理器要求](/windows-hardware/design/minimum/windows-processor-requirements)
+- [Windows Server 2016 Standard 和 Datacenter 版本的比较](./2016-edition-comparison.md)
 - [Windows 10 系统要求](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
 - [下载 Windows Server 2016 许可数据表](https://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)

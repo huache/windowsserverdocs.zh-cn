@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 2bf56e69d1a28007c35c320d1d5cc73c2ba9fa53
-ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
+ms.openlocfilehash: 1823816d2218c09c84e5eb61bf8af6bd3411a0d7
+ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85586689"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86946591"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 服务频道：LTSC 和 SAC
 
@@ -91,7 +91,7 @@ IT 专业人员可以使用多种工具维护 Windows Server。 每个选项都�
 - Visual Studio 订阅：Visual Studio 订阅者可以从 [Visual Studio 订阅者下载页](https://my.visualstudio.com/downloads?pid=2347)下载半年频道版本。 如果你还不是订阅者，请转到 [Visual Studio 订阅](https://www.visualstudio.com/subscriptions/)进行注册，然后访问上方所述的 [Visual Studio 订阅者下载页](https://my.visualstudio.com/downloads?pid=2347)。 通过 Visual Studio 订阅获得的版本仅用于开发和测试。
 
 - 通过 Windows 预览体验计划获取预览版本：测试较早版本的 Windows Server 对 Microsoft 及其客户都有帮助，因为他们有机会在发布之前发现可能出现的问题。 此外，这还为客户提供了一个直接影响产品功能的独特机会。
-Microsoft 依赖于在开发过程中接收反馈，从而可以尽快做出调整。 提前测试和反馈对于快速发布模型至关重要。 若要参与 Windows 预览体验计划，请参阅 [Windows 预览体验计划服务器版文档](https://docs.microsoft.com/windows-insider/at-work/)。
+Microsoft 依赖于在开发过程中接收反馈，从而可以尽快做出调整。 提前测试和反馈对于快速发布模型至关重要。 若要参与 Windows 预览体验计划，请参阅 [Windows 预览体验计划服务器版文档](/windows-insider/at-work/)。
 
 ## <a name="activating-semi-annual-channel-releases"></a>激活半年频道版本
 
@@ -115,7 +115,7 @@ Nano Server 在半年频道中作为容器操作系统提供。 有关详细信�
 一般而言，长期服务频道版本（如 Windows Server 2019）是在发布新版半年频道（如 Windows Server 版本 1809）的同时发布的。 这会略微增大确定服务器是否运行半年频道版本的难度。 不要查看内部版本号，而必须查看产品名称：半年频道版本使用 Windows Server Standard 或 Windows Server Datacenter 产品名称且不带版本号，而长期服务渠道版本包括版本号，例如 Windows Server 2019 Datacenter。
 
 > [!Note]
-> 以下指南旨在帮助识别并区分 LTSC 和 SAC，且仅用于生命周期和常规清单目的，  而不用于应用程序兼容性或用于表示特定的 API 图面。  应用开发人员应使用其它指南，以在系统生命周期内添加组件、API 和功能之前或之时确保它们的兼容性。 [操作系统版本](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)对于开发人员来说更好入手。
+> 以下指南旨在帮助识别并区分 LTSC 和 SAC，且仅用于生命周期和常规清单目的，  而不用于应用程序兼容性或用于表示特定的 API 图面。  应用开发人员应使用其它指南，以在系统生命周期内添加组件、API 和功能之前或之时确保它们的兼容性。 [操作系统版本](/windows/desktop/sysinfo/operating-system-version)对于开发人员来说更好入手。
 
 打开 Powershell，并使用 Get-ItemProperty Cmdlet 或 Get-ComputerInfo Cmdlet 检查注册表中的相应属性。  结合属性和内部版本号，即可确认品牌年度（如 2019 年）中是否存在 LTSC 或 SAC。  LTSC 拥有内部版本号，但 SAC 没有。  该命令还会返回版本发布时的 ReleaseId 或 WindowsVersion（如版本 1809），同时提示本次安装的是 Server Core 还是带桌面体验的服务器。
 
@@ -165,7 +165,7 @@ OsVersion                     : 10.0.17763
 OsHardwareAbstractionLayer    : 10.0.17763.107
 ````
 
-若要查询新的 [Server Core 应用程序兼容性 FOD](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19) 是否存在于服务器上，请使用 [Get-WindowsCapability](https://docs.microsoft.com/powershell/module/dism/get-windowscapability?view=win10-ps) Cmdlet 查找：
+若要查询新的 [Server Core 应用程序兼容性 FOD](./install-fod-19.md) 是否存在于服务器上，请使用 [Get-WindowsCapability](/powershell/module/dism/get-windowscapability?view=win10-ps) Cmdlet 查找：
 ````
 Name    :     ServerCore.AppCompatibility~~~~0.0.1.0
 State   :     Installed
@@ -177,8 +177,8 @@ State   :     Installed
 
 [Windows Server 支持生命周期](https://support.microsoft.com/lifecycle)
 
-[确定 Server Core 是否正在运行](https://msdn.microsoft.com/library/hh846315%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
+[确定 Server Core 是否正在运行](/previous-versions/windows/desktop/legacy/hh846315(v=vs.85)?f=255&MSPPError=-2147217396)
 
-[GetProductInfo 函数](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
+[GetProductInfo 函数](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
 
-[软件清单日志记录 Cmdlet](https://docs.microsoft.com/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
+[软件清单日志记录 Cmdlet](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3804cfdf49d97f9b889129802e0d2c51730e3c86
-ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
+ms.openlocfilehash: d65701010620127c4d98bdc176be1e7ce401e0a7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82903473"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965989"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS OpenID Connect/OAuth 流和应用程序方案
 适用于 AD FS 2016 及更高版本
@@ -230,7 +230,7 @@ access_token 生存期较短，必须在过期后刷新，才能继续访问资�
  
 刷新令牌没有指定的生存期。 通常，刷新令牌的生存期相对较长。 但是，在某些情况下，刷新令牌会过期、被吊销，或缺少执行所需操作的足够权限。 你的应用程序需要正确地预期到令牌颁发终结点返回的错误并对其进行处理。  
  
-尽管刷新令牌在用于获取新的访问令牌时不会被吊销，但你应丢弃旧的刷新令牌。 按照 OAuth 2.0 规范指示：“授权服务器可能会发出一个新的刷新令牌，在这种情况下，客户端必须放弃旧的刷新令牌并将其替换为新的刷新令牌。 在向客户端发出新的刷新令牌后，授权服务器可能会吊销旧的刷新令牌。” 当新的刷新令牌生存期长于旧的刷新令牌生存期时，AD FS 会颁发刷新令牌。  若要查看 AD FS 刷新令牌生存期的其他信息，请访问 [AD FS 单一登录设置](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings)。
+尽管刷新令牌在用于获取新的访问令牌时不会被吊销，但你应丢弃旧的刷新令牌。 按照 OAuth 2.0 规范指示：“授权服务器可能会发出一个新的刷新令牌，在这种情况下，客户端必须放弃旧的刷新令牌并将其替换为新的刷新令牌。 在向客户端发出新的刷新令牌后，授权服务器可能会吊销旧的刷新令牌。” 当新的刷新令牌生存期长于旧的刷新令牌生存期时，AD FS 会颁发刷新令牌。  若要查看 AD FS 刷新令牌生存期的其他信息，请访问 [AD FS 单一登录设置](../operations/ad-fs-single-sign-on-settings.md)。
  
 ```
 // Line breaks for legibility only 

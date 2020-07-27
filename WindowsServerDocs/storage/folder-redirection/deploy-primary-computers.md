@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: be2b41cf32e2020422c32415e2d8f4273eb09859
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 935d3ccf7de777a71d7c75179629b448dbb73a08
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394437"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966279"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>为文件夹重定向以及漫游用户策略文件部署主计算机
 
@@ -118,4 +118,4 @@ ms.locfileid: "71394437"
 - [部署文件夹重定向和脱机文件](deploy-folder-redirection.md)
 - [部署漫游用户配置文件](deploy-roaming-user-profiles.md)
 - [文件夹重定向、脱机文件和漫游用户策略文件概述](folder-redirection-rup-overview.md)
-- [深入了解 Windows 8 主计算机](https://blogs.technet.com/b/askds/archive/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer.aspx)
+- [深入了解 Windows 8 主计算机](/archive/blogs/askds/digging-a-little-deeper-into-windows-8-primary-computer)

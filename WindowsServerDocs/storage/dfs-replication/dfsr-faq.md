@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 1e11f6c596d7e5eb0bdf379adcf47d21e74e9f6b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4c4d5310fa6cf47945483c9ee7a3f89afd313da9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815620"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966129"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 复制：常见问题 (FAQ)
 
@@ -22,15 +22,15 @@ ms.locfileid: "80815620"
 
 此常见问题解答回答了有关 Windows Server 分布式文件系统 (DFS) 复制（也称为 DFS-R 或 DFSR）的问题。
 
-有关 DFS 命名空间的信息，请参阅 [DFS 命名空间：常见问题解答](https://technet.microsoft.com/library/ee404780)。
+有关 DFS 命名空间的信息，请参阅 [DFS 命名空间：常见问题解答](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee404780(v=ws.10))。
 
 有关 DFS 复制的新增功能信息，请参阅以下主题：
 
-  - [DFS 命名空间和 DFS 复制概述](https://technet.microsoft.com/library/jj127250) (Windows Server 2012)  
+  - [DFS 命名空间和 DFS 复制概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) (Windows Server 2012)  
       
-  - [从 Windows Server 2008 到 Windows Server 2008 R2 的功能更改](https://technet.microsoft.com/library/dd391932)中的[分布式文件系统的新增功能](https://technet.microsoft.com/library/ee307957)主题  
+  - [从 Windows Server 2008 到 Windows Server 2008 R2 的功能更改](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391932(v=ws.10))中的[分布式文件系统的新增功能](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee307957(v=ws.10))主题  
       
-  - [从 Windows Server 2003 SP1 到 Windows Server 2008 的功能更改](https://technet.microsoft.com/library/cc753208)中的[分布式文件系统](https://technet.microsoft.com/library/cc753479)主题  
+  - [从 Windows Server 2003 SP1 到 Windows Server 2008 的功能更改](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753208(v=ws.10))中的[分布式文件系统](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753479(v=ws.10))主题  
       
 
 有关本主题最近更改的列表，请参阅本主题的 [更改历史记录](#change-history) 部分。
@@ -47,7 +47,7 @@ ms.locfileid: "80815620"
 
 是的，在运行 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 的服务器上，DFS 复制可以代替 FRS 进行 SYSVOL 复制。 运行 Windows Server 2003 R2 的服务器不支持使用 DFS 复制来复制 SYSVOL 文件夹。
 
-有关使用 DFS 复制来复制 SYSVOL 的详细信息，请参阅 [SYSVOL 复制迁移指南：从 FRS 迁移到 DFS 复制](https://technet.microsoft.com/library/dd640019)。
+有关使用 DFS 复制来复制 SYSVOL 的详细信息，请参阅 [SYSVOL 复制迁移指南：从 FRS 迁移到 DFS 复制](./migrate-sysvol-to-dfsr.md)。
 
 ### <a name="can-i-upgrade-from-frs-to-dfs-replication-without-losing-configuration-settings"></a>是否可以在不丢失配置设置的情况下从 FRS 升级到 DFS 复制？
 
@@ -55,7 +55,7 @@ ms.locfileid: "80815620"
 
   - 若要迁移除 SYSVOL 文件夹之外的文件夹复制，请参阅 [DFS 操作指南：从 FRS 迁移到 DFS 复制](https://go.microsoft.com/fwlink/?linkid=192776)和 [FRS2DFSR - FRS 到 DFSR 迁移实用工具](https://go.microsoft.com/fwlink/?linkid=195437) (https://go.microsoft.com/fwlink/?LinkID=195437) 。  
       
-  - 若要将 SYSVOL 文件夹的复制迁移到 DFS 复制，请参阅 [SYSVOL 复制迁移指南：从 FRS 迁移到 DFS 复制](https://technet.microsoft.com/library/dd640019)。  
+  - 若要将 SYSVOL 文件夹的复制迁移到 DFS 复制，请参阅 [SYSVOL 复制迁移指南：从 FRS 迁移到 DFS 复制](./migrate-sysvol-to-dfsr.md)。  
       
 
 ### <a name="can-i-use-dfs-replication-in-a-mixed-windowsunix-environment"></a>是否可以在混合的 Windows/UNIX 环境中使用 DFS 复制？
@@ -74,7 +74,7 @@ DFS 复制与运行 Windows Server 操作系统的服务器上的 NFS 互操作�
 
 不可以，不支持在运行 Windows Server 2003 或更低版本的计算机上使用 Windows 备份 (Ntbackup.exe) 对运行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 的计算机上的复制文件夹中的内容进行复制。
 
-若要备份存储在复制文件夹中的文件，请使用 Windows Server 备份或 Microsoft&reg; System Center Data Protection Manager。 有关 Windows Server 2008 R2 和 Windows Server 2008 中的备份和恢复功能的信息，请参阅[备份和恢复](https://technet.microsoft.com/library/Cc754097)。 有关详细信息，请参阅 [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261) (https://go.microsoft.com/fwlink/?LinkId=182261) 。
+若要备份存储在复制文件夹中的文件，请使用 Windows Server 备份或 Microsoft&reg; System Center Data Protection Manager。 有关 Windows Server 2008 R2 和 Windows Server 2008 中的备份和恢复功能的信息，请参阅[备份和恢复](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754097(v=ws.10))。 有关详细信息，请参阅 [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261) (https://go.microsoft.com/fwlink/?LinkId=182261) 。
 
 ### <a name="do-file-system-policies-impact-dfs-replication"></a>文件系统策略是否会影响 DFS 复制？
 
@@ -201,7 +201,7 @@ Windows&reg; SharePoint&reg; Services 以文件签出功能的形式提供了密
 
 ### <a name="how-can-i-upgrade-or-replace-a-dfs-replication-member"></a>如何升级或替换 DFS 复制成员？
 
-若要升级或替换 DFS 复制成员，请参阅 Ask the Directory Services Team（咨询目录服务团队）博客上的博客文章：[替换 DFSR 成员硬件或 OS](https://blogs.technet.com/b/askds/archive/2010/09/10/series-wrap-up-and-downloads-replacing-dfsr-member-hardware-or-os.aspx)。
+若要升级或替换 DFS 复制成员，请参阅 Ask the Directory Services Team（咨询目录服务团队）博客上的博客文章：[替换 DFSR 成员硬件或 OS](/archive/blogs/askds/series-wrap-up-and-downloads-replacing-dfsr-member-hardware-or-os)。
 
 ### <a name="is-dfs-replication-suitable-for-replicating-roaming-profiles"></a>DFS 复制是否适用于复制漫游策略文件？
 
@@ -280,7 +280,7 @@ DFS 复制在 Active Directory 域服务的域命名上下文中使用新对象�
 
 是的。 DFS 复制使用 DFS 管理控制台和“添加复制组”命令支持远程管理  。 例如，在服务器 A 上，你可以连接到在以成员服务器 A 和 B 作为成员的林中定义的复制组。
 
-Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 和 Windows Server 2003 R2 都随附有 DFS 管理。 若要管理其他版本的 Windows DFS 复制，请使用远程桌面或[适用于 Windows 7 的远程服务器管理工具](https://technet.microsoft.com/library/Ee449475)。
+Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 和 Windows Server 2003 R2 都随附有 DFS 管理。 若要管理其他版本的 Windows DFS 复制，请使用远程桌面或[适用于 Windows 7 的远程服务器管理工具](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10))。
 
 
 > [!IMPORTANT]
@@ -304,7 +304,7 @@ Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 
       
   - DFS 管理为复制积压工作 (backlog)、复制效率以及给定复制组中的文件和文件夹数量提供内置的诊断报告。  
       
-  - Windows Server 2012 R2 中的 DFSR Windows PowerShell 模块包含用于启动传播测试和编写传播和运行状况报告的 cmdlet。 有关详细信息，请参阅 [Windows PowerShell 中的分布式文件系统复制 Cmdlet](https://technet.microsoft.com/library/dn296601.aspx)。  
+  - Windows Server 2012 R2 中的 DFSR Windows PowerShell 模块包含用于启动传播测试和编写传播和运行状况报告的 cmdlet。 有关详细信息，请参阅 [Windows PowerShell 中的分布式文件系统复制 Cmdlet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10))。  
       
   - Dfsrdiag.exe 是一种命令行工具，可生成积压工作 (backlog) 计数或触发传播测试。 两者都可显示复制状态。 传播用于显示文件是否正被复制到所有节点。 积压工作 (backlog) 用于显示在两台计算机实现同步之前有多少文件仍需复制。积压工作 (backlog) 计数是指复制组成员尚未处理的更新数量。 在运行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的计算机上，Dfsrdiag.exe 还可显示 DFS 复制当前正在复制的更新。  
       
@@ -331,7 +331,7 @@ Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 
 
 ### <a name="how-can-i-improve-replication-performance"></a>如何提高复制性能？
 
-若要了解优化复制性能的不同方法，请参阅[目录服务团队博客](https://blogs.technet.com/b/askds/)中的[优化 DFSR 的复制性能](https://blogs.technet.com/b/askds/archive/2010/03/31/tuning-replication-performance-in-dfsr-especially-on-win2008-r2.aspx)。
+若要了解优化复制性能的不同方法，请参阅[目录服务团队博客](/archive/blogs/askds/)中的[优化 DFSR 的复制性能](/archive/blogs/askds/tuning-replication-performance-in-dfsr-especially-on-win2008-r2)。
 
 ### <a name="how-does-dfs-replication-avoid-saturating-a-connection"></a>DFS 复制如何避免使某个连接达到饱和？
 
@@ -339,7 +339,7 @@ Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 
 
 不过，带宽限制并非 100% 准确，并且 DFS 复制可能会使链接在短时间内达到饱和。 这是因为 DFS 复制通过限制 RPC 调用来限制带宽。 由于此过程依赖于较低级别的网络堆栈（包括 RPC）中的各种缓冲区，因此复制流量可能会突然增加，有时会使网络链接达到饱和。
 
-Windows Server 2008 中的 DFS 复制包含了多个性能增强功能，如[分布式文件系统](https://technet.microsoft.com/library/Cc753479)（[从 Windows Server 2003 SP1 到 Windows Server 2008 的功能更改](https://technet.microsoft.com/library/cc753208)中的一个主题）中所述。
+Windows Server 2008 中的 DFS 复制包含了多个性能增强功能，如[分布式文件系统](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753479(v=ws.10))（[从 Windows Server 2003 SP1 到 Windows Server 2008 的功能更改](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753208(v=ws.10))中的一个主题）中所述。
 
 ### <a name="how-does-dfs-replication-performance-compare-with-frs"></a>DFS 复制性能与 FRS 相比如何？
 
@@ -533,9 +533,9 @@ DFS 复制不会复制 FILE\_ATTRIBUTE\_TEMPORARY 值。
 
 要预留复制组成员，请将文件复制到目标服务器上的相应文件夹中，创建复制组，然后选择主成员。 请选择包含要复制的最新文件的成员，因为主成员的内容被视为“具有权威性”。 这意味着在初始复制期间，主成员的文件将始终覆盖复制组的其他成员上其他版本的文件。
 
-有关预设定种子和克隆 DFSR 数据库的信息，请参阅 [Windows Server 2012 R2 中的 DFS 复制初始同步：克隆的攻击](https://blogs.technet.com/b/filecab/archive/2013/08/21/dfs-replication-initial-sync-in-windows-server-2012-r2-attack-of-the-clones.aspx)。
+有关预设定种子和克隆 DFSR 数据库的信息，请参阅 [Windows Server 2012 R2 中的 DFS 复制初始同步：克隆的攻击](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
-有关初始复制的详细信息，请参阅[创建复制组](https://technet.microsoft.com/library/cc725893)。
+有关初始复制的详细信息，请参阅[创建复制组](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725893(v=ws.11))。
 
 ### <a name="does-dfs-replication-overcome-common-file-replication-service-issues"></a>DFS 复制是否可以解决常见的文件复制服务问题？
 
@@ -562,7 +562,7 @@ DFS 复制不会复制 FILE\_ATTRIBUTE\_TEMPORARY 值。
       
   - Microsoft 不支持在复制文件夹中的文件之间创建 NTFS 硬链接，这样做会导致受影响文件出现复制问题。 硬链接文件将被 DFS 复制忽略，并且不会被复制。 交接点也不会被复制，并且 DFS 复制会为其遇到的每个交接点记录事件 4406。  
       
-  - 通过 DFS 复制进行复制的唯一重新分析点是使用 IO\_REPARSE\_TAG\_SYMLINK 标记的重新分析点；但 DFS 复制不保证还会复制符号链接的目标。 有关详细信息，请参阅[目录服务团队博客](https://blogs.technet.com/b/askds/archive/2011/09/30/friday-mail-sack-super-slo-mo-edition.aspx)。  
+  - 通过 DFS 复制进行复制的唯一重新分析点是使用 IO\_REPARSE\_TAG\_SYMLINK 标记的重新分析点；但 DFS 复制不保证还会复制符号链接的目标。 有关详细信息，请参阅[目录服务团队博客](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725893(v=ws.11))。  
       
   - 带有 IO\_REPARSE\_TAG\_DEDUP、IO\_REPARSE\_TAG\_SIS 或 IO\_REPARSE\_TAG\_HSM 重新分析标记的文件作为普通文件复制。 重新分析标记和重新分析数据缓冲区不会复制到其他服务器，因为重新分析点仅适用于本地系统。 因此，DFS 复制可以在使用 Windows Server 2012 中的重复数据删除的卷上或单实例存储 (SIS) 上复制文件夹，但是，每个启用了角色服务的服务器都将单独维护重复数据删除信息。  
       
@@ -610,7 +610,7 @@ DFS 复制不会复制 FILE\_ATTRIBUTE\_TEMPORARY 值。
 
 ### <a name="how-do-i-force-replication-or-polling"></a>如何实现强制执行复制或轮询？
 
-可以使用[编辑复制计划](https://technet.microsoft.com/library/Cc732278)中所介绍的 DFS 管理立即强制执行复制。 也可以使用 Windows Server 2012 R2 随附的 DFSR PowerShell 模块中包含的 `Sync-DfsReplicationGroup` cmdlet 或 Dfsrdiag SyncNow 命令强制执行复制  。 可以使用 `Update-DfsrConfigurationFromAD` cmdlet 或 Dfsrdiag.exe PollAD 命令强制执行轮询  。
+可以使用[编辑复制计划](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732278(v=ws.11))中所介绍的 DFS 管理立即强制执行复制。 也可以使用 Windows Server 2012 R2 随附的 DFSR PowerShell 模块中包含的 `Sync-DfsReplicationGroup` cmdlet 或 Dfsrdiag SyncNow 命令强制执行复制  。 可以使用 `Update-DfsrConfigurationFromAD` cmdlet 或 Dfsrdiag.exe PollAD 命令强制执行轮询  。
 
 ### <a name="is-it-possible-to-configure-a-quiet-time-between-replications-for-files-that-change-frequently"></a>对于频繁更改的文件，是否可以配置复制之间的安静时间？
 
@@ -639,7 +639,7 @@ DFS 复制不会复制 FILE\_ATTRIBUTE\_TEMPORARY 值。
 
 如果初始复制失败或 DFS 复制服务在复制过程中重启，则主成员将在本地 DFS 复制数据库中看到主成员名称并重新尝试初始复制。 如果在清除 Active Directory 域服务中的主名称之后，但是在复制组的所有成员完成初始复制之前，主成员的 DFS 复制数据库丢失，则该复制组的所有成员都无法复制文件夹，因为没有将任何服务器指定为主成员。 如果发生这种情况，请在主成员服务器上使用 Dfsradmin membership /set /isprimary:true 命令手动还原主成员名称  。
 
-有关初始复制的详细信息，请参阅[创建复制组](https://technet.microsoft.com/library/cc725893)。
+有关初始复制的详细信息，请参阅[创建复制组](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725893(v=ws.11))。
 
 
 > [!WARNING]
@@ -787,4 +787,3 @@ DFS 复制不会复制 FILE\_ATTRIBUTE\_TEMPORARY 值。
 </tr>
 </tbody>
 </table>
-

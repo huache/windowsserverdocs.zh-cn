@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 0f402ae3-5391-4c7d-afea-2c5c9044de46
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: f73f28500c136ec8bdd32084cc5949f5e9804699
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 434d4910e8718747c07fc7378eb37d9ff4e85710
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80818520"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966699"
 ---
 # <a name="azure-services-and-considerations-for-desktop-hosting"></a>Azure 服务和桌面托管注意事项
 
@@ -32,7 +32,7 @@ ms.locfileid: "80818520"
 
 租户的组件运行于在隔离网络上互相通信的虚拟机上。 在部署过程中，可以通过 Azure 负载均衡器使用远程桌面协议终结点或远程 PowerShell 终结点从外部访问这些虚拟机。 部署完成后，通常将删除这些终结点以缩减受攻击的外围应用。 唯一终结点将是为运行 RD Web 和 RD 网关组件的虚拟机创建的 HTTPS 和 UDP 终结点。 这使 Internet 上的客户端可以连接到在租户的桌面托管服务中运行的会话。 如果用户打开连接到 Internet 的应用程序（例如 Web 浏览器），则连接将通过 Azure 负载均衡器。  
   
-有关详细信息，请参阅 [Azure 负载均衡器是什么？](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-load-balance/)
+有关详细信息，请参阅 [Azure 负载均衡器是什么？](/azure/load-balancer/load-balancer-overview)
   
 ## <a name="security-considerations"></a>安全注意事项
 
@@ -45,9 +45,9 @@ ms.locfileid: "80818520"
   
 有关详细信息，请参阅以下文章：
 
-- [安全和保护](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831778(v=ws.11))  
-- [IIS 8 安全最佳做法](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635855(v=ws.11))  
-- [保护 Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831360(v=ws.11))  
+- [安全和保护](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831778(v=ws.11))  
+- [IIS 8 安全最佳做法](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj635855(v=ws.11))  
+- [保护 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831360(v=ws.11))  
   
 ## <a name="design-considerations"></a>设计注意事项
 
@@ -61,13 +61,13 @@ ms.locfileid: "80818520"
   
 有关详细信息，请参阅以下文章：
 
-- [云服务的大小](https://docs.microsoft.com/azure/cloud-services/cloud-services-sizes-specs)  
+- [云服务的大小](/azure/cloud-services/cloud-services-sizes-specs)  
 - [Microsoft Azure 虚拟机定价详细信息](https://azure.microsoft.com/pricing/details/virtual-machines/)  
-- [Hyper-V 概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))  
-- [Azure 存储可伸缩性和性能目标](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets)  
+- [Hyper-V 概述](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831531(v=ws.11))  
+- [Azure 存储可伸缩性和性能目标](/azure/storage/common/storage-scalability-targets)  
 
 ## <a name="azure-active-directory-application-proxy"></a>Azure Active Directory 应用程序代理
 
 Azure Active Directory (AD) 应用程序代理是 Azure AD 的付费 SKU 中提供的一项服务，这些 SKU 使用户能够通过 Azure 自身的反向代理服务连接到内部应用程序。 这样，RD Web 和 RD 网关终结点可以隐藏在虚拟网络内，而无需通过公共 IP 地址向 Internet 公开。 主机托管服务提供商可以使用 Azure AD 应用程序代理减少租户环境中的虚拟机数，同时仍保持完整部署。 Azure AD 应用程序代理还支持 Azure AD 提供的很多优势，例如条件访问和多重身份验证。
 
-有关详细信息，请参阅[开始使用应用程序代理并安装连接器](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-enable)。
+有关详细信息，请参阅[开始使用应用程序代理并安装连接器](/azure/active-directory/manage-apps/application-proxy-enable)。

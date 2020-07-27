@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e13886395040619a7509c3cf896112288c48115
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d2a1627a0a941f12da4731291a032e4b2e1ad887
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74945210"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962019"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 中已删除或弃用的功能
 
@@ -31,7 +31,7 @@ ms.locfileid: "74945210"
 从此版本的 Windows Server 2016 中删除了以下特性和功能。 除非你使用了替代方法，否则依赖于这些功能的应用程序、代码或用法都将无法工作。  
 
 > [!NOTE]  
-> 如果你要从低于 Windows Server 2012 R2 或 Windows Server 2012 的服务器版本迁移到 Windows Server 2016，则还应查看 [Windows Server 2012 R2 中删除或弃用的功能](https://technet.microsoft.com/library/dn303411.aspx)和 [Windows Server 2012 中删除或弃用的功能](https://technet.microsoft.com/library/hh831568.aspx)。  
+> 如果你要从低于 Windows Server 2012 R2 或 Windows Server 2012 的服务器版本迁移到 Windows Server 2016，则还应查看 [Windows Server 2012 R2 中删除或弃用的功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11))和 [Windows Server 2012 中删除或弃用的功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831568(v=ws.11))。  
 
 ### <a name="share-and-storage-management"></a>共享和存储管理
 
@@ -49,7 +49,7 @@ Journal.dll 已从 Windows Server 2016 中删除。 没有替换。
 
 ### <a name="security-configuration-wizard"></a>安全配置向导
 
-安全配置向导已删除。 现在默认对功能提供保护。 如果需要控制特定的安全设置，可以使用组策略或 [Microsoft Security Compliance Manager](https://technet.microsoft.com/solutionaccelerators/cc835245.aspx)。  
+安全配置向导已删除。 现在默认对功能提供保护。 如果需要控制特定的安全设置，可以使用组策略或 [Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc936627(v=technet.10))。  
 
 ### <a name="sqm"></a>SQM
 
@@ -79,7 +79,7 @@ wuauclt.exe /detectnow  命令已删除，并且不再受支持。 要触发更�
 
 -   Scregedit.exe  已弃用。 如果有依赖于 Scregedit.exe 的脚本，请调整这些脚本以使用 Reg.exe 或 Windows PowerShell 方法。  
 
--   Sconfig.exe  已弃用。 请改用 [Sconfig.cmd](https://docs.microsoft.com/windows-server/get-started/sconfig-on-ws2016)。 
+-   Sconfig.exe  已弃用。 请改用 [Sconfig.cmd](./sconfig-on-ws2016.md)。 
 
 ### <a name="netcfg-custom-apis"></a>NetCfg 自定义 API
 

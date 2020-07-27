@@ -8,12 +8,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 09206b90dc8b829aaa70d0cca34bd05a9e0eb693
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: cdd597e77d35b154385cf9de35f3d51a3d9c4e8b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963043"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961335"
 ---
 # <a name="troubleshooting-windows-volume-activation"></a>排查 Windows 批量激活问题
 
@@ -29,30 +29,30 @@ ms.locfileid: "71963043"
 
 ### <a name="key-management-service-kms"></a>密钥管理服务 (KMS)
 
-- [规划批量激活](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client)
-- [Understanding KMS](https://docs.microsoft.com/previous-versions/tn-archive/ff793434(v=technet.10))（了解 KMS）
-- [Deploying KMS Activation](https://docs.microsoft.com/previous-versions/tn-archive/ff793409%28v=technet.10%29)（部署 KMS 激活）
-- [Configuring KMS Hosts](https://docs.microsoft.com/previous-versions/tn-archive/ff793407%28v%3dtechnet.10%29)（配置 KMS 主机）
-- [Configuring DNS](https://docs.microsoft.com/previous-versions/tn-archive/ff793405%28v%3dtechnet.10%29)（配置 DNS）
-- [使用密钥管理服务进行激活](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt)
+- [规划批量激活](/windows/deployment/volume-activation/plan-for-volume-activation-client)
+- [Understanding KMS](/previous-versions/tn-archive/ff793434(v=technet.10))（了解 KMS）
+- [Deploying KMS Activation](/previous-versions/tn-archive/ff793409%28v=technet.10%29)（部署 KMS 激活）
+- [Configuring KMS Hosts](/previous-versions/tn-archive/ff793407%28v%3dtechnet.10%29)（配置 KMS 主机）
+- [Configuring DNS](/previous-versions/tn-archive/ff793405%28v%3dtechnet.10%29)（配置 DNS）
+- [使用密钥管理服务进行激活](/windows/deployment/volume-activation/activate-using-key-management-service-vamt)
 
 ### <a name="active-directory-based-activation-adba"></a>基于 Active Directory 的激活 (ADBA)
 
-- [Deploy Active-Directory-based Activation](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502534%28v%3Dws.11%29)（部署基于 Active Directory 的激活）
-- [使用基于 Active Directory 的激活进行激活](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-active-directory-based-activation-client)
-- [基于 Active Directory 的激活概述](https://docs.microsoft.com/windows/deployment/volume-activation/active-directory-based-activation-overview)
+- [Deploy Active-Directory-based Activation](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502534%28v%3dws.11%29)（部署基于 Active Directory 的激活）
+- [使用基于 Active Directory 的激活进行激活](/windows/deployment/volume-activation/activate-using-active-directory-based-activation-client)
+- [基于 Active Directory 的激活概述](/windows/deployment/volume-activation/active-directory-based-activation-overview)
 
 ### <a name="multiple-activation-key-mak-activation"></a>多次激活密钥 (MAK) 激活
 
-- [Using MAK Activation](https://docs.microsoft.com/previous-versions/tn-archive/ff793438%28v=technet.10%29)（使用 MAK 激活）
-- [Understanding MAK Activation](https://docs.microsoft.com/previous-versions/tn-archive/ff793435%28v%3dtechnet.10%29)（了解 MAK 激活）
-- [Activating MAK Clients](https://docs.microsoft.com/previous-versions/tn-archive/ff793398%28v%3dtechnet.10%29)（激活 MAK 客户端）
+- [Using MAK Activation](/previous-versions/tn-archive/ff793438%28v=technet.10%29)（使用 MAK 激活）
+- [Understanding MAK Activation](/previous-versions/tn-archive/ff793435%28v%3dtechnet.10%29)（了解 MAK 激活）
+- [Activating MAK Clients](/previous-versions/tn-archive/ff793398%28v%3dtechnet.10%29)（激活 MAK 客户端）
 
 ### <a name="subscription-activation"></a>订阅激活
 
-- [Windows 10 订阅激活](https://docs.microsoft.com/windows/deployment/windows-10-subscription-activation)
-- [部署 Windows 10 企业版许可证](https://docs.microsoft.com/windows/deployment/deploy-enterprise-licenses)
-- [CSP 中的 Windows 10 企业版 E3](https://docs.microsoft.com/windows/deployment/windows-10-enterprise-e3-overview)
+- [Windows 10 订阅激活](/windows/deployment/windows-10-subscription-activation)
+- [部署 Windows 10 企业版许可证](/windows/deployment/deploy-enterprise-licenses)
+- [CSP 中的 Windows 10 企业版 E3](/windows/deployment/windows-10-enterprise-e3-overview)
 
 ## <a name="resources-for-troubleshooting-activation-issues"></a>用于排查激活问题的资源
 
