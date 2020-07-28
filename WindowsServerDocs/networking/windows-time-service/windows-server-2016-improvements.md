@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 92fd335e90aa07a9eb9b76510633b21348732b01
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77520721"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87260243"
 ---
 # <a name="windows-server-2016-improvements"></a>Windows Server 2016 改进功能
 
@@ -94,13 +94,13 @@ Windows 2016 已改进 Hyper-V TimeSync 服务。 改进内容包括：提高了
 
 ## <a name="time-accuracy-measurements"></a>时间准确性度量
 ### <a name="methodology"></a>方法
-为测量 Windows Server 2016 的时间准确性，我们使用了各种工具、方法和环境。 你可以使用这些方法测量和优化环境，并确定准确性结果是否符合要求。 
+为测量 Windows Server 2016 的时间准确性，我们使用了各种工具、方法和环境。 你可以使用这些方法测量和优化环境，并确定准确性结果是否符合要求。
 
 域源时钟由两个具有 GPS 硬件的高精度 NTP 服务器组成。 我们还使用单独的参考测试计算机进行了测量，该计算机也安装了其他制造商提供的高精度 GPS 硬件。 对于某些测试，除域时钟源以外，你还需要一个准确可靠的时钟源用作参考。
 
 我们使用四种不同方法测量了物理计算机和虚拟机的准确性。 多种方法都提供了独立方法来验证结果。
 
-1. 根据具有独立 GPS 硬件的参考测试计算机，测量通过 w32tm 进行调整的本地时钟。 
+1. 根据具有独立 GPS 硬件的参考测试计算机，测量通过 w32tm 进行调整的本地时钟。
 2. 使用 W32tm“stripchart”测量从 NTP 服务器到客户端的 NTP ping
 3. 使用 W32tm“stripchart”测量从客户端到 NTP 服务器的 NTP ping
 4. 使用时间戳计数器 (TSC) 测量从主机到来宾的 Hyper-V 结果。 此计数器可在两个分区和两个分区的系统时间之间进行共享。 我们计算了虚拟机中主机时间和客户端时间的差值。 接着，由于测量不会同时进行，因此使用 TSC 时钟从来宾插入主机时间。 此外，我们还在 API 中将 TSV 时钟系数用作输出延时和延迟。
@@ -119,7 +119,7 @@ W32tm 是内置工具，但对于 GitHub 上的 Microsoft 存储库，可将我�
 ![Windows 时间](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology2.png)
 
 ### <a name="graphical-results-overview"></a>图形结果概述
-以下两个图形基于上述拓扑表示域中两个特定成员的时间准确性。 每个图均显示了 Windows Server 2012R2 和 Windows Server 2016 的叠加结果，以直观显示改进。 与主机相比，准确性是来宾计算机内部的度量。 图形数据表示已完成的全部测试的一部分，并显示最佳服务案例方案和最差服务案例情况。 
+以下两个图形基于上述拓扑表示域中两个特定成员的时间准确性。 每个图均显示了 Windows Server 2012R2 和 Windows Server 2016 的叠加结果，以直观显示改进。 与主机相比，准确性是来宾计算机内部的度量。 图形数据表示已完成的全部测试的一部分，并显示最佳服务案例方案和最差服务案例情况。
 
 ![Windows 时间](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology3.png)
 
@@ -211,10 +211,10 @@ TIMESERV 是另一个相关的域服务标志，表示计算机当前是否具�
  net stop w32time && net start w32time
 
 最后，指示此计算机使用的是可靠时间源。
-  
+
  w32tm /config /reliable:yes /update
 
-若要检查是否已正确完成更改，你可以运行以下命令，这些命令会影响结果，如下所示。 
+若要检查是否已正确完成更改，你可以运行以下命令，这些命令会影响结果，如下所示。
 
  w32tm /query /configuration
 
@@ -252,13 +252,14 @@ Windows 虚拟化后，默认由管理程序负责提供时间。 但加入域�
  w32tm /stripchart /computer:MySourceEntry /packetinfo /samples:1
 
 以下命令同样有效，此命令列出了其在指定域中可以查找到的每个域控制器，并打印出结果，让你可以确定每个合作伙伴。 此命令将包括已手动配置的计算机。
- 
+
  w32tm /monitor /domain:my_domain
 
 使用列表，你可以在整个域中跟踪结果，并了解层次结构以及每个步骤中的时间偏移。 通过找到时间偏移明显增大的点，你可以查明导致时间错误的根源。 然后你可以打开 w32tm 日志记录，尝试了解导致时间错误的原因。
 
 #### <a name="using-group-policy"></a>使用组策略
-你可以使用组策略来实现更严格的准确性，例如，指定客户端来使用特定 NTP 服务器或控制低层次 OS 在虚拟化时的配置方式。 以下是可行方案和相关组策略设置的列表：
+你可以使用组策略来实现更严格的准确性，例如，指定客户端来使用特定 NTP 服务器或控制低层次 OS 在虚拟化时的配置方式。
+以下是可行方案和相关组策略设置的列表：
 
 **虚拟化域** - 为控制 Windows 2012R2 中的虚拟化域控制器，确保这些控制器与其域而不是与 Hyper-V 主机同步时间，你可以禁用此注册表项。  对于 PDC，不建议禁用条目，因为 Hyper-V 主机将提供最稳定的时间源。 根据注册表的要求，你应在 w32time 服务变更后重启该服务。
 
@@ -277,7 +278,7 @@ EventLogFlags| 3 - 所有特殊时间日志记录|
 > [!NOTE]
 > NtpServer 和 EventLogFlags 设置位于使用“配置 Windows NTP 客户端”设置的 System\Windows Time Service\Time 提供程序的下方。 其余 3 个设置位于使用“全局配置”设置的 System\Windows Time Service 的下方。
 
-**远程准确性敏感负载（远程控制）** - 对于零售和支付信用行业 (PCI) 等分支域中的系统，除非配置了手动 NTP 时间源，否则 Windows 会使用当前站点信息和 DC 定位器来查找本地 DC。 此环境需要准确性达到 1 秒，以更快的收敛速度获得正确时间。 此选项允许 w32time 服务将时钟调整到之前的时间。 如果此时间可以接受且符合要求，则你可以创建以下策略。  与任何环境一样，请确保对网络进行测试和基线处理。 
+**远程准确性敏感负载（远程控制）** - 对于零售和支付信用行业 (PCI) 等分支域中的系统，除非配置了手动 NTP 时间源，否则 Windows 会使用当前站点信息和 DC 定位器来查找本地 DC。 此环境需要准确性达到 1 秒，以更快的收敛速度获得正确时间。 此选项允许 w32time 服务将时钟调整到之前的时间。 如果此时间可以接受且符合要求，则你可以创建以下策略。  与任何环境一样，请确保对网络进行测试和基线处理。
 
 组策略设置| “新值”|
 ----- | ----- |
@@ -322,14 +323,15 @@ MaxAllowedPhaseOffset 位于使用“全局配置”设置的 System\Windows Tim
 若要获取全部情况，你还需要事件日志信息。 通过收集系统事件日志并筛选 Time-Server、Microsoft-Windows-Kernel-Boot 和 Microsoft-Windows-Kernel-General，你可能能够发现是否存在更改了时间的其他影响因素，例如，第三方。 排除外部干扰可能需要这些日志。 组策略会影响写入日志的事件日志。 有关详细信息，请参阅上述有关“使用组策略”部分。
 
 ### <a name="w32time-debug-logging"></a><a name="W32Logging"></a>W32time 调试日志记录
-若要启用 w32tm 进行审核，可使用以下命令启用日志记录，该日志记录可显示时钟的定期更新并指示源时钟。 重启服务以启用新的日志记录。 
+若要启用 w32tm 进行审核，可使用以下命令启用日志记录，该日志记录可显示时钟的定期更新并指示源时钟。 重启服务以启用新的日志记录。
 
 有关详细信息，请参阅[如何启用 Windows 时间服务中的调试日志记录](https://support.microsoft.com/kb/816043)。
 
  w32tm /debug /enable /file:C:\Windows\Temp\w32time-test.log /size:10000000 /entries:0-73,103,107,110
 
 ### <a name="performance-monitor"></a>性能监视器
-Windows Server 2016 Windows 时间服务公开了性能计数器，这些计数器可用于收集日志记录以进行审核。 可本地或远程记录这些计数器。 你可以记录“计算机时间偏移”和“往返”延时计数器。 与任何性能计数器类似，你可以远程监视它们并使用 System Center Operations Manager 创建警报。 例如，“时间偏移”偏离预期准确性时，你可以使用警报提醒自己。 有关详细信息，请参阅 [System Center 管理包](https://social.technet.microsoft.com/wiki/contents/articles/15251.system-center-management-pack-authoring-guide.aspx)。
+Windows Server 2016 Windows 时间服务公开了性能计数器，这些计数器可用于收集日志记录以进行审核。 可本地或远程记录这些计数器。 你可以记录“计算机时间偏移”和“往返”延时计数器。
+与任何性能计数器类似，你可以远程监视它们并使用 System Center Operations Manager 创建警报。 例如，“时间偏移”偏离预期准确性时，你可以使用警报提醒自己。 有关详细信息，请参阅 [System Center 管理包](https://www.microsoft.com/download/details.aspx?id=44231)。
 
 ### <a name="windows-traceability-example"></a>Windows 可跟踪性示例
 根据 w32tm 日志文件，你需要验证两部分信息。 第一部分指示日志文件当前为调整时钟。 这表明时钟在时间有争议时由 Windows 时间服务进行调整。
@@ -337,7 +339,7 @@ Windows Server 2016 Windows 时间服务公开了性能计数器，这些计数�
  151802 20:18:32.9821765s - ClockDispln Discipline:*SKEW*TIME* - PhCRR:223 CR:156250 UI:100 phcT:65 KPhO:14307 151802 20:18:33.9898460s - ClockDispln Discipline:*SKEW*TIME* - PhCRR:1 CR:156250 UI:100 phcT:64 KPhO:41 151802 20:18:44.1090410s - ClockDispln Discipline:*SKEW*TIME* - PhCRR:1 CR:156250 UI:100 phcT:65 KPhO:38
 
 关键是你可以看到以 ClockDispln Discipline 为前缀的消息，它表明 w32time 正在与系统时钟交互。
- 
+
 接下来，你需要查找日志中争议时间点前的最新报告，从中了解当前用作参考时钟的源计算机。 这可能是 IP 地址、计算机名或 VMIC 提供程序，可表示它正在与 Hyper-V 的主机同步。 以下示例提供了 IPv4 地址 10.197.216.105。
 
  151802 20:18:54.6531515s - Response from peer 10.197.216.105,0x8 (ntp.m|0x8|0.0.0.0:123->10.197.216.105:123), ofs: +00.0012218s
@@ -345,13 +347,13 @@ Windows Server 2016 Windows 时间服务公开了性能计数器，这些计数�
 验证参考时间链中的第一个系统后，你需要研究参考时间源中的日志文件并重复相同的步骤。 持续进行此操作，直到获取物理时钟（例如 GPS）或已知时间源（例如 NIST）。 如果参考时钟是 GPS 硬件，则可能还需要制造商的日志。
 
 ## <a name="network-considerations"></a>网络注意事项
-NTP 协议算法取决于网络的对称性。 随着网络跃点的增加，不对称的可能性也会增加。 因此，很难预测你将在特定环境中看到的准确性类型。 
+NTP 协议算法取决于网络的对称性。 随着网络跃点的增加，不对称的可能性也会增加。 因此，很难预测你将在特定环境中看到的准确性类型。
 
 Windows Server 2016 中的性能监视器和新的 Windows 时间计数器可用于评估环境的准确性和创建基线。 此外，你还可以执行故障排除，以确定网络中任何计算机的当前偏移。
 
-对于网络的准确时间，有两个通用标准。 PTP（[精度时间协议 - IEEE 1588](https://www.nist.gov/el/intelligent-systems-division-73500/introduction-ieee-1588)）对网络基础结构有更严格的要求，但通常可以提供亚微秒的准确性。 NTP（[网络时间协议 - RFC 1305](https://tools.ietf.org/html/rfc1305)）可用于更广泛的网络和环境，以便于管理。 
+对于网络的准确时间，有两个通用标准。 PTP（[精度时间协议 - IEEE 1588](https://www.nist.gov/el/intelligent-systems-division-73500/introduction-ieee-1588)）对网络基础结构有更严格的要求，但通常可以提供亚微秒的准确性。 NTP（[网络时间协议 - RFC 1305](https://tools.ietf.org/html/rfc1305)）可用于更广泛的网络和环境，以便于管理。
 
-对于加入非域的计算机，Windows 默认支持简单 NTP (RFC2030)。 对于加入域的计算机，请使用名为 [MS-SNTP](https://msdn.microsoft.com/library/cc246877.aspx) 的安全 NTP，它可利用域协商机密，并且与 RFC1305 和 RFC5905 中所述的 Authenticated NTP 相比，更便于管理。  
+对于加入非域的计算机，Windows 默认支持简单 NTP (RFC2030)。 对于加入域的计算机，请使用名为 [MS-SNTP](https://msdn.microsoft.com/library/cc246877.aspx) 的安全 NTP，它可利用域协商机密，并且与 RFC1305 和 RFC5905 中所述的 Authenticated NTP 相比，更便于管理。
 
 加入域和非域的协议都需要 UDP 端口 123。 有关 NTP 最佳做法的详细信息，请参阅[网络时间协议当前最佳做法 IETF 草案](https://tools.ietf.org/html/draft-ietf-ntp-bcp-00)。
 
@@ -361,7 +363,7 @@ Windows Server 2016 中的性能监视器和新的 Windows 时间计数器可用
 这是你需要在环境中进行测试和基线处理的另一个原因。 如果“计算时间偏移”性能计数器在目标准确性方面不稳定，建议验证固件是否为最新。 作为另一项测试，你可以查看相同的硬件是否会出现相同的问题。
 
 ### <a name="troubleshooting-time-accuracy-and-ntp"></a>对时间准确性和 NTP 进行故障排除
-你可以根据上述“发现层次结构”部分了解导致时间不准确的原因。 查看时间偏移，在层次结构中找到时间与其 NTP 源相差最大的点。 了解层次结构后，建议尝试了解该特定时间源未接收到准确时间的原因。 
+你可以根据上述“发现层次结构”部分了解导致时间不准确的原因。 查看时间偏移，在层次结构中找到时间与其 NTP 源相差最大的点。 了解层次结构后，建议尝试了解该特定时间源未接收到准确时间的原因。
 
 对于时间有所偏差的系统，你可以使用以下工具收集更多信息，以帮助确定问题和寻找解决方案。 下方的 UpstreamClockSource 引用是使用“w32tm/config/status”发现的时钟。
 
@@ -378,7 +380,7 @@ Windows Server 2016 中的性能监视器和新的 Windows 时间计数器可用
 问题| 症状| 解决方法|
 ----- | ----- | ----- |
 | 本地 TSC 时钟不稳定。| 使用 Perfmon（物理计算机）- 同步时钟稳定时钟，但你仍会看到每 1-2 分钟出现多个 100us。 | 更新固件或验证不同的硬件不会显示相同的问题。|
-| 网络延迟| w32tm stripchart 显示的 RoundTripDelay 超过 10 ms。 延时的变化会导致干扰且干扰时间长达往返时间的 1/2，例如，延时仅发生在单一方向上。<br><br>如 PING 所示，UpstreamClockSource 是多跃点。 TTL 应接近 128。<br><br>使用 Tracert 查找每个跃点处的延迟。  | 查找时间上更接近的时钟源。 解决方案是将源时钟安装在同一段上，或手动指向地理位置更近的源时钟。 对于域方案，请添加具有 GTimeServ 角色的计算机。 | 
+| 网络延迟| w32tm stripchart 显示的 RoundTripDelay 超过 10 ms。 延时的变化会导致干扰且干扰时间长达往返时间的 1/2，例如，延时仅发生在单一方向上。<br><br>如 PING 所示，UpstreamClockSource 是多跃点。 TTL 应接近 128。<br><br>使用 Tracert 查找每个跃点处的延迟。  | 查找时间上更接近的时钟源。 解决方案是将源时钟安装在同一段上，或手动指向地理位置更近的源时钟。 对于域方案，请添加具有 GTimeServ 角色的计算机。 |
 无法可靠地访问 NTP 源| W32tm/stripchart 周期性返回“请求超时” |NTP 源无响应|
 NTP 源无响应| 检查用于 NTP 客户端源计数、NTP 服务器传入请求、NTP 服务器传出响应的 Perfmon 计数器，然后确定与基线相比的用法。| 使用服务器性能计数器确定关于基线的负载是否已更改。<br><br>是否存在网络拥塞问题？|
 未使用最准确时钟的域控制器| 拓扑中的更改或最近添加的主时间时钟。| w32tm /resync /rediscover|
@@ -392,13 +394,13 @@ NTP 源无响应| 检查用于 NTP 客户端源计数、NTP 服务器传入请�
 使用所有的 w32time 性能计数器，收集至少一周的数据。 这将确保你有足够的引用来说明网络中一段时间的各种情况，并确保你有足够的运行来保证时间准确性是稳定的。
 
 ### <a name="ntp-server-redundancy"></a>NTP 服务器冗余
-对于加入非域的计算机或 PDC 中使用的手动 NTP 服务器配置，在可用情况下采用多个服务器是一种很好的冗余措施。 假设所有源都准确且稳定，它还可以提供更高的准确性。 但如果拓扑设计不佳或时间源不稳定，则相应的准确性可能会较差，因此请务必谨慎。 w32time 可手动引用的受支持时间服务器的限制为 10。 
+对于加入非域的计算机或 PDC 中使用的手动 NTP 服务器配置，在可用情况下采用多个服务器是一种很好的冗余措施。 假设所有源都准确且稳定，它还可以提供更高的准确性。 但如果拓扑设计不佳或时间源不稳定，则相应的准确性可能会较差，因此请务必谨慎。 w32time 可手动引用的受支持时间服务器的限制为 10。
 
 ## <a name="leap-seconds"></a>闰秒
 因气候和地质事件，地球的自转周期会随时间而变化。 通常，周期每隔几年变化约 1 秒。 原子时间变化太大时，会插入大约 1 秒的校正值，称为闰秒。 这样做后差值不会超过 0.9 秒。 宣布此校正的时间比实际校正时间提早六个月。 在 Windows Server 2016 的早期版本中，Microsoft 时间服务尚未注意到闰秒概念，而是依靠外部时间服务来解决此问题。 随着 Windows Server 2016 的时间准确性提高，Microsoft 正在研究一种更合适的解决方案来解决闰秒问题。
 
 ## <a name="secure-time-seeding"></a>安全时间种子设定
-Server 2016 中的 W32time 包含安全时间种子设定功能。 此功能确定传出 SSL 连接中的大致当前时间。 此时间值用于监视本地系统时钟和纠正任何重大错误。 有关该功能的详细信息，请参阅[这篇博客文章](https://blogs.msdn.microsoft.com/w32time/2016/09/28/secure-time-seeding-improving-time-keeping-in-windows/)。 在使用可靠时间源和监视状态良好的计算机（包括对时间偏移的监视）进行部署的过程中，你可以选择不使用“安全时间种子设定”功能，而是依靠现有的基础结构。 
+Server 2016 中的 W32time 包含安全时间种子设定功能。 此功能确定传出 SSL 连接中的大致当前时间。 此时间值用于监视本地系统时钟和纠正任何重大错误。 有关该功能的详细信息，请参阅[这篇博客文章](https://blogs.msdn.microsoft.com/w32time/2016/09/28/secure-time-seeding-improving-time-keeping-in-windows/)。 在使用可靠时间源和监视状态良好的计算机（包括对时间偏移的监视）进行部署的过程中，你可以选择不使用“安全时间种子设定”功能，而是依靠现有的基础结构。
 
 可以按以下步骤禁用此功能：
 

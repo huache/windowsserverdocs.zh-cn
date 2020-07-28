@@ -2,18 +2,17 @@
 title: 解决 Windows Server Essentials 中的文件历史记录问题
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 51043013320a3fc6faeb9342ac93c010c859bae5
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 031f407b392e02e9867640975520475acd5f8cbb
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470172"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180323"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>解决 Windows Server Essentials 中的文件历史记录问题
 
@@ -74,7 +73,7 @@ ms.locfileid: "85470172"
  在某些情况下，网络管理员可以选择从服务器中删除用户或计算机，但保留文件历史记录备份以供将来使用。 当不再需要文件历史记录时，请从服务器上的共享文件夹中删除用户或计算机的文件历史记录备份文件夹。 若要执行此操作，请参阅 [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [管理客户端备份](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)
 

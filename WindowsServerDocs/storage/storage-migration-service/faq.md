@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: d7f1b5387d82d487e50b217b28367e82617a66ea
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: efe16dd9bdc971b97bc401cf10e14439c46069de
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966249"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181733"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>存储迁移服务常见问题（FAQ）
 
@@ -62,7 +62,7 @@ ms.locfileid: "86966249"
     - CA 超时
     - 并发用户限制
     - 持续可用
-    - 说明
+    - 描述
     - 对数据进行加密
     - 标识远程处理
     - 基础结构
@@ -182,7 +182,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移
 获得支持：
 
  - 在[Windows Server 技术社区](https://techcommunity.microsoft.com/t5/Windows-Server/ct-p/Windows-Server)上发布问题
- - [Windows Server 2019 Technet 论坛](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc)上的文章
+ - [Windows Server 2019 论坛](https://docs.microsoft.com/answers/topics/windows-server-2019.html)上的文章
  - 通过[Microsoft 支持部门](https://support.microsoft.com)打开支持案例
 
 ## <a name="additional-references"></a>其他参考

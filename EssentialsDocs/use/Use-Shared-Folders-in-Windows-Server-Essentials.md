@@ -2,18 +2,17 @@
 title: 使用 Windows Server Essentials 中的共享文件夹
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: cb7f3d7d-4225-409a-9f6b-34a106e8dd24
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 24b2990631e95d1c0da0eafacb989090969faebb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c7f042a47dd6f350b79ec17f69ffb87ab7b99259
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470072"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179453"
 ---
 # <a name="use-shared-folders-in-windows-server-essentials"></a>使用 Windows Server Essentials 中的共享文件夹
 
@@ -90,7 +89,7 @@ ms.locfileid: "85470072"
 ##  <a name="using-my-server-app-for-windows-8"></a><a name="BKMK_App"></a>使用适用于 Windows 8 的 My Server 应用
  通过使用适用于 Windows 8 的 My Server 应用，可借助 Windows 8 访问共享文件夹。 你可以从 [Windows 8 应用商店](https://windows.microsoft.com/windows-8/apps)下载此应用。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [管理服务器文件夹](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md)
 

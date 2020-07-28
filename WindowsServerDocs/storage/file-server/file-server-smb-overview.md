@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e9aecc439235d9396d764420711109552d89f32
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 055538bc52e11b7fb24f15db51af52e5cf8376d1
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965159"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182083"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>使用 Windows Server 中的 SMB 3 协议的文件共享概述
 
@@ -47,7 +47,7 @@ ms.locfileid: "86965159"
 
 | 特性/功能  | 新功能或更新功能  | 摘要  |
 | --------- | --------- | --------- |
-| 禁止对文件共享的来宾访问权限 | “新建” | SMB 客户端不再允许执行以下操作：对远程服务器的来宾帐户访问权限；提供无效凭据后回退到来宾帐户。 有关详细信息，请参阅 [Windows 中默认禁用 SMB2 中的来宾访问权限](https://support.microsoft.com/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser)。 | 
+| 禁止对文件共享的来宾访问权限 | “新建” | SMB 客户端不再允许执行以下操作：对远程服务器的来宾帐户访问权限；提供无效凭据后回退到来宾帐户。 有关详细信息，请参阅 [Windows 中默认禁用 SMB2 中的来宾访问权限](https://support.microsoft.com/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser)。 |
 | SMB 全局映射 | “新建” | 将远程 SMB 共享映射到本地主机上的所有用户（包括容器）可访问的驱动器号。 这是使数据卷上的容器 I/O 能够遍历远程装入点的必要操作。 请注意，对容器使用 SMB 全局映射时，容器主机上的所有用户都可以访问远程共享。 在容器主机上运行的任何应用程序也有权访问映射的远程共享。 有关详细信息，请参阅[群集共享卷 (CSV)、存储空间直通、SMB 全局映射的容器存储支持](https://techcommunity.microsoft.com/t5/failover-clustering/container-storage-support-with-cluster-shared-volumes-csv/ba-p/372140)。 |
 | SMB 方言控制 | “新建” | 现在可以设置注册表值以控制所使用的最低 SMB 版本（方言）和最高 SMB 版本。 有关详细信息，请参阅[控制 SMB 方言](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-smb-dialects/ba-p/860024)。 |
 
@@ -74,7 +74,7 @@ ms.locfileid: "86965159"
 | SMB 直通     |   已更新      | 托管包含小规模 I/O 的工作负载（例如，虚拟机中的联机事务处理 (OLTP) 数据库）时，通过提高效率来优化小规模 I/O 工作负载的性能。 使用较高速度的网络接口（例如 40 Gbps 以太网和 56 Gbps InfiniBand）时，这些改进是很明显的。  |
 | SMB 带宽限制 | “新建” | 现在可以使用 [Set-SmbBandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit) 来设置三种类别的宽带限制：VirtualMachine（基于 SMB 的 Hyper-V 流量）、LiveMigration（基于 SMB 的 Hyper-V 实时迁移流量）或 Default（所有其他类型的 SMB 流量）。
 
-有关 Windows Server 2012 R2 中新增和更改的 SMB 功能的详细信息，请参阅 [Windows Server 中 SMB 的新增功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)。
+有关 Windows Server 2012 R2 中新增和更改的 SMB 功能的详细信息，请参阅 [Windows Server 中 SMB 的新增功能](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)。
 
 ## <a name="features-added-in-smb-30-with-windows-server-2012-and-windows-8"></a>Windows Server 2012 和 Windows 8 的 SMB 3.0 中添加的功能
 
@@ -122,7 +122,7 @@ SMB 直接具有以下要求：
 * [Windows Server 中的存储](../storage.yml)
 * [应用程序数据横向扩展文件服务器](../../failover-clustering/sofs-overview.md)
 * [通过 SMB 直通优化文件服务器的性能](smb-direct.md)
-* [部署基于 SMB 的 Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-* [部署 SMB 多通道](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
-* [针对服务器应用程序部署快速且高效的文件服务器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB：故障排除指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)
+* [部署基于 SMB 的 Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+* [部署 SMB 多通道](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
+* [针对服务器应用程序部署快速且高效的文件服务器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+* [SMB：故障排除指南](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)

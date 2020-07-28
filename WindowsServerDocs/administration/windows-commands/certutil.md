@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 159a3d2eb54d6a3040c4a22864a1c90e16bf2247
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 12ef5e7fa5ff305b1670c2f88645f57500c4fb5b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955329"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178583"
 ---
 # <a name="certutil"></a>certutil
 
@@ -1103,7 +1103,7 @@ certutil [options] -setcasites delete
 - `-f`选项可用于重写指定**sitename**的验证错误或删除所有 CA sitenames 引用。
 
 > [!NOTE]
-> 有关为 Active Directory 域服务（AD DS）站点感知配置 Ca 的详细信息，请参阅[AD DS 网站感知 AD CS 和 PKI 客户端](https://social.technet.microsoft.com/wiki/contents/articles/14106.ad-ds-site-awareness-for-ad-cs-and-pki-clients.aspx)。
+> 有关为 Active Directory 域服务（AD DS）站点感知配置 Ca 的详细信息，请参阅[AD DS 网站感知 AD CS 和 PKI 客户端](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
 
 ### <a name="-enrollmentserverurl"></a>-enrollmentserverURL
 
@@ -1964,7 +1964,7 @@ certutil -? -v
 
 本部分根据命令定义你能够指定的所有选项。 每个参数都包含有关有效选项的信息。
 
-| 选项 | 说明 |
+| 选项 | 描述 |
 | ------- | ----------- |
 | -nullsign | 使用数据哈希作为签名。 |
 | -f | 强制覆盖。 |
@@ -2003,12 +2003,8 @@ certutil -? -v
 
 有关如何使用此命令的更多示例，请参阅
 
-- [用于从命令行管理 Active Directory 证书服务（AD CS）的 Certutil 示例](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
+- [Active Directory 证书服务 (AD CS)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 
 - [用于管理证书的 Certutil 任务](/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
-
-- [使用 certutil.exe 命令行工具演练的二进制请求导出](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
-
-- [根 CA 证书续订](https://social.technet.microsoft.com/wiki/contents/articles/2016.root-ca-certificate-renewal.aspx)
 
 - [certutil 命令](certutil.md)

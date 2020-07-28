@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a6ee550a0652f5b357a966e4074afdf499fcea34
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d7c76413fbc64ce200ca4c442a30e6f804927f68
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953909"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182053"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -534,14 +534,26 @@ DFSR 调试日志：
 
 ## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>使用不同域中的凭据时清点或传输失败
 
-当尝试使用存储迁移服务运行清单或传输，并在使用从目标服务器以外的其他域中迁移凭据的情况下，将 Windows Server 定向到该服务时，会收到以下错误
+当尝试使用存储迁移服务运行清单或传输，并在使用来自目标服务器以外的其他域的迁移凭据的情况下，在 Windows Server 上运行时，会收到以下一个或多个错误
+
+    Exception from HRESULT:0x80131505
 
     The server was unable to process the request due to an internal error
 
-    04/28/2020-11:31:01.169 [Erro] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+    04/28/2020-11:31:01.169 [Error] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+
+再次检查日志显示，迁移帐户和迁移的服务器在不同的域中进行迁移，或者两者位于不同的域中：
+
+    ```
+    06/25/2020-10:11:16.543 [Info] Creating new job=NedJob user=**CONTOSO**\ned    
+    [d:\os\src\base\dms\service\StorageMigrationService.IInventory.cs::CreateJob::133]
+    ```
+    
+    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66]
+06/25/2020-10：20： 45.368 [Info] 计算机 "fileserver75.corp.contoso.com"： OS 版本 
 
 此问题是由存储迁移服务中的代码缺陷导致的。 若要解决此问题，请使用源计算机和目标计算机所属的域中的迁移凭据。 例如，如果源计算机和目标计算机属于 "contoso.com" 林中的 "corp.contoso.com" 域，请使用 "corp\myaccount" 执行迁移，而不是 "contoso\myaccount" 凭据。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [存储迁移服务概述](overview.md)

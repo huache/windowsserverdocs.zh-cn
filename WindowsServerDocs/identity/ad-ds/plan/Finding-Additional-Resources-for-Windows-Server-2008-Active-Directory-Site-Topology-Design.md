@@ -7,12 +7,12 @@ manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 5b45970b3402ecfd7976af9b30f22cfd8782cef9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5682eb98854441b35719fc0c2048f07db76cbead
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953469"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181833"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>为 Windows Server 2008 Active Directory 站点拓扑设计查找其他资源
 
@@ -36,7 +36,7 @@ ms.locfileid: "86953469"
 
 - 有关部署目录林根级域的详细信息，请参阅[部署 Windows Server 2008 林根级域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。
 
-- 有关保护域控制器的详细信息，请参阅[Active Directory：设计注意事项和最佳实践](https://social.technet.microsoft.com/wiki/contents/articles/52587.active-directory-design-considerations-and-best-practices.aspx)。
+- 有关保护域控制器的详细信息，请参阅[AD DS 设计和规划](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/ad-ds-design-and-planning)。
 
 - 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10))。
 

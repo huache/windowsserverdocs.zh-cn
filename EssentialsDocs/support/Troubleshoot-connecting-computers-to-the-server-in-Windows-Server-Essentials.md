@@ -2,18 +2,17 @@
 title: 将计算机连接到 Windows Server Essentials 中的服务器疑难解答
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7b679ae9d3a3d5f4526edced78d720ca83d3e008
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c05888f52f3fe60d0dde22a70ceb5a3eee94e0ef
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470041"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180233"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>将计算机连接到 Windows Server Essentials 中的服务器疑难解答
 
@@ -22,7 +21,7 @@ ms.locfileid: "85470041"
  本主题包含在将计算机连接到运行 Windows Server Essentials 或 Windows Server Essentials 的服务器时可能遇到的问题的疑难解答指南。
 
 > [!NOTE]
->  有关 Windows Server Essentials 和 Windows Server Essentials 社区中的最新疑难解答信息，建议访问[Windows Server Essentials 论坛](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserveressentials)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
+>  有关 Windows Server Essentials 和 Windows Server Essentials 社区中的最新疑难解答信息，建议访问[Windows Server Essentials 论坛](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
 
  本主题提供以下问题的解决方案：
 
@@ -281,6 +280,6 @@ ms.locfileid: "85470041"
 
 ## <a name="additional-references"></a>其他参考
 
--   [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)
+- [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)
 
--   [Windows Server 2012 Essentials 连接计算机疑难解答 (TechNet Wiki)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)
+- [Windows 2012 Server Essentials 连接计算机故障排除](https://docs.microsoft.com/windows-server-essentials/support/troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials)

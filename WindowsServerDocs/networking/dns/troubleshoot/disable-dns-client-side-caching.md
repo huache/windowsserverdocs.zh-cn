@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 09af41a544cacb0fd0977847b7bc2e6b0d8a59f7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 74e7f3936418bd2f04234d07b2f600197e94b357
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860070"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182343"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>在 DNS 客户端上禁用 DNS 客户端缓存
 
@@ -46,12 +46,12 @@ DNS 客户端服务通过将之前解析的名称存储在内存中来优化 DNS
 ipconfig /displaydns 
 ```
 
-此命令显示 DNS 解析程序缓存的内容，包括从 Hosts 文件预加载的 DNS 资源记录，以及由系统解析的任何最近查询的名称。 经过一段时间后，解析程序将从缓存中丢弃该记录。 时间段由与 DNS 资源记录关联的生存**时间（TTL）** 值指定。 还可以手动刷新缓存。 刷新缓存后，计算机必须为计算机以前解析的任何 DNS 资源记录再次查询 DNS 服务器。 若要删除 DNS 解析程序缓存中的条目，请在命令提示符下运行 `ipconfig /flushdns`。
+此命令显示 DNS 解析程序缓存的内容，包括从 Hosts 文件预加载的 DNS 资源记录，以及由系统解析的任何最近查询的名称。 经过一段时间后，解析程序将从缓存中丢弃该记录。 时间段由与 DNS 资源记录关联的生存**时间（TTL）** 值指定。 还可以手动刷新缓存。 刷新缓存后，计算机必须为计算机以前解析的任何 DNS 资源记录再次查询 DNS 服务器。 若要删除 DNS 解析程序缓存中的条目，请 `ipconfig /flushdns` 在命令提示符下运行。
 
 ## <a name="using-the-registry-to-control-the-caching-time"></a>使用注册表控制缓存时间
 
 > [!IMPORTANT]  
-> 请认真遵循本部分所述的步骤。 如果不正确地修改注册表，可能会出现严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
+> 请认真遵循本部分所述的步骤。 如果注册表修改不正确，可能会发生严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
 
 正或负响应缓存的时间长度取决于以下注册表项中的条目值：
 
@@ -66,7 +66,7 @@ ipconfig /displaydns
 >[!Note]
 >- 肯定响应的默认 TTL 为86400秒（1天）。
 >- 负响应的 TTL 是在 MaxNegativeCacheTtl 注册表设置中指定的秒数。
->- 负响应的默认 TTL 为900秒（15分钟）。
+>- 负响应的默认 TTL 为5秒;在 Windows 10 之前，1703版的默认值为900秒（15分钟）。
 如果不想缓存否定响应，请将 MaxNegativeCacheTtl 注册表设置设置为0。
 
 若要设置客户端计算机上的缓存时间：
@@ -83,16 +83,16 @@ ipconfig /displaydns
 
      数据类型： REG_DWORD
 
-     值数据：默认值为86400秒。 
-     
-     如果将客户端 DNS 缓存中的最大 TTL 值降低到1秒，这会使客户端 DNS 缓存已禁用。    
+     值数据：默认值为86400秒。
+
+     如果将客户端 DNS 缓存中的最大 TTL 值降低到1秒，这会使客户端 DNS 缓存已禁用。
 
    - 值名称： MaxNegativeCacheTtl
 
      数据类型： REG_DWORD
 
-     值数据：默认值为900秒。 
-     
+     值数据：默认值为5秒。
+
      如果不想缓存否定响应，请将值设置为0。
 
 4. 键入要使用的值，然后单击 "确定"。

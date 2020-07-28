@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的设备
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6ae5ac9abd6df3f84c4dbd062b9b954a3e2be89d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5b183ef2900d1ced267e991f43827438b57fb728
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470762"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181003"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的设备
 
@@ -70,7 +69,7 @@ ms.locfileid: "85470762"
 
 ### <a name="computer-tasks-in-the-dashboard"></a>仪表板中的计算机任务
 
-|任务名称|说明|
+|任务名称|描述|
 |---------------|-----------------|
 |查看计算机属性|显示选定计算机的常规信息，并允许你查看计算机备份的详细信息。|
 |设置该计算机备份|运行“设置备份”向导。|

@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: fac7e780fc584f0ce4dde8bb87ce37035840a40a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b70a8fefc05723b78dbf5e652bf35f7b8b5cff4d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474874"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182313"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS （Schannel SSP）概述
 
@@ -104,7 +104,7 @@ Schannel 是实现 SSL、TLS 和 DTLS Internet 标准身份验证协议的安全
 
 Schannel 提供程序支持三种客户端身份验证信任模式。 信任模式控制如何执行客户端证书链的验证，它是由 HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel. 下的 REG_DWORD "ClientAuthTrustMode" 控制的系统范围设置。
 
-|“值”|信任模式|说明|
+|值|信任模式|描述|
 |-----|-------|--------|
 |0|计算机信任（默认值）|需要由受信任颁发者列表中的证书颁发客户端证书。|
 |1|独占根信任|需要客户端证书链接到调用方指定的受信任颁发者存储中包含的根证书。 也必须由受信任颁发者列表中的颁发者颁发证书|
@@ -148,6 +148,4 @@ DTLS 版本 1.0 协议已添加到 Schannel 安全支持提供程序。 DTLS 协
 在适用于 Windows Server 2012 和 Windows 8 的 Schannel SSP 中，没有不推荐使用的功能或功能。
 
 ## <a name="additional-references"></a>其他参考
--   [私有云安全模型 - 包装程序功能](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
-
-
+-   [私有云安全模型 - 包装程序功能](https://docs.microsoft.com/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)

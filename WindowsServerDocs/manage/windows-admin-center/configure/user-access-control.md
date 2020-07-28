@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0de38560301d4d793214846036850a05a5d5a326
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323589"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182203"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>配置用户访问控制和权限
 
@@ -68,7 +68,7 @@ ms.locfileid: "79323589"
 
 若要为特定 Azure AD 用户或组网关用户或网关管理员提供 Windows Admin Center 服务的访问权限，必须执行以下操作：
 
-1.  使用“访问设置”中提供的超链接转到 Azure 门户中的 Windows Admin Center Azure AD 应用程序。 请注意，该超链接仅在启用 Azure Active Directory 身份验证的情况下可用。 
+1.  使用“访问设置”中提供的超链接转到 Azure 门户中的 Windows Admin Center Azure AD 应用程序。 请注意，该超链接仅在启用 Azure Active Directory 身份验证的情况下可用。
     -   也可在 Azure 门户中找到应用程序，方法是：转到“Azure Active Directory”   > “企业应用程序”   >   “所有应用程序”，搜索 **WindowsAdminCenter**（Azure AD 应用将以 WindowsAdminCenter-<gateway name> 命名）。 如果没有获得任何搜索结果，请确保将“显示”设置为“所有应用程序”，将“应用程序状态”设置为“任意”并单击“应用”，然后尝试搜索。     找到应用程序以后，请转到“用户和组” 
 2.  在“属性”选项卡中，将“需要用户分配”设置为“是”。 
     这样做以后，将只有“用户和组”选项卡中列出的成员能够访问 Windows Admin Center 网关。 
@@ -86,22 +86,22 @@ ms.locfileid: "79323589"
 
 若要为特定 Azure AD 用户或组网关用户或网关管理员提供 Windows Admin Center 服务的访问权限，必须执行以下操作：
 
-1.  转到 Azure 门户中的 SME Azure AD 应用程序。 
+1.  转到 Azure 门户中的 SME Azure AD 应用程序。
     -   在 Windows Admin Center 的“访问设置”中单击“更改访问控制”并选择“Azure Active Directory”时，可以使用 UI 中提供的超链接来访问 Azure 门户中的 Azure AD 应用程序。   在单击“保存”并选择 Azure AD 作为访问控制标识提供程序之后，此超链接也在“访问设置”中提供。
     -   也可在 Azure 门户中找到应用程序，方法是：转到“Azure Active Directory”   > “企业应用程序”   >   “所有应用程序”，搜索 **SME**（Azure AD 应用将以 SME-<gateway> 命名）。 如果没有获得任何搜索结果，请确保将“显示”设置为“所有应用程序”，将“应用程序状态”设置为“任意”并单击“应用”，然后尝试搜索。     找到应用程序以后，请转到“用户和组” 
 2.  在“属性”选项卡中，将“需要用户分配”设置为“是”。 
     这样做以后，将只有“用户和组”选项卡中列出的成员能够访问 Windows Admin Center 网关。 
 3.  在“用户和组”选项卡中，选择“添加用户”  。 必须为每个添加的用户/组分配网关用户或网关管理员角色。
 
-在“更改访问控制”窗格中保存 Azure AD 访问控制以后，网关服务会重启，你必须刷新浏览器。  可以随时在 Azure 门户中更新 Windows Admin Center Azure AD 应用程序的用户访问权限。 
+在“更改访问控制”窗格中保存 Azure AD 访问控制以后，网关服务会重启，你必须刷新浏览器。  可以随时在 Azure 门户中更新 Windows Admin Center Azure AD 应用程序的用户访问权限。
 
-当用户尝试访问 Windows Admin Center 网关 URL 时，系统会提示其使用 Azure Active Directory 标识登录。 请记住，用户还必须是网关服务器上“本地用户”的成员才能访问 Windows Admin Center。 
+当用户尝试访问 Windows Admin Center 网关 URL 时，系统会提示其使用 Azure Active Directory 标识登录。 请记住，用户还必须是网关服务器上“本地用户”的成员才能访问 Windows Admin Center。
 
 使用 Windows Admin Center 常规设置的“Azure”选项卡，用户和管理员可以查看当前登录的帐户以及注销该 Azure AD 帐户。 
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>条件访问和多重身份验证
 
-使用 Azure AD 作为额外的安全层来控制 Windows Admin Center 网关访问权限的好处之一是：你可以利用 Azure AD 的强大安全功能，如条件访问和多重身份验证。 
+使用 Azure AD 作为额外的安全层来控制 Windows Admin Center 网关访问权限的好处之一是：你可以利用 Azure AD 的强大安全功能，如条件访问和多重身份验证。
 
 [详细了解如何使用 Azure Active Directory 配置条件访问。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
@@ -109,7 +109,7 @@ ms.locfileid: "79323589"
 
 **在部署为 Windows Server 上的服务的情况下进行的单一登录**
 
-在 Windows 10 上安装 Windows Admin Center 后，即可使用单一登录。 但是，若要在 Windows Server 上使用 Windows Admin Center，需在环境中设置某种形式的 Kerberos 委托，然后才能使用单一登录。 该委托会将网关计算机配置为值得信任，可以委托到目标节点。 
+在 Windows 10 上安装 Windows Admin Center 后，即可使用单一登录。 但是，若要在 Windows Server 上使用 Windows Admin Center，需在环境中设置某种形式的 Kerberos 委托，然后才能使用单一登录。 该委托会将网关计算机配置为值得信任，可以委托到目标节点。
 
 若要在环境中配置[基于资源的受约束委托](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)，请使用以下 PowerShell 示例。 此示例演示如何将 Windows Server [node01.contoso.com] 配置为接受来自 contoso.com 域中 Windows Admin Center 网关 [wac.contoso.com] 的委托。
 
@@ -159,7 +159,7 @@ Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToA
 3.  在底部的“详细信息”窗格中，单击“添加用户”，然后输入应该通过 Windows Admin Center 对服务器进行只读访问的用户或安全组的名称。   用户和组可以来自本地计算机，也可以来自 Active Directory 域。
 4.  对“Windows Admin Center Hyper-V 管理员”组和“Windows Admin Center 管理员”组重复步骤 2-3。  
 
-也可在整个域中一致地填充这些组，方法是：为组策略对象配置[受限组策略设置](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29)。
+也可在整个域中一致地填充这些组，方法是：为组策略对象配置[受限组策略设置](/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29)。
 
 ### <a name="apply-role-based-access-control-to-multiple-machines"></a>对多台计算机应用基于角色的访问控制
 

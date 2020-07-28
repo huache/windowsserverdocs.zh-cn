@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be6b7542ca77c80a638df6404aefe77d8d7d19c
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 57072fe5a92bcc59a1ccd46b1c0db7a6828a165d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445701"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181953"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS 客户端入门
 
@@ -40,7 +40,7 @@ ms.locfileid: "86445701"
 
 我们要在 AppCenter 上测试预览频道中的新功能。 要看看么？ 转到[适用于 Mac 的 Microsoft 远程桌面](https://aka.ms/rdmacbeta)，然后选择“下载”。 无需创建帐户或登录 AppCenter 即可下载 beta 版客户端。
 
-如果已有该客户端，则可以检查更新，以确保具有最新版本。 在 beta 版客户端中，选择顶部的“Microsoft 远程桌面 Beta”，然后选择“检查是否有更新”。 
+如果已有该客户端，则可以检查更新，以确保具有最新版本。 在 beta 版客户端中，选择顶部的“Microsoft 远程桌面 Beta”，然后选择“检查是否有更新”。
 
 ## <a name="add-a-workspace"></a>添加工作区
 
@@ -102,7 +102,7 @@ ms.locfileid: "86445701"
 
 若要在首选项中设置新网关：
 
-1. 在 Connection Center 中，依次选择“首选项”>“网关”。 
+1. 在 Connection Center 中，依次选择“首选项”>“网关”。
 2. 选择表底部的“+”按钮，然后输入以下信息：
    - **服务器名称** – 要用作网关的计算机的名称。 可以是 Windows 计算机名、Internet 域名或 IP 地址。 此外可以向服务器名称添加端口信息（例如：RDGateway:443 或 10.0.0.1:443）。
    - **用户名** - 要用于连接到的远程桌面网关的用户名和密码。 还可以选择“使用连接凭据”以使用与用于远程桌面连接的凭据相同的用户名和密码。
@@ -164,4 +164,4 @@ Windows Server 2012 R2 引入了对新身份验证方法（即远程桌面网关
 若要了解有关此功能的更多信息，请查看 [https://aka.ms/paa-sample](https://aka.ms/paa-sample)。
 
 > [!TIP]
-> 欢迎提出问题和意见。 但是，请不要使用本文末尾的评论功能来请求获取故障排除帮助。 而是转到[远程桌面客户端论坛](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc)并启动一个新线程。 有功能建议？ 请在[客户端用户心声论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。
+> 欢迎提出问题和意见。 但是，请不要使用本文末尾的评论功能来请求获取故障排除帮助。 而是转到[远程桌面客户端论坛](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)并启动一个新线程。 有功能建议？ 请在[客户端用户心声论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。

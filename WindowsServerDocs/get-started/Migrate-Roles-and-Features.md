@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 538ea2d6e0f038a98b64a197bd49ed5719fe15ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 99a684cc90d47e1e80dc84ef9c3705a2ed79728b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959569"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182023"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>在 Windows Server 中迁移角色和功能
 
@@ -27,7 +27,7 @@ ms.locfileid: "86959569"
 
 ## <a name="before-you-begin"></a>开始之前
 
-在开始迁移角色和功能之前，验证源和目标服务器是否都在运行适用于其操作系统的最新 Service Pack。 
+在开始迁移角色和功能之前，验证源和目标服务器是否都在运行适用于其操作系统的最新 Service Pack。
 
 > [!NOTE]
 > 每当迁移到或升级到任何版本的 Windows Server 时，都应查看并了解[支持生命周期策略](https://support.microsoft.com/lifecycle)以及该版本的时间范围，并且作出相应的计划。 你可以[搜索生命周期信息](https://support.microsoft.com/lifecycle)，以便了解你感兴趣的特定 Windows server 版本。
@@ -63,7 +63,7 @@ ms.locfileid: "86959569"
 - [将群集角色迁移到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn530779(v=ws.11))
 - [将 DHCP 服务器迁移到 Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn495425(v=ws.11))
 
-现已提供 Windows Server 2012 R2 和 Windows Server 2012 迁移指南的电子书。 有关详细信息，以及如何下载本电子书，请参阅 [Microsoft 技术电子图书库](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#MigrateRoles)。
+现已提供 Windows Server 2012 R2 和 Windows Server 2012 迁移指南的电子书。 有关详细信息，以及如何下载本电子书，请参阅 [Microsoft 技术电子图书库](https://download.microsoft.com/download/8/D/3/8D33661A-7E21-4FEE-9AAA-C17C3004B5AA/Windows-Migration-and-Upgrade-Guide.pdf)。
 
 ## <a name="windows-server-2012"></a>Windows Server 2012
 
@@ -80,7 +80,7 @@ ms.locfileid: "86959569"
 - [将 Windows Server Update Services 迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852339(v=ws.11))
 - [将 Active Directory 域控制器升级到 Windows Server 2012](../identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012.md)
 - [将群集服务和应用程序迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486790(v=ws.11))
- 
+
 
 有关其他迁移资源，请访问[将角色和功能迁移到 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134039(v=ws.11))。
 
@@ -104,5 +104,5 @@ ms.locfileid: "86959569"
 - [RRAS 迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822825(v=ws.10))
 - [Windows Server 迁移常见任务和信息](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff400258(v=ws.10))
 - [Windows Server Update Services 3.0 SP2 迁移指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822826(v=ws.10))
- 
+
 有关其他迁移资源，请访问[将角色和功能迁移到 Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd365353(v=ws.10))。

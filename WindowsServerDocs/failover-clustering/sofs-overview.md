@@ -1,5 +1,5 @@
 ---
-title: 应用程序数据用横向扩展文件服务器概述
+title: 应用程序数据的横向扩展文件服务器概述
 description: Windows Server 201 R2 和 Windows Server 2012 横向扩展文件服务器功能的概述。
 ms.prod: windows-server
 ms.topic: article
@@ -9,14 +9,14 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f95f25d365b1b30a9e4e2d311128b8c7cb13b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8bcfb53b04a03a259c712dd4b3003f8c4a66d8ff
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827410"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181713"
 ---
-# <a name="scale-out-file-server-for-application-data-overview"></a>应用程序数据用横向扩展文件服务器概述
+# <a name="scale-out-file-server-for-application-data-overview"></a>应用程序数据的横向扩展文件服务器概述
 
 >适用于： Windows Server 2012 R2、Windows Server 2012
 
@@ -25,7 +25,7 @@ ms.locfileid: "80827410"
 可以通过使用以下方法之一来部署和配置群集文件服务器：
 
 - **应用程序数据的横向扩展文件服务器**此群集文件服务器功能是在 Windows Server 2012 中引入的，它允许您将服务器应用程序数据（例如 Hyper-v 虚拟机文件）存储在文件共享上，并获得与存储区域网络类似的可靠性、可用性、可管理性和高性能级别。 所有文件共享均为在线状态，且同时位于全部节点上。 与此类群集文件服务器相关的文件共享被称为横向扩展文件共享。 这有时也称为活动/活动。 部署 Hyper-V over Server Message Block (SMB) 或 Microsoft SQL Server over SMB 时，建议采用该类文件服务器。
-- **一般用途文件服务器** 该类服务器是群集文件服务器的延续，自从引入故障转移群集之后，Windows Server 已支持该服务器。 该类服务器属于群集文件服务器，因此与群集文件服务器相关的所有共享均为在线状态，且在同一时间位于某一个节点上。 这有时也称为活动/被动或双活动。 与此类型群集文件服务器相关的文件共享被称为群集文件共享。 部署信息工作者方案时，建议采用该类文件服务器。
+- **一般用途的文件服务器**这是自故障转移群集引入以来 Windows Server 支持的群集文件服务器的延续。 该类服务器属于群集文件服务器，因此与群集文件服务器相关的所有共享均为在线状态，且在同一时间位于某一个节点上。 这有时也称为活动/被动或双活动。 与此类型群集文件服务器相关的文件共享被称为群集文件共享。 部署信息工作者方案时，建议采用该类文件服务器。
 
 ## <a name="scenario-description"></a>方案描述
 
@@ -44,17 +44,17 @@ ms.locfileid: "80827410"
 
 以下主题可用于帮助你部署横向扩展文件服务器：
 
-- [规划横向扩展文件服务器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134258(v%3dws.11)>)
+- [规划横向扩展文件服务器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134258(v%3dws.11)>)
 
-  - [步骤1：在横向扩展文件服务器中规划存储](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134181%28v%3dws.11%29>)
-  - [步骤2：在横向扩展文件服务器中规划网络](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134253%28v%3dws.11%29>)
+  - [步骤 1：横向扩展文件服务器中的存储规划](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134181%28v%3dws.11%29>)
+  - [Step 2: Plan for Networking in Scale-Out File Server](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134253%28v%3dws.11%29>)
 
-- [部署横向扩展文件服务器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831359%28v%3dws.11%29>)
+- [Deploy Scale-Out File Server](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831359%28v%3dws.11%29>)
 
-  - [步骤1：安装横向扩展文件服务器的先决条件](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831478%28v%3dws.11%29>)
-  - [步骤2：配置横向扩展文件服务器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831718%28v%3dws.11%29>)
-  - [步骤3：配置 Hyper-v 以使用横向扩展文件服务器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831463%28v%3dws.11%29>)
-  - [步骤4：配置 Microsoft SQL Server 以使用横向扩展文件服务器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831815%28v%3dws.11%29>)
+  - [步骤 1：安装横向扩展文件服务器的先决条件](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831478%28v%3dws.11%29>)
+  - [步骤 2：配置横向扩展文件服务器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831718%28v%3dws.11%29>)
+  - [步骤 3：配置 Hyper-V 以使用横向扩展文件服务器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831463%28v%3dws.11%29>)
+  - [步骤 4：配置 Microsoft SQL Server 以使用横向扩展文件服务器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831815%28v%3dws.11%29>)
 
 ## <a name="when-to-use-scale-out-file-server"></a>何时使用横向扩展文件服务器
 
@@ -65,8 +65,8 @@ ms.locfileid: "80827410"
 <table>
 <thead>
 <tr class="header">
-<th>技术领域</th>
-<th>功能</th>
+<th>技术范围</th>
+<th>Feature</th>
 <th>一般用途文件服务器群集</th>
 <th>横向扩展文件服务器</th>
 </tr>
@@ -75,26 +75,26 @@ ms.locfileid: "80827410"
 <tr class="odd">
 <td>SMB</td>
 <td>SMB 连续可用性</td>
-<td>是</td>
-<td>是</td>
+<td>“是”</td>
+<td>“是”</td>
 </tr>
 <tr class="even">
 <td>SMB</td>
 <td>SMB 多通道</td>
-<td>是</td>
-<td>是</td>
+<td>“是”</td>
+<td>“是”</td>
 </tr>
 <tr class="odd">
 <td>SMB</td>
 <td>SMB 直通</td>
-<td>是</td>
-<td>是</td>
+<td>“是”</td>
+<td>“是”</td>
 </tr>
 <tr class="even">
 <td>SMB</td>
 <td>SMB 加密</td>
-<td>是</td>
-<td>是</td>
+<td>“是”</td>
+<td>“是”</td>
 </tr>
 <tr class="odd">
 <td>SMB</td>
@@ -106,7 +106,7 @@ ms.locfileid: "80827410"
 <td>文件系统</td>
 <td>NTFS</td>
 <td>是</td>
-<td>NA</td>
+<td>不可用</td>
 </tr>
 <tr class="odd">
 <td>文件系统</td>
@@ -124,13 +124,13 @@ ms.locfileid: "80827410"
 <td>文件管理</td>
 <td>BranchCache</td>
 <td>是</td>
-<td>是</td>
+<td>否</td>
 </tr>
 <tr class="even">
 <td>文件管理</td>
 <td>重复数据删除 (Windows Server 2012)</td>
 <td>是</td>
-<td>是</td>
+<td>否</td>
 </tr>
 <tr class="odd">
 <td>文件管理</td>
@@ -142,37 +142,37 @@ ms.locfileid: "80827410"
 <td>文件管理</td>
 <td>DFS 命名空间 (DFSN) 根服务器根</td>
 <td>是</td>
-<td>是</td>
+<td>否</td>
 </tr>
 <tr class="odd">
 <td>文件管理</td>
 <td>DFS 命名空间 (DFSN) 文件夹目标服务器</td>
-<td>是</td>
-<td>是</td>
+<td>“是”</td>
+<td>“是”</td>
 </tr>
 <tr class="even">
 <td>文件管理</td>
 <td>DFS 复制 (DFSR)</td>
 <td>是</td>
-<td>是</td>
+<td>否</td>
 </tr>
 <tr class="odd">
 <td>文件管理</td>
 <td>文件服务器资源管理器（屏幕和配额）</td>
 <td>是</td>
-<td>是</td>
+<td>否</td>
 </tr>
 <tr class="even">
 <td>文件管理</td>
 <td>文件分类基础结构</td>
 <td>是</td>
-<td>是</td>
+<td>否</td>
 </tr>
 <tr class="odd">
 <td>文件管理</td>
 <td>动态访问控制（基于声明的访问，CAP）</td>
 <td>是</td>
-<td>是</td>
+<td>否</td>
 </tr>
 <tr class="even">
 <td>文件管理</td>
@@ -184,7 +184,7 @@ ms.locfileid: "80827410"
 <td>文件管理</td>
 <td>脱机文件（客户端缓存）</td>
 <td>是</td>
-<td>不建议</em></td>
+<td>不推荐</em></td>
 </tr>
 <tr class="even">
 <td>文件管理</td>
@@ -196,44 +196,44 @@ ms.locfileid: "80827410"
 <td>文件管理</td>
 <td>主目录</td>
 <td>是</td>
-<td>不建议</em></td>
+<td>不推荐</em></td>
 </tr>
 <tr class="even">
 <td>文件管理</td>
 <td>工作文件夹</td>
 <td>是</td>
-<td>是</td>
+<td>否</td>
 </tr>
 <tr class="odd">
 <td>NFS</td>
 <td>NFS 服务器</td>
 <td>是</td>
-<td>是</td>
+<td>否</td>
 </tr>
 <tr class="even">
 <td>应用程序</td>
 <td>Hyper-V</td>
-<td>不建议</td>
+<td>不推荐</td>
 <td>是</td>
 </tr>
 <tr class="odd">
 <td>应用程序</td>
 <td>Microsoft SQL Server</td>
-<td>不建议</td>
+<td>不推荐</td>
 <td>是</td>
 </tr>
 </tbody>
 </table>
 
-使用连续可用的文件共享时，\* 文件夹重定向、脱机文件、漫游用户配置文件或主目录会生成大量必须立即写入磁盘（无缓冲）的写入操作，从而降低性能，与常规用途文件共享相比。 连续可用的文件共享与文件服务器资源管理器和运行 Windows XP 的电脑也不兼容。 此外，在用户失去对共享的访问权限后，脱机文件可能不会转换为脱机模式3-6 分钟，这可能会让尚未使用 "始终脱机" 模式脱机文件的用户不快。
+\*使用连续可用的文件共享时，文件夹重定向、脱机文件、漫游用户配置文件或主目录会生成大量必须立即写入磁盘（无缓冲）的写入操作，从而降低性能，与常规用途文件共享相比。 连续可用的文件共享与文件服务器资源管理器和运行 Windows XP 的电脑也不兼容。 此外，在用户失去对共享的访问权限后，脱机文件可能不会转换为脱机模式3-6 分钟，这可能会让尚未使用 "始终脱机" 模式脱机文件的用户不快。
 
-## <a name="practical-applications"></a>实际应用
+## <a name="practical-applications"></a>实际的应用程序
 
 横向扩展文件服务器非常适用于服务器应用程序存储。 下面列出了可以将其数据存储在横向扩展文件共享上的服务器应用程序的几个示例：
 
-- Internet Information Services (IIS) Web 服务器可以将网站的配置和数据存储在横向扩展文件共享上。 有关详细信息，请参阅 [共享配置](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264)。
-- Hyper-V 可以将配置和实时虚拟磁盘存储在横向扩展文件共享上。 有关详细信息，请参阅[在 SMB 上部署 Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)。
-- SQL Server 可以将实时数据库文件存储在横向扩展文件共享上。 有关详细信息，请参阅 [安装 SQL Server 并使用 SMB 文件共享作为存储选项](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)。
+- Internet Information Services (IIS) Web 服务器可以将网站的配置和数据存储在横向扩展文件共享上。 有关详细信息，请参阅[共享配置](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264)。
+- Hyper-V 可以将配置和实时虚拟磁盘存储在横向扩展文件共享上。 有关详细信息，请参阅[在 SMB 上部署 Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)。
+- SQL Server 可以将实时数据库文件存储在横向扩展文件共享上。 有关详细信息，请参阅[安装 SQL Server 并使用 SMB 文件共享作为存储选项](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)。
 - Virtual Machine Manager (VMM) 可以将库共享（其中包含虚拟机模板和相关文件）存储在横向扩展文件共享上。 但是，库服务器本身不能是横向扩展文件服务器，它必须位于独立的服务器或不使用横向扩展文件服务器群集角色的故障转移群集上。
 
 如果将横向扩展文件共享用作库共享，则只能使用与横向扩展文件服务器兼容的技术。 例如，不能使用 DFS 复制来复制横向扩展文件共享上托管的库共享。 还有一点很重要，那就是横向扩展文件服务器安装了最新的软件更新。
@@ -250,29 +250,29 @@ ms.locfileid: "80827410"
 <table>
 <thead>
 <tr class="header">
-<th>功能</th>
+<th>Feature</th>
 <th>如何支持本方案</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><a href="failover-clustering.md">故障转移群集</a></td>
-<td>故障转移群集在 Windows Server 2012 中添加了以下功能，以支持横向扩展文件服务器：分布式网络名称、横向扩展文件服务器资源类型、群集共享卷（CSV）2和横向扩展文件服务器高可用性角色。 有关这些功能的详细信息，请<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">参阅&#39;Windows Server 2012 中的故障转移群集中的新增功能 [重定向]</a>。</td>
+<td>故障转移群集在 Windows Server 2012 中添加了以下功能，以支持横向扩展文件服务器：分布式网络名称、横向扩展文件服务器资源类型、群集共享卷（CSV）2和横向扩展文件服务器高可用性角色。 有关这些功能的详细信息，&#39;请参阅<a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Windows Server 2012 中的故障转移群集中的新增功能 [重定向]</a>。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">服务器消息块</a></td>
+<td><a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">服务器消息块</a></td>
 <td>SMB 3.0 在 Windows Server 2012 中添加了以下功能，以支持横向扩展文件服务器： SMB 透明故障转移、SMB 多通道和 SMB 直通。<br />
 <br />
-有关 Windows Server 2012 R2 中 SMB 的新功能和更改的功能的详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">&#39;WINDOWS server 中 smb 的新增</a>功能。</td>
+有关 Windows Server 2012 R2 中 SMB 的新功能和更改的功能的详细信息，请参阅<a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">Windows server 中 smb 的</a>新增功能&#39;。</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="more-information"></a>详细信息
+## <a name="more-information"></a>更多信息
 
-- [软件定义的存储设计注意事项指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
-- [提高服务器、存储和网络可用性](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
-- [部署基于 SMB 的 Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-- [针对服务器应用程序部署快速且高效的文件服务器](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-- [要不要横向扩展，这才是问题所在](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx) （博客文章）
-- [文件夹重定向、脱机文件和漫游用户策略文件](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)
+- [软件定义的存储设计注意事项指南](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
+- [Increasing Server, Storage, and Network Availability](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [部署基于 SMB 的 Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+- [针对服务器应用程序部署快速且高效的文件服务器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+- [要不要横向扩展，这才是问题所在](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)（博客文章）
+- [文件夹重定向、脱机文件和漫游用户策略文件](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)

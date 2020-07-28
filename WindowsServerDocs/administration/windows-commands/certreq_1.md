@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d51cc178ee5b689071336b0dabd1e8d3565bcd2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4610db6755f5177306dfcf4feec005eab6efabfd
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955359"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178673"
 ---
 # <a name="certreq"></a>certreq
 
@@ -42,7 +42,7 @@ certreq –enroll –cert certId [options] renew [reusekeys]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------- | ----------- |
 | -提交 | 向证书颁发机构提交请求。 |
 | -检索`<requestid>` | 检索对来自证书颁发机构的以前请求的响应。 |
@@ -101,9 +101,9 @@ subject = CN=W2K8-BO-DC.contoso2.com
 
 INF 文件的此区域对于任何新的证书请求模板都是必需的，并且必须包含至少一个具有值的参数。
 
-| 键<sup>1</sup> | 说明 | 值<sup>2</sup> | 示例 |
+| 键<sup>1</sup> | 描述 | 值<sup>2</sup> | 示例 |
 | --- | ---------- | ----- | ------- |
-| 主题 | 几个应用依赖证书中的主题信息。 建议为此项指定一个值。 如果未在此处设置主题，建议你将使用者名称作为使用者备用名称证书扩展的一部分。 | 相对可分辨名称字符串值 | Subject = CN = computer1 Subject = John Smith，CN = Users，DC = Contoso，DC = com |
+| 使用者 | 几个应用依赖证书中的主题信息。 建议为此项指定一个值。 如果未在此处设置主题，建议你将使用者名称作为使用者备用名称证书扩展的一部分。 | 相对可分辨名称字符串值 | Subject = CN = computer1 Subject = John Smith，CN = Users，DC = Contoso，DC = com |
 | Exportable | 如果设置为 TRUE，则可以连同证书一起导出私钥。 若要确保安全级别较高，私钥应是不可导出的;但是，在某些情况下，如果多台计算机或用户必须共享相同的私钥，则可能需要该参数。 | `true | false` | `Exportable = TRUE`. CNG 密钥可以区分此和纯文本导出。 CAPI1 密钥不能。 |
 | ExportableEncrypted | 指定私钥是否应设置为可导出。 | `true | false` | `ExportableEncrypted = true`<p>**提示：** 并非所有公共密钥大小和算法都适用于所有哈希算法。 指定的 CSP 还必须支持指定的哈希算法。 若要查看受支持的哈希算法的列表，可以运行以下命令：`certutil -oid 1 | findstr pwszCNGAlgid | findstr /v CryptOIDInfo` |
 | HashAlgorithm | 要用于此请求的哈希算法。 | `Sha256, sha384, sha512, sha1, md5, md4, md2` | `HashAlgorithm = sha1`. 若要查看支持的哈希算法的列表，请使用： certutil-oid 1 | findstr pwszCNGAlgid | findstr/v CryptOIDInfo|
@@ -131,8 +131,8 @@ INF 文件的此区域对于任何新的证书请求模板都是必需的，并�
 | UseExistingKeySet | 此参数用于指定在生成证书请求时应使用现有的密钥对。 如果将此项设置为 TRUE，则还必须为 RenewalCert 项或 KeyContainer 名称指定值。 你不能设置可导出的密钥，因为你无法更改现有密钥的属性。 在这种情况下，生成证书请求时不会生成密钥材料。 | `true | false` | `UseExistingKeySet = true` |
 | KeyProtection | 指定一个值，该值指示在使用之前私钥的保护方式。 | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | 指定一个布尔值，该值指示是否在请求中包含默认扩展和属性。 默认值由它们的对象标识符（Oid）表示。 | `true | false` | `SuppressDefaults = true` |
-| FriendlyName | 新证书的友好名称。 | Text | `FriendlyName = Server1` |
-| ValidityPeriodUnits | 指定要用于 ValidityPeriod 的单位数。 注意：仅当时才使用 `request type=cert` 。 | 数值 | `ValidityPeriodUnits = 3` |
+| FriendlyName | 新证书的友好名称。 | 文本 | `FriendlyName = Server1` |
+| ValidityPeriodUnits | 指定要用于 ValidityPeriod 的单位数。 注意：仅当时才使用 `request type=cert` 。 | 数字 | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod 必须是美国英语复数时间段。 注意：仅当请求类型 = cert 时才使用此类型。 | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup>等号（=）左侧的参数
@@ -294,7 +294,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 ## <a name="options"></a>选项
 
-| 选项 | 说明 |
+| 选项 | 描述 |
 | ------- | ----------- |
 | -any | `Force ICertRequest::Submit`确定编码类型。|
 | -attrib`<attributestring>` | 指定**名称**和**值**字符串对，并以冒号分隔。<p>使用**Name** **Value** `\n` （例如，Name1： Value1\nName2： Value2）分隔名称和值字符串对。 |
@@ -319,7 +319,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 ## <a name="formats"></a>格式
 
-| 格式 | 说明 |
+| 格式 | 描述 |
 | ------- | ----------- |
 | requestfilein | Base64 编码的或二进制输入文件名： PKCS #10 证书请求、CMS 证书请求、PKCS #7 证书续订请求、要交叉验证的 x.509 证书，或 Ssh-keygen 标记格式的证书请求。 |
 | requestfileout | Base64 编码的输出文件名。 |
@@ -341,10 +341,8 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 - [如何手动创建 web 服务器 SSL 证书](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [使用 Windows Server 2008 CA 请求 AMT 设置证书](https://social.technet.microsoft.com/wiki/contents/articles/548.request-an-amt-provisioning-certificate-using-a-windows-server-2008-ca.aspx)
+- [System Center Operations Manager 代理的证书注册](https://docs.microsoft.com/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
 
-- [System Center Operations Manager 代理的证书注册](https://social.technet.microsoft.com/wiki/contents/articles/2017.certificate-enrollment-for-system-center-operations-manager-agent.aspx)
-
-- [AD CS 循序渐进指南：双层 PKI 层次结构部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)
+- [Active Directory 证书服务概述](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 
 - [如何使用第三方证书颁发机构启用 LDAP over SSL](https://support.microsoft.com/help/321051/how-to-enable-ldap-over-ssl-with-a-third-party-certification-authority)

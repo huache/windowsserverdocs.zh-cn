@@ -9,12 +9,12 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eb9077f40c33d615c0bbe18f1c02b29ce27165a2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c0d8efc1bdb5a2c3a653afbe61b211f94658101d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720522"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181723"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>在 Active Directory 域服务中预留群集计算机对象
 
@@ -25,7 +25,7 @@ ms.locfileid: "82720522"
 使用创建群集向导或 Windows PowerShell 创建故障转移群集时，必须指定群集的名称。 如果你在创建群集时具有足够的权限，则群集创建过程会自动在 AD DS 中创建一个与群集名称相匹配的计算机对象。 此对象称为“*群集名称对象*”或 CNO。 当你配置使用客户端访问点的群集角色时，可以通过 CNO 自动创建虚拟计算机对象 (VCO)。 例如，如果你创建高可用性文件服务器，它具有名为“ *FileServer1*”的客户端访问点，则 CNO 将在 AD DS 中创建相应的 VCO。
 
 >[!NOTE]
->可以选择创建 Active Directory 分离的群集，其中不会在 AD DS 中创建 CNO 或 Vco。 此选项适用于特定类型的群集部署。 有关详细信息，请参阅[部署与 Active Directory 分离的群集](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>)。
+>可以选择创建 Active Directory 分离的群集，其中不会在 AD DS 中创建 CNO 或 Vco。 此选项适用于特定类型的群集部署。 有关详细信息，请参阅[部署与 Active Directory 分离的群集](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>)。
 
 若要自动创建 CNO，创建故障转移群集的用户必须具备“**创建计算机对象**”权限，这一权限针对组织单位 (OU) 或将形成群集的服务器所在的容器。 若要允许用户或组在不具备此权限的情况下创建群集，可以让具有 AD DS 中的适当权限的用户（通常为域管理员）在 AD DS 中预安排 CNO。 这也让域管理员能够更多地控制用于群集的命名约定，以及在其中创建群集对象的 OU。
 
@@ -74,11 +74,11 @@ ms.locfileid: "82720522"
 3. 在“安全性”**** 选项卡上，选择“添加”****。
 4. 在 "**选择用户、计算机或组**" 对话框中，指定要向其授予权限的用户帐户或组，然后选择 **"确定"**。
 5. 选中刚才添加的用户帐户或组，然后选中“完全控制”**** 旁边的“允许”**** 复选框。
-  
+
    ![向将要创建群集的用户或组授予“完全控制”权限](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
-  
+
    **图2。向将要创建群集的用户或组授予 "完全控制" 权限**
-6. 选择“确定”  。
+6. 选择“确定”。
 
 完成此步骤后，你向其授予权限的用户将能够创建故障转移群集。 但是，如果 CNO 位于 OU 中，则在完成步骤 3 之前，用户将无法创建需要客户端访问点的群集角色。
 
@@ -132,11 +132,11 @@ ms.locfileid: "82720522"
 8. 在 "**选择用户、计算机、服务帐户或组**" 对话框中，选择 "**对象类型**"，选中 "**计算机**" 复选框，然后选择 **"确定"**。
 9. 在 "**输入要选择的对象名称**" 下，输入 CNO 的名称，选择 "**检查名称**"，然后选择 **"确定"**。 如果收到一条警告消息，指出你要添加一个已禁用的对象，请选择 **"确定"**。
 10. 确保 CNO 已选中，然后选中“完全控制”**** 旁边的“允许”**** 复选框。
-11. 选择“确定”  。
+11. 选择“确定”。
 
 故障转移群集管理员现在能够创建其客户端访问点与预安排 VCO 名称相匹配的群集角色，并让资源联机。
 
-## <a name="more-information"></a>详细信息
+## <a name="more-information"></a>更多信息
 
 - [故障转移群集](failover-clustering.md)
 - [在 Active Directory 中配置群集帐户](configure-ad-accounts.md)

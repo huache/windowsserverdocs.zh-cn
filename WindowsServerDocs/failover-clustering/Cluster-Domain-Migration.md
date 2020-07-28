@@ -9,16 +9,16 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ba556b5a00f3932e2049135b177a7ad8bbceec9c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6062dd987a136bc2be67c09efbe399bb8fae24f6
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828290"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178523"
 ---
 # <a name="failover-cluster-domain-migration"></a>故障转移群集域迁移
 
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
 本主题概述了如何将 Windows Server 故障转移群集从一个域移到另一个域。
 
@@ -37,11 +37,11 @@ ms.locfileid: "80828290"
    > [!WARNING]
    > 建议在移动群集之前，对群集中的所有共享存储执行完整备份。
 
-## <a name="windows-server-2016-and-earlier"></a>Windows Server 2016 及更早版本
+## <a name="windows-server-2016-and-earlier"></a>Windows Server 2016 和更低版本
 
-在 Windows Server 2016 及更早版本中，群集服务没有从一个域迁移到另一个域的功能。  这是因为增加了对 Active Directory 域服务和创建的虚拟名称的依赖。   
+在 Windows Server 2016 及更早版本中，群集服务没有从一个域迁移到另一个域的功能。  这是因为增加了对 Active Directory 域服务和创建的虚拟名称的依赖。
 
-## <a name="options"></a>Options
+## <a name="options"></a>选项
 
 为了执行此类迁移，有两个选项。
 
@@ -62,14 +62,14 @@ ms.locfileid: "80828290"
 如动画所示，此选项不具有破坏性，但需要使用不同的硬件或现有群集中的节点，而不会被删除。
 
 1. 创建新的 clusterin 新域，同时保持旧群集可用。
-2. 使用[群集迁移向导](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))将所有资源迁移到新群集。 提醒，此操作不会复制数据，因此需要单独执行此操作。
+2. 使用[群集迁移向导](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))将所有资源迁移到新群集。 提醒，此操作不会复制数据，因此需要单独执行此操作。
 3. 停止或销毁旧群集。
 
 在这两个选项中，新群集需要安装所有[群集感知应用程序](https://technet.microsoft.com/aa369082(v=vs.90))，驱动程序都是最新的，并且可能会进行测试，以确保所有这些应用程序正常运行。  如果还需要移动数据，这是一个耗时的过程。
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
-在 Windows Server 2019 中，我们引入了跨群集域迁移功能。  现在，可以轻松完成上面列出的方案，不再需要重新生成。  
+在 Windows Server 2019 中，我们引入了跨群集域迁移功能。  现在，可以轻松完成上面列出的方案，不再需要重新生成。
 
 从一个域移动群集是一个直接的过程。 为此，有两个新的 PowerShell commandlet。
 
@@ -77,7 +77,7 @@ ms.locfileid: "80828290"
 
 完成此操作的过程是将群集从一个域更改为工作组并返回到新域。  不需要销毁群集、重建群集、安装应用程序等。 例如，如下所示：
 
-![迁移](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-3.gif)
+![Migrate](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-3.gif)
 
 ## <a name="migrating-a-cluster-to-a-new-domain"></a>将群集迁移到新域
 

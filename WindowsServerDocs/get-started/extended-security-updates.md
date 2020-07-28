@@ -9,12 +9,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: 6c9d732b6ec3d8ceb65c691ab143f09dd8f10f23
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 19a65f2a254fe14f7cddfbda2a84e9d00f47da56
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77552539"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181843"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>如何使用 Windows Server 2008 和 2008 R2 的扩展安全更新 (ESU)
 
@@ -87,7 +87,7 @@ Windows Server 的扩展安全更新 (ESU) 在 2020 年 1 月 14 日之后最多
 5. 如果看到一个显示“注册获取多次激活密钥”的页面，则表示你需要先请求访问个人预览版，然后才能使用扩展安全更新。 如果看不到该页面，请跳到步骤 6。
 
    若要请求访问权限，请选择“加入个人预览版”  。 将会打开一个电子邮件窗口。 此电子邮件是向产品团队发送的访问请求。
-  
+
     请在请求中包括以下信息：
 
     * 客户名称
@@ -101,7 +101,7 @@ Windows Server 的扩展安全更新 (ESU) 在 2020 年 1 月 14 日之后最多
 
     如果团队未批准你的请求，你会看到以下错误：
 
-    [“Microsoft.WindowsESU”命令空间中找不到此资源类型](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
+    [“Microsoft.WindowsESU”命令空间中找不到此资源类型](https://docs.microsoft.com/windows-server/get-started/extended-security-updates)
 
 6. 在“Azure 详细信息”  下，选择 Azure 订阅、资源组和密钥的位置。
 

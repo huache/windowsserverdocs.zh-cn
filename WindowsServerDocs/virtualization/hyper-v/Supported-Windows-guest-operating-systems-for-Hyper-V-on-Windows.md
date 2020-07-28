@@ -9,12 +9,12 @@ ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: 514f43447f808aabfe2a20ea01b2d8fd65d628ea
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ddcb4f080183b6a1c8ae0ed0d705597c1a0dd4a5
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474364"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181793"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 支持的 Windows 来宾操作系统
 
@@ -58,9 +58,9 @@ Hyper-v 支持将多个版本的 Windows Server、Windows 和 Linux 分发版作
 |主机操作系统|主题|
 |-------------------------|---------|
 |Windows 10|[Windows 10 中的客户端 Hyper-v 支持的来宾操作系统](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)|
-|Windows Server 2012 R2 和 Windows 8.1|-   [Windows Server 2012 R2 和 Windows 8.1 中的 Hyper-v 支持的 Windows 来宾操作系统](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Hyper-v 上的 Linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
-|Windows Server 2012 和 Windows 8|[Windows Server 2012 和 Windows 8 中 Hyper-V 的受支持 Windows 来宾操作系统](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
-|Windows Server 2008 和 Windows Server 2008 R2|[关于虚拟机和来宾操作系统](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
+|Windows Server 2012 R2 和 Windows 8.1|-   [Windows Server 2012 R2 和 Windows 8.1 中的 Hyper-v 支持的 Windows 来宾操作系统](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Hyper-v 上的 Linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
+|Windows Server 2012 和 Windows 8|[Windows Server 2012 和 Windows 8 中 Hyper-V 的受支持 Windows 来宾操作系统](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
+|Windows Server 2008 和 Windows Server 2008 R2|[关于虚拟机和来宾操作系统](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
 
 ## <a name="how-microsoft-provides-support-for-guest-operating-systems"></a>Microsoft 如何为来宾操作系统提供支持
 

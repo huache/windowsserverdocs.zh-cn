@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 935d3ccf7de777a71d7c75179629b448dbb73a08
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7af3d5c64216f60cca41aa9fb0c3d2c38c74e6c4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966279"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182243"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>为文件夹重定向以及漫游用户策略文件部署主计算机
 
@@ -30,7 +30,7 @@ ms.locfileid: "86966279"
 
 主计算机支持具有以下要求：
 
-- 必须更新 Active Directory 域服务 (AD DS) 架构，以包含 Windows Server 2012 架构新增内容（安装 Windows Server 2012 域控制器会自动更新架构）。 有关更新 AD DS 架构的详细信息，请参阅 [Adprep.exe 集成](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>)和[运行 Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>)。
+- 必须更新 Active Directory 域服务 (AD DS) 架构，以包含 Windows Server 2012 架构新增内容（安装 Windows Server 2012 域控制器会自动更新架构）。 有关更新 AD DS 架构的详细信息，请参阅 [Adprep.exe 集成](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>)和[运行 Adprep.exe](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>)。
 - 客户端计算机必须运行 Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012。
 
 > [!TIP]

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f18c880dd673b17f53815a57fa2fcc66558dad71
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: aff9fbdfa6dc97cb644e207efdae9c44533c320b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961319"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181743"
 ---
 # <a name="network-file-system-overview"></a>网络文件系统概述
 
@@ -29,7 +29,7 @@ Windows Server 中的 NFS 包括 NFS 服务器和 NFS 客户端。 运行 Window
 
 ## <a name="windows-and-windows-server-versions"></a>Windows 和 Windows Server 版本
 
-Windows 支持多个版本的 NFS 客户端和服务器，具体取决于操作系统版本和系列。 
+Windows 支持多个版本的 NFS 客户端和服务器，具体取决于操作系统版本和系列。
 
 | 操作系统 | NFS 服务器版本 |NFS 客户端版本|
 | ----------------- | ------------------- | ----------------- |
@@ -49,7 +49,7 @@ Windows 支持多个版本的 NFS 客户端和服务器，具体取决于操作�
 
 网络文件系统中的新功能和更改的功能包括对 NFS 版本4.1 的支持以及改进的部署和可管理性。 有关 Windows Server 2012 中新增或更改的功能的信息，请参阅下表：
 
-|特性/功能|新功能或更新功能|说明|
+|特性/功能|新功能或更新功能|描述|
 |---|---|---|
 |[NFS 版本4。1](#nfs-version-41)|新建|与 NFS 版本3相比，安全性、性能和互操作性更高。|
 |[NFS 基础结构](#nfs-infrastructure)|Updated|提高部署和可管理性，并提高安全性。|
@@ -99,7 +99,7 @@ NFS 版本3客户端可以具有快速、透明的计划内故障转移，并提
 
 ## <a name="server-manager-information"></a>服务器管理器信息
 
-在服务器管理器或更高版本的[Windows 管理中心](../../manage/windows-admin-center/overview.md)中-使用 "添加角色和功能向导" 添加 "NFS 服务器" 角色服务（在 "文件和 iSCSI 服务" 角色下）。 有关安装功能的详细信息，请参阅 [“安装或卸载角色、角色服务或功能”](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)。 NFS 服务器工具包括用于网络文件系统的服务 MMC 管理单元，用于管理 NFS 服务器和 NFS 客户端组件。 使用管理单元，你可以管理安装在计算机上的 NFS 服务器组件。 NFS 服务器还包含多个 Windows 命令行管理工具：
+在服务器管理器或更高版本的[Windows 管理中心](../../manage/windows-admin-center/overview.md)中-使用 "添加角色和功能向导" 添加 "NFS 服务器" 角色服务（在 "文件和 iSCSI 服务" 角色下）。 有关安装功能的详细信息，请参阅 [“安装或卸载角色、角色服务或功能”](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)。 NFS 服务器工具包括用于网络文件系统的服务 MMC 管理单元，用于管理 NFS 服务器和 NFS 客户端组件。 使用管理单元，你可以管理安装在计算机上的 NFS 服务器组件。 NFS 服务器还包含多个 Windows 命令行管理工具：
 
 - **装载**在本地装载远程 NFS 共享（也称为导出），并将其映射到 Windows 客户端计算机上的本地驱动器号。
 - **Nfsadmin**管理 nfs 服务器和 Nfs 客户端组件的配置设置。
@@ -117,5 +117,5 @@ Windows Server 2012 中的 NFS 为适用于 Windows PowerShell 的 nfs 模块引
 |内容类型|参考|
 |---|---|
 |部署|[部署网络文件系统](deploy-nfs.md)|
-|操作|[Windows PowerShell 中的 NFS cmdlet](/powershell/module/nfs/?view=win10-ps)|
+|Operations|[Windows PowerShell 中的 NFS cmdlet](/powershell/module/nfs/?view=win10-ps)|
 |相关技术|[Windows Server 中的存储](../storage.yml)|

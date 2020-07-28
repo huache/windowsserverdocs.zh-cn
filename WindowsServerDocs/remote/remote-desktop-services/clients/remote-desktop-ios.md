@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e421795fd3be9e11ddff4cf6b557ebb211e51c53
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 8f51a60e66a3e1452ed66c94c409c5e4e5cb191f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445711"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181963"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS 客户端入门
 
@@ -174,7 +174,7 @@ ms.locfileid: "86445711"
 
 ## <a name="supported-input-devices"></a>支持的输入设备
 
-在 iOS 13 和 iPadOS 中，客户端提供[蓝牙鼠标支持](https://support.apple.com/HT210546)作为一项辅助功能。 可使用 Swiftpoint GT 或 ProPoint 鼠标进行更深度的鼠标集成。 客户端还支持与 iOS 和 iPadOS 兼容的外部键盘。 
+在 iOS 13 和 iPadOS 中，客户端提供[蓝牙鼠标支持](https://support.apple.com/HT210546)作为一项辅助功能。 可使用 Swiftpoint GT 或 ProPoint 鼠标进行更深度的鼠标集成。 客户端还支持与 iOS 和 iPadOS 兼容的外部键盘。
 
 有关设备支持的详细信息，请参阅 [iOS 客户端的新增功能](ios-whatsnew.md)和 [iOS App Store](https://aka.ms/rdios)。
 
@@ -192,4 +192,4 @@ ms.locfileid: "86445711"
 尽管某些组合键可能无法在远程会话中按预期方式使用，但许多常见的 Windows 组合键（如 CTRL+C、CTRL+V 和 ALT+TAB）可以使用。
 
 > [!TIP]
-> 欢迎提出问题和意见。 但是，如果你在本文评论部分发布支持请求或产品反馈，我们将无法回复你的反馈。 如需帮助或想要排查客户端问题，强烈建议你转到[远程桌面客户论坛](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winrdc)，启动新的会话。 如果有功能方面的建议，可通过 [UserVoice 客户论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。
+> 欢迎提出问题和意见。 但是，如果你在本文评论部分发布支持请求或产品反馈，我们将无法回复你的反馈。 如需帮助或想要排查客户端问题，强烈建议你转到[远程桌面客户论坛](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)，启动新的会话。 如果有功能方面的建议，可通过 [UserVoice 客户论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。

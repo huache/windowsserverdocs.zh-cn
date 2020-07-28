@@ -2,18 +2,17 @@
 title: 从 Windows Server Essentials 转换到 Windows Server 2012 Standard
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2477cac206af4e70d10e28d7b1da637b7b7accff
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 4cc616c0e23c58ab1298526784574f6bc8f65f23
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548811"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180383"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>从 Windows Server Essentials 转换到 Windows Server 2012 Standard
 
@@ -76,7 +75,7 @@ ms.locfileid: "85548811"
  如果不再需要 Windows Server Essentials 仪表板或其他增值功能来管理服务器，则可以关闭这些功能并将其从服务器中删除。
 
  "**关闭 Windows Server Essentials 功能向导"：**
- 
+
 - 帮助你卸载这些功能。 它还清除 Windows Server Essentials 服务器软件创建的文件服务器。  某些清除操作会立即执行，而某些操作则需要等到服务器重新启动之后才会启动。
 
 - 要求你先手动卸载所有加载项，然后才能完成向导。 若要查看已安装加载项的列表，请在仪表板中打开“应用程序”页。 此向导会通知你是否检测到已安装的加载项，如果有则提醒你卸载这些加载项。

@@ -7,14 +7,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 20e0d5e73713c0d6280e95d51ec8de8fde612350
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 331fc5a4e825dc4e7faf6f0a65605d7aaebf8314
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856580"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181693"
 ---
-# <a name="install-hgs-in-an-existing-bastion-forest"></a>在现有堡垒林中安装 HGS 
+# <a name="install-hgs-in-an-existing-bastion-forest"></a>在现有堡垒林中安装 HGS
 
 >适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
 
@@ -27,7 +27,7 @@ ms.locfileid: "80856580"
 
 在已提升权限的 PowerShell 会话中运行本主题中的所有命令。
 
-[!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)] 
+[!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)]
 
 如果你的数据中心有要加入 HGS 节点的安全堡垒林，请执行以下步骤。
 你还可以使用这些步骤配置2个或更多个连接到同一域的独立 HGS 群集。
@@ -70,7 +70,7 @@ New-ADServiceAccount -Name 'HGSgMSA' -DnsHostName 'HGSgMSA.yourdomain.com' -Prin
 ```
 
 GMSA 将需要在每个 HGS 服务器上的安全日志中生成事件的权限。
-如果使用组策略来配置用户权限分配，请确保在你的 HGS 服务器上为 gMSA 帐户授予 "[生成审核事件" 特权](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29)。
+如果使用组策略来配置用户权限分配，请确保在你的 HGS 服务器上为 gMSA 帐户授予 "[生成审核事件" 特权](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29)。
 
 > [!NOTE]
 > 组托管服务帐户从 Windows Server 2012 Active Directory 架构开始可用。
@@ -100,7 +100,7 @@ CNO 表示群集的名称，主要由故障转移群集内部使用。
 VCO 表示位于群集顶层的 HGS 服务，它将是注册到 DNS 服务器的名称。
 
 > [!IMPORTANT]
-> 将运行 `Initialize-HgsServer` 的用户需要**完全控制**Active Directory 中的 CNO 和 VCO 对象。
+> 要运行的用户 `Initialize-HgsServer` 需要**完全控制**ACTIVE DIRECTORY 中的 CNO 和 VCO 对象。
 
 若要快速预留 CNO 和 VCO，请 Active Directory 管理员运行以下 PowerShell 命令：
 
@@ -142,7 +142,7 @@ Set-Acl -Path $vcoPath -AclObject $acl
 
 **策略名称：** 网络安全：配置 Kerberos 允许的加密类型
 
-**操作**：如果配置了此策略，则必须使用[uninstall-adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)将 gMSA 帐户更新为仅在此策略中使用受支持的加密类型。 例如，如果你的策略仅允许 AES128\_HMAC\_SHA1 和 AES256\_HMAC\_SHA1，则应该运行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`。
+**操作**：如果配置了此策略，则必须使用[uninstall-adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)将 gMSA 帐户更新为仅在此策略中使用受支持的加密类型。 例如，如果你的策略仅允许 AES128 \_ hmac \_ SHA1 和 AES256 \_ hmac \_ sha1，则应该运行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` 。
 
 
 

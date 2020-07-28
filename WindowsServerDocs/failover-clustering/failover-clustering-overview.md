@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 5b0193f18fe94f391f1bbbc41280c16e4a1bcd0c
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 657cf161086047ca87ca7dbd2adcd2b8e6bde892
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203493"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177883"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server 中的故障转移群集
 
@@ -40,7 +40,7 @@ ms.locfileid: "83203493"
 | [群集集](../storage/storage-spaces/cluster-sets.md)                  |                             |[部署文件共享见证](file-share-witness.md) |
 | [群集关联](cluster-affinity.md)                                     |                            | [群集操作系统滚动升级](cluster-operating-system-rolling-upgrade.md) |
 |                                                                             |                            | [在同一硬件上升级故障转移群集](upgrade-option-same-hardware.md) |
-|                                                                            |                             | [部署已与 Active Directory 分离的群集](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\))
+|                                                                            |                             | [部署已与 Active Directory 分离的群集](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\))
 
 |**管理**  |  **工具和设置**  |  **社区资源**       |
 | ------------- |  -------------- | --------------------- |

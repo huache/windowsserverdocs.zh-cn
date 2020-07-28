@@ -2,20 +2,19 @@
 title: Azure Site Recovery 服务集成
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/01/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b947ca49a82c18fd7a6c1da71b1e4b43ea741b41
-ms.sourcegitcommit: f247065941508b913c31828944978d3e721e2110
+ms.openlocfilehash: e17d60b4931f4858f915bd177f05e85eb1fc5f6a
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82876412"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181683"
 ---
-# <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery 服务集成 
+# <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery 服务集成
 
 >适用于： Windows Server 2016 Essentials
 
@@ -39,7 +38,7 @@ ms.locfileid: "82876412"
 
 ### <a name="enabling-guest-virtual-machines-for-protection"></a>启用来宾虚拟机以进行保护
 
-在 Azure 恢复窗口中选择虚拟机后，可以单击仪表板右侧的 "**启用到 azure 的复制**" 来准备并将虚拟机&trade;映像复制到 azure：
+在 Azure 恢复窗口中选择虚拟机后，可以单击仪表板右侧的 "**启用到 azure 的复制**" 来准备并将虚拟机 &trade; 映像复制到 azure：
 
 ![显示 "启用到 Azure 的复制" 对话框的屏幕截图。 添加主机时，会显示一个进度栏。](media/azure-site-recovery-5.PNG)
 

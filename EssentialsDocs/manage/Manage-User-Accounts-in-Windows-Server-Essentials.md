@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的用户帐户
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 350c9aa4cf4a2e71f3a3b7600ec2acd9016fe50e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 433e49f76ba941058a3cd63526f4c640fd0b5ece
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470502"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180873"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的用户帐户
 
@@ -234,7 +233,7 @@ Windows Server Essentials 仪表板的“用户”页面可集中管理信息和
 
 ### <a name="user-account-tasks-in-the-dashboard"></a>仪表板中的用户帐户任务
 
-|任务名称|说明|
+|任务名称|描述|
 |---------------|-----------------|
 |查看帐户属性|使你能够查看和更改选定用户帐户的属性，以及为该帐户指定文件夹访问权限。|
 |停用用户帐户|停用的用户帐户无法登录到网络或访问网络资源（例如共享文件夹或打印机）。|

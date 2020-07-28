@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 09adec98f4db1e5354d00cf6ebfd9e9ef17f8575
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b9ba6ca7900f33880fda6d77398ffa819cf1038c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963659"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177793"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>为 Windows Server 2012 R2 中的 AD FS 设置实验室环境
 
@@ -87,7 +87,7 @@ ms.locfileid: "86963659"
 
 -   使用者备用名称 (DNS)：enterpriseregistration.contoso.com
 
-有关设置 SSL 证书的详细信息，请参阅 [使用企业 CA 在域中的网站上配置 SSL/TLS](https://social.technet.microsoft.com/wiki/contents/articles/12485.configure-ssltls-on-a-web-site-in-the-domain-with-an-enterprise-ca.aspx)。
+有关设置 SSL 证书的详细信息，请参阅 [使用企业 CA 在域中的网站上配置 SSL/TLS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11))。
 
 [Active Directory 联合身份验证服务操作方法视频系列：更新证书](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)。
 
@@ -256,7 +256,7 @@ ms.locfileid: "86963659"
 
 2.  将 C:\Program Files (x86) \Windows Identity Foundation SDK\v3.5\Samples\Quick Start\Web Application\PassiveRedirectBasedClaimsAwareWebApp 的内容复制到 C:\Inetpub\Claimapp。
 
-3.  编辑 **Default.aspx.cs** 文件，以便不发生声明过滤。 执行此步骤以确保示例应用程序显示由联合服务器颁发的所有声明。 执行以下操作：
+3.  编辑 **Default.aspx.cs** 文件，以便不发生声明过滤。 执行此步骤以确保示例应用程序显示由联合服务器颁发的所有声明。 请执行以下操作：
 
     1.  在文本编辑器中打开 **Default.aspx.cs**。
 
@@ -315,7 +315,7 @@ ms.locfileid: "86963659"
 
     5.  选中“不加密”****，然后单击“下一步”****。 在“提供的声明”页上，单击“下一步”********。
 
-    6.  选中“计划任务以执行每日 WS 联合身份验证元数据更新”**** 旁边的复选框。 单击“完成” 。
+    6.  选中“计划任务以执行每日 WS 联合身份验证元数据更新”**** 旁边的复选框。 单击 **“完成”** 。
 
     7.  现在配置你的示例应用程序。 如果测试应用程序 URL **https://webserv1.contoso.com/claimapp** ，它应将你重定向到联合服务器。 联合服务器应显示一个错误页面，因为你尚未配置信赖方信任。 换句话说，你没有 AD FS 保护此测试应用程序。
 

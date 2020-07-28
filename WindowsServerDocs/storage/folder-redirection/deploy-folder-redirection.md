@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 55421cb1f01d654c4c424e8534f4c678ac38e6f5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 21af2aae837b7a570638c2eb3f3c96cb8997fa84
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959329"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182063"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>部署文件夹重定向和脱机文件
 
@@ -128,7 +128,7 @@ ms.locfileid: "86959329"
 
 > [!NOTE]
 > 默认情况下，对于 Windows 客户端计算机上的重定向文件夹，脱机文件为启用状态，而对于运行 Windows Server 的计算机，脱机文件为禁用状态（除非用户进行了更改）。 若要使用组策略来控制是否启用脱机文件，请使用“允许或禁止使用脱机文件功能”策略设置。
-> 有关其他脱机文件组策略设置的信息，请参阅[启用高级脱机文件功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>)和[为脱机文件配置组策略](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>)。
+> 有关其他脱机文件组策略设置的信息，请参阅[启用高级脱机文件功能](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>)和[为脱机文件配置组策略](</previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>)。
 
 下面介绍如何在组策略中配置文件夹重定向：
 
@@ -199,5 +199,5 @@ ms.locfileid: "86959329"
 * [为文件夹重定向以及漫游用户策略文件部署主计算机](deploy-primary-computers.md)
 * [启用高级脱机文件功能](enable-always-offline.md)
 * [Microsoft 关于复制的用户配置文件数据的支持声明](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
-* [使用 DISM 旁加载应用](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
+* [使用 DISM 旁加载应用](</previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [对基于 Windows 运行时的应用的打包、部署和查询进行故障排除](/windows/win32/appxpkg/troubleshooting)

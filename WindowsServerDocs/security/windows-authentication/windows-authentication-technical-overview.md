@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7a19230e0fc1fb96700785fd83e70d501d59b76a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bd4aa60c977b09958aebc0087c981efd02f36fed
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861690"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182293"
 ---
 # <a name="windows-authentication-technical-overview"></a>Windows 身份验证技术概述
 
@@ -24,7 +24,7 @@ ms.locfileid: "80861690"
 
 这一系列主题介绍了 Windows 身份验证体系结构及其组件。
 
-若要以数字方式保存或打印此库中的页面，请单击“导出”（页面右上角），然后按照说明操作。
+若要以数字方式保存或打印此库中的页面，请单击“导出”****（页面右上角），然后按照说明操作。
 
 -   [Windows 操作系统之间的 Windows 身份验证之间的差异](https://technet.microsoft.com/library/dn169017.aspx)
 
@@ -54,14 +54,14 @@ ms.locfileid: "80861690"
 
     描述组策略在身份验证过程中的使用和影响。
 
-## <a name="what-is-not-covered"></a>未涵盖的内容
+## <a name="what-is-not-covered"></a>不包含的内容
 这一系列主题不涉及在 Windows 环境中设计、实现或监视身份验证技术的过程。
 
 -   有关 Windows 授权策略的设计信息，请参阅 "[设计资源授权策略](https://technet.microsoft.com/library/cc783368.aspx)"。
 
 -   有关 Windows 身份验证策略的设计信息，请参阅[设计身份验证策略](https://technet.microsoft.com/library/cc758124.aspx)。
 
--   有关 Windows 公钥基础结构实现策略的设计信息，请参阅[设计公钥基础结构](https://technet.microsoft.com/library/cc773138.aspx)。
+-   有关 Windows 公钥基础结构实现策略的设计信息，请参阅[设计公钥基础结构](/previous-versions/windows/it-pro/windows-server-2003/cc773138(v=ws.10))。
 
 -   若要在 Windows 环境中配置和监视安全（包括身份验证），请参阅：
 

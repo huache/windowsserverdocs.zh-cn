@@ -2,18 +2,17 @@
 title: 使用 Windows Server Essentials 排除防火墙故障
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 51d94b67-8b9b-4159-80dd-f652d73a43cb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 432acd242bcd9fcb2ecaa7a820accda2ac5a1d20
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b20a42c9bf0cf9a7bdb09e120f5bc796451d8030
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470052"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180133"
 ---
 # <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>使用 Windows Server Essentials 排除防火墙故障
 
@@ -31,7 +30,7 @@ ms.locfileid: "85470052"
 
    如果你使用的是高级网络设置或非 Microsoft 防火墙，则可能需要打开防火墙上的其他端口。 下表中的端口通过 Internet 编号分配机构 (IANA) 进行注册。
 
-|端口号|说明|
+|端口号|描述|
 |-----------------|-----------------|
 |65500|证书 Web 服务|
 |65510 和 65515|客户端计算机部署网站|
@@ -39,7 +38,7 @@ ms.locfileid: "85470052"
 |65532|用于服务器环回通信的提供程序框架|
 |6602|用于服务器和客户端计算机间通信的提供程序框架|
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 -   [使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)
 

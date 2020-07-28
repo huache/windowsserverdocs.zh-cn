@@ -9,12 +9,12 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d275e0379b5374899437bcf1f0387b304350840
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 697fd832a6af66d9cbea2537c44183aaf1b8839d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827740"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177873"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>在故障转移群集中使用群集共享卷
 
@@ -30,9 +30,9 @@ CSV 提供了在 NTFS （或 Windows Server 2012 R2 中的 ReFS）上分层的�
 > [!NOTE]
 > Csv 不支持 SQL Server 2012 和早期版本 SQL Server 中 Microsoft SQL Server 群集工作负载。
 
-在 Windows Server 2012 中，CSV 功能得到显著增强。 例如，已删除 Active Directory 域服务上的依赖关系。 已对 **chkdsk** 中的功能改进、与防病毒和备份应用程序的互操作性以及与常规存储功能（如 BitLocker 加密卷和存储空间）的集成的支持。 有关 Windows Server 2012 中引入的 CSV 功能的概述，请参阅[Windows server 2012 中故障转移群集的新增功能 \[重定向\]](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
+在 Windows Server 2012 中，CSV 功能得到显著增强。 例如，已删除 Active Directory 域服务上的依赖关系。 已对 **chkdsk** 中的功能改进、与防病毒和备份应用程序的互操作性以及与常规存储功能（如 BitLocker 加密卷和存储空间）的集成的支持。 有关 Windows Server 2012 中引入的 CSV 功能的概述，请参阅[Windows server 2012 \[ \] 中故障转移群集的新增](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)功能。
 
-Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权、通过服务器服务的可用性增加了复原能力、可以分配给 CSV 缓存的物理内存量的灵活性、更好的诊断能力和增强的互操作性（包括对 ReFS 和重复数据删除的支持）。 有关详细信息，请参阅[故障转移群集中的新增功能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
+Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权、通过服务器服务的可用性增加了复原能力、可以分配给 CSV 缓存的物理内存量的灵活性、更好的诊断能力和增强的互操作性（包括对 ReFS 和重复数据删除的支持）。 有关详细信息，请参阅[故障转移群集中的新增功能](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)。
 
 > [!NOTE]
 > 有关将 CSV 上的数据重复删除用于虚拟桌面基础结构 (VDI) 方案的信息，请参阅博客文章 [在 Windows Server 2012 R2 中部署 VDI 存储的数据重复删除](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) 和 [在 Windows Server 2012 R2 中将数据重复删除扩展到新的工作负荷](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx)。
@@ -46,27 +46,27 @@ Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权、通�
 当你配置支持 CSV 的网络时，请考虑以下内容。
 
 - **多个网络和多个网络适配器**。 若要在发生网络故障时启用容错能力，我们建议多个群集网络执行 CSV 通信，或者配置成组网络适配器。
-    
-    如果群集节点已连接到不应由该群集使用的网络，则应该禁用它们。 例如，我们建议你禁用 iSCSI 网络，以供群集禁止这些网络上的 CSV 通信。 若要禁用网络，请在故障转移群集管理器中 **，选择 "网络"，** 选择 "网络"，选择 "**属性**" 操作，然后选择 "不**允许在此网络上进行群集网络通信"** 。 或者，你可以使用[Get-clusternetwork](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) Windows PowerShell cmdlet 配置网络的**角色**属性。
+
+    如果群集节点已连接到不应由该群集使用的网络，则应该禁用它们。 例如，我们建议你禁用 iSCSI 网络，以供群集禁止这些网络上的 CSV 通信。 若要禁用网络，请在故障转移群集管理器中 **，选择 "网络"，** 选择 "网络"，选择 "**属性**" 操作，然后选择 "不**允许在此网络上进行群集网络通信"**。 或者，你可以使用[Get-clusternetwork](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) Windows PowerShell cmdlet 配置网络的**角色**属性。
 - **网络适配器属性**。 在执行群集通信的所有适配器的属性中，确保以下设置处于启用状态：
 
-  - “Microsoft 网络的客户端” 和“Microsoft 网络的文件和打印机共享” **File 和“Microsoft 网络的文件和打印机共享” Printer Sharing for Microsoft Networks**。 这些设置支持服务器消息块 (SMB) 3.0，默认情况下用于在节点之间执行 CSV 通信。 若要启用 SMB，还请确保服务器服务和工作站服务正在运行，并且将它们配置为在每个群集节点上自动启动。
+  - “Microsoft 网络的客户端”**** 和“Microsoft 网络的文件和打印机共享”****。 这些设置支持服务器消息块 (SMB) 3.0，默认情况下用于在节点之间执行 CSV 通信。 若要启用 SMB，还请确保服务器服务和工作站服务正在运行，并且将它们配置为在每个群集节点上自动启动。
 
     >[!NOTE]
     >在 Windows Server 2012 R2 中，每个故障转移群集节点都有多个服务器服务实例。 存在两个实例：可处理来自访问常规文件共享的 SMB 客户端的传入通信和仅可处理节点间 CSV 通信的第二个 CSV 实例。 此外，如果节点上的服务器服务变得不正常，CSV 所有权将自动转换到另一个节点。
 
     SMB 3.0 包括 SMB 多通道和 SMB 直通功能，使 CSV 通信能够在群集中跨多个网络进行流式传输并且利用支持远程直接内存访问 (RDMA) 的网络适配器。 默认情况下，SMB 多通道用于 CSV 通信。 有关详细信息，请参阅[服务器消息块概述](../storage/file-server/file-server-smb-overview.md)。
-  - “Microsoft 故障转移群集虚拟适配器性能筛选器”。 此设置可改进节点功能以在需要到达 CSV 时执行 I/O 重定向，例如，当连接故障阻止节点直接连接到 CSV 磁盘时。 有关详细信息，请参阅本主题后面的[关于 CSV 通信中的 i/o 同步和 i/o 重定向](#about-io-synchronization-and-io-redirection-in-csv-communication)。
+  - “Microsoft 故障转移群集虚拟适配器性能筛选器”****。 此设置可改进节点功能以在需要到达 CSV 时执行 I/O 重定向，例如，当连接故障阻止节点直接连接到 CSV 磁盘时。 有关详细信息，请参阅本主题后面的[关于 CSV 通信中的 i/o 同步和 i/o 重定向](#about-io-synchronization-and-io-redirection-in-csv-communication)。
 - **群集网络优先级**。 通常，我们建议你不要更改网络的群集配置首选项。
 - **IP 子网配置**。 使用 CSV 的网络中的节点不需要特定的子网配置。 CSV 可以支持多子网群集。
-- **基于策略的服务质量 (QoS)** 。 我们建议你在使用 CSV 时，针对每个节点的网络通信配置 QoS 优先级策略和最小带宽策略。 有关详细信息，请参阅[服务质量（QoS）](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831679(v%3dws.11)>)。
+- **基于策略的服务质量 (QoS)**。 我们建议你在使用 CSV 时，针对每个节点的网络通信配置 QoS 优先级策略和最小带宽策略。 有关详细信息，请参阅[服务质量（QoS）](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831679(v%3dws.11)>)。
 - **存储网络**。 有关存储网络建议，请查看你的存储供应商提供的指南。 有关 CSV 存储的其他注意事项，请参阅本主题后面的[存储和磁盘配置要求](#storage-and-disk-configuration-requirements)。
 
 有关故障转移群集的硬件、网络和存储要求的概述，请参阅[故障转移群集硬件要求和存储选项](clustering-requirements.md)。
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>有关 CSV 通信中的 I/O 同步和 I/O 重定向
 
-- **I/o 同步**： CSV 允许多个节点同时具有对同一共享存储的读写访问权限。 当某个节点在 CSV 卷上执行磁盘输入/输出 (I/O) 时，该节点将直接与存储进行通信（例如，通过存储区域网络 (SAN)）。 但是，在任何时候，单个节点（称为协调器节点） "拥有" 与该 LUN 关联的物理磁盘资源。 CSV 卷的协调器节点作为“磁盘”下的“所有者节点”显示在故障转移群集管理器中。 它还显示在[Add-clustersharedvolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell cmdlet 的输出中。
+- **I/o 同步**： CSV 允许多个节点同时具有对同一共享存储的读写访问权限。 当某个节点在 CSV 卷上执行磁盘输入/输出 (I/O) 时，该节点将直接与存储进行通信（例如，通过存储区域网络 (SAN)）。 但是，在任何时候，单个节点（称为协调器节点） "拥有" 与该 LUN 关联的物理磁盘资源。 CSV 卷的协调器节点作为“磁盘”**** 下的“所有者节点”**** 显示在故障转移群集管理器中。 它还显示在[Add-clustersharedvolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell cmdlet 的输出中。
 
   >[!NOTE]
   >在 Windows Server 2012 R2 中，CSV 所有权根据每个节点所拥有的 CSV 卷的数量均匀地分布在故障转移群集节点上。 此外，当存在以下条件时自动重新平衡所有权：CSV 故障转移、某个节点重新加入该群集、将新节点添加到该群集、重新启动群集节点，或者在关闭故障转移群集后启动该群集。
@@ -94,7 +94,7 @@ Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权、通�
 - **文件系统格式**。 在 Windows Server 2012 R2 中，CSV 卷的磁盘或存储空间必须是使用 NTFS 或 ReFS 分区的基本磁盘。 在 Windows Server 2012 中，CSV 卷的磁盘或存储空间必须是使用 NTFS 分区的基本磁盘。
 
   CSV 具有以下附加要求：
-    
+
   - 在 Windows Server 2012 R2 中，不能将磁盘用于使用 FAT 或 FAT32 进行格式化的 CSV。
   - 在 Windows Server 2012 中，不能将磁盘用于使用 FAT、FAT32 或 ReFS 进行格式化的 CSV。
   - 如果你想要使用 CSV 的存储空间，则可以配置简单空间或镜像空间。 在 Windows Server 2012 R2 中，还可以配置奇偶校验空间。 （在 Windows Server 2012 中，CSV 不支持奇偶校验空间。）
@@ -102,7 +102,7 @@ Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权、通�
   - 将磁盘添加为 CSV 后，采用 CSVFS 格式（适用于 CSV 文件系统）指定它。 这允许群集和其他软件将 CSV 存储从其他 NTFS 或 ReFS 存储中区分开。 通常情况下，CSVFS 支持与 NTFS 或 ReFS 相同的功能。 但是，某些功能不受支持。 例如，在 Windows Server 2012 R2 中，不能在 CSV 上启用压缩。 在 Windows Server 2012 中，不能在 CSV 上启用重复数据删除或压缩。
 - **群集中的资源类型**。 对于 CSV 卷，必须使用物理磁盘资源类型。 默认情况下，添加到群集存储的磁盘或存储空间将会采用此方式自动配置。
 - **选择群集存储中的 CSV 磁盘或其他磁盘**。 当选择群集虚拟机的一个或多个磁盘时，请考虑将如何使用每个磁盘。 如果将磁盘用于存储由 Hyper-V 创建的文件（如 VHD 文件或配置文件），则可以从 CSV 磁盘或群集存储中的其他可用磁盘中进行选择。 如果磁盘是直接附加到虚拟机的物理磁盘（也称为传递磁盘），则你不能选择 CSV 磁盘，并且必须从群集存储中其他可用磁盘中进行选择。
-- **用于标识磁盘的路径名称**。 使用路径名称标识 CSV 中的磁盘。 每个路径在节点的系统驱动器上显示为 **\\ClusterStorage**文件夹下的编号卷。 当从群集中的任何节点进行查看时，此路径相同。 可以重命名这些卷（如果需要）。
+- **用于标识磁盘的路径名称**。 使用路径名称标识 CSV 中的磁盘。 每个路径在节点的系统驱动器上显示为** \\ ClusterStorage**文件夹下带编号的卷。 当从群集中的任何节点进行查看时，此路径相同。 可以重命名这些卷（如果需要）。
 
 有关 CSV 的存储要求，请查看你的存储供应商提供的指南。 有关 CSV 的其他存储计划注意事项，请参阅本主题后面的[计划在故障转移群集中使用 CSV](#plan-to-use-csv-in-a-failover-cluster)。
 
@@ -111,7 +111,7 @@ Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权、通�
 若要使用 CSV，你的节点必须满足以下要求：
 
 - **系统磁盘的驱动器号**。 在所有节点上，系统磁盘的驱动器号必须相同。
-- **身份验证协议**。 必须在所有节点上启用 NTLM 协议。 默认情况下已启用此项。
+- **身份验证协议**。 必须在所有节点上启用 NTLM 协议。 此项已默认启用。
 
 ## <a name="plan-to-use-csv-in-a-failover-cluster"></a>计划在故障转移群集中使用 CSV
 
@@ -152,21 +152,21 @@ Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权、通�
 
 ## <a name="add-a-disk-to-csv-on-a-failover-cluster"></a>将磁盘添加到故障转移群集上的 CSV
 
-默认情况下，CSV 功能在故障转移群集中处于启用状态。 若要将磁盘添加到 CSV，你必须将磁盘添加到群集的“可用存储”组（如果尚未添加），然后将磁盘添加到该群集上 CSV。 你可以使用故障转移群集管理器或故障转移群集 Windows PowerShell cmdlet 来执行这些过程。
+默认情况下，CSV 功能在故障转移群集中处于启用状态。 若要将磁盘添加到 CSV，你必须将磁盘添加到群集的“可用存储”**** 组（如果尚未添加），然后将磁盘添加到该群集上 CSV。 你可以使用故障转移群集管理器或故障转移群集 Windows PowerShell cmdlet 来执行这些过程。
 
 ### <a name="add-a-disk-to-available-storage"></a>将磁盘添加到可用存储
 
-1. 在故障转移群集管理器的控制台树中，展开该群集的名称，然后展开“存储”。
+1. 在故障转移群集管理器的控制台树中，展开该群集的名称，然后展开“存储”****。
 2. 右键单击 "**磁盘**"，然后选择 "**添加磁盘**"。 将出现一个列表，显示可添加的以供在故障转移群集中使用的磁盘。
-3. 选择要添加的磁盘，然后选择 **"确定"** 。
+3. 选择要添加的磁盘，然后选择 **"确定"**。
 
-    现在将磁盘分配给“可用存储”组。
+    现在将磁盘分配给“可用存储”**** 组。
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-available-storage"></a>Windows PowerShell 等效命令（将磁盘添加到可用存储）
 
-下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
+下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
 
-以下示例将标识已准备好添加到群集的磁盘，然后将它们添加到“可用存储”组。
+以下示例将标识已准备好添加到群集的磁盘，然后将它们添加到“可用存储”**** 组。
 
 ```PowerShell
 Get-ClusterAvailableDisk | Add-ClusterDisk
@@ -177,16 +177,16 @@ Get-ClusterAvailableDisk | Add-ClusterDisk
 1. 在故障转移群集管理器的控制台树中，展开群集名称，展开 "**存储**"，然后选择 "**磁盘**"。
 2. 选择分配给**可用存储**的一个或多个磁盘，右键单击所选内容，然后选择 "**添加到群集共享卷**"。
 
-    现在将磁盘分配给群集中的“群集共享卷”组。 在 %SystemDisk%ClusterStorage 文件夹下，向每个群集节点公开作为带编号的卷（装入点）的磁盘。 这些卷将出现在 CSVFS 文件系统中。
+    现在将磁盘分配给群集中的“群集共享卷”**** 组。 在 %SystemDisk%ClusterStorage 文件夹下，向每个群集节点公开作为带编号的卷（装入点）的磁盘。 这些卷将出现在 CSVFS 文件系统中。
 
 >[!NOTE]
 >你可以在 %SystemDisk%ClusterStorage 文件夹中重命名 CSV 卷。
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-csv"></a>Windows PowerShell 等效命令（将磁盘添加到 CSV）
 
-下面的 Windows PowerShell cmdlet 将执行与前面的过程相同的功能。 每行输入一个 cmdlet，即使此处由于格式设置约束导致它们换行而显示在多行中。
+下面一个或多个 Windows PowerShell cmdlet 执行的功能与前面的过程相同。 在同一行输入每个 cmdlet（即使此处可能因格式限制而出现多行换行）。
 
-以下示例将“可用存储”中的**群集磁盘 1** 添加到本地群集上的 CSV。
+以下示例将“可用存储”**** 中的*群集磁盘 1* 添加到本地群集上的 CSV。
 
 ```PowerShell
 Add-ClusterSharedVolume –Name "Cluster Disk 1"
@@ -203,12 +203,12 @@ CSV 缓存通过将系统内存 (RAM) 分配为直写缓存，在只读无缓冲
 
 下表介绍了控制 CSV 缓存的两个配置设置。
 
-| Windows Server 2012 R2 及更高版本 |  Windows Server 2012                 | 说明 |
+| Windows Server 2012 R2 及更高版本 |  Windows Server 2012                 | 描述 |
 | -------------------------------- | ------------------------------------ | ----------- |
 | BlockCacheSize                   | SharedVolumeBlockCacheSizeInMB       | 这是群集公用属性，它允许你定义要为群集中每个节点上的 CSV 保留的内存量（以兆字节为单位）。 例如，如果定义了值 512，则在每个节点上保留 512 MB 的系统内存。 （在许多群集中，建议使用 512 MB 值。）默认设置为0（表示禁用）。 |
 | EnableBlockCache                 | CsvEnableBlockCache                  | 这是群集物理磁盘资源的专用属性。 它允许你在添加到 CSV 的单个磁盘上启用 CSV 缓存。 在 Windows Server 2012 中，默认设置为0（表示禁用）。 若要在磁盘上启用 CSV 缓存，请配置值 1。 默认情况下，在 Windows Server 2012 R2 中启用此设置。 |
 
-通过在“群集 CSV 卷缓存”下添加计数器，可在性能监视器中监视 CSV 缓存。
+通过在“群集 CSV 卷缓存”**** 下添加计数器，可在性能监视器中监视 CSV 缓存。
 
 #### <a name="configure-the-csv-cache"></a>配置 CSV 缓存
 
@@ -218,13 +218,13 @@ CSV 缓存通过将系统内存 (RAM) 分配为直写缓存，在只读无缓冲
     - 对于 Windows Server 2012 R2 及更高版本：
 
         ```PowerShell
-        (Get-Cluster).BlockCacheSize = 512  
+        (Get-Cluster).BlockCacheSize = 512
         ```
 
     - 对于 Windows Server 2012：
 
         ```PowerShell
-        (Get-Cluster).SharedVolumeBlockCacheSizeInMB = 512  
+        (Get-Cluster).SharedVolumeBlockCacheSizeInMB = 512
         ```
 3. 在 Windows Server 2012 中，若要在名为*群集磁盘 1*的 csv 上启用 csv 缓存，请输入以下内容：
 
@@ -235,7 +235,7 @@ CSV 缓存通过将系统内存 (RAM) 分配为直写缓存，在只读无缓冲
 >[!NOTE]
 > * 在 Windows Server 2012 中，你只能将总物理 RAM 的20% 分配给 CSV 缓存。 在 Windows Server 2012 R2 及更高版本中，最多可分配80%。 由于横向扩展文件服务器通常不受内存的约束，因此可以通过使用 CSV 缓存的额外内存来完成较大的性能增益。
 > * 若要避免资源争用，请在修改分配给 CSV 缓存的内存后，重新启动群集中的每个节点。 在 Windows Server 2012 R2 及更高版本中，不再需要重新启动。
-> * 在单个磁盘上启用或禁用CSV 缓存后，必须使物理磁盘资源脱机并将其重新联机，才能使设置生效。 （默认情况下，在 Windows Server 2012 R2 及更高版本中，CSV 缓存处于启用状态。） 
+> * 在单个磁盘上启用或禁用CSV 缓存后，必须使物理磁盘资源脱机并将其重新联机，才能使设置生效。 （默认情况下，在 Windows Server 2012 R2 及更高版本中，CSV 缓存处于启用状态。）
 > * 有关包括性能计数器相关信息的 CSV 缓存的详细信息，请参阅博客文章 [如何启用 CSV 缓存](https://blogs.msdn.microsoft.com/clustering/2013/07/19/how-to-enable-csv-cache/)。
 
 ## <a name="backing-up-csvs"></a>备份 Csv
@@ -256,7 +256,7 @@ CSV 缓存通过将系统内存 (RAM) 分配为直写缓存，在只读无缓冲
 > [!WARNING]
 > 如果需要在 CSV 卷上还原备份数据，请注意备份应用程序在群集节点上维护和还原应用程序一致的数据时的功能和限制。 例如，借助某些应用程序，如果在不同于备份 CSV 卷所在的节点上还原 CSV，则你可能会无意中覆盖正在进行还原的节点上的有关应用程序状态的重要数据。
 
-## <a name="more-information"></a>详细信息
+## <a name="more-information"></a>更多信息
 
 - [故障转移群集](failover-clustering.md)
-- [部署群集存储空间](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)
+- [部署群集存储空间](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

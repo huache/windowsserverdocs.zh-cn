@@ -1,5 +1,5 @@
 ---
-title: DNS 客户端疑难解答
+title: 排查 DNS 客户端问题
 description: 本文介绍如何从客户端对 DNS 问题进行故障排除。
 manager: dcscontentpm
 ms.technology: networking-dns
@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: ffc772bafa0027d516194b2741e7680065c0db4b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2a9b44807ae6bc9f4c446d4af2150caf09955899
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860060"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182333"
 ---
-# <a name="troubleshooting-dns-clients"></a>DNS 客户端疑难解答
+# <a name="troubleshooting-dns-clients"></a>排查 DNS 客户端问题
 
 本文介绍如何解决来自 DNS 客户端的问题。
 
@@ -56,26 +56,26 @@ ping 10.0.0.1
 
 ### <a name="dns-query-tests"></a>DNS 查询测试
 
-如果 DNS 客户端可以 ping DNS 服务器计算机，请尝试使用以下 `nslookup` 命令来测试服务器是否可响应 DNS 客户端。 由于 nslookup 不使用客户端的 DNS 缓存，因此名称解析将使用客户端的配置的 DNS 服务器。
+如果 DNS 客户端可以对 DNS 服务器计算机执行 ping 操作，请尝试使用以下 `nslookup` 命令来测试服务器是否可响应 dns 客户端。 由于 nslookup 不使用客户端的 DNS 缓存，因此名称解析将使用客户端的配置的 DNS 服务器。
 
 #### <a name="test-a-client"></a>测试客户端
 
 ```cmd
 nslookup <client>
 ```
-  
+
 例如，如果客户端计算机名为**client1**，请运行以下命令：
-  
+
 ```cmd
 nslookup client1
 ```
-  
+
 如果未返回成功的响应，请尝试运行以下命令：
-  
+
 ```cmd
 nslookup <fqdn of client>
 ```
-  
+
 例如，如果 FQDN 为**client1.corp.contoso.com**，请运行以下命令：
 
 ```cmd
@@ -85,7 +85,7 @@ nslookup client1.corp.contoso.com.
 > [!NOTE]
 > 运行此测试时，必须包含尾随句点。
 
-如果 Windows 成功找到了 FQDN 但找不到短名称，请检查 NIC 的 "高级 TCP/IP 设置" 的 "DNS" 选项卡上的 DNS 后缀配置。 有关详细信息，请参阅[配置 DNS 解析](https://docs.microsoft.com/previous-versions/tn-archive/dd163570(v=technet.10)#configuring-dns-resolution)。
+如果 Windows 成功找到了 FQDN 但找不到短名称，请检查 NIC 的 "高级 TCP/IP 设置" 的 "DNS" 选项卡上的 DNS 后缀配置。 有关详细信息，请参阅[配置 DNS 解析](/previous-versions/tn-archive/dd163570(v=technet.10)#configuring-dns-resolution)。
 
 #### <a name="test-the-dns-server"></a>测试 DNS 服务器
 
@@ -118,14 +118,14 @@ nslookup app1.corp.contoso.com
 nslookup <external name>
 ```
 
-例如： 
+例如：
 ```cmd
 nslookup bing.com
 ```
 
-如果所有这四项测试均已成功，请运行 `ipconfig /displaydns`，然后检查输出中是否有失败的名称。 如果在失败名称下看到 "名称不存在"，则表示从 DNS 服务器返回了否定响应，并缓存在客户端上。 
+如果所有这四项测试均成功，请运行 `ipconfig /displaydns` 并检查输出中是否有失败的名称。 如果在失败名称下看到 "名称不存在"，则表示从 DNS 服务器返回了否定响应，并缓存在客户端上。
 
-若要解决此问题，请通过运行 `ipconfig /flushdns`来清除缓存。
+若要解决此问题，请通过运行来清除缓存 `ipconfig /flushdns` 。
 
 ## <a name="next-step"></a>下一步
 

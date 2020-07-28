@@ -8,12 +8,12 @@ ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: e1291b377c408c23493ce5a7a946a343f5e28ead
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 12c80e7e266ac3a8c788781a4d98f0a856164084
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958729"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182013"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN 技术概述
 
@@ -84,7 +84,7 @@ NPS 允许您为连接请求身份验证和授权创建和强制实施组织范�
 
 证书颁发机构（CA）服务器是运行 Active Directory 证书服务的证书颁发机构。 VPN 配置需要基于 Active Directory 的公钥基础结构（PKI）。
 
-组织可以通过将个人、设备或服务的标识绑定到相应的公钥，使用 AD CS 来增强安全性。 AD CS 还包括允许在各种可伸缩环境中管理证书注册及吊销的功能。 有关详细信息，请参阅[Active Directory 证书服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))和[公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)。
+组织可以通过将个人、设备或服务的标识绑定到相应的公钥，使用 AD CS 来增强安全性。 AD CS 还包括允许在各种可伸缩环境中管理证书注册及吊销的功能。 有关详细信息，请参阅[Active Directory 证书服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))和[公钥基础结构设计指南](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/designing-and-implementing-a-pki-part-i-design-and-planning/ba-p/396953)。
 
 部署完成期间，你将在 CA 上配置以下证书模板。
 
@@ -122,7 +122,7 @@ NPS 允许您为连接请求身份验证和授权创建和强制实施组织范�
 
 3. 通过将证书密钥与计算机网络上的计算机、用户或设备帐户相关联进行身份验证。
 
-有关详细信息，请参阅[AD CS 循序渐进指南：双层 PKI 层次结构部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)。
+有关详细信息，请参阅[Active Directory 证书服务概述](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
 
 ## <a name="active-directory-domain-services-ad-ds"></a>Active Directory 域服务 (AD DS)
 
@@ -159,7 +159,7 @@ Active Directory 用户和计算机中的用户帐户具有 NPS 在授权过程�
 除了服务器组件，请确保配置为使用 VPN 的客户端计算机正在运行 Windows 10 周年更新（版本1607）。 Windows 10 VPN 客户端必须已加入域到 Active Directory 域。
 
 
-Windows 10 VPN 客户端是高度可配置的，并且提供了许多选项。 为了更好地说明此方案使用的特定功能，表1标识了此部署引用的 VPN 功能类别和特定配置。 你将使用本部署稍后部分中讨论的 VPNv2 配置服务提供程序（CSP）来配置这些功能的各个设置。 
+Windows 10 VPN 客户端是高度可配置的，并且提供了许多选项。 为了更好地说明此方案使用的特定功能，表1标识了此部署引用的 VPN 功能类别和特定配置。 你将使用本部署稍后部分中讨论的 VPNv2 配置服务提供程序（CSP）来配置这些功能的各个设置。
 
 表 1. 此部署中讨论的 VPN 功能和配置
 
@@ -204,8 +204,8 @@ Windows 10 提供了许多 Csp，但此部署侧重于使用 VPNv2 CSP 来配置
 
 - [Active Directory 证书服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))：本文档概述了 Windows Server 2012 中的 Active Directory 证书服务（AD CS） &reg; 。 AD CS 是允许你构建公钥基础机构 (PKI) 并为你的组织提供公钥加密、数字证书和数字签名功能的服务器角色。
 
-- [公钥基础结构设计指南](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)：此 wiki 提供了有关设计公钥基础结构（pki）的指导。 在配置 PKI 和证书颁发机构（CA）层次结构之前，你应该了解你的组织的安全策略和证书实行声明（CPS）。
+- [公钥基础结构设计指南](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/designing-and-implementing-a-pki-part-i-design-and-planning/ba-p/396953)：此论坛提供有关设计公钥基础结构（pki）的指导。 在配置 PKI 和证书颁发机构（CA）层次结构之前，你应该了解你的组织的安全策略和证书实行声明（CPS）。
 
-- [AD CS 循序渐进指南：双层 PKI 层次结构部署](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)：本循序渐进指南介绍了 &reg; 在实验室环境中设置 Active Directory 证书服务（AD CS）的基本配置所需的步骤。 Windows Server &reg; 2008 R2 中的 AD CS 提供可自定义的服务，用于创建和管理在采用公钥技术的软件安全系统中使用的公钥证书。
+- [Active Directory 证书服务概述](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))：此循序渐进指南介绍了 &reg; 在实验室环境中设置 Active Directory 证书服务（AD CS）的基本配置所需的步骤。 Windows Server &reg; 2008 R2 中的 AD CS 提供可自定义的服务，用于创建和管理在采用公钥技术的软件安全系统中使用的公钥证书。
 
 - [网络策略服务器（NPS）](../../../../networking/technologies/nps/nps-top.md)：本主题概述了 Windows server 2016 中的网络策略服务器。 通过网络策略服务器 (NPS)，你可以针对连接请求身份验证和授权创建并实施组织级网络访问策略。

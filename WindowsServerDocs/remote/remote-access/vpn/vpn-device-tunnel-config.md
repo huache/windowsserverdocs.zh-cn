@@ -9,18 +9,18 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 095e40528d27be4509e3235a0ab4c03e59759f99
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 636c0c56c52f501a54679a569213bcd4e4646b72
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966759"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181983"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中配置 VPN 设备隧道
 
 >适用于： Windows 10 版本1709
 
-Always On VPN 使你能够为设备或计算机创建专用 VPN 配置文件。 Always On VPN 连接包括两种隧道： 
+Always On VPN 使你能够为设备或计算机创建专用 VPN 配置文件。 Always On VPN 连接包括两种隧道：
 
 - _设备隧道_在用户登录到设备之前连接到指定的 VPN 服务器。 预登录连接方案和设备管理将使用设备隧道。
 
@@ -34,7 +34,7 @@ Always On VPN 使你能够为设备或计算机创建专用 VPN 配置文件。 
 
 
 ## <a name="device-tunnel-requirements-and-features"></a>设备隧道要求和功能
-必须启用 VPN 连接的计算机证书身份验证，并定义根证书颁发机构来验证传入的 VPN 连接。 
+必须启用 VPN 连接的计算机证书身份验证，并定义根证书颁发机构来验证传入的 VPN 连接。
 
 ```PowerShell
 $VPNRootCertAuthority = "Common Name of trusted root certification authority"
@@ -46,7 +46,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>VPN 设备隧道配置
 
-下面的示例配置文件 XML 为仅要求客户端发起的请求通过设备隧道的情况提供了良好的指南。  将利用流量筛选器将设备隧道限制为仅管理流量。  此配置适用于 Windows 更新、典型的组策略（GP）和 Microsoft 终结点 Configuration Manager 更新方案，以及用于首次登录而没有缓存凭据或密码重置方案的 VPN 连接。 
+下面的示例配置文件 XML 为仅要求客户端发起的请求通过设备隧道的情况提供了良好的指南。  将利用流量筛选器将设备隧道限制为仅管理流量。  此配置适用于 Windows 更新、典型的组策略（GP）和 Microsoft 终结点 Configuration Manager 更新方案，以及用于首次登录而没有缓存凭据或密码重置方案的 VPN 连接。
 
 对于服务器启动的推送案例（如 Windows 远程管理（WinRM）、远程 GPUpdate 和远程 Configuration Manager 更新方案），必须允许设备隧道上的入站流量，因此无法使用流量筛选器。  如果在设备隧道配置文件中打开流量筛选器，则设备隧道将拒绝入站流量。  此限制将在未来版本中删除。
 
@@ -56,40 +56,40 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 下面是示例 VPN profileXML。
 
 ``` xml
-<VPNProfile>  
-  <NativeProfile>  
-<Servers>vpn.contoso.com</Servers>  
-<NativeProtocolType>IKEv2</NativeProtocolType>  
-<Authentication>  
-  <MachineMethod>Certificate</MachineMethod>  
-</Authentication>  
-<RoutingPolicyType>SplitTunnel</RoutingPolicyType>  
+<VPNProfile>
+  <NativeProfile>
+<Servers>vpn.contoso.com</Servers>
+<NativeProtocolType>IKEv2</NativeProtocolType>
+<Authentication>
+  <MachineMethod>Certificate</MachineMethod>
+</Authentication>
+<RoutingPolicyType>SplitTunnel</RoutingPolicyType>
  <!-- disable the addition of a class based route for the assigned IP address on the VPN interface -->
-<DisableClassBasedDefaultRoute>true</DisableClassBasedDefaultRoute>  
-  </NativeProfile> 
-  <!-- use host routes(/32) to prevent routing conflicts -->  
-  <Route>  
-<Address>10.10.0.2</Address>  
-<PrefixSize>32</PrefixSize>  
-  </Route>  
-  <Route>  
-<Address>10.10.0.3</Address>  
-<PrefixSize>32</PrefixSize>  
-  </Route>  
-<!-- traffic filters for the routes specified above so that only this traffic can go over the device tunnel --> 
-  <TrafficFilter>  
-<RemoteAddressRanges>10.10.0.2, 10.10.0.3</RemoteAddressRanges>  
+<DisableClassBasedDefaultRoute>true</DisableClassBasedDefaultRoute>
+  </NativeProfile>
+  <!-- use host routes(/32) to prevent routing conflicts -->
+  <Route>
+<Address>10.10.0.2</Address>
+<PrefixSize>32</PrefixSize>
+  </Route>
+  <Route>
+<Address>10.10.0.3</Address>
+<PrefixSize>32</PrefixSize>
+  </Route>
+<!-- traffic filters for the routes specified above so that only this traffic can go over the device tunnel -->
+  <TrafficFilter>
+<RemoteAddressRanges>10.10.0.2, 10.10.0.3</RemoteAddressRanges>
   </TrafficFilter>
-<!-- need to specify always on = true --> 
-  <AlwaysOn>true</AlwaysOn> 
-<!-- new node to specify that this is a device tunnel -->  
+<!-- need to specify always on = true -->
+  <AlwaysOn>true</AlwaysOn>
+<!-- new node to specify that this is a device tunnel -->
  <DeviceTunnel>true</DeviceTunnel>
 <!--new node to register client IP address in DNS to enable manage out -->
 <RegisterDNS>true</RegisterDNS>
 </VPNProfile>
 ```
 
-根据每个特定部署方案的需求，可通过设备隧道配置的其他 VPN 功能是[受信任的网络检测](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection)。
+根据每个特定部署方案的需求，可通过设备隧道配置的其他 VPN 功能是[受信任的网络检测](https://docs.microsoft.com/answers/topics/windows-server-infrastructure.html)。
 
 ```
  <!-- inside/outside detection -->

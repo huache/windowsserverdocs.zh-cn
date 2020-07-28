@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: 95ccfec436ba4143ea7ec70120878a29289d14f7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d7bbef54d0ec554c6a3cf184dcb0414f7456547c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966789"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182153"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>排查存储空间问题和运行状况和运行状态存储空间直通
 
@@ -67,13 +67,13 @@ S2D on StorageSpacesDirect1 Read-only         Unknown      False        True
 
 如果存储池处于 "**未知**" 或 "不**正常**" 运行状况状态，则表示存储池为只读，不能修改，直到将池返回到 "**警告**" 或 **"正常"** 运行状况状态。
 
-|操作状态    |只读原因 |说明|
+|操作状态    |只读原因 |描述|
 |---------            |---------       |--------   |
 |只读|不完整|如果存储池失去其[仲裁](understand-quorum.md)，这表示池中的大多数驱动器都出现故障或处于脱机状态，则可能会发生这种情况。 当某个池失去仲裁时，存储空间会自动将池配置设置为只读，直到有足够的驱动器再次可用。<br><br>**操作：** <br>1. 重新连接任何缺失的驱动器，如果使用存储空间直通，则使所有服务器联机。 <br>2. 通过打开具有管理权限的 PowerShell 会话，然后键入：<br><br> <code>Get-StoragePool <PoolName> -IsPrimordial $False \| Set-StoragePool -IsReadOnly $false</code>|
 ||策略|管理员将存储池设置为只读。<br><br>**操作：** 若要在故障转移群集管理器中将群集存储池设置为读写访问权限，请转到 "**池**"，右键单击该池，然后选择 "**联机**"。<br><br>对于其他服务器和 Pc，请打开具有管理权限的 PowerShell 会话，然后键入：<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
 ||正在启动|存储空间正在启动或等待驱动器连接到池中。 这应该是临时状态。 完全启动后，池应转换为其他操作状态。<br><br>**操作：** 如果池处于 "*正在启动*" 状态，请确保池中的所有驱动器都已正确连接。|
 
-另请参阅[修改具有只读配置的存储池](https://social.technet.microsoft.com/wiki/contents/articles/14861.modifying-a-storage-pool-that-has-a-read-only-configuration.aspx)。
+另请参阅[Windows Server 存储论坛](https://docs.microsoft.com/answers/topics/windows-server-storage.html)。
 
 ## <a name="virtual-disk-states"></a>虚拟磁盘状态
 
@@ -125,7 +125,7 @@ Volume2      Warning      {Degraded, Incomplete} None
 
 如果管理员使虚拟磁盘脱机或虚拟磁盘已分离，则虚拟磁盘还可以是**信息**健康状况状态（如存储空间控制面板项中所示）或**未知**的运行状况状态（如 PowerShell 中所示）。
 
-|操作状态    |分离原因 |说明|
+|操作状态    |分离原因 |描述|
 |---------            |---------       |--------   |
 |已分离             |按策略            |管理员使虚拟磁盘脱机，或将虚拟磁盘设置为需要手动连接，在这种情况下，每次 Windows 重新启动时，都必须手动附加虚拟磁盘。<br><br>**操作**：使虚拟磁盘恢复联机。 若要在虚拟磁盘位于群集存储池时执行此操作，请在故障转移群集管理器选择 "**存储**  >  **池**  >  " "**虚拟磁盘**" 中，选择显示**脱机**状态的虚拟磁盘，然后选择 "**联机**"。 <br><br>若要在不在群集中时使虚拟磁盘重新联机，请以管理员身份打开 PowerShell 会话，然后尝试使用以下命令：<br><br> <code>Get-VirtualDisk \| Where-Object -Filter { $_.OperationalStatus -eq "Detached" } \| Connect-VirtualDisk</code><br><br>若要在 Windows 重新启动后自动附加所有非群集虚拟磁盘，请以管理员身份打开 PowerShell 会话，然后使用以下命令：<br><br> <code>Get-VirtualDisk \| Set-VirtualDisk -ismanualattach $false</code>|
 |            |多数磁盘不正常 |此虚拟磁盘使用的驱动器太多，已丢失或具有陈旧数据。   <br><br>**操作**： <br> 1. 重新连接任何缺失的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br> 2. 所有驱动器和服务器都处于联机状态后，请更换任何出现故障的驱动器。 有关详细信息，请参阅[运行状况服务](../../failover-clustering/health-service-overview.md)。 <br>如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。<br>3. 如果未使用存储空间直通，请使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) cmdlet 修复虚拟磁盘。  <br><br>如果有多个磁盘发生故障，超过了你的数据的副本，并且未在故障之间修复虚拟磁盘，则虚拟磁盘上的所有数据都将永久丢失。 在这种情况下，请删除虚拟磁盘、创建新的虚拟磁盘，然后从备份还原。|
@@ -194,7 +194,7 @@ Generic Physical Disk SSD        119990648832   False In a Pool
 
 下表更具体地描述了每种原因。
 
-|Reason|说明|
+|原因|说明|
 |---|---|
 |在池中|驱动器已属于一个存储池。 <br><br>驱动器一次只能属于一个存储池。 若要在另一个存储池中使用此驱动器，请首先从其现有池中删除该驱动器，这会告诉存储空间将驱动器上的数据移到池中的其他驱动器上。 如果驱动器已从其池断开连接，但未通知存储空间，则重置驱动器。 <br><br>若要安全地从存储池中删除驱动器，请使用[PhysicalDisk](/powershell/module/storage/remove-physicaldisk?view=win10-ps)，或服务器管理器 >**文件和存储服务**  >  **存储池**，>**物理磁盘**，右键单击该驱动器，然后选择 "**删除磁盘**"。<br><br>若要重置驱动器，请使用[PhysicalDisk](/powershell/module/storage/reset-physicaldisk?view=win10-ps)。|
 |不正常|该驱动器不处于正常状态，可能需要更换。|

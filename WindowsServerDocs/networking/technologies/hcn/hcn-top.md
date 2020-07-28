@@ -5,12 +5,12 @@ ms.author: jmesser
 author: jmesser81
 ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 4afde574802bd63db8ea8ca8db9f5daf1a53dc93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e4d665ba431331fbf1f41a0ac4774e58693a5e2
+ms.sourcegitcommit: 717222e9efceb5964872dbf97034cad60f3c48df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859840"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87295041"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>Vm 和容器的主机计算网络（HCN）服务 API
 
@@ -59,8 +59,6 @@ ms.locfileid: "80859840"
 ### <a name="example"></a>示例 
 
 下面是在 VM 的配置文档中表示 SCSI 控制器的对象的此工作流的示例。 
-
-在 Windows 源代码中，使用火星文件定义架构： onecore/vm/dv/net/hns/schema/mars/Schema/HCN
 
 ```
 enum IpamType
@@ -224,9 +222,9 @@ class Route
 } 
 ```
 
-您可以使用诸如[Swagger](https://swagger.io/)这样的工具来生成客户端使用的架构编程语言的特定于语言的表示形式。 Swagger 支持多种语言C#，如、中转、Javascript 和 Python。
+您可以使用诸如[Swagger](https://swagger.io/)这样的工具来生成客户端使用的架构编程语言的特定于语言的表示形式。 Swagger 支持多种语言，如 c #、中转、Javascript 和 Python。
 
-- 为顶级 IPAM & 子网对象[生成C#的代码的示例](example-c-sharp.md)。
+- 为顶级 IPAM & 子网对象[生成的 c # 代码示例](example-c-sharp.md)。
 
 - 为顶级 IPAM & 子网对象生成的 "[开始代码" 示例](example-go.md)。 中转由 Docker 和 Kubernetes 使用，后者是主机计算网络服务 Api 的两个使用者。 "开始" 为封送与 JSON 文档之间的中转类型提供内置支持。
 

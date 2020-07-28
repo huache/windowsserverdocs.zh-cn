@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 0208e23b94b5e7c5012bc99eabf71aa0c7ad944c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: de4fe62b179286f058a9c4508e9f907eeb9ae806
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82037136"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178573"
 ---
 # <a name="plan-your-wsus-deployment"></a>规划 WSUS 部署
 
@@ -48,8 +48,8 @@ ms.locfileid: "82037136"
 
     -   **网络适配器：** 每秒 100 兆位 (Mbps) 或以上（建议使用 1GB）
 
-> [!NOTE] 
-> 这些指导原则假设 WSUS 客户端每 8 小时与服务器同步一次（客户端总共为 30000 个）。 如果同步频率更高，则服务器负载会相应地增加。  
+> [!NOTE]
+> 这些指导原则假设 WSUS 客户端每 8 小时与服务器同步一次（客户端总共为 30000 个）。 如果同步频率更高，则服务器负载会相应地增加。
 
 -   软件要求：
 
@@ -103,7 +103,7 @@ ms.locfileid: "82037136"
    > [!NOTE]
    > 配置按需功能安装源不涉及 WSUS。 有关如何配置这些功能的信息，请参阅 [在 Windows Server 中配置按需功能](https://technet.microsoft.com/library/jj127275.aspx)。
 
-3. 运行 Windows 10 版本 1709 或版本 1803 的企业设备无法直接从 WSUS 安装任何按需功能。 若要安装按需功能，请[创建功能文件（并排存储）](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store)或从以下源之一获取按需功能包：
+3. 运行 Windows 10 版本 1709 或版本 1803 的企业设备无法直接从 WSUS 安装任何按需功能。 若要安装按需功能，请[创建功能文件（并排存储）](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store)或从以下源之一获取按需功能包：
    - [批量许可服务中心](https://www.microsoft.com/licensing/servicecenter) (VLSC) - 需要批量许可访问权限
    - OEM 门户 - 需要 OEM 访问权限
    - MSDN 下载 - 需要 MSDN 订阅
@@ -166,7 +166,7 @@ WSUS 支持以下版本的 SQL Server：
 
 -   对于客户端计算机数量超出一台 WSUS 服务器有效管理范围的大型组织而言，你可以扩展 WSUS。
 
-> [!NOTE] 
+> [!NOTE]
 > 我们建议你不要创建三个级别以上的 WSUS 服务器层次结构。 每个级别将增加向整个连接的服务器传播更新的时间。 虽然在理论上层次结构没有受到限制，但 Microsoft 只对具有五个级别的层次结构部署进行了测试。
 >
 > 另外，下游服务器必须采用与上游服务器同步源相同的 WSUS 版本或更早的版本。

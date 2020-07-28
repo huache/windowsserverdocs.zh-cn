@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 74a181e53e5aea0a3c146b38c0b73f257baa45ef
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e2ea3f0a7f0d3624dc7b16329fbe5c2374ec450f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961549"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182223"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>文件夹重定向、脱机文件和漫游用户配置文件概述
 
@@ -131,8 +131,8 @@ ms.locfileid: "86961549"
 
 | 内容类型 | 参考 |
 | --- | --- |
-| 产品评估 | [为信息工作者提供可靠文件服务和存储支持](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[脱机文件中的新增内容](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)（Windows 7 和 Windows Server 2008 R2）<br>[Windows Vista 中脱机文件的新增内容](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista 中脱机文件的更改](<https://technet.microsoft.com/library/2007.11.offline.aspx>)（TechNet 杂志） |
-| 部署 | [部署文件夹重定向、脱机文件和漫游用户策略文件](deploy-folder-redirection.md)<br>[实施最终用户数据集中管理解决方案：文件夹重定向和脱机文件技术验证和部署](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫游用户数据部署指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[为 Windows 7 计算机配置新增脱机文件功能循序渐进指南](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用文件夹重定向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[实现文件夹重定向](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
+| 产品评估 | [为信息工作者提供可靠文件服务和存储支持](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[脱机文件中的新增内容](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)（Windows 7 和 Windows Server 2008 R2）<br>[Windows Vista 中脱机文件的新增内容](</previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista 中脱机文件的更改](<https://technet.microsoft.com/library/2007.11.offline.aspx>)（TechNet 杂志） |
+| 部署 | [部署文件夹重定向、脱机文件和漫游用户策略文件](deploy-folder-redirection.md)<br>[实施最终用户数据集中管理解决方案：文件夹重定向和脱机文件技术验证和部署](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[管理漫游用户数据部署指南](</previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[为 Windows 7 计算机配置新增脱机文件功能循序渐进指南](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[使用文件夹重定向](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[实现文件夹重定向](</previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
 | 工具和设置 | [MSDN 上的脱机文件](/previous-versions/windows/desktop/offlinefiles/offline-files-portal)<br>[脱机文件组策略参考](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
-| 社区资源 | [文件服务和存储论坛](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[你好，脚本专家！我如何在 Windows 中使用脱机文件功能？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[你好，脚本专家！我如何能启用和禁用脱机文件？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
+| 社区资源 | [文件服务和存储论坛](https://docs.microsoft.com/answers/topics/windows-server-storage.html)<br>[你好，脚本专家！我如何在 Windows 中使用脱机文件功能？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[你好，脚本专家！我如何能启用和禁用脱机文件？](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
 | 相关技术|[Windows Server 中的标识和访问](../../identity/identity-and-access.yml)<br>[Windows Server 中的存储](../storage.yml)<br>[远程访问和服务器管理](../../remote/index.yml) |

@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 description: 使用群集感知更新在运行 Windows Server 的群集上安装更新的要求。
-ms.openlocfilehash: 066aca3adb2ceec19663653a7bc2f0f8cd42da16
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a3f00d6f0118b536745be0afdac8b4a7084a6721
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473304"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178354"
 ---
 # <a name="cluster-aware-updating-requirements-and-best-practices"></a>群集感知更新要求和最佳做法
 
@@ -36,7 +36,7 @@ CAU 需要安装故障转移群集功能和故障转移群集工具。 故障转
 |-----------------------|-----------------------|-------------------------|
 |故障转移群集功能|在所有群集节点上必需|在所有群集节点上必需|
 |故障转移群集工具|在所有群集节点上必需|-远程 \- 更新计算机上需要<br />-需要在所有群集节点上运行[save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet|
-|CAU 群集角色|必须|不是必需|
+|CAU 群集角色|必须|不需要|
 
 ## <a name="obtain-an-administrator-account"></a>获取管理员帐户
 以下管理员要求是使用 CAU 功能所必需的。
@@ -72,9 +72,9 @@ CAU 需要安装故障转移群集功能和故障转移群集工具。 故障转
 |要求|默认状态|自我 \- 更新模式|远程 \- 更新模式|
 |---------------|---|-----------------------|-------------------------|
 |[启用防火墙规则以允许自动重新启动](#BKMK_FW)|已禁用|如果防火墙正在使用中，则在所有群集节点上都是必需的|如果防火墙正在使用中，则在所有群集节点上都是必需的|
-|[启用 Windows 管理规范](#BKMK_WMI)|已启用|在所有群集节点上必需|在所有群集节点上必需|
-|[启用 Windows PowerShell 3.0 或 4.0 和 Windows PowerShell 远程处理](#BKMK_PS)|已启用|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预 \- 更新和更新 \- 运行期间的更新后脚本<br />-使用群集感知更新窗口或[测试 \- Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|
-|[安装 .NET Framework 4.6 或4。5](#BKMK_NET)|已启用|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预 \- 更新和更新 \- 运行期间的更新后脚本<br />-使用群集感知更新窗口或[测试 \- Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|
+|[启用 Windows 管理规范](#BKMK_WMI)|Enabled|在所有群集节点上必需|在所有群集节点上必需|
+|[启用 Windows PowerShell 3.0 或 4.0 和 Windows PowerShell 远程处理](#BKMK_PS)|Enabled|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预 \- 更新和更新 \- 运行期间的更新后脚本<br />-使用群集感知更新窗口或[测试 \- Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|
+|[安装 .NET Framework 4.6 或4。5](#BKMK_NET)|Enabled|在所有群集节点上必需|若要运行以下组件，则在所有群集节点上必需：<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps) cmdlet<br />-PowerShell 预 \- 更新和更新 \- 运行期间的更新后脚本<br />-使用群集感知更新窗口或[测试 \- Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell cmdlet 对群集更新准备情况进行的测试|
 
 ### <a name="enable-a-firewall-rule-to-allow-automatic-restarts"></a><a name="BKMK_FW"></a>启用防火墙规则以允许自动重新启动
 若要在应用更新后允许自动重新启动 \( \) ，如果 \- 在群集节点上使用 Windows 防火墙或非 Microsoft 防火墙，则必须在每个允许以下流量的节点上启用防火墙规则：
@@ -200,7 +200,7 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 
 -   你应在 \- 已保存在网络共享文件夹上的更新前的更新和更新后脚本上设置适当的权限， \- 以防止未经授权的用户可能篡改这些文件。
 
--   若要在自我更新模式中配置 CAU \- ， \( \) 则必须在 ACTIVE DIRECTORY 中创建 cau 群集角色的虚拟计算机对象 VCO。 如果故障转移群集具有足够的权限，则 CAU 可以在添加 CAU 群集角色时自动创建此对象。 但是，由于某些组织中的安全策略，可能需要在 Active Directory 中预留对象。 有关执行此操作的过程，请参阅 [预安排群集角色的帐户的步骤](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account)。
+-   若要在自我更新模式中配置 CAU \- ， \( \) 则必须在 ACTIVE DIRECTORY 中创建 cau 群集角色的虚拟计算机对象 VCO。 如果故障转移群集具有足够的权限，则 CAU 可以在添加 CAU 群集角色时自动创建此对象。 但是，由于某些组织中的安全策略，可能需要在 Active Directory 中预留对象。 有关执行此操作的过程，请参阅 [预安排群集角色的帐户的步骤](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account)。
 
 -   若要在 IT 组织中根据相似更新需求跨故障转移群集保存和重复使用更新运行设置，你可以创建更新运行配置文件。 此外，根据更新模式，你可以在所有远程更新协调器计算机或故障转移群集均可访问的文件共享上保存和管理更新运行配置文件。 有关详细信息，请参阅[高级选项和更新 CAU 的运行配置文件](cluster-aware-updating-options.md)。
 

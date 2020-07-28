@@ -2,24 +2,23 @@
 title: 对于更大部署的支持
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 07d0c4c6-3e92-4969-82b8-105e46ab8d97
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c54defee45e8950d878ba70f627c1e645a2c8586
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d98ab8b203bc73da4129d63b5a2b7518742a3667
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817820"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181643"
 ---
 # <a name="support-for-larger-deployments"></a>对于更大部署的支持
 
 >适用于： Windows Server 2016 Essentials
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 本主题中所述的功能仅适用于启用了 Essentials Experience 角色的 Windows Server 2016，而不适用于 Windows Server 2016 Essentials SKU。
 
 
@@ -42,7 +41,7 @@ Windows server 2012 R2 Essentials 只支持每个服务器一个域，这是必�
 
 你现在可以选择一个指定的域控制器，它将缩短 Active Directory 域对象的检索时间，并协调域中其他域控制器的帐户更改同步。
 
-默认指定的域控制器将与运行 Windows Server Essentials Experience 服务器角色的服务器相同。 如果该服务器是成员服务器，这意味着它不是域控制器，则将根据测试域中的域控制器与运行的服务器的网络延迟最低的域控制器Windows Server Experience Server 角色。 如果要手动更改哪个服务器是指定的域控制器，可以在**Windows Server Essentials 仪表板**的 "**设置**" 中执行此操作，如下所示。
+默认指定的域控制器将与运行 Windows Server Essentials Experience 服务器角色的服务器相同。 如果该服务器是成员服务器，这意味着它不是域控制器，则根据测试域中的域控制器与运行 Windows Server Experience Server 角色的服务器的网络延迟最低，将自动确定默认的指定域控制器。 如果要手动更改哪个服务器是指定的域控制器，可以在**Windows Server Essentials 仪表板**的 "**设置**" 中执行此操作，如下所示。
 
 ![屏幕截图显示前台和 Windows Server Essentials 仪表板中的 "设置" "控制面板"。 "设置" 控制面板的 "指定的域控制器" 页当前处于选中状态。](media/larger-deployments-1.PNG)
 
@@ -57,7 +56,7 @@ Windows Server 2016 Essentials 支持500用户和500设备。 这样做可能是
 
 显示使用 Windows Server Essentials 仪表板的搜索功能以搜索字符串 "d5c" 的屏幕截图。 此搜索的结果包括两个文件和文件夹，以及两个用户。
 
-> [!NOTE]  
+> [!NOTE]
 > 当 Windows Server Essentials 服务器角色的支持用户和设备限制增加时，支持的客户端备份限制将保留在75。
 
 <a name="see-also"></a>另请参阅

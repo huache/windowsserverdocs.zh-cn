@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 49c1d5a378d6e0be224e02fdd80346ee172ca45b
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 6ed87f2d03ef725c3efdfc2453b53201017e66e0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269240"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181943"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Windows 应用商店客户端入门
 
@@ -58,7 +58,7 @@ ms.locfileid: "84269240"
    - **剪贴板** – 如果启用，可以从/向远程电脑复制文本和图像。
    - **音频播放** – 选择要在远程会话期间用于音频的设备。 可以选择在本地设备、远程电脑上播放声音或完全不播放。
    - **音频录制** – 启用时，可以在远程电脑上对应用程序使用本地麦克风。
-4. 点击“保存”。
+4. 点击“保存”  。
 
 需要编辑这些设置？ 点击桌面旁边的溢出菜单 (...)，然后点击“编辑”。
 
@@ -95,14 +95,14 @@ ms.locfileid: "84269240"
 
 1. 在“连接中心”，点击“设置”。
 2. 点击网关旁边的 + 添加新网关。
-      
+
       >[!NOTE]
       >添加新连接时，也可添加一个网关。
 
 3. 输入以下信息：
    - **服务器名称** – 要用作网关的计算机的名称。 服务器名称可以是 Windows 计算机名、Internet 域名或 IP 地址。 此外可以向服务器名称添加端口信息（例如：RDGateway:443 或 10.0.0.1:443）。
    - **用户帐户** - 选择或添加一个用户帐户，它将用于你要连接到的远程桌面网关。 还可选择“使用桌面用户帐户”，使用远程桌面连接所用的相同凭据。
-4. 点击“保存”。  
+4. 点击“保存”。
 
 ## <a name="global-app-settings"></a>全局应用程序设置
 
@@ -193,8 +193,8 @@ ms.locfileid: "84269240"
 
 | 鼠标模式    | 鼠标操作      | 手势                                                               |
 |---------------|----------------------|-----------------------------------------------------------------------|
-| 直接触控  | 左键单击           | 单指点击                                                          |
-| 直接触控  | 右键单击          | 单指点击并按住                                                |
+| 直接触摸  | 左键单击           | 单指点击                                                          |
+| 直接触摸  | 右键单击          | 单指点击并按住                                                |
 | 鼠标指针 | 左键单击           | 单指点击                                                          |
 | 鼠标指针 | 左键单击并拖动  | 单指双击并按住，然后拖动                               |
 | 鼠标指针 | 右键单击          | 双指点击                                                          |
@@ -203,4 +203,4 @@ ms.locfileid: "84269240"
 | 鼠标指针 | 缩放                 | 双指捏合可缩小，双指分开可放大 |
 
 > [!TIP]
-> 欢迎提出问题和意见。 但是，如果你在本文评论部分发布支持请求或产品反馈，我们将无法回复你的反馈。 如需帮助或想要排查客户端问题，强烈建议你转到[远程桌面客户论坛](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winrdc)，启动新的会话。 如果有功能方面的建议，可通过[反馈中心](feedback-hub://?tabid=2&contextid=605)告诉我们。
+> 欢迎提出问题和意见。 但是，如果你在本文评论部分发布支持请求或产品反馈，我们将无法回复你的反馈。 如需帮助或想要排查客户端问题，强烈建议你转到[远程桌面客户论坛](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)，启动新的会话。 如果有功能方面的建议，可通过[反馈中心](feedback-hub://?tabid=2&contextid=605)告诉我们。

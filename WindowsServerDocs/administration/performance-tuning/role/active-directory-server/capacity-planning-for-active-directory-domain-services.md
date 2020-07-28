@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: fc3f1dce4bb88d8581e3d8a890e3c121badaba71
-ms.sourcegitcommit: 6d7a394edefba684f7b6983c65026679c1b7a485
+ms.openlocfilehash: bc8486369d076573d249b9d5cfb0ba669619461e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776719"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179223"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Active Directory 域服务的容量规划
 
@@ -45,7 +45,7 @@ ms.locfileid: "84776719"
 
 在本文中，需要满足以下基准要求：
 
-- 读者已阅读并熟悉[Windows Server 2012 R2 的性能优化指南](https://docs.microsoft.com/previous-versions//dn529133(v=vs.85))。
+- 读者已阅读并熟悉[Windows Server 2012 R2 的性能优化指南](/previous-versions//dn529133(v=vs.85))。
 - Windows Server 平台是基于 x64 的体系结构。 即使你的 Active Directory 环境安装在 Windows Server 2003 x86 上（现在超出了支持生命周期的结束时间），并且拥有一个大小不到 1.5 GB 的目录信息树（DIT），并且可以轻松地将其保存在内存中，本文中的准则仍适用。
 - 容量规划是一个连续的过程，应定期查看环境符合预期的情况。
 - 硬件成本发生变化时，优化将在多个硬件生命周期内进行。 例如，内存成本更低，每个核心的成本降低，或不同存储选项的价格发生变化。
@@ -110,7 +110,7 @@ ms.locfileid: "84776719"
 
 | 组件 | 评估条件 | 规划注意事项 |
 |-|-|-|
-|存储/数据库大小|在[存储限制](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))中标题为 "激活由碎片整理释放的磁盘空间日志记录" 部分| |
+|存储/数据库大小|在[存储限制](/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))中标题为 "激活由碎片整理释放的磁盘空间日志记录" 部分| |
 |存储/数据库性能|<ul><li>"逻辑磁盘（ *\<NTDS Database Drive\>* ） \Avg disk sec/Read"、逻辑磁盘（ *\<NTDS Database Drive\>* ） \Avg Disk Sec/Write、"逻辑磁盘（ *\<NTDS Database Drive\>* ） \Avg Disk sec/Transfer"</li><li>"逻辑磁盘（ *\<NTDS Database Drive\>* ） \ Reads/sec" "逻辑磁盘（ *\<NTDS Database Drive\>* ） \ Writes/sec" "逻辑磁盘（ *\<NTDS Database Drive\>* ） \ 传输/秒"</li></ul>|<ul><li>存储有两个需要解决的问题<ul><li>可用空间，其大小为基于心轴和 SSD 的存储，这与大多数 AD 环境无关。</li> <li>可用的输入/输出（IO）操作–在许多环境中，这通常是被忽略的。 但是，只需评估没有足够 RAM 来将整个 NTDS 数据库加载到内存中的环境，这一点非常重要。</li></ul><li>存储可能是一个复杂的主题，应涉及到适当大小的硬件供应商专业知识。 特别是对于更复杂的方案，例如 SAN、NAS 和 iSCSI 方案。 但是，一般情况下，每 Gb 存储的成本通常会直接反对派每个 IO 的成本：<ul><li>RAID 5 的每个千兆比 Raid 1 的成本更低，但 Raid 1 的每 IO 成本更低</li><li>基于纺锤的硬盘驱动器的每个千兆字节成本较低，但每个 IO 的 Ssd 成本更低</li></ul><li>重新启动计算机或 Active Directory 域服务服务后，可扩展存储引擎（ESE）缓存为空，并且在缓存得到预热时性能将受磁盘限制。</li><li>在大多数环境中，AD 是一种随机模式到磁盘的读取密集型 i/o，取消了缓存和读取优化策略的诸多好处。  此外，在内存中，AD 比大多数存储系统缓存具有更大的缓存方式。</li></ul>
 |RAM|<ul><li>数据库大小</li><li>基本操作系统建议</li><li>第三方应用程序</li></ul>|<ul><li>存储是计算机中速度最慢的组件。 RAM 中的内存越多，就越少需要再到磁盘。</li><li>确保分配了足够的 RAM 来存储操作系统、代理（防病毒、备份、监视）、NTDS 数据库和随着时间推移的增长。</li><li>对于最大程度地降低 RAM 数量的环境（如卫星位置）或不可行（DIT 太大），请参考存储部分以确保存储大小正确。</li></ul>|
 |网络|<ul><li>"Network Interface （ \* ） \ Received/sec"</li><li>"Network Interface （ \* ） \ Sent/sec"|<ul><li>通常，从 DC 发送的流量远远超过发送到 DC 的流量。</li><li>交换以太网连接是全双工的，需要单独调整入站和出站网络流量。</li><li>合并 Dc 的数量将增加用于将响应发送回每个 DC 的客户端请求的带宽量，但对于整个站点而言，这将接近于线性。</li><li>如果删除卫星位置 Dc，请不要忘记将附属 DC 的带宽添加到中心 Dc，并使用它来评估有多少 WAN 流量。</li></ul>|
@@ -173,7 +173,7 @@ ms.locfileid: "84776719"
 
 ### <a name="evaluating"></a>Evaluating
 
-本部分的目的不是评估有关复制流量的需求，它侧重于遍历 WAN 的流量，并在[Active Directory 复制流量](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10))中完全涵盖，而不是评估所需的总带宽和网络容量，包括客户端查询、组策略应用程序等。 对于现有环境，可以使用性能计数器 "Network Interface （ \* ） \ Received/sec" 和 "Network interface （ \* ） \ Sent/sec" 来收集此情况。 用于15、30或60分钟的网络接口计数器的采样间隔。 对于良好的度量，通常情况下还会过于不稳定;任何更大的内容将在每日的每日平滑。
+本部分的目的不是评估有关复制流量的需求，它侧重于遍历 WAN 的流量，并在[Active Directory 复制流量](/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10))中完全涵盖，而不是评估所需的总带宽和网络容量，包括客户端查询、组策略应用程序等。 对于现有环境，可以使用性能计数器 "Network Interface （ \* ） \ Received/sec" 和 "Network interface （ \* ） \ Sent/sec" 来收集此情况。 用于15、30或60分钟的网络接口计数器的采样间隔。 对于良好的度量，通常情况下还会过于不稳定;任何更大的内容将在每日的每日平滑。
 
 > [!NOTE]
 > 通常，DC 上的大多数网络流量都是出站的，因为 DC 响应客户端查询。 这就是重点关注出站流量的原因，但建议同时评估入站流量的每个环境。 可以使用相同的方法来解决和查看入站网络流量需求。 有关详细信息，请参阅知识库文章[929851： Tcp/ip 的默认动态端口范围在 Windows Vista 和 Windows Server 2008 中已更改](https://support.microsoft.com/kb/929851)。
@@ -182,7 +182,7 @@ ms.locfileid: "84776719"
 
 规划网络可伸缩性涉及两个不同的类别：流量和网络流量的 CPU 负载。 与本文中的某些其他主题相比，其中每个方案都是直前进的。
 
-在评估必须支持多少流量时，有两种针对网络流量 AD DS 的容量规划的唯一类别。 第一种是在域控制器之间进行遍历并在引用[Active Directory 复制流量](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10))中全面涵盖的复制流量，并且仍与 AD DS 的当前版本相关。 第二个是站点内客户端到服务器的通信。 规划的一种更简单的情况是，站点内流量主要接收来自客户端的小型请求，相对于发送回客户端的大量数据。 在站点中，100 MB 一般适用于每台服务器最多5000个用户。 对于超过5000用户的任何内容，建议使用 1 GB 网络适配器和接收方缩放（RSS）支持。 若要验证这种情况，尤其是对于服务器合并方案，在 \* 站点中的所有 dc 上查看网络接口（） \ Bytes/sec，将它们添加到一起，并将其除以域控制器的目标数目，以确保有足够的容量。 要执行此操作，最简单的方法是使用 Windows 可靠性和性能监视器（以前称为 Perfmon）中的 "堆积区域" 视图，确保所有计数器的缩放都相同。
+在评估必须支持多少流量时，有两种针对网络流量 AD DS 的容量规划的唯一类别。 第一种是在域控制器之间进行遍历并在引用[Active Directory 复制流量](/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10))中全面涵盖的复制流量，并且仍与 AD DS 的当前版本相关。 第二个是站点内客户端到服务器的通信。 规划的一种更简单的情况是，站点内流量主要接收来自客户端的小型请求，相对于发送回客户端的大量数据。 在站点中，100 MB 一般适用于每台服务器最多5000个用户。 对于超过5000用户的任何内容，建议使用 1 GB 网络适配器和接收方缩放（RSS）支持。 若要验证这种情况，尤其是对于服务器合并方案，在 \* 站点中的所有 dc 上查看网络接口（） \ Bytes/sec，将它们添加到一起，并将其除以域控制器的目标数目，以确保有足够的容量。 要执行此操作，最简单的方法是使用 Windows 可靠性和性能监视器（以前称为 Perfmon）中的 "堆积区域" 视图，确保所有计数器的缩放都相同。
 
 请考虑以下示例（也称为，一种真正复杂的方法是验证常规规则是否适用于特定环境）。 进行了以下假设：
 
@@ -259,10 +259,10 @@ DC 2|6.25 MB/秒|
 
 需要考虑的唯一建议是确保110% 的 ntds.dit 大小可用于启用碎片整理。 此外，应在硬件的整个生命周期内进行增长。
 
-首先和最重要的注意事项是评估 ntds.dit 和 SYSVOL 的大小。 这些度量将导致固定磁盘和 RAM 分配的大小。 由于这些组件的成本（相对），计算不需要严格且精确。 有关如何评估现有环境和新环境的内容的内容，请参阅[数据存储](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961771(v=technet.10))系列文章。 具体而言，请参阅以下文章：
+首先和最重要的注意事项是评估 ntds.dit 和 SYSVOL 的大小。 这些度量将导致固定磁盘和 RAM 分配的大小。 由于这些组件的成本（相对），计算不需要严格且精确。 有关如何评估现有环境和新环境的内容的内容，请参阅[数据存储](/previous-versions/windows/it-pro/windows-2000-server/cc961771(v=technet.10))系列文章。 具体而言，请参阅以下文章：
 
-- **对于现有环境 &ndash; **"[存储限制](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))" 一文中的 "要激活由碎片整理释放的磁盘空间日志记录" 一节。
-- **对于新环境 &ndash; **标题为 " [Active Directory 用户和组织单位的增长估计](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961779(v=technet.10))" 的文章。
+- **对于现有环境 &ndash; **"[存储限制](/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))" 一文中的 "要激活由碎片整理释放的磁盘空间日志记录" 一节。
+- **对于新环境 &ndash; **标题为 " [Active Directory 用户和组织单位的增长估计](/previous-versions/windows/it-pro/windows-2000-server/cc961779(v=technet.10))" 的文章。
 
   > [!NOTE]
   > 本文基于在 Windows 2000 中 Active Directory 发布时所做的数据大小估算。 使用反映环境中对象的实际大小的对象大小。
@@ -462,7 +462,7 @@ DC 2|6.25 MB/秒|
 
 ### <a name="when-to-tune-ldap-weights"></a>何时优化 LDAP 权重
 
-在某些情况下，应考虑优化[LdapSrvWeight](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc957291(v=technet.10)) 。 在容量规划的上下文中，当应用程序或用户负载未均匀平衡，或者基础系统未按功能平衡时，会执行此操作。 超出容量规划的原因超出了本文的范围。
+在某些情况下，应考虑优化[LdapSrvWeight](/previous-versions/windows/it-pro/windows-2000-server/cc957291(v=technet.10)) 。 在容量规划的上下文中，当应用程序或用户负载未均匀平衡，或者基础系统未按功能平衡时，会执行此操作。 超出容量规划的原因超出了本文的范围。
 
 优化 LDAP 权重有两个常见原因：
 
@@ -575,7 +575,7 @@ DC 2|6.25 MB/秒|
 
 在本文中，已讨论了规划和扩展对利用率目标的发展。 下面是建议阈值的摘要图表，必须进行监视以确保系统在足够的容量阈值内操作。 请记住，这些不是性能阈值，而是容量规划阈值。 在超过这些阈值的情况下，服务器将可以正常运行，但可以开始验证所有应用程序是否正常运行。 如果这种应用程序的行为良好，就可以开始评估硬件升级或其他配置更改。
 
-|Category|性能计数器|间隔/采样|目标|警告|
+|类别|性能计数器|间隔/采样|目标|警告|
 |-|-|-|-|-|
 |处理器|处理器信息（_Total） \\ % Processor Utility|60 分钟|40%|60%|
 |RAM （Windows Server 2008 R2 或更早版本）|Memory\Available MB|< 100 MB|空值|< 100 MB|
@@ -633,7 +633,7 @@ DC 2|6.25 MB/秒|
 
 *U* k = *B* &divide; *T*
 
-其中， *U* k 是利用率百分比， *B*是繁忙的时间长度，而*T*是系统观察到的总时间。 转换为 Windows 上下文，这意味着处于运行状态的100毫微秒（ns）间隔线程数除以给定时间间隔内可用的 100-ns 间隔数。 这正是用于计算% Processor Utility （reference [Processor 对象](https://docs.microsoft.com/previous-versions/ms804036(v=msdn.10))和[PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))）的公式。
+其中， *U* k 是利用率百分比， *B*是繁忙的时间长度，而*T*是系统观察到的总时间。 转换为 Windows 上下文，这意味着处于运行状态的100毫微秒（ns）间隔线程数除以给定时间间隔内可用的 100-ns 间隔数。 这正是用于计算% Processor Utility （reference [Processor 对象](/previous-versions/ms804036(v=msdn.10))和[PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))）的公式。
 
 队列理论还提供公式： *N*  =  *u* k &divide; （1 &ndash; *u* k），以根据利用率估算等待项目的数目（ *n*是队列的长度）。 按所有利用率间隔绘制的图表提供以下估计值：在给定的 CPU 负载中，处理器上的队列到达时间长短。
 
@@ -649,9 +649,9 @@ DC 2|6.25 MB/秒|
 这就是为什么在40% 的情况下进行保守估计的平均容量估算允许在负载上出现异常峰值的头空间，不管是短暂的突然（如几分钟内运行的编码查询，还是在长时间之后的第一天）。
 
 上面的语句提到% Processor Time 计算，与使用法相比，使用法是简化一般读者的简化。 对于数学上更为严格的：
-- 转换[PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))
-  - *B* = 100-ns 间隔 "空闲" 线程在逻辑处理器上花费的时间。 [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))计算的 "*X*" 变量中的更改
-  - *T* = 在给定时间范围内的总 100-ns 时间间隔。 [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))计算的 "*Y*" 变量中的更改。
+- 转换[PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))
+  - *B* = 100-ns 间隔 "空闲" 线程在逻辑处理器上花费的时间。 [PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))计算的 "*X*" 变量中的更改
+  - *T* = 在给定时间范围内的总 100-ns 时间间隔。 [PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))计算的 "*Y*" 变量中的更改。
   - *U* k = 逻辑处理器的利用率百分比，按 "空闲线程" 或% idle Time。
 - 解决数学问题：
   - *U* k = 1 –处理器时间百分比
@@ -663,7 +663,7 @@ DC 2|6.25 MB/秒|
 
 前面的数学计算可能会对系统中所需的逻辑处理器数量充分复杂。 这就是为什么系统调整规模的方法侧重于基于当前负载确定最大目标利用率，并计算实现所需的逻辑处理器的数量。 此外，尽管逻辑处理器速度会对性能产生重大影响，但缓存效率、内存一致性要求、线程计划和同步以及生成均衡的客户端负载都将对性能有重大影响，这种情况会因服务器而异。 计算能力相对便宜，尝试分析并确定所需的 Cpu 数量就比提供业务价值要多得多。
 
-40% 的要求并不难，而且这是一个合理的起点。 Active Directory 的各种使用者需要不同级别的响应能力。 在某些情况下，环境可以在80% 或90% 的利用率下运行，这是一种持续的平均值，因为对处理器的访问的等待时间将不会明显影响客户端性能。 重新迭代系统中的许多区域比系统中的逻辑处理器慢得多，这一点很重要，包括对 RAM 的访问、对磁盘的访问，以及通过网络传输响应。 所有这些项都需要进行调整。 示例:
+40% 的要求并不难，而且这是一个合理的起点。 Active Directory 的各种使用者需要不同级别的响应能力。 在某些情况下，环境可以在80% 或90% 的利用率下运行，这是一种持续的平均值，因为对处理器的访问的等待时间将不会明显影响客户端性能。 重新迭代系统中的许多区域比系统中的逻辑处理器慢得多，这一点很重要，包括对 RAM 的访问、对磁盘的访问，以及通过网络传输响应。 所有这些项都需要进行调整。 示例：
 
 - 将更多处理器添加到运行90% 的系统，该系统可能不会显著提高性能。 对系统进行更深入的分析可能会发现，有很多线程甚至无法在处理器上获得，因为它们正在等待 i/o 完成。
 - 解决磁盘绑定问题可能意味着以前花费大量时间进入等待状态的线程将不再处于 i/o 的等待状态，并将对 CPU 时间有更多的竞争，这意味着，上一示例中的90% 使用率将会达到100% （因为它不会更高）。 这两个组件需要同时进行优化。
@@ -795,7 +795,7 @@ DC 2|6.25 MB/秒|
 
 现在，分析了简单配置，下表演示了在存储子系统中的组件发生更改或添加时瓶颈的发生位置。
 
-|注释|瓶颈分析|磁盘|公交车|适配器|PCI 总线|
+|说明|瓶颈分析|磁盘|总线|适配器|PCI 总线|
 |-|-|-|-|-|-|
 |这是在添加第二个磁盘后的域控制器配置。 磁盘配置表示以 800 KB/s 为单位的瓶颈。|添加1个磁盘（Total = 2）<p>I/o 是随机的<p>4 KB 块大小<p>10000 RPM HD|200 i/o 总数<br />总共 800 KB/秒。| | | |
 |添加7个磁盘后，磁盘配置仍表示瓶颈为 3200 KB/s。|**添加7个磁盘（总计 = 8）**  <p>I/o 是随机的<p>4 KB 块大小<p>10000 RPM HD|800 i/o 总数。<br />总 3200 KB/秒| | | |
@@ -852,7 +852,7 @@ RAID 1 + 0 与 RAID 1 的行为完全相同，与读取和写入有关的费用�
 
 - SCSI 或光纤通道硬盘
 - 存储单元通道底板
-- 存储单位
+- 存储单元
 - 存储控制器模块
 - SAN 交换机（es）
 - HBA
@@ -919,7 +919,7 @@ Ssd 与基于主轴的硬盘完全不同。 但仍有两个关键条件： "它�
 
 对于正常的操作条件，存储规划目标是最大程度地减少从磁盘返回 AD DS 的请求的等待时间。 这实质上意味着未完成和挂起的 i/o 数小于或等于磁盘的路径数。 有多种方法可对此进行度量。 在性能监视方案中，一般建议为逻辑磁盘（ *\<NTDS Database Drive\>* ） \Avg Disk sec/Read 小于 20 ms。 根据存储的类型，所需的操作阈值必须比存储的速度要低得多，最好是尽可能接近存储的速度，在2到6毫秒（002到 .006 秒）范围内。
 
-示例：
+例如：
 
 ![存储延迟图表](media/capacity-planning-considerations-storage-latency.png)
 

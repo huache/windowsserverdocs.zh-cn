@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 405d0b6e814212df858cadb615f3251fd2168632
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: db6e8c600276f62fd260c18d680dd2b5112d4bc3
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965029"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182043"
 ---
 # <a name="ad-fs-technical-reference"></a>AD FS 技术参考
 
@@ -26,7 +26,8 @@ ms.locfileid: "86965029"
 -   [用户隐私和 AD FS](../ad-fs/technical-reference/GDPR-and-AD-FS-Compliance.md)
 
 > [!TIP]
-> 可以在 Microsoft TechNet Wiki 上的 [AD FS 2.0 内容导航图](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx) 页面中找到更多的 AD FS 2.0 设计内容。 此页面由 AD FS 2.0 社区的成员管理，并定期由 AD FS 产品团队进行监视。
+> 你可以在[AD FS 2.0 内容地图](https://support.microsoft.com/help/974408/availability-and-description-of-active-directory-federation-services-2)"页上找到其他 AD FS 2.0 设计内容。
 
 ## <a name="see-also"></a>另请参阅
+
 [Active Directory 联合身份验证服务概述](./ad-fs-overview.md)

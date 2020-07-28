@@ -10,27 +10,27 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: dec88eb81227b62cd0a0ca90810b2598b8f9fd52
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: eb402c9cd7bb4f9ae472859fcd45fcc050d1df85
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854740"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182133"
 ---
 # <a name="performance-tuning-network-adapters"></a>性能优化网络适配器
 
-> 适用范围： Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
+> 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
 
 使用本主题中的信息来优化运行 Windows Server 2016 及更高版本的计算机的性能网络适配器。 如果网络适配器提供了优化选项，则可以使用这些选项优化网络吞吐量和资源使用情况。
 
 网络适配器的正确调整设置取决于以下变量：
 
-- 网络适配器及其功能集  
-- 服务器执行的工作负荷类型  
-- 服务器硬件和软件资源  
-- 服务器的性能目标  
+- 网络适配器及其功能集
+- 服务器执行的工作负荷类型
+- 服务器硬件和软件资源
+- 服务器的性能目标
 
-以下各部分介绍了某些性能优化选项。  
+以下各部分介绍了某些性能优化选项。
 
 ##  <a name="enabling-offload-features"></a><a name="bkmk_offload"></a>启用卸载功能
 
@@ -42,17 +42,17 @@ ms.locfileid: "80854740"
 例如，假设有一个硬件资源有限的网络适配器。
 在这种情况下，启用分段卸载功能可能会降低适配器的最大可持续吞吐量。 但是，如果可接受降低的吞吐量，则应该继续启用分段卸载功能。
 
-> [!NOTE]  
+> [!NOTE]
 > 某些网络适配器要求独立于发送和接收路径启用卸载功能。
 
 ##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>启用 web 服务器的接收方缩放（RSS）
 
 当服务器上的网络适配器少于逻辑处理器时，RSS 可以提高 Web 的可伸缩性和性能。 当所有 web 流量都通过支持 RSS 的网络适配器时，服务器可以跨不同的 Cpu 同时处理来自不同连接的传入 web 请求。
 
-> [!IMPORTANT]  
-> 避免在同一服务器上同时使用非 RSS 网络适配器和支持 RSS 的网络适配器。 由于 RSS 和超文本传输协议（HTTP）中存在负载分配逻辑，如果不支持 RSS 的网络适配器接受具有一个或多个支持 RSS 的网络适配器的服务器上的 web 流量，则性能可能会受到严重降级。 在此情况下，你应该使用支持 RSS 的网络适配器或在网络适配器属性“高级属性”选项卡上禁用 RSS。
->  
-> 若要确定网络适配器是否支持 RSS，你可以在网络适配器属性“高级属性”选项卡上查看 RSS 信息。
+> [!IMPORTANT]
+> 避免在同一服务器上同时使用非 RSS 网络适配器和支持 RSS 的网络适配器。 由于 RSS 和超文本传输协议（HTTP）中存在负载分配逻辑，如果不支持 RSS 的网络适配器接受具有一个或多个支持 RSS 的网络适配器的服务器上的 web 流量，则性能可能会受到严重降级。 在此情况下，你应该使用支持 RSS 的网络适配器或在网络适配器属性“高级属性”**** 选项卡上禁用 RSS。
+>
+> 若要确定网络适配器是否支持 RSS，你可以在网络适配器属性“高级属性”**** 选项卡上查看 RSS 信息。
 
 ### <a name="rss-profiles-and-rss-queues"></a>RSS 配置文件和 RSS 队列
 
@@ -62,11 +62,11 @@ ms.locfileid: "80854740"
 
 ##  <a name="increasing-network-adapter-resources"></a><a name="bkmk_resources"></a>增加网络适配器资源
 
-对于允许手动配置资源（如接收和发送缓冲区）的网络适配器，应增加分配的资源。  
+对于允许手动配置资源（如接收和发送缓冲区）的网络适配器，应增加分配的资源。
 
 某些网络适配器将它们的接收缓冲区设置得较低以节省从主机分配的内存。 较低的值会导致数据包丢弃和性能降低。 因此，对于接收密集型的方案，我们建议你将接收缓冲区值增加到最大值。
 
-> [!NOTE]  
+> [!NOTE]
 > 如果网络适配器未公开手动资源配置，则它会动态配置资源，或资源设置为无法更改的固定值。
 
 ### <a name="enabling-interrupt-moderation"></a>启用中断裁决
@@ -83,8 +83,8 @@ ms.locfileid: "80854740"
 
 - 请将计算机的 BIOS 设置为**高性能**，并禁用 CPU 电源状态。 但是，请注意这与系统和 BIOS 相关，如果操作系统控制电源管理，则某些系统将提供更高的性能。 可以通过**设置**或使用**powercfg**命令来检查和调整电源管理设置。 有关详细信息，请参阅[Powercfg 命令行选项](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options)。
 
-- 请将操作系统电源管理配置文件设置为**高性能系统**。  
-   > [!NOTE]  
+- 请将操作系统电源管理配置文件设置为**高性能系统**。
+   > [!NOTE]
    > 如果系统 BIOS 设置为禁用电源管理的操作系统控制，则此设置不能正常工作。
 
 - 启用静态卸载。 例如，启用 UDP 校验和、TCP 校验和，并发送大卸载（LSO）设置。
@@ -97,7 +97,7 @@ ms.locfileid: "80854740"
 
 ##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>系统管理中断
 
-许多硬件系统使用系统管理中断（SMI-S）来实现多种维护功能，如报告错误纠正代码（ECC）内存错误、维护旧的 USB 兼容性、控制风扇和管理 BIOS 控制电源设置。
+许多硬件系统使用系统管理中断（SMI-S）来实现多种维护功能，如报告错误纠正代码（ECC）内存错误、维护旧的 USB 兼容性、控制风扇以及管理 BIOS 控制的电源设置。
 
 SMI 是系统上的最高优先级中断，并将 CPU 置于管理模式下。 此模式抢先于所有其他活动，而 SMI 运行中断服务例程（通常包含在 BIOS 中）。
 
@@ -105,7 +105,7 @@ SMI 是系统上的最高优先级中断，并将 CPU 置于管理模式下。 �
 
 如果你需要达到最低延迟，应要求你的硬件提供商提供可将 SMI 降低到可能的最低程度的 BIOS 版本。 这些 BIOS 版本经常称为 "低延迟 BIOS" 或 "SMI-S 免费 BIOS"。 在某些情况下，硬件平台不可能完全消除 SMI 活动，因为 SMI 用于控制基本功能（例如，冷却风扇）。
 
-> [!NOTE]  
+> [!NOTE]
 > 操作系统无法控制 SMIs，因为逻辑处理器在特殊维护模式下运行，这会阻止操作系统介入。
 
 ##  <a name="performance-tuning-tcp"></a><a name="bkmk_tcp"></a>性能优化 TCP
@@ -120,9 +120,9 @@ SMI 是系统上的最高优先级中断，并将 CPU 置于管理模式下。 �
 
 对于具有特定大小的 TCP 接收窗口，可以使用以下公式来计算单一连接的总吞吐量。
 
-> 可*实现的总吞吐量（以字节*为单位） = *TCP 接收窗口大小*\* （以*秒*为单位）
+> 可*实现的总吞吐量（以字节为单位）*  = *TCP 接收窗口大小（字节）* \*（1/*连接延迟，以秒为单位*）
 
-例如，对于滞后时间为10毫秒的连接，总可实现吞吐量只有 51 Mbps。 对于大型企业网络基础结构，此值是合理的。 但是，通过使用自动优化调整接收窗口，连接可以实现 1 Gbps 连接的全部线路速率。  
+例如，对于滞后时间为10毫秒的连接，总可实现吞吐量只有 51 Mbps。 对于大型企业网络基础结构，此值是合理的。 但是，通过使用自动优化调整接收窗口，连接可以实现 1 Gbps 连接的全部线路速率。
 
 某些应用程序定义 TCP 接收窗口的大小。 如果应用程序未定义接收窗口大小，则链接速度将确定大小，如下所示：
 
@@ -135,17 +135,17 @@ SMI 是系统上的最高优先级中断，并将 CPU 置于管理模式下。 �
 
 此功能还充分利用了其他功能以提高网络性能。 这些功能包括[RFC 1323](https://tools.ietf.org/html/rfc1323)中定义的其他 TCP 选项。 通过使用这些功能，基于 Windows 的计算机可以协商较小但按定义的值进行缩放的 TCP 接收窗口大小，具体取决于配置。 这种情况下，更易于处理网络设备的大小。
 
-> [!NOTE]  
-> 你可能会遇到这样的问题：网络设备不符合[RFC 1323](https://tools.ietf.org/html/rfc1323)中定义的**TCP 窗口缩放选项**，因此不支持缩放系数。 在这种情况下，请参阅此[KB 934430，当你尝试使用防火墙设备后面的 Windows Vista 时网络连接失败，](https://support.microsoft.com/help/934430/network-connectivity-fails-when-you-try-to-use-windows-vista-behind-a)或与网络设备供应商的支持团队联系。  
+> [!NOTE]
+> 你可能会遇到这样的问题：网络设备不符合[RFC 1323](https://tools.ietf.org/html/rfc1323)中定义的**TCP 窗口缩放选项**，因此不支持缩放系数。 在这种情况下，请参阅此[KB 934430，当你尝试使用防火墙设备后面的 Windows Vista 时网络连接失败，](https://support.microsoft.com/help/934430/network-connectivity-fails-when-you-try-to-use-windows-vista-behind-a)或与网络设备供应商的支持团队联系。
 
 #### <a name="review-and-configure-tcp-receive-window-autotuning-level"></a>查看和配置 TCP 接收窗口自动调谐级别
 
 可以使用 netsh 命令或 Windows PowerShell cmdlet 来查看或修改 TCP 接收窗口自动优化级别。
 
-> [!NOTE]  
+> [!NOTE]
 > 与 windows 10 或 Windows Server 2019 之前的版本不同，你不能再使用注册表来配置 TCP 接收窗口大小。 有关不推荐使用的设置的详细信息，请参阅不[推荐使用的 TCP 参数](#deprecated-tcp-parameters)。
 
-> [!NOTE]  
+> [!NOTE]
 > 有关可用自动优化级别的详细信息，请参阅自动[调谐级别](#autotuning-levels)。
 
 **使用 netsh 查看或修改自动调谐级别**
@@ -161,7 +161,7 @@ netsh interface tcp show global
 ```
 Querying active state...
 
-TCP Global Parameters  
+TCP Global Parameters
 -----
 Receive-Side Scaling State : enabled
 Chimney Offload State : disabled
@@ -184,10 +184,10 @@ Pacing Profile : off
 netsh interface tcp set global autotuninglevel=<Value>
 ```
 
-> [!NOTE]  
-> 在前面的命令中，\<*值*> 表示自动优化级别的新值。
+> [!NOTE]
+> 在前面的命令中， \<*Value*> 表示自动优化级别的新值。
 
-有关此命令的详细信息，请参阅[Interface 传输控制协议的 Netsh 命令](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731258(v=ws.10))。
+有关此命令的详细信息，请参阅[Interface 传输控制协议的 Netsh 命令](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731258(v=ws.10))。
 
 **使用 Powershell 查看或修改自动调谐级别**
 
@@ -216,8 +216,8 @@ Internet             Normal
 Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 ```
 
-> [!NOTE]  
-> 在前面的命令中，\<*值*> 表示自动优化级别的新值。
+> [!NOTE]
+> 在前面的命令中， \<*Value*> 表示自动优化级别的新值。
 
 有关这些 cmdlet 的详细信息，请参阅以下文章：
 
@@ -228,13 +228,13 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 可以将接收窗口自动调谐设置为任意一种级别。 默认级别为 "**正常**"。 下表介绍了这些级别。
 
-|Level |十六进制值 |Comments |
+|Level |十六进制值 |注释 |
 | --- | --- | --- |
 |标准（默认值） |0x8 （比例因子为8） |设置 TCP 接收窗口以适应几乎所有方案。 |
 |已禁用 |没有可用的缩放比例 |将 TCP 接收窗口设置为其默认值。 |
-|Restricted (受限的) |0x4 （缩放系数为4） |设置 TCP 接收窗口，使其超出其默认值，但在某些情况下限制此类增长。 |
+|受限制 |0x4 （缩放系数为4） |设置 TCP 接收窗口，使其超出其默认值，但在某些情况下限制此类增长。 |
 |高度限制 |0x2 （缩放比例为2） |设置 TCP 接收窗口，使其超出其默认值，但要非常谨慎。 |
-|性 |0xE （缩放比例为14） |设置 TCP 接收窗口以适应极端方案。 |
+|实验 |0xE （缩放比例为14） |设置 TCP 接收窗口以适应极端方案。 |
 
 如果使用应用程序来捕获网络数据包，则应用程序应为不同的窗口自动优化级别设置报告类似于以下内容的数据。
 
@@ -366,18 +366,18 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 Windows Server 2003 中的以下注册表设置不再受支持，在更高版本中将被忽略。
 
 - **TcpWindowSize**
-- **NumTcbTablePartitions**  
-- **MaxHashTableSize**  
+- **NumTcbTablePartitions**
+- **MaxHashTableSize**
 
 所有这些设置都位于以下注册表子项中：
 
-> **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**  
+> **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**
 
 ###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Windows 筛选平台
 
 Windows Vista 和 Windows Server 2008 引进了 Windows 筛选平台（WFP）。 WFP 为非 Microsoft 独立软件供应商（Isv）提供 Api 来创建数据包处理筛选器。 其示例包括防火墙和防病毒软件。
 
-> [!NOTE]  
+> [!NOTE]
 > 编写不当的 WFP 筛选器可能会显著降低服务器的网络性能。 有关详细信息，请参阅 Windows 开发人员中心中的将[包处理驱动程序和应用程序移植到 WFP](https://docs.microsoft.com/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) 。
 
 有关本指南中的所有主题的链接，请参阅[网络子系统性能优化](net-sub-performance-top.md)。
