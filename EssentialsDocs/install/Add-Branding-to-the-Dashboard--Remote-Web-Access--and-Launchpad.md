@@ -2,18 +2,17 @@
 title: 向仪表板、远程 Web 访问和快速启动板添加品牌
 description: 如何向仪表板、远程 Web 访问和快速启动板屏幕添加商标材料。
 ms.date: 04/10/2014
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 166262f8-b2a5-4b1c-a4a7-a141e1c54f10
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 056c7264fc90adbf115c3c6587081a449240a98a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4d1b3ada8888de9885bfe88af56e5b0656fc92b7
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471082"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181603"
 ---
 # <a name="add-branding-to-the-dashboard-remote-web-access-and-launchpad"></a>向仪表板、远程 Web 访问和快速启动板添加品牌
 
