@@ -8,18 +8,18 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 746aa953b2226152a1f103fd0b5a974f543ce993
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 54c95a86514e006735bbfe784f3df46eb95e1f94
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966109"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182253"
 ---
 # <a name="use-robocopy-to-pre-seed-files-for-dfs-replication"></a>使用 Robocopy 预先植入文件以执行 DFS 复制
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-本主题说明如何使用命令行工具 **Robocopy.exe**，以在为 Windows Server 中的分布式文件系统 (DFS) 复制（也称为 DFSR 或 DFS）设置复制时预先植入文件。 通过在设置 DFS 复制、添加新的复制伙伴或替换服务器之前预先植入文件，可以在 Windows Server 2012 R2 中加速初始同步并启用 DFS 复制数据库的克隆。 Robocopy 方法是几种预先植入方法之一；有关概述，请参阅[步骤 1：预先植入文件以执行 DFS 复制](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>)。
+本主题说明如何使用命令行工具 **Robocopy.exe**，以在为 Windows Server 中的分布式文件系统 (DFS) 复制（也称为 DFSR 或 DFS）设置复制时预先植入文件。 通过在设置 DFS 复制、添加新的复制伙伴或替换服务器之前预先植入文件，可以在 Windows Server 2012 R2 中加速初始同步并启用 DFS 复制数据库的克隆。 Robocopy 方法是几种预先植入方法之一；有关概述，请参阅[步骤 1：预先植入文件以执行 DFS 复制](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>)。
 
 Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程序。 此实用程序提供了丰富的选项，其中包括复制安全性、备份 API 支持、重试功能和日志记录。 更高版本包括多线程和非缓冲 I/O 支持。
 
@@ -41,9 +41,9 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
 - 在将用于复制文件的服务器（源服务器或目标服务器）上安装最新版本的 Robocopy；需要安装最新版本的操作系统版本。 有关说明，请参阅[步骤 2：稳定将要复制的文件](#step-2-stabilize-files-that-will-be-replicated)。 除非从运行 Windows Server 2003 R2 的服务器中预先植入文件，否则可以在源服务器或目标服务器上运行 Robocopy。 目标服务器通常具有最新的操作系统版本，支持访问最新版本的 Robocopy。
 
 - 请确保目标驱动器上有足够的存储空间可用。 不要在准备复制到的路径上创建文件夹：Robocopy 必须创建根文件夹。
-    
+
     >[!NOTE]
-    >在决定为预先植入文件分配多少空间时，请考虑随时间推移的预计数据增长情况和 DFS 复制的存储要求。 有关规划帮助，请参阅[管理 DFS 复制](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>)中的[编辑暂存文件夹以及冲突和已删除文件夹的配额大小](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc754229(v=ws.11))。
+    >在决定为预先植入文件分配多少空间时，请考虑随时间推移的预计数据增长情况和 DFS 复制的存储要求。 有关规划帮助，请参阅[管理 DFS 复制](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>)中的[编辑暂存文件夹以及冲突和已删除文件夹的配额大小](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc754229(v=ws.11))。
 
 - 在源服务器上，可以选择安装进程监视器或进程资源管理器，其可用于检查当前锁定文件的应用程序。 有关下载信息，请参阅[进程监视器](/sysinternals/downloads/procmon)[进程资源管理器](/sysinternals/downloads/process-explorer)。
 
@@ -60,9 +60,9 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
 1. 在 Web 浏览器中，打开 [https://support.microsoft.com](https://support.microsoft.com/)。
 
 2. 在“搜索支持”中，输入以下字符串，将 `<operating system version>` 替换为适当的操作系统，然后按 Enter 键  ：
-    
+
     ```robocopy.exe kbqfe "<operating system version>"```
-    
+
     例如，输入“robocopy.exe kbqfe "Windows Server 2008 R2"”  。
 
 3. 查找并下载具有最高 ID 号（即最新版本）的修补程序。
@@ -92,13 +92,13 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
 2. 打开权限提升的命令提示符。
 
 3. 若要将文件从源服务器预先植入到目标服务器，请运行以下命令，并将括号中的值替换为你自己的源、目标和日志文件路径：
-    
+
     ```PowerShell
     robocopy "<source replicated folder path>" "<destination replicated folder path>" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:<log file path> /v
     ```
-    
+
     此命令会将源文件夹的所有内容复制到目标文件夹，其中包含以下参数：
-    
+
     |参数|说明|
     |---|---|
     |"\<source replicated folder path\>"|指定要在目标服务器上预先植入的源文件夹。|
@@ -113,13 +113,13 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
     |/tee|将状态输出写入控制台窗口以及日志文件。|
     |/log \<log file path>|指定要写入的日志文件。 覆盖文件的现有内容。 （若要将条目追加到现有日志文件，请使用 `/log+ <log file path>`。）|
     |/v|生成包含跳过文件的详细输出。|
-    
+
     例如，以下命令将文件从源复制文件夹 E:\\RF01 复制到目标服务器上的数据驱动器 D：
-    
+
     ```PowerShell
     robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\pre-seedsrv02.log
     ```
-    
+
     >[!NOTE]
     >建议在使用 Robocopy 预先植入文件以执行 DFS 复制时使用上述参数。 但是，可以更改参数的某些值或添加其他参数。 例如，可能通过测试发现自己有能力为“/MT”参数设置更高的值（线程计数）  。 此外，如果主要复制较大的文件，则可以通过为未缓冲的 I/O 添加“/j”选项来提高复制性能  。 有关 Robocopy 参数的详细信息，请参阅 [Robocopy](../../administration/windows-commands/robocopy.md) 命令行参考。
 
@@ -132,4 +132,4 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
 
 ## <a name="next-step"></a>下一步
 
-完成初始复制并使用 Robocopy 解决尽可能多的跳过文件的问题后，需使用 Windows PowerShell 中的 **Get-DfsrFileHash** cmdlet 或 **Dfsrdiag** 命令通过比较源服务器和目标服务器上的文件哈希来验证预先植入的文件。 有关详细说明，请参阅[步骤 2：验证预先植入的文件以执行 DFS 复制](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>)。
+完成初始复制并使用 Robocopy 解决尽可能多的跳过文件的问题后，需使用 Windows PowerShell 中的 **Get-DfsrFileHash** cmdlet 或 **Dfsrdiag** 命令通过比较源服务器和目标服务器上的文件哈希来验证预先植入的文件。 有关详细说明，请参阅[步骤 2：验证预先植入的文件以执行 DFS 复制](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>)。
