@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03c3c8daa8dc4bea0e03ed285a98401f91cdf1cb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7d94b6a2211cd9fbaefb8318ebdcc4eb52ba9ba1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857210"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963299"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>常见远程桌面连接故障排除
 
@@ -23,7 +23,7 @@ ms.locfileid: "80857210"
 
 ### <a name="check-the-status-of-the-rdp-protocol-on-a-local-computer"></a>检查本地计算机上 RDP 协议的状态
 
-若要检查和更改本地计算机上 RDP 协议的状态，请参阅[如何启用远程桌面](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access#how-to-enable-remote-desktop)。
+若要检查和更改本地计算机上 RDP 协议的状态，请参阅[如何启用远程桌面](../clients/remote-desktop-allow-access.md#how-to-enable-remote-desktop)。
 
 > [!NOTE]  
 > 如果远程桌面选项不可用，请参阅[检查组策略对象是否正在阻止 RDP](#check-whether-a-group-policy-object-gpo-is-blocking-rdp-on-a-local-computer)。
@@ -35,10 +35,10 @@ ms.locfileid: "80857210"
 
 若要检查和更改远程计算机上 RDP 协议的状态，请使用网络注册表连接：
 
-1. 首先转到“开始”菜单，然后选择“运行”   。 在出现的文本框中，输入“regedt32”。 
-2. 在注册表编辑器中选择“文件”，然后选择“连接网络注册表”。  
-3. 在“选择计算机”对话框中输入远程计算机的名称，然后依次选择“检查名称”、“确定”。   
-4. 导航到“HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server”。   
+1. 首先转到“开始”菜单，然后选择“运行”   。 在出现的文本框中，输入“regedt32”。
+2. 在注册表编辑器中选择“文件”，然后选择“连接网络注册表”。
+3. 在“选择计算机”对话框中输入远程计算机的名称，然后依次选择“检查名称”、“确定”。
+4. 导航到“HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server”。  
    ![注册表编辑器，其中显示了 fDenyTSConnections 条目](../media/troubleshoot-remote-desktop-connections/RegEntry_fDenyTSConnections.png)
    - 如果 **fDenyTSConnections** 项的值为 **0**，则表明已启用 RDP。
    - 如果 **fDenyTSConnections** 项的值为 **1**，则表明已禁用 RDP。
@@ -54,10 +54,10 @@ ms.locfileid: "80857210"
 gpresult /H c:\gpresult.html
 ```
 
-完成此命令后，打开 gpresult.html。 在“计算机配置”\\“管理模板”\\“Windows 组件”\\“远程桌面服务”\\“远程桌面会话主机”\\“连接”中，找到“允许用户通过使用远程桌面服务进行远程连接”策略。  
+完成此命令后，打开 gpresult.html。 在“计算机配置”\\“管理模板”\\“Windows 组件”\\“远程桌面服务”\\“远程桌面会话主机”\\“连接”中，找到“允许用户通过使用远程桌面服务进行远程连接”策略。
 
-- 如果此策略的设置为“启用”，则表明组策略未阻止 RDP 连接。 
-- 如果此策略的设置为“已禁用”，请检查“入选的 GPO”。   正在此 GPO 在阻止 RDP 连接。
+- 如果此策略的设置为“启用”，则表明组策略未阻止 RDP 连接。
+- 如果此策略的设置为“已禁用”，请检查“入选的 GPO”。 正在此 GPO 在阻止 RDP 连接。
   ![gpresult.html 的示例片段，其中的域级别 GPO“阻止 RDP”正在禁用 RDP。](../media/troubleshoot-remote-desktop-connections/GPResult_RDSH_Connections_GP.png)
    
   ![gpresult.html 的示例片段，其中的“本地组策略”正在禁用 RDP。](../media/troubleshoot-remote-desktop-connections/GPResult_RDSH_Connections_LGP.png)
@@ -70,16 +70,16 @@ gpresult /H c:\gpresult.html
 gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 ```
 
-此命令生成的文件 (**gpresult-\<computer name\>.html**) 使用的信息格式与本地计算机版本 (**gpresult.html**) 使用的格式相同。
+此命令生成的文件 (gpresult- \<computer name\>.html) 使用的信息格式与本地计算机版本 (gpresult.html) 使用的格式相同。
 
 ### <a name="modifying-a-blocking-gpo"></a>修改阻止 GPO
 
-可以在组策略对象编辑器 (GPE) 和组策略管理控制台 (GPM) 中修改这些设置。 有关如何使用组策略的详细信息，请参阅[高级组策略管理](https://docs.microsoft.com/microsoft-desktop-optimization-pack/agpm/)。
+可以在组策略对象编辑器 (GPE) 和组策略管理控制台 (GPM) 中修改这些设置。 有关如何使用组策略的详细信息，请参阅[高级组策略管理](/microsoft-desktop-optimization-pack/agpm/)。
 
 若要修改阻止策略，请使用以下方法之一：
 
-- 在 GPE 中访问 GPO 的相应级别（例如本地或域），然后导航到“计算机配置” > “管理模板” > “Windows 组件” > “远程桌面服务” > “远程桌面会话主机” > “连接” > “允许用户通过使用远程桌面服务进行远程连接”。         
-   1. 将策略设置为“启用”或“不配置”。  
+- 在 GPE 中访问 GPO 的相应级别（例如本地或域），然后导航到“计算机配置” > “管理模板” > “Windows 组件” > “远程桌面服务” > “远程桌面会话主机” > “连接” > “允许用户通过使用远程桌面服务进行远程连接”。  
+   1. 将策略设置为“启用”或“不配置”。
    2. 在受影响的计算机上，以管理员身份打开命令提示符窗口，然后运行 **gpupdate /force** 命令。
 - 在 GPM 中，导航到其中的阻止策略已应用到受影响计算机的组织单位 (OU)，并从此 OU 中删除该策略。
 
@@ -97,7 +97,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 在任一计算机上，如果上述一个或两个服务未运行，请启动它们。
 
 > [!NOTE]  
-> 如果启动了“远程桌面服务”服务，请单击“是”自动重启“远程桌面服务用户模式端口重定向程序”服务。 
+> 如果启动了“远程桌面服务”服务，请单击“是”自动重启“远程桌面服务用户模式端口重定向程序”服务。
 
 ## <a name="check-that-the-rdp-listener-is-functioning"></a>检查 RDP 侦听器是否正常运行
 
@@ -121,7 +121,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
     1. 登录到操作系统版本与受影响计算机的操作系统版本相同的计算机，并访问该计算机的注册表（例如，通过使用注册表编辑器）。
     2. 导航到以下注册表项：  
         **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\RDP-Tcp**
-    3. 将该项导出到 .reg 文件。 例如，在注册表编辑器中，右键单击该项，选择“导出”，然后输入所导出设置的文件名。 
+    3. 将该项导出到 .reg 文件。 例如，在注册表编辑器中，右键单击该项，选择“导出”，然后输入所导出设置的文件名。
     4. 将导出的 .reg 文件复制到受影响的计算机。
 5. 若要导入 RDP 侦听器配置，请在受影响的计算机上打开具有管理权限的 PowerShell 窗口（或打开 PowerShell 窗口并远程连接到受影响的计算机）。
    1. 若要备份现有的注册表项，请输入以下 cmdlet：  
@@ -151,8 +151,8 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 ### <a name="check-the-status-of-the-rdp-self-signed-certificate"></a>检查 RDP 自签名证书的状态
 
-1. 如果仍然无法连接，请打开“证书”MMC 管理单元。 根据提示选择要管理的证书存储，选择“计算机帐户”，然后选择受影响的计算机。 
-2. 在“远程桌面”下的“证书”文件夹中，删除 RDP 自签名证书。   
+1. 如果仍然无法连接，请打开“证书”MMC 管理单元。 根据提示选择要管理的证书存储，选择“计算机帐户”，然后选择受影响的计算机。
+2. 在“远程桌面”下的“证书”文件夹中，删除 RDP 自签名证书。 
     ![“证书”MMC 管理单元中的远程桌面证书。](../media/troubleshoot-remote-desktop-connections/MMCCert_Delete.png)
 3. 在受影响的计算机上，重启“远程桌面服务”服务。
 4. 刷新“证书”管理单元。
@@ -161,7 +161,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 ### <a name="check-the-permissions-of-the-machinekeys-folder"></a>检查 MachineKeys 文件夹的权限
 
 1. 在受影响的计算机上打开“资源管理器”，然后导航到 **C:\\ProgramData\\Microsoft\\Crypto\\RSA\\** 。
-2. 右键单击“MachineKeys”，依次选择“属性”、“安全性”、“高级”。    
+2. 右键单击“MachineKeys”，依次选择“属性”、“安全性”、“高级”。
 3. 确保已配置以下权限：
       - Builtin\\Administrators：完全控制
       - Everyone：读取、写入
@@ -176,9 +176,9 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 若要检查或更改 RDP 端口，请使用注册表编辑器：
 
 1. 转到“开始”菜单，选择“运行”  ，然后将 **regedt32** 输入显示的文本框中。
-      - 若要连接到远程计算机，请依次选择“文件”、“连接网络注册表”。  
-      - 在“选择计算机”对话框中输入远程计算机的名称，然后依次选择“检查名称”、“确定”。   
-2. 打开注册表并导航到“HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<侦听器\>”。  
+      - 若要连接到远程计算机，请依次选择“文件”、“连接网络注册表”。
+      - 在“选择计算机”对话框中输入远程计算机的名称，然后依次选择“检查名称”、“确定”。
+2. 打开注册表并导航到“HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<listener\>”。 
     ![RDP 协议的 PortNumber 子项。](../media/troubleshoot-remote-desktop-connections/RegEntry_PortNumber.png)
 3. 如果 **PortNumber** 的值不是 **3389**，请将其更改为 **3389**。 
    > [!IMPORTANT]  
@@ -189,7 +189,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 请使用具有管理权限的 PowerShell 实例完成此过程。 对于本地计算机，还可以使用具有管理权限的命令提示符。 但是，此过程使用 PowerShell，因为同一 cmdlet 可以通过本地和远程方式运行。
 
-1. 打开 PowerShell 窗口。 若要连接到远程计算机，请输入 **Enter-PSSession -ComputerName \<计算机名\>** 。
+1. 打开 PowerShell 窗口。 若要连接到远程计算机，请输入 Enter-PSSession -ComputerName \<computer name\>。
 2. 输入以下命令：  
    
      ```powershell  
@@ -225,7 +225,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
    ```
    
 3. 在 **psping** 命令的输出中检查如下所示的结果：  
-      - **Connecting to \<计算机 IP\>** ：远程计算机可访问。
+      - **连接到 \<computer IP\>** ：远程计算机可访问。
       - **(0% loss)** ：所有连接尝试均成功。
       - **The remote computer refused the network connection**：远程计算机不可访问。
       - **(100% loss)** ：所有连接尝试均失败。

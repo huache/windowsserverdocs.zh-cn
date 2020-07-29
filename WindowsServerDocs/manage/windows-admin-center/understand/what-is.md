@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: cb4e3ab2bf98a0c2d51483642fe5388e468dbbb4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 92d8a47c4ac214faeac83ba8ff5a1a746bc8bdb3
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269264"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891382"
 ---
 # <a name="what-is-windows-admin-center"></a>什么是 Windows Admin Center？
 
@@ -27,7 +27,7 @@ Windows Admin Center 是“内部”管理工具（例如服务器管理器和 M
 
 ## <a name="how-does-windows-admin-center-work"></a>Windows Admin Center 如何工作？
 
-Windows Admin Center 在 Web 浏览器中运行，通过在 Windows Server 或已加入域的 Windows 10 上安装的 Windows Admin Center 网关  来管理 Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 10 等。 该网关通过使用远程 PowerShell 管理服务器，并通过 WinRM 管理 WMI。 此网关以你可以[下载](https://aka.ms/windowsadmincenter)的单个轻型 .msi 程序包随附在 Windows Admin Center 中。
+Windows Admin Center 在 Web 浏览器中运行，通过在 Windows Server 或已加入域的 Windows 10 上安装的 Windows Admin Center 网关来管理 Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Azure Stack HCI 等。 该网关通过使用远程 PowerShell 管理服务器，并通过 WinRM 管理 WMI。 此网关以你可以[下载](https://aka.ms/windowsadmincenter)的单个轻型 .msi 程序包随附在 Windows Admin Center 中。
 
 发布到 DNS 并提供对相应公司防火墙的访问权限后，Windows Admin Center 网关让你可以通过 Microsoft Edge 或 Google Chrome 从任何位置安全地连接和管理你的服务器。
 
@@ -58,6 +58,10 @@ Windows Admin Center 进行了许多改进，让你的管理平台[更安全](..
 ### <a name="azure-integration"></a>**Azure 集成**
 
 Windows Admin Center 有很多[与 Azure 服务的集成](../plan/azure-integration-options.md)点，包括 Azure Active Directory、Azure 备份、Azure Site Recovery，等等。
+
+### <a name="deploy-hyper-converged-and-failover-clusters"></a>**部署超聚合群集和故障转移群集**
+
+Windows Admin Center 允许通过易于使用的向导[无缝部署超聚合群集和故障转移群集](../use/deploy-hyperconverged-infrastructure.md)。 
 
 ### <a name="manage-hyper-converged-clusters"></a>**管理超融合群集**
 

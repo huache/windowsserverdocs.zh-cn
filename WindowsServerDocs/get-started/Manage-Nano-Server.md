@@ -10,12 +10,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b41113f302dad1c9917001bf137da28ef431d38
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f07c6ffd96aabd4bac5a7e34c7bb612df33274f6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826780"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961109"
 ---
 # <a name="manage-nano-server"></a>管理 Nano Server
 
@@ -99,7 +99,7 @@ chcp 65001
 winrs -r:<IP address of Nano Server> -u:Administrator -p:<Nano Server administrator password> ipconfig
 ```
   
-有关 Windows 远程管理的详细信息，请参阅 [Windows 远程管理 (WinRM) 概述](https://technet.microsoft.com/library/dn265971.aspx)。  
+有关 Windows 远程管理的详细信息，请参阅 [Windows 远程管理 (WinRM) 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11))。  
    
    
   
@@ -113,7 +113,7 @@ Add-NetEventPacketCaptureProvider -SessionName
 Start-NetEventSession [-Name]  
 Stop-NetEventSession [-Name]  
 ```  
-[Windows PowerShell 中的网络事件数据包捕获 Cmdlet](https://technet.microsoft.com/library/dn268520(v=wps.630).aspx) 详细记录了这些 cmdlet  
+[Windows PowerShell 中的网络事件数据包捕获 Cmdlet](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11)) 详细记录了这些 cmdlet  
 
 ## <a name="installing-servicing-packages"></a>安装服务包  
 如果想要安装服务包，请使用 -ServicingPackagePath 参数（可以向 .cab 文件传递一系列路径）：  
@@ -133,8 +133,8 @@ C:>dir C:\KB3157663_expanded
    
       C:\KB3157663_expanded 的目录  
    
-      04/19/2016  01:17 PM    \<DIR>  
-      04/19/2016  01:17 PM    \<DIR>  
+      2016/04/19 下午 01:17    \<DIR>          。  
+      2016/04/19 下午 01:17    \<DIR>          。  
         04/17/2016  12:31 AM               517 Windows10.0-KB3157663-x64-pkgProperties.txt  
 04/17/2016  12:30 AM        93,886,347 Windows10.0-KB3157663-x64.cab  
 04/17/2016  12:31 AM               454 Windows10.0-KB3157663-x64.xml  
@@ -212,7 +212,7 @@ Get-WindowsPackage -Online
 ---  
 上面列出的命令将通过 Internet 查询 Windows 更新和 Microsoft 更新服务来查找并下载更新。 如果使用 WSUS，可以在 Nano Server 上设置注册表项来改为使用 WSUS 服务器。  
   
-请参阅[在非 Active Directory 环境中配置自动更新](https://technet.microsoft.com/library/cc708449(v=ws.10).aspx)中的“Windows 更新代理环境选项注册表项”表  
+请参阅[在非 Active Directory 环境中配置自动更新](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708449(v=ws.10))中的“Windows 更新代理环境选项注册表项”表  
   
 应至少设置 **WUServer** 和 **WUStatusServer** 注册表项，但是具体取决于如何实现 WSUS，可能会需要其他值。 始终可以通过检查同一环境中的另一台 Windows Server 来确认这些设置。  
 
@@ -227,7 +227,7 @@ Get-WindowsPackage -Online
 [comment]: # (从 Venkat Yalla。)
 Nano Server 完全支持 [Windows 事件跟踪](https://aka.ms/u2pa0i) (ETW) 框架，但一些用于管理跟踪的熟悉工具和性能计数器当前在 Nano Server 上不可用。 但是，Nano Server 具有的工具和 cmdlet 可完成最常见的性能分析方案。
 
-高级工作流保持与在任何 Window Server 安装上相同的状态，即在目标 (Nano Server) 计算机上执行低开销水平跟踪，并且生成的跟踪文件和/或日志在单独的计算机上使用 [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx)、[消息分析器](https://www.microsoft.com/download/details.aspx?id=44226)等脱机进行后期处理。
+高级工作流保持与在任何 Window Server 安装上相同的状态，即在目标 (Nano Server) 计算机上执行低开销水平跟踪，并且生成的跟踪文件和/或日志在单独的计算机上使用 [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))、[消息分析器](https://www.microsoft.com/download/details.aspx?id=44226)等脱机进行后期处理。
 
 > [!NOTE]
 > 请参阅[如何将文件复制到 Nano Server 上以及反向复制](https://aka.ms/nri9c8)，以复习一下如何使用 PowerShell 远程控制传送文件。
@@ -235,7 +235,7 @@ Nano Server 完全支持 [Windows 事件跟踪](https://aka.ms/u2pa0i) (ETW) 框
 以下部分列出了最常见的性能数据收集活动以及在 Nano Server 上实现这些活动的受支持的方法。
 
 ### <a name="query-available-event-providers"></a>查询可用事件提供程序
-[Windows Performance Recorder](https://msdn.microsoft.com/library/hh448229.aspx) 是用于查询可用事件提供程序的工具，如下所示：
+[Windows Performance Recorder](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) 是用于查询可用事件提供程序的工具，如下所示：
 ```
 wpr.exe -providers
 ```
@@ -252,7 +252,7 @@ PS C:\> wpr.exe -providers | select-string Storage
 ```
 
 ### <a name="record-traces-from-a-single-etw-provider"></a>记录来自单个 ETW 提供程序的跟踪
-可以使用新的[事件跟踪管理 cmdlet](https://technet.microsoft.com/library/dn919247.aspx) 进行此操作。 下面是示例工作流：
+可以使用新的[事件跟踪管理 cmdlet](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) 进行此操作。 下面是示例工作流：
 
 创建并启动跟踪，同时指定存储事件的文件名。
 ```
@@ -284,7 +284,7 @@ Mode                LastWriteTime         Length Name
 > 此示例显示将单个跟踪提供程序添加到会话，但是也可以在具有不同提供程序 GUID 的跟踪会话上多次使用 ```Add-EtwTraceProvider``` cmdlet，以启用来自多个源的跟踪。 另一种方法是如下所述使用 ```wpr.exe``` 配置文件。
 
 ### <a name="record-traces-from-multiple-etw-providers"></a>记录来自多个 ETW 提供程序的跟踪
-[Windows Performance Recorder](https://msdn.microsoft.com/library/hh448229.aspx) 的 ```-profiles``` 选项可实现同时从多个提供程序的跟踪。 有多个内置的配置文件，如 CPU、网络和 DiskIO 可供选择：
+[Windows Performance Recorder](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) 的 ```-profiles``` 选项可实现同时从多个提供程序的跟踪。 有多个内置的配置文件，如 CPU、网络和 DiskIO 可供选择：
 ```
 PS C:\Users\Administrator\Documents> wpr.exe -profiles 
 
@@ -321,7 +321,7 @@ Copyright (c) 2015 Microsoft Corporation. All rights reserved.
         WdfTraceLoggingProvider     WDF Driver Activity
 ```
 
-有关创建自定义配置文件的详细指导，请参阅 [WPR.exe 文档](https://msdn.microsoft.com/library/windows/hardware/hh448223.aspx)。
+有关创建自定义配置文件的详细指导，请参阅 [WPR.exe 文档](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448223(v=win.10))。
 
 ### <a name="record-etw-traces-during-operating-system-boot-time"></a>在操作系统启动时记录 ETW 跟踪
 使用 ```New-AutologgerConfig``` cmdlet 在系统启动期间收集事件。 用法与 ```New-EtwTraceSession``` cmdlet 非常类似，但添加到自动记录器的配置的提供程序仅在下次启动早些时候启用。 整个工作流如下所示：
@@ -376,13 +376,13 @@ Exiting, please wait...
 The command completed successfully.
 ```
 
-使用其他命令行选项可以指定配置文件中感兴趣的性能计数器名称，同时将输出重定向到日志文件等。 请参阅 [typeperf.exe 文档](https://technet.microsoft.com/library/bb490960.aspx) 了解详细信息。
+使用其他命令行选项可以指定配置文件中感兴趣的性能计数器名称，同时将输出重定向到日志文件等。 请参阅 [typeperf.exe 文档](/previous-versions/windows/it-pro/windows-xp/bb490960(v=technet.10)) 了解详细信息。
 
 还可以远程结合使用 Perfmon.exe 的图形界面和 Nano Server 目标。 当向视图添加性能计数器时，在计算机名称中指定 Nano Server 目标，而不是默认的 *<Local computer>* 。
 
 ### <a name="interact-with-the-windows-event-log"></a>与 Windows 事件日志进行交互
 
-Nano Server 支持 ```Get-WinEvent``` cmdlet，后者可在本地以及远程计算机上提供 Windows 事件日志筛选和查询功能。 详细的选项和示例可在 [Get-WinEvent 文档页](https://technet.microsoft.com/library/hh849682.aspx) 中找到。 这个简单的示例检索了过去两天内在*系统*日志中发现的*错误*。
+Nano Server 支持 ```Get-WinEvent``` cmdlet，后者可在本地以及远程计算机上提供 Windows 事件日志筛选和查询功能。 详细的选项和示例可在 [Get-WinEvent 文档页](/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1) 中找到。 这个简单的示例检索了过去两天内在*系统*日志中发现的*错误*。
 ```
 PS C:\> $StartTime = (Get-Date) - (New-TimeSpan -Day 2)
 PS C:\> Get-WinEvent -FilterHashTable @{LogName='System'; Level=2; StartTime=$StartTime} | select TimeCreated, Message
@@ -397,7 +397,7 @@ TimeCreated           Message
 Nano Server 还支持 ```wevtutil.exe```，后者允许检索有关事件日志和发布程序的信息。 请参阅 [wevtutil.exe 文档](https://aka.ms/qvod7p) 了解更多详细信息。 
 
 ### <a name="graphical-interface-tools"></a>图形界面工具
-[基于 Web 的服务器管理工具](https://blogs.technet.microsoft.com/servermanagement/2016/08/17/deploy-setup-server-management-tools/) 可以用于远程管理 Nano Server 目标和使用 Web 浏览器显示 Nano Server 事件日志。 最后，MMC 管理单元事件查看器 (eventvwr.msc) 还可以用于查看日志，只需通过桌面在计算机上打开它并使其指向远程 Nano Server。
+[基于 Web 的服务器管理工具](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog) 可以用于远程管理 Nano Server 目标和使用 Web 浏览器显示 Nano Server 事件日志。 最后，MMC 管理单元事件查看器 (eventvwr.msc) 还可以用于查看日志，只需通过桌面在计算机上打开它并使其指向远程 Nano Server。
 
 
 
@@ -406,4 +406,4 @@ Nano Server 还支持 ```wevtutil.exe```，后者允许检索有关事件日志�
   
 可以使用 Windows PowerShell Desired State Configuration (DSC) 将 Nano Server 作为目标节点来管理。 目前，仅可以在请求模式下管理使用 DSC 运行 Nano Server 的节点。 并非所有 DSC 功能都与 Nano Server 正常运行。  
   
-有关完整的详细信息，请参阅[使用 Nano Server 上的 DSC](https://msdn.microsoft.com/powershell/dsc/nanoDsc)。  
+有关完整的详细信息，请参阅[使用 Nano Server 上的 DSC](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)。  

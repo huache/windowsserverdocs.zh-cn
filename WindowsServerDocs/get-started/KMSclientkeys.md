@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 1bbb8f06ab66ced50024f4ff17b73229d50ec5c6
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1eeaa76af345d3f05effe2afe35c40d594adfc3a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80391711"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959619"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 客户端安装密钥
 
@@ -25,9 +25,9 @@ ms.locfileid: "80391711"
 > [!NOTE]
 > 在以下各表中，“LTSC”代表“长期服务频道”，而“LTSB”是指“长期服务分支”。 
 
-**若要使用此处列出的密钥（它们是 GVLK），你必须首先在你的部署中运行 KMS 主机。** 如果你尚未配置 KMS 主机，则请参阅 [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx)（部署 KMS 激活），以了解设置主机的步骤。
+**若要使用此处列出的密钥（它们是 GVLK），你必须首先在你的部署中运行 KMS 主机。** 如果你尚未配置 KMS 主机，则请参阅 [Deploy KMS Activation](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502531(v=ws.11))（部署 KMS 激活），以了解设置主机的步骤。
 
-如果是将计算机从 KMS 主机、MAK 或零售版 Windows 转换为 KMS 客户端，则从下表中选择相应的安装程序密钥 (GVLK) 进行安装。 若要安装客户端安装程序密钥，请打开客户端上的管理命令提示符，键入 slmgr /ipk \<setup key\>  ，然后按 Enter  。
+如果是将计算机从 KMS 主机、MAK 或零售版 Windows 转换为 KMS 客户端，则从下表中选择相应的安装程序密钥 (GVLK) 进行安装。 若要安装客户端安装程序密钥，请打开客户端上的管理命令提示符，键入 slmgr /ipk  \<setup key\>，然后按 Enter。
 
 | 如果你希望    | 请使用以下资源   |
 |--------------------|------------------------|
@@ -209,6 +209,4 @@ ms.locfileid: "80391711"
 
 另请参阅
 
-• [规划批量激活](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
-
-
+• [规划批量激活](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134042(v=ws.11))

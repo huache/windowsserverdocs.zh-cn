@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8f1af40f54536ca380db7fe810506c937bb2d478
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77517532"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118607"
 ---
 # <a name="ad-fs-requirements"></a>AD FS 要求
 
@@ -53,7 +53,7 @@ ms.locfileid: "77517532"
 - 证书包含服务器身份验证增强型密钥使用 (EKU) 值
 - 证书在使用者或使用者可选名称 (SAN) 中包含联合身份验证服务名称，例如“fs.contoso.com”
 - 对于端口 443 上的用户证书身份验证，证书包含“certauth.\<federation service name\>”，例如 SAN 中的“certauth.fs.contoso.com”
-- 对于使用 Windows 10 之前版本客户端进行设备注册或对本地资源进行新式身份验证，SAN 必须为组织中使用的每个 UPN 后缀包含“enterpriseregistration.\<upn suffix\>”。
+- 对于使用 Windows 10 之前版本客户端进行的设备注册或针对本地资源的新式身份验证，SAN 必须为组织中使用的每个 UPN 后缀包含“enterpriseregistration.\<upn suffix\>” 。
 
 Web 应用程序代理上的 SSL 证书必须满足以下要求
 - 如果代理用于代理使用 Windows 集成身份验证的 AD FS 请求，则代理 SSL 证书必须与联合服务器 SSL 证书相同（使用相同的密钥）
@@ -92,7 +92,7 @@ Web 应用程序代理上的 SSL 证书必须满足以下要求
 
 ## <a name="hardware-requirements"></a><a name="BKMK_2"></a>硬件要求  
 AD FS 和 Web 应用程序代理硬件要求（物理要求或虚拟要求）都根据 CPU 而定，因此，你应调整场的大小以提供处理容量。  
-- 使用 [AD FS 2016 容量计划电子表格](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)确定所需的 AD FS 和 Web 应用程序代理服务器的数量。
+- 使用 [AD FS 2016 容量计划电子表格](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)确定所需的 AD FS 和 Web 应用程序代理服务器的数量。
 
 AD FS 的内存和磁盘要求稳定不变，请参阅下表：
 
@@ -110,7 +110,7 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
   
 -   对于 Extranet 访问，必须部署属于远程访问服务器角色的 Web 应用程序代理角色服务。 
 
--   第三方代理必须支持 [MS-ADFSPIP 协议](https://msdn.microsoft.com/library/dn392811.aspx)，才能作为 AD FS 代理受到支持。  有关第三方供应商的列表，请参阅[常见问题解答](AD-FS-FAQ.md)。
+-   第三方代理必须支持 [MS-ADFSPIP 协议](/openspecs/windows_protocols/ms-adfspip/76deccb1-1429-4c80-8349-d38e61da5cbb)，才能作为 AD FS 代理受到支持。  有关第三方供应商的列表，请参阅[常见问题解答](AD-FS-FAQ.md)。
 
 -   AD FS 2016 需要 Windows Server 2016 上的 Web 应用程序代理服务器。  不能为在 2016 场行为级别运行的 AD FS 2016 场配置下级代理。
   
@@ -208,7 +208,7 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
   
 此外，如果需要客户端用户证书身份验证\(使用 X509 用户证书的 clientTLS 身份验证\)，并且未启用端口 443 上的 certauth 终结点，则 AD FS 2016 要求在客户端和 Web 应用程序代理之间的防火墙上启用 TCP 端口 49443 入站。 无需在 Web 应用程序代理和联合服务器之间的防火墙上执行此操作。 
 
-有关混合端口要求的其他信息，请参阅 [混合标识端口和协议](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports)。 
+有关混合端口要求的其他信息，请参阅 [混合标识端口和协议](/azure/active-directory/connect/active-directory-aadconnect-ports)。 
 
 有关其他信息，请参阅[保护 Active Directory 联合身份验证服务的最佳做法](../deployment/Best-Practices-Securing-AD-FS.md)
   
@@ -222,7 +222,7 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
   
 -   对于 Windows 集成身份验证，必须将 DNS A 记录\(而不是 CNAME\)用作联合身份验证服务名称。  
 
--   对于端口 443 上的用户证书身份验证，必须在 DNS 中配置“certauth.\<federation service name\>”才能解析为联合服务器或 Web 应用程序代理。
+-   对于端口 443 上的用户证书身份验证，必须在 DNS 中将“certauth.\<federation service name\>”配置为 解析到联合服务器或 Web 应用程序代理。
 
 -   对于使用 Windows 10 之前版本客户端进行设备注册或对本地资源进行新式身份验证，必须为组织中使用的每个 UPN 后缀配置“enterpriseregistration.\<upn suffix\>”才能解析联合服务器或 Web 应用程序代理。
 
@@ -241,4 +241,3 @@ AD FS 的内存和磁盘要求稳定不变，请参阅下表：
 执行 AD FS 的安装和初始配置的管理员必须具有 AD FS 服务器上的本地管理员权限。  如果本地管理员无权在 Active Directory 中创建对象，则他们必须先具有域管理员身份才能创建所需的 AD 对象，然后使用 AdminConfiguration 参数配置 AD FS 场。  
   
   
-

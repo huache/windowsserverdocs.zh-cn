@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
 ms.prod: windows-server
-ms.openlocfilehash: 185902d332e2036eace5b0b332eabd2803b5eb00
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4125a3f427bd19ae7461aaaef058a558722d1987
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81650108"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891372"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常见问题解答
 
@@ -86,7 +86,7 @@ Windows Admin Center 是对 RSAT（远程服务器管理工具）的补充，不
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-windows-server-2008-r2-or-earlier"></a>是否有 Windows Admin Center 管理 Windows Server 2008 R2 或更早版本的计划？
 
-Windows Admin Center 现在支持**有限的**功能来管理 Windows Server 2008 R2。 Windows Admin Center 依赖于 Windows Server 2008 R2 及更早版本中没有的 PowerShell 功能和平台技术，这让完全支持无法实现。 Windows Server 2008/2008 R2 将于 2020 年 1 月终止支持，因此 Microsoft 建议客户[过渡到 Azure 或升级到最新版本的 Windows Server](https://www.microsoft.com/cloud-platform/windows-server-2008)。
+Windows Admin Center 不再支持用于管理 Windows Server 2008 R2 的功能。 Windows Admin Center 依赖于 Windows Server 2008 R2 及更早版本中没有的 PowerShell 功能和平台技术，这让完全支持无法实现。 如果尚未[迁移到 Azure 或升级到 Windows Server 的最新版本](https://www.microsoft.com/cloud-platform/windows-server-2008)，Microsoft建议执行此操作。
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-linux-connections"></a>是否有 Windows Admin Center 管理 Linux 连接的计划？
 
@@ -104,9 +104,7 @@ Microsoft Edge 的最新版本（Windows 10 版本 1709 或更高版本）、Goo
 
 是的，在少数情况下，Windows Admin Center 需要 CredSSP。 需要使用 CredSSP 才能将用于身份验证的凭据传递给除用作管理目标的特定服务器以外的计算机。 例如，如果你在**服务器 B** 上管理虚拟机，但想要将这些虚拟机的 vhdx 文件存储在**服务器 C** 托管的文件共享上，则 Windows Admin Center 必须使用 CredSSP 在**服务器 C** 上进行身份验证才能访问该文件共享。
 
-在提示你许可后，Windows Admin Center 会自动处理 CredSSP 的配置。 在配置 CredSSP 之前，Windows Admin Center 将检查以确保系统包含最新的 CredSSP [更新](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)。 启用 CredSSP 时，“服务器概述”中会显示一条锁屏提醒，以及一个用于禁用 CredSSP 的选项 -
-
-![服务器概述中的 CredSSP](../media/CredSSP-overview.png)
+在提示你许可后，Windows Admin Center 会自动处理 CredSSP 的配置。 在配置 CredSSP 之前，Windows Admin Center 将检查以确保系统包含最新的 CredSSP [更新](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)。 
 
 CredSSP 当前用于以下场合：
 

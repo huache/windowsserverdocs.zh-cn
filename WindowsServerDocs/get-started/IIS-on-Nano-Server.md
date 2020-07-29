@@ -10,12 +10,12 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bcb669f64845aaa7a3b0498cd7f793891f6c274
-ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
+ms.openlocfilehash: a64896a1efcafec878ea8fd5dda8077a1fdc9c42
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551113"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118580"
 ---
 # <a name="iis-on-nano-server"></a>Nano Server 上的 IIS
 
@@ -63,7 +63,7 @@ ms.locfileid: "83551113"
 |**管理工具**||
 |Windows PowerShell 的 IISAdministration 模块|x|
 
-有关 IIS 的其他配置（例如使用 ASP.NET、PHP 和 Java）的一系列文章以及其他相关内容发布在 [http://iis.net/learn](https://iis.net/learn)。
+有关 IIS 的其他配置（例如使用 ASP.NET、PHP 和 Java）的一系列文章以及其他相关内容发布在 [https://iis.net/learn](https://iis.net/learn)。
 
 ## <a name="installing-iis-on-nano-server"></a>在 Nano Server 上安装 IIS
 可以脱机（Nano Server 断开时）或联机（Nano Server 运行时）安装此服务器角色；脱机安装是推荐选项。
@@ -130,7 +130,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 6. 使用 **net start w3svc** 或通过重新启动 Nano Server 启动 W3SVC 服务。
 
 ## <a name="starting-iis"></a>启动 IIS
-安装 IIS 后并且运行时，它已准备好为 Web 请求提供服务。 通过浏览默认的 IIS 网页（网址： http://\<IP address of Nano Server> 验证 IIS 是否在运行。 在物理计算机上，可以通过使用恢复控制台确定 IP 地址。 在虚拟计算机上，通过使用 Windows PowerShell 提示符和运行以下各项可获得 IP 地址：
+安装 IIS 后并且运行时，它已准备好为 Web 请求提供服务。 通过浏览默认的 IIS 网页 (http://\<IP address of Nano Server>) 验证 IIS 是否在运行。 在物理计算机上，可以通过使用恢复控制台确定 IP 地址。 在虚拟计算机上，通过使用 Windows PowerShell 提示符和运行以下各项可获得 IP 地址：
 
 ```PowerShell
 Get-VM -name <VM name> | Select -ExpandProperty networkadapters | select IPAddresses

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ff800fc2a0885cec39ca104607d7207f0bd8ce0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 746aa953b2226152a1f103fd0b5a974f543ce993
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815600"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966109"
 ---
 # <a name="use-robocopy-to-pre-seed-files-for-dfs-replication"></a>使用 Robocopy 预先植入文件以执行 DFS 复制
 
@@ -43,9 +43,9 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
 - 请确保目标驱动器上有足够的存储空间可用。 不要在准备复制到的路径上创建文件夹：Robocopy 必须创建根文件夹。
     
     >[!NOTE]
-    >在决定为预先植入文件分配多少空间时，请考虑随时间推移的预计数据增长情况和 DFS 复制的存储要求。 有关规划帮助，请参阅[管理 DFS 复制](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>)中的[编辑暂存文件夹以及冲突和已删除文件夹的配额大小](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754229(v=ws.11))。
+    >在决定为预先植入文件分配多少空间时，请考虑随时间推移的预计数据增长情况和 DFS 复制的存储要求。 有关规划帮助，请参阅[管理 DFS 复制](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>)中的[编辑暂存文件夹以及冲突和已删除文件夹的配额大小](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc754229(v=ws.11))。
 
-- 在源服务器上，可以选择安装进程监视器或进程资源管理器，其可用于检查当前锁定文件的应用程序。 有关下载信息，请参阅[进程监视器](https://docs.microsoft.com/sysinternals/downloads/procmon)[进程资源管理器](https://docs.microsoft.com/sysinternals/downloads/process-explorer)。
+- 在源服务器上，可以选择安装进程监视器或进程资源管理器，其可用于检查当前锁定文件的应用程序。 有关下载信息，请参阅[进程监视器](/sysinternals/downloads/procmon)[进程资源管理器](/sysinternals/downloads/process-explorer)。
 
 ## <a name="step-1-download-and-install-the-latest-version-of-robocopy"></a>步骤 1：下载并安装最新版本的 Robocopy
 
@@ -76,7 +76,7 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
 |锁的源|说明|缓解|
 |---|---|---|
 |用户远程打开共享上的文件。|员工连接到标准文件服务器并编辑文档、多媒体内容或其他文件。 有时称为传统主文件夹或共享数据工作负载。|仅在非高峰、非工作时间执行 Robocopy 操作。 这会最大程度地减少 Robocopy 在预先植入期间必须跳过的文件数。<br><br>请考虑在将通过使用 Windows PowerShell Grant-SmbShareAccess 和“Close-SmbSession”cmdlet 进行复制的文件共享上临时设置只读访问权限   。 如果将公共组（如“每个人”或“经过身份验证的用户”）的权限设置为“读取”，则标准用户可能不会打开使用独占锁定的文件（如果在文件打开时其应用程序检测到只读访问权限）。<br><br>可能还需要考虑为进入该服务器的 SMB 端口 445 设置临时防火墙规则，以阻止访问文件或使用“Block-SmbShareAccess”cmdlet  。 但是，这两种方法都会导致用户操作发生严重中断。|
-|应用程序在本地打开文件。|在文件服务器上运行的应用程序工作负载有时会锁定文件。|临时禁用或卸载当前锁定文件的应用程序。 可以使用进程监视器或进程资源管理器来确定哪些应用程序正在锁定文件。 若要下载进程监视器或进程资源管理器，请访问[进程监视器](https://docs.microsoft.com/sysinternals/downloads/procmon)和[进程资源管理器](https://docs.microsoft.com/sysinternals/downloads/process-explorer)页。|
+|应用程序在本地打开文件。|在文件服务器上运行的应用程序工作负载有时会锁定文件。|临时禁用或卸载当前锁定文件的应用程序。 可以使用进程监视器或进程资源管理器来确定哪些应用程序正在锁定文件。 若要下载进程监视器或进程资源管理器，请访问[进程监视器](/sysinternals/downloads/procmon)和[进程资源管理器](/sysinternals/downloads/process-explorer)页。|
 
 ## <a name="step-3-copy-the-replicated-files-to-the-destination-server"></a>步骤 3:将复制的文件复制到目标服务器
 
@@ -121,7 +121,7 @@ Windows Server 中包含 Robocopy（稳健的文件复制）命令行实用程�
     ```
     
     >[!NOTE]
-    >建议在使用 Robocopy 预先植入文件以执行 DFS 复制时使用上述参数。 但是，可以更改参数的某些值或添加其他参数。 例如，可能通过测试发现自己有能力为“/MT”参数设置更高的值（线程计数）  。 此外，如果主要复制较大的文件，则可以通过为未缓冲的 I/O 添加“/j”选项来提高复制性能  。 有关 Robocopy 参数的详细信息，请参阅 [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) 命令行参考。
+    >建议在使用 Robocopy 预先植入文件以执行 DFS 复制时使用上述参数。 但是，可以更改参数的某些值或添加其他参数。 例如，可能通过测试发现自己有能力为“/MT”参数设置更高的值（线程计数）  。 此外，如果主要复制较大的文件，则可以通过为未缓冲的 I/O 添加“/j”选项来提高复制性能  。 有关 Robocopy 参数的详细信息，请参阅 [Robocopy](../../administration/windows-commands/robocopy.md) 命令行参考。
 
     >[!WARNING]
     >若要在使用 Robocopy 预先植入文件以执行 DFS 复制时避免潜在的数据丢失，请不要对建议的参数进行以下更改：

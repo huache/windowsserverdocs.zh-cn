@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fd7cfda8814347f8bab9dc7b3f7632e3b992ecb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 65bf81d80d5cfd5566d66005728cd3677f131085
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857230"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963219"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>用户无法完成身份验证或必须完成身份验证两次
 
@@ -26,7 +26,7 @@ ms.locfileid: "80857230"
 > 远程桌面连接：  
 > 系统管理员限制了可以使用的登录类型（网络或交互式）。 如需帮助，请与系统管理员或技术支持人员联系。
 
-如果 RDP 连接需要网络级别身份验证 (NLA)，而用户不是“远程桌面用户”组的成员，则会出现此问题。  如果没有为“远程桌面用户”组分配“从网络访问此计算机”用户权限，则也会出现此问题。  
+如果 RDP 连接需要网络级别身份验证 (NLA)，而用户不是“远程桌面用户”组的成员，则会出现此问题。 如果没有为“远程桌面用户”组分配“从网络访问此计算机”用户权限，则也会出现此问题。
 
 若要解决此问题，请执行以下操作之一：
 
@@ -36,15 +36,15 @@ ms.locfileid: "80857230"
 
 ### <a name="modify-the-users-group-membership-or-user-rights-assignment"></a>修改用户的组成员身份或用户权限分配
 
-如果此问题只是影响一个用户，则最直接的解决方法就是将该用户添加到“远程桌面用户”组。 
+如果此问题只是影响一个用户，则最直接的解决方法就是将该用户添加到“远程桌面用户”组。
 
 如果该用户已是此组的成员（或者多个组成员遇到相同的问题），请检查远程 Windows 10 或 Windows Server 2016 计算机上的用户权限配置。
 
 1. 打开组策略对象编辑器 (GPE) 并连接到远程计算机的本地策略。
-2. 导航到“计算机配置”\\“Windows 设置”\\“安全设置”\\“本地策略”\\“用户权限分配”，右键单击“从网络访问此计算机”，然后选择“属性”。   
-3. 检查“远程桌面用户”（或父组）的用户和组列表。 
-4. 如果该列表不包含“远程桌面用户”或类似于“任何人”的父组，则必须将它添加到列表。   如果部署中有不止一台计算机，请使用组策略对象。  
-    例如，“从网络访问此计算机”的默认成员身份包括“任何人”。   如果部署使用组策略对象来删除“任何人”，则你可能需要通过更新组策略对象来添加“远程桌面用户”，以还原访问权限。  
+2. 导航到“计算机配置”\\“Windows 设置”\\“安全设置”\\“本地策略”\\“用户权限分配”，右键单击“从网络访问此计算机”，然后选择“属性”。
+3. 检查“远程桌面用户”（或父组）的用户和组列表。
+4. 如果该列表不包含“远程桌面用户”或类似于“任何人”的父组，则必须将它添加到列表。 如果部署中有不止一台计算机，请使用组策略对象。  
+    例如，“从网络访问此计算机”的默认成员身份包括“任何人”。 如果部署使用组策略对象来删除“任何人”，则你可能需要通过更新组策略对象来添加“远程桌面用户”，以还原访问权限。
 
 ## <a name="access-denied-a-remote-call-to-the-sam-database-has-been-denied"></a>拒绝访问并出现“已拒绝远程调用 SAM 数据库”消息
 
@@ -57,7 +57,7 @@ ms.locfileid: "80857230"
 > [!IMPORTANT]  
 > 请认真遵循本部分所述的步骤。 如果注册表修改不正确，可能会发生严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
 
-若要在 RD 会话主机服务器上启用旧的 RCM 行为，请配置以下注册表项，然后重启“远程桌面服务”服务：   
+若要在 RD 会话主机服务器上启用旧的 RCM 行为，请配置以下注册表项，然后重启“远程桌面服务”服务：  
   - **HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services**
   - **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<Winstation name\>\\**  
       - Name：**fQueryUserConfigFromDC**
@@ -75,7 +75,7 @@ ms.locfileid: "80857230"
 
 ### <a name="cant-sign-in-with-a-smart-card-in-a-branch-office-with-a-read-only-domain-controller-rodc"></a>无法通过智能卡登录到使用只读域控制器 (RODC) 的分支机构
 
-使用 RODC 的分支站点中包含 RDSH 服务器的部署会出现此问题。 RDSH 服务器托管在根域中。 分支站点上的用户属于一个子域，并使用智能卡进行身份验证。 RODC 配置为缓存用户密码（RODC 属于“允许的 RODC 密码复制组”）。  当用户尝试登录到 RDSH 服务器上的会话时，他们会收到类似于“尝试的登录无效。 原因是用户名或身份验证信息错误”的消息。
+使用 RODC 的分支站点中包含 RDSH 服务器的部署会出现此问题。 RDSH 服务器托管在根域中。 分支站点上的用户属于一个子域，并使用智能卡进行身份验证。 RODC 配置为缓存用户密码（RODC 属于“允许的 RODC 密码复制组”）。 当用户尝试登录到 RDSH 服务器上的会话时，他们会收到类似于“尝试的登录无效。 原因是用户名或身份验证信息错误”的消息。
 
 此问题是根 DC 和 RODC 管理用户凭据加密的方式导致的。 根 DC 使用加密密钥来加密凭据，RODC 为客户端提供解密密钥。 如果用户收到“无效”错误，则意味着这两个密钥不匹配。
 
@@ -138,10 +138,10 @@ This could be due to CredSSP encryption oracle remediation
 
 在完成更新之前若要解决此问题，请在 KB 4093492 中查看允许的连接类型。 如果没有可行的替代方法，可以考虑以下方法之一：
 
-- 对于受影响的客户端计算机，请将“加密数据库修正”策略设置回“有漏洞”。 
-- 在“计算机配置”\\“管理模板”\\“Windows 组件”\\“远程桌面服务”\\“远程桌面会话主机”\\“安全性”组策略文件夹中修改以下策略：   
-  - 将“要求对远程(RDP)连接使用特定的安全层”设置为“已启用”，并选择“RDP”。   
-  - 将“要求使用网络级别身份验证来远程连接的用户进行身份验证”设置为“已禁用”。  
+- 对于受影响的客户端计算机，请将“加密数据库修正”策略设置回“有漏洞”。
+- 在“计算机配置”\\“管理模板”\\“Windows 组件”\\“远程桌面服务”\\“远程桌面会话主机”\\“安全性”组策略文件夹中修改以下策略：  
+  - 将“要求对远程(RDP)连接使用特定的安全层”设置为“已启用”，并选择“RDP”。
+  - 将“要求使用网络级别身份验证来远程连接的用户进行身份验证”设置为“已禁用”。
     > [!IMPORTANT]  
     > 更改这些组策略会降低部署的安全性。 建议仅临时使用它们，如果需要使用的话。
 
@@ -168,4 +168,4 @@ This could be due to CredSSP encryption oracle remediation
 
 出现此问题的原因是 Remote Credential Guard 使用 Kerberos 进行身份验证，并限制 NTLM。 但是，在使用负载均衡的高可用性配置中，RD 连接代理无法支持 Kerberos 操作。
 
-如果需要将高可用性配置与负载均衡的 RD 连接代理配合使用，可以通过禁用 Remote Credential Guard 来解决此问题。 有关如何管理 Windows Defender Remote Credential Guard 的详细信息，请参阅[使用 Windows Defender Remote Credential Guard 保护远程桌面凭据](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard#enable-windows-defender-remote-credential-guard)。
+如果需要将高可用性配置与负载均衡的 RD 连接代理配合使用，可以通过禁用 Remote Credential Guard 来解决此问题。 有关如何管理 Windows Defender Remote Credential Guard 的详细信息，请参阅[使用 Windows Defender Remote Credential Guard 保护远程桌面凭据](/windows/security/identity-protection/remote-credential-guard#enable-windows-defender-remote-credential-guard)。
