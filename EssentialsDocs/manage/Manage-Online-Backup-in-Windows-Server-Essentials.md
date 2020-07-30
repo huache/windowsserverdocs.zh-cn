@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的联机备份
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5c9f6dc91d5bc46d3be6e20e105530a9dca2b548
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b3a9ceca5de9971f77175052a604d3e22de07036
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470648"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180943"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的联机备份
 
@@ -166,7 +165,7 @@ ms.locfileid: "85470648"
 
 5.  **指定已还原的文件和文件夹的目标位置**
 
-     向导的 **“指定恢复选项”** 页面使你可以指定还原文件和文件夹的位置。 存在两个选项：
+     向导的 **“指定恢复选项”** 页面使你可以指定还原文件和文件夹的位置。 共有两个选项：
 
     -   **还原到原始位置**。 选择此选项以将文件和文件夹还原到发起备份的确切位置。
 
@@ -192,7 +191,7 @@ ms.locfileid: "85470648"
 
 3.  在 **“联机备份”** 子节中，单击 **“注册”**。
 
-4.  为你的联机备份选择要用于备份保管库的证书。 默认情况下，选择默认证书；如果要选择其他证书，则使用 **“浏览”**。 然后单击“下一步”。
+4.  为你的联机备份选择要用于备份保管库的证书。 默认情况下，选择默认证书；如果要选择其他证书，则使用 **“浏览”**。 。
 
 5.  按照该向导中的说明创建密码，然后完成注册。
 
@@ -403,7 +402,7 @@ ms.locfileid: "85470648"
 
     显示 **“安装”** 页。 进度指示器指示安装何时开始并显示安装的进度。 安装完成后，你会收到一条消息，指出 Azure 备份外接程序已成功安装。
 
-4. 单击“完成”。
+4. 单击 **“完成”** 。
 
 5. 关闭并重新打开仪表板。
 
@@ -438,7 +437,7 @@ ms.locfileid: "85470648"
 ###  <a name="protect-folders-for-online-backup-in-windows-server-essentials"></a><a name="BKMK_18"></a>保护 Windows Server Essentials 中的联机备份的文件夹
  仪表板的联机备份部分的 **“受保护文件夹”** 子部分中显示服务器上所有共享文件夹的列表。 下表描述列表中包含的信息。
 
-|列|说明|
+|列|描述|
 |------------|-----------------|
 |**文件夹名称：**|联机备份中包含的文件夹的名称。<br /><br /> 若要添加或排除文件夹，请运行 **“配置联机备份”** 任务。|
 |**文件夹路径：**|文件夹位置。|
@@ -447,7 +446,7 @@ ms.locfileid: "85470648"
 ###  <a name="online-backup-history-in-windows-server-essentials"></a><a name="BKMK_19"></a>Windows Server Essentials 中的联机备份历史记录
  仪表板的联机备份部分中的 **“备份历史记录”** 子部分显示最近的联机备份的列表。 你可以使用成功的备份还原文件和文件夹。 下表描述列表中包含的信息。
 
-|列|说明|
+|列|描述|
 |------------|-----------------|
 |**运作**|有两种类型的操作 - **“备份”** 和 **“还原”**。|
 |**阶段**|这是最新状态的记录时间。|

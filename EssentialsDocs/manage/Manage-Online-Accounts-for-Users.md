@@ -2,17 +2,16 @@
 title: 管理 Windows Server Essentials 用户的联机帐户
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: c09f4cf6-4d12-49fe-9ae4-e6cb14027b9d
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: 893d22182b61dda4632550fab1c0a1ebf92c2d89
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 973e83fc02af12b63d48be98e985b2826551ce46
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470662"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180953"
 ---
 # <a name="manage-online-accounts-for-windows-server-essentials-users"></a>管理 Windows Server Essentials 用户的联机帐户
 
@@ -148,9 +147,9 @@ ms.locfileid: "85470662"
 
 4.  在“分配 Microsoft Online Services 帐户”**** 页上，为用户创建一个新的联机帐户或分配一个现有联机帐户：
 
-    -   若要创建新的联机帐户，请单击“创建新的 Microsoft Online Services 帐户并将其分配给此用户帐户”****，并键入该 Microsoft Online Services 帐户的名称（默认情况下，将用户名用于联机 ID）。 然后单击“下一步”。
+    -   若要创建新的联机帐户，请单击“创建新的 Microsoft Online Services 帐户并将其分配给此用户帐户”****，并键入该 Microsoft Online Services 帐户的名称（默认情况下，将用户名用于联机 ID）。 。
 
-    -   若要分配现有的 Microsoft 联机帐户，请单击“将现有 Microsoft Online Services 帐户分配给此用户帐户”****，并从下拉列表中选择一个现有帐户。 然后单击“下一步”。
+    -   若要分配现有的 Microsoft 联机帐户，请单击“将现有 Microsoft Online Services 帐户分配给此用户帐户”****，并从下拉列表中选择一个现有帐户。 。
 
     > [!NOTE]
     >  在 Windows Server Essentials 中，Microsoft Online Services 帐户在向导和仪表板标签中称为 Office 365 帐户。
@@ -243,7 +242,7 @@ ms.locfileid: "85470662"
 
     -   默认情况下，通讯组可以接收来自组织以外的人的电子邮件。 如果不想允许此操作，请清除该选项。
 
-4.  在“添加组成员”**** 页上，使用“添加”**** 按钮将活动的用户帐户（已为其分配联机帐户）和其他通讯组添加到新的通讯组。 然后单击“下一步”。
+4.  在“添加组成员”**** 页上，使用“添加”**** 按钮将活动的用户帐户（已为其分配联机帐户）和其他通讯组添加到新的通讯组。 。
 
      已在 Exchange Online 中创建新的通讯组。
 

@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的客户端计算机备份
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 1b4776e8-9504-4b98-ae80-11da797d9819
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: eb8952d1ab8eb7493cf1ae74ddd748af38b0e4db
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ba0c7a6e9adf4700754d01800ec80a805e10c9d5
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470772"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181013"
 ---
 # <a name="manage-client-computer-backup-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的客户端计算机备份
 
@@ -448,7 +447,7 @@ ms.locfileid: "85470772"
 
 |备份设置|默认|说明|
 |--------------------|-------------|-----------------|
-|打开/关闭|开|默认情况下，当安装 Windows Server Essentials 时，文件历史记录处于打开状态。|
+|打开/关闭|启用|默认情况下，当安装 Windows Server Essentials 时，文件历史记录处于打开状态。|
 |备份数据|文档和桌面|有三个预配置的设置，允许你指定各种备份解决方案。 你可以选择以下选项之一：<br /><br /> -文档和桌面<br /><br /> -所有库、桌面、联系人和收藏夹<br /><br /> -库、桌面、联系人和收藏夹中的所有数据，不包括音乐、视频和图片库中的数据|
 |备份频率|每小时|指定文件历史记录创建选定数据备份的频率。 你可以从若干选项中进行选择，频率范围介于每 10 分钟到每天。|
 |副本保留时间|1 年|指定文件历史记录保留备份副本的时间量。|

@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的系统运行状况
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 145f97ed2b5ac928e8d1988f3dfd47a62f5c1bf0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 98a4b154a9b3cea9ebc92da1eb807bc73e98d5d2
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470512"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180883"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的系统运行状况
 
@@ -289,8 +288,8 @@ ms.locfileid: "85470512"
 
     |SMTP 服务器|所需的 SSL|所需的身份验证|端口号|帐户名称/登录名|
     |-----------------|------------------|-----------------------------|-----------------|------------------------------|
-    |smtp.gmail.com|是|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
-    |smtp.live.com|是|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
+    |smtp.gmail.com|“是”|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
+    |smtp.live.com|“是”|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
     |smtp.comcast.net|是|否|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
     |smtp.mail.yahoo.com|否|是|25|仅提供电子邮件地址，无需用于用户名的域名。|
 
@@ -339,8 +338,8 @@ ms.locfileid: "85470512"
 
     |SMTP 服务器|所需的 SSL|所需的身份验证|端口号|帐户名称/登录名|
     |-----------------|------------------|-----------------------------|-----------------|------------------------------|
-    |smtp.gmail.com|是|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
-    |smtp.live.com|是|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
+    |smtp.gmail.com|“是”|“是”|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
+    |smtp.live.com|“是”|“是”|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
     |smtp.comcast.net|是|否|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
     |smtp.mail.yahoo.com|否|是|25|仅提供电子邮件地址，无需用于用户名的域名。|
 

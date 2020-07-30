@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的服务器文件夹
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8dba2bb0b282751fbbe584b64dbc92bbe3702979
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f748ca62062de616be7c6e2ee495a508d0e38646
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470562"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180913"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的服务器文件夹
 
@@ -58,7 +57,7 @@ ms.locfileid: "85470562"
 
 ### <a name="server-folder-tasks-on-the-dashboard"></a>仪表板上的服务器文件夹任务
 
-|任务名称|说明|
+|任务名称|描述|
 |---------------|-----------------|
 |打开文件夹|在文件资源管理器（在以前版本的 Windows 中称为 Windows 资源管理器）中显示选定文件夹的内容。|
 |删除文件夹|使你能够删除用户创建的文件夹。 此任务不适用于服务器安装创建的默认文件夹。|
@@ -81,14 +80,14 @@ ms.locfileid: "85470562"
 
   通过使用仪表板的“服务器文件夹”**** 选项卡上的任务，你可以管理对服务器上任何服务器文件夹的访问。 下表列出了默认情况下在安装 Windows Server Essentials 或在服务器上打开媒体流时创建的服务器文件夹。
 
-|服务器文件夹名称|说明|
+|服务器文件夹名称|描述|
 |------------------------|-----------------|
 |客户端计算机备份|默认情况下，Windows Server Essentials 将创建存储在此文件夹中的客户端计算机备份。 网络管理员可以修改客户端计算机备份的设置。|
-|Company|用于供网络用户存储和访问与你的组织相关的文档。|
+|公司|用于供网络用户存储和访问与你的组织相关的文档。|
 |文件历史记录备份|默认情况下，Windows Server Essentials 使用文件历史记录创建存储在此文件夹中的文件备份。 网络管理员可以修改这些文件历史记录设置。|
 |文件夹重定向|用于供网络用户存储和访问为文件夹重定向设置的文件夹。|
 |用户|用于供网络用户存储和访问文件。 针对你创建的每个网络用户帐户，特定于用户的文件夹将在“用户”**** 服务器文件夹中自动生成。|
-|音乐|用于供网络用户存储和访问音乐文件。 此文件夹在你打开媒体共享时可用。|
+|Music|用于供网络用户存储和访问音乐文件。 此文件夹在你打开媒体共享时可用。|
 |图片|用于供网络用户存储和访问图片文件。 此文件夹在你打开媒体共享时可用。|
 |录制的电视|用于供网络用户存储和访问录制的电视节目。 此文件夹在你打开媒体共享时可用。|
 |视频|用于供网络用户存储和访问视频文件。 此文件夹在你打开媒体共享时可用。|

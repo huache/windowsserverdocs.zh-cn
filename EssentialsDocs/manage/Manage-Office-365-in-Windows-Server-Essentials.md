@@ -2,17 +2,16 @@
 title: 管理 Windows Server Essentials 中的 Office 365
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: e21f8b38c126f699fda8245ab620ce5cd210fa11
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 249ff5f77d525792d5bf53719fcf1ee93bc955a4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470672"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180963"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 Office 365
 
@@ -185,7 +184,7 @@ ms.locfileid: "85470672"
 
 ### <a name="required-dns-records-for-linking-a-custom-internet-domain-name-to-office-365"></a>将自定义 Internet 域名链接到 Office 365 所需的 DNS 记录
 
-|服务|所需的 DNS 记录|目的|
+|服务|所需的 DNS 记录|目标|
 |-------------|--------------------------|-------------|
 |（多个服务）|MX| Office 365 使用此记录来验证你是否拥有特定的域名。 此 MX 记录不会干扰电子邮件路由。|
 |Exchange Online|MX|提供电子邮件路由。 **重要提示：** 如果要迁移电子邮件，请不要将零（**0**）的首选项分配给新的 MX 记录。 请确保该记录的值大于分配给当前 MX 记录的值。 当电子邮件迁移完成，并且你已准备好将电子邮件服务器更改为 Office 365 时，请让你的域名注册机构重置新 MX 记录的首选项值。|
@@ -236,7 +235,7 @@ ms.locfileid: "85470672"
 
 3.  键入要用于连接到 Office 365 订阅的帐户的凭据，然后单击 "**下一步**"。
 
-4.  单击“关闭”。 仪表板将重新启动。
+4.  单击 **“关闭”** 。 仪表板将重新启动。
 
 ###  <a name="disable-office-365-integration"></a><a name="BKMK_Disable"></a>禁用 Office 365 集成
  如果你决定不想从仪表板管理 Office 365 服务和联机帐户，则可以禁用 Office 365 集成。 Office 365 订阅将保持活动状态，并且在仪表板中所做的任何配置更改都将保持有效。 例如，你将收到电子邮件，该电子邮件将发送到你链接到 Office 365 订阅的域名。 你不会丢失任何电子邮件，并且你为移动设备设置的控件仍使用 Exchange Online。

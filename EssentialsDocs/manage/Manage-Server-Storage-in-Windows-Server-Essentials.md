@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的服务器存储
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cb6503c05f0dfc621758acb6da26cc90e658836d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 861404db4d6b5e0d4cfd4db95056f583f9068a0b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470552"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180903"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的服务器存储
 
@@ -56,7 +55,7 @@ ms.locfileid: "85470552"
 
 ### <a name="available-hard-drive-management-tasks"></a>可用的硬盘驱动器管理任务
 
-|任务名称|说明|
+|任务名称|描述|
 |---------------|-----------------|
 |**查看硬盘驱动器属性**|打开_硬盘名称_**属性**页。 选中该硬盘驱动器时显示此任务。 *硬盘名称*“属性”页的“常规”**** 选项卡包含以下额外任务：<br /><br /> -   **驱动器清理**：允许你清理硬盘驱动器上未使用的文件（此任务仅在 Windows Server Essentials 中提供）。<br />-   **检查并修复**：检查硬盘驱动器是否存在文件系统错误，并尝试自动修复检测到的错误。<br /><br /> "_硬盘名称_**属性**" 页的 "**卷影副本**" 选项卡允许你启用卷影副本。 该选项卡还显示卷影副本计划下一次运行的时间。|
 |**管理存储空间**|**注意：** 对于 Windows Server Essentials，仅当存在现有存储空间时才显示此任务。<br /><br /> 打开“存储空间”**** 控制面板，你可以从此处创建和管理存储池以及存储空间。|
@@ -194,7 +193,7 @@ ms.locfileid: "85470552"
 > [!NOTE]
 >  如果在运行 Windows Server Essentials 的服务器上配置存储空间，则无法使用 "**清理数据**" 选项执行恢复出厂设置。 此问题的解决方法是先删除存储空间，然后使用“清理数据”**** 选项执行恢复出厂设置。
 
- 有关存储空间的详细信息，请参阅 [存储空间常见问题 (FAQ)](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx)。
+ 有关存储空间的详细信息，请参阅 [存储空间常见问题 (FAQ)](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)。
 
 ##  <a name="create-a-storage-space"></a><a name="BKMK_6"></a>创建存储空间
  若要开始在服务器上使用存储空间，必须满足以下最低要求：

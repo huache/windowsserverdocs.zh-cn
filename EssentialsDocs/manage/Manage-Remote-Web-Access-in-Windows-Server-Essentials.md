@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的远程 Web 访问
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2144f66e9c5a5e9384e49a0f5d77796dec9d7429
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 56bfd8d9860ad571265980e859a09914fb4f1b9c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470622"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180933"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的远程 Web 访问
 
@@ -83,7 +82,7 @@ ms.locfileid: "85470622"
 
 1.  在连接到 Windows Server Essentials 的计算机上打开“仪表板”。
 
-2.  单击“设置”****。
+2.  单击“设置”。
 
 3.  在“常规”**** 选项卡上，单击“服务器的国家/地区位置”**** 部分中的下拉列表。
 
@@ -136,7 +135,7 @@ ms.locfileid: "85470622"
 7.  单击“应用”****，然后单击“确定”****。
 
 ##  <a name="set-up-your-router"></a><a name="BKMK_2"></a>设置路由器
- 当配置远程 Web 访问服务器时，“设置随处访问”向导会尝试设置路由器。 如果更改路由器或更改路由器设置，你必须返回设置路由器向导。 有关详细信息，请参阅下列主题：
+ 当配置远程 Web 访问服务器时，“设置随处访问”向导会尝试设置路由器。 如果更改路由器或更改路由器设置，你必须返回设置路由器向导。 有关详情，请参阅以下主题：
 
 -   [设置路由器](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetUpRouter)
 
@@ -150,9 +149,9 @@ ms.locfileid: "85470622"
  在此步骤中，Windows Server Essentials 会尝试使用 UPnP 命令自动配置路由器。 为此，你的路由器必须支持 UPnP 标准，而且也要启用 UPnP 设置。
 
 > [!NOTE]
->  你的网络配置应当满足 Windows Server Essentials 所需的网络要求。 网络中只应有一个路由器。
+> 你的网络配置应当满足 Windows Server Essentials 所需的网络要求。 网络中只应有一个路由器。
 
- 如果未通过“设置域名”向导设置路由器，则必须手动设置转发端口 443。 有关如何在路由器上设置端口转发的信息，请参阅 [路由器设置](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx)。
+ 如果未通过“设置域名”向导设置路由器，则必须手动设置转发端口 443。 有关如何在路由器上设置端口转发的信息，请参阅[Small Business Server 论坛](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)。
 
 ###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>更换路由器
  根据制造商的说明更换路由器，然后运行 "设置路由器" 向导来配置新路由器。
@@ -198,7 +197,7 @@ ms.locfileid: "85470622"
 4.  单击“确定”**** 两次以接受这些更改并关闭对话框。
 
 ##  <a name="set-up-your-domain-name"></a><a name="BKMK_3"></a>设置域名
- 在启用远程 Web 访问后，你可以为运行 Windows Server Essentials 的服务器设置域名。 如果计划从远程计算机使用远程 Web 访问功能，这将是一项必要步骤。 有关详细信息，请参阅下列主题：
+ 在启用远程 Web 访问后，你可以为运行 Windows Server Essentials 的服务器设置域名。 如果计划从远程计算机使用远程 Web 访问功能，这将是一项必要步骤。 有关详情，请参阅以下主题：
 
 -   [域名概述](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_DNOverview)
 
@@ -307,7 +306,7 @@ ms.locfileid: "85470622"
 
  **通用一级域名的示例**
 
-|域扩展名|说明|
+|域扩展名|描述|
 |----------------------|-----------------|
 |.com|通常由商业组织使用，但它可供任何人使用。|
 |.net|为提供网络基础结构服务的企业设计。|
@@ -319,7 +318,7 @@ ms.locfileid: "85470622"
 
  **国家/地区代码一级域名的示例**
 
-|域扩展名|说明|
+|域扩展名|描述|
 |----------------------|-----------------|
 |.ca|供加拿大的网站使用|
 |.cn|供中国的网站使用|
@@ -380,7 +379,7 @@ ms.locfileid: "85470622"
 5. 在搜索结果中，域名称服务提供商的名称已在“注册机构”**** 下列出。
 
 ##  <a name="customize-remote-web-access"></a><a name="BKMK_4"></a>自定义远程 Web 访问
- 你可以通过添加个人徽标或背景图像自定义远程 Web 访问站点。 还可以在主页上添加链接，以便向你的所有用户提供此信息。 有关详细信息，请参阅下列主题：
+ 你可以通过添加个人徽标或背景图像自定义远程 Web 访问站点。 还可以在主页上添加链接，以便向你的所有用户提供此信息。 有关详情，请参阅以下主题：
 
 -   [自定义远程 Web 访问](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeRWA)
 
@@ -442,7 +441,7 @@ ms.locfileid: "85470622"
 
 3.  单击“修复”****。 “修复远程 Web 访问”**** 向导将启动。
 
-4.  单击“下一步”****。 该向导分析远程 Web 访问、标识问题并尝试修复问题。
+4.  单击“下一步”。 该向导分析远程 Web 访问、标识问题并尝试修复问题。
 
 5.  如果你在向导完成后收到一个警报，你可以单击“重试”**** 以尝试重新修复问题。 如果你仍收到警报，请检查该警报以获取有关问题和疑难解答步骤的其他信息。
 

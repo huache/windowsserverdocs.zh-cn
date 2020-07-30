@@ -2,18 +2,17 @@
 title: 从现有客户端计算机备份还原完整系统
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9228092f91f4fe309d4841680cf3a78bd35f5b00
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 885a10ee9b5a684c385de9baa0ebcdfac61f2c0e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470362"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180823"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>从现有客户端计算机备份还原完整系统
 
@@ -162,7 +161,7 @@ ms.locfileid: "85470362"
 
 3. 在****“完整系统还原向导”窗口中，选择首选语言，然后单击箭头。
 
-4. 为此计算机选择适当的****“时间和货币格式”以及****“键盘或输入法”。 单击“继续” ****。
+4. 为此计算机选择适当的****“时间和货币格式”以及****“键盘或输入法”。 单击 **“继续”** 。
 
 5. 如果缺少驱动程序，将显示消息 "还原过程无法验证驱动程序"。 单击****“关闭”，然后在“欢迎”对话框上单击****“加载驱动程序”。
 

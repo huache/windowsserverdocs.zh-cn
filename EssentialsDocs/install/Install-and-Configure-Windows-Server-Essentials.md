@@ -2,18 +2,17 @@
 title: 安装和配置 Windows Server Essentials
 description: 描述如何使用 Windows Server Essentials
 ms.date: 06/17/2013
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 504ce971691d85c6d3727bacd6419f548673c88a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce8f1dda49144a817f405d04f17046f701230446
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470892"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181173"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>安装和配置 Windows Server Essentials
 
@@ -124,7 +123,7 @@ ms.locfileid: "85470892"
     > [!IMPORTANT]
     >  在网络上，服务器名称必须为唯一名称。 完成这一步后不能更改服务器名称或内部域名。
 
-4.  单击“下一步”****。
+4.  单击“下一步”。
 
 5.  在 **“提供管理员帐户信息”** 页面上，输入新管理员帐户的信息。
 
@@ -137,7 +136,7 @@ ms.locfileid: "85470892"
 
 8.  **“更新和准备服务器”** 页面会显示最终安装过程的进度。 这需要一定的时间才能完成，并且你的计算机会重新启动几次。
 
-9. 服务器最后一次重新启动后，会显示 **“服务器已就绪，可供使用”** 页面。 单击“关闭”。
+9. 服务器最后一次重新启动后，会显示 **“服务器已就绪，可供使用”** 页面。 单击 **“关闭”** 。
 
 10. 在 **“开始”** 屏幕上单击仪表板标题，然后在仪表板上，完成 **“主页”** 上的 **“设置我的服务器”** 任务。 Windows Server Essentials 安装完成后，应立即完成这些任务。
 
@@ -153,7 +152,7 @@ ms.locfileid: "85470892"
 
  下表定义可显示在设置任务列表中的项目。
 
-|任务|说明
+|任务|描述
 |----------|-----------------|
 |获取其他 Microsoft 产品的更新|单击此任务可访问一个链接，该链接运行的工具可用于指定是否要使用 Microsoft 更新来自动获取 Windows Server Essentials 和其他 Microsoft 产品（如 Office）的更新。
 |添加用户帐户|单击此任务可查看关于添加用户帐户的信息摘要。 提供了运行 **“添加用户帐户向导”** 的链接。 有关详细信息，请参阅[添加用户帐户](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)。

@@ -2,18 +2,17 @@
 title: 步骤 1：为 Windows Server Essentials 迁移准备源服务器。
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f5696c473a8fcb04a60b9a4b6c51ac206a6ef0de
-ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
+ms.openlocfilehash: 6666a0f68863913c0c0a5a1b1e903eaebf5470a4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404584"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180483"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>步骤 1：为 Windows Server Essentials 迁移准备源服务器。
 
@@ -43,7 +42,7 @@ ms.locfileid: "83404584"
 
 2. 验证备份是否成功运行。 要测试备份的完整性，请从备份中选择随机文件，将它们还原到备用位置，然后确认还原后的文件是否与原始文件相同。
 
-   |Products|资源|
+   |产品|资源|
    |---|---|
    |Windows Small Business Server 2003|[备份和还原 Windows Small Business Server 2003](https://msdn.microsoft.com/library/cc875809.aspx)
    |Windows Small Business Server 2008|[备份和还原 Windows Small Business Server 2008 上的数据](https://technet.microsoft.com/library/cc527505\(WS.10\).aspx)
@@ -70,7 +69,7 @@ ms.locfileid: "83404584"
 
 5.  清除“定义这些策略设置”**** 复选框。
 
-6.  删除 \\ \localhost\SYSVOL \\<domainname \> \scripts\ SBS_LOGIN_SCRIPT .bat。
+6.  删除 \\ \localhost\SYSVOL \\<domainname \>\scripts\SBS_LOGIN_SCRIPT.bat。
 
 ###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a>评估源服务器的运行状况
  请务必在开始迁移之前评估源服务器的运行状况。 使用以下过程以确保更新为最新版本、生成系统运行状况报告，并运行 Windows Server 解决方案最佳做法分析器 (BPA)。
@@ -93,7 +92,7 @@ ms.locfileid: "83404584"
 
 -   注册表
 
--   Internet Information Services (IIS)
+-   Internet 信息服务 (IIS)
 
 ###### <a name="to-use-the-bpa-to-analyze-your-source-server"></a>使用 BPA 来分析源服务器
 
@@ -129,7 +128,7 @@ ms.locfileid: "83404584"
 
    在 BPA 工具收集有关服务器配置的信息后，它将验证信息是否正确，然后向管理员提供信息和问题（按严重性排序）的列表。 该列表描述每个问题并提供建议或可能的解决方案。 可以使用三种报告类型：
 
-|报告类型|说明
+|报告类型|描述
 |-----------------|-----------------
 |列表报告|在一维列表中显示报告。
 |目录树报告|在分层列表中显示报告。

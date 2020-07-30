@@ -2,18 +2,17 @@
 title: 安装和配置 Windows Server Essentials 或 Windows Server Essentials 体验
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 338fe421b4ba30afc1b2cd3ee983668b282f3a15
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 804a3ed902606e52f25977601e4edc2e2fc5e04f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470952"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181183"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>安装和配置 Windows Server Essentials 或 Windows Server Essentials 体验
 
@@ -45,7 +44,7 @@ Windows Server Essentials 体验是 Windows Server 2016 中的一种角色，使
 
 -    安装了 Windows Server Essentials Experience 角色的 windows Server 2016
 
-|部署环境|说明|相关部分|
+|部署环境|描述|相关部分|
 |----------------------------|-----------------|---------------------|
 |新的 Active Directory 环境|可以安装 Windows Server Essentials 来创建新的 Active Directory 环境。|[部署 Windows Server Essentials 来设置新的 Active Directory 环境](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_NewAD)|
 |现有 Active Directory 环境|可以在现有 Active Directory 环境中安装 Windows Server Essentials。|[在现有 Active Directory 环境中部署 Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_ExistingAD)|

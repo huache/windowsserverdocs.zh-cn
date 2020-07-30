@@ -2,18 +2,17 @@
 title: Windows Server Essentials 仪表板概述
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ca60df1066e0a40c4304d7af36133eda58bbd55f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0b9ec7bf24bd79b324a811446308129dd3c97b2b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470452"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180843"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Windows Server Essentials 仪表板概述
 
@@ -60,7 +59,7 @@ ms.locfileid: "85470452"
 
 
 
-|项目|仪表板功能|说明|
+|项|仪表板功能|描述|
 |----------|-----------------------|-----------------|
 |1|导航栏|在导航栏上单击某个部分，以访问与该部分相关联的信息和任务。 每次打开仪表板时，默认情况下将显示“主页”****。|
 |2|子部分选项卡|子部分选项卡提供对第二层 Windows Server Essentials 管理任务的访问。|
@@ -74,7 +73,7 @@ ms.locfileid: "85470452"
 ##  <a name="features-of-the-dashboard-home-page"></a><a name="BKMK_Home"></a>仪表板主页的功能
  在打开仪表板时，默认情况下，将显示“主页”****，并显示“设置”**** 类别。 Windows Server Essentials 仪表板的“主页”**** 提供了对可帮助自定义服务器和配置关键功能的任务和信息的快速访问。 “主页”页面包括四个功能区域，它们将显示你选择的选项的信息和配置任务。 下表描述了这些功能。
 
-|项目|功能|说明|
+|项|Feature|描述|
 |----------|-------------|-----------------|
 |1|导航栏|在导航栏上单击某个部分，以访问与该部分相关联的信息和任务。 每次打开仪表板时，默认情况下都将显示“主页”****。|
 |2|“类别”窗格|此窗格将显示功能区域，这些功能区域提供对有助于设置和自定义服务器的信息和配置工具的快速访问。 单击某个类别以显示与该类别关联的任务和资源。|

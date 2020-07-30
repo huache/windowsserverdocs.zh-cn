@@ -2,18 +2,17 @@
 title: 管理 Windows Server Essentials 中的数字媒体
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d696616603d2b6b5f8e956270b790e058c4239af
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e4f3cf42cdf9343be106660b74041c059fdc7073
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470742"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180993"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的数字媒体
 
@@ -121,7 +120,7 @@ ms.locfileid: "85470742"
 
 3. 如果你希望共享媒体库中的其他文件夹，则请单击 **“自定义”**，然后为每个你想要包含在媒体库中的共享文件夹选择 **“是”**。
 
-4.  单击“确定”以保存你的更改。
+4. **** 单击“确定”以保存你的更改。
 
    有关 Windows Media Player 支持的数字媒体类型的信息，请参阅 [Windows Media Player 支持的文件类型](https://support.microsoft.com/kb/316992)。
 

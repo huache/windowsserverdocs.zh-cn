@@ -2,18 +2,17 @@
 title: 将本地 Exchange Server 与 Windows Server Essentials 集成
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 13de76ba7e9452e6498479b060712d06c0571c1a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 343bfc1325a065f4c4903732eceba59c769f838f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470882"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181063"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>将本地 Exchange Server 与 Windows Server Essentials 集成
 
@@ -52,7 +51,7 @@ ms.locfileid: "85470882"
  例如，如果你的公司 Internet 域名为 contoso.com，而且你希望使用 *mail.contoso.com* 的完全限定域名 (FQDN) 来引用运行 Exchange Server 的本地服务器，请与你的域名提供商合作创建下表中的 DNS 资源记录。
 
 
-| 资源记录名称 |     记录类型     |                                                                         记录设置                                                                          |                                                                                                                                                                                                                                                              说明                                                                                                                                                                                                                                                              |
+| 资源记录名称 |     记录类型     |                                                                         记录设置                                                                          |                                                                                                                                                                                                                                                              描述                                                                                                                                                                                                                                                              |
 |----------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         mail         |      主机 (A)       |                                                        地址=*你的 ISP 分配的公用 IP 地址*                                                         |                                                                                                                                                                                                   Exchange Server 将接收的邮件地址为 mail.contoso.com。<br /><br /> 你可以自行选择其他名称。                                                                                                                                                                                                    |
 |          MX          | 邮件交换器 (MX) |                                            主机名=@<br /><br /> 地址=mail.contoso.com<br /><br /> 首选项=0                                             |                                                                                                                                                                                                      为提供电子邮件路由，以便 email@contoso.com 到达运行 Exchange server 的本地服务器。                                                                                                                                                                                                       |
@@ -284,7 +283,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  至少必须在路由器上配置如下端口设置：
 
-|路由器端口|Destination IP|Destination Port|备注|
+|路由器端口|目标 IP|目标端口|备注|
 |-----------------|--------------------|----------------------|----------|
 |25 (SMTP)|运行 Exchange Server 的本地服务器的内部 IP。|25||
 |80 (HTTP)|运行 Windows Server Essentials 的服务器的内部 IP|80||
@@ -336,7 +335,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
    > [!NOTE]
    >  安装 ARR 的过程中必须选择 URL 重写模块。
    >
-   >  在 ARR 安装结束时，你可能会收到一个错误，告知 ARR 2.5 的 KB 2589179 未成功安装。 可以放心地忽略此错误。
+   >  在 ARR 安装结束时，你可能会收到一个错误，告知 ARR 2.5 的 KB 2589179 未成功安装。 你可以放心忽略此错误。
 
 4. ARR 安装完成后，如果“远程桌面网关”**** 服务未运行，请重新启动该服务。
 

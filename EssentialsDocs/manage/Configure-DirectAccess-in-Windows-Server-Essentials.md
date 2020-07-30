@@ -2,18 +2,17 @@
 title: 在 Windows Server Essentials 中配置 DirectAccess
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a9ebd7af7f748a1e2af4a47ca5b590137cd33b3d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a1f568d34fd0fbd94d09046b59a93d21feb60890
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470902"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181073"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>在 Windows Server Essentials 中配置 DirectAccess
 
@@ -121,7 +120,7 @@ ms.locfileid: "85470902"
 
 9. 在“备用 DNS 服务器”**** 框中，键入备用 DNS 服务器的 IP 地址（如果有）。
 
-10. 单击“确定”****，然后单击“关闭”****。
+10. 单击 **“确定”** ，再单击 **“关闭”** 。
 
 > [!IMPORTANT]
 >  确保配置路由器将端口 80 和 443 转发到服务器的新静态 IP 地址。
@@ -409,7 +408,7 @@ Restart-Service winnat
 ##  <a name="appendix-set-up-directaccess-by-using-windows-powershell"></a><a name="BKMK_AppendixBPowerShellScript"></a>附录：使用 Windows PowerShell 设置 DirectAccess
  本节介绍如何使用 Windows PowerShell 设置和配置 DirectAccess。
 
-### <a name="preparation"></a>准备工作
+### <a name="preparation"></a>准备
  在开始为 DirectAccess 配置服务器之前，必须完成以下操作：
 
 1.  按照[步骤3：为网络位置服务器准备证书和 DNS 记录](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)中的过程注册一个名为 " **DirectAccess-NLS.contoso.com** " 的证书（其中**contoso.com**替换为实际的内部域名），并为网络位置服务器（NLS）添加 DNS 记录。
