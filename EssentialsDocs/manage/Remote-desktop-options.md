@@ -7,29 +7,26 @@ ms.assetid: 51076946-ea9b-4ac7-9a6e-d6023816b97d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8d1235e523bf055d1d3ec6aa78780aa8e4f2f44e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7de65cdbed7fc1995f6729a49e9398ce948a63c6
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470392"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409527"
 ---
 # <a name="remote-desktop-options"></a>远程桌面选项
-
 
 ## <a name="connection-speed"></a>连接速度
  使用远程 Web 访问与网络计算机进行连接的速度决定了你可以在主机计算机上使用的桌面选项。 下表列出了通过远程 Web 访问连接到远程计算机的速度所对应的桌面选项。
 
-||||||
-|-|-|-|-|-|
-||慢速调制解调器 (28.8 Kbps)|快速调制解调器 (56 Kbps)（默认值）|宽带 (128 Kbps - 1.5 Mbps)|局域网（1.5 Mbps 或更高）|
-|桌面背景|否|否|否|是|
-|字体平滑|否|否|否|是|
-|桌面合成|否|否|是|是|
-|拖动时显示窗口内容|否|否|是|是|
-|菜单和窗口动画|否|否|是|是|
-|主题|否|是|是|是|
-|位图缓存|是|是|是|是|
+| 桌面选项 | 慢速调制解调器 (28.8 Kbps) | 快速调制解调器 (56 Kbps)（默认值） | 宽带 (128 Kbps - 1.5 Mbps) | 局域网（1.5 Mbps 或更高） |
+|--|--|--|--|--|
+| 字体平滑 | 否 | 否 | 否 | 是 |
+| 桌面合成 | 否 | 否 | 是 | “是” |
+| 拖动时显示窗口内容 | 否 | 否 | 是 | “是” |
+| 菜单和窗口动画 | 否 | 否 | 是 | “是” |
+| 主题 | 否 | 是 | “是” | “是” |
+| 位图缓存 | 是 | “是” | “是” | “是” |
 
 ## <a name="screen-size"></a>屏幕大小
  此选项决定了通过远程访问网站连接到远程计算机时本地计算机上打开的窗口大小。 以像素表示窗口大小。

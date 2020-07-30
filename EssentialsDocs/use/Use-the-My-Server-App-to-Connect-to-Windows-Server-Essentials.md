@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4e40b57f-6917-43ef-92e0-030baa9d2b99
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: 6b1e6d46013d98970e694176426be2ac1f57195d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a56211dc04a3f10623fd31f5bae174f03ae65022
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179353"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409467"
 ---
 # <a name="use-the-my-server-app-to-connect-to-windows-server-essentials"></a>使用 My Server 应用连接到 Windows Server Essentials
 
@@ -106,7 +106,7 @@ ms.locfileid: "87179353"
 
 ### <a name="features-of-the-my-server-and-my-server-2012-r2-apps-for-windows-server-essentials"></a>适用于 Windows Server Essentials 的 My Server 和 My Server 2012 R2 应用的功能
 
-|特征集|描述|
+|特征集|说明|
 |-----------------|-----------------|
 |管理警报|-（仅限管理员）在服务器上解决警报，或忽略不需要操作的警报。 打开或关闭通知（“权限”**** 设置、“通知”**** 选项）<br />-（标准用户帐户）查看网络运行状况警报。<br />     **注意：** 要使用户在 "我的服务器" 中查看警报，"**用户可以查看网络运行状况警报**" 设置必须在用户帐户的 "**常规**" 设置中选择。 有关详细信息，请参阅 [Manage user accounts using the Dashboard](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)。|
 |管理设备|（仅限管理员）<br /><br /> -当你连接到 Windows Server Essentials 服务器时，在 "**设备**" 视图中查看有关每台连接的计算机的详细信息。 脱机设备以阴影表示。<br />-启动和停止连接的计算机的备份。<br />-在我的服务器中启用或禁用通知。 （“权限”**** 设置、“通知”**** 选项）<br /><br /> 所有用户：<br /><br /> -查看用户帐户有权访问的客户端计算机。 （“设备”**** 屏幕）<br />-监视这些计算机的警报。 （“警报”**** 屏幕）<br />-（仅限 My Server 2012 R2 中）使用远程 Web 访问连接到这些计算机。 （“设备”**** 屏幕、“远程连接”**** 按钮）|
@@ -151,29 +151,7 @@ ms.locfileid: "87179353"
 7.  按照说明完成向导。
 
     > [!NOTE]
-<<<<<<< HEAD 证书安装完成后，可以使用服务器名称和网络凭据登录到适用于 Windows 8 的 My Server 应用或 Windows 8.1。
-
-## <a name="additional-references"></a>其他参考
-
--   [Windows Server Essentials 的服务集成概述-第1部分](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)
-
--   [Windows Server Essentials 的服务集成概述-第2部分](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)
-
--   [管理随处访问](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)
-
--   [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)
-
-
--   [远程工作](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [使用 Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
--   [远程工作](../use/Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [使用 Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
-
-=======
-    >  After the installation of the certificate is complete, you can sign in to the My Server app for Windows 8 or Windows 8.1 by using your server name and your network credentials.
+    >  证书安装完成后，便可以使用服务器名称和网络凭据登录适用于 Windows 8 或 Windows 8.1 的 My Server 应用。
 
 ## <a name="see-also"></a>另请参阅
 
@@ -188,5 +166,3 @@ ms.locfileid: "87179353"
 -   [远程工作](Work-Remotely-in-Windows-Server-Essentials.md)
 
 -   [使用 Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

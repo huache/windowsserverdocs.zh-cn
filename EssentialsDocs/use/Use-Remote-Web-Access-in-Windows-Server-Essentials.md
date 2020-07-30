@@ -7,12 +7,12 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 276e39cc3e17ce74f7fee43c512cc726ff631a5a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 341a7dd217045150e1f637d23378e49a86bb5fbf
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179563"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409477"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>使用 Windows Server Essentials 中的远程 Web 访问
 
@@ -23,7 +23,6 @@ ms.locfileid: "87179563"
   远程 Web 访问帮助你在离开时与你的 Windows Server Essentials 网络保持连接。 登录到远程 Web 访问时，可以连接到 Windows Server Essentials 网络上的计算机，打开仪表板以管理 Windows Server Essentials 网络，并访问服务器上的所有共享文件夹和媒体文件。
 
  本主题包含下列部分：
-
 
 -   [连接到远程 Web 访问](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)
 
@@ -128,7 +127,7 @@ ms.locfileid: "87179563"
 
 #### <a name="upload-files"></a>上传文件
 
-###### <a name="to-upload-files"></a>上载文件
+##### <a name="to-upload-files"></a>上载文件
 
 1. 在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
 
@@ -149,7 +148,7 @@ ms.locfileid: "87179563"
 > [!NOTE]
 >  在与 HTML5 兼容的 Web 浏览器中，支持本地上载多个文件。 仅在 Web 浏览器不支持 HTML5 时需要此工具。
 
-###### <a name="to-upload-files-using-the-easy-file-upload-tool"></a>使用轻松文件上载工具上载文件
+##### <a name="to-upload-files-using-the-easy-file-upload-tool"></a>使用轻松文件上载工具上载文件
 
 1.  在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
 
@@ -167,7 +166,7 @@ ms.locfileid: "87179563"
 
 #### <a name="download-files-or-folders"></a>下载文件或文件夹
 
-###### <a name="to-download-a-single-file"></a>下载单个文件
+##### <a name="to-download-a-single-file"></a>下载单个文件
 
 1. 在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
 
@@ -203,7 +202,7 @@ ms.locfileid: "87179563"
 
   开始实际下载之前，将创建 exe 或 zip 文件。 这可能需要几分钟，具体取决于文件的数量和要下载文件的总大小。 创建下载文件后，下载文件的操作发生在后台。 这允许你在下载过程完成时可以继续工作。
 
-###### <a name="to-download-multiple-files-or-folders"></a>下载多个文件或文件夹
+##### <a name="to-download-multiple-files-or-folders"></a>下载多个文件或文件夹
 
 1.  在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
 
@@ -224,13 +223,13 @@ ms.locfileid: "87179563"
 
  如果你选择要下载的多个文件或文件夹，则可以接收自解压缩的压缩可执行文件 (.exe) 或压缩 (.zip) 文件。
 
-###### <a name="to-retrieve-a-file-from-the-compressed-exe-file"></a>从压缩 (.exe) 文件中检索文件
+##### <a name="to-retrieve-a-file-from-the-compressed-exe-file"></a>从压缩 (.exe) 文件中检索文件
 
 1.  在你的计算机上，双击压缩文件，以将其打开。
 
 2.  按照说明将文件解压缩到你的计算机上的文件夹中。
 
-###### <a name="to-retrieve-a-file-from-the-compressed-zip-file"></a>从压缩 (.zip) 文件中检索文件
+##### <a name="to-retrieve-a-file-from-the-compressed-zip-file"></a>从压缩 (.zip) 文件中检索文件
 
 1.  在你的计算机上，双击压缩文件，以将其打开。
 
@@ -243,9 +242,9 @@ ms.locfileid: "87179563"
  可以使用远程 Web 访问在现有的共享文件夹中创建新文件夹，用于对服务器上的文件和文件夹进行重命名、移动、复制以及删除。
 
 > [!NOTE]
-<<<<<<< HEAD 若要在运行 Windows Server Essentials 的服务器上添加新的共享文件夹，则必须使用 "仪表板"。 若要从远程 Web 访问连接到服务器控制台，在 **“计算机”** 选项卡上，单击服务器名称，单击 **“连接”**，然后按照登录到服务器的说明进行操作。 有关如何创建共享文件夹的信息，请参阅[添加或移动服务器文件夹](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。
+> 若要在运行 Windows Server Essentials 的服务器上添加新的共享文件夹，必须使用仪表板。 若要从远程 Web 访问连接到服务器控制台，在 **“计算机”** 选项卡上，单击服务器名称，单击 **“连接”**，然后按照登录到服务器的说明进行操作。 有关如何创建共享文件夹的信息，请参阅[添加或移动服务器文件夹](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。
 
-##### <a name="to-create-a-new-folder"></a>创建新文件夹
+#### <a name="to-create-a-new-folder"></a>创建新文件夹
 
 1.  在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
 
@@ -261,7 +260,7 @@ ms.locfileid: "87179563"
 
 3.  在文本框中键入新名称，然后单击 **“确定”**。
 
-##### <a name="to-move-files-or-folders"></a>移动文件或文件夹
+#### <a name="to-move-files-or-folders"></a>移动文件或文件夹
 
 1.  在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
 
@@ -355,108 +354,3 @@ ms.locfileid: "87179563"
 
 -   [使用 Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
 
-=======
->  若要在运行 Windows Server Essentials 的服务器上添加新的共享文件夹，必须使用仪表板。 若要从远程 Web 访问连接到服务器控制台，在 **“计算机”** 选项卡上，单击服务器名称，单击 **“连接”**，然后按照登录到服务器的说明进行操作。 有关如何创建共享文件夹的信息，请参阅[添加或移动服务器文件夹](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。
-
-##### <a name="to-create-a-new-folder"></a>创建新文件夹
-
-1.  在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
-
-2.  在任务栏中，单击 **“新文件夹”**。
-
-3.  键入文件夹的名称，然后单击 **“确定”**。
-
-##### <a name="to-rename-a-file-or-folder"></a>重命名文件或文件夹
-
-1.  在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
-
-2.  右键单击你想要重命名的文件或文件夹，然后单击 **“重命名”**。
-
-3.  在文本框中键入新名称，然后单击 **“确定”**。
-
-##### <a name="to-move-files-or-folders"></a>移动文件或文件夹
-
-1.  在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
-
-2.  选中你要移动的文件或文件夹旁边的复选框，右键单击其中一个选定的文件或文件夹，然后单击 **“剪切”**。
-
-3.  右键单击要将文件或文件夹移动到的文件夹，然后单击 **“粘贴”**。
-
-##### <a name="to-delete-a-file-or-folder"></a>删除文件或文件夹
-
-1.  在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
-
-2.  选中要删除的文件或文件夹旁边的复选框，右键单击其中一个选定的文件或文件夹，然后单击 **“删除”**。
-
-3.  若要确认要删除所选文件和文件夹，请单击 **“是”**。
-
-##### <a name="to-copy-files-or-folders"></a>复制文件或文件夹
-
-1.  在远程 Web 访问中，单击 **“共享文件夹”** 选项卡，然后单击共享文件夹链接。 显示该共享文件夹中的文件和文件夹列表。
-
-2.  选中要复制的文件或文件夹旁边的复选框，右键单击其中一个选定的文件或文件夹，然后单击 **“复制”**。
-
-3.  右键单击要将文件或文件夹复制到的文件夹，然后单击 **“粘贴”**。
-
-##  <a name="connect-from-a-mobile-device"></a><a name="BKMK_ConnectMobile"></a>从移动设备连接
-
-
--   [从移动设备上使用远程 Web 访问](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)
-
--   [受移动设备支持的 Web 浏览器](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)
-
-
-###  <a name="use-remote-web-access-from-a-mobile-device"></a><a name="BKMK_8"></a>从移动设备使用远程 Web 访问
- 你可以从你的智能手机登录到远程 Web 访问，以查看服务器上共享文件夹中的文件和文件夹。
-
-> [!NOTE]
->  还可以从 [Windows Phone Marketplace](http://www.windowsphone.com/apps/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a) 下载并使用适用于 Windows Server Essentials 的 My Server 应用来访问存储在服务器上的共享文件夹和媒体文件。
-
-##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>从移动设备登录到远程 Web 访问
-
-1.  打开 Web 浏览器，在地址栏中键入 " **https://** _<YourDomainName \> _**/remote** "。  请确保在 https 中包含 "s"。
-
-2.  在 "远程 Web 访问登录" 页上，在文本框中键入你的用户名和密码，然后单击箭头。 你已登录到远程 Web 访问的移动版本。
-
-##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>切换到远程 Web 访问的桌面版
-
-1.  打开 Web 浏览器，在地址栏中键入 " **https://** _<YourDomainName \> _**/remote** "。  请确保在 https 中包含 "s"。
-
-2.  在 "远程 Web 访问登录" 页上，在文本框中键入你的用户名和密码，单击 "**查看桌面版本**"，然后单击箭头。 你已登录到远程 Web 访问的桌面版本。
-
-##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>返回到远程 Web 访问的移动版本
-
-1. 注销。
-
-2. 打开 Web 浏览器，在地址栏中键入 " **https://** _<YourDomainName \> _**/remote/m** "。 请确保在 https 中包含 "s"。
-
-3. 将显示远程 Web 访问的移动版本。 在 "远程 Web 访问登录" 页上，在文本框中键入你的用户名和密码，然后单击箭头。 你已登录到远程 Web 访问的移动版本。
-
-   你可以搜索服务器上的共享文件夹中的文件和文件夹。
-
-###  <a name="supported-web-browsers-for-mobile-devices"></a><a name="BKMK_9"></a>支持移动设备的 Web 浏览器
- 受移动设备支持的 Web 浏览器包括：
-
--   Internet Explorer 移动 6.0 或更高版本
-
--   Safari
-
--   Blackberry
-
--   Symbian 6.0 或更高版本
-
--   Android
-
--   Google Chrome
-
--   Firefox
-
-## <a name="see-also"></a>另请参阅
-
--   [管理远程 Web 访问](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)
-
--   [远程工作](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [使用 Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

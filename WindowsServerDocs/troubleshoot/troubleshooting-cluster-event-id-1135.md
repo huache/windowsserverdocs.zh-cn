@@ -1,15 +1,17 @@
 ---
-title: 排查事件 ID 1135 的群集问题
+title: 排查事件 ID 为 1135 的群集问题
 description: 描述如何排查事件 ID 1135 的群集服务启动问题。
 ms.date: 05/28/2020
-ms.openlocfilehash: d59f8b89e89ea7ff42aecd79670465aee8d63524
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+author: Deland-Han
+ms.author: delhan
+ms.openlocfilehash: 2836fc9385d57ff076828ab5cf6a1e341a7d88a8
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306526"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409828"
 ---
-# <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>排查事件 ID 1135 的群集问题
+# <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>排查事件 ID 为 1135 的群集问题
 
 本文将帮助你诊断和解决事件 ID 1135，该事件可能会在故障转移群集环境中的群集服务启动期间记录。
 
@@ -38,11 +40,11 @@ ms.locfileid: "84306526"
 
 #### <a name="for-windows-server-2008-r2-cluster"></a>对于 Windows Server 2008 R2 群集
 
-从提升权限的 cmd 提示符运行： **cluster.exe 节点/stat**  
+从提升权限的 cmd 提示符运行： **cluster.exe 节点/stat**
 
 #### <a name="for-windows-server-2012-and-windows-server-2012-r2-cluster"></a>对于 Windows Server 2012 \ 和 Windows Server 2012 R2 群集
 
-运行 PS 命令：**群集节点/status**  
+运行 PS 命令：**群集节点/status**
 
 群集服务是否在所有节点上持续运行和可用？
 
@@ -134,12 +136,12 @@ Cluster node ' **NODE A** ' was removed from the active failover cluster members
 
 - 快照目录
 
-- mms
+- mms.exe
 
     > [!NOTE]
     > 此文件可能必须配置为防病毒软件中的进程排除。）
 
-- Vmwp
+- Vmwp.exe
 
     > [!NOTE]
     > 此文件可能必须配置为防病毒软件中的进程排除。
@@ -150,7 +152,7 @@ Cluster node ' **NODE A** ' was removed from the active failover cluster members
 
 群集服务控制服务器群集操作并管理群集数据库。 群集是充当单台计算机的独立计算机的集合。 管理者、程序员和用户将群集视为单个系统。 软件在群集的节点之间分发数据。 如果某个节点出现故障，其他节点将提供以前由缺少的节点提供的服务和数据。 添加或修复节点时，群集软件会将一些数据迁移到该节点。
 
-系统服务名称： **ClusSvc**  
+系统服务名称： **ClusSvc**
 
 |应用程序|协议|端口|
 |---|---|---|
@@ -182,7 +184,7 @@ netsh advfirewall firewall show rule name="Failover Clusters (UDP-In)" verbose
 
 群集验证工具运行一组测试，以验证您的硬件和设置是否与故障转移群集兼容。
 
-请按照以下说明执行操作：
+按照以下说明操作：
 
 1. 为任何错误或警告运行群集验证报告。 有关详细信息，请参阅[了解群集验证测试：网络](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771323(v=ws.11)?redirectedfrom=MSDN)
 
@@ -200,13 +202,13 @@ netsh advfirewall firewall show rule name="Failover Clusters (UDP-In)" verbose
 
 按照以下步骤更改网络适配器的绑定顺序：
 
-1. 单击 "**开始**"，再单击 "**运行**"，键入 Ncpa，然后单击 **"确定"**。 可以在 "**网络连接**" 窗口的 " **LAN 和高速 Internet** " 部分中查看可用连接。
+1. 单击 "**开始**"，再单击 "**运行**"，键入 ncpa.cpl，然后单击 **"确定"**。 可以在 "**网络连接**" 窗口的 " **LAN 和高速 Internet** " 部分中查看可用连接。
 
 2. 在 "**高级**" 菜单上，单击 "**高级设置**"，然后单击 "**适配器和绑定**" 选项卡。
 
 3. 在 "**连接**" 区域中，选择要在列表中向上移动的连接。 使用箭头按钮移动连接。 作为一般规则，与网络通信的卡（域连接、路由到其他网络等）应为第一个绑定（列表顶部）。
 
-群集节点是多宿主系统。 网络优先级影响 DNS 客户端的出站网络连接。 用于客户端通信的网络适配器应位于绑定顺序的顶部。 非路由网络可处于较低优先级。 在 Windows Server 2012 和 Windows Server2012 R2 中，群集网络驱动程序（NETFT。SYS）适配器会自动置于绑定顺序列表的底部。
+群集节点是多宿主系统。 网络优先级影响 DNS 客户端的出站网络连接。 用于客户端通信的网络适配器应位于绑定顺序的顶部。 非路由网络可处于较低优先级。 在 Windows Server 2012 和 Windows Server2012 R2 中，群集网络驱动程序（NETFT.SYS）适配器自动放置在绑定顺序列表的底部。
 
 #### <a name="check-the-validate-network-communication"></a>选中 "验证网络通信"
 
@@ -246,7 +248,7 @@ Either address 192.168.0.2 is not reachable from 10.0.0.96 or **the ping latency
 
 ##### <a name="cluster-installed-in-the-vmware-virtualization-platform"></a>VmWare 虚拟化平台中安装的群集
 
-在 VMware 环境下验证 VMware 适配器问题。 
+在 VMware 环境下验证 VMware 适配器问题。
 
 如果在高流量突发期间丢弃数据包，则可能出现此问题。 确保没有发生流量筛选（例如，使用邮件筛选器）。 消除这种可能性后，逐渐增加来宾操作系统中的缓冲区数量并进行验证。
 
@@ -254,9 +256,9 @@ Either address 192.168.0.2 is not reachable from 10.0.0.96 or **the ping latency
 
 1. 使用 Windows 键 + R 打开 "运行" 框。
 2. 键入 devmgmt.msc，然后按**enter**。
-3. 展开 "**网络适配器**"  
-4. 右键单击**vmxnet3，然后单击 "属性"。**  
-5. 单击“高级”**** 选项卡。
+3. 展开 "**网络适配器**"
+4. 右键单击**vmxnet3，然后单击 "属性"。**
+5. 单击“高级”选项卡。
 6. 单击 " **Small Rx 缓冲区**" 并增加值。 默认值为512，最大值为8192。
 7. 单击 " **Rx 环状 #1**大小并增加值。 默认值为1024，最大值为4096。
 

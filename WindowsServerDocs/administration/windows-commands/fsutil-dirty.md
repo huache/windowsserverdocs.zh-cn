@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c61ab5405fb5b469b6f4513459e4096524f4b7fe
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cb133dc9f9f19a948eb88d24935fac27f2a5e4a3
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929263"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409728"
 ---
 # <a name="fsutil-dirty"></a>fsutil dirty
 
@@ -32,7 +32,7 @@ fsutil dirty {query | set} <volumepath>
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| 查询 | 查询指定卷的已更新位。 |
+| query | 查询指定卷的已更新位。 |
 | set | 设置指定卷的未更新位。 |
 | `<volumepath>` | 指定驱动器名称后跟冒号或 GUID，格式如下： `volume{GUID}` 。 |
 
@@ -56,13 +56,9 @@ fsutil dirty {query | set} <volumepath>
 fsutil dirty query c:
 ```
 
-    If the volume is dirty, the following output displays:
+- 如果卷处于脏区，则会显示以下输出：`Volume C: is dirty`
 
-    `Volume C: is dirty`
-
-    If the volume isn't dirty, the following output displays:
-
-    `Volume C: is not dirty`
+- 如果卷未更新，则会显示以下输出：`Volume C: is not dirty`
 
 若要设置驱动器 C 上的脏位，请键入：
 

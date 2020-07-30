@@ -1,21 +1,20 @@
 ---
 title: DHCP （动态主机配置协议）基础知识
 description: ''
-ms.date: 5/26/2020
 ms.prod: windows-server
-ms.service: na
 manager: dcscontentpm
 ms.technology: server-general
-ms.topic: article
+ms.date: 5/26/2020
+ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: ''
-ms.openlocfilehash: c7e4f385472c9078c49fcfd7aeab28b1b70c5a13
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 5a3247fad961f4b2d1cf6e354c29706708c8e330
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150205"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409808"
 ---
 # <a name="dhcp-dynamic-host-configuration-protocol-basics"></a>DHCP （动态主机配置协议）基础知识
 
@@ -43,7 +42,7 @@ ms.locfileid: "84150205"
 
 - Microsoft TCP/IP-32 for Windows for 工作组版本3.11、3.11 a 和 3.11 b
 
-不同的 DHCP 客户端支持可以从 DHCP 服务器接收的不同选项。 
+不同的 DHCP 客户端支持可以从 DHCP 服务器接收的不同选项。
 
 以下 Microsoft 服务器操作系统提供 DHCP 服务器功能：
 

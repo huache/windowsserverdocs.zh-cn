@@ -6,12 +6,12 @@ ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: c0e2f0309049f0271a223c2a23012eb2efa8d843
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 86a7023f6480e68f917cb8cdd9d0c69c417d3145
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150165"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409788"
 ---
 # <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>使用 SQL AlwaysOn 的 IaaS - 调整故障转移群集网络阈值
 
@@ -21,7 +21,7 @@ ms.locfileid: "84150165"
 
 当在 IaaS 中运行 SQL Server AlwaysOn 的 Windows 故障转移群集节点时，建议将群集设置更改为更宽松的监视状态。 现成的群集设置具有限制性，并可能导致不必要的中断。 默认设置适用于高度优化的本地网络，并不考虑多租户环境（如 Windows Azure （IaaS））导致的延迟。
 
-Windows Server 故障转移群集不断监视 Windows 群集中节点的网络连接和运行状况。  如果某个节点不可通过网络访问，则执行恢复操作进行恢复，并使应用程序和在线服务进入群集中的另一个节点上。 群集节点之间的通信延迟可能导致以下错误：  
+Windows Server 故障转移群集不断监视 Windows 群集中节点的网络连接和运行状况。  如果某个节点不可通过网络访问，则执行恢复操作进行恢复，并使应用程序和在线服务进入群集中的另一个节点上。 群集节点之间的通信延迟可能导致以下错误：
 
 > 错误1135（系统事件日志）
 
@@ -91,17 +91,16 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 每个支持 OS 的默认值、最小值、最大值和推荐值
 
-|   |操作系统|Min|Max|默认|建议|
-|---|---|---|---|---|---|
-|CrossSubnetThreshold|2008 R2|3|20|5|20|
-|CrossSubnet 阈值|2012|3|120|5|20|
-|CrossSubnet 阈值|2012 R2|3|120|5|20|
-|CrossSubnet 阈值|2016|3|120|20|20|
-|SameSubnet 阈值|2008 R2|3|10|5|10|
-|SameSubnet 阈值|2012|3|120|5|10
-|SameSubnet 阈值|2012 R2|3|120|5|10|
-|SameSubnetThreshold|2016|3|120|10|10|
-|||||||
+| 说明 | (OS) | Min | Max | 默认 | 建议 |
+|--|--|--|--|--|--|
+| CrossSubnetThreshold | 2008 R2 | 3 | 20 | 5 | 20 |
+| CrossSubnet 阈值 | 2012 | 3 | 120 | 5 | 20 |
+| CrossSubnet 阈值 | 2012 R2 | 3 | 120 | 5 | 20 |
+| CrossSubnet 阈值 | 2016 | 3 | 120 | 20 | 20 |
+| SameSubnet 阈值 | 2008 R2 | 3 | 10 | 5 | 10 |
+| SameSubnet 阈值 | 2012 | 3 | 120 | 5 | 10 |
+| SameSubnet 阈值 | 2012 R2 | 3 | 120 | 5 | 10 |
+| SameSubnetThreshold | 2016 | 3 | 120 | 10 | 10 |
 
 阈值的值反映有关部署范围的当前建议，如以下文章中所述：
 
@@ -141,4 +140,4 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 有关优化 Windows 群集网络配置设置的详细信息，请参阅[优化故障转移群集网络阈值](https://techcommunity.microsoft.com/t5/failover-clustering/tuning-failover-cluster-network-thresholds/ba-p/371834)。
 
-有关使用 cluster.exe 优化 Windows 群集网络配置设置的信息，请参阅如何为[故障转移群集配置群集网络](/previous-versions/office/exchange-server-2007/bb690953(v=exchg.80)?redirectedfrom=MSDN)。
+有关使用 cluster.exe 优化 Windows 群集网络配置设置的信息，请参阅[如何为故障转移群集配置群集网络](/previous-versions/office/exchange-server-2007/bb690953(v=exchg.80)?redirectedfrom=MSDN)。

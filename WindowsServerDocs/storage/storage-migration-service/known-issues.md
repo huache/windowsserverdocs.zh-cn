@@ -4,16 +4,16 @@ description: 有关存储迁移服务的已知问题和疑难解答支持，如�
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 06/02/2020
+ms.date: 07/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: d7c76413fbc64ce200ca4c442a30e6f804927f68
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9050d3316ed86538a278dbdc9f2bd51e3dfca377
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182053"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409878"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -549,10 +549,43 @@ DFSR 调试日志：
     [d:\os\src\base\dms\service\StorageMigrationService.IInventory.cs::CreateJob::133]
     ```
     
-    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66]
-06/25/2020-10：20： 45.368 [Info] 计算机 "fileserver75.corp.contoso.com"： OS 版本 
+    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66] 06/25/2020-10:20:45.368 [Info] Computer 'fileserver75.corp.contoso.com': OS version 
 
 此问题是由存储迁移服务中的代码缺陷导致的。 若要解决此问题，请使用源计算机和目标计算机所属的域中的迁移凭据。 例如，如果源计算机和目标计算机属于 "contoso.com" 林中的 "corp.contoso.com" 域，请使用 "corp\myaccount" 执行迁移，而不是 "contoso\myaccount" 凭据。
+
+## <a name="inventory-fails-with-element-not-found"></a>清点失败，出现 "找不到元素" 
+
+Conside 以下方案：
+
+你的源服务器具有 DNS 主机名并且 Active Directory 名称超过15个 unicode 字符，如 "iamaverylongcomputernamefromned"。 按照设计，Windows 不允许将旧的 NetBIOS 名称设置为长时间设置并在服务器名为的情况下发出警告，因为 NetBIOS 名称将被截断为15个 unicode 宽字符（例如： "iamaverylongcom"）。 当你尝试清点此计算机时，将在 Windows 管理中心和事件日志中收到： 
+
+```DOS
+    "Element not found"
+    
+    ========================
+
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          4/10/2020 10:49:19 AM
+    Event ID:      2509
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      WIN-6PJAG3DHPLF.corp.contoso.com
+    Description:
+    Couldn't inventory a computer.
+
+    Job: longnametest
+    Computer: iamaverylongcomputernamefromned.corp.contoso.com
+    State: Failed
+    Error: 1168
+    Error Message: 
+
+    Guidance: Check the detailed error and make sure the inventory requirements are met. The inventory couldn't determine any aspects of the specified source computer. This could be because of missing permissions or privileges on the source or a blocked firewall port.
+```
+
+此问题是由存储迁移服务中的代码缺陷导致的。 唯一的解决方法是将计算机重命名为具有与 NetBIOS 名称相同的名称，然后使用[NETDOM COMPUTERNAME/add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11))来添加一个备用计算机名称，其中包含在开始清点之前使用的较长名称。 存储迁移服务支持迁移备用计算机名称。   
 
 ## <a name="see-also"></a>另请参阅
 

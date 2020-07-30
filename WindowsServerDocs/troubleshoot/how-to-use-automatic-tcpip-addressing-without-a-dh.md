@@ -1,21 +1,20 @@
 ---
 title: 如何在不使用 DHCP 服务器的情况下使用自动 TCP/IP 寻址
 description: 介绍如何在没有 DHCP 服务器的情况下使用自动 TCP/IP 寻址。
-ms.date: 5/26/2020
 ms.prod: windows-server
-ms.service: na
 manager: dcscontentpm
 ms.technology: server-general
-ms.topic: article
+ms.date: 5/26/2020
+ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: robsmi
-ms.openlocfilehash: 8fbde77381141b76959f70e824eac22ee2121fa3
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: fcd85c29975709053009ec4a2684df88b4bafd69
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150185"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409798"
 ---
 # <a name="how-to-use-automatic-tcpip-addressing-without-a-dhcp-server"></a>如何在不使用 DHCP 服务器的情况下使用自动 TCP/IP 寻址
 
@@ -23,7 +22,7 @@ ms.locfileid: "84150185"
 
 ## <a name="more-information"></a>更多信息
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 请认真遵循本部分所述的步骤。 如果注册表修改不正确，可能会发生严重问题。 在修改注册表之前，请[备份注册表](https://support.microsoft.com/help/322756)，以便在出现问题时可以还原。
 
 如果 DHCP 服务器不可用，则配置为使用 DHCP 的基于 Windows 的计算机可以自动为其分配 Internet 协议（IP）地址。 例如，如果 DHCP 服务器暂时关闭以进行维护，则可能会在没有 DHCP 服务器的网络上或在网络上发生这种情况。
@@ -38,8 +37,7 @@ Internet 编号分配机构（IANA）已保留169.254.255.255 用于自动专用
 
 - 你的网络已连接到 Internet，无 NAT 或代理服务器。
 
-除非已禁用与 DHCP 相关的消息，否则 DHCP 消息会在 DHCP 寻址和自动专用 IP 寻址之间进行更改时向你提供通知。 如果意外禁用了 DHCP 消息传递，则可以通过将以下注册表项中的 PopupFlag 值的值从00改为01来重新启用 DHCP 消息：  
-`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP` 
+除非已禁用与 DHCP 相关的消息，否则 DHCP 消息会在 DHCP 寻址和自动专用 IP 寻址之间进行更改时向你提供通知。 如果意外禁用了 DHCP 消息传递，则可以通过将以下注册表项中的 PopupFlag 值的值从00改为01来重新启用 DHCP 消息：`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP`
 
 请注意，必须重新启动计算机才能使更改生效。 你还可以使用 Windows Millennium Edition、Windows 98 或 Windows 98 Second 版中的 Winipcfg 工具来确定你的计算机是否在使用 APIPA：
 
@@ -51,8 +49,7 @@ Internet 编号分配机构（IANA）已保留169.254.255.255 用于自动专用
 
 你可以手动配置 TCP/IP 信息，这将完全禁用 DHCP。 可以通过编辑注册表来禁用自动专用 IP 寻址（而非 DHCP）。 为此，可以将值为0x0 的 "IPAutoconfigurationEnabled" DWORD 注册表项添加到 Windows Millennium Edition、Windows98 或 Windows 98 Second Edition 的以下注册表项：`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP`
 
-对于 Windows 2000、Windows XP 和 Windows Server 2003，可以通过将值为0x0 的 "IPAutoconfigurationEnabled" DWORD 注册表项添加到以下注册表项来禁用 APIPA：  
-`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Adapter GUID>`  
+对于 Windows 2000、Windows XP 和 Windows Server 2003，可以通过将值为0x0 的 "IPAutoconfigurationEnabled" DWORD 注册表项添加到以下注册表项来禁用 APIPA：`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Adapter GUID>`
 > [!NOTE]
 > **适配器 GUID**子项是计算机 LAN 适配器的全局唯一标识符（GUID）。
 

@@ -9,16 +9,17 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: b57a1e7243f989a4529a666880572a9ceaa57644
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 28d86981e87184c11eb37981945876e05a83ad62
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852060"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408876"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>适用于 Microsoft 产品的 Linux 软件存储库
 
 ## <a name="overview"></a>概述
+
 Microsoft 构建并支持适用于 Linux 系统的各种软件产品，并使它们可通过标准 APT 和 YUM 程序包存储库提供。 本文档介绍如何在 Linux 系统上配置存储库，以便可以使用分发的标准包管理工具来安装/升级 Microsoft 的 Linux 软件。
 
 Microsoft 的 Linux 软件存储库由多个子存储库组成：
@@ -27,93 +28,70 @@ Microsoft 的 Linux 软件存储库由多个子存储库组成：
 
  - mssql server-这些存储库包含 Linux 上的 Microsoft SQL Server 的包-另请参阅： [Linux 上的 SQL Server](https://www.microsoft.com/sql-server/sql-server-vnext-including-Linux)。
 
-> [!Note]
-> Linux 软件存储库中的包受包中的许可条款的约束。 使用包之前，请阅读许可条款。 安装和使用此包即表示你接受这些条款。 如果不同意许可条款，请不要使用包。
-
+> [!NOTE]
+> Linux 软件存储库中的包受包中的许可条款的约束。 使用程序包之前请阅读这些许可条款。 安装和使用程序包即表示接受这些条款。 如果不同意许可条款，则不要使用程序包。
 
 ## <a name="configuring-the-repositories"></a>配置存储库
+
 可以通过安装适用于 Linux 分发版和版本的 Linux 包自动配置存储库。 此包将安装存储库配置以及工具（如 apt/yum/zypper）使用的 GPG 公钥来验证已签名的包和/或存储库元数据。
 
 ### <a name="enterprise-linux-rhel-and-variants"></a>企业 Linux （RHEL 和变体）
 
- - Enterprise Linux 6 （64.RPM）
+- Enterprise Linux 6 （64.RPM）<p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
 
-        sudo rpm -Uvh https://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
-
- - Enterprise Linux 7 （EL7）
-
-        sudo rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+- Enterprise Linux 7 （EL7）<p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
 
 ### <a name="ubuntu"></a>Ubuntu
 
- - Ubuntu 14.04 （t）
+ - Ubuntu 14.04 （t）<p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/14.04/prod<p>sudo apt-get update
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-        sudo apt-add-repository https://packages.microsoft.com/ubuntu/14.04/prod
-        sudo apt-get update
+ - Ubuntu 16.04 （Xenial）<p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/16.04/prod<p>sudo apt-get update
 
- - Ubuntu 16.04 （Xenial）
+ - Ubuntu 18.04 （Bionic）<p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/18.04/prod<p>sudo apt-get update
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-        sudo apt-add-repository https://packages.microsoft.com/ubuntu/16.04/prod
-        sudo apt-get update
+ - Ubuntu 18.10 （宇宙射线）<p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/18.10/prod<p>sudo apt-get update
 
- - Ubuntu 18.04 （Bionic）
-
-         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-        sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
-        sudo apt-get update
-
- - Ubuntu 18.10 （宇宙射线）
-
-         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-        sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.10/prod
-        sudo apt-get update
-
- - Ubuntu 19.04 （Disco）
-
-         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-        sudo apt-add-repository https://packages.microsoft.com/ubuntu/19.04/prod
-        sudo apt-get update
+ - Ubuntu 19.04 （Disco）<p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/19.04/prod<p>sudo apt-get update
 
 ### <a name="suse-linux-enterprise-12"></a>SUSE Linux Enterprise 12
 
-        sudo rpm -Uvh https://packages.microsoft.com/config/sles/12/packages-microsoft-prod.rpm
-
+sudo rpm-Uvhhttps://packages.microsoft.com/config/sles/12/packages-microsoft-prod.rpm
 
 ## <a name="manual-configuration"></a>手动配置
+
 存储库配置文件可从[packages.microsoft.com/config](https://packages.microsoft.com/config/)获取。可以使用以下 URI 命名约定来查找这些文件的名称和位置：
 
-        https://packages.microsoft.com/config/<Distribution>/<Version>/prod.(repo|list)
+https://packages.microsoft.com/config/<Distribution>/<Version>制作.（存储库 | 列表）
 
 **包和存储库签名密钥**
 
- - Microsoft 的 GPG 公钥可在此处下载： [https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc)
- - 公钥 ID： Microsoft （Release 签名） <gpgsecurity@microsoft.com>
- - 公钥指纹： `BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
+- 可在此处下载 Microsoft 的 GPG 公钥：[https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc)
+- 公钥 ID： Microsoft （版本签名）<gpgsecurity@microsoft.com>
+- 公钥指纹：`BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
 
-### <a name="examples"></a>示例：
+### <a name="examples"></a>示例
 
  - RHEL/CentOS 7
 
-        # Install repository configuration
-        curl https://packages.microsoft.com/config/rhel/7/prod.repo > ./microsoft-prod.repo
-        sudo cp ./microsoft-prod.repo /etc/yum.repos.d/
+```
+# Install repository configuration
+curl https://packages.microsoft.com/config/rhel/7/prod.repo > ./microsoft-prod.repo
+sudo cp ./microsoft-prod.repo /etc/yum.repos.d/
 
-        # Install Microsoft's GPG public key
-        curl https://packages.microsoft.com/keys/microsoft.asc > ./microsoft.asc
-        sudo rpm --import ./microsoft.asc
+# Install Microsoft's GPG public key
+curl https://packages.microsoft.com/keys/microsoft.asc > ./microsoft.asc
+sudo rpm --import ./microsoft.asc
+```
 
- - Ubuntu 16.04
+- Ubuntu 16.04
 
-        # Install repository configuration
-        curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > ./microsoft-prod.list
-        sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
+```
+# Install repository configuration
+curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > ./microsoft-prod.list
+sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
 
-        # Install Microsoft GPG public key
-        curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-        sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
-
-
-
+# Install Microsoft GPG public key
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
+```

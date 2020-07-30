@@ -9,12 +9,12 @@ ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 ms.technology: storage-failover-clustering
-ms.openlocfilehash: 21585ab376830f37ca6432849dd8e9b3773af9ab
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ac09163eb40045289a68287aa3eace20ff714d09
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473294"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409577"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>群集感知更新插件的工作原理
 
@@ -84,7 +84,7 @@ CAU 插件参数的语法 \- 遵循以下通用规则：
 |Cmdlet|说明|
 |----------|---------------|
 |[Get-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/get-cauplugin)|检索有关在 \- 本地计算机上注册的一个或多个软件更新插件的信息。|
-|[Register-CauPlugin]((https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin))|在本地计算机上注册 CAU 软件更新插件 \- 。|
+|[Register-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin)|在本地计算机上注册 CAU 软件更新插件 \- 。|
 |[Unregister-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|\-从 CAU 可以使用的插件列表中删除软件更新插件 \- 。 **注意：**\-无法注销随 CAU \( **microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**一起安装的插件 \) 。|
 
 ## <a name="using-the-microsoftwindowsupdateplugin"></a><a name="BKMK_WUP"></a>使用 Microsoft.windowsupdateplugin
@@ -398,7 +398,7 @@ CAU 的默认插件 \- **microsoft.windowsupdateplugin**，执行以下操作：
 > [!IMPORTANT]
 > 如果你选择强制使用 SMB 加密的选项，并且修补程序根文件夹未配置为使用 SMB 加密的连接，则更新运行将失败。
 
-#### <a name="step-5-enable-a-windows-firewall-rule-on-the-smb-server"></a>步骤 5. 在 SMB 服务器上启用 Windows 防火墙规则
+#### <a name="step-5-enable-a-windows-firewall-rule-on-the-smb-server"></a>步骤 5。 在 SMB 服务器上启用 Windows 防火墙规则
 
 你必须在 SMB 文件服务器上的 Windows 防火墙中启用 "**文件服务器远程管理 \( SMB \- \) ** " 规则。 默认情况下，在 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中启用此功能。
 

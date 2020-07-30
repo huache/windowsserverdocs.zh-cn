@@ -9,12 +9,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: fe1f2b11921950ea725cb996ce58e75033aaae4a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9cee8a279be2030d4b911a0a7f456c2b855ca15e
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470202"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409087"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合云打印
 
@@ -146,7 +146,7 @@ ms.locfileid: "85470202"
 
     ![AAD 应用代理3](../media/hybrid-cloud-print/AAD-EnterpriseApp-ECP-AppProxy.png)
 
-    - 转到“Azure Active Directory” > “应用注册”。**** **** 单击 Mopria 发现服务。 请注意，在 "**概述**" 下，应用程序 ID URI 已从默认值更改为 "**应用程序代理**" 下的外部 URL。 此 URI 将在打印服务器安装过程中、客户端 MDM 策略和发布打印机中使用。
+    - 转到“Azure Active Directory” > “应用注册”。  单击 Mopria 发现服务。 请注意，在 "**概述**" 下，应用程序 ID URI 已从默认值更改为 "**应用程序代理**" 下的外部 URL。 此 URI 将在打印服务器安装过程中、客户端 MDM 策略和发布打印机中使用。
 
     ![AAD 应用代理4](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-Overview.png)
 
@@ -156,7 +156,7 @@ ms.locfileid: "85470202"
     - 针对企业云打印服务重复此操作。
 
 6. 在本机应用程序中配置重定向 URI
-    - 转到“Azure Active Directory” > “应用注册”。**** **** 单击本机应用。 请参阅**概述**并复制**应用程序（客户端） ID**。
+    - 转到“Azure Active Directory” > “应用注册”。  单击本机应用。 请参阅**概述**并复制**应用程序（客户端） ID**。
 
     ![AAD 重定向 URI 1](../media/hybrid-cloud-print/AAD-AppRegistration-Native-Overview.png)
 
@@ -346,7 +346,8 @@ ms.locfileid: "85470202"
     - CloudPrintResourceId = 企业云打印应用的应用程序 ID URI。 可以在 Azure Active Directory > "应用注册 > 选择" 企业云打印应用 > 概述 "。 **它必须与尾随/之间的内容完全相同**。
     - DiscoveryMaxPrinterLimit = \<a positive integer\> 。
 
-> 注意：如果使用 Microsoft Intune 服务，则可以在 "云打印机" 类别下找到这些设置。
+> [!NOTE]
+> 如果使用 Microsoft Intune 服务，则可以在 "云打印机" 类别下找到这些设置。
 
 |Intune 显示名称                     |策略                         |
 |----------------------------------------|-------------------------------|
@@ -357,21 +358,22 @@ ms.locfileid: "85470202"
 |要查询的最大打印机数（仅限移动设备）  |DiscoveryMaxPrinterLimit       |
 |打印机发现服务资源 URI  |MopriaDiscoveryResourceId      |
 
-> 注意：如果云打印策略组不可用，但 MDM 提供程序支持 OMA URI 设置，则可以设置相同的策略。  有关其他信息，请参阅[此](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)信息。
+> [!NOTE]
+> 如果云打印策略组不可用，但 MDM 提供程序支持 OMA URI 设置，则可以设置相同的策略。  有关其他信息，请参阅[此](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)信息。
 
-    - OMA-URI 的值
-        - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
-            - 值 =https://login.microsoftonline.com/<Azure AD Directory ID>
-        - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
-            - 值 = Azure AD 本机应用的应用程序 ID <>
-        - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
-            - 值 = Mopria 发现服务应用的外部 URL （必须完全相同，但不能包含尾随/）
-        - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
-            - 值 = Mopria 发现服务应用的应用程序 ID URI
-        - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
-            - 值 = 企业云打印应用的应用程序 ID URI
-        - DiscoveryMaxPrinterLimit =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
-            - 值 = 正整数
+- OMA-URI 的值
+  - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
+    - 值 =`https://login.microsoftonline.com/<Azure AD Directory ID>`
+  - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
+    - 值 =`<Azure AD Native App's Application ID>`
+  - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
+    - 值 = Mopria 发现服务应用的外部 URL （必须完全相同，但不能有尾随 `/` ）
+  - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
+    - 值 = Mopria 发现服务应用的应用程序 ID URI
+  - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
+    - 值 = 企业云打印应用的应用程序 ID URI
+  - DiscoveryMaxPrinterLimit =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
+    - 值 = 正整数
 
 ### <a name="step-7---publish-the-shared-printer"></a>步骤 7-发布共享打印机
 

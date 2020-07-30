@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/07/2019
 description: 本文介绍故障转移群集相关性和 antiAffinity 级别
-ms.openlocfilehash: 5a46279a2c8780466617e453ec5263c36a6e0128
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 5fdc40e31b61a74965bf60ac907a198c7ef92521
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178593"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409587"
 ---
 # <a name="cluster-affinity"></a>群集关联
 
@@ -29,28 +29,37 @@ ms.locfileid: "87178593"
 
 查看组的属性时，有参数 AntiAffinityClassNames，默认值为空。  在下面的示例中，应将 "Group1" 和 "Group2" 分隔为在同一节点上运行。  若要查看属性，PowerShell 命令和结果将为：
 
-    PS> Get-ClusterGroup Group1 | fl AntiAffinityClassNames
+```powershell
+Get-ClusterGroup Group1 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
 
-    PS> Get-ClusterGroup Group2 | fl AntiAffinityClassNames
+Get-ClusterGroup Group2 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
+```
 
 由于 AntiAffinityClassNames 未定义为默认值，因此这些角色可以一起运行或分离。  目标是将它们分开。  AntiAffinityClassNames 的值可以是您想要的任何值，而只是必须是相同的值。  假设，Group1 和 Group2 是在虚拟机中运行的域控制器，它们在不同的节点上运行是最佳的。  由于这些是域控制器，因此，我将使用 DC 作为类名。  若要设置值，PowerShell 命令和结果将为：
 
-    PS> $AntiAffinity = New-Object System.Collections.Specialized.StringCollection
-    PS> $AntiAffinity.Add("DC")
-    PS> (Get-ClusterGroup -Name "Group1").AntiAffinityClassNames = $AntiAffinity
-    PS> (Get-ClusterGroup -Name "Group2").AntiAffinityClassNames = $AntiAffinity
+```powershell
+$AntiAffinity = New-Object System.Collections.Specialized.StringCollection
+$AntiAffinity.Add("DC")
+(Get-ClusterGroup -Name "Group1").AntiAffinityClassNames = $AntiAffinity
+(Get-ClusterGroup -Name "Group2").AntiAffinityClassNames = $AntiAffinity
 
-    PS> Get-ClusterGroup "Group1" | fl AntiAffinityClassNames
+$AntiAffinity = New-Object System.Collections.Specialized.StringCollection
+$AntiAffinity.Add("DC")
+(Get-ClusterGroup -Name "Group1").AntiAffinityClassNames = $AntiAffinity
+(Get-ClusterGroup -Name "Group2").AntiAffinityClassNames = $AntiAffinity
+
+Get-ClusterGroup "Group1" | fl AntiAffinityClassNames
     AntiAffinityClassNames : {DC}
 
-    PS> Get-ClusterGroup "Group2" | fl AntiAffinityClassNames
+Get-ClusterGroup "Group2" | fl AntiAffinityClassNames
     AntiAffinityClassNames : {DC}
+```
 
 现在已设置了这些设置，故障转移群集将尝试将它们分开。
 
-AntiAffinityClassName 参数是一个 "软" 块。  也就是说，它会尝试将其保持不变，但如果不能，它仍将允许它们在同一节点上运行。  例如，组在两节点故障转移群集上运行。  如果某个节点需要关闭以进行维护，则这意味着两个组将在同一节点上启动并运行。  在这种情况下，可以这样做。  它可能不是最理想的，但这两个 virtial 计算机在可接受的性能范围内仍将运行。
+AntiAffinityClassName 参数是一个 "软" 块。  也就是说，它会尝试将其保持不变，但如果不能，它仍将允许它们在同一节点上运行。  例如，组在两节点故障转移群集上运行。  如果某个节点需要关闭以进行维护，则这意味着两个组将在同一节点上启动并运行。  在这种情况下，可以这样做。  它可能不是最理想的，但这两个虚拟机仍将在可接受的性能范围内运行。
 
 ## <a name="i-need-more"></a>我需要更多
 
@@ -60,13 +69,17 @@ AntiAffinityClassName 参数是一个 "软" 块。  也就是说，它会尝试�
 
 若要查看属性和值，PowerShell 命令（和结果）应为：
 
-    PS> Get-Cluster | fl ClusterEnforcedAntiAffinity
+```powershell
+Get-Cluster | fl ClusterEnforcedAntiAffinity
     ClusterEnforcedAntiAffinity : 0
+```
 
 如果值为 "0"，则表示它已禁用且不会被强制执行。  如果值为 "1"，则它是一个硬块。  若要启用此硬块，命令（和结果）为：
 
-    PS> (Get-Cluster).ClusterEnforcedAntiAffinity = 1
+```powershell
+(Get-Cluster).ClusterEnforcedAntiAffinity = 1
     ClusterEnforcedAntiAffinity : 1
+```
 
 如果同时设置了这两个设置，则会阻止组联机。  如果它们在同一个节点上，这就是在故障转移群集管理器中看到的内容。
 
@@ -74,12 +87,14 @@ AntiAffinityClassName 参数是一个 "软" 块。  也就是说，它会尝试�
 
 在组的 PowerShell 列表中，会看到以下内容：
 
-    PS> Get-ClusterGroup
+```powershell
+Get-ClusterGroup
 
-    Name       State
-    ----       -----
-    Group1     Offline(Anti-Affinity Conflict)
-    Group2     Online
+Name       State
+----       -----
+Group1     Offline(Anti-Affinity Conflict)
+Group2     Online
+```
 
 ## <a name="additional-comments"></a>其他注释
 

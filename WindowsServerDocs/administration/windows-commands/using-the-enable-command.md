@@ -1,5 +1,5 @@
 ---
-title: 启用
+title: 使用 enable 命令
 description: 用于启用的参考文章，用于启用 Windows 部署服务的所有服务。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8808849e58c8f2a359b9f8d25c1ece2bb82d2dfe
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8c6edee30de94261ff528b308635b3bae7760d3d
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936830"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409778"
 ---
-# <a name="enable"></a>启用
+# <a name="using-the-enable-command"></a>使用 enable 命令
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

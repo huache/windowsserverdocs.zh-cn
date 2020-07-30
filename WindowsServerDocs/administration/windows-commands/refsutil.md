@@ -5,20 +5,20 @@ author: laknight5
 ms.author: laknight
 ms.date: 6/29/2020
 ms.prod: windows-server
-ms.technology: storage-file-systems
+ms.technology: windows-commands
 ms.topic: article
-ms.openlocfilehash: c84aaed5b34c535221247dcdd6ab0a5462fd4aad
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3afc96970bb0350a3c1168c520cc20ad4f2254af
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931103"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409718"
 ---
 # <a name="refsutil"></a>ReFSUtil
 
->适用于：Windows Server 2019、Windows 10
+> 适用于：Windows Server 2019、Windows 10
 
-ReFSUtil 是 Windows 和 Windows Server 中包含的一种工具，它尝试诊断严重损坏的 ReFS 卷、标识剩余文件并将这些文件复制到另一个卷。 此文件位于文件夹中的 Windows 10 `%SystemRoot%\Windows\System32` 或文件夹中的 Windows Server 中 `%SystemRoot%\\System32` 。
+ReFSUtil 是 Windows 和 Windows Server 中包含的一种工具，它尝试诊断严重损坏的 ReFS 卷、标识剩余文件并将这些文件复制到另一个卷。 此文件位于文件夹中的 Windows 10 `%SystemRoot%\Windows\System32` 或文件夹中的 Windows Server 中 `%SystemRoot%\System32` 。
 
 ReFS 抢救是 ReFSUtil 的主要功能，适用于从在 "磁盘管理" 中显示为 "原始" 的卷中恢复数据。 ReFS 抢救分为两个阶段：扫描阶段和复制阶段。 在自动模式下，扫描阶段和复制阶段将按顺序运行。 在手动模式下，每个阶段都可以单独运行。 进度和日志保存在工作目录中，以允许单独运行阶段，以及暂停和恢复扫描阶段。 不需要使用 ReFSutil 工具，除非该卷为 RAW。 如果是只读的，则数据仍可访问。
 
@@ -31,7 +31,7 @@ ReFS 抢救是 ReFSUtil 的主要功能，适用于从在 "磁盘管理" 中显�
 | `<target directory>` | 指定将标识文件复制到的位置。 它不得**位于**上 `<source volume>` 。 |
 | \-m | 恢复所有可能的文件，包括删除的文件。<p>**警告：** 此参数不仅会导致进程运行较长时间，还会导致意外的结果。 |
 | \-向量 | 指定使用详细模式。 |
-| \-x-blade | 必要时强制首先卸除卷。 卷的所有打开的句柄均无效。 例如，`refsutil salvage -QA R: N:\\WORKING N:\\DATA -x`。 |
+| \-x | 必要时强制首先卸除卷。 卷的所有打开的句柄均无效。 例如，`refsutil salvage -QA R: N:\WORKING N:\DATA -x`。 |
 
 ## <a name="usage-and-available-options"></a>使用情况和可用选项
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64355bd452934909d0600fa791e7a4c2d2066b6f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ace5b081d9dd362bb1455f9992568f197c815fdf
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958289"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409738"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart 脚本和示例
 
@@ -24,28 +24,28 @@ ms.locfileid: "86958289"
 
 若要创建一个 diskpart 脚本，请创建一个包含要运行的 Diskpart 命令的文本文件，其中每行一个命令，而不是空行。 您可以通过开始一行， `rem` 使该行成为注释。 例如，以下脚本将擦除磁盘，然后为 Windows 恢复环境创建 300 MB 的分区：
 
-    ```
-    select disk 0
-    clean
-    convert gpt
-    create partition primary size=300
-    format quick fs=ntfs label=Windows RE tools
-    assign letter=T
-    ```
+```
+select disk 0
+clean
+convert gpt
+create partition primary size=300
+format quick fs=ntfs label=Windows RE tools
+assign letter=T
+```
 
 ## <a name="examples"></a>示例
 
 - 若要运行 diskpart 脚本，请在命令提示符下键入以下命令，其中*scriptname*是包含你的脚本的文本文件的名称：
 
-    ```
-    diskpart /s scriptname.txt
-    ```
+```
+diskpart /s scriptname.txt
+```
 
 - 若要将 diskpart 的脚本输出重定向到文件，请键入以下命令，其中*logfile*是 diskpart 写入其输出的文本文件的名称：
 
-    ```
-    diskpart /s scriptname.txt > logfile.txt
-    ```
+```
+diskpart /s scriptname.txt > logfile.txt
+```
 
 ### <a name="remarks"></a>备注
 

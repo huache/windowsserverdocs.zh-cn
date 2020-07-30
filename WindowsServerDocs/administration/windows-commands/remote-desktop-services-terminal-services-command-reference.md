@@ -1,6 +1,6 @@
 ---
-title: 远程桌面服务（终端服务）命令参考
-description: '* * * * 的参考文章'
+title: 远程桌面服务（终端服务）命令行工具参考
+description: 远程桌面服务（RDS）命令行工具的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,48 +9,53 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd054e59c7245eddfb66725bd5d95333f602b2c6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 36204940c339b937817457aa993ead6ed6644891
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956299"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409688"
 ---
-# <a name="remote-desktop-services-terminal-services-command-reference"></a>远程桌面服务（终端服务）命令参考
+# <a name="remote-desktop-services-terminal-services-command-line-tools-reference"></a>远程桌面服务（终端服务）命令行工具参考
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-下面是远程桌面服务命令行工具的列表。
+了解可用的远程桌面服务（终端服务）命令行工具，其中包含有关更多详细信息的描述和链接。
+
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))。
->
-> |                 命令                 |                                                      说明                                                       |
-> |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-> |           [change](change.md)           | 更改登录、COM 端口映射和安装模式远程桌面会话主机（rd 会话主机）服务器设置。 |
-> |     [change logon](change-logon.md)     |    启用或禁用从 rd 会话主机服务器上的客户端会话登录，或显示当前登录状态。     |
-> |      [change port](change-port.md)      |                   列出或更改 COM 端口映射，使其与 MS-DOS 应用程序兼容。                    |
-> |      [change user](change-user.md)      |                                更改 rd 会话主机服务器的安装模式。                                |
-> |         [chglogon](chglogon.md)         |    启用或禁用从 rd 会话主机服务器上的客户端会话登录，或显示当前登录状态。     |
-> |          [chgport](chgport.md)          |                   列出或更改 COM 端口映射，使其与 MS-DOS 应用程序兼容。                    |
-> |           [chgusr](chgusr.md)           |                                更改 rd 会话主机服务器的安装模式。                                |
-> |         [flattemp](flattemp.md)         |                                      启用或禁用平面临时文件夹。                                       |
-> |           [logoff](logoff.md)           |          从 rd 会话主机服务器上的会话中注销用户，并从服务器中删除该会话。          |
-> |              [msg](msg.md)              |                                向 rd 会话主机服务器上的用户发送消息。                                 |
-> |            [mstsc](mstsc.md)            |                       创建与 rd 会话主机服务器或其他远程计算机的连接。                        |
-> |          [qappsrv](qappsrv.md)          |                             显示网络上所有 rd 会话主机服务器的列表。                             |
-> |         [qprocess](qprocess.md)         |                  显示有关在 rd 会话主机服务器上运行的进程的信息。                   |
-> |            [query](query.md)            |                      显示有关进程、会话和 rd 会话主机服务器的信息。                      |
-> |    [query process](query-process.md)    |                  显示有关在 rd 会话主机服务器上运行的进程的信息。                   |
-> |    [query session](query-session.md)    |                           显示有关 rd 会话主机服务器上的会话的信息。                            |
-> | [query termserver](query-termserver.md) |                             显示网络上所有 rd 会话主机服务器的列表。                             |
-> |       [query user](query-user.md)       |                         显示有关 rd 会话主机服务器上的用户会话的信息。                         |
-> |            [quser](quser.md)            |                         显示有关 rd 会话主机服务器上的用户会话的信息。                         |
-> |          [qwinsta](qwinsta.md)          |                           显示有关 rd 会话主机服务器上的会话的信息。                            |
-> |          [rdpsign](rdpsign.md)          |                          使您能够对远程桌面协议（.rdp）文件进行数字签名。                          |
-> |    [reset session](reset-session.md)    |                         使你能够在 rd 会话主机服务器上重置（删除）会话。                          |
-> |          [rwinsta](rwinsta.md)          |                         使你能够在 rd 会话主机服务器上重置（删除）会话。                          |
-> |           [shadow](shadow.md)           |            允许您远程控制 rd 会话主机服务器上其他用户的活动会话。             |
-> |            [tscon](tscon.md)            |                               连接到 rd 会话主机服务器上的另一个会话。                                |
-> |         [tsdiscon](tsdiscon.md)         |                                 断开会话与 rd 会话主机服务器的连接。                                  |
-> |           [tskill](tskill.md)           |                           结束在 rd 会话主机服务器上的会话中运行的进程。                            |
-> |           [tsprof](tsprof.md)           |              将远程桌面服务用户配置信息从一个用户复制到另一个用户。               |
+> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+
+| 命令 | 说明 |
+|--|--|--|
+| [change](change.md) | 更改用于登录、COM 端口映射和安装模式的远程桌面会话主机服务器设置。 |
+| [change logon](change-logon.md) | 启用或禁用远程桌面会话主机服务器上的客户端会话登录，或显示当前登录状态。 |
+| [change port](change-port.md) | 列出或更改要与 MS-DOS 应用程序兼容的 COM 端口映射。 |
+| [change user](change-user.md) | 更改远程桌面会话主机服务器的安装模式。 |
+| [chglogon](chglogon.md) | 启用或禁用远程桌面会话主机服务器上的客户端会话登录，或显示当前登录状态。 |
+| [chgport](chgport.md) | 列出或更改要与 MS-DOS 应用程序兼容的 COM 端口映射。 |
+| [chgusr](chgusr.md) | 更改远程桌面会话主机服务器的安装模式。 |
+| [flattemp](flattemp.md) | 启用或禁用平面临时文件夹。 |
+| [logoff](logoff.md) | 从远程桌面会话主机服务器上的会话中注销用户，并从服务器中删除该会话。 |
+| [msg](msg.md) | 向远程桌面会话主机服务器上的用户发送消息。 |
+| [mstsc](mstsc.md) | 创建与远程桌面会话主机服务器或其他远程计算机的连接。 |
+| [qappsrv](qappsrv.md) | 显示网络上所有远程桌面会话主机服务器的列表。 |
+| [qprocess](qprocess.md) | 显示有关在远程桌面会话主机服务器上运行的进程的信息。 |
+| [query](query.md) | 显示有关进程、会话和远程桌面会话主机服务器的信息。 |
+| [query process](query-process.md) | 显示有关在远程桌面会话主机服务器上运行的进程的信息。 |
+| [query session](query-session.md) | 显示有关远程桌面会话主机服务器上的会话的信息。 |
+| [query termserver](query-termserver.md) | 显示网络上所有远程桌面会话主机服务器的列表。 |
+| [query user](query-user.md) | 显示远程桌面会话主机服务器上的用户会话的相关信息。 |
+| [quser](quser.md) | 显示远程桌面会话主机服务器上的用户会话的相关信息。 |
+| [qwinsta](qwinsta.md) | 显示有关远程桌面会话主机服务器上的会话的信息。 |
+| [rdpsign](rdpsign.md) | 使您能够对远程桌面协议（.rdp）文件进行数字签名。 |
+| [reset session](reset-session.md) | 使您能够在远程桌面会话主机服务器上重置（删除）会话。 |
+| [rwinsta](rwinsta.md) | 使您能够在远程桌面会话主机服务器上重置（删除）会话。 |
+| [shadow](shadow.md) | 使您能够远程控制远程桌面会话主机服务器上其他用户的活动会话。 |
+| [tscon](tscon.md) | 连接到远程桌面会话主机服务器上的另一个会话。 |
+| [tsdiscon](tsdiscon.md) | 断开会话与远程桌面会话主机服务器的连接。 |
+| [tskill](tskill.md) | 结束在远程桌面会话主机服务器上的会话中运行的进程。 |
+| [tsprof](tsprof.md) | 将远程桌面服务用户配置信息从一个用户复制到另一个用户。 |
+
+## <a name="additional-references"></a>其他参考
+
+- [命令行语法项](command-line-syntax-key.md)

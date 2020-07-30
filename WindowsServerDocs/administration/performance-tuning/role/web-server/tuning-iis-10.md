@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e001ef3a51c93e3b1c7e4bf3d1af0a014243e56
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8617c285ae55521e4e301b5c6b74f389df6b32d2
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471212"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409447"
 ---
 # <a name="tuning-iis-100"></a>优化 IIS 10.0
 
@@ -43,8 +43,6 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Http\Parameters
 ```
 
 **注意**  如果 HTTP 服务已经在运行，则必须重新启动该服务，更改才能生效。
-
-首要 
 
 ## <a name="cache-management-settings"></a>缓存管理设置
 
@@ -142,12 +140,12 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.webserver/缓存**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|已启用|当设置为**False**时，禁用用户模式的 IIS 缓存。 如果缓存命中率非常小，则可以完全禁用缓存，以避免与缓存代码路径相关联的开销。 禁用用户模式缓存不会禁用内核模式缓存。|True|
-|enableKernelCache|当设置为**False**时禁用内核模式缓存。|True|
-|maxCacheSize|将 IIS 用户模式缓存大小限制为指定的大小（以 Mb 为单位）。 IIS 根据可用内存调整默认值。 根据经常访问的文件集的大小以及 RAM 或 IIS 进程地址空间的大小，仔细选择值。|0|
-|maxResponseSize|将文件缓存到指定大小。 实际值取决于数据集中最大文件的数量和大小，以及可用 RAM。 缓存大型、频繁请求的文件可以降低 CPU 使用量、磁盘访问和相关的延迟。|262144|
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| 启用 | 当设置为**False**时，禁用用户模式的 IIS 缓存。 如果缓存命中率非常小，则可以完全禁用缓存，以避免与缓存代码路径相关联的开销。 禁用用户模式缓存不会禁用内核模式缓存。 | True |
+| enableKernelCache | 当设置为**False**时禁用内核模式缓存。 | True |
+| maxCacheSize | 将 IIS 用户模式缓存大小限制为指定的大小（以 Mb 为单位）。 IIS 根据可用内存调整默认值。 根据经常访问的文件集的大小以及 RAM 或 IIS 进程地址空间的大小，仔细选择值。 | 0 |
+| maxResponseSize | 将文件缓存到指定大小。 实际值取决于数据集中最大文件的数量和大小，以及可用 RAM。 缓存大型、频繁请求的文件可以降低 CPU 使用量、磁盘访问和相关的延迟。 | 262144 |
 
 ## <a name="compression-behavior-settings"></a>压缩行为设置
 
@@ -157,22 +155,22 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.webserver/httpCompression**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage|如果当前百分比 CPU 使用率高于或低于指定的限制，则启用或禁用压缩。<br><br>从 IIS 7.0 开始，如果稳定状态的 CPU 高于禁用阈值，则会自动禁用压缩。 如果 CPU 低于启用阈值，则启用压缩。|分别为50、100、50和90|
-|directory|指定临时存储和缓存压缩版本的静态文件的目录。 如果经常访问此目录，请考虑将其移出系统驱动器。|%SystemDrive%\inetpub\temp\IIS Temporary Compressed Files|
-|doDiskSpaceLimiting|指定是否对所有压缩文件所占用的磁盘空间量有限制。 压缩的文件存储在**目录**属性指定的压缩目录中。|True|
-|maxDiskSpaceUsage|指定压缩目录中压缩文件可以占用的磁盘空间字节数。<br><br>如果所有压缩内容的总大小太大，则可能需要增加此设置。|100 MB|
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage | 如果当前百分比 CPU 使用率高于或低于指定的限制，则启用或禁用压缩。<br><br>从 IIS 7.0 开始，如果稳定状态的 CPU 高于禁用阈值，则会自动禁用压缩。 如果 CPU 低于启用阈值，则启用压缩。 | 分别为50、100、50和90 |
+| 目录 | 指定临时存储和缓存压缩版本的静态文件的目录。 如果经常访问此目录，请考虑将其移出系统驱动器。 | %SystemDrive%\inetpub\temp\IIS Temporary Compressed Files |
+| doDiskSpaceLimiting | 指定是否对所有压缩文件所占用的磁盘空间量有限制。 压缩的文件存储在**目录**属性指定的压缩目录中。 | True |
+| maxDiskSpaceUsage | 指定压缩目录中压缩文件可以占用的磁盘空间字节数。<br><br>如果所有压缩内容的总大小太大，则可能需要增加此设置。 | 100 MB |
 
 **system.webserver/Urlcompression>**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|doStaticCompression|指定是否压缩静态内容。|True|
-|doDynamicCompression|指定是否压缩动态内容。|True|
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| doStaticCompression | 指定是否压缩静态内容。 | True |
+| doDynamicCompression | 指定是否压缩动态内容。 | True |
 
-**注意**对于运行 IIS 10.0 且 CPU 使用率较低的服务器，请考虑为动态内容启用压缩功能，尤其是在响应很大的情况下。 应该首先在测试环境中完成此操作，以评估基准的 CPU 使用情况。
-
+> [!NOTE]
+> 对于运行 IIS 10.0 且 CPU 使用率较低的服务器，请考虑为动态内容启用压缩功能，尤其是在响应很大的情况下。 应该首先在测试环境中完成此操作，以评估基准的 CPU 使用情况。
 
 ### <a name="tuning-the-default-document-list"></a>优化默认文档列表
 
@@ -186,10 +184,10 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.webserver/defaultDocument**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|已启用|指定启用默认文档。|True|
-|&lt;files &gt; 元素|指定配置为默认文档的文件名。|默认列表为 Default.htm、默认 .asp、Index.htm、Index.html、Iisstart.htm 和 default.aspx。|
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| 已启用 | 指定启用默认文档。 | True |
+| `<files>` 元素 | 指定配置为默认文档的文件名。 | 默认列表为 Default.htm、默认 .asp、Index.htm、Index.html、Iisstart.htm 和 default.aspx。 |
 
 ## <a name="central-binary-logging"></a>中央二进制日志记录
 
@@ -199,17 +197,16 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.web/log**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|centralLogFileMode|指定服务器的日志记录模式。 将此值更改为 CentralBinary 以启用中心二进制日志记录。|站点|
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| centralLogFileMode | 指定服务器的日志记录模式。 将此值更改为 CentralBinary 以启用中心二进制日志记录。 | 站点 |
 
 **system.web/log/centralBinaryLogFile**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|已启用|指定是否启用中心二进制日志记录。|False|
-|directory|指定写入日志项的目录。|%SystemDrive%\inetpub\logs\LogFiles|
-
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| 已启用 | 指定是否启用中心二进制日志记录。 | False |
+| 目录 | 指定写入日志项的目录。 | %SystemDrive%\inetpub\logs\LogFiles |
 
 ## <a name="application-and-site-tunings"></a>应用程序和站点 tunings
 
@@ -217,16 +214,16 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.web/applicationPools/applicationPoolDefaults**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|queueLength|指示 HTTP.sys 在拒绝未来请求之前，为应用程序池排队的请求数。 超出此属性的值时，IIS 将拒绝后续请求，并出现503错误。<br><br>如果观察到503错误，请考虑为与高延迟后端数据存储通信的应用程序增加此项。|1000|
-|enable32BitAppOnWin64|如果为 True，则使32位应用程序能够在具有64位处理器的计算机上运行。<br><br>如果需要考虑内存消耗，请考虑启用32位模式。 由于指针大小和指令大小较小，32位应用程序使用的内存少于64位应用程序。 在64位计算机上运行32位应用程序的缺点是，用户模式地址空间限制为 4 GB。|False|
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| queueLength | 指示 HTTP.sys 在拒绝未来请求之前，为应用程序池排队的请求数。 超出此属性的值时，IIS 将拒绝后续请求，并出现503错误。<br><br>如果观察到503错误，请考虑为与高延迟后端数据存储通信的应用程序增加此项。 | 1000 |
+| enable32BitAppOnWin64 | 如果为 True，则使32位应用程序能够在具有64位处理器的计算机上运行。<br><br>如果需要考虑内存消耗，请考虑启用32位模式。 由于指针大小和指令大小较小，32位应用程序使用的内存少于64位应用程序。 在64位计算机上运行32位应用程序的缺点是，用户模式地址空间限制为 4 GB。 | False |
 
 **system.web/sites/VirtualDirectoryDefault**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|了 allowsubdirconfig|指定 IIS 是在内容目录中查找低于当前级别的 web.config 文件（True），还是不查找低于当前级别的内容目录中的 web.config 文件（False）。 通过施加简单的限制（仅允许在虚拟目录中进行配置），IISÂ10.0 可以知道，除非** / &lt; 名称 &gt; .htm**是一个虚拟目录，否则它不应查找配置文件。 跳过其他文件操作可以显著提高包含大量随机访问的静态内容的网站的性能。|True|
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| 了 allowsubdirconfig | 指定 IIS 是在内容目录中查找低于当前级别的 web.config 文件（True），还是不查找低于当前级别的内容目录中的 web.config 文件（False）。 通过施加简单的限制（仅允许在虚拟目录中进行配置），IISÂ10.0 可以知道，除非** / &lt; 名称 &gt; .htm**是一个虚拟目录，否则它不应查找配置文件。 跳过其他文件操作可以显著提高包含大量随机访问的静态内容的网站的性能。 | True |
 
 ## <a name="managing-iis-100-modules"></a>管理 IIS 10.0 模块
 
@@ -244,25 +241,24 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 **system.webserver/asp/cache**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|diskTemplateCacheDirectory|当内存中缓存溢出时，ASP 用于存储已编译模板的目录的名称。<br><br>建议：设置为一个不会频繁使用的目录，例如，未与操作系统、IIS 日志或其他经常访问的内容共享的驱动器。|%SystemDrive%\inetpub\temp\ASP Compiled Templates|
-|maxDiskTemplateCacheFiles|指定可在磁盘上缓存的已编译 ASP 模板的最大数目。<br><br>建议：设置为0x7FFFFFFF 的最大值。|2000|
-|scriptFileCacheSize|此属性指定可在内存中缓存的已编译 ASP 模板的最大数目。<br><br>建议：设置为至少等于应用程序池提供服务的请求 ASP 脚本的数量。 如果可能，将设置为 "内存限制允许的任意数量的 ASP 模板"。|500|
-|scriptEngineCacheMax|指定将缓存在内存中的脚本引擎的最大数量。<br><br>建议：设置为至少等于应用程序池提供服务的请求 ASP 脚本的数量。 如果可能，将设置为内存限制所允许的最大脚本引擎数。|250|
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| diskTemplateCacheDirectory | 当内存中缓存溢出时，ASP 用于存储已编译模板的目录的名称。<br><br>建议：设置为一个不会频繁使用的目录，例如，未与操作系统、IIS 日志或其他经常访问的内容共享的驱动器。 | %SystemDrive%\inetpub\temp\ASP Compiled Templates |
+| maxDiskTemplateCacheFiles | 指定可在磁盘上缓存的已编译 ASP 模板的最大数目。<br><br>建议：设置为0x7FFFFFFF 的最大值。 | 2000 |
+| scriptFileCacheSize | 此属性指定可在内存中缓存的已编译 ASP 模板的最大数目。<br><br>建议：设置为至少等于应用程序池提供服务的请求 ASP 脚本的数量。 如果可能，将设置为 "内存限制允许的任意数量的 ASP 模板"。 | 500 |
+| scriptEngineCacheMax | 指定将缓存在内存中的脚本引擎的最大数量。<br><br>建议：设置为至少等于应用程序池提供服务的请求 ASP 脚本的数量。 如果可能，将设置为内存限制所允许的最大脚本引擎数。 | 250 |
 
 **system.webserver/asp/限制**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|processorThreadMax|指定 ASP 可以为每个处理器创建的最大工作线程数。 如果当前设置不足以处理负载，则增加，这可能会导致在处理请求时出现错误，或者导致 CPU 资源使用不足。|25|
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| processorThreadMax | 指定 ASP 可以为每个处理器创建的最大工作线程数。 如果当前设置不足以处理负载，则增加，这可能会导致在处理请求时出现错误，或者导致 CPU 资源使用不足。 | 25 |
 
 **system.webserver/asp/comPlus**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|executeInMta|如果在 IIS 为 ASP 内容提供服务时检测到错误或失败，则设置为**True** 。 例如，在托管多个独立的站点时，每个站点都在其自己的工作进程中运行。 错误通常从事件查看器中的 COM + 中报告。 此设置在 ASP 中启用多线程单元模型。|False|
-
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| executeInMta | 如果在 IIS 为 ASP 内容提供服务时检测到错误或失败，则设置为**True** 。 例如，在托管多个独立的站点时，每个站点都在其自己的工作进程中运行。 错误通常从事件查看器中的 COM + 中报告。 此设置在 ASP 中启用多线程单元模型。 | False |
 
 ## <a name="aspnet-concurrency-setting"></a>ASP.NET 并发设置
 
@@ -301,13 +297,12 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 **system.web/applicationPools/ApplicationPoolDefaults/回收/periodicRestart**
 
-|特性|说明|默认|
-|--- |--- |--- |
-|memory|如果虚拟内存消耗超过指定的限制（以 kb 为单位），则启用进程回收。 对于具有小型 2 GB 地址空间的32位计算机，这是一项有用的设置。 由于内存不足错误，此方法可帮助避免失败的请求。|0|
-|privateMemory|如果专用内存分配超过指定的限制（以 kb 为单位），则启用进程回收。|0|
-|请求|在特定数量的请求后启用进程回收。|0|
-|time|在指定的时间段后启用进程回收。|29:00:00|
-
+| Attribute | 说明 | 默认 |
+|--|--|--|
+| 内存 | 如果虚拟内存消耗超过指定的限制（以 kb 为单位），则启用进程回收。 对于具有小型 2 GB 地址空间的32位计算机，这是一项有用的设置。 由于内存不足错误，此方法可帮助避免失败的请求。 | 0 |
+| privateMemory | 如果专用内存分配超过指定的限制（以 kb 为单位），则启用进程回收。 | 0 |
+| 请求 | 在特定数量的请求后启用进程回收。 | 0 |
+| time | 在指定的时间段后启用进程回收。 | 29:00:00 |
 
 ## <a name="dynamic-worker-process-page-out-tuning"></a>动态辅助进程-处理页面输出优化
 
@@ -317,9 +312,8 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 在深入了解之前，必须记住，如果不存在内存限制，最好将站点设置为从不暂停或终止。 毕竟，如果只是计算机上只有一个工作进程，则终止该工作进程的 thereâs 很少。
 
-**注意**  如果站点运行不稳定的代码（例如，内存泄漏的代码或不稳定），则将站点设置为在空闲时终止可能是解决代码错误的一种快速而又不稳定的替代方法。 这并不是我们要鼓励的事情，但在捕获中，最好将此功能用作干净的机制，而在工作中使用更永久性的解决方案。\]
-
-首要 
+> [!NOTE]
+> 如果站点运行不稳定的代码（例如，内存泄漏的代码或不稳定），则将站点设置为在空闲时终止可能是解决代码错误的一种快速而又不稳定的替代方法。 这并不是我们要鼓励的事情，但在捕获中，最好将此功能用作干净的机制，而在工作中使用更永久性的解决方案。\]
 
 要考虑的另一个因素是，如果站点确实使用大量内存，则挂起过程本身会耗费大量时间，因为计算机必须将辅助进程使用的数据写入磁盘。 如果工作进程正在使用大量内存，则挂起它的成本可能比不得不等待它启动备份的成本要高得多。
 
@@ -329,20 +323,20 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 请记住，一旦特定用户连接到该站点，这些用户通常会保留一段时间，发出附加请求，因此只计算每日请求可能无法准确反映实际的流量模式。 若要获得更准确的阅读，还可以使用工具（如 Microsoft Excel）来计算请求之间的平均时间。 例如：
 
-||请求 URL|请求时间|增量|
-|--- |--- |--- |--- |
-|1|/SourceSilverLight/Geosource.web/grosource.html|10:01||
-|2|/SourceSilverLight/Geosource.web/sliverlight.js|10:10|0:09|
-|3|/SourceSilverLight/Geosource.web/clientbin/geo/1.aspx|10:11|0:01|
-|4|/lClientAccessPolicy.xml|10:12|0:01|
-|5|/SourceSilverLight/GeosourcewebService/服务|10:23|0:11|
-|6|/SourceSilverLight/Geosource/GeoSearchServer ¦。|11:50|1:27|
-|7|/rest/Services/CachedServices/Silverlight_load_la ... ¦|12:50|1:00|
-|8|/rest/Services/CachedServices/Silverlight_basemap ... ¦。|12:51|0:01|
-|9|/rest/Services/DynamicService/Silverlight_basemap ... ¦。|12:59|0:08|
-|10|/rest/Services/CachedServices/Ortho_2004_cache .。。|13:40|0:41|
-|11|/rest/Services/CachedServices/Ortho_2005_cache.js|13:40|0:00|
-|12|/rest/Services/CachedServices/OrthoBaseEngine.aspx|13:41|0:01|
+| Number | 请求 URL | 请求时间 | 增量 |
+|--|--|--|--|
+| 1 | /SourceSilverLight/Geosource.web/grosource.html | 10:01 |  |
+| 2 | /SourceSilverLight/Geosource.web/sliverlight.js | 10:10 | 0:09 |
+| 3 | /SourceSilverLight/Geosource.web/clientbin/geo/1.aspx | 10:11 | 0:01 |
+| 4 | /lClientAccessPolicy.xml | 10:12 | 0:01 |
+| 5 | /SourceSilverLight/GeosourcewebService/服务 | 10:23 | 0:11 |
+| 6 | /SourceSilverLight/Geosource/GeoSearchServer ¦。 | 11:50 | 1:27 |
+| 7 | /rest/Services/CachedServices/Silverlight_load_la ... ¦ | 12:50 | 1:00 |
+| 8 | /rest/Services/CachedServices/Silverlight_basemap ... ¦。 | 12:51 | 0:01 |
+| 9 | /rest/Services/DynamicService/Silverlight_basemap ... ¦。 | 12:59 | 0:08 |
+| 10 | /rest/Services/CachedServices/Ortho_2004_cache .。。 | 13:40 | 0:41 |
+| 11 | /rest/Services/CachedServices/Ortho_2005_cache.js | 13:40 | 0:00 |
+| 12 | /rest/Services/CachedServices/OrthoBaseEngine.aspx | 13:41 | 0:01 |
 
 不过，硬部分却要确定要应用哪些设置才能合理。 在我们的示例中，该站点从用户那里获取一组请求，上表显示在4小时内总共发生了4个唯一会话。 对于应用程序池的工作进程挂起的默认设置，在默认的20分钟超时后，将终止该站点，这意味着，其中每个用户都将遇到站点启动循环。 这使它成为工作进程挂起的理想候选项，因为在大多数情况下，该站点处于空闲状态，因此暂停它将节省资源，并使用户几乎可以即时访问该站点。
 
@@ -352,9 +346,9 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 若要配置固定页面文件大小，需要计算其理想大小，具体取决于要暂停的站点数以及它们消耗的内存量。 如果活动工作进程的平均大小为 200 MB，并且要挂起的服务器上有500个站点，则页面文件的基本大小至少应为（200 \* 500） MB （在我们的示例中为基 + 100 GB）。
 
-**注意**当站点被挂起时，它们会消耗大约 6 MB 的内存，因此在我们的示例中，如果所有站点都处于挂起状态，则内存使用率大约为 3 GB。 但实际上，youâre 可能永远不会同时挂起它们。
+> [!NOTE]
+> 当站点被挂起时，它们会消耗大约 6 MB 的内存，因此在我们的示例中，如果所有站点都处于挂起状态，则内存使用率大约为 3 GB。 但实际上，youâre 可能永远不会同时挂起它们。
 
- 
 ## <a name="transport-layer-security-tuning-parameters"></a>传输层安全优化参数
 
 使用传输层安全性（TLS）会产生额外的 CPU 开销。 TLS 的最昂贵的组件是建立会话建立的开销，因为它涉及到完全握手。 重新连接、加密和解密还会增加成本。 为获得更好的 TLS 性能，请执行以下操作：
@@ -365,12 +359,10 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 -   选择性地将加密应用于需要它的页面或部分，而不是整个站点。
 
-**注意**
--   较大的密钥可提供更高的安全性，但也会占用更多的 CPU 时间。
+> [!NOTE]
+> - 较大的密钥可提供更高的安全性，但也会占用更多的 CPU 时间。
+> - 所有组件都可能无需加密。 但是，混合使用纯 HTTP 和 HTTPS 可能会导致弹出警告，而不是页面上的所有内容都是安全的。
 
--   所有组件都可能无需加密。 但是，混合使用纯 HTTP 和 HTTPS 可能会导致弹出警告，而不是页面上的所有内容都是安全的。
-
- 
 ## <a name="internet-server-application-programming-interface-isapi"></a>Internet 服务器应用程序编程接口（ISAPI）
 
 ISAPI 应用程序不需要任何特殊的优化参数。 如果你编写了一个专用 ISAPI 扩展，请确保它是为性能和资源使用而编写的。
@@ -389,7 +381,6 @@ IIS 10.0 中的集成管道模式实现了高度的灵活性和可扩展性。 �
 
 当你在隔离模式下运行包含 ASP.NET 脚本的多个主机（每个站点一个应用程序池），则监视内存使用情况。 请确保服务器具有足够的 RAM 来容纳预期数量的同时运行的应用程序池。 请考虑使用多个应用程序域，而不是多个独立进程。
 
-
 ## <a name="other-issues-that-affect-iis-performance"></a>影响 IIS 性能的其他问题
 
 以下问题可能会影响 IIS 性能：
@@ -403,5 +394,6 @@ IIS 10.0 中的集成管道模式实现了高度的灵活性和可扩展性。 �
     出于性能方面的考虑，不建议在 IIS 中使用 CGI 应用程序来处理请求。 经常创建和删除 CGI 进程涉及到很大的开销。 更好的替代方法包括使用 FastCGI、ISAPI 应用程序脚本、ASP 或 ASP.NET 脚本。 每个选项都提供隔离。
 
 ## <a name="additional-references"></a>其他参考
+
 - [Web 服务器性能优化](index.md)
 - [HTTP 1.1/2 优化](http-performance.md)

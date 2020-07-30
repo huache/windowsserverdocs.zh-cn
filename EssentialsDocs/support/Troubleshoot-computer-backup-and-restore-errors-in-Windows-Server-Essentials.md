@@ -7,12 +7,12 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: de384437a1d135aa60cf8d65a8031faa22983bb0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cbc6fec843a55d99ba709953b56e01a55f317a62
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180263"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409517"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Windows Server Essentials 中的计算机备份和还原错误疑难解答
 
@@ -117,13 +117,13 @@ ms.locfileid: "87180263"
 
     - 删除卷中的内容以获得更多可用空间。
 
-            > [!NOTE]
-            > If you need to free up space on the system reserved volume, you can move the System Recovery Image to a different volume. For instructions, see [Deploy a System Recovery Image](/previous-versions/windows/it-pro/windows-7/dd744280(v=ws.10)).
+        > [!NOTE]
+        > 如果你需要释放系统保留卷上的空间，你可以将系统恢复映像移动到其他卷。 有关说明，请参阅 [部署系统恢复映像](/previous-versions/windows/it-pro/windows-7/dd744280(v=ws.10))。
 
     - 从客户端备份中排除卷。 仅当维护卷上的数据的备份副本并不重要时，才执行此操作。
 
-            > [!WARNING]
-            > If you exclude the system reserved volume from a client backup, the client system will not be backed up, and you will not be able to perform a full system restore on the computer.
+        > [!WARNING]
+        > 如果从客户端备份中排除系统保留卷，将不会备份客户端系统，并且你将无法在计算机上执行完整系统还原。
 
 5. 检查服务器上的其他警报，可能会指示服务器上没有足够的磁盘空间用于成功完成备份。 按照警报中的说明来修复该问题。
 

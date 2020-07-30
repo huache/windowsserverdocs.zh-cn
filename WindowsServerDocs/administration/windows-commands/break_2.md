@@ -1,5 +1,5 @@
 ---
-title: break
+title: 中断（卷影副本卷）
 description: 用于中断命令的参考文章，此命令将卷影副本卷与 VSS 解除阻止，并使其作为常规卷进行访问。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f3974f183215a42920f7406a62ab335eb101f56
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6eb97ff1c539d8c372b4ae0837c41479c5a0f214
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924894"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409748"
 ---
-# <a name="break"></a>break
+# <a name="break-shadow-copy-volume"></a>中断（卷影副本卷）
 
 将卷影副本卷与 VSS 解除映射，并使其作为常规卷进行访问。 然后，可以使用驱动器号（如果已指定）或卷名访问该卷。 如果不使用参数， **break**将在命令提示符下显示帮助。
 

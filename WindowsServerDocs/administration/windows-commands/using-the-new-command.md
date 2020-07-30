@@ -1,5 +1,5 @@
 ---
-title: 新建
+title: 使用新命令
 description: 用于创建捕获和发现映像、多播传输和命名空间的参考文章。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 93efc135e62dc1445a6002444bf3e14ac24adeb2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e766586b6fcd2a0155b6742b34557bcccf1ebbf1
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932144"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409628"
 ---
-# <a name="new"></a>新建
+# <a name="using-the-new-command"></a>使用新命令
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
