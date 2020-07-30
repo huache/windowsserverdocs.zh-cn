@@ -2,18 +2,17 @@
 title: 设置或自定义服务器备份
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1f53922f8ab90b75cd11785f0ad108e2a1c812ab
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8342c542861598411570c4e702aea5a94f992c79
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470312"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180803"
 ---
 # <a name="set-up-or-customize-server-backup"></a>设置或自定义服务器备份
 
@@ -108,7 +107,7 @@ ms.locfileid: "85470312"
 > 1. 在控制面板中，打开“系统和安全”****。
 >    2. 在“管理工具”**** 下，单击“创建和格式化硬盘分区”****。
 >    3. 右键单击该驱动器，然后单击“更改驱动器号和路径”****。
->    4. 单击“添加” ****。
+>    4. 单击“添加”  。
 >    5. 在“添加驱动器号或路径”对话框中，选择要分配的驱动器号。 （可以重新分配相同的驱动器号。）然后单击 **"确定"**。
 >
 >    该驱动器将立即显示在仪表板上。

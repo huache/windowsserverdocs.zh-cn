@@ -2,18 +2,17 @@
 title: Windows Server Essentials 的系统要求
 description: 描述如何使用 Windows Server Essentials
 ms.date: 10/31/2013
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ef68f4f34e7a543510dbde5dd0b3edbdf221aef9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 295022c45a82d18781df27604d47d58af14b4b2d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471072"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181633"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Windows Server Essentials 的系统要求
 
@@ -34,10 +33,10 @@ ms.locfileid: "85471072"
 
 ## <a name="table-2-additional-hardware-and-software-requirements-for-windows-server-essentials"></a>表 2. Windows Server Essentials 的其他硬件和软件要求
 
-|组件|说明|
+|组件|描述|
 |---------------|-----------------|
 |网络适配器|千兆以太网适配器 (10/100/1000baseT PHY/MAC)|
-|Internet|某些功能可能需要 Internet 访问（可能收费）或 Microsoft 帐户|
+|Internet 的虚拟网络适配器|某些功能可能需要 Internet 访问（可能收费）或 Microsoft 帐户|
 |支持的客户端操作系统|Windows 8.1、Windows 8、Windows 7、Macintosh OS X 版本 10.5 到 10.8。<br /><br /> **注意：** 某些功能需要专业版或更高版本。<br /><br /> 1 GB 的可用硬盘空间（安装后会释放此磁盘上的一个分区）|
 |路由器|支持 IPv4 NAT 或 IPv6 的路由器或防火墙|
 |其他需求|DVD-ROM 驱动器|
