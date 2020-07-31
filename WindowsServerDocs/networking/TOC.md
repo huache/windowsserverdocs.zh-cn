@@ -229,7 +229,7 @@
 #### [QoS 策略的工作原理](technologies/qos/qos-policy-works.md)
 #### [QoS 策略体系结构](technologies/qos/qos-policy-architecture.md)
 #### [QoS 策略方案](technologies/qos/qos-policy-scenarios.md)
-###[管理 QoS 策略](technologies/qos/qos-policy-manage.md)
+### [管理 QoS 策略](technologies/qos/qos-policy-manage.md)
 #### [QoS 策略事件和错误](technologies/qos/qos-policy-errors.md)
 ### [QoS 策略常见问题解答](technologies/qos/qos-policy-faq.md)
 

@@ -46,7 +46,7 @@
 ##### [适用于应用程序供应商的虚拟化域控制器克隆测试指南](ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)
 ##### [支持将 Hyper-V 副本用于虚拟化域控制器](ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)
 
-####[Windows 时间服务和 AD DS](../networking/windows-time-service/windows-time-service.md)
+#### [Windows 时间服务和 AD DS](../networking/windows-time-service/windows-time-service.md)
 
 ### [AD DS 设计和规划](ad-ds/plan/AD-DS-Design-and-Planning.md)
 
@@ -348,22 +348,22 @@
 #### [部署 Azure AD Connect Health](/azure/active-directory/hybrid/whatis-hybrid-identity)
 #### [将 Active Directory 联合身份验证服务角色服务迁移到 Windows Server 2012 R2](ad-fs/deployment/migrate-ad-fs-service-role-to-windows-server-r2.md)
 ##### [准备迁移 AD FS 联合服务](ad-fs/deployment/prepare-migrate-ad-fs-server-r2.md)
-#####[迁移 AD FS 联合服务器](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
-#####[迁移 AD FS 联合服务器代理](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
-#####[验证到 Windows Server 2012 R2 的 AD FS 迁移](ad-fs/deployment/verify-ad-fs-migration.md)
+##### [迁移 AD FS 联合服务器](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
+##### [迁移 AD FS 联合服务器代理](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
+##### [验证到 Windows Server 2012 R2 的 AD FS 迁移](ad-fs/deployment/verify-ad-fs-migration.md)
 
 #### [将 Active Directory 联合身份验证服务角色服务迁移到 Windows Server 2012](ad-fs/deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
 ##### [准备迁移 AD FS 2.0 联合服务器](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-server.md)
-######[准备迁移 AD FS 2.0 独立或单节点场服务器](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
-######[准备迁移 AD FS 2.0 WID 场](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
-######[准备迁移 AD FS 2.0 SQL 场](ad-fs/deployment/prepare-to-migrate-a-sql-server-farm.md)
-#####[准备迁移 AD FS 2.0 联合服务器代理](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-proxy.md)
-#####[迁移 AD FS 2.0 联合服务器](ad-fs/deployment/migrate-the-ad-fs-fed-server.md)
-######[迁移 AD FS 2.0 独立或单节点场服务器](ad-fs/deployment/migrate-ad-fs-stand-alone-server.md)
-######[迁移 AD FS 2.0 WID 场](ad-fs/deployment/migrate-ad-fs-wid-farm.md)
-######[迁移 AD FS 2.0 SQL 场](ad-fs/deployment/migrate-ad-fs-sql-farm.md)
-#####[迁移 AD FS 2.0 联合服务器代理](ad-fs/deployment/migrate-the-ad-fs-2-fed-server-proxy.md)
-#####[迁移 AD FS 1.1 Web 代理](ad-fs/deployment/migrate-the-ad-fs-web-agent.md)
+###### [准备迁移 AD FS 2.0 独立或单节点场服务器](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
+###### [准备迁移 AD FS 2.0 WID 场](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
+###### [准备迁移 AD FS 2.0 SQL 场](ad-fs/deployment/prepare-to-migrate-a-sql-server-farm.md)
+##### [准备迁移 AD FS 2.0 联合服务器代理](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-proxy.md)
+##### [迁移 AD FS 2.0 联合服务器](ad-fs/deployment/migrate-the-ad-fs-fed-server.md)
+###### [迁移 AD FS 2.0 独立或单节点场服务器](ad-fs/deployment/migrate-ad-fs-stand-alone-server.md)
+###### [迁移 AD FS 2.0 WID 场](ad-fs/deployment/migrate-ad-fs-wid-farm.md)
+###### [迁移 AD FS 2.0 SQL 场](ad-fs/deployment/migrate-ad-fs-sql-farm.md)
+##### [迁移 AD FS 2.0 联合服务器代理](ad-fs/deployment/migrate-the-ad-fs-2-fed-server-proxy.md)
+##### [迁移 AD FS 1.1 Web 代理](ad-fs/deployment/migrate-the-ad-fs-web-agent.md)
 
 
 

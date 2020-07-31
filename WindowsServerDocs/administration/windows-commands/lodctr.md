@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8b1cae87818d3f77474e4193b03836bf1c84990
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7e6dba42610923e8b0cd9d7ea25a0e1ea6df507a
+ms.sourcegitcommit: 67d9c51e396c8f937f8704a25e66fea8c5fae81a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931648"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87441530"
 ---
 # <a name="lodctr"></a>lodctr
 
@@ -30,7 +30,7 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<filename>` | 指定用于注册性能计数器名称设置和说明性文本的初始化文件的名称。 |
 | /s`<filename>` | 指定性能计数器注册表设置和说明性文本要保存到的文件的名称。 |
@@ -45,10 +45,10 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 ### <a name="examples"></a>示例
 
-若要将当前性能注册表设置和说明性文本保存到文件*性能 backup1.txt*，请键入：
+若要将当前性能注册表设置和说明性文本保存到文件 *"perf backup1.txt"*，请键入：
 
 ```
-lodctr /s:perf backup1.txt
+lodctr /s:"perf backup1.txt"
 ```
 
 ## <a name="additional-references"></a>其他参考
