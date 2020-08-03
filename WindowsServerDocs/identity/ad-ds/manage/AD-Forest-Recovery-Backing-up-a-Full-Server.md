@@ -8,18 +8,18 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: e95c11007548c0e1db77132b6e872b88569d3b47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3792a1e9b5c8978fdc8db5201ff4d439dbfb98d6
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962999"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519014"
 ---
-# <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 林恢复-备份完整服务器  
+# <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 林恢复-备份完整服务器
 
 >适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
-建议使用完整服务器备份来准备林恢复，因为它可以还原到不同的硬件或不同的操作系统实例。  使用 Windows Server 备份可以对服务器执行完整备份。 
+建议使用完整服务器备份来准备林恢复，因为它可以还原到不同的硬件或不同的操作系统实例。  使用 Windows Server 备份可以对服务器执行完整备份。
 
 ## <a name="windows-server-backup"></a>Windows Server Backup
 
@@ -28,7 +28,7 @@ ms.locfileid: "86962999"
 >[!NOTE]
 >请注意，Windows Server 2016 和 Windows Server 2012 R2 的步骤可能略有不同。
 
-有关在 Windows Server 2008 和 Windows Server 2008 R2 中安装它的步骤，请参阅[安装 Windows Server 备份](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。  
+有关在 Windows Server 2008 和 Windows Server 2008 R2 中安装它的步骤，请参阅[安装 Windows Server 备份](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
 
 ### <a name="to-install-windows-server-backup"></a>安装 Windows Server 备份
 
@@ -39,7 +39,7 @@ ms.locfileid: "86962999"
 5. 在 "**服务器角色**" 屏幕上，单击 "**下一步**"。
 6. 在 "**功能**" 屏幕上，选择**Windows Server 备份**然后单击 "**下一步**" 
     ![ 安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
-7. 单击“安装” 。
+7. 单击“安装”  。
 8. 安装完成后，单击 "**关闭**"。
 
 ### <a name="to-perform-a-backup-with-windows-server-backup"></a>使用 Windows Server 备份执行备份
@@ -47,7 +47,7 @@ ms.locfileid: "86962999"
 1. 打开**服务器管理器**，单击 "**工具**"，然后单击 " **Windows Server 备份**"。
    - 在 Windows Server 2008 R2 和 Windows Server 2008 中，单击 "**开始**"，指向 "**管理工具**"，然后单击 " **Windows Server 备份**"。
 
-   ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png) 
+   ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
 
 2. 如果系统提示，请在 "**用户帐户控制**" 对话框中提供备份操作员凭据，然后单击 **"确定"**。
 3. 单击 "**本地备份**"。
@@ -75,8 +75,8 @@ ms.locfileid: "86962999"
 Wbadmin.exe 是一种命令行实用工具，可用于在命令提示符下备份和还原操作系统、卷、文件、文件夹和应用程序。
 
 ### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>使用 Wbadmin.exe 执行完整服务器备份
-  
-- 打开提升的命令提示符，键入以下命令并按 ENTER：  
+
+- 打开提升的命令提示符，键入以下命令并按 ENTER：
 
    ```
    wbadmin start backup -backuptarget:<Drive_letter_to store_backup>: -include:<Drive_letter_to_include>:

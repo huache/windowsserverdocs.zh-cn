@@ -1,5 +1,5 @@
 ---
-title: 入门
+title: Windows Server 2016 入门
 description: Server 2016 基础知识 - 系统要求、发行说明、升级选项
 ms.prod: windows-server
 manager: dongill
@@ -9,12 +9,12 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: bc38c21435ba3340f5ffb1aab9d274ec9da1620c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6387b5daf2346a0ad88509dbefd68ba8b8bbb69a
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964059"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519564"
 ---
 # <a name="get-started-with-windows-server-2016"></a>Windows Server 2016 入门
 
@@ -23,7 +23,7 @@ ms.locfileid: "86964059"
 > [!TIP]
 > 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](/search/index?dataSource=previousVersions&search=Windows Server)了解具体信息。
 
-![显示了已勾选的框的图标](../media/landing-icons/getstarted.png)此集合包含详细的信息，可帮助确定你是否准备好移动到 Windows Server 2016。 一旦检查了移动到 Windows Server 2016 的系统要求、升级选项和其他信息，你就可以返回到主 [Windows Server 2016](Windows-Server-2016.md) 集线器，并开始在路径下安装满足你需要的最佳版本和安装选项。 
+![显示了已勾选的框的图标](../media/landing-icons/getstarted.png)此集合包含详细的信息，可帮助确定你是否准备好移动到 Windows Server 2016。 一旦检查了移动到 Windows Server 2016 的系统要求、升级选项和其他信息，你就可以返回到主 [Windows Server 2016](Windows-Server-2016.md) 集线器，并开始在路径下安装满足你需要的最佳版本和安装选项。
 
 > [!Note]
 > 若要下载 Windows Server 2016，请参阅 [Windows Server 评估](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)。

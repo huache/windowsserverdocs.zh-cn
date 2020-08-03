@@ -9,30 +9,30 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/17/2018
-ms.openlocfilehash: 54471446fb9eab6dc5dc20043c7cb651766a59a9
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d81e4013d7cc38a15dd8b0bcd48529a2d72d0b69
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309643"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520196"
 ---
 # <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>成组 NIC 配置（数据中心）中的汇聚 NIC
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-在本主题中，我们将向你提供有关如何使用交换机嵌入组合 \(集\)在成组的 NIC 配置中部署汇聚 NIC 的说明。 
+在本主题中，我们将向你提供有关使用交换机嵌入组合集在成组的 NIC 配置中部署汇聚 NIC 的说明 \( \) 。
 
 本主题中的示例配置介绍了两个 Hyper-v 主机： **Hyper-v 主机 1**和**hyper-v 主机 2**。 两个主机具有两个网络适配器。 在每个主机上，一个适配器连接到 192.168.1/24 子网，一个适配器连接到 192.168.2/24 子网。
 
 ![Hyper-V 主机](../../media/Converged-NIC/1-datacenter-test-conn.jpg)
 
-## <a name="step-1-test-the-connectivity-between-source-and-destination"></a>步骤 1： 测试源和目标之间的连接
+## <a name="step-1-test-the-connectivity-between-source-and-destination"></a>步骤 1。 测试源和目标之间的连接
 
-确保物理 NIC 可以连接到目标主机。  此测试通过使用第3层 \(L3\) 或 IP 层，以及第2层 \(L2\) 虚拟局域网 \(VLAN\)来演示连接性。
+确保物理 NIC 可以连接到目标主机。  此测试通过使用第3层 \( \) 或 IP 层和第2层 \( 二级 \) 虚拟局域网 \( VLAN \) 来演示连接性。
 
 1. 查看第一个网络适配器属性。
 
-   ```PowerShell
+   ```powershell
    Get-NetAdapter -Name "Test-40G-1" | ft -AutoSize
    ```
 
@@ -43,11 +43,9 @@ ms.locfileid: "80309643"
    |------------|------------------------------------------|---------|--------|-------------------|-----------|
    | 测试-40G-1 | Mellanox ConnectX 3 Pro 以太网适配器 |   11    |   向上   | E4-1D-07-43-D0 |  40 Gbps  |
 
-   ---
+2. 查看第一个适配器的其他属性，包括 IP 地址。
 
-2. 查看第一个适配器的其他属性，包括 IP 地址。 
-
-   ```PowerShell
+   ```powershell
    Get-NetIPAddress -InterfaceAlias "Test-40G-1"
    Get-NetIPAddress -InterfaceAlias "TEST-40G-1" | Where-Object {$_.AddressFamily -eq "IPv4"} | fl InterfaceAlias,IPAddress
    ```
@@ -64,11 +62,9 @@ ms.locfileid: "80309643"
    |      类型      |   单播   |
    |  PrefixLength  |     24      |
 
-   ---
-
 3. 查看第二个网络适配器属性。
 
-   ```PowerShell
+   ```powershell
    Get-NetAdapter -Name "Test-40G-2" | ft -AutoSize
    ```
 
@@ -79,11 +75,9 @@ ms.locfileid: "80309643"
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | 测试-40G-2 | Mellanox ConnectX-3 Pro 以太网 ... #2 |   13    |   向上   | E4-1D-2D-07-40-70 |  40 Gbps  |
 
-   ---
-
 4. 查看第二个适配器的其他属性，包括 IP 地址。
 
-   ```PowerShell
+   ```powershell
    Get-NetIPAddress -InterfaceAlias "Test-40G-2"
    Get-NetIPAddress -InterfaceAlias "Test-40G-2" | Where-Object {$_.AddressFamily -eq "IPv4"} | fl InterfaceAlias,IPAddress
    ```
@@ -100,18 +94,16 @@ ms.locfileid: "80309643"
    |      类型      |   单播   |
    |  PrefixLength  |     24      |
 
-   ---
-
-5. 验证其他 NIC 团队或 SET 成员 pNICs 是否具有有效的 IP 地址。<p>使用单独的子网，\(xxx.xxx "。2.x 和**xxx.xxx。** **1**. xxx\)，以便于从此适配器向目标发送。 否则，如果在同一子网上找到这两个 pNICs，则这些接口和简单验证之间的 Windows TCP/IP 堆栈负载平衡会变得更加复杂。
+5. 验证其他 NIC 团队或 SET 成员 pNICs 是否具有有效的 IP 地址。<p>使用单独的子网 \( xxx.xxx。**2**2.x 和 xxx.xxx。**1**. xxx \) ，有助于从此适配器向目标发送。 否则，如果在同一子网上找到这两个 pNICs，则这些接口和简单验证之间的 Windows TCP/IP 堆栈负载平衡会变得更加复杂。
 
 
-## <a name="step-2-ensure-that-source-and-destination-can-communicate"></a>步骤 2： 确保源和目标可以通信
+## <a name="step-2-ensure-that-source-and-destination-can-communicate"></a>步骤 2。 确保源和目标可以通信
 
-在此步骤中，我们将使用**Test-netconnection** Windows PowerShell 命令，但如果你愿意，可以使用**ping**命令。 
+在此步骤中，我们将使用**Test-netconnection** Windows PowerShell 命令，但如果你愿意，可以使用**ping**命令。
 
 1. 验证双向通信。
 
-   ```PowerShell
+   ```powershell
    Test-NetConnection 192.168.1.5
    ```
 
@@ -120,26 +112,24 @@ ms.locfileid: "80309643"
 
    |        参数         |    值    |
    |--------------------------|-------------|
-   |       ComputerName       | 为192.168.1.5 |
+   |       计算机名       | 为192.168.1.5 |
    |      RemoteAddress       | 为192.168.1.5 |
    |      InterfaceAlias      | 测试-40G-1  |
    |      SourceAddress       | 192.168.1.3 |
    |      PingSucceeded       |    False    |
-   | PingReplyDetails \(RTT\) |    0 毫秒     |
-
-   ---
+   | PingReplyDetails \( RTT\) |    0 毫秒     |
 
    在某些情况下，可能需要禁用具有高级安全性的 Windows 防火墙才能成功执行此测试。 如果禁用防火墙，请记住安全，并确保配置符合组织的安全要求。
 
 2. 禁用所有防火墙配置文件。
 
-   ```PowerShell
+   ```powershell
    Set-NetFirewallProfile -All -Enabled False
    ```
 
-3. 禁用防火墙配置文件后，再次测试连接。 
+3. 禁用防火墙配置文件后，再次测试连接。
 
-   ```PowerShell
+   ```powershell
    Test-NetConnection 192.168.1.5
    ```
 
@@ -148,19 +138,17 @@ ms.locfileid: "80309643"
 
    |        参数         |    值    |
    |--------------------------|-------------|
-   |       ComputerName       | 为192.168.1.5 |
+   |       计算机名       | 为192.168.1.5 |
    |      RemoteAddress       | 为192.168.1.5 |
    |      InterfaceAlias      | 测试-40G-1  |
    |      SourceAddress       | 192.168.1.3 |
    |      PingSucceeded       |    False    |
-   | PingReplyDetails \(RTT\) |    0 毫秒     |
-
-   ---
+   | PingReplyDetails \( RTT\) |    0 毫秒     |
 
 
 4. 验证其他 Nic 的连接。 对 NIC 或设置团队中包含的所有后续 pNICs 重复上述步骤。
 
-   ```PowerShell    
+   ```powershell
    Test-NetConnection 192.168.2.5
    ```
 
@@ -169,22 +157,20 @@ ms.locfileid: "80309643"
 
    |        参数         |    值    |
    |--------------------------|-------------|
-   |       ComputerName       | 192.168.2.5 |
+   |       计算机名       | 192.168.2.5 |
    |      RemoteAddress       | 192.168.2.5 |
    |      InterfaceAlias      | 测试-40G-2  |
    |      SourceAddress       | 192.168.2.3 |
    |      PingSucceeded       |    False    |
-   | PingReplyDetails \(RTT\) |    0 毫秒     |
+   | PingReplyDetails \( RTT\) |    0 毫秒     |
 
-   ---
-
-## <a name="step-3-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>步骤 3。 为安装在 Hyper-v 主机中的 Nic 配置 VLAN Id
+## <a name="step-3-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>步骤 3. 为安装在 Hyper-v 主机中的 Nic 配置 VLAN Id
 
 许多网络配置利用 Vlan，如果你计划在网络中使用 Vlan，则必须重复前面的测试并配置 Vlan。
 
-对于此步骤，Nic 处于**访问**模式。 但是，在本指南后面的 \(vSwitch\) 创建 Hyper-v 虚拟交换机时，VLAN 属性将应用于 vSwitch 端口级别。 
+对于此步骤，Nic 处于**访问**模式。 但是，在本指南的后面部分创建 Hyper-v 虚拟交换机 \( vSwitch 时 \) ，VLAN 属性将应用于 vSwitch 端口级别。
 
-由于交换机可以托管多个 Vlan，因此，机架 \(ToR\) 物理交换机的顶部需要具有主机连接到的端口才能在 Trunk 模式下进行配置。
+由于交换机可以托管多个 Vlan，因此机架 ToR 物理交换机的顶部需要 \( \) 具有主机连接到的端口才能在 Trunk 模式下进行配置。
 
 >[!NOTE]
 >有关如何在交换机上配置干线模式的说明，请参阅 ToR 交换机文档。
@@ -195,33 +181,31 @@ ms.locfileid: "80309643"
 
 
 >[!TIP]
->根据电气和电子工程师协会 \(IEEE\) 网络标准，在配置 VLAN ID 时，物理 NIC 中的服务质量 \(QoS\) 属性嵌入在 802.1 Q \(VLAN\) 标头中。
+>根据电气和电子工程师协会 \( IEEE \) 网络标准， \( 物理 NIC 中的服务 QoS 属性的质量在 \) \( 配置 VLAN ID 时嵌入到 802.1 q VLAN 标头中的 802.1 p 标头上起作用 \) 。
 
 1. 在第一个 NIC 上配置 VLAN ID。
 
-   ```PowerShell    
+   ```powershell
    Set-NetAdapterAdvancedProperty -Name "Test-40G-1" -RegistryKeyword VlanID -RegistryValue "101"
    Get-NetAdapterAdvancedProperty -Name "Test-40G-1" | Where-Object {$_.RegistryKeyword -eq "VlanID"} | ft -AutoSize
    ```
 
-   _**后果**_   
+   _**后果**_
 
 
    |    名称    | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
    |------------|-------------|--------------|-----------------|---------------|
    | 测试-40G-1 |   VLAN ID   |     101      |     VlanID      |     {101}     |
 
-   ---
-
 2. 重新启动网络适配器以应用 VLAN ID。
 
-   ```PowerShell
+   ```powershell
    Restart-NetAdapter -Name "Test-40G-1"
    ```
 
 3. 确保状态为 "已**启动**"。
 
-   ```PowerShell
+   ```powershell
    Get-NetAdapter -Name "Test-40G-1" | ft -AutoSize
    ```
 
@@ -230,16 +214,14 @@ ms.locfileid: "80309643"
 
    |    名称    |          InterfaceDescription           | ifIndex | 状态 |    MacAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
-   | 测试-40G-1 | Mellanox ConnectX-3 Pro 以太网 Ada 。 |   11    |   向上   | E4-1D-07-43-D0 |  40 Gbps  |
-
-   ---
+   | 测试-40G-1 | Mellanox ConnectX-3 Pro 以太网 Ada .。。 |   11    |   向上   | E4-1D-07-43-D0 |  40 Gbps  |
 
 4. 在第二个 NIC 上配置 VLAN ID。
 
-   ```PowerShell    
+   ```powershell
    Set-NetAdapterAdvancedProperty -Name "Test-40G-2" -RegistryKeyword VlanID -RegistryValue "102"
    Get-NetAdapterAdvancedProperty -Name "Test-40G-2" | Where-Object {$_.RegistryKeyword -eq "VlanID"} | ft -AutoSize
-   ``` 
+   ```
 
    _**后果**_
 
@@ -248,17 +230,15 @@ ms.locfileid: "80309643"
    |------------|-------------|--------------|-----------------|---------------|
    | 测试-40G-2 |   VLAN ID   |     102      |     VlanID      |     {102}     |
 
-   ---
-
 5. 重新启动网络适配器以应用 VLAN ID。
 
-   ```PowerShell
-   Restart-NetAdapter -Name "Test-40G-2" 
+   ```powershell
+   Restart-NetAdapter -Name "Test-40G-2"
    ```
 
 6. 确保状态为 "已**启动**"。
 
-   ```PowerShell
+   ```powershell
    Get-NetAdapter -Name "Test-40G-1" | ft -AutoSize
    ```
 
@@ -267,52 +247,46 @@ ms.locfileid: "80309643"
 
    |    名称    |          InterfaceDescription           | ifIndex | 状态 |    MacAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
-   | 测试-40G-2 | Mellanox ConnectX-3 Pro 以太网 Ada 。 |   11    |   向上   | E4-1D-07-43-D1 |  40 Gbps  |
-
-   ---
+   | 测试-40G-2 | Mellanox ConnectX-3 Pro 以太网 Ada .。。 |   11    |   向上   | E4-1D-07-43-D1 |  40 Gbps  |
 
    >[!IMPORTANT]
-   >设备可能需要几秒钟才能重新启动并在网络上变为可用。 
+   >设备可能需要几秒钟才能重新启动并在网络上变为可用。
 
-7. 验证第一个 NIC 的连接性（测试-40G-1）。<p>如果连接失败，请在同一 VLAN 中检查交换机 VLAN 配置或目标参与情况。 
+7. 验证第一个 NIC 的连接性（测试-40G-1）。<p>如果连接失败，请在同一 VLAN 中检查交换机 VLAN 配置或目标参与情况。
 
-   ```PowerShell
+   ```powershell
    Test-NetConnection 192.168.1.5
    ```
 
-   _**后果**_   
+   _**后果**_
 
 
    |        参数         |    值    |
    |--------------------------|-------------|
-   |       ComputerName       | 为192.168.1.5 |
+   |       计算机名       | 为192.168.1.5 |
    |      RemoteAddress       | 为192.168.1.5 |
    |      InterfaceAlias      | 测试-40G-1  |
    |      SourceAddress       | 为192.168.1.5 |
    |      PingSucceeded       |    True     |
-   | PingReplyDetails \(RTT\) |    0 毫秒     |
-
-   ---
+   | PingReplyDetails \( RTT\) |    0 毫秒     |
 
 8. 验证第一个 NIC 的连接，测试-40G-2。<p>如果连接失败，请在同一 VLAN 中检查交换机 VLAN 配置或目标参与情况。
 
-   ```PowerShell    
+   ```powershell
    Test-NetConnection 192.168.2.5
    ```
 
-   _**后果**_    
+   _**后果**_
 
 
    |        参数         |    值    |
    |--------------------------|-------------|
-   |       ComputerName       | 192.168.2.5 |
+   |       计算机名       | 192.168.2.5 |
    |      RemoteAddress       | 192.168.2.5 |
    |      InterfaceAlias      | 测试-40G-2  |
    |      SourceAddress       | 192.168.2.3 |
    |      PingSucceeded       |    True     |
-   | PingReplyDetails \(RTT\) |    0 毫秒     |
-
-   ---
+   | PingReplyDetails \( RTT\) |    0 毫秒     |
 
    >[!IMPORTANT]
    >执行**重启-get-netadapter**后，不会立即发生**test-netconnection**或 ping 故障，这种情况并不常见。  请等待网络适配器完全初始化，然后重试。
@@ -325,37 +299,35 @@ ms.locfileid: "80309643"
    ![配置服务质量](../../media/Converged-NIC/3-datacenter-configure-qos.jpg)
 
 
-## <a name="step-4-configure-quality-of-service-qos"></a>步骤 4. 配置服务质量 \(QoS\)
+## <a name="step-4-configure-quality-of-service-qos"></a>步骤 4. 配置服务 QoS 的质量 \(\)
 
 >[!NOTE]
 >必须在打算彼此通信的所有主机上执行以下所有 DCB 和 QoS 配置步骤。
 
-1. 在每个 Hyper-v 主机上安装数据中心桥接 \(DCB\)。
+1. \( \) 在每个 hyper-v 主机上安装数据中心桥接 DCB。
 
    - 对于使用 iWarp 的网络配置是**可选**的。
-   - 对于使用 RoCE 的网络配置，\(RDMA 服务的任何版本\) 是**必需**的。
+   - 对于使用 RoCE 的网络配置，**需要**使用 \( RDMA 服务的任何版本 \) 。
 
-   ```PowerShell
+   ```powershell
    Install-WindowsFeature Data-Center-Bridging
    ```
 
    _**后果**_
 
 
-   | 成功 | 需要重启 | 退出代码 |     功能结果     |
+   | Success | 需要重启 | 退出代码 |     功能结果     |
    |---------|----------------|-----------|------------------------|
-   |  True   |       是       |  成功  | {数据中心桥接} |
-
-   ---
+   |  True   |       否       |  Success  | {数据中心桥接} |
 
 2. 为 SMB Direct 设置 QoS 策略：
 
    - 对于使用 iWarp 的网络配置是**可选**的。
-   - 对于使用 RoCE 的网络配置，\(RDMA 服务的任何版本\) 是**必需**的。
+   - 对于使用 RoCE 的网络配置，**需要**使用 \( RDMA 服务的任何版本 \) 。
 
    在下面的示例命令中，值 "3" 为任意值。 您可以使用介于1到7之间的任何值，只要在 QoS 策略的配置中始终使用相同的值。
 
-   ```PowerShell
+   ```powershell
    New-NetQosPolicy "SMB" -NetDirectPortMatchCondition 445 -PriorityValue8021Action 3
    ```
 
@@ -365,39 +337,35 @@ ms.locfileid: "80309643"
    |   参数    |          值           |
    |----------------|--------------------------|
    |      名称      |           SMB            |
-   |     所有者      | \(机组策略\) |
-   | NetworkProfile |           全部            |
-   |   优先权   |           127            |
+   |     所有者      | 组策略 \( 计算机\) |
+   | NetworkProfile |           All            |
+   |   优先级   |           127            |
    |   JobObject    |          &nbsp;          |
    | NetDirectPort  |           445            |
    | PriorityValue  |            3             |
 
-   ---
+3. 为接口上的其他流量设置附加的 QoS 策略。
 
-3. 为接口上的其他流量设置附加的 QoS 策略。   
-
-   ```PowerShell
+   ```powershell
    New-NetQosPolicy "DEFAULT" -Default -PriorityValue8021Action 0
    ```
 
-   _**后果**_   
+   _**后果**_
 
 
    |   参数    |          值           |
    |----------------|--------------------------|
    |      名称      |         DEFAULT          |
-   |     所有者      | \(机组策略\) |
-   | NetworkProfile |           全部            |
-   |   优先权   |           127            |
+   |     所有者      | 组策略 \( 计算机\) |
+   | NetworkProfile |           All            |
+   |   优先级   |           127            |
    |    模板    |         默认          |
    |   JobObject    |          &nbsp;          |
    | PriorityValue  |            0             |
 
-   ---
-
 4. 为 SMB 流量启用**优先级流控制**，这对于 iWarp 不是必需的。
 
-   ```PowerShell
+   ```powershell
    Enable-NetQosFlowControl -priority 3
    Get-NetQosFlowControl
    ```
@@ -405,22 +373,20 @@ ms.locfileid: "80309643"
    _**后果**_
 
 
-   | Priority | 已启用 | PolicySet | ifIndex | IfAlias |
+   | 优先度 | 已启用 | PolicySet | IfIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
-   |    0     |  False  |  全局   | &nbsp;  | &nbsp;  |
-   |    1     |  False  |  全局   | &nbsp;  | &nbsp;  |
-   |    2     |  False  |  全局   | &nbsp;  | &nbsp;  |
-   |    3     |  True   |  全局   | &nbsp;  | &nbsp;  |
-   |    4     |  False  |  全局   | &nbsp;  | &nbsp;  |
-   |    5     |  False  |  全局   | &nbsp;  | &nbsp;  |
-   |    6     |  False  |  全局   | &nbsp;  | &nbsp;  |
-   |    7     |  False  |  全局   | &nbsp;  | &nbsp;  |
-
-   ---
+   |    0     |  False  |  全球   | &nbsp;  | &nbsp;  |
+   |    1     |  False  |  全球   | &nbsp;  | &nbsp;  |
+   |    2     |  False  |  全球   | &nbsp;  | &nbsp;  |
+   |    3     |  True   |  全球   | &nbsp;  | &nbsp;  |
+   |    4     |  False  |  全球   | &nbsp;  | &nbsp;  |
+   |    5     |  False  |  全球   | &nbsp;  | &nbsp;  |
+   |    6     |  False  |  全球   | &nbsp;  | &nbsp;  |
+   |    7     |  False  |  全球   | &nbsp;  | &nbsp;  |
 
    >**重要提示**如果你的结果不匹配这些结果，原因是3之外的项的已启用值为 True，则必须为这些类禁用**FlowControl** 。
    >
-   >```PowerShell
+   >```powershell
    >Disable-NetQosFlowControl -priority 0,1,2,4,5,6,7
    >Get-NetQosFlowControl
    >```
@@ -429,14 +395,15 @@ ms.locfileid: "80309643"
 
 5. 为第一个 NIC （测试-40G-1）启用 QoS。
 
-   ```PowerShell
+   ```powershell
    Enable-NetAdapterQos -InterfaceAlias "Test-40G-1"
    Get-NetAdapterQos -Name "Test-40G-1"
 
-   Name: TEST-40G-1 
+   Name: TEST-40G-1
    Enabled: True
    ```
-   _**功能**：_   
+
+   _**功能**：_
 
 
    |      参数      |   硬件   |   当前    |
@@ -445,42 +412,36 @@ ms.locfileid: "80309643"
    |     DcbxSupport     |     无     |     无     |
    | NumTCs （Max/ETS/PFC） |    8/8/8     |    8/8/8     |
 
-   ---
-
-   _**OperationalTrafficClasses**：_    
+   _**OperationalTrafficClasses**：_
 
 
-   | TC |  TSA   | 带宽 | 因素 |
+   | TC |  TSA   | 带宽 | 优先级 |
    |----|--------|-----------|------------|
-   | 0  | Strict |  &nbsp;   |    0-7     |
+   | 0  | 严格 |  &nbsp;   |    0-7     |
 
-   ---
+   _**OperationalFlowControl**：_
 
-   _**OperationalFlowControl**：_  
+   优先级3已启用
 
-   优先级3已启用  
-
-   _**OperationalClassifications**：_  
+   _**OperationalClassifications**：_
 
 
-   | 协议  | 端口/类型 | Priority |
+   | 协议  | 端口/类型 | 优先度 |
    |-----------|-----------|----------|
    |  默认  |  &nbsp;   |    0     |
    | NetDirect |    445    |    3     |
-
-   ---
 
 6. 为第二个 NIC （测试-40G-2）启用 QoS。
 
-   ```PowerShell
+   ```powershell
    Enable-NetAdapterQos -InterfaceAlias "Test-40G-2"
    Get-NetAdapterQos -Name "Test-40G-2"
 
-   Name: TEST-40G-2 
-   Enabled: True 
+   Name: TEST-40G-2
+   Enabled: True
    ```
 
-   _**功能**：_ 
+   _**功能**：_
 
 
    |      参数      |   硬件   |   当前    |
@@ -489,120 +450,104 @@ ms.locfileid: "80309643"
    |     DcbxSupport     |     无     |     无     |
    | NumTCs （Max/ETS/PFC） |    8/8/8     |    8/8/8     |
 
-   ---
-
-   _**OperationalTrafficClasses**：_  
+   _**OperationalTrafficClasses**：_
 
 
-   | TC |  TSA   | 带宽 | 因素 |
+   | TC |  TSA   | 带宽 | 优先级 |
    |----|--------|-----------|------------|
-   | 0  | Strict |  &nbsp;   |    0-7     |
+   | 0  | 严格 |  &nbsp;   |    0-7     |
 
-   ---
+    _**OperationalFlowControl**：_
 
-    _**OperationalFlowControl**：_  
+    优先级3已启用
 
-    优先级3已启用  
-
-   _**OperationalClassifications**：_  
+   _**OperationalClassifications**：_
 
 
-   | 协议  | 端口/类型 | Priority |
+   | 协议  | 端口/类型 | 优先度 |
    |-----------|-----------|----------|
    |  默认  |  &nbsp;   |    0     |
    | NetDirect |    445    |    3     |
 
-   ---
 
+7. 保留到 SMB 直接 RDMA 的一半带宽 \(\)
 
-7. 保留 \(RDMA 的 SMB 直通的一半带宽\)
-
-   ```PowerShell
+   ```powershell
    New-NetQosTrafficClass "SMB" -priority 3 -bandwidthpercentage 50 -algorithm ETS
-   ```
-
-   _**后果**_  
-
-
-   | 名称 | 算法 | 带宽（%） | Priority | PolicySet | ifIndex | IfAlias |
-   |------|-----------|--------------|----------|-----------|---------|---------|
-   | SMB  |    ETS    |      50      |    3     |  全局   | &nbsp;  | &nbsp;  |
-
-   ---
-
-8. 查看带宽预留设置：   
-
-   ```PowerShell
-   Get-NetQosTrafficClass | ft -AutoSize
-   ```
-
-   _**后果**_  
-
-
-   |   名称    | 算法 | 带宽（%） | Priority | PolicySet | ifIndex | IfAlias |
-   |-----------|-----------|--------------|----------|-----------|---------|---------|
-   | [默认值] |    ETS    |      50      | 0-2，4-7  |  全局   | &nbsp;  | &nbsp;  |
-   |    SMB    |    ETS    |      50      |    3     |  全局   | &nbsp;  | &nbsp;  |
-
-   ---
-
-9. 可有可无为租户 IP 流量另外创建两个通信类。 
-
-   >[!TIP]
-   >可以省略 "IP1" 和 "IP2" 值。
-
-   ```PowerShell
-   New-NetQosTrafficClass "IP1" -Priority 1 -bandwidthpercentage 10 -algorithm ETS
    ```
 
    _**后果**_
 
 
-   | 名称 | 算法 | 带宽（%） | Priority | PolicySet | ifIndex | IfAlias |
+   | 名称 | 算法 | 带宽（%） | 优先度 | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
-   | IP1  |    ETS    |      10      |    1     |  全局   | &nbsp;  | &nbsp;  |
+   | SMB  |    ETS    |      50      |    3     |  全球   | &nbsp;  | &nbsp;  |
 
-   ---
+8. 查看带宽预留设置：
 
-   ```PowerShell
+   ```powershell
+   Get-NetQosTrafficClass | ft -AutoSize
+   ```
+
+   _**后果**_
+
+   |   名称    | 算法 | 带宽（%） | 优先度 | PolicySet | IfIndex | IfAlias |
+   |-----------|-----------|--------------|----------|-----------|---------|---------|
+   | [默认值] |    ETS    |      50      | 0-2，4-7  |  全球   | &nbsp;  | &nbsp;  |
+   |    SMB    |    ETS    |      50      |    3     |  全球   | &nbsp;  | &nbsp;  |
+
+9. 可有可无为租户 IP 流量另外创建两个通信类。
+
+   >[!TIP]
+   >可以省略 "IP1" 和 "IP2" 值。
+
+   ```powershell
+   New-NetQosTrafficClass "IP1" -Priority 1 -bandwidthpercentage 10 -algorithm ETS
+   ```
+
+   _**后果**_
+
+   | 名称 | 算法 | 带宽（%） | 优先度 | PolicySet | IfIndex | IfAlias |
+   |------|-----------|--------------|----------|-----------|---------|---------|
+   | IP1  |    ETS    |      10      |    1     |  全球   | &nbsp;  | &nbsp;  |
+
+   ```powershell
    New-NetQosTrafficClass "IP2" -Priority 2 -bandwidthpercentage 10 -algorithm ETS
    ```
 
    _**后果**_
 
 
-   | 名称 | 算法 | 带宽（%） | Priority | PolicySet | ifIndex | IfAlias |
+   | 名称 | 算法 | 带宽（%） | 优先度 | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
-   | IP2  |    ETS    |      10      |    2     |  全局   | &nbsp;  | &nbsp;  |
+   | IP2  |    ETS    |      10      |    2     |  全球   | &nbsp;  | &nbsp;  |
 
-   ---
+1.  查看 QoS 通信类。
 
-10. 查看 QoS 通信类。
-
-    ```PowerShell
+    ```powershell
     Get-NetQosTrafficClass | ft -AutoSize
     ```
 
     _**后果**_
 
 
-    |   名称    | 算法 | 带宽（%） | Priority | PolicySet | ifIndex | IfAlias |
+    |   名称    | 算法 | 带宽（%） | 优先度 | PolicySet | IfIndex | IfAlias |
     |-----------|-----------|--------------|----------|-----------|---------|---------|
-    | [默认值] |    ETS    |      30      |  0、4-7   |  全局   | &nbsp;  | &nbsp;  |
-    |    SMB    |    ETS    |      50      |    3     |  全局   | &nbsp;  | &nbsp;  |
-    |    IP1    |    ETS    |      10      |    1     |  全局   | &nbsp;  | &nbsp;  |
-    |    IP2    |    ETS    |      10      |    2     |  全局   | &nbsp;  | &nbsp;  |
+    | [默认值] |    ETS    |      30      |  0、4-7   |  全球   | &nbsp;  | &nbsp;  |
+    |    SMB    |    ETS    |      50      |    3     |  全球   | &nbsp;  | &nbsp;  |
+    |    IP1    |    ETS    |      10      |    1     |  全球   | &nbsp;  | &nbsp;  |
+    |    IP2    |    ETS    |      10      |    2     |  全球   | &nbsp;  | &nbsp;  |
 
     ---
 
-11. 可有可无重写调试器。<p>默认情况下，附加的调试器会阻止 NetQos。 
+2.  可有可无重写调试器。<p>默认情况下，附加的调试器会阻止 NetQos。
 
-    ```PowerShell
+    ```powershell
     Set-ItemProperty HKLM:"\SYSTEM\CurrentControlSet\Services\NDIS\Parameters" AllowFlowControlUnderDebugger -type DWORD -Value 1 –Force
     Get-ItemProperty HKLM:"\SYSTEM\CurrentControlSet\Services\NDIS\Parameters" | ft AllowFlowControlUnderDebugger
     ```
 
-    _**后果**_  
+    _**后果**_
 
     ```
     AllowFlowControlUnderDebugger
@@ -610,9 +555,9 @@ ms.locfileid: "80309643"
     1
     ```
 
-## <a name="step-5-verify-the-rdma-configuration-mode-1"></a>步骤 5： 验证 RDMA 配置 \(模式 1\) 
+## <a name="step-5-verify-the-rdma-configuration-mode-1"></a>步骤 5。 验证 RDMA 配置 \( 模式1\)
 
-在创建 vSwitch 并过渡到 RDMA \(模式 2\)之前，你需要确保正确配置了构造。
+在创建 vSwitch 并过渡到 RDMA 模式2之前，你需要确保正确配置了构造 \( \) 。
 
 下图显示了 Hyper-v 主机的当前状态。
 
@@ -621,7 +566,7 @@ ms.locfileid: "80309643"
 
 1. 验证 RDMA 配置。
 
-   ```PowerShell
+   ```powershell
    Get-NetAdapterRdma | ft -AutoSize
    ```
 
@@ -633,11 +578,9 @@ ms.locfileid: "80309643"
    | 测试-40G-1 | Mellanox ConnectX-4 VPI 适配器 #2 |  True   |
    | 测试-40G-2 |  Mellanox ConnectX-4 VPI 适配器   |  True   |
 
-   ---
+2. 确定目标适配器的**ifIndex**值。<p>运行下载的脚本时，请在后续步骤中使用此值。
 
-2. 确定目标适配器的**ifIndex**值。<p>运行下载的脚本时，请在后续步骤中使用此值。   
-
-   ```PowerShell
+   ```powershell
    Get-NetIPConfiguration -InterfaceAlias "TEST*" | ft InterfaceAlias,InterfaceIndex,IPv4Address
    ```
 
@@ -649,21 +592,19 @@ ms.locfileid: "80309643"
    |   测试-40G-1   |       14       | {192.168.1.3} |
    |   测试-40G-2   |       13       | {192.168.2.3} |
 
-   ---
+3. 下载[DiskSpd.exe 实用程序](https://aka.ms/diskspd)并将其解压缩到 C:\TEST\.
 
-3. 下载[DiskSpd 实用工具](https://aka.ms/diskspd)，并将其解压缩到 C:\TEST\.
+4. 将[测试-RDMA PowerShell 脚本](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)下载到本地驱动器上的测试文件夹，例如，C:\TEST\.
 
-4. 将[测试-RDMA PowerShell 脚本](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)下载到本地驱动器上的测试文件夹，例如 C:\TEST\.
+5. 运行**Test-Rdma.ps1** PowerShell 脚本，将 ifIndex 值传递到脚本，同时将第一个远程适配器的 IP 地址传递到同一 VLAN 上。<p>在此示例中，该脚本在远程网络适配器 IP 地址为192.168.1.5 上传递**ifIndex**值14。
 
-5. 运行**Test-Rdma** PowerShell 脚本，将 ifIndex 值连同同一 VLAN 上第一个远程适配器的 IP 地址一起传递给脚本。<p>在此示例中，该脚本在远程网络适配器 IP 地址为192.168.1.5 上传递**ifIndex**值14。
-
-   ```PowerShell
+   ```powershell
    C:\TEST\Test-RDMA.PS1 -IfIndex 14 -IsRoCE $true -RemoteIpAddress 192.168.1.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
 
-   _**后果**_ 
+   _**后果**_
 
-   ```   
+   ```
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
    VERBOSE: The adapter M2 is a physical adapter
    VERBOSE: Underlying adapter is RoCE. Checking if QoS/DCB/PFC is configured on each physical adapter(s)
@@ -686,15 +627,15 @@ ms.locfileid: "80309643"
    >[!NOTE]
    >如果 RDMA 流量失败，则针对 RoCE 情况，请参阅 ToR 交换机配置，获取应该与主机设置匹配的正确 PFC/ETS 设置。 有关引用值，请参阅本文档中的 QoS 部分。
 
-6. 运行**Test-Rdma** PowerShell 脚本，将 ifIndex 值连同同一 VLAN 上第二个远程适配器的 IP 地址一起传递给脚本。<p>在此示例中，该脚本在远程网络适配器 IP 地址192.168.2.5 上传递**ifIndex**值13。
+6. 运行**Test-Rdma.ps1** PowerShell 脚本，将 ifIndex 值传递到脚本，并将第二个远程适配器的 IP 地址传递到同一 VLAN 上。<p>在此示例中，该脚本在远程网络适配器 IP 地址192.168.2.5 上传递**ifIndex**值13。
 
-   ```PowerShell
+   ```powershell
    C:\TEST\Test-RDMA.PS1 -IfIndex 13 -IsRoCE $true -RemoteIpAddress 192.168.2.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
 
-   _**后果**_ 
+   _**后果**_
 
-   ```   
+   ```
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
    VERBOSE: The adapter TEST-40G-2 is a physical adapter
    VERBOSE: Underlying adapter is RoCE. Checking if QoS/DCB/PFC is configured on each physical adapter(s)
@@ -712,9 +653,9 @@ ms.locfileid: "80309643"
    VERBOSE: 35040816 RDMA bytes sent per second
    VERBOSE: Enabling RDMA on adapters that are not part of this test. RDMA was disabled on them prior to sending RDMA traffic.
    VERBOSE: RDMA traffic test SUCCESSFUL: RDMA traffic was sent to 192.168.2.5
-   ``` 
+   ```
 
-## <a name="step-6-create-a-hyper-v-vswitch-on-your-hyper-v-hosts"></a>步骤 6： 在 Hyper-v 主机上创建 Hyper-v vSwitch
+## <a name="step-6-create-a-hyper-v-vswitch-on-your-hyper-v-hosts"></a>步骤 6. 在 Hyper-v 主机上创建 Hyper-v vSwitch
 
 
 下图显示了具有 vSwitch 的 Hyper-v 主机1。
@@ -723,7 +664,7 @@ ms.locfileid: "80309643"
 
 1. 在 Hyper-v 主机1上以集模式创建 vSwitch。
 
-   ```PowerShell
+   ```powershell
    New-VMSwitch –Name "VMSTEST" –NetAdapterName "TEST-40G-1","TEST-40G-2" -EnableEmbeddedTeaming $true -AllowManagementOS $true
    ```
 
@@ -734,27 +675,25 @@ ms.locfileid: "80309643"
    |---------|------------|--------------------------------|
    | VMSTEST |  外部  |        成组-接口        |
 
-   ---
-
 2. 查看集中的物理适配器组。
 
-   ```PowerShell
+   ```powershell
    Get-VMSwitchTeam -Name "VMSTEST" | fl
    ```
 
-   _**后果**_  
+   _**后果**_
 
    ```
-   Name: VMSTEST  
-   Id: ad9bb542-dda2-4450-a00e-f96d44bdfbec  
-   NetAdapterInterfaceDescription: {Mellanox ConnectX-3 Pro Ethernet Adapter, Mellanox ConnectX-3 Pro Ethernet Adapter #2}  
-   TeamingMode: SwitchIndependent  
-   LoadBalancingAlgorithm: Dynamic   
+   Name: VMSTEST
+   Id: ad9bb542-dda2-4450-a00e-f96d44bdfbec
+   NetAdapterInterfaceDescription: {Mellanox ConnectX-3 Pro Ethernet Adapter, Mellanox ConnectX-3 Pro Ethernet Adapter #2}
+   TeamingMode: SwitchIndependent
+   LoadBalancingAlgorithm: Dynamic
    ```
 
 3. 显示主机 vNIC 的两个视图
 
-   ```PowerShell
+   ```powershell
     Get-NetAdapter
    ```
 
@@ -765,11 +704,9 @@ ms.locfileid: "80309643"
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
    | vEthernet （VMSTEST） | Hyper-v 虚拟以太网适配器 #2 |   28    |   向上   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
-   ---
+4. 查看主机 vNIC 的其他属性。
 
-4. 查看主机 vNIC 的其他属性。 
-
-   ```PowerShell
+   ```powershell
    Get-VMNetworkAdapter -ManagementOS
    ```
 
@@ -780,16 +717,14 @@ ms.locfileid: "80309643"
    |---------|----------------|---------|--------------|------------|--------|-------------|
    | VMSTEST |      True      | VMSTEST | E41D2D074071 |    正常    | &nbsp; |             |
 
-   ---
-
 
 5. 测试与远程 VLAN 101 适配器的网络连接。
 
-   ```PowerShell
-   Test-NetConnection 192.168.1.5 
+   ```powershell
+   Test-NetConnection 192.168.1.5
    ```
 
-   _**后果**_  
+   _**后果**_
 
    ```
    WARNING: Ping to 192.168.1.5 failed -- Status: DestinationHostUnreachable
@@ -802,7 +737,7 @@ ms.locfileid: "80309643"
    PingReplyDetails (RTT) : 0 ms
    ```
 
-## <a name="step-7-remove-the-access-vlan-setting"></a>步骤 7。 删除访问 VLAN 设置
+## <a name="step-7-remove-the-access-vlan-setting"></a>步骤 7. 删除访问 VLAN 设置
 
 在此步骤中，将从物理 NIC 中删除访问 VLAN 设置，并使用 vSwitch 来设置 VLANID。
 
@@ -810,34 +745,34 @@ ms.locfileid: "80309643"
 
 1. 删除设置。
 
-   ```PowerShell
+   ```powershell
    Set-NetAdapterAdvancedProperty -Name "Test-40G-1" -RegistryKeyword VlanID -RegistryValue "0"
    Set-NetAdapterAdvancedProperty -Name "Test-40G-2" -RegistryKeyword VlanID -RegistryValue "0"
    ```
 
 2. 设置 VLAN ID。
 
-   ```PowerShell
+   ```powershell
    Set-VMNetworkAdapterVlan -VMNetworkAdapterName "VMSTEST" -VlanId "101" -Access -ManagementOS
    Get-VMNetworkAdapterVlan -ManagementOS -VMNetworkAdapterName "VMSTEST"
    ```
 
-   _**后果**_  
+   _**后果**_
 
    ```
    VMName VMNetworkAdapterName Mode   VlanList
    ------ -------------------- ----   --------
-          VMSTEST              Access 101     
+          VMSTEST              Access 101
    ```
 
 
 3. 测试网络连接。
 
-   ```PowerShell
+   ```powershell
    Test-NetConnection 192.168.1.5
    ```
 
-   _**后果**_   
+   _**后果**_
 
    ```
    ComputerName   : 192.168.1.5
@@ -850,13 +785,13 @@ ms.locfileid: "80309643"
 
    >**重要提示**如果结果与示例结果不类似，并且 ping 失败，并出现消息 "警告： Ping to 为 192.168.1.5 failed--Status： DestinationHostUnreachable"，确认 "vEthernet （VMSTEST）" 具有正确的 IP 地址。
    >
-   >```PowerShell
+   >```powershell
    >Get-NetIPAddress -InterfaceAlias "vEthernet (VMSTEST)"
    >```
    >
    >如果未设置 IP 地址，请更正此问题。
    >
-   >```PowerShell
+   >```powershell
    >New-NetIPAddress -InterfaceAlias "vEthernet (VMSTEST)" -IPAddress 192.168.1.3 -PrefixLength 24
    >
    >IPAddress : 192.168.1.3
@@ -872,17 +807,17 @@ ms.locfileid: "80309643"
    >PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
    >SkipAsSource  : False
    >PolicyStore   : ActiveStore
-   >```  
+   >```
 
 
 4. 重命名管理 NIC。
 
-   ```PowerShell
+   ```powershell
    Rename-VMNetworkAdapter -ManagementOS -Name “VMSTEST” -NewName “MGT”
    Get-VMNetworkAdapter -ManagementOS
    ```
 
-   _**后果**_ 
+   _**后果**_
 
 
    |         名称         | IsManagementOs | VMName |      SwitchName      |  MacAddress  | 状态 | IPAddresses |
@@ -890,11 +825,9 @@ ms.locfileid: "80309643"
    | 公司外部-交换机 |      True      | &nbsp; | 公司外部-交换机 | 001B785768AA |  正常  |   &nbsp;    |
    |         管理          |      True      | &nbsp; |       VMSTEST        | E41D2D074071 |  正常  |   &nbsp;    |
 
-   ---
-
 5. 查看其他 NIC 属性。
 
-   ```PowerShell
+   ```powershell
    Get-NetAdapter
    ```
 
@@ -905,8 +838,6 @@ ms.locfileid: "80309643"
    |-----------------|-------------------------------------|---------|--------|-------------------|-----------|
    | vEthernet （进行） | Hyper-v 虚拟以太网适配器 #2 |   28    |   向上   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
-   ---
-
 ## <a name="step-8-test-hyper-v-vswitch-rdma"></a>步骤 8。 测试 Hyper-v vSwitch RDMA
 
 下图显示了 Hyper-v 主机（包括 Hyper-v 主机1上的 vSwitch）的当前状态。
@@ -915,30 +846,29 @@ ms.locfileid: "80309643"
 
 1. 在主机 vNIC 上设置优先级标记，以补充以前的 VLAN 设置。
 
-   ```PowerShell    
+   ```powershell
    Set-VMNetworkAdapter -ManagementOS -Name "MGT" -IeeePriorityTag on
    Get-VMNetworkAdapter -ManagementOS -Name "MGT" | fl Name,IeeePriorityTag
    ```
 
-   _**后果**_  
+   _**后果**_
 
-   名称：进行中  
-   IeeePriorityTag： On  
+   名称： IeeePriorityTag
 
 2. 为 RDMA 创建两个主机 Vnic，并将其连接到 vSwitch VMSTEST。
 
-   ```PowerShell    
+   ```powershell
    Add-VMNetworkAdapter –SwitchName "VMSTEST" –Name SMB1 –ManagementOS
    Add-VMNetworkAdapter –SwitchName "VMSTEST" –Name SMB2 –ManagementOS
    ```
 
 3. 查看管理 NIC 属性。
 
-   ```PowerShell    
+   ```powershell
    Get-VMNetworkAdapter -ManagementOS
    ```
 
-   _**后果**_ 
+   _**后果**_
 
 
    |         名称         | IsManagementOs |        VMName        |  SwitchName  | MacAddress | 状态 | IPAddresses |
@@ -948,9 +878,7 @@ ms.locfileid: "80309643"
    |         SMB1         |      True      |       VMSTEST        | 00155D30AA00 |    正常    | &nbsp; |             |
    |         SMB2         |      True      |       VMSTEST        | 00155D30AA01 |    正常    | &nbsp; |             |
 
-   ---
-
-## <a name="step-9-assign-an-ip-address-to-the-smb-host-vnics-vethernet-smb1-and-vethernet-smb2"></a>步骤 9。 将 IP 地址分配到 SMB 主机 Vnic vEthernet \(SMB1\) 和 vEthernet \(SMB2\)
+## <a name="step-9-assign-an-ip-address-to-the-smb-host-vnics-vethernet-smb1-and-vethernet-smb2"></a>步骤 9. 将 IP 地址分配到 SMB 主机 Vnic vEthernet \( SMB1 \) 和 vEthernet \( SMB2\)
 
 测试-40G-1 和测试-40G-2 物理适配器的访问 VLAN 配置为101和102。 因此，适配器将对流量进行标记，并成功进行 ping 操作。 以前，你已将 pNIC VLAN Id 配置为零，并将 VMSTEST vSwitch 设置为 VLAN 101。 之后，仍可以使用 "vNIC" 对远程 VLAN 101 适配器进行 ping 操作，但目前没有 VLAN 102 成员。
 
@@ -958,13 +886,13 @@ ms.locfileid: "80309643"
 
 1. 删除物理 NIC 中的访问 VLAN 设置，以防止它使用错误的 VLAN ID 自动标记传出流量，并防止它筛选出与访问 VLAN ID 不匹配的流量。
 
-   ```PowerShell    
+   ```powershell
    New-NetIPAddress -InterfaceAlias "vEthernet (SMB1)" -IPAddress 192.168.2.111 -PrefixLength 24
    ```
 
-   _**后果**_  
+   _**后果**_
 
-   ```   
+   ```
    IPAddress : 192.168.2.111
    InterfaceIndex: 40
    InterfaceAlias: vEthernet (SMB1)
@@ -982,11 +910,11 @@ ms.locfileid: "80309643"
 
 2. 测试远程 VLAN 102 适配器。
 
-   ```PowerShell
-   Test-NetConnection 192.168.2.5 
+   ```powershell
+   Test-NetConnection 192.168.2.5
    ```
 
-   _**后果**_  
+   _**后果**_
 
    ```
    ComputerName   : 192.168.2.5
@@ -997,13 +925,13 @@ ms.locfileid: "80309643"
    PingReplyDetails (RTT) : 0 ms
    ```
 
-3. 为接口 vEthernet \(SMB2\)添加新的 IP 地址。
+3. 为接口 vEthernet SMB2 添加新的 IP \( 地址 \) 。
 
-   ```PowerShell
-   New-NetIPAddress -InterfaceAlias "vEthernet (SMB2)" -IPAddress 192.168.2.222 -PrefixLength 24 
+   ```powershell
+   New-NetIPAddress -InterfaceAlias "vEthernet (SMB2)" -IPAddress 192.168.2.222 -PrefixLength 24
    ```
 
-   _**后果**_ 
+   _**后果**_
 
    ```
    IPAddress : 192.168.2.222
@@ -1021,38 +949,38 @@ ms.locfileid: "80309643"
    PolicyStore   : PersistentStore
    ```
 
-4. 重新测试连接。    
+4. 重新测试连接。
 
 
 5. 将 RDMA 主机 Vnic 置于预先存在的 VLAN 102 上。
 
-   ```PowerShell
+   ```powershell
    Set-VMNetworkAdapterVlan -VMNetworkAdapterName "SMB1" -VlanId "102" -Access -ManagementOS
    Set-VMNetworkAdapterVlan -VMNetworkAdapterName "SMB2" -VlanId "102" -Access -ManagementOS
 
    Get-VMNetworkAdapterVlan -ManagementOS
    ```
 
-   _**后果**_ 
+   _**后果**_
 
-   ```   
+   ```
    VMName VMNetworkAdapterName Mode VlanList
    ------ -------------------- ---- --------
-      SMB1 Access   102 
-      Mgt  Access   101 
-      SMB2 Access   102 
+      SMB1 Access   102
+      Mgt  Access   101
+      SMB2 Access   102
       CORP-External-Switch Untagged
    ```
 
 6. 检查在 vSwitch 集团队下的底层物理 Nic 之间的 SMB1 和 SMB2 映射。<p>主机 vNIC 与物理 Nic 之间的关联是随机的，在创建和销毁期间可能会重新平衡。 在这种情况下，可以使用间接机制来检查当前关联。 SMB1 和 SMB2 的 MAC 地址与 NIC 团队成员测试-40G-2 关联。 这并不理想，因为测试-40G-1 没有关联的 SMB 主机 vNIC，因此在 SMB 主机 vNIC 映射到该链接之前，将不允许通过该链接利用 RDMA 流量。
 
-   ```PowerShell    
+   ```powershell
    Get-NetAdapterVPort (Preferred)
 
    Get-NetAdapterVmqQueue
    ```
 
-   _**后果**_ 
+   _**后果**_
 
    ```
    Name   QueueID MacAddressVlanID Processor VmFriendlyName
@@ -1064,24 +992,24 @@ ms.locfileid: "80309643"
 
 7. 查看 VM 网络适配器属性。
 
-   ```PowerShell
+   ```powershell
    Get-VMNetworkAdapter -ManagementOS
    ```
 
-   _**后果**_ 
+   _**后果**_
 
    ```
    Name IsManagementOs VMName SwitchName   MacAddress   Status IPAddresses
    ---- -------------- ------ ----------   ----------   ------ -----------
-   CORP-External-Switch True  CORP-External-Switch 001B785768AA {Ok}  
-   Mgt  True  VMSTEST  E41D2D074071 {Ok}  
-   SMB1 True  VMSTEST  00155D30AA00 {Ok}  
-   SMB2 True  VMSTEST  00155D30AA01 {Ok}  
+   CORP-External-Switch True  CORP-External-Switch 001B785768AA {Ok}
+   Mgt  True  VMSTEST  E41D2D074071 {Ok}
+   SMB1 True  VMSTEST  00155D30AA00 {Ok}
+   SMB2 True  VMSTEST  00155D30AA01 {Ok}
    ```
 
 8. 查看网络适配器团队映射。<p>结果不应返回信息，因为尚未执行映射。
 
-   ```PowerShell
+   ```powershell
    Get-VMNetworkAdapterTeamMapping -ManagementOS -SwitchName VMSTEST -VMNetworkAdapterName SMB1
    Get-VMNetworkAdapterTeamMapping -ManagementOS -SwitchName VMSTEST -VMNetworkAdapterName SMB2
    ```
@@ -1092,16 +1020,16 @@ ms.locfileid: "80309643"
    >[!IMPORTANT]
    >请确保在继续操作之前完成此步骤，否则你的实现将失败。
 
-   ```PowerShell
+   ```powershell
    Set-VMNetworkAdapterTeamMapping -ManagementOS -SwitchName VMSTEST -VMNetworkAdapterName "SMB1" -PhysicalNetAdapterName "Test-40G-1"
    Set-VMNetworkAdapterTeamMapping -ManagementOS -SwitchName VMSTEST -VMNetworkAdapterName "SMB2" -PhysicalNetAdapterName "Test-40G-2"
 
    Get-VMNetworkAdapterTeamMapping -ManagementOS -SwitchName VMSTEST
    ```
 
-   _**后果**_ 
+   _**后果**_
 
-   ```   
+   ```
    NetAdapterName : Test-40G-1
    NetAdapterDeviceId : {BAA9A00F-A844-4740-AA93-6BD838F8CFBA}
    ParentAdapter  : VMInternalNetworkAdapter, Name = 'SMB1'
@@ -1121,13 +1049,13 @@ ms.locfileid: "80309643"
 
 10. 确认先前创建的 MAC 关联。
 
-    ```PowerShell    
+    ```powershell
     Get-NetAdapterVmqQueue
     ```
 
-    _**后果**_ 
+    _**后果**_
 
-    ```   
+    ```
     Name   QueueID MacAddressVlanID Processor VmFriendlyName
     ----   ------- ---------------- --------- --------------
     TEST-40G-1 1   E4-1D-2D-07-40-71 1010:17
@@ -1136,13 +1064,13 @@ ms.locfileid: "80309643"
     ```
 
 
-11. 测试远程系统的连接，因为两个主机 Vnic 位于同一子网，并且具有相同的 VLAN ID \(102\)。
+11. 测试远程系统的连接，因为两个主机 Vnic 位于同一子网，并且具有相同的 VLAN ID \( 102 \) 。
 
-    ```PowerShell 
+    ```powershell
     Test-NetConnection 192.168.2.111
     ```
 
-    _**后果**_   
+    _**后果**_
 
     ```
     ComputerName   : 192.168.2.111
@@ -1153,11 +1081,11 @@ ms.locfileid: "80309643"
     PingReplyDetails (RTT) : 0 ms
     ```
 
-    ```PowerShell   
+    ```powershell
     Test-NetConnection 192.168.2.222
     ```
 
-    _**后果**_   
+    _**后果**_
 
     ```
     ComputerName   : 192.168.2.222
@@ -1165,22 +1093,22 @@ ms.locfileid: "80309643"
     InterfaceAlias : Test-40G-2
     SourceAddress  : 192.168.2.5
     PingSucceeded  : True
-    PingReplyDetails (RTT) : 0 ms 
+    PingReplyDetails (RTT) : 0 ms
     ```
-12. 设置名称、开关名称和优先级标记。   
+12. 设置名称、开关名称和优先级标记。
 
-    ```PowerShell
+    ```powershell
     Set-VMNetworkAdapter -ManagementOS -Name "SMB1" -IeeePriorityTag on
     Set-VMNetworkAdapter -ManagementOS -Name "SMB2" -IeeePriorityTag on
     Get-VMNetworkAdapter -ManagementOS -Name "SMB*" | fl Name,SwitchName,IeeePriorityTag,Status
     ```
 
-    _**后果**_   
+    _**后果**_
 
     ```
     Name: SMB1
     SwitchName  : VMSTEST
-    IeeePriorityTag : On 
+    IeeePriorityTag : On
     Status  : {Ok}
 
     Name: SMB2
@@ -1191,68 +1119,68 @@ ms.locfileid: "80309643"
 
 13. 查看 vEthernet 网络适配器属性。
 
-    ```PowerShell
+    ```powershell
     Get-NetAdapterRdma -Name "vEthernet*" | sort Name | ft -AutoSize
     ```
 
-    _**后果**_   
+    _**后果**_
 
     ```
     Name  InterfaceDescription Enabled
     ----  -------------------- -------
-    vEthernet (SMB2)  Hyper-V Virtual Ethernet Adapter #4  False  
-    vEthernet (SMB1)  Hyper-V Virtual Ethernet Adapter #3  False  
-    vEthernet (MGT)   Hyper-V Virtual Ethernet Adapter #2  False   
+    vEthernet (SMB2)  Hyper-V Virtual Ethernet Adapter #4  False
+    vEthernet (SMB1)  Hyper-V Virtual Ethernet Adapter #3  False
+    vEthernet (MGT)   Hyper-V Virtual Ethernet Adapter #2  False
     ```
 
-14. 启用 vEthernet 网络适配器。  
+14. 启用 vEthernet 网络适配器。
 
-    ```PowerShell
+    ```powershell
     Enable-NetAdapterRdma -Name "vEthernet (SMB1)"
     Enable-NetAdapterRdma -Name "vEthernet (SMB2)"
     Get-NetAdapterRdma -Name "vEthernet*" | sort Name | fl *
     ```
 
-    _**后果**_   
+    _**后果**_
 
     ```
     Name  InterfaceDescription Enabled
     ----  -------------------- -------
-    vEthernet (SMB2)  Hyper-V Virtual Ethernet Adapter #4  True   
-    vEthernet (SMB1)  Hyper-V Virtual Ethernet Adapter #3  True  
+    vEthernet (SMB2)  Hyper-V Virtual Ethernet Adapter #4  True
+    vEthernet (SMB1)  Hyper-V Virtual Ethernet Adapter #3  True
     vEthernet (MGT)   Hyper-V Virtual Ethernet Adapter #2  False
     ```
 
-## <a name="step-10-validate-the-rdma-functionality"></a>步骤 10。 验证 RDMA 功能。
+## <a name="step-10-validate-the-rdma-functionality"></a>步骤 10. 验证 RDMA 功能
 
-你需要从远程系统向 vSwitch 集团队的两个成员验证 RDMA 功能，该系统具有 vSwitch。<p>由于主机 Vnic \(SMB1，SMB2\) 分配到 VLAN 102，因此你可以选择远程系统上的 VLAN 102 适配器。 <p>在此示例中，NIC 测试-40G-2 可以 RDMA 到 SMB1 （192.168.2.111）和 SMB2 （192.168.2.222）。
+你需要从远程系统向 vSwitch 集团队的两个成员验证 RDMA 功能，该系统具有 vSwitch。<p>由于主机 Vnic \( SMB1 和 SMB2 \) 都分配到 vlan 102，因此你可以选择远程系统上的 vlan 102 适配器。 <p>在此示例中，NIC 测试-40G-2 可以 RDMA 到 SMB1 （192.168.2.111）和 SMB2 （192.168.2.222）。
 
 >[!TIP]
 >你可能需要在此系统上禁用防火墙。  有关详细信息，请参阅构造策略。
 >
->```PowerShell
+>```powershell
 >Set-NetFirewallProfile -All -Enabled False
->    
+>
 >Get-NetAdapterAdvancedProperty -Name "Test-40G-2"
 >```
 >
->_**后果**_ 
->   
+>_**后果**_
+>
 >```
->Name  DisplayNameDisplayValue   RegistryKeyword RegistryValue  
->----  -----------------------   --------------- -------------  
+>Name  DisplayNameDisplayValue   RegistryKeyword RegistryValue
+>----  -----------------------   --------------- -------------
 > .
 > .
->Test-40G-2VLAN ID102VlanID  {102} 
+>Test-40G-2VLAN ID102VlanID  {102}
 >```
 
 1. 查看网络适配器属性。
 
-   ```PowerShell
+   ```powershell
    Get-NetAdapter
    ```
 
-   _**后果**_ 
+   _**后果**_
 
    ```
    Name  InterfaceDescriptionifIndex Status   MacAddress LinkSpeed
@@ -1262,25 +1190,25 @@ ms.locfileid: "80309643"
 
 2. 查看网络适配器 RDMA 信息。
 
-   ```PowerShell
+   ```powershell
    Get-NetAdapterRdma
    ```
 
-   _**后果**_  
+   _**后果**_
 
    ```
    Name  InterfaceDescription Enabled
    ----  -------------------- -------
-   Test-40G-2Mellanox ConnectX-3 Pro Ethernet Adap... True   
+   Test-40G-2Mellanox ConnectX-3 Pro Ethernet Adap... True
    ```
 
 3. 在第一个物理适配器上执行 RDMA 流量测试。
 
-   ```PowerShell 
+   ```powershell
    C:\TEST\Test-RDMA.PS1 -IfIndex 3 -IsRoCE $true -RemoteIpAddress 192.168.2.111 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
 
-   _**后果**_ 
+   _**后果**_
 
    ```
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
@@ -1302,11 +1230,11 @@ ms.locfileid: "80309643"
 
 4. 在第二个物理适配器上执行 RDMA 流量测试。
 
-   ```PowerShell
+   ```powershell
    C:\TEST\Test-RDMA.PS1 -IfIndex 3 -IsRoCE $true -RemoteIpAddress 192.168.2.222 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
 
-   _**后果**_ 
+   _**后果**_
 
    ```
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
@@ -1330,11 +1258,11 @@ ms.locfileid: "80309643"
 
 5. 测试从本地到远程计算机的 RDMA 通信。
 
-    ```PowerShell
+    ```powershell
     Get-NetAdapter | ft –AutoSize
     ```
 
-    _**后果**_ 
+    _**后果**_
 
     ```
     Name  InterfaceDescriptionifIndex Status   MacAddress LinkSpeed
@@ -1343,13 +1271,13 @@ ms.locfileid: "80309643"
     vEthernet (SMB1)  Hyper-V Virtual Ethernet Adapter #3  41 Up   00-15-5D-30-AA-0280 Gbps
     ```
 
-6. 对第一个虚拟适配器执行 RDMA 流量测试。    
+6. 对第一个虚拟适配器执行 RDMA 流量测试。
 
    ```
    C:\TEST\Test-RDMA.PS1 -IfIndex 41 -IsRoCE $true -RemoteIpAddress 192.168.2.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
 
-   _**后果**_ 
+   _**后果**_
 
    ```
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
@@ -1378,11 +1306,11 @@ ms.locfileid: "80309643"
 
 7. 在第二个虚拟适配器上执行 RDMA 流量测试。
 
-   ```PowerShell
+   ```powershell
    C:\TEST\Test-RDMA.PS1 -IfIndex 45 -IsRoCE $true -RemoteIpAddress 192.168.2.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
 
-   _**后果**_ 
+   _**后果**_
 
    ```
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
@@ -1409,7 +1337,7 @@ ms.locfileid: "80309643"
 
 此输出中的最后一行 "RDMA 流量测试成功： RDMA 流量已发送到 192.168.2.5" 表明你已成功配置了适配器上的汇聚网络。
 
-## <a name="related-topics"></a>相关主题 
+## <a name="related-topics"></a>相关主题
 
 - [使用单个网络适配器汇聚 NIC 配置](cnic-single.md)
 - [汇聚 NIC 的物理交换机配置](cnic-app-switch-config.md)

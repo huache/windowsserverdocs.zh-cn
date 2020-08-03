@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 002ac4624d9ed501fab7816a83c2a0c5fc6a2bce
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 34c8abf01e7dbde7a8f175ac8691e5731a04be45
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922820"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519656"
 ---
 # <a name="set"></a>set
 
 显示、设置或删除 cmd.exe 环境变量。 如果不使用参数，则**set 将**显示当前环境变量设置。
-
-
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +28,7 @@ set [/p] <Variable>=[<PromptString>]
 set /a <Variable>=<Expression>
 ```
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
 |参数|说明|
 |---------|-----------|
@@ -65,7 +63,7 @@ set /a <Variable>=<Expression>
 
   下表按优先顺序列出了 **/a**支持的运算符。
 
-  |        操作员         | 执行的操作  |
+  |        运算符         | 执行的操作  |
   |-------------------------|----------------------|
   |           ( )           |       分组       |
   |          ! ~ -          |        一元         |

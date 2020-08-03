@@ -8,39 +8,36 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9a6bce383e04a892203c38cadc7ec2b7388b23a6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a0fb1e286e4b6479a95114fd8d2ad90ffa57b7c8
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965409"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519746"
 ---
-# <a name="customization-for-localization"></a>本地化自定义 
+# <a name="customization-for-localization"></a>本地化自定义
 
+可以将 Web 内容本地化为英语以外的语言。 当你在本地化时，请注意以下事项。
 
-可以将 Web 内容本地化为英语以外的语言。 当你在本地化时，请注意以下事项。  
-  
-自定义内容后，将优先该自定义；因此，你应该为你想要支持的所有语言进行自定义。 所有自定义的内容都使用区域设置参数。 在配置本地化内容时，请先使用国家/地区的 \- 区域设置，例如 "en"，然后再配置国家和地区特定的 \- 区域设置，例如 "en-us" \- 。  
-  
-下面显示了一些其他代码示例。  
-  
-    
-    Set-AdfsWebTheme -TargetName default -Logo @{Locale="";Path="c:\contoso.png"}  
-      
-    Set-AdfsWebTheme -TargetName default -Illustration @{Locale="";Path="c:\illustration.png"}  
+自定义内容后，将优先该自定义；因此，你应该为你想要支持的所有语言进行自定义。 所有自定义的内容都使用区域设置参数。 在配置本地化内容时，请先使用国家/地区的 \- 区域设置，例如 "en"，然后再配置国家和地区特定的 \- 区域设置，例如 "en-us" \- 。
 
-  
-下面显示了一些其他代码示例。  
-  
- 
-    Set-AdfsGlobalWebContent -ErrorPageDescriptionText "This is Contoso's error page description" –locale "en"  
-  
-  
+下面显示了一些其他代码示例。
 
-    Set-AdfsGlobalWebContent -ErrorPageDescriptionText "Il s'agit de description de page erreur de Contoso" –locale "fr"  
- 
-  
-如果要将 web 内容自定义为英语之外的其他语言，则建议使用 Windows PowerShell ISE。 有关其他信息，请参阅[介绍 Windows PowerShell ISE](/previous-versions/mt707506(v=msdn.10))。  
+```powershell
+Set-AdfsWebTheme -TargetName default -Logo @{Locale="";Path="c:\contoso.png"}
+Set-AdfsWebTheme -TargetName default -Illustration @{Locale="";Path="c:\illustration.png"}
+```
 
-## <a name="additional-references"></a>其他参考 
-[AD FS 用户登录自定义](AD-FS-user-sign-in-customization.md) 
+下面显示了一些其他代码示例。
+
+```powershell
+Set-AdfsGlobalWebContent -ErrorPageDescriptionText "This is Contoso's error page description" –locale "en"
+
+Set-AdfsGlobalWebContent -ErrorPageDescriptionText "Il s'agit de description de page erreur de Contoso" –locale "fr"
+```
+
+如果要将 web 内容自定义为英语之外的其他语言，则建议使用 Windows PowerShell ISE。 有关其他信息，请参阅[介绍 Windows PowerShell ISE](/previous-versions/mt707506(v=msdn.10))。
+
+## <a name="additional-references"></a>其他参考
+
+[AD FS 用户登录自定义](AD-FS-user-sign-in-customization.md)

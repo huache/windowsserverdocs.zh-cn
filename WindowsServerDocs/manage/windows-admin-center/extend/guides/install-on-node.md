@@ -1,6 +1,6 @@
 ---
-title: 开发工具扩展
-description: 开发工具扩展 Windows 管理中心 SDK （Project Honolulu）
+title: 在托管节点上安装扩展负载
+description: 有关如何在托管节点上安装扩展负载的说明
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,31 +8,32 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 3a93a1105862ffbf4fcbd1d23b15d9bcaa6010dc
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 463280ba1d0a3fac84a12c0483946b01c0fefb75
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950503"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518555"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>在托管节点上安装扩展负载
 
 >适用于：Windows Admin Center、Windows Admin Center 预览版
 
-## <a name="setup"></a>“安装程序”
+## <a name="setup"></a>设置
+
 > [!NOTE]
 > 若要遵循本指南，你将需要生成1.2.1904.02001 或更高版本。 若要检查生成号，请打开 Windows 管理中心并单击右上方的问号。
 
 如果尚未这样做，请创建用于 Windows 管理中心的[工具扩展](../develop-tool.md)。 完成此操作后，请记下创建扩展时使用的值：
 
-| Value | 说明 | 示例 |
+| 值 | 说明 | 示例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | 公司名称（包含空格） | ```Contoso``` |
 | ```{!Tool Name}``` | 工具名称（包含空格） | ```InstallOnNode``` |
 
-在工具扩展文件夹内创建一个 ```Node``` 文件夹（```{!Tool Name}\Node```）。 使用此 API 时，此文件夹中的任何内容都将复制到托管节点。 添加用例所需的任何文件。 
+在工具扩展文件夹中，创建一个 ```Node``` 文件夹（ ```{!Tool Name}\Node``` ）。 使用此 API 时，此文件夹中的任何内容都将复制到托管节点。 添加用例所需的任何文件。
 
-同时创建 ```{!Tool Name}\Node\installNode.ps1``` 脚本。 将所有文件从 ```{!Tool Name}\Node``` 文件夹复制到托管节点后，将在托管节点上运行此脚本。 为用例添加任何其他逻辑。 ```{!Tool Name}\Node\installNode.ps1``` 文件的示例：
+同时创建 ```{!Tool Name}\Node\installNode.ps1``` 脚本。 从文件夹将所有文件复制到托管节点后，将在托管节点上运行此脚本 ```{!Tool Name}\Node``` 。 为用例添加任何其他逻辑。 示例 ```{!Tool Name}\Node\installNode.ps1``` 文件：
 
 ``` ps1
 # Add logic for installing payload on managed node
@@ -40,12 +41,12 @@ echo 'Success'
 ```
 
 > [!NOTE]
-> ```{!Tool Name}\Node\installNode.ps1``` 具有 API 将查找的特定名称。 更改此文件的名称将导致错误。
+> ```{!Tool Name}\Node\installNode.ps1```具有 API 将查找的特定名称。 更改此文件的名称将导致错误。
 
 
 ## <a name="integration-with-ui"></a>与 UI 集成
 
-将 ```\src\app\default.component.ts``` 更新为以下内容：
+更新 ```\src\app\default.component.ts``` 为以下内容：
 
 ``` ts
 import { Component } from '@angular/core';
@@ -105,13 +106,13 @@ this.post('contoso.install-on-node', '1.0.0',
       );
 ```
 
-还要将 ```\src\app\default.component.html``` 更新为：
+还更新 ```\src\app\default.component.html``` 到：
 ``` html
 <button (click)="installOnNode()">Click to install</button>
 <sme-loading-wheel *ngIf="loading" size="large"></sme-loading-wheel>
 <p *ngIf="response">{{response}}</p>
 ```
-最后 ```\src\app\default.module.ts```：
+最后 ```\src\app\default.module.ts``` ：
 ``` ts
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -136,11 +137,11 @@ export class DefaultModule { }
 
 最后一步是使用已添加的文件生成 NuGet 包，然后在 Windows 管理中心中安装该程序包。
 
-如果你之前未创建扩展包，请按照[发布扩展](../publish-extensions.md)指南进行操作。 
+如果你之前未创建扩展包，请按照[发布扩展](../publish-extensions.md)指南进行操作。
 > [!IMPORTANT]
-> 在此扩展的 nuspec 文件中，```<id>``` 值与项目 ```manifest.json``` 中的名称匹配，并且 ```<version>``` 与 ```\src\app\default.component.ts```中添加的内容匹配，这一点非常重要。 此外，在 ```<files>```下添加一个条目： 
-> 
-> ```<file src="Node\**\*.*" target="Node" />```”。
+> 在此扩展的 nuspec 文件中， ```<id>``` 值与项目的名称匹配， ```manifest.json``` 并且与 ```<version>``` 添加的内容匹配，这一点非常 ```\src\app\default.component.ts``` 重要。 此外，在以下项下添加条目 ```<files>``` ：
+>
+> ```<file src="Node\**\*.*" target="Node" />```.
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -155,7 +156,7 @@ export class DefaultModule { }
     <licenseUrl>http://YourLicenseLink</licenseUrl>
     <iconUrl>http://YourLogoLink</iconUrl>
     <description>Install on node extension by Contoso</description>
-    <copyright>(c) Contoso. All rights reserved.</copyright> 
+    <copyright>(c) Contoso. All rights reserved.</copyright>
   </metadata>
     <files>
     <file src="bundle\**\*.*" target="ux" />
@@ -165,4 +166,4 @@ export class DefaultModule { }
 </package>
 ```
 
-创建此包后，请向该源添加一个路径。 在 Windows 管理中心中转到 "设置" > 扩展 > 源 "，并将路径添加到包所在的位置。 完成安装扩展后，应该可以单击 "```install```" 按钮，将调用 API。  
+创建此包后，请向该源添加一个路径。 在 Windows 管理中心中转到 "设置" > 扩展 > 源 "，并将路径添加到包所在的位置。 当扩展安装完成后，你应该能够单击 ```install``` 按钮，并将调用 API。

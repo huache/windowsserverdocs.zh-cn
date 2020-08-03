@@ -8,41 +8,44 @@ ms.date: 03/01/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5e90ad9fbd2ae9dbb08d2137ead0705556184858
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b66d688052398ba76b6721e8bab0d0878be4959a
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966899"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517702"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>AD FS 故障排除-Azure AD
 随着云的增长，许多企业都在使用 Azure AD 来实现其各种应用和服务。  与 Azure AD 联合已成为许多组织的标准做法。  本文档将介绍解决此联合身份验证问题的一些方面。  一般疑难解答文档中的几个主题仍适用于与 Azure 联合，因此本文档重点介绍 Azure AD 和 AD FS 交互的细节。
 
 ## <a name="redirection-to-ad-fs"></a>重定向到 AD FS
+
 当你登录到某个应用程序（如 Office 365），并且你已 "重定向" 到组织 AD FS 服务器登录时，会发生重定向。
 
-![](media/ad-fs-tshoot-azure/azure1.png)
-
+![重定向屏幕到 AD FS](media/ad-fs-tshoot-azure/azure1.png)
 
 ### <a name="first-things-to-check"></a>要检查的第一项
+
 如果没有进行重定向，则需要检查几项
 
-   1. 通过登录到 Azure 门户并在 Azure AD Connect 下进行检查，确保 Azure AD 租户启用了联合身份验证。
+1. 通过登录到 Azure 门户并在 Azure AD Connect 下进行检查，确保 Azure AD 租户启用了联合身份验证。
 
-![](media/ad-fs-tshoot-azure/azure2.png)
+   ![Azure AD Connect 中的用户登录屏幕](media/ad-fs-tshoot-azure/azure2.png)
 
-1. 请确保通过单击 Azure 门户中 "联合身份验证" 旁边的域来验证自定义域。
-   ![](media/ad-fs-tshoot-azure/azure3.png)
+2. 请确保通过单击 Azure 门户中 "联合身份验证" 旁边的域来验证自定义域。
 
-2. 最后，您需要检查[DNS](ad-fs-tshoot-dns.md) ，并确保您的 AD FS 服务器或 WAP 服务器正在从 internet 进行解析。  验证此方法是否可解决，以及您能否导航到它。
-3. 还可以使用 PowerShell cmdlt `Get-AzureADDomain` 来获取此信息。
+   ![显示在门户中联合身份验证旁边的域](media/ad-fs-tshoot-azure/azure3.png)
 
-![](media/ad-fs-tshoot-azure/azure6.png)
+3. 最后，您需要检查[DNS](ad-fs-tshoot-dns.md) ，并确保您的 AD FS 服务器或 WAP 服务器正在从 internet 进行解析。  验证此方法是否可解决，以及您能否导航到它。
+
+4. 还可以使用 PowerShell cmdlt `Get-AzureADDomain` 来获取此信息。
+
+   ![PowerShell cmdlet 屏幕](media/ad-fs-tshoot-azure/azure6.png)
 
 ### <a name="you-are-receiving-an-unknown-auth-method-error"></a>您收到未知的身份验证方法错误
-在从 Azure 重定向时，可能会出现 "未知的身份验证方法" 错误，指出在 AD FS 或 STS 级别不支持 AuthnContext。 
+在从 Azure 重定向时，可能会出现 "未知的身份验证方法" 错误，指出在 AD FS 或 STS 级别不支持 AuthnContext。
 
-当使用强制身份验证方法的参数 Azure AD 重定向到 AD FS 或 STS 时，这是最常见的。 
+当使用强制身份验证方法的参数 Azure AD 重定向到 AD FS 或 STS 时，这是最常见的。
 
 若要强制执行身份验证方法，请使用以下方法之一：
 - 对于 WS 联合身份验证，请使用 WAUTH 查询字符串来强制使用首选的身份验证方法。
@@ -66,7 +69,7 @@ ms.locfileid: "86966899"
 支持的 SAML 身份验证上下文类
 
 |身份验证方法|身份验证上下文类 URI|
-|-----|-----| 
+|-----|-----|
 |用户名和密码|urn:oasis:names:tc:SAML:2.0:ac:classes:Password|
 |受密码保护的传输|urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport|
 |传输层安全性（TLS）客户端|urn： oasis：名称： tc： SAML：2.0： ac：类： TLSClient
@@ -76,7 +79,7 @@ ms.locfileid: "86966899"
 
 若要确保 AD FS 级别支持身份验证方法，请检查以下各项。
 
-#### <a name="ad-fs-20"></a>AD FS 2.0 
+#### <a name="ad-fs-20"></a>AD FS 2.0
 
 在 " **/adfs/ls/web.config**下，确保身份验证类型的条目存在。
 
@@ -98,7 +101,7 @@ ms.locfileid: "86966899"
 
 在 "编辑全局身份验证策略" 窗口中的 "主要" 选项卡上，你可以将设置配置为全局身份验证策略的一部分。 例如，对于主要身份验证，可以在 "Extranet 和 Intranet" 下选择可用的身份验证方法。
 
-* * 确保选中 "所需的身份验证方法" 复选框。 
+* * 确保选中 "所需的身份验证方法" 复选框。
 
 #### <a name="ad-fs-2016"></a>AD FS 2016
 
@@ -108,7 +111,7 @@ ms.locfileid: "86966899"
 
 在 "**编辑身份验证方法**" 窗口的 "主要" 选项卡上，你可以将设置配置为身份验证策略的一部分。
 
-![](media/ad-fs-tshoot-azure/azure4.png)
+![编辑身份验证方法窗口](media/ad-fs-tshoot-azure/azure4.png)
 
 ## <a name="tokens-issued-by-ad-fs"></a>AD FS 颁发的令牌
 
@@ -116,13 +119,13 @@ ms.locfileid: "86966899"
 AD FS 颁发令牌后，Azure AD 可能会引发错误。 在这种情况下，请检查是否存在以下问题：
 - 令牌中 AD FS 颁发的声明应与 Azure AD 中用户的相应属性匹配。
 - Azure AD 的令牌应包含以下必需的声明：
-    - WSFED 
+    - WSFED
         - UPN：此声明的值应与 Azure AD 中的用户的 UPN 匹配。
         - ImmutableID：此声明的值应匹配 Azure AD 中用户的 sourceAnchor 或 ImmutableID。
 
 若要获取 Azure AD 中的用户属性值，请运行以下命令行：`Get-AzureADUser –UserPrincipalName <UPN>`
 
-![](media/ad-fs-tshoot-azure/azure5.png)
+![PowerShell cmdlet 屏幕](media/ad-fs-tshoot-azure/azure5.png)
 
    - SAML 2.0：
        - IDPEmail：此声明的值应与 Azure AD 中的用户的用户主体名称相匹配。

@@ -7,12 +7,12 @@ ms.date: 11/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fe176af74ebabb5cb56d8aa74d755c4e35ec94a3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7821910caa3c0cfa5c5402df57bd758ce8d0c245
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857310"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519866"
 ---
 #  <a name="single-log-out-for-openid-connect-with-ad-fs"></a>使用 AD FS 的 OpenID Connect 单个注销
 
@@ -50,8 +50,8 @@ OpenID Connect 使用称为 "发现文档" 的 JSON 文档来提供有关配置�
 "rp_id_token_token_binding_supported":true,
 "frontchannel_logout_supported":true,
 "frontchannel_logout_session_supported":true
-} 
- 
+}
+
 ```
 
 
@@ -64,20 +64,21 @@ OpenID Connect 使用称为 "发现文档" 的 JSON 文档来提供有关配置�
 
 
 ## <a name="ad-fs-server-configuration"></a>AD FS 服务器配置
-默认情况下，将启用 AD FS 属性 EnableOAuthLogout。  此属性告知 AD FS 服务器通过 SID 查找要在客户端上启动注销的 URL （LogoutURI）。 如果尚未安装[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) ，可以使用以下 PowerShell 命令：
+默认情况下，将启用 AD FS 属性 EnableOAuthLogout。  此属性告知 AD FS 服务器通过 SID 查找要在客户端上启动注销的 URL （LogoutURI）。
+如果尚未安装[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) ，可以使用以下 PowerShell 命令：
 
 ```PowerShell
 Set-ADFSProperties -EnableOAuthLogout $true
 ```
 
 >[!NOTE]
-> 安装[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)后，`EnableOAuthLogout` 参数将被标记为过时。 `EnableOAUthLogout` 将始终为 true，并且不会影响注销功能。
+> `EnableOAuthLogout`安装[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)后，参数将标记为过时。 `EnableOAUthLogout`始终为 true，并且不会影响注销功能。
 
 >[!NOTE]
 >**仅**在[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)的 vcredist 后支持 frontchannel_logout
 
 ## <a name="client-configuration"></a>客户端配置
-客户端需要实现一个 url，该 url 是已登录用户的 "注销"。 管理员可以使用以下 PowerShell cmdlet 在客户端配置中配置 LogoutUri。 
+客户端需要实现一个 url，该 url 是已登录用户的 "注销"。 管理员可以使用以下 PowerShell cmdlet 在客户端配置中配置 LogoutUri。
 
 
 - `(Add | Set)-AdfsNativeApplication`
@@ -88,10 +89,9 @@ Set-ADFSProperties -EnableOAuthLogout $true
 Set-AdfsClient -LogoutUri <url>
 ```
 
-`LogoutUri` 是 AF FS 用于 "注销" 用户的 url。 对于实现 `LogoutUri`，客户端需要确保它清除应用程序中用户的身份验证状态，例如，删除其拥有的身份验证令牌。 AD FS 将浏览到该 URL，其中包含 SID 作为查询参数，并通知信赖方/应用程序注销用户。 
+`LogoutUri`是 AF FS 用于 "注销" 用户的 url。 若要实现 `LogoutUri` ，客户端需要确保它清除应用程序中用户的身份验证状态，例如，删除其拥有的身份验证令牌。 AD FS 将浏览到该 URL，其中包含 SID 作为查询参数，并通知信赖方/应用程序注销用户。
 
-![](media/ad-fs-logout-openid-connect/adfs_single_logout2.png)
-
+![ADFS 注销用户关系图](media/ad-fs-logout-openid-connect/adfs_single_logout2.png)
 
 1.  **包含会话 id 的 oauth 令牌**： AD FS 在 id_token 令牌颁发时在 OAuth 令牌中包含会话 ID。 稍后 AD FS 将使用此方法来确定要为用户清理的相关 SSO cookie。
 2.  **用户启动 App1 上的注销**：用户可以从任何已登录的应用程序启动注销。 在此示例方案中，用户启动了 App1 的注销。
@@ -103,11 +103,11 @@ Set-AdfsClient -LogoutUri <url>
 **答：** 确保所有 AD FS 服务器上都安装了[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) 。 请参阅服务器2016中的单一注销，其中包含[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)。
 
 **问：** 我已经按顺序配置了单一注销，但用户仍在其他客户端上保持登录。</br>
-**答：** 确保为用户登录的所有客户端设置 `LogoutUri`。 此外，AD FS 会尝试在已注册的 `LogoutUri`上发送注销请求。 客户端必须实现逻辑来处理请求，并采取措施从应用程序中注销用户。</br>
+**答：** 确保 `LogoutUri` 为用户登录的所有客户端设置。 此外，AD FS 会尝试在注册的上发送注销请求 `LogoutUri` 。 客户端必须实现逻辑来处理请求，并采取措施从应用程序中注销用户。</br>
 
 **问：** 如果在注销后，其中一个客户端将返回到 AD FS 并且使用有效的刷新令牌，将 AD FS 发出访问令牌？</br>
-**答：** 有。 客户端应用程序负责在注册的 `LogoutUri`收到注销请求后删除所有经过身份验证的项目。
+**答:** 是的。 客户端应用程序负责在注册后收到注销请求后删除所有经过身份验证的项目 `LogoutUri` 。
 
 
 ## <a name="next-steps"></a>后续步骤
-[AD FS 开发](../../ad-fs/AD-FS-Development.md)  
+[AD FS 开发](../../ad-fs/AD-FS-Development.md)

@@ -8,12 +8,12 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: cdfcf65f762015ceeaa20b99543ffb772e60d1a6
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: 3df00e013d61ad3004f2a2c001c0c40ae9cad109
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716862"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520186"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>管理数据中心桥接（DCB）
 
@@ -26,9 +26,9 @@ ms.locfileid: "83716862"
 有关使用和如何安装 DCB 的先决条件信息，请参阅[在 Windows Server 2016 或 windows 10 中安装数据中心桥接（DCB）](dcb-install.md)。
 
 
-## <a name="dcb-configurations"></a>DCB 配置 
+## <a name="dcb-configurations"></a>DCB 配置
 
-在 Windows Server 2016 之前，所有 DCB 配置都广泛应用于支持 DCB 的所有网络适配器。 
+在 Windows Server 2016 之前，所有 DCB 配置都广泛应用于支持 DCB 的所有网络适配器。
 
 在 Windows Server 2016 中，你可以将 DCB 配置应用于全局策略存储或单个策略存储 \( \) 。 应用各个策略时，它们会覆盖所有全局策略设置。
 
@@ -54,24 +54,24 @@ DCB 规范中描述了 DCBX 的位。 如果设备上的 "愿意" 位设置为 "
 >[!NOTE]
 >DCB Windows PowerShell 命令名称在名称字符串中包含 "QoS" 而不是 "DCB"。 这是因为 QoS 和 DCB 集成在 Windows Server 2016 中，以提供无缝的 QoS 管理体验。
 
-    
+```powershell
     Set-NetQosDcbxSetting -Willing $FALSE
-    
+
     Confirm
     Are you sure you want to perform this action?
     Set-NetQosDcbxSetting -Willing $false
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
-    
+```
 
 若要显示相应的位设置的状态，可以使用以下命令：
 
-    
+```powershell
     Get-NetQosDcbxSetting
-    
+
     Willing PolicySetIfIndex IfAlias
     ------- ---------------- -------
-    False   Global  
-    
+    False   Global
+```
 
 ## <a name="dcb-configuration-on-network-adapters"></a>网络适配器上的 DCB 配置
 
@@ -82,16 +82,14 @@ DCB 配置包括以下步骤。
 1.  在系统级别配置 DCB 设置，其中包括：
 
     a. 流量类管理
-    
+
     b. 优先级流控制（PFC）设置
-    
+
     c. 应用程序优先级分配
-    
+
     d. DCBX 设置
 
 2. 在网络适配器上配置 DCB。
-
-
 
 ##  <a name="dcb-traffic-class-management"></a>DCB 流量类管理
 
@@ -101,13 +99,13 @@ DCB 配置包括以下步骤。
 
 可以使用**get-netqostrafficclass**命令创建流量类。
 
-    
+```powershell
     New-NetQosTrafficClass -Name SMB -Priority 4 -BandwidthPercentage 30 -Algorithm ETS
-    
+
     Name Algorithm Bandwidth(%) Priority PolicySetIfIndex IfAlias
     ---- --------- ------------ -------- ---------------- -------
     SMB  ETS   30   4Global
-      
+```
 
 默认情况下，所有 802.1 p 值都映射到默认的流量类，该流量类的物理链路带宽为100%。 **Get-netqostrafficclass**命令将创建一个新的流量类，其中标记有 802.1 p 优先级值4的任何数据包。 传输选择算法 \( TSA \) 为 ETS，其带宽为30%。
 
@@ -119,36 +117,41 @@ DCB 配置包括以下步骤。
 
 可以使用**get-netqostrafficclass**命令查看流量类。
 
+```powershell
     Get-NetQosTrafficClass
-    
+
     NameAlgorithm Bandwidth(%) Priority PolicySetIfIndex IfAlias
     ------------- ------------ -------- ---------------- -------
     [Default]   ETS   70   0-3,5-7  Global
-    SMB ETS   30   4Global  
-    
+    SMB ETS   30   4Global
+```
+
 ### <a name="modify-a-traffic-class"></a>修改流量类
 
-可以使用**get-netqostrafficclass**命令创建流量类。 
+可以使用**get-netqostrafficclass**命令创建流量类。
 
+```powershell
     Set-NetQosTrafficClass -Name SMB -BandwidthPercentage 50
+```
 
 然后，可以使用**get-netqostrafficclass**命令来查看设置。
 
+```powershell
     Get-NetQosTrafficClass
-    
+
     NameAlgorithm Bandwidth(%) Priority PolicySetIfIndex IfAlias
     ------------- ------------ -------- ---------------- -------
     [Default]   ETS   50   0-3,5-7  Global
-    SMB ETS   50   4Global   
-    
+    SMB ETS   50   4Global
+```
 
 创建流量类之后，可以单独更改其设置。 您可以更改的设置包括：
 
-1. 带宽分配 \( -BandwidthPercentage\)
+1. 带宽分配（-BandwidthPercentage）
 
-2. TSA （ \- 算法\)
+2. TSA （-算法）
 
-3. 优先级映射 \( -优先级\)
+3. 优先级映射（-Priority）
 
 ### <a name="remove-a-traffic-class"></a>删除流量类
 
@@ -157,27 +160,27 @@ DCB 配置包括以下步骤。
 >[!IMPORTANT]
 >不能删除默认的通信类。
 
-
+```powershell
     Remove-NetQosTrafficClass -Name SMB
 
-然后，可以使用**get-netqostrafficclass**命令来查看设置。
-    
+You can then use the **Get-NetQosTrafficClass** command to view settings.
+
     Get-NetQosTrafficClass
-    
+
     NameAlgorithm Bandwidth(%) Priority PolicySetIfIndex IfAlias
     ------------- ------------ -------- ---------------- -------
     [Default]   ETS   100  0-7  Global
-    
+```
 
 删除流量类后，映射到该流量类的 802.1 p 值将重新映射到默认流量类。 删除流量类时，为流量类保留的任何带宽都将返回到默认的流量类分配。
 
 ## <a name="per-network-interface-policies"></a>每网络接口策略
 
-上述所有示例均设置全局策略。 下面是有关如何设置和获取每个 NIC 策略的示例。 
+上述所有示例均设置全局策略。 下面是有关如何设置和获取每个 NIC 策略的示例。
 
 "PolicySet" 字段从 Global 更改为 AdapterSpecific。 显示 AdapterSpecific 策略时， \( 还会显示接口索引 ifIndex \) 和接口名称 \( ifAlias \) 。
 
-```
+```powershell
 PS C:\> Get-NetQosTrafficClass
 
 Name        Algorithm Bandwidth(%) Priority         PolicySet        IfIndex IfAlias
@@ -222,7 +225,6 @@ Name        Algorithm Bandwidth(%) Priority         PolicySet        IfIndex IfA
 [Default]   ETS       70           0-3,5-7          AdapterSpecific  4       M1
 SMBforM1    ETS       30           4                AdapterSpecific  4       M1
 
-
 ```
 
 ## <a name="priority-flow-control-settings"></a>优先级流控制设置：
@@ -231,7 +233,7 @@ SMBforM1    ETS       30           4                AdapterSpecific  4       M1
 
 ### <a name="enable-and-display-priority-flow-control-for-global-and-interface-specific-use-cases"></a>启用并显示全局和接口特定用例的优先级流控制
 
-```
+```powershell
 PS C:\> Enable-NetQosFlowControl -Priority 4
 PS C:\> Enable-NetQosFlowControl -Priority 3 -InterfaceAlias M1
 PS C:\> Get-NetQosFlowControl
@@ -258,14 +260,12 @@ Priority   Enabled    PolicySet        IfIndex IfAlias
 4          False      AdapterSpecific  4       M1
 5          False      AdapterSpecific  4       M1
 6          False      AdapterSpecific  4       M1
-7          False      AdapterSpecific  4       M1  
-
+7          False      AdapterSpecific  4       M1
 ```
-
 
 ### <a name="disable-priority-flow-control-global-and-interface-specific"></a>禁用优先级流控制（特定于全局和接口）
 
-```
+```powershell
 PS C:\> Disable-NetQosFlowControl -Priority 4
 PS C:\> Disable-NetQosFlowControl -Priority 3 -InterfaceAlias m1
 PS C:\> Get-NetQosFlowControl
@@ -281,7 +281,6 @@ Priority   Enabled    PolicySet        IfIndex IfAlias
 6          False      Global
 7          False      Global
 
-
 PS C:\> Get-NetQosFlowControl -InterfaceAlias M1
 
 Priority   Enabled    PolicySet        IfIndex IfAlias
@@ -293,8 +292,7 @@ Priority   Enabled    PolicySet        IfIndex IfAlias
 4          False      AdapterSpecific  4       M1
 5          False      AdapterSpecific  4       M1
 6          False      AdapterSpecific  4       M1
-7          False      AdapterSpecific  4       M1  
-
+7          False      AdapterSpecific  4       M1
 ```
 
 ##  <a name="application-priority-assignment"></a>应用程序优先级分配
@@ -303,7 +301,7 @@ Priority   Enabled    PolicySet        IfIndex IfAlias
 
 ### <a name="create-qos-policy"></a>创建 QoS 策略
 
-```
+```powershell
 PS C:\> New-NetQosPolicy -Name "SMB Policy" -SMB -PriorityValue8021Action 4
 
 Name           : SMB Policy
@@ -312,7 +310,6 @@ NetworkProfile : All
 Precedence     : 127
 Template       : SMB
 PriorityValue  : 4
-
 ```
 
 上一个命令为 SMB 创建新策略。 – SMB 是与 TCP 端口445（为 SMB 保留）匹配的收件箱筛选器。 如果将数据包发送到 TCP 端口445，则在将数据包传递到网络微型端口驱动程序之前，将使用 802.1 p 值为4的操作系统标记该数据包。
@@ -325,7 +322,7 @@ NetworkDirect 是我们在网络适配器上的任何 RDMA 实现之上创建的
 
 **按可执行文件名称**
 
-```
+```powershell
 PS C:\> New-NetQosPolicy -Name background -AppPathNameMatchCondition "C:\Program files (x86)\backup.exe" -PriorityValue8021Action 1
 
 Name           : background
@@ -335,13 +332,11 @@ Precedence     : 127
 AppPathName    : C:\Program files (x86)\backup.exe
 JobObject      :
 PriorityValue  : 1
-
 ```
-
 
 **按 IP 地址端口或协议**
 
-```
+```powershell
 PS C:\> New-NetQosPolicy -Name "Network Management" -IPDstPrefixMatchCondition 10.240.1.0/24 -IPProtocolMatchCondition both -NetworkProfile all -PriorityValue8021Action 7
 
 Name           : Network Management
@@ -352,12 +347,11 @@ JobObject      :
 IPProtocol     : Both
 IPDstPrefix    : 10.240.1.0/24
 PriorityValue  : 7
-
 ```
 
 ### <a name="display-qos-policy"></a>显示 QoS 策略
 
-```
+```powershell
 PS C:\> Get-NetQosPolicy
 
 Name           : background
@@ -384,15 +378,13 @@ Precedence     : 127
 Template       : SMB
 JobObject      :
 PriorityValue  : 4
-
 ```
 
 ### <a name="modify-qos-policy"></a>修改 QoS 策略
 
 你可以修改 QoS 策略，如下所示。
 
-
-```
+```powershell
 PS C:\> Set-NetQosPolicy -Name "Network Management" -IPSrcPrefixMatchCondition 10.235.2.0/24 -IPProtocolMatchCondition both -PriorityValue8021Action 7
 PS C:\> Get-NetQosPolicy
 
@@ -405,33 +397,30 @@ IPProtocol     : Both
 IPSrcPrefix    : 10.235.2.0/24
 IPDstPrefix    : 10.240.1.0/24
 PriorityValue  : 7
-
-
 ```
 
 ### <a name="remove-qos-policy"></a>删除 QoS 策略
 
-```
+```powershell
 PS C:\> Remove-NetQosPolicy -Name "Network Management"
 
 Confirm
 Are you sure you want to perform this action?
 Remove-NetQosPolicy -Name "Network Management" -Store GPO:localhost
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): y  
-
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): y
 ```
 
 ## <a name="dcb-configuration-on-network-adapters"></a>网络适配器上的 DCB 配置
 
-网络适配器上的 DCB 配置与上面所述的系统级别上的 DCB 配置无关。 
+网络适配器上的 DCB 配置与上面所述的系统级别上的 DCB 配置无关。
 
-不管是否在 Windows Server 2016 中安装了 DCB，你始终可以运行以下命令。 
+不管是否在 Windows Server 2016 中安装了 DCB，你始终可以运行以下命令。
 
 如果从交换机配置 DCB，并依赖 DCBX 将配置传播到网络适配器，则可以在网络适配器上启用 DCB 后，检查在网络适配器上接收和强制执行的配置。
 
 ###  <a name="enable-and-display-dcb-settings-on--network-adapters"></a><a name="bkmk_enabledcb"></a>启用和显示网络适配器上的 DCB 设置
 
-```
+```powershell
 PS C:\> Enable-NetAdapterQos M1
 PS C:\> Get-NetAdapterQos
 
@@ -452,13 +441,11 @@ OperationalFlowControl     : All Priorities Disabled
 OperationalClassifications : Protocol  Port/Type Priority
                              --------  --------- --------
                              Default             1
-
-
 ```
 
 ### <a name="disable-dcb-on-network-adapters"></a>在网络适配器上禁用 DCB
 
-```
+```powershell
 PS C:\> Disable-NetAdapterQos M1
 PS C:\> Get-NetAdapterQos M1
 
@@ -468,9 +455,9 @@ Capabilities :                       Hardware     Current
                                      --------     -------
                MacSecBypass        : NotSupported NotSupported
                DcbxSupport         : None         None
-               NumTCs(Max/ETS/PFC) : 8/8/8        0/0/0  
-
+               NumTCs(Max/ETS/PFC) : 8/8/8        0/0/0
 ```
+
 ## <a name="windows-powershell-commands-for-dcb"></a><a name="bkmk_wps"></a>适用于 DCB 的 Windows PowerShell 命令
 
 对于 Windows Server 2016 和 Windows Server 2012 R2，有 DCB 的 Windows PowerShell 命令。 你可以使用 windows Server 2016 中 Windows Server 2012 R2 的所有命令。

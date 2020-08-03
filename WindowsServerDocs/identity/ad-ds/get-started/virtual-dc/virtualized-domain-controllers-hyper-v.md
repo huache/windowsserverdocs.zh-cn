@@ -6,12 +6,12 @@ ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 2a4d743f05d9a8cd70197b7a70589ce7eac84273
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 99d470af623be7ccc7ad2a5fe0d63576a406ff57
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966239"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519044"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>使用 Hyper-v 虚拟化域控制器
 
@@ -30,20 +30,20 @@ Hyper-v 将不同的服务器角色合并到单台物理计算机上。 本指�
 若要安装和使用 Hyper-v 角色，必须具备以下各项：
 
    - **X64 处理器**
-      - Hyper-v 在 Windows Server 2008 或更高版本的基于 x64 的版本中可用。  
+      - Hyper-v 在 Windows Server 2008 或更高版本的基于 x64 的版本中可用。
    - **硬件协助的虚拟化**
-      - 此功能在包含虚拟化选项的处理器（特别是 Intel 虚拟化技术（Intel VT）或 AMD 虚拟化（AMD））中提供。  
+      - 此功能在包含虚拟化选项的处理器（特别是 Intel 虚拟化技术（Intel VT）或 AMD 虚拟化（AMD））中提供。
    - **硬件数据执行保护（DEP）**
-      - 硬件 DEP 必须可用且已启用。 具体地说就是，你必须启用 Intel XD 位（执行禁用位）或 AMD NX 位（无执行位）。  
+      - 硬件 DEP 必须可用且已启用。 具体地说就是，你必须启用 Intel XD 位（执行禁用位）或 AMD NX 位（无执行位）。
 
 ## <a name="avoid-creating-single-points-of-failure"></a>避免创建单点故障
 
 你应尝试避免在规划虚拟域控制器部署时产生潜在的单点故障。 可以通过实现系统冗余来避免引入潜在的单点故障。 例如，请考虑以下建议，同时记住管理成本的潜在增加：
 
-1. 在不同的虚拟化主机上至少为每个域运行两个虚拟化域控制器，这可降低在单个虚拟化主机发生故障时丢失所有域控制器的风险。  
-2. 如建议使用其他技术，请多元化运行域控制器的硬件（使用不同 Cpu、主板、网络适配器或其他硬件）。 硬件 diversification 限制了因特定于供应商配置、驱动程序或硬件类型的故障而造成的损坏。  
-3. 如果可能，域控制器应在位于世界不同地区的硬件上运行。 这有助于降低影响托管域控制器的站点的灾难或故障的影响。  
-4. 维护每个域中的物理域控制器。 这可降低虚拟化平台故障的风险，这会影响使用该平台的所有主机系统。  
+1. 在不同的虚拟化主机上至少为每个域运行两个虚拟化域控制器，这可降低在单个虚拟化主机发生故障时丢失所有域控制器的风险。
+2. 如建议使用其他技术，请多元化运行域控制器的硬件（使用不同 Cpu、主板、网络适配器或其他硬件）。 硬件 diversification 限制了因特定于供应商配置、驱动程序或硬件类型的故障而造成的损坏。
+3. 如果可能，域控制器应在位于世界不同地区的硬件上运行。 这有助于降低影响托管域控制器的站点的灾难或故障的影响。
+4. 维护每个域中的物理域控制器。 这可降低虚拟化平台故障的风险，这会影响使用该平台的所有主机系统。
 
 ## <a name="security-considerations"></a>安全注意事项
 
@@ -51,8 +51,8 @@ Hyper-v 将不同的服务器角色合并到单台物理计算机上。 本指�
 
 当你计划虚拟化域控制器时，请确保记住以下安全注意事项：
 
-   - 托管虚拟、可写域控制器的计算机的本地管理员应将凭据中的等效项视为该域控制器所属的所有域和林的默认域管理员。  
-   - 避免安全和性能问题的建议配置是运行 Windows Server 2008 或更高版本的服务器核心安装的主机，而不是 Hyper-v 以外的应用程序。 此配置限制了服务器上安装的应用程序和服务的数量，这将导致更高的性能和更少的应用程序和服务受到恶意攻击，从而攻击计算机或网络。 这种类型的配置的效果称为减少的攻击面。 在不能令人满意的分支机构或其他位置，建议使用只读域控制器（RODC）。 如果存在单独的管理网络，我们建议仅将主机连接到管理网络。  
+   - 托管虚拟、可写域控制器的计算机的本地管理员应将凭据中的等效项视为该域控制器所属的所有域和林的默认域管理员。
+   - 避免安全和性能问题的建议配置是运行 Windows Server 2008 或更高版本的服务器核心安装的主机，而不是 Hyper-v 以外的应用程序。 此配置限制了服务器上安装的应用程序和服务的数量，这将导致更高的性能和更少的应用程序和服务受到恶意攻击，从而攻击计算机或网络。 这种类型的配置的效果称为减少的攻击面。 在不能令人满意的分支机构或其他位置，建议使用只读域控制器（RODC）。 如果存在单独的管理网络，我们建议仅将主机连接到管理网络。
    - 你可以将 Bitlocker 用于域控制器，因为 Windows Server 2016 你可以使用虚拟 TPM 功能，还可以提供来宾密钥材料来解锁系统卷。
    - [受保护的构造和受防护的 vm](/it-server/WindowsServerDocs/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)可以提供额外的控制来保护域控制器。
 
@@ -69,11 +69,11 @@ Hyper-v 将不同的服务器角色合并到单台物理计算机上。 本指�
 |主机|工作组或成员计算机|工作组或成员计算机|
 |来宾|域控制器|工作组或成员计算机|
 
-![](media/virtualized-domain-controller-architecture/Dd363553.f44706fd-317e-4f0b-9578-4243f4db225f(WS.10).gif)
+![安全边界示意图](media/virtualized-domain-controller-architecture/Dd363553.f44706fd-317e-4f0b-9578-4243f4db225f(WS.10).gif)
 
-   - 主计算机上的管理员与可写域控制器来宾上的域管理员具有相同的访问权限，必须将其视为。 对于 RODC 来宾，主计算机的管理员与来宾 RODC 上的本地管理员具有相同的访问权限。   
-   - 如果主机加入到同一个域中，则虚拟机中的域控制器在主机上具有管理权限。 如果恶意用户第一次获得虚拟机1的访问权限，则恶意用户可能会破坏所有虚拟机。 这称为攻击向量。 如果有多个域或林的域控制器，则这些域应具有集中管理，其中一个域的管理员在所有域上都是受信任的。  
-   - 即使将虚拟机1作为 RODC 安装，也存在从虚拟机1进行攻击的机会。 尽管 RODC 的管理员没有明确具有域管理员权限，但可以使用 RODC 将策略发送到主计算机。 这些策略可能包括启动脚本。 如果此操作成功，主机可能会受到损害，然后可以使用该计算机来损害主机上的其他虚拟机。  
+   - 主计算机上的管理员与可写域控制器来宾上的域管理员具有相同的访问权限，必须将其视为。 对于 RODC 来宾，主计算机的管理员与来宾 RODC 上的本地管理员具有相同的访问权限。
+   - 如果主机加入到同一个域中，则虚拟机中的域控制器在主机上具有管理权限。 如果恶意用户第一次获得虚拟机1的访问权限，则恶意用户可能会破坏所有虚拟机。 这称为攻击向量。 如果有多个域或林的域控制器，则这些域应具有集中管理，其中一个域的管理员在所有域上都是受信任的。
+   - 即使将虚拟机1作为 RODC 安装，也存在从虚拟机1进行攻击的机会。 尽管 RODC 的管理员没有明确具有域管理员权限，但可以使用 RODC 将策略发送到主计算机。 这些策略可能包括启动脚本。 如果此操作成功，主机可能会受到损害，然后可以使用该计算机来损害主机上的其他虚拟机。
 
 ## <a name="security-of-vhd-files"></a>VHD 文件的安全性
 
@@ -81,7 +81,7 @@ Hyper-v 将不同的服务器角色合并到单台物理计算机上。 本指�
 
 ## <a name="rodcs"></a>Rodc
 
-Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例如分支机构。 你可以使用 Windows BitLocker 驱动器加密来保护 VHD 文件本身（而不是其中的文件系统），以免因盗窃物理磁盘而在主机上泄露。 
+Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例如分支机构。 你可以使用 Windows BitLocker 驱动器加密来保护 VHD 文件本身（而不是其中的文件系统），以免因盗窃物理磁盘而在主机上泄露。
 
 ## <a name="performance"></a>性能
 
@@ -188,8 +188,8 @@ Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例
 
 虚拟化平台（如 Hyper-v）提供了许多便利功能，可更轻松地管理、维护、备份和迁移计算机。 但是，不应将以下常见的部署实践和功能用于虚拟域控制器：
 
-- 若要确保 Active Directory 写入的持久性，请不要部署虚拟域控制器的数据库文件（Active Directory 数据库（NTDS）。DIT）、日志和 SYSVOL。 相反，请创建附加到虚拟 SCSI 控制器的第二个 VHD，并确保在安装域控制器期间将数据库、日志和 SYSVOL 放置在虚拟机的 SCSI 磁盘上。  
-- 不要在配置为域控制器的虚拟机上实现差异磁盘虚拟硬盘（Vhd）。 这使得还原到以前的版本变得很容易，并且还会降低性能。 有关 VHD 类型的详细信息，请参阅[新建虚拟硬盘向导](https://go.microsoft.com/fwlink/?linkid=137279)。  
+- 若要确保 Active Directory 写入的持久性，请不要部署虚拟域控制器的数据库文件（Active Directory 数据库（NTDS）。DIT）、日志和 SYSVOL。 相反，请创建附加到虚拟 SCSI 控制器的第二个 VHD，并确保在安装域控制器期间将数据库、日志和 SYSVOL 放置在虚拟机的 SCSI 磁盘上。
+- 不要在配置为域控制器的虚拟机上实现差异磁盘虚拟硬盘（Vhd）。 这使得还原到以前的版本变得很容易，并且还会降低性能。 有关 VHD 类型的详细信息，请参阅[新建虚拟硬盘向导](https://go.microsoft.com/fwlink/?linkid=137279)。
 - 不要在未首先使用系统准备工具（Sysprep）准备的 Windows Server 操作系统的副本上部署新的 Active Directory 域和林。 有关运行 Sysprep 的详细信息，请参阅[sysprep （系统准备）概述](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)
 
    > [!WARNING]
@@ -215,10 +215,9 @@ System Center Virtual Machine Manager （VMM）2008提供对物理计算机和�
 > [!WARNING]
 > 若要防止 Active Directory 复制出现问题，请确保在任意时间点在给定的网络中仅存在给定域控制器的一个实例（物理或虚拟）。
 > 您可以降低旧克隆出现问题的可能性：
-> 
+>
 > - 当新虚拟 DC 正在运行时，使用： netdom resetpwd/Server： <域控制器> 来更改计算机帐户密码两次 .。。
 > - 导出和导入新的虚拟来宾，使其成为新的代 ID，进而成为数据库调用 ID。
-> 
 
 ## <a name="using-p2v-migration-to-create-test-environments"></a>使用 P2V 迁移创建测试环境
 
@@ -247,33 +246,33 @@ System Center Virtual Machine Manager （VMM）2008提供对物理计算机和�
   > 如果打算将 Bitlocker 用于虚拟 DC 来宾，则需要确保将其他卷配置为使用 "自动解锁"。
   > 有关配置自动解锁的详细信息，请参阅[BitLockerAutoUnlock](/powershell/module/bitlocker/enable-bitlockerautounlock)
 
-- **VHD 文件的主机存储**。 建议：主机存储建议解决 VHD 文件的存储。 为了获得最佳性能，请不要将 VHD 文件存储在由其他服务或应用程序使用的磁盘上，如安装了主机 Windows 操作系统的系统磁盘。 将每个 VHD 文件存储在独立于主机操作系统和任何其他 VHD 文件的分区中。 理想的配置是将每个 VHD 文件存储在单独的物理驱动器上。  
+- **VHD 文件的主机存储**。 建议：主机存储建议解决 VHD 文件的存储。 为了获得最佳性能，请不要将 VHD 文件存储在由其他服务或应用程序使用的磁盘上，如安装了主机 Windows 操作系统的系统磁盘。 将每个 VHD 文件存储在独立于主机操作系统和任何其他 VHD 文件的分区中。 理想的配置是将每个 VHD 文件存储在单独的物理驱动器上。
 
-  主机物理磁盘系统还必须至少满足以下条件**之一**，以满足虚拟化工作负荷数据完整性的要求：  
+  主机物理磁盘系统还必须至少满足以下条件**之一**，以满足虚拟化工作负荷数据完整性的要求：
 
-   - 系统使用服务器级磁盘（SCSI、光纤通道）。  
-   - 系统确保磁盘连接到支持电池的缓存主机总线适配器（HBA）。  
-   - 系统使用存储控制器（例如 RAID 系统）作为存储设备。  
-   - 系统确保磁盘的电源受到不间断电源（UPS）的保护。  
-   - 系统确保磁盘的写入缓存功能处于禁用状态。  
+   - 系统使用服务器级磁盘（SCSI、光纤通道）。
+   - 系统确保磁盘连接到支持电池的缓存主机总线适配器（HBA）。
+   - 系统使用存储控制器（例如 RAID 系统）作为存储设备。
+   - 系统确保磁盘的电源受到不间断电源（UPS）的保护。
+   - 系统确保磁盘的写入缓存功能处于禁用状态。
 
-- **修复了 VHD 和传递磁盘**。 有多种方法可以为虚拟机配置存储。 使用 VHD 文件时，固定大小的 Vhd 比动态 Vhd 更高效，因为固定大小的 Vhd 的内存是在创建时分配的。 传递磁盘（虚拟机可用于访问物理存储媒体）更好地针对性能进行了优化。 传递磁盘实质上是连接到虚拟机的物理磁盘或逻辑单元号（Lun）。 传递磁盘不支持快照功能。 因此，传递磁盘是首选的硬盘配置，因为不建议将快照用于域控制器。  
+- **修复了 VHD 和传递磁盘**。 有多种方法可以为虚拟机配置存储。 使用 VHD 文件时，固定大小的 Vhd 比动态 Vhd 更高效，因为固定大小的 Vhd 的内存是在创建时分配的。 传递磁盘（虚拟机可用于访问物理存储媒体）更好地针对性能进行了优化。 传递磁盘实质上是连接到虚拟机的物理磁盘或逻辑单元号（Lun）。 传递磁盘不支持快照功能。 因此，传递磁盘是首选的硬盘配置，因为不建议将快照用于域控制器。
 
 若要减少损坏 Active Directory 数据的可能性，请使用虚拟 SCSI 控制器：
 
    - 在托管虚拟域控制器的 Hyper-v 服务器上使用 SCSI 物理驱动器（而非 IDE/ata 驱动器）。 如果无法使用 SCSI 驱动器，请确保在托管虚拟域控制器的 ATA/IDE 驱动器上禁用写缓存。 有关详细信息，请参阅[事件 ID 1539 –数据库完整性](https://go.microsoft.com/fwlink/?linkid=162419)。
-   - 为了保证 Active Directory 写入的持久性，必须将 Active Directory 数据库、日志和 SYSVOL 置于虚拟 SCSI 磁盘上。 虚拟 SCSI 磁盘支持强制单元访问（FUA）。 FUA 可确保操作系统直接从介质写入和读取数据，绕过任何和所有缓存机制。  
+   - 为了保证 Active Directory 写入的持久性，必须将 Active Directory 数据库、日志和 SYSVOL 置于虚拟 SCSI 磁盘上。 虚拟 SCSI 磁盘支持强制单元访问（FUA）。 FUA 可确保操作系统直接从介质写入和读取数据，绕过任何和所有缓存机制。
 
 ## <a name="operational-considerations-for-virtualized-domain-controllers"></a>虚拟化域控制器的操作注意事项
 
 在虚拟机上运行的域控制器的操作限制不适用于在物理计算机上运行的域控制器。 使用虚拟化域控制器时，某些虚拟化软件功能和做法不应使用：
 
-   - 请勿暂停、停止或存储虚拟机中域控制器的已保存状态，时间段比林的逻辑删除生存期长，然后从暂停或保存状态恢复。 这样做可能会影响复制。 若要了解如何确定林的逻辑删除生存期，请参阅[确定林的逻辑删除生存期](https://go.microsoft.com/fwlink/?linkid=137177)。  
+   - 请勿暂停、停止或存储虚拟机中域控制器的已保存状态，时间段比林的逻辑删除生存期长，然后从暂停或保存状态恢复。 这样做可能会影响复制。 若要了解如何确定林的逻辑删除生存期，请参阅[确定林的逻辑删除生存期](https://go.microsoft.com/fwlink/?linkid=137177)。
    - 请勿复制或克隆虚拟硬盘（Vhd）。 即使具有来宾 VM 的安全措施，也仍然可以复制单个 Vhd 并导致 USN 回滚。
    - 不要拍摄或使用虚拟域控制器的快照。 Windows Server 2012 和更高版本在技术上是受支持的，它不能代替良好的备份策略。 获取 DC 快照或还原快照的原因有很多。
-   - 不要在配置为域控制器的虚拟机上使用差异磁盘 VHD。 这会使还原到以前的版本非常简单，并且还会降低性能。  
-   - 不要在运行域控制器的虚拟机上使用导出功能。  
-   - 不要还原域控制器，或者尝试通过除使用受支持的备份以外的任何方式来回滚 Active Directory 数据库的内容。 有关详细信息，请参阅[虚拟化域控制器的备份和还原注意事项](#backup-and-restore-practices-to-avoid)。  
+   - 不要在配置为域控制器的虚拟机上使用差异磁盘 VHD。 这会使还原到以前的版本非常简单，并且还会降低性能。
+   - 不要在运行域控制器的虚拟机上使用导出功能。
+   - 不要还原域控制器，或者尝试通过除使用受支持的备份以外的任何方式来回滚 Active Directory 数据库的内容。 有关详细信息，请参阅[虚拟化域控制器的备份和还原注意事项](#backup-and-restore-practices-to-avoid)。
 
 所有这些建议均可帮助避免更新序列号（USN）回滚。 有关 USN 回滚的详细信息，请参阅 USN 和 USN 回滚。
 
@@ -285,7 +284,7 @@ System Center Virtual Machine Manager （VMM）2008提供对物理计算机和�
 
 有一种受支持的方法来执行虚拟化域控制器的备份和还原：
 
-1. 在来宾操作系统中运行 Windows Server 备份。  
+1. 在来宾操作系统中运行 Windows Server 备份。
 
 使用 Windows Server 2012 和更新版本的 Hyper-v 主机和来宾，你可以使用快照、来宾 VM 导出和导入以及 Hyper-v 复制来支持域控制器的备份。 但是，所有这些都不适合用于创建适当的备份历史记录，但对于来宾 VM 导出稍微例外。
 
@@ -303,8 +302,8 @@ System Center Virtual Machine Manager （VMM）2008提供对物理计算机和�
 
 如前所述，在虚拟机中运行的域控制器的限制不适用于在物理计算机上运行的域控制器。 在备份或还原虚拟域控制器时，某些虚拟化软件功能和做法不应使用：
 
-   - 请勿复制或克隆域控制器的 VHD 文件，而不是执行定期备份。 如果复制或克隆了 VHD 文件，则该文件将过时。 然后，如果 VHD 在正常模式下启动，则会遇到 USN 回滚。 应 Active Directory 域服务（AD DS）支持的备份操作正常执行，如使用 Windows Server 备份功能。  
-   - 不要使用快照功能作为备份来还原配置为域控制器的虚拟机。 当你将虚拟机恢复到 Windows Server 2008 R2 及更早版本时，复制将会出现问题。 有关详细信息，请参阅 [USN 和 USN 回滚](#usn-and-usn-rollback)。 尽管使用快照还原只读域控制器（RODC）不会导致复制问题，但仍不建议使用此还原方法。  
+   - 请勿复制或克隆域控制器的 VHD 文件，而不是执行定期备份。 如果复制或克隆了 VHD 文件，则该文件将过时。 然后，如果 VHD 在正常模式下启动，则会遇到 USN 回滚。 应 Active Directory 域服务（AD DS）支持的备份操作正常执行，如使用 Windows Server 备份功能。
+   - 不要使用快照功能作为备份来还原配置为域控制器的虚拟机。 当你将虚拟机恢复到 Windows Server 2008 R2 及更早版本时，复制将会出现问题。 有关详细信息，请参阅 [USN 和 USN 回滚](#usn-and-usn-rollback)。 尽管使用快照还原只读域控制器（RODC）不会导致复制问题，但仍不建议使用此还原方法。
 
 ## <a name="restoring-a-virtual-domain-controller"></a>还原虚拟域控制器
 
@@ -312,23 +311,23 @@ System Center Virtual Machine Manager （VMM）2008提供对物理计算机和�
 
 如果域控制器虚拟机出现故障，并且未发生更新序列号（USN）回滚，则还原虚拟机的情况有两种：
 
-   - 如果存在早于故障的有效系统状态数据备份，则可以使用用于创建备份的备份实用程序的还原选项还原系统状态。 系统状态数据备份必须在 tombstone 生存时间（默认情况下不超过180天）内使用与 Active Directory 兼容的备份实用程序创建。 应至少每半个逻辑删除生存期备份域控制器。 有关如何确定林的特定逻辑删除生存期的说明，请参阅[确定林的逻辑删除生存期](https://go.microsoft.com/fwlink/?linkid=137177)。  
+   - 如果存在早于故障的有效系统状态数据备份，则可以使用用于创建备份的备份实用程序的还原选项还原系统状态。 系统状态数据备份必须在 tombstone 生存时间（默认情况下不超过180天）内使用与 Active Directory 兼容的备份实用程序创建。 应至少每半个逻辑删除生存期备份域控制器。 有关如何确定林的特定逻辑删除生存期的说明，请参阅[确定林的逻辑删除生存期](https://go.microsoft.com/fwlink/?linkid=137177)。
    - 如果 VHD 文件的工作副本可用，但没有可用的系统状态备份，则可以删除现有的虚拟机。 使用 VHD 以前的副本还原现有的虚拟机，但请确保在目录服务还原模式（DSRM）中启动该虚拟机，并正确配置注册表，如以下部分所述。 然后，在正常模式下重新启动域控制器。
 
 使用下图中的过程来确定还原虚拟化域控制器的最佳方式。
 
-![](media/virtualized-domain-controller-architecture/Dd363553.85c97481-7b95-4705-92a7-006e48bc29d0(WS.10).gif)
+![示意图如何还原虚拟化域控制器](media/virtualized-domain-controller-architecture/Dd363553.85c97481-7b95-4705-92a7-006e48bc29d0(WS.10).gif)
 
 对于 Rodc，还原过程和决策更为简单。
 
-![](media/virtualized-domain-controller-architecture/Dd363553.4c5c5eda-df95-4c6b-84e0-d84661434e5d(WS.10).gif)
+![示意图如何还原只读域控制器](media/virtualized-domain-controller-architecture/Dd363553.4c5c5eda-df95-4c6b-84e0-d84661434e5d(WS.10).gif)
 
 ## <a name="restoring-the-system-state-backup-of-a-virtual-domain-controller"></a>还原虚拟域控制器的系统状态备份
 
 如果域控制器虚拟机存在有效的系统状态备份，则可以按照备份工具（用于备份 VHD 文件）所规定的还原过程来安全地还原备份。
 
 > [!IMPORTANT]
-> 若要正确还原域控制器，必须在 DSRM 中启动它。 不得允许域控制器在正常模式下启动。 如果在系统启动期间错过了进入 DSRM 的机会，请先关闭域控制器的虚拟机，然后才能在正常模式下将其完全启动。 必须在 DSRM 中启动域控制器，因为在正常模式下启动域控制器会递增其 Usn，即使域控制器已与网络断开连接也是如此。 有关 USN 回滚的详细信息，请参阅 USN 和 USN 回滚。 
+> 若要正确还原域控制器，必须在 DSRM 中启动它。 不得允许域控制器在正常模式下启动。 如果在系统启动期间错过了进入 DSRM 的机会，请先关闭域控制器的虚拟机，然后才能在正常模式下将其完全启动。 必须在 DSRM 中启动域控制器，因为在正常模式下启动域控制器会递增其 Usn，即使域控制器已与网络断开连接也是如此。 有关 USN 回滚的详细信息，请参阅 USN 和 USN 回滚。
 
 ## <a name="to-restore-the-system-state-backup-of-a-virtual-domain-controller"></a>还原虚拟域控制器的系统状态备份
 
@@ -363,8 +362,8 @@ System Center Virtual Machine Manager （VMM）2008提供对物理计算机和�
 10. 应该会看到至少一个事件 ID 1109 条目。 如果看不到此条目，请转到下一步。 否则，请双击该条目，然后查看确认已对 InvocationID 进行更新的文本：
 
     ```
-    Active Directory has been restored from backup media, or has been configured to host an application partition. 
-    The invocationID attribute for this directory server has been changed. 
+    Active Directory has been restored from backup media, or has been configured to host an application partition.
+    The invocationID attribute for this directory server has been changed.
     The highest update sequence number at the time the backup was created is <time>
 
     InvocationID attribute (old value):<Previous InvocationID value>
@@ -390,8 +389,8 @@ Active Directory 域服务（AD DS）使用更新序列号（Usn）来跟踪域�
 
 以下两个复制元数据表包含 Usn。 源域控制器和目标域控制器使用它们来筛选目标域控制器需要的更新。
 
-1. **最新矢量**：目标域控制器为跟踪从所有源域控制器接收的源更新而维护的表。 当目标域控制器请求对目录分区进行更改时，它将为源域控制器提供最新的矢量。 然后，源域控制器使用此值来筛选它发送到目标域控制器的更新。 在成功完成复制循环后，源域控制器会将其最新矢量发送到目标，以确保目标域控制器知道它已与每个域控制器的原始更新同步，并且更新与源处于同一级别。  
-2. **高水印**：目标域控制器维护的一个值，用于跟踪从特定分区的特定源域控制器接收的最新更改。 高水位线阻止源域控制器发送目标域控制器已收到的更改。  
+1. **最新矢量**：目标域控制器为跟踪从所有源域控制器接收的源更新而维护的表。 当目标域控制器请求对目录分区进行更改时，它将为源域控制器提供最新的矢量。 然后，源域控制器使用此值来筛选它发送到目标域控制器的更新。 在成功完成复制循环后，源域控制器会将其最新矢量发送到目标，以确保目标域控制器知道它已与每个域控制器的原始更新同步，并且更新与源处于同一级别。
+2. **高水印**：目标域控制器维护的一个值，用于跟踪从特定分区的特定源域控制器接收的最新更改。 高水位线阻止源域控制器发送目标域控制器已收到的更改。
 
 ## <a name="directory-database-identity"></a>目录数据库标识
 
@@ -413,18 +412,18 @@ Active Directory 域服务（AD DS）使用更新序列号（Usn）来跟踪域�
 
 例如，假设 VDC1 和 DC2 是同一域中的两个域控制器。 下图显示了当在适当的还原情况下重置 invocationID 值时，有关 VDC1 的信息。
 
-![](media/virtualized-domain-controller-architecture/Dd363553.ca71fc12-b484-47fb-991c-5a0b7f516366(WS.10).gif)
+![正确重置 invocationID 值时的关系图](media/virtualized-domain-controller-architecture/Dd363553.ca71fc12-b484-47fb-991c-5a0b7f516366(WS.10).gif)
 
 ## <a name="usn-rollback"></a>USN 回滚
 
-在对 usn 的正常更新进行规避并且域控制器尝试使用低于其最新更新的 USN 时，会发生 USN 回滚。 在大多数情况下，将检测 USN 回滚，并将停止复制，然后再创建林中的分歧。 
+在对 usn 的正常更新进行规避并且域控制器尝试使用低于其最新更新的 USN 时，会发生 USN 回滚。 在大多数情况下，将检测 USN 回滚，并将停止复制，然后再创建林中的分歧。
 
 USN 回滚的原因有很多，例如，当使用旧虚拟硬盘（VHD）文件或进行物理到虚拟转换（P2V 转换）时，不确保物理计算机在转换后永久保持脱机状态。 请采取以下预防措施，以确保不会发生 USN 回滚：
 
    - 如果未运行 Windows Server 2012 或更高版本，则不需要使用域控制器虚拟机的快照。
-   - 请勿复制域控制器 VHD 文件。  
-   - 如果未运行 Windows Server 2012 或更高版本，请不要导出运行域控制器的虚拟机。  
-   - 不要还原域控制器，或者尝试通过任何其他方式（如 Windows Server 备份）来回滚 Active Directory 数据库的内容。  
+   - 请勿复制域控制器 VHD 文件。
+   - 如果未运行 Windows Server 2012 或更高版本，请不要导出运行域控制器的虚拟机。
+   - 不要还原域控制器，或者尝试通过任何其他方式（如 Windows Server 备份）来回滚 Active Directory 数据库的内容。
 
 在某些情况下，可能会检测不到 USN 回滚。 在其他情况下，它可能会导致其他复制错误。 在这种情况下，需要确定问题的范围并及时处理。 有关如何删除因 USN 回滚而可能发生的延迟对象的信息，请参阅 Microsoft 知识库中的[过时 Active Directory 对象在 Windows Server 2003 中生成事件 ID 1988](https://go.microsoft.com/fwlink/?linkid=137185) 。
 
@@ -434,13 +433,13 @@ USN 回滚的原因有很多，例如，当使用旧虚拟硬盘（VHD）文件�
 
 在 Windows Server 2008 和 Windows Server 2003 SP1 中，当目标域控制器通过使用以前使用的 USN 请求更改时，目标域控制器会解释其源复制伙伴的响应，以表示其复制元数据已过时。 这表示源域控制器上的 Active Directory 数据库已回滚到以前的状态。 例如，虚拟机的 VHD 文件已回滚到以前的版本。 在这种情况下，目标域控制器会在已被确定为已完成不正确还原的域控制器上启动以下隔离措施：
 
-   - AD DS 暂停 Net Logon 服务，这会阻止用户帐户和计算机帐户更改帐户密码。 如果在不正确的还原之后发生此类更改，则此操作将阻止丢失此类更改。  
-   - AD DS 禁用入站和出站 Active Directory 复制。  
-   - AD DS 将在目录服务事件日志中生成事件 ID 2095 以指示条件。  
+   - AD DS 暂停 Net Logon 服务，这会阻止用户帐户和计算机帐户更改帐户密码。 如果在不正确的还原之后发生此类更改，则此操作将阻止丢失此类更改。
+   - AD DS 禁用入站和出站 Active Directory 复制。
+   - AD DS 将在目录服务事件日志中生成事件 ID 2095 以指示条件。
 
 下图显示了在虚拟机上运行的 VDC2 （目标域控制器）上检测到 USN 回滚时所发生的事件的顺序。 在此图中，当复制伙伴检测到 VDC2 已发送最新 USN 值（以前由目标域控制器查看）时，VDC2 上将进行 USN 回滚的检测，这表明 Vdc2 数据库已及时回滚。
 
-![](media/virtualized-domain-controller-architecture/Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
+![显示在检测到 USN 回滚时会发生什么情况的关系图](media/virtualized-domain-controller-architecture/Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
 
 如果目录服务事件日志报告事件 ID 2095，请立即完成以下过程。
 
@@ -458,14 +457,14 @@ USN 回滚的原因有很多，例如，当使用旧虚拟硬盘（VHD）文件�
 
 在以下两种情况下，可能不会检测 USN 回滚：
 
-1. VHD 文件附加到同时在多个位置运行的不同虚拟机。  
-2. 还原的域控制器上的 USN 已超过其他域控制器已收到的最后一个 USN。  
+1. VHD 文件附加到同时在多个位置运行的不同虚拟机。
+2. 还原的域控制器上的 USN 已超过其他域控制器已收到的最后一个 USN。
 
 在第一种情况下，其他域控制器可能会随其中一台虚拟机一起复制，而不会将更改复制到另一台虚拟机上。 林的这种分歧很难检测到，并会导致不可预知的目录响应。 如果物理计算机和虚拟机都在同一网络上运行，则可能会在 P2V 迁移后出现这种情况。 如果从同一个物理域控制器创建了多个虚拟域控制器，然后在同一网络上运行，也可能会发生这种情况。
 
 在第二种情况下，Usn 范围适用于两个不同的更改集。 此操作可在未检测到的情况下继续运行。 每当修改在此时间创建的对象时，都会检测到延迟对象并将其报告为事件查看器中的事件 ID 1988。 下图显示了在这种情况下如何检测 USN 回滚。
 
-![](media/virtualized-domain-controller-architecture/Dd363553.63565fe0-d970-4b4e-b5f3-9c76bc77e2d4(WS.10).gif)
+![示意图如何检测 USN 回滚](media/virtualized-domain-controller-architecture/Dd363553.63565fe0-d970-4b4e-b5f3-9c76bc77e2d4(WS.10).gif)
 
 ## <a name="read-only-domain-controllers"></a>只读域控制器
 

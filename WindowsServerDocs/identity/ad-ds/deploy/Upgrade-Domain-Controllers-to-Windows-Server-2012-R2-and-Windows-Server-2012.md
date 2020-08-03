@@ -8,12 +8,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e9a7913f3639e464909d41a86c493774221ace28
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: f211acd5e93f3f4654983e2c61d6b1a460415655
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181883"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519375"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>将域控制器升级到 Windows Server 2012 R2 和 Windows Server 2012
 
@@ -71,7 +71,7 @@ Windows 8 和 Windows Server 2012 引入了一种名为 [自动维护](/windows/
 
 下表概述了 Windows Server 2012 R2 中的 AD DS 的新增功能，并提供关于其适用情况的更详细信息的链接。 有关某些功能的更为详细的解释（包括其要求），请参阅 [Windows Server 2012 R2 中的 Active Directory 的新增功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268294(v=ws.11))。
 
-|Feature|描述|
+|Feature|说明|
 |-----------|---------------|
 |[工作区加入](../../ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)|使信息工作人员可以将其个人设备加入他们的公司，以访问公司资源和服务。|
 |[Web 应用程序代理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280942(v=ws.11))|使用新的远程访问角色服务提供对 Web 应用程序的访问权限。|
@@ -90,10 +90,10 @@ Windows 8 和 Windows Server 2012 引入了一种名为 [自动维护](/windows/
 
 下表概述了 Windows Server 2012 中的 AD DS 的新增功能，并提供关于其适用情况的更详细信息的链接。 有关某些功能的更多详细说明（包括其要求），请参阅[Active Directory 域服务（AD DS）中的新增](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))功能。
 
-|Feature|描述|
+|Feature|说明|
 |-----------|---------------|
 |基于 Active Directory 的激活 (AD BA)；请参阅 [批量激活概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612(v=ws.11))|可以简化配置分发的任务及批量软件许可证的管理。|
-|[Active Directory 联合身份验证服务（AD FS）](../../active-directory-federation-services.md)|增加了通过服务器管理器安装角色、简化的信任设置、自动的信任管理、支持 SAML 协议等。|
+|[Active Directory 联合身份验证服务 (AD FS)](../../active-directory-federation-services.md)|增加了通过服务器管理器安装角色、简化的信任设置、自动的信任管理、支持 SAML 协议等。|
 |Active Directory 丢失的页面刷新事件|记录带有 jet 错误 1119 的 NTDS ISAM 事件 530，以便检测有无 Active Directory 数据库的丢失页面刷新事件。|
 |[Active Directory 回收站用户界面](../get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-.md#ad_recycle_bin_mgmt)|Active Directory 管理中心 (ADAC) 新增了回收站功能（这项功能最初在 Windows Server 2008 R2 中引入）的图形用户界面 (GUI) 管理。|
 |[使用 Windows PowerShell cmdlet 进行 Active Directory 复制和拓扑管理](../manage/powershell/introduction-to-active-directory-replication-and-topology-management-using-windows-powershell--level-100-.md)|支持使用 Windows PowerShell 创建和管理 Active Directory 站点、站点链接、连接对象等。|
@@ -154,25 +154,24 @@ AD DS 安装向导中的先决条件检查可以在开始安装之前识别潜�
 
 从 Windows Server 2008 开始，域控制器还具有以下安全默认设置，与运行 Windows Server 2003 或 Windows 2000 的域控制器相比。
 
-|||||
-|-|-|-|-|
-|加密类型或策略|Windows Server 2008 默认设置|Windows Server 2012 和 Windows Server 2008 R2 默认设置|评论|
-|AllowNT4Crypto|已禁用|已禁用|第三方服务器消息块 (SMB) 客户端可能与域控制器上的安全默认设置不兼容。 在所有情况下，可以通过放宽这些设置来允许交互操作，但这终将是以牺牲安全性为代价。 有关详细信息，请参阅 Microsoft 知识库中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) （ https://go.microsoft.com/fwlink/?LinkId=164558) 。|
-|DES|已启用|已禁用|Microsoft 知识库中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) （https://go.microsoft.com/fwlink/?LinkId=177717)|
-|集成身份验证的 CBT/扩展保护|空值|Enabled|请参阅 microsoft[安全公告（937811）](https://go.microsoft.com/fwlink/?LinkId=164559) （ https://go.microsoft.com/fwlink/?LinkId=164559) 和 microsoft 知识库中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （） https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>查看并安装[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394)中所需的修补程序 https://go.microsoft.com/fwlink/?LinkId=186394) 。|
-|LMv2|已启用|已禁用|Microsoft 知识库中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （https://go.microsoft.com/fwlink/?LinkId=178251)|
+| 加密类型或策略 | Windows Server 2008 默认设置 | Windows Server 2012 和 Windows Server 2008 R2 默认设置 | 评论 |
+|--|--|--|--|
+| AllowNT4Crypto | 已禁用 | 已禁用 | 第三方服务器消息块 (SMB) 客户端可能与域控制器上的安全默认设置不兼容。 在所有情况下，可以通过放宽这些设置来允许交互操作，但这终将是以牺牲安全性为代价。 有关详细信息，请参阅 Microsoft 知识库中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) （ https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
+| DES | 已启用 | 已禁用 | Microsoft 知识库中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) （https://go.microsoft.com/fwlink/?LinkId=177717) |
+| 集成身份验证的 CBT/扩展保护 | 空值 | 已启用 | 请参阅 microsoft[安全公告（937811）](https://go.microsoft.com/fwlink/?LinkId=164559) （ https://go.microsoft.com/fwlink/?LinkId=164559) 和 microsoft 知识库中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （） https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>查看并安装[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394)中所需的修补程序 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
+| LMv2 | 已启用 | 已禁用 | Microsoft 知识库中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>操作系统要求
 
 下表列出了 Windows Server 2012 的最低系统要求。 有关系统要求的更多信息以及预安装信息，请参阅 [安装 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))。 安装一个新的 Active Directory 林时，并无其他额外的系统要求。但是为了提高域控制器、LDAP 客户端请求以及启用了 Active Directory 的应用程序的性能，应当增加足够的内存以此来缓存 Active Directory 数据库中的内容。 如果要升级现有域控制器或将新域控制器添加到现有林，请查阅下一部分，以确保服务器满足磁盘空间要求。
 
-|||
-|-|-|
-|处理器|1.4 GHz 64 位处理器|
-|RAM|512 MB|
-|可用磁盘空间要求|32 GB|
-|屏幕分辨率|800 x 600 或更高|
-|杂项|DVD 驱动器、键盘、Internet 访问权限|
+| 要求 | 值 |
+|--|--|
+| 处理器 | 1.4 GHz 64 位处理器 |
+| RAM | 512 MB |
+| 可用磁盘空间要求 | 32 GB |
+| 屏幕分辨率 | 800 x 600 或更高 |
+| 杂项 | DVD 驱动器、键盘、Internet 访问权限 |
 
 ### <a name="disk-space-requirements-for-upgrading-domain-controllers"></a><a name="BKMK_DiskSpaceDCWin8"></a>升级域控制器的磁盘空间要求
 
@@ -201,14 +200,14 @@ AD DS 安装向导中的先决条件检查可以在开始安装之前识别潜�
 
 运行64位版本的 Windows Server 2008 或 Windows Server 2008 R2 的域控制器可以升级到 Windows Server 2012。 运行 Windows Server 2003 或 Windows Server 2008 32 位版本的域控制器则无法升级。 若要替换它们，请在域中安装运行更新版本的 Windows Server 的域控制器，然后删除运行 Windows Server 2003 的域控制器。
 
-|如果运行下列版本|可以升级到这些版本|
-|-------------------------------------|-------------------------------------|
-|带有 SP2 的 Windows Server 2008 Standard<p>或<p>带有 SP2 的 Windows Server 2008 Enterprise|Windows Server 2012 Standard<p>或<p>Windows Server 2012 Datacenter|
-|带有 SP2 的 Windows Server 2008 Datacenter|Windows Server 2012 Datacenter|
-|Windows Web Server 2008|Windows Server 2012 Standard|
-|带有 SP1 的 Windows Server 2008 R2 Standard<p>或<p>带有 SP1 的 Windows Server 2008 R2 Enterprise|Windows Server 2012 Standard<p>或<p>Windows Server 2012 Datacenter|
-|带有 SP1 的 Windows Server 2008 R2 Datacenter|Windows Server 2012 Datacenter|
-|Windows Web Server 2008 R2|Windows Server 2012 Standard|
+| 如果运行下列版本 | 可以升级到这些版本 |
+|--|--|
+| 带有 SP2 的 Windows Server 2008 Standard<p>或者<p>带有 SP2 的 Windows Server 2008 Enterprise | Windows Server 2012 Standard<p>或者<p>Windows Server 2012 Datacenter |
+| 带有 SP2 的 Windows Server 2008 Datacenter | Windows Server 2012 Datacenter |
+| Windows Web Server 2008 | Windows Server 2012 Standard |
+| 带有 SP1 的 Windows Server 2008 R2 Standard<p>或者<p>带有 SP1 的 Windows Server 2008 R2 Enterprise | Windows Server 2012 Standard<p>或者<p>Windows Server 2012 Datacenter |
+| 带有 SP1 的 Windows Server 2008 R2 Datacenter | Windows Server 2012 Datacenter |
+| Windows Web Server 2008 R2 | Windows Server 2012 Standard |
 
 有关支持的升级路径的详细信息，请参阅 [Windows Server 2012 的评估版本和升级选项](https://go.microsoft.com/fwlink/?LinkId=260917)。 注意：你无法将运行 Windows Server 2012 评估版的域控制器直接转换为零售版本。 相反，应该在服务器上安装另一个运行零售版本的域控制器，并从运行评估版的域控制器中删除 AD DS。
 
@@ -276,7 +275,7 @@ Windows Server 2012 中的一些新功能影响操作主机角色：
 
 下表包含了常见的集成 Active Directory 的 Microsoft 应用程序。 下表列出了可安装应用程序的 Windows Server 版本以及引入 Windows Server 2012 DC 是否会影响应用程序的兼容性。
 
-|Products|说明|
+|Products|注释|
 |-----------|---------|
 |[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|在 Windows Server 2012 服务器上安装和操作 SharePoint 2010 时， <br />要求提供 SharePoint 2010 Service Pack 2<p>在 Windows Server 2012 服务器上安装和操作 SharePoint 2010 Foundation 时，要求提供 SharePoint 2010 Foundation Service Pack 2<p>无法在 Windows Server 2012 上安装 SharePoint Server 2010（没有 Service Pack）<p>SharePoint Server 2010 必备安装程序（PrerequisiteInstaller.exe）失败，并出现错误 "此程序存在兼容性问题。" 单击 "运行程序而不获取帮助" 将显示错误 "验证是否可以安装 SharePoint &#124; 不能在 Windows Server 2012 上安装 SharePoint Server 2010 （不带 service pack）。"|
 |[Microsoft SharePoint 2013](/SharePoint/install/hardware-and-software-requirements-0)|针对服务器场中数据库服务器的最低要求：<p>Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter 的 64 位版本，或者 Windows Server 2012 Standard 或 Datacenter 的 64 位版本<p>针对带有内置数据库的单个服务器的最低要求：<p>Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter 的 64 位版本，或者 Windows Server 2012 Standard 或 Datacenter 的 64 位版本<p>针对服务器场中前端 Web 服务器和应用程序服务器的最低要求：<p>Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter 的 64 位版本，或者 Windows Server 2012 Standard 或 Datacenter 的 64 位版本。|
@@ -300,42 +299,41 @@ Windows Server 2012 中的一些新功能影响操作主机角色：
 
 下表列出了与 AD DS 安装有关的已知问题。
 
-||||
-|-|-|-|
-|知识库文章编号及标题|影响的技术区域|问题/描述|
-|[2830145](https://support.microsoft.com/kb/2830145)：在域环境中，SID S-1-18-1 和 SID S-1-18-2 无法映射到基于 Windows 7 或 Windows Server 2008 R2 的计算机上|AD DS 管理/应用兼容|映射 SID S-1-18-1 和 SID S-1-18-2 的应用程序（Windows Server 2012 中的新增应用程序）可能失败，因为 SID 无法在基于 Windows 7 或基于 Windows Server 2008 R2 的计算机上解析。 若要解决此问题，请在域中基于 Windows 7 和 Windows Server 2008 R2 的计算机上安装修补程序。|
-|[2737129](https://support.microsoft.com/kb/2737129)：当你为 Windows Server 2012 自动准备现有域时，不执行组策略准备|AD DS 安装|作为在域中安装第一个运行 Windows Server 2012 的 DC 的一部分，Adprep /domainprep /gpprep 不会自动运行。 如果以前从未在域中运行它，则必须对它进行手动运行。|
-|[2737416](https://support.microsoft.com/kb/2737416)：基于 Windows PowerShell 的域控制器部署将重复警告|AD DS 安装|警告不仅会在先决条件验证期间出现，而且还会在安装期间重复出现。|
-|[2737424](https://support.microsoft.com/kb/2737424)：当你尝试从域控制器删除 Active Directory 域服务时，出现“指定域名的格式无效”错误|AD DS 安装|当域中仍存在预创建的 RODC 帐户时，如果删除域中最后一个 DC，则会显示此错误。 这会影响 Windows Server 2012、 Windows Server 2008 R2 和 Windows Server 2008。|
-|[2737463](https://support.microsoft.com/kb/2737463)：域控制器不启动、发生 c00002e2 错误或显示“选择一个选项”|AD DS 安装|没有启动 DC 是因为管理员使用了 Dism.exe、Pkgmgr.exe 或 Ocsetup.exe 来删除 DirectoryServices-DomainController 角色。|
-|[2737516](https://support.microsoft.com/kb/2737516)：Windows Server 2012 服务器管理器中的 IFM 验证限制|AD DS 安装|如知识库文章中所述，IFM 验证可能存在限制。|
-|[2737535](https://support.microsoft.com/kb/2737535)：Install-addsdomaincontroller cmdlet 返回 RODC 的参数集错误|AD DS 安装|当你尝试将服务器与 RODC 帐户关联时，如果指定的实际参数已经填充到预创建的 RODC 帐户中，则会收到一个错误消息。|
-|[2737560](https://support.microsoft.com/kb/2737560)：“无法执行 Exchange 架构冲突检查”错误，而且先决条件检查失败|AD DS 安装|当你在现有域中配置第一个 Windows Server 2012 DC 时，先决条件检查失败。这是因为 DC 缺少网络服务的 SeServiceLogonRight，或者是因为 WMI 或 DCOM 协议被阻止。|
-|[2737797](https://support.microsoft.com/kb/2737797)：带有 -Whatif 参数的 AddsDeployment 模块显示不正确的 DNS 结果|AD DS 安装|-WhatIf 参数显示将不安装 DNS 服务器，但该服务器为。|
-|[2737807](https://support.microsoft.com/kb/2737807)：“域控制器选项”页上不提供“下一步”按钮|AD DS 安装|“域控制器选项”页面上的“下一步”按钮被禁用是因为目标 DC 的 IP 地址没有映射到现有子网或站点，或者是因为没有正确键入或确认 DSRM 密码。|
-|[2737935](https://support.microsoft.com/kb/2737935)：Active Directory 安装停留在“正在创建 NTDS 设置对象”阶段|AD DS 安装|安装挂起是因为本地管理员密码匹配域管理员密码，或者是因为网络问题阻止完成关键复制。|
-|[2738060](https://support.microsoft.com/kb/2738060)：当你使用 Install-AddsDomain 远程创建子域时，显示“访问被拒绝”错误消息|AD DS 安装|使用 Invoke-Command cmdlet 运行 Install-ADDSDomain 时，如果 DNSDelegationCredential 有一个错误的密码，则会收到此错误。|
-|[2738697](https://support.microsoft.com/kb/2738697)：通过服务器管理器配置服务器时，出现“服务器不可操作”域控制器配置错误|AD DS 安装|尝试在工作组计算机上安装 AD DS 时会收到此错误，因为 NTLM 身份验证被禁用。|
-|[2738746](https://support.microsoft.com/kb/2738746)：登录到本地管理员域帐户后，收到访问被拒绝错误|AD DS 安装|如果你使用本地管理员帐户而不是内置的管理员帐户登录，然后创建新域，则该帐户将不会添加到 Domain Admins 组中。|
-|[2743345](https://support.microsoft.com/kb/2743345)：“系统找不到指定的文件”Adprep /gpprep 错误或工具故障|AD DS 安装|运行 adprep /gpprep 时会收到此错误，因为结构主机正在实现一个非连续命名空间|
-|[2743367](https://support.microsoft.com/kb/2743367)：在 64 位版本的 Windows Server 2003 上出现 Adprep“不是有效的 Win32 应用程序”错误|AD DS 安装|收到此错误是因为 Windows Server 2012 Adprep 无法在 Windows Server 2003 上运行。|
-|[2753560](https://support.microsoft.com/kb/2753560)：在 Windows Server 2012 上出现 ADMT 3.2 和 PES 3.1 安装错误|ADMT|根据设计，无法在 Windows Server 2012 上安装 ADMT 3.2。|
-|[2750857](https://support.microsoft.com/kb/2750857)：DFS 复制诊断报告不能在 Internet Explorer 10 中正确显示|DFS 复制|由于 Internet Explorer 10 中的变化，无法正确显示 DFS 复制诊断报告。|
-|[2741537](https://support.microsoft.com/kb/2741537)：用户可以看到远程组策略更新|组策略|这是因为计划任务运行在每个登录用户的上下文中。 Windows 任务计划程序设计要求在此方案中出现一个交互式提示。|
-|[2741591](https://support.microsoft.com/kb/2741591)：在 GPMC 基础结构状态选项的 SYSVOL 中未显示 ADM 文件|组策略|因为 GPMC 基础结构状态未遵循自定义的筛选规则，GP 复制可以报告 "正在进行复制"。|
-|[2737880](https://support.microsoft.com/kb/2737880)：配置 AD DS 期间出现“无法启动服务”错误|虚拟 DC 克隆|当安装或删除 AD DS，或者克隆 AD DS 时，会收到此错误，因为 DS 角色服务器服务已被禁用。|
-|[2742836](https://support.microsoft.com/kb/2742836)：使用 VDC 克隆功能时，为每个域控制器创建了两个 DHCP 租约|虚拟 DC 克隆|出现这种情况是因为在克隆之前，克隆的域控制器收到一个租约，而且在克隆结束时，又收到了一个租约。|
-|[2742844](https://support.microsoft.com/kb/2742844)：域控制器克隆失败，服务器在 Windows Server 2012 中以 DSRM 模式重新启动|虚拟 DC 克隆|由于克隆因知识库文章中所列的任意原因而失败，所以克隆的 DC 以 DSRM 模式启动。|
-|[2742874](https://support.microsoft.com/kb/2742874)：域控制器克隆不会重新创建所有服务主体名称|虚拟 DC 克隆|因为域重命名过程中的限制，克隆后的 DC 上没有重新创建某些由三部分构成的 SPN。|
-|[2742908](https://support.microsoft.com/kb/2742908)：克隆域控制器后出现“无可用登录服务”错误|虚拟 DC 克隆|当你在克隆虚拟化的 DC 后尝试登录时，会收到此错误，这是因为克隆失败并且 DC 是以 DSRM 模式启动的。 以管理员身份登录时可以解决此克隆故障。|
-|[2742916](https://support.microsoft.com/kb/2742916)：域控制器克隆失败，dcpromo.log 中出现错误 8610|虚拟 DC 克隆|克隆失败，因为 PDC 仿真器未曾执行域分区的入站复制，这可能是由于角色传送造成的。|
-|[2742927](https://support.microsoft.com/kb/2742927)：“索引超出范围”New-AdDcCloneConfig 错误|虚拟 DC 克隆|在克隆虚拟 DC 期间，当运行 New-ADDCCloneConfigFile cmdlet 后会收到此错误，这可能是因为没有从提升的命令提示符中运行该 cmdlet，或者是因为你的访问令牌不包含管理员组。|
-|[2742959](https://support.microsoft.com/kb/2742959)：域控制器克隆失败，出现错误 8437：“为这个复制操作指定了一个无效的参数”|虚拟 DC 克隆|克隆失败，因为指定了无效的克隆名称或重复的 NetBIOS 名称。|
-|[2742970](https://support.microsoft.com/kb/2742970)：DC 克隆失败，没有 DSRM、重复的源和克隆计算机|虚拟 DC 克隆|克隆后的虚拟 DC 使用重复名称作为源 DC，以目录服务修复模式 (DSRM) 启动，这是因为没有在正确的位置创建 DCCloneConfig.xml 文件，或者因为源 DC 在克隆前已经重新启动。|
-|[2743278](https://support.microsoft.com/kb/2743278)：域控制器克隆错误 0x80041005|虚拟 DC 克隆|克隆后的 DC 以 DSRM 模式启动，因为仅指定了一个 WINS 服务器。 如果指定了任意的 WINS 服务器，则必须同时指定首选的和备用的 WINS 服务器。|
-|[2745013](https://support.microsoft.com/kb/2745013)：如果在 Windows Server 2012 中运行 New-AdDcCloneConfigFile，则会出现“该服务器不可操作”的错误消息|虚拟 DC 克隆|在运行 New-ADDCCloneConfigFile cmdlet 后会收到此错误，这是因为服务器无法联系全局编录服务器。|
-|[2747974](https://support.microsoft.com/kb/2747974)：域控制器克隆事件 2224 提供了不正确的指导|虚拟 DC 克隆|事件 ID 2224 错误地指出在克隆之前必须删除托管服务帐户。 必须删除独立的 MSA，然而组 MSA 并不阻止克隆。|
-|[2748266](https://support.microsoft.com/kb/2748266)：在升级到 Windows 8 后，无法解锁 BitLocker 加密的驱动器|BitLocker|当你尝试解锁从 Windows 7 升级的计算机上的驱动器时，会收到 "找不到应用程序" 错误。|
+| 知识库文章编号及标题 | 影响的技术区域 | 问题/描述 |
+|--|--|--|
+| [2830145](https://support.microsoft.com/kb/2830145)：在域环境中，SID S-1-18-1 和 SID S-1-18-2 无法映射到基于 Windows 7 或 Windows Server 2008 R2 的计算机上 | AD DS 管理/应用兼容 | 映射 SID S-1-18-1 和 SID S-1-18-2 的应用程序（Windows Server 2012 中的新增应用程序）可能失败，因为 SID 无法在基于 Windows 7 或基于 Windows Server 2008 R2 的计算机上解析。 若要解决此问题，请在域中基于 Windows 7 和 Windows Server 2008 R2 的计算机上安装修补程序。 |
+| [2737129](https://support.microsoft.com/kb/2737129)：当你为 Windows Server 2012 自动准备现有域时，不执行组策略准备 | AD DS 安装 | 作为在域中安装第一个运行 Windows Server 2012 的 DC 的一部分，Adprep /domainprep /gpprep 不会自动运行。 如果以前从未在域中运行它，则必须对它进行手动运行。 |
+| [2737416](https://support.microsoft.com/kb/2737416)：基于 Windows PowerShell 的域控制器部署将重复警告 | AD DS 安装 | 警告不仅会在先决条件验证期间出现，而且还会在安装期间重复出现。 |
+| [2737424](https://support.microsoft.com/kb/2737424)：当你尝试从域控制器删除 Active Directory 域服务时，出现“指定域名的格式无效”错误 | AD DS 安装 | 当域中仍存在预创建的 RODC 帐户时，如果删除域中最后一个 DC，则会显示此错误。 这会影响 Windows Server 2012、 Windows Server 2008 R2 和 Windows Server 2008。 |
+| [2737463](https://support.microsoft.com/kb/2737463)：域控制器不启动、发生 c00002e2 错误或显示“选择一个选项” | AD DS 安装 | 没有启动 DC 是因为管理员使用了 Dism.exe、Pkgmgr.exe 或 Ocsetup.exe 来删除 DirectoryServices-DomainController 角色。 |
+| [2737516](https://support.microsoft.com/kb/2737516)：Windows Server 2012 服务器管理器中的 IFM 验证限制 | AD DS 安装 | 如知识库文章中所述，IFM 验证可能存在限制。 |
+| [2737535](https://support.microsoft.com/kb/2737535)：Install-addsdomaincontroller cmdlet 返回 RODC 的参数集错误 | AD DS 安装 | 当你尝试将服务器与 RODC 帐户关联时，如果指定的实际参数已经填充到预创建的 RODC 帐户中，则会收到一个错误消息。 |
+| [2737560](https://support.microsoft.com/kb/2737560)：“无法执行 Exchange 架构冲突检查”错误，而且先决条件检查失败 | AD DS 安装 | 当你在现有域中配置第一个 Windows Server 2012 DC 时，先决条件检查失败。这是因为 DC 缺少网络服务的 SeServiceLogonRight，或者是因为 WMI 或 DCOM 协议被阻止。 |
+| [2737797](https://support.microsoft.com/kb/2737797)：带有 -Whatif 参数的 AddsDeployment 模块显示不正确的 DNS 结果 | AD DS 安装 | -WhatIf 参数显示将不安装 DNS 服务器，但该服务器为。 |
+| [2737807](https://support.microsoft.com/kb/2737807)：“域控制器选项”页上不提供“下一步”按钮 | AD DS 安装 | “域控制器选项”页面上的“下一步”按钮被禁用是因为目标 DC 的 IP 地址没有映射到现有子网或站点，或者是因为没有正确键入或确认 DSRM 密码。 |
+| [2737935](https://support.microsoft.com/kb/2737935)：Active Directory 安装停留在“正在创建 NTDS 设置对象”阶段 | AD DS 安装 | 安装挂起是因为本地管理员密码匹配域管理员密码，或者是因为网络问题阻止完成关键复制。 |
+| [2738060](https://support.microsoft.com/kb/2738060)：当你使用 Install-AddsDomain 远程创建子域时，显示“访问被拒绝”错误消息 | AD DS 安装 | 使用 Invoke-Command cmdlet 运行 Install-ADDSDomain 时，如果 DNSDelegationCredential 有一个错误的密码，则会收到此错误。 |
+| [2738697](https://support.microsoft.com/kb/2738697)：通过服务器管理器配置服务器时，出现“服务器不可操作”域控制器配置错误 | AD DS 安装 | 尝试在工作组计算机上安装 AD DS 时会收到此错误，因为 NTLM 身份验证被禁用。 |
+| [2738746](https://support.microsoft.com/kb/2738746)：登录到本地管理员域帐户后，收到访问被拒绝错误 | AD DS 安装 | 如果你使用本地管理员帐户而不是内置的管理员帐户登录，然后创建新域，则该帐户将不会添加到 Domain Admins 组中。 |
+| [2743345](https://support.microsoft.com/kb/2743345)：“系统找不到指定的文件”Adprep /gpprep 错误或工具故障 | AD DS 安装 | 运行 adprep /gpprep 时会收到此错误，因为结构主机正在实现一个非连续命名空间 |
+| [2743367](https://support.microsoft.com/kb/2743367)：在 64 位版本的 Windows Server 2003 上出现 Adprep“不是有效的 Win32 应用程序”错误 | AD DS 安装 | 收到此错误是因为 Windows Server 2012 Adprep 无法在 Windows Server 2003 上运行。 |
+| [2753560](https://support.microsoft.com/kb/2753560)：在 Windows Server 2012 上出现 ADMT 3.2 和 PES 3.1 安装错误 | ADMT | 根据设计，无法在 Windows Server 2012 上安装 ADMT 3.2。 |
+| [2750857](https://support.microsoft.com/kb/2750857)：DFS 复制诊断报告不能在 Internet Explorer 10 中正确显示 | DFS 复制 | 由于 Internet Explorer 10 中的变化，无法正确显示 DFS 复制诊断报告。 |
+| [2741537](https://support.microsoft.com/kb/2741537)：用户可以看到远程组策略更新 | 组策略 | 这是因为计划任务运行在每个登录用户的上下文中。 Windows 任务计划程序设计要求在此方案中出现一个交互式提示。 |
+| [2741591](https://support.microsoft.com/kb/2741591)：在 GPMC 基础结构状态选项的 SYSVOL 中未显示 ADM 文件 | 组策略 | 因为 GPMC 基础结构状态未遵循自定义的筛选规则，GP 复制可以报告 "正在进行复制"。 |
+| [2737880](https://support.microsoft.com/kb/2737880)：配置 AD DS 期间出现“无法启动服务”错误 | 虚拟 DC 克隆 | 当安装或删除 AD DS，或者克隆 AD DS 时，会收到此错误，因为 DS 角色服务器服务已被禁用。 |
+| [2742836](https://support.microsoft.com/kb/2742836)：使用 VDC 克隆功能时，为每个域控制器创建了两个 DHCP 租约 | 虚拟 DC 克隆 | 出现这种情况是因为在克隆之前，克隆的域控制器收到一个租约，而且在克隆结束时，又收到了一个租约。 |
+| [2742844](https://support.microsoft.com/kb/2742844)：域控制器克隆失败，服务器在 Windows Server 2012 中以 DSRM 模式重新启动 | 虚拟 DC 克隆 | 由于克隆因知识库文章中所列的任意原因而失败，所以克隆的 DC 以 DSRM 模式启动。 |
+| [2742874](https://support.microsoft.com/kb/2742874)：域控制器克隆不会重新创建所有服务主体名称 | 虚拟 DC 克隆 | 因为域重命名过程中的限制，克隆后的 DC 上没有重新创建某些由三部分构成的 SPN。 |
+| [2742908](https://support.microsoft.com/kb/2742908)：克隆域控制器后出现“无可用登录服务”错误 | 虚拟 DC 克隆 | 当你在克隆虚拟化的 DC 后尝试登录时，会收到此错误，这是因为克隆失败并且 DC 是以 DSRM 模式启动的。 以管理员身份登录时可以解决此克隆故障。 |
+| [2742916](https://support.microsoft.com/kb/2742916)：域控制器克隆失败，dcpromo.log 中出现错误 8610 | 虚拟 DC 克隆 | 克隆失败，因为 PDC 仿真器未曾执行域分区的入站复制，这可能是由于角色传送造成的。 |
+| [2742927](https://support.microsoft.com/kb/2742927)：“索引超出范围”New-AdDcCloneConfig 错误 | 虚拟 DC 克隆 | 在克隆虚拟 DC 期间，当运行 New-ADDCCloneConfigFile cmdlet 后会收到此错误，这可能是因为没有从提升的命令提示符中运行该 cmdlet，或者是因为你的访问令牌不包含管理员组。 |
+| [2742959](https://support.microsoft.com/kb/2742959)：域控制器克隆失败，出现错误 8437：“为这个复制操作指定了一个无效的参数” | 虚拟 DC 克隆 | 克隆失败，因为指定了无效的克隆名称或重复的 NetBIOS 名称。 |
+| [2742970](https://support.microsoft.com/kb/2742970)：DC 克隆失败，没有 DSRM、重复的源和克隆计算机 | 虚拟 DC 克隆 | 克隆后的虚拟 DC 使用重复名称作为源 DC，以目录服务修复模式 (DSRM) 启动，这是因为没有在正确的位置创建 DCCloneConfig.xml 文件，或者因为源 DC 在克隆前已经重新启动。 |
+| [2743278](https://support.microsoft.com/kb/2743278)：域控制器克隆错误 0x80041005 | 虚拟 DC 克隆 | 克隆后的 DC 以 DSRM 模式启动，因为仅指定了一个 WINS 服务器。 如果指定了任意的 WINS 服务器，则必须同时指定首选的和备用的 WINS 服务器。 |
+| [2745013](https://support.microsoft.com/kb/2745013)：如果在 Windows Server 2012 中运行 New-AdDcCloneConfigFile，则会出现“该服务器不可操作”的错误消息 | 虚拟 DC 克隆 | 在运行 New-ADDCCloneConfigFile cmdlet 后会收到此错误，这是因为服务器无法联系全局编录服务器。 |
+| [2747974](https://support.microsoft.com/kb/2747974)：域控制器克隆事件 2224 提供了不正确的指导 | 虚拟 DC 克隆 | 事件 ID 2224 错误地指出在克隆之前必须删除托管服务帐户。 必须删除独立的 MSA，然而组 MSA 并不阻止克隆。 |
+| [2748266](https://support.microsoft.com/kb/2748266)：在升级到 Windows 8 后，无法解锁 BitLocker 加密的驱动器 | BitLocker | 当你尝试解锁从 Windows 7 升级的计算机上的驱动器时，会收到 "找不到应用程序" 错误。 |
 
 ## <a name="see-also"></a>另请参阅
 

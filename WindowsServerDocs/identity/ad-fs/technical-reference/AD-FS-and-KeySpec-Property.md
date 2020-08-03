@@ -8,15 +8,15 @@ ms.prod: windows-server
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: e3ddc427d84a79d831c61cad8087dbfa1d3fb564
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 36555336b158fdf7cfaa400f66b9deecbff49c1b
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860240"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519686"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS 和 certificate KeySpec 属性信息
-密钥规范（"KeySpec"）是与证书和密钥关联的属性。 它指定与证书关联的私钥是否可用于签名和/或加密。   
+密钥规范（"KeySpec"）是与证书和密钥关联的属性。 它指定与证书关联的私钥是否可用于签名和/或加密。
 
 不正确的 KeySpec 值可能会导致 AD FS 和 Web 应用程序代理错误，如：
 
@@ -26,31 +26,33 @@ ms.locfileid: "80860240"
 
 你可能会在事件日志中看到以下内容：
 
-    Log Name:      AD FS Tracing/Debug
-    Source:        AD FS Tracing
-    Date:          2/12/2015 9:03:08 AM
-    Event ID:      67
-    Task Category: None
-    Level:         Error
-    Keywords:      ADFSProtocol
-    User:          S-1-5-21-3723329422-3858836549-556620232-1580884
-    Computer:      ADFS1.contoso.com
-    Description:
-    Ignore corrupted SSO cookie.
+```
+Log Name:   AD FS Tracing/Debug
+Source: AD FS Tracing
+Date:   2/12/2015 9:03:08 AM
+Event ID:   67
+Task Category: None
+Level:  Error
+Keywords:   ADFSProtocol
+User:   S-1-5-21-3723329422-3858836549-556620232-1580884
+Computer:   ADFS1.contoso.com
+Description:
+Ignore corrupted SSO cookie.
+```
 
 ## <a name="what-causes-the-problem"></a>导致问题的原因
 KeySpec 属性标识如何使用 microsoft 旧版加密存储提供程序（CSP）中由 Microsoft CryptoAPI （CAPI）生成或检索到的密钥。
 
 KeySpec 值**1**或**AT_KEYEXCHANGE**可用于签名和加密。  值**2**或**AT_SIGNATURE**仅用于签名。
 
-最常见的 KeySpec 错误配置是对证书（而不是令牌签名证书）使用值2。  
+最常见的 KeySpec 错误配置是对证书（而不是令牌签名证书）使用值2。
 
 对于其密钥是使用下一代加密技术（CNG）提供程序生成的证书，没有密钥规范的概念，KeySpec 值将始终为零。
 
-请参阅下面的如何检查有效的 KeySpec 值。 
+请参阅下面的如何检查有效的 KeySpec 值。
 
 ### <a name="example"></a>示例
-Microsoft 增强的加密提供程序就是一个旧 CSP 的示例。 
+Microsoft 增强的加密提供程序就是一个旧 CSP 的示例。
 
 Microsoft RSA CSP 密钥 blob 格式包括一种算法标识符，分别**CALG_RSA_KEYX**或**CALG_RSA_SIGN**为<strong>AT_KEYEXCHANGE * * 或 * * AT_SIGNATURE</strong>密钥的请求提供服务。
 
@@ -71,7 +73,7 @@ CALG_RSA_SIGN： RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
 |2|对于旧版 CAPI （非 CNG）证书，密钥只能用于签名|不建议|
 
 ## <a name="how-to-check-the-keyspec-value-for-your-certificates--keys"></a>如何检查证书/密钥的 KeySpec 值
-若要查看证书值，可以使用**certutil**命令行工具。  
+若要查看证书值，可以使用**certutil**命令行工具。
 
 下面是一个示例： **certutil – v – store my**。  这会将证书信息转储到屏幕。
 
@@ -95,7 +97,7 @@ CALG_RSA_SIGN： RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
    CNG 提供程序（ProviderType = 0）：
 
    |AD FS 证书目的|有效的 KeySpec 值|
-   | --- | --- |   
+   | --- | --- |
    |SSL|0|
 
 ## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>如何将证书的 keyspec 更改为支持的值
@@ -107,7 +109,7 @@ CALG_RSA_SIGN： RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
 3. 针对每个 AD FS 和 WAP 服务器执行以下步骤
     1. 删除证书（从 AD FS/WAP 服务器）
     2. 使用下面的 cmdlet 语法打开提升的 PowerShell 命令提示符，并在每个 AD FS 和 WAP 服务器上导入 PFX 文件，并指定 AT_KEYEXCHANGE 值（适用于所有 AD FS 证书目的）：
-        1. C：\>certutil – importpfx certfile AT_KEYEXCHANGE
+        1. C： \> certutil – importpfx certfile AT_KEYEXCHANGE
         2. 输入 PFX 密码
     3. 完成上述操作后，请执行以下操作
         1. 检查私钥权限

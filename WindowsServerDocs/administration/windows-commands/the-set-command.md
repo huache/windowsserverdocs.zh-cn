@@ -1,5 +1,5 @@
 ---
-title: set
+title: 使用 set 命令
 description: Set 的参考文章，用于设置 Windows 部署服务服务器、预留计算机、映像、映像组和传输服务器的属性和属性。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b11c9b349fc1473d1d6ec167528c43ac314b51e9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4d292dfb7c069cbdb0fe80afe5cfd426735eaf7c
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934602"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519616"
 ---
-# <a name="set"></a>set
+# <a name="using-the-set-command"></a>使用 set 命令
 
 > 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 

@@ -9,25 +9,24 @@ ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2fce4c5669ff78a6d97cd65580db1a68bfe3a390
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: f41f59d0ec3847663e32b33b728d047b04d1cc63
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118588"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519706"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS 的常见问题解答 (FAQ)
-
 
 以下文档是与 Active Directory 联合身份验证服务有关的常见问题解答的主页。  该文档已根据问题类型分为几组。
 
 ## <a name="deployment"></a>部署
 
 ### <a name="how-can-i-upgrademigrate-from-previous-versions-of-ad-fs"></a>如何从 AD FS 的早期版本升级/迁移
+
 可以使用以下某项操作升级 AD FS：
 
-
-- Windows Server 2012 R2 AD FS 升级到 Windows Server 2016 AD FS 或更高版本。 请注意，如果要从 Windows Server 2016 AD FS 升级到 Windows Server 2019 AD FS，则方法相同。 
+- Windows Server 2012 R2 AD FS 升级到 Windows Server 2016 AD FS 或更高版本。 请注意，如果要从 Windows Server 2016 AD FS 升级到 Windows Server 2019 AD FS，则方法相同。
     - [使用 WID 数据库升级到 Windows Server 2016 中的 AD FS](../deployment/upgrading-to-ad-fs-in-windows-server.md)
     - [使用 SQL 数据库升级到 Windows Server 2016 中的 AD FS](../deployment/upgrading-to-ad-fs-in-windows-server-sql.md)
 - Windows Server 2012 AD FS 迁移到 Windows Server 2012 R2 AD FS
@@ -41,7 +40,7 @@ ms.locfileid: "87118588"
 
 ### <a name="why-does-ad-fs-installation-require-a-reboot-of-the-server"></a>为什么安装 AD FS 需要重启服务器？
 
-Windows Server 2016 中添加了 HTTP/2 支持，但 HTTP/2 不能用于客户端证书身份验证。  由于许多 AD FS 方案都使用客户端证书身份验证，因此，大多数客户端都不支持使用 HTTP/1.1 重试请求，AD FS 场配置将本地服务器的 HTTP 设置重新配置为 HTTP/1.1。  这需要重启服务器。  
+Windows Server 2016 中添加了 HTTP/2 支持，但 HTTP/2 不能用于客户端证书身份验证。  由于许多 AD FS 方案都使用客户端证书身份验证，因此，大多数客户端都不支持使用 HTTP/1.1 重试请求，AD FS 场配置将本地服务器的 HTTP 设置重新配置为 HTTP/1.1。  这需要重启服务器。
 
 ### <a name="is-using-windows-2016-wap-servers-to-publish-the-ad-fs-farm-to-the-internet-without-upgrading-the-back-end-ad-fs-farm-supported"></a>是否可以在不升级受支持的后端 AD FS 的情况下使用 Windows 2016 WAP 服务器将 AD FS 场发布到 Internet？
 是的，支持此配置，但此配置不支持新的 AD FS 2016 功能。  此配置是从 AD FS 2012 R2 到 AD FS 2016 的迁移阶段的临时配置，不应用于长期部署。
@@ -70,8 +69,8 @@ AD FS 支持多个多林配置，并依赖基础 AD DS 信任网络以在多个�
 - 如果采用单向林信任（例如包含合作伙伴标识的 DMZ 林），则建议在 corp 林中部署 ADFS，并将 DMZ 林视为通过 LDAP 连接的其他本地声明提供程序信任。 在这种情况下，Windows 集成身份验证不适用于 DMZ 林用户，并且将要求他们执行密码身份验证，因为这是 LDAP 唯一受支持的机制。 如果无法采用此选项，则需要在 DMZ 林中设置另一个 ADFS，并将其添加为 corp 林中 ADFS 中的声明提供程序信任。 用户将需要进行主页领域发现，但 Windows 集成身份验证和密码身份验证都会运行。 请对 DMZ 林中 ADFS 的颁发规则进行适当的更改，因为 corp 林中的 ADFS 无法从 DMZ 林获取有关用户的额外用户信息。
 - 尽管支持域级别信任并且可以运行，但我们强烈建议你迁移到林级别信任模型。 此外，还需要确保名称的 UPN 路由和 NETBIOS 名称解析可以正常运行。
 
->[!NOTE]  
->如果将选择性身份验证与双向信任配置一起使用，请确保为调用方用户授予目标服务帐户的“允许身份验证”权限。 
+>[!NOTE]
+>如果将选择性身份验证与双向信任配置一起使用，请确保为调用方用户授予目标服务帐户的“允许身份验证”权限。
 
 ### <a name="does-ad-fs-extranet-smart-lockout-support-ipv6"></a>AD FS Extranet 智能锁定是否支持 IPv6？
 支持，会对熟悉/未知的位置考虑 IPv6 地址。
@@ -80,7 +79,7 @@ AD FS 支持多个多林配置，并依赖基础 AD DS 信任网络以在多个�
 ## <a name="design"></a>设计
 
 ### <a name="what-third-party-multi-factor-authentication-providers-are-available-for-ad-fs"></a>哪些第三方多重身份验证提供程序可用于 AD FS？
-AD FS 为第三方 MFA 提供程序提供了可扩展的集成机制。 没有适用于此的固定证书计划。 假设供应商已在发布前执行了必要的验证。 
+AD FS 为第三方 MFA 提供程序提供了可扩展的集成机制。 没有适用于此的固定证书计划。 假设供应商已在发布前执行了必要的验证。
 
 在 [AD FS 的 MFA 提供程序](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)上发布了已通知 Microsoft 的供应商列表。  可能始终存在我们不了解的提供程序，我们将在了解这些提供程序的同时更新列表。
 
@@ -98,7 +97,7 @@ AD FS 为第三方 MFA 提供程序提供了可扩展的集成机制。 没有�
 
 ### <a name="how-can-i-ensure-my-ad-fs-and-wap-servers-support-apples-atp-requirements"></a>如何确保 AD FS 和 WAP 服务器支持 Apple 的 ATP 要求？
 
-Apple 已发布了一组名为“应用传输安全性 (ATS)”的要求，该要求可能会影响对 AD FS 进行身份验证的 iOS 应用的调用。  确认 AD FS 和 WAP 服务器是否支持[使用 ATS 进行连接的要求](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)来确保其符合要求。  
+Apple 已发布了一组名为“应用传输安全性 (ATS)”的要求，该要求可能会影响对 AD FS 进行身份验证的 iOS 应用的调用。  确认 AD FS 和 WAP 服务器是否支持[使用 ATS 进行连接的要求](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)来确保其符合要求。
 尤其应该验证 AD FS 和 WAP 服务器是否支持 TLS 1.2，并且 TLS 连接的协商密码套件将支持完美的前向保密性。
 
 可以使用[在 AD FS 中管理 SSL 协议](../operations/Manage-SSL-Protocols-in-AD-FS.md)启用和禁用 SSL 2.0 和 3.0 以及 TLS 版本 1.0、1.1 和 1.2。
@@ -121,15 +120,18 @@ Apple 已发布了一组名为“应用传输安全性 (ATS)”的要求，该�
 
 示例颁发规则：
 
-    => issue(Type = "array_in_json", ValueType = "http://www.w3.org/2001/XMLSchema#json", Value = "{\x22Items\x22:[{\x22Name\x22:\x22Apple\x22,\x22Price\x22:12.3},{\x22Name\x22:\x22Grape\x22,\x22Price\x22:3.21}],\x22Date\x22:\x2221/11/2010\x22}");
+```
+=> issue(Type = "array_in_json", ValueType = "http://www.w3.org/2001/XMLSchema#json", Value = "{\x22Items\x22:[{\x22Name\x22:\x22Apple\x22,\x22Price\x22:12.3},{\x22Name\x22:\x22Grape\x22,\x22Price\x22:3.21}],\x22Date\x22:\x2221/11/2010\x22}");
+```
 
 在访问令牌中颁发的声明：
 
-    "array_in_json":{"Items":[{"Name":"Apple","Price":12.3},{"Name":"Grape","Price":3.21}],"Date":"21/11/2010"}
+```
+"array_in_json":{"Items":[{"Name":"Apple","Price":12.3},{"Name":"Grape","Price":3.21}],"Date":"21/11/2010"}
+```
 
 ### <a name="can-i-pass-resource-value-as-part-of-the-scope-value-like-how-requests-are-done-against-azure-ad"></a>是否可以像在 Azure AD 中完成请求那样将资源值作为作用域值的一部分进行传递？
-借助 Server 2019 上的 AD FS，你现在可以传递嵌入在 scope 参数中的资源值。 现在可以将 scope 参数组织成一个用空格分隔的列表，其中每个条目的结构都作为资源/范围。 例如  
-**< create a valid sample request>**
+借助 Server 2019 上的 AD FS，你现在可以传递嵌入在 scope 参数中的资源值。 现在可以将 scope 参数组织成一个用空格分隔的列表，其中每个条目的结构都作为资源/范围。 例如 <创建有效的示例请求>
 
 ### <a name="does-ad-fs-support-pkce-extension"></a>AD FS 是否支持 PKCE 扩展？
 Server 2019 中的 AD FS 支持适用于 OAuth 授权代码授予流的代码交换证明密钥 (PKCE)
@@ -137,11 +139,11 @@ Server 2019 中的 AD FS 支持适用于 OAuth 授权代码授予流的代码交
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>AD FS 支持哪些允许的作用域？
 - aza - 如果[对代理客户端使用 OAuth 2.0 协议扩展](/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)，并且 scope 参数包含作用域“aza”，则服务器将发布新的主刷新令牌并在响应的 refresh_token 字段中设置该令牌，以及将 refresh_token_expires_in 字段设置为新的主刷新令牌的生存期（如果强制执行的话）。
 - openid - 允许应用程序请求使用 OpenID Connect 授权协议。
-- logon_cert - logon_cert 作用域允许应用程序请求登录证书，这些证书可用于以交互方式登录通过身份验证的用户。 AD FS 服务器忽略响应中的 access_token 参数，改为提供 base64 编码的 CMS 证书链或 CMC 完整 PKI 响应。 [此处](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供更多详细信息。 
+- logon_cert - logon_cert 作用域允许应用程序请求登录证书，这些证书可用于以交互方式登录通过身份验证的用户。 AD FS 服务器忽略响应中的 access_token 参数，改为提供 base64 编码的 CMS 证书链或 CMC 完整 PKI 响应。 [此处](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供更多详细信息。
 - user_impersonation - user_impersonation 作用域是成功从 AD FS 请求代表访问令牌的必要条件。 有关如何使用此作用域的详细信息，请参阅[结合使用 OAuth 与 AD FS 2016 通过 On-Behalf-Off (OBO) 构建多层应用程序](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)。
 - vpn_cert - vpn_cert 作用域允许应用程序请求 VPN 证书，该证书可用于使用 EAP-TLS 身份验证建立 VPN 连接。 不再支持此作用域。
-- email - 允许应用程序请求登录用户的电子邮件声明。 不再支持此作用域。 
-- profile - 允许应用程序请求登录用户的个人资料相关声明。 不再支持此作用域。 
+- email - 允许应用程序请求登录用户的电子邮件声明。 不再支持此作用域。
+- profile - 允许应用程序请求登录用户的个人资料相关声明。 不再支持此作用域。
 
 
 ## <a name="operations"></a>操作
@@ -156,7 +158,7 @@ AD FS SSL 证书与 AD FS 管理管理单元中的 AD FS 服务通信证书不�
 
 [管理 AD FS 中的 SSL 协议](../operations/Manage-SSL-Protocols-in-AD-FS.md)
 
-### <a name="does-the-proxy-ssl-certificate-have-to-be-the-same-as-the-ad-fs-ssl-certificate"></a>代理 SSL 证书是否必须与 AD FS SSL 证书相同？  
+### <a name="does-the-proxy-ssl-certificate-have-to-be-the-same-as-the-ad-fs-ssl-certificate"></a>代理 SSL 证书是否必须与 AD FS SSL 证书相同？
 对于代理 SSL 证书和 AD FS SSL 证书，请使用以下指南：
 
 
@@ -164,10 +166,10 @@ AD FS SSL 证书与 AD FS 管理管理单元中的 AD FS 服务通信证书不�
 - 如果启用了 AD FS 属性“ExtendedProtectionTokenCheck”（AD FS 中的默认设置），则代理 SSL 证书必须与联合服务器 SSL 证书相同（使用相同的密钥）
 - 否则，代理 SSL 证书可以使用与 AD FS SSL 证书不同的密钥，但必须满足相同的[要求](./ad-fs-requirements.md)
 
-### <a name="why-do-i-only-see-a-password-login-on-ad-fs-and-not-my-other-authentication-methods-that-i-have-configured"></a>为什么只能在 AD FS 上看到密码登录，而看不到已配置的其他身份验证方法？ 
+### <a name="why-do-i-only-see-a-password-login-on-ad-fs-and-not-my-other-authentication-methods-that-i-have-configured"></a>为什么只能在 AD FS 上看到密码登录，而看不到已配置的其他身份验证方法？
 应用程序明确要求映射到已配置且已启用的身份验证方法的特定身份验证 URI 时，AD FS 仅在登录屏幕中显示一种身份验证方法。 这会在 WS 联合身份验证请求的“wauth”参数和 SAML 协议请求的“RequestedAuthnCtxRef”参数中进行传达。 因此，只显示请求的身份验证方法（例如密码登录）。
 
-将 AD FS 用于 Azure AD 时，应用程序通常会将 prompt=login 参数发送到 Azure AD。 Azure AD 默认将此转换为请求基于新密码的 AD FS 登录。 这是在网络内部的 AD FS 上看到密码登录或看不到使用证书登录的选项的最常见原因。 更改 Azure AD 中的联合域设置可轻松地解决此问题。 
+将 AD FS 用于 Azure AD 时，应用程序通常会将 prompt=login 参数发送到 Azure AD。 Azure AD 默认将此转换为请求基于新密码的 AD FS 登录。 这是在网络内部的 AD FS 上看到密码登录或看不到使用证书登录的选项的最常见原因。 更改 Azure AD 中的联合域设置可轻松地解决此问题。
 
 有关如何配置此设置的信息，请参阅 [Active Directory 联合身份验证服务 prompt=login 参数支持](../operations/AD-FS-Prompt-Login.md)。
 
@@ -208,7 +210,7 @@ AD FS SSL 证书与 AD FS 管理管理单元中的 AD FS 服务通信证书不�
 
 - id_token：与访问令牌相同
 
-### <a name="does-ad-fs-support-http-strict-transport-security-hsts"></a>AD FS 是否支持 HTTP 严格传输安全性 (HSTS)？  
+### <a name="does-ad-fs-support-http-strict-transport-security-hsts"></a>AD FS 是否支持 HTTP 严格传输安全性 (HSTS)？
 
 HTTP 严格传输安全性 (HSTS) 是一种 Web 安全策略机制，有助于减少具有 HTTP 和 HTTPS 终结点的服务的协议降级攻击和 Cookie 劫持。 它允许 Web 服务器声明 Web 浏览器（或其他符合要求的用户代理）应仅使用 HTTPS 与其进行交互，而并不通过 HTTP 协议进行交互。
 
@@ -224,7 +226,7 @@ Web 身份验证流量的所有 AD FS 终结点都通过 HTTPS 专门打开。  
  - x-ms-forwarded-client-ip：多值声明，其中包含通过 Exchange Online 转发给 ADFS 的所有值以及连接到 WAP 的设备 IP 地址。
  - Userip：对于 Extranet 请求，此声明将包含 x-ms-forwarded-client-ip 的值。  对于 Intranet 请求，此声明将包含与 x-ms-client-ip 相同的值。
 
- 此外，在 AD FS 2016（具有最新修补程序）和更高版本中，还支持捕获 x-forwarded-for 标头。 任何未在第 3 层转发的负载均衡器或网络设备（保留 IP）都应将传入客户端 IP 添加到行业标准 x-forwarded-for 标头中。 
+ 此外，在 AD FS 2016（具有最新修补程序）和更高版本中，还支持捕获 x-forwarded-for 标头。 任何未在第 3 层转发的负载均衡器或网络设备（保留 IP）都应将传入客户端 IP 添加到行业标准 x-forwarded-for 标头中。
 
 ### <a name="i-am-trying-to-get-additional-claims-on-the-user-info-endpoint-but-its-only-returning-subject-how-can-i-get-additional-claims"></a>我尝试在用户信息终结点上获取其他声明，但它仅返回使用者。 如何获取其他声明？
 AD FS 的 userinfo 终结点始终返回 OpenID 标准中指定的使用者声明。 AD FS 不提供通过 UserInfo 终结点请求的其他声明。 如果需要 ID 令牌中的其他声明，请参阅 [AD FS 中的自定义 ID 令牌](../development/custom-id-tokens-in-ad-fs.md)。
@@ -253,7 +255,7 @@ Android（适用于所有版本和所有设备）不支持从证书的 authority
 
 从一台计算机导出 SSL 证书，并将其导入到 AD FS 和 WAP 服务器的计算机个人存储中时，请确保导出私钥，并选择“个人信息交换 - PKCS #12”。
 
-重要的是，应选中“在证书路径中包含所有证书(如果可能)”和“导出所有扩展属性”复选框 。  
+重要的是，应选中“在证书路径中包含所有证书(如果可能)”和“导出所有扩展属性”复选框 。
 
 在 Windows 服务器上运行 certlm.msc，然后将 *.PFX 导入到计算机的个人证书存储中。 这将导致服务器将整个证书链传递到 ADAL 库。
 
@@ -270,7 +272,7 @@ AD FS 不支持 HEAD 请求。  应用程序不应对 AD FS 终结点使用 HEAD
 默认情况下，RP 令牌加密设置为 AES256，并且你无法将其更改为其他任何值。
 
 ### <a name="on-a-mixed-mode-farm-i-get-error-when-trying-to-set-the-new-ssl-certificate-using-set-adfssslcertificate--thumbprint-how-can-i-update-the-ssl-certificate-in-a-mixed-mode-ad-fs-farm"></a>在混合模式场中，尝试使用 Set-AdfsSslCertificate -Thumbprint 设置新的 SSL 证书时出现错误。 如何在混合模式 AD FS 场中更新 SSL 证书？
-混合模式 AD FS 场应为过渡状态。 建议在计划期间，要么在升级过程之前滚动 SSL 证书，要么在更新 SSL 证书之前完成过程并提高器场行为级别。 如果未完成此操作，则以下说明提供了更新 SSL 证书的功能。 
+混合模式 AD FS 场应为过渡状态。 建议在计划期间，要么在升级过程之前滚动 SSL 证书，要么在更新 SSL 证书之前完成过程并提高器场行为级别。 如果未完成此操作，则以下说明提供了更新 SSL 证书的功能。
 
 在 WAP 服务器上，仍可以使用 Set-WebApplicationProxySslCertificate。 在 ADFS 服务器上，需要使用 netsh。 按照下面提供的步骤操作：
 

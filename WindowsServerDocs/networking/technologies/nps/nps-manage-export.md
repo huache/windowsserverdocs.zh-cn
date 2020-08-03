@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8c1aef88aec45ee63614b889658daceca3779e91
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: bbc4982057c306e6f4b94c3c4bf8e8a2761db12a
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316004"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517802"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>导出 NPS 配置以便在其他服务器上导入
 
-适用于：Windows Server 2016
+适用于：Windows Server 2016
 
-可以从一个 NPS 导出整个 NPS 配置，包括 RADIUS 客户端和服务器、网络策略、连接请求策略、注册表和日志记录配置。 
+可以从一个 NPS 导出整个 NPS 配置，包括 RADIUS 客户端和服务器、网络策略、连接请求策略、注册表和日志记录配置。
 
 使用以下工具之一来导出 NPS 配置：
 
@@ -38,25 +38,29 @@ ms.locfileid: "80316004"
 
 对于 Windows Server 2012 及更高版本的操作系统版本，可以使用 Windows PowerShell 导出 NPS 配置。
 
-用于导出 NPS 配置的命令语法如下所示。 
+用于导出 NPS 配置的命令语法如下所示。
 
-    Export-NpsConfiguration -Path <filename>
+```powershell
+Export-NpsConfiguration -Path <filename>
+```
 
 下表列出了 Windows PowerShell 中**export-npsconfiguration** cmdlet 的参数。 粗体参数是必需的。
 
 |参数|说明|
 |---------|-----------|
-|Path|指定要导出 NPS 配置的 XML 文件的名称和位置。|
+|`Path`|指定要导出 NPS 配置的 XML 文件的名称和位置。|
 
 **管理凭据**
 
 若要完成此过程，你必须是Administrators组的成员。
 
-### <a name="export-example"></a>导出示例 
+### <a name="export-example"></a>导出示例
 
 在下面的示例中，NPS 配置将导出到位于本地驱动器上的 XML 文件。 若要运行此命令，请在源 NPS 上以管理员身份运行 Windows PowerShell，键入以下命令，然后按 Enter。
 
-`Export-NpsConfiguration –Path c:\config.xml` 
+```powershell
+Export-NpsConfiguration –Path c:\config.xml
+```
 
 有关详细信息，请参阅[export-npsconfiguration](https://technet.microsoft.com/library/jj872749.aspx)。
 
@@ -64,21 +68,25 @@ ms.locfileid: "80316004"
 
 用于在目标服务器上导入 NPS 配置的命令语法如下所示。
 
-    Import-NpsConfiguration [-Path] <String> [ <CommonParameters>]
+```powershell
+Import-NpsConfiguration [-Path] <String> [ <CommonParameters>]
+```
 
 ### <a name="import-example"></a>导入示例
 
 下面的命令将名为 C:\Npsconfig.xml 的文件中的设置导入到 NPS。 若要运行此命令，请在目标 NPS 上以管理员身份运行 Windows PowerShell，键入以下命令，然后按 Enter。
 
-    PS C:\> Import-NpsConfiguration -Path "C:\Npsconfig.xml"
+```powershell
+Import-NpsConfiguration -Path "C:\Npsconfig.xml"
+```
 
 有关详细信息，请参阅[export-npsconfiguration](https://technet.microsoft.com/library/jj872750.aspx)。
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>使用 Netsh 导出和导入 NPS 配置
 
-可以使用 Network Shell \(Netsh\) 通过使用**Netsh NPS 导出**命令导出 NPS 配置。
+可以通过使用**Netsh NPS 导出**命令，使用 Network Shell （Netsh）导出 NPS 配置。
 
-运行**netsh nps import**命令时，将自动刷新 nps，并提供更新的配置设置。 您无需在目标计算机上停止 NPS 即可运行**netsh NPS import**命令，但是，如果在配置导入期间 nps 控制台或 nps mmc 管理单元处于打开状态，则在您刷新视图之前，对服务器配置所做的更改将不可见。 
+运行**netsh nps import**命令时，将自动刷新 nps，并提供更新的配置设置。 您无需在目标计算机上停止 NPS 即可运行**netsh NPS import**命令，但是，如果在配置导入期间 nps 控制台或 nps mmc 管理单元处于打开状态，则在您刷新视图之前，对服务器配置所做的更改将不可见。
 
 > [!NOTE]
 > 使用**netsh nps export**命令时，需要提供具有值 **"是"** 的命令参数**exportPSK** 。 此参数和值明确表明你要导出 NPS 配置，并且导出的 XML 文件包含 RADIUS 客户端和远程 RADIUS 服务器组成员的未加密共享机密。
@@ -91,15 +99,16 @@ ms.locfileid: "80316004"
 
 1. 在源 NPS 上，打开**命令提示符**，键入**netsh**，然后按 enter。
 
-2. 在**netsh**提示符下，键入**nps**，然后按 enter。 
+2. 在**netsh**提示符下，键入**nps**，然后按 enter。
 
-3. 在**netsh nps**提示符下，键入**export filename =** "*path\file.xml*" **exportPSK = YES**，其中*path*是要保存 nps 配置文件的文件夹位置， *file*是要保存的 xml 文件的名称。 按 Enter。 
+3. 在**netsh nps**提示符下，键入**export filename =**"*path\file.xml*" **exportPSK = YES**，其中*path*是要保存 nps 配置文件的文件夹位置， *file*是要保存的 XML 文件的名称。 按 Enter。
 
-这会在 XML 文件中存储配置设置 \(包括注册表设置\)。 路径可以是相对路径或绝对路径，也可以是 \(UNC\) 路径的通用命名约定。 按下 Enter 后，将显示一条消息，指示导出到文件是否成功。
+    这会在 XML 文件中存储配置设置（包括注册表设置）。 路径可以是相对路径或绝对路径，也可以是通用命名约定（UNC）路径。 按下 Enter 后，将显示一条消息，指示导出到文件是否成功。
 
 4. 将创建的文件复制到目标 NPS。
 
-5. 在目标 NPS 上的命令提示符处，键入**netsh NPS import filename =** "*path\file.xml*"，然后按 enter。 将出现一条消息，指示是否已成功导入 XML 文件。
+5. 在目标 NPS 上的命令提示符处，键入**netsh NPS import filename =**"*path\file.xml*"，然后按 enter。 将出现一条消息，指示是否已成功导入 XML 文件。
 
-有关 netsh 的详细信息，请参阅[Network Shell （netsh）](../netsh/netsh.md)。
+## <a name="additional-references"></a>其他参考
 
+- [Network Shell (Netsh)](../netsh/netsh.md)

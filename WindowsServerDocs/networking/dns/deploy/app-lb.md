@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 86ce83142cafe8ebe61aff2fb193e9b646172651
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 50ac17bafb09eddc6bb02df1d4decf3636f4db17
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317879"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518293"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>使用 DNS 策略执行应用程序负载平衡
 
@@ -48,13 +48,13 @@ Contosogiftservices.com 网站托管在多个数据中心中，每个数据中�
 
 ### <a name="how-application-load-balancing-works"></a>应用程序负载平衡的工作方式
 
-使用此示例方案为使用 DNS 策略的 DNS 服务器配置了应用程序负载平衡后，DNS 服务器将在50% 的时间使用西雅图 Web 服务器地址，25% 的时间为达拉斯 Web 服务器地址，25% 的时间为芝加哥 Web 服务器地址。
+使用此示例方案为使用 DNS 策略的 DNS 服务器配置了应用程序负载平衡后，DNS 服务器将在50% 的时间使用西雅图 Web 服务器地址、达拉斯 Web 服务器地址25% 的时间以及芝加哥 Web 服务器地址的25% 的时间来响应。
 
 因此，对于每个 DNS 服务器收到的四个查询，它会响应两个针对西雅图的响应，一个用于达拉斯和芝加哥。
 
 使用 DNS 策略的负载平衡的一个可能问题是 DNS 客户端和解析程序/LDNS 缓存 DNS 记录，这可能会干扰负载平衡，因为客户端或解析程序不会向 DNS 服务器发送查询。
 
-您可以通过使用较短的时间\-\-应进行负载平衡的 DNS 记录的 \(TTL\) 值，来缓解此行为的影响。
+您可以通过 \- \- \( \) 对应进行负载平衡的 DNS 记录使用较短的生存时间 TTL 值来缓解此行为的影响。
 
 ### <a name="how-to-configure-application-load-balancing"></a>如何配置应用程序负载平衡
 
@@ -70,12 +70,12 @@ Contosogiftservices.com 网站托管在多个数据中心中，每个数据中�
 >默认情况下，在 DNS 区域中存在区域作用域。 此区域作用域具有与区域相同的名称，并且旧式 DNS 操作在此作用域上起作用。
 
 你可以使用以下 Windows PowerShell 命令创建区域作用域。
-    
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneScope"
-    
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DallasZoneScope"
-    
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "ChicagoZoneScope"
+
+```powershell
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneScope"
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DallasZoneScope"
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "ChicagoZoneScope"
+```
 
 有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
@@ -85,34 +85,34 @@ Contosogiftservices.com 网站托管在多个数据中心中，每个数据中�
 
 在**SeattleZoneScope**中，你可以添加具有位于西雅图 datacenter 中的 IP 地址192.0.0.1 的记录 www.contosogiftservices.com。
 
-在**ChicagoZoneScope**中，可以将同一记录添加到芝加哥数据中心的 IP 地址 182.0.0.1 \(www.contosogiftservices.com\)。
+在**ChicagoZoneScope**中，可以在 \( \) 芝加哥数据中心添加与 IP 地址182.0.0.1 相同的记录 www.contosogiftservices.com。
 
-同样，在**DallasZoneScope**中，可以使用 IP 地址162.0.0.1 在芝加哥数据中心添加记录 \(www.contosogiftservices.com\)。
+同样，在**DallasZoneScope**中，可以 \( \) 使用 IP 地址162.0.0.1 在芝加哥数据中心添加记录 www.contosogiftservices.com。
 
 你可以使用以下 Windows PowerShell 命令将记录添加到区域作用域。
-    
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.0.0.1" -ZoneScope "SeattleZoneScope
-    
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "182.0.0.1" -ZoneScope "ChicagoZoneScope"
-    
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "162.0.0.1" -ZoneScope "DallasZoneScope"
-    
+
+```powershell
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.0.0.1" -ZoneScope "SeattleZoneScope"
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "182.0.0.1" -ZoneScope "ChicagoZoneScope"
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "162.0.0.1" -ZoneScope "DallasZoneScope"
+```
 
 有关详细信息，请参阅[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 #### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>创建 DNS 策略
 
-创建分区（区域作用域）并添加记录后，必须创建在这些范围内分发传入查询的 DNS 策略，以便使用 Web IP 地址对 contosogiftservices.com 的50% 的查询进行响应西雅图和达拉斯数据中心之间平均分布了西雅图数据中心的服务器。
+创建分区（区域作用域）并添加记录后，必须创建在这些范围内分发传入查询的 DNS 策略，以便使用西雅图 datacenter 中 Web 服务器的 IP 地址对 contosogiftservices.com 的50% 的查询做出响应，其余部分则在芝加哥和达拉斯数据中心之间均匀分布。
 
 你可以使用以下 Windows PowerShell 命令创建在这三个数据中心之间平衡应用程序流量的 DNS 策略。
 
 >[!NOTE]
->在下面的示例命令中，expression – ZoneScope "SeattleZoneScope，2;ChicagoZoneScope，1;DallasZoneScope，1 "使用包含参数组合 \<ZoneScope\>\<权重\>的数组配置 DNS 服务器。
-    
-    Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
-    
+>在下面的示例命令中，expression – ZoneScope "SeattleZoneScope，2;ChicagoZoneScope，1;DallasZoneScope，1 "使用包含参数组合的数组配置 DNS 服务器 `<ZoneScope>` `<weight>` 。
 
-有关详细信息，请参阅[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。  
+```powershell
+Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
+```
+
+有关详细信息，请参阅[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 现在，你已成功创建了跨三个不同数据中心中的 Web 服务器提供应用程序负载平衡的 DNS 策略。
 

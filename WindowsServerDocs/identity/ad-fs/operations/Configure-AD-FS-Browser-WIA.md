@@ -8,12 +8,12 @@ ms.date: 03/20/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1bcd4268444f49489d3e7a04c55d10cddaf92e00
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: fff48467519e5bfb8121bf887a773bc75defbb4c
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966529"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519796"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>通过 AD FS 将浏览器配置为使用 Windows 集成身份验证（WIA）
 
@@ -21,21 +21,22 @@ ms.locfileid: "86966529"
 
 AD FS 2016 现在提供了一个改进的默认设置，使边缘浏览器可以执行 WIA，同时也不会错误地捕获 Windows Phone：
 
-    =~Windows\s*NT.*Edge
+```
+=~Windows\s*NT.*Edge
+```
 
 上述说明，你不再需要配置单独的用户代理字符串来支持常见边缘方案，即使它们很频繁地进行更新。
 
 对于其他浏览器，请配置 AD FS 属性**WiaSupportedUserAgents** ，以根据所使用的浏览器添加所需的值。  你可以使用以下过程。
 
-
-
 ### <a name="view-wiasupporteduseragent-settings"></a>查看 WIASupportedUserAgent 设置
+
 **WIASupportedUserAgents**定义了支持 WIA 的用户代理。 当在浏览器或浏览器控件中执行登录名时，AD FS 会分析用户代理字符串。
 
 你可以使用以下 PowerShell 示例查看当前设置：
 
 ```powershell
-    Get-AdfsProperties | select -ExpandProperty WiaSupportedUserAgents
+Get-AdfsProperties | select -ExpandProperty WiaSupportedUserAgents
 ```
 
 ![WIA 支持](../operations/media/Configure-AD-FS-Browser-WIA/wiasupport.png)
@@ -46,18 +47,16 @@ AD FS 2016 现在提供了一个改进的默认设置，使边缘浏览器可以
 如果在 Windows Server 2012 R2 或更早版本上有 AD FS：
 
 ```powershell
-   Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client", "Edg/79.0.309.43")
+Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client", "Edg/79.0.309.43")
 ```
 
 如果在 Windows Server 2016 或更高版本上有 AD FS：
 
 ```powershell
-   Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client", "Edg/*")
+Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client", "Edg/*")
 ```
 
 上述命令将确保 AD FS 仅涵盖 WIA 的以下用例：
-
-
 
 |用户代理|用例|
 |-----|-----|
@@ -70,10 +69,9 @@ AD FS 2016 现在提供了一个改进的默认设置，使边缘浏览器可以
 |Windows NT 6.2;Trident/7。0</br></br>Windows NT 6.2;Win6464Trident/7。0</br></br>Windows NT 6.2;WOW64Trident/7。0|Windows 8 桌面操作系统，不同平台|
 |Windows NT 6.1;Trident/7。0</br></br>Windows NT 6.1;Win6464Trident/7。0</br></br>Windows NT 6.1;WOW64Trident/7。0|Windows 7 桌面操作系统，不同平台|
 |Edg/79.0.309.43 | 适用于 Windows Server 2012 R2 或更早版本的 Microsoft Edge （Chromium） |
-|Edg/*| 适用于 Windows Server 2016 或更高版本的 Microsoft Edge （Chromium）|  
+|Edg/*| 适用于 Windows Server 2016 或更高版本的 Microsoft Edge （Chromium）|
 |“MSIPC”| Microsoft Information Protection and Control 客户端|
 |Windows Rights Management 客户端|Windows Rights Management 客户端|
-
 
 ### <a name="additional-links"></a>其他链接
 

@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 1bd5d95739bc1c975f5f0c4d7efb8dc6f91e0412
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 934ef170f6cbd5a2bd4031d336907d6b925cff06
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954399"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519896"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL.JS 与 AD FS 2016 或更高版本结合使用生成单个页面 web 应用程序
 
@@ -25,11 +25,10 @@ ms.locfileid: "86954399"
 >你可以在此处生成的示例仅供教育之用。 这些说明适用于公开模型所需元素的最简单的最小实现。 该示例可能不包括错误处理和其他相关功能的所有方面。
 
 >[!NOTE]
->本演练**仅**适用于 AD FS Server 2016 及更高版本 
+>本演练**仅**适用于 AD FS Server 2016 及更高版本
 
 ## <a name="overview"></a>概述
 在此示例中，我们将创建一个身份验证流，其中，单个页面应用程序客户端将针对 AD FS 进行身份验证，以确保对后端上 WebAPI 资源的访问。 下面是整体身份验证流
-
 
 ![AD FS 授权](media/Single-Page-Application-with-AD-FS/authenticationflow.PNG)
 
@@ -54,14 +53,14 @@ ms.locfileid: "86954399"
 - [AD DS 部署](../../ad-ds/deploy/AD-DS-Deployment.md)
 - [AD FS 部署](../AD-FS-Deployment.md)
 
-
-
 ## <a name="clone-or-download-this-repository"></a>克隆或下载此存储库
 我们将使用创建的用于将 Azure AD 集成到 AngularJS 单页面应用的示例应用程序，并将其修改为通过使用 AD FS 来保护后端资源。
 
 从 shell 或命令行：
 
-    git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
+```
+git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
+```
 
 ## <a name="about-the-code"></a>关于代码
 包含身份验证逻辑的主要文件如下：
@@ -100,6 +99,7 @@ ms.locfileid: "86954399"
 
 打开**app.js**文件，将**adalProvider.init**定义更改为：
 
+```
     adalProvider.init(
         {
             instance: 'https://fs.contoso.com/', // your STS URL
@@ -109,6 +109,7 @@ ms.locfileid: "86954399"
         },
         $httpProvider
     );
+```
 
 |配置|说明|
 |--------|--------|
@@ -119,9 +120,10 @@ ms.locfileid: "86954399"
 ## <a name="configure-webapi-to-use-ad-fs"></a>将 WebAPI 配置为使用 AD FS
 打开示例中的**Startup.Auth.cs**文件，并在开头添加以下内容：
 
+```
     using System.IdentityModel.Tokens;
 
-取消
+remove:
 
     app.UseWindowsAzureActiveDirectoryBearerAuthentication(
         new WindowsAzureActiveDirectoryBearerAuthenticationOptions
@@ -131,7 +133,7 @@ ms.locfileid: "86954399"
         }
     );
 
-并添加：
+and add:
 
     app.UseActiveDirectoryFederationServicesBearerAuthentication(
         new ActiveDirectoryFederationServicesBearerAuthenticationOptions
@@ -144,6 +146,7 @@ ms.locfileid: "86954399"
             }
         }
     );
+```
 
 |参数|描述|
 |--------|--------|
@@ -153,6 +156,7 @@ ms.locfileid: "86954399"
 
 ## <a name="add-application-configuration-for-ad-fs"></a>为 AD FS 添加应用程序配置
 更改 appsettings，如下所示：
+
 ```xml
 <appSettings>
     <add key="ida:Audience" value="https://localhost:44326/" />
@@ -181,4 +185,4 @@ ms.locfileid: "86954399"
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
 ## <a name="next-steps"></a>后续步骤
-[AD FS 开发](../../ad-fs/AD-FS-Development.md)  
+[AD FS 开发](../../ad-fs/AD-FS-Development.md)

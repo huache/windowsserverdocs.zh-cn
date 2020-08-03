@@ -8,12 +8,12 @@ ms.assetid: 3266328c-ca82-40d2-90ca-854b7088ccaa
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 9e288908df5f5de70f1e369cff08821b8d178de7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 176fa80cd82fdaa3ac76a8661d189b16aa9631ff
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80862210"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517892"
 ---
 # <a name="configure-the-order-of-network-interfaces"></a>配置网络接口顺序
 
@@ -29,7 +29,9 @@ ms.locfileid: "80862210"
 
 下面的 Windows PowerShell 命令示例显示了此参数的用法。
 
-    Set-NetIPInterface -InterfaceIndex 12 -InterfaceMetric 15
+```powershell
+Set-NetIPInterface -InterfaceIndex 12 -InterfaceMetric 15
+```
 
 适配器在列表中的显示顺序取决于 IPv4 或 IPv6 接口指标。  有关详细信息，请参阅[GetAdaptersAddresses 函数](https://msdn.microsoft.com/library/windows/desktop/aa365915%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)。
 

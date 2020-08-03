@@ -8,22 +8,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: a2e4b17a0f8f38812366dc2913e6c2ee25d4d137
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c814098aeb73ca186e0a0db668f477f9cc1f5cf9
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961149"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409567"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 中的新增功能
 
->适用于：Windows Server（半年频道）
+> 适用于：Windows Server（半年频道）
 
 <img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;若要了解 Windows 中的最新功能，请参阅 [Windows Server 中的新增功能](whats-new-in-windows-server.md)。 本部分的内容介绍 Windows Server 版本 1709 中的新增功能和更改的功能。 此处列出的新功能和更改在你使用此版本时最可能具有最大影响力。 另请参阅 [Windows Server 版本 1709](https://cloudblogs.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)。
 
 > [!IMPORTANT]
 > 从 2019 年 4 月 9 日开始，Windows Server 版本 1709 不再接受支持。
-
 
 ## <a name="new-cadence-of-releases"></a>新的发布节奏
 
@@ -33,21 +32,21 @@ ms.locfileid: "86961149"
 
 下表概述了版本频道。
 
-|   | 半年频道 | 长期服务频道 |
-| ------------- | ------------- | ------------ |
-| 发布节奏  | 每年两次（春季和秋季）  | 每 2 - 3 年 |
-| 支持计划  | 18 个月主要生产支持  | 5 年主要支持 + 5 年外延支持 |
-| 可用性  | 软件保障或 Azure（云托管）  | 全部频道 |
-| 命名约定  | Windows Server 版本 YYMM  | Windows Server YYYY |
+| 说明 | 半年频道 | 长期服务频道 |
+| ------------- |--| -- |
+| 发布节奏 | 每年两次（春季和秋季） | 每 2 - 3 年 |
+| 支持计划 | 18 个月主要生产支持 | 5 年主要支持 + 5 年外延支持 |
+| 可用性 | 软件保障或 Azure（云托管） | 全部频道 |
+| 命名约定 | Windows Server 版本 YYMM | Windows Server YYYY |
 
 有关详细信息，请参阅[服务渠道的比较](../get-started-19/servicing-channels-19.md)。
 
 ## <a name="application-containers-and-micro-services"></a>应用程序容器和微服务
 
-- Server Core 容器映像已针对可通过极少量更改将现有代码库或应用程序迁移到容器中的直接迁移方案进行了进一步优化，而且还缩小了 60%。 
+- Server Core 容器映像已针对可通过极少量更改将现有代码库或应用程序迁移到容器中的直接迁移方案进行了进一步优化，而且还缩小了 60%。
 - Nano Server 容器映像几乎缩小了 80%。
     - 在 Windows Server 半年频道中，Nano Server 作为容器基本 OS 映像从 390 MB 降低到了 80 MB。
-- 带 Hyper-V 隔离的 Linux 容器 
+- 带 Hyper-V 隔离的 Linux 容器
 
 有关详细信息，请参阅 [Windows Server 的下一个版本中对 Nano Server 进行的更改](./nano-in-semi-annual-channel.md)以及[适用于开发人员的 Windows Server 版本 1709](https://cloudblogs.microsoft.com/windowsserver/2017/09/13/sneak-peek-3-windows-server-version-1709-for-developers/)。
 
@@ -58,7 +57,7 @@ Project Honolulu 可提供直观的全新管理体验，用于管理电脑、Win
 
 ## <a name="compute"></a>计算
 
-**Nano 容器和 Server Core 容器**：首先且最重要的是，此版本与推动应用程序创新相关。 Nano Server 或 Nano 型主机已被弃用并且被 Nano 容器所取代，此容器是作为容器映像运行的 Nano。 
+**Nano 容器和 Server Core 容器**：首先且最重要的是，此版本与推动应用程序创新相关。 Nano Server 或 Nano 型主机已被弃用并且被 Nano 容器所取代，此容器是作为容器映像运行的 Nano。
 
 有关容器的详细信息，请参阅[容器网络概述](../networking/sdn/technologies/containers/container-networking-overview.md)。
 
@@ -91,15 +90,15 @@ Project Honolulu 可提供直观的全新管理体验，用于管理电脑、Win
 ## <a name="storage"></a>存储
 
 **存储副本**：由 Windows Server 2016 中的存储副本添加的灾难恢复保护现在进行了扩展，其中包括：
-- **测试故障转移**：现在可以通过测试故障转移功能来选择安装目标存储。 可以在目标节点上临时安装复制的存储的快照以便进行测试或备份。  有关详细信息，请参阅[有关存储副本的常见问题](https://aka.ms/srfaq)。 
+- **测试故障转移**：现在可以通过测试故障转移功能来选择安装目标存储。 可以在目标节点上临时安装复制的存储的快照以便进行测试或备份。  有关详细信息，请参阅[有关存储副本的常见问题](https://aka.ms/srfaq)。
 - **Project Honolulu 支持**：Project Honolulu 中现在提供对服务器到服务器复制图形管理的支持。 这不需要使用 PowerShell 来管理常见的灾难保护工作负荷。
 
-**SMB**： 
-- **SMB1 和来宾身份验证删除**：默认情况下，Windows Server 版本 1709 不再安装 SMB1 客户端和服务器。 此外，SMB2 及更高版本中作为来宾进行身份验证的功能默认情况下处于关闭状态。 有关详细信息，请查看[默认情况下，Windows 10 版本 1709 和 Windows Server 版本 1709 中未安装 SMBv1](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)。 
+**SMB**：
+- **SMB1 和来宾身份验证删除**：默认情况下，Windows Server 版本 1709 不再安装 SMB1 客户端和服务器。 此外，SMB2 及更高版本中作为来宾进行身份验证的功能默认情况下处于关闭状态。 有关详细信息，请查看[默认情况下，Windows 10 版本 1709 和 Windows Server 版本 1709 中未安装 SMBv1](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)。
 
 - **SMB2/SMB3 安全性和兼容性**：添加了安全性和应用程序兼容性的附加选项（包括针对旧版应用程序在 SMB2+ 中禁用 oplock 的功能），并且这些选项要求从客户端对每个连接都进行签名或加密。 有关详细信息，请查看 SMBShare PowerShell 模块帮助。
 
-**重复数据删除**： 
+**重复数据删除**：
 - **重复数据删除现在支持 ReFS**：不再需要在现代 ReFS 文件系统的优势与重复数据删除功能之间进行选择：现在，只要可以启用 ReFS，就可以启用重复数据删除。 使用 ReFS 将存储效率提高 95% 以上。
 - **适用于删除了重复数据的卷优化入口/出口的 DataPort API**：开发人员现在可以利用重复数据删除功能所了解的高效数据存储方式，在卷、服务器和群集之间高效移动数据。
 
@@ -150,7 +149,7 @@ Project Honolulu 可提供直观的全新管理体验，用于管理电脑、Win
 **软件定义的网络**
 
 - **虚拟网络加密**是一项新功能，能够在标记为“启用加密”的子网内相互通信的虚拟机之间加密虚拟网络流量。 该功能利用虚拟子网上的数据报传输层安全 (DTLS) 功能来加密数据包。  DTLS 可以防止能够访问物理网络的任何人进行窃听、篡改和伪造。
- 
+
 **Windows 10 VPN**
 
 - **预登录基础结构隧道**。 默认情况下，当用户未登录其计算机或设备时，Windows 10 VPN 不会自动创建基础结构隧道。 可将 Windows 10 VPN 配置为使用 VPN 配置文件中的设备隧道 (prelogon) 功能自动创建预登录基础结构隧道。

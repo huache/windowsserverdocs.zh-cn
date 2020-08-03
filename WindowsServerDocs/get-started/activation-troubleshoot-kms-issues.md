@@ -1,19 +1,19 @@
 ---
 title: KMS 激活已知问题
 description: 描述在 KMS 激活过程中可能发生的常见问题，并提供解决方法和指南
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 10/3/2019
 ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 3446ad0954510d8c96e9a2d361f24c90d325b782
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 14cdf24bc7a88acbfa226954e10274ee47a64b2a
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826250"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409978"
 ---
 # <a name="kms-activation-known-issues"></a>KMS 激活：已知问题
 
@@ -34,7 +34,7 @@ KMS 主机无需备份。 但是，如果使用工具定期清理事件日志，
 
 ## <a name="the-kms-client-computer-does-not-activate"></a>KMS 客户端计算机未激活
 
-验证是否已达到 KMS 激活阈值。 在 KMS 主机上，运行 Slmgr.vbs 并使用 /dli 命令行选项来确定主机的当前计数  。 在 KMS 主机的计数达到 25 之前，Windows 7 客户端计算机都无法激活。 Windows Server 2008 R2 KMS 客户端需要在 KMS 计数为 5 时才能激活。 有关 KMS 要求的详细信息，请参阅[批量激活计划指南](https://go.microsoft.com/fwlink/?linkid=155926)。 
+验证是否已达到 KMS 激活阈值。 在 KMS 主机上，运行 Slmgr.vbs 并使用 /dli 命令行选项来确定主机的当前计数  。 在 KMS 主机的计数达到 25 之前，Windows 7 客户端计算机都无法激活。 Windows Server 2008 R2 KMS 客户端需要在 KMS 计数为 5 时才能激活。 有关 KMS 要求的详细信息，请参阅[批量激活计划指南](https://go.microsoft.com/fwlink/?linkid=155926)。
 
 在 KMS 客户端计算机上，在应用程序事件日志中查找事件 ID 12289。 查看此事件以了解以下信息：
 

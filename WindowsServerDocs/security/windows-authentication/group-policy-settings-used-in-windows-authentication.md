@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: d5268a5d95dd99bade89015863ea3eadf1b7913a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9cbf10e9ebce5bbe0865f28001d0c505b42c9742
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475504"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517992"
 ---
 # <a name="group-policy-settings-used-in-windows-authentication"></a>Windows 身份验证中使用的组策略设置
 
@@ -25,7 +25,7 @@ ms.locfileid: "85475504"
 你可以通过将用户、计算机和服务帐户添加到组，然后将身份验证策略应用于这些组，来管理 Windows 操作系统中的身份验证。 这些策略定义为本地安全策略和管理模板，也称为组策略设置。 通过使用组策略，可以在整个组织中配置和分发这两个集。
 
 > [!NOTE]
-> Windows Server 2012 R2 中引入的功能使你可以使用受保护的帐户为目标服务或应用程序（通常称为身份验证接收器）配置身份验证策略。 有关如何在 Active Directory 中执行此操作的信息，请参阅[如何配置受保护的帐户](how-to-configure-protected-accounts.md)。
+> Windows Server 2012 R2 中引入的功能使你可以使用受保护的帐户为目标服务或应用程序（通常称为身份验证接收器）配置身份验证策略。 有关如何在 Active Directory 中执行此操作的信息，请参阅[如何配置受保护的帐户](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)。
 
 例如，你可以根据组织中的功能，将以下策略应用于组：
 
@@ -39,7 +39,7 @@ ms.locfileid: "85475504"
 
 下表列出了与身份验证相关的策略组，并提供指向可帮助你配置这些策略的文档的链接。
 
-|策略组|位置|描述|
+|策略组|位置|说明|
 |--------|------|--------|
 |**密码策略**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 Settings\Account 策略|密码策略影响密码的特征和行为。 密码策略用于域帐户或本地用户帐户。 它们确定密码设置，如强制和生存期。<p>有关特定设置的信息，请参阅[密码策略](https://technet.microsoft.com/itpro/windows/keep-secure/password-policy)。|
 |**帐户锁定策略**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 Settings\Account 策略|帐户锁定策略选项在失败的登录尝试次数后禁用帐户。 使用这些选项可帮助检测和阻止破解密码的尝试。<p>有关帐户锁定策略选项的信息，请参阅[帐户锁定策略](https://technet.microsoft.com/itpro/windows/keep-secure/account-lockout-policy)。|

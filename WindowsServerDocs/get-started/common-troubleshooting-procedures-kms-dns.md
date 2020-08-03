@@ -1,17 +1,17 @@
 ---
 title: 用于排查 DNS 相关激活问题的指南
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 09/10/2019
 ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab2a0eb7c9d29f8d42bd004aad27f9084e38641
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 40d2dbdb9ae747a9e23016558aeb7db4210562b3
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962479"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409938"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>用于排查 DNS 相关激活问题的指南
 

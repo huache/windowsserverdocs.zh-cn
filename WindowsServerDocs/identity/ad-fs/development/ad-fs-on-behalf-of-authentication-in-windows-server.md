@@ -8,25 +8,25 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: febd79ea6feb0ef3d4e6f6d5659f2eb13e403a4b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d13cd27efc2387911f8c66bf083509e60e7e5b31
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962189"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519876"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>在 AD FS 2016 或更高版本中，使用 OAuth （OBO）创建一个多层应用程序
 
-
 本演练提供了使用 Windows Server 2016 TP5 或更高版本中的 AD FS 来实现代表（OBO）身份验证的说明。 若要了解有关 OBO authentication 的详细信息，请阅读[AD FS OpenID connect/OAuth 流和应用程序方案](../../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
 
->警告：你可以在此处生成的示例仅供教育之用。 这些说明适用于公开模型所需元素的最简单的最小实现。 该示例可能不包括错误处理的所有方面和其他相关功能，仅侧重于获取成功的 OBO 身份验证。
+> [!WARNING]
+> 你可以在此处生成的示例仅供教育之用。 这些说明适用于公开模型所需元素的最简单的最小实现。 该示例可能不包括错误处理的所有方面和其他相关功能，仅侧重于获取成功的 OBO 身份验证。
 
 ## <a name="overview"></a>概述
 
 在此示例中，我们将创建一个身份验证流，其中，客户端将访问中间层 Web 服务，然后 Web 服务将代表经过身份验证的客户端进行操作以获取访问令牌。
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO28.png)
+![AD FS 代表关系图](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO28.png)
 
 下面是示例将获得的身份验证流
 1. 客户端向 AD FS 授权终结点进行身份验证并请求授权代码
@@ -42,15 +42,11 @@ ms.locfileid: "86962189"
 
 示例将包含三个模块
 
-
 模块 | 说明
 -------|------------
 ToDoClient | 用户与之交互的 Native client
 ToDoService | 用作后端 WebAPI 客户端的中间层 web API
 WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的后端 web api
-
-
-
 
 ## <a name="setting-up-the-development-box"></a>设置开发框
 
@@ -78,7 +74,9 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 从 shell 或命令行：
 
-    git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
+```
+git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
+```
 
 ## <a name="modifying-the-sample"></a>修改示例
 
@@ -123,12 +121,14 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 若要启用代表身份验证，我们需要确保 AD FS 将 user_impersonation 的访问令牌返回到客户端。 修改 ToDoListServiceWebApi 的声明颁发，使其包含以下三个自定义规则：
 
-    @RuleName = "All claims"
-    c:[]
-    => issue(claim = c);
+```
+@RuleName = "All claims"
+c:[]
+=> issue(claim = c);
 
-    @RuleName = "Issue user_impersonation scope"
-    => issue(Type = "http://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
+@RuleName = "Issue user_impersonation scope"
+=> issue(Type = "http://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
+```
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO10.PNG)
 
@@ -147,7 +147,6 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO20.PNG)
 
 单击 "下一步"，随即会显示用于配置应用程序凭据的页面。 单击 "生成共享机密"。 系统会显示自动生成的密码。 在某个位置复制机密，因为在 visual studio 中配置 ToDoListService 时需要用到它。
-
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO17.PNG)
 
@@ -169,7 +168,8 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 App.Config 中的**appSettings**应如下所示：
 
-    <appSettings>
+```
+<appSettings>
     <!--<add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.onmicrosoft.com]" />-->
     <add key="ida:ClientId" value="c7f7b85c-497c-4589-877f-b17a0bd13398" />
     <add key="ida:RedirectUri" value="https://arbitraryuri.com/" />
@@ -177,7 +177,8 @@ App.Config 中的**appSettings**应如下所示：
     <!--<add key="ida:AADInstance" value="https://login.microsoftonline.com/{0}" />-->
     <add key="ida:TodoListBaseAddress" value="https://localhost:44321" />
     <add key="ida:Authority" value="https://fs.anandmsft.com/adfs/"/>
-    </appSettings>
+</appSettings>
+```
 
 #### <a name="modifying-the-code"></a>修改代码
 
@@ -185,21 +186,29 @@ MainWindow.xaml.cs
 
 注释从应用程序配置读取租户信息的行
 
-    //private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
-    //private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
+```
+//private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
+//private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
+```
 
 将字符串颁发机构的值更改为
 
-    private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
+```
+private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
+```
 
 更改代码以读取 ToDoListResourceId 和 ToDoListBaseAddress 的正确值
 
-    private static string todoListResourceId = ConfigurationManager.AppSettings["ida:TodoListResourceId"];
-    private static string todoListBaseAddress = ConfigurationManager.AppSettings["ida:TodoListBaseAddress"];
+```
+private static string todoListResourceId = ConfigurationManager.AppSettings["ida:TodoListResourceId"];
+private static string todoListBaseAddress = ConfigurationManager.AppSettings["ida:TodoListBaseAddress"];
+```
 
 在函数 Mainwindow.xaml （）中，将 authcontext 初始化更改为：
 
-    authContext = new AuthenticationContext(authority, false);
+```
+authContext = new AuthenticationContext(authority, false);
+```
 
 ### <a name="adding-the-backend-resource"></a>添加后端资源
 
@@ -227,25 +236,25 @@ MainWindow.xaml.cs
 
 * 在控制器中添加以下代码：
 
-```cs
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Net;
-    using System.Net.Http;
-    using System.Web.Http;
-    namespace WebAPIOBO.Controllers
-    {
-        [Authorize]
-        public class WebAPIOBOController : ApiController
+    ```cs
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using System.Net;
+        using System.Net.Http;
+        using System.Web.Http;
+        namespace WebAPIOBO.Controllers
         {
-            public IHttpActionResult Get()
+            [Authorize]
+            public class WebAPIOBOController : ApiController
             {
-                return Ok($"WebAPI via OBO (user: {User.Identity.Name}");
+                public IHttpActionResult Get()
+                {
+                    return Ok($"WebAPI via OBO (user: {User.Identity.Name}");
+                }
             }
         }
-    }
-```
+    ```
 
 当任何人向 WebAPI WebAPIOBO 发出 Get 请求时，此代码将直接返回字符串
 
@@ -265,7 +274,6 @@ MainWindow.xaml.cs
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO5.PNG)
 
-
 ### <a name="modifying-the-todolistservice-code"></a>修改 ToDoListService 代码
 
 #### <a name="modifying-the-application-config"></a>修改应用程序配置
@@ -273,14 +281,14 @@ MainWindow.xaml.cs
 * 打开 Web.config 文件
 * 修改以下项
 
-| 键                      | 值                                                                                                                                                                                                                   |
-|:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ida：受众             | 在配置 ToDoListService WebAPI 时 AD FS ToDoListService 的 ID，例如，https://localhost:44321/                                                                                         |
-| ida： ClientID             | 在配置 ToDoListService WebAPI 时 AD FS ToDoListService 的 ID，例如，<https://localhost:44321/> </br>**Ida：受众和 ida： ClientID 彼此匹配非常重要** |
-| ida:ClientSecret         | 这是在中配置 ToDoListService 客户端时 AD FS 生成的机密 AD FS                                                                                                                   |
-| ida： AdfsMetadataEndpoint | 这是 AD FS 元数据的 URL，例如https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
-| ida： OBOWebAPIBase        | 这是将用于调用后端 API 的基址，例如https://localhost:44300                                                                                                                     |
-| ida:Authority            | 这是 AD FS 服务的 URL，示例https://fs.anandmsft.com/adfs/                                                                                                                                          |
+| 键 | 值 |
+|:-|:-|
+| ida：受众 | 在配置 ToDoListService WebAPI 时 AD FS ToDoListService 的 ID，例如，https://localhost:44321/ |
+| ida： ClientID | 在配置 ToDoListService WebAPI 时 AD FS ToDoListService 的 ID，例如，<https://localhost:44321/> </br>**Ida：受众和 ida： ClientID 彼此匹配非常重要** |
+| ida:ClientSecret | 这是在中配置 ToDoListService 客户端时 AD FS 生成的机密 AD FS |
+| ida： AdfsMetadataEndpoint | 这是 AD FS 元数据的 URL，例如https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml |
+| ida： OBOWebAPIBase | 这是将用于调用后端 API 的基址，例如https://localhost:44300 |
+| ida:Authority | 这是 AD FS 服务的 URL，示例https://fs.anandmsft.com/adfs/ |
 
 **Appsettings**节点中的所有其他 IDA： xxxxxxx-xxxx ... 键都可以注释掉或删除
 
@@ -289,63 +297,71 @@ MainWindow.xaml.cs
 * 打开文件 Startup.Auth.cs
 * 删除以下代码
 
-        app.UseWindowsAzureActiveDirectoryBearerAuthentication(
-            new WindowsAzureActiveDirectoryBearerAuthenticationOptions
-            {
-                Audience = ConfigurationManager.AppSettings["ida:Audience"],
-                Tenant = ConfigurationManager.AppSettings["ida:Tenant"],
-                TokenValidationParameters = new TokenValidationParameters{ SaveSigninToken = true }
-            });
+    ```
+    app.UseWindowsAzureActiveDirectoryBearerAuthentication(
+    new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+    {
+        Audience = ConfigurationManager.AppSettings["ida:Audience"],
+        Tenant = ConfigurationManager.AppSettings["ida:Tenant"],
+        TokenValidationParameters = new TokenValidationParameters{ SaveSigninToken = true }
+    });
+    ```
 
-替换为
+    替换为
 
-        app.UseActiveDirectoryFederationServicesBearerAuthentication(
-            new ActiveDirectoryFederationServicesBearerAuthenticationOptions
-            {
-                MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
-                TokenValidationParameters = new TokenValidationParameters()
-                {
-                    SaveSigninToken = true,
-                    ValidAudience = ConfigurationManager.AppSettings["ida:Audience"]
-                }
-            });
+    ```
+    app.UseActiveDirectoryFederationServicesBearerAuthentication(
+    new ActiveDirectoryFederationServicesBearerAuthenticationOptions
+    {
+        MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
+        TokenValidationParameters = new TokenValidationParameters()
+    {
+        SaveSigninToken = true,
+        ValidAudience = ConfigurationManager.AppSettings["ida:Audience"]
+    }
+    });
+    ```
 
 #### <a name="modifying-the-todolistcontroller"></a>修改 Todolistcontroller.cs
 
 向 System.web 添加引用。 通过替换以下代码修改类成员
 
-    //
-    // The Client ID is used by the application to uniquely identify itself to Azure AD.
-    // The App Key is a credential used by the application to authenticate to Azure AD.
-    // The Tenant is the name of the Azure AD tenant in which this application is registered.
-    // The AAD Instance is the instance of Azure, for example public Azure or Azure China.
-    // The Authority is the sign-in URL of the tenant.
-    //
-    private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
-    private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
-    private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];
-    private static string appKey = ConfigurationManager.AppSettings["ida:AppKey"];
+```
+//
+// The Client ID is used by the application to uniquely identify itself to Azure AD.
+// The App Key is a credential used by the application to authenticate to Azure AD.
+// The Tenant is the name of the Azure AD tenant in which this application is registered.
+// The AAD Instance is the instance of Azure, for example public Azure or Azure China.
+// The Authority is the sign-in URL of the tenant.
+//
+private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
+private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
+private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];
+private static string appKey = ConfigurationManager.AppSettings["ida:AppKey"];
 
-    //
-    // To authenticate to the Graph API, the app needs to know the Grah API's App ID URI.
-    // To contact the Me endpoint on the Graph API we need the URL as well.
-    //
-    private static string graphResourceId = ConfigurationManager.AppSettings["ida:GraphResourceId"];
-    private static string graphUserUrl = ConfigurationManager.AppSettings["ida:GraphUserUrl"];
-    private const string TenantIdClaimType = "https://schemas.microsoft.com/identity/claims/tenantid";
+//
+// To authenticate to the Graph API, the app needs to know the Grah API's App ID URI.
+// To contact the Me endpoint on the Graph API we need the URL as well.
+//
+private static string graphResourceId = ConfigurationManager.AppSettings["ida:GraphResourceId"];
+private static string graphUserUrl = ConfigurationManager.AppSettings["ida:GraphUserUrl"];
+private const string TenantIdClaimType = "https://schemas.microsoft.com/identity/claims/tenantid";
+```
 
 替换为
 
-    //
-    // The Client ID is used by the application to uniquely identify itself to Azure AD.
-    // The client secret is the credentials for the WebServer Client
+```
+//
+// The Client ID is used by the application to uniquely identify itself to Azure AD.
+// The client secret is the credentials for the WebServer Client
 
-    private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];
-    private static string clientSecret = ConfigurationManager.AppSettings["ida:ClientSecret"];
-    private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
+private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];
+private static string clientSecret = ConfigurationManager.AppSettings["ida:ClientSecret"];
+private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
 
-    // Base address of the WebAPI
-    private static string OBOWebAPIBase = ConfigurationManager.AppSettings["ida:OBOWebAPIBase"];
+// Base address of the WebAPI
+private static string OBOWebAPIBase = ConfigurationManager.AppSettings["ida:OBOWebAPIBase"];
+```
 
 **修改用于名称的声明**
 
@@ -355,22 +371,23 @@ MainWindow.xaml.cs
 
 将以下代码复制并粘贴到 ToDoListController.cs 中，并将代码替换为 Post 和 CallGraphAPIOnBehalfOfUser
 
-    // POST api/todolist
-    public async Task Post(TodoItem todo)
-    {
-      if (!ClaimsPrincipal.Current.FindFirst("https://schemas.microsoft.com/identity/claims/scope").Value.Contains("user_impersonation"))
+```
+// POST api/todolist
+public async Task Post(TodoItem todo)
+{
+    if (!ClaimsPrincipal.Current.FindFirst("https://schemas.microsoft.com/identity/claims/scope").Value.Contains("user_impersonation"))
         {
-            throw new HttpResponseException(new HttpResponseMessage { StatusCode = HttpStatusCode.Unauthorized, ReasonPhrase = "The Scope claim does not contain 'user_impersonation' or scope claim not found" });
+        throw new HttpResponseException(new HttpResponseMessage { StatusCode = HttpStatusCode.Unauthorized, ReasonPhrase = "The Scope claim does not contain 'user_impersonation' or scope claim not found" });
         }
 
-      //
-      // Call the WebAPIOBO On Behalf Of the user who called the To Do list web API.
-      //
+//
+// Call the WebAPIOBO On Behalf Of the user who called the To Do list web API.
+//
 
-      string augmentedTitle = null;
-      string custommessage = await CallGraphAPIOnBehalfOfUser();
+    string augmentedTitle = null;
+    string custommessage = await CallGraphAPIOnBehalfOfUser();
 
-      if (custommessage != null)
+    if (custommessage != null)
         {
             augmentedTitle = String.Format("{0}, Message: {1}", todo.Title, custommessage);
         }
@@ -394,13 +411,13 @@ MainWindow.xaml.cs
         HttpClient httpClient = new HttpClient();
         string custommessage = "";
 
-        //
-        // Use ADAL to get a token On Behalf Of the current user.  To do this we will need:
-        // The Resource ID of the service we want to call.
-        // The current user's access token, from the current request's authorization header.
-        // The credentials of this application.
-        // The username (UPN or email) of the user calling the API
-        //
+//
+// Use ADAL to get a token On Behalf Of the current user.  To do this we will need:
+// The Resource ID of the service we want to call.
+// The current user's access token, from the current request's authorization header.
+// The credentials of this application.
+// The username (UPN or email) of the user calling the API
+//
 
         ClientCredential clientCred = new ClientCredential(clientId, clientSecret);
         var bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext as System.IdentityModel.Tokens.BootstrapContext;
@@ -465,9 +482,9 @@ MainWindow.xaml.cs
         // An unexpected error occurred calling the Graph API.  Return a null profile.
         return (null);
     }
+```
 
 ## <a name="running-the-solution"></a>运行解决方案
-
 
 默认情况下，visual studio 配置为在点击 "调试" 运行时运行一个项目。
 
@@ -499,4 +516,4 @@ MainWindow.xaml.cs
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
 ## <a name="next-steps"></a>后续步骤
-[AD FS 开发](../../ad-fs/AD-FS-Development.md)  
+[AD FS 开发](../../ad-fs/AD-FS-Development.md)

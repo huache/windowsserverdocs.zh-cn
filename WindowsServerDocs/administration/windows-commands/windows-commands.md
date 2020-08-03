@@ -9,45 +9,18 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: 33b19ba9c6f7d8f12d72876a04dbf8bdfda7ff30
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 3f1af3e2f352c8bbea1540c2d1964ad8536170fe
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409928"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519576"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
 所有受支持的 Windows 版本（服务器和客户端）都具有内置的一组 Win32 控制台命令。
 
 此文档集介绍了可用于通过脚本或脚本工具自动执行任务的 Windows 命令。
-
-若要查找有关特定命令的信息，请在下面的 A-z 菜单中，单击命令开头的字母，然后单击命令名称。
-
-[一个](#a)  |
-[B](#b)  |
-[C](#c)  |
-[D](#d)  |
-[E](#e)  |
-[F](#f)  |
-[G](#g)  |
-[H](#h)  |
-[I](#i)  |
-[J](#j)  |
-[K](#k)  |
-[L](#l)  |
-[M](#m)  |
-[N](#n)  |
-[O](#o)  |
-[P](#p)  |
-[Q](#q)  |
-[R](#r)  |
-[S](#s)  |
-[T](#t)  |
-[U](#u)  |
-[V](#v)  |
-[W](#w)  |
-[X](#x) |Y |Z
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -88,32 +61,9 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
 
 ## <a name="command-line-reference-a-z"></a>命令行参考 a-z
 
-若要查找有关特定 Windows 命令的信息，请在以下 a-z 菜单中，单击该命令的开头字母，然后单击命令名称。
+若要查找有关特定命令的信息，请在下面的 A-z 菜单中，单击命令开头的字母，然后单击命令名称。
 
-[一个](#a)  |
-[B](#b)  |
-[C](#c)  |
-[D](#d)  |
-[E](#e)  |
-[F](#f)  |
-[G](#g)  |
-[H](#h)  |
-[I](#i)  |
-[J](#j)  |
-[K](#k)  |
-[L](#l)  |
-[M](#m)  |
-[N](#n)  |
-[O](#o)  |
-[P](#p)  |
-[Q](#q)  |
-[R](#r)  |
-[S](#s)  |
-[T](#t)  |
-[U](#u)  |
-[V](#v)  |
-[W](#w)  |
-[X](#x) |Y |Z
+[一个](#a)  | [B](#b)  | [C](#c)  | [D](#d)  | [E](#e)  | [F](#f)  | [G](#g)  | [H](#h)  | [I](#i)  | [J](#j)  | [K](#k)  | [L](#l)  | [M](#m)  | [N](#n)  | [O](#o)  | [P](#p)  | [Q](#q)  | [R](#r)  | [S](#s)  | [T](#t)  | [U](#u)  | [V](#v)  | [W](#w)  | [X](#x) |Y |Z
 
 ### <a name="a"></a>A
 

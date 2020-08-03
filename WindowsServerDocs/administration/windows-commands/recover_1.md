@@ -1,5 +1,5 @@
 ---
-title: recover
+title: 恢复（DiskPart）
 description: 有关 DiskPart recover 命令的参考文章，该命令刷新磁盘组中所有磁盘的状态，尝试恢复无效磁盘组中的磁盘，并重新同步镜像卷和具有陈旧数据的 RAID-5 卷。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,23 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19272e09147bb730e07d51d42926c01262bfb433
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 03b996db5d8c6d270a35bf1273570e3757258658
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924790"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519676"
 ---
-# <a name="recover"></a>recover
+# <a name="recover-diskpart"></a>恢复（DiskPart）
 
 刷新磁盘组中所有磁盘的状态，尝试恢复无效磁盘组中的磁盘，并重新同步已过时的镜像卷和 RAID-5 卷。 此命令在失败或失败的磁盘上操作。 它还对失败、失败或处于失败状态的卷进行操作。
 
 此命令对动态磁盘组进行操作。 如果对具有基本磁盘的组使用此命令，则不会返回错误，而不会执行任何操作。
 
 > [!NOTE]
->  若要成功执行此操作，必须选择磁盘组中的磁盘。 使用 "[选择磁盘" 命令](select-disk.md)选择磁盘，并将焦点移动到该磁盘。
-
-
+> 若要成功执行此操作，必须选择磁盘组中的磁盘。 使用 "[选择磁盘" 命令](select-disk.md)选择磁盘，并将焦点移动到该磁盘。
 
 ## <a name="syntax"></a>语法
 
@@ -33,7 +31,7 @@ ms.locfileid: "85924790"
 recover [noerr]
 ```
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
 | 参数 | 说明 |
 |--|--|

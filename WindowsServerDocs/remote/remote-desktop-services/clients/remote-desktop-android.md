@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b76ded74b311265a22e32d836cb7a5dd5fe03f0d
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 215d69f40c09a11048c3e4c5a5c7cd610da3b9c4
+ms.sourcegitcommit: 25d3b2083405d3e1395355dcc34a032105e9c36d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445721"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87389634"
 ---
 # <a name="get-started-with-the-android-client"></a>Android 客户端入门
 
@@ -35,7 +35,7 @@ ms.locfileid: "86445721"
 
 下面介绍如何在 Android 设备上设置远程桌面客户端：
 
-1. 从 [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android) 下载 Microsoft 远程桌面客户端。
+1. 从 [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx) 下载 Microsoft 远程桌面客户端。
 2. 从应用列表启动 **RD 客户端**。
 3. 添加[远程桌面连接](#add-a-remote-desktop-connection)或[远程资源](#add-remote-resources)。 可以使用连接直接连接到 Windows 电脑和远程资源，以便访问管理员发布给你的应用和桌面。
 
@@ -128,12 +128,12 @@ ms.locfileid: "86445721"
 可以设置以下显示设置：
 
 - **方向**：设置会话的首选方向（横向或纵向）。
-  
+
   >[!NOTE]
   > 如果连接到一台运行 Windows 8 或更低版本的电脑，则在设备方向变化的情况下，会话将无法正确缩放。 若要使客户端正确缩放，请断开与电脑的连接，然后按你想要使用的方向重新连接。 也可改用装有 Windows 10 的电脑，确保正确进行缩放。
 
 - **分辨率**：设置进行全局桌面连接时需要使用的远程分辨率。 如果已经为单个连接设置了自定义分辨率，则此设置不会更改该值。
-  
+
   >[!NOTE]
   >更改显示设置时，这些更改只应用于在更改设置后进行的新连接。 若要将更改应用到当前连接到的会话，请在断开连接后重新连接，以这种方式刷新会话。
 

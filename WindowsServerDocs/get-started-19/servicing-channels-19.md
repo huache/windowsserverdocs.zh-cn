@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 1823816d2218c09c84e5eb61bf8af6bd3411a0d7
-ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
+ms.openlocfilehash: 71f35b7c0dd3e2dc96c0b58ac4438a3c12472832
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86946591"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409998"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 服务频道：LTSC 和 SAC
 
@@ -27,7 +27,7 @@ ms.locfileid: "86946591"
 
 这是你已熟悉的版本模型（以前称为“Long-Term Servicing *Branch*”），其中 Windows Server 的全新主要版本每 2-3 年发布一次。 用户有权享受 5 年的主流支持和 5 年的延长支持。 该频道适用于需要更长时间服务选项和功能稳定性的系统。 新的半年频道版本不会影响 Windows Server 2019 和 Windows Server 早期版本的部署。 长期服务频道将持续接受安全和非安全更新，但不会接受新特性和新功能。
 
-> [!Note]
+> [!NOTE]
 > **当前的 LTSC 产品是 Windows Server 2019**。 如果你想坚持使用此频道，则应该安装（或继续使用）Windows Server 2019，你可以通过 Server Core 安装选项或带桌面体验的服务器安装选项进行安装。
 
 ## <a name="semi-annual-channel"></a>半年频道
@@ -38,7 +38,7 @@ ms.locfileid: "86946591"
 
 可使用[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，也可以通过 Azure 市场或其他云/托管服务提供商及 Visual Studio 订阅等会员计划为批量授权的客户提供半年频道。
 
-> [!Note]  
+> [!NOTE]
 > **当前的半年频道版本是 Windows Server 版本 1909**。 如果你要将服务器置于此频道，则应该安装 Windows Server 版本 1909，该版本可以在 Server Core 模式下安装或作为容器中运行的 Nano Server 来安装。 不支持从长期服务频道版本就地升级，因为它们处于**不同的发行频道**中。 半年频道发行版不是更新 – 它是半年频道中的下一个 Windows Server 发行版。
 
 在该模型中，Windows Server 版本通过发布的年份和月份进行标识：例如，2017 年 9 月发布的版本标识为**版本 1709**。 以半年频道发布的 Windows Server 每年发布两次新版本。 每个版本的支持周期为 18 个月。
@@ -48,19 +48,18 @@ ms.locfileid: "86946591"
 以下是需考虑的主要区别：
 
 - 是否需要在 Devops、容器和微服务上增加新技术？ 如果需要，应该考虑安装 Windows Server 版本 1909，加入半年频道 。 如本主题中所述，每年你将收到两个新版本，每个版本的主流生产支持期为 18 个月。 可通过批量许可、Azure 或 Visual Studio 订阅服务获取新版本。 目前，如果你打算在生产环境中运行产品，半年频道中的版本需要批量许可和软件保障。
-- 是否需要稳定性和可预测性？ 是否需要在物理服务器上运行虚拟机和传统工作负载？ 如果需要，应该考虑**将服务器置于长期服务频道**。 当前的 LTSC 版本为 **Windows Server 2019**。 如本主题中所述，你有权每 2 至 3 年接收新版本，每个版本享受 5 年的主流支持和 5 年的延长支持。 LTSC 版本在所有发布机制中均有提供。 无论使用何种许可模型，所有人均可使用 LTSC 版本。 
+- 是否需要稳定性和可预测性？ 是否需要在物理服务器上运行虚拟机和传统工作负载？ 如果需要，应该考虑**将服务器置于长期服务频道**。 当前的 LTSC 版本为 **Windows Server 2019**。 如本主题中所述，你有权每 2 至 3 年接收新版本，每个版本享受 5 年的主流支持和 5 年的延长支持。 LTSC 版本在所有发布机制中均有提供。 无论使用何种许可模型，所有人均可使用 LTSC 版本。
 
 下表总结了不同频道之间的主要差异：
 
-
-|                       |                                                              长期服务频道 (Windows Server 2019)                                                               |                                   半年频道 (Windows Server)                                   |
-|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| 说明 | 长期服务频道 (Windows Server 2019) | 半年频道 (Windows Server) |
+| -----------------------|--|--|
 | 建议方案 | 通用文件服务器、Microsoft 和非 Microsoft 工作负载、传统应用、基础架构角色、软件定义数据中心和超融合基础设施 | 容器化应用程序、容器主机和受益于更快创新的应用程序方案 |
-|     最新发布      |                                                                               每 2 - 3 年                                                                                |                                              每 6 个月                                              |
-|        支持        |                                                       5 年的主流支持和 5 年的延长支持                                                        |                                                18 个月                                                 |
-|       版本        |                                                                    所有可用的 Windows Server 版本                                                                     |                                     标准版和数据中心版                                     |
-|      谁可以使用      |                                                                      所有频道的所有客户                                                                      |                               仅软件保障客户和云客户                                |
-| 安装选项  |                                                                Server Core 和带桌面体验的 Server                                                                |                 容器主机 Server Core、映像和 Nano Server 容器映像                 |
+| 最新发布 | 每 2 - 3 年 | 每 6 个月 |
+| 支持 | 5 年的主流支持和 5 年的延长支持 | 18 个月 |
+| 版本 | 所有可用的 Windows Server 版本 | 标准版和数据中心版 |
+| 谁可以使用 | 所有频道的所有客户 | 仅软件保障客户和云客户 |
+| 安装选项 | Server Core 和带桌面体验的 Server | 容器主机 Server Core、映像和 Nano Server 容器映像 |
 
 ## <a name="device-compatibility"></a>设备兼容性
 

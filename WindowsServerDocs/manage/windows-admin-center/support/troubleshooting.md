@@ -8,16 +8,16 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 5df216d8c7b829a6c60db4e5d771824a7bacdb47
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 2ddcf101b6eae3be6f48c66de3c400c66ed53f2b
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322879"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519646"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑难解答
 
-> 适用于： Windows 管理中心、Windows 管理中心预览
+> 适用于：Windows Admin Center、Windows Admin Center 预览版
 
 > [!Important]
 > 本指南将帮助你诊断和解决与 Windows Admin Center 相关的问题。 如果你的特定工具存在问题，请查看以了解你遇到的是否是[已知问题。](https://aka.ms/wacknownissues)
@@ -34,12 +34,12 @@ ms.locfileid: "79322879"
 
 ### <a name="if-youve-installed-windows-admin-center-as-an-app-on-windows-10"></a>如果你安装了 Windows Admin Center 作为 **Windows 10 上的应用**
 
-* 请检查 Windows Admin Center 是否正在运行。 在任务管理器的 "系统" 任务栏或 " **Windows 管理中心桌面" SmeDesktop**中查找 "Windows 管理员中心" 图标 ![](../media/trayIcon.PNG)。 如果没有安装，请从“开始”菜单启动 **Windows Admin Center**。
+* 请检查 Windows Admin Center 是否正在运行。 在 ![ ](../media/trayIcon.PNG) 任务管理器中的系统托盘或**windows 管理中心桌面/SmeDesktop.exe**中，查找 Windows 管理中心图标 windows 管理中心图标。 如果没有安装，请从“开始”菜单启动 **Windows Admin Center**。
 
-> [!NOTE] 
-> 重新启动后，你必须从“开始”菜单启动 Windows Admin Center。  
+> [!NOTE]
+> 重新启动后，你必须从“开始”菜单启动 Windows Admin Center。
 
-* [检查 Windows 版本](#check-the-windows-version)
+* [请检查 Windows 版本](#check-the-windows-version)
 
 * 请确保使用 Microsoft Edge 或 Google Chrome 作为 Web 浏览器。
 
@@ -58,9 +58,10 @@ ms.locfileid: "79322879"
 * 请确保使用 Microsoft Edge 或 Google Chrome 作为 Web 浏览器。
 
 * 在服务器上，打开 "任务管理器" > 服务 "，并确保**ServerManagementGateway/Windows 管理中心**正在运行。
-![](../media/Service-TaskMan.PNG)
 
-* 测试网关的网络连接（将 \<的值替换 > 部署中的信息）
+    ![任务管理器-"服务" 选项卡](../media/Service-TaskMan.PNG)
+
+* 测试网关的网络连接（将替换为 \<values> 部署中的信息）
 
     ```powershell
     Test-NetConnection -Port <port> -ComputerName <gateway> -InformationLevel Detailed
@@ -68,9 +69,9 @@ ms.locfileid: "79322879"
 
 ### <a name="if-you-have-installed-windows-admin-center-in-an-azure-windows-server-vm"></a>如果已在 Azure Windows Server VM 中安装 Windows 管理中心
 
-* [检查 Windows 版本](#check-the-windows-version)
-* 你是否针对 HTTPS 添加了入站端口规则？ 
-* [了解有关在 Azure VM 中安装 Windows 管理中心的详细信息](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
+* [请检查 Windows 版本](#check-the-windows-version)
+* 你是否针对 HTTPS 添加了入站端口规则？
+* [了解有关在 Azure VM 中安装 Windows Admin Center 的详细信息](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
 
 ### <a name="check-the-windows-version"></a>请检查 Windows 版本
 
@@ -83,16 +84,16 @@ ms.locfileid: "79322879"
 ### <a name="make-sure-the-windows-remote-management-winrm-service-is-running-on-both-the-gateway-machine-and-managed-node"></a>请确保 Windows 远程管理（WinRM）服务正在网关计算机和托管节点上运行
 
 * 用 WindowsKey + R 打开 "运行" 对话框
-* 键入 ```services.msc```，然后按 enter
+* 键入 ```services.msc``` ，然后按 enter
 * 在打开的窗口中，查找 Windows 远程管理（WinRM），确保其正在运行，并设置为自动启动
 
 ### <a name="did-you-upgrade-your-server-from-2016-to-2019"></a>是否将服务器从2016升级到2019？
 
-* 这可能已清除了受信任的主机设置。 [按照以下说明更新受信任的主机设置。](#configure-trustedhosts) 
+* 这可能已清除了受信任的主机设置。 [按照以下说明更新受信任的主机设置。](#configure-trustedhosts)
 
 ## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>收到以下消息： "无法安全地连接到此页。 这可能是因为该站点使用过时或不安全的 TLS 安全设置。
 
-你的计算机仅限 HTTP/2 连接。 Windows 管理中心使用 HTTP/2 不支持的集成 Windows 身份验证。 在**运行浏览器的计算机**上的 ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters``` 项下添加以下两个注册表值，以删除 HTTP/2 限制：
+你的计算机仅限 HTTP/2 连接。 Windows 管理中心使用 HTTP/2 不支持的集成 Windows 身份验证。 在 ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters``` **运行浏览器的计算机**上的项下添加以下两个注册表值，以删除 HTTP/2 限制：
 
 ```
 EnableHttp2Cleartext=dword:00000000
@@ -105,7 +106,7 @@ EnableHttp2Tls=dword:00000000
 
 ## <a name="i-can-connect-to-some-servers-but-not-others"></a>我只能连接到部分服务器
 
-* 在本地登录到网关计算机并尝试在 PowerShell 中 ```Enter-PSSession <machine name>```，并将 \<计算机名称 > 替换为尝试在 Windows 管理中心中管理的计算机的名称。 
+* 在本地登录到网关计算机，尝试 ```Enter-PSSession <machine name>``` 在 PowerShell 中，将替换为 \<machine name> 你在 Windows 管理中心中尝试管理的计算机的名称。
 
 * 如果你的环境使用的是工作组而不是域，请参阅[在工作组中使用 Windows Admin Center](#using-windows-admin-center-in-a-workgroup)。
 
@@ -123,7 +124,7 @@ EnableHttp2Tls=dword:00000000
 ```cmd
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1
 ```
-### <a name="are-you-connecting-to-a-workgroup-machine-on-a-different-subnet"></a>你是否通过不同子网连接到工作组计算机？
+### <a name="are-you-connecting-to-a-workgroup-machine-on-a-different-subnet"></a>连接的是否为其他子网中的工作组计算机？
 
 若要连接与网关不在同一个子网的工作组计算机，请确保 WinRM (TCP 5985) 的防火墙端口允许目标计算机上的入站流量。 你可以在目标计算机上以管理员身份在 PowerShell 中或在命令提示符中运行以下命令，以创建此防火墙规则：
 
@@ -154,7 +155,7 @@ REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalA
 
    > [!WARNING]
    > 如果你当前已有 TrustedHosts 设置，则以下命令将覆盖你的设置。 我们建议你通过以下命令将当前设置保存到文本文件，以便在需要时恢复设置。
-   > 
+   >
    > `Get-Item WSMan:localhost\Client\TrustedHosts | Out-File C:\OldTrustedHosts.txt`
 
 3. 将想要管理的计算机的 TrustedHosts 设置为 NetBIOS、IP 或 FQDN：
@@ -193,23 +194,23 @@ netsh http delete urlacl url=https://+:443/
 
 ## <a name="azure-features-dont-work-properly-in-edge"></a>Azure 功能在边缘中无法正常工作
 
-边缘具有与安全区域相关的[已知问题](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，这些问题会影响 Windows 管理中心中的 Azure 登录。 如果使用边缘时使用 Azure 功能时遇到问题，请尝试在客户端浏览器上将 https://login.microsoftonline.com、 https://login.live.com 和网关的 URL 添加为受信任的站点和允许的边缘弹出窗口阻止程序设置的站点。 
+边缘具有与安全区域相关的[已知问题](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，这些问题会影响 Windows 管理中心中的 Azure 登录。 如果使用边缘时使用 Azure 功能时遇到问题，请尝试将 https://login.microsoftonline.com https://login.live.com 网关的 URL 添加为受信任的站点，并将其 URL 添加到客户端浏览器上的允许的边缘弹出窗口阻止程序设置。
 
-为此，请执行以下操作：
+具体方法为：
 1. 在 Windows "开始" 菜单中搜索**Internet 选项**
 2. 中转到 "**安全**" 选项卡
-3. 在 "**受信任的站点**" 选项下，单击 "**站点**" 按钮，然后在打开的对话框中添加 url。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com。
+3. 在“受信任的站点”选项下，单击“站点”按钮，然后在打开的对话框中添加 URL。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
 4. 中转到 "**隐私**" 选项卡
-5. 在 "**弹出窗口阻止**程序" 部分下，单击 "**设置**" 按钮，然后在打开的对话框中添加 url。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com。
+5. 在 "**弹出窗口阻止**程序" 部分下，单击 "**设置**" 按钮，然后在打开的对话框中添加 url。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
 
 ## <a name="having-an-issue-with-an-azure-related-feature"></a>Azure 相关功能有问题？
 
-请在 wacFeedbackAzure@microsoft.com 向我们发送一封电子邮件，其中包含以下信息：
+请向我们发送一封电子邮件， wacFeedbackAzure@microsoft.com 其中包含以下信息：
 * [下面列出的问题](#providing-feedback-on-issues)的一般问题信息。
-* 描述您的问题以及重现该问题所需的步骤。 
-* 你之前是否使用 New-AadApp 可下载脚本向 Azure 注册了网关，然后升级到版本1807？ 或者是否使用网关 > Azure 中的用户界面将网关注册到 Azure？
+* 描述您的问题以及重现该问题所需的步骤。
+* 你之前是否使用 New-AadApp.ps1 可下载的脚本将你的网关注册到 Azure，然后升级到版本1807？ 或者是否使用网关 > Azure 中的用户界面将网关注册到 Azure？
 * 你的 Azure 帐户是否与多个目录/租户相关联？
-    * 如果是：在向 Windows 管理中心注册 Azure AD 应用程序时，目录是否已在 Azure 中使用默认目录？ 
+    * 如果是：在向 Windows 管理中心注册 Azure AD 应用程序时，目录是否已在 Azure 中使用默认目录？
 * 你的 Azure 帐户是否有权访问多个订阅？
 * 你使用的订阅是否附加了计费？
 * 遇到问题时是否登录了多个 Azure 帐户？
@@ -223,19 +224,19 @@ netsh http delete urlacl url=https://+:443/
 
 请在我们的 [UserVoice](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5BBug%5D) 上报告错误并描述你遇到的问题。
 
-请包含你在事件日志中找到的所有错误或警告，以及以下信息： 
+请包含你在事件日志中找到的所有错误或警告，以及以下信息：
 
 * **安装** Windows Admin Center 的平台（Windows 10 或 Windows Server）：
-    * 如果在服务器上安装了，则**运行浏览器**来访问 windows 管理中心的计算机的 Windows[版本](#check-the-windows-version)是什么： 
+    * 如果在服务器上安装了，则**运行浏览器**来访问 windows 管理中心的计算机的 Windows[版本](#check-the-windows-version)是什么：
     * 是否使用安装程序创建的自签名证书？
     * 如果你使用了自己的证书，那么使用者名称是否与计算机匹配？
     * 如果你使用了自己的证书，那么该证书是否指定了其他使用者名称？
 * 安装时是否使用了默认端口设置？
     * 如果不是，那么你指定的是哪个端口？
 * **安装** Windows Admin Center 的计算机是否加入了域？
-* [安装](#check-the-windows-version) Windows Admin Center 的 Windows **版本**：
+* **安装** Windows Admin Center 的 Windows [版本](#check-the-windows-version)：
 * 你**尝试管理**的计算机是否加入了域？
-* 你[尝试管理](#check-the-windows-version)的计算机的 Windows **版本**：
-* 你使用的是哪个浏览器？
+* 你**尝试管理**的计算机的 Windows [版本](#check-the-windows-version)：
+* 你使用什么浏览器？
     * 如果你使用的是 Google Chrome，那么它的版本是？ （“帮助”>“关于 Google Chrome”）
 

@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 71e45622292f7393b19978ec3235492c5065a8a1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8344fcb01a5d527dfce46118121fbf7623636549
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474024"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519666"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>通过 Windows 管理中心管理超聚合基础结构
 
@@ -217,7 +217,7 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
     </tr>
 </table>
 
-### <a name="create-a-new-virtual-machine"></a>创建新的虚拟机
+### <a name="create-a-new-virtual-machine"></a>新建虚拟机
 
 1. 单击左侧导航窗格中的 "**虚拟机**" 工具。
 2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡，然后单击 "**新建**" 以创建新的虚拟机。
@@ -245,13 +245,13 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
 ### <a name="replace-a-failed-drive"></a>更换有故障的驱动器
 
 1. 驱动器出现故障时，**仪表板**的 "左上方**警报**" 区域中会出现警报。
-2. 你还可以从左侧导航栏中选择 "**驱动器**"，或单击右下角的磁贴上的 "**查看驱动器 >** " 链接来浏览驱动器并查看其状态。 在 "**清单**" 选项卡中，网格支持排序、分组和关键字搜索。
+2. 还可以从左侧的导航栏中选择“驱动器”，或者单击右下角的磁贴上的“查看驱动器 >”链接来浏览驱动器并查看其状态。 在 "**清单**" 选项卡中，网格支持排序、分组和关键字搜索。
 3. 在**仪表板**中，单击警报以查看详细信息，如驱动器的物理位置。
-4. 若要了解详细信息，请单击**驱动器**详细信息页的 "**前往驱动器**" 快捷方式。
-5. 如果硬件支持，可以单击 "**打开/关闭指示灯**" 来控制驱动器指示灯。
-6. 存储空间直通自动停用和撤离故障驱动器。 发生此情况时，驱动器状态为 "已停用"，其存储容量条为空。
-7. 删除发生故障的驱动器，并插入其替换。
-8. 在**驱动器 > 清单**中，将显示新的驱动器。 此时，警报会被清除，卷将恢复为 "正常" 状态，并且存储将重新平衡到新驱动器上–无需用户操作。
+4. 若要了解详细信息，请单击“驱动器”详细信息页的“转到驱动器”快捷方式。
+5. 如果硬件支持，则可以单击“打开/关闭指示灯”来控制驱动器的指示灯。
+6. 存储空间直通会自动停用并撤离故障驱动器。 发生此情况时，驱动器状态为“已停用”，其存储容量条为空。
+7. 移除故障驱动器，并插入更换驱动器。
+8. 在“驱动器”>“清单”中，将显示新的驱动器。 最终，警报将清除，卷将修复回正常状态，存储将重新平衡到新驱动器上 — 无需用户操作。
 
 ### <a name="manage-virtual-networks-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>管理虚拟网络（使用 Windows 管理中心预览的启用了 SDN 的 HCI 群集）
 
@@ -278,7 +278,7 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
 
 ![监视 SDN 基础结构](../media/manage-hyper-converged/sdn-monitoring.png)
 
-## <a name="feedback"></a>反馈
+## <a name="give-us-feedback"></a>给我们提供反馈
 
 这就是您的反馈！ 经常更新的最重要的好处是，倾听正在进行的工作以及需要改进的内容。 下面是一些使我们知道你的想法的方法：
 

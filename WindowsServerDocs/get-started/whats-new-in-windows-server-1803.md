@@ -8,16 +8,16 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 73d0d62aac3771c4150a133950085170f7f51cb5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 32410c9b2645d96ee1190afdda6a2ce75f09feef
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961139"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409557"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server 版本 1803 中的新增功能
 
->适用于：Windows Server（半年频道）
+> 适用于：Windows Server（半年频道）
 
 <img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;若要了解 Windows 中的最新功能，请参阅 [Windows Server 中的新增功能](whats-new-in-windows-server.md)。 本部分的内容介绍 Windows Server 版本 1803 中的新增功能和更改的功能。 此处列出的新功能和更改在你使用此版本时最可能具有最大影响力。 另请参阅 [Windows Server Semi-Annual Channel update](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)（Windows Server 半年频道更新）。
 
@@ -39,14 +39,14 @@ Windows Server 版本 1709 作为半年频道中的第一版于 2017 年 9 月�
 
 半年频道和长期服务频道的具体方案如下：
 
-|   | 长期服务频道 |  半年频道 |
-| ------------- | ------------- | ------------ |
-| 建议方案     | 常规用途文件服务器、第一和第三方工作负荷、传统应用、基础设施角色、软件定义数据中心和超融合基础设施  | 容器化应用程序、容器主机和受益于更快创新的应用程序方案 |
-| 最新发布  | 每 2 - 3 年  | 每 6 个月 |
-| 支持  | 5 年的主要支持 + 5 年的外延支持  | 18 个月 |
-| 版本  | 所有可用的 Windows Server 版本  | 标准版和数据中心版 |
-| 谁可以使用  | 所有频道的所有客户 | 仅软件保障客户和云客户 |
-| 安装选项  | Server Core 和带桌面体验的 Server  | 容器主机的 Server Core、容器映像和 Nano Server 容器映像 |
+| 说明 | 长期服务频道 | 半年频道 |
+|--|--|--|
+| 建议方案 | 常规用途文件服务器、第一和第三方工作负荷、传统应用、基础设施角色、软件定义数据中心和超融合基础设施 | 容器化应用程序、容器主机和受益于更快创新的应用程序方案 |
+| 最新发布 | 每 2 - 3 年 | 每 6 个月 |
+| 支持 | 5 年的主要支持 + 5 年的外延支持 | 18 个月 |
+| 版本 | 所有可用的 Windows Server 版本 | 标准版和数据中心版 |
+| 谁可以使用 | 所有频道的所有客户 | 仅软件保障客户和云客户 |
+| 安装选项 | Server Core 和带桌面体验的 Server | 容器主机的 Server Core、容器映像和 Nano Server 容器映像 |
 
 ## <a name="application-platform-and-containers"></a>应用程序平台和容器
 

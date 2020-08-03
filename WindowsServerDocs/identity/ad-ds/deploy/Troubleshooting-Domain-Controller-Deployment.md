@@ -8,12 +8,12 @@ ms.date: 03/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ee22c55a3c786be4df8f06b2e3c5d33ea620b1e0
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e3f215abaccbd1f95ee46eca93a573aa1db9e065
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409948"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519405"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>域控制器部署疑难解答
 
@@ -29,13 +29,13 @@ ms.locfileid: "87409948"
 
 内置日志是用于解决域控制器升级和降级问题的最重要的工具。 默认情况下，所有这些日志将处于启用状态并配置为最大详细级别。
 
-| 相位 | 日志 |  |
-|--|--|--|
-| 服务器管理器或 ADDSDeployment Windows PowerShell 操作 | - %systemroot%\debug\dcpromoui.log<p>-%systemroot%\debug\dcpromoui * .log |  |
-| 域控制器的安装/升级 | -%systemroot%\debug\dcpromo.log<p>-%systemroot%\debug\dcpromo * .log<p>-Event viewer\Windows 日志<p>-Event viewer\Windows 日志<p>-事件 viewer\Applications 和服务 logs\Directory 服务<p>-事件 viewer\Applications 和服务 logs\File 复制服务<p>-事件 viewer\Applications 和服务 logs\DFS 复制 |  |
-| 林或域升级 | -%systemroot%\debug\adprep \\ <datetime> \adprep.log<p>-%systemroot%\debug\adprep \\ <datetime> \csv.log<p>-%systemroot%\debug\adprep \\ <datetime> \dspecup.log<p>-%systemroot%\debug\adprep \\ <datetime> \ldif.log * |  |
-| 服务器管理器 ADDSDeployment Windows PowerShell 部署引擎 | -事件 viewer\Applications 和服务 logs\Microsoft\Windows\DirectoryServices-Deployment\Operational |  |
-| Windows 服务 | - %systemroot%\Logs\CBS\\*<p>-% systemroot% \servicing\sessions\sessions.xml<p>- %systemroot%\winsxs\poqexec.log<p>-% systemroot% \winsxs\pending.xml |  |
+| 阶段 | 日志 |
+|--|--|
+| 服务器管理器或 ADDSDeployment Windows PowerShell 操作 | - %systemroot%\debug\dcpromoui.log<p>-%systemroot%\debug\dcpromoui * .log |
+| 域控制器的安装/升级 | -%systemroot%\debug\dcpromo.log<p>-%systemroot%\debug\dcpromo * .log<p>-Event viewer\Windows 日志<p>-Event viewer\Windows 日志<p>-事件 viewer\Applications 和服务 logs\Directory 服务<p>-事件 viewer\Applications 和服务 logs\File 复制服务<p>-事件 viewer\Applications 和服务 logs\DFS 复制 |
+| 林或域升级 | -%systemroot%\debug\adprep \\ <datetime> \adprep.log<p>-%systemroot%\debug\adprep \\ <datetime> \csv.log<p>-%systemroot%\debug\adprep \\ <datetime> \dspecup.log<p>-%systemroot%\debug\adprep \\ <datetime> \ldif.log * |
+| 服务器管理器 ADDSDeployment Windows PowerShell 部署引擎 | -事件 viewer\Applications 和服务 logs\Microsoft\Windows\DirectoryServices-Deployment\Operational |
+| Windows 服务 | - %systemroot%\Logs\CBS\\*<p>-% systemroot% \servicing\sessions\sessions.xml<p>- %systemroot%\winsxs\poqexec.log<p>-% systemroot% \winsxs\pending.xml |
 
 ### <a name="tools-and-commands-for-troubleshooting-domain-controller-configuration"></a>用于对域控制器配置进行故障排除的工具和命令
 
@@ -112,7 +112,7 @@ ms.locfileid: "87409948"
 
 ### <a name="promotion-and-demotion-success-codes"></a>升级和降级成功代码
 
-| 错误代码 | 说明 | 备注 |
+| 错误代码 | 说明 | 注意 |
 |--|--|--|
 | 1 | 退出，成功 | 你仍然必须重新启动，这仅指出已删除自动重新启动标志。 |
 | 2 | 退出，成功，需要重新启动 |  |
@@ -217,10 +217,10 @@ ms.locfileid: "87409948"
 
 以下是 Windows Server 2012 开发过程中的常见问题。 所有这些问题都是“特意设计的”，它们具有有效的解决方法或具有更适合的技术以在第一时间避免它们。 许多这些行为在 Windows Server 2008 R2 和较早版本的操作系统中相同，但是 AD DS 部署的重写使系统对问题更为敏感。
 
-| 问题 | 降级域控制器会使 DNS 在无区域的情况下运行 |  |
-|--|--|--|
-| 症状 | 服务器仍然响应 DNS 请求，但是没有区域信息 |  |
-| 解析和注释 | 删除 AD DS 角色时，还会删除 DNS 服务器角色或将 DNS 服务器服务设置为禁用。 记得将 DNS 客户端指向它本身之外的另一个服务器。 如果使用 Windows PowerShell，在降级服务器后运行以下内容：<p>代码-uninstall dns<p>或<p>代码集-服务 dns-starttype 已禁用<br />停止服务 dns |  |
+| 问题 | 降级域控制器会使 DNS 在无区域的情况下运行 |
+|--|--|
+| 症状 | 服务器仍然响应 DNS 请求，但是没有区域信息 |
+| 解析和注释 | 删除 AD DS 角色时，还会删除 DNS 服务器角色或将 DNS 服务器服务设置为禁用。 记得将 DNS 客户端指向它本身之外的另一个服务器。 如果使用 Windows PowerShell，在降级服务器后运行以下内容：<p>代码-uninstall dns<p>或<p>代码集-服务 dns-starttype 已禁用<br />停止服务 dns |
 
 | 问题 | 在将 Windows Server 2012 升级到现有单标签域中时，不会配置 updatetopleveldomain=1 或 allowsinglelabeldnsdomain=1 |
 |--|--|
@@ -280,7 +280,7 @@ ms.locfileid: "87409948"
 | 问题 | 无法将 RODC 升级到预创建的计算机帐户中 |
 |--|--|
 | 症状 | 使用 ADDSDeployment Windows PowerShell 升级新的带有分步计算机帐户的 RODC 时，返回错误：<p>无法使用指定的命名参数解析代码参数集。    <br />InvalidArgument： ParameterBindingException<br />    + FullyQualifiedErrorId： AmbiguousParameterSet，Microsoft.directoryservices. Install。 |
-| 解析和注释 | 不要提供已在预创建的 RODC 帐户上定义的参数。 其中包括:<p>代码--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns |
+| 解析和注释 | 不要提供已在预创建的 RODC 帐户上定义的参数。 其中包括：<p>代码--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns |
 
 | 问题 | 取消选中/选中“必要时自动重新启动每个目标服务器”时，没有任何效果 |
 |--|--|
@@ -320,7 +320,7 @@ ms.locfileid: "87409948"
 | 问题 | 升级或降级失败并显示消息“无法启动服务” |
 |--|--|
 | 症状 | 如果尝试升级、降级或克隆域控制器，将收到错误：<p>代码-服务无法启动，因为它已被禁用或没有已启用的设备与其关联 "（0x80070422）<p>错误可能是交互式、一个事件或者可能写入日志（如 dcpromoui.log 或 dcpromo.log） |
-| 解析和注释 | DS 角色服务器服务 （DsRoleSvc) 处于禁用状态。 默认情况下，此服务在 AD DS 角色安装期间安装并设置为手动启动类型。 不要禁用此服务。 将其重新设置为手动，并允许 DS 角色操作按需启动和停止它。 这是设计的行为。 |
+| 解析和注释 | DS 角色服务器服务 （DsRoleSvc) 处于禁用状态。 默认情况下，此服务在 AD DS 角色安装期间安装并设置为手动启动类型。 不要禁用此服务。 将其重新设置为手动，并允许 DS 角色操作按需启动和停止它。 此行为是设计使然。 |
 
 | 问题 | 服务器管理器仍然警告你需要升级 DC |
 |--|--|

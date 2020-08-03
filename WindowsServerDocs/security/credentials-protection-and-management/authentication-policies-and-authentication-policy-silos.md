@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 72ad55fad515ea769ea739f037165547b1104889
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 705cba94299572f02c12896e2dac0ec8c2d070c0
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472954"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520176"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>身份验证策略和身份验证策略接收器
 
@@ -30,7 +30,7 @@ Windows Server 2012 R2 中引入的功能允许您创建身份验证策略接收
 
 使用这些功能，你可以为高价值主机限制高价值帐户的使用。 例如，你可以创建新的林管理员接收器，它包含企业管理员、架构管理员以及域管理员。 然后可以使用身份验证策略配置该接收器，使得来自域控制器和域管理员控制台之外系统的基于密码和智能卡的身份验证都会失败。
 
-有关配置身份验证策略接收器和身份验证策略的信息，请参阅[如何配置受保护的帐户](how-to-configure-protected-accounts.md)。
+有关配置身份验证策略接收器和身份验证策略的信息，请参阅[如何配置受保护的帐户](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)。
 
 ### <a name="about-authentication-policy-silos"></a>关于身份验证策略接收器
 身份验证策略接收器将控制哪些帐户通过接收器进行限制，并定义了要应用于成员的身份验证策略。 你可以根据自己组织的要求来创建接收器。 接收器是用于用户、计算机和服务的 Active Directory 对象，如下表中的架构定义。
@@ -46,7 +46,7 @@ Windows Server 2012 R2 中引入的功能允许您创建身份验证策略接收
 |身份验证策略接收器成员|指定将哪些主体分配到 AuthNPolicySilo。|
 |身份验证策略接收器成员反向链接|此属性为 msDS-AuthNPolicySiloMembers 的反向链接。|
 
-通过使用 Active Directory 管理控制台或 Windows PowerShell，可以配置身份验证策略接收器。 有关详细信息，请参阅[如何配置受保护的帐户](how-to-configure-protected-accounts.md)。
+通过使用 Active Directory 管理控制台或 Windows PowerShell，可以配置身份验证策略接收器。 有关详细信息，请参阅[如何配置受保护的帐户](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)。
 
 ### <a name="about-authentication-policies"></a>关于身份验证策略
 身份验证策略为帐户类型定义 Kerberos 协议票证授予票证 (TGT) 生存期属性和身份验证访问控制条件。 此策略在称为身份验证策略接收器的 AD DS 容器上构建，并对该容器进行控制。
@@ -73,7 +73,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
     使用独立托管的服务帐户、组托管的服务帐户，或者从这两种类型的服务帐户中派生的自定义帐户对象。 策略可设置设备的访问控制条件，这些条件用于将托管服务帐户凭据限制为具有 Active Directory 标识的特定设备。 服务不应是受保护的用户安全组的成员，因为这样所有传入的身份验证都将失败。
 
--   **Computer**
+-   **计算机**
 
     使用计算机帐户对象或从该计算机帐户对象派生的自定义帐户对象。 根据用户和设备属性，策略可以设置对帐户进行身份验证时所需的访问控制条件。 计算机不应是受保护的用户安全组的成员，因为这样所有传入的身份验证将失败。 默认情况下，会拒绝对使用 NTLM 身份验证的尝试。 不应为计算机帐户配置 TGT 生存期。
 
@@ -106,7 +106,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 |服务|ms-DS-Service-Allowed-To-Authenticate-From|此属性用于确定服务帐户有权登录的设备组。|
 |服务|服务 TGT 生存期|指定分配给服务的 Kerberos TGT 的最长存在时间（用秒数表示）。|
 
-通过使用 Active Directory 管理控制台或 Windows PowerShell，可以为每个接收器配置身份验证策略。 有关详细信息，请参阅[如何配置受保护的帐户](how-to-configure-protected-accounts.md)。
+通过使用 Active Directory 管理控制台或 Windows PowerShell，可以为每个接收器配置身份验证策略。 有关详细信息，请参阅[如何配置受保护的帐户](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)。
 
 ## <a name="how-it-works"></a>工作原理
 本部分介绍身份验证策略接收器和身份验证策略如何与受保护的用户安全组协同工作，以及如何在 Windows 中实现 Kerberos 协议。
@@ -164,7 +164,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 你可以对接收器的所有成员使用一个身份验证策略，或者对用户、计算机和托管服务帐户使用单独的策略。
 
-通过使用 Active Directory 管理控制台或 Windows PowerShell，可以为每个接收器配置身份验证策略。 有关详细信息，请参阅[如何配置受保护的帐户](how-to-configure-protected-accounts.md)。
+通过使用 Active Directory 管理控制台或 Windows PowerShell，可以为每个接收器配置身份验证策略。 有关详细信息，请参阅[如何配置受保护的帐户](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)。
 
 ### <a name="how-restricting-a-user-sign-in-works"></a><a name="BKMK_HowRestrictingSignOn"></a>限制用户登录的工作原理
 由于这些身份验证策略可应用到帐户，因此它还将应用于服务使用的帐户。 若要对特定主机限制服务密码的使用情况，则该设置十分有用。 例如，在允许主机从 Active Directory 域服务检索密码的情况下，将配置组托管服务帐户。 但是，可从任意主机中使用该密码进行初始身份验证。 通过应用访问控制条件，可借助将密码限制到可检索密码的主机集来以实现另一层保护。
@@ -226,7 +226,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 这些事件记录在位于“Microsoft\Windows\Authentication”**** 的应用程序和服务日志中。
 
-有关使用这些事件的疑难解答步骤，请参阅[解决关于身份验证策略的问题](how-to-configure-protected-accounts.md#troubleshoot-authentication-policies)和[对受保护用户的相关事件进行疑难解答](how-to-configure-protected-accounts.md#troubleshoot-events-related-to-protected-users)。
+有关使用这些事件的疑难解答步骤，请参阅[解决关于身份验证策略的问题](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts#troubleshoot-authentication-policies)和[对受保护用户的相关事件进行疑难解答](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts#troubleshoot-events-related-to-protected-users)。
 
 |事件 ID 和日志|说明|
 |----------|--------|
@@ -237,7 +237,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 |306<p>**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制可能会出现故障，原因在于未允许用户或设备对服务器进行身份验证。<p>在审核模式下，信息事件将记录在域控制器中，以指示 Kerberos 服务票证将被拒绝，原因在于用户和/或设备不满足访问控制限制。<p>显示设备、策略和接收器的名称。|
 
 ## <a name="additional-references"></a>其他参考
-[如何配置受保护的帐户](how-to-configure-protected-accounts.md)
+[如何配置受保护的帐户](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)
 
 [凭据保护和管理](credentials-protection-and-management.md)
 

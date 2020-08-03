@@ -10,12 +10,12 @@ ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3ad6658c504cc90eedef2c1cb6688c6f12233b3c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 68232d0b8ab6f4b7330b746657fc63e30a3c2e74
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959869"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518825"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自动重新启动登录（ARSO）
 
@@ -31,10 +31,9 @@ ms.locfileid: "86959869"
 
 ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备，将使用设备加密，但不需要用户获取 ARSO。 对于托管设备，ARSO 配置需要 TPM 2.0、SecureBoot 和 BitLocker。 IT 管理员可以通过组策略覆盖此要求。 托管设备的 ARSO 当前仅适用于加入 Azure Active Directory 的设备。
 
-|   | Windows 更新| shutdown-g t 0  | 用户启动的重新启动 | 具有 SHUTDOWN_ARSO/EWX_ARSO 标志的 Api |
-| --- | :---: | :---: | :---: | :---: |
-| 托管设备 | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
-| 非托管设备 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Windows 更新 | shutdown-g t 0 | 用户启动的重新启动 | 具有 SHUTDOWN_ARSO/EWX_ARSO 标志的 Api |
+|--|--|--|--|
+| 托管设备-是<p>非托管设备-是 | 托管设备-是<p>非托管设备-是 | 托管设备-否<p>非托管设备-是 | 托管设备-是<p>非托管设备-是 |
 
 > [!NOTE]
 > Windows 更新导致重新启动后，最后一个交互式用户会自动登录，并且会话将被锁定。 这使得即使 Windows 更新重新启动，用户的锁屏应用仍可运行。
@@ -159,12 +158,12 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 ### <a name="credentials-stored"></a>存储的凭据
 
-|   | 密码哈希 | 凭据密钥 | 票证授予票证 | 主刷新令牌 |
-| --- | :---: | :---: | :---: | :---: |
-| 本地帐户 | :heavy_check_mark: | :heavy_check_mark: |   |   |
-| MSA 帐户 | :heavy_check_mark: | :heavy_check_mark: |   |   |
-| Azure AD 联接的帐户 | :heavy_check_mark: | :heavy_check_mark: | ： heavy_check_mark：（如果为混合） | :heavy_check_mark: |
-| 已加入域的帐户 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | ： heavy_check_mark：（如果为混合） |
+| 密码哈希 | 凭据密钥 | 票证授予票证 | 主刷新令牌 |
+|--|--|--|--|
+| 本地帐户-是 | 本地帐户-是 | 本地帐户-否 | 本地帐户-否 |
+| MSA 帐户-是 | MSA 帐户-是 | MSA 帐户-否 | MSA 帐户-否 |
+| Azure AD 联接的帐户-是 | Azure AD 联接的帐户-是 | Azure AD 联接的帐户-是（如果为混合） | Azure AD 联接的帐户-是 |
+| 已加入域的帐户-是 | 已加入域的帐户-是 | 已加入域的帐户-是 | 已加入域的帐户-是（如果是混合） |
 
 ### <a name="credential-guard-interaction"></a>Credential Guard 交互
 

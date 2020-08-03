@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2378b4cbc4f0624a0f1d65c62337d4c1a856648c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f8205c86fa89795d5ecf207e90ea22542c176f8c
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933519"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519636"
 ---
-# <a name="online-disk"></a>online disk
+# <a name="online-volume"></a>online volume
 
 使脱机卷进入联机状态。 此命令适用于已失败、发生故障或处于失败冗余状态的卷。
 
@@ -32,7 +32,7 @@ ms.locfileid: "85933519"
 online volume [noerr]
 ```
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
 | 参数 | 说明 |
 |--|--|
