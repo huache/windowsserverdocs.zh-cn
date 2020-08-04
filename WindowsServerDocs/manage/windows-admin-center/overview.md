@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: cb91b884edfbd105bc9e88a9d11b3b96055247c9
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 2a3655c7efddbbe22f312bab4c9276e88e53481b
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833330"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410008"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -35,19 +35,18 @@ Windows Admin Center 是本地部署的基于浏览器的应用，用于管理 W
 
 下面是 Windows Admin Center 的一些用途：
 
-|     |     |
-| --- | --- |
-| ![](media/simple-icon.png)| **简化服务器管理** <br/> 使用服务器管理器等熟悉的工具的新式版本管理你的服务器和群集。 5 分钟内即可完成安装并立即在你的环境中管理服务器，无需其他配置。 有关详细信息，请参阅[什么是 Windows Admin Center？](understand/what-is.md)。 |
-| ![](media/future-icon.png)| **与混合解决方案结合使用** <br/> 与 Azure 的集成可帮助你选择性地将本地服务器与相关云服务相连。 有关详细信息，请参阅 [Azure 混合服务](azure/index.md) |
-| ![](media/secure-icon.png)| **简化超融合管理** <br/> 简化 Azure Stack HCI 或 Windows Server 超融合群集的管理。 使用简化的工作负载创建和管理 VM、存储空间直通卷和软件定义的网络等等。 有关详细信息，请参阅[能否使用 Windows Admin Center 管理超融合基础设施](use/manage-hyper-converged.md)|
+- **简化服务器管理** 使用服务器管理器等熟悉的工具的新式版本管理你的服务器和群集。 5 分钟内即可完成安装并立即在你的环境中管理服务器，无需其他配置。 有关详细信息，请参阅[什么是 Windows Admin Center？](understand/what-is.md)。
+
+- **与混合解决方案结合** 与 Azure 的集成可帮助你选择性地将本地服务器与相关云服务相连。 有关详细信息，请参阅 [Azure 混合服务](azure/index.md)
+
+- **简化超融合管理** 简化 Azure Stack HCI 或 Windows Server 超融合群集的管理。 使用简化的工作负载创建和管理 VM、存储空间直通卷和软件定义的网络等等。 有关详细信息，请参阅[能否使用 Windows Admin Center 管理超融合基础设施](use/manage-hyper-converged.md)
 
 下面的视频提供了概要信息，后面有张海报提供了更多详细信息：
->[!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
+> [!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
 
 [![Windows Admin Center 海报](media/WAC1910Poster_thumb_small.PNG)](media/WAC1910Poster_thumb.png)
 
 [下载 PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
-
 
 ## <a name="contents-at-a-glance"></a>内容概览
 
@@ -184,6 +183,6 @@ Windows Admin Center 专为管理单个服务器或群集而设计。 它补充�
 
 ## <a name="stay-updated"></a>保持更新
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[在 Twitter 上关注我们](https://twitter.com/servermgmt)
+[在 Twitter 上关注我们](https://twitter.com/servermgmt)
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[阅读我们的博客](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)
+[阅读我们的博客](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)
