@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: 3f1af3e2f352c8bbea1540c2d1964ad8536170fe
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a4de7f64601ec4c869c2ae0e6b5ec7a0d22aee2c
+ms.sourcegitcommit: 3d56b626dc2d163d2c7847c01e872bfbfcde0e12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519576"
+ms.locfileid: "87538529"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -40,7 +40,7 @@ ms.locfileid: "87519576"
 
 命令行界面是 Windows 中内置的第一个 shell，用批处理（.bat）文件自动完成日常任务，如用户帐户管理或夜间备份。 借助 Windows 脚本宿主，你可以在命令行界面中运行更复杂的脚本。 有关详细信息，请参阅[cscript](cscript.md)或[wscript.echo](wscript.md)。 使用脚本可以更有效地执行操作，而不是使用用户界面。 脚本接受命令行中可用的所有命令。
 
-Windows 有两个命令 shell：命令 shell 和[PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6)。 每个 shell 是一种软件程序，它提供你与操作系统或应用程序之间的直接通信，同时提供用于自动执行 IT 操作的环境。
+Windows 有两个命令 shell：命令 shell 和[PowerShell](/powershell/scripting/overview)。 每个 shell 是一种软件程序，它提供你与操作系统或应用程序之间的直接通信，同时提供用于自动执行 IT 操作的环境。
 
 PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 PowerShell 命令。 Cmdlet 类似于 Windows 命令，但提供更可扩展的脚本语言。 可以在 Powershell 中运行 Windows 命令和 PowerShell cmdlet，但命令 shell 只能运行 Windows 命令，而不能运行 PowerShell cmdlet。
 

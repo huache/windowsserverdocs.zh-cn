@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 301541b42398ab517940af987e7ed6f3a7a54b0d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 204f6079b2d8a8c833afb8a32b4d0ac97ac0912f
+ms.sourcegitcommit: 3d56b626dc2d163d2c7847c01e872bfbfcde0e12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475544"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87538509"
 ---
 # <a name="whats-new-in-dhcp"></a>DHCP 中的新功能
 
@@ -24,6 +24,12 @@ ms.locfileid: "85475544"
 DHCP 是一种 Internet 工程任务组（IETF）标准，旨在减轻在基于 TCP/IP 的 \- 网络（如专用 intranet）上配置主机的管理负担和复杂性。 使用 DHCP 服务器服务，在 DHCP 客户端上配置 TCP/IP 的过程是自动进行的。
 
 以下各部分提供了有关新功能的信息和 DHCP 的功能更改。
+
+## <a name="new-dhcp-client-side-features-in-the-windows-10-may-2020-update"></a>Windows 10 中的新 DHCP 客户端功能可能会2020更新 
+
+Windows 10 中的 DHCP 客户端已在10月2020更新（也称为 Windows 10，版本2004）中更新。 当你运行 Windows 客户端并通过受限 Android 手机连接到 internet 时，该连接应标记为 "按流量计费"。 以前，连接被标记为 "不受身份"。 请注意，并非所有 Android 受限手机都检测为按流量计费，某些其他网络也可能显示为按流量计费。
+
+此外，为某些基于 Windows 的设备更新了传统客户端供应商名称。 此值仅用于 MSFT 5.0。 某些设备现在将显示为 MSFT 5.0 XBOX。
 
 ## <a name="dhcp-subnet-selection-options"></a>DHCP 子网选择选项
 
