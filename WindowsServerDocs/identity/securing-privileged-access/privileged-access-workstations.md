@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 9bf484ab53790c453b0849b1bf8ca91553f82898
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b51255a0ac0120847e3eb05a373535bc1b7f5d44
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953719"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520156"
 ---
 # <a name="privileged-access-workstations"></a>特权访问工作站
 
@@ -458,7 +458,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
    > 不将这些设置添加到默认域策略
 
 1. **阻止 Internet 浏览** - 若要阻止疏忽性 Internet 浏览，该操作将设置环回地址 (127.0.0.1) 的代理地址。
-   1. 转到“用户配置\首选项\Windows 设置\注册表”。 右键单击“注册表”并选择“新建” > “注册表项”，然后配置以下设置：  
+   1. 转到“用户配置\首选项\Windows 设置\注册表”。 右键单击“注册表”并选择“新建” > “注册表项”，然后配置以下设置：
       1. 操作：替换
       2. 配置单元：HKEY_CURRENT_USER
       3. 注册表项路径：Software\Microsoft\Windows\CurrentVersion\Internet Settings
@@ -479,7 +479,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
          8. 选择“**不是**”。
          9. 单击目标窗口上的“**确定**”。
       7. 单击“**确定**”即可完成 ProxyServer 组策略设置
-   2. 转到“用户配置\首选项\Windows 设置\注册表”。 右键单击“注册表”并选择“新建” > “注册表项”，然后配置以下设置：  
+   2. 转到“用户配置\首选项\Windows 设置\注册表”。 右键单击“注册表”并选择“新建” > “注册表项”，然后配置以下设置：
 
       * 操作：替换
       * 配置单元：HKEY_CURRENT_USER
@@ -511,8 +511,10 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
 在本部分中，我们将配置组策略以防止有特权的管理帐户登录较低层主机。
 
 1. 创建新的**限制工作站登录** GPO - 此设置将限制第 0 层和第 1 层管理员帐户登录到标准工作站。  此 GPO 应链接到“工作站”顶级 OU，并采用以下设置：
+
    * 在“计算机配置\策略\Windows 设置\安全设置\本地策略\用户权限分配\拒绝作为批处理作业登录”下，选择“定义这些策略设置”，然后添加第 0 层和第 1 层组  ：
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -530,48 +532,50 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
      > [!NOTE]
      > 请参阅“第 0 层的等效性”，获取有关内置第 0 层组的详细信息。
 
-         Other Delegated Groups
+      其他委派的组
 
      > [!NOTE]
      > 请参阅“第 0 层的等效性”，获取创建的、具有有效第 0 层访问权限的自定义组的详细信息。
 
-         Tier 1 Admins
+      第 1 层管理员
 
      > [!NOTE]
      > 此组是之前在阶段 1 创建的.
 
    * 在“计算机配置\策略\Windows 设置\安全设置\本地策略\用户权限分配\拒绝以服务身份登录”下，选择“定义这些策略设置”，然后添加第 0 层和第 1 层组  ：
-     ```
-     Enterprise Admins
-     Domain Admins
-     Schema Admins
-     BUILTIN\Administrators
-     Account Operators
-     Backup Operators
-     Print Operators
-     Server Operators
-     Domain Controllers
-     Read-Only Domain Controllers
-     Group Policy Creators Owners
-     Cryptographic Operators
-     ```
+      ```
+      Enterprise Admins
+      Domain Admins
+      Schema Admins
+      BUILTIN\Administrators
+      Account Operators
+      Backup Operators
+      Print Operators
+      Server Operators
+      Domain Controllers
+      Read-Only Domain Controllers
+      Group Policy Creators Owners
+      Cryptographic Operators
+      ```
 
      > [!NOTE]
      > 注意：请参阅“第 0 层的等效性”，获取有关内置第 0 层组的详细信息。
 
-         Other Delegated Groups
+      其他委派的组
 
      > [!NOTE]
      > 注意：请参阅“第 0 层的等效性”，获取创建的、具有有效第 0 层访问权限的自定义组的详细信息。
 
-         Tier 1 Admins
+      第 1 层管理员
 
      > [!NOTE]
      > 注意：此组是之前在阶段 1 创建的
 
-2. 创建新的“限制服务器登录”GPO - 此设置将限制第 0 层管理员帐户登录到第 1 层服务器。   此 GPO 应链接到“第 1 层服务器”顶级 OU，并采用以下设置：
+2. 创建新的“限制服务器登录”GPO - 此设置将限制第 0 层管理员帐户登录到第 1 层服务器。  此 GPO 应链接到“第 1 层服务器”顶级 OU，并采用以下设置：
+
    * 在“计算机配置\策略\Windows 设置\安全设置\本地策略\用户权限分配\拒绝作为批处理作业登录”下，选择“定义这些策略设置”，然后添加第 0 层组  ：
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -589,13 +593,14 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
      > [!NOTE]
      > 请参阅“第 0 层的等效性”，获取有关内置第 0 层组的详细信息。
 
-         Other Delegated Groups
+      其他委派的组
 
      > [!NOTE]
      > 请参阅“第 0 层的等效性”，获取创建的、具有有效第 0 层访问权限的自定义组的详细信息。
 
    * 在“计算机配置\策略\Windows 设置\安全设置\本地策略\用户权限分配\拒绝以服务身份登录”下，选择“定义这些策略设置”，然后添加第 0 层组  ：
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -608,17 +613,18 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
      Read-Only Domain Controllers
      Group Policy Creators Owners
      Cryptographic Operators
-     ```
+      ```
 
      > [!NOTE]
      > 请参阅“第 0 层的等效性”，获取有关内置第 0 层组的详细信息。
 
-         Other Delegated Groups
+      其他委派的组
 
      > [!NOTE]
      > 请参阅“第 0 层的等效性”，获取创建的、具有有效第 0 层访问权限的自定义组的详细信息。
 
    * 在“计算机配置\策略\Windows 设置\安全设置\本地策略\用户权限分配\拒绝本地登录”下，选择“定义这些策略设置”，然后添加第 0 层组  ：
+
      ```
      Enterprise Admins
      Domain Admins
@@ -637,7 +643,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
      > [!NOTE]
      > 注意：请参阅“第 0 层的等效性”，获取有关内置第 0 层组的详细信息。
 
-         Other Delegated Groups
+      其他委派的组
 
      > [!NOTE]
      > 注意：请参阅“第 0 层的等效性”，获取创建的、具有有效第 0 层访问权限的自定义组的详细信息。
@@ -777,7 +783,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
       2. 从 [TechNet 库](https://aka.ms/pawmedia)下载 PAW *proxy.pac* 文件，并发布在内部网站上。
 
          > [!NOTE]
-         > 下载后需要更新 *proxy.pac* 文件，以确保文件为最新且完整。  
+         > 下载后需要更新 *proxy.pac* 文件，以确保文件为最新且完整。
          > Microsoft 在 Office [支持中心](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)发布所有最新的 Office 365 和 Azure URL。 这些说明假定你将使用 Internet Explorer（或 Microsoft Edge）管理 Office 365、Azure 和其他云服务。 Microsoft 建议为需要用于管理的任何第三方浏览器配置类似的限制。 PAW 上的 Web 浏览器仅用于管理云服务并且永远不用于常规的 Web 浏览。
          >
          > 你可能需要为其他 IaaS 提供商将其他有效的 Internet 目标添加到此列表，但不要将工作效率、娱乐、新闻或搜索站点添加到此列表。
@@ -787,7 +793,7 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
          > 你还可以使用 Web 代理限制来自 PAW 的访问，同时获得深度防护。 我们不建议在没有 PAC 文件的情况下自动使用此功能，因为该功能在连接到企业网络的情况下，仅限制 PAW 的访问权限。
 
       3. 配置 *proxy.pac* 文件后，更新 PAW 配置 - 用户 GPO。
-         1. 转到“用户配置\首选项\Windows 设置\注册表”。 右键单击“注册表”并选择“新建” > “注册表项”，然后配置以下设置：  
+         1. 转到“用户配置\首选项\Windows 设置\注册表”。 右键单击“注册表”并选择“新建” > “注册表项”，然后配置以下设置：
             1. 操作：替换
             2. 配置单元：HKEY_ CURRENT_USER
             3. 注册表项路径：Software\Microsoft\Windows\CurrentVersion\Internet Settings
@@ -818,36 +824,36 @@ Microsoft 建议使用 PAW 访问特权管理解决方案。 应仅向 PAW 授�
 
          **策略：**
 
-         |||
-         |-|-|
-         |CM Windows 10 - 域安全性|N/A - 现在不链接|
-         |SCM Windows 10 TH2 - 计算机|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |SCM Windows 10 TH2 - BitLocker|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |SCM Windows 10 - 凭据保护|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |SCM Internet Explorer - 计算机|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |PAW 配置 - 计算机|Admin\Tier 0\Devices（现有）|
-         ||Admin\Tier 1\Devices（新链接）|
-         ||Admin\Tier 2\Devices（新链接）|
-         |所需的 RestrictedAdmin - 计算机|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |SCM Windows 10 - 用户|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |SCM Internet Explorer - 用户|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |PAW 配置 - 用户|Admin\Tier 0\Devices（现有）|
-         ||Admin\Tier 1\Devices（新链接）|
-         ||Admin\Tier 2\Devices（新链接）|
+         | 策略名称 | 链接 |
+         |--|--|
+         | CM Windows 10 - 域安全性 | N/A - 现在不链接 |
+         | SCM Windows 10 TH2 - 计算机 | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | SCM Windows 10 TH2 - BitLocker | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | SCM Windows 10 - 凭据保护 | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | SCM Internet Explorer - 计算机 | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | PAW 配置 - 计算机 | Admin\Tier 0\Devices（现有） |
+         |  | Admin\Tier 1\Devices（新链接） |
+         |  | Admin\Tier 2\Devices（新链接） |
+         | 所需的 RestrictedAdmin - 计算机 | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | SCM Windows 10 - 用户 | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | SCM Internet Explorer - 用户 | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | PAW 配置 - 用户 | Admin\Tier 0\Devices（现有） |
+         |  | Admin\Tier 1\Devices（新链接） |
+         |  | Admin\Tier 2\Devices（新链接） |
 
          > [!NOTE]
          > “SCM Windows 10 - 域安全”GPO 可能链接到独立于 PAW 的域，但会影响整个域。
@@ -1032,7 +1038,7 @@ HGS 是一个群集角色，因此可以根据任意部署规模轻松横向扩�
 此计算机将成为管理 VM 的黄金映像。
 可以创建多个模板磁盘，以便在不同的上下文中提供通用化工具。
 
-根据需要配置 VM 时，请运行 `C:\Windows\System32\sysprep\sysprep.exe` 并选择“通用化”磁盘。  当通用化完成后，**关闭** OS。
+根据需要配置 VM 时，请运行 `C:\Windows\System32\sysprep\sysprep.exe` 并选择“通用化”磁盘。 当通用化完成后，**关闭** OS。
 
 最后，针对 VM 上的 VHDX 文件运行[模板磁盘向导](../../security/guarded-fabric-shielded-vm/guarded-fabric-create-a-shielded-vm-template.md)，以安装 BitLocker 组件并生成磁盘签名。
 
@@ -1096,4 +1102,4 @@ New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 
 [Windows Server 2008 R2 中的 AD DS 身份验证机制保证分步指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378897(v=ws.10))
 
-[受信任的平台模块](C:/sd/docs/p_ent_keep_secure/p_ent_keep_secure/trusted_platform_module_technology_overview.xml)
+[受信任的平台模块技术概述](/windows/device-security/tpm/trusted-platform-module-overview)

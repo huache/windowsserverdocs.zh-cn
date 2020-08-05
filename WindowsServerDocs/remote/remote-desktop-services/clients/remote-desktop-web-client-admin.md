@@ -8,19 +8,19 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: a8521eae302ade84904e3ba09c001eac21fffd6a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 12ea9226a1656c6b3c800517818e5e950d142c64
+ms.sourcegitcommit: e86ea69254e2f63eaab10010ae3a43622156ab23
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77125148"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87470690"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>为用户设置远程桌面 Web 客户端
 
 远程桌面 Web 客户端使用户可以通过兼容的 Web 浏览器访问组织的远程桌面基础结构。 无论他们身在何处，都能够如同使用本地电脑一样与远程应用或桌面进行交互。 设置了远程桌面 Web 客户端后，用户只需要可以用于访问客户端的 URL、其凭据以及受支持的 Web 浏览器，便可开始使用。
 
 >[!IMPORTANT]
->Web 客户端当前不支持使用 Azure 应用程序代理，并且根本不支持 Web 应用程序代理。 有关详细信息，请参阅[将 RDS 与应用程序代理服务结合使用](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services)。
+>Web 客户端支持使用 Azure 应用程序代理，但不支持 Web 应用程序代理。 有关详细信息，请参阅[将 RDS 与应用程序代理服务结合使用](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services)。
 
 ## <a name="what-youll-need-to-set-up-the-web-client"></a>设置 Web 客户端所需的条件
 
@@ -42,7 +42,7 @@ ms.locfileid: "77125148"
 >1. 打开提升的 PowerShell 提示符。
 >2. 运行 Uninstall-Module RDWebClientManagement  以卸载新模块。
 >3. 关闭并重新打开提升的 PowerShell 提示符。
->4. 运行 Install-Module RDWebClientManagement -RequiredVersion \<旧版本> 以安装旧模块。 
+>4. 运行 Install-Module RDWebClientManagement -RequiredVersion \<old version> 以安装旧模块。
 >5. 运行 Uninstall-RDWebClient  以卸载旧 Web 客户端。
 >6. 运行 Uninstall-Module RDWebClientManagement  以卸载旧模块。
 >7. 关闭并重新打开提升的 PowerShell 提示符。

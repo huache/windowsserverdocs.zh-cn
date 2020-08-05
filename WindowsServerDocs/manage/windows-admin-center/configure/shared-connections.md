@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 03/28/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 943830a2743f7cfd3192a474eb36d57f734d3d34
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e0e78ac8feb4e008e060ba318bd5693e841b91b2
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269304"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518594"
 ---
 # <a name="configure-shared-connections-for-all-users-of-the-windows-admin-center-gateway"></a>为 Windows Admin Center 网关的所有用户配置共享连接
 
@@ -22,7 +22,9 @@ ms.locfileid: "81269304"
 在有了配置共享连接的功能后，网关管理员可以一次为给定 Windows Admin Center 网关的所有用户都配置连接列表。 此功能仅在 Windows Admin Center 服务模式下可用。
 
 在 Windows Admin Center 网关设置的“共享连接”  选项卡上，网关管理员可以像在“所有连接”页中那样添加服务器、群集和 PC 连接，包括对连接进行标记。 在“共享连接”列表中添加的任何连接和标记将显示给此 Windows Admin Center 网关的所有用户（在其“所有连接”页中）。
-    ![](../media/shared-cnxns-1.png)
+
+![Windows Admin Center -“共享连接”页](../media/shared-cnxns-1.png)
 
 在配置“共享连接”后，任何 Windows Admin Center 用户访问“所有连接”页面时都将看到自己的连接已分组到两个部分：“个人”和“共享连接”。 “个人”组是特定用户的连接列表，持久保存于该用户的浏览器会话中。 “共享连接”组对所有用户都是相同的，并且不能从“所有连接”页进行修改。
-![](../media/shared-cnxns-2.png)
+
+![Windows Admin Center -“所有连接”页](../media/shared-cnxns-2.png)

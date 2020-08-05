@@ -10,12 +10,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d710a8c701b52bda62c5cd0616a44f37fe2e7b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f9de652a25dde8f21c934d7093af977198ae0646
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962029"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409868"
 ---
 # <a name="deploy-nano-server"></a>部署 Nano Server
 
@@ -33,7 +33,6 @@ Nano Server 映像生成器是借助图形界面帮助创建自定义 Nano Serve
 从[下载中心](https://www.microsoft.com/download/details.aspx?id=54065)获取工具。
 
 该工具也需要 [Windows 评估和部署工具包 (ADK)](https://developer.microsoft.comwindows/hardware/windows-assessment-deployment-kit)。
-
 
 Nano Server 映像生成器创建 VHD、VHDX 或 ISO格式的自定义 Nano Server 映像，并可创建可启动的 USB 媒体以部署 Nano Server 或检测服务器的硬件配置。 该生成器还可执行以下操作：
 
@@ -63,7 +62,7 @@ Nano Server 映像生成器创建 VHD、VHDX 或 ISO格式的自定义 Nano Serv
 
 此表显示了此版本的 Nano Server 中可用的角色和功能，以及将为其安装包的 Windows PowerShell 选项。 某些包可直接使用其自身的 Windows PowerShell 开关进行安装（例如 -Compute）；其他包需通过将其名称传递到 -Package 参数进行安装（可在由逗号分隔的列表中进行组合）。 可使用 Get-NanoServerPackage cmdlet 动态列出可用程序包。
 
-|| 角色或功能 | 选项 |
+| 角色或功能 | 选项 |
 |--|--|
 | Hyper-V 角色（包括 NetQoS） | -Compute |
 | 故障转移群集和其他组件，在此表后详细说明 | -Clustering |
@@ -83,7 +82,7 @@ Nano Server 映像生成器创建 VHD、VHDX 或 ISO格式的自定义 Nano Serv
 | BitLocker、受信任的平台模块 (TPM)、卷加密、平台标识、加密提供程序以及与安全启动相关的其他功能 | -Package Microsoft-NanoServer-SecureStartup-Package |
 | 受防护的 VM 的 Hyper-V 支持 | -Package Microsoft-NanoServer-ShieldedVM-Package<p>**注意：** 该程序包仅适用于 Nano Server 的 Datacenter 版本。 |
 | 简单网络管理协议 (SNMP) 代理 | -Package Microsoft-NanoServer-SNMP-Agent-Package.cab<p>**注意：** Windows Server 2016 安装媒体中未附带。 仅联机可用。 有关详细信息，请参阅[联机安装角色和功能](#BKMK_online)。 |
-| 使用 IPv6 转换技术（6to4、ISATAP、端口代理和 Teredo）和 IP-HTTPS 提供隧道连接的 IPHelper 服务 | -Package Microsoft-NanoServer-IPHelper-Service-Package.cab<p>**注意：** Windows Server 2016 安装媒体中未附带。 仅联机可用。 有关详细信息，请参阅[联机安装角色和功能](#BKMK_online)。 ||
+| 使用 IPv6 转换技术（6to4、ISATAP、端口代理和 Teredo）和 IP-HTTPS 提供隧道连接的 IPHelper 服务 | -Package Microsoft-NanoServer-IPHelper-Service-Package.cab<p>**注意：** Windows Server 2016 安装媒体中未附带。 仅联机可用。 有关详细信息，请参阅[联机安装角色和功能](#BKMK_online)。 |
 
 > [!NOTE]
 > 使用这些选项安装程序包时，同时会基于所选服务器媒体区域设置安装相应的语言包。 可在以映像的区域设置命名的子文件夹中的安装媒体中找到可用语言包及其区域设置缩写。
@@ -117,7 +116,9 @@ Nano Server 映像生成器创建 VHD、VHDX 或 ISO格式的自定义 Nano Serv
 
 本示例演示创建具有给定计算机名称的基于 GPT 的 VHDX 映像，包括 Hyper-V 来宾驱动程序，从网络共享上的 Nano Server 安装媒体开始。 在提升的 Windows PowerShell 提示符下，从此 cmdlet 开始：
 
-`Import-Module <Server media location>\NanoServer\NanoServerImageGenerator; New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\server_en-us -BasePath .\Base -TargetPath .\FirstStepsNano.vhdx -ComputerName FirstStepsNano`
+```powershell
+Import-Module <Server media location>\NanoServer\NanoServerImageGenerator; New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\server_en-us -BasePath .\Base -TargetPath .\FirstStepsNano.vhdx -ComputerName FirstStepsNano
+```
 
 该 cmdlet 将完成以下所有任务：
 
@@ -160,7 +161,9 @@ Nano Server 映像生成器创建 VHD、VHDX 或 ISO格式的自定义 Nano Serv
 
 若要创建 Nano Server 映像以用作 Hyper-V 主机，请运行以下命令：
 
-`New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.wim -ComputerName <computer name> -OEMDrivers -Compute -Clustering`
+```powershell
+New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.wim -ComputerName <computer name> -OEMDrivers -Compute -Clustering`
+```
 
 位置
 - MediaPath 是 DVD 媒体或包含 Windows Server 2016 的 ISO 映像的根路径。

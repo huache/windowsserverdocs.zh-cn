@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/14/2020
+ms.date: 07/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9449da93e52471d1f21c2b7079a8fed0415a03a
-ms.sourcegitcommit: e6becfd2266fd434b7994455c7782de36af4ff80
+ms.openlocfilehash: 41e4923d64ebacf606f01350a873f6dbce564b4c
+ms.sourcegitcommit: 42cd33c95645321d09d006ff2e7666d6370dfbc3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377001"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87330813"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -26,19 +26,20 @@ ms.locfileid: "86377001"
 
 |用户组 |版本  |
 |-----------|---------|
-|公用     |1.2.1104 |
-|Insider    |1.2.1185 |
+|公用     |1.2.1186 |
+|Insider    |1.2.1186 |
 
-## <a name="updates-for-version-121185"></a>针对版本 1.2.1185 的更新
+## <a name="updates-for-version-121186"></a>针对版本 1.2.1186 的更新
 
-*发布日期：2020/07/14*
+*发布日期：2020/07/28*
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hr)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hq)
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qy)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ciex)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qx)
 
 - 现在可以在客户端顶部的命令栏上使用溢出菜单 (...) 选项，使用多个用户帐户订阅工作区。 为区分工作区，工作区标题现在包含用户名，所有应用快捷方式标题也同样包含。
 - 订阅错误消息中添加了其他信息，以改进故障排除功能。
 - 在刷新过程中，现在会保留工作区的折叠/展开状态。
 - “连接信息”对话框中添加了“发送诊断并关闭”按钮 。
+- 解决了远程会话中 CTRL + SHIFT 键的问题。
 
 ## <a name="updates-for-version-121104"></a>版本 1.2.1104 的更新
 

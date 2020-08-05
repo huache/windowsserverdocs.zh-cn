@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 25472e4ba4837bd68c9b6914e22c2219c91d3ac0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 71f15f9da1f477ec8632fd2eb900e650f83ef3de
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861650"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409597"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>配置系统以实现高精度
 >适用于：Windows Server 2016 和 Windows 10 版本 1607 或更高版本
@@ -23,7 +23,7 @@ Windows 10 和 Windows Server 2016 中的时间同步已大幅改善。  在合�
 以下指南将有助于配置系统以实现高精度。  本文讨论了以下要求：
 
 - 支持的操作系统
-- 系统配置 
+- 系统配置
 
 > [!WARNING]
 > **先前的操作系统精度目标**<br>
@@ -61,8 +61,7 @@ Windows 10 和 Windows Server 2016 中的时间同步已大幅改善。  在合�
 
 ![时间拓扑 - 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/Topology2016.png)
 
-
->[!TIP] 
+>[!TIP]
 >**确定 Windows 版本**<br>
 > 可以在命令提示符下运行命令 `winver` 来验证 OS 版本是否为 1607（或更高版本），以及 OS 版本是否为 14393（或更高版本），如下所示：
 >
@@ -93,78 +92,70 @@ Windows 时间服务 (W32Time) 必须持续运行。  为此，请将 Windows �
 可以使用收件箱 w32tm.exe 工具获取此度量。  若要实现此目的，请执行以下操作：
 
 1. 从目标和时间服务器 B 执行计算。
-    
+
     `w32tm /stripchart /computer:TimeServerB /rdtsc /samples:450 > c:\temp\Target_TsB.csv`
 
 2. 从时间服务器 b 对（指向）时间服务器 a 执行计算。
-    
+
     `w32tm /stripchart /computer:TimeServerA /rdtsc /samples:450 > c:\temp\Target_TsA.csv`
 
 3. 从时间服务器 a 对源执行计算。
- 
+
 4. 接下来，添加在上一步中测量的平均 RoundTripDelay 并除以 2，获取目标和源之间的累计网络延迟。
 
-#### <a name="registry-settings"></a>注册表设置
+## <a name="registry-settings"></a>注册表设置
 
-# <a name="minpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
+### <a name="minpollinterval"></a>MinPollInterval
+
 配置允许系统轮询的最小间隔（以 log2 秒为单位）。
 
-|  |  | 
-|---------|---------|
-|密钥位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
-|设置    | 6        |
-|结果 | 最小轮询间隔现为 64 秒。 |
+| 说明 | 值 |
+|--|--|
+| 密钥位置 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 设置 | 6 |
+| 结果 | 最小轮询间隔现为 64 秒。 |
 
-以下命令将指示 Windows 时间获取更新的设置：
+以下命令将指示 Windows 时间获取更新的设置：`w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="maxpollinterval"></a>MaxPollInterval
 
-
-# <a name="maxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
 配置允许系统轮询的最大间隔（以 log2 秒为单位）。
 
-|  |  |  
-|---------|---------|
-|密钥位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
-|设置    | 6        |
-|结果 | 最大轮询间隔现为 64 秒。  |
+| 说明 | 值 |
+|--|--|
+| 密钥位置 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 设置 | 6 |
+| 结果 | 最大轮询间隔现为 64 秒。 |
 
-以下命令将指示 Windows 时间获取更新的设置：
+以下命令将指示 Windows 时间获取更新的设置：`w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="updateinterval"></a>UpdateInterval
 
-# <a name="updateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
 相位校正调整之间的时钟周期数。
 
-|  |  |  
-|---------|---------|
-|密钥位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config       |
-|设置    | 100        |
-|结果 | 相位校正调整之间的时钟周期数现为 100。 |
+| 说明 | 值 |
+|--|--|
+| 密钥位置 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 设置 | 100 |
+| 结果 | 相位校正调整之间的时钟周期数现为 100。 |
 
-以下命令将指示 Windows 时间获取更新的设置：
+以下命令将指示 Windows 时间获取更新的设置：`w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="specialpollinterval"></a>SpecialPollInterval
 
-# <a name="specialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
 配置启用 SpecialInterval 0x1 标志后的轮询间隔（以秒为单位）。
 
-|  |  |  
-|---------|---------|
-|密钥位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient        |
-|设置    | 64        |
-|结果 | 轮询间隔现为 64 秒。 |
+| 说明 | 值 |
+|--|--|
+| 密钥位置 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient |
+| 设置 | 64 |
+| 结果 | 轮询间隔现为 64 秒。 |
 
-以下命令将重新启动 Windows 时间以获取更新的设置：
+以下命令将重新启动 Windows 时间以获取更新的设置：`net stop w32time && net start w32time`
 
-`net stop w32time && net start w32time`
+### <a name="frequencycorrectrate"></a>FrequencyCorrectRate
 
-# <a name="frequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
-
-|  |  |  
-|---------|---------|
-|密钥位置     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config      |
-|设置    | 2        |
-
-
----
+| 说明 | 值 |
+|--|--|
+| 密钥位置 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 设置 | 2 |
