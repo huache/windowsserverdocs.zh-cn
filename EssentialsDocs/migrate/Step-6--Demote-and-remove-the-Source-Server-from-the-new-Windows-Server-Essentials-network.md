@@ -7,12 +7,12 @@ ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e78b3d50193cfd20df331d945fc549d3e3b35dbe
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 955da6c37bd57711529de02277d10f4627851715
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180413"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838336"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>步骤 6：从新的 Windows Server Essentials 网络中降级和删除源服务器
 
@@ -79,7 +79,7 @@ ms.locfileid: "87180413"
 
 4. 该过程可能需要注销并重新登录才能完成。 单击“是”**** 以确认。
 
-   如果要从 Windows Server Essentials 或其早期版本进行迁移，若要降级服务器，请参阅[删除 Active Directory 域服务](https://technet.microsoft.com/library/hh472163.aspx)。 在将源服务器添加为工作组的成员并断开它到网络的连接之后，必须将它从目标服务器上的 AD DS 中删除。
+   如果要从 Windows Server Essentials 或其早期版本进行迁移，若要降级服务器，请参阅[删除 Active Directory 域服务](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472163(v=ws.11))。 在将源服务器添加为工作组的成员并断开它到网络的连接之后，必须将它从目标服务器上的 AD DS 中删除。
 
    如果要从 Windows Server Essentials 进行迁移，请使用服务器管理器删除 Active Directory 域服务角色，从而使用以下过程降级源服务器上的域控制器：
 
@@ -106,4 +106,3 @@ ms.locfileid: "87180413"
 
 
 若要查看所有步骤，请参阅[迁移到 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
-

@@ -7,12 +7,12 @@ ms.assetid: f5861ae9-77cb-4d37-b4c5-8f0757213385
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1097520110f876a8c29e05547d4407a13f1c5057
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: bc672a3f2d9b74ff4ed283e826312f6661ba63f6
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180513"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838396"
 ---
 # <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>为 Windows Server Essentials migration1 准备源服务器
 
@@ -39,7 +39,7 @@ ms.locfileid: "87180513"
 
 ##### <a name="to-back-up-the-source-server"></a>备份源服务器
 
-1.  对源服务器执行完全备份。 有关备份 Windows Small Business Server 2011 Essentials 的详细信息，请参阅[了解有关设置服务器备份的详细](https://technet.microsoft.com/library/server-backup-support-1.aspx)信息。
+1.  对源服务器执行完全备份。 有关备份 Windows Small Business Server 2011 Essentials 的详细信息，请参阅[了解有关设置服务器备份的详细](/previous-versions/windows/it-pro/windows-server-essentials-sbs/ff402413(v=ws.11))信息。
 
 2.  验证备份是否成功运行。 要测试备份的完整性，请从备份中选择随机文件，将它们还原到备用位置，然后确认还原后的文件是否与原始文件相同。
 
@@ -66,7 +66,7 @@ ms.locfileid: "87180513"
 #### <a name="run-the-windows-server-solutions-best-practices-analyzer"></a>运行 Windows Server 解决方案最佳做法分析器
  可以在开始执行迁移过程之前，运行 Windows Server 解决方案最佳做法分析器 (BPA) 来验证服务器、网络或域上不存在任何问题。 BPA 从以下来源收集配置信息：
 
--   Active Directory &reg; Windows Management Instrumentation （WMI）
+-   &reg; (WMI Windows Management Instrumentation Active Directory) 
 
 -   注册表
 
@@ -89,7 +89,7 @@ ms.locfileid: "87180513"
 
    收集有关服务器配置信息之后，Windows Server 解决方案 BPA 验证信息正确，然后向管理员呈现一个按严重性排序的信息和问题列表。 该列表描述每个问题并提供建议或可能的解决方案。 可以使用三种报告类型：
 
-|报表类型|描述|
+|报表类型|说明|
 |-----------------|-----------------|
 |列表报告|在一维列表中显示报告。|
 |目录树报告|在分层列表中显示报告。|
@@ -98,7 +98,7 @@ ms.locfileid: "87180513"
  要查看某个问题的描述和解决方案，请在报告中单击该问题。 并非 Windows SBS 2011 Essentials BPA 报告的所有问题均会对迁移造成影响，但应尽可能多地解决问题以确保迁移成功。
 
 ####  <a name="synchronize-the-source-server-time-with-an-external-time-source"></a><a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>将源服务器时间与外部时间源同步
- 源服务器上的时间与目标服务器上的时间差异必须设置为在 5 分钟之内，并且两个服务器上的日期和时区必须相同。 如果源服务器正在虚拟机中运行，则主机服务器上的日期、时间和时区必须与源服务器和目标服务器上日期、时间和时区匹配。 为了帮助确保成功安装 Windows Server Essentials，必须将源服务器时间与 Internet 上的网络时间协议（NTP）服务器同步。
+ 源服务器上的时间与目标服务器上的时间差异必须设置为在 5 分钟之内，并且两个服务器上的日期和时区必须相同。 如果源服务器正在虚拟机中运行，则主机服务器上的日期、时间和时区必须与源服务器和目标服务器上日期、时间和时区匹配。 为了帮助确保成功安装 Windows Server Essentials，必须将源服务器时间与 Internet 上的网络时间协议 (NTP) 服务器同步。
 
 ###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>将源服务器时间与 NTP 服务器同步的步骤
 
@@ -192,4 +192,3 @@ ms.locfileid: "87180513"
 
 > [!NOTE]
 >  如果使用 Windows Small Business Server 2011 Essentials SDK 开发自定义的系统运行状况或警报加载项，并且希望继续将该加载项用于 Windows Server Essentials，则还必须更新外接程序并将其部署到目标服务器。
-

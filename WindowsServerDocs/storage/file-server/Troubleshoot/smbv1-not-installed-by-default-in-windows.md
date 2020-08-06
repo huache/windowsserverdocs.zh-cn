@@ -15,7 +15,7 @@ ms.locfileid: "87769725"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>默认情况下，windows 10 版本1709、Windows Server 版本1709及更高版本中未安装 SMBv1
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在 Windows 10 秋季创意者更新和 Windows Server 版本 1709 (RS3) 和更高版本中，默认情况下不再安装服务器消息块版本 1 (SMBv1) 网络协议。 从2007开始，SMBv2 和更高版本的协议取代了它。 Microsoft 在2014中公开弃用了 SMBv1 协议。
 

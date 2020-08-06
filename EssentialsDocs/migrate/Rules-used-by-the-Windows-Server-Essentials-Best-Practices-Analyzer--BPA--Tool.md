@@ -7,18 +7,18 @@ ms.assetid: 37e1dae7-586c-4dd7-bf83-7e14a9567c8f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b84372394204353d0410da63d74f785c0e8fd07e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: eea437a5867a602a84483a41fe129d64425bcb88
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180503"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838436"
 ---
 # <a name="rules-used-by-the-windows-server-essentials-best-practices-analyzer-bpa-tool"></a>Windows Server Essentials 最佳做法分析器 (BPA) 工具所使用的规则
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本文介绍 Windows Server Essentials 最佳做法分析器（BPA）使用的规则。 BPA 检查正在运行 Windows Server Essentials 的服务器，并提供一份描述问题的报告，并提供解决这些问题的建议。 建议由适用于 Windows Server Essentials 的产品支持组织开发。
+本文介绍 Windows Server Essentials 最佳做法分析器 (BPA) 所使用的规则。 BPA 检查正在运行 Windows Server Essentials 的服务器，并提供一份描述问题的报告，并提供解决这些问题的建议。 建议由适用于 Windows Server Essentials 的产品支持组织开发。
 
 ## <a name="using-the-tool"></a>使用工具
  这是一种标准做法，当你从 Windows Server 2011 Essentials、Windows Small Business Server 2011 Essentials 或 Windows Home Server 2011 迁移到 Windows Server Essentials 时，将在你完成设置和数据的迁移后在目标服务器上运行 BPA。 你可以随时从仪表板运行该工具。
@@ -117,7 +117,7 @@ ms.locfileid: "87180503"
 ### <a name="active-directory-web-services-is-not-set-to-the-default-start-mode"></a>Active Directory Web Services 未设置为默认启动模式
  **问题：** Active Directory Web 服务未设置为自动的默认启动模式。
 
- **影响：** Active Directory Web 服务（ADWS）未设置为 "自动" 的默认启动模式。 如果服务器上的 ADWS 已停止或禁用，客户端应用程序（例如 Windows PowerShell 的 Active Directory 模块或 Active Directory 管理中心）则无法访问或管理在此服务器上运行的目录服务实例。 有关详细信息，请参阅[AD DS 中的新增功能： Active Directory Web 服务](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx)（ https://technet.microsoft.com/library/dd391908(WS.10).aspx) 在 Windows Server 技术库中）。
+ **影响：** Active Directory Web Services (ADWS) 未设置为 "自动" 的默认启动模式。 如果服务器上的 ADWS 已停止或禁用，客户端应用程序（例如 Windows PowerShell 的 Active Directory 模块或 Active Directory 管理中心）则无法访问或管理在此服务器上运行的目录服务实例。 有关详细信息，请参阅 Windows Server 技术库中[AD DS： Active Directory Web 服务 (中的新增功能](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) https://technet.microsoft.com/library/dd391908(WS.10).aspx) 。
 
  **解决方法：**
 
@@ -276,7 +276,7 @@ ms.locfileid: "87180503"
 ### <a name="active-directory-web-services-is-not-started"></a>Active Directory Web Services 未启动
  **问题：** 未启动 Active Directory Web 服务。
 
- **影响：** 未启动 Active Directory Web 服务（ADWS）。 如果服务器上的 ADWS 已停止或禁用，客户端应用程序（例如 Windows PowerShell 的 Active Directory 模块或 Active Directory 管理中心）则无法访问或管理在此服务器上运行的目录服务实例。 有关详细信息，请参阅[AD DS 中的新增功能： Active Directory Web 服务](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx)（ https://technet.microsoft.com/library/dd391908(WS.10).aspx) 在 Windows Server 技术库中）。
+ **影响：** 未启动 Active Directory Web 服务 (ADWS) 。 如果服务器上的 ADWS 已停止或禁用，客户端应用程序（例如 Windows PowerShell 的 Active Directory 模块或 Active Directory 管理中心）则无法访问或管理在此服务器上运行的目录服务实例。 有关详细信息，请参阅 Windows Server 技术库中[AD DS： Active Directory Web 服务 (中的新增功能](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) https://technet.microsoft.com/library/dd391908(WS.10).aspx) 。
 
  **解决方法：**
 
@@ -352,7 +352,7 @@ ms.locfileid: "87180503"
 2.  右键单击“Windows Time”**** 服务，然后单击“启动”****。
 
 ### <a name="the-distributed-transaction-coordinator-msdtc-service-logon-account-should-be-nt-authoritynetwork-service"></a>Distributed Transaction Coordinator (MSDTC) 服务登录帐户应为 NT AUTHORITY\Network Service
- **问题：** 分布式事务处理协调器（MSDTC）服务的默认登录帐户已更改。
+ **问题：** 更改了分布式事务处理协调器 (MSDTC) 服务的默认登录帐户。
 
  **影响：** 该服务可能没有按预期方式工作所需的权限。 因此，使用 SQL Server 或 COM 功能的应用程序可能无法正常工作。
 
@@ -414,7 +414,7 @@ ms.locfileid: "87180503"
 ### <a name="active-directory-web-services-is-not-the-default-logon-account"></a>Active Directory Web Services 不是默认登录帐户
  **问题：** Active Directory Web 服务不是默认登录帐户。 默认情况下，登录帐户设置为“本地系统帐户”****。
 
- **影响：** 未启动 Active Directory Web 服务（ADWS）。 如果服务器上的 ADWS 已停止或禁用，客户端应用程序（例如 Windows PowerShell 的 Active Directory 模块或 Active Directory 管理中心）则无法访问或管理在此服务器上运行的目录服务实例。 有关详细信息，请参阅[AD DS 中的新增功能： Active Directory Web 服务](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx)（ https://technet.microsoft.com/library/dd391908(WS.10).aspx) 在 Windows Server 技术库中）。
+ **影响：** 未启动 Active Directory Web 服务 (ADWS) 。 如果服务器上的 ADWS 已停止或禁用，客户端应用程序（例如 Windows PowerShell 的 Active Directory 模块或 Active Directory 管理中心）则无法访问或管理在此服务器上运行的目录服务实例。 有关详细信息，请参阅 Windows Server 技术库中[AD DS： Active Directory Web 服务 (中的新增功能](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) https://technet.microsoft.com/library/dd391908(WS.10).aspx) 。
 
  **解决方法：**
 
@@ -525,7 +525,7 @@ ms.locfileid: "87180503"
 
  **影响：** 如果管理员创建了一个警报并将该警报配置为在管理员未登录时运行，则该警报将失败并出现错误代码2147943785。
 
- **解决方法：** 有关如何向内置管理员组提供作为批处理作业登录的权限的信息，请参阅[向内置管理员组提供作为批处理作业登录的](https://technet.microsoft.com/library/jj635076)权限（ https://technet.microsoft.com/library/jj635076) 。
+ **解决方法：** 有关如何向内置管理员组授予作为批处理作业登录的权限的信息，请参阅[向内置管理员组提供作为批处理作业登录的](/previous-versions/orphan-topics/ws.11/jj635076(v=ws.11))权限 (https://technet.microsoft.com/library/jj635076) 。
 
 ### <a name="the-windows-firewall-is-turned-off"></a>Windows 防火墙已关闭
  **问题：** Windows 防火墙已关闭。 默认值为“打开”。
@@ -587,7 +587,7 @@ ms.locfileid: "87180503"
 3.  在“动态更新”**** 下拉列表中，选择“仅安全”****，然后单击“确定”****。
 
 ### <a name="internet-explorer-enhanced-security-configuration-is-not-enabled"></a>Internet Explorer 增强安全配置未启用
- **问题：** 当前没有为 Administrators 组启用 Internet Explorer 增强的安全配置（IE ESC）。
+ **问题：** Internet Explorer 增强的安全配置 (IE ESC) 当前未为 Administrators 组启用此功能。
 
  **影响：** 如果未对管理员组启用 Internet Explorer 增强的安全配置，您的服务器和 Internet Explorer 可能会增加通过 Web 内容和应用程序脚本发生的恶意攻击。
 
@@ -600,7 +600,7 @@ ms.locfileid: "87180503"
 2.  在“属性”**** 窗格上，将“IE 增强安全配置”**** 的设置更改为“打开”****，然后单击“确定”****。
 
 ### <a name="internet-explorer-enhanced-security-configuration-is-not-enabled"></a>Internet Explorer 增强安全配置未启用
- **问题：** 当前没有为用户组启用 Internet Explorer 增强的安全配置（IE ESC）。
+ **问题：** Internet Explorer 增强的安全配置 (IE ESC) 当前未为用户组启用此功能。
 
  **影响：** 如果未对用户组启用 Internet Explorer 增强的安全配置，您的服务器和 Internet Explorer 可能会增加通过 Web 内容和应用程序脚本发生的恶意攻击。
 
@@ -642,9 +642,9 @@ ms.locfileid: "87180503"
 3.  如果策略未出现在树中，则从系统状态备份中将其还原。
 
 ### <a name="no-dns-name-server-resource-records"></a>没有 DNS 名称服务器资源记录
- **问题：** 服务器的正向查找区域中没有 DNS 名称服务器（NS）资源记录。
+ **问题：** 服务器的正向查找区域中没有 (NS) 资源记录的 DNS 名称服务器。
 
- **影响：** 如果 Active Directory 域的正向查找区域中不存在 DNS 名称服务器（NS）资源记录，用户可能无法访问网络或 Internet 上的资源。
+ **影响：** 如果 Active Directory 域的正向查找区域中不存在 DNS 名称服务器 (NS) 资源记录，则用户可能无法访问网络或 Internet 上的资源。
 
  **解决方法：**
 
@@ -659,9 +659,9 @@ ms.locfileid: "87180503"
 4.  进行任何必要的更改，然后单击“确定”**** 保存设置。
 
 ### <a name="no-dns-name-server-records"></a>没有 DNS 名称服务器记录
- **问题：** 服务器 _msdcs 区域中没有 DNS 名称服务器（NS）资源记录（例如： _msdcs 本地）。
+ **问题：** 服务器的 _msdcs 区域中没有 (NS) 资源记录的 DNS 名称服务器 (例如： _msdcs) 。
 
- **影响：** 如果 Active Directory 域的 _msdcs 区域中不存在 DNS 名称服务器（NS）资源记录，则用户可能无法访问网络或 Internet 上的资源。
+ **影响：** 如果 Active Directory 域的 _msdcs 区域中不存在 (NS) 资源记录的 DNS 名称服务器，则用户可能无法访问网络或 Internet 上的资源。
 
  **解决方法：**
 
@@ -676,9 +676,9 @@ ms.locfileid: "87180503"
 4.  进行任何必要的更改，然后单击“确定”**** 保存设置。
 
 ### <a name="no-dns-name-server-records"></a>没有 DNS 名称服务器记录
- **问题：** 委派的 _msdcs 正向查找区域没有 DNS 名称服务器（NS）资源记录。
+ **问题：** 对于委派的 _msdcs 正向查找区域，不存在 (NS) 资源记录的 DNS 名称服务器。
 
- **影响：** 如果委派的 _msdcs 正向查找区域中不存在 DNS 名称服务器（NS）资源记录，则 DNS 服务器服务将无法解析域的 DNS 资源记录并且将无法启动。
+ **影响：** 如果委派的 _msdcs 正向查找区域中不存在 DNS 名称服务器 (NS) 资源记录，则 DNS 服务器服务将无法解析域的 DNS 资源记录，并且将无法启动。
 
  **解决方法：**
 
@@ -796,7 +796,7 @@ ms.locfileid: "87180503"
  **解决方法：** 备份服务器并且默认网站停止时，可以删除 C:\inetpub\logs\LogFiles\W3SVC1 文件夹中的日志文件。 然后启动默认网站。
 
 ### <a name="no-binding-for-ssl-on-all-ip-addresses"></a>没有为所有 IP 地址绑定 SSL
- **问题：** 服务器上的所有 IP 地址上都没有安全套接字层（SSL）的绑定。
+ **问题：** 服务器上的所有 IP 地址上都没有安全套接字层 (SSL) 的绑定。
 
  **影响：** 如果 SSL 未绑定到服务器上的所有 IP 地址，则用户将无法使用某些网站。
 
@@ -863,7 +863,7 @@ ms.locfileid: "87180503"
 
  **影响：** 如果用户帐户具有重复的 CN 名称，用户可能无法登录到网络。 此外，在 Active Directory 中搜索用户可能会返回错误值。
 
- **解决方法：** 若要解决此问题：，请确保网络用户帐户没有重复的 "CN =" 名称。 若要简化此过程，请考虑将 Active Directory 内容导出到文本文件中进行检查。 有关如何执行此操作的信息，请参阅[使用 LDIFDE 将目录对象导入和导出到 Active Directory （知识库文章237677）](https://support.microsoft.com/kb/237677) （ https://support.microsoft.com/kb/237677) 。
+ **解决方法：** 若要解决此问题：，请确保网络用户帐户没有重复的 "CN =" 名称。 若要简化此过程，请考虑将 Active Directory 内容导出到文本文件中进行检查。 有关如何执行此操作的信息，请参阅[使用 LDIFDE 将目录对象导入和导出到 Active Directory (知识库文章 237677) ](https://support.microsoft.com/kb/237677) (https://support.microsoft.com/kb/237677) 。
 
 ### <a name="nt-backup-is-installed"></a>安装了 NT 备份
  **问题：** Windows NT 备份程序安装在服务器上。
@@ -873,7 +873,7 @@ ms.locfileid: "87180503"
  **解决方法：** 若要解决此问题：，请从服务器卸载 NT 备份程序。
 
 ### <a name="iis-does-not-own-port-80-000080-or-port-443-0000443"></a>IIS 没有端口 80 (0.0.0.0:80) 或端口 443 (0.0.0.0:443)
- **问题：** Internet Information Services （IIS）不拥有端口80（0.0.0.0：80）或端口443。 这些端口当前通过其他应用程序绑定。
+ **问题：** Internet Information Services (IIS) 不拥有端口 80 (0.0.0.0： 80) 或端口443。 这些端口当前通过其他应用程序绑定。
 
  **影响：**  Windows Server Essentials web 应用程序要求使用端口80和端口443向用户提供服务。 如果其他进程或应用程序已在使用端口80或端口443，则 Windows Server Essentials web 应用程序将无法运行。 如果发生这种情况，用户将无法使用“远程 Web 访问”及其他应用程序。
 
@@ -958,7 +958,7 @@ ms.locfileid: "87180503"
 
  **影响：** Windows Server 备份只能备份格式化为 NTFS 的分区。
 
- **解决方法：** 不要将 Windows Server 备份配置为备份非 NTFS 分区。 有关详细信息，请参阅在[基于 Windows Server 2008 的计算机上的系统状态备份失败时记录的事件 id 12290 和16387（知识库文章968128）](https://support.microsoft.com/kb/968128) （ https://support.microsoft.com/kb/968128) 。
+ **解决方法：** 不要将 Windows Server 备份配置为备份非 NTFS 分区。 有关详细信息，请参阅[Windows Server 2008 计算机上的系统状态备份失败时记录的事件 id 12290 和 16387 (知识库文章 968128) ](https://support.microsoft.com/kb/968128) (https://support.microsoft.com/kb/968128) 。
 
 ### <a name="the-most-recent-backup-did-not-succeed"></a>最新备份失败
  **问题：** 最近的备份尝试未成功完成。
@@ -968,7 +968,7 @@ ms.locfileid: "87180503"
  **解决方法：** 查看事件日志和备份日志，以了解在最近的备份过程中发生的错误。
 
 ### <a name="the-startup-type-for-the-file-replication-service-is-not-set-to-automatic"></a>File Replication Service 的启动类型未设置为“自动”
- **问题：** 如果启动类型未设置为默认值 "自动"，则文件复制服务（FRS）可能不会启动。
+ **问题：** 如果启动类型未设置为 "自动" 的默认值，则文件复制服务 (FRS) 可能无法启动。
 
  **影响：** 如果文件复制服务未运行，域控制器可能会停止播发其服务。 这可能会导致其他问题，例如登录错误和组策略错误。
 
@@ -1207,4 +1207,4 @@ ms.locfileid: "87180503"
     net start tsgateway
     ```
 
-     有关详细信息，请参阅[如何在 Windows Server Essentials 中管理远程桌面网关服务（知识库文章2472211）](https://support.microsoft.com/kb/2472211) （ https://support.microsoft.com/kb/2472211) 。
+     有关详细信息，请参阅[如何在 Windows Server Essentials 中管理远程桌面网关服务 (知识库文章 2472211) ](https://support.microsoft.com/kb/2472211) (https://support.microsoft.com/kb/2472211) 。

@@ -115,7 +115,7 @@ Set-SRNetworkConstraint -SourceComputerName sr-cluster01 -SourceRGName group1 -S
 在两个群集间进行复制时，如果配置群集到群集复制，存储副本会完全支持横向扩展文件服务器，包括可以使用存储空间直通。
 
 ## <a name="is-csv-required-to-replicate-in-a-stretch-cluster-or-between-clusters"></a><a name="FAQ7.5"></a>在 stretch 群集或群集之间复制是否需要 CSV？
-否。 你可以使用 CSV 或持久磁盘保留 (PDR) （如文件服务器角色）拥有的群集资源。
+错误。 你可以使用 CSV 或持久磁盘保留 (PDR) （如文件服务器角色）拥有的群集资源。
 
 在两个群集间进行复制时，如果配置群集到群集复制，存储副本会完全支持横向扩展文件服务器，包括可以使用存储空间直通。
 

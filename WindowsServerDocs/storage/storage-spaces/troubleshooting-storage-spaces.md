@@ -37,10 +37,10 @@ ms.locfileid: "87769465"
 
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|大小| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| 镜像| 确定|  正常| 正确|  10 TB|  Node-01. conto|
-|Disk3         |镜像                 |确定                          |正常       |正确            |10 TB | Node-01. conto|
-|Disk2         |镜像                 |无冗余               |Unhealthy     |正确            |10 TB | Node-01. conto|
-|Disk1         |镜像                 |{无冗余，InService}  |Unhealthy     |正确            |10 TB | Node-01. conto|
+|Disk4| 镜像| 确定|  正常| True|  10 TB|  Node-01. conto|
+|Disk3         |镜像                 |确定                          |正常       |True            |10 TB | Node-01. conto|
+|Disk2         |镜像                 |无冗余               |Unhealthy     |True            |10 TB | Node-01. conto|
+|Disk1         |镜像                 |{无冗余，InService}  |Unhealthy     |True            |10 TB | Node-01. conto|
 
 此外，在尝试使虚拟磁盘联机后，会在群集日志中记录以下信息 (DiskRecoveryAction) 。
 
@@ -100,10 +100,10 @@ ms.locfileid: "87769465"
 
 |FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  大小|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         镜像|                 确定|                  正常|       正确|            10 TB|  Node-01. conto|
-|Disk3|         镜像|                 确定|                  正常|       正确|            10 TB|  Node-01. conto|
-|Disk2|         镜像|                 分离|            未知|       正确|            10 TB|  Node-01. conto|
-|Disk1|         镜像|                 分离|            未知|       正确|            10 TB|  Node-01. conto|
+|Disk4|         镜像|                 确定|                  正常|       True|            10 TB|  Node-01. conto|
+|Disk3|         镜像|                 确定|                  正常|       True|            10 TB|  Node-01. conto|
+|Disk2|         镜像|                 分离|            未知|       True|            10 TB|  Node-01. conto|
+|Disk1|         镜像|                 分离|            未知|       True|            10 TB|  Node-01. conto|
 
 
 此外，还可以在节点上记录以下事件：
@@ -400,10 +400,10 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 |               uniqueid               | deviceid | MediaType | BusType |               serialnumber               |      大小      | canpool | 友好 | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
 |           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  错误  |     HGST     |  HUH721010AL4200  |
-| eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  正确   |    媒体     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  正确   |    媒体     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  正确   |    媒体     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  正确   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
 
 若要解决此问题，请将 Intel 驱动器上的固件更新到最新版本。  已知固件版本 QDV101B1 可能是2018。
 

@@ -7,12 +7,12 @@ ms.assetid: 71e3243e-2da9-409a-ae1f-813d4c9062e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2bdeb7a31e9ae39d9a7ce1e12891ca6dc14ce51a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 1faa44fbc9b4aba07950c1197169ccba8bb708eb
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180693"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838407"
 ---
 # <a name="migrate-windows-small-business-server-2008-to-windows-server-essentials"></a>将 Windows Small Business Server 2008 迁移到 Windows Server Essentials
 
@@ -46,7 +46,7 @@ ms.locfileid: "87180693"
 
 3.  将[计算机加入到新的 Windows Server Essentials 网络](Join-computers-to-the-new-Windows-Server-Essentials-network.md)。  本部分介绍如何将客户端计算机加入到新的 Windows Server Essentials 网络并更新组策略设置。
 
-4.  [将 SBS 2008 设置和数据移到目标服务器](Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。  本节提供从源服务器迁移数据和设置的相关信息。
+4.  [将 SBS 2008 设置和数据移到目标服务器](./move-windows-sbs-2008-to-the-destination-server-for-migration.md)。  本节提供从源服务器迁移数据和设置的相关信息。
 
 5.  [在 Windows Server Essentials 目标服务器上启用文件夹重定向](Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md)。  如果在源服务器上启用了文件夹重定向，则可以在目标服务器上也启用同样功能，然后删除旧的“文件夹重定向组策略”设置。
 

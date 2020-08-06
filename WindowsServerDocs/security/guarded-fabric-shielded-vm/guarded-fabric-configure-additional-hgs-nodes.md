@@ -28,7 +28,7 @@ ms.locfileid: "87769355"
 | 新建 HGS 林 | [使用 PFX 文件](#dedicated-hgs-forest-with-pfx-certificates) | [使用证书指纹](#dedicated-hgs-forest-with-certificate-thumbprints) |
 | 现有堡垒林 | [使用 PFX 文件](#existing-bastion-forest-with-pfx-certificates) | [使用证书指纹](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 请确保每个附加节点：
 - 与主节点具有相同的硬件和软件配置

@@ -20,7 +20,7 @@ ms.locfileid: "87769745"
 
 嵌套复原是 Windows Server 2019 中[存储空间直通](storage-spaces-direct-overview.md)的一项新功能，它使两个服务器的群集能够同时承受多个硬件故障，而不会丢失存储可用性，因此用户、应用和虚拟机将继续运行而不中断。 本主题介绍了它的工作原理，提供了入门的分步说明，并回答了常见问题。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 ### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![绿色复选标记图标。](media/nested-resiliency/supported.png) 如果有以下情况，请考虑嵌套复原：
 
@@ -171,11 +171,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>嵌套复原是否会改变驱动器更换的工作方式？
 
-否。
+错误。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>嵌套复原是否会改变服务器节点替换的工作方式？
 
-否。 若要替换服务器节点及其驱动器，请遵循以下顺序：
+错误。 若要替换服务器节点及其驱动器，请遵循以下顺序：
 
 1. 停用传出服务器中的驱动器
 2. 将新服务器及其驱动器添加到群集

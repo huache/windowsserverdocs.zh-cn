@@ -7,12 +7,12 @@ ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b1d684b594d7ad0361c2859db4cf30bbb4239a30
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d09b5a6425c2921bf2ad3cae57aecad9e4f35098
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180343"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838326"
 ---
 # <a name="support-windows-server-essentials"></a>支持 Windows Server Essentials
 
@@ -24,19 +24,19 @@ ms.locfileid: "87180343"
 
 - [Windows Server 2012 R2 和 Windows Server 2012 的常见支持解决方案](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831490(v=ws.11))
 
-- [Windows Server Essentials 迁移准备工具的更新](https://support.microsoft.com/kb/2908176)（2013年12月）
+- [Windows Server Essentials 迁移准备工具的更新](https://support.microsoft.com/kb/2908176) (12 月 2013) 
 
-- [Windows Server Essentials 更新汇总 1](https://support.microsoft.com/kb/2887595) （2013年11月）
+- [Windows Server Essentials (更新汇总 1](https://support.microsoft.com/kb/2887595)) 年11月2013
 
-- [Windows Server Essentials 更新汇总 3](https://support.microsoft.com/kb/2862551) （10月2013）
+- [适用于 Windows Server Essentials](https://support.microsoft.com/kb/2862551) (10 月 2013) 的更新汇总3
 
-- [Windows Server Essentials 更新汇总 2](https://support.microsoft.com/kb/2824160) （2013年6月）
+- [Windows Server Essentials](https://support.microsoft.com/kb/2824160) (2013 年6月更新汇总 2) 
 
-- [Windows Server Essentials 更新汇总 1](https://support.microsoft.com/kb/2781267) （2013年2月）
+- [Windows Server Essentials (更新汇总 1](https://support.microsoft.com/kb/2781267)) 2013 年2月
 
-- [修补程序：无法在 Windows Server Essentials 中启用 Windows Server Update Services 角色](https://support.microsoft.com/kb/2762663)（2013年2月）
+- [修补程序：无法在2013年2月 () 启用 Windows Server Essentials 中的 Windows Server Update Services 角色](https://support.microsoft.com/kb/2762663)
 
-## <a name="troubleshoot"></a>故障排除
+## <a name="troubleshoot"></a>疑难解答
 
 本部分提供的信息可帮助你解决使用 Windows Server Essentials 集成功能时可能遇到的常见问题。 疑难解答信息分为对应于关键产品功能的不同逻辑领域。
 
@@ -80,13 +80,13 @@ ms.locfileid: "87180343"
 
 ## <a name="ask-a-question-in-the-forums"></a>在论坛中提问
 
-- [Windows Server Essentials 常规](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)
+- [Windows Server Essentials 常规](/answers/topics/windows-server-essentials.html)
 
-- [Windows SBS 2011 Essentials](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)
+- [Windows SBS 2011 Essentials](/answers/topics/windows-small-business-server.html)
 
-- [Small Business Server](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)
+- [Small Business Server](/answers/topics/windows-small-business-server.html)
 
-- [Windows Server 论坛](https://docs.microsoft.com/answers/topics/windows-server.html)
+- [Windows Server 论坛](/answers/topics/windows-server.html)
 
 ## <a name="get-additional-help"></a>获取额外帮助
 
@@ -110,7 +110,7 @@ ms.locfileid: "87180343"
 
 - [对小型企业的支持](https://smallbusiness.support.microsoft.com/contact)
 
-- [Windows Server Essentials 和 Small Business Server 博客](https://blogs.technet.com/b/sbs/)
+- [Windows Server Essentials 和 Small Business Server 博客](/archive/blogs/sbs/)
 
 ## <a name="end-to-end-solution-guides"></a>端到端解决方案指南
 

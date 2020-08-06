@@ -174,7 +174,7 @@ Microsoft 虚拟机管理程序提供了多个自旋或提示，在来宾 VM 中
 
 在某些配置中，虚拟机监控程序不会指示 NoNonArchitecturalCoreSharing = 1。 例如，如果主机已启用 SMT，并且配置为使用虚拟机监控程序经典计划程序，则 NoNonArchitecturalCoreSharing 将为0。 这可能会阻止启用来宾启用某些优化。 因此，Microsoft 建议使用 SMT 的主机管理员依赖于虚拟机监控程序核心计划程序并确保将虚拟机配置为从主机继承其 SMT 配置，以确保最佳工作负荷性能。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 安全威胁的发展不断发展。 为了确保客户在默认情况下是安全的，Microsoft 正在更改从 Windows Server 2019 Hyper-v 开始的虚拟机监控程序和虚拟机的默认配置，并为运行 Windows Server 2016 Hyper-v 的客户提供更新的指南和建议。 虚拟化主机管理员应：
 
