@@ -9,22 +9,22 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b2ed2a176167b79596ee398fc43c66d7196a54
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cda974bf264c7e497c8d472338cf7b5f7d13a534
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966429"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769046"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows 中的存储类内存 (NVDIMM N) 的运行状况管理
 
-> 适用于： Windows Server 2019、Windows Server 2016、Windows Server （半年频道）、Windows 10
+> 适用于： Windows Server 2019、Windows Server 2016、Windows Server (半年频道) 、Windows 10
 
 针对 Windows 中的存储类内存 (NVDIMM N) 设备，本文向系统管理员和 IT 专业人员提供了有关错误处理和运行状况管理的信息，重点强调存储类内存设备和传统存储设备之间的差异。
 
 如果不熟悉 Windows 对存储类内存设备的支持，请观看以下短片了解概况：
-- [在 Windows Server 2016 中将非易失性内存（NVDIMM N）用作块存储](https://channel9.msdn.com/Events/Build/2016/P466)
-- [在 Windows Server 2016 中将非易失性内存（NVDIMM N）用作字节寻址存储](https://channel9.msdn.com/Events/Build/2016/P470)
+- [使用非易失性内存 (NVDIMM-N) 为 Windows Server 2016 中的块存储](https://channel9.msdn.com/Events/Build/2016/P466)
+- [在 Windows Server 2016 中使用非易失性内存 (NVDIMM-N) 为字节寻址存储](https://channel9.msdn.com/Events/Build/2016/P470)
 - [利用 Windows Server 2016 中的永久性内存加快 SQL Server 2016 的性能](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
 
 另请参阅[在存储空间直通中了解和部署永久性内存](deploy-pmem.md)。
@@ -53,7 +53,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Healthy | 确定 | |
+| 802c-01-1602-117cb5fc | 正常 | 确定 | |
 | 802c-01-1602-117cb64f | 警告 | 预计故障 | {Threshold Exceeded,NVDIMM\_N Error} |
 
 > [!NOTE]
@@ -67,12 +67,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Healthy | 确定 | |
+| 802c-01-1602-117cb5fc | 正常 | 确定 | |
 | 802c-01-1602-117cb64f | 警告 | 预计故障 | {Threshold Exceeded,NVDIMM\_N Error} |
 
 下表列出了一些有关这种情况的信息。
 
-| | 说明 |
+| 方位 | 说明 |
 | --- | --- |
 | 可能的情况 | NVDIMM-N 警告阈值违例 |
 | 根本原因 | NVDIMM-N 设备追踪各种阈值，例如温度、NVM 生存期和/或能量源生存期。 当超出其中一个阈值时，操作系统将会收到通知。 |
@@ -87,12 +87,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Healthy | 确定 | |
+| 802c-01-1602-117cb5fc | 正常 | 确定 | |
 | 802c-01-1602-117cb64f | Unhealthy | {元数据已过时, IO 错误, 暂时性错误} | {丢失数据持久性, 丢失数据, NV...} |
 
 下表列出了一些有关这种情况的信息。
 
-| | 说明 |
+| 方位 | 说明 |
 | --- | --- |
 | 可能的情况 | 持久性丢失/备份电源 |
 |根本原因|NVDIMM-N 设备依赖备份电源（通常是电池或超级电容）获得持久性。 如果此备份电源的源不可用或设备出于任何原因（控制器/闪存错误）无法执行备份，那么数据将处于危险之中，Windows 将阻止对受影响设备的任何进一步写入操作。 仍有可能执行“读取”操作以疏散数据。|
@@ -107,12 +107,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|Healthy|确定||
+|802c-01-1602-117cb5fc|正常|确定||
 ||警告|通信中断||
 
 下表列出了一些有关这种情况的信息。
 
-||说明|
+|方位|说明|
 |---|---|
 |可能的情况|BIOS 未将 NVDIMM N 公开到操作系统|
 |根本原因|NVDIMM N 设备基于 DRAM。 当引用损坏的 DRAM 地址时，大多数 CPU 将启动计算机检查并重新启动服务器。 然后，某些服务器平台取消映射 NVDIMM，以阻止操作系统访问相应平台，并可能会引起其他计算机检查。 如果 BIOS 检测到 NVDIMM N 已失败并且需要更换，这种情况同样也可能发生。|
@@ -127,12 +127,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|Healthy|确定|{未知}|
+|802c-01-1602-117cb5fc|正常|确定|{未知}|
 |802c-01-1602-117cb64f|Unhealthy|{无法识别的元数据, 元数据已过时}|{未知}|
 
 下表列出了一些有关这种情况的信息。
 
-||说明|
+|方位|说明|
 |---|---|
 |可能的情况|备份/还原失败|
 |根本原因|备份或还原过程失败可能会导致 NVDIMM-N 上的所有数据丢失。 加载操作系统时，它将显示为一个没有分区或文件系统的全新 NVDIMM-N 并呈现为 RAW，这意味着它不具有文件系统。|

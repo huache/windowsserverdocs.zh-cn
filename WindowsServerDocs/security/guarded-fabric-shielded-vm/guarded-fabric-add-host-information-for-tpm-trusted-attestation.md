@@ -8,50 +8,50 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 06/21/2019
-ms.openlocfilehash: f1c25cc88c577ccb1bc0e8cc690114471e86b6ba
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: cfc1d0d2b99a79e6c1deb013fab350e3abc6167c
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203395"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769665"
 ---
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>为受 TPM 信任的证明添加主机信息
 
-> 适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
 对于 TPM 模式，构造管理员捕获三种类型的主机信息，其中每个信息需要添加到 HGS 配置中：
 
-- 每个 Hyper-v 主机的 TPM 标识符（EKpub）
+- 每个 Hyper-v 主机 (EKpub) 的 TPM 标识符
 - 代码完整性策略，Hyper-v 主机允许的二进制文件的列表
-- TPM 基线（启动度量值），表示在相同的硬件类上运行的一组 Hyper-v 主机
+- TPM 基线 (启动度量值) 表示一组在同一硬件上运行的 Hyper-v 主机
 
-Af er：构造管理员捕获信息，将其添加到 HGS 配置中，如以下过程中所述。
+构造管理员捕获信息后，将其添加到 HGS 配置中，如以下过程中所述。
 
 1. 获取包含 EKpub 信息的 XML 文件，并将其复制到 HGS 服务器。 每个主机将有一个 XML 文件。 然后，在 HGS 服务器上已提升权限的 Windows PowerShell 控制台中运行以下命令。 为每个 XML 文件重复此命令。
 
     ```powershell
     Add-HgsAttestationTpmHost -Path <Path><Filename>.xml -Name <HostName>
-       ```
+    ```
 
     > [!NOTE]
-    > If you encounter an error when adding a TPM identifier regarding an untrusted Endorsement Key Certificate (EKCert), ensure that the [trusted TPM root certificates have been added](guarded-fabric-install-trusted-tpm-root-certificates.md) to the HGS node.
-    > Additionally, some TPM vendors do not use EKCerts.
-    > You can check if an EKCert is missing by opening the XML file in an editor such as Notepad and checking for an error message indicating no EKCert was found.
-    > If this is the case, and you trust that the TPM in your machine is authentic, you can use the `-Force` flag to override this safety check and add the host identifier to HGS.
+    > 如果在添加有关不受信任的认可密钥证书的 TPM 标识符 (EKCert) 时遇到错误，请确保已将[受信任的 TPM 根证书添加](guarded-fabric-install-trusted-tpm-root-certificates.md)到了 HGS 节点。
+    > 此外，某些 TPM 供应商不使用 EKCerts。
+    > 可以通过在记事本（如记事本）中打开 XML 文件来检查是否缺少 EKCert，并检查错误消息，指出找不到任何 EKCert。
+    > 如果是这种情况，并且你相信计算机上的 TPM 是可信的，则可以使用 `-Force` 标志覆盖此安全检查，并将主机标识符添加到 HGS。
 
-2. Obtain the code integrity policy that the fabric administrator created for the hosts, in binary format (\*.p7b). Copy it to an HGS server. Then run the following command.
+2. 获取构造管理员为主机创建的代码完整性策略，采用二进制格式 (\* p7b) 。 将其复制到 HGS 服务器。 然后运行以下命令。
 
-    For `<PolicyName>`, specify a name for the CI polic" that describes the type of host it appl"es to. A be"t practice is to name it after the"make/model of your machine and any special software configuration running on it.<br>For `<Path>`, specify the path and filename of the code integrity policy.
+    对于 `<PolicyName>` ，请指定 CI 策略的名称，该名称描述应用于的主机类型。 最佳做法是在您的计算机的品牌/型号以及在其上运行的任何特殊软件配置后将其命名为。<br>对于 `<Path>` ，指定代码完整性策略的路径和文件名。
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'
-       ```
+    ```
 
     > [!NOTE]
-    > If you're using a signed code integrity policy, register an unsigned copy of the same policy with HGS.
-    > The signature on code integrity policies is used to control updates to the policy, but is not measured into the host TPM and therefore cannot be attested to by HGS.
+    > 如果使用的是已签名的代码完整性策略，请使用 HGS 注册同一策略的无符号副本。
+    > 代码完整性策略上的签名用于控制对策略的更新，但不会度量到主机 TPM，因此不能由 HGS 证明。
 
-3.    Obtain the TCGlog file that the fabric administrator captured from a reference host. Copy the file to an HGS server. Then run the following command. Typically, you will name the policy after the class of hardware it represents (for example, "Manufacturer Model Revision").
+3. 获取构造管理员从引用主机捕获的 TCG 日志文件。 将该文件复制到 HGS 服务器。 然后运行以下命令。 通常情况下，会将策略命名为它所表示的硬件的类 (例如，"制造商型号修订" ) 。
 
     ```powershell
     Add-HgsAttestationTpmPolicy -Path <Filename>.tcglog -Name '<PolicyName>'
@@ -61,5 +61,4 @@ Af er：构造管理员捕获信息，将其添加到 HGS 配置中，如以下�
 
 ## <a name="next-step"></a>后续步骤
 
-> [!div class="nextstepaction"]
 > [确认证明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
