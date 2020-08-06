@@ -7,18 +7,18 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e17d60b4931f4858f915bd177f05e85eb1fc5f6a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7c30d99bd1a0019130f7e39f70b289effd6935c4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181683"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838246"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery 服务集成
 
 >适用于： Windows Server 2016 Essentials
 
-[Azure Site Recovery 服务](https://docs.microsoft.com/azure/site-recovery/)是由提供的一项服务，Microsoft Azure 启用虚拟机（VM）到 Azure 中备份保管库的实时复制。 如果你的服务器或站点由于硬件或其他故障而停机，则可以故障转移到 Azure，其中存储在备份保管库中的 VM 映像将设置为 Azure 中正在运行的 VM。 与 Azure 虚拟网络结合使用时，在故障转移到 Azure 时，以前连接到本地服务器的客户端电脑将以透明方式连接到在 Azure 中运行的服务器。
+[Azure Site Recovery 服务](/azure/site-recovery/)是 Microsoft Azure 提供的服务，可 (VM) 将虚拟机的实时复制到 Azure 中的备份保管库。 如果你的服务器或站点由于硬件或其他故障而停机，则可以故障转移到 Azure，其中存储在备份保管库中的 VM 映像将设置为 Azure 中正在运行的 VM。 与 Azure 虚拟网络结合使用时，在故障转移到 Azure 时，以前连接到本地服务器的客户端电脑将以透明方式连接到在 Azure 中运行的服务器。
 
 与 Windows Server Essentials 集成 Azure Site Recovery 服务的启动方式与配置[Azure 虚拟网络](azure-virtual-network-integration.md)的方式相同。 在仪表板中的 " **Microsoft 云服务集成**" 页上，单击 "将**与 Azure Site Recovery 服务集成**"，使其位于仪表板的右侧：
 
@@ -32,7 +32,7 @@ ms.locfileid: "87181683"
 
 ![显示 "启用复制到 Azure" 向导的 "登录到 Microsoft Azure" 页的屏幕截图。 由于用户已登录 Microsoft Azure，此页面提供了用于选择订阅、存储帐户和区域的选项。](media/azure-site-recovery-3.PNG)
 
-订阅和区域选择之后， **Windows Server Essentials 仪表板**中会出现一个名为 " **Azure 恢复**" 的新选项卡。 网络扫描已完成，用于识别和枚举受支持的主机服务器（运行 Windows Server Hyper-v 2012 R2 及更高版本）以及各个主机下的虚拟机（来宾）：
+订阅和区域选择之后， **Windows Server Essentials 仪表板**中会出现一个名为 " **Azure 恢复**" 的新选项卡。 在运行 Windows Server Hyper-v 2012 R2 和更) 高版本 (，以及在单个主机下 (来宾) 的虚拟机，可以通过网络扫描来识别和枚举受支持的主机服务器：
 
 ![显示 Windows Server Essentials 仪表板的 Azure 恢复页的屏幕截图。 将显示两个 Hyper-v 主机以及这些主机上运行的虚拟机。 已选择主机 RAM 上名为 ramh157v01 的虚拟机-H1-7，并且当前已为此虚拟机禁用了到 Azure 的复制。](media/azure-site-recovery-4.PNG)
 

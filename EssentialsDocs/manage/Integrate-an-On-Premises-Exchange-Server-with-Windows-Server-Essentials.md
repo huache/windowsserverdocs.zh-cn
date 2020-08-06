@@ -7,12 +7,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 343bfc1325a065f4c4903732eceba59c769f838f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cef547570c58c405ac563a1c2215feda120350f4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181063"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837876"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>将本地 Exchange Server 与 Windows Server Essentials 集成
 
@@ -25,7 +25,7 @@ ms.locfileid: "87181063"
 > [!NOTE]
 >  Exchange Server 2010 不支持在运行 Windows Server 2012 的计算机上进行安装。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
  在 Windows Server Essentials 网络上安装 Exchange Server 之前，请务必完成本节所述的任务。
 
 -   [设置一个运行 Windows Server Essentials 的服务器](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)
@@ -51,12 +51,12 @@ ms.locfileid: "87181063"
  例如，如果你的公司 Internet 域名为 contoso.com，而且你希望使用 *mail.contoso.com* 的完全限定域名 (FQDN) 来引用运行 Exchange Server 的本地服务器，请与你的域名提供商合作创建下表中的 DNS 资源记录。
 
 
-| 资源记录名称 |     记录类型     |                                                                         记录设置                                                                          |                                                                                                                                                                                                                                                              描述                                                                                                                                                                                                                                                              |
+| 资源记录名称 |     记录类型     |                                                                         记录设置                                                                          |                                                                                                                                                                                                                                                              说明                                                                                                                                                                                                                                                              |
 |----------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         mail         |      主机 (A)       |                                                        地址=*你的 ISP 分配的公用 IP 地址*                                                         |                                                                                                                                                                                                   Exchange Server 将接收的邮件地址为 mail.contoso.com。<br /><br /> 你可以自行选择其他名称。                                                                                                                                                                                                    |
 |          MX          | 邮件交换器 (MX) |                                            主机名=@<br /><br /> 地址=mail.contoso.com<br /><br /> 首选项=0                                             |                                                                                                                                                                                                      为提供电子邮件路由，以便 email@contoso.com 到达运行 Exchange server 的本地服务器。                                                                                                                                                                                                       |
 |         SPF          |     文本 (TXT)      |                                                                        v=spf1 a mx ~all                                                                         |                                                                                                                                                                                                                      避免从你的服务器发送的电子邮件被识别为垃圾邮件的资源记录。                                                                                                                                                                                                                      |
-|  autodiscover._tcp   |    服务 (SRV)    | 服务：_autodiscover<br /><br /> 协议：_tcp<br /><br /> 优先级：0<br /><br /> 权重：0<br /><br /> 端口：443<br /><br /> 目标主机：mail.contoso.com | 支持 Microsoft Office Outlook 和移动设备自动发现运行 Exchange Server 的本地服务器。<br /><br /> **注意：** 你还可以配置自动发现主机（A）资源记录，并将记录指向运行 Exchange Server 的本地服务器的公共 IP 地址。 但是，如果执行此选项，则还必须提供使用者可选名称 (SAN) SSL 证书，该证书既支持 mail.contoso.com 域名，也支持 autodiscover.contoso.com 域名。 |
+|  autodiscover._tcp   |    服务 (SRV)    | 服务：_autodiscover<br /><br /> 协议：_tcp<br /><br /> 优先级：0<br /><br /> 权重：0<br /><br /> 端口：443<br /><br /> 目标主机：mail.contoso.com | 支持 Microsoft Office Outlook 和移动设备自动发现运行 Exchange Server 的本地服务器。<br /><br /> **注意：** 你还可以配置自动发现主机 () 资源记录，并将记录指向运行 Exchange Server 的本地服务器的公共 IP 地址。 但是，如果执行此选项，则还必须提供使用者可选名称 (SAN) SSL 证书，该证书既支持 mail.contoso.com 域名，也支持 autodiscover.contoso.com 域名。 |
 
 > [!NOTE]
 >  -   将此示例中 *contoso.com* 的实例替换为已注册的 Internet 域名。
@@ -270,9 +270,9 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  必须配置一个 SMTP 发送连接器和一个 SMTP 接收连接器来对电子邮件进行出站/入站传输。
 
- 若要创建一个 SMTP 发送连接器，请按照 Exchange Server 文章 [创建 SMTP 发送连接器](https://technet.microsoft.com/library/aa997285.aspx)中的说明进行操作。
+ 若要创建一个 SMTP 发送连接器，请按照 Exchange Server 文章 [创建 SMTP 发送连接器](/previous-versions/office/exchange-server-2010/aa997285(v=exchg.141))中的说明进行操作。
 
- 若要创建一个 SMTP 接收连接器，请按照 Exchange Server 文章 [创建 SMTP 接收连接器](https://technet.microsoft.com/library/bb125159.aspx)中的说明进行操作。
+ 若要创建一个 SMTP 接收连接器，请按照 Exchange Server 文章 [创建 SMTP 接收连接器](/previous-versions/office/exchange-server-2010/bb125159(v=exchg.141))中的说明进行操作。
 
  你可以选择参考此文档中之前所述的内容来使用 Exchange Powershell cmdlet 创建发送和接收连接器。
 
@@ -347,7 +347,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 6. 将 Exchange Server 的 SSL 证书文件复制到运行 Windows Server Essentials 的服务器。 该证书文件必须包含私钥，且必须为 PFX 文件格式。
 
    > [!NOTE]
-   >  如果使用自颁发证书，请按照 Exchange Server 文章 [导出 Exchange 证书](https://technet.microsoft.com/library/dd351274.aspx) 中的说明导出该证书。
+   >  如果使用自颁发证书，请按照 Exchange Server 文章 [导出 Exchange 证书](/previous-versions/office/exchange-server-2010/dd351274(v=exchg.141)) 中的说明导出该证书。
 
 7. 根据你所运行的 Windows Server Essentials 版本，执行以下任一操作：
 
@@ -380,7 +380,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 > - 提供的主机名必须包含在为 Exchange Server 购买的 SSL 证书中。
 >   -   如果你有多个主机名，请使用逗号 (,) 将它们分开。
 
- 若要验证配置是否正常工作，请尝试访问运行 Exchange Server 的服务器的 OWA 网站（ https://mail 。 *yourdomainname*.com/owa)。 若要对连接问题进行故障排除也可以使用在线 [Microsoft 远程连接分析器](https://go.microsoft.com/fwlink/p/?LinkId=249455) 工具。
+ 若要验证配置是否正常工作，请尝试访问运行 Exchange Server 的服务器的 OWA 网站 (https://mail 。 *yourdomainname*.com/owa)。 若要对连接问题进行故障排除也可以使用在线 [Microsoft 远程连接分析器](https://go.microsoft.com/fwlink/p/?LinkId=249455) 工具。
 
 ### <a name="configure-split-dns-for-exchange-server"></a>为 Exchange Server 配置拆分式 DNS
 

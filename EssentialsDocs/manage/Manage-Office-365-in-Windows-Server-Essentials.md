@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: 249ff5f77d525792d5bf53719fcf1ee93bc955a4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8bae98123ee5c8365304243e9f2487218bb5230f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180963"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837806"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 Office 365
 
@@ -47,7 +47,7 @@ ms.locfileid: "87180963"
 
   -   在 Windows Server Essentials 服务器上，还可以管理用于电子邮件的 Exchange Online 通讯组。
 
-- 通过将自定义 Internet 域链接到你的 Office 365 订阅，从你的组织的 Internet 域（例如，contoso.com）发送和接收电子邮件。
+- 从组织的 Internet 域发送和接收电子邮件 (例如，通过将自定义 Internet 域链接到 Office 365 订阅来) contoso.com。
 
 - 从仪表板管理订阅和 Office 365 集成。
 
@@ -85,7 +85,7 @@ ms.locfileid: "87180963"
 
 -   [步骤 2：将服务器与 Microsoft Office 365 集成](#BKMK_StepTwo)
 
--   [步骤3：将组织的 Internet 域名链接到 Office 365 （可选）](#BKMK_StepThree)
+-   [步骤3：将组织的 Internet 域名链接到 Office 365 (可选) ](#BKMK_StepThree)
 
 ###  <a name="step-1-verify-office-365-integration-requirements"></a><a name="BKMK_StepOne_VERIFY"></a>步骤1：验证 Office 365 集成要求
  在开始之前，请确保服务器满足以下要求：
@@ -113,7 +113,7 @@ ms.locfileid: "87180963"
 
 1. 以管理员身份登录服务器，然后打开 Windows Server Essentials 仪表板。
 
-2. 在**主页**上，依次单击 "**服务**" （在 Windows Server Essentials 中，单击 "**电子邮件**"）、"**与 Microsoft Office 365 集成**" 和 "**设置 Microsoft Office 365 集成**"。
+2. 在 "**主页**" 页上，依次单击 "**服务**" (在 Windows Server Essentials 中，单击 "**电子邮件**) ，单击"**与 Microsoft Office 365 集成**"，然后单击"**设置 Microsoft Office 365 集成**"。
 
     将出现“与 Microsoft Office 365 集成”向导。
 
@@ -135,7 +135,7 @@ ms.locfileid: "87180963"
 
 -   Windows Server Essentials 服务器上的 "**存储**" 页具有 " **sharepoint 库**" 选项卡，用于管理 sharepoint Online 库和更改团队网站的权限。 Office 365 的每个业务计划都包括这些基本 SharePoint 联机功能。
 
-###  <a name="step-3-link-your-organizations-internet-domain-name-to-office-365-optional"></a><a name="BKMK_StepThree"></a>步骤3：将组织的 Internet 域名链接到 Office 365 （可选）
+###  <a name="step-3-link-your-organizations-internet-domain-name-to-office-365-optional"></a><a name="BKMK_StepThree"></a>步骤3：将组织的 Internet 域名链接到 Office 365 (可选) 
  如果要在发送到组织的电子邮件和 SharePoint Online 资源的 Url 中使用自己的 Internet 域，可以将自定义域链接到 Office 365 订阅。 如果将 Windows Server Essentials 服务器与 Office 365 集成，则可以从仪表板执行此操作。
 
  在为用户创建联机帐户之前执行此操作最为简单，这样你就可以在批量创建联机帐户时使用域。
@@ -146,9 +146,9 @@ ms.locfileid: "87180963"
 
 1. **购买一个域名。** 即，通过域注册机构或 DNS 托管提供者对其进行注册。
 
-   -   选择与 Office 365 一起使用的域名。 可以使用二级域名（例如，buycontoso.com？，而不能使用第三级域名，例如 marketing.contoso.com）。 有关选择 Office 365 中要使用的域的详细信息，请参阅[域](https://technet.microsoft.com/library/office-365-domains.aspx)。
+   -   选择与 Office 365 一起使用的域名。 可以使用二级域名（例如，buycontoso.com？，而不能使用第三级域名，例如 marketing.contoso.com）。 有关选择 Office 365 中要使用的域的详细信息，请参阅[域](/office365/servicedescriptions/office-365-platform-service-description/domains)。
 
-   -   从允许 Office 365 所需的域名服务器（DNS）记录的域注册机构购买它。 若要查明哪些域注册机构允许所需的 DNS 记录，请参阅 [如何购买域名](https://office.microsoft.com/office365-suite-help/how-to-buy-a-domain-name-HA102819883.aspx?CTT=5&origin=HA102818660)。 如果你已经使用其他注册机构注册了你的域，请不要担心;当你将域链接到 Office 365 时，你可以将域转移到其他注册机构。
+   -   从允许域名服务器 () Office 365 所需的 DNS 记录的域注册机构购买它。 若要查明哪些域注册机构允许所需的 DNS 记录，请参阅 [如何购买域名](https://office.microsoft.com/office365-suite-help/how-to-buy-a-domain-name-HA102819883.aspx?CTT=5&origin=HA102818660)。 如果你已经使用其他注册机构注册了你的域，请不要担心;当你将域链接到 Office 365 时，你可以将域转移到其他注册机构。
 
 2. **配置允许 Office 365 服务使用域名的 DNS 记录。** 最简单的方法是在步骤3中将域链接到 Office 365 订阅时，让向导为你配置 DNS 记录。 如果你想亲自完成此操作，请参阅[如何手动配置用于 Office 365 集成的 DNS 记录](#BKMK_ManuallyConfigureDNS)。
 
@@ -178,17 +178,17 @@ ms.locfileid: "87180963"
      向导完成后需要等待一些等待，而域名注册机构将验证 DNS 记录。 这会自动发生;无需执行任何操作。 但它通常要花费大约一小时的时间，有时稍长一些。 域验证完成后， **Office 365**页面将列出你的组织的域。
 
 ####  <a name="how-to-manually-configure-dns-records-for-office-365-integration"></a><a name="BKMK_ManuallyConfigureDNS"></a>如何为 Office 365 集成手动配置 DNS 记录
- 如果“将域链接到 Office 365”向导检测到你的域名未由服务器托管，此时若要完成配置，必须手动配置所需的域名服务器 (DNS) 记录。 在这种情况下，你会看到一个 DNS 记录列表，你必须将这些记录配置为 **% username% \ NewDNSRecords_ （n） .txt**，其中 *（n）* 是一个随机数。
+ 如果“将域链接到 Office 365”向导检测到你的域名未由服务器托管，此时若要完成配置，必须手动配置所需的域名服务器 (DNS) 记录。 在这种情况下，你会看到一个 DNS 记录列表，你必须在 **% username% \ NewDNSRecords_ (n) .txt**，其中* (n) *是一个随机数。
 
  下表说明了必须添加的 DNS 记录。 输入方法可能因不同的域名注册机构而有所不同。 如果有任何疑问，请向你的域名称注册机构寻求帮助。
 
 ### <a name="required-dns-records-for-linking-a-custom-internet-domain-name-to-office-365"></a>将自定义 Internet 域名链接到 Office 365 所需的 DNS 记录
 
-|服务|所需的 DNS 记录|目标|
+|服务|所需的 DNS 记录|目的|
 |-------------|--------------------------|-------------|
 |（多个服务）|MX| Office 365 使用此记录来验证你是否拥有特定的域名。 此 MX 记录不会干扰电子邮件路由。|
-|Exchange Online|MX|提供电子邮件路由。 **重要提示：** 如果要迁移电子邮件，请不要将零（**0**）的首选项分配给新的 MX 记录。 请确保该记录的值大于分配给当前 MX 记录的值。 当电子邮件迁移完成，并且你已准备好将电子邮件服务器更改为 Office 365 时，请让你的域名注册机构重置新 MX 记录的首选项值。|
-|Exchange Online|别名 (CNAME)|自动发现用于帮助用户在 Exchange Online 及其 Outlook 桌面客户端或移动电子邮件客户端之间轻松地设置连接的记录。 **注意：** 如果希望使用组织自己的域名（例如，而不是标准 URL）来访问 Outlook Web 访问（例如，可以按如下所示 http://mail.contoso.com) https://outlook.com/owa/office365.com) 配置别名（cname）记录： **Type = CName，TTL = 01：00：00，HostName = mail，Address = office365**|
+|Exchange Online|MX|提供电子邮件路由。 **重要提示：** 如果要迁移电子邮件，请不要将 0 (**0**) 的首选项分配给新的 MX 记录。 请确保该记录的值大于分配给当前 MX 记录的值。 当电子邮件迁移完成，并且你已准备好将电子邮件服务器更改为 Office 365 时，请让你的域名注册机构重置新 MX 记录的首选项值。|
+|Exchange Online|别名 (CNAME)|自动发现用于帮助用户在 Exchange Online 及其 Outlook 桌面客户端或移动电子邮件客户端之间轻松地设置连接的记录。 **注意：** 如果你想要使用组织自己的域名访问 Outlook Web 访问 (例如 http://mail.contoso.com) (， https://outlook.com/owa/office365.com) 你可以将别名配置为 (cname) 记录，如下所示： **Type = cname，TTL = 01：00：00，HostName = mail，Address = office365**|
 |Exchange Online|TXT|指定 outlook.com （Office 365 电子邮件服务器使用的域）有权代表你的域发送电子邮件。 创建此记录，以帮助防止你的出站电子邮件被标记为垃圾邮件。|
 |Lync Online|SRV|帮助启用与其他即时消息服务（例如 Windows Live 或 yahoo!）的联盟。|
 |Lync Online|SRV|自动发现用于帮助用户在 Lync 桌面客户端和 Microsoft Lync Online 之间轻松地设置连接的记录。|
@@ -210,7 +210,7 @@ ms.locfileid: "87180963"
 
 -   [管理 Office 365 订阅](#BKMK_ManageO365)？更改用于管理订阅的管理员帐户。 打开 Office 365 管理面板来管理你的订阅。
 
--   将[你的组织的 Internet 域链接到 Office 365](#BKMK_StepThree) ？如果你希望能够发送和接收发送到你自己的域的电子邮件，则可以将该域链接到 Office 365。 （前面的[步骤3：将组织的域链接到 Office 365](#BKMK_StepThree)。）
+-   将[你的组织的 Internet 域链接到 Office 365](#BKMK_StepThree) ？如果你希望能够发送和接收发送到你自己的域的电子邮件，则可以将该域链接到 Office 365。 前面所述的 (，请[参见步骤3：将组织的域链接到 Office 365](#BKMK_StepThree)。 ) 
 
 -   [禁用 Office 365 集成](#BKMK_Disable)？如果你不想从仪表板管理 Office 365 服务、订阅和联机帐户，则可以禁用 Office 365 集成。 Office 365 门户上仍然提供这些服务。
 
@@ -231,7 +231,7 @@ ms.locfileid: "87180963"
 
 1.  在仪表板上，单击“Office 365”****。
 
-2.  在“配置任务” **** 中，单击“更改 Office 365 管理员帐户” ****。 将出现“更改管理员帐户”向导。 （在 Windows Server Essentials 中，该向导名为 "设置 Office 365 管理员帐户"。）
+2.  在“配置任务” **** 中，单击“更改 Office 365 管理员帐户” ****。 将出现“更改管理员帐户”向导。  (在 Windows Server Essentials 中，该向导名为 "设置 Office 365 Administrator 帐户"。 ) 
 
 3.  键入要用于连接到 Office 365 订阅的帐户的凭据，然后单击 "**下一步**"。
 
@@ -284,9 +284,9 @@ ms.locfileid: "87180963"
 
 ## <a name="additional-references"></a>其他参考
 
--   [Windows Server Essentials 的服务集成概述-第1部分](https://blogs.technet.com/b/sbs/archive/2013/11/04/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)
+-   [Windows Server Essentials 的服务集成概述-第1部分](/archive/blogs/sbs/services-integration-overview-for-windows-server-2012-r2-essentials-part-1)
 
--   [Windows Server Essentials 的服务集成概述-第2部分](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)
+-   [Windows Server Essentials 的服务集成概述-第2部分](/archive/blogs/sbs/services-integration-overview-for-windows-server-2012-r2-essentials-part-2)
 
 -   [使用 Microsoft Office 365 的快速入门指南](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)
 

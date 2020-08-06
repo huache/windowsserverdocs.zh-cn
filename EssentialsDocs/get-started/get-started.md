@@ -6,12 +6,12 @@ ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: coreyp
 manager: jasgro
-ms.openlocfilehash: adaf10a96a945fddce16592da3d491be2b32aa3b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: df3eb1b5a1704dcd5a1fc05fab4023c7faaeabe7
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181663"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838106"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>Windows Server Essentials 入门
 
@@ -46,16 +46,16 @@ ms.locfileid: "87181663"
 
 ## <a name="end-to-end-solution-guides"></a>端到端解决方案指南
 
--    若要了解如何集中数据存储、限制数据访问权限并在本地和云中备份数据，请参阅[在中小型企业中提供数据保护](https://technet.microsoft.com/library/dn582043.aspx)。
+-    若要了解如何集中数据存储、限制数据访问权限并在本地和云中备份数据，请参阅[在中小型企业中提供数据保护](/previous-versions/orphan-topics/ws.11/dn582043(v=ws.11))。
 
--    若要了解如何从任何位置安全地访问任何连接到 Internet 的设备上的业务数据，请参阅[在中小型企业中保护远程访问](https://technet.microsoft.com/library/dn629457.aspx)。
+-    若要了解如何从任何位置安全地访问任何连接到 Internet 的设备上的业务数据，请参阅[在中小型企业中保护远程访问](/previous-versions/windows/it-pro/solutions-guidance/dn629457(v=ws.11))。
 
--    若要了解如何与合作伙伴和供应商安全地协作，请参阅[在中小型企业中改进协作](https://technet.microsoft.com/library/dn747893.aspx)。
+-    若要了解如何与合作伙伴和供应商安全地协作，请参阅[在中小型企业中改进协作](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11))。
 
 ## <a name="additional-references"></a>其他参考
 
--   [Windows Server TechNet 库](https://technet.microsoft.com/library/bb625087.aspx)
+-   [Windows Server TechNet 库](/windows-server/windows-server-versions)
 
--   [The Windows Server Essentials 和 Windows Small Business Server 博客](https://blogs.technet.com/b/sbs/)
+-   [The Windows Server Essentials 和 Windows Small Business Server 博客](/archive/blogs/sbs/)
 
--   [Windows Server Essentials (Small Business Server) TechNet 库](https://technet.microsoft.com/library/cc514417.aspx)
+-   [Windows Server Essentials (Small Business Server) TechNet 库](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))

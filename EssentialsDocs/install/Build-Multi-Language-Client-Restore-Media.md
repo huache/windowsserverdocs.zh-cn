@@ -7,19 +7,19 @@ ms.assetid: 2fdbc016-d464-43cb-bd75-8a63e61588a2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6ebacd42df17d1d1aa840bc77dfdbb23a1ab48e7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4057e0d6805c7633bf07960d06d97b2eab15f28a
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181483"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838086"
 ---
 # <a name="build-multi-language-client-restore-media"></a>生成多语言客户端还原介质
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 > [!NOTE]
->  必须首先创建多语言 Windows 映像，如在将 Windows Server Essentials 述 pack 添加到 install 之前[演练：多语言 Windows 映像创建](https://technet.microsoft.com/library/jj126995)中所述。
+>  必须首先创建多语言 Windows 映像，如在将 Windows Server Essentials 述 pack 添加到 install 之前[演练：多语言 Windows 映像创建](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10))中所述。
 
  生成多语言服务器安装 DVD 时，会为服务器 install.wim 安装语言包。 还原向导的本地化资源会作为语言包的一部分进行安装。
 
@@ -87,4 +87,3 @@ ms.locfileid: "87181483"
 ## <a name="see-also"></a>另请参阅
 
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)[其他自定义](Additional-Customizations.md)[准备映像以进行部署](Preparing-the-Image-for-Deployment.md)[测试客户体验](Testing-the-Customer-Experience.md)
-

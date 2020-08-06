@@ -7,22 +7,22 @@ ms.assetid: f6e05aec-d07c-4e0b-94ab-f20279e9ffd1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ef958a34caaffbdcc0b57e8cf63d677e6ab5623
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: aae5c0c8a3a98b25d13d7bf11f6fb14963714c24
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181023"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837916"
 ---
 # <a name="manage-branchcache-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 BranchCache
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-BranchCache 可帮助你优化 Internet 使用率、改进网络应用程序的性能，并减少你的广域网（WAN）上的流量，同时从你的办公室远程找到 Windows Server Essentials 服务器，或者当连接到本地服务器的客户端计算机使用 SharePoint Online 库等基于云的资源时。
+BranchCache 有助于优化 Internet 使用情况，提高联网应用程序的性能，并减少广域网络上的流量 (WAN) 从办公室远程查找 Windows Server Essentials 服务器时，或连接到本地服务器的客户端计算机使用 SharePoint Online 库等基于云的资源。
 
  启用 BranchCache 后，当客户端计算机从远程 Windows Server Essentials 服务器请求内容时，内容将缓存在本地办公室中。 在此之后，同一办公室中的其他计算机可以从本地获取内容，而无需通过 WAN 再次从服务器下载内容。 这可以改善网络应用程序的性能并通过 WAN 减少带宽使用。
 
- 无论 Windows Server Essentials 服务器是本地服务器还是远程服务器，BranchCache 都可以缩短服务器共享文件夹和托管在服务器上的 Web 内容（如 SharePoint Online 库）的响应时间。
+ 无论 Windows Server Essentials 服务器是本地服务器还是远程服务器，BranchCache 都可以缩短服务器共享文件夹和托管在服务器上的 Web 内容的响应时间 (例如 SharePoint Online 库) 。
 
  由于 BranchCache 不需要对新硬件或网络拓扑进行新的更改，所以此功能将提供一种简单方式，来优化带宽使用并缩短对通过 WAN 访问的服务和资源的响应时间。
 
@@ -100,6 +100,6 @@ BranchCache 可帮助你优化 Internet 使用率、改进网络应用程序的�
 
 ## <a name="additional-references"></a>其他参考
 
--   [BranchCache 概述](https://technet.microsoft.com/library/hh831696.aspx)
+-   [BranchCache 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11))
 
 -   [管理 Windows Server Essentials](Manage-Windows-Server-Essentials.md)

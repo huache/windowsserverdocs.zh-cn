@@ -7,12 +7,12 @@ ms.assetid: ecf19216-7aac-4aca-839a-342ac28f5329
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 755b00f9c2593a6923f65437c695dcd6a2de7532
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4afba33d105f0348aaf7c130ccbe5a3b87fc1cb2
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180283"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838306"
 ---
 # <a name="troubleshoot-windows-server-essentials-installation"></a>Windows Server Essentials 安装疑难解答
 
@@ -31,7 +31,7 @@ ms.locfileid: "87180283"
 
 
 > [!NOTE]
->  有关 Windows Server Essentials 社区中的最新疑难解答信息，建议访问[Windows Server Essentials 论坛](https://docs.microsoft.com/answers/topics/windows-server-essentials.html/threads)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
+>  有关 Windows Server Essentials 社区中的最新疑难解答信息，建议访问[Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html/threads)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
 
 ##  <a name="general-troubleshooting-steps"></a><a name="BKMK_GeneralTroubleshootingSteps"></a>一般故障排除步骤
  如果 Windows Server Essentials 的安装失败，请执行以下步骤来帮助确定导致失败的问题。
@@ -43,7 +43,7 @@ ms.locfileid: "87180283"
 
 1.  严重你的服务器硬件是否符合最低要求。 有关硬件要求的信息，请参阅[Windows Server Essentials 的系统要求](../get-started/system-requirements.md)。
 
-2.  如果你从 MSDN 收到 Windows Server Essentials 安装 DVD，请通过检查 SHA1 和验证该 DVD 是否有效。 有关详细信息，请参阅[文件校验和完整性验证程序实用工具的可用性和说明](https://go.microsoft.com/fwlink/?LinkId=220495)（ https://go.microsoft.com/fwlink/?LinkId=220495) 。
+2.  如果你从 MSDN 收到 Windows Server Essentials 安装 DVD，请通过检查 SHA1 和验证该 DVD 是否有效。 有关详细信息，请参阅[文件校验和完整性验证程序实用工具的可用性和描述](https://go.microsoft.com/fwlink/?LinkId=220495) (https://go.microsoft.com/fwlink/?LinkId=220495) 。
 
 3.  确认服务器上的网络适配器是否已通过网线连接到路由器。
 

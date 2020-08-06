@@ -7,12 +7,12 @@ ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 56bfd8d9860ad571265980e859a09914fb4f1b9c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 094e5914fee1c5d2a1b6f3c68621fa81b96f21c0
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180933"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837776"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的远程 Web 访问
 
@@ -135,7 +135,7 @@ ms.locfileid: "87180933"
 7.  单击“应用”****，然后单击“确定”****。
 
 ##  <a name="set-up-your-router"></a><a name="BKMK_2"></a>设置路由器
- 当配置远程 Web 访问服务器时，“设置随处访问”向导会尝试设置路由器。 如果更改路由器或更改路由器设置，你必须返回设置路由器向导。 有关详情，请参阅以下主题：
+ 当配置远程 Web 访问服务器时，“设置随处访问”向导会尝试设置路由器。 如果更改路由器或更改路由器设置，你必须返回设置路由器向导。 有关详细信息，请参阅下列主题：
 
 -   [设置路由器](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetUpRouter)
 
@@ -151,7 +151,7 @@ ms.locfileid: "87180933"
 > [!NOTE]
 > 你的网络配置应当满足 Windows Server Essentials 所需的网络要求。 网络中只应有一个路由器。
 
- 如果未通过“设置域名”向导设置路由器，则必须手动设置转发端口 443。 有关如何在路由器上设置端口转发的信息，请参阅[Small Business Server 论坛](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)。
+ 如果未通过“设置域名”向导设置路由器，则必须手动设置转发端口 443。 有关如何在路由器上设置端口转发的信息，请参阅[Small Business Server 论坛](/answers/topics/windows-small-business-server.html)。
 
 ###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>更换路由器
  根据制造商的说明更换路由器，然后运行 "设置路由器" 向导来配置新路由器。
@@ -197,7 +197,7 @@ ms.locfileid: "87180933"
 4.  单击“确定”**** 两次以接受这些更改并关闭对话框。
 
 ##  <a name="set-up-your-domain-name"></a><a name="BKMK_3"></a>设置域名
- 在启用远程 Web 访问后，你可以为运行 Windows Server Essentials 的服务器设置域名。 如果计划从远程计算机使用远程 Web 访问功能，这将是一项必要步骤。 有关详情，请参阅以下主题：
+ 在启用远程 Web 访问后，你可以为运行 Windows Server Essentials 的服务器设置域名。 如果计划从远程计算机使用远程 Web 访问功能，这将是一项必要步骤。 有关详细信息，请参阅下列主题：
 
 -   [域名概述](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_DNOverview)
 
@@ -231,9 +231,9 @@ ms.locfileid: "87180933"
 ###  <a name="understand-microsoft-personalized-domain-names"></a><a name="BKMK_PersonalizedNames"></a>了解 Microsoft 个性化域名
  Microsoft 个性化域名包括以下功能：
 
-- 远程 Web 访问的自定义域名（*例如，remotewebaccess.com）。* 你的域名与公用 IP 地址相关联。
+- 远程 Web 访问的自定义域名 (例如， *yourhostname*. remotewebaccess.com) 。 你的域名与公用 IP 地址相关联。
 
-- DNS 动态更新协议服务，以便在公共 IP 地址更改时不会中断使用域名的远程 Web 访问。 通常，用于组织的宽带连接的 Internet 服务提供商（Isp）提供可更改的动态公共 IP 地址。
+- DNS 动态更新协议服务，以便在公共 IP 地址更改时不会中断使用域名的远程 Web 访问。 通常，组织的宽带连接 (Isp) 的 Internet 服务提供商提供可以更改的动态公共 IP 地址。
 
 - 与域名相关联的受信任证书。
 
@@ -297,7 +297,7 @@ ms.locfileid: "87180933"
 >  建议将默认的“Remote”**** 用作你的域名前缀。
 
 ###  <a name="choose-a-domain-name-extension"></a><a name="BKMK_Extension"></a>选择域名扩展
- 在为你的 Internet 网站选择域名时，你还需要指定要使用的域名扩展名。 该扩展名由任意域名的最后一个点号后跟随的字母来进行标识。 （扩展的正式术语为顶级域或 TLD。）
+ 在为你的 Internet 网站选择域名时，你还需要指定要使用的域名扩展名。 该扩展名由任意域名的最后一个点号后跟随的字母来进行标识。  (扩展的正式术语为顶级域或 TLD。 ) 
 
  可使用的域扩展名有两种主要类型：通用域扩展名和国家/地区代码。
 
@@ -306,7 +306,7 @@ ms.locfileid: "87180933"
 
  **通用一级域名的示例**
 
-|域扩展名|描述|
+|域扩展名|Description|
 |----------------------|-----------------|
 |.com|通常由商业组织使用，但它可供任何人使用。|
 |.net|为提供网络基础结构服务的企业设计。|
@@ -318,7 +318,7 @@ ms.locfileid: "87180933"
 
  **国家/地区代码一级域名的示例**
 
-|域扩展名|描述|
+|域扩展名|Description|
 |----------------------|-----------------|
 |.ca|供加拿大的网站使用|
 |.cn|供中国的网站使用|
@@ -356,7 +356,7 @@ ms.locfileid: "87180933"
 
 1.  确定主机名，如远程。 此为域名前缀。 域名前缀加上域名可定义用于打开远程 Web 访问登录页面的 URL;例如， **http://remote.contoso.com** 。
 
-2.  在域名服务提供商配置仪表板中（通常在其网页上），为你在步骤1中确定的主机名创建 A 记录。 确保在 A 记录中指定的 IP 地址是路由器 WAN 端（面向 Internet）的 IP 地址。 请参阅你的路由器文档，查找关于 WAN IP 地址的相关信息。
+2.  在域名服务提供商配置仪表板中 (通常) 在其网页上，为你在步骤1中确定的主机名创建 A 记录。 确保在 A 记录中指定的 IP 地址是路由器 WAN 端的 IP 地址 (面向 Internet 的) 。 请参阅你的路由器文档，查找关于 WAN IP 地址的相关信息。
 
 3.  建议联系你的 Internet 服务提供商 (ISP) 为你的网络购买一个静态 IP 地址。 这能确保 IP 地址不会发生变化，而且你的 DNS 项也不会过期。
 
@@ -379,7 +379,7 @@ ms.locfileid: "87180933"
 5. 在搜索结果中，域名称服务提供商的名称已在“注册机构”**** 下列出。
 
 ##  <a name="customize-remote-web-access"></a><a name="BKMK_4"></a>自定义远程 Web 访问
- 你可以通过添加个人徽标或背景图像自定义远程 Web 访问站点。 还可以在主页上添加链接，以便向你的所有用户提供此信息。 有关详情，请参阅以下主题：
+ 你可以通过添加个人徽标或背景图像自定义远程 Web 访问站点。 还可以在主页上添加链接，以便向你的所有用户提供此信息。 有关详细信息，请参阅下列主题：
 
 -   [自定义远程 Web 访问](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeRWA)
 
@@ -415,7 +415,7 @@ ms.locfileid: "87180933"
 #### <a name="image-file-types"></a>图像文件类型
  下列图像文件类型可用于替换默认背景和网站徽标：
 
--   位图（* .bmp， \* .dib， \* rle）
+-   Bitmap ( * .bmp， \* .dib， \* rle) 
 
 -   GIF (*.gif)
 

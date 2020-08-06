@@ -7,19 +7,19 @@ ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fa167ec12122883fc0ccea914260407d13f0b992
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9999b78b1b0a4b1823162158b95d175f9c159091
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181163"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837926"
 ---
 # <a name="install-or-remove-language-packs"></a>安装或删除语言包
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 > [!NOTE]
->  添加 Windows Server Essentials 语言包之前，必须先按照[语言包和部署](https://technet.microsoft.com/library/hh824829)中的说明创建多语言 Windows 映像。
+>  添加 Windows Server Essentials 语言包之前，必须先按照[语言包和部署](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824829(v=win.10))中的说明创建多语言 Windows 映像。
 
  语言包只能用于创建多语言映像。 本部分中的信息特定于在 Windows Server Essentials 上安装或删除语言包。
 
@@ -52,4 +52,3 @@ ms.locfileid: "87181163"
 ## <a name="see-also"></a>另请参阅
 
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)[其他自定义](Additional-Customizations.md)[准备映像以进行部署](Preparing-the-Image-for-Deployment.md)[测试客户体验](Testing-the-Customer-Experience.md)
-

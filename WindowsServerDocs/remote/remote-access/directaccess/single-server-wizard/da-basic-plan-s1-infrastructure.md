@@ -7,12 +7,12 @@ ms.technology: networking-da
 ms.topic: article
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6bb92a1a6f569cb5b43fa3cf3861220b8b570fb9
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4a7d784c38db692110559d9e2ce1f1f7c760313a
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518112"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769735"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步骤1规划基本 DirectAccess 基础结构
 在单台服务器上进行基本 DirectAccess 部署的第一步是针对部署所需的基础结构进行规划。 本主题介绍基础结构规划步骤：
@@ -48,9 +48,9 @@ ms.locfileid: "87518112"
 
 3.  按下表配置所需的适配器和寻址。 对于使用单个网络适配器的 NAT 设备后面的部署，仅使用**内部网络适配器**列配置 IP 地址。
 
-    ||外部网络适配器|内部网络适配器<sup>1</sup>|路由要求|
+    |说明|外部网络适配器|内部网络适配器<sup>1</sup>|路由要求|
     |-|--------------|--------------------|------------|
-    |IPv4 Intranet 和 IPv4 Internet|配置以下内容：<p>-一个具有相应子网掩码的静态公用 IPv4 地址。<br />-Internet 防火墙或本地 Internet 服务提供商（ISP）路由器的默认网关 IPv4 地址。|配置以下内容：<p>-具有相应子网掩码的 IPv4 intranet 地址。<br />-Intranet 命名空间的特定于连接的 DNS 后缀。 还必须在内部接口上配置 DNS 服务器。<br />-不要在任何 intranet 接口上配置默认网关。|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<p>1. 列出 intranet 上所有位置的 IPv4 地址空间。<br />2. 使用**route add-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。|
+    |IPv4 Intranet 和 IPv4 Internet|配置以下内容：<p>-一个具有相应子网掩码的静态公用 IPv4 地址。<br />-Internet 防火墙或本地 Internet 服务提供商 (ISP) 路由器的默认网关 IPv4 地址。|配置以下内容：<p>-具有相应子网掩码的 IPv4 intranet 地址。<br />-Intranet 命名空间的特定于连接的 DNS 后缀。 还必须在内部接口上配置 DNS 服务器。<br />-不要在任何 intranet 接口上配置默认网关。|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<p>1. 列出 intranet 上所有位置的 IPv4 地址空间。<br />2. 使用**route add-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。|
     |IPv6 Internet 和 IPv6 Intranet|配置以下内容：<p>-使用 ISP 提供的自动配置地址配置。<br />-使用**route print**命令，以确保指向 ISP 路由器的默认 ipv6 路由存在于 IPv6 路由表中。<br />-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 用于 ISP 路由器的更高级首选项可确保 DirectAccess 服务器的活动默认 IPv6 路由指向 IPv6 Internet。<p>因为 DirectAccess 服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，这些数据包筛选器可阻止连接到 DirectAccess 服务器面向 Internet 的接口的 IPv6 地址。|配置以下内容：<p>-如果使用的不是默认首选项级别，请使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled**命令来配置 intranet 接口。 此命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从 netsh 接口显示接口命令的显示中获得 Intranet 接口的 InterfaceIndex。|如果你拥有 IPv6 Intranet，若要配置 DirectAccess 服务器以访问所有的 IPv6 位置，请执行以下操作：<p>1. 列出 intranet 上所有位置的 IPv6 地址空间。<br />2. 使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为 DirectAccess 服务器的 ipv6 路由表中的静态路由。|
     |IPv4 Internet 和 IPv6 Intranet|在 IPv4 Internet 上，DirectAccess 服务器使用 Microsoft 6to4 适配器接口将默认 IPv6 路由通信转发到 6to4 中继。 可以使用以下命令为 IPv4 Internet 上的 Microsoft 6to4 中继的 IPv4 地址配置 DirectAccess 服务器（在企业网络中未部署本机 IPv6 时使用）：netsh interface ipv6 6to4 set relay name=192.88.99.1 state=enabled command。|||
 
@@ -65,7 +65,7 @@ ms.locfileid: "87518112"
 
 -   6to4 流量-IP 协议41入站和出站。
 
--   Ip-https-传输控制协议（TCP）目标端口443和 TCP 源端口443出站。
+-   Ip-https-传输控制协议 (TCP) 目标端口443和 TCP 源端口443出站。
 
 -   如果你要使用单个网络适配器部署 DirectAccess，并且要在 DirectAccess 服务器上安装网络位置服务器，则还应免除 TCP 端口 62000。
 
@@ -130,7 +130,7 @@ IPsec 的证书要求包括 DirectAccess 客户端计算机在客户端和 Direc
 
         1.  directaccess-webprobehost-应解析为 DirectAccess 服务器的内部 IPv4 地址，或解析为仅限 IPv6 的环境中的 IPv6 地址。
 
-        2.  directaccess-corpconnectivityhost-应解析为本地主机（环回）地址。 应创建 A 和 AAAA 记录，A 记录具有值 127.0.0.1，AAAA 记录具有由 NAT64 前缀构造的值，且最后 32 位类似于 127.0.0.1。 可以通过运行 cmdlet get-netnattransitionconfiguration 来检索 NAT64 前缀。
+        2.  directaccess-corpconnectivityhost-应解析为 localhost (环回) 地址。 应创建 A 和 AAAA 记录，A 记录具有值 127.0.0.1，AAAA 记录具有由 NAT64 前缀构造的值，且最后 32 位类似于 127.0.0.1。 可以通过运行 cmdlet get-netnattransitionconfiguration 来检索 NAT64 前缀。
 
         你可以通过 HTTP 或 PING 使用其他 Web 地址创建其他连接性验证程序。 对于每个连接性验证程序，都必须存在 DNS 条目。
 
@@ -180,7 +180,7 @@ DirectAccess 使用 Active Directory 和 Active Directory 组策略对象，如�
 > - 不可从 DirectAccess 服务器的外部 Internet 适配器访问用于 DirectAccess 的 Active Directory 域控制器（该适配器不得位于 Windows 防火墙的域配置文件中）。
 
 ### <a name="plan-group-policy-objects"></a><a name="bkmk_1_7_GPOs"></a>规划组策略对象
-配置 DirectAccess 时配置的 DirectAccess 设置将收集到组策略对象（GPO）中。 使用 DirectAccess 设置填充两个不同的 GPO，并通过以下方式进行分发：
+配置 DirectAccess 时配置的 DirectAccess 设置将收集到组策略对象 (GPO) 中。 使用 DirectAccess 设置填充两个不同的 GPO，并通过以下方式进行分发：
 
 -   **DirectAccess 客户端 GPO**。 此 GPO 包含客户端设置，包括 IPv6 转换技术设置、NRPT 条目和高级安全 Windows 防火墙连接安全规则。 将 GPO 应用于为客户端计算机指定的安全组。
 

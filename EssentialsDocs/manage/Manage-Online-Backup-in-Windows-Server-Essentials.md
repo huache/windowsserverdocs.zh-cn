@@ -7,12 +7,12 @@ ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b3a9ceca5de9971f77175052a604d3e22de07036
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e5c8a274a8e012ffd24ce6c6c819fa240c9f1095
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180943"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837886"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的联机备份
 
@@ -53,7 +53,7 @@ ms.locfileid: "87180943"
 -   [注销服务器](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_6)
 
 ###  <a name="upload-a-certificate-to-the-azure-backup-vault"></a><a name="BKMK_1"></a>将证书上传到 Azure 备份保管库
- 在将 Azure 备份用于 Windows Server Essentials 中的联机备份之前，必须上载公共证书以注册到备份保管库。 证书用于对 Azure 备份部署（代理）进行身份验证，代表 Microsoft Online Services 订阅所有者来管理与此订阅关联的资源。
+ 在将 Azure 备份用于 Windows Server Essentials 中的联机备份之前，必须上载公共证书以注册到备份保管库。 证书用于验证代理)  (的 Azure 备份部署，它代表 Microsoft Online Services 订阅所有者来管理与此订阅关联的资源。
 
 > [!NOTE]
 >  在上载证书之前，必须完成[注册 Azure 备份服务](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_16)中的过程。
@@ -84,7 +84,7 @@ ms.locfileid: "87180943"
    >  你还可以使用自己的公共证书。 若要了解需要哪些证书，请在 **“快速启动”** 页面上，单击 **“获取证书”** 链接。
 
    > [!NOTE]
-   >   Azure 需要带有公钥的 x.509 v2 证书。 有关详细信息，请参阅 [管理保管库证书](https://msdn.microsoft.com/library/azure/dn169036.aspx)。
+   >   Azure 需要带有公钥的 x.509 v2 证书。 有关详细信息，请参阅 [管理保管库证书](/previous-versions/azure/dn169036(v=azure.100))。
 
 7. 选择证书后，请单击 **“确定”**（复选标记）。
 
@@ -191,7 +191,7 @@ ms.locfileid: "87180943"
 
 3.  在 **“联机备份”** 子节中，单击 **“注册”**。
 
-4.  为你的联机备份选择要用于备份保管库的证书。 默认情况下，选择默认证书；如果要选择其他证书，则使用 **“浏览”**。 。
+4.  为你的联机备份选择要用于备份保管库的证书。 默认情况下，选择默认证书；如果要选择其他证书，则使用 **“浏览”**。 然后单击“下一步”。
 
 5.  按照该向导中的说明创建密码，然后完成注册。
 
@@ -365,7 +365,7 @@ ms.locfileid: "87180943"
 
 2.  在仪表板 **“主页”** 页面上，依次单击 **“外接程序”** 类别、**“与 Azure 备份集成”** 和 **“单击以注册 Azure 备份”**。
 
-3.  在 "Azure**恢复服务**" 页上的 "**备份（预览）** " 部分中，查看详细信息。
+3.  在 "Azure**恢复服务**" 页上的 "**备份 (预览) ** " 部分中，查看详细信息。
 
 4.  如果你没有 Azure 订阅，请单击 "**免费试用**"，然后按照说明获取 Azure 订阅。
 
@@ -402,7 +402,7 @@ ms.locfileid: "87180943"
 
     显示 **“安装”** 页。 进度指示器指示安装何时开始并显示安装的进度。 安装完成后，你会收到一条消息，指出 Azure 备份外接程序已成功安装。
 
-4. 单击 **“完成”** 。
+4. 单击“完成”。
 
 5. 关闭并重新打开仪表板。
 
@@ -437,7 +437,7 @@ ms.locfileid: "87180943"
 ###  <a name="protect-folders-for-online-backup-in-windows-server-essentials"></a><a name="BKMK_18"></a>保护 Windows Server Essentials 中的联机备份的文件夹
  仪表板的联机备份部分的 **“受保护文件夹”** 子部分中显示服务器上所有共享文件夹的列表。 下表描述列表中包含的信息。
 
-|列|描述|
+|列|说明|
 |------------|-----------------|
 |**文件夹名称：**|联机备份中包含的文件夹的名称。<br /><br /> 若要添加或排除文件夹，请运行 **“配置联机备份”** 任务。|
 |**文件夹路径：**|文件夹位置。|
@@ -446,7 +446,7 @@ ms.locfileid: "87180943"
 ###  <a name="online-backup-history-in-windows-server-essentials"></a><a name="BKMK_19"></a>Windows Server Essentials 中的联机备份历史记录
  仪表板的联机备份部分中的 **“备份历史记录”** 子部分显示最近的联机备份的列表。 你可以使用成功的备份还原文件和文件夹。 下表描述列表中包含的信息。
 
-|列|描述|
+|列|说明|
 |------------|-----------------|
 |**运作**|有两种类型的操作 - **“备份”** 和 **“还原”**。|
 |**阶段**|这是最新状态的记录时间。|

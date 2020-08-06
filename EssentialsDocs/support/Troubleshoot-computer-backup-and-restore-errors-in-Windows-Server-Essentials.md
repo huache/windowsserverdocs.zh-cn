@@ -7,12 +7,12 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cbc6fec843a55d99ba709953b56e01a55f317a62
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 933dab3e0471ef4b9d8e4f603a1c177ecc6fc70c
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409517"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838286"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Windows Server Essentials 中的计算机备份和还原错误疑难解答
 
@@ -21,7 +21,7 @@ ms.locfileid: "87409517"
 使用这些过程以解决 Windows Server Essentials 中的计算机备份问题，包括备份配置问题、不完整或不成功的备份、备份运行状况警报和文件、文件夹或完整系统还原的问题。
 
 > [!NOTE]
-> 有关 Windows Server Essentials 社区中的最新疑难解答信息，请访问[Windows Server Essentials 论坛](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)。
+> 有关 Windows Server Essentials 社区中的最新疑难解答信息，请访问[Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html)。
 
 ## <a name="troubleshoot-backup-configuration-issues-for-a-connected-computer"></a>解决已连接的计算机的备份配置问题
 

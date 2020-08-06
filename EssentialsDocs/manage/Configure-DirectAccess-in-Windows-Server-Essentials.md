@@ -7,23 +7,23 @@ ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a1f568d34fd0fbd94d09046b59a93d21feb60890
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e24d6ce2e123deb741bcd39dc77f9a893a27df89
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181073"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837906"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>在 Windows Server Essentials 中配置 DirectAccess
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-本主题提供有关在 Windows Server Essentials 中配置 DirectAccess 的分步说明，使移动工作人员可以从任何配备 Internet 的远程位置无缝连接到组织的网络，而不必建立虚拟专用网络（VPN）连接。 DirectAccess 可为移动工作人员提供与 Windows 8.1、Windows 8 和 Windows 7 计算机相同的相同连接体验。
+本主题提供有关在 Windows Server Essentials 中配置 DirectAccess 的分步说明，使移动办公人员可以从任何配备 Internet 的远程位置无缝连接到组织的网络，而不必建立虚拟专用网络 (VPN) 连接。 DirectAccess 可为移动工作人员提供与 Windows 8.1、Windows 8 和 Windows 7 计算机相同的相同连接体验。
 
  在 Windows Server Essentials 中，如果域包含多个 Windows Server Essentials 服务器，则必须在域控制器上配置 DirectAccess。
 
 > [!NOTE]
->  本主题提供有关在 Windows Server Essentials 服务器是域控制器时配置 DirectAccess 的说明。 如果 Windows Server Essentials 服务器是域成员，请按照[将 Directaccess 添加到现有远程访问（VPN）部署](https://technet.microsoft.com/library/jj574220.aspx)中的域成员上的说明进行操作。
+>  本主题提供有关在 Windows Server Essentials 服务器是域控制器时配置 DirectAccess 的说明。 如果 Windows Server Essentials 服务器是域成员，请按照[将 Directaccess 添加到现有远程访问 (VPN) 部署](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574220(v=ws.11))中的在域成员上配置 directaccess 的说明进行操作。
 
 ## <a name="process-overview"></a>过程概述
  若要在 Windows Server Essentials 中配置 DirectAccess，请完成以下步骤。
@@ -49,7 +49,7 @@ ms.locfileid: "87181073"
 
     -   [步骤 5a：使用远程访问管理控制台启用 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)
 
-    -   [步骤5b：删除 RRAS GPO 中的无效 IPv6Prefix （仅适用于 Windows Server Essentials）](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)
+    -   [步骤5b：删除 RRAS GPO 中的无效 IPv6Prefix， (仅限 Windows Server Essentials) ](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)
 
     -   [步骤 5c：使运行 Windows 7 企业版的客户端计算机能够使用 DirectAccess](#BKMK_Step4cWindows7Setup)
 
@@ -86,7 +86,7 @@ ms.locfileid: "87181073"
 
     1.  在“安装类型”**** 页上，选择“基于角色或基于功能的安装”****。
 
-    2.  在 "**服务器选择" 页**（或 Windows server Essentials 中的 "**选择目标服务器**" 页）上，单击 **"从服务器池中选择一个服务器"**。
+    2.  在 "**服务器选择" 页**上 (或 Windows Server Essentials) 中的 "**选择目标服务器**" 页上，单击 **"从服务器池中选择一个服务器"**。
 
     3.  在“功能”**** 页上，依次展开“远程服务器管理工具（已安装）”****、“远程访问管理工具（已安装）”****、“角色管理工具（已安装）”****、“远程访问管理工具”****，然后选择“远程访问 GUI 和命令行工具”****。
 
@@ -141,7 +141,7 @@ ms.locfileid: "87181073"
 
 1.  在“开始”**** 页上，打开“证书颁发机构”****。
 
-2.  在控制台树中的 "**证书颁发机构（Local）**" 下，展开 **<servername \> -CA**"，右键单击"**证书模板**"，然后单击"**管理**"。
+2.  在控制台树中的 "**证书颁发机构 (本地) **" 下，展开 " **<servername \> -CA**"，右键单击 "**证书模板**"，然后单击 "**管理**"。
 
 3.  在“证书颁发机构（本地）”**** 中，右键单击“Web 服务器”****，然后单击“属性”****。
 
@@ -193,7 +193,7 @@ ms.locfileid: "87181073"
 
 1.  在“开始”页上，打开 DNS 管理器。 若要打开 DNS 管理器，请搜索 **dnsmgmt.msc**，然后单击结果中的“dnsmgmt.msc” **** 。
 
-2.  在 DNS 管理器控制台树中，展开本地服务器，展开 "**正向查找区域**"，右键单击带有服务器域后缀的区域，然后单击 "**新建主机（A 或 AAAA）**"。
+2.  在 DNS 管理器控制台树中，展开本地服务器，展开 "**正向查找区域**"，右键单击带有服务器域后缀的区域，然后单击 "**新建主机 (A 或 AAAA) **。
 
 3.  键入该服务器的名称和 IP 地址（例如，DirectAccess-NLS.contoso.local）及其对应的服务器地址（例如，192.168.x.x）。
 
@@ -207,7 +207,7 @@ ms.locfileid: "87181073"
 1. 在服务器管理器仪表板上，单击“工具”****，然后单击“Active Directory 用户和计算机”****。
 
    > [!NOTE]
-   >  如果你未在“工具”**** 菜单上看到“Active Directory 用户和计算机”****，则必须安装该功能。 若要安装 Active Directory 用户和组，需要以管理员身份运行以下 Windows PowerShell cmdlet： `Install-WindowsFeature RSAT-ADDS-Tools`。 有关详细信息，请参阅 [安装或删除远程服务器管理工具程序包](https://technet.microsoft.com/library/cc730825.aspx)。
+   >  如果你未在“工具”**** 菜单上看到“Active Directory 用户和计算机”****，则必须安装该功能。 若要安装 Active Directory 用户和组，需要以管理员身份运行以下 Windows PowerShell cmdlet： `Install-WindowsFeature RSAT-ADDS-Tools`。 有关详细信息，请参阅 [安装或删除远程服务器管理工具程序包](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730825(v=ws.11))。
 
 2. 在控制台树中，展开服务器，右键单击“用户”****，单击“新建”****，然后单击“组”****。
 
@@ -237,7 +237,7 @@ ms.locfileid: "87181073"
 
 -   [步骤 5a：使用远程访问管理控制台启用 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)
 
--   [步骤5b：删除 RRAS GPO 中的无效 IPv6Prefix （仅适用于 Windows Server Essentials）](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)
+-   [步骤5b：删除 RRAS GPO 中的无效 IPv6Prefix， (仅限 Windows Server Essentials) ](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)
 
 -   [步骤 5c：使运行 Windows 7 企业版的客户端计算机能够使用 DirectAccess](#BKMK_Step4cWindows7Setup)
 
@@ -256,7 +256,7 @@ ms.locfileid: "87181073"
 
     1.  查看“DirectAccess 先决条件”****，然后单击“下一步”****。
 
-    2.  在“选择组”**** 选项卡上，添加你以前为 DirectAccess 客户端创建的安全组。 （如果尚未创建安全组，请参阅[步骤4：为 DirectAccess 客户端计算机创建安全组](#BKMK_AddSecurityGroup)以获取说明。）
+    2.  在“选择组”**** 选项卡上，添加你以前为 DirectAccess 客户端创建的安全组。  (如果尚未创建安全组，请参阅[步骤4：为 DirectAccess 客户端计算机创建安全组](#BKMK_AddSecurityGroup)以获取说明。 ) 
 
     3.  如果要让移动计算机使用 DirectAccess 远程访问该服务器，请在“选择组”**** 选项卡上，单击“仅为移动计算机启用 DirectAccess”****，然后单击“下一步”****。
 
@@ -277,7 +277,7 @@ ms.locfileid: "87181073"
         Restart-Service RaMgmtSvc
         ```
 
-###  <a name="step-5b-remove-the-invalid-ipv6prefix-in-rras-gpo-windows-server-essentials-only"></a><a name="BKMK_RemoveIPv6"></a>步骤5b：删除 RRAS GPO 中的无效 IPv6Prefix （仅适用于 Windows Server Essentials）
+###  <a name="step-5b-remove-the-invalid-ipv6prefix-in-rras-gpo-windows-server-essentials-only"></a><a name="BKMK_RemoveIPv6"></a>步骤5b：删除 RRAS GPO 中的无效 IPv6Prefix， (仅限 Windows Server Essentials) 
   本节适用于运行 Windows Server Essentials 的服务器。
 
  以管理员身份打开 Windows PowerShell，并运行下列命令：
@@ -300,15 +300,15 @@ gpupdate
 
      远程访问服务器设置向导将打开。
 
-3.  在 "**身份验证**" 选项卡上，选择将成为受信任根证书的证书颁发机构（ca）证书（可以选择 Windows Server Essentials 服务器的 CA 证书）。 单击“使 Windows 7 客户端计算机能够通过 DirectAccess 进行连接”****，然后单击“下一步”****。
+3.  在 "**身份验证**" 选项卡上，选择将成为受信任根证书的证书颁发机构 (CA) 证书， (可以选择 Windows Server Essentials 服务器) 的 ca 证书。 单击“使 Windows 7 客户端计算机能够通过 DirectAccess 进行连接”****，然后单击“下一步”****。
 
 4.  按照说明完成向导。
 
 > [!IMPORTANT]
 >  如果 Windows Server Essentials 服务器未附带预安装的 UR1，则通过 DirectAccess 连接的 Windows 7 企业计算机存在一个已知问题。 若要在该环境中启用 DirectAccess 连接，必须执行以下附加步骤：
 >
-> 1. 在 Windows Server Essentials 服务器上安装[Microsoft 知识库（KB）文章 2796394](https://support.microsoft.com/kb/2796394)中所述的修补程序。 然后重新启动该服务器。
->    2. 然后在每个 Windows 7 计算机上安装[Microsoft 知识库（KB）文章 2615847](https://support.microsoft.com/kb/2615847)中所述的修补程序。
+> 1. 在 Windows Server Essentials 服务器上安装[Microsoft 知识库 (KB) 文章 2796394](https://support.microsoft.com/kb/2796394)中所述的修补程序。 然后重新启动该服务器。
+>    2. 然后在每个 Windows 7 计算机上安装[Microsoft 知识库 (KB) 文章 2615847](https://support.microsoft.com/kb/2615847)中所述的修补程序。
 >
 >    此问题已在 Windows Server Essentials 中解决。
 
@@ -411,7 +411,7 @@ Restart-Service winnat
 ### <a name="preparation"></a>准备
  在开始为 DirectAccess 配置服务器之前，必须完成以下操作：
 
-1.  按照[步骤3：为网络位置服务器准备证书和 DNS 记录](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)中的过程注册一个名为 " **DirectAccess-NLS.contoso.com** " 的证书（其中**contoso.com**替换为实际的内部域名），并为网络位置服务器（NLS）添加 DNS 记录。
+1.  请按照[步骤3：为网络位置服务器准备证书和 DNS 记录](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)中的过程注册一个名为**DirectAccess-NLS.contoso.com** (证书，其中**contoso.com**替换为实际内部域名) ，并为网络位置服务器添加 DNS 记录 (NLS) 。
 
 2.  在 Active Directory 中添加名为“DirectAccessClients”的安全组****，然后添加要提供 DirectAccess 功能的客户端计算机。 有关详细信息，请参阅[步骤4：为 DirectAccess 客户端计算机创建安全组](#BKMK_AddSecurityGroup)。
 

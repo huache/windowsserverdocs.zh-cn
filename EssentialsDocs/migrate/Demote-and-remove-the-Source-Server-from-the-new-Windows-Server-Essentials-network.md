@@ -7,12 +7,12 @@ ms.assetid: d9f18b29-8e03-439e-bdf0-1dac5e4f70c5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d48c314e5dd1655d23e7423c473163befb3655b9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e55c717b1eeb5b8f75ebfb7b48abd656dd4ddaa3
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180783"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838424"
 ---
 # <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>从新的 Windows Server Essentials 中降级和删除源服务器
 
@@ -53,10 +53,10 @@ ms.locfileid: "87180783"
 
    > [!NOTE]
    >
-   >  Exchange Server 将进行检查以确保服务器上没有邮箱或公共文件夹。 如果保留了任何数据，将在你单击“删除”**** 时显示错误消息。 若要避免此问题，请确保已完成将[SBS 2003 设置和数据移到目标服务器](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)主题中的所有过程。
+   >  Exchange Server 将进行检查以确保服务器上没有邮箱或公共文件夹。 如果保留了任何数据，将在你单击“删除”**** 时显示错误消息。 若要避免此问题，请确保已完成将[SBS 2003 设置和数据移到目标服务器](./move-windows-sbs-2003-to-the-destination-server-for-migration.md)主题中的所有过程。
 
 
-6. 单击“下一步”。
+6. 单击“下一步” 。
 
 7. 出现提示时，插入 Windows Small Business Server 2003 CD#3，并按照屏幕上的说明进行操作。
 

@@ -7,12 +7,12 @@ ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e4f3cf42cdf9343be106660b74041c059fdc7073
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c59fd121fdf628fc0943214b699599f2f20625b3
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180993"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837826"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的数字媒体
 
@@ -101,7 +101,7 @@ ms.locfileid: "87180993"
   有关详细信息，请参阅[打开或关闭媒体流](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)。
 
 ##  <a name="turn-media-streaming-on-or-off"></a><a name="BKMK_4"></a>启用或禁用媒体流
- 可以通过将文件流式传输到任何支持的数字媒体接收器（DMR）（如计算机、移动电话、电视、数字媒体接收器、Windows Media Center （包括 Xbox 360）和其他个人电子设备），从 Windows Server Essentials 共享音乐、视频和图片。
+ 可以通过将文件流式传输到任何支持的数字媒体接收器（如计算机、移动电话、电视、数字媒体接收器、Windows Media (Center （包括 Xbox 360) 和其他个人电子设备）的扩展程序 (DMR) ，从 Windows Server Essentials 共享音乐、视频和图片。
 
  有关与 Windows Server Essentials 兼容的数字媒体设备的当前列表，请参阅[Windows 兼容性中心](https://www.microsoft.com/windows/compatibility/CompatCenter/Home)。
 
@@ -130,7 +130,7 @@ ms.locfileid: "87180993"
  服务器管理员可以通过直接访问服务器或通过使用远程 Web 访问站点登录到仪表板，将数字媒体添加到媒体库中的共享文件夹。 其他用户可以通过使用 "快速启动板" 上的 "**共享文件夹**" 连接、通过使用远程 Web 访问站点或使用适用于 Windows Phone 的 My server 应用，将媒体文件添加到服务器。 有关播放媒体的信息，请参阅[播放数字媒体](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)。
 
 > [!NOTE]
->  通过使用适用于 Windows Phone 的 My Server 应用，还可以将媒体文件上载到服务器。 你可以从 [Windows Phone 应用商店](https://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)下载 My Server 应用。 有关适用于 Windows phone 的 My Server 应用的详细信息，请参阅博客文章[适用于 Windows Server Essentials 的 My server 应用](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)。
+>  通过使用适用于 Windows Phone 的 My Server 应用，还可以将媒体文件上载到服务器。 你可以从 [Windows Phone 应用商店](https://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)下载 My Server 应用。 有关适用于 Windows phone 的 My Server 应用的详细信息，请参阅博客文章[适用于 Windows Server Essentials 的 My server 应用](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials)。
 
 #### <a name="to-add-digital-media-files-to-shared-folders-on-the-server"></a>将数字媒体文件添加到服务器上的共享文件夹
 
@@ -184,14 +184,14 @@ ms.locfileid: "87180993"
 
 4.  单击 **“应用”** 或 **“确定”** 以保存你的更改。
 
-##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a>启用使用服务器消息块（SMB）协议的媒体设备来访问服务器上的共享文件
+##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a>启用使用服务器消息块 (SMB) 协议的媒体设备来访问服务器上的共享文件
  将服务器消息块 (SMB) 用于网络文件和共享访问而不是使用 DLNA （适用于媒体流）的设备需要激活来宾帐户。 这允许网络上的任何设备或用户无需身份验证即可查看共享文件夹的内容。
 
 > [!CAUTION]
 >  默认情况下，启用来宾帐户后，任何人都可以访问服务器上的共享资源。
 
 ##  <a name="common-processors-and-the-video-profiles-they-support"></a><a name="BKMK_CommonProcessors"></a>常见处理器和它们支持的视频配置文件
- 若要从 Windows Server Essentials 服务器流式传输媒体，可以使用运行 Windows 7 或 Windows 8 操作系统的计算机或其他联网的设备（如数字媒体播放器）或 Media Center 扩展器（如 Xbox 360）。 当你离开网络时，使用远程 Web 访问 Media Player 播放存储在你服务器上的文件。
+ 若要从 Windows Server Essentials 服务器流式传输媒体，可以使用运行 Windows 7 或 Windows 8 操作系统的计算机或其他联网设备 (如数字媒体播放器) 或 Media Center 扩展器 (如 Xbox 360) 。 当你离开网络时，使用远程 Web 访问 Media Player 播放存储在你服务器上的文件。
 
  你需要介于 200 KBps 和 10 MBps 之间的数据传输速率。 你需要使用你的计算机和设备可以识别和播放的媒体格式。 并非所有的设备支持相同的媒体格式，因此必须有为你的计算机和设备播放你具有的媒体文件的方法。
 

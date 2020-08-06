@@ -7,12 +7,12 @@ ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c05888f52f3fe60d0dde22a70ceb5a3eee94e0ef
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e832957a5d44851131cb622e4c3bf9d99d4e4a7f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180233"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838266"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>将计算机连接到 Windows Server Essentials 中的服务器疑难解答
 
@@ -21,7 +21,7 @@ ms.locfileid: "87180233"
  本主题包含在将计算机连接到运行 Windows Server Essentials 或 Windows Server Essentials 的服务器时可能遇到的问题的疑难解答指南。
 
 > [!NOTE]
->  有关 Windows Server Essentials 和 Windows Server Essentials 社区中的最新疑难解答信息，建议访问[Windows Server Essentials 论坛](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
+>  有关 Windows Server Essentials 和 Windows Server Essentials 社区中的最新疑难解答信息，建议访问[Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
 
  本主题提供以下问题的解决方案：
 
@@ -249,7 +249,7 @@ ms.locfileid: "87180233"
 
  **说明**
 
- 从 Windows Server Essentials 的预发布版本（Beta 或 RC）更新到已发布版本后，必须从已连接到服务器的每台计算机中删除连接器软件，然后再次连接计算机，以便安装已发布的连接器软件版本。
+ 将 Windows Server Essentials 的预发行 (Beta 或 RC) 版本更新为已发布版本后，你必须从已连接到服务器的每台计算机中删除连接器软件，然后再次连接计算机以安装已发行版本的连接器软件。
 
  然而，当你从网络计算机上删除连接器软件时，不会删除该计算机上 %ProgramData%\Microsoft\Windows Server\Logs\ 文件夹中的现有日志文件。 如果不删除日志文件夹，则在将计算机连接到 Windows Server Essentials 的已发布版本时，日志文件可能会损坏。
 
@@ -282,4 +282,4 @@ ms.locfileid: "87180233"
 
 - [管理 Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)
 
-- [Windows 2012 Server Essentials 连接计算机故障排除](https://docs.microsoft.com/windows-server-essentials/support/troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials)
+- [Windows 2012 Server Essentials 连接计算机故障排除]()

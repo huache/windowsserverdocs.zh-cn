@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: e00bf2db8216489787ba3a476a79d7567d4d0d78
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 3c415155734515af004e25a07c4e61afabaa3359
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181413"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838006"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>为多语言支持创建服务器恢复 DVD
 
@@ -20,7 +20,7 @@ ms.locfileid: "87181413"
 ##  <a name="create-a-server-setup-and-server-recovery-dvd-for-multiple-language-support-on-locally-administered-servers"></a><a name="BKMK_MLHeadedRecovery"></a>为本地管理的服务器上的多语言支持创建服务器安装和服务器恢复 DVD
 
 > [!NOTE]
->  必须首先创建多语言 Windows 映像，如在将 Windows Server Essentials 述 pack 添加到 install 之前[演练：多语言 Windows 映像创建](https://technet.microsoft.com/library/jj126995)中所述。
+>  必须首先创建多语言 Windows 映像，如在将 Windows Server Essentials 述 pack 添加到 install 之前[演练：多语言 Windows 映像创建](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10))中所述。
 
  安装有两个阶段：Windows 预安装环境 (Windows PE) 和初始配置。 默认情况下，不会显示初始配置中的语言选择页面。
 
@@ -43,7 +43,7 @@ ms.locfileid: "87181413"
 
 2.  创建可分配的介质
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>必备条件
  若要将多语言支持添加到 Windows 安装程序，需满足以下条件：
 
 
@@ -63,7 +63,7 @@ ms.locfileid: "87181413"
  在此步骤中，你将 Windows Server 2012 和 Windows Server Essentials 语言包添加到 Install。
 
 > [!NOTE]
->  验证是否为 Windows Server 2012 安装了语言包。 这可确保你获取相应的品牌。 [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)上提供了 Windows Server 2012 多语言用户界面语言包。 请按照[演练：](https://technet.microsoft.com/library/jj126995.aspx)创建多语言创建多语言 windows 映像创建多语言 windows 映像中的说明创建多语言 windows 映像，然后将 Windows Server Essentials 语言包添加到 install。
+>  验证是否为 Windows Server 2012 安装了语言包。 这可确保你获取相应的品牌。 [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)上提供了 Windows Server 2012 多语言用户界面语言包。 请按照[演练：](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10))创建多语言创建多语言 windows 映像创建多语言 windows 映像中的说明创建多语言 windows 映像，然后将 Windows Server Essentials 语言包添加到 install。
 >
 >  Windows Server Essentials 语言包在 \Language Pack<CultureName 的语言包媒体中提供 \\ \> 。
 
@@ -104,4 +104,3 @@ ms.locfileid: "87181413"
 ## <a name="see-also"></a>另请参阅
 
  [创建和自定义映像](Creating-and-Customizing-the-Image.md)[其他自定义](Additional-Customizations.md)[准备映像以进行部署](Preparing-the-Image-for-Deployment.md)[测试客户体验](Testing-the-Customer-Experience.md)
-

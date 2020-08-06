@@ -7,12 +7,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c8f490f09f9623aa82b42f2103f2fd3e95537d7d
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 1ce7359929cb1658cc84418231fb7d65efce8692
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409507"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838216"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>在 Windows Server Essentials 中播放数字媒体
 
@@ -182,7 +182,7 @@ ms.locfileid: "87409507"
 
 
 > [!NOTE]
->  通过使用适用于 Windows Phone 的 My Server 应用，还可以将媒体文件上载到服务器。 你可以从 [Windows Phone 应用商店](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)下载 My Server 应用。 有关 "我的服务器" 应用 Windows Phone 的详细信息，请参阅博客文章[适用于 Windows Server Essentials 的 My server](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)应用。
+>  通过使用适用于 Windows Phone 的 My Server 应用，还可以将媒体文件上载到服务器。 你可以从 [Windows Phone 应用商店](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)下载 My Server 应用。 有关 "我的服务器" 应用 Windows Phone 的详细信息，请参阅博客文章[适用于 Windows Server Essentials 的 My server](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials)应用。
 
 #### <a name="to-add-digital-media-files-to-shared-folders-on-the-server"></a>将数字媒体文件添加到服务器上的共享文件夹
 
@@ -222,7 +222,7 @@ ms.locfileid: "87409507"
   开始实际下载之前，将创建 exe 或 zip 文件。 这可能需要几分钟，具体取决于文件的数量和要下载文件的总大小。 创建下载文件后，下载文件的操作发生在后台。 这允许你在下载过程完成时可以继续工作。
 
 ##  <a name="easy-file-upload-tool"></a><a name="BKMK_6"></a>轻松文件上载工具
- 轻松文件上载工具简化了在 Windows Server Essentials 服务器上上传文件的过程。 你可以根据需要将任意多个文件添加到轻松文件上载工具，然后将它们上载到 Windows Server Essentials 服务器上的共享文件夹中。 有关详细信息，请参阅博客文章 [了解远程 Web 访问文件共享](https://blogs.technet.com/b/sbs/archive/2012/04/19/understanding-remote-web-access-file-sharing.aspx)。
+ 轻松文件上载工具简化了在 Windows Server Essentials 服务器上上传文件的过程。 你可以根据需要将任意多个文件添加到轻松文件上载工具，然后将它们上载到 Windows Server Essentials 服务器上的共享文件夹中。 有关详细信息，请参阅博客文章 [了解远程 Web 访问文件共享](/archive/blogs/sbs/understanding-remote-web-access-file-sharing)。
 
 ##  <a name="view-and-browse-shared-digital-media"></a><a name="BKMK_7"></a>查看和浏览共享的数字媒体
  通过使用仪表板、快速启动板、远程 Web 访问网站或适用于 Windows Phone 的 My Server 应用，你可以查看或浏览资源。

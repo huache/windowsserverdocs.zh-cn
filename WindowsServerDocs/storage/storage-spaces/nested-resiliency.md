@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 6c3e16f0965be5fc7de4bdc7bd751fb1dd193556
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 311edb38f4cdf1dac153d843811442d5eafbce05
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962199"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769745"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>存储空间直通的嵌套复原
 
@@ -62,7 +62,7 @@ Windows Server 2019 中的存储空间直通提供了在软件中实现的两个
 
 ### <a name="capacity-efficiency"></a>容量效率
 
-容量效率是可用空间与[卷占用](plan-volumes.md#choosing-the-size-of-volumes)量的比值。 它描述了复原的容量开销，取决于所选的复原选项。 简单的示例是，存储无复原功能的数据的容量高达100% （1 TB 的数据占用 1 TB 的物理存储容量），而双向镜像的效率为50% （1 TB 的数据占用 2 TB 的物理存储容量）。
+容量效率是可用空间与[卷占用](plan-volumes.md#choosing-the-size-of-volumes)量的比值。 它描述了复原的容量开销，取决于所选的复原选项。 简单的示例是，存储无复原能力的数据是100% 的容量效率 (1 TB 的数据占用 1 TB 的物理存储容量) ，而双向镜像则为50%， (1 TB 的数据占用 2 TB 的物理存储容量) 。
 
 - **嵌套的双向镜像**写入所有内容的四个副本，也就是说，若要存储 1 tb 的数据，则需要 4 tb 的物理存储容量。 尽管简单易用，但嵌套式双向镜像的容量效率（25%）是存储空间直通中的任何复原选项的最低级别。
 
@@ -76,9 +76,9 @@ Windows Server 2019 中的存储空间直通提供了在软件中实现的两个
   | 7+                         | 40.0%      | 37.5%      | 35.3%      |
 
   > [!NOTE]
-  > **如果您感到好奇，以下是完整的数学计算的示例。** 假设两个服务器中的每个服务器都有六个容量驱动器，我们想要创建 1 100 GB 卷，其中包含 10 GB 镜像和 90 GB 的奇偶校验。 服务器本地双向镜像的效率为50.0%，这意味着，每个服务器上存储的数据量为 10 GB （共 10 GB）。 镜像到这两个服务器，其总占用量为 40 GB。 在这种情况下，服务器本地单一奇偶校验为 5/6 = 83.3%，这意味着 90 GB 的奇偶校验数据将在每台服务器上存储 108 GB。 镜像到这两个服务器，其总占用量为 216 GB。 总体需求量为 [（10 GB/50.0%） + （90 GB/83.3%] × 2 = 256 GB，39.1 用于提高总体容量效率。
+  > **如果您感到好奇，以下是完整的数学计算的示例。** 假设两个服务器中的每个服务器都有六个容量驱动器，我们想要创建 1 100 GB 卷，其中包含 10 GB 镜像和 90 GB 的奇偶校验。 服务器本地双向镜像的效率为50.0%，这意味着，每个服务器上存储的数据量为 10 GB （共 10 GB）。 镜像到这两个服务器，其总占用量为 40 GB。 在这种情况下，服务器本地单一奇偶校验为 5/6 = 83.3%，这意味着 90 GB 的奇偶校验数据将在每台服务器上存储 108 GB。 镜像到这两个服务器，其总占用量为 216 GB。 总体需求量为 [ (10 GB/50.0% ) + (90 GB/83.3% ) ] × 2 = 256 GB，适用于39.1 总体容量效率。
 
-请注意，经典双向镜像的容量效率（约50%）和嵌套的镜像加速奇偶校验（最多40%）不是很大不同。 根据你的需求，更小的容量效率可能会显著提高存储可用性。 你可以选择每卷弹性，以便在同一群集内混合使用嵌套的复原卷和经典双向镜像卷。
+请注意，经典双向镜像的容量效率 (大约 50% ) ，而嵌套的镜像加速奇偶校验 (最多为 40% ) 并不完全相同。 根据你的需求，更小的容量效率可能会显著提高存储可用性。 你可以选择每卷弹性，以便在同一群集内混合使用嵌套的复原卷和经典双向镜像卷。
 
 ![最佳](media/nested-resiliency/tradeoff.png)
 
@@ -90,7 +90,7 @@ Windows Server 2019 中的存储空间直通提供了在软件中实现的两个
 
 首先，使用 cmdlet 创建新的存储层模板 `New-StorageTier` 。 只需执行此操作一次，然后创建的每个新卷都可以引用这些模板。 指定 `-MediaType` 容量驱动器的，还可以指定所选的 `-FriendlyName` 。 请勿修改其他参数。
 
-如果容量驱动器是硬盘驱动器（HDD），请以管理员身份启动 PowerShell 并运行：
+如果容量驱动器是硬盘驱动器 (HDD) ，请以管理员身份启动 PowerShell 并运行：
 
 ```PowerShell
 # For mirror
@@ -100,7 +100,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedMirror -Resili
 New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk
 ```
 
-如果容量驱动器是固态硬盘（SSD），请将改 `-MediaType` 为 `SSD` 。 请勿修改其他参数。
+如果容量驱动器是固态驱动器 (SSD) ，请将改 `-MediaType` 为 `SSD` 。 请勿修改其他参数。
 
 > [!TIP]
 > 验证已成功创建的层 `Get-StorageTier` 。
@@ -119,7 +119,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFrie
 
 #### <a name="nested-mirror-accelerated-parity"></a>嵌套镜像加速奇偶校验
 
-若要使用嵌套的镜像加速奇偶校验，请同时引用 `NestedMirror` 和 `NestedParity` 层模板，并指定两个大小，每个大小对应于卷的每个部分（首先镜像，奇偶校验秒）。 例如，若要创建20% 嵌套双向镜像和80% 嵌套的奇偶校验的 1 500 GB 卷，请运行：
+若要使用嵌套的镜像加速奇偶校验，请同时引用 `NestedMirror` 和 `NestedParity` 层模板并指定两个大小，每个部分对应于卷 (首先镜像，奇偶校验第二) 。 例如，若要创建20% 嵌套双向镜像和80% 嵌套的奇偶校验的 1 500 GB 卷，请运行：
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFriendlyNames NestedMirror, NestedParity -StorageTierSizes 100GB, 400GB
@@ -129,7 +129,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 使用嵌套复原的卷在[Windows 管理中心](../../manage/windows-admin-center/overview.md)中显示，并带有清晰的标签，如以下屏幕截图所示。 一旦创建，就可以使用 Windows 管理中心来管理和监视它们，就像存储空间直通中的其他任何卷一样。
 
-![](media/nested-resiliency/windows-admin-center.png)
+![Windows 管理中心中的卷管理](media/nested-resiliency/windows-admin-center.png)
 
 ### <a name="optional-extend-to-cache-drives"></a>可选：扩展到缓存驱动器
 
@@ -137,7 +137,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 若要解决这种情况，存储空间直通提供了在两个服务器群集中的一个服务器关闭时自动禁用写入缓存的选项，然后在服务器备份后重新启用写入缓存。 若要在不影响性能的情况下允许日常重启，则在服务器停机30分钟之前，不会禁用写入缓存。 禁用写入缓存后，写入缓存的内容将写入容量设备。 完成此操作后，服务器可以容忍联机服务器中出现故障的缓存设备，但如果缓存设备出现故障，缓存中的读取可能会延迟或失败。
 
-若要设置此行为（可选），请以管理员身份启动 PowerShell 并运行：
+若要设置此行为 (可选) ，请以管理员身份启动 PowerShell 并运行：
 
 ```PowerShell
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.NestedResiliency.DisableWriteCacheOnNodeDown.Enabled" -Value "True"
@@ -148,10 +148,10 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 | 情形                       | 缓存行为                           | 能否容忍缓存驱动器丢失？ |
 |---------------------------------|------------------------------------------|--------------------------------|
 | 这两台服务器                 | 缓存读取和写入，完全性能 | 是                            |
-| 服务器停机，前30分钟   | 缓存读取和写入，完全性能 | 否（临时）               |
-| 前30分钟后          | 仅缓存读取，性能受到影响   | 是（在缓存写入容量驱动器后）                           |
+| 服务器停机，前30分钟   | 缓存读取和写入，完全性能 | 暂时不)  (               |
+| 前30分钟后          | 仅缓存读取，性能受到影响   | 在将缓存写入容量驱动器后 (是 "是")                            |
 
-## <a name="frequently-asked-questions"></a>常见问题解答
+## <a name="frequently-asked-questions"></a>常见问题
 
 ### <a name="can-i-convert-an-existing-volume-between-two-way-mirror-and-nested-resiliency"></a>能否在双向镜像和嵌套复原之间转换现有卷？
 
@@ -167,7 +167,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="how-many-drives-do-i-need-to-use-nested-resiliency"></a>需要多少驱动器才能使用嵌套复原？
 
-存储空间直通所需的最小驱动器数为每个服务器节点4个容量驱动器，以及每个服务器节点2个缓存驱动器（如果有）。 这在 Windows Server 2016 中是不变的。 嵌套复原无需额外的要求，并且预留容量的建议也不会发生变化。
+存储空间直通所需的最小驱动器数为每个服务器节点4个容量驱动器，以及每个服务器节点2个缓存驱动器（如果有）)  (。 这在 Windows Server 2016 中是不变的。 嵌套复原无需额外的要求，并且预留容量的建议也不会发生变化。
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>嵌套复原是否会改变驱动器更换的工作方式？
 

@@ -7,12 +7,12 @@ ms.assetid: 79a417fd-1b3e-47ab-ae33-bb1faf95c86d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 05694d772de033a82c6de6feca94621185cb2642
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 37b443a90ebdb2c6042596747f6c364fafe073a7
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181453"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838076"
 ---
 # <a name="change-the-order-and-grouping-of-tabs"></a>更改选项卡的顺序和分组
 
@@ -41,7 +41,7 @@ ms.locfileid: "87181453"
 
 6.  输入为顶级选项卡定义的 GUID，然后按 **Enter**。
 
-     有关创建和标识顶级选项卡的详细信息，请参阅 Windows Server 解决方案 SDK 中的 [创建顶级选项卡](https://msdn.microsoft.com/library/gg513957) 。
+     有关创建和标识顶级选项卡的详细信息，请参阅 Windows Server 解决方案 SDK 中的 [创建顶级选项卡](/previous-versions/windows/server-essentials/gg513957(v=msdn.10)) 。
 
 7.  将更改保存到注册表中。
 
