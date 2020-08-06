@@ -8,12 +8,12 @@ ms.date: 07/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: c51394b96abbe451b57ab1388cf2d21126959a78
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: ddfcf45fa897fbed4a2475332b9706fc8d9fb634
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769705"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864196"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -68,7 +68,7 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 Transfer Log - Please check file sharing is allowed in your firewall. : This request operation sent to net.tcp://localhost:28940/sms/service/1/transfer did not receive a reply within the configured timeout (00:01:00). The time allotted to this operation may have been a portion of a longer timeout. This may be because the service is still processing the operation or because the service was unable to send a reply message. Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.
 ```
 
-此问题是由存储迁移服务允许的默认一分钟超时内无法筛选的传输文件数过多造成的。
+此问题是由存储迁移服务允许的默认一分钟超时内无法筛选的传输文件数过多引起的。
 
 若要解决此问题，请执行以下操作：
 
@@ -118,9 +118,9 @@ Warning: The destination proxy wasn't found.
 
 如果你尚未在 Windows Server 2019 目标计算机上安装存储迁移服务代理服务，或者目标计算机是 Windows Server 2016 或 Windows Server 2012 R2，则此行为是设计使然。 建议迁移到安装了代理的 Windows Server 2019 计算机以大幅提高传输性能。
 
-## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>某些文件未列出清单或传输，错误 5 "拒绝访问"
+## <a name="certain-files-dont-inventory-or-transfer-error-5-access-is-denied"></a>某些文件未列出清单或传输，错误 5 "拒绝访问"
 
-当在源计算机和目标计算机上清点或传输文件时，用户已删除管理员组权限的文件将无法迁移。 检查存储迁移服务-代理调试显示：
+当在源计算机和目标计算机上清点或传输文件时，用户已删除管理员组的权限的文件无法迁移。 检查存储迁移服务-代理调试显示：
 
 ```
 Log Name: Microsoft-Windows-StorageMigrationService-Proxy/Debug
@@ -152,39 +152,39 @@ at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()
 
 当使用存储迁移服务将文件传输到新目标，然后将 DFS 复制配置为通过 preseeded 复制或 DFS 复制数据库克隆将该数据复制到现有服务器时，所有文件都将遇到哈希不匹配，并重新复制。 使用存储迁移服务传输数据流、安全流、大小和属性后，它们看起来完全匹配。 检查具有 ICACLS 的文件或 DFS 复制数据库克隆调试日志显示：
 
+### <a name="source-file"></a>源文件
 ```
-Source file:
-
   icacls d:\test\Source:
 
-  icacls d:\test\thatcher.png /save out.txt /t
-  thatcher.png
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png
   D:AI(A;;FA;;;BA)(A;;0x1200a9;;;DD)(A;;0x1301bf;;;DU)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)
-
-Destination file:
-
-  icacls d:\test\thatcher.png /save out.txt /t
-  thatcher.png
-  D:AI(A;;FA;;;BA)(A;;0x1301bf;;;DU)(A;;0x1200a9;;;DD)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)**S:PAINO_ACCESS_CONTROL**
-
-DFSR Debug Log:
-
-    20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found.
-
-    Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6
-    LastWriteTime:20190308 18:09:44.876
-    FileSizeLow:1131654
-    FileSizeHigh:0
-    Attributes:32
-
-    Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B**
-    LastWriteTime:20190308 18:09:44.876
-    FileSizeLow:1131654
-    FileSizeHigh:0
-    Attributes:32
 ```
 
-此问题由[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新修复
+### <a name="destination-file"></a>目标文件
+
+```
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png
+  D:AI(A;;FA;;;BA)(A;;0x1301bf;;;DU)(A;;0x1200a9;;;DD)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)**S:PAINO_ACCESS_CONTROL**
+```
+### <a name="dfsr-debug-log"></a>DFSR 调试日志
+
+```
+   20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found.
+
+   Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6
+   LastWriteTime:20190308 18:09:44.876
+   FileSizeLow:1131654
+   FileSizeHigh:0
+   Attributes:32
+
+   Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B**
+   LastWriteTime:20190308 18:09:44.876
+   FileSizeLow:1131654
+   FileSizeHigh:0
+   Attributes:32
+```
+
+此问题由[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新修复。
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>从 Windows Server 2008 R2 传输时，出现错误 "无法传输任何终结点上的存储"
 
@@ -195,11 +195,11 @@ Couldn't transfer storage on any of the endpoints.
 0x9044
 ```
 
-如果 Windows Server 2008 R2 计算机没有通过 Windows 更新的所有重要更新和重要更新进行完全修补，则会出现此错误。 不管使用哪种存储迁移服务，出于安全考虑，我们始终建议修补 Windows Server 2008 R2 计算机，因为该操作系统不包含更高版本的 Windows Server 的安全性改进。
+如果 Windows Server 2008 R2 计算机没有通过 Windows 更新的所有重要更新和重要更新进行完全修补，则会出现此错误。 为了安全起见，保留 Windows Server 2008 R2 计算机的更新尤其重要，因为该操作系统不包含 Windows Server 的较新版本的安全改进。
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>错误： "无法在任何端点上传输存储" 和 "检查源设备是否处于联机状态-我们无法访问它"。
 
-尝试从源计算机传输数据时，某些或全部共享不会传输，并出现摘要错误：
+如果尝试从源计算机传输数据，则不会传输部分或全部共享，错误如下：
 
 ```
 Couldn't transfer storage on any of the endpoints.
@@ -316,7 +316,7 @@ ServiceError0x9006,Microsoft.StorageMigration.Commands.UnregisterSmsProxyCommand
 2. 在 orchestrator 计算机上运行以下存储迁移服务 PowerShell 命令：
 
    ```PowerShell
-   Register-SMSProxy -ComputerName *destination server* -Force
+   Register-SMSProxy -ComputerName <destination server> -Force
    ```
 ## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>从群集节点运行清单时出现错误 "找不到 Dll"
 
@@ -345,7 +345,7 @@ There are no more endpoints available from the endpoint mapper
 
 1. 打开提升的 cmd 提示符，你是存储迁移服务协调器服务器上的管理员成员，然后运行：
 
-     ```
+     ```DOS
      TAKEOWN /d y /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
 
      MD c:\ProgramData\Microsoft\StorageMigrationService\backup
@@ -426,16 +426,14 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 完成传输后，运行相同数据的后续重新传输后，即使源服务器上存在很少的数据发生更改，传输时间也不会显著提高。
 
-当传输大量文件和嵌套文件夹时，这是预期的行为。 数据的大小不相关。 首先，我们在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)中改进了此行为，并继续优化传输性能。 若要进一步调整性能，请查看[优化清单和传输性能](./faq.md#optimizing-inventory-and-transfer-performance)。
+当传输大量文件和嵌套文件夹时，这是预期的行为。 数据的大小不相关。 首先，我们在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)中改进了此行为，并继续优化传输性能。 若要进一步调整性能，请查看[优化清单和传输性能](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
 
 ## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>数据不会传输，用户在迁移到域控制器或从域控制器中进行重命名
 
 从或向域控制器开始传输后：
 
  1. 不迁移数据，也不会在目标上创建任何共享。
-
  2. Windows 管理中心中显示了红色错误符号，无错误消息
-
  3. 一个或多个 AD 用户和域本地组已更改其名称和/或 Windows 2000 以前的登录属性
 
  4. 在存储迁移服务协调器上看到事件3509：
@@ -536,7 +534,7 @@ Stack trace:
 
 在此阶段，存储迁移服务协调器正在尝试执行远程注册表读取，以确定源计算机配置，但源服务器会拒绝该注册表路径不存在的情况。 这可能是由于：
 
- - 源计算机上没有运行远程注册表服务。
+ - 远程注册表服务未在源计算机上运行。
  - 防火墙不允许从 Orchestrator 远程连接到源服务器。
  - 源迁移帐户没有连接到源计算机的远程注册表权限。
  - 源迁移帐户没有源计算机注册表中的读取权限，在 "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" 或 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer" 下
@@ -568,7 +566,7 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 此问题的原因是组策略在源计算机上设置以下注册表值： "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy = 0"
 
-此设置不是标准组策略的一部分，它是使用[Microsoft 安全符合性工具包](https://www.microsoft.com/download/details.aspx?id=55319)配置的外接程序：
+此设置不是标准组策略的一部分，它是使用[Microsoft 安全符合性工具包](https://www.microsoft.com/download/details.aspx?id=55319)配置的加载项：
 
 - Windows Server 2012 R2： "计算机配置 \ 管理 Templates\SCM：将哈希 Mitigations\Apply UAC 限制传递到网络登录上的本地帐户"
 
@@ -586,8 +584,7 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 ## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>使用不同域中的凭据时清点或传输失败
 
-当尝试使用存储迁移服务运行清单或传输，并在使用来自目标服务器以外的其他域的迁移凭据的情况下，在 Windows Server 上运行时，会收到以下一个或多个错误
-
+当尝试使用存储迁移服务运行清单或传输，并在使用从目标服务器以外的其他域中迁移凭据的情况下，将 Windows Server 定向到该服务时，会收到以下错误
 ```
 Exception from HRESULT:0x80131505
 

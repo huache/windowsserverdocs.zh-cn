@@ -1,5 +1,5 @@
 ---
-title: 迁移 AD FS 2.0 联合服务器
+title: 将 AD FS 2.0 联合服务器迁移到 Windows Server 2012 R2
 description: 提供有关将 AD FS 服务器迁移到 Windows Server 2012 R2 的信息。
 author: billmath
 ms.author: billmath
@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 71577032c5f6f5a5bf56d485d31989db318c872f
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 568fdb25bedda48327c7fd147a980b21cda3d5c8
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519956"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863954"
 ---
 # <a name="migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>将 AD FS 2.0 联合服务器迁移到 Windows Server 2012 R2 上的 AD FS
 
@@ -38,7 +38,7 @@ ms.locfileid: "87519956"
 
     -   要迁移的联合服务器场使用的所有第三方令牌签名或令牌加密/解密证书
 
-若要查找 SSL 证书，请打开 Internet Information Services （IIS）管理控制台，在左窗格中选择 "**默认**网站"，然后单击 "**绑定 ...** " 在 "**操作**" 窗格中，查找并选择 https 绑定，单击 "**编辑**"，然后单击 "**查看**"。
+若要查找 SSL 证书，请打开 "Internet Information Services (IIS) 管理控制台，在左窗格中选择"**默认**网站 "，然后单击"**绑定 ...** " 在 "**操作**" 窗格中，查找并选择 https 绑定，单击 "**编辑**"，然后单击 "**查看**"。
 
 必须将联合身份验证服务使用的 SSL 证书及其私钥导出到 .pfx 文件。 有关详细信息，请参阅 [导出服务器身份验证证书的私钥部分](export-the-private-key-portion-of-a-server-authentication-certificate.md)。
 
@@ -103,7 +103,7 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
 
 ###  <a name="to-export-claims-provider-trusts-and-relying-party-trusts"></a>导出声明提供程序信任和信赖方信任
 
-1.  若要导出 AD FS 声明提供方信任和信赖方信任，你必须以管理员身份（但不能以域管理员身份）登录联合服务器，并运行 Windows Server 2012 R2 安装 CD 的**media/server_support/adfs**文件夹中的以下 Windows PowerShell 脚本： `export-federationconfiguration.ps1` 。
+1.  若要导出 AD FS 声明提供方信任和信赖方信任，你必须以管理员身份登录 (不过，你必须以管理员身份登录，而不是域管理员) 到联合服务器，并运行 Windows Server 2012 R2 安装 CD 的**media/server_support/adfs**文件夹中的以下 Windows PowerShell 脚本： `export-federationconfiguration.ps1` 。
 
 > [!IMPORTANT]
 >  导出脚本使用以下参数：
@@ -184,7 +184,7 @@ Set-ADFSProperties –AutoCertificateRollover $false
 
 2. 使用 Set-AdfsProperties cmdlet 来配置任何自定义 AD FS 服务设置，例如 AutoCertificateRollover 或 SSO 生存期。
 
-3. 若要导入 AD FS 信赖方信任和声明提供程序信任，你必须以管理员身份（但不能以域管理员身份）登录联合服务器，并运行 Windows Server 2012 R2 安装 CD 的 \support\adfs 文件夹中的以下 Windows PowerShell 脚本：
+3. 要导入 AD FS 信赖方信任和声明提供程序信任，你必须以管理员身份登录 (不过，你必须以管理员身份登录，而不是域管理员) 到联合服务器，并运行 Windows Server 2012 R2 安装 CD 的 \support\adfs 文件夹中的以下 Windows PowerShell 脚本：
 
     ``` powershell
     import-federationconfiguration.ps1

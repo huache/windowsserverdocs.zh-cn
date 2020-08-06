@@ -9,24 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a17ed3595f0e1dd369e762150c8f45fe6f983822
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ea6c2b2f367820db3f3611806d3aaecd9eca87e4
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933708"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863759"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>wbadmin delete systemstatebackup
-
 
 
 删除指定的系统状态备份。 如果指定的卷包含的备份不是本地服务器的系统状态备份，则这些备份不会被删除。
 
 > [!NOTE]
-> Windows Server 备份不会作为系统状态备份或系统状态恢复的一部分备份或恢复注册表用户配置单元（HKEY_CURRENT_USER）。
+> Windows Server 备份不会作为系统状态备份或系统状态恢复的一部分，备份或恢复注册表用户配置 (HKEY_CURRENT_USER) 。
 
-若要使用此子命令删除系统状态备份，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。 （若要打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
-
+若要使用此子命令删除系统状态备份，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。  (打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
 
 
 ## <a name="syntax"></a>语法
@@ -44,7 +42,7 @@ wbadmin delete systemstatebackup
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |-keepVersions|指定要保留的最新系统状态备份的数量。 该值必须是正整数。 参数值 **-keepVersions： 0**将删除所有系统状态备份。|
 |-version|指定备份的版本标识符，格式为 MM/DD/YYYY-HH： MM。 如果你不知道版本标识符，请键入**wbadmin get 版本**。</br>可以使用此命令删除独占系统状态备份的版本。 使用**wbadmin get items**查看版本类型。|
@@ -63,12 +61,12 @@ wbadmin delete systemstatebackup -version:03/31/2013-10:00
 ```
 wbadmin delete systemstatebackup -keepVersions:3
 ```
-若要删除存储在磁盘 f 上的最早的系统状态备份，请键入：
+若要删除存储在磁盘 f：上的最早的系统状态备份，请键入：
 ```
-wbadmin delete systemstatebackup -backupTarget:f -deleteOldest
+wbadmin delete systemstatebackup -backupTarget:f:\ -deleteOldest
 ```
 
 ## <a name="additional-references"></a>其他参考
 
 - [命令行语法项](command-line-syntax-key.md)
--   [Backup](wbadmin.md)
+- [Backup](wbadmin.md)

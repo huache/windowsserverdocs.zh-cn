@@ -1,6 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
-title: 配置 AD FS Extranet 锁定保护
+title: 配置 AD FS Extranet 软锁定保护
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 02/01/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f49e4a7e27d5b224a86655e48f07df741f03e7b0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc81ac2270a35268fb1547b39f83d1564be994fd
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962639"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863978"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>配置 AD FS Extranet 锁定保护
 
@@ -42,14 +42,14 @@ AD FS 中有3个设置，你需要配置这些设置才能启用此功能：
 Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow (new-timespan -Minutes 30)
 ```
 
-这些设置将应用于 AD FS 服务可以进行身份验证的所有域。 它的工作方式是，在 AD FS 收到身份验证请求时，它将通过 LDAP 调用来访问主域控制器（PDC），并针对 PDC 上的用户执行**badPwdCount**属性查找。 如果 AD FS 查找**badPwdCount** >= ExtranetLockoutThreshold 设置的值，并且在 Extranet 观察窗口中定义的时间尚未通过，AD FS 将立即拒绝请求，这意味着无论用户是从 Extranet 输入正确的密码还是错误密码，登录都将失败，因为 AD FS 不会将凭据发送到 AD。 AD FS 不会维护**badPwdCount**或锁定用户帐户相关的任何状态。 AD FS 使用 AD 进行所有状态跟踪。 
+这些设置将应用于 AD FS 服务可以进行身份验证的所有域。 它的工作方式是，在 AD FS 收到身份验证请求时，它将通过 LDAP 调用来访问主域控制器 (PDC) ，并在 PDC 上对用户执行**badPwdCount**属性查找。 如果 AD FS 查找**badPwdCount** >= ExtranetLockoutThreshold 设置的值，并且在 Extranet 观察窗口中定义的时间尚未通过，AD FS 将立即拒绝请求，这意味着无论用户是从 Extranet 输入正确的密码还是错误密码，登录都将失败，因为 AD FS 不会将凭据发送到 AD。 AD FS 不会维护**badPwdCount**或锁定用户帐户相关的任何状态。 AD FS 使用 AD 进行所有状态跟踪。 
 
 > [!warning]
 > 如果已启用 Server 2012 R2 上 AD FS Extranet 锁定，则通过 WAP 的 AD FS 验证所有通过 WAP 的身份验证请求。 PDC 不可用时，用户将无法从 extranet 进行身份验证。
 
 Server 2016 提供了一个额外的参数，该参数允许 AD FS 在 PDC 不可用时回退到另一个域控制器：
 
-- **ExtranetLockoutRequirePDC &lt;布尔 &gt; ** -启用后： extranet 锁定需要主域控制器（PDC）。 禁用时： extranet 锁定将回退到另一域控制器，以防 PDC 不可用。
+- **ExtranetLockoutRequirePDC &lt;布尔 &gt; ** -启用后： extranet 锁定需要 (PDC) 的主域控制器。 禁用时： extranet 锁定将回退到另一域控制器，以防 PDC 不可用。
 
 你可以使用以下 Windows PowerShell 命令在服务器2016上配置 AD FS extranet 锁定：
 

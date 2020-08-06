@@ -1,6 +1,6 @@
 ---
 ms.assetid: 102eeeb1-6c55-42a2-b321-71a7dab46146
-title: AD FS 中的访问控制策略
+title: AD FS Windows Server 2016 中的访问控制策略
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,21 +8,21 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9b85e6e10f8df3ec4d2c70e9aff687f264e055a8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8c28d24484adf73b1a769a02b817ba48f591f194
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962819"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863824"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Windows Server 2016 AD FS 中的访问控制策略
 
   
 ## <a name="access-control-policy-templates-in-ad-fs"></a>AD FS 中的访问控制策略模板  
-Active Directory 联合身份验证服务现在支持使用访问控制策略模板。  通过使用访问控制策略模板，管理员可以通过将策略模板分配给一组信赖方（RPs）来强制执行策略设置。 管理员还可以对策略模板进行更新，如果不需要用户交互，则会自动将更改应用到信赖方。  
+Active Directory 联合身份验证服务现在支持使用访问控制策略模板。  通过使用访问控制策略模板，管理员可以通过将策略模板分配给一组依赖方 (RPs) 来强制执行策略设置。 管理员还可以对策略模板进行更新，如果不需要用户交互，则会自动将更改应用到信赖方。  
   
 ## <a name="what-are-access-control-policy-templates"></a>什么是访问控制策略模板？  
-用于策略处理 AD FS 核心管道分为三个阶段：身份验证、授权和声明颁发。 目前，AD FS 管理员必须分别为这些阶段中的每个阶段配置策略。  这还涉及了解这些策略的含义，以及这些策略是否具有依赖关系。 此外，管理员必须了解声明规则语言并创作自定义规则，以启用一些简单/常见策略（例如 阻止外部访问）。  
+用于策略处理 AD FS 核心管道分为三个阶段：身份验证、授权和声明颁发。 目前，AD FS 管理员必须分别为这些阶段中的每个阶段配置策略。  这还涉及了解这些策略的含义，以及这些策略是否具有依赖关系。 此外，管理员必须了解声明规则语言并创作自定义规则，以启用一些简单/常见策略 (例如。 阻止外部访问) 。  
   
 访问控制策略模板的作用是替换此旧模型，管理员必须使用声明语言配置颁发授权规则。  颁发授权规则的旧 PowerShell cmdlet 仍适用，但它与新模型互斥。 管理员可以选择使用新模型或旧模型。  新模型允许管理员控制何时授予访问权限，包括强制执行多重身份验证。  
   
@@ -82,11 +82,11 @@ AD FS 包括几个内置的访问控制策略模板。  这些是指具有相同
   
 5.  在底部选择带下划线的**特定**  
   
-6.  从弹出的窗口中，选择 "**通过**下拉"。  单击“确定”。  
+6.  从弹出的窗口中，选择 "**通过**下拉"。  单击“确定” 。  
   
     ![访问控制策略](media/Access-Control-Policies-in-AD-FS/ADFSACP6.PNG)  
   
-7.  单击“确定”。 单击“确定”。  
+7.  单击“确定” 。 单击“确定” 。  
   
     ![访问控制策略](media/Access-Control-Policies-in-AD-FS/ADFSACP7.PNG)  
   
@@ -105,11 +105,11 @@ AD FS 包括几个内置的访问控制策略模板。  这些是指具有相同
   
 5.  在底部选择带下划线的**特定**  
   
-6.  在弹出的窗口中，选择 **"分配访问控制策略时指定的参数"**。  单击“确定”。  
+6.  在弹出的窗口中，选择 **"分配访问控制策略时指定的参数"**。  单击“确定” 。  
   
     ![访问控制策略](media/Access-Control-Policies-in-AD-FS/ADFSACP8.PNG)  
   
-7.  单击“确定”。 单击“确定”。  
+7.  单击“确定” 。 单击“确定” 。  
   
     ![访问控制策略](media/Access-Control-Policies-in-AD-FS/ADFSACP9.PNG)  
   
@@ -128,15 +128,15 @@ AD FS 包括几个内置的访问控制策略模板。  这些是指具有相同
   
 5.  在底部选择带下划线的**特定**  
   
-6.  从弹出的窗口中，选择 "**通过**下拉"。  单击“确定”。  
+6.  从弹出的窗口中，选择 "**通过**下拉"。  单击“确定” 。  
   
 7.  在 "例外" 下，选中 "**从具有特定信任级别的设备**" 旁边的框  
   
 8.  在底部的 "例外" 下，选择带下划线的**特定**  
   
-9. 从弹出的窗口中，选择 "**管理**"。  单击“确定”。  
+9. 从弹出的窗口中，选择 "**管理**"。  单击“确定” 。  
   
-10. 单击“确定”。 单击“确定”。  
+10. 单击“确定” 。 单击“确定” 。  
   
     ![访问控制策略](media/Access-Control-Policies-in-AD-FS/ADFSACP10.PNG)  
   
@@ -155,13 +155,13 @@ AD FS 包括几个内置的访问控制策略模板。  这些是指具有相同
   
 5.  在底部，选择 "组"**旁边的第**一个条件的下划线  
   
-6.  在弹出的窗口中，选择 **"分配策略时指定的参数"**。  单击“确定”。  
+6.  在弹出的窗口中，选择 **"分配策略时指定的参数"**。  单击“确定” 。  
   
 7.  在底部，为第二个条件选择带下划线的**特定**"声明"  
   
-8.  在弹出的窗口中，选择 **"分配访问控制策略时指定的参数"**。  单击“确定”。  
+8.  在弹出的窗口中，选择 **"分配访问控制策略时指定的参数"**。  单击“确定” 。  
   
-9. 单击“确定”。 单击“确定”。  
+9. 单击“确定” 。 单击“确定” 。  
   
 ![访问控制策略](media/Access-Control-Policies-in-AD-FS/ADFSACP12.PNG)  
   

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 20d48afc-2623-43e9-8ed9-aeb9a0505630
-title: 配置声明规则
+title: 在 AD FS 中配置声明规则
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 332795128b992dd1026172efbc65c49c44e7f81f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b2c653aa7339815ce22c256cf2c6c931ca7c7fc9
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959689"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863683"
 ---
 # <a name="configure-claim-rules"></a>配置声明规则
 
-在基于声明的 \- 标识模型中，Active Directory 联合身份验证服务（AD FS）作为联合身份验证服务的功能是颁发包含一组声明的令牌。 声明规则管理有关 AD FS 问题的声明的决策。 声明规则和所有服务器配置数据均存储在 AD FS 配置数据库中。  
+在基于声明的 \- 标识模型中，Active Directory 联合身份验证服务 (AD FS) 为联合身份验证服务的功能是颁发包含一组声明的令牌。 声明规则管理有关 AD FS 问题的声明的决策。 声明规则和所有服务器配置数据均存储在 AD FS 配置数据库中。  
   
 AD FS 根据声明和其他上下文信息的形式向其提供的标识信息进行颁发决策。 从较高层次来看，AD FS 将一组声明作为输入，执行多个转换，然后返回一组不同的声明作为一个规则处理器。 
 

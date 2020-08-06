@@ -1,6 +1,6 @@
 ---
 ms.assetid: 5728847d-dcef-4694-9080-d63bfb1fe24b
-title: AD FS 中的访问控制策略
+title: Windows Server 2012 R2 中 AD FS 的访问控制策略
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2fd8b6680039d344e9a9b0c41a29cc4c4210bc0b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 649b5d8b05b4512a7c42419af043db9afe4a1fde
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519836"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863834"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Windows Server 2012 R2 和 Windows Server 2012 中的访问控制策略 AD FS
 
@@ -34,7 +34,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 - [联合身份验证服务名称]/adfs/services/trust/2005/certificatemixed
 - [联合身份验证服务名称]/adfs/services/trust/13/certificatemixed
 
->**重要提示**：仅应为 intranet 访问启用/adfs/services/trust/2005/windowstransport 和/adfs/services/trust/13/windowstransport 终结点，因为它们应为 intranet 终结点，这些终结点使用 HTTPS 上的 WIA 绑定。 向 extranet 公开它们可能会允许对这些终结点的请求绕过锁定保护。 应在代理上禁用这些终结点（即从 extranet 禁用）以保护 AD 帐户锁定。
+>**重要提示**：仅应为 intranet 访问启用/adfs/services/trust/2005/windowstransport 和/adfs/services/trust/13/windowstransport 终结点，因为它们应为 intranet 终结点，这些终结点使用 HTTPS 上的 WIA 绑定。 向 extranet 公开它们可能会允许对这些终结点的请求绕过锁定保护。 应在代理上禁用这些终结点， (即禁用了 extranet) ，以保护 AD 帐户锁定。
 
 若要解决此问题，请根据终结点声明更新拒绝的任何策略，以允许针对上述终结点的异常。
 
@@ -59,7 +59,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 | --- | --- |
 |方案1：阻止对 Office 365 的所有外部访问|允许从公司内部网络上的所有客户端访问 Office 365，但会根据外部客户端的 IP 地址拒绝外部客户端发出的请求。|
 |方案2：阻止对 Office 365 的所有外部访问（Exchange ActiveSync 除外）|可以从内部公司网络上的所有客户端以及通过使用 Exchange ActiveSync 的任何外部客户端设备（如智能手机）访问 Office 365。 所有其他外部客户端（如使用 Outlook 的客户端）都将被阻止。|
-|方案3：阻止对 Office 365 的所有外部访问（基于浏览器的应用程序除外）|阻止对 Office 365 的外部访问，但不包括被动（基于浏览器）的应用程序（如 Outlook Web 访问或 SharePoint Online）。|
+|方案3：阻止对 Office 365 的所有外部访问（基于浏览器的应用程序除外）|阻止对 Office 365 的外部访问，但不包括被动 (基于浏览器的) 应用程序（如 Outlook Web 访问或 SharePoint Online）。|
 |方案4：阻止对 Office 365 的所有外部访问（指定的 Active Directory 组除外）|此方案用于测试和验证客户端访问策略部署。 它仅阻止一个或多个 Active Directory 组的成员对 Office 365 的外部访问。 它还可以用于提供仅对组成员的外部访问权限。|
 
 ## <a name="enabling-client-access-policy"></a>启用客户端访问策略
@@ -78,8 +78,8 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 4.  在 "**选择规则模板**" 页上的 "**声明规则模板**" 下，选择 "**使用自定义规则发送声明**"，然后单击 "**下一步**"。
 
-5.  在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "如果在所需范围之外有任何 IP 声明，拒绝"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法（将上面的值替换为有效的 ip 表达式）：`c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
-6.  单击 **“完成”** 。 验证新规则是否出现在 "颁发授权规则" 列表中，然后再转到 "默认**允许访问所有用户**" 规则（"拒绝" 规则将优先，即使它在列表的前面显示）。  如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：  </br>
+5.  在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "如果在所需范围之外有任何 IP 声明，拒绝"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法 (用有效的 ip 表达式) 替换以上 "x 毫秒转发的客户端 ip" 的值：`c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
+6.  单击“完成”。 验证新规则是否出现在 "颁发授权规则" 列表中，然后再转到默认的 "**允许访问所有用户**" 规则 (拒绝规则将优先，即使它之前出现在列表中) 。  如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：  </br>
 
     `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true"); `
 
@@ -100,11 +100,11 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 4.  在 "**选择规则模板**" 页上的 "**声明规则模板**" 下，选择 "**使用自定义规则发送声明**"，然后单击 "**下一步**"。
 
-5.  在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "如果在所需范围外有任何 IP 声明，请颁发 ipoutsiderange 声明"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法（将上面的值替换为有效的 ip 表达式）：
+5.  在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "如果在所需范围外有任何 IP 声明，请颁发 ipoutsiderange 声明"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法 (用有效的 ip 表达式) 替换以上 "x 毫秒转发的客户端 ip" 的值：
 
     `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`
 
-6.  单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
+6.  单击“完成”。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
 
 7.  接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。
 
@@ -116,7 +116,7 @@ AD FS Windows 10 域加入和登录所需的终结点
     c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");
     ```
 
-10. 单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
+10. 单击“完成”。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
 
 11. 接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。
 
@@ -128,7 +128,7 @@ AD FS Windows 10 域加入和登录所需的终结点
     NOT EXISTS([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");
     ```
 
-14. 单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
+14. 单击“完成”。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
 
 15. 接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。
 
@@ -140,7 +140,7 @@ AD FS Windows 10 域加入和登录所需的终结点
     c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");
     ```
 
-18.  单击 **“完成”** 。 验证新规则显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前，并显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前。<p>如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：
+18.  单击“完成”。 验证新规则是否紧靠在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前，在 "颁发授权规则" 列表中，"默认允许访问所有用户" 规则 (拒绝规则将优先) 。<p>如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：
 
         ```
         c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");
@@ -162,13 +162,13 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 4.  在 "**选择规则模板**" 页上的 "**声明规则模板**" 下，选择 "**使用自定义规则发送声明**"，然后单击 "**下一步**"。
 
-5.  在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "如果在所需范围外有任何 IP 声明，请颁发 ipoutsiderange 声明"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法（将上面的值替换为有效的 ip 表达式）：
+5.  在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "如果在所需范围外有任何 IP 声明，请颁发 ipoutsiderange 声明"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法 (用有效的 ip 表达式) 替换以上 "x 毫秒转发的客户端 ip" 的值：
 
    ```
    c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");
    ```
 
-1.  单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
+1.  单击“完成”。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
 
 2.  接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。
 
@@ -180,7 +180,7 @@ AD FS Windows 10 域加入和登录所需的终结点
     c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`
     ```
 
-10. 单击 **“完成”** 。 验证新规则是否出现在 "颁发授权规则" 列表中，然后再转到 "默认**允许访问所有用户**" 规则（"拒绝" 规则将优先，即使它在列表的前面显示）。  </br></br> 如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：
+10. 单击“完成”。 验证新规则是否出现在 "颁发授权规则" 列表中，然后再转到默认的 "**允许访问所有用户**" 规则 (拒绝规则将优先，即使它之前出现在列表中) 。  </br></br> 如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：
 
    `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
 
@@ -201,25 +201,25 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 4.  在 "**选择规则模板**" 页上的 "**声明规则模板**" 下，选择 "**使用自定义规则发送声明**"，然后单击 "**下一步**"。
 
-5.  在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "如果在所需范围外有任何 IP 声明，请颁发 ipoutsiderange 声明"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法（将上面的值替换为有效的 ip 表达式）：
+5.  在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "如果在所需范围外有任何 IP 声明，请颁发 ipoutsiderange 声明"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法 (用有效的 ip 表达式) 替换以上 "x 毫秒转发的客户端 ip" 的值：
 
     ```
     `c1:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`
     ```
 
-6. 单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
+6. 单击“完成”。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
 
 7. 接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。
 
 8. 在 "**选择规则模板**" 页上的 "**声明规则模板**" 下，选择 "**使用自定义规则发送声明**"，然后单击 "**下一步**"。
 
-9. 在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "检查组 SID"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法（将 "groupsid" 替换为所使用的 AD 组的实际 SID）：
+9. 在 "**配置规则**" 页上的 "**声明规则名称**" 下，键入此规则的显示名称，例如 "检查组 SID"。 在 "**自定义规则**" 下，键入或粘贴以下声明规则语言语法 (将 "groupsid" 替换为你使用) 的 AD 组的实际 SID：
 
     ```
     NOT EXISTS([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");
     ```
 
-10. 单击 **“完成”** 。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
+10. 单击“完成”。 验证新规则是否出现在 "**颁发授权规则**" 列表中。
 
 11. 接下来，在 "**编辑声明规则**" 对话框中的 "**颁发授权规则**" 选项卡上，单击 "**添加规则**" 以重新启动声明规则向导。
 
@@ -231,7 +231,7 @@ AD FS Windows 10 域加入和登录所需的终结点
    c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");
    ```
 
-14. 单击 **“完成”** 。 验证新规则显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前，并显示在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前。  </br></br>如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：
+14. 单击“完成”。 验证新规则是否紧靠在 "颁发授权规则" 列表中的 "默认允许访问所有用户" 规则之前，在 "颁发授权规则" 列表中，"默认允许访问所有用户" 规则 (拒绝规则将优先) 。  </br></br>如果你没有默认的允许访问规则，则可以使用声明规则语言在列表末尾添加一个，如下所示：
 
    ```
    c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");
@@ -251,7 +251,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 > [!NOTE]
 > - 企业网络上的客户端的 IP 地址将显示为组织的出站代理或网关的外部接口 IP 地址。
-> - 通过 VPN 或 Microsoft DirectAccess （DA）连接到公司网络的客户端可以显示为内部企业客户端，也可以作为外部客户端出现，具体取决于 VPN 或 DA 的配置。
+> - 通过 VPN 或 Microsoft DirectAccess (DA) 连接到公司网络的客户端可能会显示为内部企业客户端或作为外部客户端（具体取决于 VPN 或 DA 的配置）。
 
 - 一个或多个 IP 地址：当 Exchange Online 无法确定正在连接的客户端的 IP 地址时，它将基于 x 转发的标头的值设置值，这是一个可包含在基于 HTTP 的请求中的非标准标头，由许多客户端、负载平衡器和市场上的代理提供支持。
 
@@ -260,7 +260,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 > 2. 与 Exchange Online 基础结构相关的 IP 地址将不会在列表中。
 
 ### <a name="regular-expressions"></a>“正则表达式”
- 当必须与某个范围的 IP 地址匹配时，需要构造一个正则表达式来执行比较。 在接下来的一系列步骤中，我们将为如何构造此类表达式来匹配以下地址范围提供示例（请注意，必须更改这些示例以匹配公共 IP 范围）：
+ 当必须与某个范围的 IP 地址匹配时，需要构造一个正则表达式来执行比较。 在接下来的一系列步骤中，我们将提供有关如何构造此类表达式以匹配以下地址 (范围的示例，请注意，必须更改这些示例以匹配公共 IP 范围) ：
 
 - 192.168.1.1 –192.168.1.25
 
@@ -270,9 +270,9 @@ AD FS Windows 10 域加入和登录所需的终结点
 
   扩展此项，我们可以将两个不同的 IP 地址与 OR 表达式匹配，如下所示： \b # # # \\ . # # # \\ . # # # \\ . # # # \b&#124; \b # # #. # # # \\ \\ . # # # \\ . # # # \b
 
-  因此，只匹配两个地址（如192.168.1.1 或10.0.0.1）的示例为： \b192 \\ . 168 \\ .1 \\ .1 \ b&#124; \b10 \\ .0 \\ \\
+  因此，只需匹配两个地址 (如192.168.1.1 或 10.0.0.1) 的示例将为： \b192 \\ . 168 \\ .1 \\ .1 \ b&#124; \b10 \\ .0 \\ \\
 
-  这为你提供了可用于输入任意数量的地址的方法。 需要允许的地址范围，例如192.168.1.1 –192.168.1.25，匹配必须按字符： \b192. 168. 1 进行匹配 \\ \\ \\ 。（[1-9] &#124;1 [0-9] &#124;2 [0-5]） \b
+  这为你提供了可用于输入任意数量的地址的方法。 如果需要允许的地址范围（例如192.168.1.1 –192.168.1.25），则匹配必须按字符： \b192 \\ . 168 \\ .1 \\ . ( [1-9] &#124;1 [0-9] &#124;2 [0-5] ) \b
 
   请注意以下事项：
 
@@ -284,17 +284,17 @@ AD FS Windows 10 域加入和登录所需的终结点
 
 - 以下内容与最后一个小数点后面的地址部分所需的范围匹配：
 
-  - （[1-9] 匹配以1-9 结尾的地址
+  -  ( [1-9] 匹配以1-9 结尾的地址
 
   - &#124;1 [0-9] 匹配以10-19 结尾的地址
 
-  - &#124;2 [0-5]）匹配以20-25 结尾的地址
+  - &#124;2 [0-5] ) 匹配以20-25 结尾的地址
 
 - 请注意，括号必须正确定位，以便不会开始匹配 IP 地址的其他部分。
 
-- 在与192块匹配的情况下，我们可以为10块编写类似的表达式： \b10 \\ .0 \\ 。 \\[1-9] &#124;1 [0-4]） \b
+- 使用匹配的192块，我们可以为10块编写类似的表达式： \b10 \\ .0 \\ ( .0 \\ [1-9] &#124;1 [0-4] ) \b
 
-- 将其放在一起，以下表达式应匹配 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14" 的所有地址： 168 \b192 \\ \\ 。 \\[1-9] &#124;1 [0-9] &#124;2 [0-5]） \b&#124; \b10 \\ .0 \\ 。 \\[1-9] &#124;1 [0-4]） \b
+- 将它们组合在一起，以下表达式应匹配 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14"： \b192 \\ 168 \\ .1 \\ . ( [1-9] &#124;1 [0-9] &#124;2 [0-5] ) \b&#124; \b10 \\ .0 \\ .0 \\ . ( [1-9] &#124;1 [0-4] ) \b
 
 ### <a name="testing-the-expression"></a>测试表达式
  正则表达式表达式可能会变得相当复杂，因此强烈建议使用 regex 验证工具。 如果您在 internet 上搜索 "联机 regex 表达式生成器"，您将看到多个有效的联机实用程序，您可以使用这些实用程序来尝试使用示例数据。
@@ -311,7 +311,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 ### <a name="x-ms-forwarded-client-ip"></a>X 毫秒-转发的客户端-IP
  声明类型：`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`
 
- 此 AD FS 声明在认定上表示一个 "最佳尝试"，该地址为发出请求的用户（例如，Outlook 客户端）的 IP 地址。 此声明可包含多个 IP 地址，包括转发请求的每个代理的地址。  此声明从 HTTP 填充。 声明的值可以是下列值之一：
+ 此 AD FS 声明表示认定用户的 IP 地址的 "最佳尝试" (例如，Outlook 客户端) 发出请求。 此声明可包含多个 IP 地址，包括转发请求的每个代理的地址。  此声明从 HTTP 填充。 声明的值可以是下列值之一：
 
 - 单个 IP 地址-直接连接到 Exchange Online 的客户端的 IP 地址
 
@@ -360,7 +360,7 @@ AD FS Windows 10 域加入和登录所需的终结点
 ### <a name="x-ms-client-user-agent"></a>X-MS-客户端-用户代理
  声明类型：`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
 
- 此 AD FS 声明提供了一个字符串，表示客户端用于访问服务的设备类型。 当客户想要阻止某些设备（如智能手机）的访问时，可以使用此方法。  此声明的示例值包括（但不限于）以下值。
+ 此 AD FS 声明提供了一个字符串，表示客户端用于访问服务的设备类型。 如果客户想要阻止某些设备的访问 (例如特定类型的智能手机) ，则可以使用此方法。  此声明的示例值包括 (，但并不限于) 下面的值。
 
  下面是一个示例，说明 x ms 用户代理值可能包含的客户端（其 x ms-客户端应用程序为 "
 
@@ -392,10 +392,10 @@ AD FS Windows 10 域加入和登录所需的终结点
 
  类似于上述 x ms 代理声明类型，此声明类型指示请求是否已通过 web 应用程序代理。 与 x ms 代理不同，insidecorporatenetwork 是一个布尔值，它指示从企业网络内部直接向联合身份验证服务发出的请求。
 
-### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-终结点绝对路径（活动 vs 被动）
+### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-终结点-绝对路径 (活动与被动) 
  声明类型：`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
 
- 此声明类型可用于确定源自 "active" （胖）客户端的请求与 "被动" （基于 web 浏览器）客户端。 这样，就会阻止来自基于浏览器的应用程序（例如 Outlook Web 访问、SharePoint Online 或 Office 365 门户）的外部请求，同时会阻止来自丰富客户端（如 Microsoft Outlook）的请求。
+ 此声明类型可用于确定源自 "active" (丰富的) 客户端与 "被动" (基于 web 浏览器的) 客户端的请求。 这样，就会阻止来自基于浏览器的应用程序（例如 Outlook Web 访问、SharePoint Online 或 Office 365 门户）的外部请求，同时会阻止来自丰富客户端（如 Microsoft Outlook）的请求。
 
  声明的值是接收请求的 AD FS 服务的名称。
 

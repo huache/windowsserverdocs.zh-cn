@@ -1,6 +1,6 @@
 ---
 ms.assetid: 222e9f93-7c41-4527-8a98-8f7fbc7a58af
-title: 部署联合服务器代理
+title: 在 Windows Server 2012 R2 的 AD FS 中部署联合服务器代理
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 445f3b6fef526cb5dd308be8aafe49a3ecddd6a4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: eaf33a1f5398adc1237eaed5c8b418ccbebed9fe
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965969"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864165"
 ---
 # <a name="deploying-federation-server-proxies"></a>部署联合服务器代理
 
@@ -23,7 +23,7 @@ ms.locfileid: "86965969"
   
 若要规划 Web 应用程序代理的部署，可以查看以下主题中的信息：  
   
--   [规划 Web 应用程序代理基础结构（WAP）](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))  
+-   [规划 Web 应用程序代理基础结构 (WAP) ](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))  
   
 -   [规划 Web 应用程序代理服务器](/previous-versions/orphan-topics/ws.11/dn383647(v=ws.11))  
   

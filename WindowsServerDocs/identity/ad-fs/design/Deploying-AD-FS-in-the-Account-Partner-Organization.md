@@ -1,6 +1,6 @@
 ---
 ms.assetid: 8c3536b7-d091-4ee6-ad04-24713f070862
-title: 在帐户伙伴组织中部署 AD FS
+title: 在帐户伙伴组织中部署旧 AD FS
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7a1d92a932638388ef50322078084c648c9dfdb9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 46b22a2b76896844c08f937304575a250582ccc9
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853190"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863693"
 ---
-# <a name="deploying-ad-fs-in-the-account-partner-organization"></a>在帐户伙伴组织中部署 AD FS
+# <a name="deploying-legacy-ad-fs-in-the-account-partner-organization"></a>在帐户伙伴组织中部署旧 AD FS
 
-Active Directory 联合身份验证服务 \(AD FS\) 中的帐户伙伴表示联合身份验证信任关系中以物理方式将用户帐户存储在受支持的属性存储中的组织。 有关支持的属性存储的详细信息，请参阅[属性存储的角色](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)。  
+Active Directory 联合身份验证服务 AD FS 中的帐户 \( 伙伴 \) 表示联合身份验证信任关系中以物理方式将用户帐户存储在受支持的属性存储中的组织。 有关支持的属性存储的详细信息，请参阅[属性存储的角色](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)。  
   
 帐户伙伴组织中的联合服务器对本地用户进行身份验证，并创建由资源伙伴在进行授权决策时使用的安全令牌。 然后，信赖方（如网站和 Web 服务）可以轻松地向联合服务器注册自己，并使用颁发的令牌进行身份验证和访问控制。  
   
@@ -25,7 +25,7 @@ Active Directory 联合身份验证服务 \(AD FS\) 中的帐户伙伴表示联�
   
 有关如何设置和配置帐户伙伴组织的详细信息，请参阅 [Checklist: Configuring the Account Partner Organization](../../ad-fs/deployment/Checklist--Configuring-the-Account-Partner-Organization.md)。  
   
-## <a name="in-this-section"></a>本部分内容  
+## <a name="in-this-section"></a>本节内容  
   
 -   [查看联合服务器在帐户伙伴中的角色](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   

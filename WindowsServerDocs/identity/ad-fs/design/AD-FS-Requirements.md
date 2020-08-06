@@ -1,6 +1,6 @@
 ---
 ms.assetid: 8ce6e7c4-cf8e-4b55-980c-048fea28d50f
-title: 使用 SQL Server 的联合服务器场
+title: Windows Server AD FS 要求
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 434d630ea3e521abdcffac6b8ce6479659b68ebc
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4f36b1808ff58b29cbd7be852617689bff8bb146
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519946"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863780"
 ---
-# <a name="ad-fs-requirements"></a>AD FS 要求
+# <a name="ad-fs-requirements-for-windows-server"></a>Windows Server AD FS 要求
 
 部署 AD FS 时，必须遵守以下各种要求：
 
@@ -54,16 +54,16 @@ ms.locfileid: "87519946"
 
 | 证书类型 | **要求、支持 & 须知** |
 |--|--|
-| **安全套接字层（SSL）证书：** 这是标准的 SSL 证书，用于保护联合服务器和客户端之间的通信。 | -此证书必须是公开信任的 * X509 v3 证书。<br>-访问任何 AD FS 终结点的所有客户端都必须信任此证书。 强烈建议使用由公共（第三方）证书颁发机构（CA）颁发的证书。 在测试实验室环境中，可以在联合服务器上成功使用自签名 SSL 证书。 不过，对于生产环境，建议从某个公共 CA 获取证书。<br>-支持 Windows Server 2012 R2 for SSL 证书支持的任何密钥大小。<br>-不支持使用 CNG 密钥的证书。<br>-与 Workplace Join/设备注册服务一起使用时，AD FS 服务的 SSL 证书的使用者可选名称必须包含后跟组织的用户主体名称（UPN）后缀的值 enterpriseregistration，例如 enterpriseregistration.contoso.com。<br>-支持通配符证书。 当你创建 AD FS 场时，系统将提示你提供 AD FS 服务的服务名称（例如， **adfs.contoso.com**。<br>-强烈建议为 Web 应用程序代理使用相同的 SSL 证书。 但在通过 Web 应用程序代理支持 Windows 集成身份验证终结点和打开扩展保护身份验证（默认设置）时，这是**必需**的。<br>-此证书的使用者名称用于表示部署 AD FS 的每个实例的联合身份验证服务名称。 出于此原因，你可能要考虑为任何新的 CA 颁发的证书选择最能代表你的公司或伙伴组织名称的使用者名称。<br> 证书的标识必须与联合身份验证服务名称匹配（例如，fs.contoso.com）。标识是类型为 dNSName 的使用者可选名称扩展，如果没有使用者可选名称项，则为指定为公用名的使用者名称。 证书中可以存在多个使用者可选名称项，前提是其中一项与联合身份验证服务名称匹配。<br>- **重要说明：** 强烈建议在 AD FS 场的所有节点以及 AD FS 场中的所有 Web 应用程序代理上使用相同的 SSL 证书。 |
-| **服务通信证书：** 此证书启用 WCF 消息安全机制来保护联合服务器之间的通信。 | -默认情况下，将 SSL 证书用作服务通信证书。  但您也可以选择将其他证书配置为服务通信证书。<br>- **重要提示：** 如果使用 ssl 证书作为服务通信证书，当 ssl 证书过期时，请确保将续订的 SSL 证书配置为服务通信证书。 此操作不会自动发生。<br>-此证书必须受使用 WCF 消息安全的 AD FS 的客户端信任。<br>-建议使用由公共（第三方）证书颁发机构（CA）颁发的服务器身份验证证书。<br>-服务通信证书不能是使用 CNG 密钥的证书。<br>-此证书可使用 AD FS 管理控制台进行管理。 |
-| **令牌签名证书：** 这是一个标准 X509 证书，用于安全地对联合服务器颁发的所有令牌进行签名。 | -默认情况下，AD FS 创建包含2048位密钥的自签名证书。<br>-也支持 CA 颁发的证书，并且可以使用 "AD FS 管理" 管理单元进行更改<br>-CA 颁发的证书必须存储 & 通过 CSP 加密提供程序进行访问。<br>-令牌签名证书不能是使用 CNG 密钥的证书。<br>-AD FS 不需要外部注册的令牌签名证书。<br> AD FS 会在这些自签名证书过期之前自动续订这些证书，首先将新证书配置为辅助证书，使合作伙伴能够使用这些证书，然后在名为自动证书滚动更新的进程中切换到主证书。建议使用默认的自动生成的令牌签名证书。<br> 如果你的组织有需要为令牌签名配置不同证书的策略，你可以在安装时使用 Powershell 指定证书（使用 Install-adfsfarm cmdlet 的– SigningCertificateThumbprint 参数）。  安装后，可以使用 AD FS 管理控制台或 Powershell cmdlet Get-adfscertificate 和 Get-adfscertificate 来查看和管理令牌签名证书。<br> 如果使用外部注册的证书进行令牌签名，AD FS 不会执行自动证书续订或滚动更新。  此过程必须由管理员执行。<br> 若要允许在一个证书即将过期时使用证书滚动更新，可以在 AD FS 中配置辅助令牌签名证书。 默认情况下，所有令牌签名证书都在联合元数据中发布，但 AD FS 仅使用主要令牌签名证书来对令牌进行实际签名。 |
-| **令牌解密/加密证书：** 这是一个用于解密/加密任何传入令牌的标准 X509 证书。 该证书也在联合元数据中发布。 | -默认情况下，AD FS 创建包含2048位密钥的自签名证书。<br>-也支持 CA 颁发的证书，并且可以使用 "AD FS 管理" 管理单元进行更改<br>-CA 颁发的证书必须存储 & 通过 CSP 加密提供程序进行访问。<br>-令牌解密/加密证书不能是使用 CNG 密钥的证书。<br>-默认情况下，AD FS 生成并使用其自己的、内部生成的自签名证书和令牌解密。  AD FS 不需要外部注册的证书即可实现此目的。<br> 此外，AD FS 在过期前自动续订这些自签名证书。<br> **建议使用默认的自动生成的证书进行令牌解密。**<br> 如果你的组织有需要为令牌解密配置不同证书的策略，你可以在安装时使用 Powershell 指定证书（使用 Install-adfsfarm cmdlet 的– DecryptionCertificateThumbprint 参数）。  安装后，可以使用 AD FS 管理控制台或 Powershell cmdlet Get-adfscertificate 和 Get-adfscertificate 来查看和管理令牌解密证书。<br> **当外部注册的证书用于令牌解密时，AD FS 不会执行自动证书续订。 此过程必须由管理员执行**。<br>-AD FS 服务帐户必须有权访问本地计算机个人存储中的令牌签名证书的私钥。 这由安装程序执行。 如果随后更改令牌签名证书，还可以使用 "AD FS 管理" 管理单元来确保此访问权限。 |
+| **安全套接字层 (SSL) 证书：** 这是标准的 SSL 证书，用于保护联合服务器和客户端之间的通信。 | -此证书必须是公开信任的 * X509 v3 证书。<br>-访问任何 AD FS 终结点的所有客户端都必须信任此证书。 强烈建议使用由公共 (第三方) 证书颁发机构 (CA) 颁发的证书。 在测试实验室环境中，可以在联合服务器上成功使用自签名 SSL 证书。 不过，对于生产环境，建议从某个公共 CA 获取证书。<br>-支持 Windows Server 2012 R2 for SSL 证书支持的任何密钥大小。<br>-不支持使用 CNG 密钥的证书。<br>-与 Workplace Join/设备注册服务一起使用时，AD FS 服务的 SSL 证书的使用者可选名称必须包含值 enterpriseregistration，后跟组织的用户主体名称 (UPN) 后缀（例如 enterpriseregistration.contoso.com）。<br>-支持通配符证书。 当你创建 AD FS 场时，系统将提示你提供 AD FS 服务的服务名称 (例如， **adfs.contoso.com**。<br>-强烈建议为 Web 应用程序代理使用相同的 SSL 证书。 但在通过 Web 应用程序代理支持 Windows 集成身份验证终结点，并且打开了扩展保护身份验证时，这是**必需**的， (默认设置) 。<br>-此证书的使用者名称用于表示部署 AD FS 的每个实例的联合身份验证服务名称。 出于此原因，你可能要考虑为任何新的 CA 颁发的证书选择最能代表你的公司或伙伴组织名称的使用者名称。<br> 证书的标识必须与联合身份验证服务名称 (例如 fs.contoso.com) 。标识是类型为 dNSName 的使用者可选名称扩展，如果没有使用者可选名称项，则为指定为公用名的使用者名称。 证书中可以存在多个使用者可选名称项，前提是其中一项与联合身份验证服务名称匹配。<br>- **重要说明：** 强烈建议在 AD FS 场的所有节点以及 AD FS 场中的所有 Web 应用程序代理上使用相同的 SSL 证书。 |
+| **服务通信证书：** 此证书启用 WCF 消息安全机制来保护联合服务器之间的通信。 | -默认情况下，将 SSL 证书用作服务通信证书。  但您也可以选择将其他证书配置为服务通信证书。<br>- **重要提示：** 如果使用 ssl 证书作为服务通信证书，当 ssl 证书过期时，请确保将续订的 SSL 证书配置为服务通信证书。 此操作不会自动发生。<br>-此证书必须受使用 WCF 消息安全的 AD FS 的客户端信任。<br>-建议使用由公共 (第三方) 证书颁发机构 (CA) 颁发的服务器身份验证证书。<br>-服务通信证书不能是使用 CNG 密钥的证书。<br>-此证书可使用 AD FS 管理控制台进行管理。 |
+| **令牌签名证书：** 这是一个标准 X509 证书，用于安全地对联合服务器颁发的所有令牌进行签名。 | -默认情况下，AD FS 创建包含2048位密钥的自签名证书。<br>-也支持 CA 颁发的证书，并且可以使用 "AD FS 管理" 管理单元进行更改<br>-CA 颁发的证书必须存储 & 通过 CSP 加密提供程序进行访问。<br>-令牌签名证书不能是使用 CNG 密钥的证书。<br>-AD FS 不需要外部注册的令牌签名证书。<br> AD FS 会在这些自签名证书过期之前自动续订这些证书，首先将新证书配置为辅助证书，使合作伙伴能够使用这些证书，然后在名为自动证书滚动更新的进程中切换到主证书。建议使用默认的自动生成的令牌签名证书。<br> 如果你的组织有需要为令牌签名配置不同证书的策略，你可以在安装时使用 Powershell 指定证书 (使用 Install-adfsfarm cmdlet 的– SigningCertificateThumbprint 参数) 。  安装后，可以使用 AD FS 管理控制台或 Powershell cmdlet Get-adfscertificate 和 Get-adfscertificate 来查看和管理令牌签名证书。<br> 如果使用外部注册的证书进行令牌签名，AD FS 不会执行自动证书续订或滚动更新。  此过程必须由管理员执行。<br> 若要允许在一个证书即将过期时使用证书滚动更新，可以在 AD FS 中配置辅助令牌签名证书。 默认情况下，所有令牌签名证书都在联合元数据中发布，但 AD FS 仅使用主要令牌签名证书来对令牌进行实际签名。 |
+| **令牌解密/加密证书：** 这是一个用于解密/加密任何传入令牌的标准 X509 证书。 该证书也在联合元数据中发布。 | -默认情况下，AD FS 创建包含2048位密钥的自签名证书。<br>-也支持 CA 颁发的证书，并且可以使用 "AD FS 管理" 管理单元进行更改<br>-CA 颁发的证书必须存储 & 通过 CSP 加密提供程序进行访问。<br>-令牌解密/加密证书不能是使用 CNG 密钥的证书。<br>-默认情况下，AD FS 生成并使用其自己的、内部生成的自签名证书和令牌解密。  AD FS 不需要外部注册的证书即可实现此目的。<br> 此外，AD FS 在过期前自动续订这些自签名证书。<br> **建议使用默认的自动生成的证书进行令牌解密。**<br> 如果你的组织有需要为令牌解密配置不同证书的策略，你可以在安装时使用 Powershell 指定证书 (使用 Install-adfsfarm cmdlet 的– DecryptionCertificateThumbprint 参数) 。  安装后，可以使用 AD FS 管理控制台或 Powershell cmdlet Get-adfscertificate 和 Get-adfscertificate 来查看和管理令牌解密证书。<br> **当外部注册的证书用于令牌解密时，AD FS 不会执行自动证书续订。 此过程必须由管理员执行**。<br>-AD FS 服务帐户必须有权访问本地计算机个人存储中的令牌签名证书的私钥。 这由安装程序执行。 如果随后更改令牌签名证书，还可以使用 "AD FS 管理" 管理单元来确保此访问权限。 |
 
 > [!CAUTION]
 > 用于令牌签名和令牌解密/加密的证书对于联合身份验证服务的稳定性至关重要。 如果客户管理其自己的令牌签名 & 令牌解密/加密证书，则应确保这些证书已备份，并在恢复事件期间单独提供。
 
 > [!NOTE]
-> 在 AD FS 可以将用于数字签名的安全哈希算法（SHA）级别更改为 SHA-1 或 SHA-256 （更安全）。 AD FS 不支持将证书用于其他哈希方法（如 MD5）（与 Makecert.exe 命令行工具一起使用的默认哈希算法）。 作为最佳安全做法，我们建议你为所有签名使用 SHA-256（这是默认设置）。 仅在必须与不支持使用 SHA-256 通信的产品（如非 Microsoft 产品或旧版本的 AD FS）互操作的情况下，才建议使用 SHA-1。
+> 在 AD FS 可以将用于数字签名的安全哈希算法 (SHA) 级别更改为 SHA-1 或 SHA-256 (更安全的) 。 AD FS 不支持将证书用于其他哈希方法（如 MD5 (与 Makecert.exe 命令行工具) 一起使用的默认哈希算法）。 作为最佳安全做法，我们建议你为所有签名使用 SHA-256（这是默认设置）。 仅在必须与不支持使用 SHA-256 通信的产品（如非 Microsoft 产品或旧版本的 AD FS）互操作的情况下，才建议使用 SHA-1。
 
 > [!NOTE]
 > 从 CA 收到证书后，请确保将所有的证书导入到本地计算机的个人证书存储中。 你可以使用证书 MMC 管理单元将证书导入到个人存储中。
@@ -111,7 +111,7 @@ ms.locfileid: "87519946"
 
 **服务帐户要求**
 
-- 任何标准服务帐户都可用作 AD FS 的服务帐户。 也支持组托管服务帐户托管服务帐户。 这需要至少一个域控制器（建议你部署两个或更多）运行 Windows Server 2012 或更高版本的域控制器。
+- 任何标准服务帐户都可用作 AD FS 的服务帐户。 也支持组托管服务帐户托管服务帐户。 这需要至少一个域控制器 (建议部署两个或更多运行 Windows Server 2012 或更高版本的) 。
 
 - 要使 Kerberos 身份验证在加入域的客户端和 AD FS 之间正常工作，必须在服务帐户上将 "HOST/<adfs_service_name>" 注册为 SPN。 默认情况下，如果新的 AD FS 场具有执行此操作的足够权限，则 AD FS 将配置此配置。
 
@@ -144,10 +144,10 @@ ms.locfileid: "87519946"
 
 下表简要介绍了如何使用 WID 场。  使用它来规划你的实现。
 
-| 1-100 RP 信任 | 超过 100 RP 信任 |
+| 1-100 个 RP 信任 | 100 个以上的 RP 信任 |
 |--|--|
-| **1-30 AD FS 节点：** 支持 WID | **1-30 AD FS 节点：** 不支持使用 WID-SQL 必需 |
-| 超过**30 个 AD FS 节点：** 不支持使用 WID-SQL 必需 | 超过**30 个 AD FS 节点：** 不支持使用 WID-SQL 必需 |
+| **1-30 AD FS 节点：** WID 受支持 | **1-30 AD FS 节点：** 不支持使用 WID - 需要 SQL |
+| **超过 30 个 AD FS 节点：** 不支持使用 WID - 需要 SQL | **超过 30 个 AD FS 节点：** 不支持使用 WID - 需要 SQL |
 
 **SQL Server**
 
@@ -160,9 +160,9 @@ ms.locfileid: "87519946"
 
 - Cookie 必须打开
 
-- 必须支持服务器名称指示（SNI）
+- 必须支持服务器名称指示 (SNI) 
 
-- 对于用户证书 & 设备证书身份验证（工作区加入功能），浏览器必须支持 SSL 客户端证书身份验证
+- 对于用户证书 & 设备证书身份验证 (工作区加入功能) ，浏览器必须支持 SSL 客户端证书身份验证
 
 几个关键浏览器和平台已经完成了呈现和功能的验证，详细信息如下所示。 如果未在此表中包含的浏览器和设备满足上面列出的要求，则仍受支持：
 
@@ -183,7 +183,7 @@ ms.locfileid: "87519946"
 AD FS 将创建必须存储在客户端计算机上的基于会话的 Cookie 和永久 Cookie，以提供登录、注销、单一登录 (SSO) 和其他功能。 因此，必须将客户端浏览器配置为接受 Cookie。 用于身份验证的 Cookie 始终是为原始服务器编写的安全超文本传输协议 (HTTPS) 会话 Cookie。 如果未将客户端浏览器配置为允许使用这些 Cookie，则 AD FS 不能正常工作。 永久 Cookie 用于保留用户选择的声明提供方。 你可以通过在 AD FS 登录页的配置文件中使用配置设置来禁用它们。 出于安全原因，对 TLS/SSL 的支持是必需的。
 
 ## <a name="extranet-requirements"></a><a name="BKMK_extranet"></a>Extranet 要求
-若要提供对 AD FS 服务的 extranet 访问，必须将 Web 应用程序代理角色服务部署为面向公众的角色，以安全方式将身份验证请求代理到 AD FS 服务。 这将提供 AD FS 服务终结点的隔离，以及来自来自 internet 的请求的所有安全密钥（例如令牌签名证书）的隔离。 此外，软 Extranet 帐户锁定等功能需要使用 Web 应用程序代理。 有关 Web 应用程序代理的详细信息，请参阅[Web 应用程序代理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn584107(v=ws.11))。
+若要提供对 AD FS 服务的 extranet 访问，必须将 Web 应用程序代理角色服务部署为面向公众的角色，以安全方式将身份验证请求代理到 AD FS 服务。 这将提供 AD FS 服务终结点的隔离，并将所有安全密钥的隔离 (例如从 internet 发出的请求) 令牌签名证书。 此外，软 Extranet 帐户锁定等功能需要使用 Web 应用程序代理。 有关 Web 应用程序代理的详细信息，请参阅[Web 应用程序代理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn584107(v=ws.11))。
 
 如果要使用第三方代理进行 extranet 访问，则此第三方代理必须支持中定义的协议 [http://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-ADFSPIP%5d.pdf](https://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-ADFSPIP%5d.pdf) 。
 
@@ -194,20 +194,20 @@ AD FS 将创建必须存储在客户端计算机上的基于会话的 Cookie 和
 
 位于 Web 应用程序代理和联合服务器场之间的防火墙以及客户端和 Web 应用程序代理之间的防火墙都必须启用 TCP 端口 443 入站。
 
-此外，如果需要客户端用户证书身份验证（使用 X509 用户证书的 clientTLS authentication），Windows Server 2012 R2 中 AD FS 要求在客户端和 Web 应用程序代理之间的防火墙上启用 TCP 端口49443。 在 Web 应用程序代理和联合服务器之间的防火墙上不需要这样做。
+此外，如果客户端用户证书身份验证 (需要使用 X509 用户证书的 clientTLS authentication) ，则在 Windows Server 2012 R2 中 AD FS 需要在客户端和 Web 应用程序代理之间的防火墙上启用 TCP 端口49443。 这不是 Web 应用程序代理与联合服务器之间的防火墙所必需的) 。
 
 > [!NOTE]
 > 此外，请确保 AD FS 和 Web 应用程序代理服务器上的任何其他服务不使用端口49443。
 
 **Configuring DNS**（配置 DNS）
 
-- 对于 intranet 访问，访问内部企业网络（intranet）内 AD FS 服务的所有客户端必须能够将 AD FS 服务名称（SSL 证书提供的名称）解析为 AD FS 服务器或 AD FS 服务器的负载均衡器。
+- 对于 intranet 访问，访问内部企业网络 (intranet) 内 AD FS 服务的所有客户端必须能够将 SSL 证书提供的 AD FS 服务名称 () 到 AD FS 服务器或 AD FS 服务器的负载均衡器。
 
-- 对于 extranet 访问，从企业网络（extranet/internet）外部访问 AD FS 服务的所有客户端必须能够将 AD FS 服务名称（SSL 证书提供的名称）解析为 Web 应用程序代理服务器或 Web 应用程序代理服务器的负载均衡器。
+- 对于 extranet 访问，从企业网络外部访问 AD FS 服务 (extranet/internet) 的所有客户端必须能够将 SSL 证书提供的 AD FS 服务名称 (名称解析为 Web 应用程序代理服务器或 Web 应用程序代理服务器的负载均衡器。
 
-- 要使 extranet 访问正常运行，DMZ 中的每个 Web 应用程序代理服务器都必须能够将 AD FS 服务名称（SSL 证书提供的名称）解析为 AD FS 服务器或 AD FS 服务器的负载均衡器。 这可以通过使用外围网络中的备用 DNS 服务器或通过使用 HOSTS 文件更改本地服务器解析来实现。
+- 要使 extranet 访问正常运行，DMZ 中的每个 Web 应用程序代理服务器都必须能够解析 AD FS 服务名称 (SSL 证书提供的名称) 到 AD FS 服务器或 AD FS 服务器的负载均衡器。 这可以通过使用外围网络中的备用 DNS 服务器或通过使用 HOSTS 文件更改本地服务器解析来实现。
 
-- 若要使 Windows 集成身份验证在网络内部和网络外部使用，以通过 Web 应用程序代理公开的终结点子集，必须使用 A 记录（而不是 CNAME）来指向负载均衡器。
+- 若要使 Windows 集成身份验证在网络内部和网络外部使用，以通过 Web 应用程序代理公开的终结点子集，必须使用 A 记录 (不) CNAME，以指向负载均衡器。
 
 有关为联合身份验证服务和设备注册服务配置企业 DNS 的信息，请参阅为[联合身份验证服务和 DRS 配置企业 dns](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486786(v=ws.11))。
 
@@ -265,7 +265,7 @@ AD FS 支持使用以下协议的声明感知应用程序：
 AD FS 还支持对 Web 应用程序代理支持的任何非声明感知应用程序进行身份验证和授权。
 
 ## <a name="authentication-requirements"></a><a name="BKMK_10"></a>身份验证要求
-**AD DS 身份验证（主身份验证）**
+**AD DS 身份验证 (主要身份验证) **
 
 对于 intranet 访问，支持以下 AD DS 标准身份验证机制：
 
@@ -281,7 +281,7 @@ AD FS 还支持对 Web 应用程序代理支持的任何非声明感知应用程
 
 - 使用映射到 AD DS 中的用户帐户的证书进行证书身份验证
 
-- 使用协商的 Windows 集成身份验证（仅适用于 NTLM）用于接受 Windows 集成身份验证的 WS-TRUST 终结点。
+- 使用协商 (的 Windows 集成身份验证仅适用于接受 Windows 集成身份验证的 WS-TRUST 终结点) 。
 
 对于证书身份验证：
 
@@ -307,7 +307,7 @@ AD FS 还支持对 Web 应用程序代理支持的任何非声明感知应用程
 
 **多重身份验证**
 
-AD FS 使用提供程序模型支持附加身份验证（超出 AD DS 支持的主要身份验证），因此供应商/客户可以构建其自己的多重身份验证适配器，管理员可以在登录期间注册并使用该适配器。
+AD FS 支持除主要身份验证之外的其他身份验证 (AD DS) 使用提供程序模型，因此供应商/客户可以构建自己的多重身份验证适配器，管理员可以在登录期间注册并使用该适配器。
 
 每个 MFA 适配器都必须构建在 .NET 4.5 之上。
 
@@ -324,14 +324,14 @@ AD FS 支持设备身份验证，使用设备注册服务在加入其设备的�
 
 - 若要使用 Workplace Join 功能，AD FS 服务器联接到的林的架构必须为 Windows Server 2012 R2。
 
-- AD FS 服务的 SSL 证书的使用者可选名称必须包含值 enterpriseregistration，后跟组织的用户主体名称（UPN）后缀（例如 enterpriseregistration.corp.contoso.com）。
+- AD FS 服务的 SSL 证书的使用者可选名称必须包含值 enterpriseregistration，后跟组织的用户主体名称 (UPN) 后缀，例如，enterpriseregistration.corp.contoso.com。
 
 ## <a name="cryptography-requirements"></a><a name="BKMK_12"></a>加密要求
 下表提供了有关 AD FS 令牌签名、令牌加密/解密功能的其他加密支持信息：
 
 |**算法**|**密钥长度**|**协议/应用程序/注释**|
 |--|--|--|
-|TripleDES –默认192（支持的192–256）-[http://www.w3.org/2001/04/xmlenc#tripledes-cbc](http://www.w3.org/2001/04/xmlenc#tripledes-cbc)|>= 192|支持对安全令牌进行解密的算法。 不支持通过此算法加密安全令牌。|
+|TripleDES –默认 192 (受支持192– 256) -[http://www.w3.org/2001/04/xmlenc#tripledes-cbc](http://www.w3.org/2001/04/xmlenc#tripledes-cbc)|>= 192|支持对安全令牌进行解密的算法。 不支持通过此算法加密安全令牌。|
 |AES128[http://www.w3.org/2001/04/xmlenc#aes128-cbc](http://www.w3.org/2001/04/xmlenc#aes128-cbc)|128|支持对安全令牌进行解密的算法。 不支持通过此算法加密安全令牌。|
 |AES192[http://www.w3.org/2001/04/xmlenc#aes192-cbc](http://www.w3.org/2001/04/xmlenc#aes192-cbc)|192|支持对安全令牌进行解密的算法。 不支持通过此算法加密安全令牌。|
 |AES256[http://www.w3.org/2001/04/xmlenc#aes256-cbc](http://www.w3.org/2001/04/xmlenc#aes256-cbc)|256|**默认值**。 支持对安全令牌进行加密的算法。|
@@ -341,11 +341,11 @@ AD FS 支持设备身份验证，使用设备注册服务在加入其设备的�
 |AES256KeyWrap[http://www.w3.org/2001/04/xmlenc#kw-aes256](http://www.w3.org/2001/04/xmlenc#kw-aes256)|256|支持对加密安全令牌的对称密钥进行加密的算法。|
 |RsaV15KeyWrap -[http://www.w3.org/2001/04/xmlenc#rsa-1_5](http://www.w3.org/2001/04/xmlenc#rsa-1_5)|1024|支持对加密安全令牌的对称密钥进行加密的算法。|
 |RsaOaepKeyWrap[http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|默认。 支持对加密安全令牌的对称密钥进行加密的算法。|
-|SHA1[http://www.w3.org/PICS/DSig/SHA1_1_0.html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|空值|由 AD FS Server 在项目 SourceId 生成中使用：在这种情况下，STS 使用 SHA1 （按照 SAML 2.0 标准中的建议）为项目 sourceiD 创建一个较小的160位值。<p>还由 ADFS web 代理（WS2003 时间范围内的旧组件）用于识别 "上次更新时间" 值中的更改，以便它知道何时从 STS 更新信息。|
-|SHA1withRSA<p>[http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|空值|用于 AD FS 服务器验证 SAML AuthenticationRequest 的签名、对项目解析请求或响应进行签名、创建令牌签名证书的情况下使用。<p>在这些情况下，SHA256 是默认值，仅当伙伴（依赖方）无法支持 SHA256 并且必须使用 SHA1 时，才使用 SHA1。|
+|SHA1[http://www.w3.org/PICS/DSig/SHA1_1_0.html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|空值|由 AD FS Server 在项目 SourceId 生成中使用：在这种情况下，STS 根据 SAML 2.0 标准) 中的建议使用 SHA1 (，为项目 sourceiD 创建一个较小的160位值。<p>ADFS web 代理还使用 (旧组件从 WS2003 时间范围) ，以标识 "上次更新时间" 值中的更改，以便它知道何时从 STS 更新信息。|
+|SHA1withRSA<p>[http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|空值|用于 AD FS 服务器验证 SAML AuthenticationRequest 的签名、对项目解析请求或响应进行签名、创建令牌签名证书的情况下使用。<p>在这些情况下，SHA256 为默认值，仅当伙伴 (信赖方) 不支持 SHA256 并且必须使用 SHA1 时，才使用 SHA1。|
 
 ## <a name="permissions-requirements"></a><a name="BKMK_13"></a>权限要求
-执行安装和初始配置 AD FS 的管理员必须具有本地域中的域管理员权限（即联合服务器加入到的域。）
+执行安装和初始配置 AD FS 的管理员必须在本地域 (中具有域管理员权限，即联合服务器加入到的域。 ) 
 
 ## <a name="see-also"></a>另请参阅
 [Windows Server 2012 R2 中的 AD FS 设计指南](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)

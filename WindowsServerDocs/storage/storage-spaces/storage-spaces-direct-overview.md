@@ -6,24 +6,24 @@ manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 06/26/2019
+ms.date: 07/24/2020
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
-description: 概述存储空间直通，这是 Windows Server 的一项功能，它使你能够使用内部存储将服务器加入软件定义的存储解决方案。
+description: 概述存储空间直通，Windows Server 和 Azure Stack HCI 的一项功能，使你能够将具有内部存储的服务器加入软件定义的存储解决方案。
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb8700935306cbd007ab4afc61cf3eb54227130
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 3fd86a8465d2fef59ccce73fc473790682f0d180
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768942"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864318"
 ---
 # <a name="storage-spaces-direct-overview"></a>存储空间直通概述
 
->适用于：Windows Server 2019、Windows Server 2016
+>适用于： Azure Stack HCI、Windows Server 2019、Windows Server 2016
 
 空间存储直通使用具有本地连接驱动器的行业标准服务器来创建高度可用、高度可扩展的软件定义存储，其成本仅占传统 SAN 或 NAS 阵列的一小部分。 它的聚合或超聚合体系结构大大简化了采购和部署，同时还提供了缓存、存储层和擦除编码等功能，以及最新的硬件创新（例如 RDMA 联网和 NVMe 驱动器），提供了无与伦比的效率和性能。
 
-存储空间直通包含在 Windows Server 2019 Datacenter、Windows Server 2016 Datacenter 和[Windows Server 有问必答 Preview 内部版本](https://insider.windows.com/for-business-getting-started-server/)中。
+存储空间直通包含在[AZURE STACK HCI](/azure-stack/hci/)、windows Server 2019 Datacenter、windows Server 2016 Datacenter 和[Windows Server 有问必答 preview 内部版本](https://insider.windows.com/for-business-getting-started-server/)中。
 
 有关存储空间的其他应用程序，如共享 SAS 群集和独立服务器，请参阅[存储空间概述](overview.md)。 如果正在查找有关在 Windows 10 电脑上使用存储空间的信息，请参阅[windows 10 中的存储空间](https://support.microsoft.com/help/12438/windows-10-storage-spaces)。
 
@@ -53,7 +53,7 @@ ms.locfileid: "87768942"
 
 ## <a name="key-benefits"></a>主要优点
 
-| 映像 | 说明 |
+| 映像 | 描述 |
 |--|--|
 | ![简单](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png) | **简易.** 在 15 分钟内即可从运行 Windows Server 2016 的行业标准服务器转到第一个存储空间直通群集。 对于 System Center 用户而言，部署不仅仅只是一个复选框。 |
 | ![无与伦比的性能](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png) | **无可匹敌的性能。** 无论是全闪存还是混合存储空间直通，都可以轻松超越[每台服务器 150,000 次混合 4K 随机 IOPS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) 的限制，并且具有较高的一致性和较低的延迟，所有这一切均归功于其嵌入虚拟机监控程序的体系结构、内置的读/写缓存，以及对直接安装在 PCIe 总线上的尖端 NVMe 驱动器的支持。 |

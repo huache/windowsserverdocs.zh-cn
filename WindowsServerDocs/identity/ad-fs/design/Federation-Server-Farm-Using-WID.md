@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f542dfb228e5c32c2ff6c9d0b5e853c5aa66cf83
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4cfdfbda3a1c7df19ded887cc748e7f69f2fad08
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519916"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864059"
 ---
-# <a name="federation-server-farm-using-wid"></a>使用 WID 的联合服务器场
+# <a name="legacy-ad-fs-federation-server-farm-using-wid"></a>旧 AD FS 使用 WID 的联合服务器场
 
 Active Directory 联合身份验证服务 AD FS 的默认拓扑 \( \) 是使用 Windows 内部数据库 WID 的联合服务器场 \( \) 。 在此拓扑中，AD FS 使用 WID 作为已加入到该场中的所有联合服务器的 AD FS 配置数据库的存储。 该场针对场中的每台服务器，在此配置数据库中复制和维护联合身份验证服务数据。 Windows Server 2012 R2 中的 AD FS 允许具有100或更少信赖方信任的组织使用 WID 和最多30个服务器来配置联合服务器场。
 
@@ -56,10 +56,10 @@ Active Directory 联合身份验证服务 AD FS 的默认拓扑 \( \) 是使用 
 
 下表简要介绍了如何使用 WID 场。 使用它来规划你的实现。
 
-| 1-100 RP 信任 | 超过 100 RP 信任 |
+| 1-100 个 RP 信任 | 100 个以上的 RP 信任 |
 |--|--|
-| **1-30 AD FS 节点：** 支持 WID | **1-30 AD FS 节点：** 不支持使用 WID-SQL 必需 |
-| 超过**30 个 AD FS 节点：** 不支持使用 WID-SQL 必需 | 超过**30 个 AD FS 节点：** 不支持使用 WID-SQL 必需 |
+| **1-30 AD FS 节点：** WID 受支持 | **1-30 AD FS 节点：** 不支持使用 WID - 需要 SQL |
+| **超过 30 个 AD FS 节点：** 不支持使用 WID - 需要 SQL | **超过 30 个 AD FS 节点：** 不支持使用 WID - 需要 SQL |
 
 
 ## <a name="server-placement-and-network-layout-recommendations"></a>服务器布局和网络布局建议

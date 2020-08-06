@@ -7,29 +7,29 @@ ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 06/07/2019
-description: 逐步说明使用 Windows Server 中的存储空间直通将软件定义的存储部署为超聚合基础结构或聚合（也称为非聚合）基础结构。
+ms.date: 07/24/2020
+description: 逐步说明如何使用 Windows Server 中的存储空间直通将软件定义的存储部署为超聚合基础结构或聚合 (也称为非聚合) 基础结构。
 ms.localizationpriority: medium
-ms.openlocfilehash: c18d3edc57ab04c9f9487bc39b52325fa1eb0ba9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ba9287cebe1cf35c151335e59476f63ae3e01a56
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955109"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863934"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署存储空间直通
 
 > 适用于：Windows Server 2019、Windows Server 2016
 
-本主题提供部署[存储空间直通](storage-spaces-direct-overview.md)的分步说明。
+本主题提供在 Windows Server 上部署[存储空间直通](storage-spaces-direct-overview.md)的分步说明。 若要将存储空间直通作为 Azure Stack HCI 的一部分进行部署，请参阅[AZURE STACK hci 的部署过程是什么？](/azure-stack/hci/deploy/deployment-overview)
 
 > [!Tip]
-> 想要获取超聚合基础结构？ Microsoft 建议从我们的合作伙伴购买经验证的硬件/软件解决方案，其中包括部署工具和过程。 针对我们的参考体系结构设计、汇编和验证这些解决方案，以确保兼容性和可靠性，使你能够快速启动和运行。 对于 Windows Server 2019 解决方案，请访问[AZURE STACK HCI 解决方案网站](https://azure.microsoft.com/overview/azure-stack/hci)。 对于 Windows Server 2016 解决方案，请参阅[Windows Server 软件定义](https://microsoft.com/wssd)的详细信息。
+> 想要获得超聚合基础结构？ Microsoft 建议从合作伙伴 Azure Stack HCI 解决方案购买经验证的硬件/软件。 针对我们的参考体系结构设计、汇编和验证这些解决方案，以确保兼容性和可靠性，使你能够快速启动和运行。 若要细读与 Azure Stack HCI 一起使用的硬件/软件解决方案的目录，请参阅[AZURE STACK HCI 目录](https://azure.microsoft.com/products/azure-stack/hci/catalog/)。
 
 > [!Tip]
 > 你可以使用 Hyper-v 虚拟机，包括在 Microsoft Azure 中，以[评估没有硬件存储空间直通](storage-spaces-direct-in-vm.md)。 你可能还想要查看方便使用的[Windows Server 快速实验室部署脚本](https://aka.ms/wslab)，这些脚本用于定型目的。
 
-## <a name="before-you-start"></a>开始之前
+## <a name="before-you-start"></a>准备工作
 
 查看[存储空间直通硬件要求](Storage-Spaces-Direct-Hardware-Requirements.md)，并浏览本文档以熟悉与某些步骤相关的总体方法和重要说明。
 
@@ -41,7 +41,7 @@ ms.locfileid: "86955109"
 
 - **域名。** 熟悉组织用于域命名和加入域的策略。  将服务器加入到域中，并且需要指定域名。
 
-- **RDMA 网络。** RDMA 协议分为两种类型： iWarp 和 RoCE。 请注意，网络适配器使用哪一个，如果 RoCE，还请注意版本（v1 或 v2）。 对于 RoCE，还请注意机箱顶部交换机的型号。
+- **RDMA 网络。** RDMA 协议分为两种类型： iWarp 和 RoCE。 请注意，网络适配器使用哪一个，如果 RoCE，还请注意版本 (v1 或 v2) 。 对于 RoCE，还请注意机箱顶部交换机的型号。
 
 - **VLAN ID。** 请注意要用于服务器上的管理 OS 网络适配器的 VLAN ID （如果有）。 应该能够从网络管理员处获取此信息。
 
@@ -51,7 +51,7 @@ ms.locfileid: "86955109"
 
 第一步是在将位于群集中的每个服务器上安装 Windows Server。 存储空间直通需要 Windows Server 2016 Datacenter Edition。 你可以使用服务器核心安装选项或具有桌面体验的服务器。
 
-当你使用安装向导安装 Windows Server 时，你可以在*Windows server* （引用 server Core）和*windows Server （具有桌面体验的服务器）* 之间进行选择，这相当于 windows server 2012 R2 中提供的*完全*安装选项。 如果不选择，则会获得服务器核心安装选项。 有关详细信息，请参阅[Windows Server 2016 安装选项](../../get-started/Windows-Server-2016.md)。
+当你使用安装向导安装 Windows Server 时，你可以在*Windows server* (引用服务器核心) 和*Windows server (服务器（具有桌面体验) *），这等同于 windows server 2012 R2 中提供的*完全*安装选项。 如果不选择，则会获得服务器核心安装选项。 有关详细信息，请参阅[Windows Server 2016 安装选项](../../get-started/Windows-Server-2016.md)。
 
 ### <a name="step-12-connect-to-the-servers"></a>步骤1.2：连接到服务器
 
@@ -102,7 +102,7 @@ ms.locfileid: "86955109"
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force
 ```
 
-如果你的存储管理员帐户不是 Domain Admins 组的成员，请将你的存储管理员帐户添加到每个节点上的本地管理员组，或者，添加你的存储管理员组。 你可以使用以下命令（或编写 Windows PowerShell 函数来执行此操作-请参阅[使用 PowerShell 将域用户添加到本地组](https://devblogs.microsoft.com/scripting/use-powershell-to-add-domain-users-to-a-local-group/)，了解详细信息）：
+如果你的存储管理员帐户不是 Domain Admins 组的成员，请将你的存储管理员帐户添加到每个节点上的本地管理员组，或者，添加你的存储管理员组。 你可以使用以下命令 (或编写 Windows PowerShell 函数来执行此操作-请参阅[使用 PowerShell 将域用户添加到本地组](https://devblogs.microsoft.com/scripting/use-powershell-to-add-domain-users-to-a-local-group/)，详细信息) ：
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -110,11 +110,11 @@ Net localgroup Administrators <Domain\Account> /add
 
 ### <a name="step-14-install-roles-and-features"></a>步骤1.4：安装角色和功能
 
-下一步是在每个服务器上安装服务器角色。 可以通过使用[Windows 管理中心](../../manage/windows-admin-center/use/manage-servers.md)、[服务器管理器](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)）或 PowerShell 来执行此操作。 下面是要安装的角色：
+下一步是在每个服务器上安装服务器角色。 可以使用[Windows 管理中心](../../manage/windows-admin-center/use/manage-servers.md)、[服务器管理器](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)) 或 PowerShell 来执行此操作。 下面是要安装的角色：
 
 - 故障转移群集
 - Hyper-V
-- 文件服务器（如果想要托管任何文件共享，例如聚合部署）
+- 文件服务器 (如果要承载任何文件共享，例如聚合部署的) 
 - Data-Center-Bridging（如果正在使用 RoCEv2，而不是 iWARP 网络适配器）
 - RSAT-Clustering-PowerShell
 - Hyper-V-PowerShell
@@ -142,12 +142,12 @@ Invoke-Command ($ServerList) {
 
 如果要在虚拟机中部署存储空间直通，请跳过此部分。
 
-存储空间直通要求群集中的服务器之间具有高带宽、低延迟的网络连接。 至少需要10个 GbE 网络，建议使用远程直接内存访问（RDMA）。 你可以使用 iWARP 或 RoCE，前提是它具有 Windows Server 2016 徽标，但 iWARP 通常更易于设置。
+存储空间直通要求群集中的服务器之间具有高带宽、低延迟的网络连接。 需要至少10个 GbE 网络，并且建议 (RDMA) 远程直接内存访问。 你可以使用 iWARP 或 RoCE，前提是它具有 Windows Server 2016 徽标，但 iWARP 通常更易于设置。
 
 > [!Important]
 > 根据你的网络设备，尤其是对于 RoCE v2，可能需要一些顶层交换机的配置。 正确的交换机配置对于确保存储空间直通的可靠性和性能非常重要。
 
-Windows Server 2016 引入了 Hyper-v 虚拟交换机中的交换机嵌入组合（SET）。 这样，在使用 RDMA 时，可以将相同的物理 NIC 端口用于所有网络流量，从而减少所需的物理 NIC 端口的数量。 建议存储空间直通使用交换机嵌入组合。
+Windows Server 2016 引入了交换机嵌入组合 (在 Hyper-v 虚拟交换机中设置) 。 这样，在使用 RDMA 时，可以将相同的物理 NIC 端口用于所有网络流量，从而减少所需的物理 NIC 端口的数量。 建议存储空间直通使用交换机嵌入组合。
 
 交换或 switchless 节点互连
 - 交换：必须正确配置网络交换机以处理带宽和网络类型。 如果使用的 RDMA 实现了 RoCE 协议，则网络设备和交换机配置更为重要。
@@ -204,7 +204,7 @@ Count Name                          PSComputerName
 
 ### <a name="step-32-validate-the-cluster"></a>步骤3.2：验证群集
 
-在此步骤中，你将运行群集验证工具，以确保正确配置服务器节点，以便使用存储空间直通创建群集。 在 `Test-Cluster` 创建群集之前运行群集验证（）时，它会运行测试，以验证配置是否适合成功充当故障转移群集。 下面的示例使用 `-Include` 参数，然后指定特定类别的测试。 这样可以确保验证中包含存储空间直通特定的测试。
+在此步骤中，你将运行群集验证工具，以确保正确配置服务器节点，以便使用存储空间直通创建群集。 如果在 `Test-Cluster` 创建群集之前运行群集验证 () ，则它会运行测试，验证配置是否显示为适用于成功充当故障转移群集。 下面的示例使用 `-Include` 参数，然后指定特定类别的测试。 这样可以确保验证中包含存储空间直通特定的测试。
 
 使用以下 PowerShell 命令验证一组用作存储空间直通群集的服务器。
 
@@ -264,11 +264,11 @@ Enable-ClusterStorageSpacesDirect –CimSession <ClusterName>
 
 ### <a name="step-37-optionally-enable-the-csv-cache"></a>步骤3.7：（可选）启用 CSV 缓存
 
-你可以选择启用群集共享卷（CSV）缓存，以将系统内存（RAM）用作 Windows 缓存管理器尚未缓存的读取操作的写操作块级别缓存。 这可以提高 Hyper-v 的应用程序的性能。 CSV 缓存可以提高读取请求的性能，也可用于横向扩展文件服务器情况。
+你可以选择启用群集共享卷 (CSV) 缓存，以将系统内存 (RAM) 用作 Windows 缓存管理器尚未缓存的读取操作的写操作块级别缓存。 这可以提高 Hyper-v 的应用程序的性能。 CSV 缓存可以提高读取请求的性能，也可用于横向扩展文件服务器情况。
 
 启用 CSV 缓存可减少可用于在超聚合群集上运行 Vm 的内存量，因此，你必须使用 Vhd 可用的内存来平衡存储性能。
 
-若要设置 CSV 缓存的大小，请使用对存储群集具有管理员权限的帐户在管理系统上打开一个 PowerShell 会话，然后根据需要使用此脚本更改 `$ClusterName` 和 `$CSVCacheSize` 变量（此示例为每个服务器设置 2 GB CSV 缓存）：
+若要设置 CSV 缓存的大小，请使用对存储群集具有管理员权限的帐户在管理系统上打开一个 PowerShell 会话，然后使用此脚本， `$ClusterName` `$CSVCacheSize` 根据需要更改和变量 (此示例将为每个服务器) 设置 2 GB CSV 缓存：
 
 ```PowerShell
 $ClusterName = "StorageSpacesDirect1"
@@ -287,7 +287,7 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 如果要部署超聚合群集，最后一步是在存储空间直通群集上预配虚拟机。
 
-虚拟机的文件应存储在系统 CSV 命名空间（例如： c： \\ ClusterStorage \\ Volume1）上，就像故障转移群集上的群集 vm 一样。
+虚拟机的文件应存储在系统 CSV 命名空间中 (例如： c： \\ ClusterStorage \\ Volume1) ，就像故障转移群集上的群集 vm 一样。
 
 你可以使用内置工具或其他工具来管理存储和虚拟机，如 System Center Virtual Machine Manager。
 
@@ -327,7 +327,7 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 ### <a name="step-42-create-file-shares"></a>步骤4.2：创建文件共享
 
-创建虚拟磁盘并将其添加到 Csv 后，可以在这些磁盘上创建文件共享-每个虚拟磁盘每个 CSV 有一个文件共享。 System Center Virtual Machine Manager （VMM）可能是执行此操作的 handiest 方法，因为它处理你的权限，但如果你的环境中没有此权限，则可以使用 Windows PowerShell 部分自动完成部署。
+创建虚拟磁盘并将其添加到 Csv 后，可以在这些磁盘上创建文件共享-每个虚拟磁盘每个 CSV 有一个文件共享。 System Center Virtual Machine Manager (VMM) 可能是执行此操作的 handiest 方法，因为它处理你的权限，但如果你的环境中没有此权限，则可以使用 Windows PowerShell 部分自动完成部署。
 
 使用[适用于 Hyper-v 工作负荷的 SMB 共享配置](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)脚本中包含的脚本，该脚本部分自动执行创建组和共享的过程。 它是针对 Hyper-v 工作负荷编写的，因此，如果要部署其他工作负载，则你可能需要在创建共享后修改设置或执行其他步骤。 例如，如果你使用 Microsoft SQL Server，则必须向 SQL Server 服务帐户授予对共享和文件系统的完全控制权限。
 

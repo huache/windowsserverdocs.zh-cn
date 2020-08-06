@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 62671800d923e95c6bc3f9c7efb0660974c438e2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a7304402b4be1710fbff9e29e2dd0094ba621095
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954279"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864292"
 ---
-# <a name="configure-claim-rules"></a>配置声明规则
+# <a name="configure-claim-rules-in-ad-fs-for-windows-server"></a>在 Windows Server AD FS 中配置声明规则
 
 在基于声明的 \- 标识模型中，Active Directory 联合身份验证服务 \( AD FS \) 为联合身份验证服务的功能是颁发包含一组声明的令牌。 声明规则管理有关 AD FS 问题的声明的决策。 声明规则和所有服务器配置数据均存储在 AD FS 配置数据库中。  
   

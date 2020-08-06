@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f3dedd53d75120a6a3e8087c345cd7dfa04ca35d
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4527b6787531b3a349534092e3597a91dbebf78f
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519936"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864131"
 ---
-# <a name="federation-server-farm-using-sql-server"></a>使用 SQL Server 的联合服务器场
+# <a name="legacy-ad-fs-federation-server-farm-using-sql-server"></a>使用 SQL Server 的旧 AD FS 联合服务器场
 
 此 Active Directory 联合身份验证服务 AD FS 的 \( 拓扑 \) 不同于使用 Windows 内部数据库 WID 部署拓扑的联合服务器场 \( \) ，因为它不会将数据复制到场中的每个联合服务器。 相反，场中的所有联合服务器都可以读取数据并将其写入到存储在运行 Microsoft SQL Server 位于企业网络中的服务器上的公共数据库中。
 
@@ -64,7 +64,7 @@ Windows Server 2012 R2 中 AD FS 支持以下 SQL server 版本：
 
 ![使用 SQL 的服务器场](media/SQLFarmADFSBlue.gif)
 
-有关如何配置网络环境以用于联合服务器或 web 应用程序代理的详细信息，请参阅[AD FS 要求](AD-FS-Requirements.md)和[规划 Web 应用程序代理基础结构（WAP）](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))中的 "名称解析要求" 部分。
+有关如何配置网络环境以用于联合服务器或 web 应用程序代理的详细信息，请参阅[AD FS 要求](AD-FS-Requirements.md)和[规划 Web 应用程序代理基础结构 (WAP) ](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))中的 "名称解析要求" 部分。
 
 ## <a name="high-availability-options-for-sql-server-farms"></a>SQL Server 场的高可用性选项
 在 Windows Server 2012 R2 中，AD FS 使用 SQL Server 在 AD FS 场中提供了两个新的选项来支持高可用性。
@@ -85,10 +85,10 @@ Windows Server 2012 R2 中 AD FS 支持以下 SQL server 版本：
 
 下表提供了使用 WID 场的摘要：
 
-| 1-100 RP 信任 | 超过 100 RP 信任 |
+| 1-100 个 RP 信任 | 100 个以上的 RP 信任 |
 |--|--|
-| **1-30 AD FS 节点：** 支持 WID | **1-30 AD FS 节点：** 不支持使用 WID-SQL 必需 |
-| 超过**30 个 AD FS 节点：** 不支持使用 WID-SQL 必需 | 超过**30 个 AD FS 节点：** 不支持使用 WID-SQL 必需 |
+| **1-30 AD FS 节点：** WID 受支持 | **1-30 AD FS 节点：** 不支持使用 WID - 需要 SQL |
+| **超过 30 个 AD FS 节点：** 不支持使用 WID - 需要 SQL | **超过 30 个 AD FS 节点：** 不支持使用 WID - 需要 SQL |
 
 ### <a name="alwayson-availability-groups"></a>AlwaysOn 可用性组
 **概述**
