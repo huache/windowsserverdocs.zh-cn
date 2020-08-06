@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 1e77535548cccd1c821163dabbad381f35d2948a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 128f9d734311f8eaf0f06204e114171fa8b0f750
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872058"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768425"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>关于 Hyper-v 虚拟机监控程序计划程序类型选择
 
@@ -25,12 +25,12 @@ ms.locfileid: "70872058"
 * Windows Server 版本 1803
 * Windows Server 2019
 
-本文档介绍 Hyper-v 默认情况下对虚拟机监控程序计划程序类型的建议使用的重要更改。 这些更改会影响系统安全性和虚拟化性能。 虚拟化主机管理员应查看并了解本文档中所述的更改和影响，并仔细评估所涉及的影响、建议的部署指南和风险因素，以最大程度地了解如何部署和管理Hyper-v 主机面对快速变化的安全环境。
+本文档介绍 Hyper-v 默认情况下对虚拟机监控程序计划程序类型的建议使用的重要更改。 这些更改会影响系统安全性和虚拟化性能。 虚拟化主机管理员应查看并了解本文档中所述的更改和影响，并在面对快速变化的安全环境时，仔细评估所涉及的影响、建议的部署指南和风险因素，以最大程度地了解如何部署和管理 Hyper-v 主机。
 
 >[!IMPORTANT]
->在同时运行的主机上运行时，可能会通过旧的虚拟机监控程序经典计划程序类型的计划行为，在多个处理器体系结构中短视在多个处理器体系结构中对已知的端通道安全漏洞进行攻击已启用多线程处理（SMT）。  如果成功利用了，恶意工作负荷可能会观察到其分区边界之外的数据。 通过配置 Hyper-v 虚拟机监控程序来利用虚拟机监控程序核心计划程序类型和重新配置来宾 Vm，可以减轻此类攻击。 使用核心计划程序，虚拟机监控程序限制来宾 VM 的 VPs 在相同的物理处理器核心上运行，因此，将 VM 的能力限制在其运行的物理内核的边界之外。  这是对这些方通道攻击的一种非常有效的缓解措施，这会阻止 VM 观察其他分区中的任何项目，无论根还是其他来宾分区。  因此，Microsoft 正在更改虚拟化主机和来宾 Vm 的默认配置设置和建议配置设置。
+>在具有同时运行多线程处理 (SMT) 启用的主机上运行时，可能会通过旧的虚拟机监控程序经典计划程序类型的计划行为，在多个处理器体系结构中短视的已知两侧通道安全漏洞可被攻击者利用。  如果成功利用了，恶意工作负荷可能会观察到其分区边界之外的数据。 通过配置 Hyper-v 虚拟机监控程序来利用虚拟机监控程序核心计划程序类型和重新配置来宾 Vm，可以减轻此类攻击。 使用核心计划程序，虚拟机监控程序限制来宾 VM 的 VPs 在相同的物理处理器核心上运行，因此，将 VM 的能力限制在其运行的物理内核的边界之外。  这是对这些方通道攻击的一种非常有效的缓解措施，这会阻止 VM 观察其他分区中的任何项目，无论根还是其他来宾分区。  因此，Microsoft 正在更改虚拟化主机和来宾 Vm 的默认配置设置和建议配置设置。
 
-## <a name="background"></a>后台
+## <a name="background"></a>背景
 
 从 Windows Server 2016 开始，Hyper-v 支持多种计划和管理虚拟处理器的方法，称为虚拟机监控程序计划程序类型。  有关所有虚拟机监控程序计划程序类型的详细说明，请参阅[了解和使用 hyper-v 虚拟机监控程序计划程序类型](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)。
 
@@ -43,9 +43,9 @@ ms.locfileid: "70872058"
 
 ### <a name="the-classic-scheduler"></a>经典计划程序
 
-经典计划程序是一种公平共享的循环法，用于计划系统中的虚拟处理器（VPs）上的工作，包括 root VPs 以及属于来宾 Vm 的 VPs。 经典计划程序是在所有版本的 Hyper-v 上使用的默认计划程序类型（在 Windows Server 2019 之前，如此处所述）。  经典计划程序的性能特征非常了解，并演示了经典计划程序来 ably 支持多个工作负荷，即，主机的 VP： LP 比率按合理的边距进行订阅（取决于要虚拟化的工作负荷的类型、总体资源利用率等。
+经典计划程序是一种公平共享、轮循机制，它在系统上计划工作 (VPs) （包括 root VPs 以及属于来宾 Vm 的 VPs）。 经典计划程序一直是在 Windows Server 2019 之前的所有 Hyper-v (版本中使用的默认计划程序类型，如) 所述。  经典计划程序的性能特征非常了解，并演示了经典计划程序来 ably 支持多个工作负荷（即，根据要进行虚拟化的工作负荷的类型、总体资源利用率等 ) ，对主机副 (总裁的过度订阅）。
 
-在启用了 SMT 的虚拟化主机上运行时，经典计划程序将从属于核心的每个 SMT 线程上的任何 VM 计划来宾 VPs。 因此，不同的 Vm 可以同时在同一内核上运行（一个 VM 运行在一个核心线程上，另一个 VM 在另一个线程上运行）。
+在启用了 SMT 的虚拟化主机上运行时，经典计划程序将从属于核心的每个 SMT 线程上的任何 VM 计划来宾 VPs。 因此，不同的 Vm 可以同时在同一内核上运行， (一个 VM 在一个核心线程上运行，而另一个 VM 在另一个线程上运行) 。
 
 ### <a name="the-core-scheduler"></a>核心计划程序
 
@@ -63,7 +63,7 @@ ms.locfileid: "70872058"
 
 * 减少工作负荷变化-来宾工作负荷吞吐量变化大大降低，从而提供更高的工作负荷一致性。
 
-* 在来宾 Vm 中使用 SMT-在来宾虚拟机中运行的操作系统和应用程序可以利用 SMT 行为和编程接口（Api）来跨 SMT 线程控制和分配工作，就像运行非虚拟化时的情况一样。
+* 在来宾 Vm 中使用 SMT-在来宾虚拟机中运行的操作系统和应用程序可以利用 SMT 行为和编程接口 (Api) 跨 SMT 线程控制和分配工作，就像它们在运行非虚拟化时的情况一样。
 
 核心计划程序当前在 Azure 虚拟化主机上使用，专门用于充分利用强安全边界和低工作负荷 variabilty。 Microsoft 认为核心计划程序类型应为，并将继续作为大多数虚拟化方案的默认虚拟机监控程序计划类型。  因此，为了确保客户在默认情况下是安全的，Microsoft 现在正在对 Windows Server 2019 做出此更改。
 
@@ -78,7 +78,7 @@ ms.locfileid: "70872058"
 部署具有最大安全状况的 Hyper-v 主机要求使用虚拟机监控程序核心计划程序类型。 为了确保客户在默认情况下是安全的，Microsoft 更改了以下默认设置和推荐设置。
 
 >[!NOTE]
->尽管 Windows Server 2016、Windows Server 1709 和 Windows Server 1803 的初始版本中包含了虚拟机监控程序对计划程序类型的内部支持，但需要进行更新才能访问配置控件，该控件允许选择虚拟机监控程序计划程序类型。  有关这些更新的详细信息，请参阅[了解和使用 hyper-v 虚拟机监控程序计划程序类型](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)。
+>尽管 Windows Server 2016、Windows Server 1709 和 Windows Server 1803 的初始版本中包含了虚拟机监控程序对计划程序类型的内部支持，但需要进行更新才能访问允许选择虚拟机监控程序计划程序类型的配置控件。  有关这些更新的详细信息，请参阅[了解和使用 hyper-v 虚拟机监控程序计划程序类型](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)。
 
 ### <a name="virtualization-host-changes"></a>虚拟化主机更改
 
@@ -88,7 +88,7 @@ ms.locfileid: "70872058"
 
 ### <a name="virtual-machine-configuration-changes"></a>虚拟机配置更改
 
-* 在 Windows Server 2019 上，使用默认 VM 版本9.0 创建的新虚拟机将自动继承虚拟化主机的 SMT 属性（启用或禁用）。 也就是说，如果在物理主机上启用了 SMT，则在默认情况下，新创建的 Vm 还将启用 SMT，并将继承主机的 SMT 拓扑，并且 VM 的硬件线程数与基础系统的每个内核数量相同。 这将反映在 VM 的配置中，HwThreadCountPerCore = 0，其中0表示 VM 应继承主机的 SMT 设置。
+* 在 Windows Server 2019 上，使用默认 VM 版本9.0 创建的新虚拟机将自动继承虚拟化主机)  (启用或禁用的 SMT 属性。 也就是说，如果在物理主机上启用了 SMT，则在默认情况下，新创建的 Vm 还将启用 SMT，并将继承主机的 SMT 拓扑，并且 VM 的硬件线程数与基础系统的每个内核数量相同。 这将反映在 VM 的配置中，HwThreadCountPerCore = 0，其中0表示 VM 应继承主机的 SMT 设置。
 
 * VM 版本为8.2 或更低的现有虚拟机将保留其原始 VM 处理器设置用于 HwThreadCountPerCore，8.2 VM 版本来宾的默认值为 HwThreadCountPerCore = 1。 当这些来宾在 Windows Server 2019 主机上运行时，它们将被视为如下：
 
@@ -107,9 +107,9 @@ ms.locfileid: "70872058"
 
 基于每个 VM 设置来宾虚拟机 SMT 配置。 主机管理员可以检查并配置 VM 的 SMT 配置，从以下选项中进行选择：
 
-    1. 将 Vm 配置为以 SMT 身份运行，可选择自动继承 host SMT 拓扑
+1. 将 Vm 配置为以 SMT 身份运行，可选择自动继承 host SMT 拓扑
 
-    2. 将 Vm 配置为以非 SMT 方式运行
+2. 将 Vm 配置为以非 SMT 方式运行
 
 VM 的 SMT 配置显示在 Hyper-v 管理器控制台的 "摘要" 窗格中。  可以使用 VM 设置或 PowerShell 来配置 VM 的 SMT 设置。
 
@@ -123,11 +123,11 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <0, 1, 2>
 
 其中：
 
-    0 = Inherit SMT topology from the host (this setting of HwThreadCountPerCore=0 is not supported on Windows Server 2016)
+- 0 = 从主机继承 SMT 拓扑 (在 Windows Server 2016 上，HwThreadCountPerCore = 0 的此设置不受支持) 
 
-    1 = Non-SMT
+- 1 = 非 SMT
 
-    Values > 1 = the desired number of SMT threads per core. May not exceed the number of physical SMT threads per core.
+- 值 > 1 = 每个内核所需的 SMT 线程数。 不能超过每个核心的物理 SMT 线程数。
 
 若要读取来宾虚拟机的 SMT 设置，请打开具有足够权限的 PowerShell 窗口，然后键入：
 
@@ -139,7 +139,7 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <0, 1, 2>
 
 ### <a name="guest-vms-may-observe-changes-to-cpu-topology-across-vm-mobility-scenarios"></a>来宾 Vm 可能会观察到跨 VM 移动方案的 CPU 拓扑变化
 
-VM 中的 OS 和应用程序可能会在 VM 生命周期事件（如实时迁移或保存和还原操作）前后更改主机和 VM 设置。 在保存和还原 VM 状态的操作过程中，VM 的 HwThreadCountPerCore 设置和实现的值（即 VM 设置和源主机配置的计算组合）都将被迁移。 VM 将继续在目标主机上通过这些设置运行。 VM 关闭并重新启动时，VM 观测到的可用值可能会改变。 这应该是良性的，因为 OS 和应用程序层软件应在其正常启动和初始化代码流中查找 CPU 拓扑信息。 但是，由于在实时迁移或保存/还原操作过程中，将跳过这些启动时间初始化序列，因此，在关闭并重新启动之前，执行这些状态转换的 Vm 可能会观察到最初计算得出的已实现值。  
+VM 中的 OS 和应用程序可能会在 VM 生命周期事件（如实时迁移或保存和还原操作）前后更改主机和 VM 设置。 在保存和还原 VM 状态的操作过程中，VM 的 HwThreadCountPerCore 设置和实现的值 (即，将迁移 VM 设置和源主机配置) 的计算组合。 VM 将继续在目标主机上通过这些设置运行。 VM 关闭并重新启动时，VM 观测到的可用值可能会改变。 这应该是良性的，因为 OS 和应用程序层软件应在其正常启动和初始化代码流中查找 CPU 拓扑信息。 但是，由于在实时迁移或保存/还原操作过程中，将跳过这些启动时间初始化序列，因此，在关闭并重新启动之前，执行这些状态转换的 Vm 可能会观察到最初计算得出的已实现值。
 
 ### <a name="alerts-regarding-non-optimal-vm-configurations"></a>有关非最佳 VM 配置的警报
 
@@ -159,24 +159,24 @@ Get-WinEvent -FilterHashTable @{ProviderName="Microsoft-Windows-Hyper-V-Worker";
 
 ### <a name="impacts-of-guest-smt-configuaration-on-the-use-of-hypervisor-enlightenments-for-guest-operating-systems"></a>来宾 SMT 配置对来宾操作系统的使用虚拟机监控程序自旋的影响
 
-Microsoft 虚拟机管理程序提供了多个自旋或提示，在来宾 VM 中运行的 OS 可以查询并使用来触发优化，例如那些可能会提高性能或在运行时提高各种条件处理的方式虚拟. 最近引入的悟道涉及处理虚拟处理器计划，并对利用 SMT 的侧通道攻击使用 OS 缓解。
+Microsoft 虚拟机管理程序提供了多个自旋或提示，在来宾 VM 中运行的 OS 可以查询并使用它们来触发优化，如那些可能会提高性能或在运行虚拟化时提高各种条件的处理方式。 最近引入的悟道涉及处理虚拟处理器计划，并对利用 SMT 的侧通道攻击使用 OS 缓解。
 
 >[!NOTE]
 >Microsoft 建议主机管理员为来宾 Vm 启用 SMT，以优化工作负荷性能。
 
-下面提供了此来宾悟道的详细信息，但虚拟化主机管理员的关键要点在于是虚拟机应将 HwThreadCountPerCore 配置为与主机的物理 SMT 配置匹配。 这允许虚拟机监控程序报告不存在非结构核心共享。 因此，可能会启用任何需要悟道的支持优化的来宾 OS。 在 Windows Server 2019 上，创建新的 Vm，并保留默认值 HwThreadCountPerCore （0）。 从 Windows Server 2016 主机迁移的旧 Vm 可更新为 Windows Server 2019 配置版本。 完成此操作后，Microsoft 建议设置 HwThreadCountPerCore = 0。  在 Windows Server 2016 上，Microsoft 建议将 HwThreadCountPerCore 设置为与主机配置匹配（通常为2）。
+下面提供了此来宾悟道的详细信息，但虚拟化主机管理员的关键要点在于是虚拟机应将 HwThreadCountPerCore 配置为与主机的物理 SMT 配置匹配。 这允许虚拟机监控程序报告不存在非结构核心共享。 因此，可能会启用任何需要悟道的支持优化的来宾 OS。 在 Windows Server 2019 上，创建新的 Vm，并保留默认值 "HwThreadCountPerCore (0) 。 从 Windows Server 2016 主机迁移的旧 Vm 可更新为 Windows Server 2019 配置版本。 完成此操作后，Microsoft 建议设置 HwThreadCountPerCore = 0。  在 Windows Server 2016 上，Microsoft 建议将 HwThreadCountPerCore 设置为匹配主机配置 (通常为 2) 。
 
 ### <a name="nononarchitecturalcoresharing-enlightenment-details"></a>NoNonArchitecturalCoreSharing 悟道详细信息
 
 从 Windows Server 2016 开始，虚拟机监控程序定义了一个新的悟道，用于描述如何处理来宾操作系统的副总裁计划和位置。 此悟道在[虚拟机监控程序顶级功能规范 v 5.0 c](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/tlfs)中定义。
 
-虚拟机监控程序合成 CPUID 叶0x40000004： 18 [NoNonArchitecturalCoreSharing = 1] 表示虚拟处理器将永远不会与另一个虚拟处理器共享物理内核，并将报告为同级 SMT 的虚拟处理器除外线程. 例如，来宾副总裁决不会在 SMT 线程上运行，同时在同一处理器核心上的同级 SMT 线程上同时运行根副总裁。 仅当运行虚拟化时，这种情况才是可能的，因此表示一个也有严重安全隐患的非体系结构 SMT 行为。 来宾操作系统可以使用 NoNonArchitecturalCoreSharing = 1 作为安全启用优化的指示，这可能有助于避免设置 STIBP 的性能开销。
+虚拟机监控程序合成 CPUID 叶0x40000004： 18 [NoNonArchitecturalCoreSharing = 1] 表示虚拟处理器将永远不会与另一个虚拟处理器共享物理内核，但虚拟处理器将报告为同级 SMT 线程。 例如，来宾副总裁决不会在 SMT 线程上运行，同时在同一处理器核心上的同级 SMT 线程上同时运行根副总裁。 仅当运行虚拟化时，这种情况才是可能的，因此表示一个也有严重安全隐患的非体系结构 SMT 行为。 来宾操作系统可以使用 NoNonArchitecturalCoreSharing = 1 作为安全启用优化的指示，这可能有助于避免设置 STIBP 的性能开销。
 
 在某些配置中，虚拟机监控程序不会指示 NoNonArchitecturalCoreSharing = 1。 例如，如果主机已启用 SMT，并且配置为使用虚拟机监控程序经典计划程序，则 NoNonArchitecturalCoreSharing 将为0。 这可能会阻止启用来宾启用某些优化。 因此，Microsoft 建议使用 SMT 的主机管理员依赖于虚拟机监控程序核心计划程序并确保将虚拟机配置为从主机继承其 SMT 配置，以确保最佳工作负荷性能。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
-安全威胁的发展不断发展。 为了确保客户在默认情况下是安全的，Microsoft 正在更改从 Windows Server 2019 Hyper-v 开始的虚拟机监控程序和虚拟机的默认配置，并为运行 Windows 的客户提供更新的指导和建议服务器 2016 Hyper-v。 虚拟化主机管理员应：
+安全威胁的发展不断发展。 为了确保客户在默认情况下是安全的，Microsoft 正在更改从 Windows Server 2019 Hyper-v 开始的虚拟机监控程序和虚拟机的默认配置，并为运行 Windows Server 2016 Hyper-v 的客户提供更新的指南和建议。 虚拟化主机管理员应：
 
 * 阅读并了解本文档中提供的指南
 

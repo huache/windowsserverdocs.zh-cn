@@ -9,22 +9,22 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 50aba2d8edfe74bf6ca51d7c390f2cfc4ead0048
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b930df382adfc9641175eb4ee3ce531d7eaf8bbc
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961219"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769056"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>在来宾虚拟机群集中使用存储空间直通
 
 > 适用于：Windows Server 2019、Windows Server 2016
 
-如本主题中所述，可以在物理服务器或虚拟机来宾群集的群集上部署存储空间直通（有时称为 S2D）。 这种类型的部署在私有或公有云之上跨一组 Vm 提供虚拟共享存储，以便应用程序高可用性解决方案可用于提高应用程序的可用性。
+如本主题中所述，可以在物理服务器或虚拟机来宾群集的群集上 (有时称为 S2D) 存储空间直通。 这种类型的部署在私有或公有云之上跨一组 Vm 提供虚拟共享存储，以便应用程序高可用性解决方案可用于提高应用程序的可用性。
 
 若要改为将 Azure 共享磁盘用于来宾虚拟机，请参阅[Azure 共享磁盘](/azure/virtual-machines/windows/disks-shared)。
 
-![](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
+![存储空间直通示意图](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
 
 ## <a name="deploying-in-azure-iaas-vm-guest-clusters"></a>在 Azure Iaas VM 来宾群集中部署
 
@@ -41,7 +41,7 @@ ms.locfileid: "86961219"
 
 - 最小2个节点，最多3个节点
 
-- 2-节点部署必须配置见证服务器（云见证服务器或文件共享见证服务器）
+- 2-节点部署必须配置见证服务器 (云见证服务器或文件共享见证) 
 
 - 3个节点部署可以容忍1个节点关闭，并在另一个节点上丢失1个或多个磁盘。  如果2个节点关闭，则虚拟磁盘会处于脱机状态，直到其中一个节点返回为止。
 
@@ -51,13 +51,13 @@ ms.locfileid: "86961219"
 
     - Hyper-v –在虚拟机上配置 AntiAffinityClassNames 以跨节点分离 Vm
 
-    - VMware –通过创建类型为 "单独的虚拟机" 的 DRS 规则来配置 VM-VM 抗相关性规则，以便跨 ESX 主机分隔 Vm。 为与存储空间直通一起使用而提供的磁盘应使用半虚拟 SCSI （PVSCSI）适配器。 有关 Windows Server 的 PVSCSI 支持，请参阅 https://kb.vmware.com/s/article/1010398 。
+    - VMware –通过创建类型为 "单独的虚拟机" 的 DRS 规则来配置 VM-VM 抗相关性规则，以便跨 ESX 主机分隔 Vm。 为与存储空间直通一起使用而提供的磁盘应使用半虚拟 SCSI (PVSCSI) 适配器。 有关 Windows Server 的 PVSCSI 支持，请参阅 https://kb.vmware.com/s/article/1010398 。
 
 - 利用低延迟/高性能存储-需要 Azure 高级存储托管磁盘
 
 - 在未配置缓存设备的情况之下部署平面存储设计
 
-- 每个 VM 提供的最小2个虚拟数据磁盘（VHD/VHDX/VMDK）
+- 最少2个虚拟数据磁盘，每个 VM (VHD/VHDX/VMDK) 
 
     此数字不同于裸机部署，因为虚拟磁盘可以作为不容易出现物理故障的文件来实现。
 

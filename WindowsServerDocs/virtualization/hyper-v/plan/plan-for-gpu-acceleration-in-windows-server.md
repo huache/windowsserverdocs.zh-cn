@@ -8,12 +8,12 @@ ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: c8e0e8798da9cb4a2b3ca317d9632450ade82504
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 0177ce6346741998a0a9f97817e3811561bb02fb
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390094"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768817"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>在 Windows Server 中规划 GPU 加速
 
@@ -25,7 +25,7 @@ ms.locfileid: "86390094"
 
 根据工作负荷，可能需要考虑 GPU 加速。 下面是选择 GPU 加速之前应考虑的事项：
 
-- **应用和桌面远程处理（VDI/DaaS）工作负载**：如果你要使用 Windows Server 生成应用或桌面远程处理服务，请考虑你希望用户运行的应用的目录。 某些类型的应用（例如 CAD/CAM 应用、模拟应用、游戏和渲染/可视化应用）很大程度上依赖于三维渲染，以提供平稳、快速的交互功能。 大多数客户将 Gpu 视为具有这些类型的应用的合理用户体验的必要条件。
+- **应用和桌面远程处理 (VDI/DaaS) 工作负荷**：如果你要使用 Windows Server 生成应用或桌面远程处理服务，请考虑你希望用户运行的应用的目录。 某些类型的应用（例如 CAD/CAM 应用、模拟应用、游戏和渲染/可视化应用）很大程度上依赖于三维渲染，以提供平稳、快速的交互功能。 大多数客户将 Gpu 视为具有这些类型的应用的合理用户体验的必要条件。
 - **远程呈现、编码和可视化工作负荷**：这些面向图形的工作负荷往往非常依赖 GPU 的专用功能，如高效的3d 渲染和帧编码/解码，目的是为了实现成本效益和吞吐量目标。 对于这种类型的工作负荷，单个启用 GPU 的 VM 可能会与多个仅 CPU Vm 的吞吐量相匹配。
 - **HPC 和 ML 工作负荷**：对于高度数据并行计算工作负荷（例如高性能计算和机器学习模型定型或推理），gpu 可显著缩短生成时间、推断时间和定型时间。 或者，它们可能比仅 CPU 体系结构的性能级别更具成本效益。 许多 HPC 和机器学习框架都有启用 GPU 加速的选项;考虑这是否会使你的特定工作负荷受益。
 
@@ -35,14 +35,14 @@ GPU 虚拟化技术在虚拟化环境（通常在虚拟机中）中启用 GPU �
 
 Windows Server 中的 Hyper-v Vm 可使用以下图形虚拟化技术：
 
-- [离散设备分配（DDA）](#discrete-device-assignment-dda)
+- [离散设备分配 (DDA) ](#discrete-device-assignment-dda)
 - [RemoteFX vGPU](#remotefx-vgpu)
 
 除了 VM 工作负载，Windows Server 还支持 Windows 容器中容器化工作负荷的 GPU 加速。 有关详细信息，请参阅[Windows 容器中的 GPU 加速](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/gpu-acceleration)。
 
-## <a name="discrete-device-assignment-dda"></a>离散设备分配（DDA）
+## <a name="discrete-device-assignment-dda"></a>离散设备分配 (DDA) 
 
-离散设备分配（DDA）也称为 GPU 直通，使你能够将一个或多个物理 Gpu 专用于虚拟机。 在 DDA 部署中，虚拟化工作负荷运行在本机驱动程序上，并且通常具有对 GPU 功能的完全访问权限。 DDA 提供最高级别的应用程序兼容性和潜在性能。 DDA 还可以向 Linux Vm 提供 GPU 加速，受支持。
+离散设备分配 (DDA) （也称为 GPU 传递）允许您将一个或多个物理 Gpu 专用于虚拟机。 在 DDA 部署中，虚拟化工作负荷运行在本机驱动程序上，并且通常具有对 GPU 功能的完全访问权限。 DDA 提供最高级别的应用程序兼容性和潜在性能。 DDA 还可以向 Linux Vm 提供 GPU 加速，受支持。
 
 DDA 部署只能加速有限数量的虚拟机，因为每个物理 GPU 最多可为一个 VM 提供加速。 如果要开发的服务的体系结构支持共享的虚拟机，请考虑为每个 VM 托管多个加速的工作负荷。 例如，如果要使用 RDS 构建桌面远程处理服务，则可以利用 Windows Server 的多会话功能在每个 VM 上托管多个用户桌面，从而提高用户规模。 这些用户将分享 GPU 加速的优点。
 
@@ -54,7 +54,7 @@ DDA 部署只能加速有限数量的虚拟机，因为每个物理 GPU 最多�
 ## <a name="remotefx-vgpu"></a>RemoteFX vGPU
 
 > [!NOTE]
-> 出于安全方面的考虑，从2020年7月14日的安全更新开始，所有版本的 Windows 上都默认禁用 RemoteFX vGPU。 若要了解详细信息，请参阅[KB 4570006](https://support.microsoft.com/help/4570006)。
+> 出于安全方面的考虑，从 2020 年 7 月 14 日的安全更新开始，所有版本的 Windows 都会默认禁用 RemoteFX vGPU。 要了解详细信息，请参阅 [KB 4570006](https://support.microsoft.com/help/4570006)。
 
 RemoteFX vGPU 是一种图形虚拟化技术，允许在多个虚拟机之间共享单个物理 GPU。 在 RemoteFX vGPU 部署中，虚拟化的工作负荷运行在 Microsoft 的 RemoteFX 3D 适配器上，用于协调主机和来宾之间的 GPU 处理请求。 RemoteFX vGPU 最适用于不需要专用 GPU 资源的知识工作者和高突发工作负载。 RemoteFX vGPU 只能向 Windows Vm 提供 GPU 加速。
 
@@ -67,17 +67,17 @@ RemoteFX vGPU 是一种图形虚拟化技术，允许在多个虚拟机之间共
 
 规划部署时，请考虑以下功能并支持图形虚拟化技术之间的差异：
 
-|                       | RemoteFX vGPU                                                                       | 离散设备分配                                                          |
-|-----------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| GPU 资源模型    | 专用或共享                                                                 | 仅专用                                                                      |
-| VM 密度            | 高（多个 Vm 的一个或多个 Gpu）                                                 | Low （一个或多个 Gpu 到一个 VM）                                                    |
-| 应用兼容性     | DX 11.1、OpenGL 4.4、OpenCL 1.1                                                     | 供应商（DX 12、OpenGL、CUDA）提供的所有 GPU 功能                       |
-| AVC444                | 默认情况下启用                                                                  | 通过组策略提供                                                      |
-| GPU VRAM              | 最多 1 GB 专用 VRAM                                                           | GPU 支持的 VRAM                                                     |
-| 帧速率            | 最高 30 fps                                                                         | 最高 60 fps                                                                         |
-| 来宾中的 GPU 驱动程序   | RemoteFX 3D 适配器显示驱动程序 (Microsoft)                                      | GPU 供应商驱动程序（NVIDIA、AMD、Intel）                                              |
-| 主机操作系统支持       | Windows Server 2016                                                                 | Windows Server 2016;Windows Server 2019                                            |
-| 来宾操作系统支持      | Windows Server 2012 R2;Windows Server 2016;Windows 7 SP1;Windows 8.1;Windows 10 | Windows Server 2012 R2;Windows Server 2016;Windows Server 2019;Windows 10;Linux |
-| Hypervisor            | Microsoft Hyper-V                                                                   | Microsoft Hyper-V                                                                   |
-| GPU 硬件          | 企业 GPU（如 Nvidia Quadro/GRID 或 AMD FirePro）                         | 企业 GPU（如 Nvidia Quadro/GRID 或 AMD FirePro）                         |
-| 服务器硬件       | 无特殊要求                                                             | 新式服务器，向操作系统公开 IOMMU（通常是 SR-IOV 兼容硬件）              |
+| 说明 | RemoteFX vGPU | 离散设备分配 |
+|--|--|--|
+| GPU 资源模型 | 专用或共享 | 仅专用 |
+| VM 密度 | 高 (多个 Vm 的一个或多个 Gpu)  | Low (一个或多个 Gpu 到一个 VM)  |
+| 应用兼容性 | DX 11.1、OpenGL 4.4、OpenCL 1.1 | 供应商（DX 12、OpenGL、CUDA）提供的所有 GPU 功能 |
+| AVC444 | 默认情况下启用 | 通过组策略提供 |
+| GPU VRAM | 最多 1 GB 专用 VRAM | GPU 支持的 VRAM |
+| 帧速率 | 最高 30 fps | 最高 60 fps |
+| 来宾中的 GPU 驱动程序 | RemoteFX 3D 适配器显示驱动程序 (Microsoft) | GPU 供应商驱动程序 (NVIDIA、AMD、Intel)  |
+| 主机操作系统支持 | Windows Server 2016 | Windows Server 2016;Windows Server 2019 |
+| 来宾操作系统支持 | Windows Server 2012 R2;Windows Server 2016;Windows 7 SP1;Windows 8.1;Windows 10 | Windows Server 2012 R2;Windows Server 2016;Windows Server 2019;Windows 10;Linux |
+| Hypervisor | Microsoft Hyper-V | Microsoft Hyper-V |
+| GPU 硬件 | 企业 GPU（如 Nvidia Quadro/GRID 或 AMD FirePro） | 企业 GPU（如 Nvidia Quadro/GRID 或 AMD FirePro） |
+| 服务器硬件 | 无特殊要求 | 新式服务器，向操作系统公开 IOMMU（通常是 SR-IOV 兼容硬件） |

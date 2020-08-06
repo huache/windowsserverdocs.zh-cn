@@ -1,5 +1,5 @@
 ---
-title: 主机保护者服务疑难解答
+title: 受保护主机的疑难解答
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 80ea38f4-4de6-4f85-8188-33a63bb1cf81
@@ -8,16 +8,16 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 86627f6013592c95f517d77fed6ac5f57eb139b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4c3a2361d7a8d3340d12402abe1ef6c1b3db256f
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856390"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769635"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>受保护主机的疑难解答
 
-> 适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
 本主题介绍在受保护的构造中部署或运行受保护的 Hyper-v 主机时遇到的常见问题的解决方法。
 如果你不确定问题的性质，请首先尝试在 Hyper-v 主机上运行[受保护的构造诊断](guarded-fabric-troubleshoot-diagnostics.md)，以缩小可能的原因。
@@ -48,10 +48,10 @@ Install-WindowsFeature HostGuardian -Restart
 
 AttestationStatus         | 说明
 --------------------------|------------
-已过期                   | 主机以前已通过证明，但颁发的健康证书已过期。 确保主机和 HGS 时间同步。
+已过期                   | 主机之前通过了证明，但颁发给它的健康证书已过期。 请确保主机和 HGS 时间同步。
 InsecureHostConfiguration | 主机未通过证明，因为它不符合在 HGS 上配置的认证策略。 有关详细信息，请参阅 AttestationSubStatus 表。
 NotConfigured             | 主机未配置为使用 HGS 进行证明和密钥保护。 改为将其配置为本地模式。 如果此主机位于受保护的构造中，请使用[get-hgsclientconfiguration](https://technet.microsoft.com/library/dn914494.aspx)为其提供 HGS 服务器的 url。
-Passed（通过）                    | 主机通过证明。
+Passed                    | 主机通过证明。
 TransientError            | 由于网络、服务或其他暂时性错误，上一次认证尝试失败。 重试上一个操作。
 TpmError                  | 由于 TPM 错误，主机无法完成其上一次的认证尝试。 有关详细信息，请参阅 TPM 日志。
 UnauthorizedHost          | 主机未通过证明，因为无权运行受防护的 Vm。 确保主机属于 HGS 信任的安全组，以运行受防护的 Vm。
@@ -60,10 +60,10 @@ UnauthorizedHost          | 主机未通过证明，因为无权运行受防护�
 当**AttestationStatus**报告为**InsecureHostConfiguration**时，将在**AttestationSubStatus**字段中填充一个或多个原因。
 下表说明了 AttestationSubStatus 的可能值，以及如何解决此问题的提示。
 
-AttestationSubStatus       | 这是什么意思？
+AttestationSubStatus       | 含义以及如何操作
 ---------------------------|-------------------------------
 BitLocker                  | 主机的 OS 卷未通过 BitLocker 加密。 若要解决此问题，请在 OS 卷上[启用 bitlocker](https://technet.microsoft.com/itpro/windows/keep-secure/bitlocker-basic-deployment) ，或[在 HGS 上禁用 bitlocker 策略](guarded-fabric-manage-hgs.md#review-attestation-policies)。
-I        | 主机未配置为使用代码完整性策略，或者未使用 HGS 服务器信任的策略。 请确保已配置代码完整性策略，已重新启动主机，并且已将该策略注册到 HGS 服务器。 有关详细信息，请参阅[创建并应用代码完整性策略](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#create-and-apply-a-code-integrity-policy)。
+CodeIntegrityPolicy        | 主机未配置为使用代码完整性策略，或者未使用 HGS 服务器信任的策略。 请确保已配置代码完整性策略，已重新启动主机，并且已将该策略注册到 HGS 服务器。 有关详细信息，请参阅[创建并应用代码完整性策略](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#create-and-apply-a-code-integrity-policy)。
 DumpsEnabled               | 主机配置为允许故障转储或实时内存转储，这是你的 HGS 策略所不允许的。 若要解决此问题，请在主机上禁用转储。
 DumpEncryption             | 主机配置为允许故障转储或实时内存转储，但不加密这些转储。 请在主机上禁用转储或[配置转储加密](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)。
 DumpEncryptionKey          | 该主机配置为允许和加密转储，但不使用 HGS 已知的证书对其进行加密。 若要解决此问题，请在主机上[更新转储加密密钥](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)或将[密钥注册到 HGS](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)。
@@ -74,7 +74,7 @@ Iommu                      | 主机的基于虚拟化的安全功能未配置为
 PagefileEncryption         | 主机上未启用页面文件加密。 若要解决此问题，请运行 `fsutil behavior set encryptpagingfile 1` 以启用页文件加密。 有关详细信息，请参阅[fsutil 行为](https://technet.microsoft.com/library/cc785435.aspx)。
 SecureBoot                 | 此主机上未启用安全启动，或者未使用 Microsoft Secure Boot 模板。 若要解决此问题，请使用 Microsoft Secure Boot 模板[启用安全启动](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/disabling-secure-boot#enable_secure_boot)。
 SecureBootSettings         | 此主机上的 TPM 基线与 HGS 信任的任何一个基线不匹配。 如果通过安装新的硬件或软件更改了 UEFI 启动机构、.DBX 变量、调试标志或自定义安全启动策略，则会发生这种情况。 如果信任此计算机的当前硬件、固件和软件配置，则可以[捕获新的 TPM 基线](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#capture-the-tpm-baseline-for-each-unique-class-of-hardware)，并[将其注册到 HGS](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)。
-TcgLogVerification         | 无法获取或验证 TCG 日志（TPM 基线）。 这可能表示主机的固件、TPM 或其他硬件组件有问题。 如果主机配置为在启动 Windows 之前尝试 PXE 启动，则过期的 Net Boot 程序（NBP）也可能导致此错误。 确保启用 PXE 启动时所有 Nbp 都是最新的。
+TcgLogVerification         | 无法获取或验证 TCG 日志 (的 TPM 基线) 。 这可能表示主机的固件、TPM 或其他硬件组件有问题。 如果主机配置为在启动 Windows 之前尝试 PXE 启动，则过期的 Net Boot 程序 (NBP) 也可能导致此错误。 确保启用 PXE 启动时所有 Nbp 都是最新的。
 VirtualSecureMode          | 主机上未运行基于虚拟化的安全功能。 确保启用 VBS 并且系统满足配置的[平台安全功能](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#validate-enabled-device-guard-hardware-based-security-features)。 有关 VBS 要求的详细信息，请参阅[Device Guard 文档](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)。
 
 ## <a name="modern-tls"></a>新式 TLS

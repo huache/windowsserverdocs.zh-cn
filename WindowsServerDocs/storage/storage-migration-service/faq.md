@@ -1,5 +1,5 @@
 ---
-title: 存储迁移服务常见问题（FAQ）
+title: '存储迁移服务常见问题解答 (FAQ) '
 description: 有关存储迁移服务的常见问题，如从一台服务器迁移到另一台服务器时，从传输中排除的文件。
 author: nedpyle
 ms.author: nedpyle
@@ -8,22 +8,22 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: efe16dd9bdc971b97bc401cf10e14439c46069de
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d5c0644c36d4476eb49797de2f828c4da0f53965
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181733"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769155"
 ---
-# <a name="storage-migration-service-frequently-asked-questions-faq"></a>存储迁移服务常见问题（FAQ）
+# <a name="storage-migration-service-frequently-asked-questions-faq"></a>存储迁移服务常见问题解答 (FAQ) 
 
-本主题包含有关使用[存储迁移服务](overview.md)迁移服务器的常见问题解答（faq）的解答。
+本主题包含有关使用[存储迁移服务](overview.md)迁移服务器的常见问题 (常见问题解答) 的答案。
 
 ## <a name="what-files-and-folders-are-excluded-from-transfers"></a>哪些文件和文件夹已从传输中排除？
 
 存储迁移服务不会传输我们知道可能会干扰 Windows 操作的文件或文件夹。 具体而言，我们不会传输或移动到目标的 PreExistingData 文件夹中：
 
-- Windows，Program Files，Program Files （x86），程序数据，用户
+- Windows、程序文件、程序文件 (x86) 、程序数据、用户
 - $Recycle bin、Recycler、回收、系统卷信息、$UpgDrv $、$SysReset $Windows. ~ BT，$Windows. ~ LS，Windows .old，启动，恢复，文档和设置
 - pagefile.sys，hiberfil.sys，swapfile.sys，winpepge.sys，config.sys，bootsect.exe，bootmgr，bootnxt
 - 源服务器上与目标上的已排除文件夹冲突的任何文件或文件夹。 <br>例如，如果源中有一个 N:\Windows 文件夹，并将其映射到 C：\目标上的卷不会传输（无论它包含什么内容），因为它会干扰目标上的 C：\Windows 系统文件夹。
@@ -52,28 +52,28 @@ ms.locfileid: "87181733"
 
 存储迁移服务迁移 SMB 共享的所有标志、设置和安全性。 存储迁移服务迁移的标志列表包括：
 
-    - 共享状态
-    - 可用性类型
-    - 共享类型
-    - 文件夹枚举模式 *（又称基于访问权限的枚举或 ABE）*
-    - 缓存模式
-    - 租赁模式
-    - Smb 实例
-    - CA 超时
-    - 并发用户限制
-    - 持续可用
-    - 描述
-    - 对数据进行加密
-    - 标识远程处理
-    - 基础结构
-    - 名称
-    - 路径
-    - 范围内
-    - 作用域名称
-    - 安全描述符
-    - 卷影副本
-    - 特殊
-    - 临时
+- 共享状态
+- 可用性类型
+- 共享类型
+- 文件夹枚举模式* (又称基于访问权限的枚举或 ABE) *
+- 缓存模式
+- 租赁模式
+- Smb 实例
+- CA 超时
+- 并发用户限制
+- 持续可用
+- 说明
+- 对数据进行加密
+- 标识远程处理
+- 基础结构
+- 名称
+- 路径
+- 范围内
+- 作用域名称
+- 安全描述符
+- 卷影副本
+- 特殊
+- 临时
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>是否可以将多个服务器合并到一个服务器？
 
@@ -85,7 +85,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持将多个服务
 
 ## <a name="can-i-migrate-previous-file-versions"></a>能否迁移以前的文件版本？
 
-Windows Server 2019 中随附的存储迁移服务版本不支持迁移文件的以前版本（与卷影复制服务一起创建）。 仅迁移当前版本。
+Windows Server 2019 中随附的存储迁移服务版本不支持迁移以前的版本， (通过卷影复制服务) 文件进行迁移。 仅迁移当前版本。
 
 ## <a name="optimizing-inventory-and-transfer-performance"></a>优化库存和传输性能
 
@@ -111,7 +111,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持迁移文件的
 
     FileTransferThreadCount 和 EndpointFileTransferTaskCount 的总和是指存储迁移服务可同时从作业中的一个源节点复制的文件数。 若要添加更多的并行源节点，请创建并运行更多的并发作业。
 
-- **添加内核和内存。**  强烈建议源、orchestrator 和目标计算机至少有两个处理器核心或两个个 vcpu，并且更多可能会显著地有助于清点和传输性能，尤其是在与 FileTransferThreadCount （以上）结合使用时。 当传输的文件大于常用的 Office 格式（千兆字节或更大）时，传输性能将从超过默认2GB 最小值的更多内存中受益。
+- **添加内核和内存。**  强烈建议源、orchestrator 和目标计算机至少有两个处理器核心或两个个 vcpu，并且更多可能会显著地有助于清点和传输性能，尤其是在与上述)  (结合使用时。 传输大于常用办公格式的文件时 (千兆字节或更大的) 传输性能将受益于比默认2GB 最小值更多的内存。
 
 - **创建多个作业。** 创建具有多个服务器源的作业时，将按串行方式联系每个服务器以进行库存、传输和切换。 这意味着每个服务器必须在另一台服务器启动之前完成其阶段。 若要并行运行多个服务器，只需创建多个作业，每个作业只包含一个服务器。 SMS 最多支持100个同时运行的作业，这意味着单个 orchestrator 可以并行化许多 Windows Server 2019 目标计算机。 如果目标计算机是 Windows Server 2016 或 Windows Server 2012 R2，而不是在目标计算机上运行 SMS 代理服务，则我们不建议运行多个并行作业，orchestrator 必须执行所有传输本身，并可能成为瓶颈。 服务器在单个作业中并行运行的功能是我们计划在更高版本的 SMS 中添加的一项功能。
 
@@ -120,7 +120,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持迁移文件的
 - **使用 SMB 3 多通道。** 如果是从 Windows Server 2012 或更高版本的源计算机进行传输，则 SMB 2.x 支持多通道副本，这些副本可以极大地提高文件复制性能。 只要源和目标都具有，此功能便会自动运行：
 
    - 多个网络适配器
-   - 支持接收方缩放（RSS）的一个或多个网络适配器
+   - 支持接收方缩放 (RSS) 的一个或多个网络适配器
    - 使用 NIC 组合配置的更多网络适配器之一
    - 一个或多个支持 RDMA 的网络适配器
 
@@ -136,11 +136,11 @@ Windows Server 2019 中随附的存储迁移服务版本不支持迁移文件的
 
 ## <a name="can-i-migrate-from-ntfs-to-refs"></a>能否从 NTFS 迁移到 REFS？
 
-Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移到 REFS 文件系统。 你可以从 NTFS 迁移到 NTFS，并将 REFS 迁移到 ReFS。 这是设计使然，因为功能、元数据和其他引用不会从 NTFS 复制的其他方面存在差异。 ReFS 旨在用作应用程序工作负荷文件系统，而不是常规文件系统。 有关详细信息，请参阅[复原文件系统（ReFS）概述](../refs/refs-overview.md)
+Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移到 REFS 文件系统。 你可以从 NTFS 迁移到 NTFS，并将 REFS 迁移到 ReFS。 这是设计使然，因为功能、元数据和其他引用不会从 NTFS 复制的其他方面存在差异。 ReFS 旨在用作应用程序工作负荷文件系统，而不是常规文件系统。 有关详细信息，请参阅[复原文件系统 (ReFS) 概述](../refs/refs-overview.md)
 
 ## <a name="can-i-move-the-storage-migration-service-database"></a>能否移动存储迁移服务数据库？
 
-存储迁移服务使用默认情况下在隐藏的 c:\programdata\microsoft\storagemigrationservice 文件夹中安装的可扩展存储引擎（ESE）数据库。 此数据库将在添加作业和传输完成时增长，并在迁移数百万个文件后，如果不删除作业，则会占用大量的驱动器空间。 如果数据库需要移动，请执行以下步骤：
+存储迁移服务使用可扩展的存储引擎 (默认情况下在隐藏的 c:\programdata\microsoft\storagemigrationservice 文件夹中安装的 ESE) 数据库。 此数据库将在添加作业和传输完成时增长，并在迁移数百万个文件后，如果不删除作业，则会占用大量的驱动器空间。 如果数据库需要移动，请执行以下步骤：
 
 1. 停止 orchestrator 计算机上的 "存储迁移服务" 服务。
 2. 取得文件夹的所有权 `%programdata%/Microsoft/StorageMigrationService`

@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: ebb5f9a0ca9c50a5e5357e3dd2c755095da98d11
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: bcae278caf088bc544fb6686450eacdfdf88237b
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203539"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769595"
 ---
 # <a name="virtual-machine-resource-controls"></a>虚拟机资源控制
 
@@ -28,12 +28,12 @@ ms.locfileid: "83203539"
 
 ## <a name="managing-cpu-groups"></a>管理 CPU 组
 
-CPU 组通过 Hyper-v 主机计算服务或 HCS 进行管理。 Microsoft 虚拟化团队的博客[介绍了主机计算服务（HCS）](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)的发布，其中提供了有关 HCS 及其 GENESIS、HCS api 的链接等内容的很好的说明。
+CPU 组通过 Hyper-v 主机计算服务或 HCS 进行管理。 Microsoft 虚拟化团队的博客提供了有关 HCS 的详细说明，其中 genesis、HCS Api 的链接以及更多内容，请访问 Microsoft 虚拟化团队的博客，其中[介绍了主机计算服务 (HCS) ](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)。
 
 >[!NOTE]
 >只有 HCS 可以用于创建和管理 CPU 组;Hyper-v 管理器 applet、WMI 和 PowerShell 管理接口不支持 CPU 组。
 
-Microsoft 在[Microsoft 下载中心](https://go.microsoft.com/fwlink/?linkid=865968)上提供了一个命令行实用程序 cpugroups，它使用 HCS 界面来管理 CPU 组。  此实用程序还可以显示主机的 CPU 拓扑。
+Microsoft 在[Microsoft 下载中心](https://go.microsoft.com/fwlink/?linkid=865968)提供了一个命令行实用程序 cpugroups.exe，该程序使用 HCS 界面来管理 CPU 组。  此实用程序还可以显示主机的 CPU 拓扑。
 
 ## <a name="how-cpu-groups-work"></a>CPU 组的工作方式
 
@@ -41,19 +41,19 @@ Hyper-v 虚拟机监控程序使用计算的 CPU 组上限来强制对 CPU 组�
 
 CPU 组上限计算为 G = *n* x *C*，其中：
 
-    *G* is the amount of host LP we'd like to assign to the group
-    *n* is the total number of logical processors (LPs) in the group
-    *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system's total compute capacity
+- *G*是要分配给组的主机 LP 数量
+- *n*是组中 (LPs) 的逻辑处理器总数
+- *C*是最大 CPU 分配量，即组所需的服务类别，以系统总计算容量的百分比表示
 
-例如，假设某个 CPU 组配置有4个逻辑处理器（LPs），上限为50%。
+例如，假设有4个逻辑处理器的 CPU 组 (LPs) ，上限为50%。
 
-    G = n * C
-    G = 4 * 50%
-    G = 2 LP's worth of CPU time for the entire group
+- G = n * C
+- G = 4 * 50%
+- G = 2 LP 为整个组提供 CPU 时间
 
 在此示例中，CPU 组 G 分配了2个 LP 的 CPU 时间。
 
-请注意，无论绑定到组的虚拟机或虚拟处理器的数量是多少，无论分配给 CPU 组的虚拟机的状态（例如，关闭或启动）如何，组 cap 都适用。 因此，绑定到同一个 CPU 组的每个 VM 都将收到该组的总 CPU 分配，这将更改与绑定到 CPU 组的 Vm 的数目。 因此，由于 Vm 是来自 CPU 组的绑定或未绑定 Vm，因此总体 CPU 组上限必须为重新调整，并设置为维护所需的每 VM 上限。 VM 主机管理员或虚拟化管理软件层负责根据需要管理组帽以实现所需的每个 VM 的 CPU 资源分配。
+请注意，无论绑定到组的虚拟机或虚拟处理器的数量是多少，无论状态 (（例如，关闭或) 启动分配给 CPU 组的虚拟机）的状态如何，组 cap 都适用。 因此，绑定到同一个 CPU 组的每个 VM 都将收到该组的总 CPU 分配，这将更改与绑定到 CPU 组的 Vm 的数目。 因此，由于 Vm 是来自 CPU 组的绑定或未绑定 Vm，因此总体 CPU 组上限必须为重新调整，并设置为维护所需的每 VM 上限。 VM 主机管理员或虚拟化管理软件层负责根据需要管理组帽以实现所需的每个 VM 的 CPU 资源分配。
 
 ## <a name="example-classes-of-service"></a>服务的示例类
 
@@ -70,9 +70,9 @@ CPU 组上限计算为 G = *n* x *C*，其中：
 
 若要创建 "B" 层，主机 adminstartor 会将组上限设置为50%：
 
-    G = n * C
-    G = 8 * 50%
-    G = 4 LP's worth of CPU time for the entire group
+- G = n * C
+- G = 8 * 50%
+- G = 适用于整个组的 4 LP LP CPU 时间
 
 主机管理员添加了一个 "B" 层 VM。
 此时，"B" 层 VM 最多可使用50% 的主机 CPU，或在我们的示例系统中相当于 4 LPs。
@@ -173,7 +173,7 @@ LpIndex NodeNumber PackageId CoreId RootVpIndex
 
 此处列出了当前主机上的所有 CPU 组、其 GroupId、组的 CPU 上限，以及分配给该组的 LPs 的索引。
 
-请注意，有效的 CPU 上限值介于 [0，65536] 范围内，这些值表示以百分比表示的组上限（例如 32768 = 50%）。
+请注意，有效的 CPU 上限值介于 [0，65536] 范围内，这些值表示以百分比表示的组上限 (例如 32768 = 50% ) 。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetGroups

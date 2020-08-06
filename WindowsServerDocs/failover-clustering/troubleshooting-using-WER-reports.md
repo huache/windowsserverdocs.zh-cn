@@ -1,23 +1,23 @@
 ---
-title: 使用 Windows 错误报告对故障转移群集进行故障排除
+title: 使用 Windows 错误报告排查故障转移群集问题
 description: 使用 WER 报表对故障转移群集进行故障排除，并提供有关如何收集报表和诊断常见问题的特定详细信息。
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
-ms.author: vpetter
-author: dcuomo
+ms.author: johnmar
+author: JohnMarlin-MSFT
 ms.date: 03/27/2018
-ms.openlocfilehash: e8db88dc4fe3ad9176299c5b423a7aac6093f254
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f888b7f49c2bf97eb42070a6028b137aeb730406
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827350"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768534"
 ---
-# <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>使用 Windows 错误报告对故障转移群集进行故障排除 
+# <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>使用 Windows 错误报告排查故障转移群集问题
 
 > 适用于： Windows Server 2019、Windows Server 2016、Windows Server
 
-Windows 错误报告（WER）是基于事件的灵活的反馈基础结构，旨在帮助高级管理员或第3层支持收集有关 Windows 可以检测到的硬件和软件问题的信息，将该信息报告给 Microsoft，并为用户提供任何可用的解决方案。 本[参考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting cmdlet 的说明和语法。
+Windows 错误报告 (WER) 是基于事件的灵活反馈基础结构，旨在帮助高级管理员或第3层支持收集有关 Windows 可以检测到的硬件和软件问题的信息、向 Microsoft 报告信息并为用户提供任何可用的解决方案。 本[参考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting cmdlet 的说明和语法。
 
 下面提供的故障排除信息将有助于排查已经升级的高级问题，并可能需要将数据发送给 Microsoft 进行会审。
 
@@ -36,7 +36,7 @@ Windows 错误报告（WER）是基于事件的灵活的反馈基础结构，旨
 PS C:\Windows\system32> (get-cluster).EnabledEventLogs
 ```
 
-下面是输出示例：
+这是一个输出示例：
 ```
 Microsoft-Windows-Hyper-V-VmSwitch-Diagnostic,4,0xFFFFFFFD
 Microsoft-Windows-SMBDirect/Debug,4
@@ -44,7 +44,7 @@ Microsoft-Windows-SMBServer/Analytic
 Microsoft-Windows-Kernel-LiveDump/Analytic
 ```
 
-**EnabledEventLogs**属性是一个多字符串，其中每个字符串的格式为：**通道名称、日志级别、关键字掩码**。 **关键字掩码**可以是十六进制（前缀0x）、八进制（前缀0）或十进制数（无前缀）号。 例如，若要向列表中添加新的事件通道并配置**日志级别**和**关键字掩码**，可以运行：
+**EnabledEventLogs**属性是一个多字符串，其中每个字符串的格式为：**通道名称、日志级别、关键字掩码**。 **关键字掩码**可以是十六进制 (前缀 0x) 、八进制 (前缀 0) 或十进制数 (没有前缀) 号。 例如，若要向列表中添加新的事件通道并配置**日志级别**和**关键字掩码**，可以运行：
 
 ```powershell
 (get-cluster).EnabledEventLogs += "Microsoft-Windows-WinINet/Analytic,2,321"
@@ -106,7 +106,7 @@ Windows 错误报告报表存储在 **%ProgramData%\Microsoft\Windows\WER**中�
 PS C:\Windows\system32> dir c:\ProgramData\Microsoft\Windows\WER\ReportQueue
 ```
 
-下面是输出示例：
+这是一个输出示例：
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -143,7 +143,7 @@ Directory of C:\ProgramData\Microsoft\Windows\WER\ReportQueue
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive
 ```
 
-下面是输出示例：
+这是一个输出示例：
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -171,7 +171,7 @@ Windows 错误报告提供了很多用于自定义问题报告体验的设置。
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_b46b8883d892cfa8a26263afca228b17df8133d_00000000_cab_08abc39c
 ```
 
-下面是输出示例：
+这是一个输出示例：
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -228,7 +228,7 @@ Volume Serial Number is 4031-E397
 接下来，从该文件的**wer**文件开始会审，这会告诉你失败的内容。
 
 ```
-EventType=Failover_clustering_resource_error 
+EventType=Failover_clustering_resource_error
 <skip>
 Sig[0].Name=ResourceType
 Sig[0].Value=Physical Disk
@@ -258,7 +258,7 @@ DynamicSig[29].Value=2017//12//12-22:38:05.485
 PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQuery
 ```
 
-下面是输出示例：
+这是一个输出示例：
 ```
 <QueryList><Query Id="0"><Select Path="Microsoft-Windows-Kernel-PnP/Configuration">*[System[TimeCreated[timediff(@SystemTime) &lt;= 600000]]]</Select></Query></QueryList>
 <QueryList><Query Id="0"><Select Path="Microsoft-Windows-ReFS/Operational">*[System[TimeCreated[timediff(@SystemTime) &lt;= 600000]]]</Select></Query></QueryList>
@@ -299,20 +299,20 @@ PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQ
 
 ![按提供程序分组的日志](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-若要确定磁盘出现故障的原因，请导航到**FailoverClustering/** diagnostics 下的事件和**FailoverClustering/DiagnosticVerbose**。 然后运行以下查询： **EventData ["LogString"] 包含 "Cluster Disk 10"** 。  这会显示以下输出：
+若要确定磁盘出现故障的原因，请导航到**FailoverClustering/** diagnostics 下的事件和**FailoverClustering/DiagnosticVerbose**。 然后运行以下查询： **EventData ["LogString"] 包含 "Cluster Disk 10"**。  这会显示以下输出：
 
 ![正在运行的日志查询的输出](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
 
 ### <a name="physical-disk-timed-out"></a>物理磁盘超时
 
-若要诊断此问题，请导航到 WER 报表文件夹。 此文件夹包含**RHS** **、appcmd.exe 以及承载**"**smphost**" 服务的进程的日志文件和转储文件，如下所示：
+若要诊断此问题，请导航到 WER 报表文件夹。 此文件夹包含**RHS**、 **clussvc.exe**和承载 "**smphost**" 服务的进程的日志文件和转储文件，如下所示：
 
 ```powershell
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_64acaf7e4590828ae8a3ac3c8b31da9a789586d4_00000000_cab_1d94712e
 ```
 
-下面是输出示例：
+这是一个输出示例：
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -395,7 +395,7 @@ DynamicSig[29].Name=HangThreadId
 DynamicSig[29].Value=10008
 ```
 
-在转储中收集的服务和进程的列表由以下属性控制： **PS C:\Windows\system32 > （ClusterResourceType-Name "物理磁盘"）。DumpServicesSmphost**
+在转储中收集的服务和进程的列表由以下属性控制： **PS C:\Windows\system32> (ClusterResourceType-Name "物理磁盘" ) 。DumpServicesSmphost**
 
 若要确定挂起的原因，请打开 dum 文件。 然后运行以下查询： **EventLog. EventData ["LogString"] 包含 "Cluster Disk 10"** ，这将为您显示以下输出：
 
@@ -406,9 +406,9 @@ DynamicSig[29].Value=10008
 ```
 # 21  Id: 1d98.2718 Suspend: 0 Teb: 0000000b`f1f7b000 Unfrozen
 # Child-SP          RetAddr           Call Site
-00 0000000b`f3c7ec38 00007ff8`455d25ca ntdll!ZwDelayExecution+0x14 
-01 0000000b`f3c7ec40 00007ff8`2ef19710 KERNELBASE!SleepEx+0x9a 
-02 0000000b`f3c7ece0 00007ff8`3bdf7fbf clusres!ResHardDiskOnlineOrTurnOffMMThread+0x2b0 
-03 0000000b`f3c7f960 00007ff8`391eed34 resutils!ClusWorkerStart+0x5f 
+00 0000000b`f3c7ec38 00007ff8`455d25ca ntdll!ZwDelayExecution+0x14
+01 0000000b`f3c7ec40 00007ff8`2ef19710 KERNELBASE!SleepEx+0x9a
+02 0000000b`f3c7ece0 00007ff8`3bdf7fbf clusres!ResHardDiskOnlineOrTurnOffMMThread+0x2b0
+03 0000000b`f3c7f960 00007ff8`391eed34 resutils!ClusWorkerStart+0x5f
 04 0000000b`f3c7f9d0 00000000`00000000 vfbasics+0xed34
 ```

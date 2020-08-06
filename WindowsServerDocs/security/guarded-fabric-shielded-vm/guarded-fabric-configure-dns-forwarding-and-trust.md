@@ -7,19 +7,19 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 6d6ad10dacf9c667069ecd43f38473a3f20bc781
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e8ecabe9f98bda1442fb127198be665b693c853e
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856850"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769267"
 ---
 # <a name="configure-dns-forwarding-in-the-hgs-domain-and-a-one-way-trust-with-the-fabric-domain"></a>使用 fabric 域在 HGS 域和单向信任中配置 DNS 转发
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
 >[!IMPORTANT]
->从 Windows Server 2019 开始，AD 模式已弃用。 对于不可能进行 TPM 证明的环境，请配置[主机密钥证明](guarded-fabric-initialize-hgs-key-mode.md)。 主机密钥证明向 AD 模式提供类似的保障，并更易于设置。 
+>从 Windows Server 2019 开始，AD 模式已弃用。 对于不可能进行 TPM 证明的环境，请配置[主机密钥证明](guarded-fabric-initialize-hgs-key-mode.md)。 主机密钥证明向 AD 模式提供类似的保障，并更易于设置。
 
 使用以下步骤设置 DNS 转发并与 fabric 域建立单向信任。 这些步骤允许 HGS 查找构造域控制器并验证 Hyper-v 主机的组成员身份。
 
@@ -31,11 +31,13 @@ ms.locfileid: "80856850"
 
 2.  若要创建单向林信任，请在提升的命令提示符下运行以下命令：
 
-    将 `bastion.local` 替换为 HGS 域的名称，并将 `fabrikam.com` 替换为 fabric 域的名称。 为 fabric 域的管理员提供密码。
+    将替换 `bastion.local` 为 HGS 域的名称，将替换为 `fabrikam.com` fabric 域的名称。 为 fabric 域的管理员提供密码。
 
-        netdom trust bastion.local /domain:fabrikam.com /userD:fabrikam.com\Administrator /passwordD:<password> /add
+    ```powershell
+    netdom trust bastion.local /domain:fabrikam.com /userD:fabrikam.com\Administrator /passwordD:<password> /add
+    ```
 
-## <a name="next-step"></a>下一步 
+## <a name="next-step"></a>后续步骤
 
 > [!div class="nextstepaction"]
 > [配置 HTTPS](guarded-fabric-configure-hgs-https.md)

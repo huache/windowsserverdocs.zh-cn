@@ -8,30 +8,30 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: d131643db4dfb179f5bdb8bcbad9f003d1ae61e1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fb744d2be9cc0002158deb0d9665a354ef23851a
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856890"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769355"
 ---
 # <a name="configure-additional-hgs-nodes"></a>配置其他 HGS 节点
 
->适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
 在生产环境中，应在高可用性群集中设置 HGS，以确保即使在 HGS 节点出现故障的情况下，也可以打开受防护的 Vm。 对于测试环境，不需要辅助 HGS 节点。
 
 使用其中一种方法添加 HGS 节点，最适合自己的环境。
 
-|                |                         |                              | 
-|----------------|-------------------------|------------------------------|
-|新建 HGS 林  | [使用 PFX 文件](#dedicated-hgs-forest-with-pfx-certificates) | [使用证书指纹](#dedicated-hgs-forest-with-certificate-thumbprints) |
-|现有堡垒林 |  [使用 PFX 文件](#existing-bastion-forest-with-pfx-certificates) | [使用证书指纹](#existing-bastion-forest-with-certificate-thumbprints) |
+| 环境 | 选项 1 | 方法 2 |
+|--|--|--|
+| 新建 HGS 林 | [使用 PFX 文件](#dedicated-hgs-forest-with-pfx-certificates) | [使用证书指纹](#dedicated-hgs-forest-with-certificate-thumbprints) |
+| 现有堡垒林 | [使用 PFX 文件](#existing-bastion-forest-with-pfx-certificates) | [使用证书指纹](#existing-bastion-forest-with-certificate-thumbprints) |
 
 ## <a name="prerequisites"></a>先决条件
 
-请确保每个附加节点： 
-- 与主节点具有相同的硬件和软件配置 
+请确保每个附加节点：
+- 与主节点具有相同的硬件和软件配置
 - 连接到与其他 HGS 服务器相同的网络
 - 可以按其 DNS 名称解析其他 HGS 服务器
 
@@ -42,25 +42,25 @@ ms.locfileid: "80856890"
 
 ### <a name="promote-the-hgs-node-to-a-domain-controller"></a>将 HGS 节点提升为域控制器
 
-[!INCLUDE [Promote to a domain controller](../../../includes/guarded-fabric-promote-domain-controller.md)] 
+[!INCLUDE [Promote to a domain controller](../../../includes/guarded-fabric-promote-domain-controller.md)]
 
 ### <a name="initialize-the-hgs-server"></a>初始化 HGS 服务器
 
-[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)] 
+[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)]
 
 ## <a name="dedicated-hgs-forest-with-certificate-thumbprints"></a>具有证书指纹的专用 HGS 林
- 
+
 1. 将 HGS 节点提升为域控制器
 2. 初始化 HGS 服务器
 3. 安装证书的私钥
 
 ### <a name="promote-the-hgs-node-to-a-domain-controller"></a>将 HGS 节点提升为域控制器
 
-[!INCLUDE [Promote to a domain controller](../../../includes/guarded-fabric-promote-domain-controller.md)] 
+[!INCLUDE [Promote to a domain controller](../../../includes/guarded-fabric-promote-domain-controller.md)]
 
 ### <a name="initialize-the-hgs-server"></a>初始化 HGS 服务器
 
-[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)] 
+[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)]
 
 ### <a name="install-the-private-keys-for-the-certificates"></a>安装证书的私钥
 
@@ -75,15 +75,15 @@ ms.locfileid: "80856890"
 ### <a name="join-the-node-to-the-existing-domain"></a>将节点加入到现有域中
 
 1. 确保该节点上至少有一个 NIC 配置为使用第一个 HGS 服务器上的 DNS 服务器。
-2. 将新的 HGS 节点加入到与第一个 HGS 节点相同的域中。 
+2. 将新的 HGS 节点加入到与第一个 HGS 节点相同的域中。
 
 ### <a name="grant-the-machine-rights-to-retrieve-gmsa-password-and-run-install-adserviceaccount"></a>授予计算机检索 gMSA 密码的权限，并运行 Uninstall-adserviceaccount
 
-[!INCLUDE [Grant the machine rights to retrieve the group MSA](../../../includes/guarded-fabric-grant-machine-rights-to-retrieve-gmsa.md)] 
+[!INCLUDE [Grant the machine rights to retrieve the group MSA](../../../includes/guarded-fabric-grant-machine-rights-to-retrieve-gmsa.md)]
 
 ### <a name="initialize-the-hgs-server"></a>初始化 HGS 服务器
 
-[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)] 
+[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)]
 
 ## <a name="existing-bastion-forest-with-certificate-thumbprints"></a>具有证书指纹的现有堡垒林
 
@@ -95,15 +95,15 @@ ms.locfileid: "80856890"
 ### <a name="join-the-node-to-the-existing-domain"></a>将节点加入到现有域中
 
 1. 确保该节点上至少有一个 NIC 配置为使用第一个 HGS 服务器上的 DNS 服务器。
-2. 将新的 HGS 节点加入到与第一个 HGS 节点相同的域中。 
+2. 将新的 HGS 节点加入到与第一个 HGS 节点相同的域中。
 
 ### <a name="grant-the-machine-rights-to-retrieve-gmsa-password-and-run-install-adserviceaccount"></a>授予计算机检索 gMSA 密码的权限，并运行 Uninstall-adserviceaccount
 
-[!INCLUDE [Grant the machine rights to retrieve the group MSA](../../../includes/guarded-fabric-grant-machine-rights-to-retrieve-gmsa.md)] 
+[!INCLUDE [Grant the machine rights to retrieve the group MSA](../../../includes/guarded-fabric-grant-machine-rights-to-retrieve-gmsa.md)]
 
 ### <a name="initialize-the-hgs-server"></a>初始化 HGS 服务器
 
-[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)] 
+[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)]
 
 将第一个 HGS 服务器中的加密和签名证书复制到此节点最多需要10分钟时间。
 
@@ -114,9 +114,9 @@ ms.locfileid: "80856890"
 ## <a name="configure-hgs-for-https-communications"></a>为 HTTPS 通信配置 HGS
 
 如果要使用 SSL 证书保护 HGS 终结点，则必须在此节点上以及 HGS 群集中的每个其他节点上配置 SSL 证书。
-SSL 证书*不会*由 HGS 复制，并且不需要为每个节点使用相同的密钥（即每个节点都有不同的 SSL 证书）。
+SSL 证书*不会*由 HGS 复制，并且无需为每个节点使用相同的密钥 (即，对于每个节点) ，你可以使用不同的 SSL 证书。
 
-请求 SSL 证书时，请确保群集完全限定的域名（如 `Get-HgsServer`输出中所示）是证书的使用者公用名，或者作为使用者备用 DNS 名称包含在内。
+请求 SSL 证书时，请确保群集完全限定的域名 (如) 的输出中所示的 `Get-HgsServer` 证书的使用者公用名，或者作为使用者备用 DNS 名称包含在内。
 从证书颁发机构获取证书后，可以将 HGS 配置为使用[HgsServer](https://technet.microsoft.com/itpro/powershell/windows/hgsserver/set-hgsserver)。
 
 ```powershell
@@ -139,10 +139,10 @@ HGS 将始终公开用于通信的 HTTP 和 HTTPS 端口。
 
 1. [清除 "HGS 配置"](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration)。
 
-   这会从群集中删除节点并卸载证明和密钥保护服务。 
-   如果这是群集中的最后一个节点，则需要强制要求删除最后一个节点并销毁 Active Directory 中的群集。 
+   这会从群集中删除节点并卸载证明和密钥保护服务。
+   如果这是群集中的最后一个节点，则需要强制要求删除最后一个节点并销毁 Active Directory 中的群集。
 
-   如果在堡垒林中部署了 HGS （默认值），则这是唯一的步骤。 
+   如果在堡垒林中部署了 HGS (默认) 为唯一步骤。
    你可以选择性地从域中脱离计算机，并从 Active Directory 中删除 gMSA 帐户。
 
 2. 如果 HGS 创建了自己的域，则还应[卸载 hgs](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration)来脱离域并降级域控制器。

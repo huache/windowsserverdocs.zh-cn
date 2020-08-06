@@ -10,12 +10,12 @@ ms.date: 06/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: 概述存储空间直通，这是 Windows Server 的一项功能，它使你能够使用内部存储将服务器加入软件定义的存储解决方案。
 ms.localizationpriority: medium
-ms.openlocfilehash: d2568f068495ec56936c7f14bd286daf77b57bd4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4fb8700935306cbd007ab4afc61cf3eb54227130
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966499"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768942"
 ---
 # <a name="storage-spaces-direct-overview"></a>存储空间直通概述
 
@@ -27,40 +27,40 @@ ms.locfileid: "86966499"
 
 有关存储空间的其他应用程序，如共享 SAS 群集和独立服务器，请参阅[存储空间概述](overview.md)。 如果正在查找有关在 Windows 10 电脑上使用存储空间的信息，请参阅[windows 10 中的存储空间](https://support.microsoft.com/help/12438/windows-10-storage-spaces)。
 
-|       |       |
-|   -   |   -   |
+| 说明 | 文档 |
+|--|--|
 | **了解**<br><ul><li>概述（你目前位于此位置）</li><li>[了解缓存](understand-the-cache.md)</li><li>[容错和存储效率](storage-spaces-fault-tolerance.md)<li>[驱动器对称注意事项](drive-symmetry-considerations.md)</li><li>[了解并监视存储重新同步](understand-storage-resync.md)</li><li>[了解群集和池仲裁](understand-quorum.md)</li><li>[群集集](cluster-sets.md)</li> | **计划**<br><ul><li>[硬件要求](storage-spaces-direct-hardware-requirements.md)</li><li>[使用 CSV 内存中读取缓存](csv-cache.md)</li><li>[选择驱动器](choosing-drives.md)</li><li>[规划卷](plan-volumes.md)</li><li>[使用来宾 VM 群集](storage-spaces-direct-in-vm.md)</li><li>[灾难恢复](storage-spaces-direct-disaster-recovery.md)</li> |
 | **部署**<br><ul><li>[部署存储空间直通](deploy-storage-spaces-direct.md)</li><li>[创建卷](create-volumes.md)</li><li>[嵌套复原](nested-resiliency.md)</li><li>[配置仲裁](../../failover-clustering/manage-cluster-quorum.md)</li><li>[将存储空间直通群集升级为 Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[了解和部署永久性内存](deploy-pmem.md)</li> | **管理**<br><ul><li>[使用 Windows Admin Center 管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[添加服务器或驱动器](add-nodes.md)</li><li>[使服务器脱机以进行维护](maintain-servers.md)</li><li>[删除服务器](remove-servers.md)</li><li>[扩展卷](resize-volumes.md)</li><li>[删除卷](delete-volumes.md)</li><li>[更新驱动器固件](../update-firmware.md)</li><li>[性能历史记录](performance-history.md)</li><li>[分隔卷的分配](delimit-volume-allocation.md)</li><li>[在超聚合群集上使用 Azure Monitor](configure-azure-monitor.md)</li> |
-| **疑难解答**<br><ul><li>[故障排除方案](troubleshooting-storage-spaces.md)</li><li>[运行状况和运行状态故障排除](storage-spaces-states.md)</li><li>[通过存储空间直通收集诊断数据](data-collection.md)</li><li>[存储类内存运行状况管理](Storage-class-memory-health.md)</li> | **最新博客文章**<br><ul><li>[13700000 IOPS 与存储空间直通：超聚合基础结构的新行业记录](https://techcommunity.microsoft.com/t5/storage-at-microsoft/the-new-hci-industry-record-13-7-million-iops-with-windows/ba-p/428314)</li><li>[Windows Server 2019 中的超聚合基础结构-立即开始倒计时时钟！](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[Windows Server 峰会发布五大大广告](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[10000存储空间直通分类和计数 .。。](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185)</li> |
+| **疑难解答**<br><ul><li>[故障排除方案](troubleshooting-storage-spaces.md)</li><li>[运行状况和运行状态故障排除](storage-spaces-states.md)</li><li>[通过存储空间直通收集诊断数据](data-collection.md)</li><li>[存储类内存运行状况管理](Storage-class-memory-health.md)</li> | **最新博客文章**<br><ul><li>[13700000 IOPS 与存储空间直通：超聚合基础结构的新行业记录](https://techcommunity.microsoft.com/t5/storage-at-microsoft/the-new-hci-industry-record-13-7-million-iops-with-windows/ba-p/428314)</li><li>[Windows Server 2019 中的超聚合基础结构-立即开始倒计时时钟！](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[Windows Server 峰会发布五大大广告](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[10000存储空间直通分类和计数 .。。](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185)</li></ul> |
 
 ## <a name="videos"></a>视频
 
-**快速视频概述（5分钟）**
+**快速视频概述 (5 分钟) **
 
 > [!Video https://www.youtube-nocookie.com/embed/raeUiNtMk0E]
 
-**Microsoft Ignite 2018 （1小时）的存储空间直通**
+**Microsoft Ignite 2018 (1 小时存储空间直通) **
 
 > [!Video https://www.youtube-nocookie.com/embed/5kaUiW3qo30]
 
-**Microsoft Ignite 2017 （1小时）的存储空间直通**
+**Microsoft Ignite 2017 (1 小时存储空间直通) **
 
 > [!Video https://www.youtube-nocookie.com/embed/YDr2sqNB-3c]
 
-**在 Microsoft Ignite 2016 （1小时）内启动事件**
+**在 Microsoft Ignite 2016 (1 小时内启动事件) **
 
 > [!Video https://www.youtube-nocookie.com/embed/LK2ViRGbWs]
 
 ## <a name="key-benefits"></a>主要优点
 
-|       |       |
-|   -   |   -   |
-| ![简单](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png)   | **简易.** 在 15 分钟内即可从运行 Windows Server 2016 的行业标准服务器转到第一个存储空间直通群集。 对于 System Center 用户而言，部署不仅仅只是一个复选框。       |
-| ![无与伦比的性能](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png)   | **无可匹敌的性能。** 无论是全闪存还是混合存储空间直通，都可以轻松超越[每台服务器 150,000 次混合 4K 随机 IOPS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) 的限制，并且具有较高的一致性和较低的延迟，所有这一切均归功于其嵌入虚拟机监控程序的体系结构、内置的读/写缓存，以及对直接安装在 PCIe 总线上的尖端 NVMe 驱动器的支持。      |
-| ![容错](media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png)   | **容错。** 具有内置的复原功能，可在不影响可用性的情况下处理驱动器、服务器或组件故障。 大规模部署还可以配置[机箱和机架容错](../../failover-clustering/fault-domains.md)。 如果硬件发生故障，只需更换发生故障的硬件，而软件会自行复原，不需要复杂的管理步骤。       |
-| ![资源效率](media/storage-spaces-direct-in-windows-server-2016/efficiency-icon.png)   | **资源效率。** 擦除编码最多可提高 2.4 倍的存储效率，它采用独特的创新（如本地重建代码和 ReFS 实时层），使效率优势扩展到了硬盘驱动器及热/冷混合工作负载，同时最大程度降低了 CPU 使用率，为最需要的设备（即 VM）提供资源。       |
-| ![可管理性](media/storage-spaces-direct-in-windows-server-2016/manageability-icon.png)   | **可管理性**。 使用[存储 QoS 控件](../storage-qos/storage-qos-overview.md)，使过于繁忙的 VM 保持符合每台 VM 的 IOPS 上限和下限。 [运行状况服务](../../failover-clustering/health-service-overview.md)提供连续的内置监视和警报，并使用新的 API，可在群集范围内轻松收集大量性能和容量指标。      |
-| ![可伸缩性](media/storage-spaces-direct-in-windows-server-2016/scalability-icon.png)   | **可伸缩性**。 可扩展到 16 台服务器以及超过 400 个驱动器，每个群集拥有最高 1 PB (1,000 TB) 的存储。 只需添加驱动器或添加更多服务器即可实现扩展，存储空间直通会自动载入新的驱动器，并开始使用它们。 存储效率和性能如预期大幅提升。       |
+| 映像 | 说明 |
+|--|--|
+| ![简单](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png) | **简易.** 在 15 分钟内即可从运行 Windows Server 2016 的行业标准服务器转到第一个存储空间直通群集。 对于 System Center 用户而言，部署不仅仅只是一个复选框。 |
+| ![无与伦比的性能](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png) | **无可匹敌的性能。** 无论是全闪存还是混合存储空间直通，都可以轻松超越[每台服务器 150,000 次混合 4K 随机 IOPS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) 的限制，并且具有较高的一致性和较低的延迟，所有这一切均归功于其嵌入虚拟机监控程序的体系结构、内置的读/写缓存，以及对直接安装在 PCIe 总线上的尖端 NVMe 驱动器的支持。 |
+| ![容错](media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png) | **容错。** 具有内置的复原功能，可在不影响可用性的情况下处理驱动器、服务器或组件故障。 大规模部署还可以配置[机箱和机架容错](../../failover-clustering/fault-domains.md)。 如果硬件发生故障，只需更换发生故障的硬件，而软件会自行复原，不需要复杂的管理步骤。 |
+| ![资源效率](media/storage-spaces-direct-in-windows-server-2016/efficiency-icon.png) | **资源效率。** 擦除编码最多可提高 2.4 倍的存储效率，它采用独特的创新（如本地重建代码和 ReFS 实时层），使效率优势扩展到了硬盘驱动器及热/冷混合工作负载，同时最大程度降低了 CPU 使用率，为最需要的设备（即 VM）提供资源。 |
+| ![可管理性](media/storage-spaces-direct-in-windows-server-2016/manageability-icon.png) | **可管理性**。 使用[存储 QoS 控件](../storage-qos/storage-qos-overview.md)，使过于繁忙的 VM 保持符合每台 VM 的 IOPS 上限和下限。 [运行状况服务](../../failover-clustering/health-service-overview.md)提供连续的内置监视和警报，并使用新的 API，可在群集范围内轻松收集大量性能和容量指标。 |
+| ![可伸缩性](media/storage-spaces-direct-in-windows-server-2016/scalability-icon.png) | **可伸缩性**。 可扩展到 16 台服务器以及超过 400 个驱动器，每个群集拥有最高 1 PB (1,000 TB) 的存储。 只需添加驱动器或添加更多服务器即可实现扩展，存储空间直通会自动载入新的驱动器，并开始使用它们。 存储效率和性能如预期大幅提升。 |
 
 ## <a name="deployment-options"></a>部署选项
 
@@ -100,7 +100,7 @@ ms.locfileid: "86966499"
 
 **存储空间。** 存储空间使用[镜像和/或擦除编码](storage-spaces-fault-tolerance.md)为虚拟 "磁盘" 提供容错能力。 可以将其视为软件定义的分布式 RAID，使用的是池中的驱动器。 在存储空间直通中，除了机箱和机架容错外，这些虚拟磁盘通常还具有复原功能，可以复原两个同时发生的驱动器或服务器故障（例如，3 向镜像，各数据副本存储在不同的服务器中）。
 
-**复原文件系统（ReFS）。** ReFS 是专门针对虚拟化构建的首要文件系统。 它可以显著加快 .vhdx 文件的操作速度（如创建、扩展以及检查点合并），并内置了校验和功能，可检测并纠正位错误。 它还引入了实时层，可以根据使用情况在所谓的“热”、“冷”存储层之间实时轮换数据。
+**复原文件系统 (ReFS) 。** ReFS 是专门针对虚拟化构建的首要文件系统。 它可以显著加快 .vhdx 文件的操作速度（如创建、扩展以及检查点合并），并内置了校验和功能，可检测并纠正位错误。 它还引入了实时层，可以根据使用情况在所谓的“热”、“冷”存储层之间实时轮换数据。
 
 **群集共享卷。** CSV 文件系统将所有 ReFS 卷整合为一个命名空间，可以通过任何服务器进行访问，对于每台服务器而言，每个卷的运行就像是本地安装在每台服务器上一样。
 
@@ -123,7 +123,7 @@ ms.locfileid: "86966499"
 | [Windows 管理中心](../../manage/windows-admin-center/overview.md)     | 图形    | Included |
 | 服务器管理器 & 故障转移群集管理器                                 | 图形    | Included |
 | Windows PowerShell                                                        | 命令行 | Included |
-| [System Center Virtual Machine Manager （SCVMM）](/system-center/vmm/s2d?view=sc-vmm-2019) <br>& [Operations Manager （SCOM）](https://www.microsoft.com/download/details.aspx?id=54700) | 图形    | 已付     |
+| [System Center Virtual Machine Manager (SCVMM) ](/system-center/vmm/s2d?view=sc-vmm-2019) <br>& [Operations Manager (SCOM) ](https://www.microsoft.com/download/details.aspx?id=54700) | 图形    | 已付     |
 
 ## <a name="get-started"></a>入门
 
