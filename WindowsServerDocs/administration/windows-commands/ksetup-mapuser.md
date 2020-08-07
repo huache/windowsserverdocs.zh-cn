@@ -1,20 +1,18 @@
 ---
 title: ksetup mapuser
 description: Ksetup mapuser 命令的参考文章，可将 Kerberos 主体的名称映射到帐户。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 84113e6e-89ff-488a-9cd0-f14bbf23b543
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f387b8c3ff7cf7515a4f2ed9b8ea62d379332ec7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c234dc857241a70f479934fda15dcfab0b4e9de7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933697"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887833"
 ---
 # <a name="ksetup-mapuser"></a>ksetup mapuser
 
@@ -28,18 +26,18 @@ ksetup /mapuser <principal> <account>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| `<principal>` | 指定任何主体用户的完全限定的域名。 例如，mike@corp.CONTOSO.COM。 如果未指定帐户参数，则将删除指定主体的映射。 |
+| `<principal>` | 指定任何主体用户的完全限定的域名。 例如 mike@corp.CONTOSO.COM。 如果未指定帐户参数，则将删除指定主体的映射。 |
 | `<account>` | 指定此计算机上存在的任何帐户或安全组名称，如**来宾**、**域用户**或**管理员**。 如果省略此参数，则将删除指定主体的映射。 |
 
 #### <a name="remarks"></a>备注
 
-- 可以专门确定帐户（如**域来宾**），也可以使用通配符（*）包含所有帐户。
+- 可以专门确定帐户（如**域来宾**），也可以使用通配符 ( * ) 包含所有帐户。
 
 - 仅当给定领域的主体显示有效 Kerberos 票证时，计算机才会对其进行身份验证。
 
-- 每当对外部密钥发行中心（KDC）和领域配置进行更改时，都需要重新启动更改了设置的计算机。
+- 每当对外部密钥发行中心 (KDC) 和领域配置进行更改时，都需要重新启动更改了设置的计算机。
 
 ### <a name="examples"></a>示例
 

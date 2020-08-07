@@ -1,20 +1,18 @@
 ---
 title: ksetup delrealmflags
 description: Ksetup delrealmflags 命令的参考文章，用于删除指定领域中的领域标志。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 22053041-1eb4-47f5-bed9-3d5681bcde7d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d3c81d1b034f6c53c33271c1c9e61a0fc5d4893
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 07d177f58f950b5e8e552e69c9f79054a379cc10
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929173"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887946"
 ---
 # <a name="ksetup-delrealmflags"></a>ksetup delrealmflags
 
@@ -28,7 +26,7 @@ ksetup /delrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或**领域 =** 列出。 |
 
@@ -36,12 +34,12 @@ ksetup /delrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 - 领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 的计算机可以使用 Kerberos 服务器来管理 Kerberos 领域中的身份验证，而不是使用运行 Windows Server 操作系统的域。 此条目将建立领域的功能，如下所示：
 
-| 值 | 领域标志 | 说明 |
+| 值 | 领域标志 | 描述 |
 | ----- | ---------- | ----------- |
 | 0xF | 全部 | 设置所有领域标志。 |
-| 0x00 | None | 未设置领域标志，并且未启用任何其他功能。 |
+| 0x00 | 无 | 未设置领域标志，并且未启用任何其他功能。 |
 | 0x01 | sendaddress | 此 IP 地址将包含在票证授予票证中。 |
-| 0x02 | tcpsupported | 此领域支持传输控制协议（TCP）和用户数据报协议（UDP）。 |
+| 0x02 | tcpsupported | 传输控制协议 (TCP) 和用户数据报协议 (UDP) 在此领域中受支持。 |
 | 0x04 | delegate | 此领域中的每个人都受信任，可用于委派。 |
 | 0x08 | ncsupported | 此领域支持名称规范化，这允许 DNS 和领域的命名标准。 |
 | 0x80 | rc4 | 此领域支持 RC4 加密以启用跨领域信任，这允许使用 TLS。 |

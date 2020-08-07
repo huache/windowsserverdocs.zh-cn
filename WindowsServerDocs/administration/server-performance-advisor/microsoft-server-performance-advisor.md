@@ -7,20 +7,18 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: manage
-ms.openlocfilehash: 49f6132cfe99d9d4b719aeeecf149ecb1d7b76f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4ec0190c97c5afc761c27c7c3156380441951544
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382994"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895681"
 ---
 # <a name="microsoft-server-performance-advisor"></a>Microsoft Server Performance Advisor
 
->适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-下载 Microsoft Server Performance Advisor （SPA），帮助诊断 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 部署中的性能问题。 SPA 生成全面的诊断报告和图表，并提供建议来帮助你快速分析问题和制定纠正措施。
+下载 Microsoft Server Performance Advisor (SPA) ，帮助诊断 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 部署中的性能问题。 SPA 生成全面的诊断报告和图表，并提供建议来帮助你快速分析问题和制定纠正措施。
 
 -   [服务器性能顾问概述](#bkmk-aboutspa)
 
@@ -30,7 +28,7 @@ ms.locfileid: "71382994"
 
 -   [Server Performance Advisor 包开发指南](server-performance-advisor-pack-development-guide.md)
 
-## <a href="" id="bkmk-aboutspa"></a>服务器性能顾问概述
+## <a name="overview-of-server-performance-advisor"></a><a href="" id="bkmk-aboutspa"></a>服务器性能顾问概述
 
 服务器性能顾问由两部分组成： SPA 框架和 SPA 顾问包。
 
@@ -44,13 +42,13 @@ SPA 顾问包是所有优化规则的中心，其中包含一系列的元数据�
 
 -   核心操作系统顾问包分析一般操作系统函数的性能，而不考虑专用服务器角色。
 
--   Internet Information Server （IIS） advisor 包跟踪 IIS 的性能。
+-   Internet Information Server (IIS) advisor pack 跟踪 IIS 的性能。
 
 -   Hyper-v Advisor 包分析 Hyper-v 服务器角色的常规性能。
 
     **注意**Hyper-v Advisor 包不分析来宾操作系统。
 
-     
+
 
 -   Active directory advisor 包分析 active directory 角色的常规性能。
 
@@ -58,22 +56,22 @@ SPA 还为非 Microsoft 开发人员提供了一个可扩展模型，以满足�
 
 **注意**SPA 无法识别所有硬件和用户方案上下文。 你应使用该工具提供的建议来帮助你做出决策，并了解对服务器所做的任何可能更改的后果。
 
- 
 
-## <a href="" id="bkmk-downloadspa"></a>下载服务器性能顾问
+
+## <a name="download-server-performance-advisor"></a><a href="" id="bkmk-downloadspa"></a>下载服务器性能顾问
 
 
 使用以下链接下载适用于 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 的服务器性能顾问：
 
--   [Microsoft Server Performance Advisor 3.1 （32）](https://go.microsoft.com/fwlink/p/?linkid=327751)
+-   [Microsoft Server Performance Advisor 3.1 (32) ](https://go.microsoft.com/fwlink/p/?linkid=327751)
 
--   [Microsoft Server Performance Advisor 3.1 （64）](https://go.microsoft.com/fwlink/p/?linkid=327752)
+-   [Microsoft Server Performance Advisor 3.1 (64) ](https://go.microsoft.com/fwlink/p/?linkid=327752)
 
 可以使用以下命令提取 CAB 文件中的文件：
 
--   对于 x86 版本： `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_x86.cab`
+-   对于 x86 版本：`extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_x86.cab`
 
--   对于 x64 版本： `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_amd64.cab`
+-   对于 x64 版本：`extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_amd64.cab`
 
 **警告**提取 .cab 文件时，SPA 必须保留分层目录结构才能正常工作。 根据您的服务器上安装的 CAB 工具，提取可能会导致无法操作的目录结构。 若要保留分层目录结构，可以使用解压缩文件目录结构的 CAB 提取实用工具工具。
 

@@ -1,28 +1,26 @@
 ---
 title: auditpol clear
-description: 用于删除所有用户的每用户审核策略、重置（禁用）所有子类别的系统审核策略并将所有审核选项设置为 "禁用" 的引用项目。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: 用于删除所有用户的每用户审核策略、重置 (禁用所有子类别的系统审核策略) 并将所有审核选项设置为已禁用的 auditpol clear 命令的参考文章。
 ms.topic: article
 ms.assetid: 05bfa218-2434-4ad1-b33c-e6fcfb2b4f67
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 797f26ab9e191176808bbce917ca5ac0fa3d73a3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2cdb55633e15484f8ca98432fbe8bc28b5f59fd0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923798"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895455"
 ---
 # <a name="auditpol-clear"></a>auditpol clear
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-删除所有用户的每用户审核策略，重置（禁用）所有子类别的系统审核策略，并将所有审核选项设置为 "已禁用"。
+删除所有用户的每用户审核策略，重置 (禁用所有子类别的系统审核策略) ，并将所有审核选项设置为 "禁用"。
 
-若要对*每个用户*和*系统*策略执行*清除*操作，您必须对安全描述符中的该对象集具有 "**写入**" 或 "**完全控制**" 权限。 如果有 "**管理审核和安全日志**（SeSecurityPrivilege）" 用户权限，还可以执行*清除*操作。 但是，此权限允许执行整体*清除*操作所不需要的其他访问权限。
+若要对*每个用户*和*系统*策略执行*清除*操作，您必须对安全描述符中的该对象集具有 "**写入**" 或 "**完全控制**" 权限。 如果有 "**管理审核和安全日志** (") 用户权限，还可以执行*清除*操作。 但是，此权限允许执行整体*清除*操作所不需要的其他访问权限。
 
 ## <a name="syntax"></a>语法
 
@@ -32,14 +30,14 @@ auditpol /clear [/y]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ----------- | --------------- |
 | /y | 禁止提示确认是否应清除所有审核策略设置。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ## <a name="examples"></a>示例
 
-若要为所有用户删除每用户审核策略，请重置（禁用）所有子类别的系统审核策略，并将所有审核策略设置设置为 "已禁用"，并在确认提示符下键入：
+若要为所有用户删除每用户审核策略，请重置 (禁用) 所有子类别的系统审核策略，并将所有审核策略设置设置为 "已禁用"，并在确认提示符下键入：
 
 ```
 auditpol /clear

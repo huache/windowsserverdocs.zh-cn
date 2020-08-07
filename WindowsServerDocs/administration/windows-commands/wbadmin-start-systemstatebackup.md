@@ -1,20 +1,18 @@
 ---
 title: wbadmin start systemstatebackup
 description: 用于 wbadmin start systemstatebackup 的参考文章，用于创建本地计算机的系统状态备份并将其存储在指定的位置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 998366c1-0a64-45e6-9ed3-4c3f5b8406f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 355dcff0f2b5ef3adc4f064651f0cea23a92d48f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 386f5053dd547c4b5285a2b9a09cea76238dcf5b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954469"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879652"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
@@ -23,9 +21,9 @@ ms.locfileid: "86954469"
 创建本地计算机的系统状态备份，并将其存储在指定的位置。
 
 > [!NOTE]
-> Windows Server 备份不会作为系统状态备份或系统状态恢复的一部分备份或恢复注册表用户配置单元（HKEY_CURRENT_USER）。
+> Windows Server 备份不会作为系统状态备份或系统状态恢复的一部分，备份或恢复注册表用户配置 (HKEY_CURRENT_USER) 。
 
-若要使用此子命令执行系统状态备份，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。 （若要打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
+若要使用此子命令执行系统状态备份，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。  (打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
 
 ## <a name="syntax"></a>语法
 
@@ -37,14 +35,14 @@ wbadmin start systemstatebackup
 
 ### <a name="parameters"></a>参数
 
-|   参数   |                                                                                                                                                                                                                      说明                                                                                                                                                                                                                      |
+|   参数   |                                                                                                                                                                                                                      描述                                                                                                                                                                                                                      |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -backupTarget | 指定要存储备份的位置。 存储位置需要驱动器号或基于 GUID 的卷，格式为： \\ \\ ？ \Volume{*GUID*}。</br>在运行 Windows Server 2008 的计算机上不支持对共享网络文件夹进行系统状态备份。 如果你的服务器运行的是 Windows Server 2008 R2 或更高版本，则可以使用**backuptarget： \\ \\ servername\sharedFolder \\ **存储系统状态备份。 |
 |    -quiet     |                                                                                                                                                                                                   对用户运行无提示的子命令。                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>备注
 
-若要了解如何将系统状态备份保存到包含系统状态文件的卷，请参阅 Microsoft 知识库中的文章944530（ [https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439) ）。
+有关将系统状态备份保存到卷的详细信息（依次包含系统状态文件），请参阅 Microsoft 知识库中的文章 944530 ([https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439)) 。
 
 ## <a name="examples"></a>示例
 

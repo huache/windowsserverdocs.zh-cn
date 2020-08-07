@@ -1,20 +1,18 @@
 ---
 title: tcmsetup
 description: 了解如何设置和禁用 TAPI 客户端。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 15e0c10f-996f-4301-92e5-943f7ee8212d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e453ef94aedb8920c0310123ff6033fafbaddab
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e078439fcb9889f075efd364ea9530bdfb8db26a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958619"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881802"
 ---
 # <a name="tcmsetup"></a>tcmsetup
 
@@ -25,13 +23,13 @@ ms.locfileid: "86958619"
 ## <a name="syntax"></a>语法
 
 ```
-tcmsetup [/q] [/x] /c <Server1> [<Server2> …] 
+tcmsetup [/q] [/x] /c <Server1> [<Server2> …]
 tcmsetup  [/q] /c /d
 ```
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |/q|阻止显示消息框。|
 |/x|指定针对流量过大的网络中频繁丢失数据包的情况，将使用面向连接的回拨。 如果忽略该参数，将使用无连接回拨。|

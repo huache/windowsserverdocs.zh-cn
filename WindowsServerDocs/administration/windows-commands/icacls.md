@@ -1,20 +1,18 @@
 ---
 title: icacls
-description: 用于显示或修改指定文件上的随机访问控制列表（DACL）的 icacls 命令参考文章，并将存储的 Dacl 应用于指定目录中的文件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Icacls 命令的参考文章，其中显示或修改指定文件上 (DACL) 的随机访问控制列表，并将存储的 Dacl 应用于指定目录中的文件。
 ms.topic: article
 ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 386e008ef7095cbef8d84b33682b494d8d6c9c52
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5bb8842cdc91823a83d1b8ccfa305c6393433901
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924526"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888401"
 ---
 # <a name="icacls"></a>icacls
 
@@ -32,7 +30,7 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<filename>` | 指定要为其显示 Dacl 的文件。 |
 | `<directory>` | 指定要为其显示 Dacl 的目录。 |
@@ -42,14 +40,14 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 | /q | 禁止显示成功消息。 |
 | [/save `<ACLfile>`/t/c/l[/q]] | 将所有匹配文件的 Dacl 存储到*ACLfile*中，以便以后用于 **/restore**。 |
 | [/setowner `<username>`/t/c/l[/q]] | 将所有匹配文件的所有者更改为指定用户。 |
-| [/findsid `<sid>`/t/c/l[/q]] | 查找所有匹配文件，其中包含显式提及指定安全标识符（SID）的 DACL。 |
-| [/verify [/t] [/c] [/l] [/q]] | 查找其 Acl 不规范或长度与 ACE （访问控制项）计数不一致的所有文件。 |
+| [/findsid `<sid>`/t/c/l[/q]] | 查找所有包含 DACL 的所有匹配文件，其中显式提及指定的安全标识符 (SID) 。 |
+| [/verify [/t] [/c] [/l] [/q]] | 查找其 Acl 不规范或长度与 ACE 不一致的所有文件， (访问控制项) 计数。 |
 | [/reset [/t] [/c] [/l] [/q]] | 将 Acl 替换为所有匹配文件的默认继承 Acl。 |
 | [/grant [： r] \<sid> ： <perm> [...]] | 授予指定的用户访问权限。 权限替换之前授予的显式权限。<p>不添加 **： r**，这意味着将权限添加到以前授予的任何显式权限。 |
 | [/deny \<sid> ： <perm> [...]] | 显式拒绝指定的用户访问权限。 将为所述权限添加显式拒绝 ACE，并删除任何显式授权中的相同权限。 |
 | [/remove `[:g | :d]]` `<sid>`[...]/t/c/l/q | 从 DACL 中移除指定 SID 的所有匹配项。 此命令还可以使用：<ul><li>**： g** -删除已授予的对指定 SID 的所有权限。</li><li>**:d** -删除对指定 SID 的所有拒绝的权限。 |
-| [/setintegritylevel [（CI）（OI）] `<Level>:<Policy>`[...]] | 将完整性 ACE 显式添加到所有匹配的文件。 可将级别指定为：<ul><li>**l** -低</li><li>**m**-中型</li><li>**h** -高</li></ul>完整性 ACE 的继承选项可能在级别之前，只适用于目录。 |
-| [/substitute `<sidold> <sidnew>`[...]] | 使用新的 SID （*sidnew*）替换现有 sid （*sidold*）。 要求将与参数一起使用 `<directory>` 。 |
+| [/setintegritylevel [ (CI) # B2 OI) ] `<Level>:<Policy>`[...]] | 将完整性 ACE 显式添加到所有匹配的文件。 可将级别指定为：<ul><li>**l** -低</li><li>**m**-中型</li><li>**h** -高</li></ul>完整性 ACE 的继承选项可能在级别之前，只适用于目录。 |
+| [/substitute `<sidold> <sidnew>`[...]] | 将现有 SID (*sidold*) 替换为新的 sid (*sidnew*) 。 要求将与参数一起使用 `<directory>` 。 |
 | /restore `<ACLfile>` [/c] [/l] [/q] | 将存储的 Dacl 从应用 `<ACLfile>` 到指定目录中的文件。 要求将与参数一起使用 `<directory>` 。 |
 | /inheritancelevel:`[e | d | r]` | 设置继承级别，可以是：<ul><li>**e** -启用继承</li><li>**d** -禁用继承并复制 ace</li><li>**r** -删除所有继承的 ace</li></ul> |
 
@@ -125,13 +123,13 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 
   - 继承权限可能在任一 `<perm>` 形式之前，只适用于目录：
 
-      - **（OI）** -对象继承
+      - ** (OI) ** -对象继承
 
-      - **（CI）** -容器继承
+      - ** (CI) ** -容器继承
 
-      - **（IO）** -仅继承
+      - ** (IO) ** -仅继承
 
-      - **（NP）** -不传播继承
+      - ** (NP) ** -不传播继承
 
 ## <a name="examples"></a>示例
 

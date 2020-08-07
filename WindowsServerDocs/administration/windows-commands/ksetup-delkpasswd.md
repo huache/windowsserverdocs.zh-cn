@@ -1,26 +1,24 @@
 ---
 title: ksetup delkpasswd
-description: Ksetup delkpasswd 命令的参考文章，用于删除领域的 Kerberos 密码服务器（kpasswd）。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Ksetup delkpasswd 命令的参考文章，用于删除领域的 Kerberos 密码服务器 (kpasswd) 。
 ms.topic: article
 ms.assetid: 2db0bfcd-bc08-48e3-9f30-65b6411839c6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05002c860575bce84748adc2fc353f0994d559ab
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f507b259b77e8be15ade8d01f3666221e94f9192
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926136"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887962"
 ---
 # <a name="ksetup-delkpasswd"></a>ksetup delkpasswd
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-删除领域的 Kerberos 密码服务器（kpasswd）。
+为某个领域删除 Kerberos 密码服务器 (kpasswd) 。
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +28,7 @@ ksetup /delkpasswd <realmname> <kpasswdname>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<realmname>` |  指定大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或**领域 =** 列出。 |
 | `<kpasswdname>` | 指定 Kerberos 密码服务器。 它被表述为不区分大小写的完全限定的域名，例如 mitkdc.contoso.com。 如果省略了 KDC 名称，则可以使用 DNS 来查找 Kdc。 |
@@ -43,7 +41,7 @@ ksetup /delkpasswd <realmname> <kpasswdname>
 ksetup /delkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
 ```
 
-确保将领域公司CONTOSO.COM 未映射到 Kerberos 密码服务器（KDC 名称），请 `ksetup` 在 Windows 计算机上键入，然后查看输出。
+确保将领域公司CONTOSO.COM 未映射到 Kerberos 密码服务器 (KDC 名称) ，请 `ksetup` 在 Windows 计算机上键入，然后查看输出。
 
 ## <a name="additional-references"></a>其他参考
 

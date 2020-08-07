@@ -1,20 +1,18 @@
 ---
 title: automount
 description: 用于启用或禁用自动装载功能的自动装载命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4635fc91-a477-4f17-8dcc-aa08854bfe45
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 297a6592dad6a70aae218b5f1e8426fe0c855e63
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a31e1569f1db4f47c63aae2e859587f5088dcbc4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955859"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895199"
 ---
 # <a name="automount"></a>automount
 
@@ -23,7 +21,7 @@ ms.locfileid: "86955859"
 - [命令行语法项](command-line-syntax-key.md)
 
 > [!IMPORTANT]
-> 在存储区域网络（SAN）配置中，禁用自动装载会阻止 Windows 自动将驱动器号装入或分配给系统可以看到的任何新基本卷。
+> 在存储区域网络 (SAN) 配置中，禁用自动装载会阻止 Windows 自动将驱动器号装入或分配给系统可以看到的任何新基本卷。
 
 ## <a name="syntax"></a>语法
 
@@ -31,7 +29,7 @@ ms.locfileid: "86955859"
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | enable | 使 Windows 能够自动挂载添加到系统的新基本卷和动态卷，并为其分配驱动器号。 |
 | disable | 阻止 Windows 自动安装添加到系统中的任何新基本卷和动态卷。<p>**注意**：禁用自动装载可能导致故障转移群集无法通过验证配置向导的存储部分。 |

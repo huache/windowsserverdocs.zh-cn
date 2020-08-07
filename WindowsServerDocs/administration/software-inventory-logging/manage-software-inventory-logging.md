@@ -1,30 +1,28 @@
 ---
 title: 管理软件清单日志记录
 description: 描述如何管理软件清单日志记录
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
 ms.topic: article
 ms.assetid: 812173d1-2904-42f4-a9e2-de19effec201
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 263a0fdfa5207924e170ebd198ce53749431e49d
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 1df4ffbb0cdc79527bef0fd2e3400d78995d5474
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408816"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895661"
 ---
 # <a name="manage-software-inventory-logging"></a>管理软件清单日志记录
 
->适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+>适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
 
 本文档介绍如何管理软件清单日志记录，这是一项功能，可帮助数据中心管理员在一段时间内轻松记录其部署的 Microsoft 软件资产管理数据。 本文档介绍如何管理软件清单日志记录。 在 Windows Server 2012 R2 中使用软件清单日志记录之前，请确保在每个需要列出清单的系统上安装 Windows 更新[kb 3000850](https://support.microsoft.com/kb/3000850)和[kb 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 无需进行 Wndows 更新。 此功能在要记录清单的每台服务器上以本地方式运行。 它不会从远程服务器收集数据。
 
 软件清单日志记录功能还可添加到 Windows Server 2012 R2 之前的两个 Windows Server 版本。 你可以安装以下更新以将软件清单日志记录功能添加到 Windows Server 2012 和 Windows Server 2008 R2 SP1：
 
-- **Windows Server 2012 （Standard 或 Datacenter Edition）**
+- **Windows Server 2012 (Standard 或 Datacenter Edition) **
 
 > [!NOTE]
 > 请确保在应用以下更新程序包之前安装了[WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855) 。
@@ -71,7 +69,7 @@ ms.locfileid: "87408816"
 
 -   [删除软件清单日志记录所记录的数据](manage-software-inventory-logging.md#BKMK_Step4)
 
--   [备份和还原软件清单日志记录所记录的数据] 管理-软件-清单-记录 md # BKMK_Step5）
+-   [备份和还原软件清单日志记录所记录的数据] 管理-软件-清单-记录 md # BKMK_Step5) 
 
 -   [读取软件清单日志记录所记录和发布的数据](manage-software-inventory-logging.md#BKMK_Step6)
 
@@ -117,9 +115,9 @@ ms.locfileid: "87408816"
 ## <a name="configuring-software-inventory-logging"></a>配置软件清单日志记录
 配置软件清单日志记录以便将数据持续转发到聚合服务器有三个步骤：
 
-1.  使用**set-sillogging – TargetUri**指定聚合服务器的 web 地址（必须以 "https://" 开头）。
+1.  使用**set-sillogging – TargetUri**指定聚合服务器的 web 地址， (必须以 "https://" ) 开头。
 
-2.  使用**set-sillogging – CertificateThumbprint**指定有效 SSL 证书的指纹哈希，该哈希将用于对聚合服务器的数据传输进行身份验证（需要将聚合服务器配置为接受哈希）。
+2.  使用**set-sillogging – CertificateThumbprint**指定有效 SSL 证书的指纹哈希，该哈希将用于对聚合服务器的数据传输进行身份验证 (需要将聚合服务器配置为接受哈希) 。
 
 3.  在将从中转发数据的本地服务器的 **本地计算机/个人存储区**（或 **/LocalMachine/MY**）中（为网络）安装有效的 SSL 证书。
 
@@ -198,7 +196,7 @@ SystemManufacturer        : Microsoft Corporation
 > 无需启动软件清单日志记录，即可使用 **Get-Sil** cmdlet。
 
 ## <a name="deleting-data-logged-by-software-inventory-logging"></a><a name="BKMK_Step4"></a>删除软件清单日志记录所记录的数据
-软件清单日志记录意图不在于充当一个关键任务组件。 它的设计目的是在保持高水平的可靠性的同时尽可能小地影响本地系统操作。 这也允许管理员手动删除软件清单日志记录数据库和支持文件（\Windows\System32\LogFiles\SIL 目录中的每个文件）以满足操作需求。
+软件清单日志记录意图不在于充当一个关键任务组件。 它的设计目的是在保持高水平的可靠性的同时尽可能小地影响本地系统操作。 这也允许管理员手动删除软件清单日志记录数据库和支持文件 (\Windows\System32\LogFiles\SIL directory) 中的每个文件，以满足操作需求。
 
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>删除软件清单日志记录所记录的数据
 
@@ -220,7 +218,7 @@ SystemManufacturer        : Microsoft Corporation
 > 如果出于任何原因管理 SIL 在本地记录的数据的保留期变得很重要，则可以通过更改此处的注册表值进行配置： \ HKEY_LOCAL_MACHINE \\ SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging。 默认值为30天。
 
 ## <a name="reading-data-logged-and-published-by-software-inventory-logging"></a><a name="BKMK_Step6"></a>读取软件清单日志记录所记录和发布的数据
-由 SIL 记录、但在本地存储（如果对目标 URI 进行的转发失败）的数据，或成功转发到目标聚合服务器的数据存储在二进制文件中（对于每天的数据）。 若要在 PowerShell 中显示此数据，请使用 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) cmdlet。
+由 SIL 记录、但在本地存储 (如果转发到目标 URI 失败) 或成功转发到目标聚合服务器的数据）存储在二进制文件中， (每天的数据) 。 若要在 PowerShell 中显示此数据，请使用 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) cmdlet。
 
 ## <a name="software-inventory-logging-security"></a><a name="BKMK_Step7"></a>软件清单日志记录安全
 需要本地服务器上的管理权限才能成功地从软件清单日志记录 WMI 和 PowerShell API 检索数据。
@@ -245,8 +243,8 @@ SystemManufacturer        : Microsoft Corporation
 | 函数 | 值名称 | 数据 | 对应的 Cmdlet（仅在正在运行的操作系统中可用） |
 | --- | --- | --- | --- |
 |启动/停止功能|CollectionState|1 或 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)、 [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|
-|指定网络上的目标聚合点|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|
-|为目标 Web 服务器指定用于 SSL 身份验证的证书的证书指纹或哈希|CertificateThumbprint|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|
+|指定网络上的目标聚合点|TargetUri|字符串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|
+|为目标 Web 服务器指定用于 SSL 身份验证的证书的证书指纹或哈希|CertificateThumbprint|字符串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|
 |指定功能应启动的日期和时间（如果设置的值根据本地系统时间是将来时间）|CollectionTime|默认：2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|
 
 若要在脱机 VHD（未运行虚拟机操作系统）上修改这些值，必须首先装载 VHD，然后可以使用以下命令进行更改：
@@ -275,9 +273,9 @@ SystemManufacturer        : Microsoft Corporation
 > [!NOTE]
 > 随着安装 [KB 3000850](https://support.microsoft.com/kb/3000850) 更新，会删除此功能。
 
-在 Windows Server 2012 R2 Hyper-v 主机上使用软件清单日志记录时，如果已在来宾中启动了 SIL 日志记录，则可以从本地运行的 Windows Server 2012 R2 来宾检索 SIL 数据。 不过，只有在使用 Get-sildata 和 Get-sildata Powershell cmdlet 时才可以这样做，并且仅可在主机和来宾中使用 WIndows Server 2012 R2。此功能的用途是允许向租户（或大型公司中的其他实体）提供来宾虚拟机的数据中心管理员在虚拟机监控程序主机上捕获软件清单数据，并在随后将所有这些数据转发到聚合器（或目标 URI）。
+在 Windows Server 2012 R2 Hyper-v 主机上使用软件清单日志记录时，如果已在来宾 () 中启动了 SIL 日志记录，则可以从本地运行的 Windows Server 2012 R2 来宾检索 SIL 数据。 不过，只有在使用 Get-sildata 和 Get-sildata Powershell cmdlet 时才可以这样做，并且仅可在主机和来宾中使用 WIndows Server 2012 R2。此功能的用途是允许向租户（或大型公司中的其他实体）提供来宾虚拟机的数据中心管理员在虚拟机监控程序主机上捕获软件清单数据，并在随后将所有这些数据转发到聚合器（或目标 URI）。
 
-下面是两个示例，演示 PowerShell 控制台上的输出在运行一个 Windows Server 2012 R2 Hyper-v 主机的 Windows Server 2012 R2 Hyper-v 主机上的显示内容（使用 SIL 日志记录）。你会注意到，使用单独 Get-SilData 的第一个示例会按预期方式输出来自主机的所有数据。还包含来自来宾的所有 SIL 数据，不过是采用折叠格式。若要展开并查看来自来宾的这些数据，只需剪切并粘贴以下第二个示例中使用的代码段。来自来宾的 SIL 数据对象始终在对象中关联了虚拟机 GUID。
+以下两个示例显示 PowerShell 控制台上的输出在运行一个 Windows Server 2012 R2 Hyper-v 主机（SIL 日志记录已启动）的 Windows Server 2012 R2 Hyper-v 主机上的)  (显示内容。你会注意到，使用单独 Get-SilData 的第一个示例会按预期方式输出来自主机的所有数据。还包含来自来宾的所有 SIL 数据，不过是采用折叠格式。若要展开并查看来自来宾的这些数据，只需剪切并粘贴以下第二个示例中使用的代码段。来自来宾的 SIL 数据对象始终在对象中关联了虚拟机 GUID。
 
 > [!NOTE]
 > 由于 SIL 数据在控制台上输出，因此在使用 Get-SilData cmdlet 时，数据流中的对象并不始终按预测顺序输出。在以下两个示例中，文本进行了颜色编码（蓝色用于物理主机数据，绿色用于虚拟来宾数据），只是为了用作本文档的说明工具。
@@ -286,7 +284,7 @@ SystemManufacturer        : Microsoft Corporation
 
 ![示例输出报告的图像](../media/software-inventory-logging/SILHyper-VExample1.png)
 
-**输出示例 2** （w/get-sildata 函数）
+**输出示例 2** (w/get-sildata 函数) 
 
 ![示例输出报告的图像](../media/software-inventory-logging/SILHyper-VExample2.png)
 

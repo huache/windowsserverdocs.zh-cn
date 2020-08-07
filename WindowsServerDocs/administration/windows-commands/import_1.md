@@ -1,20 +1,18 @@
 ---
 title: 导入 diskpart
 description: 用于将外部磁盘组导入到本地计算机的磁盘组中的 "导入" 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4b9d2751-7637-4738-83b0-8c578eb28f27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 072c012e5e2cc8d49811fbfa1cff5140b2c745a1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0c32ee8643beefa394451c83df08dcec7a565117
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924424"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888356"
 ---
 # <a name="import-diskpart"></a>import (diskpart)
 
@@ -30,7 +28,7 @@ import [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

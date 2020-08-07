@@ -1,26 +1,24 @@
 ---
 title: ksetup delenctypeattr
 description: 用于删除域的加密类型属性的 ksetup delenctypeattr 的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4fc25ef3-e271-4229-a712-72c507df55aa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5aabbb99f40d8d22189d6abccc188161b7ee2f5c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7901cdb53c051885e5e4040cbc28b7cae0ed2a4d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925485"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888037"
 ---
 # <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 
 删除域的 "加密类型" 属性。 成功或失败完成时，将显示一条状态消息。
 
-可以通过运行**klist**命令并查看输出来查看 Kerberos 票证授予票证（TGT）和会话密钥的加密类型。 可以通过运行命令来设置要连接和使用的域 `ksetup /domain <domainname>` 。
+可以通过运行**klist**命令并查看输出，查看 Kerberos 票证授予票证 (TGT) 和会话密钥的加密类型。 可以通过运行命令来设置要连接和使用的域 `ksetup /domain <domainname>` 。
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +28,7 @@ ksetup /delenctypeattr <domainname>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ----------| ----------- |
 | `<domainname>` | 要与之建立连接的域的名称。 可以使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。 |
 

@@ -1,24 +1,22 @@
 ---
 title: irftp
 description: Irftp 命令的参考文章，可通过红外链接发送文件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e15c60a7-546d-4e9f-9871-43aaa1b569d6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 92bb484650245555597121c8b6f6378d3c09209c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bd1ecf6b1fafcf9070edb717d5c4ce5aa861fabd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924349"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888226"
 ---
 # <a name="irftp"></a>irftp
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 通过红外链接发送文件。
 
@@ -33,7 +31,7 @@ irftp [<drive>:\] [[<path>] <filename>] [/h][/s]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<drive>:\` | 指定包含要通过红外链接发送的文件的驱动器。 |
 | `[path]<filename>` | 指定要通过红外链接发送的文件或文件集的位置和名称。 如果指定一组文件，则必须指定每个文件的完整路径。 |

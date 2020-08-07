@@ -1,24 +1,22 @@
 ---
 title: attributes volume
 description: "\"属性\" 卷命令的参考文章，其中显示、设置或清除卷的属性。"
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e40e8284-3d57-4de8-a46c-e4ade34a0d53
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aae7cc7fe26fac5ef03e40610eb46389eb274c94
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a4e0e7110bd23d1a8127e867dd991d1dc620c164
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923872"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895484"
 ---
 # <a name="attributes-volume"></a>attributes volume
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示、设置或清除卷的属性。
 
@@ -30,7 +28,7 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------- | -------- |
 | set | 设置具有焦点的卷的指定属性。 |
 | clear | 清除具有焦点的卷的指定属性。 |
@@ -42,9 +40,9 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
 
 ### <a name="remarks"></a>备注
 
-- 在基本主启动记录（MBR）磁盘上，**隐藏**、**只读**和**nodefaultdriveletter**参数适用于磁盘上的所有卷。
+- 在基本主启动记录 (MBR) 磁盘上，**隐藏**、**只读**和**nodefaultdriveletter**参数适用于磁盘上的所有卷。
 
-- 在基本 GUID 分区表（GPT）磁盘上，以及在动态 MBR 和 GPT 磁盘上，**隐藏**、**只读**和**nodefaultdriveletter**参数仅适用于所选卷。
+- 在基本 GUID 分区表中 (GPT) 磁盘，而在动态 MBR 和 GPT 磁盘上，**隐藏**、**只读**和**nodefaultdriveletter**参数仅适用于所选卷。
 
 - 必须选择一个卷，才能使 "**属性" 卷**命令成功。 使用 "**选择音量**" 命令选择卷并将焦点移动到该卷。
 

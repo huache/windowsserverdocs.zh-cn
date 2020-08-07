@@ -1,24 +1,22 @@
 ---
 title: ksetup addhosttorealmmap
-description: Ksetup addhosttorealmmap 命令的参考文章，它在规定的主机和领域之间添加服务主体名称（SPN）映射。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Ksetup addhosttorealmmap 命令的参考文章，其中添加了一个服务主体名称 (SPN) 所述主机与领域之间的映射。
 ms.topic: article
 ms.assetid: 237742d5-fa68-466c-b97e-636f489248ea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 830db84e210b94088e74fd08909f7c47ff84df98
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9722560a9ddebd01120dd60661ec895771ff9c6b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925579"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888143"
 ---
 # <a name="ksetup-addhosttorealmmap"></a>ksetup addhosttorealmmap
 
-在所述的主机和领域之间添加服务主体名称（SPN）映射。 此命令还允许你将共享同一 DNS 后缀的一个或多个主机映射到领域。
+在所述的主机与领域之间 (SPN) 映射中添加服务主体名称。 此命令还允许你将共享同一 DNS 后缀的一个或多个主机映射到领域。
 
 该映射存储在注册表中**HKEY_LOCAL_MACHINE \system\currentcontolset\lsa\kerberos\hosttorealm**下。
 
@@ -30,7 +28,7 @@ ksetup /addhosttorealmmap <hostname> <realmname>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- |------------ |
 | `<hostname>` | 主机名是计算机的名称，可将其声明为计算机的完全限定的域名。 |
 | `<realmname>` | 领域名称被声明为大写的 DNS 名称，例如 CORP。CONTOSO.COM。 |

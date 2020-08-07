@@ -1,20 +1,18 @@
 ---
 title: ksetup dumpstate
 description: Ksetup dumpstate 命令参考文章，其中显示了计算机上定义的所有领域的领域设置当前状态。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3ef2f7b8-97af-4f42-9542-cff324840637
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86e3761af14da9e1b8f52f4ce6859128fcda7bb7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b9c59ad53a7e9d1fb149a0a0a87f5f00938d6a33
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929162"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887958"
 ---
 # <a name="ksetup-dumpstate"></a>ksetup dumpstate
 
@@ -28,9 +26,9 @@ ksetup /dumpstate
 
 ### <a name="remarks"></a>备注
 
-- 此命令的输出包括默认领域（计算机所属的域）和在此计算机上定义的所有领域。 每个领域包含以下各项：
+- 此命令的输出包括 (计算机所属域的默认领域) 以及此计算机上定义的所有领域。 每个领域包含以下各项：
 
-  - 与此领域关联的所有密钥分发中心（Kdc）。
+  - 所有密钥分发中心 (与此领域关联的 Kdc) 。
 
   - 此领域的所有**集领域**标志。
 

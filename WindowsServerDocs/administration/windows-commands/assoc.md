@@ -1,20 +1,18 @@
 ---
 title: assoc
 description: 关联命令的参考文章，其中显示或修改文件扩展名关联。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 237bedda-b24c-4fec-a39c-9b7eacf96417
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e6d72dce2a3e820b52a33bf11dbf38890278fb8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e802756bc1d70e077126170a94a8b8ac6f72dc96
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924044"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895539"
 ---
 # <a name="assoc"></a>assoc
 
@@ -31,7 +29,7 @@ assoc [<.ext>[=[<filetype>]]]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<.ext>` | 指定文件扩展名。 |
 | `<filetype>` | 指定与指定的文件扩展名关联的文件类型。 |

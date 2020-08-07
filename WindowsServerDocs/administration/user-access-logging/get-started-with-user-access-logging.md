@@ -1,26 +1,24 @@
 ---
 title: 用户访问日志记录入门
 desctription: Describes the User Access Logging feature and how to start using it.
-ms.prod: windows-server
-ms.technology: manage-user-access-logging
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44bcdd3d89946558934b8309634061f6b8e7ffda
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6b5e8ae365fbf8130d134ab2f9fa555e952d012a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471162"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895639"
 ---
 # <a name="get-started-with-user-access-logging"></a>用户访问日志记录入门
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-用户访问日志记录（UAL）是 Windows Server 中的一项功能，在本地服务器上按角色和产品聚合客户端使用数据。 它可帮助 Windows server 管理员量化来自本地服务器上的角色和服务的客户端计算机的请求。
+用户访问日志记录 (UAL) 是 Windows Server 中的一项功能，它在本地服务器上按角色和产品聚合客户端使用数据。 它可帮助 Windows server 管理员量化来自本地服务器上的角色和服务的客户端计算机的请求。
 
 默认情况下，UAL 已安装并处于启用状态，并几乎实时收集数据。 无需任何管理员配置，但是可以禁用或启用 UAL。 有关详细信息，请参阅[管理用户访问日志记录](Manage-User-Access-Logging.md)。 用户访问日志记录服务按照角色和产品将客户端使用数据聚合到本地数据库文件中。  之后，IT 管理员可以使用 Windows Management Instrumentation (WMI) 或 Windows PowerShell cmdlet，按服务器角色（或软件产品）、用户、设备、本地服务器和日期来检索数量和实例。
 
@@ -83,7 +81,7 @@ UAL 可以支持以下服务器角色和服务：
 
 -   Windows 部署服务 (WDS)
 
--   Windows 服务器更新服务 (WSUS)
+-   Windows Server Update Services (WSUS)
 
 > [!IMPORTANT]
 > 不建议在直接连接到 Internet 的服务器（如可访问 Internet 的地址空间中的 Web 服务器），或在极高性能是服务器主要功能的应用场景下（如在 HPC 工作负荷环境中）使用 UAL。 UAL 主要用于小型、中型和企业内部网方案，其中应有高容量，但并不像为定期提供面向 Internet 的流量的部署那么高。
@@ -91,7 +89,7 @@ UAL 可以支持以下服务器角色和服务：
 ## <a name="important-functionality"></a><a name="BKMK_NEW"></a>重要功能
 下表描述 UAL 的关键功能及其可能值。
 
-|功能|“值”|
+|功能|值|
 |-----------------|---------|
 |以几乎实时的方式收集和聚合客户端请求事件数据。|最多可以保存三年的数据。 **重要提示：** 管理员需要强制遵守组织的隐私策略和本地法规收集的数据和数据保留期。|
 |通过使用 WMI 或 Windows PowerShell 界面来查询 UAL，以检索本地或远程服务器上的客户端请求数据。|UAL 启用持续的用法数据的单一视图。 服务器和企业管理员可以检索此数据并与业务管理员进行协调，以优化其批量软件许可证的使用。|
@@ -102,7 +100,7 @@ UAL 可以支持以下服务器角色和服务：
 
 |数据|说明|
 |--------|---------------|
-|**用户名**|随附来自已安装角色和产品的 UAL 条目的客户端上的用户名（如适用）。|
+|**UserName**|随附来自已安装角色和产品的 UAL 条目的客户端上的用户名（如适用）。|
 |**ActivityCount**|特定用户已访问某个角色或服务的次数。|
 |**FirstSeen**|用户首次访问某个角色或服务的日期和时间。|
 |**LastSeen**|用户最近一次访问某个角色或服务的日期和时间。|

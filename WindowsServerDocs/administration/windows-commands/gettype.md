@@ -1,20 +1,18 @@
 ---
 title: gettype
 description: 有关 gettype 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a423030b-2bae-4e6f-8020-36163058fa3a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: be3b1180549688ec7c75c893700a6614322f99ce
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e4acaf974fb44e07bf43563eaa81e98c778550cc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957189"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888620"
 ---
 # <a name="gettype"></a>gettype
 

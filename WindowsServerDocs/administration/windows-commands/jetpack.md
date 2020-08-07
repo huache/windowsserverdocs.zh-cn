@@ -1,26 +1,24 @@
 ---
 title: jetpack
-description: 用于压缩 Windows Internet 名称服务（WINS）或动态主机配置协议（DHCP）数据库的 jetpack 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Jetpack 命令的参考文章，该命令将 Windows Internet 名称服务 (WINS) 或动态主机配置协议 (DHCP) 数据库中压缩。
 ms.topic: article
 ms.assetid: 82a2b7ef-0db5-4575-a028-8acb0bf6c7ba
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0aa52bad06865641da5fabf25c27ceb8c7a0bbd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6850c7d00f11278bbc904f7ad7d2e7edaf30d229
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924325"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888195"
 ---
 # <a name="jetpack"></a>jetpack
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-压缩 Windows Internet 名称服务（WINS）或动态主机配置协议（DHCP）数据库。 建议在 WINS 数据库接近 30 MB 时将其压缩。
+将 Windows Internet 名称服务 (WINS) 或动态主机配置协议 (DHCP) 数据库压缩。 建议在 WINS 数据库接近 30 MB 时将其压缩。
 
 Jetpack.exe 通过以下方法压缩数据库：
 
@@ -38,7 +36,7 @@ jetpack.exe <database_name> <temp_database_name>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------- | -------- |
 | `<database_name>` | 指定原始数据库文件的名称。 |
 | `<temp_database_name>` | 指定 jetpack.exe 创建的临时数据库文件的名称。<p>注意：压缩过程完成后，将删除此临时文件。 若要使此命令正常工作，必须确保临时文件名是唯一的，并且具有该名称的文件不存在。 |

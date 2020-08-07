@@ -1,20 +1,18 @@
 ---
 title: append
 description: 追加命令的参考文章，使程序可以打开指定目录中的数据文件，就像它们位于当前目录中一样。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9c3fea20-9502-40ad-a442-7a927aad88eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8e67c4419b563fdeba156b2bb1f082bf7de834c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 887d058baf333f068b2e1fb557f085f0cfe58615
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924038"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895580"
 ---
 # <a name="append"></a>append
 
@@ -32,7 +30,7 @@ append ;
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `[\<drive>:]<path>` | 指定要追加的驱动器和目录。 |
 | /x：开启 | 将附加的目录应用于文件搜索和启动应用程序。 |

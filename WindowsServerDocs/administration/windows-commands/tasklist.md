@@ -1,20 +1,18 @@
 ---
 title: tasklist
 description: 了解如何显示在本地或远程计算机上运行的进程的列表。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8dbe30ee-1484-46be-917b-5ca3ff4fdc9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c189af48e30729b53b04b343d2d4c0e4e81c4d0e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a4f87c4cc2dc80c67e2004c929fa23aea8791fb9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721545"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881813"
 ---
 # <a name="tasklist"></a>tasklist
 
@@ -32,15 +30,15 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 
 |          参数           |                                                                                                                                            描述                                                                                                                                             |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        /s \<计算机>        |                                                                                         指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认值为本地计算机。                                                                                         |
-| /u [\<域>\\ \] \<用户名> | 使用*用户名*或*域*\*用户名指定的用户的帐户权限运行命令<em>。\*只有指定/s 时才能指定\*/u</em> 。 **/s** \* 默认值是当前登录到发出命令的计算机的用户的权限。 |
-|        /p \<密码>        |                                                                                                       指定在 **/u**参数中指定的用户帐户的密码。                                                                                                        |
-|         /m \<模块>         |                                                               列出与给定模式名称匹配的、加载了 DLL 模块的所有任务。 如果未指定模块名称，此选项将显示每个任务加载的所有模块。                                                                |
+|        /s\<Computer>        |                                                                                         指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。                                                                                         |
+| 形\<Domain>\\\]\<UserName> | 使用*用户名*或*域*用户名指定的用户的帐户权限运行命令 \* <em>。 \* \*</em> \* 只有指定 **/s**时才能指定/u。 默认值是当前登录到发出命令的计算机的用户的权限。 |
+|        /p\<Password>        |                                                                                                       指定在 **/u**参数中指定的用户帐户的密码。                                                                                                        |
+|         一样\<Module>         |                                                               列出与给定模式名称匹配的、加载了 DLL 模块的所有任务。 如果未指定模块名称，此选项将显示每个任务加载的所有模块。                                                                |
 |             /svc             |                                                                                    列出每个进程的所有不截断的服务信息。 当 **/fo**参数设置为**表**时有效。                                                                                    |
 |              /v              |                                                                                 在输出中显示详细的任务信息。 若要在不截断的情况下完成详细的输出，请将 **/v**和 **/svc**一起使用。                                                                                 |
-|  /fo {表\|列表\| csv}  |                                                                             指定要用于输出的格式。 有效值为**table**、 **list**和**csv**。 输出的默认格式为**table**。                                                                             |
+|  /fo {表 \| 列表 \| csv}  |                                                                             指定要用于输出的格式。 有效值为**table**、 **list**和**csv**。 输出的默认格式为**table**。                                                                             |
 |             /nh              |                                                                                             取消输出中的列标题。 当 **/fo**参数设置为**表**或**csv**时有效。                                                                                              |
-|        /fi \<filter>         |                                                                          指定要包含在查询中或从查询中排除的进程的类型。 有关有效的筛选器名称、运算符和值，请参阅下表。                                                                          |
+|        /fi\<Filter>         |                                                                          指定要包含在查询中或从查询中排除的进程的类型。 有关有效的筛选器名称、运算符和值，请参阅下表。                                                                          |
 |              /?              |                                                                                                                                在命令提示符下显示帮助。                                                                                                                                |
 
 ### <a name="filter-names-operators-and-values"></a>筛选器名称、运算符和值
@@ -83,7 +81,7 @@ tasklist /s srvmain /svc /fi "MODULES eq ntdll*"
 ```
 要使用当前登录的用户帐户的凭据列出远程计算机 "Srvmain" 上的进程，请键入：
 ```
-tasklist /s srvmain 
+tasklist /s srvmain
 ```
 若要使用用户帐户 Hiropln 的凭据列出远程计算机 "Srvmain" 上的进程，请键入：
 ```

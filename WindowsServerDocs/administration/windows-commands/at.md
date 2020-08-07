@@ -1,24 +1,22 @@
 ---
 title: at
 description: At 命令的参考文章，用于计划在指定的时间和日期在计算机上运行命令和程序。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ff18fd16-9437-4c53-8794-bfc67f5256b3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ead4132b70cc98d9bdd7f478a8e3f18ab6da1aa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e8bd4ba389d072ca1f8054d9f691f434063a8df4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923933"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895543"
 ---
 # <a name="at"></a>at
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 计划在指定的时间和日期在计算机上运行的命令和程序。 仅当计划服务正在运行**时，才**可以使用。 在不使用参数的情况下，**在**列出计划的命令。 您必须是本地管理员组的成员才能运行此命令。
 
@@ -31,23 +29,23 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `\<computername\>` | 指定远程计算机。 如果省略此参数，则会**在**本地计算机上计划命令和程序。 |
 | `<id>` | 指定分配给计划命令的标识号。 |
 | /delete | 取消计划的命令。 如果省略*ID*，计算机上的所有计划命令都将被取消。 |
 | /yes | 删除计划事件时，会对系统中的所有查询回答 "是"。 |
-| `<time>` | 指定要运行命令的时间。 时间以小时为单位表示，以24小时表示法表示（即，00:00 （午夜）到23:59）。 |
+| `<time>` | 指定要运行命令的时间。 时间以小时为单位表示，以24小时表示法表示， (即 00:00 (午夜) 到 23:59) 。 |
 | 交互式 | 允许*命令*与在运行*命令*时登录的用户的桌面进行交互。 |
-| 各个 | 在每周或每月的某一天或几天（例如，每个星期四或每月的第三天）运行*命令*。 |
-| `<date>` | 指定要运行命令的日期。 可以指定一周中的一天或多天（即，键入**M**、**T**、**W**、**Th**、**F**、**S**、**Su**）或一个或多个月的某一天（即，键入1到31）。 用逗号分隔多个日期项。 如果省略*date*，则**在**使用当月的当前日期。 |
-| 一个 | 在一天的下一次出现时运行*命令*（例如，下个星期四）。 |
-| `<command>` | 指定要运行的 Windows 命令、程序（即 .exe 或 .com 文件）或批处理程序（即 .bat 或 .cmd 文件）。 当命令需要路径作为参数时，请使用绝对路径（即，以驱动器号开头的完整路径）。 如果命令在远程计算机上，请为服务器和共享名称指定通用命名约定（UNC）表示法，而不是远程驱动器号。 |
+| 各个 | 在每周或每月的指定日期或每月的某一天或每月 (例如，每个星期四或每月第三天) 运行*命令*。 |
+| `<date>` | 指定要运行命令的日期。 您可以指定一周中的一天或多天 (即，键入**M**、**T**、**W**、**Th**、**F**、**S**、**Su**) 或 (的一天或多天即，键入1到 31) 。 用逗号分隔多个日期项。 如果省略*date*，则**在**使用当月的当前日期。 |
+| 一个 | 在当天的下一次出现时运行*命令* (例如，下星期四) 。 |
+| `<command>` | 指定要运行的 Windows 命令、程序 (，即 .exe 或 .com 文件) 或批处理程序 (，即 .bat 或 .cmd 文件) 。 当命令需要路径作为参数时，请使用绝对路径 (即，以驱动器号) 开头的整个路径。 如果命令在远程计算机上，请为服务器和共享名称指定通用命名约定 (UNC) 表示法，而不是远程驱动器号。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ### <a name="remarks"></a>备注
 
-- 在运行命令之前，此命令不会自动加载 cmd.exe。 如果未运行可执行（.exe）文件，则必须在命令开头显式加载 cmd.exe，如下所示：
+- 在运行命令之前，此命令不会自动加载 cmd.exe。 如果未运行可执行文件 ( .exe) 文件，则必须在命令开头显式加载 cmd.exe，如下所示：
 
     ```
     cmd /c dir > c:\test.out
@@ -62,7 +60,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     OK      3    Each F     11:59 PM    backup2.bat
     ```
 
-- 如果在此命令中包含标识号（*ID*），则只有单个条目的信息以如下格式显示：
+- 如果在此命令中包含标识号 (*ID*) ，则仅显示单个条目的信息，格式如下所示：
 
     ```
     Task ID: 1
@@ -107,7 +105,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     > [!Caution]
     > 不正确地编辑注册表可能会对系统造成严重损坏。 在更改注册表之前，应备份计算机上任何有价值的数据。
 
-    1. 启动注册表编辑器（regedit.exe）。
+    1.  ( # A0) 启动注册表编辑器。
 
     2. 在注册表中找到并单击以下项：`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Schedule`
 
@@ -155,7 +153,7 @@ at \\marketing 00:00 /every:5,10,15,20,25,30 archive
 at /delete
 ```
 
-若要运行不是可执行（.exe）文件的命令，请在命令前面加上**cmd/c** ，按如下所示加载 cmd.exe：
+若要运行不是可执行文件 ( .exe) 文件的命令，请在命令前使用**cmd/c**加载 cmd.exe，如下所示：
 
 ```
 cmd /c dir > c:\test.out

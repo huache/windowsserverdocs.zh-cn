@@ -1,26 +1,24 @@
 ---
 title: ftp
-description: Ftp 命令的参考文章，用于在运行文件传输协议（ftp）服务器服务的计算机之间传输文件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Ftp 命令的参考文章，用于在运行文件传输协议 (ftp) 服务器服务的计算机之间传输文件。
 ms.topic: article
 ms.assetid: 758335e1-fd8d-448c-a654-993126239dd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01d597bf4520fc41fa31f90c643c852ec9f77b2f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 369a41cf6ad803a4fce939da58228997410cf177
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957289"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888790"
 ---
 # <a name="ftp"></a>ftp
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-在运行文件传输协议（ftp）服务器服务的计算机之间传输文件。 可以通过交互方式或以批处理模式使用此命令，方法是处理 ASCII 文本文件。
+在运行文件传输协议 (ftp) 服务器服务的计算机之间传输文件。 可以通过交互方式或以批处理模式使用此命令，方法是处理 ASCII 文本文件。
 
 ## <a name="syntax"></a>语法
 
@@ -30,14 +28,14 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ----------| ----------- |
 | -v | 禁止显示远程服务器响应。 |
 | -d | 启用调试，并显示在 FTP 客户端和 FTP 服务器之间传递的所有命令。 |
 | -i | 在多个文件传输过程中禁用交互式提示。 |
 | -n | 在初始连接时禁止自动登录。 |
-| -g | 禁用文件名组合。  **Glob**允许将星号（*）和问号（？）用作本地文件和路径名称中的通配符字符。 |
-| 些`<filename>` | 指定包含**ftp**命令的文本文件。 这些命令将在**ftp**启动后自动运行。 此参数不允许有空格。 使用此参数，而不是重定向（ `<` ）。 **注意：** 在 Windows 8 和 Windows Server 2012 或更高版本的操作系统中，必须用 UTF-8 编写文本文件。 |
+| -g | 禁用文件名组合。  **Glob**允许使用星号 ( * ) 和问号 (？ ) 作为本地文件和路径名称中的通配符。 |
+| 些`<filename>` | 指定包含**ftp**命令的文本文件。 这些命令将在**ftp**启动后自动运行。 此参数不允许有空格。 使用此参数，而不是重定向 (`<`) 。 **注意：** 在 Windows 8 和 Windows Server 2012 或更高版本的操作系统中，必须用 UTF-8 编写文本文件。 |
 | -a | 指定在绑定 ftp 数据连接时可以使用任何本地接口。 |
 | -A | 以匿名方式登录到 ftp 服务器。 |
 | x-blade`<sendbuffer> `| 覆盖默认 SO_SNDBUF 大小为8192。 |
@@ -51,7 +49,7 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 
 - **Ftp**命令行参数区分大小写。
 
-- 仅当**Internet 协议（tcp/ip）** 协议安装为网络连接中的网络适配器属性中的组件时，此命令才可用。
+- 仅当在 "网络连接" 中网络适配器的属性中将 " **Internet 协议" (tcp/ip) **协议安装为组件时，此命令才可用。
 
 - **Ftp**命令可以交互方式使用。 启动后， **ftp**将创建一个可在其中使用**ftp**命令的子环境。 可以通过键入**quit**命令返回到命令提示符。 当**ftp**子环境正在运行时，它由 `ftp >` 命令提示符指示。 有关详细信息，请参阅**ftp**命令。
 

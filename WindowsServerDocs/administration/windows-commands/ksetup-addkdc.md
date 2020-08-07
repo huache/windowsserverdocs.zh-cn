@@ -1,24 +1,22 @@
 ---
 title: ksetup addkdc
-description: 用于为给定 Kerberos 领域广告密钥发行中心（KDC）地址的 ksetup addkdc 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Ksetup addkdc 命令的参考文章，用于广告给定 Kerberos 领域的密钥发行中心 (KDC) 地址。
 ms.topic: article
 ms.assetid: 98bfc23a-14c4-401c-bcb3-9903c5cdde64
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32839c0f8c1e408cfa6ab1e067c250551ee7b490
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 13f3a2e2343ae8161968d6968babc2cafd78e053
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925560"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888137"
 ---
 # <a name="ksetup-addkdc"></a>ksetup addkdc
 
-添加给定 Kerberos 领域的密钥发行中心（KDC）地址
+添加给定 Kerberos 领域的密钥发行中心 (KDC) 地址
 
 该映射存储在注册表中的**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains**下，必须重新启动计算机，然后才能使用新领域设置。
 
@@ -33,7 +31,7 @@ ksetup /addkdc <realmname> [<KDCname>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM。 在运行**ksetup**时，此值还显示为默认领域，并且是要添加其他 KDC 的领域。 |
 | `<KDCname>` | 指定不区分大小写的完全限定的域名，例如 mitkdc.contoso.com。 如果省略了 KDC 名称，DNS 将定位 Kdc。 |

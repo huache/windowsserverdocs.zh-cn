@@ -1,20 +1,18 @@
 ---
 title: 软件清单日志记录聚合器
-description: 描述如何安装和管理软件清单日志记录聚合器
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
+description: 描述如何安装和管理软件清单日志记录聚合器-软件清单-日志记录
 ms.topic: article
 ms.assetid: e4230a75-6bcd-47d9-ba92-a052a90a6abc
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 350187c0ad7490a0698e4a3b99ef710b632f6c6c
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 697ca5e27db6a937c31b4dad072eef19a6f3df06
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408836"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895674"
 ---
 # <a name="software-inventory-logging-aggregator"></a>软件清单日志记录聚合器
 
@@ -26,7 +24,7 @@ ms.locfileid: "87408836"
 
 SILA 是安装在 Windows Server 上的软件，但未包含在 Windows Server 安装中。 若要安装该软件，首先从 Windows 下载中心进行免费下载： [适用于 Windows Server 的软件清单日志记录聚合器 1.0](https://www.microsoft.com/download/details.aspx?id=49046)。
 
-软件清单日志记录框架旨在降低清点 IT 环境中众多服务器上所部署 Microsoft 软件的操作成本。 此框架由两个组件组成：此 SIL 聚合器和 Windows Server 功能，在 Windows Server 2012 R2 中引入，软件清单日志记录（SIL）。 此软件清单日志记录聚合器 1.0 将安装在一个服务器上并从配置为通过 SIL 向其转发数据的任何 Windows Server 接收清单数据。 此设计允许数据中心管理员在准备在其环境中进行广泛分发的主 Windows Server 映像中启用 SIL。  此软件程序包为目标点并且专供客户进行本地安装，以便随着时间的推移轻松记录清单数据。 此软件还允许在 Microsoft Excel 中定期创建基本清单报表。 软件清单日志记录聚合器 1.0 报表包含安装 Windows Server、System Center 和 SQL Server 的计数。
+软件清单日志记录框架旨在降低清点 IT 环境中众多服务器上所部署 Microsoft 软件的操作成本。 此框架由两个组件组成：此 SIL 聚合器和 Windows Server 功能，在 Windows Server 2012 R2 中引入，软件清单日志记录 (SIL) 。 此软件清单日志记录聚合器 1.0 将安装在一个服务器上并从配置为通过 SIL 向其转发数据的任何 Windows Server 接收清单数据。 此设计允许数据中心管理员在准备在其环境中进行广泛分发的主 Windows Server 映像中启用 SIL。  此软件程序包为目标点并且专供客户进行本地安装，以便随着时间的推移轻松记录清单数据。 此软件还允许在 Microsoft Excel 中定期创建基本清单报表。 软件清单日志记录聚合器 1.0 报表包含安装 Windows Server、System Center 和 SQL Server 的计数。
 
 > [!IMPORTANT]
 > 使用此软件时不会向 Microsoft 发送任何数据。
@@ -98,7 +96,7 @@ SILA 是安装在 Windows Server 上的软件，但未包含在 Windows Server �
 ### <a name="security-and-account-types"></a>安全和帐户类型
 **证书要求**
 
-SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此操作的常见实现方法是使用一个证书（服务器名称和证书名称相匹配）安装 SIL 聚合器以便托管接收清单数据的 Web 服务。 然后，要使用 SIL 功能进行清点的 Windows Server 将使用不同的客户端证书将数据推送到 SIL 聚合器。 需要使用 PowerShell cmdlet （Set-silaggregator，更多详细信息）将证书指纹添加到聚合器将接受关联数据的已批准证书的 SIL 聚合器列表。 在使用证书对数据的每个负载进行身份验证后，SIL 聚合器将继续处理数据并插入其数据库。 有关其工作原理的更多具体细节，请参阅 **SIL 聚合器 Cmdlet 详细信息**部分
+SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此操作的常见实现方法是使用一个证书（服务器名称和证书名称相匹配）安装 SIL 聚合器以便托管接收清单数据的 Web 服务。 然后，要使用 SIL 功能进行清点的 Windows Server 将使用不同的客户端证书将数据推送到 SIL 聚合器。 PowerShell cmdlet (Set-silaggregator，需要使用) 以下更详细信息将证书指纹添加到 SIL 聚合器用于接受关联数据的已批准证书的列表中。 在使用证书对数据的每个负载进行身份验证后，SIL 聚合器将继续处理数据并插入其数据库。 有关其工作原理的更多具体细节，请参阅 **SIL 聚合器 Cmdlet 详细信息**部分
 
 ### <a name="polling-account-setup"></a>轮询帐户设置
 向 SIL 聚合器添加凭据来启用轮询操作时，你应当使用最低特权帐户方法。 另外，作为最佳安全方案，你不应为数据中心或其他 IT 部署中的所有或多个主机使用相同的凭据。
@@ -125,7 +123,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 9. 以“计算机名\组名”**** 格式添加“远程管理用户”**** 组
 
-10. 单击 **“确定”** 。
+10. 单击“确定”。
 
 11. 返回“root\cimv2”**** 窗口的“安全”中，选择“远程管理用户”****。
 
@@ -160,7 +158,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 -   你**已使用在 SQL Server 上拥有 sysadmin 权限的帐户登录到服务器**（如果需要 Windows 身份验证）。
 
-    或
+    或者
 
     如果需要 SQL 身份验证，**则需要使用拥有 SQL 管理权限的帐户的密码**。
 
@@ -241,7 +239,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
     -   `Add-SilVMHost`运行
 
-        示例：`add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
+        示例： `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
         -   在此示例中，**contoso1** 是你希望聚合器向其轮询以进行定期更新（对于哪些 VM 在其中运行以便在一段时间内跟踪此数据）的物理主机服务器的网络名称（或 IP 地址）。 Get-Credential 将提示已登录用户输入一个用于在此之后轮询该主机的帐户。 在同一主机上运行相同的命令将允许你随时更新所使用的帐户。 请谨防帐户密码在一段时间后发生更改以及过期。 如果凭据发生更改或过期，将无法在主机上进行轮询。
 
@@ -251,7 +249,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
     -   运行 `Set-SilAggregator –AddCertificateThumbprint` "你的客户端证书的指纹"
 
-        这是通过 HTTPS 从启用 SIL 日志记录的 Windows Server 接收数据必需的步骤。 指纹将添加到 SIL 聚合器将从其中接受数据的指纹列表中。 SIL 聚合器旨在接受有效的企业客户端身份验证证书。 使用的证书需要安装在转发数据的服务器上的** \\ Localmachine\MY （本地计算机 > 个人**）存储中。
+        这是通过 HTTPS 从启用 SIL 日志记录的 Windows Server 接收数据必需的步骤。 指纹将添加到 SIL 聚合器将从其中接受数据的指纹列表中。 SIL 聚合器旨在接受有效的企业客户端身份验证证书。 使用的证书需要安装在转发数据的服务器上的** \\ Localmachine\MY (本地计算机上 > 个人**) 存储中。
 
 -   在要清点的 Windows Server 上，以管理员身份打开 PowerShell 并运行以下命令：
 
@@ -378,9 +376,9 @@ SIL 同时适用于推送模式和拉取模式，而且由两个并行工作的�
 -   在“仪表板”**** 选项卡的“Windows Server”**** 部分中，“其他虚拟机监控程序主机”**** 行和“总虚拟机监控程序主机”**** 行包括可能运行或未运行 Hyper-V 的物理 Windows Server 主机。
 
 ### <a name="column-descriptions"></a>列描述
-以下是有关每列的说明，这些列位于 SIL 聚合器基于 Excel 创建的报告的“Windows Server 详细信息”**** 选项卡上。 其他数据选项卡或是相同，或是这些列的子集。 "SQL Server" 选项卡上的 "安装计数" 是一个例外情况（请参阅**高水位**线部分）。
+以下是有关每列的说明，这些列位于 SIL 聚合器基于 Excel 创建的报告的“Windows Server 详细信息”**** 选项卡上。 其他数据选项卡或是相同，或是这些列的子集。 "SQL Server" 选项卡上的 "安装计数" 是一个例外 (请参阅) 的**高水位**线部分。
 
-|列标题|说明|
+|列标题|描述|
 |-----------------|---------------|
 |日历月|报告中的数据按月份分组，首先列出最近的月份。 一个月内的数据没有特定的列出顺序。|
 |主机名|SIL 聚合器成功轮询的物理主机的网络名称或 FQDN。<p>使用 Get-SilVMHost cmdlet 来查找已添加但未成功轮询或不再轮询的主机。 将显示上次成功的轮询。|
@@ -403,7 +401,7 @@ SIL 同时适用于推送模式和拉取模式，而且由两个并行工作的�
 
 ### <a name="publish-silreport"></a>Publish-SilReport
 
--   按原样使用此 cmdlet 将创建一个软件清单日志记录报告并将其放置在已登录用户的文档目录中（在运行该 cmdlet 的计算机上需要 Excel 2013）。
+-   按原样使用此 cmdlet 将创建一个软件清单日志记录报告，并将其放置在已登录用户的文档目录中 (Excel 2013 在运行 cmdlet 的计算机上是必需的) 。
 
 -   与 `–OpenReport` 参数结合使用时，它将创建该报告并使用 Excel 打开进行查看。
 
@@ -536,7 +534,7 @@ Copyright (c) 2010, RENCI</pre>
 
 -   在您的环境中使用 Windows Management Framework 时：
 
-    -   确保安装了 SILA 的服务器未安装 WMF 5.1。  可能会在事件日志中命中有关 DLL **"mpunits.dll"** 的错误。  这会阻止操作正常。  SILA 仅需要 WMF 4.0。
+    -   确保安装了 SILA 的服务器 () 未安装 WMF 5.1。  可能会在事件日志中命中有关 DLL **"mpunits.dll"** 的错误。  这会阻止操作正常。  SILA 仅需要 WMF 4.0。
 
 ## <a name="managing-sil-over-time"></a>随着时间推移管理 SIL
 
@@ -577,7 +575,7 @@ Copyright (c) 2010, RENCI</pre>
 
     4.  右键单击 " **dbo"。Dbo.sqlserveredition**，然后选择 "**编辑前200行**"。
 
-    5.  将 "Standard Edition" 旁边的 PropertyNumValue 更改为**2760240536** （从-1534726760）。
+    5.  将 "Standard Edition" 旁边的 PropertyNumValue 更改为**2760240536** (1534726760) 。
 
     6.  关闭查询以保存更改。
 
@@ -585,7 +583,7 @@ Copyright (c) 2010, RENCI</pre>
 
 -   在 SIL 生成的报告中，如果在物理服务器上启用了超线程，所有处理器核心计数都将包含线程计数。  若要在已启用超线程的服务器上获取实际物理核心计数，需要将这些计数减半。
 
--   对于 Windows Server 和 System Center 标记的行（在 "**仪表板**" 选项卡上）和列（**在 "****摘要" 和 "详细信息**" 选项卡上）的合计在两个位置之间并不完全匹配。 在 "**仪表板**" 选项卡上，需要将 "**Windows Server 设备（无已知 vm**）" 值添加到 "**同时运行**..."在 "**摘要" 和 "详细信息**" 选项卡上等于此数字的值。
+-   "**仪表板**" 选项卡上的 "行 (总计") 和 "**摘要" 和 "详细信息**" 选项卡上的 " (") 标记为 "**同时运行**..."，两个位置之间并不完全匹配。 在 "**仪表板**" 选项卡上，需要将 "**Windows Server 设备 (没有已知的 Vm**) " 值添加到 "**同时运行**..."在 "**摘要" 和 "详细信息**" 选项卡上等于此数字的值。
 
 -   当更改或更新证书时，请参阅本文档**随着时间推移管理 SIL** 部分下的**避免数据丢失的重要步骤**。
 

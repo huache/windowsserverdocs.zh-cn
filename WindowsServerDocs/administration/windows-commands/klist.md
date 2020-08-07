@@ -1,20 +1,18 @@
 ---
 title: klist
 description: Klist 命令的参考文章，其中显示当前缓存的 Kerberos 票证的列表。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4689b4a9-1740-47dd-9240-02105efca428
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1a8d3d18cbf008efab203bfcef39179da39e109
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2e37946106d7c47f058fd42b9926e388ab830e47
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931418"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888182"
 ---
 # <a name="klist"></a>klist
 
@@ -31,20 +29,20 @@ klist [-lh <logonID.highpart>] [-li <logonID.lowpart>] tickets | tgt | purge | s
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| -lh | 表示以十六进制表示的用户本地唯一标识符（LUID）的高部分。 如果两者**都不**存在 **–li** ，则该命令默认为当前已登录用户的 LUID。 |
-| -li | 表示以十六进制表示的用户本地唯一标识符（LUID）的低部分。 如果两者**都不**存在 **–li** ，则该命令默认为当前已登录用户的 LUID。 |
-| 赛 | 列出当前缓存的票证授予票证（Tgt）和指定的登录会话的服务票证。 这是默认选项。 |
+| -lh | 表示以十六进制表示的用户本地唯一标识符 (LUID) 的高部分。 如果两者**都不**存在 **–li** ，则该命令默认为当前已登录用户的 LUID。 |
+| -li | 表示以十六进制表示的用户本地唯一标识符 (LUID) 的低部分。 如果两者**都不**存在 **–li** ，则该命令默认为当前已登录用户的 LUID。 |
+| 赛 | 列出指定登录会话的当前已缓存票证授予票证 (Tgt) 和服务票证。 这是默认选项。 |
 | tgt | 显示初始 Kerberos TGT。 |
 | 清空 | 允许您删除指定登录会话的所有票证。 |
 | 会话 | 显示此计算机上的登录会话的列表。 |
 | kcd_cache | 显示 Kerberos 约束委派缓存信息。 |
-| get | 允许您向由服务主体名称（SPN）指定的目标计算机请求票证。 |
+| get | 允许你请求服务主体名称指定的目标计算机的票证 (SPN) 。 |
 | add_bind | 允许你指定用于 Kerberos 身份验证的首选域控制器。 |
 | query_bind | 显示 Kerberos 已联系的每个域的缓存首选域控制器的列表。 |
 | purge_bind | 为指定的域删除缓存的首选域控制器。 |
-| kdcoptions | 显示 RFC 4120 中指定的密钥发行中心（KDC）选项。 |
+| kdcoptions | 显示 RFC 4120 中指定的密钥发行中心 (KDC) 选项。 |
 | /? | 显示此命令的帮助。 |
 
 #### <a name="remarks"></a>备注
@@ -97,7 +95,7 @@ klist [-lh <logonID.highpart>] [-li <logonID.lowpart>] tickets | tgt | purge | s
 
     - **RenewUntil：** 票证续订截止时间。
 
-    - **TimeSkew：** 与密钥发行中心（KDC）的时间差。
+    - **TimeSkew：** 与密钥发行中心 (KDC) 的时间差。
 
     - **EncodedTicket：** 编码的票证。
 

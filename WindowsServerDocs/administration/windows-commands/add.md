@@ -1,20 +1,18 @@
 ---
 title: add
 description: 添加命令的参考文章，可将卷添加到要进行卷影复制的卷集中，或将别名添加到别名环境。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 47efce7a-86d2-4872-ae31-baa108757afd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b409b0355f4e112773c3f847466586fe3c84654
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8ba5f425617fe48d10a900c82fbfcf9c174214f5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924078"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895585"
 ---
 # <a name="add"></a>add
 
@@ -33,7 +31,7 @@ add alias <aliasname> <aliasvalue>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ---------- | ----------- |
 | 卷 | 将卷添加到卷影副本集，这是要进行卷影复制的卷集。 有关语法和参数，请参阅[add volume](add-volume.md) 。 |
 | alias | 向别名环境添加给定的名称和值。 请参阅为语法和参数[添加别名](add-alias.md)。 |

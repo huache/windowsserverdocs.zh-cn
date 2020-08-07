@@ -1,20 +1,18 @@
 ---
 title: graftabl
 description: Graftabl 命令的参考文章，Windows 操作系统可在图形模式下显示扩展字符集。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b08351d4-3d24-490c-86f6-1252da11d923
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9259833856ec5c6de402b0db0a4de4636a66f508
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cd20baaca94c13e725cf3121ba7a9f4f9f5524b1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924594"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888500"
 ---
 # <a name="graftabl"></a>graftabl
 
@@ -29,9 +27,9 @@ graftabl /status
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| `<codepage>` | 指定一个代码页，用于定义图形模式下扩展字符的外观。 有效的代码页标识号为：<ul><li>**437** -美国</li><li>**850** -多语言（拉丁语 I）</li><li>**852** -斯拉夫语（拉丁语 II）</li><li>**855** -西里尔语（俄语）</li><li>**857** -土耳其语</li><li>**860** -葡萄牙语</li><li>**861** -冰岛语</li><li>**863** -加拿大-法语</li><li>**865** -北欧</li><li>**866** -俄语</li><li>**869** -现代希腊语</li></ul> |
+| `<codepage>` | 指定一个代码页，用于定义图形模式下扩展字符的外观。 有效的代码页标识号为：<ul><li>**437** -美国</li><li>**850** -多语言 (拉丁语 I) </li><li>**852** -斯拉夫 (拉丁语 II) </li><li>**855** -西里尔文 (俄语) </li><li>**857** -土耳其语</li><li>**860** -葡萄牙语</li><li>**861** -冰岛语</li><li>**863** -加拿大-法语</li><li>**865** -北欧</li><li>**866** -俄语</li><li>**869** -现代希腊语</li></ul> |
 | /status | 显示此命令所使用的当前代码页。 |
 | /? | 在命令提示符下显示帮助。 |
 
@@ -57,13 +55,13 @@ graftabl /status
 graftabl /status
 ```
 
-若要将代码页437（美国）的图形字符集加载到内存中，请键入：
+若要将代码页437的图形字符集加载 (美国) 到内存中，请键入：
 
 ```
 graftabl 437
 ```
 
-若要将代码页850（多语言）的图形字符集加载到内存中，请键入：
+若要将代码页850的图形字符集加载 (多语言) 到内存中，请键入：
 
 ```
 graftabl 850

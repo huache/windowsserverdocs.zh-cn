@@ -1,24 +1,22 @@
 ---
 title: bcdedit
 description: 用于创建新存储、修改现有存储以及添加启动菜单参数的 bcdedit 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ab2da47d-3aac-44a0-b7fd-bd9561d61553
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: 59d6a4eafe2eb3383cfeed9e1cbcb9d3e10fe376
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0a24ce7f2503d06ce6c57270027328600d93e217
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955809"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895164"
 ---
 # <a name="bcdedit"></a>bcdedit
 
-引导配置数据（BCD）文件提供用于描述启动应用程序和启动应用程序设置的存储。 存储中的对象和元素有效地替换 Boot.ini。
+引导配置数据 (BCD) 文件提供用于描述启动应用程序和启动应用程序设置的存储。 存储中的对象和元素有效地替换 Boot.ini。
 
 BCDEdit 是用于管理 BCD 存储的命令行工具。 它可用于多种用途，包括创建新存储、修改现有存储、添加启动菜单参数等等。 BCDEdit 的作用实质上与早期版本的 Windows Bootcfg.exe 相同，但有两个主要改进：
 
@@ -31,7 +29,7 @@ BCDEdit 是用于管理 BCD 存储的命令行工具。 它可用于多种用途
 
 BCDEdit 是编辑 Windows Vista 和更新版本的 Windows 的启动配置的主要工具。 该工具与 Windows Vista 分发一起包含在 %WINDIR%\System32 文件夹中。
 
-BCDEdit 限制为标准数据类型，主要用于对 BCD 执行单个常见更改。 对于更复杂的操作或非标准的数据类型，请考虑使用 BCD Windows Management Instrumentation （WMI）应用程序编程接口（API）来创建功能强大且灵活的自定义工具。
+BCDEdit 限制为标准数据类型，主要用于对 BCD 执行单个常见更改。 对于更复杂的操作或非标准的数据类型，请考虑使用 BCD Windows Management Instrumentation (WMI) 应用程序编程接口 (API) ，以创建功能更强大和更灵活的自定义工具。
 
 ## <a name="syntax"></a>语法
 
@@ -49,7 +47,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 #### <a name="parameters-that-operate-on-a-store"></a>在存储区上操作的参数
 
-| 选项 | 说明 |
+| 选项 | 描述 |
 | ------ | ----------- |
 | /createstore | 创建新的空启动配置数据存储。 创建的存储不是系统存储区。 |
 | /export | 将系统存储的内容导出到文件。 稍后可以使用此文件来还原系统存储的状态。 此命令仅对系统存储有效。 |
@@ -58,7 +56,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 #### <a name="parameters-that-operate-on-entries-in-a-store"></a>对存储中的项进行操作的参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------ | ----------- |
 | /copy | 在同一系统存储中创建指定启动项的副本。 |
 | /create | 在启动配置数据存储中创建新条目。 如果指定了众所周知的标识符，则不能指定 **/application**、 **/inherit**和 **/device**参数。 如果未指定标识符或未指定标识符，则必须指定 **/application**、 **/inherit**或 **/device**选项。 |
@@ -66,21 +64,21 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 #### <a name="parameters-that-operate-on-entry-options"></a>操作项选项的参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------ | ----------- |
 | /deletevalue | 从启动项中删除指定的元素。 |
 | /set | 设置输入选项值。 |
 
 #### <a name="parameters-that-control-output"></a>控制输出的参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------ | ----------- |
 | /enum | 列出存储中的条目。 **/Enum**选项是 BCEdit 的默认值，因此，运行不带参数的**bcdedit**命令等效于运行**bcdedit/enum active**命令。 |
 | /v | 详细模式。 通常，任何已知的条目标识符均由其友好速记形式表示。 将 **/v**指定为命令行选项，将全部标识符全部显示。 自行运行**bcdedit/v**命令等效于运行**bcdedit/enum active/v**命令。 |
 
 #### <a name="parameters-that-control-the-boot-manager"></a>控制启动管理器的参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------ | ----------- |
 | /bootsequence | 指定用于下一次启动的一次性显示顺序。 此命令类似于 **/displayorder**选项，只不过它仅在计算机下次启动时使用。 之后，计算机将恢复为原始显示顺序。 |
 | /默认27000 | 指定在超时过期时启动管理器选择的默认项。 |
@@ -90,15 +88,15 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 #### <a name="parameters-that-control-emergency-management-services"></a>控制紧急管理服务的参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------ | ----------- |
-| /bootems | 启用或禁用指定项的紧急管理服务（EMS）。 |
+| /bootems | 启用或禁用指定条目 (EMS) 的紧急管理服务。 |
 | /ems | 为指定的操作系统启动项启用或禁用 EMS。 |
 | /emssettings | 设置计算机的全局 EMS 设置。 **/emssettings**不会为任何特定的启动条目启用或禁用 EMS。 |
 
 #### <a name="parameters-that-control-debugging"></a>控制调试的参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------ | ----------- |
 | /bootdebug | 启用或禁用指定启动项的启动调试器。 尽管此命令适用于任何启动条目，但它仅对启动应用程序有效。 |
 | /dbgsettings | 指定或显示系统的全局调试器设置。 此命令不 enablepose。 若要设置单个全局调试器设置，请使用**bcdedit/set** `<dbgsettings> <type> <value>` 命令。 |

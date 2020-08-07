@@ -1,20 +1,18 @@
 ---
 title: ksetup addrealmflags
 description: Ksetup addrealmflags 命令的参考文章，可将其他领域标志添加到指定领域。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 80ca1e16-8871-494b-b9be-6bc9d63de860
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0206d56563544e48fec5e714febdd3c3be52ab40
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a834d6ce69fede20ed544d858c4f4c46abdf0d68
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925521"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888076"
 ---
 # <a name="ksetup-addrealmflags"></a>ksetup addrealmflags
 
@@ -28,7 +26,7 @@ ksetup /addrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM。 |
 
@@ -36,12 +34,12 @@ ksetup /addrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 - 领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 的计算机可以使用 Kerberos 服务器来管理 Kerberos 领域中的身份验证，而不是使用运行 Windows Server 操作系统的域。 此条目将建立领域的功能，如下所示：
 
-| 值 | 领域标志 | 说明 |
+| 值 | 领域标志 | 描述 |
 | ----- | ---------- | ----------- |
 | 0xF | 全部 | 设置所有领域标志。 |
-| 0x00 | None | 未设置领域标志，并且未启用任何其他功能。 |
+| 0x00 | 无 | 未设置领域标志，并且未启用任何其他功能。 |
 | 0x01 | sendaddress | 此 IP 地址将包含在票证授予票证中。 |
-| 0x02 | tcpsupported | 此领域支持传输控制协议（TCP）和用户数据报协议（UDP）。 |
+| 0x02 | tcpsupported | 传输控制协议 (TCP) 和用户数据报协议 (UDP) 在此领域中受支持。 |
 | 0x04 | delegate | 此领域中的每个人都受信任，可用于委派。 |
 | 0x08 | ncsupported | 此领域支持名称规范化，这允许 DNS 和领域的命名标准。 |
 | 0x80 | rc4 | 此领域支持 RC4 加密以启用跨领域信任，这允许使用 TLS。 |

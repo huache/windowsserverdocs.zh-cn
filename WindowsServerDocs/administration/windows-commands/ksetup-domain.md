@@ -1,20 +1,18 @@
 ---
 title: ksetup domain
 description: 用于为所有 Kerberos 操作设置域名的 ksetup 域命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2ef766e3-6071-44f2-946b-22ea5b61a508
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70454205f73375b11dc63e3496a2d7fc1bb3e50e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 81135ed668da901c55e891cec4c8749687359818
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926101"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887937"
 ---
 # <a name="ksetup-domain"></a>ksetup domain
 
@@ -28,7 +26,7 @@ ksetup /domain <domainname>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<domainname>` | 要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 contoso.com 或 contoso。|
 

@@ -1,24 +1,22 @@
 ---
 title: ksetup addkpasswd
-description: Ksetup addkpasswd 命令的参考文章，用于为某个领域添加 Kerberos 密码（kpasswd）服务器地址。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Ksetup addkpasswd 命令的参考文章，用于为领域添加 Kerberos 密码 (kpasswd) 服务器地址。
 ms.topic: article
 ms.assetid: d3196995-1b38-48ff-ba08-911cfab77317
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2db728684e713df35a39995c8ca95196f0b745ed
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 96dd96b3f66a41d75b943fd74ea9fb674f393d09
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925557"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888127"
 ---
 # <a name="ksetup-addkpasswd"></a>ksetup addkpasswd
 
-为某个领域添加 Kerberos 密码（kpasswd）服务器地址。
+为某个领域添加 Kerberos 密码 (kpasswd) 服务器地址。
 
 ## <a name="syntax"></a>语法
 
@@ -28,7 +26,7 @@ ksetup /addkpasswd <realmname> [<kpasswdname>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或**领域 =** 列出。 |
 | `<kpasswdname>` | 指定 Kerberos 密码服务器。 它被表述为不区分大小写的完全限定的域名，例如 mitkdc.contoso.com。 如果省略了 KDC 名称，则可以使用 DNS 来查找 Kdc。 |

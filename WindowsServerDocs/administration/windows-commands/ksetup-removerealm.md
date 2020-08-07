@@ -1,20 +1,18 @@
 ---
 title: ksetup removerealm
 description: 用于从注册表中删除指定领域的所有信息的 ksetup removerealm 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 39f0c6f0-4c50-4781-941e-0893495405e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0330f7b5f9121da2fce99985fe116be46eb1c9d9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a755600bc0d1bdbc7a1b19bed041cb4a7c5dea90
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933666"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887821"
 ---
 # <a name="ksetup-removerealm"></a>ksetup removerealm
 
@@ -32,13 +30,13 @@ ksetup /removerealm <realmname>
 ```
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或**领域 =** 列出。 |
 
 ### <a name="examples"></a>示例
 
-删除错误的领域名称（。CON，而不是 .COM），请键入：
+删除 ( 的错误领域名称。从本地计算机中，而不是 .COM) ，请键入：
 ```
 ksetup /removerealm CORP.CONTOSO.CON
 ```

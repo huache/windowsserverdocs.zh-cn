@@ -1,20 +1,18 @@
 ---
 title: auditpol
 description: Auditpol 命令的参考文章，其中显示了有关的信息和执行函数来操作审核策略。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a02cfb9d-732f-4e77-aeba-f18265daa3af
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f3f503b957175ba2a3997202d83c171cf8683032
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 026dfb747f6013c6d2b6469eb2082819c4018504
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923669"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895295"
 ---
 # <a name="auditpol"></a>auditpol
 
@@ -28,7 +26,7 @@ ms.locfileid: "85923669"
 
 - 设置和查询用于委托审核策略访问的安全描述符。
 
-- 向逗号分隔值（CSV）文本文件报告或备份审核策略。
+- 以逗号分隔的值报告或备份审核策略 (CSV) 文本文件。
 
 - 从 CSV 文本文件加载审核策略。
 
@@ -51,7 +49,7 @@ auditpol command [<sub-command><options>]
 | /restore | 从以前使用 auditpol/backup. 创建的文件还原审核策略。 有关详细信息，请参阅适用于语法和选项的[auditpol restore](auditpol-restore.md) 。 |
 | /clear | 清除审核策略。 有关详细信息，请参阅适用于语法和选项的[auditpol clear](auditpol-clear.md) 。 |
 | /remove | 删除所有每用户审核策略设置，并禁用所有系统审核策略设置。 有关详细信息，请参阅[auditpol remove](auditpol-remove.md) for 语法和 options。 |
-| /resourceSACL | 配置全局资源系统访问控制列表（Sacl）。 **注意：** 仅适用于 Windows 7 和 Windows Server 2008 R2。 有关详细信息，请参阅[Auditpol resourceSACL](auditpol-resourcesacl.md)。 |
+| /resourceSACL | 配置全局资源系统访问控制列表 (Sacl) 。 **注意：** 仅适用于 Windows 7 和 Windows Server 2008 R2。 有关详细信息，请参阅[Auditpol resourceSACL](auditpol-resourcesacl.md)。 |
 | /?| 在命令提示符下显示帮助。 |
 
 ## <a name="additional-references"></a>其他参考

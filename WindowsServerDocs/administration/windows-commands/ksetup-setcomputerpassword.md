@@ -1,20 +1,18 @@
 ---
 title: ksetup setcomputerpassword
 description: Ksetup setcomputerpassword 命令的参考文章，用于设置本地计算机的密码。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e307d8f6-3b93-4c24-ac04-f31549f7dc7d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70af854838e439532e49d6159b010e453d339244
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8d9dba34490616b07671ada16e0c76f0122c3d6a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922614"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887772"
 ---
 # <a name="ksetup-setcomputerpassword"></a>ksetup setcomputerpassword
 
@@ -31,7 +29,7 @@ ksetup /setcomputerpassword <password>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<password>` | 指定提供的密码以设置本地计算机上的计算机帐户。 只能使用具有管理权限的帐户来设置密码，并且密码必须为1到156个字母数字或特殊字符。 |
 
