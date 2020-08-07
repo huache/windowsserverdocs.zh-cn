@@ -1,20 +1,18 @@
 ---
 title: unexpose
 description: 隐藏的参考文章，其中 unexposes 了使用公开命令公开的卷影副本。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 58dc7d0f-52e9-4587-9487-d3b4c3e52640
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 02edb1f2c9331a22473123f0327dbc84cb05a865
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1c315639746db84d49afd72fc2be89e757c8fb95
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937300"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897066"
 ---
 # <a name="unexpose"></a>unexpose
 
@@ -30,12 +28,12 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |\<ShadowID>|Unexposes 指定的阴影 ID 指定的卷影副本。|
-|\<Drive:>|Unexposes 与指定驱动器号（例如，drive P）关联的卷影副本。|
-|\<Share>|Unexposes 与指定共享关联的卷影副本（例如， \\ \\ *计算机名* \) 。|
-|\<MountPoint>|Unexposes 与指定装入点关联的卷影副本（例如，C:\shadowcopy \) 。|
+|\<Drive:>|Unexposes 与指定驱动器号关联的卷影副本 (例如，drive P) 。|
+|\<Share>|Unexposes 与指定共享关联的卷影副本 (例如， \\ \\ *计算机名* \) 。|
+|\<MountPoint>|Unexposes 与指定装入点关联的卷影副本 (例如，C:\shadowcopy \) 。|
 
 ## <a name="remarks"></a>备注
 

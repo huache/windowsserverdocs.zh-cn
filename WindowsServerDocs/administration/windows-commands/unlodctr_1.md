@@ -1,24 +1,22 @@
 ---
 title: unlodctr
 description: Unlodctr 的参考文章，用于从系统注册表中删除服务或设备驱动程序的性能计数器名称和说明文本
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fc8aa6f0-c1d9-47ea-937a-28152148e774
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a054673ada197c6b116abc7eda49c0e755f22af0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3c867a4634024527066c329f408a210e97718d1c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937268"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897042"
 ---
 # <a name="unlodctr"></a>unlodctr
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 从系统注册表中删除服务或设备驱动程序的**性能计数器**名称和**说明**文本。
 
@@ -27,7 +25,7 @@ ms.locfileid: "85937268"
 Unlodctr <DriverName>
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |\<DriverName>|从 Windows Server 2003 注册表删除驱动程序或服务的性能计数器名称设置和说明文本 <DriverName> 。|
 |/?|在命令提示符下显示帮助。|
@@ -36,10 +34,10 @@ Unlodctr <DriverName>
 > [!WARNING]
 > 不正确地编辑注册表可能会对系统造成严重损坏。 在更改注册表之前，应备份计算机上任何有价值的数据。
 
-如果提供的信息包含空格，请使用引号将文本括起来（例如， <DriverName> ）。
+如果提供的信息包含空格，请使用引号将文本括 (例如 <DriverName>) 。
 
 ## <a name="examples"></a>示例
-若要为简单邮件传输协议（SMTP）服务删除当前性能注册表设置和计数器说明文本，请执行以下操作：
+若要删除 (SMTP) 服务的简单邮件传输协议的当前性能注册表设置和计数器说明文本，请执行以下操作：
 ```
 unlodctr SMTPSVC
 ```

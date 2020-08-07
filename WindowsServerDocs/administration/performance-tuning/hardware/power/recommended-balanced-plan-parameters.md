@@ -1,22 +1,20 @@
 ---
 title: 用于快速响应时间的建议的均衡电源计划参数
 description: 用于快速响应时间的建议的均衡电源计划参数
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 62dc6168e76bf3951443df0f06c47a8684d2df26
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 559f274bcfafdd6c89cf7aea69b3df14f68130c1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471582"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896705"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>针对需要快速响应时间的工作负荷推荐的均衡电源计划参数
 
-默认的**均衡**电源计划使用**吞吐量**作为优化的性能指标。 在稳定状态下，**吞吐量**在系统完全过载（约100% 的利用率）之前不会发生变化。  因此，**平衡**电源计划的能力相当高，同时最大限度地减少了处理器频率和最大利用率。
+默认的**均衡**电源计划使用**吞吐量**作为优化的性能指标。 在稳定状态下，**吞吐量**不会改变，因为系统完全过载 (~ 100% 的使用率) 。  因此，**平衡**电源计划的能力相当高，同时最大限度地减少了处理器频率和最大利用率。
 
 但是，利用率增加**可能会呈**指数级增长。 如今，快速响应时间的要求已大幅增加。 即使 Microsoft 建议用户在需要快速响应时间的情况下切换到**高性能**电源计划，某些用户也不希望在光速到中等负载级别的情况下获得强大的功能。 因此，对于需要快速响应时间的工作负荷，Microsoft 提供了以下一组建议的参数更改。
 
@@ -47,11 +45,11 @@ Powercfg -setactive scheme_balanced
 
 [SPECpower \_ ssj2008](http://spec.org/power_ssj2008/)是最常用的行业标准规范基准，适用于服务器电源和性能特征，用于检查电源影响。 由于它只使用**吞吐量**作为性能指标，因此默认的**均衡**电源计划可提供最佳的电源效率。
 
-建议的参数更改在光上消耗稍微更高的电量（即 <= 20%）加载级别。 但在负载级别较高的情况下，差别会增加，并且在60% 负载级别后开始使用与**高性能**电源计划相同的电源。 若要使用建议的更改参数，用户应在其机架容量规划过程中了解大中型负载级别的功率消耗。
+建议的参数更改在光 (（即 <= 20% ) 负载级别的情况下，消耗略高的幂。 但在负载级别较高的情况下，差别会增加，并且在60% 负载级别后开始使用与**高性能**电源计划相同的电源。 若要使用建议的更改参数，用户应在其机架容量规划过程中了解大中型负载级别的功率消耗。
 
 ## <a name="geekbench-3"></a>GeekBench 3
 
-[GeekBench 3](http://www.geekbench.com/geekbench3/)是一个跨平台处理器基准，用于分隔单核和多核性能的分数。 它模拟一组工作负荷，包括整数工作负荷（加密、压缩、图像处理等）、浮点工作负荷（建模、分形、图像锐化、图像模糊等）以及内存工作负荷（流式处理）。
+[GeekBench 3](http://www.geekbench.com/geekbench3/)是一个跨平台处理器基准，用于分隔单核和多核性能的分数。 它模拟一组工作负荷，包括整数工作负荷 (加密、压缩、图像处理等） ) 、浮点工作负载 (建模、分形、图像锐化、图像模糊等 ) 和内存工作负荷 (流式处理) 。
 
 **响应时间**是其分数计算的主要度量值。 在我们测试的系统中，在单核测试中，默认的**均衡**电源计划的回归约为18%，而在多核心测试中，与**高性能**电源计划相比，这是大约40% 的回归。 建议的更改会删除这些回归。
 

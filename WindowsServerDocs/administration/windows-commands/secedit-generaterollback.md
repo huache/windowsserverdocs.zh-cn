@@ -1,20 +1,18 @@
 ---
 title: secedit： generaterollback
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 385a6799-51a7-4fe3-bd73-10c7998b6680
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1dec7833853d3c0526997f1d3e1bd2113d114cf2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a5d7b21f47019e791ba541c17b99080c2324a43b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926172"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882956"
 ---
 # <a name="seceditgeneraterollback"></a>secedit： generaterollback
 
@@ -30,17 +28,17 @@ Secedit /generaterollback /db <database file name> /cfg <configuration file name
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|db|必需。</br>指定数据库的路径和文件名，该数据库包含将对其执行分析的存储配置。</br>如果文件名指定的数据库不具有与其关联的安全模板（由配置文件表示），则 `/cfg \<configuration file name>` 还必须指定命令行选项。|
+|db|必需。</br>指定数据库的路径和文件名，该数据库包含将对其执行分析的存储配置。</br>如果文件名指定的数据库没有安全模板 (如关联的配置文件) 所表示的，则 `/cfg \<configuration file name>` 还必须指定命令行选项。|
 |cfg|必需。</br>指定将导入到数据库中进行分析的安全模板的路径和文件名。</br>此/cfg 选项仅在与参数一起使用时才有效 `/db \<database file name>` 。 如果未指定此项，则对已存储在数据库中的任何配置执行分析。|
 |rbk|必需。</br>指定要向其中写入回滚信息的安全模板。 安全模板是使用 "安全模板" 管理单元创建的。 可以通过此命令创建回滚文件。|
 |log|可选。</br>指定进程的日志文件的路径和文件名。|
-|quiet|可选。</br>禁止显示屏幕和日志输出。 你仍可以使用 Microsoft 管理控制台（MMC）的 "安全配置和分析" 管理单元查看分析结果。|
+|quiet|可选。</br>禁止显示屏幕和日志输出。 你仍可以通过使用 "安全配置和分析" 管理单元 (MMC) 来查看分析结果。|
 
 ## <a name="remarks"></a>备注
 
-如果未提供日志文件的路径，则使用默认日志文件（*systemroot*\Users \* 用户帐户<em>\My Documents\Security\Logs \* DatabaseName</em>）。
+如果未提供日志文件的路径，则使用默认的日志文件 (*systemroot*\Users \* 用户帐户<em>\My Documents\Security\Logs \* DatabaseName</em>) 。
 
 从 Windows Server 2008 开始，已 `Secedit /refreshpolicy` 替换为 `gpupdate` 。 有关如何刷新安全设置的信息，请参阅[Gpupdate](gpupdate.md)。
 

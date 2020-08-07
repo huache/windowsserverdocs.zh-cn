@@ -1,39 +1,37 @@
 ---
-title: 将 WSUS 数据库从（Windows 内部数据库） WID 迁移到 SQL
-description: Windows Server Update Service （WSUS）主题-如何将 WSUS 数据库（SUSDB）从 Windows 内部数据库实例迁移到 SQL Server 的本地或远程实例。
-ms.prod: windows-server
-ms.technology: manage-wsus
+title: 将 WSUS 数据库从 (Windows 内部数据库) WID 迁移到 SQL
+description: Windows Server Update 服务 (WSUS) 主题-如何将 WSUS 数据库 (SUSDB) 从 Windows 内部数据库实例迁移到 SQL Server 的本地或远程实例。
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09g7dr
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: facd846dd0c20ee2e5001b0592651ce310e19097
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: edebd8ea11a844fbe6d00ca7ce7a6a375d8e9a51
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716882"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896863"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>将 WSUS 数据库从 WID 迁移到 SQL
 
 > 适用于： Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
 
-使用以下步骤将 WSUS 数据库（SUSDB）从 Windows 内部数据库实例迁移到 SQL Server 的本地或远程实例。
+使用以下步骤将 WSUS 数据库 (SUSDB) 从 Windows 内部数据库实例迁移到 SQL Server 的本地或远程实例。
 
 ## <a name="prerequisites"></a>先决条件
 
 - SQL 实例。 这可以是默认的**MSSQLServer**或自定义实例。
 - SQL Server Management Studio
 - 已安装 WID 角色的 WSUS
-- IIS （当通过服务器管理器安装 WSUS 时，通常包括此情况）。 它尚未安装，将需要。
+- IIS (通过服务器管理器) 安装 WSUS 时，通常会包括此步骤。 它尚未安装，将需要。
 
 ## <a name="migrating-the-wsus-database"></a>迁移 WSUS 数据库
 
 ### <a name="stop-the-iis-and-wsus-services-on-the-wsus-server"></a>在 WSUS 服务器上停止 IIS 和 WSUS 服务
 
-从 PowerShell （已提升）运行：
+从 PowerShell (提升的) 中，运行：
 
 ```powershell
     Stop-Service IISADMIN
@@ -45,15 +43,15 @@ ms.locfileid: "83716882"
 #### <a name="using-sql-management-studio"></a>使用 SQL Management Studio
 
 1. 右键单击 " **SUSDB** - &gt; **任务** - &gt; "，单击 "**分离**： ![ image1](images/image1.png)
-2. 选中 "**删除现有连接**"，然后单击 **"确定"** （如果存在活动连接，则可选）。
+2. 选中 "**删除现有连接**"，然后单击 **"确定"** (可选，如果) 存在活动的连接。
     ![image2](images/image2.png)
 
 #### <a name="using-command-prompt"></a>使用命令提示符
 
 > [!IMPORTANT]
-> 以下步骤说明如何使用**sqlcmd**实用工具从 Windows 内部数据库实例分离 WSUS 数据库（SUSDB）。 有关**sqlcmd**实用工具的详细信息，请参阅[sqlcmd 实用工具](https://go.microsoft.com/fwlink/?LinkId=81183)。
+> 以下步骤演示了如何使用**sqlcmd**实用工具从 Windows 内部数据库实例分离 WSUS 数据库 (SUSDB) 。 有关**sqlcmd**实用工具的详细信息，请参阅[sqlcmd 实用工具](https://go.microsoft.com/fwlink/?LinkId=81183)。
 > 1. 打开提升的命令提示符
-> 2. 运行以下 SQL 命令，通过**sqlcmd**实用工具从 Windows 内部数据库实例分离 WSUS 数据库（SUSDB）：
+> 2. 运行以下 SQL 命令，通过**sqlcmd**实用工具从 Windows 内部数据库实例分离 WSUS 数据库 (SUSDB) ：
 
 ```batchfile
         sqlcmd -S \\.\pipe\Microsoft##WID\tsql\query
@@ -67,7 +65,7 @@ ms.locfileid: "83716882"
 
 ### <a name="copy-the-susdb-files-to-the-sql-server"></a>将 SUSDB 文件复制到 SQL Server
 
-1. 将 WID 数据文件夹中的**SUSDB**和**SUSDB \_ ** （**% SystemDrive%** \\ **Windows \\ WID \\ 数据**）复制到 SQL 实例数据文件夹。
+1. 将**SUSDB**和 SUSDB 文件**从 \_ ** wid data 文件夹复制 (**% SystemDrive%** \\ **Windows \\ WID \\ data**) 到 SQL 实例数据文件夹。
 
 > [!TIP]
 > 例如，如果 SQL 实例文件夹是**C:\Program FILES\MICROSOFT sql Server\MSSQL12。MSSQLSERVER\MSSQL**，WID Data 文件夹为**C:\Windows\WID\Data，** 将 SUSDB 文件从**C:\Windows\WID\Data**复制到**C:\Program Files\Microsoft SQL Server\MSSQL12。MSSQLSERVER\MSSQL\Data**
@@ -76,13 +74,13 @@ ms.locfileid: "83716882"
 
 1. 在**SQL Server Management Studio**的 "**实例**" 节点下，右键单击 "**数据库**"，然后单击 "**附加**"。
     ![image3](images/image3.png)
-2. 在 "**附加数据库**" 框中，在 "**要附加的数据库**" 下，单击 "**添加**" 按钮，找到**SUSDB**文件（从 WID 文件夹复制），然后单击 **"确定"**。
+2. 在 "**附加数据库**" 框中的 "**要附加的数据库**" 下，单击 "**添加**" 按钮，然后找到**SUSDB**文件 (从 WID 文件夹复制) ，然后单击 **"确定"**。
     ![image4.jpg ](images/image4.png) ![ image5](images/image5.png)
 
 > [!TIP]
 > 也可以使用 Transact-sql 来完成此操作。  有关附加数据库的说明，请参阅[SQL 文档](https://docs.microsoft.com/sql/relational-databases/databases/attach-a-database)。
 >
-> 示例（使用上一示例中的路径）：
+> 使用前面示例中的路径 (示例) ：
 > ```sql
 >    USE master;
 >    GO
@@ -108,20 +106,20 @@ ms.locfileid: "83716882"
 应该列出**NT AUTHORITY\NETWORK SERVICE**帐户。 如果不是，则需要通过添加新的登录名来添加它。
 
 > [!IMPORTANT]
-> 如果 SQL 实例与 WSUS 在不同的计算机上，则应以 **[FQDN] \\ [WSUSComputerName] $** 格式列出 WSUS 服务器的计算机帐户。  否则，可以使用以下步骤添加它，将**NT AUTHORITY\NETWORK SERVICE**替换为 WSUS 服务器的计算机帐户（**[FQDN] \\ [WSUSComputerName] $**），***这是授予***对**NT AUTHORITY\NETWORK 服务**的权限
+> 如果 SQL 实例与 WSUS 在不同的计算机上，则应以 **[FQDN] \\ [WSUSComputerName] $** 格式列出 WSUS 服务器的计算机帐户。  否则，可以使用以下步骤添加它，将**NT AUTHORITY\NETWORK SERVICE**替换为 WSUS 服务器的计算机帐户 (**[FQDN] \\ [WSUSComputerName] $**) 此操作***除了***授予**NT AUTHORITY\NETWORK 服务**的权限
 
 ##### <a name="adding-nt-authoritynetwork-service-and-granting-it-rights"></a>添加 NT AUTHORITY\NETWORK SERVICE 并向其授予权限
 
 1. 右键单击 "**登录名**"，然后单击 "**新建登录名 ...** "
     ![图片6](images/image6.png)
-2. 在 "**常规**" 页上，填写**登录名**（**NT AUTHORITY\NETWORK SERVICE**），并将**默认数据库**设置为 "SUSDB"。
+2. 在 "**常规**" 页上， (**NT AUTHORITY\NETWORK SERVICE**) 中填写**登录名**，并将**默认数据库**设置为 SUSDB。
     ![image7](images/image7.png)
 3. 在 "**服务器角色**" 页上，确保选择 "**公用**" 和 " **sysadmin** "。
     ![image8](images/image8.png)
 4. 在 "**用户映射**" 页上：
     - 在 "**映射到此登录名的用户**" 下：选择**SUSDB**
     - 在 "**数据库角色成员身份： SUSDB**" 下，确保选中以下内容：
-        - **public**
+        - public
         - **webService** ![image9](images/image9.png)
 5. 单击 **“确定”**
 
@@ -131,7 +129,7 @@ ms.locfileid: "83716882"
 #### <a name="database-permissions"></a>数据库权限
 
 1. 右键单击 SUSDB
-2. 选择**属性**
+2. 选择“属性”
 3. 单击**权限**
 
 应该列出**NT AUTHORITY\NETWORK SERVICE**帐户。
@@ -168,7 +166,7 @@ ms.locfileid: "83716882"
 
 ### <a name="start-the-iis-and-wsus-services-on-the-wsus-server"></a>在 WSUS 服务器上启动 IIS 和 WSUS 服务
 
-从 PowerShell （已提升）运行：
+从 PowerShell (提升的) 中，运行：
 
 ```powershell
     Start-Service IISADMIN
@@ -178,10 +176,10 @@ ms.locfileid: "83716882"
 > [!NOTE]
 > 如果你使用的是 WSUS 控制台，请关闭并重新启动它。
 
-## <a name="uninstalling-the-wid-role-not-recommended"></a>正在卸载 WID 角色（不推荐）
+## <a name="uninstalling-the-wid-role-not-recommended"></a>不建议卸载 WID 角色 () 
 
 > [!WARNING]
-> 删除 WID 角色还会删除数据库文件夹（**%SystemDrive%\Program Files\Update Services\Database**），其中包含用于安装后任务的 wsusutil.exe 所需的脚本。 如果选择卸载 WID 角色，请确保事先备份 **%SystemDrive%\Program Files\Update Services\Database**文件夹。
+> 删除 WID 角色还会删除 (**%SystemDrive%\Program Files\Update Services\Database**) 的数据库文件夹，其中包含 WSUSUtil.exe 进行安装后任务所需的脚本。 如果选择卸载 WID 角色，请确保事先备份 **%SystemDrive%\Program Files\Update Services\Database**文件夹。
 
 使用 PowerShell：
 

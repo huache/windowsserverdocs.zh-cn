@@ -1,26 +1,24 @@
 ---
 title: secedit：验证
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9fb06354-f55a-4ca4-9fbc-9a872eb9b9cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f2da0792768a6b6d6113842614bc6f93c258822
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 30bb02f0d7947aa77f7ac41d5f7b179ca8fd236b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935970"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882936"
 ---
 # <a name="seceditvalidate"></a>secedit：验证
 
 
 
-验证存储在安全模板（.inf 文件）中的安全设置。
+验证存储在安全模板中的安全设置 ( .inf 文件) 。
 
 ## <a name="syntax"></a>语法
 
@@ -31,7 +29,7 @@ Secedit /validate <configuration file name>
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |配置文件名|必需。</br>指定将验证的安全模板的路径和文件名。|
 

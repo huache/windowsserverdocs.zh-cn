@@ -1,20 +1,18 @@
 ---
 title: 使用 AllDriverPackages 子命令
 description: AllDriverPackages 的参考文章，用于将文件夹中存储的所有驱动程序包添加到服务器。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ba6641c1-d7e9-43a9-9819-702dad5484ed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 277053d48ce8ed853ccd41659af0a8f2418400cf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 301842cce5306c8f7922660f49c9475fbbf70cc3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954819"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897038"
 ---
 # <a name="add-alldriverpackages"></a>AllDriverPackages
 
@@ -28,7 +26,7 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>]
 
 ### <a name="parameters"></a>参数
 
-|          参数           |                                                              说明                                                              |
+|          参数           |                                                              描述                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 |  FolderPath\<Folder Path>  |                      指定包含驱动程序包 .inf 文件的文件夹的完整路径。                      |
 |   [/Server： \<Server name> ]   | 指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。 |

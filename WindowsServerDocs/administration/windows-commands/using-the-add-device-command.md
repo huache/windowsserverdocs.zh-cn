@@ -1,24 +1,22 @@
 ---
 title: 添加设备
 description: 用于在 active directory 域服务中其预留计算机的添加设备的参考文章。 预留计算机也称为已知计算机。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1e599cc4-464a-421b-b6bb-c101af154131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 486cd3a567fe8742d680a77378d8f5a933b876ae
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d23e5a2bc69b782e635fa9a47158274796715edf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954800"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897019"
 ---
 # <a name="add-device"></a>添加设备
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 在 active directory 域服务中其预留一台计算机。 预留计算机也称为已知计算机。 这允许你配置属性来控制客户端的安装。 例如，你可以配置网络启动程序和客户端应接收的无人参与文件，以及客户端应从中下载网络启动程序的服务器。
 
@@ -28,11 +26,11 @@ wdsutil /add-Device /Device:<Device name> /ID:<UUID | MAC address> [/ReferralSer
 [/User:<Domain\User | User@Domain>] [/JoinRights:{JoinOnly | Full}] [/JoinDomain:{Yes | No}] [/BootImagepath:<Relative path>] [/OU:<DN of OU>] [/Domain:<Domain>]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |装置<computer name>|指定要添加的计算机的名称。|
-|/ID： <UUID &#124; MAC 地址>|指定计算机的 GUID/UUID 或 MAC 地址。 GUID/UUID 必须采用以下两种格式之一：二进制字符串或 GUID 字符串。 例如：<p>二进制字符串： **/id： ACEFA3E81F20694E953EB2DAA1E8B1B6**<p>GUID 字符串： **/id： E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<p>MAC 地址必须采用以下格式： **00B056882FDC** （无短划线）或**00-00-00-2f** -|
-|[/ReferralServer： <Server name> ]|指定要连接的服务器的名称，以使用普通文件传输协议（tftp）下载网络启动程序和启动映像。|
+|/ID： <UUID &#124; MAC 地址>|指定计算机的 GUID/UUID 或 MAC 地址。 GUID/UUID 必须采用以下两种格式之一：二进制字符串或 GUID 字符串。 例如：<p>二进制字符串： **/id： ACEFA3E81F20694E953EB2DAA1E8B1B6**<p>GUID 字符串： **/id： E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<p>MAC 地址必须采用以下格式： **00B056882FDC** (没有短划线) 或 00-)  (**2f** ----|
+|[/ReferralServer： <Server name> ]|指定要连接的服务器的名称，以使用普通文件传输协议 (tftp) 下载网络启动程序和启动映像。|
 |[/BootProgram： <Relative path> ]|指定从 remoteInstall 文件夹到此计算机应接收的网络引导程序的相对路径。 例如： boot\x86\pxeboot.com|
 |[/WdsClientUnattend： <Relative path> ]|指定从 remoteInstall 文件夹到无人参与安装文件的相对路径，该文件自动执行 Windows 部署服务客户端的安装屏幕。|
 |[/User： <Domain\User &#124; User@Domain>]|设置计算机帐户对象的权限，以向指定的用户授予将计算机加入域所需的权限。|

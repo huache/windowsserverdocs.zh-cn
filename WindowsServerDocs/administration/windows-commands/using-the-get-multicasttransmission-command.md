@@ -1,24 +1,22 @@
 ---
 title: MulticastTransmission
 description: MulticastTransmission 的参考文章，其中显示了有关指定映像的多播传输的信息。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b733737b-1e81-43d4-a058-d6985a613bef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a764aa0a975fe29daed54e50b7ab0284a12a399f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 883bfb0d462ab87162d6e849947334eae010b0b1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932202"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896943"
 ---
 # <a name="get-multicasttransmission"></a>MulticastTransmission
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示有关指定映像的多播传输的信息。
 
@@ -47,10 +45,10 @@ wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
      [/Filename:<File name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 许可证<Image name>|显示与此映像关联的多播传输。|
-|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名 (FQDN) 。 如果未指定服务器名称，则使用本地服务器。|
 媒体媒体：安装|指定映像类型。 请注意，必须将此选项设置为 "**安装**"。|
 |\mediaGroup： <Image group name> ]|指定包含图像的映像组。 如果未指定映像组名称，并且服务器上只存在一个映像组，则使用该映像组。 如果服务器上存在多个映像组，则必须使用此选项来指定映像组。|
 |/Architecture： {x86 &#124; ia64 &#124; x64}|指定与传输关联的启动映像的体系结构。 由于不同体系结构中的启动映像可能具有相同的映像名称，因此应指定体系结构以确保使用正确的映像。|

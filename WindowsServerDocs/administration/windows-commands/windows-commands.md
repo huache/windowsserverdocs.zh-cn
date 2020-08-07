@@ -1,24 +1,22 @@
 ---
 title: Windows 命令
 description: 参考
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
-ms.prod: windows-server
-ms.openlocfilehash: a4de7f64601ec4c869c2ae0e6b5ec7a0d22aee2c
-ms.sourcegitcommit: 3d56b626dc2d163d2c7847c01e872bfbfcde0e12
+ms.openlocfilehash: f93d78571528ba721c92e28f2e482b163e355031
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87538529"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896872"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
-所有受支持的 Windows 版本（服务器和客户端）都具有内置的一组 Win32 控制台命令。
+所有受支持的 Windows (server 和客户端) 中内置了一组 Win32 控制台命令。
 
 此文档集介绍了可用于通过脚本或脚本工具自动执行任务的 Windows 命令。
 
@@ -38,7 +36,7 @@ ms.locfileid: "87538529"
 
 ### <a name="command-shell-overview"></a>命令外壳概述
 
-命令行界面是 Windows 中内置的第一个 shell，用批处理（.bat）文件自动完成日常任务，如用户帐户管理或夜间备份。 借助 Windows 脚本宿主，你可以在命令行界面中运行更复杂的脚本。 有关详细信息，请参阅[cscript](cscript.md)或[wscript.echo](wscript.md)。 使用脚本可以更有效地执行操作，而不是使用用户界面。 脚本接受命令行中可用的所有命令。
+命令行界面是内置于 Windows 中的第一个 shell，用批处理 ( bat) 文件自动完成日常任务，如用户帐户管理或夜间备份。 借助 Windows 脚本宿主，你可以在命令行界面中运行更复杂的脚本。 有关详细信息，请参阅[cscript](cscript.md)或[wscript.echo](wscript.md)。 使用脚本可以更有效地执行操作，而不是使用用户界面。 脚本接受命令行中可用的所有命令。
 
 Windows 有两个命令 shell：命令 shell 和[PowerShell](/powershell/scripting/overview)。 每个 shell 是一种软件程序，它提供你与操作系统或应用程序之间的直接通信，同时提供用于自动执行 IT 操作的环境。
 
@@ -57,7 +55,7 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
 >
 > HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
 >
-> 若要设置**reg_DWOrd**值，请将控制字符的十六进制值用于特定函数（例如， **0 9**为 Tab， **0 08**为 Backspace）。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
+> 若要设置**reg_DWOrd**值，请将控制字符的十六进制值用于特定函数 (例如， **0 9**为 Tab， **0 08**为 Backspace) 。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
 
 ## <a name="command-line-reference-a-z"></a>命令行参考 a-z
 

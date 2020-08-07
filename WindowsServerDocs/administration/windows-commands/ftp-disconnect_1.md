@@ -1,24 +1,22 @@
 ---
 title: ftp disconnect
 description: Ftp 断开连接命令的参考文章，该命令断开与远程计算机的连接，并保留 ftp 提示符。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f91ac304-f126-49df-9ab9-b8fa2ea515fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd8da3fa16d5fb3fcd6a0eff86b01b5f52701433
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 25927cc14390056c3bc30ed97a9cc1b807cae968
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957849"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889454"
 ---
 # <a name="ftp-disconnect"></a>ftp disconnect
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 断开与远程计算机的连接，并在出现提示时保留 `ftp>` 。
 

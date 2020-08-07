@@ -1,20 +1,18 @@
 ---
 title: WSUS 和目录站点
-description: Windows Server Update Service （WSUS）主题-如何通过访问 Microsoft 更新目录站点将修补程序导入到 WSUS
-ms.prod: windows-server
-ms.technology: manage-wsus
+description: Windows Server Update 服务 (WSUS) 主题-如何通过访问 Microsoft 更新目录站点将修补程序导入到 WSUS
 ms.topic: article
 ms.assetid: f19a8659-5a96-4fdd-a052-29e4547fe51a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44c5ff9ffe793160b0d378a753c3f4c35e40f282
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25a9852935c47e0c005d78ae7ea24d14c7c1a546
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828320"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896785"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS 和目录站点
 
@@ -37,7 +35,7 @@ ms.locfileid: "80828320"
 
 下次 WSUS 服务器同步时，将下载从 Microsoft 更新目录站点导入的已批准更新。 在从 Microsoft 更新目录站点导入时，它们不会下载。
 
-请注意，你必须通过 WSUS 控制台访问 Microsoft 更新目录站点，以确保以与 WSUS 兼容的格式导入更新。 如果手动访问 Microsoft 更新目录网站，则下载的任何更新都不会导入到 WSUS 服务器中，而是作为单个 * 下载。MSU 文件。 WSUS 目前不具有用于在 \*中导入文件的支持机制。MSU 格式。
+请注意，你必须通过 WSUS 控制台访问 Microsoft 更新目录站点，以确保以与 WSUS 兼容的格式导入更新。 如果手动访问 Microsoft 更新目录网站，则下载的任何更新都不会导入到 WSUS 服务器中，而是作为单个 * 下载。MSU 文件。 WSUS 当前不具有用于在中导入文件的支持机制 \* 。MSU 格式。
 
 如果运行服务器清理向导，则可能会从 WSUS 服务器中删除从设置为 "未批准" 或 "已拒绝" Microsoft 更新目录导入的更新。 如果删除了这些项，则可以从 Microsoft 更新目录重新导入它们。
 

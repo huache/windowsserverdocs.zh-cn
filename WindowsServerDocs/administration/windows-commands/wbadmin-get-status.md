@@ -1,20 +1,18 @@
 ---
 title: wbadmin get status
 description: Wbadmin get status 的参考文章，它报告当前正在运行的备份或恢复操作的状态。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2911b944-7b95-46aa-8c1e-1d55a2fcc94c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a9a2a71ed8477722b32b06f37c88b373d6889568
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 124323829f82bea0826ee7d4c526af964492488b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954619"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896887"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin get status
 
@@ -22,7 +20,7 @@ ms.locfileid: "86954619"
 
 报告当前正在运行的备份或恢复操作的状态。
 
-若要使用此子命令，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。 （若要打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
+若要使用此子命令，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。  (打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
 
 ## <a name="syntax"></a>语法
 

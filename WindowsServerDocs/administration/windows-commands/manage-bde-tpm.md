@@ -1,26 +1,24 @@
 ---
 title: manage-bde tpm
-description: Manage-bde tpm 命令的参考文章，用于配置计算机受信任的平台模块（TPM）。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Manage-bde tpm 命令的参考文章，它配置计算机的受信任的平台模块 (TPM) 。
 ms.topic: article
 ms.assetid: 11a8530d-edd7-4fe3-ae81-b943766760fe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4eacf664a372d178a6391c8fa2359d2301484c36
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d5a41ccff889fc729ce812523d64b9404378d32c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957029"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886658"
 ---
 # <a name="manage-bde-tpm"></a>manage-bde tpm
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-配置计算机的受信任的平台模块（TPM）。
+ (TPM) 配置计算机的受信任的平台模块。
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +28,7 @@ manage-bde -tpm [-turnon] [-takeownership <ownerpassword>] [-computername <name>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | -turnon | 启用和激活 TPM，允许设置 TPM 所有者密码。 你还可以使用 **-t**作为此命令的缩写形式。 |
 | -takeownership | 通过设置所有者密码来取得 TPM 的所有权。 你还可以使用 **-o**作为此命令的缩写形式。 |

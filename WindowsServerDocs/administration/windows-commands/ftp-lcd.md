@@ -1,24 +1,22 @@
 ---
 title: ftp lcd
 description: Ftp lcd 命令的参考文章，用于更改本地计算机上的工作目录。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 60a25808-6abb-408b-8373-0bbdcd0994b4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d98b300de74ec537dedd3f43ccc2404c7350ac0c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5b2d555e0edb69ab11ef7ff9e7a233fb1c6fc0f2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957779"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889369"
 ---
 # <a name="ftp-lcd"></a>ftp lcd
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 更改本地计算机上的工作目录。 默认情况下，工作目录是启动**ftp**命令的目录。
 
@@ -30,7 +28,7 @@ lcd [<directory>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `[<directory>]` | 指定要更改的本地计算机上的目录。 如果未指定*目录*，则将当前工作目录更改为默认目录。 |
 

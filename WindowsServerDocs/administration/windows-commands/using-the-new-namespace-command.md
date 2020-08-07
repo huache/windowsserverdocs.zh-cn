@@ -1,26 +1,24 @@
 ---
 title: 新命名空间
 description: 用于创建和配置新命名空间的新命名空间的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6df60703-30bd-4d59-a8d9-9fe3efe96add
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3afbdd195f21450508bfa6992fc73c7d360092c6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f96181b9ce85a80ccc3d1bd344105dcc1e7f8d2d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932410"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896891"
 ---
 # <a name="new-namespace"></a>新命名空间
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-创建并配置新的命名空间。 当你只安装了传输服务器角色服务时，应使用此选项。 如果同时安装了 "部署服务器" 角色服务和 "传输服务器" 角色服务（这是默认设置），请使用[MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)。 请注意，在使用此选项之前，必须注册该内容提供程序。
+创建并配置新的命名空间。 当你只安装了传输服务器角色服务时，应使用此选项。 如果同时安装了 "部署服务器" 角色服务和 "传输服务器" 角色服务 (这是默认) ，请使用[MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)。 请注意，在使用此选项之前，必须注册该内容提供程序。
 ## <a name="syntax"></a>语法
 ```
 wdsutil [Options] /New-Namespace [/Server:<Server name>]
@@ -34,9 +32,9 @@ wdsutil [Options] /New-Namespace [/Server:<Server name>]
          [/Clients:<Number of clients>]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，则使用本地服务器。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名 (FQDN) 。 如果未指定服务器名称，则使用本地服务器。|
 |友好<Friendly name>|指定命名空间的好记名称。|
 |/Description<Description>]|设置命名空间的说明。|
 |名称<Namespace name>|指定命名空间的名称。 请注意，这不是友好名称，并且必须是唯一的。<p>-   **部署服务器角色服务**：此选项的语法为/NAMESPACE： WDS： <Image group> / <Image name> / <Index> 。 例如： **WDS： ImageGroup1/install/1**<br />-   **传输服务器角色服务**：此值应与在服务器上创建命名空间时提供的名称匹配。|

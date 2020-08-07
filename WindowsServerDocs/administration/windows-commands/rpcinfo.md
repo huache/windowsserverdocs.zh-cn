@@ -1,26 +1,24 @@
 ---
 title: rpcinfo
 description: 了解如何列出远程计算机上的程序。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7c342232-a8f0-42ff-8f11-d18c4981f5ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d25a806c63f959ec659a6dd692d9efd5b394a64c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 642ed98ff762fd1151b459fdd96a6e00772a53dc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820087"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883452"
 ---
 # <a name="rpcinfo"></a>rpcinfo
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-列出远程计算机上的程序。 **Rpcinfo**命令行实用工具向 RPC 服务器发出远程过程调用（RPC），并报告它找到的内容。
+列出远程计算机上的程序。 **Rpcinfo**命令行实用工具为 rpc 服务器 (rpc) 建立远程过程调用，并报告它找到的内容。
 
 ## <a name="syntax"></a>语法
 ```
@@ -28,12 +26,12 @@ rpcinfo [/p [<Node>]] [/b <Program version>] [/t <Node Program> [<version>]] [/u
 ```
 
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|/p [ \< Node>]|列出注册到指定主机上的端口映射器的所有程序。 如果未指定节点（计算机）名称，程序将查询本地主机上的端口映射器。|
-|/b \< 程序版本>|请求所有网络节点的响应，这些网络节点具有注册到端口映射器的指定程序和版本。 必须同时指定程序名称或编号和版本号。|
-|/t \< 节点计划> [ \< 版本>]|使用 TCP 传输协议调用指定的程序。 必须同时指定节点（计算机）名称和程序名称。 如果未指定版本，程序将调用所有版本。|
-|/u \< 节点计划> [ \< 版本>]|使用 UDP 传输协议调用指定的程序。 必须同时指定节点（计算机）名称和程序名称。 如果未指定版本，程序将调用所有版本。|
+|/p [ \<Node> ]|列出注册到指定主机上的端口映射器的所有程序。 如果未指定节点 (计算机) 名称，程序将查询本地主机上的端口映射器。|
+|/b\<Program version>|请求所有网络节点的响应，这些网络节点具有注册到端口映射器的指定程序和版本。 必须同时指定程序名称或编号和版本号。|
+|/t \<Node Program> [ \<version> ]|使用 TCP 传输协议调用指定的程序。 必须同时指定节点 (计算机) 名称和程序名称。 如果未指定版本，程序将调用所有版本。|
+|/u \<Node Program> [ \<version> ]|使用 UDP 传输协议调用指定的程序。 必须同时指定节点 (计算机) 名称和程序名称。 如果未指定版本，程序将调用所有版本。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="examples"></a>示例
@@ -45,11 +43,11 @@ rpcinfo /p [<Node>]
 ```
 rpcinfo /b <Program version>
 ```
-若要使用传输控制协议（TCP）调用程序，请键入：
+若要使用传输控制协议 (TCP) 调用程序，请键入：
 ```
 rpcinfo /t <Node Program> [<version>]
 ```
-使用用户数据报协议（UDP）调用程序：
+使用用户数据报协议 (UDP) 调用程序：
 ```
 rpcinfo /u <Node Program> [<version>]
 ```

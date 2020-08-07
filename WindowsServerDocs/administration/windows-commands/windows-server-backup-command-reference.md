@@ -1,20 +1,18 @@
 ---
 title: Windows Server 备份命令参考
 description: 有关备份命令参考的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 03de0a65-21f0-4dd7-a3ae-251c98bbf6eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32dfcc619fd12f4ac2e409fe8119bfa5dca225a7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2042c55774aefbb603c8592d48be12d22c0f545e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936257"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896855"
 ---
 # <a name="windows-server-backup-command-reference"></a>Windows Server 备份命令参考
 
@@ -24,7 +22,7 @@ ms.locfileid: "85936257"
 
 若要配置备份计划，您必须是**Administrators**组的成员。 若要使用此命令执行所有其他任务，您必须是**Backup Operators**或**Administrators**组的成员，或者您必须被委派了适当的权限。
 
-必须从提升的命令提示符运行**wbadmin** 。 （若要打开提升的命令提示符，请单击 "**开始**"，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
+必须从提升的命令提示符运行**wbadmin** 。  (若要打开提升的命令提示符，请单击 "**开始**"，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
 
 |子命令|说明|
 |----------|-----------|
@@ -40,6 +38,6 @@ ms.locfileid: "85936257"
 |[Wbadmin start systemstaterecovery](wbadmin-start-systemstaterecovery.md)|运行系统状态恢复。|
 |[Wbadmin start systemstatebackup](wbadmin-start-systemstatebackup.md)|运行系统状态备份。|
 |[Wbadmin delete systemstatebackup](wbadmin-delete-systemstatebackup.md)|删除一个或多个系统状态备份。|
-|[Wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)|运行完整系统的恢复（至少包含操作系统状态的所有卷）。 仅当使用 Windows 恢复环境时，此子命令才可用。|
+|[Wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)|运行完整系统的恢复 (至少包含操作系统状态) 的所有卷。 仅当使用 Windows 恢复环境时，此子命令才可用。|
 |[Wbadmin restore catalog](wbadmin-restore-catalog.md)|在本地计算机上的备份目录已损坏的情况下，从指定的存储位置恢复备份目录。|
 |[Wbadmin delete catalog](wbadmin-delete-catalog.md)|删除本地计算机上的备份目录。 仅当此计算机上的备份目录已损坏，并且你没有将备份存储在可用于还原目录的其他位置时，才使用此命令。|

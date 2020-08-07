@@ -1,24 +1,22 @@
 ---
 title: ftp ls
 description: Ftp ls 命令的参考文章，其中显示了远程计算机上的文件和子目录的缩略列表。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5e03c7db-1e2b-419c-acb2-8a68f3db9615
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6895886b8a18575f5e7c1f93c65f37a58ad3ad45
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 59e19d7e48b902ccc0704c22e150b3494fb2ad2b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957739"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889344"
 ---
 # <a name="ftp-ls"></a>ftp ls
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示远程计算机上的文件和子目录的缩写列表。
 
@@ -30,7 +28,7 @@ ls [<remotedirectory>] [<localfile>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- |------------ |
 | `[<remotedirectory>]` | 指定要查看其列表的目录。 如果未指定目录，则使用远程计算机上的当前工作目录。 |
 | `[<localfile>]` | 指定要在其中存储列表的本地文件。 如果未指定本地文件，则结果将显示在屏幕上。 |

@@ -1,24 +1,22 @@
 ---
 title: 添加图像
 description: 有关添加映像的参考文章，可将图像添加到 Windows 部署服务服务器。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d5b6f4da-90ba-4b0e-9423-66c8ef5172e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 535c303e779441dd164174e7a7e311747a9c1e4d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 24afd8b608875fcb971efad50d4c8adf16541557
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929130"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896993"
 ---
 # <a name="add-image"></a>添加图像
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 将图像添加到 Windows 部署服务服务器。
 
@@ -42,10 +40,10 @@ wdsutil /add-ImagmediaFile:<wim file path>
      [/UnattendFile:<Unattend file path>]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-mediaFile： < .wim 文件路径>|指定包含要添加的映像的 Windows 映像（.wim）文件的完整路径和文件名。|
-|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+mediaFile： < .wim 文件路径>|指定包含要添加的映像 () 文件的 Windows 映像的完整路径和文件名。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
 媒体： {Boot&#124;安装}|指定要添加的图像的类型。|
 |[/Skipverify]|指定在添加映像之前，不会在源映像文件上执行完整性验证。|
 |[/Name： <Name> ]|设置图像的显示名称。|

@@ -1,26 +1,24 @@
 ---
 title: Scwcmd 视图
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7995959a-d93e-4865-a6a0-2ab18c2bb47f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cbae5f3d0157424fb9281d47cdf126bf106447c3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c969931301afaab6cdf00e5a0238715fc655a79e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932611"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883086"
 ---
 # <a name="scwcmd-view"></a>Scwcmd: view
 
 > 适用于： Windows Server 2012 R2、Windows Server 2012
 
-使用指定的 .xsl 转换呈现 .xml 文件。 此命令可用于通过使用不同的视图显示安全配置向导（SCW） .xml 文件。
+使用指定的 .xsl 转换呈现 .xml 文件。 此命令可用于通过使用不同的视图显示安全配置向导 (SCW) .xml 文件。
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +28,7 @@ scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |上次\<Xmlfile.xml>|指定要查看的 .xml 文件。 必须指定此参数。|
 |/s\<Xslfile.xsl>|指定作为呈现过程的一部分应用于 .xml 文件的 .xsl 转换。 对于 SCW .xml 文件，此参数是可选的。 当使用**view**命令呈现某个 SCW .xml 文件时，它会自动尝试为指定的 .xml 文件加载正确的默认转换。 如果指定了 .xsl 转换，则必须假定 .xml 文件位于与 .xsl 转换相同的目录中，以写入转换。|

@@ -1,24 +1,22 @@
 ---
 title: uniqueid
-description: Uniqueid 的参考文章，其中显示或设置具有焦点的磁盘的 GUID 分区表（GPT）标识符或主启动记录（MBR）签名。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: 适用于 uniqueid 的参考文章，其中显示或设置 GUID 分区表 (GPT) 标识符或主启动记录 (MBR) 签名与具有焦点的磁盘相同。
 ms.topic: article
 ms.assetid: 64235a4a-b91c-46da-b9b0-68ee90571c2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5acf29d9a7dfd505a5ecdad2a08dfdb1a9f4d975
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ef76189e3377ecdb11605acf449ba68424d1588f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937286"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897055"
 ---
 # <a name="uniqueid"></a>uniqueid
 
-显示或设置具有焦点的磁盘的 GUID 分区表（GPT）标识符或主启动记录（MBR）签名。
+显示或设置 GUID 分区表 (GPT) 标识符或主启动记录 (MBR 的主) 签名。
 
 > [!IMPORTANT]
 > 在任何版本的 Windows Vista 中，此 DiskPart 命令均不可用。
@@ -31,7 +29,7 @@ uniqueid disk [id={<dword> | <GUID>}] [noerr]
 
 ### <a name="parameters"></a>参数
 
-|  参数   |                                                                                             说明                                                                                              |
+|  参数   |                                                                                             描述                                                                                              |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id = {\<dword> |                                                                                               <GUID>}                                                                                                |
 |    noerr     | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |

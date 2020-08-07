@@ -1,24 +1,22 @@
 ---
 title: tsprof
 description: Tsprof 的参考文章，可将远程桌面服务用户配置信息从一个用户复制到另一个用户。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 27047868-b706-4208-b7e0-1437a2325dd3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3abaf2413348edd723962ad99a19be5aa435a495
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 43a9c986a58a28b8de8110789be99f157be9fb66
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954869"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896664"
 ---
 # <a name="tsprof"></a>tsprof
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 将远程桌面服务用户配置信息从一个用户复制到另一个用户。
 远程桌面服务用户配置信息显示在 "本地用户和组" 和 "active directory 用户和计算机" 的远程桌面服务扩展中。
@@ -38,7 +36,7 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 ```
 
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |/update|更新域 <*DomainName*> 中 <*用户名*> 的配置文件路径信息，以 <*Profilepath*>。|
 |/domain\<DomainName>|指定应用操作的域的名称。|
@@ -66,4 +64,4 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 
 ## <a name="additional-references"></a>其他参考
 - [命令行语法关键字](command-line-syntax-key.md) 
-[远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)
+[远程桌面服务 (终端服务) 命令参考](remote-desktop-services-terminal-services-command-reference.md)

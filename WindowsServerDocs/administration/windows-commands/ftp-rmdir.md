@@ -1,24 +1,22 @@
 ---
 title: ftp rmdir
 description: 用于删除根目录的 ftp rmdir 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cf4778a4-9534-49c7-a061-850dc3504a67
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3247a5b374a0e9ea541eb04974570c6691045de0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: dfdb8f8638d12a70e526e7165367807260a4ca8f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957409"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888955"
 ---
 # <a name="ftp-rmdir"></a>ftp rmdir
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 删除远程目录。
 
@@ -30,7 +28,7 @@ rmdir <directory>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<directory>` | 指定要删除的远程目录的名称。 |
 

@@ -1,24 +1,22 @@
 ---
 title: ftp close
 description: Ftp close 命令的参考文章，该命令结束与远程服务器的 ftp 会话，并保留在 ftp 提示符下。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1dc344a9-64f7-45bc-9d44-a48afc844e36
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0936243482b7e8f56225bd4e2e848ebb438ecddc
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bcd287c9c5a1dcdf630a6a38d146108118907112
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957949"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889560"
 ---
 # <a name="ftp-close"></a>ftp close
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 结束与远程服务器的 ftp 会话，并在 `ftp>` 提示符下保留。
 

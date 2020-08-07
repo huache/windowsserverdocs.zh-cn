@@ -1,25 +1,23 @@
 ---
 title: 其他服务器性能优化资源
 description: 其他服务器性能优化资源
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c011d3c6e75fb1d5212d9b1ec3c6e6c69fac5d6
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 2b789fb3c5290c5f268c1e64f66fb25fd4856136
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001862"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896757"
 ---
 # <a name="additional-performance-tuning-resources"></a>其他性能优化资源
 
 使用本主题中的链接来了解有关此优化指南中讨论的概念的详细信息。
 
 ## <a name="microsoft-windows-server-websites"></a>Microsoft Windows Server 网站
--   [Windows Server 目录](https://www.windowsservercatalog.com/)
+-   [Windows Server 编录](https://www.windowsservercatalog.com/)
 
 -   [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default.aspx)
 
@@ -33,7 +31,7 @@ ms.locfileid: "77001862"
 
 -   [使用 PowerCfg 评估系统能效](https://technet.microsoft.com/library/cc748940.aspx)
 
--   [中断关联策略工具](https://support.microsoft.com/kb/252867)
+-   [中断-关联策略工具](https://support.microsoft.com/kb/252867)
 
 ## <a name="networking-subsystem-tuning-resources"></a>网络子系统优化资源
 
@@ -45,13 +43,13 @@ ms.locfileid: "77001862"
 
 ## <a name="storage-subsystem-tuning-resources"></a>存储子系统优化资源
 
--   [适用于 Windows 的磁盘子系统性能分析](https://download.microsoft.com/download/e/b/a/eba1050f-a31d-436b-9281-92cdfeae4b45/subsys_perf.doc)（本文档的某些部分已过期，但所捕获的许多一般观测和指导原则仍然准确且相关。）
+-   此文档的 Windows (部分的[磁盘子系统性能分析](https://download.microsoft.com/download/e/b/a/eba1050f-a31d-436b-9281-92cdfeae4b45/subsys_perf.doc)已过期，但所捕获的许多一般观测和指导原则仍然准确且相关。 ) 
 
 ## <a name="file-server-tuning-resources"></a>文件服务器优化资源
 
 -   [适用于 Microsoft 网络文件系统服务的性能优化指南](https://technet.microsoft.com/library/bb463205.aspx)
 
--   [\[FSSO\]：文件访问服务系统概述](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
+-   [\[FSSO \] ：文件访问服务系统概述](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
 
 -   [如何禁用 TCP 自动调谐诊断工具](https://support.microsoft.com/kb/967475)
 
@@ -63,7 +61,7 @@ ms.locfileid: "77001862"
 
 -   [Windows Server 2016 中 Hyper-v 的新增功能](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/what-s-new-in-hyper-v-on-windows)
 
--   [Hyper-v 动态内存配置指南](https://technet.microsoft.com/library/ff817651.aspx)
+-   [Hyper-V 动态内存配置指南](https://technet.microsoft.com/library/ff817651.aspx)
 
 -   [NUMA 节点均衡](https://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
 
@@ -79,7 +77,7 @@ ms.locfileid: "77001862"
 
 ## <a name="print-server-tuning-resources"></a>打印服务器优化资源
 
--   [打印服务器可伸缩性和容量规划](https://technet.microsoft.com/library/dn554243.aspx)
+-   [Print Server Scalability and Capacity Planning](https://technet.microsoft.com/library/dn554243.aspx)
 
 ## <a name="server-workload-tuning-resources"></a>服务器工作负荷优化资源
 
@@ -95,13 +93,13 @@ ms.locfileid: "77001862"
 
 -   [销售和分发工作负载的性能优化](https://msdn.microsoft.com/library/windows/hardware/dn567646(v=vs.85).aspx)
 
--   [联机事务处理（OLTP）的性能优化](https://msdn.microsoft.com/library/windows/hardware/dn567642(v=vs.85).aspx)
+-   [ (OLTP) 的联机事务处理的性能优化](https://msdn.microsoft.com/library/windows/hardware/dn567642(v=vs.85).aspx)
 
 -   [如何：将 SQL Server 配置为使用软件 NUMA](https://go.microsoft.com/fwlink/?LinkId=98292)
 
--   [如何：将 TCP/IP 端口映射到 NUMA 节点](https://go.microsoft.com/fwlink/?LinkId=98293)
+-   [如何将 TCP/IP 端口映射到 NUMA 节点](https://go.microsoft.com/fwlink/?LinkId=98293)
 
--   [ALTER SERVER CONFIGURATION （Transact-sql）](https://msdn.microsoft.com/library/ee210585.aspx)
+-   [ALTER SERVER CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/library/ee210585.aspx)
 
 
 ## <a name="server-tuning-tools"></a>服务器优化工具

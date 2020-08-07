@@ -1,24 +1,22 @@
 ---
 title: ftp mls
 description: Ftp mls 命令的参考文章，其中显示远程目录中的文件和子目录的简短列表。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4738fd49-0e80-4bdf-a773-0f973db3a710
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f3d5c6b595cf6f8261a4af742cef60d0c9e3abd
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c2e0dc4ff4b516cc436e5b8a0a9c5ca2e4d77b5d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957649"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889242"
 ---
 # <a name="ftp-mls"></a>ftp mls
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示远程目录中的文件和子目录的简短列表。
 
@@ -30,7 +28,7 @@ mls <remotefile>[ ] <localfile>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<remotefile>` | 指定要查看其列表的文件。 指定*remotefiles*时，请使用连字符来表示远程计算机上的当前工作目录。 |
 | `<localfile>` | 指定要在其中存储列表的本地文件。 指定*localfile*时，请使用连字符在屏幕上显示列表。 |

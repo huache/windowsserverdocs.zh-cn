@@ -1,20 +1,18 @@
 ---
 title: Scwcmd 回滚
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4fd9f89b-0420-420a-ad20-4a328636b1e7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b329791b16e333e38669258eeeedfa8d65f334db
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8e0fc158584c15c021b14c96829fe0266c3193be
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932644"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883125"
 ---
 # <a name="scwcmd-rollback"></a>Scwcmd: rollback
 
@@ -30,7 +28,7 @@ scwcmd rollback /m:<ComputerName> [/u:<UserName>] [/pw:<Password>]
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |一样\<ComputerName>|指定应在其中执行回滚操作的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。|
 |/u\<UserName>|指定执行远程回滚时要使用的备用用户帐户。 默认值为已登录的用户。|

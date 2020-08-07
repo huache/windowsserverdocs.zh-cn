@@ -1,24 +1,22 @@
 ---
 title: tsecimp
-description: 用于 tsecimp 的参考文章，可将分配信息从可扩展标记语言（XML）文件导入到 TAPI 服务器安全文件（Tsec.ini）。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: '有关 tsecimp 的参考文章，可将可扩展标记语言 (XML) 文件中的分配信息导入到 TAPI 服务器安全文件 ( # A0) 。'
 ms.topic: article
 ms.assetid: d7488ec6-0eff-45ff-89ee-9cbe752416bf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c5c3362571df5a3b22dda1b663fcbba749ee6df6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 641e9724211034fa6e5bd76d0d3705b175a18b4c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954889"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896681"
 ---
 # <a name="tsecimp"></a>tsecimp
 
-将可扩展标记语言（XML）文件中的分配信息导入到 TAPI 服务器安全文件（Tsec.ini）。 你还可以使用此命令来显示 TAPI 提供程序和与每个设备关联的线路设备的列表，验证 XML 文件的结构，而无需导入内容以及检查域成员身份。
+将可扩展标记语言 (XML) 文件中的分配信息导入到 TAPI 服务器安全文件 ( # A0) 。 你还可以使用此命令来显示 TAPI 提供程序和与每个设备关联的线路设备的列表，验证 XML 文件的结构，而无需导入内容以及检查域成员身份。
 
 ## <a name="syntax"></a>语法
 
@@ -29,7 +27,7 @@ tsecimp /d
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |/f \<Filename>|必需。 指定 XML 文件的名称，该文件包含要导入的分配信息。|
 |/v|验证 XML 文件的结构而无须将该信息导入 Tsec.ini 文件。|

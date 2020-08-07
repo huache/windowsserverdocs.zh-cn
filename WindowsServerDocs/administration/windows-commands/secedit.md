@@ -1,20 +1,18 @@
 ---
 title: secedit
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 58ed57ed-08e3-403d-a363-0620b358637a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e5918265feb7dc72759ea22d2f582e4754df96c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 570590710ea10758fe35e1cc2160709885bb60eb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936491"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882902"
 ---
 # <a name="secedit"></a>secedit
 
@@ -36,7 +34,7 @@ secedit
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |[Secedit:analyze](secedit-analyze.md)|允许你针对存储在数据库中的基线设置分析当前系统设置。  分析结果存储在数据库的一个独立区域中，可以在 "安全配置和分析" 管理单元中查看。|
 |[Secedit:configure](secedit-configure.md)|允许你配置存储在数据库中的安全设置的系统。|
@@ -52,15 +50,15 @@ secedit
 当使用安全模板管理单元创建安全模板并运行 "安全配置和分析" 管理单元时，将创建以下文件：
 
 
-|           文件           |                                                                                                                                                                                                                                                               说明                                                                                                                                                                                                                                                                |
+|           文件           |                                                                                                                                                                                                                                                               描述                                                                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        Scesrv.dll        |                                                                                                                             **位置**：%windir%\security\logs</br>**创建者**：操作系统</br>**文件类型**：文本</br>**刷新频率**：在 secedit/analyze、/configure、/export 或/import 运行时被覆盖。</br>**Content**：包含按策略类型分组的分析结果。                                                                                                                             |
 | *用户选择的名称*。 sdb |                                                                                    **位置**：% windir% \* 用户帐户 <em> \Documents\Security\Database</br></em>*创建者* <em> ：运行 "安全配置和分析" 管理单元</br></em>*文件类型* <em> ：专有</br></em>*刷新频率* <em> ：每当创建新安全模板时更新。</br></em>*内容* \* ：本地安全策略和用户创建的安全模板。                                                                                    |
-| *用户选择的名称*.log | **位置**：用户定义，但默认为% windir% \* 用户帐户 <em> \Documents\Security\Logs</br></em>*创建者* <em> ：运行/analyze 和/configure 子命令（或使用 "安全配置和分析" 管理单元）</br></em>*文件类型* <em> ：文本</br></em>*刷新频率* <em> ：运行 "/analyze and/configure" 子命令（或使用 "安全配置和分析" 管理单元）; 已覆盖。</br></em>*内容* \* ：</br>1. 日志文件名称</br>2. 日期和时间</br>3. 分析或调查结果。 |
+| *用户选择的名称*.log | **位置**：用户定义，但默认为% windir% \* 用户帐户 <em> \Documents\Security\Logs</br></em>*创建者* <em> ：运行 "/analyze" 和 "/configure" 子命令 (或使用 "安全配置和分析" 管理单元) </br></em>*文件类型* <em> ：文本</br></em>*刷新频率* <em> ： (或使用 "安全配置和分析" 管理单元) ，运行 "/analyze" 和 "/configure" 子命令。</br></em>*内容* \* ：</br>1. 日志文件名称</br>2. 日期和时间</br>3. 分析或调查结果。 |
 | *用户选择的名称*.inf |                                                                                     **位置**：% windir% \* 用户帐户 <em> \Documents\Security\Templates</br></em>*创建者* <em> ：运行安全模板管理单元</br></em>*文件类型* <em> ：文本</br></em>*刷新频率* <em> ：每次更新安全模板时</br></em>*内容* \* ：包含为使用管理单元选择的每个策略设置的模板信息。                                                                                     |
 
 > [!NOTE]
-> Microsoft 管理控制台（MMC）和 "安全配置和分析" 管理单元在 "服务器核心" 上不可用。
+> Microsoft 管理控制台 (MMC) 并且 "安全配置和分析" 管理单元在 "服务器核心" 上不可用。
 
 ## <a name="additional-references"></a>其他参考
 

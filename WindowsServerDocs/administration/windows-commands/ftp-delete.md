@@ -1,24 +1,22 @@
 ---
 title: ftp delete
 description: Ftp delete 命令的参考文章，用于删除远程计算机上的文件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 067c45f3-e4e8-4450-b8b6-836994f6adfe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa24e8a052d2eb05d180bce2e843e34532a453f8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 315a73f0ebfbefdf4a7033f42c2cad02e2ab77bc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957899"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889522"
 ---
 # <a name="ftp-delete"></a>ftp delete
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 删除远程计算机上的文件。
 
@@ -30,7 +28,7 @@ delete <remotefile>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<remotefile>` | 指定要删除的文件。 |
 

@@ -1,24 +1,22 @@
 ---
 title: select disk
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a0da614b-09d9-433b-b4eb-9127f84431cb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2bcfa45c111f088f1a129c47d0b0a148dfee106f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b1aa57e2ad077c1f109ecb68ecde3c0433664dae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936469"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882872"
 ---
 # <a name="select-disk"></a>select disk
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 选择指定的磁盘并将焦点移动到该磁盘。
 
@@ -35,7 +33,7 @@ select disk={ <n> | <disk path> | system | next }
 
 ### <a name="parameters"></a>参数
 
-|  参数  |                                                                                                                                                                                                            说明                                                                                                                                                                                                            |
+|  参数  |                                                                                                                                                                                                            描述                                                                                                                                                                                                            |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     <n>     | 指定接收焦点的磁盘数。 可以通过使用 DiskPart 中**列出的磁盘**命令查看计算机上的所有磁盘的数字。 **注意：** 在配置包含多个磁盘的系统时，请不要使用**select disk \= 0**来指定系统磁盘。 重新启动时，计算机可能会重新分配磁盘号，并且具有相同磁盘配置的不同计算机可以具有不同的磁盘号。 |
 | <disk path> |                                                                                                                 指定接收焦点的磁盘的位置，例如**PCIROOT \( 0 \) \# PCI \( 0F02 \) \# atA \( C00T00L00 \) **。 若要查看磁盘的位置路径，请选择该磁盘，然后键入**详细磁盘**。                                                                                                                  |

@@ -1,24 +1,22 @@
 ---
 title: ftp mkdir
 description: 用于在远程计算机上创建目录的 ftp mkdir 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5fac19fb-6835-4011-93cc-ac62f484d5d4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f97b9fe5edc885c35d29f1b17701e0666f6c2c4e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5b8e7b0934c2b501f7a5dd31d07edc61e9209a65
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957685"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889321"
 ---
 # <a name="ftp-mkdir"></a>ftp mkdir
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 在远程计算机上创建一个目录。
 
@@ -30,7 +28,7 @@ mkdir <directory>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<directory>` | 指定新的远程目录的名称。 |
 

@@ -1,26 +1,24 @@
 ---
 title: Scwcmd 配置
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6528b9dc-3d82-4228-b734-ed717458d74c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e93c0566c28cc77074781b4670dac689795aeeb2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7556d28826b422b7693ba0770f1e4fa2e4a3a76d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932666"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883213"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: configure
 
 > 适用于： Windows Server 2012 R2、Windows Server 2012
 
-将安全配置向导（SCW）生成的安全策略应用到计算机。 此命令行工具还接受计算机名称的列表作为输入。
+将 (SCW) 生成的安全策略的安全配置向导应用到计算机。 此命令行工具还接受计算机名称的列表作为输入。
 
 ## <a name="syntax"></a>语法
 
@@ -30,15 +28,15 @@ scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<Compute
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |一样\<ComputerName>|指定要配置的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m**参数，则还必须指定 **/p**参数。|
-|/ou\<OuName>|指定 Active Directory 域服务中组织单位（OU）的完全限定的域名（FQDN）。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将根据给定的策略进行分析。|
+|/ou\<OuName>|指定组织单位的完全限定的域名 (FQDN) 在 Active Directory 域服务中的组织单位 (OU) 。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将根据给定的策略进行分析。|
 |/p\<Policy>|指定要用于执行配置的 .xml 策略文件的路径和文件名。|
 |/i\<ComputerList>|指定 .xml 文件的路径和文件名，该文件包含计算机的列表及其预期的策略文件。 .Xml 文件中的所有计算机都将根据其相应的策略文件进行配置。 示例 .xml 文件是% windir% \security\SampleMachineList.xml。|
 |/u\<UserName>|指定在配置远程计算机时要使用的备用用户凭据。 默认值为已登录的用户。|
 |pw\<Password>|指定在配置远程计算机时要使用的备用用户凭据。 默认值为登录用户的密码。|
-|/t:\<Threads>|指定在配置过程中应保持的同时未完成配置操作的数量（DefaultValue = 40，MinValue = 1，|
+|/t:\<Threads>|指定在配置过程中应保持的同时未完成的配置操作的数量 (DefaultValue = 40，MinValue = 1，= 1000) 。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注

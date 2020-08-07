@@ -1,24 +1,22 @@
 ---
 title: tskill
 description: Tskill 的参考文章，用于结束在远程桌面会话主机服务器上的会话中运行的进程。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 08986e6a-6900-4ece-85a1-8f73b14db1b3 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5e4e32bada68b8c7d931b8603fbf09eba45791d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9fe3db1f218bc95fab4f3f2d917575679ab81931
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954879"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896679"
 ---
 # <a name="tskill"></a>tskill
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 结束在远程桌面会话主机服务器上的会话中运行的进程。
 
@@ -33,7 +31,7 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |\<ProcessID>|指定要结束的进程的 ID。|
 |\<ProcessName>|指定要结束的进程的名称。 此参数可以包含通配符。|
@@ -59,4 +57,4 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
   ```
   ## <a name="additional-references"></a>其他参考
   - [命令行语法关键字](command-line-syntax-key.md) 
-  [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)
+  [远程桌面服务 (终端服务) 命令参考](remote-desktop-services-terminal-services-command-reference.md)

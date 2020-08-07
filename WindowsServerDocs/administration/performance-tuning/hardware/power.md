@@ -1,18 +1,16 @@
 ---
 title: Windows Server 硬件电源注意事项
 description: 有关 Windows Server 硬件功能的注意事项。
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e110fbb41f44a4c8ac6ab014eeae44e542ade41
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ee380937e54faa77ec17f8ae47445089ba1eece8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471682"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896729"
 ---
 # <a name="server-hardware-power-considerations"></a>服务器硬件电源注意事项
 
@@ -20,7 +18,7 @@ ms.locfileid: "85471682"
 
 ## <a name="processor-recommendations"></a>处理器建议
 
-频率、操作电压、缓存大小和处理技术会影响处理器的能耗。 处理器具有散热设计点（TDP）级别，它提供了相对于其他模型的能源消耗的基本指示。
+频率、操作电压、缓存大小和处理技术会影响处理器的能耗。 处理器的散热设计点 (TDP) 评级，提供相对于其他模型的能源消耗的基本指示。
 
 通常，可以选择符合性能目标的最低 TDP 处理器。 另外，较新版本的处理器通常会更有效地工作，并且它们可能会为 Windows 电源管理算法公开更多的电源状态，从而在所有性能级别上实现更好的电源管理。 或者，他们可以使用 Microsoft 与硬件制造商合作开发的一些新的 "协作" 电源管理技术。
 
@@ -28,7 +26,7 @@ ms.locfileid: "85471682"
 
 ## <a name="memory-recommendations"></a>内存建议
 
-内存帐户的总系统电量增加部分。 许多因素会影响内存 DIMM 的能耗，如内存技术、纠错码（ECC）、总线频率、容量、密度和排名。 因此，最好是在购买大量内存之前比较预期的电源分级。
+内存帐户的总系统电量增加部分。 许多因素会影响内存 DIMM 的能源消耗，如内存技术、错误更正代码 (ECC) 、总线频率、容量、密度和排名。 因此，最好是在购买大量内存之前比较预期的电源分级。
 
 低功耗内存现已可用，但你必须考虑性能和成本的权衡。 如果要对服务器进行分页，还应考虑分页磁盘的能源成本。
 
@@ -38,7 +36,7 @@ RPM 越大，消耗的能耗就会增加。 SSD 驱动器比旋转驱动器更�
 
 ## <a name="network-and-storage-adapter-recommendations"></a>网络和存储器适配器建议
 
-某些适配器在空闲期间会降低能耗。 对于 10 Gb 网络适配器和高带宽（4-8 Gb）存储链接，这是一个重要的考虑因素。 此类设备可能会消耗大量能源。
+某些适配器在空闲期间会降低能耗。 这是 10 Gb 网络适配器和高带宽 (4-8 Gb) 存储链接的重要注意事项。 此类设备可能会消耗大量能源。
 
 ## <a name="power-supply-recommendations"></a>电源建议
 
