@@ -1,23 +1,21 @@
 ---
 title: Windows Server 容器的性能优化
 description: 针对 Windows Server 16 上的容器的性能优化建议
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: a4508e28e54562748422b198f703e23326d15720
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 53201ee17829ec82eb8d661b5f76689e00d22df8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851630"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895988"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Windows Server 容器的性能优化
 
 ## <a name="introduction"></a>简介
-Windows Server 2016 是支持内置于 OS 的容器技术的第一个 Windows 版本。 Server 2016 中提供了两种类型的容器：Windows Server 容器和 Hyper-V 容器。 每个容器类型均支持 Windows Server 2016 的 Server Core 或 Nano Server SKU。 
+Windows Server 2016 是支持内置于 OS 的容器技术的第一个 Windows 版本。 Server 2016 中提供了两种类型的容器：Windows Server 容器和 Hyper-V 容器。 每个容器类型均支持 Windows Server 2016 的 Server Core 或 Nano Server SKU。
 
 这些配置具有不同的性能影响，我们将在下方详细介绍这些影响，帮助你了解适合你方案的配置。 此外，我们还会详细介绍影响性能的配置，并且会说明针对每个选项的权衡。
 
@@ -33,7 +31,7 @@ Hyper-V 容器提供的额外隔离在很大程度上是通过容器和容器主
 
 ### <a name="nano-server-and-server-core"></a>Nano Server 和 Server Core
 
-Windows Server 容器和 Hyper-V 容器提供了针对 Server Core 的支持，以及针对 Windows Server 2016 中提供的新安装选项的支持：[Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server)。 
+Windows Server 容器和 Hyper-V 容器提供了针对 Server Core 的支持，以及针对 Windows Server 2016 中提供的新安装选项的支持：[Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server)。
 
 Nano Server 是针对私有云和数据中心进行优化的远程管理的服务器操作系统。 它类似于服务器核心模式中的 Windows Server，但显著变小，无本地登录功能，且仅支持 64 位应用程序、工具和代理。 它所需的磁盘空间更少，并且启动速度更快。
 
@@ -71,7 +69,7 @@ Windows Server 容器和 Hyper-V 容器提供了各种网络模式，从而最�
 
 每个容器都将收到来自内部专用 IP 前缀（例如 172.16.0.0/12）的一个 IP 地址。 支持从容器主机到容器终结点的端口转发/映射。 首次运行 dockerd 时，Docker 将默认创建一个 NAT 网络。
 
-在这三种模式中，NAT 配置是最昂贵的网络 IO 路径，但需要进行的配置量最少。 
+在这三种模式中，NAT 配置是最昂贵的网络 IO 路径，但需要进行的配置量最少。
 
 Windows Server 容器使用主机 vNIC 连接到虚拟交换机。 Hyper-V 容器使用合成 VM NIC（不公开到实用工具 VM）连接到虚拟交换机。 当容器与外部网络通信时，数据包将通过应用了地址转换的 WinNAT 进行路由，从而产生一些开销。
 

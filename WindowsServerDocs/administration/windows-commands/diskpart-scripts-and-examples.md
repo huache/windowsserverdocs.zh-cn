@@ -1,24 +1,22 @@
 ---
 title: diskpart 脚本和示例
 description: 有关的详细信息，请参阅有关如何自动执行磁盘相关任务（例如创建卷或将磁盘转换为动态磁盘）的示例。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 319c0795-11df-47c8-b203-eadb0577ee0d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ace5b081d9dd362bb1455f9992568f197c815fdf
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 1ff62c18c567af3ab064683663f5112090250307
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409738"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890940"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart 脚本和示例
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 用于 `diskpart /s` 运行自动执行与磁盘相关的任务的脚本，例如创建卷或将磁盘转换为动态磁盘。 如果是使用无人参与安装或 Sysprep（它们不支持创建除启动卷以外的卷）部署 Windows，则创建执行这些任务的脚本非常有用。
 
@@ -51,7 +49,7 @@ diskpart /s scriptname.txt > logfile.txt
 
 - 将**diskpart**命令用作脚本的一部分时，建议你将所有 diskpart 操作一起作为一个 diskpart 脚本的一部分来完成。 您可以运行连续的 diskpart 脚本，但必须在每个脚本之间至少使用15秒，才能完全关闭以前的执行，然后在后续脚本中再次运行**diskpart**命令。 否则，连续脚本可能会运行失败。 可以通过将命令添加到批处理文件中，并将其添加 `timeout /t 15` 到你的 diskpart 脚本，在连续的 diskpart 脚本之间添加暂停。
 
-- 启动 diskpart 时，diskpart 版本和计算机名称将显示在命令提示符下。 默认情况下，如果在尝试执行脚本任务时，diskpart 遇到错误，则 diskpart 将停止处理脚本并显示错误代码（除非已指定**noerr**参数）。 但是，无论使用的是**noerr**参数，diskpart 始终会在遇到语法错误时返回错误。 通过**noerr**参数，你可以执行一些有用的任务，例如，使用单个脚本删除所有磁盘上的所有分区，而不考虑磁盘的总数量。
+- 启动 diskpart 时，diskpart 版本和计算机名称将显示在命令提示符下。 默认情况下，如果在尝试执行脚本任务时，diskpart 遇到错误，则 diskpart 将停止处理脚本并 (显示错误代码，除非你已指定**noerr**参数) 。 但是，无论使用的是**noerr**参数，diskpart 始终会在遇到语法错误时返回错误。 通过**noerr**参数，你可以执行一些有用的任务，例如，使用单个脚本删除所有磁盘上的所有分区，而不考虑磁盘的总数量。
 
 ## <a name="additional-references"></a>其他参考
 

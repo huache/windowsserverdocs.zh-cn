@@ -1,20 +1,18 @@
 ---
 title: 文件服务器的性能优化
 description: 运行 Windows Server 的文件服务器的性能优化
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 1236b961f77fe46f19b70a2c48d32f05585bd29c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 951d59a1a0e1d58a064eb71bd073259c15fd46d4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851840"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896173"
 ---
 # <a name="performance-tuning-for-file-servers"></a>文件服务器的性能优化
 
@@ -95,24 +93,24 @@ ms.locfileid: "80851840"
 
     默认值为 10 秒。 这是目录缓存超时。
 
-    > [!NOTE]  
+    > [!NOTE]
     > 此参数控制在缺少目录租约时的目录元数据缓存。
-     
-     > [!NOTE]  
+
+     > [!NOTE]
      > Windows 10 版本 1803 中的一个已知问题会影响 Windows 10 缓存大型目录的能力。 将计算机升级到 Windows 10 版本 1803 后，请访问包含数千个文件和文件夹的网络共享，并打开位于该共享上的文档。 在这两个操作期间，均会遇到明显的延迟。
-     >  
+     >
      > 若要解决此问题，请安装 Windows 10 版本 1809 或更高版本。
-     >  
+     >
      > 若要解决此问题，请将 **DirectoryCacheLifetime** 设置为 **0**。
-     >  
-     > 此问题会影响 Windows 10 的以下版本：  
+     >
+     > 此问题会影响 Windows 10 的以下版本：
      > - Windows 10 企业版版本 1803
      > - Windows 10 专业工作站版版本 1803
      > - Windows 10 专业教育版版本 1803
      > - Windows 10 专业版版本 1803
      > - Windows 10 教育版版本 1803
      > - Windows 10 家庭版版本 1803
-   
+
 -   **DirectoryCacheEntrySizeMax**
 
     ```
@@ -171,8 +169,8 @@ ms.locfileid: "80851840"
 
     适用于 Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Vista、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 和 Windows Server 2008
 
-    默认值为 0，表示禁用 SMB 签名。 将此值更改为 1 可为所有 SMB 通信启用 SMB 签名，从而阻止 SMB 与禁用 SMB 签名的计算机进行通信。 SMB 签名虽然会增加 CPU 成本和网络往返次数，但有助于阻止中间人攻击。 如果不需要 SMB 签名，请确保所有客户端和服务器上的此注册表值均为 0。 
-    
+    默认值为 0，表示禁用 SMB 签名。 将此值更改为 1 可为所有 SMB 通信启用 SMB 签名，从而阻止 SMB 与禁用 SMB 签名的计算机进行通信。 SMB 签名虽然会增加 CPU 成本和网络往返次数，但有助于阻止中间人攻击。 如果不需要 SMB 签名，请确保所有客户端和服务器上的此注册表值均为 0。
+
     有关详细信息，请参阅 [SMB 签名的基础知识](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
 
 -   **FileInfoCacheEntriesMax**
@@ -237,7 +235,7 @@ ms.locfileid: "80851840"
 | FileNotFoundCacheEntriesMax | 32768 | 128     |
 | MaxCmds                     | 32768 | 15      |
 
- 
+
 
 从 Windows 8 开始，可使用 Set-SmbClientConfiguration 和 Set-SmbServerConfiguration Windows PowerShell cmdlet 配置其中的许多 SMB 设置   。 也可以使用 Windows PowerShell 配置只与注册表相关的设置。
 

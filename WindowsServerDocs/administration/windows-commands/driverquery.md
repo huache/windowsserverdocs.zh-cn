@@ -1,20 +1,18 @@
 ---
 title: driverquery
 description: Driverquery 命令的参考文章，它使管理员能够显示已安装设备驱动程序及其属性的列表。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 92ca4b84-e4e2-405b-9f31-bf6db9f66839
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ad0a028217e07d8c15b59dc96e31c8f236dd743
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a996d48927215f8304e5a16f9da67419cbf7de65
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931466"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890756"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -28,7 +26,7 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- |------------ |
 | /s`<system>` | 指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认为本地计算机。 |
 | /u`[<domain>]<username>` | 使用用户或*域 \**用户指定*的用户帐户的凭据运行该命令。 默认情况下， */s*使用当前登录到发出命令的计算机的用户的凭据。 除非指定 **/s** ，否则不能使用 **/u** 。 |
@@ -49,7 +47,7 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 driverquery
 ```
 
-若要以逗号分隔值（CSV）格式显示输出，请键入：
+若要以逗号分隔的值显示输出 (CSV) 格式，请键入：
 
 ```
 driverquery /fo csv

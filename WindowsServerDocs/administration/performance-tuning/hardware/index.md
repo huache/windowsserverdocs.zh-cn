@@ -1,18 +1,16 @@
 ---
 title: 服务器硬件性能注意事项
 description: Windows Server 2016 的服务器硬件性能注意事项
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
-ms.openlocfilehash: 9c012711dff3746587b4a04b31d9c23ebb7de4cd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bac2aa367cc9a8d736fd83f7aeed3e467aeddb54
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71370555"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896750"
 ---
 # <a name="server-hardware-performance-considerations"></a>服务器硬件性能注意事项
 
@@ -40,8 +38,8 @@ ms.locfileid: "71370555"
 
 ## <a name="memory-ram-and-paging-storage-recommendations"></a>内存 (RAM) 和分页存储建议
 
->[!Note] 
-> 相比 Windows Server 2012 R2，运行新安装 Windows Server 2016 时某些系统可能会出现存储性能降低的情况。 在 Windows Server 2016 的开发期间进行了大量更改，从而改进此平台的安全性和可靠性。 其中某些更改（例如默认启用 Windows Defender）会导致 I/O 路径拉长，进而导致在特定工作负荷和模式中 I/O 性能降低。 Microsoft 不建议禁用 Windows Defender，因为它是系统的重要保护层。 
+>[!Note]
+> 相比 Windows Server 2012 R2，运行新安装 Windows Server 2016 时某些系统可能会出现存储性能降低的情况。 在 Windows Server 2016 的开发期间进行了大量更改，从而改进此平台的安全性和可靠性。 其中某些更改（例如默认启用 Windows Defender）会导致 I/O 路径拉长，进而导致在特定工作负荷和模式中 I/O 性能降低。 Microsoft 不建议禁用 Windows Defender，因为它是系统的重要保护层。
 
 增加 RAM 以满足内存需求。
 当计算机内存不足并且需要立即补充更多内存时，Windows 将使用硬盘空间通过一个名为分页的过程来补充系统 RAM。 分页过多会降低整体系统性能。

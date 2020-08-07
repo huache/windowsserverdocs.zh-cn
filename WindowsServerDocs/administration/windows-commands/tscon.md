@@ -1,24 +1,22 @@
 ---
 title: tscon
-description: Tscon 的参考文章，用于连接到远程桌面会话主机（rd 会话主机）服务器上的另一个会话。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Tscon 的参考文章，用于连接到远程桌面会话主机 (rd 会话主机) 服务器上的另一个会话。
 ms.topic: article
 ms.assetid: 315a9793-cd10-4987-bb68-89a9d13f7fce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83f8778d73d022ed41fcab14795eb3cdf41dc6cf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 96f23a310d1cf9b1843194ee233b84f69c84bb0c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954939"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897087"
 ---
 # <a name="tscon"></a>tscon
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 连接到远程桌面会话主机服务器上的另一个会话。
 
@@ -33,7 +31,7 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 ```
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |\<SessionID>|指定要连接到的会话的 ID。 如果使用可选的 **/dest：** < *SessionName*> 参数，则这是要连接到的会话的 ID。|
 |\<SessionName>|指定要连接到的会话的名称。|
@@ -64,4 +62,4 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
   ```
   ## <a name="additional-references"></a>其他参考
   - [命令行语法关键字](command-line-syntax-key.md) 
-  [远程桌面服务（终端服务）命令参考](remote-desktop-services-terminal-services-command-reference.md)
+  [远程桌面服务 (终端服务) 命令参考](remote-desktop-services-terminal-services-command-reference.md)

@@ -1,20 +1,18 @@
 ---
 title: endlocal
 description: Endlocal 命令的参考文章，该命令结束批处理文件中环境更改的本地化，并在运行相应的 setlocal 命令之前将环境变量还原到其值。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 765fae3c-0c0a-4639-99a4-cf613489b949
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a17ef4b25a0b0bb4d77068aa3bff3d879955aec5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a7b4b95b38fc3b7bd333c131296bf07bbabeb378
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932118"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890609"
 ---
 # <a name="endlocal"></a>endlocal
 
@@ -38,7 +36,7 @@ endlocal
 
 - 批处理文件的末尾有一个隐式**endlocal**命令。
 
-- 如果启用了命令扩展（默认情况下启用命令扩展）， **endlocal**命令会将命令扩展（即启用或禁用）的状态还原为运行相应的**setlocal**命令之前的状态。
+- 如果启用了命令扩展 () 默认情况下启用命令扩展，则**endlocal**命令会将命令扩展 (的状态恢复为已启用或已禁用的) ，直至运行相应的**setlocal**命令。
 
 > [!NOTE]
 > 有关启用和禁用命令扩展的详细信息，请参阅[Cmd 命令](cmd.md)。

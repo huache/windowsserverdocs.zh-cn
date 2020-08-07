@@ -1,20 +1,18 @@
 ---
 title: eventcreate
 description: Eventcreate 命令的参考文章，它使管理员能够在指定的事件日志中创建自定义事件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f2b1b26d-a70e-49a6-832b-91eb5a1a159a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60ed97eeffc8ae2410fdd8f296a0e8348f376652
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bf5cc7e1c36dc0af7325172325a55edb314664ab
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925318"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890582"
 ---
 # <a name="eventcreate"></a>eventcreate
 
@@ -31,9 +29,9 @@ eventcreate [/s <computer> [/u <domain\user> [/p <password>]] {[/l {APPLICATION|
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- |------------ |
-| /s`<computer>` | 指定远程计算机的名称或 IP 地址（不使用反斜杠）。 默认为本地计算机。 |
+| /s`<computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 |
 | /u`<domain\user>` | 使用或指定的用户的帐户权限运行命令 `<user>` `<domain\user>` 。 默认为发出命令的计算机上当前登录用户的权限。 |
 | /p`<password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
 | /l`{APPLICATION | SYSTEM}` | 指定将在其中创建事件的事件日志的名称。 有效的日志名称为 "**应用程序**" 或 "**系统**"。 |

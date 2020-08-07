@@ -1,18 +1,16 @@
 ---
 title: 软件定义的网络性能优化
 description: 软件定义的网络 (SDN) 性能优化指南
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: cfd166aab7a0ef0383fe4700fdf50cc6d35289b1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 9c097d9b777676da1caef062e8aee4267d2e4dac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851610"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895944"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>软件定义的网络性能优化
 
@@ -34,7 +32,7 @@ Windows Server 2016 中软件定义的网络 (SDN) 由网络控制器、Hyper-V 
 
 ### <a name="physical-network-adapter-nic-teaming"></a>物理网络适配器 (NIC) 组合
 
-为实现最佳性能和故障转移功能，建议配置成组的物理网络适配器。  使用 SDN 时，必须使用交换机嵌入式组合 (SET) 创建组。  
+为实现最佳性能和故障转移功能，建议配置成组的物理网络适配器。  使用 SDN 时，必须使用交换机嵌入式组合 (SET) 创建组。
 
 组成员的最佳数量为两个，因为虚拟化流量将分布在两个组成员的入站和出站方向上。  可以有两个以上的组成员；但入站流量最多分布在两个适配器上。  如果虚拟交换机上仍配置了默认的动态负载均衡，则出站流量始终分布在所有适配器上。
 
@@ -55,7 +53,7 @@ SDN 依赖数据包的封装对网络进行虚拟化处理。  为实现最佳�
 
 封装会导致将额外的字节添加到每个数据包。  为避免这些数据包的碎片，必须将物理网络配置为使用 jumbo 帧。  对于 VXLAN 或 NVGRE，MTU 值为 9234 是建议的大小，必须在物理交换机上为主机端口的物理接口 (L2) 和 VLAN 的路由器接口 (L3) 配置此值，封装数据包将通过这些接口发送。  这包括 Transit、HNV 提供程序和管理网络。
 
-Hyper-V 主机上的 MTU 通过网络适配器进行配置，如果网络适配器驱动程序支持，则 Hyper-V 主机上运行的网络控制器主机代理将针对封装开销自动做出调整。  
+Hyper-V 主机上的 MTU 通过网络适配器进行配置，如果网络适配器驱动程序支持，则 Hyper-V 主机上运行的网络控制器主机代理将针对封装开销自动做出调整。
 
 流量通过网关从虚拟网络流出后，将删除封装并使用从 VM 发送的原始 MTU。
 

@@ -1,24 +1,22 @@
 ---
 title: dnscmd
 description: 用于管理 DNS 服务器的命令行接口的 dnscmd 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e7f31cb5-a426-4e25-b714-88712b8defd5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c8d865643c12377a3f4b14250f9d3dbead1e2ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bc034b86cc095b8bd23a8c0fd71f9da515474068
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958239"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890789"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 用于管理 DNS 服务器的命令行界面。 此实用程序在编写批处理文件脚本时非常有用，有助于自动执行日常 DNS 管理任务，或在网络中执行简单的无人参与安装和配置新的 DNS 服务器。
 
@@ -28,7 +26,7 @@ ms.locfileid: "86958239"
 dnscmd <servername> <command> [<command parameters>]
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 | 参数 | 描述 |
 | --------- | ----------- |
@@ -44,13 +42,13 @@ dnscmd <servername> <command> [<command parameters>]
 dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 描述 |
 | ---------- | ----------- |
-| `<servername>` | 指定管理员计划管理的 DNS 服务器，由 IP 地址、完全限定的域名（FQDN）或主机名表示。 如果省略此参数，则使用本地服务器。 |
+| `<servername>` | 指定管理员计划管理的 DNS 服务器，由 IP 地址、完全限定的域名 (FQDN) 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<zonename>` | 指定区域的 FQDN。 |
-| `<nodename>` | 使用以下内容指定区域中的特定节点或子树：<ul><li>**@** 对于根区域或 FQDN</li><li>节点的 FQDN （末尾带有句点（.）的名称）</li><li>相对于区域根的名称的单个标签。</li></ul> |
+| `<nodename>` | 使用以下内容指定区域中的特定节点或子树：<ul><li>**@** 对于根区域或 FQDN</li><li>节点的 FQDN (名称，句点 (。 ) ) </li><li>相对于区域根的名称的单个标签。</li></ul> |
 | /tree | 指定所有子节点也接收时间戳。 |
 | /f | 运行命令而不要求确认。 |
 
@@ -58,7 +56,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 - **Ageallrecords**命令用于实现 dns 的当前版本和以前版本的 dns 之间的向后兼容性，在这种情况下，不支持老化和清理。 它将包含当前时间的时间戳添加到没有时间戳的资源记录，并将当前时间设置为具有时间戳的资源记录。
 
-- 除非记录有时间戳，否则不会进行记录清理。 名称服务器（NS）资源记录、颁发机构起始（SOA）资源记录和 Windows Internet 名称服务（WINS）资源记录不包含在清理过程中，即使在**ageallrecords**命令运行时，它们也不会进行时间戳。
+- 除非记录有时间戳，否则不会进行记录清理。 Name server (NS) 资源记录、授权机构开始 (SOA) 资源记录和 Windows Internet 名称服务 (WINS) 不会在清理过程中包含资源记录，即使**ageallrecords**命令运行，也不会进行时间戳。
 
 - 除非为 DNS 服务器和区域启用了清理，否则此命令将失败。 有关如何为区域启用清理的信息，请参阅本文的命令语法中的**老化**参数 `dnscmd /config` 。
 
@@ -80,7 +78,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 dnscmd [<servername>] /clearcache
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -97,7 +95,7 @@ dnscmd dnssvr1.contoso.com /clearcache
 更改 DNS 服务器和单个区域的注册表中的值。 此命令还会修改指定服务器的配置。 接受服务器级别和区域级别设置。
 
 > [!CAUTION]
-> 不要直接编辑注册表，除非没有替代方法。 注册表编辑器会绕过标准安全措施，同时允许可能降低性能的设置、损坏系统，甚至要求你重新安装 Windows。 可以通过使用 "控制面板" 或 "Microsoft 管理控制台（mmc）" 中的 "程序" 来安全地更改大多数注册表设置。 如果必须直接编辑注册表，请首先对其进行备份。 有关详细信息，请参阅注册表编辑器帮助。
+> 不要直接编辑注册表，除非没有替代方法。 注册表编辑器会绕过标准安全措施，同时允许可能降低性能的设置、损坏系统，甚至要求你重新安装 Windows。 可以通过使用控制面板中的 "程序" 或 "Microsoft 管理控制台 (mmc) 来安全地更改大多数注册表设置。 如果必须直接编辑注册表，请首先对其进行备份。 有关详细信息，请参阅注册表编辑器帮助。
 
 ### <a name="server-level-syntax"></a>服务器级语法
 
@@ -111,50 +109,50 @@ dnscmd [<servername>] /config <parameter>
 | ---------- | ----------- |
 | `<servername>` | 指定您计划管理的 DNS 服务器，由本地计算机语法、IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<parameter>` | 指定一个设置和一个值作为选项。 参数值使用以下语法：*参数*[*value*]。 |
-| /addressanswerlimit`[0|5-28]` | 指定 DNS 服务器为响应查询而可以发送的主机记录的最大数目。 该值可以为零（0），也可以在5到28条记录范围内。 默认值为零 (0)。 |
+| /addressanswerlimit`[0|5-28]` | 指定 DNS 服务器为响应查询而可以发送的主机记录的最大数目。 该值可以为零 (0) ，也可以介于5到28个记录之间。 默认值为零 (0)。 |
 | /bindsecondaries`[0|1]` | 更改区域传送的格式，使其能够实现最大的压缩和效率。 接受以下值：<ul><li>**0** -使用最大压缩，并与 BIND 版本4.9.4 和更高版本兼容</li><li>**1** -仅将每条消息的一个资源记录发送到非 Microsoft DNS 服务器，并且与4.9.4 之前的绑定版本兼容。 这是默认设置。</li></ul> |
 | /bootmethod`[0|1|2|3]` | 确定 DNS 服务器从中获取其配置信息的源。 接受以下值：<ul><li>**0** -清除配置信息的源。</li><li>**1** -从位于 DNS 目录的绑定文件加载， `%systemroot%\System32\DNS` 默认情况下为。</li><li>**2** -从注册表加载。</li><li>**3** -从 AD DS 和注册表加载。 这是默认设置。</li></ul> |
 | /defaultagingstate`[0|1]` | 确定默认情况下是否对新创建的区域启用 DNS 清理功能。 接受以下值：<ul><li>**0** -禁用清理。 这是默认设置。</li><li>**1** -启用清理。</li></ul> |
 | /defaultnorefreshinterval`[0x1-0xFFFFFFFF|0xA8]` | 设置动态更新记录不接受刷新的时间段。 服务器上的区域会自动继承此值。<p>若要更改默认值，请键入**0x1-0xffffffff**范围内的值。 服务器的默认值为**0xA8**。 |
 | /defaultrefreshinterval`[0x1-0xFFFFFFFF|0xA8]` | 设置允许动态更新 DNS 记录的时间段。 服务器上的区域会自动继承此值。<p>若要更改默认值，请键入**0x1-0xffffffff**范围内的值。 服务器的默认值为**0xA8**。 |
-| /disableautoreversezones`[0|1]` | 启用或禁用反向查找区域的自动创建。 反向查找区域提供对 DNS 域名的 Internet 协议（IP）地址的解析。 接受以下值：<ul><li>**0** -启用自动创建反向查找区域。 这是默认设置。</li><li>**1** -禁用自动创建反向查找区域。</li></ul> |
-| /disablensrecordsautocreation`[0|1]` | 指定 DNS 服务器是否自动创建它所承载的区域的名称服务器（NS）资源记录。 接受以下值：<ul><li>**0** -自动为 DNS 服务器托管的区域创建名称服务器（NS）资源记录。</li><li>**1** -不自动为 DNS 服务器托管的区域创建名称服务器（NS）资源记录。</li></ul> |
+| /disableautoreversezones`[0|1]` | 启用或禁用反向查找区域的自动创建。 反向查找区域提供 Internet 协议 (IP) 地址到 DNS 域名的解析。 接受以下值：<ul><li>**0** -启用自动创建反向查找区域。 这是默认设置。</li><li>**1** -禁用自动创建反向查找区域。</li></ul> |
+| /disablensrecordsautocreation`[0|1]` | 指定 DNS 服务器是否自动创建它所承载的区域的名称服务器 (NS) 资源记录。 接受以下值：<ul><li>**0** -自动为 DNS 服务器托管的区域创建名称服务器 (NS) 资源记录。</li><li>**1** -不会自动为 DNS 服务器托管的区域 (NS) 资源记录创建名称服务器。</li></ul> |
 | /dspollinginterval`[0-30]` | 指定 DNS 服务器轮询 AD DS active directory 集成区域中的更改的频率。 |
 | /dstombstoneinterval`[1-30]` |AD DS 中保留已删除记录的时间长度（以秒为单位）。 |
-| /ednscachetimeout`[3600-15724800]` | 指定扩展 DNS （EDNS）信息的缓存秒数。 最小值为**3600**，最大值为**15724800**。 默认值为**604800**秒（一周）。 |
+| /ednscachetimeout`[3600-15724800]` | 指定缓存扩展 DNS (EDNS) 信息的秒数。 最小值为**3600**，最大值为**15724800**。 默认值为**604800**秒 (一周) 。 |
 | /enableednsprobes`[0|1]` | 启用或禁用服务器以探测其他服务器，以确定它们是否支持 EDNS。 接受以下值：<ul><li>**0** -禁用对 EDNS 探测的活动支持。</li><li>**1** -启用对 EDNS 探测的活动支持。</li></ul> |
-| /enablednssec`[0|1]` | 启用或禁用对 DNS 安全扩展（DNSSEC）的支持。 接受以下值：<ul><li>**0** -禁用 DNSSEC。</li><li>**1** -启用 DNSSEC。</li></ul> |
+| /enablednssec`[0|1]` | 启用或禁用 (DNSSEC) 对 DNS 安全扩展插件的支持。 接受以下值：<ul><li>**0** -禁用 DNSSEC。</li><li>**1** -启用 DNSSEC。</li></ul> |
 | /enableglobalnamessupport`[0|1]` | 启用或禁用对 GlobalNames 区域的支持。 GlobalNames 区域支持跨林解析单标签 DNS 名称。 接受以下值：<ul><li>**0** -禁用对 GlobalNames 区域的支持。 将此命令的值设置为0时，DNS 服务器服务不解析 GlobalNames 区域中的单标签名称。</li><li>**1** -启用对 GlobalNames 区域的支持。 将此命令的值设置为1时，DNS 服务器服务将解析 GlobalNames 区域中的单标签名称。</li></ul> |
 | /enableglobalqueryblocklist`[0|1]` | 启用或禁用对列表中名称解析的全局查询阻止列表的支持。 默认情况下，当服务首次启动时，DNS 服务器服务将创建并启用全局查询阻止列表。 若要查看当前的全局查询块列表，请使用 dnscmd/info **/globalqueryblocklist**命令。 接受以下值：<ul><li>**0** -禁用对全局查询块列表的支持。 将此命令的值设置为0时，DNS 服务器服务将对阻止列表中的名称的查询做出响应。</li><li>**1** -支持全局查询阻止列表。 将此命令的值设置为1时，DNS 服务器服务不会响应对阻止列表中的名称的查询。</li></ul> |
 | /eventloglevel`[0|1|2|4]` | 确定事件查看器的 DNS 服务器日志中记录的事件。 接受以下值：<ul><li>**0** -不记录任何事件。</li><li>**1** -仅记录错误。</li><li>**2** -仅记录错误和警告。</li><li>**4** -记录错误、警告和信息性事件。 这是默认设置。</li></ul> |
 | /forwarddelegations`[0|1]` | 确定 DNS 服务器如何处理委托的子的查询。 这些查询可以发送到查询中引用的子，也可以发送到为 DNS 服务器命名的转发器列表。 设置中的条目仅在启用转发时使用。 接受以下值：<ul><li>**0** -自动将引用委托的子区域的查询发送到相应的子。 这是默认设置。</li><li>**1** -将引用委托的子的查询转发到现有转发器。</li></ul> |
-| /forwardingtimeout`[<seconds>]` | 确定 DNS 服务器等待转发器响应的秒数（**0x1-0xffffffff**），然后再尝试另一个转发器。 默认值为**0x5**，即5秒。 |
+| /forwardingtimeout`[<seconds>]` | 确定在尝试另一个转发器之前， (**0x1-0xffffffff**) DNS 服务器等待转发器响应多少秒。 默认值为**0x5**，即5秒。 |
 | /globalneamesqueryorder`[0|1]` | 指定在解析名称时，DNS 服务器服务是否首先在 GlobalNames 区域或本地区域中查找。 接受以下值：<ul><li>**0** -DNS 服务器服务将尝试通过先查询 GlobalNames 区域来解析名称，然后再查询其具有权威的区域。</li><li>**1** -DNS 服务器服务将尝试通过先查询其权威的区域来解析名称，然后再查询 GlobalNames 区域。</li></ul> |
 | /globalqueryblocklist`[[<name> [<name>]...]` | 用指定名称的列表替换当前的全局查询块列表。 如果未指定任何名称，则此命令将清除阻止列表。 默认情况下，全局查询块列表包含以下项：<ul><li>isatap</li><li>wpad</li></ul>当首次启动时，DNS 服务器服务可以删除其中一个或两个这两个名称，前提是在现有区域中查找这些名称。 |
 | /isslave`[0|1]` | 确定当 DNS 服务器转发的查询未收到响应时，DNS 服务器的响应方式。 接受以下值：<ul><li>**0** -指定 DNS 服务器不是从属服务器。 如果转发器没有响应，则 DNS 服务器将尝试解析查询本身。 这是默认设置。</li><li>**1** -指定 DNS 服务器是从属服务器。 如果转发器没有响应，则 DNS 服务器将终止搜索，并向解析程序发送失败消息。</li></ul> |
 | /localnetpriority`[0|1]` | 确定当 DNS 服务器具有相同名称的多个主机记录时返回主机记录的顺序。 接受以下值：<ul><li>**0** -按照 DNS 数据库中列出的顺序返回记录。</li><li>**1** -返回具有相似 IP 网络地址的记录。 这是默认设置。</li></ul> |
-| /logfilemaxsize`[<size>]` | 指定 Dns 日志文件的最大字节大小（**0x10000**）。 当文件达到其最大大小时，DNS 会覆盖最旧的事件。 默认大小为**0x400000 处**，即4兆字节（MB）。 |
+| /logfilemaxsize`[<size>]` | 指定 Dns .log 文件 (**0x10000-0xffffffff**) 的最大大小（以字节为单位）。 当文件达到其最大大小时，DNS 会覆盖最旧的事件。 默认大小为 " **0x400000 处**"， (MB) 为 4 mb。 |
 | /logfilepath`[<path+logfilename>]` | 指定 Dns 日志文件的路径。 默认路径为 `%systemroot%\System32\Dns\Dns.log`。 您可以使用格式指定其他路径 `path+logfilename` 。 |
 | /logipfilterlist`<IPaddress> [,<IPaddress>...]` | 指定在调试日志文件中记录哪些数据包。 条目是 IP 地址的列表。 仅记录传入和传出列表中 IP 地址的数据包。 |
-| /loglevel`[<eventtype>]` | 确定在 Dns .log 文件中记录的事件类型。 每个事件类型都用十六进制数表示。 如果希望日志中有多个事件，请使用十六进制加法添加值，然后输入 sum。 接受以下值：<ul><li>**0x0** -DNS 服务器不创建日志。 这是默认条目。</li><li>**0x10** -记录查询和通知。</li><li>**0x20** -记录更新。</li><li>**0xFE** -记录 nonquery 的事务。</li><li>**0x100** -记录问题事务。</li><li>**0x200** -记录答案。</li><li>**0x1000** -记录发送数据包。</li><li>**0x2000** -日志接收数据包。</li><li>**0x4000** -记录用户数据报协议（UDP）数据包。</li><li>**0x8000** -记录传输控制协议（TCP）数据包。</li><li>**0xffff** -记录所有数据包。</li><li>**0x10000** -记录 active directory 写入事务。</li><li>**0x20000** -记录 active directory 更新事务。</li><li>**0x1000000** -记录完整的数据包。</li><li>**0x80000000** -记录写入事务。</li><li></ul> |
-| /maxcachesize | 指定 DNS 服务器的内存缓存的最大大小（KB）。 |
-| /maxcachettl`[<seconds>]` | 确定在缓存中保存记录的秒数（**0x0-0xffffffff**）。 如果使用了**0x0**设置，则 DNS 服务器不会缓存记录。 默认设置为**0x15180** （86400秒或1天）。 |
-| /maxnegativecachettl`[<seconds>]` | 指定记录对查询的否定应答的条目在 DNS 缓存中的保留时间（**0x1-0xffffffff**）。 默认设置为**0x384** （900秒）。 |
-| /namecheckflag`[0|1|2|3]` | 指定检查 DNS 名称时使用的字符标准。 接受以下值：<ul><li>**0** -使用符合 Internet 工程任务组（IETF）征求意见文档（rfc）的 ANSI 字符。</li><li>**1** -使用不一定符合 IETF RFC 的 ANSI 字符。</li><li>**2** -使用多字节 UCS 转换格式8（utf-8）字符。 这是默认设置。</li><li>**3** -使用所有字符。</li></ul> |
+| /loglevel`[<eventtype>]` | 确定在 Dns .log 文件中记录的事件类型。 每个事件类型都用十六进制数表示。 如果希望日志中有多个事件，请使用十六进制加法添加值，然后输入 sum。 接受以下值：<ul><li>**0x0** -DNS 服务器不创建日志。 这是默认条目。</li><li>**0x10** -记录查询和通知。</li><li>**0x20** -记录更新。</li><li>**0xFE** -记录 nonquery 的事务。</li><li>**0x100** -记录问题事务。</li><li>**0x200** -记录答案。</li><li>**0x1000** -记录发送数据包。</li><li>**0x2000** -日志接收数据包。</li><li>**0x4000** - (UDP) 数据包记录用户数据报协议。</li><li>**0x8000** -记录传输控制协议 (TCP) 数据包。</li><li>**0xffff** -记录所有数据包。</li><li>**0x10000** -记录 active directory 写入事务。</li><li>**0x20000** -记录 active directory 更新事务。</li><li>**0x1000000** -记录完整的数据包。</li><li>**0x80000000** -记录写入事务。</li><li></ul> |
+| /maxcachesize | 指定 DNS 服务器的内存缓存的最大大小（kb (KB) ）。 |
+| /maxcachettl`[<seconds>]` | 确定在缓存中保存记录 (**0x0-0xffffffff**) 的秒数。 如果使用了**0x0**设置，则 DNS 服务器不会缓存记录。 默认设置为**0x15180** (86400 秒或1天) 。 |
+| /maxnegativecachettl`[<seconds>]` | 指定 (**0x1-0xffffffff**) 记录反向查询应答的条目保留在 DNS 缓存中的秒数。 默认设置为**0x384** (900 秒) 。 |
+| /namecheckflag`[0|1|2|3]` | 指定检查 DNS 名称时使用的字符标准。 接受以下值：<ul><li>**0** -使用符合 Internet 工程任务组 (IETF) 征求意见 (rfc) 的 ANSI 字符。</li><li>**1** -使用不一定符合 IETF RFC 的 ANSI 字符。</li><li>**2** -使用多字节 UCS 转换格式 8 (utf-8) 字符。 这是默认设置。</li><li>**3** -使用所有字符。</li></ul> |
 | /norecursion`[0|1]` | 确定 DNS 服务器是否执行递归名称解析。 接受以下值：<ul><li>**0** -如果在查询中请求，则 DNS 服务器将执行递归名称解析。 这是默认设置。</li><li>**1** -DNS 服务器不执行递归名称解析。</li></ul> |
 | /notcp | 此参数已过时，并且它在当前版本的 Windows Server 中不起作用。 |
-| /recursionretry`[<seconds>]` | 确定 DNS 服务器在再次尝试联系远程服务器之前等待的秒数（**0x1-0xffffffff**）。 默认设置为**0x3** （3秒）。 如果递归发生在慢速广域网（WAN）链接上，则应增加此值。 |
-| /recursiontimeout`[<seconds>]` | 确定 DNS 服务器在停止尝试联系远程服务器之前等待的秒数（**0x1-0xffffffff**）。 设置范围为**0x1**到**0xffffffff**。 默认设置为**0xF** （15秒）。 如果递归发生在慢速 WAN 链接上，则应增加此值。 |
+| /recursionretry`[<seconds>]` | 确定 DNS 服务器在尝试联系远程服务器之前等待的秒数 (**0x1-0xffffffff**) 。 默认设置为**0x3** (三秒) 。 在慢速广域网上进行递归时，此值应增加 (WAN) 链接。 |
+| /recursiontimeout`[<seconds>]` | 确定 DNS 服务器在停止尝试联系远程服务器之前等待的秒数 (**0x1-0xffffffff**) 。 设置范围为**0x1**到**0xffffffff**。 默认设置为**0xF**)  (15 秒。 如果递归发生在慢速 WAN 链接上，则应增加此值。 |
 | /roundrobin`[0|1]` | 确定当服务器具有同一名称的多个主机记录时返回主机记录的顺序。 接受以下值：<ul><li>**0** -DNS 服务器不使用轮循机制。 而是返回每个查询的第一条记录。</li><li>**1** -DNS 服务器在其从顶部到匹配记录列表底部的记录之间进行旋转。 这是默认设置。</li></ul> |
-| /rpcprotocol`[0x0|0x1|0x2|0x4|0xFFFFFFFF]` | 指定远程过程调用（RPC）在建立来自 DNS 服务器的连接时使用的协议。 接受以下值：<ul><li>**0x0** -禁用 DNS 的 RPC。</li><li>**0x01** -使用 tcp/ip</li><li>**0x2** -使用命名管道。</li><li>**0x4** -使用本地过程调用（LPC）。</li><li>**0xffffffff** -所有协议。 这是默认设置。</li></ul> |
-| /scavenginginterval`[<hours>]` | 确定是否已启用 DNS 服务器的清理功能，并设置清理周期间的小时数（**0x0-0xffffffff**）。 默认设置为**0x0**，这将禁用 DNS 服务器的清理。 设置大于**0x0**会启用对服务器的清理，并设置清理周期之间的小时数。 |
+| /rpcprotocol`[0x0|0x1|0x2|0x4|0xFFFFFFFF]` | 指定远程过程调用 (RPC) 在与 DNS 服务器建立连接时使用的协议。 接受以下值：<ul><li>**0x0** -禁用 DNS 的 RPC。</li><li>**0x01** -使用 tcp/ip</li><li>**0x2** -使用命名管道。</li><li>**0x4** -使用本地过程调用 (LPC) 。</li><li>**0xffffffff** -所有协议。 这是默认设置。</li></ul> |
+| /scavenginginterval`[<hours>]` | 确定是否已启用 DNS 服务器的清理功能，并设置清理周期之间 (**0x0-0xffffffff**) 的小时数。 默认设置为**0x0**，这将禁用 DNS 服务器的清理。 设置大于**0x0**会启用对服务器的清理，并设置清理周期之间的小时数。 |
 | /secureresponses`[0|1]` | 确定 DNS 是否筛选保存在缓存中的记录。 接受以下值：<ul><li>**0** -将对名称查询的所有响应保存到缓存中。 这是默认设置。</li><li>**1** -仅将属于同一 DNS 子树的记录保存到缓存中。</li></ul> |
-| /sendport`[<port>]` | 指定 DNS 用于将递归查询发送到其他 DNS 服务器的端口号（**0x0-0xffffffff**）。 默认设置为**0x0**，这意味着端口号是随机选择的。 |
+| /sendport`[<port>]` | 指定 DNS 用于向其他 DNS 服务器发送递归查询 (**0x0-0xffffffff**) 的端口号。 默认设置为**0x0**，这意味着端口号是随机选择的。 |
 | /serverlevelplugindll`[<dllpath>]` | 指定自定义插件的路径。 当 Dllpath 指定有效 DNS 服务器插件的完全限定路径名称时，DNS 服务器将在插件中调用函数，以解析超出所有本地托管区域的名称查询。 如果查询的名称超出了插件的作用域，则 DNS 服务器会根据配置使用转发或递归执行名称解析。 如果未指定 Dllpath，则在以前配置自定义插件时，DNS 服务器将停止使用自定义插件。 |
 | /strictfileparsing`[0|1]` | 确定加载区域时遇到错误记录时 DNS 服务器的行为。 接受以下值：<ul><li>**0** -即使服务器遇到错误记录，DNS 服务器仍将继续加载该区域。 错误记录在 DNS 日志中。 这是默认设置。</li><li>**1** -dns 服务器停止加载区域，并在 DNS 日志中记录该错误。</li></ul> |
-| /updateoptions`<RecordValue>` | 禁止动态更新指定类型的记录。 如果要在日志中禁止多个记录类型，请使用十六进制加法添加值，然后输入和。 接受以下值：<ul><li>**0x0** -不限制任何记录类型。</li><li>**0x1** -排除起始授权机构（SOA）资源记录。</li><li>**0x2** -排除名称服务器（NS）资源记录。</li><li>**0x4** -排除名称服务器（NS）资源记录的委托。</li><li>**0x8** -排除服务器主机记录。</li><li>**0x100** -在安全动态更新期间，不包括授权机构起始（SOA）资源记录。</li><li>**0x200** -在安全动态更新期间，不包括根名称服务器（NS）资源记录。</li><li>**0x30F** -在标准动态更新期间，不包括名称服务器（NS）资源记录、颁发机构起始（SOA）资源记录和服务器主机记录。 在安全动态更新期间，不包括根名称服务器（NS）资源记录和颁发机构起始（SOA）资源记录。 允许委托和服务器主机更新。</li><li>**0x400** -在安全动态更新期间，不包括委派名称服务器（NS）资源记录。</li><li>**0x800** -在安全动态更新期间，不包括服务器主机记录。</li><li>**0x1000000** -排除委派签名者（DS）记录。</li><li>**0x80000000** -禁用 DNS 动态更新。</li></ul> |
-| /writeauthorityns`[0|1]` | 确定 DNS 服务器何时在响应的授权部分写入名称服务器（NS）资源记录。 接受以下值：<ul><li>**0** -仅在引用的 "授权" 部分写入名称服务器（NS）资源记录。 此设置符合 Rfc 1034、域名概念和设施以及 Rfc 2181，并向 DNS 规范进行说明。 这是默认设置。</li><li>**1** -在所有成功的权威响应的 "授权" 部分中写入名称服务器（NS）资源记录。</li></ul> |
-| /xfrconnecttimeout`[<seconds>]` | 确定主 DNS 服务器等待其辅助服务器的传输响应的秒数（**0x0-0xffffffff**）。 默认值为**0x1E** （30秒）。 超时值过期后，连接将终止。 |
+| /updateoptions`<RecordValue>` | 禁止动态更新指定类型的记录。 如果要在日志中禁止多个记录类型，请使用十六进制加法添加值，然后输入和。 接受以下值：<ul><li>**0x0** -不限制任何记录类型。</li><li>**0x1** -不包括开始 (SOA) 资源记录的授权。</li><li>**0x2** -排除 name SERVER (NS) 资源记录。</li><li>**0x4** -排除 name SERVER (NS) 资源记录的委托。</li><li>**0x8** -排除服务器主机记录。</li><li>**0x100** -在安全动态更新期间，不包括 (SOA) 资源记录的启动颁发机构。</li><li>**0x200** -在安全动态更新期间，不包括根名称服务器 (NS) 资源记录。</li><li>**0x30F** -在标准动态更新期间，不包括 name SERVER (NS) 资源记录、授权开始 (SOA) 资源记录和服务器主机记录。 在安全动态更新期间，不包括根名称服务器 (NS) 资源记录和授权 (SOA) 资源记录。 允许委托和服务器主机更新。</li><li>**0x400** -在安全动态更新期间，不包括) 资源记录 (NS 的委派名称服务器。</li><li>**0x800** -在安全动态更新期间，不包括服务器主机记录。</li><li>**0x1000000** - (DS) 记录中排除委托签名程序。</li><li>**0x80000000** -禁用 DNS 动态更新。</li></ul> |
+| /writeauthorityns`[0|1]` | 确定 DNS 服务器何时在响应的 "授权" 部分中将名称服务器 (NS 写入) 资源记录。 接受以下值：<ul><li>**0** - (NS 写入名称服务器) 资源记录。 此设置符合 Rfc 1034、域名概念和设施以及 Rfc 2181，并向 DNS 规范进行说明。 这是默认设置。</li><li>**1** -在所有成功的权威响应的 "授权" 部分中写入名称服务器 (NS) 资源记录。</li></ul> |
+| /xfrconnecttimeout`[<seconds>]` | 确定主 DNS 服务器等待其辅助服务器的传输响应 (**0x0-0xffffffff**) 的秒数。 默认值为**0x1E** (30 秒) 。 超时值过期后，连接将终止。 |
 
 ### <a name="zone-level-syntax"></a>区域级别的语法
 
@@ -170,7 +168,7 @@ dnscmd /config <parameters>
 | ---------- | ----------- |
 | `<parameter>` | 指定一个设置、一个区域名称和一个值作为选项。 参数值使用以下语法： `zonename parameter [value]` 。 |
 | /aging`<zonename>`| 启用或禁用特定区域中的清理。 |
-| /allownsrecordsautocreation `<zonename>``[value]` | 替代 DNS 服务器的名称服务器（NS）资源记录启用设置。 之前为此区域注册的名称服务器（NS）资源记录不会受到影响。 因此，你必须手动将其删除（如果不希望这样做）。 |
+| /allownsrecordsautocreation `<zonename>``[value]` | 覆盖 DNS 服务器的名称服务器 (NS) resource record 启用设置。 之前为此区域注册 (NS) 资源记录的名称服务器不受影响。 因此，你必须手动将其删除（如果不希望这样做）。 |
 | /allowupdate`<zonename>` | 确定指定区域是否接受动态更新。 |
 | /forwarderslave`<zonename>` | 替代 DNS 服务器 **/isslave**设置。 |
 | /forwardertimeout`<zonename>` | 确定在尝试另一个转发器之前 DNS 区域等待转发器响应的秒数。 此值将覆盖在服务器级别设置的值。 |
@@ -188,7 +186,7 @@ dnscmd /config <parameters>
 dnscmd [<servername>] /createbuiltindirectorypartitions [/forest] [/alldomains]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -206,7 +204,7 @@ dnscmd [<servername>] /createbuiltindirectorypartitions [/forest] [/alldomains]
 dnscmd [<servername>] /createdirectorypartition <partitionFQDN>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -223,7 +221,7 @@ dnscmd [<servername>] /createdirectorypartition <partitionFQDN>
 dnscmd [<servername>] /deletedirectorypartition <partitionFQDN>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -240,7 +238,7 @@ dnscmd [<servername>] /deletedirectorypartition <partitionFQDN>
 dnscmd [<servername>] /directorypartitioninfo <partitionFQDN> [/detail]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -258,7 +256,7 @@ dnscmd [<servername>] /directorypartitioninfo <partitionFQDN> [/detail]
 dnscmd [<servername>] /enlistdirectorypartition <partitionFQDN>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -275,7 +273,7 @@ dnscmd [<servername>] /enlistdirectorypartition <partitionFQDN>
 dnscmd [<servername>] /enumdirectorypartitions [/custom]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -292,7 +290,7 @@ dnscmd [<servername>] /enumdirectorypartitions [/custom]
 dnscmd [<servername>] /enumrecords <zonename> <nodename> [/type <rrtype> <rrdata>] [/authority] [/glue] [/additional] [/node | /child | /startchild<childname>] [/continue | /detail]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -326,7 +324,7 @@ dnscmd /enumrecords test.contoso.com test /additional
 dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /cache | /auto-created] [/forward | /reverse | /ds | /file] [/domaindirectorypartition | /forestdirectorypartition | /customdirectorypartition | /legacydirectorypartition | /directorypartition <partitionFQDN>]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -349,7 +347,7 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 #### <a name="examples"></a>示例
 
-- [示例2：显示 DNS 服务器上的完整区域列表](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server)）
+- [示例2：显示 DNS 服务器上的完整区域列表](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server)) 
 
 - [示例3：在 DNS 服务器上显示由区域的列表](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server)
 
@@ -363,7 +361,7 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 dnscmd [<servername>] /exportsettings
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -379,7 +377,7 @@ dnscmd [<servername>] /exportsettings
 dnscmd [<servername>] /info [<settings>]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -402,7 +400,7 @@ dnscmd [<servername>] /info [<settings>]
 dnscmd [<servername>] /ipvalidate <context> [<zonename>] [[<IPaddress>]]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -428,7 +426,7 @@ dnscmd dnssvr1.contoso.com /ipvalidate /zonemasters corp.contoso.com 10.0.0.2
 dnscmd [<servername>] /nodedelete <zonename> <nodename> [/tree] [/f]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -452,7 +450,7 @@ dnscmd [<servername>] /nodedelete <zonename> <nodename> [/tree] [/f]
 dnscmd [<servername>] /recordadd <zonename> <nodename> <rrtype> <rrdata>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -482,7 +480,7 @@ dnscmd /recordadd test.contoso.com test MX 10 mailserver.test.contoso.com
 dnscmd [<servername>] /recorddelete <zonename> <nodename> <rrtype> <rrdata> [/f]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -509,7 +507,7 @@ dnscmd /recorddelete test.contoso.com test MX 10 mailserver.test.contoso.com
 dnscmd [<servername>] /resetforwarders <IPaddress> [,<IPaddress>]...][/timeout <timeout>] [/slave | /noslave]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -547,7 +545,7 @@ dnscmd dnssvr1.contoso.com /resetforwarders /noslave
 dnscmd [<servername>] /resetlistenaddresses <listenaddress>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -570,7 +568,7 @@ dnscmd dnssvr1.contoso.com /resetlistenaddresses 10.0.0.1
 dnscmd [<servername>] /startscavenging
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -612,7 +610,7 @@ dnscmd dnssvr1.contoso.com /startscavenging
 dnscmd [<servername>] /statistics [<statid>] [/clear]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -635,7 +633,7 @@ dnscmd [<servername>] /statistics [<statid>] [/clear]
 dnscmd [<servername>] /unenlistdirectorypartition <partitionFQDN>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -652,7 +650,7 @@ dnscmd [<servername>] /unenlistdirectorypartition <partitionFQDN>
 dnscmd [<servername>] /writebackfiles <zonename>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -675,7 +673,7 @@ dnscmd dnssvr1.contoso.com /writebackfiles
 dnscmd [<servername>] /zoneadd <zonename> <zonetype> [/dp <FQDN> | {/domain | enterprise | legacy}]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -704,7 +702,7 @@ dnscmd dnssvr1.contoso.com /zoneadd secondtest.contoso.com /secondary 10.0.0.2
 dnscmd [<servername>] /zonechangedirectorypartition <zonename> {[<newpartitionname>] | [<zonetype>]}
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -726,13 +724,13 @@ dnscmd [<servername>] /zonechangedirectorypartition <zonename> {[<newpartitionna
 dnscmd [<servername>] /zonedelete <zonename> [/dsdel] [/f]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<zonename>` | 指定要删除的区域的名称。 |
-| /dsdel | 从 Azure Directory 域服务（AD DS）删除区域。 |
+| /dsdel | 从 Azure Directory 域服务 (AD DS) 中删除区域。 |
 | /f | 运行命令而不要求确认。 |
 
 #### <a name="examples"></a>示例
@@ -749,7 +747,7 @@ dnscmd [<servername>] /zonedelete <zonename> [/dsdel] [/f]
 dnscmd [<servername>] /zoneexport <zonename> <zoneexportfile>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -771,7 +769,7 @@ dnscmd [<servername>] /zoneexport <zonename> <zoneexportfile>
 dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -801,7 +799,7 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 dnscmd [<servername>] /zonepause <zonename>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -828,7 +826,7 @@ dnscmd dnssvr1.contoso.com /zonepause test.contoso.com
 dnscmd [<servername>] /zoneprint <zonename>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -851,7 +849,7 @@ dnscmd [<servername>] /zoneprint <zonename>
 dnscmd [<servername>] /zonerefresh <zonename>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -860,7 +858,7 @@ dnscmd [<servername>] /zonerefresh <zonename>
 
 ##### <a name="remarks"></a>备注
 
-- **Zonerefresh**命令强制检查主服务器的授权机构（SOA）资源记录中的版本号。 如果主服务器上的版本号高于辅助服务器的版本号，则会启动区域传送来更新辅助服务器。 如果版本号相同，则不会进行区域传输。
+- **Zonerefresh**命令强制检查主服务器启动颁发机构 (SOA) 资源记录中的版本号。 如果主服务器上的版本号高于辅助服务器的版本号，则会启动区域传送来更新辅助服务器。 如果版本号相同，则不会进行区域传输。
 
 - 默认情况下，强制检查每15分钟发生一次。 若要更改默认设置，请使用 `dnscmd config refreshinterval` 命令。
 
@@ -880,7 +878,7 @@ dnscmd dnssvr1.contoso.com /zonerefresh test.contoso.com
 dnscmd [<servername>] /zonereload <zonename>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -889,7 +887,7 @@ dnscmd [<servername>] /zonereload <zonename>
 
 ##### <a name="remarks"></a>备注
 
-- 如果区域是 active directory 集成的，则从 Active Directory 域服务（AD DS）重新加载。
+- 如果区域是 active directory 集成的，则会从 Active Directory 域服务 (AD DS) 重新加载该区域。
 
 - 如果该区域是一个标准的支持文件的区域，则会从文件重新加载。
 
@@ -909,7 +907,7 @@ dnscmd dnssvr1.contoso.com /zonereload test.contoso.com
 dnscmd [<servername>] /zoneresetmasters <zonename> [/local] [<IPaddress> [<IPaddress>]...]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -939,7 +937,7 @@ dnscmd dnssvr1.contoso.com /zoneresetmasters test.contoso.com /local
 dnscmd [<servername>] /zoneresetscavengeservers <zonename> [/local] [<IPaddress> [<IPaddress>]...]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -972,7 +970,7 @@ dnscmd dnssvr1.contoso.com /zoneresetscavengeservers test.contoso.com 10.0.0.1 1
 dnscmd [<servername>] /zoneresetsecondaries <zonename> {/noxfr | /nonsecure | /securens | /securelist <securityIPaddresses>} {/nonotify | /notify | /notifylist <notifyIPaddresses>}
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -981,7 +979,7 @@ dnscmd [<servername>] /zoneresetsecondaries <zonename> {/noxfr | /nonsecure | /s
 | /local | 设置本地主列表。 此参数用于 active directory 集成区域。 |
 | /noxfr | 指定不允许区域传输。 |
 | /nonsecure | 指定授予所有区域传送请求。 |
-| /securens | 指定仅为区域的名称服务器（NS）资源记录中列出的服务器授予传输。 |
+| /securens | 指定仅为区域的名称服务器 (NS) 资源记录中列出的服务器授予传输。 |
 | /securelist | 指定仅向服务器列表授予区域传输。 此参数必须后跟主服务器使用的一个或多个 IP 地址。 |
 | `<securityIPaddresses>` | 列出从主服务器接收区域传送的 IP 地址。 此参数仅与 **/securelist**参数一起使用。 |
 | /nonotify | 指定不将更改通知发送到辅助服务器。 |
@@ -1010,7 +1008,7 @@ dnscmd dnssvr1.contoso.com /zoneresetsecondaries test.contoso.com /securelist 11
 dnscmd [<servername>] /zoneresettype <zonename> <zonetype> [/overwrite_mem | /overwrite_ds]
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -1041,7 +1039,7 @@ dnscmd dnssvr1.contoso.com /zoneresettype second.contoso.com /secondary 10.0.0.2
 dnscmd [<servername>] /zoneresume <zonename>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -1068,7 +1066,7 @@ dnscmd dnssvr1.contoso.com /zoneresume test.contoso.com
 dnscmd [<servername>] /zoneupdatefromds <zonename>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -1095,7 +1093,7 @@ dnscmd dnssvr1.contoso.com /zoneupdatefromds
 dnscmd [<servername>] /zonewriteback <zonename>
 ```
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |

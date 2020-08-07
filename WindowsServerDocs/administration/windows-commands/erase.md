@@ -1,20 +1,18 @@
 ---
 title: erase
 description: 用于删除一个或多个文件的 erase 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 024a4d0f-8679-4e06-b46f-61fdaf5464bc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a22c738215671096373a7077fc89ac87fe03597
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 144575c1886206ada0cbfd8edbe8571337b37ed9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929311"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890593"
 ---
 # <a name="erase"></a>erase
 
@@ -33,7 +31,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<names>` | 指定一个或多个文件或目录的列表。 通配符可用于删除多个文件。 如果指定了目录，则会删除该目录中的所有文件。 |
 | /p | 删除指定文件之前提示确认。 |
@@ -49,7 +47,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
     `FileName, Delete (Y/N)?`
 
-    若要确认删除，请按**Y**。若要取消删除并显示下一个文件名（如果指定了一组文件），请按**N**。若要停止**erase**命令，请按 CTRL + C。
+    若要确认删除，请按**Y**。若要取消删除并显示下一个文件名 (如果指定了一组文件) ，请按**N**。若要停止**erase**命令，请按 CTRL + C。
 
 - 如果禁用命令扩展， **/s**参数将显示找不到的任何文件的名称，而不是显示要删除的文件的名称。
 
@@ -59,7 +57,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
   erase \work
   ```
 
-- 您可以使用通配符（**&#42;** 和 **？**）一次删除多个文件。 但是，若要避免无意中删除文件，应慎重使用通配符。 例如，如果键入以下命令：
+- 您可以使用通配符 (**&#42;** 和 **？**) 一次删除多个文件。 但是，若要避免无意中删除文件，应慎重使用通配符。 例如，如果键入以下命令：
 
   ```
   erase *.*

@@ -1,24 +1,22 @@
 ---
 title: exit
 description: 退出命令解释器的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d3cee4a2-6210-46f0-b8e4-7381c3c4e530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d28f15ba1453b32d8e464fd768a3b7895819d11c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 058e41d49ece470421fbd2b160037885b92c1bed
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931455"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890461"
 ---
 # <a name="exit"></a>exit
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 退出命令解释器或当前批处理脚本。
 
@@ -30,7 +28,7 @@ exit [/b] [<exitcode>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /b | 退出当前批处理脚本，而不是退出 Cmd.exe。 如果从批处理脚本外部执行，则退出 Cmd.exe。 |
 | `<exitcode>` | 指定数值。 如果指定了 **/b** ，则 ERRORLEVEL 环境变量设置为该数字。 如果要退出命令解释器，则进程退出代码将设置为该数字。 |

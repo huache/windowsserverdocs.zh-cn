@@ -1,20 +1,18 @@
 ---
 title: tree
 description: 树形的参考文章，其中显示了路径的目录结构或驱动器中的磁盘的目录结构。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 345d3192-401e-4a3b-a8ac-36a85c7be79d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dea885a8149c8231f3cb8e24c2128622131206e7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 44e3e54f986cc4bd4459d4e007c5111b664a6a45
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932392"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897098"
 ---
 # <a name="tree"></a>tree
 
@@ -30,7 +28,7 @@ tree [<Drive>:][<Path>] [/f] [/a]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |\<Drive>:|指定包含要显示其目录结构的磁盘的驱动器。|
 |\<Path>|指定要显示其目录结构的目录。|

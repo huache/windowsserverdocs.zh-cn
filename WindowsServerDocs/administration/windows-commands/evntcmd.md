@@ -1,24 +1,22 @@
 ---
 title: evntcmd
 description: Evntcmd 命令的参考文章，它基于配置文件中的信息配置将事件转换为陷阱、陷阱目标或两者。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 291b13163f5c5a13442ed6dc80b769d0170df42e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9610608000ce106ec321f721a4181658453d6348
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922782"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890547"
 ---
 # <a name="evntcmd"></a>evntcmd
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 基于配置文件中的信息，配置将事件转换为陷阱、陷阱目标或两者。
 
@@ -30,7 +28,7 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /s`<computername>` | 按名称指定要在其上配置事件转换的计算机和/或陷阱目标的计算机。 如果未指定计算机，则会在本地计算机上进行配置。 |
 | /v`<verbositylevel>` | 指定哪些类型的状态消息会显示为陷阱，并配置陷阱目标。 此参数必须是一个介于0到10之间的整数。 如果指定10，则显示所有类型的消息，包括有关陷阱配置是否成功的跟踪消息和警告。 如果指定0，则不会显示任何消息。 |
@@ -60,7 +58,7 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 
     - **Count**参数是可选的，它指定在发送陷阱消息之前事件必须发生的次数。 如果不使用此参数，则在事件发生一次后发送陷阱消息。
 
-    - **Period**参数是可选的，但要求使用**count**参数。 **Period**参数指定事件必须发生的时间长度（以秒为单位），在这段时间内，必须在发送陷阱消息之前，事件发生的次数与**count**参数一起指定。 如果不使用此参数，则在事件发生后，无论发生多少***次，都***将在事件发生后发送陷阱消息。
+    - **Period**参数是可选的，但要求使用**count**参数。 **Period**参数指定 (的时间长度（以秒为单位）) 事件必须在发送陷阱消息之前，在该时间段内发生的次数与**count**参数一起指定。 如果不使用此参数，则在事件发生后，无论发生多少***次，都***将在事件发生后发送陷阱消息。
 
 - 删除陷阱的语法如下所示：
 

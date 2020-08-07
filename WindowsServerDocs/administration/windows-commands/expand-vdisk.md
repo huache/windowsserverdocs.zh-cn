@@ -1,26 +1,24 @@
 ---
 title: expand vdisk
-description: 扩展 vdisk 命令的参考文章，可将虚拟硬盘（VHD）扩展到指定大小。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: "\"扩展 vdisk\" 命令的参考文章，可将虚拟硬盘 (VHD) 展开为指定大小。"
 ms.topic: article
 ms.assetid: 3ae547b4-3813-4b86-bacd-bc273c028a2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7951d4875249e46d850883f7863262774dd9bab
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5d9c5c859dfa506d9f8afd07a0e78bdef210f60a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932306"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890444"
 ---
 # <a name="expand-vdisk"></a>expand vdisk
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-将虚拟硬盘（VHD）扩展到指定大小。
+将虚拟硬盘 (VHD) 展开为指定大小。
 
 必须选择并分离 VHD，此操作才能成功。 使用 "[选择 vdisk" 命令](select-vdisk.md)选择卷并将焦点移动到该卷。
 
@@ -32,9 +30,9 @@ expand vdisk maximum=<n>
 
 ### <a name="parameters"></a>参数
 
- | 参数 | 说明 |
+ | 参数 | 描述 |
  |---------- | ----------- |
- | 最大值 =`<n>` | 指定 VHD 的新大小（以兆字节（MB）为单位）。 |
+ | 最大值 =`<n>` | 以 mb 为单位指定 VHD 的新大小 (MB) 。 |
 
 ### <a name="examples"></a>示例
 

@@ -1,20 +1,18 @@
 ---
 title: dispdiag
 description: Dispdiag 命令的参考文章，它将显示信息记录到文件中。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5079e1dd-b57c-44ed-970f-e6b409369e03
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d95a53f60aa7e51450a640d5ec9c5a5e6ccb41a6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 78b8080395fa30a934d1a9380bf86beae7e62dc0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931223"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890830"
 ---
 # <a name="dispdiag"></a>dispdiag
 
@@ -28,7 +26,7 @@ dispdiag [-testacpi] [-d] [-delay <seconds>] [-out <filepath>]
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | - testacpi | 运行热键诊断测试。 显示测试期间按下的任何键的键名称、代码和扫描代码。 |
 | -d | 生成包含测试结果的转储文件。 |

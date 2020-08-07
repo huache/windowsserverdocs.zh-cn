@@ -1,20 +1,18 @@
 ---
 title: tracerpt
 description: 用于分析事件跟踪日志、由性能监视器生成的日志文件和实时事件跟踪提供程序的 tracerpt 参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cb9eaf86-0ef6-4197-b6c8-9cca8a1d723c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7060932f0b7eb996d0f0934e6945665c0c91e916
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 657a0ff1df856bf605c31d260a77bc266909485d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935579"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897117"
 ---
 # <a name="tracerpt"></a>tracerpt
 
@@ -28,7 +26,7 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 
 ## <a name="options"></a>选项
 
-|              选项标志               |                                                                    说明                                                                    |
+|              选项标志               |                                                                    描述                                                                    |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 |                   -?                   |                                                         显示上下文相关的帮助。                                                          |
 |          -config\<filename>           |                                                 加载包含命令选项的设置文件。                                                  |
@@ -39,9 +37,9 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |            -int\<filename>            |                                            将解释的事件结构转储到指定的文件。                                            |
 |                  -rts                  |                        报告事件跟踪标头中的原始时间戳。 只能与-o、非报表或-summary 一起使用。                         |
 |            -tmf\<filename>            |                                                  指定跟踪消息格式定义文件。                                                  |
-|              -tp\<value>              |                            指定 TMF 文件搜索路径。 可以使用多个路径，用分号（;) 分隔。                            |
-|              -i\<value>               | 指定提供程序映像路径。 匹配的 PDB 将位于符号服务器中。 可以使用多个路径，用分号（;) 分隔。 |
-|             -pdb\<value>              |                             指定符号服务器路径。 可以使用多个路径，用分号（;) 分隔。                             |
+|              -tp\<value>              |                            指定 TMF 文件搜索路径。 可以使用多个路径，用分号分隔 (; ) 。                            |
+|              -i\<value>               | 指定提供程序映像路径。 匹配的 PDB 将位于符号服务器中。 可以使用多个路径，用分号分隔 (; ) 。 |
+|             -pdb\<value>              |                             指定符号服务器路径。 可以使用多个路径，用分号分隔 (; ) 。                             |
 |                  -gmt                  |                                              将 WPP 有效负载时间戳转换为格林尼治标准时间。                                               |
 |              -rl \<value>              |                                               定义从1到5的系统报告级别。 默认值为 1。                                               |
 |          -summary [文件名]           |                                  生成摘要报告文本文件。 如果未指定，则 summary.txt。                                   |
