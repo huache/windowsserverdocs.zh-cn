@@ -2,18 +2,16 @@
 title: DirectAccess 测试实验室指南
 description: 本主题提供了有关 Windows Server 2016 中 DirectAccess 的测试实验室指南的链接。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 931a75ac-80f8-434c-8789-1dffb308ee13
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 14dacc16e49b4347621792cc625dbcdd773c0aba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7ca80064a4bc87f8f50fc3c281932880b7ee97eb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815630"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970434"
 ---
 # <a name="directaccess-test-lab-guides"></a>DirectAccess 测试实验室指南
 

@@ -2,18 +2,16 @@
 title: DirectAccess 容量规划
 description: 你可以使用本主题来了解 Windows Server 2012 DirectAccess 服务器性能，以帮助你在 Windows Server 2016 中进行 DirectAccess 的容量规划。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 85ac9d40ec0de0a896e99d56679b325cdfc387ff
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6df4005112601aefb1e508087ec66e7af44e52fd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517682"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87951402"
 ---
 # <a name="directaccess-capacity-planning"></a>DirectAccess 容量规划
 
@@ -21,7 +19,7 @@ ms.locfileid: "87517682"
 
 本文档是一份有关 Windows Server 2012 DirectAccess 服务器性能的报告。 测试的目的是为了确定使用高端和低端计算机硬件时的吞吐量。 高端和低端 CPU 性能取决于网络流量吞吐量和所用客户端的类型。 典型的 DirectAccess 部署（同时作为这些测试的基础）包括占数量 1/3 (30%) 的 IPHTTPS 客户端，以及占数量 2/3 (70%) 的 Teredo 客户端。 在某种程度上，Teredo 客户端的性能优于 IPHTTPS 客户端，原因是 Windows Server 2012 使用了接收方缩放 (RSS)，从而可以利用所有的 CPU 核心。 在这些测试中，由于启用了 RSS，因此可禁用超线程。 此外，Windows Server 2012 中的 TCP/IP 支持 UDP 流量，使 Teredo 客户端能够在 CPU 之间平衡负载。
 
-数据是从低端（4 核，4 G）服务器中，以及预期在高端（8 核，8 G）服务器上较常用的硬件中收集的。  下面是在低端硬件上新的 Windows 8 任务管理器的屏幕截图，其中包含750个客户端（562 Teredo、188 IPHTTPS），运行 ~ 77 Mb/秒。这是为了模拟不提供智能卡凭据的用户。
+数据是从低端（4 核，4 G）服务器中，以及预期在高端（8 核，8 G）服务器上较常用的硬件中收集的。  下面是在低端硬件上新的 Windows 8 任务管理器的屏幕截图，其中的750客户端 (562 Teredo，188 IPHTTPS) 运行 ~ 77 Mb/秒。这是为了模拟不提供智能卡凭据的用户。
 
 这些测试结果表明，在 Windows 8 中，Teredo 的性能优于 IPHTTPS，但与 Windows 7 相比，Teredo 和 IPHTTPS 的带宽使用量都已提高。
 

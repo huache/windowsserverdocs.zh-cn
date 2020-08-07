@@ -2,18 +2,16 @@
 title: 连接到远程计算机
 description: 本文介绍如何从文件服务器资源管理器连接到远程计算机以管理存储资源
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 562164b461b4cd5db939b116feeb1bf21f78bad4
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a412fcc0e1979ed158f01f6fba17fb6a9c4a20c7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474124"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935876"
 ---
 # <a name="connect-to-a-remote-computer"></a>连接到远程计算机
 
@@ -32,7 +30,7 @@ ms.locfileid: "85474124"
 
 3.  单击**连接到另一台计算机**对话框中的**另一台计算机**。 然后键入要连接到的服务器的名称（或者单击**浏览**搜索远程计算机）。
 
-4.  单击" **确定**"。
+4.  单击“确定”。
 
 > [!Important]
 > 只有在从**管理工具**打开文件服务器资源管理器后，**连接到另一台计算机**的命令才可用。 当从服务器管理器中访问文件服务器资源管理器时，命令不可用。

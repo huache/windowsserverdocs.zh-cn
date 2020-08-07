@@ -5,18 +5,16 @@ ms.author: jgerend
 manager: dmoss
 ms.date: 10/16/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 55611be13333c36201aad149be87207564d4ac97
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 15c4b7942be949af33e70d2a5f299af426040e7b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471142"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950501"
 ---
 # <a name="refs-integrity-streams"></a>ReFS 完整性流
->适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server （半年频道），Windows 10
+>适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server (半年通道) ，Windows 10
 
 完整性流是 ReFS 中的可选功能，可使用校验和验证和维护数据完整性。 尽管 ReFS 始终将校验和用于元数据，但默认情况下，ReFS 不会生成或验证文件数据的校验和。 完整性流是一项可让用户将校验和用于文件数据的可选功能。 启用完整性流后，ReFS 可以清楚地确定数据有效还是已损坏。 此外，ReFS 和存储空间还可以一起自动更正损坏的元数据和数据。
 

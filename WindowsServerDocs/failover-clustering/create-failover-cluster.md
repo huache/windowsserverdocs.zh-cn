@@ -1,20 +1,18 @@
 ---
 title: 创建故障转移群集
 description: 如何为 Windows Server 2012 R2、Windows Server 2012、Windows Server 2016 和 Windows Server 2019 创建故障转移群集。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 322eba03bb46a32191c46461c49eace4fcfda9e0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e96056eb26e200f360f92c4c6e2b94c2d77bf9ec
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177833"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950111"
 ---
 # <a name="create-a-failover-cluster"></a>创建故障转移群集
 
@@ -90,7 +88,7 @@ ms.locfileid: "87177833"
 2. 在**故障转移群集管理器**窗格中的 "**管理**" 下，选择 "**验证配置**"。
 3. 在“开始之前”**** 页面上，选择“下一步”****。
 4. 在 "**选择服务器或群集**" 页上的 "**输入名称**" 框中，输入你计划添加为故障转移群集节点的服务器的 NetBIOS 名称或完全限定的域名，然后选择 "**添加**"。 为要添加的每台服务器重复此步骤。 若要同时添加多台服务器，请用逗号或分号分隔这些名称。 例如，以格式输入名称 `server1.contoso.com, server2.contoso.com` 。 完成后，选择“下一步”****。
-5. 在 "**测试选项**" 页上，选择 "**运行所有测试（推荐）**"，然后选择 "**下一步**"。
+5. 在 "**测试选项**" 页上，选择 "**运行 (建议) 中的所有测试**"，然后选择 "**下一步**"。
 6. 在 "**确认**" 页上，选择 "**下一步**"。
 
     验证页面显示运行测试的状态。
@@ -129,7 +127,7 @@ ms.locfileid: "87177833"
     2. 如果该服务器没有配置为使用 DHCP 的网络适配器，则必须为该故障转移群集配置一个或多个静态 IP 地址。 选中你想要用于群集管理的每个网络旁边的复选框。 选择所选网络旁边的 "**地址**" 字段，然后输入要分配给群集的 IP 地址。 此 IP 地址（或多个地址）将与域名系统 (DNS) 中的群集名称相关联。
 
       >[!NOTE]
-      > 如果使用的是 Windows Server 2019，则可以选择使用群集的分布式网络名称。 分布式网络名称使用成员服务器的 IP 地址，而不需要群集的专用 IP 地址。 默认情况下，如果 Windows 检测到你正在 Azure 中创建群集，则 Windows 使用分布式网络名称（因此，无需为群集创建内部负载均衡器），如果你在本地运行，则可以使用普通静态或 IP 地址。 有关详细信息，请参阅[分布式网络名称](https://blogs.windows.com/windowsexperience/2018/08/14/announcing-windows-server-2019-insider-preview-build-17733/#W0YAxO8BfwBRbkzG.97)。
+      > 如果使用的是 Windows Server 2019，则可以选择使用群集的分布式网络名称。 分布式网络名称使用成员服务器的 IP 地址，而不需要群集的专用 IP 地址。 默认情况下，如果 Windows 检测到你正在 (Azure 中创建群集，则 Windows 使用分布式网络名称，因此，无需为群集) 创建内部负载均衡器，或者如果你在本地运行，则无需为常规静态或 IP 地址创建内部负载均衡器。 有关详细信息，请参阅[分布式网络名称](https://blogs.windows.com/windowsexperience/2018/08/14/announcing-windows-server-2019-insider-preview-build-17733/#W0YAxO8BfwBRbkzG.97)。
 
     3. 完成后，选择“下一步”****。
 8. 在“确认”**** 页面上，查看这些设置。 默认情况下，选中“将所有符合条件的存储添加到群集”**** 复选框。 如果你想要执行以下任一操作，请清除此复选框：
@@ -159,9 +157,9 @@ ms.locfileid: "87177833"
 
    | 群集角色  | 角色或功能先决条件  |
    | ---------       | ---------                    |
-   | 命名空间服务器     |   命名空间（文件服务器角色的一部分）       |
+   | 命名空间服务器     |   命名空间 (文件服务器角色的一部分)        |
    | DFS 命名空间服务器     |  DHCP 服务器角色       |
-   | 分布式事务处理协调器 (DTC)     | 无        |
+   | 分布式事务处理协调器 (DTC)     | None        |
    | 文件服务器     |  文件服务器角色       |
    | 通用应用程序     |  不适用       |
    | 通用脚本     |   不适用      |
@@ -170,7 +168,7 @@ ms.locfileid: "87177833"
    | iSCSI Target Server     |    iSCSI 目标服务器（文件服务器角色的一部分）     |
    | iSNS 服务器     |  iSNS 服务器服务功能       |
    | 消息队列     |  消息队列服务功能       |
-   | 其他服务器     |  无       |
+   | 其他服务器     |  None       |
    | 虚拟机     |  Hyper-V 角色       |
    | WINS 服务器     |   WINS 服务器功能      |
 

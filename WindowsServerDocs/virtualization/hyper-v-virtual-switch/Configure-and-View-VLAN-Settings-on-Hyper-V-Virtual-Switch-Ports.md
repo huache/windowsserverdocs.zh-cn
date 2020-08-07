@@ -1,27 +1,25 @@
 ---
-title: 配置和查看 Hyper-V 虚拟交换机端口上的 VLAN 设置
-description: 你可以使用本主题来了解有关在 Windows Server 2016 中的 Hyper-v 虚拟交换机端口上配置和查看虚拟局域网（VLAN）设置的最佳实践。
+title: 配置和查看 HYPER-V 虚拟交换机端口上的 VLAN 设置
+description: 你可以使用本主题来了解有关在 Windows Server 2016 中的 Hyper-v 虚拟交换机端口上配置和查看虚拟局域网 (VLAN) 设置的最佳实践。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 69e0e28a-98ae-4ade-bd27-ce2ad7eb310f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 083558762051283115211d10d32ebb6fd3ad3953
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1f4812e05ff003d40b34b7bf757894f7e66aaa6e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308035"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950291"
 ---
-# <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>配置和查看 Hyper-V 虚拟交换机端口上的 VLAN 设置
+# <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>配置和查看 HYPER-V 虚拟交换机端口上的 VLAN 设置
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-你可以使用本主题来了解有关在 Hyper-v 虚拟交换机端口上配置和查看虚拟局域网（VLAN）设置的最佳实践。
+你可以使用本主题来了解有关在 Hyper-v 虚拟交换机端口上配置和查看虚拟局域网 (VLAN) 设置的最佳实践。
 
-如果要在 Hyper-v 虚拟交换机端口上配置 VLAN 设置，则可以使用 Windows&reg; Server 2016 Hyper-v 管理器或 System Center Virtual Machine Manager （VMM）。
+如果要在 Hyper-v 虚拟交换机端口上配置 VLAN 设置，则可以使用 Windows &reg; Server 2016 Hyper-v 管理器或 System Center Virtual Machine Manager (VMM) "。
 
 如果你使用的是 VMM，则 VMM 将使用以下 Windows PowerShell 命令来配置交换机端口。
 
@@ -41,8 +39,8 @@ Set-VMNetworkAdapterVlan <VM-name|-managementOS> -Access -VlanID <vlan-value>
 
 若要配置和查看 VLAN 交换机端口设置，必须执行以下操作：
 
-- 如果使用 VMM 或网络控制器来设置和管理网络，并且已部署软件定义的网络（SDN），则必须使用**VMNetworkAdapterIsolation** cmdlet。 
-- 如果使用的是 Windows Server 2016 Hyper-v 管理器或 Windows PowerShell cmdlet，并且未部署软件定义的网络（SDN），则必须使用**set-vmnetworkadaptervlan** cmdlet。
+- 如果使用 VMM 或网络控制器来设置和管理网络，并且已将软件定义的网络 (SDN) 部署，则必须使用**VMNetworkAdapterIsolation** cmdlet。
+- 如果使用的是 Windows Server 2016 Hyper-v 管理器或 Windows PowerShell cmdlet，并且尚未将软件定义的网络 (SDN) 部署，则必须使用**set-vmnetworkadaptervlan** cmdlet。
 
 ### <a name="possible-issues"></a>可能的问题
 

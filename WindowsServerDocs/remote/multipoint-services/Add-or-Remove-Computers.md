@@ -1,19 +1,18 @@
 ---
 title: 添加或删除计算机
 description: 了解如何在 MultiPoint Services 中添加和删除计算机。
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 1c37739d-7ab0-4b80-8d05-0330e79fd631
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 07/13/2017
-ms.openlocfilehash: 40905afb2bff790425586c3f54e9ee43bdd4fc52
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 5b72655966cc1c16c2da3625c70cd31facf70056
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409838"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970704"
 ---
 # <a name="add-or-remove-computers"></a>添加或删除计算机
 你可以使用 MultiPoint 管理器添加其他计算机或从你的 MultiPoint 服务系统中删除计算机。 将其他电脑添加到 MultiPoint 管理器表示，当登录该电脑时，允许 MultiPoint 仪表板为该电脑安排任何用户会话，安排方式与为 MultiPoint 工作站安排会话相同。

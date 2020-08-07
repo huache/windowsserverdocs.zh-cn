@@ -2,18 +2,16 @@
 title: 配置通知限制
 description: 本文介绍如何为不同类型的通知添加时间限制
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5b9bda5ffb225cc05df7d45e8b611e0154f9e582
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 969c950d3a925afac400d128ac21ed0923f07ffa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961529"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950651"
 ---
 # <a name="configure-notification-limits"></a>配置通知限制
 
@@ -23,7 +21,7 @@ ms.locfileid: "86961529"
 
 -   电子邮件
 -   事件日志
--   命令
+-   Command
 -   报表
 
 对于相同的问题，每项限制都会指定一个生成另一相同类型的配置通知前的时间段。
@@ -36,7 +34,7 @@ ms.locfileid: "86961529"
 
 2.  在**通知限制**选项卡上，输入每个所显示的通知类型相应的值（分钟）。
 
-3.  单击 **“确定”** 。
+3.  单击“确定”。
 
 > [!Note]
 > 若要自定义与特定配额或文件屏蔽通知相关的时间限制，可以使用文件服务器资源管理器命令行工具 **Dirquota.exe** 和 **Filescrn.exe**，或者使用[文件服务器资源管理器](/powershell/module/fileserverresourcemanager/?view=win10-ps) cmdlet。

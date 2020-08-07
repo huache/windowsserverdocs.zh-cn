@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 06/13/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: active-directory-federation-services
-ms.openlocfilehash: 934ef170f6cbd5a2bd4031d336907d6b925cff06
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c615bd6426098e00854e873d3e1eb2cfbfaa0734
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519896"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970934"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL.JS 与 AD FS 2016 或更高版本结合使用生成单个页面 web 应用程序
 
@@ -32,7 +30,7 @@ ms.locfileid: "87519896"
 
 ![AD FS 授权](media/Single-Page-Application-with-AD-FS/authenticationflow.PNG)
 
-使用单页面应用程序时，用户将导航到起始位置，从该位置开始，并加载 JavaScript 文件和 HTML 视图的集合。 你需要配置 Active Directory 身份验证库（ADAL）来了解有关你的应用程序的关键信息，即 AD FS 实例的客户端 ID，以便能够将身份验证定向到你的 AD FS。
+使用单页面应用程序时，用户将导航到起始位置，从该位置开始，并加载 JavaScript 文件和 HTML 视图的集合。 你需要配置 Active Directory 身份验证库 (ADAL) ，以了解有关你的应用程序的关键信息，即 AD FS 实例、客户端 ID，以便它可以将身份验证定向到你的 AD FS。
 
 如果 ADAL 看到用于身份验证的触发器，它将使用应用程序提供的信息，并将身份验证定向到 AD FS STS。  在 AD FS 中注册为公用客户端的单页面应用程序将自动配置为隐式授权流。 授权请求导致 ID 令牌通过 #fragment 返回给应用程序。 对后端 WebAPI 的进一步调用将此 ID 令牌作为标头中的持有者令牌，以获取对 WebAPI 的访问权限。
 
@@ -69,7 +67,7 @@ git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepage
 
 **index.html** -包含对 adal.js 的引用
 
-**HomeController.js**-演示如何利用 ADAL 中的登录（）和注销（）方法。
+**HomeController.js**-演示如何在 ADAL 中利用登录名 ( # A1 和注销 ( # A3 方法。
 
 **UserDataController.js** -演示如何从缓存的 id_token 中提取用户信息。
 
@@ -168,7 +166,7 @@ and add:
 ## <a name="running-the-solution"></a>运行解决方案
 清理解决方案，重新生成并运行解决方案。 若要查看详细跟踪，请启动 Fiddler 并启用 HTTPS 解密。
 
-浏览器（使用 Chrome 浏览器）将加载 SPA，并将显示以下屏幕：
+浏览器 (使用 Chrome browser) 会加载 SPA，并将显示以下屏幕：
 
 ![注册客户端](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 

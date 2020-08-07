@@ -7,14 +7,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 5b3dbe22e5db03d76916218317d5e9ffe0640042
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a46d18a0d2f589cb0ae7ee5915af0c84b0c8982f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519514"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950401"
 ---
 # <a name="install-a-windows-server-2012-active-directory-read-only-domain-controller-rodc-level-200"></a>安装 Windows Server 2012 Active Directory 只读域控制器 (RODC)（级别 200）
 
@@ -49,7 +47,7 @@ ms.locfileid: "87519514"
 
 ## <a name="attach-rodc-windows-powershell"></a><a name=BKMK_AttachPS></a>附加 RODC Windows PowerShell
 
-| ADDSDeployment Cmdlet | 参数（需要**加粗**参数。 *斜体*参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。） |
+| ADDSDeployment Cmdlet | 需要 (**粗体**参数的参数。 *斜体*参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。） |
 |--|--|
 | Install-AddsDomaincontroller | -SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>*-ApplicationPartitionsToReplicate*<p>*-CreateDNSDelegation*<p>***-Credential***<p>-CriticalReplicationOnly<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>*-InstallationMediaPath*<p>*-LogPath*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>*-SystemKey*<p>*-SYSVOLPath*<p>***-UseExistingAccount*** |
 
@@ -171,7 +169,7 @@ Add-addsreadonlydomaincontrolleraccount
 -delegatedadministratoraccountname <string>
 ```
 
-### <a name="summary"></a>摘要
+### <a name="summary"></a>总结
 ![安装 RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1Summary.png)
 
 “摘要”**** 对话框使你可以确认你的设置。 这是在向导创建分步帐户前停止安装的最后机会。 当你准备好创建分步 RODC 计算机帐户时，单击“下一步”****。  单击“导出设置”**** 以使用过时的 dcpromo 无人参与文件格式保存应答文件。
@@ -230,7 +228,7 @@ Install-AddsDomainController
 “域控制器选项”**** 页面显示用于新域控制器的域控制器选项。 当此页面加载时，Active Directory 域服务配置向导向现有域控制器发送 LDAP 查询以检查未占用的帐户。 如果查询查找与当前计算机共享同一名称的未占用域控制器计算机帐户，则向导会在页面顶部显示一条信息性消息，该消息将读取**与目标服务器名称匹配的预创建 RODC 帐户。选择是使用此现有 RODC 帐户还是重新安装此域控制器**。 向导使用“使用现有 RODC 帐户”**** 作为默认配置。
 
 > [!IMPORTANT]
-> 当域控制器遇到物理问题且无法恢复运行时，你可以使用“重新安装此域控制器”**** 选项。 在配置替换域控制器时，通过在 Active Directory 中保留域控制器计算机帐户和对象元数据，这可以节省时间。 使用*相同名称*安装新计算机并将其升级为域中的域控制器。 如果已从 Active Directory 中删除域控制器对象的元数据（元数据清理），则 "**重新安装此域控制器**" 选项不可用。
+> 当域控制器遇到物理问题且无法恢复运行时，你可以使用“重新安装此域控制器”**** 选项。 在配置替换域控制器时，通过在 Active Directory 中保留域控制器计算机帐户和对象元数据，这可以节省时间。 使用*相同名称*安装新计算机并将其升级为域中的域控制器。 如果从 Active Directory (元数据清理) 中移除了域控制器对象的元数据，则 "**重新安装此域控制器**" 选项不可用。
 
 将服务器附加到 RODC 计算机帐户时，你无法配置域控制器选项。 将在创建分步 RODC 计算机帐户时配置域控制器选项。
 
@@ -417,7 +415,7 @@ Install-addsdomaincontroller
 
 ## <a name="rodc-without-staging-windows-powershell"></a>没有分步 Windows PowerShell 的 RODC
 
-| ADDSDeployment Cmdlet | 参数（需要**加粗**参数。 *斜体*参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。） |
+| ADDSDeployment Cmdlet | 需要 (**粗体**参数的参数。 *斜体*参数可以通过使用 Windows PowerShell 或 AD DS 配置向导来指定。） |
 |--|--|
 | Install-AddsDomainController | -SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>***-SiteName***<p>*-ApplicationPartitionsToReplicate*<p>*-CreateDNSDelegation*<p>***-Credential***<p>*-CriticalReplicationOnly*<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-DNSOnNetwork<p>*-InstallationMediaPath*<p>*-InstallDNS*<p>*-LogPath*<p>-MoveInfrastructureOperationMasterRoleIfNecessary<p>*-NoGlobalCatalog*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>-SkipAutoConfigureDNS<p>*-SystemKey*<p>*-SYSVOLPath*<p>*-AllowPasswordReplicationAccountName*<p>*-DelegatedAdministratorAccountName*<p>*-DenyPasswordReplicationAccountName*<p>***-ReadOnlyReplica*** |
 

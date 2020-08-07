@@ -2,17 +2,16 @@
 title: 存储空间直通性能历史记录编写脚本
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f3274210ea6c08d63862551570096ab10aa878e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a0e04034c79a82bb245b611eca291acca0e40f9f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961809"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935778"
 ---
 # <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>通过 PowerShell 编写脚本并存储空间直通性能历史记录
 
@@ -36,7 +35,7 @@ ms.locfileid: "86961809"
 
 ## <a name="sample-1-cpu-i-see-you"></a>示例1： CPU，我看到了！
 
-此示例使用 `ClusterNode.Cpu.Usage` `LastWeek` 时间范围内的序列来显示群集中每个服务器的最大值（"高水位线"）、最小值和平均 CPU 使用率。 它还执行简单的分位分析来显示过去8天内 CPU 使用率超过25%、50% 和75% 的小时数。
+此示例使用 `ClusterNode.Cpu.Usage` `LastWeek` 时间范围内的序列来显示群集中每个服务器的最大 ( "高水位线" ) 、最小和平均 CPU 使用率。 它还执行简单的分位分析来显示过去8天内 CPU 使用率超过25%、50% 和75% 的小时数。
 
 ### <a name="screenshot"></a>屏幕快照
 
@@ -46,9 +45,9 @@ ms.locfileid: "86961809"
 
 ### <a name="how-it-works"></a>工作原理
 
-管道的输出非常 `Get-ClusterPerf` 适合内置 `Measure-Object` cmdlet，只需指定 `Value` 属性即可。 对于其 `-Maximum` 、 `-Minimum` 和 `-Average` 标志， `Measure-Object` 为我们提供了几乎免费的前三列。 若要进行四分位分析，可以通过管道来 `Where-Object` 统计 `-Gt` （大于）25、50或75的值（大于）。 最后一步是 beautify `Format-Hours` 和 `Format-Percent` helper 函数-当然是可选的。
+管道的输出非常 `Get-ClusterPerf` 适合内置 `Measure-Object` cmdlet，只需指定 `Value` 属性即可。 对于其 `-Maximum` 、 `-Minimum` 和 `-Average` 标志， `Measure-Object` 为我们提供了几乎免费的前三列。 若要执行分位分析，可以通过管道来 `Where-Object` 计算 `-Gt` (大于) 25、50或75的值的数量。 最后一步是 beautify `Format-Hours` 和 `Format-Percent` helper 函数-当然是可选的。
 
-### <a name="script"></a>Script
+### <a name="script"></a>脚本
 
 脚本如下：
 
@@ -92,7 +91,7 @@ $Output | Sort-Object ClusterNode | Format-Table
 
 ## <a name="sample-2-fire-fire-latency-outlier"></a>示例2：火灾、火灾、延迟离群
 
-此示例使用 `PhysicalDisk.Latency.Average` 时间范围内的序列 `LastHour` 来查找统计离群值，并将其定义为具有每小时平均延迟的驱动器（超过 +3 σ（三个标准偏差）高于总体平均值。
+此示例使用 `PhysicalDisk.Latency.Average` 时间范围内的序列 `LastHour` 来查找统计离群值，并将其定义为具有每小时平均延迟（超过 +3 σ）的驱动器， (三个标准偏差) 在总体平均值之上。
 
    > [!IMPORTANT]
    > 为简洁起见，此脚本不会实现低差异的安全措施，不处理部分丢失的数据，也不区分模型或固件等。请毋庸置疑，不要独自依赖此脚本来确定是否更换硬盘。 此处仅提供教育目的。
@@ -111,7 +110,7 @@ $Output | Sort-Object ClusterNode | Format-Table
 
 如果任何驱动器超过 +3 σ，则 `Write-Host` 为红色; 否则为绿色。
 
-### <a name="script"></a>Script
+### <a name="script"></a>脚本
 
 脚本如下：
 
@@ -202,7 +201,7 @@ Else {
 
 ## <a name="sample-3-noisy-neighbor-thats-write"></a>示例3：干扰邻居？ 编写！
 
-性能历史记录也可以回答*right now*问题。 新度量值每10秒实时可用。 此示例使用 `VHD.Iops.Total` `MostRecent` 时间范围内的序列来确定最繁忙的虚拟机（某些可能会说 "noisiest"）虚拟机消耗最多的存储 IOPS，并跨群集中的每个主机，并显示其活动的读/写细分。
+性能历史记录也可以回答*right now*问题。 新度量值每10秒实时可用。 此示例使用 `VHD.Iops.Total` `MostRecent` 时间范围内的序列来确定最繁忙的 (某些情况下，可能会说 "noisiest" ) 虚拟机在群集中的每个主机上消耗最多的存储 IOPS，并显示其活动的读/写细分。
 
 ### <a name="screenshot"></a>屏幕快照
 
@@ -219,7 +218,7 @@ Else {
 
 每个服务器的结果都作为 `$Output` ，我们可以将其作为 `Sort-Object` `Select-Object -First 10` 。 请注意， `Invoke-Command` 使用属性修饰结果以 `PsComputerName` 指示它们的来源，我们可以打印这些结果来了解 VM 的运行位置。
 
-### <a name="script"></a>Script
+### <a name="script"></a>脚本
 
 脚本如下：
 
@@ -264,12 +263,12 @@ $Output | Sort-Object RawIopsTotal -Descending | Select-Object -First 10 | Forma
 
 ### <a name="how-it-works"></a>工作原理
 
-我们会 `Invoke-Command` `Get-NetAdapter` 在每个服务器和管道上重复我们的技巧 `Get-ClusterPerf` 。 在此过程中，我们将提取两个相关属性：其 `LinkSpeed` 字符串（如 "10 Gbps"）及其原始 `Speed` 整数（如10000000000）。 我们使用 `Measure-Object` 来获取最后一天的平均和峰值（提醒：时间范围内的每个度量值都 `LastDay` 表示5分钟），并乘以每个字节8位以获得苹果比较。
+我们会 `Invoke-Command` `Get-NetAdapter` 在每个服务器和管道上重复我们的技巧 `Get-ClusterPerf` 。 在此过程中，我们将提取两个相关属性：其 `LinkSpeed` 字符串（如 "10 Gbps"）及其原始 `Speed` 整数（如10000000000）。 我们使用 `Measure-Object` 来获取最后一天 (提醒的平均和峰值：时间范围内的每个度量值都 `LastDay` 表示5分钟) 并乘以每个字节8位，以获得苹果比较。
 
    > [!NOTE]
-   > 某些供应商（如 Chelsio）在其*网络适配器*性能计数器中包括远程直接内存访问（RDMA）活动，因此它包含在 `NetAdapter.Bandwidth.Total` 系列中。 其他类（如 Mellanox）可能不会。 如果你的供应商没有，只需 `NetAdapter.Bandwidth.RDMA.Total` 在此脚本的版本中添加该系列。
+   > 某些供应商（如 Chelsio）包括其*网络适配器*性能计数器中 (RDMA) 活动的远程直接内存访问，因此它包含在 `NetAdapter.Bandwidth.Total` 系列中。 其他类（如 Mellanox）可能不会。 如果你的供应商没有，只需 `NetAdapter.Bandwidth.RDMA.Total` 在此脚本的版本中添加该系列。
 
-### <a name="script"></a>Script
+### <a name="script"></a>脚本
 
 脚本如下：
 
@@ -338,14 +337,14 @@ $Output | Sort-Object PsComputerName, InterfaceDescription | Format-Table PsComp
 
 ### <a name="how-it-works"></a>工作原理
 
-`LastYear`时间范围每天有一个数据点。 尽管你只需要两个点来容纳趋势线，但实际上，更好的做法是需要更多的时间，如14天。 我们使用 `Select-Object -Last 14` 为 [1，14] 范围内的*x*设置 *（x，y）* 点的数组。 利用这些要点，我们实现了直接[线性最小二乘法算法](http://mathworld.wolfram.com/LeastSquaresFitting.html)，以查找 `$A` `$B` 最适合*y = ax + b*的行并将其参数化。 欢迎使用高中的高中。
+`LastYear`时间范围每天有一个数据点。 尽管你只需要两个点来容纳趋势线，但实际上，更好的做法是需要更多的时间，如14天。 用于 `Select-Object -Last 14` 设置 [1，14] 范围内*x*的* (x，y) *点的数组。 利用这些要点，我们实现了直接[线性最小二乘法算法](http://mathworld.wolfram.com/LeastSquaresFitting.html)，以查找 `$A` `$B` 最适合*y = ax + b*的行并将其参数化。 欢迎使用高中的高中。
 
-按趋势（斜度）将卷的属性除以该量， `SizeRemaining` `$A` 可以让我们 crudely 估计在该卷已满之前，当前的存储增长速率。 `Format-Bytes`、 `Format-Trend` 和 `Format-Days` helper 函数 beautify 输出。
+将卷的 `SizeRemaining` 属性除以 (斜率) 的趋势， `$A` 让我们 crudely 估计在该卷已满之前，当前存储的增长速率。 `Format-Bytes`、 `Format-Trend` 和 `Format-Days` helper 函数 beautify 输出。
 
    > [!IMPORTANT]
    > 此估计值是线性的，仅基于最新的14个日常度量值。 存在更复杂且更准确的方法。 请毋庸置疑，不要独自依赖此脚本来确定是否投资扩展存储。 此处仅提供教育目的。
 
-### <a name="script"></a>Script
+### <a name="script"></a>脚本
 
 脚本如下：
 
@@ -451,9 +450,9 @@ $Output | Format-Table
 
 ### <a name="how-it-works"></a>工作原理
 
-我们 `Invoke-Command` `Get-VM` 在每个服务器上重复我们在上面介绍的技巧。 我们使用 `Measure-Object -Average` 获取每个 VM 每月的平均时间，然后获取 `Sort-Object` `Select-Object -First 10` 我们的排行榜。 （或许是我们*最需要*的列表？）
+我们 `Invoke-Command` `Get-VM` 在每个服务器上重复我们在上面介绍的技巧。 我们使用 `Measure-Object -Average` 获取每个 VM 每月的平均时间，然后获取 `Sort-Object` `Select-Object -First 10` 我们的排行榜。  (或者可能是我们*最需要*的列表？ ) 
 
-### <a name="script"></a>Script
+### <a name="script"></a>脚本
 
 脚本如下：
 

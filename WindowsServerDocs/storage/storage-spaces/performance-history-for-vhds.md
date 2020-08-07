@@ -2,23 +2,22 @@
 title: 虚拟硬盘的性能历史记录
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d6ed65b07fd9155d0ded38ecec6ab25e51209c34
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 458c9578e541d67135836557af7789c671ed001d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935676"
 ---
 # <a name="performance-history-for-virtual-hard-disks"></a>虚拟硬盘的性能历史记录
 
 > 适用于：Windows Server 2019
 
-本主题中的[存储空间直通性能历史记录](performance-history.md)详细说明了为虚拟硬盘（VHD）文件收集的性能历史记录。 性能历史记录适用于连接到正在运行的群集虚拟机的每个 VHD。 性能历史记录适用于 VHD 和 VHDX 格式，但不适用于共享 VHDX 文件。
+本主题中的[存储空间直通性能历史记录](performance-history.md)详细说明了为虚拟硬盘 (VHD) 文件收集的性能历史记录。 性能历史记录适用于连接到正在运行的群集虚拟机的每个 VHD。 性能历史记录适用于 VHD 和 VHDX 格式，但不适用于共享 VHDX 文件。
 
    > [!NOTE]
    > 收集新创建或移动的 VHD 文件可能需要几分钟时间。

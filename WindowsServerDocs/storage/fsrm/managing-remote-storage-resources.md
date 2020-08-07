@@ -1,23 +1,21 @@
 ---
-title: 管理远程存储资源
+title: Managing Remote Storage Resources
 description: 本文介绍了如何管理远程计算机上的存储资源
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5c6dc9c931e130e36e01655de05fbd209f50f3dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8498d55cbdeab609bb3526c9ef884e330148d714
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394083"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950631"
 ---
-# <a name="managing-remote-storage-resources"></a>管理远程存储资源
+# <a name="managing-remote-storage-resources"></a>Managing Remote Storage Resources
 
-> 适用于：Windows Server 2019，Windows Server 2016，Windows Server （半年频道），Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server (半年通道) ，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
 
 以下两个选项可用于管理远程计算机上的存储资源：
 
@@ -34,7 +32,7 @@ ms.locfileid: "71394083"
 -   使用文件服务器资源管理器 MMC 管理单元连接到该域中的另一台计算机，并检查远程计算机上的卷或文件夹的存储使用率。
 -   在本地服务器上创建配额和文件屏蔽模板，然后使用命令行工具将这些模板导入位于分支机构的文件服务器中。
 
-本部分包括以下主题：
+本节包括下列主题：
 
 -   [连接到远程计算机](connect-to-remote-computer.md)
 -   [命令行工具](command-line-tools.md)

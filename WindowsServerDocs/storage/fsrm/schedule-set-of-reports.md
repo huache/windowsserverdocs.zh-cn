@@ -2,18 +2,16 @@
 title: 计划一组报告
 description: 本文介绍了如何定期生成一组报告
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: cc0c155afe62a22c9a39b2c1dd89730246709221
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4b8b0c66bc4f6e5445635deead1f79f7cc11309d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475494"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950461"
 ---
 # <a name="schedule-a-set-of-reports"></a>计划一组报告
 
@@ -68,7 +66,7 @@ ms.locfileid: "85475494"
        这些选项将根据所选的间隔时间而发生更改。 例如，可以针对每周报告指定两次报告之间间隔的周数，以及在一周中的哪几天生成报告。
    -   若要根据需要指定生成报告的时间，请在**开始时间**框中键入值或从中选择已提供的值。
    -   若要访问其他计划选项（包括任务的开始日期和结束日期），请单击**高级**。
-   -   若要保存计划，请单击 **“确定”**。
+   -   若要保存计划，请单击 **“确定”** 。
    -  若要为任务创建其他计划（或修改现有计划），请单击**计划**选项卡上的**编辑计划**。
 
 8. 单击**确定**以保存报告任务。

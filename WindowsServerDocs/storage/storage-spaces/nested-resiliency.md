@@ -1,18 +1,16 @@
 ---
 title: 存储空间直通的嵌套复原
-ms.prod: windows-server
 ms.author: jgerend
-manager: dansimp
-ms.technology: storagespaces
+manager: dansimpspaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 311edb38f4cdf1dac153d843811442d5eafbce05
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 91d8cce64088855d2e8a0c89c1084077a252e26a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769745"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935953"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>存储空间直通的嵌套复原
 
@@ -20,7 +18,7 @@ ms.locfileid: "87769745"
 
 嵌套复原是 Windows Server 2019 中[存储空间直通](storage-spaces-direct-overview.md)的一项新功能，它使两个服务器的群集能够同时承受多个硬件故障，而不会丢失存储可用性，因此用户、应用和虚拟机将继续运行而不中断。 本主题介绍了它的工作原理，提供了入门的分步说明，并回答了常见问题。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 ### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![绿色复选标记图标。](media/nested-resiliency/supported.png) 如果有以下情况，请考虑嵌套复原：
 
@@ -171,11 +169,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>嵌套复原是否会改变驱动器更换的工作方式？
 
-错误。
+否。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>嵌套复原是否会改变服务器节点替换的工作方式？
 
-错误。 若要替换服务器节点及其驱动器，请遵循以下顺序：
+否。 若要替换服务器节点及其驱动器，请遵循以下顺序：
 
 1. 停用传出服务器中的驱动器
 2. 将新服务器及其驱动器添加到群集

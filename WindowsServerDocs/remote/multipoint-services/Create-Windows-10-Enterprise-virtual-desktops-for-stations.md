@@ -2,19 +2,17 @@
 title: 为工作站创建 Windows 10 企业版虚拟桌面
 description: 了解如何创建适用于工作站的 Windows Server 2016 桌面
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 6f6d7d3ef66e8943fbb39cfd96cff1b91ab413eb
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: fb36cb13f9a78ae028f1217dd667a106a81e5c94
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409818"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937309"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>为工作站创建 Windows 10 企业版虚拟桌面
 MultiPoint Services 中的此可选配置主要用于以下情况：对于每个用户，基本应用程序需要其自己的客户端操作系统实例。 示例包括无法在 Windows Server 上安装的应用程序，以及不会在同一台主机上运行多个实例的应用程序。
@@ -27,11 +25,11 @@ MultiPoint Services 中的此可选配置主要用于以下情况：对于每个
 
 | 硬件 | 要求 |
 |--|--|
-| CPU （多媒体） | 每个虚拟机1个核心或线程 |
-| 固态硬盘（SSD） | 容量 >= 每个工作站 20 gb + 40 GB 用于 MultiPoint 服务主机操作系统<p>随机读取/写入 IOPS >= 每个工作站3K |
+| CPU (多媒体)  | 每个虚拟机1个核心或线程 |
+| 固态驱动器 (SSD)  | 容量 >= 每个工作站 20 gb + 40 GB 用于 MultiPoint 服务主机操作系统<p>随机读取/写入 IOPS >= 每个工作站3K |
 | RAM | 每个工作站 2GB + 2GB 用于 Windows MultiPoint Server 主机操作系统 |
-| 显卡 | DX11 |
-| BIOS | BIOS CPU 设置配置为启用虚拟化–第二级地址转换（SLAT） |
+| 图形 | DX11 |
+| BIOS | BIOS CPU 设置配置为启用虚拟化–第二级地址转换 (SLAT)  |
 
 -   **工作站**-为 MultiPoint 服务系统设置工作站。 有关详细信息，请参阅[将其他工作站附加到 MultiPoint 服务](Attach-additional-stations-to-your-MultiPoint-services-computer.md)。
 
@@ -57,7 +55,7 @@ MultiPoint Services 中的此可选配置主要用于以下情况：对于每个
 
 3.  单击 "**虚拟桌面**" 选项卡，单击 "**启用虚拟桌面**"，然后单击 **"确定"**，并等待系统重新启动。
 
-下一步是创建虚拟桌面模板。 你实际上是创建一个虚拟硬盘（VHD）文件，你可以将其用作模板，以便为 MultiPoint 管理器创建工作站虚拟桌面。 你可以使用适用于 Windows 的物理安装媒体或。作为模板源的 ISO 映像文件。 你还可以使用。Windows 安装的 VHD。 请注意，若要使用物理安装光盘，必须先插入光盘，然后再启动向导。
+下一步是创建虚拟桌面模板。 你实际上是在创建虚拟硬盘 (VHD) 文件，你可以将其用作模板，以便为 MultiPoint 管理器创建工作站虚拟桌面。 你可以使用适用于 Windows 的物理安装媒体或。作为模板源的 ISO 映像文件。 你还可以使用。Windows 安装的 VHD。 请注意，若要使用物理安装光盘，必须先插入光盘，然后再启动向导。
 
 ##### <a name="to-create-a-virtual-desktop-template"></a>创建虚拟桌面模板
 
@@ -103,7 +101,7 @@ MultiPoint Services 中的此可选配置主要用于以下情况：对于每个
     如果要通过域连接工作站，则建议你在自定义期间创建一个本地用户帐户并将其添加到本地管理员组。
 
     > [!NOTE]
-    > 如果在自定义模板时系统重启，则在系统重新启动后，使用内置管理员帐户自动登录可能会失败。 若要解决此问题，请使用创建的本地管理员帐户手动登录，更改内置管理员帐户的密码，注销，然后使用内置的管理员帐户和新密码重新登录。 （你将需要删除使用本地管理员帐户登录时创建的配置文件。）
+    > 如果在自定义模板时系统重启，则在系统重新启动后，使用内置管理员帐户自动登录可能会失败。 若要解决此问题，请使用创建的本地管理员帐户手动登录，更改内置管理员帐户的密码，注销，然后使用内置的管理员帐户和新密码重新登录。  (你将需要删除使用本地管理员帐户登录时创建的配置文件。 ) 
 
 6.  完成配置系统后，双击管理员桌面上的**CompleteCustomization**快捷方式以运行 Sysprep，然后关闭模板。 在自定义期间，Sysprep 工具会删除所有唯一的系统信息，以便准备要映像的 Windows 安装。
 
@@ -115,7 +113,7 @@ MultiPoint Services 中的此可选配置主要用于以下情况：对于每个
 
 ##### <a name="to-create-virtual-desktops-for-your-stations"></a>为工作站创建虚拟桌面
 
-1.  使用本地管理员帐户从远程工作站登录到 Windows MultiPoint server （例如，通过使用远程桌面连接从 Windows 计算机登录），或在域中，使用本地管理员组中的域帐户登录到 Windows MultiPoint server。
+1.  从远程工作站登录到 Windows MultiPoint server (例如，通过使用本地管理员帐户远程桌面连接) 的 Windows 计算机，或在域中，是本地管理员组中的域帐户。
 
     > [!NOTE]
     > 或者，你可以使用本地工作站登录到服务器。 但是，当你创建工作站虚拟桌面时，你必须注销用于创建虚拟桌面的工作站，以便将另一工作站连接到新的虚拟机。
@@ -152,7 +150,7 @@ MultiPoint Services 中的此可选配置主要用于以下情况：对于每个
 
 3.  单击 "**虚拟机**" 选项卡。
 
-4.  单击 "**导入虚拟桌面模板**"，并使用 "**浏览**" 选择要导入的 .vhd 文件（模板）。 导入模板时，将生成原始 .vhd 的副本。 默认情况下，MultiPoint 服务将 .vhd 文件存储在 C： \\ Users \\ 公共 \\ 文档 \\ 中 \- \\ 。 \\
+4.  单击 "**导入虚拟桌面模板**"，并使用 "**浏览**" 选择要导入的 .vhd 文件 (模板) 。 导入模板时，将生成原始 .vhd 的副本。 默认情况下，MultiPoint 服务将 .vhd 文件存储在 C： \\ Users \\ 公共 \\ 文档 \\ 中 \- \\ 。 \\
 
 5.  为新模板输入前缀，然后单击 **"确定"**。
 

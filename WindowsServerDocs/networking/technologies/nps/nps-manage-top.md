@@ -1,34 +1,32 @@
 ---
-title: 管理网络策略服务器（NPS）
+title: '管理网络策略服务器 (NPS) '
 description: 本主题提供了有关 Windows Server 2016 中网络策略服务器的管理过程的链接，并包含指向有关 NPS 的其他指南的链接。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: a275b02c-62b3-4b8a-8417-a710f24bebfe
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bc96a6c4406988db2d7906d76af2c1abcfdffeac
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9395c33600d879efb7450678ad4e856dccd4f683
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315904"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952164"
 ---
-# <a name="manage-network-policy-server-nps"></a>管理网络策略服务器（NPS）
+# <a name="manage-network-policy-server-nps"></a>管理网络策略服务器 (NPS) 
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-你可以使用本部分中的主题来管理网络策略服务器。  
-  
+你可以使用本部分中的主题来管理网络策略服务器。
+
 >[!NOTE]
->有关其他网络策略服务器文档，可以使用以下库部分。  
->- [与网络策略服务器入门](nps-getstart-top.md)
+>有关其他网络策略服务器文档，可以使用以下库部分。
+>- [网络策略服务器入门](nps-getstart-top.md)
 >- [规划网络策略服务器](nps-plan-top.md)
->- [部署网络策略服务器](nps-deploy.md)  
-  
-本部分包含下列主题。  
-  
+>- [部署网络策略服务器](nps-deploy.md)
+
+本部分包含以下主题。
+
 - [使用管理工具管理网络策略服务器](nps-admintools.md)
 - [配置连接请求策略](nps-crp-configure.md)
 - [为 RADIUS 流量配置防火墙](nps-firewalls-configure.md)

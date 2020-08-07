@@ -1,31 +1,29 @@
 ---
 title: NPS 代理服务器负载平衡
 description: 您可以使用本主题来了解 Windows Server 2016 和 Windows 10 VPN 的特性和功能。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 10a33494365f5a10923dd9ce46c3575675099b27
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8710723c397744f3ba937ac863cf5ab45dc8a4f1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315976"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952154"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>NPS 代理服务器负载平衡
 
-适用于：Windows Server 2016
+适用于：Windows Server 2016
 
-远程身份验证拨入用户服务（RADIUS）客户端（网络访问服务器，例如虚拟专用网络（VPN）服务器和无线访问点）创建连接请求并将其发送到 NPS 等 RADIUS 服务器。 在某些情况下，NPS 一次可能会收到太多连接请求，导致性能下降或过载。 在重载 NPS 时，最好将更多 NPSs 添加到网络并配置负载平衡。 当你在多个 NPSs 之间平均分配传入连接请求以防止一个或多个 NPSs 重载时，它称为 "负载均衡"。
+远程身份验证拨入用户服务 (RADIUS) 客户端（如虚拟专用网 (VPN) 服务器和无线访问点），创建连接请求并将其发送到 NPS 等 RADIUS 服务器。 在某些情况下，NPS 一次可能会收到太多连接请求，导致性能下降或过载。 在重载 NPS 时，最好将更多 NPSs 添加到网络并配置负载平衡。 当你在多个 NPSs 之间平均分配传入连接请求以防止一个或多个 NPSs 重载时，它称为 "负载均衡"。
 
 负载平衡特别适用于：
 
-- 使用可扩展的身份验证协议-传输层安全性 \(EAP-TLS\) 或受保护的可扩展身份验证协议 \(PEAP\)TLS 进行身份验证的组织。 由于这些身份验证方法使用证书进行服务器身份验证，并使用用户或客户端计算机身份验证，因此在使用基于密码的身份验证方法时，RADIUS 代理服务器和服务器上的负载要多很多。
+- 使用可扩展的身份验证协议-传输层安全（ \( eap-tls） \) 或受保护的可扩展身份验证协议 \( peap-gtc \) 进行身份验证的组织。 由于这些身份验证方法使用证书进行服务器身份验证，并使用用户或客户端计算机身份验证，因此在使用基于密码的身份验证方法时，RADIUS 代理服务器和服务器上的负载要多很多。
 - 需要维持服务持续可用性的组织。
-- Internet 服务提供商 \(的 Isp\) 为其他组织提供了外包 VPN 访问权限。 外包 VPN 服务可以生成大量的身份验证流量。
+- Internet 服务提供 \( 商 \) 可为其他组织外包 VPN 访问的 isp。 外包 VPN 服务可以生成大量的身份验证流量。
 
 可以使用两种方法来平衡发送到 NPSs 的连接请求的负载：
 
@@ -53,7 +51,7 @@ ms.locfileid: "80315976"
 
 若要将 NPS 配置为充当代理服务器并将 RADIUS 客户端的连接请求转发到远程 RADIUS 服务器，则必须执行以下操作：
 
-1. \(VPN 服务器、拨号服务器、终端服务网关服务器、802.1 X 身份验证交换机和 802.1 X 无线访问\) 点部署 RADIUS 客户端，并将其配置为将连接请求发送到 NPS 代理服务器。
+1. 部署 RADIUS 客户端 \( VPN 服务器、拨号服务器、终端服务网关服务器、802.1 x 身份验证交换机和 802.1 x 无线访问点， \) 并将其配置为将连接请求发送到 NPS 代理服务器。
 
 2. 在 NPS 代理上，将网络访问服务器配置为 RADIUS 客户端。 有关详细信息，请参阅[配置 RADIUS 客户端](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure)。
 

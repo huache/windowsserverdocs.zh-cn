@@ -2,18 +2,16 @@
 title: 在 NPS 更改后验证配置
 description: 在对服务器进行 IP 地址或名称更改后，你可以使用本主题来验证 Windows Server 2016 网络策略服务器配置。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: fc77450e-2af1-47ba-bb23-1fd36d9efdbf
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5a99cfb62d3ce331ef2d90fe13afe99a6d14960c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e178521d47ebcc152853f34ae01e72cb9d2fdd48
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315879"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952092"
 ---
 # <a name="verify-configuration-after-nps-changes"></a>在 NPS 更改后验证配置
 
@@ -23,9 +21,9 @@ ms.locfileid: "80315879"
 
 ## <a name="verify-configuration-after-an-nps-ip-address-change"></a>确认 NPS IP 地址更改后的配置
 
-在某些情况下，需要更改 NPS 或代理的 IP 地址，例如将服务器移到不同的 IP 子网。 
+在某些情况下，需要更改 NPS 或代理的 IP 地址，例如将服务器移到不同的 IP 子网。
 
-如果更改了 NPS 或代理 IP 地址，则需要重新配置 NPS 部署的某些部分。 
+如果更改了 NPS 或代理 IP 地址，则需要重新配置 NPS 部署的某些部分。
 
 使用以下常规指南来帮助你验证 IP 地址更改是否不会中断 NPS RADIUS 服务器和 RADIUS 代理服务器在网络上的网络访问身份验证、授权或记帐。
 
@@ -51,9 +49,9 @@ ms.locfileid: "80315879"
 
 3. 用代理服务器 IP 地址重新配置所有远程 RADIUS 服务器组的所有成员。 若要完成此任务，请在已将 NPS 代理配置为 RADIUS 客户端的每个 NPS 上执行以下操作：
 
-    a. 双击 " **NPS （本地）** "，双击 " **radius 客户端和服务器**"，单击 " **radius 客户端**"，然后在详细信息窗格中，双击要更改的 RADIUS 客户端。
+    a. 双击**NPS (本地) **，双击 " **radius 客户端和服务器**"，单击 " **radius 客户端**"，然后在详细信息窗格中，双击要更改的 RADIUS 客户端。
 
-    b. 在 RADIUS 客户端**属性**中的 " **Address \(IP 或 DNS\)** 中，键入 NPS 代理的新 IP 地址。
+    b. 在 RADIUS 客户端**属性**中的 "**地址 \( IP \) 或 DNS**" 中，键入 NPS 代理的新 IP 地址。
 
 4. 如果已将 NPS 代理配置为使用 SQL Server 日志记录，请验证运行 SQL Server 和 NPS 代理的计算机之间的连接是否仍然正常工作。
 
@@ -61,7 +59,7 @@ ms.locfileid: "80315879"
 
 在某些情况下，需要更改 NPS 或代理的名称（例如，在重新设计服务器的命名约定时）。
 
-如果更改 NPS 或代理名称，则必须重新配置 NPS 部署的某些部分。 
+如果更改 NPS 或代理名称，则必须重新配置 NPS 部署的某些部分。
 
 使用以下常规指南来帮助你验证服务器名称更改是否不会中断网络访问身份验证、授权或记帐。
 
@@ -71,20 +69,20 @@ ms.locfileid: "80315879"
 
 1. 如果 NPS 是远程 RADIUS 服务器组的成员，并且组配置了计算机名称而不是 IP 地址，则使用新的 NPS 名称重新配置远程 RADIUS 服务器组。
 
-2. 如果基于证书的身份验证方法是在 NPS 上部署的，则名称更改会使服务器证书失效。 你可以从证书颁发机构（CA）管理员请求新证书，或者，如果计算机是域成员计算机，并且你将证书自动注册到域成员，则可以刷新组策略以通过自动注册来获取新证书. 刷新组策略：
+2. 如果基于证书的身份验证方法是在 NPS 上部署的，则名称更改会使服务器证书失效。 你可以从证书颁发机构 (CA) 管理员请求新证书，或者，如果计算机是域成员计算机，并且你将证书自动注册到域成员，则可以刷新组策略，以通过自动注册来获取新证书。 刷新组策略：
 
     a. 打开 "命令提示符" 或 "Windows PowerShell"。
 
     b. 键入 **gpupdate**，然后按 Enter。
 
 
-3. 使用新的服务器证书后，请请求 CA 管理员吊销旧证书。 
+3. 使用新的服务器证书后，请请求 CA 管理员吊销旧证书。
 
-     吊销旧证书后，NPS 将继续使用该证书，直到旧证书过期。 默认情况下，旧证书将保持有效的最长时间为一周和10小时。 此时间段可能会不同，具体取决于证书吊销列表（CRL）过期情况和传输层安全性（TLS）缓存时间到期是否已从其默认值中修改。 默认 CRL 过期时间为一周，默认的 TLS 缓存时间到期时间为10小时。 
+     吊销旧证书后，NPS 将继续使用该证书，直到旧证书过期。 默认情况下，旧证书将保持有效的最长时间为一周和10小时。 此时间段可能会不同，具体取决于证书吊销列表 (CRL) 过期，) 缓存时间到期的传输层 (安全性是否已从其默认值进行了修改。 默认 CRL 过期时间为一周，默认的 TLS 缓存时间到期时间为10小时。
 
      不过，如果想要将 NPS 配置为立即使用新证书，则可以使用新证书手动重新配置网络策略。
 
-4. 旧证书过期后，NPS 将自动开始使用新证书。 
+4. 旧证书过期后，NPS 将自动开始使用新证书。
 
 5. 如果已将 NPS 配置为使用 SQL Server 日志记录，请验证运行 SQL Server 和 NPS 的计算机之间的连接是否仍然正常工作。
 

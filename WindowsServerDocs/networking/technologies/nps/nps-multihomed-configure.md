@@ -2,18 +2,16 @@
 title: 在多宿主计算机上配置 NPS
 description: 本主题提供有关在 Windows Server 2016 中使用运行网络策略服务器的多个网络适配器配置服务器的说明。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d9d9e9ac-4859-4522-89ed-a23092c9e12a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a937e151954629f7e8775ec68ba8ab5f2b63ee1a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1292accf4d19afa7f6a050281b7af373b3c867c3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315814"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952082"
 ---
 # <a name="configure-nps-on-a-multihomed-computer"></a>在多宿主计算机上配置 NPS
 
@@ -23,9 +21,9 @@ ms.locfileid: "80315814"
 
 在运行网络策略服务器 (NPS) 的服务器中使用多个网络适配器时，可以配置以下内容：
 
-- 不发送和接收远程身份验证拨入用户服务 \(RADIUS\) 流量的网络适配器。
-- 在每个网络适配器基础上，NPS 是否监视 Internet 协议版本4上的 RADIUS 流量 \(IPv4\)、IPv6 或同时使用 IPv4 和 IPv6。
-- UDP 端口号，在每个协议上发送和接收 RADIUS 流量 \(IPv4 或 IPv6\)，每个网络适配器。
+- 不发送和接收远程身份验证拨入用户服务 RADIUS 流量的网络适配器 \( \) 。
+- 在每个网络适配器基础上，NPS 是否监视 Internet 协议版本4（ \( ipv4 \) 、ipv6）或 Ipv4 和 ipv6 上的 RADIUS 流量。
+- UDP 端口号，根据每个协议的 \( IPv4 或 IPv6 \) （每个网络适配器）发送和接收 RADIUS 流量。
 
 默认情况下，NPS 针对用于所有已安装网络适配器的 IPv6 和 IPv4 侦听端口 1812、1813、1645 和 1646 上的 RADIUS 流量。 由于 NPS 自动将所有网络适配器用于 RADIUS 流量，因此当你想要阻止 NPS 使用特定网络适配器时，只需指定你希望 NPS 用于 RADIUS 流量的网络适配器。
 
@@ -42,8 +40,8 @@ ms.locfileid: "80315814"
 
 若要将 NPS 配置为在网络适配器上侦听和发送 RADIUS 流量，请在 NPS 控制台中的网络策略服务器的 "属性" 对话框中使用以下语法：
 
-- IPv4 流量语法： IPAddress： UDPport，其中，IPAddress 是在要发送 RADIUS 流量的网络适配器上配置的 IPv4 地址，UDPport 是要用于 RADIUS 身份验证或记帐的 RADIUS 端口号交易.
-- IPv6 流量语法： [IPv6Address]： UDPport，其中需要 IPv6Address 两侧的括号，IPv6Address 是在要发送 RADIUS 流量的网络适配器上配置的 IPv6 地址，UDPport 是所需的 RADIUS 端口号用于 RADIUS 身份验证或记帐通信。
+- IPv4 流量语法： IPAddress： UDPport，其中，IPAddress 是在要发送 RADIUS 流量的网络适配器上配置的 IPv4 地址，UDPport 是要用于 RADIUS 身份验证或记帐流量的 RADIUS 端口号。
+- IPv6 流量语法： [IPv6Address]： UDPport，其中，IPv6Address 是在要发送 RADIUS 流量的网络适配器上配置的 IPv6 地址，而 UDPport 是要用于 RADIUS 身份验证或记帐流量的 RADIUS 端口号。
 
 下列字符可用作配置 IP 地址和 UDP 端口信息的分隔符：
 

@@ -2,24 +2,22 @@
 title: 将 NPS 规划为 RADIUS 代理
 description: 本主题提供有关 Windows Server 2016 中的网络策略服务器 RADIUS 代理部署规划的信息。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: ca77d64a-065b-4bf2-8252-3e75f71b7734
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d64fceaf7242b7fe44912f105229c132ef9ee3b3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9cdc28eae61acb0d8548627e48a882435cd7da81
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315758"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952022"
 ---
 # <a name="plan-nps-as-a-radius-proxy"></a>将 NPS 规划为 RADIUS 代理
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-将网络策略服务器（NPS）作为远程身份验证拨入用户服务 \(RADIUS\) 代理部署时，NPS 会接收来自 RADIUS 客户端（例如网络访问服务器或其他 RADIUS 代理）的连接请求，然后将这些连接请求转发到运行 NPS 或其他 RADIUS 服务器的服务器。 您可以使用这些规划指南来简化您的 RADIUS 部署。
+将网络策略服务器 (NPS 部署) 为远程身份验证拨入用户服务 \( radius 代理时 \) ，nps 会接收来自 radius 客户端（例如网络访问服务器或其他 radius 代理）的连接请求，然后将这些连接请求转发到运行 NPS 的服务器或其他 radius 服务器。 您可以使用这些规划指南来简化您的 RADIUS 部署。
 
 这些规划准则不包括希望将 NPS 部署为 RADIUS 服务器的情况。 将 NPS 部署为 RADIUS 服务器时，NPS 将为本地域和信任本地域的域的连接请求执行身份验证、授权和记帐。
 
@@ -39,7 +37,7 @@ ms.locfileid: "80315758"
 
 ## <a name="plan-nps-configuration"></a>规划 NPS 配置
 
-将 NPS 用作 RADIUS 代理时，NPS 会将连接请求转发到 NPS 或其他 RADIUS 服务器进行处理。 因此，NPS 代理的域成员身份是不相关的。 不需要在 Active Directory 域服务 \(AD DS\) 中注册代理，因为它不需要访问用户帐户的拨入属性。 此外，无需在 NPS 代理上配置网络策略，因为代理不对连接请求进行授权。 NPS 代理可以是域成员，也可以是没有域成员身份的独立服务器。
+将 NPS 用作 RADIUS 代理时，NPS 会将连接请求转发到 NPS 或其他 RADIUS 服务器进行处理。 因此，NPS 代理的域成员身份是不相关的。 不需要在 Active Directory 域服务 AD DS 中注册代理， \( \) 因为它不需要访问用户帐户的拨入属性。 此外，无需在 NPS 代理上配置网络策略，因为代理不对连接请求进行授权。 NPS 代理可以是域成员，也可以是没有域成员身份的独立服务器。
 
 必须将 NPS 配置为使用 RADIUS 协议与 RADIUS 客户端（也称为网络访问服务器）进行通信。 此外，你还可以配置 NPS 记录在事件日志中的事件类型，并且可以输入服务器的说明。
 
@@ -47,7 +45,7 @@ ms.locfileid: "80315758"
 
 在规划 NPS 代理配置的过程中，可以使用以下步骤。
 
-- 确定 NPS 代理用于接收来自 RADIUS 客户端的 RADIUS 消息的 RADIUS 端口，并用于向远程 RADIUS 服务器组的成员发送 RADIUS 消息。 RADIUS 身份验证消息的默认用户数据报协议（UDP）端口为1812，1645用于 RADIUS 记帐消息的 UDP 端口1813和1646。
+- 确定 NPS 代理用于接收来自 RADIUS 客户端的 RADIUS 消息的 RADIUS 端口，并用于向远程 RADIUS 服务器组的成员发送 RADIUS 消息。 RADIUS 身份验证消息 (UDP) 端口的默认用户数据报协议为1812，1645用于 RADIUS 记帐消息的 UDP 端口1813和1646。
 
 - 如果使用多个网络适配器配置了 NPS 代理，请确定允许 RADIUS 流量使用的适配器。
 
@@ -59,17 +57,17 @@ ms.locfileid: "80315758"
 
 ## <a name="plan-radius-clients"></a>规划 RADIUS 客户端
 
-RADIUS 客户端是网络访问服务器，例如无线访问点、虚拟专用网络 \(VPN\) 服务器、支持 X 的交换机和拨号服务器。 将连接请求消息转发到 RADIUS 服务器的 RADIUS 代理也是 RADIUS 客户端。 NPS 支持符合 RADIUS 协议的所有网络访问服务器和 RADIUS 代理，如 RFC 2865 "远程身份验证拨入用户服务 \(RADIUS\)" 中所述，RFC 2866 "RADIUS 记帐" 中所述。
+RADIUS 客户端是网络访问服务器，例如无线访问点、虚拟专用网络 \( VPN \) 服务器、802.1 支持 x 的交换机和拨号服务器。 将连接请求消息转发到 RADIUS 服务器的 RADIUS 代理也是 RADIUS 客户端。 NPS 支持符合 RADIUS 协议的所有网络访问服务器和 RADIUS 代理，如 RFC 2865 "远程身份验证拨入用户服务 \( 半径 \) " 和 rfc 2866 "RADIUS 记帐" 中所述。
 
-此外，无线访问点和交换机都必须能够 802.1 X 身份验证。 如果要部署可扩展身份验证协议（EAP）或受保护的可扩展身份验证协议（PEAP），则访问点和交换机必须支持使用 EAP。
+此外，无线访问点和交换机都必须能够 802.1 X 身份验证。 如果要部署可扩展身份验证协议 (EAP) 或受保护的可扩展身份验证协议 (PEAP) ，访问点和交换机必须支持使用 EAP。
 
-若要为无线访问点的 PPP 连接测试基本互操作性，请将访问点和访问客户端配置为使用密码身份验证协议（PAP）。 使用其他基于 PPP 的身份验证协议（如 PEAP），直到你测试了你打算用于网络访问的身份验证协议。
+若要为无线访问点的 PPP 连接测试基本互操作性，请将访问点和访问客户端配置为使用密码身份验证协议 (PAP) 。 使用其他基于 PPP 的身份验证协议（如 PEAP），直到你测试了你打算用于网络访问的身份验证协议。
 
 ### <a name="key-steps"></a>关键步骤
 
 在规划 RADIUS 客户端的过程中，可以使用以下步骤。
 
-- 记录必须在 NPS 中配置的供应商特定属性（Vsa）。 如果 Nas 需要 Vsa，则在 NPS 中配置网络策略时，记录 VSA 信息以供以后使用。
+- 记录 (Vsa 的供应商特定属性) 必须在 NPS 中进行配置。 如果 Nas 需要 Vsa，则在 NPS 中配置网络策略时，记录 VSA 信息以供以后使用。
 
 - 记录 RADIUS 客户端和 NPS 代理的 IP 地址，以简化所有设备的配置。 部署 RADIUS 客户端时，必须将其配置为使用 RADIUS 协议，并将 NPS 代理 IP 地址作为身份验证服务器输入。 将 NPS 配置为与 RADIUS 客户端通信时，必须在 NPS 管理单元中输入 RADIUS 客户端 IP 地址。
 
@@ -103,11 +101,11 @@ RADIUS 客户端是网络访问服务器，例如无线访问点、虚拟专用�
 
 可以将 NPS 配置为将所有连接请求转发到一个远程 RADIUS 服务器组，而无需使用特性操作规则。
 
-但是，如果你想要将连接请求转发到多个位置，则必须为每个位置创建一个连接请求策略，然后将该策略配置为要将消息转发到的远程 RADIUS 服务器组以及带有用于告知 NPS 要转发哪些消息的属性操作规则。
+但是，如果你想要将连接请求转发到多个位置，则必须为每个位置创建一个连接请求策略，然后使用你要将消息转发到的远程 RADIUS 服务器组配置该策略，并使用用于告知 NPS 要转发的消息的属性操作规则。
 
 可以为以下属性创建规则。
 
-- 接收站 ID。 网络访问服务器（NAS）的电话号码。 此属性的值为字符串。 可以使用模式匹配的语法指定区号。
+- 接收站 ID。 网络访问服务器 (NAS) 的电话号码。 此属性的值为字符串。 可以使用模式匹配的语法指定区号。
 
 - 调用工作站 ID。 调用方使用的电话号码。 此属性的值为字符串。 可以使用模式匹配的语法指定区号。
 

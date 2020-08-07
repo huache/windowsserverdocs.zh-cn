@@ -1,19 +1,17 @@
 ---
 title: 为受保护的主机创建安全组，并向 HGS 注册组
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: a12c8494-388c-4523-8d70-df9400bbc2c0
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 84bf134ac5224f224339cc1ec216bded8cbcc792
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: efcf148356910a250a06ee9165c544c96226e10e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475674"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971414"
 ---
 # <a name="create-a-security-group-for-guarded-hosts-and-register-the-group-with-hgs"></a>为受保护的主机创建安全组，并向 HGS 注册组
 
@@ -22,14 +20,14 @@ ms.locfileid: "85475674"
 > [!IMPORTANT]
 > 从 Windows Server 2019 开始，AD 模式已弃用。 对于不可能进行 TPM 证明的环境，请配置[主机密钥证明](guarded-fabric-initialize-hgs-key-mode.md)。 主机密钥证明向 AD 模式提供类似的保障，并更易于设置。
 
-本主题介绍了使用管理受信任的证明（AD 模式）准备 Hyper-v 主机成为受保护主机的中间步骤。 执行这些步骤之前，请完成[为将成为受保护主机的主机配置构造 DNS](guarded-fabric-configuring-fabric-dns-ad.md)中的步骤。
+本主题介绍了使用管理受信任的证明 (AD 模式) 准备 Hyper-v 主机成为受保护主机的中间步骤。 执行这些步骤之前，请完成[为将成为受保护主机的主机配置构造 DNS](guarded-fabric-configuring-fabric-dns-ad.md)中的步骤。
 
 
 ## <a name="create-a-security-group-and-add-hosts"></a>创建安全组并添加主机
 
 1. 在 fabric 域中创建新的**全局**安全组，并添加将运行受防护的 Vm 的 hyper-v 主机。 重新启动主机以更新其组成员身份。
 
-2. 使用 New-adgroup 获取安全组的安全标识符（SID），并将其提供给 HGS 管理员。
+2. 使用 New-adgroup 获取安全组的 SID)  (安全标识符，并将其提供给 HGS 管理员。
 
     ```powershell
     Get-ADGroup "Guarded Hosts"

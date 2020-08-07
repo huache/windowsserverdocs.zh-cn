@@ -6,14 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: bb31a7e87b35ec52f176d50d2c92e717a3e4bca0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: afe68493303ace2a9dd415964c41f8a635e3618b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519856"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949991"
 ---
 # <a name="scenario-native-app-calling-web-api"></a>方案：本机应用调用 Web API
 >适用于： AD FS 2019 及更高版本
@@ -26,7 +24,7 @@ ms.locfileid: "87519856"
 
  ![概述](media/adfs-msal-native-app-web-api/native1.png)
 
-在此流中，你将向本机应用（公共客户端）添加身份验证，从而使用户登录并调用 Web API。 若要从登录用户的本机应用程序调用 Web API，可以使用 MSAL 的[AcquireTokenInteractive](/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__)标记获取方法。 为了实现这种交互，MSAL 利用了 Web 浏览器。
+在此流中，会将身份验证添加到本机应用 (公共客户端) ，从而使用户登录并调用 Web API。 若要从登录用户的本机应用程序调用 Web API，可以使用 MSAL 的[AcquireTokenInteractive](/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__)标记获取方法。 为了实现这种交互，MSAL 利用了 Web 浏览器。
 
 为了更好地了解如何在 ADFS 中配置本机应用以交互方式获取访问令牌，让我们使用[此处](https://github.com/microsoft/adfs-sample-msal-dotnet-native-to-webapi)提供的示例并演练应用注册和代码配置步骤。
 
@@ -38,7 +36,7 @@ ms.locfileid: "87519856"
 - Visual Studio 2013 或更高版本
 
 ## <a name="app-registration-in-ad-fs"></a>AD FS 中的应用注册
-本部分说明如何在 AD FS 中将本机应用作为公共客户端和 Web API 注册为信赖方（RP）
+本部分演示如何将本机应用作为公共客户端和 Web API 注册为依赖方 (RP) 在 AD FS
 
   1. 在**AD FS 管理**"中，右键单击"**应用程序组**"，然后选择"**添加应用程序组**"。
 
@@ -46,11 +44,11 @@ ms.locfileid: "87519856"
 
       ![应用注册](media/adfs-msal-native-app-web-api/native2.png)
 
-  3. 复制 "**客户端标识符**" 值。 稍后会将其用作应用程序**App.config**文件中的**ClientId**值。 对于 "**重定向 URI** "，请输入以下内容： https://ToDoListClient 。 单击“添加”  。 单击“下一步”。
+  3. 复制 "**客户端标识符**" 值。 稍后会将其用作应用程序**App.config**文件中的**ClientId**值。 对于 "**重定向 URI** "，请输入以下内容： https://ToDoListClient 。 单击 **添加**。 单击“下一步”。
 
      ![应用注册](media/adfs-msal-native-app-web-api/native3.png)
 
-  4. 在 "配置 Web API" 屏幕上，输入**标识符：** https://localhost:44321/ 。 单击“添加”  。 单击“下一步”。 稍后将在应用程序的**App.config**和**Web.config**文件中使用此值。
+  4. 在 "配置 Web API" 屏幕上，输入**标识符：** https://localhost:44321/ 。 单击 **添加**。 单击“下一步”。 稍后将在应用程序的**App.config**和**Web.config**文件中使用此值。
 
      ![应用注册](media/adfs-msal-native-app-web-api/native4.png)
 
@@ -137,7 +135,7 @@ ms.locfileid: "87519856"
 
       ![应用测试](media/adfs-msal-native-app-web-api/native18.png)
 
-  2. 登录后，在 "创建待办事项"**项**中输入文本 "**生成本机应用到 Web Api** "。 单击 "**添加项**"。  这将调用**待办事项列表服务（WEB API）** ，并在缓存中添加项。
+  2. 登录后，在 "创建待办事项"**项**中输入文本 "**生成本机应用到 Web Api** "。 单击 "**添加项**"。  这将调用**待办事项列表服务 (WEB API) **并在缓存中添加项。
 
        ![应用测试](media/adfs-msal-native-app-web-api/native19.png)
 

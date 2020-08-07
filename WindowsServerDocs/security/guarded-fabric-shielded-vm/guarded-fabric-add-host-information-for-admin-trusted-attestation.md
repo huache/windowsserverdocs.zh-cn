@@ -1,26 +1,24 @@
 ---
 title: 为管理员信任的证明添加主机信息
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 87089ebc-b953-4aa3-96b5-966cf91acb02
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 0c05b4ecc3e245a6127584fbab1bac727a9306c7
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: abc01dbb691843d199169bd654afaa5cf06bbb87
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203430"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971434"
 ---
 # <a name="authorize-hyper-v-hosts-using-admin-trusted-attestation"></a>使用管理员信任的证明授权 Hyper-v 主机
 
 > 适用于：Windows Server（半年频道）、Windows Server 2016
 
 > [!IMPORTANT]
-> 从 Windows Server 2019 开始，已弃用管理受信任的证明（AD 模式）。 对于不可能进行 TPM 证明的环境，请配置[主机密钥证明](guarded-fabric-initialize-hgs-key-mode.md)。 主机密钥证明向 AD 模式提供类似的保障，并更易于设置。
+> 从 Windows Server 2019 开始，已弃用 (AD 模式) 的管理员可信证明。 对于不可能进行 TPM 证明的环境，请配置[主机密钥证明](guarded-fabric-initialize-hgs-key-mode.md)。 主机密钥证明向 AD 模式提供类似的保障，并更易于设置。
 
 
 若要在 AD 模式下授权受保护的主机：
@@ -33,7 +31,7 @@ ms.locfileid: "83203430"
 1. 在 fabric 域中创建一个**全局**安全组，并添加将运行受防护的 Vm 的 hyper-v 主机。
    重新启动主机以更新其组成员身份。
 
-2. 使用 New-adgroup 获取安全组的安全标识符（SID），并将其提供给 HGS 管理员。
+2. 使用 New-adgroup 获取安全组的 SID)  (安全标识符，并将其提供给 HGS 管理员。
 
    ```powershell
    Get-ADGroup "Guarded Hosts"

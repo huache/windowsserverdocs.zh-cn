@@ -2,18 +2,16 @@
 title: 创建自动应用配额
 description: 本文介绍如何基于配额模板创建自动应用配额
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 38354a6c6e39f58574a64c752bb86800f3fc3039
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b5ec19000e8fdb90fa413905dfd9ef4885347ed9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474064"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935866"
 ---
 # <a name="create-an-auto-apply-quota"></a>创建自动应用配额
 

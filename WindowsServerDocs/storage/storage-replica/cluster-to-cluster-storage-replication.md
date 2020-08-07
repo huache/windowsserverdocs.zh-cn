@@ -1,20 +1,18 @@
 ---
 title: 群集到群集存储复制
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: 如何使用存储副本将一个群集中的卷复制到另一个运行 Windows Server 的群集。
-ms.openlocfilehash: d99a7ebf933427e8e065f72261816610e62a433d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5de25151f0b49ac9cbf9d6be793c2ba0c6efb165
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950471"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>群集到群集存储复制
 
@@ -44,7 +42,7 @@ ms.locfileid: "86961239"
 ## <a name="prerequisites"></a>先决条件
 
 * Active Directory 域服务林（无需运行 Windows Server 2016）。
-* 4-128 台运行 Windows Server 2019 或 Windows Server 2016，Datacenter Edition 的服务器（2-64 服务器的两个群集）。 如果你运行的是 Windows Server 2019，则可以改为使用标准版，如果你只是复制一个最大为 2 TB 的卷。
+* 4-128 服务器 (两个分类2-64 服务器) 运行 Windows Server 2019 或 Windows Server 2016，Datacenter Edition。 如果你运行的是 Windows Server 2019，则可以改为使用标准版，如果你只是复制一个最大为 2 TB 的卷。
 * 两组共享存储，使用 SAS JBOD、光纤通道 SAN、共享 VHDX、存储空间直通或 iSCSI 目标。 存储需包含 HDD 和 SSD 媒体的组合。 将每个存储组设置为仅对每个群集可用（群集间没有共享访问）。
 * 每组存储必须允许至少创建两个虚拟磁盘，一个用于复制的数据，而另一个用于日志。 物理存储在所有数据磁盘上的扇区大小必须相同。 物理存储在所有日志磁盘上的扇区大小必须相同。
 * 每个服务器上必须具有至少一个用于同步复制的以太网/TCP 连接，但最好是 RDMA。
@@ -57,7 +55,7 @@ ms.locfileid: "86961239"
 
 ## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>步骤 1：预配操作系统、功能、角色、存储和网络
 
-1.  使用 Windows Server **（桌面体验）** 的安装类型在所有四个服务器节点上安装 Windows server。
+1.  使用 Windows Server ** (桌面体验) **的安装类型在所有四个服务器节点上安装 windows server。
 
 2.  添加网络信息并将其添加到域，然后对其重启。
 
@@ -107,9 +105,9 @@ ms.locfileid: "86961239"
     > -   日志卷应使用基于闪存的存储，如 SSD。  Microsoft 建议日志存储应比数据存储速度快。 日志卷不得用于其他工作负荷。
     > -   数据磁盘可使用 HDD、SSD 或分层组合，并可使用镜像或奇偶校验空间或 RAID 1 或 10，或者使用 RAID 5 或 RAID 50。
     > -   日志卷的默认值必须至少为8GB，并且根据日志要求可能更大或更小。
-    > -   使用带有 NVME 或 SSD 缓存的存储空间直通（存储空间直通）时，在存储空间直通群集之间配置存储副本复制时，延迟时间会比预期的延迟增加。 延迟的变化比在性能 + 容量配置中使用 NVME 和 SSD 时看到的要高得多，并且没有 HDD 层和容量层。
+    > -   如果使用存储空间直通 (存储空间直通与 NVME 或 SSD 缓存) ，则在存储空间直通群集之间配置存储副本复制时，将会看到大于预期的延迟增长。 延迟的变化比在性能 + 容量配置中使用 NVME 和 SSD 时看到的要高得多，并且没有 HDD 层和容量层。
 
-    之所以出现此问题，是因为在比较速度较慢的媒体时，SR 日志机制内的体系结构限制与 NVME 的延迟极低。 使用存储空间直通存储空间直通缓存时，所有 SR 日志的 IO 以及应用程序的所有最新读/写 IO 都将出现在缓存中，而从不会出现在性能层或容量层上。 这意味着所有 SR 活动都在同一速度介质上进行-不建议使用此配置（ https://aka.ms/srfaq 有关日志建议，请参阅）。
+    之所以出现此问题，是因为在比较速度较慢的媒体时，SR 日志机制内的体系结构限制与 NVME 的延迟极低。 使用存储空间直通存储空间直通缓存时，所有 SR 日志的 IO 以及应用程序的所有最新读/写 IO 都将出现在缓存中，而从不会出现在性能层或容量层上。 这意味着所有 SR 活动都在同一速度介质上发生-不建议使用此配置 (请参阅 https://aka.ms/srfaq) 的日志建议。
 
     将存储空间直通与 Hdd 一起使用时，不能禁用或避免缓存。 一种解决方法是，如果仅使用 SSD 和 NVME，则可以仅配置性能层和容量层。 如果使用该配置，并且只通过将 SR 日志放在性能层上，只使用其服务在容量层上的数据卷，则可以避免上述高延迟问题。 同样，也可以通过混合速度更快、速度更慢的 Ssd，而不是 NVME。
 
@@ -140,7 +138,7 @@ ms.locfileid: "86961239"
 2. 确保 SR 日志卷将始终位于速度最快的闪存存储上，而数据卷位于速度较慢的高容量存储上。
 
 3. 启动 Windows PowerShell，并使用 `Test-SRTopology` cmdlet 确定是否满足所有存储副本要求。 可以在仅要求模式下使用 cmdlet 以用于快速测试，也可以在长时间运行的性能评估模式下使用。
-   例如，
+   例如，应用于对象的
 
    ```PowerShell
    MD c:\temp
@@ -169,7 +167,7 @@ ms.locfileid: "86961239"
 4.  配置文件共享见证或云见证。
 
     > [!NOTE]
-    > WIndows Server 现在包含基于云（Azure）的见证的选项。 你可以选择此仲裁选项来替代文件共享见证。
+    > WIndows Server 现在包含云 (基于 Azure) 见证的选项。 你可以选择此仲裁选项来替代文件共享见证。
 
     > [!WARNING]
     > 有关仲裁配置的详细信息，请参阅[配置和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**见证服务器配置**部分。 有关 `Set-ClusterQuorum` cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。
@@ -201,7 +199,7 @@ ms.locfileid: "86961239"
     ```
 
     > [!NOTE]
-    > WIndows Server 现在包含基于云（Azure）的见证的选项。 你可以选择此仲裁选项来替代文件共享见证。
+    > WIndows Server 现在包含云 (基于 Azure) 见证的选项。 你可以选择此仲裁选项来替代文件共享见证。
 
     > [!WARNING]
     > 有关仲裁配置的详细信息，请参阅[配置和管理仲裁](../../failover-clustering/manage-cluster-quorum.md)中的**见证服务器配置**部分。 有关 `Set-ClusterQuorum` cmdlet 上的详细信息，请参阅 [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)。

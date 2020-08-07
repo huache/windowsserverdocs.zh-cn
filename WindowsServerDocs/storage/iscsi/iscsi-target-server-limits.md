@@ -1,19 +1,17 @@
 ---
 title: iSCSI 目标服务器的可伸缩性限制
 TOCTitle: iSCSI Target Server Scalability Limits
-ms.prod: windows-server
-ms.technology: storage-iscsi
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 7a6d23ebd82afc192a9c306420811860d74cf469
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3867df04c83fe536473c227e43700a4758c1294e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961359"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935854"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI 目标服务器的可伸缩性限制
 
@@ -32,10 +30,10 @@ ms.locfileid: "86961359"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>项</p></th>
+<th><p>Item</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
-<th><p>注释</p></th>
+<th><p>评论</p></th>
 </tr>
 </thead>
 <tbody>
@@ -46,20 +44,20 @@ ms.locfileid: "86961359"
 <td></td>
 </tr>
 <tr class="even">
-<td><p>iSCSI 逻辑单元（Lu）或每个 iSCSI 目标服务器的虚拟磁盘</p></td>
+<td><p>每个 iSCSI 目标服务器 (Lu) 或虚拟磁盘的 iSCSI 逻辑单元</p></td>
 <td><p>512</p></td>
 <td><p>否</p></td>
 <td><p>测试配置包括：每个目标实例8个 Lu，平均超过64个目标，每个目标有一个 LU 的256目标实例。</p></td>
 </tr>
 <tr class="odd">
 <td><p>iSCSI Lu 或每个 iSCSI 目标实例的虚拟磁盘</p></td>
-<td><p>256（Windows Server 上的 128 2012）</p></td>
+<td><p>256 (128 上的 Windows Server 2012) </p></td>
 <td><p>是</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>可以同时连接到 iSCSI 目标实例的会话</p></td>
-<td><p>544（Windows Server 上的 512 2012）</p></td>
+<td><p>544 (512 上的 Windows Server 2012) </p></td>
 <td><p>是</p></td>
 <td></td>
 </tr>
@@ -89,16 +87,16 @@ ms.locfileid: "86961359"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>项</p></th>
+<th><p>Item</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
-<th><p>注释</p></th>
+<th><p>评论</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>故障转移群集节点</p></td>
-<td><p>8（Windows Server 2012 上的5）</p></td>
+<td><p>8 (Windows Server 2012 上的 5) </p></td>
 <td><p>否</p></td>
 <td></td>
 </tr>
@@ -110,7 +108,7 @@ ms.locfileid: "86961359"
 <td><p>故障转移群集中的每个活动节点都拥有不同的 iSCSI 目标服务器群集实例，其他节点充当可能的所有者节点。</p></td>
 </tr>
 <tr class="odd">
-<td><p>错误恢复级别（ERL）</p></td>
+<td><p>错误恢复级别 (ERL) </p></td>
 <td><p>0</p></td>
 <td><p>是</p></td>
 <td></td>
@@ -123,12 +121,12 @@ ms.locfileid: "86961359"
 </tr>
 <tr class="odd">
 <td><p>可以同时连接到 iSCSI 目标实例的会话</p></td>
-<td><p>544（Windows Server 上的 512 2012）</p></td>
+<td><p>544 (512 上的 Windows Server 2012) </p></td>
 <td><p>否</p></td>
 <td></td>
 </tr>
 <tr class="even">
-<td><p>多路径输入/输出（MPIO）</p></td>
+<td><p>多路径输入/输出 (MPIO) </p></td>
 <td><p>支持</p></td>
 <td><p>空值</p></td>
 <td></td>
@@ -159,10 +157,10 @@ ms.locfileid: "86961359"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>项</p></th>
+<th><p>Item</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
-<th><p>注释</p></th>
+<th><p>评论</p></th>
 </tr>
 </thead>
 <tbody>
@@ -173,14 +171,14 @@ ms.locfileid: "86961359"
 <td><p>适用于专用于 iSCSI 通信的网络适配器，而不是设备中网络适配器的总数。</p></td>
 </tr>
 <tr class="even">
-<td><p>支持的门户（IP 地址）</p></td>
+<td><p>) 支持门户 (IP 地址</p></td>
 <td><p>64</p></td>
 <td><p>是</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>网络端口速度</p></td>
-<td><p>1Gbps，10 Gbps，40Gbps，56 Gbps （仅限 Windows Server 2012 R2 和更高版本）</p></td>
+<td><p>1Gbps，10 Gbps，40Gbps，56 Gbps (仅限 Windows Server 2012 R2 和更高版本) </p></td>
 <td><p>否</p></td>
 <td></td>
 </tr>
@@ -200,7 +198,7 @@ ms.locfileid: "86961359"
 <td><p>TCP 卸载</p></td>
 <td><p>支持</p></td>
 <td><p>空值</p></td>
-<td><p>利用大规模发送（分段）、校验和、中断裁决和 RSS 卸载</p></td>
+<td><p>利用大规模发送 (分段) 、校验和、中断裁决和 RSS 卸载</p></td>
 </tr>
 <tr class="odd">
 <td><p>iSCSI 卸载</p></td>
@@ -240,22 +238,22 @@ ms.locfileid: "86961359"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>项</p></th>
+<th><p>Item</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
-<th><p>注释</p></th>
+<th><p>评论</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>从将虚拟磁盘从基本磁盘转换为动态磁盘的 iSCSI 发起程序 </p></td>
 <td><p>是</p></td>
-<td><p>No</p></td>
+<td><p>否</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>虚拟硬盘格式</p></td>
-<td><p>.vhdx （仅限 Windows Server 2012 R2 和更高版本）</p>
+<td><p>.vhdx (仅) Windows Server 2012 R2 和更高版本</p>
 <p>.vhd</p></td>
 <td></td>
 <td></td>
@@ -303,18 +301,18 @@ ms.locfileid: "86961359"
 <tr class="odd">
 <td><p>每个父 VHD 的差异 Vhd 数</p></td>
 <td><p>256</p></td>
-<td><p>否（在 Windows Server 2012 上为 "是"）</p></td>
-<td><p>两个级别的深度（孙级文件）是 .vhdx 文件的最大值;一个深度级别（子 .vhd 文件）是 .vhd 文件的最大值。</p></td>
+<td><p>Windows Server 2012 上无 (是) </p></td>
+<td><p>两个级别的深度 (孙级文件) 是 .vhdx 文件的最大值; (子 .vhd 文件的一层深度) 是 .vhd 文件的最大值。</p></td>
 </tr>
 <tr class="even">
 <td><p>VHD 动态格式</p></td>
 <td><p>.vhdx：是</p>
-<p>.vhd： Yes （在 Windows Server 2012 上为 No）</p></td>
+<p>.vhd： Windows Server 2012 上的 "是 (否") </p></td>
 <td><p>是</p></td>
 <td><p>不支持取消映射&#39;。</p></td>
 </tr>
 <tr class="odd">
-<td><p>exFAT/FAT32/FAT （VHD 的托管卷）</p></td>
+<td><p>VHD) 的 exFAT/FAT32/FAT (托管卷</p></td>
 <td><p>不支持</p></td>
 <td><p>是</p></td>
 <td></td>
@@ -351,7 +349,7 @@ ms.locfileid: "86961359"
 </tr>
 <tr class="odd">
 <td><p>逻辑单元收缩</p></td>
-<td><p>是（仅限 Windows Server 2012 R2 和更高版本）</p></td>
+<td><p>是 (仅) Windows Server 2012 R2 和更高版本</p></td>
 <td><p>空值</p></td>
 <td><p>使用<a href="https://docs.microsoft.com/powershell/module/iscsitarget/resize-iscsivirtualdisk">convert-iscsivirtualdisk</a>可收缩 LUN。</p></td>
 </tr>
@@ -374,9 +372,9 @@ ms.locfileid: "86961359"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>项</p></th>
+<th><p>Item</p></th>
 <th><p>支持限制</p></th>
-<th><p>注释</p></th>
+<th><p>评论</p></th>
 </tr>
 </thead>
 <tbody>
@@ -430,9 +428,9 @@ ms.locfileid: "86961359"
 
 ## <a name="iscsi-target-server-manageability-and-backup"></a>iSCSI 目标服务器可管理性和备份
 
-如果要从应用程序服务器中的 iSCSI 虚拟磁盘上创建数据的卷影副本（VSS 打开文件快照），或者想要使用需要虚拟磁盘服务（VDS）硬件提供程序的较旧应用（例如 Diskraid 命令）来管理 iSCSI 虚拟磁盘，请将 iSCSI 目标存储提供程序安装到要从中拍摄快照或使用 VDS 管理应用的服务器上。
+若要创建卷影副本 (VSS 打开文件快照从应用程序服务器中的 iSCSI 虚拟磁盘上的数据) 或者想要使用较旧的应用来管理 iSCSI 虚拟磁盘 (例如 Diskraid 命令) 需要虚拟磁盘服务 (VDS) 硬件提供程序，请将 iSCSI 目标存储提供程序安装在要从中拍摄快照的服务器上或使用 VDS 管理应用。
 
-ISCSI 目标存储提供程序是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中的角色服务。如果 iSCSI 目标服务器运行在 Windows Server 2012 上，你还可以在以下操作系统上下载和安装[适用于下级应用程序服务器的 Iscsi 目标存储提供程序（VDS/VSS）](https://www.microsoft.com/download/details.aspx?id=34759) ：
+ISCSI 目标存储提供程序是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中的角色服务。你还可以下载和安装[Iscsi 目标存储提供程序 (适用于以下操作系统上的下层应用程序服务器的 VDS/VSS) ](https://www.microsoft.com/download/details.aspx?id=34759) ，前提是 ISCSI 目标服务器在 Windows Server 2012 上运行：
 
   - Windows Storage Server 2008 R2
 
@@ -444,7 +442,7 @@ ISCSI 目标存储提供程序是 Windows Server 2016、Windows Server 2012 R2 �
 
 请注意，如果 iSCSI 目标服务器由运行 Windows Server 2012 R2 或更高版本的服务器托管，并且你想要从远程服务器使用 VSS 或 VDS，则远程服务器还必须运行同一版本的 Windows Server 并安装 iSCSI 目标存储提供程序角色服务。 另请注意，在所有版本的 Windows 上，只应安装 iSCSI 目标存储提供程序角色服务的一个版本。
 
-有关 iSCSI 目标存储提供程序的详细信息，请参阅[Iscsi 目标存储（VDS/VSS）提供程序](/powershell/module/iscsi/?view=win10-ps)。
+有关 iSCSI 目标存储提供程序的详细信息，请参阅[Iscsi 目标存储 (VDS/VSS) 提供程序](/powershell/module/iscsi/?view=win10-ps)。
 
 ## <a name="tested-compatibility-with-iscsi-initiators"></a>已测试与 iSCSI 发起程序的兼容性
 

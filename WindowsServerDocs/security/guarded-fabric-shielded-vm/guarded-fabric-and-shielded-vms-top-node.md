@@ -1,23 +1,21 @@
 ---
 title: 受保护的构造和受防护的 VM
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 5c7ada81-2d97-41d4-87cf-1a7ccf06cd20
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9e76b3081438ae38c6b83b7cdd179d47b1e21a70
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7a73bf1b677d09cc31783b58148c8ca7c581fbca
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856910"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971374"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>受保护的构造和受防护的 VM
 
->适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
 提供托管环境的最重要目标之一是保证在环境中运行的虚拟机的安全性。 作为云服务商或企业私有云管理员，你可以使用受保护的构造为 VM 提供更安全的环境。 受保护的结构包括一项主机保护者服务 (HGS)（通常是由三个节点组成的群集）、一个或多个受保护的主机以及一组受防护的虚拟机 (VM)。
 
@@ -44,17 +42,17 @@ ms.locfileid: "80856910"
     - [快速入门](guarded-fabric-deployment-overview.md)
     - [部署 HGS](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)
     - [部署受保护的主机](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
-        - [为将成为受保护主机的主机配置构造 DNS](guarded-fabric-configuring-fabric-dns.md)
+        - [为将成为受保护主机的主机配置结构 DNS](guarded-fabric-configuring-fabric-dns.md)
         - [使用 AD 模式部署受保护的主机](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
         - [使用 TPM 模式部署受保护的主机](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
         - [确认受保护的主机可以证明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
-        - [受防护的 Vm-托管服务提供程序在 VMM 中部署受保护的主机](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts)
+        - [受防护的 VM - 主机托管服务提供商在 VMM 中部署受保护的主机](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts)
     - [部署受防护的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
         - [创建受防护的 VM 模板](guarded-fabric-create-a-shielded-vm-template.md)
         - [准备 VM 防护帮助程序 VHD](guarded-fabric-vm-shielding-helper-vhd.md)
         - [设置 Windows Azure Pack](guarded-fabric-hoster-sets-up-windows-azure-pack.md)
         - [创建防护数据文件](guarded-fabric-tenant-creates-shielding-data.md)
-        - [使用 Windows Azure Pack 部署受防护的 VM](guarded-fabric-shielded-vm-windows-azure-pack.md)
+        - [使用 Windows Azure 包部署受防护的 VM](guarded-fabric-shielded-vm-windows-azure-pack.md)
         - [使用 Virtual Machine Manager 部署受防护的 VM](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
 
 ## <a name="operations-and-management-topic"></a>操作和管理主题

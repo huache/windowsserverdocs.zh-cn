@@ -2,18 +2,16 @@
 title: 联系数据中心和云网络团队
 description: 此页面旨在通知客户在各种上下文中获得 SDN 团队的最佳方法。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 45baf6966fc0bc703dcf354e557b9d4eeab8e9d9
-ms.sourcegitcommit: 0ccc7b2caa1781f0c67e1a3cc52c0b0f6a175ad4
+ms.openlocfilehash: fe5b9bc8c8b3b888b3c11a72c39756374cde566c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87819578"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970824"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>联系数据中心和云网络团队
 
@@ -37,7 +35,7 @@ Microsoft 的**软件定义网络 \( SDN \) **和**容器联网**解决方案由
 [容器联网文档](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)可在[Microsoft Docs (docs.microsoft.com) ](https://docs.microsoft.com/)上找到，其中包含**内置注释功能**。 若要在 Microsoft Docs 只需登录的情况下，离开或回复注释，请向下滚动到想要引用的 Microsoft Docs 页面的底部，然后在那里进行注释并提交。
 
 > [Microsoft Docs](https://docs.microsoft.com/)是 Microsoft 的新的统一文档网站。 虽然我们的大多数团队[SDN 文档](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)仍在 TechNet 上，但我们的[容器网络文档](https://docs.microsoft.com/virtualization/windowscontainers)现在 Microsoft Docs。
-> 
+>
 > *一般情况下，如果你遇到关于 Microsoft Docs 的问题，或者你希望获得更多的建议，只需在该页面上留下评论，就可以与 Microsoft 团队分享你的反馈。*
 
 ## <a name="container-specific-forums"></a>容器特定论坛
@@ -45,5 +43,5 @@ Microsoft 的**软件定义网络 \( SDN \) **和**容器联网**解决方案由
 - [用户语音](https://windowsserver.uservoice.com/forums/304624-containers)-最适用于*功能请求*
 - [Github (虚拟化](https://github.com/Microsoft/Virtualization-Documentation)存储库) -最适用于查找*故障排除帮助*和*报告 bug*
 
-### <a name="not-seeing-the-forum-for-you"></a>看不到论坛？ 
+### <a name="not-seeing-the-forum-for-you"></a>看不到论坛？
 我们鼓励你尽可能地使用我们的公共论坛，使更广泛的社区能够受益于提供的问题和评论。 但是，我们还认识到，在某些情况下，电子邮件只是与我们取得联系的首选方式。 如果你使用的是其中一种情况，请向我们发送一封电子邮件， sdn_feedback@microsoft.com 我们将很乐意收到你的来信。
