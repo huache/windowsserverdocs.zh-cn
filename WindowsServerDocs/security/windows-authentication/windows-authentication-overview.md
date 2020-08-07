@@ -1,20 +1,18 @@
 ---
 title: Windows 身份验证概述
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 485a0774-0785-457f-a964-0e9403c12bb1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4e3dbed9ebef441dab4a4583455e29df98a6ab24
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 10fb8e072e9dd810e64ace79c17f02290766ec6f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182303"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936486"
 ---
 # <a name="windows-authentication-overview"></a>Windows 身份验证概述
 
@@ -52,7 +50,7 @@ Windows 操作系统实现一组默认身份验证协议，包括 Kerberos、NTL
 ## <a name="practical-applications"></a>实际的应用程序
 Windows 身份验证用于验证信息是来自受信任来源还是来自个人或计算机对象，例如另一台计算机。 Windows 提供按如下所述实现该目标的多个不同方式。
 
-|收件人...|Feature|描述|
+|收件人...|功能|描述|
 |----|------|--------|
 |Active Directory 域中的身份验证|Kerberos|Microsoft Windows &nbsp; Server 操作系统实现 Kerberos 版本5身份验证协议和对公钥身份验证的扩展。 Kerberos 身份验证客户端作为安全支持提供程序 \( SSP 实现 \) ，并且可通过安全支持提供程序接口 SSPI 进行访问 \( \) 。 初始用户身份验证与 Winlogon 单一登录 \- 体系结构集成。 Kerberos 密钥发行中心 \( KDC \) 与域控制器上运行的其他 Windows Server 安全服务相集成。 KDC 使用域的 Active Directory 目录服务数据库作为其安全帐户数据库。 Active Directory 是默认 Kerberos 实现所必需的。<p>有关更多资源，请参阅 [Kerberos 身份验证概述](../kerberos/kerberos-authentication-overview.md)。|
 |Web 上的安全身份验证|\/在 Schannel 安全支持提供程序中实现的 TLS SSL|传输层安全 \( TLS \) 协议版本1.0、1.1 和1.2、安全套接字层 \( SSL \) 协议、版本2.0 和3.0、数据报传输层安全协议版本1.0 和专用通信传输 \( PCT 协议版本 \) 1.0 基于公钥加密。 安全通道 \( Schannel \) 提供程序身份验证协议套件提供这些协议。 所有 Schannel 协议使用客户端和服务器模型。<p>有关其他资源，请参阅[TLS-SSL &#40;SCHANNEL SSP&#41; 概述](../tls/tls-ssl-schannel-ssp-overview.md)。|

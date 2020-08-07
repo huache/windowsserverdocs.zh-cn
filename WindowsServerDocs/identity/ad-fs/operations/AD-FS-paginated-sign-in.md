@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 09/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ca13ebe29b0a9260302599110f333d166681abdb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 27b0232b65a3003dde9a5702ec45063781abd813
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358558"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947443"
 ---
 # <a name="ad-fs-paginated-sign-in"></a>AD FS 分页登录
 
@@ -35,7 +33,7 @@ ms.locfileid: "71358558"
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin2.png)
 
-在第一页上，系统将要求你输入用户名。 你还可以选择 "使我保持登录" 选项，以减少登录提示的频率，并在安全时保持登录。 （默认情况下禁用此选项。）
+在第一页上，系统将要求你输入用户名。 你还可以选择 "使我保持登录" 选项，以减少登录提示的频率，并在安全时保持登录。  (默认情况下禁用此选项。 ) 
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin3.png)
 
@@ -43,7 +41,7 @@ ms.locfileid: "71358558"
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin4.png)
 
-在第三页上，系统将要求您输入密码（假设您选择了 "密码" 作为身份验证选项）。
+在第三页上，系统将要求你输入密码 (假设你选择了 "密码" 作为身份验证选项) 。
 
 ## <a name="how-to-get-the-new-experience"></a>如何获取新体验
 
@@ -62,6 +60,6 @@ ms.locfileid: "71358558"
 自定义选项仍适用于 2019 AD FS。
 下面是一些指向其他文档的链接，供你参考。
 
-•对于不打算将服务器升级到 AD FS 2019 但仍需要新设计的用户：[在 Active Directory 联合身份验证服务中使用 Azure AD UX Web 主题](azure-ux-web-theme-in-ad-fs.md)
+•对于不打算将其服务器升级到 AD FS 2019 但仍需要新设计的用户，请执行以下操作：[使用 AZURE AD UX Web 主题 Active Directory 联合身份验证服务](azure-ux-web-theme-in-ad-fs.md)
 
-•自定义的一个中心位置：[AD FS 用户登录自定义](ad-fs-user-sign-in-customization.md)
+•自定义的一个中心位置： [AD FS 用户登录自定义](ad-fs-user-sign-in-customization.md)

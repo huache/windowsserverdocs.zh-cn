@@ -5,36 +5,34 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 6d049175c7d89670f82bb45addc929d57b60b7b0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4d7d45b91e866b9df927620f2e214ced248b3361
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960739"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947483"
 ---
 # <a name="controlling-access-to-organizational-data-with-active-directory-federation-services"></a>使用 Active Directory 联合身份验证服务控制对组织数据的访问权限
 
-本文档概述了跨本地、混合和云方案 AD FS 的访问控制。  
+本文档概述了跨本地、混合和云方案 AD FS 的访问控制。
 
-## <a name="ad-fs-and-conditional-access-to-on-premises-resources"></a>AD FS 和条件访问本地资源 
+## <a name="ad-fs-and-conditional-access-to-on-premises-resources"></a>AD FS 和条件访问本地资源
 由于引入了 Active Directory 联合身份验证服务，授权策略可用于限制或允许用户基于请求的属性和资源对资源的访问权限。  随着 AD FS 从版本移至版本，这些策略的实现方式已发生了变化。  有关按版本列出的访问控制功能的详细信息，请参阅：
 - [Windows Server 2016 中 AD FS 的访问控制策略](Access-Control-Policies-in-AD-FS.md)
 - [Windows Server 2012 R2 中 AD FS 的访问控制](Manage-Risk-with-Conditional-Access-Control.md)
 
 
-## <a name="ad-fs-and-conditional-access-in-a-hybrid-organization"></a>混合组织中的 AD FS 和条件访问  
+## <a name="ad-fs-and-conditional-access-in-a-hybrid-organization"></a>混合组织中的 AD FS 和条件访问
 
 AD FS 提供混合方案中条件性访问策略的本地组件。 应将基于 AD FS 的授权规则用于非 Azure AD 资源，如直接与 AD FS 联合的本地应用程序。  云组件由[Azure AD 条件访问](/azure/active-directory/active-directory-conditional-access)提供。  Azure AD Connect 提供连接两个的控制平面。
 
-例如，当你使用 Azure AD 向云资源的条件性访问注册设备时，Azure AD Connect 设备写回功能会使设备注册信息在本地提供，以供 AD FS 策略使用和强制执行。  这样一来，就可以通过一致的方式访问本地和云资源的控制策略。  
+例如，当你使用 Azure AD 向云资源的条件性访问注册设备时，Azure AD Connect 设备写回功能会使设备注册信息在本地提供，以供 AD FS 策略使用和强制执行。  这样一来，就可以通过一致的方式访问本地和云资源的控制策略。
 
-![条件访问](../deployment/media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![条件访问](../deployment/media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)
 
 
 ### <a name="the-evolution-of-client-access-policies-for-office-365"></a>Office 365 的客户端访问策略发展
-许多人都在使用客户端访问策略和 AD FS 来基于诸如客户端的位置和使用的客户端应用程序的类型限制对 Office 365 和其他 Microsoft Online services 的访问。  
+许多人都在使用客户端访问策略和 AD FS 来基于诸如客户端的位置和使用的客户端应用程序的类型限制对 Office 365 和其他 Microsoft Online services 的访问。
 - [Windows Server 2012 R2 中的客户端访问策略 AD FS](Access-Control-Policies-W2K12.md)
 - [AD FS 2.0 中的客户端访问策略](Access-Control-Policies-in-AD-FS-2.md)
 

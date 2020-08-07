@@ -1,21 +1,19 @@
 ---
-title: 管理数据中心桥接（DCB）
+title: '管理数据中心桥接 (DCB) '
 description: 本主题提供有关如何使用 Windows PowerShell 命令在 Windows Server 2016 中管理数据中心桥接的说明。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3df00e013d61ad3004f2a2c001c0c40ae9cad109
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: bc012fd6a685b005b9f7f2b055d49050ef3c009a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520186"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971774"
 ---
-# <a name="manage-data-center-bridging-dcb"></a>管理数据中心桥接（DCB）
+# <a name="manage-data-center-bridging-dcb"></a>管理数据中心桥接 (DCB) 
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
@@ -23,7 +21,7 @@ ms.locfileid: "87520186"
 
 ## <a name="install-dcb-in-windows-server-2016-or-windows-10"></a>在 Windows Server 2016 或 Windows 10 中安装 DCB
 
-有关使用和如何安装 DCB 的先决条件信息，请参阅[在 Windows Server 2016 或 windows 10 中安装数据中心桥接（DCB）](dcb-install.md)。
+有关使用和如何安装 DCB 的先决条件信息，请参阅[在 Windows Server 2016 或 windows 10 中安装数据中心桥接 (DCB) ](dcb-install.md)。
 
 
 ## <a name="dcb-configurations"></a>DCB 配置
@@ -83,7 +81,7 @@ DCB 配置包括以下步骤。
 
     a. 流量类管理
 
-    b. 优先级流控制（PFC）设置
+    b. 优先级流控制 (PFC) 设置
 
     c. 应用程序优先级分配
 
@@ -147,11 +145,11 @@ DCB 配置包括以下步骤。
 
 创建流量类之后，可以单独更改其设置。 您可以更改的设置包括：
 
-1. 带宽分配（-BandwidthPercentage）
+1. 带宽分配 (-BandwidthPercentage) 
 
-2. TSA （-算法）
+2. TSA ( 算法) 
 
-3. 优先级映射（-Priority）
+3. 优先级映射 ( 优先级) 
 
 ### <a name="remove-a-traffic-class"></a>删除流量类
 
@@ -263,7 +261,7 @@ Priority   Enabled    PolicySet        IfIndex IfAlias
 7          False      AdapterSpecific  4       M1
 ```
 
-### <a name="disable-priority-flow-control-global-and-interface-specific"></a>禁用优先级流控制（特定于全局和接口）
+### <a name="disable-priority-flow-control-global-and-interface-specific"></a>禁用优先级流控制 (全局和接口特定) 
 
 ```powershell
 PS C:\> Disable-NetQosFlowControl -Priority 4
@@ -312,13 +310,13 @@ Template       : SMB
 PriorityValue  : 4
 ```
 
-上一个命令为 SMB 创建新策略。 – SMB 是与 TCP 端口445（为 SMB 保留）匹配的收件箱筛选器。 如果将数据包发送到 TCP 端口445，则在将数据包传递到网络微型端口驱动程序之前，将使用 802.1 p 值为4的操作系统标记该数据包。
+上一个命令为 SMB 创建新策略。 – SMB 是与 (为 SMB) 保留的 TCP 端口445相匹配的收件箱筛选器。 如果将数据包发送到 TCP 端口445，则在将数据包传递到网络微型端口驱动程序之前，将使用 802.1 p 值为4的操作系统标记该数据包。
 
-除– SMB 外，其他默认筛选器包括– iSCSI （匹配 tcp 端口3260）、-NFS （匹配 tcp 端口2049）、-LiveMigration （匹配的 tcp 端口6600）、-FCOE （匹配 EtherType 0x8906）和– NetworkDirect。
+除了– SMB 以外，其他默认筛选器还包括 (匹配 TCP 端口 3260) 、-NFS (匹配 tcp 端口 2049) 、-FCOE (匹配 tcp 端口 6600) 、- (匹配 EtherType 0x8906) 和– NetworkDirect。
 
 NetworkDirect 是我们在网络适配器上的任何 RDMA 实现之上创建的抽象层。 – NetworkDirect 必须后跟网络直接端口。
 
-除了默认筛选器外，还可以按应用程序的可执行文件名称（如下面的第一个示例所示）或 IP 地址、端口或协议（如第二个示例中所示）对流量进行分类：
+除了默认筛选器外，还可以按应用程序的可执行文件名称对流量进行分类 (如下面第一个示例) 中所示，或按 IP 地址、端口或协议 (分类，如第二个示例中所示) ：
 
 **按可执行文件名称**
 

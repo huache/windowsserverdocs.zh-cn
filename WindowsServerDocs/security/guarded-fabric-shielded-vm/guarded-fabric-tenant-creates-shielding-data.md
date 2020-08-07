@@ -1,30 +1,28 @@
 ---
 title: 租户的受防护的 Vm-创建屏蔽数据来定义受防护的 VM
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 49f4e84d-c1f7-45e5-9143-e7ebbb2ef052
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 30f8f4db8f6bbfd4ead6ce2a31af3b2f6adbf72c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 296de5fbb7387e469d7e1ce39a477366dd274bbb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475094"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936748"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>租户的受防护的 Vm-创建屏蔽数据来定义受防护的 VM
 
->适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
-屏蔽数据文件（也称为预配数据文件或 PDK 文件）是加密文件，由租户或 VM 所有者创建，用于保护重要的 VM 配置信息，例如管理员密码、RDP 和其他标识相关的证书，域加入凭据等。 本主题提供有关如何创建防护数据文件的信息。 创建文件之前，必须从托管服务提供商处获取模板磁盘，或者根据[租户的受防护 vm 创建模板磁盘（可选）](guarded-fabric-tenant-creates-template-disk.md)创建模板磁盘。
+屏蔽数据文件（也称为预配数据文件或 PDK 文件）是加密文件，由租户或 VM 所有者创建，用于保护重要的 VM 配置信息，例如管理员密码、RDP 和其他标识相关的证书，域加入凭据等。 本主题提供有关如何创建防护数据文件的信息。 创建文件之前，你必须从托管服务提供商处获取模板磁盘，或者根据[租户的受防护 vm](guarded-fabric-tenant-creates-template-disk.md)创建模板磁盘（ (可选) ）创建模板磁盘。
 
 有关防护数据文件内容的列表和关系图，请参阅[什么是防护数据？什么是必需的？](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary)。
 
 > [!IMPORTANT]
-> 本部分中的步骤应在受保护的构造之外的单独、受信任的计算机上完成。 通常，VM 所有者（租户）会为其 Vm 而不是构造管理员创建防护数据。
+> 本部分中的步骤应在受保护的构造之外的单独、受信任的计算机上完成。 通常，VM 所有者 (租户) 会为其 Vm 而不是构造管理员创建防护数据。
 
 若要准备创建防护数据文件，请执行以下步骤：
 
@@ -37,9 +35,9 @@ ms.locfileid: "85475094"
 
 - [创建防护数据文件并添加监护人](#create-a-shielding-data-file-and-add-guardians-using-the-shielding-data-file-wizard)
 
-## <a name="optional-obtain-a-certificate-for-remote-desktop-connection"></a>可有可无获取远程桌面连接的证书
+## <a name="optional-obtain-a-certificate-for-remote-desktop-connection"></a> (可选) 获取远程桌面连接的证书
 
-由于租户只能使用远程桌面连接或其他远程管理工具连接到其受防护的 Vm，因此请务必确保租户可以验证它们是否连接到正确的终结点（即，没有 "中间人" 拦截连接）。
+由于租户只能使用远程桌面连接或其他远程管理工具连接到其受防护的 Vm，因此确保租户可以验证它们是否连接到正确的终结点，这一点很重要， (也就是说，不存在拦截连接) 的 "中间人"。
 
 验证连接到目标服务器的一种方法是安装和配置一个证书，以便在启动连接时提供远程桌面服务。 连接到服务器的客户端计算机将检查其是否信任证书，并在不显示警告的情况。 通常，若要确保连接客户端信任证书，则会从租户的 PKI 颁发 RDP 证书。 有关[在远程桌面服务中使用证书的](https://technet.microsoft.com/library/dn781533.aspx)详细信息，请参阅 TechNet。
 
@@ -54,17 +52,17 @@ ms.locfileid: "85475094"
 
 ## <a name="create-an-answer-file"></a>创建应答文件
 
-由于 VMM 中的已签名模板磁盘是通用化的，因此在预配过程中，租户需要提供应答文件来专用化其受防护的 Vm。 答案文件（通常称为无人参与文件）可以将 VM 配置为其预期的角色，即它可以安装 Windows 功能，注册在上一步中创建的 RDP 证书，并执行其他自定义操作。 它还将提供 Windows 安装程序所需的信息，包括默认管理员的密码和产品密钥。
+由于 VMM 中的已签名模板磁盘是通用化的，因此在预配过程中，租户需要提供应答文件来专用化其受防护的 Vm。 答案文件 (通常称为无人参与文件) 可将 VM 配置为其预期的角色，即，它可以安装 Windows 功能，注册在上一步中创建的 RDP 证书，并执行其他自定义操作。 它还将提供 Windows 安装程序所需的信息，包括默认管理员的密码和产品密钥。
 
-有关获取并使用**ShieldingDataAnswerFile**函数生成用于创建受防护 vm 的应答文件（Unattend.xml 文件）的信息，请参阅[使用 ShieldingDataAnswerFile 函数生成应答文件](guarded-fabric-sample-unattend-xml-file.md)。 使用函数，你可以更轻松地生成一个应答文件，用于反映如下选择：
+若要了解如何获取和使用**ShieldingDataAnswerFile**函数生成应答文件 ( # A0 file) 用于创建受防护的 vm，请参阅[使用 ShieldingDataAnswerFile 函数生成应答文件](guarded-fabric-sample-unattend-xml-file.md)。 使用函数，你可以更轻松地生成一个应答文件，用于反映如下选择：
 
 - 在初始化过程结束时，VM 是否应加入域？
 - 是否会对每个 VM 使用批量许可或特定的产品密钥？
 - 你使用的是 DHCP 还是静态 IP？
-- 是否会使用自定义远程桌面协议（RDP）证书来证明 VM 属于你的组织？
+- 是否会使用自定义远程桌面协议 (RDP) 证书，该证书将用于证明 VM 属于你的组织？
 - 是否要在初始化结束时运行脚本？
 
-屏蔽数据文件中使用的应答文件将在使用该防护数据文件创建的每个 VM 上使用。 因此，应确保不会将任何特定于 VM 的信息硬编码到答案文件中。 VMM 在无人参与文件中支持一些替代字符串（请参阅下表），以处理可能会从 VM 更改为 VM 的专用化值。 不需要使用这些值;但是，如果它们存在，VMM 将利用它们。
+屏蔽数据文件中使用的应答文件将在使用该防护数据文件创建的每个 VM 上使用。 因此，应确保不会将任何特定于 VM 的信息硬编码到答案文件中。 VMM 支持一些替换字符串 (在无人参与文件中) 下表来处理可能会从 VM 更改为 VM 的专用化值。 不需要使用这些值;但是，如果它们存在，VMM 将利用它们。
 
 为受防护的 Vm 创建 unattend.xml 文件时，请记住以下限制：
 
@@ -111,14 +109,14 @@ ms.locfileid: "85475094"
 
 ## <a name="get-the-volume-signature-catalog-file"></a>获取卷签名目录文件
 
-屏蔽数据文件还包含有关租户信任的模板磁盘的信息。 租户以卷签名目录（VSC）文件的形式从受信任的模板磁盘获取磁盘签名。 然后，在部署新 VM 时验证这些签名。 如果防护数据文件中的任何一个签名与尝试与 VM 一起部署的模板磁盘都不匹配（即，它已被修改或交换为其他可能的恶意磁盘），则设置过程将失败。
+屏蔽数据文件还包含有关租户信任的模板磁盘的信息。 租户以卷签名目录 (VSC) 文件格式从受信任的模板磁盘获取磁盘签名。 然后，在部署新 VM 时验证这些签名。 如果防护数据文件中的任何一个签名与尝试与 VM 一起部署的模板磁盘都不匹配 (也就是说，它已使用其他可能的恶意磁盘) 进行修改或交换，则设置过程将失败。
 
 > [!IMPORTANT]
-> 尽管 VSC 可确保磁盘未被篡改，但在第一次信任该磁盘时，租户仍然非常重要。 如果你是租户，并且模板磁盘是由你的主机提供的，则使用该模板磁盘部署测试 VM，并运行你自己的工具（防病毒、漏洞扫描程序等）来验证该磁盘事实上是否处于你信任的状态。
+> 尽管 VSC 可确保磁盘未被篡改，但在第一次信任该磁盘时，租户仍然非常重要。 如果你是租户，并且模板磁盘由主机提供，则使用该模板磁盘部署测试 VM，并运行你自己的工具 (防病毒、漏洞扫描程序等) 验证磁盘实际上是否处于你信任的状态。
 
 可通过两种方式获取模板磁盘的 VSC：
 
-1. 宿主（或者租户，如果租户有权访问 VMM）使用 VMM PowerShell cmdlet 来保存 VSC，并将其提供给租户。 这可以在安装了 VMM 控制台的任何计算机上执行，并配置为管理托管构造的 VMM 环境。 用于保存 VSC 的 PowerShell cmdlet 是：
+1. 如果租户有权访问 VMM，则宿主 (或租户) 使用 VMM PowerShell cmdlet 保存 VSC 并将其提供给租户。 这可以在安装了 VMM 控制台的任何计算机上执行，并配置为管理托管构造的 VMM 环境。 用于保存 VSC 的 PowerShell cmdlet 是：
 
     ```powershell
     $disk = Get-SCVirtualHardDisk -Name "templateDisk.vhdx"
@@ -128,7 +126,7 @@ ms.locfileid: "85475094"
     $vsc.WriteToFile(".\templateDisk.vsc")
     ```
 
-2. 租户有权访问模板磁盘文件。 如果租户创建要上传到托管服务提供商的模板磁盘，或者如果租户可以下载宿主的模板磁盘，则可能会出现这种情况。 在这种情况下，如果没有 VMM，租户将运行以下 cmdlet （与受防护的 VM 工具功能一起安装，远程服务器管理工具中的一部分）：
+2. 租户有权访问模板磁盘文件。 如果租户创建要上传到托管服务提供商的模板磁盘，或者如果租户可以下载宿主的模板磁盘，则可能会出现这种情况。 在这种情况下，如果没有 VMM，租户将运行以下 cmdlet (与受防护的 VM 工具功能一起安装，) 远程服务器管理工具的一部分：
 
     ```powershell
     Save-VolumeSignatureCatalog -TemplateDiskPath templateDisk.vhdx -VolumeSignatureCatalogPath templateDisk.vsc
@@ -159,7 +157,7 @@ ms.locfileid: "85475094"
 
 ## <a name="create-a-shielding-data-file-and-add-guardians-using-the-shielding-data-file-wizard"></a>使用防护数据文件向导创建防护数据文件并添加监护人
 
-运行防护数据文件向导创建防护数据（PDK）文件。 在此，你将添加 RDP 证书、无人参与文件、卷签名目录、所有者保护者和在上一步骤中获取的下载的保护者元数据。
+运行防护数据文件向导 (PDK) 文件创建防护数据。 在此，你将添加 RDP 证书、无人参与文件、卷签名目录、所有者保护者和在上一步骤中获取的下载的保护者元数据。
 
 1. 使用服务器管理器或以下 Windows PowerShell 命令在你的计算机上安装**远程服务器管理工具 &gt; 功能管理工具 &gt; 防护的 VM 工具**：
 
@@ -169,7 +167,7 @@ ms.locfileid: "85475094"
 
 2. 从 "开始" 菜单上的 "管理员工具" 部分或通过运行以下可执行文件**C： \\ Windows \\ System32 \\ShieldingDataFileWizard.exe**打开防护数据文件向导。
 
-3. 在第一页上，使用第二个文件选择框为防护数据文件选择位置和文件名。 通常，在拥有任何使用该防护数据创建的 Vm （例如，HR、IT、财务）及其正在运行的工作负荷角色（例如，文件服务器、web 服务器或任何其他无人参与文件配置的其他内容）的实体之后，会将屏蔽数据文件命名为。 将单选按钮设置为**屏蔽模板的防护数据**。
+3. 在第一页上，使用第二个文件选择框为防护数据文件选择位置和文件名。 通常情况下，你会在拥有任何使用该防护数据创建的 Vm 的实体（例如，HR、IT、财务) 及其正在 (运行的工作负荷角色）中命名一个防护数据文件 (例如，文件服务器、web 服务器或由无人参与文件) 配置的任何其他内容。 将单选按钮设置为**屏蔽模板的防护数据**。
 
     > [!NOTE]
     > 在防护数据文件向导中，你会注意到以下两个选项：
@@ -188,7 +186,7 @@ ms.locfileid: "85475094"
 
     - 创建或选择将你表示为 VM 所有者的所有者监护人
 
-    - 导入在上一步骤中从托管提供程序的（或你自己的）主机保护者服务下载的保护者
+    - 导入在上一步中从宿主提供程序的 (或自己的) 主机保护者服务下载的保护者
 
     若要指定现有的所有者监护人，请从下拉菜单中选择相应的保护者。 此列表中仅显示安装在本地计算机上的私钥的保护者。 你还可以通过选择右下角的 "**管理本地监护人**" 并单击 "**创建**" 并完成向导来创建自己的所有者保护者。
 
@@ -200,7 +198,7 @@ ms.locfileid: "85475094"
 
 6. 在 "**专用化值**" 页上，单击 "**浏览**" 以选择将用于专用化 vm 的 unattend.xml 文件。
 
-    使用底部的 "**添加**" 按钮可将任何其他文件添加到专用化过程中所需的 PDK。 例如，如果无人参与文件正在将 RDP 证书安装到 VM 上（如[使用 ShieldingDataAnswerFile 函数生成答案文件](guarded-fabric-sample-unattend-xml-file.md)中所述），则应在此处添加 RDP 证书 PFX 文件和 RDPCertificateConfig.ps1 脚本。 请注意，在此处指定的任何文件将 \\ \\ 在创建的 VM 上自动复制到 C： temp。 在按路径引用文件时，无人参与文件应将这些文件放在该文件夹中。
+    使用底部的 "**添加**" 按钮可将任何其他文件添加到专用化过程中所需的 PDK。 例如，如果你的无人参与文件正在将 RDP 证书安装到 VM (如[使用 ShieldingDataAnswerFile 函数) 生成答案文件](guarded-fabric-sample-unattend-xml-file.md)中所述），则应在此处添加 RDP 证书 PFX 文件和 RDPCertificateConfig.ps1 脚本。 请注意，在此处指定的任何文件将 \\ \\ 在创建的 VM 上自动复制到 C： temp。 在按路径引用文件时，无人参与文件应将这些文件放在该文件夹中。
 
 7. 在下一页上查看您的选择，然后单击 "**生成**"。
 
@@ -223,7 +221,7 @@ New-HgsGuardian -Name "Owner" -GenerateCertificates
 你将需要所有者证书及其相应的私钥来 unshield 虚拟机，因此请确保这些证书已备份，并防止被盗。
 有权访问所有者证书的攻击者可以使用这些证书启动受防护的虚拟机或更改其安全配置。
 
-如果需要在要运行虚拟机的受保护构造（主数据中心、备份数据中心等）中导入监护人信息，请对[从受保护的构造中检索的每个元数据文件](#select-trusted-fabrics)运行以下命令。
+如果需要在要运行虚拟机 (主数据中心、备份数据中心等 ) 的受保护的结构中导入监护人信息，请为[从受保护的构造中检索到的每个元数据文件](#select-trusted-fabrics)运行以下命令。
 
 ```powershell
 Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
@@ -246,9 +244,9 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 > [!TIP]
 > 如果你使用的是需要包含在防护数据文件中的自定义 RDP 证书、SSH 密钥或其他文件，请使用参数将 `-OtherFile` 其包含在内。 可以提供逗号分隔的文件路径列表，如`-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
 
-在上述命令中，名为 "Owner" 的监护人（从 HgsGuardian 获取）将能够在未来更改 VM 的安全配置，而 "美国 Datacenter" 则可以运行 VM，但不会更改其设置。
+在上面的命令中，名为 "Owner" 的监护人 (从 HgsGuardian) 获取的保护者以后可以更改 VM 的安全配置，而 "美国 Datacenter" 则可以运行 VM，但不会更改其设置。
 如果有多个监护人，请用逗号分隔监护人的名称，如 `'EAST-US Datacenter', 'EMEA Datacenter'` 。
-卷 ID 限定符指定你是仅信任模板磁盘还是未来版本（GreaterThanOrEquals）的确切版本（等于）。
+卷 ID 限定符指定你是只信任 (等于) 的模板磁盘还是未来版本 (GreaterThanOrEquals) 。
 磁盘名称和签名证书必须与部署时要考虑的版本比较完全匹配。
 可以通过向参数提供以逗号分隔的卷 ID 限定符列表，来信任多个模板磁盘 `-VolumeIDQualifier` 。
 最后，如果有其他文件需要随 VM 一起附带答案文件，请使用 `-OtherFile` 参数，并提供以逗号分隔的文件路径列表。

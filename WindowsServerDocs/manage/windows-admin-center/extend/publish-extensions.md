@@ -1,19 +1,17 @@
 ---
 title: 发布 Windows 管理中心的扩展
-description: 发布 Windows 管理中心的扩展（Project Honolulu）
-ms.technology: manage
+description: '发布 Windows 管理中心 (Project Honolulu) '
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 357c37ec395e5c51f3c3f946414f38ea5f95e9e4
-ms.sourcegitcommit: eaf3fb57517b9110082edad356b12daf3345bb2c
+ms.openlocfilehash: c817a28494104a1bfed1d7e19eaebaa04fd5138e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593988"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971964"
 ---
 # <a name="publishing-extensions"></a>发布扩展
 
@@ -51,7 +49,7 @@ Windows 管理中心支持的可配置包源有三个主要选项：
 
 如果出于评估目的发布扩展的预览版本，则建议你执行以下操作：
 
-- 将 "（预览版）" 追加到 nuspec 文件中扩展插件的末尾
+- 在 nuspec 文件中将 " (Preview) " 追加到扩展标题的末尾
 - 说明 nuspec 文件中扩展说明的限制
 
 ## <a name="creating-an-extension-package"></a>创建扩展包
@@ -64,11 +62,11 @@ Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使
 
 #### <a name="ui-extensions"></a>UI 扩展
 
-若要开始收集 UI 扩展所需的所有内容，请在工具中运行 "gulp 生成"，并确保生成成功。  此过程会将所有组件一起打包到一个名为 "捆绑" 的文件夹中，该文件夹位于扩展的根目录中（位于 src 目录的同一级别）。  将此目录及其所有内容复制到 "NuGet 包" 文件夹中。
+若要开始收集 UI 扩展所需的所有内容，请在工具中运行 "gulp 生成"，并确保生成成功。  此过程会将所有组件一起打包到一个名为 "捆绑" 的文件夹中，该文件夹位于你的扩展的根目录中 (位于同一级别的 src 目录) 。  将此目录及其所有内容复制到 "NuGet 包" 文件夹中。
 
 #### <a name="gateway-plugins"></a>网关插件
 
-使用您的构建基础结构（这可能非常简单，只是打开 Visual Studio 并单击 "生成" 按钮），然后编译并生成插件。  打开您的生成输出目录，并复制代表您的插件的 Dll，并将其放在名为 "Package" 的 "NuGet 包" 目录中的新文件夹中。  不需要复制 FeatureInterface dll，只需复制代表代码的 Dll。
+使用您的构建基础结构 (这可能非常简单，只需要打开 Visual Studio，然后单击 "生成" 按钮) ，编译并生成插件。  打开你的生成输出目录，并复制表示你的插件的 Dll (s) ，并将其放在名为 "Package" 的 "NuGet 包" 目录中的新文件夹中。  不需要复制 FeatureInterface dll，只需) 表示代码的 Dll (s。
 
 ### <a name="2-create-the-nuspec-file"></a>2. 创建 nuspec 文件
 
@@ -93,7 +91,7 @@ Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使
     <licenseUrl>http://YourLicenseLink</licenseUrl>
     <iconUrl>http://YourLogoLink</iconUrl>
     <description>Hello World extension by Contoso</description>
-    <copyright>(c) Contoso. All rights reserved.</copyright> 
+    <copyright>(c) Contoso. All rights reserved.</copyright>
     <tags></tags>
   </metadata>
   <files>
@@ -110,13 +108,13 @@ Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使
 | packageType | 必选 | 使用 "WindowsAdminCenterExtension"，它是为 Windows 管理中心扩展定义的 NuGet 包类型。 |
 | id | 必选 | 源中唯一的包标识符。 此值需要与项目的 manifest.js文件中的 "名称" 值匹配。  有关指南，请参阅[选择唯一的包标识符](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
 | title | 需要将其发布到 Windows 管理中心源 | Windows 管理中心扩展管理器中显示的包的友好名称。 |
-| 版本 | 必选 | 扩展版本。 建议使用[语义版本控制（SemVer 约定）](http://semver.org/spec/v1.0.0.html) ，但这不是必需的。 |
+| 版本 | 必选 | 扩展版本。 建议使用[语义版本控制 (SemVer 约定) ](http://semver.org/spec/v1.0.0.html) ，但不是必需的。 |
 | 作者 | 必选 | 如果代表你的公司发布，请使用你的公司名称。 |
 | description | 必选 | 提供扩展功能的说明。 |
 | iconUrl | 在发布到 Windows 管理中心源时建议 | 要在扩展管理器中显示的图标的 URL。 |
 | projectUrl | 需要将其发布到 Windows 管理中心源 | 指向扩展网站的 URL。 如果没有单独的网站，请使用 NuGet 源上包网页的 URL。 |
 | licenseUrl | 需要将其发布到 Windows 管理中心源 | 指向扩展的最终用户许可协议的 URL。 |
-| files | 必选 | 这两个设置设置 Windows 管理中心需要用于 UI 扩展和网关插件的文件夹结构。 |
+| 文件 | 必选 | 这两个设置设置 Windows 管理中心需要用于 UI 扩展和网关插件的文件夹结构。 |
 
 ### <a name="3-build-the-extension-nuget-package"></a>3. 生成扩展 NuGet 包
 
@@ -127,7 +125,7 @@ Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使
 
 ### <a name="4-signing-your-extension-nuget-package"></a>4. 对扩展 NuGet 包进行签名
 
-需要使用来自受信任证书颁发机构（CA）的证书对扩展中包含的任何 .dll 文件进行签名。 默认情况下，当 Windows 管理中心在生产模式下运行时，将阻止未签名的 .dll 文件执行。
+需要使用来自受信任证书颁发机构 (CA) 的证书对扩展中包含的任何 .dll 文件进行签名。 默认情况下，当 Windows 管理中心在生产模式下运行时，将阻止未签名的 .dll 文件执行。
 
 我们也强烈建议你对扩展 NuGet 包进行签名，以确保包的完整性，但这不是必需的步骤。
 

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: c8b332de4053aa64f3294c3cd68c37773742f9f5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f16ea84d339e1b6bb51d0c0e5be352aeda4abc41
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962719"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947337"
 ---
 # <a name="ad-fs-user-sign-in-customization"></a>AD FS 用户登录自定义
 
@@ -22,9 +20,7 @@ AD FS 提供了许多选项，管理员可以根据其公司需求自定义和�
 
 
 
-![AD FS 自定义](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
-    
-  
+![AD FS 自定义](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
 
 
 
@@ -32,7 +28,9 @@ AD FS 提供了许多选项，管理员可以根据其公司需求自定义和�
 
 
 
-主题|说明|
+
+
+主题|描述|
 -----|-----|
 [Windows Server 2016 中的 AD FS 自定义](./ad-fs-customization-in-windows-server.md)|Windows Server 2016 中的 AD FS 的新自定义选项|
 [更改公司名称](Change-the-company-name-on-the-AD-FS-sign-in-page.md)|在登录页上显示公司名称的步骤|

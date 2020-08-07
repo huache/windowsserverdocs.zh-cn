@@ -4,15 +4,14 @@ description: 使用虚拟机 CPU 组
 author: allenma
 ms.date: 06/18/2018
 ms.topic: article
-ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: bcae278caf088bc544fb6686450eacdfdf88237b
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 1f902a37dd4df28b2591380e78fe86c271f4ed3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769595"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963593"
 ---
 # <a name="virtual-machine-resource-controls"></a>虚拟机资源控制
 

@@ -1,19 +1,18 @@
 ---
 title: 在 Windows Server 中规划 GPU 加速
 description: 了解 GPU 加速的不同 Hyper-v 技术，包括 DDA 和 RemoteFX vGPU
-ms.prod: windows-server
 ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: 0177ce6346741998a0a9f97817e3811561bb02fb
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: afdb856fc84bcee634381f04054a97f545056882
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768817"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938790"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>在 Windows Server 中规划 GPU 加速
 
@@ -67,7 +66,7 @@ RemoteFX vGPU 是一种图形虚拟化技术，允许在多个虚拟机之间共
 
 规划部署时，请考虑以下功能并支持图形虚拟化技术之间的差异：
 
-| 说明 | RemoteFX vGPU | 离散设备分配 |
+| 描述 | RemoteFX vGPU | 离散设备分配 |
 |--|--|--|
 | GPU 资源模型 | 专用或共享 | 仅专用 |
 | VM 密度 | 高 (多个 Vm 的一个或多个 Gpu)  | Low (一个或多个 Gpu 到一个 VM)  |

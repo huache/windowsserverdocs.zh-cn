@@ -1,20 +1,18 @@
 ---
 title: Getting Started with Group Managed Service Accounts
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-gmsa
 ms.topic: article
 ms.assetid: 7130ad73-9688-4f64-aca1-46a9187a46cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 70bdbc49bc1e173b488d5934bae0a5b4837c76f5
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: 728da4f2061156352045439a55cba7fa9e98ced9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775296"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971464"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -25,9 +23,9 @@ ms.locfileid: "83775296"
 
 **本文档内容**
 
--   [系统必备](#BKMK_Prereqs)
+-   [先决条件](#BKMK_Prereqs)
 
--   [介绍](#BKMK_Intro)
+-   [简介](#BKMK_Intro)
 
 -   [部署新服务器场](#BKMK_DeployNewFarm)
 
@@ -44,7 +42,7 @@ ms.locfileid: "83775296"
 ## <a name="prerequisites"></a><a name="BKMK_Prereqs"></a>先决条件
 请参阅[组托管服务帐户的要求](#BKMK_gMSA_Req)中本主题的该部分。
 
-## <a name="introduction"></a><a name="BKMK_Intro"></a>简介
+## <a name="introduction"></a><a name="BKMK_Intro"></a>介绍
 当客户端计算机使用网络负载平衡 (NLB) 或其他某些方法（其中所有服务器对于客户端而言似乎是相同的服务）连接到在服务器场中托管的某项服务时，无法使用支持相互身份验证的身份验证协议（如 Kerberos），除非服务的所有实例都使用同一主体。 这意味着每种服务必须使用相同的密码/密钥以证明它们的身份。
 
 > [!NOTE]
@@ -54,16 +52,16 @@ ms.locfileid: "83775296"
 
 |主体|范围|支持的服务|密码管理|
 |-------|-----|-----------|------------|
-|Windows 系统的计算机帐户|域|限于一个加入域的服务器|计算机管理|
-|没有 Windows 系统的计算机帐户|域|任何加入域的服务器|无|
+|Windows 系统的计算机帐户|Domain|限于一个加入域的服务器|计算机管理|
+|没有 Windows 系统的计算机帐户|Domain|任何加入域的服务器|None|
 |虚拟帐户|本地|限于一台服务器|计算机管理|
-|Windows 7 独立托管服务帐户|域|限于一个加入域的服务器|计算机管理|
-|用户帐户|域|任何加入域的服务器|无|
-|组托管服务帐户|域|任何已加入域的 Windows Server 2012 服务器|域控制器管理，以及主机检索|
+|Windows 7 独立托管服务帐户|Domain|限于一个加入域的服务器|计算机管理|
+|用户帐户|Domain|任何加入域的服务器|None|
+|组托管服务帐户|Domain|任何已加入域的 Windows Server 2012 服务器|域控制器管理，以及主机检索|
 
 Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟帐户无法在多个系统之间进行共享。 如果你为服务器场上的服务配置一个帐户以进行共享，则除了 Windows 系统以外，还必须选择一个用户帐户或计算机帐户。 无论哪种方式，这些帐户不具有单点控制密码管理功能。 这样做会带来麻烦，因为每个组织需要创建一个昂贵的解决方案，以便更新 Active Directory 中服务的密钥，然后将密钥分发给这些服务的所有实例。
 
-使用 Windows Server 2012，在使用组托管服务帐户（gMSA）时，服务或服务管理员不需要管理服务实例之间的密码同步。 在 AD 中设置 gMSA，然后配置支持托管服务帐户的服务。 可以使用作为 Active Directory 模块一部分的 *-ADServiceAccount cmdlet 来设置 gMSA。 主机上的服务标识配置受以下内容的支持：
+使用 Windows Server 2012，服务或服务管理员在使用组托管服务帐户 (gMSA) 时，不需要管理服务实例之间的密码同步。 在 AD 中设置 gMSA，然后配置支持托管服务帐户的服务。 可以使用作为 Active Directory 模块一部分的 *-ADServiceAccount cmdlet 来设置 gMSA。 主机上的服务标识配置受以下内容的支持：
 
 -   与 sMSA 相同的 API，以便支持 sMSA 的产品将支持 gMSA
 
@@ -95,7 +93,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
 -   GMSA 域的林中的 Active Directory 架构需要更新为 Windows Server 2012，以创建 gMSA。
 
-    你可以通过安装运行 Windows Server 2012 的域控制器或从运行 Windows Server 2012 的计算机运行 adprep.log 版本来更新架构。 对象“CN=Schema”、“CN=Configuration”、“DC=Contoso”、“DC=Com”的对象版本属性值必须为 52。
+    你可以通过安装运行 Windows Server 2012 的域控制器或从运行 Windows Server 2012 的计算机运行 adprep.exe 版本来更新架构。 对象“CN=Schema”、“CN=Configuration”、“DC=Contoso”、“DC=Com”的对象版本属性值必须为 52。
 
 -   已设置的新 gMSA 帐户
 
@@ -144,7 +142,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 必须至少具有“域管理员”****、“帐户操作员”**** 中的成员身份或能够创建 msDS-GroupManagedServiceAccount 对象才能完成下列过程。
 
 > [!NOTE]
-> -Name 参数的值始终是必需的（无论你指定的是名称还是不是指定的），其中-DNSHostName、-RestrictToSingleComputer 和-RestrictToOutboundAuthentication 是三个部署方案的次要要求。    
+> -Name 参数的值始终是必需的 (无论指定-Name 还是 not) ，使用-DNSHostName、-RestrictToSingleComputer 和-RestrictToOutboundAuthentication 作为三个部署方案的次要要求。
 
 
 #### <a name="to-create-a-gmsa-using-the-new-adserviceaccount-cmdlet"></a><a name="BKMK_CreateGMSA"></a>使用 New-adserviceaccount cmdlet 创建 gMSA
@@ -155,7 +153,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
     **Uninstall-adserviceaccount [-Name] &lt; 字符串 &gt; -DNSHostName &lt; string &gt; [-KerberosEncryptionType &lt; ADKerberosEncryptionType &gt; ] [-ManagedPasswordIntervalInDays <可为 null [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword <p a l [] >] [-SamAccountName &lt; string &gt; ] [-ServicePrincipalNames <string [] >]**
 
-    |参数|String|示例|
+    |参数|字符串|示例|
     |-------|-----|------|
     |名称|帐户的名称|ITFarm1|
     |DNSHostName|服务的 DNS 主机名称|ITFarm1.contoso.com|
@@ -167,7 +165,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
     > [!IMPORTANT]
     > 仅可以在创建过程中设置密码更改时间间隔。 如果需要更改时间间隔，你必须创建新的 gMSA 并在创建时对它进行设置。
-   
+
     **示例**
 
     在一个单独的行中输入命令，即使此处可能因格式限制而出现自动换行为多行。
@@ -186,7 +184,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
     **Uninstall-adserviceaccount [-Name] &lt; string &gt; -RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays <可以为 Null [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword <p a l [] >]**
 
-    |参数|String|示例|
+    |参数|字符串|示例|
     |-------|-----|------|
     |名称|命名帐户|ITFarm1|
     |ManagedPasswordIntervalInDays|密码更改时间间隔，以天为单位（如果不提供，则默认值为 30 天）|75|
@@ -194,7 +192,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
     > [!IMPORTANT]
     > 仅可以在创建过程中设置密码更改时间间隔。 如果需要更改时间间隔，你必须创建新的 gMSA 并在创建时对它进行设置。
-    
+
   **示例**
 
 ```PowerShell
@@ -219,7 +217,7 @@ New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsA
 其他服务可以支持 gMSA。 请参阅相应的产品文档以了解有关如何配置这些服务的详细信息。
 
 ## <a name="adding-member-hosts-to-an-existing-server-farm"></a><a name="BKMK_AddMemberHosts"></a>将成员主机添加到现有服务器场
-如果使用安全组来管理成员主机，请使用下列方法之一将新成员主机的计算机帐户添加到安全组（gMSA 的成员主机是其成员）。
+如果使用安全组来管理成员主机，请使用下列方法之一将新成员主机的计算机帐户添加到安全组， (gMSA 的成员主机是) 的成员。
 
 必须至少具有“域管理员”**** 中的成员身份或能够将成员添加到安全组对象才能完成这些过程。
 
@@ -251,7 +249,7 @@ New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsA
 
     **Uninstall-adserviceaccount [-Identity] &lt; string &gt; -PrincipalsAllowedToRetrieveManagedPassword <p a l [] >**
 
-|参数|String|示例|
+|参数|字符串|示例|
 |-------|-----|------|
 |名称|命名帐户|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|成员主机或成员主机是其成员的安全组的计算机帐户|Host1、Host2、Host3|
@@ -309,7 +307,7 @@ Set-ADServiceAccount [-Identity] ITFarm1 -PrincipalsAllowedToRetrieveManagedPass
 
     **Uninstall-adserviceaccount [-Identity] &lt; string &gt; -PrincipalsAllowedToRetrieveManagedPassword <p a l [] >**
 
-|参数|String|示例|
+|参数|字符串|示例|
 |-------|-----|------|
 |名称|命名帐户|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|成员主机或成员主机是其成员的安全组的计算机帐户|Host1、Host3|

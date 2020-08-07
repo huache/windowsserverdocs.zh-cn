@@ -1,22 +1,20 @@
 ---
 title: 在现有堡垒林中安装 HGS
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 331fc5a4e825dc4e7faf6f0a65605d7aaebf8314
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cb2fe57963ac2786586d75df2a783945e2fb7d11
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181693"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963773"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>在现有堡垒林中安装 HGS
 
->适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
 
 ## <a name="join-the-hgs-server-to-the-existing-domain"></a>将 HGS 服务器加入到现有域中
@@ -43,7 +41,7 @@ ms.locfileid: "87181693"
 
 ## <a name="group-managed-service-account"></a>组托管服务帐户
 
-组托管服务帐户（gMSA）是 HGS 用来检索和使用其证书的标识。 使用[uninstall-adserviceaccount](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adserviceaccount)创建 gMSA。
+组托管服务帐户 (gMSA) 是 HGS 用来检索和使用其证书的标识。 使用[uninstall-adserviceaccount](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adserviceaccount)创建 gMSA。
 如果这是域中的第一个 gMSA，则需要添加密钥分发服务根密钥。
 
 需要允许每个 HGS 节点访问 gMSA 密码。
@@ -78,7 +76,7 @@ GMSA 将需要在每个 HGS 服务器上的安全日志中生成事件的权限�
 
 ## <a name="jea-security-groups"></a>JEA 安全组
 
-设置 HGS 后，就会将[足够多的管理（JEA）](https://aka.ms/JEAdocs) PowerShell 终结点配置为允许管理员管理 HGS，无需具有完全的本地管理员权限。
+设置 HGS 时，可以将[足够的管理 (JEA) ](https://aka.ms/JEAdocs) PowerShell 终结点配置为允许管理员管理 HGS，无需具有完全的本地管理员权限。
 不需要使用 JEA 来管理 HGS，但必须在运行 HgsServer 时进行配置。
 JEA 终结点的配置包括指定包含 HGS 管理员和 HGS 审阅者的2个安全组。
 属于管理员组的用户可以在 HGS 上添加、更改或删除策略;审阅者只能查看当前配置。
@@ -95,7 +93,7 @@ New-ADGroup -Name 'HgsJeaAdmins' -GroupScope DomainLocal
 如果用于设置 HGS 的帐户不具有在域中创建新计算机对象的权限，则需要预先暂存群集对象。
 [在 Active Directory 域服务中预留群集计算机对象](https://technet.microsoft.com/library/dn466519(v=ws.11).aspx)中介绍了这些步骤。
 
-若要设置你的第一个 HGS 节点，你将需要创建一个群集名称对象（CNO）和一个虚拟计算机对象（VCO）。
+若要设置第一个 HGS 节点，你将需要创建一个 (CNO) 的群集名称对象和一个 (VCO) 的虚拟计算机对象。
 CNO 表示群集的名称，主要由故障转移群集内部使用。
 VCO 表示位于群集顶层的 HGS 服务，它将是注册到 DNS 服务器的名称。
 
@@ -150,5 +148,5 @@ Set-Acl -Path $vcoPath -AclObject $acl
 
 - 有关设置基于 TPM 的证明的后续步骤，请参阅[在现有堡垒林中使用 TPM 模式初始化 HGS 群集](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)。
 - 有关设置主机密钥证明的后续步骤，请参阅[使用现有堡垒林中的密钥模式初始化 HGS 群集](guarded-fabric-initialize-hgs-key-mode-bastion.md)。
-- 有关设置基于管理员的证明的后续步骤（在 Windows Server 2019 中不推荐使用），请参阅[在现有堡垒林中使用 AD 模式初始化 HGS 群集](guarded-fabric-initialize-hgs-ad-mode-bastion.md)。
+- 若要在 Windows Server 2019) 中 (弃用的后续步骤设置基于管理员的证明，请参阅[在现有堡垒林中使用 AD 模式初始化 HGS 群集](guarded-fabric-initialize-hgs-ad-mode-bastion.md)。
 

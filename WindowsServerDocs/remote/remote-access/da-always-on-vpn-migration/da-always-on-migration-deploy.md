@@ -2,19 +2,17 @@
 title: 从 DirectAccess 迁移到 Always On VPN
 description: 从 DirectAccess 迁移到 Always On VPN 需要一个特定的进程来迁移客户端，这有助于最大程度地减少执行迁移步骤时出现的争用情况。
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
 ms.author: lizross
 author: eross-msft
 ms.date: 06/07/2018
-ms.openlocfilehash: 68184fe43fd027ea24bd0e77623002ec88368e86
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a452c9ab1a24304a9acfec8357bc98a3d058e03c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517692"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971744"
 ---
 # <a name="migrate-to-always-on-vpn-and-decommission-directaccess"></a>迁移到始终启用 VPN 并解除 DirectAccess 授权
 
@@ -68,7 +66,7 @@ ms.locfileid: "87517692"
 >[!NOTE]
 >Microsoft 建议你在执行此过程之前，先对其进行测试，然后再执行任何用户迁移环。
 
-1.  **创建并发布 VPN 证书，并启用自动注册组策略对象（GPO）。** 对于传统的基于证书的 Windows 10 VPN 部署，会向设备或用户颁发证书，使其能够对连接进行身份验证。 为自动注册创建并发布新的身份验证证书时，必须使用配置为 VPN 用户组的自动注册设置来创建和部署 GPO。 有关配置证书和自动注册的步骤，请参阅[配置服务器基础结构](../vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure.md)。
+1.  **创建并发布 VPN 证书，并组策略 (GPO) 启用自动注册。** 对于传统的基于证书的 Windows 10 VPN 部署，会向设备或用户颁发证书，使其能够对连接进行身份验证。 为自动注册创建并发布新的身份验证证书时，必须使用配置为 VPN 用户组的自动注册设置来创建和部署 GPO。 有关配置证书和自动注册的步骤，请参阅[配置服务器基础结构](../vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure.md)。
 
 2.  **将用户添加到 VPN 用户组。** 添加任何迁移到 VPN 用户组的用户。 这些用户在迁移后会在该安全组中保留，以便以后可以接收任何证书更新。 继续向此组添加用户，直到将每个用户从 DirectAccess 移动到 Always On VPN。
 
@@ -125,7 +123,7 @@ ms.locfileid: "87517692"
 | Configuration Manager | 基于该安全组的成员身份创建一个用户集合。<br><br>!["条件属性" 对话框](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)|
 | Intune | 只需在同步后直接以安全组为目标。 |
 
-每次运行**GetUsersWithCert.ps1**配置脚本时，还必须运行 AD DS 发现规则来更新 Configuration Manager 中的安全组成员身份。 此外，请确保部署集合的成员身份更新经常发生（与脚本和发现规则对齐）。
+每次运行**GetUsersWithCert.ps1**配置脚本时，还必须运行 AD DS 发现规则来更新 Configuration Manager 中的安全组成员身份。 此外，请确保部署集合的成员身份更新经常与脚本和发现规则)  (一致。
 
 有关使用 Configuration Manager 或 Intune 将 Always On VPN 部署到 Windows 客户端的其他信息，请参阅[Always On 适用于 Windows Server 和 windows 10 的 Vpn 部署](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)。 但是，请务必合并这些特定于迁移的任务。
 
@@ -138,7 +136,7 @@ ms.locfileid: "87517692"
 当用户收到身份验证证书和**VPN_Profile.ps1**配置脚本时，你会在 Configuration Manager 或 Intune 中看到对应的成功 VPN 配置脚本部署。 在每次部署后，从 DirectAccess 安全组中删除该用户的设备，以便以后可以删除 DirectAccess。 Intune 和 Configuration Manager 都包含用户设备分配信息，以帮助你确定每个用户的设备。
 
 >[!NOTE]
->如果要通过组织单位（Ou）而不是计算机组来应用 DirectAccess Gpo，请将用户的计算机对象移出 OU。
+>如果要通过组织单位 (Ou) 而不是计算机组来应用 DirectAccess Gpo，请将用户的计算机对象移出 OU。
 
 ## <a name="decommission-the-directaccess-infrastructure"></a>停止 DirectAccess 基础结构
 

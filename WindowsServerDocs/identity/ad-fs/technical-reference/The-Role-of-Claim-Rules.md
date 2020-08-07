@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 2152d6a242f829b56207632d214a1fc73e48515d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 410e9ce5fbde7d84cbb4efbbde3515d0af537180
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959589"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937884"
 ---
 # <a name="the-role-of-claim-rules"></a>声明规则的角色
 Active Directory 联合身份验证服务 AD FS 中联合身份验证服务的总体功能 \( \) 是颁发一个包含声明集的令牌。 有关 AD FS 接受的声明，然后发出问题的决策由声明规则控制。
@@ -97,7 +95,7 @@ AD FS 包含一组预定义的声明规则模板，旨在帮助你轻松选择�
 
 下表介绍各种类型的声明规则集并说明其与声明提供方信任或信赖方信任的关系。
 
-|声明规则集类型|说明|用于|
+|声明规则集类型|描述|用于|
 |-----------------------|---------------|-----------|
 |接受转换规则集|对特定声明提供方信任使用的声明规则集，用于指定从声明提供方组织接受的传入声明和发送到信赖方信任的传出声明。<p>用作此规则集来源的传入声明会是由声明提供方组织中指定的发出转换规则集输出的声明。<p>默认情况下，声明提供方信任节点包含名为“Active Directory”**** 的声明提供方信任，它用于表示接受转换规则集的源属性存储。 此信任对象用于表示从联合身份验证服务到网络上的 Active Directory 数据库的连接。 此默认信任是为由 Active Directory 进行了身份验证的用户处理声明的对象，无法删除。|声明提供方信任|
 |发出转换规则|对信赖方信任使用的声明规则集，用于指定向信赖方发出的声明。<p>用作此规则集来源的传入声明最初会是由接受转换规则集输出的声明。|信赖方信任|

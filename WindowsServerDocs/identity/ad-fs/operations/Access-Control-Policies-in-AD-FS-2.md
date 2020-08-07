@@ -5,14 +5,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 110bc74d6b77c63fc6a9554049b5adb940f2641d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3cf37c1fad67c652f67f4e862780c740ae5ebe60
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962669"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947291"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 中的客户端访问控制策略
 Active Directory 联合身份验证服务2.0 中的客户端访问策略允许你限制或授予用户对资源的访问权限。  本文档介绍如何在 AD FS 2.0 中启用客户端访问策略以及如何配置最常见的方案。
@@ -23,7 +21,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 ### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>步骤1：在 AD FS 服务器上安装 AD FS 2.0 包的更新汇总2
 
-下载[Active Directory 联合身份验证服务（AD FS）2.0 包的更新汇总 2](https://support.microsoft.com/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) ，并将其安装在所有联合服务器和联合服务器代理上。
+下载[Active Directory 联合身份验证服务 (AD FS) 2.0 包的更新汇总 2](https://support.microsoft.com/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) ，并将其安装在所有联合服务器和联合服务器代理上。
 
 ### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>步骤2：将五个声明规则添加到 Active Directory 声明提供方信任
 
@@ -74,13 +72,13 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 
 1. 单击 "开始"，依次指向 "程序"、"管理工具"，然后单击 "AD FS 2.0 管理"。
-2. 在控制台树中的 "AD FS 2.0 \ 信任关系" 下，单击 "信赖方信任"，右键单击 Microsoft Office 365 "标识平台信任"，然后单击 "编辑声明规则"。 
+2. 在控制台树中的 "AD FS 2.0 \ 信任关系" 下，单击 "信赖方信任"，右键单击 Microsoft Office 365 "标识平台信任"，然后单击 "编辑声明规则"。
 3. 在 "编辑声明规则" 对话框中，选择 "颁发授权规则" 选项卡，然后单击 "添加规则" 以启动声明规则向导。
 4. 在 "选择规则模板" 页上的 "声明规则模板" 下，选择 "使用自定义规则发送声明"，然后单击 "下一步"。
 5. 在 "配置规则" 页上的 "声明规则名称" 下，键入此规则的显示名称。 在 "自定义规则" 下，键入或粘贴以下声明规则语言语法：`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
-    => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
+    => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
 6. 单击“完成”。 验证 "颁发授权规则" 列表中的 "允许访问所有用户的规则" 下面是否出现了新规则。
 7. 若要保存规则，请在 "编辑声明规则" 对话框中，单击 "确定"。
 
@@ -97,7 +95,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 
 1. 单击 "开始"，依次指向 "程序"、"管理工具"，然后单击 "AD FS 2.0 管理"。
-2. 在控制台树中的 "AD FS 2.0 \ 信任关系" 下，单击 "信赖方信任"，右键单击 Microsoft Office 365 "标识平台信任"，然后单击 "编辑声明规则"。 
+2. 在控制台树中的 "AD FS 2.0 \ 信任关系" 下，单击 "信赖方信任"，右键单击 Microsoft Office 365 "标识平台信任"，然后单击 "编辑声明规则"。
 3. 在 "编辑声明规则" 对话框中，选择 "颁发授权规则" 选项卡，然后单击 "添加规则" 以启动声明规则向导。
 4. 在 "选择规则模板" 页上的 "声明规则模板" 下，选择 "使用自定义规则发送声明"，然后单击 "下一步"。
 5. 在 "配置规则" 页上的 "声明规则名称" 下，键入此规则的显示名称。 在 "自定义规则" 下，键入或粘贴以下声明规则语言语法：`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
@@ -119,14 +117,14 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 规则集建立在名为 "允许所有用户访问" 的默认颁发授权规则之上。 使用以下步骤，通过声明规则向导将颁发授权规则添加到 Microsoft Office 365 标识平台信赖方信任：
 
 >[!NOTE]
->此方案不受第三方代理的支持，因为对客户端访问策略标头具有被动（基于 Web）请求的限制。
+>此方案不受第三方代理的支持，因为对客户端访问策略标头具有被动 (基于 Web 的) 请求存在限制。
 
 #### <a name="to-create-a-rule-to-block-all-external-access-to-office-365-except-browser-based-applications"></a>创建规则以阻止对 Office 365 的所有外部访问（基于浏览器的应用程序除外）
 
 
 
 1. 单击 "开始"，依次指向 "程序"、"管理工具"，然后单击 "AD FS 2.0 管理"。
-2. 在控制台树中的 "AD FS 2.0 \ 信任关系" 下，单击 "信赖方信任"，右键单击 Microsoft Office 365 "标识平台信任"，然后单击 "编辑声明规则"。 
+2. 在控制台树中的 "AD FS 2.0 \ 信任关系" 下，单击 "信赖方信任"，右键单击 Microsoft Office 365 "标识平台信任"，然后单击 "编辑声明规则"。
 3. 在 "编辑声明规则" 对话框中，选择 "颁发授权规则" 选项卡，然后单击 "添加规则" 以启动声明规则向导。
 4. 在 "选择规则模板" 页上的 "声明规则模板" 下，选择 "使用自定义规则发送声明"，然后单击 "下一步"。
 5. 在 "配置规则" 页上的 "声明规则名称" 下，键入此规则的显示名称。 在 "自定义规则" 下，键入或粘贴以下声明规则语言语法：`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
@@ -146,7 +144,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 
 1. 单击 "开始"，依次指向 "程序"、"管理工具"，然后单击 "AD FS 2.0 管理"。
-2. 在控制台树中的 "AD FS 2.0 \ 信任关系" 下，单击 "信赖方信任"，右键单击 Microsoft Office 365 "标识平台信任"，然后单击 "编辑声明规则"。 
+2. 在控制台树中的 "AD FS 2.0 \ 信任关系" 下，单击 "信赖方信任"，右键单击 Microsoft Office 365 "标识平台信任"，然后单击 "编辑声明规则"。
 3. 在 "编辑声明规则" 对话框中，选择 "颁发授权规则" 选项卡，然后单击 "添加规则" 以启动声明规则向导。
 4. 在 "选择规则模板" 页上的 "声明规则模板" 下，选择 "使用自定义规则发送声明"，然后单击 "下一步"。
 5. 在 "配置规则" 页上的 "声明规则名称" 下，键入此规则的显示名称。 在 "自定义规则" 下，键入或粘贴以下声明规则语言语法：`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
@@ -160,30 +158,30 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 ### <a name="descriptions-of-the-claim-rule-language-syntax-used-in-the-above-scenarios"></a>上述方案中使用的声明规则语言语法的说明
 
-|                                                                                                   说明                                                                                                   |                                                                     声明规则语言语法                                                                     |
+|                                                                                                   描述                                                                                                   |                                                                     声明规则语言语法                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              默认 AD FS 规则，以允许访问所有用户。 此规则应已存在于 Microsoft Office 365 标识平台信赖方信任颁发授权规则列表中。              |                                  => 问题（类型 = " <https://schemas.microsoft.com/authorization/claims/permit> "，值 = "true"）;                                   |
-|                               如果将此子句添加到新的自定义规则，则指定请求来自联合服务器代理（即，它具有 x ms proxy 标头）                                |                                                                                                                                                                    |
-|                                                                                 建议所有规则都包含此。                                                                                  |                                    exists （[Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy> "]）                                    |
-|                                                         用于确定请求来自具有定义的可接受范围内的 IP 的客户端。                                                         | 不存在（[Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip> "，值 = ~ "客户提供的公共 ip 地址正则表达式"]） |
-|                                    此子句用于指定如果访问的应用程序不是 Microsoft，则应拒绝该请求。                                     |       不存在（[Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application> "，值 = = "        |
-|                                                      此规则允许你确定调用是否是通过 Web 浏览器进行的，并且不会被拒绝。                                                      |              不存在（[Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path> "，值 = = "/adfs/ls/"]）               |
-| 此规则指出特定 Active Directory 组中的唯一用户（基于 SID 值）应被拒绝。 如果将 NOT 添加到此语句，则表示将允许一组用户，而不考虑位置。 |             exists （[Type = = " <https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid> "，值 = ~ "{组 SID 允许的 AD 组的值}"]）              |
-|                                                                这是在满足前面所有条件时发出拒绝的必需子句。                                                                 |                                   => 问题（类型 = " <https://schemas.microsoft.com/authorization/claims/deny> "，值 = "true"）;                                    |
+|              默认 AD FS 规则，以允许访问所有用户。 此规则应已存在于 Microsoft Office 365 标识平台信赖方信任颁发授权规则列表中。              |                                  => 问题 (类型 = " <https://schemas.microsoft.com/authorization/claims/permit> "，值 = "true" ) ;                                   |
+|                               如果将此子句添加到新的自定义规则，则指定请求来自联合服务器代理 (也就是说，它具有 x ms proxy 标头)                                 |                                                                                                                                                                    |
+|                                                                                 建议所有规则都包含此。                                                                                  |                                    存在 ( [Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy> "] )                                     |
+|                                                         用于确定请求来自具有定义的可接受范围内的 IP 的客户端。                                                         | 不存在 ( [Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip> "，Value = ~ "客户提供的公共 ip 地址正则表达式"] )  |
+|                                    此子句用于指定如果访问的应用程序不是 Microsoft，则应拒绝该请求。                                     |       不存在 ( [Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application> "，Value = = ") "]        |
+|                                                      此规则允许你确定调用是否是通过 Web 浏览器进行的，并且不会被拒绝。                                                      |              不存在 ( [Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path> "，Value = = "/adfs/ls/"] )                |
+| 此规则指出，只应拒绝特定 Active Directory 组 (基于 SID 值) 的用户。 如果将 NOT 添加到此语句，则表示将允许一组用户，而不考虑位置。 |             存在 ( [Type = = " <https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid> "，值 = ~ "{组 SID 允许的 AD 组的值}"] )               |
+|                                                                这是在满足前面所有条件时发出拒绝的必需子句。                                                                 |                                   => 问题 (类型 = " <https://schemas.microsoft.com/authorization/claims/deny> "，值 = "true" ) ;                                    |
 
 ### <a name="building-the-ip-address-range-expression"></a>构建 IP 地址范围表达式
 
 从当前由 Exchange Online 设置的 HTTP 标头中填充了 x ms 转发的客户端 ip 声明，这会在将身份验证请求传递到 AD FS 时填充标头。 声明的值可以是下列值之一：
 
->[!Note] 
+>[!Note]
 >Exchange Online 当前只支持 IPV4，而不支持 IPV6 地址。
 
 单个 IP 地址：直接连接到 Exchange Online 的客户端的 IP 地址
 
->[!Note] 
+>[!Note]
 >企业网络上的客户端的 IP 地址将显示为组织的出站代理或网关的外部接口 IP 地址。
 
-通过 VPN 或 Microsoft DirectAccess （DA）连接到公司网络的客户端可以显示为内部企业客户端，也可以作为外部客户端出现，具体取决于 VPN 或 DA 的配置。
+通过 VPN 或 Microsoft DirectAccess (DA) 连接到公司网络的客户端可能会显示为内部企业客户端或作为外部客户端（具体取决于 VPN 或 DA 的配置）。
 
 一个或多个 IP 地址：当 Exchange Online 无法确定正在连接的客户端的 IP 地址时，它将基于 x 转发的标头的值设置值，这是一个可包含在基于 HTTP 的请求中的非标准标头，由许多客户端、负载平衡器和市场上的代理提供支持。
 
@@ -195,7 +193,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 #### <a name="regular-expressions"></a>“正则表达式”
 
-当必须与某个范围的 IP 地址匹配时，需要构造一个正则表达式来执行比较。 在接下来的一系列步骤中，我们将为如何构造此类表达式来匹配以下地址范围提供示例（请注意，必须更改这些示例以匹配公共 IP 范围）：
+当必须与某个范围的 IP 地址匹配时，需要构造一个正则表达式来执行比较。 在接下来的一系列步骤中，我们将提供有关如何构造此类表达式以匹配以下地址 (范围的示例，请注意，必须更改这些示例以匹配公共 IP 范围) ：
 
 
 - 192.168.1.1 –192.168.1.25
@@ -205,11 +203,11 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 展开此项可将两个不同的 IP 地址与 OR 表达式匹配，如下所示： \b # # # \. ### \. ### \. # # # \b | \b # \. ### \. ### \. # # # # # \b
 
-因此，只匹配两个地址（如192.168.1.1 或10.0.0.1）的示例为： \b192 \. 168 \. 1 \. 1 \ b | \b10 \. 0 \. 0 \. 1 \ b
+因此，只匹配两个地址 (如192.168.1.1 或 10.0.0.1) 的示例将为： \b192 \. 168 \. 1 \. 1 \ b | \b10 \. 0 \. 0 \. 1 \ b
 
-这为你提供了可用于输入任意数量的地址的方法。 如果需要允许的地址范围（例如192.168.1.1 –192.168.1.25），则匹配必须是 by 字符： \b192 \. 168 \. 1 \. （[1-9] | 1 [0-9] | 2 [0-5]） \b
+这为你提供了可用于输入任意数量的地址的方法。 如果需要允许的地址范围（例如192.168.1.1 –192.168.1.25），则匹配必须是字符： \b192 \. 168 \. 1 \. ( [1-9] | 1 [0-9] | 2 [0-5] ) \b
 
->[!Note] 
+>[!Note]
 >IP 地址被视为字符串而不是数字。
 
 
@@ -220,26 +218,26 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 以下内容与最后一个小数点后面的地址部分所需的范围匹配：
 
 
-- （[1-9] 匹配以1-9 结尾的地址
+-  ( [1-9] 匹配以1-9 结尾的地址
 - | 1 [0-9] 匹配以10-19 结尾的地址
-- | 2 [0-5]）匹配以20-25 结尾的地址
+- | 2 [0-5] ) 匹配以20-25 结尾的地址
 
 >[!Note]
 >必须正确定位括号，以便不会开始匹配 IP 地址的其他部分。
 
-使用匹配的192块，我们可以为10块编写类似的表达式： \b10 \. 0 \. 0 \. （[1-9] | 1 [0-4]） \b
+使用匹配的192块，我们可以为10块编写类似的表达式： \b10 \. 0 \. 0 \. ( [1-9] | 1 [0-4] ) \b
 
-将其放在一起，以下表达式应匹配 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14" 的所有地址： \b192 \. 168 \. 1 \. （[1-9] | 1 [0-9] | 2 [0-5]） \b | \b10 \. 0 \. 0 \. （[1-9] | 1 [0-4]） \b
+将其放在一起，以下表达式应匹配 "192.168.1.1 ~ 25" 和 "10.0.0.1 ~ 14"： \b192 \. 168 \. 1 \. ( [1-9] | 1 [0-9] | 2 [0-5] ) \b | \b10 \. 0 \. 0 \. ( [1-9] | 1 [0-4] ) \b
 
 #### <a name="testing-the-expression"></a>测试表达式
 
 正则表达式表达式可能会变得相当复杂，因此强烈建议使用 regex 验证工具。 如果您在 internet 上搜索 "联机 regex 表达式生成器"，您将看到多个有效的联机实用程序，您可以使用这些实用程序来尝试使用示例数据。
 
-测试表达式时，必须了解需要匹配的内容，这一点非常重要。 Exchange online 系统可能会发送多个 IP 地址，用逗号分隔。 上面提供的表达式适用于这种情况。 但是，在测试正则表达式时要考虑这一点。 例如，可以使用以下示例输入来验证上述示例： 
+测试表达式时，必须了解需要匹配的内容，这一点非常重要。 Exchange online 系统可能会发送多个 IP 地址，用逗号分隔。 上面提供的表达式适用于这种情况。 但是，在测试正则表达式时要考虑这一点。 例如，可以使用以下示例输入来验证上述示例：
 
-192.168.1.1、192.168.1.2、192.169.1.1。 192.168.12.1、192.168.1.10、192.168.1.25、192.168.1.26、192.168.1.30、1192.168.1.20 
+192.168.1.1、192.168.1.2、192.169.1.1。 192.168.12.1、192.168.1.10、192.168.1.25、192.168.1.26、192.168.1.30、1192.168.1.20
 
-10.0.0.1、10.0.0.5、10.0.0.10、10.0.1.0、10.0.1.1、110.0.0.1、10.0.0.14、10.0.0.15、10.0.0.10、10、0.0。1 
+10.0.0.1、10.0.0.5、10.0.0.10、10.0.1.0、10.0.1.1、110.0.0.1、10.0.0.14、10.0.0.15、10.0.0.10、10、0.0。1
 
 
 
@@ -255,7 +253,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 ### <a name="security-audit-logs"></a>安全审核日志
 
-若要验证是否正在发送新请求上下文声明并将其提供给 AD FS 声明处理管道，请在 AD FS 服务器上启用审核日志记录。 然后发送一些身份验证请求，并检查标准安全审核日志条目中的声明值。 
+若要验证是否正在发送新请求上下文声明并将其提供给 AD FS 声明处理管道，请在 AD FS 服务器上启用审核日志记录。 然后发送一些身份验证请求，并检查标准安全审核日志条目中的声明值。
 
 若要启用对 AD FS 服务器上的安全日志的审核事件日志记录，请按照配置 AD FS 2.0 的审核中的步骤进行操作。
 
@@ -267,7 +265,7 @@ Active Directory 联合身份验证服务2.0 中的客户端访问策略允许�
 
 AD FS 跟踪事件记录到 AD FS 2.0 调试日志中。 若要启用跟踪，请参阅[为 AD FS 2.0 配置调试跟踪](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641696(v=ws.10))。
 
-启用跟踪后，请使用以下命令行语法启用详细日志记录级别： wevtutil.exe sl "AD FS 2.0 跟踪/调试"/l：5  
+启用跟踪后，请使用以下命令行语法启用详细日志记录级别： wevtutil.exe sl "AD FS 2.0 跟踪/调试"/l：5
 
 ## <a name="related"></a>相关内容
 有关新声明类型的详细信息，请参阅[AD FS 声明类型](AD-FS-Claims-Types.md)。

@@ -1,33 +1,31 @@
 ---
 title: 创建密钥分发服务 KDS 根密钥
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-gmsa
 ms.topic: article
 ms.assetid: 42e5db8f-1516-4d42-be0a-fa932f5588e9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: d26cd32f021e8b00c6c9c6d3949a00f71096a3c9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 90fa1203f09bc04b27885034895e52db5fa1c5f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857010"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971484"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>创建密钥分发服务 KDS 根密钥
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-适用于 IT 专业人员的本主题介绍如何使用 Windows PowerShell 在 Windows Server 2012 或更高版本中生成组托管服务帐户密码，在域控制器上创建 Microsoft 密钥分发服务（kdssvc.dll）根密钥。
+面向 IT 专业人员的本主题介绍如何使用 Windows PowerShell 在 Windows Server 2012 或更高版本中生成组托管服务帐户密码，从而在域控制器上 ( # A0) 根密钥创建 Microsoft 密钥分发服务。
 
-域控制器（DC）要求使用根密钥开始生成 gMSA 密码。 从创建时到允许所有域控制器聚合其 AD 复制，域控制器将最长等待 10 小时，才能允许创建 gMSA。 设置为 10 小时是一项安全措施，可防止在环境中的所有 DC 都能应答 gMSA 请求之前生成密码。  如果尝试使用 gMSA，该密钥可能尚未复制到所有域控制器，因此当 gMSA 主机尝试检索密码时，密码检索可能会失败。 如果使用具有受限复制计划的 DC 或者出现复制问题，gMSA 密码检索失败也会发生。
+域控制器 (DC) 需要使用根密钥开始生成 gMSA 密码。 从创建时到允许所有域控制器聚合其 AD 复制，域控制器将最长等待 10 小时，才能允许创建 gMSA。 设置为 10 小时是一项安全措施，可防止在环境中的所有 DC 都能应答 gMSA 请求之前生成密码。  如果尝试使用 gMSA，该密钥可能尚未复制到所有域控制器，因此当 gMSA 主机尝试检索密码时，密码检索可能会失败。 如果使用具有受限复制计划的 DC 或者出现复制问题，gMSA 密码检索失败也会发生。
 
 > [!NOTE]
-> 删除并重新创建根密钥可能会导致出现这样的问题：由于缓存了密钥，因此在删除旧密钥后将继续使用旧密钥。 如果重新创建了根密钥，则应在所有域控制器上重新启动密钥分发服务（KDC）。
+> 删除并重新创建根密钥可能会导致出现这样的问题：由于缓存了密钥，因此在删除旧密钥后将继续使用旧密钥。 如果重新创建了根密钥，则应在所有域控制器上重新启动 (KDC) 的密钥分发服务。
 
-“域管理员” 或“企业管理员” 组中的成员身份或同等身份是完成此过程的最低要求。 有关使用适当帐户和组成员身份的详细信息，请参阅 [本地和域默认组](https://technet.microsoft.com/library/dd728026(WS.10).aspx)。
+“域管理员”**** 或“企业管理员”**** 组中的成员身份或同等身份是完成此过程的最低要求。 有关使用适当帐户和组成员身份的详细信息，请参阅 [本地和域默认组](https://technet.microsoft.com/library/dd728026(WS.10).aspx)。
 
 > [!NOTE]
 > 要运行用于管理组托管服务帐户的 Windows PowerShell 命令，需要 64 位体系结构。
@@ -51,17 +49,17 @@ ms.locfileid: "80857010"
 
 2.  在 Windows PowerShell Active Directory 模块的命令提示符下键入以下命令，然后按 ENTER：
 
-    **$a = 获取-日期**
+    **$a=Get-Date**
 
-    **$b = $a AddHours （-10）**
+    **$b=$a.AddHours(-10)**
 
     **New-kdsrootkey-EffectiveTime $b**
 
     或使用单个命令
 
-    **New-kdsrootkey-EffectiveTime （（get-help）. addhours （-10））**
+    **New-kdsrootkey-EffectiveTime ( # B1 获取-日期) . addhours (-10) # B5**
 
 ## <a name="see-also"></a>另请参阅
-[组托管服务帐户入门](getting-started-with-group-managed-service-accounts.md)
+[与组托管服务帐户入门](getting-started-with-group-managed-service-accounts.md)
 
 

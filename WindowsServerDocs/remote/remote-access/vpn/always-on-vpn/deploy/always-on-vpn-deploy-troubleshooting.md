@@ -1,26 +1,24 @@
 ---
 title: 排查 Always On VPN 问题
 description: 本主题提供有关在 Windows Server 2016 中验证和排查 Always On VPN 部署问题的说明。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
 ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: bbb614886099bf2adc1239a699ef8d904e71be7b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f1e4713e6d658e6a51955e321e39cb7f90e261a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961779"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963803"
 ---
-# <a name="troubleshoot-always-on-vpn"></a>排查 Always On VPN 问题 
+# <a name="troubleshoot-always-on-vpn"></a>排查 Always On VPN 问题
 
->适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>适用于： Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows 10
 
-如果 Always On VPN 安装程序未能将客户端连接到内部网络，原因可能是无效的 VPN 证书、NPS 策略不正确，或者是客户端部署脚本或路由和远程访问中的问题。 对 VPN 连接进行故障排除和测试的第一步是了解 Always On VPN 基础结构的核心组件。 
+如果 Always On VPN 安装程序未能将客户端连接到内部网络，原因可能是无效的 VPN 证书、NPS 策略不正确，或者是客户端部署脚本或路由和远程访问中的问题。 对 VPN 连接进行故障排除和测试的第一步是了解 Always On VPN 基础结构的核心组件。
 
 可以通过多种方式对连接问题进行故障排除。 对于客户端问题和一般故障排除，客户端计算机上的应用程序日志非常有用。 对于特定于身份验证的问题，NPS 服务器上的 NPS 日志可帮助你确定问题的根源。
 
@@ -36,19 +34,19 @@ ms.locfileid: "86961779"
 
     - 如果知道要将哪个隧道用于部署，请在 VPN 客户端将 VPN 类型设置为该特定隧道类型。
 
-    - 通过建立具有特定隧道类型的 VPN 连接，连接仍然会失败，但会导致更多的特定于隧道的错误（例如，"已阻止 PPTP 的 PPTP"）。
+    - 通过建立具有特定隧道类型的 VPN 连接，连接仍然会失败，但会导致更多的特定于隧道的错误 (例如，"已阻止 PPTP 的 GRE" ) 。
 
     - 当无法访问 VPN 服务器或隧道连接失败时，也会出现此错误。
 
 - **请确保：**
 
-    - IKE 端口（UDP 端口500和4500）不会被阻止。
+    -  (UDP 端口500和 4500) 的 IKE 端口不会被阻止。
 
     - IKE 的正确证书同时存在于客户端和服务器上。
 
 ### <a name="error-code-809"></a>错误代码：809
 
-- **错误说明。**  由于远程服务器不响应，因此无法建立计算机与 VPN 服务器之间的网络连接。 这可能是因为你的计算机与远程服务器之间的网络设备（例如防火墙、NAT、路由器）之一未配置为允许 VPN 连接。 请与您的管理员或服务提供商联系，以确定可能导致问题的设备。
+- **错误说明。**  由于远程服务器不响应，因此无法建立计算机与 VPN 服务器之间的网络连接。 这可能是因为其中一个网络设备 (例如，计算机和远程服务器之间的防火墙、NAT、路由器) 未配置为允许 VPN 连接。 请与您的管理员或服务提供商联系，以确定可能导致问题的设备。
 
 - **可能的原因。** 此错误是由 VPN 服务器或防火墙上被阻止的 UDP 500 或4500端口引起的。
 
@@ -148,7 +146,7 @@ NPS 日志有助于诊断与策略相关的问题。 有关 NPS 日志的详细�
 
 2. 是否可以将远程访问/vpn 服务器名称解析为 IP 地址？ 在 "控制面板" 的 **"**  >  **网络**和**Internet**  >  **网络连接**" 中，打开 VPN 配置文件的属性。 "**常规**" 选项卡中的值应可通过 DNS 公开解析。
 
-3. 是否可以通过外部网络访问 VPN 服务器？ 考虑将 Internet 控制消息协议（ICMP）打开到外部接口，并从远程客户端对名称进行 ping 操作。 Ping 成功后，可以删除 ICMP 允许规则。
+3. 是否可以通过外部网络访问 VPN 服务器？ 请考虑打开 Internet 控制消息协议 (ICMP) 到外部接口，并从远程客户端对名称进行 ping 操作。 Ping 成功后，可以删除 ICMP 允许规则。
 
 4. VPN 服务器上的内部和外部 Nic 是否配置正确？ 它们是在不同的子网中吗？ 外部 NIC 是否连接到防火墙上的正确接口？
 
@@ -170,15 +168,15 @@ NPS 日志有助于诊断与策略相关的问题。 有关 NPS 日志的详细�
 
   - 用户在其个人证书存储区中具有有效的客户端身份验证证书，该证书不是由 Azure AD 颁发的。
 
-  - VPN 配置文件 \<TLSExtensions\> 部分丢失或不包含** \<EKUName\> aad 条件访问 \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87</Ekuoid \> \<EKUName> aad 条件访问</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87</ekuoid \> **条目。 \<EKUName>和 \<EKUOID> 条目告诉 vpn 客户端在将证书传递给 vpn 服务器时要从用户的证书存储中检索的证书。 如果不这样做，VPN 客户端将使用用户证书存储区中任何有效的客户端身份验证证书，并且身份验证成功。 
+  - VPN 配置文件 \<TLSExtensions\> 部分丢失或不包含** \<EKUName\> aad 条件访问 \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87</Ekuoid \> \<EKUName> aad 条件访问</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87</ekuoid \> **条目。 \<EKUName>和 \<EKUOID> 条目告诉 vpn 客户端在将证书传递给 vpn 服务器时要从用户的证书存储中检索的证书。 如果不这样做，VPN 客户端将使用用户证书存储区中任何有效的客户端身份验证证书，并且身份验证成功。
 
-  - RADIUS 服务器（NPS）未配置为仅接受包含**AAD 条件访问**OID 的客户端证书。
+  - RADIUS 服务器 (NPS) 尚未配置为仅接受包含**AAD 条件访问**OID 的客户端证书。
 
 - **可能的解决方案。** 若要对此循环进行转义，请执行以下操作：
 
-  1. 在 Windows PowerShell 中，运行**get-wmiobject** cmdlet 以转储 VPN 配置文件配置。 
+  1. 在 Windows PowerShell 中，运行**get-wmiobject** cmdlet 以转储 VPN 配置文件配置。
   2. 验证 **\<TLSExtensions>** 、 **\<EKUName>** 和 **\<EKUOID>** 节是否存在，并显示正确的名称和 OID。
-      
+
       ```powershell
       PS C:\> Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\cimv2\mdm\dmmap
 
@@ -261,7 +259,7 @@ NPS 日志有助于诊断与策略相关的问题。 有关 NPS 日志的详细�
         Simple container name: te-User-c7bcc4bd-0498-4411-af44-da2257f54387
         Provider = Microsoft Enhanced Cryptographic Provider v1.0
       Encryption test passed
-        
+
       ================ Certificate 1 ================
       Serial Number: 367fbdd7e6e4103dec9b91f93959ac56
       Issuer: CN=Microsoft VPN root CA gen 1
@@ -279,8 +277,8 @@ NPS 日志有助于诊断与策略相关的问题。 有关 NPS 日志的详细�
      >[!NOTE]
      >如果用户的个人存储区中存在来自颁发者**CN = MICROSOFT VPN 根 CA 第1代**的证书，但用户通过选择**X**来获取访问权限来关闭糟糕消息，则收集 CAPI2 事件日志以验证用于身份验证的证书是不是从 Microsoft VPN 根 CA 颁发的有效客户端身份验证证书。
 
-  4. 如果用户的个人存储区中存在有效的客户端身份验证证书，则在用户选择**X**之后连接将失败（应如此），并且如果 **\<TLSExtensions>** 、 **\<EKUName>** 和 **\<EKUOID>** 部分存在并且包含正确的信息。
-   
+  4. 如果用户的个人存储区中存在有效的客户端身份验证证书，则连接将会失败， (应在用户选择**X**之后) **\<TLSExtensions>** 、 **\<EKUName>** 和 **\<EKUOID>** 部分存在并且包含正确的信息。
+
      出现一条错误消息，显示 "找不到可用于可扩展身份验证协议的证书"。
 
 ### <a name="unable-to-delete-the-certificate-from-the-vpn-connectivity-blade"></a>无法从 "VPN 连接" 边栏选项卡删除证书

@@ -5,22 +5,20 @@ author: allenma
 ms.author: allenma
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows-server-hyper-v
-ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: f82aab1b3a3af61afa08a1849392297ca5def2ab
-ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
+ms.openlocfilehash: 954efafe3185cadb347384c3c93a2eb8ef895143
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551100"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963553"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虚拟机监控程序计划程序类型
 
 >适用于： Windows 10，Windows Server 2016，Windows Server，版本1709，Windows Server，版本1803，Windows Server 2019
 
-本文介绍了在 Windows Server 2016 中首次引入的虚拟处理器计划逻辑的新模式。 这些模式或计划程序类型确定 Hyper-v 虚拟机监控程序如何分配并管理来宾虚拟处理器上的工作。 Hyper-v 主机管理员可以选择最适合来宾虚拟机（Vm）的虚拟机监控程序计划程序类型，并将 Vm 配置为利用计划逻辑。
+本文介绍了在 Windows Server 2016 中首次引入的虚拟处理器计划逻辑的新模式。 这些模式或计划程序类型确定 Hyper-v 虚拟机监控程序如何分配并管理来宾虚拟处理器上的工作。 Hyper-v 主机管理员可以选择最适合 (Vm 的来宾虚拟机的虚拟机监控程序计划程序类型) 并将 Vm 配置为利用计划逻辑。
 
 > [!NOTE]
 > 若要使用本文档中所述的虚拟机监控程序计划程序功能，需要进行更新。 有关详细信息，请参阅[所需更新](#required-updates)。
@@ -48,7 +46,7 @@ Intel 和 AMD 均提供支持 SMT 的处理器。 Intel 将其 SMT 的产品/服
 
 * 根分区本身是虚拟机分区，尽管它具有唯一的属性和比来宾虚拟机更高的特权。 根分区提供控制所有来宾虚拟机的管理服务，为来宾提供虚拟设备支持，并管理来宾虚拟机的所有设备 i/o。 Microsoft 强烈建议不要在根分区中运行任何应用程序工作负荷。
 
-* 根分区的每个虚拟处理器（副总裁）映射到基础逻辑处理器（LP）1:1。 主机副总裁始终运行在同一基础 LP 上–不会迁移根分区的 VPs。
+* ) 根分区 (副总裁的每个虚拟处理器都1:1 映射到 (LP) 的基础逻辑处理器。 主机副总裁始终运行在同一基础 LP 上–不会迁移根分区的 VPs。
 
 * 默认情况下，主机 VPs 运行的 LPs 还可以运行来宾 VPs。
 
@@ -79,7 +77,7 @@ Intel 和 AMD 均提供支持 SMT 的处理器。 Intel 将其 SMT 的产品/服
 
 * 性能可能会降低，因为如果只能运行一组 VPs 中的一个，那么在另一个中，只会执行核心中的一个指令流，而另一个则会处于空闲状态。
 
-* 在来宾虚拟机中运行的操作系统和应用程序可以利用 SMT 行为和编程接口（Api）跨 SMT 线程控制和分配工作，就像在运行非虚拟化时一样。
+* 在来宾虚拟机中运行的操作系统和应用程序可以利用 SMT 行为和编程接口 (Api) 跨 SMT 线程控制和分配工作，就像在运行非虚拟化时一样。
 
 * 来宾工作负荷隔离的强大安全边界-来宾 VPs 被限制为在底层物理内核对上运行，从而降低了向端通道侦听攻击的漏洞。
 
@@ -93,7 +91,7 @@ Intel 和 AMD 均提供支持 SMT 的处理器。 Intel 将其 SMT 的产品/服
 
 Windows 10 版本1803引入了根计划程序。 启用根计划程序类型后，虚拟机监控程序将工作计划移交给控制到根分区。 根分区的 OS 实例中的 NT 计划程序管理将工作计划给系统 LPs 的所有方面。
 
-根计划程序解决了支持实用工具分区以提供强大的工作负荷隔离（与 Windows Defender 应用程序防护一起使用）（WDAG）所固有的独特要求。 在这种情况下，将计划责任留给根 OS 具有几个优点。 例如，适用于容器方案的 CPU 资源控制可与实用工具分区结合使用，从而简化了管理和部署。 此外，根操作系统计划程序可以很容易地收集容器内有关工作负荷 CPU 使用率的指标，并使用此数据作为输入，以适用于系统中所有其他工作负荷的相同计划策略。 这些相同的指标还有助于清楚地将应用程序容器中完成的工作应用到主机系统。 对于传统的虚拟机工作负荷，跟踪这些指标会更难，在这种情况下，代表所有正在运行的 VM 的一些工作会在根分区中发生。
+根计划程序解决了支持实用工具分区以提供强大的工作负荷隔离的独特要求，与 Windows Defender 应用程序防护 (WDAG) 配合使用。 在这种情况下，将计划责任留给根 OS 具有几个优点。 例如，适用于容器方案的 CPU 资源控制可与实用工具分区结合使用，从而简化了管理和部署。 此外，根操作系统计划程序可以很容易地收集容器内有关工作负荷 CPU 使用率的指标，并使用此数据作为输入，以适用于系统中所有其他工作负荷的相同计划策略。 这些相同的指标还有助于清楚地将应用程序容器中完成的工作应用到主机系统。 对于传统的虚拟机工作负荷，跟踪这些指标会更难，在这种情况下，代表所有正在运行的 VM 的一些工作会在根分区中发生。
 
 #### <a name="root-scheduler-use-on-client-systems"></a>根计划程序在客户端系统上使用
 
@@ -139,17 +137,17 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 
 为了帮助确保以最佳安全配置部署 Hyper-v 主机，Windows Server 2019 Hyper-v 现在默认使用核心虚拟机监控程序计划程序模型。 主机管理员可以选择将主机配置为使用旧的经典计划程序。 在重写计划程序类型默认设置之前，管理员应仔细阅读、了解并考虑每个计划程序类型对虚拟化主机的安全性和性能的影响。  有关详细信息，请参阅[了解 hyper-v 计划程序类型选择](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection)。
 
-### <a name="required-updates"></a>所需更新
+### <a name="required-updates"></a>所需的更新
 
 > [!NOTE]
 > 使用本文档中所述的虚拟机监控程序计划程序功能需要以下更新。 这些更新包括支持新的 `hypervisorschedulertype` BCD 选项的更改，这对于主机配置是必需的。
 
-| 版本 | Release  | 需要更新 | 知识库文章 |
+| 版本 | 发布  | 需要更新 | 知识库文章 |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018.07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018.07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
 |Windows Server 2016 | 1709 | 2018.07 C | [KB4338817](https://support.microsoft.com/help/4338817/windows-10-update-kb4338817) |
-|Windows Server 2019 | 1804 | 无 | 无 |
+|Windows Server 2019 | 1804 | None | None |
 
 ## <a name="selecting-the-hypervisor-scheduler-type-on-windows-server"></a>选择 Windows Server 上的虚拟机监控程序计划程序类型
 

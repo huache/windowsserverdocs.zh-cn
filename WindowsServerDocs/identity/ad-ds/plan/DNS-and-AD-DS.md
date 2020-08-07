@@ -6,20 +6,18 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 2afc6f87a321625ae693d1a49c56f260a7d8c305
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f531ffc8226fae9f515882e99da4620badc08611
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947706"
 ---
 # <a name="dns-and-ad-ds"></a>DNS 和 AD DS
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory 域服务（AD DS）使用域名系统（DNS）名称解析服务，使客户端能够查找域控制器和托管目录服务以便彼此通信的域控制器。
+Active Directory 域服务 (AD DS) 使用域名系统 (DNS) 名称解析服务，使客户端能够查找域控制器和托管目录服务以相互通信的域控制器。
 
 AD DS 可以轻松地将 Active Directory 命名空间集成到现有的 DNS 命名空间中。 Active Directory 集成的 DNS 区域等功能使你可以更轻松地部署 DNS，因为无需设置辅助区域，然后配置区域传输。
 

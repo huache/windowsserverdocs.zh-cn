@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a7da23b592f495b45e337520179d414900183a1b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: eb41b8168024a231282716e5edd0bc59554d7da6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966609"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937820"
 ---
 # <a name="the-role-of-claims"></a>声明的角色
 
@@ -55,15 +53,15 @@ ms.locfileid: "86966609"
 
 声明类型为声明值提供上下文。 它通常表示为统一资源标识符 \( URI \) 。 AD FS 可以支持任何声明类型，并在默认情况下使用下表中的声明类型进行配置。
 
-|名称|描述|URI|
+|“属性”|描述|URI|
 |--------|---------------|-------|
 |电子 \- 邮件地址|用户的电子 \- 邮件地址|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ identity \/ 声明 \/ emailaddress|
 |名|用户的给定名称|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ identity \/ 声明 \/ givenname|
-|名称|用户的唯一的名称|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ 标识 \/ 声明 \/ 名称|
+|“属性”|用户的唯一的名称|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ 标识 \/ 声明 \/ 名称|
 |UPN|用户的用户主体名称 \( UPN \)|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ 标识 \/ 声明 \/ upn|
 |公用名|用户的公用名|http： \/ \/schemas.xmlSoap.org \/ 声明 \/ CommonName|
 |AD FS 1.x 电子 \- 邮件地址|\-与 AD FS 1.1 或 ADFS 1.0 进行互操作时用户的电子邮件地址|http： \/ \/schemas.xmlSoap.org \/ 声明 \/ EmailAddress|
-|Group|用户是其成员的组|http： \/ \/schemas.xmlSoap.org \/ 声明 \/ 组|
+|组|用户是其成员的组|http： \/ \/schemas.xmlSoap.org \/ 声明 \/ 组|
 |AD FS 1.x UPN|与 AD FS 1.1 或 ADFS 1.0 互操作时用户的 UPN|http： \/ \/schemas.xmlSoap.org \/ 声明 \/ UPN|
 |角色|用户具有的角色|http： \/ \/ schemas.microsoft.com \/ ws \/ 2008 \/ 06 \/ 标识 \/ 声明 \/ 角色|
 |Surname|用户的姓氏|http： \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ 标识 \/ 声明 \/ 姓氏|
