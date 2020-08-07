@@ -1,20 +1,18 @@
 ---
 title: remove
 description: 删除命令的参考文章，用于从卷中删除驱动器号或装入点。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b0886140-da8b-4231-8cb2-f280874d99c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7fba062945effd49efa9987d2c7d23fc90552fd4
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 469b3ac1783dfff5228778d11532448bee49346c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409678"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883832"
 ---
 # <a name="remove"></a>remove
 
@@ -33,7 +31,7 @@ remove [{letter=<drive> | mount=<path> [all]}] [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | 字母 =`<drive>` | 要删除的驱动器号。 |
 | 装载 =`<path>` | 要删除的装入点路径。 |

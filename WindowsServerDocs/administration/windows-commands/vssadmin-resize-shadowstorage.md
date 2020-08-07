@@ -1,19 +1,17 @@
 ---
 title: Vssadmin 调整大小 shadowstorage
 description: Vssadmin resize shadowstorage 命令的说明。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 03/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b723fd3768561da7d636dd1724bd0c75ee2ee85
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0b49c85ab628de040cf58d47b4e4c694674ce6e7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954699"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892334"
 ---
 # <a name="vssadmin-resize-shadowstorage"></a>Vssadmin 调整大小 shadowstorage
 
@@ -34,7 +32,7 @@ vssadmin resize shadowstorage /for=<ForVolumeSpec> /on=<OnVolumeSpec> [/maxsize=
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---|---|
 `/for=<ForVolumeSpec>`  | 指定要调整其最大存储空间量的卷。
 `/on=<OnVolumeSpec>` | 指定存储卷。

@@ -1,24 +1,22 @@
 ---
 title: 删除-AutoaddDevices
 description: AutoaddDevices 的参考文章，用于删除在自动添加数据库中挂起、拒绝或批准的计算机。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8dcaca6a-212e-4c36-98e3-00938eef6b9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60acfbb5ec1bc3f9268044eb0dbcc9ea19ff8ab9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6ccde56c5a0d3edd252048f9cf1e2a4b1fd28a35
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933973"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892171"
 ---
 # <a name="delete-autoadddevices"></a>删除-AutoaddDevices
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 从自动添加数据库中删除挂起、拒绝或批准的计算机。 此数据库将有关这些计算机的信息存储在服务器上。
 
@@ -27,9 +25,9 @@ ms.locfileid: "85933973"
 wdsutil /delete-AutoaddDevices [/Server:<Server name>] /Devicetype:{PendingDevices | RejectedDevices |ApprovedDevices}
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
 |/Devicetype： {PendingDevices &#124; RejectedDevices &#124;ApprovedDevices}|指定要从数据库中删除的计算机的类型。 这可以是以下三种类型之一：<p>-   **PendingDevices**返回数据库中状态为 "挂起" 的所有计算机。<br />-   **RejectedDevices**返回数据库中状态为 "已拒绝" 的所有计算机。<br />-   **ApprovedDevices**将返回状态为 "已批准" 的所有计算机。|
 ## <a name="examples"></a>示例
 若要删除所有拒绝的计算机，请键入：

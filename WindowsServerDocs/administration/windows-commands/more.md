@@ -1,20 +1,18 @@
 ---
 title: 更多
 description: 更多命令的参考文章，其中每次显示一个输出屏幕。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: ec7f8c29f71389a6b583fda805c32ddf872321b4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 198f3f3f3b80282d876e4fdda9e7cde649a8c7da
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956949"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886374"
 ---
 # <a name="more"></a>更多
 
@@ -33,7 +31,7 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<command>` | 指定要显示其输出的命令。 |
 | /c | 在显示页面之前清除屏幕。 |
@@ -47,7 +45,7 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
 
 #### <a name="remarks"></a>备注
 
-- 以下子命令在**更多**提示（）上被接受 `-- More --` ，其中包括：
+- 在) 的**更多**提示 (接受以下子命令 `-- More --` ，其中包括：
 
     | 密钥 | 操作 |
     | --- | ------ |
@@ -60,9 +58,9 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
     | 些`<n>` | 按**S**跳过接下来的*n*行。 |
     | ? | 按 **？** 显示在 "**更多**" 提示符下可用的命令。|
 
-- 如果使用重定向字符（ `<` ），则还必须指定一个文件名作为源。
+- 如果 () 使用重定向字符 `<` ，还必须指定一个文件名作为源。
 
-- 如果使用管道（ `|` ），则可以使用类似于**dir**、 **sort**和**type**的命令。
+- 如果使用管道 (`|`) ，则可以使用类似于**dir**、 **sort**和**type**的命令。
 
 ### <a name="examples"></a>示例
 
@@ -110,4 +108,4 @@ more s
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [Windows 恢复环境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+- [Windows 恢复环境 (WinRE) ](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)

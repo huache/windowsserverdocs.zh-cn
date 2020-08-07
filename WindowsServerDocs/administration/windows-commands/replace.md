@@ -1,20 +1,18 @@
 ---
 title: replace
 description: 了解如何使用 replace 命令替换文件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6143661e-d90f-4812-b265-6669b567dd1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4ac424154968b4f4c55664d0d20f524345b87986
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 34d1adfc6a92dce33a6a9bbac308d3338db3934e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722384"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883679"
 ---
 # <a name="replace"></a>replace
 
@@ -27,16 +25,16 @@ ms.locfileid: "82722384"
 ## <a name="syntax"></a>语法
 
 ```
-replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/a] [/p] [/r] [/w] 
-replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] [/u] 
+replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/a] [/p] [/r] [/w]
+replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] [/u]
 ```
 
 ### <a name="parameters"></a>参数
 
 |参数|描述|
 |---------|-----------|
-|[\<Drive1>：][\<Path1>]\<文件名>|指定源文件或文件集的位置和名称。 *FileName*是必需的，并且可以包含通配符（**&#42;** 和 **？**）。|
-|[\<Drive2>：][\<Path2>]|指定目标文件的位置。 不能为替换的文件指定文件名。 如果未指定驱动器或路径， **replace**将使用当前驱动器和目录作为目标。|
+|[\<Drive1>:][\<Path1>]\<FileName>|指定源文件或文件集的位置和名称。 *FileName*是必需的，并且可以包括 (**&#42;** 和 **？**) 的通配符。|
+|[\<Drive2>:][\<Path2>]|指定目标文件的位置。 不能为替换的文件指定文件名。 如果未指定驱动器或路径， **replace**将使用当前驱动器和目录作为目标。|
 |/a|将新文件添加到目标目录，而不是替换现有文件。 不能将此命令行选项与 **/s**或 **/u**命令行选项一起使用。|
 |/p|在替换目标文件或添加源文件之前，提示你进行确认。|
 |/r|替换只读和未受保护的文件。 如果尝试替换只读文件，但未指定 **/r**，则会产生错误并停止替换操作。|
@@ -47,17 +45,17 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 
 ## <a name="remarks"></a>备注
 
-- "**替换**" 添加或替换文件，文件名显示在屏幕上。 **替换**完成后，将按以下格式之一显示摘要行：  
+- "**替换**" 添加或替换文件，文件名显示在屏幕上。 **替换**完成后，将按以下格式之一显示摘要行：
   ```
   nnn files added
   nnn files replaced
   no file added
   no file replaced
-  ```  
+  ```
 - 如果你使用的是软盘并且需要在 "**替换**" 操作过程中切换磁盘，则可以指定 " **/w** " 命令行选项，以便 "**替换**" 将等待你切换磁盘。
 - 不能使用**replace**来更新隐藏的文件或系统文件。
-- 下表显示了每个退出代码及其含义的简短说明：  
-  |退出代码|描述|
+- 下表显示了每个退出代码及其含义的简短说明：
+  |退出代码|说明|
   |---------|-----------|
   |0|**Replace**命令已成功替换或添加文件。|
   |1|**Replace**命令遇到了不正确的 MS-DOS 版本。|
@@ -72,7 +70,7 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 
 ## <a name="examples"></a><a name="BKMK_examples"></a>示例
 
-若要更新名为 "phone" 的文件的所有版本（在驱动器 C 上出现在多个目录中），并在驱动器 A 中的软盘上使用最新版本的 "phone. cli" 文件，请键入：
+若要更新在驱动器) C 上的多个目录中显示的名为 " (" 的文件的所有版本，请在驱动器 A 中的软盘上键入以下内容：
 
 `replace a:\phones.cli c:\ /s`
 

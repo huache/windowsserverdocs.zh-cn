@@ -1,20 +1,18 @@
 ---
 title: chcp
 description: 用于更改活动控制台代码页的 chcp 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: dc7b1c71-7b80-443d-9cf1-9bcf305aa1fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a07d439a4738053ea9a76b4ca68fadec2a215ff0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 21dcdc1e663656439bece576287877653d0dcd8c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930028"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892819"
 ---
 # <a name="chcp"></a>chcp
 
@@ -28,7 +26,7 @@ chcp [<nnn>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<nnn>` | 指定代码页。 |
 | /? | 在命令提示符下显示帮助。 |
@@ -54,9 +52,9 @@ chcp [<nnn>]
 
 - 仅与 Windows 一起安装的原始设备制造商 (OEM) 代码页正常显示在命令提示符窗口使用光栅字体。 在全屏幕模式下或使用 TrueType 字体的命令提示符窗口中，其他代码页正确显示。
 
-- 不需要准备代码页（如在 MS-DOS 中）。
+- 不需要像在 MS-DOS) 中 (准备代码页。
 
-- 之后启动的程序，将分配新的代码页使用新的代码页。 但是，在分配新代码页之前启动的程序（Cmd.exe 除外）将继续使用原始代码页。
+- 之后启动的程序，将分配新的代码页使用新的代码页。 但是，程序 (在分配新代码页之前启动 Cmd.exe) ，将继续使用原始代码页。
 
 ## <a name="examples"></a>示例
 
@@ -68,7 +66,7 @@ chcp
 
 将显示一条类似于以下内容的消息：`Active code page: 437`
 
-若要将活动代码页更改为850（多语言），请键入：
+若要将活动代码页更改为 850 (多语言) ，请键入：
 
 ```
 chcp 850

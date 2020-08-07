@@ -1,24 +1,22 @@
 ---
 title: change user
 description: 更改用户命令的参考文章，用于更改远程桌面会话主机服务器的安装模式。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6202f024-8cf5-411e-89b1-ee37ff46499d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b17ba6f6245176f09eca301a7b2f44a8f439def
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ca78126095b11ca7bf900d10c253cd7ad19fcc12
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955279"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892900"
 ---
 # <a name="change-user"></a>change user
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 更改远程桌面会话主机服务器的安装模式。
 
@@ -33,7 +31,7 @@ change user {/execute | /install | /query}
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | / execute | 使.ini 文件映射到主目录。 这是默认设置。 |
 | /install | 禁用.ini 文件映射到主目录。 所有的.ini 文件读取并写入到系统目录中。 在远程桌面会话主机服务器上安装应用程序时，必须禁用 .ini 文件映射。 |

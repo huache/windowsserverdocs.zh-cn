@@ -1,20 +1,18 @@
 ---
 title: convert gpt
-description: 转换 gpt 命令的参考文章，将具有主启动记录（MBR）分区形式的空白基本磁盘转换为具有 GUID 分区表（GPT）分区形式的基本磁盘。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: 转换 gpt 命令的参考文章：将具有主启动记录的空白基本磁盘转换 (MBR) 分区形式转换为具有 GUID 分区表 (GPT) 分区形式的基本磁盘。
 ms.topic: article
 ms.assetid: b3b1b747-0a7a-4be2-8487-2c4be16ee190
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2384ea5a94de64051dc45caecd88e08960b567b0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ec1066e0ac50536db915eed9df7a6076ba5f3879
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958529"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892571"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
@@ -34,7 +32,7 @@ convert gpt [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

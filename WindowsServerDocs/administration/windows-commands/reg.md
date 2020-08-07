@@ -1,20 +1,18 @@
 ---
 title: reg
 description: 用于对注册表项中的注册表子项信息和值执行操作的 reg 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c97496b2-d1ff-4887-b5d2-6e1524be465a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47ceea315b3d172c766e749e3447f56907eab945
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 18a9f243001758393597f6cc5803dd42cdc32dae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931024"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883973"
 ---
 # <a name="reg"></a>reg
 
@@ -23,7 +21,7 @@ ms.locfileid: "85931024"
 某些操作使你可以查看或配置本地或远程计算机上的注册表项，其他一些操作允许你仅配置本地计算机。 使用**reg**配置远程计算机的注册表限制了可在某些操作中使用的参数。 检查每个操作的语法和参数，验证它们是否可用于远程计算机。
 
 > [!CAUTION]
-> 不要直接编辑注册表，除非没有替代方法。 注册表编辑器会绕过标准安全措施，同时允许可能降低性能的设置、损坏系统，甚至要求你重新安装 Windows。 可以通过使用 "控制面板" 或 "Microsoft 管理控制台（MMC）" 中的 "程序" 来安全地更改大多数注册表设置。 如果必须直接编辑注册表，请首先对其进行备份。
+> 不要直接编辑注册表，除非没有替代方法。 注册表编辑器会绕过标准安全措施，同时允许可能降低性能的设置、损坏系统，甚至要求你重新安装 Windows。 可以通过使用控制面板中的 "程序" 或 "Microsoft 管理控制台 (MMC) 来安全地更改大多数注册表设置。 如果必须直接编辑注册表，请首先对其进行备份。
 
 ## <a name="syntax"></a>语法
 
@@ -43,7 +41,7 @@ reg unload
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | [reg add](reg-add.md) | 向注册表中添加新的子项或条目。 |
 | [reg compare](reg-compare.md) | 比较指定的注册表子项或条目。 |

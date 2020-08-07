@@ -1,24 +1,22 @@
 ---
 title: 修复
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9f84f661-f3cd-48c8-bf08-87819cf626fe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e9afb6c418558078496871b71bfaff706753b0a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d646318b41881783e12b07da1c72d2a9cc31f853
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936762"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883776"
 ---
 # <a name="repair"></a>修复
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 \-通过将故障磁盘区域替换为指定的动态磁盘，使用焦点修复 RAID 5 卷。
 
@@ -32,7 +30,7 @@ repair disk=<n> [align=<n>] [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数  |                                                                                             说明                                                                                              |
+| 参数  |                                                                                             描述                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 磁盘\=<n>  |                                                                 指定将替换出现故障的磁盘区域的动态磁盘。                                                                 |
 | 垂直\=<n> |          将所有卷或分区区与最接近的对齐边界对齐。 *n*是 \( \) 从磁盘开始到最接近的对齐边界的 kb kb 数。           |

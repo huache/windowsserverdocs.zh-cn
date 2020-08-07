@@ -1,24 +1,22 @@
 ---
 title: 按服务器角色的命令
 description: 按服务器角色列出的命令参考文章，其中描述了服务器的主要功能。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 343597ec-9b92-4b92-8d6c-faef4b565068
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d2bbaf00591e4bcc1d607a8309f5cd6688d75fe
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3ccb0141286e7c348ae85d173691f5d12db608b0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929735"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892687"
 ---
 # <a name="commands-by-server-role"></a>按服务器角色的命令
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 服务器角色说明服务器的主要功能。 管理员可以选择将整个服务器专用于一个角色，或在一台计算机上安装多个服务器角色和子角色。 每个角色可能包括作为角色的一部分安装的其他命令行工具。 以下主题提供了与每个服务器角色关联的命令列表。
 

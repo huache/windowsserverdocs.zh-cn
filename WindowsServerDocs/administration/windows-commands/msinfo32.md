@@ -1,24 +1,22 @@
 ---
 title: msinfo32
 description: 有关 msinfo32 命令的参考文章，它打开 "系统信息" 工具以显示本地计算机上的硬件、系统组件和软件环境的综合视图。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a38f31d7-1766-4103-becc-9d0b87c2826d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e43ed2680c099ca97a0074d5f460f504b3edb298
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 29ad95b9772e7fbb738fb6d1f1eb3ff11de3b0c8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956809"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886168"
 ---
 # <a name="msinfo32"></a>msinfo32
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 打开 "系统信息" 工具，以显示本地计算机上的硬件、系统组件和软件环境的综合视图。
 
@@ -32,7 +30,7 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computername>] [/show
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<path>` | 指定要以*C:\Folder1\File1.xxx*格式打开的文件，其中*C*是驱动器号， *Folder1*是文件夹， *File1*是文件名， *xxx*是文件扩展名。<p>此文件可以是 **.nfo**、 **.xml**、 **.txt**或 **.cab**文件。 |
 | `<computername>` | 指定目标或本地计算机的名称。 这可以是 UNC 名称、IP 地址或完整的计算机名称。 |

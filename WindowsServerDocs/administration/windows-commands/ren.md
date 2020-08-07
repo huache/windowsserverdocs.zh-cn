@@ -1,24 +1,22 @@
 ---
 title: ren
 description: 用于重命名文件或目录的 ren 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 60398e12-a05d-4524-a73a-0a925943e21d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c5f873de224ff335be097d97c7d8933a70af726d
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e21b521947ed02307c470932fffcf466016bae8b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409668"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883801"
 ---
 # <a name="ren"></a>ren
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 重命名文件或目录。
 
@@ -33,9 +31,9 @@ ren [<drive>:][<path>]<filename1> <filename2>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
-| `[<drive>:][<path>]<filename1>` | 指定要重命名的文件或文件集的位置和名称。 *Filename1*可以包含通配符（**&#42;** 和 **？**）。 |
+| `[<drive>:][<path>]<filename1>` | 指定要重命名的文件或文件集的位置和名称。 *Filename1*可以包含 (**&#42;** 和 **？**) 的通配符字符。 |
 | `<filename2>` | 指定文件的新名称。 您可以使用通配符来指定多个文件的新名称。 |
 | /? | 在命令提示符下显示帮助。 |
 

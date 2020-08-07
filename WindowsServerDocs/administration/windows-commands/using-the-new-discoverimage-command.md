@@ -1,24 +1,22 @@
 ---
 title: 新-发现映像
 description: 发现映像的参考文章，用于根据现有启动映像创建新的发现映像。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ede9fbbb-0bba-4309-8c21-3cc13e1dc3cd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6730dd2b5ffd7cbec2ed7ec9706747072b36fab
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b6c84735b868af92c6a3f2f16dc872e12c9f38c1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932441"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892410"
 ---
 # <a name="new-discoverimage"></a>新-发现映像
 
-从现有启动映像创建新的发现映像。 发现映像是强制 Setup.exe 程序在 Windows 部署服务模式下启动，然后发现 Windows 部署服务服务器的启动映像。 通常，这些映像可用于将映像部署到不能启动到 PXE 的计算机。 有关详细信息，请参阅创建映像（ [https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311) ）。
+从现有启动映像创建新的发现映像。 发现映像是强制 Setup.exe 程序在 Windows 部署服务模式下启动，然后发现 Windows 部署服务服务器的启动映像。 通常，这些映像可用于将映像部署到不能启动到 PXE 的计算机。 有关详细信息，请参阅 () 创建映像 [https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311) 。
 
 ## <a name="syntax"></a>语法
 
@@ -37,9 +35,9 @@ WDSUTIL [Options] /New-DiscoverImage [/Server:<Server name>]
 
 ### <a name="parameters"></a>参数
 
-|        参数         |                                                                                                                                                                                                                                                                                                                                                                                                                       说明                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|        参数         |                                                                                                                                                                                                                                                                                                                                                                                                                       描述                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server： \<Server name> ] |                                                                                                                                                                                                                                                                                                                                     指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。                                                                                                                                                                                                                                                                                                                                     |
+| [/Server： \<Server name> ] |                                                                                                                                                                                                                                                                                                                                     指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。                                                                                                                                                                                                                                                                                                                                     |
 |   影像\<Image name>   |                                                                                                                                                                                                                                                                                                                                                                                                      指定源启动映像的名称。                                                                                                                                                                                                                                                                                                                                                                                                       |
 |    /Architecture： {x86    |                                                                                                                                                                                                                                                                                                                                                                                                                          ia64                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | [/Filename： \<File name> ] |                                                                                                                                                                                                                                                                                                                                                                         如果无法按名称唯一地标识映像，则必须使用此选项指定文件名。                                                                                                                                                                                                                                                                                                                                                                          |

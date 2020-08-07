@@ -1,27 +1,25 @@
 ---
 title: copy
 description: "\"复制\" 命令的参考文章，可将一个或多个文件从一个位置复制到另一个位置。"
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e15db58ab8fa8c3a0114b695cb85eec7684039e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cb48cbc4ccc9a0d68bfc6f5cdda8ac5e7f1a6c87
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958469"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892502"
 ---
 # <a name="copy"></a>copy
 
 将一个或多个文件从一个位置复制到另一个位置。
 
 > [!NOTE]
-> 你还可以在恢复控制台中使用具有不同参数的**复制**命令。 有关恢复控制台的详细信息，请参阅[Windows 恢复环境（WINDOWS RE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+> 你还可以在恢复控制台中使用具有不同参数的**复制**命令。 有关恢复控制台的详细信息，请参阅 windows [RE)  (Windows 恢复环境](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 ## <a name="syntax"></a>语法
 
@@ -31,7 +29,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /d | 允许复制的加密文件作为解密文件保存在目标位置。 |
 | /v | 验证是否已正确写入新文件。 |
@@ -47,32 +45,32 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 #### <a name="remarks"></a>备注
 
-- 可以复制使用文件尾字符（CTRL + Z）的 ASCII 文本文件，以指示该文件的结尾。
+- 您可以将使用文件尾字符的 ASCII 文本文件 (CTRL + Z) ，以指示文件的结尾。
 
 - 如果在命令行上， **/a**位于文件列表之前或之后，则该命令将应用于所有列出的文件，直到**复制**遇到 **/b**为止。 在这种情况下， **/b**适用于位于 **/b**之前的文件。
 
     **/A**的影响取决于它在命令行字符串中的位置：
-      - 如果 **/a**跟在*source*之后，则**copy**命令会将文件视为 ASCII 文件，并复制第一个文件尾字符（CTRL + Z）之前的数据。
-      - 如果 **/a**跟在*destination*之后，则**copy**命令会将文件尾字符（CTRL + Z）添加为文件的最后一个字符。
+      - 如果 **/a**跟在*source*之后，则**copy**命令会将文件视为 ASCII 文件，并将第一个文件尾字符之前的数据复制 (CTRL + Z) 。
+      - 如果 **/a**跟在*destination*之后，则**copy**命令会将文件尾字符添加 (CTRL + Z) 为该文件的最后一个字符。
 
 - 如果 **/b**指示命令解释器读取目录中的文件大小指定的字节数，则为。 **/b**是**复制**的默认值，除非**复制**合并了文件。
 
 - 如果命令行中的文件列表之前或之后 **，则将**其应用到所有列出的文件，直到**复制**遇到 **/a**。 在这种情况下， **/a**适用于 **/a**之前的文件。
 
-    **/B**的影响取决于其在命令中的位置-行字符串：-如果 **/b**跟随*source*，则**copy**命令将复制整个文件，包括任何文件尾字符（CTRL + Z）。
-        -如果 destination 跟随*destination* **，则 "** **复制**" 命令不会添加文件尾字符（CTRL + Z）。
+    **/B**的影响取决于其在命令中的位置-行字符串：-如果 **/b**跟随*source*，则**copy**命令将复制整个文件，包括任何文件尾字符 (CTRL + Z) 。
+        -如果 **/b** destination 跟随*destination*，则**copy**命令不会将文件尾字符添加 (CTRL + Z) 。
 
 - 如果无法验证写入操作，将显示一条错误消息。 虽然**copy**命令很少出现记录错误，但你可以使用 **/v**来验证是否已正确记录关键数据。 **/V**命令行选项还会减慢**复制**命令，因为必须检查磁盘上记录的每个扇区。
 
 - 如果在**COPYCMD**环境变量中预设了 **/y** ，可以通过在命令行中使用 **/-y**来重写此设置。 默认情况下，当您替换此设置时，将提示您替换此设置，除非在批处理脚本中执行了**copy**命令。
 
-- 若要附加文件，请为*目标*指定单个文件，但为*源*指定多个文件（使用*通配符或* + *file2* + *file3*格式）。
+- 若要附加文件，请为*目标*指定单个文件，但*源* (的多个文件使用通配符*或* + *file2* + *file3*格式) 。
 
-- 如果在复制阶段连接丢失（例如，如果服务器脱机中断连接），则可以使用**copy/z**在重新建立连接后继续。 **/Z**选项还显示为每个文件完成的复制操作的百分比。
+- 如果在复制阶段连接丢失 (例如，如果服务器脱机时中断连接) ，则可以使用**copy/z**在重新建立连接后继续。 **/Z**选项还显示为每个文件完成的复制操作的百分比。
 
 - 可以将设备名称替换为*源*或*目标*的一个或多个匹配项。
 
-- 如果*目标*是设备（例如，Com1 或 Lpt1），则 **/b**选项会在二进制模式下将数据复制到设备。 在二进制模式下，**复制/b**将所有字符（包括如 CTRL + C、Ctrl + S、Ctrl + Z 和 ENTER 之类的特殊字符）复制到设备，作为数据。 但是，如果省略 **/b**，则会将数据复制到 ASCII 模式下的设备中。 在 ASCII 模式下，特殊字符可能会导致文件在复制过程中合并。
+- 如果*destination*是设备 (例如，Com1 或 Lpt1) ，则 **/b**选项将数据以二进制模式复制到设备。 在二进制模式下，**复制/b**会复制所有字符， (包括如 Ctrl + C、Ctrl + S、Ctrl + Z 之类的特殊字符，然后将) 输入到设备上，如数据。 但是，如果省略 **/b**，则会将数据复制到 ASCII 模式下的设备中。 在 ASCII 模式下，特殊字符可能会导致文件在复制过程中合并。
 
 - 如果不指定目标文件，则将使用与原始文件相同的名称、修改日期和修改时间创建副本。 新副本将存储在当前驱动器上的当前目录中。 如果源文件在当前驱动器上并且当前目录中没有为目标文件指定其他驱动器或目录，则**复制**命令将停止并显示以下错误消息：
 
@@ -95,7 +93,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 ## <a name="examples"></a>示例
 
-若要将名为*memo.doc*的文件复制到当前驱动器中的*letter.doc* ，并确保文件尾字符（CTRL + Z）位于复制文件的末尾，请键入：
+若要将名为*memo.doc*的文件复制到当前驱动器中的*letter.doc* ，并确保文件尾字符 (CTRL + Z) 位于复制文件的末尾，请键入：
 
 ```
 copy memo.doc letter.doc /a
@@ -110,7 +108,7 @@ copy robin.typ c:\birds
 > [!NOTE]
 > 如果*鸟瞰*目录不存在，则将文件*机制*复制到名为 "*鸟*" 的文件中，该文件位于驱动器 C 中磁盘的根目录中。
 
-若要合并位于当前目录中的*Mar89、rpt*、 *Apr89*和*May89*，并将其放在名为*Report*的文件中（也在当前目录中），请键入：
+若要合并位于当前目录中的*Mar89、rpt*、 *Apr89*和*May89*，并将其放在名为*Report* (文件中，请在当前目录) 中键入：
 
 ```
 copy mar89.rpt + apr89.rpt + may89.rpt Report

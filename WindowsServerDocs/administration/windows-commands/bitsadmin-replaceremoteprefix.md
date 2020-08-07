@@ -1,20 +1,18 @@
 ---
 title: bitsadmin replaceremoteprefix
 description: Bitsadmin replaceremoteprefix 命令的参考文章，可根据需要将作业中所有文件的远程 URL 从*oldprefix*更改为*newprefix*。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d0e0abb1-bdb4-4c74-abbc-16c809f5fd81
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2453ac4c223baa049980578c81d9bc6539baac7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 86149b09c65f430bf0a3bbe7a1595bb5385c6dcc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927978"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893363"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
 
@@ -28,7 +26,7 @@ bitsadmin /replaceremoteprefix <job> <oldprefix> <newprefix>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | oldprefix | 现有的 URL 前缀。 |

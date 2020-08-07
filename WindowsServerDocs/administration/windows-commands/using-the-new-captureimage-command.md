@@ -1,24 +1,22 @@
 ---
 title: 新-捕获映像
 description: 捕获映像的参考文章，用于根据现有启动映像创建新的捕获映像。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2dfd08f0-be59-4715-96e6-c498305873f4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec9da39ccef5efcea1792556ef8335bbf63c5fd6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 25e0fe9b11984fe7814b577de4ac8b18d5b62ccb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932150"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892429"
 ---
 # <a name="new-captureimage"></a>新-捕获映像
 
-从现有的启动映像创建新的捕获映像。 捕获映像是启动 Windows 部署服务捕获实用程序（而不是启动安装程序）的启动映像。 将引用计算机（已使用 Sysprep 进行准备）引导到捕获映像时，向导将创建引用计算机的安装映像，并将其保存为 Windows 映像（.wim）文件。 还可以将图像添加到媒体（例如 CD、DVD 或 USB 驱动器），然后从该媒体启动计算机。 创建安装映像之后，可以将该映像添加到服务器中，以进行 PXE 启动部署。 有关详细信息，请参阅创建映像（ [https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311) ）。
+从现有的启动映像创建新的捕获映像。 捕获映像是启动 Windows 部署服务捕获实用程序（而不是启动安装程序）的启动映像。 启动已使用 Sysprep) 准备的引用计算机 (时，向导将创建引用计算机的安装映像，并将其另存为 Windows 映像 ( .wim) 文件。 你还可以将图像添加到 media (例如 CD、DVD 或 USB 驱动器) ，然后从该媒体启动计算机。 创建安装映像之后，可以将该映像添加到服务器中，以进行 PXE 启动部署。 有关详细信息，请参阅 () 创建映像 [https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311) 。
 
 ## <a name="syntax"></a>语法
 
@@ -37,9 +35,9 @@ WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
 
 ### <a name="parameters"></a>参数
 
-|        参数         |                                                                                                                                                                                                                         说明                                                                                                                                                                                                                          |
+|        参数         |                                                                                                                                                                                                                         描述                                                                                                                                                                                                                          |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server： \<Server name> ] |                                                                                                                                       指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。                                                                                                                                        |
+| [/Server： \<Server name> ] |                                                                                                                                       指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。                                                                                                                                        |
 |   影像\<Image name>   |                                                                                                                                                                                                         指定源启动映像的名称。                                                                                                                                                                                                         |
 |   /Architecture： {x86    |                                                                                                                                                                                                                             ia64                                                                                                                                                                                                                             |
 | [/Filename： \<Filename> ] |                                                                                                                                                                            如果无法按名称唯一地标识映像，则必须使用此选项指定文件名。                                                                                                                                                                            |

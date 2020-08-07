@@ -1,20 +1,18 @@
 ---
 title: wbadmin delete catalog
 description: 用于 wbadmin delete catalog 的参考文章，用于删除存储在本地计算机上的备份目录。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d3041407-4577-4716-a39f-2c8ab48818d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc64ac7537ee97c763410639870083712ec31ee4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c43c201c4c14b3eab14fd8e1ec0d6d3e39fe4104
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954679"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892239"
 ---
 # <a name="wbadmin-delete-catalog"></a>wbadmin delete catalog
 
@@ -22,7 +20,7 @@ ms.locfileid: "86954679"
 
 删除存储在本地计算机上的备份目录。 当备份目录已损坏且无法使用**wbadmin restore catalog**还原它时，请使用此命令。
 
-若要使用此子命令删除备份目录，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。 （若要打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
+若要使用此子命令删除备份目录，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。  (打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
 
 ## <a name="syntax"></a>语法
 
@@ -33,7 +31,7 @@ wbadmin delete catalog
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |-quiet|对用户运行无提示的子命令。|
 

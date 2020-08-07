@@ -1,19 +1,17 @@
 ---
 title: Vssadmin
 description: Vssadmin 命令的概述。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f3618841eb2f511323873d2ea962838f9ab777d0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 529a135164495ad5d0cb2db09373139ac7663e57
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954689"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892270"
 ---
 # <a name="vssadmin"></a>Vssadmin
 
@@ -21,7 +19,7 @@ ms.locfileid: "86954689"
 
 显示当前卷影副本备份和所有已安装的卷影副本编写器和提供程序。 选择下表中的命令名称，查看其命令语法。
 
-|命令|说明|可用性
+|Command|说明|可用性
 |---|---|---
 |[Vssadmin add shadowstorage](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788051(v%3dws.11))|添加卷影复制存储关联。| 仅服务器
 |[Vssadmin 创建阴影](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788055(v%3dws.11))|创建新的卷影副本。| 仅服务器

@@ -1,31 +1,29 @@
 ---
-title: 远程桌面服务（终端服务）命令行工具参考
-description: 远程桌面服务（RDS）命令行工具的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+title: 远程桌面服务 (终端服务) 命令行工具参考
+description: 远程桌面服务 (RDS) 命令行工具的参考文章。
 ms.topic: article
 ms.assetid: 2f371848-5c48-470c-908c-afbc95d3a805
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36204940c339b937817457aa993ead6ed6644891
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: ae8156298c9b5108748afa114e1e3cabc0180441
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409688"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883841"
 ---
-# <a name="remote-desktop-services-terminal-services-command-line-tools-reference"></a>远程桌面服务（终端服务）命令行工具参考
+# <a name="remote-desktop-services-terminal-services-command-line-tools-reference"></a>远程桌面服务 (终端服务) 命令行工具参考
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-了解可用的远程桌面服务（终端服务）命令行工具，其中包含有关更多详细信息的描述和链接。
+了解远程桌面服务 (终端服务) 命令行工具的可用，并提供有关更多详细信息的说明和链接。
 
 > [!NOTE]
 > 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
-| 命令 | 说明 |
+| Command | 描述 |
 |--|--|--|
 | [change](change.md) | 更改用于登录、COM 端口映射和安装模式的远程桌面会话主机服务器设置。 |
 | [change logon](change-logon.md) | 启用或禁用远程桌面会话主机服务器上的客户端会话登录，或显示当前登录状态。 |
@@ -47,9 +45,9 @@ ms.locfileid: "87409688"
 | [query user](query-user.md) | 显示远程桌面会话主机服务器上的用户会话的相关信息。 |
 | [quser](quser.md) | 显示远程桌面会话主机服务器上的用户会话的相关信息。 |
 | [qwinsta](qwinsta.md) | 显示有关远程桌面会话主机服务器上的会话的信息。 |
-| [rdpsign](rdpsign.md) | 使您能够对远程桌面协议（.rdp）文件进行数字签名。 |
-| [reset session](reset-session.md) | 使您能够在远程桌面会话主机服务器上重置（删除）会话。 |
-| [rwinsta](rwinsta.md) | 使您能够在远程桌面会话主机服务器上重置（删除）会话。 |
+| [rdpsign](rdpsign.md) | 使你能够对远程桌面协议 ( .rdp) 文件进行数字签名。 |
+| [reset session](reset-session.md) | 使你能够重置远程桌面会话主机服务器上的会话)  (删除。 |
+| [rwinsta](rwinsta.md) | 使你能够重置远程桌面会话主机服务器上的会话)  (删除。 |
 | [shadow](shadow.md) | 使您能够远程控制远程桌面会话主机服务器上其他用户的活动会话。 |
 | [tscon](tscon.md) | 连接到远程桌面会话主机服务器上的另一个会话。 |
 | [tsdiscon](tsdiscon.md) | 断开会话与远程桌面会话主机服务器的连接。 |

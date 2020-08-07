@@ -1,24 +1,22 @@
 ---
 title: mqbkup
 description: Mqbkup 命令的参考文章，可将 MSMQ 消息文件和注册表设置备份到存储设备，并还原以前存储的消息和设置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7bdd41c4-75ef-455f-b241-1d64a4c7acf5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00518ab36f1886ccb3a1221a065715668fb02f47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7eecb016efd039d87774c3fd869e746df1e60178
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956919"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886304"
 ---
 # <a name="mqbkup"></a>mqbkup
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 将 MSMQ 消息文件和注册表设置备份到存储设备，并还原以前存储的消息和设置。
 
@@ -34,7 +32,7 @@ mqbkup {/b | /r} <folder path_to_storage_device>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------- | -------- |
 | /b | 指定备份操作。 |
 | /r | 指定还原操作。 |

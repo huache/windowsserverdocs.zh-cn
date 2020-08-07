@@ -1,20 +1,18 @@
 ---
 title: color
 description: "\"Color\" 命令的参考文章，此项更改当前会话的命令提示符窗口中的前景色和背景色。"
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f5b67131-d196-45ec-a3f9-b5d9f091fd86
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 93c51fdbf1909adfda06730c3a517f602f8024b8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2534273eebe7f8596b0e8f2ab3c90cfdcf824d00
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929804"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892671"
 ---
 # <a name="color"></a>color
 
@@ -28,7 +26,7 @@ color [[<b>]<f>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<b>` | 指定背景色。 |
 | `<f>` | 指定前景色。 |
@@ -38,15 +36,15 @@ color [[<b>]<f>]
 
 下表列出了可用作和的值的有效十六进制数字 `<b>` `<f>` ：
 
-| 值 | 颜色 |
+| 值 | Color |
 | ----- | ----- |
 | 0 | 黑色 |
 | 1 | 蓝色 |
 | 2 | 绿色 |
 | 3 | Aqua |
-| 4 | 红色 |
+| 4 | Red |
 | 5 | 紫色 |
-| 6 | 黄色 |
+| 6 | Yellow |
 | 7 | 白色 |
 | 8 | 灰色 |
 | 9 | 浅蓝色 |
@@ -55,7 +53,7 @@ color [[<b>]<f>]
 | c | 浅红色 |
 | d | 浅紫色 |
 | e | 浅黄色 |
-| f | 亮白色 |
+| F | 亮白色 |
 
 #### <a name="remarks"></a>备注
 

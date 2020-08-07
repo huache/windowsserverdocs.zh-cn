@@ -1,26 +1,24 @@
 ---
 title: repair-bde
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 534dca1a-05f7-4ea8-ac24-4fe5f14f988a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5aaa915ef416130dd2017b8f0f35cd255d207678
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c1ba55b5a1689ecfc6ebe8fb6ab3d02b717e7d38
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956279"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883767"
 ---
 # <a name="repair-bde"></a>repair-bde
 
 
 
-如果已使用 BitLocker 对驱动器进行加密，请访问严重损坏的硬盘上的加密数据。 只要使用有效的恢复密码或恢复密钥来解密数据，Repair 就可以重建驱动器的关键部分并抢救可恢复数据。 如果驱动器上的 BitLocker 元数据数据已损坏，则除了恢复密码或恢复密钥以外，还必须能够提供备份密钥包。 如果你使用了 AD DS 备份的默认设置，则将在 Active Directory 域服务（AD DS）中备份此密钥包。 使用此密钥包以及恢复密码或恢复密钥，可以在磁盘损坏的情况下解密受 BitLocker 保护的驱动器的部分。 每个密钥包仅适用于具有相应驱动器标识符的驱动器。 你可以使用[Active Directory 的 BitLocker 恢复密码查看器](/previous-versions/windows/it-pro/windows-7/dd875531(v=ws.10))从 AD DS 中获取此密钥包。
+如果已使用 BitLocker 对驱动器进行加密，请访问严重损坏的硬盘上的加密数据。 只要使用有效的恢复密码或恢复密钥来解密数据，Repair 就可以重建驱动器的关键部分并抢救可恢复数据。 如果驱动器上的 BitLocker 元数据数据已损坏，则除了恢复密码或恢复密钥以外，还必须能够提供备份密钥包。 如果你使用 AD DS 备份的默认设置，则 Active Directory 域服务 (AD DS) 中备份此密钥包。 使用此密钥包以及恢复密码或恢复密钥，可以在磁盘损坏的情况下解密受 BitLocker 保护的驱动器的部分。 每个密钥包仅适用于具有相应驱动器标识符的驱动器。 你可以使用[Active Directory 的 BitLocker 恢复密码查看器](/previous-versions/windows/it-pro/windows-7/dd875531(v=ws.10))从 AD DS 中获取此密钥包。
 
 > [!NOTE]
 > BitLocker 恢复密码查看器包含为在 Windows Server 2012 上使用服务器管理安装的可选管理功能之一。
@@ -39,7 +37,7 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |\<InputVolume>|标识要修复的 BitLocker 加密驱动器的驱动器号。 驱动器号必须包含冒号;例如： **C：**。|
 |\<OutputVolumeorImage>|标识要在其上存储已修复驱动器的内容的驱动器。 输出驱动器上的所有信息都将被覆盖。|
@@ -57,7 +55,7 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 ## <a name="examples"></a>示例
 
-若要尝试修复驱动器 C，并使用驱动器 F 上存储的恢复密钥文件（RecoveryKey. bek）将该文件的内容写入驱动器 D，并将此尝试的结果写入驱动器 Z 上的日志文件（log.txt）。
+若要尝试修复驱动器 C，并使用恢复密钥文件将 RecoveryKey 中的内容写入驱动器 D，请在驱动器 Z 上存储 (bek) ，并将此尝试的结果写入到驱动器 Z ( # A0) 。
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```
@@ -65,7 +63,7 @@ repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```
 repair-bde C: D: -rp 111111-222222-333333-444444-555555-666666-777777-888888
 ```
-若要强制卸除驱动器 C，并使用存储在驱动器 F 上的恢复密钥包和恢复密钥文件（RecoveryKey. bek）来尝试修复驱动器 c 并将驱动器 C 上的内容写入驱动器 D。
+若要强制卸除驱动器 C，然后尝试使用恢复密钥包和恢复密钥文件将驱动器 c 上的内容写入驱动器 D，请在驱动器 F 上存储 (RecoveryKey. bek) 。
 ```
 repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 ```

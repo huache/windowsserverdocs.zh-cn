@@ -1,24 +1,22 @@
 ---
 title: 更改
 description: 更改命令的参考文章，其中更改了登录、COM 端口映射和安装模式远程桌面会话主机服务器设置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 90012116-0fb3-4f34-a819-cf4d4b4f8981
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c72829ac264e5d5553bcfe6e3442ad73e793c259
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 733ef9fba0a546cd844121899840f592bd2b3118
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955269"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892840"
 ---
 # <a name="change"></a>更改
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 更改登录、COM 端口映射和安装模式远程桌面会话主机服务器设置。
 
@@ -35,7 +33,7 @@ ms.locfileid: "86955269"
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | [更改登录命令](change-logon.md) | 启用或禁用远程桌面会话主机服务器上的客户端会话登录，或显示当前登录状态。 |
 | [更改端口命令](change-port.md) | 列出或更改要与 MS-DOS 应用程序兼容的 COM 端口映射。 |

@@ -1,20 +1,18 @@
 ---
 title: msiexec
 description: Msiexec 命令的参考文章，它提供了从命令行对 Windows Installer 执行安装、修改和执行操作的方法。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 122eb0ce-ecbc-4909-a52a-15c3413619af
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1224d4dfeefd850dcc29e523972351b8cdd9778
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a72798d7bdd94b3315d54e866e78145af4db1d79
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956869"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886170"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -32,7 +30,7 @@ msiexec.exe [/i][/a][/j{u|m|/g|/t}][/x] <path_to_package>
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------- | -------- |
 | /i | 指定正常安装。 |
 | /a | 指定管理安装。 |
@@ -63,7 +61,7 @@ msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------- | -------- |
 | `<path_to_package>` | 指定安装包文件的位置和名称。 |
 | /quiet | 指定静默模式，这意味着不需要用户交互。 |
@@ -99,7 +97,7 @@ msiexec.exe /i <path_to_package> [/norestart][/promptrestart][/forcerestart]
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------- | -------- |
 | `<path_to_package>` | 指定安装包文件的位置和名称。 |
 | /norestart | 安装完成后，停止设备重新启动。 |
@@ -126,7 +124,7 @@ msiexec.exe [/i][/x] <path_to_package> [/L{i|w|e|a|r|u|c|m|o|p|v|x+|!|*}] <path_
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------- | -------- |
 | /i | 指定正常安装。 |
 | /x | 卸载包。 |
@@ -147,7 +145,7 @@ msiexec.exe [/i][/x] <path_to_package> [/L{i|w|e|a|r|u|c|m|o|p|v|x+|!|*}] <path_
 | /lx | 启用日志记录，并在输出日志文件中包含额外的调试信息。 |
 | /l + | 启用日志记录，并将信息追加到现有日志文件。 |
 | /l! | 启用日志记录并刷新日志文件中的每一行。 |
-| /l | 启用日志记录并记录所有信息，包括详细信息（**/lv**）或额外的调试信息（**/lx**）。 |
+| /l | 启用日志记录并记录所有信息，但详细信息 (**/lv**) 或额外的调试信息 (**/lx**) 。 |
 | `<path_to_logfile>` | 指定输出日志文件的位置和名称。 |
 
 #### <a name="examples"></a>示例
@@ -170,10 +168,10 @@ msiexec.exe [/p][/update][/uninstall[/package<product_code_of_package>]] <path_t
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------- | -------- |
 | /p | 安装修补程序。 如果要以无提示方式安装，还必须将 REINSTALLMODE 属性设置为*ecmus* ，并将其重新安装为*ALL*。 否则，修补程序仅更新在目标设备上缓存的 MSI。 |
-| /update | 安装修补程序选项。 如果要应用多个更新，则必须使用分号（;) 分隔它们。 |
+| /update | 安装修补程序选项。 如果要应用多个更新，则必须使用分号 (; ) 分隔它们。 |
 | /package | 安装或配置产品。 |
 
 #### <a name="examples"></a>示例
@@ -202,7 +200,7 @@ msiexec.exe [/f{p|o|e|d|c|a|u|m|s|v}] <product_code>
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ------- | -------- |
 | /fp | 如果文件丢失，则修复包。 |
 | /fo | 如果文件丢失或安装了较早的版本，则修复包。 |
