@@ -1,19 +1,17 @@
 ---
 title: 系统见解数据源
 description: 在 System Insights 中编写新功能时，可以指定要在本地收集和分析的现有数据源或新数据源。 本主题介绍在注册新功能时可以选择的数据源。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 5dc44d9309c25ca1475e512a11d9868d7fa49e97
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 23150a741c9ec218077f63ca65e6948b1c48f8bf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473664"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972004"
 ---
 # <a name="system-insights-data-sources"></a>系统见解数据源
 
@@ -69,14 +67,14 @@ ms.locfileid: "85473664"
 | --------------- | --------------- |
 | 性能计数器 | Sum、average、max、min |
 | 系统事件 | 计数 |
-| 磁盘熟知系列 | Last （收集间隔中的最新值） |
-| 卷知名系列 | Last （收集间隔中的最新值） |
+| 磁盘熟知系列 | 收集间隔中的最后一个 (最新值)  |
+| 卷知名系列 | 收集间隔中的最后一个 (最新值)  |
 | CPU 熟知系列 | 平均值 |
 | 网络知名系列 | 平均值 |
 
 ## <a name="data-footprint"></a>数据占用量
 
-System Insights 将所有数据收集到本地 C 驱动器（C：）。 通常，系统见解数据占用适中。 它直接取决于每个功能指定的数据源的类型和数量，下表详细说明了每种数据类型的存储使用量：
+System Insights (C： ) 本地收集 C 驱动器上的所有数据。 通常，系统见解数据占用适中。 它直接取决于每个功能指定的数据源的类型和数量，下表详细说明了每种数据类型的存储使用量：
 
 | 数据源 | 最大需求量 |
 | --------------- | --------------- |

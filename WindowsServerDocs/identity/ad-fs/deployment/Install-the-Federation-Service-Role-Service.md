@@ -5,27 +5,25 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7ed7caad187181b4ad52cf4032d6343a3353c9f7
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 5aee90e28ae233cf7c96013537d82cc77bc9ba2e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519976"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972154"
 ---
 # <a name="install-the-federation-service-role-service"></a>安装联合身份验证服务角色服务
 
-现在，你已使用先决条件应用程序和证书正确配置了计算机，接下来可以安装 Active Directory 联合身份验证服务（AD FS）的联合身份验证服务角色服务。 在计算机上安装联合身份验证服务时，该计算机将成为联合服务器。
+现在，你已使用先决条件应用程序和证书正确配置了计算机，接下来可以安装 Active Directory 联合身份验证服务 (AD FS) 的联合身份验证服务角色服务。 在计算机上安装联合身份验证服务时，该计算机将成为联合服务器。
 
 > [!NOTE]
-> 对于联合 Web 单一登录（SSO）设计，在帐户伙伴组织中必须至少有一台联合服务器，在资源伙伴组织中必须至少有一个联合服务器。 有关详细信息，请参阅[放置联合服务器的位置](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807127(v=ws.11))。
+> 对于联合 Web 单一登录 (SSO) 设计，在帐户伙伴组织中必须至少有一台联合服务器，在资源伙伴组织中必须至少有一个联合服务器。 有关详细信息，请参阅[放置联合服务器的位置](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807127(v=ws.11))。
 
 你可以使用以下过程在将成为第一台联合服务器的计算机上或在将成为现有联合服务器场的联合服务器的计算机上安装 AD FS 的联合身份验证服务角色服务。
 
 ## <a name="prerequisites"></a>先决条件
-开始此过程之前，请确保已安装了具有私钥的 SSL 证书，或已将该证书导入到本地证书存储（个人存储区）。 如果你将使用由证书颁发机构（CA）颁发的令牌签名证书，则在开始此过程之前，请验证具有私钥的令牌签名证书是否已安装或导入到本地证书存储（个人存储）中。 作为替代方法，你可以使用添加角色向导创建自签名令牌签名证书，如此过程中所述。 有关令牌签名证书的详细信息，请参阅[联合服务器的证书要求](../design/certificate-requirements-for-federation-servers.md)。
+开始此过程之前，请验证是否已安装了具有私钥的 SSL 证书，或已将其导入到本地证书存储 (个人存储) 。 如果要使用证书颁发机构颁发的令牌签名证书 (CA) ，则在开始此过程之前，请验证已安装了具有私钥的令牌签名证书，或将其导入到本地证书存储 (个人存储) 。 作为替代方法，你可以使用添加角色向导创建自签名令牌签名证书，如此过程中所述。 有关令牌签名证书的详细信息，请参阅[联合服务器的证书要求](../design/certificate-requirements-for-federation-servers.md)。
 
 若要完成此过程，至少需要是本地计算机上的**管理员**组或等效组中的成员。 查看有关使用适当帐户和[本地和域默认组](https://go.microsoft.com/fwlink/?LinkId=83477)中组成员身份的详细信息。
 

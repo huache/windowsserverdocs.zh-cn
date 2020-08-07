@@ -1,24 +1,22 @@
 ---
 title: 虚拟网络对等互连
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: d4dadcabfb911c7722da493c45db112477eab34c
-ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
+ms.openlocfilehash: 21008268f14435852c7de78ce826bc380f9017a1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345411"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955814"
 ---
 # <a name="virtual-network-peering"></a>虚拟网络对等互连
 
 >适用于： Windows Server
 
-利用虚拟网络对等互连，无缝连接两个虚拟网络。 对等互连后，出于连接目的，虚拟网络显示为一。 
+利用虚拟网络对等互连，无缝连接两个虚拟网络。 对等互连后，出于连接目的，虚拟网络显示为一。
 
 使用虚拟网络对等互连的优点包括：
 
@@ -59,7 +57,7 @@ ms.locfileid: "85345411"
 
 -   虚拟网络中的虚拟机可访问对等互连虚拟网络中的内部负载均衡器。
 
-如果需要，可以在虚拟网络中应用访问控制列表（Acl），阻止访问其他虚拟网络或子网。 如果打开对等互连虚拟网络之间的完全连接（这是默认选项），则可以将 Acl 应用到特定子网或虚拟机，以便阻止或拒绝特定访问。 若要了解有关 Acl 的详细信息，请参阅[使用访问控制列表（acl）管理数据中心网络流量流](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
+可以在虚拟网络中 (Acl) 应用访问控制列表，以阻止对其他虚拟网络或子网的访问（如果需要）。 如果打开对等互连虚拟网络之间的完全连接 (这是默认选项) ，则可以将 Acl 应用到特定的子网或虚拟机，以便阻止或拒绝特定访问。 若要了解有关 Acl 的详细信息，请参阅[使用访问控制列表 (acl) 来管理数据中心网络流量流](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
 
 ## <a name="service-chaining"></a>服务链
 
@@ -71,7 +69,7 @@ ms.locfileid: "85345411"
 
 ## <a name="gateways-and-on-premises-connectivity"></a>网关和本地连接
 
-每个虚拟网络无论是否与另一个虚拟网络对等互连，都可以有自己的网关连接到本地网络。 如果对等互连虚拟网络，还可以在对等互连虚拟网络中将网关配置为本地网络的传输点。 在这种情况下，使用远程网关的虚拟网络不能有自己的网关。 一个虚拟网络只能有一个网关，该网关可以是本地网关或远程网关（在对等互连虚拟网络中）。
+每个虚拟网络无论是否与另一个虚拟网络对等互连，都可以有自己的网关连接到本地网络。 如果对等互连虚拟网络，还可以在对等互连虚拟网络中将网关配置为本地网络的传输点。 在这种情况下，使用远程网关的虚拟网络不能有自己的网关。 一个虚拟网络只能有一个网关，该网关可以是 (在对等互连虚拟网络) 中的本地或远程网关。
 
 ## <a name="monitor"></a>监视
 

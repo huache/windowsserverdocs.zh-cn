@@ -1,19 +1,17 @@
 ---
 title: 聚合 NIC 配置疑难解答
 description: 本主题是适用于 Windows Server 2016 的汇聚 NIC 配置指南的一部分。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0bc6746f-2adb-43d8-a503-52f473833164
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 90021956ebe85ec2f4abfea0aaafd96daebfd82f
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 7868861d33392e954b64064e3f748f742293b9af
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520206"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955834"
 ---
 # <a name="troubleshooting-converged-nic-configurations"></a>聚合 NIC 配置疑难解答
 
@@ -50,7 +48,7 @@ Get-NetAdapterRdma | fl *
 
 ![网络适配器属性](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-02.jpg)
 
-4. 确保物理 NIC 和主机 vNIC 上均已启用 "网络直接（RDMA）"。
+4. 请确保在物理 NIC 和主机 vNIC 上均已启用网络直接 (RDMA) 。
 5. 请确保在正确的物理适配器上创建 vSwitch，方法是检查其 RDMA 功能。
 6. 检查 EventViewer 系统日志，并按源 "Hyper-v-VmSwitch" 进行筛选。
 
@@ -72,7 +70,7 @@ Get-SmbClientNetworkInterface
 
 1. 请确保 Mlnx 微型端口和 Mlnx 总线驱动程序是最新的。 对于 Mellanox，请使用至少 drop 42。
 2. 通过检查驱动程序版本设备管理器，验证 Mlnx 微型端口和总线驱动程序是否匹配。 可以在系统设备中找到总线驱动程序。 该名称应以 Mellanox Connect-X 3 PRO VPI 开头，如以下网络适配器属性屏幕截图中所示。
-3. 确保物理 NIC 和主机 vNIC 上均已启用 "网络直接（RDMA）"。
+3. 请确保在物理 NIC 和主机 vNIC 上均已启用网络直接 (RDMA) 。
 4. 请确保通过检查 Hyper-v 虚拟交换机的 RDMA 功能，在正确的物理适配器上创建 Hyper-v 虚拟交换机。
 5. 在应用程序和服务中检查 "SMB 客户端" 的 EventViewer 日志 **|Microsoft |Windows**。
 

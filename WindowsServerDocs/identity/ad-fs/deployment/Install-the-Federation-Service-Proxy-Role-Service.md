@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 2378a0fe8f2fb9c91f41a69e7253d82532280ddd
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: b9db53267afed5ffc68b117676d38293e5121ec2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519986"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972164"
 ---
 # <a name="install-the-federation-service-proxy-role-service"></a>安装联合身份验证服务代理角色服务
 
@@ -46,7 +44,7 @@ ms.locfileid: "87519986"
 
 ### <a name="to-install-the-federation-service-proxy-role-service-using-powershell"></a>使用 PowerShell 安装联合身份验证服务代理角色服务
 
-1. 打开 Windows PowerShell （以管理员身份运行）
+1. 打开 Windows PowerShell (以管理员身份运行) 
 
 2. 键入以下命令并按**enter**：
 

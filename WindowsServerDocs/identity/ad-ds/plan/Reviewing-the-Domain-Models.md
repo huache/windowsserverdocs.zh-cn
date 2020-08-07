@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: db49a7e3c99e468e27c390acd58002eb09e72b3e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 326c9f5727fa529fc131fe7bac6589a30c54c30a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959359"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972254"
 ---
 # <a name="reviewing-the-domain-models"></a>查看域模型
 
@@ -21,7 +19,7 @@ ms.locfileid: "86959359"
 
 以下因素会影响所选的域设计模型：
 
-- 你的网络上要分配给 Active Directory 域服务（AD DS）的可用容量。 目标是选择提供高效复制信息的模型，对可用网络带宽的影响最小。
+- 你的网络上要分配到 Active Directory 域服务 (AD DS) 的可用容量。 目标是选择提供高效复制信息的模型，对可用网络带宽的影响最小。
 
 - 你的组织中的用户数。 如果你的组织包含大量用户，则部署多个域可让你对数据进行分区，并使你能够更好地控制将通过给定网络连接传递的复制流量。 这使你能够控制数据的复制位置，并减少由网络中慢速链接上的复制流量创建的负载。
 
@@ -29,7 +27,7 @@ ms.locfileid: "86959359"
 
 最好最大程度地减少在林中部署的域数量。 这会降低部署的总体复杂性，因此，降低总拥有成本。 下表列出了与添加地区性域相关的管理成本。
 
-| 成本     | 含义     |
+| 节约成本     | 含义     |
 | -------- | ---------------- |
 | 多个服务管理员组的管理|每个域都有自己的服务管理员组，这些组需要单独进行管理。 必须严格控制这些服务管理员组的成员身份。|
 | 在多个域通用组策略设置之间保持一致性 | 需要在林范围内应用的组策略设置必须分别应用到林中的每个单独域。 |
@@ -53,7 +51,7 @@ ms.locfileid: "86959359"
 
 ## <a name="regional-domain-model"></a>区域域模型
 
-域中的所有对象数据将复制到该域中的所有域控制器。 出于此原因，如果林包含多个跨广域网（WAN）连接的不同地理位置分布的用户，则可能需要部署区域域以减少通过 WAN 链接的复制流量。 基于地理位置的区域域可根据网络 WAN 连接进行组织。
+域中的所有对象数据将复制到该域中的所有域控制器。 出于此原因，如果你的林包含大量用户，这些用户分布在广域网 (WAN) 所连接的不同地理位置，则你可能需要部署区域域以减少通过 WAN 链接的复制流量。 基于地理位置的区域域可根据网络 WAN 连接进行组织。
 
 区域域模型使你能够在一段时间内维护稳定的环境。 使用于定义模型中的域的区域基于稳定元素，例如大陆范围边界。 基于其他因素（如组织内的组）的域可能会频繁更改，并可能要求你重新构建环境。
 

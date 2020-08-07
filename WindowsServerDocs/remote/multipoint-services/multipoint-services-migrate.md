@@ -2,26 +2,24 @@
 title: 迁移到 Windows Server 2016 中的 MultiPoint 服务
 description: 了解如何从 MultiPoint Services 的以前版本进行迁移
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 16c217ad-700a-48a3-8398-4a7f7e9edb52
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 1609ff02c8e1b1480d004104bdc7e37f1240729a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ce5fb28f92808d736f66f1f900228aac09d98bf5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959269"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955334"
 ---
 # <a name="multipoint-services-migration-in-windows-server-2016"></a>Windows Server 2016 中的 MultiPoint Services 迁移
 >适用于：Windows Server 2016
 
 可以从以前版本的 Windows Server 2016 MultiPoint 服务迁移到 MultiPoint Services 的 RTM 版本。 以下信息提供了准备信息、迁移和验证步骤。
 
-迁移文档和工具简化了将服务器角色设置和数据从现有服务器迁移到运行 Windows Server 2016 的目标服务器的任务。 通过使用本指南中介绍的过程，你可以简化迁移过程、减少迁移时间、提高迁移过程的准确性，并帮助消除在迁移过程中可能出现的冲突。 
+迁移文档和工具简化了将服务器角色设置和数据从现有服务器迁移到运行 Windows Server 2016 的目标服务器的任务。 通过使用本指南中介绍的过程，你可以简化迁移过程、减少迁移时间、提高迁移过程的准确性，并帮助消除在迁移过程中可能出现的冲突。
 
 ## <a name="what-to-know-before-you-begin"></a>开始之前需要了解的内容
 在开始迁移过程之前，请注意以下事项：
@@ -29,7 +27,7 @@ ms.locfileid: "86959269"
 - 迁移过程不会自动收集或记录 MultiPoint 服务角色上的应用程序的设置。 应为要迁移的任何应用程序创建自定义迁移计划。 在 MultiPoint Services 中使用虚拟桌面功能时也是如此。
 - 本指南不提供有关移动在 MultiPoint server 上的用户或共享文件夹中保存的数据的指南。 这适用于常规工作站和虚拟桌面工作站。
 - 本指南不包含有关如何在源服务器运行多个角色时进行迁移的说明。 如果你的服务器运行多个角色，则需要根据角色迁移指南中提供的信息设计特定于你的服务器环境的自定义迁移过程。
-- 本指南不包含用于迁移远程桌面服务 CAL 的信息。 有关此信息，请参阅[迁移远程桌面服务客户端访问许可证（RDS cal）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))。
+- 本指南不包含用于迁移远程桌面服务 CAL 的信息。 有关此信息，请参阅将[远程桌面服务客户端访问许可证 (RDS cal) 迁移](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))。
 
 ## <a name="supported-migration-scenarios-for-multipoint-services-in-windows-server-2016"></a>Windows Server 2016 中的 MultiPoint Services 支持的迁移方案
 Windows Server 2016 Standard 和 Datacenter 中提供了 MultiPoint 服务角色服务。 本迁移指南介绍如何将 Multipoint 服务角色服务从运行 Windows Server 2016 的源服务器迁移到运行相同版本的目标服务器。

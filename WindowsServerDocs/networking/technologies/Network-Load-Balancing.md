@@ -2,19 +2,17 @@
 title: Network Load Balancing
 description: 在本主题中，我们将为你提供 \( \) Windows Server 2016 中的网络负载平衡 NLB 功能的概述。 可以使用 NLB 将两个或多个服务器作为单个虚拟群集进行管理。 NLB 增强了 Internet 服务器应用程序（如在 web、FTP、防火墙、代理、虚拟专用网络 \( VPN \) 和其他任务关键服务器上使用的应用程序）的可用性和可伸缩性 \- 。
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking-nlb
 ms.topic: article
 ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: f6631920fd4df056447d702df78145d4b375e0f5
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: ecea87a3716ef68c599594851037e774ad589998
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409607"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955804"
 ---
 # <a name="network-load-balancing"></a>Network Load Balancing
 
@@ -23,7 +21,7 @@ ms.locfileid: "87409607"
 在本主题中，我们将为你提供 \( \) Windows Server 2016 中的网络负载平衡 NLB 功能的概述。 可以使用 NLB 将两个或多个服务器作为单个虚拟群集进行管理。 NLB 增强了 Internet 服务器应用程序（如在 web、FTP、防火墙、代理、虚拟专用网络 \( VPN \) 和其他任务关键服务器上使用的应用程序）的可用性和可伸缩性 \- 。
 
 > [!NOTE]
-> Windows Server 2016 包含一个新的以 Azure 为基础的软件负载均衡器 \( SLB \) ，作为软件定义的网络 \( SDN \) 基础结构的组件。 如果使用的是 SDN，使用非 Windows 工作负荷，需要出站网络地址转换 \( NAT \) ，或者需要第3层 \( \) 或非 TCP 的负载均衡，请使用 SLB 而不是 NLB。 对于非 SDN 部署，可以继续使用 NLB 和 Windows Server 2016。 有关 SLB 的详细信息，请参阅[SDN 的软件负载平衡（SLB）](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。
+> Windows Server 2016 包含一个新的以 Azure 为基础的软件负载均衡器 \( SLB \) ，作为软件定义的网络 \( SDN \) 基础结构的组件。 如果使用的是 SDN，使用非 Windows 工作负荷，需要出站网络地址转换 \( NAT \) ，或者需要第3层 \( \) 或非 TCP 的负载均衡，请使用 SLB 而不是 NLB。 对于非 SDN 部署，可以继续使用 NLB 和 Windows Server 2016。 有关 SLB 的详细信息，请参阅[用于 SDN 的软件负载平衡 (SLB) ](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。
 
 网络负载平衡 \( NLB \) 功能使用 TCP IP 网络协议将流量分布到多个服务器上 \/ 。 通过将运行应用程序的两台或多台计算机组合到单个虚拟群集，NLB 可为 web 服务器和其他任务关键型服务器提供可靠性和性能 \- 。
 
@@ -61,7 +59,7 @@ NLB 有助于确保无状态应用程序（例如运行 Internet Information Ser
 ### <a name="manageability"></a>可管理性
 为支持可管理性，可通过 NLB 执行以下操作：
 
--   使用 NLB 管理器或[Windows PowerShell 中的网络负载平衡（NLB） cmdlet 在](https://technet.microsoft.com/library/hh801274.aspx)一台计算机上管理和配置多个 nlb 群集和群集主机。
+-   使用 NLB 管理器或[Windows PowerShell 中的网络负载平衡 (nlb) cmdlet](https://technet.microsoft.com/library/hh801274.aspx)来管理和配置多个 nlb 群集和群集主机。
 
 -   使用端口管理规则，可以为单个 IP 端口或端口组指定负载平衡行为。
 
@@ -154,7 +152,7 @@ Install-WindowsFeature NLB -IncludeManagementTools
 |内容类型|参考|
 |----------------|--------------|
 |部署|[网络负载平衡部署指南](https://technet.microsoft.com/library/cc754833(WS.10).aspx)&#124;[用终端服务配置网络负载平衡](https://technet.microsoft.com/library/cc771300(v=WS.10).aspx)|
-|Operations|[管理网络负载平衡群集](https://technet.microsoft.com/library/cc753954(WS.10).aspx)&#124;[设置网络负载平衡参数](https://technet.microsoft.com/library/cc731619(WS.10).aspx)&#124;[控制网络负载平衡群集上的主机](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|
+|操作|[管理网络负载平衡群集](https://technet.microsoft.com/library/cc753954(WS.10).aspx)&#124;[设置网络负载平衡参数](https://technet.microsoft.com/library/cc731619(WS.10).aspx)&#124;[控制网络负载平衡群集上的主机](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|
 |疑难解答|[排查网络负载平衡群集](https://technet.microsoft.com/library/cc732592(WS.10).aspx)&#124; [NLB 群集事件和错误](https://technet.microsoft.com/library/cc731678(WS.10).aspx)|
 |工具和设置|[网络负载平衡 Windows PowerShell cmdlet](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
 |社区资源|[高可用性 \( 群集 \) 论坛](https://go.microsoft.com/fwlink/p/?LinkId=230641)

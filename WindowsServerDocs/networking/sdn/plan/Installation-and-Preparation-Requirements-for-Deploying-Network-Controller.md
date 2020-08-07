@@ -1,56 +1,54 @@
 ---
 title: 部署网络控制器的要求
-description: 为网络控制器部署准备你的数据中心，这需要一个或多个计算机或 vm 以及一个计算机或 VM。 部署网络控制器之前，必须配置安全组、日志文件位置（如果需要）和动态 DNS 注册。
+description: 为网络控制器部署准备你的数据中心，这需要一个或多个计算机或 vm 以及一个计算机或 VM。 部署网络控制器之前，必须配置安全组、日志文件位置 (如果需要) 和动态 DNS 注册。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: f5a7ec331c9d70214cbd0a772de6e2b2c7f4f58e
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: 060194959f80c9d2a6d174910b0264c58214373b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433171"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964083"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>部署网络控制器的要求
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-为网络控制器部署准备你的数据中心，这需要一个或多个计算机或 vm 以及一个计算机或 VM。 部署网络控制器之前，必须配置安全组、日志文件位置（如果需要）和动态 DNS 注册。
+为网络控制器部署准备你的数据中心，这需要一个或多个计算机或 vm 以及一个计算机或 VM。 部署网络控制器之前，必须配置安全组、日志文件位置 (如果需要) 和动态 DNS 注册。
 
 
 ## <a name="network-controller-requirements"></a>网络控制器要求
 
-网络控制器部署需要一个或多个用作网络控制器的计算机或 vm，另一个计算机或 VM 充当网络控制器的管理客户端。 
+网络控制器部署需要一个或多个用作网络控制器的计算机或 vm，另一个计算机或 VM 充当网络控制器的管理客户端。
 
-- 规划为网络控制器节点的所有 Vm 和计算机都必须运行 Windows Server 2016 Datacenter edition。 
-- 安装网络控制器的任何计算机或虚拟机（VM）必须运行 Windows Server 2016 Datacenter 版本。 
-- 网络控制器的管理客户端计算机或 VM 必须运行 Windows 10。 
+- 规划为网络控制器节点的所有 Vm 和计算机都必须运行 Windows Server 2016 Datacenter edition。
+- 安装网络控制器 (VM) 的任何计算机或虚拟机都必须运行数据中心版的 Windows Server 2016。
+- 网络控制器的管理客户端计算机或 VM 必须运行 Windows 10。
 
 
 ## <a name="configuration-requirements"></a>配置要求
 
-部署网络控制器之前，必须配置安全组、日志文件位置（如果需要）和动态 DNS 注册。
+部署网络控制器之前，必须配置安全组、日志文件位置 (如果需要) 和动态 DNS 注册。
 
 ### <a name="step-1-configure-your-security-groups"></a>步骤 1。 配置安全组
 
-你要做的第一件事是为 Kerberos 身份验证创建两个安全组。 
+你要做的第一件事是为 Kerberos 身份验证创建两个安全组。
 
-为有权执行以下操作的用户创建组： 
+为有权执行以下操作的用户创建组：
 
-1. 配置网络控制器<p>例如，你可以为此组网络控制器管理员命名。 
-2.  使用网络控制器配置和管理网络<p>例如，你可以为此组网络控制器用户命名。 使用具象状态传输（REST）来配置和管理网络控制器。
+1. 配置网络控制器<p>例如，你可以为此组网络控制器管理员命名。
+2.  使用网络控制器配置和管理网络<p>例如，你可以为此组网络控制器用户命名。 使用具象状态传输 (REST) 来配置和管理网络控制器。
 
 >[!NOTE]
 >你添加的所有用户都必须是 "域用户" 组的成员，Active Directory 用户和计算机 "。
 
 ### <a name="step-2-configure-log-file-locations-if-needed"></a>步骤 2。 根据需要配置日志文件位置
 
-接下来要做的就是将文件位置配置为在网络控制器计算机或 VM 上或远程文件共享上存储网络控制器调试日志。 
+接下来要做的就是将文件位置配置为在网络控制器计算机或 VM 上或远程文件共享上存储网络控制器调试日志。
 
 >[!NOTE]
 >如果将日志存储在远程文件共享中，请确保可以从网络控制器访问该共享。
@@ -58,7 +56,7 @@ ms.locfileid: "83433171"
 
 ### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>步骤 3. 为网络控制器配置动态 DNS 注册
 
-最后，您要做的下一件事就是在同一子网或不同子网中部署网络控制器群集节点。 
+最后，您要做的下一件事就是在同一子网或不同子网中部署网络控制器群集节点。
 
 
 |         如果...         |                                                                                                                                                         则...                                                                                                                                                         |
@@ -73,7 +71,7 @@ ms.locfileid: "83433171"
 
 1. 允许对区域进行 DNS 动态更新。
 
-   a. 打开 DNS 管理器，然后在控制台树中右键单击相应的区域，然后单击 "**属性**"。 
+   a. 打开 DNS 管理器，然后在控制台树中右键单击相应的区域，然后单击 "**属性**"。
 
    b. 在 "**常规**" 选项卡上，验证区域类型为 "**主要**" 或 " **Active Directory 集成**"。
 
@@ -81,13 +79,13 @@ ms.locfileid: "83433171"
 
 2. 为网络控制器节点配置 DNS 区域安全权限
 
-   a.  单击“安全”**** 选项卡，然后单击“高级”****。 
+   a.  单击“安全”**** 选项卡，然后单击“高级”****。
 
-   b. 在 "**高级安全设置**" 中，单击 "**添加**"。 
+   b. 在 "**高级安全设置**" 中，单击 "**添加**"。
 
-   c. 单击 **“选择主体”**。 
+   c. 单击 **“选择主体”**。
 
-   d. 在 "**选择用户、计算机、服务帐户或组**" 对话框中，单击 "**对象类型**"。 
+   d. 在 "**选择用户、计算机、服务帐户或组**" 对话框中，单击 "**对象类型**"。
 
    e. 在 "**对象类型**" 中，选择 "**计算机**"，然后单击 **"确定"**。
 
@@ -98,19 +96,19 @@ ms.locfileid: "83433171"
       - **Type** = Allow
       - **适用**于 = 此对象和所有后代对象
 
-   h.如果该值不存在，请单击“添加行”。 在 "**权限**" 中，选择 "**写入所有属性**" 和 "**删除**"，然后单击 **"确定"**。
+   h. 在 "**权限**" 中，选择 "**写入所有属性**" 和 "**删除**"，然后单击 **"确定"**。
 
 3. 对网络控制器群集中的所有计算机和 Vm 重复此操作。
 
 ### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>步骤 4. 如果使用基于 Kerberos 的身份验证，请配置服务主体名称
 
-如果网络控制器使用基于 Kerberos 的身份验证来与管理客户端通信，则必须在 Active Directory 中为网络控制器配置服务主体名称（SPN）。 网络控制器会自动配置 SPN。 只需为网络控制器计算机提供注册和修改 SPN 的权限即可。 有关更多详细信息，请参阅[配置服务主体名称（SPN）](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)。
+如果网络控制器使用基于 Kerberos 的身份验证来与管理客户端通信，则必须在 Active Directory 中为网络控制器配置服务主体名称 (SPN) 。 网络控制器会自动配置 SPN。 只需为网络控制器计算机提供注册和修改 SPN 的权限即可。 有关更多详细信息，请参阅[ (SPN) 配置服务主体名称](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)。
 
 ## <a name="deployment-options"></a>部署选项
 
 ### <a name="network-controller-deployment"></a>网络控制器部署
 
-使用在虚拟机上配置的三个网络控制器节点，安装程序具有高可用性。 还显示了两个租户，租户2的虚拟网络分为两个虚拟子网，用于模拟 web 层和数据库层。  
+使用在虚拟机上配置的三个网络控制器节点，安装程序具有高可用性。 还显示了两个租户，租户2的虚拟网络分为两个虚拟子网，用于模拟 web 层和数据库层。
 
 ![SDN NC 计划](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-NC-Planning.png)
 
@@ -124,17 +122,17 @@ ms.locfileid: "83433171"
 
 有三个网关虚拟机;两个处于活动状态，一个是冗余的。
 
-![SDN NC 计划](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
+![SDN NC 计划](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)
 
->[!IMPORTANT] 
->如果使用 VMM 进行部署，请确保不会在关系图中显示的四个主机上承载基础结构虚拟机（VMM 服务器、AD/DNS、SQL Server 等）。  
+>[!IMPORTANT]
+>如果使用 VMM 进行部署，请确保你的基础结构虚拟机 (VMM 服务器、AD/DNS、SQL Server 等，但不会在关系图中显示的四个主机上承载 ) 。
 
 
 ## <a name="next-steps"></a>后续步骤
 [规划软件定义的网络基础结构](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)。
 
 ## <a name="related-topics"></a>相关主题
-- [网络控制器](../technologies/network-controller/Network-Controller.md) 
-- [网络控制器高可用性](../technologies/network-controller/network-controller-high-availability.md) 
-- [使用 Windows PowerShell 部署网络控制器](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
-- [使用服务器管理器安装网络控制器服务器角色](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   
+- [网络控制器](../technologies/network-controller/Network-Controller.md)
+- [网络控制器高可用性](../technologies/network-controller/network-controller-high-availability.md)
+- [使用 Windows PowerShell 部署网络控制器](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
+- [使用服务器管理器安装网络控制器服务器角色](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)

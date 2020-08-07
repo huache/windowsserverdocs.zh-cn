@@ -1,39 +1,37 @@
 ---
 title: Windows Server 软件定义的网络堆栈疑难解答
-description: 此 Windows Server 指南检查常见的软件定义网络（SDN）错误和故障情况，并概述利用可用的诊断工具的故障排除工作流。
+description: 此 Windows Server 指南检查常见软件定义的网络 (SDN) 错误和故障情况，并概述利用可用的诊断工具的故障排除工作流。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 3c6ac190b721492a03c7dcb9ab367df4174e55ff
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 87972f9a0d83a4b7f192e2fe0f751ee66c599044
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520236"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955914"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Windows Server 软件定义的网络堆栈疑难解答
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-本指南将介绍常见的软件定义网络（SDN）错误和故障情况，并概述利用可用的诊断工具的故障排除工作流。
+本指南将介绍常见的软件定义的网络 (SDN) 错误和故障情况，并概述利用可用的诊断工具的故障排除工作流。
 
 有关 Microsoft 软件定义的网络的详细信息，请参阅[软件定义的网络](../../sdn/Software-Defined-Networking--SDN-.md)。
 
 ## <a name="error-types"></a>错误类型
-以下列表显示了在 Windows Server 2012 R2 中从市场生产部署中最常遇到的与 Hyper-v 网络虚拟化（HNVv1）有关的问题的类，并以多种方式与 Windows Server 2016 HNVv2 中出现的相同类型的问题与新的软件定义网络（SDN）堆栈相符。
+下表显示了在 Windows Server 2012 R2 中从市场生产部署 (HNVv1) 最常遇到的问题的类，并以多种方式与 Windows Server 2016 HNVv2 中所示的相同类型的问题一致，并具有新的软件定义网络 (SDN) 堆栈。
 
 大多数错误可以分为一小部分类：
 * **配置无效或不受支持**用户不正确地调用 NorthBound API 或策略无效。
 
-* **策略应用程序错误**来自网络控制器的策略未传递到 Hyper-v 主机、在所有 Hyper-v 主机上明显延迟和/或不是最新的策略（例如，在实时迁移后）。
+* **策略应用程序错误**未将来自网络控制器的策略传递到 Hyper-v 主机，在所有 Hyper-v 主机上明显延迟并/或不是最新的，例如在实时迁移) 后 (。
 * **配置偏移或软件 bug**导致数据包被丢弃的数据路径问题。
 
-* **与 NIC 硬件/驱动程序或是网络结构相关的外部错误**错误的任务卸载（如 VMQ）或是的网络构造配置错误（例如，MTU）
+* **与 NIC 硬件/驱动程序或是网络结构相关的外部错误**错误的任务卸载 (例如 VMQ) 或是的网络构造配置错误 (如 MTU) 
 
   此故障排除指南检查每个错误类别，并推荐可用于识别和修复错误的最佳实践和诊断工具。
 
@@ -41,14 +39,14 @@ ms.locfileid: "87520236"
 
 在讨论每种错误的故障排除工作流之前，让我们来看看可用的诊断工具。
 
-若要使用网络控制器（控制路径）诊断工具，必须先安装 NetworkController 功能并导入该 ``NetworkControllerDiagnostics`` 模块：
+若要使用网络控制器 (控制路径) 的诊断工具，必须先安装 NetworkController 功能并导入该 ``NetworkControllerDiagnostics`` 模块：
 
 ```powershell
 Add-WindowsFeature RSAT-NetworkController -IncludeManagementTools
 Import-Module NetworkControllerDiagnostics
 ```
 
-若要使用 HNV 诊断（数据路径）诊断工具，你必须导入该 ``HNVDiagnostics`` 模块：
+若要使用 HNV 诊断 (的数据路径) 的诊断工具，你必须导入该 ``HNVDiagnostics`` 模块：
 
 ```powershell
 # Assumes RSAT-NetworkController feature has already been installed
@@ -58,10 +56,10 @@ Import-Module hnvdiagnostics
 ### <a name="network-controller-diagnostics"></a>网络控制器诊断
 这些 cmdlet 记录在 TechNet 上的[网络控制器诊断 Cmdlet 主题](https://docs.microsoft.com/powershell/module/networkcontrollerdiagnostics/)中。 它们有助于在网络控制器节点之间以及在 Hyper-v 主机上运行的网络控制器与 NC 主机代理之间确定网络策略一致性问题。
 
- 必须从网络控制器节点虚拟机之一运行_ServiceFabricNodeStatus_和_NetworkControllerReplica_ cmdlet。 所有其他 NC 诊断 cmdlet 都可以从连接到网络控制器的任何主机运行，也可以在网络控制器管理安全组（Kerberos）中运行，也可以访问 x.509 证书来管理网络控制器。
+ 必须从网络控制器节点虚拟机之一运行_ServiceFabricNodeStatus_和_NetworkControllerReplica_ cmdlet。 所有其他 NC 诊断 cmdlet 都可以从连接到网络控制器的任何主机上运行，也可以在网络控制器管理安全组 (Kerberos) 或有权访问 x.509 证书来管理网络控制器。
 
 ### <a name="hyper-v-host-diagnostics"></a>Hyper-v 主机诊断
-这些 cmdlet 记录在 TechNet 上的[Hyper-v 网络虚拟化（HNV）诊断 Cmdlet 主题](https://docs.microsoft.com/powershell/module/hnvdiagnostics/)中。 它们有助于识别租户虚拟机（东部/西部）之间的数据路径中的问题，以及通过 SLB VIP （北部/南）的入口流量。
+有关这些 cmdlet 的详细信息，请参见 " [Hyper-v 网络虚拟化 (HNV) 诊断 Cmdlet" 主题](https://docs.microsoft.com/powershell/module/hnvdiagnostics/)中的 TechNet。 它们有助于识别租户虚拟机之间的数据路径中的问题 (东/西) 并通过 SLB VIP (北/南) 传输流量。
 
 _调试-VirtualMachineQueueOperation_、 _CustomerRoute_、 _PACAMapping_、 _ProviderAddress_、 _VMNetworkAdapterPortId_ _、VMSwitchExternalPortId_和_EncapOverheadSettings_都是可从任何 hyper-v 主机上运行的本地测试（& a）。 其他 cmdlet 通过网络控制器调用数据路径测试，因此需要访问网络控制器，如以上 descried 所示。
 
@@ -71,14 +69,14 @@ _调试-VirtualMachineQueueOperation_、 _CustomerRoute_、 _PACAMapping_、 _Pr
 ## <a name="troubleshooting-workflows-and-guides"></a>工作流和指南疑难解答
 
 ### <a name="hoster-validate-system-health"></a>宿主验证系统运行状况
-几个网络控制器资源中有一个名为 "_配置状态_" 的嵌入资源。 配置状态提供有关系统运行状况的信息，包括网络控制器的配置与 Hyper-v 主机上的实际（正在运行）状态之间的一致性。
+几个网络控制器资源中有一个名为 "_配置状态_" 的嵌入资源。 配置状态提供有关系统运行状况的信息，包括网络控制器的配置与 Hyper-v 主机上运行) 状态的实际 (之间的一致性。
 
 若要检查配置状态，请从连接到网络控制器的任何 Hyper-v 主机上运行以下各项。
 
 >[!NOTE]
 >*NetworkController*参数的值应为基于为网络控制器创建的 x.509 >证书的使用者名称的 FQDN 或 IP 地址。
 >
->仅当网络控制器使用 Kerberos 身份验证（在 VMM 部署中为典型）时，才需要指定*Credential*参数。 凭据必须为网络控制器管理安全组中的用户。
+>如果网络控制器使用的 Kerberos 身份验证 (典型在 VMM 部署) 中，则需要指定*Credential*参数。 凭据必须为网络控制器管理安全组中的用户。
 
 ```
 Debug-NetworkControllerConfigurationState -NetworkController <FQDN or NC IP> [-Credential <PS Credential>]
@@ -112,11 +110,11 @@ Message:          Host is not Connected.
 
 >[!NOTE]
 > 系统中有一个 bug，SLB Mux 传输 VM NIC 的网络接口资源处于故障状态，出现错误 "虚拟交换机主机未连接到控制器"。 如果 VM NIC 资源中的 IP 配置设置为传输逻辑网络的 IP 池的 IP 地址，则可以安全地忽略此错误。
-> 系统中的第二个 bug 是网关 HNV 提供程序 VM Nic 的网络接口资源处于故障状态，出现错误 "虚拟交换机-PortBlocked"。 如果 VM NIC 资源中的 IP 配置设置为 null （按设计），则也可以安全地忽略此错误。
+> 系统中的第二个 bug 是网关 HNV 提供程序 VM Nic 的网络接口资源处于故障状态，出现错误 "虚拟交换机-PortBlocked"。 如果 VM NIC 资源中的 IP 配置设置为 null (按设计) ，则也可以安全地忽略此错误。
 
 下表显示了根据观察到的配置状态要采取的错误代码、消息和跟进操作的列表。
 
-| **代码** | **Message** | **Action** |
+| **代码** | **Message** | **操作** |
 |--|--|--|
 | 未知 | 未知错误 |  |
 | HostUnreachable | 主机无法访问 | 检查网络控制器与主机之间的管理网络连接 |
@@ -129,24 +127,24 @@ Message:          Host is not Connected.
 | PolicyConfigurationFailure | 由于通信故障或 NetworkController 中的其他错误，无法将策略推送到主机。 | 没有明确的操作。  这是由于网络控制器模块中的目标状态处理失败引起的。 收集日志。 |
 | HostNotConnectedToController | 主机尚未连接到网络控制器 | 端口配置文件未应用于主机或主机无法从网络控制器访问。 验证主机 ID 注册表项是否与服务器资源的实例 ID 匹配 |
 | MultipleVfpEnabledSwitches | 主机上已启用多个 VFp 启用的开关 | 删除其中一个交换机，因为网络控制器主机代理仅支持一个启用了 VFP 扩展的 vSwitch |
-| PolicyConfigurationFailure | 由于证书错误或连接错误，无法为 VmNic 推送 VNet 策略 | 检查是否部署了正确的证书（证书使用者名称必须与主机的 FQDN 相匹配）。 同时验证主机与网络控制器的连接 |
-| PolicyConfigurationFailure | 由于证书错误或连接错误，无法为 VmNic 推送 vSwitch 策略 | 检查是否部署了正确的证书（证书使用者名称必须与主机的 FQDN 相匹配）。 同时验证主机与网络控制器的连接 |
-| PolicyConfigurationFailure | 由于证书错误或连接错误，无法为 VmNic 推送防火墙策略 | 检查是否部署了正确的证书（证书使用者名称必须与主机的 FQDN 相匹配）。 同时验证主机与网络控制器的连接 |
+| PolicyConfigurationFailure | 由于证书错误或连接错误，无法为 VmNic 推送 VNet 策略 | 检查是否部署了正确的证书 (证书使用者名称必须与主机) 的 FQDN 相匹配。 同时验证主机与网络控制器的连接 |
+| PolicyConfigurationFailure | 由于证书错误或连接错误，无法为 VmNic 推送 vSwitch 策略 | 检查是否部署了正确的证书 (证书使用者名称必须与主机) 的 FQDN 相匹配。 同时验证主机与网络控制器的连接 |
+| PolicyConfigurationFailure | 由于证书错误或连接错误，无法为 VmNic 推送防火墙策略 | 检查是否部署了正确的证书 (证书使用者名称必须与主机) 的 FQDN 相匹配。 同时验证主机与网络控制器的连接 |
 | DistributedRouterConfigurationFailure | 未能在主机 vNic 上配置分布式路由器设置 | TCPIP 堆栈错误。 可能需要在报告此错误的服务器上清除 PA 和 DR 主机 Vnic |
 | DhcpAddressAllocationFailure | VMNic 的 DHCP 地址分配失败 | 检查是否在 NIC 资源上配置了静态 IP 地址属性 |
-| CertificateNotTrusted<br>CertificateNotAuthorized | 由于网络或证书错误，无法连接到 Mux | 检查错误消息代码中提供的数值代码：这对应于 winsock 错误代码。 证书错误是精细的（例如，无法验证证书，证书未授权，等等）。 |
-| HostUnreachable | MUX 不正常（常见情况是 BGPRouter 断开连接） | RRAS 上的 BGP 对等机（BGP 虚拟机）或上架（ToR）交换机无法访问或未成功进行对等互连。 检查软件负载平衡器多路复用器资源和 BGP 对等机上的 BGP 设置（ToR 或 RRAS 虚拟机） |
-| HostNotConnectedToController | 未连接 SLB 主机代理 | 检查 SLB 主机代理服务是否正在运行;出于某些原因，请参阅 SLB 主机代理日志（自动运行），在此情况下，SLBM （NC）拒绝由主机代理运行状态提供的证书将显示微妙信息 |
+| CertificateNotTrusted<br>CertificateNotAuthorized | 由于网络或证书错误，无法连接到 Mux | 检查错误消息代码中提供的数值代码：这对应于 winsock 错误代码。 证书错误是精细 (例如，无法验证证书、证书未经授权，等等 )  |
+| HostUnreachable | MUX 不正常 (常见情况下，BGPRouter 断开连接)  | RRAS 上的 BGP 对等端 (BGP 虚拟机) 或 (ToR) 交换机无法访问或未成功进行对等互连。 检查软件负载平衡器多路复用器资源和 BGP 对等机上的 BGP 设置 (ToR 或 RRAS 虚拟机)  |
+| HostNotConnectedToController | 未连接 SLB 主机代理 | 检查 SLB 主机代理服务是否正在运行;请参阅 SLB 主机代理日志 (自动运行) ，因为在此情况下，SLBM (NC) 拒绝了主机代理运行状态所提供的证书将显示微妙信息 |
 | PortBlocked | 由于缺少 VNET/ACL 策略，VFP 端口被阻止 | 检查是否有任何其他错误，这可能会导致未配置策略。 |
 | 重载 | 负载平衡 MUX | MUX 性能问题 |
 | RoutePublicationFailure | Loadbalancer MUX 未连接到 BGP 路由器 | 检查 MUX 是否已连接到 BGP 路由器并且已正确设置 BGP 对等互连 |
 | VirtualServerUnreachable | Loadbalancer MUX 未连接到 SLB 管理器 | 检查 SLBM 和 MUX 之间的连接 |
 | QosConfigurationFailure | 未能配置 QOS 策略 | 如果使用了 QOS 保留，请查看是否有足够的带宽可用于所有 VM |
 
-#### <a name="check-network-connectivity-between-the-network-controller-and-hyper-v-host-nc-host-agent-service"></a>检查网络控制器和 Hyper-v 主机之间的网络连接（NC 主机代理服务）
-运行下面的*netstat*命令，验证在 NC 主机代理和网络控制器节点与 hyper-v 主机上的一个侦听套接字之间是否有三个已建立的连接
-- 在 Hyper-v 主机上侦听端口 TCP：6640（NC 主机代理服务）
-- 从端口6640上的 Hyper-v 主机 IP 到临时端口上的 NC 节点 IP 的两个已建立连接（> 32000）
+#### <a name="check-network-connectivity-between-the-network-controller-and-hyper-v-host-nc-host-agent-service"></a>检查网络控制器和 Hyper-v 主机之间的网络连接 (NC 主机代理服务) 
+运行下面的*netstat*命令，以验证 NC 主机代理与网络控制器节点之间是否存在三个建立的连接 () 和 hyper-v 主机上的一个侦听套接字
+- 在 Hyper-v 主机上侦听端口 TCP： 6640 (NC 主机代理服务) 
+- 从端口6640上的 Hyper-v 主机 IP 到在临时端口 ( 上的 NC 节点 IP 建立了两个连接，# A0 32000) 
 - 一种建立的连接，从临时端口上的 Hyper-v 主机 IP 到端口6640上的网络控制器 REST IP 的连接
 
 >[!NOTE]
@@ -231,9 +229,9 @@ ResourceId       : 4c4c4544-0056-4a10-8059-b8c04f395931
 Properties       : Microsoft.Windows.NetworkController.ServerProperties
 ```
 
-*修正*如果使用 SDNExpress 脚本或手动部署，请在注册表中更新 HostId 密钥，使其与服务器资源的实例 Id 匹配。 如果使用 VMM，请在 Hyper-v 主机（物理服务器）上重新启动网络控制器主机代理，删除 VMM 中的 Hyper-v 服务器并删除主机 Id 注册表项。 然后，通过 VMM 重新添加服务器。
+*修正*如果使用 SDNExpress 脚本或手动部署，请在注册表中更新 HostId 密钥，使其与服务器资源的实例 Id 匹配。 如果使用 VMM，请在 Hyper-v 主机上重新启动网络控制器主机代理 (物理服务器) ，删除 VMM 中的 Hyper-v 服务器并删除 HostId 注册表项。 然后，通过 VMM 重新添加服务器。
 
-检查 hyper-v 主机（NC 主机代理服务）和网络控制器节点之间的（SouthBound）通信的 Hyper-v 主机（主机名将是证书的使用者名称）所使用的 x.509 证书的指纹是否相同。 同时检查网络控制器的 REST 证书是否具有 " *CN = <FQDN or IP> *" 的使用者名称。
+检查 Hyper-v 主机所使用的 x.509 证书的指纹 (主机名是否是证书的使用者名称) 用于 (SouthBound) Hyper-v 主机 (NC 主机代理服务) 和网络控制器节点相同。 同时检查网络控制器的 REST 证书是否具有 " *CN = <FQDN or IP> *" 的使用者名称。
 
 ```
 # On Hyper-V Host
@@ -260,7 +258,7 @@ Thumbprint                                Subject
 ...
 ```
 
-你还可以检查每个证书的以下参数，以确保使用者名称是预期的（主机名或 NC REST FQDN 或 IP），证书尚未过期，证书链中的所有证书颁发机构都包含在受信任的根证书颁发机构中。
+你还可以检查每个证书的以下参数，以确保使用者名称 (主机名或 NC REST FQDN 或 IP) 应为，证书尚未过期，证书链中的所有证书颁发机构都包含在受信任的根证书颁发机构中。
 
 - 使用者名称
 - 过期日期
@@ -269,7 +267,7 @@ Thumbprint                                Subject
 *修正*如果 Hyper-v 主机上的多个证书具有相同的使用者名称，则网络控制器主机代理会随机选择一个证书以提供给网络控制器。 这可能与网络控制器已知的服务器资源的指纹不匹配。 在这种情况下，请在 Hyper-v 主机上删除一个具有相同使用者名称的证书，然后重新启动网络控制器主机代理服务。 如果仍无法建立连接，请在 Hyper-v 主机上删除具有相同使用者名称的另一个证书，并在 VMM 中删除相应的服务器资源。 然后，在 VMM 中重新创建服务器资源，这将生成新的 x.509 证书，并将其安装在 Hyper-v 主机上。
 
 #### <a name="check-the-slb-configuration-state"></a>检查 SLB 配置状态
-可以在 NetworkController cmdlet 的输出中确定 SLB 配置状态。 此 cmdlet 还将输出 JSON 文件中的当前网络控制器资源集、每个 Hyper-v 主机（服务器）的所有 IP 配置和主机代理数据库表中的本地网络策略。
+可以在 NetworkController cmdlet 的输出中确定 SLB 配置状态。 此 cmdlet 还将输出 JSON 文件中的当前网络控制器资源集，每个 Hyper-v 主机中的所有 IP 配置 (server) ，以及来自主机代理数据库表的本地网络策略。
 
 默认情况下会收集其他跟踪。 若要不收集跟踪，请添加-IncludeTraces： $false 参数。
 
@@ -294,7 +292,7 @@ Collecting Diagnostics data from NC Nodes
  * Fabric
    * SlbmVips-此部分列出了网络控制器用于 coodinate SLB Mux 和 SLB 主机代理之间的配置和运行状况的 SLB 管理器 VIP 地址的 IP 地址。
    * MuxState-此部分将列出已部署的每个 SLB Mux 的一个值，提供 mux 的状态
-   * 路由器配置-此部分将列出上游路由器的（BGP 对等）自治系统编号（ASN）、传输 IP 地址和 ID。 它还将列出 SLB Mux ASN 和中转 IP。
+   * 路由器配置-此部分将列出上游路由器的 (BGP 对等) 自治系统编号 (ASN) 、中转 IP 地址和 ID。 它还将列出 SLB Mux ASN 和中转 IP。
    * 连接的主机信息-此部分将列出管理 IP 地址可用于运行负载平衡工作负载的所有 Hyper-v 主机。
    * Vip 范围-此部分将列出公用和专用 VIP IP 池范围。 SLBM VIP 将作为分配的 IP 包含在这些范围之一中。
    * Mux 路由-对于部署的每个 SLB Mux，此部分将列出一个值，其中包含该特定 Mux 的所有路由播发。
@@ -327,7 +325,7 @@ Get-NetBgpRouter | Get-BgpPeer
 Get-NetBgpRouter | Get-BgpRouteInformation
 ```
 
-**从机架顶部（ToR）交换机：**
+**从货架 (ToR) 交换机：**
 
 `sh ip bgp summary (for 3rd party BGP Routers)`
 
@@ -339,7 +337,7 @@ Get-BgpPeer
 Get-BgpRouteInformation
 ```
 
-除此之外，从我们到目前为止所见到的问题（尤其是在基于 SDNExpress 的部署上），无法在 GW Vm 上配置租户隔离舱的最常见原因似乎就是，与尝试分配到 TenantConfig.psd1 中的网络连接（S2S 隧道）的人员相比，FabricConfig.psd1 中的 GW 容量更小。 可以通过比较以下命令的输出来轻松检查此项：
+除此之外，从我们到目前为止所见到的问题 (尤其是在基于 SDNExpress 的部署) 上，不会在 GW Vm 上配置租户隔离舱的最常见原因似乎是： FabricConfig.psd1 中的 GW 容量低于1的网络 (连接所需的 S2S 隧道 1) TenantConfig.psd。 可以通过比较以下命令的输出来轻松检查此项：
 
 ```powershell
 PS > (Get-NetworkControllerGatewayPool -ConnectionUri $uri).properties.Capacity
@@ -351,7 +349,7 @@ PS > (Get-NetworkControllerVirtualgatewayNetworkConnection -ConnectionUri $uri -
 部署网络控制器、创建了租户虚拟网络和子网，并已将 Vm 附加到虚拟子网后，宿主可以执行其他结构级别测试来检查租户连接性。
 
 #### <a name="check-hnv-provider-logical-network-connectivity"></a>检查 HNV 提供程序逻辑网络连接
-在 Hyper-v 主机上运行的第一个来宾 VM 已连接到租户虚拟网络后，网络控制器会将两个 HNV 提供程序 IP 地址（PA IP 地址）分配给 Hyper-v 主机。 这些 Ip 来自 HNV 提供程序逻辑网络的 IP 池，由网络控制器管理。  了解这两个 HNV IP 地址是什么
+在 Hyper-v 主机上运行的第一个来宾 VM 已连接到租户虚拟网络后，网络控制器会将两个 HNV 提供程序 IP 地址分配 (PA IP 地址) 到 Hyper-v 主机。 这些 Ip 来自 HNV 提供程序逻辑网络的 IP 池，由网络控制器管理。  了解这两个 HNV IP 地址是什么
 
 ```powershell
 PS > Get-ProviderAddress
@@ -370,9 +368,9 @@ Default Gateway : 10.10.182.1
 VLAN            : VLAN11
 ```
 
-这些 HNV 提供程序 IP 地址（PA ip）分配给在单独 TCPIP 网络隔离舱中创建的以太网适配器，适配器名称为_VLANX_ ，其中 X 是分配给 HNV 提供程序（传输）逻辑网络的 VLAN。
+这些 HNV 提供程序 IP 地址 (PA IPs) 分配到在单独 TCPIP 网络隔离舱中创建的以太网适配器，并且适配器名称为_VLANX_ ，其中 X 是分配给 HNV 提供程序的 VLAN (传输) 逻辑网络。
 
-使用 HNV 提供程序逻辑网络的两个 Hyper-v 主机之间的连接可以通过具有额外隔离舱（-c Y）参数的 ping 来完成，其中 Y 是创建 PAhostVNICs 的 TCPIP 网络隔离舱。 可以通过执行以下操作来确定此隔离舱：
+使用 HNV 提供程序逻辑网络的两个 Hyper-v 主机之间的连接可以通过具有额外隔离舱 (-c Y) 参数的 ping 来完成，其中 Y 是创建 PAhostVNICs 的 TCPIP 网络隔离舱。 可以通过执行以下操作来确定此隔离舱：
 
 ```
 C:\> ipconfig /allcompartments /all
@@ -415,9 +413,9 @@ Ethernet adapter VLAN11:
 ```
 
 >[!NOTE]
-> 数据路径中未使用 PA 主机 vNIC 适配器，因此没有将 IP 分配给 "vEthernet （PAhostVNic）适配器"。
+> 数据路径中未使用 PA 主机 vNIC 适配器，因此没有将 IP 分配给 "vEthernet (PAhostVNic) 适配器"。
 
-例如，假定 Hyper-v 主机1和2具有 HNV Provider （PA）的 IP 地址：
+例如，假定 Hyper-v 主机1和2具有 HNV 提供程序 (PA) IP 地址：
 
 | Hyper-V 主机 | PA IP 地址1 | PA IP 地址2 |
 |--|--|--|
@@ -488,7 +486,7 @@ IsDeleted            : False
 
 #### <a name="check-mtu-and-jumbo-frame-support-on-hnv-provider-logical-network"></a>在 HNV 提供程序逻辑网络上检查 MTU 和超长帧支持
 
-HNV 提供程序逻辑网络中的另一个常见问题是，物理网络端口和/或以太网卡没有配置足够的 MTU 来处理 VXLAN （或 NVGRE）封装的系统开销。
+HNV 提供程序逻辑网络中的另一个常见问题是，物理网络端口和/或以太网卡没有配置足够大的 MTU 来处理 VXLAN (或 NVGRE) 封装的系统开销。
 
 >[!NOTE]
 > 某些以太网卡和驱动程序支持新的 * EncapOverhead 关键字，网络控制器主机代理会自动将其设置为160的值。 然后，会将此值添加到 "JumboPacket" 关键字的值，其求和用作播发的 MTU。
@@ -527,11 +525,11 @@ Cannot send jumbo packets to the destination. Physical switch ports may not be c
 ```
 
 *修正*
-* 调整物理交换机端口上的 MTU 大小至少为1674B （包括14B 以太网标头和尾部）
+* 将物理交换机端口上的 MTU 大小调整为至少 1674B (包括14B 以太网标头和尾部) 
 * 如果 NIC 卡不支持 EncapOverhead 关键字，请将 JumboPacket 关键字调整为至少1674B
 
 #### <a name="check-tenant-vm-nic-connectivity"></a>检查租户 VM NIC 连接
-分配给来宾 VM 的每个 VM NIC 在专用客户地址（CA）和 HNV 提供商地址（PA）空间之间具有 CA PA 映射。 这些映射保存在每个 Hyper-v 主机上的 OVSDB server 表中，可通过执行以下 cmdlet 来查找。
+分配给来宾 VM 的每个 VM NIC 都具有 CA-PA 映射 (CA) 和 HNV 提供商地址 (PA) 空间之间。 这些映射保存在每个 Hyper-v 主机上的 OVSDB server 表中，可通过执行以下 cmdlet 来查找。
 
 ```
 # Get all known PA-CA Mappings from this particular Hyper-V Host
@@ -563,7 +561,7 @@ CA IP Address CA MAC Address    Virtual Subnet ID PA IP Address
 3.  宿主从 Hyper-v 主机上运行**VirtualNetworkConnection** ，验证所涉及的两个租户虚拟机之间的连接。
 
 >[!NOTE]
->VSID 是指虚拟子网 ID。 对于 VXLAN，这是 VXLAN 网络标识符（VNI）。 可以通过运行**PACAMapping** cmdlet 来查找此值。
+>VSID 是指虚拟子网 ID。 对于 VXLAN，这是 VXLAN 网络标识符 (VNI) 。 可以通过运行**PACAMapping** cmdlet 来查找此值。
 
 #### <a name="example"></a>示例
 
@@ -572,7 +570,7 @@ $password = ConvertTo-SecureString -String "password" -AsPlainText -Force
 $cred = New-Object pscredential -ArgumentList (".\administrator", $password)
 ```
 
-在主机 "sa18n30-2.sa18.nttest.microsoft.com" 上，在 "绿色 Web VM 1" 与 SenderCA IP of 192.168.1.4 之间进行 ping 操作，并将管理 IP 10.127.132.153 的管理 IP 连接到虚拟子网（LISTENERCA）4114。
+在主机 "sa18n30-2.sa18.nttest.microsoft.com" 上，在 "绿色 Web VM 1" 与 SenderCA IP of 192.168.1.4 之间进行 ping 操作，同时将10.127.132.153 的管理 IP 连接到虚拟子网 (ListenerCA) 4114。
 
 ```powershell
 Test-VirtualNetworkConnection -OperationId 27 -HostName sa18n30-2.sa18.nttest.microsoft.com -MgmtIp 10.127.132.153 -Creds $cred -VMName "Green Web VM 1" -VMNetworkAdapterName "Green Web VM 1" -SenderCAIP 192.168.1.4 -SenderVSID 4114 -ListenerCAIP 192.168.1.5 -ListenerVSID 4114
@@ -627,20 +625,20 @@ Get-NetworkControllerAccessControlList -ConnectionUri $uri
 
 ### <a name="network-controller-centralized-logging"></a>网络控制器集中式日志记录
 
-网络控制器可以自动收集调试器日志，并将它们存储在一个集中的位置。 首次部署网络控制器或在以后的任何时间都可以启用日志收集。 日志由网络控制器和网络控制器管理的网络元素收集：主机、软件负载平衡器（SLB）和网关计算机。
+网络控制器可以自动收集调试器日志，并将它们存储在一个集中的位置。 首次部署网络控制器或在以后的任何时间都可以启用日志收集。 日志从网络控制器收集，网络控制器由网络控制器管理的网络元素：主机计算机、软件负载均衡器 (SLB) 和网关计算机。
 
 这些日志包括网络控制器群集、网络控制器应用程序、网关日志、SLB、虚拟网络和分布式防火墙的调试日志。 每当将新主机/SLB/网关添加到网络控制器时，将在那些计算机上启动日志记录。
 同样，从网络控制器中删除主机/SLB/网关后，在这些计算机上将停止日志记录。
 
 #### <a name="enable-logging"></a>启用日志记录
 
-使用**NetworkControllerCluster** Cmdlet 安装网络控制器群集时，将自动启用日志记录。 默认情况下，会在 *%systemdrive%\SDNDiagnostics*的网络控制器节点上本地收集日志。 **强烈建议**将此位置更改为远程文件共享（而非本地）。
+使用**NetworkControllerCluster** Cmdlet 安装网络控制器群集时，将自动启用日志记录。 默认情况下，会在 *%systemdrive%\SDNDiagnostics*的网络控制器节点上本地收集日志。 **强烈建议**将此位置更改为远程文件共享， (不是本地) 。
 
 网络控制器群集日志存储在 *%ProgramData%\Windows Fabric\log\Traces*中。 您可以使用**DiagnosticLogLocation**参数为日志收集指定一个集中的位置，并建议该位置也是远程文件共享。
 
 如果要限制对此位置的访问权限，可以使用**LogLocationCredential**参数提供访问凭据。 如果提供用于访问日志位置的凭据，则还应提供**CredentialEncryptionCertificate**参数，该参数用于对本地存储在网络控制器节点上的凭据进行加密。
 
-如果使用默认设置，则建议在中心位置至少具有 75 GB 的可用空间，在3节点网络控制器群集的本地节点（如果不使用中央位置）上有 25 GB 的可用空间。
+如果使用默认设置，则建议你在中心位置至少具有 75 GB 的可用空间，在本地节点上有 25 GB 的可用空间， (如果不将中心位置) 用于三节点网络控制器群集。
 
 #### <a name="change-logging-settings"></a>更改日志记录设置
 
@@ -648,7 +646,7 @@ Get-NetworkControllerAccessControlList -ConnectionUri $uri
 
 - **集中式日志位置**。  可以通过参数更改存储所有日志的位置 ``DiagnosticLogLocation`` 。
 - **用于访问日志位置的凭据**。  您可以使用参数更改凭据以访问日志位置 ``LogLocationCredential`` 。
-- **转到本地日志记录**。  如果已提供存储日志的集中位置，则可以使用参数返回到在网络控制器节点上本地进行日志记录 ``UseLocalLogLocation`` （由于较大的磁盘空间要求，不建议这样做）。
+- **转到本地日志记录**。  如果你已提供存储日志的集中位置，则可以使用参数返回到在网络控制器节点上本地登录， ``UseLocalLogLocation`` (因为需要较大的磁盘空间要求) 。
 - **日志记录范围**。  默认情况下，将收集所有日志。 你可以更改范围以仅收集网络控制器群集日志。
 - **日志记录级别**。  默认日志记录级别为 "信息"。 可以将其更改为 "错误"、"警告" 或 "详细"。
 - **日志老化时间**。  日志以循环方式存储。 默认情况下，你将有3天的日志记录数据，无论你使用的是本地日志记录还是集中式日志记录。 可以通过**LogTimeLimitInDays**参数更改此时间限制。
@@ -667,29 +665,29 @@ Get-NetworkControllerAccessControlList -ConnectionUri $uri
 - SDNDiagnostics
 - 跟踪
 
-网络控制器使用（Azure） Service Fabric。 排查某些问题时可能需要 Service Fabric 日志。 可在 C:\ProgramData\Microsoft\Service Fabric 中的每个网络控制器节点上找到这些日志。
+网络控制器使用 Azure) Service Fabric (。 排查某些问题时可能需要 Service Fabric 日志。 可在 C:\ProgramData\Microsoft\Service Fabric 中的每个网络控制器节点上找到这些日志。
 
-如果用户已运行_NetworkController_ cmdlet，则会在与网络控制器中的服务器资源一起指定的每个 hyper-v 主机上提供其他日志。 这些日志（和跟踪（如果启用）保留在 C:\NCDiagnostics 下。
+如果用户已运行_NetworkController_ cmdlet，则会在与网络控制器中的服务器资源一起指定的每个 hyper-v 主机上提供其他日志。 如果启用) 保留在 C:\NCDiagnostics 下，则这些日志 (和跟踪
 
 ### <a name="slb-diagnostics"></a>SLB 诊断
 
-#### <a name="slbm-fabric-errors-hosting-service-provider-actions"></a>SLBM 构造错误（托管服务提供程序操作）
+#### <a name="slbm-fabric-errors-hosting-service-provider-actions"></a>承载服务提供程序操作 (SLBM 构造错误) 
 
-1.  检查软件负载平衡器管理器（SLBM）是否正常运行，以及业务流程层是否可以互相通信： SLBM > SLB Mux 和 SLBM > SLB 主机代理。 从具有对网络控制器 REST 终结点的访问权限的任何节点中运行[DumpSlbRestState](https://github.com/Microsoft/SDN/blob/master/Diagnostics/DumpSlbRestState.ps1) 。
-2.  在其中一个网络控制器节点 Vm （最好是主网络控制器节点-NetworkControllerReplica）上验证*SDNSLBMPerfCounters* in PerfMon：
-    1.  负载均衡器（LB）引擎是否已连接到 SLBM？ （*SLBM LBEngine 配置*> 0）
-    2.  SLBM 是否至少知道自己的终结点？ （*VIP 端点总数*>= 2）
-    3.  Hyper-v （DIP）主机是否连接到 SLBM？ （*连接的 HP 客户端*= = num server）
-    4.  SLBM 是否连接到 Mux？ （*Mux 已连接*  == SLBM 上的*Mux 正常*  == *Mux 报告正常状态*= # SLB mux vm）。
+1.  检查软件负载平衡器管理器 (SLBM) 是否正常运行，以及业务流程层是否可以互相通信： SLBM > SLB Mux 和 SLBM > SLB 主机代理。 从具有对网络控制器 REST 终结点的访问权限的任何节点中运行[DumpSlbRestState](https://github.com/Microsoft/SDN/blob/master/Diagnostics/DumpSlbRestState.ps1) 。
+2.  验证网络控制器节点上的*SDNSLBMPerfCounters* in PerfMon (最好是主网络控制器节点-NetworkControllerReplica) ：
+    1.  负载均衡器 (LB) 引擎是否连接到 SLBM？  (*SLBM LBEngine 配置总数*> 0) 
+    2.  SLBM 是否至少知道自己的终结点？  (*VIP 终结点总数*>= 2 ) 
+    3.  Hyper-v (DIP 是否) 连接到 SLBM 的主机？ *连接 (HP 客户端*= = num server) 
+    4.  SLBM 是否连接到 Mux？  (*mux 连接*  ==  *的 mux 在 SLBM 上运行正常*  ==  ，而*mux 报告正常状态*= # SLB mux vm) 。
 3.  确保配置的 BGP 路由器已成功与 SLB MUX 对等互连
-    1.  如果将 RRAS 用于远程访问（即 BGP 虚拟机）：
+    1.  如果将 RRAS 用于远程访问 (即 BGP 虚拟机) ：
         1.  Bgp 应显示已连接
         2.  BgpRouteInformation 应至少显示 SLBM 自 VIP 的路由
-    2.  如果使用物理上架（ToR）交换机作为 BGP 对等互连，请参阅文档
+    2.  如果使用物理机箱顶部 (ToR) 切换为 BGP 对等节点，请参阅文档
         1.  例如： # show bgp instance
 4.  在 SLB Mux VM 上验证 PerfMon 中的*SlbMuxPerfCounters*和*SLBMUX*计数器
 5.  检查软件负载平衡器管理器资源中的配置状态和 VIP 范围
-    1.  NetworkControllerLoadBalancerConfiguration-ConnectionUri <https:// <FQDN or IP> | convertto-html-json-深度8（检查 IP 池中的 VIP 范围并确保 SLBM 自 VIP （*LoadBalanacerManagerIPAddress*）和任何面向租户的 vip 在这些范围内）
+    1.  NetworkControllerLoadBalancerConfiguration-ConnectionUri <https:// <FQDN or IP> | convertto-html-json-深度 8 (检查 IP 池中的 VIP 范围并确保 SLBM 自 VIP (*LoadBalanacerManagerIPAddress*) 以及任何面向租户的 vip 在这些范围内) 
         1. NetworkControllerIpPool-NetworkId "<公用/专用 VIP 逻辑网络资源 ID>"-SubnetId "<公共/专用 VIP 逻辑子网资源 ID>"-ResourceId " <IP Pool Resource Id> "-ConnectionUri $uri | convertto-html
     2.  NetworkControllerConfigurationState-
 
@@ -700,10 +698,10 @@ Get-NetworkControllerAccessControlList -ConnectionUri $uri
   * 修复证书问题
   * 修复网络连接问题
 * 确保已成功配置 BGP 对等互连信息
-* 确保注册表中的主机 ID 与服务器资源中的服务器实例 ID 匹配（ *HostNotConnected*错误代码的参考附录）
+* 确保注册表中的主机 ID 与服务器资源中的服务器实例 ID 匹配 (*HostNotConnected*错误代码的参考附录) 
 * 收集日志
 
-#### <a name="slbm-tenant-errors-hosting-service-provider--and-tenant-actions"></a>SLBM 租户错误（托管服务提供商和租户操作）
+#### <a name="slbm-tenant-errors-hosting-service-provider--and-tenant-actions"></a>托管服务提供商和租户操作 (的 SLBM 租户错误) 
 
 1.  宿主检查*NetworkControllerConfigurationState*以查看是否有任何 LoadBalancer 资源处于错误状态。 请尝试按照附录中的 "操作项" 表进行操作。
     1.  检查 VIP 终结点是否存在和播发路由
@@ -713,7 +711,7 @@ Get-NetworkControllerAccessControlList -ConnectionUri $uri
 3.  宿主如果未发现或未连接 DIP 终结点：
     1.  检查*NetworkControllerConfigurationState*
         1.  使用验证 NC 和 SLB 主机代理是否已成功连接到网络控制器事件协调器``netstat -anp tcp |findstr 6640)``
-    2.  检查*nchostagent* service regkey 中的*主机*id （附录中的引用*HostNotConnected*错误代码）是否与相应的服务器资源的实例 Id （ ``Get-NCServer |convertto-json -depth 8`` ）匹配
+    2.  检查*nchostagent* service regkey 中的*主机*id (引用*HostNotConnected*)  () 中的错误代码。 ``Get-NCServer |convertto-json -depth 8``
     3.  检查虚拟机端口的端口配置文件 id 与相应的虚拟机 NIC 资源的实例 Id 匹配
 4.  [宿主提供程序]收集日志
 

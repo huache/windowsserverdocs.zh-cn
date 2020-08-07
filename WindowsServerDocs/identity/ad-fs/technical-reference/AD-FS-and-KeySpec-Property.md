@@ -4,24 +4,22 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 36555336b158fdf7cfaa400f66b9deecbff49c1b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a78f989230450bcf59f86add66bdcfe91fa23c77
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519686"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938115"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS 和 certificate KeySpec 属性信息
-密钥规范（"KeySpec"）是与证书和密钥关联的属性。 它指定与证书关联的私钥是否可用于签名和/或加密。
+密钥规范 ( "KeySpec" ) 是与证书和密钥关联的属性。 它指定与证书关联的私钥是否可用于签名和/或加密。
 
 不正确的 KeySpec 值可能会导致 AD FS 和 Web 应用程序代理错误，如：
 
 
-- 无法建立到 AD FS 或 Web 应用程序代理的 SSL/TLS 连接，未记录任何 AD FS 事件（尽管可能会记录 SChannel 36888 和36874事件）
+- 未能建立与 AD FS 或 Web 应用程序代理的 SSL/TLS 连接，但未记录 (的 AD FS 事件，但可能会记录 SChannel 36888 和36874事件) 
 - 在 AD FS 或 WAP 窗体的身份验证页上登录失败，页面上没有显示错误消息。
 
 你可能会在事件日志中看到以下内容：
@@ -41,13 +39,13 @@ Ignore corrupted SSO cookie.
 ```
 
 ## <a name="what-causes-the-problem"></a>导致问题的原因
-KeySpec 属性标识如何使用 microsoft 旧版加密存储提供程序（CSP）中由 Microsoft CryptoAPI （CAPI）生成或检索到的密钥。
+KeySpec 属性标识了 Microsoft CryptoAPI (CAPI) 从 Microsoft 旧加密存储提供程序 (CSP) ）生成或检索到的密钥的方式。
 
 KeySpec 值**1**或**AT_KEYEXCHANGE**可用于签名和加密。  值**2**或**AT_SIGNATURE**仅用于签名。
 
 最常见的 KeySpec 错误配置是对证书（而不是令牌签名证书）使用值2。
 
-对于其密钥是使用下一代加密技术（CNG）提供程序生成的证书，没有密钥规范的概念，KeySpec 值将始终为零。
+对于其密钥是使用下一代加密技术 (CNG) 提供程序生成的证书，没有密钥规范的概念，KeySpec 值将始终为零。
 
 请参阅下面的如何检查有效的 KeySpec 值。
 
@@ -60,8 +58,8 @@ RSA 密钥算法标识符映射到 KeySpec 值，如下所示
 
 | 提供程序支持的算法| CAPI 调用的密钥规范值 |
 | --- | --- |
-|CALG_RSA_KEYX：可用于签名和解密的 RSA 密钥| AT_KEYEXCHANGE （或 KeySpec = 1）|
-CALG_RSA_SIGN： RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
+|CALG_RSA_KEYX：可用于签名和解密的 RSA 密钥| AT_KEYEXCHANGE (或 KeySpec = 1) |
+CALG_RSA_SIGN： RSA 仅签名密钥 |AT_SIGNATURE (或 KeySpec = 2) |
 
 ## <a name="keyspec-values-and-associated-meanings"></a>KeySpec 值和关联的含义
 以下是各种 KeySpec 值的含义：
@@ -69,8 +67,8 @@ CALG_RSA_SIGN： RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
 |Keyspec 值|也就是说|建议 AD FS 使用|
 | --- | --- | --- |
 |0|证书是 CNG 证书|仅适用于 SSL 证书|
-|1|对于旧版 CAPI （非 CNG）证书，密钥可用于签名和解密|    SSL、令牌签名、令牌解密和服务通信证书|
-|2|对于旧版 CAPI （非 CNG）证书，密钥只能用于签名|不建议|
+|1|对于传统的 CAPI (非 CNG) 证书，密钥可用于签名和解密|    SSL、令牌签名、令牌解密和服务通信证书|
+|2|对于传统的 CAPI (非 CNG) 证书，密钥只能用于签名|不建议|
 
 ## <a name="how-to-check-the-keyspec-value-for-your-certificates--keys"></a>如何检查证书/密钥的 KeySpec 值
 若要查看证书值，可以使用**certutil**命令行工具。
@@ -82,10 +80,10 @@ CALG_RSA_SIGN： RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
 在 "CERT_KEY_PROV_INFO_PROP_ID" 下，查找以下两项内容：
 
 
-1. **ProviderType：** 这表示证书是使用旧的加密存储提供程序（CSP）还是基于较新的证书下一代（CNG） Api 的密钥存储提供程序。  任何非零值都表示旧提供程序。
+1. **ProviderType：** 这表示证书是使用旧的加密存储提供程序 (CSP) 还是基于新证书的密钥存储提供程序 (CNG) api。  任何非零值都表示旧提供程序。
 2. **KeySpec：** 下面是 AD FS 证书的有效 KeySpec 值：
 
-   旧 CSP 提供程序（ProviderType 不等于0）：
+   旧 CSP 提供程序 (ProviderType 不等于 0) ：
 
    |AD FS 证书目的|有效的 KeySpec 值|
    | --- | --- |
@@ -94,7 +92,7 @@ CALG_RSA_SIGN： RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
    |令牌签名|1和2|
    |SSL|1|
 
-   CNG 提供程序（ProviderType = 0）：
+   CNG 提供程序 (ProviderType = 0) ：
 
    |AD FS 证书目的|有效的 KeySpec 值|
    | --- | --- |
@@ -107,8 +105,8 @@ CALG_RSA_SIGN： RSA 仅签名密钥 |AT_SIGNATURE （或 KeySpec = 2）|
 1. 首先，检查并记录现有证书上的私钥权限，以便在重新导入后需要重新配置这些权限。
 2. 将包含私钥的证书导出到 PFX 文件。
 3. 针对每个 AD FS 和 WAP 服务器执行以下步骤
-    1. 删除证书（从 AD FS/WAP 服务器）
-    2. 使用下面的 cmdlet 语法打开提升的 PowerShell 命令提示符，并在每个 AD FS 和 WAP 服务器上导入 PFX 文件，并指定 AT_KEYEXCHANGE 值（适用于所有 AD FS 证书目的）：
+    1. 从 AD FS/WAP 服务器中删除证书 () 
+    2. 使用下面的 cmdlet 语法打开提升的 PowerShell 命令提示符，并在每个 AD FS 和 WAP 服务器上导入 PFX 文件，并指定 AT_KEYEXCHANGE 值 (这适用于所有 AD FS 证书目的) ：
         1. C： \> certutil – importpfx certfile AT_KEYEXCHANGE
         2. 输入 PFX 密码
     3. 完成上述操作后，请执行以下操作

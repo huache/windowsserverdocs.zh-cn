@@ -1,19 +1,17 @@
 ---
 title: 添加和开发功能
 description: 系统见解使你可以向系统见解添加新的预测功能，而无需任何操作系统更新。 这使开发人员（包括 Microsoft 和第三方）能够创建和交付新功能，以解决你关注的方案。 新功能可以指定自定义数据来收集和分析，还可以与现有的系统见解管理平面集成。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 891edb108bc2c298c70b29c596fb8d0ca0e06b7e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b28621b24b321cdc22f07c03e9c04f0dde22759b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475184"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972014"
 ---
 # <a name="adding-and-developing-new-capabilities"></a>添加和开发新功能
 

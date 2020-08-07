@@ -2,20 +2,18 @@
 title: 性能优化网络适配器
 description: 本主题是 Windows Server 2016 的网络子系统性能优化指南的一部分。
 audience: Admin - CI ID 111485 - CSSTroubleshoot
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: eb402c9cd7bb4f9ae472859fcd45fcc050d1df85
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a29830fe5f6f23138b5872b95926ae7dc8834ae4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182133"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955584"
 ---
 # <a name="performance-tuning-network-adapters"></a>性能优化网络适配器
 
@@ -45,12 +43,12 @@ ms.locfileid: "87182133"
 > [!NOTE]
 > 某些网络适配器要求独立于发送和接收路径启用卸载功能。
 
-##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>启用 web 服务器的接收方缩放（RSS）
+##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>为 web 服务器启用接收方缩放 (RSS) 
 
 当服务器上的网络适配器少于逻辑处理器时，RSS 可以提高 Web 的可伸缩性和性能。 当所有 web 流量都通过支持 RSS 的网络适配器时，服务器可以跨不同的 Cpu 同时处理来自不同连接的传入 web 请求。
 
 > [!IMPORTANT]
-> 避免在同一服务器上同时使用非 RSS 网络适配器和支持 RSS 的网络适配器。 由于 RSS 和超文本传输协议（HTTP）中存在负载分配逻辑，如果不支持 RSS 的网络适配器接受具有一个或多个支持 RSS 的网络适配器的服务器上的 web 流量，则性能可能会受到严重降级。 在此情况下，你应该使用支持 RSS 的网络适配器或在网络适配器属性“高级属性”**** 选项卡上禁用 RSS。
+> 避免在同一服务器上同时使用非 RSS 网络适配器和支持 RSS 的网络适配器。 由于 RSS 和超文本传输协议中的负载分配逻辑 (HTTP) ，如果不支持 RSS 的网络适配器接受具有一个或多个支持 RSS 的网络适配器的服务器上的 web 流量，则性能可能会受到严重降级。 在此情况下，你应该使用支持 RSS 的网络适配器或在网络适配器属性“高级属性”**** 选项卡上禁用 RSS。
 >
 > 若要确定网络适配器是否支持 RSS，你可以在网络适配器属性“高级属性”**** 选项卡上查看 RSS 信息。
 
@@ -71,7 +69,7 @@ ms.locfileid: "87182133"
 
 ### <a name="enabling-interrupt-moderation"></a>启用中断裁决
 
-为控制中断裁决，某些网络适配器公开不同的中断裁决级别、不同的缓冲区合并参数（有时单独用于发送和接收缓冲区）或两者。
+若要控制中断裁决，某些网络适配器会公开不同的中断裁决级别、不同的缓冲区合并参数 (有时单独用于发送和接收缓冲区) 或两者。
 
 对于 CPU 绑定的工作负荷，应考虑中断裁决。 使用中断裁决时，请考虑在主机 CPU 节省和延迟之间进行权衡，同时降低主机 CPU 的节省，因为有更多中断，延迟更少。 如果网络适配器不执行中断裁决，但它确实公开了缓冲区合并，则可以通过增加合并的缓冲区数来允许每个发送或接收更多的缓冲区，从而提高性能。
 
@@ -87,7 +85,7 @@ ms.locfileid: "87182133"
    > [!NOTE]
    > 如果系统 BIOS 设置为禁用电源管理的操作系统控制，则此设置不能正常工作。
 
-- 启用静态卸载。 例如，启用 UDP 校验和、TCP 校验和，并发送大卸载（LSO）设置。
+- 启用静态卸载。 例如，启用 UDP 校验和，TCP 校验和，并 (LSO) 设置中发送大卸载。
 
 - 如果流量经过多流式处理（例如，在接收大容量多播流量时），请启用 RSS。
 
@@ -97,7 +95,7 @@ ms.locfileid: "87182133"
 
 ##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>系统管理中断
 
-许多硬件系统使用系统管理中断（SMI-S）来实现多种维护功能，如报告错误纠正代码（ECC）内存错误、维护旧的 USB 兼容性、控制风扇以及管理 BIOS 控制的电源设置。
+许多硬件系统使用系统管理中断 (SMI-S) 用于各种维护功能，如报告错误更正代码 (ECC) 内存错误、维护旧的 USB 兼容性、控制风扇和管理 BIOS 控制的电源设置。
 
 SMI 是系统上的最高优先级中断，并将 CPU 置于管理模式下。 此模式抢先于所有其他活动，而 SMI 运行中断服务例程（通常包含在 BIOS 中）。
 
@@ -116,19 +114,19 @@ SMI 是系统上的最高优先级中断，并将 CPU 置于管理模式下。 �
 
 在 Windows Vista、Windows Server 2008 和更高版本的 Windows 中，Windows 网络堆栈使用名为*tcp 接收窗口自动优化级别*的功能来协商 tcp 接收窗口大小。 此功能可以在 TCP 握手期间为每个 TCP 通信协商定义的接收窗口大小。
 
-在 Windows 的早期版本中，Windows 网络堆栈使用固定大小的接收窗口（65535字节），该窗口限制了连接的总体可能吞吐量。 TCP 连接的总可实现吞吐量可能会限制网络使用方案。 TCP 接收窗口自动优化可使这些方案完全使用网络。
+在较早版本的 Windows 中，Windows 网络堆栈使用固定大小的接收窗口 (65535 字节) ，这会限制连接的总体可能吞吐量。 TCP 连接的总可实现吞吐量可能会限制网络使用方案。 TCP 接收窗口自动优化可使这些方案完全使用网络。
 
 对于具有特定大小的 TCP 接收窗口，可以使用以下公式来计算单一连接的总吞吐量。
 
-> 可*实现的总吞吐量（以字节为单位）*  = *TCP 接收窗口大小（字节）* \*（1/*连接延迟，以秒为单位*）
+> 可*实现的总吞吐量（以字节为单位）*  = *TCP 接收窗口大小（字节）* \* (1/*连接延迟（以秒为单位）*) 
 
 例如，对于滞后时间为10毫秒的连接，总可实现吞吐量只有 51 Mbps。 对于大型企业网络基础结构，此值是合理的。 但是，通过使用自动优化调整接收窗口，连接可以实现 1 Gbps 连接的全部线路速率。
 
 某些应用程序定义 TCP 接收窗口的大小。 如果应用程序未定义接收窗口大小，则链接速度将确定大小，如下所示：
 
-- 小于1兆位/秒（Mbps）：8千字节（KB）
+- 每秒小于1兆位 (Mbps) ：8千字节 (KB) 
 - 1 mbps 到 100 Mbps： 17 KB
-- 100 Mbps 到10千兆位/秒（Gbps）： 64 KB
+- 100 Mbps 到10千兆字节/秒 (Gbps) ： 64 KB
 - 10 Gbps 或更快： 128 KB
 
 例如，在安装了 1 Gbps 网络适配器的计算机上，窗口大小应为 64 KB。
@@ -228,17 +226,17 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 可以将接收窗口自动调谐设置为任意一种级别。 默认级别为 "**正常**"。 下表介绍了这些级别。
 
-|Level |十六进制值 |注释 |
+|级别 |十六进制值 |注释 |
 | --- | --- | --- |
-|标准（默认值） |0x8 （比例因子为8） |设置 TCP 接收窗口以适应几乎所有方案。 |
+|标准（默认值） |0x8 (缩放系数 8)  |设置 TCP 接收窗口以适应几乎所有方案。 |
 |已禁用 |没有可用的缩放比例 |将 TCP 接收窗口设置为其默认值。 |
-|受限制 |0x4 （缩放系数为4） |设置 TCP 接收窗口，使其超出其默认值，但在某些情况下限制此类增长。 |
-|高度限制 |0x2 （缩放比例为2） |设置 TCP 接收窗口，使其超出其默认值，但要非常谨慎。 |
-|实验 |0xE （缩放比例为14） |设置 TCP 接收窗口以适应极端方案。 |
+|受限制 |0x4 (缩放系数为 4)  |设置 TCP 接收窗口，使其超出其默认值，但在某些情况下限制此类增长。 |
+|高度限制 |0x2 (缩放系数 2)  |设置 TCP 接收窗口，使其超出其默认值，但要非常谨慎。 |
+|实验 |0xE (比例因子 14)  |设置 TCP 接收窗口以适应极端方案。 |
 
 如果使用应用程序来捕获网络数据包，则应用程序应为不同的窗口自动优化级别设置报告类似于以下内容的数据。
 
-- 自动调谐级别：**普通（默认状态）**
+- 自动调谐级别：**正常 (默认状态) **
 
    ```
    Frame: Number = 492, Captured Frame Length = 66, MediaType = ETHERNET
@@ -375,7 +373,7 @@ Windows Server 2003 中的以下注册表设置不再受支持，在更高版本
 
 ###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Windows 筛选平台
 
-Windows Vista 和 Windows Server 2008 引进了 Windows 筛选平台（WFP）。 WFP 为非 Microsoft 独立软件供应商（Isv）提供 Api 来创建数据包处理筛选器。 其示例包括防火墙和防病毒软件。
+Windows Vista 和 Windows Server 2008 在 WFP)  (引入了 Windows 筛选平台。 WFP 向非 Microsoft 独立软件供应商提供 Api (Isv) 来创建数据包处理筛选器。 其示例包括防火墙和防病毒软件。
 
 > [!NOTE]
 > 编写不当的 WFP 筛选器可能会显著降低服务器的网络性能。 有关详细信息，请参阅 Windows 开发人员中心中的将[包处理驱动程序和应用程序移植到 WFP](https://docs.microsoft.com/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) 。

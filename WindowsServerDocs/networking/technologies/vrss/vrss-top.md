@@ -1,8 +1,6 @@
 ---
 title: 虚拟接收方缩放 (vRSS)
-description: 了解 Windows Server 中的虚拟接收方缩放（vRSS），以及如何配置虚拟网络适配器，以便对 VM 中的多个逻辑处理器核心的传入网络流量进行负载均衡。 你还可以为主机虚拟网络接口卡（vNIC）配置数个物理核心。
-ms.prod: windows-server
-ms.technology: networking
+description: 了解 Windows Server 中的虚拟接收方缩放 (vRSS) ，以及如何配置虚拟网络适配器，以便对 VM 中的多个逻辑处理器核心的传入网络流量进行负载均衡。 你还可以为主机虚拟网络接口卡配置数个物理内核 (vNIC) 。
 ms.topic: article
 ms.assetid: 9be477b3-f81d-4e84-a6b0-ac4c1ea97715
 ms.date: 09/05/2018
@@ -10,25 +8,25 @@ ms.localizationpriority: medium
 manager: dougkim
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8841e0e5b33df6b44d63598ebf1f29caf89e1f3f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 135008db9f8a5f6b1238c18df64e89ed8c71180c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315254"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955524"
 ---
-# <a name="virtual-receive-side-scaling-vrss"></a>虚拟接收方缩放 \(vRSS\)
+# <a name="virtual-receive-side-scaling-vrss"></a>虚拟接收方缩放 \( vRSS\)
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-在本主题中，你将了解有关虚拟接收方缩放（vRSS）的信息，以及如何配置虚拟网络适配器，以便对 VM 中的多个逻辑处理器核心的传入网络流量进行负载均衡。 你还可以使用 vRSS 为主机虚拟网络接口卡配置多个物理内核 \(vNIC\)。
+在本主题中，你将了解 (vRSS 的虚拟接收方缩放) 以及如何配置虚拟网络适配器，以便对 VM 中的多个逻辑处理器核心的传入网络流量进行负载均衡。 你还可以使用 vRSS 为主机虚拟网络接口卡 vNIC 配置多个物理内核 \( \) 。
 
-此配置允许将虚拟网络适配器的负载分布 \(VM\)的虚拟机中的多个虚拟处理器，使 VM 能够比使用单个逻辑处理器更快地处理更多的网络流量。
+此配置允许将虚拟网络适配器的负载分布在虚拟机 VM 中的多个虚拟处理器上 \( \) ，从而使 VM 能够比使用单个逻辑处理器更快速地处理更多的网络流量。
 
 >[!TIP]
->可以在具有多个处理器的\-Hyper-v 主机、单个多核处理器或安装了多个多核处理器的 Hyper-v 主机上，使用 vm 来使用 vm。
+>可以在 \- 具有多个处理器的 hyper-v 主机、单个多核处理器或安装了多个多核处理器并为 VM 用途配置多个的虚拟机上使用 vRSS。
 
-vRSS 与所有其他 Hyper-v\-的网络技术兼容。 vRSS 依赖于超级\-V 主机中的虚拟机队列 \(VMQ\)，以及 VM 或主机 vNIC 上的 RSS。
+vRSS 与所有其他 Hyper-v \- 网络技术兼容。 vRSS 依赖于 Hyper-v 主机中的虚拟机队列 \( VMQ \) \- 和 VM 中的 RSS 或主机上的 vNIC。
 
 默认情况下，Windows Server 启用 vRSS，但你可以通过使用 Windows PowerShell 在虚拟机中禁用它。 有关详细信息，请参阅[为 RSS 和 VRSS](vrss-wps.md)[管理 VRSS](vrss-manage.md)和 Windows PowerShell 命令。
 
@@ -48,15 +46,15 @@ vRSS 与所有其他 Hyper-v\-的网络技术兼容。 vRSS 依赖于超级\-V �
 - 安装了 Windows Server 2012 R2 集成组件的 windows 8。
 
 有关对运行 FreeBSD 或 Linux 作为 Hyper-v 上的来宾操作系统的 Vm 的 vRSS 支持的信息，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows)。
-  
+
 ## <a name="hardware-requirements"></a>硬件要求
 
 下面是 vRSS 的硬件要求。
- 
-- 物理网络适配器必须支持 \(VMQ\)虚拟机队列。 如果 VMQ 已禁用或不受支持，则会为\-Hyper-v 主机和在主机上配置的任何 Vm 禁用了 vRSS。
+
+- 物理网络适配器必须支持虚拟机队列 \( VMQ \) 。 如果 VMQ 已禁用或不受支持，则会为 Hyper-v \- 主机和在主机上配置的任何 vm 禁用 vRSS。
 - 网络适配器的链接速度必须为 10 Gbps 或更高。
-- \-hyper-v 主机必须配置为具有多个处理器或至少一个多\-核心处理器才能使用 vRSS。
-- 必须将 Vm\) \(虚拟机配置为使用两个或多个逻辑处理器。
+- Hyper-v \- 主机必须配置有多个处理器或至少一个多 \- 核处理器才能使用 vRSS。
+- 虚拟机 \( vm \) 必须配置为使用两个或多个逻辑处理器。
 
 
 ## <a name="use-case-scenarios"></a>用例方案
@@ -64,10 +62,10 @@ vRSS 与所有其他 Hyper-v\-的网络技术兼容。 vRSS 依赖于超级\-V �
 以下两个用例方案描述了 vRSS 的常见用法，以实现处理器负载平衡和软件负载平衡。
 
 ### <a name="processor-load-balancing"></a>处理器负载平衡
-  
-Anthony 是一个网络管理员，它设置一个新的 Hyper-v 主机，该主机具有两个网络适配器，支持单一根输入-输出虚拟化 \(SR\-：\)。 他部署 Windows Server 2016 以托管 VM 文件服务器。
 
-安装硬件和软件后，Anthony 会将 VM 配置为使用8个虚拟处理器和 4096 MB 内存。 遗憾的是，Anthony 没有启用 SR\-的选项，因为他的 Vm 依赖于通过超级\-V 虚拟交换机管理器创建的虚拟交换机执行的策略。 因此，Anthony 决定使用 vRSS 而不是 SR\-。
+Anthony 是一个网络管理员，它是使用两个支持单一根输入-输出虚拟化 Sr-iov 的网络适配器设置新的 Hyper-v \( 主机 \- \) 。 他部署 Windows Server 2016 以托管 VM 文件服务器。
+
+安装硬件和软件后，Anthony 会将 VM 配置为使用8个虚拟处理器和 4096 MB 内存。 遗憾的是，Anthony 没有打开 SR-IOV 的选项， \- 因为他的 vm 依赖于通过 Hyper-v \- 虚拟交换机管理器创建的虚拟交换机执行的策略。 因此，Anthony 决定使用 vRSS 而不是 SR-IOV \- 。
 
 最初，Anthony 使用 Windows PowerShell 分配四个虚拟处理器，使其可用于 vRSS。 一周后使用文件服务器非常受欢迎，因此 Anthony 检查 VM 的性能。  他发现四个虚拟处理器的全部利用率。
 

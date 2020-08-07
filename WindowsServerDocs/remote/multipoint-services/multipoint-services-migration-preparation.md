@@ -2,23 +2,21 @@
 title: 准备迁移至 MultiPoint 服务
 description: 描述在迁移到 Windows Server 2016 中的 MultiPoint 服务之前要收集的信息
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 3060c531-98a2-4957-a02c-be273f25f493
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 3333570aae34f2c102c36382eeffcb5411b7dd83
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b9d0a3e8451748cc8f9f060e3d0c44d2e195d019
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858700"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955324"
 ---
 # <a name="prepare-to-migrate-to-multipoint-services-in-windows-server-2016"></a>准备迁移到 Windows Server 2016 中的 MultiPoint 服务
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 使用以下信息来收集将 MultiPoint 服务角色服务从运行早期版本的 Windows Server 2016 的源服务器迁移到运行 Windows Server 2016 RTM 的目标服务器所需的信息。
 
@@ -60,6 +58,6 @@ ms.locfileid: "80858700"
 
 ## <a name="vdi-template-location"></a>VDI 模板位置
  如果以前启用了 VDI 模板功能，请记录 VDI 模板的位置。 如果源服务器和目标服务器位于同一网络上，则可以使用 MultiPoint 管理器导入该模板。
- 
-## <a name="next-step"></a>下一步
+
+## <a name="next-step"></a>后续步骤
 你现在已准备好在 Windows Server 2016 的 RTM 版本中[迁移到 MultiPoint 服务](multipoint-services-migration-steps.md)。

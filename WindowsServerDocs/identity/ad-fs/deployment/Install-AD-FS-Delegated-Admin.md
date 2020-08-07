@@ -7,23 +7,21 @@ ms.author: billmath
 manager: daveba
 ms.date: 04/01/2020
 ms.topic: article
-ms.prod: windows-server-threshold
-ms.technology: identity-adfs
-ms.openlocfilehash: 1716c1e3684ed09d051970a2ab3b43938b5eeb5e
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 7dff0b19b4d8783dcd43344c6152be9d2c36441d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269438"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972184"
 ---
 # <a name="creating-an-ad-fs-farm-without-domain-admin-privileges"></a>创建不具有域管理员权限的 AD FS 场
 
 >适用于： Windows Server 2019 和2016
 
 ## <a name="overview"></a>概述
-从 Windows Server 2016 中的 AD FS 开始，你可以在联合服务器上以本地管理员身份运行 cmdlet Install-adfsfarm，前提是你的域管理员已准备好 Active Directory。  本文中的脚本可用于准备 AD。  步骤如下所示：
+从 Windows Server 2016 中的 AD FS 开始，你可以在联合服务器上以本地管理员身份运行 cmdlet Install-adfsfarm，前提是你的域管理员已准备好 Active Directory。  本文中的脚本可用于准备 AD。  步骤如下：
 
-1) 以域管理员身份运行该脚本（或手动创建 Active Directory 对象和权限）。
+1) 作为域管理员，运行脚本 (或手动创建 Active Directory 对象和权限) 。
 2) 脚本将返回一个 AdminConfiguration 对象，该对象包含新创建的 AD 对象的 DN
 3) 在联合服务器上，在以本地管理员身份登录的情况下执行 Install-adfsfarm cmdlet，并将该对象从上述 #2 传递为 AdminConfiguration 参数
 
@@ -32,7 +30,7 @@ ms.locfileid: "81269438"
 - Contoso\FsSvcAcct 是将成为 AD FS 服务帐户的域帐户
 - Contoso\FsGmsaAcct $ 是将成为 AD FS 服务帐户的 gMSA 帐户
 - $svcCred 是 AD FS 服务帐户的凭据
-- $localAdminCred 是联合服务器上本地（非 DA）管理员帐户的凭据
+- $localAdminCred 是联合服务器上的本地 (非 DA) 管理员帐户的凭据
 
 ## <a name="using-a-domain-account-as-ad-fs-service-account"></a>使用域帐户作为 AD FS 服务帐户
 ### <a name="prepare-ad"></a>准备 AD
@@ -165,7 +163,7 @@ if ($pscmdlet.ShouldProcess("$ou", "Creating DKM container and assinging access"
     }
     else
     {
-        write-verbose "ADFS administrator account is a standard AD user"    
+        write-verbose "ADFS administrator account is a standard AD user"
         $objUser = New-Object System.Security.Principal.NTAccount($AdfsAdministratorAccount)
         $strSID = $objUser.Translate([System.Security.Principal.SecurityIdentifier])
     }

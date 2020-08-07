@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: d9fb0503bfdf51ebaf3ff22d487777fd55f408c8
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 5b5ce5e7b53c7b82732613022c8309efe044143f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520136"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972224"
 ---
 # <a name="audit-policy-recommendations"></a>审核策略建议
 
@@ -53,7 +51,7 @@ ms.locfileid: "87520136"
 
 |**表示法**|**建议**|
 |--|--|
-|YES|在一般情况下启用|
+|是|在一般情况下启用|
 |是|在一般情况下**不**启用|
 |IF|对于特定方案，或在计算机上安装了所需审核的角色或功能时启用|
 |DC|在域控制器上启用|
@@ -237,7 +235,7 @@ ms.locfileid: "87520136"
 
 第一个事件的一个示例是：
 
-如果禁止域管理员（DAs）登录到不是域控制器的计算机，则在登录到最终用户工作站的情况下出现的一次 DA 成员应会生成警报并进行调查。 使用 "审核特殊登录事件 4964" （特殊组已分配给新的登录），可以轻松生成此类警报。 单实例警报的其他示例包括：
+如果禁止域管理员 (DAs) 登录到不是域控制器的计算机，则出现一次登录到最终用户工作站的 DA 成员应会生成警报并进行调查。 使用 "审核特殊登录事件 4964" 可以轻松生成这种类型的警报 (特殊组已分配给新的登录) 。 单实例警报的其他示例包括：
 
 - 如果服务器 A 不应连接到服务器 B，请在它们相互连接时发出警报。
 
@@ -260,21 +258,21 @@ Aberrant 失败的登录次数可能表明存在密码猜测攻击。 为了使�
 ## <a name="active-directory-objects-and-attributes-to-monitor"></a>要监视的 Active Directory 对象和属性
 下面是你应该监视的帐户、组和属性，以帮助检测对 Active Directory 域服务安装的破坏尝试。
 
-- 用于禁用或删除防病毒软件和反恶意软件的系统（手动禁用保护时自动重启保护）
+- 禁用或删除防病毒和反恶意软件的系统 (在手动禁用时自动重启保护) 
 
 - 管理员帐户进行未经授权的更改
 
-- 使用特权帐户执行的活动（在完成可疑活动或分配的时间已过期时自动删除帐户）
+- 使用特权帐户执行的活动 (在完成可疑活动或分配的时间已过期时自动删除帐户) 
 
-- AD DS 中的特权和 VIP 帐户。 监视更改，尤其是对 "帐户" 选项卡上的属性的更改（例如，cn、name、sAMAccountName、userPrincipalName 或 userAccountControl）。 除了监视帐户之外，还可以将帐户的修改权限限制为尽可能少的一组管理用户。
+- AD DS 中的特权和 VIP 帐户。 监视更改，尤其是对 "帐户" 选项卡上的属性所做的更改 (例如，cn、name、sAMAccountName、userPrincipalName 或 userAccountControl) 。 除了监视帐户之外，还可以将帐户的修改权限限制为尽可能少的一组管理用户。
 
 有关要监视的建议事件的列表、其重要程度和事件消息摘要，请参阅[附录 L：要监视的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)。
 
 - 按服务器的工作负荷分类对服务器进行分组，这使你能够快速确定应该最密切监视的服务器和最得到配置的服务器
 
-- 更改以下 AD DS 组的属性和成员身份：企业管理员（EA）、域管理员（DA）、管理员（BA）和架构管理员（SA）
+- 更改以下 AD DS 组的属性和成员身份：企业管理员 (EA) 、域管理员 (DA) 、管理员 (BA) 和架构管理员 (SA) 
 
-- 禁用的特权帐户（如 Active Directory 和成员系统中的内置管理员帐户），用于启用帐户
+- 禁用的特权帐户 (例如 Active Directory 和成员系统上的内置管理员帐户) 用于启用帐户
 
 - 用于将所有写入记录到帐户的管理帐户
 
@@ -291,14 +289,14 @@ Aberrant 失败的登录次数可能表明存在密码猜测攻击。 为了使�
 
 - [Windows server 2008 和 Windows vista 中的一站式审核](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista)-包含对 windows server 2008 和 windows vista 中包含的审核功能和信息的编译。
 
-- [AD DS 审核循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-介绍了 Windows Server 2008 中的新 Active Directory 域服务（AD DS）审核功能。 它还提供了实现此新功能的过程。
+- [AD DS 审核循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-介绍了 Windows Server 2008 中 (AD DS) 审核功能的新 Active Directory 域服务。 它还提供了实现此新功能的过程。
 
 ## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>安全事件 ID 建议重要性的常规列表
 所有事件 ID 建议均伴随着严重级别，如下所示：
 
 **高：** 具有高严重性级别的事件 Id 应始终和立即发出警报并进行调查。
 
-**中：** 具有中等重要性级别的事件 ID 可能表明存在恶意活动，但它必须附带一些其他异常情况（例如，在特定时间段内发生的异常数字、意外的出现次数或通常不应记录事件的计算机上出现的情况）。） 在一段时间内，也可以将 r 作为一个指标收集，并进行比较。
+**中：** 具有中等重要性级别的事件 ID 可能表明存在恶意活动，但它必须附带一些其他异常情况 (例如，在特定时间段内发生的异常数字、意外的发生次数或通常不应记录事件的计算机上出现的错误。 ) 。 在一段时间内，也可以将 r 作为一个指标收集，并进行比较。
 
 **低：** 具有低关键性事件的事件 ID 不应 garner 关注或导致警报，除非与中型或高严重性事件相关。
 

@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 451a0b46cd45d0dd28ceb3634da9d847864bd519
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c0a814932bfb5a232e55857e3cc10af4068d14c9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953769"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972234"
 ---
 # <a name="selecting-the-forest-root-domain"></a>选择林根域
 
@@ -53,9 +51,9 @@ ms.locfileid: "86953769"
 
 ## <a name="assigning-the-forest-root-domain-name"></a>分配目录林根域名
 
-林根域名也是林的名称。 林根名称是一个域名系统（DNS）名称，该名称由前缀和前缀后缀组成。 例如，组织可能将林根名称设置为 corp.contoso.com。 在此示例中，corp 是前缀，contoso.com 是后缀。
+林根域名也是林的名称。 林根名称是域名系统 (DNS) 名，该名称由前缀和后缀格式的后缀组成。 例如，组织可能将林根名称设置为 corp.contoso.com。 在此示例中，corp 是前缀，contoso.com 是后缀。
 
-从网络上的现有名称列表中选择 "后缀"。 对于前缀，请选择以前未在网络上使用的新名称。 通过将新前缀附加到现有后缀，可以创建唯一的命名空间。 为 Active Directory 域服务（AD DS）创建新的命名空间可确保无需修改任何现有的 DNS 基础结构即可容纳 AD DS。
+从网络上的现有名称列表中选择 "后缀"。 对于前缀，请选择以前未在网络上使用的新名称。 通过将新前缀附加到现有后缀，可以创建唯一的命名空间。 为 Active Directory 域服务 () AD DS 创建新的命名空间，可确保无需修改任何现有的 DNS 基础结构即可容纳 AD DS。
 
 ### <a name="selecting-a-suffix"></a>选择后缀
 
@@ -65,7 +63,7 @@ ms.locfileid: "86953769"
 
 2. 请参阅 DNS 所有者，以选择与 AD DS 一起使用的后缀。 如果不存在适当的后缀，请使用 Internet 命名机构注册一个新名称。
 
-建议你使用在 Active Directory 命名空间中向 Internet 颁发机构注册的 DNS 名称。 只有注册的名称才能保证是全局唯一的。 如果以后的其他组织注册了相同的 DNS 域名（或者，如果你的组织与使用相同 DNS 名称的另一家公司进行合并、获取或获取此域名），这两个基础结构将无法相互交互。
+建议你使用在 Active Directory 命名空间中向 Internet 颁发机构注册的 DNS 名称。 只有注册的名称才能保证是全局唯一的。 如果其他组织稍后注册了相同的 DNS 域名 (或者，如果你的组织与使用相同 DNS 名称) 的另一家公司进行合并、获取或获取，则这两个基础结构无法相互交互。
 
 > [!CAUTION]
 > 不要使用单标签 DNS 名称。 有关详细信息，请参阅[使用单标签 DNS 名称配置的 Active Directory 域的部署和操作](https://support.microsoft.com/help/300684/)。 此外，我们不建议使用未注册的后缀，如 local。
@@ -81,11 +79,11 @@ ms.locfileid: "86953769"
 | 规则     | 说明 |
 | -------- | --------------- |
 | 选择不可能过时的前缀。 | 避免将来可能会更改的名称，如产品线或操作系统。 建议使用一般名称，如 corp 或 ds。|
-| 选择仅包含 Internet 标准字符的前缀。 | A-z、a-z、0-9 和（-），但并不完全是数字。 |
+| 选择仅包含 Internet 标准字符的前缀。 | A-z、a-z、0-9 和 ( ) ，但并不完全是数字。 |
 | 前缀中包含15个或更少的字符。 | 如果选择的前缀长度不超过15个字符，则 NetBIOS 名称与前缀相同。 |
 
 Active Directory DNS 所有者与组织的 DNS 所有者合作，以获取将用于 Active Directory 命名空间的名称的所有权，这一点非常重要。 有关设计 DNS 基础结构以支持 AD DS 的详细信息，请参阅[创建 Dns 基础结构设计](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)。
 
 ## <a name="documenting-the-forest-root-domain-name"></a>记录目录林根域名
 
-记录为林根域选择的 DNS 前缀和后缀。 此时，确定哪个域将成为林根。 您可以将目录林根域名信息添加到您创建的 "域计划" 工作表中，以便记录新域和升级域的计划以及域名。 若要打开它，请从[Windows Server 2003 部署工具包的作业助手](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "域计划" （DSSLOGI_5.doc）。
+记录为林根域选择的 DNS 前缀和后缀。 此时，确定哪个域将成为林根。 您可以将目录林根域名信息添加到您创建的 "域计划" 工作表中，以便记录新域和升级域的计划以及域名。 若要打开它，请从[适用于 Windows Server 2003 部署工具包的作业助手](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并 ( # A1) 打开 "域计划"。

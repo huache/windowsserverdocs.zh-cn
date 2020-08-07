@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: a71e1b92962ae9904262367f2c2697ecaa206ed8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 05aa12b16d67a8f91ed82064c8464927546bfee8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965929"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947901"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>配置计算机进行故障排除
 
@@ -25,17 +23,17 @@ ms.locfileid: "86965929"
 
 ## <a name="configuration-tasks-for-troubleshooting"></a>疑难解答的配置任务
 
-若要将计算机配置为进行故障排除 Active Directory 域服务（AD DS），请执行以下任务：
+若要将计算机配置为对 Active Directory 域服务 (AD DS) 进行故障排除，请执行以下任务：
 
 ### <a name="install-remote-server-administration-tools-for-ad-ds"></a>为 AD DS 安装远程服务器管理工具
 
-安装 AD DS 创建域控制器时，将自动安装用于管理 AD DS 的管理工具。 如果要从非域控制器的计算机远程管理域控制器，可以在运行受支持的 Windows 版本的成员服务器或工作站上安装远程服务器管理工具（RSAT）。 RSAT 替换 Windows Server 2003 中的 Windows 支持工具。
+安装 AD DS 创建域控制器时，将自动安装用于管理 AD DS 的管理工具。 如果要从非域控制器的计算机远程管理域控制器，可以在运行受支持的 Windows 版本的成员服务器或工作站上安装远程服务器管理工具 (RSAT) 。 RSAT 替换 Windows Server 2003 中的 Windows 支持工具。
 
 有关安装 RSAT 的信息，请参阅文章[远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
 
 ### <a name="configure-reliability-and-performance-monitor"></a>配置可靠性和性能监视器
 
-Windows Server 包括 Windows 可靠性和性能监视器，这是一个 Microsoft 管理控制台（MMC）管理单元，它结合了以前的独立工具（包括性能日志和警报、服务器性能顾问和系统监视器）的功能。 此管理单元提供了图形用户界面（GUI），用于自定义数据收集器集和事件跟踪会话。
+Windows Server 包括 Windows 可靠性和性能监视器，这是一个 Microsoft 管理控制台 (MMC) 管理单元，它结合了以前的独立工具（包括性能日志和警报、服务器性能顾问和系统监视器）的功能。 此管理单元提供图形用户界面 (GUI) 用于自定义数据收集器集和事件跟踪会话。
 
 可靠性和性能监视器还包含可靠性监视器，这是一个 MMC 管理单元，用于跟踪系统的更改并将其与系统稳定性的变化进行比较，从而提供其关系的图形视图。
 

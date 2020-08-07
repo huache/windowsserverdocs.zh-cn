@@ -6,45 +6,43 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 757cfc5264fe528cf4e859636403bf4cdf091389
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 156a7c451038fc40cf22037138bbcf446c93de1e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519906"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972104"
 ---
 # <a name="plan-your-ad-fs-deployment-topology"></a>规划 AD FS 部署拓扑
 
-规划 Active Directory 联合身份验证服务（AD FS）部署的第一步是确定正确的部署拓扑以满足组织的需求。
+规划部署 Active Directory 联合身份验证服务 (AD FS) 的第一步是确定正确的部署拓扑以满足组织的需求。
 
 阅读本主题之前，请查看如何存储 AD FS 数据并将其复制到联合服务器场中的其他联合身份验证服务器，并确保了解的用途以及可用于存储在 AD FS 配置数据库中的基础数据的复制方法。
 
-可以使用两种数据库类型来存储 AD FS 配置数据： Windows 内部数据库（WID）和 Microsoft SQL Server。 有关详细信息，请参阅 [AD FS 配置数据库的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。 查看与使用 WID 或 SQL Server 作为 AD FS 配置数据库相关联的各种优势和限制，以及它们支持的各种应用程序方案，然后进行选择。
+您可以使用两种数据库类型来存储 AD FS 配置数据： Windows Internal Database (WID) 和 Microsoft SQL Server。 有关详细信息，请参阅 [AD FS 配置数据库的角色](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。 查看与使用 WID 或 SQL Server 作为 AD FS 配置数据库相关联的各种优势和限制，以及它们支持的各种应用程序方案，然后进行选择。
 
 > [!IMPORTANT]
 > 若要实现基本冗余、负载平衡和缩放联合身份验证服务的选项（如果需要），我们建议对于所有的生产环境，你应在每个联合服务器场中部署至少两个联合服务器，而不考虑将使用的数据库的类型。
 
 ## <a name="determining-which-type-of-adfs-configuration-database-to-use"></a>确定要使用哪种类型的 AD FS 配置数据库
-AD FS 使用数据库来存储配置和（在某些情况下）与联合身份验证服务相关的事务数据。 您可以使用 AD FS 软件选择内置 Windows 内部数据库（WID）或 Microsoft SQL Server 2008 或更高版本，以便将数据存储在联合身份验证服务中。
+AD FS 使用数据库来存储配置和（在某些情况下）与联合身份验证服务相关的事务数据。 可以使用 AD FS 软件选择内置 Windows 内部数据库 (WID) 或 Microsoft SQL Server 2008 或更高版本，以便将数据存储在联合身份验证服务中。
 
 大多数情况下，这两个数据库类型是相对等效的。 但是，在开始阅读有关可用于 AD FS 的各种部署拓扑的详细信息之前，有一些不同之处需要注意。 下表描述了在受支持的功能中，WID 数据库和 SQL Server 数据库之间的差异。
 
-|说明|Feature|WID 支持吗？|SQL Server 支持吗？
+|说明|功能|WID 支持吗？|SQL Server 支持吗？
 | --- | --- | --- |--- |
-|AD FS 功能|联合服务器场部署|是的。 如果有100个或更少的信赖方信任，则 WID 场的限制为30个联合服务器。</br></br>WID 场不支持令牌重播检测或项目解析（安全断言标记语言（SAML）协议的一部分。 |是的。 对可以在单个服务器场中部署的联合服务器数目没有强制限制
+|AD FS 功能|联合服务器场部署|是的。 如果有100个或更少的信赖方信任，则 WID 场的限制为30个联合服务器。</br></br>WID 场不支持令牌重播检测或项目解析 (安全断言标记语言 (SAML) 协议) 的一部分。 |是的。 对可以在单个服务器场中部署的联合服务器数目没有强制限制
 |AD FS 功能|SAML 项目解析 </br></br>**注意：** 此功能不是 Microsoft Online Services、Microsoft Office 365、Microsoft Exchange 或 Microsoft Office SharePoint 方案所必需的。|否|是
 |AD FS 功能|SAML/WS 联合身份验证令牌重放检测|否|是
 |数据库功能|使用“拉”复制的基本数据库冗余，其中承载数据库只读副本的一个或多个服务器，将请求在承载该数据库的读/写副本的源服务器上所进行的更改|是|否
-|数据库功能|使用高可用性解决方案（例如，故障转移群集或镜像）的数据库冗余**注意：** 所有 AD FS 部署拓扑都支持 AD FS 服务层上的群集。|否|是
+|数据库功能|使用高可用性解决方案（例如，故障转移群集或数据库层上的镜像 (）实现数据库冗余仅) **注意：** 所有 AD FS 部署拓扑都支持 AD FS 服务层上的群集。|否|是
 
 ## <a name="sql-server-considerations"></a>SQL Server 注意事项
 如果你选择 SQL Server 作为用于 AD FS 部署的配置数据库，你应该考虑以下部署事实。
 
 - **SAML 功能以及它们对数据库大小和增长的影响**。 当启用 SAML 项目解析或 SAML 令牌重放检测功能时，AD FS 将在 SQL Server 配置数据库中存储发出的每个 AD FS 令牌的信息。 并不会特别重视此活动所带来的 SQL Server 数据库的增长，并且它取决于已配置的令牌重播保留期。 每个项目记录的大小大约为 30 千字节 (KB)。
 
-- **部署所需的服务器数目**。 需要至少添加一台附加服务器（到部署 AD FS 基础结构所需的服务器总数），该服务器将充当 SQL Server 实例的专用主机。 如果你打算使用故障转移群集或镜像为 SQL Server 配置数据库提供容错和可伸缩性，则需要至少两个 SQL 服务器。
+- **部署所需的服务器数目**。 你需要将至少一个额外的服务器 (添加到部署 AD FS 基础结构的服务器总数，) 该服务器将充当 SQL Server 实例的专用主机。 如果你打算使用故障转移群集或镜像为 SQL Server 配置数据库提供容错和可伸缩性，则需要至少两个 SQL 服务器。
 
 ## <a name="how-the-configuration-database-type-you-select-may-impact-hardware-resources"></a>你选择的配置数据库类型可能会影响硬件资源的方式
 对在使用 WID 服务器场中部署的联合服务器（而不是在使用 SQL Server 数据库的服务器场中部署的联合服务器）上的硬件资源的影响并不重要。 但重要的是，当你为服务器场使用 WID 时，在该场中的每个联合服务器必须存储、管理和维护其 AD FS 配置数据库的本地副本的复制更改，同时还要继续提供此联合身份验证服务所需的正常操作。
