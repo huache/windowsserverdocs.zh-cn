@@ -6,21 +6,19 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 84d28ffec35bdc5dce22d797cb830f8b75068013
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 14c82049171c25d24836ec3cbed35dfe592885f6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966049"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969934"
 ---
 # <a name="active-directory-domain-services-overview"></a>Active Directory 域服务概述
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-目录是存储有关网络上对象的信息的层次结构。 目录服务（例如 Active Directory 域服务（AD DS））提供存储目录数据以及使此数据可供网络用户和管理员使用的方法。 例如，AD DS 存储有关用户帐户的信息，如名称、密码、电话号码等，并使同一网络上的其他授权用户可以访问此信息。
+目录是存储有关网络上对象的信息的层次结构。 目录服务（例如 Active Directory 域服务 (AD DS) ）提供了存储目录数据以及使此数据可供网络用户和管理员使用的方法。 例如，AD DS 存储有关用户帐户的信息，如名称、密码、电话号码等，并使同一网络上的其他授权用户可以访问此信息。
 
 Active Directory 存储有关网络上对象的信息，并让管理员和用户可以更容易地使用这些信息。 Active Directory 使用结构化数据存储作为目录信息的逻辑层次组织的基础。
 
@@ -42,14 +40,14 @@ Active Directory 还包括：
 
 ## <a name="understanding-active-directory"></a>了解 Active Directory
  本部分提供了指向核心 Active Directory 概念的链接：
- 
-* [Active Directory 结构和存储技术](/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
-* [域控制器角色](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10)) 
-* [Active Directory 架构](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771796(v=ws.10))
-* [了解信任](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771568(v=ws.10)) 
-* [Active Directory 复制技术](/previous-versions/windows/it-pro/windows-server-2003/cc776877(v=ws.10)) 
-* [Active Directory 搜索和发布技术](/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10)) 
-* [与 DNS 和组策略互操作](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd197486(v=ws.10))
-* [了解架构](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10)) 
 
-有关 Active Directory 概念的详细列表，请参阅[了解 Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10))。 
+* [Active Directory 结构和存储技术](/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
+* [域控制器角色](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))
+* [Active Directory 架构](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771796(v=ws.10))
+* [了解信任](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771568(v=ws.10))
+* [Active Directory 复制技术](/previous-versions/windows/it-pro/windows-server-2003/cc776877(v=ws.10))
+* [Active Directory 搜索和发布技术](/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10))
+* [与 DNS 和组策略互操作](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd197486(v=ws.10))
+* [了解架构](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10))
+
+有关 Active Directory 概念的详细列表，请参阅[了解 Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10))。

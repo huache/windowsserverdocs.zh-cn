@@ -1,18 +1,16 @@
 ---
 title: 网关带宽分配
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: a5e4e6b280c30eedc230da99cbf798e5560a0ca5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 48a24586c356650ee0e625770dcdd55ce505951c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855710"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962281"
 ---
 # <a name="gateway-bandwidth-allocation"></a>网关带宽分配
 
@@ -20,9 +18,9 @@ ms.locfileid: "80855710"
 
 在 Windows Server 2016 中，IPsec、GRE 和 L3 的单个隧道带宽是网关总容量的比率。 因此，客户可以根据需要从网关 VM 传出的标准 TCP 带宽提供网关容量。
 
-此外，网关上的最大 IPsec 隧道带宽仅限（3/20）\*客户提供的网关容量。 例如，如果将网关容量设置为 100 Mbps，则 IPsec 隧道容量将为 150 Mbps。 GRE 和 L3 隧道的等效比率分别为1/5 和1/2。
+此外，网关上的最大 IPsec 隧道带宽限制为 (3/20) \* 客户提供的网关容量。 例如，如果将网关容量设置为 100 Mbps，则 IPsec 隧道容量将为 150 Mbps。 GRE 和 L3 隧道的等效比率分别为1/5 和1/2。
 
-虽然这适用于大多数部署，但固定比率模型不适用于高吞吐量环境。 即使数据传输速率较高（比如，高于 40 Gbps），最大程度上，最大程度地增加了 SDN 网关隧道，因为存在内部因素。
+虽然这适用于大多数部署，但固定比率模型不适用于高吞吐量环境。 即使数据传输速率较高 (说，大于 40 Gbps) ，因为内部因素，最大的 SDN 网关隧道吞吐量最大。
 
 在 Windows Server 2019 中，对于隧道类型，最大吞吐量是固定的：
 
@@ -38,7 +36,7 @@ ms.locfileid: "80855710"
 
 理想情况下，将网关吞吐量容量设置为可供网关 VM 使用的吞吐量。 例如，如果你有一个网关 VM，并且基础主机 NIC 吞吐量是 25 Gbps，则网关吞吐量也可以设置为 25 Gbps。
 
-如果仅使用网关进行 IPsec 连接，则最大可用固定容量是 5 Gbps。 例如，如果在网关上设置 IPsec 连接，则只能将聚合带宽（传入 + 传出）设置为 5 Gbps。
+如果仅使用网关进行 IPsec 连接，则最大可用固定容量是 5 Gbps。 例如，如果你在网关上设置 IPsec 连接，则只能将 (传入 + 传出) 的聚合带宽设置为 5 Gbps。
 
 如果同时使用网关进行 IPsec 和 GRE 连接，则可以预配最多 5 Gbps 的 IPsec 吞吐量或最大 15 Gbps 的 GRE 吞吐量。 例如，如果你预配了 2 Gbps IPsec 吞吐量，则会有 3 Gbps 的 IPsec 吞吐量，可在网关或第9
 
@@ -46,9 +44,9 @@ ms.locfileid: "80855710"
 
 - 网关总容量 = 25 Gbps
 
-- 可用 IPsec 容量总计 = 5 Gbps （固定）
+- 可用 IPsec 容量总计 = 5 Gbps (固定) 
 
-- 可用 GRE 总容量 = 15 Gbps （固定）
+- 可用 GRE 容量总计 = 15 Gbps (固定) 
 
 - 此网关的 IPsec 吞吐量比率 = 25/5 = 5 Gbps
 
@@ -56,15 +54,15 @@ ms.locfileid: "80855710"
 
 例如，如果向客户分配 2 Gbps IPsec 吞吐量：
 
-网关上的剩余可用容量 = 网关的总容量– IPsec 吞吐量比已分配的 IPsec 吞吐量（已用容量）
+网关上的剩余可用容量 = 网关的总容量– IPsec 吞吐量比率 * 分配 (使用的容量) 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25 – 5 * 2 = 15 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25– 5 * 2 = 15 Gbps
 
-可在网关上分配的其余 IPsec 吞吐量 
+可在网关上分配的其余 IPsec 吞吐量
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5-2 = 3 Gbps
 
-可在网关分配的其余 GRE 吞吐量 = 网关/GRE 吞吐量比的剩余容量 
+可在网关分配的其余 GRE 吞吐量 = 网关/GRE 吞吐量比的剩余容量
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 * 3/5 = 9 Gbps
 
@@ -74,7 +72,7 @@ ms.locfileid: "80855710"
 
 ## <a name="windows-server-2016-behavior"></a>Windows Server 2016 行为
 
-Windows Server 2016 的网关容量计算算法保持不变。 在 Windows Server 2016 中，最大 IPsec 隧道带宽限制为（3/20）\*网关上的网关容量。 GRE 和 L3 隧道的等效比率分别为1/5 和1/2。
+Windows Server 2016 的网关容量计算算法保持不变。 在 Windows Server 2016 中，最大 IPsec 隧道带宽限制为网关上 (3/20) \* 网关容量。 GRE 和 L3 隧道的等效比率分别为1/5 和1/2。
 
 如果要从 Windows Server 2016 升级到 Windows Server 2019：
 
@@ -83,6 +81,6 @@ Windows Server 2016 的网关容量计算算法保持不变。 在 Windows Serve
 2.  **IPSec 隧道：** Windows Server 2016 网关分配逻辑将继续工作，直到网关池中的所有网关升级到 Windows Server 2019。 对于网关池中的所有网关，必须将 Azure 网关服务设置为 "**自动**"。
 
 >[!NOTE]
->升级到 Windows Server 2019 后，网关可能会过度预配（因为分配逻辑从 Windows Server 2016 更改为 Windows Server 2019）。 在这种情况下，网关上的现有连接将继续存在。 网关的 REST 资源会引发一条警告，指出网关已过度设置。 在这种情况下，应将一些连接移到另一个网关。
+>升级到 Windows Server 2019 后，网关可能会因分配逻辑从 Windows Server 2016 更改为 Windows Server 2019) 而变得过度预配 (。 在这种情况下，网关上的现有连接将继续存在。 网关的 REST 资源会引发一条警告，指出网关已过度设置。 在这种情况下，应将一些连接移到另一个网关。
 
 ---

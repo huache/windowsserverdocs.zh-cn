@@ -2,19 +2,17 @@
 title: 规划 MultiPoint Services 部署
 description: 用于计划 MultiPoint 服务部署的信息的导航主题
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: dcb9edf1-99d0-490c-a7f8-863b18a80cdf
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: a11cdeaffd985c5ca12c911897c4bd61913769cb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 943df21c046a54a3edfd466e42fdc18296d6bc1b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181763"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953773"
 ---
 # <a name="planning-a-multipoint-services-deployment"></a>规划 MultiPoint Services 部署
 MultiPoint 服务使多个工作站可连接到一台计算机。 然后多个用户便可以同时共享一台计算机。 每个工作站都包含一个工作站集线器、监视器、键盘和鼠标。 MultiPoint 服务包括 MultiPoint 管理器应用程序，该应用程序可帮助你作为管理用户，监视和管理 MultiPoint 工作站和 MultiPoint 仪表板应用程序（提供日常管理功能）。

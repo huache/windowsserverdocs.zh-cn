@@ -2,18 +2,16 @@
 title: 使用针对拆分式 DNS 部署的 DNS 策略
 description: 本主题是 Windows Server 2016 DNS 策略方案指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 466a9e940a8211335abbfab43e933a5dcbbffebf
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f0274eddba5aa81a0910ca2f22841029c699bb3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518253"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962301"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用用于裂 \- 脑 Dns 部署的 DNS 策略
 
@@ -24,7 +22,7 @@ ms.locfileid: "87518253"
 >[!NOTE]
 >有关如何将 DNS 策略用于使用 \- Active Directory 集成 DNS 区域的 split 大脑 dns 部署的信息，请参阅[在 Active Directory 中将 dns 策略用于裂脑](dns-sb-with-ad.md)dns。
 
-以前，此方案要求 DNS 管理员维护两个不同的 DNS 服务器，每个服务器为内部和外部用户提供服务。 如果区域中只拆分了几条记录 \- brained，或者区域的两个实例（内部和外部）都委托给相同的父域，这就成为了管理难题。
+以前，此方案要求 DNS 管理员维护两个不同的 DNS 服务器，每个服务器为内部和外部用户提供服务。 如果区域中只拆分了几条记录 \- brained，或者 (内部和外部) 将区域的两个实例委托给相同的父域，这就成为了管理难题。
 
 用于拆分的另一种配置方案是选择性递归控制 DNS 名称解析。 在某些情况下，企业 DNS 服务器应该为内部用户在 Internet 上执行递归解析，同时，它们还必须充当外部用户的权威名称服务器，并阻止它们的递归。
 
@@ -63,7 +61,7 @@ ms.locfileid: "87518253"
 
 如果接收查询的服务器接口与任何策略匹配，则将使用关联的区域范围来响应查询。
 
-因此，在我们的示例中，对专用 IP （10.0.0.56）上收到的 www.career.contoso.com 的 DNS 查询接收包含内部 IP 地址的 DNS 响应;在公共网络接口上接收的 DNS 查询接收包含默认区域作用域中的公共 IP 地址的 DNS 响应（这与正常的查询解决方法相同）。
+因此，在我们的示例中，对专用 IP () 10.0.0.56 上收到的 www.career.contoso.com 的 DNS 查询将接收包含内部 IP 地址的 DNS 响应;在公共网络接口上接收的 DNS 查询接收包含默认区域作用域中的公共 IP 地址的 DNS 响应 (这与正常的查询解析) 相同。
 
 ## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>如何配置 DNS 拆分的部署
 若要使用 DNS 策略配置 DNS 拆分的部署，必须使用以下步骤。
@@ -92,7 +90,7 @@ ms.locfileid: "87518253"
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>将记录添加到区域作用域
 
-下一步是将代表 Web 服务器主机的记录添加到这两个区域作用域中：内部和默认（对于外部客户端）。
+下一步是将代表 Web 服务器主机的记录添加到这两个区域作用域中-) 的外部客户端的内部和默认 (。
 
 在内部区域作用域中，将使用 IP 地址10.0.0.39 （这是一个专用 IP）添加记录<strong>www.career.contoso.com</strong> 。在默认区域范围内，同一记录<strong>www.career.contoso.com</strong>与 IP 地址65.55.39.10 一起添加。
 

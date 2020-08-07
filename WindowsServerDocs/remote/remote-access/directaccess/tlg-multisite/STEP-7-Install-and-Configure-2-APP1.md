@@ -2,18 +2,16 @@
 title: 步骤7安装和配置 2-APP1
 description: 本主题是测试实验室指南-演示适用于 Windows Server 2016 的 DirectAccess 多站点部署的一部分
 manager: brianlic
-ms.prod: windows-server
 ms.topic: article
-ms.technology: networking-da
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ff2b9eacfa2ae888497371e3f6dffedf955d82d3
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: b881f22ab2e2aa5427b0c06f042d4102cccf26fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409848"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953683"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>步骤7安装和配置 2-APP1
 
@@ -27,7 +25,7 @@ APP1 提供 web 和文件共享服务。 2-APP1 配置由以下内容组成：
 
 - 将 APP1 加入 CORP2 域
 
-- 在 APP1 上安装 Web 服务器（IIS）角色
+- 在 APP1 上安装 (IIS) 角色的 Web 服务器
 
 - 在 2-APP1 上创建共享文件夹
 
@@ -36,7 +34,7 @@ APP1 提供 web 和文件共享服务。 2-APP1 配置由以下内容组成：
 
 #### <a name="to-install-the-operating-system-on-2-app1"></a>在 2-APP1 上安装操作系统
 
-1.  开始安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 （完全安装）。
+1.  开始安装 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 (完全安装) 。
 
 2.  按照说明完成安装，指定本地管理员账户的密码（强）。 使用本地管理员账户登录。
 
@@ -96,16 +94,16 @@ APP1 提供 web 和文件共享服务。 2-APP1 配置由以下内容组成：
 
 9. 计算机重启后，单击 "**切换用户**"，然后单击 "**其他用户**"，然后用管理员帐户登录到 CORP2 域。
 
-## <a name="install-the-web-server-iis-role-on-2-app1"></a><a name="bkmk_IIS"></a>在 APP1 上安装 Web 服务器（IIS）角色
-安装 Web 服务器（IIS）角色，使 web 服务器 APP1。
+## <a name="install-the-web-server-iis-role-on-2-app1"></a><a name="bkmk_IIS"></a>在 APP1 上安装 (IIS) 角色的 Web 服务器
+ (IIS) 角色中安装 Web 服务器，以 APP1 web 服务器。
 
-#### <a name="to-install-the-web-server-iis-role"></a>安装 Web 服务器（IIS）角色
+#### <a name="to-install-the-web-server-iis-role"></a> (IIS) 角色安装 Web 服务器
 
 1.  在服务器管理器控制台的 "**仪表板**" 上，单击 "**添加角色和功能**"。
 
 2.  单击 "**下一步**" 三次以转到服务器角色选择屏幕
 
-3.  在 "**选择服务器角色**" 页上，选择 " **WEB 服务器（IIS）**"，然后单击 "**下一步**" 四次。
+3.  在 "**选择服务器角色**" 页上，选择 " **WEB 服务器 (IIS) **，然后单击"**下一步**"四次。
 
 4.  在 **“确认安装选择”** 页上，单击 **“安装”**。
 
@@ -118,7 +116,7 @@ APP1 提供 web 和文件共享服务。 2-APP1 配置由以下内容组成：
 
 1.  在 "**开始**" 屏幕上，键入**explorer.exe**，然后按 enter。
 
-2.  单击 "**计算机**"，然后双击 "**本地磁盘（C：）**"。
+2.  单击 "**计算机**"，然后双击 "**本地磁盘 (C： ) **"。
 
 3.  单击 "**新建文件夹**"，键入**文件**，然后按 enter。 使 "**本地磁盘**" 窗口保持打开状态。
 
@@ -126,7 +124,7 @@ APP1 提供 web 和文件共享服务。 2-APP1 配置由以下内容组成：
 
 5.  在 "**无标题-记事本**" 窗口中，键入**这是 APP1 上的共享文件**。
 
-6.  依次单击 "**文件**"、"**保存**"、"**计算机**"，双击 "**本地磁盘（C：）**"，然后双击 "**文件**" 文件夹。
+6.  依次单击 "**文件**"、"**保存**"、"**计算机**"，双击 "**本地磁盘 (C： ) **，然后双击**Files**文件夹。
 
 7.  在 **"文件名"** 中，键入**example.txt**，然后单击 "**保存**"。 关闭记事本。
 

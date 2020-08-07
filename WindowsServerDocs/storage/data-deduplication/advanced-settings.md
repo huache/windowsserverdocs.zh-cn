@@ -1,19 +1,17 @@
 ---
 ms.assetid: 01c8cece-66ce-4a83-a81e-aa6cc98e51fc
 title: 高级重复数据删除设置
-ms.prod: windows-server
-ms.technology: storage-deduplication
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: b45e8723066f040268ee174b15af09569af2ff01
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 73f9ce6e88fa56a645f0ffedba4f38dec87e973b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965389"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936376"
 ---
 # <a name="advanced-data-deduplication-settings"></a>高级重复数据删除设置
 
@@ -33,7 +31,7 @@ ms.locfileid: "86965389"
 
 在重复数据删除作业运行时对其进行更改的最常见的原因是确保作业在空闲时间运行。 以下分步示例演示如何为*晴天*方案（在周末和工作日晚上 7:00 以后空闲的超聚合 Hyper-V 主机）修改重复数据删除计划。 若要更改计划，在管理员上下文中运行以下 PowerShell cmdlet。
 
-1. 禁用计划的每小时[优化](understand.md#job-info-optimization)作业。  
+1. 禁用计划的每小时[优化](understand.md#job-info-optimization)作业。
     ```PowerShell
     Set-DedupSchedule -Name BackgroundOptimization -Enabled $false
     Set-DedupSchedule -Name PriorityOptimization -Enabled $false
@@ -50,7 +48,7 @@ ms.locfileid: "86965389"
     New-DedupSchedule -Name "NightlyOptimization" -Type Optimization -DurationHours 11 -Memory 100 -Cores 100 -Priority High -Days @(1,2,3,4,5) -Start (Get-Date "2016-08-08 19:00:00")
     ```
 
-    >[!NOTE]  
+    >[!NOTE]
     > 为 `-Start` 提供的 `System.Datetime` 的*日期*部分不相关（只要它处于过去），但*时间*部分指定作业应该启动的时间。
 4. 使用高优先级以及系统上所有可用的 CPU 和内存创建在星期六早上 7:00 开始运行的每周垃圾回收作业。
     ```PowerShell
@@ -80,7 +78,7 @@ ms.locfileid: "86965389"
             <td>应计划的作业类型</td>
             <td>
                 <ul>
-                    <li>Optimization</li>
+                    <li>优化</li>
                     <li>GarbageCollection</li>
                     <li>清理</li>
                 </ul>
@@ -88,7 +86,7 @@ ms.locfileid: "86965389"
             <td>需要该值，因为它是你想要计划的作业类型。 任务计划后，该值无法更改。</td>
         </tr>
         <tr>
-            <td>优先级</td>
+            <td>优先度</td>
             <td>计划作业的系统优先级</td>
             <td>
                 <ul>
@@ -126,7 +124,7 @@ ms.locfileid: "86965389"
             <td>若要防止作业在非空闲时间的工作负荷中运行&#39;</td>
         </tr>
         <tr>
-            <td>Enabled</td>
+            <td>已启用</td>
             <td>作业是否将运行</td>
             <td>True/false</td>
             <td>在不删除作业的情况下将其禁用</td>
@@ -150,7 +148,7 @@ ms.locfileid: "86965389"
             <td>控制作业对系统的内存资源具有的影响级别</td>
         </tr>
         <tr>
-            <td>名称</td>
+            <td>“属性”</td>
             <td>计划作业的名称</td>
             <td>字符串</td>
             <td>作业必须具有唯一的可识别名称。</td>
@@ -165,7 +163,7 @@ ms.locfileid: "86965389"
             <td>开始</td>
             <td>指定作业应开始的时间</td>
             <td><code>System.DateTime</code></td>
-            <td>提供的要启动的<em>日期</em>部分 <code>System.Datetime</code> 不相关（只要它&#39;过去的中），但时间部分指定作业应该启动的<em>时间</em>。 <em>Start</em></td>
+            <td>提供的要启动的<em>日期</em>部分 <code>System.Datetime</code> 不相关 (只要它&#39;过去) 中的，但时间部分指定作业应该启动的<em>时间</em>。 <em>Start</em></td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -199,7 +197,7 @@ ms.locfileid: "86965389"
 <table>
     <thead>
         <tr>
-            <th style="min-width:125px">设置名</th>
+            <th style="min-width:125px">设置名称</th>
             <th>定义</th>
             <th>接受的值</th>
             <th>为什么想要修改此值？</th>
@@ -210,7 +208,7 @@ ms.locfileid: "86965389"
             <td>ChunkRedundancyThreshold</td>
             <td>区块在复制到区块存储的热点区域前被引用的次数。 热点部分的值是所谓的、 &quot; &quot; 经常被引用的热区块具有多个访问路径来改善访问时间。</td>
             <td>正整数</td>
-            <td>修改此数量的主要原因是为具有高重复的卷增加节约率。 通常情况下，建议使用默认值（100），而&#39;不应修改此设置。</td>
+            <td>修改此数量的主要原因是为具有高重复的卷增加节约率。 通常情况下，建议使用默认值 (100) ，而不应&#39;t 修改此设置。</td>
         </tr>
         <tr>
             <td>ExcludeFileType</td>
@@ -295,7 +293,7 @@ ms.locfileid: "86965389"
 <table>
     <thead>
         <tr>
-            <th style="min-width:125px">设置名</th>
+            <th style="min-width:125px">设置名称</th>
             <th>定义</th>
             <th>接受的值</th>
             <th>为什么想要更改此设置？</th>
@@ -318,18 +316,18 @@ ms.locfileid: "86965389"
 </table>
 
 ## <a name="frequently-asked-questions"></a><a id="faq"></a>常见问题解答
-<a id="faq-use-responsibly"></a>**我更改了重复数据删除设置，现在作业缓慢或无法完成，或者我的工作负荷性能已降低。为什么？**  
+<a id="faq-use-responsibly"></a>**我更改了重复数据删除设置，现在作业缓慢或无法完成，或者我的工作负荷性能已降低。为什么？**
 这些设置为你提供了控制重复数据删除如何运行的许多权限。 负责任地使用它们，并[监视性能](run.md#monitoring-dedup)。
 
-<a id="faq-running-dedup-jobs-manually"></a>**我现在想要运行一个重复数据删除作业，但是我不想创建新的计划-我能执行此操作吗？**  
+<a id="faq-running-dedup-jobs-manually"></a>**我现在想要运行一个重复数据删除作业，但是我不想创建新的计划-我能执行此操作吗？**
 可以，[所有作业都可手动运行](run.md#running-dedup-jobs-manually)。
 
-<a id="faq-full-v-regular-gc"></a>**完全和常规垃圾回收之间有何区别？**  
+<a id="faq-full-v-regular-gc"></a>**完全和常规垃圾回收之间有何区别？**
 有两种类型的[垃圾回收](understand.md#job-info-gc)：
 
 - *常规垃圾回收*使用统计算法查找符合某个条件的大型未引用的区块（内存和 IOP 较低）。 常规垃圾回收仅在引用区块的百分比未达到最小值时才对区块存储容器进行压缩。 与完整垃圾回收相比，该类型的垃圾回收运行更快且占用更少资源。 常规垃圾回收作业的默认计划是一周运行一次。
 - *完整垃圾回收*可以更全面的查找未引用的区块并释放更多的磁盘空间。 完整垃圾回收压缩每个容器，即使容器中仅有一个区块未引用。 完整垃圾回收也会释放已在使用的空间（如果在优化作业期间出现崩溃或电源故障）。 完整垃圾回收作业将恢复 100% 的可用空间（该空间可在删除了重复数据的卷上恢复），与常规垃圾回收作业相比，该作业需要更多的时间和系统资源。 与常规垃圾回收作业相比，完整垃圾回收作业通常将找到并释放超过 5% 的未引用数据。 完整垃圾回收作业的默认计划是在每第四次垃圾回收时运行。
 
-<a id="faq-why-disable-full-gc"></a>**为什么要禁用完整垃圾回收？**  
-- 垃圾回收可能会对卷的生命周期卷影副本和增量备份的大小具有负面影响。 使用完整垃圾回收作业，高改动或 I/O 密集型工作负荷可能会出现性能下降。           
+<a id="faq-why-disable-full-gc"></a>**为什么要禁用完整垃圾回收？**
+- 垃圾回收可能会对卷的生命周期卷影副本和增量备份的大小具有负面影响。 使用完整垃圾回收作业，高改动或 I/O 密集型工作负荷可能会出现性能下降。
 - 你可以从 PowerShell 手动运行完整垃圾回收作业以清理泄漏（如果你知道系统已崩溃）。

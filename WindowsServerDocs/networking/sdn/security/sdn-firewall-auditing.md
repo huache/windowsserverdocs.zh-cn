@@ -1,32 +1,30 @@
 ---
 title: SDN 防火墙审核
-description: 防火墙审核是 Windows Server 2019 中 SDN 防火墙的新功能。 启用 SDN 防火墙时，将记录已启用日志记录的 SDN 防火墙规则（Acl）处理的任何流。
+description: 防火墙审核是 Windows Server 2019 中 SDN 防火墙的新功能。 启用 SDN 防火墙时，由 SDN 防火墙规则处理的任何流 (启用了日志记录的 Acl) 记录。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: d834c78d393fdbaeaa65900f16f4d1e32f2e5131
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e37fc548db0a1043b2b78d95f97e8b4ef01214c8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854379"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962051"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN 防火墙审核
 
->适用于： Windows Server 2019
+>适用于：Windows Server 2019
 
-防火墙审核是 Windows Server 2019 中 SDN 防火墙的新功能。 启用 SDN 防火墙时，将记录已启用日志记录的 SDN 防火墙规则（Acl）处理的任何流。 日志文件必须是与[Azure 网络观察程序流日志](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)一致的语法。 这些日志可用于诊断或存档，以便以后进行分析。 
+防火墙审核是 Windows Server 2019 中 SDN 防火墙的新功能。 启用 SDN 防火墙时，由 SDN 防火墙规则处理的任何流 (启用了日志记录的 Acl) 记录。 日志文件必须是与[Azure 网络观察程序流日志](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)一致的语法。 这些日志可用于诊断或存档，以便以后进行分析。 
 
 我们很快会提供一些示例，说明如何使用 Power BI 等工具处理这些文件。
 
 _**试用并向我们提供反馈！**_
 
-下面是一个在 Hyper-v 主机上启用防火墙审核的示例脚本。 更新开头的变量，并在安装了 NetworkController 功能的 Windows Server 2019 计算机上运行此操作：
+下面是一个在 Hyper-v 主机上启用防火墙审核的示例脚本。更新开头的变量，并在安装了 NetworkController 功能的 Windows Server 2019 计算机上运行此操作：
 
 ```PowerShell
 $logpath = "C:\test\log1"
@@ -54,7 +52,7 @@ foreach ($s in $servers) {
 }
 ```
 
-一旦启用，新文件就会出现在每个主机上的指定目录中，大约每小时一次。  应定期处理这些文件并将它们从主机中删除。  当前文件的长度为零，并被锁定，直到在下一个小时标记处刷新：
+一旦启用，新文件就会出现在每个主机上的指定目录中，大约每小时一次。应定期处理这些文件并将它们从主机中删除。当前文件的长度为零，并被锁定，直到在下一个小时标记处刷新：
 
 ```syntax
 PS C:\test\log1> dir
@@ -73,7 +71,7 @@ Mode                LastWriteTime         Length Name
 这些文件包含一系列流事件，例如：
 
 ```syntax
-{ 
+{
     "records": [
         {
             "properties":{

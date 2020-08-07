@@ -1,19 +1,17 @@
 ---
 title: 用 Windows 管理中心管理虚拟机
-description: 通过 Windows 管理中心管理 Hyper-v 主机和虚拟机（Project Honolulu）
-ms.technology: manage
+description: '管理 Hyper-v 主机和虚拟机与 Windows 管理中心 (Project Honolulu) '
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 02a33383b466e8bade2db0bbddaff66f0196954c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f3696cc4bd88e401cbbe3a6db83ba5a90cb7049
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356859"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962421"
 ---
 # <a name="managing-virtual-machines-with-windows-admin-center"></a>用 Windows 管理中心管理虚拟机
 
@@ -21,7 +19,7 @@ ms.locfileid: "71356859"
 
 如果在服务器或群集上启用了 Hyper-v 角色，则可以在[服务器](manage-servers.md)、[故障转移群集](manage-failover-clusters.md)或[超聚合群集](manage-hyper-converged.md)连接中使用虚拟机工具。 你可以使用虚拟机工具来管理运行 Windows Server 2012 或更高版本的 Hyper-v 主机，该主机可以使用桌面体验或服务器核心安装。 还支持 hyper-v Server 2012、2016和2019。
 
-## <a name="key-features"></a>关键功能
+## <a name="key-features"></a>主要功能
 
 Windows 管理中心中的 "虚拟机" 工具的亮点包括：
 
@@ -33,11 +31,11 @@ Windows 管理中心中的 "虚拟机" 工具的亮点包括：
 
 - [监视 Hyper-v 主机资源和性能](#monitor-hyper-v-host-resources-and-performance)
 - [查看虚拟机清单](#view-virtual-machine-inventory)
-- [创建新的虚拟机](#create-a-new-virtual-machine)
+- [新建虚拟机](#create-a-new-virtual-machine)
 - [更改虚拟机设置](#change-virtual-machine-settings)
 - [将虚拟机实时迁移到另一个群集节点](#live-migrate-a-virtual-machine-to-another-cluster-node)
 - [针对单个虚拟机的高级管理和故障排除](#advanced-management-and-troubleshooting-for-a-single-virtual-machine)
-- [通过 Hyper-v 主机（VMConnect）管理虚拟机](#manage-a-virtual-machine-through-the-hyper-v-host-vmconnect)
+- [通过 Hyper-v 主机 (VMConnect) 管理虚拟机](#manage-a-virtual-machine-through-the-hyper-v-host-vmconnect)
 - [更改 Hyper-v 主机设置](#change-hyper-v-host-settings)
 - [查看 Hyper-v 事件日志](#view-hyper-v-event-logs)
 - [通过 Azure Site Recovery 保护虚拟机](#protect-virtual-machines-with-azure-site-recovery)
@@ -49,17 +47,17 @@ Windows 管理中心中的 "虚拟机" 工具的亮点包括：
 1. 单击左侧导航窗格中的 "**虚拟机**" 工具。
 2. **虚拟机**工具顶部有两个选项卡： "**摘要**" 选项卡和 "**清单**" 选项卡。"**摘要**" 选项卡为当前服务器或整个群集提供 hyper-v 主机资源和性能的整体视图，包括以下各项：
     - 按状态（正在运行、已关闭、已暂停和已保存）分组的 Vm 数
-    - 最近的运行状况警报或 Hyper-v 事件日志事件（警报仅适用于运行 Windows Server 2016 或更高版本的超聚合群集）
-    - 主机与来宾细目的 CPU 和内存使用情况
+    - 最近的运行状况警报或 Hyper-v 事件日志事件 (警报仅适用于运行 Windows Server 2016 或更高版本的超聚合群集) 
+    - CPU 和内存使用情况，包括主机与来宾细目
     - 占用最多 CPU 和内存资源的顶级 Vm
-    - 用于 IOPS 和 IO 吞吐量的实时和历史数据折线图（存储性能折线图仅适用于运行 Windows Server 2016 或更高版本的超聚合群集。 历史数据仅适用于运行 Windows Server 2019 的超聚合群集
+    - 用于 IOPS 和 IO 吞吐量的实时和历史数据折线图 (存储性能行图表仅适用于运行 Windows Server 2016 或更高版本的超聚合群集。 历史数据仅适用于运行 Windows Server 2019) 的超聚合群集
 
 ## <a name="view-virtual-machine-inventory"></a>查看虚拟机清单
 
 ![虚拟机库存屏幕](../media/manage-virtual-machines/virtual-machines-inventory.png)
 
 1. 单击左侧导航窗格中的 "**虚拟机**" 工具。
-2. **虚拟机**工具顶部有两个选项卡： "**摘要**" 选项卡和 "**清单**" 选项卡。"**清单**" 选项卡列出了当前服务器或整个群集上可用的虚拟机，并提供用于管理单个虚拟机的命令。 你可以：
+2. **虚拟机**工具顶部有两个选项卡： "**摘要**" 选项卡和 "**清单**" 选项卡。"**清单**" 选项卡列出了当前服务器或整个群集上可用的虚拟机，并提供用于管理单个虚拟机的命令。 可以：
     - 查看在当前服务器或群集上运行的虚拟机的列表。
     - 查看虚拟机的状态和主机服务器（如果正在查看群集的虚拟机）。 还可查看主机透视中的 CPU 和内存使用情况，包括内存压力、内存需求和分配的内存，以及使用 Azure Site Recovery 的虚拟机的运行时间、检测信号状态和保护状态。
     - [创建新的虚拟机](#create-a-new-virtual-machine)。
@@ -69,9 +67,9 @@ Windows 管理中心中的 "虚拟机" 工具的亮点包括：
     - [使用 Azure Site Recovery 复制虚拟机](#protect-virtual-machines-with-azure-site-recovery)。
     - 对于可在多个 Vm 上运行的操作，例如 "启动"、"关闭"、"保存"、"暂停"、"删除" 和 "重置"，可以选择多个 Vm 并同时运行操作。
 
-注意：如果已连接到群集，则虚拟机工具将仅显示群集虚拟机。 我们计划还会在将来显示非群集虚拟机。
+注意：如果你已连接到群集，则虚拟机工具将仅显示群集虚拟机。 我们计划还会在将来显示非群集虚拟机。
 
-## <a name="create-a-new-virtual-machine"></a>创建新的虚拟机
+## <a name="create-a-new-virtual-machine"></a>新建虚拟机
 
 !["新建虚拟机" 屏幕](../media/manage-virtual-machines/new-vm.png)
 
@@ -79,30 +77,30 @@ Windows 管理中心中的 "虚拟机" 工具的亮点包括：
 2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡，然后单击 "**新建**" 以创建新的虚拟机。
 3. 输入虚拟机名称，并在第1代和第2代虚拟机之间进行选择。
 4. 如果要在群集上创建虚拟机，可以选择最初在其中创建虚拟机的主机。 如果你运行的是 Windows Server 2016 或更高版本，则该工具将为你提供主机建议。
-5. 选择虚拟机文件的路径。 从下拉列表中选择一个卷，或者单击 "**浏览**" 以使用文件夹选取器选择一个文件夹。 虚拟机配置文件和虚拟硬盘文件将保存在选定卷或路径的`\Hyper-V\\[virtual machine name]`路径下的单个文件夹中。
+5. 选择虚拟机文件的路径。 从下拉列表中选择一个卷，或者单击 "**浏览**" 以使用文件夹选取器选择一个文件夹。 虚拟机配置文件和虚拟硬盘文件将保存在 `\Hyper-V\\[virtual machine name]` 选定卷或路径的路径下的单个文件夹中。
 
    >[!Tip]
-   > 在文件夹选取器中，可以通过在 "**文件夹名称**" 字段中输入路径 ```\\server\share```，浏览到网络上任何可用的 SMB 共享。 为 VM 存储使用网络共享需要[CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp)。
+   > 在文件夹选取器中，可以通过在 "**文件夹名称**" 字段中输入路径来浏览到网络上的任何可用 SMB 共享 ```\\server\share``` 。 为 VM 存储使用网络共享需要[CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp)。
 
 6. 选择虚拟处理器数量，无论是要启用嵌套虚拟化、配置内存设置、网络适配器、虚拟硬盘，还是选择要从 .iso 映像文件或网络安装操作系统。
 7. 单击 **“创建”** 创建虚拟机。
 8. 创建虚拟机并将其显示在虚拟机列表中后，可以启动虚拟机。
-9. 启动虚拟机后，可以通过 VMConnect 连接到虚拟机的控制台以安装操作系统。 从列表中选择虚拟机，单击 "**更多** > **连接**" 下载 .rdp 文件。 在远程桌面连接应用中打开 .rdp 文件。 由于这将连接到虚拟机的控制台，因此需要输入 Hyper-v 主机的管理员凭据。
+9. 启动虚拟机后，可以通过 VMConnect 连接到虚拟机的控制台以安装操作系统。 从列表中选择虚拟机，单击 "**更多**  >  **连接**" 下载 .rdp 文件。 在远程桌面连接应用中打开 .rdp 文件。 由于这将连接到虚拟机的控制台，因此需要输入 Hyper-v 主机的管理员凭据。
 
 ## <a name="change-virtual-machine-settings"></a>更改虚拟机设置
 
 ![虚拟机设置屏幕](../media/manage-virtual-machines/vm-settings.png)
 
 1. 单击左侧导航窗格中的 "**虚拟机**" 工具。
-2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡。从列表中选择一个虚拟机，然后单击 "**更多** > "**设置**。
-3. 在 "**常规**"、"**安全**"、"**内存**"、"**处理器**"、"**磁盘**"、"**网络**"、"**启动顺序**" 和 "**检查点**" 选项卡当前选项卡的设置。 可用的设置取决于虚拟机的生成。 此外，某些设置无法更改以运行虚拟机，你将需要先停止虚拟机。
+2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡。从列表中选择一个虚拟机，然后单击 "**更多**  >  **设置**"。
+3. 在 "**常规**"、"**安全**"、"**内存**"、"**处理器**"、"**磁盘**"、"**启动顺序** **" 和**"**检查点**" 选项卡之间进行切换，配置所需的设置，然后单击 "**保存**" 以保存当前 可用的设置取决于虚拟机的生成。 此外，某些设置无法更改以运行虚拟机，你将需要先停止虚拟机。
 
 ## <a name="live-migrate-a-virtual-machine-to-another-cluster-node"></a>将虚拟机实时迁移到另一个群集节点
 
 如果已连接到群集，则可以将虚拟机实时迁移到另一个群集节点。
 
 1. 从故障转移群集或超聚合群集连接中，单击左侧导航窗格中的 "**虚拟机**" 工具。
-2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡。从列表中选择一个虚拟机，然后单击 "**更多** > **移动**"。
+2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡。从列表中选择一个虚拟机，然后单击 "**更多**  >  **移动**"。
 3. 从可用群集节点列表中选择服务器，然后单击 "**移动**"。
 4. 移动进度的通知将显示在 Windows 管理中心的右上角。 如果移动成功，则会在虚拟机列表中看到主机服务器名称已更改。
 
@@ -113,23 +111,23 @@ Windows 管理中心中的 "虚拟机" 工具的亮点包括：
 你可以从 "单一虚拟机" 页查看单个虚拟机的详细信息和性能图表。
 
 1. 单击左侧导航窗格中的 "**虚拟机**" 工具。
-2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡。从 "虚拟机" 列表中单击虚拟机的名称。
+2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡。在虚拟机列表中，单击虚拟机的名称。
 3. 在单个虚拟机页上，你可以：
     - 查看虚拟机的详细信息。
-    - 查看 CPU、内存、网络、IOPS 和 IO 吞吐量的实时和历史数据折线图（历史数据仅适用于运行 Windows Server 2019 的超聚合群集）
+    - 查看 CPU、内存、网络、IOPS 和 IO 吞吐量 (的实时和历史数据折线图仅适用于运行 Windows Server 2019 的超聚合群集) 
     - 查看、创建、应用、重命名和删除检查点。
-    - 查看虚拟机的虚拟硬盘（.vhd）文件、网络适配器和主机服务器的详细信息。
+    - 查看虚拟机的虚拟硬盘 () 文件、网络适配器和主机服务器的详细信息。
     - 删除、启动、关闭、关闭、暂停、继续、重置或重命名虚拟机。 同时保存虚拟机、删除已保存状态或创建检查点。
     - [更改虚拟机的设置](#change-virtual-machine-settings)。
     - 通过 Hyper-v 主机使用 VMConnect 连接到虚拟机控制台。
     - [使用 Azure Site Recovery 复制虚拟机](#protect-virtual-machines-with-azure-site-recovery)。
 
-## <a name="manage-a-virtual-machine-through-the-hyper-v-host-vmconnect"></a>通过 Hyper-v 主机（VMConnect）管理虚拟机
+## <a name="manage-a-virtual-machine-through-the-hyper-v-host-vmconnect"></a>通过 Hyper-v 主机 (VMConnect) 管理虚拟机
 
 ![通过 web 浏览器连接 VM](../media/manage-virtual-machines/vm-connect.png)
 
 1. 单击左侧导航窗格中的 "**虚拟机**" 工具。
-2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡。从列表中选择一个虚拟机，然后单击 "**更多** > **连接**" 或 "**下载 RDP 文件**"。 **连接**将允许你通过集成到 Windows 管理中心的远程桌面 web 控制台与来宾 VM 交互。 **下载 rdp 文件**将下载可使用远程桌面连接应用程序（mstsc）打开的 .rdp 文件。 这两个选项都将使用 VMConnect 通过 Hyper-v 主机连接到来宾 VM，并将要求你输入 Hyper-v 主机服务器的管理员凭据。
+2. 在 "虚拟机" 工具的顶部，选择 "**清单**" 选项卡。从列表中选择一个虚拟机，然后单击 "**更多**  >  **连接**" 或 "**下载 RDP 文件**"。 **连接**将允许你通过集成到 Windows 管理中心的远程桌面 web 控制台与来宾 VM 交互。 **下载 rdp 文件**会下载一个 .rdp 文件，你可以使用远程桌面连接应用程序打开该文件， ( # A0) 。 这两个选项都将使用 VMConnect 通过 Hyper-v 主机连接到来宾 VM，并将要求你输入 Hyper-v 主机服务器的管理员凭据。
 
 ## <a name="change-hyper-v-host-settings"></a>更改 Hyper-v 主机设置
 
@@ -137,7 +135,7 @@ Windows 管理中心中的 "虚拟机" 工具的亮点包括：
 
 1. 在服务器、超聚合群集或故障转移群集连接上，单击左侧导航窗格底部的 "**设置**" 菜单。
 2. 在 Hyper-v 主机服务器或群集上，你将看到一个**Hyper-v 主机设置**组，其中包含以下部分：
-    - 常规更改虚拟硬盘和虚拟机文件路径，以及虚拟机监控程序计划类型（如果支持）
+    - 常规：更改虚拟硬盘和虚拟机的文件路径，以及虚拟机监控程序计划类型 (（如果支持）) 
     - 增强会话模式
     - NUMA 跨越
     - 实时迁移

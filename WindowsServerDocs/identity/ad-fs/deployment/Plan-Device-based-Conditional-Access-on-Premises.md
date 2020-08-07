@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 6d445cca81e2b583d0078e5fc34a219769748400
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 7f331aac7b58cc22f696130647a7f5e95ea808c9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519966"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945473"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>规划基于设备的条件性访问本地
 
@@ -29,11 +27,11 @@ AD FS 在混合方案中提供条件访问策略的本地组件。  向云资源
 ### <a name="types-of-registered-devices"></a>已注册设备的类型
 有三种类型的已注册设备，它们都表示为 Azure AD 中的设备对象，并可用于在本地 AD FS 的条件性访问。
 
-| 说明 |添加工作或学校帐户  |Azure AD 加入  |Windows 10 域加入 |
+| 描述 |添加工作或学校帐户  |Azure AD 加入  |Windows 10 域加入 |
 | --- | --- |--- | --- |
-|说明    |  用户以交互方式将其工作或学校帐户添加到其 BYOD 设备。  **注意：** 添加工作或学校帐户是 Windows 8/8.1 中 Workplace Join 的替代项 | 用户将其 Windows 10 工作设备加入 Azure AD。|已加入 Windows 10 域的设备会自动注册 Azure AD。|
-|用户如何登录到设备     |  不以工作或学校帐户登录到 Windows。  使用 Microsoft 帐户登录。 |      | 以注册设备的（工作或学校帐户）登录到 Windows。 | 使用 AD 帐户登录。|
-|如何管理设备 | MDM 策略（附加 Intune 注册） | MDM 策略（附加 Intune 注册） | 组策略，Configuration Manager |
+|描述    |  用户以交互方式将其工作或学校帐户添加到其 BYOD 设备。  **注意：** 添加工作或学校帐户是 Windows 8/8.1 中 Workplace Join 的替代项 | 用户将其 Windows 10 工作设备加入 Azure AD。|已加入 Windows 10 域的设备会自动注册 Azure AD。|
+|用户如何登录到设备     |  不以工作或学校帐户登录到 Windows。  使用 Microsoft 帐户登录。 |      | 以注册设备的 (工作或学校) 帐户登录到 Windows。 | 使用 AD 帐户登录。|
+|如何管理设备 | MDM 策略与其他 Intune 注册 ()  | MDM 策略与其他 Intune 注册 ()  | 组策略，Configuration Manager |
 |Azure AD 信任类型|已加入工作区|已加入 Azure AD|加入域 |
 |W10 设置位置 | 设置 > 帐户 > 帐户 > 添加工作或学校帐户 | 有关 > 联接 > 系统 > 的设置 Azure AD |   有关 > 加入域的系统 > 设置 > |
 |还适用于 iOS 和 Android 设备？ | 是 | 否 | 否 |
@@ -44,7 +42,7 @@ AD FS 在混合方案中提供条件访问策略的本地组件。  向云资源
 [将 Windows 10 移动版加入到 Azure Active Directory](/windows/client-management/join-windows-10-mobile-to-azure-active-directory)
 
 ### <a name="how-windows-10-user-and-device-sign-on-is-different-from-previous-versions"></a>Windows 10 用户和设备登录与以前的版本有何不同
-对于 Windows 10 和 AD FS 2016，你应该了解设备注册和身份验证的一些新方面（特别是在以前版本中非常熟悉设备注册和 "工作区加入"）。
+对于 Windows 10 和 AD FS 2016，你应该 (了解设备注册和身份验证的一些新方面，尤其是在以前版本) 中非常熟悉设备注册和 "工作区加入" 时。
 
 首先，在 windows 10 和 Windows Server 2016 中的 AD FS 中，设备注册和身份验证不再仅基于 X509 用户证书。  提供了一个新的、更可靠的协议，提供更好的安全性和更无缝的用户体验。  主要区别在于，对于 Windows 10 域加入和 Azure AD 联接，存在 X509 计算机证书和称为 PRT 的新凭据。  可在[此处](https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/)和[此处](https://jairocadena.com/2016/02/01/azure-ad-join-what-happens-behind-the-scenes/)阅读所有相关内容。
 
@@ -68,9 +66,9 @@ AD FS 2016 基于 PRT 和 Passport 凭据提供无缝设备和用户 SSO。  使
 有关配置 AD FS 访问控制策略的详细信息，请参阅[AD FS 中的访问控制策略](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md)。
 
 #### <a name="authenticated-devices"></a>经过身份验证的设备
-经过身份验证的设备是未在 MDM （Intune 和第三方 MDMs for Windows 10，Intune 仅适用于 iOS 和 Android）中注册的已注册设备。
+经过身份验证的设备是未在 MDM 中注册的设备 (Intune 和第三方 MDMs for Windows 10，Intune 仅适用于 iOS 和 Android) 。
 
-经过身份验证的设备将具有值**为 FALSE**的**isManaged** AD FS 声明。 （而未注册的设备将不会缺少此声明。） 经过身份验证的设备（和所有已注册的设备）将具有值**为 TRUE**的 isKnown AD FS 声明。
+经过身份验证的设备将具有值**为 FALSE**的**isManaged** AD FS 声明。  (，而未注册的设备将缺少此声明。 ) 经过身份验证的设备 (和所有已注册的设备) 将具有值**为 TRUE**的 isKnown AD FS 声明。
 
 #### <a name="managed-devices"></a>托管设备：
 
@@ -78,8 +76,8 @@ AD FS 2016 基于 PRT 和 Passport 凭据提供无缝设备和用户 SSO。  使
 
 托管设备将具有值**为 TRUE**的 isManaged AD FS 声明。
 
-#### <a name="devices-compliant-with-mdm-or-group-policies"></a>兼容设备（具有 MDM 或组策略）
-兼容设备是指不仅注册到 MDM，而且符合 MDM 策略的已注册设备。 （符合性信息由 MDM 提供，并写入 Azure AD。）
+#### <a name="devices-compliant-with-mdm-or-group-policies"></a>与 MDM 或组策略 (兼容的设备) 
+兼容设备是指不仅注册到 MDM，而且符合 MDM 策略的已注册设备。  (符合性信息由 MDM 提供，并写入 Azure AD。 ) 
 
 相容设备将具有值**为 TRUE**的**isCompliant** AD FS 声明。
 

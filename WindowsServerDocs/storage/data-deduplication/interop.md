@@ -1,28 +1,26 @@
 ---
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
 title: 重复数据删除互操作性
-ms.technology: storage-deduplication
-ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: fb3c9842f1d698151bffebbe5f77618c8b19b366
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7f99b4d12821e505a229ac02d0198a9ac2ed31fa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403195"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936302"
 ---
 # <a name="data-deduplication-interoperability"></a>重复数据删除互操作性
 
-> 适用于：Windows Server （半年频道），Windows Server 2016，Windows Server 2019
+> 适用于： Windows Server (半年通道) ，Windows Server 2016，Windows Server 2019
 
 ## <a name="supported"></a>支持
 
 ### <a name="refs"></a>ReFS
-Windows Server 2019 支持重复数据删除。 
+Windows Server 2019 支持重复数据删除。
 
 ### <a name="failover-clustering"></a>故障转移群集
 
@@ -43,18 +41,18 @@ Windows Server 2019 支持重复数据删除。
 重复数据删除可以与分布式文件系统 (DFS) 复制配合使用。 优化或取消优化文件不会触发复制，因为文件未发生更改。 为节省在线传输时间，DFS 复制使用远程差分压缩 (RDC)，而不是区块存储中的区块。 如果副本使用重复数据删除，则也可以使用删除重复优化副本上的文件。
 
 ### <a name="quotas"></a>配额
-重复数据删除不支持针对启用了删除重复的卷根目录文件夹创建硬配额。 当卷根目录上存在硬配额时，卷上的实际可用空间和卷上受配额限制的空间并不相等。 这可能会导致删除重复优化作业失败。 但支持针对启用了删除重复的卷根目录创建软配额。 
+重复数据删除不支持针对启用了删除重复的卷根目录文件夹创建硬配额。 当卷根目录上存在硬配额时，卷上的实际可用空间和卷上受配额限制的空间并不相等。 这可能会导致删除重复优化作业失败。 但支持针对启用了删除重复的卷根目录创建软配额。
 
 在已删除重复的卷上启用配额时，配额使用的是文件的逻辑大小，而非物理大小。 当文件由重复数据删除功能处理时，配额使用情况（包括任何配额阈值）不会发生更改。 使用删除重复时，其他所有配额功能（包括卷根目录软配额和子文件夹配额）都正常工作。
 
-### <a name="windows-server-backup"></a>Windows Server 备份
+### <a name="windows-server-backup"></a>Windows Server Backup
 Windows Server 备份能够“按原样”备份优化卷（即不删除已删除重复的数据）。 以下步骤说明如何备份卷，以及如何还原卷或卷中的选定文件。
-1. 安装 Windows Server 备份。  
+1. 安装 Windows Server 备份。
     ```PowerShell
     Install-WindowsFeature -Name Windows-Server-Backup
     ```
 
-2. 若要将 E: 卷备份到另一个卷，请运行以下命令，根据具体情况替换正确的卷名称。  
+2. 若要将 E: 卷备份到另一个卷，请运行以下命令，根据具体情况替换正确的卷名称。
     ```PowerShell
     wbadmin start backup –include:E: -backuptarget:F: -quiet
     ```
@@ -64,14 +62,14 @@ Windows Server 备份能够“按原样”备份优化卷（即不删除已删�
     wbadmin get versions
     ```
 
-    此输出版本 ID 将为日期和时间字符串，例如：08/18/2016-06:22。
+    此输出版本 ID 将是日期和时间字符串，例如：08/18/2016-06:22。
 
 4. 还原整个卷。
     ```PowerShell
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:Volume  -items:E: -recoveryTarget:E:
     ```
 
-    **--或--**  
+    **--或--**
 
     还原特定文件夹（在此情况下为 E:\Docs 文件夹）：
     ```PowerShell
@@ -80,7 +78,7 @@ Windows Server 备份能够“按原样”备份优化卷（即不删除已删�
 
 ## <a name="unsupported"></a>不支持
 
-### <a name="windows-10-client-os"></a>Windows 10 （客户端操作系统）
+### <a name="windows-10-client-os"></a>Windows 10（客户端操作系统）
 在 Windows 10 上不支持重复数据删除。 Windows 社区中有多个广受欢迎的博客文章描述了如何从 Windows Server 2016 中移除二进制文件并在 Windows 10 上安装，但尚未作为重复数据删除开发的一部分对这种情况进行验证。 [在 Windows Server Storage UserVoice 上为针对 Windows 10 vNext 的此项投票](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/9011008-add-deduplication-support-to-client-os)。
 
 ### <a name="windows-search"></a>Windows 搜索

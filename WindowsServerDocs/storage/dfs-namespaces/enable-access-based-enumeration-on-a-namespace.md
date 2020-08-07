@@ -2,22 +2,20 @@
 title: 对命名空间启用基于访问的枚举
 description: 本文介绍如何对命名空间启用基于访问的枚举。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 04b023a931f8d66205a07f05bb8d3e955f8b83ca
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 507af0f3cdd76ab7af59092f8f099225c113edaa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964069"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936121"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>对命名空间启用基于访问的枚举
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 基于访问的枚举可隐藏用户无权访问的文件和文件夹。 默认情况下，对于 DFS 命名空间，不启用此功能。 你可以通过使用 DFS 管理对 DFS 文件夹启用基于访问的枚举。 若要控制对文件夹目标中的文件和文件夹进行基于访问的枚举，必须通过使用共享和存储管理，对每个共享文件夹启用基于访问的枚举。
 
@@ -80,13 +78,13 @@ ms.locfileid: "86964069"
 
 1. 在安装有**分布式文件系统**角色服务或**分布式文件系统工具**功能的服务器上打开命令提示符窗口。
 
-2. 键入以下命令，其中* &lt; DFSPath &gt; *是 DFS 文件夹（链接）的路径， *<域 \\ 帐户>* 是组或用户帐户的名称，而 *（...）* 替换为其他访问控制项（ace）：
+2. 键入以下命令，其中* &lt; DFSPATH &gt; *是 DFS 文件夹 (链接) 的路径， *<域 \\ 帐户>* 是组或用户帐户的名称， * ( ... ) *替换为其他访问控制项 (ace) ：
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   例如，若要将现有权限替换为允许 Domain Admins 和 CONTOSO \\ 讲师组读取（R） \\ office\public\training 文件夹的权限，请键入以下命令：
+   例如，若要将现有权限替换为允许 Domain Admins 和 CONTOSO \\ 讲师组读取 (R) 访问 office\public\training 文件夹的权限 \\ ，请键入以下命令：
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace
@@ -95,7 +93,7 @@ ms.locfileid: "86964069"
 3. 若要从命令提示符执行其他任务，请使用以下命令：
 
 
-| 命令 | 说明 |
+| Command | 描述 |
 |---|---|
 |[Dfsutil property sd deny](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))|拒绝组或用户，使其无法查看文件夹。|
 |[Dfsutil property sd reset](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11)) |从文件夹中删除所有权限。|

@@ -1,30 +1,28 @@
 ---
-title: DHCP （动态主机配置协议）基础知识
+title: DHCP (动态主机配置协议) 基础知识
 description: ''
-ms.prod: windows-server
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: ''
-ms.openlocfilehash: 5a3247fad961f4b2d1cf6e354c29706708c8e330
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 445663569fca7182e5343dd6f7ac677fd7f87f3b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409808"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970054"
 ---
-# <a name="dhcp-dynamic-host-configuration-protocol-basics"></a>DHCP （动态主机配置协议）基础知识
+# <a name="dhcp-dynamic-host-configuration-protocol-basics"></a>DHCP (动态主机配置协议) 基础知识
 
-动态主机配置协议（DHCP）是由 RFC 2131 1541 定义的标准协议，该协议允许服务器动态地将 IP 地址和配置信息分发给客户端。 通常情况下，DHCP 服务器至少为客户端提供以下基本信息：
+动态主机配置协议 (DHCP) 是由 rfc 1541 (所定义的标准协议，该协议由 RFC 2131) 取代，该协议允许服务器动态地将 IP 地址和配置信息分发给客户端。 通常情况下，DHCP 服务器至少为客户端提供以下基本信息：
 
 - IP 地址
 
 - 子网掩码
 
-- 还可以提供默认的 GatewayOther 信息，例如域名服务（DNS）服务器地址和 Windows Internet 名称服务（WINS）服务器地址。 系统管理员将 DHCP 服务器配置为向客户端分析的选项。
+- 还可以提供默认的 GatewayOther 信息，例如域名服务 (DNS) 服务器地址和 Windows Internet 名称服务 (WINS) 服务器地址。 系统管理员将 DHCP 服务器配置为向客户端分析的选项。
 
 ## <a name="more-information"></a>更多信息
 
@@ -123,7 +121,7 @@ DHCP: Discover (xid=21274A1D)
 
 ### <a name="dhcpoffer"></a>DHCPOFFER
 
-DHCP 服务器通过发送 DHCPOFFER 数据包来做出响应。 在下面捕获节选的 IP 部分中，源地址现在为 DHCP 服务器 IP 地址，目标地址是广播地址255.255.255.255。 DHCP 部分将数据包标识为产品/服务。 YIADDR 字段由服务器提供客户端的 IP 地址填充。 请注意，CHADDR 字段仍包含发出请求的客户端的物理地址。 此外，我们还会在 "DHCP 选项" 字段部分中看到服务器发送的各种选项以及 IP 地址。 在这种情况下，服务器将发送子网掩码、默认网关（路由器）、租约时间、WINS 服务器地址（NetBIOS 名称服务）和 NetBIOS 节点类型。
+DHCP 服务器通过发送 DHCPOFFER 数据包来做出响应。 在下面捕获节选的 IP 部分中，源地址现在为 DHCP 服务器 IP 地址，目标地址是广播地址255.255.255.255。 DHCP 部分将数据包标识为产品/服务。 YIADDR 字段由服务器提供客户端的 IP 地址填充。 请注意，CHADDR 字段仍包含发出请求的客户端的物理地址。 此外，我们还会在 "DHCP 选项" 字段部分中看到服务器发送的各种选项以及 IP 地址。 在这种情况下，服务器将发送子网掩码、默认网关 (路由器) 、租约时间、WINS 服务器地址 (NetBIOS 名称服务) 和 NetBIOS 节点类型。
 
 ```
 

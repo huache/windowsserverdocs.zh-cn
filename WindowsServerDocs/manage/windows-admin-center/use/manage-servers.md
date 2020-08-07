@@ -1,19 +1,17 @@
 ---
 title: 通过 Windows 管理中心管理服务器
-description: 通过 Windows 管理中心管理服务器（项目 Honolulu）
-ms.technology: manage
+description: 用 Windows 管理中心 (项目 Honolulu) 管理服务器
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: cbcb5c2357a60d6d12551a7d08055cacecd515b7
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 69f8f20aa9e1b222ff112f91df8d6b3d7767fc84
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269234"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962381"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>通过 Windows 管理中心管理服务器
 
@@ -47,27 +45,27 @@ ms.locfileid: "81269234"
 
 以下工具可用于服务器连接：
 
-| 工具 | 说明 |
+| 工具 | 描述 |
 | ---- | ----------- |
 | [概述](#overview) | 查看服务器详细信息和控制服务器状态 |
 | [Active Directory](#active-directory-preview) | 管理 Active Directory |
-| [Backup](#backup) | 查看和配置 Azure 备份 |  
-| [证书](#certificates) | 查看和修改证书 |
+| [备份](#backup) | 查看和配置 Azure 备份 |
+| [Certificates](#certificates) | 查看和修改证书 |
 | [容器](#containers) | 查看容器 |
 | [设备](#devices) | 查看和修改设备 |
-| [台](#dhcp) | 查看和管理 DHCP 服务器配置 |
+| [DHCP](#dhcp) | 查看和管理 DHCP 服务器配置 |
 | [DNS](#dns) | 查看和管理 DNS 服务器配置 |
 | [事件](#events) | 查看事件 |
 | [文件](#files) | 浏览文件和文件夹 |
 | [Firewall](#firewall) | 查看和修改防火墙规则 |
 | [安装的应用](#installed-apps) | 查看和删除已安装的应用 |
 | [本地用户和组](#local-users-and-groups) | 查看和修改本地用户和组 |
-| [网桥](#network) | 查看和修改网络设备 |
+| [网络](#network) | 查看和修改网络设备 |
 | [数据包监视](https://aka.ms/wac1908) | 监视网络数据包 |
 | [性能监视器](https://aka.ms/perfmon-blog) | 查看性能计数器和报告 |
 | [PowerShell](#powershell) | 通过 PowerShell 与服务器交互 |
 | [进程](#processes) | 查看和修改正在运行的进程 |
-| [Registry](#registry) | 查看和修改注册表项 |
+| [注册表](#registry) | 查看和修改注册表项 |
 | [远程桌面](#remote-desktop) | 通过远程桌面与服务器交互 |
 | [角色和功能](#roles-and-features) | 查看和修改角色和功能 |
 | [计划任务](#scheduled-tasks) | 查看和修改计划任务 |
@@ -97,11 +95,11 @@ ms.locfileid: "81269234"
 - 关闭服务器
 - 在服务器上启用磁盘指标
 - 编辑服务器上的计算机 ID
-- 通过超链接查看 BMC IP 地址（需要 IPMI 兼容的 BMC）。
+- 查看包含超链接的 BMC IP 地址 (需要 IPMI 兼容的 BMC) 。
 
 [**查看服务器概述的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BOverview%5D)。
 
-## <a name="active-directory-preview"></a>Active Directory （预览）
+## <a name="active-directory-preview"></a>Active Directory (预览版) 
 
 **Active Directory**是在[扩展源](../configure/using-extensions.md)上提供的早期预览版。
 
@@ -113,15 +111,15 @@ ms.locfileid: "81269234"
 - 创建组
 - 搜索用户、计算机和组
 - 在网格中选择的用户、计算机和组的详细信息窗格
-- 全局网格操作用户、计算机和组（禁用/启用、删除）
+- 全局网格操作用户、计算机和组 (禁用/启用、删除) 
 - 重置用户密码
 - 用户对象：配置组成员身份 & 基本属性
 - 计算机对象：配置对单台计算机的委派
-- 组对象：管理成员身份（一次添加/删除1个用户）  
+- 组对象：管理成员身份 (一次添加/删除1个用户) 
 
 [**查看 Active Directory 的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D)。
 
-## <a name="backup"></a>备份
+## <a name="backup"></a>Backup
 
 利用**备份**，你可以通过将服务器直接备份到 Microsoft Azure 来保护 Windows server 免受损坏、攻击或灾难的影响。
 [了解有关 Azure 备份的详细信息。](https://aka.ms/windows-admin-center-backup)
@@ -185,7 +183,7 @@ ms.locfileid: "81269234"
 
 - 创建/配置/查看 IPV4 和 IPV6 作用域
 - 创建地址排除并配置开始和结束 IP 地址
-- 创建地址保留并配置客户端 MAC 地址（IPV4）、DUID 和 IAID （IPV6）
+- 创建地址保留并配置客户端 MAC 地址 (IPV4) 、DUID 和 IAID (IPV6) 
 
 [**查看 DHCP 的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDHCP%5D)。
 
@@ -196,15 +194,15 @@ ms.locfileid: "81269234"
 ### <a name="features"></a>功能
 
 - 查看 DNS 正向查找区域、反向查找区域和 DNS 记录的详细信息
-- 创建正向查找区域（主、辅助或存根），并配置正向查找区域属性
-- 创建主机（A 或 AAAA）、CNAME 或 MX 类型的 DNS 记录
+- 创建前向查找区域 (主、辅助或存根) ，并配置正向查找区域属性
+- 创建主机 (或 AAAA) 、CNAME 或 MX 类型的 DNS 记录
 - 配置 DNS 记录属性
-- 创建 IPV4 和 IPV6 反向查找区域（主节点、辅助节点和存根区域）、配置反向查找区域属性
+- 创建 IPV4 和 IPV6 反向查找区域 (主要、辅助和存根) ，配置反向查找区域属性
 - 在反向查找区域下创建 DNS 记录的 PTR、CNAME 类型。
 
 [**查看 DHCP 的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D)。
 
-## <a name="events"></a>Events
+## <a name="events"></a>事件
 
 **事件**可用于管理计算机或服务器上的事件日志。
 
@@ -219,7 +217,7 @@ ms.locfileid: "81269234"
 
 [**查看事件的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BEvents%5D)。
 
-## <a name="files"></a>Files
+## <a name="files"></a>文件
 
 **文件**可用于管理计算机或服务器上的文件和文件夹。
 
@@ -229,7 +227,7 @@ ms.locfileid: "81269234"
 
 - 浏览文件和文件夹
 - 搜索文件或文件夹
-- 创建新的文件夹
+- 创建新文件夹
 - 删除文件或文件夹
 - 下载文件或文件夹
 - 上传文件或文件夹
@@ -296,7 +294,7 @@ ms.locfileid: "81269234"
 - 浏览和搜索现有网络适配器
 - 查看网络适配器的详细信息
 - 编辑网络适配器的属性
-- 创建[Azure 网络适配器（预览功能）](https://blogs.technet.microsoft.com/networking/2018/09/05/azurenetworkadapter/)
+- [ (预览功能创建 Azure 网络适配器) ](https://blogs.technet.microsoft.com/networking/2018/09/05/azurenetworkadapter/)
 
 [**查看网络反馈和建议的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BNetwork%5D)
 
@@ -431,14 +429,14 @@ PowerShell 支持以下功能：
 - 查看磁盘详细信息
 - 创建卷
 - 初始化磁盘
-- 创建、附加和分离虚拟硬盘（VHD）
+- 创建、附加和分离虚拟硬盘 (VHD) 
 - 使磁盘脱机
 - 格式化卷
-- 调整卷的大小
+- 重设卷大小
 - 编辑卷属性
 - 删除卷
 - 安装配额管理
-- 管理文件服务器资源管理器配额[存储-> 创建/更新配额](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
+- 管理文件服务器资源管理器配额[存储->创建/更新配额](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
 
 [**查看有关存储的反馈和建议的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 

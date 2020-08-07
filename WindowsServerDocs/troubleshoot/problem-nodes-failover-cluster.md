@@ -1,17 +1,15 @@
 ---
 title: 删除节点时出现问题
 description: 本文介绍了从活动故障转移群集成员身份中删除节点时遇到的问题。
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 08f5e7ef2ddd0f11abee7d0f21b56c3d5a601d3d
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+ms.openlocfilehash: e69b110db8f631b74c89e046f724367b4d60dbad
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306516"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970034"
 ---
 # <a name="having-a-problem-with-nodes-being-removed-from-active-failover-cluster-membership"></a>从活动故障转移群集成员身份中删除节点时遇到问题
 
@@ -56,7 +54,7 @@ Windows 2008 或 2008 R2 故障转移群集中的所有节点都通过设置为�
 
 6. IPv6 是故障转移群集将用于其检测信号的默认协议。 检测信号本身是 UDP 单播网络数据包，通过端口3343进行通信。 如果未正确配置交换机、防火墙或路由器以允许此流量，则可能会遇到此类问题。
 
-7. IPsec 安全策略刷新也可能导致此问题。 具体的问题是，在 IPSec 组策略更新过程中，具有高级安全性的 Windows 防火墙（WFAS）已对所有 IPsec 安全关联（SAs）进行了破坏。 发生这种情况时，将阻止所有网络连接。 当 renegotiating 安全关联时，如果使用 Active Directory 执行身份验证时出现延迟，则这些延迟（其中所有网络通信都被阻止）也会阻止群集检测信号，从而导致群集运行状况监视在节点未在5秒阈值内响应的情况下检测到停机。
+7. IPsec 安全策略刷新也可能导致此问题。 具体的问题在于，在 IPSec 组策略更新 (SAs) 的所有 IPsec 安全关联都被具有高级安全性的 Windows 防火墙 (WFAS) 中。 发生这种情况时，将阻止所有网络连接。 当 renegotiating 安全关联时，如果在 Active Directory 执行身份验证时出现延迟，则这些延迟 (阻止所有网络通信，) 还会阻止群集检测信号进入，并导致群集运行状况监视在节点未在5秒阈值内响应的情况下检测节点。
 
 8. 旧或过期网卡驱动程序和/或固件。  有时，网络卡或交换机的错误配置还可能会导致检测信号丢失。
 

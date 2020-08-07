@@ -2,22 +2,20 @@
 title: 为引用中的目标设置排序方法
 description: 本文介绍如何为引用中的目标设置排序方法。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: a993d53611382dcd0007bfecae95da6221cf6016
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e448a12659ca7aa9fbc4230dce51df4fbcd7bcf0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966799"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936100"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>为引用中的目标设置排序方法
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 引用是在用户访问命名空间根目录或包含目标的文件夹时，客户端计算机从域控制器或命名空间服务器接收的目标的排序列表。 收到引用后，客户端会尝试访问该列表中的第一个目标。 如果该目标不可用，则客户端会尝试访问下一个目标。
 引用中始终先列出客户端站点上的目标。 客户端站点之外的目标根据排序方法列出。

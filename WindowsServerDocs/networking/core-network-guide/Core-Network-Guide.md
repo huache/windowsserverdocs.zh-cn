@@ -2,18 +2,16 @@
 title: 核心网络组件
 description: 本指南提供了有关如何在 Windows Server 2016 的新林中规划和部署完全正常运行的网络和新的 Active Directory 域所需的核心组件的说明
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0e44de005bd7b110e89b514071667c62a81d386b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2c41fde041183ff7e039bd2fed877aad8ff0f234
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518535"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962321"
 ---
 # <a name="core-network-components"></a>核心网络组件
 
@@ -283,7 +281,7 @@ AD DS 设计过程的第一步是确定组织中需要多少林。 林是顶级
 
 |配置项：|示例值：|
 |------------------------|-------------------|
-|完整 DNS 名|示例：<p>-corp.contoso.com<br />-example.com|
+|完整 DNS 名|示例:<p>-corp.contoso.com<br />-example.com|
 |林功能级别|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
 |Active Directory 域服务数据库文件夹位置|E:\Configuration\\<p>或接受默认位置。|
 |Active Directory 域服务日志文件文件夹位置|E:\Configuration\\<p>或接受默认位置。|
@@ -412,7 +410,7 @@ in-addr.arpa 域适用于基于 Internet 协议版本 4 (IPv4) 寻址的所有 T
 |网络连接绑定|以太网|
 |DNS 服务器设置|DC1.corp.contoso.com|
 |首选 DNS 服务器 IP 地址|10.0.0.2|
-|“添加作用域”对话框值<p>1. 范围名称<br />2. 起始 IP 地址<br />3. 结束 IP 地址<br />4. 子网掩码<br />5. 默认网关（可选）<br />6. 租约期限|1. 主子网<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6 8 天|
+|“添加作用域”对话框值<p>1. 范围名称<br />2. 起始 IP 地址<br />3. 结束 IP 地址<br />4. 子网掩码<br />5. 默认网关 (可选) <br />6. 租约期限|1. 主子网<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6 8 天|
 |IPv6 DHCP 服务器操作模式|未启用|
 
 ## <a name="core-network-deployment"></a><a name="BKMK_deployment"></a>核心网络部署
@@ -469,7 +467,7 @@ Administrators**** 组成员或同等身份是执行这些过程的最低要求�
 > 有关如何重命名运行其他 Microsoft 操作系统的计算机的信息，请参阅[附录 A-重命名计算机](#BKMK_A)。
 
 #### <a name="configure-a-static-ip-address"></a><a name="BKMK_ip"></a>配置静态 IP 地址
-你可以使用本主题中的过程为运行 Windows Server 2016 的计算机配置具有静态 IP 地址的网络连接的 Internet 协议版本4（IPv4）属性。
+你可以使用本主题中的过程，为运行 Windows Server 2016 的计算机配置具有静态 IP 地址的网络连接 (IPv4) 的 Internet 协议版本4。
 
 > [!NOTE]
 > 要使用 Windows PowerShell 执行这一过程，打开 PowerShell 并在不同的行中键入下列 cmdlet，然后按 ENTER 键。 也必须用你想要用来配置计算机的值，替换这个例子里的接口名称和 IP 地址。
@@ -537,7 +535,7 @@ Administrators**** 组成员或同等身份是执行这些过程的最低要求�
 
 #### <a name="install-ad-ds-and-dns-for-a-new-forest"></a><a name="BKMK_installAD-DNS"></a>为新林安装 AD DS 和 DNS
 
-你可以使用以下过程之一来安装 Active Directory 域服务（AD DS）和 DNS 并在新林中创建新域。
+你可以使用以下过程之一来安装 Active Directory 域服务 (AD DS) 和 DNS 并在新林中创建新域。
 
 第一个过程提供了使用 Windows PowerShell 执行这些操作的说明，而第二个过程演示如何使用服务器管理器安装 AD DS 和 DNS。
 
@@ -941,7 +939,7 @@ Get-WindowsFeature
 
 1.  使用本地 Administrator 帐户登录到计算机。
 
-2.  在 **"搜索 web 和 Windows**" 中键入 " **System**"。 在搜索结果中，单击 "**系统（控制面板）**"。 这将打开“系统”**** 对话框。
+2.  在 **"搜索 web 和 Windows**" 中键入 " **System**"。 在搜索结果中，单击 **"系统 (控制面板") **。 这将打开“系统”**** 对话框。
 
 3.  在**系统**中，单击 "**高级系统设置**"。 这将打开“系统属性”**** 对话框。 单击 "**计算机名称**" 选项卡。
 
@@ -1008,7 +1006,7 @@ Get-WindowsFeature
 #### <a name="deploying-nps1"></a><a name="BKMK_deployNPS1"></a>部署 NPS1
 安装网络策略服务器 (NPS) 服务器，将其作为部署其他网络访问技术 [如虚拟专用网络 (VPN) 服务器、无线访问点以及 802.1X 身份验证交换机] 的预备步骤。
 
-网络策略服务器（NPS）允许你通过以下功能集中配置和管理网络策略：远程身份验证拨入用户服务（RADIUS）服务器和 RADIUS 代理。
+网络策略服务器 (NPS) 使你可以通过以下功能集中配置和管理网络策略：远程身份验证拨入用户服务 (RADIUS) 服务器和 RADIUS 代理。
 
 NPS 是核心网络的可选组件，但如果下列任何一项为真，则应安装 NPS：
 
@@ -1046,7 +1044,7 @@ NPS 是核心网络的可选组件，但如果下列任何一项为真，则应�
 - 规划 RADIUS 记帐。 NPS 允许你将记帐数据记录到 SQL Server 数据库或记录到本地计算机上的文本文件。 如果想使用 SQL Server 日志记录，请规划运行 SQL Server 的服务器的安装和配置。
 
 ##### <a name="install-network-policy-server-nps"></a><a name="BKMK_installNPS"></a>安装网络策略服务器 (NPS)
-您可以使用此过程通过 "添加角色和功能向导" 来安装网络策略服务器（NPS）。 NPS 是网络策略和访问服务服务器角色的一个角色服务。
+通过使用 "添加角色和功能向导"，您可以使用此过程 (NPS) 安装网络策略服务器。 NPS 是网络策略和访问服务服务器角色的一个角色服务。
 
 > [!NOTE]
 > 默认情况下，NPS 在所有已安装的网络适配器上侦听端口 1812、1813、1645 和 1646 上的 RADIUS 流量。 如果安装 NPS 时启用了具有高级安全性的 Windows 防火墙，则在安装过程中会自动为这些端口创建防火墙例外，适用于 Internet 协议版本 6 \( IPv6 \) 和 IPv4 通信。 如果网络访问服务器被配置为通过这些默认端口之外的端口发送 RADIUS 流量，请在安装 NPS 期间删除在 "高级安全 Windows 防火墙" 中创建的例外，并为用于 RADIUS 流量的端口创建例外。
@@ -1079,7 +1077,7 @@ NPS 是核心网络的可选组件，但如果下列任何一项为真，则应�
 
 7.  在**选择角色服务**中，单击 **“网络策略服务器”**。  在**添加“网络策略服务器”需要的功能**中，单击 **“添加功能”**。 单击“下一步”。
 
-8.  在 **“确认安装选择”** 中，单击 **“如果需要，自动重启目标服务器”**。 当提示你确认这一选择时，单击 **“是”**，然后单击 **“安装”**。 在安装进程期间，安装进度页显示状态。 此过程完成后，将显示消息 " *computername*上安装成功"，其中*ComputerName*是安装了网络策略服务器的计算机的名称。 单击 **“关闭”** 。
+8.  在 **“确认安装选择”** 中，单击 **“如果需要，自动重启目标服务器”**。 当提示你确认这一选择时，单击 **“是”**，然后单击 **“安装”**。 在安装进程期间，安装进度页显示状态。 此过程完成后，将显示消息 " *computername*上安装成功"，其中*ComputerName*是安装了网络策略服务器的计算机的名称。 单击“关闭”  。
 
 ##### <a name="register-the-nps-in-the-default-domain"></a><a name="BKMK_registerNPS"></a>在默认域中注册 NPS
 您可以使用此过程在服务器是域成员的域中注册 NPS。
@@ -1091,7 +1089,7 @@ NPS 是核心网络的可选组件，但如果下列任何一项为真，则应�
 若要完成此过程，你必须是** Domain Admins **组的成员。
 
 > [!NOTE]
-> 若要在 Windows PowerShell 中使用 network shell （Netsh）命令执行此过程，请打开 PowerShell 并键入以下命令，然后按 ENTER。
+> 若要通过使用网络 shell (Netsh) Windows PowerShell 中执行此过程，请打开 PowerShell 并键入以下命令，然后按 ENTER。
 >
 > `netsh nps add registeredserver domain=corp.contoso.com server=NPS1.corp.contoso.com`
 
@@ -1103,13 +1101,13 @@ NPS 是核心网络的可选组件，但如果下列任何一项为真，则应�
 
 3.  在 **“网络策略服务器”** 中，单击 **“确定”**，然后再次单击 **“确定”**。
 
-有关网络策略服务器的详细信息，请参阅[网络策略服务器（NPS）](../technologies/nps/nps-top.md)。
+有关网络策略服务器的详细信息，请参阅[网络策略服务器 (NPS) ](../technologies/nps/nps-top.md)。
 
 #### <a name="deploying-web1"></a><a name="BKMK_IIS"></a>部署 WEB1
 
-Windows Server 2016 中的 Web 服务器（IIS）角色提供一个安全、易于管理的模块化和可扩展的平台，以可靠地托管网站、服务和应用程序。 使用 Internet Information Services （IIS），您可以与 Internet、intranet 或 extranet 上的用户共享信息。 IIS 是一个集成了 IIS、ASP.NET、FTP 服务、PHP 和 Windows Communication Foundation （WCF）的统一 web 平台。
+Windows Server 2016 中的 Web 服务器 (IIS) 角色提供一个安全、易于管理的模块化和可扩展的平台，可用于可靠地托管网站、服务和应用程序。 利用 Internet Information Services (IIS) ，你可以与 Internet、intranet 或 extranet 上的用户共享信息。 IIS 是一个统一的 web 平台，它将 IIS、ASP.NET、FTP 服务、PHP 和 Windows Communication Foundation (WCF) 相集成。
 
-除了允许您发布 CRL 以供域成员计算机访问以外，Web 服务器（IIS）服务器角色还允许您设置和管理多个网站、Web 应用程序和 FTP 站点。 IIS 还提供以下优势：
+除了允许您发布 CRL 以供域成员计算机访问，Web 服务器 (IIS) 服务器角色允许您设置和管理多个网站、Web 应用程序和 FTP 站点。 IIS 还提供以下优势：
 
 - 通过减少服务器资源占用和自动应用程序隔离，最大程度地保证 web 安全。
 
@@ -1148,7 +1146,7 @@ Windows Server 2016 中的 Web 服务器（IIS）角色提供一个安全、易�
 
 4.  在 "**选择目标服务器**" 页上，确保选中 "本地计算机"，然后单击 "**下一步**"。
 
-5.  在 "**选择服务器角色**" 页上，滚动到，然后选择 " **WEB 服务器（IIS）**"。 此时将打开 " **Web 服务器（IIS）所需的添加功能**" 对话框。 单击“添加功能”  ，然后单击“下一步”  。
+5.  在 "**选择服务器角色**" 页上，滚动到，然后选择 " **WEB 服务器 (IIS) **。 此时将打开 "**为 Web 服务器 (IIS) 所需的添加功能**" 对话框。 单击“添加功能”  ，然后单击“下一步”  。
 
 6.  单击 **“下一步”** 直到接受了所有默认的 web 服务器设置，然后单击 **“安装”**。
 
@@ -1159,19 +1157,19 @@ Windows Server 2016 中的 Web 服务器（IIS）角色提供一个安全、易�
 
  Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 技术库资源
 
-- [Windows Server 2016 Active Directory 域服务（AD DS）中的新增功能](https://technet.microsoft.com/library/mt163897.aspx)
+- [Windows Server 2016 中 Active Directory 域服务 (AD DS) 的新增功能](https://technet.microsoft.com/library/mt163897.aspx)
 
 - [Active Directory 域服务概述](https://technet.microsoft.com/library/hh831484.aspx)，网址为 https://technet.microsoft.com/library/hh831484.aspx 。
 
-- 中的[域名系统（DNS）概述](https://technet.microsoft.com/library/hh831667.aspx) https://technet.microsoft.com/library/hh831667.aspx 。
+- [域名系统 (DNS) 概述](https://technet.microsoft.com/library/hh831667.aspx)，网址为 https://technet.microsoft.com/library/hh831667.aspx 。
 
 - [实现 DNS 管理员角色](https://technet.microsoft.com/library/cc756152(WS.10).aspx)
 
-- 中的[动态主机配置协议（DHCP）概述](https://technet.microsoft.com/library/hh831825.aspx) https://technet.microsoft.com/library/hh831825.aspx 。
+- [动态主机配置协议 (DHCP) 概述](https://technet.microsoft.com/library/hh831825.aspx)，网址为 https://technet.microsoft.com/library/hh831825.aspx 。
 
 - [网络策略和访问服务概述](https://technet.microsoft.com/library/hh831683.aspx)，网址为 https://technet.microsoft.com/library/hh831683.aspx 。
 
-- 上的[Web 服务器（IIS）概述](https://technet.microsoft.com/library/hh831725.aspx) https://technet.microsoft.com/library/hh831725.aspx 。
+- [Web 服务器 (IIS) 概述](https://technet.microsoft.com/library/hh831725.aspx)，网址为 https://technet.microsoft.com/library/hh831725.aspx 。
 
 ## <a name="appendices-a-through-e"></a><a name="BKMK_appendix"></a>附录 A 到 E
 对于运行 Windows Server 2016、Windows 10、Windows Server 2012 和 Windows 8 以外的操作系统的计算机，以下部分包含其他配置信息。 此外，还提供了一个网络准备工作表来帮助您进行部署。
@@ -1425,7 +1423,7 @@ Administrators**** 组成员或同等身份是执行这些过程的最低要求�
 
 - [重命名计算机](#BKMK_rename)
 
-|配置项|示例值|值|
+|配置项|示例值|“值”|
 |----------------------|-----------------|---------|
 |计算机名称|DC1||
 
@@ -1470,7 +1468,7 @@ Windows Server 核心网络部署过程[为新林安装 AD DS 和 DNS](#BKMK_ins
 
 - [重命名计算机](#BKMK_rename)
 
-|配置项|示例值|值|
+|配置项|示例值|“值”|
 |----------------------|-----------------|---------|
 |计算机名称|DHCP1||
 
@@ -1537,12 +1535,12 @@ Windows Server 核心网络部署过程[新建并激活 DHCP 作用域](#BKMK_ne
 
 - [重命名计算机](#BKMK_rename)
 
-|配置项|示例值|值|
+|配置项|示例值|“值”|
 |----------------------|-----------------|---------|
 |计算机名称|NPS1||
 
 ##### <a name="network-policy-server-installation-configuration-items"></a>网络策略服务器安装配置项
-Windows Server 核心网络 NPS 部署过程的配置项目[安装网络策略服务器（NPS）](#BKMK_installNPS)并[在默认域中注册 NPS](#BKMK_registerNPS)。
+Windows Server 核心网络 NPS 部署过程的配置项目将[网络策略服务器安装 (nps) ](#BKMK_installNPS)并[在默认域中注册 nps](#BKMK_registerNPS)。
 
 - 安装和注册 NPS 不需要其他配置项。
 

@@ -1,21 +1,19 @@
 ---
 title: 存储空间直通概述
-ms.prod: windows-server
 ms.author: cosdar
 manager: dongill
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 07/24/2020
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: 概述存储空间直通，Windows Server 和 Azure Stack HCI 的一项功能，使你能够将具有内部存储的服务器加入软件定义的存储解决方案。
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd86a8465d2fef59ccce73fc473790682f0d180
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 2a6839ddfd6015707f79a7e8f3036be4bc893b2e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864318"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970124"
 ---
 # <a name="storage-spaces-direct-overview"></a>存储空间直通概述
 
@@ -31,7 +29,7 @@ ms.locfileid: "87864318"
 |--|--|
 | **了解**<br><ul><li>概述（你目前位于此位置）</li><li>[了解缓存](understand-the-cache.md)</li><li>[容错和存储效率](storage-spaces-fault-tolerance.md)<li>[驱动器对称注意事项](drive-symmetry-considerations.md)</li><li>[了解并监视存储重新同步](understand-storage-resync.md)</li><li>[了解群集和池仲裁](understand-quorum.md)</li><li>[群集集](cluster-sets.md)</li> | **计划**<br><ul><li>[硬件要求](storage-spaces-direct-hardware-requirements.md)</li><li>[使用 CSV 内存中读取缓存](csv-cache.md)</li><li>[选择驱动器](choosing-drives.md)</li><li>[规划卷](plan-volumes.md)</li><li>[使用来宾 VM 群集](storage-spaces-direct-in-vm.md)</li><li>[灾难恢复](storage-spaces-direct-disaster-recovery.md)</li> |
 | **部署**<br><ul><li>[部署存储空间直通](deploy-storage-spaces-direct.md)</li><li>[创建卷](create-volumes.md)</li><li>[嵌套复原](nested-resiliency.md)</li><li>[配置仲裁](../../failover-clustering/manage-cluster-quorum.md)</li><li>[将存储空间直通群集升级为 Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[了解和部署永久性内存](deploy-pmem.md)</li> | **管理**<br><ul><li>[使用 Windows Admin Center 管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[添加服务器或驱动器](add-nodes.md)</li><li>[使服务器脱机以进行维护](maintain-servers.md)</li><li>[删除服务器](remove-servers.md)</li><li>[扩展卷](resize-volumes.md)</li><li>[删除卷](delete-volumes.md)</li><li>[更新驱动器固件](../update-firmware.md)</li><li>[性能历史记录](performance-history.md)</li><li>[分隔卷的分配](delimit-volume-allocation.md)</li><li>[在超聚合群集上使用 Azure Monitor](configure-azure-monitor.md)</li> |
-| **疑难解答**<br><ul><li>[故障排除方案](troubleshooting-storage-spaces.md)</li><li>[运行状况和运行状态故障排除](storage-spaces-states.md)</li><li>[通过存储空间直通收集诊断数据](data-collection.md)</li><li>[存储类内存运行状况管理](Storage-class-memory-health.md)</li> | **最新博客文章**<br><ul><li>[13700000 IOPS 与存储空间直通：超聚合基础结构的新行业记录](https://techcommunity.microsoft.com/t5/storage-at-microsoft/the-new-hci-industry-record-13-7-million-iops-with-windows/ba-p/428314)</li><li>[Windows Server 2019 中的超聚合基础结构-立即开始倒计时时钟！](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[Windows Server 峰会发布五大大广告](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[10000存储空间直通分类和计数 .。。](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185)</li></ul> |
+| **故障排除**<br><ul><li>[故障排除方案](troubleshooting-storage-spaces.md)</li><li>[运行状况和运行状态故障排除](storage-spaces-states.md)</li><li>[通过存储空间直通收集诊断数据](data-collection.md)</li><li>[存储类内存运行状况管理](Storage-class-memory-health.md)</li> | **最新博客文章**<br><ul><li>[13700000 IOPS 与存储空间直通：超聚合基础结构的新行业记录](https://techcommunity.microsoft.com/t5/storage-at-microsoft/the-new-hci-industry-record-13-7-million-iops-with-windows/ba-p/428314)</li><li>[Windows Server 2019 中的超聚合基础结构-立即开始倒计时时钟！](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[Windows Server 峰会发布五大大广告](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[10000存储空间直通分类和计数 .。。](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185)</li></ul> |
 
 ## <a name="videos"></a>视频
 
@@ -118,7 +116,7 @@ ms.locfileid: "87864318"
 
 以下工具可用于管理和/或监视存储空间直通：
 
-| 名称 | 图形或命令行？ | 支付还是包含？ |
+| “属性” | 图形或命令行？ | 支付还是包含？ |
 |-----------------|----------------------------|-------------------|
 | [Windows 管理中心](../../manage/windows-admin-center/overview.md)     | 图形    | Included |
 | 服务器管理器 & 故障转移群集管理器                                 | 图形    | Included |

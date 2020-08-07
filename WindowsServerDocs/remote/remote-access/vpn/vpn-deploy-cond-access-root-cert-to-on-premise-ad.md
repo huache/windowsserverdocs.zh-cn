@@ -1,23 +1,21 @@
 ---
 title: 将条件访问根证书部署到本地 AD
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: cc3e96ff0ea98acbfafef5aba37f4e20a103f029
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7edae0ac84e6ea11720f786c8a5188ebc6e8a522
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959659"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970164"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>步骤 7.4： 将条件性访问根证书部署到本地 AD
 
->适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>适用于： Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows 10
 
 在此步骤中，将条件访问根证书部署为本地 AD 的 VPN 身份验证的受信任根证书。
 
@@ -29,12 +27,12 @@ ms.locfileid: "86959659"
    >[!NOTE]
    >"**下载 base64 证书**" 选项适用于需要用于部署的 base64 证书的某些配置。
 
-2. 使用企业管理员权限登录到已加入域的计算机，并在管理员命令提示符下运行以下命令，将云根证书添加到*Enterprise NTauth*存储中：
+2. 使用企业管理员权限登录到已加入域的计算机，然后在管理员命令提示符下运行以下命令，以将云根证书 () 添加到*Enterprise NTauth*存储中：
 
    >[!NOTE]
    >对于未加入到 Active Directory 域的 VPN 服务器的环境，必须手动将云根证书添加到_受信任的根证书颁发机构_存储区。
 
-   | 命令 | 说明 |
+   | Command | 描述 |
    | --- | --- |
    | `certutil -dspublish -f VpnCert.cer RootCA` | 在 " **cn = AIA** " 和 " **Cn = 证书颁发机构**" 容器下创建两个**Microsoft VPN 根 CA 第1代**容器，并发布每个根证书作为**Microsoft vpn 根 ca 第1代**容器的_cACertificate_属性的值。 |
    | `certutil -dspublish -f VpnCert.cer NTAuthCA` | 在 " **cn = AIA** " 和 " **Cn = 证书颁发机构**" 容器下创建一个**cn = NTAuthCertificates**容器，并将每个根证书发布为**CN = NTAuthCertificates**容器的_cACertificate_属性的值。 |

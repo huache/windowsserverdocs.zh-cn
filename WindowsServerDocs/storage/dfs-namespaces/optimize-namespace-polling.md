@@ -2,22 +2,20 @@
 title: 优化命名空间轮询
 description: 本文介绍如何优化命名空间轮询，以使基于域的命名空间在命名空间服务器之间保持一致
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4ffcf974bd809d1692e16d632153c213081041c4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc14dd4f8d6cd833642b87caa32353d4f8940b05
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961229"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936132"
 ---
 # <a name="optimize-namespace-polling"></a>优化命名空间轮询
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 若要使基于域的命名空间在命名空间服务器之间保持一致，命名空间服务器需要定期轮询 Active Directory 域服务 (AD DS)，以获取最新的命名空间数据。
 

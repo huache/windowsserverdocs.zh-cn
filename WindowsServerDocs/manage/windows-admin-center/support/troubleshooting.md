@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center 常见疑难解答步骤
 description: Windows Admin Center 常见疑难解答步骤 (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 2ddcf101b6eae3be6f48c66de3c400c66ed53f2b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a7ef7eb2acf9a641babf5690119c61f452aaabbc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519646"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937616"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑难解答
 
@@ -61,7 +59,7 @@ ms.locfileid: "87519646"
 
     ![任务管理器-"服务" 选项卡](../media/Service-TaskMan.PNG)
 
-* 测试网关的网络连接（将替换为 \<values> 部署中的信息）
+* 测试网关的网络连接 (将替换为 \<values> 部署中的信息) 
 
     ```powershell
     Test-NetConnection -Port <port> -ComputerName <gateway> -InformationLevel Detailed
@@ -81,11 +79,11 @@ ms.locfileid: "87519646"
 
 * 如果你使用的是 Windows 10 或服务器的内部版预览版本（版本为17134和17637之间的版本），则 Windows 将出现导致 Windows 管理中心失败的 bug。 请使用当前支持的 Windows 版本。
 
-### <a name="make-sure-the-windows-remote-management-winrm-service-is-running-on-both-the-gateway-machine-and-managed-node"></a>请确保 Windows 远程管理（WinRM）服务正在网关计算机和托管节点上运行
+### <a name="make-sure-the-windows-remote-management-winrm-service-is-running-on-both-the-gateway-machine-and-managed-node"></a>请确保 Windows 远程管理 (WinRM) 服务正在网关计算机和托管节点上运行
 
 * 用 WindowsKey + R 打开 "运行" 对话框
 * 键入 ```services.msc``` ，然后按 enter
-* 在打开的窗口中，查找 Windows 远程管理（WinRM），确保其正在运行，并设置为自动启动
+* 在打开的窗口中，查找 Windows 远程管理 (WinRM) ，确保其正在运行，并设置为自动启动
 
 ### <a name="did-you-upgrade-your-server-from-2016-to-2019"></a>是否将服务器从2016升级到2019？
 
@@ -196,7 +194,7 @@ netsh http delete urlacl url=https://+:443/
 
 边缘具有与安全区域相关的[已知问题](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，这些问题会影响 Windows 管理中心中的 Azure 登录。 如果使用边缘时使用 Azure 功能时遇到问题，请尝试将 https://login.microsoftonline.com https://login.live.com 网关的 URL 添加为受信任的站点，并将其 URL 添加到客户端浏览器上的允许的边缘弹出窗口阻止程序设置。
 
-具体方法为：
+若要实现此目的，请执行以下操作：
 1. 在 Windows "开始" 菜单中搜索**Internet 选项**
 2. 中转到 "**安全**" 选项卡
 3. 在“受信任的站点”选项下，单击“站点”按钮，然后在打开的对话框中添加 URL。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。

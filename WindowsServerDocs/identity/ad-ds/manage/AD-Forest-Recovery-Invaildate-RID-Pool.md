@@ -5,39 +5,37 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 2f5f84df-bd85-4ca4-bdd3-835bd1d45c11
-ms.technology: identity-adds
-ms.openlocfilehash: 9e693f6f30fb721897eaaac89b3d146c57e0e63f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1dac48ff5dc9f864b7c23f4a91740005fa12780c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823920"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969884"
 ---
-# <a name="ad-forest-recovery---invalidating-the-current-rid-pool"></a>AD 林恢复-使当前 RID 池失效  
+# <a name="ad-forest-recovery---invalidating-the-current-rid-pool"></a>AD 林恢复-使当前 RID 池失效
 
 >适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
-使用以下过程向我们的 Windows PowerShell 使域控制器上的当前 RID 池失效。 默认情况下，windows PowerShell 在 Windows Server 2012 和 Windows Server 2008 R2 上处于启用状态，但 windows Server 2008 却不能通过使用 "**添加功能**" 安装。 可以将其[下载](https://www.microsoft.com/download/details.aspx?id=20020)到在 Windows Server 2003 上运行。  
+使用以下过程向我们的 Windows PowerShell 使域控制器上的当前 RID 池失效。 默认情况下，windows PowerShell 在 Windows Server 2012 和 Windows Server 2008 R2 上处于启用状态，但 windows Server 2008 却不能通过使用 "**添加功能**" 安装。 可以将其[下载](https://www.microsoft.com/download/details.aspx?id=20020)到在 Windows Server 2003 上运行。
 
-若要验证命令是否已成功完成，请在 Windows Server 2012 事件查看器中检查系统日志中的事件 ID 16654 （源为目录服务-SAM）。 Windows 的早期版本不会记录此事件。  
-  
+若要验证命令是否已成功完成，请检查事件 ID 16654 (源是否) Windows Server 2012 中事件查看器的系统日志中。 Windows 的早期版本不会记录此事件。
+
 > [!NOTE]
-> 使 RID 池无效后，在第一次尝试创建安全主体（用户、计算机或组）时，你将收到一条错误消息。 尝试创建对象会触发对新 RID 池的请求。 重试操作成功，因为将分配新的 RID 池。  
-  
-## <a name="to-invalidate-the-current-rid-pool"></a>使当前 RID 池无效  
-  
-- 打开提升的 Windows PowerShell 会话，运行以下命令并按 ENTER：  
+> 使 RID 池无效后，在第一次尝试创建安全主体 (用户、计算机或组) 时，会收到错误。 尝试创建对象会触发对新 RID 池的请求。 重试操作成功，因为将分配新的 RID 池。
+
+## <a name="to-invalidate-the-current-rid-pool"></a>使当前 RID 池无效
+
+- 打开提升的 Windows PowerShell 会话，运行以下命令并按 ENTER：
 
    ```powershell
-   $Domain = New-Object System.DirectoryServices.DirectoryEntry  
-   $DomainSid = $Domain.objectSid  
-   $RootDSE = New-Object System.DirectoryServices.DirectoryEntry("LDAP://RootDSE")  
-   $RootDSE.UsePropertyCache = $false  
-   $RootDSE.Put("invalidateRidPool", $DomainSid.Value)  
-   $RootDSE.SetInfo()  
-   ```  
+   $Domain = New-Object System.DirectoryServices.DirectoryEntry
+   $DomainSid = $Domain.objectSid
+   $RootDSE = New-Object System.DirectoryServices.DirectoryEntry("LDAP://RootDSE")
+   $RootDSE.UsePropertyCache = $false
+   $RootDSE.Put("invalidateRidPool", $DomainSid.Value)
+   $RootDSE.SetInfo()
+   ```
 
 ## <a name="next-steps"></a>后续步骤
 
