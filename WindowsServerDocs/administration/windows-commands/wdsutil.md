@@ -1,34 +1,32 @@
 ---
 title: wdsutil
 description: Wdsutil 的参考文章，它是用于管理 Windows 部署服务服务器的命令行实用工具。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3a1965a0-8677-40cc-9495-30ae806808d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14fa0d962d1104279211696c7ff8b80d0f1b6fbf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1ff4ca30ff0e762cc1a51538088bd0bba376f0d6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930832"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881204"
 ---
 # <a name="wdsutil"></a>wdsutil
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 wdsutil 是用于管理 Windows 部署服务服务器的命令行实用工具。 若要运行这些命令，请单击 "**开始**"，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。
 ## <a name="commands"></a>命令
-|命令|说明|
+|命令|描述|
 |------|--------|
 |[使用 "添加" 命令](using-the-add-command.md)|添加对象或其预留计算机。|
 |[使用 AutoaddDevices 命令](using-the-approve-autoadddevices-command.md)|批准等待管理员批准的计算机。|
-|[使用 RiprepImage 命令](using-the-convert-riprepimage-command.md)|将现有远程安装准备（RIPrep）映像转换为 Windows 映像（.wim）文件。|
+|[使用 RiprepImage 命令](using-the-convert-riprepimage-command.md)|将现有远程安装准备 (RIPrep) 映像转换为 Windows 映像 ( .wim) 文件。|
 |[使用复制命令](using-the-copy-command.md)|复制映像或驱动程序组。|
-|[使用 AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)|删除自动添加数据库中的计算机（该数据库存储有关服务器上的计算机的信息）。|
+|[使用 AutoaddDevices 命令](using-the-delete-autoadddevices-command.md)|删除自动添加数据库 (中的计算机，这些计算机存储有关服务器) 上的计算机的信息。|
 |[使用 "禁用" 命令](using-the-disable-command.md)|禁用 Windows 部署服务的所有服务。|
 |[使用断开客户端命令](using-the-disconnect-client-command.md)|断开客户端与多播传输或命名空间的连接。|
 |[使用 Enable 命令](using-the-enable-command.md)|启用 Windows 部署服务的所有服务。|

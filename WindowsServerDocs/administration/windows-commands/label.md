@@ -1,24 +1,22 @@
 ---
 title: label
-description: "\"标签\" 命令的参考文章，其中创建、更改或删除磁盘的卷标（即名称）。"
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: "\"标签\" 命令的参考文章，其中创建、更改或删除卷标 (即磁盘的名称) 。"
 ms.topic: article
 ms.assetid: bbae8bdd-97d4-4566-9118-7c95aa07645f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8c13285c5dc5030e96d7d334bb65d15f04dff86
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e7656078b87a74db789ed85c10be9f30cabfd971
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931812"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887632"
 ---
 # <a name="label"></a>label
 
-创建、更改或删除磁盘的卷标（即名称）。 如果在没有参数的情况下使用，则 "**标签**" 命令将更改当前卷标签或删除现有标签。
+创建、更改或删除卷标 (即磁盘的名称) 。 如果在没有参数的情况下使用，则 "**标签**" 命令将更改当前卷标签或删除现有标签。
 
 ## <a name="syntax"></a>语法
 
@@ -28,16 +26,16 @@ label [/mp] [<volume>] [<label>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /mp | 指定应将卷视为装入点或卷名。 |
-| `<volume>` | 指定驱动器号（后跟冒号）、装入点或卷名。 如果指定了卷名称，则不需要 **/mp**参数。 |
+| `<volume>` | 指定驱动器号 (后跟冒号) 、装入点或卷名。 如果指定了卷名称，则不需要 **/mp**参数。 |
 | `<label>` | 指定卷的标签。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ## <a name="remarks"></a>备注
 
-- Windows 在目录列表中显示卷标和序列号（如果有的话）。
+- Windows 将显示卷标和序列号 (如果它有一个) 作为目录列表的一部分。
 
 - NTFS 卷标长度最多可包含32个字符，包括空格。 NTFS 卷标签保留并显示创建标签时使用的大小写。
 

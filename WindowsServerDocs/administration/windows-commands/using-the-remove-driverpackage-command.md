@@ -1,24 +1,22 @@
 ---
 title: DriverPackage
 description: 用于从服务器中删除驱动程序包的 DriverPackage 参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6b201e91-0d44-4e4a-8252-8b0235df1002
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c39f34d1556e6ad0f61f3f1cc3cf0aac36b18ee5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d6f391ed7a5e2a991c0d38e35ac3d08565b32765
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933451"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881227"
 ---
 # <a name="remove-driverpackage"></a>DriverPackage
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 从服务器中删除驱动程序包。
 
@@ -28,7 +26,7 @@ wdsutil /remove-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package N
 ```
 ### <a name="parameters"></a>参数
 
-|        参数        |                                                                            说明                                                                             |
+|        参数        |                                                                            描述                                                                             |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server： <Server name> ] |              指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。              |
 | [/DriverPackage： <Name> ] |                                                        指定要删除的驱动程序包的名称。                                                         |

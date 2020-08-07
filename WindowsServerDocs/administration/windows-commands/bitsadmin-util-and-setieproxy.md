@@ -1,20 +1,18 @@
 ---
 title: bitsadmin util 和 setieproxy
 description: Bitsadmin util 和 setieproxy 命令的参考文章，用于设置使用服务帐户传输文件时使用的代理设置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0e9f31ba-3070-4ffd-a94c-388c8d78f688
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 018e9400dd2463b61f053d37338740090670f51a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 32eb4c8703f7b56af11efccfe9f53ca41d8c4c88
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927310"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880831"
 ---
 # <a name="bitsadmin-util-and-setieproxy"></a>bitsadmin util 和 setieproxy
 
@@ -31,10 +29,10 @@ bitsadmin /util /setieproxy <account> <usage> [/conn <connectionname>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ---------- |
 | account | 指定要定义其代理设置的服务帐户。 可能的值包括：<ul><li>LOCALSYSTEM</li><li>   NETWORKSERVICE</li><li>LOCALSERVICE.</li></ul> |
-| usage | 指定要使用的代理检测的形式。 可能的值包括：<ul><li>**NO_PROXY。** 不要使用代理服务器。</li><li>**检测.** 自动检测代理设置。</li><li>**MANUAL_PROXY。** 使用指定的代理列表和绕过列表。 必须紧跟在使用标记后指定列表。 例如，`MANUAL_PROXY proxy1,proxy2 NULL`。<ul><li>**代理列表。** 要使用的代理服务器的逗号分隔列表。</li><li>**绕过列表。** 不通过代理路由传输的主机名或 IP 地址的以空格分隔的列表。 这可以是 \<local> 指同一 LAN 上的所有服务器。 NULL 或的值可能用于空代理跳过列表。</li></ul><li>**AUTOSCRIPT.** 与自动**检测**相同，只不过它还运行脚本。 你必须在使用标记后紧跟指定脚本 URL。 例如，`AUTOSCRIPT http://server/proxy.js`。</li><li>**&.** 与**NO_PROXY**相同，不同之处在于删除手动代理 url （如果已指定）和使用自动检测发现的任何 url。</li></ul> |
+| usage | 指定要使用的代理检测的形式。 可能的值包括：<ul><li>**NO_PROXY。** 不要使用代理服务器。</li><li>**检测.** 自动检测代理设置。</li><li>**MANUAL_PROXY。** 使用指定的代理列表和绕过列表。 必须紧跟在使用标记后指定列表。 例如 `MANUAL_PROXY proxy1,proxy2 NULL`。<ul><li>**代理列表。** 要使用的代理服务器的逗号分隔列表。</li><li>**绕过列表。** 不通过代理路由传输的主机名或 IP 地址的以空格分隔的列表。 这可以是 \<local> 指同一 LAN 上的所有服务器。 NULL 或的值可能用于空代理跳过列表。</li></ul><li>**AUTOSCRIPT.** 与自动**检测**相同，只不过它还运行脚本。 你必须在使用标记后紧跟指定脚本 URL。 例如 `AUTOSCRIPT http://server/proxy.js`。</li><li>**&.** 与**NO_PROXY**相同，不同之处在于，它会删除手动代理 url (如果指定) 和使用自动检测发现的任何 url。</li></ul> |
 | connectionname | 可选。 与 **/conn**参数一起使用，以指定要使用的调制解调器连接。 如果未指定 **/conn**参数，则 BITS 将使用 LAN 连接。 |
 
 ### <a name="remarks"></a>备注

@@ -1,20 +1,18 @@
 ---
 title: 更新-ServerFiles
 description: ServerFiles 的参考文章，它使用存储在服务器的%Windir%\System32\RemInst 文件夹中的最新文件更新 REMINST 共享文件夹中的文件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 23aa79df-38c6-401e-91bd-cd23811b30b4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79b9332d5962c7e3c50ea3d7c71f33111a0e74b8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f60e5b5c5208d5718a287fd2d012368d13fad9f9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930131"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881466"
 ---
 # <a name="update-serverfiles"></a>更新-ServerFiles
 
@@ -28,9 +26,9 @@ WDSUTIL [Options] /Update-ServerFiles [/Server:<Server name>]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|[/Server： \<Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server： \<Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
 
 ## <a name="examples"></a>示例
 

@@ -1,21 +1,19 @@
 ---
 title: 安装和启动事件收集入门
 description: 设置安装和启动事件收集的收集器和目标
-ms.prod: windows-server
 manager: DonGill
-ms.technology: server-sbec
 ms.localizationpriority: medium
 ms.date: 10/16/2017
 ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: bb70f25ca4564f1bdf76940c9d2fcb840db5afa2
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e5e18ed5f5cc4cba319042f1a5da84acae8e5fd5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408886"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879532"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>安装和启动事件收集入门
 
@@ -28,7 +26,7 @@ ms.locfileid: "87408886"
 
 -   加载内核模块和驱动程序
 
--   枚举设备并初始化其驱动程序（包括诸如 CPU 类型等设备）
+-   枚举设备并初始化其驱动程序 (包括 CPU 类型等设备) 
 
 -   验证和安装文件系统
 
@@ -79,7 +77,7 @@ ms.locfileid: "87408886"
 
     winrm quickconfig
 
-2.  提示响应，然后重启目标计算机。 如果目标计算机与收集器计算机不在同一个域中，则可能需要将它们定义为受信任主机。 具体方法为：
+2.  提示响应，然后重启目标计算机。 如果目标计算机与收集器计算机不在同一个域中，则可能需要将它们定义为受信任主机。 若要实现此目的，请执行以下操作：
 
 3.  在收集器计算机上，运行以下命令之一：
 
@@ -158,7 +156,7 @@ ms.locfileid: "87408886"
 ### <a name="validate-target-computer-configuration"></a>验证目标计算机配置
 要检查目标计算机上的设置，请打开提升的命令提示符，然后运行 **bcdedit /enum**。 完成后，请运行 **bcdedit /eventsettings**。 你可以仔细检查以下值：
 
--   密钥
+-   键
 
 -   Debugtype = NET
 
@@ -256,7 +254,7 @@ ms.locfileid: "87408886"
     >
     > \<forwarder>元素指定将如何转发从目标计算机接收的 ETW 事件。 只有一类转发器会将事件写入 ETL 文件。 参数指定文件名模式、圈中每个文件的大小限值以及每台计算机的圈大小。 设置 toxml 指定 ETW 事件将以二进制格式写入，而不会转换到 XML。 有关决定是否向 XML 协商事件的信息，请参阅 "XML 事件转换" 部分。 文件名模式包含以下替换：用 {computer} 替换计算机名，用 {#3} 替换圈中的文件索引。
     >
-    > 在此示例文件中，用元素定义了两个目标计算机 \<target> 。 每个定义都指定了 IP 地址 \<ipv4> ，但你也可以使用 MAC 地址（例如， `<mac value=11:22:33:44:55:66/>` 或 `<mac value=11-22-33-44-55-66/>` ）或 SMBIOS GUID （例如 `<guid value={269076F9-4B77-46E1-B03B-CA5003775B88}/>` ）来标识目标计算机。 另外，请记录加密密钥（与在目标计算机上使用 Bcdedit 指定或生成的密钥相同）以及计算机名称。
+    > 在此示例文件中，用元素定义了两个目标计算机 \<target> 。 每个定义都指定了 IP 地址 \<ipv4> ，但你也可以使用 MAC 地址 (例如， `<mac value=11:22:33:44:55:66/>` 或 `<mac value=11-22-33-44-55-66/>`) 或 SMBIOS GUID (例如， `<guid value={269076F9-4B77-46E1-B03B-CA5003775B88}/>`) 标识目标计算机。 另外，请记录加密密钥（与在目标计算机上使用 Bcdedit 指定或生成的密钥相同）以及计算机名称。
 
 4. 在配置文件中输入每个目标计算机的详细信息作为单独的 \<target> 元素，然后将 Newconfig.xml 保存并关闭记事本。
 
@@ -292,7 +290,7 @@ Nano Server 提供的最小接口有时可能会导致相关问题诊断困难�
 
 4. 更新 Nano Server 映像中的 BCD 设置以启用事件标志，并设置收集器计算机以确保将诊断事件发送到正确的服务器。 请记录收集器计算机的 IPv4 地址、TCP 端口和你在收集器的 Active.XML 文件中配置的加密密钥（见本主题其他部分所述）。 在具有提升权限的 Windows PowerShell 控制台中使用此命令：`Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`
 
-5. 更新收集器计算机以接收 Nano Server 计算机发送的事件，方法是将 IPv4 地址范围、特定的 IPv4 地址或 Nano Server 的 MAC 地址添加到收集器计算机上的 Active.XML 文件中（请参阅本主题的配置收集器计算机部分）。
+5. 更新收集器计算机以接收 Nano Server 计算机发送的事件，方法是将 IPv4 地址范围、特定的 IPv4 地址或 Nano Server 的 MAC 地址添加到收集器计算机上的 Active.XML 文件中 (参阅本主题的配置收集器计算机部分) 。
 
 ## <a name="starting-the-event-collector-service"></a>启动事件收集器服务
 
@@ -321,7 +319,7 @@ Nano Server 提供的最小接口有时可能会导致相关问题诊断困难�
 
 在 Windows PowerShell 提示符下，使用：`Get-WinEvent -LogName Microsoft-Windows-BootEvent-Collector/Admin`（你可以附加 `-Oldest` 以按时间顺序返回列表，最旧的事件排在第一位）
 
-可以在 "错误"、"警告"、"信息" （默认）、"详细" 和 "调试" 中调整日志中的详细信息级别。 比信息更详细的级别对于诊断目标计算机未连接的问题很有用，但它们可能会生成大量的数据，因此请谨慎使用。
+可以在 "错误"、"警告"、"信息" (默认) 、详细和调试）中调整日志的详细级别。 比信息更详细的级别对于诊断目标计算机未连接的问题很有用，但它们可能会生成大量的数据，因此请谨慎使用。
 
 在配置文件的元素中设置最小日志级别 \<collector> 。 例如： <收集器 configVersionMajor = 1 minlog \= 详细>。
 
@@ -345,7 +343,7 @@ Nano Server 提供的最小接口有时可能会导致相关问题诊断困难�
 
 4. 检查事件日志中是否有关于收到的数据包的任何消息。 检查是否确实收到了任何数据包。 如果数据包已收到但不正确，请检查事件消息以获取详细信息。
 5. KDNET 会从目标端将一些诊断信息写入注册表。 查看**HKLM\SYSTEM\CurrentControlSet\Services\kdnet**中的消息。
-   如果成功，KdInitStatus （DWORD）将 = 0，并显示错误 KdInitErrorString 的错误代码（如果没有错误，还会包含信息性消息）
+   KdInitStatus (DWORD) 在成功时将为0，并显示错误代码 KdInitErrorString = 错误的解释 (如果没有错误，也会包含信息性消息) 
 
 6. 在目标上运行 Ipconfig.exe 并检查它所报告的设备名称。 如果 KDNET 正确加载，则设备名称应类似于 kdnic，而不是原始供应商的卡名称。
 7. 检查是否为目标配置了 DHCP。 KDNET 绝对需要 DHCP。

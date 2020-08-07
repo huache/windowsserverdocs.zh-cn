@@ -1,24 +1,22 @@
 ---
 title: telnet
 description: Telnet 的参考文章，它与运行 telnet 服务器服务的计算机通信。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b70a6156-9413-4300-84ce-a34c467e2b4e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70c4eb44a654094410432dd9d37d0ad0082f5874
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: fd270011dfa3a0cfcef3cbdc41eb8140f409ff2d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958809"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881606"
 ---
 # <a name="telnet"></a>telnet
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 与运行 telnet 服务器服务的计算机通信。
 
@@ -27,19 +25,19 @@ ms.locfileid: "86958809"
 telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 | ansi | vtnt}] [<Host> [<Port>]] [/?]
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |/a|尝试自动登录。 除了使用当前登录的用户的名称外，与/l 选项相同。|
 |/e\<EscapeChar>|用于输入 telnet 客户端提示符的转义符。|
 |/f \<FileName>|用于客户端日志记录的文件名。|
 |/l\<UserName>|指定要在远程计算机上登录的用户名。|
 |/t {vt100 &#124; vt52 &#124; ansi &#124; vtnt}|指定终端类型。 支持的终端类型为 vt100、vt52、ansi 和 vtnt。|
-|\<Host> [\<Port>]|指定要连接到的远程计算机的主机名或 IP 地址，还可以指定要使用的 TCP 端口（默认为 TCP 端口23）。|
+|\<Host> [\<Port>]|指定要连接到的远程计算机的主机名或 IP 地址，还可以选择要使用的 TCP 端口 (默认为 TCP 端口 23) 。|
 |/?|在命令提示符下显示帮助。 或者，可以键入/h。|
 
 ## <a name="remarks"></a>备注
 -   必须先安装 telnet 客户端软件，然后才能运行此命令。 有关详细信息，请参阅[安装 telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))。
--   你可以运行无参数的 telnet，以进入 telnet 上下文，如 telnet 提示符（**Microsoft telnet>**）所示。 在 telnet 提示符下，可以使用 telnet 命令来管理运行 telnet 客户端的计算机。
+-   您可以运行无参数的 telnet，以进入 telnet 上下文，由 telnet 提示符指示 (**Microsoft telnet>**) 。 在 telnet 提示符下，可以使用 telnet 命令来管理运行 telnet 客户端的计算机。
 
 ## <a name="examples"></a>示例
 使用 telnet 连接到运行 telnet 服务器服务的计算机，网址为 telnet.microsoft.com。

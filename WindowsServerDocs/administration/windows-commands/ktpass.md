@@ -1,26 +1,24 @@
 ---
 title: ktpass
 description: Ktpass 命令的参考文章，该命令为 AD DS 中的主机或服务配置服务器主体名称，并生成 keytab 文件，其中包含服务的共享密钥。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 47087676-311e-41f1-8414-199740d01444
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fbf7b47f4f21a2c964d14dd1200b15ad635d7471
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3bb523d35a1bbf2d15895201855a58e96ebb7772
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931823"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887639"
 ---
 # <a name="ktpass"></a>ktpass
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-为 Active Directory 域服务（AD DS）中的主机或服务配置服务器主体名称，并生成一个包含服务共享密钥的 keytab 文件。 .Keytab 文件基于麻省理工学院 (MIT) 对 Kerberos 身份验证协议的实现。 Ktpass 命令行工具允许支持 Kerberos 身份验证的非 Windows 服务使用 Kerberos 密钥发行中心（KDC）服务提供的互操作性功能。
+Active Directory 域服务 () AD DS 中为主机或服务配置服务器主体名称，并生成一个包含服务共享密钥的 keytab 文件。 .Keytab 文件基于麻省理工学院 (MIT) 对 Kerberos 身份验证协议的实现。 Ktpass 命令行工具允许支持 Kerberos 身份验证的非 Windows 服务使用 Kerberos 密钥发行中心 (KDC) 服务提供的互操作性功能。
 
 ## <a name="syntax"></a>语法
 
@@ -44,12 +42,12 @@ ktpass
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ------------|
 | /out`<filename>` | 指定要生成的 Kerberos 版本 keytab 文件的名称。 **注意：** 这是传输到未运行 Windows 操作系统的计算机上的 keytab 文件，然后将其替换或合并为你的现有 keytab 文件 */Etc/Krb5.keytab*。 |
 | /princ `<principalname>` | 指定窗体中的主体名称 host/computer.contoso.com@CONTOSO.COM 。 **警告：** 此参数区分大小写。 |
 | /mapuser `<useraccount>` | 将由**princ**参数指定的 Kerberos 主体的名称映射到指定的域帐户。 |
-| /mapop`{add|set}` | 指定如何设置映射属性。<ul><li>**添加**-添加指定的本地用户名的值。 这是默认设置。</li><li>**Set** -为指定的本地用户名设置仅限数据加密标准（DES）加密的值。</li></ul> |
+| /mapop`{add|set}` | 指定如何设置映射属性。<ul><li>**添加**-添加指定的本地用户名的值。 这是默认设置。</li><li>**Set** -为指定的本地用户名设置数据加密标准 (DES 仅) 加密的值。</li></ul> |
 | `{-|+}`desonly | 默认情况下，设置为仅 DES 加密。<ul><li>**+** 为仅 DES 加密设置帐户。</li><li>**-** 针对仅 DES 加密的帐户释放限制。 **重要提示：** 默认情况下，Windows 不支持 DES。</li></ul> |
 | /in`<filename>` | 指定要从运行 Windows 操作系统的主计算机读取的 keytab 文件。 |
 | /pass`{password|*|{-|+}rndpass}` | 指定由**princ**参数指定的主体用户名的密码。 使用 `*` 提示输入密码。 |
@@ -57,13 +55,13 @@ ktpass
 | /maxpass | 将随机密码的最大长度设置为256个字符。 |
 | /crypto`{DES-CBC-CRC|DES-CBC-MD5|RC4-HMAC-NT|AES256-SHA1|AES128-SHA1|All}` | 指定在 keytab 文件中生成的密钥：<ul><li>**DES-CBC-CRC** -用于实现兼容性。</li><li>**DES-CBC-MD5** -更密切地遵从 MIT 实现，并用于兼容性。</li><li>**RC4-HMAC-NT** -采用128位加密。</li><li>**AES256** ---------------------96-96</li><li>   **AES128** ---------------------96-96</li><li>**所有**-可以使用所有受支持的加密类型。</li></ul><p>**注意：** 由于默认设置基于较旧的 MIT 版本，因此应始终使用 `/crypto` 参数。 |
 | /itercount | 指定用于 AES 加密的迭代次数。 默认情况下，将忽略非 AES 加密的**itercount** ，并将 AES 加密设置为4096。 |
-| /ptype`{KRB5_NT_PRINCIPAL|KRB5_NT_SRV_INST|KRB5_NT_SRV_HST}` | 指定主体类型。<ul><li>**KRB5_NT_PRINCIPAL** -常规主体类型（推荐）。</li><li>**KRB5_NT_SRV_INST** -用户服务实例</li><li>  **KRB5_NT_SRV_HST** -主机服务实例</li></ul> |
+| /ptype`{KRB5_NT_PRINCIPAL|KRB5_NT_SRV_INST|KRB5_NT_SRV_HST}` | 指定主体类型。<ul><li>**KRB5_NT_PRINCIPAL** - (建议) 的常规主体类型。</li><li>**KRB5_NT_SRV_INST** -用户服务实例</li><li>  **KRB5_NT_SRV_HST** -主机服务实例</li></ul> |
 | /kvno`<keyversionnum>` | 指定密钥版本号。 默认值为 1。 |
 | /answer`{-|+}` | 设置背景应答模式：<ul><li>**-** 应答自动重置密码提示，**无**。</li><li>**+** 回答 **"是"** 时自动重置密码提示。</li></ul> |
 | /target | 设置要使用的域控制器。 默认情况下，将基于主体名称检测域控制器。 如果域控制器名称未解析，则会出现一个对话框，提示输入有效的域控制器。 |
 | /rawsalt | 强制 ktpass 在生成密钥时使用 rawsalt 算法。 此参数是可选的。 |
 | `{-|+}dumpsalt` | 此参数的输出显示了用于生成密钥的 MIT 盐算法。 |
-| `{-|+}setupn` | 除了服务主体名称（SPN）之外，还设置用户主体名称（UPN）。 默认情况下，在 keytab 文件中设置。 |
+| `{-|+}setupn` | 将用户主体名称 (UPN) 除 (SPN) 以外的其他服务主体名称。 默认情况下，在 keytab 文件中设置。 |
 | `{-|+}setpass <password>` | 在提供时设置用户的密码。 如果使用了 rndpass，则改为生成随机密码。 |
 | /? | 显示此命令的帮助。 |
 

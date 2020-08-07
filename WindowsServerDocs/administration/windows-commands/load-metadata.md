@@ -1,20 +1,18 @@
 ---
 title: load metadata
 description: 加载元数据命令的参考文章，此命令在导入可传送的卷影副本之前加载元数据 .cab 文件，或者在还原时加载写入器元数据。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2c535487-668b-44fc-babb-ff59cf7d190e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01e782d0214da70f831b81120aff3c5097895036
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4b0f5412ee189814fcdf1f020f238e19dc308b7d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931684"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887483"
 ---
 # <a name="load-metadata"></a>加载元数据
 
@@ -28,7 +26,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `[<drive>:][<path>]` | 指定元数据文件的位置。 |
 | metadata.cab | 指定要加载的元数据 .cab 文件。 |

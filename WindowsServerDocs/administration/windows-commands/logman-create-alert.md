@@ -1,24 +1,22 @@
 ---
 title: logman create alert
 description: 用于创建警报数据收集器的 logman create alert 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 93e6fc2b-5bf5-413b-84b4-be8b9dd3a57d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb2c1372caefd18e9625eedfe71538a78bfc84e4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a0e2dd1be058d4428c255d174826eb046acc3482
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931643"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887462"
 ---
 # <a name="logman-create-alert"></a>logman create alert
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 创建警报数据收集器。
 
@@ -30,7 +28,7 @@ logman create alert <[-n] <name>> [options]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的远程计算机上执行命令。 |
 | -config`<value>` | 指定包含命令选项的设置文件。 |
@@ -60,11 +58,11 @@ logman create alert <[-n] <name>> [options]
 
 #### <a name="remarks"></a>备注
 
-- 其中列出了 [-]，添加额外的连字符（-）将对选项求反。
+- 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 
 ### <a name="examples"></a>示例
 
-若要创建名为的新警报*new_alert*，当处理器（_Total）计数器组中的性能计数器% Processor time 超过计数器值50时，将触发该警报，请键入：
+若要创建名为的新警报*new_alert*，当处理器 (_Total) 计数器组中的性能计数器% processor time 超过计数器值50时，将触发该警报，请键入：
 
 ```
 logman create alert new_alert -th \Processor(_Total)\% Processor time>50

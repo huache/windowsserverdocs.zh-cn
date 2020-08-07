@@ -1,24 +1,22 @@
 ---
 title: lodctr
 description: Lodctr 命令的参考文章，可用于在文件中注册或保存性能计数器名称和注册表设置，并指定受信任的服务。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5a849abd-6b31-4833-bc8a-306c05eca29a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e6dba42610923e8b0cd9d7ea25a0e1ea6df507a
-ms.sourcegitcommit: 67d9c51e396c8f937f8704a25e66fea8c5fae81a
+ms.openlocfilehash: 428830b06796914e66434c90f7624cc7c64eec5b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87441530"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887470"
 ---
 # <a name="lodctr"></a>lodctr
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 允许你将性能计数器名称和注册表设置注册或保存到文件中，并指定受信任的服务。
 
@@ -41,7 +39,7 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 #### <a name="remarks"></a>备注
 
-- 如果提供的信息包含空格，请使用引号将文本括起来（例如，"文件名 1"）。
+- 如果提供的信息包含空格，请使用引号将文本括 (例如，"文件名 1" ) 。
 
 ### <a name="examples"></a>示例
 

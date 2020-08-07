@@ -1,24 +1,22 @@
 ---
 title: bitsadmin
 description: Bitsadmin 命令的参考文章，它是一个命令行工具，用于创建、下载或上传作业并监视其进度。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4853036e-1df8-45ad-8be6-cfb097b8dd27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51a64b059dd9d07dd6bd0ecccb1cd99382bdfaa5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4bfaa79720dafdbed62a704b20940143b82390ac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955369"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880756"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 10
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 10
 
 Bitsadmin 是一个命令行工具，用于创建、下载或上载作业，以及监视其进度。 Bitsadmin 工具使用开关来确定要执行的工作。 可以调用 `bitsadmin /?` 或 `bitsadmin /help` 以获取开关列表。
 

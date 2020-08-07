@@ -1,20 +1,18 @@
 ---
 title: bitsadmin addfilewithranges
 description: Bitsadmin addfilewithranges 命令的参考文章，可将文件添加到指定的作业。 BITS 从远程文件下载指定的范围。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: df0ce0bf-dff1-4a48-a16f-fd2f4d5f7189
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5439cfb8330cda7c51150c720fe45faccca8e1ec
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c19c6dfec23cf012f42ab7d10b1d3df90ca957ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927079"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894873"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 
@@ -28,7 +26,7 @@ bitsadmin /addfilewithranges <job> <remoteURL> <localname> <rangelist>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | remoteURL | 服务器上的文件的 URL。 |

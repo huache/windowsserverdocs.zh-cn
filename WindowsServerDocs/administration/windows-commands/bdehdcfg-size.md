@@ -1,20 +1,18 @@
 ---
 title: bdehdcfg size
 description: Bdehdcfg size 命令的参考文章，它指定在创建新系统驱动器时系统分区的大小。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 80f55b1d-a28d-4edf-9997-1fb918b7b5a1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 365ed82e90b00189a400725cfcaaec09b0ba3b53
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: dc511f72e721561ce27e20b55ceda2e10bb0fdf4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923426"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895079"
 ---
 # <a name="bdehdcfg-size"></a>bdehdcfg： size
 
@@ -31,9 +29,9 @@ bdehdcfg -target {default|unallocated|<drive_letter> shrink} -size <size_in_mb>
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| `<size_in_mb>` | 指示用于新分区的兆字节数（MB）。 |
+| `<size_in_mb>` | 指示用于新分区的兆字节 (MB) 数。 |
 
 ## <a name="examples"></a>示例
 

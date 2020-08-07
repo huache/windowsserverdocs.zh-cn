@@ -1,26 +1,24 @@
 ---
 title: 管理 WSUS 客户端计算机和 WSUS 计算机组
-description: Windows Server Update Service （WSUS）主题-如何管理客户端计算机和组
-ms.prod: windows-server
-ms.technology: manage-wsus
+description: Windows Server Update 服务 (WSUS) 主题-如何管理客户端计算机和组
 ms.topic: article
 ms.assetid: 4b1ea915-0f9f-4f0e-8913-a1dd460d07ab
 author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ac5a0c09d28de53430ded651b6da92ba92a1f68
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 02aa39bda56d6b160a3600201ea8920823ce5f4d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828621"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879343"
 ---
 # <a name="managing-wsus-client-computers-and-wsus-computer-groups"></a>管理 WSUS 客户端计算机和 WSUS 计算机组
 
->适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+>适用于：Windows Server 2019、Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在 WSUS 管理控制台中，"计算机" 节点是用于管理 WSUS 客户端计算机和设备的中心访问点。 在此节点下，您可以找到设置的不同组（以及默认组 "未分配的计算机"）。
+在 WSUS 管理控制台中，"计算机" 节点是用于管理 WSUS 客户端计算机和设备的中心访问点。 在此节点下，您可以找到设置的不同组 (加上默认组 "未分配的计算机") 。
 
 ## <a name="managing-client-computers"></a>管理客户端计算机
 在 "**选项**" 下的 "**计算机**" 节点中选择一个计算机组将导致该组中的计算机显示在 "详细信息" 窗格中。 如果计算机被分配到多个组，它将出现在两个组的列表中。 如果在列表中选择一台计算机，则可以看到其属性，其中包括有关计算机的常规详细信息以及该计算机的更新状态，例如特定计算机的更新的安装或检测状态。 您可以按状态筛选给定计算机组下的计算机列表。 默认情况下，仅显示需要更新或安装失败的计算机;不过，你可以按任何状态筛选显示。 更改状态筛选器后，单击 "**刷新**"。

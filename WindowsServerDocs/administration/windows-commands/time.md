@@ -1,20 +1,18 @@
 ---
 title: time
 description: 了解如何设置和显示系统时间。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1276a257-7283-41da-ae80-fb4cfb311f9d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e27b260bdaa8896ad3cf0ad58294467bbb63e1c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1548952c7fcd6d3edcc2dcc0fb3459e27cd0efbb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721365"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881424"
 ---
 # <a name="time"></a>time
 
@@ -34,14 +32,14 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 
 |参数|描述|
 |---------|-----------|
-|\<HH> [：\<MM> [：\<SS> [。\<NN>]]] [上午\|am]|将系统时间设置为指定的新时间，其中， *HH*是小时（必需）， *MM*以分钟为单位， *SS*以秒为单位。 *NN*可用于指定百分之几秒。 如果未指定**am**或**pm** ，则默认情况下， **time**使用24小时格式。|
+|\<HH>[:\<MM>[:\<SS>[.\<NN>]]][上午 am \| ]|将系统时间设置为指定的新时间，其中， *HH*以小时为单位 (必需) ， *MM*为分钟， *SS*以秒为单位。 *NN*可用于指定百分之几秒。 如果未指定**am**或**pm** ，则默认情况下， **time**使用24小时格式。|
 |/t |显示当前时间，而不提示您输入新时间。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注
 
 -   若要更改当前时间，则必须具有管理凭据。
--   必须用冒号（:) 分隔*HH*、 *MM*和*SS*的值。 *SS*和*NN*之间必须用句点（.）分隔。
+-   必须用冒号分隔*HH*、 *MM*和*SS*的值 (： ) 。 *SS*和*NN*必须用句点 ( 分隔。 ) 。
 -   有效的*HH*值为0到24。
 -   有效的*MM*和*SS*值为0至59。
 

@@ -1,24 +1,22 @@
 ---
 title: bitsadmin wrap
 description: Bitsadmin wrap 命令的参考文章，可将超出命令窗口最右边边缘的任意行输出文本包装到下一行。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 14e57522-539d-4621-ad15-09f7a44ccab7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e47f5e38555eb2464d3febf5f958ce5a6af20452
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5d17678ec735f9e7d6319368b0b35a67b47ea576
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927259"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880767"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 将超出命令窗口最右边边缘的任意行输出文本包装到下一行。 必须在任何其他开关之前指定此开关。
 
@@ -32,7 +30,7 @@ bitsadmin /wrap <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ---------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

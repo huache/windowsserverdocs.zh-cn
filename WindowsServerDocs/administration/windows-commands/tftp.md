@@ -1,26 +1,24 @@
 ---
 title: tftp
 description: 在远程计算机之间传输文件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b3674cbfdbc01811ece57e2f9cbbea3aa31251d
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: e085d86ea8dff5261f77505df4d5d7c2c6adb675
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223047"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881616"
 ---
 # <a name="tftp"></a>tftp
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-在运行普通文件传输协议（tftp）服务或后台程序的远程计算机（通常是运行 UNIX 的计算机）之间传输文件。 tftp 通常由在启动过程中从 tftp 服务器检索固件、配置信息或系统映像的嵌入式设备或系统使用。
+将文件传输到远程计算机（通常是运行 UNIX 的计算机），该计算机运行的是普通文件传输协议 (tftp) 服务或后台程序。 tftp 通常由在启动过程中从 tftp 服务器检索固件、配置信息或系统映像的嵌入式设备或系统使用。
 
 ## <a name="syntax"></a>语法
 ```
@@ -28,9 +26,9 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 ```
 
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|-i|指定二进制图像传输模式（也称为八进制模式）。 在二进制图像模式下，文件以一字节单位传输。 传输二进制文件时，请使用此模式。 如果省略 **-i** ，则文件将在 ASCII 模式下传输。 这是默认传输模式。 此模式将行尾（EOL）字符转换为指定计算机的相应格式。 在传输文本文件时使用此模式。 如果文件传输成功，将显示数据传输速率。|
+|-i|指定二进制图像传输模式 (也称为八进制模式) 。 在二进制图像模式下，文件以一字节单位传输。 传输二进制文件时，请使用此模式。 如果省略 **-i** ，则文件将在 ASCII 模式下传输。 这是默认传输模式。 此模式将 (EOL 行尾) 字符转换为指定计算机的相应格式。 在传输文本文件时使用此模式。 如果文件传输成功，将显示数据传输速率。|
 |\<Host\>|指定本地或远程计算机。|
 |put|将本地计算机上的文件*源*传输到远程计算机上的文件*目标*。 由于 tftp 协议不支持用户身份验证，因此用户必须登录到远程计算机上，并且这些文件必须可在远程计算机上写入。|
 |get|将远程计算机上的文件*目标*传输到本地计算机上的文件*源*。|

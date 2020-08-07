@@ -1,24 +1,22 @@
 ---
 title: bitsadmin util 和 repairservice
 description: Bitsadmin util 和 repairservice 命令的参考文章，用于修复各种版本的 BITS 服务中的已知问题。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2ac7baeb-4340-4186-bfcb-66478195378d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf62a9410765914187b6a60ff5376e8ff5aabe03
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4d90e6328376f52e60b598d8c2324b59877415db
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927344"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880851"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util 和 repairservice
 
-如果 BITS 无法启动，此开关将尝试解析与错误的服务配置和 Windows 服务（如 LANManworkstation）和网络目录的依赖项相关的错误。 此开关还会生成一个输出，用于指示是否已解决问题。
+如果 BITS 无法启动，此开关将尝试解决与 Windows 服务 (（如 LANManworkstation) 和网络目录）相关的错误。 此开关还会生成一个输出，用于指示是否已解决问题。
 
 > [!NOTE]
 > BITS 1.5 和更早版本不支持此命令。
@@ -31,7 +29,7 @@ bitsadmin /util /repairservice [/force]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /force | 可选。 删除并重新创建该服务。|
 

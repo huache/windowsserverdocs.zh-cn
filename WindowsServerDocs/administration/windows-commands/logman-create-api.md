@@ -1,24 +1,22 @@
 ---
 title: logman create api
 description: 用于创建 API 跟踪数据收集器的 logman create api 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2ecc0a75-2613-464a-8616-c5dc404bb736
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2294cb7ba7ab962dbba33b0e2612b8dee2d72004
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a2e3e9291bcd113ced9c27eb7cc3449f715f9893
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925438"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887457"
 ---
 # <a name="logman-create-api"></a>logman create api
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 创建 API 跟踪数据收集器。
 
@@ -30,7 +28,7 @@ logman create api <[-n] <name>> [options]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的远程计算机上执行命令。 |
 | -config`<value>` | 指定包含命令选项的设置文件。 |
@@ -54,14 +52,14 @@ logman create api <[-n] <name>> [options]
 | -mods`<path [path [...]]>` | 指定要从中记录 API 调用的模块的列表。 |
 | -inapis` <module!api [module!api [...]]>` | 指定要包含在日志记录中的 API 调用的列表。 |
 | -exapis`<module!api [module!api [...]]>` | 指定要从日志记录中排除的 API 调用的列表。 |
-| -[-] ano | 仅记录（-ano） API 名称，或不记录（-ano） API 名称。 |
-| -[-] recursive | 日志（-递归）或不以递归方式在第一层之外记录（-递归） Api。 |
+| -[-] ano | 仅记录 () API 名称，或不记录 () API 名称。 |
+| -[-] recursive | 日志 ( 递归) 或不记录 (-递归) Api 在第一层以外递归。 |
 | -exe`<value>` | 指定 API 跟踪的可执行文件的完整路径。 |
 | /? | 显示区分上下文的帮助。 |
 
 #### <a name="remarks"></a>备注
 
-- 其中列出了 [-]，添加额外的连字符（-）将对选项求反。
+- 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 
 ### <a name="examples"></a>示例
 

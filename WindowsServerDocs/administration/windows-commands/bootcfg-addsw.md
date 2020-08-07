@@ -1,24 +1,22 @@
 ---
 title: bootcfg addsw
 description: Bootcfg addsw 命令的参考文章，它为指定的操作系统条目添加操作系统加载选项。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d8389293-ecd9-42f0-b84b-b9ead4cf52e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f9d54c2cfdf898e1162d804220ae6dbb4a446fc5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 549bfec84cb45baec309d8ae7043be39f5d31a3a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926355"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880743"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 为指定的操作系统项添加操作系统加载选项。
 
@@ -32,7 +30,7 @@ bootcfg /addsw [/s <computer> [/u <domain>\<user> /p <password>]] [/mm <maximumr
 
 | 术语 | 定义 |
 | ---- | ---------- |
-| `/s <computer>` | 指定远程计算机的名称或 IP 地址（请勿使用反斜杠）。 默认为本地计算机。 |
+| `/s <computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 |
 | `/u <domain>\<user>`  | 使用或指定的用户的帐户权限运行命令 `<user>` `<domain>\<user>` 。 默认为发出命令的计算机上当前登录用户的权限。 |
 | `/p <password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
 | `/mm <maximumram>` | 指定操作系统可以使用的最大 RAM 量（以 mb 为单位）。 该值必须等于或大于 32 Mb。 |

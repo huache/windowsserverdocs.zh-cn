@@ -1,24 +1,22 @@
 ---
 title: bitsadmin util 和 getieproxy
 description: Bitsadmin util 和 getieproxy 命令的参考文章，它检索给定服务帐户的代理使用情况。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6d50c7e3-f4eb-4ca5-9f0c-4ed396087db6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15093341ef2dcaca6dd0f5efb4c48d4b9d1934a1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 78d24395a22d41369127b115971597598b69ec05
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927408"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880920"
 ---
 # <a name="bitsadmin-util-and-getieproxy"></a>bitsadmin util 和 getieproxy
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 检索给定服务帐户的代理使用情况。 此命令显示每个代理使用的值，而不仅仅是为服务帐户指定的代理使用情况。 有关为特定服务帐户设置代理使用情况的详细信息，请参阅[bitsadmin util and setieproxy](bitsadmin-util-and-setieproxy.md)命令。
 
@@ -30,7 +28,7 @@ bitsadmin /util /getieproxy <account> [/conn <connectionname>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ---------- |
 | account | 指定要检索其代理设置的服务帐户。 可能的值包括：<ul><li>LOCALSYSTEM</li><li>   NETWORKSERVICE</li><li>LOCALSERVICE.</li></ul> |
 | connectionname | 可选。 与 **/conn**参数一起使用，以指定要使用的调制解调器连接。 如果未指定 **/conn**参数，则 BITS 将使用 LAN 连接。 |

@@ -1,20 +1,18 @@
 ---
 title: 适用于 Microsoft 产品的 Linux 软件存储库
 description: 本文档介绍了如何使用和安装适用于 Microsoft 产品的 Linux 软件包。
-ms.prod: windows-server
 manager: szark
-ms.technology: compute
 ms.topic: article
 ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: 28d86981e87184c11eb37981945876e05a83ad62
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: f8d31aaeaba4bba6cf6caaa2a69190cfdbd8e488
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408876"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879527"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>适用于 Microsoft 产品的 Linux 软件存储库
 
@@ -35,24 +33,24 @@ Microsoft 的 Linux 软件存储库由多个子存储库组成：
 
 可以通过安装适用于 Linux 分发版和版本的 Linux 包自动配置存储库。 此包将安装存储库配置以及工具（如 apt/yum/zypper）使用的 GPG 公钥来验证已签名的包和/或存储库元数据。
 
-### <a name="enterprise-linux-rhel-and-variants"></a>企业 Linux （RHEL 和变体）
+### <a name="enterprise-linux-rhel-and-variants"></a>企业 Linux (RHEL 和变型) 
 
-- Enterprise Linux 6 （64.RPM）<p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
+- Enterprise Linux 6 (64.RPM) <p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
 
-- Enterprise Linux 7 （EL7）<p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+- 企业 Linux 7 (EL7) <p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
 
 ### <a name="ubuntu"></a>Ubuntu
 
- - Ubuntu 14.04 （t）<p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/14.04/prod<p>sudo apt-get update
+ - Ubuntu 14.04 (t) <p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/14.04/prod<p>sudo apt-get update
 
- - Ubuntu 16.04 （Xenial）<p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/16.04/prod<p>sudo apt-get update
+ - Ubuntu 16.04 (Xenial) <p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/16.04/prod<p>sudo apt-get update
 
- - Ubuntu 18.04 （Bionic）<p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/18.04/prod<p>sudo apt-get update
+ - Ubuntu 18.04 (Bionic) <p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/18.04/prod<p>sudo apt-get update
 
- - Ubuntu 18.10 （宇宙射线）<p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/18.10/prod<p>sudo apt-get update
+ - Ubuntu 18.10 (宇宙射线) <p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/18.10/prod<p>sudo apt-get update
 
- - Ubuntu 19.04 （Disco）<p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/19.04/prod<p>sudo apt-get update
+ - Ubuntu 19.04 (Disco) <p>卷 https://packages.microsoft.com/keys/microsoft.asc | sudo apt-sudo apthttps://packages.microsoft.com/ubuntu/19.04/prod<p>sudo apt-get update
 
 ### <a name="suse-linux-enterprise-12"></a>SUSE Linux Enterprise 12
 
@@ -62,12 +60,12 @@ sudo rpm-Uvhhttps://packages.microsoft.com/config/sles/12/packages-microsoft-pro
 
 存储库配置文件可从[packages.microsoft.com/config](https://packages.microsoft.com/config/)获取。可以使用以下 URI 命名约定来查找这些文件的名称和位置：
 
-https://packages.microsoft.com/config/<Distribution>/<Version>制作.（存储库 | 列表）
+https://packages.microsoft.com/config/<Distribution>/<Version>/prod. (存储库 | 列表) 
 
 **包和存储库签名密钥**
 
 - 可在此处下载 Microsoft 的 GPG 公钥：[https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc)
-- 公钥 ID： Microsoft （版本签名）<gpgsecurity@microsoft.com>
+- 公钥 ID： Microsoft (版本签名) <gpgsecurity@microsoft.com>
 - 公钥指纹：`BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
 
 ### <a name="examples"></a>示例

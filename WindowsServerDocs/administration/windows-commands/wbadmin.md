@@ -1,20 +1,18 @@
 ---
 title: wbadmin
 description: 用于 wbadmin 的参考文章，可用于在命令提示符下备份和还原操作系统、卷、文件、文件夹和应用程序。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4b0b3f32-d21f-4861-84bb-b2eadbf1e7b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d8320ddd7c806999730ae1f8fd47ea559406e0a7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3739695a805534d47500380a76951405af7c7f1b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954419"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879541"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -24,7 +22,7 @@ ms.locfileid: "86954419"
 
 若要配置定期计划的备份，您必须是**Administrators**组的成员。 若要使用此命令执行所有其他任务，您必须是**Backup Operators**或**Administrators**组的成员，或者您必须被委派了适当的权限。
 
-必须从提升的命令提示符运行**wbadmin** 。 （若要打开提升的命令提示符，请右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
+必须从提升的命令提示符运行**wbadmin** 。  (打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
 
 ## <a name="subcommands"></a>个子
 
@@ -42,7 +40,7 @@ ms.locfileid: "86954419"
 |[Wbadmin start systemstaterecovery](wbadmin-start-systemstaterecovery.md)|运行系统状态恢复。|
 |[Wbadmin start systemstatebackup](wbadmin-start-systemstatebackup.md)|运行系统状态备份。|
 |[Wbadmin delete systemstatebackup](wbadmin-delete-systemstatebackup.md)|删除一个或多个系统状态备份。|
-|[Wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)|运行完整系统的恢复（至少包含操作系统状态的所有卷）。 仅当使用 Windows 恢复环境时，此子命令才可用。|
+|[Wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)|运行完整系统的恢复 (至少包含操作系统状态) 的所有卷。 仅当使用 Windows 恢复环境时，此子命令才可用。|
 |[Wbadmin restore catalog](wbadmin-restore-catalog.md)|在本地计算机上的备份目录已损坏的情况下，从指定的存储位置恢复备份目录。|
 |[Wbadmin delete catalog](wbadmin-delete-catalog.md)|删除本地计算机上的备份目录。 仅当此计算机上的备份目录已损坏，并且你没有将备份存储在可用于还原目录的其他位置时，才使用此子命令。|
 
