@@ -1,20 +1,18 @@
 ---
 title: setlocal
 description: Setlocal 的参考文章，用于开始批处理文件中的环境变量的本地化。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e990cf931e72bd8f6972db448d24db08c2e5208
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 30b84c9dcaf741c57393e680d3f9c9cb7b92f19b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934615"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882532"
 ---
 # <a name="setlocal"></a>setlocal
 
@@ -30,7 +28,7 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 
 ## <a name="arguments"></a>自变量
 
-|参数|说明|
+|参数|描述|
 |--------|-----------|
 |enableextensions|在遇到匹配的**endlocal**命令之前启用命令扩展，而不考虑在运行**setlocal**命令之前的设置。|
 |disableextensions|在遇到匹配的**endlocal**命令之前禁用命令扩展，而不考虑在运行**setlocal**命令之前的设置。|
@@ -48,10 +46,10 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     运行批处理文件时，请使用**setlocal**更改环境变量。 运行**setlocal**后所做的环境更改是批处理文件的本地环境。 Cmd.exe 程序将在遇到**endlocal**命令或到达批处理文件末尾时还原以前的设置。
 -   嵌套命令
 
-    批处理程序中可以有多个**setlocal**或**endlocal**命令（即嵌套的命令）。
+    批处理程序中可以有多个**setlocal**或**endlocal**命令 (也就是说，) 的嵌套命令。
 -   在批处理文件中测试命令扩展
 
-    **Setlocal**命令设置 ERRORLEVEL 变量。 如果传递 {**enableextensions**  |  **disableextensions**} 或 {**enabledelayedexpansion**  |  **disabledelayedexpansion**}，则 ERRORLEVEL 变量将设置为**0** （零）。 否则，将其设置为**1**。 可以在批处理脚本中使用此信息来确定扩展是否可用，如以下示例中所示：
+    **Setlocal**命令设置 ERRORLEVEL 变量。 如果传递 {**enableextensions**  |  **disableextensions**} 或 {**enabledelayedexpansion**  |  **disabledelayedexpansion**}，则 ERRORLEVEL 变量将设置为**0** (零) 。 否则，将其设置为**1**。 可以在批处理脚本中使用此信息来确定扩展是否可用，如以下示例中所示：
     ```
     setlocal enableextensions
     verify other 2>nul

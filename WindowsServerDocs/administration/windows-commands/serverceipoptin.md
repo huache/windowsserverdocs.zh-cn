@@ -1,32 +1,30 @@
 ---
 title: serverceipoptin
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3d7d7fa7-0689-4797-b802-36fe260d21a0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2430907237fd82dc6788c8b68f4de35629f5f35
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 47928232de399baf1f8351f865fbff18f1126340
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935921"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882749"
 ---
 # <a name="serverceipoptin"></a>serverceipoptin
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-允许你参与客户体验改善计划（CEIP）。
+允许 (CEIP) 参与客户体验改善计划。
 ## <a name="syntax"></a>语法
 ```
 serverceipoptin [/query] [/enable] [/disable]
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |/query|验证当前设置。|
 |/enable|启用参与。|

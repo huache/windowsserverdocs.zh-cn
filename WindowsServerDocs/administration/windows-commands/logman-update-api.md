@@ -1,24 +1,22 @@
 ---
 title: logman update api
 description: 用于更新现有 API 跟踪数据收集器属性的 logman 更新 api 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 40575772e5f82474c4afbd4809773f47d7e4e075
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: eaa66a05fa6f47fc17990d1f84223c2e2a8086c3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933869"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887243"
 ---
 # <a name="logman-update-api"></a>logman update api
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 更新现有 API 跟踪数据收集器的属性。
 
@@ -30,7 +28,7 @@ logman update api <[-n] <name>> [options]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的远程计算机上执行命令。 |
 | -config`<value>` | 指定包含命令选项的设置文件。 |
@@ -54,14 +52,14 @@ logman update api <[-n] <name>> [options]
 | -mods`<path [path [...]]>` | 指定要从中记录 API 调用的模块的列表。 |
 | -inapis` <module!api [module!api [...]]>` | 指定要包含在日志记录中的 API 调用的列表。 |
 | -exapis`<module!api [module!api [...]]>` | 指定要从日志记录中排除的 API 调用的列表。 |
-| -[-] ano | 仅记录（-ano） API 名称，或不记录（-ano） API 名称。 |
-| -[-] recursive | 日志（-递归）或不以递归方式在第一层之外记录（-递归） Api。 |
+| -[-] ano | 仅记录 () API 名称，或不记录 () API 名称。 |
+| -[-] recursive | 日志 ( 递归) 或不记录 (-递归) Api 在第一层以外递归。 |
 | -exe`<value>` | 指定 API 跟踪的可执行文件的完整路径。 |
 | /? | 显示区分上下文的帮助。 |
 
 #### <a name="remarks"></a>备注
 
-- 其中列出了 [-]，添加额外的连字符（-）将对选项求反。
+- 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 
 ### <a name="examples"></a>示例
 

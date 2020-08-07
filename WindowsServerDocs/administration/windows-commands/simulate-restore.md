@@ -1,20 +1,18 @@
 ---
 title: simulate restore
 description: 有关模拟还原的参考文章，可测试编写器在计算机上的还原会话中参与，而不向编写器发出 PreRestore 或 PostRestore 事件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d883d94c-3cb1-4848-9d74-1b4378044b31
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cc247848ef4fac1e3a6537247f640f3533c2bcd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ec2c49f0dfcb68f6b3b6ef0567778a4317e7dc24
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936353"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882340"
 ---
 # <a name="simulate-restore"></a>模拟还原
 

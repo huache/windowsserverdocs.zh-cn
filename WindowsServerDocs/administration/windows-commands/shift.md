@@ -1,20 +1,18 @@
 ---
 title: shift
 description: 班次的参考文章，更改批处理文件中批处理参数的位置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b56574e8-570a-4cc9-bbac-1b94fbf6a47a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c72f1f2390a1adaa993be2caa7954d72dede51e9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 985c1271a1da8f486e2313ba9aeb266803664b93
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932581"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882392"
 ---
 # <a name="shift"></a>shift
 
@@ -30,7 +28,7 @@ shift [/n <N>]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |/n\<N>|指定从第*n*个参数开始移位，其中*n*是从0到8的任何值。 需要命令扩展，默认情况下已启用。|
 |/?|在命令提示符下显示帮助。|
@@ -39,9 +37,9 @@ shift [/n <N>]
 
 - **移位**命令通过将每个参数复制到前一个参数来更改批参数 **%0**到 **%9**的值，将 **%1**的值复制到 **%0**，将 **%2**的值复制到 **%1**，依此类推。 这适用于写入对任意数量的参数执行相同操作的批处理文件。
 - 如果启用了命令扩展，则**shift**命令支持 **/n**命令行选项。 **/N**选项指定在第 n 个参数处开始移位，其中**n**是从0到8的任何值。 例如， **shift/2**会将 **%3**移位到% **2**， **%4**转换为 **%3**，依此类推，并不影响 **%0**和 **%1** 。 默认情况下启用命令扩展。
-- 你可以使用**shift**命令创建一个可接受超过10个批处理参数的批处理文件。 如果在命令行中指定了10个以上的参数，则在第十个（**%9**）后出现的参数将一次移位到 **%9**中。
+- 你可以使用**shift**命令创建一个可接受超过10个批处理参数的批处理文件。 如果在命令行中指定了10个以上的参数，则在第十个 (**%9**) 后出现的参数将一次移位到 **%9**中。
 - **Shift**命令对 **%\*** 该批参数无效。
-- 没有**后退命令**。 实现**shift**命令后，将无法恢复在移位之前存在的批处理参数（**%0**）。
+- 没有**后退命令**。 实现**shift**命令后，不能恢复在移位之前存在 (**%0**) 的批处理参数。
 
 ## <a name="examples"></a>示例
 

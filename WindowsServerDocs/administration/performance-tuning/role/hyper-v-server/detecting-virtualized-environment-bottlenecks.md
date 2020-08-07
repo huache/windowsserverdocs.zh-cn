@@ -1,18 +1,16 @@
 ---
 title: 检测虚拟化环境中的瓶颈
 description: 如何检测和解决潜在的 Hyper-v 性能瓶颈
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 11b2f596fc8c1f8c193100e4a9f1ee792d3d7502
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 049df52033d637409a73400616b596037f9d7976
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471412"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896135"
 ---
 # <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>检测虚拟化环境中的瓶颈
 
@@ -28,15 +26,15 @@ ms.locfileid: "85471412"
 
 可以从主机使用以下性能计数器：
 
--   逻辑处理器利用率- \\ Hyper-v 虚拟机监控程序逻辑处理器（ \* ） \\ % 总运行时间
+-   逻辑处理器利用率- \\ Hyper-v 虚拟机监控程序逻辑处理器 (\*) \\ % 总运行时间
 
--   虚拟处理器利用率- \\ hyper-v 虚拟机监控程序虚拟处理器（ \* ） \\ % 总运行时间
+-   虚拟处理器利用率- \\ Hyper-v 虚拟机监控程序虚拟处理器 (\*) \\ % 总运行时间
 
--   根虚拟处理器使用率- \\ hyper-v 虚拟机监控程序根虚拟处理器（ \* ） \\ % 总运行时间
+-   根虚拟处理器利用率- \\ hyper-v 虚拟机监控程序根虚拟处理器 (\*) \\ % 总运行时间
 
-如果**Hyper-v 虚拟机监控程序逻辑处理器（ \_ 总计） \\ % total Runtime** counter 超过90%，则会重载该主机。 应添加更多的处理能力，或者将一些虚拟机移到其他主机上。
+如果**Hyper-v 虚拟机监控程序逻辑处理器 (\_ 总计) \\ % total Runtime**计数器超过90%，则会重载该主机。 应添加更多的处理能力，或者将一些虚拟机移到其他主机上。
 
-如果**hyper-v 虚拟机监控程序虚拟处理器（VM 名称： VP x） \\ % Total Runtime** counter 超过90%，则应该执行以下操作：
+如果**hyper-v 虚拟机监控程序虚拟处理器 (VM 名称：副总裁 x) \\ % Total Runtime** counter 超过90%，则应执行以下操作：
 
 -   验证主机是否未超载
 
@@ -44,7 +42,7 @@ ms.locfileid: "85471412"
 
 -   向虚拟机分配更多的虚拟处理器
 
-如果**hyper-v 虚拟机监控程序虚拟处理器（VM 名称： VP x） \\ % Total Runtime** counter 超过90%，则必须执行以下操作：
+如果**hyper-v 虚拟机监控程序虚拟处理器 (VM 名称： VP x) \\ % Total Runtime** counter 超过90% 对于部分（而非全部）虚拟处理器，你应执行以下操作：
 
 -   如果你的工作负荷接收到网络密集型，你应考虑使用 vRSS。
 
@@ -52,7 +50,7 @@ ms.locfileid: "85471412"
 
 -   如果你的工作负荷占用大量存储空间，则应启用虚拟 NUMA 并添加更多虚拟磁盘。
 
-如果**Hyper-v 虚拟机监控程序根虚拟处理器（根 VP x） \\ % Total Runtime**计数器超过90%，则但并非所有虚拟处理器和**处理器（x）% \\ \\ DPC Time**计数器大约增加了**根虚拟处理器（根 VP x） \\ % Total Runtime**计数器的值，应确保在网络适配器上启用 VMQ。
+如果**Hyper-v 虚拟机监控程序根虚拟处理器 (根 VP x) \\ % Total Runtime** counter 超过90%，则某些情况下，但并非所有虚拟处理器和**处理器 (x) \\ % 中断时间和处理器 (x) \\ % DPC Time**计数器大约增加了**根虚拟处理器 (根副总裁 x) \\ % Total Runtime**计数器的值，则应确保在网络适配器上启用 VMQ。
 
 ## <a name="memory-bottlenecks"></a>内存瓶颈
 
@@ -68,13 +66,13 @@ ms.locfileid: "85471412"
 
 -   可用内存（ \\ mb）
 
--   Hyper-v 动态内存均衡器（ \* ） \\ 可用内存
+-   Hyper-v 动态内存均衡器 (\*) \\ 可用内存
 
 你可以使用虚拟机中的以下性能计数器：
 
 -   可用内存（ \\ mb）
 
-如果主机上的可用**内存计数器和 \\ ** **hyper-v 动态内存均衡器（ \* ） \\ 可用内存**计数器较低，应停止非必要服务并将一个或多个虚拟机迁移到另一台主机。
+如果**内存 \\ 可用的兆字节**和**hyper-v 动态内存均衡器 (在主机上 \*) \\ 可用内存**计数器不足，应停止非必要的服务，并将一个或多个虚拟机迁移到另一台主机。
 
 如果虚拟机中的**内存 \\ 可用兆字节**计数器不足，则应为虚拟机分配更多内存。 如果使用动态内存，则应增加 "最大内存" 设置。
 
@@ -88,11 +86,11 @@ ms.locfileid: "85471412"
 
 可以从主机使用以下性能计数器：
 
--   网络接口（*网络适配器名称*） \\ 字节数/秒
+-   网络接口 (*网络适配器名称*) \\ 字节数/秒
 
 你可以使用虚拟机中的以下性能计数器：
 
--   Hyper-v 虚拟网络适配器（*虚拟机名称名称 &lt; GUID &gt; *） \\ 字节数/秒
+-   Hyper-v 虚拟网络适配器 (*虚拟机名称 &lt; GUID &gt; *) \\ 字节数/秒
 
 如果**物理 NIC Bytes/sec**计数器大于或等于容量的90%，则应添加更多的网络适配器，将虚拟机迁移到另一台主机，并配置网络 QoS。
 
@@ -110,13 +108,13 @@ ms.locfileid: "85471412"
 
 可以从主机使用以下性能计数器：
 
--   物理磁盘（*磁盘号*） \\ Avg. Disk sec/Read
+-   物理磁盘 (*磁盘号*) \\ Avg. Disk sec/Read
 
--   物理磁盘（*磁盘号*） \\ Avg. Disk sec/Write
+-   物理磁盘 (*磁盘号*) \\ Avg. Disk sec/Write
 
--   物理磁盘（*磁盘号*） \\ 平均磁盘读取队列长度
+-   物理磁盘 (*磁盘号*) \\ 平均磁盘读取队列长度
 
--   物理磁盘（*磁盘号*） \\ 平均磁盘写入队列长度
+-   物理磁盘 (*磁盘号*) \\ 平均磁盘写入队列长度
 
 如果延迟持续大于50ms，应执行以下操作：
 

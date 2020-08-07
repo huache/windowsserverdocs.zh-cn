@@ -1,24 +1,22 @@
 ---
 title: select volume
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5d70d776-80ad-4f20-8288-a7997fb1df28
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 847cf4865217dd4165f6973f1019dffa22ec85ec
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 394afbc4cb046968d9b1e1d88a272598dc23d3b9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935941"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882791"
 ---
 # <a name="select-volume"></a>select volume
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 选择指定的卷并将焦点移动到该卷。 此命令还可用于显示当前在所选磁盘中有焦点的卷。
 
@@ -32,7 +30,7 @@ select volume={<n>|<d>}
 
 ### <a name="parameters"></a>参数
 
-| 参数 |                                                                               说明                                                                                |
+| 参数 |                                                                               描述                                                                                |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    <n>    | 要接收焦点的卷的编号。 可以通过使用 DiskPart 中的 "**列出卷**" 命令，查看当前所选磁盘上的所有卷的编号。 |
 |    <d>    |                                                 要接收焦点的卷的驱动器号或装入点路径。                                                 |

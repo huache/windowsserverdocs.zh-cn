@@ -1,24 +1,22 @@
 ---
 title: logman update trace
 description: 用于更新现有事件跟踪数据收集器属性的 logman update trace 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b7111f7f-4162-4d1a-8e53-d766db0ede1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7eb8b034958e14009101848d0aca381cb915a579
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7c95d9cf4a0c6f2665057c9056bcbef04dc70b37
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933118"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887177"
 ---
 # <a name="logman-update-trace"></a>logman update trace
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 更新现有事件跟踪数据收集器的属性。
 
@@ -30,7 +28,7 @@ logman update trace <[-n] <name>> [options]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的远程计算机上执行命令。 |
 | -config`<value>` | 指定包含命令选项的设置文件。 |
@@ -65,7 +63,7 @@ logman update trace <[-n] <name>> [options]
 
 #### <a name="remarks"></a>备注
 
-- 其中列出了 [-]，添加额外的连字符（-）将对选项求反。
+- 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 
 ### <a name="examples"></a>示例
 

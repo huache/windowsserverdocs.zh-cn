@@ -1,18 +1,16 @@
 ---
 title: Hyper-v 处理器性能
 description: Hyper-v 性能优化中的处理器性能注意事项
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d165413dfbf89b2debd77806110ca80e9b6af7c8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ab68975c84e1b299914e09045eddbc302ca9697f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471292"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896076"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper-v 处理器性能
 
@@ -33,7 +31,7 @@ Windows Server 2016 中的 hyper-v 支持每个虚拟机最多支持240个虚拟
 
 -   安装最新版本的虚拟机 Integration Services。
 
--   通过 "虚拟机设置" 对话框（使用特定于 Microsoft Hyper-V 的适配器）删除仿真网络适配器。
+-   通过 "虚拟机设置" 对话框删除仿真网络适配器 (使用 Microsoft Hyper-V 特定的适配器) 。
 
 -   删除未使用的设备，如 CD-ROM 和 COM 端口，或断开其媒体的连接。
 
@@ -43,7 +41,7 @@ Windows Server 2016 中的 hyper-v 支持每个虚拟机最多支持240个虚拟
 
 -   通过运行**logman.exe ets** ，查看默认情况下启用的 ETW 跟踪提供程序
 
--   改善服务器应用程序以减少定期活动（例如计时器）。
+-   改善服务器应用程序以减少定期活动 (如计时器) 。
 
 -   关闭主机和来宾操作系统上的服务器管理器。
 

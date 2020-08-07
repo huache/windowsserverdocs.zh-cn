@@ -1,18 +1,16 @@
 ---
 title: 中的站点定义和域控制器放置增加了性能优化
 description: Active Directory 性能优化中的站点定义和域控制器布局注意事项。
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 19574c859e038374a4cf3fe1e452adae0891e067
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7502233cfd71fe2f3e7d25ff6ba246531233d1ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471482"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896210"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>域控制器的正确放置和站点注意事项
 
@@ -26,7 +24,7 @@ ms.locfileid: "85471482"
 
 有关详细信息，请参考：
 -   [应用程序与 Rodc 的兼容性](https://technet.microsoft.com/library/cc772597.aspx)
--   [Active Directory Service Interface （ADSI）和只读域控制器（RODC）–避免性能问题](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
+-   [Active Directory Service Interface (ADSI) 和只读域控制器 (RODC) –避免性能问题](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
 
 ## <a name="optimize-for-referrals"></a>优化推荐
 
@@ -60,7 +58,7 @@ ms.locfileid: "85471482"
 
     -   聚合可信域和信任域之间的站点名称，以反映同一位置中的域控制器。 确保子网和 IP 地址映射正确地链接到两个林中的站点。 有关详细信息，请参阅[跨林信任的域定位器](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)。
 
-    -   确保根据 Dc 定位程序的需要，为域控制器位置打开端口。 如果域之间存在防火墙，请确保为所有信任正确配置防火墙。 如果防火墙未打开，则信任域控制器仍将尝试访问受信任的域。 如果通信由于任何原因而失败，则信任域控制器最终会将请求超时到受信任的域控制器。 但是，对于每个请求，这些超时可能需要几秒钟，并且如果传入请求的数量很高，则可能会耗尽信任域控制器上的网络端口。 客户端可能会在域控制器上经历等待时间作为挂起线程超时，这可能会转换为挂起的应用程序（如果应用程序在前台线程中运行请求）。 有关详细信息，请参阅[如何为域和信任关系配置防火墙](https://support.microsoft.com/kb/179442)。
+    -   确保根据 Dc 定位程序的需要，为域控制器位置打开端口。 如果域之间存在防火墙，请确保为所有信任正确配置防火墙。 如果防火墙未打开，则信任域控制器仍将尝试访问受信任的域。 如果通信由于任何原因而失败，则信任域控制器最终会将请求超时到受信任的域控制器。 但是，对于每个请求，这些超时可能需要几秒钟，并且如果传入请求的数量很高，则可能会耗尽信任域控制器上的网络端口。 当应用程序在前台线程) 中运行请求时，客户端可能会体验到域控制器上的等待超时作为挂起线程，该线程可能会转换为挂起的应用程序 (。 有关详细信息，请参阅[如何为域和信任关系配置防火墙](https://support.microsoft.com/kb/179442)。
 
     -   使用 DnsAvoidRegisterRecords 从广告到一般定位符，以消除工作不良或延迟的域控制器（如卫星站点中的控制器）。 有关详细信息，请参阅[如何优化位于客户端站点之外的域控制器或全局编录的位置](https://support.microsoft.com/kb/306602)。
 
@@ -70,7 +68,7 @@ ms.locfileid: "85471482"
 
     -  考虑将受信任域和信任域中的域控制器放置在同一个物理位置。
 
-对于所有信任方案，凭据将根据身份验证请求中指定的域进行路由。 这也适用于 LookupAccountName 和 LsaLookupNames 的查询（以及其他参数，它们只是最常用的 Api）。 如果为这些 Api 的域参数传递了 NULL 值，则域控制器将尝试查找每个可用受信任域中指定的帐户名称。
+对于所有信任方案，凭据将根据身份验证请求中指定的域进行路由。 这也适用于 LookupAccountName 和 LsaLookupNames (以及其他查询的查询，这些只是最常用的) Api。 如果为这些 Api 的域参数传递了 NULL 值，则域控制器将尝试查找每个可用受信任域中指定的帐户名称。
 
 -   如果指定了 NULL 域，则禁用检查所有可用的信任。 [如何使用 LsaLookupRestrictIsolatedNameLevel 注册表项限制外部受信任域中的隔离名称的查找](https://support.microsoft.com/kb/818024)
 

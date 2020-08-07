@@ -1,18 +1,16 @@
 ---
 title: Hyper-v 网络 i/o 性能
 description: Hyper-v 性能优化中的网络 i/o 性能注意事项
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: dcf43bf41edada0a2e3df6fde825ff128a119a8f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b21ed45b97b1bc657b8a77ac7731dd32f5090c3d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471352"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896105"
 ---
 # <a name="hyper-v-network-io-performance"></a>Hyper-v 网络 i/o 性能
 
@@ -33,7 +31,7 @@ ms.locfileid: "85471352"
 
 此外，在迁移所涉及的每个网络适配器上增加发送和接收缓冲区的数量可以提高迁移性能。
 
-Windows Server 2012 R2 引入了一个选项，可通过在网络上传输之前压缩内存来加速实时迁移，或使用远程直接内存访问（RDMA）（如果硬件支持）。
+Windows Server 2012 R2 引入了一个选项，可通过在网络上传输之前压缩内存来加速实时迁移，或使用远程直接内存访问 (RDMA) ，前提是硬件支持。
 
 ## <a name="additional-references"></a>其他参考
 

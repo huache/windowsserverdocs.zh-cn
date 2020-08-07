@@ -1,18 +1,16 @@
 ---
 title: 添加性能优化中的 LDAP 注意事项
 description: Active Directory 工作负荷中的 LDAP 注意事项
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ef32b379dcc5d1c2d8217564b639f44d024e5ee
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b1678eadda1232da19c80e648c8b7ecb9c06f64b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471543"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896214"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>添加性能优化中的 LDAP 注意事项
 
@@ -47,7 +45,7 @@ ms.locfileid: "85471543"
 
 - 具有较长持续时间的大量查询导致 ATQ LDAP 线程消耗和耗尽。 监视以下性能计数器：
 
-    - **NTDS \\请求延迟**–这取决于请求处理所需的时间。 Active Directory 在120秒后超时请求数（默认值），则大多数运行速度应快得多，并且长时间运行的查询应隐藏在总数字中。 查找此基线中的更改，而不是绝对阈值。
+    - **NTDS \\请求延迟**–这取决于请求处理所需的时间。 Active Directory 在120秒后超时请求 (默认) ，但是，大多数运行速度应快得多，并且长时间运行的查询应隐藏在总数字中。 查找此基线中的更改，而不是绝对阈值。
 
         > [!NOTE]
         > 此处较高的值还可以指示对其他域和 CRL 检查的 "代理" 请求中的延迟。
@@ -60,11 +58,11 @@ ms.locfileid: "85471543"
 
 -   [跟踪代价高昂且低效的搜索](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   在性能监视器中 Active Directory 诊断数据收集器集（[SPA 的儿子： Win2008 和更高版本中的 AD 数据收集器集](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)）
+-   在性能监视器中 Active Directory 诊断数据收集器集 ([SPA 的儿子： Win2008 和更高版本中的 AD 数据收集器集](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)) 
 
 -   [Microsoft Server 性能顾问](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor 包
 
--   使用除 "（objectClass =）" 之外的任何筛选器 \* 进行搜索，该筛选器使用祖先索引。
+-   使用除 " (objectClass =) " 之外的任何筛选器 \* 进行搜索，该筛选器使用祖先索引。
 
 ### <a name="other-index-considerations"></a>其他索引注意事项
 
@@ -80,11 +78,11 @@ ms.locfileid: "85471543"
 
 -   需要元组索引以支持词中搜索字符串和最终搜索字符串。 初始搜索字符串不需要元组索引。
 
-    -   初始搜索字符串–（samAccountName = MYPC \* ）
+    -   初始搜索字符串– (samAccountName = MYPC \*) 
 
-    -   词中搜索字符串-（samAccountName = \* MYPC \* ）
+    -   词中搜索字符串- (samAccountName = \* MYPC \*) 
 
-    -   最终搜索字符串–（samAccountName = \* MYPC $）
+    -   最终搜索字符串– (samAccountName = \* MYPC $) 
 
 -   创建索引时，将在生成索引时生成磁盘 i/o。 这是在优先级较低的后台线程上完成的，传入的请求优先于索引生成。 如果已正确执行环境的容量规划，则这应该是透明的。 然而，编写繁重的方案或域控制器存储上的负载未知的环境可能会降低客户端体验，并应在工作时间结束。
 

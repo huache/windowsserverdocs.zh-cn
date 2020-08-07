@@ -1,20 +1,18 @@
 ---
 title: manage-bde 状态
 description: Manage-bde 状态命令的参考文章，其中提供了有关计算机上所有驱动器的信息，而不考虑它们是否受 BitLocker 保护。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1444a360-fabf-4dd3-b67f-188e6ea3fa5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 20430899b8259207f228219cf0d2ac516866714a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cab8f552cd633e5e71a13993fd2223062125f02f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922213"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886696"
 ---
 # <a name="manage-bde-status"></a>manage-bde 状态
 
@@ -46,7 +44,7 @@ manage-bde -status [<drive>] [-protectionaserrorlevel] [-computername <name>] [{
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<drive>` | 表示驱动器号后跟一个冒号。 |
 | -protectionaserrorlevel | 使 manage-bde 命令行工具发送返回代码**0** （如果卷受保护）和**1** （如果卷未受保护）;最常见的批处理脚本用于确定驱动器是否受 BitLocker 保护。 你还可以使用 **-p**作为此命令的缩写形式。 |

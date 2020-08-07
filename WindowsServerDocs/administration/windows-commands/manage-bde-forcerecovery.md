@@ -1,24 +1,22 @@
 ---
 title: manage-bde forcerecovery
 description: Manage-bde forcerecovery 命令的参考文章，用于在重新启动时强制 BitLocker 保护的驱动器进入恢复模式。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: eecae37c-c9a3-46c5-b615-a0ace1f1d778
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d6c9cc9f851d2147cd23e8cc2e6baf3021fdd4c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 407ec574c66c057664d517bda35b82da908e0291
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935381"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886882"
 ---
 # <a name="manage-bde-forcerecovery"></a>manage-bde forcerecovery
 
-重新启动时，强制 BitLocker 保护的驱动器进入恢复模式。 此命令删除驱动器中与受信任的平台模块（TPM）相关的密钥保护程序。 计算机重新启动时，只能使用恢复密码或恢复密钥来解锁驱动器。
+重新启动时，强制 BitLocker 保护的驱动器进入恢复模式。 此命令从驱动器中删除所有受信任的平台模块 (与 TPM) 相关的密钥保护程序。 计算机重新启动时，只能使用恢复密码或恢复密钥来解锁驱动器。
 
 ## <a name="syntax"></a>语法
 
@@ -28,7 +26,7 @@ manage-bde –forcerecovery <drive> [-computername <name>] [{-?|/?}] [{-help|-h}
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<drive>` | 表示驱动器号后跟一个冒号。 |
 | -computername | 指定 manage-bde.exe 将用于修改其他计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |

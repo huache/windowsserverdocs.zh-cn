@@ -1,24 +1,22 @@
 ---
 title: 子命令集-ImageGroup
 description: 用于更改映像组属性的 ImageGroup 的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4d86946a-e261-4d41-8b0c-1ab0ba2e3430
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f25acaddb08f829054ad9270ab171ab04d6ee156
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4730e7c81c910f5a522a8e9d4559f9fbf91f3ee8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937153"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882178"
 ---
 # <a name="subcommand-set-imagegroup"></a>子命令： set-ImageGroup
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 更改映像组的属性。
 
@@ -27,12 +25,12 @@ ms.locfileid: "85937153"
 wdsutil [Options] /Set-ImageGroumediaGroup:<Image group name> [/Server:<Server name>] [/Name:<New image group name>] [/Security:<SDDL>]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 mediaGroup:<Image group name>|指定映像组的名称。|
-|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定，将使用本地服务器。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定，将使用本地服务器。|
 |[/Name： <New image group name> ]|指定映像组的新名称。|
-|[/Security： <SDDL> ]|以安全描述符定义语言（SDDL）格式指定映像组的新安全描述符。|
+|[/Security： <SDDL> ]|以安全描述符定义语言 (SDDL) 格式指定映像组的新安全描述符。|
 ## <a name="examples"></a>示例
 若要设置映像组的名称，请键入：
 ```

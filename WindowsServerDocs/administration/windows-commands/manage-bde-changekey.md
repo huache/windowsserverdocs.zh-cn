@@ -1,20 +1,18 @@
 ---
 title: manage-bde changekey
 description: Manage-bde changekey 命令的参考文章，用于修改操作系统驱动器的启动密钥。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 69463db9-7e03-47ff-b233-a95d5055725f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f6b09dfdb73e019b909f43e14a82465573c1a6f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3b1ac3801fe78494d33ae57fd869986b55f886d0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934992"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886952"
 ---
 # <a name="manage-bde-changekey"></a>manage-bde changekey
 
@@ -28,7 +26,7 @@ manage-bde -changekey [<drive>] [<pathtoexternalkeydirectory>] [-computername <n
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<drive>` | 表示驱动器号后跟一个冒号。 |
 | -computername | 指定 manage-bde.exe 将用于修改其他计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |

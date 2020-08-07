@@ -1,31 +1,29 @@
 ---
 title: NFS 文件服务器性能优化
 description: NFS 文件服务器性能优化
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: roopeshb, nedpyle
 ms.date: 10/16/2017
-ms.openlocfilehash: 9bee396532c3319e43d10012e098533495cf0b03
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 897e45a99ac4640c5fbae4287ac99a0bce6eae66
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851850"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896184"
 ---
 # <a name="performance-tuning-nfs-file-servers"></a>性能优化 NFS 文件服务器
 
 ## <a name="services-for-nfs-model"></a><a href="" id="servicesnfs"></a>NFS 服务模型
 
 
-以下各节提供有关用于客户端-服务器通信的 Microsoft 服务网络文件系统（NFS）模型的信息。 由于 NFS v2 和 NFS v3 仍是最广泛部署的协议版本，因此除 MaxConcurrentConnectionsPerIp 之外的所有注册表项都仅适用于 NFS v2 和 NFS v3。
+以下部分提供有关用于客户端-服务器通信的 Microsoft 网络文件系统 (NFS) 型号的信息。 由于 NFS v2 和 NFS v3 仍是最广泛部署的协议版本，因此除 MaxConcurrentConnectionsPerIp 之外的所有注册表项都仅适用于 NFS v2 和 NFS v3。
 
 对于 NFS 4.1 协议，不需要进行注册表优化。
 
 ### <a name="service-for-nfs-model-overview"></a>NFS 服务模型概述
 
-Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件共享解决方案。 此通信模型由客户端计算机和服务器组成。 通过重定向程序（Rdbss）和 NFS 微型重定向程序（Nfsrdr）位于服务器上的客户端请求文件上的应用程序。 小型重定向程序使用 NFS 协议通过 TCP/IP 发送请求。 服务器通过 TCP/IP 接收来自客户端的多个请求，并将请求路由到本地文件系统（.sys），该文件将访问存储堆栈。
+Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件共享解决方案。 此通信模型由客户端计算机和服务器组成。 通过重定向程序在服务器上的客户端请求文件上的应用程序 ( # A0) 和 NFS 微型重定向程序 ( # A1) 。 小型重定向程序使用 NFS 协议通过 TCP/IP 发送请求。 服务器通过 TCP/IP 接收来自客户端的多个请求，并将请求路由到本地文件系统 ( # A0) ，该文件将访问存储堆栈。
 
 下图显示了 NFS 的通信模型。
 
@@ -33,7 +31,7 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
 
 ### <a name="tuning-parameters-for-nfs-file-servers"></a>NFS 文件服务器的优化参数
 
-下面的 REG\_DWORD 注册表设置可能会影响 NFS 文件服务器的性能：
+以下 REG \_ DWORD 注册表设置可能会影响 NFS 文件服务器的性能：
 
 -   **OptimalReads**
 
@@ -41,7 +39,7 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\OptimalReads
     ```
 
-    默认值为 0。 此参数确定是打开文件\_随机\_ACCESS 还是仅为文件\_顺序\_，具体取决于工作负荷 i/o 特性。 将此值设置为1以强制打开文件\_随机\_访问。 文件\_随机\_访问会阻止文件系统和缓存管理器进行预提取。
+    默认值为 0。 此参数确定是打开文件以进行文件 \_ 随机 \_ 访问还是只打开 \_ 文件 \_ （具体取决于工作负荷 i/o 特征）。 将此值设置为1以强制打开文件以进行文件 \_ 随机 \_ 访问。 文件 \_ 随机 \_ 访问会阻止文件系统和缓存管理器进行预提取。
 
     >[!NOTE]
     > 必须仔细评估此设置，因为它可能会对系统文件缓存增长造成潜在影响。
@@ -85,7 +83,7 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\FileHandleCacheSizeinMB
     ```
 
-    默认值为 4。 此参数指定文件句柄缓存条目使用的最大内存。 最小值为1，最大值为 1\*1024\*1024\*1024 （1073741824）。
+    默认值为 4。 此参数指定文件句柄缓存条目使用的最大内存。 最小值为1，最大值为 1 \* 1024 \* 1024 \* 1024 (1073741824) 。
 
 -   **LockFileHandleCacheInMemory**
 
@@ -93,7 +91,7 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\LockFileHandleCacheInMemory
     ```
 
-    默认值为 0。 此参数指定是否在内存中锁定为 FileHandleCacheSizeInMB 指定的缓存大小分配的物理页。 将此值设置为1可启用此活动。 页面锁定在内存中（不分页到磁盘），这会提高解析文件句柄的性能，但会减少应用程序可用的内存。
+    默认值为 0。 此参数指定是否在内存中锁定为 FileHandleCacheSizeInMB 指定的缓存大小分配的物理页。 将此值设置为1可启用此活动。 页面将在内存中锁定 (不会分页到磁盘) ，这会提高解析文件句柄的性能，但会减少应用程序可用的内存。
 
 -   **MaxIcbNfsReadHandlesCacheSize**
 
@@ -101,7 +99,7 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\MaxIcbNfsReadHandlesCacheSize
     ```
 
-    默认值为64。 此参数指定读取数据缓存每个卷的最大句柄数。 仅在内存超过 1 GB 的系统上创建读取缓存条目。 最小值为0，最大值为0xFFFFFFFF。
+    默认值为 64。 此参数指定读取数据缓存每个卷的最大句柄数。 仅在内存超过 1 GB 的系统上创建读取缓存条目。 最小值为0，最大值为0xFFFFFFFF。
 
 -   **HandleSigningEnabled**
 
@@ -117,7 +115,7 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrNfsDeferredWritesFlushDelay
     ```
 
-    默认值为60。 此参数是一个软超时，用于控制 NFS V3 不稳定写入数据缓存的持续时间。 最小值为1，最大值为600。 实际生存期约等于 RdWrNfsDeferredWritesFlushDelay 乘以 RdWrThreadSleepTime。
+    默认值为 60。 此参数是一个软超时，用于控制 NFS V3 不稳定写入数据缓存的持续时间。 最小值为1，最大值为600。 实际生存期约等于 RdWrNfsDeferredWritesFlushDelay 乘以 RdWrThreadSleepTime。
 
 -   **CacheAddFromCreateAndMkDir**
 
@@ -125,7 +123,7 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\CacheAddFromCreateAndMkDir
     ```
 
-    默认值为1（已启用）。 此参数控制在 NFS V2 和 V3 CREATE 期间打开的句柄是否在文件句柄缓存中保留。 将此值设置为0可禁止在 CREATE 和 MKDIR 代码路径中向缓存添加条目。
+    默认值为 1 () 启用。 此参数控制在 NFS V2 和 V3 CREATE 期间打开的句柄是否在文件句柄缓存中保留。 将此值设置为0可禁止在 CREATE 和 MKDIR 代码路径中向缓存添加条目。
 
 -   **AdditionalDelayedWorkerThreads**
 
@@ -141,10 +139,10 @@ Microsoft NFS 服务为具有混合 Windows 和 UNIX 环境的企业提供文件
     HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreation
     ```
 
-    Windows Server 2012 和 Windows Server 2012 R2 中的默认值为2。 在 Windows Server 2012 之前的版本中，默认值为0。 此参数确定 NTFS 是否为长文件名和包含扩展字符集中的字符的文件名以8dot3 （MSDOS.SYS）命名约定生成短名称。 如果此项的值为0，则文件可以有两个名称：用户指定的名称和 NTFS 生成的短名称。 如果用户指定的名称遵循8dot3 命名约定，则 NTFS 不会生成短名称。 如果值为2，则表示可以按卷配置此参数。
+    Windows Server 2012 和 Windows Server 2012 R2 中的默认值为2。 在 Windows Server 2012 之前的版本中，默认值为0。 此参数确定 NTFS 是否在 8dot3 (MSDOS.SYS) 命名约定中生成长文件名的短名称，以及包含扩展字符集中的字符的文件名。 如果此项的值为0，则文件可以有两个名称：用户指定的名称和 NTFS 生成的短名称。 如果用户指定的名称遵循8dot3 命名约定，则 NTFS 不会生成短名称。 如果值为2，则表示可以按卷配置此参数。
 
     >[!NOTE]
-    > 默认情况下，系统卷启用了8dot3。 Windows Server 2012 和 Windows Server 2012 R2 中的所有其他卷默认禁用8dot3。 更改此值不会更改文件的内容，但可以避免创建文件的短名称属性，这也会改变 NTFS 显示和管理文件的方式。 对于大多数文件服务器，建议设置为1（禁用）。
+    > 默认情况下，系统卷启用了8dot3。 Windows Server 2012 和 Windows Server 2012 R2 中的所有其他卷默认禁用8dot3。 更改此值不会更改文件的内容，但可以避免创建文件的短名称属性，这也会改变 NTFS 显示和管理文件的方式。 对于大多数文件服务器，建议的设置为 1 (禁用) 。
 
 
 -   **NtfsDisableLastAccessUpdate**

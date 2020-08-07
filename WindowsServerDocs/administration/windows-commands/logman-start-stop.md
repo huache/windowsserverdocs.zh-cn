@@ -1,24 +1,22 @@
 ---
 title: logman start and logman stop
 description: 用于启动数据收集器并将开始时间设置为手动的 logman start 和 logman 停止命令的参考文章，或停止数据收集器集并将结束时间设置为手动。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a40006a1-876e-474b-aaf1-f365c730deea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7b7da9aad31b977c2343e6f784b19dd420c21e6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7a3ce29afa974a65ac86e9e17dd4ec7eb65135fd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925426"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887268"
 ---
 # <a name="logman-start-and-logman-stop"></a>logman start and logman stop
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 **Logman start**命令启动一个数据收集器，并将开始时间设置为 "手动"。 **Logman stop**命令停止数据收集器集，并将结束时间设置为 "手动"。
 
@@ -31,7 +29,7 @@ logman stop <[-n] <name>> [options]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的远程计算机上执行命令。 |
 | -config`<value>` | 指定包含命令选项的设置文件。 |

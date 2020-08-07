@@ -1,20 +1,18 @@
 ---
 title: manage-bde off
 description: Manage-bde off 命令的参考文章，用于对驱动器进行解密并关闭 BitLocker。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0a27c119-d385-45e5-89fe-e311d4429876
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65749f31750b1f7467539b25b09061ea267636df
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5eb554a77b07028f22707456f90d62422613fb08
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935526"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886827"
 ---
 # <a name="manage-bde-off"></a>manage-bde off
 
@@ -28,7 +26,7 @@ manage-bde -off [<volume>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<volume>` | 指定驱动器号后跟冒号、卷 GUID 路径或装入的卷。 |
 | -computername | 指定 manage-bde.exe 将用于修改其他计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |

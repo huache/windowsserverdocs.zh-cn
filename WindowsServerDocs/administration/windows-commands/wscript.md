@@ -1,20 +1,18 @@
 ---
 title: wscript
 description: Wscript.echo 的参考文章，其中提供了一个环境，用户可以在其中使用各种对象模型执行任务来执行脚本。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2fbaf193-cdbd-414c-84c9-bb5720f84c29
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: a07ad9b33000b17f5c6f41835a1a36531b3945af
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4d3ab5d04423a093b280b8468c7e85aad3519dcb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958879"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896444"
 ---
 # <a name="wscript"></a>wscript
 
@@ -30,7 +28,7 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 
 #### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |scriptname|指定脚本文件的路径和文件名。|
 |/b|指定批处理模式，该模式不会显示警报、脚本错误或输入提示。 这与 **/i**相反。|
@@ -43,9 +41,9 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 |/logo|指定在运行脚本之前 Windows 脚本宿主横幅显示在控制台中。</br>这是默认值，与 **/nologo**相反。|
 |/nologo|指定在运行脚本之前不显示 Windows 脚本宿主横幅。 这与 **/logo**相反。|
 |/s|为当前用户保存当前的命令提示符选项。|
-|/t:\<number>|指定脚本可运行的最长时间（秒）。 最多可指定32767秒。</br>默认值为无时间限制。|
+|/t:\<number>|指定脚本可在几秒)  (运行的最长时间。 最多可指定32767秒。</br>默认值为无时间限制。|
 |/x|启动调试器中的脚本。|
-|ScriptArguments|指定传递给脚本的参数。 每个脚本参数必须以斜杠（/）开头。|
+|ScriptArguments|指定传递给脚本的参数。 每个脚本参数前面必须加上一个斜杠 (/) 。|
 |/?|在命令提示符下显示帮助。|
 
 ## <a name="remarks"></a>备注

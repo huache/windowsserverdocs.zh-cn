@@ -1,26 +1,24 @@
 ---
 title: select
 description: '* * * * 的参考文章'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9eeb40c0-4258-46e2-8dbc-94f63497e771
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6004d39e225b1ac4acd96b4108accff2ccfc485c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a41d240cfdcb15068d479fb96fce09880db7c1f9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935928"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882777"
 ---
 # <a name="select"></a>select
 
 
 
-将焦点移到磁盘、分区、卷或虚拟硬盘（VHD）。
+将焦点移到磁盘、分区、卷或虚拟硬盘 (VHD) 。
 
 ## <a name="syntax"></a>语法
 
@@ -33,7 +31,7 @@ select vdisk
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |[选择磁盘](select-disk.md)|将焦点移到磁盘。|
 |[选择分区](select-partition.md)|将焦点移到分区。|

@@ -1,30 +1,28 @@
 ---
 title: 性能优化远程桌面虚拟化主机
 description: 远程桌面虚拟化主机的性能优化
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 2a0db4d890a01df13c44a9bb7adfbd13bebbdde0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 071321249db62c927ee5677a48c52a7f2cd9c20d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851700"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896035"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>性能优化远程桌面虚拟化主机
 
-远程桌面虚拟化主机（RD 虚拟化主机）是一项角色服务，它支持虚拟桌面基础结构（VDI）方案，使多个用户能够在运行 Windows Server 和 Hyper-v 的服务器上托管的虚拟机中运行基于 Windows 的应用程序。
+远程桌面虚拟化主机 (RD 虚拟化主机) 是一项角色服务，它支持虚拟桌面基础结构 (VDI) 方案，并允许多个用户在运行 Windows Server 和 Hyper-v 的服务器上托管的虚拟机中运行基于 Windows 的应用程序。
 
 Windows Server 支持两种类型的虚拟桌面：个人虚拟机和共用虚拟机。
 
-## <a name="general-considerations"></a>常规注意事项
+## <a name="general-considerations"></a>一般注意事项
 
 ### <a name="storage"></a>存储
 
-存储是最有可能的性能瓶颈，因此，请务必调整存储空间，以正确处理虚拟机状态更改所生成的 i/o 负载。 如果试点或模拟不可行，最好是为四个活动虚拟机预配一个磁盘主轴。 使用具有良好写入性能（如 RAID 1 + 0）的磁盘配置。
+存储是最有可能的性能瓶颈，因此，请务必调整存储空间，以正确处理虚拟机状态更改所生成的 i/o 负载。 如果试点或模拟不可行，最好是为四个活动虚拟机预配一个磁盘主轴。 使用具有良好写入性能的磁盘配置 (如 RAID 1 + 0) 。
 
 如果需要，请使用磁盘重复数据删除和缓存来减少磁盘读取负载，并使存储解决方案能够通过缓存大量映像来提高性能。
 
@@ -32,7 +30,7 @@ Windows Server 支持两种类型的虚拟桌面：个人虚拟机和共用虚�
 
 重复数据删除功能在 Windows Server 2012 R2 中引入，支持优化打开的文件。 为了使用在删除了重复数据的卷上运行的虚拟机，需要将虚拟机文件存储在与 Hyper-v 主机不同的主机上。 如果 Hyper-v 和重复数据删除在同一台计算机上运行，这两项功能将争用系统资源并对总体性能产生负面影响。
 
-还必须将卷配置为使用 "虚拟桌面基础结构（VDI）" 重复数据删除优化类型。 你可以使用服务器管理器（**文件和存储服务** -&gt;**卷** -&gt;**重复数据删除设置**）或使用以下 Windows PowerShell 命令来配置此项：
+还必须将卷配置为使用 "虚拟桌面基础结构 (VDI) " 重复数据删除优化类型。 你可以使用服务器管理器 (**文件和存储服务**  - &gt; **卷**  - &gt; **重复数据删除设置**) 或使用以下 Windows PowerShell 命令进行配置：
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
@@ -63,7 +61,7 @@ Enable-DedupVolume <volume> -UsageType HyperV
 
 ## <a name="performance-optimizations"></a>性能优化
 
-### <a name="dynamic-memory"></a>动态内存
+### <a name="dynamic-memory"></a>Dynamic Memory
 
 通过平衡内存在运行的虚拟机之间的分布情况，动态内存可以更有效地利用运行 Hyper-v 的服务器的内存资源。 可以在虚拟机之间动态分配内存，以响应其变化的工作负荷。
 
@@ -73,15 +71,15 @@ Enable-DedupVolume <volume> -UsageType HyperV
 
 ### <a name="tiered-storage"></a>分层存储
 
-RD 虚拟化主机支持用于虚拟桌面池的分层存储。 集合中所有共用虚拟桌面共享的物理计算机可以使用小型、高性能的存储解决方案，如镜像固态驱动器（SSD）。 可以将共用虚拟桌面置于更昂贵的传统存储上，如 RAID 1 + 0。
+RD 虚拟化主机支持用于虚拟桌面池的分层存储。 集合中所有共用虚拟桌面共享的物理计算机可以使用小型、高性能的存储解决方案，如镜像固态驱动器 (SSD) 。 可以将共用虚拟桌面置于更昂贵的传统存储上，如 RAID 1 + 0。
 
 物理计算机应放置在 SSD 上，因为共用虚拟机中的大部分读 i/o 都将进入管理操作系统。 因此，物理计算机使用的存储必须在每秒读取的 i/o 数上保持高得多。
 
-此部署配置可确保经济高效地执行性能。 SSD 为较小的磁盘提供更高的性能（每个集合大约 20 GB，具体取决于配置）。 用于共用虚拟机的传统存储（RAID 1 + 0）每个虚拟机使用约 3 GB。
+此部署配置可确保经济高效地执行性能。 SSD 为较小的磁盘提供更高的性能 (~ 每个集合大约有 20 GB，具体取决于配置) 。 适用于共用虚拟机的传统存储 (RAID 1 + 0) 每个虚拟机使用约 3 GB。
 
 ### <a name="csv-cache"></a>CSV 缓存
 
-Windows Server 2012 和更高版本中的故障转移群集提供群集共享卷（CSV）上的缓存。 这对于共用虚拟桌面集合非常有利，其中大多数读取 i/o 都来自管理操作系统。 CSV 缓存按几个数量级提供更高的性能，因为它会缓存一次读取的块并从系统内存中传递它们，从而减少 i/o。 有关 CSV 缓存的详细信息，请参阅[如何启用 Csv 缓存](https://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx)。
+Windows Server 2012 和更高版本中的故障转移群集在群集共享卷上 (CSV) 提供缓存。 这对于共用虚拟桌面集合非常有利，其中大多数读取 i/o 都来自管理操作系统。 CSV 缓存按几个数量级提供更高的性能，因为它会缓存一次读取的块并从系统内存中传递它们，从而减少 i/o。 有关 CSV 缓存的详细信息，请参阅[如何启用 Csv 缓存](https://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx)。
 
 ### <a name="pooled-virtual-desktops"></a>共用虚拟机
 
@@ -93,11 +91,11 @@ Windows Server 2012 和更高版本中的故障转移群集提供群集共享卷
 
 在进行广泛的部署之前，应正确评估每个特定服务。 下面是需要考虑的一些初始事项：
 
-| 服务                                      | 为什么?                                                                                                                                                                                                      |
+| 服务                                      | 为什么？                                                                                                                                                                                                      |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 自动更新                                  | 通过重新创建虚拟桌面模板来更新共用虚拟机。                                                                                                                          |
 | 脱机文件                                | 虚拟桌面始终处于联机状态，并且已从网络上查看。                                                                                                                         |
-| 后台碎片整理                            | 文件系统更改会在用户注销后被丢弃（因为回滚到处于纯洁状态或重新创建虚拟桌面模板，这将导致重新创建所有共用虚拟机）。 |
+| 后台碎片整理                            | 文件系统更改会在用户注销后被丢弃 (因为回滚到处于纯洁状态或重新创建虚拟桌面模板，这将导致重新创建所有共用虚拟桌面) 。 |
 | 休眠或睡眠                           | VDI 没有此类概念                                                                                                                                                                                   |
 | Bug 检查内存转储                        | 没有适用于共用虚拟机的概念。 Bug 检查共用虚拟桌面将从处于纯洁状态开始。                                                                                       |
 | WLAN 自动配置                              | 没有用于 VDI 的 WiFi 设备接口                                                                                                                                                                 |

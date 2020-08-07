@@ -1,20 +1,18 @@
 ---
 title: manage-bde on
 description: 有关 manage-bde on 命令的参考文章，可对驱动器进行加密并打开 BitLocker。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f6a12814-df74-416c-a04a-62ea8512263e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b06c8a37524544201bf9f37a446a8d227f878ee4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cb1f58cb5f9683e4f9c01343d86af3332c8c3e32
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935451"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886792"
 ---
 # <a name="manage-bde-on"></a>manage-bde on
 
@@ -31,7 +29,7 @@ manage-bde –on <drive> {[-recoverypassword <numericalpassword>]|[-recoverykey 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<drive>` | 表示驱动器号后跟一个冒号。 |
 | -ms-fve-recoverypassword | 添加数字密码保护程序。 你还可以使用 **-rp**作为此命令的缩写形式。 |
@@ -41,7 +39,7 @@ manage-bde –on <drive> {[-recoverypassword <numericalpassword>]|[-recoverykey 
 | -启动 | 添加用于启动的外部密钥保护程序。 你还可以使用 **-sk**作为此命令的缩写形式。 |
 | `<pathtoexternalkeydirectory>` | 表示启动密钥的目录路径。 |
 | -证书 | 为数据驱动器添加公钥保护程序。 你还可以使用 **-cert**作为此命令的缩写形式。 |
-| -tpmandpin | 为操作系统驱动器添加受信任的平台模块（TPM）和个人标识号（PIN）保护程序。 你还可以使用 **-tp**作为此命令的缩写形式。 |
+| -tpmandpin | 添加受信任的平台模块 (TPM) 和个人标识号 (适用于操作系统驱动器的 PIN) 保护程序。 你还可以使用 **-tp**作为此命令的缩写形式。 |
 | -tpmandstartupkey | 添加操作系统驱动器的 TPM 和启动密钥保护程序。 你还可以使用 **-tsk**作为此命令的缩写形式。 |
 | -tpmandpinandstartupkey | 为操作系统驱动器添加 TPM、PIN 和启动密钥保护程序。 你还可以使用 **-tpsk**作为此命令的缩写形式。 |
 | -password | 添加数据驱动器的密码密钥保护程序。 你还可以使用 **-pw**作为此命令的缩写形式。 |
@@ -72,7 +70,7 @@ manage-bde –on C: -recoverypassword
 manage-bde –on C: -recoverykey E:\ -recoverypassword
 ```
 
-若要打开驱动器 C 的 BitLocker，使用外部密钥保护程序（例如 USB 密钥）来解锁操作系统驱动器，请键入：
+若要打开驱动器 C 的 BitLocker，使用外部密钥保护程序 (例如 USB 密钥) 来解锁操作系统驱动器，请键入：
 
 ```
 manage-bde -on C: -startupkey E:\

@@ -1,18 +1,16 @@
 ---
 title: SMB 文件服务器的性能优化
 description: SMB 文件服务器的性能优化
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 89017686801501593c51245d44bf88a6ecf4baf6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9e20b05f911726837cf436798a3743fbb80af193
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851820"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896153"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB 文件服务器的性能优化
 
@@ -30,7 +28,7 @@ ms.locfileid: "80851820"
 
 ### <a name="smb-30-protocol-family"></a>SMB 3.0 协议系列
 
-在 Windows Server 2012 中引入了 SMB 3.0，并在 Windows Server 2012 R2 （SMB 3.02）和 Windows Server 2016 （SMB 3.1.1）中进一步增强了这些功能。 此版本引入了可显著提高文件服务器性能和可用性的技术。 有关详细信息，请参阅[Windows Server 2012 中的 SMB 和 2012 R2 2012](https://aka.ms/smb3plus)以及[smb 3.1.1 中的新增功能](https://aka.ms/smb311)。
+SMB 3.0 在 Windows Server 2012 中引入，在 Windows Server 2012 R2 中进一步增强 (SMB 3.02) 和 Windows Server 2016 (SMB 3.1.1) 。 此版本引入了可显著提高文件服务器性能和可用性的技术。 有关详细信息，请参阅[Windows Server 2012 中的 SMB 和 2012 R2 2012](https://aka.ms/smb3plus)以及[smb 3.1.1 中的新增功能](https://aka.ms/smb311)。
 
 
 
@@ -58,7 +56,7 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
 
 ### <a name="performance-counters-for-smb-30"></a>SMB 3.0 的性能计数器
 
-以下 SMB 性能计数器是在 Windows Server 2012 中引入的，并且在监视 SMB 2 和更高版本的资源使用情况时，它们被视为一组基本计数器。 将性能计数器记录到本地原始（.blg）性能计数器日志。 使用通配符（\*）收集所有实例的开销较低，然后使用 dcdiag.exe 提取后期处理过程中的特定实例。
+以下 SMB 性能计数器是在 Windows Server 2012 中引入的，并且在监视 SMB 2 和更高版本的资源使用情况时，它们被视为一组基本计数器。 将性能计数器记录到本地原始 ( .blg) 性能计数器日志。 使用通配符 () 来收集所有实例的开销较低 \* ，然后使用 Relog.exe 在后期处理过程中提取特定实例。
 
 -   **SMB 客户端共享**
 
@@ -74,7 +72,7 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
 
     这些计数器显示有关使用 SMB 2.0 或更高版本的 SMB 服务器会话的信息。
 
-    在服务器端（服务器共享或服务器会话）上打开计数器可能会对高 IO 工作负荷产生显著的性能影响。
+    如果在服务器端 (服务器共享或服务器) 会话中打开计数器，则高 IO 工作负荷可能会对性能产生重大影响。
 
 -   **继续密钥筛选器**
 
@@ -86,12 +84,12 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
 
 -   **物理磁盘、SMB、CSV FS 性能计数器关系**
 
-    有关物理磁盘、SMB 和 CSV FS （文件系统）计数器如何相关的详细信息，请参阅以下博客文章：[群集共享卷性能计数器](https://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx)。
+    有关物理磁盘、SMB 和 CSV FS (文件系统) 计数器如何相关的详细信息，请参阅以下博客文章：[群集共享卷性能计数器](https://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx)。
 
 ## <a name="tuning-parameters-for-smb-file-servers"></a>SMB 文件服务器的优化参数
 
 
-以下 REG\_DWORD 注册表设置可能会影响 SMB 文件服务器的性能：
+以下 REG \_ DWORD 注册表设置可能会影响 SMB 文件服务器的性能：
 
 - **Smb2CreditsMin**和**smb2creditsmax 为**
 
@@ -104,11 +102,11 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
   ```
 
   默认值分别为512和8192。 这些参数允许服务器在指定边界内动态地限制客户端操作并发。 某些客户端可能会提高吞吐量，增加并发限制，例如，通过高带宽、高延迟链路复制文件。
-    
+
   > [!TIP]
-  > 在 Windows 10 和 Windows Server 2016 之前，根据网络延迟和信用使用情况，向客户端授予的信用额度将在 Smb2CreditsMin 和 Smb2creditsmax 为之间动态变化。 在 Windows 10 和 Windows Server 2016 中，SMB 服务器已更改为在请求达到配置的最大信用额度时无条件地授予信用额度。 作为此更改的一部分，信用限制机制会在服务器处于内存压力下时减少每个连接的信用时段的大小。 触发限制的内核内存不足事件仅在服务器内存不足（< 几 MB）时才会发出信号。 由于服务器不再缩小信用时段，Smb2CreditsMin 设置不再是必需的，现已被忽略。
-  > 
-  > 可以监视 SMB 客户端共享\\贷隔一秒，查看信用是否有任何问题。
+  > 在 Windows 10 和 Windows Server 2016 之前，根据网络延迟和信用使用情况，向客户端授予的信用额度将在 Smb2CreditsMin 和 Smb2creditsmax 为之间动态变化。 在 Windows 10 和 Windows Server 2016 中，SMB 服务器已更改为在请求达到配置的最大信用额度时无条件地授予信用额度。 作为此更改的一部分，信用限制机制会在服务器处于内存压力下时减少每个连接的信用时段的大小。 触发限制的内核内存不足事件仅在服务器内存较低时发出信号 ( # A0 几 MB) 无法使用。 由于服务器不再缩小信用时段，Smb2CreditsMin 设置不再是必需的，现已被忽略。
+  >
+  > 可以监视 SMB 客户端共享 \\ 信用额度，以查看是否存在任何信用额度问题。
 
 - **AdditionalCriticalWorkerThreads**
 
@@ -119,7 +117,7 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
     默认值为0，表示不添加其他关键内核工作线程。 此值影响文件系统缓存用于预读和后写请求的线程数。 如果引发此值，则可以在存储子系统中进行更多的排队 i/o，还可以提高 i/o 性能，尤其是在具有很多逻辑处理器和强大的存储硬件的系统上。
 
     >[!TIP]
-    > 如果缓存管理器脏数据（性能计数器缓存\\脏页）的数量正在增长以消耗大部分（超过约25%），则可能需要增加该值如果系统正在进行大量同步读 i/o，则为。
+    > 如果缓存管理器脏数据 (性能计数器缓存 \\ 脏页) 的数量不断增长， (超过 ~ 25 ) % 的内存或系统正在执行大量同步读 i/o 操作，则可能需要增加此值。
 
 - **MaxThreadsPerQueue**
 
@@ -130,19 +128,19 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
   默认值为 20。 增加此值会引发文件服务器可用于为并发请求服务的线程数。 当需要为大量活动的连接提供服务，并且硬件资源（例如存储带宽）足够时，增加该值可以提高服务器的可伸缩性、性能和响应时间。
 
   >[!TIP]
-  > 指示可能需要增加值的情况是，SMB2 工作队列是否增长得非常大（性能计数器 "服务器工作队列\\队列长度\\SMB2 非阻止性 \*" 持续时间超过 ~ 100）。
+  > 指示可能需要增加值的情况是，如果 SMB2 工作队列增长得非常大 (性能计数器 "服务器工作队列 \\ 队列长度 \\ SMB2 非阻止性 \* " 的大小一直低于 ~ 100) 。
 
   >[!Note]
   >在 Windows 10 和 Windows Server 2016 中，MaxThreadsPerQueue 不可用。 线程池的线程数将为 "20 * NUMA 节点中的处理器数"。
-     
+
 
 - **AsynchronousCredits**
 
-  ``` 
+  ```
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
   ```
 
-  默认值为512。 此参数限制单个连接上允许的并发异步 SMB 命令数。 某些情况下（例如，当具有后端 IIS 服务器的前端服务器时）需要大量并发（特别是对于文件更改通知请求）。 此项的值可以增加以支持这些情况。
+  默认值为 512。 此参数限制单个连接上允许的并发异步 SMB 命令数。 某些情况下 (例如，当存在具有后端 IIS 服务器的前端服务器时) 需要大量并发 (文件更改通知请求，尤其是) 。 此项的值可以增加以支持这些情况。
 
 ### <a name="smb-server-tuning-example"></a>SMB 服务器优化示例
 

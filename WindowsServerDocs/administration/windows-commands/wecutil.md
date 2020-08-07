@@ -1,19 +1,17 @@
 ---
 title: wecutil
 description: Wecutil 的参考文章，可用于创建和管理从远程计算机转发的事件的订阅。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimps
-ms.openlocfilehash: af9e987bb78e4ef326f01effec6f3d7b53145091
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be3c05bcb8122db0dddd1eea8823222786d58008
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924785"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896530"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -37,7 +35,7 @@ wecutil  [{es | enum-subscription}]
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |{es \| 枚举-订阅}|显示存在的所有远程事件订阅的名称。|
 |{gs \| 获取-订阅} \<Subid>[/f： \<Format> ][/uni： \<Unicode> ]|显示远程订阅配置信息。 \<Subid>是唯一标识订阅的字符串。 \<Subid>与 \<SubscriptionId> 用于创建订阅的 XML 配置文件的标记中所指定的字符串相同。|
@@ -50,7 +48,7 @@ wecutil  [{es | enum-subscription}]
 
 ## <a name="options"></a>选项
 
-|选项|说明|
+|选项|描述|
 |------|-----------|
 |/f\<Format>|指定显示的信息的格式。 \<Format>可以是 XML 或简要。 如果 <Format> 为 xml，则输出以 xml 格式显示。 如果 \<Format> 为简要，则输出将以名称-值对的形式显示。 默认值为简要。|
 |/c\<Configfile>|指定包含订阅配置的 XML 文件的路径。 路径可以是相对于当前目录的绝对路径或相对路径。 此选项只能与 **/cun**和 **/cup**选项一起使用，并且与所有其他选项互相排斥。|
@@ -73,22 +71,22 @@ wecutil  [{es | enum-subscription}]
 |dmi\<Deliverymax>|设置批处理传递的最大项数。 仅当 **/cm**设置为 Custom 时，此选项才有效。|
 |/dmlt:\<Deliverytime>|设置提供一批事件时的最大延迟。 \<Deliverytime>毫秒数。 仅当 **/cm**设置为 Custom 时，此选项才有效。|
 |hi\<Heartbeat>|定义检测信号间隔。 \<Heartbeat>毫秒数。 仅当 **/cm**设置为 Custom 时，此选项才有效。|
-|cf\<Content>|指定返回的事件的格式。 \<Content>可以是事件或 RenderedText。 如果值为 RenderedText，则会返回附加到事件的已本地化字符串（例如事件描述）的事件。 默认值为 RenderedText。|
+|cf\<Content>|指定返回的事件的格式。 \<Content>可以是事件或 RenderedText。 如果值为 RenderedText，则会返回带有本地化字符串的事件， (如附加到事件) 事件说明。 默认值为 RenderedText。|
 |/l:\<Locale>|指定以 RenderedText 格式传递本地化字符串的区域设置。 \<Locale>是语言和国家/地区标识符，例如 EN-US。 仅当 **/cf**选项设置为 RenderedText 时，此选项才有效。|
-|/ree： [ \<Readexist> ]|标识为订阅传递的事件。 \<Readexist>可以为 true 或 false。 如果 <Readexist> 为 true，则会从订阅事件源中读取所有现有事件。 当 <Readexist> 为 false 时，只传递未来的（到达的）事件。 对于没有值的 **/ree**选项，默认值为 true。 如果未指定 **/ree**选项，则默认值为 false。|
+|/ree： [ \<Readexist> ]|标识为订阅传递的事件。 \<Readexist>可以为 true 或 false。 如果 <Readexist> 为 true，则会从订阅事件源中读取所有现有事件。 <Readexist>为 false 时，仅传递未来 (到达) 事件。 对于没有值的 **/ree**选项，默认值为 true。 如果未指定 **/ree**选项，则默认值为 false。|
 |换行符\<Logfile>|指定用于存储从事件源接收的事件的本地事件日志。|
 |pn\<Publishername>|指定发布服务器名称。 它必须是拥有或导入 **/lf**选项指定的日志的发布者。|
 |/essp:\<Enableport>|指定必须将端口号附加到远程服务的服务主体名称。 \<Enableport>可以为 true 或 false。 如果为 true，则附加端口号 <Enableport> 。 如果附加了端口号，则可能需要某些配置以防止拒绝对事件源的访问。|
 |hn\<Hostname>|指定本地计算机的 DNS 名称。 此名称由远程事件源用来推送回事件，并且必须仅用于推送订阅。|
 |/ct\<Type>|设置远程源访问的凭据类型。 \<Type>应为以下值之一： default、negotiate、digest、basic 或 localmachine。 默认值为 "默认值"。|
 |/cun:\<Comusername>|设置要用于没有自己的用户凭据的事件源的共享用户凭据。 如果此选项与 **/c**选项一起指定，则将忽略配置文件中各个事件源的用户名和 UserPassword 设置。 如果要将不同的凭据用于特定事件源，则应通过在另一个**ss**命令的命令行上指定特定事件源的 **/un**和 **/up**选项来重写此值。|
-|杯\<Compassword>|设置共享用户凭据的用户密码。 当 \<Compassword> 设置为 * （星号）时，从控制台读取密码。 仅当指定了 **/cun**选项时，此选项才有效。|
+|杯\<Compassword>|设置共享用户凭据的用户密码。 如果 \<Compassword> 将设置为 * (星号) ，则从控制台读取密码。 仅当指定了 **/cun**选项时，此选项才有效。|
 |/q： [ \<Quiet> ]|指定配置过程是否提示确认。 \<Quiet>可以为 true 或 false。 如果 <Quiet> 为 true，则配置过程不会提示确认。 此选项的默认值为 false。|
 
 ## <a name="remarks"></a>备注
 
 > [!IMPORTANT]
-> 如果收到消息 "RPC 服务器不可用？尝试运行 wecutil 时，需要启动 Windows 事件收集器服务（wecsvc）。 若要启动 wecsvc，请在提升的命令提示符下键入 net start wecsvc。
+> 如果收到消息 "RPC 服务器不可用？尝试运行 wecutil 时，需要启动 Windows 事件收集器服务 (wecsvc) 。 若要启动 wecsvc，请在提升的命令提示符下键入 net start wecsvc。
 
 - 显示配置文件的内容：
   ```
@@ -151,7 +149,7 @@ wecutil ss sub1 /c:%Windir%\system32\WsSelRg2.xml
 ```
 wecutil ss sub2 /esa:myComputer /ese /un:uname /up:* /cm:Normal
 ```
-创建一个订阅，用于将事件从远程计算机的 Windows Vista 应用程序事件日志转发到 ForwardedEvents 日志（有关配置文件的示例，请参阅备注）：
+创建订阅以将事件从远程计算机的 Windows Vista 应用程序事件日志转发到 ForwardedEvents 日志 (参阅) 的配置文件示例的备注：
 ```
 wecutil cs subscription.xml
 ```

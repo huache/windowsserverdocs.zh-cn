@@ -1,20 +1,18 @@
 ---
 title: manage-bde ms-fve-keypackage
 description: Manage-bde ms-fve-keypackage 命令的参考文章，可为驱动器生成密钥包。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c631ef10-2a2f-4541-8578-292f2d4e9e80
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bdbd9bb46b75e7dc87cae1cd6e9b3a101ff91ff
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 969b9fc85959d137ec8b6bfc6b377f48e02e5157
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928568"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886869"
 ---
 # <a name="manage-bde-keypackage"></a>manage-bde ms-fve-keypackage
 
@@ -28,7 +26,7 @@ manage-bde -keypackage [<drive>] [-ID <keyprotectoryID>] [-path <pathtoexternalk
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<drive>` | 表示驱动器号后跟一个冒号。 |
 | -ID | 使用带有此 ID 值指定的标识符的密钥保护程序创建密钥包。 **提示：** 使用**manage-bde –保护程序– get**命令，以及要为其创建密钥包的驱动器号，以获取用作 ID 值的可用 guid 列表。 |

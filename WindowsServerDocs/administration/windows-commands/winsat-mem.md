@@ -1,20 +1,18 @@
 ---
 title: winsat mem
 description: 有关 winsat mem 的参考文章，可通过将大内存反射到内存缓冲区副本的方式（在多媒体处理中使用）对系统内存带宽进行测试。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 winms.topic: article
 ms.assetid: cda017bf-6193-43c1-b71f-e379c23e1152
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ddb18a923358997d2882cce0d3ae1e261061ef
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 928c0b7389af4c2417fe62af1aeae4f9a90856a4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936106"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896489"
 ---
 # <a name="winsat-mem"></a>winsat mem
 
@@ -32,7 +30,7 @@ winsat mem <parameters>
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |-向上|仅通过一个线程强制进行内存测试。 默认为每个物理 CPU 或核心运行一个线程。|
 |-rn|指定评估的线程应以普通优先级运行。 默认值为在优先级15运行。|
@@ -44,7 +42,7 @@ winsat mem <parameters>
 |-v|向 STDOUT 发送详细输出，包括状态和进度信息。 任何错误也将写入 "命令" 窗口。|
 |-xml\<file name>|将评估的输出另存为指定的 XML 文件。 如果指定的文件存在，则将覆盖该文件。|
 |-idiskinfo|将有关物理卷和逻辑磁盘的信息保存为 **\<SystemConfig>** XML 输出中部分的一部分。|
-|-iguid|在 XML 输出文件中创建一个全局唯一标识符（GUID）。|
+|-iguid|在 XML 输出文件中创建 (GUID) 全局唯一标识符。|
 |-备注注释文本|将注释文本添加到 **\<note>** XML 输出文件中的部分。|
 |-icn|在 XML 输出文件中包含本地计算机名称。|
 |-eef|在 XML 输出文件中枚举额外的系统信息。|

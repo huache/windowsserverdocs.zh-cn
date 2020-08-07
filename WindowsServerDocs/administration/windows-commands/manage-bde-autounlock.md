@@ -1,20 +1,18 @@
 ---
 title: manage-bde autounlock
 description: Manage-bde autounlock 命令的参考文章，用于管理受 BitLocker 保护的数据驱动器的自动解锁。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 063528bf-d235-4b44-887a-52a7d983e01a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a81d3e864a33efd5a6a1c81a5a193338d2c25bfa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 976f7f4034c9c373d6d5cd347b0807c7a82ea97f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931631"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886962"
 ---
 # <a name="manage-bde-autounlock"></a>manage-bde autounlock
 
@@ -28,7 +26,7 @@ manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <drive> [-computername
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | -enable | 启用数据驱动器自动解锁。 |
 | -disable | 禁用数据驱动器自动解锁。 |

@@ -1,30 +1,29 @@
 ---
 title: 什么是服务器核心？
 description: 了解 Windows Server 中的服务器核心安装选项
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/20/2018
-ms.openlocfilehash: 17bca691fef0ed9478c8ddb49e0511b0a16ac7b7
-ms.sourcegitcommit: 75e87fef264e30af3dfeb57923d5d82b0c51de5d
+ms.openlocfilehash: 01cf2568df3651e5f52649b04aa9d10b9690d597
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85279612"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895837"
 ---
 # <a name="what-is-the-server-core-installation-option-in-windows-server"></a>Windows Server 中的服务器核心安装选项是什么？
 
-> 适用于： Windows Server 2019、Windows Server 2016 和 Windows Server （半年频道）
+> 适用于： Windows Server 2019、Windows Server 2016 和 Windows Server (半年通道) 
 
 "服务器核心" 选项是在部署 Windows Server Standard 或 Datacenter 版本时可用的最小安装选项。 服务器核心包括大多数但并非全部服务器角色。 服务器核心的磁盘占用量较小，因此，由于基本代码较小，因此攻击面更小。
 
-## <a name="server-core-vs-server-with-desktop-experience"></a>服务器（内核） vs Server 与桌面体验
+## <a name="server-core-vs-server-with-desktop-experience"></a>服务器 (核心) vs Server 与桌面体验
 
 当你安装 Windows Server 时，你只安装所选的服务器角色，这有助于降低 Windows Server 的总体占用量。 但是，具有桌面体验安装选项的服务器仍将安装许多服务和其他组件，这些组件通常不需要用于特定的使用方案。
 
-这就是服务器核心的重头戏：服务器核心安装消除了对某些常用服务器角色的支持不是必需的任何服务和其他功能。 例如，Hyper-v 服务器不需要图形用户界面（GUI），因为你可以使用 Windows PowerShell 或从命令行使用 Hyper-v 管理器远程管理 Hyper-v 的所有方面。
+这就是服务器核心的重头戏：服务器核心安装消除了对某些常用服务器角色的支持不是必需的任何服务和其他功能。 例如，Hyper-v 服务器不需要图形用户界面 (GUI) ，因为你可以从命令行使用 Windows PowerShell 或使用 Hyper-v 管理器远程管理 Hyper-v 的所有方面。
 
 ## <a name="the-server-core-difference---core-capabilities-without-the-frills"></a>不带基本的服务器核心差异-核心功能
 
@@ -35,12 +34,12 @@ ms.locfileid: "85279612"
 - Microsoft-Windows-服务器-Gui-包
 - "Windows-Cortana-PAL-桌面包"
 
-换句话说，在设计上，服务器核心中**没有桌面**。 虽然维护支持传统的业务应用程序和基于角色的工作负荷所需的功能，但服务器核心没有传统的桌面界面。 相反，服务器核心旨在通过命令行、PowerShell 或 GUI 工具（如[RSAT](../../remote/remote-server-administration-tools.md)或[Windows 管理中心](../../manage/windows-admin-center/overview.md)）进行远程管理。
+换句话说，在设计上，服务器核心中**没有桌面**。 虽然维护支持传统的业务应用程序和基于角色的工作负荷所需的功能，但服务器核心没有传统的桌面界面。 相反，服务器核心旨在通过命令行、PowerShell 或 GUI 工具进行远程管理 (如[RSAT](../../remote/remote-server-administration-tools.md)或[Windows 管理中心](../../manage/windows-admin-center/overview.md)) 。
 
 除了无 UI，服务器核心还不同于具有桌面体验的服务器：
 
 - 服务器核心没有任何辅助工具
-- 没有用于设置服务器核心的 OOBE （全新体验）
+- 没有用于设置服务器核心的 OOBE (全新体验) 
 - 无音频支持
 
 下表显示了在具有桌面体验的服务器核心与服务器上*本地*可用的应用程序。 **重要提示**：在大多数情况下，在下面列出为 "不可用" 的应用程序可以从 Windows 客户端计算机远程运行，并用于管理服务器核心安装。
@@ -49,12 +48,12 @@ ms.locfileid: "85279612"
 > 此列表用于快速参考-它不是完整的列表。
 
 
-| 应用程序                        | 服务器核心     | 服务器（提供桌面体验） |
+| 应用                        | 服务器核心     | 服务器（提供桌面体验） |
 |------------------------------------|-----------------|--------------------------------|
 | 命令提示符                     | 可用       | 可用                      |
 | Windows PowerShell/Microsoft .NET | 可用       | 可用                      |
 | Perfmon.exe                        | 不可用   | 可用                      |
-| Windbg （GUI）                       | 受支持       | 受支持                      |
+| Windbg (GUI)                        | 受支持       | 受支持                      |
 | Resmon.exe                         | 不可用   | 可用                      |
 | Regedit                            | 可用       | 可用                      |
 | Fsutil.exe                         | 可用       | 可用                      |
@@ -65,10 +64,10 @@ ms.locfileid: "85279612"
 | 服务器管理器                     | 不可用   | 可用                      |
 | Mmc.exe                            | 不可用   | 可用                      |
 | Eventvwr.msc                           | 不可用   | 可用                      |
-| Wevtutil （事件查询）           | 可用       | 可用                      |
+| Wevtutil (事件查询)            | 可用       | 可用                      |
 | Services.msc                       | 不可用   | 可用                      |
 | 控制面板                      | 不可用   | 可用                      |
-| Windows 更新（GUI）               | 不可用   | 可用                      |
+| Windows 更新 (GUI)                | 不可用   | 可用                      |
 | Windows 资源管理器                   | 不可用   | 可用                      |
 | 任务栏                            | 不可用   | 可用                      |
 | 任务栏通知              | 不可用   | 可用                      |
@@ -88,7 +87,7 @@ ms.locfileid: "85279612"
 
 有关服务器核心中包含*的内容的*详细信息，请参阅[Windows Server-server core 中包含的角色、角色服务和功能](server-core-roles-and-services.md)。 有关服务器核心中*未*包含的内容的信息，请参阅[不包含在服务器核心中的角色、角色服务和功能](server-core-removed-roles.md)
 
-\*要读取的。本地存储在 Server Core SKU 上的 RTF 文件，用户可以将文件复制到存在 WordPad 的其他 Windows 计算机上。
+\*要读取的。RTF 文件本地存储在服务器核心 SKU 上，用户可以将)  (文件复制到存在 WordPad 的其他 Windows 计算机上。
 
 ## <a name="get-started-using-server-core"></a>开始使用服务器核心
 

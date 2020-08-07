@@ -1,20 +1,18 @@
 ---
 title: manage-bde setidentifier
 description: Manage-bde setidentifier 命令的参考文章，可将驱动器上的驱动器标识符字段设置为在为组织提供唯一标识符组策略设置中指定的值。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7092d18f-4ac9-4c73-a20f-1246ca60e75e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c6a04b4f7c04174158a165cf0d41493078af0056
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 836f8a0cb1842dcae276ccd8c2cca8f831056099
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957039"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886706"
 ---
 # <a name="manage-bde-setidentifier"></a>manage-bde setidentifier
 
@@ -28,7 +26,7 @@ manage-bde –setidentifier <drive> [-computername <name>] [{-?|/?}] [{-help|-h}
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<drive>` | 表示驱动器号后跟一个冒号。 |
 | -computername | 指定 manage-bde.exe 将用于修改其他计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |

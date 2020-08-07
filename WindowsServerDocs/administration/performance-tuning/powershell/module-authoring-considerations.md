@@ -1,18 +1,16 @@
 ---
 title: PowerShell 模块创作注意事项
 description: PowerShell 模块创作注意事项
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 25b202e56286b7c26c3150642a656eb31a120808
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb22009262cc1ae713846779c6b24402e3ed7928
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851930"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896270"
 ---
 # <a name="powershell-module-authoring-considerations"></a>PowerShell 模块创作注意事项
 
@@ -26,12 +24,12 @@ ms.locfileid: "80851930"
 模块分析的结果按用户进行缓存，但在首次运行时，不能使用缓存，这是容器的典型方案。
 在模块分析过程中，如果可以从清单中完全确定导出的命令，则可以避免更昂贵的模块分析。
 
-### <a name="guidelines"></a>指南
+### <a name="guidelines"></a>准则
 
-* 在模块清单中，不要在 `AliasesToExport`、`CmdletsToExport`和 `FunctionsToExport` 项中使用通配符。
+* 在模块清单中，不要在 `AliasesToExport` 、和条目中使用通配符 `CmdletsToExport` `FunctionsToExport` 。
 
-* 如果该模块未导出特定类型的命令，则通过指定 `@()`在清单中显式指定此项。
-缺少或 `$null` 项等效于指定通配符 `*`。
+* 如果该模块未导出特定类型的命令，则通过指定在清单中显式指定此项 `@()` 。
+缺少或 `$null` 条目等效于指定通配符 `*` 。
 
 应尽量避免以下情况：
 
@@ -45,7 +43,7 @@ ms.locfileid: "80851930"
 }
 ```
 
-而应使用：
+请改用：
 
 ```PowerShell
 @{
@@ -59,9 +57,9 @@ ms.locfileid: "80851930"
 
 决定如何实现模块时，有三种主要选择：
 
-* 二进制（通常C#为）
-* 脚本（PowerShell）
-* CDXML （XML 文件包装 CIM）
+* 二进制 (通常是 c # ) 
+*  (PowerShell) 脚本
+* CDXML (XML 文件包装 CIM) 
 
 如果加载模块的速度非常重要，则 CDXML 的速度大致低于二进制模块。
 

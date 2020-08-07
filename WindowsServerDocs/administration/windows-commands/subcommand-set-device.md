@@ -1,26 +1,24 @@
 ---
 title: 子命令集-设备
 description: 子命令集的参考文章-设备，它更改预留计算机的属性。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 401567f8-eaeb-4a2d-b811-140bb007028d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e75e0a2a4011e171fa548954bce2bbe942379c0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9593769d77d10eaff80b9d369e1f681f02c5d1fe
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937206"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882269"
 ---
 # <a name="subcommand-set-device"></a>子命令：设置-设备
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-更改预留计算机的属性。 预留计算机是已链接到 active directory 域服务器（AD DS）中的计算机帐户对象的计算机。 预留客户端也称为已知计算机。 你可以在计算机帐户上配置属性，以控制客户端的安装。 例如，你可以配置网络启动程序和客户端应接收的无人参与文件，以及客户端应从中下载网络启动程序的服务器。
+更改预留计算机的属性。 预留计算机是指链接到 (AD DS) 的 active directory 域服务器中的计算机帐户对象的计算机。 预留客户端也称为已知计算机。 你可以在计算机帐户上配置属性，以控制客户端的安装。 例如，你可以配置网络启动程序和客户端应接收的无人参与文件，以及客户端应从中下载网络启动程序的服务器。
 
 ## <a name="syntax"></a>语法
 ```
@@ -28,11 +26,11 @@ wdsutil [Options] /Set-Device /Device:<Device name> [/ID:<UUID | MAC address>] [
 [/WdsClientUnattend:<Relative path>] [/User:<Domain\User | User@Domain>] [/JoinRights:{JoinOnly | Full}] [/JoinDomain:{Yes | No}] [/BootImagepath:<Relative path>] [/Domain:<Domain>] [/resetAccount]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|装置<computer name>|指定计算机的名称（SAM 帐户名）。|
-|[/ID： <UUID &#124; MAC 地址>]|指定计算机的 GUID/UUID 或 MAC 地址。 此值必须是以下三种格式之一：<p>-二进制字符串： **/id： ACEFA3E81F20694E953EB2DAA1E8B1B6**<br />-GUID/UUID 字符串：/ID：**E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<br />-MAC 地址： **00B056882FDC** （无短划线）或**00-9：30-100-00-2f-DC** （含短划线）|
-|[/ReferralServer： <Server name> ]|指定要连接的服务器的名称，以使用普通文件传输协议（tftp）下载网络启动程序和启动映像。|
+|装置<computer name>|指定计算机名称 (SAM-Name) 。|
+|[/ID： <UUID &#124; MAC 地址>]|指定计算机的 GUID/UUID 或 MAC 地址。 此值必须是以下三种格式之一：<p>-二进制字符串： **/id： ACEFA3E81F20694E953EB2DAA1E8B1B6**<br />-GUID/UUID 字符串：/ID：**E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<br />-MAC 地址： **00B056882FDC** (没有短划线) 或**00-00** -)  (2f-|
+|[/ReferralServer： <Server name> ]|指定要连接的服务器的名称，以使用普通文件传输协议 (tftp) 下载网络启动程序和启动映像。|
 |[/BootProgram： <Relative path> ]|指定从 remoteInstall 文件夹到指定计算机将接收的网络启动程序的相对路径。 例如： **boot\x86\pxeboot.com**|
 |[/WdsClientUnattend： <Relative path> ]|指定从 remoteInstall 文件夹到无人参与文件的相对路径，该文件自动执行 Windows 部署服务客户端的安装屏幕。|
 |[/User： <Domain\User &#124; User@Domain>]|设置计算机帐户对象的权限，以向指定的用户授予将计算机加入域所需的权限。|

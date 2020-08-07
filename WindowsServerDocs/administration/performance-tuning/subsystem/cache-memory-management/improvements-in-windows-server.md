@@ -1,18 +1,16 @@
 ---
 title: 缓存和内存管理器改进
 description: Windows Server 2016 中的缓存和内存管理器改进
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ef3658ab0f035435f6140c1dfa585de78537d37a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 35eb3d01af9c957831a6c860738e6a2516096b03
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851640"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895979"
 ---
 # <a name="cache-and-memory-manager-improvements"></a>缓存和内存管理器改进
 
@@ -20,7 +18,7 @@ ms.locfileid: "80851640"
 
 ## <a name="cache-manager-improvements-in-windows-server-2016"></a>Windows Server 2016 中的缓存管理器改进
 缓存管理器还添加了对真正异步缓存读取的支持。
-如果应用程序严重依赖于异步缓存读取，则这可能会提高应用程序的性能。  尽管大多数内置文件系统都支持异步缓存读取一段时间，但通常会由于与处理线程池和文件系统的内部工作队列相关的各种设计选择而导致性能的限制。  由于支持内核正确，因此缓存管理器现在可以隐藏文件系统中的所有线程池和工作队列管理复杂性，使其更高效地处理异步缓存读取。缓存管理器为每个（系统支持的最大） VHD 嵌套级别提供一组控制 datastructures，以最大程度地提高并行度。
+如果应用程序严重依赖于异步缓存读取，则这可能会提高应用程序的性能。尽管大多数内置文件系统都支持异步缓存读取一段时间，但通常会由于与处理线程池和文件系统的内部工作队列相关的各种设计选择而导致性能的限制。由于支持内核正确，因此缓存管理器现在可以隐藏文件系统中的所有线程池和工作队列管理复杂性，使其更高效地处理异步缓存读取。对于每个 (系统，缓存管理器有一组控件 datastructures，支持最大) VHD 嵌套级别以最大程度地提高并行度。
 
 
 ## <a name="cache-manager-improvements-in-windows-server-2012"></a>Windows Server 2012 中的缓存管理器改进
@@ -31,8 +29,8 @@ ms.locfileid: "80851640"
 
 下面是一些服务器角色的示例，其中的页面合并不太可能提供很多好处：
 
--   文件服务器（大部分内存由不是私有的，因此不可组合的文件页面使用）
+-   文件服务器 (大部分内存由不是私有的，因此不可组合的文件页面使用) 
 
--   配置为使用 AWE 或大型页面的 Microsoft SQL Server （大多数内存都是私有的，但不可分页）
+-   配置为使用 AWE 或大型页面 (大多数内存的 Microsoft SQL Server 是专用的但不可分页的) 
 
 默认情况下，页面组合处于禁用状态，但可以使用[Mmagent.ps1](https://technet.microsoft.com/library/jj658954.aspx) Windows PowerShell cmdlet 启用。 Windows Server 2012 中添加了页面组合。

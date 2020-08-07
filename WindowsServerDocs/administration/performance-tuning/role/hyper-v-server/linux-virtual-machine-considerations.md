@@ -1,18 +1,16 @@
 ---
 title: Linux 虚拟机注意事项
 description: Linux 和 BSD 虚拟机
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1109eb50bbe052b39fe7a91903fa0aea58b6e4f1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 916239535b92e1248918c76897e5222fa1dc6451
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471382"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896111"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Linux 虚拟机注意事项
 
@@ -26,7 +24,7 @@ ms.locfileid: "85471382"
 
 默认情况下，Linux 允许硬件加速和卸载。 如果在主机上的 NIC 的属性中启用了 vRSS 并且 Linux 来宾可以使用 vRSS，则将启用该功能。 在 Powershell 中，可以通过命令更改同一个参数 `EnableNetAdapterRSS` 。
 
-同样，可以在 "来宾**属性**  >  **配置**  >  " 所使用的物理 NIC 上启用 VMMQ （虚拟交换机 RSS）功能。"**高级**" 选项卡 > 将**虚拟交换机 RSS**设置为 "**启用**"，或在 POWERSHELL 中使用以下命令启用 VMMQ：
+同样，可以在 "来宾**属性**  >  **配置**  >  " 所使用的物理 NIC 上启用 VMMQ (虚拟交换机 RSS) 功能。"**高级**" 选项卡 > 将**虚拟交换机 RSS**设置为 "**启用**"，或在 POWERSHELL 中使用以下命令启用 VMMQ：
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True
@@ -53,7 +51,7 @@ net.ipv4.tcp_abort_on_overflow = 1
 
 ## <a name="linux-storage-performance"></a>Linux 存储性能
 
-以下是一些最佳实践，如在[hyper-v 上运行 Linux 的最佳实践](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)。 Linux 内核具有不同的 i/o 计划程序，用不同的算法对请求重新排序。 NOOP 是一个先进先出队列，该队列通过虚拟机监控程序做出的计划决策。 在 Hyper-v 上运行 Linux 虚拟机时，建议使用 NOOP 作为计划程序。 若要更改特定设备的计划程序，请在启动加载程序的配置（例如/etc/grub.conf）中，将添加 `elevator=noop` 到内核参数，然后重新启动。
+以下是一些最佳实践，如在[hyper-v 上运行 Linux 的最佳实践](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)。 Linux 内核具有不同的 i/o 计划程序，用不同的算法对请求重新排序。 NOOP 是一个先进先出队列，该队列通过虚拟机监控程序做出的计划决策。 在 Hyper-v 上运行 Linux 虚拟机时，建议使用 NOOP 作为计划程序。 若要更改特定设备的计划程序，请在启动加载器的配置中 (/etc/grub.conf，例如) ，将添加 `elevator=noop` 到内核参数，然后重新启动。
 
 与网络类似，Linux 来宾的存储性能从具有足够深度的多个队列中获益最大，使主机保持繁忙状态。 Microbenchmarking 存储性能可能适用于 fio 基准工具与 libaio 引擎。
 

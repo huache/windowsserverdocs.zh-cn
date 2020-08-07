@@ -1,20 +1,18 @@
 ---
 title: writer
 description: 编写器的参考文章，用于验证是否包括了写入器或组件，或者从备份或还原过程中排除了写入器或组件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7cf98295-411d-4705-8573-f898ff45c140
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 16746f2f070b87e0c287f3a49b19a480ba5399c9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9fbcca5f9bc15e77b812368fadfbc7af8f4fff96
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936095"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896453"
 ---
 # <a name="writer"></a>writer
 
@@ -39,7 +37,7 @@ writer exclude [<Writer> | <Component>]
 
 ## <a name="examples"></a>示例
 
-若要通过指定写入器的 GUID 来验证写入器（对于此示例，为4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f），请键入：
+若要通过指定4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f 的 GUID 来验证编写器 (，请在) 中键入：
 ```
 writer verify {4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f}
 ```

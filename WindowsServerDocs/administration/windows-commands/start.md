@@ -1,20 +1,18 @@
 ---
 title: start
 description: 参考文章，用于启动单独的命令提示符窗口以运行指定的程序或命令。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0173f9b3-5cd7-4edb-b01e-d02193b4fadc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8864edd1f108ac0408b6b9f899c72e70e22922f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 54ec76cf6162cd887b21f99b6579fc123f4f614c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937056"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882297"
 ---
 # <a name="start"></a>start
 
@@ -30,15 +28,15 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |\<Title>|指定要在命令提示符窗口标题栏中显示的标题。|
 |/d\<Path>|指定启动目录。|
 |/i|将 Cmd.exe 启动环境传递到新的命令提示符窗口。 如果未指定 **/i** ，则使用当前环境。|
-|/min \| /max|指定最小化（**/min**）或最大化（**/max**）新的命令提示符窗口。|
-|/separate \| /shared|在单独的内存空间（**/separate**）或共享内存空间（**/shared**）中启动16位程序。 64位平台上不支持这些选项。|
+|/min \| /max|指定在新的命令提示符窗口) 最大程度地降低 (**/min**) 或最大化 (**/max** 。|
+|/separate \| /shared|在单独的内存空间中启动16位程序， (**/separate**) 或共享内存空间 (**/shared**) 。 64位平台上不支持这些选项。|
 |/low \| /normal \| /high \| /realtime \| /abovenormal \| /belownormal|启动指定优先级类中的应用程序。 有效的优先级类值为 **/low**、 **/normal**、 **/high**、 **/realtime**、 **/abovenormal**和 **/belownormal**。|
-|/affinity\<HexAffinity>|将指定的处理器关联掩码（表示为十六进制数）应用于新应用程序。|
+|/affinity\<HexAffinity>|将指定的处理器关联掩码 (表示为) 到新应用程序的十六进制数。|
 |/wait|启动应用程序并等待其结束。|
 |/elevate|以管理员身份运行应用程序。|
 |/b|启动应用程序而不打开新的命令提示符窗口。 除非应用程序启用了 CTRL + C 处理，否则将忽略 CTRL + C 处理。 使用 CTRL + BREAK 中断应用程序。|
@@ -50,7 +48,7 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
 
 - 您可以通过将文件的名称键入为命令，通过文件关联来运行不可执行文件。
 - 当你在不带扩展名或路径限定符的情况下运行包含字符串 CMD 的命令时，CMD 将替换为 COMSPEC 变量的值。 这会阻止用户从当前目录中提取**cmd** 。
-- 运行32位图形用户界面（GUI）应用程序时， **cmd**在返回到命令提示符之前不等待应用程序退出。 如果从命令脚本运行应用程序，则不会发生此行为。
+-  (GUI) 应用程序运行32位图形用户界面时， **cmd**在返回到命令提示符之前不等待应用程序退出。 如果从命令脚本运行应用程序，则不会发生此行为。
 - 当你运行使用不包含扩展的第一个令牌的命令时，Cmd.exe 将使用 PATHEXT 环境变量的值来确定要查找的扩展以及顺序。 PATHEXT 变量的默认值为：
   ```
   .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC

@@ -1,24 +1,22 @@
 ---
 title: 注销
 description: "\"注销\" 命令的参考文章，用于从远程桌面会话主机服务器上的会话中注销用户并删除会话。"
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 939f09cc-de8c-436c-a05d-aca5f2a06371
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d154b767302f5c536e0a7efb30d99ac0a8e087d5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b8eb1b13d7eeddc03ead24bcda10062aea5e1cfe
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927157"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887071"
 ---
 # <a name="logoff"></a>注销
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 将用户从远程桌面会话主机服务器上的会话中注销并删除会话。
 
@@ -29,7 +27,7 @@ logoff [<sessionname> | <sessionID>] [/server:<servername>] [/v]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<sessionname>` | 指定会话的名称。 这必须是活动会话。|
 | `<sessionID>` | 指定标识服务器会话的数字 ID。 |

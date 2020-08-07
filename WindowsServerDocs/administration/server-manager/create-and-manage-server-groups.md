@@ -1,20 +1,18 @@
 ---
-title: 创建和管理服务器组
+title: Create and Manage Server Groups
 description: 服务器管理器
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: 9d5b1be8-49fd-4ff7-9580-e4ff21fe4b17
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f4ad512c55bcd1391ad55bdbdeb9a2ba3bfd7f0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 496d950f8b73b141821963a028b01c71d5375447
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851540"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895793"
 ---
 # <a name="create-and-manage-server-groups"></a>创建和管理服务器组
 
@@ -31,15 +29,15 @@ ms.locfileid: "80851540"
 
 1.  在 "**管理**" 菜单上，单击 "**创建服务器组**"。
 
-2.  在“服务器组名称” 文本框中，为你的服务器组键入一个友好名称，如“记帐服务器”。
+2.  在“服务器组名称”**** 文本框中，为你的服务器组键入一个友好名称，如“记帐服务器”****。
 
 3.  使用 " **active directory**"、" **DNS**" 或 "**导入**" 选项卡将服务器添加到**所选**列表中的服务器池，或者将其他服务器添加到组。 有关如何使用这些选项卡的详细信息，请参阅本指南中的[将服务器添加到服务器管理器](add-servers-to-server-manager.md)。
 
-4.  向组添加完服务器时，单击“确定”。 新组显示在 "**所有服务器**" 组下的服务器管理器导航窗格中。
+4.  向组添加完服务器时，单击“确定”****。 新组显示在 "**所有服务器**" 组下的服务器管理器导航窗格中。
 
 #### <a name="to-edit-an-existing-server-group"></a>编辑现有服务器组的步骤
 
-1.  执行以下操作之一。
+1.  执行下列操作之一：
 
     -   在服务器管理器导航窗格中，右键单击服务器组，然后单击 "**编辑服务器组**"。
 
@@ -48,27 +46,27 @@ ms.locfileid: "80851540"
 2.  更改组名称，或者在组中添加或删除服务器。
 
     > [!NOTE]
-    > 从服务器组删除服务器不会从服务器管理器中删除服务器。 从组中删除的服务器仍会保留在服务器池的“所有服务器”组中。
+    > 从服务器组删除服务器不会从服务器管理器中删除服务器。 从组中删除的服务器仍会保留在服务器池的“所有服务器”**** 组中。
 
-3.  对组作完更改时，单击“确定”。
+3.  对组作完更改时，单击“确定”****。
 
 #### <a name="to-delete-an-existing-server-group"></a>删除现有服务器组的步骤
 
-1.  执行以下操作之一。
+1.  执行下列操作之一：
 
     -   在服务器管理器导航窗格中，右键单击服务器组，然后单击 "**删除服务器组**"。
 
     -   在服务器组的主页上，打开 "**服务器**" 磁贴上的 "**任务**" 菜单，然后单击 "**删除服务器组**"。
 
-2.  当系统提示你确定是否要删除该服务器组时，单击“是”。
+2.  当系统提示你确定是否要删除该服务器组时，单击“是”****。
 
     > [!NOTE]
-    > 删除服务器组不会从服务器管理器中删除服务器。 已删除的组中的服务器仍会保留在服务器池的“所有服务器” 组中。
+    > 删除服务器组不会从服务器管理器中删除服务器。 已删除的组中的服务器仍会保留在服务器池的“所有服务器”**** 组中。
 
-3.  对组作完更改时，单击“确定”。
+3.  对组作完更改时，单击“确定”****。
 
 ## <a name="see-also"></a>另请参阅
-[将服务器添加到服务器管理器](add-servers-to-server-manager.md)
+[将服务器添加到服务器管理器](add-servers-to-server-manager.md) 
 [服务器管理器](server-manager.md)
 
 

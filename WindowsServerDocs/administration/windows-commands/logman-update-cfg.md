@@ -1,24 +1,22 @@
 ---
 title: logman update cfg
 description: Logman update cfg 命令的参考文章，用于更新现有配置数据收集器的属性。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9da4e8b4-3be5-42d3-b0b4-c429630c35c4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e2d50504d8d4b9a92d36e4279a10526ddbd7877
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: addd9b1dfc60acdd5fa093970f393d4ebe61b3fa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933894"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887196"
 ---
 # <a name="logman-update-cfg"></a>logman update cfg
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 更新现有配置数据收集器的属性。
 
@@ -31,7 +29,7 @@ logman update cfg <[-n] <name>> [options]
 ### <a name="parameters"></a>参数
 
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的远程计算机上执行命令。 |
 | -config`<value>` | 指定包含命令选项的设置文件。 |
@@ -51,15 +49,15 @@ logman update cfg <[-n] <name>> [options]
 | -[-] 最大值`<value>` | 最大日志文件大小（MB）或 SQL 日志的最大记录数。 |
 | -[-] .cnf`<[[hh:]mm:]ss>` | 指定 time 后，在指定的时间过后，将创建一个新的文件。 如果未指定时间，则在超出最大大小时创建新文件。 |
 | -y | 在不提示的情况下回答 "是"。 |
-| -[-] ni | 启用（-ni）或禁用（-ni）网络接口查询。 |
-| -reg`<path [path [...]]>` | 指定要收集的注册表值。 |
-| -进行中`<query [query [...]]>` | 指定要使用 SQL 查询语言收集的 WMI 对象。 |
-| -ftc`<path [path [...]]>` | 指定要收集的文件的完整路径。 |
+| -[-] ni | 启用 () 或禁用 () 网络接口查询。 |
+| -reg`<path [path [...]]>` | 指定要收集)  (的注册表值。 |
+| -进行中`<query [query [...]]>` | 指定要使用 SQL 查询语言收集)  (的 WMI 对象。 |
+| -ftc`<path [path [...]]>` | 指定要收集)  (的文件的完整路径。 |
 | /? | 显示区分上下文的帮助。 |
 
 #### <a name="remarks"></a>备注
 
-- 其中列出了 [-]，添加额外的连字符（-）将对选项求反。
+- 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 
 ### <a name="examples"></a>示例
 

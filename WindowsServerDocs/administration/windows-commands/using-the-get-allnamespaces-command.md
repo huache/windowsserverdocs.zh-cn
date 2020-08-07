@@ -1,24 +1,22 @@
 ---
 title: AllNamespaces
 description: AllNamespaces 的参考文章，用于显示有关服务器上所有命名空间的信息。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e8fe896d-a69a-4180-923b-9f18185f5941
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de44d659657a8d6df10c0f2ea7b7fb2a670b7f88
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 470aab904f9404b8dbe99409445b0533fa83fedd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935056"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896395"
 ---
 # <a name="get-allnamespaces"></a>AllNamespaces
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示有关服务器上的所有命名空间的信息。
 
@@ -33,9 +31,9 @@ wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/d
 ```
 ### <a name="parameters"></a>参数
 
-|         参数         |                                                                               Windows 2008 Server                                                                               | Windows Server 2008 R2 |
+|         参数         |                                                                               Windows Server 2008                                                                               | Windows Server 2008 R2 |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-|  [/Server： <Server name> ]  | 指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。 |                        |
+|  [/Server： <Server name> ]  | 指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。 |                        |
 | [/ContentProvider： <name> ] |                                                        仅显示指定内容提供程序的命名空间。                                                         |                        |
 |      [/Show：个客户端]      |                            仅支持 Windows Server 2008。 显示有关连接到命名空间的客户端计算机的信息。                             |                        |
 |    [/details：客户端]     |                           仅支持 Windows Server 2008 R2。 显示有关连接到命名空间的客户端计算机的信息。                           |                        |
@@ -47,7 +45,7 @@ wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/d
 wdsutil /Get-AllNamespaces
 ```
 若要查看除已停用的命名空间之外的所有命名空间，请键入：
-- Windows 2008 Server
+- Windows Server 2008
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /Show:Clients /ExcludedeletePending
   ```

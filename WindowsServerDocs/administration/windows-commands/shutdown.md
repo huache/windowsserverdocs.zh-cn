@@ -1,20 +1,18 @@
 ---
 title: shutdown
 description: 用于关闭的参考文章，使你能够一次关闭或重新启动一台或多台本地或远程计算机。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c432f5cf-c5aa-4665-83af-0ec52c87112e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f31e5b0ee1252bf015c964fa76dd2852df3515b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8dff8150cb6ccfea24238567581320a9b11650d3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956119"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882366"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -37,20 +35,20 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/s|关闭计算机。|
 |/r|关闭后重新启动计算机。|
 |/a|中止系统关闭。 仅在超时期限内有效。 若要使用 **/a**，还必须使用 **/m**选项。|
-|/p|仅关闭本地计算机（不是远程计算机），无超时期限或警告。 只能将 **/p**与 **/d**或 **/f**一起使用。 如果你的计算机不支持电源关闭功能，则在你使用 **/p**时，它将关闭，但计算机的电源将保持打开状态。|
+|/p|仅关闭本地计算机 (不) 远程计算机，无超时期限或警告。 只能将 **/p**与 **/d**或 **/f**一起使用。 如果你的计算机不支持电源关闭功能，则在你使用 **/p**时，它将关闭，但计算机的电源将保持打开状态。|
 |/h|如果启用了休眠，则将本地计算机置于休眠状态。 只能将 **/h**与 **/f**一起使用。|
 |/e|使您能够记录目标计算机上意外关闭的原因。|
 |/f|强制关闭正在运行的应用程序，而不发出警告用户。</br>警告：使用 **/f**选项可能会导致丢失未保存的数据。|
 |一样\\\\\<ComputerName>|指定目标计算机。 不能与 **/l**选项一起使用。|
 |/t\<XXX>|设置重新启动或关机之前的超时时间或延迟时间为*XXX*秒。 这会导致在本地控制台上显示警告。 可以指定0-600 秒。 如果不使用 **/t**，则默认情况下超时期限为30秒。|
-|/d [p \| u：] \<XX> ：\<YY>|列出系统重新启动或关机的原因。 以下是参数值：</br>**p**表示计划重新启动或关闭。</br>**u**指示原因是用户定义的。</br>注意：如果未指定**p**或**u** ，则重新启动或关机是未计划的。</br>*XX*指定主要原因号（小于256的正整数）。</br>*YY*指定次要原因号（小于65536的正整数）。|
+|/d [p \| u：] \<XX> ：\<YY>|列出系统重新启动或关机的原因。 以下是参数值：</br>**p**表示计划重新启动或关闭。</br>**u**指示原因是用户定义的。</br>注意：如果未指定**p**或**u** ，则重新启动或关机是未计划的。</br>*XX*指定主要原因号 (小于 256) 的正整数。</br>*YY*指定 (小于 65536) 的正整数的次要原因号。|
 |/c\<Comment>|让你可以对关闭原因作详细注释。 必须首先使用 **/d**选项提供原因。 必须用引号将注释引起来。 最多可使用 511 个字符。|
 |/?|在命令提示符下显示帮助，其中包含在本地计算机上定义的主要原因和次要原因的列表。|
 
 ## <a name="remarks"></a>备注
 
 -   必须为用户分配 "**关闭系统**用户" 权限，以便关闭使用**shutdown**命令的本地或远程管理的计算机。
--   用户必须是 Administrators 组的成员，才能批注本地或远程管理的计算机意外关闭。 如果目标计算机已加入域，则 Domain Admins 组的成员也许能够执行此过程。 有关详细信息，请参见:
+-   用户必须是 Administrators 组的成员，才能批注本地或远程管理的计算机意外关闭。 如果目标计算机已加入域，则 Domain Admins 组的成员也许能够执行此过程。 有关详情，请参阅：
     -   [默认本地组](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
     -   [默认组](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
 -   如果希望一次关闭多台计算机，则可以使用脚本为每台计算机调用 "**关闭**"，也可以使用**shutdown** **/I**来显示 "远程关机" 对话框。
@@ -59,7 +57,7 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 ## <a name="examples"></a>示例
 
-若要强制应用程序在一分钟的延迟后关闭并重新启动本地计算机，原因是应用程序：维护（计划）和重新配置注释 myapp.exe 键入：
+强制应用程序在一分钟的延迟后关闭并重新启动本地计算机，原因是应用程序：维护 (计划) ，注释重新配置 myapp.exe 类型：
 ```
 shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```

@@ -1,24 +1,22 @@
 ---
 title: 使用 get 命令
 description: Get 的参考文章，用于检索有关指定对象的属性或属性。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fbd44c67-0670-4dfe-a1c0-2ab8abe327b5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6a943592d0c2443deb3bec4b5709f742e78f4ff
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 25c7025c3d56148dd0698959e6284a70518a244e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408776"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896538"
 ---
 # <a name="using-the-get-command"></a>使用 get 命令
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 检索有关指定的对象的属性或属性。
 

@@ -1,24 +1,22 @@
 ---
 title: macfile
 description: Macfile 命令的参考文章，其中管理了 Macintosh 服务器、卷、目录和文件的文件服务器。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e2ce586c-b316-41d3-90f8-4be0d074cc0e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6937e8bbf40ec9ce908be095e5de0e04f793f40e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d3b450241ee3f8a765f9ac93ec09b0450d8c28e5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933648"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887047"
 ---
 # <a name="macfile"></a>macfile
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 管理 Macintosh 服务器、卷、目录和文件的文件服务器。 您可以通过在批处理文件中包含一系列命令，然后手动或在预定时间启动它们来自动执行管理任务。
 
@@ -34,13 +32,13 @@ macfile directory[/server:\\<computername>] /path:<directory> [/owner:<ownername
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /server:`\\<computername>` | 指定要在其上更改目录的服务器。 如果省略，则在本地计算机上执行该操作。 |
 | /path`<directory>` | 指定要更改的目录的路径。 此参数是必需的。 **注意：** 该目录必须存在，但使用**macfile 目录**不会创建目录。 |
 | /owner`<ownername>` | 更改目录的所有者。 如果省略，所有者名称将不会更改。 |
 | 组`<groupname>` | 指定或更改与目录关联的 Macintosh 主组。 如果省略，则主组将保持不变。 |
-| 访问`<permissions>` | 为所有者、主要组和世界（everyone）设置目录权限。 这必须是一个11位数字，其中，number 1 授予权限，0吊销权限（例如，11111011000）。 如果省略此参数，则权限保持不变。 |
+| 访问`<permissions>` | 为所有者、主要组和世界 (每个人) 的目录设置权限。 这必须是一个11位数，其中，number 1 授予权限，0撤消权限 (例如，11111011000) 。 如果省略此参数，则权限保持不变。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ##### <a name="position-of-permissions-digit"></a>权限位的位置
@@ -63,7 +61,7 @@ macfile directory[/server:\\<computername>] /path:<directory> [/owner:<ownername
 
 ##### <a name="remarks"></a>备注
 
-- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如 " `<computer name>` "）。
+- 如果提供的信息包含空格或特殊字符，请在文本两侧使用引号 (例如，" `<computer name>` " ) 。
 
 - 使用**macfile 目录**将可供 macintosh 用户使用的 macintosh 可访问卷中的现有目录。 **Macfile 目录**命令不会创建目录。
 
@@ -91,7 +89,7 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /server:`\\<computername>` | 指定要在其上联接文件的服务器。 如果省略，则在本地计算机上执行该操作。 |
 | 于是`<creatorname>` | 指定文件的创建者。 Macintosh 查找器使用 **/creator**命令行选项来确定创建该文件的应用程序。 |
@@ -103,11 +101,11 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 
 ##### <a name="remarks"></a>备注
 
-- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如 " `<computer name>` "）。
+- 如果提供的信息包含空格或特殊字符，请在文本两侧使用引号 (例如，" `<computer name>` " ) 。
 
 #### <a name="examples"></a>示例
 
-若要在 Macintosh 可访问的卷*D:\Release*上创建文件*tree_app* ，请使用资源分叉*C:\Cross\Mac\Appcode*，并使此新文件显示为 macintosh 客户端（macintosh 应用程序使用类型*appl.exe*），并将 creator （签名）设置为*木兰*，请键入：
+若要在 Macintosh 可访问的卷*D:\Release*上创建文件*tree_app* ，请使用资源分叉*C:\Cross\Mac\Appcode*，并使此新文件显示为 macintosh 客户端作为应用程序 (macintosh 应用程序使用 type *appl.exe*) ，并 (签名) 设置为*木兰*，请键入：
 
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\tree_app
@@ -131,7 +129,7 @@ macfile server [/server:\\<computername>] [/maxsessions:{number | unlimited}] [/
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- |------------ |
 | /server:`\\<computername>` | 指定要在其上更改参数的服务器。 如果省略，则在本地计算机上执行该操作。 |
 | maxsessions`{number | unlimited}` | 指定可以同时对 Macintosh 使用文件和打印服务器的用户的最大数量。 如果省略，则服务器的**maxsessions**设置保持不变。 |
@@ -140,7 +138,7 @@ macfile server [/server:\\<computername>] [/maxsessions:{number | unlimited}] [/
 
 ##### <a name="remarks"></a>备注
 
-- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如 " `<computer name>` "）。
+- 如果提供的信息包含空格或特殊字符，请在文本两侧使用引号 (例如，" `<computer name>` " ) 。
 
 #### <a name="examples"></a>示例
 
@@ -163,7 +161,7 @@ macfile volume /remove[/server:\\<computername>] /name:<volumename>
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `{/add | /set}` | 在添加或更改 Macintosh 可访问的卷时是必需的。 添加或更改指定的卷。 |
 | /server:`\\<computername>` | 指定要在其上添加、更改或删除卷的服务器。 如果省略，则在本地计算机上执行该操作。 |
@@ -178,7 +176,7 @@ macfile volume /remove[/server:\\<computername>] /name:<volumename>
 
 ##### <a name="remarks"></a>备注
 
-- 如果提供的信息包含空格或特殊字符，请使用引号将文本括起来（例如 " `<computer name>` "）。
+- 如果提供的信息包含空格或特殊字符，请在文本两侧使用引号 (例如，" `<computer name>` " ) 。
 
 #### <a name="examples"></a>示例
 

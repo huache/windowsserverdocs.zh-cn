@@ -1,24 +1,22 @@
 ---
 title: 设置 ID
 description: 有关 Diskpart 集 ID 的参考文章，请参阅为具有焦点的分区更改分区类型字段。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5793d7ad-827e-4285-b2c6-ae60eeb0e886
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad0a4c6ac29e4226bbbe6ea2bde140ae21b68374
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: afcaa134cd9af11d37130e17012a7cf8a147afd4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937103"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882627"
 ---
 # <a name="set-id"></a>设置 ID
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 Diskpart Set ID 命令将更改具有焦点的分区的 "分区类型" 字段。
 
@@ -35,7 +33,7 @@ set id={ <byte> | <GUID> } [override] [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 |                                                                                                                                                                                                                                                                                                                                                                   说明                                                                                                                                                                                                                                                                                                                                                                   |
+| 参数 |                                                                                                                                                                                                                                                                                                                                                                   描述                                                                                                                                                                                                                                                                                                                                                                   |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  <byte>   |                                                                                                                                                                                                       对于主启动记录 \( MBR \) 磁盘，以十六进制格式为分区指定 "类型" 字段的新值。 除了指定 LDM 分区的类型0x42 以外，可以使用此参数指定任何分区类型字节。 请注意，在指定十六进制分区类型时，将省略前导0x。                                                                                                                                                                                                       |
 |  <GUID>   | 对于 GUID 分区表 \( gpt \) 磁盘，为分区的类型字段指定新的 GUID 值。 可识别的 Guid 包括：<p>-EFI 系统分区： c12a7328 \- f81f \- 11d2 \- ba4b \- 00a0c93ec93b<br />-基本数据分区： ebd0a0a2 \- b9e5 \- 4433 \- 87c0 \- 68b6b72699c7<p>任何分区类型 GUID 都可与此参数一起指定，如下所示：<p>-Microsoft 保留分区： e3c9e316 \- 0b5c \- 4db8 \- 817d \- f92df00215ae<br />-动态磁盘上的 LDM 元数据分区： 5808c8aa \- 7e8f \- 42e0 \- 85d2 \- e1e90434cfb3<br />-动态磁盘上的 LDM 数据分区： af9b60a0 \- 1431 \- 4f62 \- bc68 \- 3311714a69ad<br />-Cluster metadata partition： db97dba9 \- 0840 \- 4bae \- 97f0 \- ffb9a327c7e1 |

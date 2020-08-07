@@ -1,24 +1,22 @@
 ---
 title: logman update counter
 description: 用于更新现有计数器数据收集器属性的 logman update counter 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 607df6d5-876c-428d-a0b3-f59cb244e2ce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bfeb3bf8e0bc88bdefcee308d5c77121477b095
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 53f6bd33e73c469960e99acddc044d0afea55dc7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928581"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887187"
 ---
 # <a name="logman-update-counter"></a>logman update counter
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 更新现有计数器数据收集器的属性。
 
@@ -31,7 +29,7 @@ logman update counter <[-n] <name>> [options]
 ### <a name="parameters"></a>参数
 
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | -s`<computer name>` | 在指定的远程计算机上执行命令。 |
 | -config`<value>` | 指定包含命令选项的设置文件。 |
@@ -53,17 +51,17 @@ logman update counter <[-n] <name>> [options]
 | -[-] .cnf`<[[hh:]mm:]ss>` | 指定 time 后，在指定的时间已过后创建新的文件。 如果未指定时间，则在超出最大大小时创建新文件。 |
 | -y | 在不提示的情况下回答 "是"。 |
 | -cf`<filename>` | 指定列出要收集的性能计数器的文件。 该文件应包含每行一个性能计数器名称。 |
-| -c`<path [path [ ]]>` | 指定要收集的性能计数器。 |
+| -c`<path [path [ ]]>` | 指定要收集)  (性能计数器。 |
 | -sc`<value>` | 指定要使用性能计数器数据收集器收集的样本的最大数目。 |
 | /? | 显示区分上下文的帮助。 |
 
 #### <a name="remarks"></a>备注
 
-- 其中列出了 [-]，添加额外的连字符（-）将对选项求反。
+- 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 
 ### <a name="examples"></a>示例
 
-若要使用处理器（_Total）计数器类别中的% Processor time 计数器创建名为*perf_log*的计数器，请键入：
+若要使用处理器 (_Total) 计数器类别中的% Processor time 计数器创建名为*perf_log*的计数器，请键入：
 
 ```
 logman create counter perf_log -c \Processor(_Total)\% Processor time

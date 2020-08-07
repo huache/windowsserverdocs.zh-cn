@@ -1,20 +1,18 @@
 ---
 title: setx
 description: 适用于 setx 的参考文章，用于在用户或系统环境中创建或修改环境变量，无需编程或编写脚本。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69dcbca54419acb9ede0924e3e835bdfaf0633c1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0edab4ce56d3e43e26c1d14b32403a2954cbbce6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935893"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882527"
 ---
 # <a name="setx"></a>setx
 
@@ -32,7 +30,7 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 ### <a name="parameters"></a>参数
 
-|         参数          |                                                                                                                                              说明                                                                                                                                              |
+|         参数          |                                                                                                                                              描述                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /s\<Computer>       |                                                                                  指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认值为本地计算机的名称。                                                                                  |
 | 形\<Domain>\]<User name> |                                                                                           用指定用户帐户的凭据运行脚本。 默认值为 "系统权限"。                                                                                            |
@@ -51,14 +49,14 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 ## <a name="remarks"></a>备注
 
 -   **Setx**命令类似于 UNIX 实用工具 SETENV。
--   **Setx**提供唯一直接且永久地设置系统环境值的命令行或编程方式。 可以通过 **"控制面板"** 或通过注册表编辑器手动配置系统环境变量。 **Set**命令（在命令解释器内部为 Cmd.exe）仅为当前控制台窗口设置用户环境变量。
--   可以使用**setx**命令从以下三个源（模式）之一设置用户和系统环境变量的值：命令行模式、注册表模式或文件模式。
+-   **Setx**提供唯一直接且永久地设置系统环境值的命令行或编程方式。 可以通过 **"控制面板"** 或通过注册表编辑器手动配置系统环境变量。 **Set**命令（在命令解释器内部 ( # A0) ）仅为当前控制台窗口设置用户环境变量。
+-   可以使用**setx**命令 (模式下三个源之一设置用户和系统环境变量的值) ：命令行模式、注册表模式或文件模式。
 -   **Setx**将变量写入注册表中的主环境。 使用**setx**变量设置的变量仅在以后的命令窗口中可用，而不能在当前的命令窗口中使用。
 -   **HKEY_CURRENT_USER**和**HKEY_LOCAL_MACHINE**是唯一受支持的配置单元。 REG_DWORD、REG_EXPAND_SZ、REG_SZ 和 REG_MULTI_SZ 都是有效的**RegKey**数据类型。
 -   当你获取对注册表中**REG_MULTI_SZ**值的访问权限时，只提取并使用第一项。
 -   不能使用**setx**命令删除已添加到本地或系统环境的值。 您可以使用带变量名称和无值的**set**从本地环境中删除相应的值。
 -   REG_DWORD 在十六进制模式下提取和使用注册表值。
--   文件模式支持仅分析回车符和换行符（CRLF）文本文件。
+-   文件模式支持仅) 文本文件 (CRLF 分析回车符和换行。
 
 ## <a name="examples"></a>示例
 
