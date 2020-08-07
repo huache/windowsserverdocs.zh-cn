@@ -1,38 +1,36 @@
 ---
 title: nslookup
-description: Nslookup 命令的参考文章，其中显示了可用于诊断域名系统（DNS）基础结构的信息。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Nslookup 命令的参考文章，其中显示了可用于诊断域名系统 (DNS) 基础结构的信息。
 ms.topic: article
 ms.assetid: 41516932-7833-434a-aa92-b4cf0f9a7ef7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87f973349426016b6d62bd1f018f268d4e873c51
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7d01f167a198803db269e97e806a6d2867074d60
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925384"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885323"
 ---
 # <a name="nslookup"></a>nslookup
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-显示可用于诊断域名系统（DNS）基础结构的信息。 使用此工具之前，应熟悉 DNS 的工作原理。 只有安装了 TCP/IP 协议，才能使用 nslookup 命令行工具。
+显示可用于诊断域名系统 (DNS) 基础结构的信息。 使用此工具之前，应熟悉 DNS 的工作原理。 只有安装了 TCP/IP 协议，才能使用 nslookup 命令行工具。
 
 Nslookup 命令行工具有两种模式：交互式和非交互式。
 
 如果只需要查找一段数据，我们建议使用非交互模式。 对于第一个参数，键入要查找的计算机的名称或 IP 地址。 对于第二个参数，请键入 DNS 名称服务器的名称或 IP 地址。 如果省略第二个参数，则**nslookup**将使用默认 DNS 名称服务器。
 
-如果需要查找多个数据片段，可以使用交互模式。 为第一个参数键入连字符（-），为第二个参数键入 DNS 名称服务器的名称或 IP 地址。 如果省略这两个参数，则该工具将使用默认 DNS 名称服务器。 使用交互模式时，可以执行以下操作：
+如果需要查找多个数据片段，可以使用交互模式。 为第一个参数键入连字符 ( ) ，为第二个参数键入 DNS 名称服务器的名称或 IP 地址。 如果省略这两个参数，则该工具将使用默认 DNS 名称服务器。 使用交互模式时，可以执行以下操作：
 
 - 通过按 CTRL + B，随时中断交互式命令。
 
 - 退出，通过键入**exit**。
 
-- 将内置命令视为计算机名称，并在其前面加上转义符（ \) 。 无法识别的命令被解释为计算机名。
+- 将内置命令视为计算机名称，并在其前面加上转义字符 (\) 。 无法识别的命令被解释为计算机名。
 
 ## <a name="syntax"></a>语法
 
@@ -42,7 +40,7 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | [nslookup 退出](nslookup-exit-command.md) | 退出 nslookup 命令行工具。 |
 | [nslookup finger](nslookup-finger-command.md) | 与当前计算机上的 finger 服务器连接。 |
@@ -75,7 +73,7 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
 
 - 如果*computerTofind*是一个名称并且没有尾随句点，则会将默认 DNS 域名追加到该名称。 此行为取决于以下**set**子命令的状态： **domain**、 **srchlist**、 **bre-walkthrough-defname**和**search**。
 
-- 如果键入连字符（-）而不是*computerTofind*，则命令提示符将更改为**nslookup**交互模式。
+- 如果键入连字符 (-) 而不是*computerTofind*，则命令提示符将更改为**nslookup**交互模式。
 
 - 如果查找请求失败，则命令行工具将提供一条错误消息，其中包括：
 

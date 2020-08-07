@@ -1,24 +1,22 @@
 ---
 title: certutil
-description: Certutil 命令的参考文章，这是一个命令行程序，可转储并显示证书颁发机构（CA）配置信息、配置证书服务、备份和还原 CA 组件以及验证证书、密钥对和证书链。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Certutil 命令的参考文章，这是一个命令行程序，可将证书颁发机构转储并显示 (CA) 配置信息、配置证书服务、备份和还原 CA 组件以及验证证书、密钥对和证书链。
 ms.topic: article
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12ef5e7fa5ff305b1670c2f88645f57500c4fb5b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9f66bfb724a40a21bfaf323a54749f1d99c25e86
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178583"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880342"
 ---
 # <a name="certutil"></a>certutil
 
-Certutil.exe 是命令行程序，作为证书服务的一部分进行安装。 你可以使用 certutil.exe 来转储和显示证书颁发机构（CA）配置信息、配置证书服务、备份和还原 CA 组件以及验证证书、密钥对和证书链。
+Certutil.exe 是命令行程序，作为证书服务的一部分进行安装。 你可以使用 certutil.exe 来转储和显示证书颁发机构 (CA) 配置信息、配置证书服务、备份和还原 CA 组件以及验证证书、密钥对和证书链。
 
 如果 certutil 在没有其他参数的证书颁发机构上运行，则它将显示当前的证书颁发机构配置。 如果在非证书颁发机构上运行 certutil，则该命令默认为运行 `certutil [-dump]` 命令。
 
@@ -178,7 +176,7 @@ certutil [options] -revoke serialnumber [reason]
 
 - **原因**是吊销原因的数字或符号表示形式，其中包括：
 
-  - **0。 CRL_REASON_UNSPECIFIED**未指定（默认值）
+  - **0. CRL_REASON_UNSPECIFIED**未指定的 (默认) 
 
   - **1. CRL_REASON_KEY_COMPROMISE**密钥泄露
 
@@ -266,7 +264,7 @@ certutil [options] -cainfo [infoname [index | errorcode]]
 
   - **sanitizedname** -净化的 CA 名称
 
-  - **dsname** -净化 CA 短名称（DS 名称）
+  - **dsname** -净化了 CA 短名称 (DS 名称) 
 
   - **共享文件夹**-共享文件夹
 
@@ -370,7 +368,7 @@ certutil [options] -ca.cert outcacertfile [index]
 
 - **outcacertfile**是输出文件。
 
-- **index**是 CA 证书续订索引（默认为最新）。
+- **index**是 CA 证书续订索引 (默认为最近) 。
 
 ```
 [-f] [-split] [-config Machine\CAName]
@@ -388,7 +386,7 @@ certutil [options] -ca.chain outcacertchainfile [index]
 
 - **outcacertchainfile**是输出文件。
 
-- **index**是 CA 证书续订索引（默认为最新）。
+- **index**是 CA 证书续订索引 (默认为最近) 。
 
 ```
 [-f] [-split] [-config Machine\CAName]
@@ -396,15 +394,15 @@ certutil [options] -ca.chain outcacertchainfile [index]
 
 ### <a name="-getcrl"></a>-getcrl
 
-获取证书吊销列表（CRL）。
+获取 (CRL) 的证书吊销列表。
 
 certutil [options]-getcrl outfile [index] [delta]
 
 其中：
 
-- **index**是 crl 索引或密钥索引（默认为适用于最新密钥的 crl）。
+- **index**是 (默认为 crl 进行最新密钥) 的 crl 索引或密钥索引。
 
-- **增量**是增量 crl （默认为基本 crl）。
+- **增量**是 (默认为基本 crl) 的增量 crl。
 
 ```
 [-f] [-split] [-config Machine\CAName]
@@ -412,7 +410,7 @@ certutil [options]-getcrl outfile [index] [delta]
 
 ### <a name="-crl"></a>-crl
 
-发布新的证书吊销列表（Crl）或增量 Crl。
+ (Crl) 或增量 Crl 发布新的证书吊销列表。
 
 ```
 certutil [options] -crl [dd:hh | republish] [delta]
@@ -424,7 +422,7 @@ certutil [options] -crl [dd:hh | republish] [delta]
 
 - 重新**发布**重新发布最新的 crl。
 
-- **增量**只发布增量 crl （默认为基 crl 和增量 crl）。
+- **delta**仅发布增量 crl (默认为基本和增量 crl) 。
 
 ```
 [-split] [-config Machine\CAName]
@@ -595,9 +593,9 @@ certutil [options] -backup backupdirectory [incremental] [keeplog]
 
 - **backupdirectory**是用于存储备份数据的目录。
 
-- **增量**只执行增量备份（默认为完整备份）。
+- **增量**备份仅执行增量备份 (默认为完整备份) 。
 
-- **keeplog**保留数据库日志文件（默认为截断日志文件）。
+- **keeplog**保留数据库日志文件 (默认情况下) 截断日志文件。
 
 ```
 [-f] [-config Machine\CAName] [-p Password]
@@ -615,9 +613,9 @@ certutil [options] -backupdb backupdirectory [incremental] [keeplog]
 
 - **backupdirectory**是用于存储备份数据库文件的目录。
 
-- **增量**只执行增量备份（默认为完整备份）。
+- **增量**备份仅执行增量备份 (默认为完整备份) 。
 
-- **keeplog**保留数据库日志文件（默认为截断日志文件）。
+- **keeplog**保留数据库日志文件 (默认情况下) 截断日志文件。
 
 ```
 [-f] [-config Machine\CAName]
@@ -783,7 +781,7 @@ certutil [options] -store [certificatestorename [certID [outputfile]]]
 
   - `-user ldap: (AD user object certificates)`
 
-- **证书 id**是证书或 CRL 匹配令牌。 这可以是序列号、SHA-1 证书、CRL、CTL 或公钥哈希、数字证书索引（0、1等等）、数字 CRL 索引（.0、.1 等等）、数字 CTL 索引（.）0、.。1等）、公钥、签名或扩展 ObjectId、证书使用者公用名、电子邮件地址、UPN 或 DNS 名称、密钥容器名称或 CSP 名称、模板名称或 ObjectId、EKU 或应用程序策略 ObjectId 或 CRL 颁发者公用名。 其中许多项可能会导致多个匹配项。
+- **证书 id**是证书或 CRL 匹配令牌。 这可以是序列号、SHA-1 证书、CRL、CTL 或公钥哈希、数字证书索引 (0、1等等) 、数字 CRL 索引 ( .0、.1 等) 、数字 CTL 索引 (。0、.。1等) 、公钥、签名或扩展 ObjectId、证书使用者公用名、电子邮件地址、UPN 或 DNS 名称、密钥容器名称或 CSP 名称、模板名称、ObjectId、EKU 或应用程序策略 ObjectId 或 CRL 颁发者公用名。 其中许多项可能会导致多个匹配项。
 
 - **outputfile**是用于保存匹配证书的文件。
 
@@ -990,7 +988,7 @@ certutil [options] -viewdelstore [certificatestorename [certID [outputfile]]]
 
 ### <a name="-dspublish"></a>-dspublish
 
-将证书或证书吊销列表（CRL）发布到 Active Directory。
+将 (CRL) 的证书或证书吊销列表发布到 Active Directory。
 
 ```
 certutil [options] -dspublish certfile [NTAuthCA | RootCA | SubCA | CrossCA | KRA | User | Machine]
@@ -1056,7 +1054,7 @@ certutil [options] -template [template]
 
 ### <a name="-templatecas"></a>-templatecas
 
-显示证书模板的证书颁发机构（Ca）。
+显示证书模板 (Ca) 的证书颁发机构。
 
 ```
 certutil [options] -templatecas template
@@ -1098,12 +1096,12 @@ certutil [options] -setcasites delete
 
 #### <a name="remarks"></a>备注
 
-- `-config`选项以单个证书颁发机构为目标（默认值为所有 ca）。
+- `-config`选项以单个证书颁发机构为目标 (默认值为 "所有 ca) "。
 
 - `-f`选项可用于重写指定**sitename**的验证错误或删除所有 CA sitenames 引用。
 
 > [!NOTE]
-> 有关为 Active Directory 域服务（AD DS）站点感知配置 Ca 的详细信息，请参阅[AD DS 网站感知 AD CS 和 PKI 客户端](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
+> 有关为 Active Directory 域服务 (配置 Ca 的详细信息 AD DS) 站点感知，请参阅[AD DS 站点感知 AD CS 和 PKI 客户端](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
 
 ### <a name="-enrollmentserverurl"></a>-enrollmentserverURL
 
@@ -1283,7 +1281,7 @@ certutil [options] -DCInfo [domain] [verify | deletebad | deleteall]
 ```
 
 > [!TIP]
-> 指定 Active Directory 域服务（AD DS）域 **[域]** 并指定在 Windows Server 2012 中添加域控制器（**-dc**）的功能。 若要成功运行此命令，你必须使用属于**Domain admins**或**Enterprise admins**成员的帐户。 此命令的行为修改如下：<ol><li>1. 如果未指定域并且未指定特定的域控制器，则此选项将返回要从默认域控制器处理的域控制器的列表。</li><li>2. 如果未指定域，但指定了域控制器，则会生成指定域控制器上的证书报表。</li><li>3. 如果指定了域，但未指定域控制器，则会在列表中的每个域控制器的证书上生成域控制器的列表。</li><li>4. 如果指定了域和域控制器，则会从目标域控制器生成域控制器的列表。 还会生成列表中每个域控制器的证书报表。</li></ol>
+> 能够指定 Active Directory 域服务 (AD DS) 域 **[域]** ，并指定在 Windows Server 2012 中添加 (**dc**) 的域控制器。 若要成功运行此命令，你必须使用属于**Domain admins**或**Enterprise admins**成员的帐户。 此命令的行为修改如下：<ol><li>1. 如果未指定域并且未指定特定的域控制器，则此选项将返回要从默认域控制器处理的域控制器的列表。</li><li>2. 如果未指定域，但指定了域控制器，则会生成指定域控制器上的证书报表。</li><li>3. 如果指定了域，但未指定域控制器，则会在列表中的每个域控制器的证书上生成域控制器的列表。</li><li>4. 如果指定了域和域控制器，则会从目标域控制器生成域控制器的列表。 还会生成列表中每个域控制器的证书报表。</li></ol>
 >
 >例如，假设有一个名为 CPANDL 的域，其中包含名为 CPANDL-DC1 的域控制器。 可以运行以下命令，从 CPANDL-DC1 检索域控制器及其证书的列表：`certutil -dc cpandl-dc1 -DCInfo cpandl`
 
@@ -1368,7 +1366,7 @@ certutil [options] -verifykeys [keycontainername cacertfile]
 
 ### <a name="-verify"></a>-验证
 
-验证证书、证书吊销列表（CRL）或证书链。
+验证证书、证书吊销列表 (CRL) 或证书链。
 
 ```
 certutil [options] -verify certfile [applicationpolicylist | - [issuancepolicylist]]
@@ -1439,7 +1437,7 @@ certutil [options] -verifyCTL CTLobject [certdir] [certfile]
 
 - **certdir**指定包含与 CTL 条目匹配的证书的文件夹。 默认为与**CTLobject**相同的文件夹或网站。 使用 http 文件夹路径时需要路径分隔符。 如果未指定 " **AuthRoot** " 或 "不**允许**"，则将在多个位置搜索匹配的证书，包括本地证书存储、crypt32.dll 资源和本地 URL 缓存。 `-f`根据需要使用从 Windows 更新下载。
 
-- **certfile**指定要验证的证书。 证书与 CTL 条目匹配，并显示结果。 此选项将取消大多数默认输出。
+- **certfile**指定要验证的) 证书 (。 证书与 CTL 条目匹配，并显示结果。 此选项将取消大多数默认输出。
 
 ```
 [-f] [-user] [-split]
@@ -1447,7 +1445,7 @@ certutil [options] -verifyCTL CTLobject [certdir] [certfile]
 
 ### <a name="-sign"></a>-sign
 
-对证书吊销列表（CRL）或证书进行重新签名。
+ (CRL) 或证书重新签署证书吊销列表。
 
 ```
 certutil [options] -sign infilelist | serialnumber | CRL outfilelist [startdate+dd:hh] [+serialnumberlist | -serialnumberlist | -objectIDlist | \@extensionfile]
@@ -1470,7 +1468,7 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgor
 
   - 可选日期和小时有效期
 
-  如果两者都指定，则必须使用加号（+）分隔符。 使用从 `now[+dd:hh]` 当前时间开始。 使用 `never` 无截止日期（仅限 crl）。
+  如果两者都指定，则必须使用加号 (+) 分隔符。 使用从 `now[+dd:hh]` 当前时间开始。 使用 `never` 将 (仅) crl 的到期日期。
 
 - **serialnumberlist**是要添加或删除的文件的逗号分隔序列号列表。
 
@@ -1495,9 +1493,9 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgor
 
 #### <a name="remarks"></a>备注
 
-- 使用减号（-）将删除序列号和扩展。
+- 使用减号 (-) 删除序列号和扩展。
 
-- 使用加号（+）可向 CRL 添加序列号。
+- 使用加号 (+) 将序列号添加到 CRL。
 
 - 可以使用列表同时从 CRL 中删除序列号和 ObjectIDs。
 
@@ -1619,7 +1617,7 @@ certutil [options] -oid agID | algorithmname [groupID]
 
 - **objectID**显示或添加显示名称。
 
-- **groupid**是 objectIDs 枚举的 groupid 编号（十进制）。
+- **groupid**是 objectIDs 枚举 (decimal) 的 groupid 号。
 
 - **algID**是 objectID 查找的十六进制 ID。
 
@@ -1629,11 +1627,11 @@ certutil [options] -oid agID | algorithmname [groupID]
 
 - **删除**删除显示名称。
 
-- **LanguageId**是语言 ID 值（默认为当前值：1033）。
+- **LanguageId**是 (默认为当前的语言 ID 值： 1033) 。
 
 - **Type**是要创建的 DS 对象的类型，包括：
 
-  - `1`-Template （默认值）
+  - `1`-Template (默认值) 
 
   - `2`-颁发策略
 
@@ -1667,17 +1665,17 @@ certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |c
 
 - **exit**使用第一个退出模块的注册表项。
 
-- **模板**使用模板注册表项（ `-user` 用于用户模板）。
+- **模板**使用模板注册表项 (用于 `-user`) 用户模板。
 
-- **注册**使用注册注册表项（ `-user` 用于用户上下文）。
+- **注册**使用注册注册表项 (用于 `-user` 用户上下文) 。
 
 - **链**使用链配置注册表项。
 
 - **policyservers**使用策略服务器注册表项。
 
-- **progID**使用策略或退出模块的 progID （注册表子项名称）。
+- **progID**使用策略或退出模块的 progID (注册表子项名称) 。
 
-- **registryvaluename**使用注册表值名称（用于 `Name*` 前缀匹配）。
+- **registryvaluename**使用注册表值名称 (使用 `Name*`) 前缀匹配。
 
 - **值**使用新的数字、字符串或日期注册表值或文件名。 如果数字值以或开头 `+` ，则在 `-` 现有注册表值中设置或清除在新值中指定的位。
 
@@ -1689,7 +1687,7 @@ certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |c
 
 - 如果字符串值以或开头 `+` `-` ，并且现有值为 `REG_MULTI_SZ` 值，则会将该字符串添加到现有注册表值或从中删除。 若要强制创建 `REG_MULTI_SZ` 值，请将添加 `\n` 到字符串值的末尾。
 
-- 如果值以开头 `\@` ，则值的剩余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则将其分析为 `[Date][+|-][dd:hh]` -可选的日期加上或减去可选的日期和小时。 如果同时指定两者，则使用加号（+）或减号（-）分隔符。 用于 `now+dd:hh` 相对于当前时间的日期。
+- 如果值以开头 `\@` ，则值的剩余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则将其分析为 `[Date][+|-][dd:hh]` -可选的日期加上或减去可选的日期和小时。 如果同时指定两者，则使用加号 (+) 或减号 ( ) 分隔符。 用于 `now+dd:hh` 相对于当前时间的日期。
 
 - 使用 `chain\chaincacheresyncfiletime \@now` 有效刷新缓存的 crl。
 
@@ -1711,17 +1709,17 @@ certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |c
 
 - **exit**使用第一个退出模块的注册表项。
 
-- **模板**使用模板注册表项（ `-user` 用于用户模板）。
+- **模板**使用模板注册表项 (用于 `-user`) 用户模板。
 
-- **注册**使用注册注册表项（ `-user` 用于用户上下文）。
+- **注册**使用注册注册表项 (用于 `-user` 用户上下文) 。
 
 - **链**使用链配置注册表项。
 
 - **policyservers**使用策略服务器注册表项。
 
-- **progID**使用策略或退出模块的 progID （注册表子项名称）。
+- **progID**使用策略或退出模块的 progID (注册表子项名称) 。
 
-- **registryvaluename**使用注册表值名称（用于 `Name*` 前缀匹配）。
+- **registryvaluename**使用注册表值名称 (使用 `Name*`) 前缀匹配。
 
 - **值**使用新的数字、字符串或日期注册表值或文件名。 如果数字值以或开头 `+` ，则在 `-` 现有注册表值中设置或清除在新值中指定的位。
 
@@ -1733,7 +1731,7 @@ certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |c
 
 - 如果字符串值以或开头 `+` `-` ，并且现有值为 `REG_MULTI_SZ` 值，则会将该字符串添加到现有注册表值或从中删除。 若要强制创建 `REG_MULTI_SZ` 值，请将添加 `\n` 到字符串值的末尾。
 
-- 如果值以开头 `\@` ，则值的剩余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则将其分析为 `[Date][+|-][dd:hh]` -可选的日期加上或减去可选的日期和小时。 如果同时指定两者，则使用加号（+）或减号（-）分隔符。 用于 `now+dd:hh` 相对于当前时间的日期。
+- 如果值以开头 `\@` ，则值的剩余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则将其分析为 `[Date][+|-][dd:hh]` -可选的日期加上或减去可选的日期和小时。 如果同时指定两者，则使用加号 (+) 或减号 ( ) 分隔符。 用于 `now+dd:hh` 相对于当前时间的日期。
 
 - 使用 `chain\chaincacheresyncfiletime \@now` 有效刷新缓存的 crl。
 
@@ -1755,17 +1753,17 @@ certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |c
 
 - **exit**使用第一个退出模块的注册表项。
 
-- **模板**使用模板注册表项（ `-user` 用于用户模板）。
+- **模板**使用模板注册表项 (用于 `-user`) 用户模板。
 
-- **注册**使用注册注册表项（ `-user` 用于用户上下文）。
+- **注册**使用注册注册表项 (用于 `-user` 用户上下文) 。
 
 - **链**使用链配置注册表项。
 
 - **policyservers**使用策略服务器注册表项。
 
-- **progID**使用策略或退出模块的 progID （注册表子项名称）。
+- **progID**使用策略或退出模块的 progID (注册表子项名称) 。
 
-- **registryvaluename**使用注册表值名称（用于 `Name*` 前缀匹配）。
+- **registryvaluename**使用注册表值名称 (使用 `Name*`) 前缀匹配。
 
 - **值**使用新的数字、字符串或日期注册表值或文件名。 如果数字值以或开头 `+` ，则在 `-` 现有注册表值中设置或清除在新值中指定的位。
 
@@ -1777,7 +1775,7 @@ certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |c
 
 - 如果字符串值以或开头 `+` `-` ，并且现有值为 `REG_MULTI_SZ` 值，则会将该字符串添加到现有注册表值或从中删除。 若要强制创建 `REG_MULTI_SZ` 值，请将添加 `\n` 到字符串值的末尾。
 
-- 如果值以开头 `\@` ，则值的剩余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则将其分析为 `[Date][+|-][dd:hh]` -可选的日期加上或减去可选的日期和小时。 如果同时指定两者，则使用加号（+）或减号（-）分隔符。 用于 `now+dd:hh` 相对于当前时间的日期。
+- 如果值以开头 `\@` ，则值的剩余部分是包含二进制值的十六进制文本表示形式的文件的名称。 如果未引用有效的文件，则将其分析为 `[Date][+|-][dd:hh]` -可选的日期加上或减去可选的日期和小时。 如果同时指定两者，则使用加号 (+) 或减号 ( ) 分隔符。 用于 `now+dd:hh` 相对于当前时间的日期。
 
 - 使用 `chain\chaincacheresyncfiletime \@now` 有效刷新缓存的 crl。
 
@@ -1793,7 +1791,7 @@ certutil [options] -importKMS userkeyandcertfile [certID]
 
 - **userkeyandcertfile**是一个数据文件，其中包含要存档的用户私钥和证书。 此文件可以是：
 
-  - Exchange 密钥管理服务器（KMS）导出文件。
+  -  (KMS) 导出文件的 Exchange 密钥管理服务器。
 
   - PFX 文件。
 
@@ -1839,11 +1837,11 @@ certutil [options] -getkey searchtoken retrieve | recover outputfilebasename
 
 其中：
 
-- **脚本**生成用于检索和恢复密钥的脚本（如果找到多个匹配的恢复候选项，则为默认行为; 如果未指定输出文件，则为默认行为）。
+- 如果找到多个匹配的恢复候选项，或者如果未) 指定输出文件，则**脚本**将生成用于检索和恢复密钥 (默认行为的脚本。
 
-- **检索**检索一个或多个密钥恢复 blob （如果仅找到一个匹配的恢复候选项，则检索默认行为; 如果指定了输出文件）。 使用此选项会截断任何扩展，并为每个密钥恢复 blob 追加特定于证书的字符串和 rec 扩展名。  每个文件都包含一个证书链和一个关联的私钥，仍加密为一个或多个密钥恢复代理证书。
+- 如果找到了恰好一个匹配的恢复候选项，**检索**将检索一个或多个密钥恢复 blob (默认行为; 如果指定了输出文件) 则检索。 使用此选项会截断任何扩展，并为每个密钥恢复 blob 追加特定于证书的字符串和 rec 扩展名。  每个文件都包含一个证书链和一个关联的私钥，仍加密为一个或多个密钥恢复代理证书。
 
-- **recover**在一步中检索和恢复私钥（需要密钥恢复代理证书和私钥）。 使用此选项会截断任何扩展，并追加 p12 扩展名。  每个文件都包含已恢复的证书链和关联的私钥，作为 PFX 文件存储。
+- **恢复** (需要密钥恢复代理证书和私钥) ，在一个步骤中检索和恢复私钥。 使用此选项会截断任何扩展，并追加 p12 扩展名。  每个文件都包含已恢复的证书链和关联的私钥，作为 PFX 文件存储。
 
 - **searchtoken**选择要恢复的密钥和证书，包括：
 
@@ -1851,13 +1849,13 @@ certutil [options] -getkey searchtoken retrieve | recover outputfilebasename
 
   - 2. 证书序列号
 
-  - 3. 证书 SHA-1 哈希（指纹）
+  - 3. 证书 SHA-1 哈希 (指纹) 
 
-  - 4. 证书 KeyId SHA-1 哈希（使用者密钥标识符）
+  - 4. 证书 KeyId SHA-1 哈希 (使用者密钥标识符) 
 
-  - 5. 申请人姓名（域 \ 用户）
+  - 5. 申请人姓名 (domain\user) 
 
-  - 6. UPN （用户 \@ 域）
+  - 6. UPN (用户 \@ 域) 
 
 - **recoverybloboutfile**输出带有证书链和私钥的文件，仍加密为一个或多个密钥恢复代理证书。
 
@@ -1926,7 +1924,7 @@ certutil [options] -convertEPF PFXinfilelist PFXoutfile [cast | cast-] [V3CAcert
 
 - **cast**使用强制转换64加密。
 
-- **cast-** 使用强制转换64加密（export）
+- **cast-** 使用强制转换64加密 (导出) 
 
 - **V3CAcertID**是 V3 CA 证书匹配令牌。 有关详细信息，请参阅 `-store` 本文中的参数。
 
@@ -1979,7 +1977,7 @@ certutil -? -v
 | -秒 | 使用秒和毫秒显示时间。 |
 | -silent | 使用 `silent` 标志获取 dm-crypt 上下文。 |
 | -split | 拆分嵌入的 node.js 元素，并保存到文件。 |
-| -v | 提供更详细的信息（详细）。 |
+| -v | 提供更详细的 (详细) 信息。 |
 | -privatekey.ppk | 显示密码和私钥数据。 |
 | -pin PIN | 智能卡 PIN。 |
 | -urlfetch | 检索并验证 AIA 证书和 CDP Crl。 |

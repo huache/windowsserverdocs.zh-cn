@@ -1,24 +1,22 @@
 ---
 title: AllImages
 description: AllImages 的参考文章，用于检索有关服务器上所有映像的信息。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 19de3720-4315-415a-8dc6-486caa0b2100
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9834552ebe6395f13333e81fbc2996a8ff49f39c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 542de8f24f8bbb85a44fdefa9d25ca9acda66ba5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935175"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892034"
 ---
 # <a name="get-allimages"></a>AllImages
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 检索有关服务器上所有映像的信息。
 
@@ -27,10 +25,10 @@ ms.locfileid: "85935175"
 wdsutil /Get-AllImages [/Server:<Server name>] /Show:{Boot | Install | LegacyRis | All} [/detailed]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
-|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
-|/Show： {Boot &#124; 安装 &#124; LegacyRis &#124; 全部}|-   **Boot**仅返回启动映像。<br />-   **Install**返回安装映像以及包含它们的映像组的相关信息。<br />-   **LegacyRis**仅返回远程安装服务（RIS）映像。<br />-   **All**返回启动映像信息、安装映像信息（包括映像组的相关信息）和 RIS 映像信息。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
+|/Show： {Boot &#124; 安装 &#124; LegacyRis &#124; 全部}|-   **Boot**仅返回启动映像。<br />-   **Install**返回安装映像以及包含它们的映像组的相关信息。<br />-   **LegacyRis**只 (RIS) 映像返回远程安装服务。<br />-   **All**返回启动映像信息、安装映像信息 (包括有关映像组) 的信息，以及 RIS 映像信息。|
 |[/detailed]|指示应返回每个图像中的所有图像元数据。 如果未使用此选项，则默认行为是只返回映像名称、说明和文件名。|
 ## <a name="examples"></a>示例
 若要查看有关图像的信息，请键入下列内容之一：

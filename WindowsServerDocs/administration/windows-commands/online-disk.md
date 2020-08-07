@@ -1,20 +1,18 @@
 ---
 title: online disk
 description: 联机磁盘命令的参考文章，该命令使脱机磁盘进入联机状态。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bc44a783-eaa4-40ca-be01-5703b5bf4eb3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b8b5dc2ec454cd98eb4b03952a400815f4e7ea3b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 81bfd2dfc8e32656602066d702e8c1af5f4d1c82
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956699"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885244"
 ---
 # <a name="online-disk"></a>online disk
 
@@ -38,7 +36,7 @@ online disk [noerr]
 
 有关使用此命令的说明，请参阅[重新激活丢失或脱机的动态磁盘](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732026(v=ws.11))。
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

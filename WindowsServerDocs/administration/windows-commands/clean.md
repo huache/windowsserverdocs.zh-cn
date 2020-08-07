@@ -1,24 +1,22 @@
 ---
 title: clean
 description: Diskpart clean 命令的参考文章，可从具有焦点的磁盘中删除所有分区或卷格式。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9bbe6fd3-e07e-487b-9035-910957a1d326
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 39029c82dffe004d65b1279e5baafc14fbcc8257
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9a8ab6d0b245862fbb935945b76f380b7163d2a3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955669"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880217"
 ---
 # <a name="clean"></a>clean
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 从具有焦点的磁盘中删除所有分区或卷格式。
 
@@ -33,15 +31,15 @@ clean [all]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | all | 指定磁盘上的每个扇区都设置为零，这会完全删除磁盘上包含的所有数据。 |
 
 #### <a name="remarks"></a>备注
 
-- 在主启动记录（MBR）磁盘上，只覆盖 MBR 分区信息和隐藏扇区信息。
+- 在主启动记录 (MBR) 磁盘上，仅覆盖 MBR 分区信息和隐藏扇区信息。
 
-- 在 GUID 分区表（gpt）磁盘上，将覆盖 gpt 分区信息（包括保护 MBR）。 没有隐藏扇区信息。
+- 在 GUID 分区表 (gpt) 磁盘上，将覆盖 gpt 分区信息（包括保护 MBR）。 没有隐藏扇区信息。
 
 - 若要成功执行此操作，必须选择磁盘。 使用 "**选择磁盘**" 命令选择磁盘，并将焦点移动到该磁盘。
 

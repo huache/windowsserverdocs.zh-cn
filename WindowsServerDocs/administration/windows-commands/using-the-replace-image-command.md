@@ -1,24 +1,22 @@
 ---
 title: 替换图像
 description: 替换映像的参考文章，用该映像的新版本替换现有映像。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 68ded3df-e309-420f-9f5d-caeb609385a5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b98bf14b944ce75a21efbbb38a211e60ca952d39
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 599b1141d857d1fe5e70eab879af0f456dc13bea
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931348"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891892"
 ---
 # <a name="using-the-replace-image-command"></a>使用 replace 图像命令
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 使用该映像的新版本替换现有映像。
 ## <a name="syntax"></a>语法
@@ -46,14 +44,14 @@ wdsutil [Options] /replace-Imagmedia:<Image name> [/Server:<Server name>]
          [/Description:<Image description>]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 许可证<Image name>|指定要替换的映像的名称。|
-|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
 媒体： {Boot &#124; 安装}|指定要替换的图像的类型。|
 |/Architecture： {x86 &#124; ia64 &#124; x64}|指定要替换的图像的体系结构。 由于不同体系结构中的不同启动映像可能具有相同的映像名称，因此指定体系结构可确保替换正确的映像。|
 |[/Filename： <File name> ]|如果无法按名称唯一地标识映像，则必须使用此选项指定文件名。|
-|/replacementImage|指定替换映像的设置。 使用以下选项设置这些设置：<p>-mediaFile： <file path> -指定新的 .wim 文件的名称和位置（完整路径）。<br />-[/SourceImage： <image name> ]-如果 .wim 文件包含多个映像，则指定要使用的映像。 此选项仅适用于安装映像。<br />-[/Name： <Image name> ] 设置图像的显示名称。<br />-[/Description： <Image description> ]-设置图像的说明。|
+|/replacementImage|指定替换映像的设置。 使用以下选项设置这些设置：<p>-mediaFile： <file path> -指定新 .wim 文件 (完整路径) 的名称和位置。<br />-[/SourceImage： <image name> ]-如果 .wim 文件包含多个映像，则指定要使用的映像。 此选项仅适用于安装映像。<br />-[/Name： <Image name> ] 设置图像的显示名称。<br />-[/Description： <Image description> ]-设置图像的说明。|
 ## <a name="examples"></a>示例
 若要替换启动映像，请键入下列内容之一：
 ```

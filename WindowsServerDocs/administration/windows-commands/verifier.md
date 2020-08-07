@@ -1,24 +1,22 @@
 ---
 title: verifier
 description: 验证程序的参考文章，其中运行了驱动程序验证程序管理器。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 782173d6-f196-4bc4-a547-76109829453c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7c8ee51a5a085b97093c417a143ee36cffbc979
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1f19840d6a9dffe32a1febb8a313500b49f625e8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931331"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891864"
 ---
 # <a name="verifier"></a>verifier
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 驱动程序验证程序管理器。
 
@@ -38,11 +36,11 @@ verifier /query
 verifier /log <LogFileName> [/interval <seconds>]
 ```
 #### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 |\<flags>|必须是十进制或十六进制，位数的组合：<p>-   **值：说明**<br />-   **位0：** 特殊池检查<br />-   **第1位：** 强制 irql 检查<br />-   **第2位：** 低资源模拟<br />-   **位3：** 池跟踪<br />-   **位4：** I/o 验证<br />-   **位5：** 死锁检测<br />-   **位6：** 未使用<br />-   **第7位：** DMA 验证<br />-   **位8：** 安全检查<br />-   第**9 位：** 强制挂起 i/o 请求<br />-   **位10：** IRP 日志记录<br />-   **位11：** 其他检查<p>例如， **/flags 27**等效于 **/flags 0x1b**|
 |/volatile|用于动态更改验证程序设置，而无需重新启动系统。 系统重新启动后，任何新的设置都将丢失。|
-|\<probability>|1到10000之间的数字，用于指定错误注入概率。 例如，指定100表示错误注入概率为1% （100/10000）。<p>如果未指定此参数，则将使用默认概率6%。|
+|\<probability>|1到10000之间的数字，用于指定错误注入概率。 例如，指定100表示错误注入概率为 1% (100/10000) 。<p>如果未指定此参数，则将使用默认概率6%。|
 |\<tags>|指定将使用错误分隔的池标记，由空格分隔。 如果未指定此参数，则可以注入具有错误的任何池分配。|
 |\<applications>|指定将注入错误的应用程序的图像文件名，用空格分隔。 如果未指定此参数，则在任何应用程序中都可以进行低资源模拟。|
 |\<minutes>|一个正数，指定重新启动后的时间长度（以分钟为单位），在此期间不会发生错误注入。 如果未指定此参数，则将使用默认长度8分钟。|

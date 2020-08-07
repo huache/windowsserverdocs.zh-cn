@@ -1,20 +1,18 @@
 ---
 title: offline disk
 description: "\"脱机磁盘\" 命令的参考文章，该命令会将具有焦点的联机磁盘置于脱机状态。"
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8fb9b3c3-0b2c-4192-a2e7-f706292653e3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc8a746e09e5756eec1890d1715a88e60696cd49
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b570336bba8da402adb848c465148dabc49b0f6a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936750"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885285"
 ---
 # <a name="offline-disk"></a>offline disk
 
@@ -33,7 +31,7 @@ offline disk [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

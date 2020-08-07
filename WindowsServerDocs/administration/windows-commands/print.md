@@ -1,20 +1,18 @@
 ---
 title: print
 description: 用于向打印机发送文本文件的 "打印" 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8e8cf07ca19af1cf0a0445b9feed06916be10c0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be955faa38af6a81ce5f61c255828470d906528c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926031"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884837"
 ---
 # <a name="print"></a>print
 
@@ -31,9 +29,9 @@ print [/d:<printername>] [<drive>:][<path>]<filename>[ ...]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
-| /d`<printername>` | 指定要打印作业的打印机。 若要打印到本地连接的打印机，请在计算机上指定连接打印机的端口。 并行端口的有效值为**LPT1**、 **LPT2**和**LPT3**。 串行端口的有效值为**COM1**、 **COM2**、 **COM3**和**COM4**。 还可以使用网络打印机的队列名称（）来指定它 `\\server_name\printer_name` 。 如果未指定打印机，则默认情况下会将打印作业发送到**LPT1** 。 |
+| /d`<printername>` | 指定要打印作业的打印机。 若要打印到本地连接的打印机，请在计算机上指定连接打印机的端口。 并行端口的有效值为**LPT1**、 **LPT2**和**LPT3**。 串行端口的有效值为**COM1**、 **COM2**、 **COM3**和**COM4**。 你还可以使用 () 来指定网络打印机的队列名称 `\\server_name\printer_name` 。 如果未指定打印机，则默认情况下会将打印作业发送到**LPT1** 。 |
 | `<drive>`: | 指定要打印的文件所在的逻辑或物理驱动器。 如果要打印的文件位于当前驱动器上，则不需要此参数。 |
 | `<path>` | 指定要打印的文件的位置。 如果要打印的文件位于当前目录中，则不需要此参数。 |
 | `<filename>[ ...]` | 必需。 指定要打印的文件。 可以在一个命令中包含多个文件。 |

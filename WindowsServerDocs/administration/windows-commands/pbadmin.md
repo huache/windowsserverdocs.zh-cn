@@ -1,20 +1,18 @@
 ---
 title: pbadmin
 description: Pbadmin 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4911e640-aa7f-4afb-abc2-5eefc7010204
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eb0e70826175ebabe9d1a2c058104c0e7113e9df
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7cfea509184e0ff899375eb917da2908838f00ac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956689"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885049"
 ---
 # <a name="pbadmin"></a>pbadmin
 

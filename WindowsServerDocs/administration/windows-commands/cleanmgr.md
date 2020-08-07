@@ -1,23 +1,21 @@
 ---
 title: cleanmgr
-description: 配置磁盘清理工具（Cleanmgr.exe）以自动清除某些文件。
-ms.prod: windows-server
+description: '配置磁盘清理工具 ( # A0) 自动清理某些文件。'
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
-ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 49d85fe0c8ec1bbba810a502724fd7aac0c2f55d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c0b1cb2ff31bbf3fa25d5ac5e4be0e4b35260019
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712832"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880205"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
-> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012，Windows Server 2008 R2，Windows Server （半年频道）
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012，Windows Server 2008 R2，Windows Server (半年通道) 
 
 清除计算机硬盘上不必要的文件。 你可以使用命令行选项来指定**cleanmgr.exe**清理临时文件、Internet 文件、下载的文件以及回收站文件。 然后，你可以使用 "**计划任务**" 工具计划在特定时间运行的任务。
 
@@ -31,10 +29,10 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| /d`<driveletter>` | 指定想要磁盘清理清理的驱动器。<p>**注意：****/D**选项不能与一起`/sagerun:n`使用。 |
-| /sageset： n | 显示 "**磁盘清理设置**" 对话框，并创建用于存储所选设置的注册表项。 `n`值（存储在注册表中）允许您指定要运行的 "磁盘清理" 任务。 该值`n`可以是0到65535之间的任何整数值。 |
+| /d`<driveletter>` | 指定想要磁盘清理清理的驱动器。<p>**注意：****/D**选项不能与一起使用 `/sagerun:n` 。 |
+| /sageset： n | 显示 "**磁盘清理设置**" 对话框，并创建用于存储所选设置的注册表项。 `n`值（存储在注册表中）允许您指定要运行的 "磁盘清理" 任务。 `n`该值可以是0到65535之间的任何整数值。 |
 | /sagerun： n | 如果使用**\sageset**选项，则运行分配给 n 值的指定任务。 将枚举计算机上的所有驱动器，并针对每个驱动器运行所选配置文件。 |
-| /tuneup： n | 为相同`n`的运行 **/sageset**和 **/sagerun** 。 |
+| /tuneup： n | 为相同的运行 **/sageset**和 **/sagerun** `n` 。 |
 | /lowdisk | 用默认设置运行。 |
 | /verylowdisk | 用默认设置运行，不提示用户。 |
 | /? | 在命令提示符下显示帮助。 |
@@ -61,7 +59,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 - **压缩旧文件**-Windows 可以压缩最近未使用的文件。 压缩文件可节省磁盘空间，但仍可使用这些文件。 不删除任何文件。 由于文件以不同的速率进行压缩，因此所显示的磁盘空间量将为近似值。 使用 "选项" 按钮，可以指定在 "磁盘清理" 压缩未使用的文件之前要等待的天数。
 
-- **内容索引器的目录文件**-索引服务通过保留磁盘上的文件的索引来提高和提高文件搜索的速度。 这些目录文件保留自上一索引操作，可以安全地删除。<p>**注意：** 目录文件可能出现在多个驱动器中，例如，不只是在`%SystemRoot%`中。
+- **内容索引器的目录文件**-索引服务通过保留磁盘上的文件的索引来提高和提高文件搜索的速度。 这些目录文件保留自上一索引操作，可以安全地删除。<p>**注意：** 目录文件可能出现在多个驱动器中，例如，不只是在中 `%SystemRoot%` 。
 
 >[!NOTE]
 > 如果指定清理包含 Windows 安装的驱动器，则所有这些选项都在 "**磁盘清理**" 选项卡上可用。如果指定任何其他驱动器，则 "**磁盘清理**" 选项卡上仅提供 "回收站" 和 "内容索引" 选项的编录文件。
@@ -80,7 +78,7 @@ cleanmgr /sageset:1
 cleanmgr /sagerun:1
 ```
 
-若要`cleanmgr /sageset:1` `cleanmgr /sagerun:1`一起运行，请键入：
+若要 `cleanmgr /sageset:1` `cleanmgr /sagerun:1` 一起运行，请键入：
 
 ```
 cleanmgr /tuneup:1

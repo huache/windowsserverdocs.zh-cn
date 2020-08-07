@@ -1,20 +1,18 @@
 ---
 title: pause
 description: 用于暂停批处理程序处理的 "暂停" 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cab3afc3-d046-432f-a0bf-6282f0099032
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f604bbd205a074d8966cd2c1a1bc65506e7ca5e0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e5f8f10ae64fea8cf2c4610247ebe28b03ce26ae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922894"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885062"
 ---
 # <a name="pause"></a>pause
 
@@ -34,7 +32,7 @@ pause
 
 ## <a name="remarks"></a>备注
 
-- 如果按 CTRL + C 停止批处理程序，将显示以下消息： `Terminate batch job (Y/N)?` 。 如果按 " **Y** " （对于 "是"）来响应此消息，批处理程序将结束并控制返回到操作系统。
+- 如果按 CTRL + C 停止批处理程序，将显示以下消息： `Terminate batch job (Y/N)?` 。 如果按**Y** (为 "是") 响应此消息，批处理程序将结束并控制返回到操作系统。
 
 - 可以在可能不希望处理的批处理文件的一部分之前插入**pause**命令。 当**暂停暂停**批处理程序的处理时，可以按 CTRL + C，然后按**Y**停止批处理程序。
 

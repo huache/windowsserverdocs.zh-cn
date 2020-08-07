@@ -1,24 +1,22 @@
 ---
 title: nslookup set retry
 description: Nslookup set retry 命令的参考文章，用于设置尝试从指定服务器获取信息的次数。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 615fdfa2-fa29-47a8-8c9e-a6c5b45b3b71
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ef38be2abfd423bb093ccf2b2ee6d701df28df3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3b4449be93c4587dcb5d1a7990a79352a1fa7b28
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935707"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885549"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 如果在特定时间段内未收到答复，则超时期限将加倍，并重新发送请求。 此命令在放弃之前，将请求重新发送到服务器以获取信息的次数。
 
@@ -33,7 +31,7 @@ set retry=<number>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | ---------- | ---------- |
 | `<number>` | 指定重试次数的新值。 默认重试次数为**4**。 |
 | /? | 在命令提示符下显示帮助。 |

@@ -1,20 +1,18 @@
 ---
 title: cipher
 description: 用于显示或更改 NTFS 卷上的目录和文件的加密的密码命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 78ef795e-0f87-4acd-8d15-192c972c0f41
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f23e2855c4542cc359d458f6825dd9420581657f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6b5d7c6708c714cd414e06e150b9b0344cc03f9c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929984"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880229"
 ---
 # <a name="cipher"></a>cipher
 
@@ -35,7 +33,7 @@ cipher /removeuser /certhash:<hash> [/s:<directory>] [/b] [/h] [<pathname> [...]
 cipher /rekey [pathname [...]]
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | ---------- | ----------- |
@@ -44,16 +42,16 @@ cipher /rekey [pathname [...]]
 | /d | 解密指定的文件或目录。 |
 | /e | 加密指定的文件或目录。 将对目录进行标记，以便对以后添加的文件进行加密。 |
 | /h | 显示具有隐藏或系统属性的文件。 默认情况下，这些文件不会进行加密或解密。 |
-| 遇到 | 创建新的证书和密钥以与加密文件系统（EFS）文件一起使用。 如果指定了 **/k**参数，将忽略所有其他参数。 |
-| /r： `<filename>` [/smartcard] | 生成一个 EFS 恢复代理密钥和证书，然后将其写入到 .pfx 文件（包含证书和私钥）和 .cer 文件（只包含证书）。 如果指定了 **/smartcard** ，则它会将恢复密钥和证书写入智能卡，并且不生成 .pfx 文件。 |
+| 遇到 | 创建新的证书和密钥以与加密文件系统 (EFS) 文件一起使用。 如果指定了 **/k**参数，将忽略所有其他参数。 |
+| /r： `<filename>` [/smartcard] | 生成一个 EFS 恢复代理密钥和证书，然后将它们写入一个 .pfx 文件 (包含证书和私钥) 和一个 .cer 文件 (只包含证书) 。 如果指定了 **/smartcard** ，则它会将恢复密钥和证书写入智能卡，并且不生成 .pfx 文件。 |
 | /s`<directory>` | 在指定*目录*中的所有子目录上执行指定的操作。 |
-| /u [/n] |  查找本地驱动器上的所有加密文件。 如果与 **/n**参数一起使用，则不会进行更新。 如果使用时没有 **/n**， **/u**会将用户的文件加密密钥或恢复代理的密钥与当前密钥进行比较，并在更改后对其进行更新。 此参数仅适用于 **/n**。 |
+| /u [/n] |  查找本地驱动器上的所有加密文件 (s) 。 如果与 **/n**参数一起使用，则不会进行更新。 如果使用时没有 **/n**， **/u**会将用户的文件加密密钥或恢复代理的密钥与当前密钥进行比较，并在更改后对其进行更新。 此参数仅适用于 **/n**。 |
 | /w`<directory>` | 删除整个卷上的可用磁盘空间中的数据。 如果使用 **/w**参数，则将忽略所有其他参数。 指定的目录可以位于本地卷中的任意位置。 如果它是装入点或指向另一卷中的某个目录，则将删除该卷上的数据。 |
-| /x [： efsfile] [ `<FileName>` ] | 将 EFS 证书和密钥备份到指定的文件名。 如果与 **： efsfile**一起使用， **/x**将备份用于加密该文件的用户的证书。 否则，将备份用户的当前 EFS 证书和密钥。 |
+| /x [： efsfile] [ `<FileName>` ] | 将 EFS 证书和密钥备份到指定的文件名。 如果与 **： efsfile**一起使用， **/x**将备份用于加密文件的用户 (证书) 。 否则，将备份用户的当前 EFS 证书和密钥。 |
 | /y | 显示本地计算机上的当前 EFS 证书缩略图。 |
 | /adduser [/certhash:`<hash>` | /certfile： `<filename>` ] |
-| /rekey | 更新指定的加密文件以使用当前配置的 EFS 密钥。 |
-| /removeuser /certhash:`<hash>` | 从指定的文件中删除用户。 为 **/certhash**提供的*哈希*必须是要删除的证书的 SHA1 哈希。 |
+| /rekey | 更新指定的加密文件 () 以使用当前配置的 EFS 密钥。 |
+| /removeuser /certhash:`<hash>` | 从) 的指定文件中删除用户 (。 为 **/certhash**提供的*哈希*必须是要删除的证书的 SHA1 哈希。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ### <a name="remarks"></a>备注

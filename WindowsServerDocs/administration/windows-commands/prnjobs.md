@@ -1,24 +1,22 @@
 ---
 title: prnjobs
 description: Prnjobs 命令的参考文章，用于暂停、恢复、取消和列出打印作业。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5ad34199-7a5a-40c1-8053-bccd5929df43
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 79ad0631a2d1c871664ecebc11c26f2e005ca772
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d955f50761e1229e0a1acf21a9f2179525bd7ee4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924198"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884741"
 ---
 # <a name="prnjobs"></a>prnjobs
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 暂停、恢复、取消和列出打印作业。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prnjobs 文件的完整路径，或将目录更改为相应的文件夹。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnjobs.vbs`。
 
@@ -30,7 +28,7 @@ cscript prnjobs {-z | -m | -x | -l | -?} [-s <Servername>] [-p <Printername>] [-
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | -Z | 暂停由 **-j**参数指定的打印作业。 |
 | -m | 恢复由 **-j**参数指定的打印作业。 |
@@ -38,13 +36,13 @@ cscript prnjobs {-z | -m | -x | -l | -?} [-s <Servername>] [-p <Printername>] [-
 | -l | 列出打印队列中的所有打印作业。 |
 | -s`<Servername>` | 指定承载要管理的打印机的远程计算机的名称。 如果未指定计算机，则使用本地计算机。 |
 | -p`<Printername>` | 必需。 指定要管理的打印机的名称。 |
-| -j`<JobID>` | 指定要取消的打印作业（按 ID 号）。 |
+| -j`<JobID>` | 按 ID 号指定 () 要取消的打印作业。 |
 | -u `<Username>` -w`<password>` | 指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。 |
 | /? | 在命令提示符下显示帮助。 |
 
 #### <a name="remarks"></a>备注
 
-- 如果提供的信息包含空格，请使用引号将文本括起来（例如，"计算机名称"）。
+- 如果提供的信息包含空格，请使用引号将文本括起来 (例如，"Computer Name" ) 。
 
 ### <a name="examples"></a>示例
 

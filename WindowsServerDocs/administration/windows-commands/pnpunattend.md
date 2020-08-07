@@ -1,20 +1,18 @@
 ---
 title: pnpunattend
 description: 用于对计算机上的设备驱动程序进行审核并执行无提示驱动程序安装的 pnpunattend 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4fa88932-cff0-4dfc-936c-98c0e3dfbeb8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: cb01e2afa763d3e2c906d1b3ac5f194143caf114
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 72cb158804bcec3c57ef9bae8d21f8e15a7978d9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924240"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884931"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -42,7 +40,7 @@ PnPUnattend.exe auditsystem [/help] [/?] [/h] [/s] [/l]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | auditsystem | 指定联机驱动程序安装。<p>必需，但在运行此命令时，无论是 **/help**还是 **/？** 个参数。 |
 | /s | 可选。 指定在不安装的情况下搜索驱动程序。 |

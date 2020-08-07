@@ -1,20 +1,18 @@
 ---
 title: ver
 description: Ver 的参考文章，其中显示了操作系统的版本号。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5a9c6cd4-b67d-4b30-8c56-5f9798eafd2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd9b40fa526c2917b6cdcbc8d54da510eb40bc53
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: de080395c2e26f03371e0b27609238b66d7317f5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931342"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891882"
 ---
 # <a name="ver"></a>ver
 
@@ -22,7 +20,7 @@ ms.locfileid: "85931342"
 
 显示操作系统的版本号。
 
-此命令在 Windows 命令提示符（Cmd.exe）中受支持，但在 PowerShell 中不受支持。
+Windows 命令提示符 ( # A0) ，但在 PowerShell 中不支持此命令。
 
 
 
@@ -40,7 +38,7 @@ ver
 
 ## <a name="examples"></a>示例
 
-若要从命令行界面（cmd.exe）获取操作系统的版本号，请键入：
+若要从命令 shell 获取操作系统的版本号 ( # A0) ，请键入：
 
 ```
 ver

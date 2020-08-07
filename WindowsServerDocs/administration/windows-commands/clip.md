@@ -1,20 +1,18 @@
 ---
 title: clip
 description: Clip 命令的参考文章，它将命令行中的命令输出重定向到 Windows 剪贴板。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 85322d85-3376-4806-845b-93ac77fe27bf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c0e23c18d356740a639af760fc7433db59d012a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ee6527fd66678d58e971eb12e3cb92724d50517d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929898"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880127"
 ---
 # <a name="clip"></a>clip
 
@@ -29,7 +27,7 @@ clip < <filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<command>` | 指定要将其输出发送到 Windows 剪贴板的命令。 |
 | `<filename>` | 指定要发送到 Windows 剪贴板的内容的文件。 |

@@ -1,26 +1,24 @@
 ---
 title: 部署 Windows Server 混合云打印
 description: 如何设置 Microsoft 混合云打印
-ms.prod: windows-server
-ms.technology: windows server 2016
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247c5e9
 ms.topic: how-to
 author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 9cee8a279be2030d4b911a0a7f456c2b855ca15e
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 3e5b732beb502bb0bf365136947ff380caf71545
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409087"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879912"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合云打印
 
 >适用于：Windows Server 2016
 
-本主题为 IT 管理员介绍了 Microsoft 混合云打印（HCP）解决方案的端到端部署。 此解决方案层位于作为打印服务器运行的现有 Windows Server 之上，并启用了 Azure Active Directory （Azure AD），并启用了 MDM 管理的设备，以发现和打印到组织托管的打印机。
+本主题为 IT 管理员介绍了 Microsoft 混合云打印 (HCP) 解决方案的端到端部署。 此解决方案层位于现有 Windows Server (s 之上) 作为打印服务器运行，并使 Azure Active Directory (Azure AD 联接和 MDM 托管设备，以发现和打印到组织托管的打印机。
 
 ## <a name="pre-requisites"></a>先决条件
 
@@ -48,7 +46,7 @@ ms.locfileid: "87409087"
 
 - 面向公众的域名。
 
-  你可以使用 Azure 为你创建的*域名（onmicrosoft.com*），或购买你自己的域名。 请参阅[使用 Azure Active Directory 门户添加自定义域名](https://docs.microsoft.com/azure/active-directory/fundamentals/add-custom-domain)。
+  你可以使用 Azure (*domainname*) 创建的域名，或购买你自己的域名。 请参阅[使用 Azure Active Directory 门户添加自定义域名](https://docs.microsoft.com/azure/active-directory/fundamentals/add-custom-domain)。
 
 ## <a name="deployment-steps"></a>部署步骤
 
@@ -156,7 +154,7 @@ ms.locfileid: "87409087"
     - 针对企业云打印服务重复此操作。
 
 6. 在本机应用程序中配置重定向 URI
-    - 转到“Azure Active Directory” > “应用注册”。  单击本机应用。 请参阅**概述**并复制**应用程序（客户端） ID**。
+    - 转到“Azure Active Directory” > “应用注册”。  单击本机应用。 请参阅**概述**并将**应用程序复制 (客户端) ID**。
 
     ![AAD 重定向 URI 1](../media/hybrid-cloud-print/AAD-AppRegistration-Native-Overview.png)
 
@@ -183,7 +181,7 @@ ms.locfileid: "87409087"
 2. 安装混合云打印 PowerShell 模块。
     - 在提升权限的 PowerShell 命令提示符下运行以下命令：
 
-        `find-module -Name PublishCloudPrinter`确认计算机可以访问 PowerShell 库（PSGallery）
+        `find-module -Name PublishCloudPrinter`若要确认计算机可以访问 PowerShell 库 (PSGallery) 
 
         `install-module -Name PublishCloudPrinter`
 
@@ -192,7 +190,7 @@ ms.locfileid: "87409087"
     ![打印服务器发布云打印机](../media/hybrid-cloud-print/PrintServer-PublishCloudPrinter.png)
 
 3. 安装混合云打印解决方案。
-    - 在已提升权限的 PowerShell 命令提示符下，将目录更改为以下内容（需要引号）：
+    - 在已提升权限的 PowerShell 命令提示符下，将目录更改为以下 (需要) 的引号：
 
         `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0`
 
@@ -230,8 +228,8 @@ ms.locfileid: "87409087"
 6. 在提升 Powershell 命令提示符下运行**iisreset** 。 这将确保在上一步中所做的任何注册表更改都生效。
 
 7. 将 IIS 终结点配置为支持 SSL。
-    - SSL 证书可以是自签名证书，也可以是从受信任的证书颁发机构（CA）颁发的证书。
-    - 如果使用自签名证书，请**确保将证书导入到客户端计算机**。
+    - SSL 证书可以是自签名证书，也可以是从受信任的证书颁发机构颁发的证书 (CA) 。
+    - 如果使用自签名证书，请**确保将证书导入到客户端计算机 (s) **。
     - 如果向第三方提供商注册您的域，则需要配置带 SSL 证书的 IIS 终结点。 有关详细信息，请参阅此[指南](https://www.sslsupportdesk.com/microsoft-server-2016-iis-10-10-5-ssl-installation/)。
 
 8. 安装 SQLite 包。
@@ -248,7 +246,7 @@ ms.locfileid: "87409087"
 
     ![打印服务器 Mopria 注册表项](../media/hybrid-cloud-print/PrintServer-InstallSQLite.png)
 
-9. 将 SQLite dll 复制到 MopriaCloudService Webapp bin 文件夹（C:\inetpub\wwwroot\MopriaCloudService\bin）。
+9. 将 SQLite dll 复制到 MopriaCloudService Webapp bin 文件夹 (C:\inetpub\wwwroot\MopriaCloudService\bin) 。
     - 创建包含下面的 PowerShell 脚本的 ps1 文件。
     - 将 $version 变量更改为在上一步中安装的 SQLite 版本。
     - 在提升权限的 PowerShell 命令提示符下运行 ps1 文件。
@@ -299,7 +297,7 @@ ms.locfileid: "87409087"
         `sqlite3.exe MopriaDeviceDb.db .read MopriaSQLiteDb.sql`
 
     - 在文件资源管理器中，打开 MopriaDeviceDb 文件属性以添加允许在 "安全" 选项卡中发布到 Mopria 数据库的用户或组。用户或组必须位于本地 Active Directory 中，并与 Azure AD 同步。
-    - 如果将解决方案部署到不可路由的域（例如*mydomain*），则需要将 Azure AD 域（例如，onmicrosoft.com 或从第三方供应商购买的域）添加为本地 ACTIVE DIRECTORY 的 UPN*后缀。* 这样就可以在数据库文件的安全设置中添加与发布打印机的用户完全相同的用户（*例如 admin@ onmicrosoft.com）。* [有关目录同步，请参阅准备不可路由的域](https://docs.microsoft.com/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)。
+    - 如果将解决方案部署到不可路由的域 (例如*mydomain*) ，则 Azure AD 域 (如 onmicrosoft.com 或从第三方供应商处购买的) 需要添加为本地 ACTIVE DIRECTORY 的 UPN*后缀。* 这就是 (要发布打印机的完全相同的用户，例如 admin@*domainname*. onmicrosoft.com) 可添加到数据库文件的安全设置中。 [有关目录同步，请参阅准备不可路由的域](https://docs.microsoft.com/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)。
 
     ![打印服务器 Mopria 注册表项](../media/hybrid-cloud-print/PrintServer-SQLiteDB.png)
 
@@ -314,12 +312,12 @@ ms.locfileid: "87409087"
     - 选择 " **仅信任此计算机来委派指定的服务**"。
     - 选择 " **使用任何身份验证协议**"。
     - 在 "服务" 下 **，此帐户可以向其提供委派凭据**。
-        - 添加打印服务器计算机的服务主体名称（SPN）。
+        - 添加 (SPN) 打印服务器计算机的服务主体名称。
         - 选择服务类型的主机。
     ![Active Directory 委托](../media/hybrid-cloud-print/AD-Delegation.png)
 
 3. 验证是否在 IIS 中启用了 Windows 身份验证。
-    - 在打印服务器上，打开服务器管理器 > 工具 "> Internet 信息服务（IIS）管理器。
+    - 在打印服务器上，打开服务器管理器 > 工具 "> Internet 信息服务 (IIS) 管理器"。
     - 导航到此站点。
     - 双击 "**身份验证**"。
     - 单击 " **Windows 身份验证**" 并单击 "**操作**" 下的 "**启用**"。
@@ -355,7 +353,7 @@ ms.locfileid: "87409087"
 |打印机访问授权 URL            |CloudPrintOAuthAuthority       |
 |Azure Native client 应用 GUID            |CloudPrintOAuthClientId        |
 |打印服务资源 URI              |CloudPrintResourceId           |
-|要查询的最大打印机数（仅限移动设备）  |DiscoveryMaxPrinterLimit       |
+|要查询的最大打印机 (仅限移动)   |DiscoveryMaxPrinterLimit       |
 |打印机发现服务资源 URI  |MopriaDiscoveryResourceId      |
 
 > [!NOTE]
@@ -367,7 +365,7 @@ ms.locfileid: "87409087"
   - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
     - 值 =`<Azure AD Native App's Application ID>`
   - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
-    - 值 = Mopria 发现服务应用的外部 URL （必须完全相同，但不能有尾随 `/` ）
+    - 值 = Mopria 发现服务应用 (的外部 URL 必须完全相同，但没有尾随 `/`) 
   - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
     - 值 = Mopria 发现服务应用的应用程序 ID URI
   - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
@@ -384,7 +382,7 @@ ms.locfileid: "87409087"
 5. 准备 Windows 10 秋季创建者更新或更高版本的计算机。 将计算机加入到 Azure AD，并以与本地 Active Directory 同步的用户身份登录，并向 MopriaDeviceDb 文件授予适当的权限。
 6. 在 Windows 10 计算机上，打开提升的 Windows PowerShell 命令提示符。
     - 运行以下命令。
-        - `find-module -Name PublishCloudPrinter`确认计算机可以访问 PowerShell 库（PSGallery）
+        - `find-module -Name PublishCloudPrinter`若要确认计算机可以访问 PowerShell 库 (PSGallery) 
         - `install-module -Name PublishCloudPrinter`
 
             > 注意：你可能会看到一条消息，指出 "PSGallery" 是不受信任的存储库。  输入 "y" 以继续安装。
@@ -402,7 +400,7 @@ ms.locfileid: "87409087"
 
         - Sddl = 用于表示打印机权限的 SDDL 字符串。
             - 以管理员身份登录到打印服务器，然后针对要发布的打印机运行以下 PowerShell 命令： `(Get-Printer PrinterName -full).PermissionSDDL` 。
-            - 将**O:BA**作为前缀添加到上述命令中的结果。 例如 如果上一个命令返回的字符串为 G:DUD：（A; OICI; FA;;;WD），则 SDDL = O:BAG： DUD：（A; OICI; FA;;;WD）。
+            - 将**O:BA**作为前缀添加到上述命令中的结果。 例如 如果上一个命令返回的字符串为 G:DUD： (; OICI; FA;;;WD) ，则 SDDL = O:BAG： DUD： (A; OICI; FA;;;WD) 。
         - DiscoveryEndpoint = 登录到 Azure 门户然后从企业应用程序 > Mopria Discovery 服务应用程序 > 应用程序代理 > 外部 URL 获取字符串。 省略结尾/。
         - PrintServerEndpoint = 登录到 Azure 门户然后从企业应用程序 > 企业云打印应用程序 > 应用程序代理 > 外部 URL 获取字符串。 省略结尾/。
         - AzureClientId = 已注册的本机应用程序的应用程序 ID。
@@ -432,7 +430,7 @@ ms.locfileid: "87409087"
 - 应该会看到描述此终结点功能集的 JSON 文本。
 - 请参阅**设置**  >  **设备**  >  **打印机 & 扫描仪**。
     - 单击 "**添加打印机或扫描程序**"。
-    - 你应该会看到 "在最新的 Windows 10 计算机上搜索云打印机（或在我的组织中搜索打印机）" 链接。
+    - 你应该会在更新的 Windows 10 计算机上查看云打印机 (或搜索) 链接上的打印机。
     - 单击链接。
     - 单击 "请选择搜索位置" 链接。
         - 应会看到设备位置层次结构。
@@ -448,7 +446,7 @@ ms.locfileid: "87409087"
 
 |错误 |建议的步骤 |
 |------|------|
-|CloudPrintDeploy PowerShell 脚本失败 | <ul><li>确保 Windows Server 具有最新更新。</li><li>如果使用 Windows Server Update Services （WSUS），请参阅[如何在使用 WSUS/SCCM 时提供按需功能和语言包](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)。</li></ul> |
+|CloudPrintDeploy PowerShell 脚本失败 | <ul><li>确保 Windows Server 具有最新更新。</li><li>如果使用 Windows Server Update Services (WSUS) ，请参阅[如何在使用 wsus/SCCM 时提供按需功能和语言包](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)。</li></ul> |
 |SQLite 安装失败，出现以下消息：检测到包 "system.string" 的依赖关系循环 | 安装包 SkipDependencies-providername nuget-providername<br>安装包 EF6-providername nuget-SkipDependencies<br>安装包 system.object-providername-providername nuget-SkipDependencies<br><br>成功下载包后，请确保它们都是相同的版本。 如果没有，请将-requiredversion 参数添加到上述命令，并将其设置为相同版本。 |
 |发布打印机失败 | <ul><li>对于 "直通预身份验证"，请确保为发布打印机的用户提供对发布数据库的适当权限。</li><li>对于 Azure AD 预身份验证，请确保在 IIS 中启用 Windows 身份验证。 请参阅步骤5.3。 此外，先尝试先传递预身份验证。 如果直通预身份验证正常工作，则问题可能与应用程序代理有关。 请参阅[排查应用程序代理问题和错误消息](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 请注意，切换到 passthrough 会重置单一登录设置;重新访问步骤5，重新设置 Azure AD 预身份验证。</li></ul> |
 |打印作业保持发送到打印机状态 | <ul><li>确保连接器服务器上启用了 TLS 1.2。 请参阅步骤2.1 中的链接项目。</li><li>确保连接器服务器上已禁用 HTTP2。 请参阅步骤2.1 中的链接项目。</li></ul> |

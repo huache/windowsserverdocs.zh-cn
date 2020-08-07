@@ -1,20 +1,18 @@
 ---
 title: online volume
 description: 在线 volume 命令的参考文章，使脱机卷进入联机状态。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5da073fd-578d-4691-ad0f-605ba66e0c7e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8205c86fa89795d5ecf207e90ea22542c176f8c
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: b09730d3cc0cfe758c90c3ca57fd039282ba3fce
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519636"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885219"
 ---
 # <a name="online-volume"></a>online volume
 
@@ -32,9 +30,9 @@ ms.locfileid: "87519636"
 online volume [noerr]
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

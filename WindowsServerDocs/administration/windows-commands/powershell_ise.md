@@ -1,24 +1,22 @@
 ---
 title: PowerShell_ise
-description: PowerShell_ise 命令的参考文章，可启动 Windows PowerShell 集成脚本环境（ISE）会话。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: PowerShell_ise 命令的参考文章，用于启动 Windows PowerShell 集成脚本环境 (ISE) 会话。
 ms.topic: article
 ms.assetid: 32c41b5b-a210-47d9-bd8c-91eb9830b4f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24fc3c6dca5ba3fea872f625b2ef81f1c78f59fb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f82779d122d3fedf3dac7ecf51b6da0601373421
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956569"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884872"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
-Windows PowerShell 集成脚本环境（ISE）是一种图形化主机应用程序，使你能够在图形辅助环境中读取、编写、运行、调试和测试脚本与模块。 智能感知、显示命令、代码段、tab 自动补全、语法着色、可视调试和上下文相关帮助等主要功能提供丰富的脚本编写体验。
+Windows PowerShell 集成脚本环境 (ISE) 是一种图形化主机应用程序，可用于读取、写入、运行、调试和测试图形辅助环境中的脚本和模块。 智能感知、显示命令、代码段、tab 自动补全、语法着色、可视调试和上下文相关帮助等主要功能提供丰富的脚本编写体验。
 
 ## <a name="using-powershellexe"></a>使用 PowerShell.exe
 
@@ -30,7 +28,7 @@ Windows PowerShell 集成脚本环境（ISE）是一种图形化主机应用程�
   PowerShell_Ise.exe
   ```
 
-- 若要在 Windows PowerShell ISE 中打开脚本（ps1）、脚本模块（. hbase-runner.psm1）、模块清单（psd1）、XML 文件或任何其他受支持的文件，请键入：
+- 若要打开脚本 ( ps1) 、script module () 、 (、XML 文件或) 中任何其他受支持的文件，请键入：
 
   ```powershell
   PowerShell_Ise.exe <filepath>
@@ -42,7 +40,7 @@ Windows PowerShell 集成脚本环境（ISE）是一种图形化主机应用程�
   PowerShell_Ise.exe -file <filepath>
   ```
 
-- 若要在不使用 Windows PowerShell 配置文件的情况下启动 Windows PowerShell ISE 会话，请使用**NoProfile**参数。 （Windows PowerShell 3.0 中引入了**NoProfile**参数。），请键入：
+- 若要在不使用 Windows PowerShell 配置文件的情况下启动 Windows PowerShell ISE 会话，请使用**NoProfile**参数。  (在 Windows PowerShell 3.0 ) 中引入了**NoProfile**参数，请键入：
 
   ```powershell
   PowerShell_Ise.exe -NoProfile

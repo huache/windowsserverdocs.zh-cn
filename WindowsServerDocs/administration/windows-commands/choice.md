@@ -1,20 +1,18 @@
 ---
 title: choice
 description: 选择命令的参考文章，该命令提示用户从批处理程序中的单字符选项列表中选择一项，然后返回选定选择的索引。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c65a9119-410b-4dcf-9fa7-4e07d2a7238b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 745321c6388e6faa9de1ce1a8a24afe66514d259
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6aec3af1966d0b7952f0bbb5880e373356117e42
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929971"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880253"
 ---
 # <a name="choice"></a>choice
 
@@ -28,10 +26,10 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| /c`<choice1><choice2><…>` | 指定要创建的选项的列表。 有效选项包括 a-z、a-z、0-9 和扩展的 ASCII 字符（128-254）。 默认列表为 "YN"，它显示为 `[Y,N]?` 。 |
-| /n | 隐藏选项列表，尽管仍将启用这些选项，并且仍显示消息文本（如果已指定 **）。** |
+| /c`<choice1><choice2><…>` | 指定要创建的选项的列表。 有效选项包括 a-z、a-z、0-9 和扩展的 ASCII 字符 (128-254) 。 默认列表为 "YN"，它显示为 `[Y,N]?` 。 |
+| /n | 隐藏选项的列表，但仍会启用选项，如果仍显示 " **/m**) 指定的消息文本 (，则为。 |
 | /cs | 指定选项区分大小写。 默认情况下，选择不区分大小写。 |
 | /t`<timeout>` | 指定在使用 **/d**指定的默认选项之前要暂停的秒数。 可接受的值为**0**到**9999**。 如果 **/t**设置为**0**，则在返回默认选项之前，**选择**不暂停。 |
 | /d`<choice>` | 指定在等待 **/t**指定的秒数后要使用的默认选项。 默认选项必须在 **/c**所指定的选项列表中。 |

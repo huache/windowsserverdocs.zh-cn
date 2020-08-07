@@ -1,19 +1,17 @@
 ---
 title: Vssadmin 删除阴影
 description: Vssadmin 删除 shadows 命令的说明。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 84135624377f589417c7524c40375ed8470d3269
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 884407cee82926b3b258afba5ab2e47dc640e10f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954790"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891808"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin 删除阴影
 
@@ -29,7 +27,7 @@ vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---|---|
 |/for =\<ForVolumeSpec>|指定将删除的卷影副本。|
 |/oldest|仅删除最旧的卷影副本。|

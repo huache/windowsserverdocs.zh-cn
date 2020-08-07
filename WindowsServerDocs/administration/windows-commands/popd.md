@@ -1,24 +1,22 @@
 ---
 title: popd
 description: Pnputil 命令的参考文章，此命令将当前目录更改为 pushd 命令最近存储的目录。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8a4c52d5-9fd1-4eac-9c0c-5767b25728ed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 002a0d84770738db2b00bedcd1e01df3b1b61b76
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d78566cf53d7618d0fb5b7fc57ca02b8ee82484c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937005"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884911"
 ---
 # <a name="popd"></a>popd
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 **Popd**命令将当前目录更改为**pushd**命令最近存储的目录。
 

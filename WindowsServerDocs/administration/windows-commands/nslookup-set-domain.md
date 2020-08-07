@@ -1,26 +1,24 @@
 ---
 title: nslookup set domain
-description: "\"Nslookup set 域\" 命令的参考文章，此命令会将默认域名系统（DNS）域名更改为指定名称。"
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Nslookup set 域命令的参考文章，此命令将默认域名系统 (DNS) 域名更改为指定名称。
 ms.topic: article
 ms.assetid: 9d4d28e8-6e88-42cc-801f-94e9d8e051f4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eaa12029beab301f955a4c9bed4595831f6ebf12
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: fbf2602f387af9a1f389bdcccc50b19a5b25c2ce
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934411"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885672"
 ---
 # <a name="nslookup-set-domain"></a>nslookup set domain
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-将默认域名系统（DNS）域名改为指定的名称。
+将默认域名系统 (DNS) 域名更改为指定名称。
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +28,7 @@ set domain=<domainname>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<domainname>` | 为默认 DNS 域名指定新名称。 默认值为主机的名称。 |
 | /? | 在命令提示符下显示帮助。 |

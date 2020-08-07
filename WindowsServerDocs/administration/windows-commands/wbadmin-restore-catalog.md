@@ -1,26 +1,24 @@
 ---
 title: wbadmin restore catalog
 description: 用于从指定存储位置为本地计算机恢复备份目录的 wbadmin restore catalog 参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ce1e24a0-821d-4353-b09d-8f82c5c4ad56
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a31fb2a49e5a85f7fdb4b8b5a7becc8ea57e13d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7cf9304140825620ec1eae118e24a5a611a2a384
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954594"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891703"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 
 从指定的存储位置恢复本地计算机的备份目录。
 
-若要使用此子命令恢复备份目录，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。 （若要打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。）
+若要使用此子命令恢复备份目录，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。  (打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
 
 ## <a name="syntax"></a>语法
 
@@ -33,7 +31,7 @@ wbadmin restore catalog
 
 ### <a name="parameters"></a>参数
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
 |-backupTarget|指定在创建备份后的时间点的系统备份目录的位置。|
 |-计算机|指定要恢复其备份目录的计算机的名称。 当多台计算机的备份存储在同一位置时使用。 当指定 **-backupTarget**时，应使用。|
@@ -41,7 +39,7 @@ wbadmin restore catalog
 
 ## <a name="remarks"></a>备注
 
-如果存储备份的位置（磁盘、DVD 或远程共享文件夹）已损坏或丢失，并且无法用于还原备份目录，请使用**wbadmin delete catalog**删除损坏的目录。 在这种情况下，你应在删除备份目录后创建新备份。
+如果存储备份的位置 (磁盘、DVD 或远程共享文件夹) 已损坏或丢失，并且无法用于还原备份目录，请使用**wbadmin delete catalog**删除损坏的目录。 在这种情况下，你应在删除备份目录后创建新备份。
 
 ## <a name="examples"></a>示例
 

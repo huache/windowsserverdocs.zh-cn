@@ -1,20 +1,18 @@
 ---
 title: pentnt
 description: Pentnt 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4911e640-aa7f-4afb-abc2-5eefc7010204
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fb2ef97ea623174ad159021c2907f72314222f0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 21e38467057feedf3cadf1061664ef14acc49915
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956659"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885044"
 ---
 # <a name="pentnt"></a>pentnt
 
@@ -23,7 +21,7 @@ ms.locfileid: "86956659"
 >[!IMPORTANT]
 > 此命令已弃用。
 
-检测 Pentium 芯片中的浮点除法错误（如果存在），禁用浮点硬件，并启用浮点模拟。 有关说明和用法信息，请参阅[pentnt](/previous-versions/orphan-topics/ws.10/cc755868(v=ws.10))。
+检测浮点除法错误 (如果在奔腾芯片中存在) ，禁用浮点硬件，并打开浮点模拟。 有关说明和用法信息，请参阅[pentnt](/previous-versions/orphan-topics/ws.10/cc755868(v=ws.10))。
 
 ## <a name="additional-references"></a>其他参考
 

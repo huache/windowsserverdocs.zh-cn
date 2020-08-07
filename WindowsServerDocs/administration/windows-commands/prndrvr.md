@@ -1,24 +1,22 @@
 ---
 title: prndrvr
 description: 用于添加、删除和列出打印机驱动程序的 prndrvr 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 82b09e3e-bd38-4df1-9953-b0e9ee2565a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f256d003ac0884b100aedb24bbb55e663444911
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2be35ef44b7c54a5b8390120cef65054c06008d2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924209"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884752"
 ---
 # <a name="prndrvr"></a>prndrvr
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 添加、删除和列出打印机驱动程序。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prndrvr 文件的完整路径，或将目录更改为相应的文件夹。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr`。
 
@@ -32,13 +30,13 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}] [-e <enviro
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | -a | 安装驱动程序。 |
 | -d | 删除驱动程序。 |
 | -l | 列出由 **-s**参数指定的服务器上安装的所有打印机驱动程序。 如果未指定服务器，Windows 会列出安装在本地计算机上的打印机驱动程序。 |
 | -X | 删除由 **-s**参数指定的服务器上的逻辑打印机未使用的所有打印机驱动程序和其他打印机驱动程序。 如果未指定要从列表中删除的服务器，Windows 将删除本地计算机上所有未使用的打印机驱动程序。 |
-| -m`<model_name>` | 指定要安装的驱动程序（按名称）。 驱动程序通常是以支持的打印机型号命名的。 有关详细信息，请参阅打印机文档。 |
+| -m`<model_name>` | 按名称指定要安装的驱动程序)  (。 驱动程序通常是以支持的打印机型号命名的。 有关详细信息，请参阅打印机文档。 |
 | `-v {0|1|2|3}` | 指定要安装的驱动程序的版本。 有关适用于哪个环境的版本的信息，请参阅 **-e**参数的描述。 如果未指定版本，则会安装适用于在其上安装驱动程序的计算机上运行的 Windows 版本的驱动程序版本。 |
 | -e `<environment>` | 指定要安装的驱动程序的环境。 如果未指定环境，则使用要安装驱动程序的计算机的环境。 支持的环境参数包括： **WINDOWS NT x86**、 **Windows X64**或**windows IA64**。 |
 | -s`<Servername>` | 指定承载要管理的打印机的远程计算机的名称。 如果未指定计算机，则使用本地计算机。 |
@@ -49,9 +47,9 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}] [-e <enviro
 
 #### <a name="remarks"></a>备注
 
-- 如果提供的信息包含空格，请使用引号将文本括起来（例如，"计算机名称"）。
+- 如果提供的信息包含空格，请使用引号将文本括起来 (例如，"Computer Name" ) 。
 
-- **-X**参数删除所有其他打印机驱动程序（已安装的驱动程序，以便在运行 Windows 备用版本的客户端上使用），即使正在使用主驱动程序也是如此。 如果安装了传真组件，此选项也会删除传真驱动程序。 如果主传真驱动程序未被使用（即，如果没有队列使用它），则会将其删除。 如果删除了主传真驱动程序，则重新启用传真的唯一方法是重新安装传真组件。
+- **-X**参数删除在运行) Windows 的备用版本的客户端上使用的所有附加打印机驱动程序 (驱动程序，即使正在使用主驱动程序也是如此。 如果安装了传真组件，此选项也会删除传真驱动程序。 如果主传真驱动程序未使用，则将其删除 (也就是说，如果不存在使用它) 的队列。 如果删除了主传真驱动程序，则重新启用传真的唯一方法是重新安装传真组件。
 
 ### <a name="examples"></a>示例
 

@@ -1,26 +1,24 @@
 ---
 title: create partition efi
-description: 创建 partition efi 命令的参考文章，它在基于 Itanium 的计算机上的 GUID 分区表（gpt）磁盘上创建可扩展固件接口（EFI）系统分区。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Create partition efi 命令的参考文章，它在基于 Itanium 的计算机上 (EFI) 系统分区 (gpt) 磁盘上创建可扩展固件接口。
 ms.topic: article
 ms.assetid: 3cfc1fca-6515-4a4d-bfae-615fa8045ea9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05c811e7be32ed9e73b352161ef1e6f043f27048
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e0307410648453a42c66e7327b5c671a702017e2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928888"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880007"
 ---
 # <a name="create-partition-efi"></a>create partition efi
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-在基于 Itanium 的计算机上的 GUID 分区表（gpt）磁盘上创建可扩展固件接口（EFI）系统分区。 创建分区后，会将焦点提供给新的分区。
+在基于 Itanium 的计算机上 (EFI) 系统分区 (gpt) 磁盘上创建可扩展固件接口。 创建分区后，会将焦点提供给新的分区。
 
 >[!NOTE]
 > 若要成功执行此操作，必须选择 gpt 磁盘。 使用 "[选择磁盘](select-disk.md)" 命令选择磁盘，并将焦点移动到该磁盘。
@@ -33,10 +31,10 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| 大小 =`<n>` | 分区的大小，以兆字节（MB）为单位。 如果未给出分区大小，则分区会一直继续，直至当前区域中没有可用空间为止。 |
-| offset =`<n>` | 在其中创建分区的偏移量（kb）。 如果未给出偏移量，则将分区放置在能容纳它的第一个磁盘区域中。 |
+| 大小 =`<n>` | 分区大小以 mb (MB) 为单位。 如果未给出分区大小，则分区会一直继续，直至当前区域中没有可用空间为止。 |
+| offset =`<n>` | 在其中创建分区 (KB) 的偏移量（kb）。 如果未给出偏移量，则将分区放置在能容纳它的第一个磁盘区域中。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
 #### <a name="remarks"></a>备注

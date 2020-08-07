@@ -1,20 +1,18 @@
 ---
 title: pnputil
 description: Pnputil 命令的参考文章，其中添加了驱动程序包，删除驱动程序包，并使用 pnputil.exe 实用程序列出了驱动程序存储区中的驱动程序包。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fab686b8-09d3-4f6c-afa2-630e6036f44c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 01b8aee1aa4dfb85b590c9d4abbec471fc437da8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4bd4a5ed4dcadb1011dfbf28647ba4f223249a34
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930236"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884919"
 ---
 # <a name="pnputil"></a>pnputil
 
@@ -28,7 +26,7 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | -a | 指定添加标识的 INF 文件。 |
 | -d | 指定删除标识的 INF 文件。 |

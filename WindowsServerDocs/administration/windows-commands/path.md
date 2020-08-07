@@ -1,24 +1,22 @@
 ---
 title: path
-description: 参考文章：在 PATH 环境变量中设置命令路径，指定用于搜索可执行文件（.exe）文件的目录集。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: 参考文章：在 PATH 环境变量中设置命令路径，指定用于搜索可执行文件 () 文件的目录集。
 ms.topic: article
 ms.assetid: 1bfa1349-e79a-472b-a9e6-d7a91149ae8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f324c2b0fc84d2df05f7df93d83799b3ac463d5d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4c81dfef09b4c9a411db9469ec851d4f92180f1d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932025"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885107"
 ---
 # <a name="path"></a>path
 
-在 PATH 环境变量中设置命令路径，指定用于搜索可执行文件（.exe）文件的目录集。 如果不使用参数，则此命令将显示当前命令路径。
+在 PATH 环境变量中设置命令路径，指定用于搜索可执行文件 () 文件的目录集。 如果不使用参数，则此命令将显示当前命令路径。
 
 ## <a name="syntax"></a>语法
 
@@ -29,7 +27,7 @@ path ;
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | `[<drive>:]<path>` | 指定要在命令路径中设置的驱动器和目录。 当前目录始终在命令路径中指定的目录之前搜索。 |
 | ; | 分隔命令路径中的目录。 如果在不使用其他参数的情况下使用，**则为;** 从 PATH 环境变量中清除现有命令路径，并指示 Cmd.exe 仅在当前目录中进行搜索。 |
