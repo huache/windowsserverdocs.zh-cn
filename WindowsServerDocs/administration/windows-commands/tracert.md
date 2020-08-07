@@ -29,7 +29,7 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |/d|防止**tracert**尝试将中间路由器的 IP 地址解析为其名称。 这可以加速显示**tracert**结果。|
 |/h\<MaximumHops>|指定路径中搜索目标 (目标) 的最大跃点数。 默认值为30个跃点。|

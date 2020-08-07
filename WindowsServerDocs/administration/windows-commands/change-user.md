@@ -31,7 +31,7 @@ change user {/execute | /install | /query}
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | / execute | 使.ini 文件映射到主目录。 这是默认设置。 |
 | /install | 禁用.ini 文件映射到主目录。 所有的.ini 文件读取并写入到系统目录中。 在远程桌面会话主机服务器上安装应用程序时，必须禁用 .ini 文件映射。 |

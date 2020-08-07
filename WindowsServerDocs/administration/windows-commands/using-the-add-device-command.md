@@ -26,7 +26,7 @@ wdsutil /add-Device /Device:<Device name> /ID:<UUID | MAC address> [/ReferralSer
 [/User:<Domain\User | User@Domain>] [/JoinRights:{JoinOnly | Full}] [/JoinDomain:{Yes | No}] [/BootImagepath:<Relative path>] [/OU:<DN of OU>] [/Domain:<Domain>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |装置<computer name>|指定要添加的计算机的名称。|
 |/ID： <UUID &#124; MAC 地址>|指定计算机的 GUID/UUID 或 MAC 地址。 GUID/UUID 必须采用以下两种格式之一：二进制字符串或 GUID 字符串。 例如：<p>二进制字符串： **/id： ACEFA3E81F20694E953EB2DAA1E8B1B6**<p>GUID 字符串： **/id： E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<p>MAC 地址必须采用以下格式： **00B056882FDC** (没有短划线) 或 00-)  (**2f** ----|

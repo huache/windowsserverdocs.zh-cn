@@ -25,7 +25,7 @@ ms.locfileid: "87896963"
 wdsutil /Get-Device {/Device:<Device name> | /ID:<MAC or UUID>} [/Domain:<Domain>] [/forest:{Yes | No}]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |装置<Device name>|指定 (SAMAccountName) 计算机的名称。|
 |识别<MAC or UUID>|指定计算机的 MAC 地址或 UUID (GUID) ，如以下示例中所示。 请注意，有效的 GUID 必须采用以下两种格式之一：二进制字符串或 GUID 字符串<p>-   **二进制字符串**：/ID： ACEFA3E81F20694E953EB2DAA1E8B1B6<br />-   **MAC 地址**： 00B056882FDC (没有短划线) 或 00-00-00-)  (2f-<br />-   **GUID 字符串**：/ID： E8A3EFAC-201F-4E69-953-B2DAA1E8B1B6|

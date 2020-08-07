@@ -28,7 +28,7 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |scriptname|指定脚本文件的路径和文件名。|
 |/b|指定批处理模式，该模式不会显示警报、脚本错误或输入提示。 这与 **/i**相反。|

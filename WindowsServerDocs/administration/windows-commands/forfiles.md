@@ -26,7 +26,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /P`<pathname>` | 指定从其开始搜索的路径。 默认情况下，搜索从当前工作目录开始。 |
 | 一样`<searchmask>` | 根据指定的搜索掩码搜索文件。 默认的 searchmask 为 `*` 。 |
@@ -41,7 +41,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
 - 可以在命令字符串中使用由 **/C**命令行选项指定的以下变量：
 
-    | 变量 | 描述 |
+    | 变量 | 说明 |
     | -------- | ----------- |
     | @FILE | 文件名。 |
     | @FNAME | 不带扩展名的文件名。 |

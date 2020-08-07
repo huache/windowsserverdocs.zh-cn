@@ -18,7 +18,7 @@ ms.locfileid: "87884707"
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-除了显示和更改端口配置之外，还可以创建、删除和列出标准 TCP/IP 打印机端口。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prnport 文件的完整路径，或将目录更改为相应的文件夹。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport`。
+除了显示和更改端口配置之外，还可以创建、删除和列出标准 TCP/IP 打印机端口。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prnport 文件的完整路径，或将目录更改为相应的文件夹。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport`。
 
 ## <a name="syntax"></a>语法
 
@@ -28,7 +28,7 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <portname>] [-s <Servername>] 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | -a | 创建标准 TCP/IP 打印机端口。 |
 | -d | 删除标准 TCP/IP 打印机端口。 |

@@ -31,7 +31,7 @@ relog [<filename> [<filename> ...]] [/a] [/c <path> [<path> ...]] [/cf <filename
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | `filename [filename ...]` | 指定现有性能计数器日志的路径名。 可以指定多个输入文件。 |
 | -a | 追加输出文件而不是覆盖。 此选项不适用于默认情况下始终追加的 SQL 格式。 |
