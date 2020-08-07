@@ -1,20 +1,18 @@
 ---
 title: md
 description: 用于创建目录或子目录的 md 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 82162d00-cc34-4776-9e55-4b4836dbd6a9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7d5dac14572bfe53f92333cddcdc68bfa0aab1a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 94dd8f696b97d56fe082f73287a3d50dc7f70883
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922095"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886511"
 ---
 # <a name="md"></a>md
 
@@ -31,7 +29,7 @@ md [<drive>:]<path>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<drive>`: | 指定要在其上创建新目录的驱动器。 |
 | `<path>` | 指定新目录的名称和位置。 任何单个路径的最大长度由文件系统确定。 这是必需参数。 |

@@ -1,20 +1,18 @@
 ---
 title: delete disk
 description: 删除磁盘命令的参考文章，它从磁盘列表中删除丢失的动态磁盘。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 44079900-e4ed-49d0-81e4-d652c38cd636
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55eabb19e10a7ca6fe4dd705ab91961919bb2b7c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 85657e571fb5f0f4e0a55cf54065056a8f28c385
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958399"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891444"
 ---
 # <a name="delete-disk"></a>delete disk
 
@@ -31,7 +29,7 @@ delete disk [noerr] [override]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 | override | 允许 DiskPart 删除磁盘上的所有简单卷。 如果磁盘上包含半个镜像卷，则磁盘上的这半个镜像将被删除。 如果磁盘是 RAID-5 卷的一个成员，则 delete disk override 命令无效。 |

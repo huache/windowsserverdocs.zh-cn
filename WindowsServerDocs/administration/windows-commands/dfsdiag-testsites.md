@@ -1,26 +1,24 @@
 ---
 title: dfsdiag testsites
-description: Dfsdiag testsites 参考文章，通过验证充当命名空间服务器或文件夹（链接）目标的服务器是否具有与所有域控制器相同的站点关联来检查 active directory 域服务（AD DS）站点的配置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Dfsdiag testsites 参考文章，通过验证充当命名空间服务器或文件夹 (链接) 目标的服务器是否在所有域控制器上都具有相同的站点关联来检查 active directory 域服务 (AD DS) 站点的配置。
 ms.topic: article
 ms.assetid: 39a0d415-7eb7-4a26-861b-7ff00c45dcda
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7942b1535957366af9485580d75c9eec17120f4d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d40d7833cabb9e03875660c7d4ebbc129eff0255
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928680"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891119"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag testsites
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-通过验证充当命名空间服务器或文件夹（链接）目标的服务器是否在所有域控制器上具有相同的站点关联来检查 active directory 域服务（AD DS）站点的配置。
+通过验证充当命名空间服务器或文件夹 (链接) 目标的服务器是否在所有域控制器上都具有相同的站点关联来检查 active directory 域服务 (AD DS) 站点的配置。
 
 ## <a name="syntax"></a>语法
 
@@ -30,10 +28,10 @@ dfsdiag /testsites </machine:<server name>| /DFSpath:<namespace root or DFS fold
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `/machine:<server name>` | 要在其上验证站点关联的服务器的名称。 |
-| `/DFSpath:<namespace root or DFS folder>` | 命名空间根或分布式文件系统（DFS）文件夹（链接），其中包含要验证其站点关联的目标。 |
+| `/DFSpath:<namespace root or DFS folder>` | 命名空间 root 或分布式文件系统 (DFS) 文件夹 (与要验证其站点关联的目标) 链接。 |
 | /recurse | 枚举并验证指定命名空间根目录下的所有文件夹目标的站点关联。 |
 | /full | 验证 AD DS 和服务器的注册表中是否包含相同的站点关联信息。 |
 
@@ -45,7 +43,7 @@ dfsdiag /testsites </machine:<server name>| /DFSpath:<namespace root or DFS fold
 dfsdiag /testsites /machine:MyServer
 ```
 
-若要检查分布式文件系统（DFS）文件夹来验证站点关联，并验证 AD DS 和服务器的注册表是否包含相同的站点关联信息，请键入：
+若要检查分布式文件系统 (DFS) 文件夹来验证站点关联，同时验证服务器的 AD DS 和注册表是否包含相同的站点关联信息，请键入：
 
 ```
 dfsdiag /TestSites /DFSpath:\\contoso.com\namespace1\folder1 /full

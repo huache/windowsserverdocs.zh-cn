@@ -1,24 +1,22 @@
 ---
 title: 干酪
 description: Fondue 命令的参考文章，可通过从 Windows 更新或组策略指定的其他源下载所需文件来启用 Windows 可选功能。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fc4467f6-ddbb-4d6d-b51e-5a50a957b8c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d2b7e4b2a8ef3158f5528c43944020274204970
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 16660ed745c28f84d7911f9784fbeb19a5c03ae3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922698"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890189"
 ---
 # <a name="fondue"></a>干酪
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 通过从 Windows 更新或组策略指定的其他源下载所需的文件来启用 Windows 可选功能。 此功能的清单文件必须已安装在 Windows 映像中。
 
@@ -30,7 +28,7 @@ fondue.exe /enable-feature:<feature_name> [/caller-name:<program_name>] [/hide-u
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /enable-feature`<feature_name>` | 指定要启用的 Windows 可选功能的名称。 每个命令行只能启用一项功能。 若要启用多个功能，请使用每个功能的 fondue.exe。 |
 | /caller-name:`<program_name>` | 指定从脚本或批处理文件中调用 fondue.exe 时的程序或进程的名称。 如果出现错误，则可以使用此选项将程序名称添加到 SQM 报表中。 |

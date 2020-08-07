@@ -1,20 +1,18 @@
 ---
 title: delete partition
 description: 删除分区命令的参考文章，该命令删除具有焦点的分区。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 65752312-cb16-46f6-870f-1b95c507b101
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b45cb060a5d82e254fe371269dbdbcb9d46fee92
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5a783a7d94b48f088eeb868ac64ca355d8829c25
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928723"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891433"
 ---
 # <a name="delete-partition"></a>delete partition
 
@@ -33,7 +31,7 @@ delete partition [noerr] [override]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 | override | 允许 DiskPart 删除任何类型的分区。 通常，DiskPart 只允许删除已知的数据分区。 |
@@ -42,7 +40,7 @@ delete partition [noerr] [override]
 
 - 若要删除动态卷，请始终改用[delete volume](delete-volume.md)命令。
 
-- 可以从动态磁盘中删除分区，但不应创建分区。 例如，可以在动态 GPT 磁盘上删除无法识别的 GUID 分区表（GPT）分区。 删除此类分区不会导致生成的可用空间可用。 相反，此命令旨在允许您在不能使用 DiskPart 中的[clean](clean.md)命令的紧急情况下回收损坏的脱机动态磁盘上的空间。
+- 可以从动态磁盘中删除分区，但不应创建分区。 例如，可以在动态 GPT 磁盘上删除无法识别的 GUID 分区表 (GPT) 分区。 删除此类分区不会导致生成的可用空间可用。 相反，此命令旨在允许您在不能使用 DiskPart 中的[clean](clean.md)命令的紧急情况下回收损坏的脱机动态磁盘上的空间。
 
 ## <a name="examples"></a>示例
 

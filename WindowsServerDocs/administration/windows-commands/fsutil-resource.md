@@ -1,24 +1,22 @@
 ---
 title: fsutil resource
 description: 用于管理事务资源管理器及其行为的 fsutil resource 命令的参考文章。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c0be84f00df2e0010f6c2a318f605532a3bc4d23
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 85b52c1ad124ac47617948f1683038108214e2e3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958179"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889880"
 ---
 # <a name="fsutil-resource"></a>fsutil resource
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
 创建辅助事务资源管理器，启动或停止事务资源管理器，或显示有关事务资源管理器的信息，并修改以下行为：
 
@@ -45,7 +43,7 @@ fsutil resource [stop] <rmrootpathname>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | create | 创建辅助事务资源管理器。 |
 | `<rmrootpathname>` | 指定事务资源管理器根目录的完整路径。 |
@@ -59,7 +57,7 @@ fsutil resource [stop] <rmrootpathname>
 | `<containers>` | 指定事务性资源管理器使用的数据对象。 |
 | maxextent | 指定指定的事务资源管理器的最大容器数。 |
 | minextent | 指定指定的事务资源管理器的最小容器数。 |
-| 众`{full|undo}` | 指定是记录所有事务（ **full**）还是只记录回滚事件（**undo**）。 |
+| 众`{full|undo}` | 指定是记录所有事务 (**完全**) 还是只记录回滚的事件 (**undo**) 。 |
 | 重命名 | 更改事务资源管理器的 GUID。 |
 | 缩减 | 指定事务资源管理器日志可自动减少的百分比。 |
 | 大小 | 指定事务资源管理器的大小，以指定数目的*容器*。 |

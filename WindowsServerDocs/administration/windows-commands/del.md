@@ -1,26 +1,24 @@
 ---
 title: del
 description: Del 命令的参考文章，用于删除一个或多个文件。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 346eede2-2085-44f5-9936-6877b5d5a833
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe1ae558da0a4cb19159c68c67e1e72970e3b502
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f909a212284f29fff15de0d02995b08b713cd889
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958409"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891495"
 ---
 # <a name="del"></a>del
 
 删除一个或多个文件。 此命令执行与**erase**命令相同的操作。
 
-**Del**命令也可以使用不同的参数从 Windows 恢复控制台运行。 有关详细信息，请参阅[Windows 恢复环境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+**Del**命令也可以使用不同的参数从 Windows 恢复控制台运行。 有关详细信息，请参阅[Windows 恢复环境 (WinRE) ](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 > [!WARNING]
 > 如果使用**del**从磁盘中删除文件，则无法检索该文件。
@@ -34,7 +32,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<names>` | 指定一个或多个文件或目录的列表。 通配符可用于删除多个文件。 如果指定了目录，则会删除该目录中的所有文件。 |
 | /p | 删除指定文件之前提示确认。 |
@@ -50,7 +48,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
     `FileName, Delete (Y/N)?`
 
-    若要确认删除，请按**Y**。若要取消删除并显示下一个文件名（如果指定了一组文件），请按**N**。若要停止**del**命令，请按 CTRL + C。
+    若要确认删除，请按**Y**。若要取消删除并显示下一个文件名 (如果指定了一组文件) ，请按**N**。若要停止**del**命令，请按 CTRL + C。
 
 - 如果禁用命令扩展， **/s**参数将显示找不到的任何文件的名称，而不是显示要删除的文件的名称。
 
@@ -60,7 +58,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
   del \work
   ```
 
-- 您可以使用通配符（**&#42;** 和 **？**）一次删除多个文件。 但是，若要避免无意中删除文件，应慎重使用通配符。 例如，如果键入以下命令：
+- 您可以使用通配符 (**&#42;** 和 **？**) 一次删除多个文件。 但是，若要避免无意中删除文件，应慎重使用通配符。 例如，如果键入以下命令：
 
   ```
   del *.*
@@ -100,4 +98,4 @@ del /a:r *.*
 
 - [命令行语法项](command-line-syntax-key.md)
 
-- [Windows 恢复环境（WinRE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+- [Windows 恢复环境 (WinRE) ](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)

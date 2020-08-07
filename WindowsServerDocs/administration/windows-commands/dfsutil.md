@@ -1,24 +1,22 @@
 ---
 title: dfsutil
 description: 用于管理 DFS 命名空间、服务器和客户端的 dfsutil 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ef5093a4-0d24-4b21-9d04-59933ad98e2c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cfb3d221e275a688f5c18a960681257077fb4f7f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f31af9f557271182980a367ebf5e2233788fcc31
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958369"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891021"
 ---
 # <a name="dfsutil"></a>dfsutil
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 Dfsutil 命令管理 DFS 命名空间、服务器和客户端。
 
@@ -26,10 +24,10 @@ Dfsutil 命令管理 DFS 命名空间、服务器和客户端。
 
 [DFSN](/powershell/module/dfsn/?view=win10-ps) PowerShell 模块为以下 dfsutil 参数提供等效功能。
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | root | 显示、创建、删除、导入、导出命名空间根目录。 |
-| 链接 | 显示、创建、删除或移动文件夹（链接）。 |
+| 链接 | 显示、创建、删除或移动文件夹 (链接) 。 |
 | 目标 | 显示、创建、删除文件夹目标或命名空间服务器。 |
 | property | 显示或修改文件夹目标或命名空间服务器。 |
 | server | 显示或修改命名空间配置。 |
@@ -39,7 +37,7 @@ Dfsutil 命令管理 DFS 命名空间、服务器和客户端。
 
 以下功能仅作为 dfsutil 参数提供：
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | 客户端 | 显示或修改客户端信息或注册表项。 |
 | 斜 | 执行诊断或查看 dfsdirs/dfspath。 |

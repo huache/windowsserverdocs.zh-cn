@@ -1,24 +1,22 @@
 ---
 title: fsutil dirty
 description: 用于查询或设置卷的未更新位的 fsutil dirty 命令的参考文章。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: cb133dc9f9f19a948eb88d24935fac27f2a5e4a3
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 00fd11e577957e45bb8b2491b54cf1548effedc3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409728"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890005"
 ---
 # <a name="fsutil-dirty"></a>fsutil dirty
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
 查询或设置卷的未更新位。 如果设置了卷的未更新位，则在下次重新启动计算机时， **autochk**会自动检查卷中是否存在错误。
 
@@ -30,7 +28,7 @@ fsutil dirty {query | set} <volumepath>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | query | 查询指定卷的已更新位。 |
 | set | 设置指定卷的未更新位。 |

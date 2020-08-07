@@ -1,26 +1,24 @@
 ---
 title: dfsrmig
 description: Dfsrmig 命令的参考文章，用于将 SYSvol 复制从 FRS 迁移到 DFS 复制，提供有关迁移进度的信息，并修改 AD DS 对象以支持迁移。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e1b6a464-6a93-4e66-9969-04f175226d8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87882ebe0beb687f704c5573091f56c067c278ee
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 83e4d039b0c7c36960ab8dadfa4740d0c01daa33
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928644"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891041"
 ---
 # <a name="dfsrmig"></a>dfsrmig
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-DFS 复制服务 dfsrmig.exe 的迁移工具随 DFS 复制服务一起安装。 此工具将 SYSvol 复制从文件复制服务（FRS）迁移到分布式文件系统（DFS）复制。 它还提供有关迁移进度的信息并修改 Active Directory 域服务（AD DS）对象以支持迁移。
+DFS 复制服务 dfsrmig.exe 的迁移工具随 DFS 复制服务一起安装。 此工具将 SYSvol 复制从文件复制服务迁移到 (FRS) 以分布式文件系统 (DFS) 复制。 它还提供有关迁移进度的信息并修改 Active Directory 域服务 (AD DS) 对象以支持迁移。
 
 ## <a name="syntax"></a>语法
 
@@ -31,7 +29,7 @@ dfsrmig [/setglobalstate <state> | /getglobalstate | /getmigrationstate | /creat
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `/setglobalstate <state>` | 将域的全局迁移状态设置为与*状态*指定的值相对应的状态。 只能将全局迁移状态设置为稳定状态。 *状态值*包括：<ul><li>**0** -开始状态</li><li>**1** -准备状态</li><li>**2** -重定向状态</li><li>**3** -消除状态</li></ul> |
 | /getglobalstate | 在 PDC 模拟器上运行时，从 AD DS 数据库的本地副本中检索域的当前全局迁移状态。 使用此选项可确认设置了正确的全局迁移状态。<p>**重要提示：** 只应在 PDC 模拟器上运行此命令。 |
@@ -57,17 +55,17 @@ dfsrmig [/setglobalstate <state> | /getglobalstate | /getmigrationstate | /creat
 
 - 仅在 Windows Server 域功能级别运行的域控制器上支持**dfsrmig**命令，因为从 FRS 到 DFS 复制的 SYSvol 迁移仅适用于在该级别运行的域控制器。
 
-- 你可以在任何域控制器上运行**dfsrmig**命令，但创建或操作 AD DS 对象的操作仅允许在可读写功能的域控制器上（不是在只读域控制器上）。
+- 你可以在任何域控制器上运行**dfsrmig**命令，但创建或操作 AD DS 对象的操作仅允许读写功能的域控制器 (不在只读域控制器) 上。
 
 ## <a name="examples"></a>示例
 
-若要将全局迁移状态设置为 "已准备好（**1**）" 并启动迁移或从准备好的状态回滚，请键入：
+若要将全局迁移状态设置为 "准备 (**1**) 并启动迁移或从准备好的状态回滚，请键入：
 
 ```
 dfsrmig /setglobalstate 1
 ```
 
-若要将全局迁移状态设置为 "启动" （**0**），并启动 "回退到开始状态"，请键入：
+若要将全局迁移状态设置为开始 (**0**) 并启动回退到开始状态，请键入：
 
 ```
 dfsrmig /setglobalstate 0

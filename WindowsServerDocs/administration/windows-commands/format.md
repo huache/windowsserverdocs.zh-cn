@@ -1,20 +1,18 @@
 ---
 title: format
 description: Format 命令的参考文章，其中格式化磁盘来接受 Windows 文件。
-ms.prod: windows-server
 manager: dongill
 ms.author: jgerend
-ms.technology: storage
 ms.topic: article
 ms.assetid: 51ec7423-9a01-4219-868a-25d69cdcc832
 author: jasongerend
 ms.date: 10/16/2017
-ms.openlocfilehash: 73f83a07cb1537af66d59977099b251b6dd12f47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a923706252e6094cf12dcdf2632366ee7b2401f8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958219"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890126"
 ---
 # <a name="format"></a>格式
 
@@ -23,7 +21,7 @@ ms.locfileid: "86958219"
 格式化磁盘以接受 Windows 文件。 您必须是 Administrators 组的成员才能格式化硬盘驱动器。
 
 > [!NOTE]
-> 你还可以在恢复控制台中使用带有不同参数的**format**命令。 有关恢复控制台的详细信息，请参阅[Windows 恢复环境（WINDOWS RE）](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
+> 你还可以在恢复控制台中使用带有不同参数的**format**命令。 有关恢复控制台的详细信息，请参阅 windows [RE)  (Windows 恢复环境](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)。
 
 ## <a name="syntax"></a>语法
 
@@ -37,10 +35,10 @@ format <volume> [/q]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| `<volume>` | 指定要格式化的驱动器的装入点、卷名或驱动器号（后跟冒号）。 如果未指定任何以下命令行选项，则**format**将使用卷类型来确定磁盘的默认格式。 |
-| /fs： {FAT | FAT32 | NTFS | 指定文件系统（FAT、FAT32、NTFS）的类型。 |
+| `<volume>` | 指定要格式化的驱动器的装入点、卷名或驱动器号 (后面跟一个冒号) 。 如果未指定任何以下命令行选项，则**format**将使用卷类型来确定磁盘的默认格式。 |
+| /fs： {FAT | FAT32 | NTFS | 指定文件系统的类型 (FAT、FAT32、NTFS) 。 |
 | /v:`<label>` | 指定卷标。 如果省略了 **/v**命令行选项或在未指定卷标的情况下使用它，则格式化完成后，**格式**会提示你输入卷标。 使用语法 **/v:** 以防提示输入卷标。 如果使用单个 **format** 命令格式化多个磁盘，则会为所有磁盘指定相同的卷标。 |
 | /a`<unitsize>` | 指定要在 FAT、FAT32 或 NTFS 卷上使用的分配单元大小。 如果未指定*unitsize*，则会根据卷大小进行选择。 对于常规使用，强烈建议采用默认设置。 以下列表显示了 NTFS、FAT 和 FAT32 *unitsize*的有效值：<ul><li>512</li><li>1024</li><li>2048</li><li>4096</li><li>8192</li><li>16K</li><li>32K</li><li>64K</li></ul>对于大小超过 512 字节的扇区，FAT 和 FAT32 还支持 128k 和 256k。 |
 | /q | 执行快速格式化。 删除以前格式化的卷的文件表和根目录，但不会对错误区域执行逐个扇区扫描。 你应使用 **/q**命令行选项来仅设置你知道的状态良好的以前格式化的卷的格式。 请注意，**/q** 可替代 **/p**。 |
@@ -60,7 +58,7 @@ format <volume> [/q]
 
     `Volume label (11 characters, ENTER for none)?`
 
-    若要添加卷标签，请键入最多11个字符（包括空格）。 如果你不想将卷标添加到磁盘，请按 ENTER。
+    若要添加卷标签，请键入最多11个字符， (包括空格) 。 如果你不想将卷标添加到磁盘，请按 ENTER。
 
 - 当使用**format**命令格式化硬盘时，会显示一条类似于下面的警告消息：
 
@@ -91,8 +89,8 @@ format <volume> [/q]
   | --------- | ----------- |
   | 0 | 格式化操作已成功。 |
   | 1 | 提供了不正确的参数。 |
-  | 4 | 出现错误（0、1或5以外的任何错误）。 |
-  | 5 | 用户按了 N 以响应 "继续进行格式（Y/N）" 的提示？ 以停止此进程。 |
+  | 4 | 出现错误， (是0、1或 5) 以外的任何错误。 |
+  | 5 | 用户按下了 N，以响应 "继续 (Y/N) 的格式？" 以停止此进程。 |
 
   可以结合使用 ERRORLEVEL 环境变量和 **if** 批处理命令来检查这些退出代码。
 

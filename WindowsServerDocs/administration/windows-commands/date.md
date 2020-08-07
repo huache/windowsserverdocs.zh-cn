@@ -1,20 +1,18 @@
 ---
 title: date
 description: 日期命令的参考文章，其中显示或设置系统日期。 如果不使用参数，则
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ce6700fb-32f9-4350-a1af-5aee61d4448c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d22c354af45aa0c6383c0dde911b03704bd7a150
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8966f02a6902b6b2bccc6fdc6931485a86bd39fe
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928812"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891519"
 ---
 # <a name="date"></a>date
 
@@ -31,9 +29,9 @@ date [/t | <month-day-year>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| `<month-day-year>` | 设置指定的日期，其中*month*为月份（一位或两位数字，包括值1到12）， *day*为日（一位或两位数字，其中包括值1到31），*年份*是年份（两个或四个数字，其中包括值00到99或1980到2099）。 必须用句点（.）、连字符（-）或正斜杠（/）分隔*月*、*日*和*年*的值。<p>**注意：** 请注意，如果使用2位数表示年份，则值80-99 对应于1980到1999。 |
+| `<month-day-year>` | 设置指定的日期，其中*month*是月份 (一位或两位数字，其中包括值1到 12) ， *day*是 (一位或两位数字的日期，包括值1到 31) ，*年份*是 (两个或四个数字的年份，其中包括值00到99或1980到 2099) 。 必须将*月*、*日*和*年*的值分别用句点 (. ) 、连字符 (-) 或斜线标记 (/) 分隔开。<p>**注意：** 请注意，如果使用2位数表示年份，则值80-99 对应于1980到1999。 |
 | /t  | 显示当前日期，而不提示您输入新日期。 |
 | /? | 在命令提示符下显示帮助。 |
 

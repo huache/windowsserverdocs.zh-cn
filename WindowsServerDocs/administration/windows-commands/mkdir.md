@@ -1,20 +1,18 @@
 ---
 title: mkdir
 description: 用于创建目录或子目录的 mkdir 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 033a57a2-5deb-4c98-aa78-61ce8df2a330
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7c1569e82143443de861216e40b904de4481a03
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: afff7a7985c5934a8566162da7307ad8676a50f9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931286"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886453"
 ---
 # <a name="mkdir"></a>mkdir
 
@@ -31,7 +29,7 @@ mkdir [<drive>:]<path>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<drive>`: | 指定要在其上创建新目录的驱动器。 |
 | `<path>` | 指定新目录的名称和位置。 任何单个路径的最大长度由文件系统确定。 这是必需参数。 |

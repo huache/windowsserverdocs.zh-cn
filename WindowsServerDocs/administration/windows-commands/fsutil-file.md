@@ -1,26 +1,24 @@
 ---
 title: fsutil file
 description: Fsutil file 命令的参考文章，该命令按用户名查找文件，查询为文件分配的范围，设置文件的短名称，设置文件的有效数据长度，为文件设置零数据，或创建新的文件。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 9f3dc104-dd69-4b03-b824-a29896780164
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 6909d381ef5dfebb343e70ad117a1a5b400481fa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 92b048d0ad3a7cb1f0c21dabf3cc14dc9850a251
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932292"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889994"
 ---
 # <a name="fsutil-file"></a>fsutil file
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
-按用户名查找文件（如果启用了磁盘配额），查询为文件分配的范围，设置文件的短名称，设置文件的有效数据长度，为文件设置零数据，或创建新的文件。
+按用户名查找文件 (如果启用了磁盘配额) ，查询为文件分配的范围，设置文件的短名称，设置文件的有效数据长度，为文件设置零数据，或创建新的文件。
 
 ## <a name="syntax"></a>语法
 
@@ -42,7 +40,7 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | createnew | 使用由零组成的内容创建具有指定名称和大小的文件。 |
 | `<length>` | 指定文件的有效数据长度。 |
@@ -53,7 +51,7 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 | /a | 优化前和优化后分析文件元数据。 |
 | queryallocranges | 查询 NTFS 卷上的文件的分配范围。 用于确定文件是否具有稀疏区域。 |
 | offset =`<offset>` | 指定范围的开始时间，该范围应设置为零。 |
-| 长度 =`<length>` | 指定范围的长度（以字节为单位）。 |
+| 长度 =`<length>` | 指定范围 (的长度，以字节为单位) 。 |
 | queryextents | 查询文件的范围。 |
 | /r | 如果 <filename> 是重新分析点，请将其打开而不是其目标。 |
 | `<startingvcn>` | 指定要查询的第一个 VCN。 如果省略，则从 VCN 0 开始。 |
@@ -66,17 +64,17 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 | queryvaliddata | 查询文件的有效数据长度。 |
 | /d | 显示详细的有效数据信息。 |
 | seteof | 设置给定文件的 EOF。 |
-| setshortname | 为 NTFS 卷上的文件设置短名称（8.3 字符长度的文件名）。 |
+| setshortname | 为 NTFS 卷上的文件设置短名称 (8.3 字符长度文件名) 。 |
 | `<shortname>` | 指定文件的短名称。 |
 | setvaliddata | 为 NTFS 卷上的文件设置有效的数据长度。 |
 | `<datalength>` | 指定文件的长度（以字节为单位）。 |
-| setzerodata | 将该文件的范围（由*偏移*和*长度*指定）设置为零，这将清空该文件。 如果该文件是稀疏文件，则退回基础分配单元。 |
+| setzerodata | 将 (的*偏移量*和*长度*) 指定的范围设置为零，这将清空文件。 如果该文件是稀疏文件，则退回基础分配单元。 |
 
 #### <a name="remarks"></a>备注
 
-- 在 NTFS 中，文件长度有两个重要概念：文件尾（EOF）标记和有效数据长度（VDL）。 EOF 指示文件的实际长度。 VDL 标识磁盘上有效数据的长度。 VDL 和 EOF 之间的任何读取都将自动返回0以保留 C2 对象重用要求。
+- 在 NTFS 中，文件长度有两个重要概念：文件尾 (EOF) 标记和有效数据长度 (VDL) 。 EOF 指示文件的实际长度。 VDL 标识磁盘上有效数据的长度。 VDL 和 EOF 之间的任何读取都将自动返回0以保留 C2 对象重用要求。
 
-- **Setvaliddata**参数仅适用于管理员，因为它需要执行卷维护任务（SeManageVolumePrivilege）权限。 此功能仅适用于高级多媒体和系统区域网络方案。 **Setvaliddata**参数必须是大于当前 VDL 的正数值，但小于当前文件大小。
+- **Setvaliddata**参数仅适用于管理员，因为它需要执行卷维护任务 (SeManageVolumePrivilege) 特权。 此功能仅适用于高级多媒体和系统区域网络方案。 **Setvaliddata**参数必须是大于当前 VDL 的正数值，但小于当前文件大小。
 
     在以下情况，程序可以设置 VDL：
 

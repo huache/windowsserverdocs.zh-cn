@@ -1,24 +1,22 @@
 ---
 title: defrag
 description: 用于在本地卷上查找并合并零碎文件以提高系统性能的 defrag 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: aaf1d1ac-996a-4282-9b4d-1e8245ff162c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65c1d22bd45734a667bfc46840fe652e3f2f5314
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c68edbb4511df12912adbc666201d5a381c06fe3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958429"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891485"
 ---
 # <a name="defrag"></a>defrag
 
-> 适用于： Windows 10、Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 适用于： Windows 10，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 查找并合并本地卷上的零碎文件以提高系统性能。
 
@@ -35,15 +33,15 @@ defrag <volume> [<parameters>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<volume>` | 指定要进行碎片整理或分析的卷的驱动器号或装入点路径。 |
 | /a | 在指定的卷上执行分析。 |
 | /c | 对所有卷执行此操作。 |
-| /d | 执行传统碎片整理（这是默认值）。 但在分层卷上，传统碎片整理仅在容量层上执行。 |
+| /d | 执行传统的碎片整理 (这是默认) 。 但在分层卷上，传统碎片整理仅在容量层上执行。 |
 | /e | 在除指定的卷之外的所有卷上执行该操作。 |
 | /g | 优化指定卷上的存储层。 |
-| /h | 以普通优先级运行操作（默认值较低）。 |
+| /h | 以普通优先级运行操作 (默认为低) 。 |
 | /i [n] | 每个卷上最多可运行 n 个层优化。 |
 | 遇到 | 在指定的卷上执行碎片合并。 |
 | /l | 对指定的卷执行重新剪裁。 |
@@ -69,7 +67,7 @@ defrag <volume> [<parameters>]
 
   - 文件系统卷不是**NTFS**、 **ReFS**、 **Fat**或**Fat32**。
 
-- 不能计划在驻留于 SSD 上的虚拟硬盘（VHD）上对固态驱动器（SSD）或卷进行碎片整理。
+- 你无法计划对固态驱动器 (SSD) 或驻留在 SSD 上的虚拟硬盘 (VHD) 上的卷进行碎片整理。
 
 - 若要执行该过程，你必须是本地计算机上 Administrators 组的成员，或你必须已被委派适当的权限。 如果计算机已加入域，则 Domain Admins 组的成员也许能够执行该过程。 作为最佳安全方案，请考虑使用**运行方式**来执行此过程。
 
@@ -79,7 +77,7 @@ defrag <volume> [<parameters>]
 
 - 默认情况下，如果未指定 **/a**或 **/v**参数，则**defrag**将显示分析和碎片整理报告的摘要。
 
-- 您可以通过键入 "FileName.txt" 将报告发送到文本文件 **>** <em> </em>，其中*FileName.txt*为指定的文件名。 例如：`defrag volume /v > FileName.txt`
+- 您可以通过键入 "FileName.txt" 将报告发送到文本文件 **>** <em> </em>，其中*FileName.txt*为指定的文件名。 例如： `defrag volume /v > FileName.txt`
 
 - 若要中断碎片整理进程，请在命令行上按**CTRL + C**。
 
@@ -129,7 +127,7 @@ defrag /c /h /v
 
     - 计算机未接通电源。 如果计算机正在使用电池电源运行，则不会运行该进程。
 
-    - 计算机启动了备份（从空闲状态恢复）。
+    - 计算机启动备份 (从空闲) 恢复。
 
 ## <a name="additional-references"></a>其他参考
 

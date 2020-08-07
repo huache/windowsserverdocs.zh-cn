@@ -1,32 +1,30 @@
 ---
 title: dfsdiag testdfsintegrity
-description: Dfsdiag testdfsintegrity 命令的参考文章，用于检查分布式文件系统（DFS）命名空间的完整性。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: 用于检查分布式文件系统 (DFS) 命名空间的完整性的 dfsdiag testdfsintegrity 命令的参考文章。
 ms.topic: article
 ms.assetid: 173ee832-26e1-4ec8-a23a-38a7d6229ac3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7896174bb58c957e4c24b1c3f7e1b2bacc9f95f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: da30b85acfccee47f976a932c71c2a8906f45a4f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930636"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891145"
 ---
 # <a name="dfsdiag-testdfsintegrity"></a>dfsdiag testdfsintegrity
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-通过执行以下测试检查分布式文件系统（DFS）命名空间的完整性：
+通过执行以下测试来检查分布式文件系统 (DFS) 命名空间的完整性：
 
 - 检查 DFS 元数据是否已损坏或域控制器之间存在不一致。
 
 - 验证基于访问权限的枚举的配置，以确保 DFS 元数据和命名空间服务器共享之间的一致性。
 
-- 检测与文件夹目标重叠的重叠 DFS 文件夹（链接）、重复文件夹和文件夹。
+- 检测与重叠文件夹目标) 、重复文件夹和文件夹 (链接的重叠 DFS 文件夹。
 
 ## <a name="syntax"></a>语法
 
@@ -36,7 +34,7 @@ dfsdiag /testdfsintegrity /DFSroot: <DFS root path> [/recurse] [/full]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /DFSroot:`<DFS root path>` | 要诊断的 DFS 命名空间。 |
 | /recurse | 执行测试，包括任何命名空间 interlinks。 |
@@ -44,7 +42,7 @@ dfsdiag /testdfsintegrity /DFSroot: <DFS root path> [/recurse] [/full]
 
 ## <a name="examples"></a>示例
 
-若要验证*com\MyNamespace*中的分布式文件系统（DFS）命名空间的完整性和一致性（包括任何 interlinks），请键入：
+若要验证*com\MyNamespace*中 (DFS) 命名空间的完整性和分布式文件系统一致性（包括任何 interlinks），请键入：
 
 ```
 dfsdiag /testdfsintegrity /DFSRoot:\contoso.com\MyNamespace /recurse /full

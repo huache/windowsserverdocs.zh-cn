@@ -1,26 +1,24 @@
 ---
 title: fsutil usn
-description: 用于管理更新序列号（USN）更改日志的 fsutil usn 命令参考文章。
-ms.prod: windows-server
+description: 适用于 fsutil usn 命令的参考文章，该命令管理 (USN) change 日记本的更新序列号。
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: faad34aa-4ba1-4129-bc1f-08088399e2fa
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b3f71588c7221f0ba8e3659d9a1a1dd133971ce9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c2bbd130902812f9a44d2d762a074b67de5e8dac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930474"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889774"
 ---
 # <a name="fsutil-usn"></a>fsutil usn
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
-管理更新序列号（USN）更改日志。 USN 更改日志提供对卷上的文件所做的所有更改的持久日志。 添加、删除和修改文件、目录和其他 NTFS 对象时，NTFS 会将记录输入 USN 更改日志，每个文件对应于计算机上的一个卷。 每条记录都指明了变更的类型以及所更改的对象。 新记录将追加到流的末尾。
+管理 (USN) change 日记本的更新序列号。 USN 更改日志提供对卷上的文件所做的所有更改的持久日志。 添加、删除和修改文件、目录和其他 NTFS 对象时，NTFS 会将记录输入 USN 更改日志，每个文件对应于计算机上的一个卷。 每条记录都指明了变更的类型以及所更改的对象。 新记录将追加到流的末尾。
 
 ## <a name="syntax"></a>语法
 
@@ -36,14 +34,14 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | createjournal | 创建 USN 更改日志。 |
 | m =`<maxsize>` | 指定 NTFS 为变更日志分配的最大大小（以字节为单位）。 |
 | a =`<allocationdelta>` | 指定添加到末尾并从变更日志的开头删除的内存分配的大小（以字节为单位）。 |
-| `<volumepath>` | 指定驱动器号（后跟冒号）。 |
-| deletejournal | 删除或禁用活动的 USN 更改日志。<p>**警告：** 删除变更日志会影响文件复制服务（FRS）和索引服务，因为这需要这些服务执行卷的完整（和耗时）扫描。 这反过来会影响 FRS SYSVOL 复制，并在重新扫描卷时 DFS 链接备用项之间进行复制。 |
-| /d | 禁用活动的 USN 更改日志，并在禁用更改日志时返回输入/输出（i/o）控件。 |
+| `<volumepath>` | 指定驱动器号 (后跟冒号) 。 |
+| deletejournal | 删除或禁用活动的 USN 更改日志。<p>**警告：** 删除变更日志会影响文件复制服务 (FRS) 和索引服务，因为这需要这些服务执行卷的完整 (和耗时的) 扫描。 这反过来会影响 FRS SYSVOL 复制，并在重新扫描卷时 DFS 链接备用项之间进行复制。 |
+| /d | 禁用活动的 USN 更改日志，并在禁用更改日志时返回输入/输出 (i/o) 控制。 |
 | /n | 禁用活动的 USN 更改日志，并在禁用更改日志后返回 i/o 控制。 |
 | enablerangetracking | 为卷启用 USN 写入范围跟踪。 |
 | c =`<chunk-size>` | 指定要在卷上跟踪的区块大小。 |
@@ -62,7 +60,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
 #### <a name="remarks"></a>备注
 
-- 程序可以参考 USN 更改日志来确定对一组文件进行的所有修改。 与检查时间戳或注册文件通知相比，USN 更改日志的效率要高得多。 USN 更改日志由索引服务、文件复制服务（FRS）、远程安装服务（RIS）和远程存储启用和使用。
+- 程序可以参考 USN 更改日志来确定对一组文件进行的所有修改。 与检查时间戳或注册文件通知相比，USN 更改日志的效率要高得多。 USN 更改日志由索引服务启用和使用，文件复制服务 (FRS) 、远程安装服务 (RIS) 和远程存储。
 
 - 如果卷上已存在更改日志，则**createjournal**参数将更新变更日志的**maxsize**和**allocationdelta**参数。 这使您可以展开活动日志维护的记录数量，而不必禁用该日志。
 
@@ -70,7 +68,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
 - 在修整之前，变更日志可能会增长到大于**maxsize**和**allocationdelta**值的总和。
 
-- 删除或禁用活动更改日志非常耗时，因为系统必须访问主文件表（MFT）中的所有记录，并将最后一个 USN 属性设置为0（零）。 此过程可能需要几分钟的时间，如果需要重新启动，它可以在系统重新启动后继续。 在此过程中，变更日志不被视为处于活动状态，也不会被禁用。 当系统禁用日志时，无法访问它，所有日志操作都将返回错误。 禁用活动的日志时应特别小心，因为它会对其他使用该日志的应用程序产生负面影响。
+- 删除或禁用活动更改日志非常耗时，因为系统必须访问主文件表 (MFT) 中的所有记录，并将最后一个 USN 属性设置为 0 (零) 。 此过程可能需要几分钟的时间，如果需要重新启动，它可以在系统重新启动后继续。 在此过程中，变更日志不被视为处于活动状态，也不会被禁用。 当系统禁用日志时，无法访问它，所有日志操作都将返回错误。 禁用活动的日志时应特别小心，因为它会对其他使用该日志的应用程序产生负面影响。
 
 ### <a name="examples"></a>示例
 

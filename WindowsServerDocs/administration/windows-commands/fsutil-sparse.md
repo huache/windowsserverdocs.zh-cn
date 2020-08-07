@@ -1,24 +1,22 @@
 ---
 title: fsutil sparse
 description: 用于管理稀疏文件的 fsutil sparse 命令的参考文章。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 77545920-2d13-4f35-a4d1-14dbec8340dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c765b096f1b41b211d3a779d8f838aa56f31aeb8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d79144d3894e9e181ebd889ce7bf281b827dea26
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925213"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889834"
 ---
 # <a name="fsutil-sparse"></a>fsutil sparse
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
 管理稀疏文件。 稀疏文件是一个文件，其中包含一个或多个未分配的数据区域。
 
@@ -35,7 +33,7 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | queryflag | 查询稀疏。 |
 | queryrange | 扫描文件并搜索可能包含非零数据的范围。 |
@@ -43,11 +41,11 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 | setrange | 使用零填充文件的指定范围。 |
 | `<filename>` | 指定文件的完整路径，包括文件名和扩展名，例如*C:\documents\filename.txt*。 |
 | `<beginningoffset>` | 指定文件中的偏移量，以将其标记为稀疏。 |
-| `<length>` | 指定文件中要标记为稀疏的区域的长度（以字节为单位）。 |
+| `<length>` | 指定文件中要标记为稀疏 (的区域的长度) 以字节为单位）。 |
 
 #### <a name="remarks"></a>备注
 
-- 所有有意义或非零的数据都将被分配，而所有无意义的数据（由零组成的大字符串数据）则不会被分配。
+- 所有有意义或非零的数据都将被分配，而所有无意义的数据 (由零组成的大型数据字符串) 未分配。
 
 - 在稀疏文件中，大范围的零可能不需要磁盘分配。 在写入文件时，将根据需要分配非零数据的空间。
 

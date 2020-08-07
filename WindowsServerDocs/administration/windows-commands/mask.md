@@ -1,20 +1,18 @@
 ---
 title: 掩码
 description: Mask 命令的参考文章，该命令删除使用 import 命令导入的硬件卷影副本。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bf301474-d74a-44e7-9fad-c8a11e7ca3bd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2839fce0a64f187c1445a5f6a4af6c5f0ebc9fb8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a893d32dca90169d51a04db66b3dc796cbc69a46
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922105"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886523"
 ---
 # <a name="mask"></a>掩码
 
@@ -28,7 +26,7 @@ mask <shadowsetID>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | shadowsetID | 删除属于指定卷影副本集 ID 的卷影副本。 |
 

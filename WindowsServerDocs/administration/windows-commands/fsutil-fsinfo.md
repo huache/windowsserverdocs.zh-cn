@@ -1,24 +1,22 @@
 ---
 title: Fsutil fsinfo
 description: 适用于 fsutil fsinfo 命令的参考文章，其中列出了所有驱动器、查询驱动器类型、查询卷信息、查询特定于 NTFS 的卷信息或查询文件系统统计信息。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 7787a72e-a26b-415f-b700-a32806803478
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 0cb4e5b747e07c9409c7dbb80ac9950e765617bc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5642355769225fada014a98cce8d4533e72f7410
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924732"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889986"
 ---
 # <a name="fsutil-fsinfo"></a>fsutil fsinfo
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
 列出所有驱动器、查询驱动器类型、查询卷信息、查询特定于 NTFS 的卷信息或查询文件系统统计信息。
 
@@ -34,16 +32,16 @@ fsutil fsinfo [volumeinfo] <rootpath>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- |------------ |
 | 驱动器 | 列出计算机中的所有驱动器。 |
 | drivetype | 查询驱动器并列出其类型，如 cd-rom 驱动器。 |
 | ntfsinfo | 列出指定卷的 NTFS 特定卷信息，如扇区数、群集总数、可用群集以及 MFT 区的开头和结尾。 |
 | sectorinfo | 列出有关硬件的扇区大小和对齐方式的信息。 |
 | statistics | 列出指定卷的文件系统统计信息，如元数据、日志文件和 MFT 读取和写入。 |
-| volumeinfo | 列出指定卷的信息，例如文件系统、卷是否支持区分大小写的文件名、文件名中的 unicode 或磁盘配额，或是 DirectAccess （DAX）卷。 |
-| `<volumepath>:` | 指定驱动器号（后跟冒号）。 |
-| `<rootpath>:` | 指定根驱动器的驱动器号（后跟冒号）。 |
+| volumeinfo | 列出指定卷的信息，例如文件系统、卷是否支持区分大小写的文件名、文件名中的 unicode 或磁盘配额，或是 DirectAccess (DAX) 卷。 |
+| `<volumepath>:` | 指定驱动器号 (后跟冒号) 。 |
+| `<rootpath>:` | 指定驱动器号 (后跟根驱动器的冒号) 。 |
 
 ### <a name="examples"></a>示例
 

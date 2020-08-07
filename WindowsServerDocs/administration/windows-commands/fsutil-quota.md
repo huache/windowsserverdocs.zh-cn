@@ -1,24 +1,22 @@
 ---
 title: fsutil quota
 description: Fsutil quota 命令的参考文章，它管理 NTFS 卷上的磁盘配额，以便更精确地控制基于网络的存储。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 21225c11-7c72-4ea2-96bd-e63d4beb3be5
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: f757f822a903f6b5c6d221e17f87cf1e73d1555f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7edf7ac908df419611fb42dd819323b15c8ded4e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925222"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889921"
 ---
 # <a name="fsutil-quota"></a>fsutil quota
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
 管理 NTFS 卷上的磁盘配额，以便更精确地控制基于网络的存储。
 
@@ -35,17 +33,17 @@ fsutil quota [violations]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | disable | 在指定卷上禁用配额跟踪和强制。 |
 | 实行 | 在指定卷上强制实施配额。 |
 | modify | 修改现有磁盘配额，或创建新配额。 |
-| 查询 | 列出现有磁盘配额。 |
+| query | 列出现有磁盘配额。 |
 | 跟踪 | 跟踪指定卷上的磁盘使用情况。 |
 | 多次 | 搜索系统和应用程序日志，并显示一条消息，指示已检测到配额冲突，或者用户已达到配额阈值或配额限制。 |
 | `<volumepath>` | 必需。 指定驱动器名称后跟冒号或 GUID （格式为） `volume{GUID}` 。 |
-| `<threshold>`  | 设置发出警告的限制（以字节为单位）。 此参数对于命令是必需的 `fsutil quota modify` 。 |
-| `<limit>` | 设置允许的最大磁盘使用量（以字节为单位）。 此参数对于命令是必需的 `fsutil quota modify` 。 |
+| `<threshold>`  | 设置发出警告 (的限制（以字节为单位）) 。 此参数对于命令是必需的 `fsutil quota modify` 。 |
+| `<limit>` | 设置允许的最大磁盘使用量 (以字节为单位) 。 此参数对于命令是必需的 `fsutil quota modify` 。 |
 | `<username>` | 指定域或用户名。 此参数对于命令是必需的 `fsutil quota modify` 。 |
 
 #### <a name="remarks"></a>备注

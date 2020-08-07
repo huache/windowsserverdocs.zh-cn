@@ -1,20 +1,18 @@
 ---
 title: manage-bde
 description: Manage-bde 命令的参考文章，用于打开或关闭 BitLocker，指定解锁机制，更新恢复方法，并解锁受 BitLocker 保护的数据驱动器。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 276a7841-7289-48d4-a57d-bc7c300affbb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7e248f507ca6d38248bc931cb3d1b98aa385c88
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d1d910f9787d2a952a5e844c4aedb3d4c5ca53fa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956989"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886568"
 ---
 # <a name="manage-bde"></a>manage-bde
 
@@ -32,7 +30,7 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- |------------ |
 | [manage-bde 状态](manage-bde-status.md) | 提供有关计算机上所有驱动器的信息，无论它们是否受 BitLocker 保护。 |
 | [manage-bde on](manage-bde-on.md) | 加密驱动器并打开 BitLocker。 |
@@ -43,7 +41,7 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 | [manage-bde unlock](manage-bde-unlock.md) | 允许使用恢复密码或恢复密钥访问受 BitLocker 保护的数据。 |
 | [manage-bde autounlock](manage-bde-autounlock.md) | 管理数据驱动器的自动解锁。 |
 | [manage-bde 保护程序](manage-bde-protectors.md) | 管理加密密钥的保护方法。 |
-| [manage-bde tpm](manage-bde-tpm.md) | 配置计算机的受信任的平台模块（TPM）。 运行 Windows 8 或**win8_server_2**的计算机不支持此命令。 若要在这些计算机上管理 TPM，请使用 TPM 管理 MMC 管理单元或适用于 Windows PowerShell 的 TPM 管理 cmdlet。 |
+| [manage-bde tpm](manage-bde-tpm.md) |  (TPM) 配置计算机的受信任的平台模块。 运行 Windows 8 或**win8_server_2**的计算机不支持此命令。 若要在这些计算机上管理 TPM，请使用 TPM 管理 MMC 管理单元或适用于 Windows PowerShell 的 TPM 管理 cmdlet。 |
 | [manage-bde setidentifier](manage-bde-setidentifier.md)   | 将驱动器上的 "驱动器标识符" 字段设置为 "为**你的组织提供唯一标识符**组策略" 设置中指定的值。 |
 | [manage-bde ForceRecovery](manage-bde-forcerecovery.md) | 重新启动时，强制 BitLocker 保护的驱动器进入恢复模式。 此命令从驱动器中删除所有与 TPM 相关的密钥保护程序。 计算机重新启动时，只能使用恢复密码或恢复密钥来解锁驱动器。 |
 | [manage-bde changepassword](manage-bde-changepassword.md) | 修改数据驱动器的密码。 |

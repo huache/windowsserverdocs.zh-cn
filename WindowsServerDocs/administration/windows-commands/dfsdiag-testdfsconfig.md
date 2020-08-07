@@ -1,26 +1,24 @@
 ---
 title: dfsdiag testdfsconfig
-description: Dfsdiag testdfsconfig 的参考文章，用于检查分布式文件系统（DFS）命名空间的配置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: 用于检查 (DFS) 命名空间的分布式文件系统配置的 dfsdiag testdfsconfig 参考文章。
 ms.topic: article
 ms.assetid: 106aeeb9-ea79-4e6e-829c-eca06309bab2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3387b661f454cff089f76f7c9c0d1abe59387010
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c714780d43f0fbd95c18f2041c54df8fd23282e8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930641"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891166"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag testdfsconfig
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-通过执行以下操作检查分布式文件系统（DFS）命名空间的配置：
+通过执行以下操作，检查分布式文件系统 (DFS) 命名空间的配置：
 
 - 验证 DFS 命名空间服务是否正在运行，并且其启动类型在所有命名空间服务器上是否设置为**自动**。
 
@@ -42,13 +40,13 @@ dfsdiag /testdfsconfig /DFSroot:<namespace>
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| /DFSroot:`<namespace>` | 要诊断的命名空间（DFS 根目录）。 |
+| /DFSroot:`<namespace>` | 命名空间 (要诊断的 DFS 根) 。 |
 
 ## <a name="examples"></a>示例
 
-若要验证*com\MyNamespace*中的分布式文件系统（DFS）命名空间的配置，请键入：
+若要验证*com\MyNamespace*中 (DFS) 命名空间的配置分布式文件系统，请键入：
 
 ```
 dfsdiag /testdfsconfig /DFSroot:\contoso.com\MyNamespace

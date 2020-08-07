@@ -1,20 +1,18 @@
 ---
 title: bitsadmin peers 和 list
 description: Bitsadmin 对等机和 list 命令的参考文章，其中列出了所有对等方。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 18ec60c9-34d2-466e-982c-6165478ef224
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 056e6734de857da7fc99bb0c7a9f525e9553d3eb
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 413318a4cfd04256f69483bfd2b177ca5bf9de8a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926472"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893481"
 ---
 # <a name="bitsadmin-peers-and-list"></a>bitsadmin peers 和 list
 

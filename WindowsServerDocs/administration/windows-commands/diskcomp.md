@@ -1,20 +1,18 @@
 ---
 title: diskcomp
 description: Diskcomp 命令的参考文章，用于比较两个软盘的内容。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4f56f534-a356-4daa-8b4f-38e089341e42
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efd935d4630d9397d97863d6d373db3801a97b17
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 71401942f25d3f503639b2931f2f0ee49229e15b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929355"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890972"
 ---
 # <a name="diskcomp"></a>diskcomp
 
@@ -28,7 +26,7 @@ diskcomp [<drive1>: [<drive2>:]]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<drive1>` | 指定包含其中一张软盘的驱动器。 |
 | /? | 在命令提示符下显示帮助。 |
@@ -43,7 +41,7 @@ diskcomp [<drive1>: [<drive2>:]]
   or is nonremovable
   ```
 
-- 如果要比较的两个磁盘上的所有磁道相同（忽略磁盘的卷号）， **diskcomp**将显示以下消息：
+- 如果要进行比较的两个磁盘上的所有磁道都相同 (它将忽略磁盘的卷号) ， **diskcomp**将显示以下消息：
 
   ```
   Compare OK
@@ -102,7 +100,7 @@ diskcomp [<drive1>: [<drive2>:]]
 
 ## <a name="examples"></a>示例
 
-如果计算机只有一个软盘驱动器（例如驱动器 A），并且想要比较两个磁盘，请键入：
+如果计算机只有一个软盘驱动器 (例如，驱动器 A) 并且要比较两个磁盘，请键入：
 
 ```
 diskcomp a: a:

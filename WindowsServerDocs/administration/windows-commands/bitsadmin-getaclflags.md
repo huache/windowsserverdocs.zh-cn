@@ -1,24 +1,22 @@
 ---
 title: bitsadmin getaclflags
-description: 用于检索访问控制列表（ACL）传播标志的 bitsadmin getaclflags 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Bitsadmin getaclflags 命令的参考文章，它检索访问控制列表 (ACL) 传播标志。
 ms.topic: article
 ms.assetid: 99266def-7479-4430-a61c-98ec433fa88b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a05a0ed1c29e7cf1b0583ce9a0fcfdbe73e7a12
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 437ad345ec778290499b7b128ee08ffd41be320c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928335"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894571"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
-检索访问控制列表（ACL）传播标志，以反映子对象是否继承项。
+检索访问控制列表 (ACL) 传播标志，以反映子对象是否继承项。
 
 ## <a name="syntax"></a>语法
 
@@ -28,7 +26,7 @@ bitsadmin /getaclflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
@@ -40,9 +38,9 @@ bitsadmin /getaclflags <job>
 
 - **g** -复制组信息和文件。
 
-- **d** -使用文件复制随机访问控制列表（DACL）信息。
+- **d** -复制任意访问控制列表 (DACL) 包含文件的信息。
 
-- **s** -使用文件复制系统访问控制列表（SACL）信息。
+- **s** -复制系统访问控制列表 (SACL) 包含文件的信息。
 
 ## <a name="examples"></a>示例
 

@@ -1,20 +1,18 @@
 ---
 title: findstr
 description: Findstr 命令的参考文章，可搜索文件中的文本模式。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c2d803fb-4cd2-46a1-a1b7-6f5e0249c418
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0cf30f19ef23c1b3275b6b7632b03f0dd8e433a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1b1ef8139208397361a8c787686d2bc4c3b5ab43
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931428"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890235"
 ---
 # <a name="findstr"></a>findstr
 
@@ -28,7 +26,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /b | 如果文本模式位于行的开头，则匹配它。 |
 | /e | 如果文本模式位于行尾，则匹配它。 |
@@ -46,7 +44,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 | /f`<file>` | 从指定的文件中获取文件列表。 |
 | /c`<string>` | 使用指定的文本作为文本搜索字符串。 |
 | /g`<file>` | 从指定的文件中获取搜索字符串。 |
-| /d`<dirlist>` | 搜索指定的目录列表。 每个目录必须用分号（;) （例如）分隔 `dir1;dir2;dir3` 。 |
+| /d`<dirlist>` | 搜索指定的目录列表。 每个目录必须用分号分隔 (; 例如 ) `dir1;dir2;dir3` 。 |
 | /a`<colorattribute>` | 指定带有两个十六进制数字的颜色属性。 `color /?`有关其他信息，请键入。 |
 | `<strings>` | 指定要在*filename*中搜索的文本。 必需。 |
 | `[\<drive>:][<path>]<filename>[ ...]` | 指定要搜索的位置和文件。 至少需要一个文件名。 |
@@ -60,7 +58,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 
   - 文本字符是在正则表达式语法中没有特殊含义的字符;而是匹配该字符的匹配项。 例如，字母和数字是原义字符。
 
-  - 元字符是在正则表达式语法中具有特殊含义（运算符或分隔符）的符号。
+  - 元字符是在正则表达式语法中具有特殊含义 (运算符或分隔符) 的符号。
 
     接受的元字符包括：
 
@@ -77,7 +75,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
     | `<string` | **开始单词位置**-单词的开头。 |
     | `string>` | **结束单词位置**-单词的结尾。 |
 
-    正则表达式语法中的特殊字符在一起使用时，其功能最高。 例如，使用通配符（ `.` ）和重复（ `*` ）字符与任何字符串匹配的组合：`.*`
+    正则表达式语法中的特殊字符在一起使用时，其功能最高。 例如，使用通配符 () 的组合 `.` ，并重复 (`*`) 字符以匹配任意字符串：`.*`
 
     使用以下表达式作为更大的表达式的一部分，以匹配以*b*开头并以*ing*结尾的任何字符串：`b.*ing`
 
@@ -99,7 +97,7 @@ findstr hello there x.y
 findstr /c:hello there x.y
 ```
 
-若要在文件*proposal.txt*中查找*word 的*所有匹配项（使用初始大写字母 W），请键入：
+若要使用文件*proposal.txt*中) 的初始大写字母 W*查找 word (* 的所有匹配项，请键入：
 
 ```
 findstr Windows proposal.txt
@@ -111,7 +109,7 @@ findstr Windows proposal.txt
 findstr /s /i Windows *.*
 ```
 
-若要*查找以开头并以*零个或多个空格开头的行的所有匹配项，并显示找到每个匹配项的行号，请键入：
+若要*查找以开头并以*零个或多个空格开头的行的所有匹配项 (如) 的计算机程序循环，并显示找到每个匹配项的行号，请键入：
 
 ```
 findstr /b /n /r /c:^ *FOR *.bas
@@ -129,7 +127,7 @@ findstr /g:stringlist.txt /f:filelist.txt > results.out
 findstr /s /i /m <computer> *.*
 ```
 
-若要列出每个包含 word 计算机的文件以及以 comp 开头的任何其他字词（如 "补充" 和 "竞争"），请键入：
+若要列出每个包含 word 计算机的文件以及以 comp 开头的任何其他单词， (如) 的补充和竞争，请键入：
 
 ```
 findstr /s /i /m <comp.* *.*

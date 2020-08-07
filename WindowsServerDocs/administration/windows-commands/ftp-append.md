@@ -1,24 +1,22 @@
 ---
 title: ftp append
 description: 使用 "当前文件类型" 设置将本地文件追加到远程计算机上的文件的 ftp append 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7c1a133c-31dc-41a4-9eb9-258efd79804d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cee11d52db784477b0b4ffeecc307d395f910a92
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0c98e9eb4ed5d2dc560deac0720158cf90d801e4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958079"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889681"
 ---
 # <a name="ftp-append"></a>ftp append
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 使用 "当前文件类型" 设置将本地文件追加到远程计算机上的文件。
 
@@ -30,7 +28,7 @@ append <localfile> [remotefile]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<localfile>` | 指定要添加的本地文件。 |
 | [remotefile] | 指定远程计算机上添加的文件 <localfile> 。 如果不使用此参数，则 `<localfile>` 使用该名称代替远程文件名。 |

@@ -1,20 +1,18 @@
 ---
 title: forfiles
 description: Forfiles 命令的参考文章，用于在一组文件或一组文件上选择并运行命令。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 26c443aa05d081fc257dc49d2f2c7f6a9adae865
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 004c27b841629e18eac4d94f7fe0816b42762107
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922390"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890146"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -28,13 +26,13 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /P`<pathname>` | 指定从其开始搜索的路径。 默认情况下，搜索从当前工作目录开始。 |
 | 一样`<searchmask>` | 根据指定的搜索掩码搜索文件。 默认的 searchmask 为 `*` 。 |
 | /S | 指示**forfiles**命令以递归方式搜索子目录。 |
 | /C`<command>` | 对每个文件运行指定的命令。 命令字符串应以双引号括起来。 默认命令为 `"cmd /c echo @file"` 。 |
-| /D`[{+\|-}][{<date> | <days>}]` | 选择在指定时间范围内具有最后修改日期的文件：<ul><li>选择上次修改日期晚于或等于（ **+** ）或早于或等于（ **-** ）指定日期的文件，其中*date*的格式为 MM/DD/YYYY。</li><li>选择上次修改日期晚于或等于（ **+** ）当前日期加上指定的天数，或早于或等于（ **-** ）当前日期减去指定天数的文件。</li><li>*天数*的有效值包括0–32768范围内的任何数字。 如果未指定任何符号， **+** 则默认情况下使用。</li></ul> |
+| /D`[{+\|-}][{<date> | <days>}]` | 选择在指定时间范围内具有最后修改日期的文件：<ul><li>选择上次修改日期晚于或等于 (**+**) 或 (早于 **-**) 指定日期的文件，其中*date*的格式为 MM/DD/YYYY。</li><li>选择上次修改日期晚于或等于 (的文件 **+**) 当前日期加上指定的天数，或者早于或等于 (**-**) 当前日期减去指定的天数。</li><li>*天数*的有效值包括0–32768范围内的任何数字。 如果未指定任何符号， **+** 则默认情况下使用。</li></ul> |
 | /? | 在 cmd 窗口中显示帮助文本。 |
 
 #### <a name="remarks"></a>备注
@@ -43,7 +41,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
 - 可以在命令字符串中使用由 **/C**命令行选项指定的以下变量：
 
-    | 变量 | 说明 |
+    | 变量 | 描述 |
     | -------- | ----------- |
     | @FILE | 文件名。 |
     | @FNAME | 不带扩展名的文件名。 |
@@ -55,7 +53,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
     | @FDATE | 文件中上次修改的日期戳。 |
     | @FTIME | 文件中上次修改的时间戳。 |
 
-- 使用**forfiles**命令可以在多个文件上运行命令或传递参数。 例如，你可以对具有 .txt 文件扩展名的树中的所有文件运行**类型**命令。 或者，你可以在驱动器 C 上执行每个批处理文件（* .bat），文件名 Myinput.txt 为第一个参数。
+- 使用**forfiles**命令可以在多个文件上运行命令或传递参数。 例如，你可以对具有 .txt 文件扩展名的树中的所有文件运行**类型**命令。 或者，你可以在驱动器 C 上 ( * .bat) 执行每个批处理文件，文件名 Myinput.txt 为第一个参数。
 
 - 此命令可以：
 
@@ -65,7 +63,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
     - 使用变量来区分目录中的文件 @ISDIR 。
 
-    - 在命令行中包含特殊字符（采用 0x*HH*格式（例如，选项卡的0x09）。
+    - 在命令行中包含特殊字符，采用 0x*HH*格式 (例如，选项卡的 0x09) 。
 
 - 此命令的工作方式是 `recurse subdirectories` 在设计为仅处理一个文件的工具上实施标志。
 

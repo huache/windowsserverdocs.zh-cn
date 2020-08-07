@@ -1,24 +1,22 @@
 ---
 title: fsutil volume
 description: 适用于 fsutil volume 命令的参考文章，用于卸载卷，或查询硬盘驱动器以确定硬盘驱动器上当前可用的可用空间量，或使用特定群集的文件。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 0397c204-b3f8-4fd8-b71d-b7efb117766d
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c486e47bde08ad002e39cec81e72ace90946cd7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b6bcd763643eba8c82fbd1ebd82199aa46f8f0dd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958109"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889755"
 ---
 # <a name="fsutil-volume"></a>fsutil volume
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
 卸载卷，或查询硬盘驱动器，确定硬盘驱动器上当前可用的可用空间量，或使用特定群集的文件。
 
@@ -35,17 +33,17 @@ fsutil volume [querycluster] <volumepath> <cluster> [<cluster>] … …
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | allocationreport | 显示有关在给定卷上如何使用存储的信息。 |
-| `<volumepath>` | 指定驱动器号（后跟冒号）。 |
+| `<volumepath>` | 指定驱动器号 (后跟冒号) 。 |
 | diskfree | 查询硬盘驱动器以确定其上的可用空间量。 |
 | 卸载 | 卸载卷。 |
 | filelayout | 显示给定文件的 NTFS 元数据。 |
 | `<fileID>` | 指定文件 id。 |
 | list | 列出系统上的所有卷。 |
 | querycluster | 查找使用指定群集的文件。 可以指定包含**querycluster**参数的多个群集。 |
-| `<cluster>` | 指定逻辑群集号（LCN）。 |
+| `<cluster>` | 指定 (LCN) 的逻辑群集号。 |
 
 ### <a name="examples"></a>示例
 
@@ -67,7 +65,7 @@ fsutil volume dismount c:
 fsutil volume diskfree c:
 ```
 
-若要显示有关指定文件的所有信息，请键入：
+若要显示有关) 的指定文件的所有信息 (，请键入：
 
 ```
 fsutil volume C: *
@@ -81,7 +79,7 @@ fsutil volume C: 0x00040000000001bf
 fsutil volume list
 ```
 
-若要在驱动器 C 上查找使用由逻辑群集号50和0x2000 指定的群集的文件，请键入：
+若要在驱动器 C 上查找使用由逻辑群集编号50和0x2000 指定的群集 () 的文件，请键入：
 
 ```
 fsutil volume querycluster C: 50 0x2000

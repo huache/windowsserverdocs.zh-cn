@@ -1,24 +1,22 @@
 ---
 title: flattemp
 description: Flattemp 命令的参考文章，用于启用或禁用平面临时文件夹。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 059a0960-1fd9-4382-87fe-a85d5dccdaea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ec253182ce3071f03ce47e368c6fa87fe58fed0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b90bfdf06fad151ab92ea82782a4171877e6d0ad
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932098"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890194"
 ---
 # <a name="flattemp"></a>flattemp
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 启用或禁用平面临时文件夹。 您必须具有管理凭据才能运行此命令。
 
@@ -33,18 +31,18 @@ flattemp {/query | /enable | /disable}
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | /query | 查询当前设置。 |
 | /enable | 启用单层临时文件夹。 用户将共享临时文件夹，除非临时文件夹位于用户的主文件夹中。 |
-| /disable | 禁用平面临时文件夹。 每个用户的临时文件夹将驻留在单独的文件夹中（由用户的会话 ID 决定）。 |
+| /disable | 禁用平面临时文件夹。 每个用户的临时文件夹将位于单独的文件夹中 (由用户的会话 ID) 确定。 |
 | /? | 在命令提示符下显示帮助。 |
 
 #### <a name="remarks"></a>备注
 
 - 每个用户都有一个唯一的临时文件夹后，使用 `flattemp /enable` 来启用单层临时文件夹。
 
-- 用于创建多个用户（通常由 TEMP 和 TMP 环境变量指向）的临时文件夹的默认方法是在**\temp**文件夹中创建子文件夹，方法是使用 logonID 作为子文件夹名称。 例如，如果 TEMP 环境变量指向 C：\Temp，则分配给 user logonID 4 的临时文件夹为 C:\Temp\4。
+- 用于为多个用户创建临时文件夹 (通常由 TEMP 和 TMP 环境变量指向的默认方法) 是在**\temp**文件夹中创建子文件夹，方法是使用 logonID 作为子文件夹名称。 例如，如果 TEMP 环境变量指向 C：\Temp，则分配给 user logonID 4 的临时文件夹为 C:\Temp\4。
 
     使用**flattemp**，可以直接指向 \temp 文件夹，防止子文件夹形成。 如果希望将用户临时文件夹包含在主文件夹中（无论是在远程桌面会话主机服务器本地驱动器上，还是位于共享的网络驱动器上），这会很有用。 `flattemp /enable*`仅当每个用户都有单独的临时文件夹时，才应使用命令。
 

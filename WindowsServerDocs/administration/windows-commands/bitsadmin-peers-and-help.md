@@ -1,20 +1,18 @@
 ---
 title: bitsadmin peers 和 help
 description: Bitsadmin 对等机和 help 命令的参考文章，其中显示了/peers 交换机的命令行用法。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 49016dcb-e3be-44d9-b00a-1a42eb5984ff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe6026acc8b3695dd63309e21716ffd54066fc77
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 14ef93879c99868755ae555e0ec414e9d89b377a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928057"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893474"
 ---
 # <a name="bitsadmin-peers-and-help"></a>bitsadmin peers 和 help
 

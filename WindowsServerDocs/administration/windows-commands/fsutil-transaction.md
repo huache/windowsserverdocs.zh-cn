@@ -1,24 +1,22 @@
 ---
 title: fsutil transaction
 description: 用于管理 NTFS 事务的 "fsutil transaction" 命令的参考文章。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 776903b820c7d7381aff61bb754446b5682f88db
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f70281af6ecf652cc1dba95ec09b07529f71752e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958169"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889794"
 ---
 # <a name="fsutil-transaction"></a>fsutil transaction
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
 管理 NTFS 事务。
 
@@ -34,7 +32,7 @@ fsutil transaction [rollback] <GUID>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | 提交 (commit) | 标记成功的隐式或显式指定的事务的结束。 |
 | `<GUID>` | 指定表示事务的 GUID 值。 |

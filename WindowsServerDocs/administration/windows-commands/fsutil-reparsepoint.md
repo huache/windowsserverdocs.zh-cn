@@ -1,30 +1,28 @@
 ---
 title: fsutil reparsepoint
 description: 用于查询或删除重新分析点的 fsutil reparsepoint 命令的参考文章。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: fb95c8ee-a418-4520-a12a-7754ae947c3c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: edbbc578b6a84ebd4e342493e29cbe2bd5c5a2cd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b7742b7bb970394f0ef8602ae5c862c2ff9a1a41
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931210"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889888"
 ---
 # <a name="fsutil-reparsepoint"></a>fsutil reparsepoint
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
 查询或删除重新分析点。  **Fsutil reparsepoint**命令通常由支持专业人员使用。
 
 重新分析点是 NTFS 文件系统对象，这些对象具有可定义的属性，其中包含用户定义数据。 它们用于：
 
-- 扩展输入/输出（i/o）子系统中的功能。
+- 在 i/o) 子系统 (的输入/输出中扩展功能。
 
 - 充当目录接合点和卷装入点。
 
@@ -39,9 +37,9 @@ fsutil reparsepoint [delete] <filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| 查询 | 检索与指定句柄标识的文件或目录关联的重新分析点数据。 |
+| query | 检索与指定句柄标识的文件或目录关联的重新分析点数据。 |
 | delete | 从文件或目录中删除由指定句柄标识的重新分析点，但不删除文件或目录。 |
 | `<filename>` | 指定文件的完整路径，包括文件名和扩展名，例如*C:\documents\filename.txt*。 |
 
