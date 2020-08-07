@@ -1,20 +1,18 @@
 ---
 title: nslookup finger
 description: 用于在当前设备上连接到 finger 服务器的 nslookup finger 命令参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 11ea2bde-8ccb-4b87-bbad-231dd9e5e858
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 413dc1a38b4fa7ee7bec28991547b5e0b5ef6fb9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cd055ba9ad9049a5076020d5ec49a55b9dc12d15
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934767"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885884"
 ---
 # <a name="nslookup-finger"></a>nslookup/finger
 
@@ -28,10 +26,10 @@ finger [<username>] [{[>] <filename> | [>>] <filename>}]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<username>` | 指定要查找的用户的名称。 |
-| `<filename>` | 指定用于保存输出的文件名。 您可以使用大于（ `>` ）和双大于（ `>>` ）字符以常规方式重定向输出。 |
+| `<filename>` | 指定用于保存输出的文件名。 您可以使用大于 (`>`) 和双大于 (`>>`) 字符，以常规方式重定向输出。 |
 | /? | 在命令提示符下显示帮助。 |
 | /help | 在命令提示符下显示帮助。 |
 

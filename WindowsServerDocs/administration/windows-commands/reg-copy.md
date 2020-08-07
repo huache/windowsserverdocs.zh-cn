@@ -1,20 +1,18 @@
 ---
 title: reg copy
 description: Reg copy 命令的参考文章，它将注册表项复制到本地或远程计算机上的指定位置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3fe74213-39ec-4b2d-ba3d-086243eac997
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e98faa37f1d123c584a3e12ae013c35688c37680
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cc1141ddd8082ee6302886a5ce49b9805a19cede
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937037"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884183"
 ---
 # <a name="reg-copy"></a>reg copy
 
@@ -28,10 +26,10 @@ reg copy <keyname1> <keyname2> [/s] [/f]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
-| `<keyname1>` | 指定要添加的子项或项的完整路径。 若要指定远程计算机，请在 keyname 中包含计算机名称（格式 `\\<computername>\` 为）。 *keyname* 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
-| `<keyname2>` | 指定要比较的第二个子键的完整路径。 若要指定远程计算机，请在 keyname 中包含计算机名称（格式 `\\<computername>\` 为）。 *keyname* 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
+| `<keyname1>` | 指定要添加的子项或项的完整路径。 若要指定远程计算机，请将计算机名称 (格式设置 `\\<computername>\` 为*keyname*) 的格式。 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
+| `<keyname2>` | 指定要比较的第二个子键的完整路径。 若要指定远程计算机，请将计算机名称 (格式设置 `\\<computername>\` 为*keyname*) 的格式。 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
 | /s | 复制指定子项下的所有子项和项。 |
 | /f | 复制子项，而不提示确认。 |
 | /? | 在命令提示符下显示帮助。 |

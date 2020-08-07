@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getreplydata
 description: Bitsadmin getreplydata 命令的参考文章，该命令以十六进制格式为作业检索服务器的上载答复数据。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 819f97d5-b255-4b2d-9f63-0daa73915434
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86c8a57664d6f90980212766e8e2bd2df6d95181
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ab9f774c7b31576e18de3ec5db9b5a72427ecdaa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926743"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893895"
 ---
 # <a name="bitsadmin-getreplydata"></a>bitsadmin getreplydata
 
@@ -31,7 +29,7 @@ bitsadmin /getreplydata <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

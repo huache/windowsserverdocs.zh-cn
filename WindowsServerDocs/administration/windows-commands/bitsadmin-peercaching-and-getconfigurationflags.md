@@ -1,20 +1,18 @@
 ---
 title: bitsadmin peercaching 和 getconfigurationflags
 description: Bitsadmin 对等互连和 getconfigurationflags 命令的参考文章，可获取确定计算机是否向对等机提供内容以及是否可以从对等机下载内容的配置标志。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 124ddc15-3444-4bd5-96e5-c6bfabe4f9c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c6834e57ebccca94c6fdc7c6cff503e2d58378a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 383387b135f38663a84999e041a4f6864d40a01d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922998"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893630"
 ---
 # <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>bitsadmin peercaching 和 getconfigurationflags
 
@@ -28,7 +26,7 @@ bitsadmin /peercaching /getconfigurationflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

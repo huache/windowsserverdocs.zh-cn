@@ -1,20 +1,18 @@
 ---
 title: netsh
 description: Netsh 命令的参考文章，这是一个命令行脚本实用工具，可让你以本地或远程方式显示或修改当前正在运行的计算机的网络配置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 96fc069d-53c0-4d0a-9f7f-f9f3d49a02bd carmonmills
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d39b891b9a8b6e313121756aa8266c79b5bfaca
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 366c7a21f44dc6545de7ba81cba8fe152c245b6b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934786"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886029"
 ---
 # <a name="netsh"></a>netsh
 
@@ -30,7 +28,7 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | -a`<Aliasfile>` | 指定在运行 Aliasfile 后返回到 netsh 提示符，并指定包含一个或多个 netsh 命令的文本文件的名称。 |
 | -c`<Context>` | 指定 netsh 输入指定的 netsh 上下文和 netsh 上下文来输入。 |

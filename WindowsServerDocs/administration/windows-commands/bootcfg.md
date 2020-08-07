@@ -1,24 +1,22 @@
 ---
 title: bootcfg
 description: Bootcfg 命令的参考文章，其中配置、查询或更改 Boot.ini 文件设置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3deb354c-5717-4066-bc79-b9323d559e44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4c64ab33e8026606072cbb1d509eb3c787f76c0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: edab8bc0b4e63544282e53f0a7b6e1fc255a4be7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924948"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880519"
 ---
 # <a name="bootcfg"></a>bootcfg
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 配置、查询或更改 Boot.ini 文件设置。
 
@@ -30,7 +28,7 @@ bootcfg <parameter> [arguments...]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | [bootcfg addsw](bootcfg-addsw.md) | 为指定的操作系统项添加操作系统加载选项。 |
 | [bootcfg copy](bootcfg-copy.md) | 创建现有启动项的副本，您可以将命令行选项添加到该副本中。 |

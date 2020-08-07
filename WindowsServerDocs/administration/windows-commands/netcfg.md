@@ -1,26 +1,24 @@
 ---
 title: netcfg
-description: 用于安装 Windows 预安装环境（WinPE）（一种用于部署工作站的 Windows 轻型版本）的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Netcfg 命令的参考文章，其中安装了用于部署工作站的 Windows 轻型版本 (WinPE) Windows 预安装环境。
 ms.topic: article
 ms.assetid: e2daaab7-12db-4e36-b70c-db8906d084f7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f9ed2dde5d85be5432fb7b3af8279b2e71e9db0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 17556285f7e9de2c70d446cb0fa317f1cbe89aab
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934811"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886067"
 ---
 # <a name="netcfg"></a>netcfg
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-安装 Windows 预安装环境（WinPE），这是用于部署工作站的 Windows 轻型版本。
+安装 Windows 预安装环境 (WinPE) ，这是用于部署工作站的 Windows 轻型版本。
 
 ## <a name="syntax"></a>语法
 
@@ -30,11 +28,11 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
-| /v | 在详细（详细）模式下运行。 |
+| /v | 在详细 (详细) 模式下运行。 |
 | /e | 在安装和卸载过程中使用服务环境变量。 |
-| /winpe | 为 Windows 预安装环境（WinPE）安装 TCP/IP、NetBIOS 和 Microsoft 客户端。 |
+| /winpe |  (WinPE) 安装 TCP/IP、NetBIOS 和 Microsoft 客户端 Windows 预安装环境。 |
 | /l | 提供 INF 文件的位置。 |
 | /c | 提供要安装的组件的类;**协议**、**服务**或**客户端**。 |
 | /i | 提供组件 ID。 |

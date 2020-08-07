@@ -1,24 +1,22 @@
 ---
 title: 子命令开始-命名空间
 description: 子命令开始-命名空间的参考文章，用于启动计划强制转换命名空间。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2dd1c11e-6ab7-4129-9e3a-3f80e0ba59c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2d9bcd58a0a99d98d8679b84c223cfa42a67778
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7a80664fb4a4f90f58823b87f278b344561422ef
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931522"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882084"
 ---
 # <a name="subcommand-start-namespace"></a>子命令：起始-命名空间
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 启动计划强制转换命名空间。
 
@@ -28,10 +26,10 @@ wdsutil /start-Namespace /Namespace:<Namespace name[/Server:<Server name>]
 ```
 ### <a name="parameters"></a>参数
 
-|          参数          |                                                                                                                                                                                             说明                                                                                                                                                                                             |
+|          参数          |                                                                                                                                                                                             描述                                                                                                                                                                                             |
 |-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /Namespace： <命名空间名称| 指定命名空间的名称。 请注意，这不是友好名称，并且必须是唯一的。<p>-   **部署服务器**：命名空间名称的语法为/NAMSPACE： WDS： <Image group> / <Image name> / <Index> 。 例如： **WDS： ImageGroup1/install/1**<br />-   **传输服务器**：此名称必须与在服务器上创建命名空间时为命名空间指定的名称相匹配。 |
-|   [/Server： <Server name> ]   |                                                                                                           指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。                                                                                                           |
+|   [/Server： <Server name> ]   |                                                                                                           指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。                                                                                                           |
 
 ## <a name="examples"></a>示例
 若要启动命名空间，请键入下列内容之一：

@@ -1,20 +1,18 @@
 ---
 title: reg export
 description: 用于将本地计算机的指定子项、项和值复制到文件中以传输到其他服务器的注册表导出命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0ad9526f-1e29-4fa5-9d2d-feaa92f12d7c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c0cad839569651823e1c1a2bcca3c17c5550c8a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 31f59aca51b74150682a5ba3085b7ffcef058d29
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934645"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884130"
 ---
 # <a name="reg-export"></a>reg export
 
@@ -28,7 +26,7 @@ reg export <keyname> <filename> [/y]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | `<keyname>` | 指定子项的完整路径。 导出操作仅适用于本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
 | `<filename>` | 指定要在操作过程中创建的文件的名称和路径。 文件必须具有 .reg 扩展名。 |

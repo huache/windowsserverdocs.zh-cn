@@ -1,24 +1,22 @@
 ---
 title: nslookup ls
 description: 用于列出 DNS 域信息的 nslookup ls 命令的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f15f06fe-67e7-41a9-93b5-192ab14ab380
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c0c0aeb01cdffb1f2b779178f0298e1f120348e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d7046a9bcbb91c223299535f6b3b93ed2639a511
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936576"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885864"
 ---
 # <a name="nslookup-ls"></a>nslookup ls
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 列出 DNS 域信息。
 
@@ -30,11 +28,11 @@ ls [<option>] <DNSdomain> [{[>] <filename>|[>>] <filename>}]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<option>` | 有效选项包括：<ul><li>**-t：** 列出指定类型的所有记录。 有关详细信息，请参阅[nslookup set querytype](nslookup-set-querytype.md)。</li><li>**-a：** 列出 DNS 域中计算机的别名。 此参数与 **-t CNAME**相同</li><li>**-d：** 列出 DNS 域的所有记录。 此参数与 **-t ANY**相同</li><li>**-h：** 列出 DNS 域的 CPU 和操作系统信息。 此参数与 **-t HINFO**相同</li><li>**-s：** 列出 DNS 域中计算机的已知服务。 此参数与 **-t WKS**相同。 |
 | `<DNSdomain>` | 指定要获取其信息的 DNS 域。 |
-| `<filename>` | 指定用于保存的输出的文件名。 您可以使用大于（ `>` ）和双大于（ `>>` ）字符以常规方式重定向输出。 |
+| `<filename>` | 指定用于保存的输出的文件名。 您可以使用大于 (`>`) 和双大于 (`>>`) 字符，以常规方式重定向输出。 |
 | /? | 在命令提示符下显示帮助。 |
 | /help | 在命令提示符下显示帮助。 |
 

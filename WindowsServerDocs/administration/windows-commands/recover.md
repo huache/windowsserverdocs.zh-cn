@@ -1,20 +1,18 @@
 ---
 title: recover
 description: "\"恢复\" 命令的参考文章，可从错误或有故障的磁盘中恢复可读的信息。"
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cf9be2e3-90c8-4773-a201-dc503b91948e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ab7f502b046bf30a40b1fdd386c7faddc5c8f15a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0c3d709d76743df4c1a653f0f0a19e8319b0e0f1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931930"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884310"
 ---
 # <a name="recover"></a>recover
 
@@ -30,9 +28,9 @@ recover [<drive>:][<path>]<filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
-| `[<drive>:][<path>]<filename>` | 指定要恢复的文件的名称（如果文件不在当前目录中，则指定文件的位置）。 *Filename*是必需的，不支持通配符。 |
+| `[<drive>:][<path>]<filename>` | 指定文件名 (和文件的位置（如果文件不在当前目录中，则为要恢复) 。 *Filename*是必需的，不支持通配符。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ### <a name="examples"></a>示例

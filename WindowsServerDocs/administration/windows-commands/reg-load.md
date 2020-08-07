@@ -1,20 +1,18 @@
 ---
 title: reg load
 description: Reg load 命令的参考文章，可将保存的子项和条目写入注册表中的不同子项。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3b0b2b1b-f510-4108-9e9d-7057e924aa6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba298ec5743022034f9576b50ff75e20b6f2d3e3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bc44a6d992312f67abb29a91da848cc17787d507
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931091"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884098"
 ---
 # <a name="reg-load"></a>reg load
 
@@ -28,9 +26,9 @@ reg load <keyname> <filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
-| `<keyname>` | 指定要加载的子项的完整路径。 若要指定远程计算机，请在 keyname 中包含计算机名称（格式 `\\<computername>\` 为）。 *keyname* 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。  |
+| `<keyname>` | 指定要加载的子项的完整路径。 若要指定远程计算机，请将计算机名称 (格式设置 `\\<computername>\` 为*keyname*) 的格式。 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。  |
 | `<filename>` | 指定要加载的文件的名称和路径。 必须使用**reg save**命令提前创建此文件，并且该文件的扩展名必须为 hiv。 |
 | /? | 在命令提示符下显示帮助。 |
 

@@ -1,22 +1,20 @@
 ---
-title: 恢复（DiskPart）
+title: '恢复 (DiskPart) '
 description: 有关 DiskPart recover 命令的参考文章，该命令刷新磁盘组中所有磁盘的状态，尝试恢复无效磁盘组中的磁盘，并重新同步镜像卷和具有陈旧数据的 RAID-5 卷。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8cc3a73d-9456-41a0-b375-2b4cc37c3992
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03b996db5d8c6d270a35bf1273570e3757258658
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d768ae658d7ab25e27cd657e9bdf66ff4b754a9b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519676"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884226"
 ---
-# <a name="recover-diskpart"></a>恢复（DiskPart）
+# <a name="recover-diskpart"></a>恢复 (DiskPart) 
 
 刷新磁盘组中所有磁盘的状态，尝试恢复无效磁盘组中的磁盘，并重新同步已过时的镜像卷和 RAID-5 卷。 此命令在失败或失败的磁盘上操作。 它还对失败、失败或处于失败状态的卷进行操作。
 
@@ -31,9 +29,9 @@ ms.locfileid: "87519676"
 recover [noerr]
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

@@ -1,24 +1,22 @@
 ---
 title: bitsadmin getpeercachingflags
 description: Bitsadmin getpeercachingflags 命令的参考文章，它检索确定是否可以缓存作业的文件并为对等方提供服务的标志，以及 BITS 能否从对等方下载作业的内容。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3c3c9f28-4c04-4c49-a23a-dee5bbcc8981
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad270fb8003c518c43bae86b066fea5ebc31d008
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ae22862c91fc9911bbf202dd51e52578b410995b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926865"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894021"
 ---
 # <a name="bitsadmin-getpeercachingflags"></a>bitsadmin getpeercachingflags
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 检索标志，该标志确定是否可以缓存作业的文件并将其提供给对等方，以及 BITS 是否可以从对等方下载作业的内容。
 
@@ -30,7 +28,7 @@ bitsadmin /getpeercachingflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 

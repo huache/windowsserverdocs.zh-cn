@@ -1,19 +1,17 @@
 ---
 title: bitsadmin gethelpertokenflags
 description: Bitsadmin gethelpertokenflags 命令的参考文章，它返回与 BITS 传输作业关联的帮助程序令牌的用法标志。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 1a3cd9e69c696dc00cb597ae1f60747518d8600f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d49a2aef829b3e443ad5e1fd3e70d8c260f59ec8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955719"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894244"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
@@ -30,7 +28,7 @@ bitsadmin /gethelpertokenflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
@@ -40,7 +38,7 @@ bitsadmin /gethelpertokenflags <job>
 
 - **0x0001.** Helper 标记用于打开上载作业的本地文件，创建或重命名下载作业的临时文件，或创建或重命名上传答复作业的答复文件。
 
-- **0x0002.** Helper 标记用于打开服务器消息块（SMB）上传或下载作业的远程文件，或用于响应隐式 NTLM 或 Kerberos 凭据的 HTTP 服务器或代理质询。 您必须调用  `/SetCredentialsJob TargetScheme NULL NULL`   以允许通过 HTTP 发送凭据。
+- **0x0002.** Helper 标记用于打开服务器消息块 (SMB) 上传或下载作业的远程文件，或者用于响应针对隐式 NTLM 或 Kerberos 凭据的 HTTP 服务器或代理质询。 您必须调用  `/SetCredentialsJob TargetScheme NULL NULL`   以允许通过 HTTP 发送凭据。
 
 ## <a name="examples"></a>示例
 

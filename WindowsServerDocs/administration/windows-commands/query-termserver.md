@@ -1,30 +1,28 @@
 ---
 title: query termserver
 description: Query termserver 命令的参考文章，其中显示了网络上所有远程桌面会话主机服务器的列表。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3b89d3b4-236f-4376-90b6-939a0ec4b288
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e751ad4c229faf2e4dbd74ab216ee855023c858a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 755220fc5c105b97ae7d210857b662095fd306da
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956479"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884413"
 ---
 # <a name="query-termserver"></a>query termserver
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示网络上所有远程桌面会话主机服务器的列表。 此命令将在网络上搜索所有附加的远程桌面会话主机服务器，并返回以下信息：
 
 - 服务器的名称
 
-- 网络（如果使用/address 选项，则使用节点地址）
+- 如果使用/address 选项，则为网络 (和节点地址) 
 
 > [!NOTE]
 > 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
@@ -37,7 +35,7 @@ query termserver [<servername>] [/domain:<domain>] [/address] [/continue]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | `<servername>` | 指定标识远程桌面会话主机服务器的名称。 |
 | /domain`<domain>` | 指定要查询终端服务器的域。 如果要查询当前正在工作的域，则无需指定域。 |

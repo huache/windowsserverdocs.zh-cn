@@ -1,24 +1,22 @@
 ---
 title: 子命令开始-MulticastTransmission
 description: 用于启动映像的计划强制转换的子 MulticastTransmission 的参考文章。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a1b2d459-1ece-49d4-997c-9d206c463b61
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: adb09457e2bf26242da9f6d31ee5e71882d7c10a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 34d55e233926a3e5c8a07a6a31d985f1955f814e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936963"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882093"
 ---
 # <a name="subcommand-start-multicasttransmission"></a>子命令： MulticastTransmission
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 启动映像的计划强制转换。
 
@@ -44,10 +42,10 @@ wdsutil [Options] /start-MulticastTransmissiomedia:<Image name>
         [/Filename:<File name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|说明|
+|参数|描述|
 |-------|--------|
 许可证<Image name>|指定映像的名称。|
-|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名（FQDN）。 如果未指定服务器名称，将使用本地服务器。|
+|[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
 媒体： {Install&#124;Boot}|指定映像类型。 请注意，必须将此选项设置为 "为 Windows Server 2008**安装**"。|
 |/Architecture： {x86 &#124; ia64 &#124; x64}|与要启动的传输关联的启动映像的体系结构。 由于不同体系结构中的启动映像可能具有相同的映像名称，因此应指定体系结构以确保使用正确的传输。|
 |\mediaGroup： <Image group name> ]|指定图像的图像组。 如果未指定映像组名称，并且服务器上只存在一个映像组，则将使用该映像组。 如果服务器上存在多个映像组，则必须使用此选项来指定映像组名称。|

@@ -1,20 +1,18 @@
 ---
 title: call
 description: Call 命令的参考文章，用于从一个批处理程序调用另一个批处理程序，而不停止父批处理程序。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: e73199b9d5633d5b3f1f7b8afd2bd35eb826bfd7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7ff402f159dc69d683ad5c568ca2d31d753eb77c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924830"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880393"
 ---
 # <a name="call"></a>call
 
@@ -31,7 +29,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `[<drive>:][<path>]<filename>` | 指定要调用的批处理程序的位置和名称。 `<filename>`参数是必需的，它必须具有 .bat 或 .cmd 扩展名。 |
 | `<batchparameters>` | 指定批处理程序所需的任何命令行信息。 |
@@ -41,13 +39,13 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 ## <a name="batch-parameters"></a>批处理参数
 
-下表列出了批处理脚本参数引用（**%0**， **%1**...）。
+批处理脚本参数引用 (**%0**， **%1**，... ) 在下表中列出。
 
-在批处理脚本中使用 **% &#42;** 值将引用所有自变量（例如， **%1**、 **%2**、 **%3**...）。
+在批处理脚本中使用 **% &#42;** 值将引用所有参数 (例如， **%1**、 **%2**、 **%3**... ) 。
 
-你可以使用以下可选语法作为批处理参数（**% n**）的替换：
+你可以使用以下可选语法作为批处理参数 (**% n**) 的替换：
 
-| 批处理参数 | 说明 |
+| 批处理参数 | 描述 |
 | --------------- | ----------- |
 | % ~ 1 | 展开 **%1**并删除周围的引号。 |
 | % ~ f1 | 将 **%1**扩展到完全限定的路径。 |
@@ -63,7 +61,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 下表显示了如何将修饰符与复合结果的批处理参数合并：
 
-| 带有修饰符的批处理参数 | 说明 |
+| 带有修饰符的批处理参数 | 描述 |
 | ----------------------------- | ----------- |
 | % ~ sjc-dp1 | 将 **%1**扩展到驱动器号和路径。 |
 | % ~ nx1 | 仅将 **%1**扩展到文件名和扩展名。 |
@@ -76,15 +74,15 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 - 使用批处理参数：
 
-    批处理参数可以包含可传递给批处理程序的任何信息，包括命令行选项、文件名、批处理参数 **%0**到 **%9**和变量（例如， **% 波特%**）。
+    批处理参数可以包含任何可传递给批处理程序的信息，包括命令行选项、文件名、批处理参数 **%0**到 **%9**和变量 (例如， **% 波特%**) 。
 
 - 使用 `<label>` 参数：
 
-    通过对**call**参数使用 call `<label>` ，可以创建新的批处理文件上下文，并将控制传递给指定标签之后的语句。 第一次遇到批处理文件的末尾时（即，跳转到标签之后），控制将返回到**call**语句之后的语句。 第二次遇到批处理文件的末尾时，批处理脚本将退出。
+    通过对**call**参数使用 call `<label>` ，可以创建新的批处理文件上下文，并将控制传递给指定标签之后的语句。 第一次遇到批处理文件的末尾 (即，跳转到标签) 后，控件将返回到**call**语句后面的语句。 第二次遇到批处理文件的末尾时，批处理脚本将退出。
 
 - 使用管道和重定向符号：
 
-    不要将管道 `(|)` 或重定向符号（ `<` 或 `>` ）与**call**一起使用。
+    不要使用管道 `(|)` 或重定向符号 (`<` 或 `>` 与**call**) 。
 
 - 进行递归调用
 

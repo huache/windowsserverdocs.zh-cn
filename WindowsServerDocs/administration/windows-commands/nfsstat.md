@@ -1,24 +1,22 @@
 ---
 title: nfsstat
-description: Nfsstat 命令的参考文章，其中显示有关网络文件系统（NFS）和远程过程调用（RPC）调用的统计信息。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Nfsstat 命令的参考文章，其中显示了有关网络文件系统 (NFS) 和远程过程调用 (RPC) 调用的统计信息。
 ms.topic: article
 ms.assetid: da7a9768-44bd-404b-97ee-c388d00dc395
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0eb2836b15c24dc946953c0c82c4b3586971c5bc
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ca87df561414a70091adc81ccd4e4ff11e583f02
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956729"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885963"
 ---
 # <a name="nfsstat"></a>nfsstat
 
-一个命令行实用程序，显示有关网络文件系统（NFS）和远程过程调用（RPC）调用的统计信息。 在不使用参数的情况下，此命令将显示所有统计数据，而不重置任何内容。
+一个命令行实用程序，显示有关网络文件系统 (NFS) 和远程过程调用 (RPC) 调用的统计信息。 在不使用参数的情况下，此命令将显示所有统计数据，而不重置任何内容。
 
 ## <a name="syntax"></a>语法
 

@@ -1,24 +1,22 @@
 ---
 title: bootcfg ems
 description: 有关 bootcfg ems 命令的参考文章，用户可以使用它来添加或更改将紧急管理服务控制台重定向到远程计算机的设置。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 57abdc50-c64a-45f1-8470-3f8c3a51f743
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c24f8acf6beb368dd989e4b05c912b69c4e7b68
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b3f703eefe9f9300d6576a9f4349d2fb275b2d57
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926244"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880572"
 ---
 # <a name="bootcfg-ems"></a>bootcfg ems
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 允许用户添加或更改用于将紧急管理服务控制台重定向到远程计算机的设置。 启用紧急管理服务时，会将 `redirect=Port#` 行添加到 Boot.ini 文件的 [启动加载器] 部分，并将/redirect 选项添加到指定的操作系统条目行。 仅在服务器上启用 "紧急管理服务" 功能。
 
@@ -30,10 +28,10 @@ bootcfg /ems {on | off | edit}[/s <computer> [/u <domain>\<user> /p <password>]]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `{on | off | edit}` | 指定紧急管理服务重定向的值，包括：<ul><li>**基于.** 启用指定的远程输出 `<osentrylinenum>` 。 还会将/redirect 选项添加到指定的 <osentrylinenum> 和 `redirect=com<X>` [启动加载程序] 部分的设置。 的值 `com<X>` 由 **/port**参数设置。</li><li>**非.** 禁用到远程计算机的输出。 还将 <osentrylinenum> `redirect=com<X>` 从 [启动加载程序] 部分中删除指定的/redirect 选项和设置。</li><li>**编辑.** 允许通过更改 `redirect=com<X>` [启动加载程序] 部分中的设置来更改端口设置。 的值 `com<X>` 由 **/port**参数设置。</li></ul> |
-| `/s <computer>` | 指定远程计算机的名称或 IP 地址（请勿使用反斜杠）。 默认为本地计算机。 |
+| `/s <computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 |
 | `/u <domain>\<user>`  | 使用或指定的用户的帐户权限运行命令 `<user>` `<domain>\<user>` 。 默认为发出命令的计算机上当前登录用户的权限。 |
 | `/p <password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
 | `/port {COM1 | COM2 | COM3 | COM4 | BIOSSET}` |  指定用于重定向的 COM 端口。 BIOSSET 参数指示紧急管理服务获取 BIOS 设置，以确定应使用哪个端口进行重定向。 如果禁用了远程管理的输出，请不要使用此参数。 |

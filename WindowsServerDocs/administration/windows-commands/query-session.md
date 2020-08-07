@@ -1,24 +1,22 @@
 ---
 title: query session
 description: 查询会话命令的参考文章，其中显示了有关远程桌面会话主机服务器上的会话的信息。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: abc0ace8-0b74-4b6e-a937-a78bb4b61a1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 75cb8deb61ebfe3a4b0db665da4353339ee8d314
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4ef51631c497b72de4a8fbf5073c5a2c376a668e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956499"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884425"
 ---
 # <a name="query-session"></a>query session
 
-适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示有关远程桌面会话主机服务器上的会话的信息。 此列表不仅包括有关活动会话的信息，还包括有关服务器运行的其他会话的信息。
 
@@ -33,7 +31,7 @@ query session [<sessionname> | <username> | <sessionID>] [/server:<servername>] 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | `<sessionname>` | 指定要查询的会话的名称。 |
 | `<username>` | 指定要查询其会话的用户的名称。 |

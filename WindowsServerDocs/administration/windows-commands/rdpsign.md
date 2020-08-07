@@ -1,26 +1,24 @@
 ---
 title: rdpsign
-description: Rdpsign 命令的参考文章，可用于对远程桌面协议（.rdp）文件进行数字签名。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: Rdpsign 命令的参考文章，可用于对远程桌面协议 ( .rdp) 文件进行数字签名。
 ms.topic: article
 ms.assetid: 4a6fa8ce-3d32-49a5-b056-bcc1a23391f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5769e568d6cee062b354b4d8c7284808968a2b02
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f937cd0bebd2c57c4eef44c9dbf803176f285c2f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956309"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884322"
 ---
 # <a name="rdpsign"></a>rdpsign
 
-> 适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+> 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-使您能够对远程桌面协议（.rdp）文件进行数字签名。
+使你能够对远程桌面协议 ( .rdp) 文件进行数字签名。
 
 > [!NOTE]
 > 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
@@ -33,19 +31,19 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
-| /sha1`<hash>` | 指定指纹，该指纹是证书存储中包含的签名证书的安全哈希算法1（SHA1）哈希。 在 Windows Server 2012 R2 及更早版本中使用。 |
-| /sha256`<hash>` | 指定指纹，该指纹是证书存储中包含的签名证书的安全哈希算法256（SHA256）哈希。 替换 Windows Server 2016 和更高版本中的/sha1。 |
+| /sha1`<hash>` | 指定指纹，该指纹是证书存储中包含的签名证书的安全哈希算法 1 (SHA1) 哈希。 在 Windows Server 2012 R2 及更早版本中使用。 |
+| /sha256`<hash>` | 指定指纹，该指纹是安全哈希算法 256 (SHA256) 包含在证书存储中的签名证书哈希。 替换 Windows Server 2016 和更高版本中的/sha1。 |
 | /q | 静默模式。 如果命令成功，则没有输出，如果该命令失败，则输出最小。 |
 | /v | 详细模式。 显示所有警告、消息和状态。 |
 | /l | 测试签名和输出结果，而不实际替换任何输入文件。 |
-| `<file_name.rdp>` | .Rdp 文件的名称。 必须使用完整的文件名指定要签名的 .rdp 文件。 不接受通配符。 |
+| `<file_name.rdp>` | .Rdp 文件的名称。 您必须指定 .rdp 文件 (或文件) 使用完整文件名进行签名。 不接受通配符。 |
 | /? | 在命令提示符下显示帮助。 |
 
 #### <a name="remarks"></a>备注
 
-- SHA1 或 SHA256 证书指纹应表示受信任的 .rdp 文件发布者。 若要获取证书指纹，请打开 "**证书**" 管理单元，双击要使用的证书（在本地计算机的证书存储中或在个人证书存储区中），单击 "**详细信息**" 选项卡，然后在 "**字段**" 列表中，单击 "**指纹**"。
+- SHA1 或 SHA256 证书指纹应表示受信任的 .rdp 文件发布者。 若要获取证书指纹，请打开 "**证书**" 管理单元，在 "本地计算机的证书存储" 或 "个人证书存储" 中双击要使用 (证书) 中，单击 "**详细信息**" 选项卡，然后在 "**字段**" 列表中，单击 "**指纹**"。
 
     > [!NOTE]
     > 复制指纹以用于 rdpsign.exe 工具时，必须删除任何空格。
@@ -71,7 +69,7 @@ rdpsign /sha1 hash file1.rdp
 rdpsign /sha1 hash /l file1.rdp
 ```
 
-若要为多个名为的 .rdp 文件、 *file2*和*file3*进行*签名，请*键入（包括文件名之间的空格）：
+若要对名为的多个 .rdp 文件、 *file2*和*file3*进行*签名，请*键入 (包含文件名之间的空格) ：
 
 ```
 rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp

@@ -1,24 +1,22 @@
 ---
 title: 查询进程
 description: "\"查询处理\" 命令的参考文章，其中显示了有关在远程桌面会话主机服务器上运行的进程的信息。"
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 36ce3ffc-0092-4eb1-a374-28e6616ca946
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 548be2874bf79aab88abd53f0303096a82486fd0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 204782437d9fb144a9738038e82cdbbbcdc9078f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956519"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884534"
 ---
 # <a name="query-process"></a>查询进程
 
-适用于： Windows Server （半年频道），Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
+适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 显示有关在远程桌面会话主机服务器上运行的进程的信息。 您可以使用此命令来找出特定用户正在运行的程序，以及哪些用户在运行特定程序。 此命令返回以下信息：
 
@@ -43,7 +41,7 @@ query process [*|<processID>|<username>|<sessionname>|/id:<nn>|<programname>] [/
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | * | 列出所有会话的进程。 |
 | `<processID>` | 指定标识要查询的进程的数字 ID。 |

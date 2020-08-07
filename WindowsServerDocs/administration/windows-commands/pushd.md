@@ -1,20 +1,18 @@
 ---
 title: pushd
 description: Pushd 命令的参考文章，其中存储了用于 popd 命令的当前目录，然后更改为指定的目录。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 396bc545-0f41-473e-b0ac-76fbbb74d390
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 871834ae1ac29eb53be982831e7ede93d9d309cf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e885cab58e23af9da050822c49a655ca897ce819
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933748"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884582"
 ---
 # <a name="pushd"></a>pushd
 
@@ -32,7 +30,7 @@ pushd [<path>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | `<path>` | 指定要生成当前目录的目录。 此命令支持相对路径。 |
 | /? | 在命令提示符下显示帮助。 |
@@ -41,7 +39,7 @@ pushd [<path>]
 
 - 如果启用了命令扩展， **pushd**命令将接受网络路径或本地驱动器号和路径。
 
-- 如果指定网络路径， **pushd**命令会暂时分配最高的未使用的驱动器号（以 Z：）到指定的网络资源。 然后，该命令将当前驱动器和目录更改为新分配的驱动器上的指定目录。 如果在启用了命令扩展的情况下使用**popd**命令， **popd**命令将删除**pushd**创建的驱动器号分配。
+- 如果指定网络路径， **pushd**命令会暂时将从 Z： ) 开始 (最高的未使用的驱动器号分配给指定的网络资源。 然后，该命令将当前驱动器和目录更改为新分配的驱动器上的指定目录。 如果在启用了命令扩展的情况下使用**popd**命令， **popd**命令将删除**pushd**创建的驱动器号分配。
 
 ### <a name="examples"></a>示例
 

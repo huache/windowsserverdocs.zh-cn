@@ -1,20 +1,18 @@
 ---
 title: reg add
 description: Reg add 命令的参考文章，其中向注册表中添加了一个新的子项或条目。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d9ad143e-dc10-4e2e-a229-408393c40079
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db968e8fb55a4de73f5221f8149f794600f6884e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 549c9e4ff0eb09e051debdee12003031a8443e18
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933513"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884208"
 ---
 # <a name="reg-add"></a>reg add
 
@@ -28,9 +26,9 @@ reg add <keyname> [{/v Valuename | /ve}] [/t datatype] [/s Separator] [/d Data] 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
-| `<keyname>` | 指定要添加的子项或项的完整路径。 若要指定远程计算机，请在 keyname 中包含计算机名称（格式 `\\<computername>\` 为）。 *keyname* 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
+| `<keyname>` | 指定要添加的子项或项的完整路径。 若要指定远程计算机，请将计算机名称 (格式设置 `\\<computername>\` 为*keyname*) 的格式。 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和**HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM**和**hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
 | /v`<Valuename>` | 指定添加注册表项的名称。 |
 | /ve | 指定所添加的注册表项的值为 null。 |
 | /t`<Type>` | 指定注册表项的类型。 *类型*必须为以下类型之一：<ul><li>REG_SZ</li><li>REG_MULTI_SZ</li><li>REG_DWORD_BIG_ENDIAN</li><li>REG_DWORD</li><li>REG_BINARY</li><li>REG_DWORD_LITTLE_ENDIAN</li><li>REG_LINK</li><li>REG_FULL_RESOURCE_DESCRIPTOR</li><li>REG_EXPAND_SZ</li></ul> |
@@ -50,7 +48,7 @@ reg add <keyname> [{/v Valuename | /ve}] [/t datatype] [/s Separator] [/d Data] 
 | 0 | 成功 |
 | 1 | 失败 |
 
-- 对于**REG_EXPAND_SZ**键类型，请在 **^** /d 参数内使用插入符号（） **%** 。
+- 对于**REG_EXPAND_SZ**密钥类型，请在 **^** /d 参数内使用 ( ) 的脱字号 **%** 。
 
 ### <a name="examples"></a>示例
 

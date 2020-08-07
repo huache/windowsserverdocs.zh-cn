@@ -4,15 +4,13 @@ description: 有关 ReFSUtil 工具的参考文章，该工具尝试诊断严重
 author: laknight5
 ms.author: laknight
 ms.date: 6/29/2020
-ms.prod: windows-server
-ms.technology: windows-commands
 ms.topic: article
-ms.openlocfilehash: 3afc96970bb0350a3c1168c520cc20ad4f2254af
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: d40faa165666a5836dc6e87589d27f8eb643479e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409718"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884216"
 ---
 # <a name="refsutil"></a>ReFSUtil
 
@@ -24,14 +22,14 @@ ReFS 抢救是 ReFSUtil 的主要功能，适用于从在 "磁盘管理" 中显�
 
 ## <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | `<source volume>` | 指定要处理的 ReFS 卷。 驱动器号的格式必须为 "L："，或者必须提供卷装入点的路径。 |
 | `<working directory>` | 指定存储临时信息和日志的位置。 它不得**位于**上 `<source volume>` 。 |
 | `<target directory>` | 指定将标识文件复制到的位置。 它不得**位于**上 `<source volume>` 。 |
 | \-m | 恢复所有可能的文件，包括删除的文件。<p>**警告：** 此参数不仅会导致进程运行较长时间，还会导致意外的结果。 |
 | \-向量 | 指定使用详细模式。 |
-| \-x | 必要时强制首先卸除卷。 卷的所有打开的句柄均无效。 例如，`refsutil salvage -QA R: N:\WORKING N:\DATA -x`。 |
+| \-x-blade | 必要时强制首先卸除卷。 卷的所有打开的句柄均无效。 例如 `refsutil salvage -QA R: N:\WORKING N:\DATA -x`。 |
 
 ## <a name="usage-and-available-options"></a>使用情况和可用选项
 
@@ -51,9 +49,9 @@ refsutil salvage -QA <source volume> <working directory> <target directory> <opt
 refsutil salvage -FA <source volume> <working directory> <target directory> <options>
 ```
 
-### <a name="diagnose-phase-command-line-usage-manual-mode"></a>诊断阶段命令行使用情况（手动模式）
+### <a name="diagnose-phase-command-line-usage-manual-mode"></a>诊断阶段命令行使用 (手动模式) 
 
-首先，请尝试确定 `<source volume>` 是否是 ReFS 卷并确定该卷是否可装入。 如果卷不可装入，将提供原因。 这是一个独立的阶段。
+首先，请尝试确定 `<source volume>` 是否是 ReFS 卷并确定该卷是否可装入。 如果卷不可装入，将提供 (s) 的原因。 这是一个独立的阶段。
 
 ```
 refsutil salvage -D <source volume> <working directory> <options>
