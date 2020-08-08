@@ -6,12 +6,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 615ecb6c34da980b1223b4ffc5da20c8e84cb9ea
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: addd9d4cf4516725ac8c59d84204cfeb2501e4b3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964423"
+ms.locfileid: "87996572"
 ---
 # <a name="use-event-logging-in-windows-admin-center-to-gain-insight-into-management-activities-and-track-gateway-usage"></a>使用 Windows 管理中心中的事件日志记录了解管理活动和跟踪网关使用情况
 
@@ -34,11 +34,11 @@ Windows 管理中心通过使用 EventID 4000 和源 SMEGateway 将操作记录�
 | UserOnGateway | 用于访问 Windows 管理中心网关并执行操作的用户名                    |
 | UserOnTarget  | 用于访问目标托管服务器的用户名（如果不同于 userOnGateway (也就是说，使用 "管理身份" 凭据访问服务器的用户)  |
 | 委托    | 布尔值：如果目标托管服务器信任网关，并从用户的客户端计算机委派凭据             |
-| LAPS          | 布尔值：如果用户使用[LAPS](https://technet.microsoft.com/mt227395.aspx)凭据访问服务器                          |
+| LAPS          | 布尔值：如果用户使用[LAPS](/previous-versions/mt227395(v=msdn.10))凭据访问服务器                          |
 | 文件          | 已上传文件的名称（如果操作是文件上传）                                |
 
 ## <a name="learn-about-windows-admin-center-activity-with-event-logging"></a>了解包含事件日志记录的 Windows 管理中心活动
 
 Windows 管理中心中心会将网关活动记录到网关计算机上的事件通道，以帮助你解决问题并查看有关使用情况的指标。 这些事件记录到**ServerManagementExperience**事件通道。
 
-[了解有关 Windows 管理中心故障排除的详细信息。](troubleshooting.md)
+[了解有关 Windows 管理中心故障排除的详细信息。](../support/troubleshooting.md)

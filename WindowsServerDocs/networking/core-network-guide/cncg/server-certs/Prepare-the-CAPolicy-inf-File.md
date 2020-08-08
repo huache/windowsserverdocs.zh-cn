@@ -1,19 +1,17 @@
 ---
 title: 准备 CAPolicy.inf 文件
-description: Capolicy.inf 包含在安装 Active Directory 认证服务（AD CS）或续订 CA 证书时使用的各种设置。
+description: Capolicy.inf 包含在 Active Directory 证书服务 (AD CS) 或续订 CA 证书时使用的各种设置。
 manager: alanth
 ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
-ms.prod: windows-server
-ms.technology: networking
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4df23cd64bcf3bf9c27190908fb5f2a48b30b833
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 83e2acbc9edfd9ca236f01b1fef3474ffe1bbb51
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318294"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949451"
 ---
 # <a name="capolicyinf-syntax"></a>Capolicy.inf 语法
 >   适用于：Windows Server（半年频道）、Windows Server 2016
@@ -26,7 +24,7 @@ Capolicy.inf 是：
 
 -   在创建根 CA 和从属 CA 证书期间使用
 
--   在签名和颁发证书的签名 CA 上定义（不是向其授予请求的 CA）
+-   在签名和颁发证书的签名 CA 上定义 (而不是向其授予请求的 CA) 
 
 创建 Capolicy.inf 文件后，必须将其复制到服务器的 **% systemroot%** 文件夹中，然后再安装 ADCS 或续订 CA 证书。
 
@@ -42,7 +40,7 @@ Capolicy.inf 是：
 
 -   _值_–参数，并显示在等号的右侧。
 
-在下面的示例中， **[Version]** 为部分，**签名**是密钥，而 **"\$Windows NT\$"** 为值。
+在下面的示例中， **[版本]** 为部分，**签名**是密钥，而 **" \$ Windows NT \$ "** 是值。
 
 示例：
 
@@ -59,7 +57,7 @@ Signature="$Windows NT$"      #key=value
 
 列出组织定义的策略，以及这些策略是可选的还是必需的。 多个策略用逗号分隔。 名称在特定部署的上下文中有意义，或与检查是否存在这些策略的自定义应用程序相关。
 
-对于每个已定义的策略，必须有一个定义该特定策略设置的部分。 对于每个策略，需要提供用户定义的对象标识符（OID）以及要作为策略声明显示的文本，或者提供指向 policy 语句的 URL 指针。 URL 可以是 HTTP、FTP 或 LDAP URL 的形式。
+对于每个已定义的策略，必须有一个定义该特定策略设置的部分。 对于每个策略，你都需要提供用户定义的对象标识符 (OID) 以及要显示为策略语句的文本或指向策略声明的 URL 指针。 URL 可以是 HTTP、FTP 或 LDAP URL 的形式。
 
 如果你将在 policy 语句中使用说明性文本，则 Capolicy.inf 的后三行如下所示：
 
@@ -97,7 +95,7 @@ Notice=”Legal policy statement text”
 
 ### <a name="crldistributionpoint"></a>CRLDistributionPoint
 
-可以在 Capolicy.inf 中为根 CA 证书指定 CRL 分发点（Cdp）。  安装 CA 后，可以配置 CA 在每个颁发的证书中包含的 CDP Url。 根 CA 证书显示在 Capolicy.inf 文件的此部分中指定的 Url。 
+你可以为 Capolicy.inf 中的根 CA 证书指定 (Cdp) 的 CRL 分发点。  安装 CA 后，可以配置 CA 在每个颁发的证书中包含的 CDP Url。 根 CA 证书显示在 Capolicy.inf 文件的此部分中指定的 Url。
 
 ```
 [CRLDistributionPoint]
@@ -105,12 +103,12 @@ URL=http://pki.wingtiptoys.com/cdp/WingtipToysRootCA.crl
 ```
 
 本节中的一些其他信息：
--   支持
-    - HTTP 
+-   支持：
+    - HTTP
     - 文件 Url
-    - LDAP Url 
+    - LDAP Url
     - 多个 Url
-   
+
     >[!IMPORTANT]
     >不支持 HTTPS Url。
 
@@ -121,7 +119,7 @@ URL=http://pki.wingtiptoys.com/cdp/WingtipToysRootCA.crl
 -    CA 可以发布到文件 UNC，例如，表示客户端通过 HTTP 检索到的网站文件夹的共享。
 
 -   仅在设置根 CA 或续订根 CA 证书时才使用此部分。 CA 确定从属 CA CDP 扩展。
-   
+
 
 ### <a name="authorityinformationaccess"></a>AuthorityInformationAccess
 
@@ -136,7 +134,7 @@ URL=http://pki.wingtiptoys.com/Public/myCA.crt
 
 -   支持多个 Url。
 
--   支持 HTTP、FTP、LDAP 和文件 Url。 不支持 HTTPS Url。
+-   支持 HTTP、FTP、LDAP 和文件 Url。 不支持 HTTPS URL。
 
 -   仅在设置根 CA 或续订根 CA 证书时才使用此部分。 从属 CA AIA 扩展由颁发了从属 CA 证书的 CA 决定。
 
@@ -146,7 +144,7 @@ URL=http://pki.wingtiptoys.com/Public/myCA.crt
 
 ### <a name="certsrv_server"></a>certsrv_Server
 
-Capolicy.inf 的另一个可选部分为 [certsrv_server]，用于指定续订或安装的 CA 的续订密钥长度、续订有效期和证书吊销列表（CRL）有效期。 此部分中没有任何项是必需的。 其中许多设置的默认值都足以满足大多数需求，只需从 Capolicy.inf 文件中省略即可。 或者，在安装 CA 后，其中的许多设置都可以更改。
+Capolicy.inf 的另一个可选部分为 [certsrv_server]，用于指定续订密钥长度、续订有效期和证书吊销列表 (CRL) 要续订或安装的 CA 的有效期。 此部分中没有任何项是必需的。 其中许多设置的默认值都足以满足大多数需求，只需从 Capolicy.inf 文件中省略即可。 或者，在安装 CA 后，其中的许多设置都可以更改。
 
 示例如下所示：
 
@@ -187,17 +185,17 @@ Certutil -setreg CACRLDeltaPeriodUnits 1
 
 请记得重新启动 Active Directory 证书服务，以使更改生效。
 
-**LoadDefaultTemplates**仅适用于企业 CA 的安装过程。 此设置为 "True" 或 "False" （或 "1" 或 "0"），指示是否将 CA 配置为具有任何默认模板。
+**LoadDefaultTemplates**仅适用于企业 CA 的安装过程。 此设置为 "True" 或 "False" (或 "1" 或 "0") ，指示是否将 CA 配置为具有任何默认模板。
 
 在 CA 的默认安装中，默认证书模板的子集将添加到 "证书颁发机构" 管理单元的 "证书模板" 文件夹中。 这意味着，一旦 AD CS 服务在安装角色后开始，具有足够权限的用户或计算机即可立即注册证书。
 
 在安装 CA 后，你可能不希望立即颁发任何证书，因此你可以使用 LoadDefaultTemplates 设置来阻止将默认模板添加到企业 CA。 如果未在 CA 上配置模板，则它不会颁发证书。
 
-**内容: alternatesignaturealgorithm**将 ca 配置为支持 PKCS\#1 v 2.1 签名格式用于 CA 证书和证书申请。 当在根 CA 上设置为1时，CA 证书将包含 PKCS\#1 2.1 版签名格式。 如果在从属 CA 上设置，从属 CA 将创建包含 PKCS\#1 V 2.1 签名格式的证书请求。
+**内容: alternatesignaturealgorithm**将 ca 配置为支持 \# ca 证书和证书请求的 PKCS 1 v 2.1 签名格式。 当在根 CA 上设置为1时，CA 证书将包含 PKCS \# 1 2.1 版签名格式。 如果在从属 CA 上设置，从属 CA 将创建包含 PKCS \# 1 v 2.1 签名格式的证书请求。
 
-**ForceUTF8**将 Subject 和颁发者可分辨名称中的相对可分辨名称（RDNs）的默认编码更改为 utf-8。 只有那些支持 UTF-8 的 RDNs （例如，由 RFC 定义为目录字符串类型的那些）受影响。 例如，域组件（DC）的 RDN 支持编码为 IA5 或 UTF-8，而国家 RDN （C）仅支持编码为可打印字符串。 因此，ForceUTF8 指令会影响 DC RDN，但不会影响 C RDN。
+**ForceUTF8**会将 "主题" 和 "颁发者可分辨名称" 中 (RDNs) 的相对可分辨名称的默认编码更改为 utf-8。 只有那些支持 UTF-8 的 RDNs （例如，由 RFC 定义为目录字符串类型的那些）受影响。 例如，域组件的 RDN (DC) 支持将编码作为 IA5 或 UTF-8，而国家 RDN (C) 仅支持编码为可打印字符串。 因此，ForceUTF8 指令会影响 DC RDN，但不会影响 C RDN。
 
-**EnableKeyCounting**将 ca 配置为每次使用 ca 的签名密钥时递增计数器。 请勿启用此设置，除非你具有支持密钥计数的硬件安全模块（HSM）和关联的加密服务提供程序（CSP）。 Microsoft 强 CSP 和 Microsoft 软件密钥存储提供程序（KSP）都不支持密钥计数。
+**EnableKeyCounting**将 ca 配置为每次使用 ca 的签名密钥时递增计数器。 请勿启用此设置，除非你的硬件安全模块 (HSM) ，以及支持密钥计数的关联加密服务提供程序 (CSP) 。 Microsoft 强 CSP 和 Microsoft 软件密钥存储提供程序都不 (KSP) 支持密钥计数。
 
 ## <a name="create-the-capolicyinf-file"></a>创建 Capolicy.inf 文件
 
@@ -207,27 +205,27 @@ Certutil -setreg CACRLDeltaPeriodUnits 1
 
 1. 在计划安装 AD CS 的计算机上，打开 Windows PowerShell，键入**notepad c:\CAPolicy.inf** ，然后按 enter。
 
-2. 系统提示创建新文件时，单击 **“是”** 。
+2. 系统提示创建新文件时，单击 **“是”**。
 
 3. 输入以下内容作为文件的内容：
    ```
-   [Version]  
-   Signature="$Windows NT$"  
-   [PolicyStatementExtension]  
-   Policies=InternalPolicy  
-   [InternalPolicy]  
-   OID=1.2.3.4.1455.67.89.5  
-   Notice="Legal Policy Statement"  
-   URL=https://pki.corp.contoso.com/pki/cps.txt  
-   [Certsrv_Server]  
-   RenewalKeyLength=2048  
-   RenewalValidityPeriod=Years  
-   RenewalValidityPeriodUnits=5  
-   CRLPeriod=weeks  
-   CRLPeriodUnits=1  
-   LoadDefaultTemplates=0  
-   AlternateSignatureAlgorithm=1  
-   [CRLDistributionPoint]  
+   [Version]
+   Signature="$Windows NT$"
+   [PolicyStatementExtension]
+   Policies=InternalPolicy
+   [InternalPolicy]
+   OID=1.2.3.4.1455.67.89.5
+   Notice="Legal Policy Statement"
+   URL=https://pki.corp.contoso.com/pki/cps.txt
+   [Certsrv_Server]
+   RenewalKeyLength=2048
+   RenewalValidityPeriod=Years
+   RenewalValidityPeriodUnits=5
+   CRLPeriod=weeks
+   CRLPeriodUnits=1
+   LoadDefaultTemplates=0
+   AlternateSignatureAlgorithm=1
+   [CRLDistributionPoint]
    [AuthorityInformationAccess]
    ```
 4. 单击 "**文件**"，然后单击 "**另存为**"。
@@ -236,22 +234,22 @@ Certutil -setreg CACRLDeltaPeriodUnits 1
 
 6. 确保以下信息：
 
-   -   将“文件名”设置为“CAPolicy.inf”
+   -   将“文件名”**** 设置为“CAPolicy.inf”****
 
-   -   **“保存类型”** 设置为“CAPolicy.inf” **“所有文件”**
+   -   将 **“保存类型”** 设置为 **“所有文件”**
 
    -   **编码**是 **ANSI**
 
-7. 单击 **“保存”** 。
+7. 单击“保存”  。
 
-8. 提示你覆盖文件时，单击 **“是”** 。
+8. 提示你覆盖文件时，单击 **“是”**。
 
    ![保存为 Capolicy.inf 文件的位置](../../../media/Prepare-the-CAPolicy-inf-File/001-SaveCAPolicyORCA1.gif)
 
    > [!CAUTION]
-   >   确保以 inf 扩展名保存 CAPolicy.inf。 如果不在文件名末尾特意键入“.inf”并按描述选择各个选项，文件将另存为文本文件，并在 CA 安装期间不得使用。
+   >   确保以 inf 扩展名保存 CAPolicy.inf。 如果不在文件名末尾特意键入“.inf”**** 并按描述选择各个选项，文件将另存为文本文件，并在 CA 安装期间不得使用。
 
 9. 关闭记事本。
 
 > [!IMPORTANT]
->   在 Capolicy.inf 中，可以看到有一行指定 URL https://pki.corp.contoso.com/pki/cps.txt。 CAPolicy.inf 的“内部策略”部分只会作为你会如何指定证书实行声明 (CPS) 的位置的示例出现。 在本指南中，不会指示您创建证书实践语句（CPS）。
+>   在 Capolicy.inf 中，可以看到有一行指定 URL https://pki.corp.contoso.com/pki/cps.txt 。 CAPolicy.inf 的“内部策略”部分只会作为你会如何指定证书实行声明 (CPS) 的位置的示例出现。 在本指南中，不会指示您 (CPS) 创建证书实践声明。

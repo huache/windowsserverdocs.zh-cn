@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 398440ac-5988-41ce-b91e-eab343a255d3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e8722e5ff925bca1d99c39d7eb6bf360dc12c065
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1e2db53f28ff5262778b36b8a5cb91e6062ca9c0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968694"
+ms.locfileid: "87995703"
 ---
 # <a name="hyper-v-virtual-switch"></a>Hyper-V 虚拟交换机
 
@@ -26,13 +26,13 @@ ms.locfileid: "87968694"
 >
 > - [管理 Hyper-V 虚拟交换机](Manage-Hyper-V-Virtual-Switch.md)
 > - [远程直接内存访问 (RDMA) 和交换机嵌入式组合 (SET)](RDMA-and-Switch-Embedded-Teaming.md)
-> - [Windows PowerShell 中的网络交换机组 Cmdlet](https://docs.microsoft.com/powershell/module/netswitchteam/new-netswitchteam?view=win10-ps)
-> - [VMM 2016 中的新增功能](https://docs.microsoft.com/system-center/vmm/whats-new#networking)
-> - [设置 VMM 网络构造](https://docs.microsoft.com/system-center/vmm/manage-networks)
-> - [Hyper-V 论坛](https://docs.microsoft.com/answers/topics/windows-server-hyper-v.html)
-> - [Hyper-V：如果第三方扩展需要，应启用 WFP 虚拟交换机扩展](https://docs.microsoft.com/answers/topics/windows-server-hyper-v.html)
+> - [Windows PowerShell 中的网络交换机组 Cmdlet](/powershell/module/netswitchteam/new-netswitchteam?view=win10-ps)
+> - [VMM 2016 中的新增功能](/system-center/vmm/whats-new#networking)
+> - [设置 VMM 网络构造](/system-center/vmm/manage-networks)
+> - [Hyper-V 论坛](/answers/topics/windows-server-hyper-v.html)
+> - [Hyper-V：如果第三方扩展需要，应启用 WFP 虚拟交换机扩展](/answers/topics/windows-server-hyper-v.html)
 >
-> 有关其他网络技术的详细信息，请参阅[Windows Server 2016 中的网络](https://docs.microsoft.com/windows-server/networking/networking)。
+> 有关其他网络技术的详细信息，请参阅[Windows Server 2016 中的网络](../../networking/index.yml)。
 
 Hyper-v \- 虚拟交换机是基于软件的第2层以太网网络交换机， \- 当你安装 hyper-v 服务器角色时，它可在 Hyper-v 管理器中找到 \- 。
 

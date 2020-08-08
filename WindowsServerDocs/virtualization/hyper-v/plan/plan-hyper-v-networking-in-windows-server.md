@@ -6,12 +6,12 @@ ms.topic: article
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 638b4879d7980d817863ad0cd45397ac4a095569
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b31d942e8d7890a8f699f743bcd24953d2a3e760
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948004"
+ms.locfileid: "87996068"
 ---
 # <a name="plan-for-hyper-v-networking-in-windows-server"></a>规划 Windows Server 中的 Hyper-v 网络
 
@@ -52,7 +52,7 @@ Hyper-v 提供了三种类型的虚拟交换机和两种类型的虚拟网络适
 
 某些功能依赖于特定的网络配置，或在某些配置下性能更佳。 在规划或更新网络基础结构时，请考虑以下事项。
 
-**故障转移群集**-一种最佳做法是隔离群集流量，并使用虚拟交换机上的 hyper-v 服务 (QoS) 。 有关详细信息，请参阅[Hyper-v 群集的网络建议](https://technet.microsoft.com/library/dn550728.aspx)
+**故障转移群集**-一种最佳做法是隔离群集流量，并使用虚拟交换机上的 hyper-v 服务 (QoS) 。 有关详细信息，请参阅[Hyper-v 群集的网络建议](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11))
 
 **实时迁移**-使用性能选项来减少网络和 CPU 使用率，以及完成实时迁移所花费的时间。 有关说明，请参阅在[没有故障转移群集的情况下，设置用于实时迁移的主机](../deploy/set-up-hosts-for-live-migration-without-failover-clustering.md)。
 

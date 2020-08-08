@@ -7,12 +7,12 @@ ms.assetid: 59297022-a898-456c-b299-d79cd5860238
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 5f4e07919503f283add8da1c8dd522f3d2b7f222
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 22dc2e83f1c7370bfd6f97d821a83041a9c528fe
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942013"
+ms.locfileid: "87996607"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>在 Hyper-V 中创建虚拟机
 
@@ -42,16 +42,16 @@ ms.locfileid: "87942013"
 
 2. 右键单击“Windows PowerShell”，然后选择“以管理员身份运行”。
 
-3. 使用[获取-VMSwitch](https://technet.microsoft.com/library/hh848499.aspx)获取虚拟机要使用的虚拟交换机的名称。  例如，应用于对象的
+3. 使用[获取-VMSwitch](/powershell/module/hyper-v/get-vmswitch?view=win10-ps)获取虚拟机要使用的虚拟交换机的名称。  例如，应用于对象的
 
    ```
    Get-VMSwitch  * | Format-Table Name
    ```
 
-4. 使用[新的-VM](https://technet.microsoft.com/library/hh848537.aspx) cmdlet 来创建虚拟机。  请参阅以下示例。
+4. 使用[新的-VM](/powershell/module/hyper-v/new-vm?view=win10-ps) cmdlet 来创建虚拟机。  请参阅以下示例。
 
    > [!NOTE]
-   > 如果可以将此虚拟机移动到运行 Windows Server 2012 R2 的 Hyper-v 主机，请将-Version 参数与[New-VM](https://technet.microsoft.com/library/hh848537.aspx)一起使用，将虚拟机配置版本设置为5。 Windows server 2012 R2 或更低版本不支持 Windows Server 2016 的默认虚拟机配置版本。 创建虚拟机后，无法更改虚拟机配置版本。 有关详细信息，请参阅[支持的虚拟机配置版本](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions)。
+   > 如果可以将此虚拟机移动到运行 Windows Server 2012 R2 的 Hyper-v 主机，请将-Version 参数与[New-VM](/powershell/module/hyper-v/new-vm?view=win10-ps)一起使用，将虚拟机配置版本设置为5。 Windows server 2012 R2 或更低版本不支持 Windows Server 2016 的默认虚拟机配置版本。 创建虚拟机后，无法更改虚拟机配置版本。 有关详细信息，请参阅[支持的虚拟机配置版本](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions)。
 
    - **现有虚拟硬盘**-若要使用现有的虚拟硬盘创建虚拟机，可以使用以下命令，其中，
      - **-Name** 是为你要创建的虚拟机提供的名称。
@@ -80,9 +80,9 @@ ms.locfileid: "87942013"
      New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -NewVHDPath .\VMs\Win10.vhdx -Path .\VMData -NewVHDSizeBytes 20GB -Generation 2 -Switch ExternalSwitch
      ```
 
-   - **用于启动到操作系统映像的新虚拟硬盘**-若要使用启动到操作系统映像包的新虚拟磁盘创建虚拟机，请参阅在[Windows 10 上创建虚拟机演练](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_create_vm)中的 PowerShell 示例。
+   - **用于启动到操作系统映像的新虚拟硬盘**-若要使用启动到操作系统映像包的新虚拟磁盘创建虚拟机，请参阅在[Windows 10 上创建虚拟机演练](/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)中的 PowerShell 示例。
 
-5. 使用[启动 VM](https://technet.microsoft.com/library/hh848589.aspx) cmdlet 启动虚拟机。 运行以下 cmdlet，其中 Name 是你创建的虚拟机的名称。
+5. 使用[启动 VM](/powershell/module/hyper-v/start-vm?view=win10-ps) cmdlet 启动虚拟机。 运行以下 cmdlet，其中 Name 是你创建的虚拟机的名称。
 
    ```
    Start-VM -Name <Name>
@@ -107,7 +107,7 @@ ms.locfileid: "87942013"
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
 |**指定名称和位置**|名称：新虚拟机。<p>位置： **C:\ProgramData\Microsoft\Windows\Hyper-V \\ **。|你还可以输入自己的名称，并为虚拟机选择另一个位置。<p>这是将存储虚拟机配置文件的位置。|
 |**指定生成**|第 1 代|你还可以选择创建第2代虚拟机。 有关详细信息，请参阅是否[应在 hyper-v 中创建第1代或第2代虚拟机？。](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)|
-|**分配内存**|启动内存： 1024 MB<p>动态内存：**未选择**|可以将启动内存从32MB 设置为5902MB。<p>你还可以选择使用动态内存。 有关详细信息，请参阅[hyper-v 动态内存概述](https://technet.microsoft.com/library/hh831766.aspx)。|
+|**分配内存**|启动内存： 1024 MB<p>动态内存：**未选择**|可以将启动内存从32MB 设置为5902MB。<p>你还可以选择使用动态内存。 有关详细信息，请参阅[hyper-v 动态内存概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))。|
 |**配置网络**|未连接|你可以从现有虚拟交换机列表中选择虚拟机要使用的网络连接。 请参阅[创建用于 hyper-v 虚拟机的虚拟交换机](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md)。|
 |**连接虚拟硬盘**|创建虚拟硬盘<p>名称： <*vmname*> .vhdx<p>**位置**： **C:\Users\Public\Documents\Hyper-V\Virtual \\ 硬盘**<p>**大小**：127GB|你还可以选择使用现有的虚拟硬盘，或者等待并在以后附加虚拟硬盘。|
 |**安装选项**|稍后安装操作系统|这些选项将更改虚拟机的启动顺序，以便可以从 .iso 文件、可启动软盘或网络安装服务（如 Windows 部署服务 (WDS) 安装。|
@@ -115,7 +115,7 @@ ms.locfileid: "87942013"
 
 ## <a name="additional-references"></a>其他参考
 
-- [新 VM](https://technet.microsoft.com/library/hh848537.aspx)
+- [新 VM](/powershell/module/hyper-v/new-vm?view=win10-ps)
 
 - [支持的虚拟机配置版本](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions)
 

@@ -4,23 +4,22 @@ title: 将 AD RMS 升级到 Windows Server 2016
 author: msmbaldwin
 ms.author: esaggese
 ms.date: 05/30/2019
-ms.prod: windows-server
 ms.topic: article
-ms.openlocfilehash: cb27477f71dbded1f1171fde613f55f6267fc2cb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8a2d0ec94619f74260f1fbc934e8e3328201ffa9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965469"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947207"
 ---
 # <a name="upgrading-ad-rms-to-windows-server-2016"></a>将 AD RMS 升级到 Windows Server 2016
 
 ## <a name="introduction"></a>简介
 
-Active Directory Rights Management Services （AD RMS）是一种 Microsoft 服务，用于保护敏感文档和电子邮件。 与传统的保护方法（如防火墙和 Acl）不同的是，无论文件的位置或传输方式如何，AD RMS 加密和保护都是永久性的。 
+Active Directory Rights Management Services (AD RMS) 是一种保护敏感文档和电子邮件的 Microsoft 服务。 与传统的保护方法（如防火墙和 Acl）不同的是，无论文件的位置或传输方式如何，AD RMS 加密和保护都是永久性的。
 
 本文档提供有关从 Windows Server 2012 2012 SQL Server R2 迁移到 Windows Server 2016 和 SQL Server 2016 的指南。 同一过程可用于从 AD RMS 的旧但受支持的版本中迁移。
-请注意，Active Directory Rights Management Services 不再处于活动状态，并且对于最新功能，客户应考虑迁移到[Azure 信息保护](https://azure.microsoft.com/services/information-protection/)，这提供了更全面的功能，同时提供了更完整的设备和应用程序支持。 
+请注意，Active Directory Rights Management Services 不再处于活动状态，并且对于最新功能，客户应考虑迁移到[Azure 信息保护](https://azure.microsoft.com/services/information-protection/)，这提供了更全面的功能，同时提供了更完整的设备和应用程序支持。
 
 有关从 AD RMS 迁移到 Azure 信息保护的信息，而无需重新保护内容，请参阅[Azure 信息保护迁移文档](/azure/information-protection/migrate-from-ad-rms-to-azure-rms)。
 
@@ -28,7 +27,8 @@ Active Directory Rights Management Services （AD RMS）是一种 Microsoft 服�
 
 AD FS 是 AD RMS 安装的可选组件。 在本指南中，假定使用 ADFS。 如果在你的环境中没有使用 ADFS 支持 AD RMS 用户，则可以跳过引用 ADFS 的所有步骤。
 
-在本指南中，通过执行并行安装并通过备份移动数据库，将 SQL Server 升级到 SQL Server 2016。 或者，如果你可以将 AD RMS 和 ADFS 数据库服务器升级到 SQL Server 2016，则在完成此操作后，你可以转到本文档中的下一节，无需执行本部分中的步骤。  
+在本指南中，通过执行并行安装并通过备份移动数据库，将 SQL Server 升级到 SQL Server 2016。
+或者，如果你可以将 AD RMS 和 ADFS 数据库服务器升级到 SQL Server 2016，则在完成此操作后，你可以转到本文档中的下一节，无需执行本部分中的步骤。
 
 ## <a name="installation"></a>安装
 
@@ -36,7 +36,7 @@ AD FS 是 AD RMS 安装的可选组件。 在本指南中，假定使用 ADFS。
 
 以下部分详细介绍了直接与 SQL Server 2016 配置相关的实现任务。 本指南重点介绍如何使用服务器管理器和 SQL Server Management Studio 完成这些任务。
 
-必须在 SQL Server 2016 安装中完成这些步骤。 根据组织的标准做法和策略，将 SQL Server 2016 安装在合适的硬件上。 
+必须在 SQL Server 2016 安装中完成这些步骤。 根据组织的标准做法和策略，将 SQL Server 2016 安装在合适的硬件上。
 
 #### <a name="preparing-the-sql-server"></a>准备 SQL Server
 
@@ -57,11 +57,11 @@ CNAME 用于帮助确保 Windows Server 2016 安装程序将获取适当的数�
 
 4.  从左侧导航窗格中，展开 DC 并打开 "**正向查找区域**"。
 
-5.  打开相应的域资源，然后在右侧的视图窗格中右键单击，然后选择 "**新建别名（CNAME）** " 以开始创建 CNAME。
+5.  打开相应的域资源，然后右键单击右侧的 "视图" 窗格，然后选择 "**新别名 (cname) **开始创建 CNAME。
 
-6.  对于 "别名"，请输入逻辑名称，使其有别于可能存在的其他名称（例如 SQLADRMS 或 SQLADFS）
+6.  对于 "别名"，请输入逻辑名称，使其有别于可能存在 (Ex 的其他名称。 SQLADRMS 或 SQLADFS) 
 
-7.  输入名称后，为目标主机提供 FQDN，这将是新的 SQL Server 2016 服务器。 （例如： SQL2016.contoso.com）
+7.  输入名称后，为目标主机提供 FQDN，这将是新的 SQL Server 2016 服务器。 （例如： SQL2016.contoso.com) 
 
 8.  输入所有信息后，单击 **"确定"**。
 
@@ -83,7 +83,7 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 3.  在 "**连接到服务器**" 窗口中，确认承载 AD RMS 数据库的服务器在 "**服务器名称**" 框中，然后单击 "**连接**"。
 
-4.  展开“数据库”。 右键单击相应的数据库（**drm**和**Adfs**），指向 "**任务**"，然后选择 "**备份**"。
+4.  展开“数据库”。 右键单击相应的数据库 (**drm**和**Adfs**) ，指向 "**任务**"，然后选择 "**备份**"。
 
 5.  对于剩余的数据库，重复步骤4。
 
@@ -103,11 +103,11 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 3.  在 "**连接到服务器**" 窗口中，确认承载 AD RMS 数据库的服务器在 "**服务器名称**" 框中，然后，对于 "身份验证"，请单击下拉菜单，然后选择 " **SQL Server 身份验证**"。
 
-4.  在 "**登录**名" 字段中，输入本地管理员帐户的名称（例如 "localadmin"） "，然后提供相应的密码，然后单击"**连接**"。
+4.  在 "**登录**名" 字段中，输入本地管理员帐户的名称 (例如。 "localadmin") 然后提供相应的密码，然后单击 "**连接**"。
 
 5.  展开 "**安全性**"，然后右键单击 "**登录名**"，然后从显示的上下文菜单中选择 "**新建登录名**"。
 
-6.  窗口出现后，请在 "**登录名**" 字段中的域管理员帐户中输入（例如 Contoso \\ ContosoAdmin）
+6.  窗口出现后，请在 "**登录名**" 字段中的域管理员帐户中输入 (例如。 Contoso \\ ContosoAdmin) 
 
 7.  从左侧导航窗格中，选择 "**服务器角色**"。
 
@@ -133,9 +133,9 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 5.  请确保已添加所有数据库文件，并单击 **"确定"** 完成该过程。
 
-### <a name="configuring-windows-server-2016-active-directory-federation-services-ad-fs"></a>配置 Windows Server 2016 Active Directory 联合身份验证服务（AD FS）
+### <a name="configuring-windows-server-2016-active-directory-federation-services-ad-fs"></a>配置 Windows Server 2016 Active Directory 联合身份验证服务 (AD FS) 
 
-已部署 AD FS 以提供对作为应用程序 AD RMS 的单一登录（SSO）访问。 它也配置了 AD RMS 移动设备扩展（MDE），这为最终用户启用了 Mac 和移动设备支持。
+部署 AD FS 是为了提供单一登录 (SSO) AD RMS 作为应用程序的访问。 它还配置了 AD RMS 移动设备扩展 (MDE) ，为最终用户启用 Mac 和移动设备支持。
 
 以下各节提供有关可能需要在 AD FS 部署中执行的操作任务的指导。
 
@@ -219,15 +219,15 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 以下部分提供有关如何将基于 Windows Server 2016 的 AD RMS 服务器添加到当前 Windows Server 2012 R2 群集的指导。 服务器将添加到群集中，并将信息复制到该群集中，以便可以弃用以前的 AD RMS 服务器以释放资源。
 
-将基于 Windows Server 2016 的 AD RMS 服务器添加到 AD RMS 群集后，基于 Windows 的早期版本的所有节点将变为不活动状态。 完成此操作后，你可以取消预配这些服务器（例如，关闭、重新调整用途或重新安装 Windows Server 2016 以加入 AD RMS 群集）。 
+将基于 Windows Server 2016 的 AD RMS 服务器添加到 AD RMS 群集后，基于 Windows 的早期版本的所有节点将变为不活动状态。 完成此操作后，你可以取消预配这些服务器 (例如关闭、重新调整用途或重新安装 Windows Server 2016，以便加入 AD RMS 群集) 。
 
 你可以向群集部署其他 AD RMS 服务器，以支持 AD RMS 部署上的负载。 如果 AD RMS 服务器的流量增加，还可以选择执行此操作。
 
-本指南不涉及更改你的环境中可能使用的负载均衡机制以排除你正在弃用的服务器，并包括要添加到群集中的服务器所需的步骤。 
+本指南不涉及更改你的环境中可能使用的负载均衡机制以排除你正在弃用的服务器，并包括要添加到群集中的服务器所需的步骤。
 
 #### <a name="adding-a-2016-ad-rms-server"></a>添加 2016 AD RMS 服务器
 
-如果 AD RMS 群集使用的是硬件安全模块，而不是其服务器许可方证书的集中管理的密钥，则在安装 AD RMS 之前，你将需要在服务器上安装软件和其他 HSM 项目（如密钥和配置文件）。 还需要通过物理方式或通过相关的网络配置将 HSM 连接到服务器。 遵循以下步骤的 HSM 指导。 
+如果 AD RMS 群集使用的是硬件安全模块，而不是其服务器许可方证书的集中管理的密钥，则需要安装软件和其他 HSM 项目 (例如，在安装 AD RMS 之前，服务器上) 的密钥和配置文件。 还需要通过物理方式或通过相关的网络配置将 HSM 连接到服务器。 遵循以下步骤的 HSM 指导。
 
 **添加 2016 AD RMS 服务器**
 
@@ -237,11 +237,11 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 3.  选择 "**加入现有 AD RMS 群集**"，然后单击 "**下一步**"。
 
-4.  在 "**选择配置数据库**" 页上，输入在 DNS 中为 2016 SQL SERVER （FQDN）指定的 CNAME。
+4.  在 "**选择配置数据库**" 页上，输入在 DNS 中为 2016 SQL SERVER (FQDN) 指定的 CNAME。
 
 5.  单击第二行中的 "列表"，然后从下拉**列表**中选择 " **DefaultInstance** "。
 
-6.  在 "**配置数据库名称**" 下，选择下拉菜单，然后选择显示的 "drm" 配置。 。
+6.  在 "**配置数据库名称**" 下，选择下拉菜单，然后选择显示的 "drm" 配置。 然后单击“下一步”。
 
 7.  在 "**数据库信息**" 页上，在提供的字段中输入群集密钥密码。 完成后，单击 "**下一步**"。
 
@@ -257,11 +257,12 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 13. 登录后，打开**服务器管理器**选择 "**工具**"，然后**Active Directory Rights Management**"。 将显示 "管理" 窗口，并指示群集在群集中具有其他服务器。
 
-14. 如果在原始 AD RMS 群集中安装了 AD RMS 移动设备扩展，则还需要在更新的群集节点中安装 MDE。 按照 MDE 文档中的说明将 MDE 添加到 AD RMS 群集。 此时，你可以重新使用所有预先存在的节点或将其升级到 Windows Server 2016，并使用上文概述的相同过程将它们重新加入到 AD RMS 群集。 
+14. 如果在原始 AD RMS 群集中安装了 AD RMS 移动设备扩展，则还需要在更新的群集节点中安装 MDE。 按照 MDE 文档中的说明将 MDE 添加到 AD RMS 群集。
+此时，你可以重新使用所有预先存在的节点或将其升级到 Windows Server 2016，并使用上文概述的相同过程将它们重新加入到 AD RMS 群集。
 
-### <a name="configuring-windows-server-2016-web-application-proxy-wap"></a>配置 Windows Server 2016 Web 应用程序代理（WAP）
+### <a name="configuring-windows-server-2016-web-application-proxy-wap"></a>将 Windows Server 2016 Web 应用程序代理配置 (WAP) 
 
-以下各节提供有关可能需要在 Web 应用程序代理部署中执行的操作任务的指导。 这是一个可选步骤，如果要通过其他机制将 AD RMS 发布到 Internet，则不需要此步骤。 
+以下各节提供有关可能需要在 Web 应用程序代理部署中执行的操作任务的指导。 这是一个可选步骤，如果要通过其他机制将 AD RMS 发布到 Internet，则不需要此步骤。
 
 #### <a name="adding-a-windows-server-2016-wap-server"></a>添加 Windows Server 2016 WAP 服务器
 
@@ -287,7 +288,7 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 9.  在远程访问管理控制台中，单击 "**运行 Web 应用程序代理配置向导"**。 进入向导后，单击 "**下一步**"。
 
-10. 在 "联合服务器" 屏幕上，输入 AD FS 服务器的完全限定的域名（例如 adfs.contoso.com），然后在 AD FS 服务器上为管理员输入凭据。
+10. 在 "联合服务器" 屏幕上，输入 AD FS 服务器的完全限定域名 (例如。 adfs.contoso.com) ，然后在 AD FS 服务器上为管理员输入凭据。
 
 11. 在 "AD FS 代理证书" 屏幕上，在当前安装在 Web 应用程序代理服务器上的证书列表中，选择要供 AD FS Proxy 的 Web 应用程序代理使用的证书，然后单击 "**下一步**"。
 
@@ -301,7 +302,7 @@ AD RMS 和 ADFS 数据库保存了 AD RMS 所需的重要信息，例如服务�
 
 **将 DNS 指向 WAP 服务器**
 
-1.  导航到提供商的网站（例如 GoDaddy）。
+1.  导航到提供商的网站 (例如。 GoDaddy) 。
 
 2.  进入域管理和 DNS 管理。
 
@@ -347,11 +348,11 @@ Web 应用程序代理服务器上提供详细的日志记录信息。 你可以
 
 3.  选择 "**加入现有 AD RMS 群集**"，然后单击 "**下一步**"。
 
-4.  在 "**选择配置数据库**" 页上，输入在 DNS 中为 2016 SQL SERVER （FQDN）指定的 CNAME。
+4.  在 "**选择配置数据库**" 页上，输入在 DNS 中为 2016 SQL SERVER (FQDN) 指定的 CNAME。
 
 5.  单击第二行中的 "列表"，然后从下拉**列表**中选择 " **DefaultInstance** "。
 
-6.  在 "**配置数据库名称**" 下，选择下拉菜单，然后选择显示的 "drm" 配置。 。
+6.  在 "**配置数据库名称**" 下，选择下拉菜单，然后选择显示的 "drm" 配置。 然后单击“下一步”。
 
 7.  在 "**数据库信息**" 页上，在提供的字段中输入群集密钥密码。 完成后，单击 "**下一步**"。
 
@@ -371,7 +372,7 @@ Web 应用程序代理服务器上提供详细的日志记录信息。 你可以
 
 #### <a name="adding-a-windows-server-2016-ad-fs-server-for-high-availability"></a>添加 Windows Server 2016 AD FS Server 以实现高可用性
 
-你可以部署其他 AD FS 服务器以设置高可用性。 如果 AD FS 服务器的流量增加，则可以选择执行此操作。 **注意：提高场行为级别后，新的数据库条目将进入 SQL Server 2016 （Adfs Configv3），并且必须删除旧的配置数据库，然后才能继续执行这些步骤。**
+你可以部署其他 AD FS 服务器以设置高可用性。 如果 AD FS 服务器的流量增加，则可以选择执行此操作。 **注意：提高场行为级别后，新的数据库条目将进入 SQL Server 2016 (Adfs Configv3) ，并且必须删除旧的配置数据库，然后才能继续执行这些步骤。**
 
 **添加 Windows Server 2016 AD FS Server 以实现高可用性**
 
@@ -419,7 +420,7 @@ Web 应用程序代理服务器上提供详细的日志记录信息。 你可以
 
 9.  在远程访问管理控制台中，单击 "**运行 Web 应用程序代理配置向导"**。 进入向导后，单击 "**下一步**"。
 
-10. 在 "联合服务器" 屏幕上，输入 AD FS 服务器的完全限定的域名（例如 adfs.contoso.com），然后在 AD FS 服务器上为管理员输入凭据。
+10. 在 "联合服务器" 屏幕上，输入 AD FS 服务器的完全限定域名 (例如。 adfs.contoso.com) ，然后在 AD FS 服务器上为管理员输入凭据。
 
 11. 在 "AD FS 代理证书" 屏幕上，在当前安装在 Web 应用程序代理服务器上的证书列表中，选择要供 AD FS Proxy 的 Web 应用程序代理使用的证书，然后单击 "**下一步**"。
 
@@ -465,7 +466,7 @@ Web 应用程序代理服务器上提供详细的日志记录信息。 你可以
 
 15. 单击 "**下一步**"，然后选择**选择仲裁见证**的选项，然后再次单击 "**下一步**"。
 
-16. 在 "**选择仲裁见证**" 页上，选择 "**配置文件共享见证**" 选项。 。
+16. 在 "**选择仲裁见证**" 页上，选择 "**配置文件共享见证**" 选项。 然后单击“下一步”。
 
 17. 选择 "**浏览**"，然后在 "文件共享路径" 对话框中找到要使用的文件共享的路径。 单击“下一步”。
 
@@ -477,13 +478,13 @@ Web 应用程序代理服务器上提供详细的日志记录信息。 你可以
 
 21. 右键单击 SQL Server 名称，然后选择 "**属性**"。
 
-22. 在 "属性" 对话框中，选择 " **AlwaysOn 高可用性**" 选项卡。选中 "**启用 AlwaysOn 可用性组**" 复选框。 单击“确定”  。 **注意：请在两个 SQL server 2016 服务器上执行此操作。**
+22. 在 "属性" 对话框中，选择 " **AlwaysOn 高可用性**" 选项卡。选中 "**启用 AlwaysOn 可用性组**" 复选框。 单击“确定”。 **注意：请在两个 SQL server 2016 服务器上执行此操作。**
 
 23. 然后重启 SQL Server 服务。
 
 24. 现在，请打开 "**开始**" 菜单，搜索 " **SQL Server Management Studio** "，然后从左侧导航窗格中，右键单击 "**可用性组**"，然后单击 "**新建可用性组向导**"，然后单击 "**下一步**"。
 
-25. 在 "**指定可用性组名称**" 页中，选择组名称（例如 SQLAvailabilityGroup2016）。 。
+25. 在 "**指定可用性组名称**" 页中，选择组名 (SQLAvailabilityGroup2016) "。 然后单击“下一步”。
 
 26. 在 "**选择数据库**" 部分下，指定数据库。 然后，单击“下一步”。 **注意：某些数据库可能需要再次备份或置于完全恢复模式**。
 
@@ -497,7 +498,7 @@ Web 应用程序代理服务器上提供详细的日志记录信息。 你可以
 
 31. 转到 "**侦听器**" 选项卡。
 
-32. 指定一个名称（例如 SQLListener）并确保端口为**1433** ，然后单击 "**下一步**"。
+32.  (Ex 指定名称。 SQLListener) 并确保端口为**1433** ，然后单击 "**下一步**"。
 
 33. 在向导的 "**选择初始数据同步**" 页中，选择 "**完全**" 选项并指定所有 SQL 服务器都可以访问的网络位置，然后单击 "**下一步**"。
 

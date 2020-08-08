@@ -7,12 +7,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 342a374027abc3019b4fc01dbc91b676d63e922b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2469bbb35ce0e68801b28e221c05c285b4f1c464
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970674"
+ms.locfileid: "87996342"
 ---
 # <a name="getting-started-with-multipoint-services"></a>带 MultiPoint 服务的入门
 你的 MultiPoint 服务系统允许许多用户使用只使用工作站中心连接的多个工作站，只使用一台计算机。 每个工作站通常由工作站集线器、鼠标、键盘和视频显示器组成。 MultiPoint 服务工作站上的每个用户都有一个唯一的 Windows 计算会话，你可以使用 MultiPoint 管理器进行管理。
@@ -91,7 +91,7 @@ MultiPoint 仪表板具有功能区体验，可在其中选择两个选项卡来
 
 ## <a name="see-also"></a>另请参阅
 [管理 MultiPoint Server 系统](managing-your-multipoint-services-system.md) 
-[有关软件许可证符合性](Important-Information-about-Software-License-Compliance.md) 
+[有关软件许可证符合性](./multipoint-software-license-compliance.md) 
  的重要信息[使用 MultiPoint 管理器](Manage-System-Tasks-Using-MultiPoint-Manager.md) 
  管理系统任务[管理用户文件](Manage-User-Files.md) 
 [管理用户桌面](manage-user-desktops-using-multipoint-dashboard.md) 
@@ -104,4 +104,3 @@ MultiPoint 仪表板具有功能区体验，可在其中选择两个选项卡来
 [使用 MultiPoint 仪表板](Manage-User-Desktops-Using-MultiPoint-Dashboard.md) 
  管理用户桌面[使用 Multipoint 仪表板](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md) 
  管理 multipoint 系统[故障排除](Troubleshooting.md)
-

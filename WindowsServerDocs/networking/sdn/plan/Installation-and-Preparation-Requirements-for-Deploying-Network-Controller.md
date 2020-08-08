@@ -7,12 +7,12 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 060194959f80c9d2a6d174910b0264c58214373b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 051518873bd028e8b1253b9bf7cb17dcff344d0d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964083"
+ms.locfileid: "87996598"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>部署网络控制器的要求
 
@@ -102,7 +102,7 @@ ms.locfileid: "87964083"
 
 ### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>步骤 4. 如果使用基于 Kerberos 的身份验证，请配置服务主体名称
 
-如果网络控制器使用基于 Kerberos 的身份验证来与管理客户端通信，则必须在 Active Directory 中为网络控制器配置服务主体名称 (SPN) 。 网络控制器会自动配置 SPN。 只需为网络控制器计算机提供注册和修改 SPN 的权限即可。 有关更多详细信息，请参阅[ (SPN) 配置服务主体名称](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)。
+如果网络控制器使用基于 Kerberos 的身份验证来与管理客户端通信，则必须在 Active Directory 中为网络控制器配置服务主体名称 (SPN) 。 网络控制器会自动配置 SPN。 只需为网络控制器计算机提供注册和修改 SPN 的权限即可。 有关更多详细信息，请参阅[ (SPN) 配置服务主体名称](../security/kerberos-with-spn.md#configure-service-principal-names-spn)。
 
 ## <a name="deployment-options"></a>部署选项
 
@@ -129,7 +129,7 @@ ms.locfileid: "87964083"
 
 
 ## <a name="next-steps"></a>后续步骤
-[规划软件定义的网络基础结构](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)。
+[规划软件定义的网络基础结构](./plan-a-software-defined-network-infrastructure.md)。
 
 ## <a name="related-topics"></a>相关主题
 - [网络控制器](../technologies/network-controller/Network-Controller.md)

@@ -6,19 +6,19 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/29/2019
-ms.openlocfilehash: fedfce4980cd36a904ef4f2c49a68fa3016a4359
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c52581eda53c595c45fb906fabf8d147bdc0562f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939648"
+ms.locfileid: "87996278"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>创建受防护的 Windows VM 模板磁盘
 
 >适用于： Windows Server (半年通道) ，Windows Server 2016，Windows Server 2019
 
 
-与常规 Vm 一样，你可以创建 VM 模板 (例如， [Virtual Machine Manager (VMM 中的 vm 模板) ](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-library-add-vm-templates)) ，使租户和管理员可以轻松地使用模板磁盘在构造上部署新的 vm。 由于受防护的 Vm 是安全敏感资产，因此还需要执行其他步骤来创建支持防护的 VM 模板。 本主题介绍在 VMM 中创建受防护的模板磁盘和 VM 模板的步骤。
+与常规 Vm 一样，你可以创建 VM 模板 (例如， [Virtual Machine Manager (VMM 中的 vm 模板) ](/system-center/vmm/library-vm-templates?view=sc-vmm-2019)) ，使租户和管理员可以轻松地使用模板磁盘在构造上部署新的 vm。 由于受防护的 Vm 是安全敏感资产，因此还需要执行其他步骤来创建支持防护的 VM 模板。 本主题介绍在 VMM 中创建受防护的模板磁盘和 VM 模板的步骤。
 
 若要了解本主题如何适应部署受防护的 Vm 的整个过程，请参阅[为受保护的主机和受防护的 Vm 托管服务提供商配置步骤](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)。
 
@@ -138,7 +138,7 @@ ms.locfileid: "87939648"
 
 ## <a name="prepare-and-protect-the-vhdx-using-powershell"></a>使用 PowerShell 准备和保护 VHDX
 
-作为运行模板磁盘向导的替代方法，可以将模板磁盘和证书复制到运行 RSAT 的计算机，然后运行[TemplateDisk](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps
+作为运行模板磁盘向导的替代方法，可以将模板磁盘和证书复制到运行 RSAT 的计算机，然后运行[TemplateDisk](/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps
 )以启动签名过程。
 下面的示例使用_TemplateName_和_version_参数指定的名称和版本信息。
 你向此参数提供的 VHDX `-Path` 会被更新的模板磁盘覆盖，因此请确保在运行该命令之前进行复制。

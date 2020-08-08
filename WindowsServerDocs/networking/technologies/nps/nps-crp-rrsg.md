@@ -2,24 +2,22 @@
 title: 远程 RADIUS 服务器组
 description: 本主题概述了 Windows Server 2016 中的网络策略服务器远程 RADIUS 服务器组。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d81678a7-be21-48f2-9b3f-5a75d6aef013
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8275c3e8902ed78d77d01a2ff5d769d3e99abf97
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 36c1f50b840404c16c67a6252826f76ef5e2b5ec
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316178"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969364"
 ---
 # <a name="remote-radius-server-groups"></a>远程 RADIUS 服务器组
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-将网络策略服务器（NPS）配置为远程身份验证拨入用户服务（RADIUS）代理时，可以使用 NPS 将连接请求转发到能够处理连接请求的 RADIUS 服务器，因为它们可以执行用户或计算机帐户所在的域中的身份验证和授权。 例如，如果希望将连接请求转发到不受信任域中的一个或多个 RADIUS 服务器，可以将 NPS 配置为 RADIUS 代理，从而将请求转发到不受信任域中的远程 RADIUS 服务器。
+将网络策略服务器 (NPS) 配置为远程身份验证拨入用户服务 (RADIUS) proxy 时，可以使用 NPS 将连接请求转发到能够处理连接请求的 RADIUS 服务器，因为它们可以在用户或计算机帐户所在的域中执行身份验证和授权。 例如，如果希望将连接请求转发到不受信任域中的一个或多个 RADIUS 服务器，可以将 NPS 配置为 RADIUS 代理，从而将请求转发到不受信任域中的远程 RADIUS 服务器。
 
 >[!NOTE]
 >远程 RADIUS 服务器组与 Windows 组无关并独立于它们。
@@ -42,4 +40,4 @@ ms.locfileid: "80316178"
 
 配置远程 RADIUS 服务器组之后，可以在连接请求策略的 "身份验证和记帐" 设置中指定组。 因此，可以首先配置远程 RADIUS 服务器组。 接下来，可以配置连接请求策略以使用新配置的远程 RADIUS 服务器组。 或者，也可以在创建连接请求策略时使用新建连接请求策略向导创建新的远程 RADIUS 服务器组。
 
-有关 NPS 的详细信息，请参阅[网络策略服务器（NPS）](nps-top.md)。
+有关 NPS 的详细信息，请参阅[网络策略服务器 (nps) ](nps-top.md)。

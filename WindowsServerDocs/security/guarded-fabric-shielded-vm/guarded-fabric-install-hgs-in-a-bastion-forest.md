@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: cb2fe57963ac2786586d75df2a783945e2fb7d11
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4e4bdf9c33d4511c470da50462469fadbd0641ce
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963773"
+ms.locfileid: "87996234"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>在现有堡垒林中安装 HGS
 
@@ -41,7 +41,7 @@ ms.locfileid: "87963773"
 
 ## <a name="group-managed-service-account"></a>组托管服务帐户
 
-组托管服务帐户 (gMSA) 是 HGS 用来检索和使用其证书的标识。 使用[uninstall-adserviceaccount](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adserviceaccount)创建 gMSA。
+组托管服务帐户 (gMSA) 是 HGS 用来检索和使用其证书的标识。 使用[uninstall-adserviceaccount](/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps)创建 gMSA。
 如果这是域中的第一个 gMSA，则需要添加密钥分发服务根密钥。
 
 需要允许每个 HGS 节点访问 gMSA 密码。
@@ -72,7 +72,7 @@ GMSA 将需要在每个 HGS 服务器上的安全日志中生成事件的权限�
 
 > [!NOTE]
 > 组托管服务帐户从 Windows Server 2012 Active Directory 架构开始可用。
-> 有关详细信息，请参阅[组托管服务帐户要求](https://technet.microsoft.com/library/jj128431.aspx)。
+> 有关详细信息，请参阅[组托管服务帐户要求](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431(v=ws.11))。
 
 ## <a name="jea-security-groups"></a>JEA 安全组
 
@@ -81,7 +81,7 @@ GMSA 将需要在每个 HGS 服务器上的安全日志中生成事件的权限�
 JEA 终结点的配置包括指定包含 HGS 管理员和 HGS 审阅者的2个安全组。
 属于管理员组的用户可以在 HGS 上添加、更改或删除策略;审阅者只能查看当前配置。
 
-使用 Active Directory 管理工具或[new-adgroup](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adgroup)为这些 JEA 组创建2个安全组。
+使用 Active Directory 管理工具或[new-adgroup](/powershell/module/addsadministration/new-adgroup?view=win10-ps)为这些 JEA 组创建2个安全组。
 
 ```powershell
 New-ADGroup -Name 'HgsJeaReviewers' -GroupScope DomainLocal
@@ -91,7 +91,7 @@ New-ADGroup -Name 'HgsJeaAdmins' -GroupScope DomainLocal
 ## <a name="cluster-objects"></a>群集对象
 
 如果用于设置 HGS 的帐户不具有在域中创建新计算机对象的权限，则需要预先暂存群集对象。
-[在 Active Directory 域服务中预留群集计算机对象](https://technet.microsoft.com/library/dn466519(v=ws.11).aspx)中介绍了这些步骤。
+[在 Active Directory 域服务中预留群集计算机对象](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn466519(v=ws.11))中介绍了这些步骤。
 
 若要设置第一个 HGS 节点，你将需要创建一个 (CNO) 的群集名称对象和一个 (VCO) 的虚拟计算机对象。
 CNO 表示群集的名称，主要由故障转移群集内部使用。
@@ -140,7 +140,7 @@ Set-Acl -Path $vcoPath -AclObject $acl
 
 **策略名称：** 网络安全：配置 Kerberos 允许的加密类型
 
-**操作**：如果配置了此策略，则必须使用[uninstall-adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)将 gMSA 帐户更新为仅在此策略中使用受支持的加密类型。 例如，如果你的策略仅允许 AES128 \_ hmac \_ SHA1 和 AES256 \_ hmac \_ sha1，则应该运行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` 。
+**操作**：如果配置了此策略，则必须使用[uninstall-adserviceaccount](/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)将 gMSA 帐户更新为仅在此策略中使用受支持的加密类型。 例如，如果你的策略仅允许 AES128 \_ hmac \_ SHA1 和 AES256 \_ hmac \_ sha1，则应该运行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` 。
 
 
 
@@ -149,4 +149,3 @@ Set-Acl -Path $vcoPath -AclObject $acl
 - 有关设置基于 TPM 的证明的后续步骤，请参阅[在现有堡垒林中使用 TPM 模式初始化 HGS 群集](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)。
 - 有关设置主机密钥证明的后续步骤，请参阅[使用现有堡垒林中的密钥模式初始化 HGS 群集](guarded-fabric-initialize-hgs-key-mode-bastion.md)。
 - 若要在 Windows Server 2019) 中 (弃用的后续步骤设置基于管理员的证明，请参阅[在现有堡垒林中使用 AD 模式初始化 HGS 群集](guarded-fabric-initialize-hgs-ad-mode-bastion.md)。
-

@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 450279f5af907e4643f8ee8c1ea0ff36edd9aea5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb8fef4b954416e7ed284db9cf57b77f5a84c594
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948690"
+ms.locfileid: "87995810"
 ---
 # <a name="protected-users-security-group"></a>受保护的用户安全组
 
@@ -37,7 +37,7 @@ ms.locfileid: "87948690"
 
 - 受保护用户全局安全组被复制到帐户域中的所有域控制器。
 
-- 默认情况下，Windows 8.1 和 Windows Server 2012 R2 已添加支持。 [Microsoft 安全公告 2871997](https://technet.microsoft.com/library/security/2871997)添加了对 windows 7、windows Server 2008 R2 和 windows server 2012 的支持。
+- 默认情况下，Windows 8.1 和 Windows Server 2012 R2 已添加支持。 [Microsoft 安全公告 2871997](/security-updates/SecurityAdvisories/2016/2871997)添加了对 windows 7、windows Server 2008 R2 和 windows server 2012 的支持。
 
 为受保护用户组的成员提供域控制器保护的要求包括：
 
@@ -50,7 +50,7 @@ ms.locfileid: "87948690"
 > [!Note]
 > 域控制器将不支持域保护。
 
-可以通过将[主域控制器 (PDC) 模拟器角色传输](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx)到运行 Windows Server 2012 R2 的域控制器来创建受保护的用户组。 将该组对象复制到其他域控制器后，PDC 模拟器角色可以托管在运行较早版本的 Windows Server 的域控制器上。
+可以通过将[主域控制器 (PDC) 模拟器角色传输](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10))到运行 Windows Server 2012 R2 的域控制器来创建受保护的用户组。 将该组对象复制到其他域控制器后，PDC 模拟器角色可以托管在运行较早版本的 Windows Server 的域控制器上。
 
 ### <a name="protected-users-group-ad-properties"></a><a name="BKMK_ADgroup"></a>受保护用户组的 AD 属性
 
@@ -83,7 +83,7 @@ ms.locfileid: "87948690"
 - 从 Windows 8.1 和 Windows Server 2012 R2 开始，即使启用了 Windows Digest，Windows 摘要式也不会缓存用户的纯文本凭据。
 
 > [!Note]
-> 安装[Microsoft 安全公告 2871997](https://technet.microsoft.com/library/security/2871997)后，Windows 摘要将继续缓存凭据，直到配置了注册表项。 有关说明，请参阅[Microsoft 安全公告：更新以改进凭据保护和管理：5月13日，2014](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) 。
+> 安装[Microsoft 安全公告 2871997](/security-updates/SecurityAdvisories/2016/2871997)后，Windows 摘要将继续缓存凭据，直到配置了注册表项。 有关说明，请参阅[Microsoft 安全公告：更新以改进凭据保护和管理：5月13日，2014](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) 。
 
 - NTLM 不会缓存用户的纯文本凭据或 NT 单向功能 (NTOWF) 。
 
@@ -106,7 +106,7 @@ ms.locfileid: "87948690"
 
 在受保护的用户组中为每个帐户建立 TGT 到期的非可配置设置。 通常，域控制器基于域策略、“用户票证最长生存期”**** 和“用户票证续订的最长生存期”**** 设置 TGT 生存期和续订。 对于受保护的用户组，为这些域策略设置为 600 分钟。
 
-有关详细信息，请参阅[如何配置受保护的帐户](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)。
+有关详细信息，请参阅[如何配置受保护的帐户](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)。
 
 ## <a name="troubleshooting"></a>疑难解答
 提供两个操作管理日志，以帮助对受保护用户的相关事件进行疑难解答。 这些新日志位于事件查看器中，默认情况下被禁用，并且位于 "**应用程序和服务 Logs\Microsoft\Windows\Authentication**" 下。
@@ -126,4 +126,4 @@ ms.locfileid: "87948690"
 
 - [身份验证策略和身份验证策略接收器](authentication-policies-and-authentication-policy-silos.md)
 
-- [如何配置受保护的帐户](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)
+- [如何配置受保护的帐户](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)

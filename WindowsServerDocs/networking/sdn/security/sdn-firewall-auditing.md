@@ -7,18 +7,18 @@ ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: e37fc548db0a1043b2b78d95f97e8b4ef01214c8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 256c1e503dcaaf0e482ab3f69ca1c5a1b977a10b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962051"
+ms.locfileid: "87996526"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN 防火墙审核
 
 >适用于：Windows Server 2019
 
-防火墙审核是 Windows Server 2019 中 SDN 防火墙的新功能。 启用 SDN 防火墙时，由 SDN 防火墙规则处理的任何流 (启用了日志记录的 Acl) 记录。 日志文件必须是与[Azure 网络观察程序流日志](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)一致的语法。 这些日志可用于诊断或存档，以便以后进行分析。 
+防火墙审核是 Windows Server 2019 中 SDN 防火墙的新功能。 启用 SDN 防火墙时，由 SDN 防火墙规则处理的任何流 (启用了日志记录的 Acl) 记录。 日志文件必须是与[Azure 网络观察程序流日志](/azure/network-watcher/network-watcher-nsg-flow-logging-overview)一致的语法。 这些日志可用于诊断或存档，以便以后进行分析。 
 
 我们很快会提供一些示例，说明如何使用 Power BI 等工具处理这些文件。
 
@@ -169,4 +169,3 @@ Mode                LastWriteTime         Length Name
                    }
 }
 ```
-

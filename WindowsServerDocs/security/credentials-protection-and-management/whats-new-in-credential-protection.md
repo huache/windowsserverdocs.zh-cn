@@ -7,12 +7,12 @@ author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: 9522988946fbf5aa060ff81ab7a54077f5ca28f4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 521562b938b002e4c5fe5ffee5fcd7c677551f98
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948710"
+ms.locfileid: "87995754"
 ---
 # <a name="whats-new-in-credential-protection"></a>凭据保护的新增功能
 
@@ -24,7 +24,7 @@ ms.locfileid: "87948710"
 
 从 Windows 10 开始，版本1607，独立用户模式包含在 Hyper-v 中，因此不会再为 Credential Guard 部署单独安装它。
 
-[详细了解 Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)。
+[详细了解 Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard)。
 
 
 ## <a name="remote-credential-guard-for-signed-in-user"></a>已登录用户的远程 Credential Guard
@@ -33,7 +33,7 @@ ms.locfileid: "87948710"
 
 从 Windows 10 版本1703开始，使用远程桌面时，远程 Credential Guard 会保护提供的用户凭据。
 
-[详细了解远程 credential guard](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)。
+[详细了解远程 credential guard](/windows/security/identity-protection/remote-credential-guard)。
 
 ## <a name="domain-protections"></a>域保护
 
@@ -45,7 +45,7 @@ ms.locfileid: "87948710"
 
 从 Windows Server 2016 开始，Kdc 支持使用 Kerberos 密钥信任进行身份验证。
 
-若[要详细了解 & Kerberos 密钥信任，已加入域的设备的公钥支持](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication)。
+若[要详细了解 & Kerberos 密钥信任，已加入域的设备的公钥支持](../kerberos/whats-new-in-kerberos-authentication.md)。
 
 ### <a name="pkinit-freshness-extension-support"></a>PKINIT 新鲜度扩展支持
 
@@ -53,7 +53,7 @@ ms.locfileid: "87948710"
 
 从 Windows Server 2016 开始，Kdc 可以支持 PKInit 新鲜度扩展。  默认情况下，Kdc 将不提供 PKInit 新鲜度扩展。
 
-[详细了解 PKINIT 新鲜度 extension 支持](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication)。
+[详细了解 PKINIT 新鲜度 extension 支持](../kerberos/whats-new-in-kerberos-authentication.md)。
 
 ### <a name="rolling-public-key-only-users-ntlm-secrets"></a>仅滚动公钥用户的 NTLM 机密
 
@@ -80,4 +80,4 @@ ms.locfileid: "87948710"
 
 配置：在 "身份验证策略" 上，单击 **"如果用户仅限所选设备，则允许 NTLM 网络身份验证"**。
 
-[详细了解身份验证策略](https://technet.microsoft.com/windows-server-docs/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos)。
+[详细了解身份验证策略](./authentication-policies-and-authentication-policy-silos.md)。

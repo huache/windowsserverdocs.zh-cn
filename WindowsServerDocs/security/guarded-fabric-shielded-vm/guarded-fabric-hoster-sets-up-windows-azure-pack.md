@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 7e62b5dab69676e15494ff531ffe0fce0e550c1a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3d6af6e6dea584485e2517d8e54c107c5cc2af90
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970084"
+ms.locfileid: "87996271"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>受防护的 VM - 主机托管服务提供商设置 Windows Azure Pack
 
@@ -25,7 +25,7 @@ ms.locfileid: "87970084"
 
 1. 完成托管构造 (VMM) 的 System Center 2016-Virtual Machine Manager 配置。 这包括设置 VM 模板和 VM 云，该云将通过 Windows Azure Pack 公开：
 
-    [方案 - 在 VMM 中部署受保护的主机和受防护的虚拟机](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
+    [方案 - 在 VMM 中部署受保护的主机和受防护的虚拟机](/system-center/vmm/deploy-guarded-host-fabric?view=sc-vmm-2019)
 
 2. 安装和配置 System Center 2016-Service Provider Foundation (SPF) 。 此软件允许 Windows Azure Pack 与 VMM 服务器进行通信：
 
@@ -44,7 +44,7 @@ ms.locfileid: "87970084"
 
 在要为租户托管 web 门户的计算机上安装和配置 Windows Azure Pack (WAP) 。 此计算机将需要能够访问 SPF 服务器，并可由租户访问。
 
-1.  查看[WAP 系统要求](https://technet.microsoft.com/library/dn296442.aspx)并安装[必备软件](https://technet.microsoft.com/library/dn469335.aspx)。
+1.  查看[WAP 系统要求](/previous-versions/azure/windows-server-azure-pack/dn296442(v=technet.10))并安装[必备软件](/previous-versions/azure/windows-server-azure-pack/dn469335(v=technet.10))。
 
 2.  下载并安装[Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)。 如果计算机未连接到 Internet，请按照[脱机安装说明](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)进行操作。
 
@@ -52,7 +52,7 @@ ms.locfileid: "87970084"
 
 4.  继续执行安装。 安装完成后，会在 web 浏览器中打开配置网站 (*https:// &lt; wapserver &gt; ： 30101/*) 。 在此网站上，提供有关 SQL server 的信息并完成 WAP 的配置。
 
-有关设置 Windows Azure Pack 的帮助，请参阅[安装 Windows Azure Pack 的快速部署](https://technet.microsoft.com/dn296439.aspx)。
+有关设置 Windows Azure Pack 的帮助，请参阅[安装 Windows Azure Pack 的快速部署](/previous-versions/azure/windows-server-azure-pack/dn296439(v=technet.10))。
 
 > [!NOTE]
 > 如果已在环境中运行 Windows Azure Pack，则可以使用现有安装。 但是，若要使用最新的受防护的 VM 功能，你需要将安装升级到至少更新汇总10。

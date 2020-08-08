@@ -7,12 +7,12 @@ ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
 author: kbdazure
 ms.author: kathydav
 ms.date: 09/21/2017
-ms.openlocfilehash: d70dacd2f6ea407350641b33111d40c6059a4110
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aa61fd14418efe2cb5ee68c1b86e300db24c4fe4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954564"
+ms.locfileid: "87996621"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 中的新增功能
 
@@ -38,13 +38,13 @@ ms.locfileid: "87954564"
 
 - **分支机构改进**
 
-    现在可以利用新的[回退 HGS](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) 和[脱机模式](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode)功能在计算机上运行受防护的虚拟机，以间歇性方式连接到主机保护者服务。 可以通过回退 HGS 配置第二组用于 Hyper-V 的 URL，试试是否无法访问主 HGS 服务器。
+    现在可以利用新的[回退 HGS](../../security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md#fallback-configuration) 和[脱机模式](../../security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md#offline-mode)功能在计算机上运行受防护的虚拟机，以间歇性方式连接到主机保护者服务。 可以通过回退 HGS 配置第二组用于 Hyper-V 的 URL，试试是否无法访问主 HGS 服务器。
 
     使用脱机模式时，即使不能访问 HGS，也可继续启动受防护的虚拟机，只要 VM 已成功启动一次并且主机的安全配置并未更改即可。
 
 - **故障排除改进**
 
-    我们还通过启用对 VMConnect 增强会话模式和 PowerShell Direct 的支持，简化了[受防护虚拟机的故障排除](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms)。 这些工具尤其适用于到 VM 的网络连接已断开，需要更新其配置才能恢复访问的情况。
+    我们还通过启用对 VMConnect 增强会话模式和 PowerShell Direct 的支持，简化了[受防护虚拟机的故障排除](../../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md)。 这些工具尤其适用于到 VM 的网络连接已断开，需要更新其配置才能恢复访问的情况。
 
     这些功能不需要进行配置。将受防护的 VM 置于运行 Windows Server 1803 或更高版本的 Hyper-V 主机上时，这些功能会自动变为可用状态。
 
@@ -74,7 +74,7 @@ ms.locfileid: "87954564"
 Set-VMProcessor TestVM -EnableHostResourceProtection $true
 ```
 
-有关此 cmdlet 的详细信息，请参阅[VMProcessor](https://docs.microsoft.com/powershell/module/hyper-v/set-vmprocessor)。
+有关此 cmdlet 的详细信息，请参阅[VMProcessor](/powershell/module/hyper-v/set-vmprocessor)。
 
 ### <a name="hot-add-and-remove-for-network-adapters-and-memory-new"></a>网络适配器和内存的热添加和删除 \(\)
 
@@ -105,7 +105,7 @@ Set-VMProcessor TestVM -EnableHostResourceProtection $true
 Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ```
 
-有关 Hyper-v 上的 Linux 虚拟机的详细信息，请参阅[hyper-v 上的 linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)。 有关 cmdlet 的详细信息，请参阅[set-vmfirmware](https://docs.microsoft.com/powershell/module/hyper-v/set-vmfirmware)。
+有关 Hyper-v 上的 Linux 虚拟机的详细信息，请参阅[hyper-v 上的 linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)。 有关 cmdlet 的详细信息，请参阅[set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware)。
 
 ### <a name="more-memory-and-processors-for-generation-2-virtual-machines-and-hyper-v-hosts-updated"></a>第2代虚拟机和 Hyper-v 主机的内存和处理器 \( 更新\)
 
@@ -119,13 +119,13 @@ Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 
 -   具有 Intel VT-x 的处理器（嵌套虚拟化目前仅适用于 Intel 处理器）。
 
-有关详细信息和说明，请参阅[使用嵌套虚拟化在虚拟机中运行 hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)。
+有关详细信息和说明，请参阅[使用嵌套虚拟化在虚拟机中运行 hyper-v](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)。
 
 ### <a name="networking-features-new"></a>新增网络功能 \(\)
 
 新网络功能包括：
 
--   **远程直接内存访问 (RDMA) 和交换机嵌入式组合 (SET)**。 无论是否同时使用 SET，都可以在绑定到 Hyper-V 虚拟交换机的网络适配器上设置 RDMA。 SET 提供与 NIC 组合具有某些相同功能的虚拟交换机。 有关详细信息，请参阅[ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (设置) ](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)。
+-   **远程直接内存访问 (RDMA) 和交换机嵌入式组合 (SET)**。 无论是否同时使用 SET，都可以在绑定到 Hyper-V 虚拟交换机的网络适配器上设置 RDMA。 SET 提供与 NIC 组合具有某些相同功能的虚拟交换机。 有关详细信息，请参阅[ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (设置) ](../hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)。
 
 -   **虚拟机多队列 (VMMQ)**。 通过为每台虚拟机分配多个硬件队列提升 VMQ 吞吐量。  对于一台虚拟机，默认的一个队列变为一组队列，而流量在队列之间传播。
 
@@ -142,7 +142,7 @@ Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 
 ### <a name="rolling-hyper-v-cluster-upgrade-new"></a>正在滚动 Hyper-v 群集升级 \( 新\)
 
-现在可以将运行 Windows Server 2019 或 Windows Server 2016 的节点添加到运行 Windows Server 2012 R2 节点的 Hyper-v 群集。 这样就可以在不停机的情况下升级群集。 群集在 Windows Server 2012 R2 功能级别运行，直到升级群集中的所有节点并使用 Windows PowerShell cmdlet [update-clusterfunctionallevel](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel)更新群集功能级别。
+现在可以将运行 Windows Server 2019 或 Windows Server 2016 的节点添加到运行 Windows Server 2012 R2 节点的 Hyper-v 群集。 这样就可以在不停机的情况下升级群集。 群集在 Windows Server 2012 R2 功能级别运行，直到升级群集中的所有节点并使用 Windows PowerShell cmdlet [update-clusterfunctionallevel](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel)更新群集功能级别。
 
 > [!IMPORTANT]
 > 更新群集功能级别后，无法将其返回到 Windows Server 2012 R2。
@@ -174,15 +174,15 @@ Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ### <a name="shared-virtual-hard-disks-updated"></a>已更新共享的虚拟硬盘 \(\)
 你现在可以将共享的虚拟硬盘大小 ( .vhdx 文件) 用于来宾群集，而无需停机。 当虚拟机处于联机状态时，可以扩大或收缩共享的虚拟硬盘。 来宾群集现在还可以通过使用 Hyper-v 副本进行灾难恢复来保护共享的虚拟硬盘。
 
-启用集合上的复制。 对集合启用复制**仅通过 WMI 接口公开**。 有关更多详细信息，请参阅[Msvm_CollectionReplicationService 类](https://msdn.microsoft.com/library/mt167787%28v=vs.85%29.aspx)的文档。 **不能通过 PowerShell cmdlet 或 UI 管理集合的复制。** Vm 应位于作为 Hyper-v 群集一部分的主机上，以访问特定于集合的功能。 这包括在独立主机上共享 VHD 共享 vhd 不受 Hyper-v 副本支持。
+启用集合上的复制。 对集合启用复制**仅通过 WMI 接口公开**。 有关更多详细信息，请参阅[Msvm_CollectionReplicationService 类](/previous-versions/windows/desktop/clushyperv/msvm-collectionreplicationservice)的文档。 **不能通过 PowerShell cmdlet 或 UI 管理集合的复制。** Vm 应位于作为 Hyper-v 群集一部分的主机上，以访问特定于集合的功能。 这包括在独立主机上共享 VHD 共享 vhd 不受 Hyper-v 副本支持。
 
-遵循[虚拟硬盘共享](https://technet.microsoft.com/library/dn281956.aspx)中共享的 Vhd 指南概述，并确保共享 vhd 是来宾群集的一部分。
+遵循[虚拟硬盘共享](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281956(v=ws.11))中共享的 Vhd 指南概述，并确保共享 vhd 是来宾群集的一部分。
 
 具有共享 VHD 但没有关联来宾群集的集合不能为集合 (创建参考点，不管共享 VHD 是包含在引用点创建中还是不) 。
 
 ### <a name="virtual-machine-backupnew"></a>新虚拟机备份 \(\)
 
-如果要备份单个虚拟机 (不管主机是否已群集或未) ，都不应使用 VM 组。  也不应使用快照集合。 VM 组和快照集合仅用于备份使用共享 vhdx 的来宾群集。 相反，你应该使用[HYPER-V WMI v2 提供程序](https://msdn.microsoft.com/library/windows/desktop/hh850319(v=vs.85).aspx)拍摄快照。 同样，不要使用[故障转移群集 WMI 提供程序](https://msdn.microsoft.com/library/windows/desktop/mt167750(v=vs.85).aspx)。
+如果要备份单个虚拟机 (不管主机是否已群集或未) ，都不应使用 VM 组。  也不应使用快照集合。 VM 组和快照集合仅用于备份使用共享 vhdx 的来宾群集。 相反，你应该使用[HYPER-V WMI v2 提供程序](/windows/win32/hyperv_v2/windows-virtualization-portal)拍摄快照。 同样，不要使用[故障转移群集 WMI 提供程序](/previous-versions/windows/desktop/clushyperv/failover-clustering-hyper-v-wmi-provider-portal)。
 
 ### <a name="shielded-virtual-machines-new"></a>新的防护虚拟机 \(\)
 
@@ -193,7 +193,7 @@ Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 
 ### <a name="start-order-priority-for-clustered-virtual-machines-new"></a>群集虚拟机的启动顺序优先级 \( 新建\)
 
-此功能使你可以更好地控制首先启动或重新启动哪些群集虚拟机。 这样就可以更轻松地启动虚拟机，这些虚拟机在使用这些服务的虚拟机之前提供服务。 定义集，将虚拟机放置在集中，并指定依赖项。 使用 Windows PowerShell cmdlet 管理这些集，如[ClusterGroupSet](https://docs.microsoft.com/powershell/module/failoverclusters/new-clustergroupset)、 [ClusterGroupSet](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustergroupset)和[ClusterGroupSetDependency](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergroupsetdependency)。
+此功能使你可以更好地控制首先启动或重新启动哪些群集虚拟机。 这样就可以更轻松地启动虚拟机，这些虚拟机在使用这些服务的虚拟机之前提供服务。 定义集，将虚拟机放置在集中，并指定依赖项。 使用 Windows PowerShell cmdlet 管理这些集，如[ClusterGroupSet](/powershell/module/failoverclusters/new-clustergroupset)、 [ClusterGroupSet](/powershell/module/failoverclusters/get-clustergroupset)和[ClusterGroupSetDependency](/powershell/module/failoverclusters/add-clustergroupsetdependency)。
 .
 ### <a name="storage-quality-of-service-qos-updated"></a>服务的存储质量 (QoS) \( 更新\)
 
@@ -217,7 +217,7 @@ Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 > [!IMPORTANT]
 > -   更新版本后，不能将虚拟机移动到运行 Windows Server 2012 R2 的服务器。
 > -   不能将配置降级到以前的版本。
-> -   当群集功能级别为 Windows Server 2012 R2 时，Hyper-v 群集上的[VMVersion](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion) cmdlet 将被阻止。
+> -   当群集功能级别为 Windows Server 2012 R2 时，Hyper-v 群集上的[VMVersion](/powershell/module/hyper-v/update-vmversion) cmdlet 将被阻止。
 
 ### <a name="virtualization-based-security-for-generation-2-virtual-machines-new"></a>第2代虚拟机的基于虚拟化的安全性 \( new) 
 
@@ -237,7 +237,7 @@ Windows 容器允许许多独立的应用程序在一台计算机系统上运行
 
 -   能够限制容器资源
 
-有关详细信息，包括快速入门指南，请参阅[Windows 容器文档](https://docs.microsoft.com/virtualization/windowscontainers/index)。
+有关详细信息，包括快速入门指南，请参阅[Windows 容器文档](/virtualization/windowscontainers/index)。
 
 ### <a name="windows-powershell-direct-new"></a>Windows PowerShell 直接 \( 新建\)
 

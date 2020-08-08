@@ -8,12 +8,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/05/2018
-ms.openlocfilehash: 6b44cdfec4778cf7f36f541021f23a073cb17806
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 424344147ff926694709aa60fbf57380fbbf665b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964003"
+ms.locfileid: "87996403"
 ---
 # <a name="windows-powershell-commands-for-rss-and-vrss"></a>用于 RSS 和 vRSS 的 Windows PowerShell 命令
 
@@ -21,16 +21,16 @@ ms.locfileid: "87964003"
 
 在本主题中，你将了解如何快速查找有关接收方缩放 \( RSS \) 和虚拟 RSS VRSS 的 Windows PowerShell 命令的技术参考信息 \( \) 。
 
-使用以下 RSS 命令在具有多个处理器或多个内核的物理计算机上配置 RSS。 你可以使用相同的命令在 \( 运行受支持的操作系统的虚拟机 VM 上配置 vRSS \) 。 有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps)。
+使用以下 RSS 命令在具有多个处理器或多个内核的物理计算机上配置 RSS。 你可以使用相同的命令在 \( 运行受支持的操作系统的虚拟机 VM 上配置 vRSS \) 。 有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](/powershell/module/netadapter/?view=win10-ps)。
 
 ## <a name="configure-vmq"></a>配置 VMQ
 
 vRSS 需要启用并配置 VMQ。 你可以使用以下 Windows PowerShell 命令来管理 VMQ 设置。
 
-- [Get-netadaptervmq](https://docs.microsoft.com/powershell/module/netadapter/disable-netadaptervmq?view=win10-ps)
-- [Get-netadaptervmq](https://docs.microsoft.com/powershell/module/netadapter/enable-netadaptervmq?view=win10-ps)
-- [Get-netadaptervmq](https://docs.microsoft.com/powershell/module/netadapter/get-netadaptervmq?view=win10-ps)
-- [Get-netadaptervmq](https://docs.microsoft.com/powershell/module/netadapter/set-netadaptervmq?view=win10-ps)
+- [Get-netadaptervmq](/powershell/module/netadapter/disable-netadaptervmq?view=win10-ps)
+- [Get-netadaptervmq](/powershell/module/netadapter/enable-netadaptervmq?view=win10-ps)
+- [Get-netadaptervmq](/powershell/module/netadapter/get-netadaptervmq?view=win10-ps)
+- [Get-netadaptervmq](/powershell/module/netadapter/set-netadaptervmq?view=win10-ps)
 
 ## <a name="enable-and-configure-rss-on-a-native-host"></a>在本机主机上启用并配置 RSS
 
@@ -39,10 +39,10 @@ vRSS 需要启用并配置 VMQ。 你可以使用以下 Windows PowerShell 命�
 >[!IMPORTANT]
 >若要启用和使用 vRSS，请在 VM 或主机 vNIC 上启用 RSS。
 
-- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/disable-netadapterrss?view=win10-ps)
-- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/enable-netadapterrss?view=win10-ps)
-- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/get-netadapterrss?view=win10-ps)
-- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss?view=win10-ps)
+- [Get-netadapterrss](/powershell/module/netadapter/disable-netadapterrss?view=win10-ps)
+- [Get-netadapterrss](/powershell/module/netadapter/enable-netadapterrss?view=win10-ps)
+- [Get-netadapterrss](/powershell/module/netadapter/get-netadapterrss?view=win10-ps)
+- [Get-netadapterrss](/powershell/module/netadapter/Set-NetAdapterRss?view=win10-ps)
 
 ## <a name="enable-vrss-on-the-hyper-v-virtual-switch-port"></a>在 Hyper-v \- 虚拟交换机端口上启用 vRSS
 
@@ -118,7 +118,7 @@ vRSS 需要启用并配置 VMQ。 你可以使用以下 Windows PowerShell 命�
 ## <a name="related-topics"></a>相关主题
 有关详细信息，请参阅以下参考主题。
 
-- [VMNetworkAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/get-vmnetworkadapter)
-- [Set-VMNetworkAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/set-vmnetworkadapter)
+- [VMNetworkAdapter](/powershell/module/hyper-v/get-vmnetworkadapter?view=win10-ps)
+- [Set-VMNetworkAdapter](/powershell/module/hyper-v/set-vmnetworkadapter?view=win10-ps)
 
 有关详细信息，请参阅[虚拟接收方缩放 (vRSS) ](vrss-top.md)。

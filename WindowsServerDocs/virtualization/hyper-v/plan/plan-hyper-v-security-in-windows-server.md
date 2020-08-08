@@ -7,12 +7,12 @@ manager: dongill
 author: larsiwer
 ms.author: kathydav
 ms.date: 08/03/2018
-ms.openlocfilehash: b9cb34a7d7c790bb7eee939f9247609e7cee6e3e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af974edfb94ccf1a0a4844df43885198ab68d416
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947973"
+ms.locfileid: "87996004"
 ---
 # <a name="plan-for-hyper-v-security-in-windows-server"></a>规划 Windows Server 中的 Hyper-v 安全
 
@@ -22,18 +22,18 @@ ms.locfileid: "87947973"
 
 ## <a name="secure-the-hyper-v-host"></a>保护 Hyper-v 主机
 - **确保主机操作系统的安全。**
-    - 使用管理操作系统所需的最小 Windows Server 安装选项，将攻击面降到最低。 有关详细信息，请参阅 Windows Server 技术内容库中的 "[安装选项" 部分](/windows-server/windows-server#installation-options)。 建议你不要在 Windows 10 上的 Hyper-v 上运行生产工作负荷。
+    - 使用管理操作系统所需的最小 Windows Server 安装选项，将攻击面降到最低。 有关详细信息，请参阅 Windows Server 技术内容库中的 "[安装选项" 部分](../../../get-started-19/install-upgrade-migrate-19.md)。 建议你不要在 Windows 10 上的 Hyper-v 上运行生产工作负荷。
     - 通过最新的安全更新使 Hyper-v 主机操作系统、固件和设备驱动程序保持最新。 请查看供应商的建议，以更新固件和驱动程序。
     - 不要将 Hyper-v 主机用作工作站或安装任何不必要的软件。
-    - 远程管理 Hyper-v 主机。 如果必须本地管理 Hyper-v 主机，请使用 Credential Guard。 有关详细信息，请参阅[使用 Credential Guard 保护派生的域凭据](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard)。
-    - 启用代码完整性策略。 使用基于虚拟化的安全保护代码完整性服务。 有关详细信息，请参阅[Device Guard 部署指南](https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide)。
+    - 远程管理 Hyper-v 主机。 如果必须本地管理 Hyper-v 主机，请使用 Credential Guard。 有关详细信息，请参阅[使用 Credential Guard 保护派生的域凭据](/windows/access-protection/credential-guard/credential-guard)。
+    - 启用代码完整性策略。 使用基于虚拟化的安全保护代码完整性服务。 有关详细信息，请参阅[Device Guard 部署指南](/windows/device-security/device-guard/device-guard-deployment-guide)。
 - **使用安全的网络。**
     - 将单独的网络与用于物理 Hyper-v 计算机的专用网络适配器配合使用。
     - 使用私有或安全网络访问 VM 配置和虚拟硬盘文件。
     - 使用专用/专用网络进行实时迁移流量。 请考虑在此网络上启用 IPSec 来使用加密，并确保在迁移过程中通过网络传输 VM 的数据。 有关详细信息，请参阅在[没有故障转移群集的情况下，设置用于实时迁移的主机](../deploy/set-up-hosts-for-live-migration-without-failover-clustering.md)。
 - **保护存储迁移流量。**
 
-    使用 SMB 3.0 对不受信任的网络进行端到端的 SMB 数据加密和数据保护篡改或窃听。 使用专用网络访问 SMB 共享内容，以防止中间人攻击。 有关详细信息，请参阅[SMB 安全增强功能](https://technet.microsoft.com/library/dn551363.aspx)。
+    使用 SMB 3.0 对不受信任的网络进行端到端的 SMB 数据加密和数据保护篡改或窃听。 使用专用网络访问 SMB 共享内容，以防止中间人攻击。 有关详细信息，请参阅[SMB 安全增强功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn551363(v=ws.11))。
 - **将主机配置为受保护的构造的一部分。**
 
     有关详细信息，请参阅[受保护的构造](../../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)。
@@ -47,7 +47,7 @@ ms.locfileid: "87947973"
 
 - **强化 Hyper-v 主机操作系统。**
 
-    使用[Windows Server Security 基线](https://docs.microsoft.com/windows/device-security/windows-security-baselines)中所述的基准安全设置建议。
+    使用[Windows Server Security 基线](/windows/device-security/windows-security-baselines)中所述的基准安全设置建议。
 
 - **授予适当的权限。**
     - 将需要管理 Hyper-v 主机的用户添加到 Hyper-v 管理员组。
@@ -55,7 +55,7 @@ ms.locfileid: "87947973"
 
 - **为 Hyper-v 配置防病毒排除和选项。**
 
-    Windows Defender 已配置[自动排除](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus)项。 有关排除项的详细信息，请参阅[hyper-v 主机的建议防病毒排除项](https://support.microsoft.com/kb/3105657)。
+    Windows Defender 已配置[自动排除](/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus)项。 有关排除项的详细信息，请参阅[hyper-v 主机的建议防病毒排除项](https://support.microsoft.com/kb/3105657)。
 
 - **请勿装入未知 Vhd。** 这可能会使主机面临文件系统级攻击。
 
@@ -82,7 +82,7 @@ ms.locfileid: "87947973"
 
     - 在生产环境中打开虚拟机之前，请安装最新的安全更新。
     - 为需要的支持来宾操作系统安装 integration services，并使其保持最新状态。 运行受支持的 Windows 版本的来宾的集成服务更新通过 Windows 更新提供。
-    - 根据其执行的角色强化在每个虚拟机中运行的操作系统。 使用[Windows 安全基线](https://docs.microsoft.com/windows/device-security/windows-security-baselines)中描述的基准安全设置建议。
+    - 根据其执行的角色强化在每个虚拟机中运行的操作系统。 使用[Windows 安全基线](/windows/device-security/windows-security-baselines)中描述的基准安全设置建议。
 
 - **使用安全的网络。**
 
@@ -98,7 +98,7 @@ ms.locfileid: "87947973"
 
 - **为运行 Windows 10 或 Windows Server 2016 或更高版本的来宾启用基于虚拟化的安全性。**
 
-    有关详细信息，请参阅[Device Guard 部署指南](https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide)。
+    有关详细信息，请参阅[Device Guard 部署指南](/windows/device-security/device-guard/device-guard-deployment-guide)。
 
 - **仅在特定工作负荷需要时才启用离散设备分配**。
 

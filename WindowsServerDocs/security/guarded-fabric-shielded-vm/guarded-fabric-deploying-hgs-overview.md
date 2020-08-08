@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: e8077655717db3f6700b0e0a3d12792465b41299
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8fb0bb3596635a7879b7fff784ced977043f1d5c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939768"
+ms.locfileid: "87996426"
 ---
 # <a name="deploying-the-host-guardian-service"></a>部署主机保护者服务
 
@@ -37,13 +37,13 @@ ms.locfileid: "87939768"
 | 6-[创建主机密钥 (密钥) ](guarded-fabric-create-host-key.md)并[收集主机信息 (TPM) ](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md) | ![步骤6，创建主机密钥并收集主机信息](../media/Guarded-Fabric-Shielded-VM/guarded-host-collect-info-from-hosts.png) |
 | 7-[将 HGS 配置为主机信息](guarded-fabric-add-host-information-to-hgs.md) | ![步骤7，将主机信息添加到 HGS](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-hgs-with-host-info.png) |
 | 8-[确认主机可以证明](guarded-fabric-confirm-hosts-can-attest-successfully.md) | ![步骤8，确认主机可以证明](../media/Guarded-Fabric-Shielded-VM/guarded-host-confirm-hosts-attest.png) |
-| 9-[配置 VMM (可选) ](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview) | ![步骤9，配置 VMM (可选) ](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-vmm.png) |
+| 9-[配置 VMM (可选) ](/system-center/vmm/deploy-guarded-host-fabric?view=sc-vmm-2019) | ![步骤9，配置 VMM (可选) ](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-vmm.png) |
 | 10-[创建模板磁盘](guarded-fabric-create-a-shielded-vm-template.md) | ![步骤10，创建模板磁盘](../media/Guarded-Fabric-Shielded-VM/guarded-host-create-template-disk.png) |
 | 11-[为 VMM 创建 VM 防护帮助程序磁盘 (可选) ](guarded-fabric-vm-shielding-helper-vhd.md) | ![步骤11，为 VMM 创建 VM 防护帮助磁盘](../media/Guarded-Fabric-Shielded-VM/guarded-host-create-helper-disk.png) |
 | 12-[设置 Windows Azure Pack (可选) ](guarded-fabric-shielded-vm-windows-azure-pack.md) | ![步骤12，将 Windows Azure Pack (设置) ](../media/Guarded-Fabric-Shielded-VM/guarded-host-windows-azure-pack.png) |
 | 13-[创建防护数据文件](guarded-fabric-tenant-creates-shielding-data.md) | ![步骤13，创建防护数据文件](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielding-data-file.png) |
 | 14-[使用 Windows Azure Pack 创建受防护的 vm](guarded-fabric-shielded-vm-windows-azure-pack.md) | ![步骤14，使用 Windows Azure Pack 创建受防护的 Vm](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
-| 15-[使用 VMM 创建受防护的 vm](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-vms) | ![步骤15，使用 VMM 创建受防护的 Vm](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
+| 15-[使用 VMM 创建受防护的 vm](/system-center/vmm/guarded-deploy-vm?view=sc-vmm-2019) | ![步骤15，使用 VMM 创建受防护的 Vm](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
 
 ## <a name="additional-references"></a>其他参考
 

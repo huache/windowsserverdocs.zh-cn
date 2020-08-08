@@ -2,18 +2,16 @@
 title: 步骤2规划远程访问部署
 description: 本主题是在 Windows Server 2016 中远程管理 DirectAccess 客户端的指南的一部分。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a1971345a1a5256768651bc29e03d9c7824fecb3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0de2e1fa0d5dcb6c7ed2bd5ea8c6a65048296315
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475564"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970244"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>步骤2规划远程访问部署
 
@@ -24,7 +22,7 @@ ms.locfileid: "85475564"
 > [!NOTE]
 > 在继续执行这些任务之前，请参阅[步骤1：规划远程访问基础结构](Step-1-Plan-the-Remote-Access-Infrastructure.md)。
 
-|任务|说明|
+|任务|描述|
 |----|--------|
 |[规划客户端部署策略](#plan-a-client-deployment-strategy)|确定将配置为 DirectAccess 客户端的托管服务器。|
 |[规划远程访问服务器部署策略](#plan-a-remote-access-server-deployment-strategy)|规划如何部署远程访问服务器。|
@@ -39,7 +37,7 @@ ms.locfileid: "85475564"
 
 2.  哪些安全组将包含 DirectAccess 客户端计算机？
 
-    DirectAccess 设置包含在 DirectAccess 客户端组策略对象（GPO）中。 GPO 将应用于属于你在 DirectAccess 客户端安装向导中指定的安全组的计算机。 可以指定包含在任何受支持的域中的安全组。
+    DirectAccess 设置包含在 DirectAccess 客户端组策略对象 (GPO) 中。 GPO 将应用于属于你在 DirectAccess 客户端安装向导中指定的安全组的计算机。 可以指定包含在任何受支持的域中的安全组。
 
     在配置远程访问之前，需要创建安全组。 完成远程访问部署后，你可以将计算机添加到安全组。 但是，如果添加的客户端计算机位于与安全组不同的域中，则客户端 GPO 将不会应用于这些客户端。 例如，如果在域 A 中为 DirectAccess 客户端创建 SG1，之后将客户端从域 B 添加到该组，则客户端 GPO 将不会应用于域 B 中的客户端。
 
@@ -63,7 +61,7 @@ ms.locfileid: "85475564"
 
     -   **允许 DirectAccess 客户端使用本地名称解析**
 
-        客户端需要在本地解析名称的方法。 如果你允许 DirectAccess 客户端使用本地名称解析，则最终用户可以使用本地 DNS 服务器解析名称。 当最终用户选择使用本地 DNS 服务器进行名称解析时，DirectAccess 不会将对单标签名称的解析请求发送到内部企业 DNS 服务器。 它使用本地名称解析（通过使用链路本地多播名称解析（LLMNR）和 TCP/IP 上的 NetBios 协议）。
+        客户端需要在本地解析名称的方法。 如果你允许 DirectAccess 客户端使用本地名称解析，则最终用户可以使用本地 DNS 服务器解析名称。 当最终用户选择使用本地 DNS 服务器进行名称解析时，DirectAccess 不会将对单标签名称的解析请求发送到内部企业 DNS 服务器。 它使用本地名称解析，而 (通过使用链路本地多播名称解析 (LLMNR) 和 TCP/IP 上的 NetBios 协议) 。
 
 ## <a name="plan-a-remote-access-server-deployment-strategy"></a>规划远程访问服务器部署策略
 计划部署远程访问服务器时需要做出的决策包括：
@@ -103,7 +101,7 @@ ms.locfileid: "85475564"
 
 -   **VPN 配置**
 
-    在配置远程访问之前，请决定是否要向远程客户端提供 VPN 访问权限。 如果组织中的客户端计算机不支持 DirectAccess 连接（例如，它们是不受管理的，或者运行不支持 DirectAccess 的操作系统），则应提供 VPN 访问。 远程访问服务器安装向导允许你配置如何分配 IP 地址（通过使用 DHCP 或从静态地址池），以及如何对 VPN 客户端进行身份验证（通过使用 Active Directory 或 RADIUS 服务器）。
+    在配置远程访问之前，请决定是否要向远程客户端提供 VPN 访问权限。 如果组织中的客户端计算机不支持 DirectAccess 连接，应提供 VPN 访问 (例如，它们是不受管理的，或者运行不支持 DirectAccess 的操作系统) 。 远程访问服务器安装向导允许你配置如何使用 DHCP 或静态地址池中 (分配 IP 地址的方式) 以及如何使用 Active Directory 或 RADIUS 服务器) 对 VPN 客户端进行身份验证 (。
 
 ## <a name="plan-the-infrastructure-servers-configurations"></a>规划基础结构服务器的配置
 远程访问需要三种类型的基础结构服务器：

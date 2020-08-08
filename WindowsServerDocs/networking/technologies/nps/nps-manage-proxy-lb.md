@@ -6,12 +6,12 @@ ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8710723c397744f3ba937ac863cf5ab45dc8a4f1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ee552c0202bff26cdcc58411b64cb342a4c7409e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952154"
+ms.locfileid: "87996461"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>NPS 代理服务器负载平衡
 
@@ -53,12 +53,10 @@ ms.locfileid: "87952154"
 
 1. 部署 RADIUS 客户端 \( VPN 服务器、拨号服务器、终端服务网关服务器、802.1 x 身份验证交换机和 802.1 x 无线访问点， \) 并将其配置为将连接请求发送到 NPS 代理服务器。
 
-2. 在 NPS 代理上，将网络访问服务器配置为 RADIUS 客户端。 有关详细信息，请参阅[配置 RADIUS 客户端](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure)。
+2. 在 NPS 代理上，将网络访问服务器配置为 RADIUS 客户端。 有关详细信息，请参阅[配置 RADIUS 客户端](./nps-radius-clients-configure.md)。
 
-3. 在 NPS 代理上，创建一个或多个远程 RADIUS 服务器组。 在此过程中，将 RADIUS 服务器添加到远程 RADIUS 服务器组。 有关详细信息，请参阅[配置远程 RADIUS 服务器组](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-rrsg-configure)。
+3. 在 NPS 代理上，创建一个或多个远程 RADIUS 服务器组。 在此过程中，将 RADIUS 服务器添加到远程 RADIUS 服务器组。 有关详细信息，请参阅[配置远程 RADIUS 服务器组](./nps-crp-rrsg-configure.md)。
 
 4. 在 NPS 代理上，对于添加到远程 RADIUS 服务器组的每个 RADIUS 服务器，单击 "RADIUS 服务器**负载平衡**" 选项卡，然后配置 **"优先级**"、"**权重**" 和 "**高级" 设置**。
 
-5. 在 NPS 代理上，配置连接请求策略，以将身份验证和记帐请求转发到远程 RADIUS 服务器组。 必须为每个远程 RADIUS 服务器组创建一个连接请求策略。 有关详细信息，请参阅[配置连接请求策略](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-configure)。
-
-
+5. 在 NPS 代理上，配置连接请求策略，以将身份验证和记帐请求转发到远程 RADIUS 服务器组。 必须为每个远程 RADIUS 服务器组创建一个连接请求策略。 有关详细信息，请参阅[配置连接请求策略](./nps-crp-configure.md)。

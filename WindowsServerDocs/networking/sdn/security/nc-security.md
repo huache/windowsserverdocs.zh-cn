@@ -7,12 +7,12 @@ ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 42bed85fed8da210d3a7583caf0170064fd2aff5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c66030d1940bca12ab603767da2d17d1086004a6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962071"
+ms.locfileid: "87996537"
 ---
 # <a name="secure-the-network-controller"></a>保护网络控制器
 
@@ -46,7 +46,7 @@ ms.locfileid: "87962071"
 
 3. **无**。 在测试环境中使用 "无" 进行测试，因此不建议在生产环境中使用。 选择此模式时，不会在节点和管理客户端之间执行身份验证。
 
-可以通过使用带有_ClientAuthentication_参数的 Windows PowerShell 命令**[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** 来配置 Northbound 通信的身份验证模式。
+可以通过使用带有_ClientAuthentication_参数的 Windows PowerShell 命令**[NetworkController](/powershell/module/networkcontroller/install-networkcontroller)** 来配置 Northbound 通信的身份验证模式。
 
 
 ### <a name="authorization"></a>授权
@@ -55,9 +55,9 @@ ms.locfileid: "87962071"
 
 对于网络控制器支持的每种身份验证模式，请使用以下授权方法。
 
-1.  **Kerberos**。 使用 Kerberos 身份验证方法时，可以通过在 Active Directory 中创建一个安全组，然后将授权的用户和计算机添加到该组，来定义有权与网络控制器进行通信的用户和计算机。 你可以通过使用**[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** Windows PowerShell 命令的_ClientSecurityGroup_参数将网络控制器配置为使用用于授权的安全组。 安装网络控制器后，可以通过将**[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/Set-NetworkController)** 命令与参数 _-ClientSecurityGroup_一起使用来更改安全组。 如果使用 SCVMM，则必须在部署过程中将安全组作为参数提供。
+1.  **Kerberos**。 使用 Kerberos 身份验证方法时，可以通过在 Active Directory 中创建一个安全组，然后将授权的用户和计算机添加到该组，来定义有权与网络控制器进行通信的用户和计算机。 你可以通过使用**[NetworkController](/powershell/module/networkcontroller/install-networkcontroller)** Windows PowerShell 命令的_ClientSecurityGroup_参数将网络控制器配置为使用用于授权的安全组。 安装网络控制器后，可以通过将**[NetworkController](/powershell/module/networkcontroller/Set-NetworkController)** 命令与参数 _-ClientSecurityGroup_一起使用来更改安全组。 如果使用 SCVMM，则必须在部署过程中将安全组作为参数提供。
 
-2.  **X509**。 当你使用 X509 身份验证方法时，网络控制器仅接受来自客户端的证书指纹对网络控制器的请求的请求。 可以通过使用**[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** Windows PowerShell 命令的_ClientCertificateThumbprint_参数来配置这些指纹。 可以通过使用**[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/Set-NetworkController)** 命令随时添加其他客户端指纹。
+2.  **X509**。 当你使用 X509 身份验证方法时，网络控制器仅接受来自客户端的证书指纹对网络控制器的请求的请求。 可以通过使用**[NetworkController](/powershell/module/networkcontroller/install-networkcontroller)** Windows PowerShell 命令的_ClientCertificateThumbprint_参数来配置这些指纹。 可以通过使用**[NetworkController](/powershell/module/networkcontroller/Set-NetworkController)** 命令随时添加其他客户端指纹。
 
 3.  **无**。 选择此模式时，不会在节点和管理客户端之间执行身份验证。 在测试环境中使用 "无" 进行测试，因此不建议在生产环境中使用。
 
@@ -82,15 +82,15 @@ Northbound 通信使用安全套接字层 \( SSL 在 \) 管理客户端和网络
 注册证书后，可以将网络控制器配置为使用带有**NetworkController** Windows PowerShell 命令的 **-ServerCertificate**参数的证书。 如果你已经安装了网络控制器，则可以使用**NetworkController**命令随时更新配置。
 
 >[!NOTE]
->如果你使用的是 SCVMM，则必须将该证书添加为库资源。 有关详细信息，请参阅[在 VMM 构造中设置 SDN 网络控制器](https://docs.microsoft.com/system-center/vmm/sdn-controller)。
+>如果你使用的是 SCVMM，则必须将该证书添加为库资源。 有关详细信息，请参阅[在 VMM 构造中设置 SDN 网络控制器](/system-center/vmm/sdn-controller)。
 
 ## <a name="network-controller-cluster-communication"></a>网络控制器群集通信
 
-网络控制器支持对网络控制器节点之间的通信进行身份验证、授权和加密。 通信[Windows Communication Foundation](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) \( WCF 和 TCP 之间的通信 \) 。
+网络控制器支持对网络控制器节点之间的通信进行身份验证、授权和加密。 通信[Windows Communication Foundation](/dotnet/framework/wcf/whats-wcf) \( WCF 和 TCP 之间的通信 \) 。
 
 可以通过**NetworkControllerCluster** Windows PowerShell 命令的**ClusterAuthentication**参数配置此模式。
 
-有关详细信息，请参阅[NetworkControllerCluster](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontrollercluster)。
+有关详细信息，请参阅[NetworkControllerCluster](/powershell/module/networkcontroller/install-networkcontrollercluster)。
 
 ### <a name="authentication"></a>Authentication
 
@@ -113,9 +113,9 @@ Northbound 通信使用安全套接字层 \( SSL 在 \) 管理客户端和网络
 
 对于网络控制器支持的每种身份验证模式，使用以下授权方法。
 
-1. **Kerberos**。 网络控制器节点只接受来自其他网络控制器计算机帐户的通信请求。 使用[NetworkControllerNodeObject](https://docs.microsoft.com/powershell/module/networkcontroller/new-networkcontrollernodeobject) Windows PowerShell 命令的**Name**参数部署网络控制器时，可以配置这些帐户。
+1. **Kerberos**。 网络控制器节点只接受来自其他网络控制器计算机帐户的通信请求。 使用[NetworkControllerNodeObject](/powershell/module/networkcontroller/new-networkcontrollernodeobject) Windows PowerShell 命令的**Name**参数部署网络控制器时，可以配置这些帐户。
 
-2. **X509**。 网络控制器节点只接受来自其他网络控制器计算机帐户的通信请求。 使用[NetworkControllerNodeObject](https://docs.microsoft.com/powershell/module/networkcontroller/new-networkcontrollernodeobject) Windows PowerShell 命令的**Name**参数部署网络控制器时，可以配置这些帐户。
+2. **X509**。 网络控制器节点只接受来自其他网络控制器计算机帐户的通信请求。 使用[NetworkControllerNodeObject](/powershell/module/networkcontroller/new-networkcontrollernodeobject) Windows PowerShell 命令的**Name**参数部署网络控制器时，可以配置这些帐户。
 
 3. **无**。 选择此模式时，不会在网络控制器节点之间执行任何授权。 此模式仅用于测试目的，不建议在生产环境中使用。
 
@@ -123,8 +123,8 @@ Northbound 通信使用安全套接字层 \( SSL 在 \) 管理客户端和网络
 
 网络控制器节点之间的通信使用 WCF 传输级别加密进行加密。 当身份验证和授权方法为 Kerberos 或 X509 证书时，将使用这种加密形式。 有关详细信息，请参阅以下主题。
 
-- [如何：使用 Windows 凭据保护服务的安全](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
-- [如何：使用 X.509 证书保护服务](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate)。
+- [如何：使用 Windows 凭据保护服务的安全](/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
+- [如何：使用 X.509 证书保护服务](/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate)。
 
 ## <a name="southbound-communication"></a>Southbound 通信
 

@@ -7,12 +7,12 @@ ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 60ba3ea51bf958f2cc5fa598e4f1323bd5631a80
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1930ee8d74a1aa99b5c94df19e572d382144e604
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962171"
+ms.locfileid: "87996560"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>规划软件定义的网络基础结构
 
@@ -243,7 +243,7 @@ Hyper-v 主机中使用的网络接口卡 (Nic) ，存储主机需要特定功�
 |用于 SLB/MUX 对等互连的 RAS 网关 BGP 路由器<p> (或者使用 ToR 交换机作为 BGP 路由器) |2个 vcpu|2 GB|OS 驱动器为 75 GB|
 
 
-如果使用 VMM 进行部署，则 VMM 和其他非 SDN 基础结构需要额外的基础结构虚拟机资源。 有关其他信息，请参阅[System Center Technical Preview 的最低硬件建议。](https://technet.microsoft.com/library/dn997303.aspx)
+如果使用 VMM 进行部署，则 VMM 和其他非 SDN 基础结构需要额外的基础结构虚拟机资源。 有关其他信息，请参阅[System Center Technical Preview 的最低硬件建议。](/system-center/)
 
 ## <a name="extending-your-infrastructure"></a>扩展基础结构
 基础结构的大小和资源要求取决于你计划承载的租户工作负荷虚拟机。 基础结构虚拟机的 CPU、内存和磁盘要求 (例如：网络控制器、SLB、网关等 ) 在上一个表中列出。 你可以根据需要添加更多的基础结构虚拟机以进行扩展。 但是，Hyper-v 主机上运行的任何租户虚拟机都具有自己的 CPU、内存和磁盘要求，你必须考虑这些要求。
@@ -253,7 +253,4 @@ Hyper-v 主机中使用的网络接口卡 (Nic) ，存储主机需要特定功�
 
 ## <a name="see-also"></a>另请参阅
 [部署网络控制器](Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md) 
- 的安装和准备要求[软件定义的网络 &#40;SDN&#41;](../Software-Defined-Networking--SDN-.md)
-
-
-
+ 的安装和准备要求[软件定义的网络 &#40;SDN&#41;](../software-defined-networking.md)

@@ -6,12 +6,12 @@ ms.topic: article
 author: kbdazure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: b22ac581a999161f796395140489ca699880e127
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bf7ad4e90f5303041153bb4f651d2f09c613da84
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947984"
+ms.locfileid: "87996056"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 和 Windows Server 2019 中的 Hyper-v 可伸缩性规划
 
@@ -22,7 +22,7 @@ ms.locfileid: "87947984"
 内存和逻辑处理器的最大数量是 Windows Server 2012 的最大增加，以响应支持计算机学习和数据分析等更新方案的请求。 Windows Server 博客最近发布了一个虚拟机的性能结果，其中包含 5.5 tb 的内存和128个运行 4 TB 内存中数据库的虚拟处理器。 性能大于物理服务器的95%。 有关详细信息，请参阅[Windows Server 2016 hyper-v 大规模 VM 性能，用于内存中事务处理](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)。 其他数字类似于适用于 Windows Server 2012 的数字。 \(对于 Windows Server 2012 R2，最大为 Windows server 2012。\)
 
 > [!NOTE]
-> 有关 VMM) System Center Virtual Machine Manager (的信息，请参阅[Virtual Machine Manager](https://technet.microsoft.com/system-center-docs/vmm/vmm)。 VMM 是单独出售的用于管理虚拟化数据中心的 Microsoft 产品。
+> 有关 VMM) System Center Virtual Machine Manager (的信息，请参阅[Virtual Machine Manager](/system-center/vmm/overview?view=sc-vmm-2019)。 VMM 是单独出售的用于管理虚拟化数据中心的 Microsoft 产品。
 
 ## <a name="maximums-for-virtual-machines"></a>最大虚拟机
 这些最大的应用于每个虚拟机。 并非所有组件都可用于两代虚拟机。 有关生成的比较，请参阅是否[应在 hyper-v 中创建第1代或第2代虚拟机？](should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md)
@@ -68,5 +68,3 @@ ms.locfileid: "87947984"
 |-------------|-----------|---------|
 |每群集的节点|64|请考虑为故障转移及为维护任务（如应用更新）保留的节点数量。 我们建议你计划使用足够的资源为故障转移保留 1 个节点，即在另一个节点故障转移到该节点之前，该节点一直保持空闲。  (这有时称为被动节点。如果要保留其他节点，则 ) 可以增加此数量。 没有建议的保留节点与活动节点的比率或乘数;唯一的要求是，群集中的节点总数不能超过最大值64。|
 |每个群集中和每个节点上运行的虚拟机数|每个群集 8,000 个|多个因素可能会影响可在一个节点上同时运行的实际虚拟机数，例如：<br />-每个虚拟机正在使用的物理内存量。<br />-网络和存储带宽。<br />-磁盘主轴的数量，影响磁盘 i/o 性能。|
-
-

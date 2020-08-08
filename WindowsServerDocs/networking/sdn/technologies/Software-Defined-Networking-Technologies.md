@@ -7,12 +7,12 @@ ms.assetid: b491089c-5bcb-49d4-95b1-915b7ce69f88
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 02/14/2019
-ms.openlocfilehash: 591a81c91dc444cfe48f0fa40142489b72142409
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 69e01630cf34a588b6861c833015076bd4a31ef4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952567"
+ms.locfileid: "87996465"
 ---
 # <a name="sdn-technologies"></a>SDN 技术
 
@@ -72,7 +72,7 @@ SET 是一种备用 NIC 组合解决方案，可用于在 Windows Server 2016 �
 集允许在一个或多个基于软件的虚拟网络适配器之间分组到8个物理以太网网络适配器。 这些虚拟网络适配器可以提高性能，并在网络适配器发生故障时提供容错能力。
 设置成员网络适配器必须全部安装在要放置在团队中的同一物理 Hyper-v 主机中。
 
-此外，还可以使用 Windows PowerShell 命令启用数据中心桥接 (DCB) ，使用 RDMA 虚拟 NIC (vNIC) 创建 Hyper-v 虚拟交换机，并使用 SET 和 RDMA Vnic 创建 Hyper-v 虚拟交换机。 有关详细信息，请参阅[ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (设置) ](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)。
+此外，还可以使用 Windows PowerShell 命令启用数据中心桥接 (DCB) ，使用 RDMA 虚拟 NIC (vNIC) 创建 Hyper-v 虚拟交换机，并使用 SET 和 RDMA Vnic 创建 Hyper-v 虚拟交换机。 有关详细信息，请参阅[ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (设置) ](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)。
 
 ## <a name="border-gateway-protocol-bgp"></a>[边界网关协议 (BGP)](../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
 
@@ -87,7 +87,7 @@ Windows Server 容器是一种轻型操作系统虚拟化方法，用于将应�
 
 ## <a name="system-center"></a>System Center
 
- (VMM) 和[Operations Manager](https://docs.microsoft.com/system-center/scom/)，通过[虚拟机管理](https://docs.microsoft.com/system-center/vmm/)来部署和管理 SDN 基础结构。 使用 VMM 可以预配和管理在私有云中创建和部署虚拟机与服务所需的资源。  使用 Operations Manager 可以监视整个企业中的服务、设备和操作，从而识别问题并立即采取措施。
+ (VMM) 和[Operations Manager](/system-center/scom/)，通过[虚拟机管理](/system-center/vmm/)来部署和管理 SDN 基础结构。 使用 VMM 可以预配和管理在私有云中创建和部署虚拟机与服务所需的资源。  使用 Operations Manager 可以监视整个企业中的服务、设备和操作，从而识别问题并立即采取措施。
 
 
 ---

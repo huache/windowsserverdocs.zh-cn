@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac661631eef9053e202c7e21ffff9982d26d1d38
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7f98ec982601281d5b16a5ec369ca275de189c85
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960820"
+ms.locfileid: "87996478"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>在独立服务器上部署存储空间
 
@@ -21,7 +21,7 @@ ms.locfileid: "87960820"
 
 若要创建存储空间，必须首先创建一个或多个存储池。 存储池是物理磁盘的集合。 存储池允许存储聚合、弹性容量扩展以及委派的管理。
 
-从存储池中，你可以创建一个或多个虚拟磁盘。 这些虚拟磁盘也称为*存储空间*。 存储空间在 Windows 操作系统中将显示为一个常规磁盘，你可以从中创建格式化的卷。 在你通过文件和存储服务的用户界面创建虚拟磁盘时，你可以配置复原类型（简单、镜像或奇偶校验）、设置类型（精简或固定）以及大小。 通过 Windows PowerShell，你可以设置附加参数，如列数、交错值，以及要使用池中的哪个物理磁盘。 有关这些其他参数的信息，请参阅[VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps)和[Windows Server 存储论坛](https://docs.microsoft.com/answers/topics/windows-server-storage.html)。
+从存储池中，你可以创建一个或多个虚拟磁盘。 这些虚拟磁盘也称为*存储空间*。 存储空间在 Windows 操作系统中将显示为一个常规磁盘，你可以从中创建格式化的卷。 在你通过文件和存储服务的用户界面创建虚拟磁盘时，你可以配置复原类型（简单、镜像或奇偶校验）、设置类型（精简或固定）以及大小。 通过 Windows PowerShell，你可以设置附加参数，如列数、交错值，以及要使用池中的哪个物理磁盘。 有关这些其他参数的信息，请参阅[VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps)和[Windows Server 存储论坛](/answers/topics/windows-server-storage.html)。
 
 >[!NOTE]
 >不能使用存储空间来托管 Windows 操作系统。
@@ -266,4 +266,4 @@ Get-VirtualDisk –FriendlyName VirtualDisk1 | Get-Disk | Initialize-Disk –Pas
 - [存储空间](overview.md)
 - [Windows PowerShell 中的存储 Cmdlet](/powershell/module/storage/index?view=win10-ps)
 - [部署群集存储空间](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))
-- [Windows Server 存储论坛](https://docs.microsoft.com/answers/topics/windows-server-storage.html)
+- [Windows Server 存储论坛](/answers/topics/windows-server-storage.html)

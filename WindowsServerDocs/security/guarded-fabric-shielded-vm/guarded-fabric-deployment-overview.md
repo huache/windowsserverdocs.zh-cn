@@ -6,19 +6,19 @@ manager: dongill
 author: justinha
 ms.author: justinha
 ms.date: 01/30/2019
-ms.openlocfilehash: 8ddd4699358a6725ed5e2f80683a363a1120caf7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 35e95204e076c0e0c96eb1669ff267b87ba7242a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944247"
+ms.locfileid: "87996331"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>受保护的结构部署快速入门
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
 本主题介绍了受保护的结构、其要求和部署过程的摘要。
-有关详细的部署步骤，请参阅为[受保护的主机和受防护的 Vm 部署主机保护者服务](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)。
+有关详细的部署步骤，请参阅为[受保护的主机和受防护的 Vm 部署主机保护者服务](./guarded-fabric-deploying-hgs-overview.md)。
 
 喜欢视频？ 请参阅 Microsoft 虚拟学院课程[使用 Windows Server 2016 部署受防护的 vm 和受保护的构造](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)。
 
@@ -72,7 +72,7 @@ _受保护的构造_是一种 Windows Server 2016 hyper-v 构造，能够保护�
 
 ## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>步骤1：部署运行 Windows Server 2016 的 Hyper-v 主机
 
-Hyper-v 主机需要运行 Windows Server 2016 Datacenter edition 或更高版本。 如果要升级主机，可以从标准版[升级](https://technet.microsoft.com/windowsserver/dn527667.aspx)到数据中心版。
+Hyper-v 主机需要运行 Windows Server 2016 Datacenter edition 或更高版本。 如果要升级主机，可以从标准版[升级](../../get-started/installation-and-upgrade.md)到数据中心版。
 
 ![升级 Hyper-v 主机](../../security/media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-one-upgrade-hyper-v.png)
 
@@ -159,7 +159,7 @@ Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
 
     ![支持新的加密 VM](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-new-shielded-vm.png)
 
-可以添加可选的管理组件，例如 VMM 或 Windows Azure Pack。 如果要在不安装这些组件的情况下创建 VM，请参阅分步[创建未受](https://blogs.technet.microsoft.com/datacentersecurity/2016/06/06/step-by-step-creating-shielded-vms-without-vmm/)保护的 vm。
+可以添加可选的管理组件，例如 VMM 或 Windows Azure Pack。 如果要在不安装这些组件的情况下创建 VM，请参阅分步[创建未受](/archive/blogs/datacentersecurity/step-by-step-creating-shielded-vms-without-vmm)保护的 vm。
 
 ## <a name="step-6-create-a-shielded-vm"></a>步骤6：创建受防护的 VM
 

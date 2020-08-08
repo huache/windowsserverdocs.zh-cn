@@ -2,18 +2,16 @@
 title: 无线访问部署过程
 description: 本主题是 Windows Server 2016 网络指南 "部署基于密码的 802.1 X 身份验证无线访问" 的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 2555f238-926e-4b20-9bfb-9774831062da
 author: eross-msft
 ms.author: lizross
-ms.openlocfilehash: 30e3da7e1365585bf9dc5ff34a72a367e1ed28f7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9c2326df824288b6adf4453d6ef272ba632eb6c2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318084"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969594"
 ---
 # <a name="wireless-access-deployment-process"></a>无线访问部署过程
 
@@ -23,7 +21,7 @@ ms.locfileid: "80318084"
 
 ## <a name="stage-1--ap-deployment"></a>阶段 1-AP 部署
 
-规划、部署和配置你的接入点以实现无线客户端连接，并用于 NPS。 根据你的首选项和网络依赖关系，你可以先在无线 Ap 上预先\-配置设置，然后再将其安装到网络上，也可以在安装后远程配置这些设置。
+规划、部署和配置你的接入点以实现无线客户端连接，并用于 NPS。 根据你的首选项和网络依赖关系，你可以 \- 先在无线 ap 上预先配置设置，然后再将其安装到网络上，也可以在安装后远程配置这些设置。
 
 ## <a name="stage-2--adds-group-configuration"></a>阶段2– AD DS 组配置
 
@@ -38,11 +36,11 @@ ms.locfileid: "80318084"
 
 ## <a name="stage-3--group-policy-configuration"></a>阶段 3-组策略配置
 
-使用组策略管理编辑器 Microsoft 管理控制台 \(MMC\)\(IEEE 802.11\) 策略组策略扩展配置无线网络。
+\( \) 使用组策略管理编辑器 Microsoft 管理控制台 MMC 配置组策略的无线网络 IEEE 802.11 策略扩展 \( \) 。
 
-若要使用无线网络策略中的设置来配置域\-成员计算机，必须应用组策略。 首次将计算机加入域时，会自动应用组策略。 如果对组策略进行了更改，则将自动应用新设置：
+若要 \- 使用无线网络策略中的设置配置域成员计算机，必须应用组策略。 首次将计算机加入域时，会自动应用组策略。 如果对组策略进行了更改，则将自动应用新设置：
 
-- 按\-确定的时间间隔组策略
+- 按预先确定的 \- 间隔组策略
 
 - 如果域用户注销然后重新登录到网络
 
@@ -62,7 +60,7 @@ ms.locfileid: "80318084"
 
 对于可以登录到有线 LAN 的域成员计算机，刷新组策略时，会自动应用必要的无线配置设置。
 
-如果在无线网络中启用了设置 \(IEEE 802.11\) 策略在计算机处于无线网络的广播范围内时自动连接，则你的无线域\-加入的计算机将自动尝试连接到无线 LAN。
+如果在无线网络 IEEE 802.11 策略中启用了设置， \( \) 以便在计算机处于无线网络的广播范围内时自动连接，则已加入域的 \- 计算机将自动尝试连接到无线 LAN。
 
 若要连接到无线网络，用户只需在 Windows 提示时提供其域用户名和密码凭据。
 

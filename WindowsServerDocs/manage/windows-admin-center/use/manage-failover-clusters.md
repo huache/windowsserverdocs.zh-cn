@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a0b9c0e43d1573a52f69454ce05dd7a1c281510e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e181e52c2e461d6f1ef00f72684b8228cf9889d1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964413"
+ms.locfileid: "87995976"
 ---
 # <a name="manage-failover-clusters-with-windows-admin-center"></a>通过 Windows 管理中心管理故障转移群集
 
@@ -22,7 +22,7 @@ ms.locfileid: "87964413"
 > [下载或详细了解 Windows 管理中心](../overview.md)。
 
 ## <a name="managing-failover-clusters"></a>管理故障转移群集
-[故障转移群集](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview)是一种 Windows Server 功能，使你能够将多个服务器组合到容错群集中，以提高应用程序和服务（例如横向扩展文件服务器、hyper-v 和 Microsoft SQL Server）的可用性和可伸缩性。
+[故障转移群集](../../../failover-clustering/failover-clustering-overview.md)是一种 Windows Server 功能，使你能够将多个服务器组合到容错群集中，以提高应用程序和服务（例如横向扩展文件服务器、hyper-v 和 Microsoft SQL Server）的可用性和可伸缩性。
 
 尽管可以通过将故障转移群集节点作为服务器连接添加到 Windows 管理中心中的[服务器连接](manage-servers.md)来将故障转移群集节点作为单独的服务器进行管理，但也可以将其添加为故障转移群集，以查看和管理群集资源、存储、网络、节点、角色、虚拟机和虚拟交换机。
 

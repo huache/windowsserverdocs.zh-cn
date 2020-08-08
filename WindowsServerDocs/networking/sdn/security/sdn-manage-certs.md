@@ -1,20 +1,18 @@
 ---
 title: 管理软件定义的网络的证书
-description: 当你在 Windows Server 2016 Datacenter 中部署软件定义的网络（SDN）时，你可以使用本主题来了解如何管理网络控制器 Northbound 和 Southbound 通信的证书。
+description: 当你在 Windows Server 2016 Datacenter 中部署软件定义的网络 (SDN) 时，你可以使用本主题来了解如何管理网络控制器 Northbound 和 Southbound 通信的证书。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 0eee5110eb875d95b187242f6f0ec51b487268c6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3156b2ed40415226e094485fba224e7d95a12ca2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520256"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947103"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>管理软件定义的网络的证书
 
@@ -66,7 +64,7 @@ Windows Server 2016 Datacenter 中的 SDN 支持自 \- 签名证书和证书颁�
 New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryptographic Provider" -FriendlyName "<YourNCComputerName>" -DnsName @("<NCRESTName>")
 ```
 
-**示例用法**
+**用法示例**
 
 ```powershell
 New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryptographic Provider" -FriendlyName "MultiNodeNC" -DnsName @("NCCluster.Contoso.com")
@@ -82,7 +80,7 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryptographic Provider" -FriendlyName "<YourNCComputerName>" -DnsName @("<NCFQDN>")
 ```
 
-**示例用法**
+**用法示例**
 
 ```powershell
 New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryptographic Provider" -FriendlyName "SingleNodeNC" -DnsName @("SingleNodeNC.Contoso.com")
@@ -105,11 +103,11 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 在下一步中配置证书模板时，请确保所配置的模板包含以下必需元素。
 
 1. 证书使用者名称必须是 Hyper-v 主机的 FQDN
-2. 证书必须位于本地计算机个人存储中（My-cert： \ localmachine\my）
-3. 证书必须具有服务器身份验证（EKU：1.3.6.1.5.5.7.3.1）和客户端身份验证（EKU：1.3.6.1.5.5.7.3.2）应用程序策略。
+2. 证书必须位于本地计算机个人存储中 (我的-cert： \ localmachine\my) 
+3. 此证书必须具有服务器身份验证 (EKU： 1.3.6.1.5.5.7.3.1) 和客户端身份验证 (EKU： 1.3.6.1.5.5.7.3.2) 应用程序策略。
 
 >[!NOTE]
->如果 \( hyper-v 主机上的 "我的证书： \ localmachine\my" \) 证书存储 \- 具有多个使用者名称（CN）作为主机完全限定的域名 FQDN 的 x.509 证书 \( \) ，请确保 SDN 使用的证书具有与 OID 1.3.6.1.4.1.311.95.1.1.1 相同的附加自定义增强型密钥用法属性。 否则，网络控制器与主机之间的通信可能不起作用。
+>如果 \( hyper-v 主机上的 "我的用户-cert： \ localmachine\my" \) 证书存储 \- 有多个 x.509 证书，使用者名称 (CN) 作为主机完全限定的域名 \( FQDN \) ，请确保 SDN 使用的证书具有额外的自定义增强型密钥用法属性和 OID 1.3.6.1.4.1.311.95.1.1.1。 否则，网络控制器与主机之间的通信可能不起作用。
 
 #### <a name="to-configure-the-certificate-template"></a>配置证书模板
 
@@ -156,10 +154,10 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 
 然后，必须将两个导出文件复制到您在导入 NC 服务模板时指定的**ServerCertificate.cr**和**NCCertificate.cr**文件夹。
 
-1. 打开 "证书" 管理单元（certlm.msc），并在本地计算机的 "个人" 证书存储中找到该证书。
+1. 打开 "证书" 管理单元 ("certlm.msc") 并在本地计算机的 "个人" 证书存储中找到该证书。
 2. 右键 \- 单击该证书，单击 "**所有任务**"，然后单击 "**导出**"。 此时会打开“证书导出向导”。 单击“下一步”。
 3. 选择 **"是**，导出私钥" 选项，然后单击 "**下一步**"。
-4. 选择 "**个人信息交换-PKCS #12 （。PFX）** 并接受默认值，以便在可能的情况下**包括证书路径中的所有证书**。
+4. 选择 "**个人信息交换-PKCS #12 (。PFX) **并接受默认值，以便在可能的情况下**包括证书路径中的所有证书**。
 5. 为要导出的证书分配“用户/组”和密码，然后单击“下一步”****。
 6. 在“要导出的文件”页面上，浏览要放置导出文件的位置并为其命名。
 7. 同样，在中导出证书。CER 格式。 注意：若要导出为 .CER 格式，请取消选择“是，导出私钥”选项。
@@ -176,7 +174,7 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 
 若要通过 OVSDB 与 Hyper-v 主机进行通信，网络控制器需要向主机提供证书。 默认情况下，SCVMM 选取网络控制器上配置的 SSL 证书，并将其用于 southbound 与主机的通信。
 
-这就是 SSL 证书必须配置客户端身份验证 EKU 的原因。 此证书在 "服务器" REST 资源上配置（Hyper-v 主机在网络控制器中表示为服务器资源），可以通过运行 Windows PowerShell 命令**NetworkControllerServer**进行查看。
+这就是 SSL 证书必须配置客户端身份验证 EKU 的原因。 此证书在 "服务器" REST 资源上配置 (Hyper-v 主机在网络控制器中表示为服务器资源) ，可以通过运行 Windows PowerShell 命令**NetworkControllerServer**进行查看。
 
 下面是服务器 REST 资源的部分示例。
 

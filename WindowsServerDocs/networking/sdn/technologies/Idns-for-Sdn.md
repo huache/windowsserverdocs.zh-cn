@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 2980e073c34d6177846175563e4d374b439ced44
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c7eb9b82938d6506493ff7cf0856a8c25d3af0ed
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952597"
+ms.locfileid: "87996509"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>SDN 的内部 DNS 服务 (iDS)
 
@@ -65,7 +65,7 @@ Idn 代理是一种 Windows 服务，它在每个主机上运行，并将租户�
 
 有关详细信息，请参阅以下主题。
 
-- [使用脚本部署软件定义的网络基础结构](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)
+- [使用脚本部署软件定义的网络基础结构](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)
 
 
 ## <a name="understanding-idns-deployment-steps"></a>了解 Idn 部署步骤
@@ -108,7 +108,7 @@ Method: PUT
 ```
 
 >[!NOTE]
->这是 SDNExpress.ps1 中的 "**配置" ConfigureIDns**部分摘录。 有关详细信息，请参阅[使用脚本部署软件定义的网络基础结构](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)。
+>这是 SDNExpress.ps1 中的 "**配置" ConfigureIDns**部分摘录。 有关详细信息，请参阅[使用脚本部署软件定义的网络基础结构](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)。
 
 ### <a name="step-3-configure-the-idns-proxy-service"></a>步骤3：配置 Idn 代理服务
 Idn 代理服务在每个 Hyper-v 主机上运行，在租户虚拟网络与 Idn 服务器所在的物理网络之间提供桥梁。 必须在每个 Hyper-v 主机上创建以下注册表项。
@@ -149,7 +149,7 @@ Idn 代理服务在每个 Hyper-v 主机上运行，在租户虚拟网络与 Idn
 - ValueType = "String"
 
 >[!NOTE]
->这是 SDNExpress.ps1 中的 "**配置" ConfigureIDnsProxy**部分摘录。 有关详细信息，请参阅[使用脚本部署软件定义的网络基础结构](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)。
+>这是 SDNExpress.ps1 中的 "**配置" ConfigureIDnsProxy**部分摘录。 有关详细信息，请参阅[使用脚本部署软件定义的网络基础结构](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)。
 
 ### <a name="step-4-restart-the-network-controller-host-agent-service"></a>步骤4：重新启动网络控制器主机代理服务
 你可以使用以下 Windows PowerShell 命令重新启动网络控制器主机代理服务。
@@ -158,7 +158,7 @@ Idn 代理服务在每个 Hyper-v 主机上运行，在租户虚拟网络与 Idn
 Restart-Service nchostagent -Force
 ```
 
-有关详细信息，请参阅[重新启动服务](https://technet.microsoft.com/library/hh849823.aspx)。
+有关详细信息，请参阅[重新启动服务](/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7)。
 
 ### <a name="enable-firewall-rules-for-the-dns-proxy-service"></a>启用 DNS 代理服务的防火墙规则
 你可以使用以下 Windows PowerShell 命令创建防火墙规则，该规则允许代理与 VM 和 Idn 服务器进行通信。
@@ -167,12 +167,12 @@ Restart-Service nchostagent -Force
 Enable-NetFirewallRule -DisplayGroup 'DNS Proxy Firewall'
 ```
 
-有关详细信息，请参阅[set-netfirewallrule](https://technet.microsoft.com/library/jj554869.aspx)。
+有关详细信息，请参阅[set-netfirewallrule](/powershell/module/netsecurity/enable-netfirewallrule?view=winserver2012r2-ps)。
 
 ### <a name="validate-the-idns-service"></a>验证 Idn 服务
 若要验证 Idn 服务，必须部署示例租户工作负荷。
 
-有关详细信息，请参阅[创建 VM 和连接到租户虚拟网络或 VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)。
+有关详细信息，请参阅[创建 VM 和连接到租户虚拟网络或 VLAN](../manage/create-a-tenant-vm.md)。
 
 如果希望租户 VM 使用 Idn 服务，则必须将 VM 网络接口 DNS 服务器配置留空，并允许接口使用 DHCP。
 
@@ -187,5 +187,4 @@ Enable-NetFirewallRule -DisplayGroup 'DNS Proxy Firewall'
 DNS 代理还可以确保租户 VM 查询是隔离的。 如果 Idn 服务器对查询具有权威，则 Idn 服务器将使用权威响应进行响应。 如果 Idn 服务器对查询没有权威，则会执行 DNS 递归来解析 Internet 名称。
 
 >[!NOTE]
->此信息包含在 SDNExpressTenant.ps1 的**配置 AttachToVirtualNetwork**部分中。 有关详细信息，请参阅[使用脚本部署软件定义的网络基础结构](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)。
-
+>此信息包含在 SDNExpressTenant.ps1 的**配置 AttachToVirtualNetwork**部分中。 有关详细信息，请参阅[使用脚本部署软件定义的网络基础结构](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)。

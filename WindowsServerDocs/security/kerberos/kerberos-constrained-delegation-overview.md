@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bd34723d1f5223c2576237c768d9da55172eebc6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb0c35d51c0aa2a0f63f61c0be48099bb6aa5269
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943887"
+ms.locfileid: "87996175"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -28,7 +28,7 @@ ms.locfileid: "87943887"
 
 在 Windows Server 2012 R2 和 Windows Server 2012 中，为服务配置约束委派的能力已从域管理员转移给服务管理员。 这样，后端服务管理员可以允许或拒绝前端服务。
 
-有关 Windows Server 2003 中引入的约束委派的详细信息，请参阅 [Kerberos 协议转换和约束委派](https://technet.microsoft.com/library/cc739587(v=ws.10))。
+有关 Windows Server 2003 中引入的约束委派的详细信息，请参阅 [Kerberos 协议转换和约束委派](/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10))。
 
 Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括专门针对约束委派的扩展。  Service for User to Proxy (S4U2Proxy) 允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。 这些扩展允许在可位于另一个域中的后端服务帐户上配置约束委派。 有关这些扩展的详细信息，请参阅 MSDN Library 中的[ \[ MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)。
 
@@ -54,7 +54,7 @@ Kerberos 约束委派可以在前端服务与资源服务不在同一域中时�
 
 有关这些扩展的实现信息，请参阅 MSDN 中的[ \[ MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)。
 
-有关使用与 Service for User (S4U) 扩展相比提早的票证授予票证 (TGT) 的 Kerberos 委派的基础消息队列的详细信息，请参阅 [1.3.3 协议概述](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) 部分（“[MS-SFU]：Kerberos 协议扩展：用户服务和约束委派协议规范”）。
+有关使用与 Service for User (S4U) 扩展相比提早的票证授予票证 (TGT) 的 Kerberos 委派的基础消息队列的详细信息，请参阅 [1.3.3 协议概述](/openspecs/windows_protocols/ms-sfu/1fb9caca-449f-4183-8f7a-1a5fc7e7290a) 部分（“[MS-SFU]：Kerberos 协议扩展：用户服务和约束委派协议规范”）。
 
 **基于资源的约束委派的安全含义**
 

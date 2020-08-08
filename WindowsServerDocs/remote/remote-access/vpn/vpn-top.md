@@ -1,22 +1,20 @@
 ---
-title: 虚拟专用网 (VPN)
+title: 虚拟专用网络 (VPN)
 description: 您可以使用本主题来了解 Windows Server 2016 和 Windows 10 VPN 的特性和功能。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: cd4908f0-0d6f-4c02-8f98-4dc88c3dcb65
 ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 35293f98dd36fc48750a811981dafe37a06af7c9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 30f08f02bf7a06619b9a32206863a9ddefc0fc2d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959169"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968914"
 ---
-# <a name="virtual-private-networking-vpn"></a>虚拟专用网 (VPN)
+# <a name="virtual-private-networking-vpn"></a>虚拟专用网络 (VPN)
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows 10
 
@@ -24,7 +22,7 @@ ms.locfileid: "86959169"
 
 在 Windows Server 2016 中，远程访问服务器角色是以下相关网络访问技术的逻辑分组。
 
-- 远程访问服务（RAS）
+- 远程访问服务 (RAS) 
 - 路由
 - Web 应用程序代理
 
@@ -32,19 +30,19 @@ ms.locfileid: "86959169"
 
 使用 "添加角色和功能向导" 或 Windows PowerShell 安装远程访问服务器角色时，可以安装这三个角色服务中的一个或多个。
 
-安装**DirectAccess 和 VPN （ras）** 角色服务时，将部署远程访问服务网关（**ras 网关**）。 可以将 RAS 网关部署为单租户 RAS 网关虚拟专用网络（VPN）服务器，该服务器提供许多高级功能和增强的功能。
+安装**DirectAccess 和 VPN (ras) **角色服务时， (**RAS 网关**) 部署远程访问服务网关。 你可以将 RAS 网关部署为单租户 RAS 网关虚拟专用网络 (VPN) 服务器，它提供许多高级功能和增强的功能。
 
 >[!NOTE]
->你还可以将 RAS 网关部署为多租户 VPN 服务器，以与软件定义的网络（SDN）或 DirectAccess 服务器一起使用。 有关详细信息，请参阅[RAS 网关](../ras-gateway/ras-gateway.md)、[软件定义的网络（SDN）](../../../networking/sdn/software-defined-networking.md)和[DirectAccess](../directaccess/directaccess.md)。
+>你还可以将 RAS 网关部署为多租户 VPN 服务器，以便与软件定义的网络 (SDN) 或 DirectAccess 服务器一起使用。 有关详细信息，请参阅[RAS 网关](../ras-gateway/ras-gateway.md)、[软件定义的网络 (SDN) ](../../../networking/sdn/software-defined-networking.md)和[DirectAccess](../directaccess/directaccess.md)。
 
 ## <a name="related-topics"></a>相关主题
-- [ALWAYS ON vpn 特性和功能](vpn-map-da.md)：本主题介绍 Always On vpn 的特性和功能。 
+- [ALWAYS ON vpn 特性和功能](vpn-map-da.md)：本主题介绍 Always On vpn 的特性和功能。
 
 - [在 Windows 10 中配置 VPN 设备隧道](vpn-device-tunnel-config.md)： Always On VPN 使你能够为设备或计算机创建专用 VPN 配置文件。 Always On VPN 连接包括两种类型的隧道：_设备隧道_和_用户隧道_。 设备隧道用于预登录连接方案和设备管理用途。 用户隧道允许用户通过 VPN 服务器访问组织资源。
 
 - [Always On 适用于 Windows Server 2016 和 windows 10 的 VPN 部署](always-on-vpn/deploy/always-on-vpn-deploy.md)：提供有关将远程访问作为单租户 Vpn RAS 网关部署的说明，以便进行点到站点 vpn 连接，使远程员工能够使用 Always On VPN 连接连接到组织网络。 建议你查看此部署中使用的每项技术的设计和部署指南。
 
-- [Windows 10 VPN 技术指南](/windows/access-protection/vpn/vpn-guide)：指导你完成在企业 VPN 解决方案中针对 Windows 10 客户端做出的决策，以及如何配置你的部署。 你可以找到对 VPNv2 配置服务提供程序（CSP）的引用，并使用 Microsoft Intune 和适用于 Windows 10 的 VPN 配置文件模板提供移动设备管理（MDM）配置说明。
+- [Windows 10 VPN 技术指南](/windows/access-protection/vpn/vpn-guide)：指导你完成在企业 VPN 解决方案中针对 Windows 10 客户端做出的决策，以及如何配置你的部署。 你可以 (CSP) 找到对 VPNv2 配置服务提供程序的引用，并使用 Microsoft Intune 和适用于 Windows 10 的 VPN 配置文件模板提供移动设备管理 (MDM) 配置说明。
 
 - [如何在 Configuration Manager 中创建 vpn 配置文件](/configmgr/protect/deploy-use/create-vpn-profiles)：在本主题中，你将了解如何在 Configuration Manager 中创建 vpn 配置文件。
 

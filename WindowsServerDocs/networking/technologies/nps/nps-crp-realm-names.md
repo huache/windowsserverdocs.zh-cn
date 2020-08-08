@@ -2,18 +2,16 @@
 title: 领域名称
 description: 本主题概述了如何在 Windows Server 2016 中的网络策略服务器连接请求处理中使用领域名称。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7a855087647b86486eaf5358e0e713d6fab6dd02
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: e219169ba3132a18c0a76219fa8da96e30902090
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517872"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969394"
 ---
 # <a name="realm-names"></a>领域名称
 
@@ -41,7 +39,7 @@ ms.locfileid: "87517872"
 
 可以指定在尝试网络连接期间，网络用户键入其凭据时提供其领域名称。
 
-例如，你可以要求用户在进行拨号或虚拟专用网络（VPN）连接时，在 "**连接**" 对话框的 "**用户名**" 中键入其用户名，包括用户帐户名称和领域名称。
+例如，你可以要求用户在将拨号或虚拟专用网络 (VPN) 连接时，在 "**连接**" 对话框中的 "**用户名**" 中键入其用户名，包括用户帐户名称和领域名称。
 
 此外，如果使用连接管理器管理工具包 (CMAK) 创建自定义拨号程序包，可以通过自动将领域名称添加到用户计算机上安装的 CM 配置文件中的用户帐户名来帮助用户。 例如，可以在 CM 配置文件中指定领域名称和用户名语法，以便键入凭据时用户只需指定用户帐户名。 在这种情况下，用户不需要知道或记住其用户帐户所在的域。
 
@@ -65,9 +63,9 @@ ms.locfileid: "87517872"
 
 根据配置的属性操作规则修改用户名属性之后，第一个匹配的连接请求策略的其他设置用于确定：
 
-- NPS 在本地处理访问请求消息（将 NPS 用作 RADIUS 服务器时）。
+- 当 NPS 用作 RADIUS 服务器) 时，NPS 会本地处理访问请求消息 (。
 
-- NPS 将消息转发到另一个 RADIUS 服务器（当 NPS 用作 RADIUS 代理时）。
+- 当 NPS 用作 RADIUS 代理) 时，NPS 会将消息转发到另一个 RADIUS 服务器 (。
 
 ## <a name="configuring-the-nps-supplied-domain-name"></a>配置 NPS 提供的域名
 

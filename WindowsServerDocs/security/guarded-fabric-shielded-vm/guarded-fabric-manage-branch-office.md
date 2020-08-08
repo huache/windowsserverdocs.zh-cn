@@ -4,12 +4,12 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: b56b2d4f74f18e68a3849b01e84b0aca5ca7412e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 140888bdaa27d5040ff723b94df2e28f3bbab167
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957905"
+ms.locfileid: "87996158"
 ---
 # <a name="branch-office-considerations"></a>分支机构注意事项
 
@@ -39,7 +39,7 @@ Set-HgsClientConfiguration -KeyProtectionServerUrl 'https://hgs.primary.com/KeyP
 此外，用于解密虚拟机的 TPM 的证书需要同时在这两个 HGS 群集中可用。
 你可以使用不同的证书配置每个 HGS，并将 VM 配置为信任这两者，或将共享的一组证书添加到这两个 HGS 群集。
 
-若要详细了解如何在分支机构中使用后备 Url 配置 HGS，请参阅博客文章[Windows Server 中受防护的 vm （版本1709）的改进分支机构支持](https://blogs.technet.microsoft.com/datacentersecurity/2017/11/15/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709/)。
+若要详细了解如何在分支机构中使用后备 Url 配置 HGS，请参阅博客文章[Windows Server 中受防护的 vm （版本1709）的改进分支机构支持](/archive/blogs/datacentersecurity/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709)。
 
 
 ## <a name="offline-mode"></a>脱机模式

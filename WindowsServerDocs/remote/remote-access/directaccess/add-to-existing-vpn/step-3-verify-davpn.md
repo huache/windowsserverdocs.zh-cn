@@ -1,21 +1,19 @@
 ---
-title: 步骤3验证远程访问（VPN）部署
-description: 本主题是将 DirectAccess 添加到 Windows Server 2016 现有远程访问（VPN）部署的指南的一部分
+title: 步骤3验证 (VPN) 部署的远程访问
+description: 本主题是有关 Windows Server 2016 的将 DirectAccess 添加到现有远程访问 (VPN) 部署的指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 43ac612e-2e77-418c-8171-ebb2086b7cb6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9eb64024eb7ad9b80a1ba8c949939b33426ad6da
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 9da14f076f177e7e819c1529f9de647b5dde0500
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518153"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969214"
 ---
-# <a name="step-3-verify-the-remote-access-vpn-deployment"></a>步骤3验证远程访问（VPN）部署
+# <a name="step-3-verify-the-remote-access-vpn-deployment"></a>步骤3验证 (VPN) 部署的远程访问
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 

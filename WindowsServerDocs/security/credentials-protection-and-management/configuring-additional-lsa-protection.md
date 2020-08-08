@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 78533908de1a1f43cbfac9054dcfe6ec83edce9d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bfb40249dffa08e1c05aa1dc7cbc26fad6f7885d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948750"
+ms.locfileid: "87995885"
 ---
 # <a name="configuring-additional-lsa-protection"></a>配置其他 LSA 保护
 
@@ -29,13 +29,13 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
     保护模式要求加载到 LSA 中的任何插件都已使用 Microsoft 签名进行数字签名。 因此，未签名的或者未使用 Microsoft 签名进行签名的任何插件都无法加载到 LSA 中。 这些插件的示例包括智能卡驱动程序、加密插件和密码筛选器。
 
-    用作驱动程序（例如智能卡驱动程序）的 LSA 插件需要使用 WHQL 认证进行签名。 有关详细信息，请参阅[WHQL 发行版签名](https://msdn.microsoft.com/library/windows/hardware/ff553976%28v=vs.85%29.aspx)。
+    用作驱动程序（例如智能卡驱动程序）的 LSA 插件需要使用 WHQL 认证进行签名。 有关详细信息，请参阅[WHQL 发行版签名](/windows-hardware/drivers/install/whql-release-signature)。
 
     不需要经历 WHQL 认证过程的 LSA 插件必须使用 [LSA 的文件签名服务](https://go.microsoft.com/fwlink/?LinkId=392590)进行签名。
 
 2.  遵守 Microsoft 安全开发生命周期 (SDL) 过程指导
 
-    所有插件必须符合适用的 SDL 过程指导。 有关详细信息，请参阅 [Microsoft 安全开发生命周期 (SDL) 附录](https://msdn.microsoft.com/library/windows/desktop/cc307891.aspx)。
+    所有插件必须符合适用的 SDL 过程指导。 有关详细信息，请参阅 [Microsoft 安全开发生命周期 (SDL) 附录](/previous-versions/windows/desktop/cc307891(v=msdn.10))。
 
     即使插件已使用 Microsoft 签名正确地进行签名，但如果不符合 SDL 过程，也可能会导致加载插件失败。
 
@@ -180,7 +180,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
     有关选择退出工具的详细信息，请参阅 [从官方 Microsoft 下载中心下载本地安全机构 (LSA) 受保护进程退出](https://www.microsoft.com/download/details.aspx?id=40897)。
 
-    有关管理安全启动的详细信息，请参阅 [UEFI 固件](https://technet.microsoft.com/library/hh824898.aspx)。
+    有关管理安全启动的详细信息，请参阅 [UEFI 固件](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824898(v=win.10))。
 
     > [!WARNING]
     > 关闭安全启动后，将会重置所有与安全启动和 UEFI 相关的配置。 仅当禁用 LSA 保护的所有其他方法均已失败时，才应关闭安全启动。
@@ -194,5 +194,3 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 [凭据保护和管理](credentials-protection-and-management.md)
 
 [LSA 的文件签名服务](https://go.microsoft.com/fwlink/?LinkId=392590)
-
-

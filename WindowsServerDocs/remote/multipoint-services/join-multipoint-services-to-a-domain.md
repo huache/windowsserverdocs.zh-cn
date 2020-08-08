@@ -7,18 +7,18 @@ ms.assetid: 623b7c21-dcbb-402e-8b5a-8e434cd225bd
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 2956bd47bb2c4ac538b3b9828a6e5cdcef739eff
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8e1f1249ac3670a550e70cc09a9862306fd85658
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970494"
+ms.locfileid: "87995943"
 ---
 # <a name="join-the-multipoint-services-computer-to-a-domain-optional"></a>将 MultiPoint 服务计算机加入到域 (可选) 
 如果你将通过 Active Directory 域访问你的 MultiPoint 服务计算机，则下一步是将计算机添加到域。
 
 > [!IMPORTANT]
-> 在将计算机加入域之前，必须验证你的时区。 有关说明，请参阅[设置日期、时间和](Set-the-date--time--and-time-zone.md)时区。
+> 在将计算机加入域之前，必须验证你的时区。 有关说明，请参阅[设置日期、时间和](./set-the-date-time.md)时区。
 
 1.  从 **“开始”** 屏幕打开 **“控制面板”**。 单击 "**系统和安全**"，然后单击 "**系统**"。
 

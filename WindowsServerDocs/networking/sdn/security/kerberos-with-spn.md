@@ -7,12 +7,12 @@ ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 3937f124ba91a597af83c00cd5497ea57c1b2fed
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ce85e93f229c62d836a00e7665e2a76bd08b44dd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962131"
+ms.locfileid: "87996544"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>包含服务主体名称 (SPN) 的 Kerberos
 
@@ -20,7 +20,7 @@ ms.locfileid: "87962131"
 
 网络控制器支持多种身份验证方法与管理客户端通信。 您可以使用基于 Kerberos 的身份验证和基于 X509 证书的身份验证。 你还可以选择对测试部署不使用身份验证。
 
-System Center Virtual Machine Manager 使用基于 Kerberos 的身份验证。 如果你使用的是基于 Kerberos 的身份验证，则必须在 Active Directory 中为网络控制器配置服务主体名称 (SPN) 。 SPN 是网络控制器服务实例的唯一标识符，Kerberos 身份验证使用该标识符将服务实例与服务登录帐户关联。 有关更多详细信息，请参阅[服务主体名称](https://docs.microsoft.com/windows/desktop/ad/service-principal-names)。
+System Center Virtual Machine Manager 使用基于 Kerberos 的身份验证。 如果你使用的是基于 Kerberos 的身份验证，则必须在 Active Directory 中为网络控制器配置服务主体名称 (SPN) 。 SPN 是网络控制器服务实例的唯一标识符，Kerberos 身份验证使用该标识符将服务实例与服务登录帐户关联。 有关更多详细信息，请参阅[服务主体名称](/windows/desktop/ad/service-principal-names)。
 
 ## <a name="configure-service-principal-names-spn"></a>将服务主体名称配置 (SPN) 
 

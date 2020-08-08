@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 0535a15d0b21b62bb9f8b91729f773d1f4db0db0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fca3faca236a2fc5162d7a50ef02acad9b508226
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966064"
+ms.locfileid: "87996308"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>创建受防护的 Linux VM 模板磁盘
 
@@ -67,7 +67,7 @@ ms.locfileid: "87966064"
 4.  打开管理计算机上的**Hyper-v 管理器**并连接到虚拟化服务器。
     为此，可以单击 "连接到服务器 ..."在 "操作" 窗格中，或通过右键单击 "Hyper-v 管理器" 并选择 "连接到服务器 ..."为 Hyper-v 服务器提供 DNS 名称，并在必要时提供连接到该服务器所需的凭据。
 
-5.  使用 Hyper-v 管理器配置虚拟化服务器上的[外部交换机](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines)，以便 Linux VM 可以访问 Internet 以获取更新。
+5.  使用 Hyper-v 管理器配置虚拟化服务器上的[外部交换机](../../virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines.md)，以便 Linux VM 可以访问 Internet 以获取更新。
 
 6.  接下来，创建新的虚拟机以在上安装 Linux 操作系统。
     在 "操作" 窗格中，单击 "**新建**  >  **虚拟机**" 以打开向导。
@@ -119,7 +119,7 @@ ms.locfileid: "87966064"
 
 13. 如果你计划使用 System Center Virtual Machine Manager 来部署 Vm，请在 VM 预配过程中安装 VMM 来宾代理以使 VMM 专用化你的操作系统。
     专用化允许每个 VM 安全地设置不同的用户和 SSH 密钥、网络配置和自定义设置步骤。
-    了解如何在 VMM 文档中[获取和安装 vmm 来宾代理](https://docs.microsoft.com/system-center/vmm/vm-linux#install-the-vmm-guest-agent)。
+    了解如何在 VMM 文档中[获取和安装 vmm 来宾代理](/system-center/vmm/vm-linux#install-the-vmm-guest-agent)。
 
 14. 接下来，[将 Microsoft Linux 软件存储库添加到你的包管理器](../../administration/linux-package-repository-for-microsoft-software.md)。
 
@@ -189,7 +189,7 @@ New-SelfSignedCertificate -Subject "CN=Linux Shielded VM Template Disk Signing C
 
 > [!IMPORTANT]
 > Windows Server 2016 或 Windows 10 上的可用远程服务器管理工具无法用于准备 Linux 受防护的 VM 模板磁盘。
-> 仅使用 Windows Server 2019 版本1709上提供的[TemplateDisk](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps) cmdlet，或 windows server 上提供的远程服务器管理工具来准备 Linux 受防护的 VM 模板磁盘。
+> 仅使用 Windows Server 2019 版本1709上提供的[TemplateDisk](/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps) cmdlet，或 windows server 上提供的远程服务器管理工具来准备 Linux 受防护的 VM 模板磁盘。
 
 ```powershell
 # Replace "THUMBPRINT" with the thumbprint of your template disk signing certificate in the line below
