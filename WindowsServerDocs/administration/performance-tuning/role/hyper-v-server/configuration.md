@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 02f2849b7259379ebf6beed927601b13966a7704
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 42e95662cd2177b37fef1b47f0a51989ab964168
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896146"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992159"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V 配置
 
@@ -56,7 +56,7 @@ Windows Server 在各种情况下使用虚拟化。 从负载较轻的 IIS 服�
 
 Windows Server 2016 功能是服务器核心安装选项。 服务器核心提供了一个用于承载一组选择的服务器角色（包括 Hyper-v）的最小环境。 它为主机操作系统提供较小的磁盘空间，以及较小的攻击和维护图面。 因此，强烈建议 Hyper-v 虚拟化服务器使用服务器核心安装选项。
 
-仅当用户登录时，服务器核心安装才会提供控制台窗口，但 Hyper-v 会公开包含[Windows Powershell](https://technet.microsoft.com/library/hh848559.aspx)的远程管理功能，以便管理员可以远程管理它。
+仅当用户登录时，服务器核心安装才会提供控制台窗口，但 Hyper-v 会公开包含[Windows Powershell](/powershell/module/hyper-v/?view=win10-ps)的远程管理功能，以便管理员可以远程管理它。
 
 ## <a name="dedicated-server-role"></a>专用服务器角色
 
@@ -66,7 +66,7 @@ Windows Server 2016 功能是服务器核心安装选项。 服务器核心提�
 
 ## <a name="guest-operating-systems"></a>来宾操作系统
 
-Hyper-v 支持并已针对多个不同的来宾操作系统进行了优化。 每个来宾支持的虚拟处理器数量取决于来宾操作系统。 有关支持的来宾操作系统的列表，请参阅[Hyper-v 概述](https://technet.microsoft.com/library/hh831531.aspx)。
+Hyper-v 支持并已针对多个不同的来宾操作系统进行了优化。 每个来宾支持的虚拟处理器数量取决于来宾操作系统。 有关支持的来宾操作系统的列表，请参阅[Hyper-v 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))。
 
 ## <a name="cpu-statistics"></a>CPU 统计信息
 

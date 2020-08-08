@@ -1,27 +1,25 @@
 ---
-title: 在 Windows Server 上安装 Hyper-v 角色
+title: 在 Windows Server 上安装 Hyper-V 角色
 description: 提供有关使用服务器管理器或 Windows PowerShell 安装 Hyper-v 的说明
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: get-started-article
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/02/2016
-ms.openlocfilehash: 5bd77284fd73d75075cec307e989274c86552209
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 32632e7af3db0c3b390606bc784b929e76b2892f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475644"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997601"
 ---
-# <a name="install-the-hyper-v-role-on-windows-server"></a>在 Windows Server 上安装 Hyper-v 角色
+# <a name="install-the-hyper-v-role-on-windows-server"></a>在 Windows Server 上安装 Hyper-V 角色
 
 >适用于：Windows Server 2016、Windows Server 2019
 
 若要创建和运行虚拟机，请在 Windows Server 上安装 Hyper-v 角色，方法是使用服务器管理器或在 Windows PowerShell 中使用**add-windowsfeature** cmdlet。
-对于 Windows 10，请参阅[在 windows 10 上安装 hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
+对于 Windows 10，请参阅[在 windows 10 上安装 hyper-v](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
 
 若要了解有关 Hyper-v 的详细信息，请参阅[Hyper-v 技术概述](../Hyper-V-Technology-Overview.md)。 若要试用 Windows Server 2019，你可以下载并安装评估副本。 请参阅[评估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019)。
 
@@ -35,7 +33,7 @@ ms.locfileid: "85475644"
 
 1. 在“服务器管理器”**** 中的“管理”**** 菜单上，单击“添加角色和功能”****。
 
-2. 在 **“开始之前”** 页面上，确定目标服务器和网络环境已为要安装的角色和功能做好准备。 单击“下一步”****。
+2. 在 **“开始之前”** 页面上，确定目标服务器和网络环境已为要安装的角色和功能做好准备。 单击“下一步”。
 
 3. 在“选择安装类型”**** 页上，选择“基于角色或功能的安装”****，然后单击“下一步”****。
 
@@ -78,4 +76,4 @@ ms.locfileid: "85475644"
 
 ## <a name="additional-references"></a>其他参考
 
-- [Add-windowsfeature](https://docs.microsoft.com/powershell/module/Microsoft.Windows.ServerManager.Migration/Install-WindowsFeature)
+- [Add-windowsfeature](/powershell/module/Microsoft.Windows.ServerManager.Migration/Install-WindowsFeature)

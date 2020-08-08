@@ -6,18 +6,16 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ab3c72e2e418450509e4ffce57a41e88cd60f47d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: ad4275bf7b6231692171209b19c4c60190e30126
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182363"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942973"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>附录 A：查看 AD FS 要求
 
-为了使你的 Active Directory 联合身份验证服务（AD FS）部署中的组织伙伴可以成功地进行协作，你必须首先确保你的企业网络基础结构配置为支持帐户、名称解析和证书的 AD FS 要求。 AD FS 提出了以下类型的要求：
+为了使 Active Directory 联合身份验证服务 (AD FS) 部署的组织伙伴可以成功地进行协作，你必须首先确保你的企业网络基础结构配置为支持帐户、名称解析和证书的 AD FS 要求。 AD FS 提出了以下类型的要求：
 
 > [!TIP]
 > 你可以在[了解密钥 AD FS 概念](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/understanding-key-ad-fs-concepts)中找到其他 AD FS 资源链接。
@@ -92,9 +90,9 @@ AD FS 将创建必须存储在客户端计算机上的基于会话的 Cookie 和
 要使用 AD FS，在客户端、域控制器以及承载联合身份验证服务、联合身份验证服务代理（如果使用）和 AD FS Web 代理的计算机之间必须存在 TCP/IP 网络连接。
 
 ### <a name="dns"></a>DNS
-Active Directory 域服务（AD DS）以外的 AD FS 操作的主要网络服务是域名系统（DNS）。 在部署 DNS 时，用户可以使用很容易记住的友好的计算机名称来连接到 IP 网络上的计算机以及其他资源。
+主要网络服务对 AD FS 的操作至关重要，而不是 (AD DS) Active Directory 域服务，它是域名系统 (DNS) 。 在部署 DNS 时，用户可以使用很容易记住的友好的计算机名称来连接到 IP 网络上的计算机以及其他资源。
 
- Windows Server 2008 使用 DNS 进行名称解析，而不是在基于 Windows NT 4.0 的网络中使用的 Windows Internet 名称服务（WINS） NetBIOS 名称解析。 仍可能将 WINS 用于需要它的应用程序。 但是，AD DS 和 AD FS 需要 DNS 名称解析。
+ Windows Server 2008 使用 DNS 进行名称解析，而不是 Windows Internet 名称服务 (WINS) 在基于 Windows NT 4.0 的网络中使用的 NetBIOS 名称解析。 仍可能将 WINS 用于需要它的应用程序。 但是，AD DS 和 AD FS 需要 DNS 名称解析。
 
 配置 DNS 以支持 AD FS 的过程会有所不同，具体取决于是否：
 
@@ -120,7 +118,7 @@ AD FS 要求至少使用一个属性存储来对用户进行身份验证，并�
 在加入域的计算机上安装和配置 AD FS 时，该域的 Active Directory 用户帐户存储可作为可选属性存储。
 
 > [!IMPORTANT]
-> 由于 AD FS 需要安装 Internet Information Services （IIS），因此出于安全考虑，我们建议您不要在生产环境中的域控制器上安装 AD FS 软件。 但是，此配置受 Microsoft 客户服务支持部门的支持。
+> 由于 AD FS 需要 (IIS) 安装 Internet Information Services，因此出于安全考虑，建议不要在生产环境中的域控制器上安装 AD FS 软件。 但是，此配置受 Microsoft 客户服务支持部门的支持。
 
 #### <a name="schema-requirements"></a>架构要求
 AD FS 不要求对 AD DS 进行架构更改或功能级的修改。
@@ -135,7 +133,7 @@ AD FS 不要求对 AD DS 进行架构更改或功能级的修改。
 使用其他基于轻型目录访问协议 (LDAP) 的属性存储时，你必须连接到支持 Windows 集成身份验证的 LDAP 服务器。 必须采用如 RFC 2255 中所述的 LDAP URL 格式编写 LDAP 连接字符串。
 
 ### <a name="sql-server"></a>SQL Server
-要使 AD FS 成功运行，承载结构化查询语言（SQL）服务器属性存储的计算机必须运行 Microsoft SQL Server 2005 或 SQL Server 2008。 使用基于 SQL 的属性存储时，还必须配置连接字符串。
+要使 AD FS 成功运行，承载 (SQL) Server 属性存储结构化查询语言的计算机必须 Microsoft SQL Server 2005 或 SQL Server 2008 运行。 使用基于 SQL 的属性存储时，还必须配置连接字符串。
 
 ### <a name="custom-attribute-stores"></a>自定义属性存储
 你可以开发自定义属性存储来启用高级方案。 内置于 AD FS 的策略语言可以引用自定义属性存储，以便可以增强以下任何方案：
@@ -161,7 +159,7 @@ AD FS 自然与现有 Windows 身份验证集成，例如 Kerberos 身份验证�
 AD FS 联合服务器代理角色使得使用 SSL 客户端身份验证从外部进行用户身份验证变为可能。 你还可以将联合服务器角色配置为要求 SSL 客户端身份验证，尽管通常最无缝的用户体验是通过配置 Windows 集成身份验证的帐户联合服务器来实现。 在这种情况下，AD FS 不能控制用户使用的 Windows 桌面登录的凭据。
 
 ### <a name="smart-card-logon"></a>智能卡登录
-尽管 AD FS 可以强制实施身份验证所用的凭据类型（密码、SSL 客户端身份验证或 Windows 集成身份验证），但它不会直接强制使用智能卡进行身份验证。 因此，AD FS 不提供客户端用户界面（UI）来获取智能卡个人标识号（PIN）凭据。 这是因为基于 Windows 的客户端有意不向联合服务器或 Web 服务器提供用户凭据的详细信息。
+尽管 AD FS 可以强制使用 (密码、SSL 客户端身份验证或 Windows 集成身份验证) 进行身份验证时所使用的凭据类型，但它不会直接强制使用智能卡进行身份验证。 因此，AD FS 不提供客户端用户界面 (UI) 获取智能卡个人标识号 (PIN) 凭据。 这是因为基于 Windows 的客户端有意不向联合服务器或 Web 服务器提供用户凭据的详细信息。
 
 ### <a name="smart-card-authentication"></a>智能卡身份验证
 智能卡身份验证使用 Kerberos 协议对帐户联合服务器进行身份验证。 AD FS 无法扩展以添加新的身份验证方法。 智能卡中的证书不需要链接到客户端计算机上的受信任的根。 使用带有 AD FS 的基于智能卡的证书需要以下条件：

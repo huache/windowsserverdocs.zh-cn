@@ -1,22 +1,20 @@
 ---
-title: 在新的专用林中使用 TPM 模式初始化 HGS 群集（默认值）
-ms.prod: windows-server
+title: '在新的专用林中使用 TPM 模式初始化 HGS 群集 (默认值) '
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: ba7543dfa92942c6854edb6b0d7f0f6ee2547766
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 47e0780eb846e690c766dd241060d2687587c7ff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856640"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961641"
 ---
-# <a name="initialize-the-hgs-cluster-using-tpm-mode-in-a-new-dedicated-forest-default"></a>在新的专用林中使用 TPM 模式初始化 HGS 群集（默认值）
+# <a name="initialize-the-hgs-cluster-using-tpm-mode-in-a-new-dedicated-forest-default"></a>在新的专用林中使用 TPM 模式初始化 HGS 群集 (默认值) 
 
->适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
 1.  [!INCLUDE [Initialize HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-one.md)]
 
@@ -33,7 +31,7 @@ ms.locfileid: "80856640"
         Initialize-HgsServer -HgsServiceName 'MyHgsDNN' -SigningCertificatePath '.\signCert.pfx' -SigningCertificatePassword $signingCertPass -EncryptionCertificatePath '.\encCert.pfx' -EncryptionCertificatePassword $encryptionCertPass -TrustTpm
         ```
 
-    -   如果你使用的是本地证书存储中安装的不可导出的证书，请运行以下命令。 如果你不知道证书的指纹，可以通过运行 `Get-ChildItem Cert:\LocalMachine\My`列出可用的证书。
+    -   如果你使用的是本地证书存储中安装的不可导出的证书，请运行以下命令。 如果你不知道证书的指纹，可以通过运行来列出可用的证书 `Get-ChildItem Cert:\LocalMachine\My` 。
 
         ```powershell
         Initialize-HgsServer -HgsServiceName 'MyHgsDNN' -SigningCertificateThumbprint '1A2B3C4D5E6F...' -EncryptionCertificateThumbprint '0F9E8D7C6B5A...' -TrustTpm
@@ -43,8 +41,7 @@ ms.locfileid: "80856640"
 
 5.  [!INCLUDE [Initialize HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-five.md)]
 
-## <a name="next-step"></a>下一步
+## <a name="next-step"></a>后续步骤
 
 > [!div class="nextstepaction"]
 > [安装 TPM 根证书](guarded-fabric-install-trusted-tpm-root-certificates.md)
-  

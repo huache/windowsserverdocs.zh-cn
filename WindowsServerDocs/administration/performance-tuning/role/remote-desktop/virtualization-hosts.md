@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 071321249db62c927ee5677a48c52a7f2cd9c20d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 235dd0209030854f1fc883f52ab41550ab693dc5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896035"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992079"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>性能优化远程桌面虚拟化主机
 
@@ -104,7 +104,7 @@ Windows Server 2012 和更高版本中的故障转移群集在群集共享卷上
 | Internet 连接共享                  | 以用户为中心的服务                                                                                                                                                                                  |
 | Media Center 扩展服务               | 以用户为中心的服务                                                                                                                                                                                  |
 > [!NOTE]
-> 此列表并不是完整列表，因为任何更改都将影响目标和方案。 有关详细信息，请参阅[热关闭按下、立即获取 Windows 8 VDI 优化脚本、/pfe！](https://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)。
+> 此列表并不是完整列表，因为任何更改都将影响目标和方案。 有关详细信息，请参阅[热关闭按下、立即获取 Windows 8 VDI 优化脚本、/pfe！](/archive/blogs/jeff_stokes/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe)。
 
 
 > [!NOTE]

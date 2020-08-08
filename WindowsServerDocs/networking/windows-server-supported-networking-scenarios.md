@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 5a0f8d372c8e84e6e9140ef40f89c1fa7b116355
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0059e04b79754a3fb183a51cbd75bc03e9a89ae5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939998"
+ms.locfileid: "87997546"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Windows Server 支持的网络方案
 
@@ -170,7 +170,7 @@ NIC 组合方案使你能够：
 
 SET 是一种备用 NIC 组合解决方案，可用于在 Windows Server 2016 中包含 Hyper-v 的环境和软件定义的网络 (SDN) 堆栈。 将一些 NIC 组合功能集成到 Hyper-v 虚拟交换机。
 
-有关详细信息，请参阅[ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (集) ](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)
+有关详细信息，请参阅[ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (集) ](../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)
 
 
 
@@ -180,6 +180,3 @@ Windows Server 2016 不支持以下网络方案。
 -   基于 VLAN 的租户虚拟网络。
 
 -   是或覆盖区中不支持 IPv6。
-
-
-

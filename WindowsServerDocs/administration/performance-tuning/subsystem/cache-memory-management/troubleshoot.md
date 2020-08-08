@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e36ad09b86469e50f385775290f55ff82bb26964
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ba6c04ca8ac1941221809af958a9d6c53701b101
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895969"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992019"
 ---
 # <a name="troubleshoot-cache-and-memory-manager-performance-issues"></a>排查缓存和内存管理器性能问题
 
@@ -25,7 +25,7 @@ ms.locfileid: "87895969"
 
 -   内存 \\ 系统缓存驻留字节数
 
-如果内存 \\ 可用的兆字节数较低，并且在同一时间内存 \\ 系统缓存驻留字节消耗的物理内存很大，则可以使用[RAMMAP](https://technet.microsoft.com/sysinternals/ff700229.aspx)来找出缓存的用途。
+如果内存 \\ 可用的兆字节数较低，并且在同一时间内存 \\ 系统缓存驻留字节消耗的物理内存很大，则可以使用[RAMMAP](/sysinternals/downloads/rammap)来找出缓存的用途。
 
 ## <a name="system-file-cache-contains-ntfs-metafile-data-structures"></a>系统文件缓存包含 NTFS 图元文件数据结构
 
@@ -39,10 +39,10 @@ RAMMAP 输出中的活动图元文件页面非常多，如下图所示。 此问
 ## <a name="system-file-cache-contains-memory-mapped-files"></a>系统文件缓存包含内存映射文件
 
 
-此问题在 RAMMAP 输出中有大量活动映射的文件页面。 这通常表示服务器上的某些应用程序使用[CreateFile](https://msdn.microsoft.com/library/windows/desktop/aa363858.aspx) API 打开大量使用文件 \_ 标志 \_ 随机访问标志的大型文件 \_ 。
+此问题在 RAMMAP 输出中有大量活动映射的文件页面。 这通常表示服务器上的某些应用程序使用[CreateFile](/windows/win32/api/fileapi/nf-fileapi-createfilea) API 打开大量使用文件 \_ 标志 \_ 随机访问标志的大型文件 \_ 。
 
 知识库文章[2549369](https://support.microsoft.com/default.aspx?scid=kb;en-US;2549369)中详细描述了此问题。 "文件 \_ 标志 \_ 随机访问" \_ 标志是一个提示，用于缓存管理器在内存中保留文件的映射视图 (，直到内存管理器不) 内存不足条件。 同时，此标志指示缓存管理器禁用文件数据的预提取。
 
-在 Windows Server 2012 + 中进行工作集修整改进后，这种情况已被缓解为某种程度，但问题本身也需要由应用程序供应商通过使用文件 \_ 标志 \_ 随机 \_ 访问来解决。 应用程序供应商的替代解决方案可能是在访问文件时使用低内存优先级。 这可以通过使用[SetThreadInformation](https://msdn.microsoft.com/library/windows/desktop/hh448390.aspx) API 来实现。 更主动地从工作集中删除以低内存优先级访问的页面。
+在 Windows Server 2012 + 中进行工作集修整改进后，这种情况已被缓解为某种程度，但问题本身也需要由应用程序供应商通过使用文件 \_ 标志 \_ 随机 \_ 访问来解决。 应用程序供应商的替代解决方案可能是在访问文件时使用低内存优先级。 这可以通过使用[SetThreadInformation](/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadinformation) API 来实现。 更主动地从工作集中删除以低内存优先级访问的页面。
 
 从 Windows Server 2016 开始，缓存管理器进一步减轻了这一点，因为在进行修整决策时忽略了 FILE_FLAG_RANDOM_ACCESS，因此它的处理方式与没有 FILE_FLAG_RANDOM_ACCESS 标志的任何其他文件一样， (缓存管理器仍采用此标志来禁用文件数据) 的预提取。如果有大量使用此标志打开的文件并以真正随机的方式进行访问，仍可以导致系统缓存膨胀。 强烈建议应用程序不使用 FILE_FLAG_RANDOM_ACCESS。

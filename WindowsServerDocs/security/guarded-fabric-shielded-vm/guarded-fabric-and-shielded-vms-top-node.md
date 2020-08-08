@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 7a73bf1b677d09cc31783b58148c8ca7c581fbca
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c3f17320432d44a84be05040e23e7af30995c969
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971374"
+ms.locfileid: "87997562"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>受保护的构造和受防护的 VM
 
@@ -28,7 +28,7 @@ ms.locfileid: "87971374"
 - 视频： [Windows Server 2016 中的受防护虚拟机简介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
 - 视频：[通过 Windows Server 2016 Hyper-v 深入了解受防护的 vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
 - 视频：[使用 Windows Server 2016 部署受防护的 vm 和受保护的构造](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)
-- 博客： [Datacenter 和私有云安全博客](https://blogs.technet.microsoft.com/datacentersecurity/)
+- 博客： [Datacenter 和私有云安全博客](/archive/blogs/datacentersecurity/)
 - 概述：[受保护的构造和受防护的 vm 概述](Guarded-Fabric-and-Shielded-VMs.md)
 
 ## <a name="planning-topics"></a>规划主题
@@ -46,7 +46,7 @@ ms.locfileid: "87971374"
         - [使用 AD 模式部署受保护的主机](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
         - [使用 TPM 模式部署受保护的主机](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
         - [确认受保护的主机可以证明](guarded-fabric-confirm-hosts-can-attest-successfully.md)
-        - [受防护的 VM - 主机托管服务提供商在 VMM 中部署受保护的主机](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts)
+        - [受防护的 VM - 主机托管服务提供商在 VMM 中部署受保护的主机](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019)
     - [部署受防护的 VM](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
         - [创建受防护的 VM 模板](guarded-fabric-create-a-shielded-vm-template.md)
         - [准备 VM 防护帮助程序 VHD](guarded-fabric-vm-shielding-helper-vhd.md)

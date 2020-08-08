@@ -6,14 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
-ms.openlocfilehash: ddfcf45fa897fbed4a2475332b9706fc8d9fb634
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 818fca0ed62c140b3b0c4bbb1394380d42201f79
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864196"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961311"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -639,6 +637,6 @@ Guidance: Check the detailed error and make sure the inventory requirements are 
 
 此问题是由存储迁移服务中的代码缺陷导致的。 唯一的解决方法是将计算机重命名为具有与 NetBIOS 名称相同的名称，然后使用[NETDOM COMPUTERNAME/add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11))来添加一个备用计算机名称，其中包含在开始清点之前使用的较长名称。 存储迁移服务支持迁移备用计算机名称。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [存储迁移服务概述](overview.md)

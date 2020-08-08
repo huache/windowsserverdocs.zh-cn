@@ -1,25 +1,23 @@
 ---
 title: 使用 Windows PowerShell 部署 DHCP
-description: 你可以使用本主题来部署 Windows Server 2016 Internet 协议（IP）版本4的 DHCP 服务器，它为连接到网络上的一个或多个子网的 IPv4 DHCP 客户端提供自动 IP 地址和 DHCP 选项。
-ms.prod: windows-server
-ms.technology: networking-dhcp
+description: 你可以使用本主题将 Windows Server 2016 Internet 协议部署 (IP) 版本 4 DHCP 服务器，该服务器为连接到网络上的一个或多个子网的 IPv4 DHCP 客户端提供自动 IP 地址和 DHCP 选项。
 ms.topic: article
 ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1e962948feaf6bb37beeb3c241d3ae3369be77dc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bd7d80ca79175f41944292d7a11dbc03a1e30c3d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860700"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997583"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>使用 Windows PowerShell 部署 DHCP
 
 > 适用于：Windows Server（半年频道）、Windows Server 2016
 
-本指南提供有关如何使用 Windows PowerShell 将 Internet 协议（IP）第4版动态主机配置协议（\(DHCP\) 服务器部署为连接到网络上的一个或多个子网的 IPv4 DHCP 客户端的 dhcp 服务器的说明。
+本指南提供有关如何使用 Windows PowerShell 将 Internet 协议部署 (IP) 版本4动态主机配置协议 \( DHCP \) 服务器的说明，该服务器自动向连接到网络上的一个或多个子网的 IPv4 dhcp 客户端分配 IP 地址和 dhcp 选项。
 
 > [!NOTE]
 > 若要从 TechNet 库下载此文档，请参阅[使用 Windows PowerShell 在 Windows Server 2016 中部署 DHCP](https://gallery.technet.microsoft.com/Deploy-DHCP-Using-Windows-246dd293)。
@@ -51,7 +49,7 @@ ms.locfileid: "80860700"
 
 ### <a name="dhcp-overview"></a>DHCP 概述
 
-DHCP 是用于简化主机 IP 配置管理的 IP 标准。 根据 DHCP 标准，可使用 DHCP 服务器对网络上启用了 DHCP 的客户端管理 IP 地址动态分配和其他相关的配置详细信息。
+DHCP 是用于简化主机 IP 配置管理的 IP 标准。 DHCP 标准将 DHCP 服务器用于管理网络上启用 DHCP 客户端的 IP 地址动态分配以及其他相关的配置详细信息。
 
 DHCP 允许使用 DHCP 服务器动态地将 IP 地址分配给本地网络上的计算机或其他设备（如打印机），而不是使用静态 IP 地址手动配置每个设备。
 
@@ -61,9 +59,9 @@ TCP/IP 网络上的每台计算机都必须有一个独特的 IP 地址，因为
 
 ### <a name="tcpip-overview"></a>TCP/IP 概述
 
-默认情况下，所有版本的 Windows Server 和 Windows 客户端操作系统都具有配置为自动从 DHCP 服务器获取 IP 地址和其他信息（称为 DHCP 选项）的 IP 版本4网络连接的 TCP/IP 设置。 因此，无需手动配置 TCP/IP 设置，除非计算机是需要手动配置的静态 IP 地址的服务器计算机或其他设备。 
+默认情况下，所有版本的 Windows Server 和 Windows 客户端操作系统都具有配置为自动从 DHCP 服务器获取 IP 地址和其他信息（称为 DHCP 选项）的 IP 版本4网络连接的 TCP/IP 设置。 因此，无需手动配置 TCP/IP 设置，除非计算机是需要手动配置的静态 IP 地址的服务器计算机或其他设备。
 
-例如，建议您手动配置 DHCP 服务器的 IP 地址，并 Active Directory 域服务 \(AD DS\)运行的 DNS 服务器和域控制器的 IP 地址。
+例如，建议手动配置 DHCP 服务器的 IP 地址，并 Active Directory 域服务 AD DS 运行的 DNS 服务器和域控制器的 IP 地址 \( \) 。
 
 Windows Server 2016 中的 TCP/IP 如下：
 
@@ -73,7 +71,7 @@ Windows Server 2016 中的 TCP/IP 如下：
 
 - 用于连接基于 Windows 的计算机与不同的系统以便共享信息的核心技术和实用程序。
 
-- 获取对全球 Internet 服务（如 Web 和文件传输协议（FTP）服务器）的访问的基础。
+- 获取对全球 Internet 服务（如 Web 和文件传输协议） (FTP) 服务器的访问的基础。
 
 - 强大、可扩展的跨平台客户端/服务器框架。
 
@@ -145,7 +143,7 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 - 为向 DHCP 客户端进行分配而配置的所有 DHCP 作用域选项，例如 DNS 服务器 IP 地址和路由器/默认网关 IP 地址。
 
-- 保留，可以选择用于确保 DHCP 客户端始终接收相同的 IP 地址。
+- 预留，可以选择用于确保 DHCP 客户端始终接收相同的 IP 地址。
 
 部署服务器之前，请列出子网以及要用于每个子网的 IP 地址范围。
 
@@ -159,7 +157,7 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 11111111 11111111 00000000 00000000
 ```
 
-此子网掩码号为 16 1 位后跟16个零位，这表明此 IP 地址的网络 ID 和主机 ID 部分的长度都是16位。 通常，该子网掩码采用点分隔的十进制表示法显示为 255.255.0.0。
+该子网掩码数字是前面 16 个 1 位，后跟 16 个 0 位，表示该 IP 地址的网络 ID 和主机 ID 部分的长度都是 16 位。 通常，该子网掩码采用点分隔的十进制表示法显示为 255.255.0.0。
 
 下表显示了 Internet 地址类别的子网掩码。
 
@@ -167,7 +165,7 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 |-----------------|------------------------|---------------|
 |类 A|11111111 00000000 00000000 00000000|255.0.0.0|
 |类 B|11111111 11111111 00000000 00000000|255.255.0.0|
-|C 类|11111111 11111111 11111111 00000000|255.255.255.0|
+|类 C|11111111 11111111 11111111 00000000|255.255.255.0|
 
 在 DHCP 中创建作用域并且为该作用域输入 IP 地址范围时，DHCP 提供这些默认的子网掩码值。 通常，默认的子网掩码值对于没有特殊要求的大多数网络来说都是可以接受的，其中每个 IP 网段对应于一个物理网络。
 
@@ -185,9 +183,9 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 可以通过为每个作用域创建一个排除范围，从 DHCP 服务器的分发中排除 IP 地址。 应该对配置有静态 IP 地址的所有设备使用排除。 所排除的地址应包括所有手动分配给其他服务器、非 DHCP 客户端、无盘工作站或路由和远程访问及 PPP 客户端的 IP 地址。
 
-建议你将排除范围配置为具有额外地址，以适应未来网络的扩容。 下表提供了一个 IP 地址范围为 10.0.0.1-10.0.0.254、子网掩码为255.255.255.0 的作用域的示例排除范围。
+建议你将排除范围配置为具有额外地址，以适应未来网络的扩容。 下表提供了一个 IP 地址范围为 10.0.0.1 - 10.0.0.254 且子网掩码为 255.255.255.0 的作用域示例排除范围。
 
-|配置项|示例值|
+|配置项目|示例值|
 |-----------------------|------------------|
 |排除范围起始 IP 地址|10.0.0.1|
 |排除范围结束 IP 地址|10.0.0.25|
@@ -200,24 +198,24 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 在本例中，使用 10 个排除的 IP 地址将服务器和其他设备配置为静态 IP 地址，剩下的其他 5 个 IP 地址用于将来可能希望添加的新设备的静态配置。 对于此排除范围，DHCP 服务器将保留 192.168.0.16 到 192.168.0.254 的地址池。
 
-下表提供了 AD DS 和 DNS 的其他示例配置项目。
+下表提供了 AD DS 和 DNS 的其他示例配置项。
 
-|配置项|示例值|
+|配置项目|示例值|
 |-----------------------|------------------|
 |网络连接绑定|以太网|
 |DNS 服务器设置|DC1.corp.contoso.com|
 |首选 DNS 服务器 IP 地址|10.0.0.2|
-|作用域值<p>1. 范围名称<br />2. 起始 IP 地址<br />3. 结束 IP 地址<br />4. 子网掩码<br />5. 默认网关（可选）<br />6. 租约期限|1. 主子网<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6 8 天|
+|范围值<p>1. 范围名称<br />2. 起始 IP 地址<br />3. 结束 IP 地址<br />4. 子网掩码<br />5. 默认网关 (可选) <br />6. 租约期限|1. 主子网<br />2. 10.0.0。1<br />3. 10.0.0.254<br />4. 255.255.255。0<br />5. 10.0.0。1<br />6 8 天|
 |IPv6 DHCP 服务器操作模式|未启用|
 
 ## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>在测试实验室中使用本指南
 
-在生产环境中部署之前，可以使用本指南在测试实验室中部署 DHCP。 
+在生产环境中部署之前，可以使用本指南在测试实验室中部署 DHCP。
 
 > [!NOTE]
 > 如果你不想在测试实验室中部署 DHCP，则可以跳到[部署 dhcp](#bkmk_deploy)部分。
 
-根据你使用的是物理服务器还是虚拟机 \(Vm\)，以及你是使用 Active Directory 域还是部署独立的 DHCP 服务器，你的实验室的要求会有所不同。
+根据你使用的是物理服务器还是虚拟机 \( vm \) ，以及你使用的是 Active Directory 域还是部署独立的 DHCP 服务器，你的实验室要求会有所不同。
 
 你可以使用以下信息来确定使用本指南测试 DHCP 部署所需的最少资源。
 
@@ -225,7 +223,7 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 若要在测试实验室中使用 Vm 部署 DHCP，需要以下资源。
 
-对于域部署或独立部署，需要一个配置为超级\-V 主机的服务器。
+对于域部署或独立部署，需要一个配置为 Hyper-v 主机的服务器 \- 。
 
 **域部署**
 
@@ -233,9 +231,9 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 在物理服务器上的 Hyper-v 管理器中，创建以下项。
 
-1. 一个**内部**虚拟交换机。 请勿创建**外部**虚拟交换机，因为如果你的\-hyper-v 主机位于包含 dhcp 服务器的子网上，则测试 vm 将从 DHCP 服务器接收 IP 地址。 此外，部署的测试 DHCP 服务器可能会将 IP 地址分配给安装了超级\-V 主机的子网上的其他计算机。
-1. 一个运行 Windows Server 2016 的 VM 配置为域控制器，Active Directory 域服务连接到你创建的内部虚拟交换机。 若要匹配本指南，此服务器必须具有静态配置的 IP 地址10.0.0.2。 有关部署 AD DS 的信息，请参阅 Windows Server 2016 [Core 网络指南](https://docs.microsoft.com/windows-server/networking/core-network-guide/core-network-guide#BKMK_deployADDNS01)中的**部署 DC1**部分。
-1. 一个运行 Windows Server 2016 的 VM，你将使用本指南将其配置为 DHCP 服务器，并连接到你创建的内部虚拟交换机。 
+1. 一个**内部**虚拟交换机。 请勿创建**外部**虚拟交换机，因为如果你的 hyper-v \- 主机位于包含 dhcp 服务器的子网上，则测试 VM 将从 DHCP 服务器接收 IP 地址。 此外，部署的测试 DHCP 服务器可能会将 IP 地址分配给安装了 Hyper-v 主机的子网上的其他计算机 \- 。
+1. 一个运行 Windows Server 2016 的 VM 配置为域控制器，Active Directory 域服务连接到你创建的内部虚拟交换机。 若要匹配本指南，此服务器必须具有静态配置的 IP 地址10.0.0.2。 有关部署 AD DS 的信息，请参阅 Windows Server 2016 [Core 网络指南](../../core-network-guide/core-network-guide.md#BKMK_deployADDNS01)中的**部署 DC1**部分。
+1. 一个运行 Windows Server 2016 的 VM，你将使用本指南将其配置为 DHCP 服务器，并连接到你创建的内部虚拟交换机。
 1. 一个运行 Windows 客户端操作系统的虚拟机，该系统连接到您创建的内部虚拟交换机，并且将用于验证您的 DHCP 服务器是否向 DHCP 客户端动态分配 IP 地址和 DHCP 选项。
 
 **独立 DHCP 服务器部署**
@@ -244,7 +242,7 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 在物理服务器上的 Hyper-v 管理器中，创建以下项。
 
-1. 一个**内部**虚拟交换机。 请勿创建**外部**虚拟交换机，因为如果你的\-hyper-v 主机位于包含 dhcp 服务器的子网上，则测试 vm 将从 DHCP 服务器接收 IP 地址。 此外，部署的测试 DHCP 服务器可能会将 IP 地址分配给安装了超级\-V 主机的子网上的其他计算机。
+1. 一个**内部**虚拟交换机。 请勿创建**外部**虚拟交换机，因为如果你的 hyper-v \- 主机位于包含 dhcp 服务器的子网上，则测试 VM 将从 DHCP 服务器接收 IP 地址。 此外，部署的测试 DHCP 服务器可能会将 IP 地址分配给安装了 Hyper-v 主机的子网上的其他计算机 \- 。
 2. 一个运行 Windows Server 2016 的 VM，你将使用本指南将其配置为 DHCP 服务器，并连接到你创建的内部虚拟交换机。
 3. 一个运行 Windows 客户端操作系统的虚拟机，该系统连接到您创建的内部虚拟交换机，并且将用于验证您的 DHCP 服务器是否向 DHCP 客户端动态分配 IP 地址和 DHCP 选项。
 
@@ -257,7 +255,7 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 此部署需要一个集线器或交换机、两个物理服务器和一个物理客户端：
 
 1. 可以将物理计算机连接到以太网电缆的一个以太网集线器或交换机
-2. 一台运行 Windows Server 2016 的物理计算机配置为带有 Active Directory 域服务的域控制器。 若要匹配本指南，此服务器必须具有静态配置的 IP 地址10.0.0.2。 有关部署 AD DS 的信息，请参阅 Windows Server 2016 [Core 网络指南](https://docs.microsoft.com/windows-server/networking/core-network-guide/core-network-guide#BKMK_deployADDNS01)中的**部署 DC1**部分。
+2. 一台运行 Windows Server 2016 的物理计算机配置为带有 Active Directory 域服务的域控制器。 若要匹配本指南，此服务器必须具有静态配置的 IP 地址10.0.0.2。 有关部署 AD DS 的信息，请参阅 Windows Server 2016 [Core 网络指南](../../core-network-guide/core-network-guide.md#BKMK_deployADDNS01)中的**部署 DC1**部分。
 3. 一台运行 Windows Server 2016 的物理计算机，你将使用本指南将其配置为 DHCP 服务器。
 4. 一台运行 Windows 客户端操作系统的物理计算机，你将使用它来验证你的 DHCP 服务器是否将 IP 地址和 DHCP 选项动态分配给 DHCP 客户端。
 
@@ -275,12 +273,12 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 ## <a name="deploy-dhcp"></a><a name="bkmk_deploy"></a>部署 DHCP
 
-本部分提供了可用于在一台服务器上部署 DHCP 的示例 Windows PowerShell 命令。 在服务器上运行这些示例命令之前，必须修改这些命令以匹配网络和环境。 
+本部分提供了可用于在一台服务器上部署 DHCP 的示例 Windows PowerShell 命令。 在服务器上运行这些示例命令之前，必须修改这些命令以匹配网络和环境。
 
 例如，在运行这些命令之前，应将命令中的示例值替换为以下项：
 
 - 计算机名称
-- 要配置的每个作用域的 IP 地址范围（每个子网1个作用域）
+- 要配置的每个作用域的 IP 地址范围 (1 个子网范围) 
 - 要配置的每个 IP 地址范围的子网掩码
 - 每个作用域的范围名称
 - 每个作用域的排除范围
@@ -292,9 +290,9 @@ TCP/IP 提供了基本的 TCP/IP 实用程序，它使基于 Windows 的计算�
 
 ### <a name="where-to-install-dhcp---on-a-physical-computer-or-a-vm"></a>在物理计算机或 VM 上安装 DHCP 的位置？
 
-您可以在物理计算机上或在安装在\-Hyper-v 主机上 \(VM\) 上的虚拟机上安装 DHCP 服务器角色。 如果要在虚拟机上安装 DHCP，并且希望 DHCP 服务器向 Hyper-v 主机所连接的物理网络上的计算机提供 IP 地址分配，则必须将 VM 虚拟网络适配器连接到**外部**的 Hyper-v 虚拟交换机。
+您可以在物理计算机上或在 \( \) 安装在 hyper-v 主机上的虚拟机 VM 上安装 DHCP 服务器角色 \- 。 如果要在虚拟机上安装 DHCP，并且希望 DHCP 服务器向 Hyper-v 主机所连接的物理网络上的计算机提供 IP 地址分配，则必须将 VM 虚拟网络适配器连接到**外部**的 Hyper-v 虚拟交换机。
 
-有关详细信息，请参阅[创建虚拟网络](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network)主题中的**使用 Hyper-v 管理器创建虚拟交换机**部分。
+有关详细信息，请参阅[创建虚拟网络](/virtualization/hyper-v-on-windows/quick-start/connect-to-network)主题中的**使用 Hyper-v 管理器创建虚拟交换机**部分。
 
 ### <a name="run-windows-powershell-as-an-administrator"></a>以管理员身份运行 Windows PowerShell
 
@@ -321,8 +319,8 @@ Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 10.0.0.2
 
 有关这些命令的详细信息，请参阅以下主题。
 
-- [新-New-netipaddress](https://docs.microsoft.com/powershell/module/nettcpip/New-NetIPAddress)
-- [DnsClientServerAddress](https://docs.microsoft.com/powershell/module/dnsclient/Set-DnsClientServerAddress)
+- [新-New-netipaddress](/powershell/module/nettcpip/New-NetIPAddress)
+- [DnsClientServerAddress](/powershell/module/dnsclient/Set-DnsClientServerAddress)
 
 **重命名计算机**
 
@@ -335,10 +333,10 @@ Restart-Computer
 
 有关这些命令的详细信息，请参阅以下主题。
 
-- [重命名-计算机](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer)
-- [Restart-Computer](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer)
+- [Rename-Computer](/powershell/module/microsoft.powershell.management/rename-computer)
+- [Restart-Computer](/powershell/module/microsoft.powershell.management/restart-computer)
 
-### <a name="join-the-computer-to-the-domain-optional"></a>将计算机加入域 \(可选\)
+### <a name="join-the-computer-to-the-domain-optional"></a>将计算机加入域（ \( 可选）\)
 
 如果要在 Active Directory 域环境中安装 DHCP 服务器，则必须将计算机加入域。 使用管理员权限打开 Windows PowerShell，然后在将域 NetBios 名称**CORP**替换为适合你的环境的值后运行以下命令。
 
@@ -346,7 +344,7 @@ Restart-Computer
 Add-Computer CORP
 ```
 
-出现提示时，键入有权将计算机加入域的域用户帐户的凭据。 
+出现提示时，键入有权将计算机加入域的域用户帐户的凭据。
 
 ```
 Restart-Computer
@@ -354,7 +352,7 @@ Restart-Computer
 
 有关 "添加计算机" 命令的详细信息，请参阅以下主题。
 
-- [添加计算机](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1)
+- [Add-Computer](/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1)
 
 ### <a name="install-dhcp"></a>安装 DHCP
 
@@ -366,11 +364,11 @@ Install-WindowsFeature DHCP -IncludeManagementTools
 
 有关此命令的详细信息，请参阅以下主题。
 
-- [Add-windowsfeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature)
+- [Add-windowsfeature](/powershell/module/servermanager/install-windowsfeature)
 
 ### <a name="create-dhcp-security-groups"></a>创建 DHCP 安全组
 
-若要创建安全组，必须在 Windows PowerShell 中运行 \(netsh\) 命令，然后重新启动 DHCP 服务，以便新组生效。
+若要创建安全组，必须 \( \) 在 Windows PowerShell 中运行网络 Shell netsh 命令，然后重新启动 DHCP 服务，使新组变为活动状态。
 
 在 DHCP 服务器上运行以下 netsh 命令时，将在 DHCP 服务器上的 "**本地用户和组**" 中创建**Dhcp 管理员**和**dhcp 用户**安全组。
 
@@ -387,16 +385,16 @@ Restart-Service dhcpserver
 有关这些命令的详细信息，请参阅以下主题。
 
 - [Network Shell (Netsh)](../netsh/netsh.md)
-- [重新启动-服务](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-service)
+- [Restart-Service](/powershell/module/microsoft.powershell.management/restart-service)
 
-### <a name="authorize-the-dhcp-server-in-active-directory-optional"></a>在 Active Directory 中授权 DHCP 服务器 \(可选\)
+### <a name="authorize-the-dhcp-server-in-active-directory-optional"></a>Active Directory 可选中授权 DHCP 服务器 \(\)
 
 如果在域环境中安装 DHCP，则必须执行以下步骤来授权 DHCP 服务器在域中运行。
 
 > [!NOTE]
 > 在 Active Directory 域中安装的未经授权的 DHCP 服务器无法正常工作，并且不会将 IP 地址租给 DHCP 客户端。 自动禁用未经授权的 DHCP 服务器是一项安全功能，可阻止未经授权的 DHCP 服务器向网络上的客户端分配不正确的 IP 地址。
 
-你可以使用以下命令将 DHCP 服务器添加到 Active Directory 中授权的 DHCP 服务器列表。 
+你可以使用以下命令将 DHCP 服务器添加到 Active Directory 中授权的 DHCP 服务器列表。
 
 > [!NOTE]
 > 如果没有域环境，请不要运行此命令。
@@ -421,14 +419,14 @@ IPAddress   DnsName
 
 有关这些命令的详细信息，请参阅以下主题。
 
-- [DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/add-dhcpserverindc)
-- [DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/get-dhcpserverindc)
+- [DhcpServerInDC](/powershell/module/dhcpserver/add-dhcpserverindc)
+- [DhcpServerInDC](/powershell/module/dhcpserver/get-dhcpserverindc)
 
-### <a name="notify-server-manager-that-post-install-dhcp-configuration-is-complete-optional"></a>通知服务器管理器 post\-安装 DHCP 配置已完成 \(可选\)
+### <a name="notify-server-manager-that-post-install-dhcp-configuration-is-complete-optional"></a>通知服务器管理器安装后的 \- DHCP 配置是否完全 \( 可选\)
 
-完成 post\-安装任务后（如在 Active Directory 中创建安全组和授权 DHCP 服务器），服务器管理器仍可能在用户界面中显示警报，指出必须使用 DHCP 安装后配置向导完成\-后的安装步骤。
+完成 \- 安装后任务（例如在 Active Directory 中创建安全组和授权 DHCP 服务器）后，服务器管理器可能仍会在用户界面中显示警报，指出 \- 必须使用 DHCP 安装后配置向导完成安装后的步骤。
 
-你现在可以通过使用此 Windows PowerShell 命令配置以下注册表项来阻止此错误，\-不必要且不准确的消息出现在服务器管理器中。
+你可以 \- 通过使用此 Windows PowerShell 命令配置以下注册表项来阻止此错误消息在服务器管理器中出现。
 
 ```
 Set-ItemProperty –Path registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager\Roles\12 –Name ConfigurationState –Value 2
@@ -436,9 +434,9 @@ Set-ItemProperty –Path registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerM
 
 有关此命令的详细信息，请参阅以下主题。
 
-- [Set-itemproperty](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty)
+- [Set-ItemProperty](/powershell/module/microsoft.powershell.management/set-itemproperty)
 
-### <a name="set-server-level-dns-dynamic-update-configuration-settings-optional"></a>将服务器级别 DNS 动态更新配置设置 \(可选\)
+### <a name="set-server-level-dns-dynamic-update-configuration-settings-optional"></a>设置服务器级 DNS 动态更新配置设置（ \( 可选）\)
 
 如果希望 DHCP 服务器为 DHCP 客户端计算机执行 DNS 动态更新，可以运行以下命令来配置此设置。 这是服务器级别设置，而不是作用域级别设置，因此它将影响你在服务器上配置的所有作用域。 此示例命令还会将 DHCP 服务器配置为在客户端最少过期时删除客户端的 DNS 资源记录。
 
@@ -447,23 +445,23 @@ Set-DhcpServerv4DnsSetting -ComputerName "DHCP1.corp.contoso.com" -DynamicUpdate
 ```
 
 你可以使用以下命令来配置 DHCP 服务器用于在 DNS 服务器上注册或取消注册客户端记录的凭据。 此示例将凭据保存在 DHCP 服务器上。 第一个命令使用**Get-Credential**创建**PSCredential**对象，然后将该对象存储在 **$Credential**的变量中。 此命令会提示你输入用户名和密码，因此请确保你为有权更新 DNS 服务器上的资源记录的帐户提供凭据。
- 
+
 ```
 $Credential = Get-Credential
 Set-DhcpServerDnsCredential -Credential $Credential -ComputerName "DHCP1.corp.contoso.com"
-``` 
+```
 
 有关这些命令的详细信息，请参阅以下主题。
 
-- [DhcpServerv4DnsSetting](https://docs.microsoft.com/powershell/module/dhcpserver/set-dhcpserverv4dnssetting)
-- [DhcpServerDnsCredential](https://docs.microsoft.com/powershell/module/dhcpserver/set-dhcpserverdnscredential)
+- [Set-DhcpServerv4DnsSetting](/powershell/module/dhcpserver/set-dhcpserverv4dnssetting)
+- [Set-DhcpServerDnsCredential](/powershell/module/dhcpserver/set-dhcpserverdnscredential)
 
 ### <a name="configure-the-corpnet-scope"></a>配置公司网络范围
 
 DHCP 安装完成后，可以使用以下命令来配置和激活公司网络作用域、为作用域创建排除范围以及配置 DHCP 选项默认网关、DNS 服务器 IP 地址和 DNS 域名。
 
 ```
-Add-DhcpServerv4Scope -name "Corpnet" -StartRange 10.0.0.1 -EndRange 10.0.0.254 -SubnetMask 255.255.255.0 -State Active    
+Add-DhcpServerv4Scope -name "Corpnet" -StartRange 10.0.0.1 -EndRange 10.0.0.254 -SubnetMask 255.255.255.0 -State Active
 Add-DhcpServerv4ExclusionRange -ScopeID 10.0.0.0 -StartRange 10.0.0.1 -EndRange 10.0.0.15
 Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.0.1 -ScopeID 10.0.0.0 -ComputerName DHCP1.corp.contoso.com
 Set-DhcpServerv4OptionValue -DnsDomain corp.contoso.com -DnsServer 10.0.0.2
@@ -471,13 +469,13 @@ Set-DhcpServerv4OptionValue -DnsDomain corp.contoso.com -DnsServer 10.0.0.2
 
 有关这些命令的详细信息，请参阅以下主题。
 
-- [DhcpServerv4Scope](https://docs.microsoft.com/powershell/module/dhcpserver/Add-DhcpServerv4Scope)
-- [DhcpServerv4ExclusionRange](https://docs.microsoft.com/powershell/module/dhcpserver/Add-DhcpServerv4ExclusionRange)
-- [DhcpServerv4OptionValue](https://docs.microsoft.com/powershell/module/dhcpserver/Set-DhcpServerv4OptionValue)
+- [DhcpServerv4Scope](/powershell/module/dhcpserver/Add-DhcpServerv4Scope)
+- [DhcpServerv4ExclusionRange](/powershell/module/dhcpserver/Add-DhcpServerv4ExclusionRange)
+- [DhcpServerv4OptionValue](/powershell/module/dhcpserver/Set-DhcpServerv4OptionValue)
 
-### <a name="configure-the-corpnet2-scope-optional"></a>配置 Corpnet2 范围 \(可选\)
+### <a name="configure-the-corpnet2-scope-optional"></a>配置 Corpnet2 范围（ \( 可选）\)
 
-如果有一个连接到第一个子网的子网，并且该子网已启用 DHCP 转发，则可以使用以下命令为此示例添加名为 Corpnet2 的第二个作用域。 此示例还将配置排除范围和默认网关的 IP 地址，\(Corpnet2 子网的子网\) 上的路由器 IP 地址。
+如果有一个连接到第一个子网的子网，并且该子网已启用 DHCP 转发，则可以使用以下命令为此示例添加名为 Corpnet2 的第二个作用域。 此示例还将配置排除范围和默认网关的 IP 地址 \( 。 Corpnet2 子网的子网中的路由器 IP 地址 \) 。
 
 ```
 Add-DhcpServerv4Scope -name "Corpnet2" -StartRange 10.0.1.1 -EndRange 10.0.1.254 -SubnetMask 255.255.255.0 -State Active
@@ -498,8 +496,8 @@ Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.1.1 -ScopeID 10.0.1.0 -Compu
 
 1. 确保将以太网电缆插入计算机和以太网交换机、集线器或路由器。
 2. 如果将客户端计算机连接到网络段（由路由器与 DHCP 服务器隔离），请确保已将路由器配置为转发 DHCP 消息。
-3. 通过运行以下命令从 Active Directory 中检索授权的 DHCP 服务器的列表，确保 DHCP 服务器已在 Active Directory 中获得授权。 [DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/Get-DhcpServerInDC)。
-4. 通过打开 DHCP 控制台 \("服务器管理器"、"**工具**"、" **dhcp** "\)，展开服务器树以查看作用域，然后\-单击每个作用域，确保已激活作用域。 如果生成的菜单包含选择 "**激活**"，请单击 "**激活**"。 \(如果已激活作用域，则菜单选择将显示 "**停用**"。\)
+3. 通过运行以下命令从 Active Directory 中检索授权的 DHCP 服务器的列表，确保 DHCP 服务器已在 Active Directory 中获得授权。 [DhcpServerInDC](/powershell/module/dhcpserver/get-dhcpserverindc)。
+4. 通过打开 DHCP 控制台 \( 服务器管理器、**工具**、 **DHCP** \) 、展开服务器树以查看作用域，然后右键 \- 单击每个作用域，确保已激活作用域。 如果生成的菜单包含选择 "**激活**"，请单击 "**激活**"。 \(如果已激活作用域，则菜单选择将显示 "**停用**"。\)
 
 ## <a name="windows-powershell-commands-for-dhcp"></a><a name="bkmk_dhcpwps"></a>适用于 DHCP 的 Windows PowerShell 命令
 
@@ -508,14 +506,14 @@ Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.1.1 -ScopeID 10.0.1.0 -Compu
 > [!NOTE]
 > 你不能在 Windows Server 2012 R2 中使用 Windows Server 2016 命令。
 
-- [DhcpServer 模块](https://docs.microsoft.com/powershell/module/dhcpserver/)
+- [DhcpServer 模块](/powershell/module/dhcpserver/)
 
 以下参考提供了适用于 Windows Server 2012 R2 的所有 DHCP 服务器 Windows PowerShell 命令的命令说明和语法。 本主题基于命令开头的谓词按字母顺序列出命令，如**Get**或**Set**。
 
 > [!NOTE]
 > 你可以使用 windows Server 2016 中的 Windows Server 2012 R2 命令。
 
-- [Windows PowerShell 中的 DHCP 服务器 Cmdlet](https://docs.microsoft.com/windows-server/networking/technologies/dhcp/dhcp-deploy-wps)
+- [Windows PowerShell 中的 DHCP 服务器 Cmdlet]()
 
 ## <a name="list-of-windows-powershell-commands-in-this-guide"></a><a name="bkmk_list"></a>本指南中的 Windows PowerShell 命令列表
 

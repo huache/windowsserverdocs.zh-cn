@@ -5,19 +5,19 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ab68975c84e1b299914e09045eddbc302ca9697f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ba426a2a4db853dbd91180fcceed6807726efbf8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896076"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992095"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper-v 处理器性能
 
 
 ## <a name="virtual-machine-integration-services"></a>虚拟机 integration services
 
-虚拟机 Integration Services 包括特定于 Hyper-v 的 i/o 设备的启用驱动程序，这大大减少了 i/o 相比模拟设备的 CPU 开销。 你应在每个受支持的虚拟机中安装最新版本的虚拟机 Integration Services。 服务会降低来宾的 CPU 使用情况，从空闲来宾到过度使用的来宾，并提高 i/o 吞吐量。 这是在运行 Hyper-v 的服务器中优化性能的第一步。 有关支持的来宾操作系统的列表，请参阅[Hyper-v 概述](https://technet.microsoft.com/library/hh831531.aspx)。
+虚拟机 Integration Services 包括特定于 Hyper-v 的 i/o 设备的启用驱动程序，这大大减少了 i/o 相比模拟设备的 CPU 开销。 你应在每个受支持的虚拟机中安装最新版本的虚拟机 Integration Services。 服务会降低来宾的 CPU 使用情况，从空闲来宾到过度使用的来宾，并提高 i/o 吞吐量。 这是在运行 Hyper-v 的服务器中优化性能的第一步。 有关支持的来宾操作系统的列表，请参阅[Hyper-v 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))。
 
 ## <a name="virtual-processors"></a>虚拟处理器
 
@@ -61,11 +61,11 @@ Windows Server 2016 中的 hyper-v 支持每个虚拟机最多支持240个虚拟
 
 从工作负载的角度来看，虚拟和物理 NUMA 之间没有区别。 在虚拟机中，当工作负载为数据分配本地内存并在同一个 NUMA 节点中访问该数据时，将在基础物理系统上快速访问本地内存结果。 可成功避免由于远程内存访问而引起的性能损失。 只有 NUMA 感知应用程序才能受益于 vNUMA。
 
-Microsoft SQL Server 是 NUMA 感知应用程序的一个示例。 有关详细信息，请参阅[了解非一致性内存访问](https://technet.microsoft.com/library/ms178144.aspx)。
+Microsoft SQL Server 是 NUMA 感知应用程序的一个示例。 有关详细信息，请参阅[了解非一致性内存访问](/previous-versions/sql/sql-server-2008-r2/ms178144(v=sql.105))。
 
 无法同时使用虚拟 NUMA 和动态内存功能。 有效启用了动态内存的虚拟机只有一个虚拟 NUMA 节点，并且不会向虚拟机提供任何 NUMA 拓扑，无论虚拟 NUMA 设置如何。
 
-有关虚拟 NUMA 的详细信息，请参阅[Hyper-v 虚拟 Numa 概述](https://technet.microsoft.com/library/dn282282.aspx)。
+有关虚拟 NUMA 的详细信息，请参阅[Hyper-v 虚拟 Numa 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282282(v=ws.11))。
 
 ## <a name="additional-references"></a>其他参考
 

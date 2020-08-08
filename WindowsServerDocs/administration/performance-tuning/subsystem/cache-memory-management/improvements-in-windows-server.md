@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 35eb3d01af9c957831a6c860738e6a2516096b03
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c2fdceb7ff3743890c73ee4108ffcf8e00fe437f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895979"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992059"
 ---
 # <a name="cache-and-memory-manager-improvements"></a>缓存和内存管理器改进
 
@@ -22,7 +22,7 @@ ms.locfileid: "87895979"
 
 
 ## <a name="cache-manager-improvements-in-windows-server-2012"></a>Windows Server 2012 中的缓存管理器改进
-除了缓存管理器增强功能以读取顺序工作负载的提前逻辑外，还添加了一个新的 API [CcSetReadAheadGranularityEx](https://msdn.microsoft.com/library/windows/hardware/hh406341.aspx) ，以使文件系统驱动程序（如 SMB）更改其预读参数。 它通过发送多个小型读取请求，而不是发送单个较大的提前请求，为远程文件方案提供更好的吞吐量。 只有内核组件（如文件系统驱动程序）才能以编程方式在每个文件上配置这些值。
+除了缓存管理器增强功能以读取顺序工作负载的提前逻辑外，还添加了一个新的 API [CcSetReadAheadGranularityEx](/windows-hardware/drivers/ifs/ccsetreadaheadgranularityex) ，以使文件系统驱动程序（如 SMB）更改其预读参数。 它通过发送多个小型读取请求，而不是发送单个较大的提前请求，为远程文件方案提供更好的吞吐量。 只有内核组件（如文件系统驱动程序）才能以编程方式在每个文件上配置这些值。
 
 ## <a name="memory-manager-improvements-in-windows-server-2012"></a>Windows Server 2012 中的内存管理器改进
 启用页面组合可能会减少服务器上的内存使用率，这些页面具有的内容完全相同。 例如，运行同一内存密集型应用程序的多个实例的服务器或使用高重复数据的单个应用程序，可能是尝试进行页面组合的最佳候选项。 启用页面合并的缺点是增加了 CPU 使用率。
@@ -33,4 +33,4 @@ ms.locfileid: "87895979"
 
 -   配置为使用 AWE 或大型页面 (大多数内存的 Microsoft SQL Server 是专用的但不可分页的) 
 
-默认情况下，页面组合处于禁用状态，但可以使用[Mmagent.ps1](https://technet.microsoft.com/library/jj658954.aspx) Windows PowerShell cmdlet 启用。 Windows Server 2012 中添加了页面组合。
+默认情况下，页面组合处于禁用状态，但可以使用[Mmagent.ps1](/powershell/module/mmagent/enable-mmagent?view=win10-ps) Windows PowerShell cmdlet 启用。 Windows Server 2012 中添加了页面组合。

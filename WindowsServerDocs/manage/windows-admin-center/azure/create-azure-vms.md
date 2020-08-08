@@ -7,12 +7,12 @@ ms.author: nedpyle
 manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a93051f4b8aa95f5e48604a5ac7cc9f4c8242a2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c9401d19472e362ee411613ee97caa3428c35e4f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940048"
+ms.locfileid: "87997536"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>从 Windows 管理中心部署 Azure 虚拟机
 
@@ -20,7 +20,7 @@ ms.locfileid: "87940048"
 
 Windows 管理中心版本1910允许你部署 Azure 虚拟机。 这将 VM 部署集成到 Windows 管理中心中心管理的工作负荷，例如[存储迁移服务](../../../storage/storage-migration-service/overview.md)和[存储副本](../../../storage/storage-replica/storage-replica-overview.md)。 在部署工作负荷之前，无需在 Azure 门户中创建新的服务器和 Vm，并且可能缺少所需的步骤和配置-Windows 管理中心可以部署 Azure VM、配置其存储、将其加入域、安装角色，然后设置你的分布式系统。 你还可以在没有工作负荷的情况下部署新的 Azure Vm。
 
-Windows 管理中心还管理各种 Azure 服务。 [详细了解 Windows 管理中心提供的 Azure 集成选项](../plan/azure-integration-options.md)。
+Windows 管理中心还管理各种 Azure 服务。 [详细了解 Windows 管理中心提供的 Azure 集成选项](./index.md)。
 
 如果要将虚拟机直接迁移到 Azure，而不是创建新虚拟机，请考虑使用 Azure Migrate。 有关详细信息，请参阅[Azure Migrate 概述](https://go.microsoft.com/fwlink/?linkid=2056064)。
 
@@ -38,8 +38,8 @@ Windows 管理中心版本 1910 Azure VM 部署支持以下方案：
 
 - 一个 [Azure 订阅](https://azure.microsoft.com)。
 - [使用 Azure 注册的 Windows 管理中心网关](azure-integration.md)
-- 具有创建权限的现有[Azure 资源组](https://docs.microsoft.com/azure/azure-resource-manager/management/overview)。
-- 现有的[Azure 虚拟网络](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)和子网。
+- 具有创建权限的现有[Azure 资源组](/azure/azure-resource-manager/management/overview)。
+- 现有的[Azure 虚拟网络](/azure/virtual-network/virtual-networks-overview)和子网。
 - 与虚拟网络和子网关联的[Azure Express 路由](https://azure.microsoft.com/services/expressroute/)或[azure VPN 解决方案](https://azure.microsoft.com/services/vpn-gateway/)，该解决方案允许从 Azure vm 连接到本地客户端、域控制器、Windows 管理中心计算机，以及需要与此 VM 进行通信的任何服务器作为工作负荷部署的一部分。 例如，若要使用存储迁移服务将存储迁移到 Azure VM，orchestrator 计算机和源计算机必须都能联系到要迁移到的目标 Azure VM。
 
 ## <a name="usage"></a>使用情况

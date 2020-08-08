@@ -6,21 +6,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a022ec618c7255021cd424120330671e007a658a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 31c04f557900cee661c2283957f590caf370bbe5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962699"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942731"
 ---
 # <a name="add-a-claim-description"></a>添加声明说明
 
 
 在帐户伙伴组织中，管理员创建声明来表示用户在组或角色中的成员身份，或表示有关用户的一些数据，例如，用户的员工标识号。
 
-在资源伙伴组织中，管理员创建相应的声明来表示可被识别为资源用户的组和用户。 因为帐户伙伴组织中的传出声明映射到资源伙伴组织中的传入声明，资源伙伴可以接受帐户伙伴提供的凭据。 
+在资源伙伴组织中，管理员创建相应的声明来表示可被识别为资源用户的组和用户。 因为帐户伙伴组织中的传出声明映射到资源伙伴组织中的传入声明，资源伙伴可以接受帐户伙伴提供的凭据。
 
 你可以使用以下过程添加声明。
 
@@ -28,7 +26,7 @@ ms.locfileid: "86962699"
 
 ## <a name="to-add-a-claim-description"></a>添加声明说明
 
-1. 在服务器管理器中，单击“工具”，选择“AD FS 管理”********。 
+1. 在服务器管理器中，单击“工具”，选择“AD FS 管理”********。
 
 2. 展开 "**服务**"，然后在右侧单击 "**添加声明说明**"。
    ![添加声明说明](media/Add-a-Claim-Description/claimdesc1.png)
@@ -49,10 +47,10 @@ ms.locfileid: "86962699"
 - To publish this claim to make partners aware that this server can issue this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can send**.
 ~~~
 
-8. 单击 **“确定”** 。
+8. 单击“确定”。
 
 ![添加声明说明](media/Add-a-Claim-Description/claimdesc2.png)
 
 
-## <a name="see-also"></a>另请参阅  
-[AD FS 操作](../ad-fs-operations.md) 
+## <a name="see-also"></a>另请参阅
+[AD FS 操作](../ad-fs-operations.md)

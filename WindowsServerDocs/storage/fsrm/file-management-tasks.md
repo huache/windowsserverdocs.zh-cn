@@ -2,22 +2,20 @@
 title: 文件管理任务
 description: 本文介绍了自动执行文件管理任务的过程
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 402af4bd7c00bedfc3d01d43071af4fcd374d428
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e10aeec47498d6af72e767f519b11ebb4e72932
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473994"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961381"
 ---
 # <a name="file-management-tasks"></a>文件管理任务
 
-> 适用于： Windows Server 2019，Windows Server 2016，Windows Server （半年频道），Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server (半年通道) ，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
 
 文件管理任务会自动执行在服务器上查找文件子集和应用简单命令的过程。 这些任务可被安排为定期执行以降低重复操作的成本。 将由文件管理任务处理的文件可通过以下任一属性进行定义：
 

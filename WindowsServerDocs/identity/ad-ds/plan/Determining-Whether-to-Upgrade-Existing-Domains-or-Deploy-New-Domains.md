@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e4f400e8320b6ff48fcea3289654656eb1ad1418
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7064a3ef4735d88051a91390089549d4a3eba613
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966649"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943081"
 ---
 # <a name="determining-whether-to-upgrade-existing-domains-or-deploy-new-domains"></a>确定是升级现有域还是部署新域
 
@@ -27,4 +25,4 @@ ms.locfileid: "86966649"
 
 若要详细了解如何在林中和林之间重新构建 AD DS 域，请参阅[ADMT 指南：迁移和重新构建 Active Directory 域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10))。
 
-要使工作表可以帮助你记录新域和升级域的计划，请从[Windows Server 2003 部署工具包的作业助手](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "域计划" （DSSLOGI_5.doc）。
+要使工作表可以帮助你记录新域和升级域的计划，请从[Windows Server 2003 部署工具包的作业助手](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并 ( # A1) 打开 "域规划"。

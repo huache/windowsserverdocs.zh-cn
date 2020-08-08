@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: c508df5b23481a53ccc112d6c81b11fc9dcea790
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f81e77b0de231a03bcaa0cfe6877b1e67dd081db
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971384"
+ms.locfileid: "87989574"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>受保护的构造和受防护的 VM 概述
 
@@ -58,7 +58,7 @@ HGS 和创建受防护的 VM 的方法可帮助提供下列保证。
 
 | **VM 保证类型**                         | **来自密钥保护服务和受防护的 VM 创建方法的受防护的 VM 保证** |
 |----------------------------|--------------------------------------------------|
-| **BitLocker 加密磁盘（操作系统磁盘和数据磁盘）**   | 受防护的 VM 使用 BitLocker 来保护其磁盘。 使用经行业验证的技术（如安全测量启动），启动 VM 和解密磁盘所需的 BitLocker 密钥受受防护的 VM 的虚拟 TPM 保护。 虽然受防护的 VM 只能自动加密并保护操作系统磁盘，但你还可以[加密附加到受防护的 VM 的数据驱动器](https://technet.microsoft.com/itpro/windows/keep-secure/bitlocker-overview) |
+| **BitLocker 加密磁盘（操作系统磁盘和数据磁盘）**   | 受防护的 VM 使用 BitLocker 来保护其磁盘。 使用经行业验证的技术（如安全测量启动），启动 VM 和解密磁盘所需的 BitLocker 密钥受受防护的 VM 的虚拟 TPM 保护。 虽然受防护的 VM 只能自动加密并保护操作系统磁盘，但你还可以[加密附加到受防护的 VM 的数据驱动器](/windows/security/information-protection/bitlocker/bitlocker-overview) |
 | **从 "受信任" 模板磁盘/映像部署新的受防护的 Vm** | 部署新的受防护的 VM 时，租户就能够指定他们信任哪些模板磁盘。 受保护的模板磁盘具有其内容将被视为可信时的时间点上计算出的签名。 然后，磁盘签名存储在签名目录中，创建受防护的 VM 时，租户可安全地将此签名目录提供给构造。 设置受防护的 VM 时，要再次计算磁盘签名，并与目录中的受信任签名进行比较。 如果签名匹配，则表示受防护的 VM 已部署。 如果签名不匹配，则表示受保护的模板磁盘被视为不受信任，部署失败。 |
 | **创建受防护的 VM 时如何保护密码和其他机密** | 创建 Vm 时，必须确保 VM 机密（如受信任的磁盘签名、RDP 证书和 VM 本地管理员帐户的密码）不会泄露到构造。 这些机密存储在名为屏蔽数据文件（.PDK 文件）的加密文件中，该文件由租户密钥提供保护，并由租户上载到构造中。 创建受防护的 VM 时，租户选择要使用的屏蔽数据，这些数据仅安全地向受保护的构造内的受信任的组件提供这些机密。 |
 | **租户控制 VM 可以开始的位置** | 屏蔽数据还包含允许运行特定的受防护 VM 的受保护构造的列表。 这很有用，例如，受防护的 VM 通常驻留在本地私有云中，但出于灾难恢复目的，可能需要迁移到其他（公有或私有）云中的情况。 目标云或构造必须支持受防护的 VM，受防护的 VM 必须允许该构造运行它。 |
@@ -164,6 +164,6 @@ HGS 和创建受防护的 VM 的方法可帮助提供下列保证。
 ## <a name="additional-references"></a>其他参考
 
 - [受保护的结构和受防护的 VM](guarded-fabric-and-shielded-vms-top-node.md)
-- 博客： [Datacenter 和私有云安全博客](https://blogs.technet.microsoft.com/datacentersecurity/)
+- 博客： [Datacenter 和私有云安全博客](/archive/blogs/datacentersecurity/)
 - 视频：[防护虚拟机简介](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
 - 视频：[通过 Windows Server 2016 Hyper-v 深入了解受防护的 vm](https://channel9.msdn.com/events/Ignite/2016/BRK3124)

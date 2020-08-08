@@ -7,12 +7,12 @@ ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: a3c1f82d1c1f12c51a36a8285d28ccb9402f2817
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 53036a353fa08b7be06aae6b4b70353a8a99ea0e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963703"
+ms.locfileid: "87997626"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 支持的 Windows 来宾操作系统
 
@@ -20,7 +20,7 @@ ms.locfileid: "87963703"
 
 Hyper-v 支持将多个版本的 Windows Server、Windows 和 Linux 分发版作为来宾操作系统在虚拟机中运行。 本文介绍了支持的 Windows Server 和 Windows 来宾操作系统。 对于 Linux 和 FreeBSD 分发版，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)。
 
-某些操作系统内置了 integration services。 其他一些要求在虚拟机中设置操作系统后，将 integration services 作为一个单独的步骤安装或升级。 有关详细信息，请参阅以下部分和[Integration Services](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services)。
+某些操作系统内置了 integration services。 其他一些要求在虚拟机中设置操作系统后，将 integration services 作为一个单独的步骤安装或升级。 有关详细信息，请参阅以下部分和[Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services)。
 
 ## <a name="supported-windows-server-guest-operating-systems"></a>受支持的 Windows Server 来宾操作系统
 
@@ -55,7 +55,7 @@ Hyper-v 支持将多个版本的 Windows Server、Windows 和 Linux 分发版作
 
 |主机操作系统|主题|
 |-------------------------|---------|
-|Windows 10|[Windows 10 中的客户端 Hyper-v 支持的来宾操作系统](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)|
+|Windows 10|[Windows 10 中的客户端 Hyper-v 支持的来宾操作系统](/virtualization/hyper-v-on-windows/about/supported-guest-os)|
 |Windows Server 2012 R2 和 Windows 8.1|-   [Windows Server 2012 R2 和 Windows 8.1 中的 Hyper-v 支持的 Windows 来宾操作系统](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Hyper-v 上的 Linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
 |Windows Server 2012 和 Windows 8|[Windows Server 2012 和 Windows 8 中 Hyper-V 的受支持 Windows 来宾操作系统](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
 |Windows Server 2008 和 Windows Server 2008 R2|[关于虚拟机和来宾操作系统](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
@@ -74,8 +74,4 @@ Microsoft 按如下方式为来宾操作系统提供支持：
 
 -   [Hyper-V 上的 Linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
--   [Windows 10 中的客户端 Hyper-v 支持的来宾操作系统](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)
-
-
-
-
+-   [Windows 10 中的客户端 Hyper-v 支持的来宾操作系统](/virtualization/hyper-v-on-windows/about/supported-guest-os)

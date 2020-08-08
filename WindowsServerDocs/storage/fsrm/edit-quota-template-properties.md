@@ -2,18 +2,16 @@
 title: 编辑配额模板属性
 description: 本文介绍了如何编辑配额模板属性以将更改扩展至使用原始配额模板创建的配额
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f4793616caf9ba4a8f9db09cd1902432323c081b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e8a112f26f2b0ffdf8047063411dbb5539f4eb1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474034"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961411"
 ---
 # <a name="edit-quota-template-properties"></a>编辑配额模板属性
 
@@ -40,7 +38,7 @@ ms.locfileid: "85474034"
     -   如果希望修改使用原始模板创建的所有现有配额，请选择**将模板应用于所有派生的配额**。
     -   如果希望保持现有配额不变，请选择**不要将模板应用于派生配额**。
 
-6.  单击" **确定**"。
+6.  单击“确定”。
 
 ## <a name="additional-references"></a>其他参考
 

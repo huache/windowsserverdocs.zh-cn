@@ -6,22 +6,20 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ad9ef670a2b5f0643be4bb94ad6b667a7f9b011d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 64fac281e1038f80ed4119b2462beda3311ba877
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964019"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943186"
 ---
 # <a name="deploying-ad-ds-in-a-windows-2000-organization"></a>在 Windows Server 2000 组织中部署 AD DS
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-如果你的组织当前正在运行 Windows 2000 Active Directory，你可以通过执行将部分或全部域控制器的操作系统就地升级到 Windows Server 2008 或引入环境中运行 Windows Server 2008 的域控制器来部署 Windows Server 2008 Active Directory 域服务（AD DS）。
+如果你的组织当前正在运行 Windows 2000 Active Directory，你可以通过执行将部分或全部域控制器的操作系统就地升级到 Windows Server 2008 或引入在你的环境中运行 Windows Server 2008 的域控制器，来 Active Directory 域服务 (AD DS) 部署 Windows Server 2008。
 
-在将运行 Windows Server 2008 的域控制器添加到现有 Windows 2000 Active Directory 域之前，必须运行**adprep**，这是一个命令行工具。 Adprep 扩展了 AD DS 架构，更新了所选对象的默认安全描述符，并添加了某些应用程序所需的新目录对象。 Windows Server 2008 安装磁盘上提供了 Adprep （\sources\adprep\adprep.exe）。 有关详细信息，请参阅[Adprep](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731728(v=ws.11))。
+在将运行 Windows Server 2008 的域控制器添加到现有 Windows 2000 Active Directory 域之前，必须运行**adprep**，这是一个命令行工具。 Adprep 扩展了 AD DS 架构，更新了所选对象的默认安全描述符，并添加了某些应用程序所需的新目录对象。 Adprep 在 Windows Server 2008 安装磁盘上可用 ( # A0) 。 有关详细信息，请参阅[Adprep](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731728(v=ws.11))。
 
 > [!NOTE]
 > 如果要将现有 Windows 2000 AD DS 域控制器就地升级到 Windows Server 2008，则必须首先将服务器升级到 Windows Server 2003，然后将其升级到 Windows Server 2008。

@@ -7,12 +7,12 @@ ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 56d9f862d4bd31ac8fba08837e59c94b865f7b1a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d0cbbc79fe1dc942dfe79ca9dbe81769dd112730
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970024"
+ms.locfileid: "87997621"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 的系统要求
 
@@ -22,7 +22,7 @@ Hyper-v 具有特定硬件要求，某些 Hyper-v 功能具有其他要求。 �
 
 如果已在使用 Hyper-v，则很可能会使用现有的硬件。 一般硬件要求在 Windows Server 2012 R2 中没有明显的变化。  但你需要使用较新的硬件来使用受防护的虚拟机或离散设备分配。 这些功能依赖于特定硬件支持，如下所述。 另一方面，硬件的主要差别在于，现在需要 (SLAT) 二级地址转换，而不是建议使用。
 
-有关 Hyper-v 支持的最大配置（例如正在运行的虚拟机的数目）的详细信息，请参阅[规划 Windows Server 2016 中的 hyper-v 可伸缩性](plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)。 [Windows Server 上的 Hyper-v 支持的 windows 来宾操作系统](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)中介绍了可在虚拟机中运行的操作系统的列表。
+有关 Hyper-v 支持的最大配置（例如正在运行的虚拟机的数目）的详细信息，请参阅[规划 Windows Server 2016 中的 hyper-v 可伸缩性](./plan/plan-hyper-v-scalability-in-windows-server.md)。 [Windows Server 上的 Hyper-v 支持的 windows 来宾操作系统](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)中介绍了可在虚拟机中运行的操作系统的列表。
 
 ## <a name="general-requirements"></a>一般要求
 
@@ -89,4 +89,3 @@ Systeminfo.exe
 
 - 第 2 代
 - Windows Server 2012 或更高版本作为来宾操作系统
-

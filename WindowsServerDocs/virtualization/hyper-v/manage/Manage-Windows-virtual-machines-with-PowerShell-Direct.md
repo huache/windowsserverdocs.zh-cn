@@ -7,12 +7,12 @@ ms.assetid: b5715c02-a90f-4de9-a71e-0fc09093ba2d
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 97f8c2a0bcfec3699593e5162ede8cff3e411b0d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 654767901607207ff1dea74201e1b7ede3c38ae0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941972"
+ms.locfileid: "87997463"
 ---
 # <a name="manage-windows-virtual-machines-with-powershell-direct"></a>通过 PowerShell Direct 管理 Windows 虚拟机
 
@@ -26,13 +26,13 @@ ms.locfileid: "87941972"
 
 - 通过调用-Command cmdlet 运行脚本或命令
 
-如果要管理较旧的虚拟机，请使用虚拟机连接 (VMConnect) 或[为虚拟机配置虚拟网络](https://technet.microsoft.com/library/cc816585.aspx)。
+如果要管理较旧的虚拟机，请使用虚拟机连接 (VMConnect) 或[为虚拟机配置虚拟网络](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816585(v=ws.10))。
 
 ## <a name="create-and-exit-a-powershell-direct-session-using-pssession-cmdlets"></a>使用 PSSession cmdlet 创建和退出 PowerShell Direct 会话
 
 1. 在 Hyper-V 主机上，以管理员身份打开 Windows PowerShell。
 
-2. 使用[Enter-PSSession](https://technet.microsoft.com/library/hh849707.aspx) cmdlet 连接到虚拟机。 通过使用虚拟机名称或 GUID 运行以下命令之一来创建会话：
+2. 使用[Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7) cmdlet 连接到虚拟机。 通过使用虚拟机名称或 GUID 运行以下命令之一来创建会话：
 
     ```
     Enter-PSSession -VMName <VMName>
@@ -45,14 +45,14 @@ ms.locfileid: "87941972"
 3. 键入虚拟机的凭据。
 4. 运行所需的任意命令。 这些命令在与其创建了会话的虚拟机上运行。
 
-5.  完成后，使用[Exit-PSSession](https://technet.microsoft.com/library/hh849743.aspx)关闭会话。
+5.  完成后，使用[Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7)关闭会话。
 
     ```
     Exit-PSSession
     ```
 
 ## <a name="run-script-or-command-with-invoke-command-cmdlet"></a>通过调用-Command cmdlet 运行脚本或命令
-你可以使用 [Invoke-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command) cmdlet 在虚拟机上运行一组预先确定的命令。 下面是如何使用 Invoke-Command cmdlet 的示例，其中 PSTest 是虚拟机名称，而要运行的脚本 (foo.ps1) 位于 C:/ 驱动器上的脚本文件夹中：
+你可以使用 [Invoke-Command](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command) cmdlet 在虚拟机上运行一组预先确定的命令。 下面是如何使用 Invoke-Command cmdlet 的示例，其中 PSTest 是虚拟机名称，而要运行的脚本 (foo.ps1) 位于 C:/ 驱动器上的脚本文件夹中：
 
 ```
 Invoke-Command -VMName PSTest  -FilePath C:\script\foo.ps1
@@ -77,12 +77,9 @@ Invoke-Command -VMName PSTest  -ScriptBlock { cmdlet }
 
 -   虚拟机必须至少运行 Windows 10 或 Windows Server 2016。
 
-你可以使用[GET VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm) cmdlet 来检查你使用的凭据是否具有 hyper-v 管理员角色，以及如何获取在主机上本地运行并已启动的虚拟机的列表。
+你可以使用[GET VM](/powershell/module/hyper-v/get-vm) cmdlet 来检查你使用的凭据是否具有 hyper-v 管理员角色，以及如何获取在主机上本地运行并已启动的虚拟机的列表。
 
 ## <a name="see-also"></a>另请参阅
-[Enter-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 
-[Exit-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) 
-[调用-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)
-
-
-
+[Enter-PSSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 
+[Exit-PSSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) 
+[调用-Command](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)

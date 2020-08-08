@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 9de802638a6f8225d4c8b942ac3cbea303f09a89
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9a82f0db1f586e1f762292c61eabdd7f6556c8bc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896060"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992104"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>性能优化远程桌面会话主机
 
@@ -91,13 +91,13 @@ RD 会话主机服务器上的大多数 CPU 使用率由应用驱动。 桌面�
 
 -   禁用注册为以用户登录或会话启动开始的不必要的进程。
 
-    当创建新的用户会话（这通常是一个占用大量 CPU 的过程）时，这些过程可能会显著影响 CPU 使用率的成本，而在早上的情况下，这可能非常昂贵。 使用 MsConfig.exe 或 MsInfo32.exe 获取在用户登录时启动的进程的列表。 有关更多详细信息，可以使用[autoruns.exe For Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx)。
+    当创建新的用户会话（这通常是一个占用大量 CPU 的过程）时，这些过程可能会显著影响 CPU 使用率的成本，而在早上的情况下，这可能非常昂贵。 使用 MsConfig.exe 或 MsInfo32.exe 获取在用户登录时启动的进程的列表。 有关更多详细信息，可以使用[autoruns.exe For Windows](/sysinternals/downloads/autoruns)。
 
 对于内存消耗，应考虑以下事项：
 
 -   验证应用加载的 Dll 是否未重定位。
 
-    -   可以通过选择 "进程 DLL 视图" 来验证重定位的 Dll，如下图所示，使用[进程资源管理器](https://technet.microsoft.com/sysinternals/bb896653.aspx)。
+    -   可以通过选择 "进程 DLL 视图" 来验证重定位的 Dll，如下图所示，使用[进程资源管理器](/sysinternals/downloads/process-explorer)。
 
     -   在这里，我们可以看到 y.dll 被重新定位，因为 x.dll 已占用其默认基址，并且 ASLR 未启用
 

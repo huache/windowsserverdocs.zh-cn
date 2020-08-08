@@ -8,12 +8,12 @@ author: stevenek
 ms.date: 07/24/2020
 description: 逐步说明如何使用 Windows Server 中的存储空间直通将软件定义的存储部署为超聚合基础结构或聚合 (也称为非聚合) 基础结构。
 ms.localizationpriority: medium
-ms.openlocfilehash: a15f9df55fd5650443f4d0220dee6b4ada9253d2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f0115e76ca297fa0af5fc57e197d75e428cb3e72
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971104"
+ms.locfileid: "87997563"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署存储空间直通
 
@@ -49,7 +49,7 @@ ms.locfileid: "87971104"
 
 第一步是在将位于群集中的每个服务器上安装 Windows Server。 存储空间直通需要 Windows Server 2016 Datacenter Edition。 你可以使用服务器核心安装选项或具有桌面体验的服务器。
 
-当你使用安装向导安装 Windows Server 时，你可以在*Windows server* (引用服务器核心) 和*Windows server (服务器（具有桌面体验) *），这等同于 windows server 2012 R2 中提供的*完全*安装选项。 如果不选择，则会获得服务器核心安装选项。 有关详细信息，请参阅[Windows Server 2016 安装选项](../../get-started/Windows-Server-2016.md)。
+当你使用安装向导安装 Windows Server 时，你可以在*Windows server* (引用服务器核心) 和*Windows server (服务器（具有桌面体验) *），这等同于 windows server 2012 R2 中提供的*完全*安装选项。 如果不选择，则会获得服务器核心安装选项。 有关详细信息，请参阅[Windows Server 2016 安装选项](../../index.yml)。
 
 ### <a name="step-12-connect-to-the-servers"></a>步骤1.2：连接到服务器
 

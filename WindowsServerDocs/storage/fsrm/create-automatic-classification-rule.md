@@ -2,18 +2,16 @@
 title: 创建自动分类规则
 description: 本文介绍如何针对属性创建分类规则。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9fc2034905408975f82f9348f151d99df17f9d3a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3793e8cd7f72e9e8d365df855c8c3450d9107f9b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475394"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961471"
 ---
 # <a name="create-an-automatic-classification-rule"></a>创建自动分类规则
 
@@ -30,8 +28,8 @@ ms.locfileid: "85475394"
 3.  在**规则设置**选项卡上输入以下信息：
 
     -   “规则名称”****。 键入规则的名称。
-    -   “启用”  。 只有选中“已启用”复选框，才能应用该规则。 若要禁用规则，请清除该框。
-    -   “说明”  。 键入该规则的可选说明。
+    -   “启用”。 只有选中“已启用”复选框，才能应用该规则。 若要禁用规则，请清除该框。
+    -   **说明**。 键入该规则的可选说明。
     -   **范围**。 单击**添加**选择将应用此规则的位置。 你可以添加多个位置，或单击**删除**以删除某个位置。 分类规则适用于此列表中所有文件夹及其子文件夹。
 
 4.  在“分类”**** 选项卡上，输入以下信息：
@@ -50,7 +48,7 @@ ms.locfileid: "85475394"
 
 6.  单击**确定**或**取消**关闭**高级**对话框。
 
-7.  单击" **确定**"。
+7.  单击“确定”。
 
 ## <a name="additional-references"></a>其他参考
 
