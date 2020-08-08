@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b1678eadda1232da19c80e648c8b7ecb9c06f64b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 779175a4e1e42bae5f40aa4d4d8495ac7803c655
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896214"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992253"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>添加性能优化中的 LDAP 注意事项
 
@@ -21,19 +21,19 @@ ms.locfileid: "87896214"
 
 验证 LDAP 查询是否符合创建高效查询的建议。
 
-有关如何正确编写、构建和分析用于 Active Directory 的查询的详细信息，请参阅 MSDN。 有关详细信息，请参阅[创建更有效的支持 Microsoft Active Directory 的应用程序](https://msdn.microsoft.com/library/ms808539.aspx)。
+有关如何正确编写、构建和分析用于 Active Directory 的查询的详细信息，请参阅 MSDN。 有关详细信息，请参阅[创建更有效的支持 Microsoft Active Directory 的应用程序](/previous-versions/ms808539(v=msdn.10))。
 
 ## <a name="optimize-ldap-page-sizes"></a>优化 LDAP 页面大小
 
 当返回包含多个对象的结果以响应客户端请求时，域控制器必须在内存中临时存储结果集。 增加页大小将导致更多的内存使用量，并可能不必要地将项排除在缓存之外。 在这种情况下，默认设置是最佳的。 在某些情况下，建议增加页面大小设置。 建议使用默认值，除非特别标识为 "不充分"。
 
-当查询具有多个结果时，可能会遇到同时执行的类似查询的限制。  出现这种情况的原因是 LDAP 服务器可能会耗尽称为 cookie 池的全局内存区域。  可能需要增加池的大小，如[处理 LDAP 服务器 cookie 的方式](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/manage/how-ldap-server-cookies-are-handled)中所述。
+当查询具有多个结果时，可能会遇到同时执行的类似查询的限制。  出现这种情况的原因是 LDAP 服务器可能会耗尽称为 cookie 池的全局内存区域。  可能需要增加池的大小，如[处理 LDAP 服务器 cookie 的方式](../../../../identity/ad-ds/manage/how-ldap-server-cookies-are-handled.md)中所述。
 
 若要调整这些设置，请参阅[Windows Server 2008 和更新的域控制器在 LDAP 响应中仅返回5000值](https://support.microsoft.com/kb/2009267)。
 
 ## <a name="determine-whether-to-add-indices"></a>确定是否添加索引
 
-在筛选器中搜索具有属性名称的对象时，索引属性非常有用。 索引可以减少评估筛选器时必须访问的对象数。 但是，这会降低写入操作的性能，因为在修改或添加相应的属性时必须更新索引。 它还增加了目录数据库的大小，但优点通常超过了存储成本。 日志记录可用于查找成本高昂且效率低下的查询。 确定之后，请考虑为在相应的查询中使用的某些属性创建索引，以提高搜索性能。 有关 Active Directory 搜索工作原理的详细信息，请参阅[Active Directory 搜索工作](https://technet.microsoft.com/library/cc755809.aspx)原理。
+在筛选器中搜索具有属性名称的对象时，索引属性非常有用。 索引可以减少评估筛选器时必须访问的对象数。 但是，这会降低写入操作的性能，因为在修改或添加相应的属性时必须更新索引。 它还增加了目录数据库的大小，但优点通常超过了存储成本。 日志记录可用于查找成本高昂且效率低下的查询。 确定之后，请考虑为在相应的查询中使用的某些属性创建索引，以提高搜索性能。 有关 Active Directory 搜索工作原理的详细信息，请参阅[Active Directory 搜索工作](/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10))原理。
 
 ### <a name="scenarios-that-benefit-in-adding-indices"></a>添加索引的好处方案
 
@@ -54,11 +54,11 @@ ms.locfileid: "87896214"
 
 可以使用以下一种或多种方法来检测这些方案：
 
--   [用 Statistics 控件确定查询计时](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [用 Statistics 控件确定查询计时](/previous-versions/ms808539(v=msdn.10))
 
--   [跟踪代价高昂且低效的搜索](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [跟踪代价高昂且低效的搜索](/previous-versions/ms808539(v=msdn.10))
 
--   在性能监视器中 Active Directory 诊断数据收集器集 ([SPA 的儿子： Win2008 和更高版本中的 AD 数据收集器集](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx)) 
+-   在性能监视器中 Active Directory 诊断数据收集器集 ([SPA 的儿子： Win2008 和更高版本中的 AD 数据收集器集](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond)) 
 
 -   [Microsoft Server 性能顾问](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor 包
 
@@ -68,11 +68,11 @@ ms.locfileid: "87896214"
 
 -   请确保在优化查询已用完选项后，创建索引是解决问题的正确解决方案。 正确调整硬件大小非常重要。 仅当正确的修复是为属性编制索引，而不是尝试模糊处理硬件问题时，才应添加索引。
 
--   索引将增加数据库的大小，最小值为索引的属性的总大小。 因此，可以通过在属性中获取数据的平均大小并乘以将填充属性的对象数来计算数据库增长的估计值。 通常，这是数据库大小增加1% 的情况。 有关详细信息，请参阅[数据存储的工作方式](https://technet.microsoft.com/library/cc772829.aspx)。
+-   索引将增加数据库的大小，最小值为索引的属性的总大小。 因此，可以通过在属性中获取数据的平均大小并乘以将填充属性的对象数来计算数据库增长的估计值。 通常，这是数据库大小增加1% 的情况。 有关详细信息，请参阅[数据存储的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc772829(v=ws.10))。
 
 -   如果搜索行为主要在组织单位级别完成，则考虑为容器化搜索编制索引。
 
--   元组索引比普通索引大，但估计大小要困难得多。 使用常规索引大小估算作为增长的地面，最大值为20%。 有关详细信息，请参阅[数据存储的工作方式](https://technet.microsoft.com/library/cc772829.aspx)。
+-   元组索引比普通索引大，但估计大小要困难得多。 使用常规索引大小估算作为增长的地面，最大值为20%。 有关详细信息，请参阅[数据存储的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc772829(v=ws.10))。
 
 -   如果搜索行为主要在组织单位级别完成，则考虑为容器化搜索编制索引。
 
@@ -90,11 +90,11 @@ ms.locfileid: "87896214"
 
 有关详细信息，请参阅以下内容：
 
--   [创建更有效的 Microsoft Active Directory 应用程序](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [创建更有效的 Microsoft Active Directory 应用程序](/previous-versions/ms808539(v=msdn.10))
 
--   [在 Active Directory 域服务中搜索](https://msdn.microsoft.com/library/aa746427.aspx)
+-   [在 Active Directory 域服务中搜索](/windows/win32/ad/searching-in-active-directory-domain-services)
 
--   [索引属性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
+-   [索引属性](/windows/win32/ad/indexed-attributes)
 
 ## <a name="additional-references"></a>其他参考
 

@@ -2,24 +2,22 @@
 title: Hyper-V 网络虚拟化
 description: 本主题提供有关 Windows Server 2016 中的 Hyper-v 网络虚拟化内容的链接。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 150976f0-ccd5-487a-a458-92261444a846
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 98cf303bf5316bf183ac641970e891ad0295eaf5
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 896a14d9a912ec5296151af8186e1f5e165512b5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517922"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952557"
 ---
 # <a name="hyper-v-network-virtualization"></a>Hyper-V 网络虚拟化
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-Hyper-v 网络虚拟化（HNV）是在 Windows Server 2012 中引入的，它支持基于共享物理网络基础结构的客户网络虚拟化。 由于物理网络结构上只需进行少量的更改，HNV 为服务提供商提供灵活的灵活性，可在三个云中的任何位置部署和迁移租户工作负荷：服务提供商云、私有云或 Microsoft Azure 公有云。
+在 Windows Server 2012 中引入的 Hyper-v 网络虚拟化 (HNV) 在共享物理网络基础结构的基础上启用客户网络虚拟化。 由于物理网络结构上只需进行少量的更改，HNV 为服务提供商提供灵活的灵活性，可在三个云中的任何位置部署和迁移租户工作负荷：服务提供商云、私有云或 Microsoft Azure 公有云。
 
 有关详细信息，请参阅下列主题：
 

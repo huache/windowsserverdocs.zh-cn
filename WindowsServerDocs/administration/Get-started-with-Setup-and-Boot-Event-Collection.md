@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: e5e18ed5f5cc4cba319042f1a5da84acae8e5fd5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e5275937e12542e16c40273d69d9684d72a4ee82
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879532"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992444"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>安装和启动事件收集入门
 
@@ -130,9 +130,9 @@ ms.locfileid: "87879532"
 
 1.  在目标计算机上，启动 Regedit.exe 并查找以下注册表项：
 
-    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger**。 各个日志会话在此项下面列出为子项。 可以选择将**设置平台**、**NT 内核记录程序**和 **Microsoft-Windows-Setup** 以与“安装和启动事件收集”配合使用，但推荐使用 **EventLog-System**。 [配置和启动自动记录器会话](https://msdn.microsoft.com/library/windows/desktop/aa363687(v=vs.85).aspx)中详细介绍了这些项。
+    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger**。 各个日志会话在此项下面列出为子项。 可以选择将**设置平台**、**NT 内核记录程序**和 **Microsoft-Windows-Setup** 以与“安装和启动事件收集”配合使用，但推荐使用 **EventLog-System**。 [配置和启动自动记录器会话](/windows/win32/etw/configuring-and-starting-an-autologger-session)中详细介绍了这些项。
 
-2.  在 EventLog-System 项中，将 **LogFileMode** 的值从 **0x10000180** 更改为 **0x10080180**。 有关这些设置的详细信息，请参阅[日志记录模式常量](https://msdn.microsoft.com/library/windows/desktop/aa364080(v=vs.85).aspx)。
+2.  在 EventLog-System 项中，将 **LogFileMode** 的值从 **0x10000180** 更改为 **0x10080180**。 有关这些设置的详细信息，请参阅[日志记录模式常量](/windows/win32/etw/logging-mode-constants)。
 
 3.  （可选）你还可以允许将 Bug 检查数据转发到收集器计算机。 若要执行此操作，请查找注册表项 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager，并使用 **0x1** 的值创建**调试打印筛选器**项。
 
@@ -156,7 +156,7 @@ ms.locfileid: "87879532"
 ### <a name="validate-target-computer-configuration"></a>验证目标计算机配置
 要检查目标计算机上的设置，请打开提升的命令提示符，然后运行 **bcdedit /enum**。 完成后，请运行 **bcdedit /eventsettings**。 你可以仔细检查以下值：
 
--   键
+-   密钥
 
 -   Debugtype = NET
 
@@ -276,7 +276,7 @@ Nano Server 提供的最小接口有时可能会导致相关问题诊断困难�
 
 ### <a name="to-configure-nano-server-as-a-target-computer"></a>将 Nano Server 配置为目标计算机
 
-1. 创建基本 Nano Server 映像。 有关详细信息，请参阅 [Nano Server 入门](https://technet.microsoft.com/library/mt126167.aspx)。
+1. 创建基本 Nano Server 映像。 有关详细信息，请参阅 [Nano Server 入门](../get-started/getting-started-with-nano-server.md)。
 
 2. 设置收集器计算机，如本主题的配置收集器计算机部分中所述。
 
@@ -286,7 +286,7 @@ Nano Server 提供的最小接口有时可能会导致相关问题诊断困难�
 
     2. 使用提升的权限启动 Windows PowerShell 控制台，然后运行 `Import-Module BootEventCollector` 。
 
-    3. 更新 Nano Server VHD 注册表以启用自动记录器。 要执行此操作，请运行 `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd`。 这会添加最典型的安装和启动事件的基本列表；你可以在[控制事件跟踪会话](https://msdn.microsoft.com/library/windows/desktop/aa363694(v=vs.85).aspx)中研究其他项。
+    3. 更新 Nano Server VHD 注册表以启用自动记录器。 要执行此操作，请运行 `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd`。 这会添加最典型的安装和启动事件的基本列表；你可以在[控制事件跟踪会话](/windows/win32/etw/controlling-event-tracing-sessions)中研究其他项。
 
 4. 更新 Nano Server 映像中的 BCD 设置以启用事件标志，并设置收集器计算机以确保将诊断事件发送到正确的服务器。 请记录收集器计算机的 IPv4 地址、TCP 端口和你在收集器的 Active.XML 文件中配置的加密密钥（见本主题其他部分所述）。 在具有提升权限的 Windows PowerShell 控制台中使用此命令：`Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`
 

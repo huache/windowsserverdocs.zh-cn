@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ca7ab368c9e15de15f733070a5bcb06584956500
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 23bab1ff39cf5097f7b6face4886c6be59a7e5d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961129"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943517"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>复制错误 1753：端点映射程序中没有更多可用的端点
 
@@ -71,7 +69,7 @@ REPADMIN.EXE 报告复制尝试失败，状态为1753。
 
 ```
 Default-First-Site-NameCONTOSO-DC1
-DSA Options: IS_GC 
+DSA Options: IS_GC
 Site Options: (none)
 DSA object GUID: b6dc8589-7e00-4a5d-b688-045aef63ec01
 DSA invocationID: b6dc8589-7e00-4a5d-b688-045aef63ec01
@@ -108,36 +106,36 @@ Active Directory 通常引用-2146893022 状态的事件包括但不限于：
 | --- | --- | --- |
 | 1655 | NTDS 常规 | Active Directory 尝试与以下全局编录通信，尝试未成功。 |
 | 1925 | NTDS KCC | 尝试为以下可写目录分区建立复制链接失败。 |
-| 1265 | NTDS KCC | 知识一致性检查器（KCC）尝试添加下列目录分区和源域控制器的复制协议失败。 |
+| 1265 | NTDS KCC | 知识一致性检查器尝试 (KCC) 为以下目录分区和源域控制器添加复制协议失败。 |
 
 ## <a name="cause"></a>原因
 
-下面的步骤显示 RPC 工作流，该工作流从在步骤1中的 RPC 终结点映射器（EPM）注册服务器应用程序开始，到步骤7中将数据从 RPC 客户端传递到客户端应用程序。
+下面的步骤显示 RPC 工作流，该工作流从注册服务器应用程序开始，并在步骤1中 (EPM) 在步骤1中将数据从 RPC 客户端传递到步骤7中的客户端应用程序。
 
 ### <a name="adds-rpc-workflow"></a>添加 RPC 工作流
 
-1. 服务器应用程序将其终结点注册到 RPC 终结点映射器（EPM）
-1. 客户端发出 RPC 调用（代表用户、操作系统或应用程序启动的操作）
+1. 服务器应用程序会向 RPC 终结点映射器 (EPM 注册其终结点) 
+1. 客户端 (代表用户、操作系统或应用程序启动的操作来进行 RPC 调用) 
 1. 客户端 RPC 联系目标计算机 EPM 并请求终结点完成客户端调用
 1. 服务器计算机的 EPM 使用终结点作出响应
 1. 客户端 RPC 联系服务器应用
 1. 服务器应用执行调用，并将结果返回到客户端 RPC
 1. 客户端 RPC 将结果传递回客户端应用程序
 
-失败1753由步骤 #3 和 #4 之间的故障生成。 具体而言，错误1753表示 RPC 客户端（目标 DC）能够通过端口135与 RPC 服务器（源 DC）联系，但 RPC 服务器（源 DC）上的 EPM 找不到感兴趣的 RPC 应用程序，并且返回的服务器端错误1753。 出现1753错误表示 RPC 客户端（目标 DC）通过网络从 RPC 服务器（AD 复制源 DC）收到服务器端错误响应。
+失败1753由步骤 #3 和 #4 之间的故障生成。 具体而言，错误1753表示 RPC 客户端 (目标 DC) 能够通过端口135与 RPC 服务器 (源 DC) ，但 RPC 服务器上的 EPM (源 DC) 找不到感兴趣的 RPC 应用程序，并返回服务器端错误1753。 出现1753错误表示 RPC 客户端 (目标 DC) 从 RPC 服务器接收到来自 RPC 服务器的服务器端错误响应， (AD 复制源 DC) 通过网络。
 
 1753错误的特定根本原因包括：
 
-* 服务器应用从未开始（例如，在上面的 "详细信息" 关系图中的步骤 #1 从未尝试过）。
-* 服务器应用程序已启动，但在初始化期间发生了一些故障，阻止其向 RPC 终结点映射器注册（即，尝试了上述 "详细信息" 关系图中的步骤 #1 但失败）。
-* 服务器应用程序已启动，但随后终止。 （即上面的 "详细信息" 关系图中的步骤 #1 已成功完成，但稍后已撤消，因为服务器终止）。
-* 服务器应用手动取消注册其终结点（类似于3但有意）。 出于完整性考虑，不太可能包含在内。）
-* 由于 DNS、WINS 或主机/Lmhosts 文件中的名称到 IP 映射错误，RPC 客户端（目标 DC）联系了不同的 RPC 服务器。
+* 服务器应用从未启动 (例如，前面的 "详细信息" 关系图中的步骤 #1 从不) 尝试。
+* 服务器应用程序已启动，但在初始化期间发生了一些故障，阻止其向 RPC 终结点映射器注册 (例如，尝试了上述 "详细信息" 关系图中的步骤 #1，但) 失败。
+* 服务器应用程序已启动，但随后终止。  (上的 "详细信息" 图中 #1 的步骤已成功完成，但稍后将其撤消，因为服务器终止) 。
+* 服务器应用手动取消注册其终结点 (类似于3，但却是特意的。 出于完整性考虑，不太可能包含在内。 ) 
+* 由于 DNS、WINS 或主机/Lmhosts 文件中的名称到 IP 映射错误，RPC 客户端 (目标) DC 连接到不同的 RPC 服务器。
 
 错误1753不是由以下原因引起：
 
-* RPC 客户端（目标 DC）与 RPC 服务器（源 DC）之间缺少通过端口135的网络连接
-* 通过暂时端口使用端口135和 RPC 客户端（目标 DC）在 RPC 服务器（源 DC）之间缺少网络连接。
+* RPC 客户端 (目标 DC) 与 RPC 服务器之间缺少网络连接， (通过端口135的源 DC) 
+* RPC 服务器之间缺少网络连接 (源 DC) 使用端口135和 RPC 客户端通过临时端口 (目标 DC) 。
 * 密码不匹配或源 DC 无法解密 Kerberos 加密的数据包
 
 ## <a name="resolutions"></a>解决方法
@@ -145,17 +143,17 @@ Active Directory 通常引用-2146893022 状态的事件包括但不限于：
 验证在终结点映射器中注册其服务的服务是否已启动
 
 * 对于 Windows 2000 和 Windows Server 2003 Dc：确保将源 DC 启动到正常模式。
-* 对于 Windows Server 2008 或 Windows Server 2008 R2：在源 DC 的控制台中，启动服务管理器（services.msc）并验证 Active Directory 域服务服务是否正在运行。
+* 对于 Windows Server 2008 或 Windows Server 2008 R2：在源 DC 的控制台中，启动服务管理器 (services.msc) 并验证 Active Directory 域服务服务是否正在运行。
 
-验证连接到目标 RPC 服务器（源 DC）的 RPC 客户端（目标 DC）
+验证是否已将 RPC 客户端 (目标) DC 连接到 (源 DC 的目标 RPC 服务器) 
 
 公用 Active Directory 林中的所有 Dc 都注册 _msdcs 中的域控制器 CNAME 记录。 \<forest root domain>DNS 区域，而不考虑它们在林中驻留的域。 DC CNAME 记录派生自每个域控制器的 "NTDS 设置" 对象的 objectGUID 属性。
 
 执行基于复制的操作时，目标 DC 会向 DNS 查询源 Dc CNAME 记录。 CNAME 记录包含源 DC 完全限定的计算机名称，此名称用于通过 DNS 客户端缓存查找、主机/LMHost 文件查找、在 DNS 中托管 A/AAAA 记录或 WINS 来派生源 Dc IP 地址。
 
-在 DNS、WINS、主机和 LMHOST 文件中，陈旧的 NTDS 设置对象和错误的名称到 IP 的映射可能会导致 RPC 客户端（目标 DC）连接到错误的 RPC 服务器（源 DC）。 而且，错误的名称到 IP 映射可能会导致 RPC 客户端（目标 DC）连接到甚至没有相关 RPC 服务器应用程序的计算机（在本例中为 Active Directory 角色）。 （示例： DC2 的陈旧主机记录包含 DC3 的 IP 地址或成员计算机）。
+在 DNS、WINS、主机和 LMHOST 文件中，陈旧的 NTDS 设置对象和错误的名称到 IP 的映射可能会导致 RPC 客户端 (目标 DC) 连接到错误的 RPC 服务器 (源 DC) 。 此外，"错误的名称到 IP" 映射可能会导致 RPC 客户端 (目标 DC) 连接到在这种情况下) 安装的不感兴趣的 RPC 服务器应用程序 (Active Directory 角色。  (示例： DC2 的陈旧主机记录包含 DC3 的 IP 地址或) 的成员计算机。
 
-验证 Active Directory 目标 Dc 副本中存在的源 DC 的 objectGUID 与 Active Directory 的源 dc 副本中存储的源 DC objectGUID 匹配。 如果存在差异，请使用 ntds 设置对象上的 repadmin/showobjmeta，以查看哪一个对应于源 DC 的上次升级（提示：将 NTDS 设置对象的日期戳与源 dc dcpromo 文件中的上次升级日期进行比较。 可能需要使用 DCPROMO 的最后修改/创建日期。日志文件本身）。 如果对象 Guid 不完全相同，则目标 DC 可能会为源 DC 提供陈旧的 NTDS 设置对象，其 CNAME 记录将引用具有错误名称的主机记录到 IP 映射。
+验证 Active Directory 目标 Dc 副本中存在的源 DC 的 objectGUID 与 Active Directory 的源 dc 副本中存储的源 DC objectGUID 匹配。 如果存在差异，请使用 ntds 设置对象上的 repadmin/showobjmeta，以查看哪一个对应于上次升级源 DC (提示：将 NTDS 设置对象的日期戳与源 Dc dcpromo 文件中的上次升级日期进行比较。 可能需要使用 DCPROMO 的最后修改/创建日期。日志文件本身) 。 如果对象 Guid 不完全相同，则目标 DC 可能会为源 DC 提供陈旧的 NTDS 设置对象，其 CNAME 记录将引用具有错误名称的主机记录到 IP 映射。
 
 在目标 DC 上，运行 IPCONFIG/ALL 以确定目标 DC 用于名称解析的 DNS 服务器：
 
@@ -192,7 +190,7 @@ NSLOOKUP -type=hostname <fully qualified computer name of source DC> <secondary 
 
 如果上面的测试或网络跟踪未显示名称查询返回无效的 IP 地址，请考虑主机文件、LMHOSTS 文件和 WINS 服务器中的过时条目。 请注意，还可以将 DNS 服务器配置为执行 WINS 回退名称解析。
 
-* 验证服务器应用程序（Active Directory et al）是否已向 RPC 服务器上的终结点映射器注册（源 DC）
+* 验证服务器应用程序 (Active Directory et al) 已向 RPC 服务器上的终结点映射器注册 (源 DC) 
 * Active Directory 混合使用众所周知的动态注册端口。 此表列出了 Active Directory 域控制器使用的知名端口和协议。
 
 | RPC 服务器应用程序 | 端口 | TCP | UDP |
@@ -209,7 +207,7 @@ NSLOOKUP -type=hostname <fully qualified computer name of source DC> <secondary 
 
 Active Directory 和其他应用程序还会注册在 RPC 临时端口范围内接收动态分配的端口的服务。 此类 RPC 服务器应用程序是动态分配的 TCP 端口，在 windows 2000 和 windows server 2003 计算机上的 TCP 5000 1024 端口和 windows server 49152 和 Windows Server 65535 R2 计算机上的2008和2008范围内的端口之间动态分配。 使用[知识库文章 224196](https://support.microsoft.com/kb/224196)中所述的步骤，可以在注册表中对复制使用的 RPC 端口进行硬编码。 当配置为使用硬编码端口时，Active Directory 继续向 EPM 注册。
 
-验证感兴趣的 RPC 服务器应用程序是否已向 RPC 服务器上的 RPC 终结点映射器注册自身（对于 AD 复制，则为源 DC）。
+验证相关的 RPC 服务器应用程序是否已在 RPC 服务器上向 rpc 终结点映射器注册了 rpc 终结点映射程序 (在 AD 复制) 的情况下。
 
 完成此任务的方法有很多，其中一种方法是使用以下语法在源 DC 的控制台上使用管理员特权的 CMD 提示符安装和运行 PORTQRY：
 
@@ -217,17 +215,17 @@ Active Directory 和其他应用程序还会注册在 RPC 临时端口范围内�
 portquery -n <source DC> -e 135 > file.txt
 ```
 
-在 portqry 输出中，请注意 ncacn_ip_tcp 协议的 "MS NT Directory DRS Interface" （UUID = 351 ...）动态注册的端口号。 以下代码片段显示了来自 Windows Server 2008 R2 DC 的示例 portquery 输出：
+在 portqry 输出中，请注意 ncacn_ip_tcp 协议的 "MS NT Directory DRS Interface" (UUID = 351 ... ) 动态注册的端口号。 以下代码片段显示了来自 Windows Server 2008 R2 DC 的示例 portquery 输出：
 
 ```
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
-ncacn_np:CONTOSO-DC01[\pipe\lsass] 
+ncacn_np:CONTOSO-DC01[\pipe\lsass]
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
-ncacn_np:CONTOSO-DC01[\PIPE\protected_storage] 
+ncacn_np:CONTOSO-DC01[\PIPE\protected_storage]
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
-ncacn_ip_tcp:CONTOSO-DC01[49156] 
+ncacn_ip_tcp:CONTOSO-DC01[49156]
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
-ncacn_http:CONTOSO-DC01[49157] 
+ncacn_http:CONTOSO-DC01[49157]
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
 ncacn_http:CONTOSO-DC01[6004]
 ```
@@ -236,13 +234,13 @@ ncacn_http:CONTOSO-DC01[6004]
 
 * 验证是否在正常模式下启动了源 DC，并且源 DC 上的操作系统和 DC 角色已完全启动。
 * 验证 Active Directory 域服务是否正在运行。 如果服务当前已停止或未配置为具有默认启动值，请重置默认启动值，重新启动修改后的 DC，然后重试该操作。
-* 验证 rpc 服务和 rpc 定位器的启动值和服务状态对于 RPC 客户端（目标 DC）和 RPC 服务器（源 DC）的 OS 版本是否正确。 如果服务当前已停止或未配置为具有默认启动值，请重置默认启动值，重新启动修改后的 DC，然后重试该操作。
+* 验证 RPC 服务的 "启动值" 和 "服务" 和 "rpc 定位器" 的状态是否正确对于 " (目标 DC) 和 RPC 服务器 (源 DC) 。 如果服务当前已停止或未配置为具有默认启动值，请重置默认启动值，重新启动修改后的 DC，然后重试该操作。
    * 此外，请确保服务上下文与下表中列出的默认设置匹配。
 
-      | 服务 | Windows Server 2003 和更高版本中的默认状态（启动类型） | Windows Server 2000 中的默认状态（启动类型） |
+      | 服务 | Windows Server 2003 和更高版本中的默认状态 (启动类型)  | Windows Server 2000 中的默认状态 (启动类型)  |
       | --- | --- | --- |
-      | 远程过程调用 | 已启动（自动） | 已启动（自动） |
-      | 远程过程调用定位符 | Null 或已停止（手动） | 已启动（自动） |
+      | 远程过程调用 | 已开始 (自动)  | 已开始 (自动)  |
+      | 远程过程调用定位符 |  (手动) 为 Null 或已停止 | 已开始 (自动)  |
 
 * 验证动态端口范围的大小是否尚未受到约束。 用于枚举 RPC 端口范围的 Windows Server 2008 和 Windows Server 2008 R2 NETSH 语法如下所示：
 
@@ -265,7 +263,7 @@ ncacn_http:CONTOSO-DC01[6004]
    ncacn_ip_udp REG_SZ rpcrt4.dll
    ```
 
-## <a name="more-information"></a>详细信息
+## <a name="more-information"></a>更多信息
 
 导致 RPC 错误1753与-2146893022 的 IP 映射的错误名称示例：目标主体名称不正确
 
@@ -294,7 +292,7 @@ F# SRC    DEST    Operation
 
 此类无效的主机到 IP 映射可能是由于主机/lmhost 文件中的过时条目、在 DNS 中托管 A/AAAA 注册或 WINS 导致的。
 
-摘要：此示例失败，因为在此情况下，主机文件中的主机到 IP 映射无效，导致目标 DC 解析为未运行 Active Directory 域服务服务（甚至出于此目的而安装）的 "源" DC，因此复制 SPN 尚未注册，并且源 DC 返回错误1753。 在第二种情况下，无效的主机到 IP 映射（在主机文件中再次）导致目标 DC 连接到已注册了 E351 的 DC .。。复制 SPN，但该源的主机名和安全标识与预期的源 DC 不同，因此尝试失败并出现错误-2146893022：目标主体名称不正确。
+摘要：此示例失败，因为在这种情况下，主机文件中 (的主机到 IP 映射无效) 导致目标 DC 解析为未运行 (的 Active Directory 域服务服务的 "源" DC，甚至已为该原因安装) 因此，复制 SPN 尚未注册，并且源 DC 返回错误1753。 在第二种情况下，主机文件中再次 (无效的主机到 IP 映射) 导致目标 DC 连接到已注册 E351 的 DC .。。复制 SPN，但该源的主机名和安全标识与预期的源 DC 不同，因此尝试失败并出现错误-2146893022：目标主体名称不正确。
 
 ## <a name="related-topics"></a>相关主题
 

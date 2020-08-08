@@ -1,26 +1,24 @@
 ---
 title: 在 vSwitch 中接收段合并 (RSC)
-description: VSwitch 中的接收段合并（RSC）是 Windows Server 2019 和 Windows 10 2018 10 月版更新中的一项功能，可帮助降低主机 CPU 利用率，并通过将多个 TCP 段合并为较少的段，提高虚拟工作负荷的吞吐量。 处理较少，较大的段（合并）比处理很多小型段更为有效。
+description: 在 vSwitch 中 (RSC) 的接收段合并是 Windows Server 2019 和 Windows 10 2018 10 月版更新中的一项功能，可帮助降低主机 CPU 利用率，并通过将多个 TCP 段合并为较少的段，提高虚拟工作负荷的吞吐量。 处理更少的情况下， (合并) 的大段比处理很多小型段更为有效。
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.author: dacuo
 author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: e7db6656bd9331e5cc6c2deaee143b3602ef1239
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 26f4a5fc028ebe134e6eff8ff22c348d52ba3f90
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181813"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962041"
 ---
 # <a name="rsc-in-the-vswitch"></a>VSwitch 中的 RSC
 >适用于：Windows Server 2019
 
-VSwitch 中的接收段合并（RSC）是 Windows Server 2019 和 Windows 10 2018 10 月版更新中的一项功能，可帮助降低主机 CPU 利用率，并通过将多个 TCP 段合并为较少的段，提高虚拟工作负荷的吞吐量。 处理较少，较大的段（合并）比处理很多小型段更为有效。
+在 vSwitch 中 (RSC) 的接收段合并是 Windows Server 2019 和 Windows 10 2018 10 月版更新中的一项功能，可帮助降低主机 CPU 利用率，并通过将多个 TCP 段合并为较少的段，提高虚拟工作负荷的吞吐量。 处理更少的情况下， (合并) 的大段比处理很多小型段更为有效。
 
-Windows Server 2012 和更高版本包含一种仅限硬件的卸载版本（在物理网络适配器中实现），该版本也称为接收段合并。 此卸载版本的 RSC 仍可用于更高版本的 Windows。 但是，它与虚拟工作负载不兼容，一旦将物理网络适配器连接到 vSwitch，就会被禁用。 有关 RSC 仅限硬件版本的详细信息，请参阅[接收段合并（RSC）](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh997024(v=ws.11))。
+Windows Server 2012 和更高版本包括仅限硬件的卸载版本 (在该技术（也称为接收段合并）的物理网络适配器) 中实现。 此卸载版本的 RSC 仍可用于更高版本的 Windows。 但是，它与虚拟工作负载不兼容，一旦将物理网络适配器连接到 vSwitch，就会被禁用。 有关 RSC 的仅限硬件版本的详细信息，请参阅[接收段合并 (rsc) ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh997024(v=ws.11))。
 
 ## <a name="scenarios-that-benefit-from-rsc-in-the-vswitch"></a>从 vSwitch 中的 RSC 受益的方案
 

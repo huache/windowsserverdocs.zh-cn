@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e758e2335d8a5b536b0f0db9626dc88337de631
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 535c1e2ccff14f01f015b67fd0fc2c6be4a04729
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896735"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992410"
 ---
 # <a name="power-and-performance-tuning"></a>电源和性能优化
 
@@ -63,7 +63,7 @@ Windows Server 2016 针对极佳的能源效率进行了优化，对各种客户
 
 缩短计时器滴答速率、缺乏电源管理支持的驱动程序和过多的 CPU 使用率是**powercfg/energy**命令检测到的几个行为问题。 此工具提供了一种简单的方法来识别和修复电源管理问题，在大型数据中心中可能会显著节省成本。
 
-有关 PowerCfg.exe 的详细信息，请参阅[使用 PowerCfg 评估系统能源效率](https://msdn.microsoft.com/windows/hardware/gg463250.aspx)。
+有关 PowerCfg.exe 的详细信息，请参阅[使用 PowerCfg 评估系统能源效率](/previous-versions/windows/hardware/download/dn550976(v=vs.85))。
 
 ## <a name="using-power-plans-in-windows-server"></a>使用 Windows Server 中的电源计划
 
@@ -78,7 +78,7 @@ Windows Server 2016 有三个内置电源计划，旨在满足不同的业务需
 
 这些电源计划存在于适用于当前 (AC) 的 Windows 中，并将当前 () DC 定向到系统，但我们假定服务器始终使用交流电源。
 
-有关电源计划和电源策略配置的详细信息，请参阅[Windows 中的电源策略配置和部署](https://msdn.microsoft.com/windows/hardware/gg463243.aspx)。
+有关电源计划和电源策略配置的详细信息，请参阅[Windows 中的电源策略配置和部署](/previous-versions/windows/hardware/design/dn642106(v=vs.85))。
 
 > [!Note]
 > 某些服务器制造商通过 BIOS 设置提供自己的电源管理选项。 如果操作系统无法控制电源管理，在 Windows 中更改电源计划不会影响系统功能和性能。
@@ -87,7 +87,7 @@ Windows Server 2016 有三个内置电源计划，旨在满足不同的业务需
 
 每个电源计划代表大量基础电源管理参数的组合。 内置计划是三个建议设置集合，涵盖各种工作负荷和方案。 但是，我们认识到这些计划不能满足每个客户的需求。
 
-以下各节介绍了调整某些特定处理器电源管理参数以满足三个内置计划未解决的目标的方法。 如果需要了解更多的电源参数，请参阅[Windows 中的电源策略配置和部署](https://msdn.microsoft.com/windows/hardware/gg463243.aspx)。
+以下各节介绍了调整某些特定处理器电源管理参数以满足三个内置计划未解决的目标的方法。 如果需要了解更多的电源参数，请参阅[Windows 中的电源策略配置和部署](/previous-versions/windows/hardware/design/dn642106(v=vs.85))。
 
 ## <a name="processor-performance-boost-mode"></a>处理器性能提升模式
 

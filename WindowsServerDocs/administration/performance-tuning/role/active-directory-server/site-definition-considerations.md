@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7502233cfd71fe2f3e7d25ff6ba246531233d1ff
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bb0850923dca2f0749c1f2cb5e787d998e8f03ca
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896210"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992248"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>域控制器的正确放置和站点注意事项
 
@@ -23,8 +23,8 @@ ms.locfileid: "87896210"
 -   可写域控制器可能是必需的。  将读写域控制器置于中心位置，以最大程度地减少延迟。
 
 有关详细信息，请参考：
--   [应用程序与 Rodc 的兼容性](https://technet.microsoft.com/library/cc772597.aspx)
--   [Active Directory Service Interface (ADSI) 和只读域控制器 (RODC) –避免性能问题](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
+-   [应用程序与 Rodc 的兼容性](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772597(v=ws.10))
+-   [Active Directory Service Interface (ADSI) 和只读域控制器 (RODC) –避免性能问题](/archive/blogs/fieldcoding/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues)
 
 ## <a name="optimize-for-referrals"></a>优化推荐
 
@@ -54,9 +54,9 @@ ms.locfileid: "87896210"
 
 -   信任域中的域控制器将首先尝试查找位于同一站点中的受信任域中的域控制器，然后故障回复到一般定位符。
 
-    -   有关 Dc 定位程序工作原理的详细信息，请参阅[在最近的站点中查找域控制器](https://technet.microsoft.com/library/cc978016.aspx)。
+    -   有关 Dc 定位程序工作原理的详细信息，请参阅[在最近的站点中查找域控制器](/previous-versions/windows/it-pro/windows-2000-server/cc978016(v=technet.10))。
 
-    -   聚合可信域和信任域之间的站点名称，以反映同一位置中的域控制器。 确保子网和 IP 地址映射正确地链接到两个林中的站点。 有关详细信息，请参阅[跨林信任的域定位器](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)。
+    -   聚合可信域和信任域之间的站点名称，以反映同一位置中的域控制器。 确保子网和 IP 地址映射正确地链接到两个林中的站点。 有关详细信息，请参阅[跨林信任的域定位器](/archive/blogs/askds/domain-locator-across-a-forest-trust)。
 
     -   确保根据 Dc 定位程序的需要，为域控制器位置打开端口。 如果域之间存在防火墙，请确保为所有信任正确配置防火墙。 如果防火墙未打开，则信任域控制器仍将尝试访问受信任的域。 如果通信由于任何原因而失败，则信任域控制器最终会将请求超时到受信任的域控制器。 但是，对于每个请求，这些超时可能需要几秒钟，并且如果传入请求的数量很高，则可能会耗尽信任域控制器上的网络端口。 当应用程序在前台线程) 中运行请求时，客户端可能会体验到域控制器上的等待超时作为挂起线程，该线程可能会转换为挂起的应用程序 (。 有关详细信息，请参阅[如何为域和信任关系配置防火墙](https://support.microsoft.com/kb/179442)。
 

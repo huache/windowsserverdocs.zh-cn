@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 0451917da46c94c9c637d1bb26d68e0c33d65be4
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4d3e242bf151650144f8350a4665196672425530
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518974"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943601"
 ---
 # <a name="managing-rid-issuance"></a>管理 RID 颁发
 
@@ -243,7 +241,7 @@ RID 颁发中的所有日志记录均发生在系统事件日志中的源 Direct
 
 3. 返回的错误是否专门提及 RID，但除此之外并不具体？ 例如，“Windows 无法创建对象，因为目录服务无法分配相对标识符。”
 
-    1. 检查域控制器上的系统事件日志中是否2012有[Rid 池请求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee406152(v=ws.10))中详细信息（16642、16643、16644、16645、16656）。
+    1. 检查域控制器上的系统事件日志中是否有 "旧版" () RID[池请求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee406152(v=ws.10))中详细介绍的 Windows Server 2012 rid 事件 (16642、16643、16644、16645、16656) 。
 
     2. 检查域控制器和 RID 主机上的系统事件中新的块指示事件，它们在本主题下文中有详细说明（16655、16656、16657）。
 
@@ -255,42 +253,42 @@ Windows Server 2012 域控制器上的系统事件日志中记录以下新消息
 
 | 事件 ID | 16653 |
 |--|--|
-| Source | Directory-Services-SAM |
+| 源 | Directory-Services-SAM |
 | 严重性 | 警告 |
 | Message | 管理员所配置的帐户标识符 (RID) 的池大小大于支持的最大值。 当域控制器是 RID 主机时，将使用 %1 的最大值。<p>有关详细信息，请参阅 [RID 块大小限制](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize)。 |
 | 注释和解析 | RID 块大小的最大值现在是十进制的 15000（十六进制的 3A98）。 域控制器无法请求多于 15,000 个 RID。 在每次启动时记录此事件，直到将该值设置为等于或小于此最大值。 |
 
 | 事件 ID | 16654 |
 |--|--|
-| Source | Directory-Services-SAM |
+| 源 | Directory-Services-SAM |
 | 严重性 | 信息 |
 | Message | 帐户标识符 (RID) 池已失效。 在以下预期情况下，可能会出现该问题：<p>1. 从备份还原域控制器。<p>2. 从快照还原在虚拟机上运行的域控制器。<p>3. 管理员已手动使池失效。<p>有关更多信息，请参见 https://go.microsoft.com/fwlink/?LinkId=226247 。 |
 | 注释和解析 | 如果此事件是意外，请联系所有域管理员并确定他们中谁执行了该操作。 目录服务事件记录还包含有关何时执行这些步骤之一的详细信息。 |
 
 | 事件 ID | 16655 |
 |--|--|
-| Source | Directory-Services-SAM |
+| 源 | Directory-Services-SAM |
 | 严重性 | 信息 |
 | Message | 帐户标识符 (RID) 的全局最大值已增加为 %1。 |
 | 注释和解析 | 如果此事件是意外，请联系所有域管理员并确定他们中谁执行了该操作。 此事件说明总体 RID 池大小的增加超过 2<sup>30</sup> 的默认值，而且不会自动发生；仅通过管理操作发生。 |
 
 | 事件 ID | 16656 |
 |--|--|
-| Source | Directory-Services-SAM |
+| 源 | Directory-Services-SAM |
 | 严重性 | 警告 |
 | Message | 帐户标识符 (RID) 的全局最大值已增加为 %1。 |
 | 注释和解析 | 需要执行的操作！ 帐户标识符 (RID) 池已分配到此域控制器。 池值指示此域已使用了总可用帐户标识符中相当大的一部分。<p>当域达到以下阈值时，将会激活保护机制：剩余可用帐户标识符总计： %1。 保护机制将阻止帐户创建，直到你在 RID 主机域控制器上手动重新启用帐户标识符分配。<p>有关更多信息，请参见 https://go.microsoft.com/fwlink/?LinkId=228610 。 |
 
 | 事件 ID | 16657 |
 |--|--|
-| Source | Directory-Services-SAM |
+| 源 | Directory-Services-SAM |
 | 严重性 | 错误 |
 | 消息 | 需要执行的操作！ 此域已使用了总可用帐户标识符 (RID) 中相当大的一部分。 已激活保护机制，因为剩余的可用帐户标识符总数小于： X% [人工上限参数]。<p>保护机制阻止帐户创建，直到你在 RID 主机域控制器上手动重新启用帐户标识符分配。<p>在重新启用帐户创建之前执行特定的诊断非常重要，这可以确保此域不会以异常高的速率消耗帐户标识符。 任何标识的问题应该在重新启用帐户创建之前解决。<p>如果未能诊断并修复导致异常高的帐户标识符消耗率的任何基本问题，可能会导致域中的帐户标识符耗尽，然后帐户创建将在此域中永久性地处于禁用状态。<p>有关更多信息，请参见 https://go.microsoft.com/fwlink/?LinkId=228610 。 |
 | 注释和解析 | 联系所有域管理员并通知他们此域中无法再创建任何安全主体，直到重写此保护为止。 有关如何重写保护以及增加总体 RID 池（可能执行）的详细信息，请参阅[全局 RID 空间大小解锁](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock)。 |
 
 | 事件 ID | 16658 |
 |--|--|
-| Source | Directory-Services-SAM |
+| 源 | Directory-Services-SAM |
 | 严重性 | 警告 |
 | Message | 此事件是对可用帐户标识符 (RID) 剩余总量的定期更新。 剩余的帐户标识符数大约为： %1。<p>随着帐户的创建，将使用帐户标识符，当它们耗尽时，域中不可创建新帐户。<p>有关更多信息，请参见 https://go.microsoft.com/fwlink/?LinkId=228745 。 |
 | 注释和解析 | 联系所有域管理员并通知他们 RID 消耗已越过重要里程碑；通过查看安全信任项创建模式来确定这是否为预期的行为。 此事件非常罕见，因为它意味着已分配至少约 1 亿个 RID。 |

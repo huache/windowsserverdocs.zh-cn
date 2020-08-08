@@ -6,19 +6,17 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 2fd2e86e43b6d230a2c8b873ce8267a4e68ca4ed
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e53c33f1fef30570db46cf658bd1481343e846cd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962549"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962541"
 ---
 # <a name="configure-ad-fs-to-send-password-expiry-claims"></a>配置 AD FS 以发送密码过期声明
 
 
-可以配置 Active Directory 联合身份验证服务（AD FS），将密码过期声明发送到受 ADFS 保护的信赖方信任（应用程序）。 如何使用这些声明取决于应用程序。 例如，使用 Office 365 作为你的信赖方时，会将更新实施到 Exchange 和 Outlook，以通知联合身份验证用户其密码即将过期。
+你可以配置 Active Directory 联合身份验证服务 (AD FS) ，将密码过期声明发送到受 ADFS 保护 (应用程序) 。 如何使用这些声明取决于应用程序。 例如，使用 Office 365 作为你的信赖方时，会将更新实施到 Exchange 和 Outlook，以通知联合身份验证用户其密码即将过期。
 
 若要配置 AD FS 以便向信赖方信任发送密码过期声明，你必须将以下声明规则添加到此信赖方信任：
 

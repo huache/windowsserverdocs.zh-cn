@@ -1,6 +1,6 @@
 ---
 ms.assetid: cb834273-828a-4141-9387-37dd8270e932
-title: Winlogon 自动重新启动登录（ARSO）
+title: 'Winlogon 自动重新启动登录 (ARSO) '
 description: Windows 自动重启登录如何有助于提高用户的工作效率。
 author: MicrosoftGuyJFlo
 ms.author: joflore
@@ -8,24 +8,22 @@ manager: mtillman
 ms.reviewer: cahick
 ms.date: 08/20/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 68232d0b8ab6f4b7330b746657fc63e30a3c2e74
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 711a3fc22977d7aa9751c8e200524f4cd295110b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518825"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943304"
 ---
-# <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自动重新启动登录（ARSO）
+# <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自动重新启动登录 (ARSO) 
 
 在 Windows 更新期间，必须执行特定于用户的进程才能完成更新。 这些进程要求用户登录到其设备。 在启动更新后第一次登录时，用户必须等待这些用户特定进程完成，然后才能开始使用其设备。
 
-## <a name="how-does-it-work"></a>工作原理如何？
+## <a name="how-does-it-work"></a>工作原理
 
 当 Windows 更新启动自动重新启动时，ARSO 将提取当前已登录用户的派生凭据，将其保存到磁盘，并为用户配置自动登录。 Windows 更新以 TCB 权限运行的系统将启动 RPC 调用来执行此操作。
 
-最后 Windows 更新重新启动后，用户将通过自动登录机制自动登录，用户的会话将与保留的密码解除冻结。 此外，设备会被锁定以保护用户的会话。 锁定将通过 Winlogon 启动，而凭据管理是由本地安全机构（LSA）完成的。 成功 ARSO 配置和登录后，将立即从磁盘中删除保存的凭据。
+最后 Windows 更新重新启动后，用户将通过自动登录机制自动登录，用户的会话将与保留的密码解除冻结。 此外，设备会被锁定以保护用户的会话。 锁定将通过 Winlogon 启动，而凭据管理由本地安全机构 (LSA) 完成。 成功 ARSO 配置和登录后，将立即从磁盘中删除保存的凭据。
 
 通过在控制台上自动登录并锁定用户，Windows 更新可以在用户返回到设备之前完成用户特定的进程。 这样，用户就可以立即开始使用其设备。
 
@@ -74,8 +72,8 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 | 值名称 | 类型 | 数据 |
 | --- | --- | --- |
-| DisableAutomaticRestartSignOn | DWORD | 0（启用 ARSO） |
-|   |   | 1（禁用 ARSO） |
+| DisableAutomaticRestartSignOn | DWORD | 0 (启用 ARSO)  |
+|   |   | 1 (禁用 ARSO)  |
 
 **策略注册表位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
@@ -115,8 +113,8 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 | 值名称 | 类型 | 数据 |
 | --- | --- | --- |
-| AutomaticRestartSignOnConfig | DWORD | 0（启用 ARSO，如果安全） |
-|   |   | 1（启用 ARSO always） |
+| AutomaticRestartSignOnConfig | DWORD | 如果安全) ，则为 0 (启用 ARSO |
+|   |   | 1 (启用 ARSO always)  |
 
 **策略注册表位置：** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
@@ -144,11 +142,11 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 ### <a name="user-must-change-password-at-next-login"></a>用户在下次登录时必须更改密码
 
-如果需要在下一次登录时更改密码，用户登录可以进入 "已阻止" 状态。  在大多数情况下，可以在重新启动之前检测到这种情况，但并非全部（例如，在关机和下次登录之间可以达到密码过期时间）。
+如果需要在下一次登录时更改密码，用户登录可以进入 "已阻止" 状态。  在大多数情况下，可以在重新启动之前检测到这种情况，但并不是所有 (例如，在关机和下一次登录之间，可以达到密码过期。
 
 ### <a name="user-account-disabled"></a>用户帐户已禁用
 
-即使禁用了现有用户会话也是如此。  在大多数情况下，可在大多数情况下在本地检测到已禁用的帐户的重新启动，这取决于 gp，因为它可能不是域帐户（即使在 DC 上禁用了帐户，也可以使用某些域缓存登录方案）。
+即使禁用了现有用户会话也是如此。  在大多数情况下，可能会提前在大多数情况下在本地检测到已禁用的帐户的重新启动，这取决于 gp，这可能不是域帐户 (某些域缓存登录方案的工作原理，即使在 DC) 上禁用了帐户也是如此。
 
 ### <a name="logon-hours-and-parental-controls"></a>登录时间和家长控制
 
@@ -162,8 +160,8 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 |--|--|--|--|
 | 本地帐户-是 | 本地帐户-是 | 本地帐户-否 | 本地帐户-否 |
 | MSA 帐户-是 | MSA 帐户-是 | MSA 帐户-否 | MSA 帐户-否 |
-| Azure AD 联接的帐户-是 | Azure AD 联接的帐户-是 | Azure AD 联接的帐户-是（如果为混合） | Azure AD 联接的帐户-是 |
-| 已加入域的帐户-是 | 已加入域的帐户-是 | 已加入域的帐户-是 | 已加入域的帐户-是（如果是混合） |
+| Azure AD 联接的帐户-是 | Azure AD 联接的帐户-是 | Azure AD 联接的帐户-如果混合) ，则为 ( | Azure AD 联接的帐户-是 |
+| 已加入域的帐户-是 | 已加入域的帐户-是 | 已加入域的帐户-是 | 已加入域的帐户-是 (如果混合)  |
 
 ### <a name="credential-guard-interaction"></a>Credential Guard 交互
 

@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 17503575ce81b9571545027a811c39cd5f82b0aa
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 7e32047c3c2b255b81e959539d3ed3b5bbd2f0d6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518994"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943623"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>附录 M：文档链接和建议的读物
 
@@ -29,15 +27,15 @@ ms.locfileid: "87518994"
 | [安全管理的10个永恒定律](/previous-versions//cc722488(v=technet.10)) | [https://technet.microsoft.com/library/cc722488.aspx](/previous-versions//cc722488(v=technet.10)) |
 | [Microsoft 安全合规管理器](/previous-versions/tn-archive/cc677002(v=technet.10)) | [https://technet.microsoft.com/library/cc677002.aspx](/previous-versions/tn-archive/cc677002(v=technet.10)) |
 | [Gartner 研讨会 ITXPO](http://www.gartner.com/technology/symposium/orlando/) | [http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/) |
-| [2012数据违规调查报表（DBIR）](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) | [http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) |
-| [十个不可变定律（版本2.0）](https://www.microsoft.com/en-us/msrc?rtc=1) | [https://technet.microsoft.com/security/hh278941.aspx](https://www.microsoft.com/en-us/msrc?rtc=1) |
+| [2012 (DBIR) 的数据违规调查报告](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) | [http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) |
+| [安全性 (的十个永恒定律) 版本2.0](https://www.microsoft.com/en-us/msrc?rtc=1) | [https://technet.microsoft.com/security/hh278941.aspx](https://www.microsoft.com/en-us/msrc?rtc=1) |
 | [使用启发式扫描](/previous-versions/tn-archive/bb418939(v=technet.10)) | [https://technet.microsoft.com/library/bb418939.aspx](/previous-versions/tn-archive/bb418939(v=technet.10)) |
 | [驱动器-通过下载](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx) | [https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx) |
 | [Microsoft 支持部门文章2526083](https://support.microsoft.com/kb/2526083) | [https://support.microsoft.com/kb/2526083](https://support.microsoft.com/kb/2526083) |
 | [Microsoft 支持部门文章814777](https://support.microsoft.com/kb/814777) | [https://support.microsoft.com/kb/814777](https://support.microsoft.com/kb/814777) |
-| [打开 Web 应用程序安全性项目（OWASP）](https://www.owasp.org/index.php/Main_Page) | [https://www.owasp.org/index.php/Main_Page](https://www.owasp.org/index.php/Main_Page) |
+| [ (OWASP 中打开 Web 应用程序安全性项目) ](https://www.owasp.org/index.php/Main_Page) | [https://www.owasp.org/index.php/Main_Page](https://www.owasp.org/index.php/Main_Page) |
 | [Microsoft 安全开发生命周期](https://www.microsoft.com/security/sdl/default.aspx) | [https://www.microsoft.com/security/sdl/default.aspx](https://www.microsoft.com/security/sdl/default.aspx) |
-| [缓解哈希传递（PtH）攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) | [https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating哈希传递（PtH）攻击和其他凭据被盗 Techniques_English.pdf](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) |
+| [减少传递哈希 (PtH) 攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) | [https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating传递哈希 (PtH) 攻击和其他凭据被盗 Techniques_English.pdf](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) |
 | [已确定攻击者和目标攻击](https://www.microsoft.com/download/details.aspx?id=34793) | [https://www.microsoft.com/download/details.aspx?id=34793](https://www.microsoft.com/download/details.aspx?id=34793) |
 | [通过 GPO 管理内置管理员帐户密码的解决方案](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789) | [https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789) |
 | [Microsoft 支持部门文章817433](https://support.microsoft.com/?id=817433) | [https://support.microsoft.com/?id=817433](https://support.microsoft.com/?id=817433) |
@@ -80,7 +78,7 @@ ms.locfileid: "87518994"
 | [GFI 软件](http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA) | [http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA](http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA) |
 | [GFI LanGuard](http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g) | [http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g](http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g) |
 | [Secunia](http://secunia.com/) | [http://secunia.com/](http://secunia.com/) |
-| [Secunia 公司软件检查器（CSI）](http://secunia.com/products/corporate/csi/) | [http://secunia.com/products/corporate/csi/](http://secunia.com/products/corporate/csi/) |
+| [Secunia 企业软件检查器 (CSI) ](http://secunia.com/products/corporate/csi/) | [http://secunia.com/products/corporate/csi/](http://secunia.com/products/corporate/csi/) |
 | [漏洞智能管理器](http://secunia.com/vulnerability_intelligence/) | [http://secunia.com/vulnerability_intelligence/](http://secunia.com/vulnerability_intelligence/) |
 | [eEye 数字安全](http://www.wideeyesecurity.com/?gclid=CK6b0sm13rMCFad_QgodhScAiw) | [http://www.wideeyesecurity.com/?gclid=CK6b0sm13rMCFad_QgodhScAiw](http://www.wideeyesecurity.com/?gclid=CK6b0sm13rMCFad_QgodhScAiw) |
 | [Retina CS 管理](http://www.wideeyesecurity.com/products.asp) | [http://www.wideeyesecurity.com/products.asp](http://www.wideeyesecurity.com/products.asp) |
@@ -143,9 +141,9 @@ ms.locfileid: "87518994"
 | [基于角色的访问控制 (RBAC)](http://pic.dhe.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.security%2Fdoc%2Fsecurity%2Fdomain_rbac.htm) | [http://pic.dhe.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.security%2Fdoc%2Fsecurity%2Fdomain_rbac.htm](http://pic.dhe.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.security%2Fdoc%2Fsecurity%2Fdomain_rbac.htm) |
 | [RBAC 模型](http://docs.oracle.com/cd/E19082-01/819-3321/6n5i4b7ap/index.html) | [http://docs.oracle.com/cd/E19082-01/819-3321/6n5i4b7ap/index.html](http://docs.oracle.com/cd/E19082-01/819-3321/6n5i4b7ap/index.html) |
 | [以 Active Directory 为中心的访问控制](http://www.centrify.com/solutions/it-security-access-control.asp) | [http://www.centrify.com/solutions/it-security-access-control.asp](http://www.centrify.com/solutions/it-security-access-control.asp) |
-| [网络 Ark 的 Privileged Identity Management （PIM）套件](http://www.cyber-ark.com/digital-vault-products/pim-suite/index.asp) | [http://www.cyber-ark.com/digital-vault-products/pim-suite/index.asp](http://www.cyber-ark.com/digital-vault-products/pim-suite/index.asp) |
+| [网络 Ark 的 Privileged Identity Management (PIM) 套件](http://www.cyber-ark.com/digital-vault-products/pim-suite/index.asp) | [http://www.cyber-ark.com/digital-vault-products/pim-suite/index.asp](http://www.cyber-ark.com/digital-vault-products/pim-suite/index.asp) |
 | [寻找一项](http://www.quest.com/landing/?id=7370&gclid=CJnNgNyr3rMCFYp_QgodXFwA3w) | [http://www.quest.com/landing/?id=7370&gclid=CJnNgNyr3rMCFYp_QgodXFwA3w](http://www.quest.com/landing/?id=7370&gclid=CJnNgNyr3rMCFYp_QgodXFwA3w) |
-| [企业随机密码管理器（ERPM）](http://www.liebsoft.com/Random_Password_Manager/) | [http://www.liebsoft.com/Random_Password_Manager/](http://www.liebsoft.com/Random_Password_Manager/) |
+| [企业随机密码管理器 (ERPM) ](http://www.liebsoft.com/Random_Password_Manager/) | [http://www.liebsoft.com/Random_Password_Manager/](http://www.liebsoft.com/Random_Password_Manager/) |
 | [NetIQ 特权用户管理员](https://www.netiq.com/products/privileged-user-manager/) | [https://www.netiq.com/products/privileged-user-manager/](https://www.netiq.com/products/privileged-user-manager/) |
 | [CA IdentityMinder？](http://awards.scmagazine.com/ca-technologies-ca-identity-manager) | [http://awards.scmagazine.com/ca-technologies-ca-identity-manager](http://awards.scmagazine.com/ca-technologies-ca-identity-manager) |
 | [Windows Vista 和 Windows Server 2008 中的安全事件描述](https://support.microsoft.com/kb/947226) | [https://support.microsoft.com/kb/947226](https://support.microsoft.com/kb/947226) |
@@ -173,9 +171,9 @@ ms.locfileid: "87518994"
 |--|
 | [2014报表的格鲁吉亚州新兴网络威胁](http://www.gtsecuritysummit.com/2014Report.pdf) |
 | [Microsoft 安全智能报告](https://www.microsoft.com/security/sir/default.aspx) |
-| [缓解哈希传递（PTH）攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) |
+| [减少传递哈希 (PTH) 攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) |
 | [澳大利亚政府防御信号目录 Top 35 缓解策略](http://www.dsd.gov.au/infosec/top35mitigationstrategies.htm) |
-| [2012 数据违规调查报告](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)-（VERIZON，US 机密服务） |
+| [2012 数据违规调查报告](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)- (VERIZON，US 机密服务)  |
 | [2009数据违规调查报告](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf) |
 | [云计算安全优势](https://www.microsoft.com/news/Press/2012/May12/05-14SMBSecuritySurveyPR.aspx) |
 | [将最低权限原则应用于 Windows 上的用户帐户](https://www.microsoft.com/download/details.aspx?id=4868) |

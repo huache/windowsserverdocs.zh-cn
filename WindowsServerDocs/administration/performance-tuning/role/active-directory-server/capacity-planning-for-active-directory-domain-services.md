@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 33ae34a953f71739fd909ff5548861c2aebfe170
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2067f3dd8c07190c7f52eb75229f08e080ae0208
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896305"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992311"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Active Directory 域服务的容量规划
 
@@ -43,7 +43,7 @@ ms.locfileid: "87896305"
 
 在本文中，需要满足以下基准要求：
 
-- 读者已阅读并熟悉[Windows Server 2012 R2 的性能优化指南](/previous-versions//dn529133(v=vs.85))。
+- 读者已阅读并熟悉[Windows Server 2012 R2 的性能优化指南](/previous-versions/dn529133(v=vs.85))。
 - Windows Server 平台是基于 x64 的体系结构。 即使 Active Directory 环境安装在 Windows Server 2003 x86 上 (现在超出了支持生命周期的结束时间) ，并具有 (DIT) 的目录信息树，该树的大小低于 1.5 GB，并且可以轻松地保存在内存中，本文中的准则仍适用。
 - 容量规划是一个连续的过程，应定期查看环境符合预期的情况。
 - 硬件成本发生变化时，优化将在多个硬件生命周期内进行。 例如，内存成本更低，每个核心的成本降低，或不同存储选项的价格发生变化。
@@ -249,7 +249,7 @@ ms.locfileid: "87896305"
 
 在规划容量上花费了大量的时间和文档，使性能经常被忽略。 使用最新的硬件成本，大多数环境都不够大，因为这两个环境都是需要考虑的问题，而建议 "将其放入尽可能多的 RAM 作为数据库大小" 通常会涉及到其他内容，尽管它可能会在更大的环境中多余。
 
-### <a name="sizing"></a>调整大小
+### <a name="sizing"></a>大小调整
 
 #### <a name="evaluating-for-storage"></a>评估存储
 
@@ -353,7 +353,7 @@ ms.locfileid: "87896305"
 - 若要确定超过基础存储容量的存储所需的 i/o 数量，请执行以下操作：
   >*所需 IOPS* = (逻辑磁盘 (*\<NTDS Database Drive\>*) \avg Disk sec/Read &divide; *\<Target Avg Disk sec/Read\>*) &times; 逻辑磁盘 (*\<NTDS Database Drive\>*) 读取/秒
 
-| 计数器 | 值 |
+| 计数器 | “值” |
 |--|--|
 | 实际的逻辑磁盘 (*\<NTDS Database Drive\>*) \Avg Disk sec/Transfer | 02秒 (20 毫秒)  |
 | 目标逻辑磁盘 (*\<NTDS Database Drive\>*) \Avg Disk sec/Transfer | 01秒 |
@@ -385,7 +385,7 @@ ms.locfileid: "87896305"
 | 计算数据库中的页数 | 2097152 KB &divide; 8 kb =*页数* | 262144页 |
 | 计算完全预热缓存所需的 IOPS | 262144页 &divide; 600 秒 =*需要的 IOPS* | 437 IOPS |
 
-## <a name="processing"></a>Processing
+## <a name="processing"></a>正在处理
 
 ### <a name="evaluating-active-directory-processor-usage"></a>评估 Active Directory 处理器使用情况
 
@@ -410,7 +410,7 @@ ms.locfileid: "87896305"
 
 如前所述，在规划整个站点的容量时，目标是将设计的目标设定为具有*N* + 1 容量设计，这种情况下，在高峰期发生一次系统故障时，将允许在合理的质量级别继续服务。 这意味着，在 "*N*" 方案中，所有框中的负载都应小于 100% (比高峰期更好 ) ，小于80%。
 
-此外，如果站点中的应用程序和客户端使用最佳做法来查找域控制器 (也就是说，使用[DsGetDcName 函数](https://docs.microsoft.com/windows/win32/api/dsgetdc/nf-dsgetdc-dsgetdcnamea)) ，客户端应相对均匀地分布，因为存在任意数量的因素。
+此外，如果站点中的应用程序和客户端使用最佳做法来查找域控制器 (也就是说，使用[DsGetDcName 函数](/windows/win32/api/dsgetdc/nf-dsgetdc-dsgetdcnamea)) ，客户端应相对均匀地分布，因为存在任意数量的因素。
 
 在下一个示例中，进行了以下假设：
 
@@ -572,7 +572,7 @@ ms.locfileid: "87896305"
 
 在本文中，已讨论了规划和扩展对利用率目标的发展。 下面是建议阈值的摘要图表，必须进行监视以确保系统在足够的容量阈值内操作。 请记住，这些不是性能阈值，而是容量规划阈值。 在超过这些阈值的情况下，服务器将可以正常运行，但可以开始验证所有应用程序是否正常运行。 如果这种应用程序的行为良好，就可以开始评估硬件升级或其他配置更改。
 
-| 类别 | 性能计数器 | 间隔/采样 | 目标 | 警告 |
+| Category | 性能计数器 | 间隔/采样 | 目标 | 警告 |
 |--|--|--|--|--|
 | 处理器 | 处理器信息 (_Total) \\ 处理器实用程序 | 60 分钟 | 40% | 60% |
 | RAM (Windows Server 2008 R2 或更早版本)  | Memory\Available MB | < 100 MB | 空值 | < 100 MB |
@@ -660,7 +660,7 @@ ms.locfileid: "87896305"
 
 前面的数学计算可能会对系统中所需的逻辑处理器数量充分复杂。 这就是为什么系统调整规模的方法侧重于基于当前负载确定最大目标利用率，并计算实现所需的逻辑处理器的数量。 此外，尽管逻辑处理器速度会对性能产生重大影响，但缓存效率、内存一致性要求、线程计划和同步以及生成均衡的客户端负载都将对性能有重大影响，这种情况会因服务器而异。 计算能力相对便宜，尝试分析并确定所需的 Cpu 数量就比提供业务价值要多得多。
 
-40% 的要求并不难，而且这是一个合理的起点。 Active Directory 的各种使用者需要不同级别的响应能力。 在某些情况下，环境可以在80% 或90% 的利用率下运行，这是一种持续的平均值，因为对处理器的访问的等待时间将不会明显影响客户端性能。 重新迭代系统中的许多区域比系统中的逻辑处理器慢得多，这一点很重要，包括对 RAM 的访问、对磁盘的访问，以及通过网络传输响应。 所有这些项都需要进行调整。 示例：
+40% 的要求并不难，而且这是一个合理的起点。 Active Directory 的各种使用者需要不同级别的响应能力。 在某些情况下，环境可以在80% 或90% 的利用率下运行，这是一种持续的平均值，因为对处理器的访问的等待时间将不会明显影响客户端性能。 重新迭代系统中的许多区域比系统中的逻辑处理器慢得多，这一点很重要，包括对 RAM 的访问、对磁盘的访问，以及通过网络传输响应。 所有这些项都需要进行调整。 示例:
 
 - 将更多处理器添加到运行90% 的系统，该系统可能不会显著提高性能。 对系统进行更深入的分析可能会发现，有很多线程甚至无法在处理器上获得，因为它们正在等待 i/o 完成。
 - 解决磁盘绑定问题可能意味着以前花费大量时间进入等待状态的线程将不再处于 i/o 的等待状态，因此，对于 CPU 时间，会有更多的竞赛，这意味着，上一示例中的90% 使用率将为 100% (，因为它不能更高) 。 这两个组件需要同时进行优化。
