@@ -1,59 +1,57 @@
 ---
 title: 使用中的逻辑处理器数不得超过支持的最大值
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 66df8b02-91d1-424b-8934-a39c214d530e
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: b6cd948c47e58dec919cd946ad701f70403d6af3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d74fa49a3ce0015cb8ee819b537153519c498627
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859290"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960460"
 ---
 # <a name="the-number-of-logical-processors-in-use-must-not-exceed-the-supported-maximum"></a>使用中的逻辑处理器数不得超过支持的最大值
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
-有关最佳实践和扫描的详细信息，请参阅 [最佳实践分析程序](https://go.microsoft.com/fwlink/?LinkId=122786)。  
-  
-|属性|详细信息|  
-|-|-|  
-|**操作系统**|Windows Server 2016|  
-|**产品/功能**|Hyper-V|  
-|**对应**|错误|  
-|**类别**|策略|  
-  
-在以下部分中，斜体表示在此问题的最佳做法分析器工具中出现的文本。  
-  
-## <a name="issue"></a>问题  
-  
-*为服务器配置的逻辑处理器太多。*  
-  
-## <a name="impact"></a>影响  
-  
-*Microsoft 不支持在此计算机上运行 Hyper-v。*  
-  
-## <a name="resolution"></a>分辨率  
-  
-*从此计算机中删除一些处理器，或使用 msconfig 限制可用处理器的数量。*  
-  
-请参阅以下说明以使用 Msconfig。 有关删除处理器的详细信息，请参阅计算机附带的说明或联系硬件制造商。 有关 Hyper-v 支持的最高配置的详细信息，请参阅[在 Windows Server 2016 中规划 hyper-v 可伸缩性](../plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)。  
-  
-### <a name="to-limit-the-number-of-available-processors"></a>限制可用处理器的数量  
-  
-1.  打开系统配置应用（Msconfig.exe）。 为此，请单击 "**开始**"，键入**msconfig**，右键单击 "**系统配置**" 桌面应用程序，然后单击 "以**管理员身份运行**"。  
-  
-2.  从 "**启动**" 选项卡中，单击 "**高级选项**"。  
-  
-3.  选择 "**处理器数量**"，然后在列表中选择一个编号。 单击“确定”。  
-  
-4.  重新启动计算机以使用新数目的处理器运行它。  
-  
+有关最佳做法和扫描的详细信息，请参阅[最佳做法分析器](https://go.microsoft.com/fwlink/?LinkId=122786)。
+
+|属性|详细信息|
+|-|-|
+|**操作系统**|Windows Server 2016|
+|**产品/功能**|Hyper-V|
+|**严重性**|错误|
+|**类别**|策略|
+
+在以下部分中，斜体表示在此问题的最佳做法分析器工具中出现的文本。
+
+## <a name="issue"></a>问题
+
+*为服务器配置的逻辑处理器太多。*
+
+## <a name="impact"></a>影响
+
+*Microsoft 不支持在此计算机上运行 Hyper-v。*
+
+## <a name="resolution"></a>解决方法
+
+*从此计算机中删除一些处理器，或使用 msconfig 限制可用处理器的数量。*
+
+请参阅以下说明以使用 Msconfig。 有关删除处理器的详细信息，请参阅计算机附带的说明或联系硬件制造商。 有关 Hyper-v 支持的最高配置的详细信息，请参阅[在 Windows Server 2016 中规划 hyper-v 可伸缩性](../plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)。
+
+### <a name="to-limit-the-number-of-available-processors"></a>限制可用处理器的数量
+
+1.   ( # A0) 打开 "系统配置" 应用。 为此，请单击 "**开始**"，键入**msconfig**，右键单击 "**系统配置**" 桌面应用程序，然后单击 "以**管理员身份运行**"。
+
+2.  从 "**启动**" 选项卡中，单击 "**高级选项**"。
+
+3.  选择 "**处理器数量**"，然后在列表中选择一个编号。 单击“确定”。
+
+4.  重新启动计算机以使用新数目的处理器运行它。
+
 
 

@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: bb416a45e18ea34628994b589e452f25d2d7744e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 91e14b5ac023f6726ffc508f945567b83311d7a4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937666"
+ms.locfileid: "87997021"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知问题
 
@@ -195,7 +195,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
   - 要启用 Windows 10 客户端管理，必须利用提升的 PowerShell 提示符发出 ```Enable-PSRemoting``` 命令。
 
-  - 你可能还需要通过 ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` 来更新防火墙以允许从本地子网外部的连接。 有关限制性更强的网络方案，请参阅[本文档](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1)。
+  - 你可能还需要通过 ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` 来更新防火墙以允许从本地子网外部的连接。 有关限制性更强的网络方案，请参阅[本文档](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1)。
 
 ## <a name="cluster-deployment"></a>群集部署
 
@@ -222,7 +222,7 @@ Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v
 建议在创建 stretch 群集时使用已加入域的服务器。 由于 WinRM 限制，尝试将工作组计算机用于 stretch 群集部署时出现网络分段问题。
 
 ### <a name="undo-and-start-over"></a>撤消并重新开始
-如果为群集部署重复使用相同的计算机，则在同一组计算机中进行成功的群集部署非常重要。 有关如何清理群集的说明，请参阅[部署超聚合基础结构](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over)页。
+如果为群集部署重复使用相同的计算机，则在同一组计算机中进行成功的群集部署非常重要。 有关如何清理群集的说明，请参阅[部署超聚合基础结构](../use/deploy-hyperconverged-infrastructure.md#undo-and-start-over)页。
 
 ### <a name="credssp"></a>CredSSP
 Windows 管理中心群集部署向导在多个位置使用 CredSSP。 在向导过程中遇到此错误消息 (在验证群集步骤) 中最常见的情况：
@@ -291,7 +291,7 @@ Windows 管理中心版本2007中的群集部署向导不为 RDMA 配置提供�
 
 ### <a name="azure-file-sync-permissions"></a>Azure 文件同步权限
 
-Azure 文件同步需要 Azure 中的权限，但 Windows 管理中心未在版本1910之前提供。 如果使用早于 Windows 管理中心版本1910的版本向 Azure 注册了 Windows 管理中心网关，则需要更新 Azure Active Directory 应用程序，以获取最新版本的 Windows 管理中心中的 Azure 文件同步的正确权限。 其他权限允许 Azure 文件同步按本文中所述执行存储帐户访问的自动配置：[确保 Azure 文件同步有权访问存储帐户](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
+Azure 文件同步需要 Azure 中的权限，但 Windows 管理中心未在版本1910之前提供。 如果使用早于 Windows 管理中心版本1910的版本向 Azure 注册了 Windows 管理中心网关，则需要更新 Azure Active Directory 应用程序，以获取最新版本的 Windows 管理中心中的 Azure 文件同步的正确权限。 其他权限允许 Azure 文件同步按本文中所述执行存储帐户访问的自动配置：[确保 Azure 文件同步有权访问存储帐户](/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
 
 若要更新 Azure Active Directory 应用，可以执行以下两项操作之一
 1. 请参阅**Settings**  >  "**azure**  >  **注销**" 设置，然后再次向 azure 注册 Windows 管理中心，确保你选择创建新的 Azure Active Directory 应用程序。
@@ -301,5 +301,5 @@ Azure 文件同步需要 Azure 中的权限，但 Windows 管理中心未在版�
 
 Azure 管理服务（包括 Azure Monitor、Azure 更新管理和 Azure 安全中心）为本地服务器使用同一代理： Microsoft Monitoring Agent。 Azure 更新管理包含一组受支持的受支持区域，需要将 Log Analytics 工作区链接到 Azure 自动化帐户。 由于此限制，如果想要在 Windows 管理中心中设置多个服务，则必须首先设置 Azure 更新管理，然后设置 Azure 安全中心或 Azure Monitor。 如果已配置任何使用 Microsoft Monitoring Agent 的 Azure 管理服务，然后尝试使用 Windows 管理中心设置 Azure 更新管理，则在链接到 Microsoft Monitoring Agent 的现有资源支持 Azure 更新管理时，Windows 管理中心将仅允许配置 Azure 更新管理。 如果不是这种情况，则有两个选择：
 
-1. 请通过 "控制面板" > Microsoft Monitoring Agent 断开服务器与 Azure Monitor 或 Azure 安全) 中心等 ([的现有 Azure 管理解决方案的连接](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)。 然后在 Windows 管理中心中设置 Azure 更新管理。 之后，你可以返回到通过 Windows 管理中心设置其他 Azure 管理解决方案，而不会出现问题。
-2. 可以[手动设置 azure 更新管理所需的 azure 资源](https://docs.microsoft.com/azure/automation/automation-update-management)，然后在 Windows 管理中心) 外部[手动更新 Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) (，以添加与要使用的更新管理解决方案相对应的新工作区。
+1. 请通过 "控制面板" > Microsoft Monitoring Agent 断开服务器与 Azure Monitor 或 Azure 安全) 中心等 ([的现有 Azure 管理解决方案的连接](/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)。 然后在 Windows 管理中心中设置 Azure 更新管理。 之后，你可以返回到通过 Windows 管理中心设置其他 Azure 管理解决方案，而不会出现问题。
+2. 可以[手动设置 azure 更新管理所需的 azure 资源](/azure/automation/automation-update-management)，然后在 Windows 管理中心) 外部[手动更新 Microsoft Monitoring Agent](/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) (，以添加与要使用的更新管理解决方案相对应的新工作区。

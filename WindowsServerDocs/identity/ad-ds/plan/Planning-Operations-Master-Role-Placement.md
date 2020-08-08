@@ -6,46 +6,44 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ad4e89be7eeb6190d27ee0e15e370bcaa1806cb8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9437992e5e12622b132380b63aaccd56140bd21d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959369"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970944"
 ---
 # <a name="planning-operations-master-role-placement"></a>规划操作主机角色放置
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory 域服务（AD DS）支持对目录数据进行多主机复制，这意味着任何域控制器都可以接受目录更改并将更改复制到所有其他域控制器。 但是，某些更改（如架构修改）对于以多主机方式执行是不切实际的。 出于此原因，某些域控制器（称为操作主机）包含负责接受特定更改请求的角色。
+Active Directory 域服务 (AD DS) 支持对目录数据进行多主机复制，这意味着任何域控制器都可以接受目录更改并将更改复制到所有其他域控制器。 但是，某些更改（如架构修改）对于以多主机方式执行是不切实际的。 出于此原因，某些域控制器（称为操作主机）包含负责接受特定更改请求的角色。
 
 > [!NOTE]
-> 操作主机角色所有者必须能够向 Active Directory 数据库写入某些信息。 由于只读域控制器（RODC）上 Active Directory 数据库的只读特性， **rodc 不能充当操作主机角色持有**者。
+> 操作主机角色所有者必须能够向 Active Directory 数据库写入某些信息。 由于只读域控制器上的 Active Directory 数据库的只读特性 (RODC) ， **rodc 不能充当操作主机角色持有**者。
 
-每个域中都存在三个操作主机角色（也称为灵活单主机操作或 FSMO）：
+三个操作主机角色 (也称为灵活单主机操作或 FSMO) 存在于每个域中：
 
-- 主域控制器（PDC）仿真器操作主机处理所有密码更新。
+- 主域控制器 (PDC) 模拟器操作主机处理所有密码更新。
 
-- 相对 ID （RID）操作主机维护域的全局 RID 池，并将本地 Rid 池分配给所有域控制器，以确保域中创建的所有安全主体都具有唯一的标识符。
+- 相对 ID (RID) 操作主机维护域的全局 RID 池，并将本地 Rid 池分配给所有域控制器，以确保域中创建的所有安全主体都具有唯一的标识符。
 - 给定域的基础结构操作主机将维护作为其域中组的成员的其他域中的安全主体的列表。
 
 除了三个域级操作主机角色，每个林中都有两个操作主机角色：
 
 - 架构操作主机控制对架构的更改。
-- 域命名操作主机在林中添加和删除域和其他目录分区（例如，域名系统（DNS）应用程序分区）。
+- 域命名操作主机会添加并删除域和其他目录分区 (例如，域名系统 (DNS) 应用程序分区) 到林中以及从林。
 
 将托管这些操作主机角色的域控制器放置在网络可靠性较高的区域中，并确保 PDC 仿真器和 RID 主机一直可用。
 
-当创建了给定域中的第一个域控制器时，将自动分配操作主机角色持有者。 将两个林级角色（架构主机和域命名主机）分配给在林中创建的第一个域控制器。 此外，三个域级角色（RID 主机、基础结构主机和 PDC 模拟器）分配给域中创建的第一个域控制器。
+当创建了给定域中的第一个域控制器时，将自动分配操作主机角色持有者。  (架构主机和域命名主机) 的两个林级角色分配给在林中创建的第一个域控制器。 此外，三个域级角色 (RID 主机、基础结构主机和 PDC 仿真器) 分配给域中创建的第一个域控制器。
 
 > [!NOTE]
 > 仅当创建新域和将当前角色持有者降级时，才会执行自动操作主机角色持有者分配。 对角色所有者的所有其他更改必须由管理员启动。
 
-这些自动操作主机角色分配可能会导致在林或域中创建的第一个域控制器上的 CPU 使用率非常高。 若要避免这种情况，请将操作主机角色分配到林或域中的各个域控制器。 将承载操作主机角色的域控制器放置在网络可靠性和林中所有其他域控制器可访问的位置。
+这些自动操作主机角色分配可能会导致在林或域中创建的第一个域控制器上的 CPU 使用率非常高。 为避免这种情况，请将 (传输) 操作主机角色分配给林或域中的各个域控制器。 将承载操作主机角色的域控制器放置在网络可靠性和林中所有其他域控制器可访问的位置。
 
-还应为所有操作主机角色指定备用（备用）操作主机。 备用操作主机是可以将操作主机角色传输到的域控制器，以防原始角色持有者失败。 确保备用操作主机是实际操作主机的直接复制伙伴。
+还应为所有操作主机角色指定备用 (备用) 操作主机。 备用操作主机是可以将操作主机角色传输到的域控制器，以防原始角色持有者失败。 确保备用操作主机是实际操作主机的直接复制伙伴。
 
 ## <a name="planning-the-pdc-emulator-placement"></a>规划 PDC 模拟器位置
 
@@ -55,7 +53,7 @@ PDC 模拟器处理客户端密码更改。 只有一个域控制器充当林中
 
 如果需要，请将 PDC 仿真器放置在包含大量用户的域中，以便进行密码转发操作。 此外，请确保位置正确连接到其他位置，以最大程度地减少复制延迟。
 
-要使工作表可以帮助您记录有关计划放置 PDC 模拟器的位置以及每个位置中每个域的用户数的信息，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip 和打开域控制器布局（DSSTOPO_4.doc）。
+对于一个工作表，以帮助您记录有关计划放置 PDC 模拟器的位置以及每个位置中每个域的用户数的信息，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip 和打开域控制器布局 ( # A1) 。
 
 你需要参考有关在部署区域性域时需要放置 PDC 模拟器的位置的信息。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
 
@@ -82,7 +80,7 @@ PDC 模拟器处理客户端密码更改。 只有一个域控制器充当林中
 - 站点 C 和 D 中的域控制器无法添加或删除目录、DNS 或自定义应用程序分区。
 - 站点 C 和 D 中的域控制器无法进行架构更改。
 
-要使工作表帮助你规划操作主机角色放置，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开域控制器布局（DSSTOPO_4.doc）。
+要使工作表帮助你规划操作主机角色放置，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开域控制器布局 ( # A1) 。
 
 创建目录林根级域和区域域时，需要引用此信息。 有关部署目录林根级域的详细信息，请参阅部署[部署 Windows Server 2008 林根级域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。
 

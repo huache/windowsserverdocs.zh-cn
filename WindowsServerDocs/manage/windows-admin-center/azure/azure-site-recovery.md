@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 ms.localizationpriority: low
-ms.openlocfilehash: 265589789f2966e7b6140543876f41058aa5d705
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 651eff1819a7ec867febd86005415e5044e6bbd0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940078"
+ms.locfileid: "87996830"
 ---
 # <a name="protect-your-hyper-v-virtual-machines-with-azure-site-recovery-and-windows-admin-center"></a>Azure Site Recovery 和 Windows 管理中心保护 Hyper-v 虚拟机
 
 >适用于：Windows Admin Center 预览版、Windows Admin Center
 
-[了解有关 Azure 与 Windows 管理中心的集成的详细信息。](../plan/azure-integration-options.md)
+[了解有关 Azure 与 Windows 管理中心的集成的详细信息。](./index.md)
 
 Windows Admin Center 简化了在 Hyper-V 服务器或群集上复制虚拟机的流程，让你能够更轻松地通过自己的数据中心使用 Azure 的强大功能。 若要自动设置，可以将 Windows Admin Center 网关连接到 Azure。
 
@@ -25,7 +25,7 @@ Windows Admin Center 简化了在 Hyper-V 服务器或群集上复制虚拟机�
 
 ## <a name="what-is-azure-site-recovery-and-how-does-it-work-with-windows-admin-center"></a>什么是 Azure Site Recovery？它如何与 Windows Admin Center 共同工作？
 
-**Azure Site Recovery** 是一项 Azure 服务，它复制在虚拟机上运行的工作负载，以便在出现灾难时能够让你的业务关键基础结构受到保护。  [详细了解 Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)。
+**Azure Site Recovery** 是一项 Azure 服务，它复制在虚拟机上运行的工作负载，以便在出现灾难时能够让你的业务关键基础结构受到保护。  [详细了解 Azure Site Recovery](/azure/site-recovery/site-recovery-overview)。
 
 Azure Site Recovery 包括以下两个组件：复制和故障转移。 复制部分将目标虚拟机的 VHD 复制到 Azure 存储帐户，从而在灾难出现时保护虚拟机。 然后，你可以对这些虚拟机执行故障转移，在发生灾难时在 Azure 中运行它们。 你还可以在不影响主虚拟机的情况下执行测试故障转移来测试 Azure 中的恢复过程。
 
@@ -36,7 +36,7 @@ Azure Site Recovery 包括以下两个组件：复制和故障转移。 复制�
 
 - 托管你想保护的虚拟机的目标服务器必须能够访问 Internet 才可以复制到 Azure。
 - [将你的 Windows Admin Center 网关连接到 Azure](azure-integration.md)。
-- [查看容量规划工具以评估成功复制和故障转移的要求](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-capacity)。
+- [查看容量规划工具以评估成功复制和故障转移的要求](/azure/site-recovery/hyper-v-site-walkthrough-capacity)。
 
 ## <a name="step-1-set-up-vm-protection-on-your-target-host"></a>步骤 1：在目标主机上设置 VM 保护
 
@@ -68,9 +68,9 @@ Azure Site Recovery 包括以下两个组件：复制和故障转移。 复制�
 1. 导航回在上面的步骤 2 中配置的服务器或群集，并转到**虚拟机 > 清单**。
 2. 选择你要保护的虚拟机。
 3. 选择 "**更多**  >  **保护 VM**"。
-4. 查看[保护虚拟机的容量要求](https://docs.microsoft.com/azure/site-recovery/site-recovery-capacity-planner)。
+4. 查看[保护虚拟机的容量要求](/azure/site-recovery/site-recovery-capacity-planner)。
 
-    如果要使用高级存储帐户，请[在 Azure 门户中创建一个](https://docs.microsoft.com/azure/storage/common/storage-premium-storage)。 Windows Admin Center 窗格中提供的**新建**选项创建标准存储帐户。
+    如果要使用高级存储帐户，请[在 Azure 门户中创建一个](/azure/storage/common/storage-premium-storage)。 Windows Admin Center 窗格中提供的**新建**选项创建标准存储帐户。
 
 5. 输入要用于此虚拟机复制的**存储帐户**的名称，然后选择**保护虚拟机**。 此步骤支持复制所选虚拟机。
 
@@ -80,13 +80,13 @@ Azure Site Recovery 包括以下两个组件：复制和故障转移。 复制�
 
  虽然在开始虚拟机复制时无需完成此步骤（通过复制虚拟机已受到保护），但我们建议在设置 Azure Site Recovery 时配置故障转移设置。 如果你想要为 Azure 虚拟机的故障转移作准备，请完成以下步骤：
 
-1. [设置 Azure 网络](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-prepare-azure)，故障转移的虚拟机会将其附加到此 VNET。 请注意，链接页面上列出的其他步骤会由 Windows Admin Center 自动完成；你只需设置 Azure 网络。
+1. [设置 Azure 网络](/azure/site-recovery/hyper-v-site-walkthrough-prepare-azure)，故障转移的虚拟机会将其附加到此 VNET。 请注意，链接页面上列出的其他步骤会由 Windows Admin Center 自动完成；你只需设置 Azure 网络。
 
-2. [运行测试故障转移](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-test-failover)。
+2. [运行测试故障转移](/azure/site-recovery/hyper-v-site-walkthrough-test-failover)。
 
 ## <a name="step-4-create-recovery-plans"></a>步骤 4：创建恢复计划
 
-**恢复计划**是 Azure Site Recovery 中的一项功能，让你可以对包含一组虚拟机的整个应用程序执行故障转移和恢复。 虽然可以通过向恢复计划添加包含应用程序的虚拟机来单独恢复受保护的虚拟机，不过，你也可以通过恢复计划对整个应用程序执行故障转移。 你也可以使用恢复计划的测试故障转移功能来测试应用程序的恢复。 恢复计划让你可以对虚拟机分组，排列故障转移期间虚拟机的引发顺序，并恢复过程中自动执行附加步骤。 在虚拟机受到保护后，你可以转到 Azure 门户中的 Azure Site Recovery 保管库，并为这些虚拟机创建恢复计划。 [详细了解恢复计划](https://docs.microsoft.com/azure/site-recovery/site-recovery-create-recovery-plans)。
+**恢复计划**是 Azure Site Recovery 中的一项功能，让你可以对包含一组虚拟机的整个应用程序执行故障转移和恢复。 虽然可以通过向恢复计划添加包含应用程序的虚拟机来单独恢复受保护的虚拟机，不过，你也可以通过恢复计划对整个应用程序执行故障转移。 你也可以使用恢复计划的测试故障转移功能来测试应用程序的恢复。 恢复计划让你可以对虚拟机分组，排列故障转移期间虚拟机的引发顺序，并恢复过程中自动执行附加步骤。 在虚拟机受到保护后，你可以转到 Azure 门户中的 Azure Site Recovery 保管库，并为这些虚拟机创建恢复计划。 [详细了解恢复计划](/azure/site-recovery/site-recovery-create-recovery-plans)。
 
 ## <a name="monitoring-replicated-vms-in-azure"></a>监视 Azure 中复制的虚拟机 ##
 

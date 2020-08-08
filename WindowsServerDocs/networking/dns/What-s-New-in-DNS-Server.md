@@ -2,32 +2,30 @@
 title: Windows Server 中 DNS 服务器的新增功能
 description: 本主题概述了 Windows Server 2016 及更高版本中 DNS 服务器的新增功能
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ee2baf5a42d8c0aaeced375bfd2d61193c4828ed
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 05daf36ebf875269906b0c287204e4ff131a678e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473914"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996946"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Windows Server 中 DNS 服务器的新增功能
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-本主题介绍 Windows Server 2016 中新增或更改的域名系统（DNS）服务器功能。
+本主题介绍 Windows Server 2016 中新增或更改的域名系统 (DNS) 服务器功能。
 
 在 Windows Server 2016 中，DNS 服务器提供以下几个方面的增强支持。
 
-|功能|新功能或改进功能|说明|
+|功能|新功能或改进功能|描述|
 |-----------------|-------------------|---------------|
-|DNS 策略|新建|你可以配置 DNS 策略来指定 DNS 服务器如何响应 DNS 查询。 DNS 响应可以基于客户端 IP 地址（位置）、当天的时间和多个其他参数。 DNS 策略启用位置感知的 DNS、流量管理、负载平衡、裂脑 DNS 和其他方案。|
-|响应速率限制（RRL）|新建|可以在 DNS 服务器上启用响应速率限制。 这样做可以避免恶意系统在 DNS 客户端上使用 DNS 服务器启动拒绝服务攻击的可能性。|
-|命名实体的基于 DNS 的身份验证（窗格会）|新建|你可以使用 TLSA （传输层安全身份验证）记录向 DNS 客户端提供信息，这些客户端会向你的域名提供证书所需的 CA。 这可以防止中间人攻击，有人可能会损坏 DNS 缓存以指向自己的网站，并提供从其他 CA 颁发的证书。|
+|DNS 策略|新建|你可以配置 DNS 策略来指定 DNS 服务器如何响应 DNS 查询。 DNS 响应可基于客户端 IP 地址 (位置) 、当天时间和多个其他参数。 DNS 策略启用位置感知的 DNS、流量管理、负载平衡、裂脑 DNS 和其他方案。|
+|RRL (的响应速率限制) |新建|可以在 DNS 服务器上启用响应速率限制。 这样做可以避免恶意系统在 DNS 客户端上使用 DNS 服务器启动拒绝服务攻击的可能性。|
+|命名实体的基于 DNS 的身份验证 (窗格会) |新建|你可以使用 TLSA (传输层安全身份验证) 记录向 DNS 客户端提供信息，这些客户端会向你的域名提供证书的 CA。 这可以防止中间人攻击，有人可能会损坏 DNS 缓存以指向自己的网站，并提供从其他 CA 颁发的证书。|
 |未知记录支持|新建|你可以使用未知的记录功能添加 Windows DNS 服务器未显式支持的记录。|
 |IPv6 根提示|新建|可以使用本地 IPV6 根提示支持通过 IPV6 根服务器执行 internet 名称解析。|
 |Windows PowerShell 支持|改进了|新的 Windows PowerShell cmdlet 可用于 DNS 服务器。|
@@ -53,7 +51,7 @@ ms.locfileid: "85473914"
 
 ## <a name="response-rate-limiting"></a>响应速率限制
 
-你可以配置 RRL 设置，以控制当服务器收到针对同一客户端的多个请求时如何响应 DNS 客户端的请求。 这样做可以防止某人使用您的 DNS 服务器发送拒绝服务（Dos）攻击。 例如，bot 网络可以使用第三台计算机的 IP 地址作为请求者来向 DNS 服务器发送请求。 如果没有 RRL，你的 DNS 服务器可能会响应所有请求，从而淹没第三台计算机。 使用 RRL 时，可以配置以下设置：
+你可以配置 RRL 设置，以控制当服务器收到针对同一客户端的多个请求时如何响应 DNS 客户端的请求。 这样做可以防止某人使用您的 DNS 服务器发送拒绝服务 (Dos) 攻击。 例如，bot 网络可以使用第三台计算机的 IP 地址作为请求者来向 DNS 服务器发送请求。 如果没有 RRL，你的 DNS 服务器可能会响应所有请求，从而淹没第三台计算机。 使用 RRL 时，可以配置以下设置：
 
 -   **每秒响应数**。 这是在一秒内对客户端提供相同响应的最大次数。
 
@@ -81,7 +79,7 @@ ms.locfileid: "85473914"
 
 ## <a name="unknown-record-support"></a>未知记录支持
 
-"未知记录" 是指其 RDATA 格式对 DNS 服务器未知的 RR。 新添加的对未知记录（RFC 3597）类型的支持意味着可以将不受支持的记录类型添加到采用二进制实时格式的 Windows DNS 服务器区域。 Windows 缓存解析程序已具有处理未知记录类型的能力。 Windows DNS 服务器不会对未知记录执行任何特定于记录的处理，但会在收到查询的情况下将其发送回响应。
+"未知记录" 是指其 RDATA 格式对 DNS 服务器未知的 RR。 新添加了对未知记录 (RFC 3597) 类型的支持，这意味着你可以将不受支持的记录类型以二进制的在线格式添加到 Windows DNS 服务器区域。 Windows 缓存解析程序已具有处理未知记录类型的能力。 Windows DNS 服务器不会对未知记录执行任何特定于记录的处理，但会在收到查询的情况下将其发送回响应。
 
 ## <a name="ipv6-root-hints"></a>IPv6 根提示
 
@@ -147,13 +145,9 @@ Windows Server 2016 中引入了以下新的 Windows PowerShell cmdlet 和参数
 
 有关详细信息，请参阅以下 Windows Server 2016 Windows PowerShell 命令参考主题。
 
-- [DnsServer 模块](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
-- [Set-dnsclient 模块](https://docs.microsoft.com/powershell/module/dnsclient/?view=win10-ps)
+- [DnsServer 模块](/powershell/module/dnsserver/?view=win10-ps)
+- [Set-dnsclient 模块](/powershell/module/dnsclient/?view=win10-ps)
 
 ## <a name="additional-references"></a>其他参考
 
 -   [DNS 客户端中的新增功能](What-s-New-in-DNS-Client.md)
-
-
-
-

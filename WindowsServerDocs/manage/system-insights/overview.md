@@ -1,19 +1,17 @@
 ---
 title: 系统见解概述
 description: 系统见解是 Windows Server 2019 中的一种新的预测分析功能。 System Insights 预测功能-每个由机器学习模型提供支持的功能-在本地分析 Windows Server 系统数据（如性能计数器和事件），提供对服务器功能的见解，帮助你减少与被动相关的运营费用，从而管理部署中的问题。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: b1f0fc5343c5228a02369a64bff2de50ab3f863e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9bedd593cdd26b67e6e16ddea73955bb926a87a5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471762"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996679"
 ---
 # <a name="system-insights-overview"></a>系统见解概述
 
@@ -23,7 +21,7 @@ ms.locfileid: "85471762"
 
 在 Windows Server 2019 中，系统见解附带了四项默认功能，重点介绍容量预测，根据以前的使用模式预测计算、网络和存储的未来资源。 系统见解还附带了一个[可扩展的基础结构](adding-and-developing-capabilities.md)，因此，Microsoft 和第三方可以向系统见解添加新的预测功能，而无需更新操作系统。
 
-你可以通过直观的[Windows 管理中心](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview)扩展或[直接通过 PowerShell](https://aka.ms/SystemInsightsPowerShell)管理系统见解，使用 System Insights 可以根据部署的需求，单独配置每个预测功能。 所有预测结果都将发布到事件日志，这样您就可以使用[Azure Monitor](https://azure.microsoft.com/services/monitor/)或[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)轻松地聚合和查看一组计算机的预测。
+你可以通过直观的[Windows 管理中心](../windows-admin-center/overview.md)扩展或[直接通过 PowerShell](https://aka.ms/SystemInsightsPowerShell)管理系统见解，使用 System Insights 可以根据部署的需求，单独配置每个预测功能。 所有预测结果都将发布到事件日志，这样您就可以使用[Azure Monitor](https://azure.microsoft.com/services/monitor/)或[System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807)轻松地聚合和查看一组计算机的预测。
 
 ![Windows 管理中心中的系统见解扩展，显示 CPU 容量预测功能，图形绘制了预测](media/cpu-forecast-2.png)
 

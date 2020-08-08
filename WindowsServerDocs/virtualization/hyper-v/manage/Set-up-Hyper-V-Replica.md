@@ -1,20 +1,18 @@
 ---
 title: 设置 Hyper-V 副本
-ms.technology: compute-hyper-v
 description: 提供有关设置副本、测试故障转移和执行第一次复制的说明。
-ms.prod: windows-server
 manager: dongill
 ms.topic: article
 ms.assetid: eea9e996-bfec-4065-b70b-d8f66e7134ac
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/10/2016
-ms.openlocfilehash: c24b26617f7174632bc39842afc9e83843e7673b
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 24fce3e0ebbfc51167a7e6e390de092433cceaff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769685"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941845"
 ---
 # <a name="set-up-hyper-v-replica"></a>设置 Hyper-V 副本
 

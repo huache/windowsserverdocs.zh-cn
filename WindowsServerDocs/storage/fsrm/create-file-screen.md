@@ -2,18 +2,16 @@
 title: 创建文件屏蔽
 description: 本文介绍如何创建文件屏蔽
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e7827f1e80b1cfe2288bee968cc3c4e3cd428e15
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4efa2add790e4284865a54eaedf3cbb7d9c0589c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474374"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971094"
 ---
 # <a name="create-a-file-screen"></a>创建文件屏蔽
 
@@ -52,7 +50,7 @@ ms.locfileid: "85474374"
     -   若要保存基于这些自定义属性的模板（推荐），请单击**将自定义属性另存为模板**，然后输入模板名称。 此选项会将模板应用于新文件屏蔽，并且以后可以使用该模板创建其他文件屏蔽。 这将使你以后能通过更新模板来自动更新文件屏蔽。
     -   如果你不希望在保存文件屏蔽的时候保存模板，请单击**保存自定义文件屏蔽，但不创建模板**。
 
-12. 单击" **确定**"。
+12. 单击“确定”。
 
 ## <a name="additional-references"></a>其他参考
 

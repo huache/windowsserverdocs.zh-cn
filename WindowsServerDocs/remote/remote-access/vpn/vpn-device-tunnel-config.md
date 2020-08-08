@@ -1,20 +1,18 @@
 ---
 title: 在 Windows 10 中配置 VPN 设备隧道
 description: 了解如何在 Windows 10 中创建 VPN 设备隧道。
-ms.prod: windows-server
 ms.date: 11/05/2018
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 636c0c56c52f501a54679a569213bcd4e4646b72
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 04500e2a9d5623aa9ce9796088bda2e4a6a5eccd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181983"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996787"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>在 Windows 10 中配置 VPN 设备隧道
 
@@ -28,9 +26,9 @@ Always On VPN 使你能够为设备或计算机创建专用 VPN 配置文件。 
 
 与仅在用户登录到设备或计算机之后进行连接的_用户隧道_不同，_设备隧道_允许 VPN 在用户登录之前建立连接。 _设备隧道_和_用户隧道_独立操作其 VPN 配置文件，可以同时连接，并且可以根据需要使用不同的身份验证方法和其他 VPN 配置设置。 用户隧道支持 SSTP 和 IKEv2，而设备隧道仅支持 IKEv2，而不支持 SSTP 回退。
 
-在已加入域、未加入域（工作组）或 Azure AD 联接的设备上支持用户隧道，以允许企业和 BYOD 方案。 它可在所有 Windows 版本中使用，并且平台功能可通过 UWP VPN 插件支持的方式提供给第三方。
+在已加入域、未加入域的 (工作组) 或 Azure AD 加入设备上，支持企业和 BYOD 方案的用户隧道。 它可在所有 Windows 版本中使用，并且平台功能可通过 UWP VPN 插件支持的方式提供给第三方。
 
-只能在运行 Windows 10 企业版或教育版1709或更高版本的已加入域的设备上配置设备隧道。 不支持第三方控制设备隧道。 设备隧道不支持使用名称解析策略表（NRPT）。 设备隧道不支持强制隧道。 您必须将其配置为拆分隧道。
+只能在运行 Windows 10 企业版或教育版1709或更高版本的已加入域的设备上配置设备隧道。 不支持第三方控制设备隧道。 设备隧道不支持使用名称解析策略表 (NRPT) 。 设备隧道不支持强制隧道。 您必须将其配置为拆分隧道。
 
 
 ## <a name="device-tunnel-requirements-and-features"></a>设备隧道要求和功能
@@ -46,9 +44,9 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>VPN 设备隧道配置
 
-下面的示例配置文件 XML 为仅要求客户端发起的请求通过设备隧道的情况提供了良好的指南。  将利用流量筛选器将设备隧道限制为仅管理流量。  此配置适用于 Windows 更新、典型的组策略（GP）和 Microsoft 终结点 Configuration Manager 更新方案，以及用于首次登录而没有缓存凭据或密码重置方案的 VPN 连接。
+下面的示例配置文件 XML 为仅要求客户端发起的请求通过设备隧道的情况提供了良好的指南。  将利用流量筛选器将设备隧道限制为仅管理流量。  此配置适用于 Windows 更新、典型的组策略 (GP) 和 Microsoft Endpoint Configuration Manager 更新方案，以及用于首次登录而没有缓存凭据的 VPN 连接，或密码重置方案。
 
-对于服务器启动的推送案例（如 Windows 远程管理（WinRM）、远程 GPUpdate 和远程 Configuration Manager 更新方案），必须允许设备隧道上的入站流量，因此无法使用流量筛选器。  如果在设备隧道配置文件中打开流量筛选器，则设备隧道将拒绝入站流量。  此限制将在未来版本中删除。
+对于服务器启动的推送案例（如 Windows 远程管理 (WinRM) 、远程 GPUpdate 和远程 Configuration Manager 更新方案），必须允许设备隧道上的入站流量，因此无法使用流量筛选器。  如果在设备隧道配置文件中打开流量筛选器，则设备隧道将拒绝入站流量。  此限制将在未来版本中删除。
 
 
 ### <a name="sample-vpn-profilexml"></a>示例 VPN profileXML
@@ -89,7 +87,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 </VPNProfile>
 ```
 
-根据每个特定部署方案的需求，可通过设备隧道配置的其他 VPN 功能是[受信任的网络检测](https://docs.microsoft.com/answers/topics/windows-server-infrastructure.html)。
+根据每个特定部署方案的需求，可通过设备隧道配置的其他 VPN 功能是[受信任的网络检测](/answers/topics/windows-server-infrastructure.html)。
 
 ```
  <!-- inside/outside detection -->
@@ -98,7 +96,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="deployment-and-testing"></a>部署和测试
 
-可以使用 Windows PowerShell 脚本并使用 Windows Management Instrumentation （WMI）桥来配置设备隧道。 必须在**本地系统**帐户的上下文中配置 Always On VPN 设备隧道。 若要实现此目的，需要使用[PsExec](/sysinternals/downloads/psexec)，这是[Sysinternals](/sysinternals/)套件中包含的其中一个[PsTools](/sysinternals/downloads/pstools) 。
+可以使用 Windows PowerShell 脚本并使用 Windows Management Instrumentation (WMI) bridge 来配置设备隧道。 必须在**本地系统**帐户的上下文中配置 Always On VPN 设备隧道。 若要实现此目的，需要使用[PsExec](/sysinternals/downloads/psexec)，这是[Sysinternals](/sysinternals/)套件中包含的其中一个[PsTools](/sysinternals/downloads/pstools) 。
 
 有关如何部署每个设备 `(.\Device)` 和每个用户配置文件的指南 `(.\User)` ，请参阅将[POWERSHELL 脚本与 WMI 桥接程序结合使用](/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
 
@@ -179,7 +177,7 @@ Write-Host "$Message"
 
 ### <a name="remote-access-server-gateway-resources"></a>远程访问服务器网关资源
 
-以下是远程访问服务器（RAS）网关资源。
+以下是远程访问服务器 (RAS) 的网关资源。
 
 - [使用计算机身份验证证书配置 RRAS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd458982(v=ws.11))
 - [IKEv2 VPN 连接疑难解答](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941612(v=ws.10))

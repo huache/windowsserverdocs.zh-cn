@@ -1,24 +1,22 @@
 ---
 title: Hyper-v 技术概述
 description: 介绍什么是 Hyper-v，如何获取它、主要功能和常见用途。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
 author: kbdazure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: d21bec24a22607213771bdad0b48df18fd88eb4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fd4c0199cea04d6697b593ad70b4f31b55afad0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853240"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960760"
 ---
 # <a name="hyper-v-technology-overview"></a>Hyper-v 技术概述
 
->适用于： Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>适用于：Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 Hyper-v 是 Microsoft 的硬件虚拟化产品。 它允许您创建和运行计算机的软件版本（称为*虚拟机*）。 每个虚拟机的行为类似于一台运行操作系统和程序的完整计算机。 当你需要计算资源时，虚拟机为你带来了更大的灵活性，有助于节省时间和资金，并且比只是在物理硬件上运行一个操作系统更有效。
 
@@ -32,9 +30,9 @@ Hyper-v 可帮助你：
 
 - **更有效地使用硬件。** 将服务器和工作负载合并到更少、功能更强大的物理计算机上，以减少能耗和物理空间。
 
-- **改善业务连续性。** 最大程度地降低工作负荷的计划和非计划停机时间的影响。
+- **改进业务连续性。** 最大程度地降低工作负荷的计划和非计划停机时间的影响。
 
-- **建立或扩展虚拟桌面基础结构（VDI）。** 使用具有 VDI 的集中式桌面策略可帮助你提高业务灵活性和数据安全性，还可简化法规遵从性并管理桌面操作系统和应用程序。 在同一台服务器上部署 Hyper-v 和远程桌面虚拟化主机（RD 虚拟化主机），以使用户可以使用个人虚拟机或虚拟机池。
+- **建立或扩展虚拟机基础结构 (VDI)。** 使用具有 VDI 的集中式桌面策略可帮助你提高业务灵活性和数据安全性，还可简化法规遵从性并管理桌面操作系统和应用程序。 在同一台服务器上部署 Hyper-v 并远程桌面虚拟化主机 (RD 虚拟化主机) ，使用户可以使用个人虚拟机或虚拟机池。
 
 - **提高开发和测试效率。** 再现不同的计算环境，而无需购买或维护只使用物理系统时所需的所有硬件。
 
@@ -50,7 +48,7 @@ Hyper-v 提供了许多功能。 这是一种概述，按功能的提供或帮�
 
 **计算环境**-hyper-v 虚拟机包含与物理计算机相同的基本部分，例如内存、处理器、存储和网络。 所有这些部分都具有一些功能和选项，你可以根据不同需求配置不同的方式。 可以将存储和网络视为各自的类别，因为可以通过多种方式对其进行配置。
 
-**灾难恢复和备份**-对于灾难恢复，hyper-v 副本会创建虚拟机的副本，这些副本应存储在其他物理位置，因此你可以从副本还原虚拟机。 对于备份，Hyper-v 提供了两种类型。 一个使用已保存状态，另一个使用卷影复制服务（VSS），因此你可以为支持 VSS 的程序进行应用程序一致的备份。
+**灾难恢复和备份**-对于灾难恢复，hyper-v 副本会创建虚拟机的副本，这些副本应存储在其他物理位置，因此你可以从副本还原虚拟机。 对于备份，Hyper-v 提供了两种类型。 一个使用已保存状态，另一个使用卷影复制服务 (VSS) ，因此你可以为支持 VSS 的程序进行应用程序一致的备份。
 
 **优化**-每个受支持的来宾操作系统都具有一组自定义的服务和驱动程序（称为*integration services*），使你可以更轻松地使用 hyper-v 虚拟机中的操作系统。
 
@@ -82,13 +80,13 @@ Hyper-v 是一种基于虚拟机监控程序的虚拟化技术。 Hyper-v 使用
 
 ## <a name="what-does-hyper-v-consist-of"></a>Hyper-v 包含哪些内容？
 
-Hyper-v 具有协同工作的必需部件，因此你可以创建和运行虚拟机。 这些部件共同称为虚拟化平台。 当你安装 Hyper-v 角色时，它们将作为一个集进行安装。 必需的部分包括 Windows 虚拟机监控程序、Hyper-v 虚拟机管理服务、虚拟化 WMI 提供程序、虚拟机总线（VMbus）、虚拟化服务提供程序（VSP）和虚拟基础结构驱动程序（VID）。
+Hyper-v 具有协同工作的必需部件，因此你可以创建和运行虚拟机。 这些部件共同称为虚拟化平台。 当你安装 Hyper-v 角色时，它们将作为一个集进行安装。 必需的部分包括 Windows 虚拟机监控程序、Hyper-v 虚拟机管理服务、虚拟化 WMI 提供程序、虚拟机总线 (VMbus) 、虚拟化服务提供程序 (VSP) 和虚拟基础结构驱动程序 (VID) 。
 
 Hyper-v 也提供管理和连接工具。 可以将它们安装在安装了 Hyper-v 角色的计算机上，也可以安装在未安装 Hyper-v 角色的计算机上。 这些工具包括：
 
 - Hyper-V 管理器
 - [Windows PowerShell 的 hyper-v 模块](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [虚拟机连接](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect)\(有时称为 VMConnect\)
+- [虚拟机连接](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(有时称为 VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>相关技术

@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
 ms.date: 03/24/2019
-ms.openlocfilehash: 81501cb5f4255b7a65ebc5f9f6cb9413938864f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 440c0e3235f2891f1e6866d3a6638833c70d1eb4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940118"
+ms.locfileid: "87996841"
 ---
 # <a name="monitor-servers-and-configure-alerts-with-azure-monitor-from-windows-admin-center"></a>通过 Windows 管理中心的 Azure Monitor 监视服务器和配置警报
 
-[了解有关 Azure 与 Windows 管理中心的集成的详细信息。](../plan/azure-integration-options.md)
+[了解有关 Azure 与 Windows 管理中心的集成的详细信息。](./index.md)
 
-[Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)是一种解决方案，可从各种资源（包括在本地和云中的 Windows 服务器和 vm）收集、分析和处理遥测数据。 尽管 Azure Monitor 从 Azure Vm 和其他 Azure 资源拉取数据，本文重点介绍 Azure Monitor 与本地服务器和 Vm 一起工作的方式，尤其是使用 Windows 管理中心。 如果你有兴趣了解如何使用 Azure Monitor 获取有关超聚合群集的电子邮件警报，请参阅[使用 Azure Monitor 发送电子邮件以运行状况服务错误](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor)。
+[Azure Monitor](/azure/azure-monitor/overview)是一种解决方案，可从各种资源（包括在本地和云中的 Windows 服务器和 vm）收集、分析和处理遥测数据。 尽管 Azure Monitor 从 Azure Vm 和其他 Azure 资源拉取数据，本文重点介绍 Azure Monitor 与本地服务器和 Vm 一起工作的方式，尤其是使用 Windows 管理中心。 如果你有兴趣了解如何使用 Azure Monitor 获取有关超聚合群集的电子邮件警报，请参阅[使用 Azure Monitor 发送电子邮件以运行状况服务错误](../../../storage/storage-spaces/configure-azure-monitor.md)。
 
 ## <a name="how-does-azure-monitor-work"></a>Azure Monitor 的工作原理是怎样的？
 ![](../media/azure-monitor-diagram.png)从本地 Windows server 生成的 img 数据在 Azure Monitor 的 Log Analytics 工作区中收集。 在工作区中，你可以启用各种监视解决方案逻辑集，为特定方案提供见解。 例如，Azure 更新管理、Azure 安全中心和用于 VM 的 Azure Monitor 都是可以在工作区内启用的监视解决方案。
@@ -64,21 +64,21 @@ ms.locfileid: "87940118"
 
 ### <a name="create-email-alerts"></a>**创建电子邮件警报**
 
-将服务器连接到 Azure Monitor 后，可以使用 "设置 > 监视和警报" 页中的智能超链接导航到 Azure 门户。 管理中心自动启用要收集的性能计数器，因此你可以通过自定义多个预定义的查询之一或编写你自己的查询来轻松[创建新的警报](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log)。
+将服务器连接到 Azure Monitor 后，可以使用 "设置 > 监视和警报" 页中的智能超链接导航到 Azure 门户。 管理中心自动启用要收集的性能计数器，因此你可以通过自定义多个预定义的查询之一或编写你自己的查询来轻松[创建新的警报](/azure/azure-monitor/platform/alerts-log)。
 
 ### <a name="get-a-consolidated-view-across-multiple-servers-"></a>* * 跨多个服务器获取合并视图 * *
 
-如果将多个服务器集成到 Azure Monitor 中的单个 Log Analytics 工作区，则可以从 Azure Monitor 内的[虚拟机 Insights 解决方案](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)获取所有这些服务器的合并视图。   (请注意，只有适用于 Azure Monitor 的虚拟机见解的 "性能" 和 "映射" 选项卡可用于本地服务器– "运行状况" 选项卡仅适用于 Azure Vm。 ) 若要在 Azure 门户中查看此信息，请转到 Azure Monitor > () 虚拟机 "，并导航到" 性能 "或" 映射 "选项卡。
+如果将多个服务器集成到 Azure Monitor 中的单个 Log Analytics 工作区，则可以从 Azure Monitor 内的[虚拟机 Insights 解决方案](/azure/azure-monitor/insights/vminsights-overview)获取所有这些服务器的合并视图。   (请注意，只有适用于 Azure Monitor 的虚拟机见解的 "性能" 和 "映射" 选项卡可用于本地服务器– "运行状况" 选项卡仅适用于 Azure Vm。 ) 若要在 Azure 门户中查看此信息，请转到 Azure Monitor > () 虚拟机 "，并导航到" 性能 "或" 映射 "选项卡。
 
 ### <a name="visualize-apps-systems-and-services-connected-to-a-given-server"></a>**可视化连接到给定服务器的应用、系统和服务**
 
-当管理中心将服务器加入到 Azure Monitor 中的 VM insights 解决方案中时，它还会亮起称为[服务映射](https://docs.microsoft.com/azure/azure-monitor/insights/service-map)功能。 此功能会自动发现应用程序组件并映射服务之间的通信，以便你可以从 Azure 门户轻松查看服务器之间的连接，并提供非常详细的信息。 若要找到此信息，请转到 "Azure 门户 > Azure Monitor" Insights (下 > 虚拟机 "，并导航到" 地图 "选项卡。
+当管理中心将服务器加入到 Azure Monitor 中的 VM insights 解决方案中时，它还会亮起称为[服务映射](/azure/azure-monitor/insights/service-map)功能。 此功能会自动发现应用程序组件并映射服务之间的通信，以便你可以从 Azure 门户轻松查看服务器之间的连接，并提供非常详细的信息。 若要找到此信息，请转到 "Azure 门户 > Azure Monitor" Insights (下 > 虚拟机 "，并导航到" 地图 "选项卡。
 
 > [!NOTE]
-> 目前，有6个公共区域提供用于 Azure Monitor 的虚拟机见解的可视化。  有关最新信息，请查看[用于 VM 的 Azure Monitor 文档](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-onboard#log-analytics)。  您必须将 Log Analytics 工作区部署在一个受支持的区域中，以获得上述虚拟机 Insights 解决方案提供的其他优势。
+> 目前，有6个公共区域提供用于 Azure Monitor 的虚拟机见解的可视化。  有关最新信息，请查看[用于 VM 的 Azure Monitor 文档](/azure/azure-monitor/insights/vminsights-onboard#log-analytics)。  您必须将 Log Analytics 工作区部署在一个受支持的区域中，以获得上述虚拟机 Insights 解决方案提供的其他优势。
 
 ## <a name="disabling-monitoring"></a>禁用监视
 
 若要从 Log Analytics 工作区完全断开服务器的连接，请卸载 MMA 代理。 这意味着此服务器将不再向工作区发送数据，并且该工作区中安装的所有解决方案将不再从该服务器收集和处理数据。 但是，这不会影响工作区本身–向该工作区报告的所有资源将继续执行此操作。 若要卸载 Windows 管理中心中的 MMA 代理，请连接到该服务器，然后依次单击 "**已安装的应用**"、"Microsoft Monitoring Agent"，然后选择 "**删除**"。
 
-如果要关闭工作区内的特定解决方案，则需要[从 Azure 门户中删除监视解决方案](https://docs.microsoft.com/azure/azure-monitor/insights/solutions#remove-a-management-solution)。 删除监视解决方案意味着不再为向该工作区报告的任何服务器生成由该解决方案创建的见解__。 例如，如果我卸载用于 VM 的 Azure Monitor 解决方案，我将不再从连接到我的工作区的任何计算机中看到有关 VM 或服务器性能的见解。
+如果要关闭工作区内的特定解决方案，则需要[从 Azure 门户中删除监视解决方案](/azure/azure-monitor/insights/solutions#remove-a-management-solution)。 删除监视解决方案意味着不再为向该工作区报告的任何服务器生成由该解决方案创建的见解__。 例如，如果我卸载用于 VM 的 Azure Monitor 解决方案，我将不再从连接到我的工作区的任何计算机中看到有关 VM 或服务器性能的见解。

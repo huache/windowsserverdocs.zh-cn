@@ -1,19 +1,17 @@
 ---
 title: 开发解决方案扩展
-description: 开发解决方案扩展 Windows 管理中心 SDK （Project Honolulu）
-ms.technology: manage
+description: '开发解决方案扩展 Windows 管理中心 SDK (Project Honolulu) '
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6ac9c6296fdf9159c9f50a1304dd345932052ac9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 27ded378a40537455423f79869dfd07dcd2ba625
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357153"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949592"
 ---
 # <a name="develop-a-solution-extension"></a>开发解决方案扩展
 
@@ -33,7 +31,7 @@ ms.locfileid: "71357153"
 > [!NOTE]
 > 不熟悉不同的扩展类型？ 了解有关[扩展性体系结构和扩展类型](understand-extensions.md)的详细信息。
 
-## <a name="prepare-your-environment"></a>准备你的环境
+## <a name="prepare-your-environment"></a>准备环境
 
 如果尚未准备好，请通过安装所有项目所需的依赖项和全局必备组件来[准备环境](prepare-development-environment.md)。
 
@@ -45,11 +43,11 @@ ms.locfileid: "71357153"
 wac create --company "{!Company Name}" --solution "{!Solution Name}" --tool "{!Tool Name}"
 ```
 
-| ReplTest1 | 说明 | 示例 |
+| 值 | 说明 | 示例 |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | 公司名称（包含空格） | ```Contoso Inc``` |
-| ```{!Solution Name}``` | 解决方案名称（包含空格） | ```Contoso Foo Works Suite``` |
-| ```{!Tool Name}``` | 工具名称（包含空格） | ```Manage Foo Works``` |
+| ```{!Company Name}``` | 你的公司名称 (带有空格)  | ```Contoso Inc``` |
+| ```{!Solution Name}``` | 你的解决方案名称 (带有空格)  | ```Contoso Foo Works Suite``` |
+| ```{!Tool Name}``` | 你的工具名称 (带有空格)  | ```Manage Foo Works``` |
 
 下面是一个示例用法：
 
@@ -57,7 +55,7 @@ wac create --company "{!Company Name}" --solution "{!Solution Name}" --tool "{!T
 wac create --company "Contoso Inc" --solution "Contoso Foo Works Suite" --tool "Manage Foo Works"
 ```
 
-这将使用您为解决方案指定的名称在当前工作目录中创建一个新文件夹，将所有必需的模板文件复制到您的项目中，并使用您的公司、解决方案和工具名称配置文件。  
+这将使用您为解决方案指定的名称在当前工作目录中创建一个新文件夹，将所有必需的模板文件复制到您的项目中，并使用您的公司、解决方案和工具名称配置文件。
 
 接下来，将目录更改为刚创建的文件夹，然后通过运行以下命令安装所需的本地依赖项：
 
@@ -65,7 +63,7 @@ wac create --company "Contoso Inc" --solution "Contoso Foo Works Suite" --tool "
 npm install
 ```
 
-完成此操作后，已设置将新扩展加载到 Windows 管理中心所需的一切。 
+完成此操作后，已设置将新扩展加载到 Windows 管理中心所需的一切。
 
 ## <a name="add-content-to-your-extension"></a>向扩展添加内容
 
@@ -75,7 +73,7 @@ npm install
 - 添加[iFrame](guides/add-iframe.md)
 - 创建[自定义连接提供程序](guides/create-connection-provider.md)
 - 修改[根导航行为](guides/modify-root-navigation.md)
- 
+
 有关更多示例，请参阅[GITHUB SDK 网站](https://aka.ms/wacsdk)：
 -  [开发人员工具](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools)是一种完全正常运行的扩展插件，可以将其放入 Windows 管理中心，其中包含一系列丰富的示例功能和工具示例，你可以在自己的扩展中浏览和使用它们。
 

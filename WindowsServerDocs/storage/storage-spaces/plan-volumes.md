@@ -1,20 +1,18 @@
 ---
 ms.assetid: 342173ca-4e10-44f4-b2c9-02a6c26f7a4a
 title: 规划存储空间直通中的卷
-ms.prod: windows-server
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d5c45b68f18fe3126867a9b6608b0911bb3f63b2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: dcc98fba7194da322f9fc97b67eb43d481f50133
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474754"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971144"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>规划存储空间直通中的卷
 
@@ -65,23 +63,23 @@ ms.locfileid: "85474754"
 
 对于群集中的两个服务器，可以使用双向镜像。 如果运行的是 Windows Server 2019，还可以使用嵌套复原。
 
-双向镜像保存所有数据的两个副本，每个服务器上的驱动器上有一个副本。 其存储效率为 50%-若要写入 1 TB 的数据，则存储池中至少需要 2 TB 的物理存储容量。 双向镜像一次可安全容忍一个硬件故障（一个服务器或驱动器）。
+双向镜像保存所有数据的两个副本，每个服务器上的驱动器上有一个副本。 其存储效率为 50%-若要写入 1 TB 的数据，则存储池中至少需要 2 TB 的物理存储容量。 双向镜像可以在一次 (一个服务器或驱动器) 时安全地容忍一个硬件故障。
 
 ![双向镜像](media/plan-volumes/two-way-mirror.png)
 
-嵌套复原（仅在 Windows Server 2019 上可用）提供具有双向镜像的服务器之间的数据复原能力，然后在具有双向镜像的服务器和镜像加速的奇偶校验中增加复原能力。 即使在一台服务器重新启动或不可用时，嵌套也能提供数据复原能力。 其存储效率为25%，具有嵌套的双向镜像，大约35-40%，适用于嵌套的镜像加速奇偶校验。 嵌套复原可以安全地允许两个硬件故障（两个驱动器或服务器以及剩余服务器上的驱动器）。 由于此功能增加了数据复原能力，因此，如果您运行的是 Windows Server 2019，则建议在两服务器群集的生产部署上使用嵌套复原功能。 有关详细信息，请参阅[嵌套复原](nested-resiliency.md)。
+嵌套复原 (仅在 Windows Server 2019 上可用) 在具有双向镜像的服务器之间提供数据复原，然后在具有双向镜像的服务器和镜像加速的奇偶校验中增加复原能力。 即使在一台服务器重新启动或不可用时，嵌套也能提供数据复原能力。 其存储效率为25%，具有嵌套的双向镜像，大约35-40%，适用于嵌套的镜像加速奇偶校验。 嵌套复原可以在 (两个驱动器时，或在剩余服务器上的服务器和驱动器) 安全地允许两个硬件故障。 由于此功能增加了数据复原能力，因此，如果您运行的是 Windows Server 2019，则建议在两服务器群集的生产部署上使用嵌套复原功能。 有关详细信息，请参阅[嵌套复原](nested-resiliency.md)。
 
 ![嵌套镜像加速奇偶校验](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
 ### <a name="with-three-servers"></a>已安装三个服务器
 
-如果安装了三个服务器，你应使用三向镜像，以便获得更好的容错和更高的性能。 三向镜像将保留所有数据的三个副本，每个服务器的驱动器上都会保留一个副本。 其存储效率为 33.3%，即若要写入 1 TB 的数据，存储池中需要至少 3 TB 的物理存储容量。 三向镜像一次可以安全地容忍[至少两个硬件问题（驱动器或服务器）](storage-spaces-fault-tolerance.md#examples)。 如果2个节点不可用，则存储池将失去仲裁，因为2/3 磁盘不可用，虚拟磁盘将被不可。 但是，节点可能会关闭，另一个节点上的一个或多个磁盘可能会失败，并且虚拟磁盘仍将保持联机状态。 例如，如果你正在重新启动一台服务器，此时另一个驱动器或服务器突然发生故障，在这种情况下，所有数据将保持安全，可供持续访问。
+如果安装了三个服务器，你应使用三向镜像，以便获得更好的容错和更高的性能。 三向镜像将保留所有数据的三个副本，每个服务器的驱动器上都会保留一个副本。 其存储效率为 33.3%，即若要写入 1 TB 的数据，存储池中需要至少 3 TB 的物理存储容量。 三向镜像一次可以安全地容忍[至少两个硬件问题 (驱动器或服务器) ](storage-spaces-fault-tolerance.md#examples)。 如果2个节点不可用，则存储池将失去仲裁，因为2/3 磁盘不可用，虚拟磁盘将被不可。 但是，节点可能会关闭，另一个节点上的一个或多个磁盘可能会失败，并且虚拟磁盘仍将保持联机状态。 例如，如果你正在重新启动一台服务器，此时另一个驱动器或服务器突然发生故障，在这种情况下，所有数据将保持安全，可供持续访问。
 
 ![三向镜像](media/plan-volumes/three-way-mirror.png)
 
 ### <a name="with-four-or-more-servers"></a>已安装四个或更多个服务器
 
-使用四台或更多服务器时，可以为每个卷选择是否使用三向镜像、双重奇偶校验（通常称为 "擦除编码"），或者将两者混合为镜像加速的奇偶校验。
+使用四台或更多服务器时，可以为每个卷选择是否使用三向镜像、双重奇偶校验 (经常称为 "擦除编码" ) ，或将两者混合为镜像加速的奇偶校验。
 
 双奇偶校验提供了与三向镜像相同的容错，但存储效率更好。 有四台服务器，其存储效率为 50.0%-若要存储 2 TB 的数据，则存储池中需要 4 TB 的物理存储容量。 如果安装了七个服务器，存储效率会上升到 66.7%，并且最高可继续上升到 80.0%。 弊端是奇偶校验编码需要进行更多的计算，这可能会限制其性能。
 
@@ -89,9 +87,9 @@ ms.locfileid: "85474754"
 
 要使用的复原类型取决于你的工作负载需求。 下面是一个表，其中汇总了适合每个复原类型的工作负荷，以及每个复原类型的性能和存储效率。
 
-| 复原类型 | 容量效率 | Speed | 工作负荷 |
+| 复原类型 | 容量效率 | Speed | 工作负载 |
 | ------------------- | ----------------------  | --------- | ------------- |
-| **制作**         | ![存储效率显示33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>三向镜像：33% <br>双向镜像：50%     |![性能显示100%](media/plan-volumes/three-way-mirror-perf.png)<br> 最高性能  | 虚拟化工作负荷<br> 数据库<br>其他高性能工作负荷 |
+| **镜像**         | ![存储效率显示33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>三向镜像：33% <br>双向镜像：50%     |![性能显示100%](media/plan-volumes/three-way-mirror-perf.png)<br> 最高性能  | 虚拟化工作负荷<br> 数据库<br>其他高性能工作负荷 |
 | **镜像加速奇偶校验** |![存储效率大约50%](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> 取决于镜像和奇偶校验的比例 | ![性能显示大约20%](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>比镜像慢得多，但最多可达两倍于双重奇偶校验<br> 最适用于大型顺序写入和读取 | 存档和备份<br> 虚拟桌面基础结构     |
 | **双重奇偶校验**               | ![存储效率大约80%](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4台服务器：50% <br>16台服务器：最高80% | ![性能显示大约10%](media/plan-volumes/dual-parity-perf.png)<br>写入时 CPU 使用率 & 最高 i/o 延迟<br> 最适用于大型顺序写入和读取 | 存档和备份<br> 虚拟桌面基础结构  |
 
@@ -122,7 +120,7 @@ ms.locfileid: "85474754"
 在涉及所有三种驱动器类型的部署中，只有最快的驱动器 (NVMe) 会提供缓存，剩下两种类型的驱动器（SSD 和 HDD）会提供容量。 对于每个卷，你可以选择它是完全驻留在 SSD 层上、完全驻留在 HDD 层上，还是跨越这两种层。
 
    > [!IMPORTANT]
-   > 我们建议使用 SSD 层将对性能最敏感的工作负载放在全闪存中。
+   > 建议使用 SSD 层，以将对性能最敏感的工作负荷放在全闪存驱动器上。
 
 ## <a name="choosing-the-size-of-volumes"></a>选择卷的大小
 
@@ -133,7 +131,7 @@ ms.locfileid: "85474754"
 | 最大 32 TB         | 最大 64 TB         |
 
    > [!TIP]
-   > 如果使用的备份解决方案依赖于卷影复制服务（VSS）和 Volsnap 软件提供程序（与文件服务器工作负荷相同），则将卷大小限制为 10 TB 将提高性能和可靠性。 使用较新 Hyper-V RCT API 和/或 ReFS 块克隆和/或本机 SQL 备份 API 的备份解决方案的性能可完全达到 32 TB 及更高。
+   > 如果使用的备份解决方案依赖于卷影复制服务 (VSS) 和 Volsnap 软件提供程序（与文件服务器工作负荷相同），则将卷大小限制为 10 TB 将提高性能和可靠性。 使用较新 Hyper-V RCT API 和/或 ReFS 块克隆和/或本机 SQL 备份 API 的备份解决方案的性能可完全达到 32 TB 及更高。
 
 ### <a name="footprint"></a>占用空间
 

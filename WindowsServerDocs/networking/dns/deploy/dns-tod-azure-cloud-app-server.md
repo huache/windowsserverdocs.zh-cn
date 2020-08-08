@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 04e4d33f6c5894a59547e84a6066d3af04f80a9b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d7df84e26ef86f553d57b2019d4d46581d7c17fa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964103"
+ms.locfileid: "87996896"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>基于时间的 DNS 响应和 Azure 云应用服务器
 
@@ -22,7 +22,7 @@ ms.locfileid: "87964103"
 如果希望将一个时区中的流量定向到其他应用程序服务器（例如在位于其他时区的 Microsoft Azure 上托管的 Web 服务器），则此方案非常有用。 这使你可以在高峰时间段内通过流量对主服务器进行负载平衡，在高峰时段内对流量进行负载均衡。
 
 > [!NOTE]
-> 若要了解如何在不使用 Azure 的情况下使用 DNS 策略来执行智能 DNS 响应，请参阅[根据一天中的时间将 Dns 策略用于智能 Dns 响应](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md)。
+> 若要了解如何在不使用 Azure 的情况下使用 DNS 策略来执行智能 DNS 响应，请参阅[根据一天中的时间将 Dns 策略用于智能 Dns 响应](./dns-tod-intelligent.md)。
 
 ## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>基于 Azure 云应用服务器当天的时间的智能 DNS 响应示例
 
@@ -91,7 +91,7 @@ Azure 记录上的 TTL 10 分钟可确保从 Azure 删除 VM 之前，LDNS 缓�
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope"
 ```
 
-有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+有关详细信息，请参阅[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a>将记录添加到区域作用域
 下一步是将代表 Web 服务器主机的记录添加到区域作用域中。
@@ -110,7 +110,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.68.30.2"
 ```
 
-有关详细信息，请参阅[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
+有关详细信息，请参阅[DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 ### <a name="create-the-dns-policies"></a>创建 DNS 策略
 创建区域作用域后，可以创建在这些范围内分发传入查询的 DNS 策略，以便发生以下情况。
@@ -126,7 +126,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerQueryResolutionPolicy -Name "Contoso6To9Policy" -Action ALLOW -ZoneScope "contosogiftservices.com,7;AzureZoneScope,3" –TimeOfDay “EQ,18:00-21:00” -ZoneName "contosogiftservices.com" –ProcessingOrder 1
 ```
 
-有关详细信息，请参阅[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+有关详细信息，请参阅[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 现在 DNS 服务器配置了所需的 DNS 策略，以根据一天的时间将流量重定向到 Azure Web 服务器。
 

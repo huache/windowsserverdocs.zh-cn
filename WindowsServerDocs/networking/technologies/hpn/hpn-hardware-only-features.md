@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: b2cbb47262033d5149e47704e3f232b7662f69e6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 30055b7954674b1cea99e7ef60d45cfa33543c3d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955660"
+ms.locfileid: "87996737"
 ---
 # <a name="hardware-only-ho-features-and-technologies"></a>仅硬件 (HO) 功能和技术
 
@@ -79,4 +79,4 @@ Windows Server 2012 R2 中没有对超长帧支持的更改。
 
 ## <a name="receive-segment-coalescing-rsc"></a>接受段合并 (RSC)
 
-接收段合并（也称为大型接收卸载）是一项 NIC 功能，该功能将数据包作为同一流中的一部分到达网络中断，并将它们合并到单个数据包中，然后将它们传递给操作系统。 RSC 在绑定到 Hyper-v 虚拟交换机的 Nic 上不可用。 有关详细信息，请参阅[接收段合并 (RSC) ](https://docs.microsoft.com/windows-server/networking/technologies/hpn/rsc-in-the-vswitch)。
+接收段合并（也称为大型接收卸载）是一项 NIC 功能，该功能将数据包作为同一流中的一部分到达网络中断，并将它们合并到单个数据包中，然后将它们传递给操作系统。 RSC 在绑定到 Hyper-v 虚拟交换机的 Nic 上不可用。 有关详细信息，请参阅[接收段合并 (RSC) ](./rsc-in-the-vswitch.md)。

@@ -2,18 +2,16 @@
 title: 创建文件过期任务
 description: 本文介绍为即将过期的文件创建文件管理任务的流程
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ce458ab84e7f6ba40ab3578c9b4a3e5d58755dc5
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0ff4b46064ca780d63c6f06898c114cb180c3665
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473764"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971124"
 ---
 # <a name="create-a-file-expiration-task"></a>创建文件过期任务
 
@@ -33,15 +31,15 @@ ms.locfileid: "85473764"
 
 3. 在“常规”**** 选项卡上，输入下列信息：
 
-   -   **Name**。 输入新任务的名称。
+   -   **名称**。 输入新任务的名称。
 
-   -   “说明”  。 输入该任务的可选说明性标签。
+   -   **说明**。 输入该任务的可选说明性标签。
 
    -   **范围**。 使用**添加**按钮添加应在其中操作该任务的目录。 或者，可使用**删除**按钮从列表中删除目录。 文件管理任务适用于此列表中所有文件夹及其子文件夹。
 
 4. 在“操作”**** 选项卡上，输入下列信息：
 
-   - “类型”****。 选择下拉框中的**文件过期**。
+   - **Type**。 选择下拉框中的**文件过期**。
 
    - “过期目录”****。 选择其中的文件将过期的目录。
 

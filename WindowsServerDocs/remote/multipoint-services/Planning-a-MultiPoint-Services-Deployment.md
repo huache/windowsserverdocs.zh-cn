@@ -7,12 +7,12 @@ ms.assetid: dcb9edf1-99d0-490c-a7f8-863b18a80cdf
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 943df21c046a54a3edfd466e42fdc18296d6bc1b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8247a0984fa296d9725e8a0ba9cde8a2bd5b7d31
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953773"
+ms.locfileid: "87996660"
 ---
 # <a name="planning-a-multipoint-services-deployment"></a>规划 MultiPoint Services 部署
 MultiPoint 服务使多个工作站可连接到一台计算机。 然后多个用户便可以同时共享一台计算机。 每个工作站都包含一个工作站集线器、监视器、键盘和鼠标。 MultiPoint 服务包括 MultiPoint 管理器应用程序，该应用程序可帮助你作为管理用户，监视和管理 MultiPoint 工作站和 MultiPoint 仪表板应用程序（提供日常管理功能）。
@@ -22,8 +22,8 @@ MultiPoint 服务使多个工作站可连接到一台计算机。 然后多个�
 -   [引入 MultiPoint Services](Introducing-MultiPoint-services.md)
 -   [常见使用方案](Common-MultiPoint-services-Usage-Scenarios.md)
 -   [MultiPoint 工作站](MultiPoint-services-Stations.md)
--   [为 MultiPoint Services 系统选择硬件](Selecting-Hardware-for-Your-MultiPoint-services-System.md)
--   [硬件要求和性能建议](Hardware-Requirements-and-Performance-Recommendations.md)
+-   [为 MultiPoint Services 系统选择硬件](./select-hardware-mps.md)
+-   [硬件要求和性能建议](./hardware-and-performance-recommendations.md)
 -   [MultiPoint Services 站点规划](MultiPoint-services-Site-Planning.md)
 -   [网络注意事项和用户帐户](Network-Considerations-and-User-Accounts.md)
 -   [通过 MultiPoint Services 存储文件](Storing-Files-with-MultiPoint-services.md)
@@ -32,4 +32,4 @@ MultiPoint 服务使多个工作站可连接到一台计算机。 然后多个�
 -   [应用程序注意事项](Application-Considerations.md)
 -   [预部署清单](Predeployment-Checklist.md)
 
-你还可以访问[MultiPoint 服务](https://docs.microsoft.com/windows-server/remote/multipoint-services/introducing-multipoint-services)。
+你还可以访问[MultiPoint 服务](./introducing-multipoint-services.md)。

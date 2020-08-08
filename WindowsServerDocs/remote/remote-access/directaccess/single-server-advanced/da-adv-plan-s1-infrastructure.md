@@ -2,18 +2,16 @@
 title: 步骤1规划高级 DirectAccess 基础结构
 description: 本主题是 "使用 Windows Server 2016 的高级设置部署单个 DirectAccess 服务器" 指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 759caf09531b2c09034c715fa6cc479fea6d6c07
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 8f60a960d76e7c24ff3dc9afaf931792713f06af
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518133"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970404"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>步骤1规划高级 DirectAccess 基础结构
 
@@ -21,7 +19,7 @@ ms.locfileid: "87518133"
 
 在单个服务器上规划高级 DirectAccess 部署的第一步是规划部署所需的基础结构。 本主题介绍基础结构规划步骤。 不需要按照特定顺序完成这些规划任务。
 
-|任务|说明|
+|任务|描述|
 |----|--------|
 |[1.1 规划网络拓扑和设置](#11-plan-network-topology-and-settings)|确定放置 DirectAccess 服务器的位置（在边缘，或者在网络地址转换 (NAT) 设备或防火墙后面），并规划 IP 寻址、路由和强制隧道。|
 |[1.2 规划防火墙要求](#12-plan-firewall-requirements)|规划允许 DirectAccess 通信通过边缘防火墙。|
@@ -60,7 +58,7 @@ ms.locfileid: "87518133"
 
 3. 按下表配置所需的适配器和地址。 对于使用单个网络适配器并在 NAT 设备后面设置的部署，仅使用**内部网络适配器**列配置 IP 地址。
 
-    | 说明 | 外部网络适配器 | 内部网络适配器 | 路由要求 |
+    | 描述 | 外部网络适配器 | 内部网络适配器 | 路由要求 |
     |--|--|--|--|
     | IPv4 Internet 和 IPv4 Intranet | 配置带有相应子网掩码的两个静态连续公用 IPv4 地址（仅 Teredo 要求)。<br/><br/>此外，配置 Internet 防火墙或本地 Internet 服务提供商 (ISP) 路由器的默认网关 IPv4 地址。 **注意：** DirectAccess 服务器需要两个连续的公用 IPv4 地址，以便它可用作 Teredo 服务器，基于 Windows 的客户端可以使用 DirectAccess 服务器检测其后面的 NAT 设备的类型。 | 配置以下内容：<br/><br/>-具有相应子网掩码的 IPv4 intranet 地址。<br/>-Intranet 命名空间的特定于连接的 DNS 后缀。 还应在内部接口上配置 DNS 服务器。 **警告：** 不要在任何 intranet 接口上配置默认网关。 | 若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv4 地址空间。<br/>-使用**route add-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。 |
     | IPv6 Internet 和 IPv6 Intranet | 配置以下内容：<br/><br/>-使用你的 ISP 提供的地址配置。<br/>-使用**Route Print**命令，以确保默认 ipv6 路由存在并指向 IPv6 路由表中的 ISP 路由器。<br/>-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。<br/>    如果两个结果都为“是”，则默认路由不需要任何其他配置。 用于 ISP 路由器的更高级首选项可确保 DirectAccess 服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br/><br/>因为 DirectAccess 服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，这些数据包筛选器可阻止连接到 DirectAccess 服务器面向 Internet 的接口的 IPv6 地址。 | 配置以下内容：<br/><br/>-如果不使用默认首选等级，则可以使用以下命令**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled**来配置 intranet 接口。<br/>    这一命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以使用以下命令获取 Intranet 接口的接口索引：**netsh interface ipv6 show interface**。 | 如果你拥有 IPv6 Intranet，若要配置 DirectAccess 服务器以访问所有的 IPv6 位置，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv6 地址空间。<br/>-使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为 DirectAccess 服务器的 ipv6 路由表中的静态路由。 |
@@ -115,11 +113,11 @@ ms.locfileid: "87518133"
 
 如果 DirectAccess 服务器位于边缘防火墙后面，则当 DirectAccess 服务器位于 IPv4 Internet 上时，要进行远程访问通信还需要以下例外：
 
-- Teredo 流量-用户数据报协议（UDP）目标端口3544入站，UDP 源端口3544出站。
+- Teredo 流量-用户数据报协议 (UDP) 目标端口3544入站，以及 UDP 源端口3544出站。
 
 - 6to4 流量-IP 协议41入站和出站。
 
-- Ip-https-传输控制协议（TCP）目标端口443和 TCP 源端口443出站。
+- Ip-https-传输控制协议 (TCP) 目标端口443和 TCP 源端口443出站。
 
 - 如果你要使用单个网络适配器部署远程访问，并且要在 DirectAccess 服务器上安装网络位置服务器，则还应免除 TCP 端口 62000。
 
@@ -260,7 +258,7 @@ DirectAccess 服务器充当 IP-HTTPS 侦听器，而且必须在服务器上手
 
     3.  打开 IP-HTTPS 状态设置并将 URL 更改为 **https://<DirectAccess server name (for example server.contoso.com)>:44500/IPHTTPS**。
 
-    4.  单击“应用”。
+    4.  单击“**应用**”。
 
 2.  修改客户端 GPO 中的 Kerberos 代理客户端设置。
 
@@ -268,7 +266,7 @@ DirectAccess 服务器充当 IP-HTTPS 侦听器，而且必须在服务器上手
 
     2.  打开 IPHTTPS 状态设置并将 URL 更改为 **https://<DirectAccess server name (for example server.contoso.com)>:44500/IPHTTPS**。
 
-    3.  单击“应用”。
+    3.  单击“**应用**”。
 
 3.  修改客户端 IPsec 策略设置以使用 ComputerKerb 和 UserKerb。
 
@@ -354,7 +352,7 @@ DirectAccess 服务器充当 IP-HTTPS 侦听器，而且必须在服务器上手
 
     -   **directaccess-webprobehost**-应解析为 directaccess 服务器的内部 IPv4 地址，或解析为仅限 ipv6 的环境中的 ipv6 地址。
 
-    -   **directaccess-corpconnectivityhost**-应解析为本地主机（环回）地址。 应创建以下主机 (A) 和 (AAAA) 资源记录：具有值 127.0.0.1 的主机 (A) 资源记录，以及具有由 NAT64 前缀构造且最后 32 位类似于 127.0.0.1 的值的主机 (AAAA) 资源记录。 可以通过运行 Windows PowerShell 命令 **get-netnattransitionconfiguration** 来检索 NAT64 前缀。
+    -   **directaccess-corpconnectivityhost**-应解析为本地主机 (环回) 地址。 应创建以下主机 (A) 和 (AAAA) 资源记录：具有值 127.0.0.1 的主机 (A) 资源记录，以及具有由 NAT64 前缀构造且最后 32 位类似于 127.0.0.1 的值的主机 (AAAA) 资源记录。 可以通过运行 Windows PowerShell 命令 **get-netnattransitionconfiguration** 来检索 NAT64 前缀。
 
         > [!NOTE]
         > 此方法只在仅支持 IPv4 的环境中有效。 在支持 IPv4 和 IPv6 或者仅支持 IPv6 的环境中，仅应使用环回 IP 地址 ::1 创建主机 (AAAA) 资源记录。
@@ -415,7 +413,7 @@ DirectAccess 服务器充当 IP-HTTPS 侦听器，而且必须在服务器上手
 
 **DirectAccess 客户端的本地名称解析行为**
 
-如果无法使用 DNS 解析名称，则为了解析本地子网上的名称，Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 8 和 Windows 7 中的 DNS 客户端服务可以使用本地名称解析以及链路本地多播名称解析（LLMNR）和 TCP/IP 上的 NetBIOS 协议。
+如果无法使用 DNS 解析名称，则为了解析本地子网上的名称，Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 R2、Windows 8 和 Windows 7 中的 DNS 客户端服务可以使用本地名称解析，本地名称解析 (LLMNR) 和 TCP/IP 上的 NetBIOS 协议。
 
 当计算机位于专用网络（如单个子网家庭网络）上时，对等连接通常需要使用本地名称解析。 如果 DNS 客户端服务对 Intranet 服务器名称执行本地名称解析，并且计算机连接到 Internet 上的共享子网，恶意用户则可以捕获 LLMNR 和 TCP/IP 上的 NetBIOS 消息来确定 Intranet 服务器名称。 在基础结构服务器安装向导的 DNS 页上，你可以根据从 Intranet DNS 服务器接收到的响应类型配置本地名称解析行为。 提供了以下选项：
 
@@ -478,7 +476,7 @@ DirectAccess 客户端将启动与提供服务（如 Windows 更新和防病毒�
 
 -   [1.7.2 规划多个域](#172-plan-multiple-domains)
 
-DirectAccess 使用 AD DS 和 Active Directory 组策略对象（Gpo），如下所示：
+DirectAccess 按如下所示 () Gpo 使用 AD DS 和 Active Directory 组策略对象：
 
 -   **身份验证**
 
@@ -671,7 +669,7 @@ DirectAccess 允许你在使用证书进行 IPsec 计算机身份验证，以及
 ### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 从已删除的 GPO 中恢复
 如果已意外删除客户端、DirectAccess 服务器或应用程序服务器 GPO，并且没有可用的备份，则你必须删除配置设置并重新配置它们。 如果有可用的备份，则可以从备份中还原 GPO。
 
-远程访问管理控制台将显示以下错误消息：**找不到 gpo （gpo 名称）**。 若要删除配置设置，请执行以下步骤：
+远程访问管理控制台将显示以下错误消息：**找不到 gpo (gpo 名称) **。 若要删除配置设置，请执行以下步骤：
 
 1.  运行 Windows PowerShell cmdlet **Uninstall-remoteaccess**。
 

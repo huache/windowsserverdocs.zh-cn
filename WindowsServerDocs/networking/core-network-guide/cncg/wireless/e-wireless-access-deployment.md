@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6ba9221707ffdea76236cd8f94c80a1220a750d5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 32e54b5129bf2215758adf35bd23c4d99ab2d8e9
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971824"
+ms.locfileid: "87996967"
 ---
 # <a name="wireless-access-deployment"></a>无线访问部署
 
@@ -489,7 +489,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     >[!TIP]
     >如果您收到一条错误消息，指出找不到与身份验证方法一起使用的证书，并且已将 Active Directory 证书服务配置为自动向网络上的 RAS 和 IAS 服务器颁发证书，请首先确保已遵循在 Active Directory 域服务中注册 NPS 的步骤，然后使用以下步骤更新组策略：单击 "**开始**"，单击 " **Windows 系统**"，单击 "**运行**"，然后在 "**打开**" 中键入**gpupdate**，然后按 enter。 如果命令返回的结果指出用户和计算机组策略已成功更新，请再次选择 " **Microsoft：受保护的 EAP \( \) PEAP** "，然后单击 "**配置**"。
     >
-    >如果刷新后组策略继续收到指出无法与身份验证方法一起使用的错误消息，则表示证书未显示，因为它不满足核心网络助理指南：为[802.1 x 有线和无线部署部署服务器证书](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)中所述的最低服务器证书要求。 如果发生这种情况，则必须中止 NPS 配置，吊销颁发给 NPS 的 \( 证书 \) ，然后按照说明使用服务器证书部署指南来配置新证书。
+    >如果刷新后组策略继续收到指出无法与身份验证方法一起使用的错误消息，则表示证书未显示，因为它不满足核心网络助理指南：为[802.1 x 有线和无线部署部署服务器证书](../server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments.md)中所述的最低服务器证书要求。 如果发生这种情况，则必须中止 NPS 配置，吊销颁发给 NPS 的 \( 证书 \) ，然后按照说明使用服务器证书部署指南来配置新证书。
 
 7.  在 "**编辑受保护的 EAP 属性**" 向导页上的 "**颁发的证书**" 中，确保选择了正确的 NPS 证书，然后执行以下操作：
 
@@ -554,7 +554,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 3. \(例如，通过不需要 IEEE 802.1 x authentication 的以太网连接， \) 并使用**netsh wlan add profile**命令将启动无线配置文件添加到计算机，从而将新的无线计算机加入到域。
 
     >[!NOTE]
-    >有关详细信息，请参阅 \( \) [http： \/ \/ Technet.microsoft.com \/ library \/ Dd744890](https://technet.microsoft.com/library/dd744890)上的无线局域网 WLAN 的 Netsh 命令。
+    >有关详细信息，请参阅 \( \) [http： \/ \/ Technet.microsoft.com \/ library \/ Dd744890](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd744890(v=ws.10))上的无线局域网 WLAN 的 Netsh 命令。
 
 4. 使用 "使用运行 Windows 10 的计算机登录到域" 过程将新的无线计算机分发给用户。
 
@@ -586,7 +586,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     >若要将计算机加入域，用户必须使用本地 Administrator 帐户登录到计算机。 或者，用户在将计算机加入域的过程中，必须提供本地管理员帐户的凭据。 此外，用户必须在域中具有用户要加入计算机的用户帐户。 在将计算机加入域的过程中，系统会提示用户输入域帐户凭据 \( 用户名和密码 \) 。
 
 2. 按照以下步骤**配置启动无线配置文件**中所述，为域用户提供配置启动无线配置文件的说明。
-3. 此外，为用户提供本地计算机凭据 \( 用户名和密码 \) ，以及以 \( DomainName 用户名形式提供域凭据域用户帐户名和密码，以及 \) Windows Server 2016[核心网络指南](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide)中所述的 "将计算机加入域" 和 "登录到域" 的过程。 * \\ *
+3. 此外，为用户提供本地计算机凭据 \( 用户名和密码 \) ，以及以 \( DomainName 用户名形式提供域凭据域用户帐户名和密码，以及 \) Windows Server 2016[核心网络指南](../../core-network-guide.md)中所述的 "将计算机加入域" 和 "登录到域" 的过程。 * \\ *
 
 #### <a name="to-configure-a-bootstrap-wireless-profile"></a>配置启动无线配置文件
 

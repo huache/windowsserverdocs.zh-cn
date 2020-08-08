@@ -2,17 +2,16 @@
 title: 存储空间直通的驱动对称注意事项
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2028d7b4ccb42d5da1426634541681f842c18972
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 1f845702bb66226e604289f7f37ffa2fb1155843
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768725"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971114"
 ---
 # <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>存储空间直通的驱动对称注意事项
 
@@ -32,7 +31,7 @@ ms.locfileid: "87768725"
 
 例如，如果一台服务器有 NVMe，则它们*都应有 nvme* 。
 
-### <a name="number"></a>数字
+### <a name="number"></a>Number
 
 所有服务器都应具有相同数量的每个类型的驱动器。
 
@@ -173,7 +172,7 @@ ms.locfileid: "87768725"
 
 概括而言，群集中的每个服务器都应具有相同类型的驱动器和每种类型的相同编号。 支持根据需要混合搭配驱动器模型和驱动器大小，并提供上述注意事项。
 
-| 约束 | 州省/自治区/直辖市 |
+| 约束 | 状态 |
 |--|--|
 | 每个服务器中的相同类型的驱动器 | **必需** |
 | 每个服务器中的每个类型都具有相同的数目 | **必需** |

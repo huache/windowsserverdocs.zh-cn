@@ -2,18 +2,16 @@
 title: 使用针对基于地理位置的流量管理和主要-辅助部署的 DNS 策略
 description: 本主题是 Windows Server 2016 DNS 策略方案指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e819cf2e3e0b4803e9efc9886a679e5128432087
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 45bff2c65f0497216cb8c7e7dc9dd670c5387ba2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518263"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996856"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>使用针对基于地理位置的流量管理和主要-辅助部署的 DNS 策略
 
@@ -23,10 +21,10 @@ ms.locfileid: "87518263"
 
 前面的方案中，[使用 Dns 策略对主服务器进行基于地理位置的流量管理](primary-geo-location.md)，提供了有关在主 DNS 服务器上配置基于地理位置的流量管理的 dns 策略的说明。 然而，在 Internet 基础结构中，DNS 服务器是在主-辅助模型中广泛部署的，在该模型中，区域的可写副本存储在 select 和 secure 主服务器上，而区域的只读副本保留在多个辅助服务器上。
 
-辅助服务器使用区域传输协议权威传输（AXFR）和增量区域传输（IXFR）来请求和接收区域更新，其中包括对主 DNS 服务器上的区域的新更改。
+辅助服务器使用区域传送协议权威传输 (AXFR) 和增量区域传输 (IXFR) 来请求和接收包含对主 DNS 服务器上的区域的新更改的区域更新。
 
 > [!NOTE]
-> 有关 AXFR 的详细信息，请参阅 Internet 工程任务组（IETF）[征求意见 5936](https://tools.ietf.org/rfc/rfc5936.txt)。 有关 IXFR 的详细信息，请参阅 Internet 工程任务组（IETF）[征求意见 1995](https://tools.ietf.org/html/rfc1995)。
+> 有关 AXFR 的详细信息，请参阅 Internet 工程任务组 (IETF) [征求意见 5936](https://tools.ietf.org/rfc/rfc5936.txt)。 有关 IXFR 的详细信息，请参阅 Internet 工程任务组 (IETF) [征求意见 1995](https://tools.ietf.org/html/rfc1995)。
 
 ## <a name="primary-secondary-geo-location-based-traffic-management-example"></a>主要-辅助异地位置流量管理示例
 下面的示例演示了如何在主辅助部署中使用 DNS 策略，以根据执行 DNS 查询的客户端的物理位置实现流量重定向。
@@ -39,7 +37,7 @@ Contoso 云服务有两个数据中心，一个位于美国，另一个在欧洲
 
 Contoso DNS 部署包括两个辅助服务器： **SecondaryServer1**，IP 地址为 10.0.0.2;IP 地址为10.0.0.3 的和**SecondaryServer2**。 这些辅助服务器充当两个不同区域中的名称服务器，SecondaryServer1 位于欧洲，SecondaryServer2 位于美国
 
-在**PrimaryServer** （IP 地址10.0.0.1）上有一个主要的可写区域副本，在其中进行区域更改。 对于到辅助服务器的常规区域传输，辅助服务器始终是最新的，并且对 PrimaryServer 上的区域进行了任何新的更改。
+**PrimaryServer**上有一个可写的主要区域副本 (IP 地址 10.0.0.1) ，其中区域发生更改。 对于到辅助服务器的常规区域传输，辅助服务器始终是最新的，并且对 PrimaryServer 上的区域进行了任何新的更改。
 
 下图描述了此方案。
 
@@ -58,9 +56,9 @@ Contoso DNS 部署包括两个辅助服务器： **SecondaryServer1**，IP 地�
 1. 安装 DNS 时，会在主 DNS 服务器上创建主区域。
 2. 在辅助服务器上，创建区域并指定主服务器。
 3. 在主服务器上，可以将辅助服务器作为受信任的辅助服务器添加到主区域。
-4. 辅助区域会进行完整的区域传输请求（AXFR）并接收区域的副本。
+4. 辅助区域 (AXFR) 生成完整的区域传输请求，并接收区域的副本。
 5. 如果需要，主服务器会将通知发送到辅助服务器上有关区域更新的信息。
-6. 辅助服务器会进行增量区域传输请求（IXFR）。 因此，辅助服务器仍与主服务器保持同步。
+6. 辅助服务器 (IXFR) 进行增量区域复制请求。 因此，辅助服务器仍与主服务器保持同步。
 
 ### <a name="zone-scope-level-transfers-in-a-dns-primary-secondary-deployment"></a>DNS 主-辅助部署中的区域作用域级别传输
 
@@ -68,11 +66,11 @@ Contoso DNS 部署包括两个辅助服务器： **SecondaryServer1**，IP 地�
 
 使用主服务器和辅助服务器配置 DNS 基础结构后，将使用以下进程自动执行区域范围级别的传输。
 
-为了确保区域作用域级别的传输，DNS 服务器使用 DNS （EDNS0） OPT RR 的扩展机制。 具有作用域的区域中的所有区域传送（AXFR 或 IXFR）请求都源自 EDNS0 OPT RR，默认情况下，其选项 ID 设置为 "65433"。 有关 EDNSO 的详细信息，请参阅 IETF[请求注释 6891](https://tools.ietf.org/html/rfc6891)。
+为了确保区域作用域级别的传输，DNS 服务器将使用 DNS (扩展机制) OPT RR。 具有作用域的区域中的所有区域传输 (AXFR 或 IXFR) 请求均源自 EDNS0 OPT RR，默认情况下，其选项 ID 设置为 "65433"。 有关 EDNSO 的详细信息，请参阅 IETF[请求注释 6891](https://tools.ietf.org/html/rfc6891)。
 
 OPT RR 的值是要向其发送请求的区域范围名称。 主 DNS 服务器从受信任的辅助服务器接收此数据包时，会将该请求解释为适用于该区域作用域的请求。
 
-如果主服务器具有该区域作用域，则它会通过该作用域中的传输（XFR）数据进行响应。 响应包含具有相同选项 ID "65433" 且值设置为相同区域作用域的 OPT RR。 辅助服务器接收此响应，从响应中检索范围信息，并更新区域的特定作用域。
+如果主服务器具有该区域作用域，则它会通过传输 (XFR) 该范围内的数据。 响应包含具有相同选项 ID "65433" 且值设置为相同区域作用域的 OPT RR。 辅助服务器接收此响应，从响应中检索范围信息，并更新区域的特定作用域。
 
 完成此过程后，主服务器将维护已发送此类区域范围请求通知的受信任辅助副本的列表。
 
@@ -80,7 +78,7 @@ OPT RR 的值是要向其发送请求的区域范围名称。 主 DNS 服务器�
 
 ## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>如何配置基于主要-辅助地理位置的流量管理的 DNS 策略
 
-在开始之前，请确保已完成 "[将 DNS 策略用于基于地理位置的流量管理和主服务器](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md)" 主题中的所有步骤，并且已使用区域、区域作用域、Dns 客户端子网和 dns 策略配置了主 DNS 服务器。
+在开始之前，请确保已完成 "[将 DNS 策略用于基于地理位置的流量管理和主服务器](./primary-geo-location.md)" 主题中的所有步骤，并且已使用区域、区域作用域、Dns 客户端子网和 dns 策略配置了主 DNS 服务器。
 
 > [!NOTE]
 > 本主题中的说明将 dns 主服务器中的 DNS 客户端子网、区域作用域和 DNS 策略复制到 DNS 辅助服务器，用于初始 DNS 设置和验证。 将来，你可能想要更改主服务器上的 DNS 客户端子网、区域作用域和策略设置。 在这种情况下，你可以创建自动化脚本来使辅助服务器与主服务器保持同步。
@@ -102,7 +100,7 @@ OPT RR 的值是要向其发送请求的区域范围名称。 主 DNS 服务器�
 
 ### <a name="create-the-secondary-zones"></a>创建辅助区域
 
-你可以创建要复制到 SecondaryServer1 和 SecondaryServer2 的区域的次要副本（假设 cmdlet 是从单个管理客户端远程执行的）。
+你可以创建要复制到 SecondaryServer1 和 SecondaryServer2 (的区域的辅助副本，前提是该 cmdlet 是从单个管理客户端) 远程执行的。
 
 例如，可以在 SecondaryServer1 和 SecondarySesrver2 上创建 www.woodgrove.com 的辅助副本。
 
@@ -113,7 +111,7 @@ Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -
 Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -MasterServers 10.0.0.1 -ComputerName SecondaryServer2
 ```
 
-有关详细信息，请参阅[DnsServerSecondaryZone](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps)。
+有关详细信息，请参阅[DnsServerSecondaryZone](/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps)。
 
 ### <a name="configure-the-zone-transfer-settings-on-the-primary-zone"></a>在主要区域上配置区域传送设置
 
@@ -131,7 +129,7 @@ Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -
 Set-DnsServerPrimaryZone -Name "woodgrove.com" -Notify Notify -SecondaryServers "10.0.0.2,10.0.0.3" -SecureSecondaries TransferToSecureServers -ComputerName PrimaryServer
 ```
 
-有关详细信息，请参阅[add-dnsserverprimaryzone](https://docs.microsoft.com/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps)。
+有关详细信息，请参阅[add-dnsserverprimaryzone](/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps)。
 
 ### <a name="copy-the-dns-client-subnets"></a>复制 DNS 客户端子网
 
@@ -144,7 +142,7 @@ Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubne
 Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubnet -ComputerName SecondaryServer2
 ```
 
-有关详细信息，请参阅[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
+有关详细信息，请参阅[DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
 ### <a name="create-the-zone-scopes-on-the-secondary-server"></a>在辅助服务器上创建区域作用域
 
@@ -160,11 +158,11 @@ Get-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName PrimaryServer|Add
 > [!NOTE]
 > 在这些示例命令中，将包含 **-ErrorAction Ignore**参数，因为每个区域中都存在一个默认区域作用域。 不能创建或删除默认区域作用域。 管道将导致尝试创建该作用域，并且它将失败。 另外，还可以在两个辅助区域上创建非默认区域作用域。
 
-有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
+有关详细信息，请参阅[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
 
 ### <a name="configure-dns-policy"></a>配置 DNS 策略
 
-创建子网、分区（区域作用域）并添加记录后，你必须创建用于连接子网和分区的策略，以便当查询来自某个 DNS 客户端子网中的源时，将从正确的区域范围内返回查询响应。 映射默认区域作用域不需要策略。
+创建子网后，分区 (区域作用域) ，并且你已添加了记录，你必须创建用于连接子网和分区的策略，以便在查询来自某个 DNS 客户端子网中的源时，会从区域的正确作用域返回查询响应。 映射默认区域作用域不需要策略。
 
 你可以使用以下 Windows PowerShell 命令创建一个 DNS 策略，用于链接 DNS 客户端子网和区域作用域。
 
@@ -174,7 +172,7 @@ $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -Computer
 $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -ComputerName SecondaryServer2
 ```
 
-有关详细信息，请参阅[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+有关详细信息，请参阅[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 现在，辅助 DNS 服务器配置了必需的 DNS 策略，以根据地理位置重定向流量。
 

@@ -6,34 +6,32 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 574c5a4c0d009a34b1d327ac4aef3b9f5210b0bf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 65f47f485b7aded16506cdce91502c0918aacba2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959389"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970954"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>规划区域域控制器放置
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-若要确保成本效益，请计划尽可能少地放置区域域控制器。 首先，请查看[收集网络信息](../../ad-ds/plan/Collecting-Network-Information.md)时使用的 "地理位置和通信链接" （DSSTOPO_1.doc）工作表，以确定位置是否为集线器。
+若要确保成本效益，请计划尽可能少地放置区域域控制器。 首先，请查看用于[收集网络信息](../../ad-ds/plan/Collecting-Network-Information.md)以确定位置是否为集线器的 "地理位置和通信链接" ( # A0) 工作表。
 
 规划为每个中心位置中表示的每个域放置区域域控制器。 将区域域控制器置于所有中心位置之后，请评估是否需要将区域域控制器置于附属位置。 从附属位置消除不必要的区域性域控制器可减少维护远程服务器基础结构所需的支持成本。
 
 此外，请确保中心和卫星位置中域控制器的物理安全性，使未经授权的人员无法访问它们。 不要将可写域控制器置于中心和附属位置，在这些位置无法保证域控制器的物理安全性。 对可写域控制器具有物理访问权限的人员可以通过以下方式攻击系统：
 
 - 通过在域控制器上启动备用操作系统来访问物理磁盘。
-- 删除域控制器上的物理磁盘（并且可能替换）。
+- 删除 (并且可能替换域控制器上的) 物理磁盘。
 - 获取和操作域控制器系统状态备份的副本。
 
 仅将可写区域域控制器添加到可保证其物理安全的位置。
 
-在物理安全性不足的位置上，建议使用部署只读域控制器（RODC）。 除帐户密码之外，RODC 保存了可写域控制器所保留的所有 Active Directory 对象和属性。 但是，不能对存储在 RODC 上的数据库进行更改。 更改必须在可写域控制器上进行，然后复制回 RODC。
+在物理安全性不充分的位置，将只读域控制器部署 (RODC) 是推荐的解决方案。 除帐户密码之外，RODC 保存了可写域控制器所保留的所有 Active Directory 对象和属性。 但是，不能对存储在 RODC 上的数据库进行更改。 更改必须在可写域控制器上进行，然后复制回 RODC。
 
-若要对客户端登录和本地文件服务器的访问进行身份验证，大多数组织都将区域域控制器放置在给定位置的所有区域。 但是，在评估业务位置是否要求客户端具有本地身份验证，或者客户端可以依赖于跨广域网（WAN）链接进行身份验证和查询时，必须考虑许多因素。 下图显示了如何确定是否将域控制器置于附属位置。
+若要对客户端登录和本地文件服务器的访问进行身份验证，大多数组织都将区域域控制器放置在给定位置的所有区域。 但是，在评估业务位置是否要求其客户端具有本地身份验证，或者客户端可以依赖于 (广域网) 链接上的身份验证和查询时，必须考虑许多因素。 下图显示了如何确定是否将域控制器置于附属位置。
 
 ![规划区域 dc 放置](media/Planning-Regional-Domain-Controller-Placement/49892c8c-2c99-4aab-92ba-808dbc8048e2.gif)
 
@@ -69,7 +67,7 @@ ms.locfileid: "86959389"
 
 ### <a name="logon-network-traffic-vs-replication-traffic"></a>登录网络流量与复制流量
 
-如果域控制器在 Active Directory 客户端所在的同一位置中不可用，则客户端将在网络上创建登录流量。 在物理网络上创建的登录网络流量受多种因素的影响，其中包括组成员身份;组策略对象（Gpo）的数量和大小;登录脚本;和功能，如脱机文件夹、文件夹重定向和漫游配置文件。
+如果域控制器在 Active Directory 客户端所在的同一位置中不可用，则客户端将在网络上创建登录流量。 在物理网络上创建的登录网络流量受多种因素的影响，其中包括组成员身份;Gpo (组策略对象的数量和大小) ;登录脚本;和功能，如脱机文件夹、文件夹重定向和漫游配置文件。
 
 另一方面，放置在给定位置的域控制器会在网络上生成复制流量。 在域控制器上托管的分区上进行的更新频率和更新量会影响在网络上创建的复制流量。 在域控制器上托管的分区上可以进行的不同类型的更新包括添加或更改用户和用户属性、更改密码以及添加或更改全局组、打印机或卷。
 
@@ -79,6 +77,6 @@ ms.locfileid: "86959389"
 
 如果降低维护域控制器的成本比网络流量更重要，则可以集中处理该域的域控制器，不要将任何区域域控制器放置在该位置，也不要考虑在该位置放置 Rodc。
 
-要使工作表帮助你记录区域域控制器的位置以及每个位置中每个域的用户数，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及打开 "域控制器布局" （DSSTOPO_4.doc）。
+要使工作表帮助你记录区域域控制器的位置以及每个位置中每个域的用户数，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，以及打开 "域控制器布局" ( # A1) 。
 
 你需要参考有关在部署区域域时需要放置区域域控制器的位置的信息。 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))。

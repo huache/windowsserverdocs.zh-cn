@@ -1,20 +1,18 @@
 ---
 title: 使存储空间直通服务器脱机以进行维护
-ms.prod: windows-server
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dba155f8b8d7312a823dedc72d23268d7d13fbf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d3fd3e1c6ca9a7493ac0bcdc809f68fe22f8fa67
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955909"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971084"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>使存储空间直通服务器脱机以进行维护
 
@@ -173,7 +171,7 @@ MyVolume3    Mirror                OK                Healthy      True          
 2. 使虚拟磁盘脱机。
 3. 停止群集以使存储池脱机。 运行**停止群集**cmdlet，或使用故障转移群集管理器停止群集。
 4. 在每个节点上的 services.msc 中将群集服务设置为 "**已禁用**"。 这会阻止群集服务在修补后启动。
-5. 将 Windows Server 累积更新和任何所需的服务堆栈更新应用到所有节点。 （您可以同时更新所有节点，而无需在群集关闭后等待）。
+5. 将 Windows Server 累积更新和任何所需的服务堆栈更新应用到所有节点。  (可以同时更新所有节点，而无需等待群集关闭) 。
 6. 重新启动节点，确保一切正常。
 7. 在每个节点上将群集服务重新设置为**自动**。
 8. 启动群集。 运行**启动群集**cmdlet，或使用故障转移群集管理器。

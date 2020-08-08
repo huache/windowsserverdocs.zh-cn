@@ -7,12 +7,12 @@ ms.assetid: d47be540-e891-47bd-85da-6df4bbf93b2f
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 63acb44d5b5015d1fb1d560f52ffde8cd37f8cbf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 096d09a78abb8902225432a358692d00f460e91c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951762"
+ms.locfileid: "87996817"
 ---
 # <a name="plan-user-accounts-for-your-multipoint-services-environment"></a>规划 MultiPoint 服务环境的用户帐户
 在 MultiPoint Services 中实现用户帐户的最佳方式取决于部署的大小和复杂性：
@@ -22,7 +22,7 @@ ms.locfileid: "87951762"
 -   **域帐户**-如果你的环境包含许多运行 MultiPoint 服务的计算机，你可能会发现，设置 Active Directory 域服务 \( AD DS \) 域和使用*域用户帐户*会更有用，这使用户能够从域中的任何工作站访问自己的用户配置文件和设置。 域管理员必须在域控制器上创建域用户帐户。
 
 > [!NOTE]
-> 以下各节讨论了在 MultiPoint 服务中可能为本地用户帐户实现的方案。 如果你使用的是域用户帐户，请参阅[示例方案： MultiPoint 服务用户帐户](Example-scenarios--MultiPoint-Services-user-accounts.md)中的 "域网络环境中的一个或多个 MultiPoint 服务器" 方案。
+> 以下各节讨论了在 MultiPoint 服务中可能为本地用户帐户实现的方案。 如果你使用的是域用户帐户，请参阅[示例方案： MultiPoint 服务用户帐户](./multipoint-users-scenario.md)中的 "域网络环境中的一个或多个 MultiPoint 服务器" 方案。
 
 ## <a name="planning-local-user-accounts"></a>规划本地用户帐户
 以下各部分介绍了在 Windows MultiPoint 服务环境中实施单个或共享本地用户帐户的多种方法的优点、缺点和要求。

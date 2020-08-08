@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c52c26d44e50075f9c28dfdec7c2ab4fc420e163
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a93302ee89bf8c4b9a78fc6651e77fb566d1e9c6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948950"
+ms.locfileid: "87996995"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>步骤1配置 DirectAccess 基础结构
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-本主题介绍如何配置在现有 VPN 部署中启用 DirectAccess 所需的基础结构。 在开始执行部署步骤之前，请确保已完成[步骤1：规划 DirectAccess 基础结构](Step-1-Plan-DirectAccess-Infrastructure.md)中所述的规划步骤。
+本主题介绍如何配置在现有 VPN 部署中启用 DirectAccess 所需的基础结构。 在开始执行部署步骤之前，请确保已完成[步骤1：规划 DirectAccess 基础结构](./step-1-plan-da-inf-davpn.md)中所述的规划步骤。
 
 |任务|描述|
 |----|--------|
@@ -328,6 +328,3 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
 13. 依次单击****“确定”、****“注册”和****“完成”。
 
 14. 在证书管理单元的详细信息窗格中，通过“服务器身份验证的预期目的”验证是否注册了新证书。
-
-
-

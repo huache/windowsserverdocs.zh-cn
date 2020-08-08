@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4d39ee3053133286c07a93d18b5c3bd5809e3b54
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 03e45cbeadf25391522728bf3d30006bec76e1e0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182393"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996683"
 ---
 # <a name="dynamic-access-control-scenario-overview"></a>动态访问控制：方案概述
 
@@ -56,13 +54,13 @@ ms.locfileid: "87182393"
 > [!NOTE]
 > ReFS（弹性文件系统）不支持动态访问控制。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 |内容类型|参考|
 |----------------|--------------|
-|**产品评估**|- [动态访问控制审阅者指南](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc732148(v=ws.10))<br>- [动态访问控制开发人员指南](https://docs.microsoft.com/previous-versions/windows/desktop/dacx/dynamic-access-control-developer-extensibility-roadmap)|
-|规划|- [规划中心访问策略部署](https://docs.microsoft.com/windows-server/identity/solution-guides/scenario--central-access-policy)<br>- [规划文件访问审核](Plan-for-File-Access-Auditing.md)|
-|**部署**|- [Active Directory 部署](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/ad-ds-deployment)<br>- [文件和存储服务部署](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831487(v=ws.11))|
-|**操作**|[动态访问控制 PowerShell 参考](https://docs.microsoft.com/powershell/module/addsadministration/?view=win10-ps)|
+|**产品评估**|- [动态访问控制审阅者指南](/previous-versions/orphan-topics/ws.10/cc732148(v=ws.10))<br>- [动态访问控制开发人员指南](/previous-versions/windows/desktop/dacx/dynamic-access-control-developer-extensibility-roadmap)|
+|规划|- [规划中心访问策略部署](./scenario--central-access-policy.md)<br>- [规划文件访问审核](Plan-for-File-Access-Auditing.md)|
+|**部署**|- [Active Directory 部署](../ad-ds/deploy/ad-ds-deployment.md)<br>- [文件和存储服务部署](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831487(v=ws.11))|
+|**操作**|[动态访问控制 PowerShell 参考](/powershell/module/addsadministration/?view=win10-ps)|
 |**工具和设置**|[数据分类工具包](https://www.microsoft.com/download/details.aspx?id=27123)|
-|**社区资源**|[目录服务论坛](https://docs.microsoft.com/answers/topics/windows-active-directory.html)|
+|**社区资源**|[目录服务论坛](/answers/topics/windows-active-directory.html)|

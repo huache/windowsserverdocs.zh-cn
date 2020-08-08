@@ -1,20 +1,18 @@
 ---
 title: 管理 Hyper-v Integration Services
 description: 描述如何打开和关闭 integration services 并在需要时进行安装
-ms.technology: compute-hyper-v
 author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.date: 12/20/2016
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 4237da8ee393953a8eb2a2b577c2df201f96a7be
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 5d5f69e1c71df9746421329d8fdf11a9786a948b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235063"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996753"
 ---
 # <a name="manage-hyper-v-integration-services"></a>管理 Hyper-v Integration Services
 
@@ -22,7 +20,7 @@ ms.locfileid: "83235063"
 
 Hyper-v Integration Services 通过与 Hyper-v 主机进行双向通信来增强虚拟机性能并提供便利功能。 其中许多服务都是很便利（如来宾文件复制），而其他服务则对虚拟机的功能很重要，例如合成设备驱动程序。 这组服务和驱动程序有时称为 "集成组件"。 可以控制每个给定虚拟机的个别便利服务是否正常运行。 驱动程序组件不应被手动提供服务。
 
-有关每个 integration services 的详细信息，请参阅[hyper-v Integration Services](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services)。
+有关每个 integration services 的详细信息，请参阅[hyper-v Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services)。
 
 > [!IMPORTANT]
 > 必须在主机和来宾中同时启用每个要使用的服务，才能正常运行。 默认情况下，所有集成 Hyper-V 来宾服务接口服务在 Windows 来宾操作系统上都处于启用状态。 可以单独打开和关闭服务。 下一部分介绍了如何操作。
@@ -37,7 +35,7 @@ Hyper-v Integration Services 通过与 Hyper-v 主机进行双向通信来增强
 
 ### <a name="turn-an-integration-service-on-or-off-using-powershell"></a>使用 PowerShell 启用或禁用集成服务
 
-若要在 PowerShell 中执行此操作，请使用[enable-vmintegrationservice](https://technet.microsoft.com/library/hh848500.aspx)和[enable-vmintegrationservice](https://technet.microsoft.com/library/hh848488.aspx)。
+若要在 PowerShell 中执行此操作，请使用[enable-vmintegrationservice](/powershell/module/hyper-v/enable-vmintegrationservice?view=win10-ps)和[enable-vmintegrationservice](/powershell/module/hyper-v/disable-vmintegrationservice?view=win10-ps)。
 
 下面的示例演示如何为名为 "demovm" 的虚拟机启用和禁用来宾文件复制集成服务。
 
@@ -113,7 +111,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     Get-Service -Name vm*
     ```
 
-1.  该输出应与以下类似：
+1.  输出应如下所示：
 
     ```PowerShell
     Status   Name               DisplayName
@@ -128,7 +126,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     Running  vmicvss            Hyper-V Volume Shadow Copy Requestor
     ```
 
-1. 运行 "[启动服务](https://technet.microsoft.com/library/hh849825.aspx)" 或 "[停止服务](https://technet.microsoft.com/library/hh849790.aspx)"。 例如，若要关闭 Windows PowerShell Direct，请运行：
+1. 运行 "[启动服务](/powershell/module/microsoft.powershell.management/start-service?view=powershell-7)" 或 "[停止服务](/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7)"。 例如，若要关闭 Windows PowerShell Direct，请运行：
 
     ```
     Stop-Service -Name vmicvmsession
@@ -144,7 +142,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
    lsmod | grep hv_utils
    ```
 
-2. 该输出应与以下类似：
+2. 输出应如下所示：
 
     ``` BASH
     Module                  Size   Used by
@@ -158,7 +156,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
     ps -ef | grep hv
     ```
 
-4. 该输出应与以下类似：
+4. 输出应如下所示：
 
     ```BASH
     root       236     2  0 Jul11 ?        00:00:00 [hv_vmbus_con]
@@ -177,7 +175,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
     compgen -c hv_
     ```
 
-6. 该输出应与以下类似：
+6. 输出应如下所示：
 
     ``` BASH
     hv_vss_daemon
@@ -188,7 +186,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
     hv_fcopy_daemon
     ```
 
-   可能列出的 Integration services 守护程序包括以下各项。 如果缺少任何这些程序，可能不会在您的系统上受支持，或者它们可能未安装。 查找详细信息，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](https://technet.microsoft.com/library/dn531030.aspx)。
+   可能列出的 Integration services 守护程序包括以下各项。 如果缺少任何这些程序，可能不会在您的系统上受支持，或者它们可能未安装。 查找详细信息，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)。
    - **hv_vss_daemon**：创建实时 Linux 虚拟机备份需要此守护程序。
    - **hv_kvp_daemon**：此守护程序允许设置和查询内部和外部密钥值对。
    - **hv_fcopy_daemon**：此后台程序在主机和来宾之间实现文件复制服务。
@@ -230,7 +228,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 > [!NOTE]
 > Windows 10/Windows Server 2016/2019 上的 Hyper-v 不附带 vmguest.iso 映像文件，因为不再需要此文件。
 
-| 来宾  | 更新机制 | 注释 |
+| 来宾  | 更新机制 | 说明 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows 更新 | |
 | Windows 8.1 | Windows 更新 | |
@@ -243,17 +241,17 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 | Windows Server 2012 R2 | Windows 更新 | |
 | Windows Server 2012 | Windows 更新 | 需要“数据交换”集成服务。* |
 | Windows Server 2008 R2 (SP 1) | Windows 更新 | 需要“数据交换”集成服务。* |
-| Windows Server 2008 (SP 2) | Windows 更新 | 仅在 Windows Server 2016 中提供扩展支持（[阅读详细信息](https://support.microsoft.com/lifecycle?p1=12925)）。 |
-| Windows Home Server 2011 | Windows 更新 | 在 Windows Server 2016 中将不受支持（[阅读详细信息](https://support.microsoft.com/lifecycle?p1=15820)）。 |
-| Windows Small Business Server 2011 | Windows 更新 | 不受主流支持（[阅读更多](https://support.microsoft.com/lifecycle?p1=15817)）。 |
+| Windows Server 2008 (SP 2) | Windows 更新 | 仅 Windows Server 2016 中的扩展支持 ([阅读更多](https://support.microsoft.com/lifecycle?p1=12925)) 。 |
+| Windows Home Server 2011 | Windows 更新 | 在 Windows Server 2016 中将不受支持 ([阅读更多](https://support.microsoft.com/lifecycle?p1=15820)) 。 |
+| Windows Small Business Server 2011 | Windows 更新 | 不受主流支持 ([阅读更多](https://support.microsoft.com/lifecycle?p1=15817)) 。 |
 | - | | |
 | Linux 来宾 | 程序包管理器 | Linux 集成服务内置于发行版中，但可能有可选的更新可用。 ******** |
 
-\*如果无法启用数据交换集成服务，这些来宾的集成服务将从[下载中心](https://support.microsoft.com/kb/3071740)作为 cabinet （cab）文件提供。 此[博客文章](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)提供了应用 cab 的说明。
+\*如果无法启用数据交换集成服务，这些来宾的集成服务将从[下载中心](https://support.microsoft.com/kb/3071740)作为 cabinet (cab) 文件提供。 此[博客文章](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)提供了应用 cab 的说明。
 
 **对于在 Windows 8.1/Windows Server 2012R2 主机上运行的虚拟机：**
 
-| 来宾  | 更新机制 | 注释 |
+| 来宾  | 更新机制 | 说明 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows 更新 | |
 | Windows 8.1 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
@@ -278,7 +276,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
 **对于在 Windows 8/Windows Server 2012 主机上运行的虚拟机：**
 
-| 来宾  | 更新机制 | 注释 |
+| 来宾  | 更新机制 | 说明 |
 |:---------|:---------|:---------|
 | Windows 8.1 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
 | Windows 8 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
@@ -297,7 +295,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 | - | | |
 | Linux 来宾 | 程序包管理器 | Linux 集成服务内置于发行版中，但可能有可选的更新可用。 ** |
 
-有关 Linux 来宾的详细信息，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)。
+有关 Linux 来宾的详细信息，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)。
 
 ## <a name="install-or-update-integration-services"></a>安装或更新 integration services
 
@@ -316,5 +314,5 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
 > [!NOTE]
 > 对于**联机**虚拟机，无法在 Windows PowerShell 会话中**自动**执行或执行这些步骤。
-> 可以将其应用于**脱机**VHDX 映像;请参阅[如何在虚拟机未运行时安装 integration services](https://docs.microsoft.com/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running)。
-> 你还可以通过将**Configuration Manager**与 vm**联机**来自动部署 integration services，但需要在安装结束时重新启动 vm;请参阅[使用配置管理器和 DISM 将 hyper-v Integration Services 部署到 vm](https://docs.microsoft.com/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)
+> 可以将其应用于**脱机**VHDX 映像;请参阅[如何在虚拟机未运行时安装 integration services](/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running)。
+> 你还可以通过将**Configuration Manager**与 vm**联机**来自动部署 integration services，但需要在安装结束时重新启动 vm;请参阅[使用配置管理器和 DISM 将 hyper-v Integration Services 部署到 vm](/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)

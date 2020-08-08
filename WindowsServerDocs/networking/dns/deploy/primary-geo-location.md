@@ -2,18 +2,16 @@
 title: 使用针对基于地理位置的流量管理和主服务器的 DNS 策略
 description: 本主题是 Windows Server 2016 DNS 策略方案指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: ef9828f8-c0ad-431d-ae52-e2065532e68f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 47124531c3e516efeceda57574bd6a648667f90f
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 9a1abc00bd8683c716563159aac889a98f364f87
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518273"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996874"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers"></a>使用针对基于地理位置的流量管理和主服务器的 DNS 策略
 
@@ -32,11 +30,11 @@ ms.locfileid: "87518273"
 - **传输协议**。 查询中使用的传输协议。 可能的条目为**UDP**和**TCP**。
 - **Internet 协议**。 查询中使用的网络协议。 可能的条目为**IPv4**和**IPv6**。
 - **服务器接口 IP 地址**。 接收 DNS 请求的 DNS 服务器的网络接口的 IP 地址。
-- **FQDN**。 查询中记录的完全限定的域名（FQDN），可能使用通配符。
-- **查询类型**。 查询的记录类型（A、SRV、TXT 等）。
+- **FQDN**。 完全限定域名 (查询中记录的 FQDN) ，并可能使用通配符。
+- **查询类型**。 要查询 (、SRV、TXT 等 ) 的记录的类型。
 - **当天的时间**。 接收查询的时间。
 
-可以结合使用以下条件和逻辑运算符（和/或）来表述策略表达式。 如果这些表达式匹配，则策略应执行下列操作之一。
+可以将以下条件与逻辑运算符组合在一起 (和/或) 来表述策略表达式。 如果这些表达式匹配，则策略应执行下列操作之一。
 
 - **忽略**。 DNS 服务器会悄悄地删除查询。
 - **拒绝**。 DNS 服务器使用失败响应来响应查询。
@@ -60,7 +58,7 @@ Contoso 云服务有两个数据中心，一个在美国，另一个在欧洲。
 
 在名称解析过程中，用户尝试连接到 www.woodgrove.com。 这会生成一个 DNS 名称解析请求，该请求将发送到在用户计算机上的网络连接属性中配置的 DNS 服务器。 通常，这是作为缓存解析程序的本地 ISP 提供的 DNS 服务器，被称为 LDNS。
 
-如果 DNS 名称未出现在 LDNS 的本地缓存中，则 LDNS 服务器会将该查询转发到对 woodgrove.com 具有权威的 DNS 服务器。 权威 DNS 服务器会将请求的记录（www.woodgrove.com）与 LDNS 服务器进行响应，后者反过来将记录缓存到用户的计算机上，然后再将其发送到用户的计算机。
+如果 DNS 名称未出现在 LDNS 的本地缓存中，则 LDNS 服务器会将该查询转发到对 woodgrove.com 具有权威的 DNS 服务器。 权威 DNS 服务器用请求的记录 (www.woodgrove.com) 响应到 LDNS 服务器，后者反过来将记录缓存在用户的计算机上，然后将其发送到用户的计算机。
 
 由于 Contoso 云服务使用 DNS 服务器策略，因此将托管 contoso.com 的权威 DNS 服务器配置为返回基于地理位置的流量管理的响应。 如图中所示，这会导致欧洲的客户端与欧洲数据中心的客户和美国的数据中心的方向。
 
@@ -98,7 +96,7 @@ Add-DnsServerClientSubnet -Name "USSubnet" -IPv4Subnet "192.0.0.0/24"
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24"
 ```
 
-有关详细信息，请参阅[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
+有关详细信息，请参阅[DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
 ### <a name="create-zone-scopes"></a><a name="bkmk_scopes"></a>创建区域作用域
 配置了客户端子网之后，必须将要重定向到的流量分区为两个不同的区域作用域，其中每个已配置的 DNS 客户端子网的作用域。
@@ -117,12 +115,12 @@ Add-DnsServerZoneScope -ZoneName "woodgrove.com" -Name "USZoneScope"
 Add-DnsServerZoneScope -ZoneName "woodgrove.com" -Name "EuropeZoneScope"
 ```
 
-有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
+有关详细信息，请参阅[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>将记录添加到区域作用域
 现在，必须将表示 web 服务器主机的记录添加到这两个区域作用域中。
 
-例如， **USZoneScope**和**EuropeZoneScope**。 在 USZoneScope 中，可以使用 IP 地址192.0.0.1 （位于美国数据中心）添加记录 www.woodgrove.com;在 EuropeZoneScope 中，可以在欧洲数据中心添加同一记录（www.woodgrove.com）和 IP 地址141.1.0.1。
+例如， **USZoneScope**和**EuropeZoneScope**。 在 USZoneScope 中，可以使用 IP 地址192.0.0.1 （位于美国数据中心）添加记录 www.woodgrove.com;在 EuropeZoneScope 中，可以在欧洲数据中心添加与 IP 地址141.1.0.1 相同的记录 (www.woodgrove.com) 。
 
 你可以使用以下 Windows PowerShell 命令将记录添加到区域作用域。
 
@@ -140,10 +138,10 @@ Add-DnsServerResourceRecord -ZoneName "woodgrove.com" -A -Name "www" -IPv4Addres
 
 在默认范围内添加记录时，不包含**ZoneScope**参数。 这与将记录添加到标准 DNS 区域相同。
 
-有关详细信息，请参阅[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
+有关详细信息，请参阅[DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 ### <a name="create-the-policies"></a><a name="bkmk_policies"></a>创建策略
-创建子网、分区（区域作用域）并添加记录后，你必须创建用于连接子网和分区的策略，以便当查询来自某个 DNS 客户端子网中的源时，将从正确的区域范围内返回查询响应。 映射默认区域作用域不需要策略。
+创建子网后，分区 (区域作用域) ，并且你已添加了记录，你必须创建用于连接子网和分区的策略，以便在查询来自某个 DNS 客户端子网中的源时，会从区域的正确作用域返回查询响应。 映射默认区域作用域不需要策略。
 
 你可以使用以下 Windows PowerShell 命令创建一个 DNS 策略，用于链接 DNS 客户端子网和区域作用域。
 
@@ -152,7 +150,7 @@ Add-DnsServerQueryResolutionPolicy -Name "USPolicy" -Action ALLOW -ClientSubnet 
 Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "EuropeZoneScope,1" -ZoneName "woodgrove.com"
 ```
 
-有关详细信息，请参阅[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+有关详细信息，请参阅[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 现在 DNS 服务器配置了所需的 DNS 策略，以根据地理位置重定向流量。
 

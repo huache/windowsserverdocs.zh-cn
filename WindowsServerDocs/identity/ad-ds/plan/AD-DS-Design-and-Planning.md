@@ -6,20 +6,18 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 929530b8ee7dbb7b0486f3eb80a642cc5fdab20e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b735852f8e2428c3d6375a3168f204e403a461f5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962459"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941453"
 ---
 # <a name="ad-ds-design-and-planning"></a>AD DS 设计和规划
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-通过在你的环境中部署 Windows Server Active Directory 域服务（AD DS），你可以利用 AD DS 提供的集中委派管理模型和单一登录（SSO）功能。 确定组织的部署任务和当前环境后，可以创建满足组织需求的 AD DS 部署策略。
+通过在你的环境中部署 Windows Server Active Directory 域服务 (AD DS) ，你可以利用 (提供的集中、委派的管理模型和单一登录) SSO AD DS 功能。 确定组织的部署任务和当前环境后，可以创建满足组织需求的 AD DS 部署策略。
 
 ## <a name="about-this-guide"></a>关于本指南
 
@@ -27,7 +25,7 @@ ms.locfileid: "86962459"
 
 本指南介绍了 Windows Server 2008 AD DS 部署的几个可能的起点的任务集。 本指南有助于为环境确定最合适的部署策略。
 
-尽管本指南中所述的策略适用于几乎所有服务器操作系统部署，但已专门针对包含少于100000个用户和少于1000个站点的环境（其网络连接的网络连接最低为每秒28.8 千比特（Kbps））对其进行了测试和验证。 如果你的环境不满足这些条件，请考虑使用在更复杂的环境中部署 AD DS 的咨询公司。
+尽管本指南中所述的策略适用于几乎所有服务器操作系统部署，但它们已专门针对包含少于100000个用户和少于1000个站点的环境进行测试和验证，其网络连接的网络连接最低为每秒 28.8 kbps (Kbps) 。 如果你的环境不满足这些条件，请考虑使用在更复杂的环境中部署 AD DS 的咨询公司。
 
 有关测试 AD DS 部署过程的详细信息，请参阅[测试和验证部署过程](/previous-versions/windows/it-pro/windows-server-2003/cc772722(v=ws.10))一文。
 

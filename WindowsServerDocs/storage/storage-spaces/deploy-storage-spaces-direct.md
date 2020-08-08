@@ -1,21 +1,19 @@
 ---
 title: 部署存储空间直通
-ms.prod: windows-server
 manager: eldenc
 ms.author: stevenek
-ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
 ms.date: 07/24/2020
 description: 逐步说明如何使用 Windows Server 中的存储空间直通将软件定义的存储部署为超聚合基础结构或聚合 (也称为非聚合) 基础结构。
 ms.localizationpriority: medium
-ms.openlocfilehash: ba9287cebe1cf35c151335e59476f63ae3e01a56
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: a15f9df55fd5650443f4d0220dee6b4ada9253d2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87863934"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971104"
 ---
 # <a name="deploy-storage-spaces-direct"></a>部署存储空间直通
 
@@ -29,7 +27,7 @@ ms.locfileid: "87863934"
 > [!Tip]
 > 你可以使用 Hyper-v 虚拟机，包括在 Microsoft Azure 中，以[评估没有硬件存储空间直通](storage-spaces-direct-in-vm.md)。 你可能还想要查看方便使用的[Windows Server 快速实验室部署脚本](https://aka.ms/wslab)，这些脚本用于定型目的。
 
-## <a name="before-you-start"></a>准备工作
+## <a name="before-you-start"></a>开始之前
 
 查看[存储空间直通硬件要求](Storage-Spaces-Direct-Hardware-Requirements.md)，并浏览本文档以熟悉与某些步骤相关的总体方法和重要说明。
 

@@ -1,19 +1,17 @@
 ---
 title: 扩展存储空间直通中的卷
 description: 如何使用 Windows 管理中心和 PowerShell 在存储空间直通中调整卷的大小。
-ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.date: 03/10/2020
-ms.openlocfilehash: 4526bdc87bfbb8cdaf6cc3b0e8f3cd1cd80f4a9d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: dccc8d25505fb1ac94af81b23334b7f8639dcc01
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474604"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971074"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>扩展存储空间直通中的卷
 > 适用于：Windows Server 2019、Windows Server 2016

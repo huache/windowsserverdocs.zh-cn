@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: b86beeac-b0bb-4373-b462-ad6fa6cbedfa
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 81afa40adc51a89a12e096000de1f11f13730df6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 79e0a0c0e99c49fc251d8aebc3fc76e68603e45c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964173"
+ms.locfileid: "87996922"
 ---
 # <a name="use-dns-policy-for-applying-filters-on-dns-queries"></a>使用 DNS 策略在 DNS 查询上应用筛选器
 
@@ -41,7 +41,7 @@ DNS 策略中的查询筛选器允许你将 DNS 服务器配置为基于发送 D
 以下示例演示了如何创建 DNS 策略筛选器，以阻止或允许 DNS 名称解析查询。
 
 >[!NOTE]
->本主题中的示例命令使用 Windows PowerShell 命令**DnsServerQueryResolutionPolicy**。 有关详细信息，请参阅[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+>本主题中的示例命令使用 Windows PowerShell 命令**DnsServerQueryResolutionPolicy**。 有关详细信息，请参阅[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 ## <a name="block-queries-from-a-domain"></a><a name="bkmk_block1"></a>阻止来自域的查询
 

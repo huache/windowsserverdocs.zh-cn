@@ -7,12 +7,12 @@ ms.assetid: 87ea20e4-46cf-49e9-86bf-70be9098c8db
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 30e4c3f8553161c8fbc87e0e9b9235c8878eb186
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 34356de97d04ed3e678b0aa1e0e1e76d7a657421
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951742"
+ms.locfileid: "87996652"
 ---
 # <a name="predeployment-checklist"></a>预部署清单
 使用下列清单来帮助你计划 MultiPoint 服务部署。
@@ -23,7 +23,7 @@ ms.locfileid: "87951742"
 |2.|确定有可能访问的用户数，同时运行 MultiPoint 服务的每台计算机都可以估计必须运行 MultiPoint 服务的必需计算机的数量。|[用户、工作站和计算机](MultiPoint-services-Site-Planning.md#users-stations-and-computers)|
 |3.|了解用户可能会访问的软件应用程序和 web 内容以及对系统性能的影响。|[硬件要求和性能建议](hardware-and-performance-recommendations.md)|
 |4.|确定将连接到系统的工作站的数量和类型。|[MultiPoint 工作站](MultiPoint-services-Stations.md)|
-|5.|确定所需的硬件。|[选择用于你的 MultiPoint 服务系统的硬件](Selecting-Hardware-for-Your-MultiPoint-services-System.md)以及[硬件要求和性能建议](hardware-and-performance-recommendations.md)|
+|5.|确定所需的硬件。|[选择用于你的 MultiPoint 服务系统的硬件](./select-hardware-mps.md)以及[硬件要求和性能建议](hardware-and-performance-recommendations.md)|
 |6.|确定 MultiPoint 服务系统的位置。 它是在单个房间内进行设置，还是将其设置为可以从一个位置移动到另一个位置？|[MultiPoint Server 站点规划](MultiPoint-services-Site-Planning.md)|
 |7.|确定如何排列电台。|[MultiPoint Services 站点规划](MultiPoint-services-Site-Planning.md)|
 |8.|验证正确的电源和网络基础结构。|[MultiPoint Services 站点规划](MultiPoint-services-Site-Planning.md)|

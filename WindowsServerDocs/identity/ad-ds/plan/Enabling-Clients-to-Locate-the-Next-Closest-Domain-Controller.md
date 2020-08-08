@@ -6,20 +6,18 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ce946fb0fe581a66f4a4e29cf8491f00294b5bcb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 54b830df42a99712c28bb49be7e89ee84a43b088
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953579"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941196"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>启用客户端查找下一个最近的域控制器
 
 > 适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-如果你有运行 Windows Server 2008 或更高版本的域控制器，则可以通过启用 "**尝试下一个最近的站点**" 组策略设置，使运行 windows Vista 或更高版本或 Windows Server 2008 或更高版本的客户端计算机更有效地查找域控制器。 此设置可帮助简化网络流量，尤其是在具有很多分支机构和站点的大型企业中，此设置可改善域控制器定位器（DC 定位符）。
+如果你有运行 Windows Server 2008 或更高版本的域控制器，则可以通过启用 "**尝试下一个最近的站点**" 组策略设置，使运行 windows Vista 或更高版本或 Windows Server 2008 或更高版本的客户端计算机更有效地查找域控制器。 此设置可帮助简化网络流量，尤其是在具有很多分支机构和站点的大型企业中，此设置可改善域控制器定位器 (DC 定位程序) 。
 
 此新设置可能会影响站点链接开销的配置方式，因为它会影响域控制器的位置顺序。 对于具有多个中心站点和分支机构的企业，你可以通过确保客户端在最近的中心站点中找不到域控制器时故障转移到下一个最近的中心站点来大幅减少网络上的 Active Directory 流量。
 
@@ -41,7 +39,7 @@ ms.locfileid: "86953579"
 
 "**尝试下一个最近的站点**" 设置与自动站点覆盖协调工作。 例如，如果下一个最近的站点没有域控制器，DC 定位程序将尝试查找为该站点执行自动站点覆盖的域控制器。
 
-默认情况下，当域控制器确定下一个最近的站点时，DC 定位程序不会考虑包含只读域控制器（RODC）的任何站点。 此外，当客户端从运行早于 Windows Server 2008 的版本的域控制器获得响应时，DC 定位器行为与 "未启用时" 设置相同。
+默认情况下，DC 定位程序不会将任何包含只读域控制器的站点视为 (RODC) 确定下一个最近的站点。 此外，当客户端从运行早于 Windows Server 2008 的版本的域控制器获得响应时，DC 定位器行为与 "未启用时" 设置相同。
 
 例如，假设站点拓扑具有四个站点，下图中的站点链接值为。 在此示例中，所有域控制器都是运行 Windows Server 2008 或更高版本的可写域控制器。
 
@@ -54,4 +52,4 @@ ms.locfileid: "86953579"
 > [!NOTE]
 > "**尝试下一个最近的站点**" 设置与自动站点覆盖协调工作。 例如，如果下一个最近的站点没有域控制器，DC 定位程序将尝试查找为该站点执行自动站点覆盖的域控制器。
 
-若要应用 "**尝试下一个最近的站点**" 设置，你可以创建一个组策略对象（GPO），并将其链接到你的组织的适当对象，也可以修改默认域策略，使其影响域中运行 windows Vista 或更高版本以及 windows Server 2008 或更高版本的所有客户端。 有关如何设置 "**尝试下一个最近的站点**" 设置的详细信息，请参阅[使客户端能够在下一个最近的站点中找到域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772592(v=ws.10))。
+若要应用 "**尝试下一个最近的站点**" 设置，你可以创建一个组策略对象 (GPO) ，并将其链接到你的组织的适当对象，或者，你可以修改默认域策略，使其影响域中运行 windows Vista 或更高版本以及 windows Server 2008 或更高版本的所有客户端。 有关如何设置 "**尝试下一个最近的站点**" 设置的详细信息，请参阅[使客户端能够在下一个最近的站点中找到域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772592(v=ws.10))。

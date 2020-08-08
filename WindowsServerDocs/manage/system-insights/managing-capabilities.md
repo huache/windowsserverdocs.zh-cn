@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: e82b27d2d746592b29b86a66ee34b21f8605a0d8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e78afb47877bb908df81876afe01d2f60b853c70
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940158"
+ms.locfileid: "87996706"
 ---
 # <a name="managing-capabilities"></a>管理功能
 
@@ -86,7 +86,7 @@ $Output.ForecastingResults
 | None | 132 |
 
 >[!TIP]
->使用[Azure Monitor](https://azure.microsoft.com/services/monitor/)或[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)来聚合这些事件，并查看一组计算机中的预测结果。
+>使用[Azure Monitor](https://azure.microsoft.com/services/monitor/)或[System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807)来聚合这些事件，并查看一组计算机中的预测结果。
 
 
 ## <a name="setting-a-capability-schedule"></a>设置功能计划

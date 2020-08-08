@@ -2,18 +2,16 @@
 title: 使用 DNS 策略通过地理位置感知执行应用程序负载平衡
 description: 本主题是 Windows Server 2016 DNS 策略方案指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b66ae0ef1bf319b991efc01c062ec156bf277c31
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 00195c4993f3e5bef9688adbfd09f62f908b6276
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518392"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996940"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>使用 DNS 策略通过地理位置感知执行应用程序负载平衡
 
@@ -21,10 +19,10 @@ ms.locfileid: "87518392"
 
 您可以使用本主题来了解如何配置 DNS 策略，以便对应用程序进行负载平衡，并使用地理位置识别。
 
-本指南中的上一个主题[使用 DNS 策略来实现应用程序负载平衡](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb)，其中使用了虚构的公司-Contoso 礼券的示例，该服务提供联机赠与政策服务，并具有名为 contosogiftservices.com 的网站。 Contoso 礼券负载会在位于西雅图、WA、芝加哥、IL 和达拉斯，德克萨斯州的北美数据中心内的服务器之间对其联机 Web 应用程序进行平衡。
+本指南中的上一个主题[使用 DNS 策略来实现应用程序负载平衡](./app-lb.md)，其中使用了虚构的公司-Contoso 礼券的示例，该服务提供联机赠与政策服务，并具有名为 contosogiftservices.com 的网站。 Contoso 礼券负载会在位于西雅图、WA、芝加哥、IL 和达拉斯，德克萨斯州的北美数据中心内的服务器之间对其联机 Web 应用程序进行平衡。
 
 >[!NOTE]
->建议在执行此方案中的说明之前，先熟悉主题 "[将 DNS 策略用于应用程序负载均衡](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb)"。
+>建议在执行此方案中的说明之前，先熟悉主题 "[将 DNS 策略用于应用程序负载均衡](./app-lb.md)"。
 
 本主题使用同一虚构公司和网络基础结构作为新的示例部署的基础，其中包括地理位置感知。
 
@@ -60,7 +58,7 @@ Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
 ```
 
-有关详细信息，请参阅[DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
+有关详细信息，请参阅[DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
 ### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>创建区域作用域
 
@@ -84,7 +82,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
 ```
 
-有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+有关详细信息，请参阅[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records2"></a>将记录添加到区域作用域
 
@@ -97,11 +95,11 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
 ```
 
-有关详细信息，请参阅[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
+有关详细信息，请参阅[DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 ### <a name="create-the-dns-policies"></a><a name="bkmk_policies2"></a>创建 DNS 策略
 
-创建分区（区域作用域）并添加记录后，必须创建在这些范围内分发传入查询的 DNS 策略。
+在 (区域作用域创建分区之后) 并添加记录后，必须创建在这些范围内分发传入查询的 DNS 策略。
 
 在此示例中，跨不同数据中心内的应用程序服务器的查询分布满足以下条件。
 
@@ -117,7 +115,7 @@ Add-DnsServerQueryResolutionPolicy -Name "EuropeLBPolicy" -Action ALLOW -ClientS
 Add-DnsServerQueryResolutionPolicy -Name "WorldWidePolicy" -Action ALLOW -FQDN "eq,*.contoso.com" -ZoneScope "SeattleZoneScope,1;ChicagoZoneScope,1; TexasZoneScope,1;DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 3
 ```
 
-有关详细信息，请参阅[DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+有关详细信息，请参阅[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 现在，你已成功创建了一个 DNS 策略，该策略可跨多个洲的五个不同数据中心内的 Web 服务器提供应用程序负载平衡。
 
