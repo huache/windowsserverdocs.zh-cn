@@ -2,29 +2,27 @@
 title: 虚拟网络中的出口计量
 description: 云网络盈利的一个基本方面是网络带宽出口。 例如，Microsoft Azure 业务模型中的出站数据传输。 根据在给定计费周期内通过 Internet 从 Azure 数据中心移出的数据总量对出站数据收费。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: a5d530d5cd1b42206bd6881ee902496713573793
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: be28e5b3b9939907398b0c245fc49fcfd6f5e49a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854430"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954013"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>虚拟网络中的出口计量
 
->适用于： Windows Server 2019
+>适用于：Windows Server 2019
 
 
 云网络盈利的一个重要方面是能够按网络带宽的使用情况进行计费。 根据在给定计费周期内通过 Internet 移出数据中心的数据总量对出站数据收费。
 
 Windows Server 2019 中 SDN 网络流量的出口计量功能可以提供出站数据传输的使用情况计量。 离开每个虚拟网络的网络流量可以单独进行跟踪，使其可以从计费计算中排除。 对于未包含在其中一个未开票地址范围内的目标 IP 地址绑定的数据包，将作为计费的出站数据传输进行跟踪。
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虚拟网络未开票地址范围（IP 范围的允许列表）
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>虚拟网络未开票 IP 范围 (白名单) 
 
 可以在现有虚拟网络的**UnbilledAddressRanges**属性下找到未开票地址范围。 默认情况下，不会添加任何地址范围。
 

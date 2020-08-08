@@ -6,12 +6,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: ee5786684c4f3a6c75c3b123b9d3ef9d32143949
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d01757fcf1539e41db866b46cdf9eba60a59fc04
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895885"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993207"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>为服务器核心安装配置内存转储文件
 
@@ -23,7 +23,7 @@ ms.locfileid: "87895885"
 
 第一步是手动配置系统故障和恢复选项。 这是完成剩余步骤所必需的。
 
-运行下面的命令：
+运行以下命令：
 
 ```
 wmic computersystem set AutomaticManagedPagefile=False
@@ -195,7 +195,4 @@ Shutdown / r / t 0
 
 有关使用内存转储文件的常规信息，请参阅[Windows 的内存转储文件选项概述](https://support.microsoft.com/help/254649/overview-of-memory-dump-file-options-for-windows)。
 
-有关专用转储文件的详细信息，请参阅[如何使用 DedicatedDeumpFile 注册表值克服系统驱动器上的空间限制，同时捕获系统内存转储](https://blogs.msdn.microsoft.com/ntdebugging/2010/04/02/how-to-use-the-dedicateddumpfile-registry-value-to-overcome-space-limitations-on-the-system-drive-when-capturing-a-system-memory-dump/)。
-
-
-
+有关专用转储文件的详细信息，请参阅[如何使用 DedicatedDeumpFile 注册表值克服系统驱动器上的空间限制，同时捕获系统内存转储](/archive/blogs/ntdebugging/how-to-use-the-dedicateddumpfile-registry-value-to-overcome-space-limitations-on-the-system-drive-when-capturing-a-system-memory-dump)。

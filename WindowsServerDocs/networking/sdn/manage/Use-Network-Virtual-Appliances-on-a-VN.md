@@ -3,18 +3,16 @@ title: 在虚拟网络上使用网络虚拟设备
 description: 本主题介绍如何在租户虚拟网络上部署网络虚拟设备。 可以将网络虚拟设备添加到执行用户定义的路由和端口镜像功能的网络中。
 manager: grcusanz
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 5d8ac7256e9c7e59c7df260bea5d5a8f0fb6b42b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fa6fcd735a2cad6a062d7b2daaa7cf206589c20
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854470"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954053"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>在虚拟网络上使用网络虚拟设备
 
@@ -28,7 +26,7 @@ ms.locfileid: "80854470"
 
 1. **用户定义的路由**-将虚拟网络上的分布式路由器替换为虚拟设备的路由功能。  使用用户定义的路由时，虚拟设备将用作虚拟网络上虚拟子网之间的路由器。
 
-2. **端口镜像**-会复制进入或离开监视的端口的所有网络流量，并将其发送到虚拟设备进行分析。 
+2. **端口镜像**-会复制进入或离开监视的端口的所有网络流量，并将其发送到虚拟设备进行分析。
 
 
 ## <a name="deploying-a-network-virtual-appliance"></a>部署网络虚拟设备
@@ -37,7 +35,7 @@ ms.locfileid: "80854470"
 
 某些设备需要多个虚拟网络适配器。 通常，一个网络适配器专用于设备管理，而其他适配器则处理流量。  如果设备需要多个网络适配器，则必须在网络控制器中创建每个网络接口。 还必须在每个主机上为不同虚拟子网上的其他每个适配器分配一个接口 ID。
 
-部署网络虚拟设备后，可以使用该设备进行定义的路由、移植镜像或同时使用这两者。 
+部署网络虚拟设备后，可以使用该设备进行定义的路由、移植镜像或同时使用这两者。
 
 
 ## <a name="example-user-defined-routing"></a>示例：用户定义的路由
@@ -49,8 +47,8 @@ ms.locfileid: "80854470"
 
 对于这些情况，您必须创建一个路由表，并将用户定义的路由添加到表中。 你可以有多个路由表，并且可以将相同的路由表关联到一个或多个子网。 只能将每个子网关联到单个路由表。 子网中的所有 Vm 都使用与子网关联的路由表。
 
-在将路由表关联到子网之前，子网依赖于系统路由。 存在关联后，将根据用户定义的路由和系统路由之间的最长前缀匹配（LPM）完成路由。 如果有多个路由的 LPM 匹配情况相同，则首先选择 "用户定义的路由"，然后选择系统路由。
- 
+在将路由表关联到子网之前，子网依赖于系统路由。 存在关联后，将根据最长前缀匹配 (LPM) 在用户定义的路由和系统路由之间进行路由。 如果有多个路由的 LPM 匹配情况相同，则首先选择 "用户定义的路由"，然后选择系统路由。
+
 **方法**
 
 1. 创建路由表属性，其中包含所有用户定义的路由。<p>根据上面定义的规则，系统路由仍适用。
@@ -91,7 +89,7 @@ ms.locfileid: "80854470"
 
 ## <a name="example-port-mirroring"></a>示例：端口镜像
 
-在此示例中，将 MyVM_Ethernet1 的流量配置为镜像 Appliance_Ethernet1。  假设你已部署了两个 Vm，一个作为设备，另一个用作 VM 来监视镜像。 
+在此示例中，将 MyVM_Ethernet1 的流量配置为镜像 Appliance_Ethernet1。  假设你已部署了两个 Vm，一个作为设备，另一个用作 VM 来监视镜像。
 
 设备必须具有另一个用于管理的网络接口。 启用镜像作为 Appliciance_Ethernet1 上的目标后，它将不再接收目标为在其中配置的 IP 接口的流量。
 
@@ -165,5 +163,5 @@ ms.locfileid: "80854470"
    ```
 
 完成这些步骤后，Appliance_Ethernet1 接口会从 MyVM_Ethernet1 接口镜像流量。
- 
+
 ---

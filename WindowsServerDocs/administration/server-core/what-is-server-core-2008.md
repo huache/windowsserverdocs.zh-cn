@@ -5,18 +5,18 @@ ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
 author: heidilohr
-ms.openlocfilehash: 5cadad3dd8fafe28ba127610afd3dfa219f92b73
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fb3e0b60787cb12c3401a14a54aebf4809c61b45
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895841"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993226"
 ---
 # <a name="what-is-server-core-2008"></a>什么是 Server Core 2008？
 >适用于： Windows Server 2008
 
 >[!NOTE]
->此信息适用于 Windows Server 2008。 有关 Windows Server 中的服务器核心的信息，请参阅[什么是 Windows server 中的服务器核心安装](https://docs.microsoft.com/windows-server/administration/server-core/what-is-server-core)。
+>此信息适用于 Windows Server 2008。 有关 Windows Server 中的服务器核心的信息，请参阅[什么是 Windows server 中的服务器核心安装](./what-is-server-core.md)。
 
 "服务器核心" 选项是在部署 Windows Server 2008 的 Standard edition、Enterprise edition 或 Datacenter edition 时可用的新的最小安装选项。 服务器核心提供仅支持安装特定服务器角色的 Windows Server 2008 的最小安装，如本章稍后部分所述。 与 Windows Server 2008 的完全安装选项相比，此选项支持安装所有可用的服务器角色以及其他 Microsoft 或第三方服务器应用程序，如 Microsoft Exchange Server 或 SAP。
 
