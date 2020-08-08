@@ -6,20 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 9fb864bcf74fb0fee921288165b1e042a34f027e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 16edfc28e90ca5e5755305a1e95c338b604a72f2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965529"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959045"
 ---
 # <a name="identifying-the-deployment-project-participants"></a>确定部署项目参与者
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-为 Active Directory 域服务（AD DS）建立部署项目的第一步是建立设计和部署项目团队，这些团队负责管理 Active Directory 项目周期的设计阶段和部署阶段。 此外，必须在部署完成后，确定负责拥有和维护目录的个人和组。
+为 Active Directory 域 Service (AD DS) 建立部署项目的第一步是建立设计和部署项目团队，这些团队负责管理 Active Directory 项目周期的设计阶段和部署阶段。 此外，必须在部署完成后，确定负责拥有和维护目录的个人和组。
 
 - [定义特定于项目的角色](#BKMK_1)
 
@@ -83,7 +81,7 @@ Active Directory 项目架构师的责任包括：
 - 负责对 Active Directory 基础结构进行规划和长期维护的服务所有者，确保目录继续工作，并且维护在服务级别协议中建立的目标。
 - 负责维护目录中存储的信息的数据所有者。 这包括用户和计算机帐户管理以及本地资源（例如成员服务器和工作站）的管理。
 
-务必提前标识 Active Directory 服务和数据所有者，以便他们能够尽可能多地参与设计过程。 由于在部署项目完成后，服务和数据所有者负责对目录进行长期维护，因此这些人员需要提供有关组织需求的输入，并熟悉某些设计决策的方式和原因。 服务所有者包括林所有者、Active Directory 域命名系统（DNS）所有者和站点拓扑所有者。 数据所有者包括组织单位（OU）所有者。
+务必提前标识 Active Directory 服务和数据所有者，以便他们能够尽可能多地参与设计过程。 由于在部署项目完成后，服务和数据所有者负责对目录进行长期维护，因此这些人员需要提供有关组织需求的输入，并熟悉某些设计决策的方式和原因。 服务所有者包括林所有者、Active Directory 域命名系统 (DNS) 所有者和站点拓扑所有者。 数据所有者包括组织单位 (OU) 所有者。
 
 ### <a name="service-and-data-administrators"></a>服务和数据管理员
 AD DS 的操作涉及两种类型的管理员：服务管理员和数据管理员。 服务管理员实施服务所有者做出的策略决策，并处理与维护目录服务和基础结构相关的日常任务。 这包括管理托管目录服务的域控制器，管理 AD DS 所需的其他网络服务（例如 DNS），控制林范围设置的配置，并确保目录始终可用。
@@ -105,7 +103,7 @@ AD DS 的操作涉及两种类型的管理员：服务管理员和数据管理�
 部署项目完成后，这些服务和数据所有者将继续负责其组管理的基础结构的一部分。 在 Active Directory 环境中，这些所有者是林所有者，DNS 用于 AD DS 所有者、站点拓扑所有者和 OU 所有者。 以下部分介绍了这些服务和数据所有者的角色。
 
 #### <a name="forest-owner"></a>林所有者
-林所有者通常是组织中的一种高级信息技术（IT）经理，负责 Active Directory 部署过程，并最终负责在部署完成后在林中维护服务交付。 林所有者通过标识组织内能够提供有关网络基础结构和管理需求的必要信息的关键人员，来分配用户以填充其他所有权角色。 林所有者负责以下操作：
+林所有者通常是一项高级信息技术，它在组织中负责 Active Directory 部署过程，并最终负责在部署完成后维持林中的服务交付的组织) 经理 (。 林所有者通过标识组织内能够提供有关网络基础结构和管理需求的必要信息的关键人员，来分配用户以填充其他所有权角色。 林所有者负责以下操作：
 
 - 部署目录林根级域以创建林
 
@@ -178,11 +176,11 @@ Active Directory 项目团队是负责完成 Active Directory 设计和部署任
 ### <a name="identifying-potential-forest-owners"></a>确定潜在林所有者
 确定组织内拥有的组，并控制向网络上的用户提供目录服务所需的资源。 这些组被视为潜在的林所有者。
 
-AD DS 中的服务和数据管理分离，使组织中的 IT 组（或组）可以管理目录服务，而每个组中的本地管理员则管理属于自己的组的数据。 可能的林所有者对网络基础结构具有所需的权限，以便部署和支持 AD DS。
+AD DS 中的服务和数据管理分离，使基础结构 IT 组 (或组织) 组织可以管理目录服务，而每个组中的本地管理员则管理属于其自己的组的数据。 可能的林所有者对网络基础结构具有所需的权限，以便部署和支持 AD DS。
 
 对于具有一个集中式基础结构 IT 组的组织，IT 小组通常是林所有者，因此可能是将来任何部署的潜在林所有者。 包含多个独立基础结构的组织具有许多潜在的林所有者。 如果你的组织已有一个 Active Directory 的基础结构，则任何当前的林所有者也是新部署的潜在林所有者。
 
-选择其中一个可能的林所有者，作为要部署的每个林的林所有者。 这些潜在的林所有者负责与设计团队合作，以确定是否实际部署其林，或者是否可以更好地利用可用资源，同时还能满足其需要的情况。 你的组织中的林所有者（或所有者）是 Active Directory 设计团队的成员。
+选择其中一个可能的林所有者，作为要部署的每个林的林所有者。 这些潜在的林所有者负责与设计团队合作，以确定是否实际部署其林; 或者，如果其他操作过程 (例如加入另一个现有林) 是否更好地利用可用资源并仍满足其需求。 你的组织中的林所有者 (或所有者) 是 Active Directory 设计团队的成员。
 
 ### <a name="establishing-a-design-team"></a>建立设计团队
 Active Directory 设计团队负责收集对 Active Directory 逻辑结构设计做出决策所需的所有信息。
@@ -251,4 +249,4 @@ Active Directory 部署团队包括以下成员：
 部署团队在部署阶段与服务和数据管理员协作，以确保操作团队的成员熟悉新的设计。 这有助于确保在部署操作完成时平稳过渡所有权。 完成部署过程后，维护新 Active Directory 环境的责任将传递给操作团队。
 
 ### <a name="documenting-the-design-and-deployment-teams"></a>记录设计和部署团队
-记录将参与 AD DS 的设计和部署的人员的姓名和联系信息。 确定将负责设计和部署团队中每个角色的人员。 最初，此列表包括潜在的林所有者、项目经理和项目架构师。 确定要部署的林数量时，可能需要为其他林创建新的设计团队。 请注意，当团队成员身份发生变化时，您需要更新您的文档，并且在设计过程中确定不同的 Active Directory 所有者。 要使工作表可以帮助你记录每个林的设计和部署团队，请从[Windows Server 2003 部署工具包的作业助手](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "设计和部署团队信息" （DSSLOGI_1.doc）。
+记录将参与 AD DS 的设计和部署的人员的姓名和联系信息。 确定将负责设计和部署团队中每个角色的人员。 最初，此列表包括潜在的林所有者、项目经理和项目架构师。 确定要部署的林数量时，可能需要为其他林创建新的设计团队。 请注意，当团队成员身份发生变化时，您需要更新您的文档，并且在设计过程中确定不同的 Active Directory 所有者。 若要使工作表可以帮助您记录每个林的设计和部署团队，请从[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并 ( # A1) 打开 "设计和部署团队信息"。

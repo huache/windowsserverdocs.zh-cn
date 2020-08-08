@@ -2,23 +2,21 @@
 title: 针对 MultiPoint 服务迁移规划工作表
 description: 提供了规划工作表来帮助您迁移到 Windows Server 2016 中的 MultiPoint 服务
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 864405bb-47ed-4c83-97a2-8df4c6e6f96b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: c0d5976e70bcf8009cd98e54e973dd6f585d7208
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 653725776d21a0df0550fb754d207a2de7791491
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858900"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946760"
 ---
 # <a name="planning-worksheet-for-multipoint-services-migration"></a>针对 MultiPoint 服务迁移规划工作表
 
->适用于：Windows Server 2016
+>适用于：Windows Server 2016
 
 使用以下列表和表来收集 MultiPoint 服务迁移过程中所需的设置。
 
@@ -40,7 +38,7 @@ ms.locfileid: "80858900"
 
 记录托管服务器和计算机的名称。 可以在 MultiPoint 管理器的 "**主页**" 选项卡上找到此信息。
 
-| 计算机 | 计算机名称 |
+| Computer | 计算机名称 |
 |----------|---------------|
 | 1        |               |
 | 2        |               |
@@ -75,7 +73,7 @@ ms.locfileid: "80858900"
 
 复制管理员和 MultiPoint 仪表板用户的用户名。 可以在 MultiPoint 管理器的 "**用户**" 选项卡上找到此信息。
 
-Administrators：
+管理员：
 
 - 用户名:
 - 用户名:
@@ -96,7 +94,7 @@ Administrators：
 
 记录 VDI 模板信息和 MultiPoint 服务部署中虚拟机的名称。 可以在 MultiPoint 管理器的 "**虚拟机**" 选项卡中找到此信息。
 
-**VDI 模板位置**： 
+**VDI 模板位置**：
 
 | # | 虚拟机名称      |
 |---|---------------------------|

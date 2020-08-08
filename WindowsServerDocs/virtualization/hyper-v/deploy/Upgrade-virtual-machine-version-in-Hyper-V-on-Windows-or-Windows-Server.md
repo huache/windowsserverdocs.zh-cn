@@ -7,12 +7,12 @@ ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: e7c86cc15877c622cf3554a7ae69fe3d0aea1c50
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 24e67bd88a644c44b65d5eb8ccd3d6190737b5db
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938921"
+ms.locfileid: "87995636"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>在 Windows 10 或 Windows Server 上的 Hyper-v 中升级虚拟机版本
 
@@ -24,13 +24,13 @@ ms.locfileid: "87938921"
 - 升级群集功能级别。
 - 你确定不需要将虚拟机移回运行 Windows 或 Windows Server 以前版本的 Hyper-v 主机。
 
-有关详细信息，请参阅[群集操作系统滚动升级](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)和[在 VMM 中执行 hyper-v 主机群集的滚动升级](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade)。
+有关详细信息，请参阅[群集操作系统滚动升级](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)和[在 VMM 中执行 hyper-v 主机群集的滚动升级](/system-center/vmm/hyper-v-rolling-upgrade)。
 
 ## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>步骤1：检查虚拟机配置版本
 
 1. 在 Windows 桌面上，单击“开始”按钮并键入名称 **Windows PowerShell** 的任一部分。
 2. 右键单击 "Windows PowerShell" 并选择 "以**管理员身份运行**"。
-3. 使用[GET VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm)cmdlet。 运行以下命令，获取虚拟机的版本。
+3. 使用[GET VM](/powershell/module/hyper-v/get-vm)cmdlet。 运行以下命令，获取虚拟机的版本。
 
 ```PowerShell
 Get-VM * | Format-Table Name, Version
@@ -43,7 +43,7 @@ Get-VM * | Format-Table Name, Version
 1. 关闭 Hyper-v 管理器中的虚拟机。
 2. 选择操作 > 升级配置版本。 如果此选项不适用于虚拟机，则它已是 Hyper-V 主机支持的最高配置版本。
 
-若要使用 Windows PowerShell 升级虚拟机配置版本，请使用[VMVersion](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion) cmdlet。 运行以下命令，其中 vmname 是虚拟机的名称。
+若要使用 Windows PowerShell 升级虚拟机配置版本，请使用[VMVersion](/powershell/module/hyper-v/update-vmversion) cmdlet。 运行以下命令，其中 vmname 是虚拟机的名称。
 
 ```PowerShell
 Update-VMVersion <vmname>
@@ -51,13 +51,13 @@ Update-VMVersion <vmname>
 
 ## <a name="supported-virtual-machine-configuration-versions"></a>支持的虚拟机配置版本
 
-运行 PowerShell cmdlet [VMHostSupportedVersion](https://docs.microsoft.com/powershell/module/hyper-v/get-vmhostsupportedversion) ，查看 hyper-v 主机支持的虚拟机配置版本。 当你创建虚拟机时，将使用默认配置版本创建它。 若要查看默认值，请运行以下命令。
+运行 PowerShell cmdlet [VMHostSupportedVersion](/powershell/module/hyper-v/get-vmhostsupportedversion) ，查看 hyper-v 主机支持的虚拟机配置版本。 当你创建虚拟机时，将使用默认配置版本创建它。 若要查看默认值，请运行以下命令。
 
 ```PowerShell
 Get-VMHostSupportedVersion -Default
 ```
 
-如果需要创建可移至运行旧版 Windows 的 Hyper-v 主机的虚拟机，请使用带有-version 参数的[新 VM](https://docs.microsoft.com/powershell/module/hyper-v/new-vm) cmdlet。 例如，若要创建可以移动到运行 Windows Server 2012 R2 的 Hyper-v 主机的虚拟机，请运行以下命令。 此命令将创建一个名为 "WindowsCV5" 的虚拟机，其配置版本为5.0。
+如果需要创建可移至运行旧版 Windows 的 Hyper-v 主机的虚拟机，请使用带有-version 参数的[新 VM](/powershell/module/hyper-v/new-vm) cmdlet。 例如，若要创建可以移动到运行 Windows Server 2012 R2 的 Hyper-v 主机的虚拟机，请运行以下命令。 此命令将创建一个名为 "WindowsCV5" 的虚拟机，其配置版本为5.0。
 
 ```PowerShell
 New-VM -Name "WindowsCV5" -Version 5.0
@@ -82,7 +82,7 @@ New-VM -Name "WindowsCV5" -Version 5.0
 
 ### <a name="supported-vm-configuration-versions-for-semi-annual-channel-hosts"></a>半年频道主机支持的 VM 配置版本
 
-下表列出了运行当前支持的半年频道版本 Windows 的主机的 VM 配置版本。 若要获取有关半年频道版本 Windows 的详细信息，请访问[Windows Server](../../../get-started-19/servicing-channels-19.md)和[windows 10](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels)的以下页面
+下表列出了运行当前支持的半年频道版本 Windows 的主机的 VM 配置版本。 若要获取有关半年频道版本 Windows 的详细信息，请访问[Windows Server](../../../get-started-19/servicing-channels-19.md)和[windows 10](/windows/deployment/update/waas-overview#servicing-channels)的以下页面
 
 | Hyper-v 主机 Windows 版本 | 9.1 | 9.0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
 | --- |---|---|---|---|---|---|---|---|---|---|
@@ -116,7 +116,7 @@ New-VM -Name "WindowsCV5" -Version 5.0
 
 如果你有使用早期版本的 Hyper-v 创建的虚拟机，则在更新配置版本之前，更高版本的主机操作系统上可用的某些功能可能无法使用这些虚拟机。
 
-通常，我们建议在将虚拟化主机成功升级到较新版本的 Windows 后更新配置版本，并确信不需要回滚。 使用[群集操作系统滚动升级](https://docs.microsoft.com/windows-server/failover-clustering/Cluster-Operating-System-Rolling-Upgrade)功能时，通常会在更新群集功能级别后进行。 这样一来，你将从新功能和内部更改和优化中获益。
+通常，我们建议在将虚拟化主机成功升级到较新版本的 Windows 后更新配置版本，并确信不需要回滚。 使用[群集操作系统滚动升级](../../../failover-clustering/cluster-operating-system-rolling-upgrade.md)功能时，通常会在更新群集功能级别后进行。 这样一来，你将从新功能和内部更改和优化中获益。
 
 >[!NOTE]
 >VM 配置版本更新后，VM 将无法在不支持更新的配置版本的主机上启动。
@@ -140,8 +140,7 @@ New-VM -Name "WindowsCV5" -Version 5.0
 |大内存 Vm|8.0|
 |将虚拟设备的默认最大数目增加到每台设备 64 (例如，网络和分配的设备) |8.3|
 |允许为 Perfmon 提供额外的处理器功能|9.0|
-|使用[核心计划程序](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler)自动为在主机上运行的 vm 公开[同步多线程](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#background)配置|9.0|
+|使用[核心计划程序](../manage/manage-hyper-v-scheduler-types.md#windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler)自动为在主机上运行的 vm 公开[同步多线程](../manage/manage-hyper-v-scheduler-types.md#background)配置|9.0|
 |休眠支持|9.0|
 
 有关这些功能的详细信息，请参阅[Windows Server 上的 hyper-v 中的新增](../What-s-new-in-Hyper-V-on-Windows.md)功能。
-

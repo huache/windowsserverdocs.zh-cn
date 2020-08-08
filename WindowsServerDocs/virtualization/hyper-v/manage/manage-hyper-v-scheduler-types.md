@@ -7,12 +7,12 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 954efafe3185cadb347384c3c93a2eb8ef895143
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a1f53dba659af7d5ac0efff2e72bd168523bde0c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963553"
+ms.locfileid: "87995631"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虚拟机监控程序计划程序类型
 
@@ -40,7 +40,7 @@ Intel 和 AMD 均提供支持 SMT 的处理器。 Intel 将其 SMT 的产品/服
 
 ## <a name="understanding-how-hyper-v-virtualizes-processors"></a>了解 Hyper-v 虚拟化处理器的方式
 
-在考虑虚拟机监控程序计划程序类型之前，了解 Hyper-v 体系结构也很有帮助。 可在[Hyper-v 技术概述](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview)中找到一般摘要。 下面是本文的重要概念：
+在考虑虚拟机监控程序计划程序类型之前，了解 Hyper-v 体系结构也很有帮助。 可在[Hyper-v 技术概述](../hyper-v-technology-overview.md)中找到一般摘要。 下面是本文的重要概念：
 
 * Hyper-v 创建和管理虚拟机分区，在这些分区中分配和共享计算资源，以控制虚拟机监控程序。 分区在所有来宾虚拟机之间以及来宾 Vm 与根分区之间提供强大的隔离边界。
 

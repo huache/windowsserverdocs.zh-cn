@@ -2,17 +2,16 @@
 title: 服务器的性能历史记录
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 15f6e68f613dea03631d1ce6be53f6cb9d854fc1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 262c35e7d91fe43d2ade955d4606279f8d428f6a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954099"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946330"
 ---
 # <a name="performance-history-for-servers"></a>服务器的性能历史记录
 
@@ -45,12 +44,12 @@ ms.locfileid: "86954099"
 | 系列                           | 如何解释                                                      |
 |----------------------------------|-----------------------------------------------------------------------|
 | `clusternode.cpu.usage`          | 处于非空闲状态的处理器时间百分比。                        |
-| `clusternode.cpu.usage.guest`    | 用于来宾（虚拟机）需求的处理器时间百分比。 |
+| `clusternode.cpu.usage.guest`    | 用于来宾 (虚拟机) 需求的处理器时间百分比。 |
 | `clusternode.cpu.usage.host`     | 用于主机需求的处理器时间百分比。                    |
 | `clusternode.memory.total`       | 服务器的总物理内存。                              |
 | `clusternode.memory.available`   | 服务器的可用内存。                                   |
-| `clusternode.memory.usage`       | 服务器的已分配（不可用）内存。                   |
-| `clusternode.memory.usage.guest` | 分配给来宾（虚拟机）需求的内存。               |
+| `clusternode.memory.usage`       | 分配的 (在服务器) 内存中不可用。                   |
+| `clusternode.memory.usage.guest` | 分配给来宾 (虚拟机) 需求的内存。               |
 | `clusternode.memory.usage.host`  | 分配给主机需求的内存。                                  |
 
 ## <a name="where-they-come-from"></a>它们来自何处
@@ -79,7 +78,7 @@ ms.locfileid: "86954099"
 
 同样要注意的 `clusternode.cpu.usage.guest` 是，始终是 `vm.cpu.usage` 主机服务器上所有虚拟机的总和。
 
-`memory.*`序列为（即将推出）。
+此 `memory.*` 系列 (即将) 。
 
   > [!NOTE]
   > 计数器在整个间隔内进行测量，而不是采样。 例如，如果服务器的空闲时间为9秒，但10秒内高峰为100%，则在 `clusternode.cpu.usage` 10 秒的时间间隔内，其平均记录为10%。 这可确保其性能历史记录捕获所有活动，并使干扰稳定。

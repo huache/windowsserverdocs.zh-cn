@@ -1,24 +1,22 @@
 ---
 title: 配置服务器基础结构
 description: 在此步骤中，将安装和配置支持 VPN 所需的服务器端组件。 服务器端组件包括配置 PKI 以分发用户、VPN 服务器和 NPS 服务器使用的证书。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 0a9d9c139c721608e9104c4943dda2664432c94d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 31a11fa1a2991b9ee0ea70434e485cb6cdc7460f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955099"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946580"
 ---
-# <a name="step-2-configure-the-server-infrastructure"></a>步骤 2： 配置服务器基础结构
+# <a name="step-2-configure-the-server-infrastructure"></a>步骤 2。 配置服务器基础结构
 
->适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>适用于： Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows 10
 
 - [**上一个：** 步骤1。规划 Always On 的 VPN 部署](always-on-vpn-deploy-planning.md)
 - [**下一步：** 步骤3。为 Always On VPN 配置远程访问服务器](vpn-deploy-ras.md)
@@ -26,7 +24,7 @@ ms.locfileid: "86955099"
 在此步骤中，你将安装和配置支持 VPN 所需的服务器端组件。 服务器端组件包括配置 PKI 以分发用户、VPN 服务器和 NPS 服务器使用的证书。  你还可以配置 RRAS 以支持 IKEv2 连接，并配置 NPS 服务器以执行 VPN 连接授权。
 
 ## <a name="configure-certificate-autoenrollment-in-group-policy"></a>在组策略中配置证书自动注册
-在此过程中，你将在域控制器上配置组策略，以便域成员自动请求用户和计算机证书。 这样，VPN 用户便可以请求和检索自动对 VPN 连接进行身份验证的用户证书。 同样，此策略允许 NPS 服务器自动请求服务器身份验证证书。 
+在此过程中，你将在域控制器上配置组策略，以便域成员自动请求用户和计算机证书。 这样，VPN 用户便可以请求和检索自动对 VPN 连接进行身份验证的用户证书。 同样，此策略允许 NPS 服务器自动请求服务器身份验证证书。
 
 在 VPN 服务器上手动注册证书。
 
@@ -35,7 +33,7 @@ ms.locfileid: "86955099"
 
 1. 在域控制器上，打开组策略管理。
 
-2. 在导航窗格中，右键单击你的域（例如，corp.contoso.com），然后选择 "**在此域中创建 GPO 并在此处链接"**。
+2. 在导航窗格中，右键单击你的域 (例如，corp.contoso.com) "，然后选择"**在此域中创建 GPO 并在此处链接 "**。
 
 3. 在 "新建 GPO" 对话框中，输入 "**自动注册策略**"，然后选择 **"确定"**。
 
@@ -73,7 +71,7 @@ ms.locfileid: "86955099"
 
 由于 RRAS 服务器未加入域，因此无法使用自动注册来注册 VPN 网关证书。  因此，请使用脱机证书请求过程。
 
-1. 在 RRAS 服务器上，根据附录 A 中提供的示例证书策略请求（第0部分）生成名为**VPNGateway**的文件，并自定义以下条目：
+1. 在 RRAS 服务器上，根据附录 A (第0部分中提供的示例证书策略请求生成名为**VPNGateway**的文件，) 并自定义以下条目：
 
    - 在 [NewRequest] 节中，将使用者名称的 vpn.contoso.com 替换为所选的 [_Customer_] vpn 终结点 FQDN。
 
@@ -87,9 +85,9 @@ ms.locfileid: "86955099"
    certreq -new VPNGateway.inf VPNGateway.req
    ```
 
-4. 将新创建的**VPNGateway**输出文件复制到证书颁发机构服务器或特权访问工作站（PAW）。
+4. 将新创建的**VPNGateway**输出文件复制到证书颁发机构服务器或特权访问工作站 (PAW) 。
 
-5. 将**VPNGateway**文件保存或复制到证书颁发机构服务器或特权访问工作站（PAW）上的所选位置。
+5. 将**VPNGateway**文件保存或复制到证书颁发机构服务器上的所选位置，或将特权访问工作站 (PAW) 。
 
 6. 在提升的命令提示符下，导航到包含在上一步中创建的 VPNGateway 文件的文件夹，然后键入：
 
@@ -99,7 +97,7 @@ ms.locfileid: "86955099"
 
 7. 如果 "证书颁发机构列表" 窗口出现提示，请选择相应的企业 CA 来为证书请求提供服务。
 
-8. 将新创建的**VPNGateway**输出文件复制到 RRAS 服务器。 
+8. 将新创建的**VPNGateway**输出文件复制到 RRAS 服务器。
 
 9. 将**VPNGateway**文件保存或复制到 RRAS 服务器上的所选位置。
 
@@ -113,7 +111,7 @@ ms.locfileid: "86955099"
 
 12. 请确保具有以下属性的 RRAS 服务器存在有效的证书：
 
-    - **预期目的：** 服务器身份验证，IP 安全 IKE 中间 
+    - **预期目的：** 服务器身份验证，IP 安全 IKE 中间
 
     - **证书模板：** [_Customer_] VPN 服务器
 
@@ -125,19 +123,19 @@ ms.locfileid: "86955099"
 >可以在 "证书请求策略" 文件夹下的 "VPN 产品 IP 工具包" 中找到 VPNGateway 脚本的副本。 仅使用客户特定的值更新 "Subject" 和 " \_ continue \_ "。
 
 ```
-[Version] 
+[Version]
 
 Signature="$Windows NT$"
 
 [NewRequest]
 Subject = "CN=vpn.contoso.com"
-Exportable = FALSE   
-KeyLength = 2048     
-KeySpec = 1          
-KeyUsage = 0xA0      
+Exportable = FALSE
+KeyLength = 2048
+KeySpec = 1
+KeyUsage = 0xA0
 MachineKeySet = True
 ProviderName = "Microsoft RSA SChannel Cryptographic Provider"
-RequestType = PKCS10 
+RequestType = PKCS10
 
 [Extensions]
 2.5.29.17 = "{text}"
@@ -146,7 +144,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
 ## <a name="create-the-vpn-users-vpn-servers-and-nps-servers-groups"></a>创建 VPN 用户、VPN 服务器和 NPS 服务器组
 
-在此过程中，你可以添加新的 Active Directory （AD）组，其中包含允许使用 VPN 连接到组织网络的用户。
+在此过程中，你可以添加一个新的 Active Directory (AD) 组，其中包含允许用户使用 VPN 连接到你的组织网络的用户。
 
 此组有两个用途：
 
@@ -159,7 +157,7 @@ _continue_ = "dns=vpn.contoso.com&"
 还会添加包含 VPN 服务器的组和包含 NPS 服务器的其他组。 你使用这些组将证书请求限制为其成员。
 
 >[!NOTE]
->建议位于 DMA/外围网络中的 VPN 服务器未加入域。 但是，如果想要将 VPN 服务器加入域以获得更好的可管理性（组策略、备份/监视代理、无本地用户管理等），则将 AD 组添加到 VPN 服务器证书模板。
+>建议位于 DMA/外围网络中的 VPN 服务器未加入域。 但是，如果你想要将 VPN 服务器加入域以实现更好的可管理性 (组策略、备份/监视代理、没有要管理的本地用户等) ，然后将 AD 组添加到 VPN 服务器证书模板。
 
 ### <a name="configure-the-vpn-users-group"></a>配置 VPN 用户组
 
@@ -203,7 +201,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
 在此过程中，您将配置自定义客户端-服务器身份验证模板。 此模板是必需的，因为你希望通过选择 "升级兼容性级别" 并选择 "Microsoft 平台加密提供程序" 来提高证书的整体安全性。 这最后一次更改使你可以在客户端计算机上使用 TPM 来保护证书。 有关 TPM 的概述，请参阅[受信任的平台模块技术概述](/windows/device-security/tpm/trusted-platform-module-overview)。
 
->[!IMPORTANT] 
+>[!IMPORTANT]
 >Microsoft 平台加密提供程序 "需要 TPM 芯片，在这种情况下，如果你正在运行 VM，并且收到以下错误：" 尝试手动注册证书时，在本地计算机上找不到有效的 CSP "。在证书属性的" 加密 "选项卡中，在" Microsoft 平台加密提供程序 "之后，按顺序进行检查。
 
 **方法**
@@ -215,7 +213,7 @@ _continue_ = "dns=vpn.contoso.com&"
 3. 在 "证书模板" 控制台中，右键单击 "**用户**"，然后选择 "**复制模板**"。
 
    >[!WARNING]
-   >请不要在步骤10之前的任何时间选择 "**应用** **" 或 "确定"** 。  如果在输入所有参数之前选择了这些按钮，则很多选择都是固定的，不再可编辑。 例如，在 "**加密**" 选项卡上，如果_旧的加密存储提供程序_在 "提供程序类别" 字段中显示，则该提供程序将被禁用，从而阻止进一步的更改。 唯一的替代方法是删除并重新创建模板。  
+   >请不要在步骤10之前的任何时间选择 "**应用** **" 或 "确定"** 。  如果在输入所有参数之前选择了这些按钮，则很多选择都是固定的，不再可编辑。 例如，在 "**加密**" 选项卡上，如果_旧的加密存储提供程序_在 "提供程序类别" 字段中显示，则该提供程序将被禁用，从而阻止进一步的更改。 唯一的替代方法是删除并重新创建模板。
 
 4. 在 "新模板的属性" 对话框的 "**常规**" 选项卡上，完成以下步骤：
 
@@ -234,7 +232,7 @@ _continue_ = "dns=vpn.contoso.com&"
    4. 在 " **VPN 用户的权限**" 中，选中 "**允许**" 列中的 "**注册**" 和 "**自动注册**" 复选框。
 
       >[!TIP]
-      >请确保选中 "读取" 复选框。 换句话说，你需要注册的读取权限。 
+      >请确保选中 "读取" 复选框。 换句话说，你需要注册的读取权限。
 
    5. 在 "**组或用户名**" 中，选择 "**域用户**"，然后选择 "**删除**"。
 
@@ -272,7 +270,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
 ## <a name="create-the-vpn-server-authentication-template"></a>创建 VPN 服务器身份验证模板
 
-在此过程中，你可以为 VPN 服务器配置新的服务器身份验证模板。 如果有多个证书可用于服务器身份验证扩展密钥用法，则添加 IP 安全（IPsec） IKE 中间应用程序策略允许服务器筛选证书。
+在此过程中，你可以为 VPN 服务器配置新的服务器身份验证模板。 如果有多个证书可用于服务器身份验证扩展密钥用法，则 (IPsec) IKE 中间应用程序策略中添加 IP 安全可允许服务器筛选证书。
 
 >[!IMPORTANT]
 >由于 VPN 客户端从公共 Internet 访问此服务器，因此使用者和备用名称与内部服务器名称不同。 因此，你无法在 VPN 服务器上自动注册此证书。
@@ -298,7 +296,7 @@ _continue_ = "dns=vpn.contoso.com&"
     2. 在 "**编辑应用程序策略扩展**" 对话框中，选择 "**添加**"。
 
     3. 在 "**添加应用程序策略**" 对话框中，选择 " **IP 安全 IKE 中级**"，然后选择 **"确定"**。
-   
+
         如果 VPN 服务器上存在多个服务器身份验证证书，则将 IP 安全 IKE 中级添加到 EKU 可帮助。 如果存在 IP 安全 IKE 中级，则 IPSec 只使用具有两个 EKU 选项的证书。 如果不这样做，IKEv2 身份验证可能会失败，并出现错误13801： IKE 身份验证凭据不可接受。
 
     4. 选择 **"确定"** 以返回到 "**新模板的属性**" 对话框。
@@ -321,7 +319,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
     2. 在 "**证书模板**警告" 对话框中，选择 **"确定"**。
 
-8. 可有可无如果要配置 VPN 连接的条件性访问，请选择 "**请求处理**" 选项卡，然后选择 "**允许导出私钥**"。
+8.  (可选) 如果要为 VPN 连接配置条件访问，请选择 "**请求处理**" 选项卡，然后选择 "**允许导出私钥**"。
 
 9. 选择 **"确定"** 以保存 VPN 服务器证书模板。
 
@@ -329,7 +327,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
 11. 在 "证书颁发机构" 管理单元的导航窗格中，右键单击 "**证书模板**"，单击 "**新建**"，然后单击 "**要颁发的证书模板**"。
 
-12. 重新启动证书颁发机构服务。(*)
+12. 重新启动证书颁发机构服务。 ( * ) 
 
 13. 在 "证书颁发机构" 管理单元的导航窗格中，右键单击 "**证书模板**"，选择 "**新建**"，然后选择 "**要颁发的证书模板**"。
 
@@ -437,10 +435,10 @@ Net Start "certsvc"
 
 7. 选择 "**注册**"。
 
-8. 选择**完成**。
+8. 选择“完成”。
 
 9. 在 "证书" 管理单元的 "**个人**" 下，选择 "**证书**"。
-    
+
     列出的证书将显示在详细信息窗格中。
 
 10. 右键单击具有您的 VPN 服务器名称的证书，然后选择 "**打开**"。

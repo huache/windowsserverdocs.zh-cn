@@ -1,24 +1,22 @@
 ---
 title: 配置 DNS 和防火墙设置
 description: 本主题提供有关在 Windows Server 2016 中部署 Always On VPN 的详细说明。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: d8cf3bae-45bf-4ffa-9205-290d555c59da
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 06/11/2018
-ms.openlocfilehash: 0bdf2917a5f33b1e2ba5e3d216d8610887c79e8c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 99db65c2c5bd78154e14ab9e388eb709351afc11
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860460"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946680"
 ---
-# <a name="step-5-configure-dns-and-firewall-settings"></a>步骤 5： 配置 DNS 和防火墙设置
+# <a name="step-5-configure-dns-and-firewall-settings"></a>步骤 5。 配置 DNS 和防火墙设置
 
->适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>适用于： Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows 10
 
 - [**上一个：** 步骤4。安装和配置 NPS 服务器](vpn-deploy-nps.md)
 - [**下一步：** 步骤6。配置 Windows 10 客户端 Always On VPN 连接](vpn-deploy-client-vpn-connections.md)
@@ -31,24 +29,24 @@ ms.locfileid: "80860460"
 
 因此，你必须确保外部客户端用于连接到 VPN 服务器的计算机名称与颁发给 VPN 服务器的证书中定义的使用者备用名称匹配。
 
-为了确保远程客户端可以连接到 VPN 服务器，你可以在外部 DNS 区域中创建 DNS A （主机）记录。 A 记录应使用 VPN 服务器的证书使用者备用名称。
+若要确保远程客户端可以连接到 VPN 服务器，你可以在外部 DNS 区域中创建 DNS A (主机) 记录。 A 记录应使用 VPN 服务器的证书使用者备用名称。
 
-### <a name="to-add-a-host-a-or-aaaa-resource-record-to-a-zone"></a>将主机（A 或 AAAA）资源记录添加到区域
+### <a name="to-add-a-host-a-or-aaaa-resource-record-to-a-zone"></a>将主机 (或 AAAA) 资源记录添加到区域
 
 1. 在 DNS 服务器上的服务器管理器中，选择 "**工具**"，然后选择 " **DNS**"。 此时将打开 DNS 管理器。
 2. 在 DNS 管理器控制台树中，选择要管理的服务器。
 3. 在详细信息窗格的 "**名称**" 中，双击 "**正向查找区域**" 展开该视图。
-4. 在 "**正向查找区域**" 详细信息中，右键单击要向其添加记录的正向查找区域，然后选择 "**新建主机（a 或 AAAA）** "。 此时将打开 "**新建主机**" 对话框。
+4. 在 "**正向查找区域**" 详细信息中，右键单击要向其添加记录的正向查找区域，然后选择 "**新建主机 (或 AAAA) **。 此时将打开 "**新建主机**" 对话框。
 5. 在 "**新建主机**" 的 "**名称**" 中，输入 VPN 服务器的证书使用者备用名称。
-6. 在 "IP 地址" 中，输入 VPN 服务器的 IP 地址。 可以输入 IP 版本4（IPv4）格式的地址，添加主机（A）资源记录，或使用 IP 版本6（IPv6）格式添加主机（AAAA）资源记录。
-7. 如果为某个 IP 地址范围（包括所输入的 IP 地址）创建了反向查找区域，则选中 "**创建关联的指针（PTR）记录**" 复选框。  如果选择此选项，将根据你在 "**名称**和**IP 地址**" 中输入的信息，在该主机的反向区域中创建其他指针（PTR）资源记录。
+6. 在 "IP 地址" 中，输入 VPN 服务器的 IP 地址。 你可以输入 IP 版本4中的地址 (IPv4) 格式，以便添加主机 () 资源记录，或使用 IP 版本 6 (IPv6) 格式添加主机 (AAAA) 资源记录。
+7. 如果为某个 IP 地址范围（包括所输入的 IP 地址）创建了反向查找区域，则选中 "**创建关联的指针 (PTR) 记录**" 复选框。  选择此选项会根据你在 "**名称**和**IP 地址**" 中输入的信息，在此主机的反向区域中 (PTR) 资源记录创建其他指针。
 8. 选择 "**添加主机**"。
 
 ## <a name="configure-the-edge-firewall"></a>配置边缘防火墙
 
 边缘防火墙将外部外围网络与公共 Internet 隔离开来。 有关此分离的可视化表示形式，请参阅主题[ALWAYS ON VPN 技术概述](../always-on-vpn-technology-overview.md)"。
 
-边缘防火墙必须允许并将特定端口转发到 VPN 服务器。 如果使用边缘防火墙上的网络地址转换（NAT），则可能需要启用用户数据报协议（UDP）端口500和4500的端口转发。 将这些端口转发到分配给 VPN 服务器的外部接口的 IP 地址。
+边缘防火墙必须允许并将特定端口转发到 VPN 服务器。 如果在边缘防火墙上使用网络地址转换 (NAT) ，则可能需要启用用户数据报协议的端口转发 (UDP) 端口500和4500。 将这些端口转发到分配给 VPN 服务器的外部接口的 IP 地址。
 
 如果要路由流量入站并在 VPN 服务器的后面执行 NAT，则必须打开防火墙规则，以允许 UDP 端口500和4500入站发送到 VPN 服务器上的公共接口的外部 IP 地址。
 
@@ -65,14 +63,14 @@ ms.locfileid: "80860460"
 配置防火墙以允许 RADIUS 流量双向流动。
 
 >[!NOTE]
->组织/企业网络上的 NPS 服务器充当 VPN 服务器（RADIUS 客户端）的 RADIUS 服务器。 有关 RADIUS 基础结构的详细信息，请参阅[网络策略服务器（NPS）](../../../../../networking/technologies/nps/nps-top.md)。
+>组织/企业网络上的 NPS 服务器充当 VPN 服务器（RADIUS 客户端）的 RADIUS 服务器。 有关 RADIUS 基础结构的详细信息，请参阅[网络策略服务器 (NPS) ](../../../../../networking/technologies/nps/nps-top.md)。
 
 ### <a name="radius-traffic-ports-on-the-vpn-server-and-nps-server"></a>VPN 服务器和 NPS 服务器上的 RADIUS 流量端口
 
 默认情况下，NPS 和 VPN 侦听所有已安装网络适配器上端口1812、1813、1645和1646上的 RADIUS 流量。 如果在安装 NPS 时启用具有高级安全性的 Windows 防火墙，则这些端口的防火墙例外会在安装过程中自动创建 IPv6 和 IPv4 通信。
 
 >[!IMPORTANT]
->如果网络访问服务器被配置为通过这些默认端口之外的端口发送 RADIUS 流量，请在安装 NPS 期间删除在 "高级安全 Windows 防火墙" 中创建的例外，并为用于的端口创建例外。RADIUS 流量。
+>如果网络访问服务器被配置为通过这些默认端口之外的端口发送 RADIUS 流量，请在安装 NPS 期间删除在 "高级安全 Windows 防火墙" 中创建的例外，并为用于 RADIUS 流量的端口创建例外。
 
 ### <a name="use-the-same-radius-ports-for-the-internal-perimeter-network-firewall-configuration"></a>为内部外围网络防火墙配置使用相同的 RADIUS 端口
 

@@ -1,43 +1,41 @@
 ---
 title: 向 Windows 10 设备创建基于 OMA-DM 的 VPNv2 配置文件
 description: '可以使用以下两种方法之一创建基于 OMA 的 VPNv2 配置文件。 '
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: a98ed0d8436b057c63b08c1f1476b4392f7911fc
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 29ecf10ba0591f25cc4b24a11bb614e53cdcca22
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953929"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946600"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>步骤 7.5： 创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备
 
->适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>适用于： Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows 10
 
 - [**上一个：** 步骤7.4。将条件性访问根证书部署到本地 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 - [**下一步：** 了解 VPN 的条件性访问的工作原理](/windows/access-protection/vpn/vpn-conditional-access)
 
-在此步骤中，你可以使用 Intune 创建基于 OMA 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅[VPNV2 CSP 设置](/windows/client-management/mdm/vpnv2-csp)了解更多详细信息。 
+在此步骤中，你可以使用 Intune 创建基于 OMA 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅[VPNV2 CSP 设置](/windows/client-management/mdm/vpnv2-csp)了解更多详细信息。
 
 ## <a name="managed-deployment-using-intune"></a>使用 Intune 的托管部署
 
-本部分所述的所有内容都是使用条件性访问进行 VPN 工作所需的最低要求。 它不涵盖拆分隧道，使用 WIP，创建自定义 Intune 设备配置配置文件以获取 AutoVPN 的工作或 SSO。 将下面的设置集成到你之前在步骤5中创建的 VPN 配置文件[。配置 Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)。在此示例中，我们将它们集成到[使用 Intune 策略配置 VPN 客户端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)。 
+本部分所述的所有内容都是使用条件性访问进行 VPN 工作所需的最低要求。 它不涵盖拆分隧道，使用 WIP，创建自定义 Intune 设备配置配置文件以获取 AutoVPN 的工作或 SSO。 将下面的设置集成到你之前在步骤5中创建的 VPN 配置文件[。配置 Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)。在此示例中，我们将它们集成到[使用 Intune 策略配置 VPN 客户端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)。
 
 **先决条件**
 
-已使用 Intune 将 Windows 10 客户端计算机配置为使用 VPN 连接。   
+已使用 Intune 将 Windows 10 客户端计算机配置为使用 VPN 连接。
 
 
 **方法**
 
 1. 在 Azure 门户中，选择 " **intune**  >  **设备配置**" "配置  >  **文件**"，然后选择前面在[使用 Intune 配置 VPN 客户端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)中创建的 vpn 配置文件。
-    
+
 2. 在策略编辑器中，选择 "**属性**" "设置" "  >  **Settings**  >  **基本 VPN**"。 扩展现有的**EAP Xml**以包含一个筛选器，该筛选器为 VPN 客户端提供从用户的证书存储中检索 AAD 条件访问证书所需的逻辑，而不是让该客户端使用发现的第一个证书。
 
     >[!NOTE]
@@ -52,7 +50,7 @@ ms.locfileid: "86953929"
     ```
 
 4. 选择 "**条件性访问**" 边栏选项卡，并将**此 VPN 连接的切换条件性访问****启用**。
-   
+
    启用此设置将更改 VPNv2 配置文件 XML 中的** \<DeviceCompliance> \<Enabled> true \</Enabled> **设置。
 
     ![Always On VPN 的条件性访问-属性](../../media/Always-On-Vpn/vpn-conditional-access-azure-ad.png)
@@ -82,7 +80,7 @@ ms.locfileid: "86953929"
 
 ## <a name="next-steps"></a>后续步骤
 
-你已完成将 VPN 配置文件配置为使用 Azure AD 条件访问。 
+你已完成将 VPN 配置文件配置为使用 Azure AD 条件访问。
 
 |若希望...  |然后查看 .。。  |
 |---------|---------|
@@ -92,8 +90,8 @@ ms.locfileid: "86953929"
 
 ## <a name="related-topics"></a>相关主题
 
-- [VPNV2 csp](/windows/client-management/mdm/vpnv2-csp)：本主题提供 VPNv2 CSP 的概述。 VPNv2 配置服务提供程序允许移动设备管理（MDM）服务器配置设备的 VPN 配置文件。
+- [VPNV2 csp](/windows/client-management/mdm/vpnv2-csp)：本主题提供 VPNv2 CSP 的概述。 VPNv2 配置服务提供程序允许 (MDM) 服务器的移动设备管理配置设备的 VPN 配置文件。
 
-- [配置 Windows 10 客户端 ALWAYS ON VPN 连接](./always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)：本主题提供了有关 ProfileXML 选项和架构的信息，以及如何创建 ProfileXML VPN。 设置服务器基础结构后，你必须将 Windows 10 客户端计算机配置为使用 VPN 连接与该基础结构进行通信。 
+- [配置 Windows 10 客户端 ALWAYS ON VPN 连接](./always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)：本主题提供了有关 ProfileXML 选项和架构的信息，以及如何创建 ProfileXML VPN。 设置服务器基础结构后，你必须将 Windows 10 客户端计算机配置为使用 VPN 连接与该基础结构进行通信。
 
 - [使用 Intune 配置 VPN 客户端](./always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)：本主题提供有关如何将 Windows 10 远程访问部署 Always On VPN 配置文件的信息。 Intune 现在使用 Azure AD 组。 如果 Azure AD Connect 将 VPN 用户组从本地同步到 Azure AD，则无需使用 Intune 配置 VPN 客户端。
